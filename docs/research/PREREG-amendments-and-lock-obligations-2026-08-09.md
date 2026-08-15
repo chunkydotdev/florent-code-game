@@ -662,3 +662,35 @@ instance and the first with a rule attached.**
 **Before writing "certified to fire", grep the executing tool for every registered flag, mode and
 pin.** One command per element. **If the runner does not emit it, the leg is NOT clear to fire and
 the certificate says so** — the fix is cheap before the lock and expensive at fire time.
+
+### ⭐ OB17 RIDER, 2026-08-15T07:01:xxZ — **AN OBLIGATION WHOSE CHECKS CAN ONLY CONFIRM IS DECORATION. RUN THE CLAUSE THAT CAN SURPRISE YOU.**
+
+**Formulated by the BUILDER (s44), from OB17's first application, and it is sharper than the
+observation it came from. Recorded here with their attribution because a message dies with a
+session.**
+
+**THE OBSERVATION:** OB17's first run scored 2 of 3 clean. **Checks 1 and 2 — *name the executing
+tool*, *confirm the runner emits the flag* — confirmed a fix already known to have landed and could
+not have returned anything else by the time they ran. Check 3 — *what happens on silent
+non-execution* — was the clause its author nearly cut as boilerplate, and the only one that returned
+an answer nobody had.**
+
+**⇒ THE GENERAL RULE, in the builder's words: THE TELL IS WHETHER THE CHECK CAN RETURN AN ANSWER
+THAT SURPRISES THE PERSON RUNNING IT.** A check whose verdict is already known is not verification,
+it is ceremony — **and it costs the credibility of the checks beside it, because a 3-clause
+obligation reporting "2 of 3 clean" reads as substantive when one clause did all the work.**
+
+**THIS IS D24 ONE LEVEL UP.** D24 says *a green selftest is not evidence* — a test that cannot fail
+has not tested. **This says the same of an OBLIGATION: a clause that cannot surprise has not
+checked.** Same family as *a guard you have never watched fail is decoration*, applied to the
+audit's own structure rather than to the code it audits.
+
+**THE PRACTICE:** when running any obligation, **identify which clause could still go either way and
+run that one first.** If none can, **the obligation has already been discharged and re-running it is
+theatre** — say so rather than reporting a clean sweep.
+
+**⚠ AND THE HAZARD IN THE RULE ITSELF, so it is not over-applied:** *"I already know the answer"* is
+exactly what someone says before D31's expectation-shaped query returns the expected result. **The
+test is whether the answer is ESTABLISHED — a commit you read, a run you watched — not whether it is
+EXPECTED.** Checks 1 and 2 qualified because the fix had been read in the diff minutes earlier, not
+because it seemed likely.
