@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  FCODE WATCHDOG — launchd agent.
+
+  WHY LAUNCHD AND NOT A HOOK, A CRON, OR A LOOP:
+    * A SessionStart hook only fires when a session starts. The 2026-08-15
+      outage happened OVERNIGHT, with no session at all — the supervisor was
+      dead 22 hours and the first thing that noticed was a human, the next day.
+    * A `while true` loop is exactly the thing that keeps dying: every daemon
+      here is a detached PPID-1 process with nothing above it. Adding one more
+      unsupervised loop to supervise the unsupervised loops does not terminate.
+    * launchd is the only layer on this box that is ITSELF supervised. It
+      restarts on boot, survives logout, and cannot be killed by a session
+      ending badly.
+
+  INSTALL (from the repo root):
+      cp tools/watchdog.plist ~/Library/LaunchAgents/com.opensverige.fcode-watchdog.plist
+      launchctl bootstrap gui/$UID ~/Library/LaunchAgents/com.opensverige.fcode-watchdog.plist
+      launchctl kickstart -p gui/$UID/com.opensverige.fcode-watchdog   # run once now
+
+  STATUS / LOGS:
+      launchctl print gui/$UID/com.opensverige.fcode-watchdog | head -20
+      tail -20 scratchpad/watchdog.log
+
+  UNINSTALL (it takes nothing with it — the daemons keep running):
+      launchctl bootout gui/$UID/com.opensverige.fcode-watchdog
+      rm ~/Library/LaunchAgents/com.opensverige.fcode-watchdog.plist
+
+  ⚠ THE PATH BELOW IS ABSOLUTE AND MACHINE-SPECIFIC. launchd has no notion of a
+    working directory relative to anything, and no shell profile. If the repo
+    moves, this file must be edited and the agent re-bootstrapped — a stale
+    path makes the agent fail silently, which is the failure mode it exists to
+    remove. `tools/watchdog.sh --selftest` checks that the plist's path still
+    resolves.
+-->
+<plist version="1.0">
+<dict>
+    <key>Label</key>
+    <string>com.opensverige.fcode-watchdog</string>
+
+    <key>ProgramArguments</key>
+    <array>
+        <string>/bin/zsh</string>
+        <string>/Users/junghard/Projects/Work/florent-code-game/tools/watchdog.sh</string>
+    </array>
+
+    <key>WorkingDirectory</key>
+    <string>/Users/junghard/Projects/Work/florent-code-game</string>
+
+    <!-- Every 10 minutes. The thing being watched (corefill_forever) polls at
+         120s, so 600s bounds a supervisor outage at ~10 minutes against the
+         22 HOURS actually observed. Tighter buys little: a restart is only
+         useful once per dead supervisor. -->
+    <key>StartInterval</key>
+    <integer>600</integer>
+
+    <key>RunAtLoad</key>
+    <true/>
+
+    <!-- The script writes its own timestamped log; these catch anything that
+         escapes it (a python traceback, a missing venv). An empty stderr file
+         is the healthy state. -->
+    <key>StandardOutPath</key>
+    <string>/Users/junghard/Projects/Work/florent-code-game/scratchpad/watchdog.launchd.out</string>
+    <key>StandardErrorPath</key>
+    <string>/Users/junghard/Projects/Work/florent-code-game/scratchpad/watchdog.launchd.err</string>
+
+    <!-- launchd gives an agent a minimal environment: no shell profile, no
+         PATH beyond this. The script uses absolute/relative-to-repo paths for
+         exactly this reason. -->
+    <key>EnvironmentVariables</key>
+    <dict>
+        <key>PATH</key>
+        <string>/usr/bin:/bin:/usr/sbin:/sbin:/opt/homebrew/bin</string>
+    </dict>
+
+    <!-- ⛔⛔ WITHOUT THIS THE WATCHDOG IS WORSE THAN USELESS. MEASURED 2026-08-15.
+         launchd owns the job's process group and REAPS EVERY REMAINING CHILD
+         when the job exits. The watchdog would restart corefill_forever, log
+         "CONFIRMED alive" 3 seconds later (true at that instant, job still
+         running), exit — and launchd would immediately kill the daemon it had
+         just started. Observed directly: a replay_archiver spawned by one pass
+         (pid 4282) appeared in the next pass's output as a DUPLICATE and had
+         vanished on its own moments later.
+         ⇒ The watchdog looked like it was working, logged a successful
+         restart, and left the fleet exactly as dead as it found it. A
+         self-confirming no-op is the worst possible failure for a watchdog,
+         because the log reads healthier than doing nothing at all. -->
+    <key>AbandonProcessGroup</key>
+    <true/>
+
+    <!-- NOT KeepAlive. This is a periodic one-shot: it runs, acts, exits 0.
+         KeepAlive would restart it instantly forever and turn a 10-minute
+         cadence into a spin. -->
+    <key>ProcessType</key>
+    <string>Background</string>
+</dict>
+</plist>
