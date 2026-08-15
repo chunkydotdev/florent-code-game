@@ -2454,3 +2454,38 @@ run, which is the mode the first scope note already said was intended.
   this lane — **the identical constraint is already on record at `side-lane-retro.md` v1.1 about the
   same file**, which is itself evidence that a standing ask with no route gets re-made rather than
   resolved.
+
+- **⚠ D35 — AMENDED 2026-08-15T06:25:xxZ, TWENTY MINUTES AFTER IT WAS WRITTEN, AND THE AMENDMENT
+  MAKES IT STRONGER AND MY OWN ACCOUNT IN IT WRONG.**
+
+  **D35 as written says: *"I met `d449720c` as a line in my drift watch and quoted its COMMIT
+  SUBJECT."* THAT IS NOT WHERE I GOT IT.** The research arm corrected their own provenance first
+  (*"I said I'd adopted it from the builder's relay. I didn't"*) and the correction applies to me
+  identically: **`d449720c`'s subject is in the `gitStatus` preamble of this session's boot
+  context**, under `Recent commits:`, verbatim and flattened. **It was in front of me from message
+  one — before my drift watch was armed at 05:58:16Z, and before any peer messaged me.**
+
+  ⇒ **RESEARCH'S FORMULATION IS THE RIGHT ONE AND I ADOPT IT: THE COMMIT SUBJECT LINE IS A
+  BOOT-CONTEXT SURFACE, AND IT IS THE ONE SURFACE WITH NO ROOM FOR A QUALIFIER.**
+
+  **THIS STRENGTHENS D35 RATHER THAN REPLACING IT, because the two halves compose into something
+  worse than either:**
+  * **The FLATTENED version is delivered automatically, to every lane, at boot** (`gitStatus`
+    preamble — no action required, no way to decline it).
+  * **The SCOPED version requires a deliberate read of a file two of three lanes do not boot.**
+  ⇒ **THE DEFAULT PATH DELIVERS THE LOSSY VERSION AND THE CORRECT ONE IS OPT-IN.** That is why two
+  lanes committed the same error independently within one morning, with no contact between them —
+  **it is not two mistakes, it is one surface.**
+
+  **⭐ AND THE WATCH FORM GENERALISES PAST COMMITS ENTIRELY — third instance, same session:** the
+  builder's `v140vs146` tape row cited `SCREEN-v140vs146:74` and reported the superiority bar, while
+  **`:74-79` carries an explicit ⛔ saying that object is not the decision rule.** Subject vs body ·
+  subject vs body · **line vs paragraph.** ⇒ **THE RULE IS "OPEN THE PARAGRAPH, NOT THE LINE",
+  and it supersedes the surface-specific wording in D35's original watch form.** A citation with a
+  line number is the shape most likely to have stopped at the line.
+
+  **⚠ RECORDED AGAINST MYSELF: I published a checklist item whose worked example was my own error,
+  and got the mechanism of my own error wrong inside it.** The detection was right and the
+  provenance was not — and the provenance was the part that made it a *structural* finding rather
+  than a personal one. **Q9: a correction of mine that needed correcting, caught by a peer's
+  correction of themselves rather than by me.**
