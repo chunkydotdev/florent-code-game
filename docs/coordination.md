@@ -54351,3 +54351,112 @@ rebuilt.** Not done.
 4. **`#69` rests on ONE opponent, not two** — research downgraded it at wrap: Leviathan's
    S−E is −8.9pp [−21.5, +3.6] and does not exclude zero; they are a strong team at +207,
    not a conjunction instance. **0033's evidence is untouched.**
+
+# ============================================================================
+# 2026-08-15T05:45:51Z (`date -u`) — **RESEARCH ARM s43 WRAP** (Magnus: "Wrap when builder wraps";
+# builder signalled). Arm retro ran FIRST per charter: `docs/research-arm-retro.md` →
+# **v1.15, Q15 added, FIRINGS 6**; instance `docs/retro-research-arm-2026-08-15-s43.md`
+# committed with the bump. Session 20:41Z → 05:4xZ.
+# ============================================================================
+
+## PROCESS DELTAS — routed at write time
+
+**R1. ⭐⭐ A PUBLICATION WITH TWO CLAIMS NEEDS TWO CHECKS — THE STRONG ONE HIDES THE WEAK ONE.**
+*(behaviour change → **Q15**, retro v1.15, and this booted tape.)* **Five of this session's six
+retractions travelled in the same message as a finding that was correct and valuable.** The
+20:51Z note is the exemplar: §3 (fixture pooling inverts a target — correct, and it changed the
+fire order) and §4 (counter-ship attribution — unidentifiable) shipped together, and **§4 was
+the half both peers consumed and acted on.** §4 also committed **the exact error §3 had just
+diagnosed** — §3 used the fixture rule to discredit a number, then §4 built its headline on a
+single unrated cell without applying that rule to it. ⚠ **Mechanism, stated because it is not
+carelessness: verifying the driver FEELS like verifying the note.**
+
+**R2. ⭐⭐ THE FIELD IS A THIRD BODY — AND I CLOSED THAT ROAD BEFORE OPENING IT.**
+*(instrument → `QUEUE.md` **#68**, stocked and twice amended.)* I published that **no
+retrospective cut could EVER separate "our version regressed" from "their version improved",
+for ANY opponent.** **False in six minutes.** I was enumerating only OUR games — two bodies, two
+unknowns. Reading an opponent's match-level mean(S−E) **against everyone except us** prices
+their version independently of our code, **at zero games.** It **killed a leg I had ordered**
+(The Bisons: their v7 was a field-wide collapse, −15.2pp → +17.2pp at v8; our +33.7pp swing was
+the field's +32.5pp, and **we have never been above ~50% against a functioning Bisons**) and
+**confirmed another** (Juusto flat across the boundary while we fell 26.7pp). ⚠ **Two limits now
+in the row: mean(S−E) is CENTRED AT ZERO BY CONSTRUCTION** (league control +0.328pp over 46,318
+match-sides), so it reads *unpriced* change only; **and a counter aimed at US is invisible to it
+by construction.**
+
+**R3. ⭐ RANK TARGETS BY S−E, NOT BY WIN SHARE AGAINST OUR OWN BASELINE.** *(behaviour → this
+tape + `#68`/`#69`.)* My first fire order ranked cells by win share vs our field baseline,
+which **implicitly prices every opponent as equally strong.** ⛔ **And the rule bound me within
+the hour: `#69` cited Leviathan's raw 15.9% twenty minutes after I amended `#68` to stop
+exactly that.** Leviathan is +207 and out of band; expectation at that gap is 23.3%, so their
+S−E does not exclude zero — **they are a strong team, not a second instance**, and `#69` is
+now a ONE-opponent finding whose mechanism promotion is **not yet earned.**
+
+**R4. ⛔ ERA-POOLING RAN IN BOTH DIRECTIONS INSIDE ONE CUT — IT INVENTED THREE TARGETS AND HID
+THE REAL ONE.** *(behaviour → this tape.)* All-time S−E named **Ouroboros −29.4, Kings College
+Munich −14.5, Lunds Stallions −12.6** as our worst matchups. **All are now 230-330 points BELOW
+us, all under the +10 payout floor** (Ouroboros pays **+5.53** for a perfect 5-0), **three
+unplayed since 08-12, and Lunds has flipped to +15.1pp.** The same cut read 0033 at **−0.3pp**
+all-time and **−17.9pp [−34.8, −1.0] in the current era.** ⇒ **the era restriction is the
+difference between a target and an artefact, in both directions.** ⚠ **I caught this defect in
+others' cuts all session and then committed it in my own.**
+
+**R5. PAIRING BEATS A CORRECTION FACTOR — THREE TIMES IN ONE SESSION.** *(method → this tape.)*
+Seats (unit = match), the structural side-A constant (unit = team), and the v125→v140 comparison
+(unit = opponent). In each case the tempting move was a design effect and the right move was a
+design that **removes the confound by construction**. The team case is the sharpest: two-way
+clustering gave **DEFF 53.8** and collapsed the claim, but that estimator is **structurally
+wrong** — the same team effect enters V_A and V_B with opposite signs. **Paired within team:
++2.62pp ± 1.37, p=0.00017, sign test 53/77.** ⚠ **And the estimator gap has NO FIXED SIGN**
+(side lane: paired is *less* negative on unrated, *more* on ladder) — **which is a stronger
+argument against quoting any point estimate than "pairing is better".**
+
+**R6. MESSAGE-CROSSING IS NOW A LIVE PROTOCOL HAZARD.** *(observation → routed here because it
+is three-lane, not one-lane.)* **Two of six retractions were caught only because a peer was
+mid-action on the retracted claim** — the builder wrote *"your structural point is the one I am
+acting on"* about a claim I had retracted six minutes earlier. At this tempo a correction and a
+consumption cross in flight. **Mitigation used: an explicit "STOP — you are acting on a claim I
+retracted" message rather than a quiet amendment.** No mechanism proposed; naming it.
+
+## ⚠ WHAT A SUCCESSOR MUST NOT INHERIT UNCHECKED
+1. ⛔ **`#69` RESTS ON ONE OPPONENT.** The conjunction (spawn-ring siege × belt attrition) is
+   measured on **0033 only**; Leviathan is retracted as its second instance. **Attribution is
+   INFERENCE** — `events.tsv` has BUILD/DEATH and no attack event — and **the siege dose is
+   SATURATED within 0033** (83 of 120 games), so the evidence is **across-opponent only** and
+   *reverses* on the 7-match ladder cut. **Do not promote it to a mechanism without a second
+   in-band cell whose S−E excludes zero.**
+2. **The 0033 and Juusto legs are sized WRONG in my original order.** The builder is right that
+   n=5 cannot separate 0.52 from 0.25. **Their multi-window rule at within-opponent DEFF 1.434
+   is the construction; my binary bar is only the bar.**
+3. **Every rated cell I quote this session is n = 7-8 matches.** The unrated cells are larger and
+   agree in direction. **I banked the DIRECTION; the LEVEL is not banked.**
+4. ⛔ **DO NOT RUN A `throws.tsv` CUT WITHOUT READING
+   `docs/research/CORRECTION-throws-exile-columns-2026-08-15.md` FIRST** (builder's handover):
+   the outcome columns are populated for INSERT only, EXILE reads a constant, and there is no
+   version column. **I banked no number from those columns.**
+5. **`nav_limit_cycle_census.py` has been LOST TWICE** and is the dose instrument for #54/#63/#64.
+   The builder is rebuilding it gated on my published controls. **Treat those rows' dose numbers
+   as not-live until it reproduces.**
+
+## RESEARCH ARM STATE — VERIFIED, NOT ASSERTED
+* **NOTHING OF MINE IS RUNNING.** Both opus agents (Bisons counter-ship · 0033 loss mode) landed
+  and were **fully relayed before this wrap**, each with its own limits attached. **Zero
+  unrelayed agent output.**
+* **Holder read LIVE at 20:45Z off the `Active bot:` line, never `$?`: v140 (Loki v10),
+  rating 1775, rank #20 of 125, 989 matches.** ⚠ **Stale by ~9h at wrap — a successor re-reads
+  it rather than inheriting this number.**
+* **I never submitted, activated, fired a match, edited a bot, ran arena, or touched
+  HANDOVER.md or the tape.** One platform call all session: `fcode status` (read-only).
+* `queue_check` **51 unblocked** (floor 3) · `audit_trigger` **0/6** at boot.
+* **Queue delta: +2 stocked (#68 instrument, #69 conjunction), 4 annotated** — #60 →
+  `STATUS: WITHDRAWN`, #54 → `STATUS: BLOCKED` (**and that annotation retracts my own
+  `QUEUE-ECONOMICS-SWEEP` re-screen recommendation**), #66 dial corrected, #68/#69 amended
+  post-stocking by their own author.
+* **Provenance corrected in two published docs:** the OSCLOCK `46.39` duplication
+  (`HOME-LOCK-MECHANISM`, `BUILDER-TACTICS-ATLAS`) — one measurement was reading as two
+  independent confirmations — **with the honest weakening added: OSCLOCK's pooled CI
+  [46.29, 50.77] INCLUDES 50.**
+* **ASKED FOR AND OWED TO ME BY THE BUILDER:** a `queue_check` staleness pass flagging any row
+  whose number appears in a later `coordination.md` ruling. **The annotations stay mine.**
+* **Two live legs untouched by me all session** (SEALFLOOR6 local, SALTREF2 remote) — locked and
+  certified at s41; **re-opening a bar mid-leg is what the lock exists to prevent.**
