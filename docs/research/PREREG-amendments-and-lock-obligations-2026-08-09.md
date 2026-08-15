@@ -523,3 +523,47 @@ destroys units. The lock splits its gate into a local proxy (retry-fire rate ≤
 ship-blocking on its own) and the platform `cpu_watch` alarm, which is the right
 response: **when a surface cannot see a dimension, the gate moves to a surface
 that can, rather than the dimension being dropped.**
+
+### ⭐⭐ OB16 COROLLARY, 2026-08-15T03:52:45Z — **THE STANDARD COREFILL BAND HAS AN MDE OF ZERO BY CONSTRUCTION, AND THAT IS A PROPERTY OF EVERY SCREEN ON IT**
+
+**Found while certifying the GUNAXABL/SENTTHR verdicts (`7ca0b370`), whose author
+had already named the instance — this is the GENERAL form.**
+
+    standard corefill band : 48.67 / 51.33 at n=5400
+    half-width at n=5400   : 1.334pp
+    => the band IS 50 +- half_width, so the implied MDE is 0.000pp
+
+**Clearing 51.33 puts the CI's lower edge at exactly 50.00 — it just touches the
+null and excludes NO positive effect size.** ⇒ **under OB16, every arm screened on
+the standard band is a POINT RULE. It licenses "we can exclude 50" and NOTHING
+about a minimum effect.** Contrast the OB16-form bar the same night:
+
+    BODYAWARE : 50.00 + 1.00 (MDE) + 0.94 (hw) = 51.94   -> clearing it excludes 50 AND +1.00pp
+
+**These are two different KINDS of bar and the difference is invisible from the
+number alone.** ⇒ **a screen prereg states which kind it is using.** The standard
+band is not wrong — it is the right instrument for *"does this move anything at
+all"* — but **it must not be quoted as having excluded an effect size, because it
+cannot.**
+
+**⚠ AND GUNAXABL IS WHAT A ZERO-SLACK BAR COSTS, measured: it missed its keep edge
+by 0.0152pp — ONE GAME** (2629/5400 = 48.6852% against a bar of 48.67; 2628 would
+have been KEEP). **Its own prereg flagged the fragility IN ADVANCE — "bar slack
+was zero by construction, margin 1.33pp vs half-width 1.320pp"** — which is OB16's
+spirit honoured pre-hoc, before OB16 existed. **A bar with no slack produces a
+verdict with no slack, and the honest reading of a one-game margin is that the
+fixture cannot resolve the question.** The author refused to round toward the
+answer they preferred; **that refusal is what the corollary is here to make
+unnecessary next time.**
+
+**⭐ AND THE REPLICATION DISCIPLINE ON THE SAME READ IS THE TEMPLATE, recorded so
+it is not lost in a verdict commit:** remote replications existed
+(GUNAXABLR 50.61%, SENTTHRR 47.92%) and were **reported separately and refused as
+verdict inputs**, because the preregs registered `PLANNED n = 5400` and the remote
+copies were stocked AFTER the lock without registering the pooling. **Pooling them
+to move a verdict would be an unregistered n increase — optional stopping with
+extra steps — and it would have been MOST tempting on GUNAXABL, the arm that
+missed by one game.** ⇒ **they corroborate a null they are not allowed to rescue.**
+**And both pairs STRADDLE 50 AND FLIP SIGN** — independent seed draws of one
+comparison should preserve sign if an effect is real; neither does — **so the
+replication strengthens "could not separate" rather than changing it.**
