@@ -54870,3 +54870,38 @@ exists for either target yet — per the 2026-08-14 rule, **each one gets DRAFTE
 SUBAGENT** with no inherited session context, carrying its `PROVENANCE:` line; **the owning lane
 ratifies the judgment lines and types the lock commit itself.** Side lane has offered two-clock
 certification before leg creation and I will route it there. **Nothing fires off this note alone.**
+
+--- 2026-08-15T06:12Z BUILDER s44 — IN-FLIGHT: LAUNCHER PROGRAMME (Magnus directive, verbatim) ---
+**Magnus, direct, this session: *"Every new shard in this session should be launcher related, i want us to
+focus on exploring launchers... can they be positioned at a critical point and block passage, thereby
+strangling any offense, can they be used to deny enemy builders around their core so we can peck and
+strangle their economy? What more creative ways are we missing? We know so much about this game by now,
+but we are so bad at the creative side of it. Experiment! If dosage shows that the build has an effect we
+put it directly as a shard, dont dismiss based on logical thinking after dosage."***
+
+⇒ **METHOD IS PINNED BY THE DIRECTIVE: dose probe first; a mechanism that FIRES becomes a shard. I may not
+reason it away post-dose.** That reverses how our launcher work has died: `#58` EVICT was refuted at
+**0.04 evictions/game (1/25)** — a DOSE THAT NEVER LANDED, recorded as a refuted mechanism.
+
+**WHY DELIVERY FAILS, read off the incumbent `bots/_v223sealrepair/doctrine.py`:**
+`LAUNCHER_MIN_RND = 160` (no launcher before r160; our median kill is r174) · `LAUNCHER_RESERVE = 80` ·
+one launcher, latched via `SLOT_LAUNCHER` · sited DEFENSIVELY (`LOKI_EXILE_PENALTY = 24` penalises
+stations an enemy launcher covers) · ferry is explicitly "opportunistic and stateless: a raider never
+waits for a launcher". **The launcher is vestigial by construction, so every launcher plank we have ever
+fired was measuring a launcher that mostly did not exist.**
+Local family reads: LAUNCH0 **52.77** / LAUNCH2 44.67 / LAUNCH3 43.73 / LAUNCHLATE80 50.74 /
+LAUNCHLATE160 51.42. **`_v101nl` (delete the launcher build entirely) = WASH.** Consistent with vestigial.
+
+**SPAWNING NOW (standing permission; model explicit):**
+* **A1 (opus)** — LAUNCHER MECHANICS SHEET from the ENGINE (not the organisers' doc) + the exact
+  build/siting/throw path in the incumbent. Deliverable: what is legal, what we actually do, and the
+  delivery diagnosis.
+* **A2 (opus)** — CREATIVE SWEEP: what the FIELD does with launchers (replay corpus + league), and an
+  enumeration of untried mechanisms with engine anchors.
+
+**ALLOCATION (no new local shard; local is protecting two live legs):** launcher shards go to **ws1,
+which has been IDLE since SALTREF2 completed 05:29:49Z** (16 cores). Local stays MAX_SHARDS=1 on
+BODYAWR -> NULL5400. ⚠ ws1 runs at **WORKERS<=10**, never 40 — SALTREF2 moved a null 2.67pp on exactly
+that oversubscription.
+**NULL5400 is KEPT despite not being launcher-related: it is the host-term null every launcher shard's
+interval will be quoted against.** Flagged rather than silently exempted.
