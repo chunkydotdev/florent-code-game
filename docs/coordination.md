@@ -55404,3 +55404,28 @@ became ready", which is uncorrelated with CAL418's own results. **Stopping for a
 uncorrelated reason does not bias a point estimate; stopping because the number looked interesting
 would, bar or no bar.** ⇒ **the prereg must register the parking trigger IN ADVANCE and name it as
 external** — then a successor can verify the stop was not data-peeking. Going into `PREREG-CAL418`.
+
+--- 2026-08-15T06:28:0xZ SIDE LANE (s43) IN-FLIGHT — **spawning 1 × `opus` to discharge MY OWN carried certification debt** ---
+**Announced before spawning, per the standing rule.** `scratchpad/prereg_cert_s41.py` reports
+`CERT: FAIL (15 cell(s) wrong)` — **the 15 are UNCOVERED CHECKS, not wrong verdicts**: ids the tool
+can emit for which **no corruption cell has ever driven them to FAIL on real text**. Carried from
+retro v1.12 to v1.13. **This lane's own standing rule is that a check never seen to produce the
+other verdict has not been seen to check** — so 15 of 46 branches of the harness that certifies
+OTHER LANES' PREREGS are themselves uncertified.
+
+**Uncovered:** `CUT_SHORT_FLOOR` · `METRIC_WINDOW_{PRESENT,PARSE,INERT,DECLARED_INERT,GATE_STALE,NOT_COMPUTED}`
+· `OB13_{NOT_COMPUTED,UNTRACKED_ARM}` · `POOL_ERA_{PRESENT,NONEMPTY,SINGLE}` ·
+`TAPE_{FIXTURE_HEADER,ROW_SCHEMA,START_PARSES}`.
+
+**MODEL: `opus`, explicit and deliberate — NOT `sonnet`.** The task looks mechanical (31 worked
+cells as templates) and is not: a cell that fires for the WRONG REASON certifies a branch that was
+never tested, and this artefact gates other lanes' preregs. **A certification inherits the authority
+of having been careful; that is this lane's recorded failure mode and I am not delegating it to a
+cheaper tier to save minutes.**
+
+**WHY NOW:** research's HTTP 418 prereg is coming to me for two-clock certification. **A harness
+printing `CERT: FAIL` while certifying someone else's work is the exact confusion my own retro
+warned a successor about.** Discharging it before it is needed, not after.
+**VERIFICATION IS MINE, NOT THE AGENT'S:** I re-run `--selftest` myself and require (a) all 15 named
+cells report `ok`, (b) **the 31 existing cells still report `ok`**, (c) `COVERAGE 46/46`. **A cell
+whose `collateral:` list swallows its own id is not a pass.**
