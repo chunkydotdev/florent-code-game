@@ -1034,3 +1034,65 @@ left an artefact — a command run, a file opened, a message not sent but drafte
 lane gets a metric it grades itself on, which is the one failure mode a drift watch cannot afford.
 
 **SUNSET WATCH: unchanged. FIRINGS: 11. The v2.0 decision belongs to the next run.**
+
+## ⭐⭐ v1.12 — **FIRING 12. THE DIRECTION MODEL INVERTS: SURVEYING, NOT AUDITING, IS THIS LANE'S HIGH-RISK STATE — AND Q0 IS ADOPTED ON ITS FIRST ANSWER.**
+
+**v1.12 — 2026-08-15 (MINOR: records firing 12, adopts Q0, INVERTS v1.3.2's
+pre-registered direction, sharpens Q3 and Q4). Instance:
+`docs/retro-side-lane-2026-08-15-s42.md`, committed in this same action.**
+
+* **FIRINGS: 12** (s29, s32, s33, s34, s35, s36, s37, s38, s39, s40, s41, s42).
+  One point bump this session (v1.11.1), inside the cap of two.
+* **⛔⛔ THE HEADLINE, AND IT OVERTURNS THIS INSTRUMENT'S OWN PRE-REGISTRATION.**
+  v1.3.2 pre-registered **`auditing` to behave like `defending`**, on the reasoning
+  that *"auditing is what this lane does all day."* **Measured on eight published
+  errors: every alarming over-claim came while SURVEYING with no hypothesis —
+  4 for 4** (a 53-shard false stall; a locked leg declared DEAD that was asleep;
+  *"the fifteen never certified"*; an audit heading that unified three mechanisms
+  into one). **The auditing errors were premise-misses, not over-claims.**
+  ⇒ **SURVEYING IS THE HIGH-RISK STATE AND THE TELL IS THAT NOBODY ASKED ME TO
+  LOOK.** A commissioned audit has a subject and a stopping point; a sweep has
+  neither, and the alarming reading is the one that justifies the sweep.
+* **⭐ Q3's MECHANISM IS NEW AND UNIFIES SIX OF THE EIGHT: I CHECKED THE SURFACE
+  ADJACENT TO THE ONE THAT MATTERED.** A commit that did something adjacent · a
+  comment instead of the code's history · the pulled MIRROR instead of the box,
+  and never the SCHEDULE · my harness's COVERAGE LINE instead of the probe's
+  ASSERTION EXPRESSIONS. **This is not "I did not check" — it is "I checked, one
+  surface over", and it produces a PLAUSIBLE answer every time.** ⇒ **Q3 now asks
+  WHICH SURFACE was read and WHICH ONE the claim is about.**
+* **⭐ Q4's SELF-CATCH MECHANISM SHARPENS TO ITS MOST USABLE FORM YET: A SECOND
+  INSTRUMENT IN THE SAME OUTPUT.** A `pgrep -fl` listing printed **for display**
+  sat beside a count of `0` and contradicted it — **an ILLEGAL PAIR** — and caught
+  three D33 instances I committed inside four minutes while verifying D33 on
+  myself. ⇒ **PRINT THE EVIDENCE BESIDE THE VERDICT AND CHECK THEY AGREE.** Not
+  suspicion; adjacency. **Q4 itself came back WORST RECORDED — ~2 self-caught of
+  8, six caught by the builder** — which is what makes the mechanism worth having.
+* **⭐ Q0 ADOPTED PERMANENTLY, on its first answer.** *What did not happen because
+  this lane was running?* **12 withheld · 1 corrected before consumption**, against
+  **8 published**. **The anchoring rule held: every withheld flag left an artefact**
+  (a command run, a file opened, a source read) — **none self-reported**, which was
+  the hazard v1.11.1 armed it against. **The lane's largest output category now has
+  a home for the first time.**
+* **⛔ Q9 = 2, and both were corrections OF MY OWN CORRECTIONS, both ALARMING, both
+  milder in truth.** ⇒ **a correction published while surveying inherits the
+  surveying direction** — Q3 one level up.
+* **Q5: 12 withheld, the highest recorded; 2 wrong flags reached a peer.** ⚠ **And
+  one of those was NET-POSITIVE and must be scored as such: SALTREF2-dead was the
+  wrong CONCLUSION on a correct INSTRUMENT finding, and it produced two fixes.**
+  ⇒ **a wrong conclusion pointing at a real gap is not the same object as a
+  phantom, and the ledger should stop treating them as one.**
+* **Q8 = 7 became code**, joint-best. **Q6′: one wrong relay**, and its lesson is
+  that **"low harm, I told its originator" was luck** — the figure was already a
+  headline to the principal.
+* **DETECTION ~18/26 · PRESCRIPTION 7/7 CONSUMED, THREE IMPROVED BY CONSUMERS.**
+  ⇒ **v1.11's retirement of *"detects better than it prescribes"* HOLDS: prescription
+  is the stronger half two runs running.** The improvements were consumers'
+  (MDE-inside-the-bar; OB17-as-check-not-obligation; reconstruction-over-anchoring),
+  **which is the system routing around the lane's old weakness — acceptable, and
+  still not something to rely on.**
+
+**SUNSET WATCH: nothing armed; every surviving question fired.**
+
+**⚠ CARRIED TO v1.13:** the **15 corruption cells owed in `prereg_cert_s41.py`**.
+**The harness now reports `CERT: FAIL` until they exist — that is the honest state
+and a successor must not read that FAIL as a defect in anything it certifies.**
