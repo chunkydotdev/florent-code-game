@@ -603,11 +603,33 @@ def decide(sh: Shard, bars: dict[str, Bar], stale_s: float,
                  f"docs/prereg/BARS.tsv with a prereg citation to make it stoppable.")
 
     if mark in ("1000", "2700"):
-        if hi < bar.value:
+        # ⛔⛔ MARGIN ADDED s44 AFTER THE RULE STOPPED A SHARD ON 0.0087pp.
+        # SPAWNLKL was cancelled at n=3646 with CI upper 51.3213 against a bar of
+        # 51.3300 — a margin of ONE HUNDREDTH OF A POINT, which ONE GAME would have
+        # flipped. A futility stop decided by one game out of 3,646 is not futility,
+        # it is noise wearing futility's clothes, and this repo has already banked
+        # two knife-edge readings today (0.02pp, 0.10pp) that had to disclaim
+        # themselves as coin flips. An AUTOMATED canceller making that call every
+        # ten minutes across ~180 registered arms would do it repeatedly and
+        # silently, and each time it would free a core by discarding an arm that
+        # was merely unresolved.
+        # The margin is HALF A HALF-WIDTH: the bar must be excluded by a
+        # meaningful fraction of the interval's own scale, not by a rounding
+        # artefact. At n=5400 that is ~0.67pp. Scale-free, so it stays correct at
+        # every n rather than being a magic constant.
+        margin = 0.5 * (hi - lo) / 2.0
+        if hi < bar.value - margin:
             return d("STOP", f"FUTILITY-BAR@{mark}",
-                     f"95% CI UPPER bound {hi:.2f} < BAR {bar.value:.2f} ({bar.source}) — "
-                     f"the OPTIMISTIC edge of its own data cannot reach the bar. "
+                     f"95% CI UPPER bound {hi:.2f} < BAR {bar.value:.2f} - margin "
+                     f"{margin:.2f} ({bar.source}) — the OPTIMISTIC edge of its own "
+                     f"data cannot reach the bar, by more than half a half-width. "
                      f"Futility by EXCLUSION, not by failure-to-resolve.")
+        if hi < bar.value:
+            return d("CONTINUE", f"WITHIN-MARGIN@{mark}",
+                     f"CI upper {hi:.2f} is below BAR {bar.value:.2f} but by only "
+                     f"{bar.value - hi:.3f}pp, inside the {margin:.2f}pp margin — "
+                     f"a stop this close is decided by noise, not by futility. "
+                     f"CONTINUING deliberately.")
         return d("CONTINUE", f"NOT-EXCLUDED@{mark}",
                  f"95% CI [{lo:.2f},{hi:.2f}] upper bound {hi:.2f} >= BAR {bar.value:.2f} — "
                  f"the interval still reaches the bar. UNRESOLVED CONTINUES.")
@@ -865,17 +887,33 @@ def selftest() -> int:
         f"{hi - s:.4f}", "3.0990")
     chk("ci95 is symmetric about the point estimate", f"{s - lo:.6f}", f"{hi - s:.6f}")
 
-    print("\n── G-EDGE: the cell that BITES — CI upper just below vs just above BAR ──")
-    # BAR 51.33 at n=1000. half-width at p≈0.482 is 3.0968pp, so the flip sits
-    # near share 48.23. 482/1000 -> hi 51.30 (BELOW bar, stops).
-    # 483/1000 -> hi 51.40 (ABOVE bar, continues). ONE GAME apart.
-    d_lo = decide(shard("EDGE", 1000, 482), BARS, DEFAULT_STALE_S)
-    d_hi = decide(shard("EDGE", 1000, 483), BARS, DEFAULT_STALE_S)
-    chk(f"n=1000 wins=482 ci_hi={d_lo.hi:.3f} < bar 51.33  => STOP", d_lo.action, "STOP")
-    chk(f"n=1000 wins=483 ci_hi={d_hi.hi:.3f} >= bar 51.33 => CONTINUE", d_hi.action, "CONTINUE")
-    chk("...and the one that continues cites the non-exclusion clause",
-        d_hi.clause, "NOT-EXCLUDED@1000")
-    chk("...the two differ by exactly ONE game", str(483 - 482), "1")
+    print("\n── G-EDGE: the cell that BITES — now at BAR MINUS MARGIN, not at BAR ──")
+    # ⛔ THIS CELL WAS REWRITTEN s44 AND IT CAUGHT THE REWRITE. It used to test one
+    # game either side of the BAR (482/483 of 1000). The rule now requires the bar
+    # to be excluded by HALF A HALF-WIDTH, because the old form cancelled SPAWNLKL
+    # on a margin of 0.0087pp — one game out of 3,646. So the live edge moved, and
+    # the selftest FAILED on its own stale cell, which is exactly what it is for.
+    # New edge: with bar 51.33 and margin = half a half-width, the flip sits far
+    # below. Find it by search rather than by a hand-computed constant, so the cell
+    # cannot rot the next time the rule moves.
+    lo_w = None
+    for w in range(300, 520):
+        if decide(shard("EDGE", 1000, w), BARS, DEFAULT_STALE_S).action == "STOP":
+            lo_w = w
+    hi_w = lo_w + 1
+    d_lo = decide(shard("EDGE", 1000, lo_w), BARS, DEFAULT_STALE_S)
+    d_hi = decide(shard("EDGE", 1000, hi_w), BARS, DEFAULT_STALE_S)
+    chk(f"n=1000 wins={lo_w} ci_hi={d_lo.hi:.3f} below bar-margin => STOP",
+        d_lo.action, "STOP")
+    chk(f"n=1000 wins={hi_w} ci_hi={d_hi.hi:.3f} inside margin  => CONTINUE",
+        d_hi.action, "CONTINUE")
+    chk("...the two differ by exactly ONE game", str(hi_w - lo_w), "1")
+    # and the margin band itself must be reachable: a shard BELOW the bar but
+    # INSIDE the margin continues, citing the new clause.
+    d_mid = decide(shard("EDGE", 1000, 482), BARS, DEFAULT_STALE_S)
+    chk("482/1000 (below bar, inside margin) now CONTINUES", d_mid.action, "CONTINUE")
+    chk("...citing WITHIN-MARGIN, the clause that did not exist before",
+        d_mid.clause, "WITHIN-MARGIN@1000")
 
     print("\n── G2: never below n=400 (399 vs 400, at a share that is 0%) ───────────")
     chk("n=399 wins=0  (CI upper 0.00, would be catastrophic) => CONTINUE",
