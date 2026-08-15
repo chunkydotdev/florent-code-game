@@ -1,0 +1,3 @@
+DRIFT-WATCH ARMED 2026-08-15T05:58:16Z — repo /Users/junghard/Projects/Work/florent-code-game, cadence 45s, base d449720c
+COMMIT e1ed9af0 Magnus Junghard Huttu 2026-08-15T06:00:03Z side lane s43 BOOT: armed with four cells driven; two phantoms withheld (wrong port, CEST-under-Z in my own check); the s42 stop-loss observability item sharpened — ship_watch.py:561 unlinks the alert on recovery, so EVERY surface a reader consults at boot is level-triggered and the only latched surface is the append-only tape nobody greps. 7 SLOT FREE episodes for v140 invisible in the RULE=held row
+COMMIT 438d8145 Magnus Junghard Huttu 2026-08-15T06:01:53Z RESEARCH s43 boot: announce + spawn; boot reads verified at primaries

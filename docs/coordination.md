@@ -54651,3 +54651,91 @@ old at read**, so every cut below is on a same-day surface.
 **SPAWNING (anti-collision rule 1):** two read-only agents — `sonnet` on the v145/v147 activation
 provenance, `opus` on the current-era per-opponent rated read that sizes the new fire order. Results
 relayed here before I idle.
+
+--- 2026-08-15T06:05:5xZ (`date -u`) ⭐⭐ **RESEARCH s43 — THE LADDER PAIRS ON A METRONOME. EXPOSURE COST IS ARITHMETIC, AND THE CLEAR-AIR WINDOW IS 19 MINUTES, NOT 60 SECONDS** ---
+Full artefact: `docs/research/FINDING-pairing-metronome-and-exposure-cost-2026-08-15.md`.
+Surface: `corpus/ladder_games.tsv` synced 05:58Z, newest pairing `05:52:59Z` (4 min old at read).
+
+## 1. THE TAPE
+234 distinct rated pairings, `created >= 2026-08-12`, over **77.7 h**:
+**gaps 1200 s in 229/233, 1199 s in 2, 1201 s in 2 — NO OTHER VALUE. Offset ≡ 12 (mod 20) in
+232/234. Second `:59` in 232/234. Slot fill 3.01/hr against a theoretical 3.00.**
+Last 19 h (n=57): **57/57 offset, 57/57 second, 56/56 gaps at exactly 1200 s. Zero exceptions.**
+⇒ Slots are **`:12:59` / `:32:59` / `:52:59`**, and **we are paired in EVERY one** — over 77.7 h we
+missed none. "We might not get paired this window" is not a thing that happens to us.
+
+## 2. ⭐ v140 IS NOT THE BLEEDER — and this is the same-day rated decode this lane owes daily
+Peak **1795** (`ourbef` on the `2026-08-14T18:32:59Z` pairing) → **1723.9** newest. **35 matches,
+−72.44 Elo.** Decomposed off per-match `ourver`:
+
+    ver 140 (incumbent)  28 m   −30.87   (−1.10/m)  share 0.471
+    ver 146               4 m   −19.00   (−4.75/m)  share 0.350
+    ver 147               2 m   −13.22   (−6.61/m)  share 0.300
+    ver 145               1 m    −9.35   (−9.35/m)  share 0.200
+    NON-INCUMBENT         7 m   −41.57   (−5.94/m)  share 0.286
+
+⇒ **57% OF THE DRAWDOWN CAME FROM 20% OF THE MATCHES.** And over its **full** tenure (44 matches /
+220 games, 08-14T11:52Z→08-15T05:52Z) **v140 is +38.23 Elo net, 53.2% game share, mean(S−E)
++0.0272.** On this cut the stop-loss's `RULE=held` is the **correct** verdict.
+⚠ **BOUND, so neither number can travel alone: v140 is +38.23 lifetime but −30.87 over the 28
+matches SINCE the peak.** "Not the bleeder" attributes the −72; it does **not** say v140 has been
+fine since the peak. Choosing between those is a verdict and is the builder's.
+⚠ **ATTRIBUTION IS OPEN AND THIS FILE DOES NOT ASSIGN FAULT.** `version_trees.tsv` has no row for
+145/146/147; `coordination.md:53898` records **v146 as teammate x3r0's activation**. v145/v147
+activators **NOT ESTABLISHED** — `sonnet` agent running, I will relay.
+
+## 3. THE MODEL IS EXACT ON ALL THREE WINDOWS
+Windows off `elo_history.tsv` (⚠ **its clock is LOCAL/UTC+2** — converted; live drift-watch cell):
+
+    v145  19:13→19:18Z   ≥5 min   1 slot   1 match  (19:12:59Z)
+    v146  21:23→22:53Z   90 min   4 slots  4 matches (21:32:59/21:52:59/22:12:59/22:32:59)
+    v147  04:15→04:45Z   30 min   2 slots  2 matches (04:12:59/04:32:59)
+
+**Every tagged match lands on a slot and the count equals the slot count.** ⇒
+`leaked_rated_matches = number of slots between activation and rollback` — **arithmetic available
+BEFORE the submit is typed**, replacing the probabilistic "budget ~−8 Elo per leaked match".
+⚠ Windows are **LOWER BOUNDS**: `elo_history` polls at 5 min and in two of three cases the tagged
+pairing PRECEDES the first poll showing the new version.
+
+## 4. ⭐⭐ FOR THE BUILDER — THE CADENCE PLAN. YOU HAVE 19m58s OF CLEAR AIR PER GAP, NOT 60 SECONDS
+`CLAUDE.md`'s "a correctly-run window is ~60 seconds" is **19× more conservative than the tape**:
+
+    pairing at T = :12:59  ->  clear air T+0:00:01 .. T+0:19:59  ->  next slot T+0:20:00
+
+    unrated rate limit      5 matches / 20 min      a match completes   ~15 s
+    5 matches + overhead    ~2-4 min                clear air per gap   ~19.9 min
+
+⇒ **A FULL 5-MATCH LEG — THE WHOLE RATE-LIMIT ALLOWANCE — FITS IN ONE GAP FIVE TIMES OVER.** The
+rate limit and the pairing cadence share a 20-minute period, so **the natural cadence is one leg per
+gap**: activate ≈`:13:30`, fire 5, verify, **roll back by `:25`**; the `:32:59` pairing meets the
+incumbent. **Rollback deadline for a `:12:59` start is `:31:59`.**
+⇒ **THE RATED COST OF PROTOTYPE TESTING IS ZERO WHEN PHASED. The −41.57 above is what the same
+testing costs unphased.** Throughput was never gated by the pairing cadence.
+⚠ **NOT established and do not promote it: whether the rate limit's own 20-min window is phase-locked
+to the pairing grid.** Irrelevant to the plan (4 min ≪ 19.9 min); the durable claim is only that one
+full leg fits in one gap.
+Unchanged from s42 and still required: **holder read as a SEPARATE BLOCKING step**, roll back on the
+`Active bot:` line never `$?`, and **record the holder PER ACCEPT** so a contaminated accept is
+identifiable by a column.
+
+**NEXT SLOTS (UTC), derived not hardcoded:** `06:12:59` · `06:32:59` · `06:52:59` · `07:12:59` …
+
+## 5. ⚠ TWO `CLAUDE.md` CLAUSES UNDERSTATE THE TAPE — routed to Magnus, that file is his
+It says *"55 of 60 at minute ≡ 12 … 49 of 60 at second `:59`"* and *"the 20-minute **interval** is
+not robust (some gaps are 600 s)"*. Measured over 77.7 h: **232/234 offset · 232/234 second · ZERO
+600 s gaps, all 233 gaps 1200 ± 1 s.** ⇒ **the interval is the most robust part measured.**
+**KEEP "re-derive, never hardcode"** — cheap, and it is what makes this safe against a future shift;
+what is stale is the pessimism that justifies a 60-second window. Both samples us-only (its caveat,
+intact). Separately: its *"budget ~−8 Elo per leaked match"* re-measures at **−5.94** — conservative
+in the right direction, no change needed, recorded so it is not re-derived a third time.
+
+## 6. FIRE ORDER — CADENCE HALF PUBLISHED ABOVE; TARGET HALF PENDING
+⛔ **THE s42 FIRE ORDER IS STALE AND AT LEAST ONE TARGET IS OFF-PROGRAMME** — priced off a 1775
+holder read, we are at **1723**; Juusto is **OUTSIDE the band by 34 points, determined** (side lane
+`d5824472`). **Do not size off it.** Live band at 1723 = **14 teams**, farming_200s +122 (+21.38) →
+Dino −52 (+13.60). `opus` agent is producing the current-era per-opponent rated read (mean(S−E),
+DEFF-corrected, opponent-version churn, map/kill-round cuts) and the target half lands here next.
+⚠ **Side lane's durability flag adopted:** this order carries its rating stamp **1723 @ 06:0xZ**
+inline, and when the target half lands I will name explicitly which targets sit within ~15 points of
+`BAND_HI`/`BAND_LO` — those flip on one bad match, which is exactly how Juusto went +17-inside to
+−34-outside.

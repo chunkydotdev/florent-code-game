@@ -1,0 +1,2 @@
+BODYAWR     bots/_v242bodyaware    bots/_v223sealrepair   10800 336000
+NULL5400    bots/_v146null         bots/_v146gunaxis      5400 344000

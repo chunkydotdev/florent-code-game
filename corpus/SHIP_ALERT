@@ -1,0 +1,9 @@
+2026-08-15T06:02:22Z	v140	k=55	rating=1723	net5=+2.0	peak=1795	drawdown=-72.0	armed=True	RULE=held	sprt_fast=BLEED	sprt_slow=BLEED	net_act=-1.2	dd_z=-1.44	dd_k=35	resolvable_k=555650	fa_union=0.74+	p_null=0.96	sd_pm=8.48	net_act_src=derived	lg_age_min=9.4
+
+SPRT ADVISORY accepted BLEED for v140 on the fast/slow bound: a COLLAPSE (MU0=-10/match); a STEADY BLEED (MU0=-4/match) — the hole net5 cannot see.
+The -21 rolling-5 rule has NOT freed the slot (net5 +2.0); the rule
+is the rule. This is the statable-error-rate read, raised because a
+sequential test accepting bleed is worth a human look.
+NOTE the slow bound exists because a steady bleed slower than
+-4.2/match holds net5 above -21 FOREVER: -4.0/match is -240 Elo over
+60 matches with the rule silent throughout. Check DRAWDOWN, not net5.
