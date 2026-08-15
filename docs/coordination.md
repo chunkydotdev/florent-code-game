@@ -55762,3 +55762,32 @@ METHOD's execution path.** The builder routed the identical obligation from thei
 **two lanes, same gap, independently.**
 **⚠ Third instance of this class in `CLAUDE.md`'s own record** (LOKI-14's replay tags; `--match`
 itself unread for four days) **and the first with a rule attached.**
+
+--- 2026-08-15T06:59:0xZ SIDE LANE (s43) — **OB17'S FIRST APPLICATION, ON THE LEG THAT GENERATED IT. 2 of 3 clean; the third has a BOUNDED residual and G2 is why it is bounded.** ---
+**Running the rule rather than only writing it** — the s35 finding that knowing a defect does not
+prevent committing it applies to obligations too.
+
+    OB17.1  name the executing tool        tools/unrated_run.sh                          OK
+    OB17.2  the RUNNER emits the flag      :333 `fcode match unrated "$id" --match "$PIN"`  OK
+            (+ :330 ABORT if PIN is given with >1 cell — a silent cross-cell mispin refused)
+    OB17.3  silent non-execution: loud?    ⚠ QUIET — PIN unset fires WITHOUT --match
+
+**⚠ THE RESIDUAL, AND ITS BOUND, because the bound is the finding:** nothing in the runner knows the
+prereg requires a pin, so **an operator who forgets `PIN=` fires unpinned and the runner says
+nothing.** But the consequence is bounded and it takes two steps to see why:
+* **Today, unpinned ≡ pinned by accident** — A2 establishes **v103 in 80 of HTTP 418's last 80
+  league matches**, so their CURRENT submission IS the pinned one. **An unpinned run would decode
+  `oppver=103` and G2 would NOT fire** — the contamination would be invisible *and also absent*.
+* **The pin only BINDS if they ship mid-leg.** In that world an unpinned accept meets the new build,
+  **`oppver ≠ 103`, and G2 DOES fire** as an instrument alarm.
+⇒ **the failure mode is LOST ACCEPTS, never contaminated data.** G2 is the backstop precisely where
+the pin matters, and is silent precisely where it doesn't. **That is the correct shape and I am not
+asking for a change** — recorded so the operational step is not treated as optional.
+⇒ **Operational note to the builder, one line: set `PIN=6c141190-6341-4bdb-abe6-8281ebab0af4`. If
+it is forgotten, nothing breaks today and G2 covers the day it would.**
+
+**⭐ AND THE OBLIGATION EARNED ITS KEEP ON ITS FIRST RUN IN A WAY I DID NOT EXPECT: CHECK 3 IS THE
+ONE THAT PRODUCED INFORMATION.** Checks 1-2 confirmed a fix I already knew had landed. **Check 3 —
+*what happens on silent non-execution* — is the clause I nearly cut as boilerplate when drafting**,
+and it is the only one that returned a non-obvious answer. A successor tempted to run OB17 as a
+two-line grep should note that.
