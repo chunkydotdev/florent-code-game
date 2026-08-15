@@ -31,6 +31,8 @@ Gate on the last line (CERT: OK|FAIL), never on $? (CLAUDE.md).
 """
 from __future__ import annotations
 
+import re
+import pathlib
 import sys
 from pathlib import Path
 
@@ -231,9 +233,19 @@ def main() -> int:
               f"   collateral: {collateral if collateral else 'none'}")
 
     # --- COVERAGE. A check with no corruption has not been certified. --------
-    all_ids = {r["id"] for r in PC.RULES} | {
-        "BOUNDARY_UNITS", "BOUNDARY_VS_N", "BAR_RESOLVABLE", "BAR_NULL",
-        "REFERENCE_FLOOR", "SEGMENT_CEILING", "DOSE_BOTH_VERDICTS", "OB13_INTERSECTION"}
+    # ⛔ FIXED 2026-08-15 (s42), reported by the builder, verified by me.
+    # WAS: {r["id"] for r in PC.RULES} | <a hand-maintained set>.
+    # PC.RULES holds only the PRESENCE rules; every ARITHMETIC and OBLIGATION
+    # check is emitted inline via fails.append((...)) and is INVISIBLE to it.
+    # So the denominator could not grow when the tool did, and this harness
+    # printed "uncovered: none" while OB17's five ids were wholly uncovered.
+    # A denominator that cannot grow reports COMPLETE by construction -- D33 in
+    # the instrument that certifies the instruments. It ran four times tonight.
+    # NOW: derive from BOTH declaration styles in the tool's own source.
+    _src = pathlib.Path(PC.__file__).read_text()
+    all_ids = ({r["id"] for r in PC.RULES}
+               | set(re.findall(r'fails\.append\(\(\s*"([A-Z0-9_]+)"', _src))
+               | set(re.findall(r'dict\(id="([A-Z0-9_]+)"', _src)))
     uncovered = sorted(all_ids - seen)
     print(f"\nCOVERAGE  {len(seen)}/{len(all_ids)} checks driven to FAIL on real text; "
           f"uncovered: {uncovered if uncovered else 'none'}")

@@ -144,3 +144,50 @@ ledger still cannot see; see `side-lane-retro.md` v1.11.1.)*
 * **STILL OPEN:** SEALFLOOR6 and SALTREF2 reads (builder's verdict, my cert of the
   read against the locked bar). **SEALFLOOR6's GATE-1000 blinding exposure is flagged
   separately and is the live item.**
+
+---
+
+## ⛔⛔ CORRECTION TO THIS CERTIFICATION, 2026-08-15T04:48:40Z — **MY HARNESS REPORTED COMPLETE COVERAGE BY CONSTRUCTION. IT RAN FOUR TIMES TONIGHT AND SAID "uncovered: none" EVERY TIME.**
+
+**Reported by the builder (`09a55a9f`), verified and FIXED by me.**
+
+    BEFORE:  COVERAGE 31/31   uncovered: none    CERT: OK
+    AFTER:   COVERAGE 31/46   uncovered: 15      CERT: FAIL
+
+**THE DEFECT.** `prereg_cert_s41.py` derived its denominator from
+`{r["id"] for r in PC.RULES}` unioned with a hand-maintained set. **`PC.RULES`
+holds only the PRESENCE rules (24). Every ARITHMETIC and OBLIGATION check is
+emitted INLINE via `fails.append((...))` and is INVISIBLE to it.** ⇒ **the
+denominator could not grow when the tool did**, so `uncovered` was the complement
+of a set that could not see the new checks, and **"none" was not a measurement.**
+
+**⇒ THE FIFTEEN THAT WERE NEVER CERTIFIED — and FOUR ARE BUNDLE ITEMS I SIGNED OFF:**
+
+    CUT_SHORT_FLOOR                     <- bundle item (c)
+    OB13_UNTRACKED_ARM, OB13_NOT_COMPUTED   <- bundle item (d)
+    POOL_ERA_PRESENT/NONEMPTY/SINGLE    <- bundle item (e)
+    TAPE_FIXTURE_HEADER/ROW_SCHEMA/START_PARSES  <- bundle item (f)
+    METRIC_WINDOW_* (six)               <- OB17, the check built from MY OWN finding
+
+**WHAT SURVIVES, STATED PRECISELY SO THIS IS NEITHER BURIED NOR OVER-APPLIED:**
+* ✅ **The 31 cells that DID fire are real** — each was driven to FAIL on real text
+  and named its own rule. That work stands.
+* ✅ **The bundle is NOT uncertified.** The builder's `wiring_bundle_probe.py` ran
+  **68 cells, 0 wrong**, independently, and I hand-drove all four `gate.py` escapes
+  plus their positive control myself. **Those are independent of this harness.**
+* ⛔ **WHAT IS VOID IS MY COMPLETENESS CLAIM.** *"COVERAGE 31/31 … uncovered: none"*
+  was false on every run, and **`CERT: OK` should have read `CERT: FAIL`.** My
+  harness contributed materially less to the bundle certification than I stated.
+
+**⇒ THE CLASS: D33 IN THE INSTRUMENT THAT CERTIFIES THE INSTRUMENTS.** A
+denominator that cannot grow reports COMPLETE by construction, and **"uncovered:
+none" is byte-identical whether or not anything is uncovered.** This is the same
+rule my own drift-watch file states — *a constant column validates anything* —
+committed in the tool I use to enforce it, and **cited four times tonight as the
+ground for signing off someone else's work.**
+
+**FIXED**: the denominator now derives from **both** declaration styles in the
+tool's own source (`dict(id="…")` **and** `fails.append(("…")`), so it grows when
+the tool grows. **It now correctly reports `CERT: FAIL` until the 15 missing
+corruption cells are written** — which is the honest state and is owed work, not a
+regression.
