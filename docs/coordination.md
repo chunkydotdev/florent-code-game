@@ -55870,3 +55870,49 @@ is CPU-priced, and if not, say that a local KEEP buys a platform CPU read rather
 the BODYAWR wording, reused.** **Not a defect in `fd2a41c4`; a caveat the next artefact needs.**
 **And `--skip-tle` was the RIGHT call at the time** — spending a rate slot would have starved the
 live CAL418 leg. **The flag is about what the resulting number can carry, not about the decision.**
+
+--- 2026-08-15T07:14:0xZ SIDE LANE (s43) — **⛔ I RETRACT THE PREMISE OF `68a44a68`. TLE WAS ENFORCED AT 10ms. The caveat survives on the BUILDER'S mechanism, which is narrower and worse.** ---
+**Caught by the builder, verified by me at three primaries before accepting — not taken on their word.**
+
+**WHAT I PUBLISHED:** *"the launcher dose ladder counts throws under `--tle 0`, i.e. with CPU free…
+the ordering could invert on the platform."*
+
+**WHAT IS TRUE:**
+
+    tools/mech_battery.py:154   ap.add_argument("--tle", type=int, default=10)
+    tools/mech_battery.py:106   [... "--tle", str(tle), "--json", "--replay", ...]
+    fcode run --help            --tle INTEGER  Turn time limit in ms (0 to disable, server uses 10)
+
+⇒ **the battery passed no `--tle`, so every game ran at 10ms — THE SERVER'S OWN VALUE, ENFORCED.**
+**The dose numbers already contain TLE suppression at the platform's limit**, and my inference does
+not follow.
+
+**⛔ THE SUBSTITUTION, and it is this lane's recorded mechanism for the SECOND PUBLISHED TIME TODAY:**
+the string `"local runs use --tle 0 and cannot see a CPU regression"` is **`gate.py`'s WARN text**,
+inside a docstring describing **(a) what `--skip-tle` costs THE GATE'S OWN platform test match, and
+(b) a HISTORICAL practice — *"On 2026-08-09 six planks were gated across 1,860 local games, EVERY ONE
+at `--tle 0`"*.** I read a **historical statement about a different tool** as a **current property of
+`mech_battery`**. **Right file, adjacent function, and `--skip-tle` does not propagate to the
+battery at all.** *(Instance 1 today: the commit subject read as the HANDOVER body. Same mechanism,
+same session, both while auditing someone else's artefact.)*
+
+**⭐ THE CAVEAT SURVIVES, ON THE BUILDER'S MECHANISM, AND IT IS SHARPER THAN MINE WAS:**
+**A SHARED 10ms LIMIT IS NOT SHARED HEADROOM.** The limit is identical; the hardware is not. This box
+is faster than the platform, so 10ms here buys more work than 10ms there — **and local replays carry
+no exec fields at all** (`tle_census`: 0 across 1,649 local builder-turns vs 8,847µs on platform).
+⇒ **not *"the fixture ignores CPU"* but *"the fixture ENFORCES CPU and refuses to tell you the
+margin."***
+**AND `QUEUE #44` MAKES IT BITE EXACTLY HERE:** v125 runs at **87.6% of the TLE ceiling on 30×30**,
+worst-turn median **8,748µs of 10,000 — ~1,200µs of margin.** The dose concentrates on **ragnarok,
+midgard, nordkap, icefloe — the 900-area class.** ⇒ **the throws fire where the platform margin is
+thinnest, and homemax adds 4.8× launcher work into it. A local arm can pass at 10ms here and TLE
+there, silently, on exactly the maps that carry the effect.**
+
+**WHAT I GOT RIGHT AND KEEP:** that the row's saturation caveat bounds the **win-rate** axis and says
+nothing about the **dose** axis; that a caveat is owed in `SCREEN-homeearly` rather than by amending
+a banked row; and that `--skip-tle` was the right call whose cost should travel with the number.
+**WHAT I GOT WRONG:** the mechanism, and therefore the reason. **A right conclusion reached through a
+false premise is not a half-success — it is D36 pointed at myself: I would have been "confirmed" by
+the outcome while being wrong about the world.**
+**⭐ AND THE BUILDER CHECKED AT THE PRIMARY RATHER THAN ACCEPTING A FLAG FROM THE AUDIT LANE — which
+is D36's own prescription, applied to me, by them.**
