@@ -57169,3 +57169,82 @@ fourth "built but not running" instance today.
 **D10. UNRATED BUDGET AT ZERO FOR THE SECOND SESSION.** The no-ship rule made the
 live fixture unavailable, so this is explained rather than negligent — but
 `FIXTURE_OF_RECORD: live_unrated` has now idled two sessions running.
+
+# ============================================================================
+# 2026-08-15T16:05:0xZ — **SIDE LANE s43 WRAP** (Magnus: "Wrap up"). **Arm retro ran FIRST per
+# charter — `docs/side-lane-retro.md` → v1.13, FIRINGS 13; instance
+# `docs/retro-side-lane-2026-08-15-s43.md` committed in the same action (`8780a39a`).**
+# Session 05:56Z → 16:05Z (~10 h). 42 commits by me of 170 in the repo; ~24 flags,
+# ~14 changed an outcome, 5 published errors, 6 withheld, 1 escalation.
+# ============================================================================
+
+## PROCESS DELTAS — routed at write time
+
+**S1. ⭐⭐ A FORK BUILT FROM TWO CORRECT STEPS CANNOT BE PREVENTED BY A RULE.** *(behaviour →
+`control_pin.py`, built by the builder.)* **Three control-tree forks in one afternoon.** The rule
+against it was written by the builder at 14:32Z; **the second fork landed at 15:32Z.** And the third
+was un-ruleable by construction: **merge the arms onto the then-current control — correct. Revert the
+control when it drifted — correct. The composition left six arms worse off than before either.**
+⇒ **no rule phrased as "don't do X" catches it**, which is why it ended in a launcher that REFUSES a
+shard whose control hash moved, not in a discipline. **The pin existed for 90 minutes and nothing
+consumed it; that gap, not the edits, is what made three forks possible.**
+
+**S2. ⭐ "ON WHAT FRACTION OF THE LIVE POPULATION DOES THIS GUARD RUN?"** *(behaviour → my own retro
+Q3.)* **I audited three guards for CORRECTNESS and never for REACH**, and all three were right and
+unreachable: two tools in one commit (I checked one; the other idled 3 h 06 m) · `auto_gate`'s no-bar
+default (correct rule, **5 of 10+ shards covered**) · `mech_battery`'s drop path (real code, **never
+fired**). **Research named this exact distinction at 07:52Z — *"the deficiency is COVERAGE, not
+EFFICACY"* — and I quoted it approvingly and then committed it twice.** The question found two more
+things in the ten minutes after I wrote it down.
+
+**S3. ⭐ A MEASUREMENT OF A MOVING BASE IS A MEASUREMENT ONTO A SNAPSHOT.** *(behaviour → retro Q4.)*
+I read six trees at 15:35:35Z and reported them mismatched. **True when taken, false 70 seconds
+later — an agent was mid-restore, and an IN-FLIGHT note on this channel said so.** ⇒ **before
+measuring a shared artefact, check IN-FLIGHT for a writer.** It is the day's own headline diagnosis
+applied to me, unnoticed.
+
+**S4. PUSH-STATE IS PART OF ANY CLAIM THAT NAMES A HASH AT ANOTHER LANE.** *(instrument → retro Q6′.)*
+I flagged `e53b83a1` at the builder; **it was never pushed and would never exist for them.** My drift
+watch reads **local** `git log`. **Repaired the same hour — I checked push state before naming
+`b25e58ac`.**
+
+**S5. ⛔ THE DIRECTION MODEL IS RETIRED FOR GOOD.** v1.12 measured *"surveying is the high-risk
+state"* on 8 errors; **s43's five all came while AUDITING.** ⇒ **third direction model this
+instrument has proposed and withdrawn** (comfortable-reading, session-level, surveying). **Q3 now
+records direction as data and proposes no mechanism.**
+
+## ⚠ WHAT A SUCCESSOR MUST NOT INHERIT UNCHECKED
+
+1. **THE REMOTE HALF OF THE CONTROL PIN IS UNGUARDED AND I DECLINED TO ESCALATE IT.** Remote workers
+   run from rsynced snapshots — structurally immune to a working-tree edit, which is why remote never
+   forked today. **The exposure is a STALE snapshot, not a drifting one: different signature, no
+   instance today.** ⇒ **if a remote result ever disagrees with a local one on the same plank, check
+   that first.** My reasoning is stated so it can be overruled.
+2. **`prereg_check --fire` RUNS ON ZERO FIRING PATHS.** OB13, OB17 and the METRIC_WINDOW checks bind
+   only at that tier. ⇒ **its entire coverage today was me typing the flag at certification.** A
+   lane's attention is load-bearing for the strictest check we have.
+3. **BAR-REGISTRY COVERAGE IS MANUAL** — 202 of 206 at last count, nothing auto-populates it, **and
+   the stop rule no longer depends on it** (house floor default). The residual is an **unregistered
+   ABLATION** getting stopped by a floor its success direction inverts: 1 `le` row exists, registered
+   and complete, so **zero live instances — a trap for the next one.**
+4. **NOTHING MEASURES LOCAL TLE UNDER CONTENTION.** `cpu_watch` reads **archived PLATFORM replays**;
+   local replays carry no exec fields at all. ⇒ **a spurious wall-clock TLE suppresses a turn's
+   ACTION**, so contention is a directional behavioural change, not noise — and `corefill` is
+   **guarded at launch, unguarded in flight**.
+
+## SIDE LANE STATE — VERIFIED, NOT ASSERTED
+
+* **Dies with me:** my all-commits drift watch (**21790, 10 h 06 m**) and the commit Monitor.
+  **A successor re-arms `tools/watch/drift_watch.sh` and DRIVES ITS FOUR CELLS FIRST** — emit ·
+  BLIND announces · silent-and-DISTINCT-from-blind · UTC-not-CEST. All four discriminated at
+  05:58:0xZ today. ⚠ **`21664` is s41's orphan, alive 20 h 55 m; I left it — not mine to kill.**
+* **Survives me:** keeper · ship_watch · **auto_gate ARMED** · holder_watch · gate_watch ·
+  fleet_dispatch · corefill filler UP — **all verified by `ps`/serving, none by exit code.**
+* **Holder: v140, rating 1720, rank #23, Emerald** (recovered from a 1686 Gold trough; the tier
+  column exists only because it was added today after the demotion vanished from every surface).
+* **CAL418 fired, completed and is certified** — 20 accepts / 100 games, boundary exact, two-clock
+  margin 11m53s, `leaked_rated = 0`. ⛔ **The 115-pool is barred BY NAME and is the first thing
+  anyone will reach for.**
+* **I edited no bot, ran no arena, fired no match, typed no verdict, touched no tape or HANDOVER, and
+  took zero platform actions.** One escalation to Magnus (`26937901`), resolved by his REBASE ruling.
+* **Nothing of mine is unrelayed.** My subagent landed and was verified by me before use.
