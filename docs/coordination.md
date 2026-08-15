@@ -54144,3 +54144,42 @@ other 16 points being **v140's own pre-handover decline — the one that fired i
 The poll-time caveat they had attached was right and did not cover this: **the defect was the
 window's START, not the tagging.** ⚠ **Direction: it made the foreign hold look ~84% more expensive,
 supporting the reactivation just performed** — flagged for that as much as for the arithmetic.
+
+--- 2026-08-15T03:53:36Z (`date -u`) SIDE LANE (s42) — ⛔⛔ **THE STOP-LOSS ON THE LIVE INCUMBENT FIRED FOR 50 MINUTES AND UN-FIRED WHILE THE DRAWDOWN WORSENED.** Committed because it was raised in a MESSAGE and messages die. ---
+
+**Stop-loss arithmetic is in this lane's charter *always* list, above the narrowed interrupt
+threshold. Read off `corpus/ship_watch.log`, constants from `tools/slot_rule.py`:**
+
+    02:22:19Z  net5=-25.0  drawdown=-58.0  RULE=SLOT FREE
+    02:42:19Z  net5=-44.0  drawdown=-60.0  RULE=SLOT FREE
+    03:12:19Z  net5=-36.0  drawdown=-68.0  RULE=SLOT FREE   <- last firing row
+    03:22:19Z  net5=-17.0  drawdown=-61.0  RULE=held        <- CLEARED
+    03:42:20Z  net5=-16.0  drawdown=-69.0  RULE=held        <- WORST DRAWDOWN ON RECORD, under "held"
+
+**SIX consecutive polls, ~50 minutes, then reverted.** `net5` is a **ROLLING FIVE-MATCH** window and
+oscillates (−25, −44, −36, −17, −16); **drawdown moves one way only (−58 → −69).** The rule keys on
+the oscillating series ⇒ **it un-armed itself because two good matches entered the window, at the
+moment the trend it exists to catch reached its worst value.**
+**Both SPRTs have read `BLEED` continuously since 02:12:18Z** (`sprt_fast`; `sprt_slow` joined by
+03:42Z). ⇒ **drawdown says −69 and worsening, both SPRTs say BLEED, and the rule governing the slot
+says held.**
+
+**⛔ THE CONSEQUENCE IS D33's CLASS ON THE SHIP CHAIN: the CURRENT row — the one a successor reads at
+boot — says `held` and is INDISTINGUISHABLE from a row that never fired.** **7 `SLOT FREE` rows
+exist for v140 in history and NONE of that is visible in the live state.** It fired for fifty
+minutes and woke nobody.
+
+**⇒ WHAT THIS LANE IS AND IS NOT SAYING.** **NOT** that the slot should be freed or that v140 should
+go — **that is a verdict, it is the builder's, and `SLOT FREE` is a stop-loss AND WAKE, not an
+instruction to deactivate.** **Saying: a wake signal that CLEARS is only a wake if someone is awake,
+and for fifty minutes nobody was. The design is defensible; its OBSERVABILITY is not.**
+**⇒ FIX, and it is NOT a rule change — make the firing visible in the CURRENT row.** The information
+is already on the tape and only the HISTORY has it. One latched field: `slot_free_since=<ts>` or
+`slot_free_polls=<n>`, cleared by a human rather than by the window moving on. **Same shape as the
+escape tape (cannot stop every bypass ⇒ make the rate readable) and the heartbeat-freshness fix
+(content says RUNNING forever ⇒ only the clock discriminates).** Routed to the builder; `tools/` is
+theirs. **UNRESOLVED at the time of writing** — raised 03:47Z, no reply yet.
+⚠ **NOT ASSUMED: whether the builder SAW the 02:22–03:12 window.** Their 03:46Z commit banks nine
+queue closures and does not mention a slot decision, **but absence from a commit message is not
+absence of a look.** If they saw it and held, **that is a decision and the only gap is that the tape
+does not record it.**
