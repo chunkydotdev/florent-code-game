@@ -1127,6 +1127,57 @@ def selftest() -> int:
     chk("a malformed bar registry drops bad rows and keeps good ones",
         sorted(jb), ["OK"])
 
+    # ── PLAUSIBILITY BOUND ON THE BAR ─────────────────────────────────────
+    # Driven, not asserted. A malformed row was already covered above; this is
+    # the WELL-FORMED WRONG NUMBER, which is the class that passes every other
+    # guard because none of them can know what the bar should be. Under --apply
+    # a typo'd bar cancels real arms every ten minutes.
+    imp = tmp / "implausible_bars.tsv"
+    imp.write_text("#c\nSLIP\t5193\tge\ttypo: 51.93 with a slipped decimal\n"
+                   "FRAC\t0.5193\tge\tfraction not percent\n"
+                   "HIGH\t95.0\tge\timplausible on this fixture\n"
+                   "GOOD\t51.93\tge\tplausible\n")
+    ib = load_bars(imp)
+    chk("bar 5193 (slipped decimal) is REFUSED", "SLIP" in ib, False)
+    chk("bar 0.5193 (fraction) is REFUSED", "FRAC" in ib, False)
+    chk("bar 95.0 (implausible) is REFUSED", "HIGH" in ib, False)
+    chk("bar 51.93 (plausible) is KEPT — the bound is not refusing everything",
+        "GOOD" in ib, True)
+    # ⭐ and the DIRECTION of the refusal: a rejected bar must leave the shard
+    # UNSTOPPABLE, never stoppable on a wrong number.
+    slip_sh = shard("SLIP", 2700, 1200)   # reuse the fixture factory, do not hand-build a Shard
+    chk("a shard whose bar was REFUSED is unstoppable, not stoppable",
+        decide(slip_sh, ib, DEFAULT_STALE_S).action, "CONTINUE")
+
+    # ── KILL SWITCH ───────────────────────────────────────────────────────
+    # THE ONLY GUARD WHOSE FAILURE MODE IS "the person trying to stop the damage
+    # cannot". A pause file that does not work fails exactly when someone needs
+    # it — at 3am, on a wrong bar, by a successor who read the header and trusted
+    # it. Driven end-to-end through the SHIPPED entry point, in a subprocess,
+    # because that is the thing an operator actually invokes.
+    stop_f = REPO / "scratchpad" / "AUTOGATE_STOP"
+    pre_existing = stop_f.is_file()
+    try:
+        stop_f.touch()
+        r = subprocess.run([sys.executable, str(Path(__file__).resolve()), "--apply"],
+                           capture_output=True, text=True, cwd=str(REPO), timeout=120)
+        chk("STOP file present -> exits 0", r.returncode, 0)
+        chk("STOP file present -> says PAUSED", "PAUSED" in r.stdout, True)
+        chk("STOP file present -> evaluates NOTHING",
+            "live shard(s) evaluated" in r.stdout, False)
+        stop_f.unlink()
+        r2 = subprocess.run([sys.executable, str(Path(__file__).resolve()), "--dry-run"],
+                            capture_output=True, text=True, cwd=str(REPO), timeout=180)
+        chk("STOP file absent -> resumes and evaluates",
+            "live shard(s) evaluated" in r2.stdout, True)
+        chk("paused output and running output are NOT byte-identical",
+            r.stdout.strip() == r2.stdout.strip(), False)
+    finally:
+        if pre_existing:
+            stop_f.touch()
+        elif stop_f.is_file():
+            stop_f.unlink()
+
     import shutil
     shutil.rmtree(tmp, ignore_errors=True)
     print()
@@ -1138,7 +1189,7 @@ def selftest() -> int:
           "readable/unreadable + non-identical lines · G4 four detectors each ± · "
           "G5 null/real at identical numbers, incl. the two cells a NAME check gets "
           "wrong · G6 ablation/normal · edge cell one game either side of the bar · "
-          "catastrophe one game either side of 45.0 · marks drift ±)")
+          "catastrophe one game either side of 45.0 · marks drift ± · KILL SWITCH halts/resumes end-to-end through the shipped entry point · BAR PLAUSIBILITY refuses slipped-decimal/fraction/implausible and keeps a good one, leaving a refused shard UNSTOPPABLE)")
     return 0
 
 
