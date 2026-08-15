@@ -116,7 +116,38 @@ fi
 # The standing obligation is that a leg is always ready; the next unrated leg
 # would have died at pre-flight instead of rolling the ladder back to v104.
 # A guard that refuses everything is the failure this repo logged twice today.
-MAIN=${MAIN:-114}                # the incumbent to return the ladder to
+# ⭐ FIXED s44 2026-08-15 (side lane flag 70fd253f). THIS WAS `MAIN=${MAIN:-114}`
+# WITH THE HOLDER AT v140, so every invocation without an explicit MAIN aborted
+# at pre-flight and fired nothing — stale four days and ~26 versions, and the
+# comment block directly above records that the SAME default was already bumped
+# 104->114 once after the identical incident. A hardcoded incumbent tracking a
+# moving target goes stale BY CONSTRUCTION; bumping it again would just reset
+# the clock on the next failure.
+#
+# ⛔ WHY NOT "just read the live holder": that would make the guard at :189
+# compare the live holder against itself and PASS ALWAYS — a guard that cannot
+# fail, which is the same defect class as the one being fixed. The expectation
+# must come from an AUTHORED record and the comparison from the LIVE platform,
+# or it checks nothing.
+#
+# SO: derive from PROGRAMME.md's INCUMBENT tree (script-maintained by
+# submit_clean --activate on every verified ship) resolved through
+# corpus/version_trees.tsv. Falls back to an explicit MAIN=, and REFUSES rather
+# than guessing if the lookup fails — a wrong rollback target is the hazard.
+_derive_main() {
+  local tree ver
+  tree=$(awk '/^[[:space:]]*INCUMBENT:/{print $2; exit}' PROGRAMME.md 2>/dev/null)
+  [ -n "$tree" ] || return 1
+  ver=$(awk -F'\t' -v t="$tree" '$3==t{v=$1} END{print v}' corpus/version_trees.tsv 2>/dev/null)
+  [ -n "$ver" ] || return 1
+  printf '%s' "$ver"
+}
+if [ -z "${MAIN:-}" ]; then
+  MAIN=$(_derive_main) || {
+    echo "ABORT: cannot derive MAIN from PROGRAMME.md INCUMBENT + version_trees.tsv." >&2
+    echo "       Pass MAIN=<n> explicitly. Refusing to guess a rollback target." >&2
+    exit 2; }
+fi                               # the incumbent to return the ladder to
 GAMES_PER=5                      # a challenge is 5 games
 GUARD_S=${GUARD_S:-150}          # keep this clear of the next pairing
 WINDOW_S=${WINDOW_S:-1230}       # the rate window + margin, for a zero-accept backoff
