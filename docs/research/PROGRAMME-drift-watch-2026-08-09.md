@@ -2409,3 +2409,48 @@ run, which is the mode the first scope note already said was intended.
   **SIBLING OF D28** (the instrument was right and nobody read it) **and its exact inverse: there
   the artefact was correct and unread; here the artefact is read and stale.** Both are the gap
   between a fix EXISTING and a fix BEING IN FORCE.
+
+- **⭐⭐ D35 — `HANDOVER.md` IS READ BY ONE LANE OF THREE, SO ITS CONTENT REACHES THE OTHER TWO ONLY
+  THROUGH LOSSY CHANNELS — AND BOTH LOST THE SAME SCOPING, INDEPENDENTLY, INSIDE ONE HOUR.**
+  *(2026-08-15T06:15:53Z, s43. Self-caught after publishing and retracting my own instance,
+  `6409c3a0`; research's instance was self-reported in the same exchange.)*
+
+  **THE STRUCTURE, verified rather than asserted:** `grep -c HANDOVER` over the three command
+  files returns **builder 5, research 1, side lane 1** — and the single mention in each of the two
+  non-builder charters is a **write PROHIBITION** (*"NO HANDOVER/tape writes"*), not a read step.
+  **`HANDOVER.md` is step 1 of the BUILDER's boot and is in no other lane's boot sequence at all.**
+
+  **THE TWO INSTANCES, same hour, same lost scoping:**
+  * **Mine:** I met `d449720c` as a line in my drift watch and quoted its **COMMIT SUBJECT** —
+    *"target_value gets it wrong in the ADMITTING direction"*, flat and unscoped — then "corrected"
+    it as an over-generalisation. **The file's body scopes it to one case and states the
+    bidirectionality one line down** (*"also wrong, the other way… three ratings, three verdicts"*).
+  * **Research's, self-reported:** *"I had adopted the admitting-direction framing from the
+    builder's RELAY this morning."* **Same content, different lossy channel, same lost scope.**
+
+  ⇒ **NEITHER OF US READ THE FILE, AND THE STRUCTURE IS WHY.** A commit subject must flatten; a
+  relay must compress. **The two lanes that never open `HANDOVER.md` both received it through a
+  channel that cannot carry a caveat**, and both then acted on the flattened version.
+
+  **⛔ AND IT COST AN HOUR OF REDERIVATION ON A LINE THAT WAS ALREADY WRITTEN.** `d449720c`
+  prescribes, verbatim: *"Re-derive from `fcode team search` on **BOTH sides** before firing —
+  never from `target_value`'s cached opponent column."* **Research and I independently converged on
+  exactly that third surface over ~1 hour, each presenting it as a finding.** **D28's shape — the
+  instrument was right and nobody read it — with the aggravating detail that the s42 wrap had
+  already called `HANDOVER.md` *"the artefact most likely to be picked up cold."***
+
+  **THE WATCH FORM:**
+  1. **When a drift-watch line makes you want to correct a claim, OPEN THE FILE THE COMMIT TOUCHED.**
+     A commit subject is an index entry, never the claim. **A correction sourced from a subject line
+     is not a correction.**
+  2. **Before publishing a fix, grep `HANDOVER.md` for the thing you are about to prescribe.** It is
+     where the previous session's prescriptions live and it is the file your charter does not open.
+  3. **A relayed rule carries its scope or it is not the rule** — the compression happens in the
+     relay, so the relayer owns restating the caveat, not the recipient.
+
+  **⚠ STANDING ASK, OUTSIDE THIS LANE'S WRITE SURFACE (Magnus's, as `.claude/commands/*` always
+  is): the side-lane and research boot sequences should READ `HANDOVER.md`'s top block, not merely
+  be forbidden from writing it.** Recorded here because routing is the only mechanism available to
+  this lane — **the identical constraint is already on record at `side-lane-retro.md` v1.1 about the
+  same file**, which is itself evidence that a standing ask with no route gets re-made rather than
+  resolved.
