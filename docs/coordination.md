@@ -57287,3 +57287,56 @@ amendment proposed an obligation that became `OB17` **31 seconds later**, indepe
 trigger. **Not a retrieval failure — only the clock separates a lane that failed to look from one that
 could not have.** The duplication was real and cost one line **because it was caught while both halves
 were in living memory.**
+
+--- 2026-08-15T16:0xZ (`date -u`) **RESEARCH ARM STATE — s43 wrap. Verified, not asserted.** ---
+
+## ⛔⛔ WHAT A SUCCESSOR MUST NOT INHERIT UNCHECKED
+
+1. **⛔ THE HOLDER IS `v151`, NOT v140, AS OF 15:58Z — ON THE DAY OF A NO-SHIP RULE.**
+   `fcode status` 16:04Z: **Rating 1707 (Emerald), 1047 matches, Active bot `v151 (Loki v10 turbo
+   (CPU))`, last 10 = 2W 8L.** `elo_history`: `17:58 local (=15:58Z) -> v151`.
+   **NEITHER v150 NOR v151 HAS A `corpus/version_trees.tsv` ROW** — the same signature as
+   v145/146/147. ⚠ **THE ACTIVATOR IS NOT ESTABLISHED FOR EITHER AND I DID NOT INFER IT.** The prior
+   three were teammate x3r0's; **that is a pattern, not evidence.** Magnus's rule today was
+   *"we do not put a new bot in the slot"*. **Whose action this was is his to determine.**
+2. **⚠ `last 10 = 2W 8L` IS NOT ATTRIBUTED.** It spans a version boundary and **v151 had been up
+   ~6 minutes at my read**, so it is overwhelmingly v140's record, not v151's. **Do not quote it
+   against either tree.** A per-match `ourver` cut is the only honest read and I did not run it after
+   the handover.
+3. **`audit_trigger` NOW TRIPS 1/6: `ship cadence 0.45/hr, 10 activations in 24h.`** Was 0/6 at boot.
+   **On a day with a standing no-ship rule, ten activations in the window is the line worth reading.**
+4. **MY 668-LINE BODYBLOCK TREE FIGURE IS A SNAPSHOT OF A MOVING TARGET.** Agent read 641, I read 656
+   and relayed mine, wrap re-read gives **668**. **Re-diff before quoting.**
+5. **ONE RELAY I DID NOT VERIFY: the futility-gate "~82% of true +1.5pp arms killed."** Passed to the
+   builder as a ratification input **without re-derivation**, and it bore on a decision they took.
+6. **THE COUNT-METRIC INTERVAL IS OWED, NOT BORROWED.** `severs/game` is an overdispersed COUNT; the
+   local **DEFF 0.98 was measured on PROPORTIONS**. **No interval belongs in a prereg until the
+   cluster enumeration is performed for a per-game count.** Flagged as owed and unresolved.
+
+## LIVE SURFACES — verified this hour
+* `fcode status` 16:04Z (above) · `queue_check` **52 unblocked** (floor 3) · corpus synced, newest
+  ladder pairing **`2026-08-15T14:32:59Z`** (⚠ ~1.5 h behind the wall clock at wrap — **the archive
+  lags; do not read an absence in it as evidence**).
+* **CAL418: LOCKED (`2b365a29`, 06:44:41Z), CERTIFIED (`b89b667c`), FIRED, past its cut-short floor.**
+  Amendments **A1** (bars the 115-pool by name; PRE-STATE re-verified at a second primary) and **A2**
+  (pin stands; the process gap that became OB17) are ADD-only and were committed **blind**.
+* **`SCREEN-bodyblock`: DRAFTED AND COMMITTED UNSIGNED** (`docs/prereg/SCREEN-bodyblock-2026-08-15.md`,
+  §N line 1141). **NOT RATIFIED, NOT LOCKED. The BUILDER owns it** — I commissioned and supplied
+  evidence; they ratify and type the lock; side lane certifies before any shard.
+
+## RUNNING / DIES WITH ME
+**Nothing.** No subagent is live — the two prereg drafters and the two read agents all completed and
+**every result was relayed before this note.** No monitor, no watcher, no background job of mine.
+
+## HARD LIMITS — HELD
+**Zero platform mutations by me.** I submitted nothing, activated nothing, fired no match, ran no
+arena, edited no bot, typed no verdict, and did not touch `HANDOVER.md` or the tape. Every leg was
+fired by the builder; every verdict is theirs.
+
+## OPEN, AWAITING MAGNUS — NOT BLOCKING, BUT THE PREREG WAITS ON IT
+**`#70`'s target is literally ZERO idle-and-free, and 24.5% of bucket A PHYSICALLY CANNOT EMIT A
+VERB** (all four cardinal neighbours off-map/wall/building/occupied — decidable from the wire).
+⇒ **0% is unreachable by construction.** Scoring against the whole bucket understates a real effect by
+~a quarter; scoring against the addressable population invites the denominator to be chosen after the
+data. **Either is defensible and it is fixed in the prereg before the arm runs. It is his directive to
+adjust and neither the builder nor I settled it silently.**
