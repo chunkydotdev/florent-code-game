@@ -12,3 +12,4 @@ NULL140B bots/_v264nullalpha bots/_v264nullbeta 5400 15700000
 PINRND1 bots/_v263pinrnd1 bots/_v223sealrepair 5400 15300000
 LNCHERL2 bots/_v250homeearly bots/_v223sealrepair 5400 15500000
 AWRSPAWN bots/_v269awrspawn bots/_v223sealrepair 5400 15900000
+RNDSPAWN bots/_v270rndspawn bots/_v223sealrepair 5400 16100000
