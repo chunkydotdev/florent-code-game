@@ -187,6 +187,40 @@ def main() -> int:
         shutil.rmtree(Path(args.out) / "replays", ignore_errors=True)
     print(f"{len(rows)} games -> {outp}", file=sys.stderr)
 
+    # ⛔⛔ RECONCILE REQUESTED AGAINST RETURNED, PER ARM. ADDED s44 2026-08-15.
+    # `play()` returns None for a game with no winner (:117) and the collector
+    # silently skips it (:180) -- so a failed game leaves the DENOMINATOR rather
+    # than counting as a loss. Both totals were already printed, ~15 lines apart,
+    # and NOTHING SUBTRACTED THEM: not invisible, UNRECONCILED.
+    # ⛔ AND IT MUST BE PER ARM, which is the whole point: a failure concentrated
+    # in ONE arm -- the case that biases a comparison -- moves the battery-wide
+    # total by exactly as much as one split evenly between them.
+    # MEASURED THE SAME DAY: _v255homemax ran 10.00% NOWINNER (20/200) on a
+    # remote shard while every local battery of it read 32/32 = 100% on both
+    # arms. `tools/overnight.sh:137-148` had this right all along -- it writes a
+    # NOWINNER ROW, increments n, and ABORTS past 1% -- so the shard runner found
+    # the defect its sibling could not see. That asymmetry is the exact shape
+    # overnight.sh:50-53 already warns about: one runner hardened, the sibling
+    # left with the original behaviour.
+    want = Counter()
+    for j in jobs:
+        want[j[0]] += 1
+    got = Counter(r["cell"] for r in rows if "cell" in r)
+    missing = {a: want[a] - got.get(a, 0) for a in want}
+    if any(missing.values()):
+        print("⛔ GAMES DROPPED — a dropped game leaves the denominator, it is NOT a loss:",
+              file=sys.stderr)
+        for a in sorted(want):
+            m = missing[a]
+            mark = "   <-- DROPPED" if m else ""
+            print(f"     {a:<10} requested {want[a]:>4}  returned {got.get(a,0):>4}"
+                  f"  dropped {m:>3}{mark}", file=sys.stderr)
+        print("   ⚠ AN ARM-CONCENTRATED DROP BIASES EVERY COMPARISON BELOW. "
+              "Treat this run as UNSCORABLE until the cause is known.", file=sys.stderr)
+    else:
+        print(f"reconciled: requested == returned on every arm "
+              f"({', '.join(f'{a} {want[a]}' for a in sorted(want))})", file=sys.stderr)
+
     # Mechanism first, win rate second -- deliberately in that order.
     print("\nMECHANISM (the metric only this change can move)")
     print(f"  {'arm':9s} {'games':>6s} " + " ".join(f"{n:>10s}" for _l, _h, n in BANDS)
