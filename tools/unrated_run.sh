@@ -158,23 +158,44 @@ LOG=scratchpad/unrated_run_v${VER}_${STAMP}.log
 
 say(){ print -r -- "$(date -u +%H:%M:%SZ) $*" | tee -a "$LOG"; }
 holder(){ .venv/bin/fcode status 2>/dev/null | grep "Active bot" | sed 's/.*Active bot: //'; }
+holder_ver(){ holder | sed 's/^v//;s/ .*//'; }   # "v140 (Loki v10)" -> "140"
 
-# --- guard 6: restore the incumbent, verify, and shout if it did not take ------
+# ⛔⛔ RESTORE THE PRE-UPLOAD HOLDER, NOT THE AUTHORED INCUMBENT. Added s44
+# 2026-08-15 on Magnus's rule: "You can run unrated games, but make sure to
+# re-activate whatever was active before you uploaded."
+#
+# THE DEFECT THIS FIXES: restore() activated $MAIN, derived from PROGRAMME.md's
+# INCUMBENT (v140). That is correct ONLY while v140 holds the slot. Magnus has
+# also ruled that if x3r0 uploads, THEIR bot stays — so the holder at fire time
+# may legitimately not be ours, and restoring $MAIN would then INSTALL v140 over
+# a bot we were told to leave alone. The runner would have breached the standing
+# rule while believing it was obeying one.
+#
+# ⛔ AND THE TWO VALUES MUST STAY SEPARATE, which is the subtle half:
+#   MAIN       = AUTHORED expectation (PROGRAMME.md INCUMBENT). Used ONLY for the
+#                pre-flight comparison, so that check keeps its power to FAIL.
+#   RESTORE_TO = the LIVE holder read at pre-flight, BEFORE any upload. Used for
+#                the restore.
+# Collapsing them into "just read the live holder" is what would make the
+# pre-flight guard compare the holder against itself and pass always — the
+# guard-that-cannot-fail defect fixed in this same file this morning.
+RESTORE_TO=""
+
 restore(){
-  local tries=0 h
+  local tries=0 h target=${RESTORE_TO:-$MAIN}
   while [ $tries -lt 4 ]; do
-    .venv/bin/fcode submission activate "$MAIN" >/dev/null 2>&1
+    .venv/bin/fcode submission activate "$target" >/dev/null 2>&1
     sleep 2
     h=$(holder)
     case "$h" in
-      v${MAIN}*) say "rollback confirmed: holder=$h"; return 0 ;;
+      v${target}*) say "rollback confirmed: holder=$h (restored the PRE-UPLOAD holder v$target)"; return 0 ;;
     esac
     tries=$((tries+1)); say "rollback attempt $tries did not take (holder='$h'), retrying"
     sleep 3
   done
   say "*** ROLLBACK FAILED after 4 tries. HOLDER='$h'. THE LADDER IS RUNNING THE"
-  say "*** WRONG BOT. Fix by hand NOW: .venv/bin/fcode submission activate $MAIN"
-  print -r -- "$(date -u +%H:%M:%SZ) rollback failed, holder=$h" >> corpus/HOLDER_ALERT
+  say "*** WRONG BOT. Fix by hand NOW: .venv/bin/fcode submission activate $target"
+  print -r -- "$(date -u +%H:%M:%SZ) rollback failed, holder=$h want=v$target" >> corpus/HOLDER_ALERT
   return 1
 }
 trap 'say "interrupted — restoring incumbent"; restore; exit 130' INT TERM
@@ -215,9 +236,21 @@ say "UNRATED RUN  version=v$VER  target=$WANT games  incumbent=v$MAIN"
 say "cells=${#CELLS[@]}  outfile=$OUT   (arm_*.txt so rate_budget can attribute it)"
 
 h=$(holder)
+# ⭐ CAPTURE THE RESTORE TARGET HERE — the LIVE holder, read BEFORE any upload.
+# Magnus, s44: "make sure to re-activate whatever was active before you uploaded."
+# This is deliberately read from the platform and NOT from $MAIN: the two answer
+# different questions and are allowed to disagree (see restore()).
+RESTORE_TO=$(holder_ver)
+[ -n "$RESTORE_TO" ] || { say "ABORT: could not read a holder version to restore to. Firing nothing."; exit 1; }
+say "restore target captured: v$RESTORE_TO  (this is what the slot returns to, whatever happens)"
+
 case "$h" in
   v${MAIN}*) say "holder before: $h" ;;
-  *) say "ABORT: expected incumbent v$MAIN, holder is '$h'. Firing nothing."; exit 1 ;;
+  *)
+    # ⛔ NOT v$MAIN. Under the standing rule this is a STOP, not a restore-first:
+    # a foreign holder is to be LEFT ALONE, so we neither fire nor touch it.
+    say "ABORT: expected incumbent v$MAIN, holder is '$h'. A foreign holder is LEFT ALONE — firing nothing, touching nothing."
+    exit 1 ;;
 esac
 
 # --- guard 7a: our own spend ledger, in epoch seconds, attempts not matches ----

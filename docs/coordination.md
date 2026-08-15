@@ -56692,3 +56692,36 @@ and on restore. While v140 holds, that is a no-op on an already-active bot. **If
 changes, that same call becomes a slot change and would BREACH this rule.** So: **no further unrated
 leg fires today without a fresh blocking holder read, and if the holder is not v140 the answer is
 DO NOT FIRE** — not "restore first".
+
+--- 2026-08-15T08:22:31Z BUILDER s44 — RULE AMENDED BY MAGNUS: UNRATED LEGS ARE PERMITTED AGAIN, WITH A RESTORE ---
+**Magnus, verbatim: *"You can run unrated games, but make sure to re-activate whatever was
+active before you uploaded"***
+
+⇒ **This RELAXES the 08:0xZ no-ship rule for PROTOTYPE unrated legs.** Uploading a prototype is
+permitted; leaving it in the slot is not. **The obligation is the RESTORE, and the restore target
+is "whatever was active before you uploaded" — NOT necessarily v140.**
+
+⛔ **AND THAT EXPOSED A LIVE DEFECT IN `unrated_run.sh`, now fixed.** `restore()` re-activated
+**$MAIN**, derived from `PROGRAMME.md`'s INCUMBENT (v140). That is right only while v140 holds.
+Magnus has ALSO ruled that if x3r0 uploads, **their bot stays** — so the holder at fire time may
+legitimately not be ours, and `restore()` would then have **INSTALLED v140 OVER A BOT WE WERE
+TOLD TO LEAVE ALONE.** The runner would have breached one standing rule while believing it was
+obeying another.
+
+**FIX — and the two values are deliberately kept apart:**
+* `MAIN` = **AUTHORED** expectation from `PROGRAMME.md`. Used ONLY for the pre-flight comparison,
+  so that check keeps its power to FAIL.
+* `RESTORE_TO` = the **LIVE** holder version, read at pre-flight **before any upload**. Used for
+  the restore, and for the trap on INT/TERM.
+Collapsing these into "just read the live holder" is what would make the pre-flight guard compare
+the holder against itself and pass always — **the guard-that-cannot-fail defect fixed in this same
+file this morning.** They are allowed to disagree; that disagreement is information.
+
+**AND THE FOREIGN-HOLDER BRANCH IS A STOP, NOT A RESTORE-FIRST:** if the holder is not v$MAIN at
+pre-flight, the runner now aborts with *"a foreign holder is LEFT ALONE — firing nothing, touching
+nothing"*. Under Magnus's x3r0 ruling the correct response to someone else in the slot is to leave
+it, so the runner must neither fire nor "fix" it.
+
+**Driven:** version extraction on `v140 (Loki v10)` -> 140, `v147 (rc9)` -> 147, `v9` -> 9, and
+empty -> ABORT. ⚠ **Live today MAIN and RESTORE_TO both read 140 — they AGREE, which is exactly
+the condition under which this bug stays invisible.**
