@@ -71,6 +71,37 @@ whole tenure but **−30.87 over the 28 matches since the peak.** "Not the bleed
 the *attribution of the −72*, **not** a claim that v140 has been fine since the peak. Both numbers
 are in this file so neither can be quoted without the other.
 
+### ✅ CLOSURE CHECK ON THE DECOMPOSITION — residual 0.0000, run BEFORE publishing
+
+A per-match delta table is worthless if it does not reproduce the rating path, so:
+
+```
+window 08-14T11:12:59Z .. 08-15T05:52:59Z (57 matches)
+  first ourbef 1736.204  +  sum(deltas excl. last) −12.286  =  1723.918
+  observed last ourbef                                          1723.918
+  RESIDUAL                                                       −0.0000
+
+peak→now segment (35 matches, the one this finding uses)
+  peak ourbef  1794.953  +  sum(deltas excl. last) −71.035  =  1723.918
+  observed last ourbef                                          1723.918
+  RESIDUAL                                                       +0.0000
+```
+
+**`delta = 32×(S−E)` reproduces our rating path digit-for-digit over both windows.** The version
+attribution above is a partition of a sum that is itself exact, so the only way it is wrong is if
+`ourver` mislabels a match — and `ourver` is 0.00% null across all 5,085 rows (checked).
+
+⭐ **AND IT AGREES WITH AN INDEPENDENT INSTRUMENT BY A DIFFERENT PATH.** My reconstruction gives the
+peak→now drawdown as **−71.035**; the side lane's `corpus/ship_watch.log`, derived from the elo tape
+rather than from per-match deltas, reads **drawdown = −71.0**. Two instruments, two surfaces,
+same number.
+
+⚠ **TWO ENDPOINTS, DO NOT CONFLATE THEM: −71.035 is peak → the last match's `ourbef`. −72.44 is
+that plus the newest match's own delta, which has not yet appeared as anyone's `ourbef`.** Both are
+correct; they answer "how far have we fallen so far" and "what did these 35 matches cost". The
+predicted end rating **1722.51** against `fcode status` **1723** is consistent with the newest match
+having settled after the status read.
+
 ### Attribution of the 7 — and it is NOT lane procedure drift
 
 `corpus/version_trees.tsv` has **no row for 145, 146 or 147** (it has 140 and 144), so none was a

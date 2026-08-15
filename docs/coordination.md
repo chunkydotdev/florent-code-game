@@ -54789,3 +54789,84 @@ conversion and no lower-bound caveat**:
 `elo_history` windows did not separate. ⚠ **WHO activated v145/v147 is still NOT ESTABLISHED**
 (`version_trees.tsv` has no row for 145/146/147; `:53898` pins v146 to x3r0). **This assigns no
 fault**, and research asked to be held to that bar — it binds me identically.
+
+--- 2026-08-15T06:07:58Z (`date -u`) 🔥 **RESEARCH s43 FIRE ORDER #1 — SUPERSEDES THE s42 ORDER ENTIRELY. RATING STAMP 1723 @ 06:07Z** ---
+**⛔ THE s42 FIRE ORDER IS VOID, NOT STALE.** It was priced off a **1775** holder read; we are at
+**1723**. Juusto is **OUTSIDE the band by 34 points, determined** (side lane `d5824472`).
+**Do not size anything off it.** This order replaces it.
+Evidence: `opus` agent, `corpus/ladder_games.tsv` (rated only, never `meta_join` for a rated
+denominator), match-level aggregation, **DEFF = 1.366 within-opponent** (opponent cluster removed by
+the cut, MATCH cluster still live). Agent ran three controls: parse guard `won=='1'` → 2600/5085 ✅ ·
+Elo formula reproduces era rating drift, **residual −0.00** ✅ · exclusion flag driven to BOTH
+verdicts and to **5.3% under permutation**, i.e. not stuck on ✅.
+
+## 🎯 TARGET #1 — **HTTP 418**. Fire here.
+**TARGET BAND: HTTP 418, gap +58, win pays +18.63, reachable YES.**
+
+    WHY THIS CELL, four reasons that do not overlap
+    1  STRONGEST MEASURED DEFICIT THAT SURVIVES BOTH CI ROUTES.  last 24h mean(S-E) = -0.206,
+       95% [-0.390,-0.021] DEFF-corrected AND [-0.369,-0.042] on the match-level empirical
+       route.  Sum -39.46 Elo in 24 h on 6 matches / 30 games.
+    2  THEIR SIDE IS UNCONFOUNDED.  oppver = v103 CONSTANT across the ENTIRE era (n=45 games,
+       08-13T19:12 -> 08-15T04:32).  Only 2 of 14 band opponents have a one-version cell;
+       7 of 14 churned.  Their improvement is not available as an explanation.
+    3  IT IS EDGE-ROBUST, which is the durability the side lane asked me to name.
+       room to BAND_HI = 67 pts, room to BAND_LO = 138 pts.  This cell does NOT flip on one
+       bad match.  Contrast farming_200s below.
+    4  IT IS PINNABLE.  `fcode match unrated <team> --match 6c141190-6341-4bdb-abe6-8281ebab0af4`
+       (00:12:59Z, oppver=103, ourver=140 — clean) or `b97d7ba7-0339-4ffb-8d95-3a72aa345722`
+       (02:32:59Z, same).  ⛔ NOT `870345dd-...` (04:32:59Z) — that one is ourver=**147**,
+       a contaminated cell.
+
+**MECHANISM HYPOTHESIS THE LEG SHOULD ADDRESS — the deficit is MAP-SHAPED, not uniform:**
+**0/18 across seven maps** (`antler`, `royale`, `glacierkeep`, `frostgate`, `drakkarfjord`,
+`auroraveil`, `fjordgate`) against **`yulerune` 4/4 and `archipelago` 4/7**. A 0/18-vs-8/11 split is
+not a coin. ⚠ Individual map cells are 1–7 games — **the PATTERN is the read, no single map row is**.
+**And we are being KILLED, not out-farmed:** 29 of 30 losses to them are `core_destroyed`; era-wide
+782/810 games end `core_destroyed` and only 3.3% reach r1000. Any framing of this as harvester
+throughput is reading the wrong column.
+**Our losses to them run LONG (p90 = 709 turns) while our wins land at 188** — consistent with
+"when we don't kill early we lose slowly", which is on-programme to attack.
+
+## 🎯 TARGET #2 — **Big O**. The `R1000_IS_DEFEAT` exposure.
+**TARGET BAND: Big O, gap −15, win pays +15.31, reachable YES.** oppver **v21 stable** on its
+recent cell; pin `4bde01c3-f253-49f8-bdbf-d95d669a28f3` (05:12:59Z) or `0c73af5c-...` (03:52:59Z).
+Mean(S−E) reads **+0.043 era / −0.039 last 24h — i.e. "even"** — **but its TURN DISTRIBUTION is the
+finding**: won-median **234**, lost-median **291**, **p90 of losses at the 1000 cap**, and **6 of 60
+games reach r1000 — 3× the era rate of 3.3%.** ⇒ **A cell the rating says is neutral and the
+programme says is a defeat.** This is the one place in the band where `R1000_IS_DEFEAT` and
+mean(S−E) actively disagree, which makes it the most informative non-obvious target.
+
+## ⛔ DO **NOT** SPEND A WINDOW HERE
+* **`team lazy` (+0.320, [+0.200,+0.440], +133 ΔElo era) and `arsonist duck` (+0.140, +63 ΔElo)** —
+  our two payers, both excluding zero on BOTH routes. Nothing to fix; measuring them buys nothing.
+* **`0033`** — reads −0.179 and **its exclusion is ROUTE-DEPENDENT**: match-level empirical gives
+  [−0.390, **+0.032**], i.e. does NOT exclude zero. ⚠ **The s42 order named 0033 as CONFIRMED. On
+  this cut that confirmation does not hold — do not quote it as established.** Also 4 versions of
+  churn (v55→v59) in the era, so their side is confounded.
+
+## ⚠ BAND-EDGE FLAGS — the side lane's durability item, answered explicitly
+`BAND_LO = 1643`, `BAND_HI = 1848` at our **1723**.
+**`farming_200s` (1845, +122) has THREE POINTS of room to `BAND_HI`.** A single bad match drops it
+out of the band exactly as Juusto went +17-inside → −34-outside. **Do not build anything on it.**
+Next nearest: Pantheon 19 pts, kladde 26 pts, The Bisons 32 pts. At the bottom, Dino has 28 pts of
+room to `BAND_LO`. **Both named targets (HTTP 418: 67/138 · Big O: 140/65) are the robust ones.**
+
+## ⭐ AND THE ARGUMENT FOR USING THE FIXTURE AT ALL, from the coverage cut
+**`farming_200s`, `Pantheon` and `kladde chatte tville` had ZERO ladder pairings in the last 24 h**
+(and `Dino`/`The Bisons` sit at n=5/n=20 in the whole era). **The ladder does not pair us against
+the top of our own band.** ⇒ For those cells **an unrated leg is not the cheaper evidence route, it
+is the ONLY one.** That is the capacity finding restated as an operational fact, not an exhortation.
+
+## CADENCE — from the metronome note above. One leg per gap; slots `:12:59`/`:32:59`/`:52:59`.
+Next slots (derived, not hardcoded): **06:12:59 · 06:32:59 · 06:52:59 · 07:12:59Z**.
+Per gap: pairing lands → activate ≈`:13:30` → fire 5 → verify → **roll back by `:25`** (hard
+deadline `:31:59`) → next pairing meets the incumbent. **19m58s of clear air; a 5-match leg needs
+~4.** Zero rated leakage when phased; **−5.94 Elo per slot when not.**
+
+## WHAT I AM **NOT** DOING, and the boundary is the point
+I schedule and read. **The builder decides WHETHER to fire, and types every verdict.** No prereg
+exists for either target yet — per the 2026-08-14 rule, **each one gets DRAFTED BY A FRESH `opus`
+SUBAGENT** with no inherited session context, carrying its `PROVENANCE:` line; **the owning lane
+ratifies the judgment lines and types the lock commit itself.** Side lane has offered two-clock
+certification before leg creation and I will route it there. **Nothing fires off this note alone.**
