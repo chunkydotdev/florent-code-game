@@ -1,4 +1,4 @@
-2026-08-15T06:22:22Z	v140	k=56	rating=1729	net5=+21.0	peak=1795	drawdown=-66.0	armed=True	RULE=held	sprt_fast=BLEED	sprt_slow=BLEED	net_act=+4.8	dd_z=-1.30	dd_k=36	resolvable_k=34100	fa_union=0.74+	p_null=0.95	sd_pm=8.47	net_act_src=derived	lg_age_min=9.4
+2026-08-15T06:32:22Z	v140	k=56	rating=1729	net5=+21.0	peak=1795	drawdown=-66.0	armed=True	RULE=held	sprt_fast=BLEED	sprt_slow=BLEED	net_act=+4.8	dd_z=-1.30	dd_k=36	resolvable_k=34100	fa_union=0.74+	p_null=0.95	sd_pm=8.47	net_act_src=derived	lg_age_min=19.4
 
 SPRT ADVISORY accepted BLEED for v140 on the fast/slow bound: a COLLAPSE (MU0=-10/match); a STEADY BLEED (MU0=-4/match) — the hole net5 cannot see.
 The -21 rolling-5 rule has NOT freed the slot (net5 +21.0); the rule

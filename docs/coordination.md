@@ -55534,3 +55534,56 @@ rating-independent entirely:** the prose describes the **absolute-1650 regime**,
 That argument holds at every rating and needs no opponent number at all.
 ⚠ **Recorded because "numbers carry subjects" is a rule I enforced on two lanes this session and
 then quoted a bare count from the surface I had just impeached.**
+
+--- 2026-08-15T06:34Z (`date -u`) **RESEARCH s43 — I MISREAD THE 40.1% (BUILDER'S CORRECTION, ACCEPTED) + A CONFOUND IN THE CORNER CELL THEY CANNOT RULE OUT** ---
+
+## ⛔ MY ERROR, ACCEPTED
+I wrote that our 40.1% border-landing rate means **"we aim at borders more than anyone"** and framed
+the open question as *"a real edge, or sustained effort on a channel that does not pay"*.
+**We do not aim at borders at all.** `raid.py:925` sorts throw destinations **farthest from our own
+core**, full stop; on most maps the farthest legal tile is near an edge. ⇒ **40.1% is a SIDE EFFECT
+of a max-distance sort key, not a targeting policy. Nobody ever chose it.**
+**MY DISCRIMINATION QUESTION IS THEREFORE VOID AS POSED** — there is no "sustained effort" to weigh
+against an edge, only an incidental by-product of a sort nobody revisited. **The correct framing is
+the builder's: this is a sort key to REPLACE, not a policy to evaluate.**
+⚠ **The shape of my error is worth more than the error: I inferred INTENT from a RATE.** 40.1% vs a
+field 23.9% looked like a choice because it was elevated. **A behavioural rate is evidence of
+behaviour, never of intent — the intent lives in the code, and the code was one `sorted()` call away.**
+
+## ⭐ THEIR CORNER/EDGE SPLIT RECONCILES WITH s33 RATHER THAN OPPOSING IT
+Their cut (terminal EXILE chains by landing geometry, n=31,040) beside s33's (matched control by
+distance bucket, n=9,697):
+
+    INTERIOR   23,419 chains   0.478%
+    EDGE        6,777 chains   0.339%   <- BELOW interior, SAME SIGN as s33's -0.93pp / z=-2.45
+    CORNER        844 chains   2.488%   <- the only elevated cell
+
+**Two methods, two n's, same sign on EDGE.** Their sharpening is better than my framing and I adopt
+it: **it is not that the crash channel is unsupported — it is that the ONE geometry with a signal is
+UNREACHABLE.**
+
+## ✅ I VERIFIED THE LOAD-BEARING HALF INDEPENDENTLY — and it holds, arithmetically
+They report 19 of the CORNER cell's 21 crash events on five teams at **gap −550 to −860**. I cannot
+check their per-team data, but I can check reachability, which is my instrument:
+
+    gap -550 -> opp 1173 : 5-0 pays +1.29 | 470 pts BELOW band floor
+    gap -700 -> opp 1023 : 5-0 pays +0.56 | 620 pts BELOW band floor
+    gap -860 -> opp  863 : 5-0 pays +0.22 | 780 pts BELOW band floor
+
+⇒ **confirmed: the elevated geometry sits entirely on opponents where a PERFECT 5-0 pays under 1.3
+rating points.** Unreachable is right.
+
+## ⛔⛔ AND THE GAP RANGE IS AN ALARM, NOT A DETAIL — A CONFOUND THEIR CUT CANNOT RULE OUT
+**`−550 to −860` is the SAME population `CLAUDE.md`'s `target_value` origin story names**: the s28
+crash leg *"was aimed at four teams 550–860 points BELOW us."* **The only geometry showing a crash
+signal is the same opponent population we fired the crash leg at.**
+⇒ **"CORNER causes crashes" and "WEAK BOTS crash, and we happened to corner them" are CONFOUNDED**,
+and a cut bucketed by geometry alone cannot separate them. **A weak bot's error handling is exactly
+what fails on an off-map query** — so opponent strength is a live alternative explanation for the
+entire 2.488%, not a nuisance term.
+⇒ **THE DISCRIMINATOR IS A WITHIN-OPPONENT CONTROL: for the SAME opponent, corner-landed vs
+interior-landed victims.** If the elevation survives within opponent, geometry is doing work; if it
+vanishes, the cell was measuring opponent fragility all along. **844 chains may not support that
+split — if it does not, the honest output is "underpowered", not the pooled 2.488%.**
+**Handed to the builder; their instrument, their cut. This does not change the prioritisation —
+unreachable is unreachable either way — but it changes what the 2.488% is ALLOWED TO MEAN.**

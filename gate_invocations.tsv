@@ -155,3 +155,4 @@ ts	tool	user	host	mode	escapes	setter	reasons	subject
 2026-08-15T05:30:18Z	prereg_check.py	junghard	MacBook-Pro.local	prereg				docs/prereg/SCREEN-beltsever-2026-08-15.md
 2026-08-15T05:30:52Z	prereg_check.py	junghard	MacBook-Pro.local	prereg				docs/prereg/SCREEN-beltsever-2026-08-15.md
 2026-08-15T05:31:05Z	prereg_check.py	junghard	MacBook-Pro.local	prereg				docs/prereg/SCREEN-beltsever-2026-08-15.md
+2026-08-15T06:34:10Z	gate.py	junghard	MacBook-Pro.local	battery				plank=_v250homeearly;control=_v223sealrepair;parent=_v223sealrepair;opponents=_probe_border_raw;maps=hive,atoll,meander,archipelago,saga,nordkap
