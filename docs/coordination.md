@@ -54242,3 +54242,112 @@ the time while rated 200 points below them as a "hole", and it has no way to see
 ⇒ **Any future target ranking uses S−E, restricted to the current era, in band.**
 ⚠ **Honest limit: n = 7 and n = 8 RATED matches. These are small.** The unrated cells are larger
 (0033: 42 matches) and agree in direction. **The direction is what I am banking; the level is not.**
+
+# ============================================================================
+# 2026-08-15T05:5xZ — **BUILDER ARM s43 WRAP** (Magnus called it). Arm retro ran FIRST
+# (docs/builder-arm-retro.md s43 instance, FIRINGS 5, committed before this block).
+# Session 2026-08-14T20:40Z → 2026-08-15T05:5xZ (~9h). 85 repo commits, three lanes.
+# ============================================================================
+
+## PROCESS DELTAS — routed at write time
+
+**D1. ⛔⛔ A GUARD AND ITS GUARDED ACTION IN ONE NON-BLOCKING SEQUENCE IS NOT A GUARD.**
+*(behaviour → this booted tape; certified by the side lane.)* I fired 5 unrated accepts
+against Juusto **with x3r0's v146 active instead of our v140**. I DID run the holder check —
+**in the same command block as the firing loop**, so it printed `Active bot: v146` and the
+loop fired anyway. **The check ran and asserted nothing.** `HANDOVER`'s top block, read by me
+at boot, says verbatim *"⛔ VERIFY `Active bot:` before acting — x3r0 uploads on no
+schedule."* ⇒ **the holder read is a SEPARATE, BLOCKING step whose value is asserted before
+any firing command is composed.** ⚠ **And the side lane's bound is the half that keeps it
+honest: prevention has a TOCTOU floor** — x3r0 uploaded 72 seconds before I fired, so
+ordering shrinks the window and never closes it. **The complement is DETECTION: record the
+holder PER ACCEPT so a contaminated accept is identifiable afterwards even when it was not
+preventable.** Same shape as the escape tape — you cannot stop every bypass, so make it
+readable.
+
+**D2. ⛔ A FINDING THAT LIVES IN A SESSION TRANSCRIPT DIES WITH THE SESSION — AND ONLY A
+QUESTION FROM OUTSIDE FOUND IT.** *(behaviour → the tape.)* **Five queue closures (#60, #67,
+#54, #51, #22) were relayed to research in a cross-session message and NEVER BANKED IN THE
+REPO.** They surfaced only because Magnus asked *"which were killed the last 5 hours and
+why"* and **I went to the commit log to answer him and it could not.** Banked at
+`docs/research/CLOSURES-s43-2026-08-15.md`. ⇒ **a closure is banked in the repo at the moment
+it is reached, not at wrap** — the wrap is where they get *lost*, because by then they are
+memory.
+
+**D3. RETRACT AT THE PROVENANCE RECORD FIRST, THEN THE ARGUMENT SITES.** *(D21, fired on me.)*
+I corrected #51's false "zero rated throws" number **in a commit message** and left the claim
+standing **in the closure doc for 17 minutes**. **A successor reads the doc, not `git log`.**
+
+**D4. ⭐⭐ D33 — A GUARD THAT REPORTS SUCCESS ON A NO-OP. NINE INSTANCES IN ONE SESSION,
+ACROSS ALL THREE LANES, EVERY ONE COMMITTED BY A LANE THAT WAS AUDITING THE CLASS.**
+*(promoted to `docs/research/` + this tape.)* A silent scipy fallback emitting an **illegal
+negative proportion**; `target_value`'s cached-rating fallback; a heartbeat frozen at
+`RUNNING` through a curfew; `cores_idle` defaulting to a retired predicate; my `git add -A
+<path> 2>/dev/null` → empty index → `commit` no-ops → **`push` still echoed PUSHED**;
+`era_guard` returning an **empty list** for `throws.tsv` on the one surface where a real zero
+had just been established; a certification harness whose **denominator could not grow**,
+printing `uncovered: none` by construction; an unescaped backtick mangling a line **inside
+the commit correcting D33**; and my corpus rebuild exiting **RC=0 having written ZERO rows**.
+⇒ **The shape is AN ERROR PATH THAT RETURNS THE SAME VALUE AS A CLEAN NEGATIVE RESULT.**
+⚠ **AND THE DATA-SIDE VARIANT IS A DIFFERENT MECHANISM, HARDER TO CATCH: a CONSTANT COLUMN.**
+`throws.tsv`'s `life/core_atk/any_atk/reached` are populated for `INSERT` **only**; `EXILE`
+reads `-1/0/0/0` and **I published that as a measured zero.** **No error occurred at all** —
+nothing failed, the column simply is not measured for that row kind. **Only two of the nine
+were caught by a check; the rest by an IMPOSSIBLE VALUE.**
+
+**D5. ⭐ SIZE OFF THE VALUE YOU MUST EXCLUDE, NOT THE ONE YOU HOPE TO OBSERVE — now
+`OBLIGATION 16`.** *(→ the obligations doc, which IS booted; I first promoted it into a
+closure doc **no lane opens**, the s29 finding committed against a rule about rules, and the
+side lane rehomed it.)* I sized #17's re-run off the point estimate of the underpowered run
+it was replacing. The n explodes as the truth nears the bar (**73 / 707 / 3,147 / ∞** for
+truths 5/8/9/10% against a 10% bar) ⇒ **an estimate near the bar can never tell you how much
+data the bar needs.** **Corollary found by its own first application 13 minutes later: the
+standard corefill band 48.67/51.33 IS 50 ± half-width, so its implied MDE is 0.000pp** — a
+point rule that cannot be sized. **Rider, and it is the half most likely to be lost: an
+unresolvable bar is a reason to state what IS resolved, not a licence to spend games until
+it resolves.**
+
+**D6. ⭐⭐ MAGNUS'S, AND IT IS THE SESSION'S BIGGEST: A MECHANISM-OCCURRENCE KILL IS ONLY
+VALID IF THE OCCURRENCE RATE IS A PROPERTY OF THE GAME, NOT OF OUR CONFIGURATION.** Verbatim:
+*"If we are supposed to try new ideas and we can't build a version where it happens more than
+1.5% of games, we haven't leaned into it enough. If we are trying something new and it barely
+happens, how can we say we have tried it at all?"* **Every mechanism-occurrence kill typed
+tonight measured a rate WE CHOSE** — `LAUNCHER_MIN_RND=160`, a one-launcher latch, home-only
+siting, aim-away-from-borders. **The machinery checks that a mechanism was DOSED; nothing
+asks whose choice the dose was**, and a null on our configuration is not a null on the idea.
+⚠ **AND THE BOUND, from acting on it: `#58` ALREADY built forward siting and was REFUTED
+(0.04 evictions/game vs a >1.0 bar), and the count latch is a MEASURED LOSS (LAUNCH2 44.67 /
+LAUNCH3 43.73 at n=5,408/arm).** ⇒ **we had leaned in on two throttles of four; the untested
+one is the AIM.** **A principle that reopens every closure is as wrong as one that closes
+every road — the useful form names WHICH throttle was never lifted.**
+
+**D7. ⭐ RECONSTRUCTION SUPERSEDES ARMED WATCHERS FOR GATE READS.** *(instrument → standard.)*
+An armed watcher closes the *which-moment-did-you-look* freedom **by convention** and needs
+setup in advance — which fails every session reboot. **Reconstruction closes it by
+ARITHMETIC**: the tape is append-only, so the reading at the first crossing can be rebuilt
+afterwards. GATE-2700 was read at n=2700 **and** n=2710 **and** all 2737 rows — **verdict
+invariant at every crossing point**, and it needed nothing prepared.
+
+**D8. A DECODER SCHEMA CHANGE FREEZES THE CORPUS AND NOTHING LINKS THE TWO.** My
+`replay_throws` change went 21→24 columns; `sync.py`'s header-drift guard **correctly
+refused** to append and named the fix; the keeper **correctly alarmed** at 05:13:27Z. **Every
+corpus table was frozen for 79 minutes because I did not read my own alarm.** ⇒ **the honest
+fix is that a decoder commit touching `COLS` should fail its own selftest until the table is
+rebuilt.** Not done.
+
+## ⚠ WHAT A SUCCESSOR MUST NOT INHERIT UNCHECKED
+1. ⛔ **THE `--fire` TIER IS ADVISORY.** `OB13_UNTRACKED_ARM`, `OB13_NOT_COMPUTED` and all six
+   `METRIC_WINDOW_*` bind **only when a human types `--fire`**, and **`grep -rn -- "--fire"
+   tools/` returns nothing in any firing path** — `overnight.sh` mentions `prereg_check` only
+   in a comment. **Durable fix: `corefill.sh` refuses to launch a shard whose prereg fails
+   `--fire`. DEFERRED because `BODYAWR` is live and `corefill.sh` is its runner.**
+2. **`corpus/throws.tsv` HAS THREE TRAPS**, enumerated at
+   `docs/research/CORRECTION-throws-exile-columns-2026-08-15.md`: outcome columns are
+   INSERT-only; there is **no version column**; `join.tsv` covers ~3,770 files against
+   `meta_join`'s ~44,785 so a cut built on it understates ~10×. **Two false headlines came
+   out of this one table in one hour, both mine, both handed to Magnus.**
+3. **The cross-host dispersion finding is n=3 and its 2-of-3 count hinges on 0.053pp**
+   (p=0.007 vs p=0.14). `NULL5400` is stocked to resolve it. **It is not a constant.**
+4. **`#69` rests on ONE opponent, not two** — research downgraded it at wrap: Leviathan's
+   S−E is −8.9pp [−21.5, +3.6] and does not exclude zero; they are a strong team at +207,
+   not a conjunction instance. **0033's evidence is untouched.**
