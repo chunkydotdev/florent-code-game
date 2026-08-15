@@ -315,7 +315,25 @@ while [ $done_games -lt $WANT ]; do
   for i in $(seq 1 $n_this); do
     id=${CELLS[$(( ci % ${#CELLS[@]} + 1 ))]}   # zsh arrays are 1-based
     ci=$((ci+1))                                 # rotate so drops don't bias one cell
-    r=$(.venv/bin/fcode match unrated "$id" --json 2>&1 | tr -d '\n')
+    # ⭐ OPPONENT-VERSION PIN, added s44 2026-08-15. `fcode match unrated <id>
+    # --match <past_match_id>` plays THE SUBMISSION THEY HAD IN THAT MATCH
+    # (documented `docs/fcode-cli.md:330` since 2026-08-09). Without it this
+    # runner could only ever meet an opponent's CURRENT version, so a prereg
+    # that registers a pin -- as PREREG-CAL418 does -- COULD NOT BE EXECUTED AS
+    # WRITTEN by this tool, and firing anyway would have measured a different
+    # opponent than the one locked. Found at fire time, with the leg certified.
+    # ⛔ The pin is per-OPPONENT: a match id belongs to one team, so PIN is only
+    # legal when exactly one cell is in play. Refuse rather than silently pin
+    # the wrong team's id onto every cell.
+    if [[ -n ${PIN:-} ]]; then
+      if (( ${#CELLS[@]} != 1 )); then
+        say "ABORT: PIN=$PIN given with ${#CELLS[@]} cells. A match id pins ONE opponent; refusing to apply it across cells."
+        exit 2
+      fi
+      r=$(.venv/bin/fcode match unrated "$id" --match "$PIN" --json 2>&1 | tr -d '\n')
+    else
+      r=$(.venv/bin/fcode match unrated "$id" --json 2>&1 | tr -d '\n')
+    fi
     note_attempt                   # guard 7a: EVERY attempt, accepted or not, persisted
     print -r -- "$id $r" >> "$OUT"
     # guard 7c: stamp our initiative at the moment the CLI returns. Rejections
