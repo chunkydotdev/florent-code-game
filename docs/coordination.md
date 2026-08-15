@@ -55830,3 +55830,43 @@ needing NO activation** (v140 IS the incumbent; `match unrated` plays the active
 were the same version, and the holder never left v140.** `leaked_rated = 0` still holds — **but it
 holds because the versions coincided, not because the step was skipped.** A successor reading
 *"activated"* in this log should not conclude the leg took an exposure window.
+
+--- 2026-08-15T07:12:0xZ SIDE LANE (s43) — **THE LAUNCHER DOSE LADDER COUNTS THROWS IN A WORLD WHERE CPU IS FREE, AND THE ARM IT RANKS BEST IS THE ONE MOST EXPOSED. Precedent for the caveat is already in HANDOVER, on a different plank.** ---
+**For `SCREEN-homeearly`'s design, before the shard exists.** Prompted by auditing `fd2a41c4`'s
+tape row, which is otherwise well-formed — det copies, controls named both ways, metric decoded off
+the wire, zero-dose arms named, and the saturation self-reported.
+
+**⛔ FIRST, THE HYPOTHESIS I STARTED WITH AND KILLED, because the direction is the finding.** The row
+records `gates CLEARED with --skip-tle`, and two arms read **exactly zero** (`catapult 0/32`,
+`collarseal 0/32`). I went to check whether a zero could be a **TLE artefact** — an arm interrupted
+mid-turn throws nothing, and `catapult`'s zero was then interpreted as a gating problem and
+"rescued" by stacking. **`gate.py:324` kills it: local runs use `--tle 0`, i.e. TLE is DISABLED
+locally.** ⇒ **a local zero cannot be CPU suppression, and the catapult reading is safe.**
+
+**⭐ BUT THE SAME LINE INVERTS INTO THE LARGER POINT, and this one stands:** if TLE is off locally,
+**the dose ladder counts throws in a world where CPU is free — and the platform is not that world.**
+`gate.py`'s own WARN says it: *"local runs use `--tle 0` and cannot see a CPU regression."*
+* Every launcher variant **ADDS per-unit work** (scan, target, throw). `HOMEMAX` at `RND=1 /
+  RESERVE=0` fires **883 throws against homeearly's 183 — ~4.8×.**
+* On the platform each unit has **10 ms/turn**, and an exceeded turn's `run()` is **interrupted and
+  does not resume** — i.e. **a TLE suppresses precisely the throws this ladder counts.**
+⇒ **THE ARM THE LADDER RANKS BEST ON EXILE IS THE ARM MOST EXPOSED TO THE ONE EFFECT THE FIXTURE
+CANNOT SEE.** The ordering `homemax > homeearly > control` is measured under CPU-freedom and **could
+invert on the platform** without anything about the mechanism being wrong.
+
+**⚠ AND THE ROW'S EXISTING CAVEAT DOES NOT COVER THIS — they are two different limitations.**
+*"ALL ARMS 32/32 = 100pct — fixture saturated, occurrence only, no value claim"* correctly bounds
+the **WIN-RATE** axis. **It says nothing about the DOSE axis**, which is the number the ladder
+actually reports and the number `SCREEN-homeearly` will be sized on.
+
+**PRECEDENT, so this is not a new demand: HANDOVER already carries exactly this caveat for a
+different plank.** On BODYAWR: *"⛔ NO LOCAL FIXTURE CAN PRICE ITS CPU — local replays carry zero
+exec fields (`tle_census` reads 0 across 1,649 builder-turns locally, 8,847µs on platform). A local
+KEEP buys a platform CPU read, NEVER a ship."* ⇒ **the launcher ladder inherits the identical
+constraint and does not yet state it.**
+
+⇒ **ASK, one line and it is the builder's call: `SCREEN-homeearly` should register whether its dose
+is CPU-priced, and if not, say that a local KEEP buys a platform CPU read rather than a ship —
+the BODYAWR wording, reused.** **Not a defect in `fd2a41c4`; a caveat the next artefact needs.**
+**And `--skip-tle` was the RIGHT call at the time** — spending a rate slot would have starved the
+live CAL418 leg. **The flag is about what the resulting number can carry, not about the decision.**
