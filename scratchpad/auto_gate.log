@@ -1,0 +1,34 @@
+auto_gate 2026-08-15T09:56:17Z   mode=APPLY
+  marks: OK — marks 400/1000/2700 all still tested in gate_watch.sh
+  bars : 5 registered in docs/prereg/BARS.tsv (BODYAWR, BODYAWRR, GUNAXABL, SEALFLOOR6, SENTTHR)
+  reaper: corefill.sh RUNNING
+
+   CONTINUE AWRLNCH      local                            n=60/5400 mark=PRE-400 share=53.33% ci=[40.71,65.96] bar=NONE age=1s(tsv mtime)
+              PRE-400: n=60 < 400; too early for any rule
+
+   CONTINUE BODYBLK      local                            n=39/5400 mark=PRE-400 share=53.85% ci=[38.20,69.49] bar=NONE age=1s(tsv mtime)
+              PRE-400: n=39 < 400; too early for any rule
+
+   CONTINUE CATRND1L     local                            n=1972/5400 mark=1000 share=51.67% ci=[49.47,53.88] bar=NONE age=35s(tsv mtime)
+              NO-BAR-REGISTERED: no row in the bar registry, so the bar rule CANNOT be applied (catastrophe was checked and did not fire). Register it in docs/prereg/BARS.tsv with a prereg citation to make it stoppable.
+
+   CONTINUE MAXSTACK     local                            n=45/5400 mark=PRE-400 share=57.78% ci=[43.35,72.21] bar=NONE age=4s(tsv mtime)
+              PRE-400: n=45 < 400; too early for any rule
+
+   CONTINUE MIX280mix4   local                            n=15/5400 mark=PRE-400 share=73.33% ci=[50.95,95.71] bar=NONE age=-0s(tsv mtime)
+              PRE-400: n=15 < 400; too early for any rule
+
+   CONTINUE NULL5400     local                            n=3074/5400 mark=2700 share=49.61% ci=[47.84,51.38] bar=NONE age=1s(tsv mtime)
+              NULL-CELL: treatment tree is BYTE-IDENTICAL to control (bots/_v146null == bots/_v146gunaxis) — a null exists to sit at 50% and must run to completion. Detected structurally by md5, never by name.
+
+   CONTINUE SPAWNLKL     local                            n=213/5400 mark=PRE-400 share=52.58% ci=[45.88,59.29] bar=NONE age=7s(tsv mtime)
+              PRE-400: n=213 < 400; too early for any rule
+
+   CONTINUE PINRND1      remote/worker@work-server-2      n=1880/5400 mark=1000 share=48.40% ci=[46.15,50.66] bar=NONE age=104s(remote heartbeat stamp)
+              NO-BAR-REGISTERED: no row in the bar registry, so the bar rule CANNOT be applied (catastrophe was checked and did not fire). Register it in docs/prereg/BARS.tsv with a prereg citation to make it stoppable.
+
+   CONTINUE SPAWNLK      remote/worker@work-server-1      n=80/5400 mark=PRE-400 share=48.75% ci=[37.80,59.70] bar=NONE age=120s(remote heartbeat stamp)
+              PRE-400: n=80 < 400; too early for any rule
+
+── 9 live shard(s) evaluated; 0 would be STOPPED ──
+   Nothing is arithmetically dead. No shard would be touched.
