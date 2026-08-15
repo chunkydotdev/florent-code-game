@@ -642,6 +642,78 @@ class RaidMixin:
             return True
         return False
 
+    def _try_spawnlock_launcher(self, ct, E):
+        """LOKI-SPAWNLOCK: plant ONE launcher ON the enemy Core's spawn ring.
+
+        Ported from _v233evict58's _try_evict_launcher with the siege
+        prerequisite deleted (fix a; that gate held the ancestor to 16% of
+        games) and the build-tile score re-aimed at the 12 spawn tiles
+        (fix c).  Cap 1 via a live census of the siege band plus a per-unit
+        latch, Ti-floored so it never starves the kill.
+        """
+        if not LOKI_SPAWNLOCK_ON or getattr(self, "lock_done", False):
+            return False
+        if ct.get_global_resources() < ct.get_launcher_cost() + LOKI_SPAWNLOCK_TI_FLOOR:
+            return False
+        p = ct.get_position()
+        tiles = core_tiles(E)
+        if min(p.distance_squared(c) for c in tiles) > 18:
+            return False
+        me = ct.get_team()
+        try:
+            for bid in ct.get_nearby_buildings():
+                if (ct.get_team(bid) == me
+                        and ct.get_entity_type(bid) == EntityType.LAUNCHER
+                        and min(ct.get_position(bid).distance_squared(c)
+                                for c in tiles) <= LOKI_SPAWNLOCK_CENSUS_DSQ):
+                    self.lock_done = True
+                    return False
+        except Exception:
+            return False
+        # The 12 spawn tiles: can_spawn calls is_bot_passable, so a building on
+        # any of them is permanent spawn denial (destroy is team-checked --
+        # they cannot clear our building off their own ring).
+        try:
+            spawn12 = [(sp.x, sp.y) for sp in
+                       heal_seats(E, self.mw, self.mh) + core_corners(E, self.mw, self.mh)]
+        except Exception:
+            spawn12 = []
+        lock = set(spawn12)
+        best, best_k = None, None
+        for d in CARDINALS:
+            bp = p.add(d)
+            if not (0 <= bp.x < self.mw and 0 <= bp.y < self.mh):
+                continue
+            if min(bp.distance_squared(c) for c in tiles) > LOKI_SPAWNLOCK_NEAR_DSQ:
+                continue
+            try:
+                if not ct.can_build_launcher(bp):
+                    continue
+            except Exception:
+                continue
+            # Fix (c): first key is "this tile is itself one of the 12", which
+            # buys the denial outright.  Second key is how many of the
+            # REMAINING spawn tiles sit inside the resulting launcher's pickup
+            # ring (d^2 <= 2) -- an evicted healer VACATES the seat and the
+            # ordinary seal step barriers it on the next raider turn, so the
+            # throw both removes the heal and opens the tile we could not
+            # barrier while it stood there.
+            on_ring = 1 if (bp.x, bp.y) in lock else 0
+            cov = sum(1 for sx, sy in spawn12
+                      if (sx, sy) != (bp.x, bp.y)
+                      and (bp.x - sx) ** 2 + (bp.y - sy) ** 2 <= 2)
+            k = (on_ring, cov, -min(bp.distance_squared(c) for c in tiles))
+            if best_k is None or k > best_k:
+                best, best_k = bp, k
+        if best is not None:
+            try:
+                ct.build_launcher(best)
+                self.lock_done = True
+                return True
+            except Exception:
+                return False
+        return False
+
     def _try_forward_sentinel(self, ct, E):
         """Plant a Sentinel whose line already contains an enemy Core tile.
 
@@ -899,6 +971,21 @@ class RaidMixin:
                         break
                 except Exception:
                     continue
+        if self.core is None and LOKI_SPAWNLOCK_ON:
+            # ⛔ WITHOUT THIS THE WHOLE PLANK IS INERT.  The scan above looks
+            # for OUR core in this launcher's own vision (r^2 = 26).  A
+            # launcher planted on the ENEMY core's spawn ring cannot see our
+            # core from there, so self.core stays None, the guard below
+            # returns, and the launcher never throws anything -- which is what
+            # _v233evict58 shipped.  The anchor is recoverable without vision:
+            # SLOT_ENEMY_CORE is published by our core on round 0 and the map
+            # is symmetric, so mirroring the enemy anchor gives ours.
+            try:
+                e0 = self._enemy_anchor(ct)
+                if e0 is not None and self.mw and self.mh:
+                    self.core = enemy_core_for(self.mw, self.mh, e0)
+            except Exception:
+                pass
         if self.core is None:
             return
         lp = ct.get_position()

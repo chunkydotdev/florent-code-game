@@ -197,6 +197,8 @@ class RaidMixin:
             return
         if ct.get_move_cooldown() != 0:
             return
+        if LOKI_CATAPULT_ON and self._catapult_wait(ct, E, rnd):
+            return
 
         st = self._raid_station(ct, E, near)
         self.tgt = st if st is not None else E
@@ -872,6 +874,117 @@ class RaidMixin:
         except Exception:
             return
 
+    def _catapult_wait(self, ct, E, rnd):
+        """Stand still ONE beat to be thrown, instead of walking past.
+
+        The parent's rule is that a raider never waits for a launcher; that is
+        what makes the ferry a coincidence.  Here the wait is deliberate but
+        BOUNDED by LAUNCH_STALL_RNDS -- the existing constant for exactly this
+        ("a launchwait unit that has made no launch progress for this many
+        rounds stops waiting"), not a new knob.  Both it and LAUNCH_GIVEUP_RND
+        are dead in the parent: doctrine.py still defines them and NO code in
+        this tree reads either one.
+
+        ⛔ LAUNCH_GIVEUP_RND (=180) IS DELIBERATELY NOT USED AS AN ABSOLUTE
+        CUTOFF, and the arithmetic is the reason: LAUNCHER_MIN_RND is 160, so a
+        catapult cannot exist before r160 and an r180 cutoff would leave this
+        plank a TWENTY-ROUND life -- delivered for ~6% of a match and null by
+        construction.  The waste it was there to cap is already capped
+        per-body by LAUNCH_STALL_RNDS, and the question of whether this body
+        should be going forward AT ALL is answered upstream by _raid_open
+        (cold-insert window + foothold heartbeat) before this is ever called.
+
+        Returns True when the body should hold its ground this round.
+        """
+        if self.core is None or E is None:
+            self.cat_since = None
+            return False
+        p = ct.get_position()
+        # ARRIVED: never re-throw a body that is already on the collar.  The
+        # 61.4%-reached bucket is where we want it and a second hop can only
+        # move it off the seat it is working.
+        try:
+            if min(p.distance_squared(c) for c in core_tiles(E)) <= LOKI_CATAPULT_COLLAR_DSQ:
+                self.cat_since = None
+                return False
+        except Exception:
+            return False
+        # Is a HOME catapult holding us in its pickup ring right now?
+        found = False
+        try:
+            home = core_tiles(self.core)
+            for bid in ct.get_nearby_buildings():
+                if ct.get_team(bid) != self.team:
+                    continue
+                if ct.get_entity_type(bid) != EntityType.LAUNCHER:
+                    continue
+                lp = ct.get_position(bid)
+                if lp.distance_squared(p) > 2:
+                    continue
+                if min(lp.distance_squared(c) for c in home) > LOKI_CATAPULT_D2_HOME:
+                    continue
+                found = True
+                break
+        except Exception:
+            return False
+        if not found:
+            self.cat_since = None
+            return False
+        since = getattr(self, "cat_since", None)
+        if since is None:
+            self.cat_since = rnd
+            return True
+        if rnd - since >= LAUNCH_STALL_RNDS:
+            # No hop in LAUNCH_STALL_RNDS: stop waiting and walk, whatever the
+            # global clock says.  Bounds the waste the r180 cap does not.
+            return False
+        return True
+
+    def _catapult_order(self, ct, p):
+        """Cardinal build order for the home catapult, forward-first.
+
+        Two guards, both mandatory:
+          * ⛔ is_bot_passable is TEAM-BLIND, so the launcher's own tile blocks
+            OUR builders as well as theirs.  A catapult dropped into the only
+            corridor out of our base strangles our own economy, so a candidate
+            tile must keep at least two passable cardinal neighbours.
+          * the band is a PREFERENCE with the parent's order appended, so a
+            round where no banded tile is legal still builds the launcher
+            exactly where the parent would have.
+        """
+        base = list(CARDINALS)
+        try:
+            E = self._enemy_anchor(ct)
+        except Exception:
+            E = None
+        if E is None or self.core is None or not (self.mw and self.mh):
+            return base
+        home = core_tiles(self.core)
+        pref = []
+        for d in base:
+            bp = p.add(d)
+            if not (0 <= bp.x < self.mw and 0 <= bp.y < self.mh):
+                continue
+            if min(bp.distance_squared(c) for c in home) > LOKI_CATAPULT_D2_HOME:
+                continue
+            free = 0
+            try:
+                for d2 in CARDINALS:
+                    t = bp.add(d2)
+                    if not (0 <= t.x < self.mw and 0 <= t.y < self.mh):
+                        continue
+                    if ct.is_tile_passable(t):
+                        free += 1
+            except Exception:
+                free = 0
+            if free < 2:
+                continue
+            pref.append((bp.distance_squared(E), d))
+        # key= on the distance only: Direction is not orderable, so a plain
+        # tuple sort raises on the first tie.
+        pref.sort(key=lambda kv: kv[0])
+        return [d for _, d in pref] + base
+
     def _launcher_turn(self, ct):
         """Launcher: exile intruders first, then ferry raiders forward.
 
@@ -945,6 +1058,11 @@ class RaidMixin:
             if eid + 1 != want:
                 continue
             here = bp.distance_squared(dest)
+            if LOKI_CATAPULT_ON and here <= LOKI_CATAPULT_COLLAR_DSQ:
+                # Already on the collar: delivered.  Measured 61.4% reached in
+                # this bucket against 14.7% one bucket out -- re-throwing an
+                # arrived body can only move it off the ring it is sealing.
+                return
             for site in near_first:
                 if site.distance_squared(dest) >= here:
                     break

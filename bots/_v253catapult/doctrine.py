@@ -1275,6 +1275,65 @@ LOKI_FWD_MIN_HARV = 2       # do not open the siege before the economy exists
 LOKI_FERRY_ON = True
 LOKI_FERRY_STALE_RNDS = 3
 
+# --- LOKI-CATAPULT (v253): THE FERRY BECOMES A PIPELINE --------------------
+# THE FIELD HAS SUCCEEDED AT THIS AND WE HAVE NOT.  CtrlAltDefeat and Kings
+# College Munich use the launcher EXCLUSIVELY as a forward ferry -- 185 and 153
+# INSERTs, ZERO exiles, across 85 games (enemy-launcher-asymmetry-2026-08-09).
+# THE ARITHMETIC.  A throw moves a builder up to d^2 = 26 (~5 tiles) INSTANTLY;
+# the launcher throws EVERY round (LAUNCHER_FIRE_COOLDOWN = 1, cooldowns
+# decrement at end of round) and costs 0 ammo; a builder otherwise walks one
+# tile per round.  One launcher is worth ~5 rounds of walking per body,
+# repeatedly, forever, for 20 Ti.  Our builders arrive at 3.3x the time
+# opponents' do on long maps (QUEUE #63), and PROGRAMME wants the kill under
+# r250 against our median kill of r174.
+# WHY THE EXISTING FERRY DOES NOT DELIVER IT: it is deliberately "opportunistic
+# and stateless" (the block above) -- a raider never waits, so it is thrown
+# only if its walk HAPPENS to cross the pickup ring inside 3 rounds of a ping.
+# That is a coincidence, not a pipeline.  This plank changes exactly that: the
+# raider WAITS (bounded), and the launcher is SITED forward-of-home on purpose.
+#
+# ⭐ TURN ORDER, AND IT CUTS THE OPPOSITE WAY TO THE EXILE CASE.  Turn order is
+# entity-id ASCENDING from a global creation counter, so a LOWER id acts first.
+#   * EXILE wants the launcher to act AFTER the victim in the round: the victim
+#     has already spent its move, so it dwells on the landing tile for a full
+#     round.  That is the launcher having the HIGHER id (built late).
+#   * THE CATAPULT WANTS THE OPPOSITE: the launcher should act BEFORE the body
+#     it throws, so the body -- which has not moved yet this round -- lands and
+#     still gets its own move/action at the destination in the SAME round.  A
+#     zero-round hop.  That is the launcher having the LOWER id, i.e. the
+#     ferried builders are ones SPAWNED AFTER the catapult was built.
+#   * With LAUNCHER_MIN_RND = 160 unchanged, every builder spawned after r160
+#     has a higher id than the catapult, so the ordering is naturally
+#     favourable and nothing here needs to force it.
+#   * The ping is store-buffered one round, so the body must be in the ring at
+#     the START of the launcher's turn.  That is exactly what the wait buys.
+#
+# ⛔ COVERAGE WARNING, MEASURED IN THIS TREE: LAUNCHER_MIN_RND is 160 and our
+# MEDIAN actual launcher build is round 318, so a catapult barely exists inside
+# the window this plank is meant to move (PROGRAMME wants the kill under r250).
+# The wait bound is per-body (LAUNCH_STALL_RNDS) precisely so the plank is not
+# ALSO sterilised by the r180 give-up clock -- but the round gate itself is
+# _v250homeearly's treatment and is deliberately NOT touched here, so read a
+# null from this tree as "no effect AT THE COVERAGE THE r160 GATE ALLOWS", not
+# as "the pipeline does not work".  The two want firing together.
+LOKI_CATAPULT_ON = True
+# Home band for the catapult site, d^2 from the nearest tile of OUR OWN core.
+# 8 == "at most two tiles out from the footprint in each axis", which is one to
+# three cardinal steps from a spawn seat, so a freshly spawned builder reaches
+# the pickup ring almost immediately.  It is a PREFERENCE, not a filter: if no
+# tile inside the band is legal the parent's plain CARDINALS order is used, so
+# this can never cost us a launcher the parent would have built.
+LOKI_CATAPULT_D2_HOME = 8
+# The collar band, d^2 to the enemy core.  MEASURED over 157,816 INSERT throws
+# bucketed by LANDING distance: reached 61.4% at d^2 <= 8, 14.7% at 9-26, 8.0%
+# at 27-50, 3.2% beyond 200 -- a 4x cliff at exactly d^2 = 8.  The ferry's aim
+# is already "the reachable site with the minimum d^2 to their core", which
+# lands inside this band whenever the band is reachable at all, so the band is
+# used here for the OTHER edge: a body ALREADY inside it has arrived and must
+# not be re-thrown -- shuffling an established raider off its seat is the one
+# way this plank could cost us the foothold it is meant to create.
+LOKI_CATAPULT_COLLAR_DSQ = 8
+
 # --- exile hardening -------------------------------------------------------
 # A launcher picks up any adjacent builder from EITHER team at d^2 <= 2, so a
 # lone raider beside a defended Core is food (docs/tooling.md: every long-game

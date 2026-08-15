@@ -647,7 +647,11 @@ class Player(EcoMixin, RaidMixin):
         lban = set()
         if self.core is not None and self.mw and self.mh:
             lban = {(s.x, s.y) for s in heal_seats(self.core, self.mw, self.mh)}
-        for d in CARDINALS:
+        # LOKI-CATAPULT: site it FORWARD of home on purpose -- inside the home
+        # band so fresh builders reach the pickup ring in a move or two, and
+        # among those the tile nearest the enemy core.  Falls back to the
+        # parent's plain CARDINALS order, so coverage cannot regress.
+        for d in (self._catapult_order(ct, p) if LOKI_CATAPULT_ON else CARDINALS):
             bp = p.add(d)
             if (bp.x, bp.y) in lban:
                 continue

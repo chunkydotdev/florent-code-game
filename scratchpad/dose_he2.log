@@ -1,0 +1,16 @@
+64 matches — 8 maps x 1 opponents x 2 seeds x 2 seats x 2 arms, 3 parallel
+  20/64
+  40/64
+  60/64
+64 games -> scratchpad/dose_he2/full.json
+
+MECHANISM (the metric only this change can move)
+  arm        games      r0_99   r100_249   r250_499      r500p    total  spawns  crash
+  control       32       0.12       0.00       0.00       0.00     0.12    5.69      0
+  variant       32       0.19       0.06       0.00       0.00     0.25    5.69      0
+
+SAFETY ARM (win rate; underpowered by construction at this n — not the verdict)
+  control   32/32 = 100.0%   median collected 560
+  variant   32/32 = 100.0%   median collected 620
+
+Run tools/reprice.py on the JSON for the paired/pooled split.

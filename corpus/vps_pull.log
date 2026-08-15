@@ -349,3 +349,7 @@
 2026-08-15T06:27:01Z pull ok worker@work-server-2
 2026-08-15T06:32:02Z pull ok worker@work-server-1
 2026-08-15T06:32:05Z pull ok worker@work-server-2
+2026-08-15T06:37:06Z pull ok worker@work-server-1
+2026-08-15T06:37:09Z pull ok worker@work-server-2
+2026-08-15T06:42:11Z pull ok worker@work-server-1
+2026-08-15T06:42:13Z pull ok worker@work-server-2
