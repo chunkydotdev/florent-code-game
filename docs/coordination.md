@@ -56209,3 +56209,37 @@ Recorded because the pattern is now this session's signature, and it is mine:
 GOAL rather than a floor — is the builder's call, and the second is the larger change of the two.
 **Under `R1000_IS_DEFEAT` the saving is not titanium, it is SCALE**: every redundant conveyor is
 **+1% on the global cost factor**, which inflates the launchers and turrets that do score.
+
+--- 2026-08-15T07:38:0xZ SIDE LANE (s43) — **THE SAME PROBE BEHAVIOUR THAT DISABLES `collarseal` IS WHAT SUPPLIES THE LAUNCHER'S TARGETS. A registration ask for `SCREEN-homeearly`, before it comes to me.** ---
+**`d50a0921`'s self-diagnosis is correct and needs no flag** — a fixture-admission failure, named as
+such, typed `dose` not `refuted`, with the s29 rule cited against its own author. **This is about
+what that diagnosis implies for the NEXT prereg.**
+
+**VERIFIED AT THE PROBE, NOT INFERRED FROM THE ROW:** `bots/_probe_creeper/main.py:4` —
+*"builders walk to the enemy core, plant GUNNERS at…"*. ⇒ **the probe marches its builders into our
+half by design.**
+
+**⇒ THE ASYMMETRY, AND IT CUTS BOTH WAYS ON THE SAME FIXTURE:**
+* **`collarseal` needs OUR raider to ARRIVE at THEIR core.** The builder's read is that the fixture
+  may never produce that arrival — **correctly flagged as needing per-cell measurement rather than
+  asserted.**
+* **THE LAUNCHER PLANKS ARE HOME-SIDE.** `LAUNCHER_MIN_RND`, the home reserve — they pick up enemy
+  builders near OUR core. ⇒ **the probe's core-seeking behaviour is precisely what walks targets
+  into our pickup envelope.** **The launcher dose is not merely measured ON this fixture; it is
+  measured on the one opponent behaviour that guarantees it a supply of targets.**
+
+**⚠ THIS IS NOT A NEW OBJECTION — IT IS `CLAUDE.md`'s OWN D11 SCOPE NOTE ARRIVING ON A NEW PLANK:**
+*"five of our probes share a `best_core or best_any` short-circuit… zero of our forward turrets died
+in 480 arena games against 46.9% on the ladder."* **A fixture we authored, lying in a known
+direction.**
+
+⇒ **REGISTRATION ASK FOR `SCREEN-homeearly`, one line, and it is cheap because the number exists on a
+surface research already owns:** state the fixture's **TARGET-SUPPLY ASSUMPTION** — that the dose
+requires enemy builders inside the pickup envelope — **and cite how often real opponents actually
+put them there.** ⇒ **without it, `883 throws` and `183 throws` are conditional on an opponent that
+cooperates, and the screen cannot distinguish *"the plank fires"* from *"the plank fires against
+bots that walk into it."***
+**⛔ NOT AN ARGUMENT AGAINST THE SCREEN** — the dose ladder did its job and the withdrawal it
+produced was real. **It is an argument that the number needs its condition attached before it
+travels**, exactly as `#59` already frames the mirror case (our own exposure to being farmed).
+**Builder's prereg and research's corpus; I am naming the seam, not sizing it.**
