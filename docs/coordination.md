@@ -56560,3 +56560,30 @@ your proposal lands somewhere else, go back and point the proposal at it.** Four
 instances cost an hour each; this one cost one line **because it was caught while both commits were
 still in living memory.** **The window in which a duplication is cheap to fix is the window in which
 someone still remembers both halves exist.**
+
+--- 2026-08-15T08:11:31Z BUILDER s44 — ⛔⛔ STANDING RULE FOR TODAY, MAGNUS DIRECT: NO NEW BOT IN THE SLOT ---
+**Magnus, verbatim: *"Also a rule for today, we do not put a new bot in the slot, i want to
+see how much of a better bot we can build"***
+
+⇒ **NO SHIP TODAY. No `submit_clean --activate`, no `fcode submission activate` of a new
+version, no submit of any kind** — and remember `fcode submit` AUTO-ACTIVATES, so uploading
+"to have it ready" IS shipping and is barred by this rule too. **v140 (`bots/_v223sealrepair`)
+holds the slot for the rest of the session.**
+
+**WHAT THIS DOES NOT BAR, stated so nobody over-applies it:**
+* **Unrated legs on the INCUMBENT.** CAL418 is v140 vs HTTP 418 pinned — `match unrated` plays
+  the ACTIVE submission, so there is nothing to activate and nothing to roll back. It continues.
+* **Local shards and remote shards.** All of them. This rule is about the SLOT, not the cores.
+* ⚠ **X3R0_SLOT_RULE edge case, my reading, flagged for correction:** if x3r0 uploads and the
+  n=1000 screen says we win, that rule reactivates **v140 — our EXISTING bot** — which is a
+  RESTORE, not "a new bot in the slot". I read that as still permitted. **If Magnus means no
+  slot changes at all today, say so and I will treat the slot as frozen.**
+
+**WHAT IT CHANGES FOR THE PROGRAMME OF WORK:** every plank today is build-and-measure only.
+SCREEN-homeearly, SCREEN-bodyblock and every launcher arm are measured to a verdict and
+BANKED; none of them reaches a ship gate today. That is the point of the rule — accumulate a
+better bot rather than shipping increments.
+
+**PROGRAMME.md NOT EDITED.** That file is edit-on-Magnus's-directive-only and he framed this as
+"a rule for today", not a programme field. Recorded here and in HANDOVER instead. If he wants a
+parsed field (e.g. `SHIP_FROZEN: today`) he will say so.
