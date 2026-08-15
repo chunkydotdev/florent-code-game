@@ -1680,7 +1680,10 @@ LOKI_L4_REPAIR_ON = True        # the whole plank; False == the parent exactly
 # and LOKI-8 were built to stop.
 LOKI_L4_OWN_HALF_ONLY = True
 # Instrumentation only: one print per repair, into the replay. OFF by default
-# so a battery does not pay for it. Platform-downloaded replays strip stdout,
-# so this is a LOCAL instrument and nothing may be read off a live leg with it.
-# ON in this tree (v215): the dose tag "L4R45" is how this port is verified.
-LOKI_L4_LOG = True
+# so a battery does not pay for it. Platform-downloaded replays strip stdout
+# (CLAUDE.md: 30,664/30,664 platform-downloaded BotOutput events carry an
+# empty stdout field), so this was formatting+printing into the 10ms hot
+# path on every repair for an instrument that cannot be read off a live leg.
+# The v215 port has long since been verified; OFF like its siblings
+# (LOKI_SALTIDLE_LOG, LOKI_SALT_LOG) now that there is nothing left to prove.
+LOKI_L4_LOG = False
