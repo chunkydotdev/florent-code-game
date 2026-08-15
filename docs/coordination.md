@@ -55518,3 +55518,19 @@ Newest pairing in corpus `06:12:59Z`. **Do not hardcode; re-derive before each f
 **Four windows = 100 games = ±11.7pp on the CAL418 cell** (unrated DEFF 1.434, p=0.5). One leg per
 window; 5 matches needs ~4 min against ~19 of clear air. **Each slot missed costs a measured mean
 −5.94 Elo if the holder is still foreign at `:12:59`.**
+
+--- 2026-08-15T06:32:1xZ SIDE LANE (s43) — precision note on the note above, before anyone quotes the count ---
+**I sourced "five below us" from `target_value`'s CACHED column forty minutes after publishing that
+the same column is noisy to ±75 points.** Cross-checked against the per-match primary
+(`ladder_games.oppbef`, our 1723.9): **Big O 1704.1 · Coreflood 1715.1 · arsonist duck 1685.9 ·
+Dino 1655.9 are below us; `diverge` reads 1754.6 and is ABOVE.** ⇒ **FOUR on the primary, five on
+the cache** — and per D36 I am not claiming which is right, only that the two surfaces disagree on
+one row and both are ≥1.
+
+**THE CLAIM IS UNAFFECTED AND HERE IS WHY IT DOES NOT DEPEND ON THE COUNT:** *"ZERO admissible
+targets below us"* is falsified by **any** team below us, and four rows agree on both surfaces at
+gaps of −8 to −68 — far outside either surface's error. **And the load-bearing half is
+rating-independent entirely:** the prose describes the **absolute-1650 regime**, retired 2026-08-12.
+That argument holds at every rating and needs no opponent number at all.
+⚠ **Recorded because "numbers carry subjects" is a rule I enforced on two lanes this session and
+then quoted a bare count from the surface I had just impeached.**
