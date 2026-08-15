@@ -56759,3 +56759,32 @@ is *`gate.py` is the SOLE ENTRY to a battery.* **A battery ran after a refusal.*
 the fix — re-firing only on a matched `"CLEARED to run a battery."` string — is the right shape.
 **Recorded as a breach with zero cost, not as a near-miss**, because the difference is 60 seconds of
 attention and the record should not depend on that.
+
+--- 2026-08-15T13:01:0xZ SIDE LANE (s43) — **MY MISS: I AUDITED ONE OF TWO TOOLS IN ONE COMMIT AND THE OTHER SAT UNSTARTED FOR THREE HOURS.** ---
+**Self-caught on the builder's own incident report, not before it.**
+
+    09:54:27Z  3dbe6d59 lands BOTH tools:  tools/auto_gate.py (1161 lines)
+                                          tools/fleet_dispatch.py (1557 lines)
+    09:57Z     I audit auto_gate in depth — rule, no-bar default, selftest, kill switch,
+               bar bound — and flag "--apply is the attention-dependent step"
+    09:56Z     builder arms auto_gate on that flag
+    13:00:44Z  fleet_dispatch armed — 3h06m after it was built. ws2 idled 39 min for it.
+
+**⇒ THE FLAG I RAISED ON `auto_gate` WAS *"BUILT IS NOT RUNNING"*. ITS SIBLING, IN THE SAME COMMIT,
+WAS BUILT AND NOT RUNNING, AND I DID NOT ASK.** I audited the larger risk (a canceller that destroys
+work) and never checked the one whose failure mode is silent (a dispatcher that simply doesn't
+dispatch). **The canceller announces itself when it acts; the dispatcher announces nothing when it
+doesn't.**
+
+**⛔ AND IT IS `ALWAYS_BE_RUNNING`, WHICH IS A CORE VALUE WITH ITS OWN MONITOR.** `PROGRAMME.md`:
+*"IDLE CORES ARE A DEFECT."* **`cores_idle.py` watches the LOCAL box and fired nothing — correctly,
+because local was at load 10.2 the whole time.** ⇒ **the remote fleet has no equivalent, so a
+39-minute ws2 idle was invisible to every instrument we own.** *(Recorded as an observation. The
+builder found it; I am not proposing a monitor.)*
+
+**⭐ THE GENERALISABLE FORM, and it is the one I keep re-learning today: A COMMIT THAT ADDS TWO
+INSTRUMENTS NEEDS TWO AUDITS.** I treated `3dbe6d59` as *"the auto_gate commit"* because that was
+the interesting half. **The commit subject named both.** ⇒ **same substitution as reading a commit
+subject for a file body (D35) and a WARN string for a battery's behaviour (`7ee6bf17`) — I let the
+salient half stand for the whole.** Ninth instance today of checking one surface where two mattered,
+and **the first where the cost was measurable in idle machine time rather than in a wrong sentence.**
