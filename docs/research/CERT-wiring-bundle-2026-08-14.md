@@ -191,3 +191,44 @@ tool's own source (`dict(id="…")` **and** `fails.append(("…")`), so it grows
 the tool grows. **It now correctly reports `CERT: FAIL` until the 15 missing
 corruption cells are written** — which is the honest state and is owed work, not a
 regression.
+
+### ⛔ AMENDMENT TO THE CORRECTION, 2026-08-15T04:52:29Z — **"NEVER CERTIFIED" WAS TOO STRONG. ALL FIFTEEN HAVE ID-LEVEL COVERAGE SOMEWHERE.**
+
+**A correction to my own correction, running AGAINST my own alarm.** The section
+above says *"THE FIFTEEN THAT WERE NEVER CERTIFIED"*. **That overstates.** True of
+**MY HARNESS**; false of **THE SYSTEM**. Verified in the probe's own source:
+
+    METRIC_WINDOW_* (6)   prereg_check --selftest  names all six BY RULE ID
+    CUT_SHORT_FLOOR       probe :221-229   'CUT_SHORT_FLOOR' in f_hi / not in f_lo   <- ID ASSERTION, BOTH WAYS
+    OB13_NOT_COMPUTED     probe :265,268   'OB13_NOT_COMPUTED' in f_fire
+    OB13_UNTRACKED_ARM    probe :265
+    POOL_ERA_* (3)        probe :309-311   each asserted as the  id
+    TAPE_* (3)            probe :392-404   each asserted 'in out' by id
+
+⇒ **ALL FIFTEEN ARE ASSERTED BY RULE ID by some instrument. NO CHECK IS ACTUALLY
+UNCERTIFIED.** **The defect is narrower and exactly this: my harness's COMPLETENESS
+CLAIM was false — `uncovered: none` could not fail — while the checks themselves
+were covered elsewhere.** ⇒ **the four bundle items DID have two independent
+instruments; what they lacked was my harness being one of them, and my document
+implied it was.**
+
+**⚠ DIRECTION, RECORDED AGAINST MYSELF: I published the ALARMING version.** *"Never
+certified"* is the dramatic reading and I reached it while surveying my own
+instrument's failure — **the surveying-runs-alarming branch, which is now 4-for-4
+this session.** The milder truth needed one grep of the probe's assertion
+expressions and I did not do it before publishing.
+
+**⚠ AND THE BUILDER OVER-CORRECTED IN THE OPPOSITE DIRECTION, AGAINST THEIR OWN
+INTEREST.** They tried to narrow my 15, their own grep returned *"0 cells naming
+the id"* for `CUT_SHORT_FLOOR` and `OB13_NOT_COMPUTED`, and they accepted a
+**worse-than-true** answer (*"9 have behaviour-only coverage"*). **Their probe
+labels cells by behaviour (`c1`, `d5`, `f7`) and asserts by RULE ID — they checked
+the LABEL surface and concluded about the ASSERTION surface.** Same class as my own
+errors tonight: **right instrument, wrong surface, plausible answer.**
+⇒ **Two lanes, one question, opposite over-corrections inside five minutes, and
+the truth sat between them.** Neither number survived contact with the source.
+
+**WHAT STANDS UNCHANGED:** the harness defect is real and is fixed; a denominator
+that cannot grow reports COMPLETE by construction; and **the fifteen corruption
+cells are still owed** — id-level coverage elsewhere is not coverage in the
+instrument whose output I quote when I certify.
