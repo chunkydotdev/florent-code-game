@@ -56140,3 +56140,72 @@ the commit fixing a guard, caught and written down by its own author rather than
 
 **LEDGER: flag → script → driven → single-copy, in ~7 minutes.** Fastest full discharge this lane
 has recorded, and the last two steps were the builder going past the ask rather than meeting it.
+
+--- 2026-08-15T07:2xZ (`date -u`) ⭐⭐ **RESEARCH s43 — MAGNUS'S OBSERVATION IS CORRECT AND THE CAUSE IS ONE MISSING CHECK ON ONE BRANCH. WE NEVER TARGET AN EXISTING BELT.** ---
+**Q (Magnus, from watching games): if a conveyor band already exists, do we ever wire a second
+harvester into it? It looks like we build another band right next to it.**
+**A: we never wire into it. `_link_path` cannot — an existing belt is not a goal, only a floor tile.**
+
+## 1. THE CODE, `bots/_v223sealrepair` (= v140, the incumbent)
+`eco.py:391 _link_path` BFS's from the harvester to **core-adjacent tiles ONLY** — those are the
+goals. A friendly conveyor is added to `blocked` **only if it is an ENEMY's** (`eco.py:420-424`), so
+ours is merely PASSABLE: never a goal, never preferred, no weighting. ⇒ **the route is a shortest
+path to the CORE that happens to ignore the belt already going there.**
+
+**⭐ AND THE ACCEPTOR CHECK EXISTS — IT IS JUST ON THE WRONG BRANCH.** `eco.py:504 _wire_on_build`:
+
+    if not self.link_queue:                 # linker FREE  -> plan a full route NOW,
+        self.link_source = bp               #                 NO acceptor check
+        self.link_queue = self._link_path(ct, bp)
+        return
+    ...                                     # linker BUSY  -> queue to wire_pending
+    self.wire_pending.append((bp, ct.get_current_round()))
+
+`_has_acceptor` (`eco.py:513`) has **exactly ONE call site: `_wire_tick:534`** — the DEFERRED path,
+which correctly **drops** the job when the harvester is already connected. **The FREE path never
+calls it, and the free path is the common one.** ⇒ **a harvester built beside a working band gets a
+whole new route planned to the core.**
+
+**⛔ THE TREE ALREADY KNOWS THIS IS PURE WASTE — in its own words**, `_l4_harvester_starved`'s
+docstring, which gates the *repair* path against exactly this case: *"a harvester emits one stack
+per 4 rounds however many acceptors surround it, so the extra link is 3 Ti and +1% team cost scale
+for zero throughput."* Measured there at **36 of 55 repairs**. **The same insight was applied to
+repair and never to the initial wire.**
+
+## 2. THE MEASUREMENT — 1,078 archived games, recent slot versions (v140/139/146/144)
+
+    A. harvesters ALREADY CONNECTED when built   676 of 6463 = 10.5%
+    B. parallel-band rungs (adjacent, unchained, SAME facing)  4529 = 4.20/game
+       games with >=1 parallel run                772 of 1078 = 71.6%
+       conveyors built                            30195 = 28.0/game
+
+⇒ **A: one harvester in ten is wired from scratch when it was already on the network.**
+⇒ **B: 71.6% of games contain at least one band running alongside another — the thing observed.**
+⚠ **B counts ADJACENCY, not avoidability**: two harvesters on opposite sides of the core legitimately
+need two routes. **A is the causal subset; B is the visual.**
+
+## 3. ⛔ THREE INSTRUMENT BUGS ON THE WAY TO THIS, ALL CAUGHT BY MAGNITUDE, NONE BY READING
+Recorded because the pattern is now this session's signature, and it is mine:
+1. **Idle census returned `71/71 = 100.0%`** — the wire nests **three** levels
+   (`turn → wrapper → update-type`) and I collapsed it to two, so `unum` read the wrapper's field
+   number (always 1) and nothing ever matched `UPD_ACTIONS`.
+2. **First parallel-band detector returned 29,841 pairs against 29,513 conveyors (~1.01 each)** — it
+   flagged MERGES and CORNERS. That is network density, not duplication. Fixed by requiring equal
+   facing and excluding in-line neighbours.
+3. **⭐ WIRE DIRECTION IS THE PROTOBUF ORDINAL +1, NOT THE ENUM ORDINAL.** Every conveyor reads
+   `1/3/5/7`, which are **diagonals** under the plain reading — and `CLAUDE.md` is explicit that a
+   conveyor may only face a **cardinal**. **Discriminated by a positive control rather than assumed:**
+   *"the conveyor's output tile holds a friendly acceptor"* reads **407/465 = 87.5% under +1** against
+   **90/465 = 19.4%** under the plain ordinal. ⇒ **1=N, 3=E, 5=S, 7=W.** *(The 12.5% residual is belt
+   heads and pecked-out trunks — consistent with the L4 repair defect at `doctrine.py:1631`.)*
+   ⚠ **ANY PAST OR FUTURE CUT THAT READS CONVEYOR/SPLITTER/TURRET FACING OFF THE WIRE AND USES THE
+   PLAIN ORDINAL IS WRONG.** I have not audited whether one exists; flagged for the builder and side
+   lane. **All five synthetic controls (chain / parallel / merge / corner / single) were re-driven
+   under the corrected encoding and still separate.**
+
+## 4. WHAT I AM NOT SAYING
+**No verdict, no plank, no prereg.** This is a mechanism read plus a rate. Whether to add the
+`_has_acceptor` guard to the free branch — or to make `_link_path` treat an existing belt tile as a
+GOAL rather than a floor — is the builder's call, and the second is the larger change of the two.
+**Under `R1000_IS_DEFEAT` the saving is not titanium, it is SCALE**: every redundant conveyor is
+**+1% on the global cost factor**, which inflates the launchers and turrets that do score.
