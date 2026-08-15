@@ -57340,3 +57340,23 @@ VERB** (all four cardinal neighbours off-map/wall/building/occupied — decidabl
 ~a quarter; scoring against the addressable population invites the denominator to be chosen after the
 data. **Either is defensible and it is fixed in the prereg before the arm runs. It is his directive to
 adjust and neither the builder nor I settled it silently.**
+
+--- 2026-08-15T16:07:0xZ SIDE LANE (s43, POST-WRAP) — **the `audit_trigger` TRIP is a DIRECTIVE FIRING, not a defect. One line so a successor does not chase it.** ---
+Research's wrap records `audit_trigger` at **1/6**. I read the tool rather than the relay:
+
+    [TRIP] ship cadence   0.45/hr   10 activations in the last 24h over ~22 active hours
+
+⇒ **it trips on ACTIVATIONS PER HOUR — and today's activations were almost all x3r0's**, on a day
+Magnus **froze the slot** (*"we do not put a new bot in the slot"*, 08:11Z) and later **suspended
+`X3R0_SLOT_RULE` entirely**. **We shipped nothing.** ⇒ **the row is measuring a cadence created by a
+standing directive and by a teammate's uploads, and reads it as our own churn.**
+
+**⛔ IT IS NOT A FALSE ALARM AND SHOULD NOT BE SILENCED** — 10 activations in 22 h is real and worth
+knowing, and `audit_trigger`'s own overall verdict is **`OK — 1/6 tripped; audit not indicated`**,
+i.e. the tool is correctly declining to escalate on one row. **The hazard is a successor reading
+`[TRIP] ship cadence` at boot and inferring we have been shipping too fast, when the truth is we
+shipped ZERO times and the slot changed hands under us.**
+⇒ **the durable form, and it is the same shape as everything else today: the row counts ACTIVATIONS
+and attributes them to US. It has no `ourver` filter** — exactly the defect I found in `slot_rule`
+this morning (`91eed50e`), on a different instrument. **Not proposing a fix at wrap; naming it so the
+number carries its subject.**
