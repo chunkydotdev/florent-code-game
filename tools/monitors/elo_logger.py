@@ -31,6 +31,15 @@ def main() -> None:
         d = json.loads(status_raw)
         rating = d["rating"]["rating"]
         matches = d["rating"]["matches_played"]
+        # TIER is a THRESHOLD CROSSING, not a value. A stale rating is wrong by a
+        # few points and self-corrects on the next poll; a tier change is an EVENT
+        # with a timestamp, and once it has happened the rating alone cannot tell
+        # you that it did. Added s44 after we were demoted Emerald->Gold and the
+        # fact existed in exactly ONE place: a `fcode status` line a human happened
+        # to read. No tape carried tier (ship_watch, elo_history, ladder_games,
+        # league_matches all checked), so no retrospective cut could ever recover
+        # WHEN it happened. This poller already fetches the field; it was one line.
+        tier = d["rating"].get("tier", "?")
         rank = d["rank"]["rank"]
         act = d["active_submission"]
         ver, name = act["version"], act.get("name", "")
@@ -47,11 +56,17 @@ def main() -> None:
 
     ts = datetime.now().strftime("%Y-%m-%dT%H:%M")
     with open(os.path.abspath(HIST), "a") as f:
-        f.write(f"{ts}\t{round(rating)}\t{matches}\tv{ver}\trank #{rank}\n")
+        f.write(f"{ts}\t{round(rating)}\t{matches}\tv{ver}\trank #{rank}\t{tier}\n")
 
     prev_ver = st.get("active_version")
     if prev_ver is not None and ver != prev_ver:
         print(f'ACTIVATION CHANGE: v{prev_ver} -> v{ver} "{name}" now live')
+
+    prev_tier = st.get("tier")
+    if prev_tier is not None and tier != prev_tier:
+        print(f"TIER CHANGE: {prev_tier} -> {tier} at rating {round(rating)}, "
+              f"{matches} matches. A tier crossing is an EVENT — the rating alone "
+              f"cannot recover that it happened.")
 
     prev_rating = st.get("rating")
     if prev_rating is not None and abs(rating - prev_rating) > 25:
@@ -154,7 +169,7 @@ def main() -> None:
         pass  # advisory must never break the logger
 
     with open(STATE, "w") as f:
-        json.dump({"rating": rating, "active_version": ver, "max_version": max_ver,
+        json.dump({"rating": rating, "tier": tier, "active_version": ver, "max_version": max_ver,
                    "swappable": swappable, "sprt": sprt}, f)
 
 
