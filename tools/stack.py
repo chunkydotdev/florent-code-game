@@ -45,10 +45,81 @@ import subprocess
 import sys
 from pathlib import Path
 
+# ---- `--help` CONTRACT (enforced by tests/test_instruments.py) --------------
+# Side-effect-free, prints this module's docstring, exits 0.
+#
+# ⛔ WHY. Probing an unknown tool with `--help` is the first thing anyone does.
+# Before 2026-08-15, 40 of 86 tools here had no argparse, so `--help` was just an
+# unrecognised argument and THE TOOL RAN FOR REAL -- printing VERDICT-SHAPED text
+# that reads as a finding:
+#     tools/freshness.py --help  ->  "BLIND: --help has no parseable timestamp"
+#     tools/leg_read.py  --help  ->  "LEG: no completed games"
+# Both are this repo's own verdict vocabulary. A reader asking a harmless
+# question got an authoritative-looking sentence about nothing.
+#
+# ⛔ GATED ON `__main__`: several of these modules are IMPORTED by other tools
+# (freshness by now.py). Ungated, this would fire during that import and make the
+# PARENT exit 0 mid-run while printing the CHILD's docstring.
+# ⛔ SELF-CONTAINED `import sys`: a first attempt used the file's own import, and
+# broke on `import sys as _sys` (NameError) and on files whose imports come in
+# two blocks. The guard must not depend on what the host file happens to import.
+if __name__ == "__main__":
+    import sys as _hg_sys
+    if "-h" in _hg_sys.argv[1:] or "--help" in _hg_sys.argv[1:]:
+        print(__doc__ or ("usage: " + __file__ + "  (no module docstring)"))
+        raise SystemExit(0)
+
 ROOT = Path(__file__).resolve().parent.parent
 BASE = ROOT / "bots" / "_v223sealrepair"
 FILES = ("main.py", "raid.py", "eco.py", "doctrine.py")
 CODE = ("main.py", "raid.py", "eco.py")
+
+# ⛔⛔ THE ANCESTOR TRAP, AND WHY THESE SENTINELS EXIST (s45, 2026-08-15).
+# `compose` merges with `git merge-file <out/f> <BASE/f> <tree/f>` — BASE is
+# the MERGE ANCESTOR as well as the "ours" seed. That is correct ONLY for a
+# plank genuinely forked from BASE. Point it at a plank forked EARLIER (the six
+# v197-based arms rebased this session) and git is told that the whole
+# BASE-minus-fork chassis delta is a change THE PLANK DELETED — so it resolves
+# toward REVERTING SHIP WORK, silently, into a tree that still parses and still
+# runs. `PLANKS` declares the fork point implicitly and a declaration can be
+# wrong; a sentinel that VANISHED is evidence.
+#
+# WHY EACH ONE, chosen by reading what v223 actually added over v197:
+#  1. LOKI_SEAL_TI_FLOOR = 0 — a RETUNED constant (12 -> 0). The failure mode
+#     most likely to pass every other check: the old value is valid Python,
+#     parses, declares, and is consumed. Nothing but its VALUE distinguishes
+#     the reverted tree. This is the one that nearly went in this session —
+#     two arms insert doctrine DIRECTLY above this line.
+#  2. LOKI_L4_REPAIR_ON — an ADDED declaration. A wrong-ancestor merge reads
+#     chassis additions as plank deletions; a vanished declaration under a
+#     surviving use site is a NameError, and on this engine an uncaught
+#     exception PERMANENTLY DESTROYS the unit for the rest of the match.
+#  3. def _l4_repair (eco.py) — the IMPLEMENTATION of the same plank, in a
+#     different file. doctrine.py and eco.py merge by different code paths, so
+#     the declaration and the body can be lost INDEPENDENTLY; losing only the
+#     body is an AttributeError at the call site.
+#  4. the glacierkeep MAP_CODES row — a retuned DATA payload one line deep
+#     inside a 15-row tuple literal, i.e. the region where a line-based merge
+#     is likeliest to take the wrong side, and the only sentinel whose loss is
+#     invisible in behaviour: the bot plays on, navigating a stale map.
+CHASSIS_SENTINELS = (
+    ("doctrine.py", "LOKI_SEAL_TI_FLOOR = 0"),
+    ("doctrine.py", "LOKI_L4_REPAIR_ON"),
+    ("eco.py", "def _l4_repair"),
+    ("doctrine.py", "JAABAAASAACSCSAACSAACSCSAACAAAJAAB"),  # glacierkeep row
+)
+
+
+def missing_sentinels(tree: Path, only_file: str | None = None) -> list[tuple[str, str]]:
+    """Sentinels absent from `tree`. `only_file` narrows to one merged file."""
+    out = []
+    for f, needle in CHASSIS_SENTINELS:
+        if only_file and f != only_file:
+            continue
+        p = tree / f
+        if not p.exists() or needle not in p.read_text():
+            out.append((f, needle))
+    return out
 
 # plank -> (tree, the toggles that must end up declared AND consumed)
 PLANKS = {
@@ -84,6 +155,18 @@ def compose(planks: list[str], out: Path, quiet=False) -> int:
         if p not in PLANKS:
             print(f"⛔ unknown plank {p!r}; known: {', '.join(sorted(PLANKS))}")
             return 2
+    # A sentinel absent from BASE could never fire — that is a guard that
+    # validates everything, this repo's most-repeated defect. Check it first.
+    absent = missing_sentinels(BASE)
+    if absent:
+        print(f"⛔⛔ CONFIG ERROR: {len(absent)} CHASSIS_SENTINELS are not in "
+              f"BASE ({BASE.name}) at all, so they can never detect anything:")
+        for f, n in absent:
+            print(f"      {f}: {n!r}")
+        print("      BASE has moved. Re-pick the sentinels from the new "
+              "chassis delta before composing anything.")
+        return 8
+
     if out.exists():
         shutil.rmtree(out)
     shutil.copytree(BASE, out, ignore=shutil.ignore_patterns("__pycache__"))
@@ -102,6 +185,24 @@ def compose(planks: list[str], out: Path, quiet=False) -> int:
                       f"Compose these two by hand or drop one.")
                 shutil.rmtree(out)
                 return 3
+            # ⛔ WRONG-ANCESTOR DETECTOR. Checked per plank per file so the
+            # message can NAME the plank that did it, not just the symptom.
+            lost = missing_sentinels(out, only_file=f)
+            if lost:
+                print(f"⛔⛔ {p} DROPPED CHASSIS WORK from {f} — REFUSING.")
+                for lf, n in lost:
+                    print(f"      lost sentinel in {lf}: {n!r}")
+                print(f"      LIKELY CAUSE: {p!r} is NOT forked from "
+                      f"{BASE.name}. `compose` passes BASE as the merge "
+                      f"ANCESTOR, so a plank forked earlier reads as having "
+                      f"DELETED everything the chassis added since its fork, "
+                      f"and the merge reverts ship work.")
+                print(f"      FIX: rebase the plank first — "
+                      f"tools/rebase_arm.py --base <its real fork> "
+                      f"--onto bots/{BASE.name} --arm bots/{PLANKS[p][0]} "
+                      f"--out <new tree>")
+                shutil.rmtree(out)
+                return 6
         say(f"  {f:<12} merged")
 
     # --- doctrine.py: append NEW declarations, never redefine ----------------
@@ -156,8 +257,19 @@ def compose(planks: list[str], out: Path, quiet=False) -> int:
     if bad:
         shutil.rmtree(out)
         return 5
+    # Backstop: the per-file check above covers CODE merges; doctrine.py is
+    # built by appending to a copy of BASE and so should never lose anything,
+    # but "should never" is what a backstop is for.
+    lost = missing_sentinels(out)
+    if lost:
+        print("⛔⛔ CHASSIS WORK MISSING FROM THE FINAL TREE — REFUSING:")
+        for lf, n in lost:
+            print(f"      lost sentinel in {lf}: {n!r}")
+        shutil.rmtree(out)
+        return 6
     say(f"✅ {out}  ({len(planks)} planks: {', '.join(planks)})  verified: parses, "
-        f"every toggle declared AND consumed, 0 conflict markers")
+        f"every toggle declared AND consumed, 0 conflict markers, "
+        f"{len(CHASSIS_SENTINELS)} chassis sentinels intact")
     return 0
 
 
@@ -232,12 +344,43 @@ def selftest() -> int:
     if tmp.exists():
         shutil.rmtree(tmp)
 
+    # --- 5. WRONG-ANCESTOR MERGE MUST BE REFUSED, WITH THE SENTINEL NAMED ---
+    # ⛔ THIS IS THE ONE THAT REVERTS SHIP WORK AND LOOKS FINE AFTERWARDS.
+    # The plank is `_v197mapcode` itself — the real pre-v223 chassis, not a toy.
+    # Registering it as a plank is exactly the mistake the guard is for: its
+    # eco.py is v197's, so merge-file(ours=BASE, base=BASE, theirs=v197) takes
+    # theirs wholesale and `def _l4_repair` disappears. Both verdicts are
+    # driven: case 1 above is a genuine v223-forked plank that must PASS the
+    # same check on the same file.
+    PLANKS["_zzoldchassis"] = ("_v197mapcode", [])
+    rc = compose(["_zzoldchassis"], tmp, quiet=True)
+    print(f"  5 plank forked BEFORE the chassis          rc={rc}  want 6 (REFUSED)")
+    fail |= (rc != 6)
+    if tmp.exists():
+        shutil.rmtree(tmp)
+    PLANKS.pop("_zzoldchassis", None)
+
+    # --- 6. A SENTINEL MISSING FROM BASE MUST BE A LOUD CONFIG ERROR --------
+    # An alarm that cannot fire is worse than no alarm. Point one sentinel at a
+    # string BASE does not contain and the tool must refuse to compose at all
+    # rather than pass everything.
+    global CHASSIS_SENTINELS
+    saved = CHASSIS_SENTINELS
+    CHASSIS_SENTINELS = saved + (("doctrine.py", "ZZ_NOT_IN_ANY_CHASSIS_ZZ"),)
+    rc = compose(["bodyaware"], tmp, quiet=True)
+    print(f"  6 sentinel absent from BASE (cannot fire)  rc={rc}  want 8 (CONFIG)")
+    fail |= (rc != 8)
+    CHASSIS_SENTINELS = saved
+    if tmp.exists():
+        shutil.rmtree(tmp)
+
     for n in ("_zzconfa", "_zzconfb", "_zzinert"):
         PLANKS.pop(n, None)
         if (ROOT / "bots" / n).exists():
             shutil.rmtree(ROOT / "bots" / n)
 
-    print("SELFTEST PASS (compose / unknown / CONFLICT / INERT-TOGGLE all discriminated)"
+    print("SELFTEST PASS (compose / unknown / CONFLICT / INERT-TOGGLE / "
+          "WRONG-ANCESTOR / DEAD-SENTINEL all discriminated)"
           if not fail else "SELFTEST FAIL")
     return fail
 

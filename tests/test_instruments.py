@@ -31,6 +31,7 @@ Every one was found by re-running or by outside eyes. None was found by a test.
 """
 import csv
 import re
+import subprocess
 import sys
 import unittest
 from datetime import datetime, timedelta
@@ -498,3 +499,179 @@ class TestClaimCheck(unittest.TestCase):
             "Either commit the record (the record IS the test) or drop the "
             "claim:\n  " + "\n  ".join(unbacked),
         )
+
+
+def _docstring_head(path):
+    """First meaningful docstring line, read WITHOUT importing the module."""
+    import ast as _ast
+    try:
+        d = _ast.get_docstring(_ast.parse(path.read_text()))
+    except (SyntaxError, OSError):
+        return None
+    if not d:
+        return None
+    for line in d.splitlines():
+        if line.strip():
+            return line.strip()[:40]
+    return None
+
+
+class TestHelpContract(unittest.TestCase):
+    """`--help` must be SAFE, SILENT-ON-SIDE-EFFECTS, and EXIT 0.
+
+    ⛔ WHY THIS TEST EXISTS. Measured 2026-08-15: 40 of 86 files in tools/ had no
+    argparse, so `--help` was an unrecognised argument and THE TOOL RAN. Seven of
+    twelve sampled printed VERDICT-SHAPED text in this repo's own vocabulary:
+
+        tools/freshness.py --help  ->  "BLIND: --help has no parseable timestamp"
+        tools/leg_read.py  --help  ->  "LEG: no completed games"
+
+    `BLIND` and the `LEG:` prefix are real verdicts here. A reader probing an
+    unknown tool got back an authoritative sentence about nothing -- the single
+    most likely source of "the session was confused from start to end", because
+    the failure is INVISIBLE: nothing in the output says "this is not an answer".
+
+    Three assertions, and the third is the one that actually protects data:
+      1. exit 0 -- so a probe is not also an error
+      2. non-empty stdout -- so the tool says what it is
+      3. NO FILESYSTEM WRITES -- 21 of the 40 wrote files or shelled out
+    """
+
+    # Tools allowed to fail (1) and (2), each with the reason on the record.
+    # ⚠ An exception list is how a contract rots, so each entry names WHY and is
+    # asserted to still behave the way its exemption claims.
+    EXEMPT = {
+        "ring_retention.py": "RETIRED: refuses every invocation (exit 2) and "
+                             "prints its replacement. The refusal IS its help.",
+    }
+
+    def _tools(self):
+        return sorted((ROOT / "tools").glob("*.py"))
+
+    def _fs_signature(self):
+        sig = {}
+        for d in ("scratchpad", "corpus", "."):
+            for f in (ROOT / d).glob("*"):
+                if f.is_file():
+                    try:
+                        sig[str(f)] = f.stat().st_mtime_ns
+                    except OSError:
+                        pass
+        return sig
+
+    # Paths owned by the LIVE FLEET, not by any tool under test. A timing
+    # control alone cannot cover these: `corefill.log` is written every 60s and
+    # a 6-second control window misses it, so it was attributed to game_census
+    # -- a tool that never opens it. Named here rather than excluded silently,
+    # because a widened window would also hide a REAL slow write.
+    DAEMON_WRITTEN = (
+        "corefill.log", "corefill_forever.log", "watchdog.log",
+        "watchdog.launchd.out", "watchdog.launchd.err",
+        "auto_gate.log", "fleet_dispatch.log", "ship_watch.log",
+        "ship_watch_state.json", "vps_pull.log", "cores_idle.log",
+        "cores_idle_state.json", "cpu_watch.log", "cpu_watch_state.json",
+        "keeper.log", "keeper.out", "keeper_state.json", "breakin_watch.log",
+        "elo_history.tsv", "elo_logger.log", "match_watcher.log",
+        "opp_watcher.log", "replay_archiver.log",
+    )
+
+    def _background_churn(self, seconds=6.0):
+        """Paths that change on their own, with no tool running.
+
+        ⛔ WITHOUT THIS CONTROL THE TEST IS A FALSE-POSITIVE MACHINE, and it
+        produced three on its first run: `corpus/ship_watch.log`,
+        `corpus/vps_pull.log` and `corpus/cores_idle_state.json` were attributed
+        to game_census/stub_engine/triarm_read, which touch none of them. They
+        are written by the LIVE DAEMONS every few seconds.
+
+        ⭐ This is the repo's own "a measurement of a moving base is a
+        measurement onto a snapshot" (side-lane retro s43, Q4) landing on a
+        test written the same day. The control is the fix: learn which paths
+        move by themselves, then attribute only the rest.
+        """
+        import time
+        before = self._fs_signature()
+        time.sleep(seconds)
+        after = self._fs_signature()
+        return {k for k in after if before.get(k) != after.get(k)} | set(after) - set(before)
+
+    def test_help_is_safe_and_exits_zero(self):
+        churn = self._background_churn()
+        bad_exit, empty, wrote, not_help = [], [], [], []
+        for f in self._tools():
+            before = self._fs_signature()
+            try:
+                r = subprocess.run([sys.executable, str(f), "--help"],
+                                   capture_output=True, text=True, timeout=120)
+            except subprocess.TimeoutExpired:
+                bad_exit.append(f"{f.name}: TIMED OUT on --help (it ran for real)")
+                continue
+            after = self._fs_signature()
+            touched = [k for k in after
+                       if before.get(k) != after.get(k) and k not in churn
+                       and not k.endswith(self.DAEMON_WRITTEN)]
+            if touched:
+                wrote.append(f"{f.name}: WROTE {touched[:3]}")
+            if f.name in self.EXEMPT:
+                continue
+            if r.returncode != 0:
+                bad_exit.append(f"{f.name}: exit {r.returncode} :: "
+                                f"{((r.stdout or '') + (r.stderr or ''))[:70]!r}")
+            out = r.stdout or ""
+            if not out.strip():
+                empty.append(f"{f.name}: printed nothing")
+                continue
+            # ⭐ THE ASSERTION THAT ACTUALLY CATCHES THE ORIGINAL DEFECT.
+            # exit 0 + non-empty output CANNOT distinguish "printed its help"
+            # from "ran for real and printed a verdict" -- and the original bug
+            # was precisely a tool running and printing verdict-shaped text.
+            # Proven by mutation: stripping the guard from leg_read.py left the
+            # first three assertions GREEN, because `LEG: no completed games`
+            # is exit 0 and non-empty. The output must be traceable to the
+            # tool's OWN documentation: argparse's `usage:` or its docstring.
+            head = _docstring_head(f)
+            if "usage:" not in out.lower() and (not head or head not in out):
+                not_help.append(f"{f.name}: --help printed something that is "
+                                f"neither a usage line nor its docstring "
+                                f"({out.strip()[:60]!r}) — it probably RAN")
+
+        # (3) first: a --help that mutates state is the dangerous one.
+        self.assertEqual(wrote, [], "\n⛔ --help MUTATED THE FILESYSTEM. A probe "
+                         "must never be an action:\n  " + "\n  ".join(wrote))
+        self.assertEqual(bad_exit, [], "\n⛔ --help did not exit 0. Add the guard "
+                         "block (see any tool in tools/) or an EXEMPT entry with a "
+                         "reason:\n  " + "\n  ".join(bad_exit))
+        self.assertEqual(empty, [], "\n⛔ --help printed nothing. A tool must say "
+                         "what it is:\n  " + "\n  ".join(empty))
+        self.assertEqual(not_help, [], "\n⛔ --help RAN THE TOOL instead of "
+                         "describing it. This is the original defect:\n  "
+                         + "\n  ".join(not_help))
+
+    def test_the_exemptions_still_behave_as_claimed(self):
+        """An exemption that has stopped being true is a hole, not an exception."""
+        f = ROOT / "tools" / "ring_retention.py"
+        if not f.exists():
+            self.skipTest("ring_retention.py removed")
+        r = subprocess.run([sys.executable, str(f), "--help"],
+                           capture_output=True, text=True, timeout=60)
+        self.assertNotEqual(r.returncode, 0,
+                            "ring_retention.py now exits 0 — it is no longer "
+                            "'retired and refusing', so drop its EXEMPT entry.")
+        self.assertIn("RETIRED", (r.stdout or "") + (r.stderr or ""),
+                      "ring_retention.py no longer announces its retirement.")
+
+    def test_the_guard_does_not_fire_on_import(self):
+        """The guard is `__main__`-gated; an import must not swallow --help.
+
+        Without the gate, `now.py --help` would import freshness, freshness's
+        guard would see `--help` in the PARENT's argv, print freshness's
+        docstring and exit 0 — the parent silently replaced by its dependency.
+        """
+        r = subprocess.run(
+            [sys.executable, "-c",
+             "import sys; sys.argv = ['x', '--help']; sys.path.insert(0, %r);"
+             "import freshness; print('IMPORT_SURVIVED')" % str(ROOT / "tools")],
+            capture_output=True, text=True, timeout=60)
+        self.assertIn("IMPORT_SURVIVED", r.stdout,
+                      "importing a tool with --help in argv exited early:\n"
+                      + (r.stdout or "") + (r.stderr or ""))

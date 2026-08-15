@@ -48,6 +48,30 @@ import re
 import sys
 from pathlib import Path
 
+# ---- `--help` CONTRACT (enforced by tests/test_instruments.py) --------------
+# Side-effect-free, prints this module's docstring, exits 0.
+#
+# ⛔ WHY. Probing an unknown tool with `--help` is the first thing anyone does.
+# Before 2026-08-15, 40 of 86 tools here had no argparse, so `--help` was just an
+# unrecognised argument and THE TOOL RAN FOR REAL -- printing VERDICT-SHAPED text
+# that reads as a finding:
+#     tools/freshness.py --help  ->  "BLIND: --help has no parseable timestamp"
+#     tools/leg_read.py  --help  ->  "LEG: no completed games"
+# Both are this repo's own verdict vocabulary. A reader asking a harmless
+# question got an authoritative-looking sentence about nothing.
+#
+# ⛔ GATED ON `__main__`: several of these modules are IMPORTED by other tools
+# (freshness by now.py). Ungated, this would fire during that import and make the
+# PARENT exit 0 mid-run while printing the CHILD's docstring.
+# ⛔ SELF-CONTAINED `import sys`: a first attempt used the file's own import, and
+# broke on `import sys as _sys` (NameError) and on files whose imports come in
+# two blocks. The guard must not depend on what the host file happens to import.
+if __name__ == "__main__":
+    import sys as _hg_sys
+    if "-h" in _hg_sys.argv[1:] or "--help" in _hg_sys.argv[1:]:
+        print(__doc__ or ("usage: " + __file__ + "  (no module docstring)"))
+        raise SystemExit(0)
+
 ROOT = Path(__file__).resolve().parent.parent
 REGISTRY = ROOT / "docs" / "prereg" / "LEG-REGISTRY.md"
 SCAN_DIRS = ("bots", "docs/prereg", "docs/legs", "scratchpad")

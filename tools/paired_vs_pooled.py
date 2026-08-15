@@ -30,6 +30,12 @@ CAVEAT for deterministic (NOISE_OFF) legs: power figures are NOMINAL until
 divided by the shape ratio r = distinct shapes / nominal pairs, because
 SE scales as 1/sqrt(r). det.py reports that column.
 """
+# NOTE 2026-08-15: `from __future__` was at line 49, AFTER a stray second
+# shebang and a second docstring -- this file is two files concatenated and
+# HAD NEVER COMPILED (verified at git HEAD: SyntaxError). Moved here, the
+# minimal change that makes it importable. Its duplicated body is untouched
+# and unreviewed: the tool ran zero times, so nothing depended on it.
+from __future__ import annotations
 #!/usr/bin/env python3
 """READ-ONLY diagnostic: how much of arena.py's stated uncertainty is
 between-map variance that cancels in a paired comparison?
@@ -46,7 +52,6 @@ scores it TWO ways on the SAME matches:
 
 Writes nothing outside this scratchpad. Touches no bot, no tape, no tool.
 """
-from __future__ import annotations
 
 import json
 import math
@@ -56,6 +61,30 @@ import sys
 from collections import defaultdict
 from concurrent.futures import ProcessPoolExecutor
 from pathlib import Path
+
+# ---- `--help` CONTRACT (enforced by tests/test_instruments.py) --------------
+# Side-effect-free, prints this module's docstring, exits 0.
+#
+# ⛔ WHY. Probing an unknown tool with `--help` is the first thing anyone does.
+# Before 2026-08-15, 40 of 86 tools here had no argparse, so `--help` was just an
+# unrecognised argument and THE TOOL RAN FOR REAL -- printing VERDICT-SHAPED text
+# that reads as a finding:
+#     tools/freshness.py --help  ->  "BLIND: --help has no parseable timestamp"
+#     tools/leg_read.py  --help  ->  "LEG: no completed games"
+# Both are this repo's own verdict vocabulary. A reader asking a harmless
+# question got an authoritative-looking sentence about nothing.
+#
+# ⛔ GATED ON `__main__`: several of these modules are IMPORTED by other tools
+# (freshness by now.py). Ungated, this would fire during that import and make the
+# PARENT exit 0 mid-run while printing the CHILD's docstring.
+# ⛔ SELF-CONTAINED `import sys`: a first attempt used the file's own import, and
+# broke on `import sys as _sys` (NameError) and on files whose imports come in
+# two blocks. The guard must not depend on what the host file happens to import.
+if __name__ == "__main__":
+    import sys as _hg_sys
+    if "-h" in _hg_sys.argv[1:] or "--help" in _hg_sys.argv[1:]:
+        print(__doc__ or ("usage: " + __file__ + "  (no module docstring)"))
+        raise SystemExit(0)
 
 ROOT = Path("/Users/junghard/Projects/Work/florent-code-game")
 FCODE = ROOT / ".venv" / "bin" / "fcode"
