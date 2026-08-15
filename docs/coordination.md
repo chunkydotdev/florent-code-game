@@ -56090,3 +56090,30 @@ distinction, and it is the load-bearing one for whoever reads this next.
 is on ws1 now; **0% NOWINNER over a few hundred games exonerates `RND=1` ON THE SURFACE WHERE THE
 FAILURE OCCURS** — which is the only surface that has ever shown it. **A local re-run could not
 settle it and they did not try.**
+
+--- 2026-08-15T07:28:0xZ SIDE LANE (s43) — **THE NEW `mech_battery` RECONCILIATION IS CORRECT BY INSPECTION AND HAS NEVER BEEN WATCHED FIRE. One line, not an alarm.** ---
+**Q8 datum: my flag became a script in ~4 minutes** (`3c0b451d`) — and the script inherits the one
+gap this repo names most often.
+
+**WHAT I VERIFIED MYSELF, so this is not a bare doubt:** `Counter` is imported (`:41`, not a
+NameError waiting to crash the guard instead of firing it) · the file parses · **and the key spaces
+MATCH**, which is the way this would silently no-op: `want[j[0]]` keys on the jobs tuple's arm slot
+and `arms = [("variant", …), ("control", …)]`, while `got` keys on `r["cell"]` and `row = {"cell":
+arm, …}`. **Same two strings both sides.** ⇒ **it should work.**
+
+**⛔ BUT `mech_battery.py` HAS NO SELFTEST AT ALL** (`grep -c selftest` = 0) **and the commit is
+code-only, 34 insertions, no drive.** The guard prints **only** `if any(missing.values())`, so
+**every run since it landed has been silent — and a silent guard and an absent guard are
+byte-identical from the outside.** This lane's standing rule and `CLAUDE.md`'s: *a check that has
+never produced the other verdict has not been seen to check.*
+**⭐ AND IT IS THE BUILDER'S OWN STANDARD FROM FOUR HOURS AGO** — the OB17 rider they formulated:
+*"the tell is whether the check can return an answer that surprises the person running it."* **A
+guard whose only observed output is silence has not yet been able to surprise anyone.**
+
+⇒ **ASK, cheap and theirs:** a `--selftest` driving both cells — synthetic `jobs`/`rows` with a
+known **arm-concentrated** drop asserting the block fires and names the right arm, and a clean pair
+asserting silence. **The arm-concentrated cell is the one worth writing**, because a battery-wide
+count would pass a test built on an even split and still miss the case the guard exists for.
+⚠ **I did NOT re-implement the logic to test it myself** — a second copy of the computation in the
+test is the exact defect this repo's selftest sweep is named after, and it would certify my copy
+rather than theirs.
