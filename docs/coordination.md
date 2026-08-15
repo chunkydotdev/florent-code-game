@@ -57046,3 +57046,38 @@ match is identifiable by a column.** Prevention has a floor; detection does not.
 ⚠ **WHAT THIS IS NOT: an argument that v140 should hold the slot.** +0.60/match over 67 matches is
 mild and its own confidence interval is wide; this cut attributes the DROP, it does not verdict the
 tree. **The verdict is the builder's and no ship is permitted today anyway.**
+
+--- 2026-08-15T14:36:0xZ SIDE LANE (s43) — **⛔ ESCALATED TO MAGNUS: 4 RUNNING SHARDS COMPARE A v200/v210 TREATMENT AGAINST A v223 CONTROL, AND BOTH PREREGS REGISTERED A THIRD TREE.** ---
+**Handed to me by the builder as "genuinely nobody's decision yet". Verified independently at the
+primaries before escalating; the chassis-delta framing is a SYMPTOM and the prereg dimension is the
+cause.**
+
+**MEASURED, not relayed:**
+
+    control  bots/_v223sealrepair    eco.py 1242 lines
+    F200SIEGELA  T=bots/_v200siegelaunch  C=bots/_v223sealrepair   eco.py 1071   Δ 171 lines
+    F210IDLEPEC  T=bots/_v210idlepeck2    C=bots/_v223sealrepair   eco.py 1071   Δ 171 lines
+    also affected: F201LAUNCH0 · F211PAVEFIR · F220OSCK4 · F220OSCK6
+    RUNNING NOW: F200SIEGELA (age 65s) · F201LAUNCH0 (ws2) · F210IDLEPEC (ws1) · F211PAVEFIR (ws2)
+
+**⛔ AND THE PREREGS REGISTER A DIFFERENT CONTROL THAN THE ONE RUNNING:**
+* `DOSE-siegelaunch45-2026-08-13.md:65` — *"corefill screen `SIEGELAUNCH` vs `_v197mapcode`"*
+* `DOSE-idlepeck-quiet0-48-2026-08-13.md:46` — *"`IDLEPECK` vs `_v197mapcode`"*, with
+  `_v210idlepeck2` entering at **AMENDMENT 3** on that same registration.
+⇒ **both registered `_v197mapcode`; both are running against `_v223sealrepair`.**
+
+**⭐ THE DIAGNOSIS, AND IT IS NOT "SOMEONE BROKE A RULE" — IT IS HALF A MIGRATION.**
+`PROGRAMME.md` says *"a plank is measured against the CURRENT incumbent, and when a ship lands,
+**every control moves with it**"*. **Moving these controls to v223 was ON-PROGRAMME.** The failure is
+that **the TREATMENTS were not re-based with them**, so the contrast silently acquired 171 lines of
+chassis. **The file's own warning is the mirror of this** — *"a stale control measures the wrong
+contrast and still reads as a valid result"* — **here it is a stale TREATMENT against a fresh
+control, same class, same invisibility.**
+
+**⇒ WHY IT IS ESCALATED RATHER THAN FLAGGED:** it is not the builder's to rewrite (six arms, none
+theirs), it is not research's, **it predates today entirely**, and **four shards are consuming cores
+now on a comparison whose result cannot be read against its own registration.** ⚠ **A null here means
+"the plank did nothing" OR "the plank did less than 23 versions of chassis" and nothing distinguishes
+them.** Three options, all cheap, none mine: **re-base the six treatments · revert the six controls to
+`_v197mapcode` as registered · or accept and record that these six measure plank-plus-chassis.**
+**⛔ I HAVE CHANGED NOTHING AND WILL NOT.**
