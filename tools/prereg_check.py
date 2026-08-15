@@ -46,8 +46,12 @@ actually falsify. Those are judgement and belong to research. This checks that
 the DECLARATIONS EXIST and that the ARITHMETIC CLOSES. A green run is a floor,
 never a blessing.
 
-Token vocabulary: docs/research/SPEC-prereg-check-2026-08-14.md. Research owns
-the vocabulary; this file owns the enforcement.
+Token vocabulary: docs/research/SPEC-prereg-check-2026-08-14.md, plus
+docs/research/SPEC-metric-window-2026-08-15.md for the `METRIC WINDOW:` family
+(the routed Obligation 17 -- a metric can name the right file, intersect the
+diff perfectly, satisfy OB13 in full, and still be observed in a round window
+where the mechanism is gated off IN BOTH ARMS). Research owns the vocabulary;
+this file owns the enforcement.
 """
 from __future__ import annotations
 
@@ -121,6 +125,8 @@ KNOWN_KEYS = [
     "PROVENANCE", "DOSE",
     # s43 wiring bundle
     "POOL ERA", "SPANS-POOL-CHANGE", "TREATMENT TREE",
+    # OBLIGATION 17 (routed 2026-08-15) — the metric window against the gates
+    "METRIC WINDOW", "GATING CONSTANTS", "MECHANISM CAN OCCUR IN WINDOW",
 ]
 
 # --- POOL ERA derivation constants (docs/research/SPEC-pool-era-token-2026-08-14.md)
@@ -936,7 +942,13 @@ def check_arithmetic(f: dict, diff_paths=None, text: str = "",
                 warns.append(f"TREATMENT DIFF TOUCHES names path(s) absent from the real "
                              f"diff: {stray}. Declared and actual disagree.")
 
-    # --- 8. POOL ERA. -------------------------------------------------------
+    # --- 8. OBLIGATION 17 (routed): METRIC WINDOW vs ROUND GATES. ----------
+    mlines, mfails, mwarns = check_metric_window(f, fire=fire)
+    lines += mlines
+    fails += mfails
+    warns += mwarns
+
+    # --- 9. POOL ERA. -------------------------------------------------------
     plines, pfails, pwarns = check_pool_era(f, text)
     lines += plines
     fails += pfails
@@ -981,6 +993,361 @@ def untracked_arm_paths(f: dict) -> list[str]:
         if not r.stdout.strip():
             out.append(tok)
     return out
+
+
+# ---------------------------------------------------------------------------
+# OBLIGATION 17 (routed 2026-08-15, docs/research/AUDIT-closures-bad-build-vs-
+# bad-idea-2026-08-15.md §3) — THE METRIC WINDOW AGAINST THE ROUND GATES.
+#
+# ⛔ THE DEFECT, THREE INSTANCES IN ONE NIGHT, ALL OF WHICH PASS OBLIGATION 13
+# IN FULL: a prereg names the right file:line, asserts the intersection with the
+# treatment diff correctly -- and then observes the metric in a round window
+# where the mechanism is GATED OFF BY A CONSTANT IN THE TREE, in BOTH arms.
+#   #60  get_scale_percent() at r50/r100/r150  vs  LAUNCHER_MIN_RND = 160
+#   #67  living entities at r75                vs  HUNT_MIN_RND     = 120
+# OB13 says nothing about WHEN the metric is observed, so all three are legal.
+# AN INERT METRIC PRODUCES A NULL THAT LOOKS LIKE A REFUTATION -- each of those
+# legs would have failed IDENTICALLY had the idea been good.
+#
+# ⚠ WHAT THIS CHECK DOES **NOT** CATCH, SAID ON THE TIN: the third instance,
+# #54 (`self.stuck >= 5` while `main.py:400` resets `stuck` on any position
+# change), is NOT a round window -- it is COUNTER REACHABILITY, a different
+# analysis (reaching-definitions on a mutable counter) with no round arithmetic
+# in it. Nothing below looks at it. Two of three, and the third is named.
+ROUND_GATE_RE = re.compile(
+    r"\b([A-Z][A-Z0-9_]*(?:MIN_RND|MAX_RND|MIN_ROUND|MAX_ROUND|"
+    r"RND_MIN|RND_MAX|ROUND_MIN|ROUND_MAX))\b")
+MAX_TURNS = 1000          # GameConstants.MAX_TURNS -- the window's outer bound
+
+
+def _cut_at_next_key(value: str, own_key: str) -> str:
+    """House style puts three declarations on one line, and `field()` returns
+    the WHOLE line. Truncate a value at the next KNOWN_KEY declaration so
+    `METRIC WINDOW:`'s round parser cannot read digits belonging to
+    `GATING CONSTANTS:`."""
+    cut = len(value)
+    for k in KNOWN_KEYS:
+        if k == own_key:
+            continue
+        m = re.search(re.escape(k).replace(r"\ ", r"\s+") + r"\s*:", value, re.IGNORECASE)
+        if m:
+            cut = min(cut, m.start())
+    return value[:cut].strip().rstrip(".,;· ")
+
+
+def parse_round_window(v: str) -> tuple[int, int] | None:
+    """(lo, hi) from a METRIC WINDOW value, or None if nothing parses.
+
+    Accepts the spellings this repo actually types: `r50-r150`, `r75`,
+    `r50 / r100 / r150`, `rounds 120-250`, `r0..r1000`. The window is the MIN
+    and MAX of every round named -- a list of observation points and a range
+    are the same object for this test."""
+    if not v:
+        return None
+    body = _cut_at_next_key(v, "METRIC WINDOW")
+    nums = [int(x) for x in re.findall(r"(?i)\br(\d{1,4})\b", body)]
+    nums += [int(x) for x in re.findall(r"(?i)\brounds?\s+(\d{1,4})", body)]
+    nums = [n for n in nums if 0 <= n <= MAX_TURNS]
+    if not nums:
+        return None
+    return min(nums), max(nums)
+
+
+def _resolve_metric_path(f: dict, metric_file: str) -> Path | None:
+    """The metric file ON DISK. Same resolution problem OB13 already has: a
+    prereg names the file bare (`eco.py`) because it sits in an arm tree, so the
+    tree has to come from the other declarations."""
+    p = ROOT / metric_file
+    if p.is_file():
+        return p
+    base = Path(metric_file).name
+    for key in ("TREATMENT TREE", "TREATMENT DIFF TOUCHES", "TREATMENT DIFF REFS",
+                "PROVENANCE"):
+        for tok in re.findall(r"[\w./\-]+", f.get(key) or ""):
+            tok = tok.strip("./,;")
+            if "/" not in tok:
+                continue
+            q = ROOT / tok
+            cand = (q / base) if q.is_dir() else (q.parent / base)
+            if cand.is_file():
+                return cand
+    return None
+
+
+def _enclosing_block(src: str, lineno: int) -> str:
+    """The `def` block containing 1-indexed `lineno`, or a +-40 line window when
+    no enclosing def is found. THE POINT OF THE NARROW SCOPE: a gate referenced
+    in the metric's OWN function gates the metric; a gate elsewhere in a
+    2,000-line file may gate something entirely unrelated, so the two tiers get
+    different verdicts (FAIL vs WARN) rather than one over-firing rule."""
+    L = src.splitlines()
+    if not (1 <= lineno <= len(L)):
+        return ""
+    start = None
+    indent = 0
+    for i in range(lineno - 1, -1, -1):
+        m = re.match(r"(\s*)def\s+\w+", L[i])
+        if m:
+            start, indent = i, len(m.group(1))
+            break
+    if start is None:
+        return "\n".join(L[max(0, lineno - 41):lineno + 40])
+    end = len(L)
+    for j in range(start + 1, len(L)):
+        s = L[j]
+        if s.strip() and len(s) - len(s.lstrip()) <= indent:
+            end = j
+            break
+    return "\n".join(L[start:end])
+
+
+def _gate_values(mp: Path, name: str) -> tuple[set[int], str]:
+    """Every distinct integer `name` is bound to, and WHERE it was looked for.
+
+    Search order, narrowest first: the metric file itself, then modules it
+    imports that live beside it (`from doctrine import *` is how every arm tree
+    binds its constants), then any .py in the same directory. TWO DISTINCT
+    VALUES AT THE SAME LEVEL IS NOT A TIE TO BREAK -- it is a can't-tell, and it
+    is reported as one."""
+    try:
+        src = mp.read_text()
+    except Exception:                                              # noqa: BLE001
+        return set(), "unreadable"
+    pat = re.compile(rf"^\s*{re.escape(name)}\s*=\s*(\d+)\b", re.MULTILINE)
+    hits = {int(x) for x in pat.findall(src)}
+    if hits:
+        return hits, mp.name
+    imported = []
+    for stem in re.findall(r"^\s*(?:from\s+([\w.]+)\s+import|import\s+([\w.]+))",
+                           src, re.MULTILINE):
+        nm = (stem[0] or stem[1]).split(".")[0]
+        cand = mp.parent / f"{nm}.py"
+        if cand.is_file():
+            imported.append(cand)
+    for cand in imported:
+        try:
+            hits |= {int(x) for x in pat.findall(cand.read_text())}
+        except Exception:                                          # noqa: BLE001
+            continue
+    if hits:
+        return hits, ", ".join(sorted(c.name for c in imported))
+    for cand in sorted(mp.parent.glob("*.py")):
+        try:
+            hits |= {int(x) for x in pat.findall(cand.read_text())}
+        except Exception:                                          # noqa: BLE001
+            continue
+    return hits, f"{mp.parent.name}/*.py"
+
+
+def _gate_is_floor(name: str) -> bool:
+    return "MIN" in name
+
+
+def _inert(lo: int, hi: int, name: str, val: int) -> bool:
+    """Is the WHOLE window on the closed side of this gate?"""
+    return hi < val if _gate_is_floor(name) else lo > val
+
+
+def check_metric_window(f: dict, fire: bool = False) -> tuple[list, list, list]:
+    """OBLIGATION 17. -> (lines, fails, warns).
+
+    DESIGN DECISIONS, stated because each is a cost:
+
+    (1) MISSING FIELD = WARN AT LOCK, **FAIL UNDER `--fire`**. Not silence, and
+        not a retroactive FAIL on every locked prereg in the repo either. This
+        is the same escalation OB13's non-computable diff already uses in this
+        file, for the same reason: at lock time a legitimate document may
+        predate the machinery; at FIRE time the leg is about to spend games and
+        a declaration nobody made is a check nobody ran.
+    (2) GATES COME FROM **TWO** SOURCES AND THEY ARE NOT THE SAME EVIDENCE.
+        DECLARED (`GATING CONSTANTS: NAME=value`) is the author's own arithmetic
+        and FAILs when the window is on its closed side. DISCOVERED (grepped
+        out of the tree) is the half that catches #60 and #67 -- an author who
+        knew about `LAUNCHER_MIN_RND = 160` would not have registered
+        r50/r100/r150. Discovered gates are tiered by SCOPE: referenced in the
+        metric's own function => FAIL; referenced elsewhere in the metric file
+        => WARN. A single tier either over-fires on every unrelated gate in a
+        2,000-line file or catches nothing.
+    (3) A DECLARED VALUE THAT DISAGREES WITH THE TREE IS A FAIL, not a
+        preference. The declaration exists to be checked; a stale constant makes
+        the whole line decoration.
+    (4) CANNOT-COMPUTE IS ITS OWN VERDICT WITH ITS OWN STRING and escalates
+        under `--fire`. This project's signature defect is a guard that reports
+        SUCCESS on a NO-OP; "the metric file is not on disk" and "no gate
+        constrains this window" must never render alike.
+    """
+    lines, fails, warns = [], [], []
+    reads = (f.get("MECHANISM METRIC READS") or "").strip()
+    declared = f.get("METRIC WINDOW")
+    can_occur = (f.get("MECHANISM CAN OCCUR IN WINDOW") or "").strip().lower()
+
+    # (A) APPLICABILITY. A leg with no mechanism metric (a calibration panel, a
+    # pinning leg) has no window to state. OB13's own N/A-by-shape spelling is
+    # the trigger, so the two obligations cannot disagree about whether a
+    # document has a mechanism.
+    if not reads or re.match(r"(?i)^(n/?a\b|none\b)", reads):
+        lines.append("METRIC_WINDOW    n/a   no mechanism metric declared "
+                     "(OB13 N/A by shape) -- no round window to assert")
+        return lines, fails, warns
+
+    if declared is None:
+        why = ("OBLIGATION 17 (routed, AUDIT-closures-bad-build-vs-bad-idea-"
+               "2026-08-15 §3): a prereg states the ROUND WINDOW its mechanism "
+               "metric is observed in and asserts it against the gate constants "
+               "that control whether the mechanism can occur at all. #60 read "
+               "get_scale_percent() at r50/r100/r150 with LAUNCHER_MIN_RND=160, "
+               "and #67 read living entities at r75 with HUNT_MIN_RND=120 -- both "
+               "passed OB13 in full and neither could have measured its own "
+               "mechanism. `METRIC WINDOW: r<a>-r<b>. GATING CONSTANTS: "
+               "<NAME>=<value>. MECHANISM CAN OCCUR IN WINDOW: yes/no.`")
+        if fire:
+            lines.append("METRIC_WINDOW    FAIL  no `METRIC WINDOW:` line and --fire: "
+                         "the leg is about to spend games on an unasserted window")
+            fails.append(("METRIC_WINDOW_PRESENT", "OBLIGATION 17 (routed)", why,
+                          "no METRIC WINDOW: declaration, --fire"))
+        else:
+            lines.append("METRIC_WINDOW    not declared -- WARN at lock, FAIL under --fire")
+            warns.append("OBLIGATION 17: no `METRIC WINDOW:` line. The round window the "
+                         "mechanism metric is observed in was NOT asserted against the "
+                         "tree's round gates; re-run with --fire, where this FAILs.")
+        return lines, fails, warns
+
+    # (B) An explicit, reasoned refusal is the one legal way out (house style,
+    # same as TARGET BAND's `N/A - <reason>`). A bare "N/A" is not.
+    if re.match(r"(?i)^\s*(n/?a|none)\b", declared):
+        if len(declared.strip()) >= 12:
+            lines.append(f"METRIC_WINDOW    n/a   declared refusal: {declared[:52]}")
+        else:
+            lines.append("METRIC_WINDOW    FAIL  `METRIC WINDOW: N/A` with no reason")
+            fails.append(("METRIC_WINDOW_PARSE", "OBLIGATION 17 (routed)",
+                          "a bare N/A is not a refusal on the record -- write "
+                          "`METRIC WINDOW: N/A - <why this metric is not round-scoped>`",
+                          f"METRIC WINDOW: {declared[:60]!r}"))
+        return lines, fails, warns
+
+    win = parse_round_window(declared)
+    if win is None:
+        lines.append(f"METRIC_WINDOW    FAIL  no round parses out of {declared[:44]!r}")
+        fails.append(("METRIC_WINDOW_PARSE", "OBLIGATION 17 (routed)",
+                      "the window is declared but names no round, so nothing can be "
+                      "asserted against a gate -- a placeholder value defeats the whole "
+                      "obligation. Write `METRIC WINDOW: r<a>-r<b>`",
+                      f"METRIC WINDOW: {declared[:60]!r}"))
+        return lines, fails, warns
+    lo, hi = win
+
+    if can_occur.startswith("no"):
+        lines.append("METRIC_WINDOW    FAIL  declared MECHANISM CAN OCCUR IN WINDOW: no")
+        fails.append(("METRIC_WINDOW_DECLARED_INERT", "OBLIGATION 17 (routed)",
+                      "the prereg declares its own mechanism CANNOT occur in the window "
+                      "the metric is observed in. The metric is INERT and the leg may "
+                      "not be fired on it -- the same consequence OB13 attaches to a "
+                      "failed intersection", f"window r{lo}-r{hi}, can-occur {can_occur[:40]!r}"))
+        return lines, fails, warns
+    if not can_occur:
+        warns.append("OBLIGATION 17: `METRIC WINDOW:` declared without `MECHANISM CAN "
+                     "OCCUR IN WINDOW: yes/no`. The assertion is the half that is on "
+                     "the record; the window alone is a fact about the plan.")
+
+    # (C) DECLARED gates -- the author's own numbers, always assertable.
+    dec_body = _cut_at_next_key(f.get("GATING CONSTANTS") or "", "GATING CONSTANTS")
+    dec_gates = {n: int(v) for n, v in
+                 re.findall(r"\b([A-Z][A-Z0-9_]{2,})\s*=\s*(\d+)\b", dec_body)}
+
+    # (D) DISCOVERED gates -- grepped out of the tree, tiered by scope.
+    m = re.match(r"([\w./\-]+\.py)(?::(\d+))?", reads)
+    metric_file = m.group(1) if m else None
+    metric_line = int(m.group(2)) if (m and m.group(2)) else None
+    mp = _resolve_metric_path(f, metric_file) if metric_file else None
+    # ⭐ THE RESOLVED PATH IS PRINTED, NOT ONLY USED. A gate value read out of the
+    # WRONG arm tree (a stale `PROVENANCE` line pointing at last week's bot) is
+    # indistinguishable from the right one unless the tool says which file it
+    # opened. Resolution order is TREATMENT TREE first, PROVENANCE last.
+    where = str(mp.relative_to(ROOT)) if mp is not None else f"{metric_file} (UNRESOLVED)"
+    fn_gates, file_gates, unresolved = {}, {}, []
+    if mp is not None:
+        src = mp.read_text(errors="replace")
+        block = _enclosing_block(src, metric_line) if metric_line else ""
+        for name in sorted(set(ROUND_GATE_RE.findall(src))):
+            vals, _where = _gate_values(mp, name)
+            if len(vals) != 1:
+                unresolved.append((name, sorted(vals)))
+                continue
+            (val,) = tuple(vals)
+            (fn_gates if name in block else file_gates)[name] = val
+
+    if mp is None and not dec_gates:
+        lines.append(f"METRIC_WINDOW    CANNOT-COMPUTE  window r{lo}-r{hi} declared, but "
+                     f"the metric file {metric_file!r} is not resolvable on disk and no "
+                     f"GATING CONSTANTS are declared. This is NOT 'no gate blocks it' -- "
+                     f"the check did not run.")
+        if fire:
+            fails.append(("METRIC_WINDOW_NOT_COMPUTED", "OBLIGATION 17 (routed), --fire mode",
+                          "at fire time the arm tree exists by definition, so a metric file "
+                          "that cannot be resolved IS the defect: nothing checked the window "
+                          "against any gate. Name the tree (`TREATMENT TREE:`) or declare "
+                          "`GATING CONSTANTS: <NAME>=<value>`",
+                          f"metric {metric_file!r} unresolved, 0 declared gates, --fire"))
+        else:
+            warns.append(f"OBLIGATION 17 window r{lo}-r{hi} declared but NOT COMPUTED: "
+                         f"metric file {metric_file!r} not on disk and no GATING CONSTANTS "
+                         f"declared. Re-run with --fire once the tree lands, where this FAILs.")
+        return lines, fails, warns
+
+    # (E) THE ASSERTION.
+    bad = [(n, v, "declared") for n, v in dec_gates.items() if _inert(lo, hi, n, v)]
+    bad += [(n, v, "metric function") for n, v in fn_gates.items() if _inert(lo, hi, n, v)]
+    soft = [(n, v) for n, v in file_gates.items() if _inert(lo, hi, n, v)]
+    stale = [(n, v, dec_gates[n]) for n, v in {**fn_gates, **file_gates}.items()
+             if n in dec_gates and dec_gates[n] != v]
+
+    near = {**dec_gates, **fn_gates}          # the gates that BIND the metric
+    if bad:
+        n, v, tier = bad[0]
+        side = "below" if _gate_is_floor(n) else "above"
+        lines.append(f"METRIC_WINDOW    FAIL  window r{lo}-r{hi} lies entirely {side} "
+                     f"{n}={v} ({tier}, {where}) -- the mechanism cannot occur in it, "
+                     f"in EITHER arm")
+        fails.append(("METRIC_WINDOW_INERT", "OBLIGATION 17 (routed)",
+                      "the mechanism metric is observed in a round window where the "
+                      "mechanism is GATED OFF in both arms. The bar is INERT and the leg "
+                      "may not be fired on it -- this is #60 (r50/r100/r150 against "
+                      "LAUNCHER_MIN_RND=160) and #67 (r75 against HUNT_MIN_RND=120), both "
+                      "of which pass OBLIGATION 13 in full",
+                      f"window r{lo}-r{hi} vs " + ", ".join(f"{n}={v} [{t}]" for n, v, t in bad)))
+    else:
+        named = ", ".join(f"{n}={v}" for n, v in near.items())[:64] or "none"
+        lines.append(f"METRIC_WINDOW    ok    window r{lo}-r{hi} clears {len(near)} binding "
+                     f"gate(s) [{named}]; {len(file_gates)} more elsewhere in {where}")
+    if soft:
+        warns.append(f"OBLIGATION 17, WIDER SCOPE: {', '.join(f'{n}={v}' for n, v in soft)} "
+                     f"is referenced in {where} but NOT in the metric's own function, "
+                     f"and the window r{lo}-r{hi} is entirely on its closed side. WARN and "
+                     f"not FAIL because a gate elsewhere in the file may govern unrelated "
+                     f"code -- check by hand that the metric's read path is not downstream "
+                     f"of it.")
+    # PARTIAL-WINDOW warns only for the gates that BIND the metric. Emitting one
+    # per file-scope gate turns an r0-r1000 window into four lines of noise, and
+    # a warn channel nobody reads is the same failure as no warn at all.
+    for n, v in [(n, v) for n, v in near.items()
+                 if not _inert(lo, hi, n, v) and lo < v <= hi]:
+        warns.append(f"OBLIGATION 17, PARTIAL WINDOW: {n}={v} sits INSIDE the declared "
+                     f"window r{lo}-r{hi}, so rounds r{lo}-r{v-1} cannot contain the "
+                     f"mechanism. The window is not inert, but the early part of it is.")
+    for n, tree_v, dec_v in stale:
+        lines.append(f"METRIC_WINDOW    FAIL  declared {n}={dec_v}, tree says {tree_v}")
+        fails.append(("METRIC_WINDOW_GATE_STALE", "OBLIGATION 17 (routed)",
+                      "a GATING CONSTANTS value that disagrees with the tree is not an "
+                      "assertion, it is a number typed next to a name -- and it fails in "
+                      "the flattering direction whenever the real gate is the tighter one",
+                      f"{n}: declared {dec_v}, {where} tree {tree_v}"))
+    for n, vals in unresolved:
+        lines.append(f"METRIC_WINDOW    CANNOT-COMPUTE  {n} has {len(vals)} distinct "
+                     f"values in the tree {vals} -- not a tie to break")
+        warns.append(f"OBLIGATION 17: round gate {n} is referenced by {where} but "
+                     f"binds to {len(vals)} distinct values in that tree {vals}; the "
+                     f"window was NOT asserted against it.")
+    return lines, fails, warns
 
 
 def check_pool_era(f: dict, text: str) -> tuple[list, list, list]:
@@ -1334,6 +1701,7 @@ COMPLETE = """\
 **POOL ERA: 2026-08-13T07:12:59Z..2026-08-14T23:59:59Z (n=540, the post-rotation pool)**
 **REFERENCE n: none**
 **MECHANISM METRIC READS: eco.py:934. TREATMENT DIFF TOUCHES: eco.py, main.py. INTERSECTION: yes.**
+**METRIC WINDOW: r0-r1000. GATING CONSTANTS: none in the metric's own function. MECHANISM CAN OCCUR IN WINDOW: yes**
 **GATE RESOLUTION: the dose gate discriminates its branches at n >= 60 events; UNRESOLVED ⇒ the RESTRICTION (no ship)**
 **PRE-STATE: the predicted-change set is NOT already in the target state at lock — all six cells verified below the bar at lock time**
 **MAP SEGMENT: {midgard, fjordgate} — pave-sealing is a long-approach terrain effect**
@@ -1354,6 +1722,23 @@ CAL7_FLOOR = COMPLETE.replace("**BAR: 60.0**", "**BAR: 64.8**") \
                      .replace("**PLANNED n: 150 games**", "**PLANNED n: 3000 games**") \
                      .replace("**BOUNDARY: 30 accepts = 150 games**",
                               "**BOUNDARY: 600 accepts = 3000 games**")
+
+
+# OBLIGATION 17 fixtures. ⭐ THE TWO INERT CASES ARE THE REAL ONES, REBUILT
+# AGAINST THE REAL SHIPPED TREE (`bots/_v223sealrepair`, v140) rather than a
+# synthetic constant: #67's metric sits at `eco.py:233`, whose enclosing
+# function is guarded by `HUNT_MIN_RND` (doctrine.py:416 = 120), and #60's at
+# `main.py:613`, guarded by `LAUNCHER_MIN_RND` (doctrine.py:1536 = 160). If
+# either constant ever moves, the forced-fail cell reports the WRONG verdict
+# loudly instead of passing on a fixture that stopped meaning anything.
+def _mw(text: str, window: str, metric: str = "eco.py:934", gates: str | None = None) -> str:
+    out = text.replace("MECHANISM METRIC READS: eco.py:934.",
+                       f"MECHANISM METRIC READS: {metric}.")
+    out = out.replace("METRIC WINDOW: r0-r1000.", f"METRIC WINDOW: {window}.")
+    if gates is not None:
+        out = out.replace("GATING CONSTANTS: none in the metric's own function.",
+                          f"GATING CONSTANTS: {gates}.")
+    return out
 
 
 def _strip_rule(text: str, rule: dict) -> str:
@@ -1508,6 +1893,71 @@ def selftest() -> int:
         print(f"  [{'ok' if ok else 'FAIL'}] OB13_INTERSECTION computed: {label} -> "
               f"{'FAIL' if got else 'OK'}")
         bad += 0 if ok else 1
+
+    # --- OBLIGATION 17: METRIC WINDOW vs ROUND GATES, both verdicts ---------
+    # Every branch of check_metric_window, each driven to the answer it must NOT
+    # give as well as the one it must. The two INERT cells are #67 and #60
+    # rebuilt against the real v140 tree; #54 is NOT here because this check does
+    # not catch it (counter reachability, not a round window) -- see the module
+    # comment above ROUND_GATE_RE.
+    print("\n  OBLIGATION 17 — metric window vs round gates (both verdicts, per branch):")
+    no_window = _strip_rule(COMPLETE, dict(keys=["METRIC WINDOW"]))
+    mw_cases = [
+        ("METRIC_WINDOW_INERT", "#67 REBUILT: metric eco.py:233 (HUNT_MIN_RND=120) read at r75",
+         _mw(COMPLETE, "r75", "eco.py:233"), True, False),
+        ("METRIC_WINDOW_INERT", "same metric, window r200-r400 (open side of the gate)",
+         _mw(COMPLETE, "r200-r400", "eco.py:233"), False, False),
+        ("METRIC_WINDOW_INERT", "#60 REBUILT: metric main.py:613 (LAUNCHER_MIN_RND=160) at r50/r100/r150",
+         _mw(COMPLETE, "r50 / r100 / r150", "main.py:613"), True, False),
+        ("METRIC_WINDOW_INERT", "same metric, window r160-r400",
+         _mw(COMPLETE, "r160-r400", "main.py:613"), False, False),
+        ("METRIC_WINDOW_INERT", "DECLARED gate alone, tree unresolvable: LAUNCHER_MIN_RND=160 vs r50-r150",
+         _mw(COMPLETE, "r50-r150", "nowhere_xyz.py:10", "LAUNCHER_MIN_RND=160"), True, False),
+        ("METRIC_WINDOW_INERT", "PARTIAL overlap r100-r200 across HUNT_MIN_RND=120 is a WARN, not a FAIL",
+         _mw(COMPLETE, "r100-r200", "eco.py:233"), False, False),
+        ("METRIC_WINDOW_GATE_STALE", "declared HUNT_MIN_RND=999, tree says 120",
+         _mw(COMPLETE, "r0-r1000", "eco.py:233", "HUNT_MIN_RND=999"), True, False),
+        ("METRIC_WINDOW_GATE_STALE", "declared HUNT_MIN_RND=120, tree agrees",
+         _mw(COMPLETE, "r0-r1000", "eco.py:233", "HUNT_MIN_RND=120"), False, False),
+        ("METRIC_WINDOW_DECLARED_INERT", "the prereg declares CAN OCCUR IN WINDOW: no",
+         COMPLETE.replace("MECHANISM CAN OCCUR IN WINDOW: yes",
+                          "MECHANISM CAN OCCUR IN WINDOW: no"), True, False),
+        ("METRIC_WINDOW_PARSE", "a placeholder window (`TBD`) names no round",
+         _mw(COMPLETE, "TBD"), True, False),
+        ("METRIC_WINDOW_PARSE", "an explicit reasoned refusal is legal",
+         _mw(COMPLETE, "N/A - the metric is a corpus count, not round-scoped"), False, False),
+        ("METRIC_WINDOW_PRESENT", "no METRIC WINDOW line at LOCK time -> WARN, never FAIL",
+         no_window, False, False),
+        ("METRIC_WINDOW_PRESENT", "the SAME document under --fire",
+         no_window, True, True),
+        ("METRIC_WINDOW_PRESENT", "--fire but the leg has NO mechanism (OB13 N/A by shape)",
+         no_window.replace("MECHANISM METRIC READS: eco.py:934.",
+                           "MECHANISM METRIC READS: N/A - no bot diff, the arm is a CLI flag."),
+         False, True),
+        ("METRIC_WINDOW_NOT_COMPUTED", "window declared, metric file not on disk, no declared gate (LOCK)",
+         _mw(COMPLETE, "r50-r150", "nowhere_xyz.py:10"), False, False),
+        ("METRIC_WINDOW_NOT_COMPUTED", "the SAME document under --fire",
+         _mw(COMPLETE, "r50-r150", "nowhere_xyz.py:10"), True, True),
+    ]
+    for rid, label, txt, want_fail, fire_mode in mw_cases:
+        _r, fails, _w = run_checks(txt, f"<{rid}>", diff_paths=["eco.py", "main.py"],
+                                   quiet=True, fire=fire_mode)
+        got = any(x[0] == rid for x in fails)
+        ok = got == want_fail
+        print(f"  [{'ok' if ok else 'FAIL'}] {rid:<28} {'FAIL' if want_fail else 'OK  '} "
+              f"expected -> {'FAIL' if got else 'OK'}   {label}")
+        bad += 0 if ok else 1
+    # ⛔ CANNOT-COMPUTE MUST NOT RENDER LIKE CHECKED-AND-CLEAN. The probe asserts
+    # the two STRINGS DIFFER, not merely that a line was printed -- the same
+    # assertion OB13's (d) fix carries, for the same defect class.
+    cc = next(iter(check_metric_window(
+        parse_fields(_mw(COMPLETE, "r50-r150", "nowhere_xyz.py:10")))[0]), "")
+    good = next(iter(check_metric_window(
+        parse_fields(_mw(COMPLETE, "r200-r400", "eco.py:233")))[0]), "")
+    ok = "CANNOT-COMPUTE" in cc and "CANNOT-COMPUTE" not in good and cc != good
+    print(f"  [{'ok' if ok else 'FAIL'}] {'CANNOT-COMPUTE != ok':<28} "
+          f"distinct strings -> {cc[:36]!r} vs {good[:36]!r}")
+    bad += 0 if ok else 1
 
     # --- AMENDMENT MODE, both verdicts --------------------------------------
     print("\n  AMENDMENT — ADD-ONLY enforced, driven both ways:")
