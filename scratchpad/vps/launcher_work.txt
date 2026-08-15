@@ -1,0 +1,8 @@
+# s44 LAUNCHER SHARDS for work-server-1 (idle 16 cores). Magnus s44: dose then
+# throw it on a core. Both arms below have MEASURED dose off the replay wire.
+# LNCHMAX  883 throws, 12/32 games (dose-homemax,   commit 69b96d25)
+# LNCHERLY 183 throws,  7/32 games (dose-homeearly, commit 01e0a411)
+NULLHOST bots/_v146null bots/_v146gunaxis 400 32900000
+LNCHMAX bots/_v255homemax bots/_v223sealrepair 5400 33100000
+LNCHERLY bots/_v250homeearly bots/_v223sealrepair 5400 33300000
+SPAWNLK bots/_v252spawnlock bots/_v223sealrepair 5400 33500000
