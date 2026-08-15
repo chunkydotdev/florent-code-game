@@ -56587,3 +56587,48 @@ better bot rather than shipping increments.
 **PROGRAMME.md NOT EDITED.** That file is edit-on-Magnus's-directive-only and he framed this as
 "a rule for today", not a programme field. Recorded here and in HANDOVER instead. If he wants a
 parsed field (e.g. `SHIP_FROZEN: today`) he will say so.
+
+--- 2026-08-15T08:5xZ (`date -u`) ⭐⭐ **RESEARCH s43 — THE STATE DECOMPOSITION THE BUILDER ASKED FOR, BEFORE A SHARD. #70's REACH IS 5.68% OF BUILDER-ROUNDS, NOT 27.61% — AND THE PLANK IS A DIFFERENT PLANK THAN EITHER OF US WROTE.** ---
+**Commissioned by the builder** (*"cut the curve BY STATE before sizing. If 'on station' dominates,
+the plank is near-inert and we should know that for the price of a query, not a shard"*).
+`scratchpad/idle_state_split.py`, 150 v140 games / **238,633 builder-rounds**.
+"No verb ⟹ idle AND free" is sound because **bucket D = 0.00% over 894,638 rounds** and every builder
+cooldown ever written is `1` — no cooldown decode needed.
+
+    whole-game idle-and-free        65,877 / 238,633 = 27.61% of our builder-rounds
+      NO-LEGAL-STEP                 16,132  = 24.5% of bucket A
+      FORWARD-PARKED (enemy half)   36,179  = 54.9% of bucket A
+      ADDRESSABLE (own half, >=1 legal step)  13,566 = 20.6% of bucket A = 5.68% of ALL builder-rounds
+
+## ⛔ 1. A QUARTER OF BUCKET A HAS ZERO LEGAL MOVES — A MOVE FALLBACK PROVABLY CANNOT HELP IT
+**24.5%** of idle-and-free rounds are bots whose four cardinal neighbours are all off-map, WALL,
+building or occupied. **That is a HARD CEILING on #70, decidable from the wire, not an estimate.**
+⇒ it also connects two open rows: **#64 SPAWNPOCKET** (*never put a builder in a cell it cannot
+leave*) and **#54** — **a quarter of our idle rounds are bots that are stuck, not bots that are
+unoccupied.** For those the fix is not a destination, it is not being there.
+
+## ⭐⭐ 2. AND THE MAJORITY IS ALREADY FORWARD — WHICH REWRITES THE PLANK
+**54.9% of bucket A is idle in the ENEMY HALF.** ⇒ **#70 as written — "send the idle builder
+forward" — is aimed at a population that is ALREADY THERE.**
+⚠ **AND "near-inert" IS TOO STRONG, so I am not saying it:** a body idle in their half is not
+necessarily on a DENIAL tile (gunner lane, spawn ring, their ore). **The marginal value on those
+rounds is RELOCATION to a better tile, not creating presence.** Lower value than the naive sizing,
+not zero.
+⇒ **THE HONEST RESTATEMENT: #70 is not "get idle builders forward". It is "the ones already forward
+are parked on the wrong tiles."** That is a different plank, a better-targeted one, and it changes
+the destination scorer from *"pick a forward target"* to *"rank the tiles I can already reach"*.
+
+## 3. SIZING CONSEQUENCE — the naive number is 4.9x too big
+**5.68% of builder-rounds, not 27.61%.** Any MDE sized off bucket A overstates the plank's reach by
+**4.9x**. ⚠ **AND 5.68% IS ITSELF AN UPPER BOUND:** the builder's state (b) — *adjacent to
+`link_queue[0]` with a bank too poor for a conveyor* — is INTERNAL, not on the wire, and falls
+inside ADDRESSABLE. **Direction declared: the true reach is lower.**
+
+## INSTRUMENT — one bug found and fixed BEFORE publication, direction as predicted
+**I keyed buildings by POSITION and removed them by ID**, so a destroyed building stayed occupied
+for the rest of the game — **under-counting legal steps and over-counting exactly the headline
+class.** First run read no-step **25.8%**; corrected reads **24.5%**, addressable 20.0% → 20.6%.
+**Small, real, and in the flattering direction for the more dramatic claim.** Detector driven both
+ways on five synthetic cells (boxed-by-walls 0 · open field 4 · map corner 2 · three-walls 1 ·
+boxed-by-buildings 0). ⚠ **Whole-game 27.61% sits near the `[T−20,T]` 29.01% rather than the
+`[40,60]` 17.77% because builder-rounds concentrate late — headcount rises through the game.**
