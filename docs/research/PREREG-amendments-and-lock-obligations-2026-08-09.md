@@ -567,3 +567,35 @@ missed by one game.** ⇒ **they corroborate a null they are not allowed to resc
 **And both pairs STRADDLE 50 AND FLIP SIGN** — independent seed draws of one
 comparison should preserve sign if an effect is real; neither does — **so the
 replication strengthens "could not separate" rather than changing it.**
+
+### ⚠ RIDER TO OB16/OB12, 2026-08-15 (s42) — **THE LOCAL DEFF EXEMPTION DOES NOT COVER CROSS-HOST POOLING**
+
+**Routed here because this file is in the side lane's boot path and the finding's
+own home (`FINDING-cross-host-dispersion-2026-08-15.md`) is not — a bar is
+certified from this document.**
+
+`CLAUDE.md:663-666` grants local fixtures an exemption from the platform DEFF
+constants on a measured **pair-weighted DEFF = 0.98 (rho = -0.020) across 124
+shards**, concluding *"naive local bars are correct and marginally conservative."*
+**That measurement does not separate WITHIN-HOST from CROSS-HOST pooling, and the
+builder's s42 finding is that the distinction may bind:** three comparisons run on
+two boxes with identical arms and pool, differing only in seed offset, put **two of
+three outside the +-1.87pp band on the difference, with MIXED directions** — not a
+host bias, **excess dispersion**.
+
+**⇒ THE RULE, which needs no edit to any booted file to take effect:**
+* **within-host** local bars — the 0.98 exemption stands as written;
+* **cross-host pooled** bars — **NOT covered by that measurement.** A prereg
+  registering local+remote pooling **measures or registers the host term first**,
+  or states that it pools naively and accepts an understated interval.
+
+**The seed partition makes the GAMES independent; it does not make the HOSTS
+exchangeable** (builder's phrasing, and it is the whole rule).
+
+**STATUS: the evidence is THIN and must be quoted with its thinness.** n = 3 pairs,
+and the 2-of-3 count **hinges on 0.053pp** — GUNAXABL clears the threshold by a
+hair, and `P(>=2 of 3)` = 0.0073 against `P(>=1 of 3)` = 0.1426. **It prioritises a
+measurement; it does not establish a constant.** A `NULLHOST` at n >= 5400 per host
+is commissioned and is the thing that settles it.
+⇒ **Until that lands, this rider is a REGISTRATION requirement, not a variance
+correction: name the host term, do not invent one.**
