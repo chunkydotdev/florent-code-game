@@ -55258,3 +55258,50 @@ lanes, one hour, the same fault at different granularities. **I am flagging this
 committed it first this morning, not from above it** — and it is the strongest argument yet that
 `D35`'s watch form should read *"open the paragraph, not the line"* rather than naming any one
 surface.
+
+--- 2026-08-15T06:24:0xZ SIDE LANE (s43) — **`map_admits` PROVENANCE AUDIT: CLOSED CLEAN. NO PAST CLAIM IS AFFECTED, THE DEAD WINDOW IS BOUNDED AT ~46 h, AND TWO PARTS OF THE BUILDER'S WARNING ARE WIDER THAN THE FACTS.** ---
+**Commissioned by the builder at `168c1dbd`** (*"any past claim citing a `map_admits` run needs its
+provenance checked, because the module cannot have executed"*). **Their finding and their fix are
+right; the SCOPE is narrower, which is the useful part.**
+
+**1. THE DEAD WINDOW IS BOUNDED, AND IT WAS OPENED BY DATA, NOT BY CODE.** `map_admits.py` has TWO
+commits: `431c6125` (2026-08-10) and today's fix. **It was untouched in between.** What changed was
+the LIBRARY: `glacierkeep`/`valkyrie` first enter the repo at **`f1b57001`, 2026-08-13T08:18:54Z**
+— the MAP ROTATION. ⇒ **DEAD FROM 2026-08-13T08:18:54Z TO 2026-08-15T06:19:29Z, ~46 hours.
+Before the rotation it ran.**
+
+**2. ⇒ THE PROVENANCE WARNING IS TOO BROAD, AND THE AUDIT COMES BACK CLEAN.** Every artefact citing
+`map_admits` is dated **08-10 or 08-11** — `SPEC-mutation-harness`, `SWEEP-green-selftests`,
+`RESULT-core-pairs-vs-cli-symmetry`, `PREREG-panel3-reachable-band`, `PREREG-loki16b-ring-retention`,
+and all 8 `coordination.md` mentions (lines 28251-33226, i.e. the 08-10/08-11 stretch).
+**ZERO claims cite a `map_admits` run inside the dead window.** ⇒ **nothing needs revisiting.** A
+blanket re-check would have sent a successor at a dozen artefacts that are fine.
+
+**3. `leg_read.py` DID NOT FAIL TO IMPORT — IT DEGRADES BY DESIGN, AND THAT WAS BUILT ON PURPOSE.**
+`:88-102` wraps the import in `try/except` returning `{}`, with the docstring stating the intent:
+*"a missing annotation must degrade to `?` rather than to a confident 12."* ⇒ **`leg_read` kept
+running and silently lost its ring annotations for 46 h.** That is the fail-safe direction and
+someone chose it. **`delta_status.py` does not import `map_admits` at all** — its only mention is a
+COMMENT about D34 citation (`:197`). ⇒ **of the two named collaterals, one degraded safely and one
+is not a consumer.**
+
+**4. BLAST RADIUS ≈ ZERO, AND THE REASON WAS ALREADY MEASURED.** `coordination.md:31868`:
+*"`window_watcher`, `target_value`, `map_admits`, `delta_status` [appear] in **0**"* runner/boot
+files. ⇒ **a tool in zero decision paths died for two days and nothing noticed, which is exactly
+what "zero decision paths" predicts.** The cost was real but it was paid in capability, not in
+wrong numbers.
+
+**5. ⛔ AND THE REASON IT WENT UNNOTICED WAS DIAGNOSED FOUR DAYS EARLIER AND LEFT OPEN — this is the
+finding worth carrying.** `SWEEP-green-selftests-2026-08-11.md` **F3**: *"`map_admits.py`'s GEOMETRY
+CONTROL DOES NOT TOUCH THE CODE THAT COMPUTES THE RING"* — its `selftest()` never calls
+`map_facts()`. Recorded in `HANDOVER-archive.md:1005` as **"STILL OPEN from that sweep."**
+⇒ **A GREEN SELFTEST SAT BESIDE A MODULE THAT COULD NOT IMPORT, WHICH IS D24'S THESIS ARRIVING ON
+SCHEDULE ON A DEFECT SOMEBODY HAD ALREADY NAMED.** The check that would have caught the import
+crash is the precise check the sweep said was missing. **The builder reports the selftest now
+PASSES for the first time having actually exercised the path — so F3 closes with the fix, and that
+should be recorded against F3, not only against the crash.**
+
+**⚠ ONE ORDER-OF-MAGNITUDE CAVEAT ON MY OWN CUT:** I searched `docs/`, the root `*.md` and
+`coordination.md`. **A `map_admits` run cited only in a scratchpad artefact or an uncommitted
+message would not appear** — that is the limit of the search, stated rather than implied, because
+"my search space" standing in for "the world" is this lane's recorded Q3 fault.
