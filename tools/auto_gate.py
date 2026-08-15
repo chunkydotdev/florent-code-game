@@ -155,6 +155,12 @@ MARK_CATASTROPHE = 400
 MARK_MID = 1000
 MARK_HALF = 2700
 CATASTROPHE_CI_HI = 45.0  # pinned by Magnus
+
+# THE TREND FLOOR. Pinned by Magnus 2026-08-15, verbatim: "the share needs to be
+# above 51% at 1000 and at 2700 n otherwise it's no use to us, more than to maybe
+# test combinations with." Checked against the PREFIX share at each mark, so the
+# rule looks exactly twice however often this tool runs (see Tape.wins_at_mid).
+TREND_FLOOR = 51.0
 Z95 = 1.96                # pinned: naive normal interval, DEFF 0.98 => no inflation
 
 DEFAULT_WORKLIST = REPO / "scratchpad/corefill_work.txt"
@@ -262,6 +268,21 @@ class Tape:
     wins: int = 0
     mtime: float = 0.0
     why: str = ""
+    # PREFIX wins at exactly the first MARK_MID / MARK_HALF rows. These exist so
+    # the trend rule looks EXACTLY TWICE regardless of how often this tool runs.
+    # ⛔ Using the CURRENT share instead would make the rule re-evaluate on every
+    # 10-minute tick from n=1000 to n=5400 — ~400 looks at a random walk that
+    # crosses 51% constantly. That is optional stopping, and it would kill true
+    # winners at many times the rate the two-look design was priced at.
+    # A prefix is deterministic and idempotent: same tape, same verdict, forever.
+    # ⛔ DEFAULT None, NOT 0 — and the selftest is what forced this. A Tape built
+    # any way other than read_tape() (a fixture, a future caller) would carry 0
+    # here, and 0 wins over 1000 games reads as 0.00% — BELOW ANY FLOOR, so every
+    # such shard would be STOPPED. That is a default that fails in the KILLING
+    # direction, the one this file's docstring says an automated canceller must
+    # never drift in. None means BLIND, and blind never stops.
+    wins_at_mid: int | None = None
+    wins_at_half: int | None = None
 
 
 def read_tape(path: Path) -> Tape:
@@ -289,6 +310,7 @@ def read_tape(path: Path) -> Tape:
         # stops a schema change from reading as a catastrophic arm.
         return Tape(False, why="first non-comment line is not the 'ts\\t...' header")
     n, wins = 0, 0
+    w_mid, w_half = None, None
     for ln in lines[1:]:
         f = ln.split("\t")
         if len(f) < 7:
@@ -296,9 +318,14 @@ def read_tape(path: Path) -> Tape:
         n += 1
         if f[6] == "T":
             wins += 1
+        if n == MARK_MID:
+            w_mid = wins
+        if n == MARK_HALF:
+            w_half = wins
     if n <= 0:
         return Tape(False, mtime=mtime, why="header only, zero data rows")
-    return Tape(True, n=n, wins=wins, mtime=mtime)
+    return Tape(True, n=n, wins=wins, mtime=mtime,
+                wins_at_mid=w_mid, wins_at_half=w_half)
 
 
 @dataclass
@@ -595,12 +622,55 @@ def decide(sh: Shard, bars: dict[str, Bar], stale_s: float,
                  f"{CATASTROPHE_CI_HI:.1f} — the optimistic edge of its own data is "
                  f"still catastrophic")
 
-    # ---- G1: NO BAR, NO STOP -----------------------------------------------
+    # ---- TREND FLOOR — the primary stop rule (Magnus, 2026-08-15) -----------
+    # "the share needs to be above 51% at 1000 and at 2700 n otherwise it's no
+    # use to us, more than to maybe test combinations with."
+    #
+    # ⭐ THIS SUPERSEDES THE CI-BASED FUTILITY RULE BELOW AS THE PRIMARY GATE,
+    # and it is a DIFFERENT QUESTION. Futility-by-exclusion asked "can this arm
+    # still REACH the bar?" and so protected anything unresolved. The trend
+    # floor asks "is this arm WORTH THE COMPUTE?" — an arm reading 50.5% is
+    # unresolved AND uninteresting, and we were paying full price for its
+    # precision. Priced before adoption, false-drop of a TRUE effect:
+    #     +1.33pp (at bar) 63.0%   +2pp 37.3%   +3pp 11.9%
+    #     +4pp 2.9%        +5pp 0.6%            +7pp 0.0%
+    # Tuned for the hunt actually underway (a 65% shard is +15pp: survives with
+    # certainty). What it kills hard is the at-the-bar class, which is the class
+    # the directive above declares uninteresting.
+    #
+    # ⛔ WHY DROPPING AN ARM HERE LOSES NO INFORMATION, which is the whole
+    # reason the rate above is affordable: CANCELLING KEEPS THE ROWS. A shard
+    # stopped at 2700 still has a 2,700-game screen on the tape — ample to pick
+    # it for a COMBINATION arm. We stop buying precision on an arm we would not
+    # ship alone; we do not stop knowing what it measured.
+    #
+    # ⭐ AND IT NEEDS NO REGISTERED BAR — deliberately. The side lane's
+    # 2026-08-15 objection was that BARS.tsv coverage is a PRACTICE, not a
+    # MECHANISM (grep: no queueing path writes a bar row; coverage 202/206 and
+    # decaying with attention). Under the old design an unregistered arm got NO
+    # RULE AT ALL, so the coverage gap was also an enforcement gap. Under this
+    # one an unregistered arm gets the SAFE HOUSE DEFAULT, and the registry
+    # shrinks to carrying only EXCEPTIONS — a set small enough to audit by eye.
+    if sh.tape.n >= MARK_MID:
+        src = "registered" if bar is not None else "DEFAULT (no bar row)"
+        for mk, w in ((MARK_MID, sh.tape.wins_at_mid),
+                      (MARK_HALF, sh.tape.wins_at_half)):
+            if sh.tape.n < mk or w is None:
+                continue  # w is None => prefix unknown => BLIND => never stop
+            pfx = 100.0 * w / mk
+            if pfx < TREND_FLOOR:
+                return d("STOP", f"TREND-FLOOR@{mk}",
+                         f"share over the FIRST {mk} games was {pfx:.2f}% < the "
+                         f"{TREND_FLOOR:.1f}% house floor [{src}] — not futile, "
+                         f"but not worth further compute on its own. Rows are "
+                         f"KEPT: it remains available as a combination input.")
+
+    # ---- G1: NO BAR, NO STOP (the CI rule only) -----------------------------
     if bar is None:
         return d("CONTINUE", "NO-BAR-REGISTERED",
-                 f"no row in the bar registry, so the bar rule CANNOT be applied "
-                 f"(catastrophe was checked and did not fire). Register it in "
-                 f"docs/prereg/BARS.tsv with a prereg citation to make it stoppable.")
+                 f"cleared the {TREND_FLOOR:.1f}% trend floor; no row in the bar "
+                 f"registry, so the CI bar rule cannot also be applied. Register "
+                 f"it in docs/prereg/BARS.tsv with a prereg citation.")
 
     if mark in ("1000", "2700"):
         # ⛔⛔ MARGIN ADDED s44 AFTER THE RULE STOPPED A SHARD ON 0.0087pp.
@@ -1186,6 +1256,77 @@ def selftest() -> int:
     slip_sh = shard("SLIP", 2700, 1200)   # reuse the fixture factory, do not hand-build a Shard
     chk("a shard whose bar was REFUSED is unstoppable, not stoppable",
         decide(slip_sh, ib, DEFAULT_STALE_S).action, "CONTINUE")
+
+    # ── TREND FLOOR (Magnus 2026-08-15) ───────────────────────────────────
+    # Driven through read_tape() on REAL files, because the prefix counters only
+    # exist there — a fixture Tape carries None and is deliberately unstoppable.
+    print("\n── trend floor: the PREFIX share at each mark, exactly two looks ────────")
+    tdir = tmp / "trend"
+    tdir.mkdir(parents=True, exist_ok=True)
+
+    def trend_shard(sid, spec, bars_key=None, treat="treeC", ctrl="treeA"):
+        """spec: list of (count, 'T'|'C') written in order. Real file, real reader."""
+        p = tdir / f"{sid}.tsv"
+        rows = ["ts\ta\tb\tc\td\te\tres"]
+        for cnt, ch in spec:
+            rows += [f"0\t1\t2\t3\t4\t5\t{ch}"] * cnt
+        p.write_text("\n".join(rows) + "\n")
+        t = read_tape(p)
+        return Shard(bars_key or sid, "local", "", p, str(tmp / treat),
+                     str(tmp / ctrl), 5400, t, 1.0, "tsv mtime", True, "RUNNER")
+
+    TB = dict(BARS)
+    # one game either side of the floor at mark 1000 — 51.0% is NOT below 51.0
+    s_below = trend_shard("TB_LOW",  [(509, "T"), (491, "C")], "REAL")
+    s_at    = trend_shard("TB_AT",   [(510, "T"), (490, "C")], "REAL")
+    chk("prefix@1000 50.90% (one game under the floor)  => STOP",
+        decide(s_below, TB, DEFAULT_STALE_S).action, "STOP")
+    chk("prefix@1000 51.00% (exactly AT the floor)      => CONTINUE",
+        decide(s_at, TB, DEFAULT_STALE_S).action, "CONTINUE")
+    chk("...and the stop names the mark it fired at",
+        decide(s_below, TB, DEFAULT_STALE_S).clause, f"TREND-FLOOR@{MARK_MID}")
+
+    # the SECOND mark bites independently: clears 1000, fails 2700
+    s_m2 = trend_shard("TB_M2", [(510, "T"), (490, "C"), (865, "T"), (835, "C")], "REAL")
+    chk(f"clears {MARK_MID} (51.00%) but prefix@{MARK_HALF} 50.93% => STOP at the 2nd mark",
+        decide(s_m2, TB, DEFAULT_STALE_S).clause, f"TREND-FLOOR@{MARK_HALF}")
+
+    # ⛔ THE OPTIONAL-STOPPING GUARD, and it is the reason prefixes exist at all.
+    # Both cells below have a CURRENT share that points the opposite way from the
+    # prefix. If either verdict follows the current share, this tool is taking
+    # ~400 looks at a random walk instead of two, and the false-drop rate it was
+    # priced at is fiction.
+    s_lowpfx_highnow = trend_shard("TB_A", [(400, "T"), (600, "C"), (3400, "T"), (600, "C")], "REAL")
+    s_highpfx_lownow = trend_shard("TB_B", [(600, "T"), (400, "C"), (600, "T"), (3400, "C")], "REAL")
+    chk("bad prefix, GREAT current share (now 66.7%)   => STOP anyway",
+        decide(s_lowpfx_highnow, TB, DEFAULT_STALE_S).action, "STOP")
+    chk("good prefix, AWFUL current share (now 26.7%)  => not stopped by the floor",
+        decide(s_highpfx_lownow, TB, DEFAULT_STALE_S).clause.startswith("TREND-FLOOR"), False)
+
+    # too early: the mark is not reached, so the rule cannot look
+    s_early = trend_shard("TB_EARLY", [(100, "T"), (899, "C")], "REAL")
+    chk(f"n=999 at 10.0% — below {MARK_MID}, floor CANNOT look yet",
+        decide(s_early, TB, DEFAULT_STALE_S).clause.startswith("TREND-FLOOR"), False)
+
+    # ⭐ THE COVERAGE-GAP CLOSURE: an UNREGISTERED shard is now stoppable by the
+    # house default. Under the old design it got no rule at all, so a gap in
+    # BARS.tsv was also a gap in enforcement (side lane, 2026-08-15).
+    s_nobar = trend_shard("TB_UNREG", [(480, "T"), (520, "C")], "NOT_IN_REGISTRY")
+    dn = decide(s_nobar, TB, DEFAULT_STALE_S)
+    chk("an UNREGISTERED shard at 48.0% is STOPPED by the house default",
+        dn.action, "STOP")
+    chk("...and the reason says the bar was a DEFAULT, not a registered row",
+        "DEFAULT (no bar row)" in dn.detail, True)
+
+    # exemption ORDER: an ablation must survive a low prefix (low IS its success)
+    s_abl = trend_shard("TB_ABL", [(300, "T"), (700, "C")], "ABL")
+    chk("an ABLATION (le bar) at 30.0% is NOT stopped by the floor",
+        decide(s_abl, TB, DEFAULT_STALE_S).clause.startswith("TREND-FLOOR"), False)
+
+    # a fixture Tape carries None prefixes => BLIND => never stopped by the floor
+    chk("a Tape with UNKNOWN prefixes is unstoppable by the floor (blind != dead)",
+        decide(shard("REAL", 2700, 100), TB, DEFAULT_STALE_S).clause.startswith("TREND-FLOOR"),
+        False)
 
     # ── KILL SWITCH ───────────────────────────────────────────────────────
     # THE ONLY GUARD WHOSE FAILURE MODE IS "the person trying to stop the damage

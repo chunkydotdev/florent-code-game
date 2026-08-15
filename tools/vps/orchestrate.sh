@@ -59,6 +59,28 @@ r_exec() {   # r_exec "<shell command, run in the worker root>"
   if [ -n "$SIM" ]; then ( cd "$SIM" && bash -c "$1" )
   else ssh -o BatchMode=yes "$HOST" "mkdir -p '$REMOTE_ROOT' && cd '$REMOTE_ROOT' && $1"; fi
 }
+# ⛔ COUNTING WORKERS WITHOUT COUNTING OURSELVES.
+# `pgrep -fc 'tools/vps/worker.sh'` is what this file used, and it is WRONG over
+# ssh: the remote shell's own argv CONTAINS that string (it is in the command we
+# just sent), so pgrep matches the payload and the count is never 0. Measured
+# 2026-08-15 on a host with the worker CONFIRMED dead (`status` said
+# `runners: 0  worker: 0`): this returned **2**. cmd_kill printed that number
+# under the instruction "Verify 'workers remaining: 0'" — an operator following
+# its own documentation could never see the value it demands, so the check could
+# only ever refuse. A guard that cannot return the passing verdict is not a
+# guard. Same class as the local `pgrep` self-match that reported 12 watchers.
+# ⛔ AND MY FIRST FIX FOR IT WAS ALSO WRONG, which is why this is a shared
+# constant now. I replaced pgrep with `grep -F "bash tools/vps/worker.sh"` plus a
+# $$/$PPID exclusion — and it STILL read 2 on the dead host, because the pattern
+# is itself part of the payload being searched. Excluding PIDs cannot help: the
+# text matches whatever process carries it.
+# The working form is the one cmd_status has used all along — the BRACKET TRICK.
+# `[w]orker.sh` as a regex matches the string `worker.sh`, but the payload
+# carries the literal characters `[w]orker.sh`, which that regex does NOT match.
+# Self-match is broken by construction rather than by filtering after the fact.
+# Verified both ways live: dead host -> 0, host with a live worker -> nonzero.
+WCOUNT_CMD='ps ax -o command= 2>/dev/null | grep -c "[w]orker.sh" || true'
+
 r_exec_home() {  # r_exec_home "<shell command, run in the remote HOME>"
   if [ -n "$SIM" ]; then ( cd "$(dirname "$SIM")" && bash -c "$1" )
   else ssh -o BatchMode=yes "$HOST" "$1"; fi
@@ -422,7 +444,7 @@ cmd_stop() {
 # Rows are never touched: the worker holds no state a SIGTERM can lose, and
 # nothing in this pipeline deletes results.
 cmd_kill() {
-  r_exec "pkill -f 'tools/vps/worker.sh' 2>/dev/null; sleep 1; n=\$(pgrep -fc 'tools/vps/worker.sh' 2>/dev/null || echo 0); echo \"workers remaining: \$n\"; ls results/*.tsv 2>/dev/null | wc -l | xargs echo 'result tapes still present:'"
+  r_exec "pkill -f 'tools/vps/worker.sh' 2>/dev/null; sleep 1; n=\$($WCOUNT_CMD); echo \"workers remaining: \$n\"; ls results/*.tsv 2>/dev/null | wc -l | xargs echo 'result tapes still present:'"
   say "KILL sent to $HOST. Verify 'workers remaining: 0' above — a nonzero count means it did NOT die and you must not start another."
 }
 
@@ -439,6 +461,51 @@ case "$CMD" in
   reset-done)
     SH=${ARGS[0]:?reset-done needs a SHARD name}
     r_exec "if [ -f results/$SH.COMPLETE ]; then rm results/$SH.COMPLETE && echo \"removed results/$SH.COMPLETE (rows kept: \$(wc -l < results/$SH.tsv))\"; else echo \"no results/$SH.COMPLETE on this host\"; fi";;
+  # cancel <host> <SHARD> <reason> — THE PER-SHARD REMOTE CANCEL, and it exists
+  # because there was none. `stop`/`kill` halt the WHOLE worker; the only
+  # per-shard lever was the `.COMPLETE` marker, which the worker checks at shard
+  # START (worker.sh:249). That gap is why `auto_gate.py --apply` refuses remote
+  # shards outright — so the auto-stopper could not act on 2 of our 3 hosts, and
+  # every remote stop was a human doing this sequence by hand.
+  #
+  # ⛔ THE MARKER SAYS "CANCELLED", NEVER "reached n/TARGET". worker.sh:350
+  # writes the latter and it CERTIFIES A COMPLETED RUN. Hand-writing that form
+  # for a shard stopped at 4620/5400 would put a false completion certificate on
+  # the tape, and every downstream reader that trusts `.COMPLETE` would count a
+  # cancelled arm as a finished one. Rows are KEPT either way — what differs is
+  # what the marker CLAIMS about them.
+  cancel)
+    SH=${ARGS[0]:?cancel needs a SHARD name}
+    RSN=${ARGS[1]:-unspecified}
+    # G1: refuse while the worker lives. The marker is only read at shard start,
+    # so cancelling a RUNNING shard silently does nothing — the caller would get
+    # a success message and no effect. `kill` first, deliberately.
+    # G2: refuse an unknown shard name. A typo would otherwise write a marker
+    # that suppresses a shard nobody meant to touch, and leave no trace.
+    r_exec "
+      n=\$($WCOUNT_CMD)
+      if [ \"\$n\" -ne 0 ]; then
+        echo \"⛔ REFUSING: \$n worker(s) still alive. The .COMPLETE marker is read at shard START only,\"
+        echo \"   so cancelling now would report success and change nothing. Run 'kill $HOST' first.\"
+        exit 3
+      fi
+      if [ ! -f results/$SH.tsv ]; then
+        echo \"⛔ REFUSING: no results/$SH.tsv on this host — nothing by that name has run here.\"
+        ls results/*.tsv 2>/dev/null | head -20 | sed 's/^/   have: /'
+        exit 4
+      fi
+      if [ -f results/$SH.COMPLETE ]; then
+        echo \"already marked: \$(cat results/$SH.COMPLETE)\"; exit 0
+      fi
+      rows=\$(grep -vc '^#' results/$SH.tsv 2>/dev/null || echo 0)
+      printf '%s %s CANCELLED at %s rows by: %s -- rows KEPT, this is NOT a completed run\n' \
+        \"\$(date -u +%Y-%m-%dT%H:%M:%SZ)\" '$SH' \"\$rows\" '$RSN' > results/$SH.COMPLETE
+      echo \"cancelled $SH at \$rows rows; marker written:\"; sed 's/^/   /' results/$SH.COMPLETE
+    "
+    rc=$?
+    [ "$rc" -eq 0 ] && say "$SH will be SKIPPED on the next start of $HOST; its rows remain readable." \
+                    || say "cancel did NOT take on $HOST (rc=$rc) — read the refusal above."
+    exit $rc;;
   stop)   cmd_stop;;
   kill)   cmd_kill;;
   *) die "unknown subcommand '$CMD'. one of: gen push pull status setup start stop kill" 2;;
