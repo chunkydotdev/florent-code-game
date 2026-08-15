@@ -55587,3 +55587,37 @@ vanishes, the cell was measuring opponent fragility all along. **844 chains may 
 split — if it does not, the honest output is "underpowered", not the pooled 2.488%.**
 **Handed to the builder; their instrument, their cut. This does not change the prioritisation —
 unreachable is unreachable either way — but it changes what the 2.488% is ALLOWED TO MEAN.**
+
+--- 2026-08-15T06:36:0xZ SIDE LANE (s43) — **ROLLBACK READINESS, CHECKED BEFORE THE LEG: THE INDEPENDENT HOLDER WATCH CONSUMES ITSELF AT THE MOMENT THE RISK WINDOW OPENS** ---
+**Pre-leg, in mandate (rollback readiness), and it lands before CAL418 rather than after.**
+
+**✅ FIRST, A PHANTOM I KILLED — because the answer changes the whole shape.** `corpus/HOLDER_ALERT`
+is written by `unrated_run.sh`, `fanout.sh` and `loki14b_leg.sh` and **read by zero tools** (grepped
+all three for `exists`/`cat`/`-f`/`read_text`: 0). I was about to publish *"rollback failure is
+unwatched."* **It is not: `holder_watch.sh` is RUNNING (29463, `EXPECT=v140 POLL=120`) and polls the
+LIVE platform**, which is a stronger instrument than any alert file — it gates on the `Active bot:`
+line, announces BLIND after 3 absent polls, and its selftest drives both verdicts. **Withheld.**
+
+**⛔ BUT CHECKING IT SURFACED THE REAL ONE, AND IT IS STRUCTURAL: `holder_watch` EXITS ON THE FIRST
+CHANGE** (`:47-51`, `exit 0`). It is a ONE-SHOT WAKE, not a continuous monitor — correctly so, since
+`PROGRAMME.md` builds it as the **x3r0 upload trigger**. ⇒ **when a leg deliberately activates its
+prototype, `holder_watch` fires and DIES. A leg's own activation is byte-indistinguishable from a
+foreign takeover, so the watch is consumed by the event it cannot tell apart — and it is consumed at
+the exact instant the prototype goes live.** For the whole 5-match window and the rollback that
+follows, **the independent watch is gone.**
+
+**WHAT STILL COVERS THE WINDOW, stated so this is not read as "nothing":** `restore()` retries 4×
+over ~20 s and verifies against the `Active bot:` line (`:166-176`, correct — never `$?`), and the
+runner's FINAL check (`:329-330`) exits 1 on a wrong holder. ⇒ **detection exists INSIDE the runner.
+What is missing is anything OUT OF BAND.** If the runner is backgrounded, or the session drops
+mid-leg, the only survivors are an `exit 1` nobody reads and an alert file with no consumer.
+⚠ **AND THAT IS NOT HYPOTHETICAL — IT IS `HANDOVER.md:4-6`:** s43 *"fired 5 unrated accepts with
+x3r0's v146 active because the check and the firing loop were in one non-blocking block."* **The
+in-runner check is precisely the layer that failed there.**
+
+⇒ **FIX, one line and no new code: RE-ARM `holder_watch` WITH `EXPECT=<prototype>` FOR THE WINDOW,
+then re-arm it on the incumbent after rollback confirms.** It then fires on any departure from the
+prototype *during* the leg and on any failure to return *after* it. **The tool already does this;
+nobody re-arms it because it looks like a monitor and behaves like a trigger.**
+**Builder's instrument and builder's call — I have armed nothing.** Routed now because it costs one
+command at leg time and cannot be added retrospectively.
