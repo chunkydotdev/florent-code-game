@@ -59,6 +59,7 @@ PLANKS = {
     "catapult":   ("_v253catapult",   ["LOKI_CATAPULT_ON"]),
     "collarseal": ("_v254collarseal", ["LOKI_COLLARSEAL_ON"]),
     "pinaim":     ("_v251pinaim",     ["LOKI_PINAIM_ON"]),
+    "sentshell":  ("_v273sentshell",  ["LOKI_SENTSHELL_ON"]),
 }
 
 

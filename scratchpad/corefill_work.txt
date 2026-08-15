@@ -1125,3 +1125,7 @@ MIX282mix5 bots/_v282mix5 bots/_v223sealrepair 5400 366000
 MIX283mix5 bots/_v283mix5 bots/_v223sealrepair 5400 368000
 MIX284mix3 bots/_v284mix3 bots/_v223sealrepair 5400 370000
 MIX285mix2 bots/_v285mix2 bots/_v223sealrepair 5400 372000
+SH286 bots/_v273sentshell bots/_v223sealrepair 5400 376000
+SH287 bots/_v287sh4 bots/_v223sealrepair 5400 378000
+SH288 bots/_v288sh2 bots/_v223sealrepair 5400 380000
+SH289 bots/_v289sh4 bots/_v223sealrepair 5400 382000
