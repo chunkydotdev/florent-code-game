@@ -143,7 +143,65 @@ def play(job):
     return row
 
 
+def reconcile(jobs, rows):
+    """-> (ok, lines). Requested vs returned PER ARM.
+
+    Extracted so `--selftest` drives THIS function rather than a second copy of
+    the arithmetic living in a test. A test that re-implements the computation
+    certifies the copy, not the shipped path -- which is the defect the repo's
+    own selftest sweep is named after.
+    """
+    want = Counter(j[0] for j in jobs)
+    got = Counter(r["cell"] for r in rows if "cell" in r)
+    missing = {a: want[a] - got.get(a, 0) for a in want}
+    if not any(missing.values()):
+        return True, ["reconciled: requested == returned on every arm ("
+                      + ", ".join(f"{a} {want[a]}" for a in sorted(want)) + ")"]
+    out = ["⛔ GAMES DROPPED — a dropped game leaves the denominator, it is NOT a loss:"]
+    for a in sorted(want):
+        m = missing[a]
+        out.append(f"     {a:<10} requested {want[a]:>4}  returned {got.get(a,0):>4}"
+                   f"  dropped {m:>3}{'   <-- DROPPED' if m else ''}")
+    out.append("   ⚠ AN ARM-CONCENTRATED DROP BIASES EVERY COMPARISON BELOW. "
+               "Treat this run as UNSCORABLE until the cause is known.")
+    return False, out
+
+
+def selftest() -> int:
+    """Drive reconcile() to BOTH verdicts, on the shipped function."""
+    def jobs_of(n):            # only slot 0 (the arm) is read
+        return [("variant",) * 9 for _ in range(n)] + [("control",) * 9 for _ in range(n)]
+    def rows_of(v, c):
+        return [{"cell": "variant"}] * v + [{"cell": "control"}] * c
+    fail = 0
+
+    ok, lines = reconcile(jobs_of(30), rows_of(30, 30))
+    print(f"  clean pair                 ok={ok}  want True")
+    if not ok:
+        print("  FAIL: a clean run reported a drop"); fail = 1
+
+    # THE CELL THAT MATTERS: concentrated in ONE arm. A test built on an even
+    # split would also pass against a battery-WIDE count and miss exactly the
+    # case this guard exists for.
+    ok, lines = reconcile(jobs_of(30), rows_of(27, 30))
+    named = any("variant" in ln and "dropped   3" in ln for ln in lines)
+    print(f"  arm-concentrated 30->27    ok={ok}  want False   names variant={named}")
+    if ok or not named:
+        print("  FAIL: an arm-concentrated drop was missed or misattributed"); fail = 1
+
+    ok, _ = reconcile(jobs_of(30), rows_of(29, 28))
+    print(f"  evenly split 30->29/28     ok={ok}  want False")
+    if ok:
+        print("  FAIL: an even split was missed"); fail = 1
+
+    print("SELFTEST PASS (clean / arm-concentrated / even-split all discriminated)"
+          if not fail else "SELFTEST FAIL")
+    return fail
+
+
 def main() -> int:
+    if "--selftest" in sys.argv:
+        return selftest()
     ap = argparse.ArgumentParser()
     ap.add_argument("--variant", required=True)
     ap.add_argument("--control", required=True)
@@ -202,24 +260,16 @@ def main() -> int:
     # the defect its sibling could not see. That asymmetry is the exact shape
     # overnight.sh:50-53 already warns about: one runner hardened, the sibling
     # left with the original behaviour.
-    want = Counter()
-    for j in jobs:
-        want[j[0]] += 1
-    got = Counter(r["cell"] for r in rows if "cell" in r)
-    missing = {a: want[a] - got.get(a, 0) for a in want}
-    if any(missing.values()):
-        print("⛔ GAMES DROPPED — a dropped game leaves the denominator, it is NOT a loss:",
-              file=sys.stderr)
-        for a in sorted(want):
-            m = missing[a]
-            mark = "   <-- DROPPED" if m else ""
-            print(f"     {a:<10} requested {want[a]:>4}  returned {got.get(a,0):>4}"
-                  f"  dropped {m:>3}{mark}", file=sys.stderr)
-        print("   ⚠ AN ARM-CONCENTRATED DROP BIASES EVERY COMPARISON BELOW. "
-              "Treat this run as UNSCORABLE until the cause is known.", file=sys.stderr)
-    else:
-        print(f"reconciled: requested == returned on every arm "
-              f"({', '.join(f'{a} {want[a]}' for a in sorted(want))})", file=sys.stderr)
+    # ⛔ ONE COPY ONLY. This was an inline duplicate of reconcile()'s arithmetic
+    # for ~10 minutes: --selftest exercised reconcile() while main() ran the
+    # inline block, so the test certified a copy and not the shipped path —
+    # exactly the defect the side lane warned about when they declined to
+    # re-implement it in a test of their own. My patch to collapse them failed
+    # SILENTLY (substring not found) and the selftest still passed, because it
+    # was testing the half that worked.
+    _ok, _lines = reconcile(jobs, rows)
+    for _ln in _lines:
+        print(_ln, file=sys.stderr)
 
     # Mechanism first, win rate second -- deliberately in that order.
     print("\nMECHANISM (the metric only this change can move)")
