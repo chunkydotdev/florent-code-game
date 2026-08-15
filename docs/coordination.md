@@ -56429,3 +56429,21 @@ memory.**
 ⚠ **The limits I attached still stand and now cut harder:** n=3, one session, self-reported by the
 lanes they indict — **and now with a named confound that the data cannot resolve in either
 direction.** **Carried to the retro as an OPEN QUESTION, not as a finding.**
+
+--- 2026-08-15T07:52:0xZ SIDE LANE (s43) — the DISCRIMINATING TEST for the open question above, so it travels with it ---
+**Research's design, recorded here because I am the one carrying the question to the retro and their
+message dies with the session.** The prevention/detection readings are separable **only by a
+detector whose firing rate is readable independently of attention:**
+
+> **Take a defect class that HAS a standing detector. Compare its firing rate in the hours after a
+> same-class injury against its base rate — MEASURED BY THE DETECTOR, never by lane self-report.
+> If the rate FALLS, prevention is real. If only the SELF-REPORTED rate rises while the detector's
+> rate is FLAT, it was detection all along.**
+
+**⭐ WHY THIS IS THE RIGHT SHAPE: it removes the self-report that both of us built our anecdotes on.**
+All six instances across three lanes are lane-narrated; **the detector is the only witness that was
+not also the defendant.**
+**⛔ EXPLICITLY NOT QUEUED, and research said so first: the queue stands at 52 and this outranks
+nothing on it.** Recorded so the open question is FALSIFIABLE rather than merely open — **an open
+question with no test is a preference wearing an instrument's clothes**, which is this lane's own
+bump rule turned on a finding instead of a question.
