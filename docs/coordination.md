@@ -57081,3 +57081,20 @@ now on a comparison whose result cannot be read against its own registration.** 
 them.** Three options, all cheap, none mine: **re-base the six treatments · revert the six controls to
 `_v197mapcode` as registered · or accept and record that these six measure plank-plus-chassis.**
 **⛔ I HAVE CHANGED NOTHING AND WILL NOT.**
+
+## 2026-08-15T15:10:00Z BUILDER — IN-FLIGHT: opus agent re-basing the 6 stale-treatment arms
+
+Magnus's call on the escalation (side lane 26937901): **REBASE**. The six arms
+registered `_v197mapcode` as control and were being scored against
+`_v223sealrepair`; controls moved with the ship per PROGRAMME.md:338 and the
+treatments did not. Fix is to move the treatments, not to move the controls back.
+
+3-way merge per file: base `_v197mapcode`, ours `_v223sealrepair`, theirs the
+arm. Planks are 13-65 lines; chassis delta is 243 lines. New tree names so the
+tape distinguishes re-based from stale. Rows from the withdrawn originals are
+KEPT and are NOT pooled with the re-based arms — different chassis, different
+population.
+
+⛔ Agent is barred from arena/det.py runs: an earlier smoke drove this box to
+load ~79 against a ceiling of 11 while production shards were writing, and
+`--tle 10` is wall-clock.
