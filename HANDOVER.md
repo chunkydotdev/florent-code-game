@@ -1,3 +1,20 @@
+# ⭐⭐⭐ FIRST: `.venv/bin/python tools/now.py`  — DO NOT READ THE HOLDER OFF THE LINE BELOW.
+# The line below is a CACHE and has gone stale inside eight minutes before. `now.py`
+# reads the holder from `fcode status` (never a poller), names the CONTROL, and prints
+# the AGE of every state surface. Added by a non-lane instruments session 2026-08-15.
+#
+# ⛔ TEN THINGS CHANGED UNDER YOU TODAY (commits dfe65a75..5bb7864c). The full
+# PROCESS DELTAS block is the last entry in docs/coordination.md — read it before your
+# first tool call. Headlines:
+#   * tools/now.py is step 0 in all three charters; tools/fleet_health.py + now.py run at SessionStart
+#   * elo_history.tsv migrated LOCAL CEST -> UTC with `Z` (2,514 rows); freshness.py is marker-authoritative
+#   * every tools/*.py now honours --help side-effect-free (40 of 86 used to RUN and print verdict-shaped text)
+#   * tools/INDEX.md, tools/boot.py --lane (~3.5k tok vs a ~140k charter read), queue_check.py --next
+#   * the fleet supervisor had been DEAD 22h and a duplicate auto_gate was armed; both fixed, launchd watchdog added
+#   * ⚠ CATRND1L (_v260catrnd1) is MISLABELLED — catapult is dead code in it; its 51.19% is an rnd1 reading
+#   * ⚠ ~40 queued g/h arms are under-powered by construction (±1.87pp band vs 0.17pp differences)
+#   * QUEUE HEAD is now TRIO / RND1SOLO / CATSOLO (see the coordination block for why)
+#
 # ⭐⭐ LIVE AT s44 WRAP (2026-08-15T16:0xZ): **v151 "Loki v10 turbo (CPU)", uploaded by
 # x3r0 15:54 and ACTIVE.** Rating **1707** on the newest tape row (1720 → 1707).
 # **WE SHIPPED NOTHING TODAY — zero submissions, zero activations. The no-ship rule held.**

@@ -57427,3 +57427,101 @@ against was replaced outright by Magnus's 51%-at-two-marks trend floor, which th
 the binomial rather than inheriting. **The flag was still right to raise: I could not know where it
 landed, and the check costs less than the retraction.** ⚠ **The other two stand: the 641/656/668
 line count is a moving target, and the count-metric interval is still owed.**
+
+--- 2026-08-15T20:16:42Z (`date -u`) NON-LANE SESSION (usability/instruments) — **PROCESS DELTAS: WHAT CHANGED UNDER YOU TODAY. READ THIS BEFORE YOUR FIRST TOOL CALL.** ---
+
+Magnus commissioned a non-lane session after *"a few sessions that were super confused
+from start to end"*. Six commits, `dfe65a75` → `5bb7864c`. **Nothing about the bot, the
+programme, or any verdict changed. What changed is how you read state and probe tools.**
+
+## 1. ⭐ RUN `tools/now.py` FIRST. IT IS STEP 0 IN ALL THREE CHARTERS NOW.
+*"What is live"* had FIVE answers and THREE were correct answers to a DIFFERENT question.
+`now.py` prints one screen: HOLDER (from `fcode status`, **never a poller**), CONTROL (from
+`PROGRAMME.md`), and **the age of every state surface**. A degraded `fcode` — the case that
+exits 0 and parses as valid JSON with no `active_submission` — makes it print `BLIND` and
+exit 2 rather than invent a holder.
+⇒ **This is D28 mechanised.** The s43 side lane named a stale holder in its own closing
+REBOOT STATE, off `ship_watch` inside that poller's 10-minute gap, having cited the hazard
+twice that day. A tool beats a rule you already know.
+
+## 2. ⛔ `elo_history.tsv` IS NOW UTC WITH A `Z`. IT WAS LOCAL CEST, UNMARKED.
+2,514 rows backfilled via `zoneinfo`; non-timestamp columns byte-identical. The tape had
+been reading ~2h AHEAD of every other surface, so it **always looked the freshest file in
+the repo** — it failed in the flattering direction, and `freshness.py` refused it outright
+("1.9h in the FUTURE").
+**`freshness.py` is now MARKER-AUTHORITATIVE: a `Z` on the row beats the caller's
+`assume_local`.** That is what let the migration happen with no flag day — had the writer
+flipped alone, `ship_watch` and the dashboard would have read 2h STALE instead of 2h fresh:
+same bug, sign reversed, reported as health.
+
+## 3. EVERY `tools/*.py` NOW HONOURS `--help`: side-effect-free, prints its docstring, exits 0.
+Before: 40 of 86 had no argparse, so `--help` RAN THE TOOL. Seven of twelve sampled printed
+**verdict-shaped text** — `tools/freshness.py --help` → `"BLIND: --help has no parseable
+timestamp"`; `tools/leg_read.py --help` → `"LEG: no completed games"`. Both are this repo's
+own verdict vocabulary, and **21 of the 40 also wrote files**, so a probe was an ACTION.
+Enforced by `tests/test_instruments.py::TestHelpContract`.
+
+## 4. `tools/INDEX.md` — 86 tools grouped by THE QUESTION THEY ANSWER. Generated; `--check` exits 1 when stale.
+## 5. `tools/boot.py --lane <lane>` — the STATE half of your boot in ~3.5k tokens (the charter-conformant read was ~140k). **It is NOT the charter — read that yourself; a summary of a rule is a new rule.**
+## 6. `tools/fleet_health.py` — what is SUPPOSED to be running, and is it. A COUNT is the verdict: MISSING and DUPLICATE are distinct failures. Wired into `SessionStart`.
+## 7. `SessionStart` went from 2 hooks to 4 — live state and fleet health now arrive as context.
+## 8. `queue_check.py --next` — ONE row, in full, with its CONTROL named.
+## 9. `audit_trigger` — a cell that cannot evaluate is now `BLIND`/`UNKNOWN`/rc 2, not silently counted as "not tripped".
+## 10. `CLAUDE.md` — the verbatim retracted claim (*"AND THE RATED COST IS ZERO, MEASURED"*) moved to `docs/reference/DIRECTIVE-HISTORY.md`. **The archive must never acquire a LIVE fact** — we have twice been bitten by the opposite arrangement.
+
+## ⛔ FLEET — THINGS THAT WERE BROKEN AND ARE NOW NOT
+* **`corefill_forever.sh` (THE SUPERVISOR) HAD BEEN DEAD 22 HOURS.** It paused on
+  `COREFILL_STOP`, the session that would have resumed it ended, and nothing was
+  responsible for noticing. The live runner carried a 12h deadline ⇒ the box was set to stop
+  launching at ~03:40Z with 55 items unstarted. Restarted, and now supervised by a **launchd
+  agent** (`tools/watchdog.plist`, every 10 min, independent of any session).
+  ⚠ **`AbandonProcessGroup` in that plist is load-bearing**: without it launchd reaps the
+  daemons the watchdog starts, and the log still says `CONFIRMED alive`. Asserted by a test.
+* **A duplicate `auto_gate --apply` was armed** (two loops cancelling shards). Killed.
+* `corefill.sh` gained **guard 5: one runner per worklist** (two runners = 2x MAX_SHARDS, and
+  `--tle 10` is WALL-CLOCK, so that corrupts rows rather than just slowing them).
+* `corefill.log` / `fleet_dispatch.log` were writing **every line twice** — a doubled startup
+  banner reads as a doubled RUNNER, which is the most alarming thing those logs can falsely say.
+
+## ⚠ THINGS THAT ARE STILL WRONG — INHERIT THESE, DO NOT RE-DISCOVER THEM
+1. **`_v260catrnd1` (shard CATRND1L, 51.19% on the v140 board) IS MISLABELLED.** It declares
+   `LOKI_CATAPULT_ON = True` while the call site was deleted — `_catapult_order` is defined at
+   `raid.py:943` and **never called**. ⇒ **its 51.19% is behaviourally an `rnd1` solo reading,
+   not catapult+rnd1.** Hand-built, so it never passed `stack.py`'s inert-toggle refusal.
+   ⛔ **Only 11 of the 34 v140-scored arms carry a `stack.py` stamp; the other 23 are
+   hand-built and none passed that check.** This is the one I happened to open.
+2. **MUCH OF THE QUEUE IS UNDER-POWERED BY CONSTRUCTION.** ~40 g/h arms differ by ONE plank at
+   n=5,400, where the pairwise difference band is **±1.87pp**. Resolving 1pp needs ~18,800 per
+   arm; 0.5pp needs ~75,300. Those arms can answer *"is this above 50%"* and **cannot** answer
+   *"which is best"*, which is what a 40-arm sweep looks like it is for.
+   ⇒ The three leaders (55.24/55.18/55.07) differ by **0.17pp** — pure noise at this n.
+3. **9 queued arms contain `bodyblock`, a confirmed real negative** (47.26% solo; ~−1.7pp in
+   combination, `_v283mix5` 52.98 vs `_v282mix5` 54.65). ~54 core-hours re-confirming it.
+4. `tests/test_instruments.py` has **1 failure, pre-existing and verified unchanged at HEAD**:
+   6 unbacked mutation-test claims (`auto_gate`, `control_pin`, `fixture_starvation`,
+   `fleet_dispatch`, `prereg_check` ×2). The owning lane commits the record or drops the claim.
+5. **`tools/paired_vs_pooled.py` had NEVER COMPILED** (two files concatenated; `from __future__`
+   not first). Fixed minimally; its duplicated body is untouched and unreviewed.
+
+## QUEUE — I ADDED THREE ROWS AT THE HEAD (worklist order is launch order)
+| # | shard | tree | n | question |
+|---|---|---|---|---|
+| 1 | `TRIO` | `_v700trio` = bodyaware+rnd1+spawnlock | 10,800 | **does the bare trio beat `bodyaware` ALONE (53.70%, n=10,800)?** |
+| 2 | `RND1SOLO` | `_v259rnd1` | 5,400 | is `rnd1` positive alone? (never measured vs v140) |
+| 3 | `CATSOLO` | `_v253catapult` | 5,400 | is `catapult` positive alone? (never measured vs v140) |
+
+**Why TRIO exists:** every leader is the trio PLUS a fourth plank, and the three fourth planks
+give statistically identical results. The trio itself had never been built. n=10,800 matches
+bodyaware so the difference band (±1.32pp) sits under the 1.54pp effect.
+⛔ **And the question "does the 4th plank help" is UNANSWERABLE** — the 4-ways are pinned at
+n=5,400, so that difference band floors at ±1.36pp even if the trio ran to 100,000 games.
+⚠ `rnd1` = `LOKI_HOMEEARLY_RND = 1` (the home-launcher round gate), **not** anything random.
+
+## ⛔ NOT DEPLOYED, AWAITING A DECISION
+`tools/vps/worker.sh` has a **rolling pool** replacing the batch barrier, plus `LOAD_CEIL` now
+sized on our ALLOCATION rather than the box's `nproc` (ws1 ran `ncpu=16 workers=10
+load_ceil=20` while our slice is 10). **Both remote hosts still run the OLD worker.**
+Correctness verified (40/40 rows, no dup/missing indices, seat 20/20, selftest green) and
+mechanism verified (occupancy 67%→81%), but **the production magnitude is PROJECTED, NOT
+MEASURED** — my first wall-clock A/B came out backwards because the box was at load 16-20.
+Proposed next step: deploy to **ws2 only**, leave ws1 as control, compare rows/h/core.
