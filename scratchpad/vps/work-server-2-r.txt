@@ -1,0 +1,30 @@
+# REMOTE-ONLY source worklist for worker@work-server-2, generated 2026-08-14
+# (fixture-starvation fix: host had nothing queued after its NULLHOST cert at 19:37Z).
+# Deliberately NOT appended to scratchpad/corefill_work.txt: tools/corefill.sh is
+# LIVE on this box (pid, `zsh tools/corefill.sh scratchpad/corefill_work.txt 8 8`)
+# and local is currently DRAINING (nothing queued behind its 4 in-flight shards) --
+# appending live rows there would have been picked up and launched LOCALLY too,
+# which is not this task's scope. This file exists only to be passed via
+# `orchestrate.sh gen worker@work-server-2 ... --from` and is invisible to
+# corefill.sh (different filename, never polled).
+#
+# Row 1 is NOT a real shard -- it exists only so orchestrate.sh gen's structural
+# NULLPAIR scan (byte-identical treatment==control) finds a pair to build its own
+# NULLHOST row from. It is never selected by name via `gen ... GUNAXABLR SENTTHRR`,
+# so it never appears in the generated worklist. Same pair already certified on
+# this host at 52.0% (208/400 T) 2026-08-14T19:37:52Z.
+NULLPAIR_DETECT bots/_v146null bots/_v146gunaxis 400 900000
+#
+# GUNAXABL (#33) and SENTTHR (#30) -- both LOCKED, green preregs, already running
+# locally under shard ids GUNAXABL/SENTTHR (scratchpad/corefill_work.txt). These
+# R-suffixed rows are the SAME contrasts for worker@work-server-2: distinct shard
+# ids so overnight_read.py never conflates local and remote rows, distinct
+# pre-offset seedbases (320000/322000, clear of the local max of 314000+180=314180)
+# so nothing collides even before the host's own +14000000 partition is added.
+# Final seed ranges actually played on work-server-2 (seedbase + 14000000):
+#   GUNAXABLR: 14320000-14320179 (5400/30=180 seeds)
+#   SENTTHRR : 14322000-14322179
+# shard      treatment                control                target seed_lo
+GUNAXABLR    bots/_v240gunaxabl       bots/_v223sealrepair    5400   320000
+SENTTHRR     bots/_v241sentthreat     bots/_v223sealrepair    5400   322000
+BODYAWRR    bots/_v242bodyaware    bots/_v223sealrepair   5400 342000
