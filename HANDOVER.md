@@ -1,7 +1,14 @@
 # LIVE: **v140 = `bots/_v223sealrepair` "Loki v10"** — md5 c4e563af4730b4c1595c679fc25098e7,
-# rating **1696 (GOLD — demoted out of Emerald)**, k=71, **RULE=SLOT FREE**, both SPRT
-# arms **BLEED**, net5 −27.0, drawdown −99 from a 1795 peak. Read live off `fcode status`
-# and `corpus/ship_watch.log` at 2026-08-15T11:31Z.
+# rating **1686 (GOLD — demoted out of Emerald)**, k=71, **RULE=SLOT FREE**, both SPRT
+# arms **BLEED**, net5 −27.0. Read at 2026-08-15T11:39Z.
+# ⛔ **THIS NUMBER IS A CACHE AND IT WAS STALE WITHIN EIGHT MINUTES OF BEING WRITTEN**
+# — I wrote 1696 at 11:31Z and it read 1686 at 11:39Z, mid-edit. **DO NOT TRUST THE
+# DIGITS ON THIS LINE. RE-READ BEFORE ACTING:**
+#     `.venv/bin/fcode status | grep "Active bot:"`   and   `tail -1 corpus/ship_watch.log`
+# The DIRECTION (falling, stop-loss firing, slot frozen by rule) is what this line is
+# for; the value is illustrative only. This is the open stop-loss-observability item
+# (below) demonstrating itself: prose cannot hold a moving number, which is why the
+# fix asked for is a LATCHED FIELD rather than a better habit.
 # ⛔⛔ **THE STOP-LOSS HAS BEEN FIRING SINCE 08:42Z AND WE ARE CORRECTLY DOING NOTHING.**
 # Magnus, s44 08:11Z: *"we do not put a new bot in the slot, i want to see how much of a
 # better bot we can build"* and *"If x3r0 launches a new bot it stays, we don't touch
