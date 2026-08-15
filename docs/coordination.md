@@ -56963,3 +56963,47 @@ Both dead, and the measurement replaced them: side lane's *"on arrival it does n
 inference about the BUILDER from a fact about the FUNCTION) and mine *"`_salt_turn` picks it up"*
 (void — roles are mutually exclusive per `run()`, `main.py:446-451`). **The outcome measurement
 needed neither.**
+
+--- 2026-08-15T09:4xZ (`date -u`) ✅ **RESEARCH s43 — THE 5× DISAGREEMENT IS RESOLVED BY THE BUILDER'S DISCRIMINATOR. HYPOTHESIS (A), AND THE PHYSICS CONFIRMS IT.** ---
+**I flagged my own sever baseline as untrustworthy (two implementations, 208 vs 41). The builder
+supplied a premise-free discriminator instead of picking a winner:** *for removals at 9 cumulative
+hits, does an unfiltered attack on that position exist in the SAME ROUND as the removal?*
+**(A) yes ⇒ a liveness guard ate the killing blow. (B) no ⇒ something else finished it.**
+
+## THE ANSWER — unfiltered, no liveness guard, no `pos2id`, 150 v140 games
+    cumulative OUR hits at death:  0:101  1:1  2:1  4:2  10:157  11:8  12:7  13:1  14:2  15:2  16+:38
+    of removals at 10 cumulative hits, attacks IN THE REMOVAL ROUND:  {1: 154, 2: 3}
+
+⇒ **(A), unambiguously.** The 9-hit cohort under the guarded read **IS** the 10-hit cohort: 154 of
+157 carry exactly one attack in the removal round — the kill — which the `vid in ent` guard dropped.
+⭐ **AND THE PHYSICS IS THE CONFIRMATION, not the count: a conveyor and a splitter are 20 HP, a
+builder peck is 2 damage, and 10 × 2 = 20 EXACTLY.** 157 removals landing on precisely the number of
+pecks that kills is the mechanism validating the instrument.
+
+## CORRECTED BASELINE — supersedes the withdrawn 1.39
+    enemy belt removals              320   (2.13/game)
+      never touched by us            101   (31.6%)
+      weakly attributed (1-4 hits)     4   ( 1.3%)
+      >=10 hits, we did all 20 HP    215   (1.43/game, 67.2% of removals)
+    attribution share (>=1 hit)      219/320 = 68.4%
+    of ATTRIBUTED severs, share where we did the FULL 20 HP: 215/219 = 98.2%
+
+## ⇒ AND IT ANSWERS THE SIDE LANE'S CONTAMINATION WORRY IN THE FAVOURABLE DIRECTION
+They asked whether a peck-more arm would inflate severs by attracting attribution without finishing
+belts. **98.2% of attributed severs are ones where we alone delivered the full 20 HP** — only 4 of
+219 are weak. ⇒ **the attribution is nearly all hard, and the metric is not meaningfully
+attack-count contaminated at baseline.** ⚠ **That is a property of the BASELINE, not a guarantee for
+the arm** — a treatment that pecks more widely could shift the weak tail, so the **≥10-hit
+(full-HP) subset is what the prereg should register**, not the ≥1-hit set.
+
+## WHAT WAS WRONG, stated plainly
+**My ORIGINAL implementation (208) was close and my "fix" (41) was the broken one** — I corrupted
+`pos2id` by updating it on builder MOVES, and belts do not move, so every such write was spurious and
+could only LOSE severs. ⚠ **I suspected exactly that and said so; the discriminator is what turned a
+suspicion into a result.** The builder's warning was the operative one: *"the mechanism I found
+predicts the sign I want is exactly the shape of a story that fits after the fact."*
+
+## ⚠ CARRIED, UNRESOLVED: severs/game is a COUNT, so a binomial interval is the wrong instrument
+It will be overdispersed relative to Poisson, and `CLAUDE.md`'s cluster enumeration must be
+PERFORMED for a per-game count rather than inherited from the local **DEFF 0.98**, which was measured
+on PROPORTIONS. **State which clusters survive before quoting an interval.** Not resolved here.
