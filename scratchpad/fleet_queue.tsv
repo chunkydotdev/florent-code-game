@@ -1,0 +1,39 @@
+# FLEET QUEUE — ONE central queue; tools/fleet_dispatch.py hands rows to whichever
+# host has a free slot. Columns are TAB separated.
+#
+# state:  QUEUED -> CLAIMED -> RUNNING -> DONE | FAILED
+#   ⛔ THE TRANSITION IS ONE-WAY. A CLAIMED row is claimed FOREVER; a shard that
+#   dies is marked FAILED, logged, and LEFT. Recovering it is a human decision
+#   with the evidence in front of them (overnight_watch.sh restarted NINE
+#   completed shards from zero on 2026-08-11 because a dead run and an archived
+#   run looked identical to it). To retry a row, ADD A NEW ROW with a new
+#   shard_id and a fresh seed_lo — never edit a state backwards.
+#
+# shard_id	treatment_tree	control_tree	target_n	seed_lo	state	host	claimed_utc	note
+F200SIEGELA	bots/_v200siegelaunch	bots/_v223sealrepair	5400	500000	CLAIMED	worker@work-server-1	2026-08-15T12:58:51Z	claimed for worker@work-server-1
+F201LAUNCH0	bots/_v201launch0evict	bots/_v223sealrepair	5400	502000	CLAIMED	worker@work-server-2	2026-08-15T12:58:52Z	claimed for worker@work-server-2
+F210IDLEPEC	bots/_v210idlepeck2	bots/_v223sealrepair	5400	504000	QUEUED	-	-	-
+F211PAVEFIR	bots/_v211pavefirst	bots/_v223sealrepair	5400	506000	QUEUED	-	-	-
+F220OSCK4	bots/_v220osck4	bots/_v223sealrepair	5400	508000	QUEUED	-	-	-
+F220OSCK6	bots/_v220osck6	bots/_v223sealrepair	5400	510000	QUEUED	-	-	-
+F232COLLARM	bots/_v232collarmedic	bots/_v223sealrepair	5400	512000	QUEUED	-	-	-
+F232COLLARM	bots/_v232collarmedic_off	bots/_v223sealrepair	5400	514000	QUEUED	-	-	-
+F232SEALTEM	bots/_v232sealtempo	bots/_v223sealrepair	5400	516000	QUEUED	-	-	-
+F250HOMEEAR	bots/_v250homeearly	bots/_v223sealrepair	5400	518000	QUEUED	-	-	-
+F251PINAIM	bots/_v251pinaim	bots/_v223sealrepair	5400	520000	QUEUED	-	-	-
+F253CATAPUL	bots/_v253catapult	bots/_v223sealrepair	5400	522000	QUEUED	-	-	-
+F254COLLARS	bots/_v254collarseal	bots/_v223sealrepair	5400	524000	QUEUED	-	-	-
+F255HOMEMAX	bots/_v255homemax	bots/_v223sealrepair	5400	526000	QUEUED	-	-	-
+F256PINMAX	bots/_v256pinmax	bots/_v223sealrepair	5400	528000	QUEUED	-	-	-
+F257CATMAX	bots/_v257catmax	bots/_v223sealrepair	5400	530000	QUEUED	-	-	-
+F258SEALMAX	bots/_v258sealmax	bots/_v223sealrepair	5400	532000	QUEUED	-	-	-
+F259RND1	bots/_v259rnd1	bots/_v223sealrepair	5400	534000	QUEUED	-	-	-
+F263PINRND1	bots/_v263pinrnd1	bots/_v223sealrepair	5400	536000	QUEUED	-	-	-
+F266BBNULL	bots/_v266bbnull	bots/_v223sealrepair	5400	538000	QUEUED	-	-	-
+F268TRICOMB	bots/_v268tricomb	bots/_v223sealrepair	5400	540000	QUEUED	-	-	-
+F269AWRSPAW	bots/_v269awrspawn	bots/_v223sealrepair	5400	542000	QUEUED	-	-	-
+F270RNDSPAW	bots/_v270rndspawn	bots/_v223sealrepair	5400	544000	QUEUED	-	-	-
+F271CAPTHRE	bots/_v271capthree	bots/_v223sealrepair	5400	546000	QUEUED	-	-	-
+F272PINTHRE	bots/_v272pinthree	bots/_v223sealrepair	5400	548000	QUEUED	-	-	-
+F313RENTGUN	bots/_v313rentgun	bots/_v223sealrepair	5400	550000	QUEUED	-	-	-
+F314AIMSITE	bots/_v314aimsite	bots/_v223sealrepair	5400	552000	QUEUED	-	-	-

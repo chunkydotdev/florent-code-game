@@ -74,3 +74,40 @@
 2026-08-15T09:49:59Z   DISPATCH T3: WOULD rsync trees ['bots/_v262bodyblock', 'bots/_v223sealrepair'] -> worker@work-server-1:fcode-worker/ (additive, maps/ untouched)
       WOULD append in place to worker@work-server-1:fcode-worker/work/worklist.txt:
         T3 bots/_v262bodyblock bots/_v223sealrepair 5400 32704000   (seed_lo 704000 + host offset 32000000)
+2026-08-15T12:58:12Z queue /Users/junghard/Projects/Work/florent-code-game/scratchpad/fleet_queue.tsv is empty — nothing to dispatch. Seed it: --seed-from scratchpad/combos_ok.txt
+2026-08-15T12:58:26Z queue fleet_queue.tsv: QUEUED=27 CLAIMED=0 RUNNING=0 DONE=0 FAILED=0   (reconciled 0 row(s) this pass)
+2026-08-15T12:58:27Z   local                  FULL  free=0   age=1s  load 13.92 > ceiling 11.0
+2026-08-15T12:58:27Z   worker@work-server-1   FREE  free=1   age=0s  depth=1/2 (remote shards run SEQUENTIALLY; cap 10 cores all go to the running shard) worker_alive=True
+2026-08-15T12:58:27Z   worker@work-server-2   FREE  free=1   age=0s  depth=1/2 (remote shards run SEQUENTIALLY; cap 6 cores all go to the running shard) worker_alive=True
+2026-08-15T12:58:27Z CLAIM F200SIEGELA -> worker@work-server-1  bots/_v200siegelaunch vs bots/_v223sealrepair target=5400 seed_lo=500000   [DRY-RUN, nothing written]
+2026-08-15T12:58:27Z   DISPATCH FAILED F200SIEGELA: ⛔ G7 REFUSING to `start`: a worker.sh is ALIVE on this host. cmd_start does `rm -f STOP`, so the old worker would wake and run its own WORKERS alongside the new ones — double-subscription, and --tle 10 is WALL-CLOCK, so every row both workers produce is corrupt. Use --remote-mode live, or kill the worker first.
+2026-08-15T12:58:27Z CLAIM F201LAUNCH0 -> worker@work-server-2  bots/_v201launch0evict vs bots/_v223sealrepair target=5400 seed_lo=502000   [DRY-RUN, nothing written]
+2026-08-15T12:58:27Z   DISPATCH FAILED F201LAUNCH0: ⛔ G7 REFUSING to `start`: a worker.sh is ALIVE on this host. cmd_start does `rm -f STOP`, so the old worker would wake and run its own WORKERS alongside the new ones — double-subscription, and --tle 10 is WALL-CLOCK, so every row both workers produce is corrupt. Use --remote-mode live, or kill the worker first.
+2026-08-15T12:58:38Z queue fleet_queue.tsv: QUEUED=27 CLAIMED=0 RUNNING=0 DONE=0 FAILED=0   (reconciled 0 row(s) this pass)
+2026-08-15T12:58:39Z   local                  FULL  free=0   age=1s  load 13.86 > ceiling 11.0
+2026-08-15T12:58:39Z   worker@work-server-1   FREE  free=1   age=0s  depth=1/2 (remote shards run SEQUENTIALLY; cap 10 cores all go to the running shard) worker_alive=True
+2026-08-15T12:58:39Z   worker@work-server-2   FREE  free=1   age=0s  depth=1/2 (remote shards run SEQUENTIALLY; cap 6 cores all go to the running shard) worker_alive=True
+2026-08-15T12:58:39Z CLAIM F200SIEGELA -> worker@work-server-1  bots/_v200siegelaunch vs bots/_v223sealrepair target=5400 seed_lo=500000   [DRY-RUN, nothing written]
+2026-08-15T12:58:39Z   DISPATCH F200SIEGELA: WOULD rsync trees ['bots/_v200siegelaunch', 'bots/_v223sealrepair'] -> worker@work-server-1:fcode-worker/ (additive, maps/ untouched)
+      WOULD append in place to worker@work-server-1:fcode-worker/work/worklist.txt:
+        F200SIEGELA bots/_v200siegelaunch bots/_v223sealrepair 5400 32500000   (seed_lo 500000 + host offset 32000000)
+2026-08-15T12:58:39Z CLAIM F201LAUNCH0 -> worker@work-server-2  bots/_v201launch0evict vs bots/_v223sealrepair target=5400 seed_lo=502000   [DRY-RUN, nothing written]
+2026-08-15T12:58:39Z   DISPATCH F201LAUNCH0: WOULD rsync trees ['bots/_v201launch0evict', 'bots/_v223sealrepair'] -> worker@work-server-2:fcode-worker/ (additive, maps/ untouched)
+      WOULD append in place to worker@work-server-2:fcode-worker/work/worklist.txt:
+        F201LAUNCH0 bots/_v201launch0evict bots/_v223sealrepair 5400 14502000   (seed_lo 502000 + host offset 14000000)
+2026-08-15T12:58:49Z queue fleet_queue.tsv: QUEUED=27 CLAIMED=0 RUNNING=0 DONE=0 FAILED=0   (reconciled 0 row(s) this pass)
+2026-08-15T12:58:49Z queue fleet_queue.tsv: QUEUED=27 CLAIMED=0 RUNNING=0 DONE=0 FAILED=0   (reconciled 0 row(s) this pass)
+2026-08-15T12:58:51Z   local                  FULL  free=0   age=1s  load 14.52 > ceiling 11.0
+2026-08-15T12:58:51Z   local                  FULL  free=0   age=1s  load 14.52 > ceiling 11.0
+2026-08-15T12:58:51Z   worker@work-server-1   FREE  free=1   age=1s  depth=1/2 (remote shards run SEQUENTIALLY; cap 10 cores all go to the running shard) worker_alive=True
+2026-08-15T12:58:51Z   worker@work-server-1   FREE  free=1   age=1s  depth=1/2 (remote shards run SEQUENTIALLY; cap 10 cores all go to the running shard) worker_alive=True
+2026-08-15T12:58:51Z   worker@work-server-2   FREE  free=1   age=0s  depth=1/2 (remote shards run SEQUENTIALLY; cap 6 cores all go to the running shard) worker_alive=True
+2026-08-15T12:58:51Z   worker@work-server-2   FREE  free=1   age=0s  depth=1/2 (remote shards run SEQUENTIALLY; cap 6 cores all go to the running shard) worker_alive=True
+2026-08-15T12:58:51Z CLAIM F200SIEGELA -> worker@work-server-1  bots/_v200siegelaunch vs bots/_v223sealrepair target=5400 seed_lo=500000
+2026-08-15T12:58:51Z CLAIM F200SIEGELA -> worker@work-server-1  bots/_v200siegelaunch vs bots/_v223sealrepair target=5400 seed_lo=500000
+2026-08-15T12:58:52Z   DISPATCH F200SIEGELA: live-append confirmed on worker@work-server-1: ** The server may need to be upgraded. See https://openssh.com/pq.html
+2026-08-15T12:58:52Z   DISPATCH F200SIEGELA: live-append confirmed on worker@work-server-1: ** The server may need to be upgraded. See https://openssh.com/pq.html
+2026-08-15T12:58:52Z CLAIM F201LAUNCH0 -> worker@work-server-2  bots/_v201launch0evict vs bots/_v223sealrepair target=5400 seed_lo=502000
+2026-08-15T12:58:52Z CLAIM F201LAUNCH0 -> worker@work-server-2  bots/_v201launch0evict vs bots/_v223sealrepair target=5400 seed_lo=502000
+2026-08-15T12:58:54Z   DISPATCH F201LAUNCH0: live-append confirmed on worker@work-server-2: F201LAUNCH0 bots/_v201launch0evict bots/_v223sealrepair 5400 14502000
+2026-08-15T12:58:54Z   DISPATCH F201LAUNCH0: live-append confirmed on worker@work-server-2: F201LAUNCH0 bots/_v201launch0evict bots/_v223sealrepair 5400 14502000

@@ -1005,7 +1005,15 @@ def dispatch_remote_live(r: Row, host: str, dry: bool) -> tuple[bool, str]:
     rc, out = _run(["ssh", "-o", "BatchMode=yes", host, check], timeout_s=120)
     if r.shard_id not in out:
         return False, f"append not confirmed on {host} (tail did not echo the row): {out.strip()[-300:]}"
-    return True, f"live-append confirmed on {host}: {out.strip().splitlines()[-1]}"
+    # ⛔ REPORT THE LINE THAT MATCHED, NOT THE LAST LINE. ssh interleaves banner
+    # text ("The server may need to be upgraded...") with command output, and
+    # splitlines()[-1] picked the BANNER on work-server-1 — so a genuine append
+    # was reported with a line that looks like a transport warning. The CHECK was
+    # right (shard_id in out) and only the evidence shown was wrong, which is the
+    # worst kind of cosmetic bug: it makes a correct result unreadable.
+    echoed = next((ln for ln in out.strip().splitlines() if r.shard_id in ln),
+                  "<matched, line not recoverable>")
+    return True, f"live-append confirmed on {host}: {echoed.strip()}"
 
 
 # ═══════════════════════════════════════════════════════════════════════════
