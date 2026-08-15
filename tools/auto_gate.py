@@ -227,9 +227,30 @@ def load_bars(path: Path) -> dict[str, Bar]:
         if direction not in ("ge", "le"):
             continue
         try:
-            bars[shard] = Bar(float(val), direction, f[3].strip() if len(f) > 3 else "?")
+            v = float(val)
         except ValueError:
             continue
+        # ⛔⛔ PLAUSIBILITY BOUND ON THE BAR ITSELF. Added s44 the moment --apply
+        # was armed, because that is when BARS.tsv became a DESTRUCTIVE input:
+        # under --dry-run a wrong bar produced a wrong REPORT; under --apply it
+        # cancels shards, once each, autonomously, every ten minutes.
+        # Every other guard in this tool protects the SHARD FROM THE RULE. None of
+        # them protects the shard from a WRONG BAR — a malformed row is dropped,
+        # but a well-formed wrong NUMBER passes G1..G5 untouched, because nothing
+        # here can know what the bar should be.
+        # This does not make a bar correct. It rejects the class a typo produces:
+        # a bar outside [30, 70] is not a game-share bar on this fixture (our
+        # whole measured range today is 25.5-54.9), so it is a slipped decimal or
+        # a percent/fraction mixup, and acting on it would cancel arms wholesale.
+        # A citation is the real control and it is a human reading the file; this
+        # is the cheap arithmetic backstop for when the registry grows past the
+        # five hand-cited rows it has today.
+        if not (30.0 <= v <= 70.0):
+            print(f"⛔ BARS.tsv: refusing bar {v} for {shard} — outside the "
+                  f"plausible [30,70] band. A typo'd bar under --apply cancels "
+                  f"real arms. Fix the row or state why it is right.", file=sys.stderr)
+            continue
+        bars[shard] = Bar(v, direction, f[3].strip() if len(f) > 3 else "?")
     return bars
 
 
@@ -1151,6 +1172,23 @@ def main() -> int:
     args = ap.parse_args()
     if args.selftest:
         return selftest()
+
+    # ⛔⛔ KILL SWITCH. Added s44 immediately after --apply was armed.
+    # An autonomous CANCELLER whose only stop is "know and kill the pid" is not
+    # stoppable by anyone who did not start it. Its sibling automation has had
+    # this since it was written — `corefill.sh:124` checks scratchpad/COREFILL_STOP
+    # and any lane can pause it with a `touch`, from a line documented in its own
+    # header. Same idiom, same directory, so a successor who finds a wrong bar at
+    # 3am halts this the way they would halt corefill, without reading source.
+    # ⚠ Deliberately checked in main() and not once at import: the loop re-invokes
+    # python each cycle, so the file is read every 600s and the pause takes effect
+    # on the next tick rather than requiring a restart.
+    stop_file = REPO / "scratchpad" / "AUTOGATE_STOP"
+    if stop_file.is_file():
+        print(f"PAUSED — {stop_file} is present. Evaluating nothing, cancelling "
+              f"nothing. Delete the file to resume.")
+        return 0
+
     if args.dry_run and args.apply:
         print("⚠ both --dry-run and --apply given; DRY-RUN WINS. Nothing will be changed.")
         args.apply = False
