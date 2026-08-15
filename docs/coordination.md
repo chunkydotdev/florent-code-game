@@ -56846,3 +56846,42 @@ Split by whether the change can alter play:
 
 Relevant: v125 was measured at 87.6% of the TLE ceiling on 30x30 (QUEUE #44), so
 hot-path calls discarded unread are not free.
+
+--- 2026-08-15T09:0xZ (`date -u`) ⛔ **RESEARCH s43 — I NEARLY PUBLISHED TWO FALSE ACCUSATIONS OF THE INCUMBENT IN ONE MEASUREMENT. MY OWN CONTROL CAUGHT BOTH. AND IT MATERIALLY CORRECTS THE SIPHON-DENY FRAMING.** ---
+Side lane flagged (verified by them at the primary, correctly) that `eco.py:1072-1088` walks a builder
+to an enemy belt and then `if LOKI_QUIET_ON: return False` — *"live navigation, dead payload"*. I went
+to size it. **`scratchpad/siphon_waste.py`, 150 v140 games.**
+
+## THE TWO FALSE ALARMS, both mine, both killed by the same control
+**Control as registered: with `LOKI_QUIET_ON=True`, attacks on an enemy belt must read ZERO.**
+1. **First run: 5,674 → FAIL.** Cause was **my predicate**: I counted *"attacked ANYTHING while
+   adjacent to a belt"*. `BuilderAttack` carries its target at **field 2** (`replay_schema.md:91`) and
+   I had not decoded it. **Not a finding about the flag — a defect in my instrument.**
+2. **Second run, target properly decoded: 5,600 on the belt → STILL FAIL.** Cause was **my premise**:
+   `LOKI_QUIET_ON` does **not** silence all builder melee. There is a **deliberate, documented
+   CONVEYOR-MELEE CARVE-OUT** (`doctrine.py:1545`, `raid.py:424 _salt_turn`) — *"an enemy CONVEYOR or
+   SPLITTER is 20 HP = ten pecks, and the tenth peck severs a whole delivery chain. That is a target
+   where 2 damage a round finishes, which is exactly the property the Core lacks."*
+⇒ **The 5,600 attacks are the carve-out working as designed. The code is correct; my control's
+premise was not.** ⭐ **A control that fires twice and is wrong twice is still the reason nothing
+false was published** — I would have accused the incumbent of a dead weapon on both passes.
+
+## ⇒ MATERIAL CORRECTION TO THE SIPHON-DENY FRAMING (side lane's, and I raised it with them)
+**Their code read is exact: `_siphon_deny`'s OWN melee is dead.** But the inference — *"the builder
+spends N turns walking and on arrival does nothing"* — **is not established.** On arrival
+`_siphon_deny` returns **False**, so control falls through the ladder to **`_salt_turn`, which is the
+LIVE belt-melee path.** ⇒ **the walk may be picked up rather than wasted, and "dead payload" is true
+of the function and not demonstrated of the builder.**
+**Measured on the same 150 games:** adjacent to an enemy belt **270 builder-rounds/game**; belt
+attacks **37/game** — a **13.7% conversion**. ⚠ **I have NOT established what the other 86% are
+doing** (the salt gate has its own seat/`LOKI_PECK_TI_FLOOR` conditions, and an adjacent round may be
+spent moving), **so the size of any waste here is OPEN, not measured.** Anyone quoting 270/game as
+waste would be repeating my error one level up.
+
+## ✅ AND THE SIDE LANE'S #70 POINT SURVIVES ALL OF THIS INTACT — it is the durable half
+*"A builder inside `_siphon_deny` emits a MOVE every turn of that walk, so it is NOT in bucket A and
+never was."* **That is true whether the walk is wasted or productive.** ⇒ the shipped 29.01% baseline
+excludes these rounds, driving bucket A to zero cannot touch them, **and a lock-rate falsifier tuned
+to OSCILLATION would score a purposeful, correctly-targeted, terminally-useless walk as healthy.**
+⇒ **their one-line form is the right one and needs no measurement to stand: "emitting a verb" and
+"doing something" are different predicates.**
