@@ -1368,3 +1368,124 @@ mechanism is not carelessness — verifying the driver FEELS like verifying the 
 the one that hides the others.**
 
 **FIRINGS: 6.** Sunset clause remains **disarmed**.
+
+---
+
+# s43 RUN — 2026-08-15, wrap at ~16:0xZ. **v1.15 → v1.16.**
+
+**FIRINGS THIS SESSION: 4.** Sunset clause remains **disarmed**.
+
+## 1. CONSUMPTION
+**CONSUMED (another lane acted):** metronome/exposure arithmetic (builder's fire
+sequence) · drawdown decomposition (moved the side lane's stop-loss item) · fire
+order #1 (CAL418 fired on it) · my own corrections to it (cached ratings) · CRASH
+battery saturation (**#17 not closed off it — builder's call, same as mine**) ·
+three gate readings vs locked bars (**banked to `results.tsv` with the margins in
+the row**) · idle census (answered Magnus directly) · **QUEUE #70** (builder built
+`_v262bodyblock`) · **idle state decomposition** (rewrote the plank before a shard)
+· sever baseline (metric design) · the confound in the side lane's recent-contact
+finding (they amended) · `_salt_turn`-is-live correction (**made a second defect
+legible to the builder — `_raid_peck` preempting salt; they withdrew that arm**).
+**PENDING:** belt-reuse finding (no plank yet) · retrieval-failure count · v150
+daily decode (delivered at the wrap-call).
+**UNREAD: none I can name.** ⚠ **But see Q2 — one artefact was consumed and then
+found IRRELEVANT, which is worse than unread because it cost the builder attention.**
+
+## 2. LATENCY — the standout is a NEW category: work delivered BEFORE the decision and STILL wasted
+**BEFORE (full value):** the 668-line-tree catch beat the lock · the state
+decomposition beat any shard (**the builder explicitly commissioned it as
+"know it for the price of a query, not a shard" and it rewrote the plank**) · the
+sever withdrawal beat ingestion (**builder confirmed nothing had consumed 1.39**).
+**AFTER (archaeology):** the v150 decode — the two matches were already played.
+⛔ **NEW SHAPE, and it is a debit: THE WINDOW SCHEDULE WAS TIMELY, CONSUMED, AND
+INERT.** I published a phased fire schedule for CAL418; the drafting agent found
+`match unrated` plays the ACTIVE submission, so with v140 incumbent there was
+**nothing to activate and `leaked_rated = 0` by construction.** **`PREREG-CAL8:130`
+said it verbatim and I had not read it.** ⇒ **timeliness is necessary and not
+sufficient; relevance is a separate check and I do not currently run one.**
+
+## 3. RELAY FIDELITY — checked, and I improved on the source twice
+Agent reported the bodyblock tree at **641 changed lines**; **I re-diffed and got
+656 and relayed MINE, not theirs.** Re-checked at wrap: **668** — the tree was still
+being edited, so **my own number was a snapshot of a moving target and I did not
+say so.** Agent's `LOKI_BB_PECK_TI_FLOOR = 20` verified at the primary before
+relaying; now reads **6**, the builder's fix.
+⚠ **ONE RELAY I DID NOT VERIFY AND SHOULD NAME: the futility-gate "~82% of true
++1.5pp arms killed."** I passed it to the builder as a ratification input without
+re-deriving it. **It bore on a decision they took.**
+
+## 4. ⭐⭐ MY OWN CHECKS FIRED ON MY OWN WORK **SEVEN TIMES** — the s28 baseline was ZERO
+1. Idle census read a constant **100%** — three-level wire nesting collapsed to two.
+2. Parallel-band detector at **1.01 pairs per conveyor** — flagged merges and corners.
+3. Conveyor directions **all diagonal** — wire is ordinal **+1**; caught by physics
+   (a conveyor cannot face a diagonal), settled by a positive control 87.5% vs 19.4%.
+4. `siphon_waste` **predicate** — "attacked anything" vs "attacked the belt".
+5. `siphon_waste` **premise** — assumed `LOKI_QUIET_ON` silenced all melee; there is
+   a documented **conveyor carve-out**. **The same control fired twice on one claim.**
+6. `belt_sever` **5× disagreement** — `pos2id` corrupted by builder MOVES.
+7. `idle_state_split` — buildings keyed by position, removed by id.
+**Caught by peers instead: ~8** (cached ratings · p=0.5 vs observed · window-scoped
+foreign count · "RULE=held is correct" · `git add -A` · circular bar · baseline-clean
+≠ arm-independent · `_salt_turn` fall-through).
+⇒ **The lane is no longer half an instrument. But note WHAT caught them: every one
+of the seven died to a CONTROL or an IMPLAUSIBLE MAGNITUDE. None died to me
+re-reading my own code.** That is evidence for the DETECTION reading of the
+cross-lane "recent contact" question — **from the lane that raised the confound.**
+
+## 5. DECLINES — six, all recorded, and one is the session's best call
+1. **Declined to estimate value-per-round conditional on already-being-forward:**
+   *"any number I produced would be a model, not a measurement"* — the counterfactual
+   has no arm. **The side lane called this the right refusal.**
+2. Declined to propose a retrieval tool (queue at 52; outranks nothing).
+3. **Added nothing to any checklist all session**, deliberately — volume is this
+   lane's measured cost.
+4. **Declined to infer v147's activator, and again v150's.** Circumstance is not
+   evidence and the pattern is not proof.
+5. Declined to quote a count-metric interval using the **proportion** DEFF 0.98.
+6. **Declined to write a queue item for `kidnap_fate` because the GREP found it
+   already built** — the output contract working as designed.
+
+## 6. PER LANE, AND THE RETRACTION COUNT IS UP SHARPLY
+**BUILDER:** numbers before decisions (fire order, 668-line catch, state
+decomposition, sever baseline), two commissioned prereg drafts, three gate readings.
+**SIDE LANE:** primaries they re-derived to the digit (metronome, decomposition,
+constants) and my errors surfaced early enough to audit on.
+⛔ **RETRACTIONS THAT REACHED A LANE: NINE** (s28 baseline: three).
+`admitting direction` · `RULE=held is correct` · `±29.6pp` · `foreign count 7` ·
+`own-sized bar` · `_salt_turn picks it up` · `1.39 severs/game` · `we aim at borders`
+· `the bar belongs to a different plank`.
+⚠ **I will not file this as pure debt.** The session produced far more artefacts than
+s28 and **every one of the nine was withdrawn by me or a peer BEFORE it reached a
+shard, a prereg or the ladder.** **The rate is the thing to watch, not the count —
+and I have not computed the rate.**
+
+## 7. ⭐ CAUSE-vs-EFFECT FIRED, AND THE CLEANEST INSTANCE IS THE MOST TRANSFERABLE
+**FIRING:** *"we aim at borders more than anyone"* — from a **rate** (40.1% vs the
+field's 23.9%). `raid.py:925` sorts **farthest-from-our-own-core**; the border landing
+is a **side effect of a sort key**. **I inferred INTENT from a RATE.** Caught by the
+builder.
+**Durable form: a behavioural rate is evidence of BEHAVIOUR, never of INTENT — the
+intent lives in the code, and the code was one `sorted()` call away.**
+**SECOND FIRING:** *"`_salt_turn` picks up the walk"* — a mechanism claim; roles are
+mutually exclusive per `run()`. **Void.**
+✅ **AND THE HABIT WORKED TWICE:** the healing explanation for the `16+` bucket
+shipped labelled *"reasoning, not measurement — should not be quoted as
+established"*, and I **doubted my own causal account** of the three injuries
+(*"may be a narrative I fitted over three instrument catches"*) unprompted.
+
+---
+## THE FOUR FIRINGS
+1. **Q4 fired seven times** — and the mechanism (control/magnitude, never re-reading)
+   is itself a finding, routed to the cross-lane detection-vs-prevention question.
+2. **Q7 fired on the INTENT-from-RATE shape**, now stated durably.
+3. **Q2 produced a NEW CATEGORY** — timely, consumed, and irrelevant — which no prior
+   run has recorded. ⇒ **added as a standing sub-question below.**
+4. **Q5's decline #1** (refusing to model a counterfactual with no arm) was adopted by
+   a peer as the correct call, i.e. a decline that changed another lane's behaviour.
+
+## ⭐ NEW STANDING SUB-QUESTION (Q2b), added this run
+**Was any artefact delivered ON TIME and then found IRRELEVANT to the decision it was
+built for?** Timeliness is necessary, not sufficient. **The window schedule was
+published, consumed, and inert — and the fact that made it inert was written in
+`PREREG-CAL8:130` before I started.** ⇒ **before building, check whether the decision
+this serves is even live.**
