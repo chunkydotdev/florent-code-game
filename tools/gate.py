@@ -325,7 +325,19 @@ def check_platform_instruments(plank: Path, parent: Path, skip: bool) -> None:
                     "--tle 0 and cannot see a CPU regression")
         print("  skipped (--skip-tle)")
         return
+    # ⛔⛔ THIS COSTS A RATE-LIMIT SLOT, AND THE BUDGET IS SHARED WITH UNRATED LEGS.
+    # The platform caps `test` AND `unrated` together at 5 per 20 minutes, and
+    # REJECTED attempts count. MEASURED s44 2026-08-15: four gate runs inside one
+    # 20-minute window left one slot, so CAL418's first firing cycle got 2 accepts
+    # and 3 REJECTIONS -- the gate that clears a battery had silently eaten the
+    # budget of the leg fired after it. Nothing anywhere said so, and the rate
+    # pre-check I ran read "0 non-ladder matches in the trailing 1200s" because it
+    # filtered on a `type` field these test matches do not populate.
+    # ⇒ IF A LIVE LEG IS IMMINENT, PASS --skip-tle (a recorded decision) OR RUN THE
+    # GATE MORE THAN 20 MINUTES AHEAD OF THE FIRING WINDOW.
     print(f"  running: fcode match test {plank} {parent}   (real engine, real TLE)")
+    print("  ⚠ this SPENDS one of the 5-per-20-min test/unrated slots, shared with "
+          "unrated legs — see the comment above before firing a leg within 20 min")
     r = subprocess.run([str(FCODE), "match", "test", str(plank), str(parent)],
                        cwd=ROOT, capture_output=True, text=True, timeout=900)
     out = r.stdout + r.stderr
