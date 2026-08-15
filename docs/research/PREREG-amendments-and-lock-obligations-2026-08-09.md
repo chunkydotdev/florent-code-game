@@ -599,3 +599,66 @@ measurement; it does not establish a constant.** A `NULLHOST` at n >= 5400 per h
 is commissioned and is the thing that settles it.
 ⇒ **Until that lands, this rider is a REGISTRATION requirement, not a variance
 correction: name the host term, do not invent one.**
+
+## Addendum 12, 2026-08-15T06:56:xxZ (s43) — **OBLIGATION 17: A PREREG'S REGISTERED METHOD MUST BE EXECUTABLE BY THE TOOL THAT WILL EXECUTE IT, AND THE CERTIFIER CHECKS THAT, NOT ONLY THAT THE METHOD IS WELL-FORMED**
+
+**⛔ WRITTEN BY THE LANE THAT JUST FAILED IT, ON THE SAME DAY, ON A LEG IT HAD CERTIFIED
+"CLEAR TO FIRE".** The obligation is stated first and the incident second, but the incident is the
+only reason to trust the obligation.
+
+### THE OBLIGATION
+
+**A registration that names a METHOD — a CLI invocation, a flag, a pin, a fixture mode — must be
+checked against the tool that will carry it out, BEFORE the certificate is issued.** Three parts:
+
+1. **NAME THE EXECUTING TOOL.** A prereg that registers *"`fcode match unrated <team> --match
+   <id>`, every accept, no exceptions"* is registering a method. **The certificate names the script
+   or command that will run it.**
+2. **CONFIRM THE PATH EXISTS IN THAT TOOL.** Not that the CLI supports it — **that the RUNNER emits
+   it.** `--help` proving a flag exists is not proof that the script passes it.
+3. **STATE THE CONSEQUENCE OF SILENT NON-EXECUTION.** If the tool omits the registered element,
+   does the leg fail loudly or **quietly measure something else?** ⇒ **the quiet case is the one
+   this obligation exists for.**
+
+**⭐ WHY IT IS A SEPARATE OBLIGATION AND NOT A RESTATEMENT OF OB13.** OB13 governs **the MECHANISM
+METRIC'S READ PATH** — *can we read the number the prereg promises?* **Nothing governed the METHOD'S
+EXECUTION PATH** — *can we perform the procedure the prereg promises?* Both are *"the prereg
+registers something that does not exist"*, and only the first had a rule.
+
+### THE INCIDENT — AND IT IS MINE
+
+`PREREG-CAL418` registered an opponent-version PIN at `:116` (*"every accept, no exceptions"*) so the
+leg would meet HTTP 418's **v103**, the build their side ran across the whole era.
+**`tools/unrated_run.sh:~318` fired a bare `fcode match unrated "$id" --json`. There was no pin
+path.** ⇒ **the runner could not execute the locked prereg, and firing anyway would have played
+their CURRENT submission while the registration said v103 — a different opponent than the certified
+one, with nothing in the output to show it.**
+
+**Found by the BUILDER at fire time** (`e62f4d7d`), after the prereg was locked (`2b365a29`,
+06:44:41Z) **and after I two-clock certified it** (`b89b667c`). Their sentence, and it is fair:
+*"before anyone checked that the tool could carry out what it registered."*
+
+**⛔ AND MY MISS IS NOT THAT I OVERLOOKED THE LINE — I QUOTED IT.** My certificate's forward caution
+#3 cites `:116` **by line number**, to check the pin against `CLAUDE.md`'s *"never pin calibration
+panels"* rule. **I asked whether the pin was PERMITTED and never whether it was POSSIBLE.** That is
+Q3's substitution exactly — *I checked the surface adjacent to the one that mattered* — with the
+aggravating feature that **the correct surface was the same line, one question over.**
+
+⚠ **THE SCOPE CLAUSE IN MY CERTIFICATE (*"covers LOCK DISCIPLINE and ARITHMETIC"*) IS TRUE AND IS
+NOT A DEFENCE.** The certificate's headline was **"CERTIFIED TO FIRE"** and the leg could not fire.
+**A scope note does not repair a headline that answers the operational question.** ⇒ **either the
+scope or the headline had to go; this obligation moves the scope.**
+
+**⭐ THE FAILURE WAS DOUBLY AVAILABLE, which is what makes it an obligation rather than bad luck:**
+`fcode match unrated --help` carries `--match TEXT  Use opponent's submission from this match ID`,
+and it is documented at **`docs/fcode-cli.md:330` since 2026-08-09**. **`CLAUDE.md` already records
+this exact class twice** — LOKI-14 planning to read arm tags out of replays that strip them
+(*"planning on an instrument that does not exist"*), and the `--match` capability itself sitting
+unread for four days while the always-loaded file asserted the opposite. **This is the third
+instance and the first with a rule attached.**
+
+### THE CHECK, in the certifier's hands
+
+**Before writing "certified to fire", grep the executing tool for every registered flag, mode and
+pin.** One command per element. **If the runner does not emit it, the leg is NOT clear to fire and
+the certificate says so** — the fix is cheap before the lock and expensive at fire time.
