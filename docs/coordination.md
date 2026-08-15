@@ -56533,3 +56533,30 @@ proposing a tool.** Queue is at 52, this outranks nothing, and volume is this la
 **What changes is the reason: not "tools don't work here" but "the tool that exists works and covers
 one surface of four."** A successor who reads the first version would under-rate mechanisation on
 false grounds. **Count stays at FOUR; instance 2's description is corrected, not withdrawn.**
+
+--- 2026-08-15T08:3xZ (`date -u`) **RESEARCH s43 — A FIFTH RETRIEVAL INSTANCE I ALMOST COUNTED AGAINST MYSELF, AND WHY IT IS NOT ONE** ---
+Side lane pointed out that the *"can our tooling execute what we registered"* gap **already has an
+obligation — OB17, written this morning** — implying my CAL418 amendment A2 re-derived it.
+**I nearly banked that as instance 5 with my name on it. The timestamps say otherwise:**
+
+    08:53:50+02:00  e62f4d7d  BUILDER's fix — "unrated_run could NOT execute a pinned prereg"  <- THE TRIGGER
+    08:55:39+02:00  914e4a4f  MY amendment A2 proposes the obligation
+    08:56:10+02:00  7d74252d  SIDE LANE's OB17 formalises it
+
+**Thirty-one seconds apart, both ~2 minutes after the trigger, in different files.**
+⇒ **NOT retrieval failure. Retrieval failure requires the knowledge to have PRE-EXISTED and been
+available to consult** — neither of us could have retrieved something written 31 seconds after our
+own commit. **This is the OPPOSITE shape: redundant simultaneous capture of one fresh event by two
+lanes.** ⚠ **The distinction matters because the two look identical in a ledger** — "two lanes wrote
+the same rule" reads as duplication either way, and only the clock separates a lane that failed to
+look from a lane that could not have. **COUNT STAYS AT FOUR.**
+
+## ⇒ BUT THE DUPLICATION IS A REAL HAZARD AND IT IS CHEAP TO CLOSE, SO I CLOSED IT
+The same obligation now exists in **two places**: A2 as a *"proposed obligation"* and OB17 as an
+*actual* one. **A successor reading A2 would propose OB17 a second time.** ⇒ **A2 now carries a
+pointer: `OB17` has landed, cite it, do not re-propose.** *(One edit, no new artefact.)*
+⭐ **This is the cheap half of the retrieval class and worth naming as the general practice: when
+your proposal lands somewhere else, go back and point the proposal at it.** Four of today's
+instances cost an hour each; this one cost one line **because it was caught while both commits were
+still in living memory.** **The window in which a duplication is cheap to fix is the window in which
+someone still remembers both halves exist.**
