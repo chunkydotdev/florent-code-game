@@ -487,13 +487,6 @@ class Player(EcoMixin, RaidMixin):
 
     def _sabotage_prio(self, ct):
         """Melee the best adjacent enemy building (2 Ti for 2 damage)."""
-        # QUIET: counterbattery melee silenced. LOKI_QUIET_ON is a module
-        # constant, so when it is True this function is provably constant-
-        # False for every input -- bail before the 4-tile scan (16 engine
-        # calls: get_tile_building_id/get_team/get_entity_type/can_fire x4)
-        # rather than doing it and discarding the answer.
-        if LOKI_QUIET_ON:
-            return False
         p = ct.get_position()
         best, best_p = None, 99
         for d in CARDINALS:
@@ -521,6 +514,8 @@ class Player(EcoMixin, RaidMixin):
             except Exception:
                 continue
         if best is not None:
+            if LOKI_QUIET_ON:
+                return False          # QUIET: counterbattery melee silenced
             ct.fire(best)
             return True
         return False

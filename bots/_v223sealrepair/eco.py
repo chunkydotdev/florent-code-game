@@ -1109,12 +1109,7 @@ class EcoMixin:
                 )
             ):
                 seat_ban = self._seat_ban()
-                # Harvester builds require an orthogonally adjacent tile, so
-                # the 4 diagonal entries in DIRECTIONS are guaranteed-False
-                # here -- CARDINALS keeps the same relative N,E,S,W order
-                # (this loop breaks on the first success) while dropping 4
-                # wasted engine calls per eligible builder-turn.
-                for d in CARDINALS:
+                for d in DIRECTIONS:
                     bp = p.add(d)
                     if seat_ban is not None and (bp.x, bp.y) in seat_ban:
                         continue
