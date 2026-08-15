@@ -57391,3 +57391,39 @@ on the lane that spent the day measuring it, in the final commit.**
 ⇒ **THE PRACTICE, and it is one line: A REBOOT STATE'S HOLDER LINE IS READ FROM `fcode status`, NEVER
 FROM A POLLER.** The builder has written the split into HANDOVER: **status for the holder,
 `ship_watch` for the trend.**
+
+--- 2026-08-15T16:1xZ (`date -u`) ⛔ **RESEARCH s43 — AMENDING MY OWN STATE NOTE: ITEM 3 IMPLIED OUR DRIFT AND THE CELL IS MEASURING A TEAMMATE** ---
+**My wrap state note is the artefact a successor reads cold, so this correction goes in it rather
+than only in a message.**
+
+**WHAT I WROTE (state note, item 3):** *"`audit_trigger` NOW TRIPS 1/6: ship cadence 0.45/hr, 10
+activations in 24h… On a day with a standing no-ship rule, ten activations in the window is the line
+worth reading."* **That phrasing implies OUR drift and it is wrong.**
+
+**WHAT THE BUILDER ESTABLISHED (`8d4811d1`), and it inverts the reading: OUR activation count today
+was ZERO — the no-ship rule held all session. `fcode submission list` shows x3r0 uploaded v146
+through v151.** ⇒ **the cell cannot distinguish OUR ship cadence from a TEAMMATE's**, so on the one
+day we shipped nothing it trips on someone else's activity.
+⭐ **THIS IS NOT A FALSE ALARM — IT IS A TRUE READING OF THE WRONG SUBJECT, which is the harder kind
+to notice because the NUMBER IS CORRECT.** Same family as `CLAUDE.md`'s *"numbers carry subjects"*
+rule, firing on one of our own alarms rather than on a published statistic. **Fix if it recurs: split
+the activation count by uploader.** Carried by the builder as HANDOVER item 10.
+
+⇒ **STATE NOTE ITEM 3 IS SUPERSEDED. Read it as: the ship-cadence cell tripped on a TEAMMATE's
+uploads; this lane and the builder shipped nothing today.**
+
+**ALSO CLOSED BY THE BUILDER, and it settles a gap I flagged:** **v146–v151 now have
+`version_trees.tsv` rows** (tree `none (teammate)`, evidence quoting the submission-list line
+verbatim with its read timestamp). ⛔ **AND NO ACTIVATOR COLUMN WAS FILLED** — *"uploaded by x3r0"*
+is who UPLOADED, and **`fcode submit` AUTO-ACTIVATES a ready submission, so an upload is not evidence
+that anyone CHOSE to activate.** I declined that inference for v147 and v150/151; the builder matched
+it independently rather than quietly filling the column. **The distinction between uploading and
+activating is now the recorded reason the column is empty, which is stronger than the column simply
+being blank.**
+
+**AND ONE OF MY THREE RE-DERIVATION FLAGS IS RESOLVED:** the un-derived *"~82% of true +1.5pp arms
+killed"* **did reach a ratification of the builder's and did NOT propagate** — the rule it argued
+against was replaced outright by Magnus's 51%-at-two-marks trend floor, which the builder priced from
+the binomial rather than inheriting. **The flag was still right to raise: I could not know where it
+landed, and the check costs less than the retraction.** ⚠ **The other two stand: the 641/656/668
+line count is a moving target, and the count-metric interval is still owed.**
