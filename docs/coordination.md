@@ -54912,9 +54912,15 @@ Amended IN PLACE at `docs/research/FINDING-pairing-metronome-and-exposure-cost-2
 (header block) — the artefact, not just this log. **Where the body conflicts, the amendment wins.**
 
 **C1. ⛔ MY FIRE ORDER QUOTED PAYOUTS OFF CACHED RATINGS. THE BUILDER CALLED IT AND THEY WERE RIGHT.**
-`target_value --band` prices opponents off `corpus/league_matches.tsv` (cached) and **errs in the
-ADMITTING direction** — the tool prints that caveat itself and I published anyway. **Re-read LIVE
-via `fcode team search`, 06:1xZ:**
+⛔⛔ **C1 AMENDED 06:2xZ — THE SENTENCE BELOW SAYING THE TOOL "ERRS IN THE ADMITTING DIRECTION" IS
+WRONG AS AN UNSCOPED CLAIM AND I STRIKE IT. It is NOISY, NOT BIASED** — measured across all 13
+admissible teams: **HIGH in 6, LOW in 7, |err| up to 74.6 points, mean payout error −0.34** (side
+lane, `714854b9`). **The behavioural consequence SURVIVES and is strengthened: a BIASED tool can be
+corrected with a haircut; a NOISY one can only be replaced with a LIVE READ PER SELECTED TARGET.**
+The rest of C1 — that I quoted cached numbers and should not have — stands unchanged.
+`target_value --band` prices opponents off `corpus/league_matches.tsv` (cached). ~~and errs in the
+ADMITTING direction~~ — the tool prints its staleness caveat itself and I published anyway.
+**Re-read LIVE via `fcode team search`, 06:1xZ:**
 
     HTTP 418   cached 1781  ->  LIVE 1771   gap +58 -> +48   5-0 pays +18.63 -> +18.20   room_to_HI 67 -> 77
     Big O      cached 1708  ->  LIVE 1708   gap -15 (unchanged)  5-0 pays +15.31          room_to_HI 140
@@ -54923,8 +54929,15 @@ via `fcode team search`, 06:1xZ:**
 ⇒ **BOTH TARGETS SURVIVE and HTTP 418 is MORE edge-robust than I published, not less.** The
 conclusion is unchanged; **the number was wrong and is corrected.** ⭐ **STANDING FIX, adopting the
 builder's ask: every opponent rating in a fire order from now on carries its SOURCE inline —
-`LIVE fcode team search @ <time>` or `CACHED league_matches @ <time>`.** A payout quoted off the
-cached column is quoting the admitting direction.
+`LIVE fcode team search @ <time>` or `CACHED league_matches @ <time>`.** ~~A payout quoted off the
+cached column is quoting the admitting direction.~~ **A payout quoted off the cached column is
+quoting a number with up to 74.6 points of error in EITHER direction.**
+⭐⭐ **AND THE STANDING FIX IS NOT MINE — IT WAS PRE-REGISTERED AT THE LAST WRAP AND NOBODY READ IT.**
+`d449720c`'s BODY says, verbatim: *"Re-derive from `fcode team search` on BOTH sides before firing —
+never from `target_value`'s cached opponent column."* **The side lane and I independently converged
+over an hour on an instruction that was already written down.** ⇒ **my "standing fix" is CONFIRMATION
+OF A STANDING INSTRUCTION, not a new finding — which is the stronger status and the more
+embarrassing one.** D28 shape: the instrument was right and nobody read it.
 
 **C2. THE SURFACE I USED WAS WRONG AND THE RIGHT ONE WAS ALREADY IN THE REPO** (side lane).
 `elo_history.tsv` is a **5-min poll on a LOCAL/UTC+2 clock**; `corpus/ladder_games.tsv` is
@@ -55107,3 +55120,51 @@ thing** (Q4's recorded mechanism, again not diligence).
 **⚠ AND THE AGGRAVATING FACT: the retracted paragraph criticised a predecessor for over-claiming
 scope, and did so by over-claiming scope.** Same session, same lane, same hour as `D34` — which is
 about a check that looks valid and is not.
+
+--- 2026-08-15T06:2xZ (`date -u`) ⭐ **RESEARCH s43 — THE COMMIT SUBJECT LINE IS A BOOT-CONTEXT SURFACE, AND IT CANNOT HOLD A SCOPE QUALIFIER** ---
+**A durable finding that came out of a message-crossing, and it is not the message-crossing.**
+Side lane sent a partial-stop on their own `d449720c` correction (R6 firing exactly as I specified
+it at the s42 wrap — their words, using the prescribed explicit STOP rather than a quiet amendment).
+**I verified `d449720c` at the primary before changing anything, and the verification moved the
+finding somewhere neither of us had it.**
+
+## WHAT IS ACTUALLY TRUE OF `d449720c`
+**Its BODY is scoped, correct, and bidirectional-aware.** It lays out three ratings and three
+verdicts on Juusto — side lane's stale **1883** (+159, OUTSIDE by 34), `target_value`'s cached
+**1848** (+124, INSIDE by 1), LIVE `fcode team search` **1857** (+133, OUTSIDE by 8, *governs*) —
+and says of the side lane's number *"right in kind, wrong in number"*. **It displays errors in BOTH
+directions on the same screen. There was nothing to correct.**
+**Its SUBJECT is flat and unscoped:** *"target_value gets it wrong in the ADMITTING direction."*
+
+## ⭐ THE MECHANISM, AND IT IMPLICATES MY OWN BOOT
+**I did not get the flattened claim from the builder's relay — I told the side lane I did and that
+was wrong.** `d449720c` is the **top line of `git log --oneline -5`, which is in my session's boot
+context.** I read the SUBJECT at boot, hours before any peer messaged me, and carried it into a
+committed note as an unscoped rule.
+⇒ **THE SUBJECT LINE IS A BOOT-LOAD SURFACE.** Every lane reads it via `git log` at boot; it appears
+in `gitStatus` in the session preamble; **and it is the one surface in this repo with no room for a
+qualifier.** The body was right, the subject was flat, **and the subject is what boots.**
+⚠ **This is a sharper form of the `CLAUDE.md` meta-lesson** (*"a fact recorded in a reference nobody
+boots and contradicted by the always-loaded file is a fact nobody has"*). Here the correct text and
+the flattened text are **in the same commit** — the reader gets the flattened one for free and must
+choose to open the body. **A scoped claim whose subject line states it unscoped will be inherited
+unscoped.**
+⇒ **PRACTICE, offered not imposed (HANDOVER and commit style are the builder's):** when a subject
+line states a directional or general claim that the body scopes, **put the scope IN THE SUBJECT** —
+`target_value admitted an out-of-band target in the Juusto case` costs nine characters and does not
+propagate as a law. **A successor's boot context is a publication surface.**
+
+## WHAT I OWE AND WHAT I DO NOT
+✅ **STRUCK, in place at C1 above:** *"errs in the ADMITTING direction."* The measurement is **HIGH
+6/13, LOW 7/13, |err| max 74.6, mean payout error −0.34 ⇒ NOISY, NOT BIASED.** The behavioural
+consequence **survives and is strengthened**: a biased tool takes a haircut, **a noisy one can only
+be replaced with a live read per selected target.**
+✅ **NOT STRUCK, because I never published it:** the sentence crediting the side lane with correcting
+a predecessor existed **only in a cross-session message, never in the repo.** I am not performing a
+retraction of something that was never banked — **saying so plainly is the honest version**, and the
+grep that establishes it (`"noisy, not biased"` appears in the tail once, in THEIR note, not mine)
+is the reason I can say it rather than assert it.
+✅ **BANKED, and it is the item worth keeping:** `d449720c`'s body **already prescribed** *"re-derive
+from `fcode team search` on BOTH sides before firing"* — so my "standing fix" is **confirmation of a
+standing instruction**, not a discovery. Two lanes spent an hour re-deriving a written rule.
+**A re-derived fix and a pre-registered one carry different weight, and this one is the latter.**
