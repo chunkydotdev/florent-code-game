@@ -56276,3 +56276,43 @@ lower bound than `BUILD` alone**, on a table already carrying `d2_own`/`d2_enemy
 guessing at their semantics — which is precisely the error I made twice today.** **Whoever owns the
 column definitions should run it; the direction of the improvement is certain even though I have not
 sized it.**
+
+--- 2026-08-15T07:45:0xZ SIDE LANE (s43) — **QUEUE #70's ADMISSION IS EXEMPLARY. TWO OF ITS FOUR NAMED DESTINATIONS WALK INTO #59's UNGUARDED ENVELOPE, AND THE TWO ROWS DO NOT CITE EACH OTHER.** ---
+**D14 form: when a row lands, ask which row it contradicts.** Raised now because #70 is Magnus's and
+will be built.
+
+**✅ FIRST, THE ADMISSION, because it should be the template.** `GREP: PASS` naming **three sites by
+`file:line` in the incumbent** with what was found (`main.py:797` gunner-only, `eco.py:228`
+bank-gating, no bodyblock anywhere) · **the metric is a DECAY CURVE at three windows**, which
+corrects #14's single-window 25.76% rather than inheriting it · **bucket D = 0.00% at every window**,
+so the target is reachable rather than asymptotic · the fallback's cost argument is arithmetic (q1
+titanium **12** against `_eco_spendable`'s `cost + 16`) · an engine-barred verb is named so nobody
+assumes it (builder melee cannot target an enemy BUILDER) · **and it carries its own anti-Goodhart
+clause** — *"a bot oscillating in a nav lock is emitting a MOVE, so it scores as ACTIVE and is
+INVISIBLE to bucket A… score on bucket A AND #54's lock rate together."* **That last is the flag
+this lane would otherwise have had to raise (D10), pre-empted by its author.**
+
+**⛔ THE INTERACTION NOBODY HAS PRICED. #70's destinations, verbatim, in its own cost order:**
+**(a) stand in an enemy gunner's fire line · (b) stand on THEIR CORE's spawn-adjacent tiles ·**
+(c) their ore tile · (d) their belt corridor.
+
+**`CLAUDE.md`, on the engine: launcher PICKUP IS `d² ≤ 2`, throw `1 ≤ d² ≤ 26`, no team check, no
+vision guard, 0 ammo.** ⇒ **destination (b) places our builder INSIDE the pickup envelope of any
+launcher near their core, BY CONSTRUCTION.** (a) does so whenever a launcher sits near the gunner it
+is blanking.
+**AND #59 IS THE ROW THAT ALREADY KNOWS THIS AND IS OPEN:** *"DON'T GET FARMED — the enemy launcher's
+PICKUP ENVELOPE is unguarded in our walk path… `_bfs_direction` (`eco.py:809-832`) adds an enemy
+LAUNCHER to `blocked` — **but only its OWN tile**."* ⇒ **we do not path around the envelope today,
+and #70 would deliberately send idle builders INTO it.**
+
+⇒ **NOT AN OBJECTION TO #70 — Magnus's row, Magnus's call, and the mechanism is sound.** Three
+things that cost nothing before the build:
+1. **#70 and #59 should cite each other.** Neither does. **A body-in-their-half plank and an
+   avoid-their-launcher plank on the same builder are one design, not two rows.**
+2. **The bodyblock destination scorer should treat `d² ≤ 2` of an enemy LAUNCHER as a cost**, not
+   merely the launcher's own tile — which is exactly the fix #59 already specifies and is blocked on.
+3. ⚠ **AND THE EXPOSURE IS ASYMMETRIC IN OUR FAVOUR IF PRICED, WHICH IS WHY THIS IS WORTH DOING
+   RATHER THAN AVOIDING:** their throw costs them **0 ammo and one cooldown**; our thrown builder is
+   a **position-only mutation** — it survives. **The cost is the walk-back, not the unit.** ⇒ a
+   bodyblock adjacent to their core may be worth being thrown for; **it should be a PRICED trade in
+   the prereg, not an unmodelled one.**
