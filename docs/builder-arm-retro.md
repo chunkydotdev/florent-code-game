@@ -1052,3 +1052,130 @@ DECISION already owned; encoding one still owed is elaborate displacement.**
 **FIRINGS this instance: 4** (Q1 machinery-ahead-of-ruling, Q3 env-dependent
 selftest, Q4 monitor-row-mismatch, + Q2's two flattering-direction retractions
 counted as one pattern).
+
+---
+
+# INSTANCE — s43, 2026-08-15T05:4xZ. **FIRINGS: 5.** Run at Magnus's wrap-call, before the process deltas.
+Session 2026-08-14T20:40Z → 2026-08-15T05:4xZ (~9h). 85 repo commits across three lanes.
+Answered from commits, tapes and the platform. Where I answer from memory I say so.
+
+## 1. VERDICTS — did each carry exactly what its interval supports?
+Six typed.
+* **`#17` crash drive — "mechanism CONFIRMED, registered bar MISSES."** Both stated, miss first.
+  **Tempted to write:** *"the crash weapon works"* and stop. The control is what earns
+  it — the guarded probe took **104 border arrivals and died 0 times** against
+  **128/128** unguarded.
+* **`SEALFLOOR6` GATE-2700 — FUTILITY-ALONE at 47.59%.** **Tempted:** the
+  REAL-NEGATIVE branch, which sat 1.1pp away. **Refused: that edge is defined at
+  n=5400 and cannot be read at 2700.**
+* **`GUNAXABL` — DROP band, missing its KEEP edge by 0.0152pp — ONE GAME.**
+  2629/5400 = 48.6852 against a bar of "48.67 or lower"; 2628 would have cleared.
+  **Tempted:** round. **Refused, and published the one-game margin.**
+* **`SENTTHR`** — DROP band, 1.13pp inside, CI containing 50. Clean.
+* **`V140VS146`** — **two numbers kept apart**: policy 51.0 PASS (reactivate, per
+  Magnus's ruling) and superiority 53.1 **NOT met by 0.10pp**, CI [49.93, 56.07]
+  including parity. *"The gate could not separate these bots."*
+* **`finishhp` DO-NOT-FIRE** — its own pre-registered floor 0.50 read 0.370.
+  **The floor was not moved.**
+⇒ **Q1 does not fire.** Six verdicts, six scoped; the two knife-edges (0.0152pp,
+0.10pp) both went against the direction I wanted.
+
+## 2. WHAT I RETRACTED, AND WHICH DIRECTION THE ERROR RAN — **FIRES**
+Seven retractions. **The distribution is not flat and its mean is not toward action.**
+1. `--fire` exists (relayed from the side lane, unchecked) — **toward action.**
+2. v146 hold cost **−35 → −19**; I started the window 45 min early — **toward
+   justifying the reactivation I had just performed.**
+3. `throws.tsv` `life/core_atk/any_atk` read off a **constant column** — **toward
+   a headline.**
+4. *"first field evidence"* — wrong twice (v105 threw 548) — **toward novelty.**
+5. *"ZERO exile throws across 115 rated games"* → **193 across 200** — **toward a
+   cleaner kill.**
+6. *"nobody has built the leaned-in launcher"* — **#58 built forward siting and
+   was refuted; LAUNCH2/3 measured the count latch at 44.67/43.73** — **toward
+   the plank Magnus had just asked for.**
+7. *"9 of 15 checks have no id-level coverage"* — my probe **does** assert by id;
+   I checked the label surface — **AGAINST my own interest.**
+⇒ **Six of seven ran toward the work I wanted to do next. One ran against.** Same
+mean s28 recorded, five sessions later, in a session whose *subject* was this class.
+
+## 3. INSTRUMENTS — driven to both verdicts? Any trusted on first output? — **FIRES**
+Built/changed: `fixture_starvation.py`, the wiring bundle (6 items, 68 probe
+cells), `orchestrate.sh` (`kill`, per-host curfew), `worker.sh` (curfew stamps
+the heartbeat), `era_guard` (raise, not silent empty), `crash_cells` (`--ours`),
+`replay_throws` (`vfate/vlife/vhp`), `prereg_check` (OB17), `nav_lock_census`
+(rebuilt), `wincond_backfill`.
+**Every one has a both-ways record.** Three caught *by their own selftest*:
+`fixture_starvation`'s first cut conflated STALLED with QUEUED (`has_work`
+positive control caught it); OB17's forced-fail cells are built against the **real
+shipped tree** so a moved constant reports loudly; `wincond_backfill`'s first
+corruption fixture was survivable and validated nothing.
+⛔ **TRUSTED ON FIRST OUTPUT — TWICE.** `fixture_starvation` reported `in_flight=3`
+when one shard ran (remote-completed shards read as in-flight) — **flattering
+direction, on a starvation detector.** And my first corpus rebuild exited **RC=0
+having written ZERO rows** (shell arg limit; `ls` failed, stderr swallowed).
+**Caught by an impossible value, not by an error.**
+
+## 4. CLAIMS AHEAD OF THEIR RECORD — **FIRES**
+**Five queue closures (#60, #67, #54, #51, #22) were relayed to research and NEVER
+BANKED IN THE REPO.** Found only because Magnus asked *"which were killed and
+why"* and **the commit log could not answer him.** Fixed at
+`CLOSURES-s43-2026-08-15.md`.
+And **#51's closure carried a number I had already retracted, for 17 minutes,
+at its own provenance record** while the correction lived in a commit message.
+**D21 fired on me: retract where the claim LIVES.**
+
+## 5. THE SLOT AND THE HOLDER — what did activation cost?
+* **I fired 5 unrated accepts against Juusto with the WRONG BOT ACTIVE.** x3r0's
+  v146 auto-activated ~21:23Z; I fired 21:24:12Z. **I ran the holder check in the
+  same command block as the firing loop, so nothing gated on it.** The check
+  printed `Active bot: v146` and the loop fired anyway.
+  ⇒ **Cost: zero rated exposure** (unrated; the activation was x3r0's, not mine),
+  **5 accepts and a 20-minute rate window.** Leg window 1 void.
+* **v140 reactivated 22:51:25Z**, verified on the `Active bot:` line, per Magnus's
+  ruling on the screen's 53.00% policy pass. **v146 held ~85 min at k=4** against
+  `SHIP_SIT_MIN_K: 8`, costing **−19** (1759→1740), not the −35 I first published.
+* **Rating over the session: 1775 → 1708** (peak 1795). **`RULE=SLOT FREE` fired
+  for six consecutive polls / ~50 minutes and cleared itself** while the drawdown
+  worsened −58 → −69. **I did not see it; the side lane did.**
+
+## 6. WHAT THE BUDGET BOUGHT
+* **Platform:** 5 accepts, all void. **Utilisation ~1 window of ~27 available.**
+  A rate-limited resource left almost entirely idle — and unlike s28 the reason
+  was not caution, it was that **every drafted live leg failed its own admission.**
+* **Cores:** 8 shards fired (`CRASHP/G/Z/S`, `GUNAXABL`, `SENTTHR`, `V140VS146`,
+  `BODYAWR`) + 3 remote + 2 crash drives + the #63 probe (352 games) + a corpus
+  rebuild. **Two surfaces sat starved for over an hour each** before I built the
+  detector that found it.
+* **16 prereg agents; 12 returned NOT DRAFTABLE.** ⇒ **~1,500 lines of drafting
+  bought 4 documents and 12 closures.** The closures are the better half.
+
+## 7. WHAT A SUCCESSOR CANNOT RECONSTRUCT
+* **The `--fire` tier is ADVISORY** — `OB13_UNTRACKED_ARM`, `OB13_NOT_COMPUTED`
+  and all of OB17 bind only when a human types the flag, **and nothing in the
+  firing path passes it.** I typed it by hand; that is attention.
+* **`corpus/throws.tsv` is now 24 columns**, and a decoder schema change **froze
+  every corpus table for 79 minutes** until rebuilt by hand. Nothing links the two.
+* **The cross-host dispersion finding is n=3 and hinges on 0.053pp.**
+* **BODYAWR's read is GATED** on G1/G2/G3 and the gate exists only in the worklist
+  comment and the prereg.
+
+## THE ONE QUESTION: a decision the machinery could not have caught?
+**Yes, and Magnus made it, not me.** He asked: *"If we can't build a version where
+it happens more than 1.5% of games, we haven't leaned into it enough. If we are
+trying something new and it barely happens, how can we say we have tried it at
+all?"*
+**Every mechanism-occurrence kill I typed tonight measured a rate WE CHOSE** —
+`LAUNCHER_MIN_RND=160`, a one-launcher latch, home-only siting, aim-away-from-borders.
+**The machinery checks that a mechanism was DOSED. Nothing asks whether the dose
+was a property of the GAME or of OUR CONFIGURATION** — and a null on the second is
+not a null on the idea.
+⚠ **And the correction to my own correction is the sharper half:** when I acted on
+it, the agent found **#58 already built forward siting and was refuted, and the
+count latch is a measured loss.** So the honest form is narrower than the
+directive: **we had leaned in on two throttles of four; the untested one is the
+AIM.** *A principle that reopens every closure is as wrong as one that closes
+every road — the useful version names WHICH throttle was never lifted.*
+
+**FIRINGS this instance: 5** (Q2 direction 6-of-7, Q3 trusted-on-first-output
+twice, Q4 five unbanked closures + a stale provenance record, Q5 the guard and its
+guarded action in one block, Q7 the unwired `--fire` tier).
