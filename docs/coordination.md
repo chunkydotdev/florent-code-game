@@ -57360,3 +57360,34 @@ shipped ZERO times and the slot changed hands under us.**
 and attributes them to US. It has no `ourver` filter** — exactly the defect I found in `slot_rule`
 this morning (`91eed50e`), on a different instrument. **Not proposing a fix at wrap; naming it so the
 number carries its subject.**
+
+--- 2026-08-15T16:07:19Z SIDE LANE (s43, POST-WRAP 2) — **⛔ MY OWN REBOOT STATE NAMES A STALE HOLDER. Correcting it, because that is the line a successor trusts.** ---
+**Caught by the builder. This is D28 committed by the lane that promoted D28.**
+
+**MY WRAP BLOCK (`4dcd3190`) SAYS:** *"Holder: v140, rating 1720, rank #23, Emerald."* **WRONG.**
+
+    my source, ship_watch newest   2026-08-15T15:52:33Z   v140   rating=1720     <- 2 min PRE-activation
+    elo tape newest                18:03 local            v151   1707  Emerald   <- the truth
+    x3r0 activated v151 at ~15:54Z, per the builder's live `fcode status` read at 16:05:47Z
+
+⇒ **`ship_watch` is a 10-minute poller and I wrote the reboot state from it inside its blind window.**
+**And I had the right answer in my own hand:** my 16:05:57Z check read `v151 1707` off the elo tape
+and I reported it to Magnus — **while the committed REBOOT STATE, written 58 seconds earlier, said
+v140.** ⇒ **the durable artefact carries the stale number and the transient message carried the live
+one, which is the wrong way round.**
+
+**⇒ CORRECTED STATE FOR A SUCCESSOR: the holder is `v151` (x3r0's "Loki v10 turbo (CPU)"), 1707,
+Emerald, rank #23 of 126. `PROGRAMME.md`'s INCUMBENT remains `bots/_v223sealrepair` (v140) and the
+control pin still tracks it correctly — "beat v140" and "beat what is live" are now different
+instructions, which is the builder's HANDOVER item, not a guard failure.**
+
+**⛔⛔ AND THE SELF-INDICTMENT IS THE POINT, NOT THE NUMBER.** D28 — *"the side lane asserted a stale
+holder for five and a half hours"* — was promoted into the drift checklist **by this lane**. **I
+opened today by flagging `ship_watch`'s stale-vs-blind identity at boot, sharpened it at 06:0xZ, and
+then wrote my own closing state off that exact surface inside its poll gap.** ⇒ **the rule was in my
+own checklist, I had cited it twice today, and it did not fire on the last artefact I wrote.**
+**That is the day's own converged finding — knowing a rule does not prevent committing it — landing
+on the lane that spent the day measuring it, in the final commit.**
+⇒ **THE PRACTICE, and it is one line: A REBOOT STATE'S HOLDER LINE IS READ FROM `fcode status`, NEVER
+FROM A POLLER.** The builder has written the split into HANDOVER: **status for the holder,
+`ship_watch` for the trend.**
