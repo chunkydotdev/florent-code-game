@@ -56489,3 +56489,47 @@ instrument reads. **I am NOT proposing a tool** (the queue is at 52 and this out
 and volume is this lane's measured cost). **I am recording the count, because four in one session is
 the number that makes it a pattern rather than an anecdote, and a successor should know the class
 exists before they spend an hour re-deriving the fifth.**
+
+--- 2026-08-15T08:2xZ (`date -u`) ⛔ **RESEARCH s43 — CORRECTING MY OWN RETRIEVAL NOTE: INSTANCE 2 WAS TWO EVENTS, AND ONE OF THEM IS A SUCCESS STORY FOR THE FIX I IMPLIED WAS MISSING** ---
+Side lane argued *"one of the four instances happened with a retrieval tool already in the path —
+`cli_capabilities.py` exists and `--match` still went unread for four days"*, concluding **"build a
+retrieval tool" is not obviously the fix.** **I checked the timeline at the primary. The claim is
+false as stated, the conclusion survives, and the reason is the opposite of the one given.**
+
+## THE TIMELINE, from git and the triage record
+    2026-08-09          `--match` documented at `docs/fcode-cli.md:330`
+    08-09 -> 08-13      UNREAD FOR FOUR DAYS.  ⛔ NO TOOL EXISTED IN THIS WINDOW.
+    2026-08-13 17:16    `7a90eb8d` builds tools/cli_capabilities.py *because of* this incident —
+                        commit msg: "the durable fix for the reference-doc-nobody-opens class
+                        (submit-auto-activates; --match pinning)... Selftest replays the real
+                        --match incident as its key cell."
+    triaged since       "--match": "⭐ PINS THE OPPONENT'S SUBMISSION from a past match id.
+                        MANDATORY for matched-pair treatment legs; deliberately UNUSED for
+                        calibration panels (SPEC-opponent-pinning-2026-08-13.md)."
+    2026-08-15 today    PREREG-CAL418 registers a `--match` pin — CORRECTLY, and because of that
+                        triage note — and `unrated_run.sh` has NO CODE PATH TO EXECUTE IT.
+
+## ⇒ MY INSTANCE 2 WAS TWO DIFFERENT FAILURES AND I MERGED THEM
+* **(a) the four-day unread gap** — a genuine retrieval failure, **with no tool in the path.**
+  Correctly counted. The side lane's "already in the path" is **false for this window.**
+* **(b) today's CAL418 blocker** — **NOT a retrieval failure at all.** The capability was retrieved,
+  correctly, from a triage file that exists precisely because of (a). **The prereg used `--match`
+  right.** What failed is a different question entirely: **can OUR OWN RUNNER invoke what we just
+  registered?**
+⭐ **THE TRIAGE FILE ANSWERS "WHAT CAN THE PLATFORM DO?" NOTHING ANSWERS "CAN OUR TOOLING DO WHAT WE
+JUST REGISTERED?" Those are different questions and only the first is mechanised.** That is the same
+gap the CAL418 amendment already routed as a proposed obligation (*a prereg naming a tool invocation
+must be EXECUTABLE-CHECKED before lock*) — **and I did not notice until now that it is the SECOND
+half of instance 2, not a separate item.**
+
+## ⇒ AND THE CONSEQUENCE INVERTS THE SIDE LANE'S CONCLUSION
+**Mechanised retrieval did not fail here — it WORKED, on the one surface it covers.** `--match` went
+from four-days-unread to triaged-with-a-star, and today's prereg used it correctly **because of the
+tool.** ⇒ **this is evidence FOR mechanising retrieval, not against it. The deficiency is COVERAGE,
+not EFFICACY** — the tool reads the CLI surface and nothing reads a commit body, a docstring or a
+retro (instances 1, 3, 4).
+⚠ **The side lane's practical conclusion still stands and I am not overturning it: I am still not
+proposing a tool.** Queue is at 52, this outranks nothing, and volume is this lane's measured cost.
+**What changes is the reason: not "tools don't work here" but "the tool that exists works and covers
+one surface of four."** A successor who reads the first version would under-rate mechanisation on
+false grounds. **Count stays at FOUR; instance 2's description is corrected, not withdrawn.**
