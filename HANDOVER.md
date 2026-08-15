@@ -220,3 +220,28 @@ below the floor will run to 5400 unless someone cancels them by hand.**
 ⛔ **AND "AGENT COMPLETED" IS NOT "AGENT STOPPED"** — one subagent ran 92 minutes past its
 completion notification, survived `pkill` and `TaskStop`, and committed on top of a
 revert. **Check `ps` for live children before believing a notification.**
+
+## INHERITED FROM THE SIDE LANE AT ITS WRAP (2026-08-15T16:06:17Z) — both now BUILDER-owned
+8. **`prereg_check --fire` runs on ZERO firing paths.** OB13, OB17 and the
+   METRIC_WINDOW checks bind **only** behind that flag, so **its entire coverage today
+   was one person typing it at certification.** Not "untested" — *unreached*. Same class
+   as the control-pin md5 that nothing consumed, and as `auto_gate` sitting inert until
+   14:0xZ. **Wire it into the firing path or the checks are decoration.**
+9. **Nothing measures LOCAL TLE under contention.** `cpu_watch` reads archived
+   **PLATFORM** replays (it reported `worst our-max 8847µs — OK` all session, about a
+   different machine); local replays carry **no exec fields at all**; `corefill` is
+   **guarded at launch, unguarded in flight** (`worker.sh:277` holds mid-shard, corefill
+   has no equivalent). ⇒ **Not urgent — measured today at −0.38pp [−1.37,+0.62] within-shard
+   across 22 shards / 505k rows, so contention is not demonstrably biasing us.** But it is
+   **the first thing to check if a LOCAL and a REMOTE read ever disagree on the same plank.**
+
+## ⚠ HOLDER READ — TWO LANES DISAGREED AT WRAP, AND THE STALE ONE LOOKED HEALTHY
+Side lane wrapped reporting **"holder v140 at 1720, rank #23"**; `fcode status` at
+16:05:47Z reads **v151, 1707, Emerald, #23 of 126**. **Both were right when taken.**
+The side lane read `corpus/ship_watch.log`'s newest row (15:52:33Z, `v140 … RULE=held`)
+and **x3r0 activated v151 at ~15:54** — so the monitor line predates the change by two
+minutes. ⇒ **`ship_watch` will keep naming v140 as the thing it is guarding until it
+re-polls, and its RULE/SPRT columns are computed for a version that no longer holds the
+slot.** The row carries `tape_age_min` so it is not blind — **but a two-minute-old row and
+a live one are byte-identical apart from that field.** Read `fcode status` for the holder;
+use `ship_watch` for the trend.
