@@ -57641,3 +57641,54 @@ comparing a snapshot to an average.
 5. Only then consider ws1's replacement / the 48-core box — and note **the barrier costs a
    48-core box ~70% of its capacity**, so the fix is a precondition for that purchase, not
    an optimisation after it.
+
+--- 2026-08-15T20:4xZ (`date -u`) NON-LANE SESSION — **ws1 RUNNER KILLED (verified), AND `F255HOMEMAX` RE-QUEUED LOCALLY AS `HOMEMAX` — WITH A FINDING THAT MAKES IT BETTER THAN A REPLACEMENT** ---
+
+**ws1 runner is down**, verified independently rather than off the kill command's own
+output: `orchestrate.sh status` reads **`runners: 0   worker: 0`**, load 3.08 and falling.
+Final pull `20:44:35Z`, immediately before the kill. All result tapes intact — `cmd_kill`
+is a `pkill` and nothing in the pipeline deletes rows.
+
+**⭐ `F254COLLARS` PAID FOR ITSELF ON THE WAY OUT:** it landed at **n=3,500, 47.71%
+[46.07, 49.35]**, seats 1750/1750, NOWINNER 0. **`collarseal` is a REAL NEGATIVE solo** —
+one of the three planks that had no solo reading now has one, free. ⇒ **every pure-raid
+plank has now screened at or below 50, FIVE for five** (spawnlock 49.70, sentshell 48.75,
+collarseal 47.71, bodyblock 47.26, and catapult still open), while **both eco planks win**.
+That is the evidence base under **QUEUE #71** and it got stronger, not weaker.
+⚠ Note `collarseal` sits in two leaders (`MIX281mix4` 55.07, `MIX282mix5` 54.65) and the
+5-way carrying it is BELOW the 4-way without it. Consistent, not contradictory.
+
+## RE-QUEUED — NEW ROW, NEW ID, FRESH SEED (never a state edited backwards)
+`F255HOMEMAX` stays CLAIMED-and-dead in `fleet_queue.tsv` forever, per that file's own
+one-way rule. The work is now a LOCAL row:
+```
+HOMEMAX bots/_v255homemax bots/_v223sealrepair 5400 724000     <- #3 in the local queue
+```
+
+**⭐⭐ AND CHECKING IT BEFORE QUEUEING TURNED UP WHY IT MATTERS.** Two checks, both
+prompted by the `_v260catrnd1` inert-toggle finding earlier today:
+1. **Toggles: CLEAN.** All 44 `LOKI_*` constants it declares are also CONSUMED — no
+   declared-but-unreachable branch. (`_v260catrnd1` failed exactly this.)
+2. **It is NOT a duplicate of `RND1SOLO`.** `diff _v259rnd1 _v255homemax` = **4 lines**,
+   one substantive: **`LAUNCHER_RESERVE = 80` → `0`.**
+   ⇒ **`homemax` = `rnd1` (lift the launcher ROUND gate to 1) PLUS lifting the launcher
+   TI gate — which is `QUEUE #28`, *"LAUNCHER_RESERVE = 80 IS THE GATE THAT STARVES THE
+   LAUNCHER"*.** Two gates on the same subsystem, in one arm.
+
+**⇒ THE QUEUE HEAD IS NOW A THREE-POINT LADDER ON ONE MECHANISM, WHICH IT WAS NOT BY
+DESIGN — it fell out of re-queueing a stranded row:**
+| # | shard | launcher ROUND gate | launcher TI gate | reads |
+|---|---|---|---|---|
+| — | `_v223sealrepair` (control) | r-gated | reserve 80 | 50.00 by construction |
+| 2 | `RND1SOLO` | **lifted to r1** | reserve 80 | ? |
+| 3 | `HOMEMAX` | **lifted to r1** | **reserve 0** | ? |
+⇒ **RND1SOLO vs HOMEMAX isolates the TI gate; both vs control isolate the round gate.**
+And `AWRLNCH` (`bodyaware`+`homeearly`) already reads **53.95% with a FLAT kill round**
+(205/208) — the only leader that wins without slowing the kill, which is the specific
+lead **#71** names. These two rows say whether that comes from the launcher gates.
+⚠ **Adjacent placement is deliberate** (#2 and #3 run in the same window, same machine
+conditions); it is NOT a paired design and must not be read as one.
+
+Local queue: **54 unstarted**, 0 duplicate ids, seed 724000 clear. The 3 duplicate
+`seed_lo` values in the worklist are **pre-existing** (AIMTHROW/AIMTHROW2 @266000,
+NESTSHOT/NESTSHOT2 @276000, G415g4/SEALTI @440000) and are NOT mine — flagged, untouched.

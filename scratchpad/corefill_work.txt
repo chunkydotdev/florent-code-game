@@ -7,6 +7,10 @@
 # 1-3 FIRST AND THEY ARE NOT NEGOTIABLE: two calibration cells + the top plank.
 #     Without NULL and NEG the other verdicts cannot distinguish "no effect"
 #     from "no power", which is what made tonight's read-out mean anything.
+TRIO bots/_v700trio bots/_v223sealrepair 10800 700000
+RND1SOLO bots/_v259rnd1 bots/_v223sealrepair 5400 720000
+HOMEMAX bots/_v255homemax bots/_v223sealrepair 5400 724000
+CATSOLO bots/_v253catapult bots/_v223sealrepair 5400 722000
 GUNFERRY    bots/_v154gunferry     bots/_v146gunaxis     5408  30000
 NULL114     bots/_v146null         bots/_v146gunaxis     5408  31000
 NEG114      bots/_v140noseal       bots/_v146gunaxis     5408  32000
