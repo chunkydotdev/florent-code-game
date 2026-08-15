@@ -57692,3 +57692,48 @@ conditions); it is NOT a paired design and must not be read as one.
 Local queue: **54 unstarted**, 0 duplicate ids, seed 724000 clear. The 3 duplicate
 `seed_lo` values in the worklist are **pre-existing** (AIMTHROW/AIMTHROW2 @266000,
 NESTSHOT/NESTSHOT2 @276000, G415g4/SEALTI @440000) and are NOT mine — flagged, untouched.
+
+--- 2026-08-15T20:5xZ (`date -u`) NON-LANE SESSION — ⛔ **AMENDING QUEUE #71: THE OBSERVATION STANDS, MY IMPLICATION FROM IT WAS WRONG** ---
+
+Magnus asked a one-line question — *"What is a raid plank?"* — and answering it honestly
+required reading `raid.py`'s header, which invalidated the framing I had just committed.
+
+**"raid plank" was MY shorthand**, derived from which module a plank's diff lands in. It is
+not a term this repo uses, and I should have said so when I coined it. The modules:
+`main.py` 871 (dispatch) · **`raid.py` 958 — `LOKI-1 raid layer — THE COLLAR`** ·
+`eco.py` 1,242 (harvesters/conveyors/wiring) · `doctrine.py` 1,686 — **168 constants and
+ZERO functions**, i.e. the parameter file, so a "doctrine-heavy" plank is TUNING, not new
+mechanism (that is what `rnd1` and `homemax` are).
+
+**⛔ WHAT I GOT WRONG.** #71 originally read *"eco is the only subsystem with a hit rate ⇒
+dig further in eco."* **`raid.py`'s docstring had already priced that trap:**
+> *"TIME IS THEIR ASSET: any design that merely lengthens games moves us into the window
+> where they convert four times better."*
+
+Its measured per-window kill hazard vs opponents ≥1550 — **ours 15.1 / 5.9 / 7.7 / 9.8 %**
+across r0-150 / 150-200 / 200-300 / 300+ against **theirs 9.8 / 5.9 / 12.5 / 40.9 %** (ratio
+1.54 early, **0.62 by r200-300**) — and *"we START kills fine (29.8% of games, median r148)
+and fail to CLOSE about 70% of them."*
+
+⇒ **THE CORRECTED READING: our "winning" arms are executing the documented LOSING pattern.**
+They win more AND kill LATER (leaders 226–259 vs control 209) — buying win share by
+lengthening games into the window where the opponent converts **four times better**.
+**That IS the 55% ceiling: a mechanism, not a coincidence.** Eco improves SURVIVAL; the
+bottleneck is CLOSING; different modules, different jobs.
+⇒ **The 60 lives in the COLLAR — exactly where five planks have already failed.** Harder
+than "dig in eco", and it is what both the evidence and the module's own thesis say.
+**Read the eco hit-rate as an EXPLANATION OF THE CEILING, not a map to the prize.**
+
+**⭐ AND THE AMENDMENT MAKES THE PLANK CONCRETE.** The collar is cheap: a barrier is **3 Ti
+for 30 HP**, bot-impassable; breaking one costs 15 pecks at 2 Ti = **10:1 in our favour**;
+**four diagonal raiders seal all eight core-adjacent seats, and sealed, the defender's heal
+rate is ZERO** — every point of damage becomes permanent. Meanwhile the only bank→pressure
+conversion is `SURGE` at **r300** and the kill lands at **174–236**.
+⇒ **#71 is now an ECO→RAID HANDOFF: spend surplus bank on COLLAR MATERIAL inside the kill
+window, rather than on hands after it.** Not "more economy", not "more survival" — *fund
+the seal earlier*. The primary metric (MEDIAN KILL ROUND, with a win-share gain at a flat
+or rising kill round explicitly NOT clearing the row) was already right and is now
+justified by the module that owns the job.
+
+⚠ **Amendment is ADD-only and dated in the row itself; the original text was not rewritten**,
+so a successor can see what was claimed and what replaced it.
