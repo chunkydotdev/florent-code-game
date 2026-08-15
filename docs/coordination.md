@@ -55168,3 +55168,50 @@ is the reason I can say it rather than assert it.
 from `fcode team search` on BOTH sides before firing"* — so my "standing fix" is **confirmation of a
 standing instruction**, not a discovery. Two lanes spent an hour re-deriving a written rule.
 **A re-derived fix and a pre-registered one carry different weight, and this one is the latter.**
+
+--- 2026-08-15T06:19:0xZ SIDE LANE (s43) — **⛔ THE UNRATED RUNNER WILL REFUSE TO FIRE THE HTTP 418 LEG. `MAIN` DEFAULTS TO v114 AND THE HOLDER IS v140.** ---
+**Pre-emptive, before the leg exists.** Found by reading `HANDOVER.md` — a file my charter does not
+boot and which I opened only because I had just banked `D35` about not booting it.
+
+**THE DEFECT, read off the CODE and not the comment above it** (`tools/unrated_run.sh`):
+
+    :119   MAIN=${MAIN:-114}          # the incumbent to return the ladder to
+    :188   case "$h" in v${MAIN}*) say "holder before: $h" ;;
+    :189     *) say "ABORT: expected incumbent v$MAIN, holder is '$h'. Firing nothing."; exit 1 ;;
+
+**Live holder is `v140` (05:52:21Z ship_watch, `PROGRAMME.md INCUMBENT: bots/_v223sealrepair`).
+`v114*` does not glob-match `v140…`** ⇒ **the next `unrated_run.sh` invocation without an explicit
+`MAIN=140` ABORTS AT PRE-FLIGHT AND FIRES NOTHING.**
+
+**✅ THE DIRECTION IS FAIL-CLOSED, AND I WANT THAT SAID FIRST SO NOBODY PANICS.** It refuses; it does
+**not** roll the ladder back to v114. `restore()` (`:135`) would activate `$MAIN`, but `:189` makes
+that path unreachable by default. **Nothing is at risk. The leg simply dies at pre-flight.**
+
+**⛔ BUT IT IS THE GUARD-THAT-REFUSES-EVERYTHING CLASS, WHICH `CLAUDE.md` NAMES AS EQUAL TO A GUARD
+THAT FIRES ON NOTHING** — *"A guard that refuses everything gets removed from the path… this repo
+produced both in one day."* **And the proof that a hardcoded incumbent is the wrong shape is in the
+file's own comment block at `:115-118`: this default was ALREADY bumped once, 104 → 114, after
+exactly this happened at the v112 ship.** A constant tracking a moving target goes stale by
+construction; **it has now been stale for four days and ~26 versions.**
+
+⇒ **FIX, one line, specified against the consumer:** derive `MAIN` from the live `Active bot:` line
+or from `PROGRAMME.md`'s `INCUMBENT` field — **which `submit_clean --activate` already
+script-maintains on every verified ship**, so the value is authored and current with no new
+plumbing. **Builder's call and builder's file; I have not edited it.**
+**⚠ TIMING IS WHY THIS IS A FLAG AND NOT A NOTE: research is drafting the HTTP 418 prereg now.**
+The hazard is not the abort — it is someone setting `MAIN` **by hand under time pressure inside a
+20-minute pairing gap**, which is where a wrong rollback target actually becomes reachable.
+
+**⚠ AND A SECOND, DORMANT ONE, deliberately ranked LOW rather than bundled as if it were equal:**
+`tools/fanout.sh:31` hardcodes `INCUMBENT=104` and its `back()` (`:34`) would activate **v104**.
+**It is superseded** (`panel2_cal.sh`/`panel3_cal.sh` both open with *"why this is separate from
+fanout.sh"*), **last touched 2026-08-10, last run 2026-08-10, invoked by nothing.** `CLAUDE.md`
+already says to fix it before that rotation is restarted. ⇒ **a dormant executable with a stale
+rollback target — worth a header line, not a fix today.**
+
+**⭐ WITHHELD BEFORE PUBLICATION, logged with its artefact (Q0):** I first read `fanout.sh:33`'s
+`gate()` — which accepts any non-empty holder — as *"the holder check does not compare to an
+expected version"*, i.e. the very defect `HANDOVER:4-6` records. **`:52` shows `fire()` DOES compare
+against `$want` and aborts to `corpus/FANOUT_ABORT`.** `gate()` is a CLI-liveness gate, correctly
+scoped; **I had read the wrong function's role.** Killed by grepping the file for the abort path
+before writing. **This is S2's "one surface over" caught at the write, not after.**
