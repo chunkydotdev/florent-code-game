@@ -55465,3 +55465,56 @@ motivated the re-denomination. **It reads today as a live caution about a rule w
 incumbent entry.** No numbers need recomputing and no field moves.
 **⛔ MAGNUS'S CALL AND HIS FILE. Recorded with numbers so it can be answered in one line rather than
 re-derived.**
+
+--- 2026-08-15T06:3xZ (`date -u`) ⭐⭐ **RESEARCH s43 — TWO INDEPENDENT INSTRUMENTS NOW FAIL TO SUPPORT THE CRASH CHANNEL, AND NOBODY HAS PUT THEM SIDE BY SIDE. THIS BEARS ON WHAT THE LAUNCHER IS FOR.** ---
+**Found by running the GREP before writing a queue item** — I was about to propose "answer #17 from
+the field instead of the probe battery" and discovered the instrument exists, was built two days
+ago, and has already returned an answer nobody has set beside today's.
+
+## INSTRUMENT 1 — THE FIELD, s33 2026-08-12 (`CRASH-CHANNEL-border-vs-interior-2026-08-12.md`)
+`tools/kidnap_fate.py`, matched control (same file, same round, alive, not thrown, bucketed by
+distance-to-own-core), **44,639 victims / 9,697 thrown / 9,697 classified**:
+
+    BORDER - INTERIOR    = -0.93pp   z = -2.45     (border LOWER)
+    BORDER - NOT THROWN  = -0.21pp   z = -0.67     (no elevation at all)
+
+⇒ **throwing an enemy builder to a MAP BORDER does not make it vanish undamaged more often than
+throwing it anywhere else — the sign is NEGATIVE.**
+
+## INSTRUMENT 2 — THE LOCAL PROBE BATTERY, TODAY (banked earlier this session)
+All four CRASH arms **60/60 = 100.00%**, including `crashOFF` and an incumbent with no crash arm.
+⇒ **saturated; the control returns the treatment's verdict; it cannot discriminate.**
+
+## ⭐ THE SYNTHESIS, AND IT IS THE POINT
+**The one instrument that COULD have shown the crash channel shows the opposite sign at n=9,697;
+the instrument built to confirm it is blind.** ⇒ **the crash channel has no supporting evidence from
+any instrument we own.**
+**⛔ AND IT DOES NOT CLOSE #17 — the rule forbids it and the tool's own header says so.** Rule 6: a
+corpus read may **PRIORITISE** a road, never **RETIRE** one; `no_damage_removal` additionally
+**conflates a genuine uncaught exception with `self_destruct()`** (~40% of no-damage removals in a
+40-file sample), so it is an ASSOCIATION, not a lethality measure. **This is a strong prior, not a
+closure.**
+
+## ⇒ THE CONSEQUENCE FOR THE LAUNCHER WORK MAGNUS HAS PUT THIS SESSION ON
+The kidnap effect has two channels — **CRASH** (victim raises off-map and is destroyed) and
+**DISPLACEMENT** (victim is simply thrown far from where it was useful). **The s33 read says the
+measured effect is not in the crash channel.** ⇒ **a launcher dose leg should be designed to move
+DISPLACEMENT, and its prereg should not predict crash lethality** — that is a prediction two
+instruments decline to support. ⚠ **Stated as a design input, not a verdict: the builder owns the
+tree and Magnus owns the directive.** **And the honest counterweight:** our own border-landing rate
+is **40.1% against the field's 23.9%** (builder's corrected `throws.tsv` cut) — **we aim at borders
+more than anyone**, which is either a real edge the s33 cut is too blunt to see, or effort spent on
+a channel that does not pay. **Those are distinguishable and neither has been tested live.**
+
+## 🕐 CAL418 WINDOW SCHEDULE — re-derived at 06:27Z, phase confirmed 19/19 today at offset 12 / sec 59
+Newest pairing in corpus `06:12:59Z`. **Do not hardcode; re-derive before each fire.**
+
+    slot        window opens   ROLLBACK BY   hard deadline (next pairing)
+    06:32:59Z     06:33:30Z      06:44:59Z     06:51:59Z
+    06:52:59Z     06:53:30Z      07:04:59Z     07:11:59Z
+    07:12:59Z     07:13:30Z      07:24:59Z     07:31:59Z
+    07:32:59Z     07:33:30Z      07:44:59Z     07:51:59Z
+
+**Four windows = 100 games = ±11.7pp on the CAL418 cell** (unrated DEFF 1.434, p=0.5). One leg per
+window; 5 matches needs ~4 min against ~19 of clear air. **Each slot missed costs a measured mean
+−5.94 Elo if the holder is still foreign at `:12:59`.**
