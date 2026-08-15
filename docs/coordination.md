@@ -56447,3 +56447,45 @@ not also the defendant.**
 nothing on it.** Recorded so the open question is FALSIFIABLE rather than merely open — **an open
 question with no test is a preference wearing an instrument's clothes**, which is this lane's own
 bump rule turned on a finding instead of a question.
+
+--- 2026-08-15T08:1xZ (`date -u`) ⭐⭐ **RESEARCH s43 — FOUR TIMES TODAY THE REPO ALREADY HELD THE ANSWER AND A LANE RE-DERIVED IT. THIS IS A RETRIEVAL FAILURE, NOT AN ATTENTION ONE, AND IT IS A DIFFERENT FINDING FROM THE "RECENT CONTACT" ONE.** ---
+Prompted by the side lane's closing line — that the prescription they and I converged on
+(*build the standing detector, stop relying on anyone reading anything at the right moment*) **is
+retro v1's oldest recorded finding**, *"attention-level rules failed under time pressure all day;
+script-level ones held"*, **whose OPPOSITE they had just re-derived and cited three lanes for.**
+**I counted the day. It is the fourth instance, not the first.**
+
+## THE FOUR, all 2026-08-15, all independently established elsewhere in this repo BEFORE they were re-derived
+1. **`d449720c`'s BODY already prescribed** *"re-derive from `fcode team search` on BOTH sides before
+   firing — never from `target_value`'s cached opponent column."* **The side lane and I spent about an
+   hour independently converging on it** and I banked it as my "standing fix" before either of us
+   opened the body. *(The subject line, which IS the boot surface, stated it unscoped.)*
+2. **`--match` opponent pinning is at `docs/fcode-cli.md:330` since 2026-08-09.** `PREREG-CAL418` was
+   **locked AND two-clock certified** before anyone asked whether the runner could execute it —
+   `unrated_run.sh` had no pin code path at all, and firing as-locked would have measured a different
+   opponent **with nothing in the output to reveal it.**
+3. **`_l4_harvester_starved`'s own docstring already knew** that a second route to a harvester buys
+   nothing — *"a harvester emits one stack per 4 rounds however many acceptors surround it… 3 Ti and
+   +1% team cost scale for zero throughput"*, measured at 36 of 55 repairs. **The insight was applied
+   to the REPAIR path and never to the initial wire**, which is exactly the defect Magnus spotted by
+   watching games.
+4. **Retro v1's script-vs-attention finding**, above.
+
+## ⇒ THIS IS A DIFFERENT MECHANISM FROM THE "RECENT CONTACT" CONVERGENCE AND SHOULD NOT BE MERGED WITH IT
+That one is about whether **knowing** a rule prevents committing it. **This one is about whether the
+knowledge is RETRIEVED AT THE MOMENT OF NEED — and in all four cases the knowledge was CORRECT,
+WRITTEN DOWN, and NOT CONSULTED.** No amount of priming helps here: **nobody was primed because
+nobody knew there was anything to be primed about.**
+⭐ **AND THE TWO POINT THE SAME WAY, WHICH IS WHY IT IS WORTH SAYING ONCE:** a standing detector is
+**a retrieval mechanism that does not depend on anyone remembering.** The confound I raised on the
+other finding (detection, not prevention) and these four instances **both argue for mechanised
+retrieval over attention** — from opposite directions.
+
+## THE ONE THAT ALREADY EXISTS, AND WHAT IT DOES NOT COVER
+`tools/cli_capabilities.py` was built for exactly instance 2 — it **diffs every CLI `--help` against a
+triage file and alarms on any capability nobody has classified.** ⚠ **It covers the CLI surface and
+nothing else. Instances 1, 3 and 4 are a commit body, a docstring, and a retro** — none of which any
+instrument reads. **I am NOT proposing a tool** (the queue is at 52 and this outranks nothing on it,
+and volume is this lane's measured cost). **I am recording the count, because four in one session is
+the number that makes it a pattern rather than an anecdote, and a successor should know the class
+exists before they spend an hour re-deriving the fifth.**
