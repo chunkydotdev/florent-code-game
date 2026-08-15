@@ -57007,3 +57007,42 @@ predicts the sign I want is exactly the shape of a story that fits after the fac
 It will be overdispersed relative to Poisson, and `CLAUDE.md`'s cluster enumeration must be
 PERFORMED for a per-game count rather than inherited from the local **DEFF 0.98**, which was measured
 on PROPORTIONS. **State which clusters survive before quoting an interval.** Not resolved here.
+
+--- 2026-08-15T14:2xZ (`date -u`) ⛔⛔ **RESEARCH s43 — v150 HELD THE SLOT TODAY, UNDER THE NO-SHIP RULE, AND COST 66% OF THE DAY'S DROP ON 8.7% OF THE MATCHES. AND OVER v140's WHOLE TENURE THE INCUMBENT IS +40 WHILE FOREIGN HOLDERS ARE −65.** ---
+Same-day rated decode, `corpus/ladder_games.tsv` synced 14:2xZ, newest pairing `14:12:59Z`.
+
+## TODAY, SINCE THE CAL418 LOCK (06:40Z) — 23 matches, −37.46 Elo
+    ver 150    2 matches   -24.65   (-12.32/m)   <- 8.7% of matches, 66% of the drop
+    ver 140   21 matches   -12.81   ( -0.61/m)   <- the incumbent, mild
+
+**v150's two rated matches: `10:52:59Z` vs team lazy, `11:12:59Z` vs Coreflood.**
+`elo_history` (LOCAL clock, UTC+2) shows v150 active **12:41 → 13:16 local = 10:41Z → 11:16Z** — a
+**~35-minute window bracketing both matches exactly.**
+⭐ **THE EXPOSURE MODEL PREDICTED THIS EXACTLY: a 35-minute window spans two `:12:59`/`:32:59`/`:52:59`
+slots, and two rated matches leaked.** `leaked = slots between activation and rollback`, arithmetic,
+as banked this morning. **Nothing about this was unforeseeable — it was computable before the submit.**
+
+## ⛔ AND IT HAPPENED ON THE DAY OF A STANDING NO-SHIP RULE
+Magnus, today: *"we do not put a new bot in the slot, i want to see how much of a better bot we can
+build."* **v150 is not in `corpus/version_trees.tsv`** — no recorded lane ship, the same signature as
+v145/v146/v147. ⚠ **THE ACTIVATOR IS NOT ESTABLISHED AND I AM NOT INFERRING IT.** I held that line on
+v147 this morning and it holds here: the prior three were teammate x3r0's, which is a pattern and not
+evidence. **Whose action this was is Magnus's to determine, not mine to guess.**
+
+## ⭐⭐ THE NUMBER THAT MATTERS — v140's FULL TENURE, 80 matches
+    v140's OWN      67 m   +40.12   (+0.60/m)   <- THE INCUMBENT IS EARNING
+    FOREIGN         13 m   -64.54   (-4.96/m)   <- 16.2% of matches
+    NET             80 m   -24.42
+
+⇒ **v140 HAS EARNED +40 AND FOREIGN HOLDERS HAVE GIVEN BACK −65. Without them we would be UP forty
+points instead of DOWN twenty-four — a 65-point swing on 16% of the matches.** And **v150 is the
+worst per-match of all five foreign versions at −12.32.**
+⇒ **This is the THIRD occurrence of one mechanism today** (v145/146/147 this morning, v150 now).
+`fcode submit` auto-activates and uploads arrive on no schedule, so **check-then-act has a TOCTOU gap
+BY CONSTRUCTION** — the s42 conclusion, now with a price: **−64.54 Elo over one tenure.**
+**The specified fix is unchanged and still unbuilt: record the holder PER ACCEPT so a contaminated
+match is identifiable by a column.** Prevention has a floor; detection does not.
+
+⚠ **WHAT THIS IS NOT: an argument that v140 should hold the slot.** +0.60/match over 67 matches is
+mild and its own confidence interval is wide; this cut attributes the DROP, it does not verdict the
+tree. **The verdict is the builder's and no ship is permitted today anyway.**
