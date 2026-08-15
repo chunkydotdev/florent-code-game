@@ -242,15 +242,56 @@ def selftest() -> int:
     return fail
 
 
+def batch(spec: Path, prefix: str, start: int) -> int:
+    """Compose every combination in a file, and ASSERT built == requested.
+
+    ⛔⛔ THIS EXISTS TO DELETE A SHELL LOOP, NOT TO BE CONVENIENT. Composing in a
+    zsh `for c in "a b" "c d"; do ... $c ...` loop has now failed THREE TIMES
+    TODAY across two people, and every time it ANSWERED rather than crashed:
+      * a holder arg went empty and printed ABORT on all three cells  -> looked like a passing guard
+      * a composition loop built ZERO of six                          -> looked like a loop that ran
+      * a hash loop processed one 18-name blob and printed "1"        -> looked like 18 identical trees
+    zsh does not word-split unquoted variables, so the failure is always a
+    plausible-looking result. The habit that catches it is asserting the COUNT
+    BUILT against the COUNT REQUESTED — the same requested-vs-returned
+    reconciliation that mech_battery got this morning, applied to composition.
+    Doing it in python removes the splitting hazard entirely rather than relying
+    on remembering `${=c}`.
+    """
+    lines = [l.strip() for l in spec.read_text().splitlines()
+             if l.strip() and not l.startswith("#")]
+    built, refused = [], []
+    for i, line in enumerate(lines):
+        planks = line.split()
+        out = ROOT / "bots" / f"_v{start + i}{prefix}{len(planks)}"
+        rc = compose(planks, out, quiet=True)
+        (built if rc == 0 else refused).append((out.name, line, rc))
+    print(f"requested {len(lines)}   built {len(built)}   refused {len(refused)}")
+    for n, line, _ in built:
+        print(f"  ✅ {n:<16} {line}")
+    for n, line, rc in refused:
+        print(f"  ⛔ {n:<16} {line}   (rc={rc})")
+    if len(built) + len(refused) != len(lines):
+        print(f"⛔⛔ ACCOUNTING FAILURE: {len(built)}+{len(refused)} != {len(lines)} "
+              f"requested. The loop did not process every row.")
+        return 9
+    return 0 if built else 1
+
+
 def main(argv):
     ap = argparse.ArgumentParser()
     ap.add_argument("planks", nargs="*")
     ap.add_argument("--out")
     ap.add_argument("--list", action="store_true")
     ap.add_argument("--selftest", action="store_true")
+    ap.add_argument("--batch", help="file of combinations, one per line")
+    ap.add_argument("--prefix", default="b")
+    ap.add_argument("--start", type=int, default=300)
     a = ap.parse_args(argv)
     if a.selftest:
         return selftest()
+    if a.batch:
+        return batch(Path(a.batch), a.prefix, a.start)
     if a.list or not a.planks:
         print("planks:", ", ".join(sorted(PLANKS)))
         return 0
