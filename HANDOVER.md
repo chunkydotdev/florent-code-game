@@ -65,6 +65,16 @@
 # 3. **Cross-host dispersion is n=3 and hinges on 0.053pp.** NULL5400 resolves it.
 # 4. **#69 rests on ONE opponent** — Leviathan downgraded at wrap (S−E −8.9pp, includes 0).
 #
+# ⛔ ===== BEFORE YOU USE RESEARCH'S FIRE ORDER: ITS PAYOUTS ARE ~51 POINTS STALE =====
+# Every band figure in the s43 fire order (16 admissible teams, 0033 at +18.93,
+# LingLing40 at +16.84, Juusto at +21.07) is priced off a holder read of **1775 taken
+# at 20:45Z**. We closed at **1724**. ⇒ **the quoted payouts are OVERSTATED and band
+# MEMBERSHIP may have shifted** (BAND_HI is us+125, and Juusto was already ONE POINT
+# inside it at 1775). **Re-run `tools/target_value.py --band` before sizing anything
+# off that order.** Flagged by research at their own wrap — the fire order is the
+# artefact most likely to be picked up cold, and `target_value` additionally prices
+# opponents off a CACHED rating.
+#
 # ===== OPEN WITH MAGNUS (six, none blocking) =====
 # stop-loss observability (SLOT FREE fired 6 polls / ~50 min and CLEARED ITSELF while the
 # drawdown worsened) · X3R0_SLOT_RULE vs SHIP_SIT_MIN_K (v146 displaced at k=4 vs a floor
