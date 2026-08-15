@@ -1129,3 +1129,12 @@ SH286 bots/_v273sentshell bots/_v223sealrepair 5400 376000
 SH287 bots/_v287sh4 bots/_v223sealrepair 5400 378000
 SH288 bots/_v288sh2 bots/_v223sealrepair 5400 380000
 SH289 bots/_v289sh4 bots/_v223sealrepair 5400 382000
+CMB290 bots/_v290c3 bots/_v223sealrepair 5400 384000
+CMB291 bots/_v291c3 bots/_v223sealrepair 5400 386000
+CMB292 bots/_v292c3 bots/_v223sealrepair 5400 388000
+CMB293 bots/_v293c5 bots/_v223sealrepair 5400 390000
+CMB294 bots/_v294c2 bots/_v223sealrepair 5400 392000
+CMB295 bots/_v295c2 bots/_v223sealrepair 5400 394000
+CMB296 bots/_v296c3 bots/_v223sealrepair 5400 396000
+CMB298 bots/_v298c4 bots/_v223sealrepair 5400 400000
+CMB299 bots/_v299c3 bots/_v223sealrepair 5400 402000
