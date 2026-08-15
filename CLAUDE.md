@@ -569,20 +569,17 @@ version ACTIVE AT POLL TIME, so these three are invisible in it. **The ground
 truth is per-match `ourver`, already populated in `ladder_games.tsv` — nothing
 needs building, only reading.**
 
-**THE ORIGINAL CLAIM, KEPT FOR THE RECORD:**
-**AND THE RATED COST IS ZERO, MEASURED.** `fcode match unrated` plays the ACTIVE
-submission, so a prototype leg needs an activation — but ladder pairings land
-~10 minutes apart and a correctly-run window is ~60 seconds, so **v103 and v104
-each played ZERO rated ladder matches** across their legs (verified: every
-ladder match in the window carries `ourver=102`). **Procedure: serve the
-rate-limit wait with the INCUMBENT live; activate only in the instant before
-firing; roll back on the fifth accepted challenge and VERIFY the holder.**
-**⛔ AND "ACTIVATE" HERE INCLUDES THE SUBMIT — see the submissions bullet above.
-`fcode submit` AUTO-ACTIVATES, so uploading the prototype ahead of time to be
-ready is exactly the mistake this procedure reads as safe. The upload belongs
-INSIDE the 60-second window, not before it.** (s29 walked into this: submitted a
-prototype ~20 min ahead of its window and put it on the rated ladder instantly.
-Cost was zero rated matches only because the submit was being watched.)
+**THE SUPERSEDED CLAIM IS NOT REPRINTED HERE.** It said the rated cost of a
+prototype leg was ZERO, measured; the block above replaces it with −24.67 Elo
+across 3 matches. It is kept verbatim, with its provenance, in
+`docs/reference/DIRECTIVE-HISTORY.md`.
+⛔ **WHY IT MOVED (2026-08-15):** in this file the dead claim was bold, emphatic
+and typographically IDENTICAL to a live rule, in the one document loaded into
+every session whether or not it is read carefully. **A reader skimming for the
+cost of a leg could land on `AND THE RATED COST IS ZERO, MEASURED` and be
+reading a retracted sentence with no signal that it was retracted.** The rule
+adopted: *the always-loaded file states what is true now; the archive states
+what we used to think.* Provenance is not lost, it is relocated.
 
 **THE CONSEQUENCE, and it is the one that matters: STOP CALLING UNDERPOWERED
 LEGS.** Every null on 2026-08-10 failed its own resolution bar rather than the

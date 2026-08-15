@@ -30,8 +30,8 @@
     working directory relative to anything, and no shell profile. If the repo
     moves, this file must be edited and the agent re-bootstrapped — a stale
     path makes the agent fail silently, which is the failure mode it exists to
-    remove. `tools/watchdog.sh --selftest` checks that the plist's path still
-    resolves.
+    remove. tests/test_instruments.py::TestWatchdog::test_plist_paths_still_resolve
+    checks this, and asserts AbandonProcessGroup is still set.
 -->
 <plist version="1.0">
 <dict>

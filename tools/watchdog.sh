@@ -47,6 +47,11 @@ cd ${0:A:h:h} || exit 1
 DRY=0; [[ "${1:-}" == "--dry-run" ]] && DRY=1
 LOG=${WATCHDOG_LOG:-scratchpad/watchdog.log}
 PY=${WATCHDOG_PY:-.venv/bin/python}
+# TEST SEAM. The decision paths below (BLIND / 0-actionable / restart-and-confirm)
+# cannot be driven from the real fleet without killing live daemons, and a
+# watchdog whose branches have never been executed is the thing it exists to
+# prevent. Tests point this at a fixture; production must leave it alone.
+FH=${WATCHDOG_FH:-"$PY tools/fleet_health.py --json"}
 mkdir -p "$(dirname $LOG)"
 
 say() { print -r -- "$(date -u +%Y-%m-%dT%H:%M:%SZ) $*" >> $LOG }
@@ -57,7 +62,7 @@ if [[ -f scratchpad/COREFILL_STOP ]]; then
   exit 0
 fi
 
-J=$($PY tools/fleet_health.py --json 2>>$LOG)
+J=$(eval "$FH" 2>>$LOG)
 RC=$?
 
 if [[ -z $J ]]; then
@@ -130,7 +135,7 @@ print -r -- "$ACTIONS" | while IFS=$'\t' read -r LABEL FIX; do
   # CONFIRM, never assume. `eval` succeeding says the shell forked, not that the
   # daemon came up -- this repo's standing rule is that alive-in-ps is the
   # evidence and an exit code is not.
-  AFTER=$(print -r -- "$($PY tools/fleet_health.py --json 2>/dev/null)" | $PY -c "
+  AFTER=$(print -r -- "$(eval "$FH" 2>/dev/null)" | $PY -c "
 import json,sys
 d=json.load(sys.stdin)
 print(next((r['found'] for r in d['rows'] if r['label']=='''$LABEL'''), -1))

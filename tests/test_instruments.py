@@ -30,6 +30,7 @@ every seat-A entity, map-identity collisions, int32 two's-complement deltas.
 Every one was found by re-running or by outside eyes. None was found by a test.
 """
 import csv
+import os
 import re
 import subprocess
 import sys
@@ -675,3 +676,134 @@ class TestHelpContract(unittest.TestCase):
         self.assertIn("IMPORT_SURVIVED", r.stdout,
                       "importing a tool with --help in argv exited early:\n"
                       + (r.stdout or "") + (r.stderr or ""))
+
+
+class TestWatchdog(unittest.TestCase):
+    """`tools/watchdog.sh` — the OS-level supervisor for the supervisors.
+
+    ⛔ WHY THESE EXIST. When the watchdog was built (2026-08-15) it was verified
+    ONLY by live end-to-end runs, and that gap was stated rather than closed:
+    **nothing failed if `AbandonProcessGroup` was removed from the plist.**
+    Without that key launchd REAPS the job's children on exit, so the watchdog
+    restarts a daemon, logs `CONFIRMED alive` 3 seconds later (true at that
+    instant), exits, and launchd immediately kills what it just started.
+    ⇒ **The log reads healthier than doing nothing at all.** A self-confirming
+    no-op is the worst failure a watchdog can have, and it is invisible.
+    """
+
+    WD = ROOT / "tools" / "watchdog.sh"
+    PLIST = ROOT / "tools" / "watchdog.plist"
+
+    def _run(self, fixture_json, extra_env=None, args=()):
+        """Drive watchdog.sh against a FIXTURE fleet_health, not the live fleet."""
+        import json as _json
+        import tempfile
+        fx = Path(tempfile.mktemp(suffix=".json"))
+        fx.write_text(_json.dumps(fixture_json))
+        log = Path(tempfile.mktemp(suffix=".log"))
+        env = dict(os.environ,
+                   WATCHDOG_LOG=str(log),
+                   WATCHDOG_FH=f"cat {fx}")
+        env.update(extra_env or {})
+        r = subprocess.run(["zsh", str(self.WD), *args], capture_output=True,
+                           text=True, timeout=120, env=env, cwd=ROOT)
+        return r, (log.read_text() if log.exists() else "")
+
+    @staticmethod
+    def _row(label, state, auto, found=0, pids=(), fix="true"):
+        return {"label": label, "state": state, "found": found,
+                "expected": 1, "pids": list(pids), "auto": auto,
+                "fix": fix, "why": "test fixture"}
+
+    def test_blind_refuses_and_does_not_act(self):
+        """An unreadable process table is UNKNOWN. Acting on it would start a
+        second copy of every daemon — the worst available move."""
+        r, log = self._run({"blind": True, "problems": 0, "rows": []})
+        self.assertEqual(r.returncode, 2, f"expected rc 2 on BLIND, log:\n{log}")
+        self.assertIn("BLIND", log)
+        self.assertNotIn("RESTARTING", log)
+
+    def test_zero_actionable_says_so_rather_than_going_silent(self):
+        """A silent no-op is indistinguishable from a working pass. Two real
+        launchd passes did exactly that on 2026-08-15."""
+        r, log = self._run({"blind": False, "problems": 0,
+                            "rows": [self._row("keeper", "ok", True, found=1)]})
+        self.assertEqual(r.returncode, 0)
+        self.assertIn("PASS COMPLETE: 0 actionable", log)
+
+    def test_duplicates_are_reported_but_never_killed(self):
+        """Choosing which of two live daemons dies is a human judgement."""
+        r, log = self._run({"blind": False, "problems": 1, "rows": [
+            self._row("auto_gate --apply", "DUPLICATE", False, found=2,
+                      pids=[111, 222])]})
+        self.assertIn("DUPLICATE (NOT killed, by policy)", log)
+        self.assertIn("kill 222", log, "must nominate the NEWCOMER for a human")
+        self.assertNotIn("RESTARTING", log)
+
+    def test_missing_but_not_auto_is_left_for_a_human(self):
+        """AUTO is a safety boundary: a wrong restart of these costs data."""
+        r, log = self._run({"blind": False, "problems": 1, "rows": [
+            self._row("shard runners", "MISSING", False)]})
+        self.assertIn("NOT auto-restartable", log)
+        self.assertNotIn("RESTARTING", log)
+
+    def test_missing_and_auto_is_restarted_and_confirmed(self):
+        """The one path that acts. The fix command must actually be run."""
+        import tempfile
+        marker = Path(tempfile.mktemp())
+        r, log = self._run({"blind": False, "problems": 1, "rows": [
+            self._row("keeper", "MISSING", True, fix=f"touch {marker}")]})
+        self.assertIn("RESTARTING (MISSING + AUTO): keeper", log)
+        self.assertTrue(marker.exists(),
+                        f"the fix command was never executed. log:\n{log}")
+
+    def test_a_deliberate_pause_is_never_undone(self):
+        """If automation can undo COREFILL_STOP, the pause button is a lie."""
+        stop = ROOT / "scratchpad" / "COREFILL_STOP"
+        pre_existing = stop.exists()
+        if not pre_existing:
+            stop.touch()
+        try:
+            r, log = self._run({"blind": False, "problems": 1, "rows": [
+                self._row("keeper", "MISSING", True, fix="echo SHOULD_NOT_RUN")]})
+            self.assertIn("PAUSED", log)
+            self.assertNotIn("RESTARTING", log)
+        finally:
+            if not pre_existing:
+                stop.unlink(missing_ok=True)
+
+    def test_plist_carries_AbandonProcessGroup(self):
+        """⛔ THE NAMED GAP THIS CLASS WAS WRITTEN TO CLOSE.
+
+        Without this key the watchdog is WORSE than useless: it reports
+        successful restarts of daemons launchd then immediately kills.
+        """
+        # ⛔ PARSE THE PLIST, DO NOT GREP IT. The first version searched the raw
+        # text and asserted `<true/>` within 120 chars of the first match of the
+        # string "AbandonProcessGroup" — which later matched a COMMENT
+        # mentioning the key by name, and the test went red on a plist that was
+        # correct, installed, and reporting `abandon process group` in
+        # `launchctl print`. A guard that fails on prose about itself is not
+        # checking the artefact.
+        import plistlib
+        self.assertTrue(self.PLIST.exists(), "watchdog.plist is missing")
+        with self.PLIST.open("rb") as fh:
+            pl = plistlib.load(fh)
+        self.assertIs(pl.get("AbandonProcessGroup"), True,
+                      "⛔ watchdog.plist lost AbandonProcessGroup (or it is not "
+                      "true). launchd will reap every daemon the watchdog "
+                      "starts, and the log will still say CONFIRMED alive.")
+
+    def test_plist_paths_still_resolve(self):
+        """launchd has no working directory and no shell profile: an absolute
+        path that has gone stale makes the agent fail SILENTLY."""
+        import plistlib
+        with self.PLIST.open("rb") as fh:
+            # strip the XML comment block plistlib rejects? it does not — comments are legal
+            pl = plistlib.load(fh)
+        args = pl["ProgramArguments"]
+        self.assertTrue(Path(args[0]).exists(), f"interpreter missing: {args[0]}")
+        self.assertTrue(Path(args[1]).exists(),
+                        f"⛔ watchdog.plist points at {args[1]}, which does not "
+                        "exist. The repo moved and the agent is silently dead.")
+        self.assertTrue(Path(pl["WorkingDirectory"]).exists())
