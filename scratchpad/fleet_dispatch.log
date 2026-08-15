@@ -1,0 +1,76 @@
+2026-08-15T09:46:34Z DRY-RUN --seed-from: WOULD add 112 rows (skipped 0) seed_lo 904000..1126000 stride 2000 span 180 target 5400 control bots/_v223sealrepair compose=False
+2026-08-15T09:47:46Z DRY-RUN --seed-from: WOULD add 112 rows (skipped 0) base=400000 stride=2000 span=180 last_seed=622180 (< 900000) target=5400 control=bots/_v223sealrepair compose=False
+2026-08-15T09:48:52Z queue: QUEUED=0 CLAIMED=0 RUNNING=0 DONE=0 FAILED=0
+2026-08-15T09:48:53Z   local                  FULL  free=0   age=0s  slots=10 (cap 10 / 1 cores per shard) running=3 queued=13 load=3.81
+2026-08-15T09:48:53Z   worker@work-server-1   FREE  free=1   age=0s  depth=1/2 (remote shards run SEQUENTIALLY; cap 10 cores all go to the running shard) worker_alive=True
+2026-08-15T09:48:53Z   worker@work-server-2   FREE  free=1   age=0s  depth=1/2 (remote shards run SEQUENTIALLY; cap 6 cores all go to the running shard) worker_alive=True
+2026-08-15T09:49:20Z SEEDED 112 rows into fleet_queue.tsv (skipped 0 already present/refused). base=400000 stride=2000 span=180 last_seed=622180 (< 900000) target=5400 control=bots/_v223sealrepair composed=False
+2026-08-15T09:49:20Z   ⚠ trees NOT composed (--compose omitted). The dispatcher will SKIP these rows, leaving them QUEUED, until tools/stack.py has built each tree.
+2026-08-15T09:49:20Z queue fleet_queue.tsv: QUEUED=112 CLAIMED=0 RUNNING=0 DONE=0 FAILED=0   (reconciled 0 row(s) this pass)
+2026-08-15T09:49:22Z   local                  FULL  free=0   age=1s  slots=10 (cap 10 / 1 cores per shard) running=3 queued=13 load=3.80
+2026-08-15T09:49:22Z   worker@work-server-1   FREE  free=1   age=1s  depth=1/2 (remote shards run SEQUENTIALLY; cap 10 cores all go to the running shard) worker_alive=True
+2026-08-15T09:49:22Z   worker@work-server-2   FREE  free=1   age=0s  depth=1/2 (remote shards run SEQUENTIALLY; cap 6 cores all go to the running shard) worker_alive=True
+2026-08-15T09:49:22Z   SKIP CMB001: treatment bots/_cmb001 has no main.py (compose it first) (left QUEUED, NOT claimed)
+2026-08-15T09:49:22Z   SKIP CMB002: treatment bots/_cmb002 has no main.py (compose it first) (left QUEUED, NOT claimed)
+2026-08-15T09:49:22Z   SKIP CMB003: treatment bots/_cmb003 has no main.py (compose it first) (left QUEUED, NOT claimed)
+2026-08-15T09:49:22Z   SKIP CMB004: treatment bots/_cmb004 has no main.py (compose it first) (left QUEUED, NOT claimed)
+2026-08-15T09:49:22Z   SKIP CMB005: treatment bots/_cmb005 has no main.py (compose it first) (left QUEUED, NOT claimed)
+2026-08-15T09:49:22Z   SKIP CMB006: treatment bots/_cmb006 has no main.py (compose it first) (left QUEUED, NOT claimed)
+2026-08-15T09:49:22Z   SKIP CMB007: treatment bots/_cmb007 has no main.py (compose it first) (left QUEUED, NOT claimed)
+2026-08-15T09:49:22Z   SKIP CMB008: treatment bots/_cmb008 has no main.py (compose it first) (left QUEUED, NOT claimed)
+2026-08-15T09:49:22Z   SKIP CMB009: treatment bots/_cmb009 has no main.py (compose it first) (left QUEUED, NOT claimed)
+2026-08-15T09:49:22Z   SKIP CMB010: treatment bots/_cmb010 has no main.py (compose it first) (left QUEUED, NOT claimed)
+2026-08-15T09:49:22Z   SKIP CMB011: treatment bots/_cmb011 has no main.py (compose it first) (left QUEUED, NOT claimed)
+2026-08-15T09:49:22Z   SKIP CMB012: treatment bots/_cmb012 has no main.py (compose it first) (left QUEUED, NOT claimed)
+2026-08-15T09:49:22Z   SKIP CMB013: treatment bots/_cmb013 has no main.py (compose it first) (left QUEUED, NOT claimed)
+2026-08-15T09:49:22Z   SKIP CMB014: treatment bots/_cmb014 has no main.py (compose it first) (left QUEUED, NOT claimed)
+2026-08-15T09:49:22Z   SKIP CMB015: treatment bots/_cmb015 has no main.py (compose it first) (left QUEUED, NOT claimed)
+2026-08-15T09:49:22Z   SKIP CMB016: treatment bots/_cmb016 has no main.py (compose it first) (left QUEUED, NOT claimed)
+2026-08-15T09:49:22Z   SKIP CMB017: treatment bots/_cmb017 has no main.py (compose it first) (left QUEUED, NOT claimed)
+2026-08-15T09:49:22Z   SKIP CMB018: treatment bots/_cmb018 has no main.py (compose it first) (left QUEUED, NOT claimed)
+2026-08-15T09:49:22Z   SKIP CMB019: treatment bots/_cmb019 has no main.py (compose it first) (left QUEUED, NOT claimed)
+2026-08-15T09:49:22Z   SKIP CMB020: treatment bots/_cmb020 has no main.py (compose it first) (left QUEUED, NOT claimed)
+2026-08-15T09:49:22Z   SKIP CMB021: treatment bots/_cmb021 has no main.py (compose it first) (left QUEUED, NOT claimed)
+2026-08-15T09:49:22Z   SKIP CMB022: treatment bots/_cmb022 has no main.py (compose it first) (left QUEUED, NOT claimed)
+2026-08-15T09:49:22Z   SKIP CMB023: treatment bots/_cmb023 has no main.py (compose it first) (left QUEUED, NOT claimed)
+2026-08-15T09:49:22Z   SKIP CMB024: treatment bots/_cmb024 has no main.py (compose it first) (left QUEUED, NOT claimed)
+2026-08-15T09:49:46Z queue q2.tsv: QUEUED=5 CLAIMED=0 RUNNING=0 DONE=0 FAILED=0   (reconciled 0 row(s) this pass)
+2026-08-15T09:49:47Z   local                  FULL  free=0   age=1s  slots=10 (cap 10 / 1 cores per shard) running=3 queued=13 load=3.85
+2026-08-15T09:49:47Z   worker@work-server-1   FREE  free=1   age=0s  depth=1/2 (remote shards run SEQUENTIALLY; cap 10 cores all go to the running shard) worker_alive=True
+2026-08-15T09:49:47Z   worker@work-server-2   FREE  free=1   age=0s  depth=1/2 (remote shards run SEQUENTIALLY; cap 6 cores all go to the running shard) worker_alive=True
+2026-08-15T09:49:47Z CLAIM T1 -> worker@work-server-1  bots/_v242bodyaware vs bots/_v223sealrepair target=5400 seed_lo=700000   [DRY-RUN, nothing written]
+2026-08-15T09:49:47Z   DISPATCH FAILED T1: ⛔ G7 REFUSING to `start`: a worker.sh is ALIVE on this host. cmd_start does `rm -f STOP`, so the old worker would wake and run its own WORKERS alongside the new ones — double-subscription, and --tle 10 is WALL-CLOCK, so every row both workers produce is corrupt. Use --remote-mode live, or kill the worker first.
+2026-08-15T09:49:47Z CLAIM T2 -> worker@work-server-2  bots/_v252spawnlock vs bots/_v223sealrepair target=5400 seed_lo=702000   [DRY-RUN, nothing written]
+2026-08-15T09:49:47Z   DISPATCH FAILED T2: ⛔ G7 REFUSING to `start`: a worker.sh is ALIVE on this host. cmd_start does `rm -f STOP`, so the old worker would wake and run its own WORKERS alongside the new ones — double-subscription, and --tle 10 is WALL-CLOCK, so every row both workers produce is corrupt. Use --remote-mode live, or kill the worker first.
+2026-08-15T09:49:57Z queue q2.tsv: QUEUED=5 CLAIMED=0 RUNNING=0 DONE=0 FAILED=0   (reconciled 0 row(s) this pass)
+2026-08-15T09:49:58Z   local                  FULL  free=0   age=1s  slots=10 (cap 10 / 1 cores per shard) running=3 queued=13 load=3.87
+2026-08-15T09:49:58Z   worker@work-server-1   FREE  free=1   age=0s  depth=1/2 (remote shards run SEQUENTIALLY; cap 10 cores all go to the running shard) worker_alive=True
+2026-08-15T09:49:58Z   worker@work-server-2   FREE  free=1   age=0s  depth=1/2 (remote shards run SEQUENTIALLY; cap 6 cores all go to the running shard) worker_alive=True
+2026-08-15T09:49:58Z CLAIM T1 -> worker@work-server-1  bots/_v242bodyaware vs bots/_v223sealrepair target=5400 seed_lo=700000   [DRY-RUN, nothing written]
+2026-08-15T09:49:58Z   DISPATCH T1: WOULD rsync trees ['bots/_v242bodyaware', 'bots/_v223sealrepair'] -> worker@work-server-1:fcode-worker/ (additive, maps/ untouched)
+      WOULD append in place to worker@work-server-1:fcode-worker/work/worklist.txt:
+        T1 bots/_v242bodyaware bots/_v223sealrepair 5400 32700000   (seed_lo 700000 + host offset 32000000)
+2026-08-15T09:49:58Z CLAIM T2 -> worker@work-server-2  bots/_v252spawnlock vs bots/_v223sealrepair target=5400 seed_lo=702000   [DRY-RUN, nothing written]
+2026-08-15T09:49:58Z   DISPATCH T2: WOULD rsync trees ['bots/_v252spawnlock', 'bots/_v223sealrepair'] -> worker@work-server-2:fcode-worker/ (additive, maps/ untouched)
+      WOULD append in place to worker@work-server-2:fcode-worker/work/worklist.txt:
+        T2 bots/_v252spawnlock bots/_v223sealrepair 5400 14702000   (seed_lo 702000 + host offset 14000000)
+2026-08-15T09:49:58Z queue q2.tsv: QUEUED=5 CLAIMED=0 RUNNING=0 DONE=0 FAILED=0   (reconciled 0 row(s) this pass)
+2026-08-15T09:49:59Z   local                  FULL  free=0   age=1s  slots=10 (cap 10 / 1 cores per shard) running=3 queued=13 load=3.87
+2026-08-15T09:49:59Z   worker@work-server-1   FREE  free=4   age=0s  depth=1/5 (remote shards run SEQUENTIALLY; cap 10 cores all go to the running shard) worker_alive=True
+2026-08-15T09:49:59Z   worker@work-server-2   FREE  free=4   age=0s  depth=1/5 (remote shards run SEQUENTIALLY; cap 6 cores all go to the running shard) worker_alive=True
+2026-08-15T09:49:59Z   SKIPPED 1 row(s) — treatment <tree> has no main.py (compose it first) (left QUEUED, NOT claimed)
+2026-08-15T09:49:59Z     T4
+2026-08-15T09:49:59Z   SKIPPED 1 row(s) — basenames collide (_v150cb vs _v150cbturret) — scoring is a SUBSTRING match (left QUEUED, NOT claimed)
+2026-08-15T09:49:59Z     T5
+2026-08-15T09:49:59Z CLAIM T1 -> worker@work-server-1  bots/_v242bodyaware vs bots/_v223sealrepair target=5400 seed_lo=700000   [DRY-RUN, nothing written]
+2026-08-15T09:49:59Z   DISPATCH T1: WOULD rsync trees ['bots/_v242bodyaware', 'bots/_v223sealrepair'] -> worker@work-server-1:fcode-worker/ (additive, maps/ untouched)
+      WOULD append in place to worker@work-server-1:fcode-worker/work/worklist.txt:
+        T1 bots/_v242bodyaware bots/_v223sealrepair 5400 32700000   (seed_lo 700000 + host offset 32000000)
+2026-08-15T09:49:59Z CLAIM T2 -> worker@work-server-2  bots/_v252spawnlock vs bots/_v223sealrepair target=5400 seed_lo=702000   [DRY-RUN, nothing written]
+2026-08-15T09:49:59Z   DISPATCH T2: WOULD rsync trees ['bots/_v252spawnlock', 'bots/_v223sealrepair'] -> worker@work-server-2:fcode-worker/ (additive, maps/ untouched)
+      WOULD append in place to worker@work-server-2:fcode-worker/work/worklist.txt:
+        T2 bots/_v252spawnlock bots/_v223sealrepair 5400 14702000   (seed_lo 702000 + host offset 14000000)
+2026-08-15T09:49:59Z CLAIM T3 -> worker@work-server-1  bots/_v262bodyblock vs bots/_v223sealrepair target=5400 seed_lo=704000   [DRY-RUN, nothing written]
+2026-08-15T09:49:59Z   DISPATCH T3: WOULD rsync trees ['bots/_v262bodyblock', 'bots/_v223sealrepair'] -> worker@work-server-1:fcode-worker/ (additive, maps/ untouched)
+      WOULD append in place to worker@work-server-1:fcode-worker/work/worklist.txt:
+        T3 bots/_v262bodyblock bots/_v223sealrepair 5400 32704000   (seed_lo 704000 + host offset 32000000)

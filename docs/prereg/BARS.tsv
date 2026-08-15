@@ -1,0 +1,43 @@
+# SHARD BAR REGISTRY — the ONLY bar source tools/auto_gate.py will act on.
+#
+# ⛔ WHY THIS FILE EXISTS RATHER THAN A COLUMN IN THE WORKLIST.
+# The obvious place is a 6th column in scratchpad/corefill_work.txt. It is not
+# safe: corefill.sh:142 and worker.sh's G4 both read the row with
+# `read -r SH TR CT TG SL`, so a 6th field lands INSIDE $SL. corefill.sh then
+# passes $SL unquoted to overnight.sh (:169) and worker.sh's G4 refuses a
+# non-numeric seedbase outright. A bar column would corrupt the seed partition
+# on the local runner and be REFUSED on every remote worker.
+# `orchestrate.sh gen` also strips comments, so a `# BAR ...` comment line in
+# the worklist would never reach a remote host either.
+# ⇒ ONE registry, read by the gate only, invisible to every runner.
+#
+# ⛔ AND WHY IT IS NOT DERIVED FROM docs/prereg/ BY GREP.
+# Preregs do NOT key their bar to a shard id. Five separate preregs contain the
+# literal string "BODYAWR" (bodyaware, homeearly, launchmax, bodyblock,
+# beltsever) and they carry THREE different bars (51.93 / 53.32). "The prereg
+# that names the shard" is not a function — it is a one-to-many relation, and
+# an auto-picker resolving it would eventually cite a cross-reference as a
+# registration. A human writes the row and cites the line. That citation is the
+# thing that makes the stop defensible.
+#
+# COLUMNS
+#   shard      the shard id as it appears in the worklist / TSV
+#   bar        percentage points, e.g. 51.93
+#   direction  ge = the arm must reach >= bar (normal screen)
+#              le = the arm must fall  <= bar (ABLATION: low means the flag helps)
+#   source     file:line of the locked prereg the number was read from
+#
+# ⛔⛔ DIRECTION `le` DISABLES AUTO-STOP ENTIRELY FOR THAT SHARD, INCLUDING THE
+# CATASTROPHE RULE. An ablation arm at 30% is its hypothesis SUCCEEDING, not a
+# catastrophe; the pinned catastrophe clause (CI upper < 45) was written for
+# `ge` arms and would kill an inverted arm at the moment it proved its point.
+# Registering an ablation arm here is what protects it. An UNREGISTERED
+# ablation arm is indistinguishable from an unregistered normal arm and IS
+# exposed to the catastrophe rule — register ablations before they reach n=400.
+#
+# shard	bar	direction	source
+BODYAWR	51.93	ge	docs/prereg/SCREEN-bodyaware-2026-08-14.md:313
+BODYAWRR	51.93	ge	docs/prereg/SCREEN-bodyaware-2026-08-14.md:313
+SEALFLOOR6	51.33	ge	docs/prereg/SCREEN-sealfloor6-2026-08-14.md:81
+SENTTHR	51.33	ge	docs/prereg/SCREEN-sentthreat-2026-08-14.md:76
+GUNAXABL	48.67	le	docs/prereg/SCREEN-gunaxabl-2026-08-14.md:236
