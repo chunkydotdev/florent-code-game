@@ -55355,3 +55355,52 @@ read fresh, `PROVENANCE:` line required) as a **NO-BAR CALIBRATION registration*
 precedent — it licenses **no exclusion claim** about either side and delivers a point estimate with
 an interval. **I ratify the judgment lines and type the lock commit; the agent does neither.**
 Side lane gets it before any leg is created.
+
+--- 2026-08-15T06:2xZ (`date -u`) **RESEARCH s43 — ±29.6pp CORRECTED TO ±27.9pp. THE SIDE LANE'S NUMBER IS RIGHT AND THEIR DIAGNOSIS OF THE CAUSE IS WRONG, WHICH IS WORTH MORE THAN THE DIGIT** ---
+
+## THE CORRECTION, verified at the primary before accepting it
+    5/15,  p=0.500 (what I used),  DEFF 1.366  ->  29.57pp   <- MY number. Correct DEFF, wrong p.
+    5/15,  p=0.500,                DEFF 1.529  ->  31.29pp
+    5/15,  p=0.333 (observed),     DEFF 1.366  ->  27.88pp   <- CORRECT. Adopted.
+    5/15,  p=0.333,                DEFF 1.529  ->  29.50pp   <- what side lane inferred I did
+
+**✅ THEIR NUMBER IS RIGHT: 27.9, not 29.6. Adopted, and the sentence it supports is unchanged.**
+**⛔ THEIR DIAGNOSIS IS WRONG: I did NOT use DEFF 1.529.** My script hardcoded `0.25` — i.e.
+**p = 0.5** — with the correct DEFF 1.366. ⭐ **AND THE TWO WRONG PATHS LAND 0.07pp APART (29.50 vs
+29.57), WHICH IS WHY THIS IS WORTH A NOTE RATHER THAN AN EDIT: a coincidence at the second decimal
+nearly certified a wrong account of my own error.** Had I accepted the relay, the repo would now
+record "research used the pooled DEFF on a single-opponent cell" — a **methodological** error I did
+not make — instead of "research defaulted to p=0.5" — an **arithmetic default** I did. Those two
+mistakes have different fixes. **Verify the CAUSE at the primary, not just the NUMBER.**
+
+## ⭐ AND THEIR DIRECTION ARGUMENT SURVIVES — SHARPER AGAINST p=0.5 THAN AGAINST A DEFF ERROR
+`p = 0.5` is the textbook **conservative** choice: it maximises `p(1−p)` and so widens the interval.
+**⛔ BUT MY CLAIM WAS A FAIL-TO-EXCLUDE** — *"that is not a deficit measurement, it is three
+matches"* — and `CLAUDE.md`'s direction clause is explicit that **widening makes a fail-to-exclude
+EASIER**. ⇒ **the conventionally-conservative choice is ANTI-CONSERVATIVE for this claim.**
+**"Conservative" is not a property of a formula; it is a property of a formula ARGUED IN A
+DIRECTION.** Restated as an exclusion the claim survives trivially — at the correct 27.9 the
+interval is **[5.4, 61.2]** and still contains everything the sentence needs. **Conclusion unchanged,
+digit fixed, and the reason the digit mattered is now on the record.**
+**Also adopted:** sizing table `n=100 → ±11.7pp`, not my ±11.8 (their recheck; reproduces at 11.74).
+
+## ⭐ THE FOREIGN-HOLDER CONTAMINATION IS A SURFACE-LEVEL CAVEAT, NOT A PER-CUT ONE
+Side lane's extension, and they are right that it belongs stated once: they found foreign holders
+contaminating the **stop-loss**; I found the **same 11 matches** contaminating the **target
+evidence** (v147 went 0/5 inside my own HTTP 418 cell). **Two instruments, one contamination, and
+each of us applied it to one and stopped.**
+⇒ **STANDING CAVEAT, all lanes: ANY cut of the form "our record vs X over an era" contains the
+foreign-holder rows unless it filters `ourver`.** That is 11 matches out of v140's 55-match tenure —
+**20%** — and they are not randomly distributed, since v146/v147 clustered in specific hours against
+specific opponents. **Filter `ourver` or state that you did not.**
+
+## ⚠ ONE PRECISION ON THE BUILDER'S PARKING CLAUSE — it is right, for a reason worth stating
+They wrote: *"park CAL418 mid-flight if a launcher leg lands; partial rows are readable and you have
+the no-bar registration to say so."* **The conclusion is correct and the stated reason is not
+sufficient.** A no-bar registration removes the thing optional stopping normally GAMES (a bar you
+stop at once you cross), **but it does not by itself make an early stop benign.**
+⇒ **What makes it benign is that the stop is DATA-INDEPENDENT:** the trigger is "a launcher tree
+became ready", which is uncorrelated with CAL418's own results. **Stopping for an external,
+uncorrelated reason does not bias a point estimate; stopping because the number looked interesting
+would, bar or no bar.** ⇒ **the prereg must register the parking trigger IN ADVANCE and name it as
+external** — then a successor can verify the stop was not data-peeking. Going into `PREREG-CAL418`.
