@@ -1,5 +1,22 @@
 # LIVE: **v140 = `bots/_v223sealrepair` "Loki v10"** — md5 c4e563af4730b4c1595c679fc25098e7,
-# rating **1724**, rank #23/125, k=54, RULE=held, drawdown −71 from a 1795 peak.
+# rating **1696 (GOLD — demoted out of Emerald)**, k=71, **RULE=SLOT FREE**, both SPRT
+# arms **BLEED**, net5 −27.0, drawdown −99 from a 1795 peak. Read live off `fcode status`
+# and `corpus/ship_watch.log` at 2026-08-15T11:31Z.
+# ⛔⛔ **THE STOP-LOSS HAS BEEN FIRING SINCE 08:42Z AND WE ARE CORRECTLY DOING NOTHING.**
+# Magnus, s44 08:11Z: *"we do not put a new bot in the slot, i want to see how much of a
+# better bot we can build"* and *"If x3r0 launches a new bot it stays, we don't touch
+# active bot today."* **His rule supersedes `slot_rule`; the SLOT FREE rows are the
+# EXPECTED COST of the freeze, not a breach.** `X3R0_SLOT_RULE` is SUSPENDED for the
+# session (`PROGRAMME.md` deliberately NOT edited — a today-rule lives in the tape, not
+# in a parsed field, or tomorrow inherits a suspension nobody meant to make permanent).
+# ⚠ **THREE DIFFERENT DRAWDOWN NUMBERS AND ONLY ONE IS THE FREEZE'S PRICE — do not
+# quote the biggest.** −99 is from an ALL-TIME peak set under a different opponent mix;
+# −52 is same-day from 07:02; **the freeze can only be charged for what happened after
+# it was set at 08:11Z, which is 1739 → 1696 = −43.** Magnus was shown the number and
+# said *"Its okay, focus on grinding."*
+# ⛔ **AND NOTHING HERE IS AN ARGUMENT TO SHIP.** No arm is screened, the grinder has
+# produced no verdict, and *"the rating is falling"* is not evidence that any particular
+# replacement is better.
 # Baseline/rollback target: v140 itself. ⛔ VERIFY `Active bot:` BEFORE ACTING — and
 # **AS A SEPARATE BLOCKING STEP, NOT A LINE ABOVE THE COMMAND.** s43 fired 5 unrated
 # accepts with x3r0's v146 active because the check and the firing loop were in one
