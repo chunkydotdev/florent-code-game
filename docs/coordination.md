@@ -56823,3 +56823,26 @@ correct on 5 of 10+ cells, a tool correct and unstarted, a drop path correct and
 **three different tools, one unasked question.**
 **Routed to my own retro as a Q3 instance, not to a checklist** — it is a habit of mine, not a
 defect in the repo.
+
+## 2026-08-15T14:01:21Z BUILDER — IN-FLIGHT: two agents on the predicate-audit findings
+
+Source: the bot-predicate test agent (143 tests, coverage 16 -> 69 of 79 functions).
+Split by whether the change can alter play:
+
+* **opus agent — BEHAVIOURAL, becomes ARMS not fixes.** `LOKI_QUIET_ON=True`
+  shuts four melee sites; the costly one is `_siphon_deny` (eco.py:1074), which
+  at d>1 sets `self.tgt` and calls `_nav`, **spending the builder's MOVE** to
+  walk it to an enemy belt, then returns False on arrival. Live navigation, dead
+  payload. Plus `_raid_peck` (raid.py:589, 46 lines, one call site behind the
+  flag) and `_raid_act` step 1 (seat peck of the enemy Core; geometry PROVEN
+  sound, shut by the flag). Per Magnus 2026-08-15 these are TESTED, never
+  reasoned about.
+* **sonnet agent — PURE WASTE, straight fixes under a determinism bar.**
+  `_sabotage_prio` constant-False while spending 16 engine calls/turn;
+  `_expand` iterating DIRECTIONS(8) where only CARDINALS(4) can succeed
+  (eco.py:1112); `LOKI_L4_LOG=True` formatting into a stdout the platform
+  strips. Bar: `tools/det.py` paired-identity must show BYTE-IDENTICAL
+  outcomes, else it is behavioural and goes to the other lane.
+
+Relevant: v125 was measured at 87.6% of the TLE ceiling on 30x30 (QUEUE #44), so
+hot-path calls discarded unread are not free.
