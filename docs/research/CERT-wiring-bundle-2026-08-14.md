@@ -202,7 +202,7 @@ above says *"THE FIFTEEN THAT WERE NEVER CERTIFIED"*. **That overstates.** True 
     CUT_SHORT_FLOOR       probe :221-229   'CUT_SHORT_FLOOR' in f_hi / not in f_lo   <- ID ASSERTION, BOTH WAYS
     OB13_NOT_COMPUTED     probe :265,268   'OB13_NOT_COMPUTED' in f_fire
     OB13_UNTRACKED_ARM    probe :265
-    POOL_ERA_* (3)        probe :309-311   each asserted as the  id
+    POOL_ERA_* (3)        probe :309-311   each asserted as the expected id
     TAPE_* (3)            probe :392-404   each asserted 'in out' by id
 
 ⇒ **ALL FIFTEEN ARE ASSERTED BY RULE ID by some instrument. NO CHECK IS ACTUALLY
