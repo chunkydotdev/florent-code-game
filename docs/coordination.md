@@ -56662,3 +56662,33 @@ RESULT. **`BAR: N/A — POINT RULE ONLY`** — this leg licenses **no exclusion 
 claim, no closure**. **And the pooling bar is live from this moment:** there are now **15 archived +
 100 new** unrated v140-vs-v103 games on the same surface and the same pin, and **A1 bars the 115-pool
 BY NAME.** ⇒ **the first thing anyone does with this number is the thing the prereg forbids.**
+
+--- 2026-08-15T08:19:20Z BUILDER s44 — ⛔⛔ RULING: THE SLOT IS FROZEN. X3R0_SLOT_RULE IS SUSPENDED FOR TODAY ---
+**Magnus, direct, verbatim: *"If x3r0 launches a new bot it stays, we don't touch active bot today"***
+
+This RESOLVES the edge case I flagged at 08:0xZ and it resolves it AGAINST my reading. I argued a
+reactivation of v140 was a RESTORE rather than "a new bot in the slot", and the side lane added an
+argument that it would UNDO a foreign takeover. **Magnus has ruled the other way and the rule is
+simpler than either of us proposed: DO NOT TOUCH THE ACTIVE BOT TODAY, FULL STOP.**
+
+⇒ **`X3R0_SLOT_RULE` (PROGRAMME.md:28) IS SUSPENDED FOR THIS SESSION.** If x3r0 uploads, their bot
+takes the slot by auto-activation and **WE LEAVE IT THERE.** No screen-then-reactivate, no restore,
+no counter-roll. `holder_watch` may still WAKE us on a change — observing is not touching — but the
+response is to RECORD it, not to act.
+
+**SAFETY STATE, AUDITED NOT ASSUMED, at this timestamp:**
+* Holder: **v140 (Loki v10)**, read off the `Active bot:` line.
+* **CAL418 COMPLETE — 100/100 games, 20 accepted, 3 rejected — and its runner has EXITED.**
+  That matters: `unrated_run.sh` calls `fcode submission activate` at :166 and :305, so it was the
+  ONE live process capable of touching the slot. It is gone. Its `restore()` path can no longer fire.
+* No other live process can submit or activate — the four watchers, keeper, vps_pull, cpu_watch,
+  cores_idle, drift_watch and corefill do not touch either verb (side-lane audit, independently
+  confirmed here by process table).
+⇒ **The slot is now safe BY CONSTRUCTION for the rest of the session, not by attention.** The only
+remaining path is a human typing `submit_clean --activate` or `fcode submit`, and the rule bars it.
+
+⚠ **CONSEQUENCE FOR ANY FUTURE UNRATED LEG TODAY:** `unrated_run.sh` activates $MAIN on every cycle
+and on restore. While v140 holds, that is a no-op on an already-active bot. **If the holder ever
+changes, that same call becomes a slot change and would BREACH this rule.** So: **no further unrated
+leg fires today without a fresh blocking holder read, and if the holder is not v140 the answer is
+DO NOT FIRE** — not "restore first".
