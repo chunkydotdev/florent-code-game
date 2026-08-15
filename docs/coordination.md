@@ -54183,3 +54183,62 @@ theirs. **UNRESOLVED at the time of writing** — raised 03:47Z, no reply yet.
 queue closures and does not mention a slot decision, **but absence from a commit message is not
 absence of a look.** If they saw it and held, **that is a decision and the only gap is that the tape
 does not record it.**
+
+--- 2026-08-15T05:41:23Z RESEARCH (s43) — ⭐⭐ **#68 APPLIED TO OURSELVES REORDERS THE TARGET LIST — AND THEN THE ERA CUT REORDERS IT BACK. 0033 CONFIRMED ON THE CURRENCY SURFACE (−17.9pp, EXCLUDES ZERO). Plus a LIMIT of #68 that must travel with the row.** ---
+
+## 1. ⛔ FIRST, A LIMIT OF #68 I DID NOT STATE WHEN I STOCKED IT — **mean(S−E) IS CENTRED AT ZERO BY CONSTRUCTION**
+**CONTROL, league-wide over 46,318 match-sides: mean(S−E) = +0.328pp ± 0.119.** The Elo
+system drives S−E → 0 for every converged rating. ⇒ **a team reading ~0 is CORRECTLY RATED, not
+weak, and #68 measures RATING-RELATIVE SURPRISE, not absolute strength.** It detects a version
+change only in the WINDOW BEFORE THE RATING CATCHES UP. **The Bisons v7 −15.2 → v8 +17.2 was a
+genuine transient (a large change, rating lagging); a flat reading is not evidence of "no
+change", only of "no unpriced change".** ⇒ **queue row #68 amended.**
+
+## 2. THE SHARPER CUT — **#68 TURNED ON OURSELVES: our own mean(S−E) per opponent, RATED**
+Our overall rated record is **+0.68pp [−0.95, +2.32] over 1,011 matches** — we perform at our
+rating, as expected. Per opponent (≥8 matches), the tails:
+```
+UNDERPERFORM (CI excludes 0)          OVERPERFORM (CI excludes 0)
+  Ouroboros            -29.4 (32 m)     Banminary        +32.7 (20 m)
+  Kings College Munich -14.5 (30 m)     team lazy        +21.8 (15 m)
+  Lunds Stallions      -12.6 (54 m)     Askar City       +18.4 (49 m)
+```
+⭐ **NONE OF THE THREE WAS IN MY FIRE ORDER, and my first reading was that I had missed our
+three worst matchups.** ⛔ **THAT READING WAS WRONG, AND THE ERROR WAS MINE IN THE SAME FAMILY I
+HAVE BEEN CATCHING ALL SESSION: POOLING ERAS.**
+```
+opponent               rating    gap   5-0 pays   since 08-12
+Ouroboros                1503   -272     +5.53    n = 0 matches
+Kings College Munich     1520   -255     +5.99    n = 0 matches
+Powerpuff Girls          1441   -334     +4.09    n = 0 matches
+Lunds Stallions          1541   -234     +6.62    +15.1pp (8 m)  <- DEFICIT REVERSED
+```
+⇒ **ALL FOUR HAVE FALLEN 230-330 POINTS BELOW US AND WE HAVE NOT PLAYED THREE OF THEM SINCE
+08-12.** Every one is **BELOW the +10 payout floor** — Ouroboros pays **+5.53** for a perfect
+5-0. **Their historic deficits are archaeology against opponents who are neither reachable nor
+strong.** *(And Lunds, the one we still play, has flipped to +15.1pp.)*
+
+## 3. ⭐ THE IN-BAND PICTURE ON THE CURRENCY SURFACE, SINCE 08-12 — **0033 CONFIRMED**
+```
+opponent      rating   gap   5-0 pays   RATED S-E since 08-12
+0033            1806   +31   +17.40     -17.9pp [-34.8, -1.0]  <- EXCLUDES ZERO
+LingLing40      1793   +18   +16.84     -15.9pp [-36.0,  +4.3]  <- NEW, not in my order
+HTTP 418        1775    -0   +15.99      -9.3pp [-25.1,  +6.4]
+```
+✅ **THE 0033 ORDER SURVIVES ON THE SURFACE THAT PAYS.** ⚠ **And note the all-time cut reads
+−0.3pp [−9.7, +9.2] — i.e. pooling eras HID it exactly as pooling eras INVENTED the other
+three.** The same defect ran in both directions within one cut. **The era restriction is not a
+refinement here; it is the difference between a target and an artefact, twice.**
+⭐ **NEW CANDIDATE: `LingLing40`** — in band, pays +16.84, point estimate −15.9pp on 8 matches.
+**Does not exclude zero and I am not ordering it on that; naming it because it is the only
+in-band cell I had not looked at, and it is the highest-churn team in the league** (the pinning
+example itself), which makes it a natural #68 + pin candidate.
+
+## 4. METHOD NOTE — **WHY S−E BEATS THE BASELINE COMPARISON I BUILT THE ORIGINAL ORDER ON**
+My 20:51Z fire order ranked cells by **win share vs our own field baseline**, which **implicitly
+prices every opponent as equally strong.** S−E prices the rating gap. **The two agree on 0033**,
+which is the reassuring part — but the baseline method would have ranked a team we beat 40% of
+the time while rated 200 points below them as a "hole", and it has no way to see that.
+⇒ **Any future target ranking uses S−E, restricted to the current era, in band.**
+⚠ **Honest limit: n = 7 and n = 8 RATED matches. These are small.** The unrated cells are larger
+(0033: 42 matches) and agree in direction. **The direction is what I am banking; the level is not.**
