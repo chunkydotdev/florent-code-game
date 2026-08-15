@@ -79,9 +79,19 @@
 # Every band figure in the s43 fire order (16 admissible teams, 0033 at +18.93,
 # LingLing40 at +16.84, Juusto at +21.07) is priced off a holder read of **1775 taken
 # at 20:45Z**. We closed at **1724**. ⇒ **the quoted payouts are OVERSTATED and band
-# MEMBERSHIP may have shifted** (BAND_HI is us+125, and Juusto was already ONE POINT
-# inside it at 1775). **Re-run `tools/target_value.py --band` before sizing anything
-# off that order.** Flagged by research at their own wrap — the fire order is the
+# MEMBERSHIP HAS CHANGED FOR JUUSTO — determined, not uncertain.** Verified live at wrap:
+#     ours 1724 · BAND_HI = us+125 = 1849
+#     Juusto LIVE (`fcode team search`) **1857** -> gap **+133** -> **OUTSIDE by 8**
+# ⛔⛔ **AND THE TOOL BUILT TO ANSWER THIS GETS IT WRONG, IN THE ADMITTING DIRECTION:**
+# `target_value --band` prices Juusto off a CACHED **1848** and reports **+124, INSIDE
+# by 1, pays +21.50.** It would admit a target that is out. The side lane's flag used a
+# stale **1883** and said OUTSIDE by 34 — also wrong, the other way.
+# **Three ratings, three verdicts; only the live read governs.**
+# ⇒ ⛔ **`LEG-juustopin` IS LOCKED AND AWAITING A RE-FIRE, AND AS OF THIS WRAP THAT
+# RE-FIRE WOULD BE OFF-PROGRAMME BY THE TARGET GATE.** Re-derive from `fcode team
+# search` on BOTH sides before firing — never from `target_value`'s cached opponent
+# column. This is CLAUDE.md's own Leviathan worked example running its full course
+# inside one session: flagged one point inside at ~04:30Z, closed outside.
 # artefact most likely to be picked up cold, and `target_value` additionally prices
 # opponents off a CACHED rating.
 #
