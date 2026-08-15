@@ -65,6 +65,16 @@
 # 3. **Cross-host dispersion is n=3 and hinges on 0.053pp.** NULL5400 resolves it.
 # 4. **#69 rests on ONE opponent** — Leviathan downgraded at wrap (S−E −8.9pp, includes 0).
 #
+# ⛔ ===== A BOOTED RULE IS BOUNDED: "UNRATED POOLS PROTOTYPES" IS A TENDENCY =====
+# CLAUDE.md's two-corpus-surfaces block says "unrated pools PROTOTYPES, ladder pools
+# SHIPPED BOTS". **VERIFIED FALSE AS A GUARANTEE, from one primary: v125 has 305 LADDER
+# games and 880 UNRATED games in meta_join.** 305 rated games is proof it HELD THE SLOT
+# — a prototype cannot play ladder — so a SHIPPED version played 880 unrated games, 74%
+# of its archived record. ⇒ **THE FIXTURE DOES NOT DETERMINE THE TREE.**
+# ⚠ BOUNDED, not voided: the objection stands wherever prototypes ARE pooled; what is
+# dead is treating the SURFACE as PROOF of the tree. **An unrated cut naming a version
+# checks `version_trees.tsv`, never infers from the fixture.**
+#
 # ⛔ ===== BEFORE YOU USE RESEARCH'S FIRE ORDER: ITS PAYOUTS ARE ~51 POINTS STALE =====
 # Every band figure in the s43 fire order (16 admissible teams, 0033 at +18.93,
 # LingLing40 at +16.84, Juusto at +21.07) is priced off a holder read of **1775 taken
