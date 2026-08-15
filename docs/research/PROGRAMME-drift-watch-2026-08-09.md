@@ -2526,3 +2526,26 @@ run, which is the mode the first scope note already said was intended.
   record **attached to a true correction**. **A wrong cause riding a right number is not self-
   correcting** — it is the diligence-as-disguise mechanism (Q9) pointed at a colleague.
   **They checked instead of accepting the relay, which is the only reason the record is right.**
+
+- **⭐ D35 RIDER, 2026-08-15T07:50:xxZ — A CORRECT SENTENCE THAT RELIABLY MISLEADS HAS NO ERROR ANYONE CAN POINT AT.**
+  *(Research arm's formulation, s43, on `CLAUDE.md:71`. Recorded as a RIDER and not a new D-number
+  deliberately: this lane's measured cost is volume, and the shape belongs under D35's "how a fact
+  reaches a lane in lossy form" rather than beside it.)*
+
+  **THE INSTANCE.** `CLAUDE.md:71` glosses `is_tile_passable(pos)` as *"A friendly builder bot could
+  stand there."* **That is TRUE** — a tile holding any bot is not passable for a friendly bot either.
+  **And it reliably produces the team-scoped misreading**, because naming *friendly* in a
+  description of a team-BLIND predicate implies a contrast that does not exist. The engine settles
+  it: **`Tile::is_bot_passable@0x2eabc` returns false for ANY tile holding a live builder bot**
+  (`engine-guard-matrix-exploit-hunt-2026-08-10.md:171`, disassembly).
+
+  **⇒ WHY IT IS ITS OWN SHAPE AND NOT JUST "THE DOC IS WRONG":** a wrong doc can be corrected and
+  the correction is checkable. **A correct-but-misleading gloss has no defect to file** — every
+  reader who is burned by it was, strictly, careless, and the sentence survives every audit that
+  asks *"is this true?"* ⇒ **it fails the only test we routinely apply, and keeps failing readers.**
+
+  **THE PRACTICE, and it is one line: CITE THE ADDRESS, NEVER THE GLOSS.** Where an engine fact has
+  been read off the binary, the checklist, the prereg and the queue row quote **the symbol and
+  offset**, not the organisers' description of it — **including when the description is accurate.**
+  **The test is not "is the gloss true" but "can the gloss be read the wrong way by someone who has
+  not seen the disassembly."**
