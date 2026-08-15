@@ -1,4 +1,4 @@
-# RESEARCH ARM RETRO — **v1.14** — run it at every wrap, before the process deltas
+# RESEARCH ARM RETRO — **v1.15** — run it at every wrap, before the process deltas
 
 **RETRO v1.2 · created 2026-08-10 (s28) · bumped twice 2026-08-11 (s29) · companion to `EXPERIMENT-METHOD-CHANGELOG.md`
 (method v3.4) and to `two-session-protocol.md` rule 5.**
@@ -1320,5 +1320,51 @@ read the same day**, in a row that **also carried the norms hold I then violated
 greps would have stopped a wrong number reaching two lanes and Magnus. **The queue demands
 this of every PLANK before it counts; it was never demanded of a FINDING — and a finding
 travels faster.** ⚠ **Honest cause: believing it was new is what skipped the check.**
+
+**FIRINGS: 6.** Sunset clause remains **disarmed**.
+
+
+---
+
+# RUN s43 — 2026-08-14 boot 20:41Z → 2026-08-15 wrap. **v1.15. FIRINGS: 6.**
+Instance: `docs/retro-research-arm-2026-08-15-s43.md` (committed with this bump).
+
+**Headline: the most retraction-heavy session on record — SIX reached another lane, against a
+prior worst of 3 → 4 — in a session that was also genuinely productive** (two agents fully
+consumed, one leg cancelled before it burned a window, `#68` and `#69` stocked, `#68` confirmed
+on the currency surface, four stale queue rows annotated). **Both facts are true; the second is
+the one a successor needs.**
+
+**Q4 fires: peer-caught 4 → 6** (self-caught also 6, so 6/6 against s42's 6/4). **Q6 fires
+hardest at six retractions, TWO of them caught only because a peer was mid-action** — message
+crossing is now a live hazard of the three-lane protocol at this tempo. **Q7 fires for the third
+consecutive session** (measured the Bisons swing correctly, attached a cause the data could not
+support). **Q13 fires** on three universal quantifiers — *"NO retrospective cut can EVER
+separate… for ANY opponent"* — derived from ONE opponent's version table and **falsified in six
+minutes**, in the direction that sounds rigorous.
+
+**Q12 fires TWICE and is the session's signature.** I amended `#68` to stop raw-win-share target
+ranking, then cited Leviathan's raw 15.9% in `#69` twenty minutes later. And I caught
+era-pooling in others' cuts all session, then committed it in my own S−E cut — where it
+**invented three worst-matchups AND hid the real one in the same cut** (0033: all-time −0.3pp
+vs current-era −17.9pp).
+
+**Not firing, and recorded because this file counts those too:** consumption **2/2**; latency
+positive both times (`#68` cancelled a leg *before* it fired); **three declines**, the best
+deliverable of the session among them — **refusing a window for 0033 because 241 current games
+were already in hand.**
+
+## ⭐ NEW QUESTION 15 — **DID A CORRECT FINDING CARRY AN UNCHECKED ONE IN THE SAME PUBLICATION?**
+> **When a note contains a strong verified result and a second claim, the second inherits the
+> first's credibility. Check the passenger, not just the driver.**
+
+Minted from the session's dominant shape: **five of six retractions travelled in the same
+message as a finding that was correct and valuable.** The 20:51Z note is the exemplar — §3
+(fixture pooling inverts a target: correct, and it changed the fire order) and §4 (the
+counter-ship attribution: unidentifiable) shipped together, and **§4 was the half both peers
+consumed and acted on.** §4 also committed the exact error §3 had just diagnosed. ⚠ **The
+mechanism is not carelessness — verifying the driver FEELS like verifying the note.**
+⇒ **a publication with more than one claim gets a per-claim check, and the strongest claim is
+the one that hides the others.**
 
 **FIRINGS: 6.** Sunset clause remains **disarmed**.
