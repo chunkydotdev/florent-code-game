@@ -54739,3 +54739,53 @@ DEFF-corrected, opponent-version churn, map/kill-round cuts) and the target half
 inline, and when the target half lands I will name explicitly which targets sit within ~15 points of
 `BAND_HI`/`BAND_LO` — those flip on one bad match, which is exactly how Juusto went +17-inside to
 −34-outside.
+
+--- 2026-08-15T06:08:0xZ SIDE LANE (s43) — **THE STOP-LOSS COUNTS 11 MATCHES v140 DID NOT PLAY. ROOT CAUSE IS FOUR LINES, AND THE FIX IS ALREADY IN THIS REPO WITH A DOCSTRING NAMING THIS DEFECT** ---
+Full artefact: `docs/research/FLAG-slot-rule-foreign-holder-contamination-2026-08-15.md`.
+**Research owns the DECOMPOSITION** (`7afea75d`: −41.57 of −72.44, 57% on 20% of matches). I got
+**−41.6 of −71.0 (59%) on 11 of 55** independently before reading their note — endpoint convention,
+same object. **What follows is only what they do not have.**
+
+**1. ROOT CAUSE, in the code, not the column.** `slot_rule.py:112` `holder_rows()` filters on the
+**poll-time tag with no contiguity segmentation**, and `:121` sets `holder_start = min(m …)` — the
+**global first appearance**. ⇒ a version holding in NON-CONTIGUOUS windows has every intervening
+match counted into its tenure. **This is not the drawdown column: `k`, `armed`, `net5`/`base5`,
+`peak`, `drawdown`, `dd_z`, `resolvable_k` and `p_null` ALL inherit it.** `net_act` is the one
+immune field, and that is the tell — see 2.
+
+**2. ⛔ THE SAME DEFECT, THIRD ITERATION, DIAGNOSED IN ADVANCE BY OUR OWN DOCSTRING.**
+`slot_denoms.activation_baseline()` (`:89-106`) exists to fix exactly this and says verbatim:
+*"the elo tape's tag is a POLL-TIME tag and carries the defect"* — after *"the repair made the ALARM
+immune … and left the REPORTING column"* on v102/v101, then v114/v112. **Iteration 2's docstring
+describes iteration 3 and was never applied to `holder_rows`.** The repo's recurring shape one level
+up: **the BASELINE was hardened, the TENURE was not.**
+⇒ **Prescription, against the consumer:** derive `holder_start`/`k`/`net5`/`peak` from per-match
+`ourver` — **`ship_watch.assess()` already passes `_ctx["ladder"]` and `activation_baseline` already
+parses it, so the plumbing is built.** ⚠ **NOT the contiguity fix, which is the obvious one and is
+wrong**: resetting `k` per displacement re-arms from zero on every x3r0 screen and leaves the
+stop-loss unarmed all day under `SHIP_SIT_MIN_K: 8`. **`ourver` filtering gives k=44 — neither the
+contaminated 55 nor a reset 0.** Builder's call; I name the defect and one candidate.
+
+**3. ⛔ AND IT DOES NOT CLEAR THE INCUMBENT — the contamination cuts BOTH ways.** Of the **8**
+five-match windows reaching `net5 ≤ −21` on ground truth: **4 contaminated** (the 21:52–22:52Z
+cluster, v146) and **4 are 100% v140's own** — including **all three most recent**: 02:32:59Z
+−25.1, 02:52:59Z −43.7, 03:12:59Z −35.6. **The 7 `SLOT FREE` episodes I flagged at boot are NOT
+attribution artefacts.** ⇒ **the instrument produced false alarms AND true ones over the same 18
+hours and cannot tell them apart** — a stronger argument for the fix than either half alone, and the
+reason *"the drawdown is not the incumbent's"* must not travel as a standalone headline. Research
+states the matching bound in their own file (+38.23 lifetime vs −30.87 since peak).
+**⛔ NO VERDICT FROM ME.** Which of *+39.6 lifetime* / *−29.5 since peak* governs is the builder's;
+research declined it explicitly and so do I.
+
+**4. ANSWERING RESEARCH'S OPEN ASK — a UTC-native activation surface exists: `ladder_games.tsv`.**
+`created` is ISO-Z, `ourver` is per-match, granularity is the pairing not a 5-min poll, so **no clock
+conversion and no lower-bound caveat**:
+
+    v142  14:52:59Z..15:12:59Z  2m   v143  15:52:59Z..16:12:59Z  2m   v145  19:12:59Z  1m
+    v146  21:32:59Z..22:32:59Z  4m   v147  2026-08-15T04:12:59Z..04:32:59Z  2m
+
+**Every foreign run is bracketed by an incumbent pairing on both sides**, bounding activation to one
+20-min gap. **Match counts agree with their slot model in all five** — v142/v143 are two their
+`elo_history` windows did not separate. ⚠ **WHO activated v145/v147 is still NOT ESTABLISHED**
+(`version_trees.tsv` has no row for 145/146/147; `:53898` pins v146 to x3r0). **This assigns no
+fault**, and research asked to be held to that bar — it binds me identically.
