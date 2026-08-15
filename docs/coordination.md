@@ -55215,3 +55215,46 @@ expected version"*, i.e. the very defect `HANDOVER:4-6` records. **`:52` shows `
 against `$want` and aborts to `corpus/FANOUT_ABORT`.** `gate()` is a CLI-liveness gate, correctly
 scoped; **I had read the wrong function's role.** Killed by grepping the file for the abort path
 before writing. **This is S2's "one surface over" caught at the write, not after.**
+
+--- 2026-08-15T06:21:36Z SIDE LANE (s43) — **GATE CERTIFICATION OF THE THREE BANKED ROWS (`168c1dbd`): ARITHMETIC CLEAN 3/3. ONE ROW REPORTS THE OBJECT ITS OWN PREREG PUTS A ⛔ ON, AND OMITS THE ONE THAT DECIDED.** ---
+
+**✅ ARITHMETIC — all three verified independently, all three correct:**
+
+    SENTTHR    49.80%  n=5400  hw 1.334pp  CI [48.47, 51.13]   band [48.67,51.33] -> INSIDE  ✓
+    GUNAXABL   48.69%  n=5400  hw 1.333pp  CI [47.36, 50.02]   lower edge 48.67   -> INSIDE by 0.02  ✓
+    V140VS146  53.00%  n=1000  hw 3.093pp  CI [49.91, 56.09]   bar 53.1           -> fails by 0.10  ✓
+
+**SENTTHR and GUNAXABL are correct AND self-flagging** — GUNAXABL's row calls its own 0.02pp margin
+*"a coin flip wearing a decision format"* unprompted, which is the right way to bank a knife edge.
+**Naive intervals used where `DEFF 0.98` would narrow them ⇒ marginally CONSERVATIVE, per
+`CLAUDE.md`'s measured local exemption.** No objection to either.
+
+**⛔ V140VS146 — THE ARITHMETIC IS RIGHT AND THE READING IS INVERTED.** The row says:
+*"vs SUPERIORITY BAR 53.1% pooled (SCREEN-v140vs146:74) — **FAILS the bar BY 0.10pp; inside band =
+UNRESOLVED**."* **It cites `:74` and stops there. `:74-79` continues, verbatim:**
+
+> *"**⛔ THIS IS NOT THE DECISION RULE AND MUST NOT BE READ AS ONE. The decision rule is Magnus's
+> policy threshold of 51.0% (§3)**, which is unresolvable at the mandated n and fires anyway because
+> it is a policy, not a significance bar. The two objects are kept apart on purpose."*
+
+And `:213`/`:219` give the branch explicitly: **`≥ 51.0% at n=1000`, i.e. `≥ 510 of 1000` → v140
+reactivated; `< 51.0` → v146 stays.**
+⇒ **53.00% = 530 games. 530 ≥ 510. THE DECISION RULE WAS MET AND v140's REACTIVATION WAS CORRECT
+UNDER `PROGRAMME.md:28`.** The banked row reports **only the object the prereg forbids reading as a
+decision** and never states that the deciding one passed.
+
+**WHY THIS IS NOT PEDANTRY:** this row IS the record of whether `X3R0_SLOT_RULE` fired correctly,
+and **`X3R0_SLOT_RULE` vs `SHIP_SIT_MIN_K` is one of the six items sitting open with Magnus.** A
+cold reader — and `results.tsv` is a cold-read surface — sees *"FAILS the bar"* and *"UNRESOLVED"*
+against a screen whose policy outcome was **fire, correctly**. **The prereg author armed a ⛔
+against exactly this misreading and it happened at the first consumption.**
+⇒ **FIX: one amended/companion row stating the 51.0 branch and its 530/1000. No re-run, no
+re-analysis, nothing about the arithmetic changes. Builder's tape and builder's row.**
+
+**⚠ AND I OWE THE SAME DIAGNOSIS ON MYSELF, ONE HOUR OLDER:** the mechanism here is **citing a LINE
+and not reading the PARAGRAPH it opens** (`:74` vs `:74-79`). **That is byte-for-byte my own
+`6409c3a0` retraction — I quoted a commit SUBJECT and not the HANDOVER body two lines down.** Two
+lanes, one hour, the same fault at different granularities. **I am flagging this as a colleague who
+committed it first this morning, not from above it** — and it is the strongest argument yet that
+`D35`'s watch form should read *"open the paragraph, not the line"* rather than naming any one
+surface.
