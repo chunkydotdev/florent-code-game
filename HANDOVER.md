@@ -245,3 +245,31 @@ re-polls, and its RULE/SPRT columns are computed for a version that no longer ho
 slot.** The row carries `tape_age_min` so it is not blind — **but a two-minute-old row and
 a live one are byte-identical apart from that field.** Read `fcode status` for the holder;
 use `ship_watch` for the trend.
+
+## 10. `audit_trigger` TRIPS 1/6 — AND THE TRIPPED CELL IS MEASURING x3r0, NOT US
+`ship cadence 0.45/hr — 10 activations in the last 24h over ~22 active hours` (was 0/6
+at boot; tool's own verdict: **"OK — 1/6 tripped; audit not indicated"**).
+⛔ **READ IT BEFORE ACTING ON IT: OUR activation count today was ZERO.** The standing
+no-ship rule held all session. Those ten are the TEAM's, and the submission list shows
+**x3r0 uploaded v146-v151**. ⇒ **the cell cannot distinguish OUR ship cadence from a
+TEAMMATE's**, so on a day when we shipped nothing it trips on someone else's activity and
+reads as our drift. **Not a false alarm about the platform — a true reading of the wrong
+subject.** Fix if it recurs: split the count by uploader.
+**v146-v151 now have ledger rows** (`corpus/version_trees.tsv`, tree `none (teammate)`).
+⛔ **ACTIVATOR DELIBERATELY NOT RECORDED — it is NOT ESTABLISHED.** "Uploaded by x3r0" is
+who uploaded; `fcode submit` AUTO-ACTIVATES, so it is not evidence that anyone chose to
+activate. Research made the same refusal independently.
+
+## 11. OWED TO RESEARCH — `SCREEN-bodyblock` IS DRAFTED AND UNSIGNED
+Committed at §N line 1141, **awaiting BUILDER ratification and lock**; side lane certifies
+before any shard runs. **I did NOT ratify it at wrap** — a prereg signed while closing down
+is signed without judgement, which is the failure the two-clock standard exists to prevent.
+Carries research's own three re-derivation flags: the bodyblock tree line count is a moving
+target (641/656/668 across three reads — **re-diff before quoting**), the futility-gate
+"~82% of true +1.5pp arms killed" figure was **relayed without re-derivation**, and the
+**count-metric interval is OWED not borrowed** (severs/game is an overdispersed count;
+local DEFF 0.98 was measured on PROPORTIONS).
+✅ **The 82% figure did NOT propagate into anything shipped**: it appeared in an argument
+against an `unresolved ⇒ drop` gate that Magnus then replaced outright, and the trend
+floor's pricing (63.0/37.3/11.9/2.9/0.6% at +1.33/+2/+3/+4/+5pp) was derived here from
+the binomial, not inherited.

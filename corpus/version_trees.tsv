@@ -69,3 +69,17 @@ version	name	tree	evidence	recorded_at
 139	Loki v9	bots/_v218mapfix	submit_clean auto — `fcode status` Active bot: v139 (Loki v9)	2026-08-14T09:05:13Z
 140	Loki v10	bots/_v223sealrepair	submit_clean auto — `fcode status` Active bot: v140 (Loki v10)	2026-08-14T11:37:38Z
 144	Loki rc9.1	bots/_v233evict58	submit_clean auto — `fcode status` Active bot: v144 (Loki rc9.1)	2026-08-14T17:04:19Z
+# --- 2026-08-15T16:08:04Z BUILDER s44: SEVEN FOREIGN SUBMISSIONS THAT HAD NO ROW. Research flagged
+# the gap at its wrap ("neither v150 nor v151 has a row — same signature as v145/146/147").
+# Source: `fcode submission list` read 2026-08-15T16:08:04Z; the "Uploaded By" column reads x3r0 for every
+# one. Dates are AS DISPLAYED by the CLI (local), not normalised — recorded as read.
+# ⚠ TREE IS `none (teammate)` AND THAT IS A FACT, NOT A PLACEHOLDER: these are x3r0's
+# uploads and no local tree corresponds to them. ⛔ ACTIVATOR IS NOT RECORDED because it
+# is NOT ESTABLISHED — "uploaded by x3r0" is who UPLOADED, and the platform auto-activates
+# a ready submission, so it is not evidence of a deliberate activation by anyone.
+151	Loki v10 turbo (CPU)	none (teammate)	fcode submission list (2026-08-15T16:08:04Z): "v151 | Loki v10 turbo (CPU) | ready | Yes | x3r0 | 2026-08-15 15:54" — ACTIVE at s44 wrap	2026-08-15T16:08:04Z
+150	SEAL v3 fortress	none (teammate)	fcode submission list (2026-08-15T16:08:04Z): uploaded by x3r0 2026-08-15 10:34 · research decode f211ff02 prices its ~35min hold at -24.65 Elo over 2 rated matches	2026-08-15T16:08:04Z
+149	SEAL v2	none (teammate)	fcode submission list (2026-08-15T16:08:04Z): uploaded by x3r0 2026-08-15 09:13	2026-08-15T16:08:04Z
+148	SEAL v1 calib	none (teammate)	fcode submission list (2026-08-15T16:08:04Z): uploaded by x3r0 2026-08-15 08:26	2026-08-15T16:08:04Z
+147	Top5 Robust Router v3	none (teammate)	fcode submission list (2026-08-15T16:08:04Z): uploaded by x3r0 2026-08-15 04:11	2026-08-15T16:08:04Z
+146	Top3 Novel	none (teammate)	fcode submission list (2026-08-15T16:08:04Z): uploaded by x3r0 2026-08-14	2026-08-15T16:08:04Z
