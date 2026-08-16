@@ -54,12 +54,13 @@ AS A DISCOVERY (research, 2026-08-16, on Magnus's queue-sweep directive; the
 same arithmetic governs the EXISTING marks, so it lives here, not in a
 never-built MARK-500 — a 500-look was priced and NOT added because the
 400/1000 marks already dominate it):
-    TREND_FLOOR@1000 (prefix < 51.0), SE 1.58pp: kills a TRUE-50.0 arm 73.7%,
-    a TRUE-51.0 arm (AT the floor — the only arm the "50%" figure belongs to)
-    50.0%, a true-52 26.3%, bodyaware-class (53.7) 4.3%, leader-class (55.2)
-    0.4%. That harshness is BY DESIGN — Magnus's pinned reading is "no use to
-    us" below 51, the cancellation keeps rows, and a false kill costs a
-    re-run, not a road. CATASTROPHE@400 (CI-hi < 45): true-50 kill ~0.02%.
+    TREND_FLOOR@1000 (prefix < 52.0 — RAISED from 51.0, Magnus 2026-08-16),
+    SE 1.58pp: kills a TRUE-50.0 arm 89.7%, true-51 73.6%, a TRUE-52.0 arm
+    (AT the floor — the only arm the "50%" figure belongs to) 50.0%, true-53
+    26.3%, bodyaware-class (53.7) 14.0%, leader-class (55.2) 2.4%. That
+    harshness is BY DESIGN — Magnus's pinned reading is "no use to us" below
+    the floor, the cancellation keeps rows, and a false kill costs a re-run,
+    not a road. CATASTROPHE@400 (CI-hi < 45): true-50 kill ~0.02%.
 ⇒ An all-neutral 60-arm sweep is EXPECTED to produce ~44 trend-floor
 cancellations — the floor's noise output, never a finding about the queue.
 Anyone quoting "N of M arms failed the sweep" must quote these base rates
@@ -206,7 +207,15 @@ CATASTROPHE_CI_HI = 45.0  # pinned by Magnus
 # above 51% at 1000 and at 2700 n otherwise it's no use to us, more than to maybe
 # test combinations with." Checked against the PREFIX share at each mark, so the
 # rule looks exactly twice however often this tool runs (see Tape.wins_at_mid).
-TREND_FLOOR = 51.0
+# ⭐ RAISED 51.0 -> 52.0 BY MAGNUS 2026-08-16, verbatim: "It seems we are not
+# killing at 1000 games on anything below 52" — said after H601h2 ground past
+# 1000 at 51.37 (above the old floor, uninteresting against the 60/70 aiming
+# point) and had to be killed by hand. His 08-15 pinning used ONE number for
+# both marks, so this one does too; the same builder read applies at 2700.
+# Priced at the change (see the header block): a true-53.7 (bodyaware-class)
+# arm now dies at the 1000 look 14.0% of the time — affordable because rows
+# are kept and the classes we hunt (55+) survive >97%.
+TREND_FLOOR = 52.0
 Z95 = 1.96                # pinned: naive normal interval, DEFF 0.98 => no inflation
 
 # THE COMBO BAR. Pinned by Magnus 2026-08-16, verbatim: "Solo-shards will be
@@ -214,7 +223,7 @@ Z95 = 1.96                # pinned: naive normal interval, DEFF 0.98 => no infla
 # if a combo isnt 55+ at n2700 it's not a success either, not a failure, but we
 # want better combinations" — go given as "Perfect do it!" after the pricing
 # below was put to him. Applies ONLY to trees carrying the stack.py compose
-# marker; solos keep the 51.0 trend floor (and a 2,700 default TARGET, set in
+# marker; solos keep the house trend floor (and a 2,700 default TARGET, set in
 # the worklist, full-n by explicit annotation only).
 # PRICED BEFORE ADOPTION (SE at n=2700, p~.55 ≈ 0.96pp), P(prefix reads <55):
 #     true 53.0 -> killed ~98%     true 55.0 -> coin flip (50%)
@@ -736,9 +745,10 @@ def decide(sh: Shard, bars: dict[str, Bar], stale_s: float,
     # still REACH the bar?" and so protected anything unresolved. The trend
     # floor asks "is this arm WORTH THE COMPUTE?" — an arm reading 50.5% is
     # unresolved AND uninteresting, and we were paying full price for its
-    # precision. Priced before adoption, false-drop of a TRUE effect:
-    #     +1.33pp (at bar) 63.0%   +2pp 37.3%   +3pp 11.9%
-    #     +4pp 2.9%        +5pp 0.6%            +7pp 0.0%
+    # precision. Priced at the 52.0 floor (2026-08-16 raise; either-look kill
+    # over both marks, 60k-draw simulation), false-drop of a TRUE effect:
+    #     +1.33pp (at bar) 83.4%   +2pp 63.7%   +3pp 30.5%
+    #     +4pp 10.5%       +5pp 2.7%            +7pp 0.1%
     # Tuned for the hunt actually underway (a 65% shard is +15pp: survives with
     # certainty). What it kills hard is the at-the-bar class, which is the class
     # the directive above declares uninteresting.
@@ -1447,19 +1457,19 @@ def selftest() -> int:
                      str(tmp / ctrl), 5400, t, 1.0, "tsv mtime", True, "RUNNER")
 
     TB = dict(BARS)
-    # one game either side of the floor at mark 1000 — 51.0% is NOT below 51.0
-    s_below = trend_shard("TB_LOW",  [(509, "T"), (491, "C")], "REAL")
-    s_at    = trend_shard("TB_AT",   [(510, "T"), (490, "C")], "REAL")
-    chk("prefix@1000 50.90% (one game under the floor)  => STOP",
+    # one game either side of the floor at mark 1000 — 52.0% is NOT below 52.0
+    s_below = trend_shard("TB_LOW",  [(519, "T"), (481, "C")], "REAL")
+    s_at    = trend_shard("TB_AT",   [(520, "T"), (480, "C")], "REAL")
+    chk("prefix@1000 51.90% (one game under the floor)  => STOP",
         decide(s_below, TB, DEFAULT_STALE_S).action, "STOP")
-    chk("prefix@1000 51.00% (exactly AT the floor)      => CONTINUE",
+    chk("prefix@1000 52.00% (exactly AT the floor)      => CONTINUE",
         decide(s_at, TB, DEFAULT_STALE_S).action, "CONTINUE")
     chk("...and the stop names the mark it fired at",
         decide(s_below, TB, DEFAULT_STALE_S).clause, f"TREND-FLOOR@{MARK_MID}")
 
     # the SECOND mark bites independently: clears 1000, fails 2700
-    s_m2 = trend_shard("TB_M2", [(510, "T"), (490, "C"), (865, "T"), (835, "C")], "REAL")
-    chk(f"clears {MARK_MID} (51.00%) but prefix@{MARK_HALF} 50.93% => STOP at the 2nd mark",
+    s_m2 = trend_shard("TB_M2", [(520, "T"), (480, "C"), (883, "T"), (817, "C")], "REAL")
+    chk(f"clears {MARK_MID} (52.00%) but prefix@{MARK_HALF} 51.96% => STOP at the 2nd mark",
         decide(s_m2, TB, DEFAULT_STALE_S).clause, f"TREND-FLOOR@{MARK_HALF}")
 
     # ⛔ THE OPTIONAL-STOPPING GUARD, and it is the reason prefixes exist at all.

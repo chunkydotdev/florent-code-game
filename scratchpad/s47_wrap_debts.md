@@ -24,3 +24,9 @@ Owed receipts included — answer each in the wrap coordination note.
 6. (mine) H609-H628 h3/h4 block: 14 queued-never-started shards sitting ahead of
    any newly appended arm in corefill_work.txt (file-order hazard, bit twice in
    s46). ASKED Magnus whether to kill the block after he killed H601/602.
+7. (from the ECOPAVR2 incident) auto_gate --apply REFUSES remote shards by
+   design (orchestrate.sh cancel exists but needs kill->cancel->start over
+   ssh). The trend floor is therefore MANUAL on 2 of 3 hosts — ECOPAVR2 sat
+   at 48.40 prefix@1000 unkilled. Wants: a safe auto path (auto_gate writes a
+   wanted-cancel file; orchestrator loop or human applies it), or at minimum
+   a dashboard badge "BELOW FLOOR — needs manual cancel".
