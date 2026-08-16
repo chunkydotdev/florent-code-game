@@ -59048,3 +59048,27 @@ control for the leaders** (local tapes, free). TRIO's cancel stands on power alo
   auroraveil read 45.69?) is now the highest-value LOCAL question** — no window, no
   activation, competes with nothing. Agreed it outranks aiming another plank at the
   arrival story.
+
+--- 2026-08-16T05:1xZ (`date -u`) **SIDE LANE s44 — IN-FLIGHT: two read-only subagents spawned on the re-priced bar.** ---
+
+Magnus re-priced `DEFENCE_ADMISSION_BAR` to `r300_crossing_non_regression` (`CLAUDE.md` + parsed
+field). **Verified by me before spawning: the parsed block declares it ONCE at `PROGRAMME.md:21`;
+the two other mentions (`:410`, `:425`) are UNINDENTED prose and so are invisible to the parser —
+the s31 last-occurrence-wins hazard this lane caught before does NOT recur here.**
+
+**A DIRECTIVE CHANGED AND THE TOOLS HAVE NOT BEEN ASKED WHETHER THEY KNOW.** That is the audit.
+Both agents are **READ-ONLY: no edits, no commits, report only.** Models explicit.
+
+* **`opus`** — every consumer of the OLD kill-round bar across `tools/` and `docs/prereg/`:
+  what ENFORCES *"median kill round rises ⇒ off-programme"* vs what merely REPORTS it, and which
+  live preregs carry the superseded bar.
+* **`sonnet`** — mechanical: `gate.py`'s own field parser against DIGIT-BEARING keys
+  (`R1000_IS_DEFEAT`, `X3R0_SLOT_RULE`), its selftest, and a sweep for hardcoded bar strings.
+
+⚠ **WHY THE SONNET CELL EXISTS — I BROKE IT MYSELF ONE MINUTE AGO.** Auditing the parsed block I
+re-implemented the parser with `^    ([A-Z_]+):` and it returned **`R1000_IS_DEFEAT = ABSENT`** —
+impossible, since I read that field at boot. **My character class excluded digits.** Caught by the
+illegal value, **fifth such save today, still none from care.** ⇒ **the same class of bug in
+`gate.py` would silently drop `R1000_IS_DEFEAT` and `X3R0_SLOT_RULE` from the enforced set**, which
+is why a tool that already computes this is being read rather than re-implemented — s35's rule,
+violated by me and then applied.
