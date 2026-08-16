@@ -61219,3 +61219,44 @@ economy, `doctrine.py` is `_v103split`'s file. Diff vs `_v223sealrepair`: main 2
 names: `T4_SEAT_FIRST_ON` / `T4_CONVERGE_SEAT1_ON` / `T4_SEAT1_MIN_DMG` are about HEAL SEATS around
 our own Core and a ROLE INDEX — NOT about map side A/B.** I nearly relayed them as a convergence with
 today's seat-asymmetry work. **They are not. The only genuine (map,side) construct is v145's router.**
+
+--- 2026-08-16T06:4xZ (`date -u`) ✅⭐ **SIDE LANE s44 — BOTH TRACKED ITEMS CLOSED AT THE PRIMARIES. And the clock-2 VALUE OF RECORD is the builder's, not mine: I used an adjacent FIELD after correcting an adjacent POPULATION.** ---
+
+## ✅ VERIFIED AT THE PRIMARIES, NOT TAKEN FROM THE RELAY
+
+    holder after restart      Active bot: v152        <- clean, nothing stranded
+    state file                CLOCK2  2026-08-16T06:25:40.381Z   <- RECORDED, not merely computable
+    ELO GATE, first live read BLIND (age=48.74min > 40min, reason=STALE_ARCHIVE)
+                              — refusing to compute a verdict from stale data. streak=1/3
+
+⭐ **THE GATE LINE IS THE FLAG CLOSING ON REAL DATA, FIRST READING:** it prints the AGE, it says
+**BLIND** rather than **clear**, it names the reason, and the streak counter is running toward the
+3-strike human escalation. **The clear-from-empty defect I raised at 06:1xZ is demonstrably dead** —
+and it fired on its very first live evaluation, which is the only way to know a guard works.
+✅ **And my check-don't-assume item is closed the right way: clock 2 is RECORDED, not merely
+computable.** That distinction was the whole point of carrying it.
+
+## ⛔ AND THE VALUE OF RECORD IS THEIRS — MY +26m39s WAS RIGHT FROM THE WRONG FIELD
+
+    §1 line 42:  "clock 2 = the platform `createdAt` of the FIRST ACCEPTED CHALLENGE of the leg"
+
+    platform createdAt for match 14274b7c   2026-08-16T06:25:40.381Z    <- REGISTERED, theirs
+    corpus/our_matches.tsv local write      2026-08-16T06:25:40.639222Z <- a PROXY, mine
+
+**258 ms apart, identical at second resolution, so the gap is +26m39s either way and the
+certification is unaffected.** ⇒ **but the registered quantity is the PLATFORM field and I used the
+runner's LOCAL WRITE time.**
+
+**⛔ AND THE SHAPE IS THE POINT: I TOLD THEM `our_matches.tsv` WAS "THE RIGHT SURFACE" FOR CLOCK 2.**
+It is the right surface for **ATTRIBUTION** (§9.4.4) and the wrong one for **CLOCK 2's DEFINITION**,
+which names the platform field explicitly. ⇒ **correcting my adjacent-POPULATION error (+7m35s off
+the account-wide list) I introduced a milder adjacent-FIELD error in the same certification.**
+**Fifth instance of that class today — and the one where I was most confident, because I had just
+finished correcting myself.**
+⚠ **Both were survivable only because the gap was 26 minutes.** §1 warns the surface choice decides
+the SIGN at a small gap; **I have now made two proxy substitutions inside one two-clock
+certification**, and at a two-minute gap either could have decided it.
+
+⇒ **FOR THE RECORD: the certificate's clock 2 is `2026-08-16T06:25:40.381Z` (platform `createdAt`,
+match `14274b7c`), gap `+26m39s`, strictly later. The builder's value governs.** My
+`our_matches.tsv` figure corroborates it to the second and is not the registered quantity.
