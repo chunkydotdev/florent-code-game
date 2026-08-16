@@ -63001,3 +63001,73 @@ comparison — **so it ships with its own two-way control.**
 **ROTATION ARITHMETIC INDEPENDENTLY CONFIRMED** by the side lane in the RUNNING scheduler:
 `tools/fieldcal_scheduler.sh:669` `start_idx=$(( (round / 2) % 10 ))`, and `(r/2)%10 == 1` for
 **r ∈ {2, 3, 22, 23}** — **the ~7h figure holds.**
+
+--- 2026-08-16T08:19:24Z (`date -u`) 🔒 **SIDE LANE s45 — PRE-REGISTERED DISBELIEF CONDITIONS FOR THE "60-BAR IS ~4.64σ ABOVE THE ARM-GENERATING PROCESS" CLAIM. WRITTEN BEFORE THE NUMBER LANDS, ON RESEARCH'S INVITATION.** ---
+
+**⛔ TWO-CLOCK NOTE ON THIS ARTEFACT ITSELF: research's opus agent is IN FLIGHT and I have seen no
+output from it — not a point estimate, not a population, not a σ. This is committed now precisely so
+it cannot be tuned to the answer.** If any condition below is later relaxed, that relaxation is an
+amendment and must be dated and justified, not edited in.
+
+**THE CLAIM, as relayed:** treating the board's arms as draws from a generating process, the **60%
+slot bar sits ~4.64σ above it**, so **GRIND is not a phase to wait out but a bar this process does
+not reach.** That second clause is a policy conclusion about Magnus's slot rule, which is why it
+deserves adversarial pre-registration rather than applause.
+
+## A. WHAT WOULD MAKE ME DISBELIEVE IT — ranked, most likely to bite first
+
+**A1. ⭐ THE PROCESS IS NOT STATIONARY, SO THERE IS NO "THE" DISTRIBUTION.** Arms are not iid draws;
+they are a **designed sequence**, each built on the last, on a line under active development. **If the
+later arms sit systematically above the earlier ones, a σ-distance from the POOLED mean is the wrong
+statistic** — it measures distance from a historical average nobody is trying to reproduce.
+**PRE-REGISTERED TEST: split the arm series at its median date and compare the halves. If the later
+half's mean exceeds the earlier half's by more than half a pooled σ, the stationarity premise fails
+and the 4.64 is not interpretable as a reachability statement.** I do not know today which way this
+goes and I am not predicting it.
+
+**A2. ⭐⭐ A CONJUNCTION IS NOT A DRAW FROM THE SINGLE-PLANK DISTRIBUTION — AND THIS IS THE ONE I
+EXPECT TO MATTER.** Every arm in the population is, as far as I know, **one plank against the
+control**. **The distribution of single planks says nothing about the distribution of COMBINATIONS**,
+and `QUEUE #69` is literally *"THE CONJUNCTION — spawn-ring siege × belt attrition"*, with `MIX`/
+`CMB` arms already on the board. ⇒ **"this process does not reach 60" is true only of the process AS
+SAMPLED.** ⛔ **If the claim is stated as "60 is unreachable" rather than "60 is unreachable BY
+SINGLE PLANKS", I disbelieve the general form on this ground alone**, whatever the arithmetic says.
+**PRE-REGISTERED TEST: does the population contain any multi-plank arm? If it does, is it drawn from
+the same distribution as the single-plank arms, or is it visibly displaced?**
+
+**A3. σ IS A DISTANCE, NOT A PROBABILITY, AND 23 POINTS CANNOT ESTABLISH A TAIL.** 4.64σ means
+"unreachable" only under an assumed tail. **With ~23 arms there is no empirical basis for the shape at
++4.64σ.** ⇒ **I accept "far" and reject any conversion to a frequency** — a p-value, a "1 in N legs",
+or "will not happen" — **unless the distributional assumption is named and defended.** **If the
+finding is phrased as a distance and hedged as such, this condition does not fire.**
+
+**A4. POPULATION SELECTION.** If the 23 exclude **killed, cancelled or auto-stopped** arms, the
+distribution is **truncated from below**, which **inflates the mean, deflates σ, and moves 4.64 in an
+uncontrolled direction.** **PRE-REGISTERED TEST: the population must be stated as a rule, and the
+excluded set counted.** *(This lane's own `SEALQ KILLED` at 25.35% and `bodyblk-autostop` at 47.30%
+are exactly the rows a "completed arms only" filter drops.)*
+
+**A5. FIXTURE MISMATCH.** The 60±2pp bar is defined **vs the v140 control on the local screen**. **If
+any arm in the population is measured against a different control or on a different fixture, it is
+not a draw from the same process** and must be excluded or the bar restated.
+
+## B. WHAT WOULD **NOT** MOVE ME — declared now so I cannot invent it later
+
+* **Using the OBSERVED SD of arm point estimates rather than a variance-component σ.** Observed SD
+  contains true dispersion **plus** per-arm sampling noise, so it is **too LARGE**, which makes the
+  σ-distance **too SMALL**. ⇒ **that choice is CONSERVATIVE for this claim and I will not object to
+  it.** ⚠ **The converse does move me: if a shrunken or between-arm σ was used, the distance GROWS
+  and the modelling choice needs defending.**
+* **The winner's-curse point (builder D7).** It bites the **max** (55.24 vs 53.50 shipping), not the
+  **mean**, and this claim is denominated in the mean. **Not an objection here.**
+* **A large 4.64 by itself.** Big is not wrong. **I am pre-registering objections to the INFERENCE,
+  not to the size of the number.**
+
+## C. THE DECISION THIS BEARS ON, STATED SO THE STAKES ARE VISIBLE
+
+**If A1–A5 all pass, the honest reading is:** *the single-plank process, as sampled on this fixture,
+does not reach 60 — so continuing to draw single planks is not a route to the slot.* **That is a
+Magnus-level fact and it points at conjunctions and at the head-to-head step, not at more grinding.**
+⛔ **It is NOT a reason to move the 60 bar. Magnus set it directly and this lane does not propose
+re-pricing a directive on a statistic.** **The finding says which ROAD reaches the bar; it says
+nothing about whether the bar is right.**
