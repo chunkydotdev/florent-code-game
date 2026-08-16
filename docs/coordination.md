@@ -65267,3 +65267,50 @@ before anyone tunes one of the three in isolation.**
 a rule keyed to a RATIO OF A GROWING DENOMINATOR has no stable behaviour — it is ONE threshold
 governing TWO questions ("is this shard corrupt NOW" and "are these rows corrupt EVER") that want
 opposite answers as n moves. Row identity answers both; a ratio answers neither reliably.**
+
+--- 2026-08-16T11:35:20Z (`date -u`) ⭐ **SIDE LANE s45 — I RAN RESEARCH'S OWN NAMED MEASUREMENT BEFORE ANYONE BUILT THE FIFTH REFUSAL. THE MAP-SKEW HYPOTHESIS IS REFUTED ON BOTH SHARDS — and the refutation yields a sharper rule than the hypothesis would have.** ---
+
+**Their hypothesis, stated with its limits and explicitly nominated for measurement before any
+build:** a contamination burst is temporally clustered, the runner walks the map array in order,
+**so a temporal cluster is likely a MAP cluster and dropping it skews map composition silently.**
+**Reasonable, and the tape settles it.**
+
+    ECOPAVER  burst 32 rows, 09:34:18 -> 09:34:21   = 2.13 FULL MAP CYCLES over 15 maps
+              15/15 maps touched   max share 12.5% vs uniform 6.7%
+              per-map burst 6.2% each (ragnarok 12.5%) against clean 6.0-7.0%
+    ECOSCK4R  burst 26 rows, 09:34:23 -> 09:34:26   = 1.73 FULL MAP CYCLES over 15 maps
+              13/15 maps touched   max share 7.7% vs uniform 6.7%
+
+⇒ **REFUTED ON BOTH. The bursts are essentially UNIFORM across the map array**, and the largest
+single deviation is **two extra games** on one map out of thirty-two. **Dropping these rows does not
+skew map composition.**
+
+## ⭐ AND THE REASON IS THE REUSABLE PART — IT BOUNDS WHEN THE HAZARD IS REAL
+
+**A temporal cluster maps to a COMPOSITIONAL cluster only if the cluster is SHORTER THAN ONE CYCLE
+of the thing being composed.** These bursts span **1.73 and 2.13 full map cycles**, so a round-robin
+walk spreads them evenly by construction. ⇒ **The hypothesis fails not because bursts are not
+clustered, but because THESE bursts were LONGER than the period they would have had to beat.**
+
+⛔ **WHICH MEANS THE HAZARD IS REAL AND ITS SCOPE IS NOW KNOWN: a burst of FEWER THAN ~15 GAMES
+WOULD skew map composition, and nothing would refuse on it.** **The fifth refusal is not needed for
+these two shards and would be needed for a short burst.** ⇒ **Not "build it" and not "drop it" —
+BUILD IT IF A SHORT BURST IS EVER OBSERVED, and the trigger is now a number rather than a judgement.**
+
+## ✅ AND THEIR CODE ANSWER TO MY QUESTION IS CORRECT AND CLOSES MY OWN ITEM
+
+`overnight_read.py:327` — `good = [r for r in rows if … r[6] in ("T","C")]`, share computed over
+`good` only (`:342`). ⇒ **`NOWINNER` rows are DROPPED, never miscounted as losses. Contamination bias
+is ZERO** and the entire cost of ≤1% contamination is ≤1% of n. **E3's expiry is a latent defect with
+no material consequence on this pipeline. Priority LOW — lower than either of us had it.**
+
+## ⚠ AND THE THREE-THRESHOLD OBSERVATION IS WORTH CARRYING, WITH ITS SHAPE NAMED
+
+    runner abort    NOWINNER > 1%   CUMULATIVE   -> kills the id permanently
+    E3              NOWINNER > 1%   per shard    -> excludes from the cut
+    overnight_read  NOWINNER > 20%               -> refuses the read
+
+**The reader's backstop is TWENTY TIMES looser than the two rules it backs up, and can only bind
+where the runner's abort did not run.** ⚠ **Not an alarm — but three thresholds on one quantity,
+set an order of magnitude apart, is the configuration where tuning ONE in isolation produces a
+surprise.** **Recorded so whoever touches one of them sees the other two.**
