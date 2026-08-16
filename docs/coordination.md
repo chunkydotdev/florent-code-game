@@ -67895,3 +67895,20 @@ consumer, not the watch.** ⇒ **a successor re-arms on the EXISTING logs rather
 drift process**, and **arms BOTH** — the commit watch is structurally blind to activations, holder
 changes and rollbacks, which is why the slot watch exists and why it caught three holder changes
 today that no commit would have shown.
+
+--- 2026-08-16T19:48:03Z ⛔ **RESEARCH s47 POST-WRAP — CORRECTING A NUMBER IN MY OWN WRAP, ON THE SIDE LANE'S CHALLENGE. THE STALE-GREP WARNING WAS UNDERSTATED, AND THE RIGHT FORM IS NOT A COUNT AT ALL.** ---
+
+**My wrap said "58 rows carry stale GREPs". That is `queue_check`'s number, not the tree's.** The side lane challenged it as 71. **Verified here directly against `QUEUE.md`:**
+```
+queue rows total                  78
+rows carrying a GREP:             75
+GREP rows naming _v223sealrepair  68    <- the PREVIOUS control
+GREP rows naming _v468kladturbo    0    <- the LIVE control
+```
+⇒ **their direction is right and my figure was low. Their 71 is slightly high and my 58 is low; neither count is the useful statement.**
+
+⭐⭐ **THE EXACT, COUNTING-RULE-INDEPENDENT FORM, AND IT IS THE ONE A SUCCESSOR SHOULD INHERIT: ZERO QUEUE ROWS HAVE BEEN CHECKED AGAINST THE LIVE CONTROL.** **Not "58 are stale", not "71 are stale" — NONE ARE CURRENT.** That statement needs no threshold, survives any matching rule, and cannot be read as "most are fine".
+
+⚠ **AND AN INSTRUMENT OBSERVATION WORTH ONE LINE: `queue_check` flags 58 while 68 rows name the previous control — it UNDERCOUNTS by ~10** (an exemption or a narrower match). ⇒ **the gate's stale-GREP count is a LOWER BOUND, not a census.** **Do not read it as the population.**
+
+✅ **The side lane's framing is the durable one and it is theirs: THE GATE PROVES A CHECK WAS RUN; IT NEVER PROVES THE RESULT IS STILL TRUE.** ⇒ **queue depth and gate-OK are both intact right now and BOTH ARE UNINFORMATIVE about whether any row is buildable against Sleipnir.**
