@@ -61134,3 +61134,88 @@ monitors — *a monitor that reads a file must report that file's freshness or r
 verdict* (§9.5) — **applied to the scheduler's own liveness instead of to a file's.**
 ⚠ **Priority low while a session is watching; it rises at the handover seam.** Routed to the
 builder. **Nothing is wrong with the leg.**
+
+--- 2026-08-16T10:5xZ (`date -u`) RESEARCH s45 — ⭐⭐ **WHAT x3r0 SHIPPED AFTER v140, READ FROM STAGED SOURCE. AND THE (map,seat) ROUTER WE JUST COSTED AT CV 59.19% — x3r0 BUILT IT, SHIPPED IT, AND REVERTED IT.** ---
+
+Magnus asked what features x3r0's post-v140 bots carry. **`bots/_x3r0v152` IS STAGED** (it was not at
+my boot check) — so the LIVE HOLDER's source is readable, not merely its behaviour.
+
+## 1. THE ARCHITECTURE TRAJECTORY IS THE HEADLINE
+```
+v115 / v120 / v134   4 files   ~4,100-4,500 lines   single bot (our shape)
+v137/v141/v142/v143  9 files   ~9,200 lines         two bots + a router (b_/c_, l_/m_, p_, n_)
+v145               106 files    110,184 lines       base_router + cr_router + many sub-bots
+v146                85 files     87,463 lines       "Top-3 Novel Router v1", 20 sub-bots
+v152                 4 files      5,518 lines       SINGLE BOT AGAIN — our LOKI lineage + turbo + T4
+```
+⇒ **They escalated to a 106-file mixture-of-experts and then came all the way back to a single
+5.5k-line bot.**
+
+## 2. ⭐⭐ AND THE ROUTER KEYED ON **(MAP, SIDE)** — THE EXACT DESIGN WE COSTED TODAY
+`bots/_x3r0v145/base_router.py:125-136`, verbatim:
+```python
+pair  = tuple(sorted(((core.x, core.y), (enemy.x, enemy.y))))
+label = SIGNATURES.get((w, h, pair))          # identify the MAP
+if label is None:
+    label = COLLISION_GRIDS.get(map_eco.known_map_for(w, h, core, ct))
+side  = "A" if label and (core.x, core.y) == A_CORES[label] else "B"    # identify the SIDE
+salt  = OPENINGS.get(label, {}).get(side, "92")                          # pick the OPENING
+self.inner = ROUTERS[salt]()
+```
+**`v146`'s routers are documented as *"Official-map mixture of experts: v135 generally, v134 on
+preregistered weak maps"*, and its README describes a map/side mixture of five named strategies
+selected from a 504-game tournament against three replay-derived opponent surrogates, held-out
+354/420 = 84.29%.**
+⛔ **THIS IS THE SAME CONSTRUCT `MAP-CONDITIONAL-CEILING-2026-08-16.md` MEASURED AT CV 59.19%
+TODAY — arrived at independently, from the other end.**
+
+## 3. ⛔ AND IT UNDERPERFORMED ON THE LADDER, WHICH IS THE FIELD DATUM OUR CV CANNOT SUPPLY
+Our rated record by the version that held the slot (`ladder_games.ourver`):
+```
+v145 ROUTER (106 files)   1/5    20.0%
+v146 ROUTER (85 files)    7/20   35.0%
+v147                      3/10   30.0%
+v150                      1/10   10.0%
+v151                     17/30   56.7%
+v152 SINGLE (LOKI+turbo)100/180  55.6%   [46.6, 64.6]
+our v140                187/360  51.9%
+```
+**Pooled router versions (v145+v146+v147): 11/35 = 31.4% [12.4, 50.4].** Single-bot v152 beats the
+pooled routers by **+24.2pp ± 21.0pp — marginally significant, n=35 on the router side.**
+⚠ **NOT ESTABLISHED, and I will not overstate it: 5-20 games per router version, bands of ±20-40pp.
+What IS unambiguous is the REVERSION — they built the thing, ran it, and went back to one bot.**
+⇒ **This is exactly the caveat our ceiling agent flagged above its own headline — "CV certifies new
+GAMES vs v140, not new OPPONENTS" — and a teammate has now run the experiment in production.**
+⇒ **It does not refute the local 59.19%; it prices the generalisation risk at something real.**
+
+## 4. WHAT v152 (THE LIVE HOLDER) ACTUALLY CARRIES — read from its source
+**It is OUR bot.** `main.py`'s docstring is our LOKI-1 header verbatim, `eco.py` is our ported
+economy, `doctrine.py` is `_v103split`'s file. Diff vs `_v223sealrepair`: main 276 lines, raid 164,
+**eco 781**, doctrine 144. **20 new constants, ZERO dropped — purely additive.**
+* **`LOKI-TURBO` (2026-08-15)** — *"the hot paths rewritten and NOTHING else changed"*: `Position.add`
+  → integer arithmetic on precomputed deltas; per-round rebuilds of static lists → caches keyed on
+  their dependencies; dict/tuple literals hoisted out of loops. New: `CARD_DELTAS`, `CARD_OPPOSITE`,
+  `DELTA`, `DIR_DELTAS`, `NAV_NODE_BUDGET`. **This is a CPU play, not a strategy play.**
+* **The `T4` block — six features, all DEFENSIVE/ECONOMY, none offensive:**
+  1. **Ammo idle brake** (`T4_AMMO_IDLE_ON/RNDS=12/MIN=16`): a magazine that has not fallen in 12
+     rounds is not being fired by anything, whatever the comm store says — stop converting. Self-
+     clearing on the first shot.
+  2. **Burn cap** (`T4_BURN_CAP_ON`, `T4_BURN_RNDS=10`, `T4_AMMO_PER_RND=4`): never bank more ammo
+     than the guns could burn in 10 rounds. **Binds the forward-Sentinel floor from 60 down to 40.**
+  3. **Seat-first over chase** (`T4_SEAT_FIRST_ON`): while the Core bleeds, taking a heal seat
+     (+4 HP/round for 1 Ti) strictly dominates chasing an intruder (0 for 1 move) — *builders cannot
+     attack builders*. Chase is left alone at full HP.
+  4. **Chase break** (`T4_CHASE_BREAK_ON`, `MAX_RNDS=6`, `COOLDOWN=20`): a chase with zero net
+     displacement over 6 rounds is a lockstep, not a pursuit.
+  5. **Conditional convergence of seat 1** (`T4_CONVERGE_SEAT1_ON`, `T4_SEAT1_MIN_DMG=40`): the
+     builder owning the trunk chain joins the heal convergence only after 40 damage (four Sentinel
+     shots), because an earlier revision that recalled the whole economy *"stalled the chain at r16
+     and finished with 0 titanium delivered"*.
+  6. **Bleed beacon** (`T4_BLEED_BEACON_ON`, `T4_BLEED_MIN=8`, `T4_BEACON_BAND_DSQ=64`): a builder's
+     vision is r²=20 so `_core_shelled` is blind at working range; the Core publishes its own damage
+     into **comm slot 9 (`SLOT_HEAL_BUDGET`), which `loki_analysis.md` records as written every round
+     and read by nobody — provably dead code reused at zero slot cost.**
+⚠ **CORRECTION TO MY OWN FIRST READING, caught by reading the comments rather than the constant
+names: `T4_SEAT_FIRST_ON` / `T4_CONVERGE_SEAT1_ON` / `T4_SEAT1_MIN_DMG` are about HEAL SEATS around
+our own Core and a ROLE INDEX — NOT about map side A/B.** I nearly relayed them as a convergence with
+today's seat-asymmetry work. **They are not. The only genuine (map,side) construct is v145's router.**
