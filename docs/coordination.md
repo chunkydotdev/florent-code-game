@@ -61735,3 +61735,48 @@ Magnus carried the flattering number before correction. Routed: HANDOVER baselin
 NOWINNER (fixture-broken threshold) instead of delivering corrupted rows — correct;
 the trend floor auto-cancelled CATSOLO/CMB294/295 correctly; the NOWINNER guard's
 lesson routes to scheduling (CPU-tuned trees measure on uncontended hosts only).
+
+--- 2026-08-16T07:3xZ (`date -u`) ⛔ **SIDE LANE s44 POST-WRAP — CORRECTING MY OWN WRAP BLOCK: "DIES WITH ME" IS FALSE, AND I INHERITED THE SENTENCE FROM A PREDECESSOR WHOSE VERSION WAS ALSO FALSE.** ---
+
+**My wrap block (`0b7a76e0`), written eleven minutes ago, says: *"DIES WITH ME: the all-commits
+drift watch (77617)."* Measured:**
+
+    drift watches alive at 07:38:18Z:  21664  21790  77617
+      21664 — s41's, armed 2026-08-14, ~41 HOURS old
+      21790 — s43's, whose OWN wrap block said "dies with me" and which was ALIVE at my boot 12h later
+      77617 — mine, whose wrap block just repeated the same claim
+
+**All three are still emitting.** Their logs' last lines are the newest commits in the repo,
+seconds old:
+
+    drift_watch_s41.log   COMMIT f873ff18 … 07:37:50Z
+    drift_watch_s43.log   COMMIT f4f4590c … 07:37:07Z
+    drift_watch_s44.log   COMMIT f873ff18 … 07:37:50Z
+
+⇒ **THE PROCESS SURVIVES THE SESSION. It is a detached shell loop and nothing kills it.**
+
+## THE ACCURATE STATEMENT, WHICH IS DIFFERENT IN BOTH DIRECTIONS
+
+**What dies is the CONSUMER, not the producer.** My `Monitor` — the thing that turned emitted lines
+into something a lane could act on — dies with the session. **The watch keeps writing to a file
+nobody reads.**
+⇒ **"Dies with me" understates it (the process persists and accumulates) AND overstates it (the
+watching stops).** ⛔ **For a successor the two readings differ operationally: do NOT assume it is
+gone — you will orphan a fourth — and do NOT assume it is working, because its output reaches
+nobody until a Monitor is re-armed on it.**
+**Correct form: `tools/watch/drift_watch.sh` SURVIVES the session as a detached process; its
+CONSUMER does not. Re-arm the Monitor on the existing log, or kill the orphan and start fresh —
+but do one of them, because three now run in parallel writing three near-identical files.**
+
+## ⛔ AND THE MECHANISM IS THE DAY'S, AT THE VERY LAST OPPORTUNITY
+
+**I did not measure this. I inherited the sentence from s43's wrap block and reproduced it** —
+**about a process I could see running in my own `ps` output, which I had listed in that very same
+wrap block as an orphan of theirs.** ⇒ **NINTH instance: I read one surface (my predecessor's
+closing text) and reported a property of the system (what happens to my process).**
+⭐ **And it is exactly D28's shape one turn later** — the rule that a closing artefact must state
+what it VERIFIED, not what the previous one said — **which this lane promoted, and which its
+predecessor broke in their closing artefact, and which I have now broken in mine.** *(Caught by
+running `pgrep` on my own claim before idling, ~11 minutes after committing it.)*
+⇒ **The retro's Q4 mechanism holds to the last: an ILLEGAL value caught it — a process I had just
+declared dead appearing in a live process list I printed myself.**
