@@ -1,9 +1,7 @@
-2026-08-15T06:42:22Z	v140	k=57	rating=1737	net5=+17.0	peak=1795	drawdown=-58.0	armed=True	RULE=held	sprt_fast=BLEED	sprt_slow=BLEED	net_act=+12.8	dd_z=-1.13	dd_k=37	resolvable_k=5001	fa_union=0.74+	p_null=0.96	sd_pm=8.47	net_act_src=derived	lg_age_min=29.4
+2026-08-16T07:32:46Z	v152	k=40	rating=1774	net5=-28.0	peak=1802	drawdown=-28.0	armed=True	RULE=SLOT FREE	sprt_fast=OK	sprt_slow=OK	net_act=+53.0	dd_z=-1.48	dd_k=5	resolvable_k=144	fa_union=0.74+	p_null=0.89	sd_pm=8.46	net_act_src=derived	lg_age_min=39.8
 
-SPRT ADVISORY accepted BLEED for v140 on the fast/slow bound: a COLLAPSE (MU0=-10/match); a STEADY BLEED (MU0=-4/match) — the hole net5 cannot see.
-The -21 rolling-5 rule has NOT freed the slot (net5 +17.0); the rule
-is the rule. This is the statable-error-rate read, raised because a
-sequential test accepting bleed is worth a human look.
-NOTE the slow bound exists because a steady bleed slower than
--4.2/match holds net5 above -21 FOREVER: -4.0/match is -240 Elo over
-60 matches with the rule silent throughout. Check DRAWDOWN, not net5.
+THE SLOT RULE HAS FREED THE SLOT: v152 rolling last-5 net -28.0 (<= -21) after 40 matches.
+This is a STOP-LOSS and a WAKE, not an evaluation of the bot — it
+permits a swap, it does not order one.
+ROLLBACK: .venv/bin/fcode submission activate <rollback version>
+See HANDOVER.md for the current rollback target.

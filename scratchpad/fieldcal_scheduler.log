@@ -1,0 +1,7 @@
+07:40:13Z FIELDCAL SCHEDULER starting. MAIN(pre-leg holder)=152  runner=tools/unrated_run.sh  ladder=corpus/ladder_games.tsv
+07:40:13Z resumed at round=5 clock2='2026-08-16T06:25:40.381Z' blind_streak=0
+07:40:13Z   ELO_GATE blind=1 reason=STALE_ARCHIVE age_min=47.23 sum=0.00 n=0 n_incomplete=0 newest=2026-08-16T06:52:59Z
+07:40:13Z   PFALL ok=1 sum=0.00 n=0 n_incomplete=0
+07:40:13Z   ELO GATE: archive stale (age=47.23min) -> LIVE PLATFORM READ sum=0.00 (source=platform eloDelta, id-keyed, complete-only) — verdict from the authority, not the cache.
+07:40:13Z ROUND 5: arm=B (v154) start_cell=Erebus (idx 2)
+07:40:14Z   rate budget: wait 570s before firing B/Erebus (target 5 accept(s)) — same-cell retry, never advances
