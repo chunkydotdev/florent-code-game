@@ -65678,3 +65678,57 @@ interesting sentence than "the principal already asked this."**
 ⇒ **Net: I contributed nothing here that was not already in motion, and said so.**
 
 --- 2026-08-16T12:13:44Z BUILDER s46 — inventory BANKED (docs/research/V152-DIFF-INVENTORY-2026-08-16.md) with Magnus's n=600 evidence caveat stamped at bank time; Magnus green-lit the path ("lets go!"). IN-FLIGHT: ARM-B HAND-PORT agent (opus) — turbo × bodyaware merged _bfs_direction (bodies bytearray through the flat template, two passes), target bots/_v428tba; builds 1-2 (sentban composite _v426bcs, turbo4-only _v427turbo4) still with the sonnet agent. ---
+
+--- 2026-08-16T12:31:17Z RESEARCH s46 ⭐⭐ **x3r0'S TWO CLAIMS RE-DERIVED ON OUR OWN GAMES — ONE SUPPORTED AS A PHENOMENON BUT NOT AS A VALUE, ONE CONTRADICTED AT 3× — AND THE CONTROL IS WORTH MORE THAN EITHER.** `docs/research/X3R0-CLAIMS-REDERIVED-2026-08-16.md` ---
+
+**POPULATION, one enumeration rule, stated because a count without one is not quotable:** every
+`meta_join` row whose team name is literally `OpenSverige` with its replay on disk — **10,231 of
+10,231, 0 dropped, 0 decode errors.** 4,185 RATED + 6,046 UNRATED, 58 opponents,
+2026-08-07T11:31Z → 2026-08-16T09:19Z. **Seat from team NAME, not `winnerSide` (TRAP 7); agrees
+with `join.our_team` 4,185/4,185.**
+
+⛔ **FIRST FINDING, AND IT IS AN INSTRUMENT GAP: THE CORPUS TAPES CANNOT ANSWER EITHER CLAIM.**
+`econ.tsv` carries ammo only per 4-round BANDS; there is **no death stream, no per-round core HP,
+no builder positions.** ⇒ **the replays had to be decoded directly.** *(Recorded so the next person
+asking a per-round question knows the tapes stop short before they spend an hour finding out.)*
+
+**CLAIM A — SUPPORTED AS A PHENOMENON, AND ITS VALUE IS NOT.** Ammo ≥10 with zero living
+gunner+sentinel (launchers excluded — no ammo): **US 763,160 / 2,421,705 = 31.51%** [26.73, 36.70]
+opponent-clustered; rated 31.77 / unrated 31.27. **67% is post-turret-death — his ghost-magazine
+mechanism CONFIRMED.**
+⚠⚠ **BUT THE RATE AND THE CURRENCY DISAGREE, AND THE CURRENCY IS WHAT PAYS: titanium converted with
+zero turrets alive is 30.8 Ti/game for US against 45.8 for THE FIELD — as a SHARE of conversion,
+5.29% vs 5.03%, A TIE.** **Median 24 Ti/game, p99 180, max 1,419; only 2.0% of games exceed 100 Ti.**
+⇒ **TAIL-DRIVEN, NOT BODY-DRIVEN. The mechanism is real and the average game loses almost nothing to
+it.**
+
+**CLAIM B — CONTRADICTED AT HIS MAGNITUDE.** His exact conjunction (free seat AND Ti≥1 AND builder
+within d²≤25 AND nobody seated) over damaged-core rounds: **87,946 / 1,100,957 = 7.99%**
+[6.36, 9.84] — **and 8.5% on v151 itself — against his 24%.** His damaged-round density is **2× ours
+(147/game vs 78.7)**, consistent with a **siege-selected subset.**
+
+## ⭐⭐ THE CONTROL IS THE FINDING, AND IT REVERSES WHO THE DEFECT BELONGS TO
+**THEM reads 20.79% on x3r0's own cell.** ⇒ **his 24% is approximately a FIELD property, measured
+and then attributed to us, where it is THREE TIMES SMALLER.** **The field leaves no builder on any
+heal seat in 39.8% of bleeding rounds (us 15.6%) and lands NO HEAL AT ALL in 55.8% (us 21.0%).**
+⇒ ⭐ **A PLANK WE DO NOT HAVE: enemy core damage is ~2.7× LESS LIKELY to be healed off than ours ⇒
+SUSTAINED CHIP MAY BEAT BURST.** ⚠ **Confounded by our own seat-denial (we block 25.0% of their
+seats, they 10.8% of ours) — a hypothesis needing a live leg and `target_value.py` first, NOT a
+queue row yet.**
+
+**AUDIT FINDINGS ON THE PATCH ITSELF, which is what this exercise was for:** **v152's idle rate is
+FLAT vs v151 (31.4 → 31.1%)** — the ammo brake did not move the metric it targets — **and v152 is
+NOT our best version on self-blocked heal seats (17.8% vs v146's 8.9%).**
+
+**CONTROLS, all able to fail:** HP>500 in 0/20,462 · both partitions 0 violations · final core HP
+54.3 lost vs 439.2 won · **0 entity-id resurrections in 50,068 places** · 250 zero-turret games sum
+to exactly 0 on the turret arm.
+
+## ⛔ AND I RECOVERED THE INSTRUMENT, BECAUSE IT WAS ABOUT TO EVAPORATE
+**The decoder was written to the SESSION scratchpad — which dies with the session.** The doc
+honestly said *"not committed"*, **and saying so does not preserve it: a published finding whose
+instrument disappears is unreproducible by construction.** ✅ **Recovered to `tools/x3r0_measure.py`
+(349 lines) with the PRE-DECLARED expectation cells at
+`docs/research/X3R0-EXPECTATIONS-2026-08-16.md`, so a successor can check what was predicted BEFORE
+the read.** ⭐ **Same class as this morning's BROKEN-EXEMPTION: a provenance citation is only worth
+the persistence of what it points at.**
