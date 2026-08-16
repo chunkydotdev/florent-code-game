@@ -65553,3 +65553,27 @@ count I would have quoted in a retro as evidence of rigour.**
 --- 2026-08-16T11:58:57Z BUILDER s46 — IN-FLIGHT: V152 DIFF-MINING agent (opus — judgment call on plank boundaries). Magnus: "What is v152 doing? Can we use it and combine it with our experiments?" Scope: behavioral diff _x3r0v152 vs _v223sealrepair, carve into portable plank candidates, map against our planks/queue, rank by port cost x plausible share. Also fixed: IDNULL140 was refusal-looping (basename collision — runner scores by basename); now runs as byte-identical _v340idnull. ---
 
 --- 2026-08-16T12:07:16Z BUILDER s46 — **V152 DIFF-MINING REPORT LANDED AND THE PREMISE FLIPS: v152 IS NOT A FORK — IT IS OUR v140 CHASSIS + x3r0's PATCH** (+1,014/−302; doctrine a pure append; AST declaration diff: 33 additions, 0 deletions, 0 retunes; he staged FROM our tree 13 min after its mtimes). Two families: LOKI-TURBO (the CPU/navigation rewrite — removes the mid-flood truncation behind #44's 87%-of-ceiling tax and #63's 3.3× locks) and turbo4 (6 toggled doctrine fixes: ghost-magazine ammo brake, burn cap, seat-first-while-shelled, chase-break, bleed beacon on the provably-dead slot 9, converge admission). ⛔ Evidence caveat: his cited numbers come from HIS instruments (loki_analysis.md, turbo_identity.py — not in this repo); mechanisms verified here, magnitudes not re-derived. ⛔ TLE caveat on the 57.02: v152 is the lighter arm and contention flatters it — answered for OUR shard: ws2 ALONE, 6 runners on 6 cores, 0 NOWINNER (the uncontended-box re-queue existed for exactly this). **G421g2 prefix@2700 = 55.11 — FIRST COMBO-BAR SURVIVOR (+0.11pp).** IN-FLIGHT: one sonnet build agent — (a) sentban PLANKS entry + compose sentban×bodyaware×catapult (Magnus's ask, on the survivor); (b) ARM-A extraction: turbo4-only tree (v140 + Family B blocks ONLY, zero CPU change — the contamination-proof half). The turbo×bodyaware hand-port (the super-additivity bet: bodyaware doubles the flood cost, turbo removes the truncation eating its value) follows as its own task. stack.py BASE stays at v223 (the ancestor trap is documented; v152 forks FROM v223 so plank rows pointing at it are legal). ---
+
+--- 2026-08-16T12:08:27Z (`date -u`) ⚠ **SIDE LANE s45 — COMBO-BAR: THE FIRST TWO FIRINGS PRODUCED OPPOSITE VERDICTS ON STATISTICALLY INDISTINGUISHABLE NUMBERS. Not a defect — the concrete demonstration of what the priced coin-flip band IS.** ---
+
+    SE at n=2,700 = 0.96pp
+    G417g4  54.67  ->  -0.34 sigma from the 55.0 bar  ->  CANCELLED
+    G421g2  55.11  ->  +0.11 sigma from the 55.0 bar  ->  SURVIVED
+    the two differ by 0.44pp — LESS THAN HALF ONE STANDARD ERROR
+
+⇒ **The gate's first two firings gave opposite answers to arms the instrument cannot tell apart.**
+✅ **This is not a defect and it is not a surprise: the builder priced a true-55 arm at a 50% kill
+BEFORE adopting the bar, and Magnus set the cull deliberately.** **It is the priced behaviour
+arriving on schedule, and worth recording because a prediction met is cheaper to trust later than
+one merely made.**
+
+⚠ **THE ONE THING TO GUARD IS THE WORD "SURVIVOR".** *"First combo-bar survivor at 55.11"* reads as a
+positive signal. **Surviving a FUTILITY cull is not evidence of quality — least of all at +0.11σ,
+where the arm's true value is as likely below the bar as above it.** ⇒ **A survivor is an arm the
+gate DECLINED TO KILL, not an arm the gate ENDORSED.** **Carry it that way, exactly as the ECOSCK6
+verdict carried "discard" as a decision rather than a null claim.**
+
+⭐ **AND IT IS THE CONCRETE INSTANCE OF THE PRICING GAP FLAGGED AT 10:54Z:** the header prices the
+kill side (true-53 → 98%, true-55 → 50%) and not the cost side (true-56 → 14.8%). **Both of the
+first two firings sit inside the band where the cost side is unwritten.** ⇒ **the ask is unchanged
+and now has data behind it: one line recording the true-56/57 rates beside the true-53/55 ones.**
