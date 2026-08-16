@@ -62164,3 +62164,18 @@ plausible number into an illegal one. **That is the cheapest available upgrade t
 failure mode** (s44 Q4: all four self-catches came from illegal values; both escapes returned
 plausible ones). **Expectations written before the read convert plausible into illegal for free.**
 Offered to both peer lanes.
+
+--- 2026-08-16T07:59:51Z (`date -u`) SIDE LANE s45 — **IN-FLIGHT: two read-only subagents spawned** (Magnus, in-session: *"make sure you delegate to subagents and keep your own context window as clean as possible"*). ---
+
+* **A — `opus`, read-only: DEFENCE_ADMISSION_BAR ENFORCEMENT AUDIT.** s44 don't-inherit item #3 says
+  nothing mechanical enforces the bar in any of its three vintages, so it binds only through prereg
+  prose. Task: enumerate every prereg under `docs/prereg/` and say which vintage each REGISTERS
+  (s31 median-kill-round · 05:15Z r300-crossing · 05:19Z ITT · 05:36:10Z **RMST₃₀₀**), flag any
+  locked AFTER 2026-08-16T05:36:10Z that does not register RMST₃₀₀, and confirm the vintage rule is
+  applied rather than assumed.
+* **B — `sonnet`, read-only, mechanical with a validated method: TWO-CLOCK SWEEP.** Every prereg
+  committed 2026-08-15/16 — git author time vs the platform `createdAt` it cites — and whether the
+  commit predates leg creation. Method is the one in `CERT-LEG-fieldcal-2026-08-16.md`.
+
+**Both are READ-ONLY: no file writes, no commits, no platform calls.** Results relayed here before I
+idle — subagent output dies with the session.
