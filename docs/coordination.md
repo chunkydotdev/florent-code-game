@@ -58400,3 +58400,79 @@ what that conflation looks like from outside. Related to `QUEUE #56`; not re-ope
 ⭐ **A CHECK THAT FOUND NOTHING IS STILL A CHECK THAT RAN** — and this one is known to produce the
 other verdict (yesterday's Juusto flip), so a null from it is informative rather than decorative.
 Recording the null explicitly so the next lane does not re-derive it inside the same hour.
+
+--- 2026-08-16T04:5xZ (`date -u`) **SIDE LANE s44 — PRE-FIRE AUDIT OF FIRE ORDER #1. THE PRIMARY METRIC CONDITIONS ON A POST-TREATMENT OUTCOME, AND THE UNBIASED FORM IS 2.26x CHEAPER. Nothing has fired; this beats the decision.** ---
+
+`5bd7a541` prices a `bodyaware` live leg and pre-registers **"median kill round censored at 250"**
+as PRIMARY. The leg is HELD pending an activation window, so this is a flag before the fact rather
+than an autopsy. **The design is good and the censoring trick is right** — `KILL_WINDOW_RND` is
+`PROGRAMME.md`'s own constant, so it cannot be tuned after the fact. Two things about the metric.
+
+## ⛔⛔ 1. THE METRIC IS COMPUTED ON KILL-WINS, AND WINNING IS A POST-TREATMENT OUTCOME
+
+§B sizes with *"our kill-wins = 49% of games (inflation applied)"* ⇒ the metric is evaluated on
+**the subset of games we won by core kill.** In a two-arm A/B that is **conditioning on a
+collider**: the treatment changes which games enter the denominator, so the arms' kill-win subsets
+are not comparable and the contrast is not the causal one.
+
+**IT IS LIVE, NOT THEORETICAL, AND THE BOARD ALREADY SHOWS THE SIGNATURE.** `bodyaware` moves win
+share **+3.7pp** locally — so it necessarily moves the subset. The leaders read *"win more AND
+kill later"* (TREAT 232 vs CTRL 209). **A treatment that converts marginal SLOW LOSSES into slow
+WINS adds slow kills to the numerator and reads as a kill-round regression having caused none** —
+and the current metric cannot separate that from a real slowdown. That is the same shape as the
+biased dose counter banked at s33, whose denominator shrank when the treatment succeeded.
+
+**THE ITT FORM: censor at 250 over ALL games — a loss or an r1000 finish scores 250, i.e. "did not
+kill inside the window."** Every randomised game contributes; nothing is conditioned on outcome.
+
+## ⭐⭐ 2. AND IT IS **CHEAPER**, WHICH IS THE PART THAT MAKES THIS ACTIONABLE RATHER THAN PEDANTIC
+
+Measured on the LIVE population (`ladder_games.tsv`, v140-since-08-14 + v152, n=520 games /
+104 matches):
+
+    WIN-CONDITIONED censored@250   n=271  median 172  mean 180.0  sd 56.4   DEFF 1.265
+    ITT censored@250 (all games)   n=520  median 250  mean 213.5  sd 53.7   DEFF 1.185
+
+    re-priced, two-arm 80% power, WITH the measured DEFF:
+      ±20 rounds   win-conditioned 303 games/arm (4.0 h)  |  ITT 134 (1.8 h)
+      ±15 rounds   win-conditioned 539 games/arm (7.2 h)  |  ITT 238 (3.2 h)   <- 2.26x
+      ±10 rounds   win-conditioned 1212 games/arm (16.2 h)|  ITT 536 (7.1 h)
+
+⇒ **the unbiased form costs LESS THAN HALF.** Both effects run the same way: conditioning on
+winning correlates games *within* a match (a 5-0 contributes five kill rounds, a 0-5 contributes
+none), so **the collider inflates the design effect as well as biasing the estimate.**
+
+## ⭐ 3. PAYING THE DEBT RESEARCH FLAGGED AS OWED AT s43 — WITH A VALIDATED ESTIMATOR
+
+Their own s43 wrap: *"THE COUNT-METRIC INTERVAL IS OWED, NOT BORROWED — no interval belongs in a
+prereg until the cluster enumeration is performed for a per-game count."* **§B applies the
+win-rate inflation and NO design effect at all**, and the constants it might have borrowed
+(1.833 unrated / 1.529 rated) were **measured on PROPORTIONS**, not on a continuous per-game
+outcome. So the number had to be measured. It is, above.
+
+⛔ **AND THE ESTIMATOR IS VALIDATED BEFORE ITS UNKNOWN CELLS ARE TRUSTED**, per the collar-heal
+standard: run on the **binary win/loss** outcome over the same matches it returns **DEFF 1.344**
+against `CLAUDE.md`'s published rated **within-opponent 1.366** — the cell my match-only estimator
+should reproduce. **Agreement to 1.6% on a known number is what licenses the two unknown ones.**
+
+⇒ **Not applying DEFF understates required n by 18–27%, not by 83%** — the continuous metric
+clusters far LESS than the proportion does, so **borrowing 1.833 would have over-corrected by
+~55%.** The measured value is smaller than either error.
+
+## ⚠ FOUR LIMITS, STATED SO THE NUMBERS ARE NOT USED WIDER THAN THEY WERE MEASURED
+
+1. **The ITT MEDIAN PINS AT 250** — only ~30% of games are a kill inside the window, so the median
+   game does not kill and the statistic sits on the censoring point. **The ITT form must use the
+   MEAN.** That is a real design change, not a free swap, and the prereg must name it.
+2. **The ITT mean BLENDS kill-rate with kill-speed.** `DEFENCE_ADMISSION_BAR` is phrased in
+   kill-round terms; whether a blended quantity satisfies it is a **definitional call for the
+   builder and Magnus**, not mine. I am pricing both forms, not choosing.
+3. ⛔ **EVERY FIGURE HERE IS OFF THE RATED TAPE AND THE LEG FIRES UNRATED.** Different opponent
+   mix, different clustering — unrated proportions cluster HARDER than rated (1.833 vs 1.529), so
+   **the unrated continuous DEFF is probably above my 1.185/1.265.** Treat these as the right
+   ORDER and the right RANKING, not as the leg's own constants.
+4. **§B's 49% kill-win share is CORRECT for the population that matters** — v140+v152 measures
+   **52.1%** (v140 alone exactly 50.0%), so their figure is mildly conservative. ✅ *I first
+   computed **39.8%** and had it written as a flag; that is the ALL-TIME number, dominated by dead
+   versions, and it is the wrong population for a leg fired with today's tree.* **Killed on myself
+   before publishing — it is the exact substitution this lane flags in others.**
