@@ -305,19 +305,26 @@ function render(s) {
           const tgt = r.target ? ` <span class="vs">/ ${esc(r.target)}</span>` : '';
           const hbAge = r.hb_age_min != null ? `hb ${esc(r.hb_age_min)}m` : 'no heartbeat';
           const eta = r.eta_min != null ? ` · ETA ~${esc(r.eta_min)}m` : '';
+          const res = r.result && r.result.share != null
+            ? `<span class="mono">${esc(r.result.share)}%</span> <span class="sub-mono">±${esc(((r.result.hi - r.result.lo) / 2).toFixed(2))}pp (n=${esc(r.result.n_decided)})</span>`
+              + (r.result.nowinner ? ` <span class="badge b-warn" title="no-winner games excluded from the denominator; a burst of these is fixture corruption, see the shard page">${esc(r.result.nowinner)} NOWINNER</span>` : '')
+            : (r.result && r.result.n_decided > 0
+               ? `<span class="sub-mono">n=${esc(r.result.n_decided)} — under 400, no rate (band wider than any effect we chase)</span>`
+               : '<span class="vs">—</span>');
           return `<tr onclick="location.href='/shard?id=${encodeURIComponent(r.shard)}'" style="cursor:pointer">
             <td class="mono"><a href="/shard?id=${encodeURIComponent(r.shard)}">${esc(r.shard)}</a></td>
             <td>${stateBadge(r.state)}</td>
             <td class="mono">${r.rows != null ? esc(r.rows) : '—'}${tgt}<div class="sub-mono">${hbAge}${eta}</div></td>
+            <td>${res}</td>
             <td style="font-size:12px">${r.treatment_ver ? esc(labText(r.treatment_ver)) + ' <span class="vs">vs</span> ' + esc(labText(r.control_ver)) : '—'}</td></tr>`;
         };
         const prior = (h.prior || []).length === 0 ? ''
           : `<details style="margin:6px 0 14px"><summary class="count" style="cursor:pointer">${h.prior.length} artefact(s) from earlier programmes on this box (not in its current worklist)</summary>
-             <div class="scroll"><table><thead><tr><th>Shard</th><th>State</th><th class="mono">Progress</th><th>Arms</th></tr></thead>
+             <div class="scroll"><table><thead><tr><th>Shard</th><th>State</th><th class="mono">Progress</th><th class="mono">Result</th><th>Arms</th></tr></thead>
              <tbody>${h.prior.map(row).join('')}</tbody></table></div></details>`;
         return `<h3 class="mono" style="margin:14px 0 6px">${esc(h.host)} ${pull}
             <span class="count">· ${esc(h.n_running)} running · ${esc(h.n_queued)} queued · worklist gen ${esc(h.worklist_generated || '?')}</span></h3>
-          <div class="scroll"><table><thead><tr><th>Shard</th><th>State</th><th class="mono">Progress</th><th>Arms</th></tr></thead>
+          <div class="scroll"><table><thead><tr><th>Shard</th><th>State</th><th class="mono">Progress</th><th class="mono">Result</th><th>Arms</th></tr></thead>
           <tbody>${(h.rows || []).map(row).join('') || '<tr><td colspan="4">worklist unreadable</td></tr>'}</tbody></table></div>${prior}`;
       }).join('');
 

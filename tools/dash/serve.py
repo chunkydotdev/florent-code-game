@@ -768,6 +768,50 @@ def _remote_last_pull(host_dirname: str) -> dict:
             "age_min": round(age_min(ts), 1) if ts else None, "line": last}
 
 
+_TSV_SHARE_CACHE: dict = {}
+
+
+def _tsv_share(tsv: Path) -> dict | None:
+    """Decided-games share off a mirrored shard tape, house conventions:
+    denominator is T/C rows only (NOWINNER excluded by definition), naive
+    ±1.96·sqrt(p(1-p)/n) band (local DEFF 0.98 ⇒ no inflation), and NO RATE
+    under 400 decided rows — the band would be wider than any effect we chase
+    (corefill_status.sh's own rule, mirrored not re-invented). Cached by
+    (path, mtime): the page polls, the tapes are hundreds of KB."""
+    try:
+        st = tsv.stat()
+    except Exception:
+        return None
+    key = (str(tsv), st.st_mtime)
+    hit = _TSV_SHARE_CACHE.get(key)
+    if hit is not None:
+        return hit
+    t = n = nowinner = 0
+    try:
+        with tsv.open(errors="replace") as fh:
+            next(fh, None)
+            for line in fh:
+                f = line.split("\t")
+                if len(f) >= 7:
+                    if f[6] == "T":
+                        t += 1; n += 1
+                    elif f[6] == "C":
+                        n += 1
+                    elif f[6] == "NOWINNER":
+                        nowinner += 1
+    except Exception:
+        return None
+    out: dict = {"n_decided": n, "nowinner": nowinner}
+    if n >= 400:
+        p = t / n
+        hw = 1.96 * (p * (1 - p) / n) ** 0.5
+        out.update(share=round(100 * p, 2), lo=round(100 * (p - hw), 2),
+                   hi=round(100 * (p + hw), 2))
+    _TSV_SHARE_CACHE.clear() if len(_TSV_SHARE_CACHE) > 400 else None
+    _TSV_SHARE_CACHE[key] = out
+    return out
+
+
 def _remote_shard_row(mirror: Path, shard: str) -> dict:
     """State + numbers for one remote shard, from pulled artefacts ONLY.
 
@@ -780,7 +824,8 @@ def _remote_shard_row(mirror: Path, shard: str) -> dict:
     tsv = mirror / f"{shard}.tsv"
     row: dict = {"shard": shard, "rows": None, "target": None, "state": "queued",
                  "hb_status": None, "hb_at": None, "hb_age_min": None,
-                 "eta_min": None, "heartbeat": _file_facts(hb)}
+                 "eta_min": None, "heartbeat": _file_facts(hb),
+                 "result": _tsv_share(tsv)}
     line = ""
     try:
         line = hb.read_text(errors="replace").strip()
