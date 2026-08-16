@@ -67595,3 +67595,60 @@ figure is one line off `--dry-run`, and any flag about wasted compute carries it
 ✅ **What survives untouched:** every-case-not-tail-case (2 of 2 would-be stops remote), the local
 shards all clear of the floor, and the `--dry-run`-as-oracle pattern. **The finding was right; its
 actionability was not, and only one of those was in the tag.**
+
+--- 2026-08-16T15:5xZ ⛔ **SIDE LANE s47 — CORRECTION: "NO LIVE ARM IS AFFECTED" WAS PUBLISHED 38 MINUTES AFTER ONE OF THE FOUR WAS FLOOR-STOPPED. Conclusion survives; the evidence I gave for it was false. And the check that caught it produced the better finding.** ---
+
+## THE ERROR
+
+I wrote: *"no live arm is affected: the lowest of the four is 55.28%, more than three points clear."*
+⛔ **`SEALPECK` — one of the four — was cancelled at `2026-08-16T15:08:23Z`, `TREND-FLOOR@1000`,
+`fired_on=46.90`, n=1162, share 46.39 [43.52, 49.25]** (`auto_gate_cancelled.tsv`;
+`results.tsv: sealpeck-autostop-1000`). **I published 38 minutes later that all four were clear.**
+
+✅ **THE CONCLUSION SURVIVES AND I AM NOT RESCUING IT — it survives for a reason I can state: `SEALPECK`'s
+prefix was 46.90, which dies under the OLD 51.0 floor exactly as it dies under 52.0.** So the
+*retrospective threshold change* still does not bite anything. **But my evidence — "all four are 3pp
+clear" — was false: one was 5pp BELOW and already dead.**
+
+⛔ **MECHANISM, and it is today's fourth instance of one shape:** I took the four-arm list from the
+builder's boot message at ~13:50Z, **never re-derived it**, then read status off a `--dry-run` that
+did not contain `SEALPECK` — **and did not notice the absence.** ⇒ **an absence in a list I never
+enumerated.** *(`SEALPECK` does appear in that output — inside the 238-name BARS registry line, not
+as a live shard. A grep for the name returns 1 either way, which is exactly the confound that let it
+pass.)*
+
+## ⭐⭐ AND THE FINDING THE CHECK PRODUCED — IT BEARS ON HOW THE BOARD IS READ
+
+**Testing the builder's claim that the remote gap *bought* the refutation, the arithmetic came out
+against my expectation and then past it:**
+
+```
+ECOSCK4R2  stopped-at-mark (n=1000)  46.40%  CI [43.31,49.49]  ±3.09   excludes 51.33 bar: YES
+           ran to full n (n=5400)    49.22%  CI [47.89,50.55]  ±1.33   excludes 51.33 bar: YES
+```
+⇒ **Full n did NOT change the futility direction — the optimistic edge was already under the bar at
+1000.** What it bought was **precision, and a correction**: the n=1000 read **excluded 50** (i.e.
+"significantly worse than control") and the full-n read **does not**. ⇒ **a verdict typed at the
+floor mark would have been an OVERSTATED negative.**
+
+⭐ **THE GENERAL FORM, and its direction is ARITHMETIC rather than an empirical claim: the floor
+selects on a LOW PREFIX DRAW, so conditional on being stopped, an arm's true share is HIGHER in
+expectation. Regression to the mean is guaranteed by the selection rule; only the size needs data.**
+
+**The only measurable cases are arms the gate WANTED to stop and COULD NOT — i.e. the remote gap is
+the sole source of evidence about the bias of its own stops:**
+
+| arm | prefix@1000 | share on the longer run | drift |
+|---|---:|---:|---:|
+| `ECOSCK4R2` | 46.40 | 49.22 (n=5400) | **+2.82** |
+| `ECOPAVR2` | 48.40 | 49.73 (n=3696) | **+1.33** |
+
+**n=2, both upward, mean +2.08pp. The direction is by construction; the magnitude is n=2 and I will
+not price it higher.**
+
+⇒ **CONSEQUENCE FOR THE LOOP, which is why this is worth a note at all: the floor's own text invites
+reuse — *"Rows are KEPT: it remains available as a combination input."* **Anyone mining cancelled
+arms for combinations is reading estimates selected to be pessimistic.** The `fired_on` prefix is the
+worst of the available numbers for that purpose and it is the one the ledger foregrounds.
+⛔ **NOT an argument against the floor** — killing on a noisy prefix is exactly the prospecting trade
+Magnus priced and accepted. **It is an argument about what the SURVIVING ROWS mean afterwards.**
