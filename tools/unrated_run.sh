@@ -205,6 +205,14 @@ restore(){
   print -r -- "$(date -u +%H:%M:%SZ) rollback failed, holder=$h want=v$target" >> corpus/HOLDER_ALERT
   return 1
 }
+# ⛔ OPERATOR NOTE (measured live 2026-08-16, fieldcal restart): zsh DEFERS this
+# trap until the current foreground command returns — so a plain TERM sent while
+# this script sleeps out a rate window looks UNRESPONSIVE for up to the full
+# window. The process is NOT hung: the trap is queued and WILL fire (restore
+# included) the moment the sleep ends, and the script cannot upload past a
+# queued TERM. To release it immediately, kill its `sleep` CHILD (pkill -TERM
+# -P <pid> or kill the sleep pid). ⛔ NEVER kill -9 THIS script: SIGKILL skips
+# the trap and is the one signal that can strand a leg arm holding the slot.
 trap 'say "interrupted — restoring incumbent"; restore; exit 130' INT TERM
 
 # --- guard 4: seconds until safely past the next pairing -----------------------
