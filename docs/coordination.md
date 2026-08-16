@@ -67191,3 +67191,72 @@ The row establishes DEFECT 1 as *"the round gate is past the bar"* (`SURGE_MIN_R
 
 **Both agents are READ-ONLY over `corpus/`. Neither edits a bot, fires a match, or writes a verdict. Results relayed before idling — they die with the session.**
 --- 2026-08-16T14:41:20Z BUILDER s47: HOLDER ATTRIBUTION CLOSED BY MAGNUS, verbatim: "X3r0 moved back the slot to v152, no biggie" — the 14:36:16Z v153->v152 transition is x3r0's own rollback (consistent with v153's 0-10 rated record). No lane action, nothing owed. ---
+
+--- 2026-08-16T14:4xZ ⚠ **SIDE LANE s47 — GATE ARITHMETIC ON THE `TREND_FLOOR` RAISE: 5 of 6 figures reproduce, one is off by 0.3pp in the SAFE direction, and the header is missing the number that matters for the arm AT the floor. Plus the consequence today's TWO gate events have TOGETHER, which neither lane has named.** — *(URGENCY: all DEFER-TO-WRAP. Nothing here wants action now; the floor is sound.)* ---
+
+**`490f5759` raised `TREND_FLOOR` 51.0 → 52.0 on Magnus's direct ruling. Verified as gate arithmetic
+on a live surface governing eight running shards.** ⇒ **The pricing is honest, both-sided and
+unusually good** — it prices the arms the floor KILLS *and* the arms it costs, which is the side
+that normally goes unpriced (D34).
+
+## A. THE HEADER'S @1000 FIGURES, RECOMPUTED RATHER THAN READ OFF THE COMMENT
+
+| true share | my P(kill@1000) | header |
+|---:|---:|---:|
+| 50.0 | 89.70% | 89.7 ✅ |
+| 51.0 | 73.65% | 73.6 ✅ |
+| 52.0 | 50.00% | 50.0 ✅ |
+| 53.0 | 26.32% | 26.3 ✅ |
+| 53.7 | 14.05% | 14.0 ✅ |
+| **55.2** | **2.09%** | **2.4** ⚠ |
+
+**Five of six exact. The sixth is off by 0.3pp and errs CONSERVATIVELY** — the header overstates the
+kill risk on leader-class arms, i.e. understates survival. **The summary claim it supports (*"the
+classes we hunt (55+) survive >97%"*) is true on either number: 97.9% mine, 97.6% theirs.** Not
+worth a change; recorded so nobody re-derives it and thinks they have found something.
+
+## ⭐ B. THE NUMBER THE HEADER DOES NOT CARRY — THE GATE LOOKS **TWICE**
+
+The floor is checked at the n=1000 **and** n=2700 prefix marks. The header prices only the first.
+The two reads are **nested**, so corr = √(1000/2700) = 0.609. Simulated, 20,000 nested draws per row:
+
+| true share | @1000 | @2700 | **EITHER LOOK** | 2nd look adds |
+|---:|---:|---:|---:|---:|
+| 50.0 | 89.2% | 98.1% | **98.8%** | +9.6pp |
+| **52.0 (AT the floor)** | 48.9% | 49.4% | **63.6%** | **+14.7pp** |
+| 53.0 | 25.0% | 14.4% | **30.3%** | +5.3pp |
+| 53.7 | 13.3% | 3.6% | **14.7%** | +1.5pp |
+| 55.2 | 2.0% | 0.03% | **2.0%** | +0.01pp |
+| 60.0 | 0.0% | 0.0% | **0.0%** | +0.00pp |
+
+⛔ **THE HEADER SAYS THE ARM AT THE FLOOR IS A `50.0%` COIN FLIP — *"the only arm the '50%' figure
+belongs to"*. ACROSS BOTH LOOKS IT IS 63.6%.** That sentence is careful and CORRECT about the
+single look; the gate simply does not take a single look. ⇒ **the understatement lands exactly on
+the marginal arm the floor exists to adjudicate**, and *"coin flip at the floor"* is the phrase
+someone would quote when defending the floor's fairness.
+✅ **The classes the raise was actually aimed at are unaffected: bodyaware-class 14.7% vs the quoted
+14.0%, and 55+ unchanged to two decimals.** ⇒ **the raise is sound and the decision does not move.
+One line in the header, at wrap.**
+
+## ⭐⭐ C. THE CONSEQUENCE OF TODAY'S **TWO** GATE EVENTS TOGETHER — NOT NAMED BY EITHER LANE
+
+Separately: **(1)** the floor rose 51.0 → 52.0; **(2)** `ECOPAVR2` ran to **n=3,696** at 49.73
+(prefix@1000 **48.40**) and had to be killed by hand, because — verified at
+`auto_gate.py:1321,1341` — **`apply_stop` REFUSES remote shards, deliberately, with a selftest cell
+asserting it** (`chk("remote apply is REFUSED", done_r, False)`). Two remote workers are live.
+
+⇒ **PUT TOGETHER: the local fleet just got materially more aggressive at stopping, and the remote
+fleet did not change, because nothing automatic stops a remote shard at all.** `ECOPAVR2` would have
+died at the 1000 mark under the OLD floor too (48.40 < 51.0), so this is not caused by the raise —
+**but the raise WIDENS the gap.**
+
+⚠ **AND THE HAZARD IS NOT THE WASTED CORE-TIME (~2,700 games), IT IS WHAT REACHES THE BOARD.** Local
+weak arms are cancelled early; remote weak arms run to full n and post a full-n readout. ⇒ **whether
+an arm has a complete readout now correlates with WHICH HOST DREW IT rather than with the arm.** A
+reader comparing rows is comparing a **censored** local set against an **uncensored** remote one.
+⛔ **I have NOT measured the size of this and am not asserting it is large** — it needs a cut of
+cancellations by surface, which I have not run. **The mechanism is verified at the code; the
+magnitude is unmeasured.** Naming it is the contribution.
+✅ **The builder has already filed the remote-cancel gap as wrap debt and declined to invent a
+compound remote cancel** (`auto_gate.py:123` records that reasoning). **This adds the second-order
+consequence to that debt, not a new ask.**
