@@ -82,3 +82,14 @@ T1. ~16:15Z: G413g4 (ws1, starts after G412g4) crosses n=1000 — compute its
     or a successor reads the wrong transcript. Reproduce-the-number-FIRST
     ordering (era-split method) also goes in, credited to the resolution
     exchange.
+15. (side lane) FLOOR-STOP ESTIMATES ARE SELECTED-PESSIMISTIC — arithmetic,
+    not empirical: the floor stops on a low prefix draw, so conditional on
+    stopping, true share is higher (measured on the only 2 observable cases:
+    +2.82 and +1.33, mean +2.08pp). fired_on is the WORST number to reuse
+    for combination mining yet the ledger foregrounds it. Wrap fix: one
+    header line in results.tsv/auto_gate cancellation text — "prefix-stopped
+    estimates are selected low; for combination mining use the full-tape
+    share, expect ~+2pp regression." Also carry their correction: the
+    retrospective-threshold note's "no live arm affected" had false evidence
+    (SEALPECK was already dead 5pp below when written) though the conclusion
+    survives (46.90 dies under either floor).
