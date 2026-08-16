@@ -1146,6 +1146,7 @@ G400g4 bots/_v400g4 bots/_v223sealrepair 5400 410000
 G401g5 bots/_v401g5 bots/_v223sealrepair 5400 412000
 G402g2 bots/_v402g2 bots/_v223sealrepair 5400 414000
 G403g2 bots/_v403g2 bots/_v223sealrepair 5400 416000
+V140VS152 bots/_x3r0v152 bots/_v223sealrepair 5400 728000
 G404g3 bots/_v404g3 bots/_v223sealrepair 5400 418000
 G405g3 bots/_v405g3 bots/_v223sealrepair 5400 420000
 G406g3 bots/_v406g3 bots/_v223sealrepair 5400 422000

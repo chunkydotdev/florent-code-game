@@ -59558,3 +59558,34 @@ That is the standard, and it is worth recording that the agent met it unprompted
   only, code not diffed.
 * `AGENTS.md:400-402` is a **generated twin of `CLAUDE.md`, last regenerated 2026-08-13**, and
   still states vintage A verbatim. **Regeneration is the fix, not an edit.**
+
+--- 2026-08-16T05:32:44Z BUILDER s45 — 60-BAR READING SETTLED (PRECISION); v152 STAGED; GATE-CALIBRATION SCREEN QUEUED; RELAY-2 RECEIPTS ---
+
+**Magnus: "It must measure at least 60 +-2pp so 60 should be the middle of the span."**
+PRECISION reading encoded in PROGRAMME.md — point >=60.0 at <=+-2pp; 58-59.9 does not
+qualify; a standard shard over-delivers the precision. Board gap to the bar: 4.8pp.
+
+**v152 STAGED AND THE GATE-DISTANCE SCREEN IS QUEUED (research's spec, builder
+execution):** `bots/_x3r0v152` staged from the platform artifact (`fcode submission
+download 152`; file mtimes match the 17:55:21Z upload; version_trees.tsv row added).
+Worklist row `V140VS152 _x3r0v152 vs _v223sealrepair n=5400 seed=728000` inserted ahead
+of the G404 block — measures the gate1(v140)-vs-gate2(holder) distance to +-1.33pp in
+local units. BARS.tsv carries an explicit CALIBRATION-CELL row (le-100, registered
+solely to invoke the trend-floor carve-out — any value is the answer; the label says so
+on the record). Seed range verified collision-free excluding self.
+
+**Side-lane relay 2 receipts:** enforcement surface confirmed empty (bar binds through
+prereg text only) — routing accepted: the mechanisation home is prereg_check, which
+lands on the open "--fire runs on zero firing paths" item; now one item, not two.
+BODYAWR scoring certification ADOPTED: the locked vintage-A falsifier governs it (rule
+chosen before data; the new bar governs arms locked after today) — on its registered
+falsifier ("C-KILL rises >=10") BODYAWR reads −2 rounds (205 vs 207): falsifier does NOT
+fire; full scoring still owed behind G1/G2/G3 and is a named debt, not forgotten.
+Roads item: consumed, no reopen (a bar re-price is not live-game evidence), the two
+queued successors (F322IDLEPEC, F323PAVEFIR) stay queued with their closure vintage
+noted. AWRLNCH ownership ANSWERED: no prereg names it — it is a screen on the
+house-standard BARS row (51.33 ge, which it cleared at 53.95); not a stale-falsifier
+case. AGENTS.md: no generator found under tools/ — regeneration path unknown, flagged
+back to the side lane as owed-with-unknown-mechanism. The 146-shard calibration living
+in prose with no committed tool: acknowledged — folding it into a committed instrument
+rides with the prereg_check mechanisation item.

@@ -53,6 +53,12 @@ as this step); (3) it beats the holder ⇒ switch, in a safe pairing window via
 submit_clean, verified on the `Active bot:` line. The threshold gets us to the
 table; the head-to-head decides the seat.
 
+**READING SETTLED BY MAGNUS, 2026-08-16T05:32:44Z, verbatim: "It must measure at least 60 +-2pp
+so 60 should be the middle of the span."** The PRECISION reading: the point
+estimate must be >= 60.0 with a 95% half-width of <= 2pp (n >= ~2,260 at p=0.6;
+a standard n=5,400 shard over-delivers at +-1.31). An arm reading 58-59.9 does
+NOT qualify. Tolerance reading retired.
+
 ## X3R0_SLOT_RULE ADDED 2026-08-14 (Magnus, direct, in-session) — SUPERSEDED 2026-08-16, kept for provenance
 
 **Verbatim: "Whenever he outs one up, run n=1000 against it and put ours back
