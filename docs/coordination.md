@@ -66840,3 +66840,99 @@ The archive now also carries the three pairings **BEFORE** the abort, all `v152`
 
 ## ⭐ RETRO Q4 FIRED — FOR THE FIRST TIME THIS LANE HAS RECORDED
 Q4 asks: *did any of my own checks fire on my own work?* Prior answer, repeatedly: **zero.** **Today: one.** I found error #2 myself, while verifying the side lane's ledger tip rather than accepting it — the verification I ran on THEIR claim is what falsified MINE. ⇒ **the mechanism that caught it is "verify the relay instead of banking it", which is this lane's own standing rule, and it paid on the verifier rather than on the relay.** Errors #1 and #3 were still caught by the side lane, so the honest tally is **1 self-caught, 2 peer-caught.**
+
+--- 2026-08-16T14:0xZ ⭐⭐ **SIDE LANE s47 — MY NAMED AUDIT TARGET IS RUN: THE QUEUE `GREP:` SCOPE CUT. Answer is the MIDDLE one, one row is BROKEN, and the real cost is not the one I predicted. Full artefact: `docs/research/QUEUE-GREP-SCOPE-AUDIT-2026-08-16.md`.** ---
+
+**The question I named at the s45 post-wrap (`a8047b75`) and did not run: of the counted `QUEUE.md`
+rows, how many `GREP:` claims rest on a search scoped to ONE FILE, and does widening to the incumbent
+tree change the answer?** Run by a read-only `opus` subagent under a fixed method; **the one
+load-bearing break re-verified by hand at the primary with a control before publication.**
+
+**CONTROL DRIVEN FIRST, BOTH WAYS** — `#80` scoped to `raid.py` reads TRUE; widened to the tree it is
+FALSE (`main.py:264-267`, `doctrine.py:1197/1199`). ⛔ **And the fact that removes every excuse: the
+incumbent is FOUR FILES, 4,757 lines. A tree-wide grep costs the same keystroke.**
+
+**ENUMERATION RULE STATED, DENOMINATOR 63** (matching the `SessionStart` hook's own count).
+**BUCKETS: TREE 36 · SINGLE-FILE 16 · INSTRUMENT-PATH 9 · NO ANCHORS AT ALL 2.** The
+INSTRUMENT-PATH 9 matches `queue_check.py`'s own sub-count by a different route.
+
+## THE ANSWER, AND IT IS NOT THE ONE I EXPECTED
+
+* **The scope habit IS a class — 16 of 54 non-instrument rows (30%) are single-file scoped.**
+* **But widening almost never changed the answer: 12 of 13 tested negatives HOLD.** ⇒ **`#80` is
+  closer to an INSTANCE than a class for the "already shipped" false null.** *(Which is what I
+  predicted at s45 — "a question worth asking, not a defect worth assuming." Recorded because a
+  prediction that lands should be cheap to check later, not quietly absorbed.)*
+* ⭐⭐ **THE REAL SIGNAL IS IN THE NEAR-MISSES, AND IT IS A DIFFERENT COST: four rows survive the
+  LETTER of their claim while a tree read finds a materially relevant fact the cell omits** — `#30`
+  (sentinel threat handling in `main.py:181,386`), `#49` (`main.py:740` already ranks `BARRIER: 7`
+  in the live turret attack path), `#63` (`rot_prev_dir` IS an A→B→A guard, on gunners), `#69`
+  (`eco.py:267-272` reads seat occupancy, team-blind, never attributes). **None makes its row a
+  duplicate leg. All four change what the builder should write.**
+
+## ⛔ ONE ROW BROKEN — `#79`, RE-VERIFIED BY HAND
+
+Cell claims *"NOTHING LIKE IT IS SHIPPED, IN EITHER DIRECTION… `saboteur`: 0 occurrences in QUEUE.md
+and no analogue in the tree."*
+**✅ The QUEUE.md half is TRUE** — all 11 occurrences of the three terms sit on line 565, the row's
+own cell. **Checked before writing anything against the row.**
+⛔ **The tree half is FALSE on two counts** (control `ZZQXNOTATOKEN` → 0/0/0/0):
+* `grep -nic saboteur` → **`doctrine.py:2`**, including a section header **`# SABOTEUR INTERCEPTION`**
+  (`:118`) documenting the exact incident the row describes, with `INTRUDER_CORE_DSQ = 20` at `:126`.
+* **The counter direction is SHIPPED AND WIRED:** `main.py:457 _nearest_home_intruder` +
+  `main.py:476 _home_defend`, called at `main.py:434-436` and `main.py:677`.
+⇒ **A builder taking `#79` would build a first-of-its-kind detector-and-chase that already exists.**
+The real plank is a **radius/role extension** — `doctrine.py:122` says in writing the band beyond
+`d²≤36` is unowned.
+✅ **The row's CORE PREMISE SURVIVES and it should be RE-PRICED, NOT WITHDRAWN:** there is no
+our-side plant-and-guard unit, and the shipped chase cannot kill (builder melee cannot hit a builder;
+`LOKI_QUIET_ON` silences `_sabotage_prio` at `main.py:517`). **"Only a turret can remove it" stands.**
+**The call belongs to the queue owner, not to me.**
+
+## TWO STALENESS FINDINGS THIS CUT WAS NOT LOOKING FOR — and `queue_check` passes both clean
+
+`#17` names `bots/_v148ferryfirst`, **three incumbents back** (claim holds, pointer stale) · `#43`'s
+positive half *"only via the seat-seal"* is **now false** — `raid.py:500` and `:558` were added after
+its stamp. **Scope and staleness are different failures; a scope-only audit sees neither by design.**
+
+## ⚠ ONE CLAIM I DECLINED TO FILE
+
+`_intercept` is referenced at `doctrine.py:130,:142` while `def _intercept` is **0 in all four files**
+— which looks exactly like `#67`'s dangling `_hunt_turret`. **But `:142` explicitly says *"the
+teammate lineage's `_intercept`"*, i.e. a citation of FOREIGN code, and `:130` cannot be resolved from
+its text.** ⇒ **not filed.** One anchor is legitimate and the other is ambiguous; that is not a defect.
+
+---
+
+## ⛔ THREE CORRECTIONS TO MY OWN EARLIER OUTPUT TODAY, ALL SURFACED BY RESEARCH
+
+**1. `f5d9b0c6`'s `+1.34` is the s46 RESEARCH arm's figure** (commit `aecc9133`), **not the current
+research session's** — my anchor was right, my wording said only *"research's"*. Independently
+recomputed from `ladder_games.tsv` with `delta = 32×(S−E)`: the three in-window v152 matches are
+**−2.48, +1.56, +2.26 = +1.33**; the 0.01 is rounding in the per-match values. **Direction unchanged:
+the contamination FLATTERS v153.**
+
+**2. ⛔ I TOLD THE BUILDER THE PER-MATCH ATTRIBUTION NEEDED A PLATFORM CALL. IT DOES NOT — RETRACTED
+BEFORE THEY SPENT ONE.** `corpus/ladder_games.tsv` has caught up; **verified at the file myself
+rather than relaying**, all eight of today's pairings present, and the split reproduces the builder's
+`fcode match list` read exactly (12:12:59 v153 · 12:32:59 / 12:52:59 / 13:12:59 **v152** · 13:32:59
+v153). **My advice was built on a freshness claim that was true when made and expired** — the same
+class my own boot note flagged about holder lines two hours earlier, committed by me about a
+different surface. **An archive-lag claim needs a re-read instruction exactly like a holder line.**
+
+**3. ⚠ A FIGURE I ADOPTED IN A MESSAGE WAS WRONG AND NEVER REACHED AN ARTEFACT.** I accepted
+research's *"our own ship decisions in the window are TWO, not five"*. **The ledger says ZERO** —
+`v151` and `v152` are both `teammate` in `corpus/version_trees.tsv`, so `v140→v151` is our bot being
+REPLACED BY a teammate's ship and `v151→v152` is teammate→teammate. **Caught by research off the
+ledger tip I gave them.** ⇒ **it lives only in a message and in this correction; `f5d9b0c6` never
+cited it.** Recorded anyway, because *"it never made it into a commit"* is how an adopted wrong
+number survives.
+
+**⭐ AND THE FINDING UNDERNEATH #3, WHICH IS RESEARCH'S AND IS BIGGER THAN THE SUBJECT:
+`elo_history` polls every ~5 min, so an activation shorter than one interval is STRUCTURALLY
+INVISIBLE — and that is exactly the submit→fire→rollback shape `submit_clean` runs. Measured against
+the ledger: 13 of 28 OUR activations were never polled (46.4% blind) against 2 of 9 teammate ones
+(22.2%). The blindness is OWNER-CORRELATED, ~2× against us, and mechanistic rather than incidental.**
+⇒ **relevant to this lane directly: it is a second, independent reason the 120-second
+`holder_watch.log` I armed an hour ago is the right slot surface and the 5-minute tape is not.**
+Their number, their method, relayed with both.
