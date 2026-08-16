@@ -685,8 +685,28 @@ class TestHelpContract(unittest.TestCase):
                              "prints its replacement. The refusal IS its help.",
     }
 
+    # ⛔ `tools/corpus/` ADDED s47, 2026-08-16 — THE SWEEP HAD A HOLE THE SIZE OF
+    # THE CORPUS BUILDERS. `glob("*.py")` is not recursive, so 18 tools under
+    # `tools/corpus/` were never probed. Measured when they finally were: 11 of
+    # 18 violated the contract, and three of the failures are exactly the classes
+    # the assertions below name as the dangerous ones —
+    #   * `unrated_games.py --help` REWROTE corpus/unrated_games.tsv (1.1 MB).
+    #     `_fs_signature()` already watches `corpus/`, so assertion (3) would
+    #     have caught this from the day it was written; nothing was looking.
+    #   * `ladder_meta.py`, `league_maps.py`, `league_matches.py`,
+    #     `meta_attrib.py` went to the NETWORK and ran until killed at 20 s.
+    #   * `replay_autopsy.py` raised TypeError out of replay_census.fields().
+    # The rest printed verdict-shaped text in this repo's own vocabulary
+    # ("no *.replay26 under --help", "sides loaded: 0 (from 0 matches) — --help").
+    # Basenames are collision-free across the two directories (checked), so
+    # EXEMPT and the failure lists stay keyed on `.name`.
+    TOOL_DIRS = ("tools", "tools/corpus")
+
     def _tools(self):
-        return sorted((ROOT / "tools").glob("*.py"))
+        out = []
+        for d in self.TOOL_DIRS:
+            out += sorted((ROOT / d).glob("*.py"))
+        return out
 
     def _fs_signature(self):
         sig = {}

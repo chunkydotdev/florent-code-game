@@ -13,6 +13,33 @@ fireTurret on a second stream (prefix AGG).
 """
 from __future__ import annotations
 
+# ---- `--help` CONTRACT (enforced by tests/test_instruments.py) --------------
+# Side-effect-free, prints this module's docstring, exits 0.
+#
+# ⛔ WHY THIS FILE NEEDED IT (measured 2026-08-16, s47). `tools/corpus/` sat
+# OUTSIDE the help-contract sweep, which globbed `tools/*.py` only. Probed:
+# 11 of 18 corpus tools violated the contract, and three of the failures are
+# the dangerous classes the sweep exists to catch —
+#   * `unrated_games.py --help` REWROTE corpus/unrated_games.tsv (1.1 MB)
+#   * `ladder_meta.py`, `league_maps.py`, `league_matches.py`, `meta_attrib.py`
+#     --help went to the NETWORK and ran until killed at 20 s
+#   * `replay_autopsy.py --help` raised TypeError out of replay_census.fields()
+# and the rest printed verdict-shaped text in this repo's own vocabulary
+# ("no *.replay26 under --help", "sides loaded: 0 (from 0 matches) — --help").
+#
+# ⛔ GATED ON `__main__`: several of these modules are IMPORTED by build_corpus /
+# keeper. Ungated, this would fire during that import and make the PARENT exit 0
+# mid-run while printing the CHILD's docstring.
+# ⛔ SELF-CONTAINED `import sys`: the guard must not depend on what the host file
+# happens to import, or on the order its imports appear in.
+# ⛔ MUST SIT AFTER `from __future__ import ...`, which the language requires to
+# be the first statement after the docstring.
+if __name__ == "__main__":
+    import sys as _hg_sys
+    if "-h" in _hg_sys.argv[1:] or "--help" in _hg_sys.argv[1:]:
+        print(__doc__ or ("usage: " + __file__ + "  (no module docstring)"))
+        raise SystemExit(0)
+
 import sys
 from pathlib import Path
 
