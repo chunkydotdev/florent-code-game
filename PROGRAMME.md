@@ -25,7 +25,7 @@ successor session inherit it. The fields below are parsed; the prose is not.
     QUEUE_OWNER: research
     TARGET_MIN_PAYOUT: 10
     SHIP_SIT_MIN_K: 8
-    X3R0_SLOT_RULE: take_back_only_on_60pct_pm2pp
+    X3R0_SLOT_RULE: on_60pct_pm2pp_screen_vs_holder_switch_if_beats
 
 ## X3R0_SLOT_RULE RE-PRICED 2026-08-16 (Magnus, direct, in-session)
 
@@ -42,6 +42,16 @@ board's ceiling at this ruling is 55.24% (MIX280mix4), so the standing state is
 GRIND. **This also parks the live unrated leg**: an unrated window requires
 activating an arm into the slot, which this bar now governs — no leg fires
 until an arm clears 60±2 locally or Magnus explicitly opens a window.
+
+**⭐ PROCEDURE COMPLETED BY MAGNUS, 2026-08-16 ~05:3xZ, verbatim: "When we have
+a bot like that we start by testing it against the current slot, If it beats it
+we can switch."** So the full pipeline is: (1) an arm clears the 60±2 threshold
+against the v140 control on the local screen; (2) it is then screened HEAD-TO-
+HEAD against the CURRENT slot holder's artifact (staged locally, the
+v142/v143 template — the mechanism of the superseded 2026-08-14 rule survives
+as this step); (3) it beats the holder ⇒ switch, in a safe pairing window via
+submit_clean, verified on the `Active bot:` line. The threshold gets us to the
+table; the head-to-head decides the seat.
 
 ## X3R0_SLOT_RULE ADDED 2026-08-14 (Magnus, direct, in-session) — SUPERSEDED 2026-08-16, kept for provenance
 
@@ -461,7 +471,26 @@ delayed past the boundary and does not punish loss→late-win conversions, which
 Magnus's ruling never aimed at. The kill-win-conditioned share is REPORTED
 BESIDE IT as a diagnostic — where the two forms disagree, the disagreement is
 itself a finding (collider size) — and the median backstop stands. Any prereg
-scoring this bar registers the ITT form. **Drift inside r200-300 is
+scoring this bar registers the ITT form.
+
+**⛔ ESTIMATOR UNDER ARBITRATION, 2026-08-16 ~05:3xZ (s45) — THE THIRD FORM IN
+ONE MORNING, SO THE CHOICE IS FROZEN RATHER THAN SWAPPED AGAIN.** Research
+measured (local board, decomposition exact): the ITT form is dominated by win
+share — every arm above ~50% passes it by construction, so it adds almost no
+constraint beyond `PRIMARY_CURRENCY`. But the proposed alternative (bind on the
+SPEED factor, P(kill ≤300 | kill-win)) IS the kill-win-conditioned form — the
+collider retired at 05:19. **No single outcome-based estimator separates
+"delaying kills we already had" (what the bar exists to catch) from "adding new
+late wins" (which raises share and is not obviously bad): that is a
+counterfactual, not a measurement.** INTERIM SCORING, in force until Magnus
+answers the semantic question below: **report the TRIPLE (ITT timely rate ·
+rate factor · speed factor). Both-pass ⇒ admissible. Both-fail ⇒ out. Split
+(ITT-pass/speed-fail — today: the MIX/SH 55-class; AWRLNCH notably passes both)
+⇒ held, labelled MAGNUS-CALL, neither banked nor refused.** The question filed
+with him, in game terms: when a plank WINS MORE but its added wins land after
+r300, is that admissible (share is king; the bar only guards kills we already
+had) or not (no new business past r300)? His answer picks the estimator; nobody
+picks it by statistics. **Drift inside r200-300 is
 REPORTED, no longer DISQUALIFYING.** Evidential context, stated with its limits:
 the old form's empirical grounding ("the field converts 4x better late") was
 PRE-map-rotation; re-derived on the post-rotation pool

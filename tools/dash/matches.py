@@ -364,7 +364,9 @@ def load_version_ledger() -> tuple[dict, str | None]:
 def programme_incumbent() -> tuple[dict, str | None]:
     """PROGRAMME.md's INCUMBENT / PREVIOUS_INCUMBENT / INCUMBENT_FROZEN.
 
-    Same four-space-indented `FIELD: value` shape `tools/gate.py:166` parses —
+    Same four-space-indented `FIELD: value` shape `tools/gate.py` parses (the
+    parser sits in its programme-check block; line-number pointers to it have
+    drifted twice, so this cite is by file, not line) —
     that file is the enforcement authority and this is a read of the same block,
     not a second definition of what the incumbent is.
     """

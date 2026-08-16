@@ -59457,3 +59457,25 @@ factor**; I believe reporting it BESIDE the rate is what makes that acceptable a
 confident. (b) **No DEFF measured for the SPEED column.** (c) **I used `turns <= 300` with the
 boundary convention UNDECLARED — the exact defect caught in my hazard doc four hours ago.**
 NULL114 reads +0.19 so I doubt it bites; I said that last time too.
+
+--- 2026-08-16T05:3xZ BUILDER s45 — SLOT PROCEDURE COMPLETED BY MAGNUS; ESTIMATOR ARBITRATION FROZEN; TRUNCATION FIX EXTENDED TO ALL FIVE SITES ---
+
+**Magnus, verbatim: "When we have a bot like that we start by testing it against the
+current slot, If it beats it we can switch."** Encoded: `X3R0_SLOT_RULE:
+on_60pct_pm2pp_screen_vs_holder_switch_if_beats` — threshold vs v140 gets an arm to the
+table, head-to-head vs the current holder's staged artifact decides the seat (the
+v142/v143 screen mechanism survives as step 2). Parse clean.
+
+**Estimator arbitration (PROGRAMME.md, dated): FROZEN as the reported TRIPLE** (ITT ·
+rate factor · speed factor); both-pass admissible, both-fail out, split held as
+MAGNUS-CALL. Research's exchange-rate derivation is the sharpest form of the open
+question — the ITT estimator implicitly licenses trading ~1.57pp of kill speed per 1pp
+of kill rate, a number nobody chose — and their cross-implementation agreement on
+BODYAWR (±1.87, two independent cuts, opposite sign conventions) certifies the split
+arm. AWRLNCH is the board's standout under the strictest reading: the only leader
+passing BOTH factors (+6.96 ITT, −0.23 speed), which is quantitative support for QUEUE
+#71's existing lead. Receipts: research sensitivity/specificity distinction CONSUMED
+(my mutation drive = sensitivity calibration, their decomposition = specificity gap;
+both stand, neither closes the other). Side lane ellipsis reach-check CONSUMED — all
+five truncation sites in queue_check.py now carry the conditional marker (:231, :235,
+:357, :626, :642), selftest green.

@@ -228,11 +228,11 @@ def row_numbers(text: str):
                 # A struck-through id (`~~2~~`) is a TOMBSTONE, not a live row.
                 tomb = "~~" in first
                 out.append((int(m.group(1)),
-                            "tombstone" if tomb else "table row", line[:70]))
+                            "tombstone" if tomb else "table row", line[:70] + ("…" if len(line) > 70 else "")))
         elif line.startswith("#"):
             m = re.search(r"#(\d+)\s*[—-]", line)
             if m:
-                out.append((int(m.group(1)), "heading", line[:70]))
+                out.append((int(m.group(1)), "heading", line[:70] + ("…" if len(line) > 70 else "")))
     return out
 
 
@@ -623,7 +623,7 @@ def main() -> int:
             print(f"   ⛔ GREP STALE — incumbent is {inc}; these were checked "
                   f"against another tree ({len(stale)}):")
             for lbl, trees in stale[:8]:
-                print(f"       {lbl[:52]}  [checked: {', '.join(trees)}]")
+                print(f"       {lbl[:52]}{'…' if len(lbl) > 52 else ''}  [checked: {', '.join(trees)}]")
         if unnamed:
             print(f"   ⚠ GREP TREE UNNAMED ({len(unnamed)} of {len(live)}) — the "
                   f"gate cannot tell whether these are stale. Incumbent: {inc}")
@@ -639,7 +639,7 @@ def main() -> int:
         print(f"   ⚠ {len(warn)} counted row(s) carry a legacy marker word in prose "
               f"(no STATUS: token, so NOT blocked):")
         for lbl, hits in warn:
-            print(f"       {lbl[:52]}  [{', '.join(hits)}]")
+            print(f"       {lbl[:52]}{'…' if len(lbl) > 52 else ''}  [{', '.join(hits)}]")
     if dupes:
         print()
         print(f"*** QUEUE ALARM: {len(dupes)} DUPLICATE ROW NUMBER(S). Three lanes write")
