@@ -345,7 +345,7 @@ PAGE_TEMPLATE = r"""<!DOCTYPE html>
   :root {
     --bg: #f4f5f7; --panel: #ffffff; --ink: #1b1f24; --muted: #5b6472;
     --border: #d7dbe1; --teamA: #0072B2; --teamB: #E69F00;
-    --empty: #eef0f3; --wall: #2b2f36; --ore: #d9b32a; --ore-ax: #7d5fd6;
+    --empty: #eef0f3; --wall: #2b2f36; --ore: #009E73; --ore-ax: #CC79A7;
     --hpgood: #2e9e5b; --hpbad: #d64545; --marker: #ff2fb0;
   }
   * { box-sizing: border-box; }
@@ -406,16 +406,25 @@ PAGE_TEMPLATE = r"""<!DOCTYPE html>
     border-left: 4px solid transparent; border-right: 4px solid transparent;
     border-bottom: 7px solid rgba(255,255,255,.95); transform-origin: 4px 5px; }
   .marker { position: absolute; border-radius: 50%; border: 3px solid var(--marker);
-    box-shadow: 0 0 0 2px #fff, 0 0 6px rgba(0,0,0,.4); display: flex;
+    box-shadow: 0 0 0 2px #fff, 0 0 6px rgba(0,0,0,.4); display: flex; flex-direction: column;
     align-items: center; justify-content: center; font-weight: 800; color: var(--marker);
-    background: rgba(255,255,255,.85); pointer-events: none; }
+    background: rgba(255,255,255,.85); pointer-events: none; line-height: 1; }
+  .marker .mk-idx { font-size: 1em; }
+  .marker .mk-r { font-size: .5em; font-weight: 700; opacity: .85; }
   #legend { font-size: 12px; }
   #legend .row { display: flex; align-items: center; gap: 8px; margin: 4px 0; }
   #legend .ex { width: 20px; height: 20px; flex: none; border-radius: 3px; background: #888;
     color: #fff; display: flex; align-items: center; justify-content: center;
     font-size: 10px; font-weight: 700; box-shadow: 0 0 0 1px rgba(0,0,0,.25) inset; }
-  #markerList { font-size: 12px; line-height: 1.6; }
-  #markerList .mk { display: inline-block; margin: 0 10px 0 0; color: var(--marker); font-weight: 700; }
+  #markerList { font-size: 12px; line-height: 1.8; }
+  #markerList .mkrow { display: flex; align-items: center; gap: 6px; margin: 2px 0; }
+  #markerList .mk { color: var(--marker); font-weight: 700; flex: none; }
+  #markerList .mkpos { color: var(--muted); flex: none; }
+  #markerList input.mkcomment { border: none; background: transparent; font: inherit;
+    color: var(--ink); flex: 1 1 auto; min-width: 80px; outline: none; padding: 1px 3px;
+    border-radius: 3px; }
+  #markerList input.mkcomment:hover, #markerList input.mkcomment:focus { background: var(--empty); }
+  #markerList input.mkcomment::placeholder { color: var(--muted); font-style: italic; }
   code { background: var(--empty); border-radius: 3px; padding: 1px 4px; }
   table.meta td { font-size: 12px; padding: 1px 6px 1px 0; color: var(--muted); }
   table.meta td.v { color: var(--ink); font-weight: 600; }
@@ -439,10 +448,17 @@ PAGE_TEMPLATE = r"""<!DOCTYPE html>
         <span class="econ">/ <span id="roundMax">0</span></span></div>
       <div id="controls">
         <button class="btn" id="btnHome">⏮ Home</button>
+        <button class="btn" id="btnPlay">▶ Play</button>
         <input type="range" id="roundSlider" min="0" max="0" step="1" value="0">
         <button class="btn" id="btnEnd">End ⏭</button>
+        <select class="btn" id="speedSelect" title="autoplay speed">
+          <option value="1">1x</option>
+          <option value="2">2x</option>
+          <option value="4">4x</option>
+        </select>
       </div>
-      <div class="hint">← → step 1 · shift+← → step 10 · Home/End jump to first/last round</div>
+      <div class="hint">← → step 1 · shift+← → step 10 · Home/End jump to first/last round ·
+        space play/pause</div>
     </div>
     <div class="panel">
       <h1>Match</h1>
@@ -471,7 +487,7 @@ PAGE_TEMPLATE = r"""<!DOCTYPE html>
   const TEAM_COLOR = { 0: "var(--teamA)", 1: "var(--teamB)" };
   const TEAM_COLOR_HEX = { 0: "#0072B2", 1: "#E69F00" };
   const KIND_LABEL = {
-    builder_bot: "b", core: "CORE", conveyor: "→", splitter: "Y",
+    builder_bot: "b", core: "CORE", conveyor: "c", splitter: "Y",
     harvester: "H", barrier: "▩", gunner: "G", sentinel: "S", launcher: "L",
   };
   const DIR_DELTA = { 0:[0,0],1:[0,-1],2:[1,-1],3:[1,0],4:[1,1],5:[0,1],6:[-1,1],7:[-1,0],8:[-1,-1] };
@@ -589,24 +605,25 @@ PAGE_TEMPLATE = r"""<!DOCTYPE html>
   }
 
   // ---- markers (persist across rounds; independent of replay state) ----
-  const markers = {}; // "x,y" -> index (1..8)
+  // "x,y" -> { idx: 1..8, round: <round placed>, comment: <free text> }
+  const markers = {};
   function toggleMarker(x, y) {
     const key = x + "," + y;
     if (markers[key] !== undefined) { delete markers[key]; }
     else {
-      const used = new Set(Object.values(markers));
+      const used = new Set(Object.values(markers).map((m) => m.idx));
       let idx = 1;
       while (used.has(idx) && idx <= 8) idx++;
       if (idx > 8) { alert("Max 8 markers. Click one to remove it first."); return; }
-      markers[key] = idx;
+      markers[key] = { idx: idx, round: round, comment: "" };
     }
     renderMarkers();
     renderMarkerList();
   }
   function renderMarkers() {
     markerLayer.innerHTML = "";
-    const entries = Object.entries(markers).sort((a, b) => a[1] - b[1]);
-    for (const [key, idx] of entries) {
+    const entries = Object.entries(markers).sort((a, b) => a[1].idx - b[1].idx);
+    for (const [key, mk] of entries) {
       const [x, y] = key.split(",").map(Number);
       const m = document.createElement("div");
       m.className = "marker";
@@ -614,19 +631,47 @@ PAGE_TEMPLATE = r"""<!DOCTYPE html>
       m.style.width = sz + "px"; m.style.height = sz + "px";
       m.style.left = (x * cellSize + (cellSize - sz) / 2) + "px";
       m.style.top = (y * cellSize + (cellSize - sz) / 2) + "px";
-      m.style.fontSize = Math.max(9, Math.floor(sz * 0.5)) + "px";
-      m.textContent = idx;
+      m.style.fontSize = Math.max(10, Math.floor(sz * 0.5)) + "px";
+      m.title = mk.idx + " @ (" + x + "," + y + ") placed r" + mk.round +
+        (mk.comment ? " — " + mk.comment : "");
+      const numSpan = document.createElement("span");
+      numSpan.className = "mk-idx";
+      numSpan.textContent = mk.idx;
+      const rSpan = document.createElement("span");
+      rSpan.className = "mk-r";
+      rSpan.textContent = "@r" + mk.round;
+      m.appendChild(numSpan);
+      m.appendChild(rSpan);
       markerLayer.appendChild(m);
     }
   }
   function renderMarkerList() {
     const el = document.getElementById("markerList");
-    const entries = Object.entries(markers).sort((a, b) => a[1] - b[1]);
+    el.innerHTML = "";
+    const entries = Object.entries(markers).sort((a, b) => a[1].idx - b[1].idx);
     if (!entries.length) { el.textContent = "none placed"; return; }
-    el.innerHTML = entries.map(([key, idx]) => {
+    for (const [key, mk] of entries) {
       const [x, y] = key.split(",");
-      return '<span class="mk">' + idx + ': (' + x + ',' + y + ')</span>';
-    }).join(" ");
+      const row = document.createElement("div");
+      row.className = "mkrow";
+      const label = document.createElement("span");
+      label.className = "mk";
+      label.textContent = mk.idx + ":";
+      const pos = document.createElement("span");
+      pos.className = "mkpos";
+      pos.textContent = "(" + x + "," + y + ") r" + mk.round;
+      const input = document.createElement("input");
+      input.type = "text";
+      input.className = "mkcomment";
+      input.placeholder = "add a comment…";
+      input.value = mk.comment || "";
+      input.maxLength = 140;
+      input.addEventListener("input", () => { mk.comment = input.value; });
+      row.appendChild(label);
+      row.appendChild(pos);
+      row.appendChild(input);
+      el.appendChild(row);
+    }
   }
 
   // ---- rendering ----
@@ -670,8 +715,10 @@ PAGE_TEMPLATE = r"""<!DOCTYPE html>
         bar.appendChild(i);
         div.appendChild(bar);
       }
+      // Conveyors show just the "c" glyph (facing is on hover via .title above) —
+      // the rotating arrow was confusing at a glance. Splitters/turrets keep it.
       if (e.dir && DIR_DEG[e.dir] !== undefined &&
-          (e.kind === "conveyor" || e.kind === "splitter" || e.kind === "gunner" || e.kind === "sentinel")) {
+          (e.kind === "splitter" || e.kind === "gunner" || e.kind === "sentinel")) {
         const ar = document.createElement("div");
         ar.className = "arrow";
         ar.style.transform = "rotate(" + DIR_DEG[e.dir] + "deg)";
@@ -693,18 +740,57 @@ PAGE_TEMPLATE = r"""<!DOCTYPE html>
     render();
   }
 
+  // ---- autoplay ----
+  let playing = false;
+  let playTimer = null;
+  let speed = 1;
+  const btnPlay = document.getElementById("btnPlay");
+  const speedSelect = document.getElementById("speedSelect");
+  const AUTOPLAY_BASE_MS = 250;
+  function tick() {
+    if (round >= N_ROUNDS - 1) { pausePlay(); return; }
+    setRound(round + 1);
+  }
+  function startPlay() {
+    if (playing || N_ROUNDS <= 1) return;
+    if (round >= N_ROUNDS - 1) setRound(0);
+    playing = true;
+    btnPlay.textContent = "⏸ Pause";
+    playTimer = setInterval(tick, AUTOPLAY_BASE_MS / speed);
+  }
+  function pausePlay() {
+    playing = false;
+    btnPlay.textContent = "▶ Play";
+    if (playTimer) { clearInterval(playTimer); playTimer = null; }
+  }
+  function togglePlay() { if (playing) pausePlay(); else startPlay(); }
+  btnPlay.addEventListener("click", togglePlay);
+  speedSelect.addEventListener("change", () => {
+    speed = parseFloat(speedSelect.value) || 1;
+    if (playing) { clearInterval(playTimer); playTimer = setInterval(tick, AUTOPLAY_BASE_MS / speed); }
+  });
+
   // ---- header / match info ----
   document.getElementById("roundMax").textContent = N_ROUNDS - 1;
   const slider = document.getElementById("roundSlider");
   slider.max = N_ROUNDS - 1;
-  slider.addEventListener("input", () => setRound(parseInt(slider.value, 10)));
-  document.getElementById("btnHome").addEventListener("click", () => setRound(0));
-  document.getElementById("btnEnd").addEventListener("click", () => setRound(N_ROUNDS - 1));
+  slider.addEventListener("input", () => { pausePlay(); setRound(parseInt(slider.value, 10)); });
+  document.getElementById("btnHome").addEventListener("click", () => { pausePlay(); setRound(0); });
+  document.getElementById("btnEnd").addEventListener("click", () => { pausePlay(); setRound(N_ROUNDS - 1); });
   window.addEventListener("keydown", (ev) => {
-    if (ev.key === "ArrowLeft") { setRound(round - (ev.shiftKey ? 10 : 1)); ev.preventDefault(); }
-    else if (ev.key === "ArrowRight") { setRound(round + (ev.shiftKey ? 10 : 1)); ev.preventDefault(); }
-    else if (ev.key === "Home") { setRound(0); ev.preventDefault(); }
-    else if (ev.key === "End") { setRound(N_ROUNDS - 1); ev.preventDefault(); }
+    const tag = (ev.target && ev.target.tagName) || "";
+    const inField = tag === "INPUT" || tag === "TEXTAREA";
+    if (ev.key === " " || ev.code === "Space") {
+      if (inField) return; // let the comment box type a space normally
+      ev.preventDefault();
+      togglePlay();
+      return;
+    }
+    if (inField) return; // don't hijack arrow/Home/End while editing a marker comment
+    if (ev.key === "ArrowLeft") { pausePlay(); setRound(round - (ev.shiftKey ? 10 : 1)); ev.preventDefault(); }
+    else if (ev.key === "ArrowRight") { pausePlay(); setRound(round + (ev.shiftKey ? 10 : 1)); ev.preventDefault(); }
+    else if (ev.key === "Home") { pausePlay(); setRound(0); ev.preventDefault(); }
+    else if (ev.key === "End") { pausePlay(); setRound(N_ROUNDS - 1); ev.preventDefault(); }
   });
 
   const matchInfo = document.getElementById("matchInfo");
@@ -729,10 +815,15 @@ PAGE_TEMPLATE = r"""<!DOCTYPE html>
 
   // ---- legend ----
   const legend = document.getElementById("legend");
+  const tiles = [
+    ["wall", "wall — impassable, blocks building"],
+    ["ore", "ore (titanium) — build harvesters here"],
+    ["ore-ax", "ore (axionite) — build harvesters here"],
+  ];
   const kinds = [
     ["core", "CORE", "2x2 footprint, 500 HP"],
     ["builder_bot", "b", "mobile, only unit that builds"],
-    ["conveyor", "→", "arrow = facing"],
+    ["conveyor", "c", "hover for facing direction"],
     ["splitter", "Y", "arrow = facing (output side)"],
     ["harvester", "H", "hatched, built on ore"],
     ["barrier", "▩", "cheap HP wall"],
@@ -740,13 +831,18 @@ PAGE_TEMPLATE = r"""<!DOCTYPE html>
     ["sentinel", "S", "triangle, longer range"],
     ["launcher", "L", "diamond, facing-independent"],
   ];
-  legend.innerHTML = kinds.map(([k, l, note]) =>
+  legend.innerHTML =
+    tiles.map(([cls, note]) =>
+      '<div class="row"><span class="swatch tile-' + cls + '" style="background:var(--' + cls + ')"></span>' +
+      '<span>' + note + '</span></div>').join("") +
+    '<div class="row"><span class="swatch" style="background:var(--empty)"></span><span>empty tile</span></div>' +
+    kinds.map(([k, l, note]) =>
     '<div class="row"><span class="ex ' + k + '" style="background:#888">' + l + '</span>' +
     '<span>' + k.replace("_", " ") + ' — ' + note + '</span></div>').join("") +
     '<div class="row" style="margin-top:8px"><span class="swatch" style="background:' + TEAM_COLOR_HEX[0] + '"></span>Team A' +
     '&nbsp;&nbsp;<span class="swatch" style="background:' + TEAM_COLOR_HEX[1] + '"></span>Team B</div>' +
     '<div class="row">HP bar under each unit (green &gt;50%, amber &gt;20%, red below)</div>' +
-    '<div class="row" style="color:var(--marker)">Click any tile to drop/remove a numbered marker (max 8) — persists across rounds.</div>';
+    '<div class="row" style="color:var(--marker)">Click any tile to drop/remove a numbered marker (max 8, shows index@round placed) — persists across rounds. Add a comment per marker in the list below.</div>';
 
   renderMarkerList();
   setRound(0);
