@@ -63671,3 +63671,51 @@ fire). ⭐ **LOCAL SURFACE ONLY — the v154 FIELD read stays with the LEG-field
 which is mine and is NOT YET COMPUTABLE** (registered primary k_eligible = 0; secondary blocked until
 the leg's replays decode). **A local KEEP and a field read are different claims and this leg exists
 because they can disagree.**
+
+--- 2026-08-16T08:59:03Z RESEARCH s46 — **#77 PRE-LOCK ITEMS BOTH LANDED · AND THE MARK-500 KILL FLOOR PRICED BEFORE IT RUNS.** ---
+
+**#77 item 1 RESOLVED (builder's call as verdict owner): the additive prediction is built from the
+KEEP screen's 53.70 [52.76, 54.64] at n=10,801, NOT the reachability cut's +4.10.** Larger n, and it
+is the figure that cleared a REGISTERED bar on the tape ⇒ **the prediction inherits an auditable
+input.** Written into the row.
+
+**#77 item 2 OPEN, raised by the SIDE LANE, and it is a FIXTURE-NOISE question rather than a
+discrepancy — I do not know the answer either and the row says so.** The additive arithmetic assumes
+components and composite sit on a fixture with the SAME NOISE STRUCTURE. ⭐ **If the +6.28pp seat
+asymmetry is real on BYTE-IDENTICAL self-play, the screen carries a SEAT TERM IN ITS VARIANCE — and
+a fix that removes it does not only shift the mean, it changes the screen's DISPERSION.** The
+composite would then be read on a QUIETER fixture than its components. **Required prereg clause: does
+the seat fix change the screen's noise structure, and if so which fixture is each component
+denominated in?** ⛔ **If the inputs come from two fixtures, the bar is unfalsifiable by construction
+for a SECOND, INDEPENDENT reason.**
+
+## ⭐ MARK-500 SWEEP — THE KILL FLOOR PRICED BEFORE IT RUNS (Magnus directive; builder's design)
+Design as relayed: **MARK at n=500, KILL-ONLY floor at 48** (cancel-and-free-core, rows kept, typed
+cancellation never a verdict), **point-estimate RANKING for full-n priority, NO KEEP at 500 ever.**
+✅ **The no-KEEP half is right and the reason is exactly the ±4.4pp.** **Here is the other half, which
+the design does not yet state — the FALSE-KILL rate:**
+```
+n=500  =>  SE = 2.245pp   (matches the stated hw95 +-4.4pp; binomial check 2.236pp)
+
+P(measured < 48 | TRUE value)          <- these are arms killed IN ERROR
+   true 50.00  (neutral)      18.65%
+   true 51.00  (+1)            9.07%
+   true 52.00  (+2)            3.74%
+   true 53.70  (bodyaware)     0.56%
+   true 55.24  (board leader)  0.06%
+
+P(measured < 48 | TRUE value)          <- these are arms killed CORRECTLY
+   true 48                    50.00%
+   true 46                    81.35%
+   true 44                    96.26%
+   true 40                    99.98%
+```
+⇒ **A TRULY NEUTRAL ARM IS KILLED ~19% OF THE TIME. Over a 60-row sweep of truly-neutral arms that is
+~11 killed in error.** ✅ **AND THE FLOOR IS STILL WELL-CHOSEN, because the ERROR IS CHEAP AND
+ASYMMETRIC BY DESIGN: rows are KEPT and the kill is a typed cancellation, so a false kill costs a
+RE-RUN, not a lost road — while a true-52 arm survives 96% of the time and anything bodyaware-class
+survives >99%.** ⚠ **What must NOT happen is the count being read as a discovery: "11 of 60 arms
+failed the sweep" would be ~19% pure noise on a neutral board.** ⇒ **REGISTER THE EXPECTED FALSE-KILL
+COUNT ALONGSIDE THE FLOOR, so the sweep's own output cannot be mistaken for a finding.**
+⭐ **The builder's own board already demonstrates it: SEATFULL 46.5 and G420 54.9, both ±4.4 — an
+8.4pp spread that is entirely consistent with two identical arms.**
