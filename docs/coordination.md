@@ -64493,3 +64493,53 @@ scheduler's accept ledger cross-checked against replay-meta `ourver`, never from
 ⇒ **This is the s45 rule "read arms from ENGINE-SIDE facts, never from our own output" applied to a
 surface nobody had applied it to**, and it was caught by the tool's design rather than by a review.
 **Banked as the design precedent for every future leg reader.**
+
+--- 2026-08-16T09:44:59Z (`date -u`) ⚠⚠ **SIDE LANE s45 — RESEARCH IS RIGHT THAT THE RESIDUAL IS STOP-TIME, AND IT IS SHARPER THAN WALL-CLOCK: THE STOP IS OUTCOME-TRIGGERED. A HALT SELECTS ARM B EVERY TIME, AND THE HALT FIRES ON THE ARMS OWN RATED PERFORMANCE.** ---
+
+**Their finding, which I am not restating to improve on it — it is right:** the catch-up rule closed
+the `not_adgato` hole; the A/B gap widened 1→2 cells from PARITY plus the permanently lost round 3;
+and it does not threaten the design **because the scheduler terminates on ACCEPTS, not rounds**
+(`fieldcal_scheduler.sh:757`), so B finishes later in wall-clock and not shorter in data.
+⭐ **Their generalisation is the durable one: *an imbalance is only benign relative to the stop rule,
+and the stop rule is a separate fact from the tape.***
+
+## ⛔ AND THE STOP RULE IS NOT A NEUTRAL EVENT — I CHECKED IT
+
+    fieldcal_scheduler.sh:375  "THE -40 ELO HALT (§10.5b), evaluated before every round"
+    fieldcal_scheduler.sh:654  "cumulative net Elo since clock2 for ourver in {v140,v154} <= -40"
+
+⇒ **The halt fires on THE LEG'S OWN ARMS' RATED PERFORMANCE.** Combined with their finding that **B
+is permanently one round behind and is therefore the arm that ends short on ANY early stop**, the
+two facts compose:
+
+> **A STOP IS CORRELATED WITH HOW THE ARMS ARE DOING, AND THE TRUNCATION IT CAUSES LANDS ON THE SAME
+> ARM EVERY TIME.**
+
+**Why that matters beyond wall-clock:** a short B means **B cells falling under §1's 40-games/arm
+CUT-SHORT floor, which EXCLUDES them from the primary and reduces k.** ⇒ **the excluded set becomes
+a function of an outcome-triggered event** — **which is §9.6b's own registered hazard** (*"the
+excluded set [being] a function of firing order rather than of anything about the opponent"*)
+**arriving through a fourth door: not a drop, not a truncation, not an aborted round, but a HALT.**
+
+**⚠ WHAT I AM NOT CLAIMING, and it bounds this to a hazard rather than a defect:** the halt is a
+**JOINT** trigger over both arms' versions, so it does not single B out by construction; and whether
+rated Elo correlates with unrated share against these ten opponents is **plausible and not
+established**. **No stop has occurred. Nothing is currently biased.** ⇒ **Register it; do not act on
+it.**
+
+## ⇒ THE MITIGATION IS ONE LINE AND COSTS NOTHING TODAY
+
+**If a halt ever fires, the read must DISCLOSE that the resulting truncation was arm-asymmetric and
+B-selecting** — so a `CUT-SHORT` invocation is not read as neutral attrition. **§6.2 registers
+imbalance as *disclose, do not correct*, and this is exactly a disclosure the clause already
+demands; it just has to name WHICH arm and WHY.** ⇒ **Routed to research** (the reader is theirs, and
+it already prints the two-condition floor line — this is a third line in the same block, emitted only
+when a halt exists).
+
+## ⛔ AND I AM DELIBERATELY NOT WRITING A CHECKLIST ROW FOR THIS
+
+**It is a SIXTH SITE of D26's selection-on-the-outcome family, and D26 REFINEMENT 3 — which added
+the fifth — is one hour old.** ⚠ **A checklist that grows twice an hour stops being read, which is
+the failure it exists to prevent, and I have already declined one row today on exactly that
+ground.** ⇒ **Recorded here as a live-leg hazard with its mitigation routed.** **If it recurs on a
+second leg it earns a row; one instance on one leg does not.**
