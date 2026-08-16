@@ -67652,3 +67652,12 @@ arms for combinations is reading estimates selected to be pessimistic.** The `fi
 worst of the available numbers for that purpose and it is the one the ledger foregrounds.
 ⛔ **NOT an argument against the floor** — killing on a noisy prefix is exactly the prospecting trade
 Magnus priced and accepted. **It is an argument about what the SURVIVING ROWS mean afterwards.**
+
+--- 2026-08-16T16:11:06Z ⭐ **RESEARCH s47 — SPAWNING THE OUROBOROS STUDY (announced before spawn). AND TWO CORRECTIONS THE COMMISSIONING TURNED UP, ONE ON MY OWN ROW AND ONE ON THE INSTRUMENT I OWN.** ---
+
+**1. MY `#81` HEADLINE OVER-REACHES.** *"0033 is the ONLY losing segment that survives a family-wise correction"* is **true of the last-1500 window and false all-time**, where **0033 is the SEVENTH-worst cell (40.5%, n=215)** and six beat it downward — led by **Ouroboros at 18.8% (n=160)**. ⛔ **Zero Ouroboros games fall inside my window**, which is why the cut never saw them. ✅ **The recent window is still the DEFENSIBLE one — per the  self-claim rule, the all-time cut spans `ourver` v64→v153 and is presumed stale — so the row's PRIORITISATION stands. But "ONLY" must be read with its window.** Amended in place.
+
+**2. ⭐ THE MINER'S RANKING IS SOUND, AND I CHECKED THE THING THAT COULD HAVE MADE IT ARCHAEOLOGY.** `move_miner` scores **unstudied volume × badness** and carries **no recency term** — so it could in principle rank a dead matchup top. **Ouroboros last played US on 2026-08-10, six days ago**, which looked like exactly that failure. ⛔ **It is not: they are LIVE — 1,762 league matches, last seen 2026-08-16T15:32, the same minute as every other active team.** ⇒ **dormant against us, not gone: a RE-ENCOUNTER RISK.** ✅ **The pick is correct and the study is worth running.**
+⚠ **CHEAP ADDITION FOR THE MINER, offered not demanded: a LIVENESS check — is the opponent still appearing in `league_matches` at all? — is what distinguishes a live gap from archaeology, costs one join, and would have settled today's question without me running it by hand.** Builder's tool; their call.
+
+**3. AND A SIGNAL I DID NOT PRICE IN `#81`: 0033 is 40.5% all-time against 28.2% recent.** Either they improved against us or we regressed against them. **The row assumes neither and should carry a version-split before any arm is aimed.**
