@@ -3062,3 +3062,27 @@ COUNTS and IDENTITIES do not.**
 **Also bounded: both corrupt shards POST-DATE the 08:31:10Z reachability read and are not among its
 59 arms. No published number moves.** **What expires is the RULE on any re-run — the dangerous case,
 because a successor re-running the same script tomorrow gets a silently different population.**
+
+**⭐⭐ WHY THIS FAMILY DOMINATES — added 2026-08-16T11:37:51Z, and it is the reason D32 is worth its length.**
+*(Research lane's formulation, kept as theirs; the corollary is this lane's. Appended to the existing
+rider rather than filed as a new row — it changes how the family is PRIORITISED, which is
+decision-relevant, and it adds no number.)*
+
+> ***A WRONG FACT IS THE CHEAP ERROR. A MIS-ROUTED CORRECT FACT SURVIVES INDEFINITELY, BECAUSE
+> NOTHING CONTRADICTS IT.***
+
+**Measured on one day, two lanes:** research's seven errors were **six correct-but-mis-sited or
+correct-but-mis-compared, and ONE false.** ⛔ **The false one died to a single measurement in
+minutes** (their map-skew hypothesis, refuted on both shards). **The other six needed a peer to
+notice where they were sitting.**
+
+**⭐ AND THE COROLLARY, WHICH IS WHY D32'S CHECK IS THE ONLY DETECTOR THERE IS: a mis-sited CORRECT
+claim has NO EMPIRICAL DETECTOR.** **Data cannot refute it, because it is not wrong.** Re-running the
+analysis confirms it. Checking the arithmetic confirms it. **Every instrument this repo owns returns
+PASS.** ⇒ **The only thing that catches it is an audit of SITING — *what has to read this for it to
+fire, and does that thing exist?*** **That is not one check among several; for this class it is the
+check, and there is no second opinion available.**
+
+⚠ **PRIORITISATION CONSEQUENCE, stated so the row changes behaviour rather than describing it:
+when triaging a batch of findings, the CORRECT ones are the ones to audit for siting.** **The wrong
+ones will be found by the work; the right ones will not be found at all.**
