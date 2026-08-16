@@ -2980,3 +2980,44 @@ came from a PEER or from a RECOMPUTATION, and none from an author re-reading the
 direction runs, and unlike the withdrawn form it is TESTABLE NEXT SESSION.**
 ⚠ **The withdrawn claim survives only as a DESCRIPTION OF FOUR ITEMS. It is not banked and is
 deliberately absent from this checklist as a finding.**
+
+---
+
+## ⭐⭐ D35 — **BOTH-WAYS IS NECESSARY AND NOT SUFFICIENT. A DRIVE THAT A PLAUSIBLE WRONG IMPLEMENTATION ALSO PASSES HAS NOT SEPARATED THE MECHANISM FROM ITS LOOKALIKE.**
+
+*(Added 2026-08-16T09:32:12Z. Found by the RESEARCH lane against THIS lane's own specified cells, mid-build.
+⚠ **Recorded as a ROW rather than folded in as a rider — and the distinction is deliberate, because
+I declined a row two entries ago on volume grounds: an INSTANCE folds in; a change to a STANDING
+RULE gets a row.** This modifies the most-cited rule in the repo.*)
+
+**THE STANDING RULE, `CLAUDE.md`:** *"Before trusting one, run it against a case where it MUST come
+out the other way. A check that has never produced the other verdict has not been seen to check."*
+**Correct, and this lane has applied it all session.**
+
+**THE INSTANCE.** I specified two fixture cells for the fieldcal reader's falsifier guard:
+**(a) today's tape (n=260) must REFUSE; (b) a synthetic pooled read at n≥800 must COMPARE.**
+Both ways, both reachable, and the guard ships driven. ⛔ **Research's objection: BOTH CELLS ARE
+SATISFIED BY `if n < 800: warn`** — a plain sample-size threshold, which is **NOT the registered
+rule.** The registered rule is CATEGORICAL: **a per-CELL read never fires the falsifier at ANY n**,
+because a cell is a different statistic from the pooled one.
+
+⇒ **Their third cell is what separates them: a synthetic PER-CELL line at n ≥ 600/arm MUST STILL
+CARRY THE REFUSAL.** Under the correct rule it refuses; under `if n < 800` it clears.
+**Cells (a) and (b) agree on both implementations. Only (c) disagrees.**
+
+**⇒ THE ROW:** **name the PLAUSIBLE WRONG IMPLEMENTATION before choosing the cells, and add the cell
+on which it DISAGREES with the right one.** ⛔ **"It passed both ways" is compatible with having
+tested a lookalike.** The dangerous lookalike is never absurd — **it is the one a competent
+implementer would write from the same brief**, which here is a threshold on n, and it fails silently
+**at exactly the moment the leg gets big and the guard starts to matter.**
+
+**⚠ AND THE SELF-AUDIT, because this is the FOURTH instance of one shape from this lane in a single
+session:** RMST (answered a narrower question than the finding needed) · the carry idiom (asked
+*"is it stale?"* not *"is it classified right?"*) · the verb-list clearance (tested one member,
+reported the class clear) · **and now this (specified cells that verify the OUTPUT and not the
+MECHANISM).** ⇒ **All four published a correct answer to a question smaller than the one on the
+table.** **The 09:22Z correction — *name the members tested and not tested in the same sentence as
+the clearance* — would NOT have caught this one**, because the gap was not in the members, it was
+in **what the members could discriminate.**
+**⇒ The correction is extended: name the members tested, AND name the wrong implementation the
+tested members would fail to detect.**
