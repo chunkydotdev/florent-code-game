@@ -63,10 +63,30 @@ if __name__ == "__main__":
 
 ROOT = Path(__file__).resolve().parent.parent
 TAPE = ROOT / "elo_history.tsv"
+PROGRAMME_MD = ROOT / "PROGRAMME.md"
 
 SWAP_THRESHOLD = -21
 ARM_AFTER = 8
 WINDOW = 5
+
+
+def stop_loss_active(programme: Path | str | None = None) -> bool:
+    """⭐ RETIRED-BY-MAGNUS SWITCH (2026-08-16, verbatim: "We dont do stop loss
+    anymore, stop any stop loss and let the slot be until i say we change it").
+    Reads PROGRAMME.md's `SLOT_STOP_LOSS:` field: `off` -> the rule computes
+    its diagnostics but NEVER frees the slot; absent or `on` -> active.
+    An unreadable programme file counts as ACTIVE — failing toward the alarm
+    is the safe direction for a stop-loss switch, and the field's absence
+    predates this feature everywhere else this file is deployed."""
+    p = Path(programme) if programme is not None else PROGRAMME_MD
+    try:
+        for line in p.read_text().splitlines():
+            s = line.strip()
+            if s.startswith("SLOT_STOP_LOSS:"):
+                return not s.split(":", 1)[1].strip().lower().startswith("off")
+    except OSError:
+        pass
+    return True
 
 # ===========================================================================
 # ⚠ KNOWN DEFECT, 2026-08-10 — THE HOLDER TAG IS A SAMPLE TIME, NOT AN
@@ -169,6 +189,11 @@ def evaluate(tape: Path | str = TAPE, version: str | None = None) -> SlotState |
     net5 = None if base5 is None else rating - base5
     armed = (matches - holder_start) >= ARM_AFTER
     slot_free = bool(armed and net5 is not None and net5 <= SWAP_THRESHOLD)
+    # Magnus 2026-08-16: while PROGRAMME.md carries SLOT_STOP_LOSS: off the
+    # rule still COMPUTES (k/net5/armed stay as diagnostics on every consumer's
+    # log line) but never FREES — the slot moves only on his explicit word.
+    if slot_free and not stop_loss_active():
+        slot_free = False
 
     return SlotState(version=tag, holder_start=holder_start,
                      k=matches - holder_start, rating=rating, matches=matches,
@@ -181,6 +206,8 @@ if __name__ == "__main__":
     if st is None:
         raise SystemExit("no tape rows")
     n5 = "n/a" if st.net5 is None else f"{st.net5:+.1f}"
+    retired = "" if stop_loss_active() else \
+        "  [STOP-LOSS RETIRED by Magnus 2026-08-16 — SLOT_STOP_LOSS: off; diagnostics only]"
     print(f"{st.version}  k={st.k}  rating={st.rating:.1f}  net5={n5}  "
           f"armed={st.armed}  slot_free={st.slot_free}  "
-          f"(threshold {SWAP_THRESHOLD}, arms after {ARM_AFTER})")
+          f"(threshold {SWAP_THRESHOLD}, arms after {ARM_AFTER}){retired}")

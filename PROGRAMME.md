@@ -26,6 +26,27 @@ successor session inherit it. The fields below are parsed; the prose is not.
     TARGET_MIN_PAYOUT: 10
     SHIP_SIT_MIN_K: 8
     X3R0_SLOT_RULE: on_60pct_pm2pp_screen_vs_holder_switch_if_beats
+    SLOT_STOP_LOSS: off
+
+## SLOT_STOP_LOSS RETIRED 2026-08-16 (Magnus, direct, in-session)
+
+**Verbatim, 2026-08-16 ~15:4xZ: "We dont do stop loss anymore, stop any stop
+loss and let the slot be until i say we change it."** Given ~30 minutes after
+the −21 rolling-5 rule fired legitimately on x3r0's v152 (15:12:54Z, net5 −29,
+drawdown −64 — verified, on the record in coordination.md).
+
+**READING.** The slot stop-loss (rolling last-5 net ≤ −21, armed at k≥8, frees
+the slot) is OFF. No alarm rules toward displacing the holder: `slot_rule`
+forces `slot_free=False` while this field reads `off`, `ship_watch` writes no
+`corpus/SHIP_ALERT` (the SPRT bleed advisories included — they are
+stop-loss-family wakes), and `elo_logger` makes no SWAP RULE announcements.
+**The pollers keep logging the trend** (rating, drawdown, k) — eyes stay open,
+rulings stop. **THE SLOT CHANGES ONLY ON MAGNUS'S EXPLICIT WORD.** That
+supersedes the "unless a stop-loss fires" escape in SHIP_SIT_MIN_K, and it
+parks the SWITCH step of X3R0_SLOT_RULE's pipeline — the 60±2 screening
+continues as MEASUREMENT, but clearing it no longer authorizes an activation;
+Magnus's word does. Flip this field back to `on` only on his directive; the
+machinery below it is kept intact and selftested in both states for that day.
 
 ## LINE_DIRS WIDENED AGAIN 2026-08-16 (Magnus, direct, in-session: "Ok to widen the bots in programme")
 

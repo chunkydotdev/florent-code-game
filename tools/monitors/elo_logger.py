@@ -22,6 +22,28 @@ import slot_sprt  # noqa: E402  (single source of truth for the SPRT constants)
 
 HIST = os.path.join(os.path.dirname(__file__), "..", "..", "elo_history.tsv")
 STATE = os.path.join(os.environ.get("STATE_DIR", "."), "elo_logger_state.json")
+PROGRAMME = os.path.join(os.path.dirname(__file__), "..", "..", "PROGRAMME.md")
+
+
+def _stop_loss_active() -> bool:
+    """Magnus 2026-08-16: SLOT_STOP_LOSS: off in PROGRAMME.md retires the swap
+    rule — this module then logs the tape row as always but makes NO 'SLOT
+    FREE' announcement. Unreadable programme counts as ACTIVE (failing toward
+    the alarm is the safe direction for a stop-loss switch). Deliberately the
+    same parse as tools/slot_rule.stop_loss_active — this module keeps its own
+    copy because it imports nothing from tools/ (see the header's stdin
+    contract), and the two are pinned together by the shared test in
+    tests/test_instruments.py, which drives BOTH implementations across the
+    on/off boundary on the same fixture."""
+    try:
+        with open(os.path.abspath(PROGRAMME)) as f:
+            for line in f:
+                s = line.strip()
+                if s.startswith("SLOT_STOP_LOSS:"):
+                    return not s.split(":", 1)[1].strip().lower().startswith("off")
+    except OSError:
+        pass
+    return True
 
 
 def main() -> None:
@@ -141,7 +163,9 @@ def main() -> None:
                     if m <= matches - 5:
                         base = float(parts[1])
         armed = holder_start is not None and matches - holder_start >= 8
-        if not armed:
+        if not _stop_loss_active():
+            swappable = None  # Magnus 2026-08-16: rule retired; no wake ever
+        elif not armed:
             swappable = None  # window not armed; no wake, no stale flag
         elif base is not None:
             net5 = rating - base

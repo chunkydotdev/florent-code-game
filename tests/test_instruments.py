@@ -311,6 +311,52 @@ class TestSlotRuleAndTheAlarmThatReportsIt(unittest.TestCase):
 
     HDR = "ts\trating\tmatches\tversion\trank\n"
 
+    def setUp(self):
+        """Pin SLOT_STOP_LOSS: on for the mechanism tests. The LIVE
+        PROGRAMME.md carries `off` (Magnus 2026-08-16, stop-loss retired) but
+        the machinery is kept intact for the day the field flips back — these
+        tests guard the machinery; test_the_retirement_switch guards the
+        switch, in both directions."""
+        import tempfile
+        from pathlib import Path as _P
+        on = tempfile.NamedTemporaryFile("w", suffix=".md", delete=False)
+        on.write("SLOT_STOP_LOSS: on\n")
+        on.close()
+        off = tempfile.NamedTemporaryFile("w", suffix=".md", delete=False)
+        off.write("SLOT_STOP_LOSS: off\n")
+        off.close()
+        self._prog_on, self._prog_off = _P(on.name), _P(off.name)
+        self._saved_programme = (self.slot_rule.PROGRAMME_MD,
+                                 self.elo_logger.PROGRAMME)
+        self.slot_rule.PROGRAMME_MD = self._prog_on
+        self.elo_logger.PROGRAMME = on.name
+
+    def tearDown(self):
+        self.slot_rule.PROGRAMME_MD, self.elo_logger.PROGRAMME = \
+            self._saved_programme
+
+    def test_the_retirement_switch_suppresses_and_restores_all_three(self):
+        """Magnus 2026-08-16: SLOT_STOP_LOSS: off retires the stop-loss in
+        EVERY implementation — slot_rule, ship_watch's alert (SPRT advisories
+        included, they share the choke point), elo_logger's announcement.
+        Driven both ways on the same bleeding tape: off suppresses all three,
+        on restores all three. One direction alone would be vacuous."""
+        rows = [(1500, 100 + i) for i in range(10)] + \
+               [(1500 - 8 * (i + 1), 110 + i) for i in range(5)]   # net5 -40
+        self.slot_rule.PROGRAMME_MD = self._prog_off
+        self.elo_logger.PROGRAMME = str(self._prog_off)
+        st, ship, elo = self._both(rows)
+        self.assertFalse(st.slot_free, "slot_rule freed a slot while RETIRED")
+        self.assertFalse(ship, "ship_watch alerted while RETIRED")
+        self.assertFalse(elo, "elo_logger announced while RETIRED")
+        self.assertEqual(st.net5, -40,
+                         "diagnostics must keep computing while retired")
+        self.slot_rule.PROGRAMME_MD = self._prog_on
+        self.elo_logger.PROGRAMME = str(self._prog_on)
+        st, ship, elo = self._both(rows)
+        self.assertTrue(st.slot_free and ship and elo,
+                        "flipping the field back ON must restore all three")
+
     def _tape(self, rows, tag="v900"):
         import tempfile
         fh = tempfile.NamedTemporaryFile("w", suffix=".tsv", delete=False)

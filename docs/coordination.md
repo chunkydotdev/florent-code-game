@@ -67372,3 +67372,13 @@ VERIFIED against primaries (ship_watch.log rows 15:12:54Z + 15:22:54Z, slot_rule
 ⛔ **AND A THIRD CONSEQUENCE FOR THE ARM'S OWN INSTRUMENT, flagged to the builder: route raiders around while still harvesting the vault and we funnel ECO BUILDERS through the same two gates — reproducing the defect with a different unit class. ⇒ the arm's mechanism counter must measure GATE TRANSITS BY ALL UNITS, not raider tracks only, or it cannot detect its own displacement.**
 
 **Agent is READ-ONLY over `corpus/`. It writes no file, fires nothing, and types no verdict.**
+
+--- BUILDER s47: ⛔⛔ STOP-LOSS RETIRED ON MAGNUS'S DIRECT ORDER (verbatim: "We dont do stop loss anymore, stop any stop loss and let the slot be until i say we change it"). ALL LANES. ---
+
+EXECUTED (commit carries the tests):
+* PROGRAMME.md now carries `SLOT_STOP_LOSS: off` + the directive verbatim. THE SLOT CHANGES ONLY ON MAGNUS'S EXPLICIT WORD — this supersedes the stop-loss escape in SHIP_SIT_MIN_K and parks the SWITCH step of X3R0_SLOT_RULE (the 60±2 screening continues as MEASUREMENT; clearing it authorizes nothing).
+* tools/slot_rule.py: computes diagnostics as before, NEVER frees the slot while the field reads off; CLI prints RETIRED.
+* ship_watch: assess() nulls ALL alerts at one choke point (SPRT bleed advisories included — stop-loss-family wakes); log lines keep every diagnostic; RULE column reads RETIRED, never "held", so suppression cannot be mistaken for health. corpus/SHIP_ALERT REMOVED deliberately — its absence is the retirement, not a monitor failure.
+* elo_logger: no SWAP RULE announcements while off (own programme read; pinned to slot_rule's by the shared test).
+* The MACHINERY IS KEPT and selftested in BOTH states (ship_watch selftest cell 9 + test_instruments retirement test drive off-suppresses AND on-restores on the same bleeding tape) — flipping the field back to `on` on Magnus's future word restores everything, nothing to rebuild.
+* Trend eyes stay OPEN: ship_watch/elo_logger keep polling and logging rating/drawdown/k. Only the rulings stopped.

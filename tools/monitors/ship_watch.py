@@ -120,6 +120,10 @@ def assess(tape, version=None, baseline=None, ctx=None):
     net_act = ("" if base_act is None else
                f"\tnet_act={st.rating - base_act:+.1f}")
     ruling = ("SLOT FREE" if st.slot_free else
+              # Magnus 2026-08-16: SLOT_STOP_LOSS: off — the rule computes but
+              # never rules; say RETIRED, not "held", so a reader cannot
+              # mistake suppression for health.
+              "RETIRED" if not slot_rule.stop_loss_active() else
               "held" if st.armed else "unarmed")
     # LEVEL, not just slope. net5 is a five-match SLOPE and it RELAXES as a bad
     # result ages out of the window: on 2026-08-09 v102 fell 6 Elo while net5
@@ -223,6 +227,13 @@ def assess(tape, version=None, baseline=None, ctx=None):
             "NOTE the slow bound exists because a steady bleed slower than\n"
             "-4.2/match holds net5 above -21 FOREVER: -4.0/match is -240 Elo over\n"
             "60 matches with the rule silent throughout. Check DRAWDOWN, not net5.\n")
+    # Magnus 2026-08-16 (SLOT_STOP_LOSS: off): no stop-loss alarm of ANY kind
+    # — the slot-free path is already dead inside slot_rule, and this nulls
+    # the SPRT bleed ADVISORIES too, which are stop-loss-family wakes. The
+    # log line keeps every diagnostic; only the alarm is withheld. Single
+    # choke point, here, so every consumer of assess() inherits it.
+    if alert is not None and not slot_rule.stop_loss_active():
+        alert = None
     return st, verdict, events, line, alert
 
 
@@ -230,6 +241,19 @@ def selftest() -> int:
     """Corrupt the input; require the alarm. Every case here is a bug this file
     or its ancestor actually had."""
     hdr = "ts\trating\tmatches\tversion\trank\n"
+
+    # ⭐ PIN THE STOP-LOSS ON for the mechanism cells below: the live
+    # PROGRAMME.md may carry SLOT_STOP_LOSS: off (Magnus 2026-08-16), and
+    # these cells test the MACHINERY, which is kept intact for the day the
+    # field flips back. The off-state gets its own driven cell at the end.
+    _prog_on = tempfile.NamedTemporaryFile("w", suffix=".md", delete=False)
+    _prog_on.write("SLOT_STOP_LOSS: on\n")
+    _prog_on.close()
+    _prog_off = tempfile.NamedTemporaryFile("w", suffix=".md", delete=False)
+    _prog_off.write("SLOT_STOP_LOSS: off\n")
+    _prog_off.close()
+    _real_programme = slot_rule.PROGRAMME_MD
+    slot_rule.PROGRAMME_MD = Path(_prog_on.name)
 
     def tape(pairs, tag="v900"):
         fh = tempfile.NamedTemporaryFile("w", suffix=".tsv", delete=False)
@@ -443,6 +467,25 @@ def selftest() -> int:
 
     _sr.TAPE = _real_tape
     globals()["LOG"] = _real_log
+
+    # ---- 9. THE RETIREMENT SWITCH (Magnus 2026-08-16), driven BOTH ways -----
+    # Same bleeding tape that freed the slot in cell 2; only the programme
+    # field changes. If the off-state cell ever fails while the on-state cell
+    # passes, the switch is the defect, not the rule.
+    rows = [(1500, 100 + i) for i in range(10)] + \
+           [(1500 - 8 * (i + 1), 110 + i) for i in range(5)]
+    t = tape(rows)
+    slot_rule.PROGRAMME_MD = Path(_prog_off.name)
+    st, v, _, line9, alert = assess(t)
+    check("RETIRED: the same -40 bleed frees NOTHING and raises NO alert",
+          not st.slot_free and alert is None, f"net5={_n5(st.net5)}")
+    check("...and the log line says RETIRED, never 'held'",
+          "RULE=RETIRED" in line9, f"line={line9[:90]!r}")
+    slot_rule.PROGRAMME_MD = Path(_prog_on.name)
+    st, v, _, _, alert = assess(t)
+    check("...and flipping the field back ON restores the firing",
+          st.slot_free and alert is not None, f"net5={_n5(st.net5)}")
+    slot_rule.PROGRAMME_MD = _real_programme
 
     print(f"\n{'SELFTEST PASSED' if not fails else 'SELFTEST FAILED: ' + ', '.join(fails)}")
     return 1 if fails else 0
