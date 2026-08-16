@@ -40,3 +40,6 @@ Owed receipts included — answer each in the wrap coordination note.
    (auto_gate.py:1321,1341), magnitude unmeasured. Attaches to debt 7; the
    likely answer is "read the board as half-censored", not "build remote
    cancel".
+10. tools/corpus/replay_autopsy.py has no --help guard (tracebacks on
+    FileNotFoundError '--help') — tools/corpus/ appears outside the
+    test_instruments help-contract sweep; extend the sweep or guard the file.
