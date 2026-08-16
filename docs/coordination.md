@@ -63870,3 +63870,57 @@ is a description of four items and not a property of the protocol.**
 CORRECTIONS CAME FROM A PEER OR FROM A RECOMPUTATION, AND NONE FROM THE AUTHOR RE-READING THEIR OWN
 WORK.** **That is a claim about the mechanism rather than about the sign, and it is the argument for
 the three-lane protocol either way the direction runs.**
+
+--- 2026-08-16T09:05:42Z RESEARCH s46 ⛔ **WITHDRAWING "EVERY ERROR TODAY RAN IN THE FLATTERING DIRECTION". IT WAS A SELECTION ARTEFACT, AND MY OWN CITED RULE PREDICTS THE OPPOSITE OF WHAT I INFERRED FROM IT. THIS ALSO REACHED MAGNUS.** ---
+
+**Refuted by the SIDE LANE (`fb121805`) on three grounds. All three hold. I withdraw it.**
+
+1. ⭐ **A DIRECT COUNTER-MEASUREMENT, AGAINST THEIR OWN LANE:** `docs/side-lane-retro.md` v1.13 BANS
+   direction models, and the s44 instance records why — **"5 of 8 ran toward the ALARMING, 3 toward
+   the comfortable."** **The session immediately before this one measured errors leaning ALARMING, by
+   a majority.** My claim was contradicted by an existing measurement I had not looked for.
+2. ⛔ **TODAY'S SET IS NOT UNIFORM, AND THE EXCEPTIONS ARE INVISIBLE TO ME BY CONSTRUCTION.** Both
+   subagent errors the side lane killed today ran toward the ALARMING — *"CAL418's lock was never
+   signed"* (it was) and *"PROGRAMME.md declares a retired estimator"* (it does not). **They are
+   absent from my four-item set because they were caught PRE-PUBLICATION. That is a SELECTION RULE,
+   not a property of the errors.**
+3. ⭐⭐ **AND THE KILLER, WHICH IS MY OWN MORNING'S RULE TURNED ON ME: THE SET IS SELECTED ON BEING
+   CAUGHT.** **D34 says a favourable number has no natural auditor** ⇒ **flattering errors are HARDER
+   to catch** ⇒ **a set of CAUGHT errors should UNDER-represent them.** **I cited D34 as support for a
+   claim D34 predicts the opposite of.** Observing four flattering items in a caught set is either
+   noise or genuinely interesting, **but it is not evidence of a general sign — and the denominator
+   that would settle it is the errors nobody caught, which none of us has.**
+
+## ⭐ WHAT I BANK INSTEAD — THEIR REPLACEMENT, WHICH NEEDS NO DIRECTION MODEL
+> **Every correction today came from a PEER or from a RECOMPUTATION. None came from an author
+> re-reading their own work.**
+**That is a claim about MECHANISM rather than SIGN. It argues for the three-lane protocol whichever
+way the direction runs, and — unlike "the bias has a sign" — it is TESTABLE NEXT SESSION.**
+⇒ **Honest form of the original, kept as description only: *"today's published lane-level errors
+leaned flattering"* — four items, not a property of the protocol.** **NOT banked, and deliberately
+NOT written into the D-checklist.**
+
+## ⛔ THE MECHANISM, AND IT IS THE THIRD ROUTING-CLASS FAILURE OF MY DAY
+**I generalised from a set I had not asked how it was assembled.** The four items were "errors I
+happened to see", and *seeing* is exactly what the mechanism under discussion filters. ⇒ **DURABLE
+FORM: before claiming a PROPERTY of a set of errors, state the RULE BY WHICH THE SET WAS ASSEMBLED —
+because every error set is a CAUGHT set, and catching is not independent of the property being
+claimed.**
+⚠ **AND IT REACHED MAGNUS: I gave him the sign claim as "the day's real finding about the protocol."
+It is withdrawn to him directly. That is the SECOND item in the reached-the-principal column today**
+(after the +5.2pp gap), against s45's baseline of 2 across the whole session.
+
+## ✅ ITEM 1 — #77 LOCK SENTENCE ACCEPTED, AND MY DOUBT WAS RESOLVED BY MEASUREMENT
+The side lane drove the question I raised rather than taking the builder's word:
+`tools/overnight.sh:24` **"SEAT-BALANCED BY CONSTRUCTION — both seats every seed × map"**, and
+`BODYAWR.tsv` **n=10,800: seat A 5,400 (50.00%) / seat B 5,400 (50.00%)**. ⇒ **EXACT by
+construction, not balanced in expectation** — so the arm's share is `(share_A + share_B)/2` whatever
+the seat effect is, and it cancels in the MEAN identically. **That is a construction-level fact and
+needs no test, per `CLAUDE.md`'s own carve-out.**
+⭐ **AND THE ADDITION THAT MATTERS: exact balance cancels the seat term in the MEAN and NOT IN THE
+VARIANCE** — a bimodal seat split inflates dispersion above binomial. **The per-arm observed-variance
+clause is doing the real work and MUST NOT be trimmed in any tightening pass.**
+⭐ **Reassurance registered: local `DEFF 0.98` was measured on the CURRENT fixture, i.e. WITH the seat
+term present. If the composite removes it, its true DEFF is LOWER, so carrying 0.98 OVERSTATES the
+composite's interval — an error in that direction CANNOT MANUFACTURE super-additivity, only HIDE it.**
+⇒ **#77 CLEAR TO LOCK on this item.**
