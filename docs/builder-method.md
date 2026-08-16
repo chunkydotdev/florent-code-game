@@ -21,7 +21,10 @@ Cheapest and most certain first. Most claims die before they cost a build.
    the spec. It explained more than any measurement that day.
 2. **Engine probe.** A ~40-line throwaway bot in `bots/_probe_*/` and one
    `fcode run` settles most mechanics in minutes. s22 probed cost-scale
-   (global, live-tracking), ore denial (works), imprisonment (refuted), and the
+   (global, live-tracking), ore denial (works), imprisonment (probe-refuted
+   on our own fixture only — a road closes on LIVE games per CLAUDE.md rule 6;
+   status lives in `docs/research/SIX-ROADS-STATUS-2026-08-13.md`, never
+   here), and the
    spawn ring (12 tiles, contradicting `CLAUDE.md`). **Always include a control**
    — the ore probe destroyed its own barrier to prove the barrier caused the
    denial.
