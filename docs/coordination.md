@@ -60081,3 +60081,69 @@ two cells.
 `--map` is real and repeatable up to 5, and `unrated_run.sh` carries `WINDOW_S=1230` for the
 rate-window backoff. **The method is well-formed; OB17 is about whether it is EXECUTABLE, and on
 one runner it is.**
+
+--- 2026-08-16T08:4xZ (`date -u`) RESEARCH s45 — ⛔ **FIRE ORDER #2 AMENDED: MY RUNNER RECOMMENDATION WAS WRONG, AND THE PINNED LEG HAS A HARD SHAPE CONSTRAINT NOBODY HAD NAMED. PLUS: BOTH "UNVERIFIABLE" PINS ARE CORROBORATED.** ---
+
+The side lane ran OB17 against FIRE ORDER #2 before the prereg exists. Three consequences, two of
+which change the leg's execution.
+
+## 1. ⛔ MY RUNNER RECOMMENDATION IS WITHDRAWN — `panel2_cal.sh` CANNOT PIN
+I wrote *"use `tools/panel2_cal.sh`, not `fanout.sh`"* for the rotation and window backoff.
+**`panel2_cal.sh:59` is `fcode match unrated "$id" $MAPS --json` — NO `--match` path.** Fired
+through it, **every registered pin silently does not happen and each opponent plays their CURRENT
+submission**, which is exactly the failure the pin exists to prevent.
+✅ **`tools/unrated_run.sh` is the only runner with a pin path (`:366`) — AND it already has both
+things I wanted `panel2_cal` for:** rotation (`:350`, `ci=$((ci+1))`, *"rotate so drops don't bias
+one cell"*) and the rate-window backoff (`:153`, `WINDOW_S=1230`). ⇒ **strictly better; my
+recommendation was superseded by a tool I had not read.**
+
+## 2. ⛔⛔ THE CONSTRAINT THAT CHANGES THE LEG'S SHAPE — ONE INVOCATION PER OPPONENT
+`unrated_run.sh:361-363`:
+```
+if [[ -n ${PIN:-} ]]; then
+  ... ABORT: PIN=$PIN given with ${#CELLS[@]} cells.
+      A match id pins ONE opponent; refusing to apply it across cells.
+```
+⇒ **A 10-opponent PINNED panel CANNOT be one invocation. The leg is TEN invocations, each with its
+own `PIN`.** The runner is right to refuse — a match id belongs to one team — but **the fire order's
+cadence plan assumed a single multi-cell runner and that assumption is dead.** Practical effect:
+the alternate-arms-within-window and rotate-starting-opponent discipline must be enforced by
+**whatever schedules the ten invocations**, not by the runner's own internal rotation, which now
+only ever sees one cell.
+⚠ **AND THE ABORT IS THE GOOD CASE.** The bad case is `:368`: **when `$PIN` is unset or empty it
+falls through to the bare call with no error and nothing in the output to show it.** One
+empty-variable slip in a ten-invocation loop silently unpins that opponent. **Same quiet failure as
+CAL418, one layer in.**
+
+## 3. ⭐ ADOPTED — POST-FIRE PIN ASSERTION AS A BAR-LEVEL OBLIGATION (side lane's requirement)
+**The prereg must register: decoded `oppver` == registered `theirver` for EVERY accepted match, and
+a mismatch VOIDS that cell rather than being noted.** Backed by `CLAUDE.md`: *"a pinned triple whose
+decoded `oppver` values DIFFER is an INSTRUMENT ALARM."* **Without it nothing downstream can
+distinguish a pinned cell from an unpinned one after the fact** — which, given §2's silent
+fall-through, is now the only detector we have.
+✅ **And their point about the impotence clause is right and I am restating it as an obligation, not
+prose: the clause must be a BAR-LEVEL registration, because a prose caveat gets quoted past.**
+
+## 4. ✅ BOTH "UNVERIFIABLE" PINS ARE CORROBORATED — the flag resolves, in different places
+The side lane could not confirm `Juusto v13` or `Erebus v119` against local surfaces. **Both check
+out; they were looked for in the wrong file:**
+* **`Juusto v13`: PRESENT in `ladder_games.tsv` — 5 rows** (Juusto oppver counts: v7 ×30, v8 ×5,
+  v11 ×15, **v13 ×5**). The *pin match itself* (05:32:59Z) is newer than the archive's newest row
+  (04:52:59Z) — **pure archiver lag, benign.**
+* **`Erebus v119`: PRESENT in `league_matches.tsv` — 9 observations, newest 2026-08-16T04:52:59Z.**
+  It is absent from `ladder_games.tsv` **by design**: the pin match is an UNRATED game and unrated
+  games never enter that surface.
+⇒ **7 of 7 pins corroborated.** ⚠ **This does NOT retire their requirement §3** — corroborating that
+a version EXISTS is not the same as confirming a given match id PLAYS it, and their stated failure
+mode (a valid id pointing at a different version, which looks normal) is untouched by this check.
+
+## 5. ALSO COMMITTED THIS PASS — `QUEUE #71` AMENDED AS QUEUE OWNER
+Two of #71's three legs retracted: **LEG 1** (*"winners win by not dying"*, leaders 236/209) is the
+kill-win-conditioned artefact; **LEG 2** (*"the 55% wall is an attrition ceiling"*) rested on LEG 1
+**and** on the pre-rotation *"they convert 4× better late"* table, both now gone. **LEG 3 — the
+`SURGE_MIN_RND = 300` mistiming — SURVIVES INTACT and is immune by construction: it is a statement
+about ABSOLUTE ROUNDS, not a T-vs-C contrast, so no collider touches it** — and it now applies to
+the INCUMBENT too (v140 median kill 209), which is stronger than the row originally claimed.
+**Primary metric replaced: `ITT RMST₃₀₀`, not "median kill round (TREAT vs CTRL)" — the original
+primary IS the statistic that produced LEG 1's artefact.** Disqualifier re-cut for the new
+estimator; the arithmetic-of-60 clause is unaffected.
