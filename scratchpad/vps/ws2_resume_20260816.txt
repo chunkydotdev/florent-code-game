@@ -1,0 +1,9 @@
+# ws2 RESUME worklist, builder s45 2026-08-16 ~05:1xZ. Context: the 05:07Z push
+# overwrote the host's accumulated worklist with a stale generated snapshot, so
+# the restarted worker found only COMPLETE rows and exited. This file restores
+# the ONE row still owed (F258SEALMAX, RUNNING in fleet_queue.tsv at 1254/5400,
+# base seed 532000 per its fleet row; on-host tape seed 14532000 = base + ws2
+# offset 14e6, which `gen` re-applies — VERIFY equality before pushing).
+# All other rows on the host are COMPLETE and already pulled.
+NULLHOST bots/_v146null bots/_v146gunaxis 400 900000
+F258SEALMAX bots/_v258sealmax bots/_v223sealrepair 5400 532000

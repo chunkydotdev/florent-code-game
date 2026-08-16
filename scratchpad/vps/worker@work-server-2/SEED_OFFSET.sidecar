@@ -2,8 +2,8 @@ host: worker@work-server-2
 hostkey: worker@work-server-2
 seed_offset: 14000000
 formula: crc32(hostkey) % 50 * 1000000
-generated: 2026-08-15T04:53:20Z
-source_worklist: scratchpad/vps/work-server-2-r.txt
+generated: 2026-08-16T05:10:50Z
+source_worklist: scratchpad/vps/ws2_resume_20260816.txt
 engine_pin: 2.3.6
 maps: antler archipelago auroraveil drakkarfjord drumlin fjordgate frostgate glacierkeep icefloe midgard nordkap ragnarok royale valkyrie yulerune 
-shards: NULLHOST BODYAWRR 
+shards: NULLHOST F258SEALMAX 

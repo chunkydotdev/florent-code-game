@@ -58839,3 +58839,50 @@ was not pinned or read in this cut; `v152 x segment` refused at n=20.
 3,554 core deaths **and broken 80/80 by a one-tile displacement**; `our_team` confirmed
 behaviourally (gunners 1.36 US vs 5.27 THEM); two constant columns (`resid`, `disag`) flagged loudly
 with nothing resting on them.
+
+--- 2026-08-16T05:14Z (`date -u`, see line above) BUILDER s45 — AMENDMENT TO THE 04:48Z VERDICT BLOCK: THE KILL-ROUND LEGS ARE RE-PRICED (ADD-only; the original text stands as written) ---
+
+**Trigger: research's `KILL-HAZARD-REDERIVED-2026-08-16.md` (independently re-derived by the
+side lane; reproduces exactly), which answers Magnus's scorecard-staleness question: the
+`raid.py` "they convert 4× better late" table is PRE-ROTATION and does not survive
+re-derivation on the current pool.** What both lanes agree on: the 4× late penalty is DEAD
+(r300+ now ~0.82-0.91 against us, was 0.43); r200-300 is ~PARITY with the sign
+convention-sensitive (1.05 or 0.97 — do not build on either); the pre/post shift is mostly
+OUR old bot (v125 MAP_CODES era), not the field, though version and field drift are not
+separable in that cut.
+
+**Consequences for the 04:48Z verdicts, precisely:**
+* **Verdict 2 (rnd1) and verdict 8 (spawnlock stacks):** the sentence "a win-share gain at
+  a receding kill is the documented ceiling pattern" cited the stale table. The kill-round
+  observations (+10, +17-43 rounds) are FACTS and stand; the claim that drift inside
+  r200-300 is EMPIRICALLY harmful is withdrawn. What remains against those arms is the
+  DIRECTIVE: `DEFENCE_ADMISSION_BAR: kill_round_non_regression` is Magnus's bar, not an
+  inference — a bar does not weaken when its rationale does; only Magnus moves it.
+* **Verdict 3 (TRIO cancel): UNCHANGED, re-grounded.** Load-bearing leg is POWER (cannot
+  resolve +0.55pp at any reachable n) plus the DIRECTIVE bar. The hazard-window clause is
+  struck as support. (Side lane's original lead-with-kill-round advice was itself corrected
+  by its author on the same re-derivation — both corrections consumed.)
+* **No cancellation is re-opened, and no NEW cancellation may cite empirical r200-300 harm.**
+* **Open with Magnus (his directive to move, not ours):** whether `KILL_WINDOW_RND: 250`
+  re-prices to ~300 given r300+ is where the field's advantage still lives; and the RMST
+  horizon (250 vs 300) for FIRE ORDER #1's prereg — a pre-registered constant that must be
+  settled before drafting.
+
+**CONSUMPTION RECEIPTS:** research KILL-HAZARD doc — CONSUMED (this amendment; hazard-table
+citations struck from my verdict wording). Research addendum (287 games/arm = PLANNING
+label) — CONSUMED, will be in the prereg. Side lane FLAG 3/pattern-exclusion verification —
+CONSUMED, nothing further owed. Side lane TRIO-wording correction — CONSUMED (this
+amendment cites the directive, not the table).
+
+**ws2 DEPLOY (Magnus approved ~05:05Z): DONE.** Baseline 19 samples mean occupancy 36.0%
+(two full stalls, max 100%). Kill verified by independent status read (runners 0/worker 0).
+⛔ MY ERROR, recovered: the first push overwrote the host's accumulated worklist with a
+stale generated snapshot (and my first push attempt failed because I invoked the bash-only
+orchestrator with zsh — `for t in $TREES` does not word-split in zsh). The restarted worker
+found only COMPLETE rows and exited cleanly. Rebuilt a base-seed resume source
+(`scratchpad/vps/ws2_resume_20260816.txt`), re-gen'd (seed 14532000 verified equal to the
+on-host tape series BEFORE pushing), re-pushed, restarted: **F258SEALMAX RESUMED at
+1368/5400, load_ceil=7 allocation-derived, first post-deploy sample 6/6 games in flight.**
+After-sampler running 20 min; before/after occupancy lands in the next note. Also added
+read-only `orchestrate.sh logs <host>` (the worker's death note was unreadable by any
+existing command — that gap cost ~10 minutes of diagnosis).

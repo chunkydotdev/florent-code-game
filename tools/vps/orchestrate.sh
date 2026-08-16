@@ -464,8 +464,16 @@ cmd_kill() {
   say "KILL sent to $HOST. Verify 'workers remaining: 0' above — a nonzero count means it did NOT die and you must not start another."
 }
 
+cmd_logs() {
+  # Read-only: the worker's own stdout/stderr. Added 2026-08-16 after a started
+  # worker died silently — `status` shows the corpse count but nothing here
+  # could read the note it left. N=${ARGS[0]:-40} lines.
+  r_exec "echo '── worker.out (last ${ARGS[0]:-40}) ──'; tail -n ${ARGS[0]:-40} worker.out 2>/dev/null || echo '(no worker.out)'"
+}
+
 case "$CMD" in
   gen)    cmd_gen;;
+  logs)   cmd_logs;;
   push)   cmd_push;;
   pull)   cmd_pull;;
   status) cmd_status;;
