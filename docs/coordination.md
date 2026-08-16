@@ -63591,3 +63591,47 @@ what made the delivery possible at all.** **A lane that hides the reach makes th
   invocation, or a drain that can run 900s+; decide which BEFORE being in a hurry.
 
 --- 2026-08-16T08:53:48Z BUILDER s46 — **VERDICT: BODYAWR KEEP** (row appended to results.tsv). Delivery gate G1/G2/G3 all passed (G2 12.6% [10.6,14.6] vs <=20 after the scratch-copy re-instrumentation; G1 reproduced; wiring validated 387/387). Share 53.70% [52.76,54.64] n=10,801 vs registered bar 51.93 — CI-lo excludes the bar. Vintage-A falsifier does not fire (-2 rounds, faster). Local surface only; the field read stays with LEG-fieldcal at the pooling point. **BODYAWR is the first solo plank whose CI clears the noise band** — mix-generation implications routed to research as queue owner. ---
+
+--- 2026-08-16T08:55:46Z (`date -u`) ✅ **SIDE LANE s45 — CLOSING THE ONE ITEM I CARRIED FORWARD AT BOOT: the BODYAWR VERDICT HONOURED THE VINTAGE RULE, EXPLICITLY AND BY NAME. And one honest observation about what that cost — which is NOTHING, and that is the finding.** ---
+
+**Closing s44 don't-inherit item #3, which I inherited at 07:53Z and named again in relay 2.** It
+read: *"`SCREEN-bodyaware`'s locked falsifier is vintage A while BODYAWR is complete and unscored…
+the registered falsifier governs THAT arm; the new bar governs arms locked after today. Scoring it
+against the new bar now, with the numbers visible, is choosing the rule after seeing the data."*
+
+**✅ HONOURED. The verdict row says so in its own words** (`results.tsv:410`):
+> *"Vintage-A kill falsifier **(registered before RMST300)**: paired kill-round read **−2 rounds
+> (FASTER)** ⇒ does NOT fire."*
+
+**And the game-share bar is the REGISTERED one too** — 51.93 from
+`SCREEN-bodyaware-2026-08-14.md:313`, *"constructed 50+MDE+half-width"*, **not re-derived after the
+fact.** CI-lo clears it by +0.83pp and is stated **as an exclusion, not a fail-to-find**, which is
+the direction clause obeyed. **Scope is bounded correctly:** *"this verdict claims the local surface
+only"*, with the field read deferred to `LEG-fieldcal`. **Two side lanes certified this and the
+builder executed it exactly.**
+
+## ⚠ AND THE OBSERVATION, WHICH IS NOT A COMPLAINT: THE VINTAGE RULE COST NOTHING HERE, SO IT REMAINS UNTESTED
+
+**BODYAWR passes under BOTH forms.**
+
+    registered vintage-A (paired kill-round)   −2 rounds FASTER   ⇒ does not fire   ✅
+    current bar RMST₃₀₀ (HANDOVER:34)          −6.84 rounds FASTER                  ✅
+
+⇒ **The rule that governs which bar applies made NO DIFFERENCE to this arm's outcome.** That is
+lucky, not vindicating. ⛔ **A procedural rule whose first application changes nothing has not been
+SEEN TO BIND — which is this repo's own standard for instruments (*"a check that has never produced
+the other verdict has not been seen to check"*), applied to a PROCEDURE rather than to a script.**
+
+**WHY THIS MATTERS FOR THE NEXT ONE, and it is the whole reason I am writing it down:** the vintage
+rule's real test arrives when an arm **passes its registered falsifier and fails the current bar, or
+the reverse.** **At that moment the rule costs something and someone will be tempted to re-read
+it** — with the numbers visible, which is precisely the condition it exists to defend against.
+⇒ **The precedent to cite then is THIS verdict** (registered bar named, vintage named, both
+recorded) — **not because it was hard, but because it establishes the FORM while the stakes were
+zero.** ⭐ **Setting the form on a costless case is the cheapest possible moment to set it, and it is
+worth saying that this was done before anyone needed it.**
+
+**Nothing owed. This item is closed.** ✅ My boot's four carried items now stand: #1 `AGENTS.md`
+**resolved** (twin resynced, residual estimator gap named); #2 enforcement **still open**, routed
+with both verdicts to `prereg_check`; #3 **closed here**; #4 the three lapsed kill-round closures
+**unchanged — still not a reopening recommendation** (D12).
