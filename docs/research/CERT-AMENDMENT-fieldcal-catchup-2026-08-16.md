@@ -115,3 +115,45 @@ trusted, on the same standard the parent leg's own clock 2 was held to.
 * **The named residual is honest:** once `Z(arm)` empties, later-pass displacement (5/12, 10/12) is
   unprotected and waits a full pass. **Named rather than left to be discovered, and correctly not
   fixed here.**
+
+---
+
+# ✅ CLOSING STAMP — ALL THREE CONDITIONS VERIFIED, 2026-08-16T08:52:04Z
+
+**Verified by the certifying lane against live surfaces, not against a report. A certification whose
+conditions are never checked is a certification that certified nothing.**
+
+    D3  two-clock       amendment commit  2026-08-16T08:39:05Z
+                        scheduler restart 2026-08-16T08:50:54Z      gap +11m49s   ✅ correct order
+    D2  regime boundary scratchpad/fieldcal_amend1_effective.txt:
+                        "AMEND1 catch-up rule EFFECTIVE from round=9
+                         restart=2026-08-16T08:50:54Z amendment_commit=868e3312"  ✅ boundary PINNED
+    D1  formula         recorded as an OPEN pre-existing discrepancy; not ratified  ✅
+
+**RESUME CORRECT, and this was the un-named risk on a mid-leg restart:** `08:50:54Z resumed at
+round=9` — **not round 0.** A silent reset would have re-fired banked cells and blown the 12-accept
+ceilings **while looking like ordinary progress in the log.** Guarded by the scheduler's own
+state-resume selftest cell (`:981`); new pid 29026, PPID 1 (detached).
+
+**LOG CONTINUITY RESTORED — the first line of the log is now `07:40:13Z`, i.e. the PRE-RESTART
+history survived.** 160 lines across the seam. ⇒ **the `>` → `>>` fix (`d213b2f1`) is confirmed
+on a real restart**, closing the defect the s44 side lane found when the 07:40:13Z relaunch destroyed
+rounds 1–4.
+
+## ⭐ AND THE RULE FIRED CORRECTLY ON ITS FIRST OPPORTUNITY — ON ITS OWN TRIGGERING DEFECT
+
+    08:50:54Z ROUND 9: arm=B (v154) start_cell=gsxWins (idx 4)
+    08:50:54Z   CATCHUP B/not_adgato   (scheduled start was B/gsxWins, idx 4)
+
+**`B/not_adgato` IS THE CELL THE ROUND-3 ABORT STARVED** — the exact hole research reported
+(*"arm B has 0 at `not_adgato`… not retried until round 23, ~7h behind, making it the cell most
+likely to be CUT-SHORT-excluded"*). **The rule promoted it on its first firing**, and it selected the
+LOWEST-INDEX zero-accept cell as registered, not the nearest or the thinnest.
+⇒ **Amendment ratified, certified, implemented, and observed working on the defect that motivated
+it, inside twelve minutes.** **Nothing further is owed on this certification.**
+
+⚠ **What this stamp does NOT certify:** that the rule behaves correctly in the four cases it has not
+yet encountered live (dormancy when `Z` is empty; no spurious `CATCHUP` when the zero-accept cell
+IS the scheduled cell; same-cell retry on a drained rate window; HALT outranking the rule). **Those
+are covered by the five selftest cells (§4), which PASS — a fixture result, not a field
+observation.** **The distinction is the repo's own and is kept here deliberately.**
