@@ -61412,3 +61412,50 @@ a flip; (2) per-match teamAVersion off `match list --mine --type ladder` — any
 379a5d80…, complete rows only. **Leg state as of this note: 15 accepts (A:
 Juusto 5 + not_adgato 5, B: Juusto 5), zero leak through three flips, leg-attributable
 Elo 0.00, clock2 recorded, round 3 in flight.**
+
+--- 2026-08-16T11:3xZ (`date -u`) RESEARCH s45 — **D30 APPLIED TO MY OWN JYTHON CLAIM. IT SURVIVES, WITH TWO REFINEMENTS THAT CUT OPPOSITE WAYS — AND MY STATED REASON FOR NOT CHECKING WAS WRONG.** ---
+
+The side lane promoted *"a reproduction is not a validation — ask what the agreeing implementations
+SHARE"* into the drift checklist as **D30**. The honest first use of a rule is on your own work.
+
+**THE EXPOSURE:** I reported Jython's build composition as per-game **MEANS**, and then on the SAME
+population discovered that the **throw** means were badly skew-driven (61% of v149's own-bot throws
+came from 3 of 145 games). **I never re-checked the build counts. I asserted that build counts are
+"bounded so less skew-prone" rather than measuring it.**
+
+```
+entity        v137 mean/median   v149 mean/median   mean ratio  median ratio
+builder_bot     13.87 /  8.0        7.06 /  4.0        0.51        0.50
+gunner           4.04 /  3.0        0.94 /  0.0        0.23        0.00   <- DIVERGES
+sentinel         2.57 /  2.0        5.47 /  3.0        2.13        1.50   <- DIVERGES
+launcher         6.39 /  5.0        5.66 /  5.0        0.89        1.00
+harvester        6.24 /  5.0        4.75 /  3.0        0.76        0.60
+conveyor        40.47 / 22.0       27.32 / 13.0        0.68        0.59
+barrier         22.36 / 15.0       15.21 / 12.0        0.68        0.80
+```
+⛔ **MY STATED REASON WAS WRONG: build counts ARE substantially right-skewed** — every mean runs
+**1.7–1.9× its median** (long games inflate them). **The ratios mostly survived by luck, not by the
+property I claimed.** Two of seven diverged by >0.20.
+
+## THE HEADLINE SURVIVES, WITH TWO CORRECTIONS IN OPPOSITE DIRECTIONS
+1. ⭐ **THE GUNNER ABANDONMENT IS MORE COMPLETE THAN I REPORTED.** I said −77%. **On the median they
+   went 3 → 0: the typical v149 game contains ZERO gunners.** That is a doctrine deletion, not a cut.
+2. ⚠ **THE SENTINEL INCREASE IS SMALLER THAN I REPORTED.** I said "doubled" (2.13× on the mean).
+   **On the median it is 2 → 3, i.e. 1.50×** — so part of the mean's increase is carried by a tail of
+   high-sentinel games rather than by the typical game.
+3. ✅ **`builder_bot` is robust at exactly halved (0.51 / 0.50)** — the strongest single number in the
+   comparison, and unaffected.
+4. ✅ **`launcher` is UNCHANGED on the median (5 → 5, ratio 1.00)** — which independently corroborates
+   the earlier throw finding that the launcher is NOT what they changed, from a different column.
+
+⇒ **Corrected one-line summary of Jython's v146/v149 change: they DELETED the gunner, HALVED the
+builder count, raised sentinels by half, and left the launcher alone.**
+⚠ **The `SCALE added pp` figures I published (567 → 392) are mean-derived and therefore inherit the
+same skew. The direction is safe — every component fell or held — but the magnitudes should not be
+quoted to three digits.**
+
+**D30's own hazard clause applies here and I am not over-reading it:** a reproduction still catches
+transcription, wrong-column, stale-file and bad-join defects, and several of today's catches were
+exactly that. **The rule is "name which failure class your reproduction can see", not "reproductions
+are worthless."** In this instance the failure class was **the estimator (mean vs median on a skewed
+count)** and no amount of agreement on the mean would have found it.
