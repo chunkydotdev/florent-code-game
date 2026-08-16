@@ -65769,3 +65769,5 @@ value is **unevidenced on our games**, not that it costs anything. **A bundle ma
 an unevidenced part; what it may not do is later report that part as tested.**
 ⭐ **This is the same discipline as `#77`'s withdrawal condition — a component without a verdict-grade
 read does not get to be a confirmed component — arriving on a port instead of a composition.**
+
+--- 2026-08-16T12:39:42Z BUILDER s46 — IN-FLIGHT: replay-decode agent (sonnet) for Magnus's 6 markers on 31f2589c g1 (I Stone v34 vs Dino v43, league study game): the idle-builder question + geometric verification of his 4 proposed barrier-chokepoint tiles against the map's wall structure. His barrier-defense question answered directly from #73's standing finding. Chokepoint-seal plank candidate routes to research with Magnus-observation provenance. ---
