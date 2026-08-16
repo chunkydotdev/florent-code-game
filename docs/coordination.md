@@ -66960,3 +66960,78 @@ Their number, their method, relayed with both.
 ## FIRING WINDOW: NO. PROGRAMME stands — X3R0_SLOT_RULE 60±2 bar, board ceiling 55.24, standing state GRIND; the live unrated leg is parked and LEG-fieldcal restart is gated on Magnus×x3r0. No submit, no activation, no leg from this lane unless Magnus opens a window. Research: spend the session on the archive-only preconditions (#50, #80, #23→#78).
 
 ## RUNNING AT NOTE TIME (local): G421g2 87% (~42m), SENTBAN 98% (~2m), IDNULL140 36%, V426BCS 13%, TURBO4A/TBA/SEALPECK/RENT3B fresh. ws1: G411g4 ~52% (ETA ~14:35Z), then G412g4, G413g4. Next builder actions: SENTBAN + SEATSPAWN verdicts from .COMPLETE tapes, then G421g2 full read.
+
+--- 2026-08-16T14:1xZ ✅✅ **SIDE LANE s47 — `12f62f5d` VERIFIED, NOT ACCEPTED. The guard fires, and the check that mattered is one neither of us named: OF 183 HISTORICAL FIRINGS IT SUPPRESSES 13 AND LOSES **ZERO**.** ---
+
+**The builder consumed `f5d9b0c6` and reported the fix test-first. I verified it rather than taking
+it — the relay is not the artefact.** Commit confirmed present and on `origin/main`.
+
+## THE FIX READS CORRECTLY
+
+```python
+if base_m is not None and matches - base_m > WINDOW:
+    base5 = None
+```
+Reuses the existing window-not-filled path exactly as specified against the consumer; `ship_watch`
+renders `n/a`; fails safe. **Both comment notes corrected in the same commit** — the `:96-99` bound is
+now scoped to the polling-gap source and names the displacement as a second unbounded one, and
+*"resets naturally"* now says **NEW** holder with the restored case spelled out.
+
+## ⛔ THE CHECK I ACTUALLY CAME FOR — CAN IT STILL FIRE?
+
+**This is the v122 shape and it is this lane's signature catch: a guard that refuses everything gets
+routed around, and a stop-loss that cannot fire is worse than none because its silence reads as
+safety.** A refusal added to a live alarm has to be shown FIRING, not shown CORRECT.
+
+**Backtested over the entire tape — 1,862 armed evaluation points, 75 holder tags:**
+
+| | |
+|---|---:|
+| armed evaluation points | **1,862** |
+| refused by the new guard (span > 5) | **72 (3.87%)** |
+| would have FIRED under the old rule | **183** |
+| **still FIRE under the new rule** | **170** |
+| firings suppressed | **13 (7.1%)** |
+
+⚠ **3.87% is not rare, and the refusal is NOT confined to displacements** — `v140` refuses at 11.0%
+and `v80` at 12.0%, from ordinary tape gaps where two matches complete between polls. **That is
+correct behaviour rather than over-reach: the guard keys on the WINDOW SPAN, not on the cause, and a
+span of 8 is miscalibrated against a 5-match threshold however it arose.**
+
+## ⭐⭐ AND THE DECISIVE FOLLOW-UP, WHICH IS WHERE A "CORRECT" FIX WOULD HAVE HIDDEN ITS DAMAGE
+
+**13 suppressed firings could be 13 alarms LOST or 13 alarms DELAYED BY ONE POLL, and those are very
+different fixes.** Measured per holder — first old-rule firing vs first new-rule firing:
+
+```
+v53 v67 v68 v72 v80 v90 v91 v94 v102 v104 v116 v125 v139 v140 v152
+      ALL FIFTEEN: IDENTICAL timestamp and identical match number
+      LOST alarms: 0        DELAYED alarms: 0
+```
+
+⇒ **every one of the 13 suppressed points is a REPEAT firing after that holder's alarm had already
+fired. Not one holder's FIRST alarm moved by a single poll.** **The fix removes exactly the
+miscalibrated-window firings and preserves 100% of first-alarm behaviour across the whole history.**
+
+## THE THREE LIVE CELLS, DRIVEN
+
+* **LIVE NOW:** `v153 k=6 matches=1113 base5=None net5=n/a armed=False slot_free=False`.
+* **THE m=1115 ARMING EVALUATION — the exact point that read `slot_free=TRUE` before the fix:**
+  `k=8 armed=True net5=n/a slot_free=FALSE`. **It arms and refuses to judge, which is the intended
+  behaviour.** At m=1116 the span returns to 5, `net5=−16.0`, correctly below threshold.
+* **COMPLEMENT (the one that stops this being a guard-refuses-everything):** a synthetic contiguous
+  run with a genuine −30 bleed ⇒ **`slot_free=TRUE`.** The guard discriminates.
+
+⇒ **The builder's *"contiguous complement asserted still firing"* holds, and this backtest is the
+stronger form of it: 15 holders and 170 surviving firings rather than one assertion.**
+
+## ⚠ AND A NOTE ABOUT MY OWN CADENCE, SINCE THE RULE LANDED WHILE I WAS MID-FLAG
+
+Magnus's new standing rule (`0540c7d1`, ~14:0xZ): **tooling fixes defer to wrap unless they break the
+bot-finding loop.** ⇒ **Adopted into this lane's conduct.** **And it lands on my own output first:
+`f5d9b0c6` IS a tooling fix by that definition, my flag went out at 13:56Z, and a monitoring alarm on
+a teammate's ship is not obviously the bot-finding loop.** ⇒ **Under the rule as written, that flag
+should probably have carried "defer to wrap" and did not.** Not undoing anything — the flag was
+right, the fix is verified, and the builder made the call that was theirs to make. **What changes is
+prospective: from here every flag I raise states whether it demands action NOW or defers to wrap**,
+so the owning lane is not the one who has to work out my urgency from my tone.
