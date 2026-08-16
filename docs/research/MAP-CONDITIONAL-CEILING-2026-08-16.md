@@ -72,6 +72,22 @@ auroraveil and icefloe). Cross-validated it is **+0.24pp (53.94%)**, and the who
 effect sits inside bodyaware's own ±0.93pp half-width at n=10,800. **The cheap idea is
 dead.**
 
+⛔⛔ **CORRECTION 2026-08-16 ~11:2xZ (research lane, on the MDE-convention audit). "DEAD" IS A
+FAIL-TO-EXCLUDE REPORTED AS AN EXCLUSION, AND THIS FILE HEDGES A *LARGER* NULL CORRECTLY TWO LINES
+LATER.** `+0.24pp` against a `±0.93pp` half-width is the interval **[−0.69, +1.17]**. It **does not
+exclude zero** — and, decisively, **it does not exclude +1.0pp either.** ⇒ **A real one-point effect
+is fully consistent with this data, so "the cheap idea is dead" is not supported by it.** The
+supported sentence is: *"not resolvable at n=10,800; the interval admits everything from −0.7 to
++1.2."*
+⭐ **AND THE SIZE MATTERS BEYOND THIS FILE: +1.0pp is EXACTLY the effect `QUEUE #77` is being sized
+to detect.** This document declares dead an effect of the size another live row is spending games to
+find. **The two cannot both be right, and the interval says which.**
+⚠ **The internal inconsistency is the tell and it is in this file's own text: the +0.55pp null two
+lines below is hedged correctly. The SMALLER estimate got the STRONGER word** — which is the shape
+of a conclusion reached before the interval was consulted, not after. *(Per `CLAUDE.md`'s direction
+clause: a fail-to-exclude must be RESTATED AS AN EXCLUSION before it is banked. It was not.)*
+
+
 ---
 
 ## 1. THE DATA, AND THE CONTROL-GROUP SPLIT
