@@ -789,11 +789,37 @@ def decide(sh: Shard, bars: dict[str, Bar], stale_s: float,
         # typed into the registry.
         if (_combo is not None and bar is not None
                 and "COMBO-BAR-EXEMPT" in bar.source):
-            return d("CONTINUE", "COMBO-BAR-EXEMPT",
-                     f"COMBO arm (composed from: {_combo}) carries the registered "
-                     f"COMBO-BAR-EXEMPT token ({bar.source}) — a mechanism test "
-                     f"scored against its own prediction, not a prospect; the "
-                     f"55.0 bar does not adjudicate it.")
+            # ⛔ THE TOKEN ALONE GRANTS NOTHING — the silencer shape (a stated
+            # exemption granting itself) is the class this repo fought all
+            # morning. Same mechanism as queue_check's GREP-PATH: the token
+            # must cite a prereg FILE THAT EXISTS; a token citing nothing, or
+            # a missing file, is BROKEN — louder than no exemption at all,
+            # because claiming exemption against something that does not
+            # exist is strictly worse than claiming nothing.
+            _m = re.search(r"(\S+\.md)", bar.source)
+            _cite = _m.group(1) if _m else None
+            _cp = (Path(_cite) if _cite and os.path.isabs(_cite)
+                   else (REPO / _cite) if _cite else None)
+            if _cp is not None and _cp.exists():
+                return d("CONTINUE", "COMBO-BAR-EXEMPT",
+                         f"COMBO arm (composed from: {_combo}) carries the "
+                         f"registered COMBO-BAR-EXEMPT token, citation resolved "
+                         f"({_cite}) — a mechanism test scored against its own "
+                         f"prediction, not a prospect; the 55.0 bar does not "
+                         f"adjudicate it.")
+            pfx = 100.0 * sh.tape.wins_at_half / MARK_HALF
+            why = (f"cited prereg MISSING: {_cite}" if _cite
+                   else "NO .md prereg path in the source column")
+            if pfx < COMBO_BAR:
+                return d("STOP", "COMBO-BAR-BROKEN-EXEMPT",
+                         f"COMBO-BAR-EXEMPT token present but {why} — a claimed "
+                         f"exemption that resolves to nothing grants nothing; "
+                         f"the 55.0 bar applies (prefix {pfx:.2f}%) AND the "
+                         f"registry row needs fixing.", fired_on=pfx)
+            return d("CONTINUE", "COMBO-BAR-BROKEN-EXEMPT-UNFIRED",
+                     f"COMBO-BAR-EXEMPT token present but {why} — above the bar "
+                     f"so nothing stops, and the broken registration is flagged "
+                     f"rather than silently honoured. Fix the BARS row.")
         if _combo is not None:
             pfx = 100.0 * sh.tape.wins_at_half / MARK_HALF
             if pfx < COMBO_BAR:
@@ -1481,12 +1507,25 @@ def selftest() -> int:
     # the registered mechanism exemption: same failing numbers, token in the
     # bar's source => CONTINUE with the exemption named; tokenless twin above
     # (cb_below) already proves the same numbers otherwise STOP.
+    (tmp / "prereg_fix.md").write_text("# fixture mechanism prereg\n")
     TEX = dict(TB)
-    TEX["CB_EX"] = Bar(51.33, "ge", "fixture COMBO-BAR-EXEMPT mechanism-test row")
+    TEX["CB_EX"] = Bar(51.33, "ge",
+                       f"COMBO-BAR-EXEMPT mechanism test, {tmp / 'prereg_fix.md'}")
+    TEX["CB_EXM"] = Bar(51.33, "ge",
+                        f"COMBO-BAR-EXEMPT cites {tmp / 'no_such_prereg.md'}")
+    TEX["CB_EXN"] = Bar(51.33, "ge", "COMBO-BAR-EXEMPT with no citation at all")
     cb_exempt = trend_shard("CB_EX", [(560, "T"), (440, "C"), (924, "T"), (776, "C")],
                             "CB_EX", treat="treeD")
-    chk("COMBO-BAR-EXEMPT token in the bar source       => not stopped, exemption NAMED",
+    chk("EXEMPT token + citation RESOLVES              => not stopped, exemption NAMED",
         decide(cb_exempt, TEX, DEFAULT_STALE_S).clause, "COMBO-BAR-EXEMPT")
+    cb_exm = trend_shard("CB_EXM", [(560, "T"), (440, "C"), (924, "T"), (776, "C")],
+                         "CB_EXM", treat="treeD")
+    chk("EXEMPT token + citation MISSING (below bar)   => STOP, BROKEN named (louder)",
+        decide(cb_exm, TEX, DEFAULT_STALE_S).clause, "COMBO-BAR-BROKEN-EXEMPT")
+    cb_exn = trend_shard("CB_EXN", [(560, "T"), (440, "C"), (925, "T"), (775, "C")],
+                         "CB_EXN", treat="treeD")
+    chk("EXEMPT token, NO citation, ABOVE the bar      => CONTINUE but broken FLAGGED",
+        decide(cb_exn, TEX, DEFAULT_STALE_S).clause, "COMBO-BAR-BROKEN-EXEMPT-UNFIRED")
 
     # ── FLAG 3 (side lane, 2026-08-16): the LEDGER must carry the number the
     # rule actually READ. TREND-FLOOR fires on the first-N PREFIX while the
