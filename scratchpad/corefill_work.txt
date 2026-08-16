@@ -1188,3 +1188,4 @@ H627h4 bots/_v627h4 bots/_v223sealrepair 5400 514000
 H628h4 bots/_v628h4 bots/_v223sealrepair 5400 516000
 SEATSPAWN bots/_v450seatspawn bots/_v223sealrepair 5400 730000
 SEATFULL bots/_v455seatfull bots/_v223sealrepair 5400 742000
+RUSH72 bots/_v460rush bots/_v223sealrepair 5400 754000

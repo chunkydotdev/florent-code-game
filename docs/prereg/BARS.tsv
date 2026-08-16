@@ -263,3 +263,4 @@ ECOSIPCR	51.33	ge	house-standard corefill futility band; ws2 CROSS-HOST REPLICAT
 ECOPAVER	51.33	ge	house-standard corefill futility band; ws2 CROSS-HOST REPLICATION of the local ECO* batch (_v323pavefirst) — REPORT SEPARATELY, NEVER POOL (ws2 host term not established)
 ECOSCK4R	51.33	ge	house-standard corefill futility band; ws2 CROSS-HOST REPLICATION of the local ECO* batch (_v324osck4) — REPORT SEPARATELY, NEVER POOL (ws2 host term not established)
 ECOSCK6R	51.33	ge	house-standard corefill futility band; ws2 CROSS-HOST REPLICATION of the local ECO* batch (_v325osck6) — REPORT SEPARATELY, NEVER POOL (ws2 host term not established)
+RUSH72	51.33	ge	house-standard corefill futility band; QUEUE #72 reopen-and-re-measure of LOKI2_RUSH_ON (one-flag arm _v460rush) on the post-rotation pool — registered 2026-08-16T07:16:24Z; mechanism metrics (turrets-by-r22, first-forward-sentinel round, SHORT-band core_kill_share) read at readout per the queue row
