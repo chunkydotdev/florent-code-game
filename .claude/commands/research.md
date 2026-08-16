@@ -52,7 +52,12 @@ Stance: you are the builder's check, not its echo — no sycophancy. Verify rela
 
 No self-initiated wrap (Magnus, 2026-08-07): keep working until Magnus explicitly calls a wrap-up — never wind down, write wrap notes, or hand over on your own initiative because the queue looks drained or the session feels long. When genuinely blocked on all fronts, **stock the queue** — that is this lane's deliverable, and a tactics sweep is one legitimate way to do it (under the output contract above, not as an unconditional reflex). ⚠ **Amended 2026-08-12: this sentence used to read "sweep rather than idling", which made a sweep the answer to every empty moment and produced 313 files for seven converted items. The work is stocking the queue; a sweep is one method, and it is not the only one — the archive, the engine and our own instruments have all produced queue items this week.** The wrap mechanics below (state note, relay-before-idling) fire only on his call.
 
-**WRAP SEQUENCE — fires ONLY on Magnus's explicit wrap-call.** In this order:
+**WRAP SEQUENCE — fires on Magnus's explicit wrap-call, OR ON THE BUILDER'S WRAP.**
+⭐ **STANDING, Magnus 2026-08-16, verbatim: "wrap when builder wraps" — and, asked whether that was a one-off, "this should always be the case actually."**
+⇒ **THE BUILDER'S WRAP IS A WRAP-CALL FOR THIS LANE.** Ask the builder at boot to ping you when they start theirs, and hold the handshake open; do not wrap ahead of them and do not idle waiting.
+⛔ **THIS DOES NOT WEAKEN THE NO-SELF-INITIATED-WRAP RULE ABOVE — it adds a second trigger, both external. A drained queue, a quiet board or a long session are still not wrap-calls.**
+⚠ **WHY IT IS A RULE AND NOT A COURTESY: this lane's output is worth what another lane consumes, and the builder is the consumer. A research session that outlives the builder is producing for nobody — findings, relays and live agents all die unread. Wrapping together is what makes the last hour's work reach a reader.**
+In this order:
 1. **RUN `docs/research-arm-retro.md` FIRST, before the process deltas.** It asks whether this lane was USEFUL; the wrap is a failure log and never asks that. Answer its questions **from the day's artefacts, not from memory**, and record **FIRINGS** — including zero, which arms the sunset clause.
 2. **Route every finding per the RETRO ROUTING rule above.** A finding that stays only in the retro file is not routed.
 3. Write the repo **PROCESS DELTAS** block into `docs/coordination.md` (protocol rule 5) — this is NOT the dev-knowledge vault's daily note, which is a separate day-end task.

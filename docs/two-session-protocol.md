@@ -250,6 +250,15 @@ early-game behavior (deterministic opponents re-seed on OUR version).
 - **Research session death/compaction**: subagent results die with their
   session — relay before idling, and append a "research arm state" note
   (open agents, pending relays) to coordination.md when wrapping.
+- ⭐ **RESEARCH WRAPS WHEN THE BUILDER WRAPS (Magnus, 2026-08-16, standing).**
+  Verbatim: *"wrap when builder wraps"*, and on being asked whether it was a
+  one-off: *"this should always be the case actually"*. **The builder's wrap is
+  a wrap-call for the research lane** — a second EXTERNAL trigger, not a
+  relaxation of the rule below. The builder pings; research does not wrap ahead
+  and does not idle waiting. **Rationale, and it is the lane's own premise: the
+  research arm's output is worth what another lane consumes, and the builder is
+  the consumer — a research session outliving the builder produces for nobody.**
+  (Side lane unchanged: still Magnus's call only, unless he says otherwise.)
 - **Sessions wrap only on Magnus's explicit call** (directive 2026-08-07
   ~19:47, bilateral ack builder 19:5x). A drained queue = watch state
   (announce blocked, hold), never a self-initiated wrap; wrap mechanics
