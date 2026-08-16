@@ -60016,3 +60016,68 @@ falsifiable mechanism clause, PLANNING labels).
 Receipts: side-lane gate.py certification (3+2=5 mutant decomposition, maps onto the
 repo's two recorded guard failures; cell d retires their manual dupe-check) — CONSUMED,
 nothing owed. Research RMST doc + re-scan launch — CONSUMED.
+
+--- 2026-08-16T05:4xZ (`date -u`) ⭐⭐ **SIDE LANE s44 — PRE-LOCK OB17 CHECK ON `LEG-fieldcal`, RUN BEFORE THE PREREG EXISTS. THE PIN IS EXECUTABLE ON EXACTLY ONE RUNNER, THE FAILURE IS SILENT, AND 2 OF 7 PIN IDS CANNOT BE VERIFIED LOCALLY.** ---
+
+FIRE ORDER #2 (`a2e21bf9`) declares **"This is a TREATMENT leg, so PIN"**. ⇒ **OB17 binds**: the
+registered METHOD must be executable by the tool that will execute it, **and the certifier checks
+that, not only that the method is well-formed.** Run now rather than at certification, because
+**the fix is cheap before the lock and expensive at fire time** — OB17's own words, written by this
+lane after failing exactly this on `CAL418`.
+
+## OB17 PART 1 — NAME THE EXECUTING TOOL. ⛔ ONLY ONE RUNNER CAN DO IT.
+
+    tools/unrated_run.sh:366   fcode match unrated "$id" --match "$PIN" --json     ✅ HAS THE PIN
+    tools/fanout.sh:102        fcode match unrated "$id" $MAPS --json              ⛔ NO PIN PATH
+    tools/night_collector.sh:78  fcode match unrated "$id" $MAPS --json            ⛔ NO PIN PATH
+    tools/loki14b_leg.sh:93    fcode match unrated "$id" $MAPS --json              ⛔ NO PIN PATH
+
+⇒ **the prereg must NAME `unrated_run.sh` as its runner. Fired through any of the other three, the
+registered pin cannot execute** and the leg silently plays every opponent's CURRENT submission.
+
+## ⛔⛔ OB17 PART 3 — THE SILENT CASE IS LIVE, AND IT IS THE CAL418 FAILURE BEHIND A CONDITIONAL
+
+`unrated_run.sh` **branches**: `:366` pins when `$PIN` is set, `:368` falls through to the bare call
+when it is not. ⇒ **an unset or empty `$PIN` for any single opponent does not fail — it quietly
+plays that team's current bot, with nothing in the output to show it.** The CAL418 defect was an
+ABSENT pin path; this is a PRESENT one with an unguarded else-branch. **Same quiet failure, one
+layer in.**
+
+⇒ ⭐ **CERTIFICATION REQUIREMENT, STATED BEFORE THE PREREG IS WRITTEN SO IT CAN BE WRITTEN IN
+RATHER THAN AMENDED ON: the prereg must register a POST-FIRE, PER-MATCH ASSERTION THAT THE PIN
+TOOK — decoded `oppver` == the registered `theirver` for EVERY accepted match — and must state that
+a mismatch VOIDS THAT CELL rather than being noted.** `CLAUDE.md` already supplies the rule this
+leans on: *"A pinned triple whose decoded `oppver` values DIFFER is an INSTRUMENT ALARM."**
+**Without that assertion, nothing in the pipeline can distinguish a pinned cell from an unpinned
+one after the fact.**
+
+## ⚠ AND THE CLAUSE THAT ACTUALLY SURPRISED ME — 2 OF 7 PIN IDS ARE LOCALLY UNVERIFIABLE
+
+Per the OB17 RIDER (*run the clause that can return an answer that surprises you; a check whose
+verdict is already known is ceremony*), I ran the pin IDs against the corpus rather than the runner
+flags, because the runner answer was半 established by reading `:366`.
+
+    team                  claimed theirver   corpus check
+    not adgato                    23         MATCH   (ladder_games, oppver=23)
+    kladde chatte tville         119         MATCH
+    gsxWins                       46         MATCH
+    0033                          57         MATCH
+    lingling_40h                  61         MATCH
+    Juusto                        13         ⚠ NOT IN ladder_games.tsv NOR league_matches.tsv
+    Erebus                       119         ⚠ NOT IN ladder_games.tsv NOR league_matches.tsv
+
+**5 of 7 verify exactly. 2 cannot be verified against ANY local surface.**
+⚠ **This is NOT an accusation that they are wrong** — a pin sourced from an unrated match, or from a
+live `fcode match list --team` read, is legitimately absent from both archives. **The claim is only
+that the certificate cannot confirm them**, and the failure mode is the quiet one: **a VALID id
+pointing at a DIFFERENT version than `theirver` claims plays the wrong bot and looks normal.** An
+INVALID id would error and be visible; that is the harmless case.
+⇒ **For Juusto and Erebus specifically, the post-fire `oppver` assertion above is the ONLY thing
+that can catch a mis-specified pin.** It moves from good practice to load-bearing on exactly those
+two cells.
+
+## ✅ WHAT I AM NOT FLAGGING
+`--match` is real (`fcode match unrated --help`: *"Use opponent's submission from this match ID"*),
+`--map` is real and repeatable up to 5, and `unrated_run.sh` carries `WINDOW_S=1230` for the
+rate-window backoff. **The method is well-formed; OB17 is about whether it is EXECUTABLE, and on
+one runner it is.**
