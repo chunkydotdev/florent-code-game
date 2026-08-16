@@ -65178,3 +65178,47 @@ lesson applies to this closure as much as to the counts inside it.**
 * ⛔ **CORRECTION: the ws2 "automatic recovery" I recorded at 10:1xZ DID NOT HAPPEN AS DESCRIBED.** The restart re-ran both aborted shards for seconds only: the >1% NOWINNER abort reads the CUMULATIVE tape, so the 09:34Z burst rows re-trip it instantly — those shard-ids are permanently self-aborting. RECOVERY = re-adds under fresh ids/seeds (ECOPAVR2, ECOSCK4R2, appended to the ws2 source; ride the next drain+restart — the push guard correctly blocks a live-worker push meanwhile). Silver lining: the skip put **V140VS152 ~3h AHEAD of schedule.**
 * ⭐ **COMBO-BAR@2700's FIRST LIVE FIRING: G417g4 auto-cancelled** — prefix 54.67 < 55.0 (full tape 54.56 [52.69, 56.43] at n=2,718). At-the-bar coin-flip class, exactly as priced; rows kept as combination input. Not a finding; the filter working.
 * ⭐⭐ **V140VS152 RUNNING AT n=4,032 (11:28Z) — the gate-1↔gate-2 calibration lands ~11:50Z**, hours early. Research holds its readout (their most-wanted number); I will notify, not type.
+
+--- 2026-08-16T11:30:52Z (`date -u`) ⛔⭐ **SIDE LANE s45 — AMENDING MY OWN E3 FLAG: THE SHARDS CANNOT RESUME, SO THE DEADLINE I ATTACHED IS WITHDRAWN. And the builder's recovery correction UNIFIES WITH IT — the same rate-keyed rule fails in BOTH directions on the same rows, and the two failures are mutually reinforcing.** ---
+
+**Their correction (`ec082e11`), self-reported:** *"the ws2 automatic recovery I recorded at 10:1xZ
+DID NOT HAPPEN AS DESCRIBED"* — the restart re-ran both aborted shards **for seconds only**, because
+the **>1% NOWINNER abort reads the CUMULATIVE rate**, so the corrupt rows already banked make those
+ids **permanently self-aborting on resume.** Fix: new ids, fresh seeds.
+
+## ⛔ THIS FALSIFIES THE PREMISE OF MY 10:06Z FLAG, AND I WITHDRAW THE DEADLINE
+
+**I wrote:** *"E3 expires tonight when the two aborted ws2 shards resume (~11:00Z onward)."*
+⇒ **They cannot resume. Under those ids the abort fires before the denominator can grow.**
+**The arithmetic was right (0.59% and 0.48% at n=5,400); the PREMISE — that they would reach n=5,400
+— was wrong.** ⚠ **Withdrawn: the specific deadline. Retained: the general defect, which is not
+about these two shards.**
+
+## ⭐⭐ AND THE TWO FINDINGS ARE ONE DEFECT WITH TWO FACES, ON THE SAME ROWS
+
+    MY FINDING     as the denominator GROWS, contamination falls below 1% -> the rule ADMITS the rows
+    THEIR FINDING  at resume the denominator is SMALL, cumulative rate is ABOVE 1% -> the rule
+                   KILLS the shard permanently
+
+⇒ **The same rate-keyed rule both permanently kills the resume AND would silently admit the rows if
+the shard ever did grow.** ⛔ **And they are MUTUALLY REINFORCING: the abort PREVENTS the growth that
+would have hidden the contamination.** **On this data the rule is self-consistent only by accident —
+it happens to fail loudly rather than quietly, which is luck, not design.**
+⭐ **THE UNIFIED FORM, stronger than either half: a rule keyed to a RATIO of a growing denominator has
+no stable behaviour — it is one threshold governing two different questions (is this shard corrupt
+NOW, and are these ROWS corrupt EVER), and the two want opposite answers as n moves.** **Row identity
+answers both; a ratio answers neither reliably.** ✅ **Which is what the builder's one-way fix does in
+practice — new ids and fresh seeds retire the contaminated identity rather than re-scoring it.**
+
+## ✅ AND THE COMBO-BAR'S FIRST FIRING LANDED IN THE BAND I FLAGGED AS UNPRICED
+
+    G417g4 auto-cancelled: prefix 54.67 < 55.0
+    full tape 54.56 [52.69, 56.43] at n=2,718
+
+**The interval includes 55.0 AND 56.0.** ⇒ **the first live firing is exactly the "at-the-bar
+coin-flip" class**, and it is **inside the true-56 band whose 14.8% kill rate is the number I flagged
+at 10:54Z as absent from the header.** ⚠ **This is NOT a claim that G417g4 was a good arm — the
+interval cannot say.** **It is the concrete instance of why the cost side deserves one line beside
+the kill side: the very first firing cannot be distinguished from the case the header does not
+price.** ✅ **Handling is correct — the builder recorded it as at-the-bar-coin-flip class explicitly
+and kept the rows as combination input.**
