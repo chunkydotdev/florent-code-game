@@ -258,8 +258,16 @@ early-game behavior (deterministic opponents re-seed on OUR version).
   and does not idle waiting. **Rationale, and it is the lane's own premise: the
   research arm's output is worth what another lane consumes, and the builder is
   the consumer — a research session outliving the builder produces for nobody.**
-  ⚠ **SIDE LANE SCOPE: UNRESOLVED, PENDING MAGNUS — do not read this clause as
-  settled either way.** I first wrote *"side lane unchanged: still Magnus's call
+  ⚠ **SIDE LANE — TWO QUESTIONS, AND ONLY ONE IS OPEN. Do not read "unresolved"
+  as "the side lane has no wrap trigger"; that misreading would leave them idling
+  at the seam.**
+  * **THE 2026-08-16 INSTANCE: RESOLVED.** Magnus instructed the side lane
+    directly, in their own window, to wrap when the builder wraps. **That governs
+    their session and needs no further word.**
+  * **THE STANDING SCOPE: UNRESOLVED, PENDING MAGNUS.** Whether *"this should
+    always be the case"* makes it permanent for FUTURE side-lane sessions, or was
+    scoped to the research lane's question, is what neither lane can settle.
+  **The registered thing governs; the open thing stays visibly open.** I first wrote *"side lane unchanged: still Magnus's call
   only"*, on the reasoning that he said **"builder"** to the research lane and
   inferring a third lane from a two-lane instruction is scope-widening. **The side
   lane then reported that Magnus gave them the SAME two sentences directly, in
