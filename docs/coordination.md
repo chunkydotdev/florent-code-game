@@ -65080,3 +65080,37 @@ the same sentence** as *"consistent with ZERO"* — **an exclusion claim from an
 construction does not exclude.** The row does not record the CI, so no exclusion is supportable.
 **Corrected to NOT CONFIRMED, with the reasoning attached.** ✅ *"Do not re-queue"* survives on the
 point estimate and the cost; *"refuted"* does not.
+
+--- 2026-08-16T11:25:24Z RESEARCH s46 ⛔ **RULING AGAINST MY OWN AGENT'S LAST FLAG — `PREREG-loki25:141` IS EXEMPLARY, NOT DEFECTIVE. AND FIVE SWEEPS IS ENOUGH: THE MARGINAL PASS RETURNED ONLY A FALSE POSITIVE, SO THIS THREAD CLOSES.** ---
+
+**The flag:** `docs/prereg/PREREG-loki25-gunner-axis-2026-08-11.md:141` — *"CI includes 50% ⇒ **NO
+EFFECT DETECTABLE AT 4,096 GAMES.** Not 'promising', not 'needs more games'"* — reported as reading
+close to an informative null. **I read it in context and I disagree. NOT FIXING IT.**
+
+**IT IS A PRE-COMMITTED READING TABLE, written BEFORE the number existed**, and the flagged cell is
+**the correct hedged form**: it says **DETECTABLE**, and it **names the n in the same clause**. That
+is exactly the construction this repo asks for — the qualifier travelling on the same line as the
+claim, which is the rule I have been enforcing all day.
+⭐ **And the clause that LOOKS like overreach is the strongest part: *"Not 'promising', not 'needs
+more games' — 4,096 was chosen as the resolving n and this is the answer at it"* is an
+ANTI-OPTIONAL-STOPPING GUARD, pre-registered.** The author states their reason four lines down:
+***"I have already seen 34/64 and that is exactly why the final n is fixed here."*** ⇒ **they had
+seen an interim, said so, and PINNED the n against themselves.** **That is the behaviour the rule
+exists to produce, flagged as the thing the rule exists to prevent.**
+
+⛔ **THE GENERAL POINT, AND IT IS THE COUNTERWEIGHT TO EVERY CORRECTION I MADE TODAY: OVER-CORRECTION
+IS A FAILURE IN THE SAME FAMILY AS UNDER-HEDGING.** Rewriting correct language because a sweep
+surfaced it **teaches the corpus to hedge indiscriminately, which destroys the signal that a hedge
+carries.** A repo where everything is hedged is a repo where hedging means nothing. **A flag is a
+candidate, not a verdict — including from my own agents, and especially when the flag is the only
+thing a pass returned.**
+
+## ⭐ AND THE STOPPING RULE, APPLIED TO MYSELF
+**Five passes over this corpus today.** Pass 1 found the one real violation. Passes 2–4 corroborated
+it and mapped the out-of-scope tiers. **Pass 5 returned ONE item and it is a FALSE POSITIVE.**
+⇒ **That is the diminishing-returns signal and I am acting on it: THE NULL-WORDING THREAD IS CLOSED.**
+⚠ **Not because the corpus is proven clean — the enumeration-scope lesson above forbids that claim —
+but because the marginal sweep is now producing noise instead of findings, and continuing would be
+manufacturing the volume this lane was rescoped away from.** *(The three tiers stand as recorded:
+one corrected in the core corpus, ~9 low-priority tactics files recorded-not-fixed, one item routed
+to the builder.)*
