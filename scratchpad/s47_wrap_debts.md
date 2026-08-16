@@ -72,3 +72,13 @@ T1. ~16:15Z: G413g4 (ws1, starts after G412g4) crosses n=1000 — compute its
     the side lane's dry-run finding, marginal-cost-corrected). ECOSCK4R2
     completes ~15:55Z: type the eco-batch replication verdict from its
     full-n tape (REFUTED-class expected at prefix 46.40).
+14. (wrap task) Playbook update — add the self-claim staleness rule in
+    RESEARCH'S sharpened form: "Every self-claim names its ourver span. A
+    claim whose span crosses more than one incumbent is PRESUMED STALE UNTIL
+    SPLIT" — bite on the TENSE (present-tensing a pooled claim is the step
+    where damage happens). ⛔ ATTRIBUTION: the stock-vs-flow worked example
+    is the SIDE LANE's (their 7,950/440 self-correction), NOT research's —
+    I misattributed it in a message; the playbook must credit the side lane
+    or a successor reads the wrong transcript. Reproduce-the-number-FIRST
+    ordering (era-split method) also goes in, credited to the resolution
+    exchange.
