@@ -1208,6 +1208,7 @@ H613h3 bots/_v613h3 bots/_v223sealrepair 5400 496000
 KLADTKILL bots/_v469kladtkill bots/_v223sealrepair 5400 802000
 GUNPINA bots/_v470gunpina bots/_v223sealrepair 2700 804000
 DRAINTURBO bots/_v471drainturbo bots/_v223sealrepair 5400 806000
+KLADTK2 bots/_v472kladtk2 bots/_v223sealrepair 5400 808000
 # RETIRED 2026-08-16 18:5xZ (Magnus: killed every H reaching a checkpoint today, and 'definitely H618h3'; family reads 44-52): H616h3 bots/_v616h3 bots/_v223sealrepair 5400 500000
 # RETIRED 2026-08-16 18:5xZ (Magnus: killed every H reaching a checkpoint today, and 'definitely H618h3'; family reads 44-52): H617h3 bots/_v617h3 bots/_v223sealrepair 5400 502000
 # RETIRED 2026-08-16 18:5xZ (Magnus: killed every H reaching a checkpoint today, and 'definitely H618h3'; family reads 44-52): H618h3 bots/_v618h3 bots/_v223sealrepair 5400 504000
@@ -1217,3 +1218,6 @@ DRAINTURBO bots/_v471drainturbo bots/_v223sealrepair 5400 806000
 # RETIRED 2026-08-16 18:5xZ (Magnus: killed every H reaching a checkpoint today, and 'definitely H618h3'; family reads 44-52): H626h4 bots/_v626h4 bots/_v223sealrepair 5400 512000
 # RETIRED 2026-08-16 18:5xZ (Magnus: killed every H reaching a checkpoint today, and 'definitely H618h3'; family reads 44-52): H627h4 bots/_v627h4 bots/_v223sealrepair 5400 514000
 # RETIRED 2026-08-16 18:5xZ (Magnus: killed every H reaching a checkpoint today, and 'definitely H618h3'; family reads 44-52): H628h4 bots/_v628h4 bots/_v223sealrepair 5400 516000
+F266BBNULL bots/_v266bbnull bots/_v223sealrepair 5400 538000
+F268TRICOMB bots/_v268tricomb bots/_v223sealrepair 5400 540000
+F269AWRSPAW bots/_v269awrspawn bots/_v223sealrepair 5400 542000
