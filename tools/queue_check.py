@@ -559,9 +559,21 @@ def grep_staleness(rows, incumbent: str | None):
         # fires on everything is the same defect as one that fires on nothing).
         # Carry claims live OUTSIDE the GREP cell, so they are searched on the
         # whole row; the row-level claim set is the union.
-        claimed = set(re.findall(r"(?:vs|against)\s*[`'\"*\s]*(_v\d+[a-z0-9_]*)",
-                                 seg, re.I))
-        claimed |= set(re.findall(r"(?:→|->)\s*[`'\"*\s]*(_v\d+[a-z0-9_]*)",
+        # ⛔ FOURTH AND LAST PROSE WIDENING (research, 2026-08-16): `bots/`
+        # path prefix allowed (the MORE precise form must not be the one that
+        # fails — rejecting it trains people to write the less precise one),
+        # and `checked in <tree>` added (surveyed: #70 uses it honestly).
+        # DELIBERATELY NARROWER than requested: bare `in <tree>` is refused —
+        # it matches mention contexts ("7 call sites in `x`") and is the
+        # accidental-satisfaction shape the widening trajectory warns about.
+        # THE TRAJECTORY RULE, adopted from research's flag: prose idioms are
+        # a LEGACY accommodation for the existing rows. New rows carry the
+        # structured GREP-PATH:/GREP-TREE: token; a fifth idiom is not added,
+        # however honest the sentence — the structured token is the answer.
+        claimed = set(re.findall(
+            r"(?:vs|against|checked\s+in)\s*[`'\"*\s]*(?:bots/)?(_v\d+[a-z0-9_]*)",
+            seg, re.I))
+        claimed |= set(re.findall(r"(?:→|->)\s*[`'\"*\s]*(?:bots/)?(_v\d+[a-z0-9_]*)",
                                   row))
         # ⛔ STRUCTURED BEATS PROSE, checked FIRST (research, 2026-08-16, the
         # precedence bug): a guard that consults an UNSTRUCTURED signal before
