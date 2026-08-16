@@ -369,7 +369,26 @@ class TestSlotRuleAndTheAlarmThatReportsIt(unittest.TestCase):
     def _elo_logger_says_slot_free(self, tape, rating, matches, tag):
         """Drive elo_logger's INLINE rule over the same tape and report whether
         it announces SLOT FREE. Uses its real code path, not a reimplementation
-        — reimplementing it here would recreate the bug this test guards."""
+        — reimplementing it here would recreate the bug this test guards.
+
+        ⛔ sys.argv IS PART OF THE PIN, AND LEAVING IT OUT MADE THIS HARNESS
+        RUNNER-DEPENDENT (found s47, 2026-08-16). `elo_logger.main()` refuses
+        any invocation with arguments (elo_logger.py:55 — `if len(sys.argv) > 1`,
+        added so `--selftest` and typos cannot exit 0 in silence) and prints its
+        usage instead of running. It therefore announced NOTHING whenever the
+        RUNNER carried arguments:
+
+            .venv/bin/python tests/test_instruments.py           argv==1  -> 158 OK
+            .venv/bin/python -m unittest tests.test_instruments  argv==3  -> 3 FAIL
+
+        The three failures were all `elo_logger announced NO slot-free`, i.e. the
+        harness read a REFUSAL as a negative verdict — the vacuity this class
+        exists to prevent, in the class's own helper. The fix is to pin argv the
+        same way HIST/STATE/stdin are already pinned; the SEMANTICS of the rule
+        are untouched. Guarded below by
+        test_the_elo_logger_harness_is_runner_independent, which fails without
+        this pin.
+        """
         import io, json, tempfile, contextlib, os
         el = self.elo_logger
         status = {"rating": {"rating": rating, "matches_played": matches},
@@ -381,15 +400,26 @@ class TestSlotRuleAndTheAlarmThatReportsIt(unittest.TestCase):
         state.write("{}")
         state.close()
         old_hist, old_state, old_stdin = el.HIST, el.STATE, sys.stdin
+        old_argv = sys.argv
         buf = io.StringIO()
         try:
             el.HIST, el.STATE, sys.stdin = tape, state.name, io.StringIO(payload)
+            sys.argv = ["elo_logger.py"]      # the module's own no-argument contract
             with contextlib.redirect_stdout(buf):
                 el.main()
         finally:
             el.HIST, el.STATE, sys.stdin = old_hist, old_state, old_stdin
+            sys.argv = old_argv
             os.unlink(state.name)
         out = buf.getvalue()
+        # NON-VACUITY: a REFUSAL is not a negative verdict. If the module printed
+        # its no-arguments usage, this harness measured nothing and must say so
+        # rather than return False — that False is exactly what hid the defect.
+        if "takes NO arguments" in out:
+            raise AssertionError(
+                "elo_logger REFUSED the invocation (no-argument contract) instead "
+                "of running — the argv pin above is broken, so every 'elo_logger "
+                f"announced nothing' assert in this class is vacuous. Output:\n{out}")
         # elo_logger APPENDS a row to the tape it is given; that is fine, the
         # tape is a throwaway. We only read its announcement.
         return "SLOT FREE" in out
@@ -410,6 +440,33 @@ class TestSlotRuleAndTheAlarmThatReportsIt(unittest.TestCase):
         self.assertTrue(st.slot_free, "slot_rule failed to free the slot at net5 -40")
         self.assertTrue(ship, "ship_watch raised NO alert on a -40 window")
         self.assertTrue(elo, "elo_logger announced NO slot-free on a -40 window")
+
+    def test_the_elo_logger_harness_is_runner_independent(self):
+        """The s47 defect, pinned: this class's verdict must not depend on how
+        the SUITE was invoked.
+
+        `elo_logger.main()` refuses argv with arguments. The harness reads that
+        refusal as "did not announce", so with `python -m unittest ...` (argv
+        length 3) three tests here failed while the same code passed under
+        `python tests/test_instruments.py` (argv length 1). Both directions:
+        a polluted argv must still announce (the pin works), and the harness
+        must REFUSE to return a verdict at all if the pin ever comes out
+        (the AssertionError in `_elo_logger_says_slot_free`).
+
+        Without the argv pin this test FAILS — verified 2026-08-16 by removing
+        the pin: `AssertionError: elo_logger REFUSED the invocation`.
+        """
+        rows = [(1500, 100 + i) for i in range(10)] + \
+               [(1500 - 8 * (i + 1), 110 + i) for i in range(5)]   # net5 -40
+        old = sys.argv
+        try:
+            sys.argv = ["runner", "tests.test_instruments", "-v", "--some-flag"]
+            st, ship, elo = self._both(rows)
+        finally:
+            sys.argv = old
+        self.assertTrue(st.slot_free, "fixture must be a firing one or this is vacuous")
+        self.assertTrue(elo, "elo_logger did not announce under a polluted argv — "
+                             "the harness is runner-dependent again")
 
     def test_a_restored_holder_refuses_the_widened_window(self):
         """The 2026-08-16 displacement class: a foreign hole inside a holder's
