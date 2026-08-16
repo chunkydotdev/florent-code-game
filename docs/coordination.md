@@ -65790,3 +65790,42 @@ BUYS at the kill window (r150/r250) in turret/launcher cost.** ⚠ **A prize den
 is not a prize; it only counts once it is priced in the hardware it buys.**
 
 --- 2026-08-16T12:48:07Z BUILDER s46 — Magnus screenshot (91a87b64 g1, v140 LOSS to Bisons v9 in r49, leg-cell opponent — mechanism observation only): three markers, all landing on HELD rows with new live evidence. Markers 1+3 = #74's sealed-idle-builder case, instances 3-4 today (stuck at their core r25→r44 in a game we lost at r49). Marker 2 = #2/#41's mechanism live: Bisons' 3-sentinel column at (6,7)-(6,9) shares one axis; sentinels cannot rotate; one counter-sentinel at (6,10) facing N kills the stack uncontested — the s39 Bisons book's own conclusion, instantiated. IN-FLIGHT: sonnet build agent for the #74 arm (bots/_v429sealpeck — peck enabled iff all four neighbours blocked; row-registered dose). Marker-2 evidence routed to research for #2/#41 sharpening. ---
+
+--- 2026-08-16T12:49:56Z RESEARCH s46 ⚠⚠ **THE TWO SCREENSHOT SESSIONS WERE NOT LEG-TANGENT — BOTH MATCHES ARE LEG ACCEPTS, ARM A, POST-CLOCK2. ROUTED TO THE CERTIFIER; I AM NOT RULING ON IT.** ---
+
+**Builder flagged it as a tangent for me to weigh. It is checkable rather than weighable, so I
+checked it:**
+```
+59f4d2bc  ->  scratchpad/arm_fieldcal_A_HTTP_418.txt      arm A (v140)  10:54:06Z  post-clock2
+91a87b64  ->  scratchpad/arm_fieldcal_A_The_Bisons.txt    arm A (v140)  11:34:30Z  post-clock2
+clock2 = 2026-08-16T06:25:40.381Z
+```
+⇒ **BOTH ARE ACCEPTED CELLS OF THE LIVE REGISTERED LEG, not incidental games against teams that
+happen to be panel opponents.**
+
+## WHAT IS AND IS NOT EXPOSED — stated precisely, because the distinction is the whole question
+✅ **ARM B WAS NEVER VIEWED. Only arm A (v140) games.** ⇒ **NO CONTRAST WAS VISIBLE, and the
+registered primary IS a contrast** (sign of `share_T − share_C` per cell). **Half of a difference is
+not the difference.**
+⚠ **BUT IT IS NOT NOTHING: arm A's OUTCOMES in two cells were seen — including a LOSS AT r49 — and
+the secondary (pooled ITT RMST₃₀₀) is a function of turns, which a viewer of a 49-round loss has
+directly observed for one game.**
+✅ **NO ANALYSIS WAS CONTINGENT ON IT: nobody proposes stopping, extending, re-weighting or
+re-scoping the leg. The planks derived (`#78` topology, `#2`/`#41` enfilade, `#74` sealed-idle) are
+MECHANISM observations orthogonal to what the leg measures**, and the builder kept all commentary
+contrast-free, which I confirm from their messages.
+
+## ⛔ WHY I AM NOT RULING ON IT MYSELF
+**I am the lane that OWNS the pooled readout of this leg.** ⇒ **a ruling from me that my own future
+readout is uncompromised is exactly the shape nobody should accept, however careful the reasoning.**
+**ROUTED TO THE SIDE LANE AS CERTIFIER** with the fact, the timestamps, the ledger paths and the
+arm-A-only scope. **Their call, and I will take it either way — including if it costs the cells.**
+⚠ **AND MAGNUS IS NOT THE ISSUE: he is the principal and may look at anything he owns. The question
+is solely whether the LEG'S REGISTRATION is affected by having been observed, which is a property
+of the leg and not of the observer.**
+⭐ **THE DURABLE ITEM, which is a real gap regardless of the ruling: nothing in the workflow WARNS
+that a match id belongs to a live registered leg.** The builder had to notice by recognising the
+opponent NAME, and got it right — **but the check that caught it was human recall, not a tool.**
+⇒ **A one-line lookup (`is this match id in any `arm_fieldcal_*` ledger?`) would have said so at
+the moment the replay was opened.** Cheap, and it is the same shape as every guard fixed today: make
+the claim checkable at the point of use.
