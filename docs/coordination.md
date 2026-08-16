@@ -60600,3 +60600,65 @@ asserts `CARDINALS` only, and asserts CANONICALISATION rather than OUTCOME** —
 Seats 17,517/17,517; all 38 (map,seat) cells balanced; within-cell seed-split χ²/df **1.15** vs
 between-shard **8.02** ⇒ the between-map spread is structure, not seed noise. **No identity null
 exists for the incumbent itself** — that is the one gap in the design.
+
+--- 2026-08-16T10:0xZ (`date -u`) RESEARCH s45 — ⭐⭐ **TWO AGENTS CONVERGED ON SEAT FROM OPPOSITE DIRECTIONS. AND THE BOARD IS OVER-READ: THE LEADER IS WORTH 53.50%, NOT 55.24% — THE GAP TO 60 IS +6.5pp.** ---
+
+Doc: `docs/research/MAP-CONDITIONAL-CEILING-2026-08-16.md`. Read alongside the seat hunt of 09:4xZ.
+
+## 1. ⛔⛔ THE NUMBER EVERYONE HAS QUOTED ALL DAY IS A MAXIMUM, NOT AN ESTIMATE
+**`55.24%` is the MAX over 23 arms.** Scored honestly — i.e. asking *"what do we get if we SHIP the
+board leader"* rather than *"what is the best number on the board"* — **the leader is worth 53.50%.**
+⇒ **THE GAP TO MAGNUS'S 60 IS +6.5pp, NOT +4.8pp.** Winner's-curse arithmetic, and it checks out
+independently: 23 arms at ±1.33pp ⇒ E[max] ≈ +1.7pp above the truth, which is the observed spread.
+**Every plan priced against 55.24 is priced against a number no arm will reproduce.**
+
+## 2. MAP-CONDITIONAL ALONE IS **NOT** A ROUTE TO 60 — road closed, properly
+```
+cross-validated (k=10 on seeds, 23 arms, 129,930 games)   57.04%  [55.78,58.30] @DEFF .98
+seed-cluster bootstrap (carries SELECTION variance)               [54.21,59.38]  2/200 draws >= 60
+naive oracle                                              60.79%  <- overfitting gap 3.75pp
+```
+✅ **THE NULL-SELECTION CONTROL FIRED EXACTLY AS IT MUST:** 23 arms simulated IDENTICAL →
+**CV 53.05% vs truth 53.10% (bias −0.047pp)**, while the **naive form on the same data reads 58.10%
+(bias +5.01pp)**. ⇒ **the CV estimator is unbiased and the naive one manufactures 5pp from nothing.**
+A positive control recovers injected effects and reads zero at zero.
+✅ **And it kills the cheap idea I floated: `bodyaware` plank-off on its bad maps is +0.24pp
+cross-validated** (naive +0.33 — **my +0.34 estimate was right for the NAIVE form and the naive form
+is the wrong one**). Inside its own ±0.93pp half-width. **Dead.**
+
+## 3. ⭐⭐ ADDING **SEAT** TO THE KEY BEATS IT — AND IT CONVERGES WITH THE SEAT HUNT
+```
+(map)-conditional        CV 57.04%
+(map, seat)-conditional  CV 59.19%   bootstrap [56.03,60.93]   29/200 draws >= 60
+                         lift +4.96pp, p=0.0050
+seat alone               +0.55pp, p=0.36  (NULL)
+```
+⇒ **map and seat are SUPER-ADDITIVE: neither alone gets there, together 60 is not excluded.**
+Two cells survive Bonferroni over all 690 comparisons: **`CMB290` on glacierkeep/A +21.11pp
+(z=4.65)** and **`SH288` on drakkarfjord/B +22.22pp (z=4.38)**.
+⭐ **THE CONVERGENCE IS THE FINDING: one agent auditing a bug and one agent hunting a path to 60,
+briefed independently, both landed on SEAT.**
+
+## 4. ⛔ BUT THE TWO RESULTS CANNOT BOTH BE BANKED — AND THE ORDER MATTERS
+The seat hunt shows the seat effect is **our own compass-absolute code** (+6.28pp on BYTE-IDENTICAL
+self-play, z=16.24, n=66,572; flips by map; `main.py:289`'s `(x*17+y*31+…)%97` spawn-ring hash
+measured to carry +4.84pp of it). ⇒ **part of the (map,seat) lift is ARM SELECTION ROUTING AROUND A
+BUG OF OURS.**
+⇒ **FIX THE SEAT ASYMMETRY FIRST, THEN RE-MEASURE THE CONDITIONAL LIFT.** Banking both is
+double-counting: the conditional selection is partly buying back what the fix would give for free,
+and the fix is the cheaper and more general of the two.
+
+## 5. THE THREE CAVEATS THE AGENT PUT ABOVE ITS OWN HEADLINE
+1. **It needs 10–16 ARMS to realise. A 3-arm switch is worth 55.4%.** That is a large implementation,
+   not a tweak.
+2. **One opponent, local battery.** CV certifies NEW GAMES vs v140 — **not new opponents.** The
+   generalisation this most needs is exactly the one the local fixture cannot supply.
+3. The bootstrap that carries selection variance is the honest interval, and it spans 54.21–59.38.
+
+## 6. STATUS OF THE PATHS TO 60, AS OF THIS NOTE
+```
+map-conditional alone        57.04% CV      NOT a route          road closed
+(map,seat)-conditional       59.19% CV      not excluded         BLOCKED on the seat fix
+seat-asymmetry fix           +1.5 to ~3pp   free (a bug fix)     DO THIS FIRST
+board leader, honest         53.50%         the real baseline    +6.5pp to go
+```
