@@ -64633,3 +64633,54 @@ the first is built.** **A prereg cannot name "the seat fix" until someone names 
 ✅ **PATH BACK, and it is now shorter: re-add when (i) the identity null lands — IN FLIGHT — and
 (ii) a DIRECTIONAL seat variant has a completed verdict-grade read — NOT yet in flight. Both tracked
 in `#8`.** **Queue 60 → 60, GREP all-clear, selftest PASS.**
+
+--- 2026-08-16T10:01:09Z (`date -u`) ⚖️ **SIDE LANE s45 — REGISTERING #77'S WITHDRAWAL CONDITION AS A PRE-COMMITMENT, ON RESEARCH'S FLAG-BACK. It keys on VERDICT-GRADE, not on SIGN — and that distinction is the whole of it.** ---
+
+**Research called resolution (2) as owner — seat component DROPPED, #77 composes `bodyaware` + `#76`
+— and flagged back the consequence themselves: the row now rests on ONE completed read plus ONE
+PENDING, so if `#76` does not deliver, #77 could reduce to a single-component "composite", which is
+not a composite.** ✅ **Correct call, correctly reasoned from the row's own title, and the flag-back
+is the part worth noting: they named the failure mode their own decision created.**
+
+## THE RULING — REGISTERED NOW, BECAUSE AT LOCK TIME THE PRESSURE RUNS THE OTHER WAY
+
+> **#77 REQUIRES AT LEAST TWO COMPONENTS EACH CARRYING A VERDICT-GRADE READ. If `#76` does not
+> produce one, #77 WITHDRAWS ITSELF. It does not proceed as a single-component row.**
+
+**"Verdict-grade" is defined, not left to judgement:** a `results.tsv` row typed **`keep`** or
+**`refuted`** at its registered n. ⛔ **A `cancellation`, an auto-stop, a futility trip or any read
+whose CI spans the bar is NOT verdict-grade** — the rule already applied to `BODYBLK` (08:12Z), to my
+own use of its figure, and to `SEATFULL` twenty minutes ago.
+
+**WHY A PRE-COMMITMENT AND NOT A JUDGEMENT AT LOCK:** if `#76` reads WELL but lands as a
+cancellation, **the pressure at that moment will be to use it anyway** — the number will look
+usable, the row will be ready, and the alternative is losing the slot. **Registering the rule now
+takes that decision out of the moment it becomes contested**, which is the entire function of
+pre-registration and the reason this lane exists.
+
+## ⭐ AND THE DISTINCTION THAT MATTERS — WITHDRAW ON GRADE, NEVER ON SIGN
+
+**If `#76` reads verdict-grade and NEGATIVE, #77 SURVIVES.** A confirmed-positive composed with a
+confirmed-negative is still a legitimate composite: the additive prediction simply carries a negative
+term, and *"does the composite beat its own additive prediction"* remains a meaningful question with
+a computable answer.
+⛔ **Withdrawing on a negative would be selection on the outcome** — D26's family, the sixth site of
+which I declined to write a row for an hour ago. **The row must not be allowed to survive only when
+its components cooperate.**
+⇒ **The trigger is *"can we compute an additive prediction from measured contributions?"*, and a
+verdict-grade negative answers YES.**
+
+## WHAT THIS DOES NOT CHANGE
+
+**My acceptance of the lock sentence stands** (fixture noise, per-arm observed variance, the
+`DEFF 0.98` direction check). **The seat drop does not touch it** — it was always a statement about
+how components and composite are denominated, and dropping a component does not change the
+denomination of the two that remain.
+
+⚠ **AND ONE THING RESEARCH IS RIGHT ABOUT THAT I WOULD HAVE GOT WRONG:** I offered resolution (3)
+(register the seat term UNKNOWN-SIGN) with a negative-admissible clause. **They declined it using the
+hazard I named while offering it** — UNKNOWN-SIGN preserves the arm and destroys the row's
+discriminating power exactly where it is needed, because a composite landing below prediction could
+not be distinguished from the seat arm subtracting. ⇒ **My clause would have been correct and the
+row would still have been worth less.** **Protecting the row's only real question beats preserving a
+component, and the owner saw that and I did not.**
