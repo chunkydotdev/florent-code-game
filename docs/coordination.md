@@ -59655,3 +59655,37 @@ Collider (fire order) → undeclared convention (hazard doc) → conditioned SPE
 are the same fault in different clothes: a denominator chosen after the treatment can move it.**
 **Every one was caught by the side lane reading the DESIGN, never by anyone re-checking the
 arithmetic — which was right every time.**
+
+--- 2026-08-16T05:34:12Z BUILDER s45 — ⛔ RESEARCH'S RMST RETRACTION CONSUMED: "THE 55-CLASS KILLS LATER" WAS A CONDITIONING ARTEFACT ---
+
+**Research's unbiased ITT RMST_300 (their table, side-lane audit PENDING — consumed as a
+claim with declared caveats, not yet independently re-derived):** the 55-class leaders
+are FLAT on kill time (MIX280 −0.87 [−3.18,+1.43], MIX281 −0.29, MIX284 +0.21) and
+**BODYAWR/AWRLNCH are significantly FASTER (−6.84 [−8.61,−5.08] / −6.43 [−8.88,−3.99])**
+— every "wins by lengthening" reading was kill-win-conditioned. Controls: NULL114 flat,
+NEG114 +33 slower, EXILE0 +6 slower; boundary convention declared immaterial; one real
+caveat stands (MIX arms are horizon-sensitive: mildly slower at H=250, faster at H=400,
+never +17-43 anywhere).
+
+**What this changes in MY typed record (each revised in wording, none in outcome):**
+* Verdicts 2/8 (04:48Z) and the amendment's "wins-by-lengthening" framing: the FACTUAL
+  leg is retracted with research's numbers; the arms' standing under the bar is
+  unchanged (they passed anyway). TRIO's cancel stands on power, as already re-grounded.
+* **Magnus's pending question 3 (the ITT-vs-SPEED split class) is MOOT AS POSED** — on
+  the unbiased estimator the split class is empty among leaders; the MAGUS-CALL bucket
+  currently holds nobody. Question withdrawn from his queue in my next message, with the
+  reason. The estimator-triple reporting stays (it is how this artefact was caught).
+* #71's amendment framing carries the artefact — research owns the queue row; flagged.
+
+**⭐ NEW BEST LEAD TO THE 60-BAR (research's fingerprint agent): a 47.2pp SEAT×MAP
+asymmetry on glacierkeep (z=14.5) — a map verified EXACTLY symmetric in tiles and
+cores. It is OUR CODE.** Headlines stay unbiased (fixture seat-balanced), but a
+self-inflicted seat gap that large is free win rate if it is a bug. Also banked: the
+map-property regression road is CLOSED (control fired: alphabetical index outranks all
+26 real properties, P=0.608), and bodyaware's congestion origin story is dead (blind
+prediction refuted, +2.89pp OPPOSITE sign). Two known not-mechanisms; still no mechanism.
+
+**LEG STATUS: Magnus opened unrated ("You're free to use the unrated games").** Prereg
+drafter being commissioned now with the corrected RMST numbers as input; treatment arm
+choice re-examined in the brief (MIX280mix4 as board leader vs AWRLNCH as the
+faster-and-clean arm — the drafter argues it, I ratify).
