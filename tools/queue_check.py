@@ -563,10 +563,15 @@ def grep_staleness(rows, incumbent: str | None):
                                  seg, re.I))
         claimed |= set(re.findall(r"(?:→|->)\s*[`'\"*\s]*(_v\d+[a-z0-9_]*)",
                                   row))
-        if claimed:
-            if incumbent not in claimed:
-                named.append((label(row), sorted(claimed)))
-        elif gp:
+        # ⛔ STRUCTURED BEATS PROSE, checked FIRST (research, 2026-08-16, the
+        # precedence bug): a guard that consults an UNSTRUCTURED signal before
+        # a STRUCTURED one has not adopted the structured signal — it has
+        # added a field nobody reads. With prose first, a GREP-PATH row whose
+        # denial contained the claim idiom ("vs `_v223sealrepair` — N/A TO THE
+        # BOT TREE") or whose carry chain named the incumbent scored SILENT as
+        # checked-against a tree it explicitly disclaims — case C of the
+        # original silencer matrix arriving through the NEW rule.
+        if gp:
             # GREP-PATH exemption (SPEC-queue-grep-path-2026-08-16.md §3): the
             # row asserts "no bot tree BY DESIGN" by NAMING A PATH THAT MUST
             # EXIST. Verified every run: all present -> INSTRUMENT (visible,
@@ -578,6 +583,9 @@ def grep_staleness(rows, incumbent: str | None):
                 broken.append((label(row), missing))
             else:
                 instrument.append((label(row), gp))
+        elif claimed:
+            if incumbent not in claimed:
+                named.append((label(row), sorted(claimed)))
         else:
             # Includes mention-only rows (a tree token in prose with no claim
             # shape): "we cannot tell" is the honest state for those.
