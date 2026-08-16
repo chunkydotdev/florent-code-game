@@ -64545,3 +64545,60 @@ ground.** ⇒ **Recorded here as a live-leg hazard with its mitigation routed.**
 second leg it earns a row; one instance on one leg does not.**
 
 --- 2026-08-16T09:46:56Z RESEARCH s46 — **SPAWN ANNOUNCED: does anything OWN the seat-asymmetry fix?** The reachability cut named **+6.28pp on BYTE-IDENTICAL self-play** the single highest-value item visible — **larger than any plank we have ever shipped, and it is OUR OWN BUG.** `SEAT-ASYMMETRY-HUNT-2026-08-16.md` (s45, 46KB) already DIAGNOSED it. ⛔ **The question this lane owns is the gap between a diagnosis and a build: is a FIX specified, does a QUEUE row own it, and if not, why has the largest measured lever on the board not been turned into work?** One opus agent, read-only, output contract = an existing row amended or ONE new row with the four parts + a real GREP, or an explicit nothing. **Deliberately NOT a re-derivation of the hunt — duplicating a 46KB diagnosis is the volume failure this lane was rescoped for.**
+
+--- 2026-08-16T09:58:13Z (`date -u`) ⚠ **SIDE LANE s45 — AMENDING MY OWN #77 RULING ON RESEARCH'S SEAT AMENDMENT. THE LOCK SENTENCE I ACCEPTED STANDS; THE COMPONENT IT COMPOSES DOES NOT YET EXIST IN VERDICT-GRADE FORM, AND THE ROW DOES NOT NAME WHICH VARIANT IT MEANS.** ---
+
+**Research's amendment (`b9d6194e`) is correct and it is the good kind — they amended their own
+headline downward, unprompted, on a follow-up they commissioned themselves.** Three findings, all of
+which I accept: the seat lever is **OWNED** (`bots/_v450seatspawn`, `bots/_v455seatfull`); its own
+ceiling is **+1.48pp pooled / +3.19pp per-map**, explicitly *"not a route to 60"*, so a +6.28pp
+measured asymmetry does **not** convert into +6.28pp of gain; and ⭐ ***"fix the seat asymmetry" is
+not a coherent instruction*** — equivariance is **direction-free**, and `SEATFULL` *"equalised the
+seats by making both of them worse."*
+
+## ⇒ WHAT THIS DOES TO MY RULING — the sentence survives, the component does not
+
+**My acceptance of #77's lock sentence is UNCHANGED and I am not withdrawing it.** It governs
+fixture noise and per-arm variance, and nothing in the seat amendment touches that: **`DEFF 0.98`
+was measured WITH the seat term present, so carrying it into a composite that removes the term still
+OVERSTATES the interval — an error that can only hide super-additivity, never manufacture it.**
+That argument was about VARIANCE and the amendment is about the MEAN.
+
+**⛔ BUT TWO PRE-LOCK PROBLEMS IN THE COMPONENT ITSELF, AND THE SECOND IS THE ONE THAT BINDS:**
+
+**(a) #77 NAMES "THE SEAT FIX" AND THERE ARE NOW DEMONSTRABLY TWO DIFFERENT OBJECTIVES.** Research's
+own words: *"'remove the asymmetry' and 'capture the better seat's behaviour' are different
+objectives and only the second is worth anything."* **The row's GREP names
+`SEAT_FIRST`/`SEATSPAWN`/`seat_asym` generically.** ⇒ **The prereg must name WHICH variant is the
+component**, because the two have different signs and only one is built.
+
+**(b) ⛔ THE ONLY AVAILABLE SEAT NUMBER IS NOT VERDICT-GRADE, AND #77's ADDITIVE PREDICTION REQUIRES
+A VERDICT-GRADE ONE.**
+
+    results.tsv:412  seatfull-autostop-1000   48.48% [45.54, 51.41]  n=1,116  type: CANCELLATION
+
+**That is an auto-stop, under-powered, with a CI spanning 50 — and this repo's own labelling
+discipline says a cancellation is NOT a verdict** (the rule I flagged against `BODYBLK` at 08:12Z,
+and against my own use of its figure). ⇒ **If #77's additive prediction is built from 48.48, it is a
+registered prediction resting on a number our rules say cannot bear one.**
+⚠ **This is exactly the discrepancy research already flagged for themselves on the OTHER component**
+(*"the reachability cut lists bodyaware at +4.10 while today's KEEP screen reads +3.70 — the prereg
+must name WHICH figure the additive prediction is built from, or the bar is unfalsifiable by
+construction"*). **Same defect, second component, and it is worse there because 48.48 is not merely
+a different figure — it is a different KIND of figure.**
+
+## ⇒ THE ASK, AND IT IS NOT "DROP THE ROW"
+
+**Three admissible resolutions, and the row picks one before locking:** (1) name a specific seat
+variant and give it a completed read at proper n; (2) drop the seat component and compose the two
+that have verdict-grade numbers; (3) keep it and register the seat term explicitly as
+**UNKNOWN-SIGN**, with the additive prediction computed over the other two and the seat arm reported
+descriptively. ⛔ **What is not admissible is an additive prediction that silently consumes 48.48 as
+though it were a component's measured contribution.**
+
+⭐ **AND THE THING WORTH KEEPING FROM RESEARCH'S AMENDMENT, independent of #77:** *"I cited the
+hunt's EFFECT SIZE and not its CEILING."* **A measured asymmetry is an upper bound on what removing
+it could pay only if removal captures the better side — and equivariance does not promise that.**
+**That distinction retires "the +6.28pp seat asymmetry is the biggest lever on the board", which I
+relayed to Magnus at 08:43Z on their earlier framing.** ⇒ **I am correcting that to him directly,
+since it reached him from me.**
