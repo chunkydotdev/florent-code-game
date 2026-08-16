@@ -61,6 +61,36 @@ else the worklist registry — `scratchpad/fleet_queue.tsv`, `scratchpad/corefil
 | **E1** treatment is an x3r0 artifact | **2** (V141VS140, V140VS152) | not produced by *our* arm-generating process |
 | **E2** structural NULL cell (treatment tree byte-identical to control) | **0** on this control | calibration, not an arm |
 | **E3** fixture-corrupt: NOWINNER rate >1% | **12** | see §1.1 |
+
+⛔⛔ **E3 HAS AN EXPIRY DATE AND IT IS TONIGHT. AMENDED 2026-08-16 ~10:2xZ on a side-lane flag.**
+**E3 is keyed to a RATE, and a rate is a property of the DENOMINATOR.** Two ws2 shards aborted at the
+builder's 09:34:17Z mid-shard tree push and are re-running with row-resume:
+```
+ECOPAVER   32 corrupt /   384 now =  8.33%   ->  32 / 5,400 resumed = 0.59%
+ECOSCK4R   26 corrupt /   240 now = 10.83%   ->  26 / 5,400 resumed = 0.48%
+E3 line = 1.00%                              ->  BOTH FALL BELOW IT ONCE RESUMED
+```
+⇒ **E3 CATCHES THEM TODAY AND SILENTLY ADMITS THEM TOMORROW, WITH THE CORRUPT ROWS STILL IN THE
+TAPE. Nothing about the shard changes; no alarm fires; the rule simply stops being able to see it.**
+⭐ **THE GENERAL FORM, AND IT IS WORTH MORE THAN THE FIX: A CONTAMINATION RATE IS A PROPERTY OF THE
+DENOMINATOR, SO ANY EXCLUSION RULE KEYED TO ONE EXPIRES AS SOON AS THE DENOMINATOR GROWS.** That is
+NOT a threshold set wrong — it is a threshold set RIGHT that then had the ground move under it, and
+the two fail differently: a wrong threshold is visible on inspection, an EXPIRED one reads correct
+forever. *(Companion to ROUTING DEBT and to the structured-vs-prose precedence defect: three
+same-day instances of a guard that is complete, correct, and unable to fire.)*
+✅ **CORRECT FORM: exclude ROW-LEVEL and TIMESTAMP-KEYED, never shard-level and rate-keyed.** The
+ECOPAVER burst is stamped 09:34:18–21Z and the ECOSCK4R burst is likewise precisely stamped, so row
+identity is available and does not decay.
+✅ **AND IT IS DRIVABLE BOTH WAYS TODAY, WHILE THE CONTRAST STILL EXISTS: the two named bursts MUST
+be excluded AND `ECOSCK6R` MUST NOT** — it started post-push and reads **0 NOWINNER over n=2,160**.
+**A filter that also drops the clean post-push shard is over-broad and is detectable NOW.**
+⚠ **SCOPE OF THIS CUT IS UNCHANGED: both shards post-date this cut's 08:31:10Z read and are not in
+its 59 arms. The published numbers do not move. What expires is the RULE, on any RE-RUN or REUSE.**
+⭐ **SWEEP RUN ON MY OWN OTHER CUTS, since a rate-keyed rule could hide in any of them — E3 IS THE
+ONLY ONE.** E5 (n<100) and E4 (<15 pool maps) are COUNTS; the fieldcal reader's cell rule (<40
+games/arm) is a registered COUNT; the kladde exclusions are by LEG MEMBERSHIP (identity); the rated
+decode's 22.7% is a CONTROL, not an exclusion. **Counts and identities do not expire when the
+denominator grows. Rates do.**
 | **E4** ran on <15 pool maps | **4** (SPKT64P 2 maps, TINYECO62 3, SEATFULL 10, RUSH72 1) | different fixture (A5) |
 | **E5** n<100 | **3** (G417g4 52, SEATSPAWN 43, and one in-flight) | in flight, not yet a screen |
 | | **72 shards KEPT → 59 arms** | |
