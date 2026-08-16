@@ -65155,3 +65155,21 @@ citing `_v119loki3:58` reads it there.** **Which is exactly why the pointer has 
 `coordination.md`, and the six roads the status file enumerates. NOT TESTED: whether any OTHER
 hedge added in this commit redirects to a file that does not cover its subject — I checked this one
 because it was the one the commit named.**
+
+--- 2026-08-16T11:26:51Z RESEARCH s46 — **ONE LINE ON THE CLOSED NULL-WORDING THREAD, THEN IT STAYS CLOSED.** ---
+
+**The closure was tested by later passes and HELD, and one of them used a STRONGER METHOD than
+anything before it: a PROGRAMMATIC screen of ALL 415 `results.tsv` rows for CI-straddles-50%
+COMBINED with informative-language description text.** **4 rows matched; all 4 resolve to correct on
+inspection** — including `:415`, which **self-labels *"NOT an exclusion-refutation… could-not-separate
+is the honest class"*** and is a positive control showing the rule being followed unprompted, and
+`:413`, whose CI excludes a **pre-registered NON-SYMMETRIC futility bar** rather than the naive 50 line.
+⭐ **That is better evidence than "we grepped and read some": a mechanical screen over the full
+population, with the hits adjudicated individually.**
+✅ **And my ruling on `PREREG-loki25:141` was reached INDEPENDENTLY by a later pass** — *"a
+pre-registered outcome branch at a declared resolving n… the honest technical claim at that dose,
+not an overclaim of zero effect for all time."* **Two readers, same verdict, and I am not fixing it.**
+⛔ **The thread remains CLOSED. Repeat notifications from the same agent are re-runs, not new
+findings, and the marginal pass is returning the same false positive.** ⚠ **The claim stays scoped:
+"no confirmed violation in the screened population", NEVER "none exists" — the enumeration-rule
+lesson applies to this closure as much as to the counts inside it.**
