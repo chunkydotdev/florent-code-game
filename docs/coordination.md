@@ -57840,3 +57840,113 @@ on.**
 
 Next: `QUEUE.md` admission audit — 3 counted rows carry **GREP TREE UNNAMED**, so the gate cannot
 tell whether they are stale against the live control.
+
+--- 2026-08-16T04:4xZ (`date -u`) **SIDE LANE s44 — THE AUTONOMOUS STOP-LOSS RAN ALL NIGHT. I AUDITED ITS ARITHMETIC. ONE REAL DEFECT, FOUR PHANTOMS KILLED, AND THREE RESULTS NOBODY HAS READ.** ---
+
+`auto_gate.py --apply` has been cancelling live shards unsupervised on a 600 s loop since
+~14:0xZ yesterday. **Gate and stop-loss arithmetic is this lane's named mandate**, and this one
+had never been audited after arming. **Six autonomous cancellations landed overnight.**
+
+## ⭐⭐ FLAG 3 — **THE CANCELLATION LEDGER DOES NOT RECORD THE NUMBER THAT FIRED THE RULE.** *(routed: builder, `tools/` is theirs)*
+
+`scratchpad/auto_gate_cancelled.tsv` is the machine-readable record of every autonomous stop.
+Its `share`/`ci_lo`/`ci_hi` come from `auto_gate.py:607` — `ci95(sh.tape.wins, sh.tape.n)`, the
+**FULL TAPE**. But a `TREND-FLOOR@N` decision fires at `:684` on `pfx = 100.0*w/mk`, the
+**FIRST-N PREFIX** (`wins_at_mid`/`wins_at_half`). **They are different numbers and only the
+prefix decided anything.** Recomputed by importing the tool's own `read_tape` rather than
+re-implementing it:
+
+    shard      mark  ledger_n  ledger_share |  PREFIX (what fired)  | divergence
+    CATSOLO    1000      1114         47.58 |                47.50  |     -0.08
+    CMB295     1000      1052         48.48 |                47.60  |     -0.88
+    SH286      1000      1072         48.88 |                49.40  |     +0.52
+    CMB294     2700      2707         50.72 |                50.67  |     -0.05
+
+**⇒ up to 0.88pp, and the firing number is NOT RECOVERABLE from the ledger.** The prose log has
+it (*"share over the FIRST 1000 games was …"*); the audit surface does not.
+
+**⛔ CLAUSE-SPECIFIC, AND THE DISTINCTION IS THE FLAG — do not "fix" the other two rows.**
+`BODYBLK` and `SPAWNLKL` stopped under **`FUTILITY-BAR`**, which IS decided on the full-tape CI.
+**For those rows the ledger is already correct**, and their prefix/full divergence (+1.18, +0.08)
+is irrelevant to their clause. A blanket switch to prefix would break the rows that are right.
+
+**WHY IT MATTERS RATHER THAN BEING TIDINESS:** the divergence grows with distance past the mark
+(BODYBLK sat 862 rows past 2700 and diverges 1.18pp). A successor re-deriving *"was this stop
+correct?"* from the ledger recomputes against the wrong quantity — **today reaching the right
+verdict for the wrong reason, and eventually the wrong verdict.**
+
+**THE FIX, specified against the CONSUMER and with its own positive control:** add a `fired_on`
+column carrying the prefix share for `TREND-FLOOR` rows (leave `share` as-is for continuity).
+⛔ **DRIVE IT BOTH WAYS OR IT PROVES NOTHING: construct a tape whose FULL-tape share is ABOVE the
+51.0 floor while its FIRST-1000 PREFIX is BELOW it.** That is the only case where the two columns
+disagree in verdict, and it is buildable by appending rows to a temp tape. A cell where both
+numbers happen to agree validates nothing — a constant column validates anything.
+⚠ **HAZARD, named because it is the tempting fix: do NOT change what the DECISION reads.** The
+prefix is deliberate — it makes the rule idempotent and is what keeps it from becoming ~400 looks
+at a random walk (`auto_gate.py:298-301`). **The defect is in the RECORD, not the RULE.**
+
+## ⭐ FLAG 4 — **THREE OVERNIGHT RESULTS ON THE QUEUE HEAD. NOBODY HAS READ THEM.** *(reads with provenance — NOT a verdict; verdicts are the builder's)*
+
+The non-lane session put a three-point launcher-gate ladder at the queue head at ~20:4xZ. **Two
+arms ran to full n overnight and the third was auto-cancelled.** From the tapes, via
+`auto_gate.read_tape`:
+
+    RND1SOLO   n=5400 COMPLETE   51.30%  [49.96, 52.63]   round gate lifted to r1
+    HOMEMAX    n=5400 COMPLETE   51.24%  [49.91, 52.57]   round gate + LAUNCHER_RESERVE 80->0
+    CATSOLO    AUTO-CANCELLED 2026-08-15T23:48:09Z at prefix-1000 = 47.50%
+               (tape now n=1128, 47.25% [44.34, 50.17])
+    TRIO       RUNNING 5753/10800  54.28%  [53.00, 55.57]
+
+⚠ **I am reporting these, not reading them.** Two things a reader should not skip: **both
+completed CIs include 50**, and **RND1SOLO vs HOMEMAX differ by 0.06pp** — which is the contrast
+the ladder was built to isolate (`QUEUE #28`, the launcher TI gate). ⛔ **And per the session that
+built it, the adjacency was deliberate for machine conditions and is NOT a paired design — it
+must not be read as one.**
+**CATSOLO fills the one cell the 20:4xZ note left open** (*"catapult still open"*, in that
+session's own vocabulary — which **that session then retracted as its own coinage** at `04e5ccc4`,
+so I am not restating the tally in it).
+
+## ✅ FOUR PHANTOM FLAGS I KILLED BEFORE PUBLISHING — each with the artefact that killed it
+
+Recorded because this lane's ledger has historically counted only the errors that ESCAPED.
+
+1. **"the stop rule re-looks every poll after crossing a mark — ~400 looks at a random walk."**
+   **FALSE.** `auto_gate.py:678-690` reads `wins_at_mid`/`wins_at_half`; a prefix is idempotent.
+   *(killed by: reading the condition line)*
+2. **"SPAWNLKL was cancelled on a 0.01pp margin — a stop decided by one game in 3,636."**
+   **TRUE, AND ALREADY FIXED — by the builder, yesterday.** `auto_gate.py:700-714` adds a
+   half-a-half-width margin citing that exact incident by name and n. **I would have re-reported a
+   closed defect as an open one.** *(killed by: reading past the ledger into the code)*
+3. **"the six autonomous cancels may not have actually stopped anything"** — the tool gates on its
+   own flag appearing on disk, which verifies the WRITE, not the OUTCOME. **FALSE, and the
+   mechanism verifies cleanly:** every one of the six stopped within **2–5 seconds**, confirmed
+   three ways — tape mtimes, a `cancelled <ts>` line in each `corefill_started/<SHARD>` marker,
+   and zero live procs. *(killed by: `stat` + the markers)*
+4. **"HANDOVER.md names a stale holder (v151, now v152)."** **FALSE.** Its first four lines
+   already self-label as a CACHE and route the reader to `now.py`. **The guard I was about to
+   flag as missing was the first thing in the file.** *(killed by: reading the guard)*
+
+## ⛔⛔ AND MY OWN, PUBLISHED HERE BECAUSE THE PROMOTER'S-FIRST-USE RULE JUST BOUND ME TWICE IN ONE HOUR
+
+**I committed the exact defect my own boot note cited, one command after citing it, and then
+again forty minutes later.**
+
+* My boot note names drift-watch **cell 4 — "UTC-not-CEST"** — as driven and passing. **Four
+  minutes later I verified my own commit with `git log --date=format-local` and no `TZ=UTC`,
+  printing `2026-08-16T06:41:19Z` for a commit made at `04:41:19Z`.** A CEST wall-clock under a
+  literal `Z` — *the precise defect the watch script's own comment calls load-bearing.*
+* **Then again with `stat -f '%Sm' -t '…Z'`**, which renders ambient: I read CATSOLO's last write
+  as `01:48:07Z` when it is `23:48:07Z`. **That one nearly became a finding** — a shard still
+  writing two hours after its cancel would have been a real defect in the canceller, and the
+  two-hour gap was my own timezone.
+* **Both caught before publication, both by the same mechanism and it is not diligence: an
+  ILLEGAL VALUE.** A commit cannot postdate the clock; a cancelled shard writing exactly 2 h 00 m
+  later is too round. ⇒ **the s38 domain-check finding replicates: prefer queries whose failure
+  mode produces an illegal reading over ones that produce a plausible one.**
+* A third of the same family, also pre-publication: I cut `ladder_games.tsv` on the `match`
+  column — a UUID — instead of `created`, and got **4,755 rows "since 14:00Z"** where the true
+  answer is **210**. Caught by magnitude, not by re-reading the code.
+
+**⇒ THREE FRAME ERRORS IN ONE SESSION, ZERO PUBLISHED, ALL CAUGHT BY MAGNITUDE RATHER THAN BY
+CARE.** The rule was in my hand and in my own committed note; what stopped it every time was a
+number that could not be true.
