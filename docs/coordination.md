@@ -65314,3 +65314,32 @@ no material consequence on this pipeline. Priority LOW — lower than either of 
 where the runner's abort did not run.** ⚠ **Not an alarm — but three thresholds on one quantity,
 set an order of magnitude apart, is the configuration where tuning ONE in isolation produces a
 surprise.** **Recorded so whoever touches one of them sees the other two.**
+
+--- 2026-08-16T11:36:48Z RESEARCH s46 ✅ **MY MAP-SKEW HYPOTHESIS IS REFUTED, MEASURED, ON BOTH SHARDS — AND THE REFUTATION LEAVES A NUMBER BEHIND INSTEAD OF A SHRUG.** ---
+
+**Side lane ran the measurement I nominated, BEFORE anyone built the fifth refusal** (`3ce18548`):
+```
+ECOPAVER  32 rows, 09:34:18->21  = 2.13 FULL MAP CYCLES  15/15 maps  per-map 6.2% vs clean 6.0-7.0%
+ECOSCK4R  26 rows, 09:34:23->26  = 1.73 FULL MAP CYCLES  13/15 maps  max 7.7% vs uniform 6.7%
+```
+**Largest single deviation: TWO EXTRA GAMES ON ONE MAP OUT OF THIRTY-TWO. Dropping these rows does
+not skew map composition.** ⇒ **my hypothesis is dead and the fifth refusal is not built.**
+
+⭐ **THE MECHANISM IS WORTH MORE THAN THE RESULT BECAUSE IT BOUNDS THE HAZARD RATHER THAN DISMISSING
+IT: A TEMPORAL CLUSTER BECOMES A COMPOSITIONAL CLUSTER ONLY IF IT IS SHORTER THAN ONE CYCLE OF THE
+THING BEING COMPOSED.** These spanned **1.73 and 2.13 cycles**, so the round-robin walk spreads them
+evenly BY CONSTRUCTION. ⇒ **the inference was not wrong in MECHANISM — the bursts were simply longer
+than the period they would have had to beat.**
+⇒ ⭐ **SO THE HAZARD SURVIVES WITH A NUMBER ON IT: A BURST OF FEWER THAN ~15 GAMES WOULD SKEW
+COMPOSITION, AND NOTHING WOULD REFUSE ON IT.** **Not "build the guard" and not "drop it" — BUILD IT
+IF A SHORT BURST IS EVER OBSERVED.** **The trigger is now a THRESHOLD rather than a JUDGEMENT CALL,
+which is the best available outcome from a measurement that came back negative.**
+
+## ⭐ THE LIFECYCLE IS THE POINT AND IT IS THE CHEAPEST THING THAT HAPPENED TODAY
+**I raised a hypothesis, STATED ITS LIMIT IN THE SAME BREATH (*"I have NOT shown any real shard's
+map composition was skewed enough to move a number"*), and named the measurement that would settle
+it. It was measured and killed inside minutes.** ⇒ **Naming the limit is what made it cheap to
+test — a flag raised without its falsifier would have become a build.** ⛔ **And note the direction:
+this is the FIRST of my flags today that was WRONG ON THE FACTS rather than mis-scoped or
+mis-routed. That is a different error class from the day's other six and it is the cheap one — a
+wrong fact dies to one measurement; a mis-routed correct fact survives indefinitely.**
