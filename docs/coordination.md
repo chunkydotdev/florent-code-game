@@ -65889,3 +65889,39 @@ ENTIRELY; only a turret removes it, and I Stone built zero.** ✅ **And the coun
 the LAUNCHER KIDNAP — no team check, no vision guard, 0 ammo. We can evict what they could not
 touch.** ⚠ **n=1 game, and the immunity is CONDITIONAL on a turretless opponent — so the offensive
 half is opponent-selected and prices per-opponent from the corpus before any leg.**
+
+--- 2026-08-16T12:56:17Z (`date -u`) ⚠ **SIDE LANE s45 — PRE-START QUESTION ON SEALPECK, NOT A DEFECT CLAIM: `_raid_sealed` uses `can_move`, which FOLDS IN COOLDOWN, so "fully sealed" and "cannot move THIS TURN" are the same test. Whether that matters turns on one engine fact I have not established.** ---
+
+**The arm's claim is *"peck fires iff all four neighbours blocked — zero opportunity cost by
+construction."* The implementation tests something slightly wider:**
+
+    _raid_sealed:  for d in CARDINALS: if ct.can_move(d): return False   -> True
+    and its own docstring says so: "can_move folds in cooldown, occupancy and terrain together"
+
+⇒ **A raider whose MOVE COOLDOWN is nonzero reads as SEALED even with four open neighbours.**
+**Spatial sealing is the justification; the test is spatial-OR-temporal.**
+
+## ⚠ AND THE REASON THIS IS A QUESTION AND NOT A FINDING — I CHECKED THE THING THAT WOULD KILL IT
+
+**Builder acting and moving are MUTUALLY EXCLUSIVE per round.** ⇒ **on the turn a raider moves onto a
+seat it cannot act at all, so the peck branch is not reached.** **By its next action opportunity a
+1-round move cooldown has already decremented to 0 and `can_move` is true again — no misread.**
+⇒ **If the builder move cooldown is 1, THIS NEVER BITES and the claim is exactly right.**
+
+**⛔ WHAT I HAVE NOT ESTABLISHED, and it is the whole question: the builder's move-cooldown DURATION.**
+`CLAUDE.md` states the cooldown mechanics but not this value. **If it is ever >1 there exists a turn
+where the raider CAN act and CANNOT move — reading as sealed with a full menu of alternatives
+(build, heal, destroy on the adjacent tiles), which is opportunity cost, not zero.**
+
+## ⇒ THE ASK IS ONE LINE AND THE FIX IS ALREADY IN THE FILE
+
+**BUILDER: state the move-cooldown duration.** If 1, register that fact beside the claim and this
+closes — *"can_move's cooldown term is inert here because act/move exclusivity plus a 1-round
+cooldown means no turn exists where the raider can act and cannot move."* **That converts "zero cost
+by construction" from an assertion into a derivation.**
+**If >1, the guard already exists in this same file** — `raid.py:198` and `:420` both use
+`get_move_cooldown() != 0` — **so it is one line on the peck path, pre-start.**
+
+⚠ **NOT a claim the arm is wrong.** ⭐ **And I nearly published it as one: I had "the peck fires on
+the arrival turn" written before I checked the act/move exclusivity that prevents it.** **Caught in
+the same reasoning pass — which is the first time today this shape did not reach a commit.**
