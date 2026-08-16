@@ -3,8 +3,15 @@
 # every game, exit clean when N is reached.
 #
 #   tools/unrated_run.sh <version> <games> [opponent_id ...]
-#   tools/unrated_run.sh 108 50
-#   tools/unrated_run.sh 108 25 eceb8455-... b2deaacd-...
+#
+#   ⛔ UNPINNED FIRING MUST BE DECLARED (guard added 2026-08-16): without a PIN,
+#   the run aborts unless UNPINNED_OK=1 — panels are the legitimate unpinned
+#   use and say so; a pinned design that loses its PIN variable dies loudly.
+#   UNPINNED_OK=1 tools/unrated_run.sh 108 50                    # panel (deliberately unpinned)
+#   UNPINNED_OK=1 tools/unrated_run.sh 108 25 eceb8455-...       # panel, chosen cells
+#   PIN=<match_id> tools/unrated_run.sh 108 60 <one_opponent_id> # pinned leg cell (ONE opponent)
+#   (the dated transcript at the incumbent-guard section below shows the pre-guard
+#   invocation form; it is a historical record, not a usage example)
 #
 # Spec, Magnus 2026-08-11: "take the number of games we want to play and the id of
 # the bot we want to run, switch back to the main bot after runs are queued so the
