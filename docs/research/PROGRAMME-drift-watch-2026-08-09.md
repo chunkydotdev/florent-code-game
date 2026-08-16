@@ -2740,3 +2740,48 @@ the mechanism EXISTS before the check is relied upon again, not that it exists b
 run finishes.** And a mechanism landed without being driven to both verdicts is not a mechanism, it
 is a second thing to audit — **which is the whole of D24 and the reason this row does not shorten
 the path.**
+
+## ⛔⛔ D31 — **ATTRIBUTION RETRACTED WITHIN THREE MINUTES. THE DIRECTIVE WAS ABOUT THE WRAP RULE, NOT ABOUT MECHANISATION. The ROW's CONTENT SURVIVES AS THIS LANE'S OBSERVATION; THE "MAGNUS SAID" DOES NOT.**
+
+**Retracted 2026-08-16T07:3xZ, at the provenance record first (D21), by the lane that wrote it.**
+
+**WHAT I DID.** Magnus wrote *"wrap when builder wraps"*, I acknowledged, and he then wrote **"this
+should always be the case actually."** **Arriving immediately after my own paragraph about a
+verification becoming redundant, I read "this" as THAT** — and encoded a mechanisation obligation
+as **D31, attributed to him VERBATIM, in a file every side-lane session boots.**
+
+**WHAT IT ACTUALLY WAS.** The research arm was **asked directly whether the wrap rule was a
+one-off** and received the same sentence in answer. ⇒ **"this should always be the case" = the
+BUILDER-WRAPS-THEN-YOU-WRAP RULE IS STANDING.** They have the disambiguating exchange and I do not.
+**Their reading is almost certainly right and mine is almost certainly wrong.**
+
+**⇒ THE ATTRIBUTION IS STRUCK. D31 IS NOT A MAGNUS DIRECTIVE.** Anything downstream that cites it as
+one is citing a misread. **The `⭐⭐⭐` and the verbatim quote are withdrawn.**
+
+### ✅ WHAT SURVIVES, AND WHY IT IS KEPT RATHER THAN DELETED
+
+**The row's CONTENT was never his; it was the session's evidence, and that evidence is unchanged:**
+every durable win of 2026-08-16 was a lane observation converted into a mechanism, and every
+failure was an attention-level rule that did not fire — **D28 committed by its own promoter, D3
+committed by me nineteen hours after it was logged, promoter's-first-use firing three times on
+three lanes.** ⇒ **it stands as A SIDE-LANE OBSERVATION, at ordinary weight, with no directive
+authority.** ⛔ **A rule can be right and its provenance false, and the provenance is the half that
+was load-bearing here** — a booted file carrying *"Magnus said"* is quoted differently from one
+carrying *"the side lane noticed"*. **If he wants it as a directive he can say so; until then it is
+mine and it is weaker.**
+
+### ⛔ AND THE MECHANISM IS THE ONE I HAVE NAMED SIX TIMES TODAY, NOW AT ITS WORST PLACEMENT
+
+**I read ONE SURFACE — a pronoun, against the paragraph nearest to it — and reported a property of
+the world: what Magnus meant.** Seventh instance, and the worst-sited: **not a number in a note but
+a DIRECTIVE ATTRIBUTION in a booted checklist**, which is the highest-authority object this lane
+can write.
+⚠ **The one thing that limited it: I flagged the ambiguity in the row itself** — *"MY READING,
+STATED SO IT CAN BE CORRECTED… if he meant something narrower, this row is wrong and should be
+struck"* — **which is why the correction cost three minutes instead of a session.** ⇒ **stating a
+reading as a reading is not a substitute for asking, and it is the difference between a retraction
+and an inherited falsehood.**
+⭐ **THE PRACTICE THIS EARNS, and it is narrow enough to follow: A DIRECTIVE IS NEVER ENCODED FROM A
+PRONOUN. If the instruction's SUBJECT is supplied by context rather than stated, confirm the subject
+before writing it down — the cost of asking is one message and the cost of guessing is a false
+attribution in a file nobody re-derives.**
