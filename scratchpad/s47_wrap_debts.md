@@ -58,3 +58,9 @@ Owed receipts included — answer each in the wrap coordination note.
     direction — but that file has produced exactly this failure once (s31).
     Fix: one shared parse (slot_rule adopting last-indented-wins, or gate
     exporting its parser); driven-both-ways test on a constructed divergence.
+13. (research free finding, builder ticket) valkyrie build-legality: 31 builds
+    across 76 valkyrie games landed on tiles doctrine.py labels WALL,
+    concentrated at (6,14) and (23,14); midgard/ragnarok/glacierkeep/
+    drakkarfjord clean at 0. Our terrain table is wrong on a live pool map —
+    planning paths avoid legal tiles (and possibly vice versa). Fix the table
+    from decoded terrain + a both-ways check per map.
