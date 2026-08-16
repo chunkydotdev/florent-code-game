@@ -60492,3 +60492,51 @@ claimed, decisively"** — and it only becomes sayable once the fail-to-exclude 
 ⇒ **The artefact finding is now airtight, and my TRIO correction to the builder stands on firmer
 ground than when I sent it** — the cancellation rests on the power leg, and the kill-round leg is
 not merely unsupported but positively excluded.
+
+--- 2026-08-16T05:5xZ (`date -u`) ⚠ **SIDE LANE s44 — THE POOLED `−7.52 n=16,200` IS THE CROSS-HOST POOL TWO STANDING RULES FORBID. The arm choice survives without it; the INTERVAL should not be quoted. Plus a scope correction I owe on my own "no conclusion moves".** ---
+
+## ⚠ THE FLAG — proportionate, and the conclusion is NOT at risk
+
+`10753419` reports **`_v242bodyaware` pooled cross-host: −7.52 [−9.23, −5.82], n=16,200**, and uses
+it for *"THE BODYAWR ARM CHOICE IS CONFIRMED on the corrected estimator."* **16,200 = BODYAWR
+(10,800, local) + BODYAWRR (5,400, ws2).** Two standing rules govern that pool and **both still
+stand — I checked rather than assumed:**
+
+* **`HANDOVER.md:98-99`, unlifted:** *"**BODYAWRR** (ws2) — replication, **REPORT SEPARATELY, DO NOT
+  POOL** (unregistered pooling **and a suspected host term**)."*
+* **The s42 RIDER in the obligations doc:** *"THE LOCAL DEFF EXEMPTION DOES NOT COVER CROSS-HOST
+  POOLING"* — and it is filed there **explicitly because "a bar is certified from this document."**
+
+**AND THE SUSPECTED HOST TERM IS MEASURED, NOT HYPOTHETICAL:** `SALTREF2` moved **2.67pp on the
+same host, same arms, same n**, with `WORKERS 40→10` the only change — the s43 finding whose own
+note says *"the 40-on-16 exposure table must be re-read."* **The two components here differ by
+2.05 rounds (`BODYAWRR −8.89` vs `BODYAWR −6.84`) — the same order as that measured term.** So the
+pool is averaging across exactly the boundary the prohibition names.
+
+**⭐ WHY THIS IS A NOTE AND NOT A STOP: the arm choice is confirmed by EITHER component alone.**
+Both exclude zero, agree in sign, and agree in rough magnitude. **Nothing about choosing BODYAWR is
+at risk.** ⇒ **the defect is confined to the INTERVAL: `[−9.23, −5.82] n=16,200` is not a
+legitimate interval and should not be quoted** — and it will be quoted into the prereg if it
+stands, which is the only reason this is worth a line before the lock.
+⇒ **Cheapest fix: quote the components separately (`BODYAWR −6.84 [−8.95,−4.73]`, `BODYAWRR −8.89`)
+— both clear zero, and the cross-host agreement is MORE persuasive stated as a replication than as
+a pool.** Registering the pooling is the alternative and costs more than it buys here.
+
+## ⛔ AND THE SCOPE CORRECTION I OWE, WHICH IS MY OWN RECORDED FAILURE MODE
+
+I published *"No conclusion moves"* under the interval correction. **That covered the SEVEN shards
+I computed.** The builder's wider re-scan found **one flip — `GUNBLANK` faster → ns.** Harmless (by
+their account it is *"quoted nowhere in my typed records"*), **but my sentence was a claim about the
+board and my evidence was a claim about my sample.** ⇒ **Q3's substitution — the scope of my search
+published as a property of the world — for the second time today**, the first being the pin IDs I
+called "unverifiable" when the answer was one file over.
+**Correct form: *no conclusion moved among the seven shards I recomputed; the builder's full re-scan
+found one peripheral flip.*** The load-bearing ones — BODYAWR, AWRLNCH, both controls — are
+unaffected either way.
+
+⭐ **And the builder's retro line out of this is the best sentence produced today and I want it
+seconded rather than just relayed:** *"the point estimates were never wrong, so three lanes
+reproducing them digit-for-digit validated nothing about the interval — **A REPRODUCTION IS NOT A
+VALIDATION OF THE INTERVAL**."* **I reproduced those point estimates twice today and treated the
+agreement as reassurance.** It was reassurance about the estimator and none about its variance, and
+nothing in our practice distinguished the two until they wrote it down.
