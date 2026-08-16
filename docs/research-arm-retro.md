@@ -1631,3 +1631,104 @@ corpus carries its median beside its mean, or it is not relayed.**
 | A reproduction is not a validation (D30) | **PROMOTED** — side lane's drift checklist, booted |
 | Mean-vs-median on this corpus | **INSTRUMENT** — Q3b above, this file |
 | Constant names as false-convergence generators | **OBSERVATION — NOT ROUTED** |
+
+# RUN — s46, 2026-08-16 (wrap trigger: THE BUILDER'S WRAP — the standing rule's second firing)
+
+**Answered from the day's artefacts — 54 commits, 22 `docs/research/` files touched, 16 queue
+admissions/amendments, 8 subagents (7 announced) — not from memory.** Clock 2026-08-16T13:28:04Z.
+
+## 1. CONSUMPTION — of what I produced, what changed a decision?
+| artefact | verdict | what it changed |
+|---|---|---|
+| Same-day rated decode | **CONSUMED** | surfaced the 3-opponent −72.2 Elo leak; drove the kladde hunt |
+| Kladde mechanism (structural, not conversion) | **CONSUMED** | became `#76`, BUILT same day as `_v330sentban` |
+| Ship-bar reachability (0/59 ever ≥60) | **CONSUMED** | reframed GRIND from phase to steady state; cited by builder + side lane |
+| `queue_check` silencer (case C) | **CONSUMED** | gate rebuilt; 3 fixes, all with driven controls |
+| Precedence bug (structured vs prose) | **CONSUMED** | INSTRUMENT 3→9, my pre-registered count hit exactly |
+| MDE-convention audit | **CONSUMED** | not systemic; one live violation corrected in place |
+| V140VS152 formal readout | **CONSUMED** | the 60-bar's MEANING established for the first time |
+| Belt census (prize = ~1 turret) | **CONSUMED** | build spec changed: small edit + guard + big-map dose |
+| `#78` UNCONVERTED + conversion route | **CONSUMED** | rank set: do not build before `#23` reads |
+| Sweep tagging (2 BUILT, 7 ONE-FLAG on 5 knobs) | **CONSUMED** | builder's batch-build list |
+| x3r0 claims re-derived | **CONSUMED** | patch's evidence base reframed; 2 audit flags routed |
+| `tools/fieldcal_read.py` | **PENDING** | built early on purpose; fires at the 800 crossing |
+| `#79`, `#80` | **PENDING** | stocked today, unread |
+**⇒ 11 CONSUMED, 3 PENDING, 0 UNREAD.** *(s45: 10/3/0. Second consecutive run with no unread output.)*
+
+## 2. LATENCY — before or after the decision?
+**Every consumed item landed BEFORE its decision.** Three with the margin that mattered:
+* **The belt census landed BEFORE a tree existed** — and changed the build from "build it" to
+  "build small, guard throughput, dose big maps". **D27 executed rather than cited.**
+* **The `#78` UNCONVERTED flag landed before a prereg quoted the headline** — which it would have,
+  because the gunner figure is the one a prereg naturally reaches for.
+* **`tools/fieldcal_read.py` was built at n=225 against an 800 floor** — deliberately early, so the
+  crossing is a RE-RUN not a BUILD. **This is Q2b's fix applied prospectively for the first time.**
+### Q2b — delivered ON TIME and found IRRELEVANT? **NO instance this run.**
+
+## 3. RELAY FIDELITY — and Q3b
+**Re-derived rather than relayed, every time it mattered:** the side lane's E3 arithmetic, their
+grid-artefact numbers, the builder's three COMBO-BAR base rates (exact), their 51%/26%/4% trend-floor
+figures (**two exact, one MISLABELLED — caught pre-push**), the V140VS152 tape, the certifier's
+amendment-vs-viewing timestamps.
+⭐ **Q3b (mean-vs-median) did NOT fire this run.** ⛔ **A NEW FIDELITY FAILURE DID, and it is worse:
+I relayed a CONVERSION ROUTE (`#23`) whose own source comment, WHICH I PASTED, said it caps
+SENTINELS while I called it gunners.** **Not a bad summary of a good payload — a payload I quoted
+against itself.**
+
+## 4. ⭐ DID MY OWN CHECKS FIRE ON MY OWN WORK? — YES, FIVE TIMES
+1. **The reachability headline** — I commissioned the follow-up that killed my own "biggest lever".
+2. **My agent's stale `_v330sentban` stub claim** — caught BEFORE relay, not after.
+3. **Ruled AGAINST my own agent's `loki25` flag** — declined to "fix" correct language.
+4. **Recovered `x3r0_measure.py`** from a session scratchpad that would have taken it.
+5. **Closed the relay gap** on the x3r0 audit flags, unprompted.
+**CAUGHT BY A PEER INSTEAD: EIGHT** *(enumerated with hashes in `docs/coordination.md`)* — six
+correct-content-wrong-surface-or-comparison, one false on the facts, one rule-held-not-self-applied.
+**THREE reached Magnus.**
+
+## 5. DECLINES — five
+1. **Declined to write a FIRE ORDER** against the closed 60±2 gate (Q2b avoided knowingly).
+2. **Declined to rule on the leg-observation question** — I own the readout; routed to the certifier.
+3. **Declined to stock `(b)` of `#78`** — blocked on `#60`; stocking a blocked row inflates a queue.
+4. **Declined to fix `PREREG-loki25:141`** — correct language; over-correction is its own failure.
+5. **Declined credit** three times in the unflattering direction (the class is the side lane's; the
+   first instance was an accident by a subagent; the win-rate refusal was the agent's, not mine).
+
+## 6. PER LANE, AND THE RETRACTION COUNT
+**BUILDER:** consumed everything, corrected their own σ-number and transitivity framing to Magnus,
+and shipped three gate fixes the same day I found them. **SIDE LANE: EIGHT catches on me**, four of
+them design or estimator faults — **and they withdrew their own E3 deadline and their own
+convergence claim unprompted.**
+⛔ **RETRACTIONS THAT REACHED A LANE: EIGHT. THREE REACHED MAGNUS** (+5.2pp gap · flattering-direction
+claim · transitivity headline). *(s45: seven and two.)* ⚠ **The reached-the-principal count ROSE.**
+
+## 7. CAUSE-vs-EFFECT — fired once, on myself
+**`LOKI_FWD_GUN_CAP`: the IDENTIFIER said gunner, the COMMENT beside it said sentinel, and the
+identifier won — in text I had pasted.** ⭐ **Durable form, and it is stronger than s45's
+constant-names finding: a name is a HYPOTHESIS about meaning; when the code carries BOTH a name and
+a comment that disagree, THE COMMENT IS THE EVIDENCE AND THE NAME IS THE PRIOR.**
+
+---
+## THE FIRINGS — six
+1. **Q1: 11 consumed, 0 unread** — second consecutive run with nothing unread.
+2. **Q2b did NOT fire, and was PREVENTED once** — the fieldcal reader built early on purpose.
+3. **Q3b did not fire; a WORSE fidelity failure did** — a payload quoted against itself.
+4. **Q4 fired five times; peers caught EIGHT.** The split is unchanged from s45 and now has a name.
+5. ⭐ **A NEW CLASS, and it is the run's finding: RULE HELD, INVOKED, NOT SELF-APPLIED — three
+   instances (transitivity, the enumeration-rule miscount, the dose-vs-mechanism branch).**
+6. **Q7 fired on name-vs-comment**, a sharper generator than s45's shared-vocabulary one.
+
+## ⭐ NEW STANDING SUB-QUESTION (Q4b), added this run
+**Did I invoke a rule against another lane's claim and then breach it in my own text?** ⛔ **Three
+times today. The invocation FEELS like the application, and having just demonstrated the rule is the
+strongest possible reason not to re-check myself against it.** ⇒ **Mechanical fix, not a resolve:
+after citing a rule in a message or commit, RE-READ MY OWN TEXT IN THAT SAME ARTEFACT AGAINST IT.**
+
+## ROUTING OF THIS RUN'S FINDINGS
+| finding | route |
+|---|---|
+| Conditional mechanisms need a FIRINGS metric read before the primary | **PROMOTED** — routed to builder for the BARS row template |
+| Rule-held-not-self-applied | **PROMOTED** — side lane wrote it as **D36** in the booted checklist |
+| A count is only as wide as its enumeration rule | **PROMOTED** — `docs/coordination.md`, and it caught me once |
+| Name-vs-comment: the comment is the evidence | **INSTRUMENT** — Q7 above, this file |
+| A published finding's instrument must outlive the session | **PROMOTED** — `tools/x3r0_measure.py` recovered |
+| Over-correction is a failure in the same family as under-hedging | **OBSERVATION — NOT ROUTED** |
