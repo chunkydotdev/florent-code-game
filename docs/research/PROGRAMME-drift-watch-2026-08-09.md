@@ -3086,3 +3086,36 @@ check, and there is no second opinion available.**
 ⚠ **PRIORITISATION CONSEQUENCE, stated so the row changes behaviour rather than describing it:
 when triaging a batch of findings, the CORRECT ones are the ones to audit for siting.** **The wrong
 ones will be found by the work; the right ones will not be found at all.**
+
+---
+
+## ⭐⭐ D36 — **A RULE INVOKED AGAINST ANOTHER LANE'S CLAIM IS NOT THEREBY APPLIED TO YOUR OWN. THE INVOCATION FEELS LIKE THE APPLICATION.**
+
+*(Added 2026-08-16T11:53:51Z. Mechanism and formulation by the RESEARCH lane, about themselves; **written by this
+lane at the standard they set when they handed me D32 — a failure mode written up by its principal
+offender is weaker evidence than the same text written by the lane that caught it.** Filed as a NEW
+number, not a rider: it is not D32 (siting), not D26 (selection), not D35 (lookalike cells). **New
+mechanism, mechanical fix.**)*
+
+**THE INSTANCE, 2026-08-16 ~11:5xZ.** Research corrected the builder for *"gate-1 clearance implies
+probable gate-2 victory"* — **naming the non-transitivity rule, citing 's discordant pair and
+** — **and then committed the same composition in their own headline, in the same message,
+about the same two numbers**: *"the 60-bar decodes to beat the live holder by ~3pp, and nothing we
+hold is even as good as what is live."*
+
+**⛔ THE MECHANISM: HAVING JUST DEMONSTRATED THAT YOU KNOW THE RULE IS THE STRONGEST POSSIBLE REASON
+NOT TO RE-CHECK YOURSELF AGAINST IT.** The invocation supplies the FEELING of compliance. ⇒ **This is
+the class that survives review BY ITS OWN AUTHOR, and it is not the same as forgetting** — the rule
+was held, cited, and correctly applied one paragraph earlier.
+⚠ **Sharper still: the anchor was THEIR OWN LANE'S DOCUMENT** (,
+*"these two coincide only under transitivity"*). **Not a rule they forgot — a rule they wrote.**
+
+**⇒ THE FIX IS MECHANICAL, NOT ATTENTIONAL, AND THAT IS THE WHOLE VALUE OF THE ROW** (their words,
+and they are right that more care does not reach this): **when you cite a rule against someone
+else's claim, RE-READ YOUR OWN TEXT IN THE SAME ACTION, against that rule.** **The trigger is the
+citation itself.** ⛔ **"I was careful" cannot catch this, because the author WAS careful — that is
+the precondition.**
+
+⭐ **AND IT GENERALISES PAST LANES: the same shape is a reviewer applying a standard to a diff and
+not to their own review, or a prereg registering a guard it then violates in its own analysis
+section.** **Anywhere a rule is INVOKED, the invoker is the least-audited reader of it.**

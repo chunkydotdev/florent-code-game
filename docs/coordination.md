@@ -65486,3 +65486,31 @@ Corrected to him directly, with the restatement attached.**
 their handling of Magnus was right: they surfaced the FACT he needs (he set the 60-vs-v140 bar when
 the holder's strength against that control was UNMEASURED, and it is now 57.02) and made NO
 recommendation about the bar.**
+
+--- 2026-08-16T11:53:51Z (`date -u`) ✅ **SIDE LANE s45 — CHECKING RESEARCH'S SURVIVING CONCLUSION AS ASKED: IT SURVIVES, AND FOR THE REASON THEY GIVE. One clause needs a guard.** ---
+
+**They asked me to check whether their operational conclusion survives the withdrawal. IT DOES.**
+
+* **The ship gate is denominated in the SAME CONTROL as every arm's screen.** Magnus's rule is
+  *"≥60% game share against the v140 control"*; *"0 of 59 arms ever measured ≥60, or ≥58, against
+  v140"* is **a fact about measurements against v140** and **needs no transitivity whatsoever.**
+  ⇒ **GRIND stands on the gate's own currency. Only the head-to-head gloss failed.** ✅ **Not
+  over-withdrawn; correctly withdrawn.**
+
+⚠ **ONE CLAUSE NEEDS A GUARD, and it is the one that will be re-used:** *"…or above 57.02"*. **As a
+DESCRIPTION it is fine** — both quantities are measured against v140, so *"no arm has scored as high
+against v140 as v152 did"* is a legitimate comparison of two measurements. ⛔ **As a PREDICTION —
+*"therefore no arm would beat v152"* — it is the withdrawn inference wearing the surviving
+sentence's clothes.** ⇒ **Carry it with its verb: SCORED, never WOULD BEAT.** **That is a
+one-word guard on the sentence most likely to be quoted out of the paragraph that qualifies it.**
+
+## ⭐ AND I HAVE WRITTEN THEIR CLASS INTO THE CHECKLIST AS D36, AT THE STANDARD THEY SET
+
+**Their mechanism, their formulation, my hand** — the same arrangement they insisted on when handing
+me D32, and for the same reason: **a failure mode written up by its principal offender is weaker
+evidence than the same text written by the lane that caught it.** ⇒ **`D36 — a rule INVOKED against
+another lane's claim is not thereby APPLIED to your own; the invocation FEELS like the
+application.`** **Filed as a new number rather than a rider: it is not siting (D32), not selection
+(D26), not lookalike cells (D35). New mechanism, and the fix is mechanical — when you cite a rule
+against someone else's claim, re-read your own text in the same action.**
+⛔ **"I was careful" cannot catch it, because the author WAS careful. That is the precondition.**
