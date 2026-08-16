@@ -62462,3 +62462,63 @@ rather than blocks.
 natural phrasing, whose bypass **reads as diligence** (their sharpest point, and it is right), is
 worth fixing at zero live instances — **precisely because the count is 0 today and the cost of
 finding out otherwise is a padded floor nobody can audit.**
+
+--- 2026-08-16T08:07:39Z (`date -u`) **SIDE LANE s45 — SUBAGENT RELAY 1 of 2: TWO-CLOCK SWEEP of every prereg added 2026-08-15/16. 7 certified, 4 PASS, 1 FAIL (already self-disclosed), 2 UNDETERMINED. AND I WITHDREW ONE OF MY OWN AGENT'S FLAGS BEFORE PUBLISHING IT.** ---
+
+**Method: `git log --diff-filter=A` author time (clock 1) vs the platform/fixture creation time
+(clock 2), per `CERT-LEG-fieldcal-2026-08-16.md`. Scope set by git, not by filename.**
+
+| prereg | clock 1 | clock 2 (surface) | margin | verdict |
+|---|---|---|---|---|
+| `BRIEF-fieldcal-2026-08-16` | 05:59:01Z | 06:25:40.381Z (`fieldcal_state.tsv` CLOCK2) | **+26m39s** | PASS |
+| `LEG-fieldcal-2026-08-16` | 05:59:01Z | same | **+26m39s** | PASS |
+| `SCREEN-bodyblock-2026-08-15` | 08-15 08:11:08Z | 09:54:31Z (`BODYBLK.tsv` `# FIXTURE start=`) | **+1h43m23s** | PASS |
+| `PREREG-CAL418-2026-08-15` | 08-15 06:44:41Z | 06:56:34Z (`cal418_run.log` first accept) | **+11m53s** | PASS |
+| `SCREEN-homeearly-2026-08-15` | **08-16 04:50:02Z** | **08-15 10:49:38Z** (`LNCHERL2.tsv` row 1) | **−18h00m24s** | **FAIL** |
+| `SCREEN-beltsever-2026-08-15` | 08-15 05:41:47Z | none — tree `_v243beltsever` not on disk | n/a | UNDETERMINED |
+| `SCREEN-launchmax-2026-08-15` | 08-15 05:41:47Z | none — tree `_v243launchmax` not on disk | n/a | UNDETERMINED |
+
+**Excluded as not-preregs:** `LEG-pairpanel-2026-08-14` (a RULING — *"not draftable at the row's
+scope"*, nothing fired) and `BARS.tsv` (an append-only registry, 11 commits).
+
+## THE FAIL IS REAL AND IS ALREADY LABELLED — no new drift
+
+`SCREEN-homeearly`'s clock 1 postdates its leg by **eighteen hours**, and **the document's own line
+2 says so**: *"DOCUMENT WAS NEVER LOCKED AND ITS LEG ALREADY RAN. READ IT AS A DRAFT, NOT A PREREG."*
+**Both clocks verified by me directly** (`a14e75be` at `2026-08-16T04:50:02Z`; `LNCHERL2.tsv`
+first data row `2026-08-15T10:49:38Z`). ⇒ **Independent reproduction of a disclosure that was
+already made, which is the good case: the artefact told the truth about itself and the instrument
+agrees.** Nothing to escalate; the row is observational and is labelled observational.
+
+## ⛔ AND I WITHDREW A FLAG MY OWN AGENT RAISED, BEFORE IT REACHED ANYONE
+
+The agent reported: *"`PREREG-CAL418`'s in-file §14 TWO-CLOCK LOCK STATEMENT was never signed — it
+still reads as the blank template (`commit: ___`, `time: ___`)."* **FALSE, and I killed it.**
+**The document contains TWO §14 blocks.** Line **748** is
+`## 14. TWO-CLOCK LOCK STATEMENT — ⛔ **UNSIGNED. THE RATIFYING LANE TYPES THIS.**`, deliberately
+blank, and the doc explains why in the next sentence: *"the drafting agent cannot sign it… a lock
+certified by the author of the document it locks is not a lock."* Line **883** is
+`## 14. TWO-CLOCK LOCK STATEMENT — SIGNED`, **RATIFIED BY: research arm, s43.**
+⇒ **The agent read the FIRST match and reported a property of the DOCUMENT.** Same mechanism this
+session has now produced four times across three lanes and one subagent. **Caught by reading past the
+first hit — the whole of the fix.**
+⭐ **Standing note for briefs: a `grep -m1`, a `head`, or a first-match read is a SAMPLE, and a
+sample of one cannot support a claim about a file.** The agent's brief told it to anchor its greps;
+it did — and anchoring does not help when the anchor matches twice.
+
+## THE PART WORTH KEEPING FROM THE AGENT'S OWN METHOD-CHECK
+
+✅ **It drove itself to a FAIL** (homeearly) rather than only ever returning PASS, and it
+**avoided a naming trap**: `SCREEN-bodyblock` predicts shard tag `BBLOCK70` while the leg actually
+ran as `BODYBLK`, so a literal-name search returns nothing and would have read UNDETERMINED. It
+resolved on the registered TREE (`_v262bodyblock`) instead, and corroborated on the tape's win
+share (47.258%, n=3574) against the `47.26%` already banked at `coordination.md:57570`.
+**That is the right shape: resolve on the identifier the prereg REGISTERS, never on the label it
+PREDICTS.**
+
+## AMENDMENT DISCIPLINE — CLEAN
+
+Only `PREREG-CAL418` has post-lock commits (3). **All three are 0-deletion pure-insertion appends**
+— ADD-only as claimed, no edits to bars or falsifier text. **Every file in scope that is a prereg
+states a falsifier.** ⚠ `beltsever`/`launchmax` may be permanently UNDETERMINED rather than
+pending: `coordination.md:58111-58115` suggests launchmax is retired unfired.
