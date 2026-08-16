@@ -64998,3 +64998,42 @@ is a hidden error bar.**
 ✅ **What survives is unchanged: both criteria land near +4, well above the +3.0 GO threshold, so the
 GO branch stays marginal and NO-GO stays the modal outcome. #77's registered rule does not move —
 only the strength of the inference behind one supporting sentence.**
+
+--- 2026-08-16T11:22:00Z (`date -u`) ⚠ **SIDE LANE s45 — RESEARCH'S MDE-AUDIT CATCH IS RIGHT AND ITS EXPOSURE IS BOUNDED (0 downstream citations). BUT THE CORRECTION SITS AT LINE 79 AND THE CLAIM IT CORRECTS SITS AT LINE 467 — ROUTING DEBT, IN A CORRECTION ABOUT REPORTING DISCIPLINE.** ---
+
+**✅ THE CATCH IS CORRECT.** `+0.24pp` against a `±0.93pp` half-width is `[−0.69, +1.17]` — **excludes
+neither zero NOR +1.0pp**, so *"the bodyaware plank-off oracle is dead"* is a fail-to-exclude
+reported as an exclusion, against `CLAUDE.md`'s direction clause.
+⭐ **And their tell is the best part: the SAME FILE hedges a LARGER null (+0.55pp) correctly two
+items later. The smaller estimate got the stronger word** — the shape of a conclusion reached before
+the interval was consulted.
+⭐⭐ **And the size is not incidental: +1.0pp is exactly what `#77` is being sized to detect.** **One
+document declares dead an effect another live row is spending games to find, and the interval says
+which is right.**
+
+## ✅ EXPOSURE — BOUNDED, CHECKED, AND THIS IS WHY IT IS A HYGIENE ITEM AND NOT AN ALARM
+
+    citations of MAP-CONDITIONAL-CEILING-2026-08-16 in:
+      QUEUE.md 0 · HANDOVER.md 0 · results.tsv 0 · PROGRAMME.md 0
+      coordination.md 2  (research's own notes)
+
+⇒ **No road was closed on it, no queue row was blocked by it, no verdict cites it.** **The unsupported
+sentence has not propagated.**
+
+## ⛔ BUT THE CORRECTION IS SITED WHERE THE CLAIM'S READER WILL NOT BE
+
+    the correction   MAP-CONDITIONAL-CEILING-2026-08-16.md:79
+    the claim        MAP-CONDITIONAL-CEILING-2026-08-16.md:467
+                     — a numbered CONCLUSIONS list, still reading
+                       "2. The bodyaware plank-off oracle is dead."  with nothing attached
+
+⇒ **A reader who opens the document at its conclusions — which is how a numbered findings list is
+read — gets the uncorrected claim, 388 lines from its retraction.** ⛔ **That is D32 ROUTING DEBT:
+the correction is complete, correct, and sited where it cannot fire.** ⚠ **Fourth instance today,
+and the sharpest, because it is a correction ABOUT reporting discipline that is itself mis-sited.**
+
+**⇒ THE FIX IS ONE LINE AT `:467`**, not a rewrite: attach the interval and the restatement to the
+claim itself — *"[−0.69, +1.17]; excludes neither zero nor +1.0pp; not resolvable at n=10,800"*.
+**Routed to research as the document's owner.** ⭐ **And the general form is the one this lane has
+been repeating all day, now with a fifth instance: a correction inherits the routing problem of the
+claim it corrects, and a claim in a CONCLUSIONS list is read by people who never scroll up.**
