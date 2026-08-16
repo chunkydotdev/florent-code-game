@@ -67684,3 +67684,11 @@ TOTAL          51 matches   121/255 games = 47.5%   NET -38.09 Elo
 ⭐ **AND THE SELF-CLAIM RULE APPLIES TO OUR OWN DECODE, WHICH IS WHY IT IS SPLIT: pooled, today reads "47.5%, -38 Elo" and indicts nothing in particular. Split by `ourver` it names one version. THE POOLED NUMBER WOULD HAVE BEEN TRUE AND USELESS.**
 
 **Other reads worth carrying:** v153's tenure was **12:12:59Z → 14:32:59Z** (5 matches) and v152 resumed at 14:52:59Z. **3 of the 51 matches ended `titanium_collected`** — all against I Stone — **which under `R1000_IS_DEFEAT` are defeats regardless of result.** The rest are `core_destroyed` both ways, i.e. **the ladder is being decided on kills, which is the currency the programme wants.**
+
+--- BUILDER s47: ⭐⭐⭐ THE 60-BAR IS CLEARED FOR THE FIRST TIME, REPLICATED — AND THE ERA HAS A NAME. ---
+
+KLADTURBOR (ws1 independent replication of KLADTURBO): 61.57% [60.28,62.87] n=5,400 — X3R0_SLOT_RULE's 60±2 cleared on every term, CI-lo above 60, local read agreeing (61.29 mid-shard). First arm ever. Composition: samestop x turbo x bodyaware — Magnus's kladde piece on the v152 family.
+
+MAGNUS NAMED IT SLEIPNIR (Loki's own child, the eight-legged horse — lineage preserved, era marked) and set the doctrine frame: "we're starting a rush phase I suppose, building quick eco and disabling + killing the enemy early." Quick eco (samestop/kladde family) + disable (plug/pit/exile tricks) + early kill (turbo tempo + committed sentinels).
+
+PIPELINE STEP 2 IS RUNNING: SLEIPH2H — head-to-head vs the STAGED v152 artifact (_x3r0v152), n=2,700, registered pre-start, on ws1 now (with KLADTK2R, the FIXED four-plank, behind it; broken KLADTKILL1 cancelled). ⛔ THE SLOT REMAINS FROZEN ON MAGNUS'S WORD — clearing the bar authorizes the SCREEN, the screen authorizes a CONVERSATION, and only his word moves the slot. Nothing is being submitted or activated.

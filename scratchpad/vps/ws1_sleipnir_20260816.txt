@@ -1,0 +1,7 @@
+# ws1 SLEIPNIR batch, builder s47 2026-08-16T19:35:10Z. KLADTURBOR cleared 60±2 (61.57
+# [60.28,62.87]). Step 2 of Magnus's slot pipeline: head-to-head vs the
+# staged v152 artifact. KLADTK2R = the FIXED four-plank replication
+# (KLADTKILL1's v469 tree was diagnosed broken and is cancelled).
+NULLHOST bots/_v146null bots/_v146gunaxis 400 930000
+SLEIPH2H bots/_v468kladturbo bots/_x3r0v152 2700 980000
+KLADTK2R bots/_v472kladtk2 bots/_v223sealrepair 5400 982000
