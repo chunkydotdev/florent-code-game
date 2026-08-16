@@ -59251,3 +59251,70 @@ whenever an arm clears 60 or Magnus opens a window explicitly.
 * side lane's two running audits (old-bar enforcement sites; gate.py digit-key parser):
   awaited; the old-bar audit matters because item 2's verdict must not be silently
   re-scored by a stale median rule somewhere.
+
+--- 2026-08-16T05:2xZ (`date -u`) ✅⭐ **SIDE LANE s44 — AUDIT OF "ALL 18 ARMS PASS": THE VERDICT IS CREDIBLE, AND THE BAR IS NOW VALIDATED AS ABLE TO FIRE. I OPENED THIS EXPECTING THE OPPOSITE.** ---
+
+The builder invited an audit of `a84a1945`'s board verdict. **A bar that nothing fails is this
+lane's signature suspicion** — the v122 stop-loss that could never fire is the catch this lane is
+known for — so I went looking for that shape. **It is not there, and the evidence is the strongest
+kind: the bar was driven to the other verdict on the live corpus.**
+
+## THE TEST — every completed local shard, n≥1000, ITT timely-kill rate T vs C
+
+    shards evaluated                                    146
+    treatment's timely rate FALLS at all                 65
+    would FAIL the bar (95% CI excludes 0)               36
+
+**⇒ THE BAR FIRES ON 36 OF 146 SHARDS. It is not a rubber stamp.**
+
+## ⭐⭐ AND IT IS BETTER THAN "IT CAN FIRE" — IT FIRES ON THE RIGHT THINGS
+
+The instrument was never calibrated against known ground truth. It is now, and **every class
+lands where it should**:
+
+    KNOWN REAL NEGATIVES  ->  FAIL          NULL SHARDS  ->  ~ZERO (the built-in control)
+      BODYBLK   -2.94 [-5.13,-0.74]           NULL5400      -0.39 [-2.03,+1.25]
+      SPAWNLKL  -2.36 [-4.52,-0.20]           NULL114       -0.09 [-1.91,+1.73]
+      CATSOLO   -4.79 [-8.73,-0.85]           SHIPGATENULL  -0.26 [-2.06,+1.54]
+      SALTOFF  -34.54  (ablation)             SR1NULL       -0.70 [-2.52,+1.11]
+      NEG125   -45.03  (negative control)     NULL125       +1.61 [-0.16,+3.38]
+
+    KNOWN POSITIVES -> PASS:  BODYAWR +4.47 · AWRLNCH +6.96 · MIX280mix4 +6.09 ·
+                              MAPCODE +42.63 (the v125 pathfinding fix, and it is the
+                              largest reading on the board — as it must be)
+
+⇒ **nulls read null, deliberate negatives fail hard, the known best planks pass, and the known
+biggest fix is the biggest number.** **That is a calibrated instrument, not an assumed one**, and
+it is the check `CLAUDE.md` demands before any verdict rests on a bar: *a check that has never
+produced the other verdict has not been seen to check.*
+
+## ✅ THE BUILDER'S 18/18 IS CREDIBLE, AND THERE IS NO CONTRADICTION WITH THE 36 FAILURES
+
+The 36 are historical/ablation/negative-control shards; the 18 are the LIVE board. **`BODYBLK`,
+`SPAWNLKL` and `CATSOLO` fail the bar and were already cancelled on independent evidence** — the
+bar agrees with decisions taken without it. **Convergent, not circular.**
+
+## ⛔ AND I AM KILLING MY OWN OBJECTION BEFORE ANYONE INHERITS IT
+
+**I had this written up:** *"the ITT form is blind to a plank that converts losses into LATE wins —
+those score not-timely, so the rate reads FLAT and passes, while win share rises. That is the
+'wins by not dying' pattern, and the 55-class is doing exactly it (conditioned shares +4.4..+10.7pp)."*
+
+**The data says no.** The 55-class combos are strongly POSITIVE on the ITT rate, not flat:
+**MIX280mix4 +6.09 · MIX281mix4 +5.06 · MIX284mix3 +4.57 · MIX282mix5 +4.04.** ⇒ **they are adding
+TIMELY kills, not only late ones.** The mechanism I feared exists in principle and is **not what
+these arms are doing.** ✅ **Objection withdrawn on measurement, before publication.**
+⚠ **What survives is narrow and worth one line in a prereg, not a flag:** the ITT bar fails only on
+a REDUCTION in timely kills, so a hypothetical future plank adding *only* post-r300 wins would read
+flat and pass. **The builder already has the guard for that** — their own rule *"the conditioned
+share stays as a diagnostic; where the forms disagree, the disagreement is the finding."*
+**BODYAWR is the live instance of that rule** (ITT +4.47 PASS, conditioned +1.87 FAIL) and it is
+currently reported as a footnote. **By their own rule it is a finding, and it is the one arm on the
+board where the two forms disagree.**
+
+## METHOD
+ITT timely-kill rate = games ending in a core-kill by that side with `turns ≤ 300`, over **ALL**
+games on the shard — no conditioning on winning. Computed from the raw shard tapes
+(`scratchpad/overnight/*.tsv`, `winner ∈ {T,C}`), independent of `overnight_read`. Two-proportion
+normal CI, unpooled, no DEFF — **local batteries are balanced-by-construction and read DEFF 0.98
+(`CLAUDE.md`), so the naive interval is correct and marginally conservative here.**
