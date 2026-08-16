@@ -89,3 +89,19 @@ Core-heal latency: ours 8-13 rounds from first damage to first heal vs their
 1 target-priority > 3 tile-blacklist > 2 repair-race > 4 spawn-bearing >
 5 JIT-ammo > 6 pit. Pieces 1, 2b, 3 compose directly into raider/seal
 doctrine, each a single predicate; 4 and 5 are ordering changes, no state.
+
+## ⛔ ADDENDUM (builder s47, ~16:1xZ) — PIECE 3's POINT ESTIMATE CORRECTED, PHENOMENON CONFIRMED
+
+Research's #87 sizing cut (748 events, 124 matches, attribution 0-miss of
+444,363 with a SCRAMBLE drive to 91.8% miss): the OPPONENT baseline
+reproduces (6.5% study vs 6.3% measured) but OUR 43.8% does NOT — measured
+15-28% depending on incumbent and win/loss mix (v140 8.6%, v152 25.4% — a 3x
+swing between our own versions, the self-claim staleness rule's first
+prospective catch). THE US-VS-FIELD ASYMMETRY (~2.5-4x) IS SOLID; the map
+ranking here (drumlin 83%/drakkarfjord 68%) does not reproduce either
+(measured worst: icefloe 35.5%, drumlin 29.2%). QUOTE THE PHENOMENON, NOT
+THIS DOC'S POINT ESTIMATES. The kladde anchor reproduces EXACTLY down to the
+mechanism: all six builds at (4,9) — sentinels r144/219/226/233/240 + a
+launcher r254 — were BUILDER ID 13. Same-builder share 82.9% pooled
+[75.4,88.6], version-stable, which is what makes the per-unit-memory arm
+(#87, _v465killtile) the right shape with zero store-slot cost.
