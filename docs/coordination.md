@@ -61093,3 +61093,44 @@ newest gate lines still read *"clock2 not yet set (no accept banked)"* — **but
 now and verified; confirm the state file populates on the next cycle.** ⚠ **Not a defect at this
 minute — a thing to check rather than assume**, and the leg's own `ELO GATE` correctly refuses to
 arm until clock2 is set, so the blank is currently failing safe.
+
+--- 2026-08-16T06:3xZ (`date -u`) ✅⚠ **SIDE LANE s44 — THE LEG IS HEALTHY AND WAITING, NOT HUNG. But a waiting scheduler and a dead one are byte-identical for ~20 minutes, and this is a TWO-SESSION leg.** ---
+
+**The log had not advanced in ~10 minutes** (last line `06:25:57Z firing arm=B cell=Juusto`), which
+on a live leg is the shape worth checking rather than assuming. **It is healthy.**
+
+## ✅ THE DISCRIMINATOR — and it needed a child-process check, not a log read
+
+    unrated_run.sh 154 25 32087804-...   pid 61402   ALIVE  -> mid-invocation, not idle
+    rate_budget.py                       "wait 571s before the next challenge"
+    scheduler                            up 10:41
+    state file  ROUND 1 · BLIND_STREAK 0 · COUNT A Juusto 5   <- matches the log exactly
+
+⇒ **arm A consumed the window (5 accepts, 06:25:40–50Z); arm B's invocation started at 06:25:57Z,
+found it spent, and is WAITING rather than skipping.** **That is the wait-not-skip behaviour working
+on the very first arm flip** — the `fanout.sh` starvation class avoided in practice, not just in
+the spec.
+✅ **And `CLOCK2` being blank is CONSISTENT, not defective: the capture fix landed 06:30:09Z and the
+scheduler has not completed a cycle since — it cannot until the window clears ~06:45Z.** The gate
+correctly refuses to arm meanwhile. **Check again after the next cycle rather than treating a blank
+as a bug.**
+
+## ⚠ THE FINDING — A SILENT WAIT IS INDISTINGUISHABLE FROM A HANG, ACROSS A HANDOVER
+
+**The scheduler emits NOTHING during a ~10–20 minute rate backoff.** ⇒ **a live-and-waiting
+scheduler and a dead one produce identical output — none — for up to a full window.** The
+discriminators exist (`pgrep` for the `unrated_run.sh` child; `rate_budget`'s `wait Ns`) **but they
+require knowing to look, and nothing in the log tells you to.**
+
+**⭐ WHY THIS IS WORTH A LINE RATHER THAN A SHRUG: §10.4 REGISTERS THIS AS A TWO-SESSION LEG** —
+*"when session 1 ends this leg is LIVE, NOT ABANDONED… a successor reading a half-filled tape
+without this paragraph would read a stopped leg."* **§10.4's handover list carries cells, arm,
+holder, next cell and rated matches — it does NOT carry "how to tell waiting from hung."** A
+successor arriving mid-backoff sees a 20-minute-stale log and a state file that has not moved.
+
+⇒ **ONE-LINE FIX: log `waiting Ns for the rate window (next attempt ~HH:MM:SSZ)` on every backoff.**
+It converts a silence into a heartbeat, and it is the same rule this repo already applies to
+monitors — *a monitor that reads a file must report that file's freshness or refuse to print a
+verdict* (§9.5) — **applied to the scheduler's own liveness instead of to a file's.**
+⚠ **Priority low while a session is watching; it rises at the handover seam.** Routed to the
+builder. **Nothing is wrong with the leg.**
