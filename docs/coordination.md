@@ -59015,3 +59015,36 @@ never depended on the paraphrase.
 ⇒ **PRACTICE, and it is one line: NEVER QUOTE A QUEUE ROW FROM THE BOOT DISPLAY. Run
 `queue_check.py --next` or open `QUEUE.md`.** The boot line truncates mid-sentence and the
 truncation point is where the scope usually lives.
+
+--- 2026-08-16T05:15:45Z (`date -u`) BUILDER s45 — ⭐ DIRECTIVE CHANGE, MAGNUS DIRECT: THE KILL-ROUND BAR RE-PRICES TO THE r300 BOUNDARY ---
+
+**Magnus, verbatim: "Re-price the kill-round bar to bind at ~r300 instead of penalizing
+drift inside r200-300."** Encoded:
+* `PROGRAMME.md` parsed block: `DEFENCE_ADMISSION_BAR: r300_crossing_non_regression`
+  (was `kill_round_non_regression`). Parse verified 23/23 fields, no duplicate
+  declarations (the four-space-indent trap checked explicitly).
+* Operational form (PROGRAMME prose, dated): share of kill-wins landing after r300 must
+  not rise vs control (per-prereg n/MDE, scored as CI-excludes-the-rise per the
+  exclusion-restatement rule); median crossing 300 is the gross backstop. **Drift inside
+  r200-300 is REPORTED, not disqualifying.** `KILL_WINDOW_RND: 250` (offensive target)
+  and `R1000_IS_DEFEAT` untouched. RMST horizon for the live leg: 300.
+* `CLAUDE.md` consequence 2 amended in place (the always-loaded file states what is true
+  now; s31 median-non-regression form marked superseded).
+
+**Consequences for the board:** the 55-class combos (medians 226-252, all < 300) are no
+longer disqualified by the old bar; their admissibility now turns on the r300-crossing
+share, which nobody has computed yet — **OWED: per-arm share-of-kills-past-r300 vs
+control for the leaders** (local tapes, free). TRIO's cancel stands on power alone.
+
+## CONSUMPTION RECEIPTS (research relay ~05:1xZ)
+* **r200-300 "flip" withdrawal: CONSUMED** — the PROGRAMME amendment and CLAUDE.md edit
+  both state parity-not-advantage and cite the withdrawal; the directive/empirical
+  distinction ("off-programme by directive" vs "empirically harmful") is adopted in the
+  amendment's wording.
+* **bodyaware decoupled from #63's arrival story: CONSUMED, and it re-aims the next
+  plank** — 13/15 maps above 50 (sign p=0.0074), midgard ~8% of the gain, pooled we are
+  the FASTER side. #63's premise does not hold as stated; research owns the queue
+  annotation. **The mechanism question (why does bodyaware win broadly? and why does
+  auroraveil read 45.69?) is now the highest-value LOCAL question** — no window, no
+  activation, competes with nothing. Agreed it outranks aiming another plank at the
+  arrival story.

@@ -18,7 +18,7 @@ successor session inherit it. The fields below are parsed; the prose is not.
     KILL_WINDOW_RND: 250
     R1000_IS_DEFEAT: yes
     PLAY_DEFENCE: not_at_the_kill_s_expense
-    DEFENCE_ADMISSION_BAR: kill_round_non_regression
+    DEFENCE_ADMISSION_BAR: r300_crossing_non_regression
     FIXTURE_OF_RECORD: live_unrated
     ALWAYS_BE_RUNNING: yes
     QUEUE_FLOOR: 3
@@ -419,6 +419,29 @@ Any survival-mechanism plank carries a **kill-round non-regression bar beside it
 survival bar. If median kill round RISES, the plank is off-programme, whatever it
 does to win rate.** (Operational form proposed by the side lane; adopted here
 because it converts the directive into something `gate.py` can eventually read.)
+
+**⭐ RE-PRICED 2026-08-16T05:15:45Z (s45) ON MAGNUS'S DIRECT RULING:** *"Re-price
+the kill-round bar to bind at ~r300 instead of penalizing drift inside
+r200-300."* The parsed field is now `DEFENCE_ADMISSION_BAR:
+r300_crossing_non_regression` and the paragraph above is SUPERSEDED as the
+operational form. **The admission test binds at the r300 boundary:** a plank is
+off-programme if it pushes kills PAST r300 — operationally, the share of its
+kill-wins landing after r300 must not rise vs control (each prereg registers its
+own n/MDE for this, and per the exclusion-restatement rule the claim is scored
+as "the CI excludes the registered rise", never as a bare fail-to-find), with
+median-kill-round-crosses-300 as a gross backstop. **Drift inside r200-300 is
+REPORTED, no longer DISQUALIFYING.** Evidential context, stated with its limits:
+the old form's empirical grounding ("the field converts 4x better late") was
+PRE-map-rotation; re-derived on the post-rotation pool
+(`docs/research/KILL-HAZARD-REDERIVED-2026-08-16.md` + the same-day convention
+audit), r200-300 reads ~parity (0.97-1.05, sign convention-sensitive — NOT an
+advantage) while r300+ remains against us (0.82, robust under both conventions).
+The bar therefore now sits where the measured disadvantage actually lives. This
+does NOT touch `KILL_WINDOW_RND: 250` (the offensive TARGET — kill fast — is
+unchanged; what changed is what disqualifies a plank), and it does NOT touch
+`R1000_IS_DEFEAT: yes` (a directive, not an inference from any hazard table).
+Live-leg design constant that follows from this ruling: an RMST-style kill-speed
+primary uses horizon 300.
 
 **⛔ THE SCOPE, AND IT IS WHAT KEEPS `R1000_IS_DEFEAT` UNCHANGED.** "SOME defence"
 means **surviving the r150-250 window so OUR OWN KILL LANDS.** It does NOT mean

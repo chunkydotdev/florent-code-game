@@ -388,11 +388,18 @@ Four consequences, each of which closes a road that was open before it:
    Magnus, direct: *"This does sound like we should allow SOME defence
    strategies, but our FOCUS should be to kill at <r250."*
    `PROGRAMME.md` now carries **`PLAY_DEFENCE: not_at_the_kill_s_expense`** and
-   **`DEFENCE_ADMISSION_BAR: kill_round_non_regression`**.
-   ⇒ **A defensive plank is ADMISSIBLE IFF it does not slow the kill: it carries
-   a kill-round non-regression bar beside its survival bar, and if MEDIAN KILL
-   ROUND RISES it is off-programme whatever it does to win rate.** A gradient is
-   unenforceable, so the directive is encoded as a BAR.
+   **`DEFENCE_ADMISSION_BAR: r300_crossing_non_regression`**.
+   ⭐ **RE-PRICED 2026-08-16 (s45), Magnus direct: *"Re-price the kill-round bar
+   to bind at ~r300 instead of penalizing drift inside r200-300."*** The s31 form
+   read "if MEDIAN KILL ROUND RISES it is off-programme"; that is SUPERSEDED.
+   ⇒ **A plank is off-programme if it pushes kills PAST r300** (share of
+   kill-wins landing after r300 must not rise vs control; median crossing 300 is
+   the gross backstop — full operational form in `PROGRAMME.md`). **Drift inside
+   r200-300 is reported, not disqualifying.** Basis: the "field converts 4x
+   better late" table was pre-rotation; re-derived post-rotation, r200-300 is
+   ~parity (NOT an advantage — the flip claim was withdrawn same-day) and r300+
+   remains against us (0.82, robust). A gradient is unenforceable, so the
+   directive stays encoded as a BAR — only its binding point moved.
    **SCOPE, and it is what keeps `R1000_IS_DEFEAT` intact: "some defence" means
    surviving the r150–250 window SO OUR OWN KILL LANDS — our median kill is 174
    and our median death is 187, a thirteen-round race, and our core dies in 46.3%
