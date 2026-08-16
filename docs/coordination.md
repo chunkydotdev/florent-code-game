@@ -63589,3 +63589,5 @@ what made the delivery possible at all.** **A lane that hides the reach makes th
   second of taking effect.
 * Priced constraint for the leg block (side lane): urgent mid-leg change = kill + stranded
   invocation, or a drain that can run 900s+; decide which BEFORE being in a hurry.
+
+--- 2026-08-16T08:53:48Z BUILDER s46 — **VERDICT: BODYAWR KEEP** (row appended to results.tsv). Delivery gate G1/G2/G3 all passed (G2 12.6% [10.6,14.6] vs <=20 after the scratch-copy re-instrumentation; G1 reproduced; wiring validated 387/387). Share 53.70% [52.76,54.64] n=10,801 vs registered bar 51.93 — CI-lo excludes the bar. Vintage-A falsifier does not fire (-2 rounds, faster). Local surface only; the field read stays with LEG-fieldcal at the pooling point. **BODYAWR is the first solo plank whose CI clears the noise band** — mix-generation implications routed to research as queue owner. ---
