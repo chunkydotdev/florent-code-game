@@ -66936,3 +66936,27 @@ the ledger: 13 of 28 OUR activations were never polled (46.4% blind) against 2 o
 ⇒ **relevant to this lane directly: it is a second, independent reason the 120-second
 `holder_watch.log` I armed an hour ago is the right slot surface and the 5-minute tape is not.**
 Their number, their method, relayed with both.
+
+--- BUILDER s47 BOOT NOTE (timestamp on the commit; written immediately after the events it records) ---
+
+## BOOT (via /builder ~13:47Z). now.py at hook time: HOLDER v153 (x3r0) 1751 #21, CONTROL _v223sealrepair. Monitors: 4 watchers + keeper 19708 all alive. corpus_sanity OK.
+
+## ⭐ NEW STANDING RULE FROM MAGNUS (direct, in-session, ~14:0xZ), promoted into .claude/commands/builder.md at write time:
+"We are so focused on our tools we forget what matters, new rule, every tooling that needs fix goes to the end of the session at wrap, unless it breaks something that makes our loop for finding better bots. We are losing momentum, nothing else matters than making a better bot."
+⇒ Instrument debts accumulate at the wrap unless they stall the bot loop. Other lanes: adopt into your own charters at your next touch.
+
+## MAGNUS ORDERS EXECUTED
+* H601h2 + H602h2 KILLED on his direct instruction (screenshot, "these should also be killed") at 13:56:57Z via corefill_cancel. Rows kept (H601h2 51.43% n=1118; H602h2 49.00% n=1100 — both inside band, both under-powered, NOT verdicts; cancellation rows on results.tsv). Freed cores picked up TURBO4A + TBA + SEALPECK + RENT3B — all four running as of 14:0xZ.
+
+## BOOT CHECKS + FIXES (all loop-critical, hence done pre-rule; commit 12f62f5d, 157 tests OK)
+* test_instruments was RED: bank_under_harassment.py --help RAN THE DECODE (13MB stray file at repo root, removed) and x3r0_measure.py --help crashed exit 1 — both recovered-from-scratchpad research tools, both now guarded and driven both ways. The first failure's results.tsv attribution was FALSE (concurrent auto_gate rows); churn exemption widened to keeper-rebuilt corpus tables, named not silent.
+* CONSUMED (side lane f5d9b0c6): slot_rule widened-window defect VERIFIED at source and FIXED test-first — evaluate() refuses a base row >WINDOW matches back (net5=None, ship_watch renders n/a). Live eval reads v153 k=6 net5=n/a; the m=1115 arming evaluation cannot fire on an 8-match window. The two incomplete comments (:96-99 bound, :20-21 "resets naturally") corrected in the same commit. NOTE for everyone: even a CORRECT future fire is a SHIP_ALERT about a TEAMMATE'S ship — Magnus×x3r0's call, no lane acts on it.
+* CONSUMED (research s47 #3): elo_history.tsv is BLIND to ~46% of OUR OWN activations (sub-poll-interval submit→fire→rollback shape). No leg accounting in this session will reason about our exposure from the elo tape; the surfaces are version_trees.tsv + ladder_games.ourver.
+* CONSUMED (research s47 #4 + side lane): the day's drawdown is BROAD (−51.28 over 8 matches from 11:12Z), displacement window +1.33 — no verdict here will frame the fall as incident-driven. v153 0-10 rated is for Magnus×x3r0, not for a lane.
+* KILLED (research s47 #1 / side lane retraction): the "platform call needed for 1108-1112 attribution" ask — ladder_games.tsv caught up on its own; no call made.
+
+## AUDIT TRIGGER: FIRED 2/6 (ship cadence 0.29/hr [subject known-wrong, research retracted to ZERO our-ship decisions in 24h]; cross-lane analysis 10.33). DECISION: NOT spawning a second audit session — the same-day audit already ran and delivered (docs/workflow-analysis/AUDIT-2026-08-16-instruments-vs-decisions.md, s46) over the same 24h window, research has adopted the cross-lane trip as binding on their output (queue rows + fire orders, not prose), and Magnus's momentum rule above is itself the corrective the trigger exists to provoke. A third same-day analysis session about analysis would BE the defect it audits. Re-arms fresh tomorrow.
+
+## FIRING WINDOW: NO. PROGRAMME stands — X3R0_SLOT_RULE 60±2 bar, board ceiling 55.24, standing state GRIND; the live unrated leg is parked and LEG-fieldcal restart is gated on Magnus×x3r0. No submit, no activation, no leg from this lane unless Magnus opens a window. Research: spend the session on the archive-only preconditions (#50, #80, #23→#78).
+
+## RUNNING AT NOTE TIME (local): G421g2 87% (~42m), SENTBAN 98% (~2m), IDNULL140 36%, V426BCS 13%, TURBO4A/TBA/SEALPECK/RENT3B fresh. ws1: G411g4 ~52% (ETA ~14:35Z), then G412g4, G413g4. Next builder actions: SENTBAN + SEATSPAWN verdicts from .COMPLETE tapes, then G421g2 full read.

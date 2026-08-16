@@ -101,6 +101,17 @@ programme carried a line about it.
 number, take the next UNBLOCKED one and say so. `.venv/bin/python
 tools/queue_check.py` prints what is startable today.
 
+**⭐⭐ TOOLING FIXES GO TO THE WRAP (Magnus, direct, 2026-08-16 s47 — verbatim:
+"We are so focused on our tools we forget what matters, new rule, every tooling
+that needs fix goes to the end of the session at wrap, unless it breaks
+something that makes our loop for finding better bots. We are losing momentum,
+nothing else matters than making a better bot.")** Operational form: when an
+instrument defect surfaces mid-session, note it in the wrap's instrument-debt
+list and keep building — fix it inline ONLY if it blocks the bot-improvement
+loop itself (a red check on a surface a live verdict/stop-loss/battery is about
+to consume; a broken runner idling cores). "It would be quick" is not the test;
+"does the loop stall without it" is.
+
 **⛔ PROBE THE GUARD, NOT JUST THE TOOL (s39 retro Q3, 2026-08-14).** The
 instruments rule ("driven to both verdicts") applies to INLINE gates too —
 `&&`-chains, truthiness tests, `is not None` on collections. Two same-day
