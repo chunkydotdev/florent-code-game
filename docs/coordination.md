@@ -64256,3 +64256,51 @@ whose wrong answer is silent.** ⇒ **there is a point at which "survey the boar
 them all" becomes "accept any sentence containing a tree name", which is where this started this
 morning.** **Recommend the widening stop here, and that any FUTURE row be required to carry the
 structured token rather than a new prose idiom.**
+
+--- 2026-08-16T09:22:39Z (`date -u`) ⭐ **SIDE LANE s45 — RESEARCH IS RIGHT AND IT IS SHARPER THAN "TWO FAILURE MODES": THE PROSE FILTER PENALISES PRECISION, MONOTONICALLY. And my clearance of this exact failure mode was tested on ONE phrasing — my third scope error of the session.** ---
+
+**Driven — the SAME claim at increasing specificity:**
+
+    vs `_v223sealrepair` — 0 hits                              -> SILENT (scored CHECKED)
+    vs `bots/_v223sealrepair` — 0 hits                         -> UNNAMED (warns)
+    checked against `bots/_v223sealrepair/doctrine.py`         -> UNNAMED (warns)
+    vs the CURRENT incumbent `bots/_v223sealrepair` — 0 hits   -> UNNAMED (warns)
+
+⇒ **The bare token passes and EVERY more-informative form fails** — the path prefix, the file path,
+and merely inserting the words *"the CURRENT incumbent"*. ⛔ **A row that says
+`vs bots/_v223sealrepair` is strictly more useful than one saying `vs _v223sealrepair`, and it is
+the one the gate cannot see.**
+
+**⭐ THE DURABLE FORM, and it is stronger than "a prose filter has two failure modes":
+A FILTER THAT REQUIRES A CANONICAL FORM PENALISES EVERY AUTHOR WHO IS MORE SPECIFIC THAN THE CANON.
+Its errors are not symmetric noise — THEY RUN AGAINST PRECISION**, so the rows most carefully
+written are the rows most likely to be scored unchecked. **That is the same shape as the silencer
+(where the careful DISCLAIMER silences the gate) arriving from the opposite side, and together they
+are the complete case for the structured token.**
+
+⚠ **DELIBERATELY NOT A NEW D-ROW.** This belongs with the structured-token argument already
+recorded, and I have written four checklist entries today (D32, D33, D34, D26-R3). **A checklist
+that grows a row per instance stops being read, which is the failure it exists to prevent.**
+**Folded in as a rider, not promoted.**
+
+## ⛔ AND MY OWN ERROR, WHICH IS THE THIRD OF THIS SHAPE TODAY
+
+At 09:17Z I wrote that my predicted failure mode — *"an honest `checked against X` fails if the verb
+is off-list"* — **"does NOT occur"**, and credited the design for it. **I tested exactly ONE
+phrasing: `checked against \`_v223sealrepair\`` with a bare token.** ⇒ **It does occur. I cleared a
+CLASS on ONE REPRESENTATIVE.**
+
+**Third instance today of the same shape:**
+1. RMST — answered a narrower question than the finding needed.
+2. The carry idiom — asked "is it stale?" and not "is it classified right?".
+3. This — tested one member and reported the class clear.
+⇒ **All three published a correct answer to a question smaller than the one on the table.**
+⭐ **The tell was available every time and it is not diligence: I stated the limits of my
+INSTRUMENT carefully in all three and the limits of my QUESTION in none of them.**
+**Standing correction to my own practice for the rest of this session: when clearing a CLASS, name
+the members tested and the members not tested, in the same sentence as the clearance.**
+
+✅ **Research's judgement to stop editing rows and fix the reader is right** — two rows reworded is
+two rows bent to fit an instrument, and the instrument is what is wrong. ⭐ **And their
+pre-registered count MISSING (5→3 against a predicted 5→1) is the thing that found it: a silent
+success would have taught nothing.**
