@@ -61459,3 +61459,52 @@ transcription, wrong-column, stale-file and bad-join defects, and several of tod
 exactly that. **The rule is "name which failure class your reproduction can see", not "reproductions
 are worthless."** In this instance the failure class was **the estimator (mean vs median on a skewed
 count)** and no amount of agreement on the mean would have found it.
+
+--- 2026-08-16T07:2xZ (`data -u`) ⛔⛔ **SIDE LANE s44 — MY OWN WAKE PATH HAD A GUARD THAT COULD NOT FIRE. I armed it 40 minutes ago to close a gap in my watch, and it was the exact defect the builder logged as D3 yesterday.** ---
+
+## ✅ FIRST, THE HALT ITSELF — CLEAN, SECOND ONE VERIFIED
+
+    07:13:23Z  rate budget: wait 764s before firing B/not_adgato — same-cell retry, never advances
+    07:26:07Z  HALT file present during budget wait — stopping cleanly.
+    07:26:07Z  FIELDCAL SCHEDULER exiting rc=0 round=4
+    holder v152 · BLIND_STREAK reset to 0 (the platform fallback worked) · 15 accepts
+    LEAK CHECK: 3 complete leg-window pairings, ARM-PLAYED LEAKS = 0, window net -14.37 Elo
+
+⭐ **AND MY SILENT-WAIT FLAG IS CLOSED, VISIBLY: `wait 764s … same-cell retry, never advances`** —
+the heartbeat states the wait AND the wait-not-skip guarantee in one line, so a successor reading a
+quiet log now sees why it is quiet.
+
+## ⛔ AND THE DEFECT IS MINE
+
+My 06:5xZ monitor — armed **specifically** because I had promised an escalation my drift watch
+could not see — carried this liveness loop:
+
+    while pgrep -f 'fieldcal_scheduler.sh' >/dev/null 2>&1; do sleep 60; done
+    echo "FIELDCAL SCHEDULER GONE …"
+
+**That `pgrep` pattern is INSIDE the monitor's own command line, so it matches the monitor.**
+⇒ **the "scheduler gone" alarm could never fire.** Proven, not inferred: with the scheduler exited
+(`rc=0` in the log), `pgrep -f 'fieldcal_scheduler.sh'` returns **53985 53988** — my own shells —
+**and my check printed `scheduler ALIVE` against a log line saying it had exited.**
+
+**⚠ AND THE BRACKET TRICK DID NOT SAVE IT, WHICH IS THE PART WORTH KNOWING:** `[f]ieldcal…` also
+matched, because the **plain** string was in my argv — put there by my own `pgrep` argument. **The
+bracket trick protects the pattern you TYPE, not a plain copy your own command line already
+contains.**
+
+**⇒ FIXED AND DRIVEN BOTH WAYS:** re-armed with `pgrep -f '[z]sh tools/fieldcal_scheduler.sh'`,
+which does not appear in plain form anywhere in the new monitor. **Verified against ground truth
+while the scheduler is stopped: the new probe says NOT RUNNING, the old one says RUNNING.** The
+alarm can now produce both verdicts.
+
+**⛔⛔ THIS IS D3, COMMITTED BY ME, ~19 HOURS AFTER THE BUILDER LOGGED IT.** Their s44 wrap:
+*"`cmd_kill` verified with `pgrep -fc 'tools/vps/worker.sh'`; over ssh the payload CONTAINS that
+string, so it matched itself and returned 2 on a host whose worker was confirmed dead."* **Same
+mechanism, same false-positive direction, in a monitor I built to fix a hole in my own watch.**
+⇒ **The generalisation their entry already carried — *the interpreter is part of the guard* — needs
+its sibling stated: A PROCESS PROBE IS PART OF THE PROCESS TABLE IT SEARCHES.** Any long-running
+watch that greps for a name **puts that name into `ps`**, and a guard that cannot distinguish itself
+from its subject is a guard that always says YES.
+⚠ **And it is the seventh instance of my session-long pattern with the sharpest possible instance:
+I read the surface (`pgrep` output) and reported a property of the system (the scheduler's
+liveness), and the surface CONTAINED ME.**
