@@ -578,6 +578,32 @@ more draws from it. What that means concretely:
   is not an arm.** A bug of that size sitting inside the chassis means the generator's ceiling is
   partly self-imposed. This is the single highest-value item I can see and it is already
   commissioned.
+
+  ⛔⛔ **AMENDED 2026-08-16 ~09:5xZ BY THE AUTHOR LANE, AND THE BULLET ABOVE IS OVERSTATED IN TWO
+  WAYS THAT MATTER. Commissioned a follow-up asking whether this lever was owned; it is OWNED, and
+  the correction runs against my own headline.**
+  1. **"NOT ON MY BOARD" WAS ALREADY FALSE WHEN WRITTEN.** `QUEUE #8` had been re-framed the same
+     morning carrying this very figure; **two trees implement fixes** — `bots/_v450seatspawn`
+     (`LOKI_SEATCANON_SPAWN`) and `bots/_v455seatfull` (`LOKI_SEATCANON_FULL`) — and both were
+     ALREADY FIRING. Nothing was un-converted. **I described as an unclaimed opportunity a thing
+     that was in flight.**
+  2. ⭐ **THE HUNT'S OWN CEILING SAYS IT IS NOT A ROUTE TO THE BAR: §6 gives +1.48pp pooled /
+     +3.19pp per-map as UPPER BOUNDS, explicitly "not a route to 60".** I cited the hunt's EFFECT
+     SIZE and not its CEILING. **A +6.28pp measured asymmetry does not convert into +6.28pp of
+     game share, and the document that measured it said so.**
+  3. ⛔ **AND THE INSTRUCTION "FIX THE SEAT ASYMMETRY" IS NOT COHERENT AS STATED. Equivariance is
+     DIRECTION-FREE: it forces both seats onto ONE behaviour without choosing WHICH, and since
+     `A% + B% ≡ 100`, driving the differential to zero is ARITHMETICALLY AUTOMATIC.** The board
+     now demonstrates exactly this: **`SEATFULL` drove the seat differential to +0.09pp
+     [−5.76, +5.95] — gap gone — while reading 48.53% and auto-stopping on `TREND-FLOOR@1000`.**
+     **It equalised the seats by making both of them worse.** ⇒ **"remove the asymmetry" and
+     "capture the better seat's behaviour" are different objectives and only the second is worth
+     anything.**
+  ⚠ **WHAT SURVIVES: the asymmetry is real and is OURS** — case (b), a fixture artefact, is
+  excluded well (third-party seat A **50.137% over 177,618 games**, five flat controls, sign flips
+  by map, bias moving across our own chassis at χ²/df 8.02 vs 1.15 within-cell). **Cases (a) a
+  fixable bug and (c) real-but-not-capturable are NOT distinguished, and the hunt did not
+  distinguish them.** That is the open question, not the effect size.
 * **Then re-measure, do not bank both.** The (map,seat)-conditional CV lift of +4.96pp is partly
   arm selection routing around that same bug; banking the fix and the conditional lift
   double-counts.
