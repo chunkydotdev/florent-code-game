@@ -386,6 +386,14 @@ PAGE_TEMPLATE = r"""<!DOCTYPE html>
   .tile.ore { background: var(--ore); }
   .tile.ore-ax { background: var(--ore-ax); }
   .tile.clickable { cursor: crosshair; }
+  /* PAINT LAYERS (Magnus, s46: "builders seem to be hidden some rounds") —
+     entities render in ascending-id order, so a builder standing ON a belt
+     tile (passable to builders) was painted UNDER the later-built conveyor
+     and vanished for exactly the rounds it walked the belt. Units above
+     buildings, buildings above the core footprint; ids only break ties. */
+  .ent { z-index: 1; }
+  .ent.core { z-index: 0; }
+  .ent.builder_bot { z-index: 3; }
   .ent { position: absolute; display: flex; align-items: center; justify-content: center;
     font-weight: 700; color: #fff; overflow: hidden; box-shadow: 0 0 0 1px rgba(0,0,0,.25) inset; }
   .ent.builder_bot { border-radius: 50%; }
