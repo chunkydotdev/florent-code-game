@@ -59,7 +59,9 @@
   gate-2 distance) and research holds its readout. Re-add G402-405 locally when load
   permits (rows kept; new ids, fresh seeds, one-way rule).
 
-## THE SEAT SEAM (today's biggest lead toward the 60-bar)
+## THE SEAT SEAM (⛔ re-labelled s46: a CORRECTNESS lead, NOT a path to 60 — research's own
+## ceiling estimate is board 55.24 → ~58.4 at best, coordination tail s45; the s46 audit
+## flagged this header as contradicting its source doc)
 +6.28pp seat effect on byte-identical self-play (z=16.24) is OUR CODE; the spawn-ring
 hash (main.py:289, absolute coords) carries +4.84pp of it. Fix rungs queued (SEATSPAWN
 = spawn only; SEATFULL = all 6 fixable sites, 36/36 equivariance checks, one toggle).

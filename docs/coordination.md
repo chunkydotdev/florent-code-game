@@ -62852,3 +62852,44 @@ second null.** *(Probe originated by the side lane closing `SCREEN-beltsever`; r
 the whole tree rather than ±8 lines of a call site — same verdict, wider basis.)*
 **beltsever's clause A is SHIPPED (`raid.py:424 _salt_turn`); its residual is ore-barrier-no-kill,
 which IS #7.** ⇒ **residual housed, no row added, queue stays 55.**
+
+--- BUILDER s46 (timestamp in commit; appended atomically per the new rule) — AUDIT RELAY + FLEET SURGERY + FIRST ECO VERDICT + RECEIPTS ---
+
+* **AUDIT REPORT BANKED: `docs/workflow-analysis/AUDIT-2026-08-16-instruments-vs-decisions.md`**
+  (load-bearing claims marked VERIFIED/UNVERIFIED; I re-derived the headline ones against
+  primaries before acting). Headline: the 60±2 gate is sound and ~4.64σ above the
+  arm-generating process (~1 in 560k arms; a true-57 is ~1 in 244); it has 50% power at its
+  own threshold and no registered re-test; gate-2 distance (vs holder) unmeasured pending
+  V140VS152 on ws2. AND: 7 of 8 local shards ran at background QoS (pri=4, E-cores, ~1/40
+  remote speed) with NOWINNER corruption 1.5-8.1% that full-speed shards never show.
+* **FLEET SURGERY (builder scheduling authority): cancelled ECOSIPH/ECOSIPC/ECOPAVE/
+  ECOSCK4/ECOSCK6/G414g4/G415g4 locally 08:12:51Z** (rows KEPT; throttled fixture = corrupt
+  NOWINNER; ws2 runs all five eco replications at 40x with a certified null). Fill chain
+  relaunch at normal QoS in progress; SEATSPAWN/SEATFULL/RUSH72 start under proper priority.
+  G414/G415 re-add later as new ids, fresh seeds (one-way rule).
+* **VERDICT (builder): ECOSIPH / `_v315siphit` is REFUTED on the primary at proper n.**
+  Surface: ws2 ECOSIPHR, n=5,400, T-share 48.83% ±1.33pp, 0 NOWINNER, NULLHOST cert 52.00%
+  (n=400, in band). Below the 51.33 futility band and below control. The local partial
+  (n=140, 8.05% NOWINNER, throttled fixture) is DISCARDED as fixture-corrupt, not pooled.
+  Remaining four eco replications read out as ws2 completes them (~1.5h each).
+* **RECEIPTS:** research RATED-DAY-DECODE — CONSUMED: Bisons v10 note attached to any row
+  priced off our 8/10 (that was v9); the {kladde,0033,gsxWins} two-day replication + the
+  kladde-is-a-CONVERSION-failure surprise awaited as a queue row from their mechanism agent.
+  Side-lane relay 2 (DEFENCE_ADMISSION_BAR enforced by nothing; cheapest home is
+  prereg_check.py check_arithmetic + a DEFENCE CLASS declaration key; template
+  SCREEN-sealfloor6:270-275) — CONSUMED: queued as a builder tool item behind board work.
+  Their no-live-vintage-drift cert and the BODYAWR two-vintages line: noted, carried to
+  HANDOVER at wrap.
+* **MAGNUS REPLAY QUESTIONS: answered** (agent report relayed to him in-session): the
+  two-conveyor is a real but small orphan-belt bug (two-builder collision, no facing check,
+  ~5.9% dead belt tiles, SAME code in our line eco.py:557); the parked builder NEVER attacks
+  the core (0 of 54,429 parked rounds across 205 games — LOKI_QUIET_ON=True by design) while
+  the barrier seal + sentinel-through-wall IS the designed kill; the self-walling is the
+  undesigned half and "peck when sealed (no move to lose)" is a clean candidate carve-out;
+  the e5d311e9-g2 belt cut was an ENEMY barrier on our delivery seat (0033 runs the same
+  seal doctrine at us) and v152/v140 have NO repair path for it; (16,7) sentinel seat cannot
+  reach the core (d²=36>32) but the siting routine only ever scans the raider's 4 neighbours.
+* **OPEN WITH MAGNUS (one line each):** (1) LINE_DIRS in PROGRAMME.md stops at v199 — the
+  incumbent fails its own line check and 26/27 batteries bypass with --off-programme;
+  recommend widening with `bots/_v[2-9]??*` (file is edit-on-his-directive-only, so asked,
+  not done). (2) The 60-bar reachability number (above) — does the bar stand as-is?
