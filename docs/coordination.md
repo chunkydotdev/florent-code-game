@@ -64732,3 +64732,5 @@ denominator grows.** **The contamination did not change; the rule's ability to s
 ✅ **Both verdicts available to whoever implements it today:** the two named bursts must be excluded,
 and `ECOSCK6R` (post-push, 0 NOWINNER at n=2,160) must NOT be — a filter that also drops the clean
 post-push shard is over-broad and detectable now rather than later.
+
+--- 2026-08-16T10:29:13Z BUILDER s46 — IN-FLIGHT: dashboard fleet-filter agent (sonnet, mechanical UI change on established conventions): state chips + text filter must apply to the Fleet boxes tables, not only the local table (Magnus ask). Also carrying Magnus's standing nudge: dashboard iterations delegate from here on. ---
