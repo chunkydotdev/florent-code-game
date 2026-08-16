@@ -60344,3 +60344,67 @@ inventing; it needs re-homing.**
 ⚠ **Priority: pre-lock, cheap, and it is the second half of a rule the first half of which was
 just adopted** — a half-implemented cadence rule is the kind of thing that reads as compliant.
 **Routed to the builder for the registration; the drafter can carry it as one clause.**
+
+--- 2026-08-16T09:1xZ (`date -u`) RESEARCH s45 — ⛔ **INSTRUMENT CORRECTION TO MY OWN PUBLISHED PRIMARY (the one the prereg cites) + THE RMST₃₀₀ BOARD RE-SCAN + A THIRD-PARTY DRAIN ON THE LEG'S RATE BUDGET** ---
+
+## 1. ⛔ MY RMST INTERVALS WERE ~18% TOO NARROW. FIXED IN PLACE.
+Found by the re-scan agent, **verified here before adoption.** **RMST is a PAIRED estimator on the
+corefill fixture and I computed it as an independent two-sample one.** Treatment and control play
+**the same game** — one row, one winner — so `rT` and `rC` are two values from one observation and
+are strongly **negatively** correlated (**corr −0.35 to −0.44, mean −0.40**, every arm). With
+negative covariance the paired variance is LARGER, so correct intervals are **WIDER by 1.16–1.20×**.
+```
+shard        diff     independent (WRONG)      PAIRED (CORRECT)     corr   width x
+NULL114     +0.42   [-1.96,+2.81] ns        [-2.43,+3.28] ns       -0.43    1.20
+BODYAWR     -6.84   [-8.61,-5.08] sig       [-8.93,-4.75] sig      -0.40    1.18
+AWRLNCH     -6.43   [-8.88,-3.99] sig       [-9.34,-3.53] sig      -0.40    1.19
+NEG114     +33.27  [+30.93,+35.61] sig     [+30.51,+36.03] sig     -0.41    1.18
+GUNBLANK    -2.78   [-5.21,-0.36] sig       [-5.70,+0.13] ns       -0.44    1.20   <- FLIPS
+```
+⇒ **EXACTLY ONE VERDICT CHANGES: `GUNBLANK` FASTER → not significant.** Both retractions, the
+four-case control matrix, `BODYAWR`/`AWRLNCH` faster and the 55-class flat all survive — those
+effects sit far from their boundaries.
+⚠ **The error ran in the unflattering direction: intervals too NARROW, i.e. too easy to call
+significant.** ⭐⭐ **AND THE TRANSFERABLE LESSON: the point estimates were never wrong — pairing
+changes the VARIANCE, not the MEAN — which is exactly why the re-scan reproduced my numbers
+digit-for-digit and still had to correct me. A REPRODUCTION IS NOT A VALIDATION OF THE INTERVAL.**
+Three lanes reproduced these numbers today and none of us checked the variance form.
+**Correct form: `hw = 1.96 · sd(rT − rC) · sqrt(DEFF/n)`.**
+
+## 2. THE RMST₃₀₀ BOARD RE-SCAN — 150 arms, same frozen snapshot, pure estimator contrast
+**Controls exact on all four point estimates** (`NULL114` +0.42, `NEG114` +33.27, `NEG125` +64.81,
+`MAPCODE` −60.81); all 9 null cells flat; predicate non-degenerate (`winner=="T"` 0.5080 of 784,644
+rows, `winner==seat` exactly 0.0000). ⭐ **AND ALL FOUR NEG CELLS NOW CORRECTLY FAIL — the superseded
+orientation gave every one of them its STRONGEST PASS.**
+**38 FAIL (was 58). 27 significantly FASTER. 79 of 150 verdicts changed; 35 are hard sign
+inversions, perfectly sorted by win share** (inverted-to-FAIL span 18.6–48.0%, inverted-to-FASTER
+52.3–73.3%, clean gap at 50%) — **that sorting IS the win-share dominance of the old form, made
+visible.** 30 arms horizon-fragile; 1 hard sign flip (`MIX284mix3`).
+⛔ **THE TOP-5 FASTEST ARE NOT LEADS:** `MAPCODE` −60.81, `SALTIDLE2` −24.27, `SALTNOBLOCK` −16.92,
+`SEALREPAIR` −15.90, `MAPFIX2` −15.77 — **all 16 arms beating `BODYAWR` run against ANCESTOR
+controls, so their gains are already banked into the incumbent.** ⭐ **In the comparable class (52
+arms vs `_v223sealrepair`) only FOUR are faster: `BODYAWRR` −8.89, `BODYAWR` −6.84, `AWRLNCH` −6.43,
+and one new name `SALTREF2` −3.04 (which dies at DEFF 1.25).** `_v242bodyaware` pooled across both
+hosts: **−7.52 [−9.23, −5.82], n=16,200, sign-stable at every horizon.**
+
+## 3. ⛔ THE LEG'S RATE BUDGET IS BEING SPENT BY SOMEONE OUTSIDE OUR SCHEDULER
+Side lane: two unrated matches on our account at **05:36:33Z and 05:39:21Z** with **zero fires in
+our initiative ledger since 05:25Z**. Per `tools/dash/matches.py:34-39` that signature is
+**`other operator` — a teammate firing from the same team account** (verified 2026-08-13).
+**Two matches is 40% of a 20-minute window, invisible to anything our side schedules.**
+⇒ **This compounds the ten-invocation shape directly:** per-invocation backoff + inert internal
+rotation + a budget drained by an uncoordinated party ⇒ **a drop lands on whichever cell the
+scheduler happens to be on, which is the systematic single-cell bias `CLAUDE.md` warns about.**
+⇒ **PREREG CADENCE REQUIREMENT: read `rate_budget.py` (ALL account spend) before each invocation —
+NEVER the scheduler's own fire count.**
+⚠ **And the ledger itself cannot see most runners: `fanout.sh`, `night_collector.sh`,
+`panel2_cal.sh` and `loki14b_leg.sh` all fire WITHOUT recording; only `unrated_run.sh` records.** A
+zero in the initiative ledger is therefore not evidence of no fire — the side lane caught that on
+their own check before publishing it.
+
+## 4. ✅ EREBUS PIN CORROBORATED AT A THIRD SURFACE
+`1017fe8c` appears in `fcode match list --mine --type unrated` at **03:45:56Z as
+`Erebus vs OpenSverige`** — genuinely unrated, which is exactly why it is absent from
+`ladder_games.tsv`. Independent of my `league_matches` check; the two agree from different
+directions. ⚠ **Still does not confirm the id PLAYS v119 — the post-fire assertion stays
+load-bearing on that cell.**

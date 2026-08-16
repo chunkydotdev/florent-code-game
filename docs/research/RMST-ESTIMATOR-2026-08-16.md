@@ -54,6 +54,39 @@ positive control: a genuine shipped improvement, correctly read as killing sixty
 
 ---
 
+## 2b. ⛔ INSTRUMENT CORRECTION — THE INTERVALS BELOW WERE ~18% TOO NARROW. FIXED.
+
+*Found by the RMST₃₀₀ board re-scan, 2026-08-16 ~09:0xZ. Verified here before adoption.*
+
+**RMST is a PAIRED estimator on this fixture and I computed it as an independent two-sample one.**
+In a corefill shard **treatment and control play the SAME game** — one row, one winner — so `rT` and
+`rC` are two values from a single observation and are strongly **negatively** correlated
+(measured **corr ≈ −0.35 to −0.44**, mean −0.40, across every arm). With negative covariance
+`Var(rT − rC) = Var(rT) + Var(rC) − 2·Cov` is **LARGER** than the independent sum, so the correct
+intervals are **WIDER**, by a measured factor of **1.16–1.20×**.
+
+| shard | diff | independent 95% (WRONG) | **paired 95% (CORRECT)** | corr | width × |
+|---|---|---|---|---|---|
+| `NULL114` | +0.42 | [−1.96, +2.81] ns | **[−2.43, +3.28] ns** | −0.43 | 1.20 |
+| `BODYAWR` | −6.84 | [−8.61, −5.08] sig | **[−8.93, −4.75] sig** | −0.40 | 1.18 |
+| `AWRLNCH` | −6.43 | [−8.88, −3.99] sig | **[−9.34, −3.53] sig** | −0.40 | 1.19 |
+| `MIX280mix4` | −0.87 | [−3.18, +1.43] ns | **[−3.56, +1.82] ns** | −0.36 | 1.17 |
+| `MIX281mix4` | −0.29 | [−2.56, +1.99] ns | **[−2.94, +2.36] ns** | −0.35 | 1.16 |
+| `MIX284mix3` | +0.21 | [−2.09, +2.51] ns | **[−2.48, +2.90] ns** | −0.37 | 1.17 |
+| `NEG114` | +33.27 | [+30.93, +35.61] sig | **[+30.51, +36.03] sig** | −0.41 | 1.18 |
+| `EXILE0` | +6.23 | [+3.85, +8.61] sig | **[+3.38, +9.07] sig** | −0.43 | 1.19 |
+| **`GUNBLANK`** | −2.78 | [−5.21, −0.36] **sig** | **[−5.70, +0.13] ns** | −0.44 | 1.20 |
+
+⇒ **EXACTLY ONE VERDICT IN THIS DOC CHANGES: `GUNBLANK` goes from significantly FASTER to NOT
+SIGNIFICANT.** Every other conclusion — both retractions, the four-case control matrix, `BODYAWR`
+and `AWRLNCH` faster, the 55-class flat, `NEG114` slower — **survives the correction unchanged**,
+because those effects are far from their boundaries.
+⚠ **The direction of the error is the unflattering one: I published intervals that were too narrow,
+i.e. too easy to call significant.** ⭐ **The point estimates were never affected** — pairing changes
+the variance, not the mean — **which is why the re-scan reproduced my numbers digit-for-digit and
+still had to correct me. A reproduction is not a validation of the interval.**
+**USE THE PAIRED FORM: `hw = 1.96 · sd(rT − rC) · sqrt(DEFF/n)`.**
+
 ## 3. THE BOARD UNDER RMST — AND ⛔ MY FIRST RETRACTION
 
 | shard | n | **RMST₃₀₀ diff** | 95% (DEFF 0.98) | `SPEED` (biased) | verdict |
