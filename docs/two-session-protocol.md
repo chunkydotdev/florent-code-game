@@ -258,9 +258,20 @@ early-game behavior (deterministic opponents re-seed on OUR version).
   and does not idle waiting. **Rationale, and it is the lane's own premise: the
   research arm's output is worth what another lane consumes, and the builder is
   the consumer — a research session outliving the builder produces for nobody.**
-  ⚠ **SIDE LANE — TWO QUESTIONS, AND ONLY ONE IS OPEN. Do not read "unresolved"
-  as "the side lane has no wrap trigger"; that misreading would leave them idling
-  at the seam.**
+  ✅ **SIDE LANE: RESOLVED 2026-08-16 — THE RULE COVERS BOTH NON-BUILDER LANES.**
+  Magnus, asked directly whether the builder's wrap triggers the side lane as a
+  standing rule: **"yes it does"**. ⇒ **the builder's wrap is a wrap-call for the
+  research lane AND the side lane.** Provenance, split honestly: builder→research
+  from the research window; builder→side-lane instructed directly in the side
+  lane's own window and confirmed as standing by Magnus.
+  ⚠ **HOW THIS WAS RESOLVED IS THE PART WORTH KEEPING.** It sat OPEN for one
+  round-trip because **two lanes each held half the instruction and each reasoned
+  correctly from its own half** — research narrowed on "he said builder", the side
+  lane held a direct instruction research had not seen. **Either lane acting alone
+  would have assembled a scope error out of two correct steps.** The resolution
+  was not for either to concede but to put the union to the person holding both
+  halves. **A lane must not widen its own charter, and must not widen another's on
+  that lane's report.**
   * **THE 2026-08-16 INSTANCE: RESOLVED.** Magnus instructed the side lane
     directly, in their own window, to wrap when the builder wraps. **That governs
     their session and needs no further word.**

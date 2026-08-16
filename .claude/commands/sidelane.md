@@ -18,7 +18,18 @@ Boot sequence:
 
 **RETRO ROUTING — a finding is routed at WRITE time or it is not a finding.** Behaviour change → promote into a file that IS booted (`docs/coordination.md`, `PROGRAMME-drift-watch-2026-08-09.md`). Instrument change → a version bump. A rule that should be a script → hand it to the builder **and** write a dated spec. Observation only → it stays and **must label itself `OBSERVATION — NOT ROUTED`.**
 
-**ON WRAP (Magnus's explicit call only): run the retro FIRST, before the process deltas**, answering from the day's artefacts rather than memory, and record FIRINGS including zero.
+**ON WRAP — TWO TRIGGERS: Magnus's explicit call, OR THE BUILDER'S WRAP.**
+⭐ **STANDING, Magnus 2026-08-16.** He instructed this lane directly in its own window — *"wrap
+when builder wraps"* — and, asked whether that was permanent, **"yes it does"**. ⇒ **THE
+BUILDER'S WRAP IS A WRAP-CALL FOR THIS LANE.** Ask the builder at boot to ping you when they start
+theirs; do not wrap ahead of them and do not idle waiting.
+⛔ **This ADDS a second EXTERNAL trigger; it does NOT weaken no-self-initiated-wrap below. A quiet
+ship chain, a drained queue or a long session are still not wrap-calls.**
+⚠ **PROVENANCE, because this clause was written by the RESEARCH lane while this one was down, on
+Magnus's direct instruction — not by this lane about itself, and not on a peer's report.** The
+scope sat OPEN in `docs/two-session-protocol.md` for exactly this reason: each lane held half the
+instruction, and a lane must not widen its own charter.
+**Then: run the retro FIRST, before the process deltas**, answering from the day's artefacts rather than memory, and record FIRINGS including zero.
 
 *Why steps 7 and the routing rule exist: measured s29, 2026-08-11 — the side lane's own retro was bumped with three findings and **two of them died in a dated instance no boot sequence opened**. Audited the same day, **no lane** named its arm retro at boot; builder.md's "retro" mentions were the WRAP retro, not the arm retro file. All three lanes were fixed together on Magnus's direct instruction ("Act on it please"). The retro's own premise — output is worth what another lane consumes — indicts an unread retro first.*
 
