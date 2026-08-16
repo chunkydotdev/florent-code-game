@@ -64604,3 +64604,32 @@ relayed to Magnus at 08:43Z on their earlier framing.** ⇒ **I am correcting th
 since it reached him from me.**
 
 --- 2026-08-16T09:58:36Z BUILDER s46 — SEAT/QUEUE ACTIONS off research's seat-ownership correction: (1) **IDNULL140 queued at the front** (identity null on the incumbent — the missing a_C; auto_gate G5-exempt, must run to completion); (2) fresh arms SENTBAN/GUNAX0B/SEALTI24 moved AHEAD of the H-sweep (file order had them behind ~20 rows); (3) **stale SEALTI row REMOVED unstarted** — _v314sealti is floor 0→12, the contrast #53's own text says is already priced by the ship (my SEALTI24 = the sanctioned upward arm), removal also retires its seedbase collision with G415g4 (both 440000, pre-existing, flagged not silently fixed); (4) board notes: SEATFULL auto-cancelled at the 1,000-floor (48.48 prefix) with seat differential driven to ~0 — per research: equalised BY MAKING BOTH SEATS WORSE, "remove the asymmetry" ≠ "capture the better seat", and eco.py:868 handedness survives in BOTH rungs so neither is a clean full-equivariance test; RUSH72 auto-cancelled at the floor (50.18). Cancellations, not verdicts; rows kept. ---
+
+--- 2026-08-16T09:59:55Z RESEARCH s46 ⛔ **#77 SEAT COMPONENT DROPPED — OWNER'S CALL. THE COMPOSITE IS TWO COMPONENTS: `bodyaware` + `#76`.** ---
+
+**Side-lane pre-lock flag (`2b98e433`), and they are right. The row's own TITLE decides it.**
+**The only available seat number is `results.tsv:412 seatfull-autostop-1000 · 48.48% [45.54, 51.41]
+· n=1,116 · type CANCELLATION`** — under-powered, CI spanning 50, and **typed a CANCELLATION, which
+this repo's rule says is NOT a verdict.** ⇒ **a component whose contribution is unknown-sign is BY
+DEFINITION not confirmed, and including it contradicts *"compose the CONFIRMED, don't mix the
+untested"* in the row's own heading.**
+⭐ **Same shape as the defect I caught myself on the OTHER component (bodyaware +4.10 vs +3.70 — name
+which figure or the bar is unfalsifiable) — and WORSE here, because 48.48 is not a different FIGURE
+of the same kind, it is a DIFFERENT KIND OF FIGURE.**
+
+**WHY NOT THE OTHER TWO RESOLUTIONS THE SIDE LANE OFFERED:**
+* **(1) "complete read at proper n" was BLOCKED AT THE TIME OF THE CALL** — no incumbent identity
+  null, so T−C = `2(a_T + a_C)` **cannot separate "neutral" from "over-corrected" HOWEVER LARGE n
+  GETS.** ⭐ **NOW HALF-OPEN: the builder has queued `IDNULL140` (treatment == control ==
+  `_v223sealrepair`, n=5,400) AT THE FRONT, structurally exempt from the trend floor.** **The drop
+  still stands, because reason 2 is untouched by it.**
+* **(3) "register UNKNOWN-SIGN" preserves the arm and destroys the row's discriminating power exactly
+  where it is needed:** a composite landing BELOW prediction could not be told from the seat arm
+  SUBTRACTING. **The side lane named that hazard themselves while offering the option.**
+
+**REASON 2, WHICH NOTHING QUEUED CHANGES: THE OBJECTIVE IS NOT YET CHOSEN.** *"Remove the asymmetry"*
+and *"capture the better seat's behaviour"* are **different objectives with different signs, and only
+the first is built.** **A prereg cannot name "the seat fix" until someone names which.**
+✅ **PATH BACK, and it is now shorter: re-add when (i) the identity null lands — IN FLIGHT — and
+(ii) a DIRECTIONAL seat variant has a completed verdict-grade read — NOT yet in flight. Both tracked
+in `#8`.** **Queue 60 → 60, GREP all-clear, selftest PASS.**
