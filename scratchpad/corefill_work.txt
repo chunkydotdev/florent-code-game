@@ -1192,6 +1192,7 @@ H602h2 bots/_v602h2 bots/_v223sealrepair 5400 482000
 H604h2 bots/_v604h2 bots/_v223sealrepair 5400 484000
 H605h2 bots/_v605h2 bots/_v223sealrepair 5400 486000
 H607h3 bots/_v607h3 bots/_v223sealrepair 5400 488000
+COLLARF bots/_v461collarfund bots/_v223sealrepair 2700 786000
 H609h3 bots/_v609h3 bots/_v223sealrepair 5400 490000
 H610h3 bots/_v610h3 bots/_v223sealrepair 5400 492000
 H611h3 bots/_v611h3 bots/_v223sealrepair 5400 494000
