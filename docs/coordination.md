@@ -65397,3 +65397,46 @@ it is exactly why the pipeline has a SECOND gate rather than stopping at the fir
 must never be counted as one on the board. **FIXTURE TRANSFER — local 57.02 does not promise ladder
 57.02**, and the ladder is where the slot actually lives. **SINGLE SHARD** — one clean read, not a
 replication.
+
+--- 2026-08-16T11:50:28Z (`date -u`) ⚠ **SIDE LANE s45 — THE V140VS152 CALIBRATION IS VALUABLE AND IT INVITES EXACTLY THE INFERENCE MAGNUS'S PROCEDURE HAS A SEPARATE STEP TO AVOID. Flagged BEFORE the readout is built on.** ---
+
+**The readout:** `v152 = 57.02 [55.70, 58.34] vs v140, n=5,400 clean`. ✅ **Half-width checks
+(1.96·√(0.57·0.43/5400) = 1.32pp, matches), and "clean" matters — this is the re-run after the
+earlier V140VS152 self-aborted at 4/234 NOWINNER rather than delivering corrupted rows.** ⭐ **First
+clean link between our control and the live holder. Genuinely valuable.**
+
+## ⛔ THE INFERENCE TO REFUSE, AND IT IS ONE SUBTRACTION AWAY
+
+    v152         57.02  vs v140
+    board best   55.24  vs v140
+    ------------------------------------------------
+    "so v152 beats our best arm by 1.78pp"   <- THIS DOES NOT FOLLOW
+
+**Composing two-vs-a-common-control into a head-to-head is TRANSITIVITY**, and this repo has already
+documented that it does not hold here — `docs/research/SCREEN-PREDICTIVE-VALIDITY-2026-08-14.md:47`:
+*"These two coincide only under **transitivity**. Non-transitivity is normal in…"*
+⇒ **The subtraction is available, natural, and unsupported.** ⚠ **I am flagging it BEFORE anyone
+performs it, because once the number exists in a note it will be quoted.**
+
+## ⭐ AND THIS IS EXACTLY WHY MAGNUS'S PROCEDURE HAS A STEP 2
+
+His pipeline, verbatim in `PROGRAMME.md`: **(1)** an arm clears 60±2 against the **v140 control**;
+**(2)** it is then screened **HEAD-TO-HEAD against the current holder's staged artifact**; **(3)** it
+beats the holder ⇒ switch. ⇒ **Step 2 exists precisely because step 1's number does not transfer.**
+**This calibration does not shorten the pipeline; it prices the first rung.** ⛔ **Anyone tempted to
+skip the head-to-head because "we can compute it from the calibration" is proposing to delete the
+step that guards the assumption the calibration cannot support.**
+
+## ✅ WHAT IS LEGITIMATELY SAYABLE, AND IT IS WORTH SAYING
+
+* **On this fixture, v152 measures 57.02 vs v140.** Full stop, no composition.
+* **Separately, the board's best measures 55.24 vs v140**, and its shipping-grade value is ~54.9 (EB).
+* ⇒ **Both are measured against the same control, which makes them COMPARABLE AS FACTS about that
+  control — and not a prediction of what happens when they meet.**
+
+⚠ **AND ONE FACT I AM SURFACING TO MAGNUS WITHOUT ARGUING FROM IT, because it is new and it is his
+decision:** he set the 60-vs-v140 bar when the board's ceiling was 55.24 and **the holder's strength
+against that control was unmeasured.** **It is now measured at 57.02.** ⛔ **This lane does not
+propose moving the bar and is not implying it should move** — Magnus set it directly, twice, and a
+statistic tells us which road reaches a bar and nothing about whether the bar is right. **The fact is
+his to weigh; I am ensuring he has it rather than deciding what it means.**
