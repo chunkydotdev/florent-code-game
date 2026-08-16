@@ -2935,3 +2935,48 @@ same asymmetry `CLAUDE.md`'s DEFF direction clause already encodes for intervals
 fail-to-exclude claim must first be restated as an exclusion"*): **the flattering direction is the
 one the machinery does not police.** **D34 generalises it from intervals to every number the repo
 quotes.**
+
+---
+
+### ⭐⭐ D26 REFINEMENT 3 — **THE FIFTH SITE IS A CLAIM ABOUT OUR OWN ERRORS. EVERY ERROR SET IS A *CAUGHT* SET, AND CATCHING IS NOT INDEPENDENT OF THE PROPERTY BEING CLAIMED.**
+
+*(Added 2026-08-16T09:06:55Z, side lane s45, from a live dispute resolved the same hour. Filed as a
+REFINEMENT and NOT as a new D-number for the reason refinement 2 gives: **splitting one mechanism
+across rows is how a checklist stops being usable (D14).** ⭐ **The COUNT is the finding — five sites
+now, and the fifth is the one that inspects the inspectors.**)*
+
+**THE INSTANCE.** The research lane claimed, of a three-hour window: *"every error caught today ran
+in the flattering direction… the bias has a sign."* **Withdrawn in full within the hour, on three
+grounds; the decisive one is D26's.**
+
+**⛔ THE SET WAS SELECTED ON BEING CAUGHT, AND THE SELECTOR IS THE MECHANISM UNDER TEST.** D34 —
+written the same morning, and cited BY THE CLAIM IN ITS OWN SUPPORT — says a favourable number has
+**no natural auditor**. ⇒ **flattering errors are HARDER to catch, so a CAUGHT set must
+UNDER-represent them.** **The rule was cited as evidence for a claim it predicts the opposite of.**
+**The denominator that would settle it — the errors nobody caught — is by construction unobservable.**
+
+**AND THE SUB-SELECTOR NOBODY OWNED:** the sample was *"errors that reached a PUBLISHED surface"*.
+**Two errors that ran toward the ALARMING were absent only because the side lane killed them
+PRE-PUBLICATION** (a subagent's *"CAL418's lock statement was never signed"* — it was; and
+*"`PROGRAMME.md` declares a retired estimator to a machine"* — it does not). ⇒ **the publication
+filter is itself correlated with direction, and it was invisible to the lane assembling the set
+because that lane did not perform the filtering.**
+
+**⛔ AND THE PRIOR MEASUREMENT EXISTED, ONE SESSION OLD, SAYING THE OPPOSITE.**
+`docs/side-lane-retro.md` **v1.13 BANS direction models**, because the s44 instance measured
+**"5 of 8 ran toward the alarming, 3 toward the comfortable."** ⇒ **A property of our error
+distribution was asserted without checking whether it had been measured. It had, it was one session
+old, it disagreed, and it was one grep away.**
+
+**⇒ THE WATCH FORM, and it is a question to ask BEFORE the claim, not after:**
+> **STATE THE RULE BY WHICH THE SET WAS ASSEMBLED, BEFORE CLAIMING A PROPERTY OF IT.** *(Research's
+> formulation, kept as theirs.)* **Then ask D26's question of that rule: is the selector correlated
+> with the property?** For any set of our own mistakes the answer is **always yes**, because the
+> selector is *"we noticed"*.
+
+⭐ **THE REPLACEMENT THAT NEEDS NO DIRECTION MODEL, banked in its place:** *"every correction today
+came from a PEER or from a RECOMPUTATION, and none from an author re-reading their own work."*
+**A claim about MECHANISM rather than SIGN — it argues for the three-lane protocol whichever way the
+direction runs, and unlike the withdrawn form it is TESTABLE NEXT SESSION.**
+⚠ **The withdrawn claim survives only as a DESCRIPTION OF FOUR ITEMS. It is not banked and is
+deliberately absent from this checklist as a finding.**
