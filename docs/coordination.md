@@ -61508,3 +61508,90 @@ from its subject is a guard that always says YES.
 ⚠ **And it is the seventh instance of my session-long pattern with the sharpest possible instance:
 I read the surface (`pgrep` output) and reported a property of the system (the scheduler's
 liveness), and the surface CONTAINED ME.**
+
+--- 2026-08-16T07:3xZ (`date -u`) RESEARCH s45 — **WRAP: PROCESS DELTAS + RESEARCH ARM STATE.** Trigger: **THE BUILDER'S WRAP**, the first firing of Magnus's standing rule of today. ---
+
+# PROCESS DELTAS — s45 (research)
+
+**D-a. ⛔ NEVER QUOTE A QUEUE ROW FROM THE `SessionStart` BOOT DISPLAY.** It truncates mid-sentence
+and **the truncation point is where the scope lives.** `#63`'s title reads *"…LOCK AT 3.3× THEIRS O"*
+— cutting off immediately before **`N MIDGARD`**. I completed it from context as *"on long maps"*,
+wrote that paraphrase into an opus brief **as a quotation**, and specified the map-AREA cut **the row
+explicitly rejects in its own `15a` clause**. The agent duly re-derived the row's own text.
+**`queue_check.py --next` exists to prevent exactly this and I did not run it.**
+
+**D-b. ⛔ `STATUS: LIVE` BLOCKS A QUEUE ROW EXACTLY AS HARD AS `STATUS: WITHDRAWN`.** `queue_check`
+matches the **literal token, ignoring its value**. Reviving `#60` by setting `WITHDRAWN → LIVE` left
+the row **reading as revived and invisible to the gate** — the worst of both, count unmoved 53→53.
+**To revive a row you DELETE the token.** ⚠ **General form: a field whose VALUE is ignored but whose
+PRESENCE is load-bearing will eventually be set to a wrong value — I did it within a minute of
+reading the tool's own docstring.**
+
+**D-c. ⭐⭐ A REPRODUCTION IS NOT A VALIDATION (now D30 in the drift checklist).** Three lanes
+reproduced my RMST point estimates **digit-for-digit** and none of us checked the variance form; the
+intervals were **~18% too narrow for hours**. Pairing changes the VARIANCE, not the MEAN — so
+agreement on the mean could never have found it. **What caught it was a fourth implementation asking
+a DIFFERENT question.** Side lane's ladder: **sample → path → estimator**, and *"independent of
+WHAT?"* is the same question at each level.
+
+**D-d. EVERY PER-GAME FIGURE FROM THIS CORPUS CARRIES ITS MEDIAN BESIDE ITS MEAN.** I relayed
+Jython's `125.71 throws/game` to Magnus as doctrine; **the median is 10 and 61% of the total comes
+from 3 games of 145.** The build-composition means are separately **1.7–1.9× their medians** — and my
+stated reason for not re-checking them (*"counts are bounded so less skew-prone"*) was an assertion,
+not a measurement, and false. **Banked as retro Q3b.**
+
+**D-e. RULE 6 GOVERNS OPENING A ROAD AS WELL AS CLOSING ONE.** `#72` voided a closure because it
+rested on our own probes — then leaned on a competitor's live result three clauses later. **A
+document arguing that a rule matters is the document most worth checking against that rule.** Fixed
+in-row: *"the reopen is licensed by the INVALIDITY of the closure, not by the competitor's result."*
+
+**D-f. A LANE MUST NOT WIDEN ITS OWN CHARTER, AND MUST NOT WIDEN ANOTHER'S ON THAT LANE'S REPORT.**
+Two lanes each held half of Magnus's wrap instruction; each reasoned correctly from its half; the
+union would have been a scope error assembled from two correct steps. **Resolution: record what is
+settled, mark what is open, and put the union to the person holding both halves.**
+
+---
+
+# RESEARCH ARM STATE — s45 close
+
+## LIVE SURFACES — VERIFIED AT WRAP, NOT ASSERTED (`date -u` 07:36Z)
+* **HOLDER `v152`** "Loki turbo4 (ammo/heal fix)", x3r0's, uploaded 2026-08-15T17:55:21Z —
+  **rating 1787, rank #19 of 126, 1,094 matches, last-10 6W-4L** (read from `fcode status`, the
+  authority, **never a poller**). ⚠ **Rating moved 1791 → 1799 → 1802 → 1787 across this session;
+  any figure quoted from it is a timestamp, not a state.**
+* **CONTROL `bots/_v223sealrepair` (v140)** per `PROGRAMME.md`. **Holder ≠ control all session.**
+* **QUEUE: 55 unblocked** (floor 3). **Local board: 8 shards running, load 11.5.**
+
+## ⛔ WHAT A SUCCESSOR MUST NOT INHERIT UNCHECKED
+1. **THE BOARD BASELINE IS 53.50%, NOT 55.24%.** The latter is a **max over 23 arms**. **The gap to
+   Magnus's 60 is +6.5pp, not +4.8pp.** Anything priced against 55.24 is priced against a number no
+   single arm reproduces.
+2. **`RMST-ESTIMATOR-2026-08-16.md`'s intervals are the PAIRED form** (`hw = 1.96·sd(rT−rC)·√(DEFF/n)`)
+   because local T and C play the SAME game. ⛔ **This does NOT transfer to the live leg** — unrated
+   arms play separate matches, so the leg keeps the two-sample form **with its own measured DEFF**.
+3. **The unrated DEFF `1.42` is a PROJECTION, not a measurement** — it assumes the fixture effect is
+   multiplicative AND that a ratio measured on proportions transfers to a continuous outcome.
+   **Neither is tested. The leg re-measures on its own games.**
+4. **`R300-BAR-BOARD-SCAN-2026-08-16.md` scores the SUPERSEDED orientation.** Its 46/58 fail counts
+   must NOT be read against the current bar. Its NULL calibration and 11 recovered fixtures stand.
+5. **The (map,seat) CV 59.19% has a field counter-datum**: x3r0 built that exact router, validated it
+   locally at 84.29% held-out, shipped it, and it read **31.4% pooled on the ladder**. **Fix the seat
+   asymmetry BEFORE banking any conditional lift — part of that lift routes around our own bug.**
+6. **`ct.destroy()` / `can_destroy` occur ZERO times in the incumbent** — the launcher ladder is not
+   unused, it is **unimplementable** until that changes.
+
+## WHAT IS RUNNING, AND WHO OWNS IT
+* **`V140VS152` — the ONE result I most want read.** At ~n=250 of 5,400 at the builder's wrap.
+  ⭐ **It is the calibration between the two gates of Magnus's slot procedure** — the 60±2 threshold
+  is denominated **vs v140**, the head-to-head is **vs the holder**, and **the distance between them
+  has never been measured.** The builder carries it as load-bearing, not as an unread shard.
+* **`LEG-fieldcal`** — halted for a builder patch at wrap; crosses the seam live. **Pooling point is
+  each arm at 12 accepts on ≥8 cells.** **The pooled readout is a NEXT-SESSION research deliverable.**
+* **Seat rungs (`SEATSPAWN`, `SEATFULL`) and `RUSH72`** — queued, not started. **The seat rungs read
+  against MY baseline: +6.28pp, z=+16.24, n=66,572 on byte-identical identity shards.**
+* **NO LIVE SUBAGENTS.** All five landed and every result was relayed and committed before this note.
+
+## OPEN WITH MAGNUS (one question, one line)
+**Does the builder's wrap trigger the SIDE LANE as a standing rule?** Today's side-lane instance is
+resolved (he told them directly); the standing scope is not. Recorded as open in
+`docs/two-session-protocol.md`; **neither lane can settle it and neither should.**
