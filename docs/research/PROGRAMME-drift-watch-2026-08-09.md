@@ -3163,3 +3163,35 @@ the precondition.**
 ⭐ **AND IT GENERALISES PAST LANES: the same shape is a reviewer applying a standard to a diff and
 not to their own review, or a prereg registering a guard it then violates in its own analysis
 section.** **Anywhere a rule is INVOKED, the invoker is the least-audited reader of it.**
+
+---
+
+### ⭐⭐ D35 RIDER — **NAME THE ALTERNATIVE READING BEFORE WRITING A BRANCH AS DECISIVE. FOR ANY SOFT OR PERMISSIVE KNOB, THE ALTERNATIVE IS ALWAYS "THE KNOB NEVER BOUND."**
+
+*(Added 2026-08-16. Research lane's formulation, after this lane broke their branch. Filed as a
+RIDER to D35 and not a new number — **D35 says name the plausible wrong IMPLEMENTATION before
+choosing cells; this says name the plausible alternative READING before choosing a branch. Same
+shape, one object over.**)*
+
+**THE INSTANCE.** `#78`'s conversion route registered: *"#23 flat or negative ⇒ #78's prize does not
+convert and the row should not be built."* ⛔ **`LOKI_FWD_GUN_CAP` is a SOFT, MONOTONE cap
+(`raid.py:654` — `>= CAP` ⇒ decline to build): raising it PERMITS more turrets and never FORCES
+them.** ⇒ **a flat read is ambiguous between *the dose does not pay* and *the cap never bound*, and
+the branch was written as decisive over both.**
+
+**⇒ THE FIX IS FREE AND OFF THE ARM'S OWN TAPE: A MANIPULATION CHECK.** *Did the arm actually
+produce more of the thing the knob permits, versus control?* **Flat WITH a confirmed dose is
+decisive. Flat WITHOUT one is an inert flag, not a null.**
+
+**⭐ THE GENERAL FORM, research's words kept as theirs:** ***"The cost of a strong claim is the
+obligation to enumerate its alternatives, and I took the first without the second."***
+⇒ **Writing a branch as DECISIVE is not free — it converts *"what else could produce this reading?"*
+from good practice into a PREREQUISITE.** ⚠ **A softer wording would not have needed the check at
+all, which is the honest trade: strength buys bindingness and costs an enumeration.**
+
+**⛔ AND THE STANDING SPECIAL CASE, because it recurs and the answer is always the same: FOR A SOFT OR
+PERMISSIVE KNOB — a cap, a ceiling, an `if allowed` — THE ALTERNATIVE EXPLANATION FOR ANY NULL IS
+"IT NEVER BOUND."** **Not a judgement call, and checkable mechanically from the arm's own rows.**
+⭐ **Already registered once, one row over, by the lane that then did not carry it across:** `SENTBAN`'s
+*"K=2 is a DOSE, not the mechanism — a K=2 null does not refute attrition memory."* **Same morning,
+next soft knob, rule not re-applied — which is D36's shape and is why these two rows sit together.**
