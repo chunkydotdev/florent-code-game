@@ -57950,3 +57950,107 @@ again forty minutes later.**
 **⇒ THREE FRAME ERRORS IN ONE SESSION, ZERO PUBLISHED, ALL CAUGHT BY MAGNITUDE RATHER THAN BY
 CARE.** The rule was in my hand and in my own committed note; what stopped it every time was a
 number that could not be true.
+
+--- 2026-08-16T04:4xZ (`date -u`) RESEARCH s45 — **BOOT RELAY: THE LAUNCHER-GATE LADDER RESOLVED, AN INHERITED "STILL WRONG" ITEM IS ITSELF WRONG, AND THE RATED LADDER IS PRICED AS AN INSTRUMENT** ---
+
+Lanes up: builder `f8` (s45), side lane `c7`, research `%7`. Handshakes exchanged; no collision.
+Holder **v152** (x3r0's "Loki turbo4"), control **`_v223sealrepair`** — different questions, per `now.py`.
+
+## 1. ⭐ THE THREE-POINT LAUNCHER-GATE LADDER LANDED — **THE TI GATE IS NULL**
+The ladder the non-lane session assembled by re-queueing a stranded row has resolved. All vs
+control, local fixture (DEFF 0.98, naive bands correct):
+
+```
+NULL5400   49.94%  n= 5,401  +-1.33     <- harness unbiased
+RND1SOLO   51.29%  n= 5,401  +-1.33     [49.96, 52.62]  touches 50
+HOMEMAX    51.23%  n= 5,401  +-1.33     [49.90, 52.56]  touches 50
+BODYAWR    53.70%  n=10,801  +-0.94     [52.76, 54.64]
+TRIO       54.25%  n= 5,731  +-1.29     [52.96, 55.54]  (53% done)
+```
+* **`LAUNCHER_RESERVE` 80 -> 0 IS NULL: 0.06pp +- 1.87pp.** I verified the two trees differ by
+  **exactly one substantive line** (`doctrine.py: LAUNCHER_RESERVE = 80 -> 0`; `main/raid/eco`
+  byte-identical). ⇒ **this is the resolution mechanism for QUEUE #28** *("LAUNCHER_RESERVE = 80
+  IS THE GATE THAT STARVES THE LAUNCHER")* — **the TI gate is not the binding constraint.**
+* Because that plank is null the two arms estimate the same quantity. **Pooled round-gate
+  reading: 51.26%, n=10,802, +-0.93 -> [50.33, 52.19] — EXCLUDES 50.** `rnd1` is real but small:
+  **+1.26pp**, against `bodyaware`'s +3.70pp.
+* **`TRIO` (bodyaware+rnd1+spawnlock) DOES NOT BEAT `bodyaware` ALONE: +0.55pp +- 1.59pp.** That
+  was the non-lane queue-head question #1, answered at 53% completion.
+* **`bodyaware` beats the pooled round gate by −2.44pp +- 1.32pp — significant.**
+⇒ The supportable pattern: **`bodyaware` carries the stack; `rnd1` is a third of it;
+`spawnlock`+`rnd1` add nothing detectable on top of it.** **Verdict sentence is the builder's.**
+
+## 2. ⛔ CORRECTING AN ITEM THE DELTAS BLOCK TOLD EVERY LANE TO INHERIT
+The non-lane "STILL WRONG" #1 reads: *"`_v260catrnd1` IS MISLABELLED… `_catapult_order` is
+defined at `raid.py:943` and **never called** ⇒ its 51.19% is behaviourally an `rnd1` solo
+reading, not catapult+rnd1."* **The premise is correct and the conclusion is not.**
+`LOKI_CATAPULT_ON` has three consumers and **two are LIVE**:
+```
+raid.py:200    if LOKI_CATAPULT_ON and self._catapult_wait(...)   <- LIVE  (def at raid.py:877)
+raid.py:1061   if LOKI_CATAPULT_ON and here <= ..._COLLAR_DSQ     <- LIVE
+raid.py:943    def _catapult_order(...)                           <- DEAD, zero callers
+```
+The **raider WAIT is the plank's own stated central mechanism** (its docstring: *"the raider
+WAITS (bounded), and the launcher is SITED forward-of-home on purpose"*). **The wait fires; only
+the siting does not.** ⇒ **`CATRND1L` 51.18% is a PARTIAL-DOSE CATAPULT MEASUREMENT, not a
+duplicate `rnd1` cell** — and read that way it says the wait+collar half buys ~0.0pp on top of
+`rnd1` (51.18 vs pooled 51.26). **Do not retire it as a duplicate. I did not pool it.**
+⚠ The broader inherited warning stands (11 of 34 v140-scored arms carry a `stack.py` stamp) —
+this is a case where checking changed the reading rather than confirming it.
+
+## 3. ⭐⭐ THE RATED LADDER IS NOW PRICED — `docs/research/RATED-LADDER-POWER-2026-08-16.md`
+Per-match `S − E` (the ladder's payout unit / 32, already opponent-adjusted) has **sd = 0.250,
+stable across two different bots** (v140 0.2530 n=72, v152 0.2410 n=30) — so it is a property of
+the fixture and the table is reusable. Measured cadence **2.57–3.10 matches/h**.
+
+| effect (elo/match) | matches/arm | **DAYS/arm @ 3.0/h** |
+|---|---|---|
+| +1.0 | 1,002 | **13.9** |
+| **+1.62 (observed v152−v140)** | **382** | **5.3** |
+| +2.0 | 251 | 3.5 |
+| +3.0 | 112 | 1.6 |
+| +5.0 | 41 | 0.6 |
+
+⇒ **RULE: the rated ladder resolves ~+3 elo/match and coarser inside a day, and nothing finer.
+Never adjudicate a ship or a slot on rated data.** This is the missing arithmetic under
+`FIXTURE_OF_RECORD: live_unrated` and under `X3R0_SLOT_RULE`'s n=1000 local screen — **both
+designs were already right; neither carried a number saying why.**
+**Instrument ranking per wall-clock hour for a +5pp effect: local ~hours · unrated ~37 h ·
+rated ~127 h.** ⇒ **unrated windows buy VALIDITY (real opponents), never POWER — an A/B that
+local can answer must not be spent on them.**
+
+## 4. SAME-DAY RATED DECODE (charter floor), AND A CLAIM I KILLED BEFORE RELAYING IT
+```
+v152 (holder)  30 matches / 150 games  share 56.7%  E 49.5%  ->  +2.28 elo/match [-0.48, +5.04]
+v140 (control) 72 matches / 360 games  share 51.9%  E 49.9%  ->  +0.66 elo/match [-1.21, +2.53]
+v152 - v140                                                     +1.62 [-1.71, +4.96]  t=0.96
+```
+**Neither is established above zero; they are not distinguishable.** On-programme both ways:
+v152 median kill **170** (84 kill-wins), tiebreaks **4.0%** of games; v140 median 174.
+⛔ **KILLED BEFORE RELAY:** the raw per-opponent table (0033 36.0%, Juusto 20.0%, gsxWins 30.0%
+vs Coreflood 90%, Bisons 90%) invites *"we farm the bottom and lose the top"* — and the five
+losing teams ARE the highest-payout targets, which makes it attractive. **Elo-adjusted it
+evaporates: S−E vs stronger +0.0707, vs weaker +0.0721, t = −0.02** (v140 the same, t = 0.17).
+**The raw table is opponent strength, which Elo already prices.** Recorded so it does not
+resurface as a finding.
+
+## 5. THE UNRATED FIXTURE IS IDLE **FOR US** — AND AN OPPONENT IS RUNNING OUR OWN PANEL DESIGN
+71 unrated matches touched us in 24h, but **16 of the 25 fired overnight are `Hugging Farce v41`
+vs `OpenSverige v125`** — inactive since 08-13, so **we did not fire them.** Their team list:
+**60 unrated matches in under 4 hours, fixed own v41, against a rotating 10-team panel each
+PINNED to a fixed opponent version** (Juusto v10, team lazy v225, diverge v20, us v125, 0033 v56,
+Jython v135, arsonist duck v24, SmartFridge v35, Lunds v69, Torsko v67). **That is the pinned
+calibration panel of `SPEC-opponent-pinning-2026-08-13.md`, run by a 1526-rated team at ~15
+matches/hour — the full cap — around the clock.**
+⭐ **AND IT SETTLES AN UNVERIFIED OPERATIONAL FACT: the 5-per-20-min limit is charged to the
+CHALLENGER.** They fired 01:02/01:28/02:03/02:43 while we fired 02:31/02:44 — same windows, both
+succeeding. **An opponent's campaign against us costs us none of our budget.**
+⇒ **Our own overnight usage: ~9 matches in 11 h ≈ 5% of cap.** The windows are free.
+⚠ Actor is INFERRED from version-pinning: `triggeredBy` is the literal string `unrated` on every
+row and names no team.
+
+## 6. SLOT STATE — FLAGGED, NOT ACTED (research does not fire)
+The s44 ruling suspending `X3R0_SLOT_RULE` was scoped **"FOR TODAY" / "FOR THIS SESSION"
+(2026-08-15)** and has **lapsed by its own wording**. v152 has held ~10.7 h. **No `_x3r0v152`
+staged in `bots/`; no `SCREEN-v140vs152` in `docs/prereg/`** — both checked. Whether the rule
+resumes is Magnus's call; naming that it is un-suspended by wording and un-executed in fact.
