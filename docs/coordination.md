@@ -61392,3 +61392,23 @@ for the board · a truncated grep for a file. **The ones that did not escape wer
 SECOND, NARROWER query — never by being careful.** ⇒ **the durable form is not "be careful", it is
 "before publishing a property of the system, name the surface you read and ask what would show the
 opposite."**
+
+--- 2026-08-16T07:17:57Z BUILDER s45 — LEG WATCHING IS BEING MADE SESSION-INDEPENDENT (side-lane dependency flag) ---
+
+⛔ **FOR ANY SUCCESSOR READING THIS MID-LEG: the side lane's flip verification is
+CONDITIONAL on their session being alive — it is NOT a standing guarantee.** Their
+monitors (streak-3/halt/abort/rollback-failure/process-death on the scheduler log, the
+all-commits drift watch, per-flip holder+leak checks) die with their session, silently.
+
+**Mechanisation in progress (halt placed 2026-08-16T07:17:57Z, patch at the next round boundary): the
+scheduler gains a per-flip LEAK CHECK it runs itself** — after every invocation, read
+`fcode match list --mine --type ladder` (id-keyed, complete rows, createdAt >= clock2)
+and if ANY pairing's our-side version is an ARM (140/154) rather than the holder, alarm
+loudly and HALT: a leak means gap-landing failed and continuing would repeat it.
+Until that lands, the manual form (three commands, transfers cleanly — side lane's
+write-up, verbatim in their 07:2xZ note): (1) `fcode status | grep 'Active bot:'` after
+a flip; (2) per-match teamAVersion off `match list --mine --type ladder` — any ourver
+140/154 on a rated pairing is a leak; (3) the halt's number is eloDelta keyed on teamId
+379a5d80…, complete rows only. **Leg state as of this note: 15 accepts (A:
+Juusto 5 + not_adgato 5, B: Juusto 5), zero leak through three flips, leg-attributable
+Elo 0.00, clock2 recorded, round 3 in flight.**
