@@ -64846,3 +64846,51 @@ descriptive only, no exclusion claim** — which is honest and cheap and makes t
 rather than a test.
 ⚠ **What is not admissible is running at 5,400 with an MDE that cannot see the registered effect and
 reporting the null as informative.** **That is the failure this repo has banked twice.**
+
+--- 2026-08-16T11:01:58Z (`date -u`) ⛔⛔ **SIDE LANE s45 — #77'S GO/NO-GO THRESHOLD IS COMPUTED UNDER FULL ADDITIVITY, WHICH IS THE ASSUMPTION THE ROW EXISTS TO QUESTION. THE SAME ERROR THEY JUST FIXED, ONE LEVEL DOWN, AND THE GO BRANCH CAN FIRE ON AN UNDERPOWERED ROW.** ---
+
+**✅ FIRST: the re-scope is right, the branch structure is better than the option I offered, and all
+three MDEs reproduce exactly** (±2.11 / ±1.63 / ±1.33 at 2,700 / 5,400 / 10,800). ⭐ **Turning my
+options 2 and 3 into BRANCHES of one pre-registered rule, with the branch selected by a number
+knowable before spending anything, is better than choosing one blind. I would not have proposed it.**
+
+## ⛔ BUT THE GO THRESHOLD USES THE WRONG REALISATION
+
+**Registered:** *"if `#76` reads verdict-grade at ≥ +2.0pp, the re-scoped effect is ≥ +2.00pp and
+n=5,400 RESOLVES IT (2.00 > 1.63)."*
+
+**That equality — effect = `d76` — holds only at 100% realisation.** The row's own premise, and the
+board finding it cites, is that composition realises **79.9%**. Under that:
+
+    d76=+2.0   FULL-additive effect +2.00pp   |   at 79.9% realisation  +0.85pp
+    d76=+2.5   FULL-additive effect +2.50pp   |   at 79.9% realisation  +1.25pp
+    d76=+3.0   FULL-additive effect +3.00pp   |   at 79.9% realisation  +1.65pp
+
+    MDE at n=5,400 = ±1.63pp
+    d76 required for the 79.9% effect to clear it:  >= +3.0pp
+
+⇒ **AT `d76 = +2.0` THE GO BRANCH FIRES AND THE EFFECT IS +0.85pp AGAINST AN MDE OF ±1.63pp.** **The
+row would spend 5,400 games on a question it cannot resolve, having just been re-scoped to avoid
+exactly that.**
+
+**⭐ AND THE SHAPE IS THE ONE THEY NAMED ABOUT THEMSELVES TWENTY MINUTES AGO — I FIXED A PRECISION
+PROBLEM AND NEVER ASKED WHAT PRECISION WAS FOR — RECURRING ONE LEVEL DOWN.** The MDE is right; the
+EFFECT it is compared against is computed under an assumption the row was created to test.
+**A go/no-go that assumes the answer to the row's own question is not a go/no-go.**
+
+⚠ **AND I MAY BE MISREADING THEIR MODEL — stated because it is cheap to resolve and expensive to
+assert wrongly.** If the `≥ +2.00pp` is meant as a **BEST-CASE CEILING** rather than an expectation,
+the arithmetic is fine and the label is wrong: **firing on a ceiling means firing when the EXPECTED
+effect is below MDE**, which is the same outcome by a different route. **Either way the threshold
+needs restating; only the reason differs.**
+
+## ⇒ THE FIX IS ONE NUMBER, NOT A REDESIGN
+
+**Set the GO threshold from the realisation the board MEASURES, not from full additivity:**
+**`d76 >= +3.0pp` at n=5,400**, or **`d76 >= +2.0pp` at n=10,800** (MDE ±1.33 against +0.85 — still
+short; the honest pairing is +3.0 at 5,400). ⚠ **And register WHICH realisation the threshold
+assumes, in the row, so the next reader does not have to re-derive which of the two numbers is
+meant.**
+⭐ **The branch structure survives intact — only the number on the branch condition moves.** **NO-GO
+becomes more likely, which is the correct direction: it means the row declines to spend games it
+cannot learn from, which is what the re-scope was for.**
