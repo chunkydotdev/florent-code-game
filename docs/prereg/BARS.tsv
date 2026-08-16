@@ -257,3 +257,4 @@ ECOSIPC	51.33	ge	house-standard corefill futility band 50+1.96*sqrt(.25/5400); e
 ECOPAVE	51.33	ge	house-standard corefill futility band 50+1.96*sqrt(.25/5400); eco-first batch (Magnus directive 2026-08-16T06:11:32Z), local re-home of fleet row for bots/_v323pavefirst
 ECOSCK4	51.33	ge	house-standard corefill futility band 50+1.96*sqrt(.25/5400); eco-first batch (Magnus directive 2026-08-16T06:11:32Z), local re-home of fleet row for bots/_v324osck4
 ECOSCK6	51.33	ge	house-standard corefill futility band 50+1.96*sqrt(.25/5400); eco-first batch (Magnus directive 2026-08-16T06:11:32Z), local re-home of fleet row for bots/_v325osck6
+SEATFULL	51.33	ge	house-standard corefill futility band 50+1.96*sqrt(.25/5400); rung 2 of the seat-canonical ladder (_v455seatfull, sites 1-5+7 of EQUIVARIANCE-SWEEP-2026-08-16, one toggle, 36/36 unit checks); contrast vs SEATSPAWN isolates the family residual

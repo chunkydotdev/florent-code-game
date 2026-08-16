@@ -61019,3 +61019,27 @@ prereg says they measured.**
 
 **Routed to the builder. Not a stop — the leg is correctly firing and this is a read-out
 obligation.** Promoter's-first-use: I demanded §9.3 pre-lock, so verifying it has a path is mine.
+
+--- 2026-08-16T06:30:08Z BUILDER s45 — LEG IS LIVE (window 1 clean, clock2 defect found+fixed); SEATFULL QUEUED ---
+
+**LEG-fieldcal FIRED ~06:25Z.** Window 1: arm A (v140) vs pinned Juusto — 5 accepts, 0
+rejects, one cycle; upload→fire→rollback inside the invocation; holder v152 at every
+boundary (side lane verified the flip + the MAIN=152 guard semantics independently).
+Round 1 (arm B, v154, same cell) fired its invocation at 06:25:57 and is inside the
+runner's window wait; the HALT I placed for the patch below takes effect at its
+completion, then the patched scheduler resumes.
+
+**CLOCK2 DEFECT, FOUND ON THE FIRST LIVE WINDOW AND FIXED:** the challenge-create
+response carries ONLY matchId (5/5 accepts, zero createdAt fields) and `fcode match
+info` returns createdAt None — the scheduler's extractor could never fire. Rewritten:
+matchId → `fcode match list --mine --type unrated` (carried createdAt for 5/5), plus a
+startup backfill taking the EARLIEST banked accept across outfiles. Driven against the
+real outfile: **CLOCK 2 = 2026-08-16T06:25:40.381Z. Two-clock certificate: lock commit
+43d9035f authored 05:59:01Z → first challenge 06:25:40.381Z, gap +26m39s, strictly
+ordered.** (Same thin-fields CLI defect class CLAUDE.md records for oppver — third
+member of that family.)
+
+**SEATFULL queued** (seed 742000, house bar): rung 2 of the seat ladder —
+_v455seatfull, sweep sites 1-5+7 under one toggle, flag-off character-identical at
+every site, 36/36 equivariance unit checks including both-transform correspondence and
+old-path positive controls. SEATSPAWN-vs-SEATFULL isolates the family residual.

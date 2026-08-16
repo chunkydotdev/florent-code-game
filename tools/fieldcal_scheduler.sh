@@ -266,16 +266,52 @@ count_rejected(){
 }
 
 # maybe_capture_clock2: only ever fires ONCE for the whole leg (§1 clock2).
+# ⛔ REWRITTEN 06:3xZ AFTER THE FIRST LIVE WINDOW: the challenge-create response
+# carries ONLY {"matchId": ...} — measured on five real accepts, zero createdAt
+# fields — and `fcode match info` returns createdAt: None (the same thin-fields
+# defect CLAUDE.md records for opponent versions). The AUTHORITY is
+# `fcode match list --mine --type unrated`, which carried createdAt for all
+# five. So: extract the matchId from the outfile, resolve createdAt by list.
+_created_at_of(){  # $1 = match uuid -> prints createdAt or nothing
+  .venv/bin/fcode match list --mine --type unrated --json --limit 50 2>/dev/null \
+    | .venv/bin/python -c "
+import json,sys
+try: d=json.load(sys.stdin)
+except Exception: sys.exit(0)
+ms=d if isinstance(d,list) else d.get('matches',d.get('data',[]))
+print(next((m.get('createdAt','') or '' for m in ms if m.get('id')==sys.argv[1]), ''))" "$1"
+}
 maybe_capture_clock2(){
   local outfile=$1
   [[ -n "${CLOCK2:-}" ]] && return 0
   [[ -f "$outfile" ]] || return 0
-  local line createdat
+  local line mid createdat
   line=$(grep -m1 '"matchId"' "$outfile") || return 0
-  createdat=$(print -r -- "$line" | grep -oE '"createdAt"[[:space:]]*:[[:space:]]*"[^"]*"' | head -1 | sed -E 's/.*"createdAt"[[:space:]]*:[[:space:]]*"([^"]*)".*/\1/')
-  [[ -z "$createdat" ]] && return 0
+  mid=$(print -r -- "$line" | grep -oE '[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}' | tail -1)
+  [[ -z "$mid" ]] && return 0
+  createdat=$(_created_at_of "$mid")
+  [[ -z "$createdat" ]] && { say "  clock2: matchId $mid not yet resolvable via match list — retrying at next accept"; return 0; }
   CLOCK2="$createdat"
-  say "  ****** CLOCK 2 CAPTURED: first accepted challenge createdAt = $CLOCK2 ******"
+  say "  ****** CLOCK 2 CAPTURED: first accepted challenge $mid createdAt = $CLOCK2 ******"
+  persist_state
+}
+# backfill_clock2: on (re)start with accepts already banked but CLOCK2 empty
+# (the 06:25Z window banked five accepts under the broken extractor), resolve
+# the EARLIEST createdAt across every existing outfile's first accept.
+backfill_clock2(){
+  [[ -n "${CLOCK2:-}" ]] && return 0
+  local f line mid c best=""
+  for f in ${SCRATCH_DIR}/arm_fieldcal_*.txt(N); do
+    line=$(grep -m1 '"matchId"' "$f") || continue
+    mid=$(print -r -- "$line" | grep -oE '[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}' | tail -1)
+    [[ -z "$mid" ]] && continue
+    c=$(_created_at_of "$mid")
+    [[ -z "$c" ]] && continue
+    if [[ -z "$best" || "$c" < "$best" ]]; then best="$c"; fi
+  done
+  [[ -z "$best" ]] && return 0
+  CLOCK2="$best"
+  say "  ****** CLOCK 2 BACKFILLED at startup: earliest banked accept createdAt = $CLOCK2 ******"
   persist_state
 }
 
@@ -921,6 +957,7 @@ if ! startup_validate; then
 fi
 load_state
 say "resumed at round=$ROUND_NUM clock2='${CLOCK2:-<unset>}' blind_streak=$BLIND_STREAK"
+backfill_clock2
 main_loop
 rc=$?
 say "FIELDCAL SCHEDULER exiting rc=$rc round=$ROUND_NUM"
