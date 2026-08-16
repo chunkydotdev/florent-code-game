@@ -392,9 +392,12 @@ Four consequences, each of which closes a road that was open before it:
    ⭐ **RE-PRICED 2026-08-16 (s45), Magnus direct: *"Re-price the kill-round bar
    to bind at ~r300 instead of penalizing drift inside r200-300."*** The s31 form
    read "if MEDIAN KILL ROUND RISES it is off-programme"; that is SUPERSEDED.
-   ⇒ **A plank is off-programme if it pushes kills PAST r300** (share of
-   kill-wins landing after r300 must not rise vs control; median crossing 300 is
-   the gross backstop — full operational form in `PROGRAMME.md`). **Drift inside
+   ⇒ **A plank is off-programme if it pushes kills PAST r300** (primary, ITT:
+   the share of ALL its games ending in a core-kill BY r300 — its timely-kill
+   rate — must not FALL vs control; the kill-win-conditioned share is a
+   diagnostic only, it carries a collider; median crossing 300 is the gross
+   backstop — full operational form and the collider correction in
+   `PROGRAMME.md`). **Drift inside
    r200-300 is reported, not disqualifying.** Basis: the "field converts 4x
    better late" table was pre-rotation; re-derived post-rotation, r200-300 is
    ~parity (NOT an advantage — the flip claim was withdrawn same-day) and r300+

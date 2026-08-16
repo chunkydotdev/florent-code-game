@@ -348,7 +348,13 @@ def label(row: str) -> str:
     cells = [c.strip() for c in row.strip().strip("|").split("|")]
     num = cells[0].strip("* ") if cells else "?"
     name = re.sub(r"[*⭐⛔]", "", cells[1]).strip() if len(cells) > 1 else "?"
-    return f"#{num} {name[:58]}"
+    # ⛔ Ellipsis when and ONLY when cut (side lane flag, 2026-08-16): a
+    # truncated title and a complete one were byte-indistinguishable, and the
+    # cut lands on the tail — where scope qualifiers live. #63's "ON MIDGARD"
+    # vanished at this width and a map-specific row briefed an agent as a
+    # general one. A constant marker would validate anything, so the ellipsis
+    # appears only on an actual cut (selftest drives both cells).
+    return f"#{num} {name[:58]}" + ("…" if len(name) > 58 else "")
 
 
 def selftest() -> int:
@@ -434,6 +440,22 @@ def selftest() -> int:
         ok = got == want
         bad += not ok
         print(f"  [{'ok' if ok else 'FAIL'}] {name}: expected {want}, got {got}")
+    # --- TRUNCATION-MARKER CELLS (side lane flag, 2026-08-16). The ellipsis
+    # must appear on a cut title and ONLY on a cut title — a constant marker
+    # validates anything, and an unmarked cut turned #63's map-scoped title
+    # into a general one at every lane's boot.
+    lab_long = label("| 63 | **" + "X" * 70 + "** |")
+    lab_short = label("| 7 | **short title** |")
+    for name, got, want in [
+        ("a >58-char title carries the ellipsis", lab_long.endswith("…"), True),
+        ("...and is cut at the width", len(lab_long), len("#63 ") + 59),
+        ("a <=58-char title carries NO ellipsis", lab_short.endswith("…"), False),
+        ("...and is intact", lab_short, "#7 short title"),
+    ]:
+        ok = got == want
+        bad += not ok
+        print(f"  [{'ok' if ok else 'FAIL'}] {name}: expected {want!r}, got {got!r}")
+
     # --- DUPLICATE-NUMBER CELLS. Driven both ways, and the THIRD reproduces the
     # actual 2026-08-12 incident: a TABLE ROW and a SECTION HEADING sharing #32.
     # A table-rows-only checker returns 0 on that cell -- i.e. it would have passed

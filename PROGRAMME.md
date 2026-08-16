@@ -25,9 +25,25 @@ successor session inherit it. The fields below are parsed; the prose is not.
     QUEUE_OWNER: research
     TARGET_MIN_PAYOUT: 10
     SHIP_SIT_MIN_K: 8
-    X3R0_SLOT_RULE: screen_n1000_reactivate_on_51
+    X3R0_SLOT_RULE: take_back_only_on_60pct_pm2pp
 
-## X3R0_SLOT_RULE ADDED 2026-08-14 (Magnus, direct, in-session)
+## X3R0_SLOT_RULE RE-PRICED 2026-08-16 (Magnus, direct, in-session)
+
+**Verbatim, 2026-08-16 ~05:2xZ: "we will not take the slot back unless we have
+something with a 60% winrate ±2pp, otherwise we stay grinding."** This
+supersedes the 51%-at-n1000 reactivation threshold below (kept for provenance)
+and resolves the suspension question open since s44: the rule is no longer
+suspended, it is RE-PRICED. Operational reading: no activation displaces a
+teammate's holder unless an arm reads **≥60% game share against the v140
+control with a half-width of ≤2pp or better** (at the local fixture's n=5,400
+the band is ±1.31pp at p=0.6, so a completed screen already meets the precision
+term; the binding term is the 60). Point estimate ≥60 with CI-lo ≥58. The
+board's ceiling at this ruling is 55.24% (MIX280mix4), so the standing state is
+GRIND. **This also parks the live unrated leg**: an unrated window requires
+activating an arm into the slot, which this bar now governs — no leg fires
+until an arm clears 60±2 locally or Magnus explicitly opens a window.
+
+## X3R0_SLOT_RULE ADDED 2026-08-14 (Magnus, direct, in-session) — SUPERSEDED 2026-08-16, kept for provenance
 
 **Verbatim: "Whenever he outs one up, run n=1000 against it and put ours back
 if we win."** This closes the x3r0 standing-rule question OPEN since s38 and
@@ -429,7 +445,23 @@ off-programme if it pushes kills PAST r300 — operationally, the share of its
 kill-wins landing after r300 must not rise vs control (each prereg registers its
 own n/MDE for this, and per the exclusion-restatement rule the claim is scored
 as "the CI excludes the registered rise", never as a bare fail-to-find), with
-median-kill-round-crosses-300 as a gross backstop. **Drift inside r200-300 is
+median-kill-round-crosses-300 as a gross backstop.
+
+**⛔ OPERATIONAL FORM CORRECTED 2026-08-16T05:19:38Z (s45), ~4h after writing —
+THE SENTENCE ABOVE CARRIES A COLLIDER AND IS SUPERSEDED AS THE PRIMARY. The bar
+itself (Magnus's r300 boundary) is unmoved; what was wrong was the builder's
+encoding.** "Share of KILL-WINS past r300" conditions on winning, and winning is
+downstream of the treatment: a plank converting marginal slow LOSSES into slow
+WINS raises that share without delaying any kill (research, measured on the
+rated tape: kill-win-conditioned 15.1% vs ITT 7.8%, same defect class as the
+FIRE ORDER #1 primary caught the same morning). **THE PRIMARY IS NOW ITT,
+denominator ALL GAMES: the share of a plank's games ending in a core-kill BY
+r300 (its timely-kill rate) MUST NOT FALL vs control.** This catches kills
+delayed past the boundary and does not punish loss→late-win conversions, which
+Magnus's ruling never aimed at. The kill-win-conditioned share is REPORTED
+BESIDE IT as a diagnostic — where the two forms disagree, the disagreement is
+itself a finding (collider size) — and the median backstop stands. Any prereg
+scoring this bar registers the ITT form. **Drift inside r200-300 is
 REPORTED, no longer DISQUALIFYING.** Evidential context, stated with its limits:
 the old form's empirical grounding ("the field converts 4x better late") was
 PRE-map-rotation; re-derived on the post-rotation pool
