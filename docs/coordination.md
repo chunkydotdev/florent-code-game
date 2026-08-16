@@ -66450,3 +66450,95 @@ matches could run the other way.** **One condition, before any restart. Unchange
 ⭐ **AND THE INSTRUMENT LESSON IS THE DAY'S OWN, ONE LAST TIME: `fcode status` is a POINT READ. Mine
 was correct and became false in four minutes. The side lane's later reads are what made the
 correction possible — a holder claim carries its READ TIME or it is not a claim.**
+
+--- 2026-08-16T13:49:59Z (`date -u`) 🟢 **SIDE LANE s47 BOOT — armed, cells driven both ways, and one number corrected before anyone inherits it.** ---
+
+**⚠ FIRST, MY OWN SESSION LABEL, corrected inside the boot rather than left to a successor.** My two
+boot messages to the peers said **`s46`** — my lane's own last run was s45, so I incremented within
+the lane. **The live counter the other lanes are using is global: the builder is `s47` and research
+wrapped as `s46` an hour ago.** ⇒ **This session is `s47` and the `s46` in those two messages is
+superseded.** Recorded because a session label is how every artefact today gets found later, and two
+numbers for one session is exactly the kind of thing nobody re-derives.
+
+## STATE — VERIFIED, NOT ASSERTED
+
+* **HOLDER `v153` "Loki turbo6 (turbo4+CB aiming)"** (uploaded by **x3r0** 2026-08-15T20:37:14.783Z),
+  **1751 (Emerald), rank #21 of 126, 1112 matches, last 10: 6W 4L.**
+  **From `fcode status` via `tools/now.py` at 13:47:40Z — never from a poller (D28).**
+  ⚠ **This line carries its read time and an instruction to re-read: it expired six minutes after
+  s45 wrote its equivalent** (`299dfefe`). **Do not quote it past ~20 minutes without re-reading.**
+* **CONTROL remains `bots/_v223sealrepair`.** Holder ≠ control, and every queued arm is still scored
+  against the CONTROL.
+* **`X3R0_SLOT_RULE` re-priced to 60% ±2pp; standing state is GRIND.** No activation is pending from
+  any lane. **The board's ceiling at the ruling was 55.24%.**
+* **FLEET: 12 of 12 expected daemons present exactly once** (`tools/fleet_health.py`), keeper pid
+  **19708** matching `corpus/keeper.pid`, 7 shard runners. **I verified; I did not re-arm — they are
+  builder-owned.**
+* **`LEG-fieldcal` is DELIBERATELY DOWN** (stopped ROUND 18 at the 12:14:40Z displacement incident);
+  restart gated on Magnus×x3r0 coordination plus research's amendment. **Builder confirms no submit
+  window, no prereg locking, no platform action pending.** ⇒ **there is no live ship-chain event for
+  this lane to certify at boot.**
+
+## DRIFT WATCH — RE-ARMED AS A CONSUMER, AND ALL FIVE CELLS DRIVEN BOTH WAYS
+
+**Three detached `drift_watch.sh` loops are alive (`77617`, `21664`, `21790`), all three logs current
+through `aecc9133`.** Per s45's wrap I re-armed **on the existing `scratchpad/drift_watch_s44.log`
+rather than starting a fourth process.** What dies with me is the CONSUMER, not the watch.
+
+| cell | drive | result |
+|---|---|---|
+| **emits** | `DRIFT_SEED=HEAD~2` | **2 `COMMIT` lines** — `581aa088`, `aecc9133` |
+| **silent when nothing is new** | `DRIFT_SEED=HEAD` | **0 lines**, watch's own `rc=0` |
+| **BLIND announced, not silent** | `DRIFT_REPO=/nonexistent-repo-xyz` | **`DRIFT-WATCH BLIND … commits are NOT being audited`** |
+| **UTC, not ambient CEST** | emitted stamp vs both git forms | emitted **`13:45:18Z`** = `TZ=UTC` form; ambient form gives **`15:45:18Z`** |
+| **liveness** | `ps` pattern anchored at the head of the command line, plus a pattern that must return nothing | **3 ALIVE**, control returned nothing |
+
+**⭐ THE FOURTH CELL IS WORTH MORE THAN A GREEN TICK, because it prints the defect beside the correct
+answer.** `15:45:18Z` is the CEST wall-clock wearing a `Z` — **the exact error s45 committed BY HAND
+in both its closing artefacts** (`ca177b7e`), while the tool it was auditing has been immune all
+along and says so in its own source comment. ⇒ **The watch is not the risk surface; the hand-written
+timestamp beside it is.** Every git time I publish this session is derived with `TZ=UTC` in the same
+command or it is not a UTC time.
+
+**⚠ AND A SELF-CATCH ON MY OWN DRIVE, recorded because it is the shape this repo just fixed in
+code:** my first pass reported the silent cell as `rc=1`. **That 1 was `grep -c`'s exit on zero
+matches, not the watch's** — `grep -c` returns 1 when the SAFE case is empty, which is precisely the
+defect `4e31cb12` fixed in the push guard hours ago. **Re-driven against the watch's own exit: `rc=0`.
+The load-bearing field was `lines=0` either way**, which is why the mis-read cost nothing — but the
+guard I built to check a guard had the guard's own bug in it.
+
+## CARRIED IN FROM s45 — the five "must not inherit unchecked" items, unchanged and untouched by me
+
+1. **`prereg_check` still has no `DEFENCE_ADMISSION_BAR` rule** — routed with both verdicts
+   (`SCREEN-sealfloor6` PASSES, `SCREEN-sealrepair:31` FAILS), **and the failing case is the
+   INCUMBENT's own prereg.** Not built.
+2. **`queue_check`'s negation escape survives for PROSE-ONLY rows.** Bounded and self-shrinking; the
+   `GREP-TREE`-only fix is routed, not built.
+3. **⛔ Do NOT quote the "v152 idle rate is FLAT" figure against B1** — research withdrew it as B1
+   evidence (`efec4fac`). The flag's conclusion stands on its other ground; one evidential leg is gone.
+4. **The COMBO-BAR's cost side is still unpriced** (true-56 → 14.8% kill).
+5. **`#78` cannot be built before `#23` reads, and `#23`'s flat branch needs a MANIPULATION CHECK**
+   (D35 rider) or it is an inert flag rather than a null.
+
+**AND MY OWN NAMED AUDIT TARGET FROM s45's post-wrap, still open and still not run:** of the ~63
+counted `QUEUE.md` rows, **how many `GREP:` claims rest on a search scoped to a SINGLE FILE?** One
+false zero of that shape landed and was self-caught by research within the hour (`b43c6f24`). **One
+instance is not a class** — the positive control already exists (`#80`'s claim was FALSE at tree
+scope, TRUE at `raid.py` scope), so the cut is cheap when someone has the session for it.
+
+## WHAT THIS LANE IS DOING THIS SESSION
+
+**Ship-chain drift only**, per the 2026-08-13 rescope: commits touching the incumbent, a prereg, a
+gate or stop-loss, the tape, `PROGRAMME.md`, or a platform action — against `PROGRAMME.md` and the
+D1–D36 checklist. **Always: two-clock certification of every prereg and ship, gate and stop-loss
+ARITHMETIC, rated-leak checks at the pairing boundary, rollback readiness. NOT auditing analysis or
+non-ship commits.** Prescriptions stay one line: name the defect, hand the fix to the owning lane.
+**Flags carry a `PROGRAMME` anchor and both branches; never a veto, never verdict language.**
+
+**WRAP TRIGGER: the BUILDER'S WRAP** (Magnus, standing, 2026-08-16) **or Magnus's explicit call.**
+The builder has agreed to ping me and has logged it as a wrap-sequence obligation. **A quiet ship
+chain, a drained queue or a long session are not wrap-calls.**
+
+**HARD LIMITS UNCHANGED:** no bot edits, no arena or unrated runs, no verdicts, no `HANDOVER.md`/
+`PROGRAMME.md`/`QUEUE.md`/`BARS.tsv`/tape writes, no platform actions, no engine probes. New files
+only under `docs/research/`, plus append-only notes here. I commit only my own named files.
