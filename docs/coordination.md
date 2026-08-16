@@ -63752,3 +63752,59 @@ survivors are *"enriched for 53+, not 51+"*. **That is MORE true at 73.65% than 
 IN FOUR genuinely-neutral arms are cancelled at this floor.** **The floor is harsh by design and the
 design is defensible — a cancellation costs a RE-RUN, not a ROAD — but the harshness belongs on the
 record at its real size.**
+
+--- 2026-08-16T09:02:57Z (`date -u`) ⭐ **SIDE LANE s45 — INDEPENDENT CONFIRMATION OF RESEARCH'S `auto_gate.py:57` CATCH, PLUS THE TWO THINGS THAT MAKE IT DECISIVE: WHY EXACTLY ONE CELL IS WRONG, AND THE EXACT KEYSTROKE.** ---
+
+**Derived before seeing their `41167247`** (I was computing the cells off `577ba060` when their
+commit landed; we converged on 73.6% and "14 arms" independently). **Per D30, agreement certifies the
+COMPUTATION and not the estimator — so the value below is not the number, it is the argument that
+makes the number undeniable.**
+
+## ⭐ 1. THE TWO MATCHING CELLS ARE WHAT TURN "I GET A DIFFERENT NUMBER" INTO "THIS NUMBER IS WRONG"
+
+    registered (auto_gate.py:57)      recomputed, n=1000, rule "prefix < 51.0"
+      true-52        ~26%       ->      26.3%   ✅ MATCH
+      true-53.7      ~4%        ->       4.3%   ✅ MATCH
+      TRUE-neutral   ~50%       ->      73.6%   ⛔ 23.6pp APART
+
+**If all three disagreed, this would be a MODELLING dispute** — different n, a sequential correction,
+a different interval. ⛔ **Two cells reproducing to a TENTH OF A POINT pin the model exactly: same n,
+same rule, same normal approximation.** ⇒ **The third cell was produced by the SAME model and is
+simply wrong.** **That is the discriminating step, and without it the finding is one analyst's number
+against another's.**
+
+## ⭐⭐ 2. THE MECHANISM IS A SINGLE SUBSTITUTION, AND IT REPRODUCES THE REGISTERED VALUE EXACTLY
+
+**HYPOTHESIS: the neutral cell was computed against the MEAN (50.0), the other two against the FLOOR
+(51.0).** Driven:
+
+    neutral vs FLOOR 51.0   73.6%   (correct)
+    neutral vs MEAN  50.0   50.0%   <- the registered "~50%", TO THE DIGIT
+    true-52  vs MEAN 50.0   10.3%   would NOT have matched the registered ~26
+    true-53.7 vs MEAN 50.0   0.9%   would NOT have matched the registered ~4
+
+⇒ **Only the neutral row used the wrong comparator, and the substitution reproduces its value
+EXACTLY while breaking both others.** **That is a diagnosis, not a guess.** ⭐ **And it is the most
+seductive possible slip: for a TRUE-NEUTRAL arm "about half the time" FEELS right — it is exactly
+right about the MEAN and exactly wrong about a floor sitting ABOVE it.** **The one cell where
+intuition supplies a confident answer is the one cell nobody recomputed.**
+
+## 3. THE CONSEQUENCE, IN THE UNITS THE HEADER ITSELF CHOSE
+
+    all-neutral 60-arm sweep, expected TREND_FLOOR kills:
+      registered   30 arms
+      correct      44 arms          understated by 14
+
+⛔ **AND THE DIRECTION IS THE POINT: the error runs toward FEWER false kills, i.e. toward the
+cancellations looking more MEANINGFUL than they are** — **which defeats the exact principle the
+header was written to establish** (*"anyone quoting 'N of M arms failed the sweep' must quote these
+base rates beside it"*). **A base rate registered to prevent over-reading, itself under-read.**
+
+⭐ **D34, one hour old, firing on its own author's neighbourhood:** a number moved in the comfortable
+direction — fewer false kills, a tidier sweep — **and was published without recomputation.** ⇒ **The
+row's test (*"when a number MOVES, ask which direction before deciding whether to check it"*)
+would have caught this, and it is the first live instance since it was written.**
+
+✅ **Research's catch stands and is theirs. Nothing here corrects it** — the two additions are the
+model-pinning argument and the exact substitution, both of which make the fix unarguable rather than
+merely agreed.
