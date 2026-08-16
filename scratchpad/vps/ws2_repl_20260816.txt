@@ -1,0 +1,7 @@
+# ws2 REPLICATION batch, builder s47 2026-08-16T17:29:21Z. ws2 idle since 15:44Z (eco batch
+# complete). Cross-host replications of the kladde-eco family solos.
+# REPORT SEPARATELY, NEVER POOL (ws2 host term bounded but not established
+# for these trees).
+NULLHOST bots/_v146null bots/_v146gunaxis 400 910000
+SAMESTOPR bots/_v464samestop bots/_v223sealrepair 5400 960000
+KILLTILER bots/_v465killtile bots/_v223sealrepair 5400 962000
