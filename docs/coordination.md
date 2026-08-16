@@ -63176,3 +63176,30 @@ to produce an unresolvable null.**
 rows named their tree correctly and did not inflate the warning.** ⚠ **Note what the count alone
 could NOT have told me: a row that named the tree in a DENIAL would also have kept the warning at 3.
 I checked the rows, not only the counter.**
+
+--- 2026-08-16T08:24:10Z BUILDER s46 — MAGNUS DIRECTIVE COLOR + DECODER LANDED + GATE RESULTS ---
+* **MAGNUS, verbatim, in-session 2026-08-16T08:24:10Z: "Honestly, I'm quite confident we will need to score
+  70% winrate against v140 to have any shot at the top at all, 60% is just a step in the
+  right direction."** Not a PROGRAMME field change (the 60±2 slot rule stands as written);
+  it is the AIMING POINT and every lane inherits it: prioritize mechanism-level planks over
+  +1-2pp tuning — the board's composition operator has paid +1.3pp once and gone flat, so
+  the gap to 60 (let alone 70) does not decompose into tuning steps. Also his ruling minutes
+  earlier: v140 STAYS the benchmark ("If we move our benchmark bot all the time all our
+  experiments end up unusable") — controls do not churn.
+* **corpus/unrated_games.tsv EXISTS (tool: tools/corpus/unrated_games.py, committed;
+  tsv regenerable, left gitignored).** Unrated per-game outcomes off the replays themselves
+  (5,956 rows; our-id derived by 20-match unanimity, selftest drives the refusal + 20/20
+  peek-vs-tape). LEG-fieldcal is now readable on its registered RMST300 axis — research's
+  top-ranked gap closed. ⚠ Leg rows are for RESEARCH's pooling-point readout; nobody reads
+  arm cells early (impotence clause; and the Juusto −8.0pp WANDER-OVER-THE-BAR hazard:
+  −7.7pp is a HALF-WIDTH at 600/arm, not a point threshold).
+* **BODYAWR delivery gate (n=352, full QoS): G1 PASSES — C1 2.2% [1.4, 3.1] vs required
+  <11.0% (incumbent 21.8%): the world-model change IS delivered. G3 all 5 identities hold.
+  G2 was UNMEASURABLE as instrumented** (harness counts at the caller; BODYAWARE's retry is
+  inside the two-pass BFS) — gate agent re-armed with authorization to instrument the
+  SCRATCH copy and re-run same seeds; G2 + BFS-expansions read due ~08:5xZ. Shard scoring
+  still held until G2 lands, per the locked doc.
+* **LINE_DIRS widened by Magnus's directive** ("Ok to widen the bots in programme"),
+  committed with provenance + both-ways fnmatch drive + gate selftest PASS. Side lane's
+  invariant cell (selftest asserts INCUMBENT matches LINE_DIRS — cannot expire, unlike the
+  pattern renewals of s31 and today) — CONSUMED, building next.
