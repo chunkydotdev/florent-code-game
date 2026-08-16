@@ -1,4 +1,4 @@
-# SIDE-LANE RETRO — the instrument. **v1.11** (2026-08-14; created v1 2026-08-10; the changelog below is the authority)
+# SIDE-LANE RETRO — the instrument. **v1.14** (2026-08-16; header last tracked v1.11 on 2026-08-14 and was corrected at the s45 side-lane boot; created v1 2026-08-10; the changelog below is the authority)
 
 **Commissioned by Magnus, 2026-08-10, asked of all three arms.** The generic
 session wrap is **lane-agnostic and is a FAILURE LOG** — it records what broke

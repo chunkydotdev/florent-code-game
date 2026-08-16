@@ -61858,3 +61858,92 @@ holds."* **The correct move was available to them and they declined it.**
 
 **RESEARCH ARM STATE (07:3xZ block above) IS OTHERWISE UNCHANGED and remains the successor's read.**
 Nothing else was touched post-wrap; no subagents; tree clean and pushed.
+
+--- 2026-08-16T07:53:36Z (`date -u`) **SIDE LANE s45 BOOT** — commissioned by Magnus. Boot sequence complete, state verified not asserted, drift watch RE-ARMED ON AN EXISTING PROCESS rather than orphaning a fourth. ---
+
+**Session opens at the seam:** all three lanes wrapped 07:36–07:45Z; Magnus committed `2da81305`
+(replay viewer) at 07:48:44Z; research booted s46 at 07:51Z; I booted at 07:51:00Z.
+
+## STATE — EACH LINE WITH THE SURFACE IT CAME FROM
+
+* **HOLDER `v152` "Loki turbo4 (ammo/heal fix)", 1787 (Emerald), rank #19 of 126, 1094 matches.**
+  From the `fcode status` line of `tools/now.py` at **07:51:00Z**. ⛔ **Not from `ship_watch`** —
+  that poller was 8.3 m stale at my boot and D28 was committed by this lane, in its own closing
+  artefact, yesterday.
+* **CONTROL `bots/_v223sealrepair` (v140)** per `PROGRAMME.md`. **Holder ≠ control**, and Magnus's
+  60±2pp slot rule names the v140 control, not the holder.
+* **`LEG-fieldcal-2026-08-16` live and detached:** pid **17270**, **PPID 1**, ELAPSED **11:09** at
+  07:52Z — consistent with the 07:40:13Z relaunch, *not* with a longer-lived process. Keeper
+  **19708** alive (1 d 12 h). Fleet **12/12 exactly once** per the SessionStart hook.
+* **Queue: 55 unblocked against a floor of 3.** 3 rows carry an unnamed GREP tree — the gate cannot
+  tell whether those are stale against the current incumbent. Noted, not flagged: the owner is research.
+
+## ⭐ THE DRIFT WATCH — I DID NOT START A FOURTH ONE
+
+My predecessor measured three watches (`21664` s41, `21790` s43, `77617` s44) **all still emitting**
+after their sessions ended, and left the correct instruction: *re-arm the Monitor on the existing
+log, or kill the orphan and start fresh — but do one of them.* **I re-armed on `77617`'s log**
+(`scratchpad/drift_watch_s44.log`, last line = `2da81305`, seconds old). **No new process. The
+orphan count did not grow.**
+
+**All FOUR emission cells driven, both ways, at 07:52:31Z** — not asserted:
+
+    CELL 1  seed HEAD~2  -> emits both commits                             rc=0
+    CELL 2  seed HEAD    -> emits NOTHING (the other verdict)              rc=0
+    CELL 3  DRIFT_REPO=/nonexistent -> "DRIFT-WATCH BLIND … NOT being audited"  rc=1
+    CELL 4  TZ: git says 2026-08-16T07:48:44Z; watch says 07:48:44Z        match
+
+**And the LIVENESS cell, which my predecessor proved can be silently dead — driven on five pids:**
+real `77617` ALIVE · orphan `21664` ALIVE · dead `999999` DEAD · my own shell DEAD ·
+**keeper `19708` DEAD (a LIVE process that is not this one — the cell that makes ALIVE mean something).**
+
+## ⛔ AND MY FIRST DRAFT OF THAT LIVENESS CHECK REPRODUCED S2, CAUGHT PRE-PUBLICATION
+
+The predecessor's s44 delta **S2** — *a process probe is part of the process table it searches* —
+**recurred in the first instrument I wrote this session, three hours after it was written down.**
+Draft: `ps -p $1 -o command= | grep -q 'drift_watch.sh'`. Driven against my own shell it returned
+**`ALIVE`**, because the pattern was in my own argv — **put there by my own grep argument**, exactly
+as `pgrep` put it in theirs. `ps -p` does not *search* the table, and the defect survived the change
+of mechanism anyway: **what self-matches is the PATTERN, not the search.**
+**Fixed by anchoring on the command's head** (`^[^ ]*zsh tools/watch/drift_watch\.sh`), which is
+what makes the keeper cell above return `DEAD`.
+⇒ **Standing form for any liveness probe in this repo: anchor at the start of the command line, and
+drive it against a LIVE process that is not the target.** A `DEAD` on a nonexistent pid proves
+almost nothing; a `DEAD` on a running keeper proves the pattern discriminates.
+⚠ **Recorded as an OBSERVATION with a fix already applied — not routed to the D-checklist, because
+S2 already says this and the marginal content is the anchoring rule, which belongs in the tool.**
+
+## WHAT I CARRY FORWARD FROM THE s44 "DO NOT INHERIT UNCHECKED" LIST
+
+1. `AGENTS.md:400-402` still states the **superseded** `kill_round_non_regression` bar verbatim; the
+   live field is `r300_crossing_non_regression` with **RMST₃₀₀** as the operational estimator.
+   Regeneration is the fix. **Open.**
+2. **Nothing mechanical enforces `DEFENCE_ADMISSION_BAR` in any of its three vintages.** `gate.py`
+   prints it and enforces only `LINE_DIRS`. It binds through prereg prose a human reads — **so it
+   binds through me, which is the definition of a check that needs a lane present (D31).**
+3. **`SCREEN-bodyaware`'s locked falsifier is vintage A; BODYAWR is complete and unscored.** The
+   predecessor's certification stands and I inherit it unchanged: **the registered falsifier governs
+   THAT arm; RMST₃₀₀ governs preregs locked from 2026-08-16 onward.** Scoring it against the new bar
+   now, with the numbers visible, is choosing the rule after seeing the data.
+4. Three roads closed on kill-round grounds that have since lapsed (idlepeck, salt, pavefirst).
+   **Not a reopening recommendation** — D12: a bar re-price is not evidence.
+
+## MY OWN INSTRUMENT — ONE DEFECT FOUND AT BOOT AND FIXED
+
+`docs/side-lane-retro.md`'s **header says `v1.11`** while its changelog runs to **`v1.14`**. The
+header last tracked on 2026-08-14; v1.12, v1.13 and v1.14 each bumped the changelog and left it.
+The file's own header says *"the changelog below is the authority"*, so nothing downstream was
+wrong — **but a version banner that stopped tracking is the same object this lane flags in
+`elo_history`'s poll-time tag and in every stale cache: it reads authoritative and is not.**
+Header corrected to v1.14 in this commit. **My file, my hand, no other lane's content touched.**
+
+## WAKE PATHS ARMED
+
+* **Drift watch** — Monitor on `scratchpad/drift_watch_s44.log`, filtering `COMMIT` /
+  `DRIFT-WATCH BLIND` / `DRIFT-WATCH RECOVERED`, **plus a 60 s liveness poll on pid 77617 that
+  emits `DRIFT-WATCH DEAD … RE-ARM` and exits if it dies.** The failure mode my predecessor
+  documented — *the watch keeps writing to a file nobody reads* — is covered on both halves.
+* **Peer channel** — both peers messaged; research answered.
+
+**I have edited no bot, run no arena, fired no match, typed no verdict, taken no platform action,
+and written nothing to `HANDOVER.md` or the tape.**
