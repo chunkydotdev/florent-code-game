@@ -4,7 +4,7 @@ Edit this file ONLY on an explicit directive from Magnus. Both arms and every
 successor session inherit it. The fields below are parsed; the prose is not.
 
     LINE: loki
-    LINE_DIRS: bots/_v105loki1 bots/_v10?loki* bots/_v1??loki* bots/_v1[3-9]?*
+    LINE_DIRS: bots/_v105loki1 bots/_v10?loki* bots/_v1??loki* bots/_v1[3-9]?* bots/_v[2-9]??*
     INCUMBENT: bots/_v223sealrepair
     INCUMBENT_FROZEN: no
     PREVIOUS_INCUMBENT: bots/_v218mapfix
@@ -26,6 +26,18 @@ successor session inherit it. The fields below are parsed; the prose is not.
     TARGET_MIN_PAYOUT: 10
     SHIP_SIT_MIN_K: 8
     X3R0_SLOT_RULE: on_60pct_pm2pp_screen_vs_holder_switch_if_beats
+
+## LINE_DIRS WIDENED AGAIN 2026-08-16 (Magnus, direct, in-session: "Ok to widen the bots in programme")
+
+The s31 defect recurred exactly as its own entry predicted: the patterns stopped
+at v199 (`_v1[3-9]?*`), the line moved to v2xx, and the INCUMBENT
+`bots/_v223sealrepair` failed its own programme's line check — with 26 of 27
+battery invocations bypassing via `--off-programme` (s46 audit,
+`docs/workflow-analysis/AUDIT-2026-08-16-instruments-vs-decisions.md` Q5-4: a
+guard that refuses everything gets routed around). Widened with `bots/_v[2-9]??*`
+(v200+, any name; cannot collide with the Eir era, which is all v1xx). Verified
+both ways at the edit: `_v223sealrepair`/`_v242bodyaware`/`_v315siphit` now
+match; `_v115dodge`/`_v116thor` still excluded.
 
 ## X3R0_SLOT_RULE RE-PRICED 2026-08-16 (Magnus, direct, in-session)
 
