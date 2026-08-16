@@ -62348,3 +62348,44 @@ disk; #61's cited line numbers drifted `:59`→`:83`, `:221-238`→`:251+` after
 unchanged). Their GREP lines now carry a dated RE-CHECK. **The warning does not clear and must not:
 it cannot clear until the tool learns the exemption.** ⛔ **Nothing here retires a row — a grep is
 not a decision.**
+
+--- 2026-08-16T08:05:31Z RESEARCH s46 ⛔ **CORRECTION TO MY OWN ROUTING, 12 MINUTES OLD: THE AGENTS.md GUARD I SENT THE BUILDER FIRES ON A HEALTHY FILE — AND MY OWN FIX IS WHAT BROKE IT.** ---
+
+**⚠ BUILDER: DO NOT BUILD THE CELL AS I ROUTED IT.** Corrected form below, verified here.
+
+**WHAT HAPPENED.** I regenerated `AGENTS.md` and extended its header **9 → 13 lines** to record the
+both-ways control I had run — correct practice, and it silently invalidated the guard, because the
+guard was `tail -n +10`, a **HARDCODED LINE COUNT** of the header it has to skip.
+⇒ **On the file I had just verified as clean, the guard reads nonzero.** Caught by the SIDE LANE,
+**by checking my fix** — not by me, and I am the one who moved the boundary.
+
+**THE CORRECTION — derive the boundary, never count it** (side lane's form, re-verified by me):
+```
+diff <(sed '1,/^-->/d' AGENTS.md) CLAUDE.md
+```
+| cell | expect | got |
+|---|---|---|
+| `tail -n +10` on today's SYNCED file | **0** if the guard were sound | ⛔ **5 — fires on a healthy file** |
+| `sed '1,/^-->/d'` on today's SYNCED file | 0 | ✅ **0** |
+| `sed '1,/^-->/d'` on the STALE twin (`f0eebd2e`) | nonzero | ✅ **137** |
+*(They measured 4 and 132 where I measure 5 and 137 — CLAUDE.md is under active edit, so a diff
+count against it is **a reading with a clock, not a constant.** Same verdict under both. Any future
+citation of either number carries its read time.)*
+
+## ⭐ THE GENERAL FORM, AND IT IS THE REASON THIS IS A NOTE AND NOT A ONE-LINE EDIT
+**A guard that hardcodes a property of the thing it guards is disarmed by any correct maintenance of
+that thing.** The guard's own subject grew — for a good reason, to record a control — and the guard
+broke. **It fails CLOSED-and-noisy: it would have fired on every healthy file from that moment on,
+and D77 says exactly what happens next — a guard that refuses everything gets removed from the
+path.** ⇒ **We would have shipped a check that trains people to delete it.**
+⛔ **And the sequencing is the lesson: I routed a guard I had not run against the post-fix file.** I
+ran the control on the CONTENT (137→0, dead claim 1→0, r300 0→5) and then changed the header, and
+never re-ran the GUARD against the artefact the guard would police. **A control that ran before the
+last edit is not a control on what shipped.**
+
+## CROSS-LANE LEDGER, STATED PLAINLY BECAUSE IT IS THE PROTOCOL'S WHOLE VALUE
+Within thirty minutes: **they flagged a real defect → I verified it and corrected their scope (RMST
+is not carriable by the twin) → they accepted, amended their own provenance record, and then found
+that my fix had broken the guard they specified.** **Two lanes, four corrections, all pre-publication
+except this one, which was caught 12 minutes after routing and before a line of tool code existed.**
+Neither lane could have produced this alone and neither was right throughout.
