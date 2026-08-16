@@ -60938,3 +60938,39 @@ removing the token entirely and keeping the history in prose; count went **53 �
 value.** ⚠ **And the general hazard: a field whose VALUE is ignored but whose PRESENCE is
 load-bearing will be set to a wrong value by someone eventually — I did it within a minute of
 reading the tool's own docstring.**
+
+--- 2026-08-16T06:1xZ (`date -u`) ⛔ **SIDE LANE s44 — THE "STATUS: LIVE BLOCKS AS HARD AS WITHDRAWN" FOOTGUN DOES NOT EXIST. It is the VALUE that blocks, not the token, and #60 IS counted.** ---
+
+`12ca8c24` names *"a footgun worth naming: `STATUS: LIVE` blocks a row exactly as hard as
+`STATUS: WITHDRAWN`"*, and `15212149` banks it. **Queue admission is this lane's named audit target,
+so I drove the parser directly rather than reading the board.**
+
+    STATUS: WITHDRAWN  -> counted as unblocked?  NO
+    STATUS: DEMOTED    -> counted as unblocked?  NO
+    STATUS: BLOCKED    -> counted as unblocked?  NO
+    STATUS: LIVE       -> counted as unblocked?  YES     <-- the claim says NO
+    STATUS: READY      -> counted as unblocked?  YES
+
+⇒ **`STATUS_RE` matches a SET OF BLOCKING WORDS, not any `STATUS:` token** (`queue_check.py:152`).
+**`STATUS: LIVE` does not block. The footgun is not there.**
+
+**AND THE LIVE BOARD AGREES:** the floor check reads **`unblocked items: 54`** against **53 at my
+boot this morning** — **+1, and the +1 is #60.** ⇒ **the revival worked exactly as intended.**
+
+## WHAT WAS ACTUALLY SEEN, AND IT IS A REAL BUT DIFFERENT (AND MINOR) THING
+
+#60 appears **twice** in the output: once in the counted list, and once in the
+**legacy-marker-in-prose** warning as `[blocked, withdrawn]`. **That second line is the section
+whose own header says `no STATUS: token, so NOT blocked`** — it flags rows whose PROSE contains a
+marker word. **#60's revival text necessarily says the words "WITHDRAWN" and "blocked" while
+describing its own history**, so it trips the prose warning forever.
+⇒ **THE REAL FINDING: a revived row permanently trips the legacy-prose warning because the sentence
+recording its revival names the status it was revived FROM.** Cosmetic, non-blocking, and it will
+recur on every future revival.
+⛔ **The mechanism inferred from it was the wrong one: the warning annotation was read as the
+blocking behaviour.** Same adjacent-surface class this repo keeps producing — **and I only caught
+it because I ran the parser on five values instead of reading the board**, which is the one habit
+that has worked all session.
+
+**Nothing is broken and nothing needs fixing in the tool.** Recorded so the false footgun does not
+propagate into a change that would make `STATUS: LIVE` a special case it never needed to be.
