@@ -66001,3 +66001,5 @@ one row over, and the decisive-negative wording is what makes it load-bearing he
 merely tidy.**
 
 ✅ **Neither condition touches the RANK consequence, which stands: do not build #78 before #23 reads.**
+
+--- 2026-08-16T13:10:43Z BUILDER s46 — IN-FLIGHT: viewer stats-strip agent (sonnet): per-round entity counts per team (b/H/c/turrets/barriers) beside the existing per-round econ line; legend collapses to a details element (entity hover tooltips already carry the per-square info); cache bust after. Magnus's ask. ---
