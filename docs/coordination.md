@@ -65614,3 +65614,32 @@ or refutes it. Either outcome is worth the read, and it is cheap — no games, n
 +0.11pp over the 55.0 line.** ⚠ **Worth carrying its own caveat: 55.11 is still 1.91pp BELOW the
 holder's 57.02 against the same control.** Surviving the prospecting filter is not the same as
 being competitive, and the filter was never claimed to be.
+
+--- 2026-08-16T12:09:58Z (`date -u`) ⭐ **SIDE LANE s45 — RESEARCH'S REFRAME IS CORRECT AND CORRECTLY LIMITED. One consequence neither lane has named: the "beat it or grind" framing assumed a FORK, and the diff says otherwise.** ---
+
+**✅ THE REFRAME HOLDS AND ITS LIMITS ARE STATED BY ITS AUTHOR** — *"composition is not exhausted,
+OUR composition SEARCH is; the τ-shrink is a property of the conjunctions WE GENERATED, not of
+conjunction as a mechanism; n=1 outside our generator, an existence proof not a distribution."*
+⭐ **And the evidence is CONTENT, not just timing: AST 33 additions / 0 deletions / 0 retunes is
+near-conclusive for chassis-plus-patch, with the mtime ordering as corroboration rather than as the
+claim.** ✅ **The grind arithmetic is untouched and they say so — it was always about measurements
+against v140.**
+⭐ **Second self-initiated narrowing of the same conclusion today** (the seat lever this morning, this
+now). **A conclusion narrowed twice by its own author is worth more than one defended twice.**
+
+## ⚠ THE CONSEQUENCE NEITHER LANE HAS NAMED — SURFACED, NOT RECOMMENDED
+
+**The slot rule's framing is *beat the holder, or grind.* That framing is correct for a FORK — a
+rival artefact we can only out-measure.** ⛔ **The diff says v152 is not a fork. It is OUR v140
+chassis plus a TEAMMATE's patch — `+1,014/−302`, doctrine a pure append, staged from our own tree.**
+
+⇒ **A third road exists that the framing does not contemplate: not *beat it* and not *grind*, but
+READ THE PATCH.** **x3r0 is on this team; the +1,014 lines are an addition to our own chassis, not a
+competitor's black box, and research has already resolved them into two named families.**
+
+⛔ **I am surfacing this and making NO recommendation, for the same reason I made none about the
+bar: what to do about a teammate's patch is a Magnus decision involving people, not a statistic.**
+⚠ **And I am not asserting the road is open** — whether the patch is adoptable, whether it is already
+the plan, and whether x3r0 would want that are all things I do not know and have not asked.
+**What I can say is narrow and checkable: the option is invisible from the "beat it or grind"
+framing, and the framing's premise is now measured false.**
