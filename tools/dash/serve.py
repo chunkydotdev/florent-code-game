@@ -812,6 +812,42 @@ def _tsv_share(tsv: Path) -> dict | None:
     return out
 
 
+_COMPOSED_FROM_CACHE: dict = {}
+_COMPOSED_FROM_RE = re.compile(r"^#\s*----\s*composed by tools/stack\.py from:\s*(.+?)\s*$",
+                                re.MULTILINE)
+
+
+def _composed_from(treatment: str | None) -> str | None:
+    """A stack.py-composed tree's doctrine.py carries a marker line naming the
+    planks it was built from (e.g. `# ---- composed by tools/stack.py from:
+    bodyaware, catapult`). This is the ONLY per-shard signal distinguishing
+    ~10 sweep shards that otherwise share one generic worklist comment block.
+    Cached by (path, mtime) like _tsv_share above. Missing tree, missing file,
+    or no marker line -> None, never an exception — this is a nice-to-have
+    label, not load-bearing data."""
+    if not treatment:
+        return None
+    try:
+        doctrine = (ROOT / treatment / "doctrine.py")
+        st = doctrine.stat()
+    except Exception:
+        return None
+    key = (str(doctrine), st.st_mtime)
+    if key in _COMPOSED_FROM_CACHE:
+        return _COMPOSED_FROM_CACHE[key]
+    out = None
+    try:
+        text = doctrine.read_text(errors="replace")
+        m = _COMPOSED_FROM_RE.search(text)
+        if m:
+            out = m.group(1).strip()
+    except Exception:
+        out = None
+    _COMPOSED_FROM_CACHE.clear() if len(_COMPOSED_FROM_CACHE) > 400 else None
+    _COMPOSED_FROM_CACHE[key] = out
+    return out
+
+
 def _remote_shard_row(mirror: Path, shard: str) -> dict:
     """State + numbers for one remote shard, from pulled artefacts ONLY.
 
@@ -905,6 +941,7 @@ def collect_remote_fleet() -> dict:
             r["treatment"], r["control"] = w["treatment"], w["control"]
             r["treatment_ver"] = matches.tree_label(w["treatment"])
             r["control_ver"] = matches.tree_label(w["control"])
+            r["composed_from"] = _composed_from(w["treatment"])
             if r["target"] is None:
                 r["target"] = w["target"]
             rows.append(r)
@@ -962,6 +999,7 @@ def collect_shard_list() -> dict:
         # comes back with `versions: []` and renders as its bare path.
         r["treatment_ver"] = matches.tree_label(r["treatment"])
         r["control_ver"] = matches.tree_label(r["control"])
+        r["composed_from"] = _composed_from(r["treatment"])
         r["target"], r["seed_lo"] = w.get("target"), w.get("seed_lo")
         r["comment_block"] = w.get("comment_block") or []
         r["note"] = worklist_note(r["shard"], w.get("comment_block") or [])

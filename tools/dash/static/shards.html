@@ -32,13 +32,16 @@
   <div class="count" id="src">…</div>
 
   <div class="chips" id="chips"></div>
+  <div class="chips" id="controlChips"></div>
   <input class="filter" id="q" type="search" placeholder="filter by shard name, state, arm/control tree, submission name (&ldquo;Loki v8&rdquo;), or words from the description / worklist note…" autocomplete="off">
   <div class="count" id="count">…</div>
 
   <div class="scroll"><table id="tbl">
     <thead><tr>
       <th>Shard</th><th>State</th><th class="mono">Progress</th>
-      <th class="mono">Result</th><th>Description <span class="th-note">(what the change brings — click the row for the full story)</span></th>
+      <th class="mono">Result</th>
+      <th>vs <span class="th-note">(control tree this shard ran against)</span></th>
+      <th>Description <span class="th-note">(what the change brings — click the row for the full story)</span></th>
     </tr></thead>
     <tbody></tbody>
   </table></div>
@@ -153,7 +156,10 @@ function hostBadge(r) {
 const GROUP = {running:0, remote:1, STALLED:2, queued:3, DEAD:4, CANCELLED:5, DONE:6};
 const CHIPS = ['running','remote','STALLED','queued','DEAD','CANCELLED','DONE'];
 
-let LAST = null, PICK = 'all';
+// PICK and CONTROL are MULTI-SELECT: a Set of chosen values, empty = no
+// filter on that dimension (everything shows). Clicking a chip toggles its
+// membership; clicking the 'all' chip in either row clears that row's set.
+let LAST = null, PICK = new Set(), CONTROL = new Set();
 
 // ------------------------------------------------- authored descriptions
 // tools/dash/static/shard_descriptions.json — AUTHORED prose (curated, one
@@ -187,25 +193,85 @@ function labText(lab) {
                      + (lab.incumbent ? ' live incumbent' : '');
 }
 
+// SHORT control label for a chip / table cell — "v140" when the ledger knows
+// a version, else the bare tree basename (e.g. "_v146gunaxis") so a row with
+// an unledgered control tree still reads as something rather than blank.
+// Distinct from labText() above, which is the LONG form (name + incumbent
+// flag) used for full-text search — this one is for a narrow chip/column.
+function controlLabel(ver, path) {
+  const versions = (ver && ver.versions) || [];
+  if (versions.length) return 'v' + versions[0].version;
+  if (path) return path.split('/').pop();
+  return '(no control)';
+}
+
+// Same PICK/CONTROL/q filters the local table already applies, replicated for
+// a fleet-host row (host.rows / host.prior entries) so the two surfaces agree.
+// State/control match is SET MEMBERSHIP (empty set = no filter on that
+// dimension, OR semantics within a dimension); text match is case-insensitive
+// over shard name, state, both version labels, and composed_from. All three
+// dimensions AND together.
+function fleetRowMatches(r, stateSet, controlSet, q) {
+  if (stateSet.size && !stateSet.has(r.state)) return false;
+  if (controlSet.size && !controlSet.has(r.control)) return false;
+  if (!q) return true;
+  const hay = (
+    (r.shard || '') + ' ' + (r.state || '') + ' '
+    + labText(r.treatment_ver) + ' ' + labText(r.control_ver) + ' '
+    + (r.composed_from || '')
+  ).toLowerCase();
+  return hay.includes(q);
+}
+
+// The 8 stack.py planks (tools/stack.py:125-134) — each one is a real entry
+// in the lingo dictionary at /lingo#plank-<name>. A composed_from name NOT in
+// this set (a typo, a future plank not yet added there) renders as plain
+// text rather than a dead link.
+const PLANKS = new Set(['bodyaware', 'rnd1', 'spawnlock', 'bodyblock',
+                         'catapult', 'collarseal', 'pinaim', 'sentshell']);
+
+// Render a comma-separated composed_from string as one link per KNOWN plank
+// name, plain escaped text for anything else. Shared by the local and fleet
+// "tests:" lines so both surfaces link the same way. stopPropagation on the
+// anchor: every row this renders inside has its OWN onclick navigating to
+// the shard page, and without this a click on the plank link would bubble
+// into that handler and win the race, sending the reader to /shard instead
+// of /lingo.
+function composedFromHtml(text) {
+  if (!text) return '';
+  return text.split(',').map(part => {
+    const trimmed = part.trim();
+    return PLANKS.has(trimmed)
+      ? `<a href="/lingo#plank-${encodeURIComponent(trimmed)}" onclick="event.stopPropagation()">${esc(trimmed)}</a>`
+      : esc(trimmed);
+  }).join(', ');
+}
+
 function noteCell(r) {
   const arm = (r.treatment && r.control)
     ? `<div class="sub-mono"><span class="vs">arm</span> ${esc(r.treatment)}${verChips(r.treatment_ver)}
         <span class="vs">vs</span> ${esc(r.control)}${verChips(r.control_ver)}</div>` : '';
+  // WHAT THIS SPECIFIC ARM ACTUALLY TESTS, read off doctrine.py's own
+  // stack.py marker — ~10 sweep shards otherwise share one generic worklist
+  // comment block, so this is the only per-shard-differentiated signal.
+  // Prefixed ahead of everything else below; absent -> unchanged output.
+  const testsLine = r.composed_from
+    ? `<div class="sub-mono"><strong>tests:</strong> ${composedFromHtml(r.composed_from)}</div>` : '';
   // Authored description first — the humanized one-liner about the change.
   const d = DESC[r.shard];
   if (d && d.brief) {
     const full = d.full ? esc(d.full) : '';
-    return `<div class="note-line" title="${full}">${esc(d.brief)}</div>${arm}`;
+    return testsLine + `<div class="note-line" title="${full}">${esc(d.brief)}</div>${arm}`;
   }
   // Fallback: the worklist note, visibly badged so a missing description is
   // a fact on the page rather than silently dressed-up operator shorthand.
   if (!r.note) {
-    return (arm || '<span class="badge b-dim">no description, no worklist note</span>')
+    return testsLine + (arm || '<span class="badge b-dim">no description, no worklist note</span>')
       + (r.worklist_line ? '' : '');
   }
   const flag = `<span class="badge b-dim" title="No authored description yet for ${esc(r.shard)} — this is the raw worklist note${r.note.shard_named ? '' : ', and it describes the BATCH this shard belongs to, not this row'}.">worklist note</span> `;
   const full = esc((r.comment_block || []).join('\n'));
-  return `<div class="note-line" title="${full}">${flag}${esc(r.note.text)}</div>${arm}`;
+  return testsLine + `<div class="note-line" title="${full}">${flag}${esc(r.note.text)}</div>${arm}`;
 }
 
 function resultCell(r) {
@@ -255,45 +321,103 @@ function render(s) {
   const tally = {};
   all.forEach(r => { tally[r.state] = (tally[r.state] || 0) + 1; });
 
+  // Fold fleet rows (every host's rows + prior) into the same tally so a
+  // chip's printed count matches what clicking it will actually show once
+  // the fleet section is also filtered. 'remote' is deliberately excluded —
+  // it is a LOCAL-table-only state (a fleet row's own state is one of
+  // running/queued/DONE/DEAD/STALLED, never 'remote' itself).
+  const fleet = s.remote_fleet || {hosts: []};
+  const fleetAll = [];
+  fleet.hosts.forEach(h => {
+    (h.rows || []).forEach(r => fleetAll.push(r));
+    (h.prior || []).forEach(r => fleetAll.push(r));
+  });
+  fleetAll.forEach(r => {
+    if (r.state === 'remote') return;
+    tally[r.state] = (tally[r.state] || 0) + 1;
+  });
+
   $('#chips').innerHTML =
-    `<button class="chip${PICK === 'all' ? ' on' : ''}" data-pick="all">all ${all.length}</button>`
+    `<button class="chip${PICK.size === 0 ? ' on' : ''}" data-pick="all">all ${all.length}</button>`
     + CHIPS.filter(k => tally[k]).map(k =>
-        `<button class="chip c-${k}${PICK === k ? ' on' : ''}" data-pick="${k}">${k} ${tally[k]}</button>`).join('')
-    + `<a class="chip" href="#fleet-anchor">fleet ${((s.remote_fleet || {}).hosts || []).map(h => `${h.host.replace('work-server-', 'ws')}:${h.n_running}▶`).join(' ')}</a>`
+        `<button class="chip c-${k}${PICK.has(k) ? ' on' : ''}" data-pick="${k}">${k} ${tally[k]}</button>`).join('')
+    + `<a class="chip" href="#fleet-anchor">fleet ${fleet.hosts.map(h => `${h.host.replace('work-server-', 'ws')}:${h.n_running}▶`).join(' ')}</a>`
     + `<a class="chip" href="#orphans-anchor">no worklist line ${s.n_orphans}</a>`;
+
+  // ---- control chip row: "everything against v140" ----------------------
+  // Distinct control TREES (canonical key = the tree path, e.g.
+  // bots/_v223sealrepair) across local rows + every fleet row (rows + prior,
+  // where prior rows carry no control at all and are simply skipped — they
+  // never show up under any control chip). Label is the SHORT version form
+  // (controlLabel), title carries the full tree path.
+  const controlMeta = new Map();
+  const noteControl = r => {
+    if (!r.control) return;
+    if (!controlMeta.has(r.control)) {
+      controlMeta.set(r.control, {label: controlLabel(r.control_ver, r.control), count: 0});
+    }
+    controlMeta.get(r.control).count++;
+  };
+  all.forEach(noteControl);
+  fleetAll.forEach(noteControl);
+  const controlEntries = [...controlMeta.entries()]
+    .sort((a, b) => b[1].count - a[1].count || a[0].localeCompare(b[0]));
+  const controlTotal = controlEntries.reduce((n, [, m]) => n + m.count, 0);
+  $('#controlChips').innerHTML = controlEntries.length === 0 ? '' :
+    `<span class="vs" style="align-self:center">control:</span>`
+    + `<button class="chip${CONTROL.size === 0 ? ' on' : ''}" data-control="all">all ${controlTotal}</button>`
+    + controlEntries.map(([path, m]) =>
+        `<button class="chip${CONTROL.has(path) ? ' on' : ''}" data-control="${esc(path)}" title="${esc(path)}">${esc(m.label)} ${m.count}</button>`).join('');
 
   const q = $('#q').value.trim().toLowerCase();
   const rows = all
-    .filter(r => PICK === 'all' || r.state === PICK)
+    .filter(r => PICK.size === 0 || PICK.has(r.state))
+    .filter(r => CONTROL.size === 0 || CONTROL.has(r.control))
     .filter(r => !q
       || r.shard.toLowerCase().includes(q)
       || (r.state || '').toLowerCase().includes(q)
       || (r.worklist_line || '').toLowerCase().includes(q)
       || labText(r.treatment_ver).toLowerCase().includes(q)
       || labText(r.control_ver).toLowerCase().includes(q)
+      || (r.composed_from || '').toLowerCase().includes(q)
       || (DESC[r.shard] && ((DESC[r.shard].brief || '') + ' ' + (DESC[r.shard].full || '')).toLowerCase().includes(q))
       || (r.note && r.note.text.toLowerCase().includes(q)))
     .sort((a, b) => ((GROUP[a.state] ?? 9) - (GROUP[b.state] ?? 9)) || (a._i - b._i));
 
+  // AND across the three dimensions (state set, control set, text); OR within
+  // each set. filterActive gates the fleet-count segment below — cheap to
+  // compute, expensive to read wrong (a "0 of 0" printed when nothing is
+  // filtered would understate the fleet, not describe it).
+  const filterActive = PICK.size > 0 || CONTROL.size > 0 || q !== '';
+  const fleetShown = filterActive ? fleetAll.filter(r => fleetRowMatches(r, PICK, CONTROL, q)).length : 0;
+
+  const filterBits = [];
+  if (PICK.size) filterBits.push(`state: ${[...PICK].join('+')}`);
+  if (CONTROL.size) filterBits.push(`control: ${[...CONTROL].map(p => (controlMeta.get(p) || {}).label || p).join('+')}`);
+  if (q) filterBits.push(`text: "${q}"`);
+
   $('#count').textContent =
     `${rows.length} of ${all.length} shown`
-    + (PICK === 'all' ? '' : ` · filtered to ${PICK}`)
+    + (filterBits.length ? ` · filtered to ${filterBits.join(', ')}` : '')
     + ` · ` + Object.entries(tally).map(([k, v]) => `${v} ${k}`).join(' · ')
-    + ` · ${s.n_orphans} with no worklist line`;
+    + ` · ${s.n_orphans} with no worklist line`
+    + (filterActive ? ` · fleet: ${fleetShown} of ${fleetAll.length} shown` : '');
 
   $('#tbl tbody').innerHTML = rows.length === 0
-    ? '<tr><td colspan="5">No shard matches that filter.</td></tr>'
+    ? '<tr><td colspan="6">No shard matches that filter.</td></tr>'
     : rows.map(r => {
         const tgt = r.target ? ` <span class="vs">/ ${esc(r.target)}</span>` : '';
+        const vsLabel = controlLabel(r.control_ver, r.control);
+        const vsTitle = r.control || '(no control tree recorded)';
         return `<tr onclick="location.href='/shard?id=${encodeURIComponent(r.shard)}'" style="cursor:pointer">
             <td class="mono"><a href="/shard?id=${encodeURIComponent(r.shard)}">${esc(r.shard)}</a></td>
             <td>${stateBadge(r.state)}${hostBadge(r)}</td>
             <td class="mono">${esc(r.rows)}${tgt}<div class="sub-mono">${esc(r.pct)}${r.eta && r.eta !== '-' ? ' · ETA ' + esc(r.eta) : ''}</div></td>
             <td>${resultCell(r)}</td>
+            <td class="mono" style="font-size:12px" title="${esc(vsTitle)}">${esc(vsLabel)}</td>
             <td>${noteCell(r)}</td></tr>`;
       }).join('');
 
-  const fleet = s.remote_fleet || {hosts: []};
   $('#fleet').innerHTML = fleet.hosts.length === 0
     ? '<p class="count">No fleet mirrors on disk.</p>'
     : fleet.hosts.map(h => {
@@ -311,21 +435,39 @@ function render(s) {
             : (r.result && r.result.n_decided > 0
                ? `<span class="sub-mono">n=${esc(r.result.n_decided)} — under 400, no rate (band wider than any effect we chase)</span>`
                : '<span class="vs">—</span>');
+          // composed_from has no column of its own here (the Arms column is
+          // already tight) — surfaced as a title on the Arms cell, plus a
+          // small line under it when it's there, so it's visible without a
+          // hover but doesn't widen the table for the common no-sweep row.
+          const armsText = r.treatment_ver ? esc(labText(r.treatment_ver)) + ' <span class="vs">vs</span> ' + esc(labText(r.control_ver)) : '—';
+          const testsLine = r.composed_from
+            ? `<div class="sub-mono" style="font-size:11px"><strong>tests:</strong> ${composedFromHtml(r.composed_from)}</div>` : '';
           return `<tr onclick="location.href='/shard?id=${encodeURIComponent(r.shard)}'" style="cursor:pointer">
             <td class="mono"><a href="/shard?id=${encodeURIComponent(r.shard)}">${esc(r.shard)}</a></td>
             <td>${stateBadge(r.state)}</td>
             <td class="mono">${r.rows != null ? esc(r.rows) : '—'}${tgt}<div class="sub-mono">${hbAge}${eta}</div></td>
             <td>${res}</td>
-            <td style="font-size:12px">${r.treatment_ver ? esc(labText(r.treatment_ver)) + ' <span class="vs">vs</span> ' + esc(labText(r.control_ver)) : '—'}</td></tr>`;
+            <td style="font-size:12px" title="${esc(r.composed_from || '')}">${armsText}${testsLine}</td></tr>`;
         };
-        const prior = (h.prior || []).length === 0 ? ''
-          : `<details style="margin:6px 0 14px"><summary class="count" style="cursor:pointer">${h.prior.length} artefact(s) from earlier programmes on this box (not in its current worklist)</summary>
+        // The pull-age badge and running/queued counts above stay unfiltered
+        // — the host HEADER is always visible (it's the louder fact when a
+        // pull goes stale), only the row bodies below it are filtered.
+        const rawRows = h.rows || [];
+        const filteredRows = rawRows.filter(r => fleetRowMatches(r, PICK, CONTROL, q));
+        const rowsHtml = rawRows.length === 0
+          ? '<tr><td colspan="5">worklist unreadable</td></tr>'
+          : (filteredRows.length === 0
+             ? '<tr><td colspan="5" class="count">no shard matches the filter</td></tr>'
+             : filteredRows.map(row).join(''));
+        const filteredPrior = (h.prior || []).filter(r => fleetRowMatches(r, PICK, CONTROL, q));
+        const prior = filteredPrior.length === 0 ? ''
+          : `<details style="margin:6px 0 14px"><summary class="count" style="cursor:pointer">${filteredPrior.length} artefact(s) from earlier programmes on this box (not in its current worklist)</summary>
              <div class="scroll"><table><thead><tr><th>Shard</th><th>State</th><th class="mono">Progress</th><th class="mono">Result</th><th>Arms</th></tr></thead>
-             <tbody>${h.prior.map(row).join('')}</tbody></table></div></details>`;
+             <tbody>${filteredPrior.map(row).join('')}</tbody></table></div></details>`;
         return `<h3 class="mono" style="margin:14px 0 6px">${esc(h.host)} ${pull}
             <span class="count">· ${esc(h.n_running)} running · ${esc(h.n_queued)} queued · worklist gen ${esc(h.worklist_generated || '?')}</span></h3>
           <div class="scroll"><table><thead><tr><th>Shard</th><th>State</th><th class="mono">Progress</th><th class="mono">Result</th><th>Arms</th></tr></thead>
-          <tbody>${(h.rows || []).map(row).join('') || '<tr><td colspan="4">worklist unreadable</td></tr>'}</tbody></table></div>${prior}`;
+          <tbody>${rowsHtml}</tbody></table></div>${prior}`;
       }).join('');
 
   const ob = $('#orph tbody');
@@ -344,7 +486,20 @@ function render(s) {
 $('#chips').addEventListener('click', e => {
   const b = e.target.closest('[data-pick]');
   if (!b) return;
-  PICK = b.dataset.pick;
+  const k = b.dataset.pick;
+  if (k === 'all') PICK.clear();
+  else if (PICK.has(k)) PICK.delete(k);
+  else PICK.add(k);
+  if (LAST) render(LAST);
+});
+
+$('#controlChips').addEventListener('click', e => {
+  const b = e.target.closest('[data-control]');
+  if (!b) return;
+  const k = b.dataset.control;
+  if (k === 'all') CONTROL.clear();
+  else if (CONTROL.has(k)) CONTROL.delete(k);
+  else CONTROL.add(k);
   if (LAST) render(LAST);
 });
 
