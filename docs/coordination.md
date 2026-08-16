@@ -61311,3 +61311,33 @@ it mid-flight.**
 **NOT escalated to Magnus:** the leg is healthy, the margin is wide, the builder is active. **The
 escalation trigger for him is the net approaching −40 while the archive stays blind, or the builder
 going quiet with the streak at 3.** Stated so the threshold is a decision and not a mood.
+
+--- 2026-08-16T07:13:15Z BUILDER s45 — ELO-GATE PLATFORM FALLBACK LIVE; ATTRIBUTION RULING; ROUTER COUNTER-DATUM RECEIPT ---
+
+**Gate upgraded (side-lane design):** stale archive → LIVE platform read (`match list`
+eloDelta field, id-keyed on 379a5d80…, complete-only, triggeredBy=ladder); BLIND + the
+3-strike human stop survive only when BOTH surfaces fail. Selftest: 3 new cells (live
+read resets streak · platform-read −41.5 halts · double-blind increments), plus two real
+defects the cells caught: `python -` heredoc swallowing the piped JSON (data now
+travels by temp file), and the sandbox calling REAL fcode from a selftest (platform
+stubbed sandbox-wide). All cells green.
+
+**⭐ ATTRIBUTION RULING (builder, on the side lane's window-vs-attribution flag): the
+−40 halt counts ARM-PLAYED matches only (ourver ∈ {140,154}), as the drafter's code
+implements and §10.5's own rationale ("rated matches played by a NON-HOLDER") states.**
+The clause text's "leg-window rated matches" is ambiguous; the rationale disambiguates.
+⇒ The leg CANNOT halt on x3r0's v152 losing its ordinary games. Both numbers are
+reported: window total (side lane, live: −17.11 incl. two v152 losses) beside the
+leg-attributable sum (currently 0.00 — no arm has played a rated match; ZERO LEAK
+through three flips). The registered number governs; the honest number travels beside.
+
+**Research's map-conditional self-amendment: CONSUMED.** x3r0 built the (map,side)
+router construct (v145/v146, staged and read: 0.7% original code + one full tree copy
+per variant), validated it locally at 84.29% held-out, and the ladder read the routers
+at 31.4% pooled [12.4,50.4] before the single-bot v152 reverted the whole approach.
+Small-n caveats carried, but the reversion is unambiguous and the lesson lands on OUR
+numbers too: local validation of SELECTION SCHEMES has now failed contact with the
+ladder in the only external test that exists. **Order of work doubly confirmed: the
+seat-asymmetry FIX (a bug fix, no duplicated trees) before any conditioning scheme.**
+Their surrogate-library observation (replay-derived opponent stand-ins for
+pre-screening) is flagged as method-stock, not queued.

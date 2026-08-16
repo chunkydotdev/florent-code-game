@@ -154,6 +154,17 @@ STATE_FILE=${STATE_FILE:-scratchpad/fieldcal_state.tsv}
 HALT_FILE=${HALT_FILE:-scratchpad/FIELDCAL_HALT}
 LOG_FILE=${LOG_FILE:-scratchpad/fieldcal_scheduler.log}
 STALE_MIN=${STALE_MIN:-40}             # ~2 pairing cadences; absolute-age BLIND bar
+# PLATFORM FALLBACK for the elo gate (side-lane design, 2026-08-16 07:0xZ): the
+# archive is a CACHE of the platform, and its HEALTHY lag (30-min archiver cycle
+# + match completion) routinely exceeds STALE_MIN — so a stale cache falls back
+# to a LIVE platform read instead of going blind. BLIND (and the 3-strike human
+# stop) survives only when BOTH surfaces fail. Same population, same per-match
+# semantics (arm-played ladder matches since clock2); the wire's own
+# eloDelta{A,B} field is read directly (authoritative, 677/677 agreement per
+# CLAUDE.md) — never reconstructed; sides keyed on teamId, NEVER on team name
+# (names change and truncate; two id-vs-name incidents today alone).
+OUR_TEAM_ID=${OUR_TEAM_ID:-379a5d80-9921-4c9e-949b-f9b1dcba16be}  # OpenSverige, live `fcode team search` 2026-08-16T06:5xZ
+PLATFORM_LIST_CMD=${PLATFORM_LIST_CMD:-.venv/bin/fcode match list --mine --type ladder --json --limit 60}
 NOW_OVERRIDE=${NOW_OVERRIDE:-}         # ISO8601Z; testing only
 
 # Mutable leg state (populated by load_state).
@@ -484,11 +495,80 @@ PY
     esac
   done
   if [[ "$blind" == "1" ]]; then
+    # Archive stale -> LIVE PLATFORM READ before any blindness is declared.
+    # ⛔ Data goes via a TEMP FILE, not a pipe: `python -` takes its SCRIPT from
+    # stdin (the heredoc), so piping the JSON in as well silently hands the
+    # parser an empty stream — found by the selftest's g4 cell, which is the
+    # reason fixture-driven cells exist.
+    local pline _pf_json="${SCRATCH_DIR}/.fieldcal_platform_$$.json"
+    ${=PLATFORM_LIST_CMD} > "$_pf_json" 2>/dev/null
+    pline=$("$PYTHON_BIN" - "$_pf_json" "$CLOCK2" "$OUR_TEAM_ID" "$versions_csv" <<'PY'
+import json, sys
+from datetime import datetime
+json_path, clock2, our_id, versions_csv = sys.argv[1:5]
+versions = set(v.strip() for v in versions_csv.split(","))
+def p(s):
+    s = s.strip()
+    if s.endswith("Z"):
+        s = s[:-1] + "+00:00"
+    return datetime.fromisoformat(s)
+try:
+    with open(json_path) as fh:
+        d = json.load(fh)
+except Exception:
+    print("PFALL ok=0 reason=UNPARSEABLE"); raise SystemExit(0)
+ms = d if isinstance(d, list) else d.get("matches", d.get("data", []))
+if not isinstance(ms, list) or not ms:
+    print("PFALL ok=0 reason=EMPTY_LIST"); raise SystemExit(0)
+since = p(clock2)
+tot = 0.0; n = 0; ninc = 0
+for m in ms:
+    if m.get("triggeredBy") != "ladder":
+        continue
+    ca = m.get("createdAt") or ""
+    try:
+        if p(ca) < since:
+            continue
+    except Exception:
+        continue
+    if m.get("status") != "complete":
+        ninc += 1; continue
+    if m.get("teamAId") == our_id:
+        side = "A"
+    elif m.get("teamBId") == our_id:
+        side = "B"
+    else:
+        continue
+    if str(m.get(f"team{side}Version", "")).strip() not in versions:
+        continue
+    dlt = m.get(f"eloDelta{side}")
+    if dlt is None:
+        ninc += 1; continue
+    tot += float(dlt); n += 1
+print(f"PFALL ok=1 sum={tot:.2f} n={n} n_incomplete={ninc}")
+PY
+)
+    rm -f "$_pf_json"
+    say "  $pline"
+    if [[ "$pline" == *"ok=1"* ]]; then
+      local psum=0
+      for tok in ${(s: :)pline}; do case $tok in sum=*) psum=${tok#sum=} ;; esac; done
+      BLIND_STREAK=0
+      persist_state
+      say "  ELO GATE: archive stale (age=${age}min) -> LIVE PLATFORM READ sum=${psum} (source=platform eloDelta, id-keyed, complete-only) — verdict from the authority, not the cache."
+      if awk -v s="$psum" 'BEGIN{exit !(s<=-40)}'; then
+        say "  *** -40 ELO HALT (platform read): cumulative net = ${psum} (<= -40)."
+        : > "$HALT_FILE"
+        say "  HALT file created: $HALT_FILE"
+        return 1
+      fi
+      return 0
+    fi
     BLIND_STREAK=$(( ${BLIND_STREAK:-0} + 1 ))
-    say "  ELO GATE: BLIND (age=${age}min > ${STALE_MIN}min, reason=$reason) — refusing to compute a verdict from stale data. streak=${BLIND_STREAK}/3"
+    say "  ELO GATE: BLIND (age=${age}min > ${STALE_MIN}min, archive reason=$reason, platform fallback failed: ${pline}) — BOTH surfaces unreadable. streak=${BLIND_STREAK}/3"
     persist_state
     if (( BLIND_STREAK >= 3 )); then
-      say "  *** 3 CONSECUTIVE BLIND ELO READS. STOPPING FOR A HUMAN. ***"
+      say "  *** 3 CONSECUTIVE DOUBLE-BLIND ELO READS. STOPPING FOR A HUMAN. ***"
       return 2
     fi
     return 0
@@ -707,6 +787,11 @@ STUB
   # not_adgato IS invoked and gains an accept.
   LOG_FILE="$TDIR/sched.log"; HALT_FILE="$TDIR/HALT_absent"
   RUNNER_CMD="$stub_runner"; BUDGET_CMD="$stub_budget_always_free"
+  # ⛔ NO NETWORK IN A SELFTEST: the elo gate's platform fallback would call the
+  # real fcode on every stale-archive cell (it did, and reset the streak cell
+  # with a LIVE read). Default the sandbox to a FAILING platform so blind-path
+  # cells exercise blindness; g4/g5 override per-cell with JSON fixtures.
+  PLATFORM_LIST_CMD="echo selftest-no-network"
   FIELDCAL_TEST_NOSLEEP=1
   load_state_fixture(){ ROUND_NUM=0; CLOCK2=""; BLIND_STREAK=0; typeset -gA COUNTS; local a l; for a in A B; do for l in $CELL_ORDER; do COUNTS[$a,$l]=0; done; done; }
   load_state_fixture
@@ -938,6 +1023,68 @@ STUB
   else
     fail "elo gate: streak did not reset after a clear read (streak=$BLIND_STREAK)"
   fi
+
+  # --- (g4-g6) PLATFORM FALLBACK cells (side-lane design, 07:1xZ). Stale
+  # archive must fall back to a live platform read; BLIND survives only when
+  # BOTH surfaces fail. The g4 fixture drives every filter: version (152
+  # excluded — the halt is ARM-ATTRIBUTED, the window total is not the
+  # registered quantity), status, triggeredBy, and the clock2 boundary.
+  local PJ="$TDIR/plat.json"
+  cat > "$PJ" <<'PJEOF'
+[
+ {"triggeredBy":"ladder","status":"complete","createdAt":"2026-08-16T11:30:00Z","teamAId":"OURID","teamBId":"x","teamAVersion":"140","eloDeltaA":-20.0,"eloDeltaB":20.0},
+ {"triggeredBy":"ladder","status":"complete","createdAt":"2026-08-16T11:35:00Z","teamAId":"x","teamBId":"OURID","teamBVersion":"152","eloDeltaB":-30.0,"eloDeltaA":30.0},
+ {"triggeredBy":"ladder","status":"created","createdAt":"2026-08-16T11:40:00Z","teamAId":"OURID","teamBId":"x","teamAVersion":"154"},
+ {"triggeredBy":"unrated","status":"complete","createdAt":"2026-08-16T11:41:00Z","teamAId":"OURID","teamBId":"x","teamAVersion":"140","eloDeltaA":-99.0},
+ {"triggeredBy":"ladder","status":"complete","createdAt":"2026-08-16T09:00:00Z","teamAId":"OURID","teamBId":"x","teamAVersion":"140","eloDeltaA":-99.0},
+ {"triggeredBy":"ladder","status":"complete","createdAt":"2026-08-16T11:50:00Z","teamAId":"x","teamBId":"OURID","teamBVersion":"154","eloDeltaB":5.0,"eloDeltaA":-5.0}
+]
+PJEOF
+  sed -i '' "s/OURID/$OUR_TEAM_ID/g" "$PJ" 2>/dev/null || sed -i "s/OURID/$OUR_TEAM_ID/g" "$PJ"
+  # g4: stale archive + healthy platform -> live verdict sum=-15 (only rows 1
+  # and 6 count: -20 +5; the v152, incomplete, unrated and pre-clock2 rows are
+  # all excluded), streak resets, no halt.
+  CLOCK2="2026-08-16T10:00:00Z"; NOW_OVERRIDE="$now_iso"; LADDER_TSV="$TDIR/ladder_stale76.tsv"
+  BLIND_STREAK=2; HALT_FILE="$TDIR/HALT_g4"; STATE_FILE="$TDIR/state_g4"; PLATFORM_LIST_CMD="cat $PJ"
+  local outg4 rcg4 stg4
+  outg4=$(elo_round_gate); rcg4=$?
+  # ⛔ the gate ran in a $() SUBSHELL, so the shell var is unchanged — the
+  # PERSISTED state file is the honest surface for the streak assert.
+  stg4=$(awk -F'\t' '$1=="BLIND_STREAK"{print $2}' "$STATE_FILE" 2>/dev/null)
+  if [[ $rcg4 -eq 0 && ! -f "$HALT_FILE" && "$stg4" == "0" ]] \
+     && print -r -- "$outg4" | grep -q "LIVE PLATFORM READ" \
+     && print -r -- "$outg4" | grep -q "sum=-15.00"; then
+    ok "elo gate g4: stale archive -> LIVE platform read sum=-15.00 (v152/incomplete/unrated/pre-clock2 all excluded), persisted streak reset, no halt"
+  else
+    fail "elo gate g4: expected live read sum=-15.00 rc=0 persisted-streak=0, got rc=$rcg4 streak=$stg4 out=$(print -r -- $outg4 | tail -1)"
+  fi
+  # g5: stale archive + platform showing arm-attributed -41.5 -> HALT.
+  cat > "$TDIR/plat41.json" <<PJ2
+[
+ {"triggeredBy":"ladder","status":"complete","createdAt":"2026-08-16T11:30:00Z","teamAId":"$OUR_TEAM_ID","teamBId":"x","teamAVersion":"140","eloDeltaA":-25.0},
+ {"triggeredBy":"ladder","status":"complete","createdAt":"2026-08-16T11:40:00Z","teamAId":"$OUR_TEAM_ID","teamBId":"x","teamAVersion":"154","eloDeltaA":-16.5}
+]
+PJ2
+  BLIND_STREAK=0; HALT_FILE="$TDIR/HALT_g5"; PLATFORM_LIST_CMD="cat $TDIR/plat41.json"
+  local outg5 rcg5
+  outg5=$(elo_round_gate); rcg5=$?
+  if [[ $rcg5 -eq 1 && -f "$HALT_FILE" ]] && print -r -- "$outg5" | grep -q -- "-40 ELO HALT (platform read)"; then
+    ok "elo gate g5: stale archive + platform arm-net -41.5 -> HALT created via the fallback"
+  else
+    fail "elo gate g5: expected platform-read HALT rc=1, got rc=$rcg5 halt=$([[ -f $TDIR/HALT_g5 ]] && echo yes || echo no)"
+  fi
+  # g6: BOTH surfaces fail -> double-blind, streak increments.
+  BLIND_STREAK=0; HALT_FILE="$TDIR/HALT_g6"; STATE_FILE="$TDIR/state_g6"; PLATFORM_LIST_CMD="echo not-json"
+  local outg6 rcg6 stg6
+  outg6=$(elo_round_gate); rcg6=$?
+  stg6=$(awk -F'\t' '$1=="BLIND_STREAK"{print $2}' "$STATE_FILE" 2>/dev/null)
+  if [[ $rcg6 -eq 0 && "$stg6" == "1" && ! -f "$HALT_FILE" ]] \
+     && print -r -- "$outg6" | grep -q "BOTH surfaces unreadable"; then
+    ok "elo gate g6: archive stale AND platform unreadable -> double-blind, persisted streak=1, no verdict"
+  else
+    fail "elo gate g6: expected double-blind persisted-streak=1 rc=0, got rc=$rcg6 streak=$stg6"
+  fi
+  PLATFORM_LIST_CMD=".venv/bin/fcode match list --mine --type ladder --json --limit 60"
 
   print ""
   if (( bad )); then
