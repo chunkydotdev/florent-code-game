@@ -322,8 +322,19 @@ def measure(path):
 
 
 def main():
-    poplist = sys.argv[1]
-    out = sys.argv[2]
+    argv = sys.argv[1:]
+    if not argv or argv[0] in ("-h", "--help"):
+        # A probe must never be an action (test_instruments help contract):
+        # without this, --help fell through to sys.argv indexing and crashed
+        # with exit 1 (caught 2026-08-16, same class as bank_under_harassment).
+        print(__doc__)
+        raise SystemExit(0 if argv else 2)
+    if len(argv) < 2:
+        raise SystemExit("usage: x3r0_measure.py POPLIST.tsv OUT.tsv")
+    if argv[0].startswith("-"):
+        raise SystemExit(f"first argument must be the poplist path, got flag-like {argv[0]!r}")
+    poplist = argv[0]
+    out = argv[1]
     rows = list(csv.DictReader(open(poplist), delimiter="\t"))
     with open(out, "w") as fh:
         fh.write("\t".join(COLS) + "\n")

@@ -18,7 +18,9 @@ THE RULE (Magnus+x3r0 2026-08-08, threshold recalibrated 2026-08-09 —
 ship-gate.md amendment 2 changes with `SWAP_THRESHOLD` or not at all):
 
   * the window prices ONLY the current holder's matches — tape rows are
-    filtered by the live version tag, so a holder change resets it naturally;
+    filtered by the live version tag, so a NEW holder resets it naturally
+    (a RESTORED holder does not: its rows re-merge across the gap, which is
+    why evaluate() refuses a base row more than WINDOW matches back);
   * it ARMS only after the holder's 8th match;
   * while armed, `net5 <= -21` FREES the slot. It never forces a swap.
 
@@ -95,9 +97,12 @@ WINDOW = 5
 # win. For a rule whose entire job is attributing performance to a holder, that
 # is the fault in its own definition.
 #
-# BOUNDED, WHICH IS WHY IT HAS NOT BITTEN: at most one sampling interval of
-# matches (~1 match at the observed ~10-minute ladder cadence) is misattributed,
-# and ARM_AFTER=8 means a single foreign match cannot arm anything on its own.
+# BOUNDED FOR THE POLLING-GAP SOURCE ONLY: at most one sampling interval of
+# matches (~1 match at the observed ~10-minute ladder cadence) is misattributed.
+# A DISPLACEMENT is a second source with no such bound — the 2026-08-16 incident
+# misattributed THREE matches — which is what the widened-window refusal in
+# evaluate() exists to contain. ARM_AFTER=8 means a single foreign match cannot
+# arm anything on its own.
 # It can, however, contaminate `net5` (WINDOW=5) for the first five matches of a
 # new holder — precisely the window in which a fresh ship is being judged.
 #
@@ -147,9 +152,20 @@ def evaluate(tape: Path | str = TAPE, version: str | None = None) -> SlotState |
     # base = the most recent row at least WINDOW matches back. Rows are appended
     # in time order, so the last qualifying row is the newest one.
     base5 = None
+    base_m = None
     for _, r, m in rows:
         if m <= matches - WINDOW:
-            base5 = r
+            base5, base_m = r, m
+    # ⛔ REFUSE A WIDENED WINDOW (2026-08-16, side-lane flag f5d9b0c6). A RESTORED
+    # holder's rows re-merge across a foreign hole (the 12:14:40Z displacement
+    # left 3 matches tagged v152 inside v153's run), so the base row can sit
+    # MORE than WINDOW matches back and net5 silently evaluates over WINDOW+hole
+    # matches — while SWAP_THRESHOLD is calibrated to WINDOW (-21 is -1 sd of a
+    # 5-match sum, -0.80 sd of an 8-match one; neutral-holder false-fire 15.5%
+    # -> 21.1%). net5=None is the path the rule already takes before the window
+    # fills; ship_watch renders it n/a. Fails safe, not loud.
+    if base_m is not None and matches - base_m > WINDOW:
+        base5 = None
     net5 = None if base5 is None else rating - base5
     armed = (matches - holder_start) >= ARM_AFTER
     slot_free = bool(armed and net5 is not None and net5 <= SWAP_THRESHOLD)

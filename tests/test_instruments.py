@@ -365,6 +365,42 @@ class TestSlotRuleAndTheAlarmThatReportsIt(unittest.TestCase):
         self.assertTrue(ship, "ship_watch raised NO alert on a -40 window")
         self.assertTrue(elo, "elo_logger announced NO slot-free on a -40 window")
 
+    def test_a_restored_holder_refuses_the_widened_window(self):
+        """The 2026-08-16 displacement class: a foreign hole inside a holder's
+        run re-merges in holder_rows(), so base5 lands PAST the hole and the
+        rule evaluates net5 over WINDOW+hole matches while carrying the
+        WINDOW-calibrated threshold (-21 is -1 sd at 5 matches, -0.80 sd at 8).
+        The rule must REFUSE (net5=None, the same path as an unfilled window),
+        and the contiguous complement must STILL fire — both directions on
+        matched series, or this test is vacuous."""
+        import tempfile
+        fh = tempfile.NamedTemporaryFile("w", suffix=".tsv", delete=False)
+        fh.write(self.HDR)
+        holed = [("v953", 1500, 1100), ("v953", 1500, 1101), ("v953", 1500, 1102),
+                 ("v952", 1495, 1103), ("v952", 1495, 1104), ("v952", 1495, 1105),
+                 ("v953", 1490, 1106), ("v953", 1480, 1107), ("v953", 1470, 1108)]
+        for i, (tag, r, m) in enumerate(holed):
+            fh.write(f"2026-01-01T00:{i:02d}\t{r}\t{m}\t{tag}\trank #1\n")
+        fh.close()
+        st = self.slot_rule.evaluate(fh.name)
+        self.assertEqual(st.version, "v953")
+        self.assertTrue(st.armed, "k spans the hole, so the holder IS armed here")
+        self.assertIsNone(st.net5,
+                          "base row is 6 matches back (past a 3-match foreign "
+                          "hole); a WINDOW=5 rule must refuse, not widen")
+        self.assertFalse(st.slot_free, "slot freed over a widened window")
+        _, _, _, _, alert = self.ship_watch.assess(fh.name)
+        self.assertIsNone(alert, "ship_watch alerted on a refused window")
+
+        # The complement: same drop, contiguous rows — the refusal must not
+        # have eaten the rule's ability to fire.
+        rows = [(1500, 1100 + i) for i in range(4)] + \
+               [(1500 - 10 * (i + 1), 1104 + i) for i in range(5)]  # net5 -50, span exactly 5
+        st2, ship2, _ = self._both(rows, tag="v953")
+        self.assertEqual(st2.net5, -50)
+        self.assertTrue(st2.slot_free, "contiguous bleeding holder must still fire")
+        self.assertTrue(ship2, "ship_watch must still alert on the contiguous case")
+
     def test_a_healthy_holder_alarms_in_NEITHER(self):
         rows = [(1500 + 3 * i, 100 + i) for i in range(15)]
         st, ship, elo = self._both(rows)
@@ -574,6 +610,13 @@ class TestHelpContract(unittest.TestCase):
         "keeper.log", "keeper.out", "keeper_state.json", "breakin_watch.log",
         "elo_history.tsv", "elo_logger.log", "match_watcher.log",
         "opp_watcher.log", "replay_archiver.log",
+        # Corpus tables the KEEPER rebuilds each sync cycle (~30 min, so the
+        # 6s churn window cannot learn them). Observed 2026-08-16:
+        # corpus/join.tsv rewritten mid-suite and attributed to camp_detect/
+        # ceiling/choke_census — tools that never open it. join.tsv's suffix
+        # also covers meta_join.tsv, which is keeper-owned too.
+        "corpus/join.tsv", "corpus/ladder_games.tsv",
+        "corpus/league_matches.tsv", "corpus/manifest.json",
     )
     # Session-NUMBERED daemon logs a static filename list cannot cover: the
     # side lane's drift watch writes `drift_watch_s<NN>.log` on a ~60s cadence,

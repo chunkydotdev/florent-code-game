@@ -531,14 +531,20 @@ def report(traj, vers, out=sys.stdout):
 
 
 def main(argv):
-    if not argv:
-        raise SystemExit(__doc__)
+    if not argv or argv[0] in ("-h", "--help"):
+        # A probe must never be an action: --help used to fall through to
+        # `out_path = argv[0]` and run the full decode into a file named
+        # "--help" (caught by test_instruments 2026-08-16).
+        print(__doc__)
+        raise SystemExit(0 if argv else 2)
     if argv[0] == "--report":
         traj = argv[1]
         vers = set(argv[2].split(",")) if len(argv) > 2 else {"140", "152"}
         report(traj, vers)
         return
     out_path = argv[0]
+    if out_path.startswith("-"):
+        raise SystemExit(f"first argument must be the output path, got flag-like {out_path!r}")
     ver = None
     step = 10
     max_round = 400
