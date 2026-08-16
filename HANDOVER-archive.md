@@ -1,3 +1,120 @@
+# ===== s45 TOP BLOCK (archived at s46 wrap, 2026-08-16) =====
+
+# ⭐⭐⭐ FIRST: `.venv/bin/python tools/now.py` — the holder comes from fcode status,
+# NEVER from a poller or from any line below (this block is a CACHE; it has gone
+# stale inside eight minutes before). Then coordination.md tail since the last
+# wrap marker. Then the three boot checks.
+
+# ===== s45 WRAP (builder, 2026-08-16T07:39:41Z; Magnus: "then we wrap up") =====
+
+## LIVE (read at wrap; RE-READ before acting)
+* HOLDER: **v152 "Loki turbo4 (ammo/heal fix)" — x3r0's, rating ~1787, #19 Emerald.**
+  Per standing rule it stays; displacement is governed by X3R0_SLOT_RULE (below).
+* CONTROL: **bots/_v223sealrepair (v140)** — Magnus re-affirmed TODAY, verbatim: "lets
+  keep benchmark toward v140". Every queued row scores against it. main.py md5
+  91d7a4c8dab777a25c83ce2bc470e02c.
+* **⭐ AIMING POINT (Magnus, s46 2026-08-16T08:2xZ, verbatim): "Honestly, I'm quite confident
+  we will need to score 70% winrate against v140 to have any shot at the top at all, 60% is
+  just a step in the right direction."** And v140 stays the benchmark permanently ("If we
+  move our benchmark bot all the time all our experiments end up unusable"). Consequence:
+  weight mechanism-level ceilings over +1-2pp tuning — the composition operator paid +1.3pp
+  once and went flat (s46 audit).
+* **SLOT PIPELINE (all three rulings TODAY, encoded in PROGRAMME.md):** (1) an arm must
+  MEASURE >= 60.0% vs v140 with +-2pp half-width, 60 mid-span (precision reading —
+  58-59.9 does NOT qualify); (2) then head-to-head vs the CURRENT holder's staged
+  artifact; (3) beats it => switch. ⛔ **THE 53.50 "shipping baseline" IS RETIRED** (it assumed
+  τ=0, falsified at Q=787 on 58 df — research s46, side-lane re-derived). The three
+  numbers, kept separate: **55.24 = best MEASURED screen read — the bar is denominated
+  in THIS (screen-measured gap to 60: +4.76pp)**; **~54.9 = the leader's
+  replication-expected value (EB, τ=2.49)** — answers "what would it measure again",
+  never "does it clear the bar"; 53.50 = the retired τ=0 figure. ⛔ Never feed a
+  shrunken posterior to a bar that has a precision term. Load-bearing counts no
+  estimator can move: **0 of 59 arms ever MEASURED ≥60; 0 ever ≥58.**
+* DEFENCE_ADMISSION_BAR re-priced to the r300 boundary (Magnus) and scored on **ITT
+  RMST₃₀₀ non-regression** (four-case control matrix in PROGRAMME.md). Kill-round
+  narrative note: the "55-class kills +17-43 later" story was a CONDITIONING ARTEFACT —
+  on RMST the leaders are FLAT and **bodyaware/AWRLNCH are FASTER (−6.84/−6.43 rounds,
+  paired CIs)**. ⛔ The PAIRED interval form does NOT transfer to live legs (separate
+  matches there: two-sample + own measured DEFF).
+
+## ⭐ LEG-fieldcal IS LIVE ACROSS THIS SEAM (prereg LOCKED 43d9035f, cert
+## CERT-LEG-fieldcal-2026-08-16.md, clock2 2026-08-16T06:25:40.381Z, gap +26m39s)
+* **WHAT: BODYAWR (v154 'Loki rc10.1') vs v140, 10 PINNED opponents, sign-test primary,
+  600 games/arm, TWO-SESSION by registration. A successor reading a half-filled tape
+  without this paragraph would read a stopped leg — it is RUNNING.**
+* **STATE = scratchpad/fieldcal_state.tsv** (round, per-(arm,cell) accepts, clock2,
+  blind streak). At wrap: ~25 accepts (A: Juusto 5, not_adgato 5, Erebus 5; B: Juusto 5
+  + Erebus in flight), ZERO leaks through 5 flips, leg-attributable Elo 0.00.
+* **RUNNER: tools/fieldcal_scheduler.sh — detached to nohup at wrap (survives all
+  sessions).** Self-guarding: per-flip LEAK CHECK (halts on any arm-played rated
+  pairing), Elo tripwire −40 ARM-ATTRIBUTED ONLY (platform fallback when the archive is
+  stale; BLIND never reads clear; 3 double-blind strikes stop for a human), heartbeats
+  every 120s during waits, holder restored inside every invocation.
+  STOP: touch scratchpad/FIELDCAL_HALT (never kill -9 — see unrated_run.sh's trap note).
+  RESUME: zsh tools/fieldcal_scheduler.sh (state-file resume; nohup it).
+* **READOUT IS RESEARCH'S, at the pooling point: each arm >=12 accepts on >=8 cells.**
+  Impotence clause is BAR-LEVEL: a pooled null is EXPECTED and must never be read as
+  refuting the local finding. Report the window-total Elo BESIDE the arm-attributed sum.
+
+## RUNNING / QUEUED (fleet)
+* **local:** eco batch (Magnus's directive) ECOSIPH/ECOSIPC/ECOPAVE/ECOSCK4/ECOSCK6
+  (~n=60-110 each) + G401g5 (52.85, 87%) + G414/G415. Then queued: **SEATSPAWN,
+  SEATFULL** (the seat-bug rungs), **RUSH72** (#72 reopen). auto_gate --apply loops.
+* **ws2 (6 cores):** ECO REPLICATIONS (ECOSIPHR at ~3.8k already, then SIPCR/PAVER/
+  SCK4R/SCK6R). REPORT SEPARATELY, NEVER POOL cross-host.
+* **ws1 (10 cores, REVIVED today):** G406-G413 combos (moved from local, no dupes).
+  Its old STALE "RUNNING" rows (CATRND1, F200SIEGELA, F254COLLARS, LNCHERLY) are
+  PRE-SHUTDOWN FOSSILS — dead, partials already read where usable.
+* **⛔ FIVE LOCAL SHARDS DIED 06:30-06:53 under the load spike:** G402/G403/G404/G405
+  and **V140VS152 — which SELF-ABORTED CORRECTLY at 4/234 NOWINNER (fixture-broken
+  guard)**. v152 is a CPU-tuned tree; wall-clock TLE under contention corrupts.
+  **SUCCESSOR TASK 1: re-queue the V140VS152 calibration ON ws2** (proper allocation)
+  after the eco replications — it is LOAD-BEARING for the 60±2 procedure (gate-1-vs-
+  gate-2 distance) and research holds its readout. Re-add G402-405 locally when load
+  permits (rows kept; new ids, fresh seeds, one-way rule).
+
+## THE SEAT SEAM (⛔ re-labelled s46: a CORRECTNESS lead, NOT a path to 60 — research's own
+## ceiling estimate is board 55.24 → ~58.4 at best, coordination tail s45; the s46 audit
+## flagged this header as contradicting its source doc)
++6.28pp seat effect on byte-identical self-play (z=16.24) is OUR CODE; the spawn-ring
+hash (main.py:289, absolute coords) carries +4.84pp of it. Fix rungs queued (SEATSPAWN
+= spawn only; SEATFULL = all 6 fixable sites, 36/36 equivariance checks, one toggle).
+Full site list + fix sketches: docs/research/EQUIVARIANCE-SWEEP-2026-08-16.md.
+⛔ Map/seat-CONDITIONAL selection is a CLOSED ROAD (CV ceiling ~59 + x3r0's own router
+construct read 31.4% on the ladder and was reverted — local validation of selection
+schemes has failed its only external test). The FIX, not a scheme.
+
+## OWED / OPEN (priority order)
+1. Eco batch readouts (local + ws2 replications) — Magnus's stated priority.
+2. V140VS152 re-queue on ws2 (task 1 above).
+3. Seat rung readouts vs research's +6.28 baseline (their read).
+4. LEG-fieldcal pooling readout at the pooling point (research's).
+5. RUSH72 readout (#72 reopen — mechanism metrics named in its BARS row).
+6. BODYAWR G1/G2/G3 delivery-gate scoring is STILL OWED (vintage-A falsifier governs
+   it, reads −2 rounds = does NOT fire; the arrival premise behind the gate was
+   corrected by research — score it against its OWN locked doc, not the new bar).
+7. prereg_check --fire still runs on zero firing paths (inherited, unchanged).
+8. stack.py ancestor trap (inherited, unchanged). AGENTS.md regeneration mechanism
+   unknown (stale vintage-A text at :400-402).
+
+## WAKE PATH
+**Survives this session:** 4 watchers + keeper + watchdog(launchd) + auto_gate --apply
++ gate_watch + dashboard (8787, RESTARTED today — /replays live) + corefill + both
+remote workers + **the detached fieldcal scheduler**. **Dies with s45:** my log Monitor
+on the scheduler (the log persists; nothing ALERTS a human on the leg — it self-halts
+safe instead). Side lane's monitors die with THEIR session — their flip-watching was
+never load-bearing after the leak check landed. **Nothing wakes a human anywhere.**
+
+## NEW TOOLING TODAY (all selftested, all pushed)
+replay viewer: tools/replay_view.py + dashboard /replays (Magnus's ask — click-to-mark,
+round scrubber). fieldcal_scheduler.sh (the leg driver). gate.py --selftest (13 cells;
+its zero-coverage gap is closed). orchestrate.sh logs <host>. unrated_run.sh UNPINNED_OK
+guard + trap operator-note. queue_check ellipsis on all 5 truncation sites. auto_gate
+fired_on column. ⛔ orchestrate.sh is BASH — zsh invocation breaks push's word-split.
+
+
+
+
 # ===== ARCHIVED AT s36 WRAP (2026-08-13 ~16:4xZ) =====
 
 # LIVE: **v123 = `bots/_v187saltidle_f`** = **"Loki v7"** — shipped 06:06:27Z (s35).
@@ -2326,3 +2443,158 @@ local DEFF 0.98 was measured on PROPORTIONS).
 against an `unresolved ⇒ drop` gate that Magnus then replaced outright, and the trend
 floor's pricing (63.0/37.3/11.9/2.9/0.6% at +1.33/+2/+3/+4/+5pp) was derived here from
 the binomial, not inherited.
+
+
+# ===== ARCHIVED AT s47 WRAP (2026-08-16 ~20:0xZ) =====
+
+# ⭐⭐⭐ FIRST: `.venv/bin/python tools/now.py` — the holder comes from fcode status,
+# NEVER from a poller or from any line below (this block is a CACHE; the holder moved
+# TWICE inside 100 minutes today — v152→v153→v152→v153 — and two lanes' closing
+# blocks were each briefly wrong about it). Then coordination.md tail since the last
+# wrap marker. Then the three boot checks.
+
+# ===== s46 WRAP (builder, 2026-08-16 ~14:1xZ; Magnus: "wrap up as soon as you have a good spot") =====
+
+## LIVE (read at wrap; RE-READ before acting)
+* HOLDER at wrap: **v153 "Loki turbo6 (turbo4+CB aiming)" — x3r0's, activated ~13:33Z**
+  (his second activation of it today; see INCIDENT below). Rating ~1767, #20. He is
+  ACTIVELY ITERATING (3 uploads in 24h) — assume the holder moves without notice.
+* CONTROL: **bots/_v223sealrepair (v140) — UNCHANGED AND PERMANENT** (Magnus, twice
+  today, verbatim: "If we move our benchmark bot all the time all our experiments end
+  up unusable"). Every row scores against it.
+* **⭐ AIMING POINT (Magnus, verbatim): "we will need to score 70% winrate against v140
+  to have any shot at the top at all, 60% is just a step in the right direction."**
+  Mechanism-level planks over tuning; the composition operator pays +1.3pp once and
+  goes flat (s46 audit + reachability doc).
+* **SLOT PIPELINE, NOW CALIBRATED: v152 MEASURED 57.02% [55.70, 58.34] vs v140
+  (n=5,400, uncontended ws2, 0 corruption).** So the 60-bar MEANS "beat what is live
+  by ~3pp". ⛔ Gate-1→gate-2 transitivity is UNVALIDATED (QUEUE #65: 3 concordant,
+  1 NOT, p=0.625) — the head-to-head second gate is load-bearing, never redundant.
+  ⛔ The old "53.50 shipping baseline" is RETIRED (τ=0 falsified): best MEASURED arm
+  55.24; ~54.9 is its replication-expectation; 0 of 59 arms ever measured ≥58, and
+  0 ever measured above the holder.
+
+## ⛔ INCIDENT + STANDING RULE (12:14:37Z): OUR AUTOMATION UN-SHIPPED A TEAMMATE
+x3r0 activated his fresh v153 mid-leg-cycle; unrated_run's holder guard correctly
+ABORTED — then restore() activated v152 OVER his ship (~75 min displaced; he
+re-activated by hand; Magnus smoothed it: "no biggie"). **FIXED: restore() now
+carries an OWNERSHIP CHECK — a rollback only ever undoes a displacement WE made;
+a foreign holder halts us with a HOLDER_ALERT line, never a displacement.** Third
+guard today that failed on the assumption we are the only actor (push guard's
+drain case, exemption citation, this). **LEG-fieldcal is STOPPED at ROUND 18
+pending Magnus×x3r0 coordination** — with the fix a collision costs only our
+cycle, but each cycle takes his bot off the ladder ~20 min, so the hold is
+courtesy while he iterates. Restart needs: Magnus's word + research's amendment
+(they retain abstention-blindness; certified structural-blindness rules apply).
+State: scratchpad/fieldcal_state.tsv (~45-50 accepts; ledger surfaces are the
+data of record). ⚠ Scheduler restart also picks up the in-code fixes staged
+since 08:50 (halt-path stop notes, seam-line AMEND1 field).
+
+## VERDICTS TYPED TODAY (results.tsv rows; scopes matter)
+BODYAWR **KEEP** 53.70 [52.76,54.64] n=10,801 (local; CI-lo excludes its 51.93 bar;
+first solo to clear a REGISTERED bar; delivery gate G1 2.2%/1.5% vs <11, G2 12.6%
+vs <=20, G3 clean) · ECOSIPH **REFUTED** 48.83 · ECOSIPC **REFUTED** 49.28 ·
+ECOSCK6 **DISCARDED-AS-NULL** 50.33 (excludes NEITHER 50 nor the bar — not a
+refutation) · [SEATSPAWN + SENTBAN verdicts patched at the boundary — see the
+final wrap lines in coordination.md] · Cancellations (not verdicts, rows kept):
+RENTGUN CATASTROPHE 34.38 (Magnus: "that's how it is!"), SEALTI24 42.80-prefix,
+GUNAX0B, G416-G420 series (combo bar took G417 54.67 + G420 52.15; **G421g2 the
+FIRST COMBO-BAR SURVIVOR at prefix 55.11**, full read auto-resolves), SEATFULL
+(seat differential →0 BY MAKING BOTH SEATS WORSE — equivariance is direction-free),
+RUSH72, ECOPAVER/ECOSCK4R (push-incident casualties, re-running as ECOPAVR2/
+ECOSCK4R2 with fresh ids — old ids are PERMANENTLY SELF-ABORTING on poisoned
+cumulative tapes).
+
+## THE V152 PATH (the day's centerpiece — docs/research/V152-DIFF-INVENTORY-2026-08-16.md)
+**v152/v153 is OUR CHASSIS + x3r0's patch** (not a fork): LOKI-TURBO (navigation
+rewrite — removes the mid-flood BFS truncation behind #44's 87%-of-ceiling tax and
+#63's 3.3× locks) + turbo4 (6 toggled doctrine fixes). Arms BUILT + QUEUED, all vs
+v140: **TURBO4A** (_v427turbo4, turbo4-MINUS-ONE — seat-first omitted, needs
+Family-A caches; the fixture-bias-proof half) · **TBA** (_v428tba, turbo×bodyaware
+hand-merge — the SUPER-ADDITIVITY BET, 860-grid exact-equality harness + 7-mutant
+matrix) · **V426BCS** (bodyaware×catapult×sentban, running) · **SEALPECK**
+(_v429sealpeck, #74, natural-seal probe: 34 pecks landed) · **RENT3B**
+(_v430rent3b, rentgun×3-opener — grim prior after RENTGUN's catastrophe, cheap by
+design). ⛔ **B1 (ammo brake) IS UNATTRIBUTED-BY-DESIGN in every ported arm** (BARS
+rows carry TWO pre-start amendments: the flat idle reading is WITHDRAWN as
+evidence — tap-vs-reservoir; readout requires a T4-brake FIRINGS count first).
+⛔ x3r0's magnitudes are HIS instruments at n=600 (Magnus: "grain of salt") —
+mechanisms verified here, first re-derivation CONTRADICTED his headline claim.
+v153 adds "+CB aiming" ON TOP of v152 — undiffed; a successor diff-mines it the
+same way (the method is proven).
+
+## FIXTURE ECONOMY (all Magnus rulings, encoded + selftested in auto_gate)
+Solos: n=2,700 prospects (full-n by explicit annotation). Combos (stack.py marker):
+**COMBO-BAR@2700 = 55.0 prefix** (true-55 coin flip BY DESIGN; base rates in the
+header; ~44/60 all-neutral cancellations are NOISE not findings). COMBO-BAR-EXEMPT
+= registered token whose prereg citation MUST RESOLVE (broken = louder than none).
+FIRINGS-BEFORE-PRIMARY rule for conditional mechanisms (BARS header). NULLs run to
+completion (G5). ws2 KEEP discipline: bound-don't-correct; null pooled cert
+50.73±1.79 (n=3,000, consistent with zero host term); keeps in the 52-53 band buy
+MORE ARM GAMES never a correction; the 10% correction-cost line is HOUSE
+CONVENTION, chosen not derived.
+
+## RUNNING / QUEUED AT WRAP
+Local (8 slots): V426BCS, IDNULL140 (~4h, the missing a_C — G5-exempt), H601/602/
+604 remnants, G421g2 full read, then **TURBO4A → TBA → SEALPECK → RENT3B** then
+H-series. ws1: G409-G413 queue. ws2: ECOPAVR2 → ECOSCK4R2 → (eco batch complete).
+auto_gate --apply loops own all stops. ⚠ TBA is CPU-tuned lineage: NOWINNER
+spikes under load contention are fixture corruption, not signal.
+
+## WAKE PATHS — SURVIVES vs DIES
+**Survives:** 4 watchers + keeper + auto_gate/gate_watch loops + corefill filler
+(NORMAL QoS since 08:17 — the fleet was at background priority for days before) +
+vps_pull + both remote workers + dashboard (with fleet section, leg-disclosure
+badges, comparison card). **DIES with s46:** the SEATSPAWN/SENTBAN readout waiter
+(if verdicts are not in the tail, type them from the .COMPLETE tapes), the ws2
+monitors of this session, all Monitor-class watches. **The fieldcal scheduler is
+DELIBERATELY DOWN** (see INCIDENT). **Nothing wakes a human anywhere.**
+
+## HAZARDS A SUCCESSOR MUST NOT RE-LEARN
+1. The Juusto cell reads (T−C) ≈ −8pp and WANDERS past the −7.7 falsifier: that
+   number is a HALF-WIDTH AT 600/ARM, not a point threshold. No cell can fire it.
+2. Leg data: COMPUTABLE ≠ CLAIMABLE — 800-game CUT-SHORT floor AND k≥8 cells;
+   research's fieldcal_read.py refuses below both BY DESIGN.
+3. Arm B trails arm A one round STRUCTURALLY — any early leg stop shorts B; the
+   halt paths print this from the next relaunch.
+4. Registered RMST clause is OUR-CORE-KILL, not any-kill — six falsifier widths
+   apart (research's reader flags it).
+5. The side lane's drift watch covers COMMITS ONLY — slot events reach nobody;
+   holder_watch/ship_watch are the platform eyes and today they were consumed by
+   NO lane for 90 minutes. The double holder-move was discovered via a commit
+   message. (Mechanism gap, unrouted — candidate: a holder-change line in the
+   coordination tail from holder_watch itself.)
+6. Worklist file-order bit TWICE: appended arms land behind stale blocks.
+   Insert-at-front or a priority column wants building.
+7. `cmd | tail -1` in && chains discards refusals (the ws2 handoff bug) — and
+   grep -c EXITS 1 ON ZERO MATCHES (the push guard could never pass its safe
+   case until 13:30Z). Both fixed; the classes recur.
+
+## OWED / OPEN (priority order)
+1. Leg restart ruling (Magnus×x3r0) → research's amendment → nohup relaunch.
+2. TURBO4A/TBA readouts — the day's biggest question (does the patch family
+   carry the 57?), tonight/overnight.
+3. #78 belt-merge build (spec final: goal-set edit + ≥4-line saturation guard,
+   big-map dose; census: 8.9 conveyors/game ≈ 1 gunner at kill window).
+4. #50 terminus-first re-gate (old GO-gate assumed scarce screens; Magnus leaning
+   build — his r17 Bisons board is the evidence). ⭐ SHARPENED at wrap by his
+   kladde read (2403b27b g2, leg cell, mechanism-only): "move once, build twice"
+   — a stop between two buildable tiles places BOTH before stepping, so the belt
+   goes down in ~half the builder-rounds. Free corpus signature cut (consecutive-
+   round builds from identical positions) confirms systematicity before the arm
+   is written; spec then = walk the line stopping every other tile, build
+   behind+ahead. Composes with #78.
+5. Fresh candidates at research: staged opening (#62-adjacent), **GRADED SIEGE
+   family** (Magnus completed it at wrap: tier 0 = empty core → no seal, race;
+   tier 1 = light defense → 2-3 approach-side barriers then sentinels
+   immediately + a second raider on their belt (already-legal melee — grep
+   whether the raid role ever assigns it); tier 2 = full seal as today; s30's
+   seal-positive measurement is CONDITIONED, never removed), bank-triggered
+   offense surge (precondition cut first), plant-and-guard infiltrator,
+   heal-asymmetry (held pre-row), #2/#41 enfilade composition (Bisons counter).
+6. v153 "+CB aiming" diff-mine.
+7. Instrument debts: GREP-TREE structured-token migration (side lane's design,
+   research backfills prose rows); MDE-key enforcement in prereg_check (Magnus
+   nod pending); prereg_check --amendment file-shape conflict; gate_invocations
+   verdict column; overnight_read C1/C2 repair.
+

@@ -1,120 +1,95 @@
 # ⭐⭐⭐ FIRST: `.venv/bin/python tools/now.py` — the holder comes from fcode status,
-# NEVER from a poller or from any line below (this block is a CACHE; it has gone
-# stale inside eight minutes before). Then coordination.md tail since the last
-# wrap marker. Then the three boot checks.
+# NEVER from a poller or from any line below (this block is a CACHE; holder lines
+# expire in minutes — twice today a correct-when-written line was wrong within ten).
 
-# ===== s45 WRAP (builder, 2026-08-16T07:39:41Z; Magnus: "then we wrap up") =====
+# ===== s47 WRAP (builder, 2026-08-16 ~20:0xZ; Magnus called the wrap after ordering the ship) =====
 
-## LIVE (read at wrap; RE-READ before acting)
-* HOLDER: **v152 "Loki turbo4 (ammo/heal fix)" — x3r0's, rating ~1787, #19 Emerald.**
-  Per standing rule it stays; displacement is governed by X3R0_SLOT_RULE (below).
-* CONTROL: **bots/_v223sealrepair (v140)** — Magnus re-affirmed TODAY, verbatim: "lets
-  keep benchmark toward v140". Every queued row scores against it. main.py md5
-  91d7a4c8dab777a25c83ce2bc470e02c.
-* **⭐ AIMING POINT (Magnus, s46 2026-08-16T08:2xZ, verbatim): "Honestly, I'm quite confident
-  we will need to score 70% winrate against v140 to have any shot at the top at all, 60% is
-  just a step in the right direction."** And v140 stays the benchmark permanently ("If we
-  move our benchmark bot all the time all our experiments end up unusable"). Consequence:
-  weight mechanism-level ceilings over +1-2pp tuning — the composition operator paid +1.3pp
-  once and went flat (s46 audit).
-* **SLOT PIPELINE (all three rulings TODAY, encoded in PROGRAMME.md):** (1) an arm must
-  MEASURE >= 60.0% vs v140 with +-2pp half-width, 60 mid-span (precision reading —
-  58-59.9 does NOT qualify); (2) then head-to-head vs the CURRENT holder's staged
-  artifact; (3) beats it => switch. ⛔ **THE 53.50 "shipping baseline" IS RETIRED** (it assumed
-  τ=0, falsified at Q=787 on 58 df — research s46, side-lane re-derived). The three
-  numbers, kept separate: **55.24 = best MEASURED screen read — the bar is denominated
-  in THIS (screen-measured gap to 60: +4.76pp)**; **~54.9 = the leader's
-  replication-expected value (EB, τ=2.49)** — answers "what would it measure again",
-  never "does it clear the bar"; 53.50 = the retired τ=0 figure. ⛔ Never feed a
-  shrunken posterior to a bar that has a precision term. Load-bearing counts no
-  estimator can move: **0 of 59 arms ever MEASURED ≥60; 0 ever ≥58.**
-* DEFENCE_ADMISSION_BAR re-priced to the r300 boundary (Magnus) and scored on **ITT
-  RMST₃₀₀ non-regression** (four-case control matrix in PROGRAMME.md). Kill-round
-  narrative note: the "55-class kills +17-43 later" story was a CONDITIONING ARTEFACT —
-  on RMST the leaders are FLAT and **bodyaware/AWRLNCH are FASTER (−6.84/−6.43 rounds,
-  paired CIs)**. ⛔ The PAIRED interval form does NOT transfer to live legs (separate
-  matches there: two-sample + own measured DEFF).
+## THE HEADLINE
+**SLEIPNIR v1 IS LIVE — v155, `bots/_v468kladturbo`, shipped 19:38:40Z on
+Magnus's direct order ("Alright, release Sleipnir"), OUR ship, uploaded by
+Moonfarm.** Combined-source md5 (all four .py, sorted): `19c9dc935fb90b279a5b2fe24ff251ea`.
+First arm ever to clear the 60±2 rule: KLADTURBOR (ws1 replication)
+**61.57 [60.28, 62.87] n=5,400** + local agreeing (61.29 mid-shard at fire
+time; local shard still finishing at wrap — TYPE ITS FINAL as confirmation).
+Ship record (pre-fire committed): `docs/prereg/SHIP-sleipnir-v1-2026-08-16.md`
+— the step-2 H2H waiver is explicit there. Composition: samestop (Magnus's
+kladde piece) × turbo (v152 family) × bodyaware — mechanisms in different
+subsystems ADD (D1). **ROLLBACK TARGET: v152 (x3r0's "Loki turbo4") — and any
+rollback is MAGNUS'S WORD ONLY (SLOT_STOP_LOSS: off; slot frozen on his word
+in BOTH directions). SHIP_SIT_MIN_K=8 protects Sleipnir's convergence.**
 
-## ⭐ LEG-fieldcal IS LIVE ACROSS THIS SEAM (prereg LOCKED 43d9035f, cert
-## CERT-LEG-fieldcal-2026-08-16.md, clock2 2026-08-16T06:25:40.381Z, gap +26m39s)
-* **WHAT: BODYAWR (v154 'Loki rc10.1') vs v140, 10 PINNED opponents, sign-test primary,
-  600 games/arm, TWO-SESSION by registration. A successor reading a half-filled tape
-  without this paragraph would read a stopped leg — it is RUNNING.**
-* **STATE = scratchpad/fieldcal_state.tsv** (round, per-(arm,cell) accepts, clock2,
-  blind streak). At wrap: ~25 accepts (A: Juusto 5, not_adgato 5, Erebus 5; B: Juusto 5
-  + Erebus in flight), ZERO leaks through 5 flips, leg-attributable Elo 0.00.
-* **RUNNER: tools/fieldcal_scheduler.sh — detached to nohup at wrap (survives all
-  sessions).** Self-guarding: per-flip LEAK CHECK (halts on any arm-played rated
-  pairing), Elo tripwire −40 ARM-ATTRIBUTED ONLY (platform fallback when the archive is
-  stale; BLIND never reads clear; 3 double-blind strikes stop for a human), heartbeats
-  every 120s during waits, holder restored inside every invocation.
-  STOP: touch scratchpad/FIELDCAL_HALT (never kill -9 — see unrated_run.sh's trap note).
-  RESUME: zsh tools/fieldcal_scheduler.sh (state-file resume; nohup it).
-* **READOUT IS RESEARCH'S, at the pooling point: each arm >=12 accepts on >=8 cells.**
-  Impotence clause is BAR-LEVEL: a pooled null is EXPECTED and must never be read as
-  refuting the local finding. Report the window-total Elo BESIDE the arm-attributed sum.
+## ERA + DOCTRINE (Magnus, verbatim-adjacent, ~19:3xZ)
+Named SLEIPNIR (Loki's own child — lineage kept, era marked; ship names under
+Sleipnir now, see memory `sleipnir-era`). Doctrine frame: **"rush phase —
+building quick eco and disabling + killing the enemy early."** Quick eco =
+samestop/kladde family; disable = plug/pit/exile trickster planks (queued);
+early kill = turbo tempo + committed sentinels.
 
-## RUNNING / QUEUED (fleet)
-* **local:** eco batch (Magnus's directive) ECOSIPH/ECOSIPC/ECOPAVE/ECOSCK4/ECOSCK6
-  (~n=60-110 each) + G401g5 (52.85, 87%) + G414/G415. Then queued: **SEATSPAWN,
-  SEATFULL** (the seat-bug rungs), **RUSH72** (#72 reopen). auto_gate --apply loops.
-* **ws2 (6 cores):** ECO REPLICATIONS (ECOSIPHR at ~3.8k already, then SIPCR/PAVER/
-  SCK4R/SCK6R). REPORT SEPARATELY, NEVER POOL cross-host.
-* **ws1 (10 cores, REVIVED today):** G406-G413 combos (moved from local, no dupes).
-  Its old STALE "RUNNING" rows (CATRND1, F200SIEGELA, F254COLLARS, LNCHERLY) are
-  PRE-SHUTDOWN FOSSILS — dead, partials already read where usable.
-* **⛔ FIVE LOCAL SHARDS DIED 06:30-06:53 under the load spike:** G402/G403/G404/G405
-  and **V140VS152 — which SELF-ABORTED CORRECTLY at 4/234 NOWINNER (fixture-broken
-  guard)**. v152 is a CPU-tuned tree; wall-clock TLE under contention corrupts.
-  **SUCCESSOR TASK 1: re-queue the V140VS152 calibration ON ws2** (proper allocation)
-  after the eco replications — it is LOAD-BEARING for the 60±2 procedure (gate-1-vs-
-  gate-2 distance) and research holds its readout. Re-add G402-405 locally when load
-  permits (rows kept; new ids, fresh seeds, one-way rule).
+## OVERNIGHT READOUTS A SUCCESSOR TYPES (tapes carry everything; bars in BARS.tsv)
+* **SLEIPH2H (ws1)** — Sleipnir vs the STAGED v152 artifact, n=2,700, the
+  pipeline's step-2 read running as post-hoc confirmation. ⚠ If it reads ≤50
+  that is a FINDING (transitivity, #65), NOT a rollback trigger by itself —
+  the slot moves on Magnus's word only.
+* **KLADTURBO local full** (n=5,400, was 61.3@2,772) — the ship's local read.
+* **KLADTK2 (local) + KLADTK2R (ws1)** — Magnus's four-plank v3 (the v2
+  collapse post-mortem is in KLADTK2's BARS row; v469 is the BROKEN tree,
+  never re-queue it).
+* **GUNPINA** (hold-fire, zero-cost; expected small positive), **DRAINTURBO**
+  (drain on turbo; contrast vs TBA 55.25), **KILLTILER (ws2)** — #87's
+  full-powered read after the local floor stop.
+* Verdict style: every row carries bar/CI/scope inline; cancellations are not
+  verdicts; report cross-host cells separately, never pooled.
 
-## THE SEAT SEAM (⛔ re-labelled s46: a CORRECTNESS lead, NOT a path to 60 — research's own
-## ceiling estimate is board 55.24 → ~58.4 at best, coordination tail s45; the s46 audit
-## flagged this header as contradicting its source doc)
-+6.28pp seat effect on byte-identical self-play (z=16.24) is OUR CODE; the spawn-ring
-hash (main.py:289, absolute coords) carries +4.84pp of it. Fix rungs queued (SEATSPAWN
-= spawn only; SEATFULL = all 6 fixable sites, 36/36 equivariance checks, one toggle).
-Full site list + fix sketches: docs/research/EQUIVARIANCE-SWEEP-2026-08-16.md.
-⛔ Map/seat-CONDITIONAL selection is a CLOSED ROAD (CV ceiling ~59 + x3r0's own router
-construct read 31.4% on the ladder and was reverted — local validation of selection
-schemes has failed its only external test). The FIX, not a scheme.
+## THE CONTROL QUESTION (routed to research + Magnus, OPEN)
+Registrations keep **v140 (`_v223sealrepair`)** as control for every vintage
+row (Magnus's benchmark-stability rule). But with a 61-incumbent, the 51.33
+futility floor is nearly meaningless for NEW arms. Research owns putting the
+go-forward control re-pricing to Magnus. ⛔ Every QUEUE.md GREP was admitted
+against `_v223sealrepair` — the incumbent moved, so greps are potentially
+stale (s34 lesson); queue_check flags it.
 
-## OWED / OPEN (priority order)
-1. Eco batch readouts (local + ws2 replications) — Magnus's stated priority.
-2. V140VS152 re-queue on ws2 (task 1 above).
-3. Seat rung readouts vs research's +6.28 baseline (their read).
-4. LEG-fieldcal pooling readout at the pooling point (research's).
-5. RUSH72 readout (#72 reopen — mechanism metrics named in its BARS row).
-6. BODYAWR G1/G2/G3 delivery-gate scoring is STILL OWED (vintage-A falsifier governs
-   it, reads −2 rounds = does NOT fire; the arrival premise behind the gate was
-   corrected by research — score it against its OWN locked doc, not the new bar).
-7. prereg_check --fire still runs on zero firing paths (inherited, unchanged).
-8. stack.py ancestor trap (inherited, unchanged). AGENTS.md regeneration mechanism
-   unknown (stale vintage-A text at :400-402).
+## FLEET / WAKE PATHS
+**Survives:** 4 watchers + keeper + auto_gate/gate_watch --apply loops +
+corefill filler + vps_pull + both remote workers + dashboard (NEW: fleet
+section on the FRONT page, PENDING-PULL badge, helper prose stripped — served
+by the restarted process). **Dies with s47:** all Monitor-class watches, the
+in-flight WRAP-FIX instrument agent (its commits are durable; its report is
+relayed into the coordination tail when it lands — if missing, `git log
+--grep=WRAP-FIX` lists what it did). **Nothing wakes a human.**
+Worklist hygiene: H-family retired, fossils swept (file-order hazard bit
+twice — durable live-vs-archive worklist format is wrap debt).
+`scratchpad/s47_wrap_debts.md` holds the numbered debt list (1-19) with the
+fix agent working the verifiable half; unfixed items carry to the next boot.
 
-## WAKE PATH
-**Survives this session:** 4 watchers + keeper + watchdog(launchd) + auto_gate --apply
-+ gate_watch + dashboard (8787, RESTARTED today — /replays live) + corefill + both
-remote workers + **the detached fieldcal scheduler**. **Dies with s45:** my log Monitor
-on the scheduler (the log persists; nothing ALERTS a human on the leg — it self-halts
-safe instead). Side lane's monitors die with THEIR session — their flip-watching was
-never load-bearing after the leak check landed. **Nothing wakes a human anywhere.**
+## HAZARDS A SUCCESSOR MUST NOT RE-LEARN
+1. Local replays do NOT record execTimeUs/tled (zero-filled) — CPU-starvation
+   diagnoses need another instrument.
+2. Foreground demo games on a loaded box are biased AGAINST CPU-tuned trees
+   (turbo lineage): 6 straight losses at a replicated-62 arm; judge arms by
+   the fixture, use demos only for MECHANISM checks.
+3. NOISE_ON pins an UNSEEDED RNG — equivalence checks must neutralise it
+   first; variance batteries must NOT (both statements in #19's row).
+4. Same-round double-builds corrupt buffered store counters (two read+1
+   writes record one build) — never trust SLOT_* exact counts near
+   simultaneous writers; KLADTK2's v3 pattern (parallel + downstream
+   tolerance) is the shipped resolution.
+5. plank_status COLLISION on 'loki28' remains OPEN (disclosed in the ship
+   record) — resolve the naming before acting on either plank's
+   withdrawal/ack.
+6. The demo-map rotation rule (D2): mechanism demos run on suspected FAILURE
+   geometry, never the same three convenient maps.
 
-## NEW TOOLING TODAY (all selftested, all pushed)
-replay viewer: tools/replay_view.py + dashboard /replays (Magnus's ask — click-to-mark,
-round scrubber). fieldcal_scheduler.sh (the leg driver). gate.py --selftest (13 cells;
-its zero-coverage gap is closed). orchestrate.sh logs <host>. unrated_run.sh UNPINNED_OK
-guard + trap operator-note. queue_check ellipsis on all 5 truncation sites. auto_gate
-fired_on column. ⛔ orchestrate.sh is BASH — zsh invocation breaks push's word-split.
-
+## QUEUE (idea queue reads 72 rows BUT ⛔ 58 CARRY STALE GREPs after the
+incumbent move — the count is not the health signal it looks like;
+re-admission is research's named owed item; do not build off a stale-GREP
+row without re-running it. #78 must NOT be built before the #23 gating
+read, which was owed all day and never ran. Local shard queue is tonight's
+intentional board only). Next builds staged by evidence: #86 narrow
+(BELT_TYPES under move-gate) after GUNPINA reads; #82 vault edge-lane arm on
+the turbo base (vault-held-fixed design, research's forced shape); the drain
+grafts onto Sleipnir only if DRAINTURBO adds over TBA; trickster planks (#84
+plug — Ouroboros is its clean fixture) per the rush-phase doctrine.
 
 ## ===== ARCHIVE =====
-Everything superseded lives in `HANDOVER-archive.md` (boot-load audit cut 1,
-2026-08-13: whole-file boot read ~34k tokens, bound is structural). AT WRAP:
-rewrite the top block above and MOVE what it replaces into the archive file.
-The top block IS the state; the archive is history.
-
----
+Everything superseded lives in `HANDOVER-archive.md`. The top block IS the
+state; the archive is history.
