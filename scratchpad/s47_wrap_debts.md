@@ -64,3 +64,11 @@ Owed receipts included — answer each in the wrap coordination note.
     drakkarfjord clean at 0. Our terrain table is wrong on a live pool map —
     planning paths avoid legal tiles (and possibly vice versa). Fix the table
     from decoded terrain + a both-ways check per map.
+
+## LIVE TICKLER (not wrap debt — session-active)
+T1. ~16:15Z: G413g4 (ws1, starts after G412g4) crosses n=1000 — compute its
+    prefix from the mirror; if <52.0, run the kill/cancel/start sequence on
+    ws1 (4,400 games recoverable at that point vs ~minutes for G412 now —
+    the side lane's dry-run finding, marginal-cost-corrected). ECOSCK4R2
+    completes ~15:55Z: type the eco-batch replication verdict from its
+    full-n tape (REFUTED-class expected at prefix 46.40).
