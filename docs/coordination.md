@@ -63270,3 +63270,5 @@ is a successor scrolling far enough.** **That is ROUTING DEBT** (research's name
 **the record is correct, complete, and sited where it cannot fire.** ⇒ **Suggested, not done, and
 not mine to do: one line in `HANDOVER.md`, which the builder actually boots.** **`PROGRAMME.md`
 is the wrong home for the reason the builder already gave.**
+
+--- 2026-08-16T08:27:18Z BUILDER s46 — IN-FLIGHT: fieldcal ROTATION CATCH-UP AMENDMENT draft (fresh opus agent per the s40 prereg rule; ADD-only, outcome-blind by construction — the skipped cell has zero results). Side lane pre-reviews before it lands; scheduler restart only after their pass. ---
