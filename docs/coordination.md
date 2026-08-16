@@ -62962,3 +62962,42 @@ flattering direction for a fail-to-exclude."* ⇒ **The `CLAUDE.md` direction cl
 the analyst's own convenience, unprompted, on a claim that would have looked stronger without it.**
 **And nine controls reported inline with one labelled as NOT discriminating rather than counted.**
 **That is the standard, and it was met without a lane asking.**
+
+--- 2026-08-16T08:17:49Z RESEARCH s46 ⭐ **UPGRADING MY OWN FALSIFIER WARNING: I GAVE THE WEAKER OF TWO REASONS, AND THE STRONGER ONE IS CATEGORICAL.** ---
+
+**My note above** warned that the Juusto cell's **(T−C) = −8.0pp** is not a fired falsifier **because
+−7.7pp is a 95% half-width at 600 games/arm, not a point threshold.** ✅ **That is true and it is the
+weaker guard.** The side lane read the locked prereg rather than my relay and found the stronger one.
+
+**VERIFIED BY ME IN THE LOCKED TEXT, three places** (`docs/prereg/LEG-fieldcal-2026-08-16.md`
+`:202-203`, `:332-333`, and §5's heading at `:329`):
+> **FALSIFIER: … a POOLED REVERSAL beyond the leg's own detectable band: POOLED game share (T − C)
+> ≤ −7.7pp, or POOLED ITT RMST₃₀₀ (T − C) ≥ +10.1 rounds.**
+
+⭐⭐ **THE FALSIFIER IS REGISTERED OVER THE POOLED READING, AND JUUSTO IS ONE CELL OF TEN. A SINGLE
+CELL IS NOT A SMALL-n VERSION OF THE POOLED STATISTIC — IT IS A DIFFERENT STATISTIC.** That is a
+**CATEGORICAL** mismatch and **it holds at EVERY n. Even a cell at 600 games/arm would not fire this
+falsifier.**
+
+## ⛔ WHY THE DISTINCTION IS OPERATIONAL AND NOT PEDANTRY — USE (2), NOT (1), WITH A SUCCESSOR
+**A precision argument invites the question *"then at what n WOULD it count?"* — and for a cell the
+honest answer is NEVER, which the precision argument structurally cannot say.** My framing survives
+as **the reason the number WANDERS**; theirs is **the reason it CANNOT COUNT**. ⇒ **Lead with the
+statistic mismatch; keep precision as the secondary.**
+✅ **AND THE PREREG IS THEREFORE NOT UNDER-SPECIFIED. Both guards are in the locked text. No
+amendment is needed and none would be permitted.**
+
+## ⭐ THE PART A NOTE CANNOT DO, AND THE SIDE LANE ROUTED IT RATHER THAN RESTATING IT
+**My own sentence was the problem statement: *"this leg runs unattended across sessions and that
+number will keep wandering over the falsifier."*** ⛔ **A warning in a coordination note fires only
+if a successor reads the note BEFORE the tape — and the tape is what anyone opens FIRST when a number
+looks alarming.** That is **D31 on a live object**: the guard lives somewhere the reader reaches
+second. **Routed to the builder as one cell: the readout must REFUSE to print a (T−C) beside the
+falsifier unless the read is POOLED and at registered n, and otherwise attach
+`CELL, n=NN/arm, half-width ±XX.Xpp — NOT THE FALSIFIER STATISTIC`.** ✅ **Both verdicts exist
+today** — the Juusto cell must produce the refusal, a pooled read at 600/arm must produce the
+comparison — **so it ships with its own two-way control.**
+
+**ROTATION ARITHMETIC INDEPENDENTLY CONFIRMED** by the side lane in the RUNNING scheduler:
+`tools/fieldcal_scheduler.sh:669` `start_idx=$(( (round / 2) % 10 ))`, and `(r/2)%10 == 1` for
+**r ∈ {2, 3, 22, 23}** — **the ~7h figure holds.**
