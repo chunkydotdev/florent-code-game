@@ -419,8 +419,11 @@ PAGE_TEMPLATE = r"""<!DOCTYPE html>
     background: rgba(255,255,255,.85); pointer-events: none; line-height: 1; }
   .marker .mk-idx { font-size: 1em; }
   .marker .mk-r { font-size: .5em; font-weight: 700; opacity: .85; }
-  #legend { font-size: 12px; }
+  #legend { font-size: 12px; margin-top: 8px; }
   #legend .row { display: flex; align-items: center; gap: 8px; margin: 4px 0; }
+  #legendDetails > summary { font-size: 15px; color: var(--muted); font-weight: 600;
+    text-transform: uppercase; letter-spacing: .04em; cursor: pointer; }
+  #legendDetails > summary:hover { color: var(--ink); }
   #legend .ex { width: 20px; height: 20px; flex: none; border-radius: 3px; background: #888;
     color: #fff; display: flex; align-items: center; justify-content: center;
     font-size: 10px; font-weight: 700; box-shadow: 0 0 0 1px rgba(0,0,0,.25) inset; }
@@ -478,8 +481,10 @@ PAGE_TEMPLATE = r"""<!DOCTYPE html>
       <div id="markerList">none placed</div>
     </div>
     <div class="panel">
-      <h1>Legend</h1>
-      <div id="legend"></div>
+      <details id="legendDetails">
+        <summary>Legend (hover any piece for its details)</summary>
+        <div id="legend"></div>
+      </details>
     </div>
   </div>
 </div>
@@ -498,6 +503,11 @@ PAGE_TEMPLATE = r"""<!DOCTYPE html>
     builder_bot: "b", core: "CORE", conveyor: "c", splitter: "Y",
     harvester: "H", barrier: "▩", gunner: "G", sentinel: "S", launcher: "L",
   };
+  // Order for the per-round stats strip (Magnus, s46-viewer-ux): builder_bot,
+  // harvester, conveyor, splitter, gunner, sentinel, launcher, barrier.
+  // Cores are excluded (every match has exactly one per team; not informative).
+  const COUNT_KINDS = ["builder_bot", "harvester", "conveyor", "splitter",
+    "gunner", "sentinel", "launcher", "barrier"];
   const DIR_DELTA = { 0:[0,0],1:[0,-1],2:[1,-1],3:[1,0],4:[1,1],5:[0,1],6:[-1,1],7:[-1,0],8:[-1,-1] };
   const DIR_DEG = { 1:0, 2:45, 3:90, 4:135, 5:180, 6:225, 7:270, 8:315 };
 
@@ -687,14 +697,27 @@ PAGE_TEMPLATE = r"""<!DOCTYPE html>
     if (!p) return "–";
     return "Ti " + p.ti + " · collected " + p.collected + " · ammo " + p.ammo;
   }
+  // Compact per-team unit-count strip (Magnus, s46-viewer-ux): "b5 H3 c21 G1 S2".
+  // Zero-count kinds are omitted so the line stays short; order is COUNT_KINDS.
+  function fmtStats(counts) {
+    const parts = [];
+    for (const k of COUNT_KINDS) {
+      if (counts[k]) parts.push(KIND_LABEL[k] + counts[k]);
+    }
+    return parts.join(" ");
+  }
   let round = 0;
   function render() {
     document.getElementById("roundNum").textContent = round;
     const state = stateAtRound(round);
     entLayer.innerHTML = "";
     const ids = Object.keys(state.entities).sort((a, b) => a - b);
+    const counts = { 0: {}, 1: {} };
     for (const id of ids) {
       const e = state.entities[id];
+      if (e.kind !== "core" && counts[e.team]) {
+        counts[e.team][e.kind] = (counts[e.team][e.kind] || 0) + 1;
+      }
       const div = document.createElement("div");
       div.className = "ent " + e.kind;
       const isCore = e.kind === "core";
@@ -735,12 +758,15 @@ PAGE_TEMPLATE = r"""<!DOCTYPE html>
       }
       entLayer.appendChild(div);
     }
-    // econ line
+    // stats + econ line (merged: "b5 H3 c21 G1 S2 · Ti 91 · collected 0 · ammo 16")
     const teamLine = document.getElementById("teamLine");
     const chips = teamLine.querySelectorAll(".econchip");
     const pa = state.players.a, pb = state.players.b;
-    const ea = document.getElementById("econA"); if (ea) ea.textContent = fmtEcon(pa);
-    const eb = document.getElementById("econB"); if (eb) eb.textContent = fmtEcon(pb);
+    const sa = fmtStats(counts[0]), sb = fmtStats(counts[1]);
+    const ea = document.getElementById("econA");
+    if (ea) ea.textContent = (sa ? sa + " · " : "") + fmtEcon(pa);
+    const eb = document.getElementById("econB");
+    if (eb) eb.textContent = (sb ? sb + " · " : "") + fmtEcon(pb);
   }
   function setRound(r) {
     round = Math.max(0, Math.min(N_ROUNDS - 1, r));
