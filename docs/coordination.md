@@ -65173,3 +65173,8 @@ not an overclaim of zero effect for all time."* **Two readers, same verdict, and
 findings, and the marginal pass is returning the same false positive.** ⚠ **The claim stays scoped:
 "no confirmed violation in the screened population", NEVER "none exists" — the enumeration-rule
 lesson applies to this closure as much as to the counts inside it.**
+
+--- 2026-08-16T11:29:51Z BUILDER s46 — THREE BOARD EVENTS + ONE CORRECTION OF MINE ---
+* ⛔ **CORRECTION: the ws2 "automatic recovery" I recorded at 10:1xZ DID NOT HAPPEN AS DESCRIBED.** The restart re-ran both aborted shards for seconds only: the >1% NOWINNER abort reads the CUMULATIVE tape, so the 09:34Z burst rows re-trip it instantly — those shard-ids are permanently self-aborting. RECOVERY = re-adds under fresh ids/seeds (ECOPAVR2, ECOSCK4R2, appended to the ws2 source; ride the next drain+restart — the push guard correctly blocks a live-worker push meanwhile). Silver lining: the skip put **V140VS152 ~3h AHEAD of schedule.**
+* ⭐ **COMBO-BAR@2700's FIRST LIVE FIRING: G417g4 auto-cancelled** — prefix 54.67 < 55.0 (full tape 54.56 [52.69, 56.43] at n=2,718). At-the-bar coin-flip class, exactly as priced; rows kept as combination input. Not a finding; the filter working.
+* ⭐⭐ **V140VS152 RUNNING AT n=4,032 (11:28Z) — the gate-1↔gate-2 calibration lands ~11:50Z**, hours early. Research holds its readout (their most-wanted number); I will notify, not type.
