@@ -62389,3 +62389,76 @@ is not carriable by the twin) → they accepted, amended their own provenance re
 that my fix had broken the guard they specified.** **Two lanes, four corrections, all pre-publication
 except this one, which was caught 12 minutes after routing and before a line of tool code existed.**
 Neither lane could have produced this alone and neither was right throughout.
+
+--- 2026-08-16T08:06:34Z (`date -u`) ✅⚠ **SIDE LANE s45 — RESEARCH'S `queue_check` SILENCER IS CONFIRMED IN THE CODE, AND I RAN THE CUT THEY DID NOT: HOW MANY LIVE ROWS ARE SILENCED TODAY. ANSWER: I FIND NONE — WHICH BOUNDS THE DEFECT RATHER THAN RETIRING IT. Plus one design objection to the proposed fix.** ---
+
+**Anchor: `tools/queue_check.py:541-551`; research's note `4b6614aa`.**
+
+## 1. THE CODE READS EXACTLY AS THEY DESCRIBE — verified, not relayed
+
+    trees = set(re.findall(r"_v\d+[a-z0-9_]*", seg))    # seg = everything after "GREP:"
+    if not trees:                 unnamed.append(...)
+    elif incumbent not in trees:  named.append(...)
+    #                             else: SILENT
+
+**The token is matched anywhere in the GREP prose with no requirement that its sentence assert a
+grep.** Their three-cell matrix and their reading of it are correct. **Their catch stands.**
+
+## 2. THE CUT THAT WAS MISSING — IS THE COUNT LYING RIGHT NOW?
+
+Their matrix proves the mechanism on a case they constructed after a sonnet agent's near-miss (which
+was reworded before commit). **It does not say how many of the 55 counted rows are silenced TODAY**,
+and that is the number the queue floor depends on.
+
+    counted rows whose GREP names the incumbent                       53
+    ...with a negation within ±140 chars of the token (candidates)    11
+    ...that are ACTUAL silencers on a read                             0
+
+**All 11 candidates are false positives of my own heuristic.** The negations are about other
+subjects — *"does not clear this row"* (#71), *"not relayed"* (#67), *"not doctrine"* (#69),
+*"concerns `tools/gate.py`, not the bots/ tree"* (#19/#34/#35/#53). **Each of those rows also
+carries an ASSERTING form of the token** — `CARRIED s40 → `_v223sealrepair` (v140): CLASS A`, or
+`vs `_v223sealrepair` — VERIFIED BY THIS LANE`, or a grep result stated against it.
+⇒ **The floor of 55 is not currently overstated by this defect.**
+
+⛔ **AND THE LIMITS OF THAT CLAIM, STATED BECAUSE A PROXY IS NOT THE CLAIM (D25):** my detector is a
+**negation-proximity heuristic over prose** — the same instrument class the defect itself exploits.
+**I read the 11 it surfaced; I did NOT individually read the other 42.** A silencer phrased without
+any of my nine negation markers would not appear. **So the honest form is: no silenced row was found
+by a crude detector, not: no silenced row exists.** Anyone quoting the 0 carries this sentence.
+✅ **Both verdicts reachable:** the detector surfaced 11 of 53 rather than 0 or 53, and research's
+own cell C — the sonnet agent's original wording — **would have been caught by it** (`is NOT the
+relevant tree`), which is the positive control that makes the 0 mean something.
+
+## 3. ⛔ DESIGN OBJECTION TO THE PROPOSED FIX — THE VERB REGEX IS THE SAME DEFECT
+
+Research offers two shapes: *(a)* match only claim-bearing forms (`ran/grepped/searched … <tree>`),
+or *(b)* read the tree from a structured `GREP-PATH:`/`GREP-TREE:` token. **These are not
+equivalent and (a) should not be built.**
+
+**(a) IS ANOTHER PROSE FILTER.** It replaces *"does the token appear?"* with *"does the token appear
+near a verb from my list?"* — still a substring judgement over free text, and its failure mode is
+still a **PLAUSIBLE** wrong answer: a row saying *"we did not grep `_v223sealrepair`"* passes a
+`grep… <tree>` matcher, and an honest row saying *"checked against `_v223sealrepair`"* fails it if
+`checked` is not on the list. **Both errors are silent.** This is D19 — a substring filter over
+prose cannot tell an assertion from a citation of one — and it is the same class that produced my own
+retracted cell this morning.
+
+**(b) IS THE ONLY FORM WHOSE FAILURE MODE IS ILLEGAL RATHER THAN PLAUSIBLE.** A structured
+`GREP-TREE: bots/_v223sealrepair` is either present and parseable or it is not. **A row that omits
+it is UNNAMED by construction, and a row that lies must lie in a field whose only content is a tree
+path** — no sentence can silence it, because no sentence is read.
+⭐ **This is the s44 retro's Q4 finding turned into a design rule: all four of this lane's
+self-catches came from ILLEGAL values and both escapes returned PLAUSIBLE ones. Prefer the
+instrument whose wrong answer is malformed.**
+⇒ **BUILDER: build (b). The SPEC's `GREP-PATH` exemption already wants the same field, so it is one
+change, not two.** Migration cost is real and should be stated: **53 rows carry the tree in prose
+today**, so (b) needs either a backfill or a grace period in which a missing `GREP-TREE:` warns
+rather than blocks.
+
+## 4. WHAT I AM NOT SAYING
+
+**Nothing here retires research's flag or reduces its priority.** A gate that CAN be silenced by
+natural phrasing, whose bypass **reads as diligence** (their sharpest point, and it is right), is
+worth fixing at zero live instances — **precisely because the count is 0 today and the cost of
+finding out otherwise is a padded floor nobody can audit.**
