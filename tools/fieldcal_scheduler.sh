@@ -268,7 +268,22 @@ all_cells_done(){
 # ===========================================================================
 # THE RUNNER CALL AND ITS OUTFILE
 # ===========================================================================
-count_accepted(){ grep -c '"matchId"' "$1" 2>/dev/null; }
+# ⛔ `grep -c` EXITS 1 ON ZERO MATCHES AND 2 ON A MISSING FILE — it fails exactly
+# when the answer is CLEAN. This function's exit status IS grep's, so
+# `if count_accepted f; then` reads "zero accepts" as FALSE, i.e. as an error.
+# Measured 2026-08-16 (s47 wrap debt 3):
+#   grep -c zzz existing_file  -> rc=1, stdout "0"    (clean answer, failing rc)
+#   grep -c zzz missing_file   -> rc=2, stdout ""     (EMPTY, not "0")
+#   set -e; n=$(grep -c ...)   -> ABORTS the script
+#   echo "$(grep -c ...)"      -> rc=0, the substitution's rc is swallowed
+# THE STANDARD IDIOM, here and in every inline gate: capture the count, force
+# rc 0, default the empty case to 0, and TEST ON THE COUNT — NEVER on `$?`.
+# Driven both ways by the `k1` selftest cell.
+count_accepted(){
+  local n
+  n=$(grep -c '"matchId"' "$1" 2>/dev/null || true)
+  print -r -- "${n:-0}"
+}
 count_rejected(){
   local total accepted
   total=$(wc -l < "$1" 2>/dev/null); total=${total:-0}
@@ -1304,6 +1319,33 @@ PJ4
     fail "leak check h3: expected unknown rc=0 no-halt, got rc=$rch3"
   fi
   PLATFORM_LIST_CMD=".venv/bin/fcode match list --mine --type ladder --json --limit 60"
+
+  # --- (k1) THE `grep -c` COUNT IDIOM, driven to every case it has.
+  # `grep -c` fails on a CLEAN zero (rc 1) and on a missing file (rc 2, and
+  # stdout EMPTY rather than "0"). count_accepted must return a NUMBER and
+  # rc 0 in all three cases, or `if count_accepted f` reads clean as broken.
+  print -r -- '{"matchId":"a"}' > "$TDIR/k1_two.json"
+  print -r -- '{"matchId":"b"}' >> "$TDIR/k1_two.json"
+  print -r -- 'nothing here' > "$TDIR/k1_zero.json"
+  local k1a k1ar k1b k1br k1c k1cr
+  k1a=$(count_accepted "$TDIR/k1_two.json");  k1ar=$?
+  k1b=$(count_accepted "$TDIR/k1_zero.json"); k1br=$?
+  k1c=$(count_accepted "$TDIR/k1_absent.json"); k1cr=$?
+  if [[ "$k1a" == "2" && $k1ar -eq 0 && "$k1b" == "0" && $k1br -eq 0 \
+        && "$k1c" == "0" && $k1cr -eq 0 ]]; then
+    ok "grep -c idiom k1: matches->2/rc0, ZERO matches->0/rc0 (not rc1), MISSING file->0/rc0 (not empty/rc2)"
+  else
+    fail "grep -c idiom k1: expected 2/0 0/0 0/0, got ${k1a}/${k1ar} ${k1b}/${k1br} ${k1c}/${k1cr}"
+  fi
+  # The complement that proves the cell is not vacuous: the RAW grep really
+  # does fail on the clean and missing cases, so the wrapper is doing work.
+  local rawr
+  grep -c '"matchId"' "$TDIR/k1_zero.json" >/dev/null 2>&1; rawr=$?
+  if (( rawr != 0 )); then
+    ok "grep -c idiom k1 control: bare \`grep -c\` on a CLEAN file really does exit ${rawr} — the wrapper is load-bearing"
+  else
+    fail "grep -c idiom k1 control: bare grep -c exited 0 on zero matches; this platform does not have the defect and the cell proves nothing"
+  fi
 
   print ""
   if (( bad )); then

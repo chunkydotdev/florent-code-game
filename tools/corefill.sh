@@ -186,7 +186,12 @@ while true; do
   fi
 
   # ---- guard 2: blind is not idle -----------------------------------------
-  running=$(ps ax -o command= 2>/dev/null | grep -c "$RUNNER_PAT ")
+  # `grep -c` EXITS 1 ON ZERO MATCHES — it fails exactly when the answer
+  # is CLEAN. Harmless today (no `set -e` here), fatal the moment anyone
+  # adds one: measured, `set -e; n=$(grep -c zzz f)` ABORTS the script
+  # while `echo "$(grep -c zzz f)"` does not. `|| true` keeps the count
+  # (grep still prints 0) and drops the status. TEST ON THE COUNT, NEVER $?.
+  running=$(ps ax -o command= 2>/dev/null | grep -c "$RUNNER_PAT " || true)
   if [[ -z $running ]]; then
     say "BLIND: cannot read process table -- refusing to launch this cycle"
     sleep $POLL_S; continue

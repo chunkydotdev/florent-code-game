@@ -113,7 +113,12 @@ for r in d["rows"]:
 # defect class this repo names most often: a silent no-op is indistinguishable
 # from a working pass.** Whatever the cause was, it is now self-diagnosing --
 # every pass says how many rows it judged actionable and why it stopped.
-NACT=$(print -r -- "$ACTIONS" | grep -c '[^[:space:]]')
+# `grep -c` EXITS 1 ON ZERO MATCHES — it fails exactly when the answer
+# is CLEAN. Harmless today (no `set -e` here), fatal the moment anyone
+# adds one: measured, `set -e; n=$(grep -c zzz f)` ABORTS the script
+# while `echo "$(grep -c zzz f)"` does not. `|| true` keeps the count
+# (grep still prints 0) and drops the status. TEST ON THE COUNT, NEVER $?.
+NACT=$(print -r -- "$ACTIONS" | grep -c '[^[:space:]]' || true)
 if [[ -z $ACTIONS || $NACT -eq 0 ]]; then
   say "PASS COMPLETE: 0 actionable row(s) (MISSING+AUTO). Nothing to restart."
   exit 0

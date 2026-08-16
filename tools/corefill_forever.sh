@@ -92,7 +92,12 @@ while true; do
   done < $WORK
 
   if (( remaining == 0 )); then
-    running=$(print -r -- "$pt" | grep -c "$SHARD_PAT")
+    # `grep -c` EXITS 1 ON ZERO MATCHES — it fails exactly when the answer
+    # is CLEAN. Harmless today (no `set -e` here), fatal the moment anyone
+    # adds one: measured, `set -e; n=$(grep -c zzz f)` ABORTS the script
+    # while `echo "$(grep -c zzz f)"` does not. `|| true` keeps the count
+    # (grep still prints 0) and drops the status. TEST ON THE COUNT, NEVER $?.
+    running=$(print -r -- "$pt" | grep -c "$SHARD_PAT" || true)
     if (( running == 0 )); then
       if [[ ! -f $ALARM ]]; then
         say "*** WORKLIST DRAINED AND NOTHING RUNNING -- ALWAYS_BE_RUNNING VIOLATED ***"

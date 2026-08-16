@@ -128,7 +128,12 @@ while true; do
     fi
     MAXROWS[$SH]=$rows
 
-    alive=$(ps ax -o command= | grep -c "[o]vernight.sh $SH ")
+    # `grep -c` EXITS 1 ON ZERO MATCHES — it fails exactly when the answer
+    # is CLEAN. Harmless today (no `set -e` here), fatal the moment anyone
+    # adds one: measured, `set -e; n=$(grep -c zzz f)` ABORTS the script
+    # while `echo "$(grep -c zzz f)"` does not. `|| true` keeps the count
+    # (grep still prints 0) and drops the status. TEST ON THE COUNT, NEVER $?.
+    alive=$(ps ax -o command= | grep -c "[o]vernight.sh $SH " || true)
     # ⛔⛔ `||` NOT `&&`. The first version required BOTH "process gone" AND
     # "heartbeat stale", so A HUNG SHARD -- live process, frozen heartbeat --
     # could NEVER trigger it. Simulated: `shard3 ok 3000/7222 hb_age=14000s

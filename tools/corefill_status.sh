@@ -56,7 +56,12 @@ while read -r SH TR CT TG SL; do
   tsv=$OUT/${SH}.tsv
   rows=0; [[ -f $tsv ]] && rows=$(( $(wc -l < $tsv) - 1 )); (( rows < 0 )) && rows=0
   tot_rows=$(( tot_rows + rows ))
-  alive=$(print -r -- "$PSSNAP" | grep -c "$RUNNER_PAT $SH ")
+  # `grep -c` EXITS 1 ON ZERO MATCHES — it fails exactly when the answer
+  # is CLEAN. Harmless today (no `set -e` here), fatal the moment anyone
+  # adds one: measured, `set -e; n=$(grep -c zzz f)` ABORTS the script
+  # while `echo "$(grep -c zzz f)"` does not. `|| true` keeps the count
+  # (grep still prints 0) and drops the status. TEST ON THE COUNT, NEVER $?.
+  alive=$(print -r -- "$PSSNAP" | grep -c "$RUNNER_PAT $SH " || true)
   hb=$OUT/${SH}.heartbeat
   age="-"; agesec=999999
   if [[ -f $hb ]]; then agesec=$(( NOW - $(stat -f %m $hb) )); age="${agesec}s"; fi
