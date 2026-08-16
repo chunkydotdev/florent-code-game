@@ -44,6 +44,29 @@ Hazard = of games **still alive at window start**, the share ending in a kill by
 the window. **Not conditioned on winning** — the denominator is games at risk, so this metric does
 not carry the collider that sank the first draft of FIRE ORDER #1.
 
+### ⛔ CONVENTION, DECLARED — IT WAS UNDECLARED IN THE FIRST VERSION AND IT SETS ONE HEADLINE
+*Added after the side lane re-derived this doc and found the omission. A hazard needs two boundary
+conventions and the first version stated neither.*
+
+    CONVENTION B (USED HERE):  at risk iff turns >= lo    event counted iff lo <= t <  hi
+    CONVENTION A (alternative): at risk iff turns >  lo    event counted iff lo <  t <= hi
+
+**Sensitivity of the POST/PRE ratio to that choice, all four windows, carried-maps cut:**
+
+| window | PRE (B/A) | POST carried (B/A) | POST pooled (B/A) | robust? |
+|---|---|---|---|---|
+| r0–150 | 1.28 / 1.28 | 1.16 / 1.16 | 0.97 / 0.98 | **robust** |
+| r150–200 | 1.22 / 1.24 | 1.18 / 1.28 | 1.41 / 1.45 | **robust, and >1 everywhere** |
+| **r200–300** | 0.85 / 0.85 | **1.05 / 0.97** | 1.32 / 1.28 | ⛔ **CROSSES 1.0 on the map-controlled cut** |
+| r300+ | 0.43 / 0.42 | 0.82 / 0.82 | 0.90 / 0.90 | **robust** |
+
+⇒ **r200–300 on the carried-maps cut is CONVENTION-SENSITIVE: 0.97–1.05, straddling parity.** The
+first version's sentence *"the intervals do NOT overlap"* is true under B and **false under A**
+(PRE [12.7,17.1] vs POST [16.5,33.8] overlap). **That claim is withdrawn for this cell.**
+✅ **Everything else is robust under both conventions**, including r300+ (disjoint either way) and
+the §3A asymmetry that is this doc's actual contribution.
+⚠ `CLAUDE.md`'s exposed class is **claims that cleared a bar narrowly**. This one cleared by 0.05.
+
 | window | **PRE** ours | **PRE** theirs | **PRE ratio** | **POST** ours | **POST** theirs | **POST ratio** |
 |---|---|---|---|---|---|---|
 | r0–150 | 17.9% | 13.9% | **1.28** | 17.6% | 18.0% | **0.98** |
@@ -97,9 +120,16 @@ overlap heavily at these n (carried 341 games, new 704).
 **"Should we score slightly longer games better?"** — **No, but the penalty is aimed at the wrong
 window, and that is the correction worth making.**
 
-* **r150–300 IS NO LONGER THEIR WINDOW.** Post-rotation we convert at **1.34** there (1.05
-  carried-maps-only, 1.48 on new maps). **A design that lengthens the kill from ~170 to ~230 is
-  not walking into a disadvantage on current data — it is walking into parity or better.**
+* **r150–200 IS NO LONGER THEIR WINDOW, ROBUSTLY** — 1.18–1.28 carried-maps, 1.41–1.45 pooled,
+  **above 1 under both conventions on both cuts.**
+* ⚠ **r200–300 IS PARITY, NOT A FLIP — AND THE MAP-CONTROLLED CUT STRADDLES IT** (0.97–1.05
+  depending on convention; 1.28–1.32 pooled, but the pooled cut does not control the pool).
+  **The claim that survives is the NEGATIVE one: there is no 4× disadvantage here any more** —
+  it was 0.85 and nothing in the current data reads worse than ~0.97. **The claim that does NOT
+  survive is that it flipped in our favour.**
+* ⇒ **A design that lengthens the kill from ~170 to ~230 is not walking into a measured
+  disadvantage on current data. It is walking into approximately parity.** That is weaker than
+  the first version of this doc said, and it is the version the conventions both support.
 * **r300+ IS STILL THEIRS**, at 0.91 pooled / 0.82 carried-maps. **Much weaker than 0.43, but
   still against us.** A design that pushes games past r300 still pays.
 * ⇒ **THE RE-PRICING: the kill-round penalty should bind on crossing ~r300, not on drift inside
@@ -125,6 +155,25 @@ resolve +0.55pp over `bodyaware` at n=5,808, which is a power argument and stand
 the arms not yet cancelled.
 
 ⛔ **I am not re-opening any cancellation. That is the builder's call and this is the input to it.**
+
+### ⭐ AND THE DISTINCTION THAT ACTUALLY GOVERNS — A BAR DOES NOT WEAKEN WHEN ITS RATIONALE DOES
+*Sharpened by the side lane, correcting their own earlier prescription to the builder.*
+
+**`KILL_WINDOW_RND: 250` and `DEFENCE_ADMISSION_BAR` are Magnus's DIRECTIVES, not inferences from
+`raid.py`'s table.** This doc removes the *empirical* grounding for treating a +20-round drift
+inside r200–300 as harmful. **It does not and cannot move the bar** — that is exactly the argument
+§4 makes about `R1000_IS_DEFEAT`, and it applies identically here. **Only Magnus moves a directive.**
+
+⇒ **The operative distinction for arms NOT yet cancelled:**
+
+| verdict | supported today? | what it licenses |
+|---|---|---|
+| *"off-programme by DIRECTIVE"* | **YES** — the bar stands regardless of this doc | cancel / hold, citing `PROGRAMME.md` |
+| *"empirically HARMFUL"* | **NO** — 0.97–1.05, nothing like 4× | nothing; the evidence is gone |
+
+**Cancelling on the first is sound. Cancelling on the second, or writing the second into a
+verdict, is now unsupported** — and the two were being used interchangeably this morning,
+including by the lane that caught this.
 
 ---
 
