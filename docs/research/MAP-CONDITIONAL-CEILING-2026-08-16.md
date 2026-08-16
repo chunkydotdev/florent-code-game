@@ -529,3 +529,58 @@ ci.py         analytic DEFF intervals, bodyaware chi-square p-value
 
 Env: `SNAP=<frozen tape dir>`, `MIN_SEEDS=179` (primary) or `30` (sensitivity),
 `RSPLIT` / `NBOOT` / `NBOOT_CI` = repetition counts. Run under `.venv/bin/python`.
+
+---
+
+## ⛔⛔ ADDENDUM, SAME DAY ~11:0xZ — **THIS EXACT CONSTRUCT HAS ALREADY BEEN SHIPPED ON OUR OWN ACCOUNT AND REVERTED. THE FIELD DATUM THIS DOC SAYS IT CANNOT SUPPLY NOW EXISTS.**
+
+**This doc's own limit reads: *"CV certifies new GAMES vs v140, not new OPPONENTS."* That limit is
+no longer hypothetical — a teammate ran the experiment in production and the result is against us.**
+
+**`bots/_x3r0v145/base_router.py:125-136`, read from staged source, verbatim:**
+```python
+pair  = tuple(sorted(((core.x, core.y), (enemy.x, enemy.y))))
+label = SIGNATURES.get((w, h, pair))                                   # identify the MAP
+if label is None:
+    label = COLLISION_GRIDS.get(map_eco.known_map_for(w, h, core, ct))
+side  = "A" if label and (core.x, core.y) == A_CORES[label] else "B"   # identify the SIDE
+salt  = OPENINGS.get(label, {}).get(side, "92")                        # pick the OPENING
+self.inner = ROUTERS[salt]()
+```
+⇒ **A `(map, side)` → opening → sub-bot router. That is this document's §"adding SEAT to the key",
+built and shipped, arrived at independently from the other end.** `v146` documents its variant as
+*"Official-map mixture of experts: v135 generally, v134 on preregistered weak maps"*, selected from a
+**504-game tournament against three replay-derived opponent surrogates**, held out at **354/420 =
+84.29%** — i.e. **it validated LOCALLY at least as convincingly as this doc's CV 59.19%.**
+
+**THEN IT MET THE LADDER** (`ladder_games.ourver`, rated):
+```
+v145  ROUTER, 106 files    1/5    20.0%
+v146  ROUTER,  85 files    7/20   35.0%
+v147                       3/10   30.0%
+   pooled routers         11/35   31.4%  [12.4, 50.4]
+v152  SINGLE BOT         100/180  55.6%  [46.6, 64.6]
+```
+**Single bot beats the pooled routers by +24.2pp ± 21.0pp.** ⚠ **NOT ESTABLISHED — 5–20 games per
+router version, bands of ±20–40pp, and this is the same small-n trap this repo names constantly.
+What is unambiguous is the REVERSION: they abandoned a 110,000-line construct and went back to a
+5,518-line single bot.**
+
+⭐ **AND THE SIZE OF THAT CONSTRUCT IS THE OTHER WARNING THIS DOC SHOULD CARRY.** The routers are
+**874 lines of 110,184 (v145) and 609 of 87,463 (v146) — 0.8% and 0.7%.** Everything else is a
+FULL PREFIXED COPY of the base tree per variant. **This doc's caveat "it needs 10–16 arms" is, in
+implementation terms, 10–16 duplicated trees plus a dispatcher** — and their twenty sub-bots were in
+fact **two base variants across seven map-groups** (`p07h` vs `p22h` differ by **8 lines**).
+
+### ⇒ WHAT THIS CHANGES ABOUT THIS DOC'S CONCLUSION
+* **The measurement stands.** CV 59.19% [56.03, 60.93] vs v140 on the local fixture is unaffected;
+  the null-selection control still fired, the overfitting gap is still 3.75pp.
+* **The INFERENCE from it does not.** The one external test of this construct available anywhere —
+  same account, same ladder, real opponents — reads **31.4%**.
+* **Order of work is unchanged and now doubly supported: fix the seat asymmetry first.** It is a bug
+  fix worth ~1.5–3pp for free, it does not require N duplicated trees, and part of the conditional
+  lift was routing around it in the first place.
+* ⚠ **The honest reading is NOT "map/side conditioning is refuted".** It is: **a local
+  cross-validated 59.19% and a local held-out 84.29% BOTH failed to survive contact with the
+  ladder** — which is a statement about how much any local validation of a SELECTION scheme is
+  worth, and it applies to this document's own headline number first.
