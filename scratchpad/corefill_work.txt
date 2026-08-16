@@ -1170,13 +1170,13 @@ G423g2 bots/_v423g2 bots/_v223sealrepair 5400 456000
 # IDENTITY NULL on the CURRENT incumbent (research orphan-1, 2026-08-16): zero shards ever ran treatment==control==_v223sealrepair, so a_C is unmeasured and no seat-arm differential can separate 'fix neutral' from 'fix over-corrected'. Structural null: auto_gate G5 never stops it; it must run to completion.
 IDNULL140 bots/_v223sealrepair bots/_v223sealrepair 5400 772000
 # QUEUE #76 (research-admitted, builder-built s46): per-tile attrition memory on the forward plant. K=2 is a DOSE, not the mechanism — a null at K=2 does not refute attrition memory (research rider, 2026-08-16T08:57:09Z). Smoke-driven both ways (K=0: 26,189 refusals, 0 plants; K=2: plants normally).
-SENTBAN bots/_v330sentban bots/_v223sealrepair 5400 766000
+SENTBAN bots/_v330sentban bots/_v223sealrepair 2700 766000
 # QUEUE #33 (one-flag batch s46): gunaxis avoidance ablation — row-declared resolution: gunner-covered deaths must move >=0.15/game at 0.60 baseline, else inside noise.
-GUNAX0B bots/_v331gunax0 bots/_v223sealrepair 5400 768000
+GUNAX0B bots/_v331gunax0 bots/_v223sealrepair 2700 768000
 # QUEUE #53 (one-flag batch s46): seal Ti floor UPWARD arm (0->24) — the allocation-cancelled direction; 0-vs-12 already priced by the ship.
-SEALTI24 bots/_v334sealti24 bots/_v223sealrepair 5400 770000
-AIMSITE bots/_v314aimsite bots/_v223sealrepair 5400 460000
-RENTGUN bots/_v313rentgun bots/_v223sealrepair 5400 462000
+SEALTI24 bots/_v334sealti24 bots/_v223sealrepair 2700 770000
+AIMSITE bots/_v314aimsite bots/_v223sealrepair 2700 460000
+RENTGUN bots/_v313rentgun bots/_v223sealrepair 2700 462000
 H601h2 bots/_v601h2 bots/_v223sealrepair 5400 480000
 H602h2 bots/_v602h2 bots/_v223sealrepair 5400 482000
 H604h2 bots/_v604h2 bots/_v223sealrepair 5400 484000

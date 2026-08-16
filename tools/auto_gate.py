@@ -209,6 +209,22 @@ CATASTROPHE_CI_HI = 45.0  # pinned by Magnus
 TREND_FLOOR = 51.0
 Z95 = 1.96                # pinned: naive normal interval, DEFF 0.98 => no inflation
 
+# THE COMBO BAR. Pinned by Magnus 2026-08-16, verbatim: "Solo-shards will be
+# used in combinations anyway, the core sweep on solos are mostly an indicator
+# if a combo isnt 55+ at n2700 it's not a success either, not a failure, but we
+# want better combinations" — go given as "Perfect do it!" after the pricing
+# below was put to him. Applies ONLY to trees carrying the stack.py compose
+# marker; solos keep the 51.0 trend floor (and a 2,700 default TARGET, set in
+# the worklist, full-n by explicit annotation only).
+# PRICED BEFORE ADOPTION (SE at n=2700, p~.55 ≈ 0.96pp), P(prefix reads <55):
+#     true 53.0 -> killed ~98%     true 55.0 -> coin flip (50%)
+#     true 56.0 -> killed ~15%     true 57.0+ -> killed ~2%
+# That trade is the point: this is a PROSPECTING filter for the 60/70 aiming
+# point, not a measurement rule — it deliberately spends true-55 coin flips to
+# stop paying full price for the 51-54 class nobody would ship. A stop here is
+# a CANCELLATION (rows kept, combination input), never a verdict.
+COMBO_BAR = 55.0
+
 DEFAULT_WORKLIST = REPO / "scratchpad/corefill_work.txt"
 DEFAULT_TSVDIR = REPO / "scratchpad/overnight"
 DEFAULT_REMOTE_ROOT = REPO / "scratchpad/overnight-remote"
@@ -605,6 +621,39 @@ class Decision:
                                     # them share IS the fired-on number.
 
 
+_COMBO_CACHE: dict = {}
+
+
+def combo_of(tree: str) -> str | None:
+    """The stack.py compose marker read off the TREE's own doctrine.py — the
+    same source the dashboard's `tests:` line uses: a line like
+    `# ---- composed by tools/stack.py from: bodyaware, catapult`.
+    Returns the component list string, or None for a solo. Cached by
+    (path, mtime). ⛔ Unreadable/missing doctrine.py => None, i.e. treated as
+    SOLO: the combo bar is the STRICTER rule, and a read failure must never
+    escalate severity — failing toward not-stopping is this tool's house
+    direction (BLIND is not dead)."""
+    p = Path(tree) if os.path.isabs(tree) else REPO / tree
+    doc = p / "doctrine.py"
+    try:
+        st = doc.stat()
+    except Exception:
+        return None
+    key = (str(doc), st.st_mtime)
+    if key in _COMBO_CACHE:
+        return _COMBO_CACHE[key]
+    val = None
+    try:
+        m = re.search(r"composed by tools/stack\.py from:\s*(.+)$",
+                      doc.read_text(errors="replace"), re.M)
+        if m:
+            val = m.group(1).strip()
+    except Exception:
+        val = None
+    _COMBO_CACHE[key] = val
+    return val
+
+
 def decide(sh: Shard, bars: dict[str, Bar], stale_s: float,
            cancelled_reason: str | None = None) -> Decision:
     """The whole rule, in the order the guards must fire.
@@ -720,6 +769,25 @@ def decide(sh: Shard, bars: dict[str, Bar], stale_s: float,
                          f"{TREND_FLOOR:.1f}% house floor [{src}] — not futile, "
                          f"but not worth further compute on its own. Rows are "
                          f"KEPT: it remains available as a combination input.",
+                         fired_on=pfx)
+
+    # ---- COMBO BAR @2700 (Magnus, 2026-08-16 — see COMBO_BAR above) ---------
+    # Order: AFTER the trend floor (whose <51 stop is the milder, more general
+    # claim and wins where both would fire), BEFORE the CI rule. Prefix-based
+    # for the same optional-stopping reason the floor is: one look, at one
+    # registered mark, never the current share.
+    if sh.tape.n >= MARK_HALF and sh.tape.wins_at_half is not None:
+        _combo = combo_of(sh.treat)
+        if _combo is not None:
+            pfx = 100.0 * sh.tape.wins_at_half / MARK_HALF
+            if pfx < COMBO_BAR:
+                return d("STOP", f"COMBO-BAR@{MARK_HALF}",
+                         f"COMBO arm (composed from: {_combo}) with prefix share "
+                         f"{pfx:.2f}% < the {COMBO_BAR:.1f}% combo bar at "
+                         f"n={MARK_HALF} — not a failure, not a success either; "
+                         f"we want better combinations (Magnus 2026-08-16). "
+                         f"Rows are KEPT. Expected noise: a TRUE-55 combo is "
+                         f"killed 50% of the time here, by design.",
                          fired_on=pfx)
 
     # ---- G1: NO BAR, NO STOP (the CI rule only) -----------------------------
@@ -1363,6 +1431,37 @@ def selftest() -> int:
         decide(s_lowpfx_highnow, TB, DEFAULT_STALE_S).action, "STOP")
     chk("good prefix, AWFUL current share (now 26.7%)  => not stopped by the floor",
         decide(s_highpfx_lownow, TB, DEFAULT_STALE_S).clause.startswith("TREND-FLOOR"), False)
+
+    # ── COMBO BAR (Magnus 2026-08-16) ──────────────────────────────────────
+    # treeD carries the stack.py compose marker; treeC does not. One game
+    # either side of the bar at the 2700 prefix; the solo twin of the failing
+    # cell proves the rule is scoped, and the null twin proves G5 outranks it.
+    print("\n── combo bar: 55.0 on the 2700 prefix, COMBO trees only ────────────────")
+    (tmp / "treeD").mkdir(exist_ok=True)
+    (tmp / "treeD" / "main.py").write_text("x = 3\n")
+    (tmp / "treeD" / "doctrine.py").write_text(
+        "y = 1\n# ---- composed by tools/stack.py from: rnd1, catapult\n")
+    chk("combo_of: marker tree detected", combo_of(str(tmp / "treeD")), "rnd1, catapult")
+    chk("combo_of: solo tree (no doctrine marker) -> None",
+        combo_of(str(tmp / "treeC")), None)
+    # prefix@2700: 1484/2700 = 54.96% (one game under) vs 1485/2700 = 55.00%.
+    # Both clear the 51.0 floors at 1000 (56.0%) and 2700, isolating the new rule.
+    cb_below = trend_shard("CB_LOW", [(560, "T"), (440, "C"), (924, "T"), (776, "C")],
+                           treat="treeD")
+    cb_at = trend_shard("CB_AT", [(560, "T"), (440, "C"), (925, "T"), (775, "C")],
+                        treat="treeD")
+    cb_solo = trend_shard("CB_SOLO", [(560, "T"), (440, "C"), (924, "T"), (776, "C")],
+                          treat="treeC")
+    chk("COMBO prefix@2700 54.96% (one game under)      => STOP",
+        decide(cb_below, TB, DEFAULT_STALE_S).clause, f"COMBO-BAR@{MARK_HALF}")
+    chk("COMBO prefix@2700 55.00% (exactly AT the bar)  => not stopped",
+        decide(cb_at, TB, DEFAULT_STALE_S).action, "CONTINUE")
+    chk("SOLO at the same 54.96% numbers                => rule does NOT fire",
+        decide(cb_solo, TB, DEFAULT_STALE_S).action, "CONTINUE")
+    cb_null = trend_shard("CB_NULL", [(560, "T"), (440, "C"), (924, "T"), (776, "C")],
+                          treat="treeD", ctrl="treeD")
+    chk("null cell that ALSO carries a combo marker     => G5 still wins",
+        decide(cb_null, TB, DEFAULT_STALE_S).clause, "NULL-CELL")
 
     # ── FLAG 3 (side lane, 2026-08-16): the LEDGER must carry the number the
     # rule actually READ. TREND-FLOOR fires on the first-N PREFIX while the
