@@ -11,6 +11,12 @@
 * CONTROL: **bots/_v223sealrepair (v140)** — Magnus re-affirmed TODAY, verbatim: "lets
   keep benchmark toward v140". Every queued row scores against it. main.py md5
   91d7a4c8dab777a25c83ce2bc470e02c.
+* **⭐ AIMING POINT (Magnus, s46 2026-08-16T08:2xZ, verbatim): "Honestly, I'm quite confident
+  we will need to score 70% winrate against v140 to have any shot at the top at all, 60% is
+  just a step in the right direction."** And v140 stays the benchmark permanently ("If we
+  move our benchmark bot all the time all our experiments end up unusable"). Consequence:
+  weight mechanism-level ceilings over +1-2pp tuning — the composition operator paid +1.3pp
+  once and went flat (s46 audit).
 * **SLOT PIPELINE (all three rulings TODAY, encoded in PROGRAMME.md):** (1) an arm must
   MEASURE >= 60.0% vs v140 with +-2pp half-width, 60 mid-span (precision reading —
   58-59.9 does NOT qualify); (2) then head-to-head vs the CURRENT holder's staged

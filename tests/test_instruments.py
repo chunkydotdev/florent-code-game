@@ -838,7 +838,11 @@ class LiveProgrammeLineDirsInvariant(unittest.TestCase):
                              "LINE_DIRS pattern — widen LINE_DIRS (Magnus's "
                              "directive) before trusting any gate refusal")
 
-    def test_checker_fires_on_the_historical_stale_state(self):
+    def test_checker_fires_on_the_historical_stale_line_dirs_state(self):
+        # "line_dirs" is in the NAME on purpose: the side lane found that
+        # `-k line_dirs` — the natural filter for this invariant — silently
+        # skipped this twin under its old name. A twin a filter drops is the
+        # same shape as a guard nobody invokes.
         # The negative twin: the exact pre-widening s46 state must FAIL the
         # invariant, or the live test above has never been seen to check.
         from gate import incumbent_matches_line_dirs

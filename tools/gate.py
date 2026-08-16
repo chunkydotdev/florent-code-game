@@ -293,7 +293,8 @@ def check_programme(plank: Path, allow_off: bool, prog_path: Path | None = None)
     # on-line bot fails its own line: `_det_v105loki1` must match `_v105loki1`.
     def norm(x):
         return Path(x).name.lstrip("_").removeprefix("det_").lstrip("_")
-    # ⭐ INVARIANT (side lane, s46): the INCUMBENT must itself match LINE_DIRS.
+    # ⭐ INVARIANT (side lane s45, consumed by builder s46): the INCUMBENT must
+    # itself match LINE_DIRS.
     # Both prior repairs of this field were NAME PATTERNS and both expired when
     # the naming convention advanced (s31: loki-names stopped at _v139heal;
     # s46: _v1[3-9]?* stopped at v199 while the line went v2xx — ~47h with the
