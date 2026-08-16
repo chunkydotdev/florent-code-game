@@ -59072,3 +59072,72 @@ illegal value, **fifth such save today, still none from care.** ⇒ **the same c
 `gate.py` would silently drop `R1000_IS_DEFEAT` and `X3R0_SLOT_RULE` from the enforced set**, which
 is why a tool that already computes this is being read rather than re-implemented — s35's rule,
 violated by me and then applied.
+
+--- 2026-08-16T05:2xZ (`date -u`) ⭐⭐ **SIDE LANE s44 — RESEARCH'S RETRACTION IS VERIFIED, AND THE INSTRUMENT THAT CAUSED IT IS SHOWING 25 OF 60 QUEUE ROWS WITH NO SIGN THAT ANYTHING WAS CUT.** ---
+
+## ✅ THE RETRACTION IS CORRECT — VERIFIED AT THE ROW, NOT TAKEN
+
+`QUEUE.md:161` reads **"LONG-APPROACH ARRIVAL — OUR BUILDERS LOCK AT 3.3× THEIRS ON MIDGARD"** and
+its `15a` clause reads verbatim: *"{midgard, ragnarok} — LONG-APPROACH, and **explicitly NOT
+'900-area': valkyrie and glacierkeep** read 77%/73% and are among our BEST cells despite being the
+same size."*
+⇒ **The row was scoped to midgard in its own TITLE and it names valkyrie/glacierkeep as the
+same-size control that runs the other way.** The sweep's two headline findings — *"the area cut is
+null"* and *"{valkyrie, glacierkeep} runs the other way"* — **are the row's own text.** Research's
+self-catch is right in every particular.
+⭐ **AND THE PART THEY SHOULD KEEP: the row IS confirmed, on a channel it never used.** The 3.3× is
+a LOCK RATE; arrival TIME had never been compared us-vs-them, and it now reads **+22.14 rounds
+paired**, with **pooled we are the FASTER side (−16.71)** bounding it to one map. **`ragnarok` NULL
+(p=0.33) is a genuine correction TO the row.** The sweep was mis-briefed, not wasted.
+
+## ⛔⛔ THE INSTRUMENT DEFECT, AND IT IS NOT "TITLES ARE LONG"
+
+`tools/queue_check.py:351` — `return f"#{num} {name[:58]}"`. **It truncates at 58 characters and
+appends NOTHING.**
+
+    what every lane sees at boot:  #63 LONG-APPROACH ARRIVAL — OUR BUILDERS LOCK AT 3.3× THEIRS O
+    what the row says:            ...THEIRS ON MIDGARD
+
+**⇒ A TRUNCATED TITLE AND A COMPLETE TITLE ARE INDISTINGUISHABLE.** There is no `…`, no marker, no
+width cue. That is this repo's single most-repeated failure shape — *a healthy line and a blind
+line are byte-identical* (`ship_watch`), *a stale holder and a live one* (D28), *a dead file named
+`_current`* (this morning) — **now in the most-read surface we have, because the `SessionStart`
+hook prints it to all three lanes at every boot.**
+
+**MEASURED, with the known case as the positive control:**
+
+    POSITIVE CONTROL — the detector must reproduce the boot line I saw at MY OWN SessionStart:
+      detector -> 'LONG-APPROACH ARRIVAL — OUR BUILDERS LOCK AT 3.3× THEIRS O'   ✅ REPRODUCES
+    ⇒ 25 of 60 queue rows are cut MID-WORD at the boot width.
+
+**#63's cut is the dangerous species and the count understates it: the cut landed exactly on the
+SCOPE QUALIFIER.** Losing `ON MIDGARD` did not make the title vague — **it made a map-specific row
+read as a general one**, which is a different and worse failure than mid-word truncation. **The
+scope is where titles put their qualifiers, and the tail is where truncation lands.**
+
+**THE COST, already paid and measured by its own victim:** an `opus` agent, ~16 minutes, a brief
+specifying the map-AREA axis **the row explicitly rejects**, and a false claim relayed to the
+builder and to Magnus before its author caught it opening the row.
+
+**THE FIX IS ONE CHARACTER AND IT IS THE RIGHT ONE — append `…` WHEN AND ONLY WHEN THE TITLE WAS
+CUT.** It does not shorten anything, does not need a width decision, and converts *"looks
+complete"* into *"obviously incomplete"*. ⛔ **Positive control it must pass: a row whose title is
+≤58 chars must get NO ellipsis** — otherwise the marker is constant and a constant column
+validates anything. **Routed to the builder; `tools/` is theirs.**
+⚠ **`queue_check.py --next` already exists for this and was shipped yesterday.** It is the right
+tool and nobody ran it. **A fix that requires remembering to use a second command has not fixed the
+first command** — which is why the ellipsis belongs in the default display, not only in `--next`.
+**⇒ AND THE ONE-LINE RULE, which research reached independently and which I am seconding rather
+than co-authoring: NEVER QUOTE A QUEUE ROW FROM THE BOOT DISPLAY.**
+
+## ⚠ MY OWN FIRST ATTEMPT AT THIS COUNT WAS WRONG AND I NEARLY PUBLISHED IT
+
+I guessed the boot width at 62 and got **8 of 29**. **That detector could not reproduce #63 — the
+very case that motivated it — and I would have published a count from an instrument that fails its
+own motivating example.** Fixed by reading `queue_check.py:351` for the real width (58) instead of
+reverse-engineering it, and by **running the known case as a positive control before reporting the
+unknown ones.** ⇒ the true count is **25 of 60**, three times my guess.
+**This is the collar-heal standard applied to a five-line script** — *validate against a known
+published cell before the unknown cells are trusted* — and the standing rule I keep re-learning
+today: **read the tool that already computes it; do not re-implement it.** Sixth catch today from a
+check that could not come out right, none from care.
