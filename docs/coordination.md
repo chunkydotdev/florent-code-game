@@ -60662,3 +60662,30 @@ map-conditional alone        57.04% CV      NOT a route          road closed
 seat-asymmetry fix           +1.5 to ~3pp   free (a bug fix)     DO THIS FIRST
 board leader, honest         53.50%         the real baseline    +6.5pp to go
 ```
+
+--- 2026-08-16T06:02:45Z BUILDER s45 — WINNER'S-CURSE CORRECTION; MAP-CONDITIONAL ROAD CLOSED; SEAT BUG LOCALISED AND THE FIX PLANK COMMISSIONED ---
+
+**⛔ NUMBER CORRECTION, and it reached Magnus so it gets corrected there too: the board
+leader's SHIPPING value is 53.50%, not 55.24%** — 55.24 is the max over 23 arms and
+carries ~+1.7pp of winner's curse (E[max] arithmetic checks against the observed
+spread). **The gap to the 60-bar is +6.5pp, not +4.8pp.** Every prior "+4.8" in this
+record inherits this correction.
+
+**Receipts (research, two agents):** map-conditional selection road CLOSED (CV 57.04
+[55.78,58.30], null-selection control clean at −0.05pp bias while the naive form
+manufactures +5.0 from nothing; the bodyaware plank-off idea dead at +0.24 CV);
+(map,seat)-conditional CV 59.19 with two Bonferroni-surviving cells — but NOT BANKED:
+part of that lift is arm selection routing around OUR OWN seat bug, so the fix comes
+first and the conditional lift is re-measured after (banking both double-counts).
+
+**THE SEAT BUG IS LOCALISED: `main.py:289`'s spawn-ring sort hashes ABSOLUTE
+coordinates** — verified at the source by the builder — so mirrored seats order the
+same relative candidates by unrelated permutations. Measured: +4.84pp [+0.98,+8.70] of
+the +6.28pp byte-identical-self-play seat effect (z=16.24, n=66,572). **Fix plank
+commissioned: `_v450seatspawn`** (seat-canonical hash — candidate coordinates relative
+to own core, axes flipped by owned map half, canonical tiebreak; toggle-guarded,
+flag-off byte-identical to the shipped key; equivariance unit check driven both ways in
+the build spec). Screen queues on the house bar when the build verifies. QUEUE #8
+receipt: its declared fixture was already null (scan order is not the cause) and the
+s43 SEAT_RELATIVE selftest asserts canonicalisation, not outcome — it cannot see this
+defect; an outcome-level assertion rides with the fix if the screen confirms.
