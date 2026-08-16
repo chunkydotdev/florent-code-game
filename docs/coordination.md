@@ -60237,3 +60237,58 @@ for another instance of it, inside five minutes.** That is worth the line more t
 invocation; panels set `UNPINNED_OK=1`; anything else fails loudly before firing.** Combined with
 the post-fire `oppver` assertion adopted at bar level, **both the silent-unpin and the wrong-pin
 failure modes now have detectors** — which is more than the leg had an hour ago.
+
+--- 2026-08-16T05:5xZ (`date -u`) ⛔⛔ **SIDE LANE s44 — A TEAMMATE IS FIRING UNRATED MATCHES RIGHT NOW, ON OUR SHARED RATE BUDGET, AND THE TEN-INVOCATION LEG IS ABOUT TO NEED IT. Two wrong readings of mine killed before publication — one of them in the dangerous direction.** ---
+
+## THE OBSERVATION
+
+`rate_budget.py` reports two unrated matches at **05:36:33Z** and **05:39:21Z** *"counted as OURS
+for the wait"*, with its own caveat: *"Either an opponent challenged us, or A RUNNER OF OURS IS NOT
+WRITING `arm_*.txt`. Indistinguishable here, so the wait assumes the unsafe one."*
+**Our initiative ledger records ZERO fires since 05:25Z.** `fcode match list --mine --type unrated`:
+
+    05:39:21.195Z  701cec63  OpenSverige vs Erebus
+    05:36:33.661Z  6f920e8f  OpenSverige vs Hugging Farce
+
+## ⛔ TWO READINGS I FORMED AND KILLED, AND THE SECOND WOULD HAVE CAUSED HARM
+
+**READING 1 — "an opponent challenged us, so the budget tool over-counts and our effective budget
+is UNDERSTATED."** ⛔ **Wrong, and this is the dangerous one:** it would have told the leg it had
+MORE budget than it does, producing rate-limit rejections mid-leg — and `CLAUDE.md` is explicit
+that such drops are **systematic and always land on the SAME cells**, biasing one opponent.
+**Killed by: name order is not initiative.** `OpenSverige` appearing first is a seat/label, and I
+had no basis to read it as the challenger — **the exact inference-from-an-adjacent-surface that
+cost me the v153 flag this morning.**
+
+**READING 2 — "a runner of ours is firing without logging."** ⛔ Also wrong, and it is the tool's
+own suggested alternative. **Killed by the repo's primary**, `tools/dash/matches.py:34-39`:
+> *"A MATCH IS NEVER TAGGED AS OURS WITHOUT ITS ID IN A LOG… **Everything else unrated on our
+> account is `other operator` — a teammate fires from the same team account, verified
+> 2026-08-13** — and that is a statement about OUR LOGS, not about them."*
+
+⇒ **THE DOCUMENTED THIRD EXPLANATION, WHICH I HAD NOT CONSIDERED: a teammate firing from the same
+team account.** Established 2026-08-13, and consistent with x3r0's activity all session
+(v146–v153 uploads, the v153 auto-activate-and-rollback at 20:37Z).
+⚠ **Stated with the doc's own precision: this is `other operator` by our logs' definition. I am NOT
+asserting whose hand it was** — the same refusal both lanes made on the activator column.
+
+## ⭐ THE CONSEQUENCE FOR `LEG-fieldcal`, AND IT IS OPERATIONAL AND LIVE
+
+**The rate limit is charged to the CHALLENGER, and a teammate firing from our account IS our
+account.** ⇒ **`rate_budget.py` counting those two as OURS is CORRECT, not over-conservative — my
+Reading 1 would have "fixed" a tool that is right.**
+⇒ ⛔ **THE TEN-INVOCATION PINNED LEG SHARES ITS 5-PER-20-MIN BUDGET WITH AN OPERATOR WHO IS FIRING
+NOW AND WHO DOES NOT WRITE OUR LEDGER.** Two matches in the last fifteen minutes is **40% of a
+window**, spent invisibly to any scheduler our side builds.
+**This compounds the two residuals already on the record:** the zero-accept backoff is
+per-invocation, and the runner's anti-bias rotation is inert at one cell — **so a budget drained by
+a third party lands as a drop on whichever cell the scheduler happens to be on.**
+⇒ **RECOMMENDATION, and it is cheap: the leg's scheduler must read `rate_budget.py` (which sees
+ALL account spend) BEFORE each invocation, never its own fire count.** `unrated_run.sh` already
+gates on `max(meter, own ledger)` for exactly this reason — **the danger is a scheduler wrapped
+around it that counts only its own invocations.**
+
+## ✅ ONE THING CORROBORATED IN PASSING
+`1017fe8c` appears at **03:45:56Z as an UNRATED match, `Erebus vs OpenSverige`** — that is the pin
+match id research registered for Erebus. ⇒ **their §4 explanation is confirmed at a third surface:
+it is absent from `ladder_games.tsv` because it is genuinely unrated, exactly as they said.**
