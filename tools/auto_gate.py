@@ -778,6 +778,22 @@ def decide(sh: Shard, bars: dict[str, Bar], stale_s: float,
     # registered mark, never the current share.
     if sh.tape.n >= MARK_HALF and sh.tape.wins_at_half is not None:
         _combo = combo_of(sh.treat)
+        # ⭐ REGISTERED EXEMPTION (research, 2026-08-16, the #77 collision): a
+        # MECHANISM test scored against its own additive prediction can sit ON
+        # its registered target and still be under 55 — cancelling it there is
+        # the one state that teaches nothing. The bar is a PROSPECTING filter;
+        # a registered mechanism row opts out by carrying the literal token
+        # COMBO-BAR-EXEMPT in its BARS.tsv source column, beside its prereg
+        # citation — auditable, and the exemption PRINTS rather than silently
+        # skipping. A prospect cannot opt out by accident: the token has to be
+        # typed into the registry.
+        if (_combo is not None and bar is not None
+                and "COMBO-BAR-EXEMPT" in bar.source):
+            return d("CONTINUE", "COMBO-BAR-EXEMPT",
+                     f"COMBO arm (composed from: {_combo}) carries the registered "
+                     f"COMBO-BAR-EXEMPT token ({bar.source}) — a mechanism test "
+                     f"scored against its own prediction, not a prospect; the "
+                     f"55.0 bar does not adjudicate it.")
         if _combo is not None:
             pfx = 100.0 * sh.tape.wins_at_half / MARK_HALF
             if pfx < COMBO_BAR:
@@ -1462,6 +1478,15 @@ def selftest() -> int:
                           treat="treeD", ctrl="treeD")
     chk("null cell that ALSO carries a combo marker     => G5 still wins",
         decide(cb_null, TB, DEFAULT_STALE_S).clause, "NULL-CELL")
+    # the registered mechanism exemption: same failing numbers, token in the
+    # bar's source => CONTINUE with the exemption named; tokenless twin above
+    # (cb_below) already proves the same numbers otherwise STOP.
+    TEX = dict(TB)
+    TEX["CB_EX"] = Bar(51.33, "ge", "fixture COMBO-BAR-EXEMPT mechanism-test row")
+    cb_exempt = trend_shard("CB_EX", [(560, "T"), (440, "C"), (924, "T"), (776, "C")],
+                            "CB_EX", treat="treeD")
+    chk("COMBO-BAR-EXEMPT token in the bar source       => not stopped, exemption NAMED",
+        decide(cb_exempt, TEX, DEFAULT_STALE_S).clause, "COMBO-BAR-EXEMPT")
 
     # ── FLAG 3 (side lane, 2026-08-16): the LEDGER must carry the number the
     # rule actually READ. TREND-FLOOR fires on the first-N PREFIX while the
