@@ -60540,3 +60540,63 @@ reproducing them digit-for-digit validated nothing about the interval — **A RE
 VALIDATION OF THE INTERVAL**."* **I reproduced those point estimates twice today and treated the
 agreement as reassurance.** It was reassurance about the estimator and none about its variance, and
 nothing in our practice distinguished the two until they wrote it down.
+
+--- 2026-08-16T09:4xZ (`date -u`) RESEARCH s45 — ⭐⭐ **THE SEAT ASYMMETRY IS OUR CODE, IT IS THE LARGEST SELF-INFLICTED EFFECT ON THE BOARD, AND THE FAVOURED POLE IS A COMPASS DIRECTION. IT IS ALSO NOT THE PATH TO 60.** ---
+
+Opus agent + my independent re-derivation. Doc: `docs/research/SEAT-ASYMMETRY-HUNT-2026-08-16.md`.
+
+## 1. MEASURED, AND I RE-DERIVED THE HEADLINE RATHER THAN RELAYING IT
+**Byte-identical self-play (9 identity shards, treatment == control):**
+```
+seat A T-wins 53.42% (n=33,287)   seat B 47.14% (n=33,285)   GAP +6.28pp   z=+16.24   n=66,572
+seat balance A 33,287 vs B 33,285 — BALANCED
+```
+*(Agent's cut, restricted to the current 15-map pool: +5.92pp, n=13,402, z=+6.86; across 19 maps ×
+9 shards: +6.62pp, n=35,034. Mine pools every identity shard — same direction, same magnitude.)*
+⇒ **On BYTE-IDENTICAL bots, seat A beats seat B by 6.28pp with z=16. This is entirely self-inflicted
+and it is the largest and best-established effect anywhere on our board.**
+
+## 2. ⭐ IT FLIPS BY MAP — WHICH IS WHAT PROVES IT IS OURS, NOT THE ENGINE
+```
+glacierkeep +46.35    heart +17.02   nordkap +16.79   fjordgate +15.66   midgard +13.53
+antler      +11.97    auroraveil +11.06   drumlin +9.92   icefloe +7.29   frostgate +3.34
+ragnarok     +2.28    drakkarfjord +1.97  hive +0.59   yulerune -0.15
+royale       -4.56    meander -7.69   atoll -12.99   archipelago -16.36   valkyrie -26.31
+```
+**A consistent seat advantage would implicate the engine or the harness. A MAP-DEPENDENT one, on
+byte-identical bots, can only be our own map-keyed logic.** Only **4%** of the between-map variance
+is noise (true sd 15.9pp).
+
+## 3. ⭐⭐ THE FAVOURED POLE IS A COMPASS DIRECTION — the sharpest form of the finding
+**North core wins 58.39% on the 5 N–S maps (n=4,468, z=+11.2).** Axis NS-ness vs gap **r=+0.583,
+permutation P=0.019** — ⭐ **and the alphabetical-map-name control that FIRED on the `bodyaware`
+fingerprint (r=+0.525 there) stays NULL here at −0.216.** That contrast is what makes this
+believable where the fingerprint was not: **same control, opposite verdict, on the same 15 maps.**
+
+## 4. THREE CODE SITES, ONE OF THEM MEASURED TO CARRY GAP (all in `bots/_v223sealrepair`)
+1. **`eco.py:868` `side = 1 if (self.idx & 1) else -1`** — BFS handedness. **MEASURED: entity-id
+   parity is SEAT-LOCKED, 240/240 on builders #1 and #2 across 120 replays** ⇒ **the two seats run
+   mirror-image pathfinders in every game.**
+2. ⭐ **`main.py:289` — spawn ring sorted on `(x*17 + y*31 + …) % 97`.** **The one component
+   measured to carry gap: +4.84pp [+0.98, +8.70].** A hash of absolute coordinates is **not**
+   rotation-equivariant, so the spawn ring is ordered differently for the two seats by construction.
+3. **`eco.py:97 nearest_cardinal`** — non-equivariant under rot180; governs every conveyor facing.
+⛔ **CAUSATION NOT ESTABLISHED**: site #1's own directional prediction (bigger gap on rot180 than on
+mirror maps) **came out BACKWARDS, P=0.296**. These are hypotheses with one measured component.
+
+## 5. ⛔ AND IT IS **NOT** THE PATH TO 60 — the honest ceiling
+**Agent's upper bound: +1.48pp global / +3.19pp per-map ⇒ board 55.24 → ~58.4 at best.**
+⚠ **My own back-of-envelope is higher (~3.1pp global: we hold each seat half the time, so raising
+the weak seat to the strong one recovers about half the gap) and I have NOT re-derived theirs.**
+**Either way it does not reach 60, and either way it is free — a bug fix, not a new mechanism.**
+
+## 6. QUEUE #8 IS ALREADY ANSWERED AND NOBODY RECORDED IT
+⛔ **`#8`'s declared fixture WAS RUN (`SR1NULL`/`SR2NULL` vs `SRNULL0`, 2026-08-11): CARDINALS share
+−3.00pp, consistent with ZERO.** ⇒ **the scan-order hypothesis is not the cause; the spawn-ring hash
+is the better candidate.** The `s43` SEAT_RELATIVE selftest passes 11/11 **but tests `_v151seatrel`,
+asserts `CARDINALS` only, and asserts CANONICALISATION rather than OUTCOME** — it cannot see this.
+
+## 7. CONTROLS
+Seats 17,517/17,517; all 38 (map,seat) cells balanced; within-cell seed-split χ²/df **1.15** vs
+between-shard **8.02** ⇒ the between-map spread is structure, not seed noise. **No identity null
+exists for the incumbent itself** — that is the one gap in the design.
