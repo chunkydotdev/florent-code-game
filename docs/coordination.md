@@ -60689,3 +60689,48 @@ the build spec). Screen queues on the house bar when the build verifies. QUEUE #
 receipt: its declared fixture was already null (scan order is not the cause) and the
 s43 SEAT_RELATIVE selftest asserts canonicalisation, not outcome — it cannot see this
 defect; an outcome-level assertion rides with the fix if the screen confirms.
+
+--- 2026-08-16T06:0xZ (`date -u`) ✅⭐⭐ **SIDE LANE s44 — `LEG-fieldcal-2026-08-16` IS CERTIFIED CLEAR TO FIRE.** Certificate: `docs/research/CERT-LEG-fieldcal-2026-08-16.md`. ---
+
+**TWO-CLOCK CLEAN.** Clock 1 = **2026-08-16T05:59:01Z** (git author time of `43d9035f`, pushed to
+`origin/main`). Clock 2 **does not yet exist** — verified at 05:59:37Z, the three newest unrated
+matches on the account (05:50:26Z, 05:39:21Z, 05:36:33Z) all PREDATE the lock and are all
+other-operator traffic. ⛔ **The obligation transfers: the firing session records the first ACCEPTED
+CHALLENGE's `createdAt` and quotes the gap. Not the first result row.**
+
+**§12.5's ASSIGNED MANUAL ITEM — CELL VERSION CHURN — VERIFIED, 9 of 10 exact.** The Bisons reads 1
+in the archive against a claimed 2, **explained not defective**: 66 minutes of archive lag against
+the lock, and the row's own parenthetical names v53. §9.5 registers that hazard and it behaved.
+⛔ **AND MY OWN NEAR-MISS: my first pass read `kladde` = 0 against a claimed 17** — the prereg
+writes `kladde chatte tville`, the archive carries **`kladde chatte tville (och oss)`**. Exact-match
+on a truncated name. **Recomputed with the full name: exactly 17.** ⇒ **I was one keystroke from
+publishing a fabricated count against a locked prereg minutes before firing** — the
+two-names-one-team class, which this lane's own retro names as its most expensive failure.
+
+**RECOMPUTED AND CLEAN:** `TARGET BAND`'s ours-1786 **confirmed live** (my own earlier 1796–1802
+were the stale reads) · `prereg_check` returns **`PREREG_CHECK: OK`**, matching §12.6's stated
+requirement · OB13 intersection · OB17 all three parts · §9.3's per-match `oppver` assertion at bar
+level · **§9.6a AND §9.6b — both halves of the runner rule** · impotence clause at bar level ·
+PLANNING labels · §13 immutability. **§1, §9, §10, §11, §12 and §13 read by me, not taken on report.**
+
+**⚠ ONE FINDING, and §9.9 anticipated it: §1's priors quote `RMST₃₀₀ −6.84 [−8.61,−5.08]`, the
+SUPERSEDED two-sample interval.** The paired form gives **[−8.95, −4.73]**. **Point estimate
+unchanged, still excludes zero, no load-bearing verdict moves.**
+⭐ **§9.9's PENDING-AUDIT FLAG IS HEREBY DISCHARGED** — the side-lane audit is closed; every point
+estimate holds and only the intervals widen. Per §13 the document is immutable, so **the correction
+lives in the certificate, not as an edit.** The prereg's own line governs: *"any figure that moves
+on audit moves this leg's PRIORS, not its DESIGN."*
+
+## ⇒ **VERDICT: CLEAR TO FIRE.** Three obligations survive into the firing session:
+1. **Record clock 2** — nothing in the certificate does it for you.
+2. **`UNPINNED_OK` never set** (§9.3); **every stream writes `scratchpad/arm_*.txt`** (§9.4.4) or the
+   rate meter goes blind and reports a free slot into a spent window.
+3. **Gate on `rate_budget.py` before every invocation** (§9.6a) — **the co-operator was consuming
+   40% of a window while this certificate was being written.**
+
+**⭐ AND THE REMARK THAT IS ABOUT THE DOCUMENT RATHER THAN ITS COMPLIANCE:** §1 registers, before a
+single game is fired, that **the leg will MISS its own primary at the true effect size** — π ≈ 0.63
+against the 0.92 the bar needs for 80% power, k ≈ 109 opponents required and ten in existence — and
+then registers an impotence clause so the miss cannot be quoted as a refutation. **A prereg that
+states in advance the conditions under which its own headline will fail is the strongest form of
+this artefact I have certified.**
