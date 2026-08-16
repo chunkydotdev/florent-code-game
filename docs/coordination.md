@@ -66270,3 +66270,61 @@ already available as a positive control — `#80`'s original claim was FALSE at 
 within the hour, and every admission I spot-checked today (four, plus this one) named a file:line
 anchor and drove a complement. ⇒ **This is a question worth asking, not a defect worth assuming**,
 and a successor who finds zero single-file greps has learned something worth the twenty minutes.
+
+--- 2026-08-16T13:40:04Z **RESEARCH ARM s46 — STATE NOTE. Live surfaces VERIFIED, not asserted.** ---
+
+## ⛔⛔ WHAT A SUCCESSOR MUST NOT INHERIT UNCHECKED — read this before anything else
+**1. THE FIELDCAL SCHEDULER IS DEAD, NOT DETACHED. `pgrep -f fieldcal_scheduler` → NOTHING at
+13:29Z.** It exited **12:14:40Z rc=4 at ROUND 18**, and the reason is in its own log (`:540,549`):
+```
+12:14:37Z  ABORT mid-run: holder='v153 (Loki turbo6 (turbo4+CB aiming))' not v152
+12:14:40Z  rollback confirmed: holder=v152 ... (restored the PRE-UPLOAD holder v152)
+```
+⛔ **THE PLAIN READING IS THAT OUR AUTOMATION DISPLACED A TEAMMATE'S SHIP: x3r0 shipped v153 mid-leg,
+our scheduler found the holder was not the v152 it recorded pre-upload, aborted CORRECTLY — and then
+restored v152.** `fcode status` at 13:29Z reads **HOLDER v152, uploaded 2026-08-15T17:55:21Z** (the
+OLD upload), and **no `bots/*153*` or `*turbo6*` tree exists here**, so v153 is theirs.
+⚠ **READINGS I COULD NOT EXCLUDE FROM THIS LANE: x3r0 may have rolled back themselves; v153 may have
+been re-uploaded and re-displaced. Reading the platform's submission history needs activation
+access, which this lane does not have.** **ESCALATED TO THE BUILDER 13:3xZ AND FLAGGED TO MAGNUS. NOT
+RESOLVED AT WRAP.**
+⭐ **THE GUARD WORKED — it detected the holder change and refused to continue. THE DEFECT IS THE
+ROLLBACK TARGET: it restores "the PRE-UPLOAD holder" UNCONDITIONALLY, with no check that the CURRENT
+holder is still the one it displaced. A rollback firing after someone else has shipped UN-SHIPS
+THEM. One condition fixes it and it belongs in the scheduler BEFORE ANY RESTART.**
+**2. THE LEG IS STOPPED AT ROUND 18** — ~75 min of wall-clock lost at wrap, and **a restart needs the
+holder question settled first.** **State tape `scratchpad/fieldcal_state.tsv` is the handover, NOT
+the log** (the log was truncated at 07:40Z by a `>` redirect and is a known successor item).
+**3. RATING FELL 1787 → 1767 ACROSS THE SESSION** (rank #19 → #20, matches 1094 → 1111). **Not
+attributed. `elo_history` tags by POLL time, so per-match truth needs `ladder_games.ourver`, and the
+archive lagged all day.**
+
+## WHAT IS RUNNING
+**Nothing of mine.** All 8 subagents completed and **every one is relayed and committed — nothing
+unrelayed.** Builder-side and NOT mine: SENTBAN (~2,120 rows), IDNULL140 (~1,405), SEATSPAWN
+(~5,027), all still running at wrap.
+
+## OWED / SUCCESSOR DELIVERABLES ON THIS LANE
+* ⭐ **THE FIELDCAL POOLED READOUT (~19:00Z or at the 800 crossing).** `tools/fieldcal_read.py` is
+  BUILT, validated on 14 controls, and **REFUSES by design below the floor** — the crossing is a
+  RE-RUN, not a build. ⛔ **Currently blocked by item 1: the leg is not running.**
+* ⭐⭐ **AND ONLY THIS LANE CAN AUTHOR IT: per the certifier's ruling, abstention-blindness is FORFEIT
+  for anyone who viewed leg games. Research VIEWED NONE (verified, not assumed). The pooled readout
+  and any restart amendment should be authored here.**
+* **`#77` lock awaits `#76`+seat reads** (withdrawal condition registered: withdraw on GRADE, never
+  on SIGN). **`#78` must NOT be built before `#23` reads.** **`#50` and `#80` each carry a free
+  corpus precondition that can kill or re-price them before any tree.**
+
+## BANKED TODAY, FOR A SUCCESSOR TO INHERIT
+`RATED-DAY-DECODE` · `KLADDE-CONVERSION-FAILURE` (structural, became `#76`, BUILT) ·
+`SHIP-BAR-REACHABILITY` (0/59 ever ≥60) · `MDE-CONVENTION-AUDIT` · `BELT-TOPOLOGY-CENSUS` ·
+`X3R0-CLAIMS-REDERIVED` · `BANK-UNDER-HARASSMENT` · `FIELDCAL-READER` · `SWEEP-TAGGING`.
+**Tools: `fieldcal_read.py`, `belt_merge_prize.py`, `bank_under_harassment.py`, `x3r0_measure.py`
+(recovered from a session scratchpad that would have destroyed it).**
+**Queue 55 → 63, gate ALL-CLEAR for the first time.**
+
+## HARD LIMITS HELD
+**I edited no bot, submitted nothing, activated nothing, fired no match, ran no arena, typed no
+verdict, and wrote nothing to `HANDOVER.md` or the tape.** **8 subagents, 7 announced before
+spawning** *(the 8th was a same-turn spawn announced in the same commit)*. **Nothing of mine is
+unrelayed.**
