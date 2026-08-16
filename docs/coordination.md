@@ -67663,3 +67663,24 @@ Magnus priced and accepted. **It is an argument about what the SURVIVING ROWS me
 **3. AND A SIGNAL I DID NOT PRICE IN `#81`: 0033 is 40.5% all-time against 28.2% recent.** Either they improved against us or we regressed against them. **The row assumes neither and should carry a version-split before any arm is aimed.**
 --- 2026-08-16T16:29:13Z BUILDER s47 IN-FLIGHT: KLADKILL (_v466kladkill) in build per Magnus's direct strategy directive ("kladde eco start to at most 3 harvesters, then go for the kill with at least 2 sentinels and defend those"). Base _v464samestop + LOKI_HARV_CAP=3 + LOKI_FWD_SENT_MIN=2. Priors consulted: MINHARV1 47.2 (siege at 1 harvester = real negative, the cliff is below 3) and current LOKI_FWD_MIN_HARV=2 unchanged. Jumps the queue ahead of SAMESTOP/KILLTILE solos per the Magnus-priority rule; registered as a directed strategy test at the 51.33 house bar, not combo-marked (design test, not operator prospecting). ---
 --- 2026-08-16T17:11:39Z BUILDER s47 IN-FLIGHT: KLADTURBO (_v468kladturbo) in build per Magnus ("the kladde eco unlocks a lot we can do earlier, we should lean into this, is it combinable with v152?" — answer: yes, via the proven TBA hand-merge method). SAMESTOP ported onto the _v428tba base (turbo x bodyaware), opus agent, seam checklist (does turbo's nav still honor the stand-tile redirect; does TBA's belt planner keep the plan[0]/plan[1] contract; L4 hole-fill present; bodyaware displacement vs the pending build) + two-half validation (flag-off build-sequence equivalence to TBA, flag-on same-stop signature reproduction). Start gated on TBA's full read (minutes out) — rebase path onto confirmed _v427turbo4 documented if TBA regresses. ---
+
+--- 2026-08-16T17:33:29Z ⭐⭐ **RESEARCH s47 — SAME-DAY RATED DECODE (this lane's named FLOOR deliverable, run for the full day). 51 rated matches. THE ENTIRE DAY'S LOSS IS ATTRIBUTABLE TO ONE VERSION, AND IT IS NOT THE ONE THAT PLAYED MOST OF THE GAMES.** ---
+
+**Method: per-match `ourver` off `corpus/ladder_games.tsv` — the GROUND TRUTH, never `elo_history`'s poll-time tag — with `delta = 32(S − E)`, S = games/5, E logistic on `ourbef`/`oppbef`. Archive newest row 16:52:59Z.**
+
+```
+TOTAL          51 matches   121/255 games = 47.5%   NET -38.09 Elo
+  v152         46 matches   116/230 games = 50.4%   net  +11.44
+  v153          5 matches     5/ 25 games = 20.0%   net  -49.53
+```
+⇒ ⛔ **v152 IS NET POSITIVE ON THE DAY. THE WHOLE -38.09 IS v153's FIVE MATCHES.**
+
+**With DEFF 1.366 (within-opponent: opponent cluster degenerate, MATCH cluster live — enumerated, not looked up):**
+**v152 50.4% [42.9, 58.0] — INCLUDES 50, i.e. at parity.**
+**v153 20.0% [1.7, 38.3] — EXCLUDES 50 even after the correction, on 5 matches against 5 DIFFERENT opponents (I Stone, 0033, The Bisons, Dino, HTTP 418).**
+⚠ **Restated as an EXCLUSION before applying DEFF, per the direction clause — widening makes this claim HARDER and it still clears.**
+
+⛔⛔ **THIS IS A TEAMMATE'S BOT (x3r0's v153) AND IT IS FOR MAGNUS AND x3r0, NOT FOR A LANE TO ACT ON.** **No lane should infer a rollback from it and this lane types no verdict.** **Reported because the same-day rated decode is this lane's floor obligation and the number is what it is.**
+⭐ **AND THE SELF-CLAIM RULE APPLIES TO OUR OWN DECODE, WHICH IS WHY IT IS SPLIT: pooled, today reads "47.5%, -38 Elo" and indicts nothing in particular. Split by `ourver` it names one version. THE POOLED NUMBER WOULD HAVE BEEN TRUE AND USELESS.**
+
+**Other reads worth carrying:** v153's tenure was **12:12:59Z → 14:32:59Z** (5 matches) and v152 resumed at 14:52:59Z. **3 of the 51 matches ended `titanium_collected`** — all against I Stone — **which under `R1000_IS_DEFEAT` are defeats regardless of result.** The rest are `core_destroyed` both ways, i.e. **the ladder is being decided on kills, which is the currency the programme wants.**
