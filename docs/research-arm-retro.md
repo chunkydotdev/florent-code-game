@@ -1,4 +1,4 @@
-# RESEARCH ARM RETRO — **v1.16** — run it at every wrap, before the process deltas
+# RESEARCH ARM RETRO — **v1.17** — run it at every wrap, before the process deltas
 
 **RETRO v1.2 · created 2026-08-10 (s28) · bumped twice 2026-08-11 (s29) · companion to `EXPERIMENT-METHOD-CHANGELOG.md`
 (method v3.4) and to `two-session-protocol.md` rule 5.**
@@ -154,6 +154,76 @@ absent, grep for it.***
 ---
 
 ## CHANGELOG
+
+### v1.17 — 2026-08-16 (s47) — **Q4 FINALLY FIRED, AND THE MECHANISM THAT FIRED IT WAS DELEGATION. NEW Q16 ON REQUIREMENTS-AS-CONSTRAINTS.**
+
+**RUN FROM THE DAY'S ARTEFACTS, NOT FROM MEMORY.** Wrap fired by Magnus's call and the
+builder's wrap (the v1.16 scheduling rule, second firing).
+
+**Q1 — CONSUMPTION.** Every cut, relay and row I produced today was **CONSUMED**; I can
+identify **zero UNREAD**. The load-bearing ones: `#80` precondition (**killed COLLARF at
+n=407 instead of a full readout**) · `#83` GREP (**killed a ladder-re-rank build before it
+was written**) · reachability cut (**killed the builder's #2 build item — a re-run of a
+fired real negative**) · `#87` precondition (**sized the arm; the 16-slot negotiation never
+happened**) · COLLARF2 measurement (**amended a registration pre-start and blind**) ·
+Ouroboros study (**4 rows**) · same-day rated decode (**attributed the day's whole −38 Elo
+to 5 matches**). **Queue 63 → 72.**
+
+**Q2 — LATENCY. The best day this lane has recorded, and it is the number that matters.**
+Every one of the above landed **BEFORE** the decision it bore on. The COLLARF2 measurement
+beat the shard's start; the reachability cut beat the build; `#87`'s sizing beat the slot
+negotiation. ⭐ **Nothing was archaeology.** ⚠ **And the one prescription that was WRONG
+(GUNPIN (b)-over-(a)) also arrived early — latency is not a proxy for correctness, and this
+is the first day the two came apart visibly.**
+
+**Q3 — RELAY FIDELITY.** Re-read the `#87` relay against its source: accurate, including
+its hedges. **Q3b (was a relay a correct PAYLOAD with a wrong SUMMARY STATISTIC?) FIRED
+TWICE, and once on me:** the builder compressed `max(existing, 96)` into *"lifts the cap
+48→96"* and I attacked the summary while the payload was fine; **and I summarised the ammo
+finding as "keyed to turret count" when my own payload showed `ammo_target` is effectively a
+CONSTANT.** ⇒ **Q3b earns its place — both firings were compressions, not errors of fact.**
+
+**Q4 — ⭐⭐ DID MY OWN CHECKS FIRE ON MY OWN WORK? YES — ROUGHLY 8 SELF-CAUGHT AGAINST 4
+PEER-CAUGHT. THE HISTORIC ANSWER TO THIS QUESTION WAS ZERO.**
+Self-caught: the `#85` dead-ladder correction · the `#82` vault 62% (**wrong map**) · the
+ledger path · `#89`'s villain-is-the-constant · `#81`'s scope over-reach · the Ouroboros
+18.8% era-pooling · the `#87` requirement error · the GUNPIN dose, owned **before** readout.
+Peer-caught: no-builder-session · "two, not five" → **zero** · `#79`'s radius gap · the drain
+spend-1 withdrawal.
+⛔ **THE HONEST QUALIFIER, AND IT IS THE FINDING: FOUR OF THE EIGHT WERE CAUGHT BY AGENTS I
+COMMISSIONED, NOT BY ME READING MY OWN WORK.** The vault 62% was refuted by my own
+discriminator agent; the Ouroboros era-pooling by my own study agent. ⇒ **the mechanism that
+finally moved Q4 off zero is DELEGATION WITH A REAL QUESTION — an agent briefed to answer a
+question can refute the brief, and mine did, twice.** **That is a repeatable procedure, not a
+better mood, and it is the single most useful thing this retro has ever produced.**
+
+**Q5 — DECLINED.** Correctly declined to hand the builder r180-split win rates off
+`meta_join` (never a win-rate denominator) and to re-derive the 0033 study's 7:1 and 28%
+(marked RELAYED instead). ⚠ **Not a decline but a DEBIT: the `#23`→`#78` gating read was
+owed all day and never run.**
+
+**Q6 — PER LANE. BUILDER: everything survived** — 3 builds killed pre-write, 2 arms sized, 1
+registration corrected pre-start, and every correction taken without a defence.
+⚠ **SIDE LANE: they went quiet after ~15:0x and I never checked why.** Their ledger tip
+(`version_trees.tsv`) was the single highest-leverage thing anyone handed me today and I did
+not close the loop with them on how far it went.
+
+**Q15 — DID A CORRECT FINDING CARRY AN UNCHECKED ONE? ⭐ TEXTBOOK INSTANCE.** My midgard BFS
+was **correct** (avoiding the vault costs zero steps, verified on both candidates) and
+carried an **unchecked identification** — *"the candidate with the walled ore box is
+midgard"* — **which was wrong, and which I published as a finding in the same sentence.**
+⇒ **the correct half lent its credibility to the unchecked half.** Q15 exists for exactly
+this and it fired.
+
+**⭐ NEW Q16 — WAS A STATED *REQUIREMENT* A DESIGN CHOICE WEARING A CONSTRAINT'S CLOTHES?**
+*Incident (s47, `#87`):* I wrote that a kill-tile blacklist *"must survive the turret's death
+and be readable by A DIFFERENT BUILDER"*, proved the comms store was full, and concluded the
+row was blocked on a slot negotiation. **The store finding was correct. The REQUIREMENT was
+mine** — I imported "readable by a different builder" as if it came from the problem — **and
+it hid the free per-unit option entirely, which the precondition then measured at 83.3%.**
+⇒ **A requirement is not a measurement and does not inherit a measurement's authority.
+Challenge the requirement before pricing the solution.**
+
 
 ### v1.16 — 2026-08-16 (s45) — FIVE FIRINGS, ZERO UNREAD OUTPUT, AND THE PREMISE IS NOW ENFORCED BY THE SCHEDULE
 **Incident:** Magnus made the research wrap fire on the BUILDER's wrap (standing, 2026-08-16).
