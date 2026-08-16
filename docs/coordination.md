@@ -66005,3 +66005,63 @@ merely tidy.**
 --- 2026-08-16T13:10:43Z BUILDER s46 — IN-FLIGHT: viewer stats-strip agent (sonnet): per-round entity counts per team (b/H/c/turrets/barriers) beside the existing per-round econ line; legend collapses to a details element (entity hover tooltips already carry the per-square info); cache bust after. Magnus's ask. ---
 
 --- 2026-08-16T13:15:11Z BUILDER s46 — queue order corrected AGAIN (same file-order defect as 11:2xZ, now twice — routed to my retro as a mechanism gap: appended arms land behind stale blocks by default and a human notices late): V426BCS/TURBO4A/TBA/SEALPECK/RENT3B moved above the H-series; H605h2 cancelled at n=166 (rows kept) to free a slot now. H601/602/604 (n>500) left to their registered marks — H602 at 45.9 will meet the floor on its own. Viewer stats strip live (per-round unit counts + collapsed legend). ---
+
+# ============================================================================
+# 2026-08-16T13:28:46Z — **RESEARCH ARM s46 WRAP** (trigger: the BUILDER'S wrap-ping, the standing
+# rule's second firing; Magnus called it). Arm retro ran FIRST per charter.
+# ============================================================================
+
+## PROCESS DELTAS — routed at write time
+
+**D1. A RULE INVOKED AGAINST ANOTHER LANE IS NOT THEREBY APPLIED TO YOUR OWN — THE INVOCATION FEELS
+LIKE THE APPLICATION.** Three instances from me today: I corrected the builder for assuming
+transitivity and made the same composition in my own headline **in the same message**; I banked *"a
+count is only as wide as its enumeration rule"* and then gave a count of my own errors **without
+enumerating**; I registered *"K is a DOSE, not the mechanism"* on one row and wrote a **decisive**
+flat-branch on a soft knob **one row later**. ⛔ **Having just demonstrated the rule is the strongest
+possible reason not to re-check yourself against it.** **Routed: the side lane wrote it as D36 in the
+booted checklist — offender does not hold the pen — and Q4b in my arm retro carries the mechanical
+fix: after citing a rule in an artefact, RE-READ YOUR OWN TEXT IN THAT SAME ARTEFACT AGAINST IT.**
+
+**D2. A FLAT READING ON A CONDITIONAL MECHANISM IS UNINTERPRETABLE WITHOUT A FIRINGS COUNT.** Three
+same-day instances: SENTBAN's `K=2`, `#23`'s soft cap (raising a ceiling PERMITS, never FORCES), and
+v152's ammo brake (**a TAP; the metric was a RESERVOIR**). ⇒ **flat is ambiguous between *the
+mechanism does not pay* and *the mechanism never fired*.** ⭐ **Routed: ADOPTED AS A REGISTRY-LEVEL
+CONVENTION — it is in `BARS.tsv`'s own header with the three instances cited, so every future
+conditional-mechanism row inherits it AT REGISTRATION rather than at post-mortem.**
+
+**D3. SIZE THE PRIZE BEFORE ANYONE WRITES A TREE — AND MODEL THE PROPOSED FIX, NOT PERFECTION.** The
+belt census cost no games and changed the build three ways: greedy captures **98%** of the Steiner
+optimum (**no cleverer planner is worth building, ever**); the currency I insisted on was **~17% of
+the benefit**; and merging **buys cheapness and sells throughput**, which rewrote the falsifier from
+conveyor count to delivery/kill-round. ⛔ **A counterfactual modelling the OPTIMUM would have
+overstated the prize and sent a build after a number nobody can hit.**
+
+**D4. NAME WHAT HAS NOT BEEN ESTABLISHED, AT THE ARTEFACT, BEFORE IT IS NEEDED.** Four instances:
+`#77`'s withdrawal condition (registered **before** `#76` read), `#78` **UNCONVERTED** (prize in
+turrets, bar in game share), `#80`'s **GO/NO-GO precondition** (a corpus cut that can kill the row
+for the price of a query), and the fieldcal reader's **refusal as a feature**. ⭐ **An unnamed gap is
+indistinguishable from a closed one, and the person who finds it later pays more than the person who
+names it now.**
+
+**D5. A PUBLISHED FINDING'S INSTRUMENT MUST OUTLIVE THE SESSION.** `x3r0_measure.py` (349 lines, the
+sole basis for a 10,231-game result) was written to a **session scratchpad that dies with the
+session**. The doc honestly said *"not committed"* — **and saying so does not preserve it.** Routed:
+recovered to `tools/` with its pre-declared expectation cells.
+
+**D6. THE QUALIFIER TRAVELS ON THE SAME LINE AS THE NUMBER OR IT DOES NOT TRAVEL.** My `+5.2pp`
+escaped to Magnus with its qualifier one paragraph away. Routed **into code**: the fieldcal reader
+carries its refusal **inline on every cell line**, and the verb guard sits **at the clause**, not in
+a footnote.
+
+**D7. GUARDS FIXED TODAY WERE ALL CLOSED THE SAME WAY — BY MAKING THE CLAIM FALSIFIABLE, NEVER BY
+PARSING PROSE HARDER.** `queue_check`'s silencer, its precedence bug, its idiom coverage, and the
+COMBO-BAR exemption. ⚠ **And the trajectory needed a stop: three widenings of one regex in a day, so
+legacy rows keep the accommodation and NEW rows carry the structured token. There is no fifth idiom.**
+
+**D8. OVER-CORRECTION IS A FAILURE IN THE SAME FAMILY AS UNDER-HEDGING.** I ruled AGAINST my own
+agent's flag on `PREREG-loki25:141` — correct, pre-registered language — and closed a five-pass
+sweep on its own diminishing returns. ⛔ **Rewriting correct language teaches a corpus to hedge
+indiscriminately, which destroys the signal a hedge carries.** ⭐ **And I asked the certifier whether
+I had OVER-withdrawn on the transitivity retraction; they checked and it stood. A peer who confirms
+your retraction does you no favours; one who LIMITS it does.**
