@@ -67,6 +67,96 @@ DEFAULT_LIMIT = 100
 MAX_LIMIT = 2000
 
 
+# ------------------------------------------------------------- leg ledger
+# scratchpad/arm_fieldcal_<ARM>_<CELL>.txt (18+ files, may grow) are the leg's
+# accept ledgers. Each line is `<team-uuid> <CLI-upgrade-noise>{"matchId":
+# "<uuid>"}` — the noise before the JSON is not fixed-format (e.g. a version
+# bump message), so match ids are pulled with a regex on the JSON key, never
+# by splitting the line. Disclosure only: this map is used to ANNOTATE rows
+# and the viewer, never to gate or hide anything (see docstring below and
+# CLAUDE.md's disclose-not-prohibit instruction for this feature).
+LEG_DIR = ROOT / "scratchpad"
+LEG_FILE_RE = re.compile(r"^arm_fieldcal_(A|B)_(.+)\.txt$")
+LEG_MATCHID_RE = re.compile(r'"matchId"\s*:\s*"([0-9a-fA-F-]{36})"')
+
+_leg_cache: dict[str, dict] = {}
+_leg_sig: tuple | None = None
+_leg_lock = threading.Lock()
+
+
+def _leg_ledger_files() -> list[Path]:
+    try:
+        return sorted(LEG_DIR.glob("arm_fieldcal_*.txt"))
+    except Exception:
+        return []
+
+
+def _leg_ledger_signature(files: list[Path]) -> tuple:
+    # Directory listing (names) + max mtime — cheap (dozens of small files)
+    # and enough to notice both new ledger files and appended lines in
+    # existing ones. Rebuilt lazily on each call against this signature
+    # rather than pinned to REFRESH_SEC, so a freshly-appended accept shows
+    # up on the very next page load instead of waiting out the replay
+    # index's own cadence.
+    names = tuple(f.name for f in files)
+    mtimes = []
+    for f in files:
+        try:
+            mtimes.append(f.stat().st_mtime)
+        except Exception:
+            pass
+    return (names, max(mtimes) if mtimes else 0.0)
+
+
+def _build_leg_index() -> dict[str, dict]:
+    mapping: dict[str, dict] = {}
+    for f in _leg_ledger_files():
+        m = LEG_FILE_RE.match(f.name)
+        if not m:
+            continue
+        arm, cell = m.group(1), m.group(2)
+        try:
+            text = f.read_text(errors="replace")
+        except Exception:
+            continue
+        for mid in LEG_MATCHID_RE.findall(text):
+            mapping[mid] = {"arm": arm, "cell": cell}
+    return mapping
+
+
+def leg_index() -> dict[str, dict]:
+    """{match_id: {"arm": "A"|"B", "cell": <cell>}} — signature-cached."""
+    global _leg_sig
+    files = _leg_ledger_files()
+    sig = _leg_ledger_signature(files)
+    with _leg_lock:
+        if sig == _leg_sig:
+            return dict(_leg_cache)
+    mapping = _build_leg_index()
+    with _leg_lock:
+        _leg_cache.clear()
+        _leg_cache.update(mapping)
+        _leg_sig = sig
+    return dict(_leg_cache)
+
+
+def leg_accept_for(match_id: str) -> dict | None:
+    return leg_index().get(match_id)
+
+
+LEG_DISCLOSURE_TMPL = (
+    "⚠ LEG ACCEPT — LEG-fieldcal arm {arm}, cell {cell}, post-clock2. "
+    "Viewing is allowed and useful; what it costs is ABSTENTION-BASED "
+    "blindness: from this viewing on, amendments to this leg must be "
+    "STRUCTURALLY blind or authored by someone who did not view. "
+    "(Side-lane ruling e51babce.)"
+)
+
+
+def leg_disclosure_text(arm: str, cell: str) -> str:
+    return LEG_DISCLOSURE_TMPL.format(arm=arm, cell=cell)
+
+
 def now_utc() -> datetime:
     return datetime.now(timezone.utc)
 
@@ -251,6 +341,7 @@ def _row(mid: str, rec: dict, with_peek: bool) -> dict:
                        else "meta.json file mtime" if rec.get("meta_mtime") else None,
         "n_games": len(rec["games"]),
         "games": games,
+        "leg_accept": leg_accept_for(mid),
     }
     return row
 
@@ -332,12 +423,48 @@ def resolve_game_path(match_id: str, game_n: int) -> Path | None:
     return direct if direct.exists() else None
 
 
+def _esc_html(s: str) -> str:
+    return (s.replace("&", "&amp;").replace("<", "&lt;").replace(">", "&gt;")
+             .replace('"', "&quot;"))
+
+
+def _inject_leg_banner(html: str, match_id: str) -> str:
+    """Stamp the leg-accept disclosure ABOVE the board, computed fresh on
+    every serve from the CURRENT leg ledger — never baked into the on-disk
+    cache file (`get_or_build_view`'s out_path is the same file the CLI
+    writes and reads via `tools/replay_view.py`; polluting it would (a) leak
+    a dashboard-only banner into the CLI's own output and (b) go stale the
+    moment a match is added to a ledger after the file was cached, since the
+    cache's freshness check is keyed on the REPLAY's mtime, not the ledger's).
+    Disclosure only — returns `html` unchanged for anything not in the
+    ledger, and never refuses to render.
+    """
+    leg = leg_accept_for(match_id)
+    if not leg:
+        return html
+    text = leg_disclosure_text(leg["arm"], leg["cell"])
+    banner = (
+        '<div id="legAcceptBanner" style="position:sticky;top:0;z-index:9999;'
+        'background:#4a2a00;color:#ffd479;border-bottom:2px solid #ffb84d;'
+        'font:600 13px/1.5 -apple-system,Segoe UI,sans-serif;padding:10px 16px;">'
+        + _esc_html(text) + "</div>"
+    )
+    if "<body>" in html:
+        return html.replace("<body>", "<body>\n" + banner, 1)
+    return banner + html  # defensive fallback if generate_html's shape ever changes
+
+
 def get_or_build_view(match_id: str, game_n: int) -> tuple[bytes | None, str | None]:
     """(html_bytes, None) or (None, error). Cache dir = replay_view's own
     DEFAULT_OUT_DIR (scratchpad/replay_view/), shared with the CLI, keyed on
     the exact same filename the CLI writes (`<match>_game_<n>.html`) — so a
     replay already viewed via the CLI is already warm here, and vice versa.
     NEVER cached inside replay_archive/ (that tree belongs to the archiver).
+
+    The leg-accept banner (see `_inject_leg_banner`) is layered on AFTER the
+    cache read/write, not written into the cached file itself — the cache is
+    shared with the CLI and keyed on the replay's own mtime, neither of which
+    should carry or gate a dashboard-only, ledger-driven disclosure.
     """
     if not MATCH_ID_RE.match(match_id or ""):
         return None, "bad match id"
@@ -355,7 +482,8 @@ def get_or_build_view(match_id: str, game_n: int) -> tuple[bytes | None, str | N
         meta_mtime = meta_path.stat().st_mtime if meta_path.exists() else 0
         newest_source = max(replay_mtime, meta_mtime)
         if out_path.exists() and out_path.stat().st_mtime >= newest_source:
-            return out_path.read_bytes(), None
+            html = out_path.read_text()
+            return _inject_leg_banner(html, match_id).encode(), None
     except Exception:
         pass  # fall through and (re)generate
 
@@ -365,10 +493,10 @@ def get_or_build_view(match_id: str, game_n: int) -> tuple[bytes | None, str | N
         return None, f"{type(e).__name__}: {e}"
     try:
         out_path.parent.mkdir(parents=True, exist_ok=True)
-        out_path.write_text(html)
+        out_path.write_text(html)  # cached WITHOUT the banner — see docstring
     except Exception:
         pass  # serve it anyway even if the cache write failed
-    return html.encode(), None
+    return _inject_leg_banner(html, match_id).encode(), None
 
 
 if __name__ == "__main__":                                    # tiny smoke read

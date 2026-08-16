@@ -110,6 +110,21 @@ function typeBadge(t) {
   return `<span class="badge ${cls}">${esc(t.toUpperCase())}</span>`;
 }
 
+// Disclosure only — never a gate. Same wording as the viewer's own banner
+// (tools/dash/replays.py `leg_disclosure_text`) so the title tooltip here and
+// the banner a click leads to say the identical thing.
+function legDisclosureText(arm, cell) {
+  return `⚠ LEG ACCEPT — LEG-fieldcal arm ${arm}, cell ${cell}, post-clock2. `
+    + `Viewing is allowed and useful; what it costs is ABSTENTION-BASED blindness: `
+    + `from this viewing on, amendments to this leg must be STRUCTURALLY blind or `
+    + `authored by someone who did not view. (Side-lane ruling e51babce.)`;
+}
+function legBadge(la) {
+  if (!la) return '';
+  const title = legDisclosureText(la.arm, la.cell);
+  return ` <span class="badge b-warn" title="${esc(title)}">LEG ${esc(la.arm)}/${esc(la.cell)}</span>`;
+}
+
 function whenCell(r) {
   const at = r.completedAt || r.createdAt || r.sort_at;
   const short = tzTime(at, {cls: 'mono', sec: true});
@@ -171,7 +186,7 @@ function render(s) {
     ? '<tr><td colspan="6">No match matches that filter.</td></tr>'
     : rows.map(r => `<tr>
         <td>${whenCell(r)}</td>
-        <td>${typeBadge(r.triggeredBy)}${r.meta_ok ? '' : ' <span class="badge b-blind" title="' + esc(r.meta_error || 'no meta.json') + '">NO META</span>'}</td>
+        <td>${typeBadge(r.triggeredBy)}${r.meta_ok ? '' : ' <span class="badge b-blind" title="' + esc(r.meta_error || 'no meta.json') + '">NO META</span>'}${legBadge(r.leg_accept)}</td>
         <td>${teamCell(r.teamAName, r.teamAVersion)}</td>
         <td>${teamCell(r.teamBName, r.teamBVersion)}</td>
         <td class="num mono">${r.scoreA === null || r.scoreA === undefined ? '<span class="vs">—</span>' : esc(r.scoreA) + '-' + esc(r.scoreB)}</td>

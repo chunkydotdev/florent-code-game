@@ -190,6 +190,16 @@ class RaidMixin:
             min(p.distance_squared(c) for c in core_tiles(E)) <= LOKI_APPROACH_DSQ
         )
 
+        # LOKI-RENTGUN.  Deliberately ABOVE the action-cooldown gate, because
+        # destroy() is free and cooldown-free (engine-verified,
+        # bots/_probe_rentscale): the rent is handed back the instant the
+        # harvester dies, on a turn the raider could not have acted at all.
+        # It owns the MOVE as well as the action -- a raider that walks away
+        # from a live rental never returns it, which is the plank's main
+        # failure mode -- so it is placed before the move phase too.
+        if LOKI_RENTGUN_ON and self._rent_turn(ct, E, established):
+            return
+
         if ct.get_action_cooldown() == 0 and self._raid_act(ct, E, near):
             return
 
@@ -253,14 +263,7 @@ class RaidMixin:
 
         # 1. STANDING ON A SEAT: peck the Core.  Two damage a round that the
         # collar makes permanent, plus the seat itself is denied by our body.
-        # QUEUE #74 SEALPECK: LOKI_QUIET_ON's silence is priced on the peck
-        # costing a step; a raider with all four cardinal neighbours blocked
-        # has no step to lose, so the quiet gate is bypassed ONLY in that
-        # state.  `not LOKI_QUIET_ON` short-circuits the sealed check on the
-        # normal (quiet-off) path, so this adds no per-round cost there.
-        if on_seat and ti >= LOKI_PECK_TI_FLOOR and (
-                not LOKI_QUIET_ON
-                or (LOKI_SEALPECK_ON and self._raid_sealed(ct))):
+        if on_seat and ti >= LOKI_PECK_TI_FLOOR and not LOKI_QUIET_ON:
             for c in core_tiles(E):
                 if abs(p.x - c.x) + abs(p.y - c.y) != 1:
                     continue
@@ -274,6 +277,14 @@ class RaidMixin:
         # 2. SEAL A FREE SEAT.  can_build_barrier enforces adjacency, emptiness
         # and occupancy, so a seat one of our own raiders is standing on is
         # refused by the engine and stays a peck station.
+        #
+        # ⭐ LOKI-RENTGUN RUNS BESIDE THIS, NOT INSTEAD OF IT.  An earlier draft
+        # of this arm made the two mutually exclusive on Magnus's first framing
+        # ("instead of the salt-ring"); his amendment replaced that with a ROLE
+        # SPLIT -- "while another builder works on sealing their core with
+        # barriers" -- so the seal is untouched and the split is by raid seat
+        # (see _rent_seat).  A renter that has spent its hop budget falls
+        # through to this ladder and seals like any other raider.
         if LOKI_BARRIER_SEAL_ON and ti >= ct.get_barrier_cost() + LOKI_SEAL_TI_FLOOR:
             for d in CARDINALS:
                 t = p.add(d)
@@ -363,33 +374,6 @@ class RaidMixin:
                 print("S48", ct.get_id(), self.si_reach,
                       self.si_open, self.si_fire)
         return False
-
-    # --- QUEUE #74: SEALPECK -------------------------------------------------
-
-    def _raid_sealed(self, ct):
-        # DERIVATION, not assertion (side lane pre-start question, 2026-08-16):
-        # can_move() folds cooldown into the answer, so a temporal block could
-        # read as a spatial seal. It cannot bite here: the builder move
-        # cooldown is 1 (engine-measured — a decoded league builder walked 23
-        # tiles in 23 consecutive rounds, 31f2589c g1 id=10 r3-r26, impossible
-        # above 1), and act/move are mutually exclusive per round, so no turn
-        # exists where a raider can act and cannot move. The cooldown term of
-        # can_move is therefore inert on every turn this branch is reachable.
-        """True iff none of this raider's four cardinal moves are legal this
-        turn -- the engine-truth form of "fully sealed", matching what the
-        move phase itself checks rather than re-deriving passability by hand
-        (can_move folds in cooldown, occupancy and terrain together).  Only
-        called from the core-peck branch above, and only when LOKI_QUIET_ON
-        would otherwise block the peck, so this never runs on the normal
-        (quiet-off) path.
-        """
-        try:
-            for d in CARDINALS:
-                if ct.can_move(d):
-                    return False
-            return True
-        except Exception:
-            return False
 
     # --- LOKI-48: the idle gate --------------------------------------------
 
@@ -703,10 +687,42 @@ class RaidMixin:
             return False
         if self._cpu_exhausted(ct):
             return False
+
+        # ⭐ LOKI-AIMSITE.  THE PARENT TOOK THE FIRST (neighbour, core-tile)
+        # PAIR THAT PASSED BOTH PREDICATES AND RETURNED -- no score, no argmax,
+        # no tiebreak.  Siting was therefore a function of where the raider's
+        # walk happened to stop, and A SENTINEL CANNOT ROTATE (rotate() is
+        # gunner-only), so that accidental facing is PERMANENT for the rest of
+        # the match.  We were already paying 30 Ti and +20% scale and throwing
+        # the AIM away for free.
+        #
+        # The fix is a scorer with exactly one bonus: a site whose ray runs
+        # through an enemy HARVESTER *and* an enemy CORE tile kills the
+        # harvester on the way in and then keeps firing into the Core.
+        #
+        # ⚠ IT DEGRADES TO THE PARENT EXACTLY, BY CONSTRUCTION.  The scan keeps
+        # the first site of the best score (`score > best[0]`, strictly), so
+        # when no aligned site exists every candidate scores 1 and the FIRST
+        # one found wins -- which is the pair the parent's loop would have
+        # returned on, in the same iteration order.  That matters because the
+        # alignment is MAP-CONDITIONAL: measured over the pool it exists on 8
+        # of 15 maps (frostgate 12 sites, midgard 8, antler 6, archipelago 4,
+        # drumlin 4, fjordgate 4, nordkap 4, ragnarok 2; 44 total) and NOT AT
+        # ALL on the other seven.  On those seven this plank must be a no-op,
+        # not a stall.
+        harvs = [hp for _, hp in self._enemy_harvesters(ct)] if LOKI_AIMSITE_ON else []
+        best = None                          # (score, build_pos, facing)
         for d in CARDINALS:
             bp = p.add(d)
             if not (0 <= bp.x < self.mw and 0 <= bp.y < self.mh):
                 continue
+            if LOKI_AIMSITE_ON:
+                # A sentinel is opaque to our OWN gunners, whose ray is
+                # prefix-blocked and team-blind.
+                if self._friendly_gun_ray(ct, bp):
+                    continue
+                if self._cpu_exhausted(ct):
+                    break
             for target in tiles:
                 if bp.distance_squared(target) > 32:
                     continue
@@ -720,16 +736,50 @@ class RaidMixin:
                         continue
                 except Exception:
                     continue
+                if not LOKI_AIMSITE_ON:
+                    best = (1, bp, facing)
+                    break
+                score = 1
+                for hpos in harvs:
+                    try:
+                        if (bp.distance_squared(hpos) <= 32
+                                and ct.can_fire_from(bp, facing,
+                                                     EntityType.SENTINEL, hpos)):
+                            score = 2
+                            break
+                    except Exception:
+                        continue
+                if best is None or score > best[0]:
+                    best = (score, bp, facing)
+                if score >= 2:
+                    break
+            if best is not None and (not LOKI_AIMSITE_ON or best[0] >= 2):
+                break
+
+        if best is None:
+            return False
+        score, bp, facing = best
+        if LOKI_AIMSITE_ON:
+            # Local catch only on the new path, so the toggle-OFF branch below
+            # keeps the parent's exact control flow (a raise there propagates to
+            # run()'s blanket catch, as it always did).
+            try:
                 ct.build_sentinel(bp, facing)
-                if LOKI2B_LIVE_CAP_ON:
-                    # Publish the live count INCLUDING the one just built, so a
-                    # second raider in the same round does not double-spend the
-                    # cap before the census refreshes next turn.
-                    ct.write_store(SLOT_FWD_GUN, (live or 0) + 1)
-                else:
-                    ct.write_store(SLOT_FWD_GUN, ct.read_store(SLOT_FWD_GUN) + 1)
-                return True
-        return False
+            except Exception:
+                return False
+        else:
+            ct.build_sentinel(bp, facing)
+        if LOKI2B_LIVE_CAP_ON:
+            # Publish the live count INCLUDING the one just built, so a
+            # second raider in the same round does not double-spend the
+            # cap before the census refreshes next turn.
+            ct.write_store(SLOT_FWD_GUN, (live or 0) + 1)
+        else:
+            ct.write_store(SLOT_FWD_GUN, ct.read_store(SLOT_FWD_GUN) + 1)
+        if LOKI_AIMSITE_LOG and score >= 2:
+            print("AIM313 fwd sentinel @%d,%d facing=%s ALIGNED harvester+core r=%d"
+                  % (bp.x, bp.y, facing, ct.get_current_round()))
+        return True
 
     def _live_fwd_guns(self, ct, E):
         """Count LIVE friendly sentinels near the enemy Core, or None if blind.
@@ -756,6 +806,557 @@ class RaidMixin:
             return n
         except Exception:
             return None
+
+    # --- LOKI-RENTGUN: the rented turret -------------------------------------
+    # Magnus, 2026-08-15: "Place a turret and kill enemy harvestor, then place a
+    # barrier on the titanium ... turret should be rented, destroy it when it
+    # has killed the harvestor.  This is our primary rush tactic, then kill the
+    # core."  Full rationale, the engine probe and the sentinel-vs-gunner
+    # arithmetic are in doctrine.py under LOKI-RENTGUN.
+
+    def _rent_clear(self):
+        """Forget the current rental.  Never touches rent_done/rent_stranded."""
+        self.rent_harv = None
+        self.rent_ore = None
+        self.rent_turret = None
+        self.rent_turret_pos = None
+        self.rent_rnd = -1
+        self.rent_walled = False
+        self.rent_keep = False
+
+    def _rent_tile_is(self, ct, pos, eid):
+        """True / False / None -- is `eid` still the building standing on `pos`?
+
+        Validated BY TILE rather than by get_hp(eid): a dead id's behaviour is
+        not something this project has measured, while the tile read is exact.
+        None means the tile could not be read at all (off map, or out of this
+        unit's vision) and is deliberately NOT folded into False -- reading
+        "unknown" as "gone" abandons a LIVE turret, which is the flattering
+        direction and the one that costs us a permanent +20%.
+        `is_in_vision` is the safe pre-check: it returns False off-map instead
+        of raising, unlike get_tile_building_id.
+        """
+        if pos is None or eid is None:
+            return None
+        if not (0 <= pos.x < self.mw and 0 <= pos.y < self.mh):
+            return None
+        try:
+            if not ct.is_in_vision(pos):
+                return None
+            return ct.get_tile_building_id(pos) == eid
+        except Exception:
+            return None
+
+    def _rent_escapes(self, ct, p, t):
+        """SELF-TRAP GUARD, ported from bots/_v70sb/main.py:1508-1522.
+
+        A BARRIER and a SENTINEL are both bot-impassable and TEAM-BLIND, and
+        `_bfs_direction` treats either as blocked terrain, so a raider that
+        drops one onto its own last exit is stranded -- we have a field
+        observation of 221 rounds of exactly that with no recovery path.
+        Require at least one OTHER passable cardinal neighbour of our own tile.
+        Applied to the turret site as well as the barrier, which the original
+        was not: the turret is a building too.
+        """
+        escapes = 0
+        for e in CARDINALS:
+            n = p.add(e)
+            if n.x == t.x and n.y == t.y:
+                continue
+            if not (0 <= n.x < self.mw and 0 <= n.y < self.mh):
+                continue
+            try:
+                if ct.is_tile_passable(n):
+                    escapes += 1
+            except Exception:
+                continue
+        return escapes > 0
+
+    def _enemy_harvesters(self, ct):
+        """Every LIVE enemy harvester in this unit's vision, as [(id, Position)].
+
+        ONE pass over get_nearby_buildings, shared by the rent path and by the
+        forward-sentinel aim scorer, because the file's own rule is not to add a
+        second walk of the same list in the same turn.  A harvester can ONLY
+        stand on ore, so its tile IS the ore tile -- no separate ore scan and no
+        map read anywhere in this plank.
+        """
+        out = []
+        try:
+            nearby = ct.get_nearby_buildings()
+        except Exception:
+            return out
+        for eid in nearby:
+            try:
+                if ct.get_entity_type(eid) != EntityType.HARVESTER:
+                    continue
+                if ct.get_team(eid) == self.team:
+                    continue
+                out.append((eid, ct.get_position(eid)))
+            except Exception:
+                continue
+        return out
+
+    def _friendly_gun_ray(self, ct, tile):
+        """Would a building on `tile` stand inside one of OUR gunners' rays?
+
+        A gunner's ray is prefix-blocked and TEAM-BLIND -- it stops on the first
+        body of either colour -- so our own barrier or turret dropped on a
+        friendly firing line silently switches that gunner off for the match.
+        (A SENTINEL is never affected: its line is pure arithmetic and ignores
+        obstacles.  This guard is about the gunners we already own, not about
+        the sentinel being planted.)
+        ⛔ THE OBVIOUS IMPLEMENTATION IS A CONSTANT FALSE, AND THIS ONE IS NOT.
+        The first build of this guard asked `can_fire_from(gun, dir, GUNNER,
+        tile)`.  `bots/_probe_rayempty`, re-run 2026-08-15, shows a GUNNER's
+        can_fire_from is FALSE ON EVERY EMPTY TILE -- 5 gunners, every empty
+        step False, True only where a body already stands -- while a SENTINEL's
+        is True on empties.  The tile we are about to build on is BY DEFINITION
+        EMPTY, so that guard could not once have vetoed anything: a check that
+        cannot produce the other verdict has not been seen to check.
+
+        `get_attackable_tiles_from` is the RAW pattern and is the right
+        question: the installed API says it "includes the full firing line
+        within range, even behind walls", and the same probe confirms
+        in_pattern=True on tiles whose can_fire_from is False.
+        Deliberately conservative -- it also vetoes a tile further along a ray
+        that something else already blocks.  That is wrong in the safe
+        direction.  Fails OPEN on an unreadable entity, because a veto we
+        cannot justify would silently disable the whole plank.
+        """
+        try:
+            nearby = ct.get_nearby_buildings()
+        except Exception:
+            return False
+        key = (tile.x, tile.y)
+        for eid in nearby:
+            try:
+                if ct.get_entity_type(eid) != EntityType.GUNNER:
+                    continue
+                if ct.get_team(eid) != self.team:
+                    continue
+                for t in ct.get_attackable_tiles_from(
+                        ct.get_position(eid), ct.get_direction(eid),
+                        EntityType.GUNNER):
+                    if (t.x, t.y) == key:
+                        return True
+            except Exception:
+                continue
+        return False
+
+    def _rent_find_harvester(self, ct, p):
+        """Nearest live enemy harvester in vision, as (id, Position).
+
+        Bounded by LOKI_RENT_SEEK_DSQ (= a builder's vision r^2), so the raider
+        never walks at a remembered target.  Harvesters this raider has already
+        finished with are skipped by tile, which is what makes the HOP work:
+        without it the raider re-targets the barrier it just planted forever.
+        """
+        best_id, best_pos, best_d = None, None, 10 ** 9
+        done = getattr(self, "rent_seen", None) or ()
+        for eid, hp in self._enemy_harvesters(ct):
+            if (hp.x, hp.y) in done:
+                continue
+            d = p.distance_squared(hp)
+            if d < best_d:
+                best_d, best_id, best_pos = d, eid, hp
+        if best_id is None or best_d > LOKI_RENT_SEEK_DSQ:
+            return None, None
+        return best_id, best_pos
+
+    def _rent_approach(self, ct, p, target):
+        """The cardinal neighbour of `target` we should stand on, or None.
+
+        Nearest passable one; our own tile counts as passable because
+        is_tile_passable is False on a tile a builder is already standing on.
+        """
+        best, best_d = None, 10 ** 9
+        for d in CARDINALS:
+            t = target.add(d)
+            if not (0 <= t.x < self.mw and 0 <= t.y < self.mh):
+                continue
+            if t.x == p.x and t.y == p.y:
+                return t
+            try:
+                if not ct.is_tile_passable(t):
+                    continue
+            except Exception:
+                continue
+            dd = p.distance_squared(t)
+            if dd < best_d:
+                best_d, best = dd, t
+        return best
+
+    def _rent_seat(self):
+        """Is THIS raider a harvester-hunter, or a core-sealer?
+
+        Magnus's amendment is a ROLE SPLIT, not a replacement -- "while another
+        builder works on sealing their core with barriers".  The split is taken
+        off `raid_slot`, the monotone seat this raider was issued at birth,
+        which is the same source `_raid_station` already uses to spread the ring
+        without a single store write.  With MOD 2 / SEAT 0 that is every other
+        raider hunting and the rest running the untouched ladder -- including
+        the seal, which stays ON for everybody.
+        """
+        if LOKI_RENT_SEAT_MOD <= 1:
+            return True
+        return (self.raid_slot % LOKI_RENT_SEAT_MOD) == LOKI_RENT_SEAT
+
+    def _rent_turn(self, ct, E, established):
+        """One rental, start to finish.  True == this raider's turn is spent.
+
+        Returning True cancels BOTH the action ladder and the move for this
+        round, which is how the raider pins itself beside a live rental.
+        Returning False after a free destroy() is deliberate: the destroy costs
+        no cooldown, so the body still gets its normal raid turn afterwards.
+        """
+        if not LOKI_RENTGUN_ON:
+            return False
+        try:
+            # A raider mid-rental always finishes it, even if the seat says
+            # sealer -- otherwise a mid-flight toggle strands a live turret.
+            if getattr(self, "rent_turret_pos", None) is None and not self._rent_seat():
+                return False
+            p = ct.get_position()
+            rnd = ct.get_current_round()
+            if getattr(self, "rent_turret_pos", None) is not None:
+                return self._rent_close(ct, p, rnd, E)
+            return self._rent_open(ct, p, rnd, established, E)
+        except Exception:
+            # Never let the plank cost the body its turn on a surprise; the
+            # blanket catch in main.run() would swallow the whole raid turn.
+            return False
+
+    def _rent_open(self, ct, p, rnd, established, E):
+        """Find a harvester, get orthogonally adjacent to it, plant the turret."""
+        if getattr(self, "rent_done", 0) >= LOKI_RENT_HOP_MAX:
+            return False
+        hid, hpos = self._rent_find_harvester(ct, p)
+        if hid is None:
+            return self._rent_prospect(ct, p, rnd, established, E)
+
+        # THE WHOLE SEQUENCE RUNS FROM ONE TILE orthogonally adjacent to the
+        # ore: from there the raider can reach the ore (barrier) and the turret
+        # (destroy) without ever moving again.  See the geometry note in
+        # doctrine.py.
+        if abs(p.x - hpos.x) + abs(p.y - hpos.y) != 1:
+            if established and p.distance_squared(hpos) > LOKI_RENT_NEAR_DSQ:
+                # At the ring the Core is the prize, so only a step-or-two
+                # detour is taken there -- never a walk back out.  It is not
+                # zero, because a defender's harvesters sit INSIDE the
+                # establish band (d^2 <= 40) on most maps, and refusing every
+                # detour there was throwing away the commonest target.
+                return False
+            if ct.get_move_cooldown() != 0:
+                return True
+            appr = self._rent_approach(ct, p, hpos)
+            if appr is None:
+                return False
+            self.tgt = appr
+            self._nav(ct, pave=False)
+            return True
+
+        return self._rent_build(ct, p, rnd, hid, hpos, E)
+
+    def _rent_prospect(self, ct, p, rnd, established, E):
+        """Walk at enemy-half ORE when no harvester is in sight.
+
+        ⚠ THIS IS WHAT MAKES THE HOP REAL, AND IT WAS ADDED BECAUSE THE FIRST
+        BUILD MEASURED SHORT.  A builder's vision is r^2=20, so a hunter that
+        only reacts to what it can already see cannot chain: after the first
+        kill the next harvester is nearly always out of vision.  Six-map smoke
+        on the vision-only build, `fcode run` seed 3: archipelago 4 rentals
+        (its ore happens to cluster), antler 1, midgard 1, and drumlin,
+        frostgate and nordkap ZERO.  Three maps where the plank could not fire
+        at all is not a plank.
+
+        The map itself is KNOWN (`known_map_for` -> self.map_ores), and a
+        harvester can only ever stand on ore, so the hunter walks at the
+        nearest ore tile on THEIR half of the midline and lets vision do the
+        rest.  Bounded three ways: only hunters (`_rent_seat`), only until the
+        hop budget is spent, and only until the raider is established at the
+        ring -- past that the Core is the prize and this stops entirely.
+        """
+        if established or not self.map_ores:
+            return False
+        if ct.get_move_cooldown() != 0:
+            return False
+        # A prospect that cannot be reached must not hold the body for the
+        # match: give it a walking budget, then retire the tile and re-pick.
+        tgt = getattr(self, "rent_prospect", None)
+        if tgt is not None and rnd - getattr(self, "rent_prospect_rnd", rnd) > LOKI_RENT_PROSPECT_MAX:
+            if getattr(self, "rent_seen", None) is None:
+                self.rent_seen = set()
+            self.rent_seen.add((tgt.x, tgt.y))
+            tgt = None
+        if tgt is None or (tgt.x, tgt.y) in (getattr(self, "rent_seen", None) or ()):
+            best, best_d = None, 10 ** 9
+            done = getattr(self, "rent_seen", None) or ()
+            for o in self.map_ores:
+                if (o.x, o.y) in done:
+                    continue
+                if not self._salt_forward(o, E):
+                    continue
+                d = p.distance_squared(o)
+                if d < best_d:
+                    best_d, best = d, o
+            if best is None:
+                return False
+            tgt = best
+            self.rent_prospect = tgt
+            self.rent_prospect_rnd = rnd
+        appr = self._rent_approach(ct, p, tgt)
+        self.tgt = appr if appr is not None else tgt
+        self._nav(ct, pave=False)
+        return True
+
+    def _rent_build(self, ct, p, rnd, hid, hpos, E):
+        """Plant the SENTINEL.  See doctrine.py for why not a Gunner.
+
+        ⭐ THE SITE IS SCORED, NOT TAKEN FIRST-MATCH, and the score decides
+        whether this is a RENTAL or a KEEPER.  A site whose ray runs through
+        the harvester AND ON THROUGH AN ENEMY CORE TILE is not rented back:
+        once the harvester dies it keeps firing into the Core for free, and
+        tearing down a free core-damage engine to recover +20% scale is a bad
+        trade.  Any other site is a pure rental and comes back.
+        """
+        if ct.get_action_cooldown() != 0:
+            return True                     # hold the tile; do not wander off
+        # AMMO IS THE GATE, NOT THE TITANIUM.  can_fire() returns True at 0
+        # ammo on this engine and fire() RAISES, so the predicate is not an
+        # affordability test -- read the pool.  A turret we cannot fire is
+        # 30 Ti plus a +20% tax we would then have to walk back for.
+        if ct.get_global_ammo() < LOKI_RENT_AMMO_MIN:
+            return False
+        if ct.get_global_resources() < ct.get_sentinel_cost() + LOKI_RENT_TI_FLOOR:
+            return False
+        if self._cpu_exhausted(ct):
+            return False
+        cores = core_tiles(E) if E is not None else ()
+        best = None                          # (score, build_pos, facing)
+        for d in CARDINALS:
+            bp = p.add(d)
+            if not (0 <= bp.x < self.mw and 0 <= bp.y < self.mh):
+                continue
+            if bp.x == hpos.x and bp.y == hpos.y:
+                continue
+            # A SENTINEL is a building: bot-impassable and team-blind, so it
+            # walls its own builder in exactly as a barrier does.
+            if not self._rent_escapes(ct, p, bp):
+                continue
+            # And it is opaque to our OWN gunners, whose ray is prefix-blocked.
+            if self._friendly_gun_ray(ct, bp):
+                continue
+            # Two candidate facings per site: straight at the harvester, and --
+            # when a core tile is collinear beyond it -- the facing that runs
+            # THROUGH the harvester and on into the Core.  The second is the
+            # keeper.  Both are put to can_fire_from; alignment is never
+            # assumed, exactly as _try_forward_sentinel does it.
+            facings = []
+            f0 = bp.direction_to(hpos)
+            if f0 != Direction.CENTRE:
+                facings.append(f0)
+            if LOKI_RENT_AIMED_KEEP_ON:
+                for c in cores:
+                    if bp.distance_squared(c) > 32:
+                        continue
+                    fc = bp.direction_to(c)
+                    if fc != Direction.CENTRE and fc not in facings:
+                        facings.append(fc)
+            for facing in facings:
+                try:
+                    if bp.distance_squared(hpos) > 32:
+                        continue
+                    if not ct.can_fire_from(bp, facing, EntityType.SENTINEL, hpos):
+                        continue
+                    if not ct.can_build_sentinel(bp, facing):
+                        continue
+                except Exception:
+                    continue
+                score = 1
+                if LOKI_RENT_AIMED_KEEP_ON:
+                    for c in cores:
+                        try:
+                            if (bp.distance_squared(c) <= 32
+                                    and ct.can_fire_from(bp, facing,
+                                                         EntityType.SENTINEL, c)):
+                                score = 2
+                                break
+                        except Exception:
+                            continue
+                if best is None or score > best[0]:
+                    best = (score, bp, facing)
+                if score >= 2:
+                    break
+            if best is not None and best[0] >= 2:
+                break
+
+        if best is None:
+            return False
+        score, bp, facing = best
+        try:
+            tid = ct.build_sentinel(bp, facing)
+        except Exception:
+            return False
+        self.rent_harv = hid
+        self.rent_ore = hpos
+        self.rent_turret = tid
+        self.rent_turret_pos = bp
+        self.rent_rnd = rnd
+        self.rent_walled = False
+        # THE KEEP/RENT DECISION IS MADE HERE, AT BUILD TIME, off the site's own
+        # geometry -- never re-derived later, when the harvester it was aimed
+        # through is gone and the ray can no longer be reconstructed.
+        self.rent_keep = (score >= 2)
+        if self.rent_keep:
+            # A keeper IS a forward sentinel, so it takes a forward-sentinel
+            # cap slot like any other.  A RENTAL deliberately does not: that
+            # slot never decrements (the LOKI-2b rubble bug, doctrine.py:1239)
+            # and three rentals would close the forward arm for the match.  The
+            # Core funds a rental's magazine through LOKI_RENT_AMMO_BANK.
+            try:
+                ct.write_store(SLOT_FWD_GUN, ct.read_store(SLOT_FWD_GUN) + 1)
+            except Exception:
+                pass
+        if LOKI_RENT_LOG:
+            print("RENT313 open turret=%d@%d,%d harv=%d@%d,%d r=%d %s"
+                  % (tid, bp.x, bp.y, hid, hpos.x, hpos.y, rnd,
+                     "KEEP-aimed-at-core" if self.rent_keep else "RENT"))
+        return True
+
+    def _rent_retire(self, ore):
+        """Finish with this ore tile and free the raider to HOP to the next one.
+
+        Called on EVERY exit -- kill, timeout or strand -- because
+        `_rent_find_harvester` picks the nearest harvester and would otherwise
+        re-target the one we just walled (or just failed on) for the rest of the
+        match.  This set IS the hop.
+        """
+        if ore is not None:
+            if getattr(self, "rent_seen", None) is None:
+                self.rent_seen = set()
+            self.rent_seen.add((ore.x, ore.y))
+        self.rent_done = getattr(self, "rent_done", 0) + 1
+        self._rent_clear()
+
+    def _rent_close(self, ct, p, rnd, E):
+        """Guard the rental, then hand the turret back and salt the ore.
+
+        ORDER MATTERS AND IT IS NOT THE READING ORDER.  The barrier costs the
+        round's ACTION; destroy() costs nothing at all -- free, no cooldown,
+        unlimited per turn, and the probe destroyed and then built in one
+        run().  So the barrier is attempted FIRST and the destroy runs after it
+        in the SAME turn, and the destroy still runs on turns where the action
+        cooldown forbids the barrier.  The other order would cost a round of
+        rent for nothing.
+        """
+        tpos = self.rent_turret_pos
+        ore = getattr(self, "rent_ore", None)
+        turret = self._rent_tile_is(ct, tpos, getattr(self, "rent_turret", None))
+        harv = self._rent_tile_is(ct, ore, getattr(self, "rent_harv", None))
+        adj_t = abs(p.x - tpos.x) + abs(p.y - tpos.y) == 1
+        age = rnd - getattr(self, "rent_rnd", rnd)
+
+        # THE AMMO ANSWER.  If the pool empties under us the sentinel simply
+        # stops and `harv` stays True forever; this clock is what turns that
+        # into a BOUNDED titanium loss instead of a permanent +20%.
+        finished = (harv is False) or age >= LOKI_RENT_HOLD_MAX
+
+        if not finished:
+            if turret is False:
+                # They killed the turret first.  Nothing to hand back and the
+                # ore is still theirs -- release the body rather than guard a
+                # hole.  Its scale contribution went with it.
+                self._rent_clear()
+                return False
+            return True                     # GUARD: pin the body, do not move
+
+        acted = False
+        keep = bool(getattr(self, "rent_keep", False))
+        # 1. SALT THE ORE.  Only on a real kill, never on a timeout, or we
+        # would spend 3 Ti walling a tile they still hold.  30 HP / 2 dmg per
+        # builder peck = 15 of their actions to take it back.
+        if (harv is False and ore is not None and not getattr(self, "rent_walled", False)
+                and ct.get_action_cooldown() == 0
+                and abs(p.x - ore.x) + abs(p.y - ore.y) == 1
+                and ct.get_global_resources() >= ct.get_barrier_cost()
+                and self._rent_escapes(ct, p, ore)
+                and not self._friendly_gun_ray(ct, ore)):
+            try:
+                if ct.can_build_barrier(ore):
+                    ct.build_barrier(ore)
+                    self.rent_walled = True
+                    acted = True
+            except Exception:
+                pass
+
+        # 2a. A KEEPER IS NOT HANDED BACK.  Its ray runs through the dead
+        # harvester's tile and on into an enemy Core tile, so it is now a free
+        # forward sentinel firing for the rest of the match.  Tearing that down
+        # to recover +20% scale is a bad trade -- Magnus's amendment, and it
+        # reverses the original "always destroy" spec.  Note the ore barrier
+        # above does NOT block it: a sentinel line ignores obstacles.
+        if keep and turret is not False:
+            if LOKI_RENT_LOG:
+                print("RENT313 keep turret=%s r=%d age=%d walled=%s"
+                      % (self.rent_turret, rnd, age, self.rent_walled))
+            self._rent_retire(ore)
+            return acted
+
+        # 2b. HAND THE TURRET BACK -- free and cooldown-free, so it runs in the
+        # same turn as the barrier above.
+        if turret is True and adj_t:
+            try:
+                if ct.can_destroy(tpos):
+                    ct.destroy(tpos)
+                    if LOKI_RENT_LOG:
+                        print("RENT313 return turret=%s r=%d age=%d walled=%s"
+                              % (self.rent_turret, rnd, age, self.rent_walled))
+                    self._rent_retire(ore)
+                    # False when nothing but the free destroy happened: the
+                    # body keeps its action AND its move this round, which is
+                    # the tempo the cooldown-free destroy buys, and the HOP to
+                    # the next harvester starts on the same turn.
+                    return acted
+            except Exception:
+                pass
+
+        if turret is False:
+            # Already gone -- the ore is salted (or unreachable) and there is
+            # nothing to return.  Count it: the sequence completed either way.
+            self._rent_retire(ore)
+            return acted
+
+        # 3. STRANDED.  We are not beside our own live turret.  This is not
+        # hypothetical -- a launcher picks up any adjacent builder from EITHER
+        # team and throws it, which is exactly what the exile detector in
+        # _raid exists for.  Walk back and hand it in, on a bounded clock:
+        # a raider that cannot get back is worth more at the Core than orbiting
+        # 30 Ti of rubble, and holding the +20% forever is the thing we are
+        # buying our way out of.
+        if age >= LOKI_RENT_HOLD_MAX + LOKI_RENT_RECOVER_MAX:
+            if LOKI_RENT_LOG:
+                print("RENT313 STRANDED turret=%s@%d,%d r=%d walled=%s"
+                      % (self.rent_turret, tpos.x, tpos.y, rnd,
+                         getattr(self, "rent_walled", False)))
+            self.rent_stranded = getattr(self, "rent_stranded", 0) + 1
+            self._rent_retire(ore)
+            return acted
+        if acted or ct.get_move_cooldown() != 0:
+            return True
+        # Prefer the ORE while it is still unsalted and the turret is only
+        # unreadable (out of vision); otherwise walk at the turret itself.
+        back = None
+        if harv is False and not getattr(self, "rent_walled", False) and ore is not None:
+            back = self._rent_approach(ct, p, ore)
+        if back is None:
+            back = self._rent_approach(ct, p, tpos)
+        if back is None:
+            self._rent_clear()
+            return False
+        self.tgt = back
+        self._nav(ct, pave=False)
+        return True
 
     # --- station choice ----------------------------------------------------
 
