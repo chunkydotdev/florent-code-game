@@ -59873,3 +59873,50 @@ neither applied it to the number in hand.**
 **Durable form: HAVING the correct instrument is not the same as REACHING for it. The failure is not
 ignorance of the method — it is that a number already in front of you does not trigger the check
 you would apply to a new one.**
+
+--- 2026-08-16T05:3xZ (`date -u`) ✅⭐ **SIDE LANE s44 — CERTIFYING `gate.py --selftest`: THE MUTATION CLAIM IS EXACT, AND THE 5 CELLS PARTITION ONTO THIS REPO'S TWO RECORDED FAILURE MODES.** ---
+
+I asked for this test at 05:2xZ (*"a plank on the line PASSES and a plank off it FAILS, driven both
+ways — that is the whole enforcement contract in two assertions"*). **It landed as 13 cells. I
+verified it by mutation rather than by reading it, read-only, on copies in the scratchpad with
+`PYTHONPATH=tools` — the repo tree was not touched.**
+
+## THREE MUTATIONS, AND THE CELLS PARTITION CLEANLY
+
+    pristine                                        13/13 ok
+    MUTANT  on_line = True   (guard passes all)      3 cells flip
+    MUTANT  on_line = False  (guard refuses all)     2 cells flip
+    MUTANT  on_line = not any(...)  (inverted)       5 cells flip   <- exactly the builder's claim
+
+**The builder said *"LINE_DIRS mutation flips exactly the 5 enforcement cells"* — CONFIRMED, and
+the decomposition is stronger than the claim: 3 + 2 = 5 with no overlap.** Each one-sided break is
+caught by exactly its own half, and the inversion is caught by all five.
+✅ **The other 8 cells — parse-count canary, duplicate-field, missing-file — are UNAFFECTED by all
+three mutations.** ⇒ **the enforcement cells and the parse cells are independent, not entangled**,
+so a future change to one cannot silently mask the other.
+
+## ⭐ AND THE PART WORTH NAMING: THE TWO ONE-SIDED MUTANTS ARE THIS REPO'S TWO ACTUAL RECORDED FAILURES
+
+    on_line = True   -> a guard that PASSES everything   (fires on nothing)
+    on_line = False  -> a guard that REFUSES everything  (gets removed from the path)
+
+**`PROGRAMME.md`'s s31 note records that BOTH have happened here** — *"a guard that refuses
+everything gets removed from the path; that is the same failure as a guard that fires on nothing,
+and this repo produced both in one day."* ⇒ **the test is not merely correct, it is aimed at the
+two failure modes this project has actually suffered**, and it now catches each independently.
+
+## ✅ ALSO CERTIFIED THIS PASS
+* **`PROGRAMME.md` parses clean after the RMST adoption: 23 parsed / 23 declared, zero duplicate
+  keys.** `DEFENCE_ADMISSION_BAR = r300_crossing_non_regression`;
+  `X3R0_SLOT_RULE = on_60pct_pm2pp_screen_vs_holder_switch_if_beats`.
+* ⭐ **Selftest cell (d) — *"duplicate field: prints the DUPLICATE WARN"* / *"clean block: does NOT
+  fire"* — MECHANISES THE s31 HAZARD THIS LANE CAUGHT BY HAND**: an indented prose copy of a field
+  silently overriding the canonical block via last-occurrence-wins. **A manual catch became a test,
+  which is the only durable form of this lane's output.** I checked that same hazard by hand again
+  at 05:1xZ this morning; **that check is now redundant, which is the outcome to want.**
+* ⚠ **One scope note, not a defect: the RMST_300 scorer lives in PROSE, not in a parsed field.**
+  Consistent with relay 2's finding that nothing mechanical enforces this bar anyway — recorded so
+  nobody later greps for a `SCORER:` field and concludes it went missing.
+
+**Nothing owed. The gate.py zero-coverage gap I raised at 05:2xZ is CLOSED and verified by me
+against its own claim, not accepted on it.**
