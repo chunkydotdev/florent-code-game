@@ -58762,3 +58762,80 @@ harmful" license different next steps, and only the first is currently supported
    constant, **but it is my own D26 Refinement 2 applied to this doc**, so I name it rather than
    let the rule bind only other people's work. It does not threaten the r300+ direction, which is
    disjoint by a wide margin under both conventions.
+
+--- 2026-08-16T06:0xZ (`date -u`) RESEARCH s45 — ⭐⭐ **QUEUE #63's PREMISE IS ONE MAP, NOT "LONG MAPS" — AND `bodyaware` WINS ANYWAY, WHICH MEANS WE DO NOT KNOW WHY IT WINS** ---
+
+Opus subagent (read-only, announced) delivered `docs/research/FORWARD-ARRIVAL-BASELINE-2026-08-16.md`
+(492 lines, committed). **I re-derived its headline independently before relaying it** — see §3.
+
+## 1. WHAT THE SWEEP FOUND, AND IT INVERTS THE ROW IT WAS AIMED AT
+`QUEUE #63` says *"OUR BUILDERS LOCK AT 3.3x THEIRS ON LONG MAPS."*
+* **The 3.3x does NOT reproduce as a time ratio** — it is a **LOCK-RATE** ratio (`BOOK-worst-maps` §17),
+  and the row's phrasing invites reading it as arrival time. A same-statistic-type analogue DOES
+  reproduce: **our failure-to-arrive rate on midgard is 3.75x theirs (19.2% vs 5.1%, McNemar exact
+  p=0.0192).**
+* ⛔ **IT IS MIDGARD — NOT "LONG MAPS", NOT EVEN THE WHOLE #63 SEGMENT.** ragnarok +5.80 rounds,
+  p=0.33 (null).
+* ⛔ **THE MAP-AREA CUT — the axis I specified in the brief — RETURNS A NULL** (area >=900:
+  +1.77 rounds, p=0.7551), and a same-size control {valkyrie, glacierkeep} runs **the other way**
+  (−11.21, p=0.0365). ⇒ **I asked for the wrong axis and the agent said so rather than reporting
+  the cut I ordered.**
+* ⭐ **POOLED, WE ARE THE FASTER SIDE (0.67x).** The row's premise is not a general property of our bot.
+* Midgard gap: **paired mean +22.14 rounds** (n=59 of 78 paired, 20 opponents, opponent-clustered
+  sign-flip p=0.0176; era-matched per-opponent DiD **+31.31 ± 13.44**, 12/14 opponents).
+* **Cost to move it live: midgard is 6.78% of the new pool and the map is NOT selectable** ⇒ 48
+  midgard games for 80% power = **~710 games ≈ 142 matches ≈ 9.5 h of window.**
+
+## 2. ⭐⭐ THE CONSEQUENCE THAT MATTERS — THE PLANK IS DECOUPLED FROM ITS OWN RATIONALE
+`bodyaware` is the plank built against #63, and it is the best on the board (53.70%, n=10,801).
+**The local fixture is perfectly balanced — 720 games on EACH of 15 maps — so midgard is 6.67% of
+it, essentially its ladder share (6.78%). No over-sampling; that hazard is checked and dead.**
+Decomposing the +3.70pp by map:
+```
+yulerune 57.50  valkyrie 56.67  drakkarfjord 56.11  ragnarok 55.97  frostgate 55.28
+glacierkeep 55.00  midgard 54.58  royale 54.58  antler 54.03  nordkap 53.89
+fjordgate 53.06  drumlin 52.22  archipelago 51.67  icefloe 49.31  auroraveil 45.69
+```
+**13 of 15 maps above 50% (sign test p=0.0074). midgard is 7th of 15 and contributes ~8% of the
+total gain.** And the arithmetic closes it outright: **if midgard alone drove +3.70pp, midgard
+would have to read 105.5%.**
+⇒ **`bodyaware` DOES NOT WIN BY FIXING #63's ARRIVAL LOCK. It wins broadly, for a reason nobody
+has identified.** The pathfinding change (treat builder bots of BOTH teams as blocked on a first
+pass, body-free fallback) plainly does something beyond arrival latency — **that is a HYPOTHESIS
+and it is labelled as one; the measurement is only that the gain is broad and the arrival defect
+is narrow.**
+⚠ **`auroraveil` is a REAL NEGATIVE cell: 45.69%, −4.31pp at n=720 against a ±3.65pp band.** One
+spurious cell is expected across 15 at 5%, so this is suggestive, not established — but it is the
+one map where the plank HURTS and it is worth a look before the plank is tuned.
+
+⇒ **FOR THE BUILDER, TWO SEPARATE ITEMS:** (a) `bodyaware` is still the best plank and nothing here
+argues against shipping it; (b) **the next plank should NOT be aimed at #63's arrival story**,
+because that story is one map worth ~8% of the gain. **Identifying `bodyaware`'s real mechanism is
+now the highest-value open question on the board**, and it is a local question, not a window question.
+
+## 3. RELAY FIDELITY — I RE-DERIVED THE HEADLINE RATHER THAN FORWARDING IT
+Independent reconstruction (D² recovered from **core DEATH rows**, threshold `d2_enemy <= D²/9`,
+paired within game via `join.tsv.our_team`):
+```
+                       agent            mine (independent)
+midgard paired mean    +22.14           +22.14      <- digit-for-digit
+censoring US/THEM      14.5% / 21.9%    14.8% / 20.9%
+pooled direction       we are FASTER    mean -16.71, median -4.5   CONFIRMED
+midgard rank           the finding      #1 of 25 maps with n>=30    CONFIRMED
+```
+⚠ **My FIRST attempt recovered D² from BUILD rows with `d2_own == 0` and found only 64 files —
+my method was wrong, not the agent's.** Recorded because a failed check that gets silently
+retried is how a bad verification passes.
+⭐ **AND THE RE-DERIVATION ADDED SOMETHING THE SUMMARY DID NOT CARRY: `heart` is second-worst at
+mean +15.92 (n=93) — but its MEDIAN is +3.0 against midgard's +19.5.** ⇒ **midgard is a systematic
+lag (mean AND median large); `heart` is a few catastrophic games in a tail.** Different mechanisms,
+and only midgard's is the one #63 describes.
+
+## 4. WHAT THE SWEEP COULD NOT MEASURE — inherited, not re-discoverable by trying harder
+**No stall/lock rate exists on this corpus: `events.tsv` carries only BUILD and DEATH, no
+per-round positions.** ⇒ the 3.75x <-> 3.3x link is **INFERRED, not measured**. Opponent version
+was not pinned or read in this cut; `v152 x segment` refused at n=20.
+**Controls all fired:** label-shuffle collapsed −5.0 -> +0.018 [−1,+1]; geometry fit exact against
+3,554 core deaths **and broken 80/80 by a one-tile displacement**; `our_team` confirmed
+behaviourally (gunners 1.36 US vs 5.27 THEM); two constant columns (`resid`, `disag`) flagged loudly
+with nothing resting on them.
