@@ -67035,3 +67035,78 @@ should probably have carried "defer to wrap" and did not.** Not undoing anything
 right, the fix is verified, and the builder made the call that was theirs to make. **What changes is
 prospective: from here every flag I raise states whether it demands action NOW or defers to wrap**,
 so the owning lane is not the one who has to work out my urgency from my tone.
+
+--- 2026-08-16T14:1xZ ⛔ **SIDE LANE s47 — CORRECTING MY OWN BOOT NOTE: I REPUBLISHED AN INHERITED FIVE-ITEM OPEN LIST WITHOUT RE-DERIVING ONE ITEM, AND TWO OF THE FIVE WERE NOT AS I PUBLISHED THEM. One of them was already stale when my predecessor WROTE it.** — *(URGENCY: this correction is NOW; the two items that remain open are DEFER-TO-WRAP tooling fixes.)* ---
+
+**My boot note (`ad4d6cf3`) restated s45's five "must not inherit unchecked" items as current.** ⛔
+**The heading says UNCHECKED and I checked none of them.** All five, driven:
+
+| # | item | verdict |
+|---|---|---|
+| **1** | `prereg_check` has no `DEFENCE_ADMISSION_BAR` rule | ✅ **STANDS** |
+| **2** | `queue_check`'s prose-only negation escape | ✅ **STANDS** |
+| **3** | do not quote the idle-rate figure against B1 | ✅ **STANDS** (a do-not-do) |
+| **4** | the COMBO-BAR's cost side is unpriced | ⛔ **HALF STALE — and the stale half is the substantive one** |
+| **5** | `#78` blocked on `#23`; `#23` needs a manipulation check | ⛔ **CLOSED** |
+
+**#1 — STANDS, with a control.** `tools/prereg_check.py` is present (117,817 bytes, **36 `def `** as
+the positive control) and carries **0** matches for `DEFENCE_ADMISSION|RMST|r300`. **The failing case
+is still the INCUMBENT's own prereg.** ⇒ **DEFER TO WRAP** (tooling).
+
+**#2 — STANDS.** `GREP-TREE` appears **only in a comment** (`queue_check.py:571`, *"a fifth idiom is
+not added"*), **0 rows use the token**, and the selftest's 11 cells do not cover the prose-negation
+case. Routed, not built. ⇒ **DEFER TO WRAP** (tooling).
+
+## ⛔ #4 — THE COST SIDE **IS** PRICED, AND HAS BEEN SINCE 10:52:23Z
+
+`tools/auto_gate.py:219-222`, `07030b69`:
+```
+PRICED BEFORE ADOPTION (SE at n=2700, p~.55 ≈ 0.96pp), P(prefix reads <55):
+    true 53.0 -> killed ~98%     true 55.0 -> coin flip (50%)
+    true 56.0 -> killed ~15%     true 57.0+ -> killed ~2%
+```
+**Independently recomputed rather than read off the comment** — all four reproduce, and I add the
+fifth: **53.0 → 98.13% · 55.0 → 50.00% · 56.0 → 14.76% · 57.0 → 1.79% · 58.0 → 0.08%.** The block
+also records Magnus's verbatim pin and states **"A stop here is a CANCELLATION (rows kept,
+combination input), never a verdict"** — which bounds the cost of a false kill to the shard's
+remaining games, not its information.
+
+⭐⭐ **AND THE PART THAT IS NOT MY ERROR ALONE: THE PRICING LANDED AT 10:52:23Z AND s45 WROTE THE
+CARRY-FORWARD AT 13:30:36Z — TWO HOURS AND THIRTY-EIGHT MINUTES LATER.** *"The cost side is still
+unpriced"* **was already false when it was written**, and its own quoted figure (14.8%) matches the
+tool's ~15% it says does not exist. ⇒ **an inherited open-items list is a claim about the WORLD
+authored from someone's MEMORY of it**, and it inherits their staleness on top of mine.
+
+**✅ WHAT DOES SURVIVE OF #4, and it is D32's routing debt rather than a missing number: the price is
+in `auto_gate.py`; `BARS.tsv` — *"the ONLY bar source `auto_gate` will act on"* — carries `TBA 51.33
+ge` with the combo bar named only in free-text prose.** **A reader of the bar registry sees the bar
+and not its cost.** ⇒ the header line s45 asked for is still the right ask, for a reason s45 did not
+give. ⇒ **DEFER TO WRAP.**
+
+## ⛔ #5 — CLOSED
+
+The **MANIPULATION CHECK** landed at `QUEUE.md:564`, on **`#78`**, in the D35-rider form verbatim:
+*"did the arm actually build MORE forward sentinels than control, read off the arm's own tape? A flat
+read WITHOUT a confirmed dose is an INERT FLAG."* **Registered on `#78` rather than `#23`, which is
+the better siting — it is `#78`'s conversion route that needed it.** Nothing owed.
+
+## ⛔ THE MECHANISM, AND IT IS THE ONE I SPENT TODAY FLAGGING IN OTHER PEOPLE
+
+**I published a five-row table of other people's open items, in a durable artefact, on the same day I
+flagged research twice for reporting a property of the system off one surface.** The heading on my
+own table said **"WHAT A SUCCESSOR MUST NOT INHERIT UNCHECKED"** — **I inherited it unchecked and
+passed it on with my name on it.** ⇒ **D36's shape exactly: the rule was held, cited against a peer,
+and not applied to my own text in the same session.** **Attention did not close it and would not
+have; what closed it was going to USE the list.**
+⇒ **PRACTICE, mechanical: a carry-forward list is RE-DERIVED at the boot that republishes it, or it
+is published as *"s45's list, not re-checked"* — never restated as current.** One line either way.
+
+## ⚠ AND A THIRD INSTANCE OF ONE FOOTGUN IN ONE SESSION
+
+`grep -c` exits 1 on zero matches, so `grep -c ... || echo "(tool not found)"` printed **`0`** and
+**`(tool not found)`** together — `prereg_check.py` is 117 KB and present. **This is `4e31cb12`'s
+defect** (the push guard whose drained-safe case tripped BLIND), **it caught me at boot on the drift
+watch's silent cell, and it caught me again here — inside the checking that was correcting an
+unchecked list.** ⇒ **the zero-match case IS the safe case for a negative check, so this footgun
+fires exactly when the answer is "clean".** Every count in this note is taken with `; true` and a
+positive control beside it.
