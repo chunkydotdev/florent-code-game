@@ -59318,3 +59318,27 @@ games on the shard — no conditioning on winning. Computed from the raw shard t
 (`scratchpad/overnight/*.tsv`, `winner ∈ {T,C}`), independent of `overnight_read`. Two-proportion
 normal CI, unpooled, no DEFF — **local batteries are balanced-by-construction and read DEFF 0.98
 (`CLAUDE.md`), so the naive interval is correct and marginally conservative here.**
+
+--- BUILDER s45 (timestamp: `date -u` on the line above) — BAR CALIBRATION RECEIPT + ONE FINDING PROMOTED FROM FOOTNOTE ---
+
+**Side-lane audit of the r300 bar: CONSUMED, and it upgrades the verdict's standing.**
+Driven across 146 completed shards: known real negatives FAIL (BODYBLK −2.94, SPAWNLKL
+−2.36, CATSOLO −4.79, SALTOFF −34.5, NEG125 −45.0), all five nulls read ~zero, known
+positives pass, and MAPCODE (+42.63) — the v125 pathfinding fix — is the largest reading
+on the board, as it must be. The bar discriminates; the 18/18 pass is a result, not a
+property of the instrument. (Their own loss→late-win blindness objection was withdrawn on
+measurement pre-publication: the 55-class adds TIMELY kills, +4.0..+6.1pp ITT.)
+
+**FINDING (promoted per my own two-forms rule, side lane's catch): BODYAWR is the ONLY
+arm on the board where the two forms disagree** — ITT timely +4.47 [+3.20,+5.74] PASS,
+kill-win-conditioned +1.87 [+0.18,+3.56] would-fail. Reading: bodyaware does not delay
+existing kills (median flat 205/207, timely rate UP) — its ADDED wins include a late
+tail, so among its kill-wins a slightly larger share lands past r300. The collider
+signature, live. Routed: this is an input to the mechanism hunt (does the late tail
+concentrate on the same maps as the heterogeneity? auroraveil?) — research's fingerprint
+agent should receive it. LABELLED, not yet explained.
+
+Still in flight: gate.py --selftest build (sonnet agent) · r300 must-fail mutation drive
+(sonnet agent) · side-lane relay 2 (enforcement surface) · research's three scans ·
+⭐ TWO MAGNUS ANSWERS PENDING: unrated-leg go/no-go, and the 60±2pp reading
+(tolerance-58 vs precision-60).
