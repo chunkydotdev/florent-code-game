@@ -59393,3 +59393,67 @@ the row NUMBER alongside**, so a reader can always open the row — unlike `:357
 people quote. **The `[:70]` sites are internal parse records, lower still.** This is a completeness
 item, not a live hazard, and it should not jump anything on the builder's board.
 **Routed to the builder; `tools/` is theirs. The one-character fix generalises unchanged.**
+
+--- 2026-08-16T07:0xZ (`date -u`) RESEARCH s45 — ⛔⭐ **THE r300 BAR HAS AN EXCHANGE RATE NOBODY CHOSE: 1.57pp OF KILL SPEED PER 1pp OF KILL RATE. MEASURED ON THE BOARD.** ---
+
+Magnus re-priced `DEFENCE_ADMISSION_BAR` to `r300_crossing_non_regression` today, and the builder
+corrected its estimator to the ITT form on my collider flag. **This note is about the ITT form's
+own defect, and it is one level along the same road: conditioned form -> COLLIDER; ITT form ->
+WIN-RATE CONFOUND.**
+
+## 1. THE FACTORISATION IS EXACT AND IT IS THE WHOLE ARGUMENT
+`ITT timely rate = P(win by kill) x P(kill <= 300 | won by kill)` = **RATE x SPEED**.
+```
+shard          n     win% |  ITTdiff |  RATE T / RATE C  | SPEEDdiff | dRATE  dSPEED  ITTpred  ITTobs
+NULL114     5408   49.98% |   -0.09  |  47.98 / 48.22    |   +0.19   | -0.24  +0.19    -0.09   -0.09
+NEG114      5408   36.32% |  -26.16  |  34.21 / 62.04    |  -11.09   |-27.83 -11.09   -26.16  -26.16
+BODYAWR    10800   53.70% |   +4.47  |  50.38 / 43.25    |   -1.87   | +7.13  -1.87    +4.47   +4.47
+AWRLNCH     5400   53.94% |   +6.96  |  51.59 / 42.28    |   -0.23   | +9.31  -0.23    +6.96   +6.96
+MIX280mix4  5400   55.24% |   +6.09  |  52.63 / 40.91    |   -4.85   |+11.72  -4.85    +6.09   +6.09
+MIX281mix4  5400   55.07% |   +5.06  |  52.35 / 40.80    |   -6.84   |+11.56  -6.84    +5.06   +5.06
+MIX284mix3  5400   54.56% |   +4.57  |  52.06 / 41.63    |   -6.35   |+10.43  -6.35    +4.57   +4.57
+RND1SOLO    5400   51.30% |   +1.52  |  48.81 / 45.31    |   -2.32   | +3.50  -2.32    +1.52   +1.52
+EXILE0      5408   47.02% |   -5.18  |  45.36 / 51.18    |   -1.51   |   —      —        —       —
+```
+**`ITTpred == ITTobs` to 2dp on every arm**, so the decomposition is not a model — it is the metric.
+
+## 2. ⛔ THE BAR PASSES EXACTLY THE ARMS IT EXISTS TO CATCH
+**The 55-class leaders PASS at +4.57 to +6.09 while their SPEED falls 4.85-6.84pp.** Those are the
+*"win more AND kill later"* arms the defence clause was written for. Their RATE is up ~+11pp, which
+swamps the timing loss. ⇒ **the ITT rate is dominated by win share — and `PRIMARY_CURRENCY:
+game_share` already scores win share, so the bar adds almost no independent constraint.**
+
+## 3. ⭐ THE EXCHANGE RATE, AND IT IS THE DURABLE FORM OF THE FINDING
+`dITT ~ SPEED_bar*dRATE + RATE_bar*dSPEED` ⇒ an arm passes iff
+`dSPEED > -(SPEED_bar/RATE_bar) * dRATE`. **Measured `SPEED_bar/RATE_bar` = 1.52-1.62 across every
+arm, mean 1.57.**
+⇒ **AN ARM MAY LOSE ~1.57pp OF KILL SPEED FOR EVERY 1pp OF KILL RATE IT GAINS AND STILL PASS.**
+**The bar is not "no delay". It is "delay is fine if you buy 1.57x as much rate" — at an exchange
+rate that was never a decision.** If that trade is wanted (and it is defensible; rate wins games),
+**it should be a CHOSEN number in `PROGRAMME.md`, not an artefact of multiplying two factors.**
+
+## 4. SENSITIVITY vs SPECIFICITY — the builder's calibration settles one, not the other
+The builder's mutation drive (doctored `NULL5400`, treatment kills shifted **+100 rounds**, win rate
+held FIXED, 1,868 changed rows = exactly treatment's kill count) reads **ITT −9.67pp [−11.18,−8.15]**
+against the pristine tape's −0.39 [−2.03,+1.25]. ⇒ **the metric IS sensitive to delay in isolation,
+and that must-fail case fires correctly. Nothing here withdraws it.**
+**But a mutation drive is a SINGLE-FACTOR perturbation and no shipped plank is one.** The gap is
+SPECIFICITY: **in combination, rate masks delay at 1.57:1.**
+⇒ **PROPOSAL (small): keep the ITT rate as headline; add SPEED as a reported column with its own
+non-regression clause.** The pair that requires it: **`AWRLNCH` +6.96 ITT / −0.23 SPEED vs
+`MIX281mix4` +5.06 ITT / −6.84 SPEED** — near-identical on the bar, opposite on timing.
+⭐ **This makes `AWRLNCH` (`bodyaware`+`homeearly`) the standout under the programme's own logic —
+the only leader that gains without slowing — and it is the arm `QUEUE #71` already named as its
+lead. First quantitative support for that row.**
+
+## 5. CROSS-IMPLEMENTATION AGREEMENT + MY UNRESOLVED CAVEATS
+The builder's sonnet cut reports BODYAWR *"conditioned +1.87 would-fail"*; **my hand cut reads
+SPEED −1.87** — same magnitude, opposite sign convention (share PAST vs share BY r300). **Two
+independent implementations, identical number, and both flag BODYAWR as the arm where the forms
+disagree.**
+⚠ **NOT RESOLVED, and handed to the side lane rather than sat on:** (a) **SPEED's denominator is
+each side's own kill-wins, so SPEED is itself outcome-conditioned — the collider on the other
+factor**; I believe reporting it BESIDE the rate is what makes that acceptable and I am not
+confident. (b) **No DEFF measured for the SPEED column.** (c) **I used `turns <= 300` with the
+boundary convention UNDECLARED — the exact defect caught in my hazard doc four hours ago.**
+NULL114 reads +0.19 so I doubt it bites; I said that last time too.
