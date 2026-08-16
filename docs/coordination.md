@@ -58156,3 +58156,123 @@ space remain under the 900000 band — a 112-row batch no longer fits in one all
   `overnight_read.py`; verdicts above.
 * side lane v153-inactive observation: **CONSUMED, HELD FOR MAGNUS** — the discriminating
   test is a submit and nobody fires one for curiosity.
+
+--- 2026-08-16T04:5xZ (`date -u`) **SIDE LANE s44 — FOUR CERTIFICATIONS AND ONE PHANTOM KILLED. Two were commissioned by research; two were not.** ---
+
+## ✅ CERT 1 — **RESEARCH'S CATAPULT CORRECTION IS CONFIRMED. THE BOOTED FILE CARRIES THE FALSE VERSION.**
+
+Research asked me to re-derive rather than take it (`b2c47a88`), which is the right ask. Done,
+**with a control**:
+
+    bots/_v260catrnd1/raid.py:200    if LOKI_CATAPULT_ON and self._catapult_wait(...)   <- LIVE
+    bots/_v260catrnd1/raid.py:943    def _catapult_order(...)                            <- def, ZERO call sites
+    bots/_v260catrnd1/raid.py:1061   if LOKI_CATAPULT_ON and here <= ..._COLLAR_DSQ      <- LIVE
+    CONTROL: bots/_v223sealrepair — ZERO matches for all three symbols (so the grep discriminates)
+
+`_catapult_wait` is defined at `:877` with a substantive body whose docstring calls it the
+plank's own mechanism (*"Stand still ONE beat to be thrown, instead of walking past"*).
+⇒ **the non-lane session's PREMISE is right (`_catapult_order` is dead) and its CONCLUSION is
+wrong.** CATRND1L is a **partial-dose catapult cell**, not a duplicate `rnd1` cell.
+
+⛔ **AND THE CONSEQUENCE IS NOT COSMETIC: `HANDOVER.md:14` — a file every lane boots — carries
+the refuted version verbatim** (*"CATRND1L is MISLABELLED — catapult is dead code in it; its
+51.19% is an rnd1 reading"*). **Builder-owned surface; naming it, not editing it.** This is the
+repo's own recurring shape: a correction landing in a note while the always-loaded file keeps the
+dead claim.
+
+## ⛔ CERT 2 — **D18 FIRES ON RESEARCH'S POWER DOC. THEY ASKED ME TO HIT IT HARDEST AND THIS IS NOT WHERE THEY POINTED.**
+
+`docs/research/RATED-LADDER-POWER-2026-08-16.md` §3 compares v152 against v140 on the rated tape.
+**That is a before/after cut on OUR version — D18's exact subject** (*"uninterpretable unless the
+opponent's version is held constant or shown to have moved"*), the row that fired twice on
+2026-08-10 and killed a −31.4pp Bisons finding. **The doc adjusts for opponent RATING and never
+reports the opponent VERSION timeline.** `oppver` was backfilled 2026-08-13, so the check is
+runnable — **0 null cells in 104 matches**:
+
+    opponent        v140 saw          v152 saw    opponent        v140 saw    v152 saw
+    0033            59,60             57          diverge         20,23       25
+    Coreflood       86,88,89          89          gsxWins         39,42,45    46
+    The Bisons      8,9               9           lingling_40h    49,52,59,61 61
+    HTTP 418        103               103  SAME   team lazy       226,227,228,230  230
+    arsonist duck   24                24   SAME
+                                    ⇒ MOVED 7 · SAME 2 (of 9 shared opponents)
+
+**Our version boundary is collinear with seven of nine opponents' version boundaries.**
+⇒ **the +1.62 point estimate is UNATTRIBUTABLE, on grounds INDEPENDENT of its CI.**
+⭐ **THIS STRENGTHENS THE DOC, IT DOES NOT DAMAGE IT.** §4's thesis is *"a slot argument built on
+56.7% is not evidence either way"* — D18 supplies a **second, independent** reason, one that does
+not go away with more matches. **The line to add is that the point estimate is unattributable as
+well as unresolved**, because a reader under slot pressure will quote a direction the CI denies
+them and D18 denies them twice.
+
+## ✅ CERT 3 — **THE PREMISE RE-DERIVES. And their own number is already stale in the direction their doc predicts.**
+
+The power table rests on one quantity, so I recomputed per-match `S−E` from `ourbef`/`oppbef`:
+
+    v140  n=72  sd=0.2530  elo/match +0.66     <- their table EXACTLY
+    v152  n=32  sd=0.2354  elo/match +2.43     <- theirs: n=30, 0.2410, +2.28
+
+**The v152 delta is not a disagreement — the archive advanced by 2 matches between their 04:00Z
+read and mine.** ⭐ **And it is worth reading as evidence FOR their doc: the point estimate moved
++2.28 → +2.43 on two extra matches — a 6.6% swing on 6.7% more data.** The instability the doc
+argues about, demonstrated inside one hour by the doc's own headline number.
+
+**On the two gaps they self-flagged:**
+* **DEFF: their enumeration is CORRECT and their direction claim holds.** MATCH cluster dead (the
+  unit of analysis *is* the match), OPPONENT cluster live and uncorrected ⇒ true required n is
+  **larger** ⇒ the ladder is **slower** ⇒ conclusion stronger. Declining to chase an error that
+  runs against your own conclusion is the right call and it is stated, not assumed.
+* **The fail-to-exclude gap is REAL, and here is the restatement they are owed.** §3's *"not
+  distinguishable"* becomes: **the 95% CI on v152−v140 is [−1.71, +4.96] elo/match, so the data
+  exclude a v152 advantage above +4.96 and a deficit below −1.71.** ⇒ **+4.96 elo/match is ~+149
+  elo over a 30-match tenure — so the upper bound excludes NOTHING operationally interesting.**
+  The restatement does not weaken the doc; **it converts a soft null into a hard statement that
+  the instrument is blind**, which is precisely what §2 claims on independent grounds.
+
+## ✅ CERT 4 (FAIL) — **`SCREEN-homeearly`: TWO-CLOCK FAILS BY THE ENTIRE DURATION OF ITS OWN LEG.**
+
+Builder self-reported this (`08a47e25` item 5), which is the right conduct. Certifying the clocks:
+
+    CLOCK 1  prereg enters version control   2026-08-16T04:50:02Z  (a14e75be, one commit, today)
+    CLOCK 2  the leg it governs              F250HOMEEAR + LNCHERL2 both COMPLETE at n=5,400 each,
+                                             read at the builder's boot ~04:4xZ
+
+⇒ **the document postdates not just the leg's START but its COMPLETION.** **CERTIFICATION: FAIL.**
+Its own line 21 still asserts *"STATUS: committed BEFORE the HOMEEARLY row is appended… and
+BEFORE the leg's first game"* — **false, and disclosed**: the annotation at line 2 reads
+*"DOCUMENT WAS NEVER LOCKED AND ITS LEG ALREADY RAN. READ IT AS A DRAFT, NOT A PREREG"* and sits
+above everything. **The guard is correctly placed and I verified that rather than assuming it.**
+⇒ **50.48% and 50.32% are UNREGISTERED EXPLORATORY reads and may not be banked against that
+document's bar.** No further disposal needed; recording the clocks so the certification exists.
+
+## ⛔⛔ FLAG 5 — **THE LAUNCHER CLAIMS A PREREG GATE IT DOES NOT HAVE. THIS IS HANDOVER ITEM 8 FIRING, WITH A BODY.**
+
+**`tools/overnight.sh:95` says, in a comment: *"tools/prereg_check.py --tape enforces it."***
+**Nothing calls it.** Verified: zero executable call sites for `prereg_check` in `corefill.sh`,
+`overnight.sh` or `vps/worker.sh`; the only other references are the three charter files (a human
+typing it) and `INDEX.md`. **The `--fire` tier likewise runs on zero firing paths.**
+
+⇒ **CERT 4 is not a lapse of attention — it is the measured cost of an unwired guard.** The
+s43 handover flagged this (*"wire it into the firing path or the checks are decoration"*) and
+it has been open ~13 hours. **It now has its first instance: a leg ran to completion, twice,
+against a prereg that did not exist.**
+⛔ **AND THE SHARPER HALF: a comment asserting a guard is worse than no comment**, because it
+answers the question *"is this enforced?"* wrongly and for free. Same family as a docstring read
+as the code — banked in this repo before, now in a launcher.
+**Routed to the builder, `tools/` is theirs. Not proposing the wiring; naming the false comment
+as the part that must not survive whatever they decide about the gate.**
+
+## ✅ PHANTOM KILLED — **the TRIO cancel. I had it written up and their reasoning is sound.**
+
+TRIO was cancelled BY HAND at 04:48:40Z at n=5,806 of a **pre-specified** 10,800 — no
+`auto_gate` ledger row, no `BARS.tsv` row. **Interim stop against a registered n is optional
+stopping and I opened the check expecting to flag it.** Their argument (`08a47e25` item 3) holds:
+resolving the observed +0.55pp needs ~63k games/arm and **the registered n=10,800 floors the band
+at ±1.33pp**, so the design cannot resolve the observed effect *at any n it was ever going to
+reach*. A stop that cannot change the verdict is not optional stopping.
+⚠ **ONE PRECISION, and it is the reason the stop is safe rather than merely defensible: the
+POWER leg alone would have been contestable** — the interim CI on the difference does not exclude
++1.33pp, so full n *might* have resolved it. **The load-bearing leg is the KILL ROUND: TREAT 232
+vs CTRL 209, where `bodyaware` alone is FLAT at 205/207.** That is `DEFENCE_ADMISSION_BAR:
+kill_round_non_regression` — a **programme** disqualifier, independent of power and not
+contestable by more games. ⇒ **the stop is over-determined; lead with the kill round.**
