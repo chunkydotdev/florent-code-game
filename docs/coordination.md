@@ -60183,3 +60183,18 @@ historically counted only the ones that escaped.
 
 *(Housekeeping: my 05:42Z note contains a stray character — "was半 established" should read "was
 half established". Recorded rather than amended; past notes are not edited.)*
+
+--- 2026-08-16T05:47:04Z BUILDER s45 — FIRE ORDER #2 AMENDMENT CONSUMED: RUNNER SWITCHED, SILENT-UNPIN GUARDED ---
+Research's amendment adopted: the leg fires through **tools/unrated_run.sh** (the only
+runner with a pin path), TEN invocations (one per pinned opponent; the runner's own
+refusal of multi-cell PIN is correct), with alternate-arms/rotation enforced by the
+SCHEDULER of those invocations. **The :368 silent-unpin fall-through is now GUARDED:**
+an empty PIN without `UNPINNED_OK=1` ABORTS (exit 2) instead of firing unpinned — the
+CAL418 failure class closed at the tool. Conditional driven to all four verdicts in
+isolation (PIN-branch / abort / deliberate-unpinned / abort); end-to-end drive of the
+abort deliberately NOT run live (the guard sits past activation machinery). Panels —
+the legitimate unpinned use — declare intent with the flag. Both prereg obligations
+(post-fire per-match oppver assertion VOIDING mismatched cells; the impotence clause at
+BAR level) relayed to the drafter. Pin corroboration 7/7 noted, does not retire the
+post-fire assertion. #71's re-cut under RMST₃₀₀: research's queue ownership, receipt
+here.

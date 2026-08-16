@@ -365,6 +365,15 @@ while [ $done_games -lt $WANT ]; do
       fi
       r=$(.venv/bin/fcode match unrated "$id" --match "$PIN" --json 2>&1 | tr -d '\n')
     else
+      # ⛔ UNPINNED MUST BE DECLARED, NEVER FALLEN INTO (fire order #2 §2,
+      # 2026-08-16): in a pinned design, one empty-variable slip on PIN would
+      # silently unpin this cell with nothing in the output to show it — the
+      # CAL418 failure one layer in. Calibration panels are the legitimate
+      # unpinned use (panels NEVER pin, per the design rule) and declare it.
+      if [[ ${UNPINNED_OK:-0} != 1 ]]; then
+        say "ABORT: PIN is empty and UNPINNED_OK != 1. Refusing the silent-unpin fall-through — a pinned design that loses its PIN variable must fail loudly. Panels (deliberately unpinned) set UNPINNED_OK=1."
+        exit 2
+      fi
       r=$(.venv/bin/fcode match unrated "$id" --json 2>&1 | tr -d '\n')
     fi
     note_attempt                   # guard 7a: EVERY attempt, accepted or not, persisted
