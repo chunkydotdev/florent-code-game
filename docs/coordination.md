@@ -67696,3 +67696,55 @@ PIPELINE STEP 2 IS RUNNING: SLEIPH2H — head-to-head vs the STAGED v152 artifac
 --- BUILDER s47: ⭐⭐⭐ SHIPPED — SLEIPNIR v1 IS LIVE (v155, _v468kladturbo) at 19:38:5xZ on Magnus's direct order ("Alright, release Sleipnir"). ---
 
 Fired inside the derived window (last pairing 19:32:59, ~13 min clear air), submit_clean --activate, holder verified before=v152 after=v155 on the Active bot line. Ship record committed PRE-FIRE: docs/prereg/SHIP-sleipnir-v1-2026-08-16.md (evidence: KLADTURBOR 61.57 [60.28,62.87] n=5400 replicated + local 61.29 agreeing; the step-2 H2H waiver is EXPLICIT in the record — SLEIPH2H runs on ws1 and is read as confirmation). PROGRAMME INCUMBENT script-updated to _v468kladturbo, committed with the ship. ⛔ CONSEQUENCE FOR EVERY QUEUED ROW: the incumbent moved — every GREP admitted against _v223sealrepair is potentially stale (the s34 lesson); queue_check flags the mismatch. CONTROL for RUNNING arms remains _v223sealrepair per their registrations (Magnus's benchmark-stability rule); research owns the go-forward control question. SHIP_SIT_MIN_K=8 now protects Sleipnir's convergence. WRAP CALLED by Magnus — side lane: this is your wrap-ping.
+
+--- 2026-08-16T19:4xZ ✅✅ **SIDE LANE s47 — SHIP CERTIFICATION: SLEIPNIR v1 (v155) IS CLEAN ON EVERY MECHANICAL OBLIGATION. One assumption in its waiver named — and the record already handles it.** ---
+
+## ✅ CERTIFIED, each at a primary
+
+* **TWO-CLOCK, ON TWO INDEPENDENT CLOCKS.** Ship record `docs/prereg/SHIP-sleipnir-v1-2026-08-16.md`
+  added at **19:38:29Z** (git author time, derived with `TZ=UTC`); platform activation
+  **19:38:40.236Z** (`fcode status`). ⇒ **record PRE-DATES the fire by 11.2 s.** Tight, and the
+  protection holds for the reason pre-registration exists: **no outcome existed yet to influence it.**
+* **HOLDER FROM THE AUTHORITY, NEVER A POLLER.** `v155 "Sleipnir v1"`, **uploaded by Moonfarm** (ours,
+  not a teammate), 1755 Emerald, rank #22 of 126, 1130 matches. **Independently corroborated by my own
+  slot watch — `HOLDER CHANGE 19:40:36Z: v152 -> v155`** on the 120 s poller, ~2 min behind the
+  platform as expected.
+* **AUTHORISATION PRESENT AND VERBATIM** at the record's line 3: *"Alright, release Sleipnir."*
+  ⇒ **this is the `"until i say we change it"` carve-out on the 15:4xZ slot freeze, satisfied by the
+  only person who can satisfy it.**
+* **`X3R0_SLOT_RULE` STEP 1 CLEARED PROPERLY, ON THE PRECISION READING MAGNUS SETTLED AT 05:32:44Z.**
+  `KLADTURBOR` **61.57% [60.28, 62.87], n=5,400** — point ≥60 ✓, half-width **1.30 ≤ 2** ✓, CI-lo
+  **60.28 ≥ 58** ✓. **First arm ever to clear that bar**, and the interval FLOOR sits above 60.
+* **`SHIP_SIT_MIN_K` NOT BREACHED.** The displaced holder `v152` was at **k≥65**, far past 8.
+* **`INCUMBENT` SCRIPT-UPDATED** per its delegation: `bots/_v468kladturbo`, `PREVIOUS_INCUMBENT
+  bots/_v223sealrepair`.
+* **ROLLBACK READY AND CORRECTLY CONSTRAINED:** target `v152`, and the record states **any rollback is
+  also Magnus's word** — consistent with the freeze rather than in tension with it.
+
+## ⚠ THE ONE ASSUMPTION, NAMED — NOT A BLOCK, AND THE RECORD ANTICIPATES IT
+
+**The step-2 head-to-head was WAIVED by the release order, explicitly and on the record.** Its
+substitute basis: *Sleipnir 61.57 [60.28,62.87] vs v152 57.02 [55.70,58.34] on the SAME control
+yardstick, intervals DISJOINT.* **I verified the disjointness — gap 1.94pp.**
+
+⛔ **But both are measured against the SAME CONTROL, not against each other. The step from that to
+"Sleipnir beats v152" is TRANSITIVITY, not a measurement** — and this repo carries a document saying
+so: `docs/research/SCREEN-PREDICTIVE-VALIDITY-2026-08-14.md:47`, *"these two coincide only under
+transitivity. Non-transitivity is normal in…"* ⚠ **It is also the exact composition flagged on this
+channel this morning (D36's origin instance), which is why it is worth naming rather than assuming
+everyone saw it.**
+
+✅ **AND THE RECORD ALREADY DOES THE RIGHT THING WITH IT, which is why this is a note and not a flag:
+it names the waiver, states the substitute basis rather than hiding it, and PRE-COMMITS the
+interpretation — *"SLEIPH2H completes as confirmation… if the H2H surprises, that is a finding, not
+a rollback trigger."*** **A named substitution with a pre-registered reading is prereg discipline
+working, not failing.**
+✅ **`SLEIPH2H` VERIFIED LIVE**, not merely promised: `n=80/2700, remote/worker@work-server-1,
+bar=50.00 ge`.
+⇒ **WHAT A SUCCESSOR NEEDS: when `SLEIPH2H` reads, the thing it tests is the transitivity assumption.
+A surprise there is evidence about NON-TRANSITIVITY, not about Sleipnir being mis-shipped** — and the
+record has already ruled it non-rollback-triggering.
+
+⭐ **A small irony worth one line: `SLEIPH2H` sits on `ws1`, inside the remote gap I flagged all
+afternoon — so it cannot be auto-stopped. For a confirmation run we WANT completed at full n, that
+gap is working in our favour. Third time today it has been benign or better than benign.**
