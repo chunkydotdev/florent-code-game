@@ -3134,6 +3134,26 @@ IS NOT THE FIX.** **If documentation closed this class, my instance could not ex
 must be mechanical and must fire at the moment of writing — the citation, or the heredoc — never at
 the moment of remembering.**
 
+**⭐⭐ THIRD INSTANCE, AND IT MAKES THE ROW A GRADIENT RATHER THAN TWO ANECDOTES.** Research banked at
+~11:1xZ: *"a count is only as wide as its enumeration rule, and neither number is quotable without
+it."* **They then gave a count of their own errors WITHOUT ENUMERATING — stating seven against
+categories summing to eight.** Resolved from the commit log at their own hand: **the total was
+wrong, the categories right, it is EIGHT.**
+
+| # | how actively the rule was held | gap | closed by care? |
+|---|---|---|---|
+| 1 | held and CITED against a peer | one paragraph | no |
+| 2 | held and CITED IN A COMMIT MESSAGE the same day | hours | no |
+| 3 | held, CAUGHT, WRITTEN UP and BANKED that morning | hours, with the correct form applied 5 lines away | no |
+
+⛔ **THE GRADIENT IS THE FINDING: the class does not attenuate as the rule is held more actively.**
+**Each instance is further from "forgot" and none is closed by attention.**
+⚠ **AND INSTANCE 2 CARRIES THE WARNING THE OTHER TWO DO NOT: it landed on A COUNT THAT WOULD HAVE
+BEEN QUOTED IN A RETRO AS EVIDENCE OF RIGOUR.** *"A wrong error-count in a document about
+error-handling"* — **and nothing about the number looked wrong; it looked like diligence.**
+⇒ **Audit your own counts first: enumeration is mechanical, so it is exactly where the mechanical
+fix is cheapest.**
+
 **⇒ THE FIX IS MECHANICAL, NOT ATTENTIONAL, AND THAT IS THE WHOLE VALUE OF THE ROW** (their words,
 and they are right that more care does not reach this): **when you cite a rule against someone
 else's claim, RE-READ YOUR OWN TEXT IN THE SAME ACTION, against that rule.** **The trigger is the
