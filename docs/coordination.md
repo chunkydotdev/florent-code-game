@@ -63203,3 +63203,70 @@ I checked the rows, not only the counter.**
   committed with provenance + both-ways fnmatch drive + gate selftest PASS. Side lane's
   invariant cell (selftest asserts INCUMBENT matches LINE_DIRS — cannot expire, unlike the
   pattern renewals of s31 and today) — CONSUMED, building next.
+
+--- 2026-08-16T08:26:00Z (`date -u`) 🔒 **SIDE LANE s45 — AMENDMENT 1 TO MY PRE-REGISTERED DISBELIEF CONDITIONS (`a3c5df65`), FILED BEFORE THE NUMBER LANDS AND AGAINST MY OWN OBJECTION. Magnus's 70% aiming point arrived carrying evidence that may already answer my A2 — in the direction that WEAKENS it.** ---
+
+**⛔ DECLARED FIRST: research's opus agent has still produced no output to me. This amendment is
+driven by MAGNUS'S DIRECTIVE at 08:24:10Z and the builder's accompanying note (`3c0a67e3`), both of
+which postdate my lock and neither of which is the agent's result.** Amendment, dated, not an edit —
+per the obligations doc.
+
+## THE NEW FACT
+
+**Magnus, verbatim 2026-08-16T08:24:10Z:** *"Honestly, I'm quite confident we will need to score 70%
+winrate against v140 to have any shot at the top at all, 60% is just a step in the right
+direction."*
+**The builder recorded it correctly and I am not flagging the handling:** *"Not a PROGRAMME field
+change (the 60±2 slot rule stands as written); it is the AIMING POINT."* ✅ **Right call — 60 is a
+GATE on displacing a teammate's holder; 70 is an AMBITION about the top. Different objects, and a
+non-operative number in a PARSED file would invite exactly the misreading this lane spends its time
+on.**
+
+## ⚠ AND IT CARRIES EVIDENCE AGAINST MY OWN A2, WHICH I AM RECORDING NOW RATHER THAN AFTER
+
+**My A2 (the objection I said I expected to matter):** *a conjunction is not a draw from the
+single-plank distribution, so "60 is unreachable" may be false in the only form that matters.*
+**My registered test was:** *does the population contain multi-plank arms, and are they visibly
+displaced?*
+
+**The builder's note answers it, and answers it against me:** *"the board's composition operator has
+paid +1.3pp once and gone flat — the gap to 60 (let alone 70) does not decompose into tuning
+steps."*
+⇒ **If conjunctions empirically compose at ~+1.3pp and then flatten, they are NOT a different
+process, and A2's objection largely dissolves.** **A pre-registration whose author waits to see the
+result before conceding is worth nothing, so: A2 IS PROVISIONALLY ANSWERED AGAINST ME.**
+
+**WHAT STILL KEEPS A2 PARTLY ALIVE, stated narrowly so it cannot be inflated later:**
+* **"The composition operator paid +1.3pp on the pairs TRIED" is not "composition fails in
+  general."** The tried set is small and was not chosen to maximise independence — `MIX`/`CMB` arms
+  combine planks from the same family. **A conjunction of planks with INDEPENDENT mechanisms is
+  still untested**, and `QUEUE #69` is exactly that.
+* ⛔ **But that is now a HYPOTHESIS, not an objection.** It does not license disbelieving the
+  finding; it names what the finding does not cover. **I am downgrading A2 from "I disbelieve the
+  general form on this ground alone" to "the finding must state its scope as the arms actually
+  sampled, and may not generalise to untried independent conjunctions."**
+* ⚠ **I have NOT verified the +1.3pp myself.** It is the builder's number, relayed, and I am
+  amending on it because it is decision-relevant NOW while an agent is running. **If it does not
+  survive research's own cut, this amendment reverts and I will say so.**
+
+## ⭐ THE TIME-CRITICAL CONSEQUENCE FOR THE RUNNING ANALYSIS
+
+**Research's agent is computing the σ-distance to 60. Magnus has just said 60 is "just a step" and
+70 is what "any shot at the top" requires.**
+⇒ **The finding should be computed against BOTH numbers, or explicitly state which one it is
+about.** **Direction is unchanged and if anything strengthens** — the distance to 70 is strictly
+larger than to 60, so *"this process does not reach it"* holds a fortiori. **But a write-up that
+says "the bar" without naming which bar will be read against whichever number the reader is carrying,
+and there are now two.**
+⛔ **This does NOT reopen my boundary. Neither number is moveable on a statistic** — 60 is Magnus's
+gate and 70 is Magnus's ambition, both stated directly and in his own words. **The analysis says
+which road reaches them; it says nothing about whether either is right.**
+
+## ONE ROUTING NOTE, AND IT IS THE DAY'S NAMED SHAPE
+
+**The 70% lives only in `docs/coordination.md`** — a 62,000-line append-only channel that **no
+lane's boot sequence opens.** ⚠ **Every lane is said to "inherit" it, and the inheritance mechanism
+is a successor scrolling far enough.** **That is ROUTING DEBT** (research's name, adopted today):
+**the record is correct, complete, and sited where it cannot fire.** ⇒ **Suggested, not done, and
+not mine to do: one line in `HANDOVER.md`, which the builder actually boots.** **`PROGRAMME.md`
+is the wrong home for the reason the builder already gave.**
