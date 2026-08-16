@@ -63071,3 +63071,59 @@ Magnus-level fact and it points at conjunctions and at the head-to-head step, no
 ⛔ **It is NOT a reason to move the 60 bar. Magnus set it directly and this lane does not propose
 re-pricing a directive on a statistic.** **The finding says which ROAD reaches the bar; it says
 nothing about whether the bar is right.**
+
+--- 2026-08-16T08:22:00Z (`date -u`) ⛔⛔ **SIDE LANE s45 — D77 HAS RECURRED AND WAS LIVE FOR ~47 HOURS ACROSS TWO INCUMBENTS. `LINE_DIRS` — THE ONLY FIELD `gate.py` ENFORCES — MATCHED THE SHIPPED BOT ZERO TIMES. Magnus's widening at 08:20:43Z fixes today; the SHELF LIFE is the finding.** ---
+
+**⚠ ALREADY FIXED, AND CORRECTLY** — `6742c803` *"LINE_DIRS widened with `bots/_v[2-9]??*` on
+Magnus's directive ('Ok to widen the bots in programme')"*, authorisation recorded in the commit
+message exactly as this edit-on-directive-only file requires. **This note is not about the repair.**
+
+## THE MEASUREMENT — driven, not asserted
+
+    OLD LINE_DIRS patterns vs the INCUMBENT bots/_v223sealrepair:
+      bots/_v105loki1   -> 0        bots/_v1??loki*   -> 0
+      bots/_v10?loki*   -> 0        bots/_v1[3-9]?*   -> 0      ⇒ 0 of 4
+    NEW bots/_v[2-9]??*  -> 1
+
+    bots/_v1?? trees remaining : 0
+    bots/_v[2-9]??* trees      : 247
+
+    INCUMBENT first pointed at a _v2xx tree : 2026-08-14T09:05:44Z (_v218mapfix, 9215de78)
+    …and has been _v223sealrepair since     : 2026-08-14T11:37:57Z (d4b149e6)
+    widened                                 : 2026-08-16T08:20:43Z
+    ⇒ BLIND WINDOW ≈ 47 HOURS, ACROSS TWO INCUMBENTS, WITH THE ENTIRE LINE OUTSIDE THE FIELD.
+
+## ⭐ THE FINDING IS NOT THE BREAK, IT IS THAT THE PREVIOUS FIX HAD A SHELF LIFE
+
+**D77 (2026-08-11) recorded this exact failure:** `LINE_DIRS` matched only names containing `loki`,
+we stopped using that at `_v139heal`, **so the live shipped bot failed its own programme's line
+check.** The repair was to widen the glob to `bots/_v1[3-9]?*`.
+⇒ **THAT REPAIR WAS ITSELF A NAME PATTERN, AND IT EXPIRED THE MOMENT THE LINE CROSSED v200 — THREE
+DAYS LATER.** Today's repair is the same move and **will expire at v1000**.
+
+**THE DURABLE FORM: a name-pattern gate has a shelf life equal to the naming convention's, and it
+re-breaks SILENTLY every time the convention advances. Widening it is a RENEWAL, not a fix.**
+⛔ **And it fails in the direction that gets guards deleted** — D77's own words: *"a guard that
+refuses everything gets removed from the path… and that is almost certainly why `h2h.sh` bypasses
+`gate.py` at all."* **For 47 hours `gate.py` would have refused a battery on the bot we ship.**
+
+## ⇒ THE MECHANISATION, ONE CELL, AND BOTH VERDICTS EXIST IN THIS REPO TODAY
+
+**`gate.py --selftest` must assert that the CURRENT `INCUMBENT` MATCHES `LINE_DIRS`.**
+**That is an INVARIANT rather than a pattern, so it cannot expire** — it re-derives from the two
+fields every time it runs, whatever either one says.
+
+    at 6742c803^ (before the widening)  -> FAILS   [the state that existed for 47 hours]
+    at 6742c803  (after)                -> PASSES  [today]
+
+**It would have fired at 2026-08-14T09:05:44Z**, the instant `INCUMBENT` moved to a tree the field
+did not cover, **instead of sitting silent for two days.** ⭐ **And it is free: both fields are
+already parsed by the same function.** **ROUTED TO BUILDER** — `gate.py` is theirs, and they added
+its 13 selftest cells yesterday, so the harness exists.
+
+⚠ **What this does NOT claim:** I have not established that any battery was actually refused or
+routed around in that window. **The exposure is that the gate COULD not have passed the shipped
+line, not that a run was blocked** — and `gate_invocations.tsv` shows only 27 `gate.py`
+invocations lifetime against 174 `prereg_check.py`, which is consistent with the gate being little
+used **and does not prove it was silent for this reason.** ⇒ **Stated as an exposure, not as a
+damage report.**
