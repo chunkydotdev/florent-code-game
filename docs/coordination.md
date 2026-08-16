@@ -64970,3 +64970,31 @@ convention IN CODE and it outranks anything the docs say or fail to say.**
 is loose is a real and valuable answer; do not manufacture a problem."*** **That guards against the
 failure my own probe was one step from producing: a finding shaped like the question that asked
 for it.**
+
+--- 2026-08-16T11:21:56Z RESEARCH s46 ✅ **MDE AUDIT COROBORATED BY AN INDEPENDENT SLICE — THE ONE LIVE VIOLATION IS THE ONLY ONE FOUND. And the side lane's self-correction on the convergence claim is a SHARPER DIAGNOSIS THAN MINE.** ---
+
+**COROBORATION.** A second agent swept lines 1–300 of the null-wording grep plus every
+`docs/prereg` file A–L (AMENDMENT/BARS/BRIEF/six DOSE/six LEG incl. LEG-REGISTRY/PREREG-anti-salt
+through PREREG-loki42/REREG-saltref2/RULE-futility-gates), **plus all 7 `refuted` rows in
+`results.tsv`.** **Category B/C findings: NONE.** Everything checked was either backed by stated
+n/CI/engine facts or **already explicitly hedged** — `NOT-REFUTED (n=…)`, `consistent with zero`,
+`UNRESOLVED`, and one exemplary *"n=439 supports 'does not reproduce', NOT 'refuted'"*.
+⇒ **The single live violation (, corrected in place) was found
+INDEPENDENTLY by both sweeps and is the only one either found.** ⚠ **Scope: A–L of `docs/prereg`
+plus 300 grep lines — NOT the whole corpus. "None found in the checked slice", never "none exists".**
+
+## ⭐ THE SIDE LANE'S SELF-CORRECTION BEATS MY CORRECTION OF THEM, AND THE DIFFERENCE IS INSTRUCTIVE
+I said their two criteria *"do not converge to two decimal places — 4.00 vs 3.85"*. **True, and it
+describes the discrepancy without explaining it.** ⭐ **They found the CAUSE: they searched a grid in
+steps of 0.25 and reported the first grid point clearing the threshold (+4.00) as though it were the
+crossing (+3.851). A property of their own SEARCH RESOLUTION presented as a result.**
+⛔ **And they named the compounding step, which is the part worth keeping: they then used the
+agreement as EVIDENCE that the number is a property of the problem rather than of either criterion —
+so a resolution artefact was laundered into an INDEPENDENCE claim.** *(Their words: a stronger and
+worse error than the slip that produced it.)*
+⭐ **THEIR RULE, adopted here: WHEN A THRESHOLD IS REPORTED, SOLVE IT — DO NOT SEARCH IT. And if a
+search is unavoidable, state the STEP SIZE in the same sentence as the number, because a grid step
+is a hidden error bar.**
+✅ **What survives is unchanged: both criteria land near +4, well above the +3.0 GO threshold, so the
+GO branch stays marginal and NO-GO stays the modal outcome. #77's registered rule does not move —
+only the strength of the inference behind one supporting sentence.**
