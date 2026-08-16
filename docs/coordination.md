@@ -66065,3 +66065,85 @@ sweep on its own diminishing returns. ⛔ **Rewriting correct language teaches a
 indiscriminately, which destroys the signal a hedge carries.** ⭐ **And I asked the certifier whether
 I had OVER-withdrawn on the transitivity retraction; they checked and it stood. A peer who confirms
 your retraction does you no favours; one who LIMITS it does.**
+
+# ============================================================================
+# 2026-08-16T13:30:36Z — **SIDE LANE s45 WRAP** (trigger: the BUILDER'S WRAP-PING — Magnus's standing rule,
+# second firing and the first over a full session). **Arm retro ran FIRST per charter —
+# `docs/side-lane-retro.md` v1.15, FIRINGS 15; instance `docs/retro-side-lane-2026-08-16-s45.md`.**
+# Session 07:51:00Z -> 2026-08-16T13:30:36Z (~5.5 h). 59 commits. ~30 flags/certs/rulings, 11 became code or a
+# registered artefact, 10 published errors, 3 killed pre-publication, 0 escalations to Magnus.
+# ============================================================================
+
+## PROCESS DELTAS — routed at write time
+
+**S1. ⭐⭐ NAME WHAT HAS NOT BEEN ESTABLISHED, AT THE ARTEFACT, BEFORE IT IS NEEDED.** *(behaviour →
+already executed four times; the pattern is the delta.)* `B1 UNATTRIBUTED-BY-DESIGN`, `#77`'s
+withdrawal condition, `#78` registered UNCONVERTED, the observation certificate's prospective
+condition. **Research's economics is why it works: *an unnamed gap is indistinguishable from a
+closed one, and the person who discovers it later pays more than the person who names it now.***
+⇒ **More useful today than any individual catch, and it is the one thing I would tell a successor to
+do first.**
+
+**S2. ⛔ I FIXED THE INSTANCE AND NOT THE PRACTICE.** *(instrument → retro Q3/Q4; behaviour →
+D36's third rung.)* The unquoted-heredoc failure destroyed an evidence table at 11:17Z; I caught it,
+corrected it by follow-up append, and wrote up the lesson. **At 13:54Z I did it again — in the commit
+that wrote D36, a row about holding a rule and not applying it — with the correct form applied five
+lines away in the same shell call.** ⇒ **Documentation is not the fix. The fix must fire at the
+moment of writing.**
+
+**S3. ⛔ MY COUNT OF MY OWN ERRORS WAS NOT MECHANICALLY DERIVABLE.** *(instrument → retro v1.15's Q3.)*
+Grepping my own commit subjects returned **9 — wrong in both directions**, capturing two non-errors
+and missing three corrected inside other commits or in messages. **Only reading gave the honest 10.**
+⇒ **A count of one's own failures is exactly where an enumeration rule is least trustworthy, because
+the counter chose the categories.**
+
+**S4. ⭐ SELF-CATCHES WERE ALL LOW-VALUE; EVERY SUBSTANTIVE ERROR NEEDED A PEER.** *(instrument →
+retro v1.15's Q4.)* 4 of 10 self-caught — two rendering failures visible as shell errors, one
+same-hour retraction, one post-publication. **Scope, attribution and inference: 0 of 6 self-caught.**
+⇒ **Q4 now asks how many of the ones that MATTERED were caught. On that reading this session scored
+zero, and the three-lane protocol is what covered it.**
+
+**S5. ⭐⭐ THE DAY'S DOMINANT DEFECT CLASS IS A GUARD THAT IS COMPLETE, CORRECT, AND UNABLE TO FIRE.**
+*(behaviour → D32 + its rider, three mechanisms: SITING, ORDERING, EXPIRY.)* **And research's
+sharpening is why it dominates: *a wrong threshold is visible on inspection; an EXPIRED one reads
+correct forever.*** ⇒ **when triaging findings, audit the CORRECT ones for siting — the wrong ones
+will be found by the work; the right ones will not be found at all.**
+
+## ⚠ WHAT A SUCCESSOR MUST NOT INHERIT UNCHECKED
+
+1. **`prereg_check` still has no `DEFENCE_ADMISSION_BAR` rule.** Routed with both verdicts —
+   `SCREEN-sealfloor6` PASSES, `SCREEN-sealrepair:31` FAILS on *"Kill-round paired-seed rides."* —
+   **and the failing case is the INCUMBENT's own prereg.** Not built.
+2. **`queue_check`'s negation escape survives for PROSE-ONLY rows** (*"never checked against X"*
+   scores as CHECKED). **Bounded and self-shrinking** — any row adopting a structured token leaves
+   prose scoring — **and the `GREP-TREE`-only fix is routed, not built.**
+3. **⛔ MY B1 FLAG'S EVIDENCE BASE NARROWED AFTER I FILED IT.** Research withdrew the *"v152's idle
+   rate is FLAT"* reading as B1 evidence (`efec4fac`, tap-vs-reservoir). ⇒ **the flag's CONCLUSION
+   stands on the other ground and on its own logic — B1 is in every ported arm and no control, so
+   nothing can attribute it at any n — but ONE of its two evidential legs is gone.** **Do not quote
+   the idle-rate figure against B1.**
+4. **The COMBO-BAR's cost side is still unpriced** (true-56 → 14.8% kill). Both of its first two
+   firings landed inside that band. **Asked for one header line; not yet added.**
+5. **`#78` cannot be built before `#23` reads**, and `#23`'s flat branch needs a MANIPULATION CHECK
+   or it is an inert flag rather than a null.
+
+## SIDE LANE STATE — VERIFIED, NOT ASSERTED
+
+* **HOLDER `v152` "Loki turbo4 (ammo/heal fix)", 1767 (Emerald), rank #20 of 126, 1111 matches.**
+  **From `fcode status` via `tools/now.py` at 13:27:02Z — never from a poller (D28).**
+  ⚠ **It was 1787 / #19 / 1094 at my 07:51:00Z boot: −20 rating, −1 rank, +17 matches over the
+  session. Not attributable to anything this lane did; recorded so a successor does not read the
+  drop as new.**
+* **CONTROL remains `bots/_v223sealrepair` (v140).** Holder ≠ control.
+* **`LEG-fieldcal` live, detached, self-guarding.** AMEND1 catch-up **effective from round 9**,
+  verified firing on its own triggering defect (`B/not_adgato`, the cell the round-3 abort starved).
+  **Certified twice: the amendment (`6faa684f`, three conditions all discharged) and the observation
+  question (`e51babce`, NO BREACH + one prospective condition).**
+* **DIES WITH ME: nothing.** The drift watch is a detached shell loop (`77617`, plus orphans `21664`
+  and `21790`); **what dies is my Monitor, the CONSUMER.** ⚠ **A successor re-arms on the existing
+  log — `scratchpad/drift_watch_s44.log` — rather than starting a fourth process, and drives the
+  four emission cells PLUS the liveness cell** *(anchor the pattern at the head of the command line;
+  `ps -p $$ | grep 'drift_watch.sh'` self-matches and returns ALIVE for your own shell).*
+* **I edited no bot, ran no arena, fired no match, typed no verdict, took no platform action, and
+  wrote nothing to `HANDOVER.md`, `PROGRAMME.md`, `QUEUE.md`, `BARS.tsv` or the tape.** Two
+  read-only subagents, both relayed before idling. **Nothing of mine is unrelayed.**
