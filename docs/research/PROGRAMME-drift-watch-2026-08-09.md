@@ -2830,3 +2830,71 @@ NEW reading as a separate claim and check it against the SAME primary — never 
 been careful" as coverage for what the care produced.** Here the primary was one line of Magnus's
 own text, re-readable in seconds, and neither the over-read nor the under-read consulted it.
 **Both errors were free to prevent and neither was prevented by diligence.**
+
+---
+
+## ⭐⭐ D32 — **ROUTING DEBT: THE FINDING IS SOUND, THE SURFACE CANNOT FIRE IT, AND NOBODY NOTICES BECAUSE THE ARTEFACT LOOKS COMPLETE.**
+
+*(Added 2026-08-16T08:27:11Z. Name coined by the RESEARCH lane; definition theirs, the two additions below mine;
+written by THIS lane at their explicit request — **"my lane produced two of the three instances, and
+a failure mode written up by its principal offender is weaker evidence than the same text written by
+the lane that caught it"**. Provenance recorded because it is doing real work here.)*
+
+**⛔ THE TELL IS THAT THE ARTEFACT IS COMPLETE AND CORRECT.** Routing debt has **no defect to
+find** — a reviewer reads the note and finds nothing wrong, **because nothing is wrong with the
+note.** It survives review by being right. **That is why every other row in this checklist misses
+it: they all ask whether a claim is TRUE.**
+
+**⇒ THE CHECK, and it is the whole of the row:**
+> **NOT *"is this right?"* — but *"WHAT HAS TO READ THIS FOR IT TO FIRE, AND DOES THAT THING
+> EXIST?"***
+
+**⭐ IT IS THE DUAL OF D31, NOT AN INSTANCE OF IT — state this or a successor will collapse them.**
+* **D31:** a check that needs a LANE PRESENT is not a check.
+* **D32:** a check that needs NO LANE and **still** cannot fire, because it was written to a surface
+  **with no reader.**
+**Same family, opposite mechanism.**
+
+**FOUR INSTANCES, all 2026-08-16, across two lanes and one directive:**
+
+| # | the correct thing | the surface that could not fire it |
+|---|---|---|
+| 1 | `AGENTS.md`'s regeneration rule | **an HTML comment INSIDE the generated file** — fires only if a `CLAUDE.md` editor happens to open the twin. Held 3× (`14770691`, `21a74414`, `f0eebd2e`), **lapsed across 8 commits / 4 days**, and **nothing in `tools/`, `.claude/` or `.github/` references the file at all.** |
+| 2 | *"the fieldcal tape carries a number that looks like a fired falsifier"* | **a `coordination.md` note** — but **the TAPE is what a successor opens FIRST** when a number looks alarming. Fires only if the note is read before the thing it warns about. |
+| 3 | **Magnus's 70% aiming point** (verbatim, 08:24:10Z) | **a 62,000-line append-only channel no lane's boot sequence opens.** Every lane is said to *"inherit"* it; **the inheritance mechanism is a successor scrolling far enough.** |
+| 4 | my `AGENTS.md` drift flag naming `RMST₃₀₀` as missing from the twin | **the twin STRUCTURALLY CANNOT CARRY IT** — `RMST` is 0× in `CLAUDE.md`; it lives in `PROGRAMME.md`, which has no twin. Correct finding, aimed at a surface that could never hold the fix. |
+
+**⚠ THE SUNSET CLAUSE APPLIES TO THIS ROW TOO, AND IT WAS THE CONDITION OF WRITING IT** (research,
+verbatim): ***"the write-up must itself be routed, or it is an instance of its own subject."*** A
+dated spec under `docs/research/` naming three instances **is exactly the artefact shape that reads
+complete and fires for nobody.** ⇒ **It is here, in the file this lane's boot sequence opens at step
+3, and not in a spec.** **If two successive runs cite it and change no behaviour, strike it.**
+
+---
+
+## ⭐ D33 — **A NUMBER IMPROVED RATHER THAN A THING FIXED. A WARNING COUNT THAT FALLS WITHOUT A TOOL CHANGE IS A SILENCING, AND IT WILL LOOK LIKE HOUSEKEEPING.**
+
+*(Added 2026-08-16T08:27:11Z. Same family as D32 and D19; the live case is `queue_check`'s grep-tree gate.)*
+
+**THE LIVE CASE, measured 2026-08-16:** `tools/queue_check.py` warns `GREP TREE UNNAMED (3 of 58)`.
+**Those three rows — `#61`, `#65`, `#68` — have no bot tree BY DESIGN**; their subjects are
+`tools/audit_trigger.py`, `results.tsv` and `tools/target_value.py`. ⇒ **The warning CANNOT clear
+and MUST NOT until the tool learns the exemption.**
+
+**⛔ AND THE GATE IS ALREADY KNOWN TO BE SILENCEABLE BY PROSE** (research, `4b6614aa`, driven on a
+three-cell matrix): the incumbent token is matched **anywhere** in the GREP segment with no
+requirement that its sentence assert a grep, **so a row reading *"`_v223sealrepair` is NOT the
+relevant tree"* scores as CHECKED and drops out of the warning.** ⚠ **Its own author produced that
+wording by accident while writing an HONEST disclaimer, and the count went to 0 of 3.**
+
+**⇒ THE ROW: if a warning count FALLS and no TOOL CHANGE explains it, treat the fall as the
+finding.** The silencing edit is **indistinguishable from diligence** — it reads as a row being more
+carefully documented — **so a good-faith author will do it, repeatedly, and nobody will notice.**
+**A guard whose bypass looks like good practice is bypassed by the people trying hardest to comply.**
+
+**⚠ AND THE STATED LIMIT OF THE ONLY CUT RUN SO FAR, so nobody quotes it as clearance:** this lane
+checked how many of the 58 rows are silenced TODAY and found **none** — but the detector was a
+**negation-proximity heuristic over prose**, i.e. **the same instrument class the defect exploits**,
+and only the 11 rows it surfaced were read. ⇒ **The honest form is *"no silencer found by a crude
+detector"*, never *"none exists"*.** **The durable fix is structural — a `GREP-TREE:` field whose
+wrong answer is MALFORMED rather than PLAUSIBLE — not a better prose filter.**
