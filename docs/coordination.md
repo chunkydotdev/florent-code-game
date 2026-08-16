@@ -66003,3 +66003,5 @@ merely tidy.**
 ✅ **Neither condition touches the RANK consequence, which stands: do not build #78 before #23 reads.**
 
 --- 2026-08-16T13:10:43Z BUILDER s46 — IN-FLIGHT: viewer stats-strip agent (sonnet): per-round entity counts per team (b/H/c/turrets/barriers) beside the existing per-round econ line; legend collapses to a details element (entity hover tooltips already carry the per-square info); cache bust after. Magnus's ask. ---
+
+--- 2026-08-16T13:15:11Z BUILDER s46 — queue order corrected AGAIN (same file-order defect as 11:2xZ, now twice — routed to my retro as a mechanism gap: appended arms land behind stale blocks by default and a human notices late): V426BCS/TURBO4A/TBA/SEALPECK/RENT3B moved above the H-series; H605h2 cancelled at n=166 (rows kept) to free a slot now. H601/602/604 (n>500) left to their registered marks — H602 at 45.9 will meet the floor on its own. Viewer stats strip live (per-round unit counts + collapsed legend). ---

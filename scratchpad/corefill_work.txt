@@ -1175,6 +1175,16 @@ SENTBAN bots/_v330sentban bots/_v223sealrepair 2700 766000
 GUNAX0B bots/_v331gunax0 bots/_v223sealrepair 2700 768000
 # QUEUE #53 (one-flag batch s46): seal Ti floor UPWARD arm (0->24) — the allocation-cancelled direction; 0-vs-12 already priced by the ship.
 SEALTI24 bots/_v334sealti24 bots/_v223sealrepair 2700 770000
+# V152 PATH arm 1 (Magnus s46): the sentban composite on the first combo-bar survivor. COMBO: faces 55@2700.
+V426BCS bots/_v426bcs bots/_v223sealrepair 5400 774000
+# V152 PATH arm 2 (ARM-A): turbo4-minus-one (5 of 6 doctrine fixes, NO CPU change — the fixture-bias-proof half). PROSPECT n=2700; hand-built (no compose marker) so the combo bar does not apply; trend floor does.
+TURBO4A bots/_v427turbo4 bots/_v223sealrepair 2700 776000
+# V152 PATH arm 3 (ARM-B, the super-additivity bet): turbo x bodyaware hand-merged _bfs_direction. COMBO (marker present): faces 55@2700. ⛔ CPU-sensitive tree: if this box shows load spikes, prefer ws1/ws2 allocation.
+TBA bots/_v428tba bots/_v223sealrepair 5400 778000
+# QUEUE #74 (builder s46): sealed-peck carve-out — offensive per the row (no RMST bar). PROSPECT solo n=2700.
+SEALPECK bots/_v429sealpeck bots/_v223sealrepair 2700 780000
+# MAGNUS s46 direct: rentgun x staged 3-builder opening (MAX/EARLY/POP_FLOOR all 3; income-gated growth above). PROSPECT n=2700.
+RENT3B bots/_v430rent3b bots/_v223sealrepair 2700 784000
 AIMSITE bots/_v314aimsite bots/_v223sealrepair 2700 460000
 RENTGUN bots/_v313rentgun bots/_v223sealrepair 2700 462000
 H601h2 bots/_v601h2 bots/_v223sealrepair 5400 480000
@@ -1196,13 +1206,3 @@ H624h4 bots/_v624h4 bots/_v223sealrepair 5400 510000
 H626h4 bots/_v626h4 bots/_v223sealrepair 5400 512000
 H627h4 bots/_v627h4 bots/_v223sealrepair 5400 514000
 H628h4 bots/_v628h4 bots/_v223sealrepair 5400 516000
-# V152 PATH arm 1 (Magnus s46): the sentban composite on the first combo-bar survivor. COMBO: faces 55@2700.
-V426BCS bots/_v426bcs bots/_v223sealrepair 5400 774000
-# V152 PATH arm 2 (ARM-A): turbo4-minus-one (5 of 6 doctrine fixes, NO CPU change — the fixture-bias-proof half). PROSPECT n=2700; hand-built (no compose marker) so the combo bar does not apply; trend floor does.
-TURBO4A bots/_v427turbo4 bots/_v223sealrepair 2700 776000
-# V152 PATH arm 3 (ARM-B, the super-additivity bet): turbo x bodyaware hand-merged _bfs_direction. COMBO (marker present): faces 55@2700. ⛔ CPU-sensitive tree: if this box shows load spikes, prefer ws1/ws2 allocation.
-TBA bots/_v428tba bots/_v223sealrepair 5400 778000
-# QUEUE #74 (builder s46): sealed-peck carve-out — offensive per the row (no RMST bar). PROSPECT solo n=2700.
-SEALPECK bots/_v429sealpeck bots/_v223sealrepair 2700 780000
-# MAGNUS s46 direct: rentgun x staged 3-builder opening (MAX/EARLY/POP_FLOOR all 3; income-gated growth above). PROSPECT n=2700.
-RENT3B bots/_v430rent3b bots/_v223sealrepair 2700 784000
