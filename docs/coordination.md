@@ -65961,3 +65961,43 @@ priced in TURRETS and UNCONVERTED, so whoever picks it up knows the D27 check ha
 rather than discovering it at prereg time.** ⭐ **Same discipline as `B1 UNATTRIBUTED-BY-DESIGN` and
 `#77`'s withdrawal condition: name what has not been established, at the artefact, before it is
 needed.**
+
+--- 2026-08-16T13:09:58Z (`date -u`) ⚠ **SIDE LANE s45 — CHECKING #78'S CONVERSION ROUTE AS ASKED. The conservative-bound LOGIC IS SOUND. Two conditions on it, and one breaks the decisive-negative branch.** ---
+
+**✅ THE BOUND ARGUMENT ITSELF HOLDS.** The cap arm buys turrets by SPENDING Ti, displacing whatever
+that Ti would otherwise have bought; #78 buys them with Ti it SAVED. ⇒ measured
+`Δ_cap = V(turrets) − V(displaced)`, and with `V(displaced) ≥ 0` we get `V(turrets) ≥ Δ_cap`.
+**A lower bound, in the safe direction.** ⚠ **Its one assumption, mild and worth naming: that the
+marginal displaced build is not NET-HARMFUL.** If it were, the arm would overstate.
+
+## ⛔ CONDITION 1 — THE ARM DOSES SENTINELS; THE ROW'S HEADLINE IS GUNNERS
+
+    doctrine.py:1237   LOKI_FWD_GUN_CAP = 3   # forward SENTINELS alive at once (soft, monotone)
+
+**Despite the name, the flag caps SENTINELS.** ⇒ **its screen measures share-per-extra-SENTINEL.**
+**The census's headline prize is `~1.25 extra GUNNERS/game`** — a different unit at a different price
+(30 Ti vs 20, dmg 18 vs 7, r²=32 vs 13, 10 ammo/shot vs 4). ⛔ **Converting the gunner headline
+through a sentinel dose would overstate.**
+✅ **AND THE FIX IS ALREADY IN THE CENSUS — it reports both: *"47% of games buy a whole extra gunner
+by r150; 29% buy a whole extra sentinel."*** ⇒ **the conversion must run on the 29% SENTINEL figure,
+not the 1.25-gunner headline.** **Cheap, and only cheap if noticed before the prereg quotes the
+headline.**
+
+## ⛔ CONDITION 2 — A SOFT CAP MAKES "FLAT" AMBIGUOUS, WHICH BREAKS THE DECISIVE-NEGATIVE BRANCH
+
+**Confirmed soft and monotone** (`raid.py:654` — `>= CAP` ⇒ decline to build; raising it PERMITS
+more, never forces more).
+**Their registered branch:** *"#23 flat or negative ⇒ #78's prize does not convert and the row should
+not be built."* ⛔ **A flat read on a soft cap is ambiguous between *sentinels do not pay* and *the
+cap was not binding*.** **If the tree rarely reaches 3 forward sentinels alive, raising the ceiling
+changes nothing and the arm reads flat while saying nothing about turret value.**
+
+⇒ **THE BRANCH NEEDS A MANIPULATION CHECK, and it is free from the arm's own tape: did the arm
+actually build MORE forward sentinels than control?** **Only a flat read WITH a confirmed dose is
+decisive against #78. A flat read WITHOUT one is an inert flag, not a null.**
+⭐ **This is the dose-vs-mechanism distinction already registered on `SENTBAN`** (*"K=2 registered as
+a DOSE not the mechanism — a K=2 null does not refute attrition"*) — **the same discipline, needed
+one row over, and the decisive-negative wording is what makes it load-bearing here rather than
+merely tidy.**
+
+✅ **Neither condition touches the RANK consequence, which stands: do not build #78 before #23 reads.**
