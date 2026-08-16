@@ -60974,3 +60974,48 @@ that has worked all session.
 
 **Nothing is broken and nothing needs fixing in the tool.** Recorded so the false footgun does not
 propagate into a change that would make `STATUS: LIVE` a special case it never needed to be.
+
+--- 2026-08-16T06:2xZ (`date -u`) ⚠ **SIDE LANE s44 — §9.3's POST-FIRE PIN ASSERTION HAS NO IMPLEMENTING PATH. The data will exist; the check does not; and two pin ids were filled from live reads AFTER the lock, which is exactly what it guards.** ---
+
+## ✅ FIRST — NO IMMUTABILITY BREACH, CHECKED BECAUSE THE COMMIT SUBJECT LOOKED LIKE ONE
+
+`ef5f0b8e` says *"kladde id filled from live read; placeholder cell repointed at fill"*, and §13
+freezes *"the cells, the pins"* at lock. **Checked: the locked prereg has been modified ZERO times
+since `43d9035f`**, and `ef5f0b8e` adds exactly one file (`tools/fieldcal_scheduler.sh`, 927 lines).
+**And the doc carries NO pin match ids at all** — its single uuid-shaped string is a scratchpad path
+in `PROVENANCE`. **What §172 freezes is the CELLS AS OPPONENT+VERSION** (*"Juusto v13 · not adgato
+v23 · Erebus v119 · kladde chatte tville v119 …"*).
+⇒ **A pin ID is the operational MEANS of reaching a frozen VERSION, not itself a frozen element.
+Filling one late is legitimate and §13 holds.** ✅
+
+## ⚠ AND THAT IS PRECISELY WHY THE NEXT THING MATTERS
+
+**§9.3 registers, at bar level:** *"for EVERY accepted match the decoded `oppver` must equal the
+registered `theirver` for that cell. **A mismatch VOIDS THAT CELL** — it is not noted, it is
+removed, k is reduced, and the exact sign-test p is recomputed."*
+
+**Searched `tools/` for any implementation** (`theirver`, `registered.*oppver`, `VOID.*cell`):
+**the only hit is an unrelated comment in `dash/match_diffcheck.py:704`.** The scheduler has
+`validate_ids()` (`:176`) which checks pin id **FORM**, and passes `PIN="$pin"` through (`:292`) —
+**but nothing anywhere compares a DECODED `oppver` against the REGISTERED `theirver`.**
+
+**⇒ THE OBLIGATION IS REGISTERED AND UNIMPLEMENTED.** Same class as `prereg_check --fire` running on
+zero firing paths (open since s43), `overnight.sh:95` asserting an enforcement that did not exist
+(caught this morning), and the control-pin md5 that nothing consumed.
+✅ **The DATA path exists** — the scheduler writes a per-match TSV carrying an `oppver` column
+(`:764`) — **so this is a missing CHECK, not a missing capture.** That is the cheap case.
+⚠ **AND THE TIMING IS NOT AN ACCUSATION: §9.3 is POST-FIRE.** It runs at read-out, the leg has
+barely started, and "not implemented yet" is legitimate right now. **The flag is that it must exist
+BEFORE the read-out, or the cells cannot be validated retrospectively and the assertion becomes
+decoration on a leg that already spent its windows.**
+
+**⭐ AND IT IS MORE LOAD-BEARING THAN WHEN I ASKED FOR IT, because of this very commit:** the guard
+at `unrated_run.sh:380-383` catches an **EMPTY** pin; **§9.3 is the only thing that catches a VALID
+id pointing at the WRONG version** — *"an INVALID id errors and is visible; that is the harmless
+case."* **Two ids were just filled from LIVE READS after the lock** (kladde, and a repointed
+placeholder), **which are exactly the two whose correspondence to their registered version is least
+established.** ⇒ **the assertion is now the primary evidence that those two cells measured what the
+prereg says they measured.**
+
+**Routed to the builder. Not a stop — the leg is correctly firing and this is a read-out
+obligation.** Promoter's-first-use: I demanded §9.3 pre-lock, so verifying it has a path is mine.
