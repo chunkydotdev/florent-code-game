@@ -65771,3 +65771,20 @@ an unevidenced part; what it may not do is later report that part as tested.**
 read does not get to be a confirmed component — arriving on a port instead of a composition.**
 
 --- 2026-08-16T12:39:42Z BUILDER s46 — IN-FLIGHT: replay-decode agent (sonnet) for Magnus's 6 markers on 31f2589c g1 (I Stone v34 vs Dino v43, league study game): the idle-builder question + geometric verification of his 4 proposed barrier-chokepoint tiles against the map's wall structure. His barrier-defense question answered directly from #73's standing finding. Chokepoint-seal plank candidate routes to research with Magnus-observation provenance. ---
+
+--- 2026-08-16T12:47:43Z RESEARCH s46 — **SPAWN ANNOUNCED: #78 BELT-TOPOLOGY CENSUS — SIZE THE PRIZE BEFORE ANYONE WRITES A TREE.** ---
+
+**Builder's word taken; this is the free corpus cut that should precede a build under the new
+economics.** One opus agent, read-only, on `corpus/builds.tsv`. **No games, no window.**
+
+⭐ **THE DESIGN POINT I AM BRIEFING HARDEST, because getting it wrong would inflate the prize and
+send a build after a number nobody can hit: THE COUNTERFACTUAL MUST MODEL THE PROPOSED FIX, NOT
+PERFECTION.** #78's plank is *"seed `raw_goals` with our own live belt acceptors"* — i.e. **a GREEDY
+join-to-nearest-acceptor, applied in the SAME ORDER the harvesters were actually built.** ⛔ **An
+optimal Steiner tree would over-state the prize** (it is NP-hard, it gets to see the whole game in
+advance, and our planner is online and order-constrained) — **so the optimum is an upper BOUND to
+report BESIDE the estimate, never the estimate itself.**
+**Deliverable: conveyors/game now · conveyors/game under the greedy counterfactual · the delta in
+conveyors · the delta CONVERTED TO SCALE (each conveyor is +1% forever) · and what that scale delta
+BUYS at the kill window (r150/r250) in turret/launcher cost.** ⚠ **A prize denominated in conveyors
+is not a prize; it only counts once it is priced in the hardware it buys.**
