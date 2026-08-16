@@ -2898,3 +2898,40 @@ checked how many of the 58 rows are silenced TODAY and found **none** — but th
 and only the 11 rows it surfaced were read. ⇒ **The honest form is *"no silencer found by a crude
 detector"*, never *"none exists"*.** **The durable fix is structural — a `GREP-TREE:` field whose
 wrong answer is MALFORMED rather than PLAUSIBLE — not a better prose filter.**
+
+---
+
+## ⭐⭐ D34 — **A NUMBER GETS AUDITED WHEN SOMEBODY DISLIKES IT. DIRECTION, NOT MAGNITUDE, DECIDES WHETHER IT IS EVER CHECKED — AND BOTH DIRECTIONS ARE UNGUARDED.**
+
+*(Added 2026-08-16T08:40:39Z. First half is the RESEARCH lane's finding and their sentence; the corollary and the
+worked harm are this lane's, demonstrated the same hour. Routed here at their request.)*
+
+**RESEARCH'S HALF, measured 2026-08-16:** the repo quoted **53.50%** as the board leader's shipping
+value for a full day. It assumes **τ = 0**, which **Q = 787 on 58 df falsifies**. The correct
+empirical-Bayes value is **~54.9%**. ⇒ **A REPO-WIDE NUMBER DRIFTED FOR A DAY IN THE PESSIMISTIC
+DIRECTION AND NOBODY CHECKED.** Their formulation: **pessimistic numbers do not get audited.**
+
+**⭐ THE COROLLARY, AND IT IS WHY THIS IS A ROW RATHER THAN AN ANECDOTE: OPTIMISTIC CORRECTIONS ARE
+AUDITED BY NOBODY EITHER.** An audit arrives when a number is DISPUTED, and **a number is not
+disputed by the person it flatters.** ⇒ **A pessimistic number sits unchecked because nobody wants
+to argue it up; a favourable correction sits unchecked because nobody wants to argue it down. The
+unguarded set is BOTH TAILS, and the middle — the number someone resents — is the only part that
+gets read carefully.**
+
+**WORKED HARM, same hour, and it is why the corollary earns its place:** this lane audited the
+**favourable** correction on purpose, precisely because it was favourable. **The arithmetic was
+right** — independently re-derived at EB weight `τ²/(τ²+SE²)` = 0.9305, shrinkage **+0.30pp**
+against research's +0.29. **The USE was wrong.** The correction gives a **replication-expected**
+value, while Magnus's bar is a **MEASUREMENT** (*"It must MEASURE at least 60 +-2pp"*). ⇒ quoting
+*"the gap is +5.2pp"* beside the bar **puts an EB posterior where a screen read belongs**, and
+pairing a shrunken point with a naive ±1.31pp would understate the precision term of a bar that
+HAS one. **Nothing in the arithmetic would have caught that, and nobody checks a number that moves
+in their favour.**
+
+**⇒ THE ROW, and it is a habit rather than a tool:** **when a number MOVES, ask which direction it
+moved before deciding whether to check it — and then check it BECAUSE of the direction, not despite
+it.** A correction that helps us is the one with the fewest natural auditors. ⚠ **Note this is the
+same asymmetry `CLAUDE.md`'s DEFF direction clause already encodes for intervals** (*"a
+fail-to-exclude claim must first be restated as an exclusion"*): **the flattering direction is the
+one the machinery does not police.** **D34 generalises it from intervals to every number the repo
+quotes.**
