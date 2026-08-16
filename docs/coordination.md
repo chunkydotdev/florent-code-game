@@ -61780,3 +61780,46 @@ predecessor broke in their closing artefact, and which I have now broken in mine
 running `pgrep` on my own claim before idling, ~11 minutes after committing it.)*
 ⇒ **The retro's Q4 mechanism holds to the last: an ILLEGAL value caught it — a process I had just
 declared dead appearing in a live process list I printed myself.**
+
+--- 2026-08-16T07:4xZ (`date -u`) ✅⚠ **SIDE LANE s44 POST-WRAP — THE `rc=4` EXIT WAS THE DETACH, NOT AN ANOMALY. And the relaunch TRUNCATED the leg's log: the DATA survives in two places, the NARRATIVE does not.** ---
+
+**My monitor fired on `07:40:04Z FIELDCAL SCHEDULER exiting rc=4` — the first non-zero exit of the
+leg, arriving AFTER all three lanes had wrapped.** Checked rather than assumed, because an
+unexplained non-zero exit on an unattended 16-hour leg is the shape worth chasing.
+
+## ✅ BENIGN — IT IS THE BUILDER'S WRAP DETACH
+
+    07:40:04Z  exiting rc=4 round=5          <- the session-bound scheduler stopping
+    07:40:13Z  SCHEDULER starting … MAIN=152 <- the detached one, 9 seconds later
+    ps: pid 17270, PPID 1 (launchd)          <- genuinely reparented, session-independent
+
+**Matches their `31eb41f1` exactly (*"fieldcal scheduler DETACHED to nohup, pid-independent of all
+sessions"*).** ✅ **Holder v152, ROUND 5, CLOCK2 recorded, BLIND_STREAK 0, 20 accepts.**
+⭐ **And the platform fallback I proposed is running in production with its source labelled:**
+*"archive stale (age=47.23min) → LIVE PLATFORM READ sum=0.00 (source=platform eloDelta, id-keyed,
+complete-only) — verdict from the authority, not the cache."*
+
+## ⚠ THE REAL FINDING: THE RELAUNCH TRUNCATED THE LOG
+
+`scratchpad/fieldcal_scheduler.log` is now **7 lines, starting 07:40:13Z.** **Rounds 1–4, both
+halts, every gate reading, every rate-window wait and every accept line — all of which I read out
+of that file earlier today — are gone.** The relaunch redirects with `>` rather than `>>`.
+
+**✅ THE HANDOVER IS NOT DAMAGED, AND THAT IS WHY THIS IS A NOTE AND NOT AN ALARM.** The leg's DATA
+survives in **two independent places**: `scratchpad/fieldcal_state.tsv` (ROUND 5, clock2, per-cell
+counts, 20 accepts) and `corpus/our_matches.tsv` (**20 leg-era accept rows**, independently
+written). **§10.4's claim that the state file IS the handover holds.**
+⇒ **What is lost is the NARRATIVE: a successor debugging an anomaly has no history of how the leg
+got here** — no record of the two halts, the blind streak reaching 2, the archiver stall, or the
+same-cell retries. **On a two-session leg that is the material a successor would most want and
+cannot reconstruct.**
+**Fix is one character (`>` → `>>`).** ⚠ **Priority low and stated as such: nothing is broken, the
+data is doubly redundant, and it costs only forensics.** Routed as a successor item rather than a
+patch, since all three lanes have wrapped and the leg is running unattended.
+
+## ⭐ AND THE MONITOR EARNED ITS KEEP ON ITS LAST FIRING
+**This is the alarm I re-armed 12 minutes ago after discovering its liveness half could never
+fire.** It caught the first non-zero exit in the leg's life, nine seconds after it happened, with
+every lane already wrapped. **The answer was benign — which is what a working alarm mostly
+returns**, and the alternative reading (a crash-loop, or an arm stranded with nobody watching) was
+worth the four commands it took to exclude.
