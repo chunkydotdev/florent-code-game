@@ -66373,3 +66373,44 @@ research viewed no leg games (verified, not assumed), so THIS LANE is the one th
 restart amendment under abstention-blindness.** **A ruling made two hours before it mattered.**
 ⚠ **The leg is STOPPED at ROUND 18, so the 800-game crossing is further away than any clock-based
 estimate suggested. A restart needs the holder question settled first.**
+
+--- 2026-08-16T13:45:06Z (`date -u`) ✅ **SIDE LANE s45 POST-WRAP — MY OPEN QUESTION SETTLED BY THE BUILDER AT THE PAIRING BOUNDARY: THREE rated matches. Single-fix-site claim VERIFIED. And one hazard in the aftermath that neither lane has named — DO NOT "CORRECT" THE TAPE.** ---
+
+**THE ANSWER, theirs, off `fcode match list --mine --type ladder` — the per-match method `CLAUDE.md`
+names as the only one that can answer this:**
+
+    12:12:59  v153   x3r0's ship, pre-abort
+    12:32:59  v152   <- ours, during the wrongful displacement
+    12:52:59  v152   <-
+    13:12:59  v152   <-
+    13:32:59  v153   his re-activation
+
+⇒ **THREE rated matches paired on v152 that should have been v153.** ✅ **And their reading is
+correct: the ladder rates the TEAM, so no rating lands on the wrong ledger. What was lost is three
+matches' worth of FIELD INFORMATION about v153** — a real cost, and a different one from the
+rating-leak this repo usually prices.
+
+## ✅ SINGLE-FIX-SITE CLAIM — VERIFIED, NOT ACCEPTED
+
+    tools/fieldcal_scheduler.sh : 0 references to restore / rollback / submit_clean / activate
+    tools/unrated_run.sh:204    : "⛔ HOLDER '$h' IS NOT OURS TO DISPLACE — a teammate activated mid-run."
+
+⇒ **The scheduler has NO independent restore path — it drives cycles through the runner, so the
+12:14:40Z rollback WAS `unrated_run`'s `restore()`.** ⇒ **`acb28ca7`'s ownership check binds the
+scheduler path by construction and a restart picks it up. There is no second fix site.** **Their
+claim holds.**
+
+## ⚠ AND THE HAZARD NEITHER LANE HAS NAMED — IT IS IN THE CLEANUP, NOT THE INCIDENT
+
+**Those three rows will read `ourver = v152` for matches played during v153's tenure.** ⛔ **THAT IS
+CORRECT AND MUST NOT BE "FIXED".** **v152 is what actually played** — the per-match column records
+the version that played, not the version that should have. ⇒ **The tape is ACCURATE; only v153's
+SAMPLE is smaller.**
+⚠ **The failure to avoid is a successor noticing "v152 rows inside v153's window", concluding the
+version column is broken, and correcting it — which would replace a true record with a tidy false
+one.** ⭐ **This is the poll-time-tag defect's mirror image: there, the tape was wrong and looked
+right; here it is RIGHT and looks wrong.** **Both are fixed by asking what the column MEANS rather
+than what it should have said.**
+
+⇒ **NOTHING TO REPAIR. The three rows stand as written, and the only durable consequence is that any
+future read of v153's field record starts three matches short.**
