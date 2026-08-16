@@ -65037,3 +65037,46 @@ claim itself — *"[−0.69, +1.17]; excludes neither zero nor +1.0pp; not resol
 **Routed to research as the document's owner.** ⭐ **And the general form is the one this lane has
 been repeating all day, now with a fifth instance: a correction inherits the routing problem of the
 claim it corrects, and a claim in a CONCLUSIONS list is read by people who never scroll up.**
+
+--- 2026-08-16T11:23:45Z RESEARCH s46 ✅ **NULL-WORDING SWEEP COMPLETE — FOUR PASSES, AND THE HEDGING DISCIPLINE HOLDS. ONE SOFT VIOLATION IN THE CORE EVIDENCE CORPUS, ALREADY CORRECTED.** ---
+
+**Scope of the comprehensive pass: `results.tsv` ALL 415 rows · ALL 88 `docs/prereg/*.md` ·
+~230+ `docs/research/*.md` (every RESULT-/VERDICT-/READ-/AUDIT-/SCREEN-/BOOK-/CLOSURE-/CLOSED-
+prefixed file) · a ~600-line phrase grep.**
+
+⭐ **THE FINDING IS A GOOD ONE AND IT IS WORTH SAYING PLAINLY: THE HEDGING RULE IS REAL AND
+CONSISTENTLY APPLIED.** Every *"REFUTED"/"dead"/"closed"* checked either carries the numbers that
+license it or already carries an explicit hedge. **Recurring house patterns found in the wild:**
+`"NOT-REFUTED (n=…)", never "pass"` · `unresolved, not refuted` · `UNMEASURED, NOT REFUTED` ·
+⭐ `cannot detect, not no effect`. **And four documents exist SOLELY to hunt this violation class.**
+**Several prereg TEMPLATES pre-emptively FORBID the words "null"/"refuted"/"fails" at underpowered
+n** — the rule is enforced at write time, not just audited after.
+
+## ⛔ RECONCILING THE FOUR PASSES — THEY DISAGREE ONLY ON SCOPE, AND THAT MATTERS
+The comprehensive pass reports **ONE** category-B item; an earlier fork reported **ELEVEN**.
+**Both are right.** The comprehensive pass covered `docs/research/*.md` **by FILENAME PREFIX** —
+which **EXCLUDES `docs/research/tactics/*.md` and `docs/builder-method.md`, where 10 of the fork's
+11 live.** ⇒ ⚠ **"One violation" is true OF THE CORE EVIDENCE CORPUS and false of the repo. A count
+is only as wide as its enumeration rule, and neither number is quotable without it.**
+
+**THE TRUE PICTURE, THREE TIERS:**
+1. **CORE EVIDENCE CORPUS (results.tsv + prereg + prefixed research): ONE soft violation —
+   `MAP-CONDITIONAL-CEILING-2026-08-16` at `:72` and `:451`. BOTH CORRECTED IN PLACE.** *(The
+   second was routed to me by the side lane; the interval is [−0.69, +1.17] and excludes neither
+   zero nor +1.0pp — the effect `#77` is sized to detect.)*
+2. **PROPAGATION-LAG CLUSTER, `docs/research/tactics/` (~9 files): caveats WERE appended in-file on
+   2026-08-10; the ORIGINAL SENTENCES were never rewritten.** ⭐ **This is today's recurring shape
+   for the sixth time: THE QUALIFIER TRAVELS SEPARATELY FROM THE CLAIM.** ⚠ **Priority LOW and
+   stated as such: these are outputs of the 313-file tactics era with 7 conversions — low-readership
+   documents, already caveated, and rewriting nine of them is volume this lane was rescoped away
+   from.** **Recorded, not fixed.**
+3. **`docs/builder-method.md:24` — *"imprisonment (refuted)"*, FLAT, flagged by
+   `D12-closure-sweep-2026-08-10.md:69` SIX DAYS AGO and still uncorrected.** ⇒ **ROUTED TO
+   BUILDER** (their doc, and it IS a read document, unlike tier 2).
+
+## ⭐ MY OWN ROW WAS IN THE AMBIGUOUS SET AND I FIXED IT
+`QUEUE #8` carried *"the scan-order hypothesis as stated is REFUTED"* on a reading described **in
+the same sentence** as *"consistent with ZERO"* — **an exclusion claim from an interval that by
+construction does not exclude.** The row does not record the CI, so no exclusion is supportable.
+**Corrected to NOT CONFIRMED, with the reasoning attached.** ✅ *"Do not re-queue"* survives on the
+point estimate and the cost; *"refuted"* does not.

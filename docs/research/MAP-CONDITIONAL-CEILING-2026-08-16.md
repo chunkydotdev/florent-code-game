@@ -464,9 +464,12 @@ on live-game evidence):
 1. **MAP-conditional arm selection is not a route to 60%.** 57.04%, ~3pp short,
    2/200 bootstrap draws reach 60%, 0 of 15 per-map winners survive multiplicity
    correction, and it needs the entire 23-arm library to get there.
-2. **The bodyaware plank-off oracle is dead.** +0.24pp cross-validated (+0.33pp naive),
-   inside its own ±0.93pp half-width. Your +0.34pp estimate was correct for the naive
-   form; the honest form is smaller.
+2. **The bodyaware plank-off oracle is NOT RESOLVABLE at n=10,800** *(corrected 2026-08-16
+   ~11:3xZ; this line read "is dead", which was a fail-to-exclude stated as an exclusion).*
+   +0.24pp cross-validated (+0.33pp naive), inside its own ±0.93pp half-width ⇒ interval
+   **[−0.69, +1.17]**, which **excludes neither zero NOR +1.0pp**. Your +0.34pp estimate was
+   correct for the naive form; the honest form is smaller **and the honest verdict is
+   UNRESOLVED, not dead.** ⚠ Note +1.0pp is the effect `QUEUE #77` is sized to detect.
 3. **Seat-conditioning alone is a null.** +0.55pp, p = 0.3632.
 
 **OPENED, and this is the more useful half:**
