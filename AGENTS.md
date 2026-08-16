@@ -4,8 +4,12 @@
      disproved on the engine. A fork of a living document is a slow-motion
      correctness bug: corrections land in CLAUDE.md and never reach the fork.
      REGENERATE:  cp CLAUDE.md AGENTS.md   (then restore this header)
-     Last regenerated: 2026-08-13 (research lane, after the
-     opponent-pinning correction to CLAUDE.md).
+     Last regenerated: 2026-08-16T08:0xZ (research lane s46, on a side-lane
+     drift flag: the twin was 137 diff-lines / 8 CLAUDE.md commits stale and
+     still carried the retracted `AND THE RATED COST IS ZERO, MEASURED.` as a
+     bold standalone assertion — the exact arrangement CLAUDE.md relocated to
+     DIRECTIVE-HISTORY.md on 2026-08-15 for being unsafe to skim.
+     CONTROL RUN BOTH WAYS: pre-regen diff 137 / post-regen 0.
 -->
 # What this game is
 
@@ -397,11 +401,21 @@ Four consequences, each of which closes a road that was open before it:
    Magnus, direct: *"This does sound like we should allow SOME defence
    strategies, but our FOCUS should be to kill at <r250."*
    `PROGRAMME.md` now carries **`PLAY_DEFENCE: not_at_the_kill_s_expense`** and
-   **`DEFENCE_ADMISSION_BAR: kill_round_non_regression`**.
-   ⇒ **A defensive plank is ADMISSIBLE IFF it does not slow the kill: it carries
-   a kill-round non-regression bar beside its survival bar, and if MEDIAN KILL
-   ROUND RISES it is off-programme whatever it does to win rate.** A gradient is
-   unenforceable, so the directive is encoded as a BAR.
+   **`DEFENCE_ADMISSION_BAR: r300_crossing_non_regression`**.
+   ⭐ **RE-PRICED 2026-08-16 (s45), Magnus direct: *"Re-price the kill-round bar
+   to bind at ~r300 instead of penalizing drift inside r200-300."*** The s31 form
+   read "if MEDIAN KILL ROUND RISES it is off-programme"; that is SUPERSEDED.
+   ⇒ **A plank is off-programme if it pushes kills PAST r300** (primary, ITT:
+   the share of ALL its games ending in a core-kill BY r300 — its timely-kill
+   rate — must not FALL vs control; the kill-win-conditioned share is a
+   diagnostic only, it carries a collider; median crossing 300 is the gross
+   backstop — full operational form and the collider correction in
+   `PROGRAMME.md`). **Drift inside
+   r200-300 is reported, not disqualifying.** Basis: the "field converts 4x
+   better late" table was pre-rotation; re-derived post-rotation, r200-300 is
+   ~parity (NOT an advantage — the flip claim was withdrawn same-day) and r300+
+   remains against us (0.82, robust). A gradient is unenforceable, so the
+   directive stays encoded as a BAR — only its binding point moved.
    **SCOPE, and it is what keeps `R1000_IS_DEFEAT` intact: "some defence" means
    surviving the r150–250 window SO OUR OWN KILL LANDS — our median kill is 174
    and our median death is 187, a thirteen-round race, and our core dies in 46.3%
@@ -578,20 +592,17 @@ version ACTIVE AT POLL TIME, so these three are invisible in it. **The ground
 truth is per-match `ourver`, already populated in `ladder_games.tsv` — nothing
 needs building, only reading.**
 
-**THE ORIGINAL CLAIM, KEPT FOR THE RECORD:**
-**AND THE RATED COST IS ZERO, MEASURED.** `fcode match unrated` plays the ACTIVE
-submission, so a prototype leg needs an activation — but ladder pairings land
-~10 minutes apart and a correctly-run window is ~60 seconds, so **v103 and v104
-each played ZERO rated ladder matches** across their legs (verified: every
-ladder match in the window carries `ourver=102`). **Procedure: serve the
-rate-limit wait with the INCUMBENT live; activate only in the instant before
-firing; roll back on the fifth accepted challenge and VERIFY the holder.**
-**⛔ AND "ACTIVATE" HERE INCLUDES THE SUBMIT — see the submissions bullet above.
-`fcode submit` AUTO-ACTIVATES, so uploading the prototype ahead of time to be
-ready is exactly the mistake this procedure reads as safe. The upload belongs
-INSIDE the 60-second window, not before it.** (s29 walked into this: submitted a
-prototype ~20 min ahead of its window and put it on the rated ladder instantly.
-Cost was zero rated matches only because the submit was being watched.)
+**THE SUPERSEDED CLAIM IS NOT REPRINTED HERE.** It said the rated cost of a
+prototype leg was ZERO, measured; the block above replaces it with −24.67 Elo
+across 3 matches. It is kept verbatim, with its provenance, in
+`docs/reference/DIRECTIVE-HISTORY.md`.
+⛔ **WHY IT MOVED (2026-08-15):** in this file the dead claim was bold, emphatic
+and typographically IDENTICAL to a live rule, in the one document loaded into
+every session whether or not it is read carefully. **A reader skimming for the
+cost of a leg could land on `AND THE RATED COST IS ZERO, MEASURED` and be
+reading a retracted sentence with no signal that it was retracted.** The rule
+adopted: *the always-loaded file states what is true now; the archive states
+what we used to think.* Provenance is not lost, it is relocated.
 
 **THE CONSEQUENCE, and it is the one that matters: STOP CALLING UNDERPOWERED
 LEGS.** Every null on 2026-08-10 failed its own resolution bar rather than the
@@ -601,6 +612,93 @@ nothing changed) and an MDE of ~39pp. **A 25-game window is a DOSE AND
 MECHANISM probe. A currency read requires pooling windows** — and since windows
 are free, pooling is now the default, not a luxury. **Buy the power before
 writing the verdict.**
+
+**⭐⭐ AND IT IS WORSE THAN THAT NUMBER SAYS — MEASURED 2026-08-14 (s40, research):
+GAMES ARE NOT INDEPENDENT, SO EVERY BAR THIS PROJECT QUOTES IN GAMES IS TOO
+NARROW.** The 5 games of a match share the opponent, the opponent's version, and
+one 20-minute slice of the ladder. Measured on our own record by comparing the
+observed variance of match scores against the binomial:
+
+| fixture | 5-game matches | our share | **POOLED DEFF** | **WITHIN-OPPONENT DEFF** |
+|---|---|---|---|---|
+| **RATED** (`ladder_games.tsv`) | 965 | 0.5123 | **1.529** (ICC ρ=0.132) | **1.366** |
+| **UNRATED** (`meta_join`, non-ladder) | 947 | 0.4809 | **1.833** (ρ=0.208) | **1.434** |
+
+⇒ **EFFECTIVE n IS ~55–65% OF NOMINAL** and half-widths are understated by
+**×1.24 (rated) to ×1.35 (unrated)**. **The 12pp and ~39pp figures above are
+therefore OPTIMISTIC** — both were computed treating games as independent.
+**Use — TWO FORMS, and picking the wrong one is the common mistake:**
+```
+ONE SAMPLE (a single bar on one surface):
+    half_width_95 = 1.96*sqrt( p̄(1-p̄) * DEFF / n )
+TWO-FIXTURE COMPARISON (e.g. a panel share vs a rated share):
+    half_width_95 = 1.96*sqrt( p̄(1-p̄) * ( DEFF_u/n_unrated + DEFF_r/n_rated ) )
+```
+**⛔ SCOPE — AND IT IS A PROCEDURE, NOT A TAXONOMY. A LOOKUP TABLE OF CASES IS
+WHAT LETS SOMEONE DROP THE CORRECTION BY DECIDING THEIR CUT "LOOKS LIKE" ONE.**
+
+**THE GENERAL FORM: a design effect applies only where the STRATUM CAN CONTAIN
+MORE THAN ONE MEMBER OF THE CLUSTER.**
+
+**THE PROCEDURE, and a banked cut performs it in writing:**
+1. **NAME EVERY CLUSTER THIS DATA HAS.** Currently **two: MATCH and OPPONENT**
+   (add a third if a window effect is ever shown to bind).
+2. **For each, state whether YOUR stratum can hold more than one member — and
+   VERIFY it, do not assert it.**
+3. **The applicable DEFF is over the clusters that SURVIVE.**
+
+**WORKED EXAMPLE — and it is worked because the author of this rule got it wrong
+first.** A per-MAP bar: a 5-game match uses five DIFFERENT maps, verified both
+ways — **(match, map) pairs with more than one game = 0 of 415, while games per
+MATCH = exactly 5 for every match.** ⇒ **the MATCH cluster dies.** ⛔ **The
+OPPONENT cluster does NOT: a map cell still holds several games against the same
+opponent from different matches.** Measured on that cut: **m̄ = 1.98 games per
+opponent per cell, ρ_opp = 0.0743 ⇒ residual DEFF ≈ 1.07** (interval inflation
+×1.04; ×1.05 at the densest cell). **Small — but "no DEFF at all", which is what
+this clause said for half an hour, is wrong and would license the error at cells
+where m̄ is larger.**
+
+**Reference values: pooled 1.529 rated / 1.833 unrated (both clusters live) ·
+within-opponent 1.366 / 1.434 (opponent cluster removed) · per-map ≈1.07 on
+current cells (match cluster removed, opponent cluster measured).**
+⚠ **A correction applied where it does not belong inflates intervals for nothing
+and fails in the FLATTERING direction for a null — so both over- and
+under-correction are errors, and only the enumeration catches either.**
+
+**⛔ DIRECTION — AND THE GUARANTEE IS NOT UNCONDITIONAL. THIS IS THE CLAUSE THAT
+KEEPS THE CORRECTION FROM FLATTERING THE CLAIMS MOST TEMPTING TO BANK.**
+Widening an interval only ever makes an **EXCLUSION** claim harder — superiority,
+harm-exclusion, closure-by-upper-bound. **It makes a FAIL-TO-EXCLUDE claim
+EASIER**: *"no significant rise"*, *"consistent with zero"*, a null banked
+because nothing cleared. **That class is live here — `DEFENCE_ADMISSION_BAR`'s
+kill-round non-regression is scored exactly that way.**
+⇒ **A fail-to-exclude claim must first be RESTATED AS AN EXCLUSION (the CI
+excludes the regression bar) before the correction is applied.** Applied to the
+unrestated form, DEFF launders a weak null into a confident one.
+**With that restatement: the exposed class is claims that cleared a bar
+NARROWLY.**
+
+⚠ **PLATFORM games only (rated ladder + unrated challenges) — AND LOCAL'S
+EXEMPTION IS MEASURED, NOT ASSERTED.** Local corefill/arena screens are a
+**balanced-by-construction** fixture and read **pair-weighted DEFF = 0.98
+(ρ = −0.020) across 124 shards** (s39 audit, 2026-08-14): **naive local bars are
+correct and marginally conservative, and applying the platform constants to them
+would widen local intervals 24-35% for correlation that is not there.** Outlier
+arms with strong map interaction reach ~1.25. `tools/effective_n.py` (seed
+degeneracy) and `tools/mde.py` (local kill-speed null) measure different things
+on LOCAL batteries — complementary, not duplicates.
+**PROVENANCE, stated precisely because "three measurements converge" was too
+loose:** the **unrated** constant is two independent measurements —
+**1.45 implied** (`PREREG-PANEL-CAL1-v123-field-2026-08-13.md` A1.2, per-match sd
+8.565 vs binomial 7.111) and **1.434 df-corrected** (here) — and the **method**
+was independently replicated by the side lane on the **rated** surface (1.529
+digit-for-digit, 1.366 df-corrected). **The df correction is required: the
+uncorrected form returns 1.282 and is biased LOW.** The unrated cut comes from
+`meta_join` because unrated games are not in `ladder_games.tsv` — that is
+correct and is **not** a breach of the "never `meta_join` for a denominator"
+rule, which governs RATED win-rate denominators; the caveat that does apply is
+that it covers the ARCHIVED subset. Re-measure periodically; ρ is a property of
+the current pool, not a law.
 
 **6. A REFUTATION WITHOUT LIVE-GAME BACKING IS A HYPOTHESIS, NOT A REFUTATION.**
 Magnus, 2026-08-10: *"Every statement needs backup from real games so we need to
