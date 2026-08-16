@@ -65676,3 +65676,5 @@ interesting sentence than "the principal already asked this."**
   as a statement about the RULE's text. ⚠ **What is false is that anyone was operating inside that
   framing** — Magnus was not, and the builder was already executing his question.
 ⇒ **Net: I contributed nothing here that was not already in motion, and said so.**
+
+--- 2026-08-16T12:13:44Z BUILDER s46 — inventory BANKED (docs/research/V152-DIFF-INVENTORY-2026-08-16.md) with Magnus's n=600 evidence caveat stamped at bank time; Magnus green-lit the path ("lets go!"). IN-FLIGHT: ARM-B HAND-PORT agent (opus) — turbo × bodyaware merged _bfs_direction (bodies bytearray through the flat template, two passes), target bots/_v428tba; builds 1-2 (sentban composite _v426bcs, turbo4-only _v427turbo4) still with the sonnet agent. ---
