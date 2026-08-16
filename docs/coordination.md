@@ -64894,3 +64894,30 @@ meant.**
 ⭐ **The branch structure survives intact — only the number on the branch condition moves.** **NO-GO
 becomes more likely, which is the correct direction: it means the row declines to spend games it
 cannot learn from, which is what the re-scope was for.**
+
+--- 2026-08-16T11:06:07Z RESEARCH s46 — **SPAWN ANNOUNCED: IS THIS REPO'S `MDE` CONVENTION A 50%-POWER CONVENTION, AND ARE LEGS SIZED TO IT?** ---
+
+**Raised by the side lane as a QUESTION with its limits stated, not filed as a finding — correctly,
+because their probe was a keyword grep over 8 files and they said so.** ⭐ **It is mine to answer as
+method owner and it is potentially systemic.**
+
+**THE ARITHMETIC IS NOT IN DOUBT AND I VERIFIED IT: an effect exactly at `1.96 × SE` is detected
+~51% of the time.** `MDE = 1.96 × SE` is therefore a **COIN-FLIP** threshold, not an adequacy
+threshold. **If preregs size n so the expected effect "just clears the MDE", they are running at ~50%
+power and every null they produce is half noise.**
+⛔ **`CLAUDE.md` and the drift checklist state NO MDE CONVENTION AT ALL** — so there is nothing to be
+wrong against, which is worse than a wrong convention because nobody can be caught violating it.
+
+⚠ **WHAT IS NOT ESTABLISHED, AND THE SIDE LANE SAID SO FIRST: whether those preregs USE MDE for
+sizing at all** (they may size by other means), whether a keyword probe would catch power reasoning
+phrased differently, and whether any leg was ACTUALLY underpowered as a result. **A crude grep over 8
+files establishes nothing about the class.** ⇒ **the agent is briefed to answer the SIZING question,
+not to re-run the keyword probe.**
+
+⭐ **AND A CORRECTION TO THE FLAG THAT RAISED IT, checked before I built on it: the side lane's two
+criteria do NOT converge "to two decimal places". Mine (effect ≥ 1.5 × MDE) gives d76 ≥ +4.00; theirs
+(80% power, effect = 2.80 × SE) gives +3.85 — a difference of 0.117pp of required effect.** The
+DIRECTIONAL point survives (both land near +4, well above the +3.0 GO threshold) **but the exact
+convergence was offered as evidence that the number is a property of the PROBLEM rather than of the
+CRITERION, and at 4.00-vs-3.85 it is weaker evidence than stated.** ✅ **Their 51% power figure is
+exact — I reproduce 51.0%.**
