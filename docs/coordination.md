@@ -65831,3 +65831,61 @@ the moment the replay was opened.** Cheap, and it is the same shape as every gua
 the claim checkable at the point of use.
 
 --- 2026-08-16T12:53:14Z BUILDER s46 — IN-FLIGHT: LEG-DISCLOSURE badge agent (sonnet, dashboard): replay list + viewer will look up match ids against the arm_fieldcal_* accept ledgers and DISCLOSE (never prohibit) "leg accept — arm N, post-clock2; abstention-based blindness forfeit from here" at the moment of viewing (side lane ruling e51babce: current instance clean; the condition is prospective). ---
+
+--- 2026-08-16T12:54:30Z RESEARCH s46 ✅ **LEG OBSERVATION RULED CLEAN — AND IT LEAVES ONE OPERATIONAL CONSEQUENCE THAT NAMES WHO MAY AUTHOR WHAT.** ---
+
+**Side lane's ruling (`e51babce`): NO BREACH, CELLS STAND, LEG UNAFFECTED. I re-derived the decisive
+arithmetic before accepting it, because a ruling that favours my own instrument is exactly the kind
+I should check hardest:**
+```
+only amendment to this leg, LOCKED   2026-08-16T08:39:05Z   (commit 868e3312, verified)
+first viewing                        2026-08-16T10:54:06Z   (+2h15m)
+prereg/amendment files added since    ZERO                   (verified: git --diff-filter=A, empty)
+```
+⇒ **NO RULE COULD HAVE BEEN CHOSEN AFTER SEEING THAT DATA, BECAUSE NONE WAS CHOSEN AFTER IT.** ⭐
+**That is arithmetic, not judgement, which is why it is a certificate and not an opinion.**
+✅ **And the ground I could not supply myself is theirs: pre-registration protects against ANALYSIS
+CHOICES MADE AFTER SEEING DATA — not against a human seeing a game.** §13's blindness governs
+AMENDMENTS; §9.3 voids on PIN MISMATCH, an instrument-integrity clause. **Inventing an observation
+trigger now would be adding an obligation to a locked document after the fact.**
+
+## ⛔ THE ONE THING THAT DOES CHANGE, AND IT NAMES PEOPLE
+**ABSTENTION-BASED BLINDNESS IS FORFEIT FOR ANYONE WHO VIEWED.** *"I did not look"* is now false for
+at least one participant. ⇒ **future amendments must be STRUCTURALLY blind — as the catch-up rule
+was, its selection domain guaranteeing the absence of a result — or authored by someone who did not
+look.**
+⭐ **VERIFIED FOR MY OWN LANE RATHER THAN ASSUMED: this lane touched NO viewer artefact this
+session** (`git log -- scratchpad/replay_view/` empty for the research lane). ⇒ **research retains
+abstention-blindness.**
+⭐⭐ **OPERATIONAL CONSEQUENCE, and it is the useful output of the whole exchange: THE POOLED READOUT
+AND ANY FUTURE AMENDMENT TO THIS LEG SHOULD BE AUTHORED BY THIS LANE — not as a privilege but
+because it is the only lane that can still make the claim.** **Recorded now so it is a standing fact
+rather than a scramble at the 800 boundary.**
+✅ **Workflow disclosure routed to the builder BY THE CERTIFIER, and their framing is better than
+mine: NOT *"do not open this"* — a prohibition would be wrong, since Magnus may look at anything he
+owns and so may anyone reading for mechanism — but *"this is a leg accept, arm A; abstention-
+blindness is forfeit from here."* A DISCLOSURE, firing at the moment it happens rather than two
+hours later by recall.**
+
+--- 2026-08-16T12:54:30Z RESEARCH s46 ✅ **QUEUE: #62 RE-SCOPED ON MAGNUS'S IDEA (one plank, two inputs) · #79 ADMITTED (the plant-and-guard infiltrator). 61 → 62, gate all-clear.** ---
+**#62 now owns OPENING SIZE = f(MAP, INCOME) rather than the map term alone.** Not a new row —
+**#62 already owned *"the opening is map-blind"*, and splitting the two inputs would create two rows
+testing ONE function.** ⭐ **The asymmetry is the finding: `doctrine.py:28 MAX_BUILDERS = 5` is an
+absolute fitted constant, while the SCALE-UP path above 5 already exists and is INCOME-GATED
+(`doctrine.py:97`) — the machinery to make the opening income-responsive is written and simply
+cannot open BELOW the constant.**
+⛔ **AND THE ROW CORRECTS THE IDEA'S OWN STATED REASON, which is the honest thing to do with a
+principal's idea rather than the flattering one: our measured early idle is 3.31% at r10. Magnus's
+*"standing around"* is mostly the LATE SEALED class (`#74`'s territory). THE CASE FOR FEWER OPENERS
+IS PRICE — five openers = +100% scale before the first turret — NOT IDLENESS.** Two more priors
+carried: the fitting sample showed the floor mattered UPWARD (9 of 10 losses never spawned a sixth),
+and `_v69bc`'s −13pts was for RAISING the target, **direction-untested downward and not quotable as
+if it were.**
+**#79 — THE INFILTRATOR.** Dino's builder walked out at r3, planted a sentinel, sat **dormant 304
+rounds**, then took **16 of I Stone's 29 conveyor deaths** from r332-774. ⭐ **The engine fact is a
+guard asymmetry of exactly the hunted class: `attack()` targets THE BUILDING on an adjacent tile,
+and A BUILDER BOT IS NOT A BUILDING** ⇒ **an enemy builder in your half is IMMUNE TO BUILDER MELEE
+ENTIRELY; only a turret removes it, and I Stone built zero.** ✅ **And the counter is already ours:
+the LAUNCHER KIDNAP — no team check, no vision guard, 0 ammo. We can evict what they could not
+touch.** ⚠ **n=1 game, and the immunity is CONDITIONAL on a turretless opponent — so the offensive
+half is opponent-selected and prices per-opponent from the corpus before any leg.**
