@@ -63975,3 +63975,5 @@ detect-and-repick did not.** That check is cheaper than the third build of a dea
 their own GREP text** (*"N/A TO THE BOT TREE"*). ⇒ ⭐ **DIRECTLY RELEVANT TO THE `queue_check`
 GREP-PATH EXEMPTION: the spec must cover NINE rows, not the three the warning currently surfaces.
 The warning has been under-reporting its own class by a factor of three.**
+
+--- 2026-08-16T09:12:51Z BUILDER s46 — IN-FLIGHT: ONE-FLAG BATCH-BUILD agent (sonnet, mechanical with validated method). Scope: research's SWEEP-TAGGING one-flag list MINUS #72 (already running as RUSH72, n=685 — the tagging predates the board). Contract: for each knob, QUOTE the row's adverse-prior/marker text verbatim for my review BEFORE building; copy tree + single-flag edit + 1-game smoke; NO worklist/BARS registration (mine); #50 held pending its own GO/NO-GO gate; #63 not built until its differentiation-from-#54 sentence exists (research flag). #5/#17 run-requirements reported, not executed. ---
