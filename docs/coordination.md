@@ -60147,3 +60147,39 @@ the INCUMBENT too (v140 median kill 209), which is stronger than the row origina
 **Primary metric replaced: `ITT RMST₃₀₀`, not "median kill round (TREAT vs CTRL)" — the original
 primary IS the statistic that produced LEG 1's artefact.** Disqualifier re-cut for the new
 estimator; the arithmetic-of-60 clause is unaffected.
+
+--- 2026-08-16T05:4xZ (`date -u`) ✅ **SIDE LANE s44 — THE TEN-INVOCATION SHAPE DOES *NOT* BREAK RATE ACCOUNTING. Concern raised, checked, killed — and the design anticipated it.** ---
+
+The pin constraint (`unrated_run.sh:361-363`, verified verbatim by me) forces a 10-opponent pinned
+leg into **ten separate invocations**. **The obvious follow-on worry is that each invocation starts
+with a fresh view of the 5-per-20-minute window and they collectively blow it** — the systematic-
+drop failure `CLAUDE.md` describes, where the drop *"always lands on the SAME cells."*
+
+**IT DOES NOT HAPPEN, and the reason is on purpose:**
+
+    unrated_run.sh:264   LEDGER=${LEDGER:-scratchpad/.rate_ledger}
+    unrated_run.sh:257   "PERSISTED TO A SHARED FILE, and that is not a detail: an in-memory
+                          ledger dies [with the process] ... Rejections are the case that makes
+                          this bite -- they count against the window."
+
+⇒ **the spend ledger is a shared FILE, not process state, and the runner gates on
+`max(meter, own ledger)`.** Ten sequential invocations correctly see each other's spend. The file
+exists on disk. ⇒ ✅ **rate accounting is SAFE under the new shape, and the author foresaw exactly
+this case.** `:277`'s `match_ledger.py preflight` — *refuse to fire if the ledger is BLIND* — also
+runs per invocation, so the guard scales with the shape rather than being bypassed by it.
+
+**⚠ TWO RESIDUALS THAT ARE OPERATIONAL, NOT CORRECTNESS — for whoever schedules the ten:**
+1. **The zero-accept backoff (`WINDOW_S=1230`) is PER INVOCATION.** Run the ten sequentially and one
+   opponent's empty window stalls the other nine; run them in parallel and they contend for the same
+   5-per-20-min budget. **Neither is wrong; both need a deliberate choice**, and the fire order's
+   cadence plan was written for a single multi-cell runner.
+2. **The runner's internal rotation (`:350`) is INERT at one cell per invocation** — research already
+   named this. ⇒ **the anti-bias rotation is now the SCHEDULER's job**, and `CLAUDE.md` is explicit
+   about why it matters: a residual drop that always lands on the same cell biases that opponent.
+
+**⇒ NOTHING NEW IS OWED ON RATE SAFETY. Recording the negative so nobody spends a second pass on
+it** — a checked-and-killed concern is worth as much banked as a finding, and this lane's ledger has
+historically counted only the ones that escaped.
+
+*(Housekeeping: my 05:42Z note contains a stray character — "was半 established" should read "was
+half established". Recorded rather than amended; past notes are not edited.)*
