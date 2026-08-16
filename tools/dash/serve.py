@@ -744,6 +744,145 @@ def _file_facts(p: Path) -> dict:
             "at": iso(m), "age_min": round(age_min(m), 1)}
 
 
+REMOTE_STALE_S = 600  # same threshold cmd_status uses: a frozen heartbeat is BLIND, not healthy
+VPS_PULL_LOG = ROOT / "corpus" / "vps_pull.log"
+
+
+def _remote_last_pull(host_dirname: str) -> dict:
+    """Newest `pull ok <host>` line for this host, with its age.
+
+    The mirror is only as fresh as the last pull (5-min cadence,
+    tools/monitors/vps_pull.sh). Every remote age this page shows is therefore
+    an age AT LAST PULL — and when the pull itself is old, that is the louder
+    fact, so it is returned separately instead of being folded into shard ages.
+    """
+    try:
+        lines = VPS_PULL_LOG.read_text(errors="replace").splitlines()[-400:]
+    except Exception:
+        return {"ok": False, "blind": "vps_pull.log unreadable"}
+    last = next((l for l in reversed(lines) if l.endswith(" " + host_dirname)), None)
+    if not last:
+        return {"ok": False, "blind": f"no pull line for {host_dirname}"}
+    ts = parse_ts(last.split()[0])
+    return {"ok": " pull ok " in last, "at": last.split()[0],
+            "age_min": round(age_min(ts), 1) if ts else None, "line": last}
+
+
+def _remote_shard_row(mirror: Path, shard: str) -> dict:
+    """State + numbers for one remote shard, from pulled artefacts ONLY.
+
+    State comes from the heartbeat's OWN content and embedded timestamp — never
+    from the mirror file's mtime, which is a pull time. A heartbeat that says
+    RUNNING but stopped being written is reported STALLED, because on this
+    fleet that is what a dead fossil looks like (ws1 carried six of them for a
+    day while `cmd_status` printed them as RUNNING-with-a-warning)."""
+    hb = mirror / f"{shard}.heartbeat"
+    tsv = mirror / f"{shard}.tsv"
+    row: dict = {"shard": shard, "rows": None, "target": None, "state": "queued",
+                 "hb_status": None, "hb_at": None, "hb_age_min": None,
+                 "eta_min": None, "heartbeat": _file_facts(hb)}
+    line = ""
+    try:
+        line = hb.read_text(errors="replace").strip()
+    except Exception:
+        pass
+    if line:
+        parts = line.split("\t")
+        # worker.sh writes: ts \t n \t target \t shard \t STATUS
+        if len(parts) >= 5:
+            row["hb_at"], row["hb_status"] = parts[0], parts[4]
+            try:
+                row["rows"], row["target"] = int(parts[1]), int(parts[2])
+            except ValueError:
+                pass
+            ts = parse_ts(parts[0])
+            row["hb_age_min"] = round(age_min(ts), 1) if ts else None
+            st = parts[4]
+            if st == "COMPLETE" or (mirror / f"{shard}.COMPLETE").exists():
+                row["state"] = "DONE"
+            elif st.startswith("ABORTED"):
+                row["state"] = "DEAD"
+            elif ts and (now_utc() - ts).total_seconds() < REMOTE_STALE_S:
+                row["state"] = "running"
+            else:
+                row["state"] = "STALLED"
+    elif (mirror / f"{shard}.COMPLETE").exists():
+        row["state"] = "DONE"
+    # rate/ETA off the tsv's own row timestamps (first vs last), running only
+    if row["state"] == "running" and tsv.exists():
+        try:
+            with tsv.open(errors="replace") as fh:
+                lines = fh.read().splitlines()
+            if len(lines) > 2:
+                t0, t1 = parse_ts(lines[1].split("\t")[0]), parse_ts(lines[-1].split("\t")[0])
+                n = len(lines) - 1
+                row["rows"] = n
+                if t0 and t1 and t1 > t0 and row["target"]:
+                    rate = (n - 1) / (t1 - t0).total_seconds()
+                    if rate > 0:
+                        row["eta_min"] = round((row["target"] - n) / rate / 60)
+        except Exception:
+            pass
+    return row
+
+
+def collect_remote_fleet() -> dict:
+    """The fleet boxes as first-class rows: each host's OWN worklist joined to
+    its pulled artefacts.
+
+    WHY: the local status tool iterates the LOCAL worklist, so a shard running
+    only on a fleet box (ws2's eco replications, V140VS152) never appears in
+    its table — those shards surfaced here only as raw orphan heartbeat lines,
+    where a live run and a dead fossil rendered identically (builder s46, on
+    Magnus asking to see what runs where). The host's generated worklist also
+    knows what is QUEUED there, which no local surface does."""
+    hosts = []
+    for mirror in sorted(REMOTE.glob("worker@*")):
+        hostdir = mirror.name
+        wl_path = ROOT / "scratchpad" / "vps" / hostdir / "worklist.txt"
+        wl_rows, generated = [], None
+        try:
+            for ln in wl_path.read_text(errors="replace").splitlines():
+                if ln.startswith("# generated:"):
+                    generated = ln.split("generated:", 1)[1].split()[0]
+                if ln.lstrip().startswith("#") or not ln.strip():
+                    continue
+                f = ln.split()
+                if len(f) >= 5:
+                    wl_rows.append({"shard": f[0], "treatment": f[1],
+                                    "control": f[2], "target": int(f[3])})
+        except Exception:
+            wl_path = None
+        known_here = {w["shard"] for w in wl_rows}
+        rows = []
+        for w in wl_rows:
+            r = _remote_shard_row(mirror, w["shard"])
+            r["treatment"], r["control"] = w["treatment"], w["control"]
+            r["treatment_ver"] = matches.tree_label(w["treatment"])
+            r["control_ver"] = matches.tree_label(w["control"])
+            if r["target"] is None:
+                r["target"] = w["target"]
+            rows.append(r)
+        prior = []
+        for p in sorted(mirror.glob("*.heartbeat")):
+            sh = p.name.split(".")[0]
+            if sh in known_here:
+                continue
+            prior.append(_remote_shard_row(mirror, sh))
+        hosts.append({"host": hostdir.split("@", 1)[-1],
+                      "pull": _remote_last_pull(hostdir),
+                      "worklist_generated": generated,
+                      "worklist_path": str(wl_path.relative_to(ROOT)) if wl_path else None,
+                      "rows": rows, "prior": prior,
+                      "n_running": sum(1 for r in rows if r["state"] == "running"),
+                      "n_queued": sum(1 for r in rows if r["state"] == "queued")})
+    return {"hosts": hosts,
+            "stale_s": REMOTE_STALE_S,
+            "source": "per-host worklist (scratchpad/vps/<host>/worklist.txt) + "
+                      "pulled artefacts (scratchpad/overnight-remote/, "
+                      "vps_pull 5-min cadence); ages are AT-LAST-PULL"}
+
+
 def collect_shard_list() -> dict:
     """Every local battery shard: the tool's rows, plus artefacts it does not cover.
 
@@ -804,17 +943,12 @@ def collect_shard_list() -> dict:
             pass
         orphans.append({"shard": sh, "heartbeat_line": line,
                         "heartbeat": _file_facts(hb), "host": None})
-    for sh, host in remote_disk:
-        if sh in known:   # running remote shards already have a tool row
-            continue
-        hb = REMOTE / f"worker@{host}" / f"{sh}.heartbeat"
-        line = ""
-        try:
-            line = hb.read_text(errors="replace").strip()
-        except Exception:
-            pass
-        orphans.append({"shard": sh, "heartbeat_line": line,
-                        "heartbeat": _file_facts(hb), "host": host})
+    # Remote artefacts no longer land in orphans: collect_remote_fleet() gives
+    # every (shard, host) pair a first-class row — worklist-joined or `prior` —
+    # with a real state instead of a raw heartbeat line. (`remote_disk` is still
+    # computed above so a future regression here is a one-line re-enable, and
+    # the fleet section's own counts can be reconciled against it.)
+    fleet = collect_remote_fleet()
     return {"ok": st.get("ok", False), "pending": st.get("pending", False),
             "error": st.get("error"), "note": st.get("note"),
             # TWO CLOCKS, AND THEY ARE NOT THE SAME ONE. `served_at` is when this
@@ -829,6 +963,7 @@ def collect_shard_list() -> dict:
                          "age_min": wl.get("age_min"), "blind": wl.get("blind"),
                          "n": len(wl["order"])},
             "rows": rows, "n_rows": len(rows),
+            "remote_fleet": fleet,
             "orphans": orphans, "n_orphans": len(orphans),
             "orphans_blind": orphans_blind,
             "text": st.get("text")}

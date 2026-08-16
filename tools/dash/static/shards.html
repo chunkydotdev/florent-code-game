@@ -43,6 +43,20 @@
     <tbody></tbody>
   </table></div>
 
+  <h2 id="fleet-anchor">Fleet boxes</h2>
+  <p class="lede" style="margin-bottom:10px">
+    Each host's <strong>own generated worklist</strong>
+    (<code>scratchpad/vps/&lt;host&gt;/worklist.txt</code>) joined to its pulled
+    artefacts — so remote-only shards get a real state and the <em>queue on the
+    box</em> is visible, which no local surface shows. Every age here is an age
+    <strong>at last pull</strong> (<code>vps_pull</code>, 5-min cadence); the pull
+    age is printed per host because when the pull is old, that is the louder fact.
+    A heartbeat that says RUNNING but stopped being written renders
+    <span class="badge b-warn">STALLED</span> — on this fleet that is what a dead
+    fossil looks like, and it is not the same thing as running.
+  </p>
+  <div id="fleet"></div>
+
   <h2 id="orphans-anchor">Artefacts with no worklist line</h2>
   <p class="lede" style="margin-bottom:10px">
     <code>corefill_status.sh</code> iterates the worklist, so these shards — whose
@@ -245,6 +259,7 @@ function render(s) {
     `<button class="chip${PICK === 'all' ? ' on' : ''}" data-pick="all">all ${all.length}</button>`
     + CHIPS.filter(k => tally[k]).map(k =>
         `<button class="chip c-${k}${PICK === k ? ' on' : ''}" data-pick="${k}">${k} ${tally[k]}</button>`).join('')
+    + `<a class="chip" href="#fleet-anchor">fleet ${((s.remote_fleet || {}).hosts || []).map(h => `${h.host.replace('work-server-', 'ws')}:${h.n_running}▶`).join(' ')}</a>`
     + `<a class="chip" href="#orphans-anchor">no worklist line ${s.n_orphans}</a>`;
 
   const q = $('#q').value.trim().toLowerCase();
@@ -276,6 +291,34 @@ function render(s) {
             <td class="mono">${esc(r.rows)}${tgt}<div class="sub-mono">${esc(r.pct)}${r.eta && r.eta !== '-' ? ' · ETA ' + esc(r.eta) : ''}</div></td>
             <td>${resultCell(r)}</td>
             <td>${noteCell(r)}</td></tr>`;
+      }).join('');
+
+  const fleet = s.remote_fleet || {hosts: []};
+  $('#fleet').innerHTML = fleet.hosts.length === 0
+    ? '<p class="count">No fleet mirrors on disk.</p>'
+    : fleet.hosts.map(h => {
+        const pullOld = h.pull && h.pull.age_min != null && h.pull.age_min > 12;
+        const pull = !h.pull || h.pull.blind
+          ? `<span class="badge b-blind" title="${esc((h.pull || {}).blind || '')}">PULL BLIND</span>`
+          : `<span class="badge ${pullOld ? 'b-warn' : 'b-ok'}">pull ${esc(h.pull.age_min)}m ago${pullOld ? ' — MIRROR OLD, every row below is at least this stale' : ''}</span>`;
+        const row = r => {
+          const tgt = r.target ? ` <span class="vs">/ ${esc(r.target)}</span>` : '';
+          const hbAge = r.hb_age_min != null ? `hb ${esc(r.hb_age_min)}m` : 'no heartbeat';
+          const eta = r.eta_min != null ? ` · ETA ~${esc(r.eta_min)}m` : '';
+          return `<tr onclick="location.href='/shard?id=${encodeURIComponent(r.shard)}'" style="cursor:pointer">
+            <td class="mono"><a href="/shard?id=${encodeURIComponent(r.shard)}">${esc(r.shard)}</a></td>
+            <td>${stateBadge(r.state)}</td>
+            <td class="mono">${r.rows != null ? esc(r.rows) : '—'}${tgt}<div class="sub-mono">${hbAge}${eta}</div></td>
+            <td style="font-size:12px">${r.treatment_ver ? esc(labText(r.treatment_ver)) + ' <span class="vs">vs</span> ' + esc(labText(r.control_ver)) : '—'}</td></tr>`;
+        };
+        const prior = (h.prior || []).length === 0 ? ''
+          : `<details style="margin:6px 0 14px"><summary class="count" style="cursor:pointer">${h.prior.length} artefact(s) from earlier programmes on this box (not in its current worklist)</summary>
+             <div class="scroll"><table><thead><tr><th>Shard</th><th>State</th><th class="mono">Progress</th><th>Arms</th></tr></thead>
+             <tbody>${h.prior.map(row).join('')}</tbody></table></div></details>`;
+        return `<h3 class="mono" style="margin:14px 0 6px">${esc(h.host)} ${pull}
+            <span class="count">· ${esc(h.n_running)} running · ${esc(h.n_queued)} queued · worklist gen ${esc(h.worklist_generated || '?')}</span></h3>
+          <div class="scroll"><table><thead><tr><th>Shard</th><th>State</th><th class="mono">Progress</th><th>Arms</th></tr></thead>
+          <tbody>${(h.rows || []).map(row).join('') || '<tr><td colspan="4">worklist unreadable</td></tr>'}</tbody></table></div>${prior}`;
       }).join('');
 
   const ob = $('#orph tbody');
