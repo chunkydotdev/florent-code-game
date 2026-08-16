@@ -62674,3 +62674,120 @@ tuning problem.** ⇒ **A two-clock sweep cannot resolve a missing clock 2; only
 road's status can.** Recorded as a stated limit of the sweep rather than as a defect to fix.
 
 --- 2026-08-16T08:10:40Z RESEARCH s46 — **SPAWN ANNOUNCED: one opus agent on the kladde CONVERSION failure** (the decode's surprise). Mechanism hunt from the corpus, contrasted against the r132/r148 rush deaths. **Output contract: a `QUEUE.md` row with the four parts + GREP, or an explicit nothing — no survey.** Read-only; no matches fired.
+
+--- 2026-08-16T08:12:53Z (`date -u`) **SIDE LANE s45 — SUBAGENT RELAY 2 of 2: `DEFENCE_ADMISSION_BAR` VINTAGE + ENFORCEABILITY AUDIT across all 86 preregs. NO LIVE VINTAGE DRIFT. But the bar is enforced by nothing, and the cleanest FAILING case is the SHIPPED BOT'S OWN PREREG. Plus one of my agent's headline findings CORRECTED before publication.** ---
+
+## ✅ THE DRIFT CHECK IS CLEAN — stated plainly, not padded
+
+**Exactly two preregs locked after the V4 ruling (2026-08-16T05:36:10Z): `LEG-fieldcal` and
+`BRIEF-fieldcal`, both added 05:59:01Z, 23 minutes after. Both register RMST₃₀₀ compliantly**
+(`LEG-fieldcal:90` — *"pooled ITT RMST at horizon 300… any game not ending in our core-kill scoring
+the full 300"*, falsifier stated in RMST units at :203/:333, horizon discipline at :536-538).
+**No live drift flag. Nothing to escalate.**
+
+## ⛔ HEADLINE: THE BAR IS ENFORCED BY NOTHING, AND THE FAILING CASE IS THE INCUMBENT
+
+s44 don't-inherit item #3 said this; **it is now confirmed by anchored negative greps and it has a
+worked pair.**
+
+    grep -rn "DEFENCE_ADMISSION_BAR" tools/   ->  0
+    grep -rn "RMST" tools/                    ->  0
+    gate.py: enforces LINE_DIRS only; never reads DEFENCE_ADMISSION_BAR or PLAY_DEFENCE
+    auto_gate.py: BARS.tsv game-share futility only — its own header rules out a kill-round bar
+
+⭐ **AND THE CHEAPEST HOME IS NOT `gate.py`.** `grep -l gate.py tools/*.sh` returns six overnight
+runners and **every hit is a COMMENT** — no runner invokes it. `gate_invocations.tsv` settles it:
+**27 `gate.py` invocations against 174 `prereg_check.py`**, the latter run on **84 of 86** prereg
+files, **including five times on `LEG-fieldcal` between 05:54:54Z and 06:00:47Z — immediately before
+its 05:59:01Z lock.** ⇒ **`prereg_check.py` is the de-facto gate; a new `RULES` entry there would be
+EXERCISED rather than merely committed.**
+
+**BOTH VERDICTS, SAME KNOB FAMILY (`LOKI_SEAL_TI_FLOOR`) — verified by me directly, not relayed:**
+
+| | |
+|---|---|
+| **PASSES** | `SCREEN-sealfloor6-2026-08-14.md` — declares the plank defensive (:251-253), registers threshold **and** direction (*"the 95% CI on Δ median kill round, paired by seed, EXCLUDES +10 rounds"*, :255-258), restates as an exclusion before DEFF, pre-commits `UNRESOLVED ⇒ RESTRICTION` |
+| **FAILS** | `SCREEN-sealrepair-2026-08-14.md:31` — the entire registration is **`Kill-round paired-seed rides.`** No threshold, no direction, no exclusion form, no default. **Its treatment is `bots/_v223sealrepair` — the current `INCUMBENT`.** |
+
+⇒ **A guard with only one reachable verdict is not a guard. This one has both, and the failing case
+is the bot we ship.**
+⚠ **Design constraint the tool documents about itself:** `check_presence` (:622-628) warns that
+`attested=True` rules verify presence only and *"a placeholder value ('TBD', 'see below') passes"* —
+**which is exactly what `"Kill-round paired-seed rides."` is.** The rule must live in
+`check_arithmetic` (:635) requiring a NUMBER and a DIRECTION, and gate on a **declared**
+`DEFENCE CLASS:` key via the existing `when=lambda f:` mechanism (:542) — because *"is this plank
+defensive"* is a judgement and cannot be greped, but a DECLARATION can be required.
+
+## ⚠ THE GAP CLASS — SIX PREREGS NAME THE RIDER AND REGISTER NO BAR
+
+`SCREEN-sealsweep:30-31` (*"a seal that slows our own kill violates the defence bar"* — **names the
+bar and still registers no number**) · `SCREEN-sealrepair:31` · `SCREEN-seal139:22` ·
+`SCREEN-mapseal-combo:35` · `SCREEN-nestshot:37-38` · `SCREEN-gbns-l4repair:26`. **All the same
+knob family that `SCREEN-sealfloor6` itself classifies as *"a defensive/denial asset"*.**
+
+## ⛔ AND I CORRECTED MY OWN AGENT'S HEADLINE BEFORE PUBLISHING IT — SECOND AGENT OVERREAD TODAY
+
+The agent reported, as finding #1: *"`PROGRAMME.md:21` is two vintages stale… the machine-readable
+authority declares the collider-carrying form that was explicitly retired."* **I checked and this is
+an OVERREAD. Withdrawn.**
+* **The parsed field is a BOUNDARY LABEL, not an estimator specification.** Magnus's r300 boundary is
+  **unmoved across V2→V3→V4**; what changed three times is the ESTIMATOR that scores it.
+* **The V4 section deliberately does not rename it** — `PROGRAMME.md:504-508` says *"THE OPERATIONAL
+  ESTIMATOR IS ITT RMST₃₀₀"* and touches no field name.
+* **`gate.py` reads `DEFENCE_ADMISSION_BAR` ZERO times** — by the agent's own §4 — so there is no
+  parser to mislead. **A field nothing parses cannot declare a retired estimator to a machine.**
+⇒ **What survives is smaller and real: the label carries no signal that the estimator is V4**, so a
+reader grepping only the parsed block learns the boundary and not the rule. **A documentation
+weakness, not a contradiction. `PROGRAMME.md` is edit-on-Magnus's-directive-only, so this is
+flagged and not fixed.**
+⭐ **Same mechanism as the CAL418 flag I killed an hour ago: the agent read ONE surface (the field
+name) and reported a property of the RULE SYSTEM.** Both briefs said *anchor your greps*; **both
+failures were anchored correctly and still wrong, because the defect is scope, not precision.**
+
+## ⚠ ONE LABELLING DRIFT, AND I HAVE TOUCHED THE FIGURE MYSELF — SO I NAME IT AGAINST MY OWN NOTE
+
+`results.tsv:403` types **BODYBLK** as `cancellation`: *"AUTO-STOP at MARK-2700 n=3562… SHARE
+47.30% [45.67,48.94]"*, against the prereg's registered **`BOUNDARY: 10800 games`** (:214). Tape
+holds **3,575 rows.** But `coordination.md:57498/:57570/:58099` refer to it as **"a confirmed real
+negative (47.26%)"** beside genuinely complete arms.
+⇒ **An under-powered futility auto-stop is not a verdict, and this repo has its own rule saying so.**
+The CI does exclude 50 and the arm is very likely a loser — **but the registered exclusion claim
+never got its n, and "confirmed" is the word doing unearned work.**
+⛔ **MY OWN EXPOSURE, stated so nobody cites it as endorsement:** I quoted `47.258%, n=3574` in
+`4865dce7` **as an IDENTITY CHECK** — to prove a shard tagged `BODYBLK` was the arm the prereg
+called `BBLOCK70`. **That use is legitimate and is not a verdict claim**, and I am drawing the line
+explicitly because the same number does both jobs and only one of them is licensed.
+
+## THREE SMALLER ITEMS, EACH VERIFIED
+
+1. **`CLAUDE.md` NEVER RECEIVED V4.** `grep -c RMST CLAUDE.md` → **0**; :395-398 states V3 in its
+   own voice with a pointer to `PROGRAMME.md` (the D22 hedge-or-pointer rule honoured).
+   ⇒ **A lane booting today holds V2, V3 or V4 depending on which file it reads, and all three are
+   current and committed.** The pointer is what keeps this a gap rather than a falsehood.
+2. **`HANDOVER.md:82` IS HALF-STALE.** It says *"AGENTS.md… stale vintage-A text at :400-402"* —
+   **false as of this morning's resync; the twin carries V3, identical to `CLAUDE.md`.** The
+   *regeneration-mechanism-unknown* half stands. **Not mine to edit.**
+3. **THE VINTAGE RULE HAS A DAY-VS-MOMENT AMBIGUITY.** `PROGRAMME.md:517-519` anchors on the MOMENT
+   (*"from now on"*); the certification relay at `coordination.md:59581` reads *"locked after
+   TODAY"*. **Exactly one file sits in the gap and it is a never-locked draft, so it is harmless —
+   and it will not stay harmless the next time a rule changes in the small hours.**
+
+## ✅ BODYAWR — THE VINTAGE RULE'S ONE LIVE CASE, RE-CONFIRMED
+
+**`BODYAWR.tsv` holds 10,801 rows against a registered `BOUNDARY: 10800`; `results.tsv`
+`bodyawr-gate2700` explicitly says it is NOT the keep/drop verdict; `HANDOVER.md:77-80` still lists
+it as owed.** Registered vintage **V1**; on its own locked falsifier (*"C-KILL rises by ≥10 rounds"*)
+it reads **−2 rounds (205 vs 207) and does not fire.** **My predecessor's certification stands
+unchanged and I am not disturbing it.**
+⭐ **And the audit adds a point worth one line in the handover: the SAME PLANK is now governed by two
+vintages at once, correctly** — V1 locally under `SCREEN-bodyaware`, V4 on the live leg under
+`LEG-fieldcal`. **A `BODYAWR` number quoted without its surface conflates them.**
+
+## ⭐ AND THE BEST THING IN THE AUDIT IS A TEMPLATE, NOT A FLAG
+
+**`SCREEN-sealfloor6:270-275` anticipated the collider correction by two days** —
+*"`overnight_read.py:556-558` prints median kill round GIVEN a kill… A change in which games end in a
+kill moves that median without anything getting faster or slower"* — written **2026-08-14T20:25:37Z**
+and pre-committed as a reporting rule. **The bar's own history rediscovered it on 2026-08-16 at
+05:19:38Z.** ⇒ **If the mechanised rule gets written, that file is the template rather than a fresh
+design.**
