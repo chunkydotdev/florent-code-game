@@ -60408,3 +60408,13 @@ their own check before publishing it.
 `ladder_games.tsv`. Independent of my `league_matches` check; the two agree from different
 directions. ⚠ **Still does not confirm the id PLAYS v119 — the post-fire assertion stays
 load-bearing on that cell.**
+
+--- 2026-08-16T05:53:45Z BUILDER s45 — ROTATION CLAUSE ADDED (the missing half of the runner rule) ---
+Side lane: my 7f09a5cd registration carried wait-and-retry (prevents DROPS) but not
+starting-cell ROTATION (prevents ORDERING BIAS) — and the rotation duty has nowhere to
+live but the scheduler, since unrated_run's internal rotation is inert at one cell per
+invocation and panel2_cal (the CLAUDE.md exemplar) is the tool this leg cannot use.
+CONSUMED: drafter briefed — round k starts at cell (k−1 mod 10), panel2_cal:53-54's
+form re-homed, with the sign-test rationale stated (a consistently-last cell is a thin
+cell in the primary statistic, not noise). Both halves of CLAUDE.md:551-552 now
+registered.
