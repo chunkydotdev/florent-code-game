@@ -67260,3 +67260,54 @@ magnitude is unmeasured.** Naming it is the contribution.
 ✅ **The builder has already filed the remote-cancel gap as wrap debt and declined to invent a
 compound remote cancel** (`auto_gate.py:123` records that reasoning). **This adds the second-order
 consequence to that debt, not a new ask.**
+
+--- 2026-08-16T14:4xZ ⛔ **SIDE LANE s47 — CORRECTING MY OWN `#79` RE-PRICE: I MIS-CITED THE RADIUS. Research is right, my recommended plank is mostly dead, and their surviving fact is better than mine.** ---
+
+**I wrote** (audit §5, and repeated it to both lanes): *"`doctrine.py:122` says in writing that the
+band beyond `d²≤36` is unowned"* ⇒ *"the real plank is a radius/role extension."*
+
+⛔ **THE CITATION IS WRONG.** `doctrine.py:121-125` verbatim: *"The melee recall in `_builder` only
+reaches bots within `dist^2 <= 20` of our Core and no role pursues an intruder working farther out…
+**the interceptor owns only the band beyond it**."* **That is `d²≤20`, not 36.** I attached the
+"unowned" sentence to the wrong radius — **and `main.py:469` scans `> 36: continue`, so the 20→36
+band the doctrine assigns to an interceptor is ALREADY COVERED by `_nearest_home_intruder`.**
+⇒ **Research's "no radius gap" is correct and my recommended plank buys nothing there.**
+
+**ONE THING I WILL NOT CONCEDE, because I verified it and it is unchanged:** `def _intercept` is
+**0 in all four files** (control `def _home_defend` = 1). **The doctrine describes an interceptor
+that does not exist as code**; what exists is `_nearest_home_intruder` at `d²≤36`. So the 20→36 band
+is covered *by a different component than the prose names*, and **beyond `d²=36` remains uncovered
+by anything** — the doctrine's band-beyond-20 is unbounded and the implementation stops at 36.
+⚠ **That is a narrower and much weaker claim than the one I published, and it is not a plank.**
+
+✅ **AND RESEARCH'S SURVIVING FACT IS STRONGER THAN MY WHOLE RE-PRICE — it is an ENGINE fact, not a
+code-coverage one:** builder `attack` hits *the building* on an orthogonally adjacent tile
+(`CLAUDE.md` API reference), **and a builder bot is a unit, not a building** ⇒ **our chase provably
+cannot kill what it catches.** That is `#79`'s durable content, it needs no radius argument, and it
+is theirs.
+
+**MECHANISM (Q3, unchanged for the fourth time today): I read ONE comment block and reported a
+property of the tree, and the radius in my sentence was never in the sentence I was reading.**
+Caught by a peer, not by me.
+
+---
+
+## ⚠ AND A POSTURE CHANGE ON MYSELF, AGAINST MAGNUS'S MOMENTUM RULE
+
+Verbatim: *"every tooling that needs fix goes to the end of the session at wrap, unless it breaks
+something that makes our loop for finding better bots. We are losing momentum, nothing else matters
+than making a better bot."*
+
+**Scored honestly against my own output this session:**
+* ✅ **IN the loop:** the QUEUE `GREP:` audit (it found `#79` would rebuild shipped code and — via
+  research — that `#43` is **leg-invalidating**, since three `raid.py` barrier sites mean the
+  proposed barriers-on/off arms cannot be built by toggling the seal without the two SALT paths
+  contaminating the control). The `TREND_FLOOR` arithmetic (the floor decides which arms survive
+  screening). The stop-loss fix verification.
+* ⛔ **NOT in the loop:** my carry-forward re-derivation, and this correction. **Necessary, and
+  process.**
+
+⇒ **For the rest of this session I bias to flags that BLOCK OR CORRUPT A LEG** — a bar that cannot
+fire, a control that is contaminated, a prereg scored on the wrong estimator, a leak at a pairing
+boundary. **Process findings get held for the wrap rather than written up as they occur.** The
+`#43` class is the model: it kills a leg design before anyone builds it.
