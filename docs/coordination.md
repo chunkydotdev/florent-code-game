@@ -59589,3 +59589,69 @@ case. AGENTS.md: no generator found under tools/ — regeneration path unknown, 
 back to the side lane as owed-with-unknown-mechanism. The 146-shard calibration living
 in prose with no committed tool: acknowledged — folding it into a committed instrument
 rides with the prereg_check mechanisation item.
+
+--- 2026-08-16T07:3xZ (`date -u`) RESEARCH s45 — ⛔⛔ **RETRACTION + THE DAY'S BIGGEST NUMBER. THE "55-CLASS KILLS +17-43 ROUNDS LATER" IS A CONDITIONING ARTEFACT, AND THERE IS A 47pp SEAT ASYMMETRY ON A SYMMETRIC MAP.** ---
+
+## 1. ⛔ WITHDRAWN: "THE BAR PASSES THE ARMS IT EXISTS TO CATCH"
+The side lane established that my `SPEED` column (share of a side's KILL-WINS landing by r300) is
+collider-contaminated: **corr(denominator asymmetry, SPEEDdiff) = −0.79 among winning arms**, because
+a plank that converts marginal LOSSES into WINS adds precisely the hard slow games to its own
+numerator. They were right, and more right than I allowed for.
+
+**The unbiased instrument — ITT RMST: mean kill time over ALL games, non-kill scoring the horizon,
+no conditioning of any kind** (the thing I built this morning for FIRE ORDER #1 and then reached
+past):
+```
+shard          n   RMST_300 diff      95% (DEFF .98)   SPEED (biased)   verdict
+NULL114     5408      +0.42          [-1.96,+2.81]        +0.19         flat   <- control OK
+BODYAWR    10800      -6.84          [-8.61,-5.08]        -1.87         FASTER
+AWRLNCH     5400      -6.43          [-8.88,-3.99]        -0.23         FASTER
+MIX280mix4  5400      -0.87          [-3.18,+1.43]        -4.85         flat
+MIX281mix4  5400      -0.29          [-2.56,+1.99]        -6.84         flat
+MIX284mix3  5400      +0.21          [-2.09,+2.51]        -6.35         flat
+EXILE0      5408      +6.23          [+3.85,+8.61]        -1.51         SLOWER
+NEG114      5408     +33.27         [+30.93,+35.61]      -11.09         SLOWER
+```
+⇒ **THE 55-CLASS LEADERS ARE FLAT. `BODYAWR` AND `AWRLNCH` ARE SIGNIFICANTLY *FASTER* (−6.8, −6.4
+ROUNDS) — which every conditioned metric hid.** RMST scores a loss as the full horizon, so
+converting a loss into a slow win is correctly an IMPROVEMENT; that is exactly what the MIX arms do
+and why they read as slowing when they were not.
+⛔ **THEREFORE THE `+17-43 ROUND KILL REGRESSION` FRAMING IS AN ARTEFACT.** It cancelled `TRIO`,
+it sits in `QUEUE #71`'s amendment, it drove today's bar re-pricing, and I relayed it to the builder
+and to Magnus. **The exchange-rate result (1.57pp speed per pp of rate; r²=0.934 win-share
+dominance, side-lane certified over 146 shards) still stands as a fact about the ESTIMATOR — it
+simply no longer implicates any shipped arm.**
+⚠ **HORIZON SENSITIVITY, the one thing that could revive the old reading, so it is stated:** the MIX
+arms read **+1.35/+1.75/+1.87 at H=250**, **−0.87/−0.29/+0.21 at H=300**, **−8.67/−7.43/−5.80 at
+H=400**. Marginally slower under a tight window, faster under a loose one. **At NO horizon are they
++17-43 rounds slower.** `BODYAWR`/`AWRLNCH`/`NULL114`/`NEG114` are sign-stable across all three.
+✅ **Boundary convention `<300` vs `<=300`: identical to 2dp. DECLARED this time** — the defect the
+side lane caught in the hazard doc four hours ago, closed by checking rather than by asserting.
+
+## 2. ⭐⭐ THE MAP-PROPERTY HUNT IS A CLEAN NEGATIVE — AND ITS CONTROL FIRED
+**0 of 26 properties have a CI excluding zero** (best `ore_frac` r=−0.472 [−0.793,+0.053]).
+⛔ **The nonsense control — ALPHABETICAL INDEX OF THE MAP NAME — reads r=+0.525 [+0.018,+0.817] and
+OUTRANKS ALL 26 REAL PROPERTIES.** Permutation null puts our best at **P=0.608**; a synthetic
+positive control returned r=0.993, so the instrument is not stuck on null.
+⇒ **AT n=15 MAPS THIS METHOD CANNOT DISTINGUISH A REAL PREDICTOR FROM A NONSENSE ONE. ROAD CLOSED
+— do not spend another agent on map-property regression.** *(This is what a control is for: without
+the alphabetical-index cell, `ore_frac` at r=−0.472 would have been written up as a lead.)*
+
+## 3. ⭐⭐ THE TWO THINGS THAT FELL OUT, AND THEY ARE WORTH MORE THAN THE QUESTION ASKED
+* **SEAT×MAP ASYMMETRY REACHES 47.2pp (glacierkeep, z=14.5) ON A MAP VERIFIED EXACTLY SYMMETRIC IN
+  TILES AND CORES** ⇒ **it is OUR CODE, not the terrain.** Answers the open §3R-d question in
+  `SEAT-AND-MAP-ASYMMETRY-2026-08-11.md`. The 53.70% headline stays unbiased (the fixture is
+  seat-balanced) — **but a 47pp self-inflicted seat gap is the largest single number on this board,
+  and against Magnus's 60±2 gate with a +4.8pp shortfall it is the most promising lead of the day.**
+* ⛔ **A BLIND PREDICTION WAS REFUTED AND IT KILLS THE PLANK'S ORIGIN STORY.** An agent given only
+  the two trees and NO results predicted `bodyaware` works via bot density ⇒ effect largest on
+  SMALL maps. **Measured: 30×30 reads 55.67% vs area≤400 at 52.78% — +2.89pp [+0.76,+5.02],
+  OPPOSITE SIGN.** ⇒ the congestion rationale is dead, on top of `#63`'s arrival rationale being one
+  map. **We now know two things `bodyaware` is NOT doing and still not what it IS.**
+* All 15 maps verified live in `MAP_CODES` — no inert cells.
+
+## 4. THE SESSION'S OWN LESSON, since three of my four primaries needed a peer to correct them
+Collider (fire order) → undeclared convention (hazard doc) → conditioned SPEED (this). **All three
+are the same fault in different clothes: a denominator chosen after the treatment can move it.**
+**Every one was caught by the side lane reading the DESIGN, never by anyone re-checking the
+arithmetic — which was right every time.**
