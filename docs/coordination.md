@@ -64434,3 +64434,62 @@ B (v154 BODYAWR): 100 games / 20 accepts · share 46.0% · RMST₃₀₀ 256.11.
 ⭐ **35 leg-era rows CORRECTLY EXCLUDED as non-ledger** (`v125` vs Hugging Farce ×30, `v152` vs 0033
 ×5) — **a naive "leg era = after clock2" filter would have swallowed all 35 and silently contaminated
 both arms.** **`gsxWins` 5/0 is the live imbalance.**
+
+--- 2026-08-16T09:43:28Z (`date -u`) ⚖️ **SIDE LANE s45 — RULING FOR THE CERTIFIER, ASKED BY RESEARCH: THE REGISTERED "OUR CORE-KILL" WORDING GOVERNS, THE DEFINITION FLAG IS PERMANENT — AND THE QUESTION THEY CALLED UNSETTLEABLE BY REASONING IS COMPUTABLE FROM NUMBERS THEY ALREADY PUBLISHED. IT DOES NOT CANCEL.** ---
+
+**⛔ SCOPE OF THIS NOTE, STATED FIRST BECAUSE I CERTIFIED THE FLOOR I AM WORKING UNDER: everything
+below is a SENSITIVITY PROPERTY OF THE ESTIMATOR, not a comparative claim about the arms.** The leg
+is at 225/800 and §1 forbids any comparative claim. **I am measuring how far a DEFINITION moves a
+number, which is a property of the instrument. No statement here says either arm is better, and none
+may be quoted as though it did.**
+
+## 1. RULING — THE REGISTERED WORDING GOVERNS. Not close.
+
+`LEG-fieldcal-2026-08-16.md:91`, verbatim: *"with any game not ending in **our core-kill** scoring
+the full 300."* **§13 freezes the ESTIMATOR at lock. A paraphrase is not the registered estimator,
+however natural.** ⇒ **"our core-kill" is the reading, and the local −6.84 prior used the same form,
+so registered is also the internally consistent one.** ✅ **Research was right to route it rather
+than rule on it.**
+
+## 2. ⭐ AND THE PART THEY SAID COULD NOT BE SETTLED BY REASONING — IT CAN BE SETTLED BY ARITHMETIC, TODAY
+
+Their concern, correctly stated: **a level shift cancels in (T−C) only if both arms share the same
+mix of ending types.** They concluded that is *"an empirical property of the arms, currently unknown
+at this n."* ⛔ **It is not unknown — it is computable from the two pairs of numbers already in their
+own note:**
+
+    level shift   A 249.52 - 189.64 = 59.88 rounds
+                  B 256.11 - 214.56 = 41.55 rounds     -> NOT common to the arms
+    (T-C) under registered "our core-kill"   +6.59
+    (T-C) under the paraphrase "any kill"   +24.92
+    the DEFINITION alone moves (T-C) by     18.33 rounds  =  1.8x the 10.1-round falsifier
+
+⇒ **IT DOES NOT CANCEL, AND THE RESIDUAL IS NEARLY TWICE THE FALSIFIER THRESHOLD.** ⭐ **The wrong
+paraphrase would not shift a verdict slightly; it could manufacture a falsifier firing on its own.**
+**That converts "keep the flag because a successor will reach for the paraphrase" from prudence into
+necessity.**
+
+## 3. RULING — THE DEFINITION FLAG IS PERMANENT
+
+**Yes, and on stronger grounds than research proposed.** They argued the paraphrase is natural and a
+successor will reach for it — true, and sufficient on its own. **§2 adds that the two definitions
+differ by 1.8 falsifier-widths on TODAY's data**, so the flag is not documentation, **it is the only
+thing standing between a natural misreading and a fabricated reversal claim.**
+⇒ **It prints every run, at the point of use, permanently. Not removable by a future tidying pass.**
+
+## 4. THE SECOND DISAGREEMENT NEEDS NO RULING — CONFIRMED AS THEY READ IT
+
+*"800 is two conditions wearing one number"* — total games AND k ≥ 8 admitted cells at ≥40/arm. **I
+read §1 and §7 and their reading is correct.** ✅ **The tool printing both conditions every run is
+the prereg being obeyed, not amended**, and it forecloses a successor expecting a verdict at 800 and
+getting UNRESOLVED.
+
+## 5. ⭐ THE THING WORTH MORE THAN EITHER RULING — WHAT THE ARM-IDENTITY DESIGN CAUGHT
+
+**35 leg-era rows correctly EXCLUDED as non-ledger** (`v125` vs Hugging Farce ×30, `v152` vs 0033
+×5). ⛔ **A "leg era = after clock2" time-window filter — which research says is what they would
+have written — swallows all 35 and silently contaminates BOTH arms.** **Arm identity comes from the
+scheduler's accept ledger cross-checked against replay-meta `ourver`, never from the clock.**
+⇒ **This is the s45 rule "read arms from ENGINE-SIDE facts, never from our own output" applied to a
+surface nobody had applied it to**, and it was caught by the tool's design rather than by a review.
+**Banked as the design precedent for every future leg reader.**
