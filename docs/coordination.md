@@ -60892,3 +60892,49 @@ base is a measurement onto a snapshot"*, inherited from my predecessor's s43 Q4)
 audit someone else's tree read.** ⇒ **the number was true at 06:08:09Z and false at 06:11:20Z, and
 nothing in my published sentence carried the timestamp that would have made that visible.**
 **The correction of my own freshness flag failed the freshness rule.**
+
+--- 2026-08-16T10:3xZ (`date -u`) RESEARCH s45 — **QUEUE STOCKED ON MAGNUS'S STEER (solo arms for >60), AND A `queue_check` FOOTGUN NAMED** ---
+
+Magnus, via the builder: *"we need to bank some more ideas and solo arms that we can use for
+combinations that will take us above 60"* — **solo winners, not more permutations of the existing
+five planks.** Two rows stocked, **both by amending existing rows rather than adding new ones**,
+because the GREP found the ideas already had homes. Unblocked count **53 → 54**.
+
+## 1. ⭐⭐ `#60` REVIVED — closed on SCALE, and SCALE WAS THE WRONG CURRENCY
+`Jython` (**#1, rating 2134, below us three days ago**) runs a **DISPOSABLE LAUNCHER LADDER**: build
+a launcher one tile ahead, get thrown ~5 tiles, build the next, **demolish the spent one**.
+```
+median launcher LIFETIME   Jython v149  1 round    v137  5 rounds
+                           US v140     42 rounds   v152 96 rounds
+builds / destroys per game Jython v149  5.66 / 3.81      US v140  2.23 / 0.37
+first build within d2_enemy<=8 of the ENEMY CORE:
+                           Jython v137  r7 (92% of games)   v149  r7 (100%)
+                           US v140     r28 (94%)            v152  r32 (95%)
+```
+⇒ **FOUR TIMES FASTER TO THE ENEMY CORE, fastest in the league (field median r30).**
+⛔ **AND IT IS NOT WHAT THEY CHANGED — the ladder is present at BOTH v137 and v149, unchanged across
+their +306 day. It is the TRANSPORT UNDER the change** (the change was the payload: gunner→sentinel,
+forward sentinel arriving r95→r28 in 44%→89% of games).
+**GREP: `ct.destroy(` and `can_destroy` occur ZERO times in `bots/_v223sealrepair`** — the ladder is
+not unused, it is **unimplementable** in the current tree; and `main.py:613`'s `LAUNCHER_MIN_RND=160`
+blocks a ladder that must start at r1 a second time. **Metric: median round of our first build within
+`d2_enemy<=8` of the enemy core (r28–32 now; r7 demonstrated). Fixture: solo screen n=5,400 vs v140.**
+
+## 2. `#8` REDIRECTED — its fixture already ran and is NULL; the phenomenon is real and bigger
+**`SR1NULL`/`SR2NULL` vs `SRNULL0` (2026-08-11): CARDINALS share −3.00pp, consistent with ZERO** ⇒
+**the scan-order hypothesis is refuted and must not be re-queued.** But the seat effect is
+**+6.28pp on byte-identical self-play, z=+16.24, n=66,572**, flipping by map, with a
+**compass-direction pole** (north core 58.39% on N–S maps, z=+11.2) — and the measured carrier is
+**`main.py:289`'s `(x*17+y*31+…)%97` spawn-ring hash, +4.84pp [+0.98,+8.70]**, not this row's line.
+**The s43 selftest passes 11/11 and cannot see it: it asserts CANONICALISATION, not OUTCOME.**
+
+## 3. ⛔ FOOTGUN, FOUND BY WALKING INTO IT — `STATUS: LIVE` BLOCKS A ROW AS HARD AS `STATUS: WITHDRAWN`
+`queue_check` blocks on the **literal `STATUS:` token regardless of its VALUE**
+(`tools/queue_check.py`, "A row is blocked only if it carries an explicit `STATUS: <reason>` token").
+**My first revival set `STATUS: WITHDRAWN` → `STATUS: LIVE`. The row then READ as revived and stayed
+INVISIBLE to the gate — the worst of both states, and the count did not move (53 → 53).** Fixed by
+removing the token entirely and keeping the history in prose; count went **53 → 54**.
+⇒ **DURABLE: to revive a row you DELETE the `STATUS:` token. You never set it to a live-sounding
+value.** ⚠ **And the general hazard: a field whose VALUE is ignored but whose PRESENCE is
+load-bearing will be set to a wrong value by someone eventually — I did it within a minute of
+reading the tool's own docstring.**
