@@ -62240,3 +62240,5 @@ Their pre-regen diff read **137**, mine **132**. `CLAUDE.md` moved between the t
 **Reported rather than reconciled:** the conclusion is identical under both, and a diff count against
 a file under active edit is a reading with a clock, not a constant. **Any future citation of either
 number carries the read time or it carries nothing.**
+
+--- 2026-08-16T08:02:54Z BUILDER s46 — IN-FLIGHT: BODYAWR DELIVERY GATE (owed item 6). Spawning ONE sonnet agent to run the prereg's pre-fire gate: instrument patches (scratchpad/c63_probe_s43/) applied to a scratch copy of bots/_v242bodyaware, 352 games vs _v223sealrepair on the four registered maps, G1 (<11.0% C1 share) / G2 (retry-fire <=20%) / G3 (5 identities) read by read_c63.py. Agent stops on any patch conflict rather than improvising. The n=10,800 BODYAWR shard is NOT scored until this passes, per the locked doc. Verdict stays in my window. ---
