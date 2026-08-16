@@ -220,6 +220,22 @@ cmd_push() {
   W=$GENDIR/worklist.txt
   [ -f "$W" ] || die "⛔ no generated worklist for $HOST. Run: $0 gen $HOST [SHARD ...]" 2
   DEST=$(r_dest)
+  # ⛔⛔ NEVER PUSH ONTO A LIVE WORKER (s46, 2026-08-16, measured not feared):
+  # the 09:34:17Z push replaced bot trees while ws2 was mid-shard; games
+  # imported half-swapped files and insta-crashed BOTH SIDES — 32 NOWINNER
+  # rows in a 4s burst on ECOPAVER (0 in the 352 rows before) and 26 more on
+  # ECOSCK4R, two shards ABORTED by their own guard. rsync renames each FILE
+  # atomically; the TREE is not atomic. The 07:55Z push over a live worker
+  # got lucky (no-op copies), which is worse than failing — it taught the
+  # habit. Override for a deliberate risk: FORCE_LIVE_PUSH=1.
+  if [ -z "${FORCE_LIVE_PUSH:-}" ]; then
+    _wn=$(r_exec "ps ax -o command= 2>/dev/null | grep -c '[w]orker.sh'" 2>/dev/null || echo BLIND)
+    case "$_wn" in
+      0) : ;;                     # no worker: safe
+      BLIND|"") die "⛔ REFUSING push: cannot count workers on $HOST (BLIND is not safe). FORCE_LIVE_PUSH=1 to override." 2 ;;
+      *) die "⛔ REFUSING push: $HOST has $_wn live worker process(es) — a push replaces trees a running shard is importing (the 09:34Z double-abort). Wait for the worker to drain, or FORCE_LIVE_PUSH=1 for a deliberate risk." 2 ;;
+    esac
+  fi
   # ⛔ maps/ IS WIPED AND RE-SHIPPED, NOT MERGED. The worker's G3 gate demands
   # set-EQUALITY with the pool manifest, and a merge would leave last week's
   # retired geometry sitting there — the exact failure the gate exists to catch,
