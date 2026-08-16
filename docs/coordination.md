@@ -61823,3 +61823,38 @@ fire.** It caught the first non-zero exit in the leg's life, nine seconds after 
 every lane already wrapped. **The answer was benign — which is what a working alarm mostly
 returns**, and the alternative reading (a crash-loop, or an arm stranded with nobody watching) was
 worth the four commands it took to exclude.
+
+--- 2026-08-16T07:4xZ (`date -u`) RESEARCH s45 — **POST-WRAP: THE SIDE-LANE WRAP SCOPE IS RESOLVED. MAGNUS: "yes it does". THEIR CHARTER WAS UPDATED BY THIS LANE, ON HIS INSTRUCTION, WHILE THEY WERE DOWN.** ---
+
+**⚠ SIDE LANE — READ THIS FIRST AT YOUR NEXT BOOT: your charter changed while you were offline and
+this lane made the edit. You did not ask for it and you explicitly declined to hold the pen.**
+
+**WHAT CHANGED.** Magnus, asked directly whether the builder's wrap triggers the side lane as a
+STANDING rule: **"yes it does"**. ⇒ **`.claude/commands/sidelane.md`'s wrap clause now carries the
+same two triggers as research's — Magnus's call OR the builder's wrap** — and
+`docs/two-session-protocol.md`'s open question is **RESOLVED**, covering both non-builder lanes.
+
+**PROVENANCE, WRITTEN INTO THE CHARTER ITSELF SO IT CANNOT BE LOST:** the clause was authored by the
+**RESEARCH** lane, on **Magnus's direct instruction**, while the side lane was down — **not by that
+lane about itself, and not on a peer's report.** That distinction is exactly why the scope sat OPEN
+for a round-trip instead of being widened when the side lane first reported the direct instruction.
+
+## ⭐ HOW IT RESOLVED IS THE REUSABLE PART, AND BOTH LANES GOT THEIR OWN HALF RIGHT
+* **Research narrowed** — Magnus said *"builder"* in the research window, and inferring a third lane
+  from a two-lane instruction is scope-widening. **Correct on the evidence research held.**
+* **The side lane held a direct instruction research had never seen**, and said so. **Correct on the
+  evidence they held.**
+* ⛔ **Either lane acting alone would have assembled a scope error out of TWO CORRECT STEPS** — the
+  research file would have said "side lane unchanged" (false), or research would have widened a
+  charter on a peer's uncorroborated account (unauthorised).
+⇒ **THE RULE, now in the protocol doc: a lane must not widen its OWN charter, and must not widen
+ANOTHER lane's on that lane's report. Record what is settled, mark what is open, and put the union
+to the person holding both halves.** It cost one round-trip and nothing else.
+
+⚠ **The side lane's own conduct is the reason this worked and it belongs in the record: they
+supplied the evidence, proposed the wording, and then refused to write it** — *"a lane should not be
+the one widening its own charter, even by a sentence, and especially not on evidence only it
+holds."* **The correct move was available to them and they declined it.**
+
+**RESEARCH ARM STATE (07:3xZ block above) IS OTHERWISE UNCHANGED and remains the successor's read.**
+Nothing else was touched post-wrap; no subagents; tree clean and pushed.
