@@ -59479,3 +59479,82 @@ passing BOTH factors (+6.96 ITT, −0.23 speed), which is quantitative support f
 both stand, neither closes the other). Side lane ellipsis reach-check CONSUMED — all
 five truncation sites in queue_check.py now carry the conditional marker (:231, :235,
 :357, :626, :642), selftest green.
+
+--- 2026-08-16T05:3xZ (`date -u`) ⭐⭐ **SIDE LANE s44 — SUBAGENT RELAY 2 of 2 (`opus`, read-only): `ENFORCES` IS EMPTY. AND BODYAWR IS A COMPLETED, UNSCORED ARM WHOSE LOCKED FALSIFIER NOW POINTS THE OPPOSITE WAY FROM THE BAR.** ---
+
+**Relayed because subagents die with the session.** The builder predicted "no mechanical surface";
+**I declined to agree before the agent reported, and it confirms them.**
+
+## 1. THE AWAITED ANSWER: NOTHING ENFORCES THIS BAR, IN ANY VINTAGE
+
+`grep -rn "DEFENCE_ADMISSION\|kill_round_non_regression\|non_regression" tools/` → **zero hits.**
+`gate.py:234` parses the field generically so it lands in the dict and is **printed**; the only
+refusal path (`:210-271`) tests **`LINE_DIRS`** alone. `BARS.tsv` is 252 rows of **game-share
+percentages only** — no kill-round row — and `results.tsv` has no kill-round column.
+⇒ **THE BAR BINDS ONLY THROUGH PREREG TEXT A HUMAN READS. The prereg's decision rule IS the
+enforcement surface.** ✅ **Both critical distinctions came back clean:** `score.py`'s kill-speed
+buckets are reachable only via `leg_read.py` under `KILL_SPEED_SHIP_GATE` and are **not coupled**
+to this bar; **nothing conflates `KILL_WINDOW_RND: 250` with it.**
+**Three vintages exist, not two:** **A** median-rises (s31) · **B** kill-win-conditioned share
+(lived ~4 minutes) · **C** ITT (current). `PROGRAMME.md` and `CLAUDE.md` are both current and
+correct; the superseded sentence at `PROGRAMME.md:445` is marked superseded in place at `:450-465`.
+
+## ⛔⛔ 2. THE ONE THAT IS MINE — `SCREEN-bodyaware`'s FALSIFIER AND THE BAR NOW DISAGREE, ON A COMPLETED ARM
+
+`docs/prereg/SCREEN-bodyaware-2026-08-14.md:585` registers a **CHANNEL falsifier** firing when
+*"C-KILL rises by ≥10 rounds"* — **vintage A.** `BODYAWR` is **COMPLETE (53.70%, n=10,801) and
+UNSCORED**, gated behind G1/G2/G3.
+**And it is the ONE arm of 146 where the two forms disagree** — ITT **+4.47 [+3.20,+5.74] PASS**
+vs kill-win-conditioned **+1.87 would-FAIL**.
+
+**⇒ THE CERTIFICATION, AND IT IS NOT "USE THE NEW BAR":**
+* **A LOCKED PREREG IS NEVER AMENDED.** The correction lands as a new dated doc, not an edit.
+* ⛔ **AND SCORING IT AGAINST THE NEW BAR *NOW*, WITH THE NUMBERS ALREADY VISIBLE, IS CHOOSING THE
+  RULE AFTER SEEING THE DATA.** That is D26 one level up — *selection on the outcome*, where the
+  thing selected is **which rule applies**. The bar changed **after** this arm's data was in.
+* ⇒ **The registered falsifier governs THIS arm** (it was locked before the data existed) **and the
+  new bar governs arms locked after 2026-08-16.** That is the two-clock principle applied to a rule
+  change rather than to a leg. **Report BOTH numbers on the readout and say which one is binding
+  and why** — that is decidable now, without knowing which way it goes.
+* ⚠ **I am certifying the PROCEDURE, not the verdict.** The verdict is the builder's; if Magnus
+  rules the new bar retroactive, that is his to say and it is a directive, not an inference.
+
+## ⚠ 3. THE RETIRED RULE CLOSED ROADS THE NEW BAR WOULD NOT HAVE CLOSED — AND TWO SUCCESSORS ARE QUEUED
+
+    DOSE-idlepeck-quiet0-48:138   REFUTED on "median diff +44.5 rounds"   -> F322IDLEPEC QUEUED
+    SHIP-salt-v178:59             salt regressed r129 -> r179             -> F317RAIDPEC WITHDRAWN 08-15
+    DOSE-pavefirst50:37           FALSIFIER FIRED                          -> F323PAVEFIR QUEUED
+
+**Every one of those round numbers is far below r300.** ⇒ **their closure basis does not exist
+under vintage C.** ⛔ **NOT a recommendation to reopen** — D12 says a road closes and opens on
+live-game evidence, and this is a bar re-price, not evidence. **Naming it because two rebased
+successors are already queued against closures whose stated reason has lapsed**, and whoever reads
+those rows deserves to know the reason changed under them.
+
+## ⚠ 4. AND THIS ONE LANDS ON MY OWN WORK — THE CURRENT PRIMARY HAS NO COMMITTED INSTRUMENT
+
+`tools/overnight_read.py:344-345` — the tool **every corefill arm is read with** — computes only
+the **kill-win-conditioned** median (`r[6]=="T" and r[7]=="core_destroyed"`), i.e. **vintage B, the
+collider form.** Grep for `timely`/`ITT` across `tools/` returns substring noise only.
+⇒ **My 146-shard calibration is the evidence this bar is trustworthy, and it is an AD-HOC READ
+DOCUMENTED IN PROSE with no committed, selftested tool behind it.** The agent is right to name it
+and it is the correct thing to say about my own artefact: **the calibration is strong and the
+instrument is uncommitted.** By this repo's own standard that is a finding, not a footnote.
+*(`tools/h2h.sh:194` already carries a comment naming the conditioning trap — it warns, it does not
+gate.)*
+
+## ⭐ THE AGENT CORRECTED ITSELF THREE TIMES, VERIFIED AT PRIMARIES
+A parallel audit contradicted its draft on `BODYBLK` (closed by FUTILITY-BAR, not a live stalled
+arm — it had inferred "hang" from a 16-hour-stale heartbeat that was an auto-stop),
+`SCREEN-launchmax` and `SCREEN-collarmedic` (both closed). **It re-verified each at the primary
+rather than accepting either account, and it disclosed missing `:585` on its own first pass.**
+That is the standard, and it is worth recording that the agent met it unprompted.
+
+## OPEN — NOT DETERMINED, INHERIT AS UNKNOWN
+* **Which prereg owns `AWRLNCH`** (`_v267awrlnch`, COMPLETE 5400/5400, ITT +6.96). **Named in no
+  prereg by grep.** ⇒ possibly a SECOND completed-unread arm with the same stale-falsifier defect,
+  or an arm with no registered bar at all. **Worth one grep by whoever owns the readout.**
+* Whether the **205 bot-tree comments** carrying the old wording track real behaviour — comments
+  only, code not diffed.
+* `AGENTS.md:400-402` is a **generated twin of `CLAUDE.md`, last regenerated 2026-08-13**, and
+  still states vintage A verbatim. **Regeneration is the fix, not an edit.**
