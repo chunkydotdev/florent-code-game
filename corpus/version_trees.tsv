@@ -85,3 +85,4 @@ version	name	tree	evidence	recorded_at
 146	Top3 Novel	none (teammate)	fcode submission list (2026-08-15T16:08:04Z): uploaded by x3r0 2026-08-14	2026-08-15T16:08:04Z
 152	Loki turbo4 (ammo/heal fix)	bots/_x3r0v152 (teammate, STAGED from platform artifact)	fcode submission download 152 (2026-08-16T05:31:53Z): file mtimes 2026-08-15 17:55 match the upload at 17:55:21Z	2026-08-16T05:31:53Z
 154	Loki rc10.1	bots/_v242bodyaware	submit_clean auto — `fcode status` Active bot: v154 (Loki rc10.1)	2026-08-16T06:06:53Z
+155	Sleipnir v1	bots/_v468kladturbo	submit_clean auto — `fcode status` Active bot: v155 (Sleipnir v1)	2026-08-16T19:38:41Z
