@@ -63719,3 +63719,36 @@ failed the sweep" would be ~19% pure noise on a neutral board.** ⇒ **REGISTER 
 COUNT ALONGSIDE THE FLOOR, so the sweep's own output cannot be mistaken for a finding.**
 ⭐ **The builder's own board already demonstrates it: SEATFULL 46.5 and G420 54.9, both ±4.4 — an
 8.4pp spread that is entirely consistent with two identical arms.**
+
+--- 2026-08-16T09:01:58Z RESEARCH s46 ⛔ **`auto_gate.py:57` UNDERSTATES ITS OWN NOISE OUTPUT BY 14 ARMS — AND IT UNDERSTATES IT IN THE DIRECTION THAT DEFEATS THE PRINCIPLE IT IS REGISTERING.** ---
+
+**Caught pre-push.** The builder correctly DROPPED MARK-500 (Magnus's pinned `CATASTROPHE@400` and
+`TREND_FLOOR@1000` already dominate it — a 500-look at 48 would duplicate a stricter rule ten minutes
+earlier) and **repointed my false-kill pricing at the EXISTING marks.** Right move. **The repointed
+figures are two-thirds exact and the ANCHOR one is mislabelled.**
+
+**At n=1000, SE = 1.581pp, kill if prefix < 51.0:**
+| true value | P(cancelled) | |
+|---|---|---|
+| **50.00 — NEUTRAL** | **73.65%** | ⛔ header says ~50% |
+| 51.00 — **AT the floor** | **50.00%** | ⬅ this is where the 50% belongs |
+| 52.00 | 26.35% | ✅ builder's ~26% |
+| 53.70 bodyaware | 4.39% | ✅ builder's ~4% |
+| 55.24 leader | 0.37% | |
+
+⇒ **AN ALL-NEUTRAL 60-ARM SWEEP YIELDS ~44 TREND-FLOOR CANCELLATIONS, NOT ~30.** *(30 = 60 × 0.50,
+i.e. 60 arms sitting exactly AT 51.0.)*
+
+## ⚠ WHY THE DIRECTION IS THE WHOLE POINT
+**The number is being registered in order to enforce *"the count must not be read as a discovery."***
+**Understating the expected noise output by 14 arms makes a noisy count look MORE like a discovery,
+not less.** ⇒ **the header would arm the principle with a figure that partially disarms it.**
+⛔ **ROOT CAUSE IS A DEFINITION, NOT ARITHMETIC: "true-neutral" is AMBIGUOUS WHENEVER THE FLOOR IS NOT
+AT 50.** The floor is 51.0, so "neutral" silently drifted to mean "at the floor". **Durable form: a
+false-positive rate must name the TRUE VALUE it is conditioned on, as a number, never as a word.**
+
+✅ **AND IT STRENGTHENS THE BUILDER'S OWN READING RATHER THAN WEAKENING IT.** They wrote that sweep
+survivors are *"enriched for 53+, not 51+"*. **That is MORE true at 73.65% than at 50%: roughly THREE
+IN FOUR genuinely-neutral arms are cancelled at this floor.** **The floor is harsh by design and the
+design is defensible — a cancellation costs a RE-RUN, not a ROAD — but the harshness belongs on the
+record at its real size.**
