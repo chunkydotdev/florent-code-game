@@ -61947,3 +61947,90 @@ Header corrected to v1.14 in this commit. **My file, my hand, no other lane's co
 
 **I have edited no bot, run no arena, fired no match, typed no verdict, taken no platform action,
 and written nothing to `HANDOVER.md` or the tape.**
+
+--- 2026-08-16T07:56:48Z (`date -u`) ⛔ **SIDE LANE s45 FLAG — `AGENTS.md` HAS DRIFTED 132 LINES AND 8 `CLAUDE.md` COMMITS BEHIND, AND IT CARRIES THE ONE SENTENCE `CLAUDE.md` REMOVED YESTERDAY FOR BEING DANGEROUS TO SKIM.** Routed to RESEARCH (they hold the last regen). ---
+
+**This is s44's don't-inherit item #1, VERIFIED RATHER THAN INHERITED, and it is worse than that
+item states.** It says the twin *"still states the SUPERSEDED `kill_round_non_regression` bar
+verbatim"*. True — `AGENTS.md:400` — and that is the smaller half.
+
+## MEASURED, EACH CELL DRIVEN BOTH WAYS AT 07:57Z
+
+    diff <(tail -n +10 AGENTS.md) CLAUDE.md   ->  132 changed lines   [DRIFTED]
+    same check on a regenerated copy           ->    0 changed lines   [IN SYNC — the control]
+    CLAUDE.md commits since the last regen (f0eebd2e, 2026-08-13)  ->  8
+
+    r300_crossing_non_regression      AGENTS.md 0   regenerated 1
+    "**AND THE RATED COST IS ZERO, MEASURED.**"   (bold standalone assertion, line-anchored)
+                                      AGENTS.md 1   regenerated 0   CLAUDE.md 0
+
+## ⛔ THE PART THAT MATTERS, AND IT IS `CLAUDE.md`'s OWN ARGUMENT TURNED ON ITS TWIN
+
+`CLAUDE.md` relocated the retracted zero-cost claim to `DIRECTIVE-HISTORY.md` on **2026-08-15**, and
+wrote down exactly why: *"in this file the dead claim was bold, emphatic and typographically
+IDENTICAL to a live rule … a reader skimming for the cost of a leg could land on `AND THE RATED COST
+IS ZERO, MEASURED` and be reading a retracted sentence with no signal that it was retracted."*
+
+**`AGENTS.md:582` still carries that sentence, bold, standalone — and `AGENTS.md:555` carries the
+CORRECTION above it.** So the entry point we hand to Codex and Cursor contains both the retraction
+and the retracted claim, in the pre-2026-08-15 arrangement that was judged unsafe. **A reader who
+skims lands on `ZERO` where the live file has already removed it.** Budgeting a prototype leg at
+zero instead of ~−8 Elo per leaked match is a decision that follows directly from that sentence.
+
+Also absent from the twin: the **r300 / RMST₃₀₀** admission bar (0 occurrences, all three vintages
+of today's ruling), the **DEFF procedure** and its local-exemption measurement, and the
+**60±2pp slot bar**.
+
+## ⭐ THE STRUCTURAL POINT — WHY THIS RECURS AND WHAT ACTUALLY FIXES IT
+
+**The regeneration rule lives in an HTML comment INSIDE THE GENERATED FILE.** It can only fire if
+whoever edits `CLAUDE.md` happens to open `AGENTS.md` — which is **D31's exact shape: a check that
+needs a person present is not a check.** It has held three times (`14770691`, `21a74414`,
+`f0eebd2e`) and lapsed across eight commits, and **nothing in the repo references `AGENTS.md`** —
+no tool, no hook, no CI (searched `tools/`, `.claude/`, `.github/`).
+
+**THE FIX — the file's own documented command, one line:** `head -9 AGENTS.md > /tmp/h && cp
+CLAUDE.md AGENTS.md && cat AGENTS.md >> /tmp/h && mv /tmp/h AGENTS.md`, then bump the
+`Last regenerated:` line. Verified in scratchpad to produce a 0-line diff.
+
+**THE MECHANISATION, which is the part worth more than the fix:** one `SessionStart` or pre-commit
+cell — `diff <(tail -n +10 AGENTS.md) CLAUDE.md` must be empty, alarm otherwise. **It has both
+verdicts available today** (132 vs 0 above), so it can be driven both ways at the moment it is
+written, which is the standard this repo holds every other guard to.
+
+⚠ **I am not making either edit.** `AGENTS.md` is not a file this lane writes, and the fix belongs
+to the lane that owns the twin. **Flag carries the defect, the fix, and what the fix was verified
+against; the pen stays with research.**
+
+## ⚠ AND ONE SELF-CATCH, RECORDED BECAUSE IT IS THE DAY'S MECHANISM AGAIN
+
+My first form of the zero-cost cell was a bare substring count and it returned **1 on the
+regenerated file** — i.e. it said the fix does not remove the dead claim. **False.** `CLAUDE.md:589`
+contains the sentence as a **QUOTATION inside the paragraph explaining why it was removed.** A
+substring filter over prose cannot tell an assertion from a citation of an assertion — **D19,
+in the same session that re-derived S2.** Corrected by anchoring on the bold standalone form
+(`^\*\*…\.\*\*`), which returns 0 / 1 / 0 across regenerated / `AGENTS.md` / `CLAUDE.md`.
+⭐ **What caught it was writing the expected value inline BEFORE reading the output** — the cell was
+labelled `expect 0` and returned 1, so a plausible number became an illegal one. **That is the
+cheapest available upgrade to my own worst failure mode** (s44 Q4: four self-catches all came from
+illegal values; both escapes returned plausible ones). **Expectations written before the read
+convert plausible into illegal for free.**
+
+--- 2026-08-16T07:56:57Z BUILDER s46 BOOT — lane declared, monitors verified (4 watchers + keeper 19708), boot checks: test_instruments PASS, corpus_sanity OK, **audit_trigger FIRES 2/6** (ship cadence 0.24/hr; cross-lane analysis 16 docs / 1 decision). Per boot rule I am spawning the SHORT-LIVED AUDIT agent (opus, read-only, no stake in the queue) — announced here before spawn. ---
+
+* **V140VS152 RE-QUEUED ON ws2 (successor task 1 DONE at the transport level):** appended to
+  `scratchpad/vps/ws2_eco_20260816.txt`, regenerated + pushed 07:55:41Z (9 trees incl.
+  `_x3r0v152`, seedbase 14728000 — no collision with the eco rows). ⚠ **The RUNNING worker
+  streams the OLD worklist inode and will NOT see the new row** — after ECOSCK6R completes
+  (~22h at current ~1k rows/hr), the worker exits and someone must run
+  `bash tools/vps/orchestrate.sh start worker@work-server-2 6` (COMPLETE shards skip; only
+  V140VS152 runs, alone on the box = the proper allocation the handover asked for).
+  ⛔ Do NOT start a second worker while the current one is alive — two workers on one
+  incomplete shard duplicate seeds.
+* **MAGNUS (in-session, with the first replay-viewer screenshot): two marker questions on
+  match 67096fe3 game 2 (v152 vs Well have a look v9, win core_destroyed r157):**
+  (1) two adjacent conveyors at (10,9) r19 — why; (2) builder parked at THEIR core (11,18)
+  from ~r148 — why does this recur, and does it damage the core while stuck. Spawning ONE
+  opus agent (read-only: `bots/_x3r0v152` code + the archived replay) — announced here.
+  Note both questions are about the HOLDER's tree (x3r0's v152), not our v140 control.
+* IN-FLIGHT: audit agent (opus) + replay-question agent (opus). Both read-only.

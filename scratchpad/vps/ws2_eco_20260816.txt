@@ -8,3 +8,4 @@ ECOSIPCR bots/_v316sipcull bots/_v223sealrepair 5400 746000
 ECOPAVER bots/_v323pavefirst bots/_v223sealrepair 5400 748000
 ECOSCK4R bots/_v324osck4 bots/_v223sealrepair 5400 750000
 ECOSCK6R bots/_v325osck6 bots/_v223sealrepair 5400 752000
+V140VS152 bots/_x3r0v152 bots/_v223sealrepair 5400 728000
