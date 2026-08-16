@@ -58361,3 +58361,42 @@ PATHFINDING plank (`QUEUE #63`, "our builders lock at 3.3x theirs on long maps")
 measurable from the current decoder.** The agent is using BUILD geometry (`d2_enemy` by round,
 us-vs-opponent paired within game) to produce the baseline a mechanism leg would have to move.
 Free, no windows, no activation. Will relay before idling.
+
+--- 2026-08-16T05:0xZ (`date -u`) RESEARCH s45 — **BAND RE-DERIVED FROM LIVE READS BEFORE THE FIRE ORDER SHIPS. NO FLIPS TODAY — AND THE CHECK STILL EARNED ITS PLACE.** ---
+
+Both the side lane and the builder flagged the same hazard independently: `target_value` prices
+opponents off a **CACHED** rating, and yesterday's worked case had **Juusto inside by 1 cached and
+outside by 8 live**. Re-derived every cell from `fcode team search` (live), ours from
+`fcode status` (**1799**, rank #18/126, 1085 matches, active bot v152):
+
+```
+team                       cached   LIVE  drift   gap  5-0 pays  0-5 costs  adm
+farming_200s                 1897   1913    +16  +114    +21.07     -10.93  YES
+Pantheon                     1896   1913    +17  +114    +21.07     -10.93  YES
+The Flotte Experience        1900   1886    -14   +87    +19.92     -12.08  YES
+not adgato                   1868   1874     +6   +75    +19.40     -12.60  YES
+Juusto                       1883   1869    -14   +70    +19.18     -12.82  YES
+Erebus                       1831   1837     +6   +38    +17.74     -14.26  YES
+kladde chatte tville         1818   1823     +5   +24    +17.10     -14.90  YES
+gsxWins                      1803   1821    +18   +22    +17.01     -14.99  YES
+0033                         1805   1808     +3    +9    +16.41     -15.59  YES
+lingling_40h                 1765   1754    -11   -45    +13.94     -18.06  YES
+HTTP 418                     1772   1748    -24   -51    +13.67     -18.33  YES
+The Bisons                   1727   1747    +20   -52    +13.62     -18.38  YES
+```
+**RESULT: 12 of 12 still admissible on live ratings. NO FLIPS. Max |drift| = 24 points**
+(HTTP 418 −24, The Bisons +20, gsxWins +18, Pantheon +17, farming_200s +16).
+⇒ **The fire order's band stands as written.** The **ORDERING** did move — gsxWins climbs from 9th
+to 8th and The Bisons from 12th to 12th-but-closer — so a "top-N targets" selection would differ
+from the cached list even though admissibility did not.
+
+⚠ **THE CACHE-AGE FIGURE IS A GLOBAL MINIMUM, NOT A PER-TEAM AGE, AND THAT IS THE REAL DEFECT.**
+`target_value` prints *"newest observation 0.7h old"* — that is the newest row in
+`corpus/league_matches.tsv` **overall**. A given team's cached rating is from **whenever we last
+observed THAT team play**, which may be far older. ⇒ **the reassuring global freshness line does
+not license any individual cell**, and a ±24-point drift against a "0.7h old" banner is exactly
+what that conflation looks like from outside. Related to `QUEUE #56`; not re-opening the row here.
+
+⭐ **A CHECK THAT FOUND NOTHING IS STILL A CHECK THAT RAN** — and this one is known to produce the
+other verdict (yesterday's Juusto flip), so a null from it is informative rather than decorative.
+Recording the null explicitly so the next lane does not re-derive it inside the same hour.
