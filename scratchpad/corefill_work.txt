@@ -1200,3 +1200,5 @@ H628h4 bots/_v628h4 bots/_v223sealrepair 5400 516000
 V426BCS bots/_v426bcs bots/_v223sealrepair 5400 774000
 # V152 PATH arm 2 (ARM-A): turbo4-minus-one (5 of 6 doctrine fixes, NO CPU change — the fixture-bias-proof half). PROSPECT n=2700; hand-built (no compose marker) so the combo bar does not apply; trend floor does.
 TURBO4A bots/_v427turbo4 bots/_v223sealrepair 2700 776000
+# V152 PATH arm 3 (ARM-B, the super-additivity bet): turbo x bodyaware hand-merged _bfs_direction. COMBO (marker present): faces 55@2700. ⛔ CPU-sensitive tree: if this box shows load spikes, prefer ws1/ws2 allocation.
+TBA bots/_v428tba bots/_v223sealrepair 5400 778000
