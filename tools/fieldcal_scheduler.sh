@@ -374,6 +374,81 @@ invoke_runner(){
 # ===========================================================================
 # THE -40 ELO HALT (§10.5b), evaluated before every round once CLOCK2 exists.
 # ===========================================================================
+# leak_check: after every flip, read the platform (id-keyed, complete rows,
+# createdAt >= clock2) and HALT if ANY rated ladder pairing was played by an
+# ARM version rather than the holder. Session-independent replacement for the
+# side lane's manual per-flip verification. An unreadable platform logs
+# LEAK-UNKNOWN and does NOT halt (persistent blindness is the elo gate's job).
+leak_check(){
+  [[ -z "${CLOCK2:-}" ]] && return 0
+  local versions_csv="${ARM_VER[A]},${ARM_VER[B]}"
+  local _lk_json="${SCRATCH_DIR}/.fieldcal_leak_$$.json" lline
+  ${=PLATFORM_LIST_CMD} > "$_lk_json" 2>/dev/null
+  lline=$("$PYTHON_BIN" - "$_lk_json" "$CLOCK2" "$OUR_TEAM_ID" "$versions_csv" <<'PY'
+import json, sys
+from datetime import datetime
+json_path, clock2, our_id, versions_csv = sys.argv[1:5]
+versions = set(v.strip() for v in versions_csv.split(","))
+def p(s):
+    s = s.strip()
+    if s.endswith("Z"):
+        s = s[:-1] + "+00:00"
+    return datetime.fromisoformat(s)
+try:
+    with open(json_path) as fh:
+        d = json.load(fh)
+except Exception:
+    print("LEAK unknown=1 n=0"); raise SystemExit(0)
+ms = d if isinstance(d, list) else d.get("matches", d.get("data", []))
+if not isinstance(ms, list):
+    print("LEAK unknown=1 n=0"); raise SystemExit(0)
+since = p(clock2)
+leaks = []
+for m in ms:
+    if m.get("triggeredBy") != "ladder" or m.get("status") != "complete":
+        continue
+    ca = m.get("createdAt") or ""
+    try:
+        if p(ca) < since:
+            continue
+    except Exception:
+        continue
+    if m.get("teamAId") == our_id:
+        side = "A"
+    elif m.get("teamBId") == our_id:
+        side = "B"
+    else:
+        continue
+    if str(m.get(f"team{side}Version", "")).strip() in versions:
+        leaks.append(f"{m.get('id','?')[:8]}@{ca}")
+print(f"LEAK unknown=0 n={len(leaks)}" + (" ids=" + ",".join(leaks) if leaks else ""))
+PY
+)
+  rm -f "$_lk_json"
+  # ⛔ token-parse, never substring: "unknown=0" CONTAINS "n=0", so a substring
+  # check for the count matched the WRONG token and passed a real leak
+  # (caught by selftest cell h2 — the cell earned its keep before first fire).
+  local _lk_unknown=0 _lk_n=0 tok
+  for tok in ${(s: :)lline}; do
+    case $tok in
+      unknown=*) _lk_unknown=${tok#unknown=} ;;
+      n=*) _lk_n=${tok#n=} ;;
+    esac
+  done
+  if [[ "$_lk_unknown" == "1" ]]; then
+    say "  LEAK CHECK: platform unreadable — LEAK-UNKNOWN (not a pass; the elo gate owns persistent blindness)."
+    return 0
+  fi
+  if [[ "$_lk_n" == "0" ]]; then
+    say "  LEAK CHECK: clean — no rated pairing played by an arm since clock2."
+    return 0
+  fi
+  say "  *** LEAK DETECTED: rated pairing(s) played by an ARM version — $lline"
+  : > "$HALT_FILE"
+  say "  HALT file created: $HALT_FILE"
+  return 1
+}
+
 elo_round_gate(){
   if [[ -z "${CLOCK2:-}" ]]; then
     say "ELO GATE: clock2 not yet set (no accept banked) — gate not yet active."
@@ -636,6 +711,13 @@ run_round(){
     say "  cell $label: +${accepted} accept(s), +${rejected} reject(s) — now ${COUNTS[$arm,$label]}/12 for arm $arm"
     maybe_capture_clock2 "$LAST_OUTFILE"
     persist_state
+    # Per-flip leak check (side-lane mechanisation, 2026-08-16 07:3xZ): the leg
+    # verifies ITSELF that no rated pairing has been played by an ARM. One leak
+    # means gap-landing failed and continuing would repeat it -> HALT.
+    if ! leak_check; then
+      say "*** LEAK CHECK FAILED — halting the leg. ***"
+      return 1
+    fi
     budget_remaining=$(( budget_remaining - accepted ))
     pos=$((pos+1))
   done
@@ -1083,6 +1165,43 @@ PJ2
     ok "elo gate g6: archive stale AND platform unreadable -> double-blind, persisted streak=1, no verdict"
   else
     fail "elo gate g6: expected double-blind persisted-streak=1 rc=0, got rc=$rcg6 streak=$stg6"
+  fi
+  # --- (h1-h3) LEAK CHECK cells, both ways.
+  CLOCK2="2026-08-16T10:00:00Z"
+  cat > "$TDIR/leak_clean.json" <<PJ3
+[
+ {"triggeredBy":"ladder","status":"complete","createdAt":"2026-08-16T11:00:00Z","teamAId":"$OUR_TEAM_ID","teamBId":"x","teamAVersion":"152","eloDeltaA":-3.0},
+ {"triggeredBy":"ladder","status":"complete","createdAt":"2026-08-16T09:00:00Z","teamAId":"$OUR_TEAM_ID","teamBId":"x","teamAVersion":"140","eloDeltaA":-3.0}
+]
+PJ3
+  HALT_FILE="$TDIR/HALT_h1"; PLATFORM_LIST_CMD="cat $TDIR/leak_clean.json"
+  local outh1 rch1
+  outh1=$(leak_check); rch1=$?
+  if [[ $rch1 -eq 0 && ! -f "$HALT_FILE" ]] && print -r -- "$outh1" | grep -q "clean"; then
+    ok "leak check h1: holder-only pairings (and a pre-clock2 arm row) -> clean, no halt"
+  else
+    fail "leak check h1: expected clean rc=0, got rc=$rch1 out=$(print -r -- $outh1 | tail -1)"
+  fi
+  cat > "$TDIR/leak_bad.json" <<PJ4
+[
+ {"triggeredBy":"ladder","status":"complete","createdAt":"2026-08-16T11:00:00Z","teamAId":"$OUR_TEAM_ID","teamBId":"x","teamAVersion":"140","eloDeltaA":-3.0,"id":"deadbeef-0000-0000-0000-000000000000"}
+]
+PJ4
+  HALT_FILE="$TDIR/HALT_h2"; PLATFORM_LIST_CMD="cat $TDIR/leak_bad.json"
+  local outh2 rch2
+  outh2=$(leak_check); rch2=$?
+  if [[ $rch2 -eq 1 && -f "$HALT_FILE" ]] && print -r -- "$outh2" | grep -q "LEAK DETECTED"; then
+    ok "leak check h2: a rated pairing played by an ARM (v140, post-clock2) -> LEAK DETECTED, HALT created"
+  else
+    fail "leak check h2: expected leak halt rc=1, got rc=$rch2 halt=$([[ -f $TDIR/HALT_h2 ]] && echo yes || echo no)"
+  fi
+  HALT_FILE="$TDIR/HALT_h3"; PLATFORM_LIST_CMD="echo not-json"
+  local outh3 rch3
+  outh3=$(leak_check); rch3=$?
+  if [[ $rch3 -eq 0 && ! -f "$HALT_FILE" ]] && print -r -- "$outh3" | grep -q "LEAK-UNKNOWN"; then
+    ok "leak check h3: platform unreadable -> LEAK-UNKNOWN (logged, no halt, not a pass)"
+  else
+    fail "leak check h3: expected unknown rc=0 no-halt, got rc=$rch3"
   fi
   PLATFORM_LIST_CMD=".venv/bin/fcode match list --mine --type ladder --json --limit 60"
 
