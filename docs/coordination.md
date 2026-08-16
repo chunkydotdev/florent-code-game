@@ -57737,3 +57737,106 @@ justified by the module that owns the job.
 
 ⚠ **Amendment is ADD-only and dated in the row itself; the original text was not rewritten**,
 so a successor can see what was claimed and what replaced it.
+
+--- 2026-08-16T04:4xZ (`date -u`) **SIDE LANE s44 — BOOT NOTE. Verified, not asserted.** ---
+
+Third lane online. Charter limits held from the first tool call: **no bot edits, no arena, no
+unrated/platform MUTATIONS, no verdicts, no HANDOVER/tape writes.** I write only new
+`docs/research/` files plus append-only notes here, and commit only my own named files.
+
+## BOOT SEQUENCE — executed, with what each step returned
+
+* **Step 0 `tools/now.py` (04:35:47Z)** — ran FIRST, per the charter's D28 clause. Re-read
+  `fcode status` directly at **04:40:28Z**: `Active bot: v152 (Loki turbo4 (ammo/heal fix))`,
+  **1799 (Emerald), rank #18 of 126, 1085 matches.**
+* **`PROGRAMME.md`** read. **CONTROL `bots/_v223sealrepair` (v140).** ⛔ Holder ≠ control, and
+  per the s44 HANDOVER Magnus's ruling names v140.
+* **Monitors verified by `ps`/serving, not by exit code.** `fleet_health`: **12 of 12 expected
+  daemons present, exactly once**, plus 8 shard runners. `corpus/keeper.pid` = 19708, alive.
+* **Drift watch ARMED at 04:37:48Z, pid 77617, base `04e5ccc4`** →
+  `scratchpad/drift_watch_s44.log`. **All four cells driven to a discriminating result FIRST**,
+  per the s43 handover: (1) EMIT — seeded at `HEAD~2`, emitted exactly 2 COMMIT lines; (2) BLIND
+  ANNOUNCES — `DRIFT_REPO=/nonexistent` printed `DRIFT-WATCH BLIND … commits are NOT being
+  audited`, rc 1; (3) SILENT ≠ BLIND — seeded at HEAD, **0 bytes captured, rc 0**, i.e. quiet and
+  blind are distinguishable; (4) UTC-not-CEST — `04e5ccc4` renders `2026-08-15T20:55:19Z` under
+  the watch form against `22:55:19+02:00` ambient.
+  ⭐ **My wake path closes the gap its predecessor left open: the Monitor also alarms on the
+  WATCH'S OWN DEATH** (`kill -0` on the pid, emitting `DRIFT-WATCH DEAD …` when it goes). A tail
+  alone is silent both when nothing happens and when the watcher dies.
+* **Two orphan drift watches are alive and are NOT mine: `21664` (s41, ~32 h) and `21790`
+  (s43).** Named, not killed — the same call my predecessor made about `21664`. They append to
+  their own per-session logs, so there is no log collision; nothing reads them.
+* Arm retro `docs/side-lane-retro.md` read (**v1.13, FIRINGS 13**). Carried debt: **nothing owed
+  in code.** One open observation inherited — the remote half of the control pin is unguarded and
+  my predecessor DECLINED to escalate it with reasoning stated; **if a remote result ever
+  disagrees with a local one on the same plank, that is the first thing to check.**
+
+## ⭐⭐ FLAG 1 — **v153 EXISTS, IS `ready`, AND HAS NEVER HELD THE SLOT. NOBODY HAS WRITTEN THIS DOWN.**
+
+`fcode submission list`, read 04:39Z:
+
+    v153 | Loki turbo6 (turbo4+CB aiming) | ready | Active: —   | x3r0 | 2026-08-15 20:37
+    v152 | Loki turbo4 (ammo/heal fix)    | ready | Active: Yes | x3r0 | 2026-08-15 17:55
+
+**VERIFIED AT THE PAIRING BOUNDARY — the instrument `CLAUDE.md` itself names as ground truth for
+this question, not the match counter and not a poller.** From `corpus/ladder_games.tsv` per-match
+`ourver` (5,415 rows, newest pairing **2026-08-16T03:52:59.561Z**):
+
+    v151   30 games /  6 matches   2026-08-15T16:12:59Z .. 17:52:59Z
+    v152  150 games / 30 matches   2026-08-15T18:12:59Z .. 2026-08-16T03:52:59Z   <- CONTIGUOUS
+    v153    0 games ALL-TIME
+
+**v152 has held every pairing for ~9 h 40 m across 30 consecutive matches with no gap, and v153
+has played zero rated games ever.** The 5-minute elo tape independently shows **zero v153 rows**
+(62 v152 rows in `ship_watch.log`, 0 for v153).
+
+**⛔ WHAT THIS DOES AND DOES NOT ESTABLISH — the distinction is the whole flag.**
+It **does** establish that no rated match was ever paired under v153. It does **NOT** establish
+that v153 never activated: a hold shorter than the ~5-minute tape cadence, landing inside a
+20-minute pairing gap, is consistent with every surface I can read. **That is precisely the
+"structurally safe" submit→rollback window `CLAUDE.md` documents**, so a clean rollback and a
+never-activated upload look identical from here.
+
+**WHY IT MATTERS ENOUGH TO OPEN A SESSION WITH:** `CLAUDE.md` carries, in its strongest
+typography, **"⛔⛔ SUBMITTING **IS** SHIPPING. `fcode submit` AUTO-ACTIVATES WHAT IT UPLOADS —
+there is no such thing as 'upload now, activate later'."** A `ready` submission sitting inactive
+for **8 hours** behind an older active one is the first observation in the record that is *prima
+facie* in tension with that sentence. **I am not asserting the rule is false** — the rollback
+reading fits equally well, and the discriminating test is a submit, which is a platform mutation
+this lane may not perform. ⇒ **Handing it over rather than resolving it: if the builder is
+planning a ship today, this is worth ten seconds of thought, because "the submit IS the
+activation" is the premise the entire firing-window procedure rests on.**
+⚠ **And the operational half is live regardless of which reading is true: a newer teammate
+submission is sitting one click from the slot.** If v153 activates mid-leg, the live bot moves
+under anything in flight. **Whose action any of this was is not established and I have not
+inferred it** — "uploaded by x3r0" is who uploaded, per the standing refusal both other lanes
+made independently yesterday.
+
+**LEDGER GAP, minor and named:** `corpus/version_trees.tsv` stops at **v151**. v152 (the current
+holder) and v153 have no row. Builder-owned surface; not proposing a fix at boot.
+
+## ⭐ FLAG 2 — **the submission-list date column IS UTC. The ledger's own note hedges that it is local, and that hedge is now falsifiable.**
+
+`corpus/version_trees.tsv` records *"Dates are AS DISPLAYED by the CLI (local), not normalised."*
+**Two independent anchors say UTC:** the list shows v151 at `15:54` and the elo tape's first v151
+row is `15:58Z`; the list shows v152 at `17:55` and `fcode status` gives its upload as
+`2026-08-15T17:55:21.217Z` **with an explicit Z**. Under a CEST display those would read 17:54
+and 19:55. ⇒ **the column is UTC and can be compared to `Z` timestamps directly.** Small, but it
+is the frame rule (D28's cousin) applied to a column three documents quote, and the current note
+would make a successor apply a 2-hour correction that would be wrong in the flattering direction.
+**Named, not edited — `version_trees.tsv` is not my surface.**
+
+## WHAT I AM NOT DOING, so nobody waits on me
+
+Research (`florent-code-game-89`) has the corpus sync, the same-day rated decode and the FIRE
+ORDER. **I will not run any of those.** I have told them I certify the fire order against the
+target gate before anything fires, and any prereg two-clock before a leg is created — **not
+after.** Two cautions already sent to them: `audit_trigger`'s tripped cell still counts
+ACTIVATIONS with no uploader filter (known, banked twice yesterday), and `target_value` prices
+opponents off a **CACHED** rating — the Juusto worked case in the s44 HANDOVER went from "INSIDE
+by 1" to "OUTSIDE by 8" on a live re-read, and my own predecessor's flag was wrong the other way
+off a stale 1883. **Re-derive both sides from `fcode team search` before any fire order is acted
+on.**
+
+Next: `QUEUE.md` admission audit — 3 counted rows carry **GREP TREE UNNAMED**, so the gate cannot
+tell whether they are stale against the live control.
