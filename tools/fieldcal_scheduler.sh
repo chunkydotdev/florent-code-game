@@ -668,9 +668,30 @@ run_round(){
   if (( round % 2 == 0 )); then arm=A; else arm=B; fi
   start_idx=$(( (round / 2) % 10 ))
   say "ROUND $round: arm=$arm (v${ARM_VER[$arm]}) start_cell=${CELL_ORDER[start_idx+1]} (idx $start_idx)"
-  pos=0
-  while (( budget_remaining > 0 && pos < 10 )); do
-    idx=$(( (start_idx + pos) % 10 ))
+  # AMEND1 CATCH-UP RULE (docs/prereg/AMENDMENT-LEG-fieldcal-catchup-2026-08-16.md
+  # §1, ratified 868e3312, side-lane cert 6faa684f): the round's FIRST cell is the
+  # lowest-index ZERO-ACCEPT cell for this arm, if one exists; the ordinary
+  # rotation then resumes from start_idx. A prepend to the SAME walk — every gate
+  # below (HALT, rate budget same-cell retry, leak check, 12/12 skip) binds
+  # unchanged, so the rule chooses WHICH cell fires first, never WHETHER (§1.3).
+  # Selection predicate is `== 0`: structurally blind — a cell with no games has
+  # no results to prefer (§3).
+  local -a visit
+  visit=()
+  local catchup_idx=-1 ci clbl
+  for (( ci=0; ci<10; ci++ )); do
+    clbl=${CELL_ORDER[ci+1]}
+    if (( ${COUNTS[$arm,$clbl]:-0} == 0 )); then catchup_idx=$ci; break; fi
+  done
+  if (( catchup_idx >= 0 && catchup_idx != start_idx )); then
+    # No line when the zero cell IS the scheduled cell: no reorder happened,
+    # and a spurious CATCHUP line would make the tape lie about firing order.
+    say "  CATCHUP $arm/${CELL_ORDER[catchup_idx+1]}   (scheduled start was $arm/${CELL_ORDER[start_idx+1]}, idx $start_idx)"
+    visit+=($catchup_idx)
+  fi
+  for (( pos=0; pos<10; pos++ )); do visit+=($(( (start_idx + pos) % 10 ))); done
+  for idx in $visit; do
+    (( budget_remaining > 0 )) || break
     label=${CELL_ORDER[idx+1]}
     if halt_file_present; then
       say "  HALT file present — stopping cleanly, no further invocations this round."
@@ -679,7 +700,7 @@ run_round(){
     banked=${COUNTS[$arm,$label]:-0}
     if (( banked >= 12 )); then
       say "  cell $label already 12/12 for arm $arm — skip"
-      pos=$((pos+1)); continue
+      continue
     fi
     target=$budget_remaining
     (( (12-banked) < target )) && target=$((12-banked))
@@ -719,7 +740,6 @@ run_round(){
       return 1
     fi
     budget_remaining=$(( budget_remaining - accepted ))
-    pos=$((pos+1))
   done
   return 0
 }
@@ -962,6 +982,83 @@ STUB
   else
     fail "state resume: reloaded state does not match (Juusto=${COUNTS[A,Juusto]:-?} farming=${COUNTS[B,farming_200s]:-?} clock2=$CLOCK2 round=$ROUND_NUM streak=$BLIND_STREAK)"
   fi
+
+  # --- (i) AMEND1 catch-up rule — the five owed cells (amendment §4; each can
+  # return the other verdict, and i2/i3 are the dormancy/no-spurious-line pair
+  # that make i1 mean something).
+  local first_call_id2
+  # i1: zero-accept cell OUT of rotation order fires FIRST, with a CATCHUP line.
+  load_state_fixture
+  STATE_FILE="$TDIR/state_i1.tsv"; LOG_FILE="$TDIR/sched_i1.log"
+  for l in $CELL_ORDER; do COUNTS[A,$l]=12; done
+  COUNTS[A,0033]=0   # idx 5; round 0 schedules idx 0 (Juusto)
+  : > "$calllog"; FATAL=0
+  run_round 0 >/dev/null
+  first_call_id2=$(head -1 "$calllog" | awk '{print $3}')
+  if [[ "$first_call_id2" == "${CELL_TEAM[0033]}" ]] && grep -q "CATCHUP A/0033" "$LOG_FILE"; then
+    ok "amend1 i1: out-of-order zero-accept cell (0033) fired FIRST, CATCHUP line emitted"
+  else
+    fail "amend1 i1: expected 0033 first with a CATCHUP line (got team=$first_call_id2, log=$(grep -c CATCHUP "$LOG_FILE" 2>/dev/null) CATCHUP line(s))"
+  fi
+  # i2: no zero-accept cells -> rule DORMANT: no CATCHUP line, scheduled cell first.
+  load_state_fixture
+  STATE_FILE="$TDIR/state_i2.tsv"; LOG_FILE="$TDIR/sched_i2.log"
+  for l in $CELL_ORDER; do COUNTS[A,$l]=1; done
+  : > "$calllog"; FATAL=0
+  run_round 0 >/dev/null
+  first_call_id2=$(head -1 "$calllog" | awk '{print $3}')
+  if [[ "$first_call_id2" == "${CELL_TEAM[Juusto]}" ]] && ! grep -q "CATCHUP" "$LOG_FILE"; then
+    ok "amend1 i2: no zero cells -> dormant (no CATCHUP line, scheduled Juusto fired first)"
+  else
+    fail "amend1 i2: expected dormant rule (got team=$first_call_id2, CATCHUP lines=$(grep -c CATCHUP "$LOG_FILE" 2>/dev/null))"
+  fi
+  # i3: the zero-accept cell IS the scheduled cell -> no reorder, NO spurious line.
+  load_state_fixture
+  STATE_FILE="$TDIR/state_i3.tsv"; LOG_FILE="$TDIR/sched_i3.log"
+  for l in $CELL_ORDER; do COUNTS[A,$l]=12; done
+  COUNTS[A,Juusto]=0   # idx 0 == round 0's scheduled start
+  : > "$calllog"; FATAL=0
+  run_round 0 >/dev/null
+  first_call_id2=$(head -1 "$calllog" | awk '{print $3}')
+  if [[ "$first_call_id2" == "${CELL_TEAM[Juusto]}" ]] && ! grep -q "CATCHUP" "$LOG_FILE"; then
+    ok "amend1 i3: zero cell IS the scheduled cell -> fired first with NO spurious CATCHUP line"
+  else
+    fail "amend1 i3: expected Juusto first and zero CATCHUP lines (got team=$first_call_id2, lines=$(grep -c CATCHUP "$LOG_FILE" 2>/dev/null))"
+  fi
+  # i4: budget refusal with a catch-up cell selected -> wait binds on the
+  # CATCH-UP cell, same-cell retry, never advances (§1 exclusion 3).
+  load_state_fixture
+  STATE_FILE="$TDIR/state_i4.tsv"; LOG_FILE="$TDIR/sched_i4.log"
+  for l in $CELL_ORDER; do COUNTS[A,$l]=12; done
+  COUNTS[A,0033]=0
+  echo 0 > "$ctrfile"
+  BUDGET_CMD="$stub_budget_once"
+  : > "$calllog"; SLEPT=(); FATAL=0
+  run_round 0 >/dev/null
+  first_call_id2=$(head -1 "$calllog" | awk '{print $3}')
+  if [[ "${#SLEPT[@]}" -ge 1 && "${SLEPT[1]}" == "3" && "$first_call_id2" == "${CELL_TEAM[0033]}" ]]; then
+    ok "amend1 i4: budget wait bound to the CATCH-UP cell (waited 3s, then 0033 fired, not advanced)"
+  else
+    fail "amend1 i4: expected 3s wait then 0033 (got SLEPT=(${SLEPT[*]}) team=$first_call_id2)"
+  fi
+  BUDGET_CMD="$stub_budget_always_free"
+  # i5: HALT present with a catch-up cell selected -> ZERO invocations.
+  load_state_fixture
+  STATE_FILE="$TDIR/state_i5.tsv"; LOG_FILE="$TDIR/sched_i5.log"
+  for l in $CELL_ORDER; do COUNTS[A,$l]=12; done
+  COUNTS[A,0033]=0
+  HALT_FILE="$TDIR/HALT_present_i5"
+  : > "$HALT_FILE"
+  : > "$calllog"; FATAL=0
+  run_round 0 >/dev/null
+  if [[ ! -s "$calllog" ]]; then
+    ok "amend1 i5: HALT outranks the catch-up rule — zero invocations"
+  else
+    fail "amend1 i5: catch-up fired despite HALT ($(wc -l < "$calllog") call(s))"
+  fi
+  rm -f "$HALT_FILE"
+  HALT_FILE="$TDIR/HALT_absent"
+  LOG_FILE="$TDIR/sched.log"
 
   # --- (g) the -40 Elo gate: fixture ladder tapes.
   # Build a minimal ladder_games.tsv-shaped fixture. One complete 5-game match
@@ -1240,6 +1337,14 @@ if ! startup_validate; then
 fi
 load_state
 say "resumed at round=$ROUND_NUM clock2='${CLOCK2:-<unset>}' blind_streak=$BLIND_STREAK"
+# AMEND1 EFFECTIVE BOUNDARY (side-lane cert condition D2): rounds before this
+# stamp bought accepts under the pure rotation, rounds from it under the
+# catch-up rule. Stamped ONCE, to a sidecar the log truncation cannot eat.
+AMEND1_MARK=${AMEND1_MARK:-scratchpad/fieldcal_amend1_effective.txt}
+if [[ ! -f "$AMEND1_MARK" ]]; then
+  print -r -- "AMEND1 catch-up rule EFFECTIVE from round=$ROUND_NUM restart=$(date -u +%Y-%m-%dT%H:%M:%SZ) amendment_commit=868e3312" > "$AMEND1_MARK"
+  say "$(cat "$AMEND1_MARK")"
+fi
 backfill_clock2
 main_loop
 rc=$?
