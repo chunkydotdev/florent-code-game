@@ -325,8 +325,22 @@ invoke_runner(){
   FATAL=0
   local consolidated="${SCRATCH_DIR}/arm_fieldcal_${arm}_${label}.txt"
   local capture rc
-  capture=$(PIN="$pin" MAIN="$FIELDCAL_MAIN" ${=RUNNER_CMD} "$ver" "$games" "$team" 2>&1)
-  rc=$?
+  # ⛔ HEARTBEAT WRAPPER (side lane, 06:4xZ): the runner waits out rate windows
+  # INTERNALLY, so a synchronous capture left the scheduler silent for up to a
+  # full window — a live-and-waiting scheduler and a dead one produced
+  # identical output (§9.5's freshness rule, applied to our own liveness).
+  # The child runs in background; a liveness line prints every ~120s.
+  local _hb_tmp="${SCRATCH_DIR}/.fieldcal_invoke_$$.out"
+  PIN="$pin" MAIN="$FIELDCAL_MAIN" ${=RUNNER_CMD} "$ver" "$games" "$team" > "$_hb_tmp" 2>&1 &
+  local _hb_pid=$! _hb_w=0
+  while kill -0 $_hb_pid 2>/dev/null; do
+    sleep 15; _hb_w=$((_hb_w+15))
+    if (( _hb_w % 120 == 0 )); then
+      say "  … arm=$arm cell=$label invocation running ${_hb_w}s (child $_hb_pid alive — a silent stretch is the runner waiting out the rate window, not a hang)"
+    fi
+  done
+  wait $_hb_pid; rc=$?
+  capture=$(<"$_hb_tmp"); rm -f "$_hb_tmp"
   print -r -- "$capture" >> "$LOG_FILE"
   if (( rc != 0 )) || [[ "$capture" == *ABORT* ]] || [[ "$capture" == *"ROLLBACK FAILED"* ]]; then
     say "  *** RUNNER FATAL arm=$arm cell=$label ver=$ver exit=$rc — stopping the scheduler."
