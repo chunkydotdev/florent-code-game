@@ -65788,3 +65788,5 @@ report BESIDE the estimate, never the estimate itself.**
 conveyors · the delta CONVERTED TO SCALE (each conveyor is +1% forever) · and what that scale delta
 BUYS at the kill window (r150/r250) in turret/launcher cost.** ⚠ **A prize denominated in conveyors
 is not a prize; it only counts once it is priced in the hardware it buys.**
+
+--- 2026-08-16T12:48:07Z BUILDER s46 — Magnus screenshot (91a87b64 g1, v140 LOSS to Bisons v9 in r49, leg-cell opponent — mechanism observation only): three markers, all landing on HELD rows with new live evidence. Markers 1+3 = #74's sealed-idle-builder case, instances 3-4 today (stuck at their core r25→r44 in a game we lost at r49). Marker 2 = #2/#41's mechanism live: Bisons' 3-sentinel column at (6,7)-(6,9) shares one axis; sentinels cannot rotate; one counter-sentinel at (6,10) facing N kills the stack uncontested — the s39 Bisons book's own conclusion, instantiated. IN-FLIGHT: sonnet build agent for the #74 arm (bots/_v429sealpeck — peck enabled iff all four neighbours blocked; row-registered dose). Marker-2 evidence routed to research for #2/#41 sharpening. ---
