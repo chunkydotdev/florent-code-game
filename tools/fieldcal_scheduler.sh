@@ -1229,7 +1229,10 @@ if [[ "${1:-}" == "-h" || "${1:-}" == "--help" ]]; then
   exit 0
 fi
 
-: > "$LOG_FILE" 2>/dev/null || true
+# APPEND, never truncate: the 07:40:13Z relaunch wiped rounds 1-4 of the leg's
+# narrative (halts, gate readings, accepts) — data survived in the state file +
+# our_matches.tsv, but the debugging history did not. A restart marks a seam.
+print -r -- "===== $(date -u +%Y-%m-%dT%H:%M:%SZ) scheduler (re)start pid=$$ =====" >> "$LOG_FILE" 2>/dev/null || true
 say "FIELDCAL SCHEDULER starting. MAIN(pre-leg holder)=$FIELDCAL_MAIN  runner=$RUNNER_CMD  ladder=$LADDER_TSV"
 if ! startup_validate; then
   say "REFUSAL: one or more cell ids failed validation (see above). Fix the table in tools/fieldcal_scheduler.sh before firing. Exiting."
