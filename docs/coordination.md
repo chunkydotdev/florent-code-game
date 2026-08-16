@@ -66542,3 +66542,111 @@ chain, a drained queue or a long session are not wrap-calls.**
 **HARD LIMITS UNCHANGED:** no bot edits, no arena or unrated runs, no verdicts, no `HANDOVER.md`/
 `PROGRAMME.md`/`QUEUE.md`/`BARS.tsv`/tape writes, no platform actions, no engine probes. New files
 only under `docs/research/`, plus append-only notes here. I commit only my own named files.
+
+--- 2026-08-16T13:56:05Z (`date -u`) ⛔⛔ **SIDE LANE s47 — LIVE STOP-LOSS ARITHMETIC: THE WRONGFUL DISPLACEMENT PUT A THREE-MATCH HOLE IN v153's RUN, AND THE HOLE INFLATES THE FIRING WINDOW FROM 5 MATCHES TO 8 AT EXACTLY THE MATCH THE RULE ARMS. Flag, with both branches. Not a verdict, and NOT a claim that the alarm would be wrong to fire.** ---
+
+**ANCHOR: `PROGRAMME.md` `SHIP_SIT_MIN_K: 8` · `tools/slot_rule.py` (`SWAP_THRESHOLD -21`, `ARM_AFTER 8`,
+`WINDOW 5`) · the D-checklist's stop-loss-arithmetic standing item.** This is the v122 class — a
+stop-loss whose arithmetic does not do what its threshold was calibrated for.
+
+## WHAT I DROVE, NOT WHAT I INFERRED
+
+`tools/monitors/ship_watch.py:543` calls `assess(slot_rule.TAPE, None, …)` — **`version=None`, so the
+live alarm evaluates the tape's LATEST TAG.** That is `v153`, a **teammate's ship**. Evaluated
+directly:
+
+```
+version=v153  k=5  holder_start=1107  matches=1112
+rating=1751.0  base5=1784.0  net5=-33.0  armed=False  slot_free=False
+distinct match counts under the v153 tag: [1107, 1111, 1112]
+```
+
+⛔ **MATCHES 1108, 1109 AND 1110 ARE MISSING FROM v153's RUN.** They are tagged `v152` — the
+12:14:40Z→13:33Z wrongful displacement. **`holder_rows()` filters GLOBALLY by tag, not by contiguous
+run**, so the restored holder is merged back into ONE run **with a three-match hole in it**.
+
+## THE ARITHMETIC — simulated forward with the rating HELD FLAT at 1751, so anything that moves is the SEGMENTATION and not the bot
+
+| matches | k | armed | base5 | net5 | **window span (matches)** | slot_free |
+|---:|---:|---|---:|---:|---:|---|
+| 1112 | 5 | False | 1784 | −33.0 | 5 | False |
+| 1113 | 6 | False | 1784 | −33.0 | 6 | False |
+| 1114 | 7 | False | 1784 | −33.0 | 7 | False |
+| **1115** | **8** | **True** | 1784 | −33.0 | **8** | **True** ← arms here |
+| 1116 | 9 | True | 1767 | −16.0 | 5 | False |
+
+⭐⭐ **THE WIDEST WINDOW LANDS EXACTLY ON THE ARMING MATCH, AND IT IS NOT A COINCIDENCE — BOTH ARE
+COUNTED FROM `holder_start`.** `base5` takes *the most recent row at least `WINDOW` matches back*;
+with a hole it falls straight past the hole to the far side. **GENERAL FORM: a hole of width `w`
+inside the first `ARM_AFTER − WINDOW` = 3 matches of a run inflates the window at the arming
+evaluation to `WINDOW + w`.** Here the hole is offsets 1–3 from `holder_start`, i.e. precisely that
+case, and `w = 3` ⇒ **8**.
+
+**WHY AN 8-WIDE WINDOW MATTERS AGAINST A −21 THRESHOLD.** `slot_rule.py:24` records the calibration:
+**−21 is −1 sd of the rolling-FIVE sum** (per-match sd 9.25 ⇒ 5-match sd 20.68). On an 8-match sum
+the sd is 26.16, so **−21 is −0.80 sd, not −1.00**.
+
+| window | sd of sum | −21 in sd | **P(fire on a NEUTRAL holder)** |
+|---|---:|---:|---:|
+| 5 (as calibrated) | 20.68 | −1.015 | **15.50%** |
+| **8 (as it will actually evaluate at m=1115)** | 26.16 | −0.803 | **21.11%** |
+
+⇒ **a ~36% relative increase in the false-fire rate, at the single evaluation where the rule first
+becomes able to fire at all.** With the rating flat, `slot_free` goes **TRUE** at m=1115; for it not
+to, `v153` needs **rating > 1763 by then — +12 over three matches** from 1751.
+
+## ⚠ DIRECTION — I CHECKED IT BECAUSE MY FIRST INSTINCT WAS WRONG, AND IT RUNS THE OTHER WAY
+
+My first reading was that the foreign matches were dragging `net5` DOWN toward firing. **They are
+not.** Per the **builder's** per-match read off `fcode match list` (`581aa088`), matches 1108–1112
+split **12:12:59 v153 · 12:32:59 v152 · 12:52:59 v152 · 13:12:59 v152 · 13:32:59 v153**, and
+**research's** figure for the three v152 matches is **net +1.34 Elo** (`aecc9133`). ⇒ **the
+contamination currently FLATTERS `v153` by ~1.34; removing it makes `net5` slightly MORE negative
+(~−34.3).** **The magnitude hazard today is small and points the wrong way for alarm; the STRUCTURAL
+hazard — a window calibrated for 5 evaluating over 8 — is the finding, and it is independent of
+which way the contamination runs.** *(Both figures relayed with their owner and their method; I did
+not re-derive either, and `ladder_games.tsv` cannot check them — research reads it as still holding
+nothing past 12:52:59Z.)*
+
+## ⛔ AND THE FILE'S OWN STATED BOUND IS NOW FALSE
+
+`slot_rule.py:96-99` documents the poll-time-tag defect and then bounds it: *"BOUNDED, WHICH IS WHY
+IT HAS NOT BITTEN: at most one sampling interval of matches (~1 match …) is misattributed, and
+`ARM_AFTER=8` means a single foreign match cannot arm anything on its own."* **That bound models ONE
+source — the polling gap. A wrongful displacement is a SECOND source the bound never contemplated,
+and it misattributed THREE.** The protection is stated for `w=1` and does not survive `w=3`.
+⚠ **Equally, `slot_rule.py:35-36` — *"tape rows are filtered by the live version tag, so a holder
+change resets it naturally"* — is TRUE for a NEW holder and FALSE for a RESTORED one. A restore does
+not reset; it re-merges across the gap.** Neither sentence is wrong about what it modelled; both are
+now incomplete, and the incident that made them incomplete was ours.
+
+## ⛔ WHAT I AM **NOT** CLAIMING
+
+* **NOT that the alarm would be wrong to fire.** `v153` is genuinely −33 from a 1784 peak and
+  research reports it 0-10 in rated play. **The finding is that it would fire on an 8-match window
+  carrying a 5-match threshold — a number that may well be right for the wrong reason, which is
+  exactly the case D34 says never gets audited.**
+* **NOT a forecast.** The simulation holds the rating FLAT deliberately, as the control: it is the
+  only way to show the movement is segmentation. Real ratings will move and `base5` need not stay
+  1784.
+* **NOT a verdict, and not an instruction.** `slot_free` is a permission and a wake, never an n=8
+  evaluation of the bot (`slot_rule.py:27-30`).
+
+## THE FIX — ONE LINE, HANDED TO THE OWNING LANE, SPECIFIED AGAINST THE CONSUMER
+
+**Consumer chain: `slot_rule.evaluate` → `ship_watch.assess` → `corpus/SHIP_ALERT`.** The defect is
+that `base5` accepts **any** row at `m <= matches - WINDOW`, however far back. ⇒ **reject the
+evaluation when the base row is more than `WINDOW` matches back, returning `net5=None` — the path the
+rule ALREADY takes before the window fills, and which `ship_watch._n5` already formats as `n/a`.**
+**No new alarm logic, no new state, and it fails safe (no fire) rather than loud.**
+
+⛔ **AND THE TEST MUST FAIL FIRST — the file says so itself** (`slot_rule.py:70-72`: *"this is a live
+stop-loss and s26 D17 records four instruments that BROKE IN THE FIXING. Do not 'quickly correct' it
+without a test that fails first."*). **The failing test is already in hand from this drive and needs
+no fixture invented:** the live tape at simulated `matches=1115` must today give `armed=True`,
+`slot_free=True`, span **8**; after the fix the same input must give `net5=None`. **Both verdicts are
+measured, so the test can be written knowing what each side looks like.**
+
+**OWNER: the builder — `tools/` is theirs and I write no code.** ⚠ **Time on it:** at the ~20-minute
+pairing cadence, m=1115 is roughly **an hour out**. Not urgent-urgent; also not something to discover
+from a `SHIP_ALERT` file about a teammate's ship.
