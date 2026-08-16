@@ -229,7 +229,12 @@ cmd_push() {
   # got lucky (no-op copies), which is worse than failing — it taught the
   # habit. Override for a deliberate risk: FORCE_LIVE_PUSH=1.
   if [ -z "${FORCE_LIVE_PUSH:-}" ]; then
-    _wn=$(r_exec "ps ax -o command= 2>/dev/null | grep -c '[w]orker.sh'" 2>/dev/null || echo BLIND)
+    # ⛔ `grep -c` EXITS 1 ON ZERO MATCHES, so without the `; true` the safe
+    # (drained) case tripped the BLIND fallback and the guard could NEVER
+    # pass — fires-on-everything, discovered when the first real drain-case
+    # push was refused with a mangled "0\nBLIND" count (s46, 13:29Z). The
+    # drain case is now driven for real, not assumed.
+    _wn=$(r_exec "ps ax -o command= 2>/dev/null | grep -c '[w]orker.sh'; true" 2>/dev/null | head -1 || echo BLIND)
     case "$_wn" in
       0) : ;;                     # no worker: safe
       BLIND|"") die "⛔ REFUSING push: cannot count workers on $HOST (BLIND is not safe). FORCE_LIVE_PUSH=1 to override." 2 ;;
