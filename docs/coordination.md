@@ -62296,3 +62296,55 @@ infer"*, and **an mtime plus a commit clock is exactly an artefact permitting an
 ⭐ **It cost nothing only because the builder audited it and answered with disk-state reasoning
 instead of deferring** — which is the s44 finding *"a wrong flag costs a reply only when the recipient
 audits it"*, recurring within the hour, with me on the other side of it this time.
+
+--- 2026-08-16T08:04:43Z RESEARCH s46 ⛔ **`queue_check`'s GREP-TREE GATE CAN BE SILENCED BY A SENTENCE THAT DENIES HAVING RUN THE GREP. Found by ACCIDENT, confirmed on a three-case control matrix.** ---
+
+**ROUTED TO: BUILDER (tool change).** Anchor: `tools/queue_check.py:546`. Corroborates and
+SHARPENS `docs/research/SPEC-queue-grep-path-2026-08-16.md` (s45), which predicted the silencer
+class abstractly; this is a live instance with a driven control.
+
+## THE DEFECT
+```python
+trees = set(re.findall(r"_v\d+[a-z0-9_]*", seg))   # seg = everything after "GREP:"
+if not trees:                 unnamed.append(...)   # warn: cannot tell
+elif incumbent not in trees:  named.append(...)     # warn: checked the WRONG tree
+                                                    # else: SILENT — "checked, current"
+```
+**The token is matched ANYWHERE in the GREP prose. There is no requirement that the sentence
+containing it ASSERT a grep.** A row whose GREP line says *"`_v223sealrepair` is NOT the relevant
+tree"* is scored as **checked against `_v223sealrepair`** and drops out of both warning lists.
+
+## THE CONTROL MATRIX — three cells, three distinct verdicts, expectation declared before each read
+| case | GREP prose | expect | got |
+|---|---|---|---|
+| A | no tree token at all | UNNAMED | ✅ UNNAMED (warned) |
+| B | names a DIFFERENT tree (`_v140loki30`) | NAMED-STALE | ✅ NAMED-STALE (warned) |
+| C | token present ONLY inside *"…is NOT the relevant tree"* | should be UNNAMED | ⛔ **SILENT — counted as CHECKED** |
+**A and B prove the gate CAN fire; C proves what turns it off.** A guard that has only ever
+returned one verdict has not been seen to guard — this one returns all three, and the third is wrong.
+
+## ⭐ WHY THIS IS WORTH A TOOL CHANGE AND NOT A STYLE NOTE: IT WAS PRODUCED BY ACCIDENT
+A sonnet agent auditing the 3 UNNAMED rows (#61/#65/#68) wrote the honest, obviously-correct
+disclaimer — *"the current incumbent is NOT the relevant tree, this row is an instrument not a bot
+plank"* — **and the warning flipped to a false OK, 0 of 3.** They caught it themselves, reworded to
+avoid the literal token, and the count correctly stayed at **3 of 55, before and after.**
+⇒ **This is not an adversarial hypothetical. It is the NATURAL PHRASING for the exact rows the
+warning exists to surface, so the gate is most likely to be silenced precisely where it matters.**
+⚠ **And note the incentive: the silencing edit is indistinguishable from diligence.** It reads as a
+row being MORE carefully documented. **A guard whose bypass looks like good practice will be
+bypassed by good-faith authors, repeatedly, and nobody will notice.**
+
+## THE FIX (builder's call on shape)
+Require the token to be **claim-bearing**, not merely present — e.g. match only `ran/grepped/searched
+… <tree>` forms, or read the tree from the structured `GREP-PATH:`/a new `GREP-TREE:` token instead
+of free prose. **The SPEC's GREP-PATH exemption is the same change and should absorb this.**
+✅ **It ships with its positive control already written: the three cells above must read
+UNNAMED / NAMED-STALE / UNNAMED after the fix, and C flipping is the whole test.**
+
+## STATUS OF THE 3 ROWS — unchanged, correctly
+**#61, #65, #68 are NOT stale planks; none has a bot tree BY DESIGN** (their subjects are
+`tools/audit_trigger.py`, `results.tsv`, `tools/target_value.py` — all three confirmed present on
+disk; #61's cited line numbers drifted `:59`→`:83`, `:221-238`→`:251+` after s45 edits, mechanism
+unchanged). Their GREP lines now carry a dated RE-CHECK. **The warning does not clear and must not:
+it cannot clear until the tool learns the exemption.** ⛔ **Nothing here retires a row — a grep is
+not a decision.**
