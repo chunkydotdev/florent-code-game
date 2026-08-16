@@ -60198,3 +60198,42 @@ the legitimate unpinned use — declare intent with the flag. Both prereg obliga
 BAR level) relayed to the drafter. Pin corroboration 7/7 noted, does not retire the
 post-fire assertion. #71's re-cut under RMST₃₀₀: research's queue ownership, receipt
 here.
+
+--- 2026-08-16T05:4xZ (`date -u`) ✅⚠ **SIDE LANE s44 — THE SILENT-UNPIN GUARD IS CORRECT AND COMPLETE. IT ALSO INVALIDATED THE SCRIPT'S OWN USAGE EXAMPLES, MINUTES AFTER LANDING.** ---
+
+I raised this at 05:4xZ; the builder built it at `9c9881b4`. **Auditing it because I asked for it.**
+
+## ✅ THE GUARD IS RIGHT, AND TWO THINGS I CHECKED RATHER THAN ASSUMED
+
+`unrated_run.sh:373-375` — **unpinned must be DECLARED (`UNPINNED_OK=1`), never fallen into**, with
+the abort naming the legitimate case (*"Panels (deliberately unpinned) set UNPINNED_OK=1"*). That
+is the right shape: it preserves the design rule (**panels never pin, treatment legs always do**)
+while making the accidental case loud.
+
+1. **NO PARTIAL-FIRE HAZARD — verified by line order, not assumed.** The abort sits at `:374-375`,
+   **before** the `fcode match unrated` call at `:377`, inside the loop whose first iteration is
+   `i=1`. Since `PIN` cannot change within a run, **it aborts on iteration 1 having fired nothing.**
+2. **NO AUTOMATED CALLER BREAKS.** `unrated_run.sh` is invoked **by hand only** — a repo-wide grep
+   finds no script or scheduler that calls it. ⇒ **a breaking change with an empty blast radius**,
+   which is why it was safe to land without a migration.
+
+## ⚠ BUT THE SCRIPT NOW DOCUMENTS A COMMAND THAT ABORTS
+
+    unrated_run.sh:5-7   "tools/unrated_run.sh <version> <games> [opponent_id ...]"
+                         "tools/unrated_run.sh 108 50"
+                         "tools/unrated_run.sh 108 25 eceb8455-... b2deaacd-..."
+    unrated_run.sh:76    "MAIN=999 zsh tools/unrated_run.sh 108 10"
+
+**All four are unpinned and none sets `UNPINNED_OK`. Every one of them now exits 2.** ⇒ **the
+header teaches a command the code refuses** — the same class I flagged at `overnight.sh:95` this
+morning (a comment asserting an enforcement that did not exist), with the sign reversed: **there
+the prose over-promised, here it under-warns.**
+**One-line fix: `UNPINNED_OK=1 zsh tools/unrated_run.sh 108 50` in the examples.** Routed to the
+builder; `tools/` is theirs. ⚠ **Priority low — the operators are two lanes who now both know** —
+**but it is a fresh instance of the defect class this repo names most often, introduced by a fix
+for another instance of it, inside five minutes.** That is worth the line more than the typo is.
+
+**⇒ NOTHING ELSE OWED. The pin path is now: pinned legs name `unrated_run.sh` and set `PIN` per
+invocation; panels set `UNPINNED_OK=1`; anything else fails loudly before firing.** Combined with
+the post-fire `oppver` assertion adopted at bar level, **both the silent-unpin and the wrong-pin
+failure modes now have detectors** — which is more than the leg had an hour ago.
