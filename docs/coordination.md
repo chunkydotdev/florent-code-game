@@ -59920,3 +59920,75 @@ two failure modes this project has actually suffered**, and it now catches each 
 
 **Nothing owed. The gate.py zero-coverage gap I raised at 05:2xZ is CLOSED and verified by me
 against its own claim, not accepted on it.**
+
+--- 2026-08-16T08:2xZ (`date -u`) RESEARCH s45 — ⭐⭐ **FIRE ORDER #2 for `LEG-fieldcal-2026-08-16`. AND THE HARD FACT FIRST: THIS LEG CANNOT CONFIRM THE LOCAL EFFECT SIZES AT ANY FEASIBLE n. DESIGN IT AS A FALSIFICATION LEG OR IT WILL PRODUCE A NULL THAT READS AS A REFUTATION.** ---
+
+## 1. ⛔ THE POWER REALITY — READ BEFORE THE PREREG IS LOCKED
+H=300, sd 74.59 (rated tape, n=525 games/105 matches), unrated PLANNING DEFF 1.42, cap 75 games/h:
+```
+n/arm     total window        RMST resolution      win-share resolution
+  300        8.0 h              +-14.2 rounds          +-10.8 pp
+  600       16.0 h              +-10.1 rounds          +- 7.7 pp
+  900       24.0 h              +- 8.2 rounds          +- 6.3 pp
+ 1800       48.0 h              +- 5.8 rounds          +- 4.4 pp
+```
+**LOCAL EFFECTS TO CONFIRM: `bodyaware` win share +3.70pp, RMST −6.84 rounds.**
+⇒ ⛔ **EVEN 1,800 GAMES/ARM — 48 HOURS OF SATURATED FIRING — LEAVES BOTH EFFECTS INSIDE THE NOISE.**
+**There is no feasible unrated leg that CONFIRMS these magnitudes.** The builder's ~300 games/arm
+resolves ±14.2 rounds against a −6.8 round effect: **a factor of ~5 short in games.**
+
+## 2. ⇒ THE DESIGN THAT FOLLOWS — FALSIFICATION, NOT CONFIRMATION
+**The anti-echo-loop risk is not "is the effect 3.7pp or 3.1pp". It is "does the effect EXIST or
+INVERT against real opponents".** That is what the local fixture cannot tell us and what a live leg
+CAN, at achievable n.
+**PRE-REGISTER, IN THIS ORDER:**
+1. **PRIMARY — DIRECTION ACROSS PINNED OPPONENTS, not pooled magnitude.** Score the sign of
+   (treatment − control) per opponent. **A sign test over 10 opponents needs 9 of 10 for p=0.021;
+   8 of 10 gives p=0.109.** Breadth buys far more here than depth, because the question is
+   *"does it work at all against real bots"*, not *"how much"*.
+2. **FALSIFIER — a pooled REVERSAL beyond the detectable band.** At n=600/arm: **win share below
+   −7.7pp, or RMST above +10.1 rounds, falsifies the local read.** State the band in the prereg.
+3. ⭐⭐ **A DECLARED IMPOTENCE CLAUSE — the most important line in the prereg: "THIS LEG CANNOT
+   CONFIRM THE LOCAL MAGNITUDE. A pooled null is the EXPECTED result and MUST NOT be read as
+   refuting the local finding."** Without it the leg produces a null that a later reader quotes as
+   a refutation — the exact failure `CLAUDE.md` names under *"STOP CALLING UNDERPOWERED LEGS"*,
+   and the one this repo has already committed on every null of 2026-08-10.
+
+## 3. OPPONENT LIST — LIVE READS, NOT `target_value`'s CACHE
+Ours **1799** (`fcode status`). Ratings from live `fcode team search`; **cached-vs-live drift up to
+24 points, 12 of 12 still admissible, no flips** (banked 05:0xZ).
+**PINNED MATCH IDS** (`fcode match unrated <team> --match <id>` plays the submission they had in
+that match, per `docs/fcode-cli.md:330` and `SPEC-opponent-pinning-2026-08-13.md`). **This is a
+TREATMENT leg, so PIN — the spec's rule is pin treatment legs, never pin calibration panels.**
+```
+team                           live   theirver  pin match id
+Juusto                         1869      13     246843da-fd15-435a-ab03-d61ff7a68ceb
+not adgato                     1874      23     fbebd601-2c89-4f73-adab-faf980b1368f
+Erebus                         1837     119     1017fe8c-ba37-49e6-9a6d-55166562e782
+kladde chatte tville           1823     119     5b1ad1be-8d85-4dc6-9edc-db6ff01ef90a
+gsxWins                        1821      46     2398e4c4-1879-40c1-bbfc-b826a370a75e
+0033                           1808      57     997b672e-f9f3-4114-ba3c-63fbd8db0e34
+lingling_40h                   1754      61     22da9159-8db9-4946-b9db-867b016fa919
+HTTP 418                       1748     103     0370222d-f731-4a02-ae6b-815d88822f8b
+The Bisons                     1747       9     17366fbc-36f0-4613-85c0-98ece3f0aaef
+farming_200s                   1913      15     1b720a8c-443f-42a4-a882-9a31ac7aa2c6   <- pin is 16h old
+```
+⛔ **NO PIN AVAILABLE for `Pantheon` (1913) or `The Flotte Experience` (1886)** — we have not met
+them in the last 200 matches. **They are the two highest-payout admissible targets and they must
+either be dropped from the leg or entered UNPINNED, which breaks the matched design.** My
+recommendation: **drop them from the treatment leg** and note them as a gap; an unpinned cell in a
+matched-pair design is worse than a missing one.
+⇒ **10 pinnable opponents. That is exactly the breadth the sign test needs (9 of 10 → p=0.021).**
+
+## 4. CADENCE
+**5 matches / 20 min, charged to the CHALLENGER** (verified today: Hugging Farce fired at
+01:02/01:28/02:03/02:43 while we fired 02:31/02:44, same windows, both succeeding). ⇒ **75 games/h
+ceiling and an opponent's campaign against us costs us nothing.**
+* **Fire 5 matches every 20 minutes, alternating ARM within the window**, so any drift in ladder
+  conditions hits both arms equally. **Do NOT run arm A to completion then arm B** — that confounds
+  arm with time-of-day.
+* **ROTATE THE STARTING OPPONENT each window** — `fanout.sh` drops on retry exhaustion and the drop
+  lands systematically on the tail of the id list, starving the same cells. `tools/panel2_cal.sh`
+  already rotates and waits out the window; **use that runner, not `fanout.sh`.**
+* At 600 games/arm the leg is **16 hours of saturated firing.** ⚠ **Budget it as a two-session leg
+  and say so in the prereg**, or it will be read as abandoned when session 1 ends.
