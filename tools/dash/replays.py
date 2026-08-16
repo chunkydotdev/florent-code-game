@@ -266,8 +266,22 @@ def collect_replay_list(limit: int = DEFAULT_LIMIT, q: str = "") -> dict:
         if mid.lower().startswith(q):
             return True
         meta = rec.get("meta") or {}
-        for k in ("teamAName", "teamBName"):
-            if q in str(meta.get(k) or "").lower():
+        # Term-aware: split on whitespace; a `vNNN` term matches a team's
+        # VERSION (meta stores bare ints), anything else substring-matches the
+        # team NAME — and ALL terms must land on the SAME team, so
+        # "opensverige v140" cannot pass by pairing our name with the
+        # opponent's version. (Magnus, 2026-08-16: "how can I filter on v140
+        # games so I can watch those?")
+        terms = q.split()
+
+        def team_hit(term: str, name, ver) -> bool:
+            if len(term) > 1 and term[0] == "v" and term[1:].isdigit():
+                return str(ver) == term[1:]
+            return term in str(name or "").lower()
+
+        for nk, vk in (("teamAName", "teamAVersion"),
+                       ("teamBName", "teamBVersion")):
+            if all(team_hit(t, meta.get(nk), meta.get(vk)) for t in terms):
                 return True
         return False
 
