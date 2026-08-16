@@ -914,7 +914,22 @@ def results_row(sh: Shard, dec: Decision, ts: str) -> str:
         f"and remain readable; overnight_read.py pools partial shards and prints the "
         f"shortfall. Registered target was n={sh.target}, so this arm is UNDER-POWERED "
         f"by construction — no exclusion claim is licensed by it. Stopped by rule, not "
-        f"by operator discretion: the rule is pinned in tools/auto_gate.py's header."
+        f"by operator discretion: the rule is pinned in tools/auto_gate.py's header. "
+        # ⛔ THE BIAS IN THIS ROW'S OWN NUMBER, stated ON the row because the row
+        # is where it gets reused. This is ARITHMETIC, not an empirical guess:
+        # the floor fires ON A LOW PREFIX DRAW, so CONDITIONAL ON HAVING STOPPED,
+        # the arm's true share is higher than the prefix that stopped it. The
+        # share printed above is therefore SELECTED LOW, and it is the number a
+        # reader mining for combinations reaches for first.
+        f"⛔ THIS SHARE IS SELECTED-PESSIMISTIC AND MUST NOT BE REUSED AS THE ARM'S "
+        f"ESTIMATE. A floor stop fires on a LOW PREFIX DRAW, so conditional on "
+        f"stopping, the arm's true share is HIGHER than the figure that stopped it "
+        f"— the selection is in the stopping rule, not in the arm. FOR COMBINATION "
+        f"MINING USE THE FULL-TAPE SHARE off {_rel(sh.tsv)}, and expect roughly "
+        f"+2pp of regression toward it (side lane, s47 2026-08-16: measured on the "
+        f"only two cases where both numbers are observable, +2.82pp and +1.33pp, "
+        f"mean +2.08pp — n=2, a DIRECTION with a rough size, not a calibrated "
+        f"correction)."
     )
     return "\t".join([f"{sh.id.lower()}-autostop-{dec.mark.lower()}",
                       f"{dec.share / 100:.4f}", f"{dec.lo / 100:.4f}",
@@ -1317,6 +1332,21 @@ def selftest() -> int:
     chk("description carries the rule clause", "FUTILITY-BAR@2700" in f[6], True)
     chk("description says rows are KEPT", "ROWS ARE KEPT" in f[6], True)
     chk("description disclaims being a verdict", "NOT A VERDICT" in f[6], True)
+    # The selection-bias disclosure (s47 wrap debt 15). It has to name the
+    # DIRECTION, the REPLACEMENT number, and the fact that n=2 — a bare "~+2pp"
+    # would read as a calibrated correction, which it is not.
+    chk("description says the share is SELECTED-PESSIMISTIC",
+        "SELECTED-PESSIMISTIC" in f[6], True)
+    chk("...names the replacement number (the full-tape share)",
+        "FULL-TAPE SHARE" in f[6], True)
+    chk("...gives the rough size and its n", "+2.08pp" in f[6] and "n=2" in f[6], True)
+    # NEGATIVE CONTROL: the same three probes against a row that does NOT carry
+    # the disclosure, so a `chk` that can only ever say True is not mistaken for
+    # a check. Built by stripping the clause from this very row.
+    _stripped = f[6].partition("⛔ THIS SHARE IS SELECTED-PESSIMISTIC")[0]
+    chk("...and all three probes go the OTHER way on a row without the clause",
+        ("SELECTED-PESSIMISTIC" in _stripped or "FULL-TAPE SHARE" in _stripped
+         or "+2.08pp" in _stripped), False)
 
     print("\n── apply_stop: local writes the flag; remote is REFUSED ────────────────")
     led2, res2, can2 = tmp / "l2.tsv", tmp / "r2.tsv", tmp / "c2"
