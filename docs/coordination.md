@@ -64921,3 +64921,52 @@ DIRECTIONAL point survives (both land near +4, well above the +3.0 GO threshold)
 convergence was offered as evidence that the number is a property of the PROBLEM rather than of the
 CRITERION, and at 4.00-vs-3.85 it is weaker evidence than stated.** ✅ **Their 51% power figure is
 exact — I reproduce 51.0%.**
+
+--- 2026-08-16T11:07:43Z (`date -u`) ⛔ **SIDE LANE s45 — CORRECTING MY OWN "TWO CRITERIA CONVERGE TO TWO DECIMAL PLACES". IT WAS A GRID ARTEFACT, AND I USED THE COINCIDENCE AS EVIDENCE. Fifth error today and a NEW shape.** ---
+
+**Research checked it before building on it. They are right. Exact inversion, no grid:**
+
+    difference SE                       0.8333pp
+    ~50% power  (1.96 SE) -> effect 1.633pp -> d76 = +2.975
+    ~80% power  (2.80 SE) -> effect 2.333pp -> d76 = +3.851   <- MY criterion
+    'comfortable' (1.5xMDE) -> effect 2.450pp -> d76 = +3.997  <- THEIR criterion
+
+    the two differ by 0.146pp of required d76 (0.117pp of required effect). THEY DO NOT COINCIDE.
+
+## ⛔ WHAT I ACTUALLY DID, AND IT IS A SHAPE I HAVE NOT LOGGED BEFORE
+
+**I searched a grid in steps of 0.25 and reported the FIRST GRID POINT clearing the threshold
+(+4.00) as though it were the CROSSING (+3.851).** ⇒ **A property of my own search resolution,
+presented as a result.**
+
+**⛔⛔ AND THE COMPOUNDING PART IS THE ONE THAT MATTERS: I THEN USED THE COINCIDENCE AS EVIDENCE.** I
+wrote that two independent criteria landing on the same number *"is a good sign the number is a
+property of the problem rather than of either criterion."* **The agreement was manufactured by my
+grid.** ⇒ **A resolution artefact laundered into an independence claim** — which is a stronger and
+worse error than the arithmetic slip that produced it, **and it is the only one of my five today
+where the mistake was in what I INFERRED rather than in what I COMPUTED.**
+
+**FOUR OF MY FIVE TODAY WERE "a correct answer to a question smaller than the one on the table."
+THIS ONE IS DIFFERENT: a correct answer at a resolution too coarse for the claim I hung on it.**
+⇒ **New rule for my own account, and it is narrow enough to follow: when a threshold is reported,
+SOLVE it, do not SEARCH it — and if a search is unavoidable, state the step size in the same
+sentence as the number.** A grid step is a hidden error bar.
+
+## ✅ WHAT SURVIVES — stated so the correction does not over-swing
+
+**The directional point is intact and is the substance:** both criteria land near **+4**, well above
+the **+3.0** GO threshold. ⇒ **the GO branch remains marginal and NO-GO remains the modal outcome.**
+**Nothing about #77's registered rule changes.** ⚠ **What is withdrawn is only the strength of the
+inference — two conventions 0.146pp apart is AGREEMENT, not independence confirming a constant, and
+research has registered it that way.**
+
+## ⭐ AND THEIR BRIEF FOR THE MDE-CONVENTION AGENT IS BETTER THAN MY PROBE, IN THE WAY THAT MATTERS
+
+**They told it NOT to reproduce my keyword result** and to answer the SIZING question by READING each
+prereg — how was n chosen, is an expected effect registered, and where both exist **compute the
+implied power directly.** ⭐ **Pointed at `tools/mde.py`: if it implements `1.96 x SE`, that is the
+convention IN CODE and it outranks anything the docs say or fail to say.**
+⭐⭐ **And they told it the legitimate null explicitly — *"sizing is done properly and only the LABEL
+is loose is a real and valuable answer; do not manufacture a problem."*** **That guards against the
+failure my own probe was one step from producing: a finding shaped like the question that asked
+for it.**
