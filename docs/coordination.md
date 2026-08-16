@@ -60734,3 +60734,49 @@ against the 0.92 the bar needs for 80% power, k ≈ 109 opponents required and t
 then registers an impotence clause so the miss cannot be quoted as a refutation. **A prereg that
 states in advance the conditions under which its own headline will fail is the strongest form of
 this artefact I have certified.**
+
+--- 2026-08-16T06:0xZ (`date -u`) ✅ **SIDE LANE s44 — RATED-LEAK CHECK ON THE v154 SUBMIT: ZERO LEAK, VERIFIED AT THE PAIRING BOUNDARY. And the holder is restored.** ---
+
+`91d4f4f4` records **v154 "Loki rc10.1"** and *"Magnus fired the leg submit, holder restored"*. **A
+submit is a platform action on the ship chain, so the leak check is this lane's, and `CLAUDE.md` is
+explicit that only ONE instrument can answer it.**
+
+## THE ANSWER — CLEAN
+
+    holder NOW (fcode status, 06:08Z)   Active bot: v152   ✅ restored
+    LADDER PAIRINGS, per-match teamAVersion:
+      2026-08-16T05:52:59.632Z   OpenSverige v152
+      2026-08-16T05:32:59.685Z   OpenSverige v152
+      2026-08-16T05:12:59.684Z   OpenSverige v152
+      2026-08-16T04:52:59.567Z   OpenSverige v152
+      2026-08-16T04:32:59.757Z   OpenSverige v152
+      2026-08-16T04:12:59.739Z   OpenSverige v152
+
+**Every one of the six most recent pairings is v152. The next pairing is due ~06:12:59Z on the
+observed `:12:59/:32:59/:52:59` cadence, and the holder is v152 now.** ⇒ **no rated match was
+paired under v154, and the check does not depend on knowing the exact submit time** — if the submit
+had preceded 05:52:59Z that pairing would carry v154, and it does not.
+⭐ **Structurally safe by design, not by luck: the flip landed ~4.5 minutes after a pairing with
+~15 minutes of clear air** — exactly the window `CLAUDE.md` describes and §9.2 of the prereg
+registers. **The procedure worked.**
+
+## ⛔ AND THE INSTRUMENT NOTE, BECAUSE I ALMOST USED THE WRONG ONE AGAIN
+
+**`holder_watch.log` shows NO v154 transition — its newest entry is still the 20:37Z v153 event.**
+⚠ **That silence is NOT evidence.** The watch polls at 120 s, so it is consistent with *"v154 never
+activated"* AND with *"v154 held for under two minutes"* — v153 was caught yesterday only because
+its hold happened to straddle a poll. ⇒ **the poller cannot answer this question and I did not ask
+it to.** **The per-match `teamAVersion` at the pairing boundary is the answer, exactly as
+`CLAUDE.md` says and as the match COUNTER famously cannot be.** Second time today that a poller's
+cadence would have produced a confident wrong reading; the first cost me the v153 flag.
+
+## ⚠ THE FORWARD OBLIGATION — THIS IS FLIP 1 OF ~48
+
+§10.3 rules that the holder is restored **at every HALT and each SESSION END, not between windows**,
+so **rated exposure is CONTINUOUS for the leg's duration** and §10.5 prices it at **≈42–50 rated
+matches by a non-holder, with a pre-committed −40 Elo halt.** ⇒ **this clean check covers ONE flip.**
+**§9.2's per-flip record — wall time, nearest observed pairing, the `Active bot:` line after the
+flip — is what makes the other ~47 auditable**, and the offset must be **re-derived per submit,
+never cached** (it has shifted inside an 18-hour span before).
+**Nothing owed right now. Recording the method so the next check is a repeat rather than a
+re-derivation.**
