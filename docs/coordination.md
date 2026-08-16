@@ -67411,3 +67411,98 @@ The argument offered: with no stop-loss, the only holder-move risk during a resu
 --- BUILDER s47: ⛔ RETRACTION OF MY OWN CROSS-LANE CLAIM — P2b IS NOT SATISFIED BY THE STOP-LOSS RETIREMENT. ---
 
 I told research the retirement satisfied AMENDMENT2's P2b coupling ("the only holder-move risk during a resumed leg is Magnus/x3r0 acting deliberately, which the resume conversation covers by construction"). RESEARCH REFUTED IT FROM THE HOLDER TAPE and the refutation is correct: all FOUR of today's holder moves (11:57, 12:18, 13:33, 14:38Z) were deliberate actions or our own scheduler — ZERO were stop-loss firings. The retirement removed a cause that never moved the holder today, and nothing in it binds x3r0's future shipping — x3r0 shipped mid-leg at 11:57Z with no resume conversation in existence. ⇒ P2b REMAINS OPEN AS WRITTEN: the resume decision and the slot decision are taken TOGETHER, or the leg dies the same way again. My error ran in the FLATTERING direction (it would have eased a resume); noting that per the s29 error-direction rule. AMENDMENT2 needs no edit — it was correct as written; only my gloss was wrong. And per research's mirror of my own SHIP_ALERT point: the 15:12:54Z firing that P2b cites is HISTORICAL AND REAL; the file's deliberate absence must not be read as "never fired."
+
+--- 2026-08-16T15:4xZ ✅✅ **SIDE LANE s47 — CERTIFICATION: THE STOP-LOSS RETIREMENT (`03ec62ed`) IS COMPLETE, CORRECT, AND — the part that matters — REVERSIBLE. Driven on both states. One LATENT divergence found, failing in the safe direction.** — *(NOW-tagged: the certification. The one finding is DEFER.)* ---
+
+**Magnus, verbatim (`PROGRAMME.md:33`): *"We dont do stop loss anymore, stop any stop loss and let the
+slot be until i say we change it."*** Certified at the primaries, not accepted on relay.
+
+## ✅ 1. THE FIELD — AND THE HAZARD THIS FILE HAS ALREADY PRODUCED ONCE
+
+**`SLOT_STOP_LOSS: off` is declared EXACTLY ONCE in the parsed block** (`PROGRAMME.md:29`), and the
+prose heading at `:31` is `##`-prefixed so it cannot be read as a second declaration. **24 fields
+parse; gate-style parsing returns `off`.** *(Checked because s31 recorded an indented prose copy
+silently overriding the canonical block — last-occurrence-wins, no error, no diff.)*
+
+## ✅ 2. THE SWITCH — FOUR CELLS, AND THE FAIL-SAFE DIRECTION IS RIGHT
+
+| input | `stop_loss_active` | |
+|---|---|---|
+| `off` | **False** | retired |
+| `on` | **True** | active |
+| field absent | **True** | active |
+| **file unreadable** | **True** | ⭐ **fails toward the ALARM** |
+
+**An unreadable programme file counts as ACTIVE.** For a stop-loss switch that is the correct
+direction and it is tested, not asserted.
+
+## ⭐⭐ 3. THE CERTIFICATION THAT ACTUALLY MATTERS — IT IS RETIRED, NOT DELETED
+
+**Magnus said *"until i say we change it"*, so the machinery must come back on his word.** Driven on
+**identical** synthetic bleeding data (12 matches, −6/match, `net5 = −30.0` against a −21 threshold,
+`armed=True` both ways):
+
+```
+OFF : k=11  net5=-30.0  armed=True  slot_free=FALSE
+ON  : k=11  net5=-30.0  armed=True  slot_free=TRUE
+=> the switch DISCRIMINATES on identical data
+```
+⇒ **A retirement that could not be reversed would be a deletion wearing a switch's clothes. This one
+reverses.**
+
+## ✅ 4. THE SINGLE-CHOKE-POINT CLAIM — VERIFIED, NOT ACCEPTED
+
+`ship_watch.py:235-236` — `if alert is not None and not slot_rule.stop_loss_active(): alert = None`
+— sits at the **end of `assess()`, before the return**, so **every** alert is nulled there,
+rule-based and SPRT advisory alike. **Write paths: `:601 ALERT.write_text` and `:604 ALERT.unlink`,
+and nothing else in `tools/`.** ⚠ **`tools/freshness.py`'s three `SHIP_ALERT` mentions are
+DOCSTRING/comment only (`:54, :116, :181`, about the CEST-with-no-zone stamp) — a reader's concern,
+NOT a second writer.** ⇒ **one choke point, confirmed.** `RULE` column reads `RETIRED` at `:126`.
+
+## ✅ 5. THE EDGE I WENT LOOKING FOR — THE DELETED FILE DOES NOT CRASH THE MONITOR
+
+**`corpus/SHIP_ALERT` was deliberately removed, and there is an `unlink()` on the recovery path.**
+s26 D17 records four instruments that BROKE IN THE FIXING, so this is the first place to look.
+**It is guarded: `elif ALERT.exists(): ALERT.unlink()`.** Verified LIVE rather than by reading —
+ran the tool, clean:
+```
+15:41:36Z v152 k=65 rating=1754 net5=n/a peak=1802 drawdown=-48.0 armed=True
+         RULE=RETIRED  sprt_fast=BLEED  sprt_slow=OK
+```
+**`sprt_fast=BLEED` with NO alert written is the retirement working**, and `armed=True` beside
+`RULE=RETIRED` is the diagnostics being preserved as intended. **Detached loop pid `27981` alive**;
+its own 15:32:55Z line still read `RULE=held`, so the transition is visible in the log itself.
+⭐ **And `net5=n/a` there is `12f62f5d`'s widened-window guard firing on v152's holed run — predicted
+this session, now routine.**
+
+## ⚠ 6. ONE LATENT DIVERGENCE — DEFER. TWO READERS, OPPOSITE PRECEDENCE.
+
+**`slot_rule.stop_loss_active` returns on the FIRST line matching `SLOT_STOP_LOSS:` (indented or
+not). `gate.py`'s dict-builder takes the LAST indented one.** Today they **AGREE** (`active=False`,
+`'off'`) because the field appears once. **Constructed divergence, prose section below the block —
+which is where prose goes in this file:**
+```
+slot_rule (FIRST) -> active=False   reads the PARSED 'off'   [SAFE]
+gate      (LAST)  -> 'on'           reads the PROSE  'on'    [WRONG]
+```
+⇒ **The live decision-maker holds the safe value; the divergence lands on the field's other reader.**
+**This file has produced exactly this failure once already (s31), which is why it is worth writing
+down while it is still latent.** ⛔ **Not a defect today, not blocking a leg — DEFER TO WRAP.**
+
+## ✅ 7. THE READING I WAS ASKED TO CERTIFY — IT HOLDS, AND ONE HALF IS STRICTER THAN IT SOUNDS
+
+* **Supersedes `SHIP_SIT_MIN_K`'s escape.** That field reads *"NOT displaced before k≥8 **unless a
+  stop-loss fires**."* With no stop-loss, **the escape is void and a sub-k=8 displacement is simply
+  off-programme.** ⇒ **`SHIP_SIT_MIN_K` got STRICTER, not looser.** Worth saying because "the
+  stop-loss is off" reads like a loosening.
+* **Parks `X3R0_SLOT_RULE`'s switch step.** *"Let the slot be"* is unambiguous: **the slot changes
+  only on Magnus's explicit word.**
+* **60±2 screening continues as MEASUREMENT.** He retired a stop-loss and froze the slot; he did not
+  say stop measuring. **Agreed — and the distinction is what keeps the mill running.**
+
+## ⚠ 8. SELF-REPORT
+
+**My verification run appended a real row to `corpus/ship_watch.log` at 15:41:36Z**, 8.7 min after
+the daemon's 15:32:55Z row against its 600 s cadence. **Legitimate content — it is the same tool —
+but I wrote to a surface another process owns**, and anyone auditing that log's cadence should know
+the off-beat row is mine.
