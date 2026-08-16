@@ -96,6 +96,17 @@ and `queue_check` appeared **0 times** in all three command files, **0 times** i
 routing rule about it, the same day.** Found by Magnus asking whether the
 programme carried a line about it.
 
+**⭐ THE MOVE-MINING LOOP (Magnus, 2026-08-16 s47, verbatim: "What you're doing
+now should be in the loop somehow, we need to continuously find out new
+moves.")** Run `.venv/bin/python tools/move_miner.py` at boot. It names the
+opponents with enough unstudied games on their current version to justify a
+replay study (method + discipline: `docs/research/PLAYBOOK-move-mining-2026-08-16.md`;
+ledger: `docs/research/move-mining-ledger.tsv`). RESEARCH owns commissioning
+the studies and admitting the pieces as rows; if it FIRES and no research lane
+is up, the builder commissions the top candidate (one fresh opus subagent per
+study, report banked under `docs/research/` before anything else consumes it).
+BLIND is not QUIET — a stale tape means the answer is unknown.
+
 **AT BOOT AND WHENEVER A LEG READS OUT:** read `QUEUE.md` and fire from the top.
 **Never idle waiting for analysis** — if the top item is blocked on a research
 number, take the next UNBLOCKED one and say so. `.venv/bin/python

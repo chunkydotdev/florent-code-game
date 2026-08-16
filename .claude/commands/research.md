@@ -40,6 +40,16 @@ Boot sequence:
 
 How "constantly" works mechanically, so it does not depend on anyone remembering:
 - **⛔ THERE IS NO BOOT SWEEP.** Sweeping every session unconditionally is what produced 313 files: it manufactures volume regardless of need. **Sweep on a signal, never on a schedule.**
+- **⭐ THE MOVE-MINING TRIGGER RUNS AT BOOT AND AT QUEUE-DRAIN (Magnus,
+  2026-08-16 s47: "we need to continuously find out new moves") — this is a
+  SIGNAL, not a schedule: `.venv/bin/python tools/move_miner.py` fires only
+  when an opponent has accumulated enough UNSTUDIED games on their current
+  version (thresholds live in the tool). A candidate becomes a replay study —
+  one fresh opus subagent per study, method and controls discipline in
+  `docs/research/PLAYBOOK-move-mining-2026-08-16.md` — whose banked pieces
+  become queue rows through the normal admission gate. Append the ledger row
+  (`docs/research/move-mining-ledger.tsv`) in the same commit as the banked
+  study or the trigger re-fires on covered ground.
 - **WHEN THE QUEUE NEEDS STOCK** — `tools/queue_check.py` at or near the floor. This is the real trigger, because stocking `QUEUE.md` is this lane's deliverable and a sweep is a legitimate way to do it.
 - **AFTER ANY MEASURED SURPRISE**: when a finding contradicts our doctrine, sweep for how other leagues handled the same shape. **This is the trigger with actual information behind it.**
 - **Topic selection comes from the wheel in `docs/research/tactics/INDEX.md`**, which records what has already been swept so successive sessions do not re-research the same ground. Update the index in the same commit as the findings.
