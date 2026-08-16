@@ -50,3 +50,11 @@ Owed receipts included — answer each in the wrap coordination note.
     SMALL loss sum (drops oldest rows). Fix + a --selftest cell that returns
     the other verdict, BEFORE any leg resume (then it is loop-breaking and
     jumps the wrap queue); trigger registered: before the era hits 50 matches.
+12. (side lane, defer-tagged, latent) PARSER DIVERGENCE on PROGRAMME.md fields:
+    slot_rule.stop_loss_active returns on the FIRST matching line (indented or
+    not); gate.py takes the LAST indented one. Agree today (field appears once);
+    a prose copy below the block would give slot_rule 'off' (safe) / gate 'on'
+    (wrong). Live decision-maker holds the safe value, so it fails in the right
+    direction — but that file has produced exactly this failure once (s31).
+    Fix: one shared parse (slot_rule adopting last-indented-wins, or gate
+    exporting its parser); driven-both-ways test on a constructed divergence.
