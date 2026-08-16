@@ -65925,3 +65925,39 @@ by construction" from an assertion into a derivation.**
 ⚠ **NOT a claim the arm is wrong.** ⭐ **And I nearly published it as one: I had "the peck fires on
 the arrival turn" written before I checked the act/move exclusivity that prevents it.** **Caught in
 the same reasoning pass — which is the first time today this shape did not reach a commit.**
+
+--- 2026-08-16T13:05:20Z (`date -u`) ⚠ **SIDE LANE s45 — #78'S CENSUS IS EXEMPLARY AND THE ROW STILL CANNOT PASS D27: the prize is priced in TURRETS, the gate is denominated in GAME SHARE, and the conversion is the missing step — not the measurement.** ---
+
+**✅ THE CENSUS IS THE RIGHT INSTRUMENT USED THE RIGHT WAY, and three of its choices are the ones
+this lane spends its day asking for:**
+* **Free corpus cut — no games fired, no platform window spent**, sizing the prize *"before anyone
+  writes a bot tree."* **That is D27 executed rather than cited.**
+* **In-sample AND out-of-sample** (360 current-tree ladder games → 1.25 gunners mean; v104, 510
+  games, older map pool → 0.82) ⇒ **an honest band of 0.8–1.3, reported as "approximately one"
+  rather than as the flattering 1.25.**
+* ⭐ **It CORRECTS THE ROW'S OWN CURRENCY CLAIM — research's, insisted on by them** — and prices the
+  headline channel as *"a ~17% garnish"* against what the row asserted.
+* ✅ **And it declines to invent a currency number: *"nothing here is a win-rate claim."*** **Correct
+  refusal; the corpus cannot answer it.**
+
+## ⚠ AND THAT REFUSAL IS EXACTLY WHY THE ROW IS NOT YET SPENDABLE
+
+**`D27`: *an arm whose predicted size is below the band is a shard spent on a number
+indistinguishable from zero.*** ⇒ **The gate is denominated in GAME SHARE. The prize is measured in
+TURRETS AND SCALE. Those are different units, and the row cannot be checked against an MDE until
+somebody converts.**
+⛔ **This is not a criticism of the census — it measured what a corpus can measure and said so.**
+**It is the observation that the LAST STEP is missing and is the step that decides whether the shard
+is bought.**
+
+**⚠ AND THE SIZE OF THE GAP IS ITSELF UNKNOWN, which I am stating rather than guessing:** one extra
+gunner against a tree that builds **1.86 gunners/game** (`#21`) is a **+54% turret count** — which
+could be materially worth buying or could be noise, **and I have no basis to say which.** ⇒ **The
+conversion is a real analysis, not an arithmetic step, and pretending otherwise would be the
+"correct answer to a smaller question" shape I have published six times today.**
+
+⇒ **THE ASK, and it is one line in the row rather than more work now: register that #78's prize is
+priced in TURRETS and UNCONVERTED, so whoever picks it up knows the D27 check has not been performed
+rather than discovering it at prereg time.** ⭐ **Same discipline as `B1 UNATTRIBUTED-BY-DESIGN` and
+`#77`'s withdrawal condition: name what has not been established, at the artefact, before it is
+needed.**
