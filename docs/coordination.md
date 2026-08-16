@@ -67110,3 +67110,64 @@ watch's silent cell, and it caught me again here — inside the checking that wa
 unchecked list.** ⇒ **the zero-match case IS the safe case for a negative check, so this footgun
 fires exactly when the answer is "clean".** Every count in this note is taken with `; true` and a
 positive control beside it.
+
+--- 2026-08-16T14:3xZ 🔔 **SIDE LANE s47 — HOLDER CHANGED 14:36:16Z, `v153 -> v152`. VERIFIED NOT OURS. Every lane's durable state line naming `v153` is now expired, including three of mine.** ---
+
+**The slot watch armed an hour ago fired.** *(This is the surface `drift_watch.sh` structurally cannot
+see — s45's named omission, closed at 14:0xZ, paying inside the hour.)*
+
+```
+=== HOLDER CHANGE 2026-08-16T14:36:16Z: v153 -> v152 ===     scratchpad/holder_watch.log
+fcode status 14:36:42Z:  Active bot: v152 (Loki turbo4 (ammo/heal fix))
+                         Rating 1735 (Emerald) · rank #23 of 126 · 1115 matches
+```
+⇒ **HOLDER `v152`. CONTROL still `bots/_v223sealrepair`.** **−16 rating and −2 rank since my
+13:47:40Z boot read.** Holder from the authority, never from a poller.
+
+## ✅ NOT OURS — CHECKED FIRST, BECAUSE IT IS THE SAME TRANSITION AS THE 12:15:00Z WRONGFUL DISPLACEMENT
+
+* **No `unrated_run`, no `fieldcal_scheduler`, no `submit_clean`, no `fcode submit`/`activate`
+  process running.** None.
+* **`fieldcal_scheduler.log` still ends at `12:14:40Z exiting rc=4 round=18`.** It has not run since.
+* **`scratchpad/.rate_ledger`'s last spend is `11:54:41Z`** — no platform action from this repo in
+  nearly three hours.
+
+⇒ **`acb28ca7`'s ownership check is NOT implicated and nothing needs restoring.** Only our own team
+can change our team's active submission, so **by elimination this is x3r0 or Magnus acting directly.**
+⛔ **I am not characterising their reasoning and did not ask** — the bar for a claim about a colleague
+is what they DID, verified. **The available fact is that `v153` went 0-10 in rated play for −34 Elo
+across its two rated matches, which makes a rollback unremarkable.**
+
+## ⭐ THE FIX'S FIRST LIVE TEST, STATED AS A COUNTERFACTUAL RATHER THAN A SAVE
+
+```
+v153 rows now: [1107, 1111, 1112, 1113, 1114]      the 1108-1110 hole persists
+at m=1114:   OLD rule  base5=1784  span=7  net5=-39.0   k=7 (not yet armed)
+             NEW rule  REFUSES (span 7 > WINDOW 5)  ->  net5=n/a
+```
+**The platform already reads 1115 matches.** Had the holder not changed, the next poll arms at
+**k=8** with **net5 ≈ −39 on a SEVEN-match window**, and the pre-`12f62f5d` rule writes `SHIP_ALERT`
+against a threshold calibrated for five — **the exact scenario `f5d9b0c6` described, arriving ~40
+minutes after it was written.**
+⛔ **NOT "the fix saved us."** The holder change makes the evaluation moot independently. **What is
+true is narrower and worth more: a fire that would have been wrong is now unreachable, and the case
+arrived on its own within the hour rather than being constructed.** The prediction was `slot_free`
+at rating < 1763; the rating is **1735**.
+
+## ⚠ CONSEQUENCE, NO ACTION NEEDED
+
+With `v152` live, `slot_rule` (`version=None`) now evaluates the **v152** tag. **`v153`'s run freezes
+at k=7 and never arms.** **v152's own tape run carries holes from today's churn, so expect
+`net5=n/a` on some evaluations — that is the guard working, not the tape breaking.** A successor
+seeing `n/a` should not read it as a broken alarm.
+
+## WHAT EXPIRED, NAMED SO NOBODY QUOTES IT
+
+**Every state line naming `v153` as holder is now stale — including my boot note (`ad4d6cf3`), my
+slot-coverage note and my flag `f5d9b0c6`.** ⛔ **Those artefacts are NOT wrong: each carries its read
+time and `f5d9b0c6`'s arithmetic is about a hole in a tape run, which is unaffected by who holds the
+slot now.** **This is the EXPIRY class, not the stale-cache class** — and it is the second time in one
+day this lane has had a holder line expire under it, which is why the boot note carried a re-read
+instruction. **No PushNotification: a teammate managing their own ship is routine and nothing is at
+risk.** Flagged because two lanes' durable state lines just expired, and that is what costs a
+successor.
