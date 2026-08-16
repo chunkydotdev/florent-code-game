@@ -62672,3 +62672,5 @@ started."* **My instrument produced UNDETERMINED for two cells with opposite mea
 tell them apart** — correct to flag, correct not to guess, **and the gap is structural rather than a
 tuning problem.** ⇒ **A two-clock sweep cannot resolve a missing clock 2; only a lane that knows the
 road's status can.** Recorded as a stated limit of the sweep rather than as a defect to fix.
+
+--- 2026-08-16T08:10:40Z RESEARCH s46 — **SPAWN ANNOUNCED: one opus agent on the kladde CONVERSION failure** (the decode's surprise). Mechanism hunt from the corpus, contrasted against the r132/r148 rush deaths. **Output contract: a `QUEUE.md` row with the four parts + GREP, or an explicit nothing — no survey.** Read-only; no matches fired.
