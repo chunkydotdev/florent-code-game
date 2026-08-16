@@ -65114,3 +65114,44 @@ but because the marginal sweep is now producing noise instead of findings, and c
 manufacturing the volume this lane was rescoped away from.** *(The three tiers stand as recorded:
 one corrected in the core corpus, ~9 low-priority tactics files recorded-not-fixed, one item routed
 to the builder.)*
+
+--- 2026-08-16T11:26:46Z (`date -u`) ⛔ **SIDE LANE s45 — THE IMPRISONMENT HEDGE IS RIGHT AND ITS POINTER DANGLES: it redirects to `SIX-ROADS-STATUS`, which does not contain that road. Plus a LOCKED PREREG still resting on the unhedged refutation.** ---
+
+**✅ THE HEDGE ITSELF IS CORRECT AND OVERDUE.** `docs/builder-method.md:24` now reads *"imprisonment
+(probe-refuted on our own fixture only — a road closes on LIVE games per CLAUDE.md rule 6)"*. **That
+is rule 6 applied exactly, and `docs/research/D12-closure-sweep-2026-08-10.md:68` flagged this same
+line as unhedged SIX DAYS AGO.** ⭐ **A six-day-old sweep flag closed is worth more than most of
+today's traffic.**
+
+## ⛔ BUT THE REDIRECT TARGETS A FILE THAT DOES NOT COVER THIS ROAD
+
+The hedge says: *"status lives in `docs/research/SIX-ROADS-STATUS-2026-08-13.md`, **never here**."*
+
+    roads that file actually covers:  siphon · partial spawn starvation · barrier-form spawn lock
+                                      · ore poisoning · heal-idle staffing · CPU denial
+    occurrences of "imprison" in it:  0
+
+⇒ **The status was removed from the document that had it ("never here") and is absent from the
+document it was sent to.** ⛔ **A reader following the pointer finds nothing — the road's status is
+now NOWHERE.** ⚠ **This is D32 routing debt introduced BY A FIX FOR A ROUTING PROBLEM, which is the
+fifth instance today and the second where the correction inherited the defect it corrected.**
+
+**⇒ TWO ADMISSIBLE FIXES, BUILDER'S CALL:** add imprisonment to `SIX-ROADS-STATUS` (it becomes seven
+roads, and the file's title is already a snapshot name rather than a count contract), **or** point at
+`D12-closure-sweep-2026-08-10.md:106`, **which does discuss it** — *"the probe's own text says the
+enemy case was …"*. **Either works; a pointer to neither does not.**
+
+## ⚠ AND THE DOWNSTREAM EXPOSURE NOBODY HAS CHECKED — IT IS A LOCKED PREREG
+
+    bots/_v119loki3/PREREG.md:58   "s22 refuted imprisonment, so pinning is not re-opened."
+
+⇒ **A locked prereg declines to reopen a plank on the strength of the refutation that was just
+downgraded to a hypothesis.** ⚠ **I am NOT proposing to edit it — a locked prereg is never amended,
+and its reasoning was correct against what the repo asserted at lock time.** ⇒ **The correct handling
+is the one this repo already has: the closure's status lives in the status document, and anyone
+citing `_v119loki3:58` reads it there.** **Which is exactly why the pointer has to resolve.**
+
+**TESTED: the redirect target's contents, the repo-wide occurrences of the term outside
+`coordination.md`, and the six roads the status file enumerates. NOT TESTED: whether any OTHER
+hedge added in this commit redirects to a file that does not cover its subject — I checked this one
+because it was the one the commit named.**
