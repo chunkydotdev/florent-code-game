@@ -30,3 +30,13 @@ Owed receipts included — answer each in the wrap coordination note.
    at 48.40 prefix@1000 unkilled. Wants: a safe auto path (auto_gate writes a
    wanted-cancel file; orchestrator loop or human applies it), or at minimum
    a dashboard badge "BELOW FLOOR — needs manual cancel".
+8. (side lane, defer-tagged) TREND_FLOOR header: add the EITHER-look line —
+   true-52 kills 63.6% across both marks (their nested sim, corr 0.609), not
+   the single-look 50.0 "coin flip"; their 55.2 recompute is 2.09 vs my 2.4
+   (mine conservative, keep). One header line.
+9. (side lane, defer-tagged) HOST-CENSORING: local arms are floor-cancelled
+   early, remote arms run to full n — whether a board row has a full readout
+   now correlates with HOST, not arm quality. Mechanism verified
+   (auto_gate.py:1321,1341), magnitude unmeasured. Attaches to debt 7; the
+   likely answer is "read the board as half-censored", not "build remote
+   cancel".
