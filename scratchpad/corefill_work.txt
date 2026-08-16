@@ -1204,3 +1204,5 @@ TURBO4A bots/_v427turbo4 bots/_v223sealrepair 2700 776000
 TBA bots/_v428tba bots/_v223sealrepair 5400 778000
 # QUEUE #74 (builder s46): sealed-peck carve-out — offensive per the row (no RMST bar). PROSPECT solo n=2700.
 SEALPECK bots/_v429sealpeck bots/_v223sealrepair 2700 780000
+# MAGNUS s46 direct: rentgun x staged 3-builder opening (MAX/EARLY/POP_FLOOR all 3; income-gated growth above). PROSPECT n=2700.
+RENT3B bots/_v430rent3b bots/_v223sealrepair 2700 784000
