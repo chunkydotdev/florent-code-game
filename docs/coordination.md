@@ -63458,3 +63458,56 @@ neither is a plank:**
 ⇒ **The generator that reaches 70 may not be "more planks" at all. It may be "stop losing the games
 we are already paying for."** ⚠ **Stated as a direction, not a measurement: neither bug has a
 screened effect size yet, and #76's mechanism fixture is BLOCKED until the leg closes.**
+
+--- 2026-08-16T08:39:59Z (`date -u`) 🔒 **SIDE LANE s45 — SCORING MY OWN PRE-REGISTRATION AGAINST THE RESULT (`232d7b6c`). A4 PAID, A1 FIRED AND THEN DISSOLVED, A2 IS ANSWERED AGAINST ME. AND ONE AUDIT POINT ON THE ONE CORRECTION THAT MOVES IN OUR FAVOUR — WHICH IS WHERE THIS LANE SHOULD LOOK HARDEST.** ---
+
+**Scored against `a3c5df65` + amendment `260270ba`, both committed before the agent produced
+output. Research forwarded all five mid-flight and answered all five.**
+
+| | registered | outcome |
+|---|---|---|
+| **A1** stationarity | *split at median date; fails if the later half beats the earlier by >½ pooled σ* | ⭐ **FIRED (+0.55 SD)** — and then **dissolved into A2**: within-SINGLE the trend is **−1.47pp**, within-MULTI **+0.60pp**. **The apparent improvement is COMPOSITION (34%→77% multi), not a better process.** ⇒ **a pooled time-trend on this board is an artefact and must not be quoted as progress.** |
+| **A2** conjunctions | *"I disbelieve the general form on this ground alone"*; downgraded in Amendment 1 | ⛔ **ANSWERED AGAINST ME, decisively and not by the argument I conceded to.** Conjunctions **DO** escape the single-plank distribution — **they raise μ +3.26pp and SHRINK τ (2.20→2.00). They move the cloud; they do not fatten the tail**, which is the opposite of what finding one 60-arm needs. **My condition was nonetheless MET**: the finding is scoped exactly as I required — *"60 is not reached by SINGLE PLANKS"*. |
+| **A3** σ is a distance | *reject any conversion to a frequency unless the distribution is named* | ✅ **HONOURED.** The agent **declines to endorse the audit's "1 in 560,000"** and states every probability as conditional on the fitted Gaussian RE. **Does not fire.** |
+| **A4** population selection | *state the population as a rule, count the excluded set* | ⭐⭐ **PAID, AND IT IS THE ONE RESEARCH SAID THEY WOULD HAVE MISSED.** The audit's 4.64σ came from **27 arms truncated from below**; the re-derivation uses **59** and sets its floor at **n<100 rather than n<200 SPECIFICALLY TO KEEP `SEALQ` AT 25.48% IN.** **4.64 is not reproduced and the discrepancy IS A4.** |
+| **A5** fixture mismatch | *same control, same fixture* | ✅ **CLEAN** — 93 shards on `_v223sealrepair`, md5-verified. |
+
+**⇒ ONE OF FIVE PAID, ONE FIRED-THEN-DISSOLVED, ONE WAS ANSWERED AGAINST ME, TWO WERE HONOURED
+WITHOUT FIRING. I am recording the A2 loss as prominently as the A4 win, because a pre-registration
+whose author reports only its hits is a post-hoc list wearing a lock.**
+
+## ⚠ THE AUDIT POINT — ON THE FAVOURABLE CORRECTION, BECAUSE THAT IS THE ONE NOBODY CHECKS
+
+Research's own sentence is the reason I looked: *"a repo-wide number drifted for a day in the
+pessimistic direction and nobody checked, because pessimistic numbers do not get audited."*
+**Correct — and the corollary is that an OPTIMISTIC correction is audited by nobody either.**
+
+**THE ARITHMETIC IS RIGHT. I re-derived it independently:**
+
+    per-arm SE at n=5,400, p≈0.5     0.680 pp
+    EB weight  τ²/(τ²+SE²)           0.9305      (τ = 2.49)
+    EB leader                        54.94       (naive 55.24)
+    shrinkage                        +0.30 pp    [research: +0.29 — agrees]
+
+**⛔ MY OBJECTION IS TO THE USE, NOT THE NUMBER.** The correction says what the board's best arm is
+worth **IN EXPECTATION ON REPLICATION**. **Magnus's bar is a MEASUREMENT on a screen** — verbatim,
+*"It must MEASURE at least 60 +-2pp"* — **and a shrunken posterior mean is not what a screen
+measures.** ⇒ **"the gap is +5.2pp, not +6.5pp" is the right correction to our EXPECTATION and the
+WRONG number to put beside the bar**, because the bar is cleared by a naive screen read of ≥60.0
+with CI-lo ≥58, not by an EB posterior.
+⚠ **And the two frameworks must not be mixed:** an EB point estimate carries a POSTERIOR interval
+narrower than the naive CI, so **taking the shrunken point and the naive ±1.31pp together would
+understate the precision term of a bar that has a precision term.**
+⇒ **RECOMMENDED PHRASING, and it costs one clause: *"the leader's replication-expected value is
+~54.9 (EB, τ=2.49); the screen-measured gap to the bar remains 55.24 → 60.0."*** **Both true, and
+neither can be quoted as the other.**
+✅ **This does NOT touch the finding.** 0 of 59 arms ever reached 60, 0 ever reached 58, and that is
+a count of measured screen reads — **immune to every word above.**
+
+## ✅ AND THE BOUNDARY HELD, WHICH IS WHAT I WAS MOST WATCHING FOR
+
+**No bar-change recommendation appears anywhere in the document.** I flagged that risk before the
+analysis was drafted and it did not materialise. **Magnus set 60 and named 70; the job was to price
+them and the write-up prices them.** ⭐ **Research's framing — *"70 needs a DIFFERENT GENERATOR, not
+more draws"* — is a statement about our process and not about his number, which is the correct side
+of the line.**
