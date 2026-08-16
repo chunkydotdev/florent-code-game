@@ -657,7 +657,7 @@ SALT        bots/_v178salt         bots/_v169launchlate160  5408 133000
 # ⇒ IT IS QUEUED FOR THE DOSE AND THE COST, NOT FOR ATTRIBUTION. `MINHARV1` is
 # the clean single-mechanism arm on the same axis and is already running.
 # A result here NEVER licenses a sentence about the rush gate on its own.
-RUSHON      bots/_v179rushon       bots/_v169launchlate160  5408 134000
+# FOSSIL-SWEPT 2026-08-16 19:1xZ (stale pre-s47 row; the filler dredged F266BBNULL from this stratum after the H-block retirement): RUSHON      bots/_v179rushon       bots/_v169launchlate160  5408 134000
 # ============================================================================
 # --- OVERNIGHT, third block ~20:4xZ. FIVE MORE. ---
 # ⛔ THE `_f` SUFFIX IS A FROZEN SNAPSHOT, NOT A DIFFERENT ARM. The build agent
@@ -682,7 +682,7 @@ SCREEN4     bots/_v184screen4_f    bots/_v169launchlate160  5408 135000
 # 7-9 Ti unit cost. This asks whether our under-spend is a DEFECT or a CHOICE.
 # ⚠ AND VOLUME IS NOT OBVIOUSLY GOOD: sporks tops the ladder at 3.02 barriers/game.
 # Every barrier is +1% scale forever, and scale is what prices our launcher out.
-COLLARVOL   bots/_v185collarvol_f  bots/_v169launchlate160  5408 136000
+# FOSSIL-SWEPT 2026-08-16 19:1xZ (stale pre-s47 row; the filler dredged F266BBNULL from this stratum after the H-block retirement): COLLARVOL   bots/_v185collarvol_f  bots/_v169launchlate160  5408 136000
 # GBNOSHIELD -- gunblock WITHOUT the shield clause. 4.2x the local dose (0.20 ->
 # 0.83/game) at the cost of sometimes placing cover in front of nothing.
 # ⭐ THIS IS THE ARM THAT MATTERS OF THE PAIR: the live v121 leg placed ZERO ray
@@ -699,7 +699,7 @@ GBNOSHIELD  bots/_v186gunblocknoshield_f bots/_v169launchlate160 5408 137000
 #                                                         is WRONG and salt is dead
 #   SALTIDLE salt events ~= 0                          -> the gate never opens;
 #                                                         says nothing about salt
-SALTIDLE    bots/_v187saltidle_f   bots/_v169launchlate160  5408 138000
+# FOSSIL-SWEPT 2026-08-16 19:1xZ (stale pre-s47 row; the filler dredged F266BBNULL from this stratum after the H-block retirement): SALTIDLE    bots/_v187saltidle_f   bots/_v169launchlate160  5408 138000
 # ⭐ V120 -- x3r0's ship, PROPERLY. My panel read 12% (3/25) against four
 # baselines at 40-45% on identical maps (p~0.012) -- but that is n=25 and its
 # RATED record was 5/10 over two matches. A teammate's bot deserves better than a
@@ -761,7 +761,7 @@ LAUNCHRES0  bots/_v189launchres0   bots/_v169launchlate160  5408 141000
 # ⛔ AND A FILTER THAT PLANTS FEWER SENTINELS HAS CURED THE SYMPTOM BY REMOVING
 # THE PATIENT: check forward-sentinels/game against the parent FIRST. Materially
 # fewer = FAILURE, not a trade.
-SENTSAFE    bots/_v188sentsafe_f   bots/_v169launchlate160  5408 142000
+# FOSSIL-SWEPT 2026-08-16 19:1xZ (stale pre-s47 row; the filler dredged F266BBNULL from this stratum after the H-block retirement): SENTSAFE    bots/_v188sentsafe_f   bots/_v169launchlate160  5408 142000
 # ⛔⛔ SENTSAFE RE-QUEUED ON `_g`, NOT `_f`. THE `_f` SNAPSHOT WAS STALE.
 # I froze `_v188sentsafe_f` at 94fe67dd… and the build agent then finished,
 # leaving the real tree at cac092d5…. Caught at 0 rows, so nothing was wasted —
@@ -950,10 +950,10 @@ IDLEVSALT   bots/_v187saltidle_f   bots/_v178salt         5408 210000
 # more games buy precision on a quantity that is already known to be
 # confounded with dose. Spending the slot on a confounded arm while the
 # question Magnus asked sits QUEUED is the wrong trade.
-
+# FOSSIL-SWEPT 2026-08-16 19:1xZ (stale pre-s47 row; the filler dredged F266BBNULL from this stratum after the H-block retirement): 
 # ROUTEONLY, restored after IDLEVSALT. Attribution, not a bar arm.
 ROUTEONLY   bots/_v194routelink    bots/_v178salt         5408 209000
-
+# FOSSIL-SWEPT 2026-08-16 19:1xZ (stale pre-s47 row; the filler dredged F266BBNULL from this stratum after the H-block retirement): 
 # ===== NEW-POOL ARMS, queued 2026-08-13T09:0xZ (builder s36, Magnus: "start
 # running experiments on the cores again ... a bunch of new maps"). All three
 # run overnight.sh's LIVE 15-map array (any shard started from here draws it);
@@ -973,7 +973,7 @@ NEG123      bots/_v169launchlate160 bots/_v187saltidle_f  5400 212000
 # MAPCODE: the rotation fix vs the incumbent, LIVE POOL — the queue-#1 arm.
 # Pure-data treatment (10 EXTRA_MAP_CODES entries); parent = flag-off control.
 MAPCODE     bots/_v197mapcode      bots/_v187saltidle_f   5400 214000
-
+# FOSSIL-SWEPT 2026-08-16 19:1xZ (stale pre-s47 row; the filler dredged F266BBNULL from this stratum after the H-block retirement): 
 # ===== v125-ERA RE-BASE (builder s36, post-ship; Magnus: "start experimenting
 # against it"). The four pre-mapcode arms above are CANCELLED as DILUTED: on
 # 10/15 pool maps both their trees lack map tables and livelock, so ~2/3 of
@@ -1077,13 +1077,13 @@ SEALREPAIR  bots/_v223sealrepair   bots/_v218mapfix       5400 268000
 MAPFIX2     bots/_v218mapfix       bots/_v197mapcode      2160 251000
 SEAL139     bots/_v221mapseal      bots/_v218mapfix       5400 270000
 OSCLOCK2    bots/_v224osclock2     bots/_v218mapfix       5400 272000
-SEALFLOOR0R bots/_v219sealfloor0   bots/_v197mapcode      5400 253000
+# FOSSIL-SWEPT 2026-08-16 19:1xZ (stale pre-s47 row; the filler dredged F266BBNULL from this stratum after the H-block retirement): SEALFLOOR0R bots/_v219sealfloor0   bots/_v197mapcode      5400 253000
 MAPSALT     bots/_v225mapsalt      bots/_v223sealrepair   5400 274000
 NESTSHOT    bots/_v226nestshot     bots/_v223sealrepair   5400 276000
 V141VS140   bots/_x3r0v141         bots/_v223sealrepair   2700 278000
 V140VS142   bots/_v223sealrepair   bots/_x3r0v142         1000 296000
 V140VS143   bots/_v223sealrepair   bots/_x3r0v143         1000 298000
-SEALREPAIRR bots/_v223sealrepair   bots/_v218mapfix       5400 269000
+# FOSSIL-SWEPT 2026-08-16 19:1xZ (stale pre-s47 row; the filler dredged F266BBNULL from this stratum after the H-block retirement): SEALREPAIRR bots/_v223sealrepair   bots/_v218mapfix       5400 269000
 DEST14A     bots/_v228dest14a      bots/_v223sealrepair   5400 282000
 # DEFER-53BAR DEST14B     bots/_v229dest14b      bots/_v223sealrepair   5400 284000
 # DEFER-53BAR SENT41      bots/_v230sent41       bots/_v223sealrepair   5400 286000
@@ -1219,5 +1219,5 @@ KLADTK2 bots/_v472kladtk2 bots/_v223sealrepair 5400 808000
 # RETIRED 2026-08-16 18:5xZ (Magnus: killed every H reaching a checkpoint today, and 'definitely H618h3'; family reads 44-52): H627h4 bots/_v627h4 bots/_v223sealrepair 5400 514000
 # RETIRED 2026-08-16 18:5xZ (Magnus: killed every H reaching a checkpoint today, and 'definitely H618h3'; family reads 44-52): H628h4 bots/_v628h4 bots/_v223sealrepair 5400 516000
 F266BBNULL bots/_v266bbnull bots/_v223sealrepair 5400 538000
-F268TRICOMB bots/_v268tricomb bots/_v223sealrepair 5400 540000
-F269AWRSPAW bots/_v269awrspawn bots/_v223sealrepair 5400 542000
+# FOSSIL-SWEPT 2026-08-16 19:1xZ (stale pre-s47 row; the filler dredged F266BBNULL from this stratum after the H-block retirement): F268TRICOMB bots/_v268tricomb bots/_v223sealrepair 5400 540000
+# FOSSIL-SWEPT 2026-08-16 19:1xZ (stale pre-s47 row; the filler dredged F266BBNULL from this stratum after the H-block retirement): F269AWRSPAW bots/_v269awrspawn bots/_v223sealrepair 5400 542000
