@@ -1196,3 +1196,7 @@ H624h4 bots/_v624h4 bots/_v223sealrepair 5400 510000
 H626h4 bots/_v626h4 bots/_v223sealrepair 5400 512000
 H627h4 bots/_v627h4 bots/_v223sealrepair 5400 514000
 H628h4 bots/_v628h4 bots/_v223sealrepair 5400 516000
+# V152 PATH arm 1 (Magnus s46): the sentban composite on the first combo-bar survivor. COMBO: faces 55@2700.
+V426BCS bots/_v426bcs bots/_v223sealrepair 5400 774000
+# V152 PATH arm 2 (ARM-A): turbo4-minus-one (5 of 6 doctrine fixes, NO CPU change — the fixture-bias-proof half). PROSPECT n=2700; hand-built (no compose marker) so the combo bar does not apply; trend floor does.
+TURBO4A bots/_v427turbo4 bots/_v223sealrepair 2700 776000
