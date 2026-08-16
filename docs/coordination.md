@@ -62562,3 +62562,65 @@ game was fired.** ⇒ **Two screens drafted and green, both correctly NOT stocke
 reasons — one priced to death, one already half-shipped.** ⛔ **And note what the UNDETERMINED verdict
 could NOT have told anyone: "tree not on disk" reads identically for a road that is finished and a
 road that was never started.** The clock sweep was right to flag them and right not to guess.
+
+--- 2026-08-16T08:10:21Z RESEARCH s46 ⭐⭐ **SAME-DAY RATED DECODE — THE DAY IS BIMODAL BY OPPONENT, AND IT REPLICATES OUT-OF-SAMPLE. THREE TEAMS COST US −72.2 ELO WHILE THE OTHER 18 MATCHES PAID +78.3.** `docs/research/RATED-DAY-DECODE-2026-08-16.md` ---
+
+**This lane's daily floor, run.** v152 in **24 of 24** rated matches, pairings 00:12:59Z–07:52:59Z.
+**GAME SHARE 60/120 = 0.5000** (24 matches, partial 7h40m UTC day) vs **08-15 full day 184/360 =
+0.5111** (72 matches). **Difference −1.6pp against a ±13.0pp two-sample half-width** (pooled rated
+DEFF 1.529 both terms; MATCH and OPPONENT clusters **verified live** in the stratum — 5 games/match
+for all 23 archived, six opponents at 2–3 matches). ⇒ **Restated as an exclusion per the direction
+clause: this day does not exclude a 14pp drop. It cannot resolve day-over-day movement and is not
+offered as doing so.**
+
+**TIMELY-KILL RATE** (`DEFENCE_ADMISSION_BAR` primary — core-kill by r300 over **ALL** games):
+**49/115 = 0.4261** today vs **152/360 = 0.4222** on 08-15. **Flat.** Kill turns n=56: **median 166**,
+p25 128, p75 231. **r1000 finishes 5/115 = 4.3%, one of them "won" — a defeat by programme.**
+
+**ELO RECONCILES THREE WAYS AND THE CHECK FIRES:** `delta = 32(S−E)` max |residual| **0.000000000**
+over 24 matches; **negative control with a corrupted score returned 6.4000**, so the cell has been
+seen to produce the other verdict. Day **+6.082**, agreeing across per-match delta sum,
+rating-before-first→after-last, and `elo_history` 1784→1790 with the counter moving 1071→1095 = **24**.
+
+## ⛔ THE SIX BAD MATCHES — ALL BY THE LIVE HOLDER v152, ALL AGAINST THREE TEAMS
+```
+0/5  gsxWins v46            01:12   -14.45
+0/5  0033 v57               04:52   -16.34
+0/5  kladde chatte v119     05:52   -15.55
+1/5  kladde chatte v119     00:52    -8.73
+1/5  gsxWins v46            06:32    -7.65
+1/5  0033 v57               06:52    -9.45
+                                    -72.2   (the other 18 matches: +78.3)
+```
+**{kladde, 0033, gsxWins} 10/45 = 0.222 · everyone else 47/70 = 0.671 — a 45pp gap.**
+⚠ **THE SPLIT WAS CHOSEN POST HOC AND THE AGENT PRICED THAT RATHER THAN HIDING IT: 68 of 300 random
+3-opponent groupings also exclude zero (22.7%).** ⭐ **What makes it evidence is that the SAME SPLIT
+HOLDS OUT-OF-SAMPLE on 08-15: 29/85 = 0.341 vs 155/275 = 0.564.** Two days, same three teams, same
+direction.
+
+## ⭐ THE SURPRISE, AND IT POINTS AWAY FROM EVERY DEFENCE-SHAPED FIX
+**THE kladde 0/5 WAS NEVER A RUSH.** Earliest core loss **r322**, latest **r746**. **We survived the
+r150–250 window in all five games and lost all five.** ⇒ **A CONVERSION failure, not a defensive
+one — no defence-shaped plank touches it**, and it is categorically unlike the other two shutouts
+(deaths at **r132** and **r148**). **Three teams, at least two different mechanisms. Anyone treating
+"the bad band" as one problem is fitting one story to two failures.**
+
+## OPPONENT VERSIONS — one live pin hazard
+**The Bisons shipped v10 at 07:32:59.701Z TODAY, first league-wide sighting, in the same slot as our
+last archived match. Both our Bisons matches (8/10) met v9 — that number does not describe v10.**
+Also: **kladde shipped 17 versions on 08-15 (94→119)** and sits at 119; gsxWins 39→46; **0033 rolled
+BACKWARD 60→57** (we run ~0.29 against both 60 and 57, so the rollback does not explain today).
+
+## ⚠ THE LAG, AND IT CUTS THE OTHER WAY FROM THE INCIDENT THAT MOTIVATED THIS DECODE
+Archive newest row **31m17s** old (~1.6 pairing cadences). `fcode match list --mine --type ladder`
+returned **24** matches against the corpus's **23** — **the archive lagged by exactly one.**
+⭐ **That one match hid +3.608 of the day's +6.082 — 59% of the headline.** The stated incident this
+decode exists to prevent was a bad match going unseen; **today the lag hid a GOOD one. The lag is not
+biased toward bad news, and a lane that only checks when the number looks wrong will never learn that.**
+
+## CAVEATS CARRIED, NOT BURIED
+**Control A's positive arm passed; its NEGATIVE arm never executed** (the selector fell outside the
+platform window) — **stated by the agent, not hidden, and it means that particular cell has NOT been
+seen to fire.** The p=1.000 opponent cells have degenerate Wald intervals. **Per-map cells
+(frostgate 1/6, fjordgate 1/5, icefloe 1/5) all overlap the day average at n≤6 — no map claim is
+made.** Corpus-grain figures use 115 games; Elo and game share use the full 120.
