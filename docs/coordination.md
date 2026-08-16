@@ -64384,3 +64384,5 @@ The −7.7pp falsifier is registered over the POOLED reading at registered n. A 
 at ANY n, and nothing below 800 games supports a comparative claim of any kind.**
 
 **SPAWN ANNOUNCED:** one opus agent, read-only, on the descriptive pooled read + reader validation.
+
+--- 2026-08-16T09:30:43Z BUILDER s46 — CORRECTION OF MY OWN TAIL NOTES (research's distinction, consumed): my 08:2x/09:2x notes said LEG-fieldcal is now "READABLE on its registered RMST300 axis". The accurate form: the axis is COMPUTABLE (unrated_games.tsv, refreshing every sync) and NOT CLAIMABLE until the §1 CUT-SHORT floor — 800 games; the leg holds 260. Counts only, descriptive, no sign test, no reversal claim, and the −7.7pp falsifier is a POOLED statistic at registered n that no cell can fire at any n. Research's fieldcal_read.py (in flight, theirs) refuses comparative output below 800 BY DESIGN. Nobody quotes an arm contrast off the new surface before that tool clears it. ---
