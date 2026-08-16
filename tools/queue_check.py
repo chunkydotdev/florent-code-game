@@ -535,20 +535,54 @@ def grep_staleness(rows, incumbent: str | None):
     from a WRONG tree, because "we cannot tell" and "we can tell it is stale" are
     different states and must not be summed. Spec: side lane, 2026-08-13.
     """
-    named, unnamed = [], []
+    named, unnamed, instrument, broken = [], [], [], []
     if not incumbent:
-        return named, unnamed
+        return named, unnamed, instrument, broken
     for _section, row in rows:
         m = re.search(r"grep:\s*(.*)", row, re.I)
-        if not m:
+        gp = re.findall(r"grep-path:\s*\**\s*([\w./-]+)", row, re.I)
+        if not m and not gp:
             continue
-        seg = m.group(1)
-        trees = set(re.findall(r"_v\d+[a-z0-9_]*", seg))
-        if not trees:
+        seg = m.group(1) if m else ""
+        # ⛔ CLAIM-BEARING TOKENS ONLY (research, 2026-08-16, three-case matrix):
+        # the old anywhere-in-prose findall was SILENCED by a sentence DENYING
+        # the grep — "`_v223sealrepair` is NOT the relevant tree" scored as
+        # checked-against-incumbent and dropped out of both warning lists, and
+        # the silencing edit is indistinguishable from diligence. A tree counts
+        # as THE CHECKED TREE only in a claim shape ("vs <tree>" / "against
+        # <tree>", the forms every honest GREP cell on the board uses).
+        # Claim shapes, surveyed on the live board before pinning: "vs <tree>"
+        # / "against <tree>" (the GREP cell idiom) and "CARRIED sNN → <tree>" /
+        # "→ <tree>" (the carry-verification idiom — 39 rows assert their
+        # incumbent re-check exactly that way, and the first cut of this rule
+        # missed it and mass-fired STALE on 35 healthy rows: a guard that
+        # fires on everything is the same defect as one that fires on nothing).
+        # Carry claims live OUTSIDE the GREP cell, so they are searched on the
+        # whole row; the row-level claim set is the union.
+        claimed = set(re.findall(r"(?:vs|against)\s*[`'\"*\s]*(_v\d+[a-z0-9_]*)",
+                                 seg, re.I))
+        claimed |= set(re.findall(r"(?:→|->)\s*[`'\"*\s]*(_v\d+[a-z0-9_]*)",
+                                  row))
+        if claimed:
+            if incumbent not in claimed:
+                named.append((label(row), sorted(claimed)))
+        elif gp:
+            # GREP-PATH exemption (SPEC-queue-grep-path-2026-08-16.md §3): the
+            # row asserts "no bot tree BY DESIGN" by NAMING A PATH THAT MUST
+            # EXIST. Verified every run: all present -> INSTRUMENT (visible,
+            # never silent); any missing -> BROKEN-EXEMPTION, louder than
+            # unnamed, because claiming exemption against a path that does not
+            # exist is strictly worse than naming nothing.
+            missing = [p2 for p2 in gp if not (ROOT / p2).exists()]
+            if missing:
+                broken.append((label(row), missing))
+            else:
+                instrument.append((label(row), gp))
+        else:
+            # Includes mention-only rows (a tree token in prose with no claim
+            # shape): "we cannot tell" is the honest state for those.
             unnamed.append(label(row))
-        elif incumbent not in trees:
-            named.append((label(row), sorted(trees)))
-    return named, unnamed
+    return named, unnamed, instrument, broken
 
 
 def next_action(live, inc) -> int:
@@ -618,17 +652,26 @@ def main() -> int:
     # --- GREP STALENESS vs the CURRENT incumbent -------------------------
     inc = current_incumbent()
     if inc:
-        stale, unnamed = grep_staleness(live, inc)
+        stale, unnamed, instrument, broken = grep_staleness(live, inc)
         if stale:
             print(f"   ⛔ GREP STALE — incumbent is {inc}; these were checked "
                   f"against another tree ({len(stale)}):")
             for lbl, trees in stale[:8]:
                 print(f"       {lbl[:52]}{'…' if len(lbl) > 52 else ''}  [checked: {', '.join(trees)}]")
+        if broken:
+            print(f"   ⛔⛔ BROKEN-EXEMPTION ({len(broken)}) — GREP-PATH names a "
+                  f"path that DOES NOT EXIST (worse than naming nothing):")
+            for lbl, paths in broken[:8]:
+                print(f"       {lbl[:52]}{'…' if len(lbl) > 52 else ''}  [missing: {', '.join(paths)}]")
         if unnamed:
             print(f"   ⚠ GREP TREE UNNAMED ({len(unnamed)} of {len(live)}) — the "
                   f"gate cannot tell whether these are stale. Incumbent: {inc}")
-        if not stale and not unnamed:
-            print(f"   ✅ every GREP names the current incumbent ({inc})")
+        if instrument:
+            print(f"   ✅ {len(instrument)} row(s) grep an instrument path, "
+                  f"verified present (GREP-PATH exemption — visible, not silent)")
+        if not stale and not unnamed and not broken:
+            print(f"   ✅ every GREP names the current incumbent or a verified "
+                  f"instrument path ({inc})")
     else:
         print("   ⚠ BLIND: PROGRAMME.md has no INCUMBENT field — staleness unchecked")
     # Migration visibility: these are the rows the substring era silently dropped.
