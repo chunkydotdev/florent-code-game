@@ -63390,3 +63390,71 @@ amendment itself, evidenced rather than trusted.
 ⛔ **`prereg_check --amendment` FAILS on file-shape grounds and the TOOL is the one that is wrong** —
 its ADD-ONLY diff mode expects a superset copy while the convention requires a separate dated
 document. **Certification performed manually against §2's table, line by line.** Successor tool item.
+
+--- 2026-08-16T08:38:26Z RESEARCH s46 ⭐⭐⭐ **THE KLADDE MECHANISM IS STRUCTURAL, AND IT IS NOT A CONVERSION FAILURE. WE NEVER DAMAGE THEM AT ALL. WE FEED A SENTINEL INTO THE SAME TILE 50 TIMES.** `docs/research/KLADDE-CONVERSION-FAILURE-2026-08-16.md`, QUEUE **#76**, `c0bd6ca4` ---
+
+⛔ **MY OWN EARLIER FRAMING IS CORRECTED BY THIS. I relayed the kladde 0/5 as a "CONVERSION failure —
+we survive the window and cannot close." That is the right SHAPE and the wrong MECHANISM: we are not
+failing to convert an advantage, WE NEVER BUILD ONE.** `batk_core` = **0 for us in 400 of 400
+archived rated games** — our only kill vector is a forward sentinel.
+
+## THE MECHANISM
+Against kladde the sentinel is **planted WELL** — median d² 13, **98% inside range** — and then **99%
+die in a median 6 rounds.** We rebuild it **20.8×/game (25.8 in the shutout)**, and **73% of plants
+are REPLANTS ONTO A TILE THAT ALREADY ATE ONE**, median gap **9 rounds**.
+⭐ **ONE GAME PUT 50 SENTINELS ON THE SINGLE TILE (16,1)** — roughly **4,000–4,500 Ti of a ~6,200
+lifetime income onto one tile.** ✅ **VERIFIED BY ME, and the decoder control is the reason it is
+quotable: builds 50 / deaths 49** (one alive at the final bell) — **50 DISTINCT ENTITIES, not
+`placeEntity` re-emission.** A raw build count could not have told those apart.
+
+## THE THREE-GROUP CONTRAST (rated 08-16, v152, games reaching r300, entities lost per game)
+| | **A kladde** n=9 | **B rush** (0033/gsxWins) n=9 | **C rest** n=8 |
+|---|---|---|---|
+| us / them lost | **78.0 / 4.6** | 27.3 / 21.0 | 19.7 / 15.3 |
+| exchange (HP/100r) | **9.5 : 1** | 1.6–2.4 : 1 | 0.3–1.5 : 1 |
+| replant share | **73%** (gap 9r) | 50% (32r) | 17–30% (74r) |
+| our builder deaths | **80%** (theirs 8%) | 24% (theirs 51%) | 29% (theirs 49%) |
+**Our alive-unit count sits at 7–8 from r50 to r700. Theirs goes 8 → 26.** Their heals absorb **82%**
+of our damage (**93%** in the shutout).
+⭐ **AND A SIDE-EFFECT WORTH ITS OWN LINE: the damage ledger closes within ~10% in every group, which
+ANSWERS A QUESTION `#32` RECORDED AS UNANSWERABLE — `econ.tsv` has a live `heals` column.** A row
+was blocked on an instrument we already owned.
+
+## THE CODE — and the fix pattern is TWENTY LINES AWAY
+✅ **RE-VERIFIED BY ME IN THE INCUMBENT.** `raid.py:636 _try_forward_sentinel` has **no attrition
+memory of any kind.** `LOKI2B_LIVE_CAP_ON` (`:653`, `:690`) replaced a monotone rubble counter with a
+census of sentinels **ALIVE** — **the right fix with the opposite failure: a cap on simultaneously-
+alive turrets that die in 6 rounds FREES ITSELF EVERY 6 ROUNDS, FOREVER.**
+⭐ **`self.raid_ban` — tile-keyed WITH EXPIRY — already exists in the same file (`:179`, `:223`,
+read at `:784`) and is used for STATIONS, never for BUILD SITES.** ⇒ **not a missing capability, an
+unapplied one.** *(Same shape as #75's `get_direction`: the tree knows how, and does not ask here.)*
+
+## ⭐⭐ IS IT AN US-SPECIFIC COUNTER? NO — AND THIS IS THE STRONGEST PART
+**All six signatures replicate on 111 PRE-CLOCK2 unrated games across SIX kladde versions (v80–v97)
+and EIGHT of ours (v85–v143)**, against a **1,910-game matched control**: share **0.324 vs 0.485**
+(hw95 0.115, **excludes zero**), replant **61% vs 45%**, exchange **5.9:1 vs 1.4:1**. Lifetime
+**63/191 = 0.330.** ⇒ **A PERSISTENT MATCHUP PROPERTY THAT SURVIVED 17 OF THEIR SHIPS AND 8 OF OURS.**
+**It is not v119, it is not new, and it has been costing us for weeks.**
+
+## ✅ LIVE-LEG DISCIPLINE HELD, AND IT COST SOMETHING REAL
+**155 unrated rows excluded as `LEG-fieldcal` cells — INCLUDING ALL 25 KLADDE v119 ROWS OF TODAY.**
+**The single most on-point cell available contributed NOTHING and was not read.** The replication
+above is built entirely from pre-clock2 games. ⇒ **the leg is uncompromised and the finding stands
+without it**, which is the outcome worth having.
+
+## ⭐ THE AGENT'S OWN HYPOTHESIS DIED, AND IT SAID SO
+It predicted a **vision blind band**. **95% of kladde plants have a visible enemy sentinel at
+d² ≤ 20.** ⇒ **we are not blind, we are UNDETERRED.** That strengthens **#32** (predictive threat
+modelling), not #76 — and the agent routed it to the row it helps rather than the row it wrote.
+
+## ⭐⭐⭐ THE SYNTHESIS WITH THE REACHABILITY CUT, AND IT IS THE SESSION'S POINT
+The reachability finding says **70 needs a DIFFERENT GENERATOR, not more draws** — the confirmed
+single-plank stock is harvested (+5.71pp against a leader already at 55.24) and conjunctions move the
+mean without fattening the tail. **The two largest levers now visible are BOTH OUR OWN BUGS, and
+neither is a plank:**
+1. **+6.28pp SEAT ASYMMETRY on BYTE-IDENTICAL self-play** — larger than anything we have ever shipped.
+2. **THIS** — 4,000+ Ti/game fed into a tile we already know is lethal, on a matchup that has been
+   stable for weeks.
+⇒ **The generator that reaches 70 may not be "more planks" at all. It may be "stop losing the games
+we are already paying for."** ⚠ **Stated as a direction, not a measurement: neither bug has a
+screened effect size yet, and #76's mechanism fixture is BLOCKED until the leg closes.**
