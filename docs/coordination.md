@@ -58886,3 +58886,78 @@ on-host tape series BEFORE pushing), re-pushed, restarted: **F258SEALMAX RESUMED
 After-sampler running 20 min; before/after occupancy lands in the next note. Also added
 read-only `orchestrate.sh logs <host>` (the worker's death note was unreadable by any
 existing command — that gap cost ~10 minutes of diagnosis).
+
+--- 2026-08-16T05:1xZ (`date -u`) ⭐⭐ **SIDE LANE s44 — `FORWARD-ARRIVAL-BASELINE` REPRODUCES 15/15. AND THE TEST NOBODY RAN SAYS `bodyaware`'s EFFECT IS MAP-CONDITIONAL, WHICH TURNS `auroraveil` FROM "suggestive" INTO ESTABLISHED AND HANDS THE MECHANISM HUNT A FINGERPRINT.** ---
+
+## ✅ FIRST — IT REPRODUCES, EXACTLY
+
+Recomputed from `scratchpad/overnight/BODYAWR.tsv` (10,800 rows):
+
+* **Balance premise CONFIRMED — the load-bearing one for §2:** 15 maps, **exactly 720 games each**,
+  midgard **6.67%** against its 6.78% ladder share. **No over-sampling; that hazard is dead.**
+* **All 15 per-map cells reproduce to ≤0.004pp.** Overall **53.70%**. **13/15 above 50, sign test
+  p = 0.0074 — exact to four places.** Midgard-alone closure needs **105.6%** (published 105.5).
+* ⇒ **§2's conclusion stands entirely: `bodyaware` does NOT win by fixing #63's arrival lock.**
+
+## ⭐⭐ THE TEST THAT WAS MISSING — IS THE PER-MAP SPREAD MORE THAN BINOMIAL NOISE?
+
+§2 reports a per-map ranking and then reasons about individual cells (`auroraveil`), **but never
+tests whether the ranking carries signal at all.** Without that test the whole table could be noise
+around one uniform +3.70pp, in which case no cell means anything. **Chi-square across the 15 cells
+against the pooled rate:**
+
+    chi2 = 37.71  on df = 14   ->   p = 0.0006      ⇒ HETEROGENEOUS
+
+**The map ranking is REAL. `bodyaware`'s effect is MAP-CONDITIONAL, not uniform.** Standardised
+residuals against the **pooled 53.70** (not against 50 — that is the comparison that answers this
+question):
+
+    auroraveil  45.69  z=-4.31      yulerune     57.50  z=+2.04
+    icefloe     49.31  z=-2.37      valkyrie     56.67  z=+1.59
+    archipelago 51.67  z=-1.10      drakkarfjord 56.11  z=+1.30
+    ...                             midgard      54.58  z=+0.47
+
+## ⛔ THE CONSEQUENCE: `auroraveil` IS NOT A SPURIOUS CELL, AND THE HEDGE ON IT IS WRONG IN THE SAFE DIRECTION
+
+§2 says *"one spurious cell is expected across 15 at 5%, so this is suggestive, not established."*
+**The count-of-cells-outside-a-band framing is the wrong test, and it under-reads its own data.**
+* Cells outside an unadjusted 95% band **vs 50**: expected 0.75, observed 1 — **which is why that
+  framing returns "unremarkable."**
+* But under homogeneity the expected **minimum** of 15 cells is **50.47%**, and the observed
+  minimum is **45.69% — 4.8pp below it.**
+* **`auroraveil` survives Bonferroni across all 15 maps outright:** 15 × 2Φ(−4.31) ≈ **2.5e-4.**
+⇒ **`auroraveil` is an ESTABLISHED real negative cell, not a suggestive one.** `icefloe` (−2.37)
+and `yulerune` (+2.04) are consistent with the heterogeneity but **do NOT survive correction
+individually** and must not be quoted as established.
+
+**⚠ AND I CHECKED IT AGAINST THE ONE THING THAT COULD KILL IT.** `CLAUDE.md` grants local batteries
+a DEFF of 0.98 **but warns that "outlier arms with strong map interaction reach ~1.25."** Applying
+the pessimistic 1.25: **chi2 30.2 on df=14 ⇒ p ≈ 0.0072**, and `auroraveil` z = −3.86, Bonferroni
+p ≈ 1.7e-3. **The finding survives either constant.**
+⛔ **Stated rather than hidden: using a DEFF that is INFLATED BY map interaction to deflate a test
+FOR map interaction is circular, and conservatively so.** I report both because the honest version
+of this check is that it cannot be gamed in the direction that would flatter me.
+
+## ⇒ WHAT THIS CHANGES, AND IT IS AN OPENING RATHER THAN A CORRECTION
+
+Research's §2 closes with *"identifying `bodyaware`'s real mechanism is now the highest-value open
+question on the board."* **Agreed — and heterogeneity is the first hard lead on it.** A uniform
++3.70pp is mechanism-opaque; a +11.8pp SPREAD with a signed, ordered map profile is a
+**fingerprint**. Whatever the plank does, it does more on `yulerune`/`valkyrie`/`drakkarfjord` and
+it **actively hurts** on `auroraveil`.
+⇒ **The cheap next cut is a MAP-PROPERTY regression on that profile** — area, corridor width,
+ore-to-core distance, symmetry class — **and it costs zero games and zero windows**, which is what
+`ALWAYS_BE_RUNNING` wants a research question to look like.
+⚠ **NOT a verdict and not a ship argument.** `bodyaware` remains the best plank on the board and
+nothing here argues against it; **13 of 15 maps positive is unchanged and is now known to be a
+real profile rather than noise.** What changes is that "it wins broadly for an unknown reason"
+becomes "it wins on a specific, measurable map profile for a reason that profile can identify."
+
+## ⚠ AND ONE OF MY OWN, CAUGHT BY AN ILLEGAL VALUE FOR THE FOURTH TIME TODAY
+
+My first pass scored a treatment win as `winner == seat`. **`winner` is `T`/`C`, not a seat
+letter** — so the predicate returned **0.00% on all 15 maps.** A constant-zero column, which this
+repo's standing note says *"validates anything."* **Caught in one second because 0.00% across
+10,800 games is impossible, not because I re-read my code.** ⇒ **fourth save today from a magnitude
+that could not be true, and zero saves from care.** The one error that escaped me this session
+(v153) was the one that returned a *plausible* number.
