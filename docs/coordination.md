@@ -63127,3 +63127,52 @@ line, not that a run was blocked** — and `gate_invocations.tsv` shows only 27 
 invocations lifetime against 174 `prereg_check.py`, which is consistent with the gate being little
 used **and does not prove it was silent for this reason.** ⇒ **Stated as an exposure, not as a
 damage report.**
+
+--- 2026-08-16T08:23:29Z RESEARCH s46 ✅ **THREE ROWS ADMITTED — #73 BELT-CUT REPAIR · #74 SEALED-PECK CARVE-OUT · #75 ORPHAN-BELT FACING FIX. Queue 55 → 58, selftest PASS, GREP-UNNAMED held at 3.** ---
+
+**Candidates from the builder's opus agent off Magnus's replay-marker session. I own admission, so
+I RE-RAN ALL THREE GREPS against the incumbent rather than banking the relay.** *(Tree identity
+confirmed, not assumed: `PROGRAMME.md INCUMBENT` = `bots/_v223sealrepair`, and
+`docs/prereg/LEG-fieldcal-2026-08-16.md` names **arm A = v140 = `bots/_v223sealrepair`** — so
+"the v140 control" and the incumbent tree are the SAME OBJECT, and Magnus's re-affirmation today
+that **v140 stays the fixed benchmark** is consistent with every GREP below.)*
+
+**ALL THREE CONFIRMED. One is TIGHTER than relayed, and one composes into something neither half named:**
+
+**#73 BELT-CUT REPAIR — two independent gates, verified separately, that together make a 3 Ti object
+permanent.** `eco.py:626 _l4_repair` is gated at `:687` on `if not ct.is_tile_empty(g)`, and
+`is_tile_empty` is *"no building and not a wall"* ⇒ **an enemy BARRIER can never qualify as
+repairable.** Independently, `doctrine.py:1545-1552` exempts an enemy **CONVEYOR or SPLITTER** from
+`LOKI_QUIET_ON` **by name**; **BARRIER appears in that block only as OUR OWN salt barrier, never as a
+target.** ⇒ **the repair path cannot see it and the melee path may not hit it.**
+⚠ **AND THE MECHANISM IS OUR OWN WEAPON REVERSED** — the salt clause exists *because* a bare cut is
+repaired in ~4 rounds, which is exactly why it works on us. **0033 v57 did it at r33 in `e5d311e9`
+g2: one stack on that column all game, a loss** — and 0033 is one of the three teams carrying −72.2
+Elo of today's rated day. ⚠⚠ **DEFENCE CLASS ⇒ carries `DEFENCE_ADMISSION_BAR` / ITT RMST₃₀₀, and I
+have written that into the row as a startability condition: a repair behaviour that spends
+builder-turns is precisely the shape that buys survival at the kill's expense.**
+
+**#74 SEALED-PECK — the premise of `LOKI_QUIET_ON` is an OPPORTUNITY COST, and it is ZERO for a
+sealed builder.** `doctrine.py:1488`, justified in-tree as *"acting and moving are mutually exclusive
+… ARRIVAL is the scarce quantity."* ⭐ **The existing carve-out is keyed on the TARGET's HP; this one
+would be keyed on the ATTACKER having nothing else to do — a different axis, untested anywhere in the
+tree.** Falsifier is near-perfect by construction: **parked-builder attack rate must go 0 → >0**, and
+it is currently **0 across 54,429 parked builder-rounds over 205 games.** ⚠ **Guard I added: a sealed
+builder may be sealed BECAUSE it is somewhere it should be leaving — 2 dmg/round is not a reason to
+stop wanting out, and the falsifier must not pass by making stuck builders comfortable.**
+
+**#75 ORPHAN-BELT FACING — exact anchors CORRECTED and the complement DRIVEN.** Relay said
+`v152 eco.py:850-855` / `v140 eco.py:557`; **it is `eco.py:545 _build_next_link`, pop at `:556-558`**
+— `occupied = get_tile_building_id(tile) is not None` → `pop(0); continue`, **facing never read.**
+⭐ **NOT an API-availability problem: `ct.get_direction(bid)` is already called TWICE IN THE SAME FILE
+(`:619`, `:719`) — the tree knows how to ask and does not ask here.** ⚠ **Currency stated honestly:
+its channel is `titanium_collected`, which is OFF-CURRENCY under `R1000_IS_DEFEAT`. Admitted as a
+CORRECTNESS FIX (wasted builder-turns and Ti), NOT a win-path plank.** ⛔ **Admission caveat written
+into the row: at ~2 dead conveyors/game the effect may sit BELOW the screen's MDE — compute that
+BEFORE firing, and if unresolvable it ships as a reviewed patch rather than consuming a screen slot
+to produce an unresolvable null.**
+
+**CONTROL: 55 → 58 unblocked, `--selftest` PASS, and GREP-UNNAMED stayed at 3 — i.e. the three new
+rows named their tree correctly and did not inflate the warning.** ⚠ **Note what the count alone
+could NOT have told me: a row that named the tree in a DENIAL would also have kept the warning at 3.
+I checked the rows, not only the counter.**
