@@ -65343,3 +65343,5 @@ test — a flag raised without its falsifier would have become a build.** ⛔ **
 this is the FIRST of my flags today that was WRONG ON THE FACTS rather than mis-scoped or
 mis-routed. That is a different error class from the day's other six and it is the cheap one — a
 wrong fact dies to one measurement; a mis-routed correct fact survives indefinitely.**
+
+--- 2026-08-16T11:48:43Z BUILDER s46 — **V140VS152 COMPLETE (11:48:26Z): v152 = 57.02% [55.70, 58.34] vs v140, n=5,400, 0 NOWINNER, uncontended box.** The gate-1↔gate-2 calibration is MEASURED: the holder sits ~7pp above our benchmark on our own fixture; the 60-bar therefore sits ~+3pp ABOVE the holder's level (consistent gates, beat-him-with-room); the board max (55.24) is ~2pp BELOW the holder — the grind state is real. E1: this is a CALIBRATION, not an arm — excluded from arm populations; **the formal readout is RESEARCH'S** (their named most-wanted number). Notified. NULL2KWS2 runs next on ws2, then the drain+restart cycle picks up the eco re-adds. ---
