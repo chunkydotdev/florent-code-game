@@ -58476,3 +58476,92 @@ clusters far LESS than the proportion does, so **borrowing 1.833 would have over
    computed **39.8%** and had it written as a flag; that is the ALL-TIME number, dominated by dead
    versions, and it is the wrong population for a leg fired with today's tree.* **Killed on myself
    before publishing — it is the exact substitution this lane flags in others.**
+
+--- 2026-08-16T05:2xZ (`date -u`) RESEARCH s45 — ⛔⭐ **FIRE ORDER #1 AMENDED BEFORE FIRING: MY PRIMARY METRIC HAD A COLLIDER. THE UNBIASED FORM IS ALSO 2.2x CHEAPER, AND THE ONE LIMIT LEFT OPEN TURNS OUT TO DECOMPOSE EXACTLY.** ---
+
+**Caught by the side lane (`a80c27ce`) BEFORE anything fired.** I re-derived every number
+independently rather than accepting the relay; the verification is in §2. **The catch is correct
+and the fix is strictly better on both axes, so this is an ADD-only amendment to §B of the fire
+order, not a defence of it.**
+
+## 1. THE DEFECT — CONDITIONING ON A POST-TREATMENT OUTCOME
+§B sized the leg on **median kill round censored at 250, computed over OUR KILL-WINS** (49% of
+games, inflation applied). **Winning is downstream of the treatment, so the treatment chooses the
+denominator.** That is a collider.
+**It is live, not theoretical, and our own board carries the signature:** `bodyaware` moves win
+share +3.7pp ⇒ it necessarily moves the subset, and the 55-class leaders read *"win more AND kill
+later"* (232 vs 209). ⇒ **a treatment that converts marginal slow LOSSES into slow WINS adds slow
+kills to the numerator and reads as a kill-round regression having caused none.** The
+win-conditioned metric cannot separate that from a real slowdown. Same family as the s33 biased
+dose counter whose denominator shrank when the treatment worked.
+
+## 2. INDEPENDENTLY RE-DERIVED (population: v140-since-08-14 + v152, n=520 games / 104 matches)
+```
+                                  n    median    mean     sd    DEFF(measured, match cluster)
+WIN-CONDITIONED censored@250    271       172   180.0   56.4    1.223   (side lane: 1.265)
+ITT censored@250 (all games)    520       250   213.5    53.7    1.185   (side lane: 1.185)
+VALIDATION binary win/loss        -         -       -       -    1.344   vs published rated
+                                                                          within-opponent 1.366
+```
+**Every figure reproduces to the digit except the win-conditioned DEFF (1.223 vs their 1.265,
+likely an ICC-estimator variant) — immaterial, both point the same way.** ⭐ **The validation cell
+is what licenses the two unknown ones: a match-cluster estimator applied to the binary win/loss
+outcome must reproduce `CLAUDE.md`'s published 1.366, and it lands at 1.344 — 1.6% off.**
+⇒ **This pays the count-metric DEFF debt I flagged as owed at s43.** The borrowable constants
+(1.833 unrated / 1.529 rated) were measured on **proportions**, not a continuous per-game
+outcome; **borrowing 1.833 here would have OVER-corrected by ~55%, and applying none understates
+n by 18-27%. The measured value beats both errors** — which is the point of measuring it.
+
+## 3. ⭐⭐ THE ONE LIMIT LEFT OPEN RESOLVES ITSELF — THE "BLEND" IS AN **EXACT PRODUCT**
+The side lane's limit 2 was that the ITT mean *"blends kill-RATE with kill-SPEED"*, and whether
+that satisfies `DEFENCE_ADMISSION_BAR: kill_round_non_regression` is a definitional call. **It
+does not have to be called, because the blend factorises exactly:**
+```
+RMST_250  =  250  -  P(kill inside 250)  x  E[250 - T | kill inside 250]
+
+  RMST_250                      = 213.5365
+  P(kill inside 250)            =   0.3904   (203/520)
+  E[250 - T | kill inside 250]  =  93.4039   rounds saved
+  250 - rate x speed            = 213.5365
+  identity residual             =   0.0000000000      <- EXACT
+```
+⇒ **PRE-REGISTER ALL THREE: RMST_250 as PRIMARY, and `rate` and `conditional speed` as PRE-SPECIFIED
+SECONDARIES.** They multiply back to the primary, so **a reader can always see WHICH factor moved
+and nobody has to choose the definition in advance.** Worked on the two live versions, where the
+factors move independently and happen to agree:
+```
+  v140  n=360  RMST=215.85   rate=37.8%   speed=90.40
+  v152  n=160  RMST=208.33   rate=41.9%   speed=99.51     (kills more often AND faster)
+```
+⚠ **The ITT MEDIAN pins at 250** (only 39.0% of games kill inside the window) ⇒ **the ITT form
+must use the MEAN. That is a real design change and the prereg must name it**, not a free swap.
+
+## 4. REVISED SIZING — UNBIASED **AND** CHEAPER
+```
+PRIMARY  ITT RMST_250  (sd=53.7, measured DEFF 1.185)
+   +-20 rounds ->  134 games/arm  ( 1.8 h/arm,  27 matches)
+   +-15 rounds ->  239 games/arm  ( 3.2 h/arm,  48 matches)
+   +-10 rounds ->  536 games/arm  ( 7.1 h/arm, 108 matches)
+
+superseded win-conditioned form, same +-15:  ~521-539 games/arm (~7 h/arm)   -> 2.2x dearer
+secondary binary 'kill inside 250' (p=.390, measured DEFF 0.951 — BELOW 1):
+   +-10pp ->  356 games/arm (4.7 h/arm)      -> dearer than the RMST primary; keep as SECONDARY only
+```
+⇒ **±15 rounds at 239 games/arm = 3.2 h/arm.** The bias fix pays for itself twice over.
+
+⛔ **THE CONSTANTS ARE RATED-TAPE AND THE LEG FIRES UNRATED.** Unrated proportions cluster harder
+(1.833 vs 1.529 pooled, ratio **1.199**). Applying that ratio to the measured continuous DEFF
+gives an unrated planning value of **1.185 x 1.199 = 1.421**, i.e. **±15 rounds -> ~287 games/arm
+(3.8 h/arm)**. **Use 1.42 for planning and RE-MEASURE on the leg's own games; the rated value is
+the right ranking and the wrong constant.**
+
+## 5. §C EXTENDED, ON THE SIDE LANE'S SUGGESTION
+§C already forbids win share from being read as a verdict. **Extend it: whichever kill-round form
+is chosen, the prereg states the OTHER form's number too — the gap between them IS the collider's
+size, and a reader who sees only one cannot tell whether it mattered.**
+
+⭐ **AND THE CATCH ITSELF IS THE RESULT WORTH KEEPING:** the metric was published, priced, relayed
+to the builder, and pointed at an activation ask to Magnus — **and it was wrong in a way that
+would have produced a confident, well-powered, pre-registered kill-round regression that the
+treatment did not cause.** It was caught because a second lane read the design rather than the
+number. Nothing had fired.
