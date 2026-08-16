@@ -67312,3 +67312,28 @@ fire, a control that is contaminated, a prereg scored on the wrong estimator, a 
 boundary. **Process findings get held for the wrap rather than written up as they occur.** The
 `#43` class is the model: it kills a leg design before anyone builds it.
 --- 2026-08-16T15:00:13Z BUILDER s47 IN-FLIGHT: Magnus directive, verbatim: "Do what i did, take a look at games, find out small pieces other teams do which would be fantastic puzzle pieces for our playstyle. Even better if it can improve on maps where we lose a lot." THREE OPUS REPLAY-STUDY AGENTS SPAWNED in parallel: (A) 0033 vs us, ~8 recent losses — their opening/turret/anti-raid behaviour and kill path; (B) MIDGARD, ~8 games — why we lose it, what winners do there (collision-pair mechanism excluded per research's closure); (C) top-team micro-mechanics sweep, ~10 losses vs kladde/HTTP418/Erebus/Leviathan/gsxWins/lingling/diverge — launcher/heal/barrier/builder micro. All read-only on the archive via replay_autopsy/replay_events; every claim labelled MEASURED vs EYEBALL; known/queued ideas excluded from reports. Builder synthesizes on return. ---
+
+--- 2026-08-16T15:05:47Z ⭐⭐ **RESEARCH s47 — MEASURED COLLARF2'S EXACT PREDICATE BEFORE THE BUILDER REGISTERS IT. The prereg now carries a NUMBER instead of "firing-rate uncertainty", and it carries a POWER decision that has to be made before firing.** ---
+
+**Context: my `#80` precondition falsified the builder's IN-FLIGHT arm same-day.** COLLARF (`_v461collarfund`, `#71`) opened the surge at r180-on-contact but **kept the 1500 floor** — and 0 of 1,243 v140 sides ever hold 1500 Ti before r250, so **that branch never fires and the arm was a structural null already reading its base's number** (53.56 at n=407 vs BODYAWR 53.70). **WITHDRAWN pre-readout at n=407.** ⭐ **A structural null reading its base's number is the most expensive kind of result — it consumes a slot and returns a verdict-shaped figure that means nothing.** 407 games is a cheap price for catching it on a precondition instead of post-hoc on a flat primary.
+
+## THE MEASUREMENT — `tools/bank_trace.py:bank_series()`, all 1,243 v140 our-side game-sides
+*(attribution by `teamAName/teamBName == 'OpenSverige'`, NOT `us_side`)*
+```
+ti >= 200  AND  rnd >= 180
+  ENDED BEFORE r180        634  (51.0%)   <- the surge CANNOT touch these, BY CONSTRUCTION
+  REACHED r180             609  (49.0%)
+  FIRE RATE | reached r180   166/609 = 27.3%
+  unconditional, all games   166/1243 = 13.4%
+  first fire: median r222  (p10 r180, p90 r444)
+```
+
+## ✅ THE BUILDER'S "NO EDGE MACHINERY NEEDED" CALL — CHECKED BECAUSE I THOUGHT IT MIGHT BE WRONG, AND THE DATA BACKS THEM
+The harassment doc's *"must be edge-based, only 10.3% sustain 10 rounds"* was measured on a **DIFFERENT WINDOW**. At **r180+** it inverts: **longest sustained run at/above 200 — median 13 rounds, p25 5, p75 42, max 814, and 51.8% of firing games sustain >=10 rounds.** ⇒ **a LEVEL test at r180+ is not a flicker.** Their post-endowment reasoning (bank dips below 260 by median r8) holds and the sustain data confirms it independently. ⭐ **Recorded because agreement reached by independent check is a measurement outcome, not a courtesy.**
+
+## ⛔ THE ONE THING THAT MUST CHANGE THE PREREG — A POWER PROBLEM, NOT A MECHANISM ONE
+**51.0% of our v140 games end before r180. The arm cannot move ONE of them.** ⇒ **an effect of size X inside the affected subset shows as ~X/2 in a pooled primary; the dilution roughly DOUBLES the required n.**
+⇒ **REGISTER THE PRIMARY ON THE r180-REACHING SUBSET as the pre-specified population, pooled as secondary.** Otherwise the leg is **underpowered by construction and a null is unreadable** — the exact "stop calling underpowered legs" failure `CLAUDE.md` names. **This is a pre-registration decision: it must be made before firing, not after seeing a flat number.**
+
+## ⚠ AND A FIGURE I DELIBERATELY REFUSED TO REPORT AS A WIN RATE
+The same trace splits our record by whether the game passed r180. **I did not report those as win rates and told the builder not to use them as such:** the population is `meta_join`, which **pools rated with unrated**, and the standing rule is that `meta_join` is NEVER a win-rate denominator. A rated cut of *"do we do worse in long games"* must come off `ladder_games.tsv`. **Not run, not asserted.**
