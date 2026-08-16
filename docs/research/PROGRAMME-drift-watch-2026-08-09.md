@@ -2549,3 +2549,86 @@ run, which is the mode the first scope note already said was intended.
   offset**, not the organisers' description of it — **including when the description is accurate.**
   **The test is not "is the gloss true" but "can the gloss be read the wrong way by someone who has
   not seen the disassembly."**
+
+## ⭐⭐ D26 REFINEMENT 2 — **THE FOURTH SITE OF SELECTION-ON-THE-OUTCOME IS THE PRIMARY METRIC'S OWN DENOMINATOR, AND D26's WATCH FORM CANNOT SEE IT**
+
+**Promoted side lane s44, 2026-08-16, from a PRE-FIRE catch on `FIRE ORDER #1`
+(`docs/coordination.md`, `a80c27ce`; research's amendment `3a1504f5`). Filed as a
+REFINEMENT and not as D30 deliberately: D26 already declares this family in its
+own text — *"Three instruments, three lanes, one shape: SELECTION ON THE
+OUTCOME"* — and splitting one mechanism across two rows is how a checklist stops
+being usable (D14).**
+
+**THE THREE SITES D26 NAMES:** the ESTIMATOR (the kidnap arm conditioned on
+having survived to be thrown) · the SCHEDULE (which arm gets replicated) · the
+DOSE COUNTER (denominator shrinks when the treatment succeeds).
+**THE FOURTH, AND IT IS THE BEST HIDDEN: THE DEFINITION OF THE PRIMARY METRIC.**
+
+**THE CASE.** A live leg pre-registered **"median kill round censored at
+`KILL_WINDOW_RND`"** as PRIMARY. The censoring point was chosen impeccably — it
+is `PROGRAMME.md`'s own constant, so it cannot be tuned after the fact — and the
+sizing was correct arithmetic. **But "kill round" is only defined on games we
+WON BY CORE KILL**, and the sizing said so in passing (*"our kill-wins = 49% of
+games, inflation applied"*). ⇒ **the treatment decides which games enter its own
+denominator.**
+**The plank on the leg (`bodyaware`) moves win share +3.7pp, so it necessarily
+moves the subset**, and the board already showed the signature: leaders reading
+*win more AND kill later* (232 vs 209). **A treatment converting marginal slow
+LOSSES into slow WINS adds slow kills to the numerator and reads as a kill-round
+regression having caused none.**
+
+**⛔ WHY D26's WATCH FORM MISSES IT, WHICH IS THE ENTIRE REASON THIS IS WRITTEN
+DOWN.** D26 asks *"what SELECTED this sample, and is the selector correlated with
+what is measured?"* **Here nothing selected the sample.** The metric is applied
+identically and blindly to both arms, by a definition committed in advance, with
+no per-arm choice anywhere. **The conditioning is a property of the QUANTITY, not
+of any act — so a lane looking for a selection STEP finds none and passes it.**
+That is what let it clear a prereg, a pricing pass, and a relay to two lanes.
+
+### THE WATCH FORM — one question, asked of every PRIMARY before a leg is locked
+**NAME THE DENOMINATOR. THEN ASK: IS MEMBERSHIP IN IT DECIDED AFTER
+RANDOMISATION?** If a game's inclusion depends on anything the treatment could
+have changed — won / killed / survived / reached a round / built a thing — the
+contrast is not the causal one, however clean the arithmetic on top.
+* **The tell is a metric that is UNDEFINED on some games.** "Kill round" has no
+  value on a loss. **Wherever a metric is undefined, a selection is hiding**, and
+  the sizing line that inflates for it (*"49% of games"*) is where it is visible.
+* **THE FIX IS ALMOST ALWAYS AN ITT FORM: give the undefined games a defined
+  value from the programme's own constants** (here: no kill inside the window
+  scores the window, 250). Every randomised game contributes; nothing is
+  conditioned on outcome.
+* ⭐⭐ **AND PRICE IT BEFORE ASSUMING IT COSTS MORE — IT WAS 2.26x CHEAPER.**
+  Measured on the live rated population (520 games / 104 matches): win-conditioned
+  sd 56.4 with **DEFF 1.265**, ITT sd 53.7 with **DEFF 1.185** ⇒ at ±15 rounds,
+  **539 games/arm against 238.** The collider inflates the DESIGN EFFECT as well
+  as biasing the estimate, because conditioning on winning correlates games within
+  a match (a 5-0 contributes five kill rounds, a 0-5 contributes none).
+  **The unbiased form was the cheap one. Nobody had checked.**
+* ⭐ **BEST OUTCOME: IT MAY FACTORISE, IN WHICH CASE NOBODY HAS TO CHOOSE.**
+  Research's amendment: `RMST_250 = 250 − P(kill inside 250) × E[250−T | kill]`,
+  **verified residual 0.0000000000**. Pre-register all three — combined primary,
+  rate, conditional speed — and they multiply back, so a reader always sees which
+  factor moved. **Prefer a factorisation to a definitional ruling.**
+
+**⚠ AND THE MEASUREMENT CAVEAT THAT TRAVELS WITH THOSE CONSTANTS:** they are from
+the RATED tape and the leg fires UNRATED. Any cross-fixture number is a
+**PROJECTION**, and the projection itself rests on untested assumptions
+(multiplicative fixture effect; a ratio measured on PROPORTIONS transferring to a
+CONTINUOUS outcome). **Label it `PLANNING` and carry re-measurement as an
+obligation** — this is `CLAUDE.md`'s own count-metric debt, one level up.
+
+## STANDING NOTE (s44, 2026-08-16) — **PUBLISH THE ARITHMETIC, NOT THE VERDICT. A CONCLUSION IS AGREEABLE; ONLY WORKING IS FALSIFIABLE.**
+
+**Formulation joint with research, from the same incident.** `FIRE ORDER #1`'s
+CONCLUSION — *"win share is infeasible on the live fixture, kill round is the
+cheap question"* — **survived the audit completely intact.** What died was the
+ESTIMATOR, and **the defect lived in the sizing arithmetic**, in a parenthetical
+about the inflation factor.
+
+⇒ **A fire order, prereg or verdict that states only its conclusion is
+UNAUDITABLE NO MATTER HOW MANY LANES READ IT.** A peer given a conclusion can
+only agree or disagree; a peer given the working can falsify it. **The review
+worked because the sizing was written down, not because a second lane read it.**
+⇒ **When this watch grades an artefact, grade whether its load-bearing numbers
+are RECONSTRUCTIBLE from what it published** — that property, not the number of
+readers, is what made a wrong primary die before it fired rather than after.
