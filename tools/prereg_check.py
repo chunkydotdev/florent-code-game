@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """PREREG CHECK — the pre-registration checklist as a tool that exits 1.
 
-    .venv/bin/python tools/prereg_check.py docs/research/PREREG-CAL8-2026-08-14.md
+    .venv/bin/python tools/prereg_check.py docs/research/PREREG-<name>-<date>.md
     .venv/bin/python tools/prereg_check.py --amendment <locked.md> <amended.md>
     .venv/bin/python tools/prereg_check.py --selftest
 
@@ -1706,7 +1706,7 @@ COMPLETE = """\
 # PREREG — SYNTHETIC COMPLETE FIXTURE (selftest only, not a real leg)
 
 **STATUS: committed BEFORE any challenge is issued** (two-clock standard).
-**PROVENANCE: docs/research/HOME-LOCK-MECHANISM-2026-08-14.md · corpus/ladder_games.tsv · bots/_v223sealrepair/eco.py**
+**PROVENANCE: docs/research/SYNTHETIC-FIXTURE-INPUT-DOC.md · corpus/ladder_games.tsv · bots/_v223sealrepair/eco.py**
 
 ## REGISTRATION BLOCK
 **TARGET BAND: 0033, gaps +81..+81, win pays 19.7..19.7, reachable YES**

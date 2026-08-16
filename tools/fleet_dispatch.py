@@ -1537,12 +1537,29 @@ def selftest() -> int:
         except ValueError as e:
             return f"REFUSED:{str(e)[:28]}"
 
-    chk("+ 112 rows x 5400 allocate inside the band", isinstance(_alloc(112, 5400), int), True)
-    b = alloc_seeds(112, 5400)[0]
+    # ⛔ FIXTURE-DRIVEN, NOT LIVE: these two cells test the allocator's
+    # arithmetic from an explicit clear base. The first version called
+    # alloc_seeds with NO hint, which reads the REAL worklists — and on
+    # 2026-08-16 the live high-water mark (~726k) left less headroom than
+    # 112 x 2000 needs, so the guard correctly REFUSED and the unwrapped
+    # call CRASHED the selftest; every cell after it never ran.
+    chk("+ 112 rows x 5400 from a clear base allocate inside the band",
+        isinstance(_alloc(112, 5400, hint=SEED_LO_FLOOR), int), True)
+    b = alloc_seeds(112, 5400, SEED_LO_FLOOR)[0]
     chk("+ ... and the LAST seed stays under the certification band",
         b + 111 * SEED_STRIDE + 180 < SEED_RESERVED_LO, True)
-    chk("+ ... and the base clears every seed already in use",
-        b > used_seed_hi(), True)
+    # LIVE cell, verdict derived from the same arithmetic the guard applies:
+    # whatever the real worklists hold, the no-hint call must AGREE with the
+    # headroom that actually exists — int if it fits, REFUSED if it does not.
+    _live_base = ((max(SEED_LO_FLOOR, used_seed_hi() + SEED_STRIDE)
+                   + SEED_STRIDE - 1) // SEED_STRIDE) * SEED_STRIDE
+    _fits = _live_base + 111 * SEED_STRIDE + 180 < SEED_RESERVED_LO
+    _live = _alloc(112, 5400)
+    chk("+ live no-hint alloc agrees with live headroom arithmetic",
+        isinstance(_live, int) if _fits else str(_live).startswith("REFUSED"), True)
+    if isinstance(_live, int):
+        chk("+ ... and the live base clears every seed already in use",
+            _live > used_seed_hi(), True)
     # ⛔ THE BITING CELL, and it is the bug this allocator actually had: a base
     # that walks into [900000, 1e6) must REFUSE, not round and carry on.
     chk("- an allocation reaching the reserved band REFUSES",
