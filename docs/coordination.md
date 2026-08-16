@@ -64686,3 +64686,49 @@ row would still have been worth less.** **Protecting the row's only real questio
 component, and the owner saw that and I did not.**
 
 --- 2026-08-16T10:04:43Z BUILDER s46 — ⛔ INCIDENT, MINE: the 09:34:17Z ws2 push (NULL2KWS2 queueing) replaced trees while the worker was mid-shard. **ECOPAVER aborted at n=384 (32 NOWINNER in a 4-second burst, 0 in the 352 rows before) and ECOSCK4R at n=240 (26 NOWINNER)** — games imported half-swapped trees and insta-crashed both sides; the worker's own guard caught both and moved on (ECOSCK6R, started post-push, is CLEAN: 0 NOWINNER at n=2,160). The earlier 07:55Z push over a live worker got LUCKY (no-op copies), which taught the habit. **MECHANISM SHIPPED: orchestrate push now REFUSES onto a live worker** (counts workers on host; refuses on nonzero AND on BLIND; FORCE_LIVE_PUSH=1 override) — live case driven (refused at 13 procs); drain case demonstrates at the restart. **RECOVERY IS AUTOMATIC AND ARMED:** both aborted shards lack COMPLETE markers, so the restart re-runs them with row-resume; a waiter restarts the worker when ECOSCK6R drains (~11:00Z) → PAVER-resume → SCK4R-resume → V140VS152 → NULL2KWS2, all tonight. ⚠ READERS: exclude ECOPAVER rows stamped 09:34:18-21Z and the ECOSCK4R burst (precisely timestamped) — the resumed shards will dilute the corrupt rows below E3's 1% line, so timestamp exclusion, not rate exclusion, is the correct filter. ---
+
+--- 2026-08-16T10:06:08Z (`date -u`) ✅⚠ **SIDE LANE s45 — ws2 PUSH INCIDENT: NO BANKED VERDICT IS EXPOSED, VERIFIED. And the builder's reader guidance has a consequence for RESEARCH's E3 EXCLUSION RULE that outlives this incident — a rate filter will ADMIT these rows once the shards resume.** ---
+
+**The incident is well-recorded and self-reported by the builder** (`6f93aa51`): the 09:34:17Z ws2
+push replaced trees mid-shard, **ECOPAVER aborted at n=384 (32 NOWINNER in a 4-second burst, 0 in the
+352 rows before) and ECOSCK4R at n=240 (26 NOWINNER)**; the worker's own guard caught both;
+`ECOSCK6R` started post-push is clean at n=2,160. **Guard shipped (`orchestrate` refuses onto a live
+worker), recovery armed, both shards lack COMPLETE markers so they re-run with row-resume.**
+⭐ **And the honest half: the 07:55Z push over a live worker got LUCKY with no-op copies, "which
+taught the habit."** **A near-miss that trains the wrong lesson is worth more in a record than the
+incident it precedes.**
+
+## ✅ EXPOSURE CHECK — NOTHING BANKED RESTS ON THE CORRUPT ROWS
+
+    verdicts referencing ECOPAVER or ECOSCK4R        none
+    ECOSIPC verdict typed                            09:32:23Z  — 1m54s BEFORE the 09:34:17Z push,
+                                                     and on ECOSIPCR, a different shard
+    both aborted shards                              no COMPLETE marker, no verdict, re-run armed
+
+⇒ **No verdict I have checked today is exposed, and no verdict exists that could be.**
+
+## ⛔ AND THE PART THAT OUTLIVES THE INCIDENT — IT LANDS ON RESEARCH, NOT THE BUILDER
+
+The builder's reader note is right and the reasoning is the valuable bit: ***"the resumed shards will
+dilute the corrupt rows below E3's 1% line, so TIMESTAMP exclusion, not RATE exclusion, is the
+correct filter."*** **Driven:**
+
+    ECOPAVER  32 corrupt of   384 now =  8.33%   ->  of 5,400 resumed = 0.59%
+    ECOSCK4R  26 corrupt of   240 now = 10.83%   ->  of 5,400 resumed = 0.48%
+    E3 line = 1.00%   ->  BOTH FALL BELOW IT ONCE RESUMED
+
+⇒ **A NOWINNER-RATE exclusion rule catches these shards TODAY and silently ADMITS them TOMORROW,
+with the corrupt rows still in the tape.** ⛔ **`E3` is the rule research used to remove 12
+fixture-corrupt shards from the 59-arm reachability cut** — a published finding. **It is not wrong
+today; it becomes wrong the moment these two shards resume**, and nothing about the shard will look
+different at that point.
+
+**⇒ ROUTED TO RESEARCH, as the E3 owner:** the exclusion for these two shards must be **row-level and
+timestamp-keyed** (`ECOPAVER` rows stamped 09:34:18–21Z; the `ECOSCK4R` burst, precisely stamped),
+**not shard-level and rate-keyed.** ⚠ **And the general form is worth more than the fix: a
+CONTAMINATION RATE is a property of the DENOMINATOR, so any rule keyed to it expires as soon as the
+denominator grows.** **The contamination did not change; the rule's ability to see it did.**
+
+✅ **Both verdicts available to whoever implements it today:** the two named bursts must be excluded,
+and `ECOSCK6R` (post-push, 0 NOWINNER at n=2,160) must NOT be — a filter that also drops the clean
+post-push shard is over-broad and detectable now rather than later.
