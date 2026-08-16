@@ -572,6 +572,15 @@ class Decision:
     bar: Bar | None = None
     computed: bool = False   # were share/lo/hi actually derived? A blind line must
                              # never print a 0.00% that looks like a measurement.
+    fired_on: float | None = None   # the PREFIX share that fired a TREND-FLOOR stop.
+                                    # share/lo/hi are the FULL tape; a TREND-FLOOR
+                                    # decision is made on the first-N prefix, and a
+                                    # ledger that records only the full share omits
+                                    # the number the rule actually read (side lane
+                                    # FLAG 3, 2026-08-16 — divergence up to 1.18pp).
+                                    # None for every other clause: FUTILITY-BAR and
+                                    # CATASTROPHE decide on the full-tape CI, so for
+                                    # them share IS the fired-on number.
 
 
 def decide(sh: Shard, bars: dict[str, Bar], stale_s: float,
@@ -607,8 +616,9 @@ def decide(sh: Shard, bars: dict[str, Bar], stale_s: float,
     mark = mark_for(sh.tape.n, sh.target)
     bar = bars.get(sh.id)
 
-    def d(action, clause, detail):
-        return Decision(action, clause, detail, mark, share, lo, hi, bar, True)
+    def d(action, clause, detail, fired_on=None):
+        return Decision(action, clause, detail, mark, share, lo, hi, bar, True,
+                        fired_on)
 
     if mark == "FINAL":
         return d("NOACTION", "AT-TARGET",
@@ -687,7 +697,8 @@ def decide(sh: Shard, bars: dict[str, Bar], stale_s: float,
                          f"share over the FIRST {mk} games was {pfx:.2f}% < the "
                          f"{TREND_FLOOR:.1f}% house floor [{src}] — not futile, "
                          f"but not worth further compute on its own. Rows are "
-                         f"KEPT: it remains available as a combination input.")
+                         f"KEPT: it remains available as a combination input.",
+                         fired_on=pfx)
 
     # ---- G1: NO BAR, NO STOP (the CI rule only) -----------------------------
     if bar is None:
@@ -783,14 +794,18 @@ def apply_stop(sh: Shard, dec: Decision, *, cancel_dir: Path, ledger: Path,
         cancel_dir.mkdir(parents=True, exist_ok=True)
         ledger.parent.mkdir(parents=True, exist_ok=True)
         if not ledger.exists():
-            ledger.write_text("#ts\tshard\tphase\tmark\tn\tshare\tci_lo\tci_hi\tclause\n")
+            ledger.write_text("#ts\tshard\tphase\tmark\tn\tshare\tci_lo\tci_hi\tclause\tfired_on\n")
+        # `fired_on` is LAST so every pre-existing by-index reader stays correct.
+        # "-" for clauses that decide on the full-tape CI (share IS their number).
+        fo = f"{dec.fired_on:.2f}" if dec.fired_on is not None else "-"
         with ledger.open("a") as fh:
             fh.write("\t".join([ts, sh.id, "CLAIM", dec.mark, str(sh.tape.n),
                                 f"{dec.share:.2f}", f"{dec.lo:.2f}", f"{dec.hi:.2f}",
-                                dec.clause]) + "\n")
+                                dec.clause, fo]) + "\n")
         (cancel_dir / sh.id).write_text(
             f"auto_gate {ts} {dec.clause} n={sh.tape.n} share={dec.share:.2f} "
-            f"ci=[{dec.lo:.2f},{dec.hi:.2f}]\n")
+            f"ci=[{dec.lo:.2f},{dec.hi:.2f}]"
+            + (f" fired_on={fo}" if dec.fired_on is not None else "") + "\n")
         # Gate on the LOAD-BEARING FILE, never on a return code.
         if not (cancel_dir / sh.id).exists():
             return False, "cancel flag did not appear on disk after write"
@@ -799,7 +814,7 @@ def apply_stop(sh: Shard, dec: Decision, *, cancel_dir: Path, ledger: Path,
         with ledger.open("a") as fh:
             fh.write("\t".join([ts, sh.id, "DONE", dec.mark, str(sh.tape.n),
                                 f"{dec.share:.2f}", f"{dec.lo:.2f}", f"{dec.hi:.2f}",
-                                dec.clause]) + "\n")
+                                dec.clause, fo]) + "\n")
         return True, f"cancel flag written to {cancel_dir / sh.id}; results.tsv row appended"
     except OSError as e:
         return False, f"apply failed: {e}"
@@ -1326,6 +1341,33 @@ def selftest() -> int:
         decide(s_lowpfx_highnow, TB, DEFAULT_STALE_S).action, "STOP")
     chk("good prefix, AWFUL current share (now 26.7%)  => not stopped by the floor",
         decide(s_highpfx_lownow, TB, DEFAULT_STALE_S).clause.startswith("TREND-FLOOR"), False)
+
+    # ── FLAG 3 (side lane, 2026-08-16): the LEDGER must carry the number the
+    # rule actually READ. TREND-FLOOR fires on the first-N PREFIX while the
+    # ledger's share column is the FULL tape; before this fix the fired-on
+    # number was recorded nowhere (observed divergence up to 1.18pp). Positive
+    # control = the cell above where the two DISAGREE in verdict: full share
+    # 76.0% is ABOVE the floor while the first-1000 prefix 40.0% is BELOW it.
+    # A cell where both columns agree validates nothing.
+    print("\n── FLAG 3: fired_on carries the prefix a TREND-FLOOR stop read ─────────")
+    d_fo = decide(s_lowpfx_highnow, TB, DEFAULT_STALE_S)
+    chk("TREND-FLOOR decision carries fired_on == the PREFIX (40.00)",
+        "%.2f" % d_fo.fired_on if d_fo.fired_on is not None else "None", "40.00")
+    chk("...while its full-tape share is ABOVE the floor (the disagreeing pair)",
+        d_fo.share > TREND_FLOOR, True)
+    chk("a FUTILITY-BAR stop has fired_on None (its share IS the fired-on number)",
+        decide(shard("REAL2", 2700, 1242), BARS, DEFAULT_STALE_S).fired_on, None)
+    led3, res3, can3 = tmp / "l3.tsv", tmp / "r3.tsv", tmp / "c3"
+    res3.write_text("commit\tw\tl\th\tn\tstatus\tdesc\n")
+    apply_stop(s_lowpfx_highnow, d_fo, cancel_dir=can3, ledger=led3, results=res3,
+               ts="2026-08-16T00:00:00Z")
+    chk("end-to-end: both TREND-FLOOR ledger rows carry fired_on=40.00 (last column)",
+        [l.split("\t")[9] for l in led3.read_text().splitlines() if not l.startswith("#")],
+        ["40.00", "40.00"])
+    chk("...and the new-file header names the column",
+        led3.read_text().splitlines()[0].endswith("fired_on"), True)
+    chk("...and the cancel-flag text carries fired_on for the human who opens it",
+        "fired_on=40.00" in (can3 / s_lowpfx_highnow.id).read_text(), True)
 
     # too early: the mark is not reached, so the rule cannot look
     s_early = trend_shard("TB_EARLY", [(100, "T"), (899, "C")], "REAL")

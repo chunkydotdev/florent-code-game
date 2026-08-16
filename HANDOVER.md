@@ -11,7 +11,11 @@
 #   * every tools/*.py now honours --help side-effect-free (40 of 86 used to RUN and print verdict-shaped text)
 #   * tools/INDEX.md, tools/boot.py --lane (~3.5k tok vs a ~140k charter read), queue_check.py --next
 #   * the fleet supervisor had been DEAD 22h and a duplicate auto_gate was armed; both fixed, launchd watchdog added
-#   * ⚠ CATRND1L (_v260catrnd1) is MISLABELLED — catapult is dead code in it; its 51.19% is an rnd1 reading
+#   * ⚠ CATRND1L (_v260catrnd1): ⛔ CORRECTED s45 2026-08-16 (research, confirmed by side lane
+#     with a control grep) — the earlier "catapult is dead code, 51.19% is an rnd1 reading" was
+#     WRONG. `LOKI_CATAPULT_ON` gates TWO LIVE paths (raid.py:200 wait, :1061 collar); only
+#     `_catapult_order` (:943 siting) is dead. CATRND1L is a PARTIAL-DOSE catapult cell — do not
+#     retire it as a duplicate, do not pool it with RND1SOLO/HOMEMAX
 #   * ⚠ ~40 queued g/h arms are under-powered by construction (±1.87pp band vs 0.17pp differences)
 #   * QUEUE HEAD is now TRIO / RND1SOLO / CATSOLO (see the coordination block for why)
 #

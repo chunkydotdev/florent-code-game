@@ -575,6 +575,13 @@ class TestHelpContract(unittest.TestCase):
         "elo_history.tsv", "elo_logger.log", "match_watcher.log",
         "opp_watcher.log", "replay_archiver.log",
     )
+    # Session-NUMBERED daemon logs a static filename list cannot cover: the
+    # side lane's drift watch writes `drift_watch_s<NN>.log` on a ~60s cadence,
+    # so the 6s churn control misses it and the suffix list above cannot name
+    # it in advance. Observed 2026-08-16: `drift_watch_s44.log` attributed to
+    # collar_census.py — a tool that never opens it — making the suite flaky
+    # whenever a probe overlapped the daemon's write.
+    DAEMON_PATTERNS = (r"drift_watch_s\d+\.log$",)
 
     def _background_churn(self, seconds=6.0):
         """Paths that change on their own, with no tool running.
@@ -610,7 +617,8 @@ class TestHelpContract(unittest.TestCase):
             after = self._fs_signature()
             touched = [k for k in after
                        if before.get(k) != after.get(k) and k not in churn
-                       and not k.endswith(self.DAEMON_WRITTEN)]
+                       and not k.endswith(self.DAEMON_WRITTEN)
+                       and not any(re.search(p, k) for p in self.DAEMON_PATTERNS)]
             if touched:
                 wrote.append(f"{f.name}: WROTE {touched[:3]}")
             if f.name in self.EXEMPT:

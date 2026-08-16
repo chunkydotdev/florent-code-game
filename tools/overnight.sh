@@ -92,7 +92,10 @@ rm -f $DONEF
 # can finally say PREDATES-LEG-CREATION instead of predates-first-row.
 # Comment-prefixed so it can never be mistaken for a game row; every reader in
 # tools/ skips `#` lines (overnight_read.py, effective_n.py were patched with
-# this line). tools/prereg_check.py --tape enforces it.
+# this line). ⛔ NOTHING ENFORCES IT AUTOMATICALLY: tools/prereg_check.py --tape
+# can READ this stamp, but no firing path calls it (verified 2026-08-16, side
+# lane FLAG 5 — a leg ran to completion twice against a prereg that did not
+# exist). Until a gate is wired, certification is a human running prereg_check.
 START=$(date -u +%Y-%m-%dT%H:%M:%SZ)
 print -r -- "${START}${T}0${T}$TARGET${T}$SHARD${T}STARTING" > $HB
 HOSTN=$(hostname -s 2>/dev/null || hostname)
