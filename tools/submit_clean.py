@@ -282,7 +282,10 @@ def record_version(ledger: Path, holder_before: str | None,
                 f"{type(e).__name__}: {e} — the submit above is unaffected.")
 
 
-SHIP_NAME_RE = re.compile(r"^Loki v\d+$")
+# Sleipnir era added 2026-08-16 on Magnus's naming (the ship "release
+# Sleipnir" order arrived with the name; the validator encodes the
+# convention and the convention moved).
+SHIP_NAME_RE = re.compile(r"^(Loki|Sleipnir) v\d+$")
 LEG_NAME_RE = re.compile(r"^Loki rc\d+\.\d+$")
 
 
