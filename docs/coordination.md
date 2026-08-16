@@ -58565,3 +58565,87 @@ to the builder, and pointed at an activation ask to Magnus — **and it was wron
 would have produced a confident, well-powered, pre-registered kill-round regression that the
 treatment did not cause.** It was caught because a second lane read the design rather than the
 number. Nothing had fired.
+
+--- 2026-08-16T05:0xZ (`date -u`) ⛔⛔ **SIDE LANE s44 — RETRACTING MY OWN FLAG 1. v153 DID HOLD THE SLOT. `CLAUDE.md` IS VINDICATED, NOT CONTRADICTED — AND A 120-SECOND POLLER HAD THE ANSWER BY NAME THE WHOLE TIME.** ---
+
+**Retracting at the provenance record first (D21), then the argument sites. My boot note
+`28fca2ed` is the provenance; this is the correction; both peers and Magnus were told the wrong
+thing and are being told directly.**
+
+## WHAT I PUBLISHED, AND WHICH HALF IS FALSE
+
+I wrote: ***"v153 EXISTS, IS `ready`, AND HAS NEVER HELD THE SLOT"***, and framed it as *prima
+facie* tension with `CLAUDE.md`'s **"SUBMITTING IS SHIPPING — `fcode submit` AUTO-ACTIVATES."**
+
+**`scratchpad/holder_watch.log`, verbatim:**
+
+    === HOLDER CHANGE 2026-08-15T15:55:18Z: v140 -> v151 ===
+    === HOLDER CHANGE 2026-08-15T17:56:17Z: v151 -> v152 ===
+    === HOLDER CHANGE 2026-08-15T20:37:32Z: v152 -> v153 ===      <- BY NAME
+    20:37:38Z ARMED on v152                                        <- v152 RESTORED
+
+⇒ **v153 DID activate, at 20:37:32Z, exactly on upload. `CLAUDE.md`'s rule is CONFIRMED — the
+submit auto-activated precisely as documented. My "prima facie tension" was tension with nothing.**
+
+## WHAT ACTUALLY HAPPENED, AND IT IS THE PROCEDURE WORKING
+
+**v153 auto-activated on upload and the holder was v152 again by 20:37:38Z.** The hold is bounded
+above by the watch's **120 s poll**, so: **v153 held the slot for at most ~2 minutes.** ⛔ *Not
+"6 seconds" — 6 s is detection-to-confirmation, not the hold. Stating the bound I can defend.*
+
+**AND IT LEAKED NOTHING, which my own earlier check already proved and I mis-framed:** v153 has
+**ZERO rated games ever** at the pairing boundary. Pairings land at `:12:59/:32:59/:52:59`; the
+window opened ~4.5 min after the `:32:59` pairing with ~15 min of clear air. ⇒ **this is exactly
+the structurally-safe submit→rollback `CLAUDE.md` describes and `submit_clean.py` implements.**
+**Someone executed the ship discipline correctly and I reported it as evidence the discipline
+might be broken.**
+
+## ⛔ THE MECHANISM, AND IT IS Q3's, VERBATIM: I CHECKED THE SURFACE ADJACENT TO THE ONE THAT MATTERED
+
+I opened **three** surfaces to answer *"did v153 ever hold the slot?"* — `ladder_games.tsv`
+(pairings), `elo_history.tsv` (5-min tape), `ship_watch.log`. **All three are the wrong
+instrument**: the first answers *did it PAIR*, the other two are pollers coarser than the event.
+**`holder_watch.log` is the one surface built to answer exactly the question I asked, it polls at
+120 s, it was running the entire time, it names v153 explicitly — and I never opened it.**
+
+**⛔ AND I CITED holder_watch IN THE SAME SESSION WITHOUT READING IT.** It is in my boot
+verification (`fleet_health` 12/12) and I inherited my predecessor's note that it *"EXITS on first
+change."* **I reasoned about the instrument's ARCHITECTURE and never read its OUTPUT.**
+⇒ **A 5-minute tape showing zero v153 rows is not evidence about a 2-minute event, and I knew the
+event could be that short — I wrote that sentence myself** (*"a hold shorter than the ~5-minute
+tape cadence… is consistent with every surface I can read"*). **I named the exact blind spot and
+then did not go looking for an instrument that did not have it.**
+
+**THE HEDGE IS WHAT LIMITS THE DAMAGE AND IT DOES NOT EXCUSE THE CLAIM.** I refused to resolve the
+question and named the rollback reading as fitting the same evidence — so nobody was licensed to
+act on it, and the operational half ("a newer submission is one click from the slot") stands.
+**But "HAS NEVER HELD THE SLOT" was stated as fact, in a headline, and it is false.**
+**This is my FOURTH frame/scope error this session and the FIRST to escape** — the other three
+died on illegal magnitudes; this one produced a *plausible* reading, which is the s38 asymmetry
+firing exactly as recorded.
+
+## ✅ WHAT SURVIVES FROM THE ORIGINAL FLAG
+
+* **v153 is `ready` and one command from the slot** — `fcode submission activate 153` works on any
+  `ready` submission (`docs/fcode-cli.md:27-44`; it is `activate` that is status-gated, never
+  `submit`). If it goes live mid-leg the live bot moves under anything in flight. **Unchanged.**
+* **`corpus/version_trees.tsv` still stops at v151** — v152 (the holder) and v153 have no row.
+* **The submission-list date column is UTC** (FLAG 2) — untouched by this, and now triple-anchored:
+  v151 list `15:54` ↔ holder change `15:55:18Z`; v152 list `17:55` ↔ `17:56:17Z`; v153 list
+  `20:37` ↔ `20:37:32Z`. **Three independent anchors, all within ~80 seconds.**
+
+## ⚠ ONE REAL FINDING FOUND WHILE BEING WRONG — THE FILE NAMED "CURRENT" IS THE FOSSIL
+
+    scratchpad/holder_watch.log          live, last written 2026-08-15T20:37:38Z
+    scratchpad/holder_watch_current.log  "armed 08:59:23Z: expecting v125"   <- v125 ERA, stale
+
+**A successor reaching for holder state will reach for the one called `_current`, and it names a
+holder from the v125 era.** ⛔ **This is the D28 shape with the labels inverted: not a stale
+number in a live file, but a DEAD file wearing the name that promises freshness.** Naming it,
+not deleting it — `scratchpad/` monitor outputs are builder-owned.
+
+**⭐ AND THE MEASURED LESSON, because my predecessor's finding is now CLOSED and nobody recorded
+it: `holder_watch` no longer exits on first change.** A supervisor loop (pid 54165) re-arms it on
+the new holder after every firing. **Proven, not asserted — it fired and re-armed THREE times in
+one day** (v140→v151, v151→v152, v152→v153). The s43 hazard *"a leg's own activation consumes the
+independent watch"* is fixed, and **the fix is what caught v153.**
