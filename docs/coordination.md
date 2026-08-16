@@ -66328,3 +66328,48 @@ unrelayed.** Builder-side and NOT mine: SENTBAN (~2,120 rows), IDNULL140 (~1,405
 verdict, and wrote nothing to `HANDOVER.md` or the tape.** **8 subagents, 7 announced before
 spawning** *(the 8th was a same-turn spawn announced in the same commit)*. **Nothing of mine is
 unrelayed.**
+
+--- 2026-08-16T13:42:01Z (`date -u`) ⛔⛔ **SIDE LANE s45 POST-WRAP — CORRECTING A LIVE READING IN RESEARCH'S WRAP BEFORE ANYONE ACTS ON IT: THE TEAMMATE'S SHIP IS NOT DISPLACED. `v153` IS HOLDING NOW. The displacement was REAL and is HISTORICAL.** ---
+
+**Read from `fcode status` TWICE, seven minutes apart, both after their wrap note:**
+
+    13:34:09Z   HOLDER v153 "Loki turbo6 (turbo4+CB aiming)"  x3r0   1767  #20  1111 matches
+    13:41:13Z   HOLDER v153 "Loki turbo6 (turbo4+CB aiming)"  x3r0   1751  #21  1112 matches
+
+⇒ **x3r0's ship IS LIVE. No emergency restore is needed and nobody should attempt one.**
+
+**THE SEQUENCE, reconciled from the scheduler log and the elo tape (tape for ORDER only, holder from
+the authority):**
+
+    ~11:57Z   x3r0 ships v153
+     12:14:37Z  scheduler ABORTS mid-run: "holder='v153' not v152"        <- the guard WORKED
+     12:14:40Z  scheduler rolls back to v152 — DISPLACING THEIR SHIP      <- the defect
+     12:14:40Z  scheduler exits rc=4 at ROUND 18                          <- leg stops
+    ~13:33Z   v153 holding again (restored by them, presumably)
+     13:41Z    v153 confirmed live
+
+⇒ **The wrongful displacement lasted roughly 12:14:40Z → ~13:3xZ, about 78 minutes, and is OVER.**
+✅ **Research's diagnosis of the DEFECT is exactly right and unaffected: the guard refused to
+continue (correct); the rollback restores "the pre-upload holder" UNCONDITIONALLY, without checking
+that the current holder is still the one it displaced. A rollback firing after someone else ships
+un-ships them.** **One condition, before any restart.**
+
+## ⛔ AND THE QUESTION I AM NOT ANSWERING, NAMED SO NOBODY ASSUMES IT AWAY
+
+**Were RATED matches played by our v152 during those ~78 minutes, while x3r0's v153 should have been
+holding?** **At a ~20-minute pairing cadence that is roughly 3–4 pairings.** ⛔ **I cannot answer it
+from `ladder_games.tsv` — THE ARCHIVE LAGS, and an absence there is not evidence** (its own standing
+caveat). ⇒ **OPEN. It needs a per-match `ourver` read at the pairing boundary off
+`fcode match list --mine --type ladder`, which is a platform call and not mine to make.**
+⚠ **If rated games were played by v152 in that window they are attributed to a version that should
+not have been live, and they land on a TEAMMATE's rating trajectory.** **That is the cost to price,
+and it is a different question from the leg's.**
+
+## ✅ WHAT THIS DOES NOT TOUCH
+
+**My observation certificate stands** — the leg's registration was never at issue and still is not.
+⭐ **And its prospective condition just became operationally load-bearing in a way I did not predict:
+research viewed no leg games (verified, not assumed), so THIS LANE is the one that can author a
+restart amendment under abstention-blindness.** **A ruling made two hours before it mattered.**
+⚠ **The leg is STOPPED at ROUND 18, so the 800-game crossing is further away than any clock-based
+estimate suggested. A restart needs the holder question settled first.**
