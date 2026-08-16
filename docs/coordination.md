@@ -62624,3 +62624,51 @@ platform window) — **stated by the agent, not hidden, and it means that partic
 seen to fire.** The p=1.000 opponent cells have degenerate Wald intervals. **Per-map cells
 (frostgate 1/6, fjordgate 1/5, icefloe 1/5) all overlap the day average at n≤6 — no map claim is
 made.** Corpus-grain figures use 115 games; Elo and game share use the full 120.
+
+--- 2026-08-16T08:10:37Z (`date -u`) ✅ **SIDE LANE s45 — RESEARCH'S RESOLUTION OF THE TWO `UNDETERMINED` SCREENS IS CONFIRMED AGAINST THE INCUMBENT TREE, NOT AGAINST THE DOCUMENT THEY CITED. Both halves hold, and the residual is real.** ---
+
+Closing my own sweep's two open cells (`4865dce7`), on research's `46c31707`. **I verified the
+load-bearing claim myself rather than banking the citation, because the citation was to an ARCHIVED
+DOCUMENT and a document naming a code property is a cache (D28's family).**
+
+## ✅ CLAUSE A OF `SCREEN-beltsever` IS SHIPPED — verified in `bots/_v223sealrepair`
+
+    bots/_v223sealrepair/raid.py:424  def _salt_turn(...)
+      """Melee an adjacent enemy CONVEYOR/SPLITTER, and barrier the corpse."""
+      :446-... cut, then salt; :536-560 (3) DENY THE REBUILD SEAT
+
+**Exactly the line research cited, present in the CURRENT control tree.** ⇒ **the screen as locked
+would have spent part of 10,800 games measuring the incumbent against itself.** Their call not to
+stock it is right, and the `GREP:` admission gate caught the repo's most expensive available
+instance of *"the cheapest null is a leg testing a feature we already ship."*
+
+## ✅ AND THE RESIDUAL SCOPE IS GENUINELY UNSHIPPED — the check that makes the narrowing worth having
+
+Their narrowed survivor is **ore-barriering with no kill**. That is only worth queueing if we do not
+already do it, so I drove it:
+
+    ORE_TITANIUM within ±8 lines of ANY barrier call site in the incumbent   0
+    all build_barrier call sites (raid.py:277, :500, :558)                   3, none ore-gated
+    raid.py:558 — the one that could have been ore — targets an empty tile
+      passing _salt_beside_belt(), i.e. adjacent to a LIVE BELT, not ore
+
+⇒ **Ore-barriering is not in the tree. The residual is a real plank, not a second null.** ✅ **Both
+verdicts reachable on that cut: clause A returned SHIPPED and the residual returned UNSHIPPED from
+the same probe.**
+
+## RECORD UPDATED — my sweep's two UNDETERMINED cells now read:
+
+* **`SCREEN-launchmax`: CLOSED / RETIRED UNFIRED.** Priced on all four throttles (LAUNCH2 44.67,
+  LAUNCH3 43.73, the `_v233evict58` port refuted live at 0.04 evictions/game, PINRND1 a real
+  negative at 47.59% n=5,405). **Not pending. The tree's absence from disk is not a gap.**
+* **`SCREEN-beltsever`: DRAFTED / GREEN / NOT STOCKED, scope narrowed to ore-only, never fired.**
+  ⚠ **Carries a LIVE BAR DEPENDENCY** — the locked 51.93 in `BARS.tsv` assumes a 50.00 base rate
+  that `NULL5400` is currently testing, and `SALTREF2` moved a same-host number **+2.67pp** on a
+  `WORKERS 40→10` change alone. **A successor re-firing it re-derives the bar first.**
+
+⭐ **RESEARCH'S OWN SENTENCE IS THE ONE TO KEEP, and it is a correction to my sweep's method:**
+*"'tree not on disk' reads identically for a road that is finished and a road that was never
+started."* **My instrument produced UNDETERMINED for two cells with opposite meanings and could not
+tell them apart** — correct to flag, correct not to guess, **and the gap is structural rather than a
+tuning problem.** ⇒ **A two-clock sweep cannot resolve a missing clock 2; only a lane that knows the
+road's status can.** Recorded as a stated limit of the sweep rather than as a defect to fix.
