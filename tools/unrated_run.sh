@@ -190,6 +190,22 @@ RESTORE_TO=""
 
 restore(){
   local tries=0 h target=${RESTORE_TO:-$MAIN}
+  # ⛔⛔ OWNERSHIP CHECK FIRST (s46, 2026-08-16 12:14:37Z incident): restore()
+  # used to activate $target UNCONDITIONALLY. When x3r0 activated his fresh
+  # v153 mid-cycle, the holder check correctly ABORTED — and this function
+  # then "restored" v152 OVER HIS SHIP, un-shipping a teammate for ~75 min
+  # until he re-activated by hand. A rollback may only undo a displacement WE
+  # caused: if the current holder is neither our arm ($VER) nor already the
+  # restore target, someone else owns the slot now — LEAVE IT, alert, halt.
+  h=$(holder)
+  case "$h" in
+    v${target}*) say "rollback: holder is already v$target — nothing to restore"; return 0 ;;
+    v${VER:-NOVER}*) : ;;   # the arm THIS RUN activated — ours to undo
+    *) say "⛔ HOLDER '$h' IS NOT OURS TO DISPLACE — a teammate activated mid-run."
+       say "   LEAVING THE SLOT UNTOUCHED. (The 12:14:37Z v153 incident is why.)"
+       print -r -- "$(date -u +%H:%M:%SZ) restore SKIPPED: foreign holder=$h ours=v${VER:-?} target=v$target" >> corpus/HOLDER_ALERT
+       return 0 ;;
+  esac
   while [ $tries -lt 4 ]; do
     .venv/bin/fcode submission activate "$target" >/dev/null 2>&1
     sleep 2
