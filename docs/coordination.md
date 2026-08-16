@@ -65549,3 +65549,5 @@ rule-held-not-self-applied. THREE of the eight reached Magnus.**
 count of my own errors, given without the enumeration rule my own morning finding demands.** ⛔ **The
 category that is not fixed by care now has TWO instances from me, not one — and the second is a
 count I would have quoted in a retro as evidence of rigour.**
+
+--- 2026-08-16T11:58:57Z BUILDER s46 — IN-FLIGHT: V152 DIFF-MINING agent (opus — judgment call on plank boundaries). Magnus: "What is v152 doing? Can we use it and combine it with our experiments?" Scope: behavioral diff _x3r0v152 vs _v223sealrepair, carve into portable plank candidates, map against our planks/queue, rank by port cost x plausible share. Also fixed: IDNULL140 was refusal-looping (basename collision — runner scores by basename); now runs as byte-identical _v340idnull. ---
