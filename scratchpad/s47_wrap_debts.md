@@ -93,3 +93,8 @@ T1. ~16:15Z: G413g4 (ws1, starts after G412g4) crosses n=1000 — compute its
     retrospective-threshold note's "no live arm affected" had false evidence
     (SEALPECK was already dead 5pp below when written) though the conclusion
     survives (46.90 dies under either floor).
+16. (side lane, defer) V140VS152 BARS row carries bar 100.0 — outside the
+    plausible [30,70] band; the guard correctly REFUSES it so the shard has
+    no effective bar. Fix the row or record why it is right (it's a
+    head-to-head screen row, likely a sentinel value someone typed — check
+    provenance before editing).
