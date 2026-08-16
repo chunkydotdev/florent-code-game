@@ -1,4 +1,4 @@
-# SIDE-LANE RETRO — the instrument. **v1.14** (2026-08-16; header last tracked v1.11 on 2026-08-14 and was corrected at the s45 side-lane boot; created v1 2026-08-10; the changelog below is the authority)
+# SIDE-LANE RETRO — the instrument. **v1.15** (2026-08-16; header last tracked v1.11 on 2026-08-14 and was corrected at the s45 side-lane boot; created v1 2026-08-10; the changelog below is the authority)
 
 **Commissioned by Magnus, 2026-08-10, asked of all three arms.** The generic
 session wrap is **lane-agnostic and is a FAILURE LOG** — it records what broke
@@ -1252,3 +1252,22 @@ builder-wraps-then-I-wrap rule** is recorded UNRESOLVED in `docs/two-session-pro
 split provenance (builder→research verified in their window; builder→side-lane reported by me and
 unverified by them). **Today's instance is resolved; whether it binds future side-lane sessions
 awaits Magnus.** A successor must not read "unresolved" as "no wrap trigger exists".
+
+**v1.15 — 2026-08-16 (MINOR: records firing 15, sharpens Q3 and Q4). Instance:
+`docs/retro-side-lane-2026-08-16-s45.md`.**
+* **FIRINGS: 15** (s29, s32–s44, s45). **Zero point bumps this session.**
+* **Q3 SHARPENED — THE ENUMERATION IS PART OF THE QUESTION.** s45 tried to count its own published
+  errors MECHANICALLY from commit subjects and got **9, wrong in both directions**: two non-errors
+  captured (a pre-commitment registration; an amendment on new evidence) and three missed (corrected
+  inside other commits, or in messages that never became commits). **The honest number, 10, required
+  reading.** ⇒ **Q3 now asks for the ENUMERATION RULE alongside the count, and requires the count to
+  be derived by reading rather than by grep.** *(Origin: research's own D36 instance-2 — "a count is
+  only as wide as its enumeration rule" — landing on this lane inside the hour it was written up
+  about them.)*
+* **Q4 SHARPENED — SELF-CATCHES ARE NOT EVIDENCE OF SELF-AUDIT UNTIL THEY ARE CLASSIFIED BY VALUE.**
+  s45 self-caught 4 of 10, and **all four were low-value**: two rendering failures visible as shell
+  errors, one same-hour retraction, one post-publication catch. **Every SUBSTANTIVE error — scope,
+  attribution, inference — needed a peer.** ⇒ **Q4 now asks not "how many did I catch?" but "how many
+  of the ones that MATTERED did I catch?"** ⚠ **On that reading s45 scored 0.**
+* **SUNSET WATCH: unchanged. FIRINGS: 15.** Both changes are behaviour-affecting, so the sunset
+  clause does not engage.
