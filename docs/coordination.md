@@ -64738,3 +64738,50 @@ post-push shard is over-broad and detectable now rather than later.
 --- 2026-08-16T10:43:56Z BUILDER s46 — **VERDICT: ECOSCK6 DISCARDED (null, not exclusion)** — 50.33 [49.00, 51.67] n=5,400: excludes neither 50 nor the bar; could-not-separate. Eco batch 3/5: two refuted, one null. ws2 restart chain fired itself (SCK6R drain 10:41 → workers=0 → restart 10:43): ECOPAVER resuming from n=384, then SCK4R, then V140VS152 (revised ETA ~14:30-15:00Z), then NULL2KWS2. ---
 
 --- 2026-08-16T10:52:22Z BUILDER s46 — **SHARD-SIZING POLICY ENCODED (Magnus, direct: "Perfect do it!" after pricing).** (1) **COMBO-BAR@2700 live in auto_gate**: combo trees (stack.py marker, same source as the dashboard) auto-cancel below 55.0 prefix at the 2,700 mark — a prospecting filter, priced in the header (true-55 = coin flip BY DESIGN, true-53 killed ~98%, true-57+ survives ~98%); rows kept; cancellation never verdict; solos exempt (keep the 51.0 floor); nulls exempt (G5 outranks). Six new selftest cells, one game either side of the bar, solo twin + null twin driven. (2) **Queued SOLOS re-targeted 5400→2700** (SENTBAN, GUNAX0B, SEALTI24, AIMSITE, RENTGUN — indicator-grade; full-n by explicit annotation only; IDNULL140 stays 5400, nulls run to completion). (3) Precision/confirmation runs (SEATSPAWN vs the +6.28 baseline; any #77-input confirmation) stay full-n as the registered exception class. Running G4xx combos face the bar as each crosses 2,700. Effective prospect throughput roughly doubles. ---
+
+--- 2026-08-16T10:54:25Z (`date -u`) ✅⚠ **SIDE LANE s45 — COMBO-BAR@2700 GATE ARITHMETIC: THEIR PRICING REPRODUCES EXACTLY AND IS THIS MORNING'S LESSON APPLIED. It prices the direction that kills BAD arms and not the direction that kills GOOD ones — the same asymmetry as the 09:00Z error, opposite side.** ---
+
+## ✅ THEIR PRICING IS CORRECT — reproduced independently, and this is the good news first
+
+    SE at n=2700, p~.55                0.96pp   [header: "≈ 0.96pp"]      MATCH
+    true 53.0 killed by a <55 point rule  98.1%  [header: "~98%"]          MATCH
+    true 55.0 killed                      50.0%  [header: "coin flip"]     MATCH
+
+⭐ **This is the auto_gate defect from 09:00Z NOT repeated.** That header put a true-neutral at ~50%
+against a floor sitting ABOVE it (correct answer 73.6%) by comparing to the MEAN instead of the
+FLOOR. **Here the same author computed a point rule against its own floor and got all three cells
+right, and stated the design choice as deliberate rather than incidental** — *"it deliberately
+spends true-55 coin flips."* **A rule whose false-kill rate is priced, published, and owned before
+adoption is the standard, and it was met within two hours of the miss.**
+
+## ⚠ AND THE GAP — THE COST OF THE RULE IS NOT WHERE IT WAS PRICED
+
+**The header prices arms AT and BELOW the bar. The rule's COST lives ABOVE it:**
+
+    true 56.0 -> killed 14.8%     <- a genuinely good combo, lost this often
+    true 57.0 -> killed  1.8%
+    true 58.0 -> killed  0.1%
+
+⇒ **A true-56 combo — which against a board leader of 55.24 would be a real result — is discarded
+roughly one time in seven, by design, and that number is nowhere in the header.** ⛔ **This is the
+SAME ASYMMETRY as the 09:00Z error arriving from the other side: that one under-stated how often the
+gate kills NEUTRAL arms; this one omits how often it kills GOOD ones.** **Both directions of a
+kill rule need pricing, and "priced before adoption" is only half-met while one side is missing.**
+
+⚠ **NOT A CHALLENGE TO THE BAR.** Magnus pinned it verbatim (*"if a combo isn't 55+ at n2700 it's
+not a success"*), the aggressive cull is the stated intent, and **14.8% on a true-56 may be exactly
+the price he means to pay.** ⇒ **The ask is one line in the header, not a change to the number:**
+record the true-56/57 kill rates beside the true-53/55 ones **so the trade is visible to whoever
+reads the rule next, and so nobody re-derives it in an argument later.**
+
+## ✅ AND THE SIZING CHANGE IS CONSISTENT WITH THE SLOT RULE — checked, because it could have collided
+
+**Solo shards default 5,400 → 2,700 halves n. The 60±2pp slot bar has a PRECISION term**, so the
+change could have silently made solo shards unable to produce a slot candidate. **It does not:**
+
+    n=2700 at p=0.60  ->  half-width 1.85pp  <= 2pp   CLEARS
+    PROGRAMME.md's own statement of the requirement: "n >= ~2,260 at p=0.6"  ->  2,700 > 2,260
+
+⇒ **Compatible, with ~440 games of margin.** ⚠ **Worth knowing that the margin is thin: any future
+halving, or any arm whose true share sits nearer 0.5 (where the half-width is wider), erodes it.**
+**At p=0.50 the half-width at n=2,700 is 1.89pp — still inside 2pp, but the slack is 0.11pp.**
