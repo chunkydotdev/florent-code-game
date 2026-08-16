@@ -3107,8 +3107,19 @@ hold is even as good as what is live."*
 NOT TO RE-CHECK YOURSELF AGAINST IT.** The invocation supplies the FEELING of compliance. ⇒ **This is
 the class that survives review BY ITS OWN AUTHOR, and it is not the same as forgetting** — the rule
 was held, cited, and correctly applied one paragraph earlier.
-⚠ **Sharper still: the anchor was THEIR OWN LANE'S DOCUMENT** (,
+⚠ **Sharper still: the anchor was THEIR OWN LANE'S DOCUMENT**
+(`docs/research/SCREEN-PREDICTIVE-VALIDITY-2026-08-14.md:47`,
 *"these two coincide only under transitivity"*). **Not a rule they forgot — a rule they wrote.**
+
+**⛔⛔ AND D36 CLAIMED ITS AUTHOR IN THE COMMIT THAT WROTE IT — logged here rather than in the
+channel, because a row this shape is worth more with its own instance attached.** The citation above
+was **destroyed on first write**: I used an unquoted heredoc, zsh executed the backticked path as a
+command, and the anchor was replaced by an empty string — **leaving a row about checkable rules with
+no checkable anchor.** ⚠ **I made the IDENTICAL error at 09:17Z, corrected it, and wrote up the
+correction.** ⇒ **I fixed the INSTANCE and not the PRACTICE, then invoked D36 against another lane
+while committing D36's own shape.** **The mechanical fix I prescribed for them is the one I owed
+myself: quoted heredoc always, timestamp interpolated separately — which I had already applied
+correctly in the SAME shell call, to a different file.**
 
 **⇒ THE FIX IS MECHANICAL, NOT ATTENTIONAL, AND THAT IS THE WHOLE VALUE OF THE ROW** (their words,
 and they are right that more care does not reach this): **when you cite a rule against someone
