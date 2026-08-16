@@ -91,6 +91,33 @@ poll-time tag in `elo_history.tsv`):
 from each other.** Both are on-programme on the kill: v152 median kill round **170** over 84
 kill-wins, tiebreaks **6 of 150 games (4.0%)**; v140 median **174**, tiebreaks 16/360 (4.4%).
 
+### ⛔ AMENDED — THE CI IS THE SECOND-BEST REASON TO DISBELIEVE THIS ROW. **D18 IS THE FIRST.**
+*Added after the side lane audited this doc; the gap was theirs to find, not mine.*
+
+§3 is a **before/after cut on OUR version**, and D18 says that is uninterpretable unless the
+opponent's version is held constant or shown to have moved. **This doc adjusts for opponent
+RATING and never reports opponent VERSION.** `oppver` is backfilled, so the check runs:
+**0 null cells across 104 matches, and 7 of 9 shared opponents shipped a new version across the
+v140→v152 boundary** — 0033 (59,60→57) · Coreflood (86,88,89→89) · The Bisons (8,9→9) · diverge
+(20,23→25) · gsxWins (39,42,45→46) · lingling_40h (49,52,59,61→61) · team lazy
+(226,227,228,230→230). Only HTTP 418 and arsonist duck held.
+
+⇒ **The +1.62 elo/match is UNATTRIBUTABLE on grounds INDEPENDENT of its confidence interval.**
+This is the shape that killed the −31.4pp Bisons finding: *"our version got better"* and *"their
+version got better"* fit the same data identically.
+
+**And it strengthens §4 rather than softening it.** §4 says the 56.7% is "not evidence either
+way"; **D18 supplies a second reason, and unlike the CI this one does not go away with more
+matches.** A reader under slot pressure will reach for the point estimate's *direction* once the
+CI denies them significance. **D18 denies them the direction too.**
+
+### ⭐ THE INSTABILITY DEMONSTRATED ITSELF INSIDE ONE HOUR
+The side lane recomputed this table independently ~1 h later and got **v152 n=32, sd=0.2354,
++2.43 elo/match** against my n=30, sd=0.2410, **+2.28**. Not a disagreement — the archive
+advanced two matches between the reads. **The headline moved 6.6% on 6.7% more data.** That is
+§2's argument reproducing itself on §3's own numbers, unprompted, within the hour.
+*(v140 reproduced exactly: n=72, sd=0.2530.)*
+
 ### ⛔ A CLAIM FORMED AND KILLED IN THE SAME PASS — RECORDED SO IT DOES NOT RESURFACE
 The raw per-opponent table invites a story: v152 reads **0033 36.0% (n=25), gsxWins 30.0%,
 kladde 40.0%, Juusto 20.0%, not adgato 40.0%** against **Coreflood 90%, The Bisons 90%,
@@ -122,6 +149,20 @@ which the slot is held by whichever bot is being tested.
 ⇒ **A slot argument built on "v152 is reading 56.7%" is built on 30 matches with a CI that
 spans −0.48 to +5.04 elo/match.** It is not evidence either way. The local screen is the only
 instrument that closes in useful time.
+
+### ⛔ RESTATED AS AN EXCLUSION, BECAUSE `CLAUDE.md` REQUIRES IT AND I OWED IT
+*"v152 and v140 are not distinguishable"* is a **fail-to-exclude** claim, and the standing rule
+is that such a claim must be **restated as an exclusion before any DEFF reasoning is applied to
+it** — otherwise the correction launders a weak null into a confident one. The restatement:
+
+> **The 95% CI on v152 − v140 is [−1.71, +4.96] elo/match, so the data EXCLUDE a v152 advantage
+> above +4.96 and a v152 deficit below −1.71.**
+
+**+4.96 elo/match is ≈ +149 rating over a 30-match tenure.** ⇒ **the upper bound excludes nothing
+operationally interesting** — the interval is consistent with v152 being worth a rank or two and
+with it being worth nothing. **The restatement does not weaken the conclusion; it converts a soft
+null into a hard statement that the instrument is blind**, which is §2's claim arrived at by a
+second route. *(Restatement supplied by the side lane's audit; the gap was real and mine.)*
 
 **State at write time, flagged not acted:** the s44 ruling suspending `X3R0_SLOT_RULE` was
 scoped *"FOR TODAY" / "FOR THIS SESSION"* (2026-08-15) and has lapsed by its own wording.

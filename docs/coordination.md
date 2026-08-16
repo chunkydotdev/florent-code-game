@@ -58276,3 +58276,88 @@ POWER leg alone would have been contestable** — the interim CI on the differen
 vs CTRL 209, where `bodyaware` alone is FLAT at 205/207.** That is `DEFENCE_ADMISSION_BAR:
 kill_round_non_regression` — a **programme** disqualifier, independent of power and not
 contestable by more games. ⇒ **the stop is over-determined; lead with the kill round.**
+
+--- 2026-08-16T05:0xZ (`date -u`) RESEARCH s45 — ⭐⭐ **FIRE ORDER #1: THE WIN-SHARE QUESTION IS INFEASIBLE ON THE LIVE FIXTURE AND THE KILL-ROUND QUESTION IS CHEAP. THE GAP IS 20x.** ---
+
+**Context: Magnus ruled *"lets keep benchmark toward v140"* — every arm and every leg is scored
+against `bots/_v223sealrepair`; v152 stays in the slot. Treatment legs therefore need a v140
+activation window and are HELD until Magnus opens one.** This note prices the leg so the ask,
+when it is made, is for the right size.
+
+The builder asked the live fixture two things: *does `bodyaware`'s local +3.7pp show up at all
+against live teams, and does the kill-round flatness hold there.* **Priced, they are 20x apart.**
+
+## A) ⛔ WIN SHARE — INFEASIBLE. DO NOT SPEND AN ACTIVATION WINDOW ON IT.
+Two-arm, 80% power, α=.05, unrated **DEFF 1.834**, at the 75 games/h rate cap:
+```
+   3.7pp  ->  5,258 games/arm  =  70 h/arm  =  2.9 DAYS/arm   (5.8 days for the pair)
+   2.0pp  -> 17,994 games/arm  = 240 h/arm  = 10.0 days/arm
+   5.0pp  ->  2,879 games/arm  =  38 h/arm  =  1.6 days/arm
+```
+**A six-day instrument, during which the treatment arm holds the slot.**
+
+## B) ⭐ KILL ROUND — CHEAP, AND THE TRICK IS THE PROGRAMME'S OWN CONSTANT
+Raw kill round has **sd = 139.0** (mean 223.5 vs median 176 — the r1000 tail dominates), which
+is why the first pass priced this badly too. **Censor at `KILL_WINDOW_RND = 250` and sd collapses
+139.0 -> 56.8, a ~6x power gain.** ⭐ **The censoring point is NOT chosen from the data — it is
+`PROGRAMME.md`'s own kill window, so it is pre-registered by construction** and cannot be tuned
+after the fact. Two-arm, 80% power, our kill-wins = 49% of games (inflation applied):
+```
+   +-30 rounds ->    117 games/arm  =  1.6 h/arm
+   +-20 rounds ->    260 games/arm  =  3.5 h/arm
+   +-15 rounds ->    462 games/arm  =  6.2 h/arm
+   +-10 rounds ->  1,035 games/arm  = 13.8 h/arm
+```
+Board effects to separate: **+10 (`rnd1`), +17-43 (the 55-class combos), 0 (`bodyaware` family)**.
+⇒ **a ±15-round leg at 6.2 h/arm separates "kill-flat" from every combo just measured as
+regressing.** One morning per arm.
+Binary alternative, priced and REJECTED: *"kill-win inside r250"* = **35.7% of all rated games**
+(282/790; 72.9% of our 387 kill-wins); at ±7pp it needs 1,349 games/arm = 18 h/arm — **worse than
+the censored-continuous form.** Use the continuous one.
+
+## C) THE PREREG CONSTRAINT THIS DESIGN CREATES, WRITTEN BEFORE THE LEG EXISTS
+**Primary = median kill round censored at 250. Win share is DESCRIPTIVE ONLY and the prereg must
+say so in advance**, because the leg will emit a win-share number at an n that cannot resolve it,
+and a later reader will quote it as a verdict. **This repo's most-repeated failure is a true
+number read as the answer to a question it cannot address.** Forbid it in the prereg, not after.
+
+## D) THE ZERO-COST HALF — AND ONE TRAP IN IT
+A **v152-as-is calibration panel** needs no activation and is fireable now. ⛔ **But it CANNOT
+serve as the control arm for a `bodyaware` leg: v152 is x3r0's tree, not `_v223sealrepair`, so a
+v152-vs-bodyaware contrast confounds the plank with the entire chassis.** Use it for FIELD
+RELEVANCE only (who we are paired against, at what strength); the leg's control must come from an
+activated `_v223sealrepair` window.
+
+## E) BUDGET — THE WINDOWS ARE GENUINELY FREE, VERIFIED
+Our own overnight unrated usage was **~9 matches in 11 h ≈ 5% of cap**. And the 5-per-20-min limit
+is **charged to the CHALLENGER** — verified by overlap: Hugging Farce fired 01:02/01:28/02:03/02:43
+while we fired 02:31/02:44, same windows, both succeeding. **An opponent's campaign against us
+costs us none of our budget.**
+
+## F) DEBTS PAID ON MY OWN DOC THIS SESSION (side lane audit, `f76bd6ef`)
+`docs/research/RATED-LADDER-POWER-2026-08-16.md` amended twice, both gaps theirs to find:
+* **D18 FIRES ON IT.** §3 is a before/after cut on OUR version that never reports opponent
+  VERSION. Checked: **0 null `oppver` cells in 104 matches, and 7 of 9 shared opponents shipped
+  across the v140->v152 boundary.** ⇒ **the +1.62 is UNATTRIBUTABLE independently of its CI** —
+  and unlike the CI, **that reason does not go away with more matches.** It strengthens the doc.
+* **FAIL-TO-EXCLUDE RESTATED AS AN EXCLUSION**, as `CLAUDE.md` requires: *the CI [−1.71, +4.96]
+  excludes a v152 advantage above +4.96 and a deficit below −1.71*; **+4.96 elo/match ≈ +149
+  rating over a 30-match tenure, so the upper bound excludes nothing operationally interesting.**
+  Converts a soft null into a hard statement that the instrument is blind.
+* ⭐ **AND THE INSTABILITY DEMONSTRATED ITSELF INSIDE THE HOUR:** the side lane's independent
+  recompute ~1 h later read **n=32, +2.43** against my **n=30, +2.28** — the headline moved 6.6%
+  on 6.7% more data, with v140 reproducing exactly (n=72, sd=0.2530).
+
+## G) HANDED TO THE BUILDER, NOT EDITED BY ME (builder-owned surface)
+⛔ **`HANDOVER.md:14` still carries the REFUTED catapult claim verbatim** (*"CATRND1L is
+MISLABELLED — catapult is dead code in it; its 51.19% is an rnd1 reading"*). The builder has
+adopted the correction; **the always-loaded file has not.** Recurring shape: correction in a note,
+dead claim in the booted file.
+
+## IN-FLIGHT (rule 1)
+One **opus** subagent, read-only: forward-arrival baseline off the archive. `bodyaware` is a
+PATHFINDING plank (`QUEUE #63`, "our builders lock at 3.3x theirs on long maps"), and
+**`events.tsv` carries only BUILD and DEATH — no per-round positions, so a stall rate is NOT
+measurable from the current decoder.** The agent is using BUILD geometry (`d2_enemy` by round,
+us-vs-opponent paired within game) to produce the baseline a mechanism leg would have to move.
+Free, no windows, no activation. Will relay before idling.
