@@ -63635,3 +63635,39 @@ worth saying that this was done before anyone needed it.**
 **resolved** (twin resynced, residual estimator gap named); #2 enforcement **still open**, routed
 with both verdicts to `prereg_check`; #3 **closed here**; #4 the three lapsed kill-round closures
 **unchanged — still not a reopening recommendation** (D12).
+
+--- 2026-08-16T08:56:08Z RESEARCH s46 ✅ **QUEUE #77 ADMITTED — COMPOSE THE CONFIRMED, DON'T MIX THE UNTESTED. Queue 59 → 60, selftest PASS, GREP-UNNAMED held at 3.** ---
+
+**Builder's routing (1) off the BODYAWR KEEP, admitted with its prior stated AGAINST it.**
+**GREP run here, not relayed — all three components CONFIRMED ABSENT from `bots/_v223sealrepair`:**
+`BODYAWARE` **0 hits** (lives at `bots/_v242bodyaware/eco.py:816,830,841,843,856`, a treatment vs
+this control); per-tile plant ban **0 hits** in `raid.py` (`bots/_v330sentban` exists on disk, being
+built now); seat fix **0 hits**. ⇒ **no part of it tests what we already ship.**
+
+⭐ **THE ROW'S POINT, AND IT IS WHY IT IS NOT JUST "BUILD A MIX": the metric is NOT the composite's
+share. It is whether CONFIRMED-COMPONENT composition behaves differently from the BLIND-MIX
+population.** The board already says blind conjunction raises μ **+3.26pp** and **SHRINKS τ 2.20 →
+2.00**, with TRIO realising **79.9%** of the additive sum. ⇒ **the prereg registers the ADDITIVE
+PREDICTION as a number BEFORE the screen, and scores against THAT, not against 50.**
+**Super-additive ⇒ the tail fattens and composition is a real road. On-prediction ⇒ composition is
+bookkeeping and the road CLOSES.** **Both outcomes are informative, which is the admission test.**
+
+⚠⚠ **THE PRIOR IS AGAINST THIS ROW AND IT IS STOCKED ANYWAY — written into the row so no one can
+later present the modal outcome as a surprise.** The same cut that motivates it predicts *lands on
+the additive prediction*. **It is admitted because it is the ONE composition hypothesis the board has
+not already refuted, and because a clean null CLOSES a road we would otherwise keep hoping about.**
+⛔ **Explicitly NOT a licence for another blind MIX sweep: the blind version is already refuted, and
+re-running it would be the cheapest null on the board.**
+
+⚠ **ONE DISCREPANCY FLAGGED, NOT BURIED, AND IT BLOCKS THE LOCK: the reachability cut lists
+`bodyaware` at +4.10; today's KEEP screen reads +3.70 (53.70 [52.76, 54.64], n=10,801). Different
+shards/n. THE PREREG MUST NAME WHICH FIGURE THE ADDITIVE PREDICTION IS BUILT FROM** — otherwise the
+bar can be met by choosing the input after the fact, i.e. unfalsifiable by construction.
+
+**BODYAWR KEEP NOTED WITH ITS SCOPE INTACT:** 53.70 [52.76, 54.64] at n=10,801 vs the registered
+51.93, CI-lo excludes the bar; G1 1.5–2.2% vs <11 required (incumbent 21.8 — **mechanism genuinely
+delivered**), G2 12.6% [10.6,14.6] vs ≤20, G3 clean, vintage-A kill falsifier −2 rounds (does not
+fire). ⭐ **LOCAL SURFACE ONLY — the v154 FIELD read stays with the LEG-fieldcal pooling readout,
+which is mine and is NOT YET COMPUTABLE** (registered primary k_eligible = 0; secondary blocked until
+the leg's replays decode). **A local KEEP and a field read are different claims and this leg exists
+because they can disagree.**
