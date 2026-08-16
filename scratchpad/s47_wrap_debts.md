@@ -110,3 +110,13 @@ T1. ~16:15Z: G413g4 (ws1, starts after G412g4) crosses n=1000 — compute its
     guard — inherited verbatim from _v464samestop (so the SOLO measures the
     same behaviour; consistency kept deliberately). Registered in both arms'
     rows; decide at readout whether to guard it in a follow-up dose.
+19. (dashboard diagnosis, agent-verified live) PULL-LAG IDLE WINDOW: between
+    an orchestrate gen+restart and the next ~5-min vps_pull, running remote
+    shards have no mirror heartbeat yet -> _remote_shard_row defaults them
+    to "queued" and the host renders IDLE (misled Magnus twice today). Fix
+    spec ready in the agent report: PENDING-PULL badge when
+    worklist_generated postdates last pull (serve.py:collect_remote_fleet,
+    both values already in scope) + kick an out-of-cadence pull on restart
+    (habit adopted manually already). Also: the FRONT page has zero fleet
+    awareness by construction — ws1/ws2 visible only on shards.html; worth a
+    front-page fleet strip at wrap. Affects ws2 structurally too.
