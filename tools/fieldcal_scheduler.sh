@@ -164,7 +164,26 @@ STALE_MIN=${STALE_MIN:-40}             # ~2 pairing cadences; absolute-age BLIND
 # CLAUDE.md) — never reconstructed; sides keyed on teamId, NEVER on team name
 # (names change and truncate; two id-vs-name incidents today alone).
 OUR_TEAM_ID=${OUR_TEAM_ID:-379a5d80-9921-4c9e-949b-f9b1dcba16be}  # OpenSverige, live `fcode team search` 2026-08-16T06:5xZ
-PLATFORM_LIST_CMD=${PLATFORM_LIST_CMD:-.venv/bin/fcode match list --mine --type ladder --json --limit 60}
+# ⛔ THE READ HORIZON IS PART OF THE INSTRUMENT (research AMENDMENT2 §9, fixed
+# s47 2026-08-16). The fallback filters `createdAt >= clock2`, so every era
+# match is among the NEWEST ladder matches — which means a horizon SMALLER than
+# the era silently drops the OLDEST era rows. The halt is a sum of NEGATIVE
+# deltas, so dropping rows makes the sum LESS negative: the truncation fails in
+# the PERMISSIVE direction, toward not halting. At the registered ~57 projected
+# matches the old `--limit 60` had three matches of headroom.
+#
+# TWO CHANGES, and neither alone is enough:
+#   1. horizon raised 60 -> 250, so the era fits with room.
+#   2. SATURATION IS NOW A BLINDNESS CONDITION. The gate used to judge blindness
+#      on AGE ALONE, so a FRESH but TRUNCATED read printed a verdict from a
+#      knowingly partial population. If the wire returns `limit` rows AND the
+#      oldest of them is still >= clock2, older era matches may exist beyond the
+#      horizon and the read is refused (`ok=0 reason=HORIZON_TRUNCATED`), which
+#      routes it into the double-blind path instead of into a halt decision.
+#      Raising a number alone would have left the same instrument one long era
+#      away from the same silent failure.
+PLATFORM_LIST_LIMIT=${PLATFORM_LIST_LIMIT:-250}
+PLATFORM_LIST_CMD=${PLATFORM_LIST_CMD:-.venv/bin/fcode match list --mine --type ladder --json --limit ${PLATFORM_LIST_LIMIT}}
 NOW_OVERRIDE=${NOW_OVERRIDE:-}         # ISO8601Z; testing only
 
 # Mutable leg state (populated by load_state).
@@ -592,11 +611,15 @@ PY
     # reason fixture-driven cells exist.
     local pline _pf_json="${SCRATCH_DIR}/.fieldcal_platform_$$.json"
     ${=PLATFORM_LIST_CMD} > "$_pf_json" 2>/dev/null
-    pline=$("$PYTHON_BIN" - "$_pf_json" "$CLOCK2" "$OUR_TEAM_ID" "$versions_csv" <<'PY'
+    pline=$("$PYTHON_BIN" - "$_pf_json" "$CLOCK2" "$OUR_TEAM_ID" "$versions_csv" "$PLATFORM_LIST_LIMIT" <<'PY'
 import json, sys
 from datetime import datetime
-json_path, clock2, our_id, versions_csv = sys.argv[1:5]
+json_path, clock2, our_id, versions_csv, limit_s = sys.argv[1:6]
 versions = set(v.strip() for v in versions_csv.split(","))
+try:
+    limit = int(limit_s)
+except (TypeError, ValueError):
+    limit = 0
 def p(s):
     s = s.strip()
     if s.endswith("Z"):
@@ -611,6 +634,27 @@ ms = d if isinstance(d, list) else d.get("matches", d.get("data", []))
 if not isinstance(ms, list) or not ms:
     print("PFALL ok=0 reason=EMPTY_LIST"); raise SystemExit(0)
 since = p(clock2)
+
+# ⛔ HORIZON SATURATION IS BLINDNESS, NOT A SMALL SUM. The wire returns the
+# NEWEST `limit` ladder matches. Every era match is newer than clock2, so if the
+# page is FULL and even its OLDEST row is still >= clock2, there may be era
+# matches the horizon never reached. The sum is of NEGATIVE deltas, so the
+# missing rows would only make it MORE negative — i.e. truncation hides halts.
+# Refuse rather than report: a fresh-but-partial read is a blind read.
+if limit > 0 and len(ms) >= limit:
+    oldest = None
+    for m in ms:
+        try:
+            d = p(m.get("createdAt") or "")
+        except Exception:
+            continue
+        if oldest is None or d < oldest:
+            oldest = d
+    if oldest is not None and oldest >= since:
+        print(f"PFALL ok=0 reason=HORIZON_TRUNCATED returned={len(ms)} "
+              f"limit={limit} oldest={oldest.isoformat()} clock2={clock2}")
+        raise SystemExit(0)
+
 tot = 0.0; n = 0; ninc = 0
 for m in ms:
     if m.get("triggeredBy") != "ladder":
@@ -655,7 +699,15 @@ PY
       return 0
     fi
     BLIND_STREAK=$(( ${BLIND_STREAK:-0} + 1 ))
-    say "  ELO GATE: BLIND (age=${age}min > ${STALE_MIN}min, archive reason=$reason, platform fallback failed: ${pline}) — BOTH surfaces unreadable. streak=${BLIND_STREAK}/3"
+    # HORIZON_TRUNCATED is a DIFFERENT failure from "unreadable" and must not be
+    # logged as one: the wire answered, and the answer was knowingly partial in
+    # the permissive direction. Named so a reader does not go looking for a
+    # network fault that did not happen.
+    if [[ "$pline" == *"HORIZON_TRUNCATED"* ]]; then
+      say "  ELO GATE: BLIND (age=${age}min > ${STALE_MIN}min, archive reason=$reason; platform read was FRESH but TRUNCATED at the ${PLATFORM_LIST_LIMIT}-row horizon: ${pline}) — a partial population cannot clear a halt, and truncation drops the OLDEST rows, which fails toward NOT halting. streak=${BLIND_STREAK}/3"
+    else
+      say "  ELO GATE: BLIND (age=${age}min > ${STALE_MIN}min, archive reason=$reason, platform fallback failed: ${pline}) — BOTH surfaces unreadable. streak=${BLIND_STREAK}/3"
+    fi
     persist_state
     if (( BLIND_STREAK >= 3 )); then
       say "  *** 3 CONSECUTIVE DOUBLE-BLIND ELO READS. STOPPING FOR A HUMAN. ***"
@@ -1281,6 +1333,63 @@ PJ2
   else
     fail "elo gate g6: expected double-blind persisted-streak=1 rc=0, got rc=$rcg6 streak=$stg6"
   fi
+  # --- (g7) READ-HORIZON TRUNCATION, both ways (s47, research AMENDMENT2 §9).
+  # A FULL page whose oldest row is still inside the era may be hiding older era
+  # matches, and the hidden rows are the ones that would make the sum MORE
+  # negative — truncation fails toward NOT halting. That must read BLIND, never
+  # as a clear. The complement is the whole point: the same saturated page whose
+  # oldest row PREDATES clock2 has reached back past the era, so it is complete
+  # and must still produce a verdict.
+  local PLIM=4
+  # g7a: page FULL (4 of limit 4) and every row inside the era -> TRUNCATED.
+  # The sum it WOULD have printed is -30, comfortably clear of -40 — i.e. the
+  # permissive reading this cell exists to refuse.
+  cat > "$TDIR/plat_trunc.json" <<PJ7
+[
+ {"triggeredBy":"ladder","status":"complete","createdAt":"2026-08-16T11:30:00Z","teamAId":"$OUR_TEAM_ID","teamBId":"x","teamAVersion":"140","eloDeltaA":-10.0},
+ {"triggeredBy":"ladder","status":"complete","createdAt":"2026-08-16T11:35:00Z","teamAId":"$OUR_TEAM_ID","teamBId":"x","teamAVersion":"140","eloDeltaA":-10.0},
+ {"triggeredBy":"ladder","status":"complete","createdAt":"2026-08-16T11:40:00Z","teamAId":"$OUR_TEAM_ID","teamBId":"x","teamAVersion":"154","eloDeltaA":-5.0},
+ {"triggeredBy":"ladder","status":"complete","createdAt":"2026-08-16T11:45:00Z","teamAId":"$OUR_TEAM_ID","teamBId":"x","teamAVersion":"154","eloDeltaA":-5.0}
+]
+PJ7
+  CLOCK2="2026-08-16T10:00:00Z"; NOW_OVERRIDE="$now_iso"; LADDER_TSV="$TDIR/ladder_stale76.tsv"
+  BLIND_STREAK=0; HALT_FILE="$TDIR/HALT_g7a"; STATE_FILE="$TDIR/state_g7a"
+  PLATFORM_LIST_LIMIT=$PLIM; PLATFORM_LIST_CMD="cat $TDIR/plat_trunc.json"
+  local outg7a rcg7a stg7a
+  outg7a=$(elo_round_gate); rcg7a=$?
+  stg7a=$(awk -F'\t' '$1=="BLIND_STREAK"{print $2}' "$STATE_FILE" 2>/dev/null)
+  if [[ $rcg7a -eq 0 && ! -f "$HALT_FILE" && "$stg7a" == "1" ]] \
+     && print -r -- "$outg7a" | grep -q "HORIZON_TRUNCATED" \
+     && print -r -- "$outg7a" | grep -q "FRESH but TRUNCATED"; then
+    ok "elo gate g7a: page saturated (4/4) with its OLDEST row inside the era -> HORIZON_TRUNCATED, BLIND, streak=1, no verdict from a partial population"
+  else
+    fail "elo gate g7a: expected HORIZON_TRUNCATED blind rc=0 streak=1, got rc=$rcg7a streak=$stg7a out=$(print -r -- $outg7a | tail -1)"
+  fi
+  # g7b: THE OTHER VERDICT. Same saturation, but the oldest row PREDATES clock2,
+  # so the horizon reached past the era start and the read is complete. The
+  # pre-clock2 row is filtered out as usual, leaving sum=-20.00 and no halt.
+  cat > "$TDIR/plat_reach.json" <<PJ7B
+[
+ {"triggeredBy":"ladder","status":"complete","createdAt":"2026-08-16T09:00:00Z","teamAId":"$OUR_TEAM_ID","teamBId":"x","teamAVersion":"140","eloDeltaA":-99.0},
+ {"triggeredBy":"ladder","status":"complete","createdAt":"2026-08-16T11:35:00Z","teamAId":"$OUR_TEAM_ID","teamBId":"x","teamAVersion":"140","eloDeltaA":-10.0},
+ {"triggeredBy":"ladder","status":"complete","createdAt":"2026-08-16T11:40:00Z","teamAId":"$OUR_TEAM_ID","teamBId":"x","teamAVersion":"154","eloDeltaA":-5.0},
+ {"triggeredBy":"ladder","status":"complete","createdAt":"2026-08-16T11:45:00Z","teamAId":"$OUR_TEAM_ID","teamBId":"x","teamAVersion":"154","eloDeltaA":-5.0}
+]
+PJ7B
+  BLIND_STREAK=0; HALT_FILE="$TDIR/HALT_g7b"; STATE_FILE="$TDIR/state_g7b"
+  PLATFORM_LIST_CMD="cat $TDIR/plat_reach.json"
+  local outg7b rcg7b stg7b
+  outg7b=$(elo_round_gate); rcg7b=$?
+  stg7b=$(awk -F'\t' '$1=="BLIND_STREAK"{print $2}' "$STATE_FILE" 2>/dev/null)
+  if [[ $rcg7b -eq 0 && ! -f "$HALT_FILE" && "$stg7b" == "0" ]] \
+     && print -r -- "$outg7b" | grep -q "LIVE PLATFORM READ" \
+     && print -r -- "$outg7b" | grep -q "sum=-20.00"; then
+    ok "elo gate g7b: same saturation but the oldest row PREDATES clock2 -> horizon reached past the era, live read sum=-20.00, streak reset (the truncation rule is not a blanket refusal)"
+  else
+    fail "elo gate g7b: expected live read sum=-20.00 rc=0 streak=0, got rc=$rcg7b streak=$stg7b out=$(print -r -- $outg7b | tail -1)"
+  fi
+  PLATFORM_LIST_LIMIT=250
+
   # --- (h1-h3) LEAK CHECK cells, both ways.
   CLOCK2="2026-08-16T10:00:00Z"
   cat > "$TDIR/leak_clean.json" <<PJ3
@@ -1318,7 +1427,8 @@ PJ4
   else
     fail "leak check h3: expected unknown rc=0 no-halt, got rc=$rch3"
   fi
-  PLATFORM_LIST_CMD=".venv/bin/fcode match list --mine --type ladder --json --limit 60"
+  PLATFORM_LIST_LIMIT=250
+  PLATFORM_LIST_CMD=".venv/bin/fcode match list --mine --type ladder --json --limit ${PLATFORM_LIST_LIMIT}"
 
   # --- (k1) THE `grep -c` COUNT IDIOM, driven to every case it has.
   # `grep -c` fails on a CLEAN zero (rc 1) and on a missing file (rc 2, and
