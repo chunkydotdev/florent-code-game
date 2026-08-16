@@ -35,38 +35,24 @@
 
 <main>
   <h1>Match history</h1>
-  <p class="lede">Every match on our team account — the rated ladder and the
-     unrated games we fire ourselves, in one list. <strong>Click any row</strong> for
-     the per-game breakdown. The <strong>origin</strong> column says which of this
-     box's fire logs started an unrated match, and a match is never tagged as ours
-     without its id appearing in one.</p>
 
-  <!-- BOTH CLOCKS FOR EVERY SURFACE. The newest ROW's age and the FILE's mtime
-       answer different questions, and a feed that stalled shows only in the gap
-       between them. meta_join additionally lags the archiver's ~30 min cycle, so
-       it is labelled with that cadence rather than looking current. -->
   <div class="count" id="src">…</div>
   <div id="alarms"></div>
 
   <div class="chips" id="chips"></div>
-  <!-- ⛔ THE FILTER CHIPS CAN ONLY FILTER WHAT IS LOADED, so a chip reading
-       "other operator 0" on a 100-row page while 639 exist would be a false zero
-       in the one place this page cannot afford one. Two fixes, both needed: the
-       chips say what they are counting, and the depth control below can actually
-       reach the older matches. -->
   <div class="chips" id="depth"></div>
-  <input class="filter" id="q" type="search" placeholder="filter by opponent, match id, version, origin tag, cell name…" autocomplete="off">
+  <input class="filter" id="q" type="search" placeholder="filter…" autocomplete="off">
   <div class="count" id="count">…</div>
 
   <div class="scroll"><table id="tbl">
     <thead><tr>
-      <th>When <span class="th-note">(UTC)</span></th>
+      <th title="UTC">When</th>
       <th>Type</th>
-      <th>Opponent <span class="th-note">(their version)</span></th>
+      <th title="their version">Opponent</th>
       <th class="mono">Ours</th>
       <th class="mono">Score</th>
       <th>Result</th>
-      <th>Origin <span class="th-note">(who fired it)</span></th>
+      <th title="who fired it">Origin</th>
       <th class="mono">Rating &amp; elo</th>
     </tr></thead>
     <tbody></tbody>
@@ -78,39 +64,6 @@
     <thead><tr><th>When</th><th>Type</th><th>Account</th><th>Opponent</th>
       <th class="mono">Score</th><th>Result</th><th>Tag</th></tr></thead>
     <tbody></tbody>
-  </table></div>
-
-  <h2>How to read this table</h2>
-  <div class="note">
-    <strong>Every value here is a column in a file the keeper already writes.</strong>
-    Scores, versions, ratings and elo deltas come from
-    <code>corpus/league_matches.tsv</code>; per-game map / win condition / turns from
-    <code>corpus/ladder_games.tsv</code>; unrated games from
-    <code>corpus/meta_join.tsv.gz</code>. <strong>Nothing on this page computes a win
-    rate</strong> — the tallies are counts of rows shown, never a rate, because the two
-    surfaces fail in opposite directions on exactly that question and pooled readouts
-    are <code>tools/panel_read.py</code>'s pre-registered job.
-    <code>tools/dash/match_diffcheck.py</code> re-reads the TSVs independently and
-    fails on any disagreement with what this page serves.
-  </div>
-  <div class="scroll"><table>
-    <thead><tr><th>What you see</th><th>What it means</th></tr></thead>
-    <tbody>
-      <tr><td><span class="badge b-ok">LADDER</span></td>
-          <td>A rated ladder pairing. <strong>Nobody fires these</strong> — the platform pairs them on a clock — so they carry no origin tag. Only these have an elo delta.</td></tr>
-      <tr><td><span class="badge b-warn">UNRATED</span></td>
-          <td><code>fcode match unrated</code>: a real team's real bot, no rating at stake. The origin column says which lane fired it.</td></tr>
-      <tr><td><span class="tagchip t-cal">cal-1</span> <span class="tagchip t-cal">cal-2</span></td>
-          <td>Fired by the pinned calibration panel runners, from <code>scratchpad/panel_cal1_fires.tsv</code> / <code>panel_cal2_fires.tsv</code>. The sub-line is the panel <em>cell</em> that fired it.</td></tr>
-      <tr><td><span class="tagchip t-leg">leg (voided: platform error)</span></td>
-          <td>The MAPCODE leg. Its five matches errored in the platform runner, so they carry <strong>no score at all</strong> and render <span class="badge b-bad">ERROR</span> — never 0-5. The status is quoted from <code>docs/coordination.md</code> and this page re-greps that citation on every load.</td></tr>
-      <tr><td><span class="tagchip t-other">other operator</span></td>
-          <td>Unrated on our account and in <strong>none</strong> of this box's fire logs. A teammate fires from the same team account. This is a statement about our logs, not about theirs.</td></tr>
-      <tr><td><span class="badge b-dim">no score yet</span></td>
-          <td>Fired and accepted, but no surface carries a score yet. <code>meta_join</code> lags the archiver's ~30 min cycle — this is <strong>lag</strong>, not a 0-0.</td></tr>
-      <tr><td class="mono">3-2 <span class="badge b-ok">W</span> <span class="mono">+1.15</span></td>
-          <td>Game score, match result, and the rated elo delta. <strong>A 3-2 win can lose rating and a 2-3 loss can gain it</strong> — the ladder pays <code>32 × (games won/5 − expected)</code>, so read the delta, not the W.</td></tr>
-    </tbody>
   </table></div>
 
   <footer>

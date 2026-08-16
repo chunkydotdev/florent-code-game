@@ -24,37 +24,19 @@
 
 <main>
   <h1>What is running locally</h1>
-  <p class="lede">Read-only. Files and <code>ps</code> only — no <code>fcode</code> calls,
-     no network, nothing that can submit or spend a rate-limited request.</p>
 
-  <!-- Every stamp the server sends is UTC; these pages render it in the reader's
-       own zone, because a current line that reads as two hours old is the same
-       failure as a stale line that reads as fresh. -->
   <div class="count" id="tznote">…</div>
-
-  <div class="note warn">
-    <strong>Every number here carries its age.</strong> A value past its own refresh
-    cadence is marked <span class="badge b-warn">STALE</span>, and a source that could
-    not be read is <span class="badge b-blind">BLIND</span> — never silently zero.
-    <em>ship_watch</em> once printed a healthy-looking line off seven-minute-old rows,
-    and a healthy line and a blind line were byte-identical. That is what these badges exist to stop.
-  </div>
 
   <div class="grid" id="cards"></div>
 
+  <h2>Fleet</h2>
+  <div class="count" id="fleetcount">…</div>
+  <div id="fleet"></div>
+
   <h2>Shards running now</h2>
-  <!-- ⛔ THE ONLY ROUTE OFF THIS PAGE USED TO BE A 14px GREY NAV ITEM. This page
-       named shards two dozen times in prose and every one of those mentions was
-       text: the shard names in the table below were not links, so "read the
-       details about each shard" had no clickable path from the front door. -->
-  <p class="lede" style="margin-bottom:10px">
+  <p style="margin-bottom:10px">
     <a class="cta" href="/shards">Open the full shard view &rarr;</a>
     <a class="cta" href="/matches" style="margin-left:8px">Match history &rarr;</a>
-    <span style="margin-left:10px">what each one tests, in the operator's own
-    words, how far along it is, and what the finished ones produced. Every shard
-    name below is a link to its own page. <strong>Match history</strong> is the
-    other half: every ladder and unrated match on our account, with the unrated
-    ones tagged by which fire log started them.</span>
   </p>
   <div class="count" id="shardcount">…</div>
   <div class="scroll" id="shardwrap"><table id="shardtable">
@@ -64,33 +46,20 @@
     </tr></thead>
     <tbody></tbody>
   </table></div>
-  <div class="note" style="margin-top:12px">
-    <strong>“Separated” means the whole interval sits off 50%</strong> — the arm is
-    saying something. <strong>“Inside band”</strong> means it is not yet distinguishable
-    from its control, which is <em>no information</em> rather than <em>no effect</em>.
-    Rates and bands are read straight from <code>corefill_status.sh</code>, which
-    <strong>refuses to print a rate under 400 rows</strong> at all; those shards show
-    <span class="badge b-dim">n&lt;400</span> instead of a tempting number.
-  </div>
 
   <h2>Full shard table</h2>
-  <p class="lede" style="margin-bottom:10px">
-    Verbatim output of <code>tools/corefill_status.sh</code> — the production
-    computation, not a copy of it. It is the authority on <em>STALLED vs DEAD</em>,
-    and it refuses to print a win rate under 400 rows because the band there is
-    wider than any effect we chase.
-  </p>
   <div class="count" id="rawage">…</div>
   <pre class="raw" id="raw">loading…</pre>
 
   <footer>
-    Auto-refreshes every 10 s. Shard table regenerates every 45 s.
-    Serving from <span id="repo" class="mono"></span>.
+    10s / 45s refresh. Serving from <span id="repo" class="mono"></span>.
   </footer>
 </main>
 
 <script>
 const $ = s => document.querySelector(s);
+const esc = s => String(s === null || s === undefined ? '' : s)
+  .replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
 
 function freshBadge(ageMin, cadenceMin) {
   if (ageMin === null || ageMin === undefined) return '<span class="badge b-blind">NO STAMP</span>';
@@ -195,7 +164,7 @@ function render(s) {
       `${sh.n_running} running · ${sh.n_stalled} stalled · ${sh.n_done} done · ${sh.n_total} shards seen`;
     const res = (s.shard_text && s.shard_text.rows) || {};
     tb.innerHTML = rows.length === 0
-      ? '<tr><td colspan="6">Nothing running. ALWAYS_BE_RUNNING says that is a defect — see the idle alarm above for the next queue item. <a href="/shards">Every shard, including the finished ones &rarr;</a></td></tr>'
+      ? '<tr><td colspan="6"><span class="badge b-bad">NOTHING RUNNING</span> <a href="/shards">All shards &rarr;</a></td></tr>'
       : rows.map(r => {
           const st = r.state === 'STALLED'
             ? '<span class="badge b-warn">STALLED</span>'
@@ -207,9 +176,9 @@ function render(s) {
 
           let rate = '—', interval = '—', says = '<span class="badge b-dim">no data yet</span>';
           if (d.refused) {
-            rate = '<span class="badge b-dim">n&lt;400</span>';
+            rate = '<span class="badge b-dim" title="under 400 rows the 95% band is wider than any effect we chase">n&lt;400</span>';
             interval = '—';
-            says = '<span class="badge b-dim">too few rows to print a rate</span>';
+            says = '<span class="badge b-dim">too few rows</span>';
           } else if (d.rate !== null && d.rate !== undefined) {
             const above = d.rate >= 50;
             rate = `<strong>${d.rate.toFixed(2)}%</strong>`;
@@ -217,8 +186,8 @@ function render(s) {
               ? `${d.lo.toFixed(2)} – ${d.hi.toFixed(2)} &nbsp;<span style="color:var(--dimmer)">±${d.band.toFixed(2)}pp</span>`
               : '—';
             says = d.separated
-              ? `<span class="badge ${above ? 'b-ok' : 'b-bad'}">separated ${above ? 'ABOVE' : 'BELOW'} 50</span>`
-              : '<span class="badge b-warn">inside band</span>';
+              ? `<span class="badge ${above ? 'b-ok' : 'b-bad'}" title="the whole 95% interval sits off 50%">separated ${above ? 'ABOVE' : 'BELOW'} 50</span>`
+              : '<span class="badge b-warn" title="not yet distinguishable from its control">inside band</span>';
           }
           return `<tr onclick="location.href='/shard?id=${encodeURIComponent(r.shard)}'" style="cursor:pointer">
                   <td class="mono"><a href="/shard?id=${encodeURIComponent(r.shard)}">${r.shard}</a></td><td>${st}</td>
@@ -243,12 +212,60 @@ function render(s) {
   }
 }
 
+function fleetStateBadge(st) {
+  const cls = {running:'b-ok', DONE:'b-ok', STALLED:'b-warn',
+               DEAD:'b-bad', CANCELLED:'b-dim', queued:'b-dim'}[st] || 'b-dim';
+  return `<span class="badge ${cls}">${esc(st)}</span>`;
+}
+
+// Non-fossil rows only (h.rows — this host's OWN generated worklist). h.prior
+// (artefacts from earlier programmes, not in the current worklist) belongs to
+// the full /shards fleet view, not this compact front-page summary.
+function renderFleet(s) {
+  const fleet = (s && s.remote_fleet) || {hosts: []};
+  $('#fleetcount').textContent = fleet.hosts.length
+    ? `${fleet.hosts.length} host(s)`
+    : 'No fleet mirrors on disk.';
+  $('#fleet').innerHTML = fleet.hosts.map(h => {
+    const pullOld = h.pull && h.pull.age_min != null && h.pull.age_min > 12;
+    const pull = !h.pull || h.pull.blind
+      ? `<span class="badge b-blind">PULL BLIND</span>`
+      : `<span class="badge ${pullOld ? 'b-warn' : 'b-ok'}">pull ${esc(h.pull.age_min)}m ago</span>`;
+    const pending = h.pending_pull
+      ? ` <span class="badge b-warn" title="worklist generated ${esc(h.worklist_generated)} is newer than the last successful pull">PENDING-PULL</span>` : '';
+    const rows = (h.rows || []).map(r => {
+      const tgt = r.target ? ` <span class="vs">/ ${esc(r.target)}</span>` : '';
+      const hbAge = r.hb_age_min != null ? `hb ${esc(r.hb_age_min)}m` : 'no heartbeat';
+      const share = (r.result && r.result.share != null)
+        ? `<span class="mono">${esc(r.result.share)}%</span> <span class="vs">±${esc(((r.result.hi - r.result.lo) / 2).toFixed(2))}pp</span>`
+        : '<span class="vs">—</span>';
+      return `<tr onclick="location.href='/shard?id=${encodeURIComponent(r.shard)}'" style="cursor:pointer">
+        <td class="mono"><a href="/shard?id=${encodeURIComponent(r.shard)}">${esc(r.shard)}</a></td>
+        <td>${fleetStateBadge(r.state)}</td>
+        <td class="mono">${r.rows != null ? esc(r.rows) : '—'}${tgt}</td>
+        <td>${share}</td>
+        <td class="mono">${hbAge}</td></tr>`;
+    }).join('');
+    return `<h3 class="mono" style="margin:14px 0 6px">${esc(h.host)} ${pull}${pending}
+        <span class="count">· ${esc(h.n_running)} running · ${esc(h.n_queued)} queued</span></h3>
+      <div class="scroll"><table><thead><tr>
+        <th>Shard</th><th>State</th><th class="mono">n/target</th><th>Share</th><th class="mono">HB</th>
+      </tr></thead><tbody>${rows || '<tr><td colspan="5">worklist unreadable</td></tr>'}</tbody></table></div>`;
+  }).join('');
+}
+
 async function tick() {
   try {
     const r = await fetch('/api/status', {cache: 'no-store'});
     render(await r.json());
   } catch (e) {
     $('#clock').innerHTML = '<span class="badge b-blind">SERVER UNREACHABLE</span>';
+  }
+  try {
+    const rf = await fetch('/api/shards', {cache: 'no-store'});
+    renderFleet(await rf.json());
+  } catch (e) {
+    $('#fleetcount').innerHTML = '<span class="badge b-blind">SERVER UNREACHABLE</span>';
   }
 }
 tick(); setInterval(tick, 10000);

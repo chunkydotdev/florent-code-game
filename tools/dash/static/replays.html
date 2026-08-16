@@ -41,52 +41,29 @@
 
 <main>
   <h1>Replays</h1>
-  <p class="lede">Every match with archived replay files in <code id="archivepath">replay_archive/</code>,
-     newest first. <strong>Click a game number</strong> to open its viewer — a
-     self-contained page you can screenshot and scrub round by round
-     (<code>tools/replay_view.py</code>, same generator this page calls to build it).
-     This list is a plain file browser: Team A/B is exactly what the replay and its
-     sidecar <code>.meta.json</code> say, with no "us vs them" resolution — for our own
-     rated/unrated match history with that framing, see <a href="/matches">Matches</a>.</p>
 
   <div class="count" id="src">…</div>
 
-  <input class="filter" id="q" type="search"
-         placeholder="filter: match id prefix, team name, vNNN — e.g. opensverige v140" autocomplete="off">
+  <input class="filter" id="q" type="search" placeholder="filter…" autocomplete="off">
   <div class="chips" id="depth"></div>
   <div class="count" id="count">…</div>
 
   <div class="scroll"><table id="tbl">
     <thead><tr>
-      <th>When <span class="th-note">(UTC)</span></th>
+      <th title="UTC">When</th>
       <th>Type</th>
       <th>Team A</th>
       <th>Team B</th>
       <th class="mono">Score</th>
-      <th>Games <span class="th-note">(winner shown once decoded)</span></th>
+      <th title="winner shown once decoded">Games</th>
     </tr></thead>
     <tbody></tbody>
   </table></div>
 
-  <h2>How to read this</h2>
-  <div class="note">
-    The list comes from a background scan of <code>replay_archive/</code>
-    (<code>tools/dash/replays.py</code>, refreshed every 60s — a full scan of the
-    directory takes a couple of seconds, too slow to pay on every page load, so the
-    line above shows the scan's own age). <strong>Map size, winner and win
-    condition per game are read lazily</strong> — only for the rows this page
-    actually shows, with a cheap top-level-only parse
-    (<code>replay_view.peek_outcome</code>) rather than the full per-round replay the
-    viewer itself does. A game chip with no color means it has not been decoded yet
-    (hover for why); it still opens the viewer.
-    <br><br>
-    <strong>This page computes nothing.</strong> No win rate, no aggregation across
-    matches. It lists files and opens the viewer on click.
-  </div>
-
   <footer>
     <a href="/">&larr; Cores overview</a> · <a href="/matches">Matches</a> ·
-    Auto-refreshes every 15 s. Newest first, capped at <span id="cap">100</span>.
+    15s refresh. Newest first, capped at <span id="cap">100</span> ·
+    <code id="archivepath" class="mono"></code>
   </footer>
 </main>
 

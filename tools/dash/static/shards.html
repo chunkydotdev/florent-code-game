@@ -24,101 +24,35 @@
 
 <main>
   <h1>Battery shards</h1>
-  <p class="lede">Every shard on this box, run and running. <strong>Click any row</strong>
-     for what it tests, how far along it is and what it has produced.</p>
 
-  <!-- BOTH CLOCKS, ALWAYS. A page that stamps only its own render time looks
-       live while quoting a capture that may be minutes old. -->
   <div class="count" id="src">…</div>
 
   <div class="chips" id="chips"></div>
   <div class="chips" id="controlChips"></div>
-  <input class="filter" id="q" type="search" placeholder="filter by shard name, state, arm/control tree, submission name (&ldquo;Loki v8&rdquo;), or words from the description / worklist note…" autocomplete="off">
+  <input class="filter" id="q" type="search" placeholder="filter…" autocomplete="off">
   <div class="count" id="count">…</div>
 
   <div class="scroll"><table id="tbl">
     <thead><tr>
       <th>Shard</th><th>State</th><th class="mono">Progress</th>
       <th class="mono">Result</th>
-      <th>vs <span class="th-note">(control tree this shard ran against)</span></th>
-      <th>Description <span class="th-note">(what the change brings — click the row for the full story)</span></th>
+      <th title="control tree this shard ran against">vs</th>
+      <th title="what the change brings — click the row for the full story">Description</th>
     </tr></thead>
     <tbody></tbody>
   </table></div>
 
   <h2 id="fleet-anchor">Fleet boxes</h2>
-  <p class="lede" style="margin-bottom:10px">
-    Each host's <strong>own generated worklist</strong>
-    (<code>scratchpad/vps/&lt;host&gt;/worklist.txt</code>) joined to its pulled
-    artefacts — so remote-only shards get a real state and the <em>queue on the
-    box</em> is visible, which no local surface shows. Every age here is an age
-    <strong>at last pull</strong> (<code>vps_pull</code>, 5-min cadence); the pull
-    age is printed per host because when the pull is old, that is the louder fact.
-    A heartbeat that says RUNNING but stopped being written renders
-    <span class="badge b-warn">STALLED</span> — on this fleet that is what a dead
-    fossil looks like, and it is not the same thing as running.
-  </p>
   <div id="fleet"></div>
 
   <h2 id="orphans-anchor">Artefacts with no worklist line</h2>
-  <p class="lede" style="margin-bottom:10px">
-    <code>corefill_status.sh</code> iterates the worklist, so these shards — whose
-    lines were replaced by later batches — are <strong>not covered by the
-    authority</strong>. This page therefore prints <strong>no state, no rows and no
-    rate</strong> for them; only the artefacts they left on disk. Deriving those
-    numbers here would be a second copy of the computation, which is the one thing
-    this view is not allowed to be.
-  </p>
   <div class="scroll"><table id="orph">
-    <thead><tr><th>Shard</th><th class="mono">Heartbeat line (verbatim, written by overnight.sh)</th><th class="mono">Heartbeat file</th></tr></thead>
+    <thead><tr><th>Shard</th><th class="mono">Heartbeat line</th><th class="mono">Heartbeat file</th></tr></thead>
     <tbody></tbody>
   </table></div>
 
-  <h2>How to read this table</h2>
-  <div class="note">
-    <strong>Every state, row count, percentage, rate and band here is <em>read out
-    of</em> <code>tools/corefill_status.sh</code>, not recomputed.</strong>
-    <code>tools/dash/shard_diffcheck.py</code> re-parses the same text with a
-    different implementation and fails on any disagreement. The words below are that
-    tool's own, so this legend cannot drift away from what the numbers mean.
-  </div>
-  <div class="scroll"><table>
-    <thead><tr><th>What you see</th><th>What it means, in the tool's own terms</th></tr></thead>
-    <tbody>
-      <tr><td><span class="badge b-ok">running</span></td>
-          <td>An <code>overnight.sh &lt;SHARD&gt;</code> process is alive and its heartbeat file is moving.</td></tr>
-      <tr><td><span class="badge b-ok">remote</span></td>
-          <td>Running on a FLEET BOX (the <code>@host</code> badge names it), certified by its own NULLHOST calibration before any row counts. Rows arrive via <code>vps_pull</code>; the heartbeat age shown is the <em>pull</em> age, suffixed <code>(pull)</code>. A completed remote shard leaves the tool's table and its artefacts appear in the no-worklist-line section below, host-labeled.</td></tr>
-      <tr><td><span class="badge b-warn">STALLED</span></td>
-          <td>“<em>alive but frozen</em>” — the process exists, the heartbeat has not been rewritten for over 600 s.</td></tr>
-      <tr><td><span class="badge b-bad">DEAD</span></td>
-          <td>“<em>started, no process</em>” — it was launched and is gone. <code>corefill</code> deliberately never relaunches, so it stays dead until a human looks.</td></tr>
-      <tr><td><span class="badge b-ok">DONE</span></td>
-          <td>Its <code>.COMPLETE</code> marker exists: it reached its pre-registered target.</td></tr>
-      <tr><td><span class="badge b-dim">CANCELLED</span></td>
-          <td>Someone cut it short (<code>scratchpad/corefill_cancel/&lt;SHARD&gt;</code>). <strong>Rows are KEPT</strong>, so a cancelled shard still shows the rate its partial rows give — read the progress column beside it.</td></tr>
-      <tr><td><span class="badge b-dim">queued</span></td>
-          <td>A line in the worklist that has never been launched.</td></tr>
-      <tr><td class="mono">52.11%</td>
-          <td>Share of that shard's finished games won by the <strong>treatment</strong> tree (the tool counts rows whose winner column is <code>T</code>). 50% is the no-difference point; the control is the other tree on the same line.</td></tr>
-      <tr><td class="mono">± 1.33pp</td>
-          <td>95% band, <code>1.96·√(0.25/n)·100</code>. <span class="badge b-ok">separated</span> means the whole interval sits off 50 <em>at this instant on a continuously-watched stream</em> — suggestive, never a verdict: with continuous looks the naive interval pokes past 50 far more often than 5%, which is why verdicts happen only at the pre-registered looks (audit M1). <span class="badge b-warn">inside band</span> means it is not yet distinguishable from its control, which is <em>no information</em>, not <em>no effect</em>.</td></tr>
-      <tr><td><span class="badge b-dim">n&lt;400</span></td>
-          <td>The tool <strong>refuses to print a rate</strong> below ~400 rows: “<em>at n=200 the 95% band is about ±7pp; a number printed there reads as a result and is noise</em>”. This page inherits the refusal instead of putting a tempting number beside n=41.</td></tr>
-      <tr><td><span class="badge b-warn">RETIRED 50%</span></td>
-          <td>Half this shard's rows were played on maps that <strong>have left the live pool</strong> (the 2026-08-13 rotation retired 4 of the old 8 battery maps). Its rate spans dead geometry and must not be pooled with a live-pool shard's.</td></tr>
-      <tr><td><span class="badge b-blind">RETIRED: BLIND</span></td>
-          <td>The live pool could not be parsed out of <code>tools/overnight.sh</code>, so the tool <em>cannot tell</em> how much of this rate is dead geometry. Not the same as zero.</td></tr>
-    </tbody>
-  </table></div>
-
   <footer>
-    <a href="/">&larr; Cores overview</a> ·
-    Auto-refreshes every 10 s; the <code>corefill_status.sh</code> capture behind it
-    regenerates every 45 s and its own age is stamped at the top — past two cadences
-    it is marked <span class="badge b-warn">STALE</span>.
-    Rows are grouped <em>running first</em> for reading; inside each group they stay
-    in <code>corefill_status.sh</code>'s own order, which is the worklist's.
+    <a href="/">&larr; Cores overview</a> · 10s / 45s refresh.
   </footer>
 </main>
 
@@ -135,10 +69,19 @@ function freshBadge(ageMin, cadenceMin) {
   return `<span class="badge ${cls}">${label} ${ageMin.toFixed(1)}m</span>`;
 }
 
+const STATE_TITLE = {
+  running: 'overnight.sh process alive, heartbeat moving',
+  remote: 'running on a fleet box; heartbeat age shown is the pull age',
+  STALLED: 'process alive, heartbeat not rewritten for 600s+',
+  DEAD: 'launched, process gone — corefill does not relaunch',
+  DONE: '.COMPLETE marker exists, reached its target',
+  CANCELLED: 'cut short, rows kept',
+  queued: 'worklist line, never launched',
+};
 function stateBadge(st) {
   const cls = {running:'b-ok', remote:'b-ok', DONE:'b-ok', STALLED:'b-warn',
                DEAD:'b-bad', CANCELLED:'b-dim', queued:'b-dim'}[st] || 'b-dim';
-  return `<span class="badge ${cls}">${esc(st)}</span>`;
+  return `<span class="badge ${cls}" title="${esc(STATE_TITLE[st] || '')}">${esc(st)}</span>`;
 }
 
 // The status tool prints a remote shard's host inside its result column
@@ -276,7 +219,7 @@ function noteCell(r) {
 
 function resultCell(r) {
   if (r.refused) {
-    return `<span class="badge b-dim">n&lt;400</span> <span class="sub-mono">${esc(r.result_raw)}</span>`;
+    return `<span class="badge b-dim" title="under ~400 rows the band is wider than any effect we chase">n&lt;400</span> <span class="sub-mono">${esc(r.result_raw)}</span>`;
   }
   if (r.rate === null || r.rate === undefined) {
     return r.result_raw ? `<span class="mono">${esc(r.result_raw)}</span>`
@@ -287,11 +230,11 @@ function resultCell(r) {
   const atTarget = r.target && Number(r.rows) >= Number(r.target);
   const sep = r.separated
     ? `<span class="badge ${r.rate >= 50 ? 'b-ok' : 'b-bad'}" title="naive interval on a continuously-filling shard — NOT a scheduled look; verdicts happen at the pre-registered n only (interim 2,700 / final 5,400)">separated ${r.rate >= 50 ? 'ABOVE' : 'BELOW'} 50 · ${atTarget ? 'at target n' : 'mid-flight'}</span>`
-    : `<span class="badge b-warn">inside band${atTarget ? ' · at target n' : ''}</span>`;
+    : `<span class="badge b-warn" title="not yet distinguishable from its control — no information, not no effect">inside band${atTarget ? ' · at target n' : ''}</span>`;
   const iv = (r.band !== null && r.band !== undefined)
     ? `${r.lo.toFixed(2)} – ${r.hi.toFixed(2)} <span class="vs">±${r.band.toFixed(2)}pp · n=${esc(r.n)}</span>` : '';
   let ret = '';
-  if (r.retired_blind) ret = ' <span class="badge b-blind">RETIRED: BLIND</span>';
+  if (r.retired_blind) ret = ' <span class="badge b-blind" title="live map pool could not be parsed — not the same as zero">RETIRED: BLIND</span>';
   else if (r.retired_pct) ret = ` <span class="badge b-warn" title="share of this shard's rows played on maps that have left the live pool">RETIRED ${esc(r.retired_pct)}%</span>`;
   return `<div class="rate">${r.rate.toFixed(2)}% ${sep}${ret}</div>
           <div class="sub-mono">${iv}</div>`;
@@ -425,6 +368,8 @@ function render(s) {
         const pull = !h.pull || h.pull.blind
           ? `<span class="badge b-blind" title="${esc((h.pull || {}).blind || '')}">PULL BLIND</span>`
           : `<span class="badge ${pullOld ? 'b-warn' : 'b-ok'}">pull ${esc(h.pull.age_min)}m ago${pullOld ? ' — MIRROR OLD, every row below is at least this stale' : ''}</span>`;
+        const pending = h.pending_pull
+          ? ` <span class="badge b-warn" title="worklist generated ${esc(h.worklist_generated)} is newer than the last successful pull">PENDING-PULL</span>` : '';
         const row = r => {
           const tgt = r.target ? ` <span class="vs">/ ${esc(r.target)}</span>` : '';
           const hbAge = r.hb_age_min != null ? `hb ${esc(r.hb_age_min)}m` : 'no heartbeat';
@@ -464,7 +409,7 @@ function render(s) {
           : `<details style="margin:6px 0 14px"><summary class="count" style="cursor:pointer">${filteredPrior.length} artefact(s) from earlier programmes on this box (not in its current worklist)</summary>
              <div class="scroll"><table><thead><tr><th>Shard</th><th>State</th><th class="mono">Progress</th><th class="mono">Result</th><th>Arms</th></tr></thead>
              <tbody>${filteredPrior.map(row).join('')}</tbody></table></div></details>`;
-        return `<h3 class="mono" style="margin:14px 0 6px">${esc(h.host)} ${pull}
+        return `<h3 class="mono" style="margin:14px 0 6px">${esc(h.host)} ${pull}${pending}
             <span class="count">· ${esc(h.n_running)} running · ${esc(h.n_queued)} queued · worklist gen ${esc(h.worklist_generated || '?')}</span></h3>
           <div class="scroll"><table><thead><tr><th>Shard</th><th>State</th><th class="mono">Progress</th><th class="mono">Result</th><th>Arms</th></tr></thead>
           <tbody>${rowsHtml}</tbody></table></div>${prior}`;

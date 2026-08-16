@@ -951,9 +951,22 @@ def collect_remote_fleet() -> dict:
             if sh in known_here:
                 continue
             prior.append(_remote_shard_row(mirror, sh))
+        pull = _remote_last_pull(hostdir)
+        # PENDING-PULL: the host generated a newer worklist than the last
+        # successful pull picked up, i.e. the mirror on this box does not yet
+        # reflect what the host is (or will be) running. Both stamps are ISO
+        # UTC (`generated:` line here, `pull ok` line in vps_pull.log) so a
+        # straight string/datetime compare is enough. None unless both sides
+        # parse — an unreadable clock must not read as "not pending".
+        pending_pull = None
+        if generated and pull.get("ok") and pull.get("at"):
+            g_ts, p_ts = parse_ts(generated), parse_ts(pull["at"])
+            if g_ts and p_ts:
+                pending_pull = g_ts > p_ts
         hosts.append({"host": hostdir.split("@", 1)[-1],
-                      "pull": _remote_last_pull(hostdir),
+                      "pull": pull,
                       "worklist_generated": generated,
+                      "pending_pull": pending_pull,
                       "worklist_path": str(wl_path.relative_to(ROOT)) if wl_path else None,
                       "rows": rows, "prior": prior,
                       "n_running": sum(1 for r in rows if r["state"] == "running"),
