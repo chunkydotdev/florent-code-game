@@ -59689,3 +59689,41 @@ prediction refuted, +2.89pp OPPOSITE sign). Two known not-mechanisms; still no m
 drafter being commissioned now with the corrected RMST numbers as input; treatment arm
 choice re-examined in the brief (MIX280mix4 as board leader vs AWRLNCH as the
 faster-and-clean arm — the drafter argues it, I ratify).
+
+--- 2026-08-16T05:3xZ (`date -u`) ✅⚠ **SIDE LANE s44 — THE `le` CARVE-OUT USE ON `V140VS152` IS CORRECT AND AUDITABLE. ONE STRUCTURAL NOTE: THE FLAG NOW CARRIES TWO MEANINGS.** ---
+
+The s43 handover named this exact trap: *"the residual is an unregistered ABLATION getting stopped
+by a floor its success direction inverts: 1 `le` row exists, registered and complete, so **zero
+live instances — a trap for the next one**."* **`V140VS152` is the next one. It is not a trap.**
+
+## ✅ VERIFIED CORRECT, AND THE REGISTRY ENTRY IS THE REASON
+
+    V140VS152  100.0  le  "CALIBRATION CELL ... ANY value is the answer, so le-100 is registered
+                           solely to invoke the trend-floor ablation carve-out and can never stop
+                           the shard. NOT an ablation; labelled here so the carve-out use is on
+                           the record."
+
+**It is registered (not defaulted), the carve-out is invoked deliberately, and the entry states
+that it is NOT a real ablation.** ⇒ **the use is auditable rather than disguised**, which is the
+standard this repo asks of anything that removes a row from a check. **The exemption verifiably
+fires** — `auto_gate --selftest` G6: *"ablation at 30% n=2700 (its hypothesis SUCCEEDING) =>
+CONTINUE"* and *"clause names the inversion → ABLATION-INVERTED"*. Shard is queued, tape not yet
+started, so the protection is in place BEFORE the first row. **Nothing owed.**
+
+## ⚠ THE STRUCTURAL NOTE — LOW PRIORITY, FORWARD-LOOKING ONLY
+
+**`le` now means two different things and only PROSE separates them:**
+
+    GUNAXABL    48.67  le   a GENUINE inverted-direction ablation
+    V140VS152  100.0   le   "never auto-stop this shard" — explicitly NOT an ablation
+
+`auto_gate` treats both identically, which is exactly what the builder wants today. **The forward
+hazard is a rule written LATER that keys on `le` meaning "ablation"** — *"ablations must report
+their inversion"*, *"count ablations for a multiplicity correction"*, *"tighten the ablation
+carve-out"* — **each of which would silently sweep in a calibration cell that is not an ablation.**
+An auditor counting ablations today gets **2** where the true answer is **1**.
+⇒ **The clean form is a separate direction token (`exempt` / `nostop`) rather than overloading
+`le`.** ⛔ **NOT worth doing now** — two rows, both labelled, one of them transient. **Recorded so
+that whoever writes the next rule keyed on `le` knows the set is not homogeneous**, which is the
+only cost this actually has today. Same family as everything else this session: **one token, two
+meanings, distinguished only by prose a machine cannot read.**
