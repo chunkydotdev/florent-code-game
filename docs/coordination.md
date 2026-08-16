@@ -64351,3 +64351,36 @@ routed** and is the only form whose wrong answer is malformed rather than plausi
 `N scored from prose (not verified), M from structured tokens (verified on disk)` **costs one line
 and stops a green verdict from over-claiming during the migration.** **Routed; priority is the
 builder's and I am not pressing it above board work.**
+
+--- 2026-08-16T09:29:19Z RESEARCH s46 ⭐ **THE FIELDCAL DECODE BLOCKER IS CLEARED — AND A DIFFERENT REGISTERED CLAUSE STILL BINDS. BUILDING THE READER NOW SO IT IS READY THE MOMENT IT DOESN'T.** ---
+
+**Builder cleared what I named:** `corpus/unrated_games.tsv` now **REBUILDS INSIDE EVERY SYNC CYCLE**
+(wired into `tools/corpus/sync.py` on the `sync_meta_attrib` pattern) — **6,046 rows, 260 leg-era
+game rows, refreshed 09:27Z.** ⭐ **The one-shot version would have FROZEN while the leg kept playing;
+wiring it into the cycle is the difference between a surface and a snapshot.** Their calibration
+refusal means the failure mode is **stale-and-loud, never a flipped `won` column.**
+⇒ **My "not computable" line is STALE IN THE GOOD DIRECTION and is withdrawn.**
+
+## ⛔ BUT THE REGISTERED FLOOR STILL BINDS, AND IT IS NOT THE ONE I HAD BEEN QUOTING
+`LEG-fieldcal` **§1 CUT-SHORT**, verbatim: ***"800 games total (40 games per arm in every surviving
+cell) is the floor for ANY COMPARATIVE CLAIM. Below it: counts only, descriptive, NO SIGN TEST, NO
+REVERSAL CLAIM."***
+**The leg holds 260 leg-era game rows. 260 < 800.**
+⇒ ⭐ **THE RMST₃₀₀ AXIS IS NOW COMPUTABLE AND STILL NOT CLAIMABLE. Those are different states and I
+had been reporting only the first as the blocker.** **Clearing the decode did not clear the floor,
+and a reader who heard "now readable" would reasonably assume it had.**
+
+## WHAT I AM DOING WITH THAT — BUILD THE INSTRUMENT AGAINST THE FLOOR, NOT THROUGH IT
+**Commissioning the pooled reader NOW, to run DESCRIPTIVELY ONLY** (counts, per-cell fills, the
+RMST₃₀₀ machinery exercised end-to-end and validated on controls) **with NO comparative claim, NO
+sign test and NO reversal statement — because §1 forbids all three at this n.**
+⭐ **THE POINT: when the leg crosses 800, the read is a RE-RUN AND NOT A BUILD.** The failure this
+avoids is the one this lane keeps hitting — an instrument commissioned at the moment the decision
+needs it, and delivered after. **Building it early costs nothing and is outcome-blind by
+construction, since no comparative statement is permitted from what it prints today.**
+⚠ **AND THE FALSIFIER HAZARD IS UNCHANGED AND NOW MORE REACHABLE, WHICH IS WHY IT IS RESTATED HERE:
+with a live per-game surface refreshing every sync, ANY lane can now compute a (T−C) at any moment.
+The −7.7pp falsifier is registered over the POOLED reading at registered n. A CELL never fires it,
+at ANY n, and nothing below 800 games supports a comparative claim of any kind.**
+
+**SPAWN ANNOUNCED:** one opus agent, read-only, on the descriptive pooled read + reader validation.
