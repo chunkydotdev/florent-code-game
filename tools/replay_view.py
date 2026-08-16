@@ -367,6 +367,33 @@ PAGE_TEMPLATE = r"""<!DOCTYPE html>
   .teamchip { display: flex; align-items: center; gap: 8px; font-size: 13px; }
   .swatch { width: 14px; height: 14px; border-radius: 3px; display: inline-block; flex: none; }
   .econ { font-size: 12px; color: var(--muted); margin-left: 4px; }
+  /* Comparison table (Magnus, s46-viewer-ux refinement, 2026-08-16): the
+     original inline per-team strings were too small to compare side by
+     side — "the numbers matter a lot". Big mono numbers, one row per stat,
+     two team columns, updates every render(). */
+  .cmp-table { width: 100%; border-collapse: collapse; margin-top: 2px; }
+  .cmp-table th, .cmp-table td { padding: 3px 8px; }
+  .cmp-rowlabel-head { width: 1%; }
+  .cmp-teamhead { font-size: 13px; font-weight: 700; text-align: right;
+    white-space: nowrap; }
+  .cmp-teamhead .swatch { margin-right: 5px; vertical-align: -1px; }
+  .cmp-label { font-size: 11px; color: var(--muted); text-align: left;
+    white-space: nowrap; padding-right: 12px; }
+  .cmp-val { font-family: "SF Mono", Menlo, Consolas, monospace; font-weight: 800;
+    text-align: right; font-variant-numeric: tabular-nums; color: var(--ink); }
+  .cmp-val.cmp-econ { font-size: 22px; }
+  .cmp-val.cmp-unit { font-size: 18px; }
+  .cmp-val.cmp-core { font-size: 26px; }
+  .cmp-val.lead { color: var(--hpgood); }
+  .cmp-sub { font-size: .5em; font-weight: 600; color: var(--muted); margin-left: 2px; }
+  .cmp-val.dead { color: var(--hpbad); }
+  .cmp-dead-tag { font-size: 10px; font-weight: 700; color: var(--hpbad);
+    text-transform: uppercase; letter-spacing: .03em; line-height: 1.2; }
+  .cmp-table tr + tr td { border-top: 1px solid var(--border); }
+  /* Core HP is the win-condition headline — set it apart from the stat rows below. */
+  .cmp-table tbody tr:first-child td { padding-top: 6px; padding-bottom: 9px;
+    border-bottom: 2px solid var(--border); }
+  .lead-arrow { font-size: .55em; margin-left: 3px; vertical-align: 4px; color: var(--hpgood); }
   #controls { display: flex; align-items: center; gap: 10px; margin-top: 8px; flex-wrap: wrap; }
   #roundSlider { flex: 1 1 260px; min-width: 200px; }
   .btn { background: var(--panel); border: 1px solid var(--border); border-radius: 6px;
@@ -477,6 +504,19 @@ PAGE_TEMPLATE = r"""<!DOCTYPE html>
       <div class="teamline" id="teamLine"></div>
     </div>
     <div class="panel">
+      <h1>Comparison</h1>
+      <table class="cmp-table" id="cmpTable">
+        <thead>
+          <tr>
+            <th class="cmp-rowlabel-head"></th>
+            <th class="cmp-teamhead" id="cmpHeadA"></th>
+            <th class="cmp-teamhead" id="cmpHeadB"></th>
+          </tr>
+        </thead>
+        <tbody id="cmpBody"></tbody>
+      </table>
+    </div>
+    <div class="panel">
       <h1>Markers (click a tile)</h1>
       <div id="markerList">none placed</div>
     </div>
@@ -503,11 +543,35 @@ PAGE_TEMPLATE = r"""<!DOCTYPE html>
     builder_bot: "b", core: "CORE", conveyor: "c", splitter: "Y",
     harvester: "H", barrier: "▩", gunner: "G", sentinel: "S", launcher: "L",
   };
-  // Order for the per-round stats strip (Magnus, s46-viewer-ux): builder_bot,
-  // harvester, conveyor, splitter, gunner, sentinel, launcher, barrier.
-  // Cores are excluded (every match has exactly one per team; not informative).
-  const COUNT_KINDS = ["builder_bot", "harvester", "conveyor", "splitter",
-    "gunner", "sentinel", "launcher", "barrier"];
+  // Fallback core max HP when a core is destroyed (its maxHp is no longer in
+  // state.entities to read) — GameConstants: core max HP is 500, fixed.
+  const CORE_MAX_HP = 500;
+  // Rows for the Comparison table (Magnus, s46-viewer-ux refinement — inline
+  // strings were too small to compare side-by-side, "the numbers matter a
+  // lot"; Core HP row added as the win-condition headline; always-show set
+  // widened per Magnus's follow-up — a 0-count on a row someone is watching
+  // FOR (e.g. "no guns yet") is information, not noise).
+  // `always: true` rows render every round regardless of value (Core HP and
+  // the three econ rows always did; builders/harvesters/conveyors/gunners/
+  // sentinels never meaningfully hit 0-0 in a real game and a stable row set
+  // scans better than one that appears/disappears). Only splitters/launchers/
+  // barriers are omitted when BOTH teams are at 0 for that kind.
+  // Cores are excluded from unit counts (every match has exactly one per
+  // team; the Core HP row is the dedicated place for core state).
+  const CMP_ROWS = [
+    { label: "Core HP", core: true, always: true },
+    { label: "Ti", econ: true, field: "ti", always: true },
+    { label: "collected", econ: true, field: "collected", always: true },
+    { label: "ammo", econ: true, field: "ammo", always: true },
+    { label: "builders", kind: "builder_bot", always: true },
+    { label: "harvesters", kind: "harvester", always: true },
+    { label: "conveyors", kind: "conveyor", always: true },
+    { label: "splitters", kind: "splitter" },
+    { label: "gunners", kind: "gunner", always: true },
+    { label: "sentinels", kind: "sentinel", always: true },
+    { label: "launchers", kind: "launcher" },
+    { label: "barriers", kind: "barrier" },
+  ];
   const DIR_DELTA = { 0:[0,0],1:[0,-1],2:[1,-1],3:[1,0],4:[1,1],5:[0,1],6:[-1,1],7:[-1,0],8:[-1,-1] };
   const DIR_DEG = { 1:0, 2:45, 3:90, 4:135, 5:180, 6:225, 7:270, 8:315 };
 
@@ -693,18 +757,56 @@ PAGE_TEMPLATE = r"""<!DOCTYPE html>
   }
 
   // ---- rendering ----
-  function fmtEcon(p) {
-    if (!p) return "–";
-    return "Ti " + p.ti + " · collected " + p.collected + " · ammo " + p.ammo;
+  function cmpValCell(text, sizeClass, lead) {
+    return "<td class=\"cmp-val " + sizeClass + (lead ? " lead" : "") + "\">" + text +
+      (lead ? "<span class=\"lead-arrow\">▲</span>" : "") + "</td>";
   }
-  // Compact per-team unit-count strip (Magnus, s46-viewer-ux): "b5 H3 c21 G1 S2".
-  // Zero-count kinds are omitted so the line stays short; order is COUNT_KINDS.
-  function fmtStats(counts) {
-    const parts = [];
-    for (const k of COUNT_KINDS) {
-      if (counts[k]) parts.push(KIND_LABEL[k] + counts[k]);
+  // Core HP cell is its own shape: big number + small "/max", and a distinct
+  // dead-state style (red, "destroyed" tag) when this side's core is gone —
+  // `hp` is already 0 in that case (see the coreHp[] default below), so the
+  // lead comparison still does the right thing against a surviving core.
+  function cmpCoreCell(hp, maxHp, dead, lead) {
+    const cls = "cmp-val cmp-core" + (lead ? " lead" : "") + (dead ? " dead" : "");
+    return "<td class=\"" + cls + "\">" + hp + "<span class=\"cmp-sub\">/" + maxHp + "</span>" +
+      (lead ? "<span class=\"lead-arrow\">▲</span>" : "") +
+      (dead ? "<div class=\"cmp-dead-tag\">destroyed</div>" : "") + "</td>";
+  }
+  // Comparison table: rebuilt every render() (round-boundary values only,
+  // ~12 rows — trivial vs. the per-entity draw loop above). counts/pa/pb/
+  // coreHp all come from the SAME stateAtRound(round) call render() already
+  // made, so this is a read of already-derived per-round state, not a
+  // recompute.
+  function renderCmpTable(counts, pa, pb, coreHp) {
+    const tbody = document.getElementById("cmpBody");
+    if (!tbody) return;
+    let html = "";
+    for (const r of CMP_ROWS) {
+      let cellA, cellB;
+      if (r.core) {
+        const ca = coreHp[0], cb = coreHp[1];
+        const hpA = ca ? ca.hp : 0, hpB = cb ? cb.hp : 0;
+        const maxA = ca ? ca.maxHp : CORE_MAX_HP, maxB = cb ? cb.maxHp : CORE_MAX_HP;
+        const aLead = hpA > hpB, bLead = hpB > hpA;
+        cellA = cmpCoreCell(hpA, maxA, !ca, aLead);
+        cellB = cmpCoreCell(hpB, maxB, !cb, bLead);
+      } else if (r.econ) {
+        const va = pa ? pa[r.field] : null, vb = pb ? pb[r.field] : null;
+        const numA = typeof va === "number" ? va : -Infinity;
+        const numB = typeof vb === "number" ? vb : -Infinity;
+        const aLead = numA > numB && numA !== -Infinity;
+        const bLead = numB > numA && numB !== -Infinity;
+        cellA = cmpValCell(va == null ? "–" : String(va), "cmp-econ", aLead);
+        cellB = cmpValCell(vb == null ? "–" : String(vb), "cmp-econ", bLead);
+      } else {
+        const va = counts[0][r.kind] || 0, vb = counts[1][r.kind] || 0;
+        if (!r.always && va === 0 && vb === 0) continue; // omit only for the non-"always" kinds
+        const aLead = va > vb, bLead = vb > va;
+        cellA = cmpValCell(String(va), "cmp-unit", aLead);
+        cellB = cmpValCell(String(vb), "cmp-unit", bLead);
+      }
+      html += "<tr><td class=\"cmp-label\">" + r.label + "</td>" + cellA + cellB + "</tr>";
     }
-    return parts.join(" ");
+    tbody.innerHTML = html;
   }
   let round = 0;
   function render() {
@@ -713,9 +815,14 @@ PAGE_TEMPLATE = r"""<!DOCTYPE html>
     entLayer.innerHTML = "";
     const ids = Object.keys(state.entities).sort((a, b) => a - b);
     const counts = { 0: {}, 1: {} };
+    // null until this round's core is seen for that team — stays null (read
+    // as destroyed/0-hp by renderCmpTable) if the core was removed by now.
+    const coreHp = { 0: null, 1: null };
     for (const id of ids) {
       const e = state.entities[id];
-      if (e.kind !== "core" && counts[e.team]) {
+      if (e.kind === "core") {
+        if (coreHp[e.team] !== undefined) coreHp[e.team] = { hp: e.hp, maxHp: e.maxHp };
+      } else if (counts[e.team]) {
         counts[e.team][e.kind] = (counts[e.team][e.kind] || 0) + 1;
       }
       const div = document.createElement("div");
@@ -758,15 +865,8 @@ PAGE_TEMPLATE = r"""<!DOCTYPE html>
       }
       entLayer.appendChild(div);
     }
-    // stats + econ line (merged: "b5 H3 c21 G1 S2 · Ti 91 · collected 0 · ammo 16")
-    const teamLine = document.getElementById("teamLine");
-    const chips = teamLine.querySelectorAll(".econchip");
-    const pa = state.players.a, pb = state.players.b;
-    const sa = fmtStats(counts[0]), sb = fmtStats(counts[1]);
-    const ea = document.getElementById("econA");
-    if (ea) ea.textContent = (sa ? sa + " · " : "") + fmtEcon(pa);
-    const eb = document.getElementById("econB");
-    if (eb) eb.textContent = (sb ? sb + " · " : "") + fmtEcon(pb);
+    // comparison table (Core HP + Ti/collected/ammo + per-kind unit counts, A vs B)
+    renderCmpTable(counts, state.players.a, state.players.b, coreHp);
   }
   function setRound(r) {
     round = Math.max(0, Math.min(N_ROUNDS - 1, r));
@@ -843,9 +943,22 @@ PAGE_TEMPLATE = r"""<!DOCTYPE html>
   const teamBName = META.teamBName ? (META.teamBName + (META.teamBVersion != null ? (" v" + META.teamBVersion) : "")) : "Team B";
   teamLine.innerHTML =
     '<div class="teamchip"><span class="swatch" style="background:' + TEAM_COLOR_HEX[0] + '"></span>' +
-    '<div>A &middot; ' + teamAName + '<br><span class="econ" id="econA">–</span></div></div>' +
+    '<div>A &middot; ' + teamAName + '</div></div>' +
     '<div class="teamchip"><span class="swatch" style="background:' + TEAM_COLOR_HEX[1] + '"></span>' +
-    '<div>B &middot; ' + teamBName + '<br><span class="econ" id="econB">–</span></div></div>';
+    '<div>B &middot; ' + teamBName + '</div></div>';
+
+  // ---- comparison table header (built once; team identity doesn't change
+  // per round — only the cell values do, refreshed every render()) ----
+  const cmpHeadA = document.getElementById("cmpHeadA");
+  const cmpHeadB = document.getElementById("cmpHeadB");
+  if (cmpHeadA) {
+    cmpHeadA.style.color = TEAM_COLOR_HEX[0];
+    cmpHeadA.innerHTML = '<span class="swatch" style="background:' + TEAM_COLOR_HEX[0] + '"></span>A';
+  }
+  if (cmpHeadB) {
+    cmpHeadB.style.color = TEAM_COLOR_HEX[1];
+    cmpHeadB.innerHTML = '<span class="swatch" style="background:' + TEAM_COLOR_HEX[1] + '"></span>B';
+  }
 
   // ---- legend ----
   const legend = document.getElementById("legend");
