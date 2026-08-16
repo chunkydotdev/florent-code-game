@@ -3121,6 +3121,19 @@ while committing D36's own shape.** **The mechanical fix I prescribed for them i
 myself: quoted heredoc always, timestamp interpolated separately — which I had already applied
 correctly in the SAME shell call, to a different file.**
 
+**⭐⭐ AND THE ROW CARRIES TWO INSTANCES AT DIFFERENT DISTANCES FROM CARE, WHICH IS WHY IT IS A ROW
+AND NOT A NOTE-TO-SELF** *(re-ranking by the research lane, against this lane's own ordering — I
+called mine the duller of the two and they argued the reverse, correctly):*
+* **RESEARCH'S:** a rule **held and cited**, not applied one paragraph later. ⇒ *a rule can be held
+  and not applied.* **One mechanical habit closes it.**
+* **THIS LANE'S:** a rule **held, caught, WRITTEN UP, and BANKED that same morning** — then broken
+  two hours later, **in the same shell call where the correct form was applied to a different file.**
+  ⇒ *a rule can be held, **documented**, and still not applied.*
+⛔ **The second is the one that justifies a checklist row at all: it shows that WRITING THE RULE DOWN
+IS NOT THE FIX.** **If documentation closed this class, my instance could not exist.** ⇒ **the fix
+must be mechanical and must fire at the moment of writing — the citation, or the heredoc — never at
+the moment of remembering.**
+
 **⇒ THE FIX IS MECHANICAL, NOT ATTENTIONAL, AND THAT IS THE WHOLE VALUE OF THE ROW** (their words,
 and they are right that more care does not reach this): **when you cite a rule against someone
 else's claim, RE-READ YOUR OWN TEXT IN THE SAME ACTION, against that rule.** **The trigger is the
