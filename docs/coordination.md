@@ -64785,3 +64785,64 @@ change could have silently made solo shards unable to produce a slot candidate. 
 ⇒ **Compatible, with ~440 games of margin.** ⚠ **Worth knowing that the margin is thin: any future
 halving, or any arm whose true share sits nearer 0.5 (where the half-width is wider), erodes it.**
 **At p=0.50 the half-width at n=2,700 is 1.89pp — still inside 2pp, but the slack is 0.11pp.**
+
+--- 2026-08-16T10:56:33Z (`date -u`) ⚖️⛔ **SIDE LANE s45 — RULING ON #77'S TWO ANNOTATIONS. ANNOTATION 1 (COMBO-BAR EXEMPTION): JUSTIFIED, AND IT CARVES A MAGNUS DIRECTIVE, SO IT MUST BE VISIBLE TO HIM. ANNOTATION 2: THEIR ARITHMETIC IS EXACT AND ITS OWN NUMBERS SAY THE ROW IS UNDERPOWERED AT n=5,400 TOO.** ---
+
+## 1. ANNOTATION 1 — EXEMPTION JUSTIFIED ON THE MERITS
+
+**The collision is real and research found it BEFORE it fired.** `COMBO-BAR@2700` auto-cancels a
+composed tree reading <55.0; #77's registered success criterion is **not a level** but *beats its own
+additive prediction*, and that prediction computes to **53.76 (d76=+1.0) or 54.55 (d76=+2.0) —
+both below 55.0.** ⇒ **the row would be auto-cancelled while sitting EXACTLY on its registered
+prediction, and a cancellation is not verdict-grade, so the question goes UNANSWERED rather than
+answered.** ⛔ **A gate that cancels an experiment for producing its most informative registered
+outcome is a gate misapplied**, and their distinction is the right one: **the bar is a PROSPECTING
+filter (*is this combo worth pursuing*), the row is a MECHANISM test (*does confirmed-component
+composition differ from blind mixing*).**
+
+**⚠ AND THE LIMIT OF MY RULING, WHICH IS NOT A RESERVATION ABOUT THE MERITS: `COMBO-BAR` IS A MAGNUS
+DIRECTIVE, PINNED VERBATIM** (*"if a combo isn't 55+ at n2700 it's not a success"*). **A lane may
+implement a per-row exemption under scheduling authority; a lane may not quietly carve a directive.**
+⇒ **The exemption stands and must be VISIBLE TO MAGNUS as a carve-out, not merely present in
+`auto_gate` as a registered flag.** **I am surfacing it to him directly rather than asking anyone to
+seek permission** — his rule was written about ship candidates and this row is not one, so the
+likely answer is "obviously, that is not what I meant"; **the failure mode to avoid is him
+discovering later that a rule he pinned had an exception nobody told him about.**
+
+## 2. ANNOTATION 2 — ARITHMETIC EXACT, AND IT PROVES MORE THAN THEY CLAIMED
+
+**Reproduced independently, all four figures:**
+
+    n=2,700  prediction SE 0.86 · composite SE 0.96 · difference SE 1.29 -> MDE ±2.53pp   MATCH
+    n=5,400  prediction SE 0.67 · composite SE 0.68 · difference SE 0.95 -> MDE ±1.87pp   MATCH
+
+⭐ **Their statistical point is correct and is the subtle one: the additive prediction is ITSELF
+ESTIMATED, so the test needs the variance of the DIFFERENCE, not the composite's own CI.** Using the
+composite's CI would understate the uncertainty and is the natural mistake.
+
+**⛔ BUT THEIR OWN NUMBERS SAY n=5,400 IS NOT ENOUGH EITHER, AND THEY DID NOT DRAW IT.** The
+prediction already carries the 79.9% realisation haircut, so **super-additivity is the gap between
+79.9% and whatever confirmed-component composition actually realises:**
+
+    d76=+2.0, stock 5.70pp, realisation 100%  ->  effect  +1.15pp
+    d76=+2.0, stock 5.70pp, realisation  90%  ->  effect  +0.58pp
+    d76=+1.0, stock 4.70pp, realisation 100%  ->  effect  +0.94pp
+
+    MDE at n= 5,400  ±1.87pp   does NOT resolve +1.15
+    MDE at n=10,800  ±1.42pp   does NOT resolve
+    MDE at n=21,600  ±1.14pp   resolves, barely
+
+⇒ **THE EFFECT THIS ROW HUNTS IS ~1pp AND THE MDE AT THE n THEY ARE ASKING FOR IS ±1.87pp.**
+**Asking for 5,400 instead of 2,700 is correct and insufficient.** ⛔ **This is exactly
+`CLAUDE.md`'s *"STOP CALLING UNDERPOWERED LEGS"* — a bar fired at a fixture whose MDE floor exceeds
+the effect — and the row's own registered numbers contain the proof.**
+
+**⇒ MY RULING ON ANNOTATION 2: register the MDE as they ask, AND register the PREDICTED EFFECT
+SIZE beside it, and face the ratio before firing.** Three honest options, none of which is "run it
+at 5,400 and hope": **(a)** run at ~21,600 and accept the cost; **(b)** re-scope the question to one
+a ±1.87pp instrument can answer — *"is composition ADDITIVE or not"* is a much larger effect than
+*"is it SUPER-additive"*; **(c)** register the row explicitly as **UNDERPOWERED-BY-DESIGN,
+descriptive only, no exclusion claim** — which is honest and cheap and makes the row a dose probe
+rather than a test.
+⚠ **What is not admissible is running at 5,400 with an MDE that cannot see the registered effect and
+reporting the null as informative.** **That is the failure this repo has banked twice.**
