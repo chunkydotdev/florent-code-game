@@ -59727,3 +59727,70 @@ An auditor counting ablations today gets **2** where the true answer is **1**.
 that whoever writes the next rule keyed on `le` knows the set is not homogeneous**, which is the
 only cost this actually has today. Same family as everything else this session: **one token, two
 meanings, distinguished only by prose a machine cannot read.**
+
+--- 2026-08-16T05:3xZ (`date -u`) ⛔⛔ **SIDE LANE s44 — I WAS WRONG ABOUT TRIO TWICE, AND THE SECOND TIME I WAS MORE CONFIDENT. Plus: the seat-asymmetry premise VERIFIED, and my map-property recommendation was a dead end.** ---
+
+## ✅ FIRST — THE PREMISE THAT PROTECTS THE WHOLE BOARD, CHECKED NOT ASSUMED
+
+Research's 47.2pp seat×map asymmetry on a verified-symmetric map is real and is OUR code. **Does it
+bias anything?** Their answer — *"the fixture is seat-balanced"* — is a premise, so I tested it:
+
+    shards checked (n>=1000): 146      seat-UNBALANCED: 0
+
+**Every one of the 146 shards is seat-balanced within `max(2, 1% of n)`.** ⇒ **the asymmetry cannot
+bias any T−C contrast**, including my own 146-shard calibration and the 53.70% headline. **Premise
+verified.** *(This is the check `overnight_read` refuses shards on — seat is worth 7.6pp on
+byte-identical arms, so an unbalanced shard measures SEAT.)*
+
+## ⛔⛔ THE CORRECTION I OWE — TRIO IS FLAT, AND I ADVISED THE BUILDER TWICE ON A NUMBER THAT ISN'T THERE
+
+ITT RMST — mean kill time over **ALL** games, non-kill scoring the horizon, no conditioning:
+
+    shard        H=250    H=300    H=400  | conditioned median (the artefact)
+    TRIO        + 1.46   - 0.34   - 6.88  | T=232 C=209  (+23)   <- FLAT on the unbiased metric
+    MIX280mix4  + 1.35   - 0.87   - 8.67  | T=236 C=209  (+27)   <- FLAT
+    BODYAWR     - 4.55   - 6.84   -12.16  | T=205 C=207  ( -2)   <- FASTER
+    AWRLNCH     - 3.28   - 6.43   -14.13  | T=205 C=208  ( -3)   <- FASTER
+    NULL114     + 0.54   + 0.42   + 0.40  | T=206 C=205  ( +1)   <- flat, as a null must be
+    NEG114      +20.72   +33.27   +60.65  | T=226 C=194  (+32)   <- slower, as a negative must be
+
+**The instrument is calibrated: the null reads flat at every horizon and the deliberate negative
+reads strongly slower.** ⇒ trustworthy.
+
+**⇒ `TRIO` DID NOT KILL LATER. Its "+23 rounds" is the same conditioning artefact as the MIX arms.**
+
+**MY TWO ERRORS, in order, and the second is the worse one:**
+1. **~04:5xZ** — I told the builder *"the POWER leg alone is contestable; the load-bearing leg is
+   the KILL ROUND (232 vs 209), a programme disqualifier, not contestable by more games."*
+2. **~05:1xZ** — corrected to *"the empirical grounding is gone (stale hazard table), the DIRECTIVE
+   grounding stands."* ⛔ **THAT CORRECTION IS ALSO WRONG, AND IT WAS MORE CONFIDENT THAN THE
+   CLAIM IT REPLACED.** The directive binds on a REAL kill-round regression. **There isn't one.**
+   A directive cannot disqualify an arm for a regression that did not happen.
+3. ⇒ **`TRIO`'s cancellation now rests on the POWER LEG ALONE — the exact leg I twice called
+   contestable.** It is sound: +0.55pp observed against a design floored at ±1.33pp, unresolvable
+   at any n it would have reached. **The decision was right the whole time. Both reasons I supplied
+   for it were wrong.**
+
+**⭐ THE MECHANISM, AND IT IS NOT THE ONE I'D HAVE GUESSED: I flagged the collider in FIRE ORDER #1
+at 04:5xZ, wrote D26 REFINEMENT 2 about it at 05:0xZ — and then spent the next forty minutes
+citing `232 vs 209` as if it were a fact about the arm.** I had named the exact defect, promoted a
+checklist row about it, and did not apply it to the number in my own hand. **The promoter's-first-use
+rule, third firing today, and this is the expensive one — it travelled into another lane's wording
+decision.**
+
+## ⛔ AND MY MAP-PROPERTY RECOMMENDATION WAS A DEAD END — THEIR CONTROL IS WHAT SHOWED IT
+
+I wrote: *"the cheap next cut is a MAP-PROPERTY regression on that profile — zero games, zero
+windows."* **Research ran it: 0 of 26 properties have a CI excluding zero, and a NONSENSE CONTROL —
+the alphabetical index of the map name — reads r=+0.525 and OUTRANKS ALL 26.** Permutation null
+puts their best at P=0.608. ⇒ **at n=15 maps the method cannot separate a real predictor from a
+fake one. My prescription was unbuildable and I did not price its n before recommending it.**
+⭐ **Their nonsense control is the whole reason this is a clean negative instead of a false lead** —
+without it, `ore_frac` at r=−0.472 gets written up.
+
+**⚠ ONE PRECISION THAT MUST TRAVEL WITH "ROAD CLOSED", or the wrong thing gets inherited:**
+**the HETEROGENEITY IS STILL ESTABLISHED** — chi²=37.71, df=14, **p=0.0006**, robust to the
+pessimistic local DEFF, with `auroraveil` surviving Bonferroni at 2.5e-4. **What is closed is
+EXPLAINING it by map properties via regression at n=15.** ⇒ **the maps really do differ; the
+fingerprint is real and is simply not decodable by that method at that n.** A successor reading
+"map-property road closed" must not conclude the per-map spread was noise.
