@@ -61595,3 +61595,90 @@ settled, mark what is open, and put the union to the person holding both halves.
 **Does the builder's wrap trigger the SIDE LANE as a standing rule?** Today's side-lane instance is
 resolved (he told them directly); the standing scope is not. Recorded as open in
 `docs/two-session-protocol.md`; **neither lane can settle it and neither should.**
+
+# ============================================================================
+# 2026-08-16T07:3xZ — **SIDE LANE s44 WRAP** (Magnus: *"then we wrap up"*, via the builder's wrap).
+# **Arm retro ran FIRST per charter — `docs/side-lane-retro.md` → v1.14, FIRINGS 14; instance
+# `docs/retro-side-lane-2026-08-16-s44.md` committed in the same action (`950de8b7`).**
+# Session 04:34Z → 07:36Z (~3 h). ~26 flags/certs, 11 changed an outcome, 7 became code,
+# 8 published errors, 5 killed pre-publication, 1 escalation to Magnus: none.
+# ============================================================================
+
+## PROCESS DELTAS — routed at write time
+
+**S1. ⭐⭐ A CHECK THAT NEEDS A LANE PRESENT IS A PLACEHOLDER FOR A MECHANISM.** *(behaviour →
+`PROGRAMME-drift-watch-2026-08-09.md` D31, **at ordinary weight — its Magnus attribution was
+retracted, see S4**.)* Every durable win today was a lane observation turned into code — the
+BLIND-with-age gate, the `UNPINNED_OK` abort, the rotation clause, the ellipsis, `gate.py`'s 13
+cells, the wait heartbeat, and **the per-flip leak check that retired my own flip verification.**
+**Every failure was an attention-level rule that did not fire.** ⇒ **the lane's measure is the count
+of its checks that no longer need it.**
+
+**S2. ⛔ A PROCESS PROBE IS PART OF THE PROCESS TABLE IT SEARCHES.** *(behaviour → the drift-watch
+file; sibling to the builder's D3.)* My liveness monitor ran `pgrep -f 'fieldcal_scheduler.sh'` — a
+pattern inside its own command line — **so the death alarm could never fire, and my check printed
+`scheduler ALIVE` against a log line saying it had exited.** ⚠ **The bracket trick did NOT save it:
+the plain string was in my argv, put there by my own pgrep argument.** Fixed with
+`[z]sh tools/fieldcal_scheduler.sh`, driven both ways. **This is the builder's D3, committed by me
+nineteen hours after they logged it, in a monitor built to close a hole in my own watch.**
+
+**S3. ⭐ A REPRODUCTION IS NOT A VALIDATION.** *(behaviour → D30; builder's formulation, research's
+sharpening.)* Three lanes reproduced the RMST point estimates digit-for-digit, all three were right,
+and every interval was ~18% too narrow. **Agreement certifies the COMPUTATION, never the ESTIMATOR.**
+⭐ **Rider added under my name at research's request: it holds when the subject is a PERSON too** —
+their "six self-caught" agreed with my self-assessment and tested nothing; only re-deriving the
+buckets did. **The flattering version is the one nobody re-derives.**
+
+**S4. ⛔⛔ A DIRECTIVE IS NEVER ENCODED FROM A PRONOUN.** *(instrument → retro v1.14; behaviour →
+the D31 retraction.)* I read Magnus's *"this should always be the case actually"* against the
+paragraph nearest my own seat and **encoded it as a verbatim Magnus directive in a booted
+checklist.** It answered research's question about the wrap rule. **Retracted in three minutes —
+because the row carried its own reading as falsifiable, which is the only reason it cost minutes.**
+⭐ **And its correction inherited its ambiguity** (research's formulation): I then under-read into
+*"my wrap waits on Magnus, not the builder"* when he had already given me the word.
+
+**S5. THE UNIFIER, AND IT IS THE WHOLE OF Q3 THIS RUN: EIGHT PUBLISHED ERRORS, ONE MECHANISM —
+I READ ONE SURFACE AND REPORTED A PROPERTY OF THE SYSTEM.** *(instrument → retro Q3.)* **All four
+self-catches came from an ILLEGAL value; both escapes to a peer returned PLAUSIBLE ones.** ⇒
+**prefer queries whose failure mode is illegal; a plausible return is unverified.**
+
+## ⚠ WHAT A SUCCESSOR MUST NOT INHERIT UNCHECKED
+
+1. **THE STANDING SCOPE OF MY WRAP TRIGGER IS UNRESOLVED**, recorded in
+   `docs/two-session-protocol.md` with split provenance. **Today's instance is RESOLVED** (Magnus
+   instructed this lane directly). ⛔ **Do not read "unresolved" as "no wrap trigger exists".**
+2. **`AGENTS.md:400-402` is a generated twin of `CLAUDE.md`, last regenerated 2026-08-13, and still
+   states the SUPERSEDED `kill_round_non_regression` bar verbatim.** Regeneration is the fix.
+3. **Nothing mechanical enforces `DEFENCE_ADMISSION_BAR` in any of its three vintages** (opus sweep,
+   relay 2). It binds only through prereg text a human reads. `gate.py` prints it and enforces only
+   `LINE_DIRS`.
+4. **`SCREEN-bodyaware`'s locked falsifier is vintage A while BODYAWR is complete and unscored**, and
+   it is the one arm of 146 where the two forms disagree. **My certification: the registered
+   falsifier governs THAT arm; the new bar governs arms locked after today.** Scoring it against the
+   new bar now, with the numbers visible, is choosing the rule after seeing the data.
+5. **Three roads were closed on kill-round grounds that no longer exist** (idlepeck +44.5, salt
+   r129→r179, pavefirst), with two rebased successors queued. **Not a reopening recommendation —
+   D12 says a bar re-price is not evidence — but the stated reasons have lapsed.**
+
+## SIDE LANE STATE — VERIFIED, NOT ASSERTED
+
+* **HOLDER: `v152` "Loki turbo4 (ammo/heal fix)", 1787 (Emerald), rank #19 of 126, 1094 matches.**
+  **Read from `fcode status` at 07:36:53Z — NEVER from a poller.** *(D28, which my predecessor
+  committed in their own closing artefact yesterday. Read live at the moment of writing this line.)*
+* **CONTROL remains `bots/_v223sealrepair` (v140).** Holder ≠ control; Magnus's ruling names v140.
+* **`LEG-fieldcal-2026-08-16` IS LIVE ACROSS THE SEAM AND SELF-GUARDING** — not unwatched.
+  ROUND 5, **CLOCK2 `2026-08-16T06:25:40.381Z`**, BLIND_STREAK 0, **20 accepts banked**, scheduler
+  **detached and alive**. **`scratchpad/fieldcal_state.tsv` IS the handover.** ⇒ **the per-flip leak
+  check and the self-halting tripwires are in the scheduler, so it does not depend on any lane.**
+* **CERTIFIED: `docs/research/CERT-LEG-fieldcal-2026-08-16.md` — CLEAR TO FIRE**, two-clock
+  **+26m39s** (clock 2 = the platform `createdAt`, not my `our_matches.tsv` proxy). **ZERO rated
+  leak across every flip; window net −14.37 of −40, leg-attributable 0.00.**
+* **DIES WITH ME:** the all-commits drift watch (**77617**) and the leg-log monitor. **A successor
+  re-arms `tools/watch/drift_watch.sh` and drives its four cells first — and after today, drives
+  the LIVENESS cell too, because I proved that half can be silently dead.** ⚠ **`21664` (s41) and
+  `21790` (s43) are orphans, alive and not mine to kill.**
+* **SURVIVES ME:** the detached fieldcal scheduler · keeper · the four watchers · ship/holder/gate
+  watch · auto_gate · corefill · fleet 12/12 present exactly once, verified by `ps`, never by exit code.
+* **I edited no bot, ran no arena, fired no match, typed no verdict, took no platform action, and
+  wrote nothing to `HANDOVER.md` or the tape.** Two read-only subagents, both relayed before idling.
+  **Nothing of mine is unrelayed.**
