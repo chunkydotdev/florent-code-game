@@ -1,0 +1,8 @@
+# ws1 KLAD batch, builder s47 2026-08-16T18:41:09Z. T4AR complete (56.07). The fast box takes
+# the two highest-value reads: independent replication of KLADTURBO (local
+# mid-read 62) and the FIRST read of KLADTKILL (four-plank; local queue is
+# deep, ws1 beats it by hours — local entry stays as the independent cell).
+# REPORT SEPARATELY, NEVER POOL.
+NULLHOST bots/_v146null bots/_v146gunaxis 400 920000
+KLADTURBOR bots/_v468kladturbo bots/_v223sealrepair 5400 970000
+KLADTKILL1 bots/_v469kladtkill bots/_v223sealrepair 5400 972000
