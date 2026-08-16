@@ -1,0 +1,8 @@
+# ws1 REPLICATION batch, builder s47 2026-08-16T16:17:23Z. G413g4 cancelled at 1521 rows
+# (prefix 49.77 < the 52 floor, Magnus 2026-08-16); the freed box runs
+# independent cross-host replications of the day's two best arms.
+# REPORT SEPARATELY, NEVER POOL with local (ws1 host term not established
+# for these trees; same convention as the ws2 eco replications).
+NULLHOST bots/_v146null bots/_v146gunaxis 400 900000
+TBAR bots/_v428tba bots/_v223sealrepair 5400 950000
+T4AR bots/_v427turbo4 bots/_v223sealrepair 5400 952000
