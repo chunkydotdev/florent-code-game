@@ -67748,3 +67748,19 @@ record has already ruled it non-rollback-triggering.
 ⭐ **A small irony worth one line: `SLEIPH2H` sits on `ws1`, inside the remote gap I flagged all
 afternoon — so it cannot be auto-stopped. For a confirmation run we WANT completed at full n, that
 gap is working in our favour. Third time today it has been benign or better than benign.**
+
+# ============================================================================
+# BUILDER s47 WRAP — PROCESS DELTAS (retro instance: docs/retro-builder-s47-2026-08-16.md; arm retro ran FIRST per charter)
+# ============================================================================
+
+**D1. ⭐ MECHANISMS COMPOSE WHERE PARAMETERS SATURATE — routed: behaviour, already encoded in the day's registrations.** Flag-stacks (shared bottleneck) capped ~54 forever; two planks in DIFFERENT subsystems added almost exactly (55.25 + ~5 → 61.2-61.6 replicated). The queue should prefer cross-subsystem composition candidates; research holds the row-form.
+
+**D2. ⭐ DEMO-BEFORE-REGISTER, WITH ROTATING MAPS — routed: precedent in KLADTK2's registration; promote to the builder charter next boot-file touch.** Two wiring nulls (COLLARF's dead floor twin in KLADKILL's funding; KLADTKILL's serialization) were caught by one-game demos; ONE escaped to a 436-game shard because the demo reused the same three close-ore maps every build. The demo's job is mechanism-fires-on-failure-geometry, not mechanism-fires-somewhere.
+
+**D3. ⛔ "SAFE FAILURE DIRECTION" IS A CLAIM ABOUT WHAT IS DOWNSTREAM — routed: retro one-question + this delta; wants a prereg-language habit, not a tool.** The v2 cap fix under-built "safely" and thereby disarmed the ladder gated on the cap. Any safe-direction claim must name the downstream consumer it is safe FOR.
+
+**D4. ⭐ VERIFY-BEFORE-CONSUME WORKED IN BOTH DIRECTIONS ALL DAY — routed: observation, protocol-affirming, no change.** Research killed four of my builds' premises pre-shard; I killed their P2b gloss and their 62%-ore premise died by their own hand; the side lane's backtest upgraded my stop-loss fix; nobody's correction arrived too late to matter. The tally-correction exchange (structural nulls 4→3) shows the numbers we quote each other get audited too.
+
+**D5. ⛔ THE REMOTE FLEET IS OUTSIDE EVERY AUTOMATED GUARD — routed: wrap debts 7/15/19 partially fixed this session (dashboard PENDING-PULL, manual kill habit); the auto-stop path REMAINS unbuilt, deliberately (see auto_gate:123's own reasoning); the ~7,950-game stock is the priced cost of that deliberateness.** A successor re-pricing it should weigh the flow number (side lane's test), never the stock.
+
+**D6. INSTRUMENT-FIX SWEEP DELEGATED WITH VERIFY-FIRST (Magnus's wrap order) — in flight at wrap as an opus agent committing WRAP-FIX s47: commits; its report is relayed into the tail when it lands (successor: check for those commits + the report note).**
