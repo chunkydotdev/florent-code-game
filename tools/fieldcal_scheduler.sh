@@ -695,6 +695,7 @@ run_round(){
     label=${CELL_ORDER[idx+1]}
     if halt_file_present; then
       say "  HALT file present — stopping cleanly, no further invocations this round."
+      say "  ⚠ STOP NOTE: arm B trails A by one round STRUCTURALLY (lost round 3 + parity) — an early stop shorts B on every possible stop; CUT-SHORT shortfall is ASYMMETRIC. See scratchpad/fieldcal_amend1_effective.txt."
       return 0
     fi
     banked=${COUNTS[$arm,$label]:-0}
@@ -714,6 +715,7 @@ run_round(){
       do_sleep "$w"
       if halt_file_present; then
         say "  HALT file present during budget wait — stopping cleanly."
+      say "  ⚠ STOP NOTE: arm B trails A by one round STRUCTURALLY (lost round 3 + parity) — an early stop shorts B on every possible stop; CUT-SHORT shortfall is ASYMMETRIC. See scratchpad/fieldcal_amend1_effective.txt."
         return 0
       fi
     done
@@ -751,6 +753,7 @@ main_loop(){
   while true; do
     if halt_file_present; then
       say "HALT file present at round boundary — stopping cleanly."
+      say "  ⚠ STOP NOTE: arm B trails A by one round STRUCTURALLY (lost round 3 + parity) — an early stop shorts B on every possible stop; CUT-SHORT shortfall is ASYMMETRIC. See scratchpad/fieldcal_amend1_effective.txt."
       return 0
     fi
     if all_cells_done; then
@@ -1330,7 +1333,7 @@ fi
 # narrative (halts, gate readings, accepts) — data survived in the state file +
 # our_matches.tsv, but the debugging history did not. A restart marks a seam.
 print -r -- "===== $(date -u +%Y-%m-%dT%H:%M:%SZ) scheduler (re)start pid=$$ =====" >> "$LOG_FILE" 2>/dev/null || true
-say "FIELDCAL SCHEDULER starting. MAIN(pre-leg holder)=$FIELDCAL_MAIN  runner=$RUNNER_CMD  ladder=$LADDER_TSV"
+say "FIELDCAL SCHEDULER starting. MAIN(pre-leg holder)=$FIELDCAL_MAIN  runner=$RUNNER_CMD  ladder=$LADDER_TSV  AMEND1=868e3312(catch-up, effective r9) — regime boundary in-log, not only sidecar (side-lane D2 rider)"
 if ! startup_validate; then
   say "REFUSAL: one or more cell ids failed validation (see above). Fix the table in tools/fieldcal_scheduler.sh before firing. Exiting."
   exit 2
