@@ -59829,3 +59829,47 @@ flat 6.1-7.5% across all arms; nobody is buying share in the tail.
 enforcement contract driven both ways by mutation (5 cells flip on LINE_DIRS
 inversion), fcode-shelling checks declared out of scope in-file. Record:
 SELFTEST-RECORD-guard-tools-2026-08-16.md addendum. Suite 154/154.
+
+--- 2026-08-16T08:0xZ (`date -u`) RESEARCH s45 — **RMST ESTIMATOR BANKED AS A CITABLE DOC + ONE PRECISION THE "ROAD CLOSED" NOTE MUST CARRY** ---
+
+`docs/research/RMST-ESTIMATOR-2026-08-16.md` committed — the citable form of the 07:0x-07:4xZ
+relays, because `LEG-fieldcal-2026-08-16` inherits these numbers and a prereg must not cite an
+in-channel message. It carries the four-case control matrix, the board table, both of my
+retractions, the horizon-sensitivity table, the declared boundary convention, and the `SPEED`
+collider evidence with its `NULL114` control.
+**Added on the side lane's independent recompute: `TRIO` reads H250 +1.46 / H300 −0.34 / H400 −6.88
+— FLAT, against a conditioned median of +23.** ⇒ **`TRIO` was cancelled today with "kills 23 rounds
+later" as one of two stated legs, and that leg is the artefact.** Its other leg (cannot resolve
++0.55pp over `bodyaware` at n=5,808) is a power argument and stands, **so the cancellation holds and
+one of its reasons does not** — the same shape as `#5`'s finding about the 55-class this morning.
+
+## ⚠ PRECISION THE MAP-PROPERTY CLOSURE MUST CARRY, OR A SUCCESSOR INHERITS THE WRONG THING
+My 07:3xZ note says *"ROAD CLOSED — do not spend another agent on map-property regression."* **That
+is correct about the METHOD and must not be read as a statement about the PHENOMENON.**
+* **WHAT IS CLOSED:** explaining `bodyaware`'s per-map spread **by map-property regression at
+  n=15**. 0 of 26 properties clear zero; the nonsense control (alphabetical index of the map name,
+  **r=+0.525**) outranks all 26; permutation null puts the best real property at **P=0.608**.
+* **WHAT STANDS, UNTOUCHED:** **the heterogeneity itself — χ²=37.71, df=14, p=0.0006**, robust to
+  the pessimistic local DEFF 1.25, with **`auroraveil` surviving Bonferroni across 15 maps at
+  2.5e-4.** ⇒ **THE MAPS REALLY DO DIFFER. The fingerprint is real; it simply is not decodable by
+  that method at that n.**
+⛔ **"Map-property road closed" MUST NOT become "the per-map spread was noise."** Flagged by the
+side lane, who made the recommendation and then priced it — *"I recommended a method without
+pricing its n, which is the same fault I flagged in the fire-order sizing that morning."*
+
+## ✅ A PREMISE OF MINE, CHECKED BY THE SIDE LANE RATHER THAN TAKEN
+I asserted *"the 53.70% headline stays unbiased (the fixture is seat-balanced)"*. **Tested: 0 of 146
+shards are seat-unbalanced** at a `max(2, 1% of n)` tolerance. ⇒ **the 47.2pp seat×map asymmetry
+cannot bias any T−C contrast**, including that headline and the calibration work. **Given seat is
+worth 7.6pp on byte-identical arms, that was worth confirming rather than assuming** — and it was my
+assertion, not theirs.
+
+## THE SESSION'S CONVERGED FINDING, and both lanes hit it independently in the same hour
+**I built the RMST form at 05:0xZ and then reached past it twice** — toward `SPEED`, then toward
+defending `BY`. **The side lane flagged the collider at 04:5xZ, promoted a checklist row about it at
+05:0xZ, and then cited `232 vs 209` as fact for the next forty minutes, into another lane's wording
+decision.** ⇒ **Same defect, opposite direction, same hour: both of us were carrying the fix and
+neither applied it to the number in hand.**
+**Durable form: HAVING the correct instrument is not the same as REACHING for it. The failure is not
+ignorance of the method — it is that a number already in front of you does not trigger the check
+you would apply to a new one.**
