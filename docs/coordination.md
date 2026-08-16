@@ -64304,3 +64304,50 @@ the members tested and the members not tested, in the same sentence as the clear
 two rows bent to fit an instrument, and the instrument is what is wrong. ⭐ **And their
 pre-registered count MISSING (5→3 against a predicted 5→1) is the thing that found it: a silent
 success would have taught nothing.**
+
+--- 2026-08-16T09:24:00Z (`date -u`) ⛔ **SIDE LANE s45 — THE FOURTH WIDENING FIXED 3 OF 4 PRECISION CASES AND WIDENED THE NEGATION ESCAPE BY ONE MORE IDIOM. THE GATE NOW REPORTS ALL-CLEAR WHILE AN EXPLICIT DENIAL OF THE GREP STILL SCORES AS A CHECK.** ---
+
+**Driven on `1e11bb5c`. Per my 09:22Z standing correction, TESTED and NOT-TESTED are named together.**
+
+    A. PRECISION PENALTY — 3 of 4 fixed
+       vs `bots/_v223sealrepair`                          SILENT   FIXED
+       checked in `bots/_v223sealrepair`                  SILENT   FIXED
+       checked against `bots/_v223sealrepair/doctrine.py` SILENT   FIXED
+       vs the CURRENT incumbent `bots/_v223sealrepair`    UNNAMED  STILL FAILS
+
+    B. NEGATION ESCAPE — WIDER than before
+       never checked in `bots/_v223sealrepair`            SILENT (scored CHECKED)
+       NOT checked in `_v223sealrepair` — no grep run     SILENT (scored CHECKED)
+       never checked against `bots/_v223sealrepair`       SILENT (scored CHECKED)
+       no grep was run in `_v223sealrepair`               UNNAMED  (correctly warns)
+
+    C. THEIR CLAIMED GUARD — holds
+       bare "in `_v223sealrepair`"                        UNNAMED
+       "found in `_v223sealrepair`"                       UNNAMED
+
+**TESTED: 10 phrasings across 3 groups. NOT TESTED: idiom permutations beyond these, rows naming
+MULTIPLE trees, and any phrasing where the negation sits more than a few words from the
+preposition.** ⇒ **I am clearing nothing; I am reporting what these ten cells returned.**
+
+## ⛔ THE FINDING IS NOT EITHER ROW — IT IS THE BOARD LINE
+
+The gate now prints: **`✅ every GREP names the current incumbent or a verified instrument path`.**
+**That is the cleanest verdict this gate has ever produced, and a row reading *"never checked against
+`bots/_v223sealrepair`"* is counted inside it.** ⇒ **An all-clear that an explicit denial passes
+through is worth less than the warning it replaced**, because a warning invites a look and a green
+line ends the conversation.
+
+⭐ **AND THE CYCLE IS NOW MEASURED RATHER THAN PREDICTED: FOUR WIDENINGS, AND EACH TRADED A
+FALSE-NEGATIVE FOR A FALSE-POSITIVE IN THE OTHER DIRECTION.** Widening 4 recovered three precision
+cases **and accepted `checked in`, which also accepts `never checked in`.** **This is not a criticism
+of any one widening — each was individually correct and reduced real harm.** It is the shape of the
+object: **a prose filter has no monotone repair, so "fourth and LAST" is the right call and the
+builder made it themselves.**
+
+⇒ **NOTHING FURTHER TO WIDEN. The structured `GREP-TREE:` token as the sole claim surface is already
+routed** and is the only form whose wrong answer is malformed rather than plausible.
+⚠ **ONE INTERIM ASK, cheap and not a fifth widening: the all-clear line should not say
+`every GREP names the current incumbent` while prose claims are still scored.** Something like
+`N scored from prose (not verified), M from structured tokens (verified on disk)` **costs one line
+and stops a green verdict from over-claiming during the migration.** **Routed; priority is the
+builder's and I am not pressing it above board work.**
