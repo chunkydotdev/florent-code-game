@@ -58054,3 +58054,105 @@ The s44 ruling suspending `X3R0_SLOT_RULE` was scoped **"FOR TODAY" / "FOR THIS 
 (2026-08-15)** and has **lapsed by its own wording**. v152 has held ~10.7 h. **No `_x3r0v152`
 staged in `bots/`; no `SCREEN-v140vs152` in `docs/prereg/`** — both checked. Whether the rule
 resumes is Magnus's call; naming that it is un-suspended by wording and un-executed in fact.
+
+--- 2026-08-16T04:48:33Z (`date -u`) BUILDER s45 — OVERNIGHT BOARD READ + VERDICTS (all vs CONTROL `bots/_v223sealrepair` = v140, local fixture DEFF 0.98 unless marked ws2) ---
+
+**Boot state: holder v152 (x3r0) at 1791/#19; control unchanged; monitors+keeper alive;
+`test_instruments` was RED at boot (6 unbacked selftest claims) and is GREEN at `737928b4`
+— running the selftests found a REAL crash in `fleet_dispatch --selftest` (live-state
+dependency + unwrapped call; fixed, mutation-tested both ways; ~86 strides of local seed
+space remain under the 900000 band — a 112-row batch no longer fits in one allocation).**
+
+## VERDICTS (builder-typed, each with its primary)
+
+1. **QUEUE #28 RESOLVED — `LAUNCHER_RESERVE = 80 → 0` IS NULL. The TI gate does not
+   starve the launcher.** RND1SOLO (`_v259rnd1`) 51.30% vs HOMEMAX (`_v255homemax`)
+   51.24%, both n=5,400 COMPLETE; the trees differ by EXACTLY one substantive line
+   (`doctrine.py:965 LAUNCHER_RESERVE 80→0`; the other diff line is a stale comment —
+   verified independently by the non-lane session, by research, and by me at this boot;
+   both trees pin `LOKI_HOMEEARLY_RND = 1` at :1558). Observed contrast 0.06pp against a
+   ±1.87pp band. Retire the row; the launcher's binding constraint is elsewhere.
+
+2. **`rnd1` (home-launcher round gate → r1): REAL BUT SMALL ON WIN SHARE, AND IT SLOWS
+   THE KILL.** Because the #28 contrast is null, the two arms estimate the same quantity:
+   pooled 51.26%, n=10,802, [50.33, 52.19] — excludes 50 (post-hoc pool, disclosed, both
+   cells same fixture/control/window). ⛔ Median kill round: RND1SOLO 215 vs CTRL 205,
+   HOMEMAX 217 vs 210 — **~+10 rounds slower.** A win-share gain at a receding kill is
+   the documented ceiling pattern (raid.py's own hazard table: their conversion is 4×
+   ours by r200-300). NOT a ship candidate alone; usable only where a combination keeps
+   the kill round flat.
+
+3. **TRIO (`_v700trio` = bodyaware+rnd1+spawnlock): DOES NOT SEPARATE FROM BODYAWARE
+   ALONE, AND KILLS 23 ROUNDS LATER. CANCELLED at n=5,806 for arithmetic futility.**
+   TRIO 54.36% [53.07, 55.65] vs BODYAWR 53.70% n=10,800 [52.76, 54.64]: diff +0.55
+   ±1.60. Resolving +0.55 needs ~63k games/arm; the registered n=10,800 floors the band
+   at ±1.33. Median kill round TREAT 232 vs CTRL 209 where bodyaware alone is FLAT
+   (205/207). The non-lane session's queue-head question #1 has its answer: **the trio
+   adds nothing detectable over bodyaware, and what it does add arrives later.**
+   (Cancel marker 04:48:33Z; rows kept; auto_gate had no bar registered for TRIO — its
+   NO-BAR flag is mooted by the cancel.)
+
+4. **catapult solo: NULL at full n.** ws2 F253CATAPUL (`_v253catapult`) 50.02% n=5,400
+   COMPLETE, kill round 204/211. The local CATSOLO auto-cancel (prefix-1000 47.50%) was
+   the trend floor operating correctly on a partial; the full-n remote read supersedes
+   it. Solo board for pure-raid planks now: spawnlock 49.70 · sentshell 48.75 ·
+   collarseal 47.71 · bodyblock 47.26 · catapult 50.02 (null) · catmax 50.65 (null) —
+   **zero winners in six.** Both eco planks still win (bodyaware 53.70, maxstack 52.41).
+
+5. **homeearly (round gate 160→24): NULL, TWICE, AND THE LEG RAN UNREGISTERED —
+   PROCESS BREACH, MINE TO RECORD.** ws2 F250HOMEEAR 50.48% and LNCHERL2 50.32% (both
+   `_v250homeearly` vs v140, n=5,400 each). ⛔ `docs/prereg/SCREEN-homeearly-2026-08-15.md`
+   was drafted s44 06:55Z and NEVER COMMITTED — found untracked at my boot, AFTER both
+   cells completed. Its "committed BEFORE the leg" status line never became true. Both
+   reads are therefore UNREGISTERED SCREEN reads: usable for prioritisation, not bankable
+   as a registered null. The draft is committed now with a boot-found annotation, dated,
+   for the record — not as a lock.
+
+6. **PINRND1 (`_v263pinrnd1`, the pin-first throw aim = SCREEN-launchmax T4, its one
+   untested throttle): REAL NEGATIVE.** 47.59% n=5,405, kill round 215/199, GRAND class
+   42.8%. The drafting agent's modal prediction (DROP band) was correct. launchmax now
+   has all four throttles read: T1 44.67 / T2 43.73 (measured s43) / T3 refuted live /
+   T4 47.59. **Do not fire SCREEN-launchmax; the road is fully priced and every rung
+   drops.**
+
+7. **bodyaware REPLICATES CROSS-HOST, KILL-FLAT.** ws2 BODYAWRR 54.89% n=5,400
+   [53.56, 56.22], kill round 207/209 — reported SEPARATELY from the local 53.70
+   (unregistered-pooling rule; ws2 host term not established: NULL140B null-pair read
+   50.88% [49.55, 52.21], includes 50). Two surfaces, both outside-above, both flat.
+   **bodyaware is the carrying plank and the only confirmed family that wins without
+   slowing the kill.** AWRLNCH (bodyaware+homeearly) 53.95 kill-flat (205/208) remains
+   the best kill-neutral combination on the board.
+
+8. **spawnlock ON TOP of bodyaware buys share by slowing the kill.** AWRSPAWN
+   (`_v269awrspawn`) 55.06% n=5,400 but kill 229/208; RNDSPAWN (`_v270rndspawn`) 51.87%
+   at kill 235/213. Same shape as items 2-3: the stack's share gains above bodyaware
+   keep arriving with +20-27 rounds of kill latency. **The #71 corrected reading (the
+   eco hit-rate explains the CEILING, the prize is in CLOSING) is now confirmed on five
+   independent cells.** Also read, no verdict needed: SENTTHRR 48.30 (negative,
+   replicates local 49.79-direction), GUNAXABLR 50.61 (null), F232COLLARM `_off`
+   ablation 49.94 (null), F257CATMAX 50.65 (null).
+
+## CONSUMPTION RECEIPTS
+* research relay #1 items 1-2: **CONSUMED** — verdicts 1-4 above type them (tree diffs
+  re-verified against primaries; CATRND1L correction ADOPTED: `LOKI_CATAPULT_ON` has two
+  LIVE consumers at raid.py:200/:1061, `_catapult_order` dead at :943 — CATRND1L 51.18%
+  is a partial-dose catapult cell, NOT an rnd1 duplicate; supersedes the non-lane
+  "STILL WRONG" #1 conclusion while keeping its premise).
+* research relay #1 item 3 (Hugging Farce runs a pinned 10-team panel at cap; the
+  5/20min limit charges the CHALLENGER, so our windows are genuinely free): **CONSUMED**
+  — removes the last throughput excuse on `FIXTURE_OF_RECORD`; awaiting your fire order.
+* research relay #1 items 4-5 (v152/v140 rated gap not distinguishable; rated ladder
+  resolves ~+3 elo/match/day at best — never adjudicate a slot on it): **CONSUMED** —
+  banked as the arithmetic under FIXTURE_OF_RECORD; no slot action follows from rated
+  data.
+* research relay #1 item 6 (X3R0_SLOT_RULE suspension lapsed by its own "today"
+  wording): **CONSUMED, HELD FOR MAGNUS** — no slot action without his call; v152 stays
+  per the standing teammate rule.
+* side lane FLAG 3 (auto_gate ledger records full-tape share, not the prefix that fired
+  TREND-FLOOR rows): **CONSUMED** — fix queued this session as specified (a `fired_on`
+  column, TREND-FLOOR rows only, positive control = a tape whose full share is above
+  51.0 while its first-1000 prefix is below; the DECISION path stays untouched).
+* side lane FLAG 4: **CONSUMED** — same numbers read independently off
+  `overnight_read.py`; verdicts above.
+* side lane v153-inactive observation: **CONSUMED, HELD FOR MAGNUS** — the discriminating
+  test is a submit and nobody fires one for curiosity.
