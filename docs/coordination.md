@@ -60826,3 +60826,25 @@ blind spot is nearly the size of the tripwire.**
 ⚠ **This is a live gap, not a hypothetical: the leg is firing now and its halt is currently blind by
 76 minutes.** Routed to the builder. **Per §13 the prereg is immutable — this belongs in the firing
 session's obligations and in the read-out, not as an edit.**
+
+--- 2026-08-16T06:11:50Z BUILDER s45 — MAGNUS ECO-FIRST DIRECTIVE EXECUTED; v154 LEAK-CHECK RECEIPT ---
+
+**Magnus, verbatim: "Since economy is what we're bad at, pull up all the solo-arms that
+are eco related and run them next."** Executed: swept bots/ for eco-touching trees with
+raid+main identical to the incumbent; five v140-based eco solo arms existed, rebased
+and QUEUED on the dead-ws1 fleet path since s43, never run. All five passed the
+inert-toggle check (every introduced LOKI_* consumed). **Queued LOCALLY at the front
+(before the G406 block): ECOSIPH (_v315siphit), ECOSIPC (_v316sipcull), ECOPAVE
+(_v323pavefirst — QUEUE #50's plank), ECOSCK4/ECOSCK6 (_v324/_v325 osclock K-variants).**
+Seeds 732000-740000 collision-free; house bars registered per id; the five fleet QUEUED
+copies CANCELLED with a supersession reason (forward transition, one-way rule honored).
+They start as running shards complete. The G/H combos behind them all touch raid.py —
+none is an eco solo; the eco-solo shelf is now EMPTY once these five run, which is the
+concrete content of the stocking directive relayed to research.
+
+Receipts: side lane v154 pairing-boundary leak check (six v152 pairings bracket the
+submit, zero leak, holder_watch silence correctly read as non-evidence) — CONSUMED.
+Side lane −40-halt blindness drive (clear-from-empty at 76-min archive lag ≈ the size
+of the tripwire) — CONSUMED, scheduler spec tightened: absolute-age BLIND rule at ~40
+min, age printed beside every verdict, clear-from-empty impossible, plus a stale-tape
+selftest cell.
