@@ -268,6 +268,7 @@ def main():
         print(" " + ln.strip())
 
     sync_meta_attrib()
+    sync_unrated_games()
 
 
 def sync_meta_attrib() -> None:
@@ -304,6 +305,33 @@ def sync_meta_attrib() -> None:
         s = ln.strip()
         if s.startswith("wrote ") or s.startswith("versions live"):
             print("  meta_join: " + s)
+
+
+def sync_unrated_games() -> None:
+    """Rebuild `corpus/unrated_games.tsv` — the unrated per-game outcome surface.
+
+    WIRED IN 2026-08-16 (s46), the same session that built the tool, for the
+    same reason sync_meta_attrib was wired in s26: a surface that only a hand
+    run refreshes is the stalest file in corpus/ by construction. This one is
+    what makes LEG-fieldcal readable on its registered RMST300 axis at ANY
+    completion fraction — a leg that keeps playing against a decode frozen at
+    this morning's build would be readable only as of 08:52Z, which is the
+    ship_watch defect wearing a corpus costume. ~seconds on the archive; the
+    tool REFUSES (nonzero rc) on calibration disagreement rather than writing
+    a table whose `won` column might be flipped, so the failure mode is a
+    STALE-and-said-so table, never a wrong one.
+    """
+    r = sh([PY, str(HERE / "unrated_games.py")])
+    if r.returncode != 0:
+        print("  unrated_games: **REFUSED TO REBUILD** — calibration failed. "
+              "The table on disk is now STALE; its ages say so.")
+        for ln in (r.stdout + r.stderr).strip().splitlines()[-6:]:
+            print("    " + ln.strip())
+        return
+    for ln in r.stdout.splitlines():
+        s = ln.strip()
+        if s.startswith("unrated_games.tsv:"):
+            print("  " + s)
 
 
 if __name__ == "__main__":
