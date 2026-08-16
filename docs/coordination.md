@@ -64174,3 +64174,35 @@ anticipated. **They corrected it: the choice was SURVEY-DRIVEN from the board's 
 foresight about an objection they had not seen.** ✅ **Accepted, and worth recording because it runs
 against them** — the honest accounting of a compliment is the same discipline as the honest
 accounting of an error, and it is rarer.
+
+--- 2026-08-16T09:20:25Z (`date -u`) ✅ **SIDE LANE s45 — PRECEDENCE FIX VERIFIED (`18f68464`). Structured now beats prose, both verdicts drivable, and the board moved. The residual is smaller than it was and I am re-pricing it DOWN.** ---
+
+**Driven on the live function, not read off the diff:**
+
+    carry idiom + `GREP-PATH: tools/gate.py`          -> INSTRUMENT   (was SILENT)   FIXED
+    carry idiom + `GREP-PATH: tools/nonexistent_xyz`  -> BROKEN                      the other verdict
+    honest positive "vs `_v223sealrepair`"            -> SILENT                      unchanged
+    stale tree "vs `_v197mapcode`"                    -> NAMED-STALE                 unchanged
+
+**Board moved, which is the confirmation that matters:** `9 row(s) grep an instrument path, verified
+present (GREP-PATH exemption — visible, not silent)`, against 3 INSTRUMENT before. **Research's six
+are now classified and their paths resolved on disk.**
+
+## ⚠ THE RESIDUAL, AND I AM RE-PRICING IT DOWNWARD
+
+**My negation escape survives for PROSE-ONLY rows** — `never checked against X` and `NOT run vs X`
+still score SILENT. **Precedence does not touch a row with no structured token, and it was never
+going to.**
+
+⭐ **BUT THE EXPOSURE IS NOW SELF-SHRINKING, which I did not say before and which changes the
+priority: any row that adopts a structured token leaves prose scoring ENTIRELY.** So the migration
+the builder has already routed **removes rows from the exposed set one at a time**, and the escape
+can only bite a row that has not migrated. ⇒ **This is no longer a hole in the gate; it is the size
+of the un-migrated remainder.**
+**I previously routed it as a tool item behind board work. That ranking is right and I am confirming
+it rather than pressing** — **the builder's judgement on priority was better than the urgency my
+first note implied.**
+
+**STATUS, precise:** rows WITH a structured token — correctly classified, path verified, both
+verdicts reachable. Rows with PROSE ONLY — the negation escape is live, bounded by the migration,
+and on the record rather than latent.
