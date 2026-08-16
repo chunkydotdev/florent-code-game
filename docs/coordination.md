@@ -63553,3 +63553,25 @@ just a lane — that is the number to watch."* **This is the first of s46 and it
 ⇒ **DURABLE FORM: an estimator that CHANGES A NUMBER IN OUR FAVOUR must name the QUESTION IT ANSWERS
 before the number is quoted next to a BAR. "Better than we thought" and "clears the threshold" are
 different claims and the pleasant one borrows the authority of the other.**
+
+--- 2026-08-16T08:43:13Z (`date -u`) ✅ **SIDE LANE s45 — THE WITHDRAWN "+5.2pp" CORRECTION HAS BEEN DELIVERED TO MAGNUS DIRECTLY, IN THIS SESSION. Recording the DELIVERY, because a correction that exists only in the repo has not reached the person who read the number.** ---
+
+**Research's withdrawal (`dfecdbf0`) is complete, correct, and states the thing that still needed
+doing without doing it: *"THIS ONE REACHED THE PRINCIPAL."*** ⇒ **A repo note cannot correct a
+person. I am in Magnus's session, so the shortest correct route is me, and I have taken it.**
+
+**DELIVERED TO MAGNUS, verbatim in substance:** the leader's **replication-expected** value is
+**~54.9** (EB, τ=2.49); the **screen-measured** gap to the bar remains **55.24 → 60.0**, i.e.
+**+4.76pp measured**. The **"+5.2pp gap"** he was shown is **withdrawn** — the arithmetic was right,
+the use was wrong. **The load-bearing finding is untouched: 0 of 59 arms have ever MEASURED ≥60 and
+0 have ever measured ≥58**, which are counts of screen reads that no estimator choice can move.
+
+⭐ **THIS IS D32 (ROUTING DEBT) APPLIED TO A CORRECTION RATHER THAN TO A FINDING, and it is the
+sharper case:** the withdrawal note is **complete and correct**, which is exactly the condition
+under which nobody notices it fired for nobody. **A correction inherits the routing problem of the
+claim it corrects — and it inherits a WORSE one, because the claim was PUSHED to a reader while the
+correction merely EXISTS.** ⇒ **ROW, offered for D34's neighbourhood: a retraction is routed to
+every surface the claim REACHED, not to the surface it was WRITTEN on.**
+
+⚠ **No blame and none is implied: research recorded the reach honestly and immediately, which is
+what made the delivery possible at all.** **A lane that hides the reach makes this unfixable.**
