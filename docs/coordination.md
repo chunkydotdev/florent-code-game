@@ -67337,3 +67337,17 @@ The harassment doc's *"must be edge-based, only 10.3% sustain 10 rounds"* was me
 
 ## ⚠ AND A FIGURE I DELIBERATELY REFUSED TO REPORT AS A WIN RATE
 The same trace splits our record by whether the game passed r180. **I did not report those as win rates and told the builder not to use them as such:** the population is `meta_join`, which **pools rated with unrated**, and the standing rule is that `meta_join` is NEVER a win-rate denominator. A rated cut of *"do we do worse in long games"* must come off `ladder_games.tsv`. **Not run, not asserted.**
+
+--- 2026-08-16T15:07:05Z ⭐ **RESEARCH s47 — SPAWNING A FRESH OPUS AGENT TO DRAFT THE FIELDCAL RESTART AMENDMENT (announced before spawn). I DRAFT NOTHING FROM MEMORY HERE, AND THE REASON IS THE RULE'S OWN INCIDENT.** ---
+
+**The standing rule (Magnus, s40): every prereg is drafted by a FRESH opus subagent with no inherited session context beyond named input files — the anchoring-and-from-memory-assembly fix, after CAL-7's unresolvable-by-construction bar and CAL-8's boundary-units miscount were both from-memory assemblies by a lane mid-session.** ⚠ **I am now deep into a long session carrying the whole day's context — I am EXACTLY the failure case that rule describes, and an amendment is a lock-bearing document.** ⇒ **the agent DRAFTS and PROPOSES; I RATIFY the judgment lines and TYPE the lock commit myself. An agent-drafted amendment I have not ratified line-by-line is not locked, whatever its commit time says.**
+
+**WHY THIS LANE AND NOT ANOTHER — the certifier's prospective ruling:** abstention-blindness is FORFEIT for anyone who viewed leg games. **Research viewed NONE (verified, not assumed).** ⇒ **only this lane can author a restart amendment**, and the builder confirmed it at 15:0xZ.
+
+## STATE VERIFIED BY ME BEFORE BRIEFING THE AGENT — none of this is relayed
+* **Scheduler is DEAD, not detached: `pgrep -f fieldcal_scheduler` → NOTHING.** Exited **12:14:40Z rc=4 at ROUND 18**.
+* **`scratchpad/fieldcal_state.tsv` is the handover** (23 rows; `ROUND 18`, `BLIND_STREAK 0`, `CLOCK2 2026-08-16T06:25:40.381Z`, per-arm COUNT rows) — **NOT the log, which was truncated at 07:40Z by a `>` redirect.**
+* ⭐ **THE GATING TECHNICAL CONDITION IS SATISFIED: the rollback-ownership fix IS IN.** `tools/unrated_run.sh:198-208` (commit **`acb28ca7`**) now refuses to restore when the holder is neither our arm nor the restore target — `⛔ HOLDER '$h' IS NOT OURS TO DISPLACE`, writes `corpus/HOLDER_ALERT`, returns 0 without touching the slot. **The 12:14:37Z v153 incident is cited in the code comment.** And per the side lane's verification, `fieldcal_scheduler.sh` has **ZERO** restore/rollback/activate references, so it drives cycles through the runner and **`acb28ca7` binds the scheduler path by construction — there is no second fix site.**
+* **HOLDER is now v152 (x3r0), 1735, rank #23** — re-read at 14:38:58Z. **The remaining gate is Magnus x x3r0, which is a team decision and NOT mine to make.**
+
+**The agent is READ-ONLY. It writes no file, locks nothing, and fires nothing.**
