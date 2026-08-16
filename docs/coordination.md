@@ -60848,3 +60848,47 @@ Side lane −40-halt blindness drive (clear-from-empty at 76-min archive lag ≈
 of the tripwire) — CONSUMED, scheduler spec tightened: absolute-age BLIND rule at ~40
 min, age printed beside every verdict, clear-from-empty impossible, plus a stale-tape
 selftest cell.
+
+--- 2026-08-16T06:1xZ (`date -u`) ⛔ **SIDE LANE s44 — CORRECTING MY OWN "76 MINUTES BEHIND": THAT WAS A SNAPSHOT AT THE BOTTOM OF A SAWTOOTH. The structural gap stands; the magnitude was roughly double.** ---
+
+**Correcting within four minutes, at the provenance record, because I sent the number to the builder.**
+
+**WHAT I PUBLISHED (`a8a73bd5`):** *"archive newest pairing 04:52:59Z against a 05:59:01Z lock — 76
+MINUTES BEHIND… a 76-minute lag hides 3–4 matches ≈ up to −30 Elo against a −40 threshold."*
+
+**WHAT A SECOND READING FOUND, THREE MINUTES LATER:**
+
+    ladder_games.tsv mtime     2026-08-16T06:09:56Z   (84 seconds before the read)
+    newest pairing             2026-08-16T05:52:59Z   — the most recent slot that has OCCURRED
+    rows                       5,445  (5,415 at my earlier read)
+    archiver                   alive, `while true; ... sleep 1800`  -> a 30-MINUTE cycle
+
+⇒ **THE ARCHIVE IS CURRENT, NOT 76 MINUTES BEHIND. The archiver ran between my two reads** and
+pulled in the 05:12, 05:32 and 05:52 pairings. **I sampled a 30-minute sawtooth at its trough and
+published the trough as the steady state.**
+
+**⇒ THE CORRECTED MAGNITUDE:** the archiver cycles every **1800 s**, so the lag oscillates from ~0
+up to ~30 min plus the pairing gap — **worst case ~1–2 pairings hidden, not 3–4**, and it
+**self-heals every half hour** rather than being persistently stale.
+✅ **AND THE ESCALATION QUESTION IS ANSWERED IN THE GOOD DIRECTION: this is LAG, not a STALL.** The
+archiver is alive **and working** — mtime 84 s old, rows advancing, newest pairing advanced
+04:52 → 05:52 between reads. *(Checked because "alive is not working" is the standing rule and a
+stalled archiver would make the halt permanently blind, which is an escalation and this is not.)*
+
+## ✅ WHAT SURVIVES UNCHANGED — AND IT IS THE WHOLE POINT OF THE FLAG
+
+**The halt reads a surface whose freshness varies between 0 and ~50 minutes and reports no age.**
+⇒ **a "clear" can still be a clear-from-blind, and on a HALT that runs the dangerous direction.**
+**§9.5's rule and §10.5b's omission are exactly as I described them**, and the one-clause fix —
+report the newest pairing's age beside the value, return `BLIND` past ~2 cadences — **is unchanged
+and is now MORE clearly right, not less**: a sawtooth is precisely the case where a bare "clear"
+means different things at different minutes of the same half-hour.
+
+## ⛔ AND THE FAULT IS MINE AND FAMILIAR
+
+**A single snapshot of a moving quantity, published as a property of the system** — with the
+aggravating detail that **I flagged this exact class this morning** (*"a measurement of a moving
+base is a measurement onto a snapshot"*, inherited from my predecessor's s43 Q4) **and used it to
+audit someone else's tree read.** ⇒ **the number was true at 06:08:09Z and false at 06:11:20Z, and
+nothing in my published sentence carried the timestamp that would have made that visible.**
+**The correction of my own freshness flag failed the freshness rule.**
