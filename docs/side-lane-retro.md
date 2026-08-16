@@ -1192,3 +1192,63 @@ they are one question.**
 control pin is unguarded and I DECLINED to escalate it, with reasoning stated so it can be
 overruled** — if a remote result ever disagrees with a local one on the same plank, that is the first
 thing to check.
+
+## ⭐⭐ v1.14 — **FIRING 14. Q3's EIGHT INSTANCES COLLAPSE TO A SINGLE MECHANISM FOR THE FIRST TIME, AND Q6′ GAINS THE FLATTERING-CLAIM-ABOUT-SELF FORM.**
+
+**v1.14 — 2026-08-16 (MINOR: records firing 14, unifies Q3, extends Q6′, adds Q9's ambiguity
+form). Instance: `docs/retro-side-lane-2026-08-16-s44.md`, committed in this same action.**
+
+* **FIRINGS: 14** (s29, s32–s43, s44). **Zero point bumps this session** — every finding was held
+  for the instance or routed straight into `PROGRAMME-drift-watch-2026-08-09.md`, which is the cap
+  working rather than an absence.
+* **⭐⭐ THE HEADLINE: Q3 RECORDED EIGHT PUBLISHED ERRORS AND ALL EIGHT ARE ONE MECHANISM — I READ
+  ONE SURFACE AND REPORTED A PROPERTY OF THE SYSTEM.** Previous runs found the substitution among
+  several faults; **s44 is the first where nothing else appears.** Pairings for a poller · 7 shards
+  for a board · one archive for an id's existence · an account list for the leg's accepts · a local
+  write time for a platform field · one sawtooth sample for a steady state · a prereg's prose for
+  running code · **a pronoun for what Magnus meant.**
+  ⇒ **Q3's two fields (WHAT WAS SEARCHED / WHAT WAS CLAIMED) are now sufficient; the mechanism needs
+  no further sharpening, only counting.**
+* **⛔ THE WORST-SITED ERROR THIS INSTRUMENT HAS RECORDED: a DIRECTIVE ATTRIBUTION, VERBATIM, IN A
+  BOOTED CHECKLIST** — I encoded Magnus's *"this should always be the case actually"* as a
+  mechanisation directive when it answered a question about the wrap rule. **Retracted in three
+  minutes because the row itself carried its reading as falsifiable.** ⇒ **PRACTICE: A DIRECTIVE IS
+  NEVER ENCODED FROM A PRONOUN.** If the subject comes from context rather than being stated,
+  confirm it — asking costs one message, guessing costs a false attribution nobody re-derives.
+* **⭐ Q4's SELF-CATCH MECHANISM IS CONFIRMED AND ITS BLIND SPOT IS NOW EXACT.** All four saves came
+  from an **ILLEGAL VALUE** (`0.00%` across 10,800 games; 4,755 rows in a 210-row window; a commit
+  postdating the clock; a field ABSENT that I had read at boot). **Both errors that escaped to a
+  peer returned PLAUSIBLE values.** ⇒ **the mechanism cannot see a plausible wrong answer, and that
+  is the entire published set.** The counter-practice this earns: **prefer queries whose failure
+  mode is illegal; treat a plausible return as unverified** (s38's domain check, now measured
+  4-for-4 against 0-for-2).
+* **⭐ Q6′ EXTENDS — THE FLATTERING CLAIM ABOUT SELF IS THE SAME OBJECT AS A CLAIM ABOUT A PEER.**
+  Research characterised my retractions as *"six self-caught"*; the buckets say **5 published, 3
+  self-caught, 2 needing a peer.** I re-derived and corrected it — **then had to correct it again
+  when the builder repeated it into a wrap block.** ⇒ **Q6′ now counts favourable claims about THIS
+  LANE, including ones a peer volunteers.** ⛔ **This direction is the more dangerous one: agreement
+  about a person arrives as generosity and is socially expensive to test.**
+* **⭐ Q9 = 3, and one is a NEW SHAPE worth the bump on its own** (research's formulation, their
+  attribution): **A CORRECTION INHERITS THE AMBIGUITY OF THE THING IT CORRECTS.** I over-read a
+  pronoun, struck it correctly, and drew an under-read from the strike — the same pronoun, resolved
+  against a different nearby paragraph. **v1.4 recorded that a correction inherits the AUTHORITY of
+  having been careful; it inherits the AMBIGUITY too.**
+* **Q8 = 7 in code, joint-best — and one of them RETIRED THIS LANE from the leg**: the per-flip leak
+  check I had been performing by hand is now the scheduler's, halting on any arm-played pairing.
+  ⭐ **The best outcome available to this lane is a check that no longer needs it, and it happened.**
+* **Q5: 5 killed pre-publication, 1 redirected, ZERO harm — with one near-miss** (a trap alarm that
+  would have invited `kill -9`, the one signal that actually strands an arm). ⚠ **The standing
+  sentence held only because the recipient audited it:** the attribution flag prompted a formal
+  ruling on a defect that did not exist, and cost nothing solely because the builder read their own
+  code rather than deferring. **"A wrong flag costs a one-line reply" is conditional on the reader.**
+* **LEDGER: prevented ~11 · caused 0 · nearly caused 1. DETECTION ~22/30 · PRESCRIPTION 11/11
+  consumed, 3 improved by consumers.** ⇒ **prescription is the stronger half a FOURTH run**, and
+  this run at the widest margin. v1.11's retirement of the old signature stands.
+
+**SUNSET WATCH: every surviving question fired. Nothing armed.**
+
+**⚠ CARRIED TO v1.15 — one open, and it is not mine to close:** the **standing scope of the
+builder-wraps-then-I-wrap rule** is recorded UNRESOLVED in `docs/two-session-protocol.md`, with
+split provenance (builder→research verified in their window; builder→side-lane reported by me and
+unverified by them). **Today's instance is resolved; whether it binds future side-lane sessions
+awaits Magnus.** A successor must not read "unresolved" as "no wrap trigger exists".
