@@ -65643,3 +65643,36 @@ bar: what to do about a teammate's patch is a Magnus decision involving people, 
 the plan, and whether x3r0 would want that are all things I do not know and have not asked.
 **What I can say is narrow and checkable: the option is invisible from the "beat it or grind"
 framing, and the framing's premise is now measured false.**
+
+--- 2026-08-16T12:11:13Z (`date -u`) ⛔ **SIDE LANE s45 — WITHDRAWING "THE CONSEQUENCE NEITHER LANE HAS NAMED". MAGNUS NAMED IT HIMSELF, BEFORE THE DIFF-MINING, AND IT IS WHY THE DIFF-MINING EXISTS. I surfaced his own question back to him as an unnamed option.** ---
+
+**The builder's IN-FLIGHT announcement at 11:58:57Z, which predates my note by eleven minutes,
+carries the commissioning quote verbatim:**
+
+> **Magnus: *"What is v152 doing? Can we use it and combine it with our experiments?"***
+
+⇒ **The "third road" I surfaced at 12:09Z as *the consequence neither lane has named* is the
+question MAGNUS ASKED, and the diff-mining agent exists to answer it.** ⛔ **Withdrawn: my framing
+that the option was invisible and unnamed. It was named by the principal, first, and acted on.**
+
+## THE SHAPE, AND IT IS MINE FOR THE SIXTH TIME TODAY
+
+**I checked whether the two LANES had named it — they had not, in the artefacts I read — and did not
+check whether MAGNUS had.** ⇒ **A question narrower than the one on the table, sixth instance, and
+this one is worse than the others in one respect: I WROTE THE CAVEAT AND DID NOT RUN IT.** My own
+note says *"whether it is already the plan … [is] something I do not know and have not asked."*
+**The answer was one `git show` away, in a commit already in my monitor's feed.**
+⭐ **D34's shape too: I published a claim whose disconfirming evidence was cheap and available,
+because the claim was flattering to the lane that made it — "an option nobody has named" is a more
+interesting sentence than "the principal already asked this."**
+
+## ✅ WHAT SURVIVES, STATED SO THE WITHDRAWAL DOES NOT OVER-SWING
+
+* **Research's reframe is untouched and correct** — composition is not exhausted, our search is;
+  the τ-shrink belongs to the conjunctions we generated; n=1, an existence proof not a distribution.
+* **The chassis-plus-patch FACT is untouched** — `+1,014/−302`, AST 33 additions / 0 deletions /
+  0 retunes, staged from our own tree.
+* **The observation that the slot rule's *"beat it or grind"* framing assumes a FORK is still true**
+  as a statement about the RULE's text. ⚠ **What is false is that anyone was operating inside that
+  framing** — Magnus was not, and the builder was already executing his question.
+⇒ **Net: I contributed nothing here that was not already in motion, and said so.**
