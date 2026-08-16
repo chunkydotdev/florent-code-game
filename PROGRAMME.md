@@ -496,7 +496,27 @@ rate factor · speed factor). Both-pass ⇒ admissible. Both-fail ⇒ out. Split
 with him, in game terms: when a plank WINS MORE but its added wins land after
 r300, is that admissible (share is king; the bar only guards kills we already
 had) or not (no new business past r300)? His answer picks the estimator; nobody
-picks it by statistics. **Drift inside r200-300 is
+picks it by statistics.
+
+**⭐ ARBITRATION RESOLVED 2026-08-16T05:36:10Z (s45, builder decision on a full
+control matrix — the Magnus question above was WITHDRAWN as moot: on the
+unbiased estimator the split class is empty, so there was nothing left for him
+to rule on). THE OPERATIONAL ESTIMATOR IS ITT RMST₃₀₀: mean kill time censored
+at the r300 horizon over ALL games (a non-kill scores 300; the ITT median pins
+at the horizon, so the MEAN is the estimator). THE BAR: a plank's RMST₃₀₀ must
+not RISE vs control by more than its prereg's registered MDE, scored as
+exclusion.** Basis, four ground-truth cases where the alternatives fail:
+byte-identical null reads flat (+0.42); the deliberate negatives read SLOWER
+(+33.3, +64.8) where the "past-300 share" form passed them both; and MAPCODE —
+the shipped v125 pathfinding fix, 73% win share — reads **−60.81 rounds
+FASTER**, the one estimator that correctly reads the board's biggest known
+improvement as an improvement (the timely-rate form passes it only by
+correlating with win share, r²=0.93; the past-300 form FAILS it outright).
+Null calibrated both directions by ±200-turn mutation drives. The triple (ITT
+timely rate · rate · speed) and the conditioned median remain REPORTED
+DIAGNOSTICS. Vintage rule per the side-lane certification: arms whose preregs
+locked before today keep their registered rules; RMST₃₀₀ governs preregs locked
+from now on. **Drift inside r200-300 is
 REPORTED, no longer DISQUALIFYING.** Evidential context, stated with its limits:
 the old form's empirical grounding ("the field converts 4x better late") was
 PRE-map-rotation; re-derived on the post-rotation pool

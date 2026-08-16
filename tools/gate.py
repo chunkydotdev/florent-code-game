@@ -26,6 +26,12 @@ Usage:
                                   --opponents bots/_det_opp_v63 bots/_det_opp_v78 \
                                   [--maps hive atoll ...] [--allow-self-play REASON]
 
+    .venv/bin/python tools/gate.py --selftest
+        Fixture-driven check of the enforcement path (LINE_DIRS on-line/
+        off-line, the escape downgrade, the parse-count canary, the
+        duplicate-field hazard, the missing-file WARN). No battery, no
+        network, no live PROGRAMME.md.
+
 Exit code 0 = cleared to run a battery. Non-zero = do not measure.
 
 EVERY INVOCATION IS TAPED to gate_invocations.tsv (tools/escape_tape.py),
@@ -207,7 +213,7 @@ def check_determinism(bots: list[Path], pooled_not_paired: bool = False) -> None
                 f"COPY before measuring.")
 
 
-def check_programme(plank: Path, allow_off: bool) -> None:
+def check_programme(plank: Path, allow_off: bool, prog_path: Path | None = None) -> None:
     """Refuse a battery that is not on the ACTIVE PROGRAMME.
 
     WHY THIS IS A GATE AND NOT A NOTE. The s22 LOKI-3 result was recorded in
@@ -219,8 +225,14 @@ def check_programme(plank: Path, allow_off: bool) -> None:
     battery, where it cannot be forgotten.
 
     Reads PROGRAMME.md. Edit that file only on Magnus's directive.
+
+    `prog_path` overrides which file is read; DEFAULT UNCHANGED (ROOT /
+    "PROGRAMME.md"). Exists so `selftest()` below can drive this exact function
+    against a FIXTURE programme instead of the live one -- a check whose
+    verdict depends on today's LINE_DIRS is a defect this repo has already
+    fixed twice (timestamps, DEFF constants).
     """
-    prog = ROOT / "PROGRAMME.md"
+    prog = prog_path if prog_path is not None else ROOT / "PROGRAMME.md"
     if not prog.exists():
         WARN.append("no PROGRAMME.md -- no active line is being enforced")
         return
@@ -374,13 +386,162 @@ def check_platform_instruments(plank: Path, parent: Path, skip: bool) -> None:
     print("  NOTE: this checks CPU fidelity ONLY. It does NOT make the pool foreign.")
 
 
+# ═════════════════════════════════════════════════════════════════════════════
+# SELFTEST -- the enforcement path, on the SHIPPED function, against FIXTURES
+# ═════════════════════════════════════════════════════════════════════════════
+# ⛔ WHY THIS EXISTS. A side-lane audit found gate.py was the only significant
+# tool in tools/ with NO selftest and NO test coverage -- the LINE_DIRS matching
+# that decides CLEARED vs DO NOT MEASURE was exercised by nothing but production
+# use. This repo's own rule: "every guard must be drivable to BOTH verdicts,
+# and a check never observed to fail has not been seen to check."
+#
+# SCOPE. Covers check_programme() -- the ENFORCEMENT contract named in the
+# audit: on-line pass, off-line refusal (and its escape downgrade), the
+# parse-count canary, the duplicate-field hazard, and the missing-file path.
+# check_determinism(), check_pool_identity(), check_control_equivalence() and
+# check_platform_instruments() all shell out to `fcode` (real subprocess, real
+# platform, real rate-limited slots) and are not covered here -- fixturing them
+# would mean mocking the platform's own responses, which tests the mock, not
+# the gate. That is a real gap, not a hidden one: named so a future selftest
+# extension knows what is still uncovered rather than assuming full coverage.
+#
+# FIXTURE-DRIVEN, NOT LIVE. Every cell builds its own temp PROGRAMME.md and
+# passes it in via `prog_path` -- never reads the repo's real PROGRAMME.md.
+# The live file's LINE_DIRS changes with every plank rotation; a selftest that
+# read it would pass or fail depending on the day, which is a defect this repo
+# has fixed twice already (interpolated timestamps, a DEFF constant computed
+# from the mutable pool). Reference constants below are typed independently of
+# the regex they check, not copied out of a run.
+def selftest() -> int:
+    import io
+    import shutil
+    import tempfile
+    from contextlib import redirect_stdout
+
+    fails: list[str] = []
+    n_cells = 0
+
+    def chk(label: str, got, want) -> None:
+        nonlocal n_cells
+        n_cells += 1
+        if got == want:
+            print(f"  [ok]   {label:<66} -> {got}")
+        else:
+            print(f"  [FAIL] {label:<66} -> {got!r} (want {want!r})")
+            fails.append(label)
+
+    tmp = Path(tempfile.mkdtemp(prefix="gate_selftest_"))
+
+    # A minimal but real-shaped programme block: 4-space indent, the two
+    # fields check_programme() actually reads (LINE, LINE_DIRS), and nothing
+    # else -- so a cell that adds one hazardous line is an isolated diff
+    # against a known-clean baseline, not a rewrite of the whole fixture.
+    BASE = (
+        "# fixture programme -- selftest only, never the live PROGRAMME.md\n"
+        "\n"
+        "    LINE: fixtline\n"
+        "    LINE_DIRS: bots/_fixt* bots/_othr?\n"
+        "    INCUMBENT: bots/_fixt_incumbent\n"
+        "    INCUMBENT_FROZEN: no\n"
+        "    PRIMARY_CURRENCY: game_share\n"
+        "    WIN_RATE_IS_VERDICT: yes\n"
+    )
+
+    def run(cell: str, text: str | None, plank_name: str, allow_off: bool = False):
+        """Call the SHIPPED check_programme() against a fixture and return
+        (new_fail, new_warn, printed) -- the FAIL/WARN entries and stdout THIS
+        call produced, isolated from every other cell.
+
+        FAIL/WARN are module-level lists check_programme() APPENDS to; that
+        append IS the enforcement (main() reads len(FAIL) to pick the exit
+        code). Snapshot-and-diff around the call so cells don't see each
+        other's residue, then delete what this call added so the module is
+        clean for the next cell and for any real run afterward.
+        `text is None` -> no PROGRAMME.md is written at all, for the
+        missing-file cell.
+        """
+        cell_dir = tmp / cell
+        cell_dir.mkdir()
+        prog_path = cell_dir / "PROGRAMME.md"
+        if text is not None:
+            prog_path.write_text(text)
+        fail_before, warn_before = len(FAIL), len(WARN)
+        buf = io.StringIO()
+        with redirect_stdout(buf):
+            check_programme(Path(plank_name), allow_off, prog_path=prog_path)
+        new_fail, new_warn = FAIL[fail_before:], WARN[warn_before:]
+        del FAIL[fail_before:]
+        del WARN[warn_before:]
+        return new_fail, new_warn, buf.getvalue()
+
+    print("── a: plank INSIDE the fixture line's LINE_DIRS -- must clear ──────────")
+    f, w, out = run("a_online", BASE, "bots/_fixt_v7")
+    chk("on-line plank: no FAIL", len(f), 0)
+    chk("on-line plank: no WARN", len(w), 0)
+    chk("on-line plank: prints 'ON the <line> line'", "ON the fixtline line" in out, True)
+
+    print("\n── b: plank OUTSIDE LINE_DIRS -- the refusal must actually FIRE ────────")
+    f, w, out = run("b_offline", BASE, "bots/_totally_unrelated")
+    chk("off-line plank, no escape: exactly 1 FAIL", len(f), 1)
+    chk("...and it is the OFF PROGRAMME refusal", "OFF PROGRAMME" in (f[0] if f else ""), True)
+    f2, w2, _ = run("b_offline_esc", BASE, "bots/_totally_unrelated", allow_off=True)
+    chk("off-line plank, --off-programme granted: FAIL is gone", len(f2), 0)
+    chk("...refusal downgrades to WARN, is NOT silenced",
+        bool(w2) and "OFF PROGRAMME" in w2[0], True)
+
+    print("\n── c: parse-count canary -- an unparseable field name -> WARN ──────────")
+    # A hyphenated name matches the loose _declared count ([^\s:]+) but not the
+    # strict parser class ([A-Z_0-9]+), so it is declared but never parsed --
+    # exactly the KILL-WINDOW-RND failure mode the inline comment documents.
+    bad_name = BASE + "    KILL-WINDOW-RND: 250\n"
+    f, w, out = run("c_badname", bad_name, "bots/_fixt_v7")
+    chk("unparseable field name: prints the parse-count WARN",
+        "parsed" in out and "declared" in out, True)
+    f, w, out = run("c_clean", BASE, "bots/_fixt_v7")
+    chk("clean block: parse-count WARN does NOT fire",
+        "parsed" in out and "declared" in out, False)
+
+    print("\n── d: duplicate-field hazard -- an indented duplicate -> WARN ──────────")
+    dupe = BASE + "    LINE_DIRS: bots/_someone_elses_pattern*\n"
+    f, w, out = run("d_dupe", dupe, "bots/_fixt_v7")
+    chk("duplicate field: prints the DUPLICATE WARN", "DUPLICATE" in out, True)
+    f, w, out = run("d_clean", BASE, "bots/_fixt_v7")
+    chk("clean block: DUPLICATE WARN does NOT fire", "DUPLICATE" in out, False)
+
+    print("\n── e: missing PROGRAMME file -> the documented WARN, not a crash ───────")
+    f, w, out = run("e_missing", None, "bots/_fixt_v7")
+    chk("missing PROGRAMME.md: no FAIL (no crash)", len(f), 0)
+    chk("...WARN fires instead", bool(w) and "no PROGRAMME.md" in w[0], True)
+
+    shutil.rmtree(tmp, ignore_errors=True)
+    print()
+    if fails:
+        print(f"SELFTEST FAIL -- {len(fails)}/{n_cells} check(s): " + "; ".join(fails))
+        return 1
+    print(f"SELFTEST PASS -- {n_cells} cells "
+          f"(a: on-line clears / b: off-line refuses + escape downgrades without "
+          f"silencing / c: parse-count canary fires on a bad name, not on a clean "
+          f"block / d: duplicate-field WARN fires on a dupe, not on a clean block / "
+          f"e: missing file WARNs, does not crash)")
+    return 0
+
+
 def main() -> int:
     ap = argparse.ArgumentParser(description=__doc__,
                                  formatter_class=argparse.RawDescriptionHelpFormatter)
-    ap.add_argument("--plank", required=True)
-    ap.add_argument("--control", required=True)
-    ap.add_argument("--parent", required=True)
-    ap.add_argument("--opponents", nargs="+", required=True)
+    # NOT required=True at the argparse level -- --selftest must be runnable
+    # with none of these present. Enforced by hand just below the parse, only
+    # on the non-selftest path.
+    ap.add_argument("--plank")
+    ap.add_argument("--control")
+    ap.add_argument("--parent")
+    ap.add_argument("--opponents", nargs="+")
+    ap.add_argument("--selftest", action="store_true",
+                    help="fixture-driven check of the enforcement path "
+                         "(LINE_DIRS on-line/off-line + escape downgrade, "
+                         "parse-count canary, duplicate-field hazard, "
+                         "missing-file WARN). No PROGRAMME.md, network, or "
+                         "battery required; ignores every other flag.")
     ap.add_argument("--maps", nargs="+",
                     default=["hive", "atoll", "meander", "archipelago", "saga", "nordkap"])
     # ⛔ ALL FOUR ESCAPES TAKE A REASON. `nargs="?"` with `const=""` keeps the
@@ -404,6 +565,15 @@ def main() -> int:
                     help="ESCAPE, TAKES A REASON: acknowledge a self-play pool and "
                          "proceed (result is SAFETY only)")
     a = ap.parse_args()
+
+    if a.selftest:
+        return selftest()
+
+    missing = [f"--{n}" for n, v in (
+        ("plank", a.plank), ("control", a.control), ("parent", a.parent),
+        ("opponents", a.opponents)) if not v]
+    if missing:
+        ap.error(f"the following arguments are required: {', '.join(missing)}")
 
     plank, control, parent = Path(a.plank), Path(a.control), Path(a.parent)
     opponents = [Path(o) for o in a.opponents]

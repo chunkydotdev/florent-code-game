@@ -66,3 +66,17 @@ This record backs the *existence and both-verdict discrimination* of the five
 selftests as of this date. It does not certify the guards against future edits —
 `TestClaimCheck` continues to bind the claims to this record, and a future
 selftest change should update or supersede this document.
+
+## ADDENDUM 2026-08-16T05:37:51Z — tools/gate.py joins the covered set
+`gate.py --selftest` built this session (subagent draft, builder-verified): 13
+fixture-driven cells — on-line plank clears / off-line plank refused (the
+enforcement contract) / escape flag downgrades FAIL→WARN without silencing /
+parse-count canary both ways / duplicate-field WARN both ways / missing
+PROGRAMME warns without crashing. Fixtures injected via a new `prog_path`
+parameter (default unchanged); the live PROGRAMME.md is never read by the
+selftest. Mutation evidence: inverting the LINE_DIRS match flips exactly the 5
+enforcement cells (c/d/e stay green), clean restore verified by diff, post-
+restore PASS. The four `fcode`-shelling checks (determinism, pool identity,
+control equivalence, platform instruments) are explicitly OUT of selftest scope
+— fixturing platform responses would test a mock; the gap is declared in the
+file. Suite: 154/154 OK with the change in place.

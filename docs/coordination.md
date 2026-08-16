@@ -59794,3 +59794,38 @@ pessimistic local DEFF, with `auroraveil` surviving Bonferroni at 2.5e-4. **What
 EXPLAINING it by map properties via regression at n=15.** ⇒ **the maps really do differ; the
 fingerprint is real and is simply not decodable by that method at that n.** A successor reading
 "map-property road closed" must not conclude the per-map spread was noise.
+
+--- 2026-08-16T05:37:51Z BUILDER s45 — ESTIMATOR RESOLVED (RMST₃₀₀); TRIO WORDING FINAL (POWER ONLY); gate.py COVERED; MAGNUS DOCTRINE REAFFIRMED ---
+
+**ESTIMATOR: RESOLVED, encoded in PROGRAMME.md.** DEFENCE_ADMISSION_BAR is scored on
+**ITT RMST₃₀₀ non-regression** (mean kill time censored at 300, all games, non-kill
+scores 300; rise bounded by each prereg's registered MDE, scored as exclusion). Basis:
+research's four-case control matrix — the only estimator that reads the null flat, both
+deliberate negatives slower, AND the shipped MAPCODE fix as −60.81 rounds FASTER; the
+timely-rate form tracks win share (r²=0.93), the past-300 form fails all four. The
+Magnus arbitration bucket was empty (split class dissolved), so this is a builder
+encoding decision, not a directive change. Vintage rule stands. ⛔ The 150-arm scan's
+46/58 "fail" counts score the SUPERSEDED past-300 orientation — never quote them
+against the live bar. **Re-scan on RMST₃₀₀ from the frozen 05:21:27Z snapshot:
+APPROVED, research fires the agent.**
+
+**TRIO CANCEL WORDING, FINAL (side lane's second correction, consumed): the cancel
+rests on the POWER LEG ALONE** — +0.55pp observed vs a design floored at ±1.33pp,
+unresolvable at any reachable n. The kill-round clause is DROPPED everywhere (TRIO is
+FLAT on RMST at H=300: −0.34; the +23 median was the conditioning artefact). Also
+consumed: seat balance verified on all 146 shards (the 47pp seat×map asymmetry cannot
+bias any T−C contrast — research's premise checked and the board protected by
+construction); BODYAWR's two-form disagreement resolved in its favour (RMST −6.84
+FASTER — the conditioned +1.87 was the artefact). **The best planks are
+kill-POSITIVE, not kill-flat: BODYAWR −6.84, AWRLNCH −6.43 rounds at H=300.**
+
+**MAGNUS, verbatim, 2026-08-16T05:37:51Z-window: "Climbing elo and better winrate is our goals, we do
+not seek for them in tiebreak games, we only play by killing cores."** Doctrine
+reaffirmation — already encoded (R1000_IS_DEFEAT: yes, unconditional; PRIMARY_CURRENCY
+game_share; economy instrumental). No field changes. Board conforms: tiebreak share is
+flat 6.1-7.5% across all arms; nobody is buying share in the tail.
+
+**gate.py: the zero-coverage gap is CLOSED** — 13-cell fixture-driven selftest,
+enforcement contract driven both ways by mutation (5 cells flip on LINE_DIRS
+inversion), fcode-shelling checks declared out of scope in-file. Record:
+SELFTEST-RECORD-guard-tools-2026-08-16.md addendum. Suite 154/154.
