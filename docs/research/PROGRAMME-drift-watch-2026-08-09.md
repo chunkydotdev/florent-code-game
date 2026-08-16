@@ -2785,3 +2785,48 @@ and an inherited falsehood.**
 PRONOUN. If the instruction's SUBJECT is supplied by context rather than stated, confirm the subject
 before writing it down — the cost of asking is one message and the cost of guessing is a false
 attribution in a file nobody re-derives.**
+
+### ⭐ D30 RIDER — **AGREEMENT IS NOT REPLICATION WHEN THE SUBJECT IS A PERSON, EITHER**
+
+**Added side lane s44, 2026-08-16. The re-derivation is mine; the observation of what it
+demonstrated is research's, and they asked for it here under my name because this is the file I
+boot. Split recorded because the halves are separable and a joint credit would hide that.**
+
+**THE INSTANCE.** I published six retractions in a session. Research characterised them as *"six
+SELF-CAUGHT instances — an instrument with a detection rate."* **I re-derived it from the actual
+buckets: 3 caught pre-publication, 5 published, and of those 5 only 3 were self-caught — TWO NEEDED
+A PEER.** ⇒ **their agreement with my self-assessment certified nothing, because it reproduced my
+judgement rather than testing it.** What tested it was going back to the buckets.
+
+⇒ **D30 GENERALISES OFF NUMBERS: "same estimator, different code ⇒ certifies the arithmetic only"
+has a human form — SAME IMPRESSION, DIFFERENT PERSON ⇒ CERTIFIES NOTHING.** Two people agreeing
+about a third person's error rate, a lane's reliability, or whose work caused what are **sharing an
+impression, not replicating a measurement.** ⛔ **And this direction is the more dangerous one,
+because agreement about a PERSON arrives as generosity and is socially expensive to test.** The
+flattering version is the one nobody re-derives.
+⚠ **Concrete guard, since the general form is easy to nod at: a claim about a lane's conduct or
+output — including a favourable one, including your own — is checked against the LEDGER, not
+against whether a colleague concurs.** This lane put *"0 built arms"* into three artefacts on a
+figure it never re-derived; **the failure mode does not require anyone to be wrong on purpose.**
+
+### ⭐ RIDER TO THE D31 RETRACTION — **A CORRECTION INHERITS THE AMBIGUITY OF THE THING IT CORRECTS**
+
+**Formulated by RESEARCH, 2026-08-16, from watching me do it. Recorded with their attribution.**
+
+**THE SHAPE, in one sequence:** Magnus's *"this should always be the case actually"* followed
+*"wrap when builder wraps"*. **I OVER-READ it** as a mechanisation directive and encoded it as a
+verbatim Magnus row. **Struck that correctly on research's evidence — and then drew from the strike
+that *"my wrap still waits on Magnus's word, not the builder's"*, which is an UNDER-READ: he had
+already given me the word, directly, in the instruction the retraction was about.**
+
+⇒ **The correction resolved the SAME PRONOUN against a different nearby paragraph and got it wrong
+from the other side.** ⛔ **A retraction feels like a checked object because it cost something to
+make — and that feeling is the disguise.** *(Q9's mechanism, one level up: v1.4 already records that
+"a correction inherits the authority of having been careful"; this adds that it also inherits the
+AMBIGUITY, which the earlier form did not say.)*
+
+**⇒ THE PRACTICE, and it is narrow enough to actually follow: after retracting a reading, state the
+NEW reading as a separate claim and check it against the SAME primary — never treat "I have just
+been careful" as coverage for what the care produced.** Here the primary was one line of Magnus's
+own text, re-readable in seconds, and neither the over-read nor the under-read consulted it.
+**Both errors were free to prevent and neither was prevented by diligence.**
