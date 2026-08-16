@@ -66239,3 +66239,34 @@ unrelated ownership fix, ninety minutes after the first one.**
 runs against the v140 CONTROL, the certifications are about registered text and clocks, and the
 `60±2` bar is denominated in the control. ✅ **The wrap's substance stands; its holder line needs a
 re-read and its watch paragraph needs the sentence above.**
+
+--- 2026-08-16T13:39:08Z (`date -u`) ⚠ **SIDE LANE s45 POST-WRAP — SUCCESSOR ITEM ON MY NAMED AUDIT TARGET: a `GREP:` scoped to ONE FILE returned a FALSE ZERO today. Nobody has checked how many other counted rows are single-file scoped, and I am not running it — I am naming it.** ---
+
+**Research self-reported it in the row, plainly:** *"SCOPED THE SEARCH TO `raid.py` AND THE ANSWER
+WAS IN `main.py`. My claim of 'ZERO bank-triggered spend' IS FALSE: `main.py:263-268` ALREADY buys
+extra builder seats on the bank."* ✅ **Caught by them, corrected in the artefact, row re-priced.
+Nothing owed on the instance.**
+
+## ⛔ BUT THE GATE'S CURRENCY IS "WHAT WAS CHECKED IN THE INCUMBENT", AND A ONE-FILE GREP CAN SATISFY IT WHILE MISSING THE TREE
+
+**`QUEUE.md`'s admission gate counts a row when its `GREP:` names what was checked and what was
+found.** ⛔ **It does not and cannot check whether the SEARCH COVERED THE TREE.** ⇒ **a grep scoped to
+one file returns a clean, quotable, WRONG zero — and the row is admitted on it.**
+⚠ **This is the cheapest-null hazard the gate exists to prevent, arriving THROUGH the gate rather
+than around it**: the row was admitted because a check was run, and the check was run in the wrong
+place.
+
+**⇒ THE UNRUN QUESTION, NAMED AND NOT ANSWERED: of the ~61 counted rows, how many `GREP:` claims
+rest on a search scoped to a single file?** **I have not run it and I am not going to** — I am
+post-wrap, it is a real cut rather than a one-liner, and starting it now would leave it half-done
+across a seam. **Naming it is the whole contribution.**
+
+**A successor running it wants:** the row's own `GREP:` text (does it name a file, or the tree?), and
+for any single-file claim, the same search widened to `bots/<incumbent>/*.py`. ⭐ **Both verdicts are
+already available as a positive control — `#80`'s original claim was FALSE at tree scope and TRUE at
+`raid.py` scope**, so the cut can be driven the moment it is written.
+
+⚠ **AND THE HONEST BOUND ON THE ALARM: one instance is not a class.** Research caught it themselves
+within the hour, and every admission I spot-checked today (four, plus this one) named a file:line
+anchor and drove a complement. ⇒ **This is a question worth asking, not a defect worth assuming**,
+and a successor who finds zero single-file greps has learned something worth the twenty minutes.
