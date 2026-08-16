@@ -64,6 +64,151 @@ ROOT = Path(__file__).resolve().parent.parent
 FCODE = ROOT / ".venv" / "bin" / "fcode"
 
 
+# ===========================================================================
+# THE NEUTRALISE-THEN-COMPARE PROCEDURE (s47 wrap debt 17, 2026-08-16)
+# ===========================================================================
+# ⛔ THE FACT THIS ENFORCES, read off the incumbent's own source rather than
+# argued: `bots/_v468kladturbo/main.py:399` is
+#
+#     self.spawn_salt = random.Random().randrange(97) if NOISE_ON else 0
+#
+# `random.Random()` takes NO ARGUMENT, so it seeds from the OS. The engine's
+# `--seed` has never reached our spawn ordering. `NOISE_ON = True` therefore
+# makes a run UNREPRODUCIBLE, and any flag-off or matched-pair local
+# equivalence check run in that state is measuring the RNG, not the flag.
+#
+# ⛔ AND THE OTHER HALF, or the remedy destroys the battery it fixes:
+# `NOISE_ON = False` on BOTH sides makes games DEGENERATE — s32 measured
+# 1 distinct outcome across 6 distinct seeds on 3 of 4 maps, i.e. a 1,024-row
+# battery carrying ~8-16 distinct games while every denominator still printed
+# 1,024. False => identical, True => unpairable. Neither is free.
+#
+# THE PROCEDURE, in order, and step 3 is the one people skip:
+#   1. COPY the bots. Never edit a canonical `bots/` dir for a measurement.
+#   2. Set NOISE_ON = False in EVERY side, ours and the opponent's, and use a
+#      deterministic opponent (bots/opp_v63 is the measured reference;
+#      bots/starter is NOT). Run at --tle 0.
+#   3. RUN tools/effective_n.py ON THE RESULT. Pinning the RNG is what CAUSES
+#      seed degeneracy, so the pinned battery is exactly the one whose
+#      effective n must be measured before any denominator is quoted.
+#   4. If the design is POOLED rather than paired, do not pin at all — take
+#      gate.py's `--pooled-not-paired` escape with a typed reason instead.
+#
+# This module now REPORTS the state at startup instead of silently assuming
+# it. Report, not refusal: det.py is also used to MEASURE how nondeterministic
+# a pair is, and a hard refusal would forbid its own diagnostic use. Set
+# DET_REQUIRE_DETERMINISM=1 to turn the report into an exit-2 refusal.
+NOISE_TRUE_MARK = "NOISE_ON = True"
+NOISE_ANY_MARK = "NOISE_ON"
+RANDOM_MARK = "random."
+
+
+def _bot_sources(bot: Path) -> str:
+    """Every top-level .py in a bot dir, concatenated. Same shape as
+    gate.py::_src — deliberately, so the two cannot disagree about what
+    'the bot's source' means."""
+    try:
+        return "\n".join(p.read_text(errors="replace")
+                         for p in sorted(Path(bot).glob("*.py")))
+    except OSError:
+        return ""
+
+
+def determinism_report(bots) -> list[str]:
+    """One line per side that CANNOT be paired against. Empty list == clean."""
+    bad = []
+    for b in bots:
+        s = _bot_sources(Path(b))
+        name = Path(b).name
+        if not s:
+            bad.append(f"{name}: no readable *.py — cannot verify determinism")
+        elif NOISE_TRUE_MARK in s:
+            bad.append(f"{name}: NOISE_ON = True — spawn_salt reseeds from the OS "
+                       f"every match and --seed does not reach it; this run is "
+                       f"NOT PAIRED")
+        elif NOISE_ANY_MARK not in s and RANDOM_MARK in s:
+            bad.append(f"{name}: calls random.* and declares no NOISE_ON switch — "
+                       f"a foreign or older lineage; pin its seed in a COPY or "
+                       f"exclude it")
+    return bad
+
+
+def _print_determinism_banner(bots) -> None:
+    bad = determinism_report(bots)
+    if not bad:
+        print("DETERMINISM: all sides pinned (no NOISE_ON = True, no unswitched "
+              "random.*). Paired reading is licensed — still run "
+              "tools/effective_n.py on the output, because PINNING is what "
+              "causes seed degeneracy.", file=sys.stderr)
+        return
+    print("⛔ DETERMINISM: THIS RUN IS NOT PAIRED. Flips below measure the RNG, "
+          "not the treatment:", file=sys.stderr)
+    for line in bad:
+        print(f"    {line}", file=sys.stderr)
+    print("    Procedure: copy the bots, set NOISE_ON = False on EVERY side, "
+          "rerun, then measure tools/effective_n.py — see this file's header. "
+          "Set DET_REQUIRE_DETERMINISM=1 to make this a refusal.", file=sys.stderr)
+    if os.environ.get("DET_REQUIRE_DETERMINISM") == "1":
+        sys.exit(2)
+
+
+def _selftest() -> int:
+    """Drive determinism_report to BOTH verdicts on constructed bot dirs.
+
+    A precondition check that has only ever seen the clean case has not been
+    seen to check — and this one guards a claim (`the run is paired`) that is
+    invisible in every number det.py prints."""
+    import tempfile
+    bad = 0
+
+    def chk(label, got, want):
+        nonlocal bad
+        ok = got == want
+        if not ok:
+            bad += 1
+        print(f"  {'PASS' if ok else 'FAIL'}  {label:<62} -> {got!r}"
+              + ("" if ok else f" (want {want!r})"))
+
+    with tempfile.TemporaryDirectory() as td:
+        t = Path(td)
+        noisy = t / "_noisy"; noisy.mkdir()
+        (noisy / "doctrine.py").write_text("NOISE_ON = True\n")
+        (noisy / "main.py").write_text(
+            "import random\nx = random.Random().randrange(97)\n")
+        pinned = t / "_pinned"; pinned.mkdir()
+        (pinned / "doctrine.py").write_text("NOISE_ON = False\n")
+        (pinned / "main.py").write_text(
+            "import random\nx = random.Random().randrange(97)\n")
+        foreign = t / "_foreign"; foreign.mkdir()
+        (foreign / "main.py").write_text("import random\nx = random.choice([1,2])\n")
+        empty = t / "_empty"; empty.mkdir()
+
+        chk("NOISE_ON = True side is REFUSED", len(determinism_report([noisy])), 1)
+        chk("...and the line names the mechanism, not just the flag",
+            "reseeds from the OS" in determinism_report([noisy])[0], True)
+        chk("NOISE_ON = False side is CLEAN", determinism_report([pinned]), [])
+        chk("unswitched random.* (foreign lineage) is REFUSED",
+            len(determinism_report([foreign])), 1)
+        chk("empty/unreadable dir is REFUSED, not waved through",
+            len(determinism_report([empty])), 1)
+        chk("a MIXED pair reports exactly the offending side",
+            len(determinism_report([pinned, noisy])), 1)
+        chk("...and an all-clean pair reports nothing",
+            determinism_report([pinned, pinned]), [])
+
+    # The LIVE control: the incumbent really does carry NOISE_ON = True, so the
+    # True branch above is not testing a shape that never occurs.
+    inc = ROOT / "bots" / "_v468kladturbo"
+    if inc.exists():
+        chk("LIVE CONTROL: the incumbent really is NOISE_ON = True",
+            len(determinism_report([inc])), 1)
+    else:
+        print("  SKIP  live incumbent bots/_v468kladturbo not present")
+
+    print("SELFTEST PASS" if not bad else f"*** {bad} cell(s) FAILED ***")
+    return 1 if bad else 0
+
+
 def play(job):
     tag, bot, opp, mp, seed, seat = job
     a, b = (bot, opp) if seat == "a" else (opp, bot)
@@ -91,11 +236,18 @@ def play(job):
 
 
 def main():
+    if "--selftest" in sys.argv[1:]:
+        raise SystemExit(_selftest())
     if len(sys.argv) < 4:
-        sys.exit("usage: det.py tagA=path tagB=path <opp_dir> [seeds] [map1,map2,...]")
+        sys.exit("usage: det.py tagA=path tagB=path <opp_dir> [seeds] [map1,map2,...]\n"
+                 "       det.py --selftest")
     ta, pa = sys.argv[1].split("=", 1)
     tb, pb = sys.argv[2].split("=", 1)
     opp = sys.argv[3]
+    # PRECONDITION, REPORTED BEFORE ANY GAME RUNS. The docstring used to say
+    # this script "measures but does not enforce" the precondition — which in
+    # practice meant nobody checked it, and a flag-off contrast measured the RNG.
+    _print_determinism_banner([pa, pb, opp])
     seeds = int(sys.argv[4]) if len(sys.argv) > 4 else 8
     mapsel = sys.argv[5].split(",") if len(sys.argv) > 5 else None
     maps = sorted((ROOT / "maps").glob("*.map26"))
