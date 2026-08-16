@@ -62,3 +62,14 @@ v152 is the lighter arm; contention flatters it (TLE-FIXTURE-EXPOSURE doc).
 ANSWERED for our shard: ws2 alone, 6 runners on 6 cores, 0 NOWINNER — the
 bias's precondition was removed by design. Host provenance travels with the
 number.
+
+## B1 RE-DERIVATION ON OUR CORPUS (research 12:31Z; recorded here 2026-08-16T12:33:47Z so the
+## inventory's his-instrument caveat resolves for this unit)
+Ghost-magazine is REAL as a phenomenon on our 10,231 games (31.51% of
+ammo-holding rounds have zero turrets) but NULL as a lever: conversion-waste
+share 5.29% for us vs 5.03% field (tie, tail-driven, median 24 Ti/game), and
+v152's own idle rate is FLAT vs v151 (31.4→31.1%) — the brake did not move
+the metric it targets. ⇒ B1 rides the ported arms UNATTRIBUTED-BY-DESIGN
+(BARS rows amended pre-start); it is never reported as tested unless a
+dedicated one-toggle ablation runs. Magnus's grain-of-salt caveat: vindicated
+on the first unit anyone re-derived.
