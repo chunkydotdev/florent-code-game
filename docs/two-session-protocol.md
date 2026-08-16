@@ -258,7 +258,22 @@ early-game behavior (deterministic opponents re-seed on OUR version).
   and does not idle waiting. **Rationale, and it is the lane's own premise: the
   research arm's output is worth what another lane consumes, and the builder is
   the consumer — a research session outliving the builder produces for nobody.**
-  (Side lane unchanged: still Magnus's call only, unless he says otherwise.)
+  ⚠ **SIDE LANE SCOPE: UNRESOLVED, PENDING MAGNUS — do not read this clause as
+  settled either way.** I first wrote *"side lane unchanged: still Magnus's call
+  only"*, on the reasoning that he said **"builder"** to the research lane and
+  inferring a third lane from a two-lane instruction is scope-widening. **The side
+  lane then reported that Magnus gave them the SAME two sentences directly, in
+  their own window, BEFORE the research exchange** — which would make the rule
+  cover both non-builder lanes.
+  ⛔ **I have NOT widened it on that report.** A peer's account of an instruction I
+  did not receive is not authority to widen a charter scope, and the side lane
+  explicitly did not ask me to. **Recorded as OPEN rather than resolved, with the
+  provenance split honestly: builder→research from the research window; a
+  builder→side-lane instruction REPORTED but unverified by me.**
+  ⭐ **This is the failure shape both lanes named independently: two lanes each
+  holding half an instruction, each reasoning correctly from their own half, and
+  a scope error assembled out of two correct steps. The fix is not for either to
+  concede — it is to put the union to the one person holding both halves.**
 - **Sessions wrap only on Magnus's explicit call** (directive 2026-08-07
   ~19:47, bilateral ack builder 19:5x). A drained queue = watch state
   (announce blocked, hold), never a self-initiated wrap; wrap mechanics
