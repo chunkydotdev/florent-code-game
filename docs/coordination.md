@@ -67764,3 +67764,29 @@ gap is working in our favour. Third time today it has been benign or better than
 **D5. ⛔ THE REMOTE FLEET IS OUTSIDE EVERY AUTOMATED GUARD — routed: wrap debts 7/15/19 partially fixed this session (dashboard PENDING-PULL, manual kill habit); the auto-stop path REMAINS unbuilt, deliberately (see auto_gate:123's own reasoning); the ~7,950-game stock is the priced cost of that deliberateness.** A successor re-pricing it should weigh the flow number (side lane's test), never the stock.
 
 **D6. INSTRUMENT-FIX SWEEP DELEGATED WITH VERIFY-FIRST (Magnus's wrap order) — in flight at wrap as an opus agent committing WRAP-FIX s47: commits; its report is relayed into the tail when it lands (successor: check for those commits + the report note).**
+
+--- 2026-08-16T19:42:31Z ⭐⭐ **RESEARCH ARM s47 — WRAP. PROCESS DELTAS + STATE NOTE. Fired by Magnus's wrap-call and the builder's wrap (the standing 2026-08-16 rule, second firing).** ---
+
+## ⛔⛔ WHAT A SUCCESSOR MUST NOT INHERIT UNCHECKED — read this before anything else
+
+**1. ⭐ THE INCUMBENT MOVED AND 58 QUEUE ROWS NOW CARRY STALE GREPs.** `fcode status` at **19:40:22Z**: **HOLDER v155 "Sleipnir v1", uploaded by Moonfarm 19:38:40.236Z, rating 1755, rank #22/126, 1130 matches, last 10 = 8W 2L.** **CONTROL is now `bots/_v468kladturbo`.** `queue_check` flags **58 rows checked against `_v223sealrepair` or older**. ⛔ **A GREP admitted against a superseded tree is exactly the s34 lesson: the row may already be shipped, or its anchor may have moved. RE-ADMISSION SWEEPS ARE THIS LANE'S AND THEY ARE NOT DONE.** Do not build off a stale-GREP row without re-running it.
+
+**2. ⚠ THE CONTROL QUESTION IS OPEN AND IT IS FOR MAGNUS.** Registrations say v140 stays the benchmark (*"if we move our benchmark bot all the time all our experiments end up unusable"*) — **but a 61-incumbent makes the 51.33 futility floor nearly meaningless for NEW arms.** ⇒ **the likely answer is re-price NEW registrations against Sleipnir-as-control while OLD rows keep their vintage, but that is Magnus's call and I have not put it to him.** **Named, not decided.**
+
+**3. ⚠ `#23`→`#78` GATING READ WAS OWED ALL DAY AND NEVER RUN.** `#78` must not be built before `#23` reads. **Still true, still unread.**
+
+**4. ⚠ FIVE STRUCTURAL NULLS IS THE WRONG NUMBER — IT IS THREE, AND I WITHDREW THE FOURTH MYSELF.** Real, arm-level: **(a)** `#80`'s surge round-gate (COLLARF withdrawn at n=407); **(b)** `#83`'s gunner target-ladder re-rank (inert by construction); **(c)** the builder-attack re-rank (dead code AND an already-fired real negative). **The drain spend-1 was a RELAY COMPRESSION, not a defect — the arm was always specified correctly and I withdrew that claim in `#89`.** A fourth item — **my own briefed method for `#50` would have false-killed the row** — is real but was caught by the agent, not by me. **Quote three, and say who caught the fourth.**
+
+## PROCESS DELTAS — repo-level, routed
+
+* ⭐⭐ **NEW STANDING RULE, ESTABLISHED TODAY AND ALREADY PAID TWICE: AN ARCHIVE-POOLED BEHAVIOURAL CLAIM ABOUT *OURSELVES* CARRIES ITS `ourver` SPAN, AND A SPAN CROSSING MORE THAN ONE INCUMBENT IS PRESUMED STALE UNTIL SPLIT.** Born from `#85` (a pooled "13.9% of builder actions attack the core" was true only of `ourver` 66-77). **Paid PROSPECTIVELY on `#87` (same-builder share version-STABLE, reuse RATE 3x-unstable — pool one, split the other) and on the same-day decode (pooled reads "47.5%, -38 Elo" and indicts nothing; split, it names one version and exonerates the other — TRUE AND USELESS versus true and decisive).** **The failure mode is the TENSE, not the arithmetic.** Builder is adopting it into the playbook.
+* ⭐ **`#19` IS NOW THE COMPLETE PROCEDURE, NOT HALF OF ONE.** Variance/power batteries must NOT pin `NOISE_ON=False`; equivalence/determinism checks MUST neutralise it, because `main.py:288`'s `random.Random()` is **unseeded** and the engine's `--seed` cannot reach it. **Neither statement is safe alone.**
+* ⭐ **A LIVENESS CHECK BELONGS IN `move_miner`** — it scores unstudied-volume x badness with no recency term. Offered, not demanded; the builder's tool.
+* ⚠ **AND THE INSTRUMENT LESSON I OWE: the move-mining LEDGER lives at `docs/research/move-mining-ledger.tsv`, NOT `corpus/`.** I created a duplicate in the wrong place, and the fix was verified **not by the file existing but by the miner HONOURING it** — candidates 18 → 17 with Ouroboros dropping off.
+
+## RESEARCH ARM STATE — verified, not asserted
+
+**NOTHING OF MINE IS RUNNING.** **Five opus subagents spawned today, all announced before spawn, ALL COMPLETED AND ALL RELAYED — nothing unrelayed.** Deliverables banked: `REPLAY-STUDY-OUROBOROS-2026-08-16.md`, `AMENDMENT2-LEG-fieldcal-resumption-2026-08-16.md` (locked `999fc196`, clock 1 **15:22:54Z**), and the move-mining ledger's second row.
+**LEG-fieldcal remains STOPPED at ROUND 18.** Amendment 2 is locked and ready; **P1 (Magnus x x3r0) was never opened and I did not presume it.** ⚠ **P2b is NOT satisfied — the stop-loss retirement removed an automated cause that moved the holder ZERO times today, while every deliberate move was a teammate acting, which is exactly what P2b names.**
+**HARD LIMITS HELD: I edited no bot, submitted nothing, activated nothing, fired no match, ran no arena, typed no verdict, and wrote nothing to `HANDOVER.md` or the tape.**
+**Queue 72, gate OK.** ⛔ **But see item 1: 58 of those rows have stale GREPs and the count is not the health signal it looks like.**
