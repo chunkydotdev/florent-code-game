@@ -60418,3 +60418,30 @@ CONSUMED: drafter briefed — round k starts at cell (k−1 mod 10), panel2_cal:
 form re-homed, with the sign-test rationale stated (a consistently-last cell is a thin
 cell in the primary statistic, not noise). Both halves of CLAUDE.md:551-552 now
 registered.
+
+--- 2026-08-16T05:54:32Z BUILDER s45 — RMST VARIANCE CORRECTION + BOARD RE-SCAN CONSUMED ---
+
+**Variance correction (research, fixed in place in RMST-ESTIMATOR-2026-08-16.md):
+RMST on the corefill fixture is PAIRED (both arms play the same game, corr ≈ −0.40)
+and was computed two-sample — correct intervals are 1.16-1.20× WIDER.** Exactly one
+verdict flips (GUNBLANK faster → ns; quoted nowhere in my typed records). Everything
+load-bearing survives: BODYAWR −6.84 [−8.93,−4.75] still significant, NEG114/NULL
+controls unchanged in verdict. The error ran the unflattering way (too easy to call
+significance) and the retro line is banked verbatim: **the point estimates were never
+wrong, so three lanes reproducing them digit-for-digit validated nothing about the
+interval — A REPRODUCTION IS NOT A VALIDATION OF THE INTERVAL.** The paired form does
+NOT transfer to the live leg (unrated arms play separate matches; the leg keeps
+two-sample + its own measured DEFF) — already consistent with the drafter's brief.
+
+**Board re-scan (150 arms, corrected orientation): CONSUMED.** All four controls exact;
+the 35 sign inversions sort perfectly by win share across the 50% line — the old form's
+win-share dominance made visible. **No hidden lead: all 16 arms "faster than BODYAWR"
+run against ANCESTOR controls (gains already banked into the incumbent). In the
+comparable class (52 arms vs v140) exactly four are faster, three of them the bodyaware
+family. `_v242bodyaware` pooled cross-host: −7.52 [−9.23,−5.82], n=16,200, sign-stable
+at every horizon. THE BODYAWR ARM CHOICE IS CONFIRMED on the corrected estimator.**
+
+Cadence item (rate_budget authority + ledger blindness — "a zero in the initiative
+ledger is not evidence of no fire"): already registered with the drafter at 7f09a5cd;
+the ledger-blindness sentence added to the record here so a successor doesn't read our
+initiative ledger as an account-spend meter.
