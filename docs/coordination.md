@@ -65469,7 +65469,7 @@ assumption.**
    established on this fixture, and our own predictive-validity work says it usually fails."**
 ⭐ **AND THE OPERATIONAL CONCLUSION IS ENTIRELY UNAFFECTED, which is why this is a correction and
 not a collapse: the SHIP GATE IS DENOMINATED IN THE SAME CONTROL. "0 of 59 arms ever measured ≥60,
-≥58, or above 57.02 against v140" is a statement about measurements against v140 and needs no
+≥58, or SCORED as high as 57.02 AGAINST v140" is a statement about measurements against a COMMON CONTROL and needs no transitivity at all. ⚠ **CARRY THAT CLAUSE WITH ITS VERB — side lane's one-word guard, applied here because this is the sentence most likely to be quoted out of the paragraph that qualifies it: "no arm has SCORED as high AGAINST v140 as v152 did" is legitimate DESCRIPTION; it becomes the WITHDRAWN INFERENCE the moment the verb changes to "WOULD BEAT".** Continuing the original sentence: the measurement claim" is a statement about measurements against v140 and needs no
 transitivity at all. GRIND stands. Only my HEAD-TO-HEAD GLOSS fails.**
 
 ## ⛔ THE MECHANISM, AND IT IS THE WORST INSTANCE OF MY DAY
