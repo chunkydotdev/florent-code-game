@@ -60445,3 +60445,50 @@ Cadence item (rate_budget authority + ledger blindness — "a zero in the initia
 ledger is not evidence of no fire"): already registered with the drafter at 7f09a5cd;
 the ledger-blindness sentence added to the record here so a successor doesn't read our
 initiative ledger as an account-spend meter.
+
+--- 2026-08-16T05:5xZ (`date -u`) ✅⭐⭐ **SIDE LANE s44 — RESEARCH'S ~18% INTERVAL CORRECTION CONFIRMED AT ×1.16–1.20. AND RESTATING MY OWN "TRIO IS FLAT" AS AN EXCLUSION MAKES IT AN ORDER OF MAGNITUDE STRONGER, NOT WEAKER.** ---
+
+`4e7305e1` corrects the RMST intervals in the doc the prereg cites: a **paired** estimator was
+computed as **independent**. **Recomputed independently with the exact paired form** — per game
+`d_i = (T's restricted time) − (C's restricted time)`, then `mean(d)` and `sd(d)/√n`, which is
+exact for this fixture because **T and C outcomes come from the SAME games and are strongly
+negatively correlated**, so `var(A−B) = var(A)+var(B) − 2cov > var(A)+var(B)`.
+
+    shard          diff      PAIRED 95%          INDEP 95%        widening
+    TRIO          -0.34  [ -2.96, +2.27]   [ -2.58, +1.90]        x1.170
+    BODYAWR       -6.84  [ -8.95, -4.73]   [ -8.62, -5.06]        x1.183
+    AWRLNCH       -6.43  [ -9.36, -3.50]   [ -8.91, -3.96]        x1.185
+    MIX280mix4    -0.87  [ -3.59, +1.84]   [ -3.21, +1.46]        x1.165
+    MIX281mix4    -0.29  [ -2.96, +2.39]   [ -2.59, +2.02]        x1.163
+    NULL114       +0.42  [ -2.46, +3.31]   [ -1.99, +2.83]        x1.197
+    NEG114       +33.27  [+30.48,+36.06]   [+30.91,+35.63]        x1.181
+
+⇒ ✅ **Their "~18%" is exact: the range is ×1.163–1.197.** Direction confirmed — the independent
+form was too NARROW, in the anti-conservative direction, on every shard.
+
+## ✅ NO CONCLUSION MOVES, AND ONE GETS MUCH STRONGER
+
+**`BODYAWR −6.84 [−8.95, −4.73]` and `AWRLNCH −6.43 [−9.36, −3.50]` still exclude zero
+comfortably** ⇒ *"significantly faster"* survives the widening. **`NULL114` includes zero
+(+0.42 [−2.46, +3.31]) and `NEG114` is still strongly slower** ⇒ the controls still behave, on the
+corrected intervals.
+
+## ⭐⭐ AND `CLAUDE.md`'s DIRECTION RULE APPLIED TO MY OWN CLAIM — IT PAYS OUT
+
+I published *"TRIO is FLAT"*. **That is a fail-to-exclude claim, and widening an interval makes
+those EASIER** — the exact laundering `CLAUDE.md` forbids. **So it must be restated as an
+EXCLUSION before the correction is applied. Restated:**
+
+> **The paired 95% CI on TRIO's RMST₃₀₀ difference is [−2.96, +2.27] rounds. The data EXCLUDE any
+> slowdown greater than +2.27 rounds.**
+
+**⇒ THE CLAIM IT REPLACES WAS +23 ROUNDS. The unbiased interval excludes anything beyond +2.27 —
+the alleged regression is excluded by roughly a factor of ten.** Same for the MIX arms:
+`MIX280mix4` excludes anything beyond **+1.84** against a conditioned reading of **+27**.
+⇒ **This is not "we failed to detect a slowdown". It is "we exclude the slowdown that was
+claimed, decisively"** — and it only becomes sayable once the fail-to-exclude is restated.
+**The rule that looked like an obstacle to a null turned it into a much stronger statement.**
+
+⇒ **The artefact finding is now airtight, and my TRIO correction to the builder stands on firmer
+ground than when I sent it** — the cancellation rests on the power leg, and the kill-round leg is
+not merely unsupported but positively excluded.
