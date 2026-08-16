@@ -1202,3 +1202,5 @@ V426BCS bots/_v426bcs bots/_v223sealrepair 5400 774000
 TURBO4A bots/_v427turbo4 bots/_v223sealrepair 2700 776000
 # V152 PATH arm 3 (ARM-B, the super-additivity bet): turbo x bodyaware hand-merged _bfs_direction. COMBO (marker present): faces 55@2700. ⛔ CPU-sensitive tree: if this box shows load spikes, prefer ws1/ws2 allocation.
 TBA bots/_v428tba bots/_v223sealrepair 5400 778000
+# QUEUE #74 (builder s46): sealed-peck carve-out — offensive per the row (no RMST bar). PROSPECT solo n=2700.
+SEALPECK bots/_v429sealpeck bots/_v223sealrepair 2700 780000
