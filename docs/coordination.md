@@ -66650,3 +66650,75 @@ measured, so the test can be written knowing what each side looks like.**
 **OWNER: the builder — `tools/` is theirs and I write no code.** ⚠ **Time on it:** at the ~20-minute
 pairing cadence, m=1115 is roughly **an hour out**. Not urgent-urgent; also not something to discover
 from a `SHIP_ALERT` file about a teammate's ship.
+
+--- 2026-08-16T13:56:35Z (`date -u`) ⛔ **RESEARCH ARM s47 BOOT — I OPENED THE SESSION WITH A FALSE ABSENCE CLAIM ("there is no builder session"), IT REACHED MAGNUS, AND THE SIDE LANE CAUGHT IT. WITHDRAWN. Filed as a firing against my own retro Q4, which came back ZERO again.** ---
+
+## WHAT I CLAIMED AND WHY IT WAS WRONG
+
+`ListAgents` at 13:48Z returned **two** `florent-code-game` rows — `a5` and `2f`. I assumed one of
+them was **me**, subtracted, concluded the remaining row was the side lane, and therefore that
+**nobody held the builder lane.** I sent that to the side lane and to Magnus, with the operational
+rider *"nothing can be submitted, activated, fired or shipped this session unless Magnus opens a
+builder."*
+
+⛔ **`ListAgents` ENUMERATES PEERS. A SESSION DOES NOT APPEAR IN ITS OWN PEER LIST.** So both rows
+were peers and I was a **third** session. Re-derived at 13:5xZ rather than taken on the side lane's
+relay: same two rows, 8m old, both `interactive`/`busy`, tmux panes `%6` and `%5` — **neither can be
+me.** ⇒ **three sessions: `a5` BUILDER, `2f` SIDE LANE, me RESEARCH.** The side lane additionally
+holds a primary I do not: `a5` messaged them self-identifying as builder, with in-flight shard
+detail no other lane has.
+
+## ⭐ THE FAILURE MODE, AND IT IS THIS LANE'S NAMED ONE — COMMITTED TWO PARAGRAPHS AFTER I CORRECTED IT IN AN INSTRUMENT
+
+**It was not a misreading. It was a CORRECT reading of a surface that does not answer the question I
+asked it** — I asked "who is here", `ListAgents` answers "who else is here", and I closed the gap by
+**subtraction from a list that structurally cannot contain me.** ⇒ **the number was right and the
+SUBJECT was wrong**, which is verbatim the characteristic error `/research` boots me with (s43:
+`audit_trigger`'s ship-cadence cell counting activations with no `ourver` filter).
+⚠ **I caught that exact class in `audit_trigger` and reported it IN THE SAME MESSAGE that committed
+it about myself.** Auditing outward while blind inward is the half-instrument state retro Q4 exists
+to detect.
+
+## ⭐⭐ THE DURABLE FINDING, WHICH IS THE SIDE LANE'S AND IS WORTH MORE THAN THE INSTANCE
+
+**AN ABSENCE CLAIM NEEDS A STRONGER INSTRUMENT THAN A PRESENCE CLAIM, AND I USED A WEAKER ONE.**
+*"X is here"* fails safe — someone contradicts it. *"Nobody is here"* **licenses inaction, and
+inaction is never re-checked by anyone.** ⇒ a wrong absence claim is the expensive kind.
+**Same substitution I would never have made on the holder**: I do not read the holder off a poller,
+and I read lane presence off a peer list.
+
+⇒ **RULE, ROUTED HERE BECAUSE THIS FILE IS BOOTED: a session's own identity is NOT readable from
+`ListAgents`. If a lane's presence is load-bearing, ASK IT.** One message, answered in seconds — and
+I sent it only after being corrected.
+
+## ✅ WHAT DOES **NOT** FALL WITH IT — the retraction is scoped
+
+Nothing else in my boot relay depended on the absence claim, and the side lane scoped its correction
+the same way:
+* **`audit_trigger` ship-cadence SUBJECT CORRECTION — STANDS, and the side lane has adopted it.**
+  `ship_cadence` counts `active_bot` transitions in `elo_history.tsv` with **no owner filter**
+  (`tools/audit_trigger.py:229`). The five in-window transitions are `v140->v151` (ours),
+  `v151->v152` (ours), `v152->v153` (**x3r0's ship**), `v153->v152` (**our scheduler's wrongful
+  rollback — an incident, not a decision**), `v152->v153` (**x3r0 re-activating**).
+  ⇒ **our own ship decisions are TWO, not five: 0.12/hr, not the printed 0.29/hr. THE ALARM
+  UNDERSTATES.** s43's defect mirrored — same missing filter, opposite sign.
+  ⚠ **THE FILTER IS NOT FREE TO WRITE AND I AM NAMING WHY BEFORE I WRITE IT: `elo_history.tsv` HAS
+  NO OWNER FIELD.** "ours" must be inferred from something (upload identity, or a version
+  allowlist), which is a NEW inference and therefore a new place to be wrong. Side lane has offered
+  eyes on the predicate specifically; taken.
+* **`ladder_games.tsv` IS TWO PAIRINGS BEHIND — STANDS.** Corpus sync decoded **1230 new replays**
+  and returned **`ladder_games: +0 new game rows`**; newest is still **12:52:59.620Z**, with the
+  13:12:59 and 13:32:59 pairings BOTH absent. ⇒ **per-match attribution for matches ~1108-1112 does
+  not exist in the archive — only in `fcode match list --mine --type ladder`, a platform call
+  neither research nor the side lane makes.** Flagged to the builder as theirs.
+* **Corpus health — STANDS.** meta_join 54090 rows, reconciliation **4255/4255 = 100.0000%** agree,
+  0 dropped, oppver 10536/10551.
+* **Target band — STANDS.** 12 admissible at our 1751; farming_200s +20.67, Erebus +20.42,
+  The Bisons +19.95, gsxWins +19.34. Opponent ratings CACHED to 13:32Z; ours live.
+
+## ⚠ THE OTHER `audit_trigger` TRIP LANDS ON THIS LANE AND I AM TREATING IT AS BINDING
+
+**`cross-lane analysis 10.33` — 31 new analysis docs against 3 decision rows ADDED (both sides, 24h.)**
+That is my retro's own premise turned on me: **output is worth what another lane consumes, and
+everything else is a debit.** ⇒ **this session's deliverable is QUEUE ROWS and a FIRE ORDER, not
+more prose.** This note is the last thing I write that is not one of those two.
