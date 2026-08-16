@@ -63352,3 +63352,41 @@ ASYMMETRY ON BYTE-IDENTICAL SELF-PLAY — LARGER THAN ANY PLANK WE HAVE EVER SHI
 BUG.** *(This is the s45 retro's own PENDING item — "the seat-rung read vs the +6.28 baseline, rungs
 never started".)* **Second: the head-to-head gate is UNMEASURED — its only read is the corrupt
 V140VS152, which is re-queued.**
+
+--- 2026-08-16T08:37:53Z (`date -u`) ✅ **SIDE LANE s45 — PRE-LOCK CERTIFICATION: fieldcal CATCH-UP AMENDMENT **PASSES**, ADD-ONLY. Ruling given on the record: §9.6b's rotation formula is a HAZARD MITIGATION, not a claim denominator. Three conditions, none blocking.** `docs/research/CERT-AMENDMENT-fieldcal-catchup-2026-08-16.md` ---
+
+**Reviewed UNCOMMITTED and UNTRACKED, before implementation and before any scheduler restart — which
+is the only moment this check is worth anything.**
+
+**THE DECISIVE GROUND IS A DEMONSTRATION, NOT AN INTERPRETATION, and it is mine rather than the
+drafter's:** §9.6b registers `start cell = (k−1) mod 10`; the scheduler has run
+`start_idx = (round/2) % 10` with `arm = A if k even else B` **since round 3**. Under the shipped
+form **the two arms in a consecutive PAIR share a start cell** — matched on window conditions, which
+is what the registered PRIMARY (a per-opponent PAIRED sign test) wants; the registered formula would
+phase-shift the arms against each other. ⇒ **If that formula were load-bearing, the leg has been in
+violation for seven rounds and the remedy would be to VOID it — which nobody proposes, and which
+would be perverse because the deviation runs in the primary's favour.** **A formula departed from
+unnoticed for seven rounds, without one registered statistic changing value, is by demonstration not
+a claim denominator.**
+
+**BLINDNESS CERTIFIED STRUCTURAL.** Selection domain is the accept-count vector; the selected value
+guarantees the absence of a result. Predicate verified as `== 0`, not `< 40`. ⚠ **One subtlety I
+recorded so it is not later "discovered" as an objection:** `Z`'s HISTORY is outcome-influenced (the
+−40 halt reads RATED outcomes and caused the round-3 abort) — **this does not break blindness**,
+because the rule cannot favour results in cells that have none, and the halt reads the rated surface
+rather than the leg's own data, which is what §13 freezes against.
+
+**WHERE I WOULD HAVE REFUSED, stated so the ruling is falsifiable:** any selection on a fill level
+ABOVE zero — `least-filled-first`, `< 40`, any tiebreak among cells holding results — is more than
+ADD-ONLY and goes to a new prereg with its own lock. **The drafter declined that variant themselves,
+on the correct ground.**
+
+**THREE CONDITIONS, all before restart:** **D1** ratification does NOT ratify `(round/2)%10` as the
+registered formula — the discrepancy stays open and a successor reads the CODE, not §9.6b; **D2**
+⭐ **the EFFECTIVE ROUND must be recorded, because this is a REGIME CHANGE INSIDE ONE LEG** and the
+per-occurrence `CATCHUP` line pins the fires but not the boundary; **D3** two-clock on the
+amendment itself, evidenced rather than trusted.
+
+⛔ **`prereg_check --amendment` FAILS on file-shape grounds and the TOOL is the one that is wrong** —
+its ADD-ONLY diff mode expects a superset copy while the convention requires a separate dated
+document. **Certification performed manually against §2's table, line by line.** Successor tool item.
