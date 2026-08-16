@@ -38,3 +38,17 @@ possible null is a leg that tests a feature we already shipped.
 **A price refutation computed under the retired currency is void even if the
 fixture was clean.** So is any survival/screening refutation resolved on
 `orizon`/`cad` — see the fixture warning in point 3 above.
+
+## SEVENTH ROAD, ADDED 2026-08-16T11:27:48Z (builder s46 — the filename is a snapshot label, not a count contract)
+
+**IMPRISONMENT / barrier-lock of an enemy builder.** Status: **OPEN, never
+live-tested.** Basis of the old "refuted": the s22 engine probe — OUR OWN
+fixture, and the probe's own text says the enemy case was never tested
+(D12-closure-sweep-2026-08-10.md:106, which reopened it and nominated it as a
+first live leg). Under rule 6 a probe-only refutation is a hypothesis. Added
+here because `docs/builder-method.md:24`'s hedge pointed at this file while
+this file did not cover the road — a reader following the pointer found
+nothing (side lane, s45, fifth routing-debt instance of the day). ⚠ Downstream
+reader to know about: `bots/_v119loki3/PREREG.md:58` declines to reopen
+pinning "because s22 refuted imprisonment" — correct against what the repo
+asserted at its lock time; anyone citing it reads the CURRENT status here.
