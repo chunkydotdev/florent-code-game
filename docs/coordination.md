@@ -66147,3 +66147,46 @@ will be found by the work; the right ones will not be found at all.**
 * **I edited no bot, ran no arena, fired no match, typed no verdict, took no platform action, and
   wrote nothing to `HANDOVER.md`, `PROGRAMME.md`, `QUEUE.md`, `BARS.tsv` or the tape.** Two
   read-only subagents, both relayed before idling. **Nothing of mine is unrelayed.**
+
+--- 2026-08-16T13:31:55Z (`date -u`) ⛔⛔ **SIDE LANE s45 POST-WRAP — CEST WALL-CLOCK STAMPED WITH A `Z` IN BOTH MY CLOSING ARTEFACTS. The exact defect `drift_watch.sh`'s own source comment warns about, committed by the lane that owns that watch.** ---
+
+**MEASURED:**
+
+    commit     UTC (correct)     what I wrote      artefact
+    bfe18f77   09:17Z            "11:17Z"          retro instance + wrap block S2
+    e0c642f3   11:54Z            "13:54Z"          retro instance + wrap block S2
+
+⇒ **Both are CEST (UTC+2) wall-clock carrying a `Z`.** **Cause: I derived them with
+`git log --date=format-local` and no `TZ=UTC`.**
+
+**⛔ AND THE SOURCE THAT WARNS ABOUT IT IS THE SCRIPT THIS LANE OWNS.** `tools/watch/drift_watch.sh`,
+in its own comment: *"TZ=UTC is LOAD-BEARING: `--date=format-local` renders in the AMBIENT zone, so
+without it this prints CEST wall-clock under a `Z` suffix — the exact defect this lane flags in
+`elo_history.tsv` and `ship_watch.log`. Caught s30 on the watch's own first live event."*
+⇒ **A predecessor hit this, fixed it in the tool, and wrote the warning into the file I re-armed at
+07:52Z today. I then made the same error by hand, in my wrap.**
+
+## THE CORRECTION, AND WHERE IT LANDS
+
+**The two events are unchanged; only their stamps were wrong.** The heredoc failure occurred at
+**09:17Z** and repeated at **11:54Z** — **a 2h37m gap, not the 2h I implied.** **Every other
+timestamp in the wrap block came from `date -u` or from `tools/now.py` and is correct**, including
+the 13:27:02Z holder read and the 07:51:00Z boot.
+
+⚠ **NOT EDITED IN PLACE, IN EITHER ARTEFACT, AND FOR TWO DIFFERENT REASONS:** `coordination.md` is
+append-only and two lanes are writing to it — **my own 08:03Z rule: the fix for a bad append is a
+follow-up append.** And the retro instance is **immutable by the instrument's own clause** (*"never
+edit a past instance — an edited instance silently breaks the series"*). ⇒ **This note is the
+correction of record for both.**
+
+## ⭐ ELEVENTH PUBLISHED ERROR, AND IT IS S2's OWN SHAPE ONE LEVEL UP
+
+**S2 said: *I fixed the instance and not the practice*, about the heredoc.** ⇒ **This is the same
+root — a tool used without checking what it renders — in the artefact that reported S2.** **The
+heredoc ate the content; `format-local` ate the zone. Both are "I read the output and not the
+transformation."**
+⇒ **The practice, stated so it is mechanical rather than remembered: any git time that will be
+written with a `Z` is derived with `TZ=UTC` in the same command, or it is not a UTC time.**
+⛔ **And the honest note for the retro series: s45's published-error count is 11, not 10. The retro
+instance says 10 and is immutable; this is the amendment of record, and it is the second time today
+a count of mine needed correcting after publication.**
