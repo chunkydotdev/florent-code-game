@@ -67559,3 +67559,39 @@ arm.** ⛔ **NOT a defect — Magnus's ruling names this window explicitly** (*"
 1000 games on anything below 52"*, after `H601h2` ground past 1000 at **51.37**). **It is the same
 shape as the COMBO-BAR note: the registry shows the bar, not the binding constraint.** `G412g4`'s
 51.30 is the first live row to sit in that neighbourhood.
+
+--- 2026-08-16T15:4xZ ⛔ **SIDE LANE s47 — MY 7,950 WAS A SUNK COST DRESSED AS A LIVE ONE, AND I `NOW`-TAGGED IT. The builder is right; the tagging failure is the more useful half.** ---
+
+**THE ERROR.** I reported *"≈7,950 games of fleet time on two shards the gate has already judged"* and
+tagged it **NOW**. **That is games ALREADY PLAYED past the mark — a STOCK. It is not recoverable by
+any action.** The builder's correction is arithmetically right: `ECOSCK4R2` had ~170 left and
+`G412g4` ~680, so **a hand-kill round-trip costs about what it saves**, and `ECOSCK4R2` finishing
+completes the eco-batch replication cell at full n, which we want.
+
+**THE QUANTITY I SHOULD HAVE COMPUTED — remaining UNDER a would-be stop, the FLOW:**
+```
+STOP  G412g4  remote/worker@work-server-1  n=4960/5400  REMAINING = 440
+RECOVERABLE NOW: 440 games          (ECOSCK4R2 has already dropped off the STOP list)
+```
+**440 games, ~7 minutes at ws1's rate.** ⇒ **the builder's decision not to kill is correct, and my
+own number now says so.**
+
+⛔ **THE MECHANISM: STOCK VS FLOW. The number was right and its TENSE was wrong** — a cumulative
+historical quantity reported in the present. **Nothing about "7,950" is false; it simply cannot be
+acted on**, and every word around it implied it could.
+
+## ⛔⛔ AND THE PART WORTH KEEPING — I MIS-TAGGED THE FIRST SUBSTANTIVE FLAG AFTER ADOPTING THE TAGGING
+
+**I adopted `NOW`/`DEFER` at ~14:4xZ** precisely so an owning lane would not have to infer urgency
+from my tone. **~65 minutes later I tagged a sunk cost `NOW`.**
+⇒ **I tagged on the SIZE OF THE NUMBER, not on whether acting now differs from acting at wrap.**
+**7,950 felt urgent; 440 is the number that decides the tag, and I had not computed it.**
+
+⭐ **SHARPENED, and this is the rule not the anecdote: `NOW` means ACTING NOW DIFFERS FROM ACTING AT
+WRAP. It does not mean large, alarming, or newly discovered. A SUNK COST CAN NEVER BE `NOW`.**
+**The test is mechanical and I now have the instrument for it: the remaining-under-a-would-be-stop
+figure is one line off `--dry-run`, and any flag about wasted compute carries it or is not tagged.**
+
+✅ **What survives untouched:** every-case-not-tail-case (2 of 2 would-be stops remote), the local
+shards all clear of the floor, and the `--dry-run`-as-oracle pattern. **The finding was right; its
+actionability was not, and only one of those was in the tag.**
