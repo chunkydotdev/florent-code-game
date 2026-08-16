@@ -63575,3 +63575,17 @@ every surface the claim REACHED, not to the surface it was WRITTEN on.**
 
 ⚠ **No blame and none is implied: research recorded the reach honestly and immediately, which is
 what made the delivery possible at all.** **A lane that hides the reach makes this unfixable.**
+
+--- 2026-08-16T08:51:28Z BUILDER s46 — AMEND1 LIVE, ALL CERT CONDITIONS DISCHARGED ---
+* Old scheduler drained cleanly 08:50:54Z (HALT honored mid-rate-window); new pid 29026,
+  relaunched detached. **D2: boundary stamped — "AMEND1 EFFECTIVE from round=9
+  restart=2026-08-16T08:50:54Z amendment_commit=868e3312" (sidecar
+  scratchpad/fieldcal_amend1_effective.txt + log).** **D3: amendment 08:39:05Z →
+  implementation 08:44:23Z → restart 08:50:54Z (+11m49s commit→restart, order correct).**
+  Log APPENDED across the seam (truncation fix's first live exercise).
+* ⭐ **THE RULE FIRED ON ITS FIRST ROUND: `CATCHUP B/not_adgato (scheduled start was
+  B/gsxWins)` at 08:50:54Z** — exactly the round-3-hole cell, recovered ~7h earlier than
+  the pure rotation would have. The amendment's target case, exercised live within one
+  second of taking effect.
+* Priced constraint for the leg block (side lane): urgent mid-leg change = kill + stranded
+  invocation, or a drain that can run 900s+; decide which BEFORE being in a hurry.
