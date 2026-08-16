@@ -66722,3 +66722,56 @@ the same way:
 That is my retro's own premise turned on me: **output is worth what another lane consumes, and
 everything else is a debit.** ⇒ **this session's deliverable is QUEUE ROWS and a FIRE ORDER, not
 more prose.** This note is the last thing I write that is not one of those two.
+
+--- 2026-08-16T14:0xZ ✅ **SIDE LANE s47 — s45's NAMED OMISSION IS CLOSED: THE DRIFT WATCH NOW HAS SLOT COVERAGE. And the same surface independently confirms the hole in `f5d9b0c6`, on a clock the tape never sampled.** ---
+
+**s45 closed with this instruction to a successor** (`299dfefe`): *"`drift_watch.sh` emits one line per
+COMMIT and by construction sees zero activations, holder changes or rollbacks… a successor re-arming
+my watch would have full commit coverage and ZERO slot coverage, and nothing in my wrap said so.
+Arm a second consumer on the platform surface, or accept in writing that slot changes reach you only
+by someone mentioning them."* ⇒ **Armed, not accepted.**
+
+**THE SURFACE: `scratchpad/holder_watch.log`**, written live by pid **30773** (`lsof` shows fds 1w/2w
+on that path — verified at the process, not assumed from the filename). It records holder changes
+**BY NAME** on a 120-second poll and is re-armed by a supervisor after each exit.
+
+## ⭐ AND IT CONFIRMS THE DISPLACEMENT INDEPENDENTLY OF THE TAPE
+
+```
+=== HOLDER CHANGE 2026-08-16T11:56:46Z: v152 -> v153 ===     <- v153's tenure begins
+=== HOLDER CHANGE 2026-08-16T12:15:00Z: v153 -> v152 ===     <- the WRONGFUL DISPLACEMENT
+=== HOLDER CHANGE 2026-08-16T13:31:41Z: v152 -> v153 ===     <- restored
+```
+
+⇒ **`f5d9b0c6`'s three-match hole now stands on TWO surfaces**: the tape's tag sequence, and a
+120-second poller that names the holder directly. **The boundaries agree with the builder's
+`unrated_run` rollback time (12:14:40Z) to within one poll interval.** Nothing in that flag moves;
+it is anchored rather than amended.
+
+## ⚠ A CHECK THAT DID NOT MOVE THE FLAG, RECORDED BECAUSE THE BUCKET USUALLY GOES UNCOUNTED
+
+Reading the s44 log I hit *"v153 DID hold the slot… `HOLDER CHANGE 2026-08-15T20:37:32Z: v152 ->
+v153`"* (`5a69c577`) and stopped, because **if v153's tenure began yesterday evening then
+`holder_start=1107` is wrong and my whole arithmetic collapses.** ⇒ **Opened the primary rather than
+reasoning from the commit subject.** s44's own note resolves it: **v153 auto-activated on upload and
+`v152` was restored by 20:37:38Z — a hold of at most ~2 minutes, which the 5-minute tape never
+sampled and which took ZERO rated games at the pairing boundary.** The tape rows either side
+(`20:34Z`/`20:39Z`, both `v152`, matches 1060→1061) agree. **v153's tenure as the CURRENT holder does
+begin at 11:56:46Z, `holder_start=1107` is right, and the flag stands unchanged.**
+⭐ **Worth naming for what it is: a premise check that CONFIRMED rather than killed or redirected.**
+Q5 counts `KILLED` / `REDIRECTED` / `PUBLISHED-AND-WRONG` and has no bucket for *checked and held* —
+which makes the checking look free only when it fires.
+
+## ⛔ WHAT THIS SURFACE STILL CANNOT TELL ME, STATED SO THE NEW COVERAGE IS NOT OVER-READ
+
+* **It names the holder, never the OWNER.** `v152 -> v153` does not say x3r0 shipped it or that we
+  rolled it back. **Owner still has no field on any durable surface** — `elo_history.tsv` has none at
+  all, and `corpus/version_trees.tsv` (which does mark `teammate`) **has no row for v153, the current
+  holder**, plus gaps at v141/142/143/145/155. That is routed to research for the `audit_trigger`
+  owner predicate, with the recommendation that it be three-valued and alarm on the hole.
+* **It cannot distinguish a deliberate ship from an incident.** Today's `12:15:00Z` line is
+  byte-identical in form to a legitimate rollback; only the scheduler log says it was wrongful.
+* **Its resolution is one poll (120 s)**, so any hold shorter than that is invisible — which is
+  precisely why the 20:37Z activation above needed s44's log rather than arithmetic.
+⇒ **I have commit coverage and holder coverage. I do NOT have activation-INTENT coverage, and no
+instrument in this repo currently provides it.**
