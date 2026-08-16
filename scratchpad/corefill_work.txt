@@ -1154,14 +1154,6 @@ ECOSIPC bots/_v316sipcull bots/_v223sealrepair 5400 734000
 ECOPAVE bots/_v323pavefirst bots/_v223sealrepair 5400 736000
 ECOSCK4 bots/_v324osck4 bots/_v223sealrepair 5400 738000
 ECOSCK6 bots/_v325osck6 bots/_v223sealrepair 5400 740000
-G406g3 bots/_v406g3 bots/_v223sealrepair 5400 422000
-G407g3 bots/_v407g3 bots/_v223sealrepair 5400 424000
-G408g3 bots/_v408g3 bots/_v223sealrepair 5400 426000
-G409g4 bots/_v409g4 bots/_v223sealrepair 5400 428000
-G410g4 bots/_v410g4 bots/_v223sealrepair 5400 430000
-G411g4 bots/_v411g4 bots/_v223sealrepair 5400 432000
-G412g4 bots/_v412g4 bots/_v223sealrepair 5400 434000
-G413g4 bots/_v413g4 bots/_v223sealrepair 5400 436000
 G414g4 bots/_v414g4 bots/_v223sealrepair 5400 438000
 G415g4 bots/_v415g4 bots/_v223sealrepair 5400 440000
 G416g4 bots/_v416g4 bots/_v223sealrepair 5400 442000

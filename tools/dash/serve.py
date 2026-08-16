@@ -49,6 +49,11 @@ PORT = int(os.environ.get("PORT", "8787"))
 # routes below. See tools/dash/matches.py for what it is and is not allowed to do.
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 import matches                                                    # noqa: E402
+# Replays list + on-demand viewer (tools/dash/replays.py). Importing this
+# starts its background index thread immediately (mirrors _shard_worker
+# below) — so picking this route up REQUIRES RESTARTING THIS PROCESS, a hot
+# reload of serve.py's own routes is not a thing Python does.
+import replays                                                    # noqa: E402
 
 OVERNIGHT = ROOT / "scratchpad" / "overnight"
 STARTED = ROOT / "scratchpad" / "corefill_started"
@@ -919,7 +924,8 @@ def build_status() -> dict:
 PAGES = {"/": "cores.html", "/cores": "cores.html",
          "/game": "game.html", "/lingo": "lingo.html",
          "/shards": "shards.html", "/shard": "shard.html",
-         "/matches": "matches.html", "/match": "match.html"}
+         "/matches": "matches.html", "/match": "match.html",
+         "/replays": "replays.html"}
 TYPES = {".html": "text/html; charset=utf-8", ".css": "text/css; charset=utf-8",
          ".js": "application/javascript; charset=utf-8"}
 
@@ -968,6 +974,26 @@ class Handler(BaseHTTPRequestHandler):
                     "application/json; charset=utf-8")
             body = json.dumps(collect_shard_detail(sid), indent=1).encode()
             return self._send(200, body, "application/json; charset=utf-8")
+        if path == "/api/replays":
+            n = (query.get("limit") or [str(replays.DEFAULT_LIMIT)])[0]
+            lim = int(n) if n.isdigit() and 0 < int(n) <= replays.MAX_LIMIT \
+                else replays.DEFAULT_LIMIT
+            q = (query.get("q") or [""])[0]
+            body = json.dumps(replays.collect_replay_list(lim, q), indent=1).encode()
+            return self._send(200, body, "application/json; charset=utf-8")
+        if path == "/replay":
+            mid = (query.get("match") or [""])[0]
+            game_s = (query.get("game") or ["1"])[0]
+            if not replays.MATCH_ID_RE.match(mid or ""):
+                return self._send(400, b"bad or missing ?match= (expected a "
+                                   b"replay_archive match uuid)", "text/plain; charset=utf-8")
+            if not (game_s.isdigit() and 1 <= int(game_s) <= 50):
+                return self._send(400, b"bad ?game= (expected a small positive integer)",
+                                   "text/plain; charset=utf-8")
+            html, err = replays.get_or_build_view(mid, int(game_s))
+            if err:
+                return self._send(404, err.encode(), "text/plain; charset=utf-8")
+            return self._send(200, html, "text/html; charset=utf-8")
         name = PAGES.get(path) or path.lstrip("/")
         target = (STATIC / name).resolve()
         if not str(target).startswith(str(STATIC)) or not target.is_file():
@@ -989,6 +1015,7 @@ def main() -> int:
     print(f"CORE DASHBOARD  http://127.0.0.1:{PORT}")
     print(f"  shards  : http://127.0.0.1:{PORT}/shards")
     print(f"  matches : http://127.0.0.1:{PORT}/matches")
+    print(f"  replays : http://127.0.0.1:{PORT}/replays")
     print(f"  repo    : {ROOT}")
     print(f"  binds   : 127.0.0.1 only (not reachable from the network)")
     print(f"  reads   : files + `ps`. No fcode, no network, no writes.")

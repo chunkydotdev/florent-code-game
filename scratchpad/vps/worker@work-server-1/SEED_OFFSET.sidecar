@@ -2,8 +2,8 @@ host: worker@work-server-1
 hostkey: worker@work-server-1
 seed_offset: 32000000
 formula: crc32(hostkey) % 50 * 1000000
-generated: 2026-08-14T20:15:02Z
-source_worklist: /private/tmp/claude-501/-Users-junghard-Projects-Work-florent-code-game/45b7dd4c-427e-4ebe-b7f5-f74e013934b9/scratchpad/saltref2.txt
+generated: 2026-08-16T06:34:22Z
+source_worklist: scratchpad/vps/ws1_revival_20260816.txt
 engine_pin: 2.3.6
 maps: antler archipelago auroraveil drakkarfjord drumlin fjordgate frostgate glacierkeep icefloe midgard nordkap ragnarok royale valkyrie yulerune 
-shards: NULLHOST SALTREF2 
+shards: NULLHOST G406g3 G407g3 G408g3 G409g4 G410g4 G411g4 G412g4 G413g4 

@@ -1,0 +1,208 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Replays — Loki dashboard</title>
+<link rel="stylesheet" href="/style.css">
+<script src="/tz.js"></script>
+<style>
+  /* Page-scoped so the shared stylesheet stays untouched. */
+  .game-chip {
+    display: inline-flex; align-items: center; justify-content: center;
+    width: 26px; height: 22px; margin: 0 3px 3px 0; border-radius: 6px;
+    font-family: var(--mono); font-size: 11.5px; font-weight: 700;
+    text-decoration: none; color: #0b0d12; opacity: .92;
+  }
+  .game-chip:hover { opacity: 1; outline: 2px solid var(--accent); outline-offset: 1px; }
+  .game-chip.g-A { background: #0072B2; color: #fff; }
+  .game-chip.g-B { background: #E69F00; color: #1b1300; }
+  .game-chip.g-unknown { background: var(--panel2); color: var(--dim); }
+  .teamcell { font-size: 13.5px; }
+  .teamcell .vsline { color: var(--dimmer); font-size: 11.5px; }
+  td.games { white-space: nowrap; }
+  .scroll table { min-width: 900px; }
+</style>
+</head>
+<body>
+<header>
+  <span class="brand">LOKI</span>
+  <nav>
+    <a href="/">Cores</a>
+    <a href="/shards">Shards</a>
+    <a href="/matches">Matches</a>
+    <a href="/game">Game</a>
+    <a href="/lingo">Lingo</a>
+    <a href="/replays" class="on">Replays</a>
+  </nav>
+  <span class="spacer"></span>
+  <span class="clock" id="clock">…</span>
+</header>
+
+<main>
+  <h1>Replays</h1>
+  <p class="lede">Every match with archived replay files in <code id="archivepath">replay_archive/</code>,
+     newest first. <strong>Click a game number</strong> to open its viewer — a
+     self-contained page you can screenshot and scrub round by round
+     (<code>tools/replay_view.py</code>, same generator this page calls to build it).
+     This list is a plain file browser: Team A/B is exactly what the replay and its
+     sidecar <code>.meta.json</code> say, with no "us vs them" resolution — for our own
+     rated/unrated match history with that framing, see <a href="/matches">Matches</a>.</p>
+
+  <div class="count" id="src">…</div>
+
+  <input class="filter" id="q" type="search"
+         placeholder="filter by match id prefix or team name…" autocomplete="off">
+  <div class="chips" id="depth"></div>
+  <div class="count" id="count">…</div>
+
+  <div class="scroll"><table id="tbl">
+    <thead><tr>
+      <th>When <span class="th-note">(UTC)</span></th>
+      <th>Type</th>
+      <th>Team A</th>
+      <th>Team B</th>
+      <th class="mono">Score</th>
+      <th>Games <span class="th-note">(winner shown once decoded)</span></th>
+    </tr></thead>
+    <tbody></tbody>
+  </table></div>
+
+  <h2>How to read this</h2>
+  <div class="note">
+    The list comes from a background scan of <code>replay_archive/</code>
+    (<code>tools/dash/replays.py</code>, refreshed every 60s — a full scan of the
+    directory takes a couple of seconds, too slow to pay on every page load, so the
+    line above shows the scan's own age). <strong>Map size, winner and win
+    condition per game are read lazily</strong> — only for the rows this page
+    actually shows, with a cheap top-level-only parse
+    (<code>replay_view.peek_outcome</code>) rather than the full per-round replay the
+    viewer itself does. A game chip with no color means it has not been decoded yet
+    (hover for why); it still opens the viewer.
+    <br><br>
+    <strong>This page computes nothing.</strong> No win rate, no aggregation across
+    matches. It lists files and opens the viewer on click.
+  </div>
+
+  <footer>
+    <a href="/">&larr; Cores overview</a> · <a href="/matches">Matches</a> ·
+    Auto-refreshes every 15 s. Newest first, capped at <span id="cap">100</span>.
+  </footer>
+</main>
+
+<script>
+const $ = s => document.querySelector(s);
+const esc = s => String(s === null || s === undefined ? '' : s)
+  .replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
+
+function freshBadge(ageMin, cadenceMin) {
+  if (ageMin === null || ageMin === undefined) return '<span class="badge b-blind">NO STAMP</span>';
+  const limit = (cadenceMin || 1) * 2;
+  const cls = ageMin > limit ? 'b-warn' : 'b-ok';
+  const label = ageMin > limit ? 'STALE' : 'fresh';
+  const t = ageMin < 90 ? ageMin.toFixed(1) + 'm' : (ageMin/60).toFixed(1) + 'h';
+  return `<span class="badge ${cls}">${label} ${t}</span>`;
+}
+
+function typeBadge(t) {
+  if (!t) return '<span class="badge b-blind">TYPE UNKNOWN</span>';
+  const cls = {ladder:'b-ok', unrated:'b-warn', test:'b-dim'}[t] || 'b-dim';
+  return `<span class="badge ${cls}">${esc(t.toUpperCase())}</span>`;
+}
+
+function whenCell(r) {
+  const at = r.completedAt || r.createdAt || r.sort_at;
+  const short = tzTime(at, {cls: 'mono', sec: true});
+  const label = r.completedAt ? 'completed' : (r.createdAt ? 'created' : r.sort_source || '');
+  return `<span style="font-size:12px">${short}</span>
+          <div class="sub-mono">${esc(label)}</div>`;
+}
+
+function teamCell(name, ver) {
+  if (!name) return '<span class="vs">—</span>';
+  return `<span class="teamcell">${esc(name)}<div class="vsline">v${esc(ver === null || ver === undefined ? '?' : ver)}</div></span>`;
+}
+
+function gameChip(r, g) {
+  const url = `/replay?match=${encodeURIComponent(r.id)}&game=${g.n}`;
+  const p = g.peek;
+  let cls = 'g-unknown', title = `game ${g.n} — not decoded yet, click to view`;
+  if (p && p.ok) {
+    cls = p.winner === 'A' ? 'g-A' : p.winner === 'B' ? 'g-B' : 'g-unknown';
+    title = `game ${g.n}: ${p.width}x${p.height}, winner ${esc(p.winner || 'none')}, `
+          + `${esc(p.win_condition || 'no win_condition')}, ${esc(p.rounds)} rounds`;
+  } else if (p && !p.ok) {
+    title = `game ${g.n}: peek failed (${esc(p.error || 'unknown error')}) — click to view anyway`;
+  }
+  return `<a class="game-chip ${cls}" target="_blank" rel="noopener" href="${url}" title="${esc(title)}">${g.n}</a>`;
+}
+
+let LAST = null, LIMIT = 100;
+const DEPTHS = [50, 100, 300, 1000];
+
+function render(s) {
+  LAST = s;
+  $('#clock').innerHTML = s.served_at ? tzTime(s.served_at) : '(server sent no read time)';
+  $('#cap').textContent = s.limit;
+  $('#archivepath').textContent = s.archive + '/';
+
+  const idx = s.index || {};
+  if (idx.pending) {
+    $('#src').innerHTML = tzNote() + '<br><span class="badge b-blind">INDEX PENDING</span> '
+      + esc(idx.note || 'first directory scan has not completed');
+  } else if (!idx.ok) {
+    $('#src').innerHTML = tzNote() + '<br><span class="badge b-blind">INDEX BLIND</span> '
+      + esc(idx.error || 'unknown error building the index');
+  } else {
+    $('#src').innerHTML = tzNote() + '<br>index of <code>' + esc(s.archive) + '/</code>: '
+      + '<strong>' + esc(idx.n_matches) + '</strong> matches, built ' + tzTime(idx.at)
+      + ' ' + freshBadge(idx.age_min, idx.cadence_min)
+      + ` (refreshes every ${esc(idx.cadence_min)} min, took ${esc(idx.build_ms)}ms)`;
+  }
+
+  $('#depth').innerHTML = '<span class="sub-mono" style="align-self:center;margin-right:4px">load newest</span>'
+    + DEPTHS.map(n => `<button class="chip${LIMIT === n ? ' on' : ''}" data-depth="${n}">${n}</button>`).join('');
+
+  const rows = s.rows || [];
+  $('#count').innerHTML = `${rows.length} shown of <strong>${esc(s.n_matching)}</strong> matching`
+    + (s.q ? ` filter "${esc(s.q)}"` : '') + ` · <strong>${esc(s.n_total)}</strong> matches total in the index`;
+
+  $('#tbl tbody').innerHTML = rows.length === 0
+    ? '<tr><td colspan="6">No match matches that filter.</td></tr>'
+    : rows.map(r => `<tr>
+        <td>${whenCell(r)}</td>
+        <td>${typeBadge(r.triggeredBy)}${r.meta_ok ? '' : ' <span class="badge b-blind" title="' + esc(r.meta_error || 'no meta.json') + '">NO META</span>'}</td>
+        <td>${teamCell(r.teamAName, r.teamAVersion)}</td>
+        <td>${teamCell(r.teamBName, r.teamBVersion)}</td>
+        <td class="num mono">${r.scoreA === null || r.scoreA === undefined ? '<span class="vs">—</span>' : esc(r.scoreA) + '-' + esc(r.scoreB)}</td>
+        <td class="games">${r.games.map(g => gameChip(r, g)).join('')}</td>
+      </tr>`).join('');
+}
+
+$('#depth').addEventListener('click', e => {
+  const b = e.target.closest('[data-depth]');
+  if (!b) return;
+  LIMIT = parseInt(b.dataset.depth, 10) || 100;
+  tick();
+});
+let qTimer = null;
+$('#q').addEventListener('input', () => {
+  clearTimeout(qTimer);
+  qTimer = setTimeout(tick, 200);   // debounced — each keystroke would otherwise re-scan the page's peeks
+});
+
+async function tick() {
+  try {
+    const q = $('#q').value.trim();
+    const r = await fetch(`/api/replays?limit=${LIMIT}&q=${encodeURIComponent(q)}`, {cache: 'no-store'});
+    render(await r.json());
+  } catch (e) {
+    $('#clock').innerHTML = '<span class="badge b-blind">SERVER UNREACHABLE</span>';
+    $('#src').innerHTML = '<span class="badge b-blind">SERVER UNREACHABLE</span> '
+      + 'the rows below are whatever was last read and are NOT being refreshed.';
+  }
+}
+tick(); setInterval(tick, 15000);
+</script>
+</body>
+</html>

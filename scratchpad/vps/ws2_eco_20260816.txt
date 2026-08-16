@@ -1,0 +1,10 @@
+# ws2 ECO REPLICATION batch, builder s45 2026-08-16 ~06:4xZ. Magnus eco-first
+# directive: ws2 freed at 06:21 (F258SEALMAX complete); this batch replicates
+# the local ECO* solo screens cross-host (the BODYAWRR pattern - REPORT
+# SEPARATELY, NEVER POOL; ws2 host term not established, NULL140B included 50).
+NULLHOST bots/_v146null bots/_v146gunaxis 400 900000
+ECOSIPHR bots/_v315siphit bots/_v223sealrepair 5400 744000
+ECOSIPCR bots/_v316sipcull bots/_v223sealrepair 5400 746000
+ECOPAVER bots/_v323pavefirst bots/_v223sealrepair 5400 748000
+ECOSCK4R bots/_v324osck4 bots/_v223sealrepair 5400 750000
+ECOSCK6R bots/_v325osck6 bots/_v223sealrepair 5400 752000

@@ -258,3 +258,8 @@ ECOPAVE	51.33	ge	house-standard corefill futility band 50+1.96*sqrt(.25/5400); e
 ECOSCK4	51.33	ge	house-standard corefill futility band 50+1.96*sqrt(.25/5400); eco-first batch (Magnus directive 2026-08-16T06:11:32Z), local re-home of fleet row for bots/_v324osck4
 ECOSCK6	51.33	ge	house-standard corefill futility band 50+1.96*sqrt(.25/5400); eco-first batch (Magnus directive 2026-08-16T06:11:32Z), local re-home of fleet row for bots/_v325osck6
 SEATFULL	51.33	ge	house-standard corefill futility band 50+1.96*sqrt(.25/5400); rung 2 of the seat-canonical ladder (_v455seatfull, sites 1-5+7 of EQUIVARIANCE-SWEEP-2026-08-16, one toggle, 36/36 unit checks); contrast vs SEATSPAWN isolates the family residual
+ECOSIPHR	51.33	ge	house-standard corefill futility band; ws2 CROSS-HOST REPLICATION of the local ECO* batch (_v315siphit) — REPORT SEPARATELY, NEVER POOL (ws2 host term not established)
+ECOSIPCR	51.33	ge	house-standard corefill futility band; ws2 CROSS-HOST REPLICATION of the local ECO* batch (_v316sipcull) — REPORT SEPARATELY, NEVER POOL (ws2 host term not established)
+ECOPAVER	51.33	ge	house-standard corefill futility band; ws2 CROSS-HOST REPLICATION of the local ECO* batch (_v323pavefirst) — REPORT SEPARATELY, NEVER POOL (ws2 host term not established)
+ECOSCK4R	51.33	ge	house-standard corefill futility band; ws2 CROSS-HOST REPLICATION of the local ECO* batch (_v324osck4) — REPORT SEPARATELY, NEVER POOL (ws2 host term not established)
+ECOSCK6R	51.33	ge	house-standard corefill futility band; ws2 CROSS-HOST REPLICATION of the local ECO* batch (_v325osck6) — REPORT SEPARATELY, NEVER POOL (ws2 host term not established)

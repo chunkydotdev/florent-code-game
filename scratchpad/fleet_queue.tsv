@@ -26,9 +26,9 @@ F254COLLARS	bots/_v254collarseal	bots/_v223sealrepair	5400	524000	FAILED	worker@
 F255HOMEMAX	bots/_v255homemax	bots/_v223sealrepair	5400	526000	CLAIMED	worker@work-server-1	2026-08-15T19:26:22Z	claimed for worker@work-server-1
 F256PINMAX	bots/_v256pinmax	bots/_v223sealrepair	5400	528000	CLAIMED	worker@work-server-1	2026-08-15T21:01:59Z	claimed for worker@work-server-1
 F257CATMAX	bots/_v257catmax	bots/_v223sealrepair	5400	530000	DONE	worker@work-server-2	2026-08-15T23:33:01Z	COMPLETE age=274s in worker@work-server-2
-F258SEALMAX	bots/_v258sealmax	bots/_v223sealrepair	5400	532000	RUNNING	worker@work-server-2	2026-08-16T02:04:01Z	RUNNING age=208s
+F258SEALMAX	bots/_v258sealmax	bots/_v223sealrepair	5400	532000	DONE	worker@work-server-2	2026-08-16T02:04:01Z	COMPLETE age=284s in worker@work-server-2
 F259RND1	bots/_v259rnd1	bots/_v223sealrepair	5400	534000	CLAIMED	worker@work-server-2	2026-08-16T04:35:06Z	claimed for worker@work-server-2
-F263PINRND1	bots/_v263pinrnd1	bots/_v223sealrepair	5400	536000	QUEUED	-	-	-
+F263PINRND1	bots/_v263pinrnd1	bots/_v223sealrepair	5400	536000	CLAIMED	worker@work-server-2	2026-08-16T06:25:49Z	claimed for worker@work-server-2
 F266BBNULL	bots/_v266bbnull	bots/_v223sealrepair	5400	538000	QUEUED	-	-	-
 F268TRICOMB	bots/_v268tricomb	bots/_v223sealrepair	5400	540000	QUEUED	-	-	-
 F269AWRSPAW	bots/_v269awrspawn	bots/_v223sealrepair	5400	542000	QUEUED	-	-	-
