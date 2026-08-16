@@ -58961,3 +58961,57 @@ repo's standing note says *"validates anything."* **Caught in one second because
 10,800 games is impossible, not because I re-read my code.** ⇒ **fourth save today from a magnitude
 that could not be true, and zero saves from care.** The one error that escaped me this session
 (v153) was the one that returned a *plausible* number.
+
+--- 2026-08-16T06:2xZ (`date -u`) RESEARCH s45 — ⛔⛔ **RETRACTION: I ATTRIBUTED A CLAIM TO `QUEUE #63` THAT THE ROW DOES NOT MAKE, BRIEFED AN AGENT ON MY PARAPHRASE, AND RELAYED ITS RE-DERIVATION OF THE ROW'S OWN TEXT AS A CORRECTION OF THE ROW.** ---
+
+**Caught by me, opening the row to amend it. Nobody flagged this. It reached the builder AND Magnus.**
+
+**WHAT I SAID** (relay + coordination note + to Magnus): *"`QUEUE #63` says OUR BUILDERS LOCK AT
+3.3x THEIRS **ON LONG MAPS**… it is MIDGARD, not long maps, not even the whole segment"* and
+*"the map-AREA cut returns a NULL — I asked for the wrong axis."*
+
+**WHAT THE ROW ACTUALLY SAYS**, read in full for the first time:
+> **"LONG-APPROACH ARRIVAL — OUR BUILDERS LOCK AT 3.3x THEIRS ON MIDGARD"** … **"15a PRIMARY
+> SEGMENT: {midgard, ragnarok} — LONG-APPROACH, and explicitly NOT '900-area': valkyrie and
+> glacierkeep read 77%/73% and are among our BEST cells despite being the same size."**
+
+⇒ **THE ROW WAS SCOPED TO MIDGARD IN ITS TITLE, AND IT EXPLICITLY REJECTS THE AREA AXIS AND NAMES
+valkyrie/glacierkeep AS THE SAME-SIZE CONTROL THAT RUNS THE OTHER WAY.** The agent's headline
+finding — *"the area cut is null and {valkyrie, glacierkeep} runs the other way (−11.21,
+p=0.0365)"* — **is the row's own text, re-derived at the cost of an opus agent and ~16 minutes.**
+
+**HOW IT HAPPENED, precisely, because the mechanism is reusable:** I took the row's title from the
+**truncated `SessionStart` boot line** — `#63 LONG-APPROACH ARRIVAL — OUR BUILDERS LOCK AT 3.3× THEIRS O`
+— which cuts off exactly before `N MIDGARD`. I completed the sentence from context as *"on long
+maps"*, wrote that paraphrase into the agent brief as a quotation, **specified the map-AREA cut
+the row explicitly warns against**, and never opened the row until I went to amend it.
+⭐ **THE HAZARD IS ALREADY DOCUMENTED AND I WALKED INTO IT ANYWAY:** the non-lane session's deltas
+block names *"the floor check prints 52 rows, every title truncated mid-sentence"* and shipped
+**`queue_check.py --next`** to fix precisely this. **I did not run it.** This is `D22`/the
+annotating-a-row-while-skipping-its-annotations failure, committed by the lane that owns the queue.
+
+## WHAT SURVIVES — the sweep is NOT void, and this is the part a reader needs
+**NEW and not in the row:**
+* **The 3.3x is a LOCK-RATE ratio; ARRIVAL TIME had never been measured.** The time analogue on
+  midgard is **1.71x (median 89 vs 52 rounds), paired +22.14 rounds** — a different statistic,
+  independently corroborating the row via a channel it did not use.
+* **Failure-to-arrive rate 19.2% vs 5.1% = 3.75x (McNemar exact p=0.0192)** — new.
+* ⭐ **POOLED, WE ARE THE FASTER SIDE (paired mean −16.71 rounds).** Not in the row, and it
+  bounds the whole problem: this is not a general property of our bot.
+* **Opponent-controlled DiD +31.31 ± 13.44, 12/14 opponents** — new, and stronger than a raw gap.
+* **Cost to move it live: midgard is 6.78% of the pool and NOT selectable ⇒ ~710 games ≈ 142
+  matches ≈ 9.5 h of window.**
+
+**⭐ AND ONE GENUINE CORRECTION *TO* THE ROW, which is what I should have led with:**
+**`ragnarok` IS NULL (+5.80 rounds, p=0.33).** The row's `15a PRIMARY SEGMENT` is
+**{midgard, ragnarok}** ⇒ **half the declared segment carries no effect, and an arm scoped to the
+stated segment would dilute its own dose by ~50%.** Row amended.
+
+**UNAFFECTED:** the `bodyaware` map decomposition (13 of 15 maps above 50%, sign test p=0.0074,
+midgard 7th at ~8% of the gain, `auroraveil` −4.31pp) and the conclusion that **`bodyaware` does
+not win via #63's mechanism**. That analysis is mine, is against the balanced local fixture, and
+never depended on the paraphrase.
+
+⇒ **PRACTICE, and it is one line: NEVER QUOTE A QUEUE ROW FROM THE BOOT DISPLAY. Run
+`queue_check.py --next` or open `QUEUE.md`.** The boot line truncates mid-sentence and the
+truncation point is where the scope usually lives.
