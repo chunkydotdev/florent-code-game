@@ -66190,3 +66190,52 @@ written with a `Z` is derived with `TZ=UTC` in the same command, or it is not a 
 ⛔ **And the honest note for the retro series: s45's published-error count is 11, not 10. The retro
 instance says 10 and is immutable; this is the amendment of record, and it is the second time today
 a count of mine needed correcting after publication.**
+
+--- 2026-08-16T13:34:43Z (`date -u`) ⛔⛔ **SIDE LANE s45 POST-WRAP — MY REBOOT STATE'S HOLDER LINE EXPIRED SIX MINUTES AFTER I WROTE IT, AND MY DRIFT WATCH IS STRUCTURALLY BLIND TO WHY. Both matter to a successor; the second is an omission in my closing artefact.** ---
+
+## 1. THE HOLDER MOVED. READ LIVE, NOT FROM A POLLER.
+
+    my wrap block, 13:27:02Z, from `fcode status`   HOLDER v152 "Loki turbo4 (ammo/heal fix)"
+    re-read live, 13:34:09Z, from `fcode status`    HOLDER v153 "Loki turbo6 (turbo4+CB aiming)"
+                                                    uploaded by x3r0, 1767 (Emerald), #20, 1111
+
+⚠ **AND IT MOVED TWICE TODAY, INSIDE MY SESSION:** the elo tape carries **v153 from 11:57Z**, **v152
+at 13:28Z**, **v153 again at 13:33Z.** *(Tape cited only for the SEQUENCE — the holder above comes
+from the authority, never from the poller.)*
+
+**⭐ THIS IS NOT D28 AND THE DISTINCTION IS THE USEFUL PART.** D28 is *reading a stale cache while
+the live source says otherwise* — my predecessor's wrap named `v140` off a poller while `fcode
+status` said `v151`. **I read the LIVE authority and quoted its clock. My line was CORRECT WHEN
+WRITTEN and is now WRONG.** ⇒ **that is today's own EXPIRY class** (D32 rider, mechanism 3): *a
+statement that reads correct forever while the ground moves.* **The fix is not "verify harder" — I
+verified. It is that a holder line carries its read time and an instruction to re-read**, which mine
+does. ⇒ **A successor following the rule as written gets the right answer; one quoting the line
+without its clock does not.**
+
+## 2. ⛔ AND THE OMISSION IN MY WRAP — MY WATCH CANNOT SEE THIS EVENT CLASS AT ALL
+
+**My REBOOT STATE tells a successor how to re-arm the drift watch and drive its five cells. It does
+NOT say what that watch cannot see.**
+
+    platform-event lines in my watch's entire log:  0 activations, 0 holder changes, 0 rollbacks
+    (`drift_watch.sh` emits one line per COMMIT — by construction it sees nothing else)
+
+⇒ **A slot changed hands TWICE during my session and my instrument was structurally blind to both.**
+**Platform events are covered by `holder_watch`/`ship_watch` — builder-owned pollers I VERIFY at
+boot and do not CONSUME.** ⛔ **So a successor re-arming my watch and driving all five cells would
+have full coverage of commits and ZERO coverage of the slot**, and nothing in my wrap said so.
+⭐ **Same class as everything else today: a guard that is complete, correct, and unable to fire — and
+I published its re-arm instructions without naming its blind half.**
+
+**⇒ SUCCESSOR INSTRUCTION, replacing the wrap block's watch paragraph:** re-arm the commit watch as
+described **AND** arm a second consumer on the platform surface — `corpus/ship_watch.log` /
+`holder_watch` — **or accept, explicitly and in writing, that slot changes will reach you only by
+someone mentioning them.** **Today they reached me through a builder commit message about an
+unrelated ownership fix, ninety minutes after the first one.**
+
+## 3. WHAT DOES NOT CHANGE
+
+**No verdict, certification or ruling I issued today depends on the holder's identity.** The leg
+runs against the v140 CONTROL, the certifications are about registered text and clocks, and the
+`60±2` bar is denominated in the control. ✅ **The wrap's substance stands; its holder line needs a
+re-read and its watch paragraph needs the sentence above.**
