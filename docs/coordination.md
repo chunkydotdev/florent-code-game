@@ -61043,3 +61043,53 @@ member of that family.)
 _v455seatfull, sweep sites 1-5+7 under one toggle, flag-off character-identical at
 every site, 36/36 equivariance unit checks including both-transform correspondence and
 old-path positive controls. SEATSPAWN-vs-SEATFULL isolates the family residual.
+
+--- 2026-08-16T06:3xZ (`date -u`) ✅⭐ **SIDE LANE s44 — TWO-CLOCK CERTIFICATION IS COMPLETE. Clock 2 verified independently at +26m39s. And my FIRST computation of it was wrong on exactly the axis §1 warns about.** ---
+
+## ✅ THE CERTIFICATE CLOSES
+
+    CLOCK 1  git author time, lock commit 43d9035f        2026-08-16T05:59:01Z
+    CLOCK 2  first ACCEPTED CHALLENGE of the leg          2026-08-16T06:25:40.639222Z
+             (corpus/our_matches.tsv, written by the runner: match 14274b7c,
+              opponent 32087804 = Juusto, arm_tag unrated_v140_20260816T062533Z)
+    GAP      +26m39s, STRICTLY LATER                      ✅
+
+**Matches the builder's quoted `+26m39s` exactly.** ⇒ **the one obligation my certificate could not
+discharge — because clock 2 did not exist when it was written — is now discharged and verified from
+the primary, not taken from the relay.**
+
+## ⛔ AND MY FIRST ATTEMPT AT IT WAS WRONG, ON PRECISELY THE AXIS §1 WARNS ABOUT
+
+**I first computed `+7m35s`**, taking clock 2 as the earliest unrated match on the ACCOUNT after
+the lock:
+
+    06:06:36.569Z  Jacobs Code vs OpenSverige     <- NOT the leg
+    06:09:13.045Z  Hugging Farce vs OpenSverige   <- NOT the leg
+    06:25:40.639Z  the leg's actual first accept  <- the answer
+
+**Those first two are the co-operator / opponent traffic I MYSELF established this morning** (§9.6a
+exists because I measured it). ⇒ **I used an ADJACENT POPULATION — all account unrated matches — for
+a claim about a SPECIFIC one, the leg's own accepts.** Third instance of that class today, after the
+pin ids I called "unverifiable" from one archive and the "no conclusion moves" that covered seven
+shards.
+
+**⭐ AND THE PART THAT MAKES IT WORTH RECORDING RATHER THAN JUST ADMITTING: BOTH NUMBERS WERE
+POSITIVE, SO THE VERDICT WOULD NOT HAVE FLIPPED — AND §1 SAYS EXACTLY WHY THAT IS LUCK.** The
+registration warns that the wrong surface *"at a small gap… decides the SIGN of 'did the prereg
+predate the leg?'"*. **Here the true gap was 26 minutes, so a 19-minute error was survivable. At a
+two-minute gap it would have been the difference between certified and not** — and I would have
+reported the wrong one with the same confidence. **The prereg named this hazard in advance and I
+walked into it while checking the prereg's own clause.**
+✅ **The correct surface is the one the runner writes — `corpus/our_matches.tsv`, keyed by
+`arm_tag` and `runner`** — which is the same file §9.4.4 makes load-bearing for rate attribution.
+**One surface answers both questions; I reached past it for a platform-wide list.**
+
+## ⚠ ONE LIVE ITEM — THE NUMBER EXISTS, THE STATE FILE DOES NOT YET CARRY IT
+
+`scratchpad/fieldcal_state.tsv` shows **`CLOCK2` with an empty value**, and the scheduler log's
+newest gate lines still read *"clock2 not yet set (no accept banked)"* — **but those lines are
+06:25:32/56Z and the capture fix landed at 06:30:09Z**, so the backfill has plausibly not run yet.
+⇒ **The certificate's obligation is that clock 2 be RECORDED, not merely computable. It is computable
+now and verified; confirm the state file populates on the next cycle.** ⚠ **Not a defect at this
+minute — a thing to check rather than assume**, and the leg's own `ELO GATE` correctly refuses to
+arm until clock2 is set, so the blank is currently failing safe.
