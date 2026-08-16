@@ -67171,3 +67171,22 @@ day this lane has had a holder line expire under it, which is why the boot note 
 instruction. **No PushNotification: a teammate managing their own ship is routine and nothing is at
 risk.** Flagged because two lanes' durable state lines just expired, and that is what costs a
 successor.
+
+--- 2026-08-16T14:4xZ ⭐ **RESEARCH s47 — SPAWNING TWO OPUS AGENTS (announced before spawn, anti-collision rule 1). Builder confirmed NO FIRING WINDOW, so the session is archive-only preconditions that can KILL OR RE-PRICE a queued row before a tree is written.** ---
+
+**ADOPTING MAGNUS'S MOMENTUM RULE VERBATIM** (*"every tooling that needs fix goes to the end of the session at wrap, unless it breaks something that makes our loop for finding better bots"*): ⇒ **my `audit_trigger` three-valued owner predicate is DEFERRED TO WRAP.** It is a measurement of our own process, not of a bot. **The side lane's v153→v152 design question (a transition whose SOURCE is UNKNOWN and TARGET is TEAMMATE) is recorded for that wrap slot and is not being built now.**
+
+**HOLDER RE-VERIFIED INDEPENDENTLY at 14:38:58Z, not banked on the relay:** `fcode status` → **HOLDER v152 "Loki turbo4 (ammo/heal fix)", uploaded by x3r0 2026-08-15T17:55:21Z, rating 1735 (Emerald), rank #23 of 126, 1115 matches.** Side lane's 14:36:16Z read confirmed. **CONTROL unchanged: `bots/_v223sealrepair`.**
+⭐ **AND A LIVE INSTANCE OF THE HAZARD, CAUGHT IN THE ACT: `ship_watch.log` at 14:32:53Z still prints `v153` — 6.1 min stale and WRONG about the holder RIGHT NOW.** This is exactly the poll-blindness finding from 14:01Z arriving as a live example rather than a statistic.
+
+**TARGET BAND RE-DERIVED at 1735 (was read at 1751; the side lane was right that it moved):** ⇒ **17 admissible, up from 12.** New entrants: Well have a look (+13.04), diverge (+12.86), Atlas (+12.62), Big O (+12.61), Coreflood (+12.48). Top payers now farming_200s **+21.34**, Erebus **+21.09**, The Bisons **+20.63**.
+⚠ **AND THE COUNTERINTUITIVE READING, STATED SO NOBODY BANKS IT AS GOOD NEWS: A FALLING RATING WIDENS THE ADMISSIBLE BAND AND RAISES THE PAYOUT PER WIN.** Both are pure bookkeeping — the same 5-0 against the same team pays more only because we are now EXPECTED TO LOSE it. **A wider band is not more opportunity; it is a lower seed.**
+
+## AGENT 1 (opus) — `#50` PRECONDITION: IS "MOVE ONCE, BUILD TWICE" A SYSTEMATIC CADENCE OR A ONE-GAME ARTEFACT?
+⭐⭐ **I DERIVED A WIRE SIGNATURE THE ROW DID NOT HAVE, AND IT IS EXACT RATHER THAN HEURISTIC.** `builds.tsv` records the BUILD tile, never the builder's position — so the row's stated test ("consecutive-round builds from identical builder positions") **is not directly computable.** But it is recoverable from the engine's own geometry: **a builder standing at P can only build on P's four ORTHOGONAL neighbours.** ⇒ two builds placed from ONE stop must both be orthogonal neighbours of a common tile, and for two such tiles the separation is **exactly d² ∈ {2, 4}** — d²=2 (diagonal) shares two common orthogonal neighbours, d²=4 (collinear, two apart) shares exactly one (the midpoint). ⛔ **d²=1 is IMPOSSIBLE from one stop** (two adjacent tiles have NO common orthogonal neighbour) **and is therefore the built-in negative control**, as is d²>4.
+⇒ **SIGNATURE: consecutive-round builds by the same team with d² ∈ {2,4} = "move once, build twice". d²=1 or d²>4 = repositioned between builds.** The control is in the data by construction.
+
+## AGENT 2 (opus) — `#80` PRECONDITION: CAN THE SURGE EVER FIRE AT ALL?
+The row establishes DEFECT 1 as *"the round gate is past the bar"* (`SURGE_MIN_RND = 300` vs median kill 174). ⭐ **The precondition asks something stronger and cheaper: `SURGE_TI_FLOOR = 1500` — DO WE EVER BANK 1500 TITANIUM, at any round, in any game?** `econ.tsv.ti_end` carries end-of-game bank for every archived game. ⇒ **if `ti_end` is below 1500 in essentially all of our games, the surge is not MISTIMED, it is UNREACHABLE DEAD CODE — a strictly stronger and simpler finding than DEFECT 1, and it re-prices the row from "move the gate" to "the gate was never the binding constraint".** Both outcomes are decision-grade and neither costs a tree.
+
+**Both agents are READ-ONLY over `corpus/`. Neither edits a bot, fires a match, or writes a verdict. Results relayed before idling — they die with the session.**
