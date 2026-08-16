@@ -65222,3 +65222,48 @@ interval cannot say.** **It is the concrete instance of why the cost side deserv
 the kill side: the very first firing cannot be distinguished from the case the header does not
 price.** ✅ **Handling is correct — the builder recorded it as at-the-bar-coin-flip class explicitly
 and kept the rows as combination input.**
+
+--- 2026-08-16T11:33:37Z RESEARCH s46 ⭐ **THE E3 BAND IS NOT REACHABLE IN A WAY THAT MATTERS — CORRUPT ROWS ARE DROPPED, NOT MISCOUNTED. BUT THE CHECK FOUND A REAL RESIDUAL THE QUESTION DID NOT ASK ABOUT.** ---
+
+**Side lane withdrew the deadline on their E3 flag** (the two aborted ws2 ids are **permanently
+self-aborting** — the >1% abort reads the CUMULATIVE rate, so banked corrupt rows kill the id
+forever; new ids and fresh seeds are the one-way fix). **Their arithmetic held; the premise that
+those shards would reach n=5,400 did not.** They then asked the one question I could answer and
+they could not: **is the expiry band reachable in practice?**
+
+## ANSWER: NO, FOR BIAS — AND IT IS A CODE FACT, NOT A JUDGEMENT
+`tools/overnight_read.py:327` — `good = [r for r in rows if len(r) > 8 and r[6] in ("T","C")]`.
+⇒ **`NOWINNER` rows are EXCLUDED from `good`, and the share (`:342 p = W/N`) is computed over `good`
+ONLY. Corrupt rows are DROPPED, never miscounted as losses.** ⇒ **contamination bias = ZERO; the
+entire cost of ≤1% contamination is ≤1% of n, i.e. a half-width inflated by ~0.5%.**
+✅ **AND THE COMPOSITION HALF IS GUARDED TOO, better than I expected: the seat-imbalance refusal
+(`:338`, tol `max(2, 1% of n)`) runs on `good` — i.e. AFTER the drop.** So a contamination burst
+that skews the seat balance **fires that guard rather than E3's.** ⇒ **E3's expiry is a latent
+defect with no material consequence on this pipeline. PRIORITY: LOW, and lower than the side lane
+or I had it.**
+
+## ⛔ BUT THE RESIDUAL THE QUESTION DID NOT ASK ABOUT, AND IT IS THE ONE WORTH HAVING
+**`overnight_read.py` has exactly FOUR refusal conditions** (`:287` NOWINNER >20% · `:307` row-count
+vs heartbeat >1% · `:324` duplicates · `:339` seat imbalance). ⛔ **NONE IS MAP BALANCE.**
+⇒ **A contamination burst is TEMPORALLY CLUSTERED — ECOPAVER's 32 rows landed in a FOUR-SECOND
+window — and the runner walks the map array in order, so a temporal cluster is very likely a MAP
+cluster. Dropping it therefore skews MAP COMPOSITION SILENTLY, and nothing refuses on that.**
+⚠ **Stated with its limit: I have shown there is no map-balance refusal and that bursts are
+temporally clustered. I have NOT shown that any real shard's map composition was skewed enough to
+move a number.** That is the measurement someone should do before building a fifth refusal.
+
+## ⭐ AND THE THING THAT FELL OUT OF LOOKING: THREE THRESHOLDS GOVERN ONE QUANTITY
+```
+runner abort      NOWINNER > 1%   CUMULATIVE   -> kills the id, permanently
+E3 (my rule)      NOWINNER > 1%   per shard    -> excludes from the cut
+overnight_read    NOWINNER > 20%               -> refuses the read
+```
+⇒ **The reader's is TWENTY TIMES looser than the other two.** It can only ever bind where the
+runner's did not run (pre-existing tapes, or a path the abort does not cover). **Not an alarm — a
+backstop set at a different order of magnitude from the thing it backs up, which is worth knowing
+before anyone tunes one of the three in isolation.**
+
+⭐ **THE SIDE LANE'S UNIFIED FORM IS THE RIGHT GENERAL STATEMENT AND I'M ADOPTING IT OVER MY OWN:
+a rule keyed to a RATIO OF A GROWING DENOMINATOR has no stable behaviour — it is ONE threshold
+governing TWO questions ("is this shard corrupt NOW" and "are these rows corrupt EVER") that want
+opposite answers as n moves. Row identity answers both; a ratio answers neither reliably.**
