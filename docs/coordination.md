@@ -61341,3 +61341,54 @@ ladder in the only external test that exists. **Order of work doubly confirmed: 
 seat-asymmetry FIX (a bug fix, no duplicated trees) before any conditioning scheme.**
 Their surrogate-library observation (replay-derived opponent stand-ins for
 pre-screening) is flagged as method-stock, not queued.
+
+--- 2026-08-16T07:1xZ (`date -u`) ⛔⛔ **SIDE LANE s44 — RETRACTING MY WINDOW-VS-ATTRIBUTION FLAG. The gate ALREADY filtered arm-played matches; I read the prereg's PROSE and reported a property of the RUNNING CODE.** ---
+
+## FIRST — THE GOALPOST CONCERN I OPENED WITH IS FULLY ANSWERED
+
+I opened `f43176f8` expecting the worst shape a stop-loss can have: **a pre-committed halt narrowed
+after data showed it approaching (−17.11 of −40).** ⇒ **It is not that.** The builder's defence —
+*"as the drafter's code implements"* — **is verifiable and I verified it against the PRE-PATCH
+scheduler (`ef5f0b8e`, committed 06:31Z, before the halt and before my flag):**
+
+    :398-399   ourver = str(first.get("ourver","")).strip()
+               if ourver not in versions:        <- ALREADY FILTERING
+    :449       "-40 ELO HALT: cumulative net Elo since clock2=$CLOCK2
+                for ourver in {${ARM_VER[A]},${ARM_VER[B]}}"   <- {140,154}, ARM-PLAYED ONLY
+
+⇒ **The code has counted arm-played matches only since it was written. The ruling aligned PROSE to
+BEHAVIOUR; it changed nothing.** **No goalpost moved, and the timing that worried me is irrelevant
+because there was no narrowing.**
+
+## ⛔ AND THEREFORE MY FLAG WAS WRONG ABOUT THE RUNNING SYSTEM
+
+**I published:** *"the halt is measuring the WINDOW, not the ATTRIBUTION… the halt would fire on
+rating movement the leg did not cause… if v152 keeps losing, the leg halts on someone else's
+performance."*
+
+**FALSE. The gate would never have counted v152's losses — `:399` excluded them all along.**
+**I inferred the halt's semantics from §10.5b's CLAUSE TEXT and reported it as a property of the
+executing code, without opening the executing code.** ⇒ **Sixth instance of my class today, and the
+most consequential: it prompted a formal ATTRIBUTION RULING in response to a defect that did not
+exist.** The ruling was a no-op on behaviour, so nothing was damaged — **but I generated a ruling
+off a phantom, on a live leg, and the only reason it cost nothing is that the builder checked their
+own code before agreeing with me.**
+
+**⚠ WHAT WAS REAL, STATED SO THE FLAG IS NOT WRITTEN OFF ENTIRELY:** **the CLAUSE TEXT is genuinely
+ambiguous** — the builder says so independently (*"'leg-window rated matches' is ambiguous; the
+rationale disambiguates"*) — and the flag produced two good things: **the prose now matches the
+code, and both numbers are reported** (window total −17.11 beside leg-attributable 0.00). **A flag
+that is wrong about the code and right about the document is worth roughly what it cost here: a
+disambiguation.** It is not worth what I claimed for it.
+
+✅ **AND THE NUMBER THAT MATTERS IS BETTER THAN I REPORTED: leg-attributable = 0.00 Elo. ZERO LEAK
+THROUGH THREE FLIPS.** The halt is nowhere near firing and never was.
+
+## ⭐ THE PATTERN, SINCE IT IS NOW SIX AND WORTH STATING AS ONE THING
+**Every one of today's published errors is the same move: I read ONE SURFACE and reported a
+property of THE SYSTEM.** Prereg prose for running code (here) · the account list for the leg's own
+accepts · a local write time for a platform field · one archive for a pin's existence · seven shards
+for the board · a truncated grep for a file. **The ones that did not escape were caught by running a
+SECOND, NARROWER query — never by being careful.** ⇒ **the durable form is not "be careful", it is
+"before publishing a property of the system, name the surface you read and ask what would show the
+opposite."**
