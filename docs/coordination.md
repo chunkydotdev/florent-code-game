@@ -67506,3 +67506,56 @@ down while it is still latent.** ⛔ **Not a defect today, not blocking a leg �
 the daemon's 15:32:55Z row against its 600 s cadence. **Legitimate content — it is the same tool —
 but I wrote to a surface another process owns**, and anyone auditing that log's cadence should know
 the off-beat row is mine.
+
+--- 2026-08-16T15:5xZ ⛔⛔ **SIDE LANE s47 — THE REMOTE GATE GAP IS NOT THEORETICAL: RIGHT NOW **2 OF 2** SHARDS THE GATE WANTS TO STOP ARE REMOTE, AND IT CAN STOP NEITHER. ~7,950 games of core time already burned past the mark that judged them.** — *(NOW-tagged: this is core-time, i.e. momentum. Everything else in this note is DEFER.)* ---
+
+**Asked the PRODUCTION decision function rather than re-deriving prefixes by hand** —
+`auto_gate.py --dry-run`, read-only, 11 live shards:
+
+```
+⛔ STOP  ECOSCK4R2  remote/worker@work-server-2  n=5232/5400  bar=NONE
+         TREND-FLOOR@1000: first 1000 games 46.40% < 52.0% floor
+⛔ STOP  G412g4     remote/worker@work-server-1  n=4720/5400  bar=51.33ge
+         TREND-FLOOR@1000: first 1000 games 51.30% < 52.0% floor
+── 11 live shard(s) evaluated; 2 would be STOPPED ──
+```
+
+⛔ **BOTH ARE REMOTE. `apply_stop` REFUSES remote shards** (`auto_gate.py:1321,1341`, with a selftest
+cell asserting it). ⇒ **100% of today's would-be stops are un-actionable by the tool that made them.**
+
+**THE COST, stated as opportunity rather than loss** — *rows are KEPT and remain combination inputs,
+so these games are not worthless; they are just not worth FURTHER compute, which is Magnus's own
+wording:*
+* `G412g4` — stopped at the 1000 mark, sitting at **4,720** ⇒ **~3,720 games past its own verdict.**
+* `ECOSCK4R2` — stopped at the 1000 mark, sitting at **5,232** ⇒ **~4,232 games past.**
+* **≈7,950 games of fleet time on two shards the gate has already judged.**
+⇒ **This is `ALWAYS_BE_RUNNING`'s concern with the sign flipped: the cores are not idle, they are
+BUSY ON DEAD WORK, which the idle monitor cannot see and the gate cannot stop.**
+
+⭐ **THIS SUPERSEDES MY 14:4xZ FRAMING, WHICH WAS TOO WEAK.** I filed the remote gap off ONE
+historical instance (`ECOPAVR2`) and called the magnitude unmeasured. **Measured now: it is not a
+tail case, it is every case.** All five LOCAL shards are comfortably clear of the floor (`TURBO4A`
+55.89, `TBA` 55.28, `V426BCS` 54.08, `H609h3` 53.85, `H607h3` 52.73) — **the gate has nothing to do
+locally and everything to do remotely, which is exactly the half it cannot reach.**
+
+## ✅ AND THE CONCERN I CAME IN WITH IS **NOT** BITING — reported because I would have to report it if it were
+
+I expected to find a **mid-flight rule change**: the four running arms registered **12:15:41Z –
+12:58:12Z** at bar `51.33`, and the floor rose to 52.0 at **14:33:49Z** — after they started, with
+three already past n=1000, so a NEW threshold applies to ALREADY-PLAYED prefix data.
+⚠ **Structurally that is a retrospective decision-rule change, and `PROGRAMME.md` set a precedent for
+exactly this case ten hours earlier** — the RMST₃₀₀ vintage clause (*"arms whose preregs locked
+before today keep their registered rules"*). **The floor change carries no such clause.**
+✅ **But no live arm is affected: the lowest of the four is 55.28%, more than three points clear.**
+⇒ **A hygiene point for the wrap, not a live issue, and I am not inflating it into one.** **DEFER.**
+
+## ⚠ AND ONE REGISTRY-TRUTH NUMBER, DEFER
+
+**237 of 239 parseable `BARS.tsv` rows (99.2%) carry a `ge` bar BELOW the 52.0 house floor** — 235 of
+them at exactly `51.33`. **The floor is applied INDEPENDENTLY of the registered bar** (`:770-782`
+reads `bar` only to label the source string), and it is **stricter** at the 1000/2700 marks.
+⇒ **For 99.2% of the registry, the number a reader sees is not the constraint that will decide the
+arm.** ⛔ **NOT a defect — Magnus's ruling names this window explicitly** (*"we are not killing at
+1000 games on anything below 52"*, after `H601h2` ground past 1000 at **51.37**). **It is the same
+shape as the COMBO-BAR note: the registry shows the bar, not the binding constraint.** `G412g4`'s
+51.30 is the first live row to sit in that neighbourhood.
