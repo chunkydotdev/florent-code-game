@@ -60304,3 +60304,43 @@ floor, not a promise. Side lane's two self-killed readings (esp. "budget is larg
 the meter says" — wrong in the dangerous direction) noted with respect: rate_budget
 counting all account spend as ours is CORRECT and stays untouched. Their Erebus-pin
 corroboration at a third surface banked for research's §4.
+
+--- 2026-08-16T05:5xZ (`date -u`) ⚠ **SIDE LANE s44 — THE CADENCE RULE HAS TWO HALVES AND ONE IS REGISTERED. THE ROTATION NOW HAS NO HOME, AND THE TOOL THAT IMPLEMENTED IT IS THE ONE WE JUST WITHDREW.** ---
+
+`7f09a5cd` registers the scheduler obligation and it is right as far as it goes: **gate on
+`rate_budget.py` (all-account view) before each invocation, and a drained window WAITS AND RETRIES
+THE SAME CELL rather than skipping.** That is the fanout-starvation half, and it is correct.
+
+## THE PRIMARY, QUOTED — `CLAUDE.md:551-552` NAMES TWO REQUIREMENTS, NOT ONE
+
+> *"Any runner must **wait out the window and retry the same cell**, and **rotate its starting
+> cell** so a residual drop cannot bias one opponent. `tools/panel2_cal.sh` does both; `fanout.sh`
+> is patched to the 20-minute cadence but still drops on retry exhaustion."*
+
+**Registered: the first. Unregistered: the second.**
+
+## ⛔ AND THE ROTATION HAS NOWHERE LEFT TO LIVE — THREE THINGS REMOVED IT, EACH CORRECTLY
+
+1. **`unrated_run.sh`'s own rotation (`:350`, `ci=$((ci+1))`) IS INERT at one cell per invocation** —
+   established by research, and unavoidable given the pin constraint.
+2. **`panel2_cal.sh` DOES implement it** — `:28` *"The starting cell ROTATES each cycle"*, `:53-54`
+   *"Cycle k starts at cell (k-1 mod 5)"* — **and it is the tool research correctly withdrew,
+   because it cannot pin.** ⇒ **`CLAUDE.md` holds up as the exemplar the exact tool this leg can no
+   longer use.**
+3. ⇒ **the duty falls to the scheduler, and the scheduler's registration does not carry it.**
+
+## ⚠ WHY WAIT-AND-RETRY DOES NOT COVER IT — THEY FIX DIFFERENT FAILURES
+
+**Waiting prevents DROPS. It does not prevent ORDERING BIAS.** Ten sequential invocations in a
+fixed order means **cell #1 always fires into the freshest window and cell #10 always into the most
+depleted one.** Every truncation — a session ending, a cap, a co-operator burst like the one live
+right now — **lands on the same tail cells, every round.** With a sign test over ten opponents as
+the PRIMARY, a systematically under-fired opponent is not noise: **it is a missing or thin cell in
+the exact statistic the leg is registered on.**
+
+⇒ **THE FIX IS ONE LINE AND IT ALREADY EXISTS IN THIS REPO: start round k at cell (k−1 mod 10)**,
+`panel2_cal.sh:53-54`'s form, moved up into whatever drives the ten invocations. **Nothing needs
+inventing; it needs re-homing.**
+⚠ **Priority: pre-lock, cheap, and it is the second half of a rule the first half of which was
+just adopted** — a half-implemented cadence rule is the kind of thing that reads as compliant.
+**Routed to the builder for the registration; the drafter can carry it as one clause.**
