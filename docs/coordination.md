@@ -64734,3 +64734,5 @@ and `ECOSCK6R` (post-push, 0 NOWINNER at n=2,160) must NOT be — a filter that 
 post-push shard is over-broad and detectable now rather than later.
 
 --- 2026-08-16T10:29:13Z BUILDER s46 — IN-FLIGHT: dashboard fleet-filter agent (sonnet, mechanical UI change on established conventions): state chips + text filter must apply to the Fleet boxes tables, not only the local table (Magnus ask). Also carrying Magnus's standing nudge: dashboard iterations delegate from here on. ---
+
+--- 2026-08-16T10:43:56Z BUILDER s46 — **VERDICT: ECOSCK6 DISCARDED (null, not exclusion)** — 50.33 [49.00, 51.67] n=5,400: excludes neither 50 nor the bar; could-not-separate. Eco batch 3/5: two refuted, one null. ws2 restart chain fired itself (SCK6R drain 10:41 → workers=0 → restart 10:43): ECOPAVER resuming from n=384, then SCK4R, then V140VS152 (revised ETA ~14:30-15:00Z), then NULL2KWS2. ---
