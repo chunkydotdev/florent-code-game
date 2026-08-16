@@ -3021,3 +3021,44 @@ the clearance* — would NOT have caught this one**, because the gap was not in 
 in **what the members could discriminate.**
 **⇒ The correction is extended: name the members tested, AND name the wrong implementation the
 tested members would fail to detect.**
+
+### ⭐⭐ D32 RIDER — **THE FAMILY IS WIDER THAN SITING: A GUARD THAT IS COMPLETE, CORRECT, AND UNABLE TO FIRE. THREE MEMBERS, THREE MECHANISMS, ONE DAY.**
+
+*(Added 2026-08-16T10:09:15Z. Family identified by the RESEARCH lane; the third member and the general form are this
+lane's; the sharpening below is theirs verbatim. ⚠ **A RIDER AND NOT A NEW D-NUMBER, deliberately —
+this is the same object D32 already names, seen from two more angles, and the CURATION is the
+finding.** Sixth checklist action today; I have declined two rows on volume grounds and this one adds
+no number.)*
+
+**D32 as written covers SITING — the surface has no reader. The family has at least three
+mechanisms, and only the first was named:**
+
+| # | mechanism | instance (2026-08-16) |
+|---|---|---|
+| 1 | **SITING** — the surface has no reader | `AGENTS.md`'s regeneration rule in an HTML comment inside the generated file; Magnus's 70% in a 62k-line channel; the fieldcal falsifier warning in a note rather than the tape |
+| 2 | **ORDERING** — the guard is reached only when it cannot matter | `queue_check`'s `if claimed (prose) … elif gp (structured)`: six rows carried a verified token that was **never consulted**, so adding tokens was INERT |
+| 3 | **EXPIRY** — the guard reads correct and the ground moved | `E3`'s NOWINNER-RATE exclusion: 8.33% and 10.83% today, **0.59% and 0.48% once the same shards resume** — same contamination, same rule, silently admitted |
+
+**⭐ THE GENERAL FORM (this lane):** **a CONTAMINATION RATE is a property of the DENOMINATOR, so any
+rule keyed to it expires as soon as the denominator grows.** The contamination did not change; **the
+rule's ability to see it did.**
+
+**⭐⭐ AND THE SHARPENING THAT EARNS THE FAMILY ITS OWN NAME (research, verbatim):**
+> ***a wrong threshold is visible on inspection; an EXPIRED one reads correct forever.***
+
+⇒ **They fail differently and only the second is invisible to review.** **Every member of this family
+shares that property — the artefact passes inspection, which is exactly why nobody looks twice.**
+**D32's original tell holds across all three: the tell is that it is COMPLETE AND CORRECT.**
+
+**⇒ THE CHECK, extended from D32's:** *"what has to READ this for it to fire, and does that thing
+exist?"* **plus** *"is it REACHED before it can matter?"* **plus** *"does anything it is keyed to
+GROW?"*
+
+**⚠ BOUNDED, so the row is not read as an alarm:** research swept their published cuts and **E3 is
+the ONLY rate-keyed exclusion** — `E5`/`E4`/the fieldcal 40-per-arm floor are COUNTS, the kladde
+exclusions are IDENTITY, and **counts and identities do not expire when the denominator grows.**
+⭐ **That distinction is what made the sweep quick, and it is the durable diagnostic: RATES expire,
+COUNTS and IDENTITIES do not.**
+**Also bounded: both corrupt shards POST-DATE the 08:31:10Z reachability read and are not among its
+59 arms. No published number moves.** **What expires is the RULE on any re-run — the dangerous case,
+because a successor re-running the same script tomorrow gets a silently different population.**
