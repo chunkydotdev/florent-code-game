@@ -1271,3 +1271,60 @@ awaits Magnus.** A successor must not read "unresolved" as "no wrap trigger exis
   of the ones that MATTERED did I catch?"** ⚠ **On that reading s45 scored 0.**
 * **SUNSET WATCH: unchanged. FIRINGS: 15.** Both changes are behaviour-affecting, so the sunset
   clause does not engage.
+
+## ⭐⭐ v1.16 — **FIRING 16. Q8 IS STRUCTURALLY BROKEN BY THE MOMENTUM RULE AND MUST SPLIT; Q3 RECORDS ITS FIRST *TENSE* ERROR; THE `KILLED` BUCKET EARNED ITS KEEP ON A LIVE SAFETY SWITCH.**
+
+**v1.16 — 2026-08-16 (MINOR: records firing 16, splits Q8, adds Q3's second mechanism). Instance:
+`docs/retro-side-lane-2026-08-16-s47.md`, committed in this same action.**
+
+* **FIRINGS: 16** (s29, s32–s45, s47). **Zero point bumps this session.**
+* **⛔⛔ THE HEADLINE, AND IT IS ABOUT THIS INSTRUMENT RATHER THAN THE LANE: Q8 COUNTS FLAGS THAT
+  BECAME SCRIPTS, AND MAGNUS'S MOMENTUM RULE NOW STRUCTURALLY SUPPRESSES THAT COUNT.** *("every
+  tooling that needs fix goes to the end of the session at wrap, unless it breaks something that
+  makes our loop for finding better bots.")* **s47 scored `Q8 = 1` in code against `7` at s43/s44 —
+  and three further flags were ADOPTED and deliberately DEFERRED** (parser divergence, the
+  three-valued owner predicate, the remote-gap consequence). ⇒ **a successor reading `1` would
+  conclude this lane's mechanisation collapsed. It did not; the queue moved.**
+  ⇒ **Q8 NOW ASKS FOR TWO NUMBERS: `ADOPTED` and `BUILT`.** **A rule that changes when work lands
+  invalidates any instrument that counts landings, and this is the first time an external directive
+  has broken one of these questions.**
+* **⭐ Q3 = 8, THE UNIFIER HOLDS A THIRD RUN — 6 of 8 are *a property of a SET reported from a PARTIAL
+  VIEW of it*.** Its purest instance yet: **an ABSENCE in a list I never enumerated** (`SEALPECK` was
+  floor-stopped 38 minutes before I published that all four arms were clear; the name still appears
+  in the tool's output inside a 238-entry registry line, so a grep returns 1 either way).
+  ⛔ **AND A SECOND MECHANISM, NEW: A TENSE ERROR.** *"≈7,950 games of fleet time"* was **arithmetically
+  correct and described a STOCK** — games already played — **reported in the present tense as a
+  FLOW.** ⇒ **Q3 has recorded scope errors for three runs; this is the first where nothing about the
+  number was wrong and everything about its TENSE was.** **A successor checks both: what was
+  searched, and WHEN the quantity was true.**
+* **⭐ Q4 = 2 of 6 SUBSTANTIVE, against s45's 0 of 6** — the first movement since the question was
+  sharpened. **Mechanism unchanged for a FOURTH run and it is still not diligence: GOING TO USE THE
+  THING.** Both saves came from reaching for an artefact to use it (a carry-forward list; a
+  cancellation ledger), **never from re-reading what I had written.** ⚠ **v1.14's blind spot
+  re-confirmed: every peer-caught error returned a PLAUSIBLE value.**
+* **⭐⭐ Q5's `KILLED` BUCKET JUSTIFIED ITSELF ON ONE CASE, and it is the most valuable thing in the
+  run: I drove a live safety switch's ON state through an env hook that does not exist, got the
+  "wrong" answer, and was one sentence from publishing *"the ON state is broken"* about the mechanism
+  protecting the ladder slot.** Re-driven against the real parameter, it discriminated correctly.
+  ⇒ **STANDING: A FAILED DRIVE OF MY OWN INSTRUMENT IS NOT A FINDING ABOUT THEIRS.** **v1.12 added
+  this bucket because redirects had no home; s47 shows it also houses the class where the lane's
+  product would have been a false defect claim on a live guard.**
+* **Q9 = 0, the best recorded** (four corrections, none needing a second pass) — ⚠ **on a small
+  denominator inflated by a high correction VOLUME. Not yet a trend.**
+* **Q6′: conduct claims ZERO, ninth consecutive run.** Two relayed figures needed correction, both
+  same-session. **v1.14's favourable-claim-about-self extension FIRED for the first time:** a peer
+  volunteered that this lane's ledger tip was *"the single highest-leverage thing anyone handed them
+  today."* **Logged as THEIR judgement about THEIR session, not adopted as a finding about this
+  lane** — the checkable half (it falsified their cadence subject; it opened the predicate work) is
+  separated from the ranking, which I cannot verify and did not accept.
+* **LEDGER: prevented ~10 · caused 0 · nearly caused 1. DETECTION ~10/10 · PRESCRIPTION 4/5.**
+  ⇒ **v1.11's retirement of *"detects better than it prescribes"* holds a FIFTH run.** **The single
+  wrong prescription was the one recommendation I made about someone else's row** — right that `#79`
+  was mis-stated, wrong that a radius extension fixes it.
+
+**SUNSET WATCH: every surviving question fired. Nothing armed.**
+
+**⚠ CARRIED TO v1.17 — one, and it is the Q8 split:** until Q8 reports `ADOPTED` and `BUILT`
+separately, **every session run under the momentum rule will under-report mechanisation.** The next
+run should also check whether `DEFERRED` items actually landed at their wrap, because **an adopted
+flag that never gets built is exactly the routing debt D32 describes, wearing an acceptance.**
