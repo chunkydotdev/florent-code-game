@@ -1206,6 +1206,7 @@ H611h3 bots/_v611h3 bots/_v223sealrepair 5400 494000
 H613h3 bots/_v613h3 bots/_v223sealrepair 5400 496000
 # KILLED by Magnus 2026-08-16 ~18:0x pre/mid-start to free a core for the klad family: H614h3 bots/_v614h3 bots/_v223sealrepair 5400 498000
 KLADTKILL bots/_v469kladtkill bots/_v223sealrepair 5400 802000
+GUNPINA bots/_v470gunpina bots/_v223sealrepair 2700 804000
 # RETIRED 2026-08-16 18:5xZ (Magnus: killed every H reaching a checkpoint today, and 'definitely H618h3'; family reads 44-52): H616h3 bots/_v616h3 bots/_v223sealrepair 5400 500000
 # RETIRED 2026-08-16 18:5xZ (Magnus: killed every H reaching a checkpoint today, and 'definitely H618h3'; family reads 44-52): H617h3 bots/_v617h3 bots/_v223sealrepair 5400 502000
 # RETIRED 2026-08-16 18:5xZ (Magnus: killed every H reaching a checkpoint today, and 'definitely H618h3'; family reads 44-52): H618h3 bots/_v618h3 bots/_v223sealrepair 5400 504000
