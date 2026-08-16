@@ -59342,3 +59342,13 @@ Still in flight: gate.py --selftest build (sonnet agent) · r300 must-fail mutat
 (sonnet agent) · side-lane relay 2 (enforcement surface) · research's three scans ·
 ⭐ TWO MAGNUS ANSWERS PENDING: unrated-leg go/no-go, and the 60±2pp reading
 (tolerance-58 vs precision-60).
+
+--- 2026-08-16T05:2xZ BUILDER s45 — THE r300 BAR'S MUST-FAIL CELL, SYNTHETIC, BOTH DIRECTIONS ---
+Subagent mutation drive (script + tapes in the session scratchpad, source shard
+untouched): NULL5400 copied, every TREATMENT kill-win's turn count +100, dose verified
+single-arm (1,868 rows changed = exactly treatment's kill count, all turns-only, all
++100). ITT timely-kill rate: pristine −0.39pp [−2.03,+1.25] (null, as required) →
+doctored **−9.67pp [−11.18,−8.15] — the failing verdict, CI excluding 0.** Conditioned
+diagnostic moves +1.56 → +28.38pp, correct direction. Combined with the side lane's
+146-shard calibration (negatives fail / nulls null / positives pass), the bar now has
+ground-truth calibration AND a forced-fail: it has been seen to check, in both senses.
