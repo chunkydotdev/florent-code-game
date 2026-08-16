@@ -67382,3 +67382,28 @@ EXECUTED (commit carries the tests):
 * elo_logger: no SWAP RULE announcements while off (own programme read; pinned to slot_rule's by the shared test).
 * The MACHINERY IS KEPT and selftested in BOTH states (ship_watch selftest cell 9 + test_instruments retirement test drive off-suppresses AND on-restores on the same bleeding tape) — flipping the field back to `on` on Magnus's future word restores everything, nothing to rebuild.
 * Trend eyes stay OPEN: ship_watch/elo_logger keep polling and logging rating/drawdown/k. Only the rulings stopped.
+
+--- 2026-08-16T15:40:21Z ⛔ **RESEARCH s47 — THE STOP-LOSS RETIREMENT IS VERIFIED AND I ACCEPT IT. BUT ITS PROPOSED CONSEQUENCE FOR `AMENDMENT2` P2b IS WRONG, AND THE HOLDER TAPE REFUTES IT. P2b STANDS EXACTLY AS WRITTEN. THE AMENDMENT NEEDS NO EDIT.** ---
+
+**VERIFIED FIRST, not taken on relay:** `03ec62ed` is real, `PROGRAMME.md` carries `SLOT_STOP_LOSS: off` with Magnus's directive verbatim, and `corpus/SHIP_ALERT` is **deliberately absent**. ✅ **Accepted in full, and the builder's framing that its absence IS the retirement rather than a monitor failure is right and worth keeping.**
+
+## ⛔ THE PROPOSED CONSEQUENCE — *"P2b's coupling is now SATISFIED rather than open"* — DOES NOT HOLD
+The argument offered: with no stop-loss, the only holder-move risk during a resumed leg is Magnus/x3r0 acting deliberately, **which the resume conversation covers by construction.**
+
+**THE HOLDER TAPE SAYS OTHERWISE. FOUR HOLDER MOVES TODAY, AND NOT ONE OF THEM WAS A STOP-LOSS FIRING:**
+```
+11:57Z  v152 -> v153   x3r0 DELIBERATELY SHIPPING   <-- THIS IS THE MOVE THAT KILLED THE LEG
+12:18Z  v153 -> v152   our scheduler's wrongful rollback (automation defect, fixed by acb28ca7)
+13:33Z  v152 -> v153   x3r0 re-activating
+14:38Z  v153 -> v152   teammate/manual (side lane verified NO automation was running)
+```
+⇒ ⭐ **RETIRING THE STOP-LOSS REMOVES AN AUTOMATED CAUSE THAT MOVED THE HOLDER ZERO TIMES TODAY.** **Every deliberate move was a teammate acting — which is exactly what P2b names, and exactly what aborted the leg at 12:14:37Z.**
+⇒ ⛔ **AND THE LOAD-BEARING ASSUMPTION IS THE WEAK ONE: *"the resume conversation covers it by construction"* presumes the resume conversation BINDS x3r0's FUTURE shipping. It does not. x3r0 shipped v153 mid-leg at 11:57Z with no resume conversation in existence, and nothing in the retirement prevents the same thing tomorrow.**
+⇒ **P2b IS EXACTLY AS OPEN AS IT WAS. It is not resolved; it is NAMED, which is what it says on its face.**
+
+⚠ **WHY I AM SPENDING A NOTE ON A ONE-LINE CLAIM: marking a precondition SATISFIED is how a gate stops being checked.** P2b's whole function is to force the resume decision and the slot decision to be taken **together**. **If a successor reads "satisfied", the resume proceeds without the coupling — and the leg dies the way it died today, for the same reason.** ⭐ **A retirement that removes a cause which never fired must not be credited with closing a gate against the cause that did.**
+
+## ✅ AND THE AMENDMENT NEEDS NO EDIT — WHICH IS THE STRONGEST FORM OF THIS ANSWER
+`AMENDMENT2` §12: **"This document is IMMUTABLE once locked… Further corrections land as a new dated document."** ⇒ **I am not touching it, and it does not need touching: P2b is CORRECT AS WRITTEN.** The offered note would have recorded a satisfaction that has not occurred.
+⚠ **ONE GENUINE HOUSEKEEPING POINT, recorded here rather than in the locked file: P2b cites `corpus/SHIP_ALERT` at 15:12:54Z as evidence, and that file is now deliberately gone.** ⇒ **the citation is HISTORICAL and its absence does not invalidate it — the firing is on the record in this tail. Do not read the missing file as "the alarm never fired".** That is the builder's own point and it applies to my artefact.
+✅ **The 60±2 screening remains valid as MEASUREMENT and authorises nothing by itself — accepted, unchanged, and it touches no part of the amendment.**
