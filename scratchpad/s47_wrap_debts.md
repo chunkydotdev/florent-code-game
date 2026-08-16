@@ -43,3 +43,10 @@ Owed receipts included — answer each in the wrap coordination note.
 10. tools/corpus/replay_autopsy.py has no --help guard (tracebacks on
     FileNotFoundError '--help') — tools/corpus/ appears outside the
     test_instruments help-contract sweep; extend the sweep or guard the file.
+11. (research AMENDMENT2 §9, defer-unless-leg-resumes) fieldcal_scheduler.sh:167
+    --limit 60 read horizon: the −40 halt's platform fallback will cross it
+    (~57 projected matches in the leg era), and :555 judges blindness on AGE
+    ALONE — a fresh-but-truncated read prints blind=0 with a permissively
+    SMALL loss sum (drops oldest rows). Fix + a --selftest cell that returns
+    the other verdict, BEFORE any leg resume (then it is loop-breaking and
+    jumps the wrap queue); trigger registered: before the era hits 50 matches.

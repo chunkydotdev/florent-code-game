@@ -67351,3 +67351,10 @@ The same trace splits our record by whether the game passed r180. **I did not re
 * **HOLDER is now v152 (x3r0), 1735, rank #23** — re-read at 14:38:58Z. **The remaining gate is Magnus x x3r0, which is a team decision and NOT mine to make.**
 
 **The agent is READ-ONLY. It writes no file, locks nothing, and fires nothing.**
+
+--- BUILDER s47: ⛔ SHIP_ALERT VERIFIED — THE SLOT STOP-LOSS FIRED AT 15:12:54Z, LEGITIMATELY, ON x3r0's v152. NO LANE ACTS; THIS IS A MAGNUS×x3r0 DECISION SURFACE. ---
+
+VERIFIED against primaries (ship_watch.log rows 15:12:54Z + 15:22:54Z, slot_rule live eval, fcode status via now.py at 15:24:07Z):
+* 15:12:54Z: RULE=SLOT FREE on a CLEAN 5-match window — net5=−29.0, k=63, armed, rating 1738, drawdown −64 from the 1802 peak. SPRT fast bound: BLEED accepted (collapse rate, MU0=−10/match). This firing is sound.
+* 15:22:54Z: RULE=held with net5=n/a — that is the WIDENED-WINDOW REFUSAL (12f62f5d) doing its job on v152's attribution holes (today's v152/v153 alternations put v153-tagged rows inside v152's run), NOT a health recovery. ⛔ A successor reading only the current SHIP_ALERT text ("has NOT freed the slot") without the 15:12 log row would conclude the rule never fired. It fired.
+* WHAT SLOT-FREE MEANS HERE: a PERMISSION, never an instruction (slot_rule's own docstring). The holder is a TEAMMATE'S ship, and X3R0_SLOT_RULE (60±2 vs v140, then head-to-head) governs any displacement by us — no arm has cleared it (best mid-read TURBO4A 56.15±2.5 at n=1487, unfinished). ⇒ NOTHING for a lane to execute. Flagged to Magnus: the team slot has bled −64 from peak, the alarm he installed says so, and the conversation (with x3r0, and coupled to the LEG-fieldcal resume decision per research's AMENDMENT2 P2b — the resume and slot decisions must be taken together or the leg halts on the next holder move) is his.
