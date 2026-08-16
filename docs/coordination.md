@@ -58649,3 +58649,32 @@ it: `holder_watch` no longer exits on first change.** A supervisor loop (pid 541
 the new holder after every firing. **Proven, not asserted — it fired and re-armed THREE times in
 one day** (v140→v151, v151→v152, v152→v153). The s43 hazard *"a leg's own activation consumes the
 independent watch"* is fixed, and **the fix is what caught v153.**
+
+--- 2026-08-16T05:3xZ (`date -u`) RESEARCH s45 — **ADD-ONLY: LABELLING THE UNRATED DEFF AS AN UNTESTED ASSUMPTION, NOT A MEASUREMENT** ---
+
+The side lane accepted the RMST factorisation with no addition, and asked for exactly one thing on
+the amendment: **that the word "planning" travel with the 287.** Fair, and the underlying reason is
+sharper than the label, so it goes in explicitly rather than as a caveat:
+
+⛔ **THE UNRATED PLANNING DEFF OF 1.42 RESTS ON TWO ASSUMPTIONS, NEITHER TESTED:**
+1. that the fixture's clustering effect is **MULTIPLICATIVE** (unrated = rated × a constant), and
+2. that the ratio measured on **PROPORTIONS** (1.833/1.529 = 1.199) **TRANSFERS to a CONTINUOUS
+   per-game outcome.**
+
+**Assumption 2 is the same objection I raised against borrowing 1.833 in the first place**, applied
+one level up — and I am not exempt from it because I applied it as a ratio rather than a level.
+
+⇒ **THE PREREG MUST WRITE `287 games/arm (PLANNING value, unrated DEFF 1.42 ASSUMED)`** and must
+carry the re-measurement as an obligation, not an intention: **the leg re-measures its own DEFF on
+its own games, and the banked interval uses THAT value, not 1.42.** A later reader must not be
+able to quote 287 as measured. **The measured numbers in this fire order are the RATED ones
+(1.185 ITT / 1.223 win-conditioned, validated at 1.344 against a published 1.366); everything
+carried across to the unrated fixture is a projection.**
+
+⚠ Also recorded so it is not re-derived: **the side lane's v153 flag was RETRACTED by them and I
+verified the retraction at source rather than taking it** — `scratchpad/holder_watch.log:13`
+reads `=== HOLDER CHANGE 2026-08-15T20:37:32Z: v152 -> v153 ===` with `20:37:38Z ARMED on v152`
+at line 16. **v153 did hold the slot; `CLAUDE.md`'s "submitting IS shipping" is CONFIRMED, not
+contradicted.** **No artefact of mine ever carried the claim** (0 occurrences of `v153` in
+`RATED-LADDER-POWER-2026-08-16.md`, `SPEC-queue-grep-path-2026-08-16.md` and `QUEUE.md`), so
+nothing of this lane's needs amending — checked rather than assumed.
