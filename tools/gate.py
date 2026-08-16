@@ -213,6 +213,27 @@ def check_determinism(bots: list[Path], pooled_not_paired: bool = False) -> None
                 f"COPY before measuring.")
 
 
+def _norm_line_pat(x: str) -> str:
+    return Path(x).name.lstrip("_").removeprefix("det_").lstrip("_")
+
+
+def incumbent_matches_line_dirs(raw: str) -> bool | None:
+    """The invariant behind the LINE_DIRS-STALE warn, importable on its own.
+
+    Returns None when either field is absent (nothing to check), else whether
+    the INCUMBENT matches any LINE_DIRS pattern. Lives at module level so
+    tests/test_instruments.py can run it against the LIVE PROGRAMME.md at every
+    boot — the selftest cells here are fixture-only by design, and the two
+    historical breakages (s31, s46) each sat unseen for days precisely because
+    nothing boot-run evaluated the live file.
+    """
+    pairs = dict(re.findall(r"^\s{4}([A-Z_0-9]+):\s*(.+?)\s*$", raw, re.M))
+    inc, pats = pairs.get("INCUMBENT", ""), pairs.get("LINE_DIRS", "").split()
+    if not inc or not pats:
+        return None
+    return any(fnmatch(_norm_line_pat(inc), _norm_line_pat(p)) for p in pats)
+
+
 def check_programme(plank: Path, allow_off: bool, prog_path: Path | None = None) -> None:
     """Refuse a battery that is not on the ACTIVE PROGRAMME.
 
@@ -272,6 +293,18 @@ def check_programme(plank: Path, allow_off: bool, prog_path: Path | None = None)
     # on-line bot fails its own line: `_det_v105loki1` must match `_v105loki1`.
     def norm(x):
         return Path(x).name.lstrip("_").removeprefix("det_").lstrip("_")
+    # ⭐ INVARIANT (side lane, s46): the INCUMBENT must itself match LINE_DIRS.
+    # Both prior repairs of this field were NAME PATTERNS and both expired when
+    # the naming convention advanced (s31: loki-names stopped at _v139heal;
+    # s46: _v1[3-9]?* stopped at v199 while the line went v2xx — ~47h with the
+    # ENTIRE line outside the field, 26/27 batteries bypassing via
+    # --off-programme). A pattern renewal has a shelf life; this re-derives
+    # from the two fields on every run and cannot expire.
+    if incumbent_matches_line_dirs(raw) is False:
+        WARN.append(f"LINE_DIRS STALE: the INCUMBENT {fields.get('INCUMBENT','?')} does not match any "
+                    f"LINE_DIRS pattern -- the gate would refuse the line it "
+                    f"exists to serve. Widen LINE_DIRS (Magnus's directive) "
+                    f"before trusting any refusal it produces.")
     on_line = any(fnmatch(norm(plank.name), norm(pat)) for pat in pats)
     if on_line:
         print(f"  {plank.name}: ON the {line} line")
@@ -512,6 +545,21 @@ def selftest() -> int:
     f, w, out = run("e_missing", None, "bots/_fixt_v7")
     chk("missing PROGRAMME.md: no FAIL (no crash)", len(f), 0)
     chk("...WARN fires instead", bool(w) and "no PROGRAMME.md" in w[0], True)
+
+    print("\n── f: INCUMBENT-matches-LINE_DIRS invariant -- both verdicts ───────────")
+    # The BASE fixture's incumbent (_fixt_incumbent) matches bots/_fixt* -- the
+    # invariant must stay silent on a consistent file...
+    f, w, out = run("f_inc_ok", BASE, "bots/_fixt_v7")
+    chk("consistent INCUMBENT: no LINE_DIRS-STALE warn",
+        any("LINE_DIRS STALE" in x for x in w), False)
+    # ...and FIRE when the incumbent falls outside every pattern -- the exact
+    # state PROGRAMME.md stood in for ~47h across s44-s46 (incumbent _v223*,
+    # patterns capped at v199), which no fixture cell could see.
+    STALE = BASE.replace("    INCUMBENT: bots/_fixt_incumbent\n",
+                         "    INCUMBENT: bots/_beyond_the_patterns\n")
+    f, w, out = run("f_inc_stale", STALE, "bots/_fixt_v7")
+    chk("INCUMBENT outside every pattern: LINE_DIRS-STALE warn FIRES",
+        any("LINE_DIRS STALE" in x for x in w), True)
 
     shutil.rmtree(tmp, ignore_errors=True)
     print()

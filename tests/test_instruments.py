@@ -815,3 +815,34 @@ class TestWatchdog(unittest.TestCase):
                         f"⛔ watchdog.plist points at {args[1]}, which does not "
                         "exist. The repo moved and the agent is silently dead.")
         self.assertTrue(Path(pl["WorkingDirectory"]).exists())
+
+
+class LiveProgrammeLineDirsInvariant(unittest.TestCase):
+    """The one live-file check in this suite, on purpose.
+
+    gate.py's selftest is fixture-only by design, so a stale LINE_DIRS (an
+    INCUMBENT no pattern matches) is invisible to it — and that exact state
+    held for ~47h across s44-s46 (incumbent _v223sealrepair, patterns capped
+    at v199) with 26/27 batteries bypassing the gate via --off-programme.
+    This suite runs at every lane's boot, so the invariant fires at the next
+    boot after the naming convention outruns the patterns, instead of sitting
+    for days. (Side lane finding, 2026-08-16, f1b04e7e.)
+    """
+
+    def test_live_incumbent_matches_line_dirs(self):
+        from gate import incumbent_matches_line_dirs
+        raw = (ROOT / "PROGRAMME.md").read_text()
+        got = incumbent_matches_line_dirs(raw)
+        self.assertIsNotNone(got, "PROGRAMME.md lost its INCUMBENT or LINE_DIRS field")
+        self.assertTrue(got, "LINE_DIRS STALE: the live INCUMBENT matches no "
+                             "LINE_DIRS pattern — widen LINE_DIRS (Magnus's "
+                             "directive) before trusting any gate refusal")
+
+    def test_checker_fires_on_the_historical_stale_state(self):
+        # The negative twin: the exact pre-widening s46 state must FAIL the
+        # invariant, or the live test above has never been seen to check.
+        from gate import incumbent_matches_line_dirs
+        stale = ("    LINE_DIRS: bots/_v105loki1 bots/_v10?loki* "
+                 "bots/_v1??loki* bots/_v1[3-9]?*\n"
+                 "    INCUMBENT: bots/_v223sealrepair\n")
+        self.assertFalse(incumbent_matches_line_dirs(stale))
