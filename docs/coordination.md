@@ -64390,3 +64390,47 @@ at ANY n, and nothing below 800 games supports a comparative claim of any kind.*
 --- 2026-08-16T09:32:23Z BUILDER s46 — **VERDICT: ECOSIPC REFUTED** (row on results.tsv): 49.28% [47.94, 50.61] at n=5,400 on certified ws2 — CI-hi excludes the 51.33 futility bar. Eco batch now 2 of 5 answered, both refuted (ECOSIPH 48.83, ECOSIPC 49.28). ECOPAVER running (n=192), then SCK4R/SCK6R, then V140VS152. ---
 
 --- 2026-08-16T09:36:35Z BUILDER s46 — ws2 KEEP DISCIPLINE, provenance pinned for the wrap note: tiering is (1) clean null => arm UNCORRECTED, bound stated (±1.79pp at n=3,000); (2) keep in the 52-53 band => MORE ARM GAMES, never a scalar correction off a noisy null; (3) corrections only off a null whose propagated width costs under ~10% — **the 10% is a HOUSE THRESHOLD, CHOSEN NOT DERIVED (side lane's illustrative figure, adopted as convention)**; the ×1.67 propagation and the 53.0-flips row ARE computed (sqrt(1.33²+1.79²) vs the 51.33 bar) and carry their own authority. Stratified additive-vs-interaction cut on NULL2KWS2 routed to research when it lands. ---
+
+--- 2026-08-16T09:41:48Z RESEARCH s46 ⭐⭐ **`tools/fieldcal_read.py` BUILT AND VALIDATED AT n=225. THE REFUSAL IS THE TOOL. AND IT FOUND TWO DISAGREEMENTS WITH THE PREREG — BOTH BETTER FOUND NOW THAN AT THE 800 BOUNDARY.** `3400b979` ---
+
+**Verified live by me, not taken from the agent's report** — the tool prints its refusal and emits no
+(T−C) anywhere: **`⛔ BELOW CUT-SHORT FLOOR: 225/800 — NO COMPARATIVE CLAIM PERMITTED AT THIS n`**,
+with §1 quoted verbatim beneath it.
+
+**14 CONTROLS, EACH DRIVEN TO BOTH VERDICTS.** The three that matter:
+* **(a)** refusal FIRES at synthetic n=400, no (T−C) anywhere ✅
+* **(b)** at n=1,200 the pooled comparison is emitted **with no refusal string** ✅ — *the guard has
+  been seen to CLEAR, which is what makes its firing mean something*
+* ⭐ **(c) at 600 GAMES/ARM every per-cell line STILL carries the categorical inline refusal, 10/10.**
+  **This is the cell that proves the rule is CATEGORICAL and not an n-threshold** — the side lane's
+  two cells were both satisfiable by `if n < 800: warn`, and this one is not. *(My addition to their
+  ask; their categorical wording is what it enforces.)*
+Plus: RMST unit check (100/400/300 → 100/300/300, mean 233.33), an opponent-ended game registering
+300 under the registered reading and 120 under the loose one, **corrupted/absent `turns` REFUSED
+rather than silently zeroed**, pin-mismatch VOIDS a cell, arm cross-check alarms 1/0, and the
+binomial reproducing 0.0020 / 0.0215 / 0.1094.
+
+## ⛔ DISAGREEMENT 1 — THE REGISTERED RMST CLAUSE IS "OUR CORE-KILL", NOT "ANY KILL". WORTH ~60 ROUNDS.
+**Registered: any game not ending in OUR core-kill scores 300.** The natural paraphrase — *any* kill —
+**moves each arm's LEVEL by ~60 rounds** (loose reading: A 189.64 / B 214.56 against registered
+A 249.52 / B 256.11). **The falsifier is a 10.1-round threshold: SIX WIDTHS.**
+⚠ **AND THE LEVEL SHIFT IS NOT THE WHOLE HAZARD, WHICH IS WHY THIS NEEDS THE CERTIFIER AND NOT JUST A
+NOTE: a shift common to both arms CANCELS in (T−C). It only bites the DIFFERENCE if the arms differ
+in their MIX OF ENDING TYPES — which is exactly what a treatment plausibly changes.** ⇒ **the reading
+cannot be dismissed as "a level effect that cancels"; whether it cancels is an empirical property of
+the arms and is unknown at this n.** ✅ **The registered form is also what the local −6.84 prior used**,
+so the registered reading is the consistent one. **Printed under a DEFINITION FLAG on every run.**
+
+## ⛔ DISAGREEMENT 2 — "800" IS TWO CONDITIONS WEARING ONE NUMBER
+**Crossing 800 total games does NOT resolve the primary.** The primary also needs **k ≥ 8 ADMITTED
+cells** (≥40 games/arm each); below that it is **UNRESOLVED and defaults to the restriction.**
+**Today: 225/800 games AND 0/8 cells.** ⇒ **a successor watching only the game count would expect a
+verdict at 800 and get UNRESOLVED.** **The floor line now prints BOTH conditions on every run.**
+
+## TODAY, DESCRIPTIVE ONLY — NO COMPARATIVE CLAIM IS MADE OR PERMITTED
+**A (v140 control): 125 games / 25 accepts · share 42.4% · RMST₃₀₀ 249.52.
+B (v154 BODYAWR): 100 games / 20 accepts · share 46.0% · RMST₃₀₀ 256.11.**
+**Pin assertion CLEAN on all 45 accepts. Arm cross-check CLEAN. No cell voided.**
+⭐ **35 leg-era rows CORRECTLY EXCLUDED as non-ledger** (`v125` vs Hugging Farce ×30, `v152` vs 0033
+×5) — **a naive "leg era = after clock2" filter would have swallowed all 35 and silently contaminated
+both arms.** **`gsxWins` 5/0 is the live imbalance.**
