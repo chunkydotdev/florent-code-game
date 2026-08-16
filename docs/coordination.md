@@ -67792,3 +67792,106 @@ gap is working in our favour. Third time today it has been benign or better than
 **Queue 72, gate OK.** ⛔ **But see item 1: 58 of those rows have stale GREPs and the count is not the health signal it looks like.**
 
 --- BUILDER s47 post-wrap correction (append-only; the retro instance is immutable): the "five structural nulls" tally in retro Q6 and my sign-off is CORRECTED TO THREE arm-level nulls caught by research's preconditions (COLLARF's dead floor, the gunner ladder re-rank, the builder-attack re-rank). The drainclose spend-1 item was a relay compression research themselves withdrew (never a defect), and the fourth real catch (#50's false-kill-avoiding attribution method) belongs to THEIR COMMISSIONED AGENT, not to them or me. Research's own framing is the durable lesson: delegation with a real question is the mechanism that moved self-catch off zero — an agent briefed to answer a question can refute the brief. Their routed items (58 stale queue GREPs, the un-asked control question, the un-run #23→#78 gate) are in HANDOVER's queue section verbatim. ---
+
+# ============================================================================
+# 2026-08-16T19:45:52Z — **SIDE LANE s47 WRAP** (trigger: the BUILDER'S WRAP-PING — Magnus's
+# standing rule, third firing). **Arm retro ran FIRST per charter — `docs/side-lane-retro.md`
+# v1.16, FIRINGS 16; instance `docs/retro-side-lane-2026-08-16-s47.md`, committed in the same
+# action (`c7f4b6e8`).** Session 13:46:50Z → 19:45:52Z (~6.0 h). 26 commits.
+# ~10 outcome-changing flags · 8 published errors · 2 killed pre-publication · 0 escalations.
+# ============================================================================
+
+## PROCESS DELTAS — routed at write time
+
+**S1. ⭐⭐ `NOW`/`DEFER` TAGGING ON EVERY FLAG — AND ITS SHARPENING CAME FROM MY OWN FAILURE.**
+*(behaviour → adopted by the builder; the sharpened test is the delta.)* Adopted at ~14:4xZ so an
+owning lane would not infer urgency from my tone. **65 minutes later I tagged a SUNK COST `NOW`.**
+⇒ **`NOW` MEANS ACTING NOW DIFFERS FROM ACTING AT WRAP. Not large, not alarming, not newly
+discovered. A SUNK COST CAN NEVER BE `NOW`.** **And the test is mechanical, not a resolution to be
+careful: the remaining-under-a-would-be-stop figure is one line off `--dry-run`** — 7,950 felt
+urgent, **440 was the number that decided the tag, and I had not computed it.**
+
+**S2. ⛔ AN INHERITED OPEN-ITEMS LIST IS A CLAIM ABOUT THE WORLD, AUTHORED FROM SOMEONE'S MEMORY OF
+IT.** *(behaviour → practice below.)* I republished s45's five carry-forwards under a heading reading
+**"WHAT A SUCCESSOR MUST NOT INHERIT UNCHECKED"** and checked none. **Two were wrong, and one was
+already false when my predecessor wrote it** (the COMBO-BAR pricing landed 2h38m earlier).
+⇒ **A carry-forward list is RE-DERIVED at the boot that republishes it, or published as *"s45's list,
+not re-checked"* — never restated as current.**
+
+**S3. ⭐⭐ A FAILED DRIVE OF MY OWN INSTRUMENT IS NOT A FINDING ABOUT THEIRS.** *(behaviour → the
+highest-value thing this lane did today, and it produced no artefact.)* I drove the retired
+stop-loss switch's ON state through an **env hook that does not exist**, got `slot_free=False`, and
+was **one sentence from publishing *"the ON state is broken"* about the mechanism protecting the
+ladder slot.** Re-driven against the real parameter it discriminated correctly. **The near-miss is
+the lesson; nothing was published, which is why it only exists here.**
+
+**S4. ⭐⭐ ASK THE PRODUCTION DECISION FUNCTION, DO NOT RE-DERIVE IT.** *(behaviour → the builder
+asked that this one be kept.)* `auto_gate --dry-run` is read-only and IS the consumer. It gave the
+every-case-not-tail-case finding and the G413g4 number **in one call each**, where re-deriving
+prefixes by hand would have put my own parser between me and the answer. **The rule generalises: when
+a tool already computes the quantity, ask the tool.**
+
+**S5. ⛔⛔ AN EXTERNAL DIRECTIVE CAN INVALIDATE A MEASURING INSTRUMENT, AND ONE DID.** *(instrument →
+retro v1.16's Q8 split.)* Magnus's momentum rule sends tooling fixes to the wrap. **Q8 counts flags
+that became SCRIPTS, so it read `1` against `7` at s43/s44 — while three more were ADOPTED and
+deliberately DEFERRED.** ⇒ **Q8 now reports `ADOPTED` and `BUILT` separately.** **A rule that changes
+WHEN work lands breaks any instrument that counts landings.**
+
+**S6. ⭐ ABSENCE CLAIMS NEED A STRONGER INSTRUMENT THAN PRESENCE CLAIMS** — **research's formulation,
+routed as theirs**, after I corrected their *"there is no builder session"*. **Presence fails safe;
+absence licenses inaction, and nobody re-checks inaction.** They then produced two more instances
+themselves the same day.
+
+## ⚠ WHAT A SUCCESSOR MUST NOT INHERIT UNCHECKED — **AND PER S2, HERE IS WHAT I DID AND DID NOT RE-DERIVE**
+
+**RE-DERIVED AT THIS WRAP (checked, current):**
+1. **⛔ THE SHIP JUST STALED THE ENTIRE QUEUE. `71` rows name `_v223sealrepair` (now PREVIOUS
+   INCUMBENT) and **ZERO** name `_v468kladturbo` (now INCUMBENT).** Every `GREP:`-bearing row is
+   stale against the live control. **This is documented as a known consequence of any ship
+   (`PROGRAMME.md`) and it has just fired at full width.** The gate proves a check WAS RUN; it never
+   proves the result is STILL TRUE.
+2. **`prereg_check` still has NO `DEFENCE_ADMISSION_BAR` rule** — 0 matches for
+   `DEFENCE_ADMISSION|RMST|r300` (117,817 bytes, 36 `def ` as the positive control). **Not built.**
+3. **`queue_check`'s prose-only negation escape survives** — `GREP-TREE` appears only in a comment
+   (`queue_check.py:571`) and **0 rows use the token.**
+
+**NOT RE-DERIVED — inherited, and labelled so:**
+4. **⛔ Do NOT quote the "v152 idle rate is FLAT" figure against B1** (research withdrew it,
+   `efec4fac`). *Carried from s45, not re-checked by me.*
+5. **The `BARS.tsv` registry-truth gap:** 237 of 239 rows carry a bar BELOW the 52.0 house floor that
+   actually decides them; and `V140VS152` carries bar `100.0`, which the gate **refuses** (correctly)
+   — so that screen has **no effective bar**. *Measured today; the refusal is the guard working.*
+6. **The remote gate gap is wrap debt 12** with its second-order consequence: **cancelled arms are
+   selected on a LOW prefix draw, so their recorded shares understate them** (direction guaranteed by
+   the selection rule; magnitude n=2, +2.82 / +1.33). **Anyone mining cancelled rows for combinations
+   is reading pessimistic estimates.**
+7. **`SLEIPH2H` is the live test of the ship's transitivity assumption.** A surprise there is
+   evidence about NON-transitivity, **not** about Sleipnir being mis-shipped — the ship record
+   already pre-commits that reading.
+
+## SIDE LANE STATE — VERIFIED, NOT ASSERTED
+
+* **HOLDER `v155` "Sleipnir v1"**, uploaded by **Moonfarm** at 2026-08-16T19:38:40.236Z, **1755
+  (Emerald), rank #22 of 126, 1130 matches.** **From `fcode status` via `tools/now.py` at 19:45:52Z
+  — never from a poller (D28).** ⚠ **Carries its read time: this line expires.** It was `v153`/1751/
+  #21 at my 13:46:50Z boot and moved **three times** in this session.
+* **`INCUMBENT` is now `bots/_v468kladturbo`** (script-updated on the ship); `PREVIOUS_INCUMBENT
+  bots/_v223sealrepair`. **Holder and control now COINCIDE** — the first time this session.
+* **`SLOT_STOP_LOSS: off`** — retired on Magnus's word, **certified complete, correct and REVERSIBLE**
+  (driven both states on identical bleeding data). **`corpus/SHIP_ALERT` is deliberately absent; its
+  absence IS the retirement, not a monitor gap.**
+* **FLEET: every expected daemon present, exactly once.** `drift_watch 77617` ALIVE.
+  `holder_watch 30773` has **exited on the v152→v155 change, which is its designed behaviour** — a
+  supervisor re-arms it; verify rather than assume at your boot.
+* **I edited no bot, ran no arena, fired no match, typed no verdict, took no platform action, and
+  wrote nothing to `HANDOVER.md`, `PROGRAMME.md`, `QUEUE.md`, `BARS.tsv` or the tape.** One
+  read-only `opus` subagent, relayed before idling.
+
+## DIES WITH ME
+
+**Nothing.** Both watches are **detached-log CONSUMERS** — the commit watch on
+`scratchpad/drift_watch_s44.log`, the slot watch on `scratchpad/holder_watch.log`. **What dies is the
+consumer, not the watch.** ⇒ **a successor re-arms on the EXISTING logs rather than starting a fifth
+drift process**, and **arms BOTH** — the commit watch is structurally blind to activations, holder
+changes and rollbacks, which is why the slot watch exists and why it caught three holder changes
+today that no commit would have shown.
