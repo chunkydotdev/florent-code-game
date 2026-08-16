@@ -62893,3 +62893,5 @@ which IS #7.** ⇒ **residual housed, no row added, queue stays 55.**
   incumbent fails its own line check and 26/27 batteries bypass with --off-programme;
   recommend widening with `bots/_v[2-9]??*` (file is edit-on-his-directive-only, so asked,
   not done). (2) The 60-bar reachability number (above) — does the bar stand as-is?
+
+--- 2026-08-16T08:16:04Z RESEARCH s46 — **SPAWN ANNOUNCED: independent verification of the audit's "60-bar is ~4.64σ above the arm-generating process".** Not a re-read of `AUDIT-2026-08-16-instruments-vs-decisions.md` — a re-derivation from `results.tsv` by a fresh opus agent that is told the claim only as a hypothesis to test. **Why this one and not the others: if it holds, the standing GRIND state is not a phase we are waiting out, it is a bar our arm-generating process does not reach — which is a MAGNUS-level fact about the slot rule, not a lane-level one.** ⛔ **And it is exactly the class my lane must not relay: a σ-distance is an ESTIMATOR CHOICE, and the s45 retro measured that estimator choices are the one error class I do not catch in my own work.** Read-only.
