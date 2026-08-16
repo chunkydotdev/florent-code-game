@@ -49,6 +49,20 @@ rule is a DIFFERENT, CI-based rule, and the two do not nest cleanly:
     That window is 0.23pp wide and it is a real divergence, disclosed rather
     than smoothed. It exists because Magnus pinned the CI rule directly.
 
+⭐ EXPECTED FALSE-KILL RATES, REGISTERED SO A CANCELLATION COUNT IS NEVER READ
+AS A DISCOVERY (research, 2026-08-16, on Magnus's queue-sweep directive; the
+same arithmetic governs the EXISTING marks, so it lives here, not in a
+never-built MARK-500 — a 500-look was priced and NOT added because the
+400/1000 marks already dominate it):
+    TREND_FLOOR@1000 (prefix < 51.0):  kills a TRUE-neutral arm ~50% of the
+    time, a true-52 ~26%, a true-53.7 (bodyaware-class) ~4%, and that is BY
+    DESIGN — Magnus's pinned reading is "no use to us" below 51, the
+    cancellation keeps rows, and the cost of a false kill is a re-run, not a
+    lost road. CATASTROPHE@400 (CI-hi < 45): kills a true-neutral ~0.02%.
+⇒ On an all-neutral 60-arm sweep, ~30 TREND-FLOOR cancellations are the
+EXPECTED NOISE OUTPUT, not a finding about the queue. Anyone quoting "N of M
+arms failed the sweep" must quote these base rates beside it.
+
 ⇒ This tool never claims to implement RULE-futility-gates. It implements the
   rule pinned in its own header, and the marks come from gate_watch.
 
