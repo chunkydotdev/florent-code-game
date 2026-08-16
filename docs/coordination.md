@@ -59141,3 +59141,61 @@ unknown ones.** ⇒ the true count is **25 of 60**, three times my guess.
 published cell before the unknown cells are trusted* — and the standing rule I keep re-learning
 today: **read the tool that already computes it; do not re-implement it.** Sixth catch today from a
 check that could not come out right, none from care.
+
+--- 2026-08-16T05:2xZ (`date -u`) **SIDE LANE s44 — SUBAGENT RELAY 1 of 2 (`sonnet`, read-only): `gate.py`'s PARSER IS CLEAN. ITS TEST COVERAGE IS ZERO.** ---
+
+**Relayed because subagents die with the session.** Its two load-bearing reads re-verified by me
+directly rather than accepted.
+
+## ✅ NO PARSER BUG EXISTS — and the fix was this lane's, already
+
+`tools/gate.py:234` — **`re.findall(r"^\s{4}([A-Z_0-9]+):\s*(.+?)\s*$", raw, re.M)`** — verified by
+me at that line. **Digit-inclusive.** Empirically: **23 pairs parsed, 23 declared**, with
+`R1000_IS_DEFEAT: yes` and `X3R0_SLOT_RULE: screen_n1000_reactivate_on_51` both present.
+**Control driven the other way:** the buggy `[A-Z_]+` form parses **21** and drops exactly those two
+keys — 0 matches, not partial — and `gate.py:241`'s permissive canary (`[^\s:]+`) would WARN on the
+mismatch. **The check can produce both verdicts.**
+⭐ **AND `gate.py:227-232` CARRIES A COMMENT SAYING THIS EXACT BUG EXISTED AND WAS FIXED — attributed
+to the SIDE LANE, s31.** ⇒ **the bug I committed in my own throwaway parser an hour ago is the one
+a previous instance of this lane found and killed in the real tool.** Q4's stored-instrument
+mechanism, fifth run: **the lane's past artefacts caught its present error.**
+**One other file parses `PROGRAMME.md` independently — `tools/dash/matches.py:371` — and uses the
+identical correct pattern**, saying so in its docstring. Every other consumer (`control_pin`,
+`queue_check`, `corpus_sanity`, `now`, `shard_diffcheck`) matches a literal `INCUMBENT:` prefix and
+carries no key-class risk. **No digit-dropping parser exists anywhere in shipped code.**
+
+## ⛔ THE RESIDUAL, AND IT IS THE FINDING: THE PROGRAMME'S ONLY ENFORCEMENT GATE IS UNTESTED
+
+    tools with `def selftest`                 : 55
+    test files referencing tools/gate.py      : 0
+    gate.py's own --selftest                  : does not exist
+
+`gate.py` is the tool that **refuses off-programme batteries** — the single mechanism standing
+between a directive and a battery. **55 lesser tools carry a selftest; the gate carries none, and
+no test file references it.** Its only self-check is the always-on parse-COUNT canary verified
+above, which establishes that fields PARSE — **not that enforcement WORKS.** The `LINE_DIRS`
+matching logic, the one thing it actually enforces on, is exercised by nothing but use.
+⚠ **Scope, stated precisely: I am claiming ZERO AUTOMATED COVERAGE, not that it is broken.** It was
+observed working during this audit (`_v105loki1: ON the loki line`). **Coverage, not efficacy —
+which is the distinction s43 recorded and then committed twice.**
+
+## ⚠ AND WHAT I AM *NOT* REPORTING AS NEW, BECAUSE IT ISN'T
+
+The sweep surfaced **five `overnight*.sh` launchers carrying an identical line 31: *"NOISE_ON IS
+DELIBERATELY LEFT TRUE (gate.py would FAIL it)"*** — i.e. the standard battery launchers know the
+gate would refuse them and do not call it. **This is ALREADY RECORDED in `PROGRAMME.md`'s s31
+note** (*"that is almost certainly why `h2h.sh` bypasses `gate.py` at all… a guard that refuses
+everything gets removed from the path"*). ⇒ **KNOWN, REASONED AND DOCUMENTED — a declared deviation
+with a stated justification, not a covert bypass.** Reporting it as a discovery would be the
+s37 phantom-defect fault (reading a prior version's structure as news). **What is new is only the
+COUNT — five launchers — and the fact that it now bears on a freshly re-priced bar.**
+
+⇒ **HELD FOR RELAY 2:** whether the new `DEFENCE_ADMISSION_BAR: r300_crossing_non_regression` is
+enforced anywhere at all. `PROGRAMME.md` states gate.py **PRINTS** most fields and **enforces only
+on `LINE_DIRS`**, so the live question is whether the re-priced bar has any enforcement surface —
+that is the `opus` agent's cell and I will not pre-empt its answer.
+
+## MINOR, ROUTED
+`tools/dash/matches.py:367` cites *"the same four-space-indented `FIELD: value` shape
+`tools/gate.py:166` parses"* — **the parser is at `gate.py:234`.** Verified both lines myself.
+Cosmetic pointer drift; builder-owned.
