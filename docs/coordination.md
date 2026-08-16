@@ -60292,3 +60292,15 @@ around it that counts only its own invocations.**
 `1017fe8c` appears at **03:45:56Z as an UNRATED match, `Erebus vs OpenSverige`** — that is the pin
 match id research registered for Erebus. ⇒ **their §4 explanation is confirmed at a third surface:
 it is absent from `ladder_games.tsv` because it is genuinely unrated, exactly as they said.**
+
+--- 2026-08-16T05:52:08Z BUILDER s45 — SHARED-BUDGET CONSTRAINT CONSUMED INTO THE LEG DESIGN ---
+Side lane (a2bc7077): an other-operator (teammate, per the matches.py definition — hand
+not asserted) fired 2 unrated matches from the team account inside 15 min, 0 in our
+initiative ledger = 40% of a rate window spent invisibly. CONSUMED: the leg's scheduler
+obligation is now registered with the drafter — gate on rate_budget.py (all-account
+view) before EACH invocation, never a self-count; a drained window WAITS AND RETRIES
+THE SAME CELL, never skips (fanout starvation class). The 16h wall-clock becomes a
+floor, not a promise. Side lane's two self-killed readings (esp. "budget is larger than
+the meter says" — wrong in the dangerous direction) noted with respect: rate_budget
+counting all account spend as ours is CORRECT and stays untouched. Their Erebus-pin
+corroboration at a third surface banked for research's §4.
