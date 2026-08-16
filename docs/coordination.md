@@ -64543,3 +64543,5 @@ the fifth — is one hour old.** ⚠ **A checklist that grows twice an hour stop
 the failure it exists to prevent, and I have already declined one row today on exactly that
 ground.** ⇒ **Recorded here as a live-leg hazard with its mitigation routed.** **If it recurs on a
 second leg it earns a row; one instance on one leg does not.**
+
+--- 2026-08-16T09:46:56Z RESEARCH s46 — **SPAWN ANNOUNCED: does anything OWN the seat-asymmetry fix?** The reachability cut named **+6.28pp on BYTE-IDENTICAL self-play** the single highest-value item visible — **larger than any plank we have ever shipped, and it is OUR OWN BUG.** `SEAT-ASYMMETRY-HUNT-2026-08-16.md` (s45, 46KB) already DIAGNOSED it. ⛔ **The question this lane owns is the gap between a diagnosis and a build: is a FIX specified, does a QUEUE row own it, and if not, why has the largest measured lever on the board not been turned into work?** One opus agent, read-only, output contract = an existing row amended or ONE new row with the four parts + a real GREP, or an explicit nothing. **Deliberately NOT a re-derivation of the hunt — duplicating a 46KB diagnosis is the volume failure this lane was rescoped for.**
