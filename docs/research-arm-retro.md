@@ -1,4 +1,4 @@
-# RESEARCH ARM RETRO — **v1.15** — run it at every wrap, before the process deltas
+# RESEARCH ARM RETRO — **v1.16** — run it at every wrap, before the process deltas
 
 **RETRO v1.2 · created 2026-08-10 (s28) · bumped twice 2026-08-11 (s29) · companion to `EXPERIMENT-METHOD-CHANGELOG.md`
 (method v3.4) and to `two-session-protocol.md` rule 5.**
@@ -154,6 +154,21 @@ absent, grep for it.***
 ---
 
 ## CHANGELOG
+
+### v1.16 — 2026-08-16 (s45) — FIVE FIRINGS, ZERO UNREAD OUTPUT, AND THE PREMISE IS NOW ENFORCED BY THE SCHEDULE
+**Incident:** Magnus made the research wrap fire on the BUILDER's wrap (standing, 2026-08-16).
+**This file's premise — "this lane's output is worth exactly what another lane consumes" — was a
+preamble anyone could skip; it is now a scheduling rule.** This run is its first firing.
+**Added Q3b** (*was any relay a correct PAYLOAD with a wrong SUMMARY STATISTIC?*), bought with a
+real incident: `125.71 throws/game` was relayed to Magnus as doctrine and is a mean whose median
+is 10, with 61% of it from 3 games of 145. **Q3 asks whether the relay matched its source; it did.
+Nothing in the file asked whether the STATISTIC survived its own distribution.**
+**Q4's mechanism split recorded as new:** five self-catches, all from implausible magnitudes or
+missing greps; **four peer catches, all DESIGN faults (collider, undeclared convention, denominator
+asymmetry, paired variance). The lane does not catch its own estimator choices.**
+**Sunset clause: NOT armed — this run changed behaviour** (Q3b is an instrument change, and three
+findings were promoted into booted files).
+
 
 ### v1.0 — 2026-08-10 (s28) — CREATED
 **Incident that created the file:** Magnus asked whether a researcher-specific
@@ -1489,3 +1504,130 @@ built for?** Timeliness is necessary, not sufficient. **The window schedule was
 published, consumed, and inert — and the fact that made it inert was written in
 `PREREG-CAL8:130` before I started.** ⇒ **before building, check whether the decision
 this serves is even live.**
+
+---
+
+# RUN — s45, 2026-08-16 (wrap trigger: THE BUILDER'S WRAP, the new standing rule's first firing)
+
+**Answered from the day's artefacts — 31 commits, 14 `docs/research/*2026-08-16` files, 5 opus
+subagents — not from memory.**
+
+## 1. CONSUMPTION — of what I produced, what changed a decision?
+
+| artefact | verdict | what it changed |
+|---|---|---|
+| FIRE ORDER #1 (win-share infeasible / kill-round cheap) | **CONSUMED** | changed what the builder asked Magnus for — leg sized on kill round, not win share |
+| The collider catch → ITT RMST | **CONSUMED** | `PROGRAMME.md`'s `DEFENCE_ADMISSION_BAR` estimator changed twice on it |
+| RMST four-case control matrix | **CONSUMED** | adopted wholesale as the bar's scoring basis (`c1c8fd57`) |
+| Kill-hazard re-derivation | **CONSUMED** | Magnus re-priced the bar to r300 |
+| `QUEUE #28` resolution (TI gate null) | **CONSUMED** | row retired |
+| `QUEUE #63`/`#71`/`#8`/`#60`/`#72` amendments | **CONSUMED** | `#72` built and queued as `RUSH72` **within the hour** |
+| Board baseline 53.50 not 55.24 | **CONSUMED** | builder's handover re-priced on it |
+| Paired-interval correction | **CONSUMED** | prereg cites the corrected doc |
+| Router counter-datum | **CONSUMED** | changed the (map,seat) plan's ordering |
+| Live band re-derivation (12/12, no flips) | **CONSUMED** | fire order shipped on live reads |
+| `SPEC-queue-grep-path` | **PENDING** | routed to builder, not built |
+| Pooled fieldcal readout | **PENDING** | leg crosses the seam live; next-session by the builder's own framing |
+| Seat-rung read vs the +6.28 baseline | **PENDING** | rungs never started |
+
+**⇒ 10 CONSUMED, 3 PENDING, 0 UNREAD.** Against s28's *"1 of 3 consumed, 2 unread"* and the s45
+premise that an unread cut is a debit — **this is the first run of this file with no unread output.**
+
+## 2. LATENCY — before or after the decision?
+
+**Every consumed item landed BEFORE its decision, and three landed with minutes to spare:**
+* The **collider** reached the builder **before the prereg was drafted** and before the activation
+  ask went to Magnus. Hours later it would have been an autopsy on a locked leg.
+* The **paired-interval correction** landed **before the lock**, on the doc the prereg cites.
+* The **runner withdrawal** (`panel2_cal` cannot pin) landed before the first window fired.
+* ⭐ **`QUEUE #72` was stocked and BUILT within the hour** — the shortest stock-to-arm latency I have
+  on record.
+
+### Q2b — delivered ON TIME and found IRRELEVANT?
+**Yes, once, and it is the run's clearest waste: the FORWARD-ARRIVAL sweep.** Delivered, correct,
+controls all fired — **and briefed on a paraphrase of `QUEUE #63`'s title taken from the TRUNCATED
+`SessionStart` line**, so an opus agent spent ~16 minutes re-deriving text the row already contained.
+**The relevant half (ragnarok null, arrival r7 vs r28) survived; the commissioned half was inert
+before it started.** `queue_check.py --next` exists to prevent exactly this and I did not run it.
+
+## 3. RELAY FIDELITY — one relay re-read against its source
+
+**Picked: the seat-asymmetry agent's headline.** Re-derived independently from the identity shards:
+agent **+5.92pp (n=13,402)** / mine **+6.28pp, z=+16.24, n=66,572** — same direction, same magnitude,
+my pool wider. ✅ **Relay clean.**
+⛔ **But the fidelity failure this run is elsewhere and it is mine: I relayed `125.71 throws/game`
+for Jython to Magnus as doctrine. It is a MEAN, and 61% of it comes from 3 games of 145. The median
+is 10.** Caught by me, ~20 minutes later, because *one bot id per game across 145 games* was too
+clean to be real. **The payload was right and the summary was wrong — the exact s28 shape this
+question exists for, committed again.**
+
+## 4. ⭐ DID MY OWN CHECKS FIRE ON MY OWN WORK? — **YES, FIVE TIMES**
+1. **Jython throws mean-vs-median** — caught on an implausible cardinality.
+2. **`QUEUE #63` misattribution** — caught on opening the row to amend it.
+3. **The `STATUS: LIVE` footgun** — caught because the count didn't move.
+4. **D30 applied to my own build-composition claim** — found my stated reason ("counts are bounded")
+   was false; means run 1.7–1.9× medians.
+5. **The "v152 farms the weak band" story** — built, tested, died on the Elo adjustment (t = −0.02),
+   **killed before it ever left the session.**
+**Caught by a peer instead: 4** — the collider, the undeclared hazard convention, the `SPEED`
+denominator asymmetry, the paired-variance interval. **All four were the side lane, and all four
+were DESIGN faults, not arithmetic.** ⇒ **the split is diagnostic: I catch implausible magnitudes
+and my own missing greps; I do not catch my own estimator choices.**
+
+## 5. DECLINES — five, all recorded
+1. **Declined to widen the wrap rule to the side lane** on their report of a direct instruction —
+   marked OPEN instead. **The conservative error, deliberately.**
+2. **Declined to bank both the seat fix and the (map,seat) lift** — double-counting.
+3. **Declined to conclude Jython's inserts got less effective** — the per-throw columns are biased by
+   re-INSERT record closing, and I named the mechanism rather than the number.
+4. **Declined to use my 7/7 pin corroboration against the side lane's post-fire assertion** — a
+   version existing is not a match id playing it.
+5. **Declined to stock a duplicate row for the launcher ladder** — the GREP found `#60` already owned
+   it, so I revived it instead.
+
+## 6. PER LANE, AND THE RETRACTION COUNT
+**BUILDER:** numbers before decisions on every one of the day's live calls — the leg's size, its
+primary, its runner, its opponent list, the board baseline, the arm choice. Two queue rows stocked,
+one built within the hour.
+**SIDE LANE:** four primaries they re-derived to the digit, and **four design faults of mine they
+caught** — which is the protocol's whole value expressed as a number.
+⛔ **RETRACTIONS THAT REACHED A LANE: SEVEN.** `SPEED as the bar` · `the bar passes the arms it
+exists to catch` · `55-class kills later` · `r200-300 flipped` · `#63 says long maps` ·
+`panel2_cal as the runner` · `125.71 throws/game`. *(s29 baseline: nine.)*
+⚠ **Every one was withdrawn before it reached a shard, a prereg, or the ladder — but `#63`'s and the
+throws figure BOTH reached Magnus first.** That is the number to watch: **2 of 7 reached the
+principal, not just a lane.**
+
+## 7. CAUSE-vs-EFFECT — fired once, and inverted
+**FIRING:** I read `T4_SEAT_FIRST_ON` / `T4_SEAT1_MIN_DMG` in x3r0's live holder as **seat-conditional
+map logic** and nearly relayed it as converging with the day's seat-asymmetry finding. **They are
+HEAL seats and a role index.** Caught by reading the comments rather than the constant names.
+**Durable form: a constant's NAME is a hypothesis about its meaning, and shared vocabulary across two
+codebases is the strongest available generator of false convergence.**
+
+---
+
+## THE FIRINGS — five
+1. **Q4 fired five times** (s28: zero, s29: seven) — and the **mechanism split is new**: implausible
+   magnitudes and missing greps I catch; **estimator choices I do not**.
+2. **Q2b fired** on the forward-arrival sweep — timely, correct, and **inert before it began**.
+3. **Q3 fired against me**, not for me: the relay was clean, the *summary* was not.
+4. **Q7 fired on shared vocabulary across codebases** — a new generator, not in the file before.
+5. ⭐ **A NEW ONE: the wrap trigger itself.** This run fires on the BUILDER's wrap, per Magnus's
+   standing rule of today. **This file's premise — "output is worth what another lane consumes" — is
+   now enforced by the schedule rather than asserted in a preamble.**
+
+## ⭐ NEW STANDING SUB-QUESTION (Q3b), added this run
+**Was any relay a correct PAYLOAD with a wrong SUMMARY STATISTIC?** Q3 asks whether the relay matched
+its source; it does not ask whether the *statistic chosen* survives its own distribution. **Today's
+`125.71` was faithfully relayed and materially false.** ⇒ **every per-game figure relayed from this
+corpus carries its median beside its mean, or it is not relayed.**
+
+## ROUTING OF THIS RUN'S FINDINGS
+| finding | route |
+|---|---|
+| Never quote a queue row from the boot display | **PROMOTED** — `docs/coordination.md` (booted) |
+| `STATUS: LIVE` blocks as hard as `STATUS: WITHDRAWN` | **PROMOTED** — coordination + `SPEC` to builder |
+| A reproduction is not a validation (D30) | **PROMOTED** — side lane's drift checklist, booted |
+| Mean-vs-median on this corpus | **INSTRUMENT** — Q3b above, this file |
+| Constant names as false-convergence generators | **OBSERVATION — NOT ROUTED** |
