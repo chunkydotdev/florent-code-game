@@ -1269,3 +1269,90 @@ worded that way.** The machinery inspects the WORK; nothing inspects the
 INSTRUCTION. That is the s28 lesson (the machinery never asks whether the
 question is worth answering) relocated one step earlier, from the experiment to
 the brief that orders it.
+
+# ============================================================================
+# s45 — 2026-08-16, ~04:33Z to ~07:4xZ. BUILDER ARM RETRO. Instrument v1.
+# **FIRINGS THIS SESSION: 4** — (1) the s34 self-play-blindness rule fired on
+# the "55-class kills later" story (conditioned metrics, not the fixture, but
+# the same family: a measurement artefact flattering a narrative — it fell to
+# research's ITT RMST); (2) the instruments rule fired at boot (test_instruments
+# RED → running the selftests found a REAL crash in fleet_dispatch); (3) the
+# verify-peer-claims-against-primaries stance fired on the side lane's
+# attribution flag (checked the code before agreeing; the flag was wrong about
+# the code); (4) the fixture-cells-first discipline fired FOUR times in one
+# tool (fieldcal scheduler: no-network cell, python-heredoc-stdin cell, the
+# kladde placeholder flip, and h2's substring trap — every one a real defect
+# caught before first fire).
+# ============================================================================
+
+## 1. WERE THIS LANE'S DECISIONS SOUND?
+
+**SOUND, and the session's spine:**
+* **The estimator discipline under churn.** Four candidate scorers for the
+  re-priced bar in one morning (conditioned → ITT → SPEED → RMST₃₀₀). The
+  sound part was not picking fast — it was refusing to bind SPEED unilaterally
+  (its collider was research's own morning catch), freezing a reported TRIPLE
+  with split=MAGNUS-CALL, and adopting RMST₃₀₀ only when a four-case control
+  matrix existed (null flat, negatives slower, MAPCODE −60.81 as positive
+  control). The bucket being empty when the ruling closed is what let it close
+  as an encoding decision rather than a directive change.
+* **TRIO's cancel survived three re-groundings** (kill-round → directive →
+  power-only) because the POWER leg was verified independently at cancel time.
+  A decision made for two reasons where one dies is only sound if the reasons
+  were independently load-bearing. They were, once — carry that as design: when
+  cancelling, rank the legs and know which one you'd stand on alone.
+* **BODYAWR as the leg's treatment arm** — argued from attribution (one-file
+  diff), n (10,801), and the corrected estimator; then CONFIRMED by the 150-arm
+  re-scan (largest robust kill-speed effect in the comparable class) before the
+  leg fired. The drafter's independent verification that the diff is one file
+  (eco.py only) is what makes OB13 answerable at readout.
+* **Not deferring to the side lane's attribution flag.** Checked the drafter's
+  code first; the gate had always filtered arm-only; the ruling became prose
+  alignment instead of a mid-leg semantics change. The charter's
+  anti-deference clause earned its keep in the expensive direction.
+* **Detaching the leg from every session** (clock2 backfill, heartbeat,
+  platform-fallback gate, per-flip leak check, nohup detach at wrap) — each
+  piece was a response to a named failure mode, none speculative.
+
+**UNSOUND OR OWNED:**
+* **I encoded a collider into a directive.** Magnus ruled the r300 boundary;
+  my operational form ("share of KILL-WINS past r300") conditioned on winning
+  — the exact defect research had killed in the fire order THAT MORNING.
+  Caught in ~1h, but it sat in PROGRAMME.md and CLAUDE.md meanwhile. Lesson,
+  routed to behaviour: when encoding a ruling, run the day's OWN fresh
+  corrections against the encoding before committing it.
+* **I quoted the winner's-curse-naive board (55.24 / +4.8pp gap) to Magnus
+  twice** before research corrected to 53.50 / +6.5pp. The number was never
+  wrong as a max; it was wrong as a SHIPPING value, and I presented it as the
+  second. Same family as CLAUDE.md's "numbers carry subjects".
+* **My "six self-caught corrections" praise to the side lane was arithmetic
+  they had already corrected** (real tally: 3 pre-publication, 5 escaped of
+  which 2 needed a peer). They refused the flattering version; the wrap
+  carries theirs. **A compliment is also a number.**
+* **Two scheduler restarts cost ~1.5 windows** (clock2 fix, then the leak
+  check). Both were the right calls individually; bundling them would have
+  cost one restart. When two patches are foreseeable within an hour, batch.
+
+## 2. OBSERVATIONS ROUTED
+* Fixture-cells-first (the selftest-before-fire discipline) caught FOUR real
+  defects in one new tool before it ever touched the platform → already
+  standing practice; today is its strongest evidence yet. OBSERVATION — the
+  practice needs no new rule, only this record.
+* The thin-fields CLI family (match info returns None where match list is
+  fat) claimed its THIRD member (challenge-response carries only matchId) →
+  routed: rule stated in coordination + scheduler comments; candidate line
+  for docs/fcode-cli.md next time that file is opened.
+* zsh defers traps through a sleeping foreground child (TERM looks hung;
+  only -9 is dangerous) → routed: operator note at unrated_run.sh's trap.
+* "A reproduction is not a validation of the interval" (three lanes
+  digit-matched RMST means while the variance form was wrong for all three)
+  → routed: side lane promoted it to the drift checklist; this retro seconds.
+* V140VS152 self-aborted at 4/234 NOWINNER under the local load spike —
+  the abort guard WORKED; the residue is a scheduling lesson: CPU-tuned
+  opponent trees (v152 "turbo CPU") get measured on hosts at proper
+  allocation, never on a contended box with wall-clock TLE. Routed: handover
+  task (re-queue on ws2).
+
+## 3. OPEN ITEMS CARRIED (from s34, still live)
+* inside-band ⇒ NO SHIP needs the NEG cell check — UNCHANGED, still binds.
+* Self-play blindness rule — fired again this session (see FIRINGS); keep.
