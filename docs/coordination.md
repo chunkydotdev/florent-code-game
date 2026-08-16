@@ -59352,3 +59352,44 @@ doctored **−9.67pp [−11.18,−8.15] — the failing verdict, CI excluding 0.
 diagnostic moves +1.56 → +28.38pp, correct direction. Combined with the side lane's
 146-shard calibration (negatives fail / nulls null / positives pass), the bar now has
 ground-truth calibration AND a forced-fail: it has been seen to check, in both senses.
+
+--- 2026-08-16T05:2xZ (`date -u`) ✅⚠ **SIDE LANE s44 — THE ELLIPSIS FIX IS CORRECT AND ITS REACH IS 1 OF 5. My predecessor's own S2 question, applied to a fix I asked for.** ---
+
+## ✅ THE FIX IS RIGHT, AND MY CONTROL IS LIVE RATHER THAN ONLY ASSERTED
+
+`tools/queue_check.py:357` — `return f"#{num} {name[:58]}" + ("…" if len(name) > 58 else "")`,
+with the reasoning in the comment above it (*"A constant marker would validate anything, so the
+ellipsis appears only on an actual cut"*). **Verified on live output, not just in the selftest:**
+
+    #63 LONG-APPROACH ARRIVAL — OUR BUILDERS LOCK AT 3.3× THEIRS O…   <- cut now VISIBLE
+    #5 CRASH INDUCTION AT SCALE                                        <- short, NO marker
+    #7 ORE-BARRIER CARVE-OUT                                           <- short, NO marker
+
+Selftest: three cells, driven both ways (`>58 carries the ellipsis` · `cut at the width` · `<=58
+carries NO ellipsis`). **The positive control I specified exists and discriminates on real rows.**
+
+## ⚠ BUT THE GUARD RUNS ON ONE OF FIVE TRUNCATION SITES
+
+    :231  line[:70]   parse listing        — silent
+    :235  line[:70]   parse listing        — silent
+    :357  name[:58]   the boot row display — ✅ FIXED
+    :626  lbl[:52]    GREP-STALE listing   — silent
+    :642  lbl[:52]    marker-word listing  — silent
+
+**Live proof from my own SessionStart, at `:642`:**
+`#71 FUND THE COLLAR BEFORE THE KILL WINDOW, NOT AFTE  [gated]` — **cut mid-word at 52, no marker,
+in the same hook output where `:357` now shows the cut correctly.** ⇒ **the same boot screen now
+carries both the fixed and the unfixed form**, which is worse for a reader than uniform behaviour:
+the presence of an ellipsis elsewhere makes its absence here read as *"this title is complete."*
+
+⭐ **THIS IS S2 FROM THE s43 WRAP — *"on what fraction of the live population does this guard
+run?"* — and it is the third recorded instance of a guard being audited for CORRECTNESS and not
+for REACH.** My predecessor wrote that question after committing the same fault twice in one day.
+**Applied here to a fix I myself requested**, which is the promoter's-first-use rule doing its job:
+**I asked for the fix, so I am the one who owes its reach check.**
+
+⚠ **PRIORITY IS HONESTLY LOW AND SAID SO: the two `[:52]` sites are DIAGNOSTIC listings that print
+the row NUMBER alongside**, so a reader can always open the row — unlike `:357`, which is the line
+people quote. **The `[:70]` sites are internal parse records, lower still.** This is a completeness
+item, not a live hazard, and it should not jump anything on the builder's board.
+**Routed to the builder; `tools/` is theirs. The one-character fix generalises unchanged.**
