@@ -58678,3 +58678,87 @@ at line 16. **v153 did hold the slot; `CLAUDE.md`'s "submitting IS shipping" is 
 contradicted.** **No artefact of mine ever carried the claim** (0 occurrences of `v153` in
 `RATED-LADDER-POWER-2026-08-16.md`, `SPEC-queue-grep-path-2026-08-16.md` and `QUEUE.md`), so
 nothing of this lane's needs amending — checked rather than assumed.
+
+--- 2026-08-16T05:1xZ (`date -u`) ⛔⛔ **SIDE LANE s44 — AUDIT OF THE KILL-HAZARD RE-DERIVATION. THE r300+ FINDING IS ROBUST. THE r200–300 CONCLUSION IS SET BY AN UNDECLARED BOUNDARY CONVENTION AND FLIPS UNDER THE OTHER ONE. And this corrects advice I gave the builder forty minutes ago.** ---
+
+`docs/research/KILL-HAZARD-REDERIVED-2026-08-16.md` (`690b5c57`) re-derives `raid.py`'s
+*"TIME IS THEIR ASSET"* table on the post-rotation pool and concludes **r150–300 is no longer
+their window.** It is about to re-price a `PROGRAMME.md` bar and it already lands on a
+cancellation made today, so I re-derived it rather than reading it.
+
+## ✅ FIRST: THE DOC REPRODUCES. I RAN IT INDEPENDENTLY AND HIT ITS NUMBERS.
+
+Carried-maps-only cells, opponents ≥1550, DEFF 1.529: **PRE n=2,855 · POST n=341 — their 341
+exactly.** Every point estimate lands within 0.1–1.4pp, and **the direction is robust in every
+cell**: our late-window hazard roughly doubled while theirs barely moved. **That is the doc's real
+contribution and nothing below touches it.** §1's rotation dates, the era boundary derived rather
+than assumed, the DEFF enumeration, and the refusal of cells under 25 at risk are all correct.
+
+## ⛔ BUT ONE CHOICE IS UNDECLARED AND IT SETS THE HEADLINE
+
+A hazard needs two conventions: **who is AT RISK at window start**, and **which turns fall INSIDE
+the window.** The doc states neither. Both of these are standard:
+
+    A:  at risk  turns >  lo     event  lo <  t <= hi
+    B:  at risk  turns >= lo     event  lo <= t <  hi
+
+**Convention B reproduces the doc to the decimal**, so that is what it used.
+
+    carried maps, r200-300      ours PRE -> POST            interval verdict     RATIO ours/theirs
+      convention B (theirs)     15.0 [12.8,17.2] -> 26.8 [18.0,35.6]   disjoint    0.85 -> 1.05  FLIPS past 1.0
+      convention A              14.9 [12.7,17.1] -> 25.3 [16.6,34.1]   OVERLAP     0.85 -> 0.97  NO FLIP
+
+    carried maps, r300+
+      convention B              17.7 [14.8,20.6] -> 38.0 [24.1,52.0]   disjoint    0.43 -> 0.82  no flip
+      convention A              17.6 [14.7,20.5] -> 38.0 [24.1,52.0]   disjoint    0.42 -> 0.82  no flip
+
+⇒ **BOTH load-bearing r200–300 claims are convention-sensitive.** The *"intervals do NOT overlap"*
+sentence flips to OVERLAP, **and the ratio — the actual basis for "r150–300 is no longer their
+window" — reads 0.97 and does NOT cross 1.0.** Under A that window is still marginally *against*
+us. **The sign of the conclusion is set by a rule nobody wrote down.**
+✅ **r300+ IS ROBUST UNDER BOTH.** *"r300+ is still theirs, much weaker than 0.43 but still against
+us"* survives unchanged, and so does the whole §3A *"it was mostly our old bot, not the field"*
+asymmetry. **The doc is right about the big thing and knife-edged on the specific one it re-prices.**
+
+**⇒ WHAT I AM ASKING FOR IS ONE LINE, NOT A RETRACTION: declare the convention, and report
+r200–300 as CONVENTION-SENSITIVE (0.97–1.05, straddling parity) rather than as 1.05.** §6 already
+says *"the direction is established, the magnitude is not"* — this is that sentence being true of
+the sign as well, in the one cell where the sign is the finding. `CLAUDE.md`'s exposed class is
+**claims that cleared a bar NARROWLY**, and this cleared it by 0.05.
+
+## ⛔⛔ AND IT CORRECTS ME — I TOLD THE BUILDER TO LEAD WITH THE KILL-ROUND LEG AT ~04:5xZ
+
+On the `TRIO` cancellation I wrote: *"the POWER leg alone is contestable… the load-bearing leg is
+the KILL ROUND (232 vs 209) — a programme disqualifier, independent of power and not contestable
+by more games."* **§5 of this doc says that leg is priced on the stale table, and it is right that
+I never checked the magnitude I was leaning on.** TRIO's +23 rounds moves the median from ~209 to
+~232 — **squarely inside the contested window.**
+
+**THE CORRECTED FORM, and it survives on different grounds than I gave:**
+* **The empirical grounding I implied is GONE.** *"Lengthening into r200–300 walks into a window
+  where they convert four times better"* is false on current data under **either** convention
+  (0.97 or 1.05, not 0.85 and nothing like 4×). **I inherited a magnitude from `raid.py`'s header
+  without re-deriving it — the borrowed-premise fault, in a prescription.**
+* **The DIRECTIVE grounding STANDS and is what I should have cited.** `KILL_WINDOW_RND: 250` and
+  `DEFENCE_ADMISSION_BAR: kill_round_non_regression` are **Magnus's directives, not inferences
+  from that table** — research makes exactly this point about `R1000_IS_DEFEAT` in §4 and it
+  applies identically here. **A kill-round regression is off-programme because the programme says
+  so, not because the hazard table says so.** The bar does not weaken when its rationale does;
+  only Magnus can move it.
+⇒ **`TRIO`'s cancellation stands on the power leg plus a directive bar. Both of its stated
+magnitudes are weaker than claimed, and the decision is unchanged.** ⚠ **For the arms NOT yet
+cancelled, that distinction is the whole point: "off-programme by directive" and "empirically
+harmful" license different next steps, and only the first is currently supported.**
+
+## ⚠ TWO SMALLER THINGS, NEITHER BLOCKING
+
+1. **D18 is only half-answered, and the doc's own internal control is what half-answers it.** §6
+   limit 2 names our-version-vs-field confounding but no `oppver` cut is run, and it is runnable
+   (0 null cells). **The asymmetry — ours +20pp, theirs +4pp — is a real internal control and I
+   credit it**; what it cannot see is a counter aimed specifically at US, which by construction
+   does not move their field numbers (`CLAUDE.md` #68's second limit).
+2. **The r300+ denominator is itself era-dependent** — "survived to r300" is composed differently
+   when early-window hazards change. Standard for a hazard and largely handled by holding maps
+   constant, **but it is my own D26 Refinement 2 applied to this doc**, so I name it rather than
+   let the rule bind only other people's work. It does not threaten the r300+ direction, which is
+   disjoint by a wide margin under both conventions.
