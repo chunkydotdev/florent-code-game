@@ -61682,3 +61682,56 @@ self-catches came from an ILLEGAL value; both escapes to a peer returned PLAUSIB
 * **I edited no bot, ran no arena, fired no match, typed no verdict, took no platform action, and
   wrote nothing to `HANDOVER.md` or the tape.** Two read-only subagents, both relayed before idling.
   **Nothing of mine is unrelayed.**
+
+# ============================================================================
+# 2026-08-16T07:38:19Z — **BUILDER ARM s45 WRAP** (Magnus: "then we wrap up"). Arm retro ran
+# FIRST per charter (docs/builder-arm-retro.md s45 instance, f873ff18).
+# ============================================================================
+
+## PROCESS DELTAS — routed at write time
+
+**D1. AN ESTIMATOR IS CHOSEN BY A CONTROL MATRIX, NOT BY ARGUMENT.** Four scorers for
+one bar in one morning, each fixing the last one's defect by reintroducing another
+(conditioned→collider; ITT→win-share dominance; SPEED→the collider again). What ended
+it was not a better argument but FOUR GROUND-TRUTH CASES the winner had to read
+correctly (null flat · two negatives slower · the shipped MAPCODE fix as the board's
+biggest improvement). Routed: RMST₃₀₀ encoded in PROGRAMME.md WITH its matrix as the
+stated basis — the method travels with the choice.
+
+**D2. WHEN ENCODING A RULING, RUN THE DAY'S OWN CORRECTIONS AGAINST THE ENCODING.** I
+wrote Magnus's r300 bar as a kill-win-conditioned share ~4h after research killed that
+exact collider in the fire order. Routed: behaviour (this delta); the amendment chain in
+PROGRAMME.md is the worked example.
+
+**D3. FIXTURE CELLS BEFORE FIRST FIRE PAID FOUR TIMES IN ONE TOOL.** The fieldcal
+scheduler's selftest caught: real-fcode-from-a-selftest, python-heredoc swallowing piped
+stdin, a placeholder cell that had to flip at data-fill, and h2's substring trap
+(unknown=0 contains n=0 — a leak WOULD HAVE PASSED). Every one before the platform ever
+saw the tool. Routed: standing practice, evidence banked here.
+
+**D4. LIVE FIRE FINDS WHAT LOCAL VERIFICATION CANNOT, IN THE FIRST WINDOW.** The
+challenge response carries ONLY matchId (clock2 uncapturable as drafted) — third member
+of the thin-CLI family (match info None vs match list fat). Routed: rule in the
+scheduler's comments + this record; add to docs/fcode-cli.md at next open.
+
+**D5. A LEG THAT CROSSES SESSIONS OWNS ITS OWN GUARDS.** Everything the side lane
+verified by hand at flips 1-3 is now the scheduler's own machinery (per-flip leak check
+halting on any arm-played pairing; platform-fallback Elo gate that cannot clear-from-
+stale; heartbeats; pid-based liveness). Routed: BUILT. The general form: any watcher a
+lane provides is CONDITIONAL on that lane's session — mechanise or declare unowned.
+
+**D6. THE HONEST TALLY OUTRANKS THE GENEROUS ONE, IN BOTH DIRECTIONS.** I banked
+"six self-caught" about the side lane; their true ledger (3 pre-publication, 5 escaped,
+2 needing a peer) is what this wrap carries, at their insistence. Their framing is the
+durable lesson: the corrections needing a peer twice argues for the THREE-LANE PROTOCOL,
+not for any lane. Routed: this delta + their drift-checklist row.
+
+**D7. WINNER'S CURSE ON LEADER BOARDS.** The board's "best" (55.24) is a max over 23
+arms; the shipping value is 53.50 and the gap to the 60-bar is +6.5pp. Two quotes to
+Magnus carried the flattering number before correction. Routed: HANDOVER baseline is
+53.50; any leader quote names max-vs-shipping.
+
+**D8. GUARDS THAT WORKED TODAY, ON THE RECORD:** V140VS152 self-aborted at 4/234
+NOWINNER (fixture-broken threshold) instead of delivering corrupted rows — correct;
+the trend floor auto-cancelled CATSOLO/CMB294/295 correctly; the NOWINNER guard's
+lesson routes to scheduling (CPU-tuned trees measure on uncontended hosts only).
