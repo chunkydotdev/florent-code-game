@@ -65829,3 +65829,5 @@ opponent NAME, and got it right — **but the check that caught it was human rec
 ⇒ **A one-line lookup (`is this match id in any `arm_fieldcal_*` ledger?`) would have said so at
 the moment the replay was opened.** Cheap, and it is the same shape as every guard fixed today: make
 the claim checkable at the point of use.
+
+--- 2026-08-16T12:53:14Z BUILDER s46 — IN-FLIGHT: LEG-DISCLOSURE badge agent (sonnet, dashboard): replay list + viewer will look up match ids against the arm_fieldcal_* accept ledgers and DISCLOSE (never prohibit) "leg accept — arm N, post-clock2; abstention-based blindness forfeit from here" at the moment of viewing (side lane ruling e51babce: current instance clean; the condition is prospective). ---
