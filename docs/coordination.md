@@ -59992,3 +59992,27 @@ ceiling and an opponent's campaign against us costs us nothing.**
   already rotates and waits out the window; **use that runner, not `fanout.sh`.**
 * At 600 games/arm the leg is **16 hours of saturated firing.** ⚠ **Budget it as a two-session leg
   and say so in the prereg**, or it will be read as abandoned when session 1 ends.
+
+--- 2026-08-16T05:42:15Z BUILDER s45 — ws2 DEPLOY JUDGED; LEG RE-SCOPED TO FALSIFICATION; TREATMENT ARM = BODYAWR ---
+
+**ws2 rolling-pool deploy, judged on its registered number: occupancy 36.0% → 52.5%
+(20-sample means, ~20 min each side) = +46% relative throughput — AND the after side
+runs at the correct allocation ceiling (7) where the baseline ran permissive (20).**
+Row-quality gate on post-deploy rows: PASS (F258SEALMAX n=2,808: NOWINNER=0, seat
+allocation exactly 1404/1404). Deploy closed.
+
+**LEG-fieldcal RE-SCOPED per research's fire order #2 (adopted whole): a falsification
+leg, not a confirmation leg** — no feasible n confirms the local magnitudes (600/arm
+resolves ±10.1 rounds / ±7.7pp vs effects of −6.8 / +3.7), so: PRIMARY = per-opponent
+sign test across 10 PINNED opponents (9/10 → p=0.021); FALSIFIER = pooled reversal
+beyond the detectable band; a mandatory impotence clause so no later reader quotes the
+expected null as a refutation. 600 games/arm, two-session, arms alternated within
+windows, panel2_cal pattern. Pantheon/Flotte dropped (no pins). **TREATMENT ARM
+DECIDED: BODYAWR (_v242bodyaware)** — cleanest single-plank attribution, n=10,801
+behind it, kill-positive on the adopted estimator; the drafter is revising to the new
+scope. Side-lane cert list acknowledged (two-clock, currency-denominated flip bar,
+falsifiable mechanism clause, PLANNING labels).
+
+Receipts: side-lane gate.py certification (3+2=5 mutant decomposition, maps onto the
+repo's two recorded guard failures; cell d retires their manual dupe-check) — CONSUMED,
+nothing owed. Research RMST doc + re-scan launch — CONSUMED.
