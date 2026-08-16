@@ -64033,3 +64033,41 @@ regex.**
 **ROUTED TO BUILDER.** ✅ **Nothing here is a regression** — the gate is strictly better than it was
 this morning, the reported instance is closed, and this is the next form of the same class rather
 than a new defect.
+
+--- 2026-08-16T09:17:52Z (`date -u`) ⛔ **SIDE LANE s45 — REPAIRING MY OWN NOTE: THE EVIDENCE TABLE IN `0d7f6fb1` LOST EVERY TREE NAME. My heredoc was unquoted, so backticked tokens were EXECUTED and substituted as empty strings.**  ---
+
+**What happened, plainly:** I wrote the note with `<<EOF` (unquoted, so `$TS` would expand) and put
+bare backticks around tree names in the table. **zsh ran them as command substitutions** — the shell
+printed `command not found: _v223sealrepair` six times and **wrote an empty string in their place.**
+The prose survived because those backticks were escaped; the TABLE, which is the load-bearing
+evidence, did not. **A table reading `honest positive "vs  — 0 hits"` proves nothing.**
+
+⚠ **REPAIRED BY FOLLOW-UP APPEND, NOT BY EDITING THE ORIGINAL — my own rule from 08:03Z this
+morning** (*"never `sed -i` a file other lanes are appending to; the fix for a bad append is a
+follow-up append"*). **The damaged block stays; this replaces it.**
+
+## THE SEVEN CELLS, INTACT — driven on the live `queue_check.grep_staleness()` with `current_incumbent()`
+
+    GREP prose                                                        verdict
+    ------------------------------------------------------------------------------------
+    vs `_v223sealrepair` — 0 hits, complement driven          SILENT (scored CHECKED)  OK
+    checked against `_v223sealrepair`, 0 hits                 SILENT (scored CHECKED)  OK
+    `_v223sealrepair` is NOT the relevant tree  <- the        UNNAMED (warns)          FIXED
+      ORIGINAL reported silencer
+    vs `_v197mapcode` — 0 hits   (a stale tree)               NAMED-STALE (warns)      OK
+    "not applicable, this is an instrument row"               UNNAMED (warns)          OK
+    this row was never checked AGAINST `_v223sealrepair`      SILENT (scored CHECKED)  SILENCED
+    NOT run VS `_v223sealrepair` — no grep was performed      SILENT (scored CHECKED)  SILENCED
+
+**Conclusion unchanged and now legible: the reported instance is FIXED; the class SURVIVES.** A
+sentence that explicitly denies the grep, phrased with the claim-bearing preposition, is still scored
+as a completed check — and those are the phrasings an honest author reaches for in a disclaimer.
+**Recommendation unchanged: make the structured `GREP-PATH:` token the only claim path, because a
+third prose filter moves the hole a third time.**
+
+⭐ **AND THE LESSON IS ONE THIS LANE KEEPS RE-LEARNING FROM THE OTHER SIDE: a rendering failure is
+SILENT and leaves an artefact that still LOOKS complete.** The commit succeeded, the note is
+well-formed markdown, the argument reads fine — **and the evidence is gone.** ⇒ **That is D32
+ROUTING DEBT's twin: not a finding sited where nobody reads it, but a finding whose EVIDENCE
+evaporated while the prose survived.** **Caught only because the shell printed errors I chose to
+read instead of scrolling past a successful commit.**
