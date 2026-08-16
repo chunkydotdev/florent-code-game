@@ -66414,3 +66414,39 @@ than what it should have said.**
 
 ⇒ **NOTHING TO REPAIR. The three rows stand as written, and the only durable consequence is that any
 future read of v153's field record starts three matches short.**
+
+--- 2026-08-16T13:45:18Z ⛔⭐ **POST-WRAP, TIME-CRITICAL: THE DISPLACEMENT IS HISTORICAL (v153 IS HOLDING AGAIN), AND I HAVE PRICED IT PER-MATCH. IT COST THE TEAMMATE NOTHING — IT GAINED +1.34. AND v153 IS 0-10 IN RATED PLAY.** ---
+
+**CORRECTION TO MY OWN ESCALATION FIRST, because I escalated on a live-displacement framing and
+Magnus has it: THE SHIP IS NOT DISPLACED NOW.** Side lane read `fcode status` at **13:34:09Z and
+13:41:13Z — both `v153`.** My 13:29Z read of v152 was correct WHEN TAKEN; the slot moved back
+~13:33Z. ⇒ **the displacement was REAL and is HISTORICAL, ~12:14:40Z → ~13:33Z (≈78 min).**
+⛔ **NOBODY SHOULD ATTEMPT A RESTORE, and the live-displacement framing I sent is WITHDRAWN.**
+
+## ⭐ THE OPEN QUESTION IS NOW CLOSED — PER-MATCH `ourver` AT THE PAIRING BOUNDARY
+**Read off `fcode match list --mine --type ladder --json` (the authority; `ladder_games.tsv` could
+NOT have answered — the archive lags and absence there is not evidence):**
+```
+12:12:59Z  v153  I Stone           0-5   -17.99     (pre-abort; v153 was live)
+12:32:59Z  v152  lingling_40h      2-3    -2.48  <<< IN WINDOW
+12:52:59Z  v152  opensverige-planB 3-2    +1.56  <<< IN WINDOW
+13:12:59Z  v152  HTTP 418          3-2    +2.26  <<< IN WINDOW
+13:32:59Z  v153  0033              0-5   -16.24     (v153 restored by pairing time)
+```
+⇒ **THREE RATED MATCHES WERE PLAYED BY OUR v152 WHILE v153 SHOULD HAVE HELD THE SLOT. NET +1.34
+ELO.** ⭐ **The displacement cost the teammate's rating NOTHING NEGATIVE — it gained slightly.**
+
+## ⛔⛔ AND THE FINDING THAT MATTERS MORE THAN THE INCIDENT: **v153 IS 0-10 IN RATED GAMES**
+**Both of its rated appearances are 0-5 shutouts — −17.99 and −16.24, −34.23 combined.** ⚠ **n=2
+matches / 10 games, two different opponents (I Stone, 0033). Not a verdict — but it is the entire
+rated record of the bot currently holding our slot, and our rating has gone 1787 → 1751 across the
+session.** ⇒ **THIS IS FOR MAGNUS AND x3r0, NOT FOR A LANE TO ACT ON.**
+
+## ⚠ THE DEFECT STANDS, AND THE LUCK MUST NOT EXCUSE IT
+**That the displacement happened to gain +1.34 is LUCK, not mitigation. The rollback still restores
+"the pre-upload holder" UNCONDITIONALLY with no check that the current holder is still the one it
+displaced — a rollback firing after someone else ships UN-SHIPS THEM, and next time the three
+matches could run the other way.** **One condition, before any restart. Unchanged by this pricing.**
+⭐ **AND THE INSTRUMENT LESSON IS THE DAY'S OWN, ONE LAST TIME: `fcode status` is a POINT READ. Mine
+was correct and became false in four minutes. The side lane's later reads are what made the
+correction possible — a holder claim carries its READ TIME or it is not a claim.**
