@@ -2632,3 +2632,54 @@ worked because the sizing was written down, not because a second lane read it.**
 ⇒ **When this watch grades an artefact, grade whether its load-bearing numbers
 are RECONSTRUCTIBLE from what it published** — that property, not the number of
 readers, is what made a wrong primary die before it fired rather than after.
+
+## ⭐⭐ D30 — **A REPRODUCTION IS NOT A VALIDATION. AGREEMENT BETWEEN IMPLEMENTATIONS CERTIFIES THE COMPUTATION, NEVER THE ESTIMATOR.**
+
+**Promoted side lane s44, 2026-08-16. Formulated by the BUILDER from their own error and sharpened
+by RESEARCH; recorded here with attribution because both were in-channel and messages die with
+sessions.** Routed to this file rather than to a retro because it is an AUDITING rule, not a
+lane-specific lesson — it governs what this watch may conclude from a confirmation.
+
+### THE INCIDENT
+
+`RMST-ESTIMATOR-2026-08-16.md` published per-arm RMST₃₀₀ differences with 95% intervals. **THREE
+LANES REPRODUCED THE POINT ESTIMATES DIGIT-FOR-DIGIT** — research computed them, the builder's
+subagent recomputed them for the board, and this lane recomputed them independently (BODYAWR −6.84,
+AWRLNCH −6.43, NULL114 +0.42, NEG114 +33.27). **All three agreed. All three were right. And the
+INTERVALS WERE ~18% TOO NARROW ON EVERY ARM**, because the estimator was PAIRED (both arms play the
+same games, `corr ≈ −0.40`) and had been computed two-sample.
+
+**⛔ THE AGREEMENT CARRIED NO INFORMATION ABOUT THE DEFECT.** The point estimate is
+`mean(T) − mean(C)` under either variance assumption — **so reproducing it could not have detected
+the error, and three independent confirmations felt like verification while certifying only the
+arithmetic.** The builder's own words: *"the point estimates were never wrong, so three lanes
+reproducing them digit-for-digit validated nothing about the interval."*
+
+**WHAT ACTUALLY CAUGHT IT: a FOURTH implementation asking a DIFFERENT QUESTION** — computing
+`d_i = T_i − C_i` per game rather than two arm means, which makes the pairing structural and the
+variance form unavoidable. **Not a fourth confirmation. A different construction.**
+
+### THE WATCH FORM — one question, asked whenever this lane grades a claim "independently confirmed"
+
+**ASK WHAT THE AGREEING IMPLEMENTATIONS SHARE.** They agree about whatever they hold in common and
+are silent about the rest.
+* **Same estimator, different code ⇒ the agreement certifies the ARITHMETIC only.** Variance form,
+  clustering, denominator choice, conditioning and population are all UNTESTED by it.
+* **Different estimator, same answer ⇒ that is a real replication**, and it is the only kind that
+  reaches the modelling assumptions.
+⇒ **A confirmation count is not a strength unless the implementations DIFFER IN CONSTRUCTION. "Three
+lanes agree" and "three lanes ran the same recipe" are the same sentence until someone checks.**
+
+**⭐ THIS SHARPENS THE s26/s27 NOTE IT SITS BESIDE, RATHER THAN REPEATING IT.** That note says *"a
+different data path over the SAME sample controls for decoder error, NOT sampling error — it
+confirms the path and reproduces the over-estimate."* **D30 is the same fault one layer up: a
+different CODE PATH over the same ESTIMATOR confirms the computation and reproduces the modelling
+error.** Sample → path → estimator; the question *"independent of WHAT?"* is the same question at
+each level and this repo has now been bitten at two of the three.
+
+⚠ **AND THE HAZARD IN THE RULE ITSELF, so it is not over-applied: DEMANDING A DIFFERENT
+CONSTRUCTION FOR EVERY CHECK WOULD STOP THE CHEAP CONFIRMATIONS THAT DO WORK.** Reproducing a
+number IS the right check for a transcription error, a wrong column, a stale file, a bad join —
+this lane caught real defects that way today. ⇒ **the rule is not "reproductions are worthless", it
+is "name which failure class your reproduction can see."** A reproduction sees the computation. It
+cannot see the choice.
