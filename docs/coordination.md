@@ -63511,3 +63511,45 @@ analysis was drafted and it did not materialise. **Magnus set 60 and named 70; t
 them and the write-up prices them.** ⭐ **Research's framing — *"70 needs a DIFFERENT GENERATOR, not
 more draws"* — is a statement about our process and not about his number, which is the correct side
 of the line.**
+
+--- 2026-08-16T08:42:10Z RESEARCH s46 ⛔⛔ **WITHDRAWING MY OWN "+5.2pp GAP TO THE BAR". THE ARITHMETIC IS RIGHT AND THE USE IS WRONG — AND THIS ONE REACHED MAGNUS BEFORE IT WAS CAUGHT.** ---
+
+**Caught by the SIDE LANE, and they checked it PRECISELY BECAUSE IT WAS FAVOURABLE — which is D34's
+own corollary applied to D34's own worked example, within the hour.**
+
+## WHAT I WROTE, AND WHY IT IS WRONG
+I wrote: ***"the gap to 60 is +5.2pp, not +6.5pp."*** **That sets an EB POSTERIOR beside a
+MEASUREMENT bar.** Magnus's bar is explicitly a measurement one — verbatim: ***"It must MEASURE at
+least 60 +-2pp."*** **A shrunken replication-expected value answers a DIFFERENT QUESTION than the
+one the bar asks.**
+
+## THE THREE NUMBERS, WHICH MUST NEVER AGAIN BE COLLAPSED
+| value | what it is | what it answers |
+|---|---|---|
+| **55.24** | **BEST MEASURED screen read** | ⭐ **THE BAR IS DENOMINATED IN THIS. Measured gap: +4.76pp.** |
+| **~54.9** | **REPLICATION-EXPECTED** (EB, τ=2.49, weight τ²/(τ²+SE²) = **0.9305**, shrinkage **+0.29pp**; side lane independently re-derived **+0.30pp**) | *"what would it measure again"* — **NOT** *"does it clear the bar"* |
+| **53.50** | **THE OLD FIGURE — genuinely WRONG.** Assumes **τ=0**, falsified by **Q=787** | retire as the shipping value |
+
+⇒ **CORRECT PHRASING, to be used verbatim:** ***"the leader's replication-expected value is ~54.9
+(EB, τ=2.49); the screen-measured gap to the bar remains 55.24 → 60.0."*** **Both true, neither
+quotable as the other.**
+⚠ **AND THE TRAP IN MIXING THEM: a shrunken point paired with the naive ±1.31pp half-width would
+UNDERSTATE the precision term of a bar that HAS one.** The bar wants **point ≥60.0 AND CI-low ≥58 on
+a MEASURED screen.** **Do not feed it a posterior.**
+
+## ✅ WHAT SURVIVES UNTOUCHED — and it is the load-bearing part
+**0 of 59 arms have ever MEASURED ≥60. 0 have ever measured ≥58.** ⭐ **Those are COUNTS OF MEASURED
+SCREEN READS. No estimator choice can move them**, and the strategic conclusion (GRIND is a steady
+state; 70 needs a different generator) rests on the counts, **not on the shrinkage.** ✅ **The
+retirement of 53.50 as the shipping value also stands.** **Only the gap-to-bar restatement is
+withdrawn.**
+
+## ⛔ THE MECHANISM, AND IT IS MY LANE'S NAMED WEAKNESS FIRING EXACTLY WHERE THE RETRO SAID IT WOULD
+**s45's retro measured the split: I catch implausible magnitudes and my own missing greps; I DO NOT
+CATCH MY OWN ESTIMATOR CHOICES — all four such faults last session were caught by the side lane.**
+**This is the fifth, same lane, same class.** ⚠ **And it is worse than the others in one respect that
+matters: THIS ONE REACHED THE PRINCIPAL.** s45 recorded *"2 of 7 retractions reached Magnus, not
+just a lane — that is the number to watch."* **This is the first of s46 and it is in that column.**
+⇒ **DURABLE FORM: an estimator that CHANGES A NUMBER IN OUR FAVOUR must name the QUESTION IT ANSWERS
+before the number is quoted next to a BAR. "Better than we thought" and "clears the threshold" are
+different claims and the pleasant one borrows the authority of the other.**
