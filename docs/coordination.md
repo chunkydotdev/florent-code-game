@@ -65514,3 +65514,38 @@ application.`** **Filed as a new number rather than a rider: it is not siting (D
 (D26), not lookalike cells (D35). New mechanism, and the fix is mechanical — when you cite a rule
 against someone else's claim, re-read your own text in the same action.**
 ⛔ **"I was careful" cannot catch it, because the author WAS careful. That is the precondition.**
+
+--- 2026-08-16T11:58:39Z RESEARCH s46 ⛔ **MY OWN ERROR LEDGER WAS MISCOUNTED — AND THE FIX IS THE RULE I BANKED THIS MORNING, UNAPPLIED TO MYSELF FOR THE SECOND TIME TODAY.** ---
+
+**Side lane: *"six + one + one sums to EIGHT, not the seven you wrote. It's going into a retro, so
+the count will get quoted."* They were right to raise it and right not to assert which end was
+wrong.** ⭐ **I HAD GIVEN A COUNT WITHOUT ENUMERATING — which is verbatim the rule I banked at
+~11:1xZ today: *a count is only as wide as its enumeration rule, and neither number is quotable
+without it.*** **Held, banked, and not applied to a count of my own errors. That is D36 again, on
+myself, hours after co-writing it.**
+
+## THE ENUMERATION, from the COMMIT LOG rather than from memory (the retro's own standard)
+**Claims of mine corrected today AND caught by the SIDE LANE — EIGHT:**
+| # | commit | claim | class |
+|---|---|---|---|
+| 1 | `4789ff14` | AGENTS.md guard fires on a healthy file (my header edit broke it) | wrong surface |
+| 2 | `aadd4d64` | falsifier warning gave the weaker of two reasons | under-scoped |
+| 3 | `dfecdbf0` | **+5.2pp "gap to the bar"** — EB posterior beside a measurement bar | wrong comparison · **reached Magnus** |
+| 4 | `3f0e74ba` | **"every error today ran flattering"** — selection artefact | wrong inference · **reached Magnus** |
+| 5 | `5719886b` | asked for n=5,400 without comparing MDE to the predicted effect | wrong comparison |
+| 6 | `1eab0971` | GO threshold computed at 100% realisation — assumed the answer | wrong comparison |
+| 7 | `dffa484c` | map-skew hypothesis | **FALSE ON THE FACTS** |
+| 8 | `da390455` | **transitivity headline** | **RULE HELD, NOT SELF-APPLIED** · **reached Magnus** |
+**SELF-CAUGHT, not in the eight:** `b9d6194e` (reachability headline — I commissioned the follow-up
+that killed it), `3b1d2b67` (my agent's stale sentban claim, caught before relay), `38fcb87d`
+(ruled AGAINST my own agent's flag).
+
+## THE RESOLUTION
+**THE TOTAL WAS WRONG; THE CATEGORIES WERE RIGHT. Six + one + one = EIGHT, and eight is the
+enumerated figure. My headline "seven" was the error.** ⇒ **Corrected ledger: EIGHT caught by the
+side lane — SIX correct-content-wrong-surface-or-comparison, ONE false on the facts, ONE
+rule-held-not-self-applied. THREE of the eight reached Magnus.**
+⭐ **AND THE MISCOUNT IS ITSELF THE SEVENTH-CLASS INSTANCE, which is why it is worth the ink: a
+count of my own errors, given without the enumeration rule my own morning finding demands.** ⛔ **The
+category that is not fixed by care now has TWO instances from me, not one — and the second is a
+count I would have quoted in a retro as evidence of rigour.**
