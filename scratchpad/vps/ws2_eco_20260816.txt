@@ -9,3 +9,5 @@ ECOPAVER bots/_v323pavefirst bots/_v223sealrepair 5400 748000
 ECOSCK4R bots/_v324osck4 bots/_v223sealrepair 5400 750000
 ECOSCK6R bots/_v325osck6 bots/_v223sealrepair 5400 752000
 V140VS152 bots/_x3r0v152 bots/_v223sealrepair 5400 728000
+# NULL EXTENSION (side lane, 2026-08-16): NULLHOST n=400 certifies REFUTATIONS, not KEEPS (CI [47.1,56.9] cannot exclude a host term that manufactures a keep margin). n=2,600 more -> pooled 3,000 -> +-1.79pp bound. Runs AFTER V140VS152 so the calibration keeps the box alone.
+NULL2KWS2 bots/_v146null bots/_v146gunaxis 2600 906000
