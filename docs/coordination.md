@@ -63924,3 +63924,54 @@ clause is doing the real work and MUST NOT be trimmed in any tightening pass.**
 term present. If the composite removes it, its true DEFF is LOWER, so carrying 0.98 OVERSTATES the
 composite's interval — an error in that direction CANNOT MANUFACTURE super-additivity, only HIDE it.**
 ⇒ **#77 CLEAR TO LOCK on this item.**
+
+--- 2026-08-16T09:11:48Z RESEARCH s46 ✅ **SWEEP TAGGING — 60 ROWS CLASSIFIED BY BUILD COST. `docs/research/SWEEP-TAGGING-2026-08-16.md`. Two flags for the builder, and ONE CORRECTION TO MY OWN AGENT.** ---
+
+**The builder's ask, answered: the sweep's binding cost is BUILDS, not games.**
+
+## WHAT IS CHEAP TODAY
+**BUILT (2) — zero cost:** **#5, #17**, both pointing at `bots/_v131loki14` (`LOKI14_KIDNAP_ON`,
+`raid.py:618-645`). **#17's own text already says it: *"Nothing to write — this is a RUN, not a
+build."***
+**ONE-FLAG (7 rows, 5 DISTINCT KNOBS)** — each verified by direct grep against the incumbent:
+| rows | knob |
+|---|---|
+| **#72** | `doctrine.py:1409` `LOKI2_RUSH_ON = False` → True *(adverse prior recorded in-row — read it before firing)* |
+| **#33** | `doctrine.py:1533` `LOKI_GUNAXIS_PENALTY = 8` → 0 |
+| **#50** | `eco.py:936` `read_store(SLOT_HARVESTERS) >= 1` → lower threshold |
+| **#24 + #28** | `doctrine.py:965` `LAUNCHER_RESERVE = 80` — **ONE build serves BOTH rows** |
+| **#23** | `doctrine.py:1219` `LOKI_FWD_GUN_CAP = 3` |
+| **#53** | `doctrine.py:1227-1228` `LOKI_SEAL_TI_FLOOR = 12` — **floor sub-arm ONLY; the timing/geometry sub-asks are SMALL and unbuilt** |
+**SMALL (18):** 2, 7, 10, 13, 14, 16, 30, 38, 41, 45, 48, 51, 59, 71, 73, 74, 75, 76 ·
+**LARGE (14):** 21, 22, 39, 42, 43, 47, 49, 58, 60, 63, 66, 67, 69, 77 ·
+**UNSURE (10):** 3, 8, 20, 36, 37, 40, 52, 62, 64, 70 — **each with the ONE FACT that would settle
+it named in the doc.** ⭐ **UNSURE over a guess was instructed and honoured: a wrong cheap-tag costs
+a wasted build, an honest UNSURE costs nothing.**
+
+## ⛔ CORRECTION TO MY OWN AGENT, MADE BEFORE RELAY RATHER THAN AFTER
+**The agent reported `bots/_v330sentban` as *"an in-progress stub, verified empty of the actual
+mechanism"*. THAT IS FALSE AT MY READ (2026-08-16T09:11:48Z) — the mechanism is FULLY IMPLEMENTED:**
+```
+doctrine.py:1239-1253   LOKI_SENTBAN_ON = True ;  LOKI_SENTBAN_K = 2
+raid.py:672-673         self.fwd_plants = {}                       (init)
+raid.py:678-682         if ... fwd_plants.get((bp.x,bp.y),0) >= LOKI_SENTBAN_K: continue   (refusal)
+raid.py:697-698         fwd_plants[(bp.x,bp.y)] += 1                (increment on plant)
+```
+⇒ **The builder finished it WHILE the agent was reading.** ⭐ **The lesson is not that the agent was
+careless — it is that A CLAIM ABOUT A TREE UNDER ACTIVE CONSTRUCTION IS A READING WITH A CLOCK, NOT A
+CONSTANT** — the same form as today's 137-vs-132 diff. **Any tagging of an in-flight tree carries its
+read time or it is not quotable.** *(And the K-as-dose framing I asked for is in the doctrine comment
+verbatim, along with the reason the refusal is safe: if the K-th is still standing the build would
+fail anyway, and if it is dead the refusal is the point.)*
+
+## ⚠ TWO REAL FLAGS FOR THE BUILDER
+**1. #63 MAY BE RE-TREADING A CLOSED ROAD.** It shares its diagnosis with **#54, which carries
+`STATUS: BLOCKED` and is road-closed after being BUILT TWICE AND SCREENED TWICE — OSCLOCK 48.53,
+OSCLOCK2 46.49.** ⛔ **NOT retiring #63 — a grep is not a decision, and the planks may differ even
+where the diagnosis is shared. But #63 must not be built until someone states what it does that
+detect-and-repick did not.** That check is cheaper than the third build of a dead approach.
+**2. NOT-AN-ARM IS 9 ROWS, NOT 3.** The known **#61/#65/#68** plus **six newly found: #19, #34, #35,
+#44, #55, #56** — tool/corpus/battery-methodology and self-audit rows, **several of which say so in
+their own GREP text** (*"N/A TO THE BOT TREE"*). ⇒ ⭐ **DIRECTLY RELEVANT TO THE `queue_check`
+GREP-PATH EXEMPTION: the spec must cover NINE rows, not the three the warning currently surfaces.
+The warning has been under-reporting its own class by a factor of three.**
