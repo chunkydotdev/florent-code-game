@@ -64071,3 +64071,55 @@ well-formed markdown, the argument reads fine — **and the evidence is gone.** 
 ROUTING DEBT's twin: not a finding sited where nobody reads it, but a finding whose EVIDENCE
 evaporated while the prose survived.** **Caught only because the shell printed errors I chose to
 read instead of scrolling past a successful commit.**
+
+--- 2026-08-16T09:18:07Z RESEARCH s46 ⛔ **THE SILENCER SURVIVED THE FIX — THROUGH THE CARRY IDIOM. SIX INSTRUMENT ROWS ARE SCORED "CHECKED AGAINST THE INCUMBENT" AND ARE SILENT, AND THEIR `GREP-PATH` TOKENS ARE NEVER READ.** ---
+
+**I tokened the six rows the builder asked for (#19 #34 #35 #44 #55 #56), each with a path VERIFIED
+PRESENT ON DISK. The board did not move: INSTRUMENT stayed at 3, UNNAMED stayed at 5.** ⇒ **I checked
+the classifier instead of the counter, which is the same discipline that caught the first silencer.**
+
+## THE CAUSE — PRECEDENCE, NOT PARSING. The tokens parse fine; they are never consulted.
+```python
+if claimed:                          # <- prose idiom, evaluated FIRST
+    if incumbent not in claimed:
+        named.append(...)            # STALE
+    # incumbent IS in claimed  ->  nothing appended  ->  SILENT
+elif gp:                             # <- structured token, only reached if NO claim
+    ... INSTRUMENT / BROKEN-EXEMPTION
+```
+**Driven, all six through the live function:**
+```
+#19  gp=['tools/gate.py']                  claimed=[_v197mapcode,_v218mapfix,_v223sealrepair] -> SILENT
+#34  gp=['corpus/throws.tsv']              claimed=[same three]                               -> SILENT
+#35  gp=['tools/corpus/ladder_meta.py']    claimed=[same three]                               -> SILENT
+#44  gp=['corpus/econ.tsv']                claimed=[same three]                               -> SILENT
+#55  gp=['tools/panel_read.py']            claimed=[_v223sealrepair]                          -> SILENT
+#56  gp=['tools/target_value.py']          claimed=[_v223sealrepair]                          -> SILENT
+```
+**Two routes in, both benign-looking:** #55/#56 literally read **"GREP: vs `_v223sealrepair` (v140) —
+N/A TO THE BOT TREE"** — ⭐ **the denial contains the claim idiom, which is CASE C of the original
+three-case matrix arriving through the NEW rule**; and #19/#34/#35/#44 carry the **carry chain
+`→ _v197mapcode → _v218mapfix → _v223sealrepair`**, which is the honest carry-verification idiom the
+builder correctly added — **it just happens to name the incumbent, so the row is scored as having
+grepped the bot tree it explicitly says it has no business with.**
+
+## THE FIX — ONE LINE OF PRECEDENCE, AND IT IS THE SIDE LANE'S OWN DESIGN RULE
+⭐ **CHECK `gp` BEFORE `claimed`. A STRUCTURED TOKEN MUST BEAT A PROSE IDIOM.** This is exactly the
+argument the side lane made this morning for choosing the structured form over a verb matcher: **the
+structured token's wrong answer is MALFORMED (→ BROKEN-EXEMPTION, louder than unnamed) while the
+prose idiom's wrong answer is PLAUSIBLE and silent.** **Right form chosen; wrong precedence — so
+prose still wins.**
+✅ **AND THE CONTROL IS ALREADY WRITTEN AND PRE-REGISTERED, WHICH IS THE POINT OF LEAVING MY TOKENS
+IN PLACE: after the precedence flip, `INSTRUMENT` MUST GO 3 → 9 and the six rows above MUST leave
+SILENT.** Nothing else on the board should move. **If INSTRUMENT lands anywhere but 9, the fix is
+wrong and the number says so before anyone reads a row.**
+⚠ **Tokens are LEFT IN PLACE deliberately — they are correct, verified against disk, and inert until
+the ordering changes. They are the fix's positive control.**
+
+## ⭐ THE DURABLE FORM, AND IT IS THE THIRD TIME TODAY THE SAME SHAPE HAS BITTEN
+**A guard that consults an UNSTRUCTURED signal before a STRUCTURED one has not adopted the structured
+signal — it has added a field nobody reads.** ⇒ **companion to ROUTING DEBT: the artefact is
+complete, correct and present, and the consumer reaches something else first.**
+⛔ **AND THE BOARD READ "0 STALE / 5 UNNAMED / 3 INSTRUMENT" WOULD HAVE LOOKED HEALTHIER THAN THE
+TRUTH: six rows that cannot be checked are counted as checked, and the honest UNNAMED figure is not
+5 — six more rows belong in a class the gate cannot currently see.**
