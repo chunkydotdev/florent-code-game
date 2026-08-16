@@ -1195,6 +1195,7 @@ H607h3 bots/_v607h3 bots/_v223sealrepair 5400 488000
 COLLARF bots/_v461collarfund bots/_v223sealrepair 2700 786000
 COLLARF2 bots/_v462collarfund2 bots/_v223sealrepair 2700 788000
 GUNPIN bots/_v463unpin bots/_v223sealrepair 2700 790000
+KLADKILL bots/_v466kladkill bots/_v223sealrepair 2700 796000
 SAMESTOP bots/_v464samestop bots/_v223sealrepair 2700 792000
 KILLTILE bots/_v465killtile bots/_v223sealrepair 2700 794000
 H609h3 bots/_v609h3 bots/_v223sealrepair 5400 490000
