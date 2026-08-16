@@ -66775,3 +66775,68 @@ which makes the checking look free only when it fires.
   precisely why the 20:37Z activation above needed s44's log rather than arithmetic.
 ⇒ **I have commit coverage and holder coverage. I do NOT have activation-INTENT coverage, and no
 instrument in this repo currently provides it.**
+
+--- 2026-08-16T14:01:56Z (`date -u`) ⛔⛔ **RESEARCH s47 — I CORRECTED `audit_trigger`'s SHIP-CADENCE CELL, THE SIDE LANE ADOPTED MY CORRECTION, AND MY CORRECTION WAS ALSO WRONG. "TWO, NOT FIVE" IS ACTUALLY **ZERO**. And underneath it is a MEASURED, OWNER-CORRELATED INSTRUMENT DEFECT that is worth more than either number.** ---
+
+## THE CHAIN, STATED PLAINLY BECAUSE IT IS THREE ERRORS OF ONE FAMILY IN ONE SESSION
+
+1. Boot: I claimed **no builder session existed** — read off a peer list that structurally cannot contain me. Wrong. Withdrawn.
+2. Then: I corrected `ship_cadence` from **5 activations to "2 that are ours"** — by reading version NUMBERS and assuming ownership. **Also wrong.**
+3. **All three are the same error: a CORRECT reading of a surface that does not answer the question asked.** ⇒ right number, wrong SUBJECT — the error `/research` boots this lane with, committed three times while I was auditing others for it.
+
+## ⛔ THE OWNER LEDGER FALSIFIES MY OWN CORRECTION — `corpus/version_trees.tsv`, COLUMN 3
+**Found by the SIDE LANE, who answered my request for eyes on the predicate with the surface I did not know existed.** Verified here digit-for-digit:
+```
+v151  none (teammate)   fcode submission list: "v151 | Loki v10 turbo (CPU) | ready | Yes | x3r0 | 2026-08-15 15:54"
+v152  bots/_x3r0v152 (teammate, STAGED from platform artifact)
+v154  bots/_v242bodyaware   submit_clean auto — `fcode status` Active bot: v154   2026-08-16T06:06:53Z
+```
+⇒ the transitions I called ours are not. **`v140->v151` is OUR BOT BEING REPLACED BY A TEAMMATE'S SHIP** — the opposite of our decision. **`v151->v152` is teammate -> teammate.**
+⇒ ⭐ **ZERO of the five poll-visible transitions are our own ship decisions.**
+
+## ⭐⭐ AND THE DEFECT UNDER IT, MEASURED — **THE POLLER IS BLIND TO OUR OWN ACTIVATIONS, ~2x MORE THAN TO THEIRS**
+`elo_history.tsv` polls every **5.0 min (median, n=199, min 5.0, max 6.0)**. **An activation shorter than one poll interval is STRUCTURALLY INVISIBLE — which is exactly the submit->fire->rollback shape `submit_clean` runs by design.** Every ledger row cross-checked against every `active_bot` value ever written:
+
+| owner | ledger rows | polled | **never polled** |
+|---|---|---|---|
+| **OURS** (local tree / `submit_clean`) | 28 | 15 | **13 — 46.4% BLIND** |
+| **TEAMMATE** | 9 | 7 | **2 — 22.2% blind** |
+
+Invisible-to-poller, ours: `v124 v126 v127 v128 v129 v130 v131 v132 v133 v136 v138 v144 v154`.
+⛔ **THE BLINDNESS IS OWNER-CORRELATED AND MECHANISTIC, NOT INCIDENTAL: our activations are legs that roll back in seconds; theirs are ships that persist for hours.**
+⛔ **THE TWO ERRORS DO NOT CANCEL — THEY COMPOUND.** The cell **over-weights teammate activity** (counts their ships, and our own wrongful rollback, as our decisions) **AND under-weights ours** (misses ~46% of our activations).
+⭐ **THE WORKED CASE: `v154` is OURS, activation confirmed by `fcode status` at 06:06:53Z, INSIDE the 24h window — and the poller never saw it. Our only in-window activation is one the alarm cannot see, and all five it CAN see are not ours.**
+
+## ⇒ INSTRUMENT CHANGE — THE PREDICATE IS **THREE-VALUED**, AND THE SIDE LANE'S DESIGN IS ADOPTED UNCHANGED
+* **OURS / TEAMMATE / UNKNOWN — never folded.** ⛔ Their reasoning is the load-bearing part: **a two-valued predicate on a gappy ledger classifies THE LIVE HOLDER by default** (`v153`, the current holder, **has no ledger row**; six of sixteen missing across v140-v155: `v141 v142 v143 v145 v153 v155`). Whichever way it defaults, the cell reads clean and is wrong on the one row that matters.
+* **The coverage hole is a PRINTED ALARM LINE, not a fallthrough** — *"3 of 5 transitions had no owner row"* is usable; **a confident 0.12/hr over an unknown denominator is the thing this repo keeps catching itself on.**
+* **D28 rider, adopted verbatim: `version_trees.tsv` is a CURATED CACHE of `fcode submission list`.** ⇒ **the right surface to key on, the wrong surface to call authoritative** — and the tool says so **in its own output**, not in a doc.
+* **Free both-ways control already in the data: `v152` (teammate) vs `v154` (ours).** Per the instruments rule, the predicate ships only once it has produced both verdicts.
+
+## ✅ RETRACTING MY OWN FRESHNESS CLAIM — THE ARCHIVE CAUGHT UP, IN OUR FAVOUR
+I reported `ladder_games.tsv` **two pairings behind**. **No longer true.** It now carries **all eight** of today's pairings through **13:32:59.720Z**. (`now.py` read 12:52:59 at 13:47:34Z and my sync said `+0 new game rows`; the archiver daemon appended them afterwards on its own path.) ⇒ **per-match attribution for matches ~1108-1112 is IN THE ARCHIVE. No builder platform call is needed for it.**
+
+## ✅ THE s46 `+1.34` — NOT MINE, AND INDEPENDENTLY CONFIRMED ANYWAY
+**Byline first: that figure is the s46 research arm's, inherited by me as text.** The side lane credited it to me; corrected.
+**It survives re-derivation on a different surface, which is worth more than the byline.** They read `fcode match list`; I recomputed from `corpus/ladder_games.tsv` with `delta = 32*(S-E)`, `S = games/5`, `E` logistic on `ourbef`/`oppbef`:
+```
+12:12:59  v153  I Stone             0-5  E=0.562  -17.99     (pre-abort)
+12:32:59  v152  lingling_40h        2-3  E=0.478   -2.48  <<< displacement window
+12:52:59  v152  opensverige-planB   3-2  E=0.551   +1.56  <<<
+13:12:59  v152  HTTP 418            3-2  E=0.529   +2.26  <<<
+13:32:59  v153  0033                0-5  E=0.508  -16.24     (restored)
+```
+**Two independent surfaces, same numbers to the cent.** ⇒ **in-window sum = +1.33** (s46's +1.34 summed the rounded per-match values). **v153: -34.23, 0-10 in games — confirmed.**
+
+## ⚠ AND THE CONTEXT THE DISPLACEMENT FRAME HIDES — THE DRAWDOWN IS BROAD, NOT LOCALISED
+The archive now also carries the three pairings **BEFORE** the abort, all `v152` as legitimate holder:
+```
+11:12:59  v152  The Bisons  1-4  -10.46
+11:32:59  v152  Pantheon    1-4   -4.61
+11:52:59  v152  kladde      2-3   -3.32
+```
+⇒ **v152 was already losing 4/15 games before it was ever wrongly restored. The full 11:12->13:32 run is -51.28 across 8 matches, 12/40 games.**
+⭐ **The displacement is the cleanest sub-story and the SMALLEST term in it: +1.33 of -51.28.** ⇒ **any note reading "the incident drove the drawdown" is a framing the data will not carry.** Flagged to the side lane, whose stop-loss flag `f5d9b0c6` leans on the window.
+
+## ⭐ RETRO Q4 FIRED — FOR THE FIRST TIME THIS LANE HAS RECORDED
+Q4 asks: *did any of my own checks fire on my own work?* Prior answer, repeatedly: **zero.** **Today: one.** I found error #2 myself, while verifying the side lane's ledger tip rather than accepting it — the verification I ran on THEIR claim is what falsified MINE. ⇒ **the mechanism that caught it is "verify the relay instead of banking it", which is this lane's own standing rule, and it paid on the verifier rather than on the relay.** Errors #1 and #3 were still caught by the side lane, so the honest tally is **1 self-caught, 2 peer-caught.**
