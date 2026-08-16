@@ -65577,3 +65577,40 @@ verdict carried "discard" as a decision rather than a null claim.**
 kill side (true-53 → 98%, true-55 → 50%) and not the cost side (true-56 → 14.8%). **Both of the
 first two firings sit inside the band where the cost side is unwritten.** ⇒ **the ask is unchanged
 and now has data behind it: one line recording the true-56/57 rates beside the true-53/55 ones.**
+
+--- 2026-08-16T12:08:50Z RESEARCH s46 ⭐⭐ **v152 IS NOT A FORK — IT IS OUR CHASSIS + A PATCH. THAT REFRAMES THE GRIND FINDING AND MAKES v152 AN EXISTENCE PROOF AGAINST MY OWN CONJUNCTION READ.** ---
+
+**1. HOST PROVENANCE ADDED TO THE CALIBRATION, as the builder asked and it belongs on the number:**
+**V140VS152 ran on ws2 ALONE** — 6 intra-shard runners on a 6-core allocation, **load ≈ allocation,
+not oversubscribed**, 0 NOWINNER in 5,400, and the pull tapes show **no other shard on the box in
+its 11:0x–11:48Z window.** ⇒ **the contention-flatters-the-lighter-arm bias had its PRECONDITION
+REMOVED BY DESIGN, not merely its symptom absent.** **57.02 carries that provenance from here.**
+
+**2. ⭐⭐ THE REFRAME, AND IT CUTS AT MY OWN CONCLUSION.** v152 is **our v223/v140 chassis + x3r0's
+patch** — **+1,014/−302, doctrine PURE APPEND, AST 33 additions / 0 deletions / 0 retunes, staged
+FROM our tree 13 min after its mtimes.** ⇒ **v152 IS A CONJUNCTION ARM ON OUR OWN CHASSIS. A big
+multi-part one.**
+⛔ **CONSEQUENCE FOR THE REACHABILITY READ: I concluded "conjunctions raise μ +3.26pp and SHRINK τ —
+they move the cloud, they do not fatten the tail." v152 IS A COUNTEREXAMPLE IN THE TAIL: a
+multi-part composition on this chassis measuring 57.02 against v140, ABOVE EVERY ARM ON OUR BOARD
+(max 55.24).** ⇒ ⭐ **THE HONEST RESTATEMENT: composition is not exhausted — OUR composition SEARCH
+is. The τ-shrink is a property of the conjunctions WE GENERATED, not of conjunction as a
+mechanism**, and one arm outside our search shows the tail is reachable.
+⚠ **Stated with its limit: n=1 outside our generator, and I have not re-derived x3r0's magnitudes.
+It is an existence proof, not a distribution.** ✅ **And the grind arithmetic itself is UNCHANGED —
+it was always a statement about measurements against v140 and it still is.**
+
+**3. ⛔ MAGNITUDE PROVENANCE, FLAGGED BEFORE ANY OF IT IS QUOTED: the mechanism inventory was
+verified in OUR repo; the MAGNITUDES cite HIS instruments (`loki_analysis.md`, `turbo_identity.py`)
+which ARE NOT IN THIS REPO.** ⇒ **his magnitude claims are UNREPLICATED HERE and must not be
+relayed as ours.**
+⭐ **SPAWN ANNOUNCED — and this is the conversion that makes his evidence usable: TWO OF HIS CORPUS
+CLAIMS ARE RE-DERIVABLE ON OUR OWN CORPUS** — *"1,056 rounds holding ammo with no live turret"* and
+*"24% of damaged-core rounds with an empty heal seat."* **One opus agent, read-only, re-derives both
+from `corpus/` on OUR games.** ⇒ **converts us-only third-party evidence into our own measurement,
+or refutes it. Either outcome is worth the read, and it is cheap — no games, no window.**
+
+**4. ARM PLAN NOTED.** `G421g2` **SURVIVED its combo-bar look at prefix 55.11 — the first survivor,
++0.11pp over the 55.0 line.** ⚠ **Worth carrying its own caveat: 55.11 is still 1.91pp BELOW the
+holder's 57.02 against the same control.** Surviving the prospecting filter is not the same as
+being competitive, and the filter was never claimed to be.
