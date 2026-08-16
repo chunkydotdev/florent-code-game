@@ -62791,3 +62791,64 @@ kill moves that median without anything getting faster or slower"* — written *
 and pre-committed as a reporting rule. **The bar's own history rediscovered it on 2026-08-16 at
 05:19:38Z.** ⇒ **If the mechanised rule gets written, that file is the template rather than a fresh
 design.**
+
+--- 2026-08-16T08:14:07Z RESEARCH s46 ⚠⚠ **POOLED FIELDCAL READ — THE LEG IS 10.4% DONE, ITS PRIMARY IS NOT COMPUTABLE, AND THERE IS A NUMBER ON THE TAPE THAT LOOKS LIKE A FIRED FALSIFIER AND IS NOT ONE.** `docs/research/FIELDCAL-POOLED-READ-2026-08-16.md` ---
+
+**Arms confirmed FROM THE PREREG, not from anyone's summary:** **A = v140 `bots/_v223sealrepair` (control)**,
+**B = v154 `bots/_v242bodyaware` (BODYAWR treatment)**. Prereg `docs/prereg/LEG-fieldcal-2026-08-16.md`,
+locked `43d9035f` @ 05:59:01Z; clock2 06:25:40.381Z (**gap +26m39s, clean**).
+
+**COMPLETION: 25 of 240 accepts = 10.4%** (125/1200 games, 100 decoded). **0 of 20 (arm,cell) pairs
+full. 0 of 10 cells meet the 40-games/arm CUT-SHORT floor.**
+
+## ⛔⛔ THE ONE THING A SUCCESSOR MUST NOT MIS-READ — AND THE TAPE WILL KEEP OFFERING IT
+The single paired cell (Juusto) reads **A 44.0% (11/25) vs B 36.0% (9/25), (T−C) = −8.0pp.**
+**−8.0 is numerically past the registered −7.7pp falsifier AND MEANS NOTHING.** ⭐ **−7.7pp is the
+95% HALF-WIDTH AT 600 GAMES/ARM, not a point threshold.** At 25/arm the half-width is **4.2× larger**.
+⚠ **This leg runs UNATTENDED ACROSS SESSIONS and that number will keep wandering over the falsifier.**
+**Anyone reading the tape without the prereg will see a fired falsifier. There isn't one.**
+
+**REGISTERED PRIMARY — NOT COMPUTABLE, and the agent refused to substitute one.** It is an exact
+binomial sign test over 10 opponent cells; **k_eligible = 0** (9 cells single-armed or empty; the best
+has 25 games/arm against a 40 floor). §1's own rule: **k<8 ⇒ UNRESOLVED, defaults to the restriction.**
+**No sign test is reported at any k.** ⛔ **The SECONDARY (ITT RMST₃₀₀ — the axis carrying the
+falsifier) is ALSO not computable:** `meta_join.tsv` has no `turns`/`cond`, and `join.tsv` holds **0
+rows for the 25 leg matches — the leg's replays are UNDECODED.** ⇒ **an operational gap, not a
+statistical one, and it is fixable by decoding.**
+
+**HALF-WIDTH, clusters enumerated and VERIFIED not asserted:** MATCH **live** (5 games/match, 20 of
+20), OPPONENT **dead** (stratum = one pinned cell) ⇒ **within-opponent unrated DEFF 1.434** ⇒
+**±32.5pp, CI [−40.5, +24.5]**. ⭐ **Restated as exclusions BEFORE any null language, per the direction
+clause: it excludes neither zero, nor the −7.7pp bar, nor the +3.70pp local prior.** ⭐⭐ **And the
+agent DECLINED to use the leg's own re-measured DEFF (0.755/0.808) because it is noise at M=20 and
+NARROWS the interval — the flattering direction for a fail-to-exclude. That is the direction clause
+being obeyed against the analyst's own convenience.**
+
+## ⚠ THE REAL DEFECT: ROUND 3 FIRED ZERO CHALLENGES, AND THE ROTATION CANNOT NOTICE
+Arm balance is the **designed rotation** (`start_idx=(round/2)%10`), **not tail starvation** — with one
+hole: **arm B has 0 at `not_adgato`.** **Round 3 fired nothing** (23m gap in `.rate_ledger`, no runner
+outfile, no ledger row); a halt consumed the round. **Cause unrecoverable — the truncated log.**
+⛔ **THE ROTATION IS A PURE FUNCTION OF THE ROUND COUNTER, so the skipped cell is NOT RETRIED UNTIL
+ROUND 23 (~7h behind), making it the cell most likely to be CUT-SHORT-excluded.** ⇒ **§9.6b's
+"excluded set is a function of firing order" arriving through a THIRD DOOR (an aborted round), which
+the same-cell-retry guard covers only for the RATE gate.** The same halt re-phased the leg: **pairing-gap
+margin fell 7m → 3m.** **ROUTED TO BUILDER — they own the scheduler and it is running detached.**
+
+**LEAK CHECK — CLEAN, with a stated coverage limit.** 4 rated pairings post-clock2, **all v152**, zero
+arm rows; the 07:32:59Z row positively shows v152 **3m10s after round 4's v140 fire**. **Positive
+control: 72 arm pairings exist pre-clock2, so the filter CAN return them; mutation control `{152}`
+returns exactly 4.** ⚠ **LIMIT: archive newest pairing is 07:32:59Z (27 min stale), so the 07:52:59Z
+slot following round 5's v154 exposure is UNVERIFIED on every readable surface** (rollback confirmed
+07:50:07Z, 2m52s prior). **Nine controls reported inline; control #2 did NOT discriminate and is
+labelled as such rather than counted.**
+
+--- 2026-08-16T08:14:07Z RESEARCH s46 — **QUEUE #7 GREP REFRESHED TWO INCUMBENTS FORWARD, AND IT ABSORBS THE BELTSEVER RESIDUAL. NO DUPLICATE ROW STOCKED.** ---
+#7's GREP was anchored on `_v187saltidle_f`/`_v197mapcode`; re-run against **`_v223sealrepair`** with
+the **complement driven**, not the absence merely observed: **3 `build_barrier` sites (`raid.py:277`,
+`:500`, `:558`), none ore-gated · `ORE_TITANIUM` 0× in `raid.py`, 6× in `eco.py` only · NO FILE
+CONTAINS BOTH `ORE_TITANIUM` AND `build_barrier`.** ⇒ **the bot reads ore and that reading is nowhere
+wired to barrier placement — UNSHIPPED AS A MECHANISM, which is the difference between a plank and a
+second null.** *(Probe originated by the side lane closing `SCREEN-beltsever`; re-derived here across
+the whole tree rather than ±8 lines of a call site — same verdict, wider basis.)*
+**beltsever's clause A is SHIPPED (`raid.py:424 _salt_turn`); its residual is ore-barrier-no-kill,
+which IS #7.** ⇒ **residual housed, no row added, queue stays 55.**
