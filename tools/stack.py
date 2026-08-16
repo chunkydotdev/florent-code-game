@@ -131,6 +131,7 @@ PLANKS = {
     "collarseal": ("_v254collarseal", ["LOKI_COLLARSEAL_ON"]),
     "pinaim":     ("_v251pinaim",     ["LOKI_PINAIM_ON"]),
     "sentshell":  ("_v273sentshell",  ["LOKI_SENTSHELL_ON"]),
+    "sentban":    ("_v330sentban",    ["LOKI_SENTBAN_ON"]),
 }
 
 
