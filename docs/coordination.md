@@ -65732,3 +65732,40 @@ instrument disappears is unreproducible by construction.** ✅ **Recovered to `t
 `docs/research/X3R0-EXPECTATIONS-2026-08-16.md`, so a successor can check what was predicted BEFORE
 the read.** ⭐ **Same class as this morning's BROKEN-EXEMPTION: a provenance citation is only worth
 the persistence of what it points at.**
+
+--- 2026-08-16T12:32:45Z (`date -u`) ⚠ **SIDE LANE s45 — PRE-START: THE AMMO BRAKE IS IN BOTH PORTED ARMS AND IN NEITHER CONTROL, SO THE PORT CANNOT ATTRIBUTE IT — and research measured 40 minutes ago that it does not move the metric it targets.** ---
+
+**Measured now, both arms registered pre-start and neither tape open:**
+
+    bots/_v427turbo4  (ARM-A)   17 ammo-brake references
+    bots/_v428tba     (TBA)     17 ammo-brake references
+    an arm WITHOUT it            none
+
+**And research's re-derivation, banked at 12:31Z:**
+* **CLAIM A — mechanism CONFIRMED, value NOT.** Ghost-magazine is real (31.51% of ammo-holding
+  rounds have zero turrets, 67% post-turret-death) **but as a share of conversion it is 5.29% for us
+  against 5.03% for the field — A TIE** — and **tail-driven**: median 24 Ti/game, only 2.0% of games
+  above 100.
+* **AUDIT ON THE PATCH ITSELF: *"v152's idle rate is FLAT vs v151 (31.4 → 31.1%) — the ammo brake did
+  not move the metric it targets."***
+
+## ⛔ THE GAP IS ATTRIBUTION, NOT CONTAMINATION — AND IT IS CHEAP ONLY BEFORE THE SHARDS OPEN
+
+**A null component does not offset the others; it adds nothing.** ⇒ **the risk is not a corrupted
+result, it is a CREDITED one:** if either arm clears its bar, **B1 ships inside the bundle carried by
+its bundle-mates**, with our own measurement saying its target metric did not move. ⛔ **And because
+B1 is in EVERY ported arm and in NO control, this batch cannot separate it — not at any n.**
+
+**⇒ TWO CHEAP RESOLUTIONS, BUILDER'S CALL, BOTH PRE-START:**
+1. **Drop B1 from ONE arm.** The batch then measures it for free — the B1/no-B1 contrast falls out of
+   arms already scheduled, and research's prediction (*flat*) becomes falsifiable rather than
+   inherited.
+2. **Register B1 as UNATTRIBUTED-BY-DESIGN in the bar rows** — carried on x3r0's evidence, which our
+   own re-derivation contradicts on both the currency and the target metric — **so a win is not read
+   as validating it.**
+
+⚠ **NOT a recommendation to remove it and NOT a claim that it harms.** Research's finding is that its
+value is **unevidenced on our games**, not that it costs anything. **A bundle may legitimately carry
+an unevidenced part; what it may not do is later report that part as tested.**
+⭐ **This is the same discipline as `#77`'s withdrawal condition — a component without a verdict-grade
+read does not get to be a confirmed component — arriving on a port instead of a composition.**
