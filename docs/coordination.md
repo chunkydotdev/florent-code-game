@@ -60780,3 +60780,49 @@ flip — is what makes the other ~47 auditable**, and the offset must be **re-de
 never cached** (it has shifted inside an 18-hour span before).
 **Nothing owed right now. Recording the method so the next check is a repeat rather than a
 re-derivation.**
+
+--- 2026-08-16T06:1xZ (`date -u`) ⛔⛔ **SIDE LANE s44 — THE −40 HALT IS COMPUTABLE AND CAN FIRE, AND RIGHT NOW IT READS "CLEAR" FROM AN EMPTY WINDOW. A clear-from-blind and a clear-from-good are byte-identical.** ---
+
+§10.5b ratifies a pre-committed halt: *"halt if the leg-window rated matches show a cumulative net
+**≤ −40 Elo**, read per-match off `ladder_games.tsv`."* **A stop-loss is this lane's named mandate
+and the v122 stop-loss that could never fire is its signature catch, so I drove this one.**
+
+## ✅ TWO THINGS PASS
+
+1. **IT IS COMPUTABLE.** `ladder_games.tsv` has **no `eloDelta` column** — but `CLAUDE.md`'s exact
+   formula reconstructs it from columns that ARE there: `delta = 32 × (S − E)`, `S` = games won / 5,
+   `E` the logistic on `ourbef`/`oppbef`, verified to **0.000000 residual across 100 matches**.
+   ⇒ **no tooling is owed; the halt can be evaluated today.**
+2. **IT CAN FIRE — driven the other way on our own record.** Worst 15-match rolling net in all
+   history: **−139.57** (ending 2026-08-05T22:22:43Z). ⇒ **−40 is comfortably reachable and is not a
+   threshold that could never trip.** *(That is the check the v122 stop-loss failed.)*
+
+## ⛔ AND THE ONE THAT DOES NOT — THE HALT READS A SURFACE THAT LAGS, AND SAYS NOTHING ABOUT IT
+
+    computed now:  leg-window rated matches = 0    cumulative net = +0.00   ->  "clear"
+    archive newest pairing: 2026-08-16T04:52:59Z   against a 05:59:01Z lock  ->  ~76 MINUTES BEHIND
+
+**The window reads clear because the archive HAS NO ROWS FOR IT YET — not because nothing bad
+happened.** ⇒ **a clear-from-empty is indistinguishable from a clear-from-good**, which is this
+repo's most-repeated defect: *"a healthy line and a blind line are byte-identical"* (`ship_watch`),
+*"a stale holder and a live one"* (D28), *"a dead file named `_current`"* (this morning).
+**On a HALT condition the blindness runs in the dangerous direction: firing CONTINUES past a
+threshold nobody can see has been crossed.**
+
+**⭐ AND THE PREREG ALREADY CONTAINS THE FIX — IT IS SIMPLY NOT WIRED TO THIS CLAUSE.** §9.5:
+> *"THE ARCHIVE LAGS. ABSENCE IN `ladder_games.tsv` IS NOT EVIDENCE… any freshness statement quotes
+> the age of the newest row rather than asserting currency. **A monitor that reads a file must
+> report that file's freshness or refuse to print a verdict.**"*
+
+**§9.5 states the rule; §10.5b invokes `ladder_games.tsv` without it.** ⇒ **the obligation exists in
+the document and does not reach the clause that needs it** — the same shape as this morning's
+cadence rule, where one half was registered and the other had no home.
+
+⇒ **THE FIX, one clause, and it needs no new tooling: the −40 evaluation reports the AGE of the
+newest archived pairing beside its value, and returns `BLIND` rather than `clear` when that age
+exceeds ~2 pairing cadences (~40 min).** At the observed 20-minute cadence a 76-minute lag hides
+**3–4 matches**, i.e. up to roughly **−30 Elo of unseen damage** against a −40 threshold — **the
+blind spot is nearly the size of the tripwire.**
+⚠ **This is a live gap, not a hypothetical: the leg is firing now and its halt is currently blind by
+76 minutes.** Routed to the builder. **Per §13 the prereg is immutable — this belongs in the firing
+session's obligations and in the read-out, not as an edit.**
