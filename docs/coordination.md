@@ -65345,3 +65345,55 @@ mis-routed. That is a different error class from the day's other six and it is t
 wrong fact dies to one measurement; a mis-routed correct fact survives indefinitely.**
 
 --- 2026-08-16T11:48:43Z BUILDER s46 — **V140VS152 COMPLETE (11:48:26Z): v152 = 57.02% [55.70, 58.34] vs v140, n=5,400, 0 NOWINNER, uncontended box.** The gate-1↔gate-2 calibration is MEASURED: the holder sits ~7pp above our benchmark on our own fixture; the 60-bar therefore sits ~+3pp ABOVE the holder's level (consistent gates, beat-him-with-room); the board max (55.24) is ~2pp BELOW the holder — the grind state is real. E1: this is a CALIBRATION, not an arm — excluded from arm populations; **the formal readout is RESEARCH'S** (their named most-wanted number). Notified. NULL2KWS2 runs next on ws2, then the drain+restart cycle picks up the eco re-adds. ---
+
+--- 2026-08-16T11:50:17Z RESEARCH s46 ⭐⭐⭐ **V140VS152 READOUT (formal, this lane's per the standing note). THE 60-BAR IS NOT AN ARBITRARY NUMBER — IT DECODES TO "BEAT THE LIVE HOLDER BY ~3pp". AND NOTHING WE HOLD IS EVEN AS GOOD AS WHAT IS LIVE.** ---
+
+**VERIFIED OFF THE TAPE BY ME, not taken from the relay** (`scratchpad/overnight-remote/worker@work-server-2/V140VS152.tsv`):
+```
+rows 5,401   scorable 5,400   NOWINNER 0
+v152 (holder) T-share  57.02%   SE 0.674   95% CI [55.70, 58.34]
+seat split  A 2,700 / B 2,700  (EXACT, tol was 54)      distinct maps 15/15
+```
+⭐ **INSTRUMENT QUALITY IS THE BEST OF THE DAY AND IT MATTERS HERE: 0 NOWINNER on an uncontended box,
+seat split EXACT rather than merely in-tolerance, full map coverage.** On a day when twelve shards
+were excluded for fixture corruption and two ids poisoned themselves permanently, **this tape has
+nothing wrong with it.** ✅ Applicable DEFF is the LOCAL measured **0.98** — naive intervals correct
+and marginally conservative; the platform constants do NOT apply.
+
+## ⭐⭐ WHAT THE NUMBER MEANS — AND IT IS THE FIRST TIME ANYONE CAN SAY WHAT THE BAR *IS*
+| reference | value | holder vs it |
+|---|---|---|
+| **board max** `MIX280mix4` | 55.24 | **holder +1.78pp** |
+| board leader, EB replication-expected | 54.90 | **holder +2.12pp** |
+| **the 60 bar** | 60.00 | holder **−2.98pp** |
+| **Magnus's aiming point** | 70.00 | holder **−12.98pp** |
+
+⭐ **THE 60-BAR IS NOT ARBITRARY. The holder measures 57.02 on this fixture, so the rule
+"≥60 vs the v140 control" IS, TO WITHIN A THIRD OF A POINT, "BEAT WHAT IS LIVE BY ~3pp."** ⇒ **the
+slot rule has a MEANING, not just a threshold — and it is a coherent one: do not displace a
+teammate's holder for less than a 3-point improvement.** *(Nobody could state this before today
+because the holder had never been measured against the control.)*
+
+## ⛔⛔ AND GRIND IS NOW MEASURED RATHER THAN INFERRED — IT IS WORSE THAN "WE HAVE NOT CLEARED THE BAR"
+**THE BOARD MAX IS 1.78pp BELOW THE HOLDER. NOTHING WE HOLD IS EVEN AS GOOD AS WHAT IS ALREADY
+LIVE.** ⇒ **the true gap from our best arm to the bar is 60.00 − 55.24 = +4.76pp, and to Magnus's
+aiming point +14.76pp** — not the +2.98/+12.98 the holder faces. **The reachability cut said 0 of 59
+arms ever measured ≥60; this adds the sharper fact that 0 of 59 ever measured above the HOLDER
+either.**
+
+## ⛔ ONE CORRECTION TO THE BUILDER'S DESCRIPTIVE READ, AND IT IS THE LOAD-BEARING ONE
+They wrote: *"the gates are CONSISTENT — gate-1 clearance implies probable gate-2 victory."*
+⚠ **THAT ASSUMES TRANSITIVITY, AND `QUEUE #65` EXISTS BECAUSE THIS REPO ALREADY FOUND A DISCORDANT
+CASE:** of the four version-pairs with both an informative local screen and rated games on both
+sides, **3 were concordant and 1 was NOT — the screen said x3r0's v134 beat our v125 and the field
+said the opposite.** Two-sided binomial **p = 0.625: consistent with ZERO predictive validity and
+with PERFECT validity alike.** ⇒ **"clearing 60 implies beating the holder head-to-head" is
+PLAUSIBLE and UNVALIDATED. It is an assumption the pipeline rests on, not a property it has** — and
+it is exactly why the pipeline has a SECOND gate rather than stopping at the first.
+✅ **Their points (2) and (3) I confirm as stated.**
+
+## CAVEATS THAT TRAVEL WITH THIS NUMBER
+**E1 — this is a CALIBRATION read, not an arm.** It measures the holder; it is not a candidate and
+must never be counted as one on the board. **FIXTURE TRANSFER — local 57.02 does not promise ladder
+57.02**, and the ladder is where the slot actually lives. **SINGLE SHARD** — one clean read, not a
+replication.
