@@ -98,3 +98,15 @@ T1. ~16:15Z: G413g4 (ws1, starts after G412g4) crosses n=1000 — compute its
     no effective bar. Fix the row or record why it is right (it's a
     head-to-head screen row, likely a sentinel value someone typed — check
     provenance before editing).
+17. (merge agent finding, repo-wide instrument hazard) NOISE_ON=True pins an
+    UNSEEDED random (main.py spawn_salt, re-rolled per match, engine --seed
+    does not reach it) — ANY flag-off/matched-pair local equivalence check is
+    measuring the RNG unless noise is neutralised first. Complements queue
+    #19 (batteries must not silently pin NOISE_ON=False). Wants: a
+    --deterministic mode or a documented neutralise-then-compare procedure;
+    the agent's tools survive at scratchpad/ss_decode.py +
+    port_samestop_v468.py.
+18. (same report) _samestop_fire spends 3 Ti OUTSIDE _eco_spendable's budget
+    guard — inherited verbatim from _v464samestop (so the SOLO measures the
+    same behaviour; consistency kept deliberately). Registered in both arms'
+    rows; decide at readout whether to guard it in a follow-up dose.

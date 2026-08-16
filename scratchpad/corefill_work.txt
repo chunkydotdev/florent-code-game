@@ -1201,6 +1201,7 @@ SAMESTOP bots/_v464samestop bots/_v223sealrepair 2700 792000
 KILLTILE bots/_v465killtile bots/_v223sealrepair 2700 794000
 H609h3 bots/_v609h3 bots/_v223sealrepair 5400 490000
 H610h3 bots/_v610h3 bots/_v223sealrepair 5400 492000
+KLADTURBO bots/_v468kladturbo bots/_v223sealrepair 5400 800000
 H611h3 bots/_v611h3 bots/_v223sealrepair 5400 494000
 H613h3 bots/_v613h3 bots/_v223sealrepair 5400 496000
 H614h3 bots/_v614h3 bots/_v223sealrepair 5400 498000
