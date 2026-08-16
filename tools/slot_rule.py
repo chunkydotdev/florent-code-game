@@ -34,8 +34,14 @@ an n=8 evaluation of the bot (auto-memory: slot-swap-rule).
 """
 from __future__ import annotations
 
+import sys as _sys
 from pathlib import Path
 from typing import NamedTuple
+
+# THE ONE PARSE of PROGRAMME.md's field block (s47 wrap debt 12). Imported by
+# path so this file keeps working when run as a script from any cwd.
+_sys.path.insert(0, str(Path(__file__).resolve().parent))
+import programme as programme_mod  # noqa: E402
 
 # ---- `--help` CONTRACT (enforced by tests/test_instruments.py) --------------
 # Side-effect-free, prints this module's docstring, exits 0.
@@ -77,16 +83,22 @@ def stop_loss_active(programme: Path | str | None = None) -> bool:
     its diagnostics but NEVER frees the slot; absent or `on` -> active.
     An unreadable programme file counts as ACTIVE — failing toward the alarm
     is the safe direction for a stop-loss switch, and the field's absence
-    predates this feature everywhere else this file is deployed."""
+    predates this feature everywhere else this file is deployed.
+
+    ⭐ PARSE UNIFIED s47 2026-08-16 (wrap debt 12). This used to scan
+    `line.strip()` and return on the FIRST match, indented or not, while
+    `gate.py` read only 4-space-indented lines and took the LAST. On a file
+    with an unindented prose copy above the block the two returned OPPOSITE
+    answers with no error from either — reproduced, then removed by moving both
+    onto `tools/programme.py`. The live file (`    SLOT_STOP_LOSS: off`, four
+    spaces, one occurrence) reads identically under old and new parse.
+    """
     p = Path(programme) if programme is not None else PROGRAMME_MD
     try:
-        for line in p.read_text().splitlines():
-            s = line.strip()
-            if s.startswith("SLOT_STOP_LOSS:"):
-                return not s.split(":", 1)[1].strip().lower().startswith("off")
+        raw = p.read_text()
     except OSError:
-        pass
-    return True
+        return True
+    return programme_mod.stop_loss_active_from_text(raw)
 
 # ===========================================================================
 # ⚠ KNOWN DEFECT, 2026-08-10 — THE HOLDER TAG IS A SAMPLE TIME, NOT AN

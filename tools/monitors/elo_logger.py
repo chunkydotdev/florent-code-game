@@ -19,6 +19,7 @@ from datetime import datetime, timezone
 
 sys.path.append(os.path.join(os.path.dirname(__file__), ".."))
 import slot_sprt  # noqa: E402  (single source of truth for the SPRT constants)
+import programme  # noqa: E402  (single source of truth for the PROGRAMME.md parse)
 
 HIST = os.path.join(os.path.dirname(__file__), "..", "..", "elo_history.tsv")
 STATE = os.path.join(os.environ.get("STATE_DIR", "."), "elo_logger_state.json")
@@ -30,20 +31,26 @@ def _stop_loss_active() -> bool:
     rule — this module then logs the tape row as always but makes NO 'SLOT
     FREE' announcement. Unreadable programme counts as ACTIVE (failing toward
     the alarm is the safe direction for a stop-loss switch). Deliberately the
-    same parse as tools/slot_rule.stop_loss_active — this module keeps its own
-    copy because it imports nothing from tools/ (see the header's stdin
-    contract), and the two are pinned together by the shared test in
-    tests/test_instruments.py, which drives BOTH implementations across the
-    on/off boundary on the same fixture."""
+    same parse as tools/slot_rule.stop_loss_active.
+
+    ⭐ NOW LITERALLY THE SAME PARSE, NOT A HAND COPY (s47 wrap debt 12,
+    2026-08-16). This docstring used to justify the copy with "it imports
+    nothing from tools/" — which was already FALSE two lines above, where
+    `import slot_sprt` comes off exactly that path. The copy scanned
+    `line.strip()` and returned on the FIRST match, indented or not, while
+    gate.py read only 4-space-indented lines and took the LAST; on a file
+    carrying an unindented prose copy the two returned OPPOSITE answers with
+    no error from either. Both now call tools/programme.py.
+
+    The two implementations remain pinned by the shared test in
+    tests/test_instruments.py, which drives BOTH across the on/off boundary on
+    the same fixture."""
     try:
         with open(os.path.abspath(PROGRAMME)) as f:
-            for line in f:
-                s = line.strip()
-                if s.startswith("SLOT_STOP_LOSS:"):
-                    return not s.split(":", 1)[1].strip().lower().startswith("off")
+            raw = f.read()
     except OSError:
-        pass
-    return True
+        return True
+    return programme.stop_loss_active_from_text(raw)
 
 
 def main() -> None:

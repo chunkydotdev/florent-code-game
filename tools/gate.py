@@ -56,6 +56,7 @@ FCODE = ROOT / ".venv" / "bin" / "fcode"
 if str(Path(__file__).resolve().parent) not in sys.path:
     sys.path.insert(0, str(Path(__file__).resolve().parent))
 from escape_tape import record as tape_record          # noqa: E402
+import programme                                       # noqa: E402  (THE ONE PROGRAMME.md parse)
 
 # ---- `--help` CONTRACT (enforced by tests/test_instruments.py) --------------
 # Side-effect-free, prints this module's docstring, exits 0.
@@ -264,24 +265,25 @@ def check_programme(plank: Path, allow_off: bool, prog_path: Path | None = None)
     # CLAUDE.md-vs-reference-doc failure INSIDE the machine-readable block.
     # (Side lane, s31.) The count selftest below is what keeps it honest.
     raw = prog.read_text()
-    pairs = re.findall(r"^\s{4}([A-Z_0-9]+):\s*(.+?)\s*$", raw, re.M)
-    # ⛔ PERMISSIVE pattern on purpose. First written as [A-Z_0-9]+ -- the SAME
-    # class as the parser -- so an unparseable name dropped out of BOTH counts
-    # and the guard could never fire. Driven to the other verdict by renaming a
-    # field to KILL-WINDOW-RND: with the matched class it printed nothing; with
-    # this one it warns. A guard that cannot produce the other answer has not
-    # been seen to check.
-    _declared = len(re.findall(r"^\s{4}[^\s:]+:\s", raw, re.M))
+    # ⭐ THE PATTERNS MOVED TO tools/programme.py (s47 wrap debt 12) so that
+    # slot_rule and elo_logger read PROGRAMME.md with THIS parse instead of
+    # their own. They used to scan `line.strip()` and take the FIRST match,
+    # indented or not, while this one takes the LAST indented one -- opposite
+    # answers on the same file, reproduced on a constructed prose copy. The
+    # regexes and their two comments (permissive DECLARED_RE, digits in the
+    # name class) live in that module now; the guards below are unchanged.
+    pairs = programme.pairs(raw)
+    _declared = programme.declared(raw)
     if len(pairs) != _declared:
         print(f"WARN  PROGRAMME.md: parsed {len(pairs)} fields but {_declared} "
               f"are declared -- a field name is unparseable")
-    _dupes = [k for k in {k for k, _ in pairs} if [x for x, _ in pairs].count(k) > 1]
+    _dupes = programme.duplicates(raw)
     if _dupes:
         # dict() keeps the LAST occurrence, so a copy inside a prose block
         # SILENTLY OVERRIDES the canonical declaration with no error and no diff.
         print(f"WARN  PROGRAMME.md: DUPLICATE field(s) {sorted(_dupes)} -- "
               f"last occurrence wins; de-indent the prose copy")
-    fields = dict(pairs)
+    fields = programme.fields(raw)
     line = fields.get("LINE", "?")
     pats = fields.get("LINE_DIRS", "").split()
     print("ACTIVE PROGRAMME")

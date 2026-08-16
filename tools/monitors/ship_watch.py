@@ -246,11 +246,17 @@ def selftest() -> int:
     # PROGRAMME.md may carry SLOT_STOP_LOSS: off (Magnus 2026-08-16), and
     # these cells test the MACHINERY, which is kept intact for the day the
     # field flips back. The off-state gets its own driven cell at the end.
+    # ⛔ THE FOUR LEADING SPACES ARE LOAD-BEARING (s47, 2026-08-16). PROGRAMME.md
+    # fields are INDENTED lines and nothing else — prose that happens to contain
+    # `SLOT_STOP_LOSS: off` must not move a live rule, which is what the unified
+    # parse in tools/programme.py enforces. These fixtures were unindented, so
+    # they had the shape a real PROGRAMME.md CANNOT have; matching the real file
+    # is the point of a fixture.
     _prog_on = tempfile.NamedTemporaryFile("w", suffix=".md", delete=False)
-    _prog_on.write("SLOT_STOP_LOSS: on\n")
+    _prog_on.write("    SLOT_STOP_LOSS: on\n")
     _prog_on.close()
     _prog_off = tempfile.NamedTemporaryFile("w", suffix=".md", delete=False)
-    _prog_off.write("SLOT_STOP_LOSS: off\n")
+    _prog_off.write("    SLOT_STOP_LOSS: off\n")
     _prog_off.close()
     _real_programme = slot_rule.PROGRAMME_MD
     slot_rule.PROGRAMME_MD = Path(_prog_on.name)

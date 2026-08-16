@@ -293,6 +293,132 @@ class TestArenaCeilingCoupling(unittest.TestCase):
         )
 
 
+class TestProgrammeParserIsOne(unittest.TestCase):
+    """PROGRAMME.md must parse the SAME WAY in every tool that reads it.
+
+    ⛔ THE DIVERGENCE THIS PINS (s47 wrap debt 12, reproduced 2026-08-16 before
+    the fix). Three readers, two answers:
+
+        gate.py                     ^\\s{4}([A-Z_0-9]+):  + dict() -> LAST wins,
+                                    an UNINDENTED line is not a field at all
+        slot_rule.stop_loss_active  line.strip().startswith -> FIRST wins,
+                                    indented or not
+        elo_logger._stop_loss_active   a hand copy of slot_rule's
+
+    On this file:
+
+        SLOT_STOP_LOSS: off        <- prose, unindented
+            LINE: x
+            SLOT_STOP_LOSS: on     <- the real field
+
+    slot_rule returned False (rule retired) and gate returned 'on'. The LIVE
+    decision-maker held the SAFE value, so it failed in the right direction —
+    which is exactly why it could sit there. PROGRAMME.md has produced this
+    class of failure before (s31, R1000_IS_DEFEAT unparsed inside the block
+    headed 'the fields below are parsed').
+
+    NON-VACUITY: the fixtures below are constructed so that the OLD parses gave
+    DIFFERENT answers. A test on a file where both agree proves nothing, so the
+    disagreeing file is the fixture and the agreement is the assertion.
+    """
+
+    import importlib as _il
+    sys.path.insert(0, str(ROOT / "tools"))
+    programme = _il.import_module("programme")
+    slot_rule = _il.import_module("slot_rule")
+    sys.path.insert(0, str(ROOT / "tools" / "monitors"))
+    elo_logger = _il.import_module("elo_logger")
+
+    # The prose copy sits ABOVE the block, so a first-match parse reads it and a
+    # last-indented parse reads the field. Both orders are exercised below.
+    DIVERGENT_PROSE_FIRST = ("SLOT_STOP_LOSS: off\n"
+                             "    LINE: x\n"
+                             "    SLOT_STOP_LOSS: on\n")
+    DIVERGENT_PROSE_LAST = ("    LINE: x\n"
+                            "    SLOT_STOP_LOSS: on\n\n"
+                            "## prose\nSLOT_STOP_LOSS: off\n")
+
+    def _write(self, text):
+        import tempfile
+        fh = tempfile.NamedTemporaryFile("w", suffix=".md", delete=False)
+        fh.write(text)
+        fh.close()
+        return Path(fh.name)
+
+    def _elo_says(self, path):
+        old = self.elo_logger.PROGRAMME
+        try:
+            self.elo_logger.PROGRAMME = str(path)
+            return self.elo_logger._stop_loss_active()
+        finally:
+            self.elo_logger.PROGRAMME = old
+
+    def test_the_constructed_divergence_now_reads_one_way_in_all_three(self):
+        """The fixture that separated them. All three must say ACTIVE: the only
+        INDENTED SLOT_STOP_LOSS is `on`, and prose is not a field."""
+        for name, text in (("prose-first", self.DIVERGENT_PROSE_FIRST),
+                           ("prose-last", self.DIVERGENT_PROSE_LAST)):
+            p = self._write(text)
+            gate_says = self.programme.fields(text).get("SLOT_STOP_LOSS")
+            self.assertEqual(gate_says, "on", f"{name}: field parse changed")
+            self.assertTrue(self.slot_rule.stop_loss_active(p),
+                            f"{name}: slot_rule read the PROSE copy, not the field")
+            self.assertTrue(self._elo_says(p),
+                            f"{name}: elo_logger read the PROSE copy, not the field")
+
+    def test_the_complement_is_read_the_same_way_too(self):
+        """Same shape, opposite value — or the test above passes for any parse
+        that simply always returns True."""
+        text = ("SLOT_STOP_LOSS: on\n"
+                "    LINE: x\n"
+                "    SLOT_STOP_LOSS: off\n")
+        p = self._write(text)
+        self.assertEqual(self.programme.fields(text).get("SLOT_STOP_LOSS"), "off")
+        self.assertFalse(self.slot_rule.stop_loss_active(p),
+                         "slot_rule read the prose copy on the complement")
+        self.assertFalse(self._elo_says(p),
+                         "elo_logger read the prose copy on the complement")
+
+    def test_a_duplicate_INSIDE_the_block_resolves_last_wins_everywhere(self):
+        """gate.py WARNs about duplicates and resolves last-wins. The other two
+        must resolve them identically or the warning describes the wrong file."""
+        text = "    SLOT_STOP_LOSS: on\n    SLOT_STOP_LOSS: off\n"
+        p = self._write(text)
+        self.assertEqual(self.programme.duplicates(text), ["SLOT_STOP_LOSS"])
+        self.assertFalse(self.slot_rule.stop_loss_active(p))
+        self.assertFalse(self._elo_says(p))
+
+    def test_absent_and_unreadable_both_fail_toward_the_alarm(self):
+        p = self._write("    LINE: x\n")
+        self.assertTrue(self.slot_rule.stop_loss_active(p),
+                        "absent SLOT_STOP_LOSS must count as ACTIVE")
+        self.assertTrue(self._elo_says(p))
+        missing = Path("/nonexistent/programme-does-not-exist.md")
+        self.assertTrue(self.slot_rule.stop_loss_active(missing))
+        self.assertTrue(self._elo_says(missing))
+
+    def test_the_live_file_reads_the_same_under_the_new_parse(self):
+        """A parse change must not move a live stop-loss by accident. The live
+        PROGRAMME.md carries `    SLOT_STOP_LOSS: off` — one occurrence, four
+        spaces — so old and new agree, and this asserts it rather than trusting
+        the reading."""
+        raw = (ROOT / "PROGRAMME.md").read_text()
+        indented = [l for l in raw.splitlines()
+                    if l.startswith("    ") and l.strip().startswith("SLOT_STOP_LOSS:")]
+        self.assertEqual(len(indented), 1,
+                         "PROGRAMME.md no longer declares SLOT_STOP_LOSS exactly "
+                         "once as an indented field — re-check this test's premise")
+        first_match_parse = None       # the OLD slot_rule parse, reimplemented
+        for line in raw.splitlines():
+            s = line.strip()
+            if s.startswith("SLOT_STOP_LOSS:"):
+                first_match_parse = not s.split(":", 1)[1].strip().lower().startswith("off")
+                break
+        self.assertEqual(self.slot_rule.stop_loss_active(ROOT / "PROGRAMME.md"),
+                         first_match_parse,
+                         "the unified parse changed the LIVE stop-loss value")
+
+
 class TestSlotRuleAndTheAlarmThatReportsIt(unittest.TestCase):
     """The stop-loss. Two implementations of one rule existed (2026-08-09,
     s26): `elo_logger` had it inline and correct, `ship_watch` had something
@@ -319,11 +445,14 @@ class TestSlotRuleAndTheAlarmThatReportsIt(unittest.TestCase):
         switch, in both directions."""
         import tempfile
         from pathlib import Path as _P
+        # ⛔ FOUR LEADING SPACES, LOAD-BEARING (s47): PROGRAMME.md fields are
+        # INDENTED lines and nothing else, so an unindented fixture has a shape
+        # the real file cannot have. TestProgrammeParserIsOne pins the rule.
         on = tempfile.NamedTemporaryFile("w", suffix=".md", delete=False)
-        on.write("SLOT_STOP_LOSS: on\n")
+        on.write("    SLOT_STOP_LOSS: on\n")
         on.close()
         off = tempfile.NamedTemporaryFile("w", suffix=".md", delete=False)
-        off.write("SLOT_STOP_LOSS: off\n")
+        off.write("    SLOT_STOP_LOSS: off\n")
         off.close()
         self._prog_on, self._prog_off = _P(on.name), _P(off.name)
         self._saved_programme = (self.slot_rule.PROGRAMME_MD,
