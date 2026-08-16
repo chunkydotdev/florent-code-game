@@ -61260,3 +61260,54 @@ certification**, and at a two-minute gap either could have decided it.
 ⇒ **FOR THE RECORD: the certificate's clock 2 is `2026-08-16T06:25:40.381Z` (platform `createdAt`,
 match `14274b7c`), gap `+26m39s`, strictly later. The builder's value governs.** My
 `our_matches.tsv` figure corroborates it to the second and is not the registered quantity.
+
+--- 2026-08-16T06:4xZ (`date -u`) ⛔⭐ **SIDE LANE s44 — THE −40 GATE WILL ESCALATE AT 3/3 AND IT IS BLIND, NOT TRIPPED. The real number is −5.90 of −40, and no arm has held the slot during a pairing.** ---
+
+## THE SITUATION, AND THE ESCALATION IS IMMINENT
+
+    06:41:44Z  ELO GATE: BLIND (age=48.74min > 40min, STALE_ARCHIVE)  streak=1/3
+    06:46:15Z  ELO GATE: BLIND (age=53.27min > 40min, STALE_ARCHIVE)  streak=2/3
+
+**⇒ the next reading escalates to a human, per the 3-strike design.** That design is mine — I asked
+for BLIND-not-clear — **so the escalation is the guard working. What it is NOT is a leg in trouble.**
+
+## ⛔ THE CAUSE: THE ARCHIVER IS ALIVE AND HAS NOT WRITTEN IN 37 MINUTES
+
+    ladder_games.tsv mtime   06:09:56Z          cycle is `sleep 1800` = 30 min
+    process                  ALIVE, pid 19887
+    newest archived pairing  05:52:59Z
+
+**Two pairings have landed since and EXIST on the platform** — `06:12:59.674Z vs not adgato` and
+`06:32:59.700Z vs gsxWins`. ⇒ **this is the lag-vs-stall question I raised at 06:1xZ, resolved the
+other way this time: the archive is not sawtoothing, it has missed a cycle.** *(It may be mid-run;
+`ps` cannot tell and the mtime is the only witness — "alive is not working", again.)*
+
+## ✅ AND THE TWO ANSWERS THAT MATTER, COMPUTED FROM THE PLATFORM DIRECTLY
+
+**LEAK: ZERO.** Both leg-window pairings carry **`ourver=v152`** — the holder, not an arm. ⇒ **the
+upload→fire→rollback cycle has now landed entirely inside pairing gaps TWICE.**
+
+**THE HALT'S ACTUAL VALUE:**
+
+    06:12:59Z  vs not adgato   S=0.4  E=0.35   delta = +1.75
+    06:32:59Z  vs gsxWins      S=0.2  E=0.44   delta = -7.65
+    ─────────────────────────────────────────────────────────
+    2 matches, cumulative net = -5.90 Elo   threshold -40.00   ->  CLEAR, wide margin
+
+⇒ **The escalation will be CORRECT IN MECHANISM AND MISLEADING IN IMPRESSION.** A human reading
+*"3 consecutive BLIND, escalating"* reasonably infers the leg is bleeding rating. **It is not:
+−5.90 of −40, and nothing has leaked.** ⭐ **A guard that refuses to guess is right to refuse — and
+the refusal is only useful if somebody supplies the number it could not compute. That is this
+lane's job and it is done above.**
+
+## ⚠ THE DESIGN QUESTION THIS EXPOSES — noted for the read-out, NOT a mid-leg patch
+**The platform HAS the data; only our cache is behind.** ⇒ a gate that reads `ladder_games.tsv`
+alone converts *"our archiver hiccuped"* into *"the stop-loss cannot evaluate"*, when
+`fcode match list --mine --type ladder` would have answered it live. **Worth considering a live
+fallback on staleness rather than a BLIND** — but that is a design change on a firing leg, so it
+belongs in the read-out, not in a patch now. **The current behaviour is SAFE and I would not change
+it mid-flight.**
+
+**NOT escalated to Magnus:** the leg is healthy, the margin is wide, the builder is active. **The
+escalation trigger for him is the net approaching −40 while the archive stays blind, or the builder
+going quiet with the streak at 3.** Stated so the threshold is a decision and not a mood.
