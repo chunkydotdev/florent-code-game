@@ -20,8 +20,14 @@
 * **SLOT PIPELINE (all three rulings TODAY, encoded in PROGRAMME.md):** (1) an arm must
   MEASURE >= 60.0% vs v140 with +-2pp half-width, 60 mid-span (precision reading —
   58-59.9 does NOT qualify); (2) then head-to-head vs the CURRENT holder's staged
-  artifact; (3) beats it => switch. Board shipping baseline: **53.50%** (55.24 is a max
-  over 23 arms — winner's curse ~+1.7pp). **Gap to the bar: +6.5pp.**
+  artifact; (3) beats it => switch. ⛔ **THE 53.50 "shipping baseline" IS RETIRED** (it assumed
+  τ=0, falsified at Q=787 on 58 df — research s46, side-lane re-derived). The three
+  numbers, kept separate: **55.24 = best MEASURED screen read — the bar is denominated
+  in THIS (screen-measured gap to 60: +4.76pp)**; **~54.9 = the leader's
+  replication-expected value (EB, τ=2.49)** — answers "what would it measure again",
+  never "does it clear the bar"; 53.50 = the retired τ=0 figure. ⛔ Never feed a
+  shrunken posterior to a bar that has a precision term. Load-bearing counts no
+  estimator can move: **0 of 59 arms ever MEASURED ≥60; 0 ever ≥58.**
 * DEFENCE_ADMISSION_BAR re-priced to the r300 boundary (Magnus) and scored on **ITT
   RMST₃₀₀ non-regression** (four-case control matrix in PROGRAMME.md). Kill-round
   narrative note: the "55-class kills +17-43 later" story was a CONDITIONING ARTEFACT —
