@@ -63272,3 +63272,83 @@ not mine to do: one line in `HANDOVER.md`, which the builder actually boots.** *
 is the wrong home for the reason the builder already gave.**
 
 --- 2026-08-16T08:27:18Z BUILDER s46 — IN-FLIGHT: fieldcal ROTATION CATCH-UP AMENDMENT draft (fresh opus agent per the s40 prereg rule; ADD-only, outcome-blind by construction — the skipped cell has zero results). Side lane pre-reviews before it lands; scheduler restart only after their pass. ---
+
+--- 2026-08-16T08:37:12Z RESEARCH s46 ⭐⭐⭐ **SHIP-BAR REACHABILITY — RE-DERIVED INDEPENDENTLY. 0 OF 59 ARMS HAVE EVER REACHED 60. GRIND IS A STEADY STATE, NOT A PHASE. AND THE ONE THING EVERYONE EXPECTED TO SAVE IT — CONJUNCTIONS — MOVES THE CLOUD WITHOUT FATTENING THE TAIL.** `docs/research/SHIP-BAR-REACHABILITY-2026-08-16.md` (cut 08:31:10Z, HEAD `97669852`) ---
+
+**Derived from `results.tsv` BEFORE opening the audit, then reconciled — and it does NOT reproduce
+the audit's number.** The side lane's five disbelief conditions (`a3c5df65`) were committed blind to
+this agent's output and forwarded to it mid-flight; **all five are answered below.**
+
+## POPULATION — stated as a rule, with the excluded set counted (condition A4)
+249 shard tapes → **232** after md5 dedup (`work-server-1/` and `worker@work-server-1/` are the same
+files) → **93** on the v140 control (`bots/_v223sealrepair`, md5-verified) → **59 arms** after five
+stated exclusions. **E3 removed 12 fixture-corrupt shards** (NOWINNER 1.14–8.86%, all 05:36–08:13Z
+today, against 0.00% on every full-speed shard — the runner's OWN pre-existing abort rule, not a new
+threshold). ⭐ **E5 is set at n<100 rather than n<200 SPECIFICALLY TO KEEP `SEALQ` AT 25.48% IN:
+every killed and auto-stopped arm is in the population.** That is A4 answered by construction rather
+than by assurance.
+
+## THE NUMBERS
+| | |
+|---|---|
+| distribution | mean **50.60**, SD_obs 4.31, median 50.68, min **25.48**, max **55.24** |
+| random effects | μ **50.96**, τ **2.49**, Q **787** on 58 df |
+| σ to **60** | **3.63σ** (RE, all) · 3.65σ completed-only · **4.94σ single-plank** · 3.80σ multi |
+| σ to **70** | **7.64σ** (RE) · **9.48σ single-plank** |
+| **arms ever ≥60** | **0 of 59** |
+| **arms ever ≥58** (the CI-low condition) | **0 of 59** |
+| **arms ever ≥70** | **0 of 59** |
+
+## ⛔ THE 4.64σ IS NOT REPRODUCED, AND THE DISCREPANCY IS EXACTLY CONDITION A4
+The audit's board is **27 arms, mean 53.02, sd 1.507**; this one is **59 arms, mean 50.60, τ 2.49**.
+**Their board cannot contain `siegelaunch`, `sealtempo`, `bodyblock` or `SEALQ` — TRUNCATED FROM
+BELOW.** Mean up, σ down, the two errors partly cancel, and **4.64 lands between this cut's all-arm
+3.6 and its single-plank 4.9.** ⇒ **Immaterial to the verdict. BANK THE ORDERING, NOT THE NUMBER.**
+⛔ **And the agent explicitly DECLINES to endorse the audit's "1 in 560,000"** — per condition A3, a
+σ is a distance and a frequency out in that tail is a claim about a shape 59 points cannot establish.
+**Every probability below is stated as CONDITIONAL ON THE FITTED GAUSSIAN RE, never as a fact.**
+
+## ⭐⭐ THE WINNER'S CURSE RUNS THE OTHER WAY FROM WHAT THIS REPO BELIEVES — A CORRECTION WE OWE
+**We have been quoting the leader's shipping value as 53.50** (max 55.24 minus a winner's-curse
+haircut). **That 53.50 assumes τ = 0, and τ = 0 IS FALSIFIED BY Q = 787.** EB shrinkage is **+0.29pp**
+and a conditional 400k-draw simulation gives **+0.39–0.61pp** ⇒ **the leader's honest value is
+~54.6–55.0%, NOT 53.50%.** *(The τ=0 counterfactual reproduces the +3.6pp haircut exactly, which is
+the control that identifies where 53.50 came from. The audit's own Q2 independently says 0.37pp — the
+two agree.)*
+⇒ ⚠ **THE GAP TO 60 IS +5.2pp, NOT +6.5pp. `HANDOVER` and `coordination.md` carry 53.50 and need
+correcting — ROUTED TO BUILDER, whose file that is.** **This is the rare correction that moves in our
+FAVOUR, and it is worth noting that a repo-wide number drifted for a day in the pessimistic
+direction and nobody checked, because pessimistic numbers do not get audited.**
+
+## ⭐⭐⭐ THE FINDING NOBODY PREDICTED, AND IT IS THE ONE THAT DECIDES THE STRATEGY
+**Condition A2 asked whether conjunctions escape the single-plank distribution. They do — and NOT in
+the way that helps.**
+> **Conjunctions raise μ by +3.26pp but SHRINK τ (2.20 → 2.00). THEY MOVE THE CLOUD; THEY DO NOT
+> FATTEN THE TAIL — which is the OPPOSITE of what a search for one 60-arm needs.**
+⇒ **Combining planks makes the AVERAGE arm better and the BEST arm no more likely.** Everyone
+(including me) assumed conjunctions were the road to the bar. **They are the road to a better mean.**
+**Second half, and it is the harder one: only 2 of 26 single planks have a CI above 50** —
+`bodyaware` **+4.10** and `rnd1` **+1.61**. **Their additive stock is +5.71pp and the board leader is
+already 55.24.** ⇒ **THE CONFIRMED PLANK STOCK IS ALREADY HARVESTED.** 2-plank composition is
+additive; TRIO realises **79.9%** of the sum.
+
+## A1, A2, A5 — RESOLVED
+**A1 FIRES (+0.55 SD) AND THEN DISSOLVES INTO A2:** within SINGLE the trend is **−1.47pp**, within
+MULTI **+0.60pp** — **the apparent improvement over time is COMPOSITION (34% → 77% multi), not a
+better process.** ⚠ **A pooled time-trend on this board is a composition artefact and must not be
+quoted as progress.**
+**A2's CLASSIFIER WAS BUILT, REJECTED, AND REBUILT:** the first (module count) **called three
+documented solo planks MULTI and was thrown out**; the replacement uses structural change-set
+containment, **validated against 11 documented cases.** ⇒ **the strong form is scoped as registered:
+"60 IS NOT REACHED BY SINGLE PLANKS."**
+
+## THE HONEST FRAMING — and the boundary held
+**GRIND is the STEADY STATE of a process whose output does not overlap the bar. It is not a phase we
+are waiting out. 70 needs a DIFFERENT GENERATOR, not more draws.**
+✅ **NO BAR-CHANGE RECOMMENDATION APPEARS ANYWHERE IN THE DOCUMENT.** Magnus set 60 and named 70; the
+job was to price them and the write-up prices them.
+⭐ **HIGHEST-VALUE ITEM VISIBLE FROM THIS CUT, and it is not a plank at all: the +6.28pp SEAT
+ASYMMETRY ON BYTE-IDENTICAL SELF-PLAY — LARGER THAN ANY PLANK WE HAVE EVER SHIPPED, AND IT IS OUR OWN
+BUG.** *(This is the s45 retro's own PENDING item — "the seat-rung read vs the +6.28 baseline, rungs
+never started".)* **Second: the head-to-head gate is UNMEASURED — its only read is the corrupt
+V140VS152, which is re-queued.**
