@@ -2683,3 +2683,60 @@ number IS the right check for a transcription error, a wrong column, a stale fil
 this lane caught real defects that way today. ⇒ **the rule is not "reproductions are worthless", it
 is "name which failure class your reproduction can see."** A reproduction sees the computation. It
 cannot see the choice.
+
+## ⭐⭐⭐ D31 — **A CHECK THAT DEPENDS ON A LANE BEING PRESENT IS NOT A CHECK. MECHANISE IT OR IT DOES NOT EXIST.**
+
+**MAGNUS, 2026-08-16, verbatim: *"this should always be the case actually"*** — said of a side-lane
+verification that had just stopped being load-bearing because the builder folded it into the
+scheduler. **Recorded verbatim because it is a directive, and promoted here rather than to
+`PROGRAMME.md` because this file is the side lane's mandate and `PROGRAMME.md` is
+edit-on-his-directive-only through the builder.**
+⚠ **MY READING, STATED SO IT CAN BE CORRECTED:** *a manual check performed by a lane is a
+PLACEHOLDER for a mechanism, and the lane's job is finished only when the check no longer needs the
+lane.* If he meant something narrower, this row is wrong and should be struck rather than reworded.
+
+### WHY IT IS A ROW AND NOT A PREFERENCE — ONE SESSION'S EVIDENCE, BOTH DIRECTIONS
+
+**EVERY durable win of 2026-08-16 was a lane observation converted into a mechanism:**
+
+    clear-from-empty on the -40 halt   -> BLIND + printed age + 3-strike, in the gate
+    silent unpin fall-through          -> UNPINNED_OK abort, in the runner
+    starting-cell rotation             -> (k-1 mod 10), in the scheduler
+    per-flip leak verification (MINE)  -> id-keyed platform read that HALTS, in the scheduler
+    queue title truncation             -> ellipsis-only-when-cut, in queue_check
+    gate.py's zero test coverage       -> 13-cell fixture selftest, mutation-driven
+    silent rate-window wait            -> "wait Ns — same-cell retry, never advances" heartbeat
+
+**EVERY failure of the same day was an attention-level rule that did not fire when it mattered:**
+* **D28** — *"a reboot state's holder line comes from `fcode status`, never a poller"* — **committed
+  by the lane that promoted it, in its own closing artefact**, having cited it twice that day.
+* **D3** — *"the interpreter is part of the guard"* — **committed by me ~19 hours after the builder
+  logged it**, in a monitor I armed *specifically* to close a hole in my own watch.
+* **The promoter's-first-use rule fired three times**, on three lanes, on rules written that day.
+⇒ **The pattern is not that people are careless. It is that a rule lives in attention and a
+mechanism lives in the repository.** `PROGRAMME.md` already carries the observation —
+*"attention-level rules failed under time pressure all day; script-level ones held"* — **D31 makes
+it an obligation instead of a lesson.**
+
+### THE WATCH FORM
+
+**When this lane produces a check, ask the same question of it that it asks of everything else:
+WHAT HAPPENS TO THIS CHECK WHEN NOBODY IS LOOKING?**
+1. **Name the mechanism the check should become.** *"I verified the flip"* is a placeholder for
+   *"the scheduler verifies the flip and halts."*
+2. **Route it with the defect** — the flag arrives with its fix AND with what the fix was verified
+   against (Q8's two conditions), because a flag that becomes a script is the only output that
+   outlives the session.
+3. **A check that CANNOT be mechanised is stated as such**, with the reason, so nobody inherits it
+   as covered. **An unmechanisable check is a standing cost and must be visible as one.**
+⇒ **AND THE MEASURE OF THIS LANE IS THE COUNT OF ITS CHECKS THAT NO LONGER NEED IT.** A lane whose
+value depends on its own presence has built nothing; **the session's own best outcome was the
+moment a peer made my verification redundant, and that is the target rather than a concession.**
+
+⚠ **THE HAZARD, NAMED SO THE ROW IS NOT OVER-APPLIED:** *mechanise it* is not *mechanise it NOW*.
+**A guard built mid-flight on a firing leg is a change to a running experiment** — today the
+correct sequence was HALT → patch → selftest both ways → resume, twice. **The obligation is that
+the mechanism EXISTS before the check is relied upon again, not that it exists before the current
+run finishes.** And a mechanism landed without being driven to both verdicts is not a mechanism, it
+is a second thing to audit — **which is the whole of D24 and the reason this row does not shorten
+the path.**
