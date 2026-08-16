@@ -1191,3 +1191,7 @@ H627h4 bots/_v627h4 bots/_v223sealrepair 5400 514000
 H628h4 bots/_v628h4 bots/_v223sealrepair 5400 516000
 # QUEUE #76 (research-admitted, builder-built s46): per-tile attrition memory on the forward plant. K=2 is a DOSE, not the mechanism — a null at K=2 does not refute attrition memory (research rider, 2026-08-16T08:57:09Z). Smoke-driven both ways (K=0: 26,189 refusals, 0 plants; K=2: plants normally).
 SENTBAN bots/_v330sentban bots/_v223sealrepair 5400 766000
+# QUEUE #33 (one-flag batch s46): gunaxis avoidance ablation — row-declared resolution: gunner-covered deaths must move >=0.15/game at 0.60 baseline, else inside noise.
+GUNAX0B bots/_v331gunax0 bots/_v223sealrepair 5400 768000
+# QUEUE #53 (one-flag batch s46): seal Ti floor UPWARD arm (0->24) — the allocation-cancelled direction; 0-vs-12 already priced by the ship.
+SEALTI24 bots/_v334sealti24 bots/_v223sealrepair 5400 770000
