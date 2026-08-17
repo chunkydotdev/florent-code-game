@@ -69458,3 +69458,28 @@ NOT-A-BOT-ROW         8
 UNRESOLVED            0
 ```
 ⛔ **AND THE READING CAUTION STANDS UNCHANGED: a re-admitted row is a row whose ARGUMENT survives, not a row that is ready to build. Every one still needs a screen against a control that has absorbed three planks since these rows' screen lines were written.**
+
+--- 2026-08-17T06:01:27Z ⛔⭐ **SIDE LANE s48 — THE STRICT FLOOR'S FIRST LIVE FIRING. A CORRECT TRIAGE, ON THE REMOTE SURFACE, WITH ITS CONTROL IN THE ROW — AND IT VOIDED A REGISTERED PRIMARY.** ---
+
+```
+05:59:42Z  SEALSENTAN  CLAIM/DONE  mark=1000  n=1120
+           share 46.07  CI [43.15, 48.99]  TREND-FLOOR@1000  fired_on=46.90
+           host=worker@work-server-1        control=bots/_v468kladturbo
+```
+## ✅ THREE THINGS WENT RIGHT
+1. ⭐ **A CORRECT TRIAGE, NOT A FALSE KILL — and it answers this morning's arithmetic directly. CI UPPER 48.99 IS BELOW 50**, so the arm is significantly WORSE than the control, not a marginal arm killed by a harsh floor. **My concern was the floor killing true-50 arms 89.7% of the time; the first firing is on a true-46.** ⇒ **the strict regime's debut is clean, and the worry I raised at 04:40Z does not reproduce on its first test.**
+2. ⭐ **`remote_cancel.py`'s FIRST LIVE EXERCISE, on ws1, and it worked** — the capability built at 05:41Z fired correctly on its first real case, ~18 minutes later.
+3. ⭐⭐ **THE LEDGER ROW CARRIES ITS OWN CONTROL (`bots/_v468kladturbo`).** **The schema debt I raised at 04:52Z as *"cheap today, archaeology tomorrow"* is CLOSED, and the FIRST strict-regime cancellation is SELF-DESCRIBING.** ⇒ **it never needed the boundary comment as a fallback; the boundary was the interim and the column is the fix.**
+
+## ⛔ AND THE ASYMMETRIC-STOP CLAUSE FIRED — SEALSENTA HAS NO PRIMARY
+**Registered: *"SEALSENTA's PRIMARY is the between-shard CONTRAST vs SEALSENTAN (null(0)+MDE 1.87pp), with an asymmetric-stop clause — a gate stop on either arm cancels the contrast, stated pre-start."***
+⇒ **SEALSENTAN stopped ⇒ the contrast is CANCELLED BY PRE-REGISTRATION ⇒ SEALSENTA's primary no longer exists.** **SEALSENTA has NO heartbeat — serial behind SEALSENTAN, so it has not started, and the decision is free right now.**
+⇒ **THE QUESTION IS THE BUILDER'S: does SEALSENTA still run?** **If YES it needs a STATED replacement primary — promoting the vs-incumbent SECONDARY post-stop is choosing a bar after seeing SEALSENTAN's number, which is the one move the pre-registration exists to prevent. If NO, retire the row with a pointer to the clause and the pair closes on its own terms.** ⭐ **Either is defensible; letting it launch and deciding at readout is not.**
+⭐ **AND THE CLAUSE ITSELF IS THE STORY: it fired BEFORE ANY OF SEALSENTA'S DATA EXISTED, which is the entire value of pre-registering a dependency between arms. That window closes when the shard starts.**
+
+## ✅ BELTBREAK PAIR — BOTH ARMS CERTIFIED off their own tape stamps
+```
+lock 05:58:20Z (e695113a)   EARLY start 05:59:07Z (+47s)   LATE start 06:00:07Z (+1m47s)
+both control=bots/_v468kladturbo
+```
+⚠ **+47s is the TIGHTEST margin of the day** (against ECOMMIT +2m02s, FREEROUND +3m02s, ROUTESCORE +4m03s). ✅ **Still clean, and by the standard the s47 Sleipnir ship set at 11.2s — the protection holds because NO OUTCOME EXISTED YET to influence the registration.** ⚠ **But the margin is compressing as the session accelerates, and a two-clock is only as good as the gap; worth watching rather than flagging.**
