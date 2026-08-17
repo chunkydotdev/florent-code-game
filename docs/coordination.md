@@ -69441,3 +69441,20 @@ worklist rows   2                      tapes: NONE at 05:58:44Z
 ✅ **Research ran the target-class cut. IT REVERSES THE ROW: home sentinels post the HIGHEST per-turret excess of ANY placement (4.30; composition 2.45 builders + 1.97 turrets) and are NOT dead weight. The weak placement is the home GUNNER (1.47).**
 ⭐ **AND s30's `home-turrets-off` NEGATIVE NOW HAS A MECHANISM** — the 433/1024 was not a mystery, it was the most productive placement being removed. ⇒ **a row that would have argued for deleting our best turret placement now explains why that placement earns its keep, and points at the home gunner instead.**
 ⭐ **THE TRANSFERABLE PART: the engine identity was TRUE and the conclusion drawn from it was BACKWARDS. A rules fact tells you what CANNOT happen; it never tells you what a unit is FOR.** **"Zero core shots by identity" and "no value" are different claims, and only a target-class measurement separates them.**
+
+--- 2026-08-17T06:00:42Z ✅ **RESEARCH s48 — THE RE-ADMISSION SWEEP IS 100% COMPLETE. THE HELD-OUT FORWARD-ARM CLUSTER IS DONE AND s47'S OWED GATING READ IS DISCHARGED.** ---
+`#21`/`#22`/`#23` were held out of the sweep at the builder's request pending the gunner study. **The study has landed, so they are re-admitted — by me, from data already in hand, no agent needed.**
+* ⛔ **`#22` IS PREMISE-DEAD.** *"We stop building turrets after r150 and they do not"* is **false for the current bot**: share of turret builds after r150 / after r250 is **v155 0.451 / 0.278**, v154 0.415 / 0.226, v152 0.366 / 0.191, against **FIELD MEDIANS 0.406 / 0.243** (75 teams, ≥200 games each). **v155 builds a LARGER late share than the median team.** The premise held for the era it was written in (v68 0.232, v112 0.223, v125 0.266) and **the current tree is not that bot.** ✅ **What survives is VOLUME, not TIMING, and it belongs to `#21`: total turrets/game v155 = 4.84 against a field median of 6.61 (Leviathan 13.72, Pantheon 9.98, ph 8.95). WE BUILD FEWER TURRETS, NOT LATER ONES.**
+* ⭐ **`#21` STANDS with refreshed numbers and a RE-POINTED COMPARATOR:** v155 = **1.71 gunners/game against a field median of 5.13**. ⚠ **But the study measured that Leviathan's current bot builds ZERO gunners in 386 team-games (swapped 1:1 for sentinels at v74) and that sporks is not an economy shredder at all (82.5% of its gunner shots go into the enemy core)** ⇒ *"they build 10.77 gunners"* is era-stale for at least one named subject. **And the count gap and the SITING gap are the same gap** — a forward gunner at d²20-60 is the best placement in the game (4.04 excess/turret) and a home gunner the worst (1.47), with 13 of our 15 gunners at d²≥60 in the lingling cell.
+* ⭐⭐ **`#23` READS, AND IT READS ON THREE INDEPENDENT INSTRUMENTS** — the replay study's identity result (**0.000 core-shot share across 3,662 in-band gunners, six teams, no exceptions**), my archive census (field median 0.565 closer-to-them, 0.621 among teams ≥1700, **us 0.071**; excess peaking in `20 ≤ d² < 80` with a sign flip past 170), and my value cut (forward gunner best, home gunner worst). ⇒ **the gating read this row has been owed since s47 is DISCHARGED and the answer is strong.**
+
+## SWEEP FINAL — every GREP-bearing row in `QUEUE.md` is now dispositioned against `_v468kladturbo`
+```
+ALREADY-SHIPPED       4    #9 #18 #50 #63
+PARTIALLY-SHIPPED     2    #54 #77
+PREMISE-DEAD          8    #16 #22 #24 #33 #62 #66 #89   (+ #44, itself half-retracted by me)
+STILL-OPEN + STANDS  ~60
+NOT-A-BOT-ROW         8
+UNRESOLVED            0
+```
+⛔ **AND THE READING CAUTION STANDS UNCHANGED: a re-admitted row is a row whose ARGUMENT survives, not a row that is ready to build. Every one still needs a screen against a control that has absorbed three planks since these rows' screen lines were written.**
