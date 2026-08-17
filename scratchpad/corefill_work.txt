@@ -1237,3 +1237,5 @@ F266BBNULL bots/_v266bbnull bots/_v223sealrepair 5400 538000
 ECOMMIT bots/_v477ecommit bots/_v468kladturbo 5400 816000
 FREEROUND bots/_v478freeround bots/_v468kladturbo 5400 818000
 ROUTESCORE bots/_v479routescore bots/_v468kladturbo 5400 820000
+BELTBREAK-EARLY bots/_v480beltbreak bots/_v468kladturbo 5400 822000
+BELTBREAK-LATE bots/_v483beltbreaklate bots/_v468kladturbo 5400 824000
