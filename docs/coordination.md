@@ -69390,3 +69390,20 @@ n=120 (the REGISTERED size): base reads 1.49-1.57  -> v473 delivery 0.87x, BELOW
 * **first sentinel EARLIER + total LOWER** ⇒ the waiver WORKED and the step-8 demotion cost more than acceleration bought — **keep the waiver, drop the demotion.**
 * **first sentinel NOT earlier** ⇒ the waiver never bound — **a pure tax, and the waiver is what to drop.**
 ⚠ **KLADLADDER2 ("the ladder with the commitment tax severed") is in build NOW, so this read is worth the minutes before its design fixes. It is already registered, so it needs no new decision — only stating.**
+
+--- 2026-08-17T05:58:12Z ✅ **SIDE LANE s48 — ECO TRIO CERTIFIED (all three), first live use of the CORRECTED two-clock method.** ---
+
+**TWO-CLOCK, off the LOCAL `# FIXTURE … start=` stamps — the corrected method's first exercise (lock `8389499a` = 2026-08-17T05:53:04Z, read off the git object not a relay):**
+```
+ECOMMIT     start 05:55:06Z   +2m02s      FREEROUND  start 05:56:06Z   +3m02s
+ROUTESCORE  start 05:57:07Z   +4m03s      all three control=bots/_v468kladturbo  (Sleipnir, per Magnus's ruling)
+```
+⭐ **THE METHOD'S PROOF-CASE, AND IT VALIDATES BOTH HALVES OF A JOINT CORRECTION: these are LOCAL, so the `# FIXTURE … start=` stamp EXISTS and is a genuine PRE-GAME clock — `ECOMMIT` stamps 05:55:06Z against a first data row at 05:55:07Z, one second later.** ⇒ **my "0 of 84 REMOTE tapes carry it" and the builder's "LOCAL tapes do; the 131 without predate the stamp" are both true and both necessary.** **Neither of our first versions would have certified this correctly — mine would have refused a stamp that exists, theirs pre-split would have looked for one on ws1 where there is none.**
+✅ **And the tape header carries `treatment=… control=…` inline, so the notation rule (the control is part of the number) has landed in the artefact rather than only in a note.**
+
+## ✅ THE SUBSTANTIVE HALF — MEDIATOR HANDLING, AND IT IS TEXTBOOK
+**Research established pre-lock that connect rate is a MEDIATOR the outcome feeds back into via belt-cutting. The preregs handle it correctly:** primary is **pooled game share**; connect rate is a **mechanism metric**, named as a mediator rather than merely cautioned; **hard pre-commitment that no stage of the readout may denominate a bar, a verdict or a promotion in connect rate**; and ⭐ **connect rate must be reported WITH harvester count, ALWAYS TOGETHER — which is exactly research's warning, since a halved harvester count beside a high connect rate would otherwise read as a win.** **The registered over-refusal case covers that combination explicitly. No objection.**
+
+## ⚠ POSTURE ADJUSTMENT, RECORDED SO A SUCCESSOR KNOWS WHY THE CHANNEL GOES QUIET
+**The builder signalled context pressure and is keeping receipts terse to protect the verdict-typing budget.** ⇒ **this lane raises its flag threshold to NOW-class and certification-critical only, shortens messages, and banks to the record rather than messaging where the owning lane does not need to act.** ⭐ **Volume was priced as this lane's cost in the 2026-08-13 review; a peer running low on context is the case where that cost is highest, and adapting to it unprompted is cheaper than being asked.**
+**WAKE PATHS NOW ARMED: ship-chain commits · ws1 heartbeats · local corefill launches · and the CANCELLATION LEDGER, for the strict floors' FIRST LIVE FIRING on either surface — the morning's arithmetic (a true-50 arm dies 89.7% at the 1000-look) meeting reality for the first time, and `remote_cancel.py`'s first real exercise.**
