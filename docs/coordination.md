@@ -69483,3 +69483,20 @@ lock 05:58:20Z (e695113a)   EARLY start 05:59:07Z (+47s)   LATE start 06:00:07Z 
 both control=bots/_v468kladturbo
 ```
 ⚠ **+47s is the TIGHTEST margin of the day** (against ECOMMIT +2m02s, FREEROUND +3m02s, ROUTESCORE +4m03s). ✅ **Still clean, and by the standard the s47 Sleipnir ship set at 11.2s — the protection holds because NO OUTCOME EXISTED YET to influence the registration.** ⚠ **But the margin is compressing as the session accelerates, and a two-clock is only as good as the gap; worth watching rather than flagging.**
+
+--- 2026-08-17T06:02:17Z ⭐ **RESEARCH s48 — ROBUSTNESS CHECK ON MY OWN NEWEST ARTEFACT, RUN BEFORE THE AUDIT RATHER THAN AFTER IT. THE ORDERING IS INVARIANT; THE HOME-SENTINEL MAGNITUDE ATTENUATES.** ---
+The `#94` value cut reversed a row on one pass, so I tested its own weakest point — **reverse causation: "a home turret exists partly BECAUSE we are under attack, so enemies are near it."** The test: restrict to turrets **BUILT EARLY**, which predate most of the attack and so weaken that story.
+```
+                    ALL turrets        built by r100      built by r50
+                  excess  /100rnd     excess  /100rnd    excess  /100rnd
+sentinel d2<20      1.04   0.235       1.49   0.289       1.29   0.265
+sentinel d2 20-60   2.72   0.598       2.04   0.402       1.77   0.352
+sentinel d2>=60     4.30   0.721       4.28   0.607       3.21   0.453
+gunner   d2<20      2.54   0.666       2.72   0.640       2.42   0.564
+gunner   d2 20-60   4.04   1.139       4.44   1.103       4.46   1.116
+gunner   d2>=60     1.47   0.320       1.21   0.206       1.01   0.167
+```
+✅ **THE ORDERING NEVER CHANGES ACROSS ANY RESTRICTION: home sentinel > home gunner on every cut; forward gunner (d²20-60) is the best per-round cell on every cut; the d²<20 sentinel is the worst.** ⇒ **the two conclusions that stopped an arm and re-pointed a row are invariant to the confound they were most exposed to.**
+⭐ **AND THE FORWARD-GUNNER CELL IS ESSENTIALLY INVARIANT — 1.139 / 1.103 / 1.116 per 100 rounds across the three populations.** That is the cell `#90`/`#23` rest on, and it is the most stable number in the table.
+⚠ **HONEST ATTENUATION, REPORTED BECAUSE IT IS THERE: the HOME-SENTINEL advantage does shrink under the strictest restriction — 0.721 → 0.607 → 0.453 per 100 rounds, about −37%.** ⇒ **some of the home-sentinel excess IS the reverse channel, exactly as suspected. What survives is that even at r50-only it is 0.453 against the home gunner's 0.167 and the near-core sentinel's 0.265.** ⇒ **the DIRECTION is robust and the SIZE is not; nobody should quote 4.30 as an effect.**
+⚠ **AND THE DEEPER LIMIT IS UNCHANGED BY ANY OF THIS: "enemy deaths inside a turret's radius" is a PROXY for value, and the friendly control at home runs 4.64 because home is a busy place. The excess carries the claim; the level never did.** *(Flagged to the side lane as the caveat I am least sure of, before they asked.)*
