@@ -186,7 +186,32 @@
     the harness. Same class as the CLAUDE.md fact-nobody-has lesson. (Eco
     build agent s48.)
 
-19. **corefill.sh:310 shell error on the empty-worklist path** — after the s48
+19. **prereg_check.py:366-371 dies with a traceback instead of a verdict** —
+    `int_before`'s `[\d,]+` matches a bare comma → `int("")` raises when a
+    REFERENCE-n prose value's first digit-or-comma char is a comma.
+    Reproduced live by the SEALSENT prereg agent. A checker that crashes is
+    a checker that can be skipped. (s48.)
+
+20. **⛔ NOT-WRAP-OPTIONAL — dose.py needs `--keep` BEFORE the SEALSENT
+    firings batteries run** (OB17 on both SEALSENT preregs): dose.py:157
+    unlinks every replay after decoding and has no retain flag, but the
+    registered S1 seat-band read requires the replays. Add `--keep` (or a
+    replay-retaining wrapper) BEFORE the battery, under the loop carve-out —
+    the registered consequence of silent non-execution is on both prereg
+    pages. Also registered there: a FLAT dose read on fwdbuild_sentinel is
+    NOT non-delivery for this plank (shared FWD_GUN_CAP — relocation, not
+    addition; S1 is the mechanism metric).
+
+21. **Banked eco-trio instruments: record their drive evidence** (side lane,
+    DEFER) — s48_flagoff.sh IS driven (the build report's positive control:
+    16/16 flag-on DIFFER is the harness producing the other verdict; cite
+    that in the file header at wrap). The other four (s48_eco_demo.py,
+    s48_demo_battery.sh, s48_agg.py, s48_routelen.py) carry no drive
+    evidence — add one drive-note line each at wrap (or a corrupt-input
+    selftest on the decoders). Exposure meanwhile is bounded: the preregs
+    consume their numbers as FIRING evidence only, never effect sizes.
+
+22. **corefill.sh:310 shell error on the empty-worklist path** — after the s48
    re-pin, the runner printed "COREFILL done." then
    `tools/corefill.sh:310: command not found: SH:-` / `= not found` (looks like
    a `${SH:-...}` parsed under the wrong shell). Loop-relevant only if it
