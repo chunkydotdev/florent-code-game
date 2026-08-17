@@ -68573,3 +68573,35 @@ The 03:12 match is **absent from `ladder_games.tsv` AND `league_matches.tsv` whi
 * **The drawdown decode is UNAFFECTED** — it was built from a live `fcode match list --json` pull, not from the archive, which is why it contains all four of the matches this file is missing.
 * **The gsxWins v52→v53 split IS affected at the tail and the finding survives.** It used `league_matches.tsv` with our matches excluded; the v53 profile (m=31) spans 16:12→02:52, so only the last ~90 minutes are thinned. **The measured 0.343 → 0.523 improvement is not carried by that window.** Re-derive before quoting it in a prereg.
 * **The forward-gunner and annulus censuses are UNAFFECTED** — they read `events.tsv` + `meta_join`, not `league_matches`.
+
+--- 2026-08-17T05:04:0xZ ✅✅ **SIDE LANE s48 — THE FAIL-CLOSED FIX IS INDEPENDENTLY VERIFIED, MUTATION INCLUDED. THE BOOT FLAG IS CLOSED, AND CLOSED STRONGER THAN IT WAS RAISED.** ---
+
+The morning's flag (`submit_clean` folds UNKNOWN into UNCHANGED; 4 of 6 states leak a prototype onto the rated ladder) is **FIXED by the builder inline under Magnus's loop carve-out**, and I audited it rather than filing a receipt. **This was the session's most consequential ship-chain change.**
+
+**1. STRUCTURALLY CORRECT.** `_restore_verdict` tests `before is None or after is None` **BEFORE any comparison** — the `ship_ledger:567` pattern exactly.
+**2. SIX-STATE TABLE RE-DERIVED AGAINST THE REAL FUNCTION** (imported, not read):
+```
+before     after           NEW         OLD (broken)   DIFFERS?
+readable   readable-proto  changed     changed        no
+readable   readable-same   unchanged   unchanged      no
+readable   UNKNOWN         unknown     fellthrough    *** YES
+UNKNOWN    readable-proto  unknown     fellthrough    *** YES
+UNKNOWN    readable-same   unknown     fellthrough    *** YES
+UNKNOWN    UNKNOWN         unknown     unchanged      *** YES
+```
+**All four formerly-leaking cells now return `unknown`; every UNKNOWN-containing cell does, verified exhaustively rather than by inspection.**
+**3. FAILS LOUD AND IN THE RIGHT DIRECTION** — exit **2**, message naming the real hazard and the manual recovery. **Leg-mode claim checks out STRUCTURALLY: the LEG branch sits inside `verdict == "changed"`, so it cannot arm on a blind holder.**
+**4. ⭐ THE MUTATION, DRIVEN BY ME, in memory, their file never touched:**
+```
+UNMUTATED -> exit 0 (PASS)      MUTATED -> exit 1 (FAIL), on exactly the four blind cells
+```
+⇒ ⭐ **THE SELFTEST HAS BEEN SEEN TO FAIL, and it fails on precisely the cells it exists to protect. That is the instruments rule at the standard it actually asks for — not "the test passes" but "the test produced the other verdict and I watched it."**
+✅ **COMMITMENT A IS DISCHARGED BY THE TOOL, NOT BY ABSTINENCE:** `submit_clean` may now run during the flap; worst case is a loud exit 2. **The collision is resolved and the guard is stronger than before the flag.** ✅ **And the ordering was right — the shredder sequence is local-screen-FIRST, so the fix landed hours ahead of need rather than under time pressure.**
+
+## ✅ KLADLADDER FIXTURE HEALTH AT n=1600 — STRUCTURE ONLY
+⛔ **I deliberately did NOT read the winner column: an unregistered interim look at the treatment share is what the prereg's design forbids, and it would put a peek into the record.**
+```
+seat balance A 800 / B 800  skew=0   ·   maps 15/15, cells 106-108   ·   cond core_destroyed 1464 / tiebreak 136
+turns min 65 max 1000   ·   anomalous conds 0   ·   duplicate game ids 0
+```
+✅ **Healthy: perfect seat balance, full map coverage with tight cells, no aborts, no duplicate ids. Nothing structural will invalidate this shard.** **The cond mix is the builder's to read at the verdict under D1, not mine.**
