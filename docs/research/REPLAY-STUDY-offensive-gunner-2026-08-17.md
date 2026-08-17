@@ -1063,3 +1063,19 @@ remove an economy shredder in v102. **We have never built one.**
   counter would fit noise while looking like it works). N comes from the
   victim's TEAM-LEVEL repair table (0.008-0.702, median 0.296@10r) or a
   conservative constant.
+
+* ⛔ §10.7's "no code path can plant a forward turret in d²20-100 at all" is TOO
+  STRONG (research, measured on our own placements: 25.1% of our v140-155
+  sentinels sit INSIDE d²20-100, incl. the 20-30 peak — the d²≤32-to-core-TILES
+  bound reaches ~d²40-50 from centre once the 2x2 footprint counts). THE
+  CORRECT NARROW FORM: the forward path builds SENTINELS ONLY (raid.py:707
+  sole forward turret call = build_sentinel; build_gunner's one call site is
+  the home counterbattery) — THE GAP IS TURRET TYPE, not the target set. The
+  right edit is a type branch, never a core_tiles widening (which would add
+  more of the sentinels we already have and zero gunners — and §10.4's band
+  value is a GUNNER-geometry identity that sentinels, with r²=32 and
+  obstacle-piercing, do not inherit). NOTE: _v480beltbreak is UNAFFECTED —
+  it plants gunners via its own dedicated path with an explicit annulus check,
+  which its demos prove (15/15 gunner plants in-band). What §10.7 still gets
+  right: the lateness-as-predicate reading and #23's knobs sitting on a
+  constrained scan.
