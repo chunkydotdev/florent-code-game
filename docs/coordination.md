@@ -70503,3 +70503,33 @@ Verbatim: **"We do not have token budget for sidelane or fixing tools right now,
 * **ECOMMIT2 — SUPERSEDED, not locked.** Its 8→16 `ECOMMIT_MAX_LINK_TILES` iteration rests on `long` being the binding gate; the only measurement that exists reads **`long` 1 / `bank` 6 / `route` 0**, i.e. the binder has MOVED to `ECOMMIT_FUND_BELT` which 8→16 does not touch. Replaced by **`_v489ecommit3`** (opus build agent running) targeting the funding gate. ⚠ **3 of 24 cells, ONE map, ONE seed — a DIRECTION, not an effect size; the agent is instructed to contradict it if the code or fresh games disagree.** This also discharges blocker (3) the cheap way: the parent's never-run F-battery no longer gates a lock that is not happening.
 * **SEALPIERCE** — not locked: flag-off equivalence has NO artefact and it is a two-plank screen with capped attribution. **KLADLADDER2/3** — not locked: same-host requirement unmet. Neither is worth a window against OPENFAST + two dose iterations.
 **FIRE ORDER:** (1) **OPENFAST** `_v486openfast` — fresh-opus prereg in flight, seeds 836000+, fires on lock. (2) **BELTBREAK2** `_v488beltbreak2` — dose iteration of the day's strongest plank; I re-read the tape myself first: **52.90% [51.13,54.67] at n=3053 AND timely-kill 30.00% [28.38,31.63] vs control 26.76% [25.19,28.33], NON-OVERLAPPING** ⇒ offensively positive, not a defensive tax. Its only stop was the COMBO 55 bar, which by design kills a true-55 half the time. **I am not re-asking Magnus's pinned bar — I am making the plank strong enough that it does not bind.** (3) **ECOMMIT3** as above. All three build agents forbidden from touching `bots/_v468kladturbo`, from `git add -A`, and from pattern-kills.
+
+--- 2026-08-17T07:52Z ⭐⭐ **RESEARCH s49 — SAME-DAY RATED DECODE, 115 GAMES / 23 MATCHES.** (Lane floor, not ambition. `corpus/ladder_games.tsv`, newest row 07:32:59Z, lag ~12.5 min at read.) ---
+
+**⭐ THE TIEBREAK IS EXTINCT AT THIS LEVEL: 113 of 115 games ended `core_destroyed`; TWO r1000 games all day.** ⇒ **every plank is a kill-race plank; nothing being built needs to defend a tiebreak.** Doctrine confirmed on live rated games rather than assumed.
+
+**⭐⭐ THE RACE, ITT OVER ALL 115 GAMES — no conditioning on outcome, rated DEFF 1.529 applied:**
+```
+WE kill by r300        43/115 = 0.374 ± 0.109
+THEY kill us by r300   47/115 = 0.409 ± 0.111
+runs past r300         25/115 = 0.217     of which we win 9/25 = 0.360 (n=25, wide)
+own core-kill median r172   ·   own core-death median r200
+```
+⛔ **THE CIs OVERLAP HEAVILY. The supportable statement is "we are NOT AHEAD", not "we are behind."** The long tail runs against us and that is the on-currency direction: **convert a long game into a fast kill; surviving longer is not the same plank.**
+
+⚠ **A CUT DELIBERATELY NOT BANKED AS A FINDING, recorded so nobody re-derives it and believes it.** By kill-round band our share reads r0-120 **0.474 (n=19)** · r121-200 **0.580 (n=50)** · r201-300 **0.238 (n=21)** · r301+ **0.391 (n=23)**. The r201-300 collapse is arresting and it is **COLLIDER-CONDITIONED** — the round a game ends at is partly determined by who won it, which is exactly the diagnostic-only case `PROGRAMME.md` names. **The ITT block above asks the same question without the collider. Do not build against the band table.**
+
+**PER-OPPONENT (games won/played, today) — and the top two losses are also two of the four top PAYERS:**
+```
+gsxWins v53 1/10 (5-0 pays +19.90) · Clankers v17 2/10 (+20.55) · 0033 v57 2/10
+farming_200s v16 1/5 · The Bisons v13 2/5 · Flotte v53 2/5
+Juusto v13 8/15 · kladde v119 8/15 · lingling_40h v66 3/5
+team lazy v238 6/10 · HTTP 418 7/10 · Erebus 10/15
+```
+⇒ **A plank that moves `Clankers` or `gsxWins` is worth ~20 rating a match. A plank that moves `Erebus` is worth almost nothing — we already take 10/15 there.** Target selection is doing more work here than plank quality.
+
+**⭐ TEN SUB-r120 CORE LOSSES (~9% of games): turns `48, 49, 71, 93, 93, 93, 94, 105, 105, 115`.** Concentrated on **Juusto v13 ×3 · The Bisons v13 ×2 · lingling_40h v66 ×2**, then Erebus/Clankers/0033 ×1. Maps midgard ×3, glacierkeep ×2, rest singletons. ⇒ **a sub-r120 core loss is a DIFFERENT failure from a slow grind, it has file anchors, and it is the cheapest decode on the board.** Offered to the builder; staged, not commissioned.
+
+**⛔ v157 IS NOT READABLE AND IS NOT OUR BOT.** Two seams today (v155→v157 between 05:52:59Z and 06:12:59Z; back between 06:52:59Z and 07:12:59Z). **v157 = 8/15 over 3 matches — not a measurement.** v155 = 44/100 over 20 matches. Any pooled figure crossing a seam mixes two authors' bots; `ourver` is the only surface that marks them.
+
+**BY MAP (today, n≥5, ALL noise-sized — listed for anchors only, not as a map verdict):** archipelago 5/5 · ragnarok 6/10 · glacierkeep 5/9 · royale 6/12 · yulerune 4/8 · icefloe 4/8 · fjordgate 4/9 · valkyrie 3/7 · nordkap 4/10 · antler 2/5 · auroraveil 2/5 · midgard 2/7 · frostgate 2/7 · drakkarfjord 2/9. ⚠ **n=5-12 per cell is not a map read** — midgard's 2/7 is consistent with `#82` but does not add to it.
