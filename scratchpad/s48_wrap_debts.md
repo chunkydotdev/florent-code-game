@@ -47,7 +47,27 @@
    rays, consumed at :831). Doc-only; fix on next tree touch or at wrap.
    (Research batches 2+4, s48.)
 
-6. **corefill.sh:310 shell error on the empty-worklist path** — after the s48
+6. **fleet_dispatch.py:1590 stale `--control` default** —
+   `default="bots/_v223sealrepair"` in live argparse; any `--seed-from` run
+   omitting `--control` seeds rows on the superseded benchmark and trips the
+   guard-6 refusal. Running daemon is `--once --remote-mode live` (no seeding)
+   so DEFER — but it bites the NEXT seeding run. Fix: default from PROGRAMME
+   INCUMBENT the way control_pin.incumbent() does. Also unassessed-stale:
+   era_guard.py:197 `LIVE_VERSION_HINT = 140`. (Side lane s48.)
+
+7. **orchestrate.sh cmd_start: `CORES` unbound when WORKERS arg omitted**
+   (line 452 under set -u) — worked around by always passing WORKERS
+   explicitly per host_capacity.tsv; fix is initializing CORES="" outside the
+   `[ -n "$W" ]` branch. Found spinning up ws1 on Magnus's order, s48.
+
+8. **⛔ ANNOTATION FOR WHOEVER CLOSES THE REMOTE GATE GAP (s47 wrap debt 12):**
+   closing it retroactively invalidates the band-readings of any IN-FLIGHT
+   remote prereg whose reachability assumes full n (KLADLADDER's locked
+   four-band reading is the live instance — its falsifier is reachable ONLY
+   because ws1 shards cannot be auto-stopped). Check for in-flight remote
+   shards with locked band-readings BEFORE closing the gap. (Side lane s48.)
+
+9. **corefill.sh:310 shell error on the empty-worklist path** — after the s48
    re-pin, the runner printed "COREFILL done." then
    `tools/corefill.sh:310: command not found: SH:-` / `= not found` (looks like
    a `${SH:-...}` parsed under the wrong shell). Loop-relevant only if it

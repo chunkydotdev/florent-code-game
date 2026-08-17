@@ -1,0 +1,2 @@
+NULLWS1S bots/_v468nullsleip bots/_v468kladturbo 400 812000
+KLADLADDER bots/_v473kladladder bots/_v468kladturbo 5400 810000
