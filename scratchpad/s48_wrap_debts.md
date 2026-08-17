@@ -211,7 +211,17 @@
     selftest on the decoders). Exposure meanwhile is bounded: the preregs
     consume their numbers as FIRING evidence only, never effect sizes.
 
-22. **corefill.sh:310 shell error on the empty-worklist path** — after the s48
+22. **⛔ CONFIRMATION-CLASS EXEMPTION: RULE DECIDED, MECHANISM UNBUILT** —
+    the run-to-completion exemption (3be00e46) has no mechanism in
+    remote_cancel.py (its only exemption is host-keyed CURFEW); a
+    confirmation run queued remote today would be floor-stoppable, contrary
+    to the rule. GATED behind the existing pre-commitment: before the first
+    remote confirmation run is queued, build the registration-class exemption
+    token into auto_gate's remote path and DRIVE IT BOTH WAYS. Do not skip
+    on "already decided" — decided is the rule, not the mechanism. (Side
+    lane s48 audit of the a50f27ef path.)
+
+23. **corefill.sh:310 shell error on the empty-worklist path** — after the s48
    re-pin, the runner printed "COREFILL done." then
    `tools/corefill.sh:310: command not found: SH:-` / `= not found` (looks like
    a `${SH:-...}` parsed under the wrong shell). Loop-relevant only if it
