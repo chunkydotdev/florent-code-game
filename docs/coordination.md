@@ -69106,3 +69106,19 @@ d2 band   belt/gun   CTRL   EXCESS per gunner
 ⇒ **ON THE DECISION-RELEVANT DENOMINATOR THE WHOLE BAND 20-80 SITS WITHIN ~15% OF THE PEAK (2.45-2.89), where the per-100-round view made 20-30 look like a knife-edge at nearly double 80-100.** **The per-round metric REWARDS SHORT-LIVED GUNNERS** — it divides by a lifetime the plank does not choose — and 20-30 has the SHORTEST median life of any band (53 rounds).
 ⇒ **CONSEQUENCE FOR `#90` AND FOR THE SHREDDER BUILD, and it makes the plank easier rather than harder: the siting rule does not need to hit a narrow ring. `20 <= d² < 80` is a broad target that is flat to within 15%, which a first-fit siting scan can actually satisfy** — and the incumbent's forward path already scans first-fit (`raid.py:689-715`), so no scoring machinery is required. **Stamped into `#90`.**
 ⚠ **Both denominators are correct arithmetic; only one answers the build question. This is the fourth time today I have had to correct an emphasis rather than a number — and unlike the other three it was not an uncertainty failure, it was a CURRENCY failure, which no interval would have caught.**
+
+--- 2026-08-17T05:35:02Z ⛔ **RESEARCH s48 — THIRD INTERPOLATED TIMESTAMP, AND IT PROVES MY OWN FIX WAS TOO NARROW.** ---
+Twenty minutes after publishing *"the mechanism is two characters of shell quoting; use `NOW=$(date)` and an unquoted heredoc"*, **I hand-typed `05:3xZ` into a `QUEUE.md` amendment.** Corrected in place with a real `date` value.
+⛔ **THE FIX WAS TOO NARROW AND THE NEW INSTANCE SHOWS EXACTLY HOW: my rule addressed SHELL heredocs. This one was a PYTHON heredoc — `.venv/bin/python - <<'PY'` — where the quoting that protects the code body from the shell ALSO blocks any timestamp from reaching it.** Same defeat, different language, and my rule did not cover it because **I had generalised from the two instances I had rather than from the mechanism.**
+⇒ **THE MECHANISM, STATED AT THE RIGHT WIDTH THIS TIME: ANY QUOTED HEREDOC — shell or Python — SEVERS THE SCRIPT FROM THE SHELL'S STATE, AND EVERY VALUE THAT MUST CROSS THAT BOUNDARY HAS TO BE PASSED AS AN ARGUMENT.** The working forms:
+```
+shell body:   NOW=$(date -u +%Y-%m-%dT%H:%M:%SZ)
+              printf -- '--- %s ...' "$NOW" >> file      # header interpolated
+              cat >> file <<'EOF' ... EOF                # body stays literal
+python body:  NOW=$(date -u +%Y-%m-%dT%H:%M:%SZ)
+              .venv/bin/python - "$NOW" <<'PY'           # <-- pass it as argv
+              import sys; now = sys.argv[1]
+              PY
+```
+⚠ **AND THE SELF-REFERENTIAL PART IS THE FINDING, NOT THE JOKE: I WROTE A RULE ABOUT MOVING THINGS OUT OF ATTENTION AND INTO THE MECHANISM, AND THEN APPLIED IT FROM ATTENTION TO ONE OF THE TWO PLACES IT WAS NEEDED.** ⇒ **a mechanical fix inherits the scope of the diagnosis that produced it, so a fix derived from N observed instances covers N instances until the mechanism itself is stated.** Same shape as this session's other instrument failures — **my extractor covered 69.4% of anchors, my selftest seam covered one injection path, and now my timestamp fix covered one heredoc dialect. Every one of them "worked" on the cases that produced it.**
+*(Count: seven failures of the timestamp rule across sessions, three of them today. The rule is not the problem; the affordance is, and I have now under-scoped the affordance fix once too.)*
