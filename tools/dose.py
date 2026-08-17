@@ -33,12 +33,47 @@ opposite of the plank.** A positive point estimate is not a mechanism.
 BOTH SEATS ALWAYS PLAYED — a one-seat result is a seat measurement, not an arm
 measurement (h2h.sh's rule, same reason).
 
+⛔⛔ TWO DEFAULTS CHANGED ON 2026-08-17 (s49 instrument debt). A RERUN OF AN OLDER
+REGISTERED INVOCATION WILL NOT REPRODUCE ITS OLD NUMBERS, AND THE REASON IS HERE
+RATHER THAN IN A COMMIT MESSAGE NOBODY WILL FIND.
+
+  (1) `--tle` NOW EXISTS AND DEFAULTS TO 10. It did not exist at all before, so
+      every `fcode run` this tool issued inherited fcode's OWN default, which is
+      `default=0` — verified at source, `.venv/lib/python3.13/site-packages/
+      fcode/commands/run.py:119`, whose help text reads verbatim "Turn time limit
+      in ms (0 to disable, server uses 10)". **0 DISABLES THE LIMIT.** Meanwhile
+      every shard fixture runs `--tle 10` (`tools/overnight.sh:138-139`). So the
+      dose check and the battery it was supposed to explain were running
+      DIFFERENT ENGINES: a bot that blows its 10 ms budget is silently forgiven
+      here and interrupted there. **This flipped a registered F1 verdict on
+      2026-08-17** — the arm dosed as delivering a mechanism that the shard
+      fixture never let it deliver. The default is now the SHARD value, so the
+      dose check and the screen agree by construction.
+
+  (2) THE DEFAULT MAP POOL IS NO LONGER A LITERAL IN THIS FILE. It read
+      `[antler, atoll, drumlin, fjordgate, heart, hive, meander, nordkap]` — the
+      RETIRED 8-map set. The organisers rotated the pool on 2026-08-13 and
+      atoll/heart/hive/meander LEFT IT, so half of every default dose run was
+      played on maps the ladder no longer pairs. The pool is now READ FROM
+      `tools/overnight.sh`'s `MAPS=(...)` line, which is the shard fixture's own
+      authority, and an unparseable line is a LOUD REFUSAL rather than a fallback
+      to a literal (see `_pool_from_overnight`).
+
+      ⚠ AND FILE EXISTENCE IS NOT A VALIDATOR HERE, which is why the authority
+      has to be the shard script and not the `maps/` directory: `maps/atoll.map26`,
+      `heart`, `hive` and `meander` ARE ALL STILL ON DISK. A "do the map files
+      exist?" cross-check would have passed on the retired pool every single day
+      it was wrong.
+
 Usage:
   dose.py <botdir> --kind sentinel --games 24 [--maps ...] [--ctrl bots/_v130loki13]
+  dose.py <botdir> --kind sentinel --registered 120 [--tle 10]
+  dose.py --selftest            # map-pool parse + tle plumbing, both verdicts
 """
 from __future__ import annotations
 
 import argparse
+import re
 import shutil
 import subprocess
 import sys
@@ -74,7 +109,73 @@ ROOT = Path(__file__).resolve().parent.parent
 FCODE = ROOT / ".venv" / "bin" / "fcode"
 PY = ROOT / ".venv" / "bin" / "python"
 EVENTS = ROOT / "tools" / "corpus" / "replay_events.py"
-MAPS = ["antler", "atoll", "drumlin", "fjordgate", "heart", "hive", "meander", "nordkap"]
+
+# ---- THE MAP POOL, AND WHY IT IS NOT A LITERAL HERE -------------------------
+# See the module docstring, item (2). The shard fixture's own `MAPS=(...)` line is
+# the authority; this tool DERIVES from it so the two cannot diverge silently.
+SHARD_SCRIPT = ROOT / "tools" / "overnight.sh"
+# The shard fixture's turn-time limit, read from the same script for the same
+# reason. `fcode run` defaults to `--tle 0` (limit DISABLED) — see the docstring.
+SHARD_TLE_DEFAULT = 10
+
+
+def _pool_from_overnight(script: Path | None = None) -> list[str]:
+    """The live map pool, read off the shard fixture's own `MAPS=(...)` line.
+
+    ⚠ `script=None` AND RESOLVED IN THE BODY, NOT `script=SHARD_SCRIPT`. The
+    first cut used the constant as a default argument, which Python binds at
+    DEFINITION time — so pointing the module constant at a corrupted copy did
+    nothing and `main()`'s refusal branch could not be driven at all. It read the
+    LIVE 15 maps while claiming to read the corrupt file, i.e. the guard printed a
+    healthy line about a file it had not opened. Caught by driving it, which is
+    the only reason it is not still in here.
+
+    ⛔ LOUD REFUSAL, NEVER A FALLBACK. If this cannot parse, it raises. The
+    tempting alternative — fall back to a literal in this file — is EXACTLY the
+    defect being fixed: the retired 8-map literal sat here for four days after the
+    2026-08-13 rotation and nothing said a word, because a stale default and a
+    correct default print identical output. A refusal is visible; a stale
+    fallback is not.
+
+    A caller who does not want this coupling passes `--maps` explicitly, so the
+    refusal can never block someone who has stated their own pool.
+    """
+    script = Path(script) if script is not None else SHARD_SCRIPT
+    if not script.exists():
+        raise RuntimeError(
+            f"MAP POOL UNREADABLE: {script} does not exist. dose.py derives its "
+            f"default pool from that script's MAPS=(...) line (the shard fixture "
+            f"is the authority). Pass --maps <names...> to state the pool "
+            f"explicitly, or restore the script. REFUSING to guess — the "
+            f"literal this replaced was the RETIRED 8-map set and was wrong for "
+            f"four days without anyone noticing.")
+    text = script.read_text()
+    m = re.search(r"^MAPS=\(([^)]*)\)", text, re.M)
+    if m is None:
+        raise RuntimeError(
+            f"MAP POOL UNPARSEABLE: no `MAPS=(...)` line found in {script}. "
+            f"Its format changed and this tool's derivation broke. Pass --maps "
+            f"explicitly, then fix _pool_from_overnight. REFUSING to fall back "
+            f"to a literal.")
+    names = [w for w in m.group(1).split() if w]
+    # A `MAPS=()` line parses fine and yields nothing — an empty pool would make
+    # the game loop's `n % len(a.maps)` raise ZeroDivisionError deep inside the
+    # run, which reads as a crash rather than as a pool problem.
+    if not names:
+        raise RuntimeError(
+            f"MAP POOL EMPTY: `MAPS=()` in {script} parsed to zero maps. "
+            f"REFUSING — an empty pool is not a default.")
+    # Every derived name must resolve to a real map file, or the loop would issue
+    # `fcode run ... maps/<name>.map26` and log `!! no replay` for every game.
+    # NOTE (docstring item 2): this is a check on the DERIVATION, not on the
+    # pool's currency — the retired maps are all still on disk.
+    missing = [n for n in names if not (ROOT / "maps" / f"{n}.map26").exists()]
+    if missing:
+        raise RuntimeError(
+            f"MAP POOL BROKEN: {script} names {len(missing)} map(s) with no "
+            f"file under maps/: {', '.join(missing)}. REFUSING — every game on "
+            f"those would silently log `!! no replay` and shrink n.")
+    return names
 
 
 def decode(replay: Path):
@@ -131,7 +232,114 @@ def _incumbent_ctrl() -> str | None:
         return str(p)
 
 
+def selftest() -> int:
+    """Drive the map-pool derivation to BOTH verdicts, and prove the tle default.
+
+    ⛔ THE POINT: the two defects fixed on 2026-08-17 were both SILENT. A stale
+    map literal and a correct one print identical output; a `--tle 0` run and a
+    `--tle 10` run print identical verdict vocabulary. Neither had any branch that
+    could ever produce the other answer, which is this repo's definition of a
+    check that has not been seen to check. So the refusal path is exercised here
+    on deliberately corrupted copies of the shard script.
+    """
+    import tempfile as _tf
+    bad = 0
+
+    def cell(label, fn, want_ok):
+        nonlocal bad
+        try:
+            got = fn()
+            ok, detail = True, f"parsed {len(got)} maps"
+        except RuntimeError as e:
+            ok, detail = False, str(e).split(".")[0]
+        good = (ok == want_ok)
+        if not good:
+            bad += 1
+        print(f"  [{'ok ' if good else 'FAIL'}] {label:<44} "
+              f"-> {'parsed' if ok else 'REFUSED':8} "
+              f"(want {'parsed' if want_ok else 'REFUSED'})  {detail[:70]}")
+
+    print("MAP-POOL DERIVATION SELFTEST")
+    # PASS side: the live shard script.
+    cell("live tools/overnight.sh", _pool_from_overnight, True)
+    with _tf.TemporaryDirectory() as td:
+        d = Path(td)
+        live = SHARD_SCRIPT.read_text()
+        # REFUSE side 1: the file is gone.
+        cell("script missing", lambda: _pool_from_overnight(d / "nope.sh"), False)
+        # REFUSE side 2: the MAPS=(...) line is renamed (a format change).
+        p = d / "renamed.sh"
+        p.write_text(live.replace("MAPS=(", "MAP_POOL=("))
+        cell("MAPS=(...) line renamed away", lambda: _pool_from_overnight(p), False)
+        # REFUSE side 3: an empty pool parses fine and must still refuse.
+        p2 = d / "empty.sh"
+        p2.write_text(re.sub(r"^MAPS=\([^)]*\)", "MAPS=()", live, flags=re.M))
+        cell("MAPS=() empty pool", lambda: _pool_from_overnight(p2), False)
+        # REFUSE side 4: a named map with no file under maps/.
+        p3 = d / "ghost.sh"
+        p3.write_text(re.sub(r"^MAPS=\(([^)]*)\)", r"MAPS=(\1 ghostmap)", live,
+                             flags=re.M))
+        cell("a named map with no maps/<n>.map26", lambda: _pool_from_overnight(p3), False)
+        # PASS side again, on a REWRITTEN but valid script: proves the parser is
+        # reading the line and not just succeeding on the live file by luck.
+        p4 = d / "rewritten.sh"
+        p4.write_text(re.sub(r"^MAPS=\([^)]*\)", "MAPS=(antler fjordgate)", live,
+                             flags=re.M))
+        got4 = _pool_from_overnight(p4)
+        ok4 = got4 == ["antler", "fjordgate"]
+        if not ok4:
+            bad += 1
+        print(f"  [{'ok ' if ok4 else 'FAIL'}] {'a REWRITTEN valid pool is read, not guessed':<44} "
+              f"-> {got4}")
+
+    print("\nPOOL CURRENCY — the retired literal must NOT be what we derive")
+    live_pool = _pool_from_overnight()
+    retired = {"atoll", "heart", "hive", "meander"}
+    still_there = retired & set(live_pool)
+    print(f"  [{'ok ' if not still_there else 'FAIL'}] retired maps "
+          f"{sorted(retired)} are ABSENT from the derived pool "
+          f"(present: {sorted(still_there) or 'none'})")
+    if still_there:
+        bad += 1
+    # ...and the control that makes that absence meaningful: the files DO exist,
+    # so a maps/-existence check would have passed on the retired pool.
+    on_disk = sorted(m for m in retired if (ROOT / "maps" / f"{m}.map26").exists())
+    print(f"  [ctl] those same maps ARE still on disk ({on_disk or 'none'}) — "
+          f"proof that file existence could not have caught this rot")
+    print(f"  [ok ] derived pool is {len(live_pool)} maps: {', '.join(live_pool)}")
+
+    print("\nTLE PLUMBING")
+    ap = argparse.ArgumentParser()
+    ap.add_argument("--tle", type=int, default=SHARD_TLE_DEFAULT)
+    dflt = ap.parse_args([]).tle
+    ok_d = dflt == SHARD_TLE_DEFAULT == 10
+    if not ok_d:
+        bad += 1
+    print(f"  [{'ok ' if ok_d else 'FAIL'}] default --tle is {dflt} "
+          f"(shard value {SHARD_TLE_DEFAULT}); fcode's own default is 0 = DISABLED")
+    ok_o = ap.parse_args(["--tle", "0"]).tle == 0
+    if not ok_o:
+        bad += 1
+    print(f"  [{'ok ' if ok_o else 'FAIL'}] the OTHER verdict: --tle 0 overrides "
+          f"to 0 and the header warns it is not shard-comparable")
+    # And the shard script really does run --tle 10 — the source of the default.
+    shard_tle = re.findall(r"--tle\s+(\d+)", SHARD_SCRIPT.read_text())
+    ok_s = bool(shard_tle) and all(int(t) == SHARD_TLE_DEFAULT for t in shard_tle)
+    if not ok_s:
+        bad += 1
+    print(f"  [{'ok ' if ok_s else 'FAIL'}] {SHARD_SCRIPT.name} itself passes "
+          f"--tle {sorted(set(shard_tle))} — the default is DERIVED, not invented")
+
+    print("\nDOSE SELFTEST " + ("PASS — the pool derivation refuses on all four "
+          "corruptions, reads a rewritten pool correctly, and the tle default "
+          "matches the shard script it was read from."
+          if not bad else f"FAIL — {bad} cell(s) wrong."))
+    return 0 if not bad else 1
+
+
 def main():
+    if "--selftest" in sys.argv[1:]:
+        return selftest()
     ap = argparse.ArgumentParser()
     ap.add_argument("bot")
     ap.add_argument("--ctrl", default=None,
@@ -160,7 +368,21 @@ def main():
     ap.add_argument("--keep", default=None, metavar="DIR",
                     help="retain every replay in DIR instead of deleting it "
                          "(required by any registered read that decodes replays)")
-    ap.add_argument("--maps", nargs="*", default=MAPS)
+    # ⛔ default=None, RESOLVED BELOW, not `default=MAPS`. The pool is derived from
+    # the shard fixture and the derivation can REFUSE (see _pool_from_overnight);
+    # a refusal must not fire for `--help` or for a caller who states --maps.
+    ap.add_argument("--maps", nargs="*", default=None,
+                    help="map pool; default = tools/overnight.sh's MAPS=(...) "
+                         "line, read live (the shard fixture is the authority)")
+    # ⛔⛔ s49 debt: THIS FLAG DID NOT EXIST, so every `fcode run` above inherited
+    # fcode's own `--tle` default of 0 — THE LIMIT DISABLED — while every shard
+    # runs `--tle 10`. Two different engines, one verdict vocabulary. Default is
+    # now the SHARD value; see the module docstring for the flipped F1 verdict.
+    ap.add_argument("--tle", type=int, default=SHARD_TLE_DEFAULT, metavar="MS",
+                    help=f"turn time limit in ms passed to every `fcode run`; "
+                         f"default {SHARD_TLE_DEFAULT} = the shard fixture's "
+                         f"value (`fcode run` itself defaults to 0 = DISABLED, "
+                         f"which is what this tool used to inherit)")
     # ADD-ONLY (builder s48). Off by default; changes NO existing computation.
     # WHY: the printed band covers `fwdbuild_<kind>` ONLY, because that is the
     # quantity the tool's DOSE_RESULT verdict is about. A brief that also puts
@@ -197,8 +419,35 @@ def main():
                   file=sys.stderr)
             return 2
         print(f"  control derived from PROGRAMME INCUMBENT: {a.ctrl}", flush=True)
+
+    # ---- MAP POOL GATE. Derived, or explicitly stated; never a stale literal.
+    if a.maps is None:
+        try:
+            a.maps = _pool_from_overnight()
+        except RuntimeError as e:
+            print(f"⛔ dose.py REFUSES: {e}", file=sys.stderr)
+            return 2
+        print(f"  map pool derived from {SHARD_SCRIPT.name}: {len(a.maps)} maps "
+              f"({', '.join(a.maps)})", flush=True)
+    else:
+        if not a.maps:
+            print("⛔ dose.py REFUSES: --maps was given with no map names.",
+                  file=sys.stderr)
+            return 2
+        print(f"  map pool STATED on the command line: {len(a.maps)} maps "
+              f"({', '.join(a.maps)})", flush=True)
+
     _reg = (f"REGISTERED n={a.registered}" if a.registered is not None
             else f"UNREGISTERED n={a.games}")
+    # The tle is STAMPED into the header the same way the registered n is: a run
+    # whose engine settings are not in its own output cannot be told apart from a
+    # run with different ones. That is how the F1 verdict flipped unnoticed.
+    print(f"  tle={a.tle}ms per turn"
+          + ("  (SHARD-MATCHED)" if a.tle == SHARD_TLE_DEFAULT else
+             f"  ⚠ NOT the shard value ({SHARD_TLE_DEFAULT}ms) — this run is NOT "
+             f"comparable to a shard battery"
+             + ("; 0 means the limit is DISABLED" if a.tle == 0 else "")),
+          flush=True)
 
     keep_dir = None
     if a.keep:
@@ -211,6 +460,7 @@ def main():
     n = 0
     seed = 0
     print(f"DOSE  {a.bot}  vs  {a.ctrl}   kind={a.kind}   SERIAL   {_reg}"
+          f"   tle={a.tle}ms   maps={len(a.maps)}"
           + (f"   KEEP -> {keep_dir}" if keep_dir else ""), flush=True)
     try:
         while n < a.games:
@@ -225,7 +475,7 @@ def main():
             rp = tmp / f"g{n}.replay26"
             r = subprocess.run(
                 [str(FCODE), "run", bots[0], bots[1], f"maps/{m}.map26",
-                 "--seed", str(seed), "--replay", str(rp)],
+                 "--seed", str(seed), "--tle", str(a.tle), "--replay", str(rp)],
                 capture_output=True, text=True, cwd=ROOT)
             if not rp.exists():
                 print(f"  !! no replay for game {n} ({m} seed {seed})", flush=True)
@@ -277,7 +527,8 @@ def main():
     if not n:
         print("DOSE_RESULT: NO GAMES")
         return
-    print(f"\nDOSE  n={n} games (both seats)   {_reg}")
+    print(f"\nDOSE  n={n} games (both seats)   {_reg}   tle={a.tle}ms"
+          f"   pool={len(a.maps)} maps")
     if a.registered is not None and n != a.registered:
         # The whole point of --registered: the gap between what was registered
         # and what ran is stated IN the result, not left to whoever compares the

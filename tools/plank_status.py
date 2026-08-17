@@ -171,8 +171,97 @@ KILL_TOKEN = "PLANK-DEAD"
 ACK_FILE = ROOT / "tools" / "plank_ack.tsv"
 
 
+# ⛔⛔ THE ACK TABLE SILENTLY EXPIRED, AND THE CAUSE IS GIT, NOT US.
+# `newest_commit`/`withdrawal_state` read commit hashes with `--format=%h`, whose
+# ABBREVIATION LENGTH GROWS WITH THE REPOSITORY. Every hash-keyed ack row in
+# `tools/plank_ack.tsv` was written when `%h` was SEVEN characters; `%h` is now
+# EIGHT. The lookup was an exact string match, so on 2026-08-17 all four
+# `NOT-A-WITHDRAWAL` rows were DEAD LETTERS:
+#
+#     ack row      %h today     resolves to
+#     ff3e6bc  ->  ff3e6bc4     loki9    (masked by that plank's COLLISION)
+#     a31c28c  ->  a31c28cd     loki11   (masked by COLLISION)
+#     6c74b67  ->  6c74b671     loki16b  (masked by COLLISION)
+#     41895a8  ->  41895a85     loki28   -- SURFACED as SUSPECT, which is how
+#                                           this was found at all
+#
+# **A DISMISSAL SOMEONE TYPED, AUDITED (side lane, af63917) AND COMMITTED STOPPED
+# TAKING EFFECT WITHOUT ANY EDIT TO THE FILE.** Note which way it broke: it
+# failed LOUD (a cleared plank re-flagged), which is the survivable direction and
+# pure luck — the `DEAD` rows are matched by PLANK ONLY, not by hash, so they
+# were unaffected. Had the polarity been reversed the table would have been
+# silently silencing planks it no longer identified.
+#
+# ⇒ ACK HASHES ARE MATCHED BY PREFIX, EITHER DIRECTION, so a row survives every
+# future abbreviation change (7 -> 8 -> 9 ...) and an ack written long still
+# matches a short `%h`. `MIN_ACK_HASH` stops the prefix rule from becoming
+# over-broad: a 3-character "hash" would prefix-match thousands of commits and
+# one dismissal really could deafen a plank forever, which is precisely the
+# bounded-ness this table's asymmetry depends on.
+MIN_ACK_HASH = 7
+
+
+def hash_matches(ack_hash: str, commit_hash: str) -> bool:
+    """True when two abbreviations denote the same commit. See MIN_ACK_HASH."""
+    a = (ack_hash or "").strip().lower()
+    c = (commit_hash or "").strip().lower()
+    if len(a) < MIN_ACK_HASH or len(c) < MIN_ACK_HASH:
+        return False
+    return a.startswith(c) or c.startswith(a)
+
+
+def ack_for(acks, plank, commit_hash):
+    """-> (verdict, note). The hash-keyed lookup, prefix-tolerant.
+
+    An AMBIGUOUS result (two ack rows for this plank both matching, with
+    different verdicts) returns the verdict `AMBIGUOUS` rather than picking one:
+    silently choosing between a DEAD and a NOT-A-WITHDRAWAL is the one thing this
+    table must never do.
+    """
+    hits = [(v, n) for (pl, h), (v, n) in acks.items()
+            if pl == plank and hash_matches(h, commit_hash)]
+    if not hits:
+        return None, ""
+    verdicts = {v for v, _n in hits}
+    if len(verdicts) > 1:
+        return "AMBIGUOUS", (f"{len(hits)} ack rows match {commit_hash} with "
+                            f"conflicting verdicts {sorted(verdicts)}")
+    return hits[0]
+
+
+def audit_acks(cwd=ROOT):
+    """Every ack hash must resolve to EXACTLY ONE commit in this repository.
+
+    ⛔ THE GUARD ON THE GUARD. Prefix matching makes a row robust to git's
+    abbreviation growth; it does nothing about a row whose hash is a TYPO or
+    names a commit that was rebased away. Such a row silences NOTHING while
+    reading, in the file, exactly like a row that works — the same
+    indistinguishable-from-healthy failure the hash-length drift just produced.
+    Returns a list of complaint strings; empty means every row resolves.
+    """
+    out = []
+    for (plank, h), (verdict, _note) in sorted(load_acks(cwd=cwd).items()):
+        if len(h) < MIN_ACK_HASH:
+            out.append(f"{plank}\t{h}\t{verdict}: hash shorter than "
+                       f"{MIN_ACK_HASH} chars — prefix matching would be "
+                       f"over-broad; REJECTED, this row silences nothing.")
+            continue
+        r = subprocess.run(["git", "rev-parse", "--verify", "--quiet", h + "^{commit}"],
+                           cwd=cwd, capture_output=True, text=True)
+        if r.returncode != 0 or not r.stdout.strip():
+            out.append(f"{plank}\t{h}\t{verdict}: does not resolve to any commit "
+                       f"in this repository — the row is a DEAD LETTER.")
+    return out
+
+
 def load_acks(cwd=ROOT):
-    """-> {(plank, commit_hash): (verdict, note)}. Missing file = no acks."""
+    """-> {(plank, commit_hash): (verdict, note)}. Missing file = no acks.
+
+    ⚠ THE KEY IS THE HASH AS WRITTEN, WHICH IS NOT THE HASH AS COMPUTED. Do not
+    `.get()` this dict with a `%h` value — use `ack_for()`, which prefix-matches.
+    See MIN_ACK_HASH for the 7-to-8-character drift that made the direct lookup
+    fail on every hash-keyed row.
+    """
     f = Path(cwd) / "tools" / "plank_ack.tsv"
     acks = {}
     if not f.exists():
@@ -464,7 +553,18 @@ def check(plank, cwd=ROOT, handover="HANDOVER.md", quiet=False):
         say(f"  tree both survive a withdrawal. Clear only with {REVIVAL_TOKEN}.")
         return "WITHDRAWN", [killed] if killed else []
     if killed and not revived and not killed.get("hard"):
-        verdict, note = load_acks(cwd=cwd).get((plank, killed["hash"]), (None, ""))
+        # ⛔ ack_for(), NOT `.get()`. The direct lookup was an exact string match
+        # against a `%h` whose LENGTH CHANGED under it — see MIN_ACK_HASH.
+        verdict, note = ack_for(load_acks(cwd=cwd), plank, killed["hash"])
+        if verdict == "AMBIGUOUS":
+            say("")
+            say("  *** AMBIGUOUS ACK: two rows in tools/plank_ack.tsv match this "
+                "commit with conflicting verdicts. ***")
+            say(f"      {killed['hash']}  {note}")
+            say("  RESOLVE THE TABLE before trusting either verdict — choosing "
+                "silently between DEAD and NOT-A-WITHDRAWAL is the one thing")
+            say("  this gate must not do.")
+            return "SUSPECT", [killed]
         if verdict == "NOT-A-WITHDRAWAL":
             say(f"  (a commit reads like a retirement and was reviewed and "
                 f"dismissed: {killed['hash']} — {note.strip()})")
@@ -626,6 +726,102 @@ def selftest():
             ok = False
         else:
             print("  [ok] later commit after a DEAD ack           -> still WITHDRAWN")
+        (d / "tools" / "plank_ack.tsv").unlink()
+
+        # t1-ack-hashlen: ⛔ THE HASH-LENGTH DRIFT, THE ACTUAL 2026-08-17 DEFECT.
+        # git's `%h` abbreviation grows with the repo (7 -> 8 chars here), and the
+        # ack lookup was an exact string match, so every hash-keyed row in
+        # plank_ack.tsv stopped matching WITHOUT ANY EDIT TO THE FILE. Driven in
+        # BOTH directions plus the over-broad case that MIN_ACK_HASH exists to
+        # refuse -- a prefix rule with no floor would let one dismissal deafen a
+        # plank forever, which is the bounded-ness the whole table relies on.
+        # ⚠ RE-DERIVE THE KILL HASH HERE. `kill_hash` was captured before the
+        # sticky-DEAD cell added a post-mortem commit, so the plank's CURRENT
+        # flagging commit is a different one. An ack keyed to the stale hash
+        # would fail these cells for the fixture's reason and not the tool's --
+        # which is exactly what the first run of this block did.
+        (d / "tools" / "plank_ack.tsv").write_text("")
+        _cur = withdrawal_state(artefact_paths("lokiXX", cwd=d), cwd=d)[0]
+        cur_hash = _cur["hash"]
+        full = git("rev-parse", cur_hash, cwd=d)
+        print(f"  [info] current flagging commit for the fixture: {cur_hash} "
+              f"(%h is {len(cur_hash)} chars; full {full[:12]}...)")
+        # ⚠ THE FIXTURE'S `%h` IS 7 CHARS (a tiny repo), so it CANNOT express the
+        # real incident, where the ack is 7 and the computed `%h` is 8. Drive the
+        # matcher directly on the LIVE loki28 values instead of pretending the
+        # fixture covers it -- a cell that cannot reach the failing state is not a
+        # cell.
+        for a, c, want, why in [
+            ("41895a8", "41895a85", True, "THE loki28 INCIDENT: ack 7, %h 8"),
+            ("41895a85", "41895a8", True, "the reverse: ack 8, %h 7"),
+            ("ff3e6bc", "ff3e6bc4", True, "loki9 ack, same drift"),
+            ("41895a8", "41895b85", False, "one character differs -> NO match"),
+            ("41895a8", "9999999", False, "unrelated commit -> NO match"),
+            ("41895", "41895a85", False, f"below MIN_ACK_HASH={MIN_ACK_HASH}"),
+            ("", "41895a85", False, "empty ack hash"),
+        ]:
+            got = hash_matches(a, c)
+            good = got == want
+            if not good:
+                ok = False
+            print(f"  [{'ok' if good else 'FAIL'}] hash_matches({a!r:>11}, "
+                  f"{c!r:>11}) = {str(got):<5} (want {want})  {why}")
+        for label, ackhash, want_cleared in [
+            ("ack SHORTER than %h (the loki28 case)", cur_hash[:7], True),
+            ("ack LONGER than %h (a future %h growth)", full[:12], True),
+            ("ack IDENTICAL to %h", cur_hash, True),
+            (f"ack shorter than MIN_ACK_HASH={MIN_ACK_HASH}",
+             cur_hash[:MIN_ACK_HASH - 1], False),
+            ("ack that is a different commit entirely", "deadbeefcafe", False),
+        ]:
+            (d / "tools" / "plank_ack.tsv").write_text(
+                f"lokiXX\t{ackhash}\tNOT-A-WITHDRAWAL\tdriven cell\n")
+            v, _ = check("lokiXX", cwd=d, quiet=True)
+            cleared = v not in ("SUSPECT", "WITHDRAWN")
+            good = cleared == want_cleared
+            if not good:
+                ok = False
+            print(f"  [{'ok' if good else 'FAIL'}] {label:<42} -> "
+                  f"{'CLEARED' if cleared else 'still flagged':13} "
+                  f"(want {'CLEARED' if want_cleared else 'still flagged'})")
+        (d / "tools" / "plank_ack.tsv").unlink()
+
+        # t1-ack-ambig: two rows matching one commit with CONFLICTING verdicts
+        # must not be silently resolved in either direction.
+        (d / "tools" / "plank_ack.tsv").write_text(
+            f"lokiXX\t{cur_hash[:7]}\tNOT-A-WITHDRAWAL\tone reviewer\n"
+            f"lokiXX\t{full[:12]}\tDEAD\tanother reviewer\n")
+        v, _ = check("lokiXX", cwd=d, quiet=True)
+        # DEAD is plank-keyed and takes precedence by design (death is sticky);
+        # what must NOT happen is the NOT-A-WITHDRAWAL row silently winning.
+        if v not in ("WITHDRAWN", "SUSPECT"):
+            print(f"  [FAIL] conflicting ack rows must not clear the plank, read {v}")
+            ok = False
+        else:
+            print(f"  [ok] conflicting ack rows for one commit         -> {v} "
+                  f"(not cleared)")
+        (d / "tools" / "plank_ack.tsv").unlink()
+
+        # t1-ack-audit: THE GUARD ON THE GUARD, both verdicts. A row whose hash
+        # resolves to nothing silences nothing while looking identical to one
+        # that works -- the same indistinguishable-from-healthy shape as the
+        # length drift itself.
+        (d / "tools" / "plank_ack.tsv").write_text(
+            f"lokiXX\t{cur_hash}\tNOT-A-WITHDRAWAL\tresolves\n")
+        clean = audit_acks(cwd=d)
+        print(f"  [{'ok' if not clean else 'FAIL'}] audit_acks on a resolvable "
+              f"row{'':21} -> {len(clean)} complaint(s) (want 0)")
+        if clean:
+            ok = False
+        (d / "tools" / "plank_ack.tsv").write_text(
+            f"lokiXX\t{cur_hash}\tNOT-A-WITHDRAWAL\tresolves\n"
+            f"lokiYY\tfeedfacefeed\tDEAD\tthis hash is fiction\n"
+            f"lokiZZ\t41895\tDEAD\ttoo short to be safe\n")
+        dirty = audit_acks(cwd=d)
+        print(f"  [{'ok' if len(dirty) == 2 else 'FAIL'}] audit_acks on a fictional "
+              f"hash + a too-short one -> {len(dirty)} complaint(s) (want 2)")
+        if len(dirty) != 2:
+            ok = False
         (d / "tools" / "plank_ack.tsv").unlink()
 
         # t1-ack-c: an ack for a DIFFERENT commit must NOT silence this one, or
@@ -840,7 +1036,18 @@ def main(argv):
         return 0
     if argv[0] == "--selftest":
         return selftest()
+    if argv[0] == "--audit-acks":
+        bad = audit_acks()
+        for line in bad:
+            print(f"  ** {line}")
+        print(f"\nACK_AUDIT: {'OK — every row resolves to exactly one commit'
+                              if not bad else f'{len(bad)} UNRESOLVABLE ROW(S)'}")
+        return 1 if bad else 0
     planks = discover_planks() if argv[0] == "--all" else argv
+    # ⛔ RUN THE GUARD ON THE GUARD FIRST, and print it whether or not it fires.
+    # A dead ack row makes a plank look SUSPECT that someone already cleared, and
+    # the reader has no way to tell that from a plank nobody has looked at.
+    ack_complaints = audit_acks()
     worst = 0
     stale = []
     withdrawn = []
@@ -877,6 +1084,14 @@ def main(argv):
     if stale:
         print(f"\n*** {len(stale)} STALE: {', '.join(stale)} ***")
         print("Do not activate against HANDOVER's word until these are reconciled.")
+    if ack_complaints:
+        print(f"\n*** {len(ack_complaints)} UNRESOLVABLE ACK ROW(S) in "
+              f"tools/plank_ack.tsv ***")
+        for line in ack_complaints:
+            print(f"    ** {line}")
+        print("A row that resolves to nothing silences nothing, and it reads")
+        print("exactly like a row that works. Fix the hash or drop the row.")
+        worst = 1
     # ⛔ GATE ON THIS LINE, NOT ON `$?`. The whole contract of this tool is its
     # exit code, and the natural way anyone runs a long report --
     # `plank_status.py --all | tail` -- makes `$?` the status of `tail`, which is

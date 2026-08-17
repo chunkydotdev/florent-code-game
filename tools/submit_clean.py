@@ -28,16 +28,33 @@ directory, and auxiliary modules must travel with it for the imports to resolve
 — so this is per-extension and recursive, never main.py-only.
 
 NAMING IS ENFORCED, NOT REMEMBERED (Magnus, 2026-08-13):
-    a SHIP        -> --name 'Loki vN'      and --activate
-    an UNRATED LEG-> --name 'Loki rcX.Y'   and NO --activate
+    a SHIP        -> --name 'Loki vN' OR 'Sleipnir vN'   and --activate
+    an UNRATED LEG-> --name 'Loki rcX.Y'                 and NO --activate
 `--name` is REQUIRED and the format must match the ship/leg mode, or this exits 2.
 It exists because this tool never passed `-n` at all and **v123 shipped UNNAMED**
 while v116/v122 carried "Loki v5"/"Loki v6" -- a known convention that lapsed the
 moment submitting moved into a script.
 
+⛔ AND A HALF-MADE RULE CHANGE STEERS A SHIP WRONG. 2026-08-16 (s47, 71e9761a)
+widened SHIP_NAME_RE to `^(Loki|Sleipnir) v<digits>$` when Magnus named the release
+"Sleipnir" -- and changed NOTHING ELSE. Every string a human or an agent actually
+READS (this block, the usage lines, the NAME-REQUIRED help, the SHIP-NAME
+rejection message) still said `Loki vN` only, so the enforcement accepted an era
+the guidance denied. On 2026-08-17 that shipped `bots/_v488beltbreak2` TWICE:
+v158 as "Loki v9" off the stale guidance, then v159 as "Sleipnir v2" -- one tree,
+two platform versions, two ledger rows, and the `ourver` tape now carries a name
+that never described a distinct bot. **THE REGEX IS NOT THE INTERFACE. The error
+string is.** A rule change lands in the enforcement AND the guidance or it has
+not landed. Fixed 2026-08-17.
+The LEG convention did NOT move: there is no `Sleipnir rc` anywhere in this repo
+or its history, and the last leg shipped was `Loki rc10.1` (v154). Legs stay
+`Loki rcX.Y` until Magnus says otherwise -- this mirrors 71e9761a's scope exactly
+and goes no wider.
+
 Usage:
     .venv/bin/python tools/submit_clean.py bots/_vX --name 'Loki rc7.1'
     .venv/bin/python tools/submit_clean.py bots/_vX --name 'Loki v8' --activate
+    .venv/bin/python tools/submit_clean.py bots/_vX --name 'Sleipnir v3' --activate
     .venv/bin/python tools/submit_clean.py bots/_vX --name 'Loki rc7.1' --dry-run
 
 It PRINTS THE FULL MANIFEST before uploading, every time. The failure mode this
@@ -295,11 +312,28 @@ def record_version(ledger: Path, holder_before: str | None,
                 f"{type(e).__name__}: {e} — the submit above is unaffected.")
 
 
-# Sleipnir era added 2026-08-16 on Magnus's naming (the ship "release
-# Sleipnir" order arrived with the name; the validator encodes the
-# convention and the convention moved).
-SHIP_NAME_RE = re.compile(r"^(Loki|Sleipnir) v\d+$")
-LEG_NAME_RE = re.compile(r"^Loki rc\d+\.\d+$")
+# ⛔ ONE SOURCE FOR THE ENFORCEMENT **AND** THE GUIDANCE. Sleipnir era added
+# 2026-08-16 on Magnus's naming (the ship "release Sleipnir" order arrived with
+# the name; the validator encodes the convention and the convention moved).
+#
+# THIS IS A LIST AND NOT A HAND-WRITTEN REGEX BECAUSE THE s47 WIDENING EDITED THE
+# REGEX ALONE. Three separate prose strings then contradicted it for a day and
+# steered a real ship to the wrong name (see the module docstring). The regex and
+# every message a reader sees are now GENERATED from this tuple, so the next era
+# is one edit and cannot leave a stale instruction behind.
+SHIP_ERAS = ("Loki", "Sleipnir")
+SHIP_NAME_RE = re.compile(r"^(" + "|".join(SHIP_ERAS) + r") v\d+$")
+# Legs did NOT move to the Sleipnir era — no `Sleipnir rc` exists anywhere in
+# this repo or its history; the last leg shipped was `Loki rc10.1` (v154). Kept
+# a separate constant precisely so widening ships cannot silently widen legs.
+LEG_ERAS = ("Loki",)
+LEG_NAME_RE = re.compile(r"^(" + "|".join(LEG_ERAS) + r") rc\d+\.\d+$")
+
+# The human-readable form of each rule, rendered from the same tuples the regexes
+# are built from. Every guidance string below uses these.
+SHIP_FORM = " or ".join(f"'{e} vN'" for e in SHIP_ERAS)
+LEG_FORM = " or ".join(f"'{e} rcX.Y'" for e in LEG_ERAS)
+SHIP_EXAMPLES = " / ".join(f"'{e} v8'" for e in SHIP_ERAS)
 
 
 def _name_from(argv: list[str]) -> str | None:
@@ -322,10 +356,13 @@ def check_name(name: str | None, activate: bool) -> tuple[bool, str]:
     *every prose-only rule here has a recorded violation by its own author*, and
     that the durable surfaces are the always-loaded file and **tools that exit 1**.
 
-    THE CONVENTION, Magnus 2026-08-13:
-      * a SHIP (`--activate`) is named  `Loki vN`     e.g. "Loki v7"
+    THE CONVENTION, Magnus 2026-08-13, widened to the Sleipnir era 2026-08-16:
+      * a SHIP (`--activate`) is named  `Loki vN` OR `Sleipnir vN`
+        e.g. "Loki v7", "Sleipnir v2" — the accepted eras are SHIP_ERAS and
+        every message below is rendered from that one tuple, never retyped.
       * an UNRATED LEG (no --activate) is `Loki rcX.Y` e.g. "Loki rc7.1"
-        — a release candidate off ship lineage X, leg Y.
+        — a release candidate off ship lineage X, leg Y. NOT widened: no
+        `Sleipnir rc` exists in this repo's history.
 
     ⭐ AND THE DISTINCTION IS LOAD-BEARING RATHER THAN COSMETIC. `fcode submit`
     AUTO-ACTIVATES, so an unrated leg is a version that briefly held the live slot
@@ -338,20 +375,141 @@ def check_name(name: str | None, activate: bool) -> tuple[bool, str]:
     if not name:
         return False, (
             "NAME REQUIRED. --name is not optional:\n"
-            "  ship          : --name 'Loki v8'    (with --activate)\n"
+            f"  ship          : --name {SHIP_EXAMPLES}   (with --activate)\n"
+            f"                  accepted forms: {SHIP_FORM}\n"
             "  unrated leg   : --name 'Loki rc7.1' (without --activate)\n"
+            f"                  accepted forms: {LEG_FORM}\n"
             "v123 shipped unnamed because this tool never passed one.")
     if activate and not SHIP_NAME_RE.match(name):
-        return False, (f"SHIP NAME MUST MATCH 'Loki vN' — got {name!r}.\n"
+        return False, (f"SHIP NAME MUST MATCH {SHIP_FORM} — got {name!r}.\n"
+                       f"  e.g. {SHIP_EXAMPLES}\n"
                        "  --activate means this takes the live slot.")
     if not activate and not LEG_NAME_RE.match(name):
-        return False, (f"UNRATED-LEG NAME MUST MATCH 'Loki rcX.Y' — got {name!r}.\n"
+        return False, (f"UNRATED-LEG NAME MUST MATCH {LEG_FORM} — got {name!r}.\n"
                        "  No --activate means this is a leg, not a ship.\n"
-                       "  X = the ship lineage it descends from, Y = the leg number.")
+                       "  X = the ship lineage it descends from, Y = the leg number.\n"
+                       f"  (the leg convention did NOT move to {SHIP_FORM}; ships "
+                       f"did.)")
     return True, f"name OK: {name!r} ({'SHIP' if activate else 'unrated leg'})"
 
 
+def selftest_names() -> int:
+    """Drive check_name to BOTH verdicts, and — the point of this selftest —
+    prove the GUIDANCE agrees with the ENFORCEMENT.
+
+    ⛔ WHY THE SECOND HALF EXISTS. s47 widened SHIP_NAME_RE and left three prose
+    strings saying `Loki vN` only; a real ship followed the prose and the same
+    tree went out twice under two names. A cell-table over accept/reject alone
+    would have passed the whole time that was true — the regex was correct. So
+    this also asserts, mechanically:
+      * every era the MESSAGE advertises is ACCEPTED by the regex, and
+      * every era the regex accepts is ADVERTISED by the message.
+    That is the both-directions form: guidance cannot promise what enforcement
+    refuses, and enforcement cannot accept what guidance never mentions.
+    """
+    bad = 0
+    cells = [
+        # (name, activate, want_ok, why)
+        ("Loki v9", True, True, "ship, Loki era"),
+        ("Sleipnir v2", True, True, "ship, Sleipnir era — the s47 widening"),
+        ("Loki v10", True, True, "ship, two-digit"),
+        ("Odin v1", True, False, "ship, era NOT in SHIP_ERAS"),
+        ("Loki rc10.1", True, False, "a LEG name passed as a ship"),
+        ("Sleipnir", True, False, "ship, no version number"),
+        ("loki v9", True, False, "ship, lowercase era (case is load-bearing)"),
+        ("Loki rc10.1", False, True, "leg, Loki era"),
+        ("Loki rc7.1", False, True, "leg, Loki era"),
+        ("Sleipnir rc1.1", False, False, "leg era did NOT widen — must reject"),
+        ("Loki v9", False, False, "a SHIP name passed as a leg"),
+        (None, True, False, "no --name at all (ship)"),
+        (None, False, False, "no --name at all (leg)"),
+    ]
+    print("NAME-RULE SELFTEST — accept/reject cells")
+    for name, activate, want, why in cells:
+        got, msg = check_name(name, activate)
+        ok = got == want
+        if not ok:
+            bad += 1
+        print(f"  [{'ok ' if ok else 'FAIL'}] {'SHIP' if activate else 'LEG '} "
+              f"{str(name)!r:18} -> {'accept' if got else 'reject':6} "
+              f"(want {'accept' if want else 'reject'})   {why}")
+
+    print("\nGUIDANCE == ENFORCEMENT (the s47 ambush, mechanised)")
+    # The three strings a reader actually sees.
+    # ⚠ THE PROBE NAMES ARE DELIBERATELY NOT ` vN`-SHAPED. First cut used
+    # "Odin v1" and the reverse scan below flagged 'Odin' as an ADVERTISED era —
+    # because the rejection message echoes the name it is rejecting. The scan was
+    # reading the tool's own quoted input as its guidance. Fixed rather than
+    # loosened: the echo is worth keeping, so the probe must not look like an
+    # advertisement.
+    _, no_name_msg = check_name(None, True)
+    _, ship_reject_msg = check_name("BADSHIPNAME", True)
+    _, leg_reject_msg = check_name("BADLEGNAME", False)
+    surfaces = {
+        "module docstring": __doc__ or "",
+        "NAME-REQUIRED message": no_name_msg,
+        "SHIP-NAME rejection": ship_reject_msg,
+        "LEG-NAME rejection": leg_reject_msg,
+        "check_name docstring": check_name.__doc__ or "",
+    }
+    for era in SHIP_ERAS:
+        # forward: advertised era must be accepted
+        ok_fwd, _ = check_name(f"{era} v1", True)
+        print(f"  [{'ok ' if ok_fwd else 'FAIL'}] era {era!r} is ACCEPTED by "
+              f"SHIP_NAME_RE")
+        if not ok_fwd:
+            bad += 1
+        for label, text in surfaces.items():
+            if label == "LEG-NAME rejection":
+                continue          # legs deliberately do not advertise ship eras
+            hit = era in text
+            print(f"  [{'ok ' if hit else 'FAIL'}] era {era!r} is ADVERTISED in "
+                  f"the {label}")
+            if not hit:
+                bad += 1
+    # reverse: nothing the messages advertise as a ship era may be rejected.
+    # Any capitalised word immediately followed by " vN" in a guidance string is
+    # being advertised as a ship form.
+    advertised = set()
+    for label, text in surfaces.items():
+        if label == "LEG-NAME rejection":
+            continue
+        for m in re.finditer(r"\b([A-Z][A-Za-z]+) v(?:N|\d+)\b", text):
+            advertised.add(m.group(1))
+    for era in sorted(advertised):
+        ok_rev, _ = check_name(f"{era} v1", True)
+        print(f"  [{'ok ' if ok_rev else 'FAIL'}] advertised era {era!r} is "
+              f"actually accepted (no promise the regex refuses)")
+        if not ok_rev:
+            bad += 1
+    extra = advertised - set(SHIP_ERAS)
+    print(f"  [{'ok ' if not extra else 'FAIL'}] guidance advertises exactly "
+          f"{sorted(SHIP_ERAS)} (extra: {sorted(extra) or 'none'})")
+    if extra:
+        bad += 1
+    # And the leg rule must NOT have been widened by accident.
+    leg_widened, _ = check_name("Sleipnir rc1.1", False)
+    print(f"  [{'ok ' if not leg_widened else 'FAIL'}] LEG_NAME_RE was NOT "
+          f"widened to the Sleipnir era (scope mirrors 71e9761a)")
+    if leg_widened:
+        bad += 1
+
+    print("\nNAME-RULE SELFTEST " + ("PASS — both verdicts driven, and every era "
+          "the guidance advertises is exactly the set the regex accepts."
+          if not bad else f"FAIL — {bad} cell(s) wrong."))
+    return 0 if not bad else 1
+
+
 def main(argv: list[str]) -> int:
+    if "--selftest-names" in argv:
+        return selftest_names()
+    if "--selftest" in argv:
+        rc_n = selftest_names()
+        print()
+        rc_h = main(["--selftest-holder-guard"])
+        print("\nSUBMIT_CLEAN SELFTEST " + ("PASS" if not (rc_n or rc_h)
+                                           else "FAIL"))
+        return 1 if (rc_n or rc_h) else 0
     if "--selftest-holder-guard" in argv:
         # Drive the guard to BOTH verdicts (instruments rule): all six
         # before/after states, including the four that used to fail open.
