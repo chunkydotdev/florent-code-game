@@ -52,7 +52,7 @@
    rays, consumed at :831). Doc-only; fix on next tree touch or at wrap.
    (Research batches 2+4, s48.)
 
-6. **fleet_dispatch.py:1590 stale `--control` default** —
+6. ✅ FIXED by the remote-stop automation build (a50f27ef, Magnus-ordered, carve-out): default resolves from PROGRAMME INCUMBENT via control_pin.incumbent(). ~~fleet_dispatch.py:1590 stale `--control` default~~ —
    `default="bots/_v223sealrepair"` in live argparse; any `--seed-from` run
    omitting `--control` seeds rows on the superseded benchmark and trips the
    guard-6 refusal. Running daemon is `--once --remote-mode live` (no seeding)
@@ -80,7 +80,7 @@
    regenerated worklist into the mirror on push so the directory tells one
    story. (Side lane s48.)
 
-10. **auto_gate_cancelled.tsv: add a control/era COLUMN to the writer**
+10. ✅ FIXED by the same build: ledger columns 11 host / 12 control appended (by-index readers of older eras stay correct). ~~auto_gate_cancelled.tsv: add a control/era COLUMN to the writer~~
     (auto_gate.py) so every future cancellation row names its control —
     a row cannot currently distinguish "failed vs the weak baseline" from
     "failed vs the champion", and the strict regime will mint many of the
