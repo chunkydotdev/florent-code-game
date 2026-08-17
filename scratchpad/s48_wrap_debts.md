@@ -103,7 +103,24 @@
     the doc is fixed, every s48 prereg brief I write carries the corrected
     sentence inline. (Side lane s48, KLADLADDER certification.)
 
-12. **corefill.sh:310 shell error on the empty-worklist path** — after the s48
+12. **league_matches.tsv tail is PARTIAL, not lagged (research, verified vs
+    live pull)** — last 4 slots ~25% complete (10/11/11/7 vs ~41 steady),
+    all four of our own 03:12-04:12 rated matches missing; freshness and
+    completeness are different properties and only one is measured. TWO
+    HALVES: (a) tool fix — target_value.py (:489-491) prints newest-row age;
+    add rows-in-newest-N-slots vs trailing median beside it (research's dated
+    spec, coordination 05:02:11Z); (b) INVESTIGATE the archiver's miss —
+    likely the platform flap; check whether later passes backfill the
+    03:12-04:12 window, else re-pull by hand. STANDING until fixed: an
+    absence in the last ~90 min of league_matches.tsv is NOT evidence.
+
+13. **unrated_run.sh:369 — guards that cannot fail when VER==MAIN** — with
+    our own holder as the arm, `activate 155` on an already-active slot makes
+    both holder guards (:367,:372) unfalsifiable. Benign but must be NAMED in
+    the lock commit of any leg that runs with the holder as an arm. (Research
+    s48, Clankers draft agent.)
+
+14. **corefill.sh:310 shell error on the empty-worklist path** — after the s48
    re-pin, the runner printed "COREFILL done." then
    `tools/corefill.sh:310: command not found: SH:-` / `= not found` (looks like
    a `${SH:-...}` parsed under the wrong shell). Loop-relevant only if it
