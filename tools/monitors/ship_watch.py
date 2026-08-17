@@ -86,11 +86,15 @@ def _n5(v) -> str:
     return "n/a" if v is None else f"{v:+.1f}"
 
 
-def assess(tape, version=None, baseline=None, ctx=None):
+def assess(tape, version=None, baseline=None, ctx=None, baseline_version=None):
     """Return (state, sprt_verdict, sprt_events, line, alert_text|None).
 
     The rule decides the alarm. The SPRT is reported alongside it and never
     suppresses it — an advisory that can veto a rule is not an advisory.
+
+    `baseline_version` is the holder the `baseline` fallback BELONGS TO (the
+    state file's / SHIP_VERSION's own version tag). See the REFUSED-STALE block
+    below: a baseline whose owner is not the live holder is refused outright.
     """
     st = slot_rule.evaluate(tape, version)
     if st is None or st.k <= 0:
@@ -115,9 +119,31 @@ def assess(tape, version=None, baseline=None, ctx=None):
     derived = _ctx.get("baseline_derived")
     if derived is None and _ctx.get("ladder"):
         derived = slot_denoms.activation_baseline(st.version, _ctx["ladder"])
-    base_act, src = ((derived, "derived") if derived is not None else
-                     (baseline, "env") if baseline is not None else (None, "none"))
-    net_act = ("" if base_act is None else
+    # ⛔ THE FALLBACK IS REFUSED WHEN ITS OWNER IS NOT THE LIVE HOLDER — s50
+    # 2026-08-17. `corpus/ship_watch_state.json` read {"version": "v116",
+    # "baseline": 1655.0} while the tape's holder was v160 at ~1822: THREE
+    # holders stale. It was inert only because the derivation off
+    # `ladder_games.tsv` happened to be succeeding; drive the derivation to
+    # fail (unreadable ladder, or a holder with no ladder rows yet — which is
+    # exactly the state a FRESHLY SHIPPED bot is in) and the same code emitted
+    # `net_act=+186.0 net_act_src=env`, a confident number off a dead constant.
+    # That is the identical defect this file already documents at :52-54 (v102
+    # armed at v101's baseline) and at :106-113 (v114 charged with v112's game),
+    # arriving a third time through the one path those two repairs left open.
+    # ⭐ REFUSE, DO NOT GUESS — the same discipline as the tape's STALE branch:
+    # the column reads UNKNOWN and NAMES the disagreement, so a reader cannot
+    # mistake a withheld number for a measured one. FAIL-OPEN as ever: this is
+    # a DIAGNOSTIC column, so a refusal must never touch the RULE (driven).
+    if derived is not None:
+        base_act, src = derived, "derived"
+    elif baseline is None:
+        base_act, src = None, "none"
+    elif baseline_version is not None and baseline_version != st.version:
+        base_act, src = None, f"REFUSED-STALE({baseline_version}!={st.version})"
+    else:
+        base_act, src = baseline, "env"
+    net_act = ("\tnet_act=UNKNOWN" if base_act is None and src.startswith("REFUSED")
+               else "" if base_act is None else
                f"\tnet_act={st.rating - base_act:+.1f}")
     ruling = ("SLOT FREE" if st.slot_free else
               # Magnus 2026-08-16: SLOT_STOP_LOSS: off — the rule computes but
@@ -458,6 +484,33 @@ def selftest() -> int:
     check("net_act_src: says `env` when it fell back to the hand-set value",
           "net_act_src=env" in lenv, "so a reader can see WHICH number they have")
 
+    # ---- 8b. THE STALE-BASELINE REFUSAL, s50 2026-08-17 ---------------------
+    # The live `corpus/ship_watch_state.json` held {"version": "v116",
+    # "baseline": 1655.0} against a v160 holder. Both directions, and the ONLY
+    # thing that changes between the first two cells is who the baseline
+    # belongs to — same tape, same number, same holder.
+    _hold = "v900"                       # the tag `tape()` writes on every row
+    _, _, _, l_own, _ = assess(_slow(28), baseline=1700.0,
+                               ctx={"intervals": _ivs}, baseline_version=_hold)
+    check("baseline OWNED by the live holder is USED",
+          "net_act_src=env" in l_own and "net_act=UNKNOWN" not in l_own,
+          f"baseline_version={_hold} == holder {_hold}")
+    _, _, _, l_stale, _ = assess(_slow(28), baseline=1700.0,
+                                 ctx={"intervals": _ivs}, baseline_version="v116")
+    check("...and a baseline owned by a DEAD holder is REFUSED, not printed",
+          "net_act=UNKNOWN" in l_stale and "REFUSED-STALE(v116!=v900)" in l_stale,
+          "the column NAMES the disagreement")
+    check("...so the two lines are NOT byte-identical (a refusal must be visible)",
+          l_own.split("net_act")[1] != l_stale.split("net_act")[1])
+    # ⛔ FAIL-OPEN: refusing a DIAGNOSTIC must never touch the ALARM. Same
+    # bleeding tape as cell 2, with a stale baseline attached.
+    _rows_free = [(1500, 100 + i) for i in range(10)] + \
+                 [(1500 - 8 * (i + 1), 110 + i) for i in range(5)]
+    _, _, _, l_free, a_free2 = assess(tape(_rows_free), baseline=1655.0,
+                                      baseline_version="v116")
+    check("...and a REFUSED baseline still lets the RULE free the slot",
+          a_free2 is not None and "REFUSED-STALE" in l_free)
+
     # ⛔ FAIL-OPEN. The columns read a SECOND file; the rule reads only the tape.
     # Losing the second file must degrade the DIAGNOSTIC and leave the ALARM
     # intact. A monitor that dies because its diagnostic could not be computed
@@ -589,7 +642,11 @@ def main() -> int:
         ctx["intervals"] = []
 
     # version is REPORTING-ONLY; the rule follows whoever the tape says is live.
-    st, verdict, events, line, alert = assess(slot_rule.TAPE, None, baseline, ctx)
+    # It IS passed as `baseline_version` though — not to select a holder, but so
+    # assess() can refuse the hand-set baseline when that baseline belongs to a
+    # holder who is no longer live (s50; see the REFUSED-STALE block).
+    st, verdict, events, line, alert = assess(slot_rule.TAPE, None, baseline, ctx,
+                                              baseline_version=version)
     if line is None:
         print("no holder run on the tape yet", file=sys.stderr)
         return 0
