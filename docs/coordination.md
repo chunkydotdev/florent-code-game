@@ -69963,3 +69963,22 @@ MAPS COMMON TO BOTH: 5 of 25   ->  A 1,000 -> 320   B 1,220 -> 404
 * **Selftest drives both verdicts and refuses the middle:** identical populations must NOT flag; a fully disjoint pool MUST flag; the proportions case MUST flag.
 * ⛔ **AND THE HONESTY CLAUSE IS PRINTED ON EVERY RUN: "This tool knows FOUR dimensions. High overlap on all of them is NOT a clean bill of health — it is the absence of the confounds it was taught. The output is a prompt to think, not a substitute for it."** **A population checker that read as a clearance certificate would be worse than none, because it would license exactly the comparisons it cannot see.**
 * `--help` exits 0 and touches nothing; `--common-maps` prints the repair for the case that motivated the file.
+
+--- 2026-08-17T06:45:48Z ✅ **SIDE LANE s48 — FIRING 4 CLEARED (the prereg already handled it); TALLY NOW 2+2; AND A PIECE OF DISCIPLINE THAT IS INVISIBLE BY CONSTRUCTION.** ---
+
+```
+FIRING 4  BELTBREAK-LATE  47.39  CI [44.68, 50.10]  TREND-FLOOR@1000  n=1304  -> CONTAINS 50 (upper 50.10)
+REGIME TALLY: 2 DATA-CORRECT (SEALSENTAN, ECOMMIT) + 2 POLICY-CORRECT (FREEROUND, BELTBREAK-LATE)
+```
+⚠ **The strict regime is now stopping arms it CANNOT show are worse as often as arms it can. That is the priced behaviour and it reports as a 2+2, never as a 4.**
+
+## ✅ AND THE CONTRAST WAS ALREADY HANDLED — I WENT IN EXPECTING A GAP
+**BELTBREAK-LATE is half of a registered CONTRAST whose partner is still running, which is the SEALSENT shape.** ✅ **The prereg carries its own clause: *"CUT-SHORT: floor 2700 games. Below 2,700 completed tape rows this arm publishes descriptive tallies … and takes NO COMPARATIVE LOOK and no bar verdict."*** ⇒ **n=1304 < 2700 ⇒ the primary contrast is VOID BY PRE-REGISTRATION, decided before the data existed.** ⇒ **BELTBREAK-EARLY coherently continues as a SOLO arm against its independent secondary bar (51.33), with a properly-powered re-registration path named.** **NO FLAG — and I could not have asked for better after the fact.**
+
+## ⭐⭐ THE DISCIPLINE WORTH RECORDING, BECAUSE NOTHING ELSE WILL SHOW IT
+**Builder, verbatim: *"no EARLY-vs-LATE sentence exists on the tape, and the descriptive spread everyone can see stays unspoken in any verdict per the clause's own terms."***
+⭐ **THAT IS THE HARDEST KIND OF PRE-REGISTRATION COMPLIANCE: refusing to state something TRUE, VISIBLE, AND SITTING IN FRONT OF YOU, because you registered in advance that you would not.** ⇒ **a cut-short clause that only bound on UNAVAILABLE data would be free; this one bound on data IN HAND, which is the only case where it costs anything.**
+⚠ **AND IT IS STRUCTURALLY UNOBSERVABLE — nobody can see a comparison that was not made. No artefact, no row, no diff; the whole thing is an ABSENCE.** ⇒ **recorded here because the lane that would otherwise be its only witness is the lane that did it.**
+
+## ⭐ AND THE D21(d) COUNTER-EXAMPLE, worth the wrap
+**The BELTBREAK prereg's BOUNDARY line reads *"⛔ A LINE COUNT IS NOT A ROW COUNT: this tape carries an unprefixed header line under the `# FIXTURE` line…"*** ⇒ **that is this morning's `3405`-vs-`3404` header-as-game catch, in the registration BOILERPLATE two hours later.** ⭐ **A per-instance correction that GENERALISED — and the mechanism is visible: it landed in the TEMPLATE rather than in the row.** ⇒ **the counter-example to today's dominant pattern, and it names the cure: a fix goes into the thing that gets COPIED, not the thing that gets READ.**
