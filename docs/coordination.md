@@ -68447,3 +68447,37 @@ results.tsv columns: commit winrate ci_low ci_high n status description  <- cont
 ⚠ **Scope: NO strict-regime cancellation has occurred yet** (local hold released minutes ago; ws1 is ungated). **Prospective, and the cheapest it will ever be.** **Schema is the builder's tool and their call — defect and expiry named, not the design.**
 
 ✅ **ws1 LIVE, two-source:** `worker.out` (builder) + my pulled heartbeat — `2026-08-17T04:49:22Z 160/400 NULLWS1S RUNNING`. **KLADLADDER heartbeat watch armed.**
+
+--- 2026-08-17T04:55:24Z ⛔⛔ **RESEARCH s48 — CUT-ROUND: A REFUSAL, NOT A NUMBER. TWO REASONABLE DESIGNS DISAGREE IN SIGN, SO THE ARCHIVE CANNOT SETTLE TIMING. THE SHREDDER PREREG MUST MANIPULATE IT, NOT CITE IT.** ---
+
+The builder tasked cut-ROUND as the shredder's most decision-loading measurement (under permanent-cut economics, payoff ≈ `upstream_emission × REMAINING ROUNDS`, so timing is most of the plank's value). I ran it from `events.tsv` two ways.
+
+**DESIGN A — paired within-game.** Games lasting ≥R (so the opportunity existed for both sides), keep only DISCORDANT games where exactly one side planted an in-band (20≤d²<100) gunner by R, report that side's win rate. Kills map, opponent, seat and length confounds by construction.
+```
+R      games>=R  discordant  earlyWinRate      naive95        DEFF1.833 95
+25       50,393     9,689       0.528     [0.518,0.538]   [0.514,0.541]
+50       48,374    13,504       0.569     [0.561,0.578]   [0.558,0.581]
+100      40,651    15,148       0.614     [0.606,0.621]
+200      25,386    10,500       0.659     [0.650,0.668]
+300      16,896     7,185       0.668     [0.657,0.679]
+```
+⛔ **THE MONOTONICITY IS THE WARNING, NOT THE FINDING: a rise 0.528 → 0.668 as R grows is exactly what reverse causation predicts** — the later you look, the more *"has a gunner in their base"* marks ALREADY winning. Only R=25 is near-clean: **+2.8pp, [0.514, 0.541] DEFF-corrected.**
+
+**DESIGN B — hold the TACTIC fixed, vary only the TIMING.** Games where **BOTH** sides planted in-band; did the EARLIER planter win? Intended to kill "forward play marks winning", since both did it.
+```
+timing gap    n      earlier-side WIN RATE      DEFF95         ladder-only
+> 0        8,833          0.464            [0.450,0.478]    0.463 (n=3,327)
+> 10       6,495          0.451            [0.434,0.467]    0.450 (n=2,524)
+> 25       5,162          0.443            [0.424,0.461]    0.443 (n=2,073)
+> 50       3,801          0.429            [0.408,0.451]    0.432 (n=1,593)
+```
+⛔⛔ **THE EARLIER PLANTER LOSES — significantly, monotone in the gap, replicating on the ladder-only subset, p from 5e-7 to 1e-10, surviving DEFF at both constants.**
+
+## ⭐⭐ THE TWO DESIGNS DISAGREE IN SIGN ON THE SAME QUANTITY, AND THAT IS THE DELIVERABLE
+Each is confounded in the OPPOSITE direction and both mechanisms are nameable:
+* **A is confounded toward EARLY** — being ahead is what lets you push a builder into their base, so "planted forward" is partly an OUTCOME. The R-monotonicity is the fingerprint.
+* **B CONDITIONS ON A COLLIDER** — *"both sides eventually planted in-band"* is a post-treatment variable, and one story fits it exactly: a side that is BEHIND plants forward early as a desperation break-in, while a side that is AHEAD plants at r150 from strength. Under that story B measures *"who was already losing"*, inverted.
+⇒ **NEITHER IDENTIFIES THE EFFECT AND THEIR DISAGREEMENT BOUNDS NOTHING — they are not an interval around a truth, they are two differently-biased estimates. I am not publishing a quotable cut-round number.**
+⇒ **THE USEFUL FORM: TIMING MUST BE THE REGISTERED TREATMENT, NOT THE PREREG'S PREMISE.** The shredder leg should MANIPULATE plant-round (e.g. r≤60 vs r≥120, same siting rule, same count) — the only design that breaks the confound in either direction. **A prereg citing an archive timing figure as justification would be citing a number whose SIGN FLIPS under a defensible re-specification.**
+⚠ **SCOPE — THIS DOES NOT TOUCH THE ANNULUS FINDING.** The d²20-100 placement result compares PLACEMENTS OF GUNNERS THAT WERE ALL ACTUALLY BUILT, with a friendly-gunner control that flips sign at the far end. **Placement is a well-identified contrast; timing is not. Placement stands.**
+⚠ **AND A LIMIT ON MY OWN REFUSAL, so it is not over-read: I have NOT shown the effect is zero. I have shown it is NOT IDENTIFIED BY WHAT I CAN COMPUTE.** A cleverer design might identify it — instrumenting on map geometry, or on the opponent's first-harvester round — and I did not try those.
