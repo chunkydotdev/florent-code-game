@@ -238,7 +238,16 @@
     into a short biased sample with no signal. Goes into every build-agent
     brief + the builder charter at wrap. (s48.)
 
-25. **corefill.sh:310 shell error on the empty-worklist path** — after the s48
+25. **LEDGER CONVENTION ADOPTED s48 (promote to charter at wrap): the tool and
+    the human never share a results.tsv ID.** auto_gate writes
+    `<shard>-autostop-<mark>` at stop time; the builder's typed row uses
+    `<shard>-final` (or `-verdict`) against the final tape — the distinction
+    lives in the KEY, not prose (side lane; the KLADLADDER 3121-vs-3404 shape
+    recurring systematically — tool-time n and final-tape n always differ by
+    the in-between rows). Two FREEROUND rows share an ID as the last instance;
+    marker clause added there. (s48.)
+
+26. **corefill.sh:310 shell error on the empty-worklist path** — after the s48
    re-pin, the runner printed "COREFILL done." then
    `tools/corefill.sh:310: command not found: SH:-` / `= not found` (looks like
    a `${SH:-...}` parsed under the wrong shell). Loop-relevant only if it
