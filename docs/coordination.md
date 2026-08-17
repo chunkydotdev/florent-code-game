@@ -70128,3 +70128,21 @@ Bean counters       2072     377.6   0.0409     |  Pivot             2068    239
 
 ⭐⭐ **THE SHAPE THEY SHARE, AND IT IS THE ONE WORTH CARRYING: A MONITORING SET ASSEMBLED INCIDENT-BY-INCIDENT WATCHES THE FAILURES THAT HAVE ALREADY HAPPENED.** **Every one of my four was armed in response to something that went wrong — a blind holder, a blocked fleet, a floor that might mis-fire. NONE was armed by asking what SUCCESS looks like or where DECISIONS actually travel.** ⇒ ***D21(d) at the level of a whole instrument SET rather than a single tool: coverage assembled from N incidents covers N incidents.***
 ⇒ **CHECK FORM FOR A SUCCESSOR'S BOOT: do not only verify the watches are ALIVE. ENUMERATE WHAT THEY CANNOT SEE — and ask specifically (a) where does a DECISION travel that no file records, and (b) what does SUCCESS look like, and would anything fire.**
+
+--- 2026-08-17T07:04:05Z ⛔⭐ **RESEARCH s48 — SIXTH POPULATION CONFOUND, CAUGHT BY MY OWN TOOL REFUSING TO ANSWER. THE LEAK CONCLUSION SURVIVES; ITS EVIDENCE DOES NOT.** ---
+Twenty minutes ago I wrote *"we have been as good as 3.7% inside the current lineage (v139/v154), so 5.75% is a REGRESSION TO RECOVER"*, and the builder was weighing a row on it. **I ran `population_diff --ourver-a 154 --ourver-b 155` before going further and it REFUSED:**
+```
+POPULATION DIFF   A = 154  (n=0)   B = 155  (n=155)
+REFUSED: one side is empty; there is nothing to compare.
+```
+⇒ ⛔⛔ **v154 HAS ZERO ROWS IN `ladder_games.tsv`. IT WAS NEVER ON THE RATED LADDER — 200 unrated games, 0 rated. IT IS A PROTOTYPE.** **And v139 is 40 ladder against 165 unrated.** ⇒ **my "3.7% best" cell was UNRATED-ONLY, compared against a v155 figure pooled across both fixtures — a RATED-vs-UNRATED comparison wearing a version costume, which is `CLAUDE.md`'s own "unrated pools PROTOTYPES, ladder pools SHIPPED BOTS" rule.** **Sixth population confound today, and the first one caught by the tool built for it — by REFUSING rather than by answering.**
+
+**FIXTURE HELD CONSTANT — LADDER ONLY, the shipped-bot fixture:**
+```
+v139  0.0204  (n=4,746 arrivals — thin)      v152  0.0675  (n=57,385)
+v140  0.0447  (n=46,914)                     v153  0.3506  (n=3,605)
+v151  0.0560  (n=4,054)                      v155  0.0623  (n=18,832)
+```
+⇒ ✅ **THE CONCLUSION SURVIVES AND ITS REFERENCE MOVES: the recoverable target is v140's 0.0447 on 46,914 arrivals, NOT v154's 0.0374 on unrated prototype games.** **v155 at 0.0623 is slightly BETTER than v152 (0.0675) and worse than v140 — so the gap to recover is ~1.8pp, not ~2.0pp, and the reference is a bot that actually shipped.** ⇒ **the builder's framing ("regression to recover — the cheapest cost class there is") holds; the number it points at changes.**
+⭐ **AND AN INDEPENDENT CORROBORATION FELL OUT: v153 LEAKED 35.06% OF ITS ARRIVING STACKS.** **v153 is the version I flagged this morning as the worst per-version cell in the tape (0.200 game share, 0.600 our-death over 25 games) — and here it is, from a completely different surface, giving away a third of its economy to enemy networks.** ⇒ **two instruments, one verdict, neither told about the other.**
+⚠ **AND THE HONEST NOTE ON MY OWN TOOL: it did not detect the confound, it REFUSED because one side was empty — the emptiness happened to BE the confound. A version with, say, 20 rated rows and 200 unrated would have produced a comparison and a low-overlap flag rather than a refusal, and I would have had to read the flag. The refusal was luck in its shape, not in its existence.**
