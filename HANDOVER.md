@@ -68,6 +68,22 @@ stop; automation race disclosed) · ECOMMIT catastrophe 36.58 → pre-committed
 over-refusal branch → _v487ecommit2 built · FREEROUND 49.18 POLICY-correct
 stop · BELTBREAK-LATE 47.39 POLICY-correct stop.
 
+## ODIN'S RATED TENURE — DO-NOT-QUOTE GUARD (research, authority-verified)
+3 matches, 8/15 = 0.533, net +0.69 (per-match: lazy 2-3, HTTP418 4-1, kladde
+2-3). ⛔ THREE MATCHES IS NOT A READ — "Odin went 0.533" and "rolled back after
+losing" are both FORBIDDEN sentences; whatever caused the rollback, this record
+cannot evidence it. THE TAPE HAS TWO SEAMS TODAY (v155→v157 ~06:12:59Z,
+v157→v155 ~07:12:59Z); elo_history poll-tags do NOT mark them — split on
+ladder_games.OURVER only. ODINVSSLEIP's framing updates: it measures "what was
+that hour worth" (likely the first controlled measurement of Odin anywhere),
+not "what is the holder worth".
+
+## OPEN MAGNUS QUESTION FOR THE NEXT BOOT (flagged by research, unruled)
+Does the absolute no-tools-mid-session rule cover research's tool-BUILDING
+(cluster_ci/population_diff/scale_trace were built, not fixed, before the rule
+landed)? If yes, research hands specs to the builder's wrap instead. Settle at
+a boot, not by a lane's assumption.
+
 ## QUEUE / RESEARCH STATE
 Queue ~78, ALL 47 judgment rows re-admitted vs _v468kladturbo (research's
 sweep: 4 already-shipped, 2 partially, 8 premise-dead, tallies in the tail).
