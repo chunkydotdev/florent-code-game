@@ -68242,3 +68242,40 @@ I published it as a repo-root file. **It is `docs/prereg/BARS.tsv`.** Caught by 
 ```
 **My inherited figure was "237 of 239" — directionally right, numerically STALE; the registry grew.** ✅ **The s47 `V140VS152` amendment is visible (the 100.0 is gone, a 50.00 present) — THAT ITEM IS CLOSED.**
 ⭐ **And this sharpens item 1: 250 rows ALREADY carry `ge-51.33`.** If new Sleipnir-controlled registrations inherit that default, the registry silently becomes *"must beat our champion by 9.2 Elo"* — **which may be what Magnus wants, but it would arrive as a SIDE-EFFECT rather than a decision, and nobody has proposed it to him.**
+
+--- 2026-08-17T04:45:23Z ⭐⭐ **RESEARCH s48 — THE RE-ADMISSION SWEEP IS COMPLETE. 47/47 JUDGMENT ROWS DISPOSITIONED AGAINST `_v468kladturbo`; 17 ROWS STAMPED IN `QUEUE.md`.** This closes s47's carry-forward *"ZERO queue rows have been checked against the live control."* ---
+
+**Four `opus` agents, announced before spawn, all completed, all relayed. Method published before results (note above, 04:26:53Z).**
+
+```
+ALREADY-SHIPPED            4   #9  #18  #50  #63
+PREMISE-DEAD               7   #16 #24  #33  #44  #62  #66  #89   (two are "blocker only — plank open")
+STILL-OPEN                 5   #6  #13  #38  #40  #60
+ANCHOR-MOVED-ROW-STANDS   31
+UNRESOLVED                 0
+```
+
+## ⭐⭐ THE STRUCTURAL FACT THAT MAKES THE REST OF THE SWEEP CHEAP
+`diff` of `doctrine.py` between the two incumbents is **ONE HUNK — `@@ -1684,3 +1684,202 @@`, a PURE APPEND.** Lines 1-1683 are **byte-identical**, so **every `doctrine.py:NNN` constant citation in the queue carries its old line number unchanged and NO constant VALUE moved** (`CPU_BUDGET_US 8000`, `LOKI_EXILE_PENALTY 24`, `LOKI_QUIET_ON True`, `NOISE_ON True`, `SURGE_* `, `LOKI2_RUSH_*` — all unchanged). `raid.py`'s entire delta is a **semantics-preserving LOKI-TURBO perf refactor**. ⇒ **ALL behavioural drift is confined to `main.py`/`eco.py` and it is exactly three things: the T4 block, `LOKI-SAMESTOP` (#50), and `BODYAWARE` (#63). That is the whole re-admission surface.**
+
+## THE FOUR SAVED LEGS, which is the sweep's entire value
+* **#50** — a prereg off it **rebuilds the incumbent** (`LOKI_SAMESTOP_ON = True`, `doctrine.py:1873`, in a block headed `LOKI-SAMESTOP (QUEUE #50)`).
+* **#9** — the proposed A/B has an arm that **IS** the incumbent; EXILE has no ON flag and returns before FERRY is reached.
+* **#24** — `BOTH0` vs `LAUNCH0`, "the pair that matters", are **identical arms** in any game ending before r160 (`LAUNCHER_MIN_RND = 160`).
+* **#44** — the mechanism it banked as resolved **no longer exists**, and its "zero TLEs" is contradicted by the incumbent's own header (**1,102 builder TLEs / 61% of builder turns on midgard**, `eco.py:29-31`).
+
+## ⭐⭐ THE HIGHEST-VALUE SINGLE CORRECTION, BECAUSE IT MAKES TWO ROWS CHEAPER RATHER THAN DEAD
+**"The comms store is FULL / FREE SLOTS: NONE" is FALSE, and was false in `_v223sealrepair` too.** `SLOT_DEFEND_BEAT = 13` (`doctrine.py:959`) is **defined and never read or written** — 0 `DEFEND_BEAT` hits outside `doctrine.py` in either tree, 0 raw-integer `read_store(`/`write_store(` calls anywhere. **The enumeration that produced "all 16 bound" counted DEFINITIONS, NOT USES.** Driven control: the other 15 slots all show live traffic (`SLOT_HARVESTERS` 12 uses … `SLOT_ROLE_N` 2). ⇒ **one free slot exists**, with precedent for reclaiming a dead one at `doctrine.py:944,954`. **#16's forced reshaping was not forced; #66's design cost evaporates.**
+
+## SOURCE-LEVEL DEFECTS FOUND, ROUTED TO THE BUILDER'S TREE-TOUCH LIST
+* **`eco.py:471` says *"eight to one on titanium"* and the ratio is FOUR to one** (undoing 2 damage costs us 0.5 Ti against the 2 Ti they spent). **This comment is the ORIGIN that re-seeds the error into every row that greps it.**
+* **`raid.py:782-784`** still asserts `get_attackable_tiles_from` *"has ZERO call sites anywhere in this tree"* and is **contradicted four lines below itself** (`raid.py:788`).
+
+## ⚠ MY OWN INSTRUMENT'S ERROR RATE, PUBLISHED
+The mechanical pre-pass I ran before the agents **over-reports GONE on hoists**: three of its flags were false alarms, all refactors rather than removals — `#45`'s `elif et in (GUNNER, SENTINEL` → `elif et in TURRET_TYPES:` (`raid.py:634`); `#83`'s `prio = {` → the hoisted module dict `TURRET_PRIO` (`main.py:50-57`); `#75`'s `out = t.add(ct.get_direction(bid))` → a rewrite, with `get_direction(bid)` surviving at `eco.py:1030,1135`. **A content-match against the new tree cannot distinguish a deletion from a rename. Treat its GONE list as a PRIORITISER, never as a finding** — which is exactly why the agents were told to verify it rather than consume it.
+
+## ⛔ WHAT IS **NOT** DONE, SO NOBODY INHERITS IT AS DONE
+**The 28 MECHANICALLY-CLEAN rows are NOT re-admitted.** "Every cited anchor still present and unchanged" means *the symbols this row names still exist with the same values* — **it does NOT mean the plank is unbuilt, because new code can implement a plank without touching any constant the row happened to cite.** They still owe the positive-direction check (does the NEW code do the thing?). **The 28: #5 #10 #12 #25 #26 #27 #34 #35 #37 #42 #47 #49 #54 #55 #56 #61 #65 #67 #68 #70 #71 #74 #77 #78 #79 #81 #87 #88.** `#21`/`#22`/`#23`/`#78` remain held out at the builder's request pending the gunner study.
+
+## ⚠ INSTRUMENT OBSERVATION, ROUTED TO THE BUILDER AS A TOOL ASK
+`queue_check` still reports **72 unblocked** after this sweep — **it has no notion of ALREADY-SHIPPED or PREMISE-DEAD, so the count is inflated by 4 shipped rows and 7 dead premises.** ⇒ **the floor alarm cannot see the failure mode the sweep just found.** Same family as s47's finding that its stale-GREP count is a lower bound, not a census. **Depth remains an unreliable health signal; the dispositions above are the real state.**
