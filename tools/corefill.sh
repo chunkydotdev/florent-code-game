@@ -46,8 +46,11 @@
 #   ADD     : append a line to the worklist. It is picked up within POLL_S.
 #   REMOVE  : delete an UNSTARTED line. Started shards are unaffected by edits
 #             (deleting a running item's line does NOT stop it -- see CANCEL).
-#   CANCEL  : `touch scratchpad/corefill_cancel/<SHARD>` -> that shard is killed
-#             at the next poll and marked cancelled. Its rows are KEPT.
+#   CANCEL  : `touch $CANCELDIR/<SHARD>` (default scratchpad/corefill_cancel)
+#             -> that shard is killed at the next poll and marked cancelled: the
+#             `.started` file gets a `cancelled <ts>` line AND the shard's
+#             `<SHARD>.heartbeat` is stamped `CANCELLED` in the SAME action as
+#             the kill (see cancel_shard below). Its rows are KEPT.
 #   PAUSE   : `touch scratchpad/COREFILL_STOP` -> launches nothing further;
 #             running shards continue. Delete the file to resume.
 #   STATUS  : tools/corefill_status.sh
@@ -66,6 +69,12 @@ POLL_S=${POLL_S:-60}
 LOAD_CEIL=${LOAD_CEIL:-11.0}
 LOG=${LOG:-scratchpad/corefill.log}
 STATE=${STATE:-scratchpad/corefill_started}
+# CANCELDIR is env-overridable for the same reason OUT is: a hardcoded path
+# makes an isolated selftest impossible, and a cancel path that cannot be
+# exercised in isolation cannot be driven to both verdicts. (The sibling
+# runners already do this — tools/overnight_pool26.sh:96.)
+CANCELDIR=${CANCELDIR:-scratchpad/corefill_cancel}
+KILL_WAIT_S=${KILL_WAIT_S:-20}   # how long to wait for the corpse before stamping
 
 mkdir -p $OUT $STATE
 # DEADLINE_H=0 means NO DEADLINE. Added 2026-08-13 (s35) after Magnus asked
@@ -83,6 +92,96 @@ else
 fi
 
 say(){ print -r -- "$(date -u +%Y-%m-%dT%H:%M:%SZ) $*" | tee -a $LOG }
+
+# ---- CANCEL: THE KILL AND THE TERMINAL HEARTBEAT ARE ONE ACTION -------------
+# ⛔ ADDED 2026-08-17 (s50) ON THE SIDE LANE'S D28 FLAG. The cancel path killed
+# the runner and stamped NOTHING. A killed runner cannot stamp its own exit --
+# `overnight.sh` writes COMPLETE only on its own clean return (tools/overnight.sh:223)
+# -- so `<shard>.heartbeat` kept whatever the last live cycle wrote, which is
+# `RUNNING`, FOREVER. Measured tonight: RINGLADDER was cancelled at
+# 2026-08-17T20:43:25Z (scratchpad/corefill.log) and its heartbeat still read
+# `20:43:23Z 459 5400 RINGLADDER RUNNING` with no process behind it, as did
+# SALTRAY's from 19:13:13Z.
+#
+# WHY THAT MATTERS RATHER THAN BEING UNTIDY: every reader that gates on the
+# heartbeat STATE -- tools/fleet_dispatch.py:825 (which deliberately prefers
+# heartbeat CONTENT over the .COMPLETE marker), tools/corefill_status.sh:65,
+# tools/remote_cancel.py's FRESH check -- sees a live shard that does not exist.
+# Only the AGE saves them, and age is exactly what a reader with a generous
+# stale window forgives. A cancelled shard and a running shard were
+# byte-identical in the field that names the state.
+#
+# ⭐ THE STAMP IS BOUND TO THE KILL, NOT ADDED BESIDE IT. cancel_shard() does
+# both and the cancel loop calls nothing else, so there is no separate "and then
+# mark it" step for a future edit to skip. This repo has the receipts on
+# separable steps.
+#
+# ⛔ IT WAITS FOR THE CORPSE BEFORE STAMPING. zsh finishes the running FOREGROUND
+# command before acting on SIGTERM, so a runner inside `fcode run` can write ONE
+# MORE `RUNNING` line after the kill lands -- stamping first would be overwritten
+# by the very process we just killed. So: TERM, poll the process table, escalate
+# to KILL, and stamp only once it is gone. If it will not die, the heartbeat is
+# LEFT ALONE and the refusal is logged: a process we cannot see die is not one we
+# may declare dead.
+#
+# ⛔ IT NEVER CLOBBERS A TERMINAL STATE. A shard that reached COMPLETE (or
+# ABORTED_*) before the flag was noticed has already told the truth; rewriting
+# that as CANCELLED would destroy a real result. Only STARTING/RUNNING -- the two
+# states a kill can strand -- are rewritten. A heartbeat that does not exist is
+# not invented: a shard cancelled before it ever launched never ran.
+#
+# ⛔ THE LIMIT OF THE CORPSE CHECK, MEASURED WHILE BUILDING THIS AND NOT GUESSED.
+# `ps ax -o command= | grep "$RUNNER_PAT <shard> "` matches ANY process whose
+# argv merely CONTAINS that string -- including a shell that was handed the
+# invocation as a quoted argument. In the fixture for this fix the runner was
+# SIGKILLed (its heartbeat froze at the escalation instant, proving the signal
+# landed) while `ps` kept matching for the whole window, because the enclosing
+# shell's own argv quoted the command. That is the SAME hazard guard 5 below
+# documents (it needed an ancestry test AND an argv-shape test for exactly this
+# reason), and it is NOT the zombie/unreaped-child story it first looks like:
+# the killed process was gone from `ps` immediately.
+# ⇒ WHICH WAY IT FAILS: a false ALIVE leaves the heartbeat as it was, i.e. it
+# degrades to the old behaviour and shouts a STILL ALIVE line into the log; it
+# never invents a CANCELLED for a shard that is still running. Fail-safe in the
+# direction that keeps the shard's own writer authoritative.
+runner_alive() {
+  ps ax -o command= 2>/dev/null | grep -q "$RUNNER_PAT $1 "
+}
+cancel_shard() {
+  local csh=$1 hb=$OUT/$1.heartbeat
+  local -a f
+  local st waited=0 alive=0 TAB=$'\t'
+  if runner_alive $csh; then
+    say "CANCEL $csh -- killing on request. Partial rows are KEPT and remain readable."
+    pkill -f "$RUNNER_PAT_PKILL $csh " 2>/dev/null
+    while (( waited < KILL_WAIT_S )); do
+      runner_alive $csh || break
+      (( waited == 5 )) && pkill -9 -f "$RUNNER_PAT_PKILL $csh " 2>/dev/null
+      sleep 1; waited=$(( waited + 1 ))
+    done
+    if runner_alive $csh; then
+      alive=1
+      say "  $csh: STILL ALIVE ${waited}s after TERM+KILL -- heartbeat LEFT UNTOUCHED (a process we cannot see die is not dead)"
+    else
+      say "  $csh: runner gone after ${waited}s"
+    fi
+  else
+    say "CANCEL $csh -- no matching runner process; stamping the heartbeat terminal anyway."
+  fi
+  (( alive )) && return 0
+  if [[ ! -f $hb ]]; then
+    say "  $csh: no heartbeat file at $hb -- nothing to stamp (never launched?)"
+    return 0
+  fi
+  IFS=$TAB read -rA f < $hb
+  st=${f[5]:-UNPARSEABLE}
+  if [[ $st != STARTING && $st != RUNNING ]]; then
+    say "  $csh: heartbeat already terminal ($st) -- left as it is"
+    return 0
+  fi
+  print -r -- "$(date -u +%Y-%m-%dT%H:%M:%SZ)${TAB}${f[2]:-0}${TAB}${f[3]:-0}${TAB}$csh${TAB}CANCELLED" > $hb
+  say "  $csh: heartbeat $st -> CANCELLED at ${f[2]:-?}/${f[3]:-?}"
+}
 
 # ---- guard 5: ONE RUNNER PER WORKLIST -------------------------------------
 # ⛔ ADDED 2026-08-15. Guards 1-4 all protect a SHARD from being started twice;
@@ -169,13 +268,10 @@ while true; do
   fi
 
   # ---- live control: cancel + pause, checked before any launch decision ----
-  if [[ -d scratchpad/corefill_cancel ]]; then
-    for cf in scratchpad/corefill_cancel/*(N); do
+  if [[ -d $CANCELDIR ]]; then
+    for cf in $CANCELDIR/*(N); do
       csh=${cf:t}
-      if ps ax -o command= 2>/dev/null | grep -q "$RUNNER_PAT $csh "; then
-        say "CANCEL $csh -- killing on request. Partial rows are KEPT and remain readable."
-        pkill -f "$RUNNER_PAT_PKILL $csh " 2>/dev/null
-      fi
+      cancel_shard $csh                       # kill AND terminal heartbeat, one action
       print -r -- "cancelled $(date -u +%Y-%m-%dT%H:%M:%SZ)" >> $STATE/$csh
       rm -f $cf
     done

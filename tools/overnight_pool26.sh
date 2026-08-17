@@ -45,7 +45,14 @@ T=$'\t'      # REAL tab. `print -r` does NOT interpret \t in zsh, and a
 # below: a hardcoded path makes an isolated selftest impossible.
 check_cancel() {
   [[ -e "$CANCELDIR/$SHARD" ]] || return 1
-  print -r -- "$(date -u +%Y-%m-%dT%H:%M:%SZ) CANCEL $SHARD: marker present at $CANCELDIR/$SHARD, stopping at $n/$TARGET (rows kept)"
+  # ⛔ STAMP THE HEARTBEAT HERE, NOT AT THE CALL SITE (s50, 2026-08-17). The call
+  # site is `check_cancel && exit 0`, so a runner that self-cancelled exited with
+  # its last cycle's `RUNNING` line still on disk and NOTHING ever rewrote it --
+  # the same defect the side lane flagged in corefill.sh's kill path. Binding the
+  # write to the detection means every path that stops on this marker is terminal
+  # by construction; a separate line after the call is a line that gets skipped.
+  print -r -- "$(date -u +%Y-%m-%dT%H:%M:%SZ)${T}$n${T}$TARGET${T}$SHARD${T}CANCELLED" > $HB
+  print -r -- "$(date -u +%Y-%m-%dT%H:%M:%SZ) CANCEL $SHARD: marker present at $CANCELDIR/$SHARD, stopping at $n/$TARGET (rows kept, heartbeat CANCELLED)"
   return 0
 }
 
@@ -54,14 +61,21 @@ if [[ "${1:-}" == "--selftest" ]]; then
   FIX=$(mktemp -d)
   SHARD=SELFTESTSHARD
   CANCELDIR="$FIX/cancel"
+  HB="$FIX/$SHARD.heartbeat"
   n=42; TARGET=100
   mkdir -p "$CANCELDIR"
+  # The heartbeat starts where a LIVE runner leaves it: RUNNING.
+  print -r -- "2026-01-01T00:00:00Z${T}$n${T}$TARGET${T}$SHARD${T}RUNNING" > $HB
 
   # Case 1: marker ABSENT -> check_cancel returns 1, prints nothing (loop continues)
   rm -f "$CANCELDIR/$SHARD"
   out1=$(check_cancel); rc1=$?
   (( rc1 == 0 )) && { print "FAIL: absent marker triggered cancel"; fail=1; }
   [[ -z $out1 ]] || { print "FAIL: absent marker printed a line ($out1)"; fail=1; }
+  # ...and the heartbeat is UNTOUCHED. A stamp that fires without the marker
+  # would kill a live shard's status on every loop iteration, so this half of
+  # the guard matters exactly as much as the other.
+  grep -q "RUNNING" $HB || { print "FAIL: absent marker rewrote the heartbeat ($(cat $HB))"; fail=1; }
 
   # Case 2: marker PRESENT -> check_cancel returns 0 with a dated CANCEL line
   : > "$CANCELDIR/$SHARD"
@@ -69,9 +83,15 @@ if [[ "${1:-}" == "--selftest" ]]; then
   (( rc2 == 0 )) || { print "FAIL: present marker did not trigger cancel"; fail=1; }
   print -r -- "$out2" | grep -q "CANCEL $SHARD" || { print "FAIL: cancel line missing shard/CANCEL text ($out2)"; fail=1; }
   print -r -- "$out2" | grep -qE '^[0-9]{4}-[0-9]{2}-[0-9]{2}T[0-9]{2}:[0-9]{2}:[0-9]{2}Z ' || { print "FAIL: cancel line not dated ($out2)"; fail=1; }
+  # ...and the heartbeat is now TERMINAL, dated, and still carries the progress.
+  grep -q "${T}$SHARD${T}CANCELLED\$" $HB || { print "FAIL: heartbeat not stamped CANCELLED ($(cat $HB))"; fail=1; }
+  grep -q "RUNNING" $HB && { print "FAIL: heartbeat still reads RUNNING after cancel ($(cat $HB))"; fail=1; }
+  grep -qE '^[0-9]{4}-[0-9]{2}-[0-9]{2}T[0-9]{2}:[0-9]{2}:[0-9]{2}Z' $HB || { print "FAIL: cancelled heartbeat not dated ($(cat $HB))"; fail=1; }
+  grep -q "2026-01-01T00:00:00Z" $HB && { print "FAIL: cancelled heartbeat kept the OLD timestamp ($(cat $HB))"; fail=1; }
+  grep -q "${T}$n${T}$TARGET${T}" $HB || { print "FAIL: cancelled heartbeat lost the progress fields ($(cat $HB))"; fail=1; }
 
   rm -rf "$FIX"
-  (( fail == 0 )) && print "SELFTEST PASS (cancel marker both ways)" || print "SELFTEST FAIL"
+  (( fail == 0 )) && print "SELFTEST PASS (cancel marker both ways; heartbeat untouched / CANCELLED both ways)" || print "SELFTEST FAIL"
   exit $fail
 fi
 

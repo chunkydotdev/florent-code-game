@@ -880,7 +880,16 @@ def reconcile(rows: list[Row]) -> int:
         if st == "COMPLETE":
             r.state, r.note = "DONE", f"COMPLETE age={age}s in {Path(where).name}"
             changed += 1
-        elif st in ("ABORTED_NOWINNER",):
+        elif st in ("ABORTED_NOWINNER", "CANCELLED"):
+            # ⛔ CANCELLED ADDED 2026-08-17 (s50) WITH THE STATE ITSELF. Until
+            # tonight a cancelled shard's heartbeat kept reading RUNNING forever
+            # (corefill.sh killed the runner and stamped nothing), so this
+            # reader only ever retired it via the STALE branch below — hours
+            # late and under a note that says "never relaunched" rather than
+            # "someone stopped it". Now that corefill stamps CANCELLED, an
+            # unlisted state would sail past EVERY branch here and leave the row
+            # RUNNING forever: a new terminal state is a change to this function
+            # whether or not anyone edits it.
             r.state, r.note = "FAILED", f"{st} age={age}s in {Path(where).name} — logged and LEFT"
             changed += 1
         elif st in ("RUNNING", "STARTING", "CURFEW", "STOPPED"):
@@ -1378,6 +1387,26 @@ def selftest() -> int:
         fresh.write_text("2026-01-01T00:00:00Z\t100\t5400\tZZLIVE\tRUNNING\n")
         st2, age2 = _terminal_in(d, "ZZLIVE")
         chk("- a fresh RUNNING heartbeat is NOT stale", age2 < HB_FRESH_S, True)
+
+        # ⛔ THE BITING CELL FOR THE NEW `CANCELLED` STATE (s50): a cancelled
+        # shard's heartbeat is FRESH — corefill stamps it in the same second it
+        # kills the runner — so the stale branch cannot retire it and an
+        # unlisted state would leave the row RUNNING forever. Both ways: the
+        # cancelled row must go FAILED, the live row must stay RUNNING.
+        canc = d / "ZZCANC.heartbeat"
+        canc.write_text("2026-01-01T00:00:00Z\t459\t5400\tZZCANC\tCANCELLED\n")
+        st3, age3 = _terminal_in(d, "ZZCANC")
+        chk("+ a CANCELLED heartbeat reads CANCELLED and is FRESH",
+            (st3, age3 is not None and age3 < HB_FRESH_S), ("CANCELLED", True))
+        _saved_out = globals()["LOCAL_OUT"]
+        try:
+            globals()["LOCAL_OUT"] = d
+            rows = [_row("ZZCANC", st="RUNNING", h=LOCAL), _row("ZZLIVE", st="RUNNING", h=LOCAL)]
+            reconcile(rows)
+            chk("+ a fresh CANCELLED heartbeat retires the row", rows[0].state, "FAILED")
+            chk("- a fresh RUNNING heartbeat does NOT", rows[1].state, "RUNNING")
+        finally:
+            globals()["LOCAL_OUT"] = _saved_out
 
     print("── G2  BLIND IS NOT IDLE ─────────────────────────────────────────────")
     good = ("host: ws1   utc: 2026-08-15T09:00:00Z   NPROC: 16\n"

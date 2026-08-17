@@ -47,7 +47,14 @@ T=$'\t'      # REAL tab. `print -r` does NOT interpret \t in zsh, and a
 # (identical function, same fix applied to this tiny3 variant).
 check_cancel() {
   [[ -e "$CANCELDIR/$SHARD" ]] || return 1
-  print -r -- "$(date -u +%Y-%m-%dT%H:%M:%SZ) CANCEL $SHARD: marker present at $CANCELDIR/$SHARD, stopping at $n/$TARGET (rows kept)"
+  # ⛔ STAMP THE HEARTBEAT HERE, NOT AT THE CALL SITE (s50, 2026-08-17). The call
+  # site is `check_cancel && exit 0`, so a runner that self-cancelled exited with
+  # its last cycle's `RUNNING` line still on disk and NOTHING ever rewrote it --
+  # the same defect the side lane flagged in corefill.sh's kill path. Binding the
+  # write to the detection means every path that stops on this marker is terminal
+  # by construction; a separate line after the call is a line that gets skipped.
+  print -r -- "$(date -u +%Y-%m-%dT%H:%M:%SZ)${T}$n${T}$TARGET${T}$SHARD${T}CANCELLED" > $HB
+  print -r -- "$(date -u +%Y-%m-%dT%H:%M:%SZ) CANCEL $SHARD: marker present at $CANCELDIR/$SHARD, stopping at $n/$TARGET (rows kept, heartbeat CANCELLED)"
   return 0
 }
 
