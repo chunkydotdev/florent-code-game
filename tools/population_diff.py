@@ -43,11 +43,22 @@ an explicit file list), it reports for each side:
 
 and then, loudly, the dimensions where overlap is low.
 
-⛔ IT DOES NOT TELL YOU WHETHER YOUR COMPARISON IS VALID.  It tells you what
-differs.  A dimension with low overlap is a candidate confound, not a verdict --
-and a dimension with HIGH overlap is not a clean bill of health either, because
-this tool only knows the four dimensions it was taught.  ** The output is a
-prompt to think, not a substitute for it. **
+⛔ IT DOES NOT TELL YOU WHETHER YOUR COMPARISON IS VALID, AND IT HAS NO OUTPUT
+MODE THAT SAYS SO.  On a clean run it prints the numbers and the moved keys and
+stops -- no summary, nothing quotable as a pass.  A TOOL THAT CANNOT CERTIFY
+SHOULD HAVE NO CERTIFYING OUTPUT MODE, which is `cluster_ci`'s rule applied
+here: that one refuses a VERDICT below 30 clusters; this one can never earn a
+clean verdict at all, because it knows four dimensions and the world has more.
+
+Two further limits, both structural:
+  * OVERLAP IS NOT CONFOUND MAGNITUDE.  A 0.90 overlap whose disagreeing 10%
+    sits on a high-leverage key beats a 0.60 overlap spread over trivial ones.
+    The quantity that matters is `overlap x leverage` and this tool sees only
+    the first half -- leverage needs the outcome, which is the thing you are
+    trying to measure.  So it prints WHICH keys moved and by how much share:
+    a domain-aware reader can price those, and cannot price a scalar.
+  * IT KNOWS FOUR DIMENSIONS.  Space, time-of-day, CPU load and anything else
+    are invisible to it.
 
 ------------------------------------------------------------------------------
 USAGE
@@ -124,6 +135,28 @@ def report(A, B, la, lb):
         mark = "  " if s >= LOW_OVERLAP else "**"
         print(f"\n{mark} {label}: keys {len(ca)} vs {len(cb)}   "
               f"Jaccard {j:.2f}   SHARE-OVERLAP {s:.2f}")
+        # ⛔ ALWAYS PRINT THE KEYS THAT MOVED, NOT ONLY THE SCALAR.
+        #
+        # The side lane's objection, and it is the one that makes the scalar
+        # dangerous rather than merely incomplete: OVERLAP MEASURES POPULATION
+        # SIMILARITY, NOT CONFOUND MAGNITUDE.  A 0.90 overlap whose disagreeing
+        # 10% sits on a HIGH-LEVERAGE key can move an estimate more than a 0.60
+        # overlap spread over low-leverage ones.  The quantity that matters is
+        # `overlap x leverage` and this tool can only see the first half --
+        # leverage needs the outcome, which is exactly what you are trying to
+        # measure.
+        #
+        # ⇒ so it must not IMPLY it has priced leverage.  It prints WHICH keys
+        # moved and by how much share, because a domain-aware reader CAN price
+        # them: "is that the map my mechanism lives on?" is answerable from a
+        # key list and unanswerable from a scalar.
+        ta, tb = sum(ca.values()), sum(cb.values())
+        gaps = sorted(((abs(ca[k] / ta - cb[k] / tb), k) for k in set(ca) | set(cb)),
+                      reverse=True)
+        shown = [f"{k}({ca[k] / ta:.2f}->{cb[k] / tb:.2f})" for g, k in gaps[:8] if g > 0.005]
+        if shown:
+            print(f"     biggest share moves: {', '.join(shown)}"
+                  + (" ..." if len(gaps) > 8 else ""))
         only_a = sorted(set(ca) - set(cb))
         only_b = sorted(set(cb) - set(ca))
         if only_a:
@@ -141,11 +174,27 @@ def report(A, B, la, lb):
         print("   the dimension rather than the variable you meant to study.")
         print("   For MAP, --common-maps gives the repair; for the others, restrict or")
         print("   stratify before quoting any contrast.")
-    else:
-        print("   No dimension below the overlap convention.")
-    print("   ** This tool knows FOUR dimensions. High overlap on all of them is not a")
-    print("      clean bill of health -- it is the absence of the confounds it was")
-    print("      taught. The output is a prompt to think, not a substitute for it. **")
+    # ⛔⛔ THERE IS DELIBERATELY NO "CLEAN" BRANCH HERE.
+    #
+    # The first version printed "No dimension below the overlap convention" on a
+    # clean run, plus a disclaimer saying that was not a clean bill of health.
+    # The side lane pointed out that this is the very failure this repo banked
+    # hours earlier -- "an honest disclaimer feels like diligence and can
+    # substitute for the looking that would have removed the need for it" -- and
+    # that the argument against it is `cluster_ci`'s own:
+    #
+    #     A TOOL THAT CANNOT CERTIFY SHOULD HAVE NO CERTIFYING OUTPUT MODE.
+    #
+    # `cluster_ci` refuses a VERDICT below 30 clusters.  This tool can NEVER
+    # earn a clean verdict, because it knows four dimensions and the world has
+    # more.  So it refuses one ALWAYS: the numbers and the moved keys are the
+    # output, and there is no summary line for a reader to quote as a pass.
+    #
+    # The author's own failure is the argument: I corrected for maps, believed
+    # I was done, and the tool then found OPPONENT and OPP-VERSION at the same
+    # overlap.  Had a four-dimension tool printed "no dimension flagged" that
+    # day, I would have stopped looking -- and there is no fifth-dimension
+    # checker to catch that one.
     return 1 if flagged else 0
 
 
