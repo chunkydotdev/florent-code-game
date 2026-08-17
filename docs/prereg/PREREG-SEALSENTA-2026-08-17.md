@@ -523,3 +523,22 @@ incumbent is gate 1; gate-1-to-gate-2 transitivity is UNVALIDATED in this repo
 ---
 
 **PROVENANCE:** `docs/research/PREREG-amendments-and-lock-obligations-2026-08-09.md` (read in full: OB7, OB12, OB13, OB14, OB15a/b/c, OB16 + its corollary and cross-host rider, OB17 + its rider) · `docs/prereg/PREREG-KLADLADDER-2026-08-17.md` (today's house style, read in full) · `docs/prereg/PREREG-SEALSENTAN-2026-08-17.md` (this leg's contrast arm, drafted in the same pass) · `docs/prereg/BARS.tsv` (registry header, the FIRINGS-BEFORE-PRIMARY rule, and the sibling klad/sealsent-family rows) · `CLAUDE.md` · `tools/prereg_check.py` (read for `RULES`, `check_presence`, `check_arithmetic`, `check_metric_window`, `check_pool_era`) · `tools/auto_gate.py` (`MARK_CATASTROPHE=400`, `MARK_MID=1000`, `MARK_HALF=2700`, `CATASTROPHE_CI_HI=45.0`, `TREND_FLOOR=52.0`, and the `:113` remote report-only limitation) · `tools/overnight.sh` (`:66` the 15-map pool, `:99-101` the `# FIXTURE … start=` stamp, `:105` the legacy-resume form, `:138-139` `--replay /dev/null`) · `tools/dose.py` (`:110-116` argparse, `:126-131` map/seat rotation, `:157` the replay unlink, `:80-105` the decoder, `:171-205` the paired band) · `tools/fwd_read.py` (docstring + `:191-208` decode output columns) · `tools/corpus/replay_events.py` (`:56`, `:95-96`, `:113-117`, `:157`) · `bots/_v474sealsentA/doctrine.py` · `bots/_v474sealsentA/raid.py` · `bots/_v474sealsentA/eco.py` · `bots/_v474sealsentA/main.py` · `bots/_v481sealsentAnofund/doctrine.py` · `bots/_v468kladturbo/{doctrine,eco,main,raid}.py` · `scratchpad/corefill_work.txt` · `scratchpad/CONTROL_PIN` · `results.tsv` (rows `null125-final`, `idnull140-cert-5400`, `kladturbo-local-confirm-5400`, `kladladder-manual-catastrophe-stop`, `kladladder-verdict-amendment-f1f2-pending`, `kladladder-final-attribution`, `kladladder-n-final-correction`) · git commits `493df130` and `aba27582` and `git diff --name-only 493df130^ 493df130` · the drafting brief supplied by the builder lane s48 and its mid-task correction consumed from the side lane. No file under `bots/`, `tools/`, `scratchpad/`, `docs/prereg/BARS.tsv`, `results.tsv`, `HANDOVER.md`, `PROGRAMME.md` or `QUEUE.md` was created or modified by this agent, and no game was run.
+
+---
+
+## AMENDMENT 1 (builder s48, 2026-08-17T05:48:46Z, BEFORE the leg's first game — surface change LOCAL → worker@work-server-1)
+
+The registered LOCAL-ONLY routing cited auto_gate.py:113 (remote = report-only,
+floors cannot bind) as its reason. **That reason died one hour after lock:**
+commit a50f27ef gives auto_gate --apply a guarded remote stop path
+(tools/remote_cancel.py), so the strict floors NOW BIND on ws1. Meanwhile the
+local box is load-held (agent work; the load ceiling correctly protects row
+validity — wall-clock TLE corruption is load-sourced regardless of cause), so
+LOCAL routing would idle both arms indefinitely against Magnus's iterate
+directive. CHANGES: host = worker@work-server-1 (seed offset +32,000,000 per
+the sidecar; registered seedbases unchanged); second clock = first-completed-row
+/ serial-ordering backstop (remote tapes carry no FIXTURE stamp — the registered
+backstop, now primary); host certification = NULLWS1S (this host, TODAY,
+54.25 [49.37,59.13] n=400, collision/sanity scope as pre-committed). Everything
+else — bars, bands, contrast, stops semantics, FIRINGS-BEFORE-PRIMARY —
+unchanged. Local worklist rows retired with pointers here.
