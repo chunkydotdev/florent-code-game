@@ -221,7 +221,16 @@
     on "already decided" — decided is the rule, not the mechanism. (Side
     lane s48 audit of the a50f27ef path.)
 
-23. **corefill.sh:310 shell error on the empty-worklist path** — after the s48
+23. **remote_cancel relaunch race** — the stop-poison-RELAUNCH cycle picks the
+    next serial worklist row immediately, which launched SEALSENTA in the
+    window between its sibling's clause-firing and the operator decision its
+    prereg required (240 games burned, cancelled, disclosed on the row).
+    Fix shape: before relaunching, check whether the next row's prereg carries
+    a fired sibling-clause (asymmetric-stop) and poison it instead of
+    launching; or a HOLD marker the operator can set pre-cancel. Drive both
+    ways. (s48, first live firing.)
+
+24. **corefill.sh:310 shell error on the empty-worklist path** — after the s48
    re-pin, the runner printed "COREFILL done." then
    `tools/corefill.sh:310: command not found: SH:-` / `= not found` (looks like
    a `${SH:-...}` parsed under the wrong shell). Loop-relevant only if it
