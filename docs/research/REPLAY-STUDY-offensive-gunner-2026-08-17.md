@@ -502,6 +502,21 @@ economy shredder. Nothing in the v94 tape argues against building the shredder;
 the tape argues that we have never built one.** (And the sentinel we substituted
 is the wrong turret for the belt — see §6.)
 
+⚠ **TWO TREE-HISTORY QUESTIONS THIS STUDY RAISED AND DID NOT CLOSE.** Both are
+code archaeology, not replay work, and both were commissioned but had not landed
+when this report was banked. **Neither is a blocker for the spec; both change how
+the first leg should be built.**
+1. **Was the v116→v140 quality-over-quantity trade deliberate?** Research
+   measured in-band share 0.305-0.345 with conversion 0.38-0.71 at v102-v116, then
+   share collapsing to 0.118-0.143 while conversion tripled to 1.50-1.97. If a
+   named gate caused that, raising volume back without keeping the gate
+   **re-imports the bad conversion.** §7.2's "reject any (T,d) scoring 0" is the
+   guard that should carry it either way.
+2. **Why is our first in-band plant late in EVERY era (r56-85 vs the field's
+   r37)?** Version-stable lateness points at opening sequencing — a round gate,
+   an eco-completion prerequisite, or builder allocation — not at the gunner code.
+   The spec's EARLY arm (§7.1) cannot be built until that knob is named.
+
 ---
 
 ## 6. COST ARITHMETIC — where the gunner is the RIGHT turret, and where it is not
