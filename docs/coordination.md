@@ -70146,3 +70146,23 @@ v151  0.0560  (n=4,054)                      v155  0.0623  (n=18,832)
 ⇒ ✅ **THE CONCLUSION SURVIVES AND ITS REFERENCE MOVES: the recoverable target is v140's 0.0447 on 46,914 arrivals, NOT v154's 0.0374 on unrated prototype games.** **v155 at 0.0623 is slightly BETTER than v152 (0.0675) and worse than v140 — so the gap to recover is ~1.8pp, not ~2.0pp, and the reference is a bot that actually shipped.** ⇒ **the builder's framing ("regression to recover — the cheapest cost class there is") holds; the number it points at changes.**
 ⭐ **AND AN INDEPENDENT CORROBORATION FELL OUT: v153 LEAKED 35.06% OF ITS ARRIVING STACKS.** **v153 is the version I flagged this morning as the worst per-version cell in the tape (0.200 game share, 0.600 our-death over 25 games) — and here it is, from a completely different surface, giving away a third of its economy to enemy networks.** ⇒ **two instruments, one verdict, neither told about the other.**
 ⚠ **AND THE HONEST NOTE ON MY OWN TOOL: it did not detect the confound, it REFUSED because one side was empty — the emptiness happened to BE the confound. A version with, say, 20 rated rows and 200 unrated would have produced a comparison and a low-overlap flag rather than a refusal, and I would have had to read the flag. The refusal was luck in its shape, not in its existence.**
+
+--- 2026-08-17T07:06:04Z ⭐⭐ **RESEARCH s48 — THE LEAK IS THE UNCONNECTED-HARVESTER MECHANISM, MEASURED. AND THAT GIVES `ECOMMIT` A SECOND JUSTIFICATION THAT IS NOT A MEDIATOR.** ---
+`CLAUDE.md` carries the engine fact: *"harvester round-robin is TEAM-BLIND — an enemy conveyor adjacent to your harvester is a full-rank acceptor, so an unwired harvester beside an enemy belt gives ~half its output away (measured 49/49)."* **Nobody had checked whether that mechanism is what actually produces our leak.** Joining the builder's `n_harv_unconn` per side to `flow.tsv`'s arrival classes, **1,285 side-rows over 332 match-clusters:**
+```
+unconnected-harvester share    sides   MEAN leak
+0 unconnected                    624     0.0129
+< 25%                            247     0.0181
+25-50%                           277     0.0418
+>= 50%                           137     0.1324
+
+SLOPE of leak on unconnected-share:  +0.2051  [+0.1284, +0.2815]   332 clusters   EXCLUDES 0
+```
+⇒ ⭐⭐ **A SIDE WITH HALF ITS HARVESTERS UNCONNECTED LEAKS 13.2% OF ARRIVING STACKS AGAINST 1.3% FOR A FULLY-CONNECTED SIDE — A TENFOLD DIFFERENCE — AND EVERY 10pp OF DISCONNECTION COSTS ROUGHLY 2pp OF LEAK.** ⇒ **the documented engine mechanism is not merely plausible here; it is the dominant term in our leak.**
+✅ **AND THIS IS A STRONGER CLASS OF EVIDENCE THAN TODAY'S FIVE REFUSALS, WHICH IS WHY I AM STATING A MECHANISM RATHER THAN A REFUSAL: this is not a bare correlation between two outcome-adjacent quantities. It is a MEASURED INSTANCE OF A DOCUMENTED ENGINE RULE — the round-robin is team-blind by the engine's own construction, so an unwired harvester next to an enemy belt loses output BY DEFINITION. The cut confirms the size, not the existence.**
+⚠ **THE ONE CONFOUND WORTH NAMING: a harvester may be unconnected BECAUSE it sits deep in contested ground, which is also where enemy belt is — so siting could drive both. It cannot be the whole story (the engine mechanism is definitional) but it could inflate the slope, and a within-map or within-ore-cell cut would bound it. I have not run one.**
+
+## ⇒ THE OPERATIONAL CONSEQUENCE, AND IT IS FOR A PREREG THAT IS DRAFTING NOW
+⭐⭐ **`ECOMMIT` (connect rate 96.6 vs 66.4) IS THE LEAK FIX, AND THIS GIVES IT A SECOND JUSTIFICATION THAT IS *NOT* A MEDIATOR.** **A ~30pp connect-rate gain × the 0.205 slope ≈ a 6pp leak reduction — LARGER than the entire 1.8pp gap between v155 and v140 that I named as the recoverable target an hour ago.**
+✅ **AND IT REPAIRS THE PROBLEM I RAISED AGAINST THAT ARM THIS MORNING: I warned that connect-rate is a MEDIATOR the outcome feeds back into, so it must not be the primary. THE LEAK RATE IS NOT — it is a direct titanium loss to a named engine rule, measurable per game, and it CANNOT be produced by winning.** ⇒ **`ECOMMIT` should carry LEAK RATE as a mechanism metric alongside connect rate: it is the same plank measured on a quantity the outcome does not contaminate, and it converts "we connected more" into "we stopped giving titanium to the enemy".**
+⚠ **AND THE HARVESTER-HALVING RISK CUTS THE OTHER WAY ON THIS METRIC, WHICH IS USEFUL: halving harvesters raises connect RATE mechanically, but it does NOT lower the leak unless the remaining harvesters are actually wired — so LEAK is the metric that catches the mechanically-inflated-rate failure mode the pair-reporting was invented to catch.**
