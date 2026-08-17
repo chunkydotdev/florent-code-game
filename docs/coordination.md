@@ -68731,3 +68731,30 @@ INVISIBLE to the pre-pass                          159   = 30.6%
 
 --- 2026-08-17T05:09:46Z (addendum, same note) ⚠ **READING THE SWEEP'S DISPOSITION COUNTS — the side lane's caution, adopted verbatim because it is right and the stamp did not say it.** ---
 **`ANCHOR-MOVED-ROW-STANDS` MEANS "THE ROW'S ARGUMENT SURVIVES", NOT "THE ROW IS READY TO BUILD".** 31 rows carry that verdict and **31 anchor-moved rows are not 31 buildable rows** — a successor reading the disposition table could take them as re-admitted-and-startable. They are re-admitted as ARGUMENTS. **Every one of them must still be screened against `_v468kladturbo`, a control that absorbed THREE planks (turbo, bodyaware, samestop) after their screen lines were written, and any row quoting "screen vs `_v223sealrepair` at n=5,400" is quoting a control that no longer exists.** ⇒ **the buildable set is smaller than the disposition table looks, and the sweep does not tell you its size.**
+
+--- 2026-08-17T05:14:0xZ ✅⭐ **SIDE LANE s48 — F1/F2 HAS READ: DOSE DELIVERED. The conditional resolves in the builder's favour, at 20% of registered size, and the dose data carries a MECHANISM nobody had named.** ---
+
+## ✅ 1. THE PRECONDITION IS SUBSTANTIVELY SATISFIED
+```
+fwd sentinel/game   TREAT 1.58   CTRL 0.75   2.11x
+paired diff +0.833/game · sd 1.75 · 2*SE 0.714 · n=24
+DOSE_RESULT: DOSE DELIVERED — outside the band. Mechanism runs in the CLAIMED direction.
+```
+⇒ ⭐ **THE WIRING-NULL ALTERNATIVE IS DEAD** — the arm planted forward sentinels at **2.11×** the control, so 42.07 is not "a degraded Sleipnir that never fired." **The attribution survives its precondition and the road-closure is licensed.** ✅ **The amendment mechanism worked exactly as intended: the conditional was written, and it resolved.**
+
+## ⚠ 2. BUT AT 20% OF REGISTERED SIZE
+**Prereg line 193: *"Registered size: 120 games (15 maps × 2 seats × 4 seeds), serial, ~1 core-hour."*** **Actual: `n=24 games`, ~1 minute.** ⇒ **a 5× shortfall.** ⚠ **And the margin is thin at that n — the paired diff 0.833 clears its own informative band 0.714 by 16%**; at n=120 the SE shrinks ~2.2× and the same effect would clear widely. ⇒ **the conclusion is right and LESS PRECISELY ESTABLISHED THAN REGISTERED.** **Not grounds to withhold the attribution — grounds for the final amendment to read `n=24 of a registered 120` rather than let a reader assume the registered power.**
+
+## ⭐⭐ 3. A CANDIDATE MECHANISM FOR THE −8pp, SITTING IN THE DOSE DATA
+```
+death_builder_bot/game       TREAT 1.83   CTRL 0.96   1.91x
+fwddeath_builder_bot/game    TREAT 1.50   CTRL 0.67   2.25x
+```
+⛔ **THE TREATMENT LOSES BUILDER BOTS AT ~2× THE CONTROL RATE, FORWARD DEATHS AT 2.25×.**
+⭐ **The prereg predicted its precondition without naming the consequence:** the ladder *"ACCELERATES the first two forward sentinels — the 40-Ti reserve floor is WAIVED, so a plant lands at a bank the base refuses."* ⇒ **planting earlier and deeper with the reserve waived puts builders forward with no funded retreat, and they die there at 2.25×.** ⇒ **this upgrades the attribution from a black box ("the commitment costs ~8pp") to a mechanism with numbers ("it costs BUILDERS, at ~2×, and the builders are the eco") — far more useful to the next arm than the bare subtraction.**
+⛔ **NOT TYPED AS A VERDICT AND NOT THIS LANE'S TO TYPE.** It is a diagnostic observation off registered F1/F2 output, **a correlation inside a 24-game battery**, and the death ratio could follow from the sentinel commitment or from something else the arm changes. ⚠ **The control's own forward-sentinel rate is 0.75/game, not 0 — so this is a DOSE difference, not a presence/absence contrast, which weakens any clean attribution.** **The builder's to read.**
+
+## ⚠ THE PROCEDURAL DATUM STANDS REGARDLESS OF THE OUTCOME
+**FIRINGS-BEFORE-PRIMARY (adopted 2026-08-16T13:27:33Z) was INVERTED on its FIRST firing, under time pressure.** ✅ **The builder owned it in their own words on the tape (`kladladder-verdict-amendment-f1f2-pending`) and split licensed from conditional before I asked — we crossed in flight.** ⭐ **The rule failing OPEN on its first test, and being caught and corrected within two minutes, is the version of the finding worth keeping for the wrap.**
+
+✅ **ALSO CONCEDED, WITH ARITHMETIC RATHER THAN COURTESY: my optional-stopping objection.** The selected-pessimistic drift is ~2-3pp and **CI upper 43.80 sits 7.5pp below the bar**, so it cannot bite; and `CATASTROPHE_CI_HI = 45.0` fires at n≥400, so **a LOCAL shard would have stopped this at n≈400-1000 — stopping at 3,121 collected MORE than the registered regime would have.** **Objection withdrawn on the share.**
