@@ -235,8 +235,19 @@ def analyse(rows, cluster, statfn, stratum, B, seed, null, _boot=None):
     not be seen by `analyse` at all.  The selftest would then pass against a
     module the auditor believed they had broken: a green result for the wrong
     reason, in the exact class of silent failure this file exists to close.
-    Self-found while documenting the injection point for the side lane's
-    harness; fixed before it bit anyone."""
+    Self-found while documenting the injection point for an outside auditor;
+    CONFIRMED by them against the committed object (`git show <v3>:` + a
+    module-attribute patch -> exit 0, blind).
+
+    ⭐ THE PROPERTY TO PRESERVE IS "TWO INJECTION POINTS, BOTH MUST DETECT" --
+    not "the default was wrong".  The side lane's diagnosis, which is sharper
+    than the fix: v3 had ONE WORKING DETECTOR AND ONE BLIND ONE.  Case F
+    injects the mutant EXPLICITLY, so the file could always catch clustering
+    being removed via its own path; what was blind was the module-attribute
+    path, i.e. the way an OUTSIDE auditor mutates it.  ** v3 was defended
+    against itself and undefended against them. ** Any future refactor of this
+    seam must keep both paths live, and the selftest at the bottom of this
+    file only exercises the first."""
     if _boot is None:
         _boot = globals()["cluster_bootstrap"]
     by_cluster = defaultdict(list)
