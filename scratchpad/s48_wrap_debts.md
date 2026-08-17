@@ -88,7 +88,17 @@
     truncate at :954 guarded by not-exists), so the positional boundary
     cannot drift. (Side lane s48.)
 
-11. **corefill.sh:310 shell error on the empty-worklist path** — after the s48
+11. **Prereg obligations boilerplate: fix the two-clock second-clock sentence** —
+    the "shard tape's `# FIXTURE start=` stamp (overnight.sh:99)" method is NOT
+    executable: remote tapes carry no FIXTURE line (0 of 84), and the heartbeat
+    START is overwritten by the first progress update (`>` not `>>`). The
+    executable substitutes: (a) first completed row (conservative — true start
+    earlier, can only overstate the gap), or (b) serial-ordering bound off the
+    preceding shard's COMPLETE. Same class as the LOKI-14 stdout lesson. Until
+    the doc is fixed, every s48 prereg brief I write carries the corrected
+    sentence inline. (Side lane s48, KLADLADDER certification.)
+
+12. **corefill.sh:310 shell error on the empty-worklist path** — after the s48
    re-pin, the runner printed "COREFILL done." then
    `tools/corefill.sh:310: command not found: SH:-` / `= not found` (looks like
    a `${SH:-...}` parsed under the wrong shell). Loop-relevant only if it
