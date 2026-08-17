@@ -17,6 +17,16 @@ SENTINEL line is never blocked. If this ever needs to match the shipped .so
 bit-for-bit, re-verify against
 docs/research/engine-source-crash-and-launcher-2026-08-10.md.
 
+⛔ DO NOT "FIX" is_in_vision BY ADDING A BOUNDS CHECK. It is deliberately a
+PURE RADIUS TEST with no bounds check, matching the engine: an OFF-MAP
+position INSIDE the vision radius returns True, and the next get_tile_* on
+that same position RAISES. That True-then-raise trap is a live hazard near map
+borders and the stub exists to reproduce it, not to soften it. Ground truth:
+CLAUDE.md:367-377 (CORRECTED s50, 2026-08-17) and
+docs/research/PROBE-DOSSIER-ferry-siege-2026-08-17.md:186-196 (probed on atoll,
+core at 2,14: is_in_vision((-1,14)) == True). The self-test drives all four
+cells (off-map in/out of radius, in-map in/out of radius).
+
 Usage:
     from tools.stub_engine import World, StubController, run_bot
     w = World(10, 10)
@@ -420,8 +430,9 @@ class StubController:
         return None
 
     def get_tile_env(self, pos: Position):
-        # LOAD-BEARING: raises off-map (see CLAUDE.md turret/debugging notes
-        # on the get_tile_* / is_in_vision asymmetry).
+        # LOAD-BEARING: raises off-map, while is_in_vision does NOT (it is a
+        # pure radius test). See CLAUDE.md:367-377 and
+        # docs/research/PROBE-DOSSIER-ferry-siege-2026-08-17.md:186-196.
         return self.world.get_terrain(pos)
 
     def get_tile_building_id(self, pos: Position) -> Optional[int]:
@@ -453,9 +464,15 @@ class StubController:
         return True
 
     def is_in_vision(self, pos: Position) -> bool:
-        # LOAD-BEARING: does NOT raise off-map, unlike get_tile_env.
-        if not self.world.in_bounds(pos):
-            return False
+        # LOAD-BEARING: the real engine's is_in_vision is a PURE RADIUS TEST with
+        # NO BOUNDS CHECK. It never raises, but an OFF-MAP position inside the
+        # vision radius returns True -- and the next get_tile_* on that same
+        # position raises GameError. That "True-then-raise" trap is why the stub
+        # must NOT bounds-check here: a bounds check would make the stub kinder
+        # than the engine and hide border bugs.
+        # Ground truth: CLAUDE.md:367-377 (CORRECTED s50, 2026-08-17) and
+        # docs/research/PROBE-DOSSIER-ferry-siege-2026-08-17.md:186-196 --
+        # probed on atoll (core at 2,14): is_in_vision((-1,14)) == True.
         me = self._self()["pos"]
         return pos.distance_squared(me) <= self._vision_sq()
 
@@ -976,20 +993,53 @@ if __name__ == "__main__":
            "sentinel can_fire_from must be True behind an obstacle AND on an "
            "empty tile -- the opposite verdict from the gunner on both")
 
-    # -- get_tile_env raises off-map, is_in_vision returns False off-map --
-    w4 = World(6, 6)
-    core4 = w4.add(EntityType.CORE, Team.A, Position(1, 1))
+    # -- get_tile_* raises off-map; is_in_vision is RADIUS-ONLY (no bounds check)
+    #
+    # ⛔ CORRECTED s50, 2026-08-17. This block used to assert
+    #    `is_in_vision(off_map) is False` -- the OPPOSITE of the engine, which
+    #    was probed on atoll (core at 2,14): is_in_vision((-1,14)) == True and
+    #    the next get_tile_* on that position raises GameError.
+    #    Ground truth: CLAUDE.md:367-377 and
+    #    docs/research/PROBE-DOSSIER-ferry-siege-2026-08-17.md:186-196.
+    # Driven BOTH WAYS below: off-map INSIDE the radius -> True (then raise),
+    # off-map OUTSIDE the radius -> False, plus the two in-map controls.
+    w4 = World(16, 16)
+    core4 = w4.add(EntityType.CORE, Team.A, Position(1, 1))  # vision r^2 = 36
     ct4 = StubController(w4, core4)
-    off_map = Position(-1, -1)
-    raised = False
-    try:
-        ct4.get_tile_env(off_map)
-    except GameError:
-        raised = True
-    _check(raised, "get_tile_env must raise GameError off-map")
-    _check(ct4.is_in_vision(off_map) is False,
-           "is_in_vision must return False (not raise) off-map")
-    on_map_far = Position(5, 5)
+
+    # (a) THE TRAP: off-map but INSIDE the vision radius -> True, and the very
+    #     same position then raises on every get_tile_* accessor.
+    off_map_near = Position(-1, -1)          # d^2 = 8 <= 36
+    _check(ct4.is_in_vision(off_map_near) is True,
+           "is_in_vision must return True for an OFF-MAP position inside the "
+           "vision radius -- it is a pure radius test, no bounds check "
+           "(engine-probed s50; a stub that returns False here is kinder than "
+           "the engine and hides border bugs)")
+    for _name, _fn in (("get_tile_env", ct4.get_tile_env),
+                       ("get_tile_building_id", ct4.get_tile_building_id),
+                       ("get_tile_builder_bot_id", ct4.get_tile_builder_bot_id)):
+        _raised = False
+        try:
+            _fn(off_map_near)
+        except GameError:
+            _raised = True
+        _check(_raised,
+               f"{_name} must raise GameError on the SAME off-map position that "
+               "is_in_vision just called True -- this True-then-raise trap is "
+               "the whole hazard")
+
+    # (b) off-map AND outside the radius -> False (and still never raises).
+    off_map_far = Position(-8, 1)            # d^2 = 81 > 36
+    _check(ct4.is_in_vision(off_map_far) is False,
+           "is_in_vision must return False off-map when ALSO outside the radius "
+           "(negative control: the same call must be able to come out False)")
+
+    # (c) in-map controls, both verdicts, so the radius test itself is checked.
+    _check(ct4.is_in_vision(Position(3, 3)) is True,
+           "is_in_vision must be True for an in-map tile inside the radius")
+    on_map_far = Position(15, 15)            # d^2 = 392 > 36
+    _check(ct4.is_in_vision(on_map_far) is False,
+           "is_in_vision must be False for an in-map tile outside the radius")
     _check(ct4.get_tile_env(on_map_far) == Environment.EMPTY,
            "get_tile_env must succeed on-map even far outside vision "
            "(positive control: on-map call must not raise)")
