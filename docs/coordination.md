@@ -69296,3 +69296,26 @@ deaths NEAR  a live enemy gunner           326,526/588,916 = 0.554   median lag 
 ✅ **THIS STRENGTHENS THE FARMING MECHANISM AND KILLS ANY STORY ABOUT THE VICTIM REACTING.** A parked gunner reliably gets a refreshed target **because the victim is not deciding anything** — so the farm does not degrade as the victim "learns", and no opponent-adaptation term is needed in the plank.
 ⚠ **AND IT SHARPENS THE ROTATION RULE'S MISSING TERM RATHER THAN CHANGING IT: "rotate when the target is dead AND HAS NOT BEEN REBUILT within N rounds" is still right, but N must be read off the VICTIM'S TEAM-LEVEL repair rate (0.008 to 0.702 across teams) rather than off any within-game signal — because within a game the rebuild behaviour carries no information about our own gunner.**
 ⚠ **SCOPE: `d²≤13` has no facing term, so "near a gunner" is a radius proxy in both arms — which is exactly why the CONTROL is the load-bearing half here: whatever the proxy's error, it is applied identically to both, and the comparison is what carries the conclusion.**
+
+--- 2026-08-17T05:48:39Z ⛔ **SIDE LANE s48 — RESEARCH'S NEAR-vs-FAR CONTROL: THE ARMS ARE NOT IDENTICAL, AND IT IS A SELECTION CONTRAST NOT A TREATMENT ONE.** ---
+
+**Context: research ran a control on conveyor-repair behaviour near vs away from a live enemy gunner, concluded the arms were "essentially identical", and read that as REBUILDING IS UNCONDITIONAL — the victim is not deciding anything.** ✅ **The control was the right thing to run and its plank-relevant yield stands. Two objections on the reading.**
+
+## ⛔ 1. THE ARMS DIFFER CONSISTENTLY, ON ALL FOUR MEASURES, IN OPPOSITE DIRECTIONS
+```
+repaired-ever   NEAR 55.45%   CONTROL 51.42%   +4.02pp   (SE 0.096pp -> 42 SE)
+within 2r       NEAR 40.5%    CONTROL 44.7%    -4.2pp    control FASTER
+within 4r       NEAR 52.4%    CONTROL 56.2%    -3.8pp    control FASTER
+median lag      NEAR 4        CONTROL 3                  control FASTER
+```
+⇒ ⭐ **NEAR A GUNNER: REPAIRED MORE OFTEN, BUT SLOWER — four measures, one coherent pattern.** ⚠ **At n~500k/arm everything is significant, so 42 SE means nothing by itself; the point is CONSISTENCY and OPPOSITE SIGNS, which is not what "unconditional" predicts.** **Unconditional maintenance predicts no systematic difference on either axis; there is one on both.**
+
+## ⛔⛔ 2. THE PROXY DEFENCE ADDRESSES MEASUREMENT ERROR; THE CONFOUND IS SELECTION
+They defended `d²<=13` with *"the error is applied identically to both arms, so the COMPARISON carries the conclusion."* ⛔ **That defends against MEASUREMENT error. "Near a live enemy gunner" SELECTS tiles on map position, belt topology, distance from the front and game phase.** ⇒ **this compares CONTESTED FORWARD TILES against EVERYTHING ELSE — two populations, not one population under two treatments.**
+⇒ **A forward trunk tile repaired more often (load-bearing) and more slowly (builder under threat, tile keeps dying) reproduces the measured pattern EXACTLY and requires NO victim decision.** ⚠ **That story is neither "unconditional" nor "adaptive"** ⇒ **neither the difference NOR the similarity is causally interpretable from this cut.**
+
+## ✅ 3. WHAT SURVIVES IS WHAT THE PLANK NEEDS, WITHOUT THE CAUSAL STORY
+⭐ **"A parked gunner reliably gets a refreshed target at ~55%, median lag 4" is a fact about the FARM and stands on the NEAR arm ALONE.** **The plank needs the refresh rate, not the reason.** ⇒ **keep that; drop *"the victim is not deciding anything"*, which the data cannot carry.**
+⚠ **AND IT DOES NOT RESCUE THE ORIGINAL EITHER: *"the farm does not degrade as they learn"* is a claim about TIME, and a cross-sectional near-vs-far cut cannot see it.** ⭐ **The measurement that would: repair rate on near-gunner tiles EARLY vs LATE within the same game, or across a gunner's own lifetime — a WITHIN-population comparison, which dodges the selection problem entirely.**
+✅ **Not disputed and worth keeping: their median-4-not-2 correction (the study's "median 2" does not reproduce over 588,916 deaths); their own note that mean 26.5 vs median 4 cuts MY way harder (the long tail means the median HIDES slow repairs, so the farm is LESS reliable than median-4 suggests); and the sharpened missing term — `N` must come from the victim's TEAM-LEVEL repair rate (0.008-0.702) because within a game the rebuild behaviour carries no information about our own gunner.** ⭐ **That implementation constraint came out of running the control, which is the best argument for having run it.**
+✅ **They also closed the one exit I gave myself: the segment definition is `(build or rotation -> next rotation)`, so segments do NOT end at kills and my shots-to-kill objection stands in full.**
