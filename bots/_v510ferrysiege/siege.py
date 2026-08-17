@@ -1,0 +1,1333 @@
+"""LOKI-FERRY-SIEGE -- the self-ferry siege raider.  Ablatable as a unit.
+
+Set LOKI_FERRY_SIEGE_ON = False in doctrine.py and every entry point in this
+file returns False on its first line; what is left is `_v488beltbreak2`.
+
+THE FOUR MOVES, and where each one's evidence lives:
+
+  FERRY   The raider builds a LAUNCHER on its own forward tile; the NEXT round
+          that launcher's own run() throws the raider ~5 tiles forward and then
+          calls `ct.self_destruct()` as the LAST statement of its turn.  2-round
+          cycle, ~3 tiles/round, 3x walking, and the +10% scale contribution is
+          refunded on the very next round's reading.
+          -- PROBE-DOSSIER-ferry-siege-2026-08-17.md P1, P2
+  SEAL    Barrier the enemy core's 12-tile ring.  The 8 ORTHOGONAL seats are
+          the only tiles a builder can heal that core from; the 12 are exactly
+          its legal spawn set.  BINARY: a partial >=10/12 seal measured a
+          HIGHER defender heal rate than no seal at all, so the first barrier
+          waits until the bank pays for all of them.
+          -- P3; REPLAY-STUDY-jython-v157-wider-2026-08-17.md §3
+  EVICT   A launcher parked ON the ring throws arriving enemy builders away.
+          0 ammo, re-throwable every round, one launcher holds ~4 attackers off
+          indefinitely.  SITING by `cov` is the whole game -- the same plant on
+          fixed ring indices read 0 evictions in 1,000 rounds.
+          -- P4; `_v233evict58/raid.py:694-696` for the score itself
+  KILL    ONE ALIGNED SENTINEL.  95.2% of all enemy-core damage over 60 games;
+          0/37 core kills without one in range.  Its ray ignores obstacles and
+          shoots THROUGH our own collar; a gunner's does not.  A MIS-aligned
+          sentinel contributes literally zero, so `can_fire_from` gates the
+          build rather than explaining the result.
+          -- REPLAY-STUDY-jython-inspiration-2026-08-17.md §2.7
+
+WHAT WE HAVE THAT THE 2174-RATED IMPLEMENTATION DOES NOT.  Four measured
+defects, each one an edge rather than a guess: a TEAM FILTER on eviction
+pickup (their ring launcher kidnapped its own raider 57 times in one game and
+that ring finished 7/12); a SMALL-MAP / NO-ROUTE GATE (fjordgate, 10x10, cores
+d^2=32 -- every leg of the plank inverted and they lost); a RAIDER REPLACEMENT
+(one raider, 60/60 games, never replaced); and a DUMP-TILE OWN-CORE GUARD
+(10 of 13 of their dumps landed inside d^2<=8 of their OWN core).
+
+TWO ENGINE FACTS THIS FILE IS WRITTEN AGAINST, both from the s50 probes:
+
+  * `is_in_vision()` IS NOT A BOUNDS GUARD.  It is a pure radius test; the next
+    `get_tile_*` on an off-map position raises.  This plank works at map edges
+    BY DESIGN, so every computed position is bounds-checked explicitly.
+  * NOTHING MAY FOLLOW `ct.self_destruct()`.  It never returns and raises
+    nothing catchable -- `finally:`, `except BaseException` and
+    `except SystemExit` are all rejected by the sandbox AST validator at load.
+"""
+import sys
+
+from fcode import Direction, EntityType, Position
+
+from doctrine import *  # noqa: F401,F403
+from eco import (
+    core_corners, core_tiles, dsq_core, enemy_core_for, heal_seats, unpack_pos,
+)
+
+# A building of one of these types on a ring tile denies the core's spawn AND
+# blocks a builder from standing there to heal.  ⛔ CONVEYOR and SPLITTER are
+# deliberately ABSENT: they are bot-passable, and 40.1% of all spawns in the
+# corpus land on a conveyor tile.  Two trees in this repo state the opposite in
+# a comment (`_det269awrspawn/raid.py:673-675`, `_det252spawnlock/doctrine.py`)
+# and both are wrong -- see the dossier's prior-art notes.
+FS_BLOCKING = frozenset((
+    EntityType.BARRIER, EntityType.HARVESTER, EntityType.GUNNER,
+    EntityType.SENTINEL, EntityType.LAUNCHER, EntityType.CORE,
+))
+
+
+class SiegeMixin:
+
+    # ------------------------------------------------------------------
+    # instrumentation.  stderr, never print(): platform replays strip stdout
+    # (measured s28 -- 30,664 of 30,664 BotOutput events carry an empty
+    # `stdout`), so a plank that reads its own tag out of a live replay is
+    # planning on an instrument that does not exist.  This is a LOCAL demo
+    # instrument and it is off by default.
+    # ------------------------------------------------------------------
+
+    def _fs_log(self, *a):
+        if not FS_LOG:
+            return
+        try:
+            print("FS", *a, file=sys.stderr)
+        except Exception:
+            return
+
+    # ------------------------------------------------------------------
+    # the shared store slot (see doctrine.py, SLOT_FS)
+    # ------------------------------------------------------------------
+
+    def _fs_state(self, ct):
+        """(beat_round_plus_1, phase, raider_id_plus_1) off SLOT_FS."""
+        try:
+            v = ct.read_store(SLOT_FS)
+        except Exception:
+            return 0, FS_PH_NONE, 0
+        return (v & FS_BEAT_MASK,
+                (v >> FS_PHASE_SHIFT) & FS_PHASE_MASK,
+                v >> FS_RID_SHIFT)
+
+    def _fs_publish(self, ct, rnd, phase, rid):
+        try:
+            ct.write_store(
+                SLOT_FS,
+                ((rnd + 1) & FS_BEAT_MASK)
+                | ((phase & FS_PHASE_MASK) << FS_PHASE_SHIFT)
+                | (((rid + 1) & 0xFFFF) << FS_RID_SHIFT),
+            )
+        except Exception:
+            return
+
+    def _fs_beat_only(self, ct, rnd):
+        """Write the incumbent's foothold heartbeat without touching the
+        plank's fields that live above it in the same slot.
+
+        Store writes are buffered one round, so the high bits preserved here
+        are LAST round's -- if a non-ferry raider and the ferry raider both
+        write in the same round the phase can lag by one.  Bounded and
+        self-healing: the ferry raider republishes its full word every round it
+        runs, and every consumer of the phase treats it as advisory.
+        """
+        if not LOKI_FERRY_SIEGE_ON:
+            ct.write_store(SLOT_RAID_LIVE, rnd + 1)
+            return
+        try:
+            cur = ct.read_store(SLOT_RAID_LIVE)
+        except Exception:
+            cur = 0
+        try:
+            ct.write_store(SLOT_RAID_LIVE,
+                           (cur & ~FS_BEAT_MASK) | ((rnd + 1) & FS_BEAT_MASK))
+        except Exception:
+            return
+
+    def _fs_stale(self, ct, rnd):
+        beat, _ph, _rid = self._fs_state(ct)
+        return (not beat) or (rnd - (beat - 1) > FS_BEAT_STALE)
+
+    # ------------------------------------------------------------------
+    # B. the gate -- a map on which the plank cannot express
+    # ------------------------------------------------------------------
+
+    def _fs_gate(self, ct):
+        """May the ferry-siege run on THIS map?  Cached per unit.
+
+        fjordgate (10x10, cores d^2=32) is the game the 2174-rated version
+        LOST, and it lost it because every leg of the plank inverts on a small
+        board: the ferry buys no tempo, the raider lands in the middle of an
+        army that is already home, and the barriers are contested rather than
+        built once.  jackpot is the other refusal -- the probe's ferry never
+        found a route there on any hop budget.
+
+        Refusing is not a fallback: the bot plays the incumbent raid doctrine
+        for that game, unchanged.
+        """
+        if not LOKI_FERRY_SIEGE_ON:
+            return False
+        if self.fs_gate_ok is not None:
+            return self.fs_gate_ok
+        if self.core is None or not (self.mw and self.mh):
+            return False            # not cached: ask again once we know
+        E = self.enemy
+        if E is None:
+            try:
+                E = unpack_pos(ct.read_store(SLOT_ENEMY_CORE))
+            except Exception:
+                E = None
+        if E is None:
+            E = enemy_core_for(self.mw, self.mh, self.core)
+        if E is None:
+            return False
+        ok = True
+        if max(self.mw, self.mh) < FS_MIN_MAP_DIM:
+            ok = False
+        elif self.core.distance_squared(E) < FS_MIN_CORE_DSQ:
+            ok = False
+        self.fs_gate_ok = ok
+        return ok
+
+    def _fs_active(self, ct):
+        """Is the plank live for this unit right now?"""
+        if not LOKI_FERRY_SIEGE_ON or self.fs_off:
+            return False
+        return self._fs_gate(ct)
+
+    # ------------------------------------------------------------------
+    # geometry
+    # ------------------------------------------------------------------
+
+    def _fs_ring12(self, E):
+        """The enemy core's 12 adjacency tiles, in-bounds and not wall.
+
+        Cached on the anchor: it is a pure function of the anchor and the map,
+        so every unit derives the same list with no store traffic.
+        """
+        key = (E.x, E.y)
+        if self.fs_ring_key == key and self.fs_ring is not None:
+            return self.fs_ring, self.fs_seats
+        seats = [s for s in heal_seats(E, self.mw, self.mh)
+                 if not self._fs_wall(s)]
+        corners = [c for c in core_corners(E, self.mw, self.mh)
+                   if not self._fs_wall(c)]
+        self.fs_ring_key = key
+        self.fs_seats = seats
+        self.fs_ring = seats + corners
+        return self.fs_ring, self.fs_seats
+
+    def _fs_wall(self, t):
+        """Static terrain test off the decoded grid -- never a get_tile_env.
+
+        Bounds first, always: `is_in_vision()` is NOT a bounds guard (measured
+        s50) and this code runs at map edges by design.
+        """
+        if not (0 <= t.x < self.mw and 0 <= t.y < self.mh):
+            return True
+        g = self.map_grid
+        if g is None:
+            return False
+        try:
+            return g[t.y][t.x] == "#"
+        except Exception:
+            return False
+
+    def _fs_target(self, ct, E):
+        """THE BACKSIDE of the enemy core -- Magnus's instruction, verbatim.
+
+        The ring tile FARTHEST from our own core: land behind them, not in
+        front.  Jython's killing sentinel sat beyond the core relative to its
+        own home in 4 of 5 games, and the far side is where the defender's own
+        traffic and belts are not.
+
+        Recomputed from `get_position()`-derived anchors each call rather than
+        cached as a Position across rounds -- a launcher throw mutates position
+        between turns and a cached Position is exactly the stale-state hazard
+        the ferry creates for itself.
+        """
+        ring, seats = self._fs_ring12(E)
+        if not ring:
+            return E
+        C = self.core
+        best, best_k = None, None
+        seatset = set((s.x, s.y) for s in seats)
+        for t in ring:
+            k = (t.distance_squared(C), 1 if (t.x, t.y) in seatset else 0)
+            if best_k is None or k > best_k:
+                best, best_k = t, k
+        return best if best is not None else E
+
+    def _fs_park_seat(self, ct, E):
+        """The one orthogonal seat we do NOT barrier -- we stand on it.
+
+        A BODY on a ring tile denies the spawn identically to a barrier
+        (measured, P3), so parking costs nothing in denial and keeps a
+        heal-denied peck station.  Chosen on the backside, and only where the
+        seat has a passable OUTWARD neighbour so the raider can still reach it
+        once the rest of the ring is barriered.
+        """
+        _ring, seats = self._fs_ring12(E)
+        if not seats:
+            return None
+        if self.fs_park is not None and self.fs_park_key == (E.x, E.y):
+            return self.fs_park
+        C = self.core
+        best, best_k = None, None
+        for s in seats:
+            outward = 0
+            for dx, dy in CARD_DELTAS:
+                n = Position(s.x + dx, s.y + dy)
+                if self._fs_wall(n):
+                    continue
+                if dsq_core(n, E) == 0:
+                    continue                 # a core footprint tile
+                outward += 1
+            k = (1 if outward else 0, s.distance_squared(C))
+            if best_k is None or k > best_k:
+                best, best_k = s, k
+        self.fs_park = best
+        self.fs_park_key = (E.x, E.y)
+        return best
+
+    # ------------------------------------------------------------------
+    # the ring census
+    # ------------------------------------------------------------------
+
+    def _fs_kill_window(self, ct, E):
+        """Is the kill actually running?  A live sentinel plus banked ammo."""
+        try:
+            if ct.get_global_ammo() < FS_AMMO_KILL_MIN:
+                return False
+        except Exception:
+            return False
+        return self._fs_live_sentinels(ct, E) >= 1
+
+    def _fs_denied(self, ct, t):
+        """Is this ring tile already denied BY US?
+
+        Denied means: a blocking building of ours stands on it, or one of our
+        own bodies does.  An ENEMY building on a ring tile is NOT denial -- it
+        is a target: it blocks our barrier while doing nothing to their heal
+        line.  Unreadable (out of vision) counts as NOT denied, which is the
+        conservative direction: the cost is one wasted walk, against the cost
+        of banking a partial seal, which INVERTS.
+        """
+        if not (0 <= t.x < self.mw and 0 <= t.y < self.mh):
+            return True                      # off-map: nothing can spawn there
+        try:
+            bid = ct.get_tile_building_id(t)
+            if bid is not None:
+                if ct.get_team(bid) != self.team:
+                    return False
+                return ct.get_entity_type(bid) in FS_BLOCKING
+            oid = ct.get_tile_builder_bot_id(t)
+            if oid is not None and ct.get_team(oid) == self.team:
+                return True
+        except Exception:
+            return False
+        return False
+
+    def _fs_census(self, ct, E):
+        """(needed, orth_open) for the 12-tile ring, from live vision."""
+        ring, seats = self._fs_ring12(E)
+        park = self._fs_park_seat(ct, E)
+        needed = []
+        orth_open = 0
+        seatset = set((s.x, s.y) for s in seats)
+        diag_ok = (not FS_DIAG_DEFER) or self._fs_kill_window(ct, E)
+        for t in ring:
+            if self._fs_denied(ct, t):
+                continue
+            is_seat = (t.x, t.y) in seatset
+            if is_seat:
+                orth_open += 1
+            elif not diag_ok and not (t.x == E.x - 1 and t.y == E.y - 1):
+                # A DIAGONAL, and the kill window is not open yet.  Closing the
+                # eight orthogonals already zeroes their heal rate -- those are
+                # the whole heal set -- while a full TWELVE-seal is broken in a
+                # median of 9 rounds against 56 for a >=8 partial.  The one
+                # diagonal worth provoking early is the NW tile, which takes
+                # 19.6% of all spawns on its own.
+                continue
+            if park is not None and t.x == park.x and t.y == park.y:
+                continue                     # reserved for our own body
+            needed.append((0 if is_seat else 1, t, self._fs_body_blocked(ct, t)))
+        # Orthogonal seats first (they are the ONLY heal stations).  Within
+        # them, NW-ADJACENT FIRST: the spawn set is exactly this ring
+        # (59,121/59,121) and it carries a 20.28% NW-corner bias -- the field's
+        # own `for d in Direction` order showing through -- so a barrier on the
+        # north/west seats pre-empts a fifth of their spawns during the race.
+        # Then the far-from-park tiles, so the walk ENDS at the park seat
+        # rather than starting there.
+        px, py = (park.x, park.y) if park is not None else (E.x, E.y)
+
+        tries = self.fs_tile_builds
+
+        def _order(it):
+            pr, t, blocked = it
+            nw = 0
+            if FS_SEAL_NW_FIRST:
+                nw = -((1 if t.y < E.y else 0) + (1 if t.x < E.x else 0))
+            # A tile the defender has already pecked open FS_REBUILD_MAX times
+            # keeps its place in the list but loses its priority, so the rest of
+            # the ring gets finished before we feed it another barrier.
+            worn = 1 if tries.get((t.x, t.y), 0) >= FS_REBUILD_MAX else 0
+            # ⛔ A TILE WITH AN ENEMY BODY ON IT IS NOT BUILDABLE THIS ROUND AND
+            # A BUILDER CANNOT SHOOT A BUILDER.  Measured: the raider chose one
+            # such tile as its station, `can_build_barrier` refused every round,
+            # `_fs_stand_target` kept answering "you are already in place", and
+            # the body sat there being shot until it died with five ring tiles
+            # untouched.  Squatters are the EVICTION LAUNCHER's job; the raider
+            # walks past them and seals what it can.
+            return (blocked, worn, pr, nw,
+                    -((t.x - px) ** 2 + (t.y - py) ** 2))
+
+        needed.sort(key=_order)
+        self.fs_blocked_now = frozenset(
+            (t.x, t.y) for _pr, t, bl in needed if bl)
+        return [t for _pr, t, _bl in needed], orth_open
+
+    def _fs_body_blocked(self, ct, t):
+        try:
+            oid = ct.get_tile_builder_bot_id(t)
+            return 1 if (oid is not None and ct.get_team(oid) != self.team) else 0
+        except Exception:
+            return 0
+
+    # ------------------------------------------------------------------
+    # THE RAIDER'S TURN
+    # ------------------------------------------------------------------
+
+    def _fs_turn(self, ct):
+        rnd = ct.get_current_round()
+        E = self._enemy_anchor(ct)
+        if E is None or not self._fs_active(ct):
+            self._fs_degrade(ct, rnd)
+            return
+        p = ct.get_position()
+        d = dsq_core(p, E)
+
+        # NO-ROUTE DEGRADE.  jackpot: the probe's ferry never arrived there on
+        # any hop budget, and a plank that cannot reach the ring must not keep
+        # spending launchers trying.  Measured as progress, not as a map name.
+        if self.fs_best is None or d < self.fs_best:
+            self.fs_best, self.fs_best_rnd = d, rnd
+        elif (not self.fs_arrived and d > FS_RING_DSQ
+                and rnd - self.fs_best_rnd > FS_NOPROG_RNDS):
+            # ⛔ THE WATCHDOG IS FOR THE APPROACH ONLY, and `self.fs_arrived`
+            # is what says so.  Without that clause a raider that had reached
+            # the ring, sealed six of eight seats and then stepped one tile
+            # wide of FS_RING_DSQ for thirty rounds -- which is ordinary work,
+            # the collar is a closed curve and you walk round the outside of it
+            # -- read as "no route to the enemy" and abandoned a siege that was
+            # ONE TILE from closing.  Measured at r145 on midgard seed 4.
+            self._fs_degrade(ct, rnd)
+            return
+
+        if d <= FS_RING_DSQ:
+            self.fs_arrived = True
+        at_ring = self.fs_arrived and d <= FS_RING_HOLD_DSQ
+        if at_ring:
+            needed, orth_open = self._fs_census(ct, E)
+            # KILL outranks SEALED, and it is not a cosmetic ordering: the Core
+            # reads this phase to decide how much of the bank the magazine may
+            # have.  A live sentinel with an unfinished collar is still the
+            # state in which AMMUNITION is the clock -- the first integrated
+            # run finished r20 with a sentinel standing and SIX ammunition,
+            # because the phase said RING and the Core was still saving for a
+            # sentinel it had already bought.
+            if self._fs_live_sentinels(ct, E):
+                phase = FS_PH_KILL
+            elif orth_open == 0:
+                phase = FS_PH_SEALED
+            else:
+                phase = FS_PH_RING
+        else:
+            needed, orth_open, phase = None, None, FS_PH_FERRY
+        self._fs_publish(ct, rnd, phase, ct.get_id())
+
+        if phase != self.fs_last_phase:
+            self._fs_log("PHASE", rnd, "id", ct.get_id(), "ph", phase,
+                         "d", d, "at", (p.x, p.y))
+            self.fs_last_phase = phase
+
+        if at_ring and FS_LOG and rnd % 20 == 0:
+            try:
+                self._fs_log("STAT", rnd, "id", ct.get_id(), "at", (p.x, p.y),
+                             "need", len(needed), "orth", orth_open,
+                             "ti", ct.get_global_resources(),
+                             "ammo", ct.get_global_ammo(),
+                             "sen", self._fs_live_sentinels(ct, E),
+                             "hp", ct.get_hp())
+            except Exception:
+                pass
+
+        if at_ring:
+            self._fs_ring_turn(ct, E, p, rnd, needed, orth_open)
+        else:
+            self._fs_ferry_turn(ct, E, p, rnd)
+
+    def _fs_degrade(self, ct, rnd):
+        """Hand this body back to the incumbent raid doctrine, for good."""
+        self.fs_off = True
+        self._fs_log("DEGRADE", rnd, "id", ct.get_id())
+        try:
+            _beat, ph, _rid = self._fs_state(ct)
+            if ph != FS_PH_DEGRADE:
+                self._fs_publish(ct, rnd, FS_PH_DEGRADE, 0)
+        except Exception:
+            pass
+        self._raid(ct)
+
+    # --- C. the ferry ------------------------------------------------------
+
+    def _fs_ferry_turn(self, ct, E, p, rnd):
+        T = self._fs_target(ct, E)
+        lp = self._fs_pickup_launcher(ct, p)
+
+        if lp is None:
+            if ct.get_action_cooldown() == 0 and self._fs_build_ferry(ct, p, T):
+                return
+            # No launcher and none affordable: walk.  The ferry is a speed-up,
+            # never a prerequisite.
+            if ct.get_move_cooldown() == 0:
+                self.tgt = T
+                self._nav(ct, pave=False)
+            return
+
+        # A ferry launcher is already standing beside us and it acts LATER this
+        # round (turn order is entity-id ascending and it is younger than us).
+        # The only thing worth doing with our own turn is a free tile of
+        # progress that keeps us inside its d^2<=2 pickup envelope.
+        if FS_HOP_STEP_ON and ct.get_move_cooldown() == 0:
+            self._fs_hop_step(ct, p, lp, T)
+
+    def _fs_pickup_launcher(self, ct, p):
+        """Position of a friendly launcher that could pick us up, or None."""
+        try:
+            for bid in ct.get_nearby_buildings():
+                if ct.get_entity_type(bid) != EntityType.LAUNCHER:
+                    continue
+                if ct.get_team(bid) != self.team:
+                    continue
+                bp = ct.get_position(bid)
+                if bp.distance_squared(p) <= 2:
+                    return bp
+        except Exception:
+            return None
+        return None
+
+    def _fs_build_ferry(self, ct, p, T):
+        """Build the next hop's launcher on our own forward tile."""
+        try:
+            cost = ct.get_launcher_cost()
+            if ct.get_global_resources() < cost + FS_LAUNCHER_TI_FLOOR:
+                return False
+        except Exception:
+            return False
+        ban = self._home_seat_keys_set()     # never seat one on OUR heal seats
+        here = p.distance_squared(T)
+        best, best_d = None, None
+        for dx, dy in CARD_DELTAS:
+            bx, by = p.x + dx, p.y + dy
+            if not (0 <= bx < self.mw and 0 <= by < self.mh):
+                continue
+            if (bx, by) in ban:
+                continue
+            bp = Position(bx, by)
+            d = bp.distance_squared(T)
+            if d > here:
+                continue                     # never a launcher pointing home
+            if best_d is not None and d >= best_d:
+                continue
+            try:
+                if not ct.can_build_launcher(bp):
+                    continue
+            except Exception:
+                continue
+            best, best_d = bp, d
+        if best is None:
+            return False
+        try:
+            ct.build_launcher(best)
+        except Exception:
+            return False
+        self._fs_draw_dot(ct, best, 0, 200, 255)
+        self._fs_draw_line(ct, best, T, 0, 120, 255)
+        self._fs_log("HOPBUILD", ct.get_current_round(), "at", (p.x, p.y),
+                     "lch", (best.x, best.y), "T", (T.x, T.y))
+        return True
+
+    def _fs_hop_step(self, ct, p, lp, T):
+        """One free tile forward that keeps us inside the pickup envelope."""
+        here = p.distance_squared(T)
+        want, best_d = None, None
+        for i, (dx, dy) in enumerate(CARD_DELTAS):
+            nx, ny = p.x + dx, p.y + dy
+            if not (0 <= nx < self.mw and 0 <= ny < self.mh):
+                continue
+            n = Position(nx, ny)
+            if n.distance_squared(lp) > 2:
+                continue                     # would leave the pickup envelope
+            d = n.distance_squared(T)
+            if d >= here:
+                continue
+            if best_d is not None and d >= best_d:
+                continue
+            try:
+                if not ct.can_move(CARDINALS[i]):
+                    continue
+            except Exception:
+                continue
+            want, best_d = CARDINALS[i], d
+        if want is None:
+            return
+        try:
+            ct.move(want)
+        except Exception:
+            return
+
+    # --- D/E. the ring: evict, then seal, then kill -------------------------
+
+    def _fs_ring_turn(self, ct, E, p, rnd, needed, orth_open):
+        act = ct.get_action_cooldown() == 0
+        ti = ct.get_global_resources()
+        if FS_EVICT_ON:
+            self._fs_observe_healers(ct, E)
+
+        if act:
+            # 1. THE EVICTION LAUNCHER IS THE SEAL'S PRECONDITION, NOT ITS
+            #    GARNISH.  Defenders parked on ring tiles make those tiles
+            #    unbuildable -- in the probe's spawning-victim run 3 of 12 tiles
+            #    were permanently body-blocked and the seal capped at 4/12.
+            if FS_EVICT_ON and self._fs_try_evict_launcher(ct, E, p, ti):
+                return
+            # 2. THE SEAL FIRST, AND THE REASON IS SURVIVAL, NOT ECONOMY.
+            #    The chassis's own raid doctrine already says it: "a barrier is
+            #    placed on the first action after landing (value that outlives
+            #    the body)".  Measured on this tree's midgard run against the
+            #    incumbent, the raider lands at r14 and is dead at r18 -- four
+            #    actions.  Spending the first of them on a turret it may not
+            #    live to protect leaves NOTHING behind; spending them on
+            #    barriers leaves four tiles of the heal set closed for the rest
+            #    of the match, and the next raider inherits them.
+            if FS_SEAL_ON and self._fs_try_seal(ct, E, p, needed, ti):
+                return
+            # 3. THE KILL WHEN IT HAS WAITED LONG ENOUGH.  A contested near
+            #    face keeps `needed` non-empty indefinitely -- measured on the
+            #    first integrated run, the defender pecked one seat open every
+            #    ~8 rounds -- so "seal first, always" degenerates into never
+            #    buying the only thing that ever wins.  Past FS_SENTINEL_RND
+            #    with no turret up, the turret jumps the queue.
+            urgent = (ct.get_current_round() >= FS_SENTINEL_RND
+                      and self._fs_live_sentinels(ct, E) == 0)
+            if urgent and self._fs_sentinel_ok(ct, ti, needed, orth_open) \
+                    and self._fs_try_sentinel(ct, E, p):
+                return
+            # 4. THE KILL on the ordinary schedule: the orthogonals are
+            #    closed, or the bank pays for the turret AND every barrier
+            #    still owed.
+            if self._fs_sentinel_ok(ct, ti, needed, orth_open) \
+                    and self._fs_try_sentinel(ct, E, p):
+                return
+            # 5. Clear an enemy building squatting on a ring tile we need.
+            if self._fs_try_clear(ct, E, p, needed):
+                return
+            # 6. Peck the core from a seat.  Worth 2 dmg/round ONLY because the
+            #    seal makes it permanent -- never the plank's kill (2 dmg loses
+            #    to one builder healing +4).
+            if orth_open == 0 and self._fs_try_peck(ct, E, p):
+                return
+            # 7. Repair our own collar -- ONLY when it is finished, or when a
+            #    barrier is about to be lost outright.
+            #    ⛔ Measured on the midgard integration run: an unconditional
+            #    repair step froze a raider on one tile for SIXTY ROUNDS.  It
+            #    healed the barrier beside it every round, the heal consumed the
+            #    action, the action blocked the move, and five ring tiles it had
+            #    never visited stayed open for the rest of the match.  A repair
+            #    that costs a build is not maintenance, it is a stall.
+            if self._fs_try_repair(ct, p, bool(needed)):
+                return
+
+        if ct.get_move_cooldown() != 0:
+            return
+        st = self._fs_stand_target(ct, E, p, needed)
+        if st is None:
+            return
+        if st.x == p.x and st.y == p.y:
+            return
+        self.tgt = st
+        self._nav(ct, pave=False)
+
+    def _fs_seal_ok(self, ct, needed, ti):
+        """BINARY SEAL GATE.  Once open it LATCHES.
+
+        The wider Jython record measured a partial >=10/12 seal running the
+        WRONG WAY -- defender heals 0.0100 -> 0.0681/round, i.e. worse than not
+        sealing at all -- while a complete 8-orthogonal seal read exactly 0
+        heals and 0 spawns.  So the first barrier waits until the bank pays for
+        every remaining one PLUS the sentinel that has to finish the game; and
+        once we have started, a mid-seal price rise must not strand us at 10/12.
+        """
+        if self.fs_seal_started:
+            return True
+        if not needed:
+            return True
+        try:
+            bar = ct.get_barrier_cost()
+        except Exception:
+            return False
+        # ⛔ THIS GATE PRICES THE COLLAR AND NOTHING ELSE.  Two earlier forms
+        # added the sentinel's price on top and deadlocked against the Core's
+        # own siege reserve, which was computing a reserve over the same bank at
+        # the same time: the bank sat a few titanium under both bars for the
+        # whole match and not one barrier was placed.  The turret keeps its own
+        # reserve in `_fs_sentinel_ok` (which reserves the barriers still owed),
+        # so the two gates now point in opposite directions and cannot lock.
+        #
+        # And the SET it prices is the ORTHOGONALS: those eight tiles are the
+        # entire heal set, so closing them is what the binary law is about.  The
+        # four diagonals are spawn denial only and are deferred to the kill
+        # window (a full 12-seal is broken in a median 9 rounds against 56 for
+        # a >=8 partial).
+        if ti < len(needed) * bar + FS_SEAL_MARGIN:
+            return False
+        self.fs_seal_started = True
+        return True
+
+    def _fs_try_seal(self, ct, E, p, needed, ti):
+        if not needed:
+            return False
+        if not self._fs_seal_ok(ct, needed, ti):
+            return False
+        for t in needed:
+            if abs(t.x - p.x) + abs(t.y - p.y) != 1:
+                continue
+            try:
+                if not ct.can_build_barrier(t):
+                    continue
+                ct.build_barrier(t)
+            except Exception:
+                continue
+            self.fs_barriers += 1
+            self.fs_tile_builds[(t.x, t.y)] = \
+                self.fs_tile_builds.get((t.x, t.y), 0) + 1
+            self._fs_log("SEAL", ct.get_current_round(), "tile", (t.x, t.y),
+                         "n", self.fs_barriers)
+            self._fs_draw_dot(ct, t, 255, 90, 0)
+            return True
+        return False
+
+    def _fs_try_clear(self, ct, E, p, needed):
+        """Peck an enemy building standing on a ring tile we still need.
+
+        ⛔ DELIBERATELY NOT GATED ON LOKI_QUIET_ON.  That flag silences builder
+        melee because 2 damage a round is worthless against a core one builder
+        can heal at +4 -- true, and irrelevant here: this target is a 20-30 HP
+        BUILDING sitting on a tile the collar cannot close around.  Left alive
+        it is a permanent hole in the heal set, which is the one thing the whole
+        plank is buying.
+        """
+        if not FS_CLEAR_RING_ON:
+            return False
+        # ⛔ AND IT SPENDS ONLY SURPLUS ABOVE THE COLLAR.  A peck is 2 Ti; at
+        # one a round it drained the bank from 40 to 34 across the exact rounds
+        # the seal gate wanted 42, so the collar never opened and the pecking
+        # bought a conveyor's worth of damage instead of the heal set.
+        try:
+            ti = ct.get_global_resources()
+            if ti < len(needed) * ct.get_barrier_cost() + FS_SEAL_MARGIN \
+                    + LOKI_PECK_TI_FLOOR:
+                return False
+        except Exception:
+            return False
+        for t in needed:
+            if abs(t.x - p.x) + abs(t.y - p.y) != 1:
+                continue
+            try:
+                bid = ct.get_tile_building_id(t)
+                if bid is None or ct.get_team(bid) == self.team:
+                    continue
+                if not ct.can_fire(t):
+                    continue
+                ct.fire(t)
+            except Exception:
+                continue
+            return True
+        return False
+
+    def _fs_try_peck(self, ct, E, p):
+        if LOKI_QUIET_ON:
+            return False
+        try:
+            if ct.get_global_resources() < LOKI_PECK_TI_FLOOR:
+                return False
+        except Exception:
+            return False
+        for c in core_tiles(E):
+            if abs(p.x - c.x) + abs(p.y - c.y) != 1:
+                continue
+            try:
+                if ct.can_fire(c):
+                    ct.fire(c)
+                    return True
+            except Exception:
+                continue
+        return False
+
+    def _fs_try_repair(self, ct, p, collar_open):
+        for dx, dy in CARD_DELTAS:
+            tx, ty = p.x + dx, p.y + dy
+            if not (0 <= tx < self.mw and 0 <= ty < self.mh):
+                continue
+            t = Position(tx, ty)
+            try:
+                bid = ct.get_tile_building_id(t)
+                if bid is None or ct.get_team(bid) != self.team:
+                    continue
+                hp, mx = ct.get_hp(bid), ct.get_max_hp(bid)
+                if hp >= mx:
+                    continue
+                if collar_open and hp * 3 > mx:
+                    continue        # still work to do elsewhere and it can wait
+                if not ct.can_heal(t):
+                    continue
+                ct.heal(t)
+            except Exception:
+                continue
+            return True
+        return False
+
+    def _fs_stand_target(self, ct, E, p, needed):
+        """Where to walk: a tile from which the next needed ring tile is
+        orthogonally adjacent.  Pathing is the chassis BFS (`_nav` ->
+        `_bfs_direction`), which treats BARRIERs as blocked -- the probe's
+        greedy walker deadlocked 995 rounds against its own collar."""
+        if not needed:
+            park = self._fs_park_seat(ct, E)
+            return park if (FS_PARK_ON and park is not None) else None
+        # ⛔ WALK TO THE NEAREST NEEDED TILE, NOT TO THE HIGHEST-PRIORITY ONE.
+        # The build ORDER (NW first, worn tiles last) decides what to place when
+        # something is already under our hand; using that same order to pick a
+        # DESTINATION sent the raider all the way round the collar between every
+        # barrier -- measured: three barriers at r16, r20 and r32 on a ring it
+        # had reached at r12, with a full lap of walking in between.  One body
+        # sealing a closed curve wants a sweep, and a sweep is nearest-first.
+        # ⛔ A TILE UNDER AN ENEMY BODY IS NOT A DESTINATION.  An earlier form
+        # returned "you are already in place" the moment `p` was orthogonally
+        # adjacent to ANY needed tile, blocked ones included -- so a raider
+        # standing beside a squatted seat froze there for fifteen rounds at full
+        # HP with five other tiles open, and then died on that tile.  Squatters
+        # are the eviction launcher's job.  The blocked tiles come back into
+        # play only when nothing else is left.
+        blocked = self.fs_blocked_now
+        open_first = [t for t in needed if (t.x, t.y) not in blocked]
+        if not open_first:
+            open_first = needed
+        best, best_k = None, None
+        for rank, t in enumerate(open_first):
+            for dx, dy in CARD_DELTAS:
+                sx, sy = t.x + dx, t.y + dy
+                st = Position(sx, sy)
+                if self._fs_wall(st):
+                    continue
+                if dsq_core(st, E) == 0:
+                    continue                 # core footprint: unstandable
+                if sx == p.x and sy == p.y:
+                    return p                 # already in place
+                try:
+                    if ct.is_in_vision(st) and not ct.is_tile_passable(st):
+                        continue
+                except Exception:
+                    pass
+                k = (abs(sx - p.x) + abs(sy - p.y), rank)
+                if best_k is None or k < best_k:
+                    best, best_k = st, k
+        return best
+
+    # --- D. the eviction launcher ------------------------------------------
+
+    def _fs_observe_healers(self, ct, E):
+        """Count enemy builders SITTING ON a heal seat, per tile, this siege.
+
+        ⭐ THIS IS THE SIGNAL, and the study that measured it is the reason it
+        is not a fixed ring index.  Fixed a-priori best tile intercepts 29.0%
+        of on-core heal traffic; watching 5 heals in THIS siege intercepts
+        48.4%.  The pooled distribution over 1,116,056 heal events is nearly
+        FLAT (max cell 14.58% against 12.5% uniform), while per-episode traffic
+        is CONCENTRATED (busiest tile median 55.6%, median 3 distinct tiles) --
+        so the flat pool is a normalisation artefact and reactive siting beats
+        fixed siting by ~19pp precisely because of it.
+
+        And we watch SQUATTERS, not lanes: 94.9% / 91.6% / 88.6% of healers are
+        already standing on their exact heal tile 3 / 6 / 10 rounds before they
+        heal.  "Approach-route interception" is refuted -- there is no approach.
+        """
+        seatset = set((s.x, s.y) for s in heal_seats(E, self.mw, self.mh))
+        hist = self.fs_healer_hist
+        try:
+            for eid in ct.get_nearby_units():
+                if ct.get_entity_type(eid) != EntityType.BUILDER_BOT:
+                    continue
+                if ct.get_team(eid) == self.team:
+                    continue
+                ep = ct.get_position(eid)
+                if (ep.x, ep.y) not in seatset:
+                    continue
+                hist[(ep.x, ep.y)] = hist.get((ep.x, ep.y), 0) + 1
+                self.fs_healer_obs += 1
+        except Exception:
+            return
+
+    def _fs_try_evict_launcher(self, ct, E, p, ti):
+        """Plant a launcher whose OWN d^2<=2 ring covers the tiles their
+        healers have ACTUALLY been sitting on this siege.
+
+        `cov` is `_v233evict58/raid.py:694-696` and it is what made eviction
+        fire at all: the same plant on fixed ring indices read 0 evictions in
+        1,000 rounds of a probe with a perfect fixture; the score took the
+        identical fixture to 248 throws.  What is new here is the SET it is
+        scored over -- observed healer tiles, not generic geometry.
+
+        TWO LAUNCHERS, and the second is DEFAULT-ON: one adaptive launcher tops
+        out at 48.4% strict / 58.5% deny-mode interception, two reach 70.5% /
+        86.5%, and the second's marginal gain exceeds the first's gain over
+        blind siting.  Its only condition is Ti sufficiency -- the seal and the
+        sentinel are reserved first.
+
+        DENY MODE: a candidate that is itself ON a ring tile is preferred.  It
+        removes that tile from the heal set, from the delivery set (every one
+        of 1,524,857 deliveries into a core footprint originates on the eight
+        orthogonals) and from the spawn set, with one body.
+        """
+        live = self._fs_live_evictors(ct, E)
+        if live >= FS_EVICT_MAX:
+            return False
+        if self.fs_healer_obs < FS_HEALER_MIN_OBS:
+            return False
+        try:
+            cost = ct.get_launcher_cost()
+        except Exception:
+            return False
+        floor = FS_EVICT_TI_FLOOR
+        if live >= 1:
+            try:
+                floor += ct.get_sentinel_cost() + 4 * ct.get_barrier_cost()
+            except Exception:
+                return False
+        if ti < cost + floor:
+            return False
+        hist = self.fs_healer_hist
+        ringset = set()
+        if FS_RING_SITE_ON:
+            ring, _seats = self._fs_ring12(E)
+            ringset = set((t.x, t.y) for t in ring)
+        best, best_k = None, None
+        for dx, dy in CARD_DELTAS:
+            bx, by = p.x + dx, p.y + dy
+            if not (0 <= bx < self.mw and 0 <= by < self.mh):
+                continue
+            bp = Position(bx, by)
+            if dsq_core(bp, E) > FS_RING_DSQ:
+                continue                     # must BE an eviction launcher
+            try:
+                if not ct.can_build_launcher(bp):
+                    continue
+            except Exception:
+                continue
+            cov = 0
+            for (sx, sy), n in hist.items():
+                if (bx - sx) ** 2 + (by - sy) ** 2 <= 2:
+                    cov += n
+            k = (cov, 1 if (bx, by) in ringset else 0, -dsq_core(bp, E))
+            if best_k is None or k > best_k:
+                best, best_k = bp, k
+        if best is None or best_k[0] <= 0:
+            return False
+        try:
+            ct.build_launcher(best)
+        except Exception:
+            return False
+        self.fs_evictors += 1
+        self._fs_log("EVICTOR", ct.get_current_round(), "at", (best.x, best.y),
+                     "cov", best_k[0])
+        self._fs_draw_dot(ct, best, 255, 0, 200)
+        return True
+
+    def _fs_live_evictors(self, ct, E):
+        n = 0
+        try:
+            for bid in ct.get_nearby_buildings():
+                if ct.get_entity_type(bid) != EntityType.LAUNCHER:
+                    continue
+                if ct.get_team(bid) != self.team:
+                    continue
+                if dsq_core(ct.get_position(bid), E) <= FS_RING_DSQ:
+                    n += 1
+        except Exception:
+            return n
+        return n
+
+    # --- F. the kill --------------------------------------------------------
+
+    def _fs_live_sentinels(self, ct, E):
+        n = 0
+        try:
+            for bid in ct.get_nearby_buildings():
+                if ct.get_entity_type(bid) != EntityType.SENTINEL:
+                    continue
+                if ct.get_team(bid) != self.team:
+                    continue
+                if dsq_core(ct.get_position(bid), E) <= 40:
+                    n += 1
+        except Exception:
+            return n
+        return n
+
+    def _fs_sentinel_ok(self, ct, ti, needed, orth_open):
+        """May we spend a turret this round?  The seal is paid for first."""
+        live = self._fs_live_sentinels(ct, self.enemy) if self.enemy else 0
+        if live >= FS_SENTINEL_MAX:
+            return False
+        if live >= 1:
+            # The second one is the rate-doubler, not the win condition, and by
+            # then the reserve argument below is already spent.
+            return orth_open == 0
+        if not FS_SENTINEL_EARLY:
+            return orth_open == 0
+        try:
+            reserve = len(needed) * ct.get_barrier_cost() + ct.get_sentinel_cost()
+        except Exception:
+            return False
+        return ti >= reserve + FS_SENTINEL_TI_FLOOR
+
+    def _fs_gun_axis(self, ct):
+        """Tiles a VISIBLE enemy gunner is already pointed at.
+
+        `get_attackable_tiles_from` is the engine's own hypothetical-turret
+        pattern; the chassis uses the identical read in `_raid_station` because
+        92% of our forward builder deaths are enemy gunners.
+        """
+        axis = set()
+        try:
+            for bid in ct.get_nearby_buildings():
+                if ct.get_entity_type(bid) != EntityType.GUNNER:
+                    continue
+                if ct.get_team(bid) == self.team:
+                    continue
+                gp = ct.get_position(bid)
+                gd = ct.get_direction(bid)
+                for t in ct.get_attackable_tiles_from(gp, gd, EntityType.GUNNER):
+                    axis.add((t.x, t.y))
+        except Exception:
+            return axis
+        return axis
+
+    def _fs_try_sentinel(self, ct, E, p):
+        """ONE ALIGNED SENTINEL, and the alignment is checked BEFORE the spend.
+
+        `can_fire_from(pos, direction, SENTINEL, core_tile)` is the engine's own
+        hypothetical-turret predicate (it ignores ammo and cooldown by
+        contract), which is exactly the question.  Jython g1 bought two
+        sentinels one tile apart: the aligned one fired 28 core shots for all
+        504 damage and the other fired ONCE, at an unrelated target, in sixty
+        rounds.  Half the turret budget, zero core DPS -- that is what this
+        gate costs nothing to avoid.
+
+        Prefer CLOSE (their median killing site is d^2=9): a shorter ray is
+        less likely to be the one the defender walks a body onto, and range is
+        not scarce at d^2<=32.
+        """
+        if self._fs_live_sentinels(ct, E) >= FS_SENTINEL_MAX:
+            return False
+        try:
+            cost = ct.get_sentinel_cost()
+            if ct.get_global_resources() < cost + FS_SENTINEL_TI_FLOOR:
+                return False
+        except Exception:
+            return False
+        tiles = core_tiles(E)
+        gun_axis = self._fs_gun_axis(ct)
+        best, best_k, best_ray = None, None, None
+        for dx, dy in CARD_DELTAS:
+            bx, by = p.x + dx, p.y + dy
+            if not (0 <= bx < self.mw and 0 <= by < self.mh):
+                continue
+            bp = Position(bx, by)
+            for target in tiles:
+                d = bp.distance_squared(target)
+                if d > 32 or d == 0:
+                    continue
+                facing = bp.direction_to(target)
+                if facing == Direction.CENTRE:
+                    continue
+                try:
+                    if not ct.can_fire_from(bp, facing, EntityType.SENTINEL, target):
+                        continue
+                    if not ct.can_build_sentinel(bp, facing):
+                        continue
+                except Exception:
+                    continue
+                # STANDOFF, not proximity: 52.3% of forward sentinels in the
+                # field die, 80% of those to turret fire, median life 8 rounds.
+                # Range inside d^2<=32 is free; a tile closer to their guns is
+                # not.  A site on a visible enemy GUNNER's ray is scored down
+                # hard -- that ray dies on any interposed body, so stepping off
+                # it costs nothing and forces them to pay 10 Ti and a cooldown
+                # to answer.
+                score = d if FS_SENTINEL_FAR_FIRST else -d
+                if (bx, by) in gun_axis:
+                    score -= FS_SENTINEL_GUNAXIS_PENALTY
+                if best_k is None or score > best_k:
+                    best, best_k, best_ray = (bp, facing), score, target
+        if best is None:
+            return False
+        bp, facing = best
+        try:
+            ct.build_sentinel(bp, facing)
+        except Exception:
+            return False
+        try:
+            ct.write_store(SLOT_FWD_GUN, ct.read_store(SLOT_FWD_GUN) + 1)
+        except Exception:
+            pass
+        self._fs_draw_dot(ct, bp, 255, 255, 0)
+        self._fs_draw_line(ct, bp, best_ray, 255, 255, 0)
+        self._fs_log("SENTINEL", ct.get_current_round(), "at", (bp.x, bp.y),
+                     "face", facing.name, "tgt", (best_ray.x, best_ray.y),
+                     "score", best_k)
+        return True
+
+    # ------------------------------------------------------------------
+    # THE LAUNCHER'S TURN
+    # ------------------------------------------------------------------
+
+    def _fs_launcher_turn(self, ct):
+        """Returns True if the ferry-siege owns this launcher's turn.
+
+        ⛔ ROLE BY SITE, and it is not cosmetic: the probe's integrated run had
+        the RING launcher take the FERRY branch on our OWN sealer and throw it
+        two tiles off the ring.  Ferry launcher and eviction launcher are the
+        same entity type doing opposite jobs, so any launcher of ours within
+        d^2<=FS_RING_DSQ of the ENEMY core is EVICTION-ONLY, forever.
+        """
+        if not LOKI_FERRY_SIEGE_ON:
+            return False
+        if not (self.mw and self.mh):
+            return False
+        E = self._enemy_anchor(ct)
+        if E is None:
+            return False
+        if self.core is None:
+            # A launcher sees r^2=26.  Every ferry link past the second one is
+            # already outside that of our own core, so the incumbent's
+            # look-around discovery never finds it.  `enemy_core_for` is an
+            # involution (table lookup or point reflection, both self-inverse),
+            # so applying it to the ENEMY anchor returns ours with no store slot
+            # and no extra state -- the same trick `_bb_in_band` uses.
+            self.core = enemy_core_for(self.mw, self.mh, E)
+        if not self._fs_gate(ct):
+            return False
+        lp = ct.get_position()
+        rnd = ct.get_current_round()
+        if self.fs_born is None:
+            self.fs_born = rnd
+
+        if dsq_core(lp, E) <= FS_RING_DSQ:
+            if not FS_EVICT_ON:
+                return False
+            self._fs_evict(ct, E, lp)
+            return True                      # never ferries.  Ever.
+
+        return self._fs_ferry_launcher(ct, E, lp, rnd)
+
+    def _fs_sites(self, ct, lp):
+        """Every legal throw destination: d^2 <= 26 from the launcher.
+
+        Built ONCE -- a launcher is a building and never moves.  The incumbent
+        rebuilt this ~81-Position list every round for the launcher's whole
+        life.
+        """
+        key = (lp.x, lp.y)
+        if self.fs_sites_key == key and self.fs_sites is not None:
+            return self.fs_sites
+        sites = []
+        for dx in range(-5, 6):
+            for dy in range(-5, 6):
+                if dx * dx + dy * dy > FS_HOP_DSQ:
+                    continue
+                tx, ty = lp.x + dx, lp.y + dy
+                if 0 <= tx < self.mw and 0 <= ty < self.mh:
+                    sites.append(Position(tx, ty))
+        self.fs_sites = sites
+        self.fs_sites_key = key
+        return sites
+
+    def _fs_ferry_launcher(self, ct, E, lp, rnd):
+        """Throw OUR raider forward, then delete ourselves.
+
+        Identification is POSITIVE: the raider publishes its own entity id in
+        SLOT_FS every round it runs, and this launcher throws that id and
+        nothing else.  It is what keeps the two eco builders -- who stand
+        beside our own core in exactly the rounds the first hop is built -- out
+        of the air.
+        """
+        _beat, _ph, rid = self._fs_state(ct)
+        target = self._fs_target(ct, E)
+        me = None
+        if rid:
+            want = rid - 1
+            try:
+                for eid in ct.get_nearby_units():
+                    if eid != want:
+                        continue
+                    if ct.get_entity_type(eid) != EntityType.BUILDER_BOT:
+                        continue
+                    if ct.get_team(eid) != self.team:
+                        continue
+                    bp = ct.get_position(eid)
+                    if bp.distance_squared(lp) <= 2:
+                        me = bp
+                    break
+            except Exception:
+                me = None
+        if me is not None:
+            self.fs_ferry_seen = True
+            here = me.distance_squared(target)
+            best = None
+            for site in self._fs_sites(ct, lp):
+                # STRICT IMPROVEMENT (`_v148ferryfirst/raid.py:693-708`): a
+                # throw that does not get closer is a throw that undoes the
+                # last one.
+                d = site.distance_squared(target)
+                if d >= here:
+                    continue
+                if best is None or d < best[0]:
+                    best = (d, site)
+            if best is not None:
+                site = best[1]
+                thrown = False
+                try:
+                    if ct.can_launch(me, site):
+                        self._fs_draw_line(ct, me, site, 0, 255, 120)
+                        ct.launch(me, site)
+                        thrown = True
+                except Exception:
+                    thrown = False
+                if not thrown:
+                    for site in sorted(self._fs_sites(ct, lp),
+                                       key=lambda t: t.distance_squared(target)):
+                        if site.distance_squared(target) >= here:
+                            break
+                        try:
+                            if ct.can_launch(me, site):
+                                self._fs_draw_line(ct, me, site, 0, 255, 120)
+                                ct.launch(me, site)
+                                thrown = True
+                                break
+                        except Exception:
+                            continue
+                if thrown:
+                    self._fs_log("THROW", rnd, "from", (me.x, me.y),
+                                 "to", (site.x, site.y), "T", (target.x, target.y))
+                    # ⛔ NOTHING MAY FOLLOW THIS CALL.  self_destruct() does not
+                    # return and raises nothing catchable; `finally:`,
+                    # `except BaseException` and `except SystemExit` are all
+                    # rejected by the sandbox AST validator at load time.  The
+                    # +10% scale contribution is returned on the next round's
+                    # reading, which is what keeps a six-hop chain costing +10%
+                    # instead of +60% on the price of the sentinel that has to
+                    # finish the game.
+                    ct.self_destruct()
+
+        if not self.fs_ferry_seen:
+            return False                     # not ours: the home launcher path
+        if rnd - self.fs_born >= FS_LAUNCHER_TTL:
+            ct.self_destruct()
+        return True
+
+    def _fs_evict(self, ct, E, lp):
+        """Throw ARRIVING ENEMY BUILDERS away from their own core.
+
+        ⛔ TEAM FILTER, and it is the single most valuable line in this file.
+        `can_launch` has no team check.  The 2174-rated implementation does not
+        filter, and in the two games where its ring launcher juggled its own
+        raider 57 and 28 times the ring finished 7/12 and 7/12; in the two
+        games with 2 and 3 own-throws it finished 12/12 and 12/12.
+
+        Victim order: a HEALER STANDING ON A SEAT first -- it both heals and
+        blocks the barrier we want on that tile, so the throw does two jobs.
+        Destination: farthest from THEIR core, border tiles preferred (the
+        approved crash channel rides along for free against unguarded bots),
+        and NEVER inside FS_DUMP_MIN_OWN_DSQ of OUR core -- their §4.2 defect
+        air-dropped the enemy siege team onto their own doorstep.
+
+        ⭐ AND THE THROW IS EXPLICITLY LONG.  Over 12,652 measured displacement
+        events, a victim thrown >5.5 tiles returns 33.4% of the time after a
+        median 33-round walk-back; one thrown 3.5-5.5 tiles -- which is what
+        "farthest site from the LAUNCHER" produces -- returns 58.7% of the time
+        after a median 11.  Same launcher, ~3x the dwell, and the >=6-tile dump
+        is legal from 54-86% of candidate placements on real maps.  So the
+        first pass demands it and the second pass takes what it can get.
+        """
+        try:
+            seats = set((s.x, s.y) for s in heal_seats(E, self.mw, self.mh))
+        except Exception:
+            seats = set()
+        victims = []
+        try:
+            for eid in ct.get_nearby_units():
+                if ct.get_entity_type(eid) != EntityType.BUILDER_BOT:
+                    continue
+                if ct.get_team(eid) == self.team:
+                    continue                 # ⛔ THE TEAM FILTER
+                bp = ct.get_position(eid)
+                if bp.distance_squared(lp) > 2:
+                    continue
+                victims.append(bp)
+        except Exception:
+            return
+        if not victims:
+            return
+        victims.sort(key=lambda b: (0 if (b.x, b.y) in seats else 1,
+                                    dsq_core(b, E)))
+        w, h = self.mw, self.mh
+        C = self.core
+        key = (lp.x, lp.y, E.x, E.y)
+        if self.fs_dump_key != key or self.fs_dump is None:
+            cands = []
+            for t in self._fs_sites(ct, lp):
+                if C is not None and t.distance_squared(C) < FS_DUMP_MIN_OWN_DSQ:
+                    continue
+                border = 1 if (t.x == 0 or t.y == 0 or t.x == w - 1
+                               or t.y == h - 1) else 0
+                cands.append((-dsq_core(t, E), -border, t))
+            cands.sort(key=lambda it: (it[0], it[1]))
+            self.fs_dump = [c[2] for c in cands]
+            self.fs_dump_key = key
+        for bp in victims:
+            for far_only in (True, False):
+                for site in self.fs_dump:
+                    if far_only and bp.distance_squared(site) < FS_DUMP_FAR_DSQ:
+                        continue
+                    try:
+                        if not ct.can_launch(bp, site):
+                            continue
+                        self._fs_draw_line(ct, bp, site, 255, 0, 0)
+                        ct.launch(bp, site)
+                        self.fs_evicts += 1
+                        self._fs_log("EVICT", ct.get_current_round(),
+                                     "from", (bp.x, bp.y), "to", (site.x, site.y))
+                        return
+                    except Exception:
+                        continue
+
+    # ------------------------------------------------------------------
+    # replay indicators -- Magnus watches this file's output in the viewer
+    # ------------------------------------------------------------------
+
+    def _fs_draw_dot(self, ct, pos, r, g, b):
+        if not FS_DRAW_ON:
+            return
+        try:
+            ct.draw_indicator_dot(pos, r, g, b)
+        except Exception:
+            return
+
+    def _fs_draw_line(self, ct, a, b, r, g, bl):
+        if not FS_DRAW_ON:
+            return
+        try:
+            ct.draw_indicator_line(a, b, r, g, bl)
+        except Exception:
+            return
