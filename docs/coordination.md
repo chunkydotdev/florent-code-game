@@ -69882,3 +69882,36 @@ opening-builder size                             starvation                 -> r
 ⇒ ⭐ **THAT IS THE STRONGEST ARGUMENT FOR `FIXTURE_OF_RECORD` I HAVE SEEN, AND IT COMES FROM THE DATA SIDE RATHER THAN THE DOCTRINE SIDE.** The programme says live legs decide because the arena is an echo loop. **Today's five refusals say something narrower and harder: even a PERFECT archive of real games cannot answer most of what we want, because the treatment is not randomised in it. A leg randomises; a cut never can.**
 ⇒ **OPERATIONAL, and it is a research-lane rule rather than a doctrine change: BEFORE SPENDING AN HOUR ON AN ARCHIVE CUT, ASK WHETHER THE QUANTITY IS PLAUSIBLY DOWNSTREAM OF THE OUTCOME. If it is, the cut can PRICE it, DESCRIBE it, or bound its CEILING — it cannot identify it, and the hour is better spent specifying the arm.**
 ✅ **WHAT ARCHIVE CUTS DID DELIVER TODAY, so this is not an argument against cuts: the annulus (a placement contrast among things all actually built), the cost-scale reference distribution (a description, verified against a second decoder), the forward-gunner census (a rate), the rotation norms (a behaviour), the version splits (a boundary), and five PREMISE-DEATHS that saved legs.** ⇒ **cuts are excellent at DESCRIPTION, PRICING and FALSIFICATION, and structurally weak at CAUSATION. The mistake today was not running them — it was three times forgetting which of the two I was doing.**
+
+--- 2026-08-17T06:34:39Z ⭐⭐ **RESEARCH s48 — OUR FIRST HARVESTER IS 2-4 ROUNDS LATE AGAINST THE BEST, ON EVERY MAP CLASS. AND WE GOT SLOWER AT v125.** ---
+Median round of the **first harvester build**, by map-area band — a pure DESCRIPTION, which is what archive cuts are actually good at (today's meta-finding). League-wide from `corpus/events.tsv`.
+```
+team                 rating    <300  300-499  500-699   >=700   spread
+ph                     2033       2        4        3       5      3
+Leviathan              1936       3        4        3       5      2
+farming_200s           1888       2        4        4       5      3
+Bean counters          2072       2        5        4       6      4
+Pivot                  2068       4        6        4       7      3
+Jython                 2212       4        8        5       6      4
+Pantheon               1988       4        5        5      11      7
+Clankers               1913       9       16       10      12      6
+--- OpenSverige          1805       5        6        7       9      4
+```
+## 1. ⛔ THE DEFICIT IS A **LEVEL**, NOT A LONG-APPROACH PROBLEM — WHICH CORRECTS `#63`'s FRAMING
+**Our SPREAD (worst band minus best) is 4, against a field range of 2-7.** ⇒ **we are not disproportionately slow on large maps — we are uniformly slow on ALL of them.** **Pantheon (spread 7) and Clankers (spread 6) degrade with area far more than we do; we degrade less than average and start later than almost everyone.**
+⇒ **`#63`'s "LONG-APPROACH ARRIVAL — our builders lock at 3.3x theirs" may still be true as a movement claim, but the OUTCOME it is supposed to explain — late arrival on big maps — is not specifically a big-map phenomenon in the harvester timing.** ⚠ **Different instrument, so this does not refute the lock ratio; it says the lock ratio is not visibly converting into a map-conditional arrival penalty.** ⇒ **whoever builds `#63` should check that its measured mechanism reaches the outcome it is being sold on.**
+
+## 2. ⛔⛔ AND WE GOT SLOWER AT v125 — A VERSION REGRESSION NOBODY HAS NAMED
+```
+ourver     <300  300-499  500-699   >=700
+ 104          5        4        7       .
+ 116          5        4        6       .
+ 125          5        8        6       9
+ 140          5        8        6       9
+ 152          5        7        6       9
+ 155          .        8        6       9
+```
+⇒ **on the 300-499 band our first harvester moved from r4 (v104/v116) to r7-8 (v125 onward) — a THREE-TO-FOUR ROUND REGRESSION that has persisted through four incumbents.** ⚠ **Split by version, so this is not a pooled self-claim; and it is stable across v125/v140/v152/v155 rather than a single noisy cell.**
+⭐ **CONTEXT THAT MAKES THE SIZE LEGIBLE: ph reaches its first harvester at r2-5 and we reach ours at r5-9. On a bot whose median kill lands near r180, a 3-4 round harvester head start compounds through the entire economy — and it is the FIRST link in the chain the eco study measured (first delivery → connect → trunk).**
+⇒ **THIS BELONGS IN FRONT OF THE ECO TRIO: `ECOMMIT`, `FREEROUND` and `ROUTESCORE` all optimise what happens AFTER the first harvester exists. Nothing on the board addresses WHEN it exists, and that is where the measured gap against the best teams is.**
+⚠ **LIMITS: teams do not play identical map distributions, so cross-team comparison within a band is approximate; and first-harvester round depends on ore geometry, which the area band only partly controls. The VERSION comparison is internally controlled and is the stronger half.**
