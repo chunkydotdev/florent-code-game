@@ -114,11 +114,21 @@ def main():
     ap.add_argument("--kind", default="sentinel")
     ap.add_argument("--games", type=int, default=24)
     ap.add_argument("--maps", nargs="*", default=MAPS)
+    # ADD-ONLY (builder s48). Off by default; changes NO existing computation.
+    # WHY: the printed band covers `fwdbuild_<kind>` ONLY, because that is the
+    # quantity the tool's DOSE_RESULT verdict is about. A brief that also puts
+    # an EXCLUSION bar on builder deaths (e.g. "death diff CI-upper < +0.35")
+    # cannot be answered from the printed means -- a mean has no interval. This
+    # dumps the per-game paired values so the same paired-difference arithmetic
+    # the band already uses can be applied to any decoded key.
+    ap.add_argument("--tsv", default=None,
+                    help="also write per-game paired counts to this TSV")
     a = ap.parse_args()
 
     tmp = Path(tempfile.mkdtemp(prefix="dose_"))
     T, C = Counter(), Counter()
     per_t, per_c = [], []          # PER-GAME values — the band needs the spread
+    per_game = []                  # ADD-ONLY: full per-game rows for --tsv
     n = 0
     seed = 0
     print(f"DOSE  {a.bot}  vs  {a.ctrl}   kind={a.kind}   SERIAL", flush=True)
@@ -146,6 +156,15 @@ def main():
             C.update(d[ci])
             per_t.append(d[ti][f"fwdbuild_{a.kind}"])
             per_c.append(d[ci][f"fwdbuild_{a.kind}"])
+            if a.tsv:
+                _keys = [f"build_{a.kind}", f"fwdbuild_{a.kind}",
+                         "death_builder_bot", "fwddeath_builder_bot",
+                         f"death_{a.kind}", f"fwddeath_{a.kind}"]
+                row = {"game": n, "map": m, "seed": seed, "seat": seat}
+                for k in _keys:
+                    row["T_" + k] = d[ti][k]
+                    row["C_" + k] = d[ci][k]
+                per_game.append(row)
             n += 1
             if n % 4 == 0:
                 tb = T[f"fwdbuild_{a.kind}"] / n
@@ -155,6 +174,14 @@ def main():
             rp.unlink(missing_ok=True)
     finally:
         shutil.rmtree(tmp, ignore_errors=True)
+
+    if a.tsv and per_game:
+        cols = list(per_game[0].keys())
+        with open(a.tsv, "w") as fh:
+            fh.write("\t".join(cols) + "\n")
+            for r in per_game:
+                fh.write("\t".join(str(r[c]) for c in cols) + "\n")
+        print(f"  per-game TSV -> {a.tsv}  ({len(per_game)} rows)", flush=True)
 
     if not n:
         print("DOSE_RESULT: NO GAMES")
