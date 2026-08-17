@@ -1,6 +1,59 @@
 # ⭐⭐⭐ FIRST: `.venv/bin/python tools/now.py` — the holder comes from fcode status,
 # NEVER from a poller or any line below (this block is a CACHE).
 
+# ===== s50 WRAP (builder, 2026-08-17 ~21:1xZ; Magnus called it — LOCK-IN NIGHT) =====
+
+## THE SLOT — LOCK-IN MODE, MAGNUS'S WORD REQUIRED FOR ANY TOUCH
+**HOLDER v159 "Sleipnir v2" = `bots/_v488beltbreak2`** (main.py md5 d7f31eed…) — back on the
+slot via x3r0's ~20:56Z rollback of their own v160 "Heimdall v1" after a 12-13 slide (their
+call, not ours; v160 tenure 18:56-20:56Z ≈ 6 matches, tree imported at `bots/_x3r0v160heimdall`,
+version_trees row present). **CONTROL = `bots/_v488beltbreak2` (holder and control coincide
+again). ⛔ LOCK-IN (Magnus, verbatim: "we don't touch the slot unless I approve it"): NO
+submits, NO activations, NO prototype legs, NO unranked testing until he reopens.** v159's own
+record closed at k=9, 29-16, +38.57. Rollback target if ever needed: v155 = `_v468kladturbo`.
+
+## THE PLANK — FERRY-SIEGE, MAGNUS'S LINE, FOUR ITERATIONS IN ONE EVENING
+**`bots/_v513siegecrew` = the live head: 49/90 (54.4%) vs the incumbent — the plank's FIRST
+local win** (v512 read 13/90 = 14.4% on the identical paired fixture; v511 23.3%; v510 lost
+outright). Kills≤r300 26.7%, tic=0 games 4.4% (was 51.1%). Evidence chain, all banked under
+docs/research/ (2026-08-17): PROBE-DOSSIER-ferry-siege · REPLAY-STUDY-jython-inspiration (+
+research's -wider) · BELT-ON-SEATS-SURVEY · EVICTION-GEOMETRY · FIELD-SIEGE-RESPONSE ·
+AUTOPSY-v510-demo-midgard · AUTOPSY-v512-three-maps · BUILD-REPORT-v51{0,1,2,3}*. Verdict rows:
+saltray-final (shelved, mechanism-correct value-flat) · ringladder-final (25.00 [21.01,28.99]
+n=452, predicted Band 5 — v512 retired as solo candidate). ⚠ EVERY LOCAL NUMBER carries the
+lying-fixture caveat: the control is our own top-band home defence (field clears sieges at
+8.6%); NOTHING transfers to the ladder without a live leg (rule 6), and live legs are behind
+lock-in.
+
+## MORNING DECISIONS FOR MAGNUS (parked, evidence in BUILD-REPORT-v513siegecrew)
+1. Second body measured HARMFUL (−15.6pp, 3/3 blocks) — ships OFF; the v511/v512
+   action-splitting theory is wrong as built.
+2. Sentinel-after-salt ships STRICT per his rule; consequence: turret bought in 27% of games,
+   kill comes from collar+eco+home-defence. Latch fallback built, no gain, OFF.
+3. Replacement misses his ~15-round cap (median 90; binding constraint = FUNDING the body).
+4. CPU platform `match test` still owed before ANY ship talk (local CPU is a stub; blocked by
+   lock-in). 5. A live unrated leg (the honest fixture) whenever he reopens — leg decode plan
+   pre-banked (LEG-DECODE-PLAN-ferrysiege), round-2 baseline cells partially fired pre-lock-in.
+
+## STATE / WAKE PATHS
+Daemons alive: 4 watchers (keeper RESTARTED at wrap-fix, new pid in corpus/keeper.pid) +
+auto_gate --apply + corefill_forever + fleet_dispatch + ship_watch (holder-DYNAMIC since
+wrap-fix — no more baked-version semantics; stale-baseline fallback now REFUSED) +
+holder_watch (self-re-arming). **Cores idle by design** (no worklist rows). NOTHING WAKES A
+HUMAN. All s50 agents landed and relayed; nothing died unrelayed. Wrap-fix discharged 12/12
+instrument debts (residual: keeper --stop signal handling, 110 old non-terminal heartbeats,
+sync_unrated log filter — a future wrap's list). Demo replays are LOCAL-ONLY (demos/,
+gitignored) — paths in the build reports.
+
+## SUCCESSOR'S FIRST JOBS (both lanes' wraps name them)
+1. Research: v160-tenure + overnight decode (their state note). 2. Side lane: D1-D10 audit of
+_v513siegecrew + both-ways drive of every wrap-fix guard (their open item — v513 and the
+wrap-fix commits landed after their wrap, UNAUDITED). 3. Builder: Magnus's morning ruling on
+the decisions above, then iterate v513 per his call. Queue discipline: hazard 5b re-greps still
+owed against whatever the incumbent is by then.
+
+## ===== ARCHIVE MARKER: everything below predates s50's wrap =====
+
 # ===== s49 WRAP (builder, 2026-08-17T16:15:11Z; Magnus called the wrap after the ship) =====
 
 ## THE SLOT — WE SHIPPED
