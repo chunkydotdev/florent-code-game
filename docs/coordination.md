@@ -68213,3 +68213,32 @@ repaired <=10 rounds       0.081         0.137     0.213     0.174      0.296
 ⭐⭐ **THE DURABLE LESSON, and it is a sharpening of the s47 rule rather than a restatement: I applied the split to the forward-gunner cut UNPROMPTED and then failed to apply it to the victim cut IN THE SAME SESSION.** Why: the victim table arrived as a **by-product of a league-wide question**, and a self-row sitting inside a field table does not announce itself as a self-claim. ⇒ **ANY ROW OF OURS INSIDE A LEAGUE TABLE IS A SELF-CLAIM WEARING A FIELD-TABLE COSTUME.** Routed: this note (behaviour), and to the arm retro.
 
 *(Live version at analysis time: holder v155 "Sleipnir v1"; CONTROL `bots/_v468kladturbo`. Dirs read: `corpus/events.tsv`, `corpus/meta_join.tsv`, `corpus/join.tsv`, `corpus/league_matches.tsv`.)*
+
+--- 2026-08-17T04:44:0xZ ⭐ **SIDE LANE s48 — SECOND-ORDER SWEEP OF THE CONTROL MOVE, PLUS TWO CORRECTIONS TO MY OWN PUBLISHED WORK (one of them a RETRACTION of advice I gave the builder 20 minutes earlier).** ---
+
+## ⛔ 1. RETRACTING MY OWN "ROBUST" CALL ON `ge-51.33` — AND THE INTERACTION IT HIDES
+
+The builder proposed locking KLADLADDER with *"its own `ge-51.33` bar (meaning 'must add', robust under any re-pricing)"* and **I agreed. Withdrawing that.**
+✅ **True half: it IS floor-independent, so a re-pricing cannot invalidate it.**
+⛔ **Missed half: it is NOT difficulty-neutral across the control move.**
+```
+'ge 51.33' demands +9.2 Elo over whatever the control is — control-INDEPENDENT.
+  vs _v223sealrepair : +9.2 Elo over a bot Sleipnir beats by 81.9 Elo  -> routine
+  vs SLEIPNIR        : +9.2 Elo over the best bot we have ever built   -> ~11% of Sleipnir's ENTIRE gain, again
+```
+⛔⛔ **AND THE INTERACTION THAT BEARS ON MAGNUS'S PENDING RULING: A 51.33 PREREG BAR AND A RELAXED FLOOR WORK AGAINST EACH OTHER.** If the floor is set near 49.0 precisely to admit modest adds over Sleipnir, **a `ge-51.33` registered bar re-imposes the stricter standard the relaxation was meant to remove — silently, because the floor is what everyone watches.** ⇒ **the arm dies at its own registered bar having SURVIVED the gate.** **He is being asked about one of two doors.**
+
+## ⚠ 2. A LIVE STALE DEFAULT — `fleet_dispatch.py:1590`
+
+`ap.add_argument("--control", default="bots/_v223sealrepair", ...)` — **live argparse in `main()`**, verified not a fixture (the other hits in that file are the selftest at 1302/1438-1464). ⇒ **any `--seed-from` dispatch omitting `--control` silently seeds rows on the SUPERSEDED benchmark**, against Magnus's ruling, and those rows then trip the very guard that just cost the fleet. **DEFER on the fact that the running daemon (PID 40200) is `--once --remote-mode live` with no `--seed-from`** — nothing is seeding now — **but it bites the next seeding run.** Cheapest fix: default it from `PROGRAMME.md`'s INCUMBENT as `control_pin.incumbent()` already does.
+⚠ Also stale, lower stakes, **and I have NOT read what consumes it**: `era_guard.py:197` `LIVE_VERSION_HINT = 140`. **Flagging the staleness, claiming no effect.**
+
+## ✅ 3. CORRECTING MY OWN BOOT NOTE — I GAVE THE WRONG PATH FOR `BARS.tsv`
+
+I published it as a repo-root file. **It is `docs/prereg/BARS.tsv`.** Caught by going to USE it (the Q4 mechanism, third firing today). **Re-derived on the real file, so the inherited number is measured rather than remembered:**
+```
+256 data rows: 250 @ 51.33 · 2 @ 51.93 · 1 @ 50.00 · 1 @ 50.0 · 1 @ 48.67 · 1 NONE
+=> 255 of 256 sit BELOW the 52.0 floor that actually decides them.
+```
+**My inherited figure was "237 of 239" — directionally right, numerically STALE; the registry grew.** ✅ **The s47 `V140VS152` amendment is visible (the 100.0 is gone, a 50.00 present) — THAT ITEM IS CLOSED.**
+⭐ **And this sharpens item 1: 250 rows ALREADY carry `ge-51.33`.** If new Sleipnir-controlled registrations inherit that default, the registry silently becomes *"must beat our champion by 9.2 Elo"* — **which may be what Magnus wants, but it would arrive as a SIDE-EFFECT rather than a decision, and nobody has proposed it to him.**
