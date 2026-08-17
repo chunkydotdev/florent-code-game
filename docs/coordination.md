@@ -70544,3 +70544,29 @@ team lazy v238 6/10 · HTTP 418 7/10 · Erebus 10/15
 4. **RE-AIM THE RESEARCH STUDIES.** kladde v119, the sub-r120 autopsy and Big O were commissioned as NEW-PLANK mining. Under this directive their value moves to **"why do OUR EXISTING planks fail"** — a study that explains why a shredder dies at d²<10, or why our opening loses before r120, feeds an iteration of a plank we already have. Relayed to research.
 **BOARD UNCHANGED, ALL FOUR STILL OUT:** OPENFAST (prereg, kill metrics registered) · BELTBREAK2 (build, funding constraint routed) · ECOMMIT3 (build) · RUSH2 (prereg). **Retired-this-session count: 0, and that is now the target, not an accident.**
 **PROPOSALS PARKED FOR MAGNUS (not built, not queued):** `#93` point-blank core-sniper (measured working against us: lingling_40h, 58 gunners, 2,074 shots, 100.0% into our core footprint) · `#60` (`ct.destroy`/`can_destroy` = 0 occurrences in ALL FOUR control files — we never call a free, cooldown-less, unlimited-per-turn action) · the `LOKI_QUIET_ON` audit (one fire path verified silenced at `main.py:635`; the open question is how much else sits behind that flag and whether we pay its cost scale).
+
+--- 2026-08-17T08:41:19Z ⭐⭐⭐ **BUILDER s49 — MAGNUS REFINES THE DIRECTIVE TO THE PLANK LEVEL, AND IT COLLAPSES A SEVEN-PLANK BOARD INTO TWO.** ---
+> *"Then my statement changes, iterate on the planks, that should give us enough room to improve but not spread too thin"*
+**WHY THIS IS A DIFFERENT RULE FROM "iterate on the arms", stated because the distinction is the whole content:** an **ARM** is one dose of one plank on one fixture against one bar — **it is SUPPOSED to be killable, that is what frees a core.** A **PLANK** is the mechanism. ⇒ **arms die freely; planks get re-dosed.** Research's triage says it exactly: **six arms stopped yesterday, ZERO planks refuted as ideas.**
+**THE PLANK CENSUS — seven, which IS spread thin, and the ranking is by whether the KILL CLOCK moved (the programme's primary), not by share:**
+| plank | best arm evidence | timely-kill vs control | verdict on the PLANK |
+|---|---|---|---|
+| **BELTBREAK** forward annulus shredder | 52.90 [51.13,54.67] n=3053, **cleared its 51.33 bar** | **+3.24pp, non-overlapping** | ⭐ **TIER 1 — the only plank positive on BOTH** |
+| **ROUTESCORE** route-scored site pick | 51.28 [49.47,53.10] n=2919, CI contains 50 AND the floor | **+4.18pp — LARGEST of six** | ⭐ **TIER 1 — moved the clock, share unpriced** |
+| **SEALSENT** seat-sentinel plant | 46.20 [43.86,48.55] n=1738 | −4.43pp | ⭐ **TIER 1 — its negative is a NAMED DEAD CODE PATH, not the idea** |
+| **RUSH** waive the eco gate for the first sentinel | never fired on an admissible fixture | — | **TIER 2 — one boolean, zero build** |
+| **OPENFAST** ore-first eco spawn | not fired | **direction WRONG: +5.60 rnds LATER** | **TIER 2 — does not fire as built** |
+| **ECOMMIT** committed-route site gate | 36.80 / 23.33 / three arms | **−6.67 to −12.08pp** | **TIER 3 — negative on the currency in three independent reads** |
+| **FREEROUND** anti-oscillation | 49.07 [46.21,51.92] | +1.10pp | **TIER 3 — UNPRICEABLE POOLED by its own registered 1.60pp ceiling** |
+⭐⭐ **AND HERE IS THE CONVERGENCE THAT ACTUALLY DELIVERS "not spread too thin" — FIVE OF THE SEVEN FAIL FOR THE SAME REASON, WHICH MEANS THEY ARE ONE PLANK WEARING FIVE COSTUMES:**
+* **OPENFAST** delays the first sentinel because more conveyors (+1% scale each) and builders (+20% each) raise `get_sentinel_cost()`, pushing out the `resources >= cost + LOKI_FWD_TI_FLOOR(40)` half of `raid.py:676-680`. **The eco half got faster and the FUNDING half got slower.**
+* **SEALSENTAN** plants a 30-Ti sentinel with **no magazine guarantee** because `dry` is computed at `raid.py:921-923` and its only consumer is nested under `LOKI_SEALSENT_FUND_ON = False` — *"planted r24, alive to r303, fired ZERO times."*
+* **BELTBREAK2's** risk is the third shredder unfunded: `LOKI_BELTBREAK_AMMO = 24` is exactly two 12-ammo belt kills, **sized for `CAP = 2`.**
+* **ECOMMIT** buys belt and harvesters to raise delivery and **delays the kill in every read** — it spends the same scale budget the weapons need.
+* **RUSH** is the direct waiver of that same harvester+bank gate.
+⇒ **THE DOMINANT PLANK IS NOT ANY OF THEM INDIVIDUALLY. IT IS: *OUR WEAPONS ARE GATED ON AN ECONOMY CLOCK THAT OUR OWN ECONOMY PLANKS PUSH FURTHER OUT, AND A WEAPON WE DO BUILD IS NOT GUARANTEED A MAGAZINE.*** That is one mechanism, it is where five planks' failures live, and it is testable.
+**⇒ THE BOARD, TWO PLANKS, THREE CONCURRENT ARMS (the box runs ~3 shards):**
+* **PLANK A — BELTBREAK (siting/dose).** Arm: `BELTBREAK2`, cap+ammo moved TOGETHER as one funding mechanism.
+* **PLANK B — ARM THE WEAPON (the funding/cost-scale gate).** Arms: `SEALSENT-AMMO` (give the ammo leg its own gate at `raid.py:926` — a dead code path is the cheapest real fix on the board) and `RUSH2` (one boolean, waives the gate directly).
+* **NEXT IN LINE, not concurrent:** ROUTESCORE `CANDIDATES = 4` (largest kill-clock gain, one constant, pre-committed axis), then ECOMMIT's `FUND_TILES` composed on budget 16 where `bank` is 82.4% of refusals.
+* **PARKED, NOT RETIRED:** OPENFAST until its cost-scale term is addressed — **its direction is actively wrong and firing it would spend a core to measure a known-unsafe change.** FREEROUND until it is read ON-SEGMENT (no code change, its own prereg pre-commits it).
