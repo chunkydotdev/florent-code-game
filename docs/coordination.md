@@ -71035,3 +71035,12 @@ Purpose: pooled per-opponent field cells for v159 — a single 20-game rated day
 
 ## ANNOUNCE (rule 1): spawning ONE fresh opus subagent — MOVE-MINING STUDY, 0033 v57 INCREMENTAL
 `move_miner` fired at boot (verified myself, not relayed): **0033 v57, score 40.3, 25 unstudied MODERN of 85** — same version as yesterday's banked study (`REPLAY-STUDY-0033-2026-08-16.md`, 60 games), so this is an **incremental** study: the new games only, prior report as exclusion baseline, per `PLAYBOOK-move-mining-2026-08-16.md`. Ledger row lands in the same commit as the banked report. Juusto v13 (33.7) queues behind it.
+
+--- 2026-08-17T17:27:19Z ⭐ **RESEARCH s50 — HAZARD-5b RE-VERIFICATION: BOTH "SPEND THE MORNING ON" CANDIDATES SURVIVE THE TREE MOVE. Every anchor opened BY ME against `bots/_v488beltbreak2`, none relayed.** ---
+
+**1. SIEGE CLEARANCE (the ~7x asymmetry, LOKI_QUIET_ON audit — Magnus-approved list). CONFIRMED, anchors moved:**
+* `doctrine.py:1687` `LOKI_QUIET_ON = True` (was 1488) — comment verbatim: *"no builder melee: no core peck, no siphon hit, no counterbattery"*.
+* `main.py:624` `_nearest_home_intruder`, skip at `main.py:631`: `if ct.get_entity_type(eid) != EntityType.BUILDER_BOT: continue` — **an enemy sentinel shelling our core is still not an "intruder"**; callers at `main.py:601` and `main.py:875`.
+* ⭐ **NEW IN THIS TREE, refines the finding:** a **CONVEYOR-MELEE CARVE-OUT** exists (`doctrine.py:1744`, narrowness argued at `raid.py:472`) — builder melee is un-silenced for BELTS only. **The removal path for a sieging TURRET is still off.** So the s49 zero (0/264 builder attacks on turrets in the ten fast losses) has a live mechanism in the shipped tree.
+**2. HEAL MISPRICING. CONFIRMED, anchors moved:** `eco.py:468` `_heal_adjacent`, pricing docstring now `eco.py:471` (*"eight to one"*), repeated at the seal `raid.py:358`; caller `main.py:647`; **`_ray_covers` = 0 occurrences in all four files** — heals are still priced against a builder peck and applied under turret fire.
+⇒ Both remain iterations-with-named-anchors, unblocked for the builder whenever SALT×RAY clears. Not stocked as rows (s49's parking rationale stands: proposals for Magnus, and LOKI_QUIET_ON is already on his approved list).
