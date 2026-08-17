@@ -105,14 +105,61 @@ def decode(replay: Path):
     return out
 
 
+def _incumbent_ctrl() -> str | None:
+    """CLASS A, s48 wrap — DERIVE THE CONTROL, DO NOT EMBED IT.
+
+    This used to be `--ctrl default="bots/_v146gunaxis"` with the comment "Move
+    this on every ship; a stale control measures the wrong contrast." Nobody
+    moved it: at the s48 wrap the default named v114 while the incumbent was
+    `bots/_v468kladturbo`, so any hand-run omitting --ctrl was silently dosing
+    against a control ~11 ships stale. A comment instructing a human to maintain
+    a constant is the failure mode, not the fix — `tools/fleet_dispatch.py` was
+    converted for exactly this reason (a50f27ef). Reads PROGRAMME.md's INCUMBENT
+    through control_pin, the one authority.
+    """
+    try:
+        sys.path.insert(0, str(Path(__file__).resolve().parent))
+        from control_pin import incumbent
+        p = incumbent()
+    except Exception:
+        return None
+    if p is None:
+        return None
+    try:
+        return str(p.relative_to(Path(__file__).resolve().parent.parent))
+    except ValueError:
+        return str(p)
+
+
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("bot")
-    # CONTROL = current incumbent (v112 = _v148ferryfirst as of 2026-08-11).
-    # Move this on every ship; a stale control measures the wrong contrast.
-    ap.add_argument("--ctrl", default="bots/_v146gunaxis")  # v114, shipped 19:14Z
+    ap.add_argument("--ctrl", default=None,
+                    help="control tree; default = PROGRAMME.md's INCUMBENT, read live")
     ap.add_argument("--kind", default="sentinel")
-    ap.add_argument("--games", type=int, default=24)
+    # ⛔⛔ CLASS B, s48 wrap — A TOOL CONSUMED BY PRE-REGISTRATIONS MAY NOT PICK
+    # ITS OWN SAMPLE SIZE. `--games` had `default=24`. On 2026-08-17 a prereg
+    # registered n=120 and the battery was invoked without `--games`; the tool
+    # ran 24 and said nothing, so the registered size and the executed size
+    # differed with no artefact anywhere recording it. That is the same shape as
+    # a registered method that is not executable — except silent, because 24
+    # games print exactly the same verdict vocabulary as 120.
+    # ⇒ THERE IS NO DEFAULT ANY MORE. Either say which n you registered
+    # (`--registered N`, which STAMPS the number into every verdict line and
+    # reports any shortfall against it), or declare the run unregistered
+    # (`--games N`). Passing both is a REFUSAL unless they agree.
+    ap.add_argument("--games", type=int, default=None,
+                    help="sample size for an UNREGISTERED exploratory run")
+    ap.add_argument("--registered", type=int, default=None, metavar="N",
+                    help="the n written into the pre-registration; stamped into "
+                         "the output and checked against what actually ran")
+    # ⛔ debt 20, s48: dose.py:157 unlinked every replay after decoding and had
+    # no retain flag, but the registered S1 seat-band read on both SEALSENT
+    # preregs consumes THE REPLAYS. A registered read whose inputs the tool
+    # deletes is a registered read that cannot be executed.
+    ap.add_argument("--keep", default=None, metavar="DIR",
+                    help="retain every replay in DIR instead of deleting it "
+                         "(required by any registered read that decodes replays)")
     ap.add_argument("--maps", nargs="*", default=MAPS)
     # ADD-ONLY (builder s48). Off by default; changes NO existing computation.
     # WHY: the printed band covers `fwdbuild_<kind>` ONLY, because that is the
@@ -125,13 +172,46 @@ def main():
                     help="also write per-game paired counts to this TSV")
     a = ap.parse_args()
 
+    # ---- CLASS B GATE: refuse to invent a sample size, and refuse a contradiction.
+    if a.games is None and a.registered is None:
+        print("⛔ dose.py REFUSES to pick a sample size for you.\n"
+              "   Pass --registered N (the n written into the pre-registration) "
+              "or --games N (an explicitly unregistered exploratory run).\n"
+              "   There is no default: a tool consumed by preregs that silently "
+              "runs a different size than registered produces a result nobody "
+              "can tell apart from the registered one.", file=sys.stderr)
+        return 2
+    if (a.games is not None and a.registered is not None
+            and a.games != a.registered):
+        print(f"⛔ dose.py REFUSES: --games {a.games} contradicts --registered "
+              f"{a.registered}. Say one number, not two.", file=sys.stderr)
+        return 2
+    if a.registered is not None:
+        a.games = a.registered
+    if a.ctrl is None:
+        a.ctrl = _incumbent_ctrl()
+        if a.ctrl is None:
+            print("⛔ dose.py REFUSES: no --ctrl given and PROGRAMME.md's "
+                  "INCUMBENT could not be read. Refusing to guess the control "
+                  "tree — a wrong control measures the wrong contrast silently.",
+                  file=sys.stderr)
+            return 2
+        print(f"  control derived from PROGRAMME INCUMBENT: {a.ctrl}", flush=True)
+    _reg = (f"REGISTERED n={a.registered}" if a.registered is not None
+            else f"UNREGISTERED n={a.games}")
+
+    keep_dir = None
+    if a.keep:
+        keep_dir = Path(a.keep)
+        keep_dir.mkdir(parents=True, exist_ok=True)
     tmp = Path(tempfile.mkdtemp(prefix="dose_"))
     T, C = Counter(), Counter()
     per_t, per_c = [], []          # PER-GAME values — the band needs the spread
     per_game = []                  # ADD-ONLY: full per-game rows for --tsv
     n = 0
     seed = 0
-    print(f"DOSE  {a.bot}  vs  {a.ctrl}   kind={a.kind}   SERIAL", flush=True)
+    print(f"DOSE  {a.bot}  vs  {a.ctrl}   kind={a.kind}   SERIAL   {_reg}"
+          + (f"   KEEP -> {keep_dir}" if keep_dir else ""), flush=True)
     try:
         while n < a.games:
             m = a.maps[(n // 2) % len(a.maps)]
@@ -171,9 +251,20 @@ def main():
                 cb = C[f"fwdbuild_{a.kind}"] / n
                 print(f"  {n}/{a.games}  fwd {a.kind}/game  TREAT {tb:.2f}  "
                       f"CTRL {cb:.2f}", flush=True)
-            rp.unlink(missing_ok=True)
+            if keep_dir is not None:
+                # RETAIN, don't delete. Name carries everything the S1 seat-band
+                # read needs to pair a replay back to its cell without a
+                # side-file: game index, map, seed, and which seat the TREATMENT
+                # played. A bare g<N>.replay26 would need this tool's loop
+                # re-derived to be readable.
+                rp.replace(keep_dir / f"g{n:04d}_{m}_s{seed}_treatseat{seat}.replay26")
+            else:
+                rp.unlink(missing_ok=True)
     finally:
         shutil.rmtree(tmp, ignore_errors=True)
+        if keep_dir is not None:
+            _kept = len(list(keep_dir.glob("*.replay26")))
+            print(f"  KEPT {_kept} replays in {keep_dir}", flush=True)
 
     if a.tsv and per_game:
         cols = list(per_game[0].keys())
@@ -186,7 +277,14 @@ def main():
     if not n:
         print("DOSE_RESULT: NO GAMES")
         return
-    print(f"\nDOSE  n={n} games (both seats)")
+    print(f"\nDOSE  n={n} games (both seats)   {_reg}")
+    if a.registered is not None and n != a.registered:
+        # The whole point of --registered: the gap between what was registered
+        # and what ran is stated IN the result, not left to whoever compares the
+        # prereg page against the log later.
+        print(f"  ⛔ SHORTFALL: {n} games ran against {a.registered} REGISTERED. "
+              f"This result is NOT the registered read; say so wherever it is "
+              f"banked.")
     keys = [f"build_{a.kind}", f"fwdbuild_{a.kind}",
             f"death_builder_bot", f"fwddeath_builder_bot"]
     print(f"  {'quantity':<28}{'TREAT':>9}{'CTRL':>9}{'ratio':>9}")
@@ -236,4 +334,6 @@ def main():
 
 
 if __name__ == "__main__":
-    main()
+    # ⛔ The refusals above return 2 and MUST reach the shell — a battery script
+    # that reads `$?` would otherwise see 0 on a refusal and run on.
+    raise SystemExit(main() or 0)
