@@ -69915,3 +69915,22 @@ ourver     <300  300-499  500-699   >=700
 ⭐ **CONTEXT THAT MAKES THE SIZE LEGIBLE: ph reaches its first harvester at r2-5 and we reach ours at r5-9. On a bot whose median kill lands near r180, a 3-4 round harvester head start compounds through the entire economy — and it is the FIRST link in the chain the eco study measured (first delivery → connect → trunk).**
 ⇒ **THIS BELONGS IN FRONT OF THE ECO TRIO: `ECOMMIT`, `FREEROUND` and `ROUTESCORE` all optimise what happens AFTER the first harvester exists. Nothing on the board addresses WHEN it exists, and that is where the measured gap against the best teams is.**
 ⚠ **LIMITS: teams do not play identical map distributions, so cross-team comparison within a band is approximate; and first-harvester round depends on ore geometry, which the area band only partly controls. The VERSION comparison is internally controlled and is the stronger half.**
+
+--- 2026-08-17T06:34:57Z ⭐⭐ **SIDE LANE s48 — FIRING 3 IS THE CASE I PREDICTED AT 04:40Z: THE FIRST POLICY-CORRECT-BUT-NOT-DATA-CORRECT KILL. THE REGIME IS NOW PAYING ITS PRICE, VISIBLY.** ---
+
+```
+FIRING 1  SEALSENTAN  46.07  CI [43.15, 48.99]  -> EXCLUDES 50   ** DATA-correct kill **
+FIRING 2  ECOMMIT     36.58  CI [32.41, 40.74]  -> EXCLUDES 45   ** DATA-correct kill **
+FIRING 3  FREEROUND   49.18  CI [46.29, 52.06]  -> CONTAINS 50   ** POLICY-correct, NOT data-correct **
+```
+⛔ **FREEROUND's interval CONTAINS 50: the data cannot say the arm was worse than the control, only that it was not demonstrably better.** ⇒ **THE TALLY IS NOT "3/3 CORRECT" — it is TWO DATA-CORRECT AND ONE POLICY-CORRECT, and conflating them would overstate the regime's record.**
+✅ **THE STOP IS STILL RIGHT, ON MAGNUS'S RULING RATHER THAN ON THE NUMBERS.** His pin: *"the share needs to be above 51% at 1000 … otherwise it's no use to us"*, and against a `>60 vs Sleipnir` target an arm at parity IS no use. ⇒ **the regime is behaving exactly as ordered.** ⭐ **WHAT IT IS NOT IS EVIDENCE THE ARM WAS BAD — and that is precisely the price Magnus KNOWINGLY ACCEPTED when he kept the floors strict. This is the FIRST TIME THAT PRICE IS VISIBLE, and it enters the record AS the price rather than as a defect or as another success.**
+⚠ **SELECTION COMPOUNDS IT: the stop fired on a LOW PREFIX DRAW (49.50), so the true share is HIGHER in expectation** (s47: +2.82 / +1.33, mean +2.08pp, n=2) ⇒ **an arm plausibly AT or slightly ABOVE parity has been stopped.** ✅ **Disclosed on the row.**
+⭐ **AND THE ECO TRIO IS NOT FAILING UNIFORMLY, which is the useful finding: ECOMMIT 36.58 (catastrophe) · FREEROUND 49.18 (parity-ish) · ROUTESCORE still filling.** ⇒ **whatever ECOMMIT does is ACTIVELY DESTRUCTIVE and it is NOT the shared eco premise — or FREEROUND would have died the same way.** **A sharper diagnosis than either row alone, available BEFORE the third reads.**
+✅ **My certification obligation discharged in the stated form: the registered connect-rate-with-harvester-count diagnostics are explicitly `WAIVED-AT-CANCELLATION` (no primary ⇒ FIRINGS never binds) rather than dropped silently.**
+
+## ⭐ AND A STRUCTURAL CATCH SEEN COMING RATHER THAN AFTER THE FACT
+**`grep freeround-autostop-1000` returned TWO rows — n=1153 written by `auto_gate --apply` AT STOP TIME, n=1155 typed by the builder AGAINST THE FINAL TAPE. Same key, two numbers, no supersession marker.**
+⭐⭐ **NOT AN INCIDENT — A SYSTEMATIC TWO-AUTHOR COLLISION: the tool writes at the stop and the human types after the tape settles, so they will ALWAYS disagree by the rows that landed between.** ⇒ **it is the KLADLADDER 3121-vs-3404 shape RECURRING, and that fix was PER-INSTANCE while the collision is STRUCTURAL.** ⭐ **D21(d)'s FOURTH appearance today — and the FIRST I could see coming rather than diagnose afterward, which is what made it cheap.**
+✅ **FIXED IN THE KEY, NOT THE PROSE (builder adopted, effective immediately): `<shard>-autostop-<mark>` = the tool at stop time; `<shard>-final` = the builder against the final tape.** ⇒ **two authors, two keys; every future auto-stopped shard resolves BY GREP without prose inference.** ⭐ **The day's principle — put the qualifier where it cannot be separated — applied to the ledger's own key.**
+⚠ **METHOD NOTE: my first grep found NO waiver language and I nearly flagged it; it ran BEFORE the builder's commit landed. Re-checked instead. THIRD time today the tree-vs-commit distinction would have produced a false flag, and the FIRST time I caught it BEFORE sending rather than after.**
