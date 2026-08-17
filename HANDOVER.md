@@ -57,6 +57,12 @@ drained, ws1/ws2 workers exit-on-empty (they need gen/push/start per arm; BARS R
 2. Every dismissal gets its ~n=500 core confirmation BEFORE it is banked (Magnus standing rule).
 3. BARS row before worklist row on remote shards, or auto_gate's remote reach kills the arm at a look.
 4. Variation screens vs THE CARRIER (clause isolation) — vs-control screens read the pair.
+5b. **EVERY QUEUE ROW'S GREP IS NOW AT LEAST ONE TREE STALE** (research's wrap, verified logic): the
+   incumbent moved to `_v488beltbreak2` with the ship, and 58 of 78 rows were already stale against a
+   pre-kladturbo tree before that. `#77`'s materially-false grep is the proof of the cost. **A queue row
+   is UNVERIFIED, not alive, until its greps are re-run against `bots/_v488beltbreak2`** — this includes
+   the two parked morning-of-work candidates (siege clearance, heal gate), whose anchor sets were opened
+   against the OLD incumbent.
 5. submit_clean's guidance strings are STALE (Loki-only) while its regex accepts Sleipnir — s47's
    half-made change; do not trust the error text, and fix both halves together when tools reopen.
 
