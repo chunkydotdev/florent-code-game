@@ -1400,3 +1400,16 @@ before the day's largest finding.** **A wrap that runs the retro at wrap time ca
 incident — so the retro needs an explicit AMEND path rather than a rewrite**, which is what this
 section is. **The alternative, silently editing the s48 answers, would have destroyed the record of
 what the lane believed at wrap time.**
+
+## ⭐ v1.18 — **FIRING 18. Q8's REPLACEMENT BUCKETS SURVIVE THEIR FIRST RUN; Q3 POSTS ITS BEST READING WITH THE MECHANISM NAMED; THE PLAUSIBLE-VALUE BLIND SPOT CONFIRMS A THIRD TIME.**
+
+**v1.18 — 2026-08-17 (MINOR: records firing 18, ratifies the Q8 bucket split, sharpens nothing). Instance: `docs/retro-side-lane-2026-08-17-s50.md`, committed in this same action.**
+
+* **FIRINGS: 18** (s29, s32–s45, s47, s48, s50). Zero point bumps. *(s49: lane stood down by directive — recorded by research's s49 wrap D6, not a silent gap.)*
+* **✅ Q8's v1.17 CARRY IS DISCHARGED ON ITS FIRST RUN: `ADOPTED 4 / CORRECTED-IN-RECORD 2 / BUILT 0` — and the zero reads as the wrap rule working, not as collapse.** The buckets are RATIFIED as the question's permanent form.
+* **⭐ Q3 = 2 published, the best recorded (prior: 5-10), against ~4 killed pre-publication — and the discriminator is now stable across SIX runs: every kill came from a primary returning an ILLEGAL value; both escapes returned PLAUSIBLE ones (v1.14's blind spot, third confirmation).** The counter-practice stands: prefer queries whose failure mode is illegal; treat a plausible return as unverified.
+* **⭐ Q5's REDIRECTED bucket produced the run's most valuable artefact again** — a dead stall-flag redirected to the heartbeat-never-terminal gap, now wrap debt with an accepted fix shape. Two runs, two redirect payoffs.
+* **Q6′ conduct claims: ZERO, eleventh consecutive run.** Q9 = 0 re-corrections. Q7's four declines all held, one vindicated same-session (the unattributed c3d122b7).
+* **SUNSET WATCH: every surviving question fired. Nothing armed.**
+
+**⚠ CARRIED TO v1.19 — one:** both Q3 escapes this run were claims whose refuting fact **left no trace on my read surface** (an index state only an empirical drive could show; a file-level ordering the failed append never logged). The existing question asks what I looked at; **the next run should also ask: COULD my surface have shown the refutation at all — and if not, the claim needed the RELAYED-UNVERIFIED label, not a better look.**

@@ -71325,3 +71325,26 @@ My cert read "BARS+worklist `bb2dbf4b` — no exemption-less window", which is t
 * **NOTHING OF MINE IS RUNNING.** Seven agents spawned, seven completed, seven banked+relayed. The rated-match monitor is being stopped as part of this wrap. **DIES WITH ME: NOTHING.**
 * **HARD LIMITS HELD: no bot edits, no submissions, no activations, zero matches fired (verified across all agent briefs — download-only grants), no arena, no verdicts, no HANDOVER/PROGRAMME/tape writes.**
 * **WAKE PATHS: none of mine persist.** Daemons are the builder's wrap item (ship_watch v159 semantics named there). Overnight is dark by Magnus's instruction — the morning boot's now.py + a v160 rated decode is the recovery path, and this note is its brief.
+
+# ============================================================================
+# 2026-08-17T20:48:34Z — **SIDE LANE s50 WRAP + REBOOT STATE — SIDE LANE** (trigger: the BUILDER'S
+# WRAP-PING relaying Magnus's all-lanes wrap call — standing rule, FIFTH firing).
+# **Arm retro ran FIRST per charter: `docs/retro-side-lane-2026-08-17-s50.md`,
+# instrument v1.17 → v1.18, FIRING 18 — committed in this same action.**
+# ============================================================================
+
+## HOLDER LINE — from now.py at 20:46:41Z, NEVER a poller (D28)
+**HOLDER v160 "Heimdall v1 (splitfork seat-war)", uploaded by x3r0 at 2026-08-17T18:56:51.626Z, rating 1822 (Emerald), rank #19 of 126, matches 1205.** **CONTROL (PROGRAMME INCUMBENT) = `bots/_v488beltbreak2` — HOLDER ≠ CONTROL, the divergence every queued row must respect.** **LOCK-IN MODE IN FORCE** (8bcdc874, Magnus verbatim): no submits/activations/unrated fires by any lane until he reopens; a successor boots INTO this state.
+
+## SESSION LEDGER (~17:19Z → 20:47Z, 13 commits, all pushed)
+2 flags raised and consumed (<2 min and same-hour): F1 uncommitted-work, F2 Erebus-anomaly-is-v143 (now standing panel practice: cells split by oppver). 4 number corrections accepted with amendments. 3 lock/guard certificates: rotation runner (aim 4/4, guard both-verdicts — later completed IN PRODUCTION), PREREG-SALTRAY (two-clock 47 s), PREREG-RINGLADDER (two-clock 20 s; addendum for the disclosed file-level BARS inversion, exposure zero by arithmetic). 2 closure audits: SALTRAY floor-stop (arithmetic exact, typed row clean) and **ringladder-final, verified as this lane's last act: 25.00 [21.01,28.99] n=452 re-derived exact, carve-out conditions met (n≥400, CI-hi<45), Band-5 sentence licensed as registered, selected-pessimistic disclosed, lying-fixture caveat binding.** Lock-in sweeps: 3 cycles, one event (605de1bc) resolved FIELD-PROBE on a three-way denial. 2 published errors of mine, both retracted/scoped at the durable record (see retro Q3). Conduct claims zero.
+
+## ⛔ OPEN FOR THE SUCCESSOR — what this wrap could not reach
+1. **The v513 tree + build report (the day's largest single-iteration change) lands AFTER this wrap — its D1-D10 pass is the successor's first audit.** Iteration-4 spec: sentinel-after-salt (d5eacf2e).
+2. **The builder's WRAP-FIX tool commits are UNAUDITED** (Magnus authorized wrap-time fixes via an opus agent; the debt list is the tail-accumulated one: heartbeat terminal-state, append-check bind-to-mutation, mid multi-UUID grep, submit_clean strings, dose.py --tle, round-1 runner grep, ship_watch v159 semantics, prereg_check window arithmetic). **Successor: drive every changed guard BOTH WAYS before trusting it — a wrap-fix agent editing guards is exactly D19's fixture-edit class.**
+3. **The builder's own wrap commits (arm retro, PROCESS DELTAS, HANDOVER top block) post-date mine — unaudited.**
+4. **Deferred obligation attached to any future ferry-siege-family prereg: full deterministic flag-off equivalence for v510/v511/v512** (spot-checks only so far, builder-declared).
+5. **With Magnus: the x3r0 scope question on lock-in** (does no-unrated-fires bind a teammate testing their own ship — the next such platform row is unattributable without the answer).
+
+## WAKE PATHS AND LIMITS
+My commit watch and sweep die with this session (session-scoped by design; the builder's daemons survive per their HANDOVER). Hard limits held all session: no bot edits, no arena/unrated fires, no verdicts, no HANDOVER/tape writes; committed only my own notes, certificates, and retro files; every commit pushed within the minute.
