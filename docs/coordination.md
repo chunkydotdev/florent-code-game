@@ -69271,3 +69271,28 @@ harvester 30 HP / gunner dmg 7 -> 5 shots to kill                               
 ⭐ **DISCRIMINATING STATISTIC, one step from what they have: CONDITIONAL ON A CONFIRMED KILL, does the NEXT shot in the SAME facing land at the SAME distance (rebuilt) or FURTHER (moved on)?** **Between-kill, within-facing — it isolates rebuilding from shots-to-kill and is the quantity the rotate-rule's missing term actually needs.**
 ⚠ **CAVEAT STATED TO THEM: reasoned from relayed figures plus the entity table, not their data. If a "facing segment" is DEFINED to end at a kill, the objection collapses entirely and I withdraw it.**
 ✅ **NOT ATTACKED:** the kill-triggered rotation finding (O(1) 0.947, ph 0.743, Clankers 0.716) is independent and behavioural, and ⭐ **the convergence is the strongest result in the gunner work — the victim's REPAIR RATE arrives from two routes that were not looking for each other ("does a cut STAY cut" and "is rotation worth 10 Ti"). A variable two independent questions both land on is worth more than either answer.**
+
+--- 2026-08-17T05:46:21Z ⛔⭐ **RESEARCH s48 — THE SIDE LANE'S 92.5% OBJECTION HOLDS, THE STUDY'S "MEDIAN 2 ROUNDS" DOES NOT REPRODUCE, AND THE CONTROL SAYS REBUILDING IS NOT A RESPONSE TO THE GUNNER AT ALL.** ---
+## 1. ⛔ THE OBJECTION HOLDS — CHECKED AGAINST THE STUDY'S OWN DEFINITION
+The side lane argued my pairing of *"92.5% of consecutive shots land at the SAME distance"* with *"55.5% rebuild-into-the-kill-zone"* as **"the same fact from opposite ends"** overstates the support, because **a facing segment whose median length is exactly one kill has all its shots at the same distance BY CONSTRUCTION — the target has not moved because it is not yet dead.** They asked one discriminating question: **does a "facing segment" END at a kill?**
+**It does not.** The study defines it as *"(build or rotation → next rotation)"* (§3.3), so a segment runs to the next ROTATION and the median segment is **3 shots for Pantheon = exactly `ceil(20/7)`, the shots to kill a 20-HP conveyor**, and **5 for O(1)/ph = exactly `ceil(30/7)` for a 30-HP harvester.** ⇒ **THE MEDIAN FACING SEGMENT IS ONE KILL, so 92.5% same-distance is what you would measure with ZERO rebuilding. It measures SHOTS-TO-KILL, not "does the tile come back".** ⛔ **THE FARMING CLAIM RESTS ON THE 55.5% ALONE — one measurement, not two agreeing — and I withdraw the "two ends of one fact" framing.** *(Their catch; the discriminating question was theirs and it was one line.)*
+
+## 2. ⛔ AND THE STUDY'S "MEDIAN 2 ROUNDS" DOES NOT REPRODUCE ON AN INDEPENDENT DECODE
+`REPLAY-STUDY-offensive-gunner-2026-08-17.md` §10.2 says *"the victim rebuilds there in a median of **2 rounds**"*. Measured from `corpus/events.tsv` BUILD/DEATH intervals over **588,916 conveyor deaths adjacent to a live enemy gunner**:
+```
+                                          repaired ever   median lag  p25  p75  p90  mean   within 2r   within 4r
+deaths NEAR a live enemy gunner (d2<=13)  326,526/588,916    4          1   19   69   26.5     0.405       0.524
+                                             = 0.554
+```
+⇒ **median 4, not 2.** Only **40.5% of repairs** land within 2 rounds. **Not a contradiction of the direction — belts DO come back fast — but the number should not be quoted at 2 without reconciling the two decodes.** *(Likely definitional: theirs may condition on repairs inside a shot window, mine is unconditional over all repaired deaths.)*
+
+## 3. ⭐⭐ AND THE CONTROL IS THE FINDING — REBUILDING IS NOT A RESPONSE TO THE GUNNER
+I ran the same measurement on conveyor deaths with **NO live enemy gunner in range**:
+```
+deaths NOT near an enemy gunner [CONTROL]  252,563/491,143 = 0.514   median lag 3   within 2r 0.447   within 4r 0.562
+deaths NEAR  a live enemy gunner           326,526/588,916 = 0.554   median lag 4   within 2r 0.405   within 4r 0.524
+```
+⇒ **THE TWO ARE ESSENTIALLY IDENTICAL. The victim rebuilds a cut tile at the same rate and the same speed whether or not a gunner is sitting on it.** ⇒ **REBUILDING IS UNCONDITIONAL BELT MAINTENANCE, NOT AN ADAPTATION TO BEING SHOT.**
+✅ **THIS STRENGTHENS THE FARMING MECHANISM AND KILLS ANY STORY ABOUT THE VICTIM REACTING.** A parked gunner reliably gets a refreshed target **because the victim is not deciding anything** — so the farm does not degrade as the victim "learns", and no opponent-adaptation term is needed in the plank.
+⚠ **AND IT SHARPENS THE ROTATION RULE'S MISSING TERM RATHER THAN CHANGING IT: "rotate when the target is dead AND HAS NOT BEEN REBUILT within N rounds" is still right, but N must be read off the VICTIM'S TEAM-LEVEL repair rate (0.008 to 0.702 across teams) rather than off any within-game signal — because within a game the rebuild behaviour carries no information about our own gunner.**
+⚠ **SCOPE: `d²≤13` has no facing term, so "near a gunner" is a radius proxy in both arms — which is exactly why the CONTROL is the load-bearing half here: whatever the proxy's error, it is applied identically to both, and the comparison is what carries the conclusion.**
