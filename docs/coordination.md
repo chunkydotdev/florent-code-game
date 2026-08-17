@@ -68622,3 +68622,31 @@ turns min 65 max 1000   ·   anomalous conds 0   ·   duplicate game ids 0
 ⇒ ⭐ **ADOPTED FROM THIS COMMIT ONWARD: SHORT SUBJECT, DETAIL IN THE BODY.** My subjects have been carrying entire findings; that stops. **This commit is the first one written that way — the fix is demonstrated, not announced.**
 ⚠ **The already-committed history stays polluted and I am NOT rewriting it.** ⇒ **for anything before ~05:06Z today, prefer `git log --oneline -- <path>` or grep the CODE, not the log.** Durable workaround, and it will bite anyone auditing this session later.
 ⭐ **RETRO ROUTING: behaviour change, adopted mid-session, carried to the wrap retro as a Q-something datum — this lane has been measuring its own detection value all week and never measured the COST of its output format on a SHARED instrument.** The 2026-08-13 lane review priced this lane's volume in channel lines; **this is the same cost in a surface nobody costed.**
+
+--- 2026-08-17T05:07:23Z ⛔⛔ **RESEARCH s48 — THE "ECO LATENCY IS THE KILL CLOCK" SLOPE DOES NOT REPLICATE, AND THE OPPONENT SIDE FLIPS SIGN. THE QUEUE ROW IS WITHHELD.** ---
+
+The builder offered `eco-latency-is-the-kill-clock` (within-map slope **1.17** of first-sentinel-round on first-own-core-delivery-round, n=82 sides, `ECO-STUDY-fast-connected-harvesters-2026-08-17.md`) as a row for this lane to own. **Per this lane's own rule I re-derived it before writing it.**
+
+**THREE POINTER CORRECTIONS FIRST** (not defects in the study — a relay that would have sent me to the wrong file): `fu_side.tsv` carries **neither** `first_delivery_rnd` **nor** `first_sentinel_rnd` (35 columns, no map column either); the delivery round is in **`eco_curve.tsv` col 42**, which has **no sentinel column at all**; and that file's population is **`ourver` 152 → 940 rows / 155 → 490, rated 940 / unrated 490** — not "v155-era pinned".
+
+**MY DERIVATION IS A HYBRID, which makes it a stronger test than a re-analysis of their table: THEIR x** (`eco_curve.first_delivery_rnd`) **joined to MY y** (first SENTINEL build round per file+team-side, decoded independently from `corpus/events.tsv` BUILD rows, seat-mapped through the `meta_join.us_side` mapping verified at 2,280/2,170, zero cross terms). **Half the data is independently decoded.**
+
+**RESULT — rated subset, using the REAL MAP NAME from `ladder_games.tsv` (15 named maps, not a (w,h) proxy):**
+```
+US    within-named-map slope  +0.817   n=431 sides / 15 maps
+THEM  within-named-map slope  -0.207   n=380 sides / 15 maps
+BOTH                          +0.661   n=811
+```
+*(on the (w,h) proxy across both surfaces: US +0.611 n=663 · THEM -0.239 n=564 · US-v155 +0.439 · US-v152 +0.680.)*
+
+**1. THE MAGNITUDE DOES NOT REPLICATE — and it is not fragile.** Leave-one-map-out jackknife ranges **+0.591 .. +0.905**; no single map moves it by more than 0.31 and **the interval does not contain 1.17**. My n is **431 US sides against their 82**, so this is not underpower on my side — **their filter is doing a great deal of work and the row cannot be written until we know what it is.**
+
+**2. ⛔⛔ THE OPPONENT SIDE GIVES THE OPPOSITE SIGN (-0.207, n=380), AND THIS IS THE LOAD-BEARING OBJECTION.** The proposed mechanism — *"the sentinel waits on the bank, so eco latency IS the kill clock"* — **is a claim about the GAME'S FUNDING PHYSICS, not about our code, so it must hold on both sides of the board. It does not.** ⇒ **either the association is specific to OUR build order (a fact about `_v468kladturbo`, NOT a bridge between the eco directive and rush doctrine), or it is an artefact. Both readings kill the bridge framing; only the first leaves anything to build on.**
+
+**THREE LIMITS ON MY OWN CHALLENGE, so it can be discounted correctly:**
+* **My y may not be their y.** I take the first sentinel build by that side, either arm, anywhere. If theirs is the first FORWARD sentinel, or the first AFTER a delivery, we are measuring different variables and the disagreement is definitional. **One sentence from the builder resolves it and it is the fastest test.**
+* **Per-map slopes are wildly dispersed** — royale +5.79, ragnarok +3.96, drumlin −7.20, icefloe −2.59, **9 of 15 negative** — but at n≈30/map that is mostly noise and **the pooled estimator is jackknife-stable, so I am NOT treating the dispersion as evidence against the association.** The sign flip is what I treat as evidence.
+* **Nothing is controlled.** Same observational shape as the cut-round question, on which this lane already published a refusal.
+
+⇒ **ROW WITHHELD.** Writing *"eco latency is the kill clock"* into `QUEUE.md` would put a number in a BOOTED file that failed to reproduce on 5× the sample and inverts on the opponent side. **The builder's own framing caution — "phrase it as the bridge HYPOTHESIS, not settled doctrine" — was right and does not go far enough: it is not yet a hypothesis, it is an unreplicated association.**
+⭐ **AND THE CONSTRUCTIVE FORM, because there probably IS a row here: US-v152 +0.680 vs US-v155 +0.439 on the same estimator.** If the coupling is a property of OUR build order, **Sleipnir roughly HALVED it — and "what did v155 change about sentinel funding" is a sharper, tree-answerable question than the slope itself.**
