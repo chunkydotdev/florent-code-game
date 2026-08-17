@@ -839,7 +839,9 @@ same rider on the next plank:
 doctrine.py:1488   LOKI_QUIET_ON = True    # no builder melee: no core peck, no siphon hit, no counterbattery
 main.py:635        if LOKI_QUIET_ON: return False     <-- returns BEFORE ct.fire(best)
 ```
-⇒ **the 8-tier target-ranking ladder at `main.py:503-508` is UNREACHABLE DEAD CODE.** A re-rank arm would measure nothing. ⭐ **The residual QUESTION is bigger than the row: how much other behaviour sits behind `LOKI_QUIET_ON`?** `raid.py:267`, `raid.py:348` and `eco.py:1636` all branch on it. **That is a tree-audit question, not a plank, and it is not stocked as one.**
+⛔⛔ **STRUCK AND CORRECTED BY ME 2026-08-17T08:0xZ, BEFORE ANYONE ACTED ON IT. THE SENTENCE THAT STOOD HERE — *"the 8-tier target-ranking ladder at `main.py:503-508` is UNREACHABLE DEAD CODE"* — IS FALSE, AND I PUBLISHED IT INTO A BOOTED FILE.** I read `main.py:495-512` after the builder declined to adopt the strong form: **those lines are LIVE THREAT DETECTION inside `_builder` (`main.py:418`)** — they scan `get_nearby_entities()`, latch the enemy core into `SLOT_ENEMY_CORE`, and write `SLOT_UNDER` / `SLOT_ATK_RND` / `SLOT_THREAT`. **Reachable, load-bearing, and nothing to do with the silenced fire path.**
+✅ **WHAT SURVIVES, AND IT IS ENOUGH TO KILL `#85` AS A PLANK:** `LOKI_QUIET_ON = True` (`doctrine.py:1488`) and `main.py:635 if LOKI_QUIET_ON: return False` sitting immediately before `ct.fire(best)` inside **`_sabotage_prio` (`main.py:609`)** ⇒ **that fire path is unreachable.** ⭐ **THE BUILDER'S DISCIPLINE IS THE LESSON AND IT IS RECORDED ON PURPOSE: *"a flag silences a fire call"* and *"this specific ranking ladder is therefore dead code"* ARE TWO CLAIMS, and I asserted the second from the first without reading the lines I cited.** ⚠ **I have not located an "8-tier ladder" anywhere; that phrase came from a subagent's relay and I passed it through without checking the anchor. Treat it as withdrawn, not as relocated.**
+⭐ **The residual QUESTION is bigger than the row and it stands: how much other behaviour sits behind `LOKI_QUIET_ON`?** `raid.py:267`, `raid.py:348` and `eco.py:1636` all branch on it. **That is a tree-audit question, not a plank, and it is not stocked as one.**
 
 **⛔ `#92` DECOUPLE THE FIRST SENTINEL FROM THE ECO CLOCK — DEAD, ALREADY BUILT AND SWITCHED OFF.** *(re-verified by hand)*
 ```
@@ -851,7 +853,15 @@ main.py:447-448    LOKI2_RUSH_SEATS = (0,1) leave for the raid at once
 ```
 ⇒ **`#92` IS `#72`.** The two constants this row asks for are the two constants that already exist. **Building it fresh duplicates a boolean.** ⚠ **`#72`'s own cited call sites are STALE — `main.py:336`/`raid.py:656` in the row, actual `main.py:447`/`raid.py:673`.**
 
-**⛔ `#91` AS A SEPARATE ARM — DEAD; IT IS THE SAME LINE AS `#90`.** `raid.py:688 tiles = core_tiles(E)`. Siting and timing are one edit to one line's target set. **Two arms here is padding, and the row says so itself.**
+**⛔⛔ `#90` AND `#91` — DEAD, AND FOR A STRONGER REASON THAN I FIRST WROTE: THEY ARE NOT ONE ARM TO BUILD, THEY ARE *ZERO* ARMS TO BUILD.** *(Builder's finding; I verified it before amending.)*
+I originally retired only `#91`, as *"the same line as `#90`"*, and framed `#90` as **"one edit to `raid.py:688`'s target set"**. ⛔ **THAT FRAMING IS SUPERSEDED: THE EDIT ALREADY EXISTS AS A SEPARATE SUBSYSTEM IN A CANDIDATE TREE, AND IT HAS ALREADY BEEN MEASURED.** Verified by me in `bots/_v480beltbreak`:
+```
+doctrine.py:1355   LOKI_BELTBREAK_DSQ_LO = 20     # the productive annulus, inner edge (d^2)
+doctrine.py:1356   LOKI_BELTBREAK_DSQ_HI = 100    # the productive annulus, outer edge (d^2)
+raid.py:773+       _live_beltbreak_guns / the forward economy-shredder siting ladder
+```
+⇒ **that is EXACTLY the `20 <= d² < 100` band the control cannot reach, built as its own ladder rather than as a patch to the core-adjacent path.** **And it is not speculative: 52.90% [51.13, 54.67] at n=3053, with timely-kill 30.00% vs the control's 26.76%, non-overlapping.** ⇒ **the live work is `BELTBREAK2`'s dose iteration, already out with a build agent. Mark both rows SHIPPED-NOT-PENDING.**
+⭐⭐ **AND THE DEEPER CUT, which is the builder's and is sharper than mine: the core-adjacent sentinel path and the annulus shredder are TWO DIFFERENT WEAPONS, and conflating them is how this queue ended up carrying FOUR ROWS FOR TWO MECHANISMS.** `LOKI_FWD_MIN_HARV`/`LOKI_FWD_TI_FLOOR` gate the core-adjacent path only; they were never the annulus's gate. ⚠ *(One thing I did NOT verify and am not asserting: the builder states `BELTBREAK` never WRITES `SLOT_FWD_GUN`. The symbol occurs 5× in its `raid.py` and I did not separate reads from writes. The design intent is explicit in the docstring; the write-count is unchecked.)*
 
 **⛔ `#63` / `#77` BODYAWARE — DEAD, ALREADY SHIPPED.** Merged into `_bfs_direction`, tagged at nine lines, `doctrine.py:1879`. ⛔ **`#77`'s GREP claiming "0 hits in the incumbent" is MATERIALLY FALSE** — it was run against a pre-`kladturbo` tree and never re-run. **This is the exact failure the stale-grep flag exists to catch, and it survived 58 stale rows to be found by hand.**
 
@@ -864,7 +874,7 @@ raid.py:684   if dsq_core(p, E) > 50: return False
 raid.py:688   tiles = core_tiles(E)
 raid.py:695   if bp.distance_squared(target) > 32: continue
 ```
-⇒ **THE RAIDER MUST WALK INSIDE d² ≤ 50 OF THE ENEMY CORE BEFORE ANY FORWARD TURRET CAN BE SITED AT ALL, AND THE ONLY LEGAL TARGETS ARE THE FOUR CORE TILES.** **No code path in this tree can plant a forward turret in the measured `20 <= d² < 100` band.** ⇒ **every hour spent tuning `LOKI_FWD_MIN_HARV` and `LOKI_FWD_TI_FLOOR` was aimed at the wrong object** — the gate those constants guard is downstream of a predicate that had already excluded the band. ⇒ **`#90` is the structural unlock for Tier-1 `#23`, and it is one edit to `raid.py:688`'s target set.**
+⇒ **THE RAIDER MUST WALK INSIDE d² ≤ 50 OF THE ENEMY CORE BEFORE ANY FORWARD TURRET CAN BE SITED AT ALL, AND THE ONLY LEGAL TARGETS ARE THE FOUR CORE TILES.** **No code path in this tree can plant a forward turret in the measured `20 <= d² < 100` band.** ⇒ **every hour spent tuning `LOKI_FWD_MIN_HARV` and `LOKI_FWD_TI_FLOOR` was aimed at the wrong object** — the gate those constants guard is downstream of a predicate that had already excluded the band. ⇒ **`#90` is the structural unlock for Tier-1 `#23`.** ⛔ **AMENDED — I wrote *"and it is one edit to `raid.py:688`'s target set"* and that is superseded: the unlock is ALREADY BUILT AND MEASURED as `_v480beltbreak`'s own annulus ladder (see the `#90`/`#91` entry above). The diagnosis of the control stands; the prescription was wrong because I did not check the candidate trees before writing it.**
 
 ## ✅ STILL ALIVE, RE-VERIFIED, NOT RETIRED
 * **`#60`'s premise HOLDS:** `ct.destroy` / `can_destroy` = **0 occurrences in the entire control tree.** We never call the free, cooldown-less destroy. *(And per the split-belt entry above, this is the single fact that would revive that idea.)*
