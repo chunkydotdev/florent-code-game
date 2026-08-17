@@ -68,6 +68,11 @@ the CI containing the floor, attached to the record for whenever Magnus
 revisits the pricing. BELTBREAK-EARLY is the board's sole full-distance
 survivor. ODINVSSLEIP window-clean by certification.
 
+## BANKED-TAPE CLEARANCE (side lane, both-verdicts detector, 1.15M rows):
+the overnight.sh draw-scoring defect (fixed at wrap) NEVER contaminated a
+banked tape — draw signature absent, bound ≈0.0003%, NO re-scoring or re-run
+owed on anything banked. The fix was necessary prospectively only.
+
 ## VERDICTS TYPED TODAY (results.tsv; all control=Sleipnir unless stated)
 KLADTURBO local 61.09 CONFIRMS the ship both-hosts · KILLTILER #87 REAL NEG
 48.43 · V140VS152 cert 57.02 (transitivity verified QUANTITATIVELY — amended
