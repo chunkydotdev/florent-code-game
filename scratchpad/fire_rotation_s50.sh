@@ -30,7 +30,20 @@ for name in $ORDER; do
     continue
   fi
   out=$($FC match unrated "${CELLS[$name]}" 2>&1 | grep -v "Update available")
-  mid=$(echo "$out" | grep -o '[0-9a-f]\{8\}-[0-9a-f-]\{27\}')
+  # ⛔ -m1 | head -1 IS NOT BELT-AND-BRACES. `fcode match unrated` prints MORE THAN
+  # ONE uuid (the team id we passed is echoed alongside the match id), so a bare
+  # `grep -o` captured a MULTI-LINE $mid and `$FC match info "$mid"` was handed
+  # garbage. Round 2 of this same rotation already carried the fixed pattern
+  # (scratchpad/fire_rotation2_s50.sh:32) — this copy is the one that gets
+  # copy-pasted next, so the fix lands here too. -m1 stops grep at the first
+  # MATCHING LINE; head -1 also handles several uuids on ONE line. Both needed.
+  # ⚠ RESIDUAL, stated rather than papered over: this takes the FIRST uuid, so it
+  # is right only while the match id is the first one printed. That held for every
+  # cell of both rounds (round 1 log 17:48/18:10/18:33/18:55Z, round 2 log — each
+  # captured id resolved on `match info`). If `fcode` ever prints the team id
+  # first, this captures the WRONG uuid SILENTLY; the `match info` echo below is
+  # the check that catches it, so keep it.
+  mid=$(echo "$out" | grep -o -m1 '[0-9a-f]\{8\}-[0-9a-f-]\{27\}' | head -1)
   echo "$(date -u +%FT%TZ) FIRED $name match=$mid raw=${out//$'\n'/ | }" >> "$LOG"
   if [[ -n "$mid" ]]; then
     sleep 90
