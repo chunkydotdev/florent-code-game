@@ -70036,3 +70036,39 @@ They corrected the arithmetic of this exact diagnostic this morning — I had qu
 > ⭐⭐ *"CORRECTING A DETAIL IMPLICITLY RATIFIES THE PREMISE. When I fix your interval and say nothing about your population, I have ENDORSED the population — and I did it in a message whose whole subject was the rigour of that number. An auditor who corrects a detail lends credibility to the whole, and THE MORE PRECISELY I CORRECT, THE MORE CREDIBILITY I LEND."*
 ⇒ **their check form: before correcting a number's ARITHMETIC, ask whether the number SHOULD EXIST AT ALL.** ⚠ **And their note on why it is their characteristic risk is the sharp part: a cheap arithmetic correction is unambiguous, fast and always technically right — which is exactly why it is the one most likely to skip the premise.**
 ⇒ **This is D21(d) — a fix narrower than its defect — arriving for the FOURTH time today and the FIRST time in an AUDIT rather than a tool or a rule. The taxonomy now covers claims, corrections, fixes, caveats and audits.**
+
+--- 2026-08-17T06:51:23Z ⭐⭐ **RESEARCH s48 — THE OPENING GAP, DESCRIBED. WE SPEND ROUNDS 0-8 MAKING BUILDERS; THE FAST TEAMS SPEND THEM MAKING ECONOMY.** ---
+The cross-team first-harvester deficit survived the map-rotation retraction, so here is what is actually happening inside it. **MEDIAN ROUND OF THE FIRST OF EACH TYPE, per game:**
+```
+team                games  1st builder  1st harvester  1st conveyor  1st turret
+Leviathan            2165        0            3             2            25
+farming_200s         1186        0            3             6            22
+ph                   1826        0            3             5            18
+Pivot                3080        0            4             6            27
+Bean counters        1475        0            4             3            29
+Jython               2356        0            6             8            23
+OpenSverige-v152      470        0            7             9            24
+OpenSverige-v155      265        0            7             8            24
+```
+⇒ **WE ARE 4 ROUNDS BEHIND THE FASTEST ON THE FIRST HARVESTER AND 6 ON THE FIRST CONVEYOR — and it is IDENTICAL for v152 and v155**, i.e. a stable long-standing property of the line rather than anything recent.
+
+**AND THE MECHANISM IS VISIBLE IN WHAT GETS BUILT — MEAN COUNT BY r8:**
+```
+team                builder_bot  harvester  conveyor  barrier
+Leviathan               4.03       1.30       4.25      0.07
+ph                      5.48       2.00       3.31      0.01
+Pivot                   5.34       2.15       2.47      0.00
+Bean counters           4.46       1.82       8.34      0.07
+farming_200s            5.18       1.06       1.55      0.02
+Jython                  4.14       1.18       1.28      0.62
+OpenSverige-v152        6.16       1.28       0.75      0.10
+OpenSverige-v155        5.42       1.12       1.30      0.06
+```
+⇒ ⭐⭐ **WE BUILD THE MOST BUILDERS OF ANY TEAM IN THE TABLE BY r8 (5.4-6.2 against Leviathan 4.03, Jython 4.14, Bean counters 4.46) AND THE FEWEST HARVESTERS (1.1-1.3 against ph 2.00 and Pivot 2.15) AND ALMOST THE FEWEST CONVEYORS (0.75-1.30 against Bean counters 8.34, Leviathan 4.25, ph 3.31).**
+⇒ **WE SPEND THE OPENING MAKING BUILDERS; THEY SPEND IT MAKING ECONOMY.** **That is the concrete form of the 2-4 round deficit, and it is not a pathfinding or an approach problem — it is an ALLOCATION one, visible before any contact happens.**
+
+## HOW THIS COMPOSES WITH WHAT IS ALREADY ON THE BOARD
+* ⭐ **`#62` GETS ITS DIRECTION FROM A SECOND INSTRUMENT: we build MORE opening builders than the fast teams, not fewer.** **Combined with the scale finding (builders are 55-65% of everyone's scale, and our five openers alone are 100pp), the opening-builder count is both our largest scale cost AND the place we are furthest from the teams that open fastest.** ⇒ **the TRIM direction the builder inferred is now supported from two independent angles rather than one difference-in-differences.**
+* ⚠ **AND IT RE-FRAMES THE ECO TRIO: `ECOMMIT` (connect rate), `FREEROUND` (oscillation) and `ROUTESCORE` (route length) all improve what happens once builders are walking to ore. NONE of them changes how many builders exist before the first harvester does.** **Bean counters reach 8.34 conveyors by r8 with 4.46 builders; we reach 1.30 with 5.42.** ⇒ **more builders is not producing more economy, which is the assumption the opening rests on.**
+⚠ **POPULATION NOTE, and it is why I am comfortable with a cross-team comparison here after today: THIS IS OUR-BEHAVIOUR DATA IN ROUNDS 0-8, BEFORE CONTACT. The opponent is barely in the causal path that early, so the opponent-mix confound that invalidated the timely-kill comparison is weak here — but "weak" is not "absent", and a per-map version of this cut would be the next step if anyone builds on it.**
+⛔ **AND WHAT THIS IS NOT: it is a DESCRIPTION, not an identification. It says where the rounds go, not that reallocating them would win more games. Today's five refusals are the reason I am stating that explicitly rather than letting the table imply it.**
