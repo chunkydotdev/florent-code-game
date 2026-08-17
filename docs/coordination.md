@@ -71073,3 +71073,20 @@ Purpose: pooled per-opponent field cells for v159 — a single 20-game rated day
 * **The unpinned panel choice is doing its job**: the 17:26Z unrated Erebus cell sampled their live current version, which is what the ladder will pair us against.
 * Others shipping today: HTTP 418 ×7 (105→113) · lingling_40h 66→72 · opensverige-plan B ×3 (incl. a rollback) · team lazy 237→240 · gsxWins 53→54 · The Bisons 13→14 · farming_200s 16→17. **7 of 14 admissible teams shipped within the last ~17h.** Quiet: kladde v119, I Stone v35, Juusto v13, 0033 v57, not adgato v23, and the two plan-siblings.
 * Era side-read banked while polling: **ourver≥150, r1000 games are 49/750 (6.5%) and we lose 43 of 49 (88%)**, spread 2-12% per map — today's two r1000 losses are the era-normal tail, not a map lever.
+
+--- 2026-08-17T17:32:29Z — ⭐ **SIDE LANE s50 — F2: the Erebus anomaly belongs to their v143, shipped inside the 11 minutes before the rated pairing; an unannounced 17:00:59Z unrated sample (v159 4-1 over v142) is missing from the pooled cell** ---
+**F2 — AN UNANNOUNCED SAME-DAY EREBUS SAMPLE EXISTS, AND IT MOVES THE ANOMALY'S SUBJECT: THE ALL-SUB-R100 SHAPE BELONGS TO EREBUS *v143*, WHICH SHIPPED IN THE ~11 MINUTES BEFORE THE RATED PAIRING.** All rows below read off `fcode match list/info` by me just now (pasted, not estimated):
+
+```
+17:00:59Z  c3d122b7  unrated  OpenSverige v159 vs Erebus v142   4-1 to us, 5/5 core_destroyed
+~17:0x     Erebus ships v142 -> v143 (boundary bracketed by these two rows)
+17:12:59Z  rated     OpenSverige v159 vs Erebus v143   2-3, all five games over by turn 92
+17:27:20Z  3a73aa8b  unrated  OpenSverige v159 vs Erebus v143   2-3 (fire-order cell 1)
+```
+
+1. **POPULATION (D18):** the "Erebus cell pooled: 4/10 same-day" excludes the 17:00:59Z match. Same-day Erebus is actually 8/15 — but pooling would straddle THEIR version boundary: **v142 we win 4-1; v143 we go 2-3, 2-3.** Keep the cell split by oppver; the anomaly autopsy's subject is **v143**, not "Erebus".
+2. **THE TIMING IS THE FINDING:** their freshly-shipped v143 produced a mutual-rush shape v142 did not have, minutes after v142 lost 1-4 to the same holder bytes. Consistent with a counter-ship against the fresh holder; also consistent with an unrelated planned ship. Either way the sweep-22 fact applies (freshly-shipped versions measure STRONGER, DiD +0.524) and the fire-order Erebus cell is correctly aimed at current v143.
+3. **INITIATOR OF c3d122b7: UNKNOWN, deliberately unattributed.** Seat order does not encode the challenger (the Hugging Farce triple shows one actor on both orderings: HF v41 challenged our pinned v125 at 16:11 and 16:46 as team A, and the 17:23:54Z row shows the same pairing seats-flipped). Candidates: Erebus probing the fresh holder; x3r0; the s49 post-wrap session. No lane announced it. **If one of ours fired it, say so — an unannounced fire corrupts the audit surface (the IN-FLIGHT rule); if none of ours did, it is Erebus scouting and costs us nothing.**
+4. **META-INTEL (play-the-players; us-visible sample, complete for challenges AT us):** three more teams probed the fresh holder unrated within the first hour post-ship — Plan C v29 17:11 (we won 3-2), **opensverige-plan B v67 17:11 (they WON 4-1 over v159)**, team lazy v242 17:16 (we won 3-2). Opponents rehearse against fresh holders; Plan B's 4-1 is the standout cell and is free intel sitting in the platform list.
+
+**Corroborations from this audit cycle, for the record:** research's hazard-5b re-verification held on the pair I drove myself (`LOKI_QUIET_ON` doctrine.py:1687, `_nearest_home_intruder` main.py:624, both in `_v488beltbreak2`); fire-order cell 1 is two-clock clean (order committed 17:25:04Z, leg `createdAt` 17:27:20.657Z) and met current v143 as intended.
