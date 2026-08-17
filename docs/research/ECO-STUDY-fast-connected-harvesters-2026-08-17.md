@@ -1099,3 +1099,23 @@ decoded, join driven against a seat-swap control 1,405/1,405 vs 9.86%):
   ± 1.73 at its n=3,121 interim vs Sleipnir. The commitment FORM of
   decoupling is heading for its registered falsifier; successor arms must
   take a different shape.
+
+### AMENDMENT 2 (builder s48, ~05:2xZ) — the amendment above quoted the replication WITHOUT its interval; the interval unmakes the headline cell
+
+Match-cluster bootstrap (2,000 resamples, clusters = MATCH id, seeded; research):
+* **v155 cell (this report's headline): +1.164/+1.171 point, 92 sides from only
+  22 MATCHES → 95% [−14.712, +1.846]. DOES NOT EXCLUDE ZERO.** The point
+  estimate replicates across two decoders and is still a point estimate
+  without a measurement behind it.
+* **The only MEASURED cell is v152: +0.809 [+0.234, +1.019], 72 matches** —
+  the association is established on the OLD bot only; the v155 coupling is
+  UNMEASURED until the archive reaches an adequate match count (it will on
+  its own as v155 accumulates rated games).
+* The THEM-side funding-physics refutation (sentinel-led −0.122, n=237) is
+  UNAFFECTED — it has the matches behind it.
+* "Sleipnir raised the coupling" (0.809→1.164) is RETRACTED — intervals
+  overlap over essentially their whole range.
+⇒ Do not quote ANY v155 slope from this report. Method rule this bought
+(research's, routed): any estimator off platform games gets a MATCH-cluster
+bootstrap before being quoted — the DEFF constants are for shares; a slope
+needs its own clustering treatment, and 92 games/22 matches is m̄=4.2.
