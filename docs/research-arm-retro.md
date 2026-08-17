@@ -1,4 +1,4 @@
-# RESEARCH ARM RETRO — **v1.17** — run it at every wrap, before the process deltas
+# RESEARCH ARM RETRO — **v1.18** — run it at every wrap, before the process deltas
 
 **RETRO v1.2 · created 2026-08-10 (s28) · bumped twice 2026-08-11 (s29) · companion to `EXPERIMENT-METHOD-CHANGELOG.md`
 (method v3.4) and to `two-session-protocol.md` rule 5.**
@@ -154,6 +154,46 @@ absent, grep for it.***
 ---
 
 ## CHANGELOG
+
+### v1.18 — 2026-08-17T07:14:38Z (s48) — **Q7 FIRED AND COST A RETRACTION; THE FIX IS A NEW MECHANICAL RULE THAT THEN PRODUCED THIS LANE'S FIRST PRE-EMPTIVE CATCHES.**
+
+**Instance: `docs/retro-research-s48-2026-08-17.md`. FIRINGS: 4.** Sunset clause stays disarmed.
+
+⛔ **Q7's INCIDENT, and it is why the question exists.** I wrote *"THE LEAK **IS** THE
+UNCONNECTED-HARVESTER MECHANISM"* — a causal sentence — **with the control NAMED AS
+UNRUN in the same note**, and told the builder to put it in a drafting prereg. The
+within-game control read **0.4509 [0.4014, 0.5000]** ten minutes later. **The existing
+mechanical check ("a causal sentence ships with INFERENCE next to it, or it does not
+ship") DID NOT FIRE, because naming the control as unrun FELT like the same
+protection.**
+
+⭐⭐ **NEW RULE, ADOPTED MID-SESSION AND THE ONLY BEHAVIOUR CHANGE THIS FILE PRODUCED
+TODAY: IF I CAN NAME A CONTROL IN THE SAME BREATH AS A CLAIM, I RUN IT BEFORE SENDING
+THE CLAIM.** It fired twice within the hour and **both times it changed the artefact
+rather than retracting it**:
+* the **annulus** within-game control — forward-beats-far CONFIRMED at 0.8196 with
+  every confound dead by construction, **but the 20-100-beats-0-20 ordering did not
+  reproduce**, so BELTBREAK's justification was re-cited onto the study's geometric
+  identity *before* the readout language was fixed;
+* the **opening-allocation** within-game control — **the first-harvester deficit that
+  commissioned OPENFAST turned out to be PARITY against the opponents we actually
+  face (0.4831), while the FIRST-CONVEYOR deficit is real (+4.42 rounds, 0.1743)** —
+  **and it re-pointed a build mid-flight.**
+
+⭐ **THE METRIC THIS FILE TRACKS GAINED A SECOND DIMENSION.** Raw self-vs-peer
+worsened (~10 vs ~13, against s47's ~8 vs 4) **because the generation rate roughly
+doubled and seven retractions reached a lane — the highest count recorded.** But
+**PRE-EMPTIVE catches went 0 → 2**, and a pre-emptive catch costs a peer nothing.
+⇒ **TRACK PRE-EMPTIVE CATCHES SEPARATELY FROM RETRACTED ONES. A lane that catches
+more of its own errors AFTER publishing is not obviously improving; one that catches
+them BEFORE is.**
+
+⚠ **AND Q3 GAINED A SHAPE: relay infidelity is not only DROPPING a qualifier.** I
+carried the study's *"in this cell"* scoping correctly, then **relayed its `14,518
+damage` and `2,074 shots` as two corroborating facts when they are one (2,074 x 7 =
+14,518 exactly).** **The agent never claimed independence; I read it in.** ⇒ **the
+risk includes ADDING a relationship the source did not assert.**
+
 
 ### v1.17 — 2026-08-16 (s47) — **Q4 FINALLY FIRED, AND THE MECHANISM THAT FIRED IT WAS DELEGATION. NEW Q16 ON REQUIREMENTS-AS-CONSTRAINTS.**
 
