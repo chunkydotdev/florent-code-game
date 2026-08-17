@@ -69550,3 +69550,34 @@ fcode submission list   v157  Odin           ready  ACTIVE  uploaded by x3r0   2
 **Slot watch re-armed on v157.**
 
 --- 2026-08-17T06:06:12Z BUILDER s48 — HOLDER/CONTROL DIVERGENCE (side lane slot watch, verified on the authority): x3r0 shipped v157 "Odin" at 06:00; Sleipnir (v155) held ~10h20m and is no longer live. NO LANE ACTED — teammate's ship, within their rights. STANDING CONSEQUENCES adopted: (1) all seven running/queued arms keep control=_v468kladturbo per their registrations and Magnus's benchmark-stability rule + his target names Sleipnir explicitly ("60% vs Sleipnir") — VALID ON THEIR OWN TERMS; (2) every verdict typed from here carries one line: "control is Sleipnir; Sleipnir is not the holder"; (3) any same-day rated decode SPLITS at the 06:00 ourver boundary (elo_history poll-tags will credit v157; the s47 v152/v153 split is the precedent); (4) whether the ship was authorized is Magnus & x3r0's business — state reported, propriety not inferred. ---
+
+--- 2026-08-17T06:06:55Z ⭐⭐ **RESEARCH s48 — SLEIPNIR v155'S COMPLETE CLOSED RATED TENURE. A BOUNDED DATASET THAT WILL NEVER GET BETTER, READ WHILE IT IS FRESH.** *(the side lane's idea, taken up immediately because it expires)* ---
+**Sleipnir held the slot from 2026-08-16T19:38:40Z to 2026-08-17T06:00:23Z — about 10h20m — and is now displaced by a teammate's v157 "Odin". Its record is therefore CLOSED: no successor contaminates the tail, and this is the first clean end-to-end read on a bot we shipped.** Pulled per-match from the platform (`fcode match list --mine --type ladder --limit 100 --json`, filtered `ourver == 155`).
+```
+matches 31    match W-L 19-12    GAME SHARE 82/155 = 0.5290
+net elo +50.15    rating 1754.5 -> 1804.7    mean opponent rating 1820
+
+opponent                    m   games   share   net elo
+Erebus                      5   18/25   0.720   +39.32
+team lazy                   3   12/15   0.800   +26.05
+kladde chatte tville        4   14/20   0.700   +24.30
+HTTP 418                    1     3/5   0.600    +3.36
+The Bisons                  3    8/15   0.533    +2.71
+lingling_40h                1     3/5   0.600    +2.42
+The Flotte Experience       1     2/5   0.400    +1.47
+0033                        3    8/15   0.533    -0.25
+Juusto                      5   10/25   0.400    -6.89
+Clankers                    2    2/10   0.200   -12.00
+gsxWins                     3    2/15   0.133   -30.35
+```
+## ⛔ AND THE HONEST READ, WHICH IS NOT THE HEADLINE NUMBER — RUN THROUGH `cluster_ci` BEFORE THE SENTENCE, NOT AFTER
+```
+game share, clustered on MATCH:     0.5290  [0.4387, 0.6194]   31 clusters   DOES NOT EXCLUDE 0.5
+game share, clustered on OPPONENT:  0.5290  [0.3793, 0.6500]   11 clusters   ** NO VERDICT ISSUED **
+```
+⇒ ⛔⛔ **SLEIPNIR'S ENTIRE CLOSED TENURE CANNOT DISTINGUISH ITS GAME SHARE FROM 50%. Nobody should say "Sleipnir was a 52.9% bot".** **31 matches is 31 matches**, and the interval fails to exclude anything between **43.9% and 61.9%.**
+✅ **THE +50.15 ELO IS REAL AND IS NOT THE SAME CLAIM** — it is arithmetic on realised outcomes against a mean opponent rating of **1820**, not an estimate of a latent share. **A bot can gain 50 points on a hard field in ten hours and still have an unresolved true strength; both statements are true and they answer different questions.**
+⭐ **AND BOTH CLUSTERS ARE LIVE HERE, WHICH IS WHY I RAN BOTH — the DEFF procedure is an enumeration, not a lookup: MATCH gives 31 clusters (just over the gate) and OPPONENT gives 11 (under it, so the tool refuses a verdict rather than printing one). The match-clustered reading is the one to quote, and the opponent-clustered cell is a reminder that 11 opponents is a thin field to generalise from.**
+⚠ **CONTEXT AGAINST ITS PREDECESSOR, and it does NOT show an improvement: v152 read 0.536 over 360 archived games; Sleipnir reads 0.529 over 155 — essentially identical, on a HARDER field (mean opponent 1820).** ⇒ **the defensible closing sentence is "Sleipnir gained 50 Elo in ten hours against a strong field and did not demonstrably out-share its predecessor", NOT "Sleipnir was better".**
+⭐ **WHERE IT ACTUALLY WON AND LOST, which is more informative than the aggregate: Erebus +39.32, team lazy +26.05, kladde +24.30 — three opponents supply +89.67 of the +50.15 net. Against gsxWins it went 2/15 for −30.35, and that cell is CONFOUNDED by their own v52→v53 ship, which lifted their league-wide share 0.343 → 0.523 while the FIELD's share against them fell 18.0pp and OURS fell 20.0pp.** ⇒ **the single worst cell in Sleipnir's record is mostly not about Sleipnir.**
+*(Version boundary: the last v155 pairing was created 05:52:59Z. From ~06:12:59Z the rated record is Odin's, and `elo_history`'s poll-time version tag will not mark the seam.)*
