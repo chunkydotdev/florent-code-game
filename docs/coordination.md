@@ -69028,3 +69028,27 @@ patch analyse.__defaults__ (my way)        exit 1
 ```
 ⭐ **THE GENERALISATION, and it is the third instance of one shape today: A TESTABILITY SEAM IS ITSELF AN INSTRUMENT, AND IT HAS TO BE DRIVEN FROM THE SIDE THE AUDITOR WILL ACTUALLY USE.** I drove my seam from the side *I* had built, it worked, and I would have reported a mutation-tested tool that the standard mutation could not reach. **The other two instances today: my anchor extractor measured accuracy and never coverage; my selftest case B was edited and kept passing. All three are "the check ran, and it could not have failed".**
 ⚠ **AND THE PROCESS POINT, because it is the transferable half: THE DEFECT WAS FOUND BY WRITING DOWN HOW SOMEONE ELSE WOULD USE THE THING, not by testing it.** Documenting the seam for a specific external consumer forced me to name the injection point precisely, and the imprecision was the bug. **A hand-off note is a debugging instrument.**
+
+--- 2026-08-17T05:30:55Z ⭐ **RESEARCH s48 — THE DRAWDOWN CALL IS CONFIRMED BY NEW DATA, AND `move_miner` HAS A SECOND DEFECT: IT CAN NAME A VERSION THE OPPONENT HAS ABANDONED.** ---
+## 1. ✅ THE 04:23Z DRAWDOWN READ HOLDS — CONFIRMED PROSPECTIVELY, NOT RE-ARGUED
+`fcode status` recovered; **holder v155, rating 1808, rank #18/126, 1,159 matches, last 10 = 7W 3L. Drawdown −37 → −25 from the 1833 peak.** Fresh per-match pull:
+```
+04:35:48  The Bisons v13    2-3   -3.55  -> 1799.6
+04:55:10  Juusto v13        3-2   +5.61  -> 1805.2
+05:16:11  lingling_40h v66  3-2   +2.42  -> 1807.6
+SINCE MY 04:2xZ DECODE:  3 matches, 8/15 = 0.533 share, net +4.48
+SINCE THE 1833 PEAK:     9 matches, 18/45 = 0.400 (was 10/30 = 0.333 at 6 matches)
+```
+⇒ **the window is regressing toward the v155 base rate exactly as "composition, not regression" predicts, and it did so on data that did not exist when the call was made.** ⚠ **This is a CONFIRMATION, not a proof — three matches is three matches, and the honest form is that nothing has arrived to contradict the reading.** ⛔ **And it does NOT rehabilitate the argmax-window interval I struck: that number was invalid by construction and stays struck. A correct conclusion reached through an invalid interval does not retrospectively validate the interval.**
+
+## 2. ⛔⛔ `move_miner` DEFECT #2 — IT INFERS "THEIR CURRENT VERSION" FROM **OUR** TAPE
+It named `lingling_40h` **v61** as a candidate on their *current* version. **They left v61 eight hours ago** (`corpus/league_matches.tsv`):
+```
+v61   n=110   2026-08-15T08:52 -> 2026-08-16T21:12     <- what the trigger named
+v65   n=1     2026-08-16T21:32
+v66   n=22    2026-08-16T21:52 -> 2026-08-17T04:52     <- what they actually run
+```
+**Mechanism: our last game against them was 2026-08-16T19:32Z, when v61 was current, so a version derived from our own rows is frozen at our last pairing.** ⇒ **the trigger can commission a study of a version the opponent has abandoned, and the staler our pairing the more likely that is — which COMPOUNDS defect #1 (coverage resets on their bump, never on ours), because both defects get worse for exactly the same candidates.**
+⇒ **FIX SPEC ADDENDUM, appended to the 05:2xZ spec: read the opponent's CURRENT version from `corpus/league_matches.tsv` (league-wide), never from `ladder_games` (our pairings only), and print both — "their current vN; our newest games are against vM" — because the GAP between those two IS the staleness signal the trigger is missing.**
+⚠ **AND THIS FIRED ON THE CANDIDATE I HAND-PICKED AFTER REJECTING THE TRIGGER'S TOP THREE.** My manual gate checked our-version coverage, payout and pairing recency, and **still missed that their version had moved**, because I checked *their* recency in `league_matches` (they played an hour ago — true) without checking *which version* was playing. **Their liveness and their version-currency are different questions and I conflated them, one message after writing that their liveness and OUR staleness are different questions.**
+✅ **THE STUDY IS NOT WASTED AND IT IS NOT BEING RESCOPED: v61 remains the ONLY version of theirs we have met with a current-lineage bot (50 of 50 games at `ourver` ≥ 140).** The agent has been sent a scope correction: put the version boundary in the provenance header, treat findings as LINEAGE evidence rather than current-opponent evidence, and — the useful addition — **attempt a v61-vs-v66 build-profile diff from the LEAGUE's own archived games (22 matches since 21:52Z, and `corpus/events.tsv` covers every archived replay, not only ours), which costs us no games and is a control on the study's own transferability.**
