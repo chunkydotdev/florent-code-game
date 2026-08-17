@@ -68322,3 +68322,34 @@ We build **9.49 barriers/game** at 3 Ti and **+1% scale** each ⇒ ~28 Ti and **
 ⛔ **THE BOUNDARY THAT KEEPS THE LOCK MEANINGFUL: the agent DRAFTS and PROPOSES. This lane RATIFIES the judgment lines (hypothesis, bar, falsifier, segment), runs the checklist, and TYPES the lock commit. An agent-drafted prereg this lane has not ratified line-by-line is not locked, whatever its commit time says.**
 ⚠ **AND THE FIRE ORDER IS NOT MINE TO SET TODAY: the builder holds the unrated window for the gunner-shredder prototype on Magnus's directive, and this leg takes the window only if the shredder is not leg-ready by midday. Drafting is free; firing is theirs.**
 ⚠ **POWER, STATED BEFORE THE DRAFT RATHER THAN DISCOVERED AFTER IT:** a single 25-game window has a measured **12pp same-bot swing** and an MDE of ~39pp, **and both figures are OPTIMISTIC because they were computed treating games as independent** — unrated DEFF is **1.833 pooled / 1.434 within-opponent**, so effective n is ~55-70% of nominal. **This leg must pool windows or it cannot resolve anything.** The agent is told to size it, not to assume it.
+
+--- 2026-08-17T04:48:0xZ ✅⛔ **SIDE LANE s48 — KLADLADDER PREREG CERTIFICATION, AND A SELF-WITHDRAWAL. The two-clock is CLEAN; my reachability flag is VOID for this shard and I withdrew it within three minutes; and the withdrawal produced a finding worth more than the flag.** ---
+
+## ✅ CERTIFIED — each driven at a primary, not read off the doc
+
+* **TWO-CLOCK CLEAN.** Prereg committed **04:44:44Z** (`3054e006`, git author time, `TZ=UTC`). **I drove both preconditions myself rather than trusting the doc's own:** `grep -c KLADLADDER scratchpad/corefill_work.txt` → **0**; `ls scratchpad/overnight/ | grep -i ladder` → **empty**. **The registration predates the leg.**
+* **THE TREE-EXISTS-BEFORE-LOCK CAVEAT IS SELF-DISCLOSED** in the doc, unprompted, with the reason it is legitimate. **Disclosing beats making a certifier find it.**
+* **THE DEFF ENUMERATION IS PERFORMED, NOT ASSERTED** — both clusters killed with the reason each dies, landing on the measured local 0.98 and explicitly refusing the platform constants.
+* **THE A/A ARITHMETIC RECOMPUTED AND IT HOLDS:** `IDNULL140 49.27% → [47.94, 50.60]` reproduces the published interval digit-for-digit; `NULL125 51.04% → [49.71, 52.37]`, so the doc's **52.4** is its CI upper; **bar − 51.04 = 0.29pp** exact.
+* ✅ **IT ABSORBS MY CONTROL-MOVE FLAG PROPERLY** (§1: *"the same bot measured against itself reads 50"*), and its `ge-51.33` justification — **smallest resolvable at n=5400** — is a RESOLUTION argument, **a better basis than the "robust under re-pricing" one I wrongly blessed and retracted.** No objection to the bar.
+* ⚠ Two minor annotations only (LOCKED file — annotations, not amendment requests): §4's *"a BAR-CLEARING result an A/A cell has already produced"* overstates by one step — **the A/A produced 51.04, BELOW the bar; its INTERVAL reaches 52.37** — though **the conclusion is right and if anything understated**; and the header says "three bands" over a four-row table.
+
+## ⛔→⭐ THE FLAG I RAISED, AND WITHDREW, AND WHAT THE WITHDRAWAL FOUND
+
+**I flagged that three of the four pre-committed bands could not fire** — computing P(survive the n=1000 floor look) as **band 1 73.7% · band 2 45.0% · band 3 10.3% · PRIMARY FALSIFIER 1.3% · "ladder SUBTRACTS" 0.0%** — the v122 class, a registered reading that cannot fire.
+
+⛔ **THEN I CHECKED WHERE THE SHARD ACTUALLY RUNS AND IT VOIDS THE FLAG FOR THIS ARM:**
+```
+grep -ci kladladder scratchpad/corefill_work.txt                -> 0    (LOCAL: absent)
+grep -il kladladder scratchpad/overnight-remote/*/worklist.txt  -> worker@work-server-1  (REMOTE)
+auto_gate.py:113  "REMOTE: ⛔ REPORT ONLY. THERE IS NO PER-SHARD CANCEL PRIMITIVE ON A WORKER."
+```
+⇒ **the TREND_FLOOR cannot stop a ws1 shard; KLADLADDER runs to full n=5,400 and ALL FOUR BANDS ARE REACHABLE.** **My 1.3% was computed for a local shard and does not describe this one. Withdrawn.**
+✅ **AND THE BUILDER KEPT THEIR COMMITMENT EXACTLY** — *"no row enters `corefill_work` until the floor question resolves"*, and `corefill_work.txt` holds 0 KLADLADDER rows. **The local hold stands; they ran it on the surface the floor does not govern. Consistent, and the right call.**
+
+**WHAT SURVIVES, NARROWED:**
+1. **The flag stands in full for any LOCAL corefill registration under the current floor** — local is where the 1.3% falsifier-reachability bites.
+2. ⭐ **A KNOWN DEFECT — the remote gate gap, wrap debt 12 — IS WHAT MAKES THIS LOCKED PREREG'S FALSIFIER REACHABLE. The shard is protected by a hole.** Third or fourth time the gap has come out benign-or-better (s47 logged it twice, once for SLEIPH2H for exactly this reason).
+3. ⛔⛔ **AND THE FINDING NOBODY HAS PRICED, WHICH IS WORTH MORE THAN THE FLAG I WITHDREW: IF THE REMOTE GAP IS EVER CLOSED, THIS LOCKED PREREG'S BANDS SILENTLY BECOME UNREACHABLE.** A LOCKED document cannot be amended, so **a future session that FIXES wrap debt 12 — a correct and desirable fix — would retroactively invalidate the reading of any in-flight remote prereg whose bands assume full n.** ⇒ **whoever closes that gap must first check for in-flight remote shards carrying locked band-readings. That belongs in the wrap-debt entry for the GAP, not in this prereg.**
+
+⚠ **AND I ACCEPT THE BUILDER'S REBUTTAL ON MY EARLIER RETRACTION: the four-band grading DOES prevent the died-at-its-own-bar scenario** — a modest add is BANKED as REAL-BUT-SMALL, not killed. **My "two doors collide" framing was wrong; "two doors GRADE" is correct.** ✅ **They kept the half that survives — the 250-row registry default read as pass/fail rather than four-band — and are routing it to Magnus as a verdict-LANGUAGE question alongside the floor. That split is better than the one I made.**
