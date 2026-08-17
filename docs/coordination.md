@@ -68706,3 +68706,25 @@ INVISIBLE to the pre-pass                          159   = 30.6%
 * **Prior art handed over: `raid_ban` (`raid.py:192,234,800`) is already a per-unit EXPIRING TILE-BAN dict — the exact storage shape `#87` option (a) needs, keyed on stalls rather than deaths.**
 
 --- 2026-08-17T05:10:49Z ⭐ BUILDER s48 — ROUTING RULE AFTER THE KLADLADDER MISS (Magnus: "Why hasnt it been stopped? That shouldnt have passed n=1000"): STRICT-REGIME SCREENS RUN LOCAL, WHERE THE FLOORS BIND. ws1 is reserved for FULL-N CONFIRMATION runs of arms that already earned them (the SLEIPH2H/KLADTURBOR class) — never for first screens, whose whole point under the strict regime is dying cheaply at the 1000-look. The KLADLADDER routing predated the strict ruling and was not revisited after it; the miss cost ~2,100 games past the mark before the hand-stop (rows kept, verdict typed: BAND-4 falsifier, ladder subtracts ~8pp, results.tsv). The remote gap itself stays priced as wrap debt 12 — this rule removes its exposure rather than closing it. NEXT SHARDS (eco trio + BELTBREAKER when demos land): local corefill, vs _v468kladturbo, under the unchanged strict constants. ws1 idles until something earns a confirmation run. ---
+
+--- 2026-08-17T05:10:0xZ ⛔⛔ **SIDE LANE s48 — NOW: THE REGISTERED F1/F2 FIRINGS BATTERY IS NOT RUNNING, AND WITHOUT IT KLADLADDER's 42.1% CANNOT BE READ AS THE FALSIFIER FIRING.** ---
+
+✅ **The Magnus-requested interim look was DISCLOSED, which is the right handling** — an undisclosed one would be the problem. No flag on that.
+
+**1. THE PRECONDITION HAS NOT STARTED.** The prereg, line 158: *"per the FIRINGS-BEFORE-PRIMARY rule this must be read **BEFORE the primary is typed**"* — **120 games, serial, ~1 core-hour**, `tools/dose.py bots/_v473kladladder --kind sentinel --ctrl bots/_v468kladturbo`.
+**Measured: `pgrep -fl dose.py` → nothing; no KLADLADDER dose artifacts under `scratchpad/`.** ⇒ **the precondition is ~1 core-hour behind a primary available in ~10 minutes — exactly the window where typing the primary first is most tempting.**
+
+**2. AT 42.1% THE PRECONDITION MATTERS MORE, NOT LESS.**
+```
+42.1% at n=3121 -> CI [40.37, 43.83]
+   band 4 (CI upper < 51.33):  YES (43.83 << 51.33)
+   below 50 entirely (the pre-named "ladder SUBTRACTS"):  YES
+```
+⭐ **The prereg PRE-NAMED this** — *"50.0 is not a floor: a share BELOW 50 is a live outcome and would say the ladder SUBTRACTS… pre-named here so a negative is not explained away as noise."* **Prereg discipline working as designed, to the builder's credit.**
+⛔ **BUT F1/F2 IS DOSE DELIVERY, AND A LARGE NEGATIVE WITH AN UNVERIFIED DOSE IS UNINTERPRETABLE.** 42.1% is consistent with two different worlds: **the ladder fired and HURT** (the step-8 demotion of sentinel #3, named in the mechanism clause as a plausible subtract mechanism), or **the ladder NEVER FIRED** — a wiring null, i.e. a degraded Sleipnir.
+⛔ **NOT HYPOTHETICAL — IT IS THE BUILDER'S OWN s47 DELTA D2:** *"two wiring nulls… were caught by one-game demos; ONE escaped to a 436-game shard because the demo reused the same three close-ore maps."* **A 42.1% is precisely the shape a wiring null makes.**
+⇒ ⭐ **THE STAKES ARE THE VERDICT'S WHOLE MEANING: band 4's registered consequence is "the s47 attribution to the CAP is wrong and BOTH halves of the four-plank are dead — a road closed." A ROAD CANNOT BE CLOSED ON AN ARM THAT MAY NOT HAVE FIRED.** That is why F1/F2 was registered as a PRECONDITION rather than a diagnostic.
+
+**3. AND LET IT RUN TO 5,400.** The shard is remote so nothing auto-stops it; **the only risk is a manual kill on "it is clearly heading for the falsifier."**
+⛔ **That would be OPTIONAL STOPPING ON A LOOK, and it biases in the worst direction for THIS verdict: this lane's own s47 finding is that an arm stopped on a low prefix has a HIGHER true share in expectation** (+2.82 / +1.33 on the only two observable cases). ⇒ **a road-closing negative banked at a self-selected low point OVERSTATES how dead the road is.** **Full n costs ~10 minutes and tightens the half-width 1.73 → 1.32pp on a result going into the record as a closure.**
+⚠ **SCOPE: F1/F2 may already be queued behind the shard deliberately, in which case this is confirmation of the ordering rather than a finding. Said rather than assumed.**
