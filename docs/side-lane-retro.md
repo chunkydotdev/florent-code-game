@@ -1350,3 +1350,53 @@ flag that never gets built is exactly the routing debt D32 describes, wearing an
 **⚠ CARRIED TO v1.18 — one, and it is Q8's SECOND directive-induced break:** **Q8 must stop counting `BUILT`**, because under an absolute wrap rule a mid-session flag cannot become a script. **Honest replacement: `ADOPTED` / `DEFERRED-WITH-A-HOME` / `CORRECTED-IN-RECORD`** — with this session's measurement rule for the third bucket: **a record correction counts only if it changed what a SUCCESSOR would read, not what a peer acknowledged in a message.**
 
 **SUNSET WATCH: every surviving question fired. Nothing armed.**
+
+---
+
+## ⭐⭐ POST-WRAP ADDENDUM TO THE s48 ENTRY — written 2026-08-17T07:31:38Z, AFTER the retro above was banked
+
+**Not a version bump: the instrument's questions are unchanged. This amends the s48 ANSWERS,
+because the day's most consequential incident happened AFTER its own retro was written** — which is
+itself a finding about running the retro at the wrap rather than at the close.
+
+**THE INCIDENT.** At 07:16:27Z `corefill`'s guard refused: the incumbent/control tree
+`bots/_v468kladturbo` had moved (`a9228ccb → 955ec186`) while **three certified arms wrote against
+it**, via **uncommitted** edits `git log` could not see.
+
+**WHAT MOVES IN THE ANSWERS:**
+
+* ⛔ **Q3 = 6 PUBLISHED, not 5.** I published *"rows from 07:16:34Z onward measure plank + control-delta"*
+  and committed it. **The edits were comment/docstring-only** — stripped-AST identical, which I then
+  verified myself. **Retracted within ~7 minutes.** ⭐ **Cause is the session's own dominant shape a
+  SIXTH time: I measured that the tree had MOVED and claimed what the movement MEANT.** The hash
+  answers the first question and is silent on the second.
+* ⛔⛔ **THE DETECTION/PRESCRIPTION SPLIT WIDENS TO ITS FINAL FORM: DETECTION ~10/10, PRESCRIPTION 2/7 —
+  and the FIFTH prescription improved on delivery is the most costly one I gave all day.** I said
+  `git checkout -- bots/_v468kladturbo/`. The builder **stashed** instead. **Both restore identical
+  bytes; only the stash keeps the diff — and the diff is the ONLY artefact that could certify the
+  window.** My fix would have converted *"certified clean"* into *"excise ~600 rows on suspicion."*
+  ⇒ **banked as `D37` (quarantine, don't revert), and it is the sharpest evidence this file has for
+  the rescoped charter's split: *name the defect, hand the fix to the owning lane.*** **The defect
+  call was right and ~1 minute fast. The fix call was actively harmful.**
+* ⭐ **Q5 (killed-before-publication) gains its best pay-off of the day, and it was the builder's kill,
+  not mine** — their first naive `ast.dump` check flagged `eco.py` as changed. **Docstrings live in
+  the AST; comments do not.** The stripped form is the correct instrument; the naive one manufactures
+  a false positive on exactly the edit class at issue. **Recorded so the next lane does not re-derive it.**
+* ⭐⭐ **A NEW Q6′ SHAPE, and it is the good direction: A GUARD'S FALSE ALARMS ARE ITS PREMIUM, AND THE
+  NEAR-MISS PRICES THEM.** The firing statistic is the 2700-prefix, so **ROUTESCORE — the one arm that
+  actually fired — was clean of the window anyway** (first in-window row 2743, 42 rows past the mark).
+  **`BELTBREAK-EARLY` (2560) and `ODINVSSLEIP` (2078) would BOTH have straddled**, the latter by ~622
+  rows ≈ **23% of its terminal decision set — and it is the Magnus-facing calibration cell.**
+  ⇒ **the guard's value was realised on the arms that did NOT trip it.**
+* ⭐ **AND ONE BACKWARD CLOSURE THAT SHORTENED THE SUCCESSOR'S INHERITANCE INSTEAD OF LENGTHENING IT.**
+  My *"0 of 101 tapes"* clearance covered lie (a) only; the fix reported three. Audited lie (c)
+  (`Winner: Draw` → CONTROL) across **1,150,322 banked rows: no signal** — cap C-share **40.98%
+  [28.6, 53.3]** sits **BELOW** its 900–999 neighbour at **48.09%**, and a mis-scored draw can only
+  push **ABOVE**. **No re-scoring owed.** ⇒ ***the strongest audit result is the one that REMOVES an
+  obligation, and it only exists because the fix's scope was compared against the clearance's.***
+
+**⇒ THE ADDENDUM'S OWN LESSON, carried to v1.18 alongside the Q8 item:** **the retro was written
+before the day's largest finding.** **A wrap that runs the retro at wrap time cannot see a post-wrap
+incident — so the retro needs an explicit AMEND path rather than a rewrite**, which is what this
+section is. **The alternative, silently editing the s48 answers, would have destroyed the record of
+what the lane believed at wrap time.**
