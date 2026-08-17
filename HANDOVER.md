@@ -52,13 +52,20 @@ cross-subsystem (D1 s47). Regime record today: 3-of-5 stopped at the 1000-look
 * **WRAP-FIX s48 agent** — discharging scratchpad/s48_wrap_debts.md (25
   items, class-consolidated). Its report relays into the tail when it lands;
   if missing: git log --grep="WRAP-FIX s48".
-* **Batch prereg agent** (KLADLADDER2, KLADLADDER3, SEALPIERCE, ECOMMIT2 —
-  4 drafts, possibly uncommitted in docs/prereg/ when it reports): THE
-  SUCCESSOR LOCKS THEM (ratify judgment lines, prereg_check, lock commit,
-  BARS+worklist rows; seeds from its report). ECOMMIT2's F-battery ran
-  (scratchpad/ecommit2_fbattery.log); leak metric is DIRECTION-ONLY (the
-  +0.205 slope is RETRACTED — within-game control failed; cite the 49/49
-  probe, never the slope); keep the rate+count pairing hedge.
+* **FOUR PREREG DRAFTS COMMITTED, EXPLICITLY NOT LOCKED** (KLADLADDER2/
+  KLADLADDER3/SEALPIERCE/ECOMMIT2, all prereg_check-green; seeds 828-834k
+  verified free at draft). ⛔ FOUR BLOCKERS BEFORE ANY LOCK (agent's report =
+  the spec): (1) SEALPIERCE's flag-off equivalence has NO ARTIFACT — run
+  tools/det.py or its primary carries UNVERIFIED; and it is a TWO-PLANK
+  screen (real parent _v481sealsentAnofund; attribution capped on the page).
+  (2) ECOMMIT2's F-battery DIED (3/24 cells) and those cells INVERT the
+  over-refusal diagnosis — the binding gate moved to ECOMMIT_FUND_BELT, so
+  the 8->16 iteration may target the WRONG constant. (3) ECOMMIT's parent
+  F-battery (its registered precondition) was NEVER RUN — run it on
+  _v477ecommit FIRST; it decides whether ECOMMIT2 locks at all. (4) KL2/KL3
+  MUST share a host (S1 contrast) and cite the commit-body dose figures
+  ([-0.743,+0.209]). Leak metric: DIRECTION-ONLY, 49/49 probe citation only,
+  rate+count pairing kept.
 
 ## ⛔ WRAP-FIX CONSTRAINT (widened post-incident): NEVER MUTATE ANY ARTIFACT A
 RUNNING PROCESS READS (bot trees, scripts, worklists) — two same-hour instances.
