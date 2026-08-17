@@ -138,6 +138,13 @@
     Fix spec = research's coordination note ~05:2xZ (our-version coverage
     term, payout term, our-side pairing recency, print-what-was-suppressed).
     My tool; research manually gating meanwhile. (Research s48.)
+    ⛔ ADDENDUM (research, ~05:3xZ): SECOND DEFECT, compounds the first —
+    "their current version" is inferred from OUR tape, so it freezes at our
+    last pairing (named lingling v61; they run v66 since 21:52Z). Fix
+    addendum: read their current version from league_matches (league-wide),
+    never ladder_games (our pairings), and PRINT BOTH ("their current vN;
+    our newest games vs vM") — the gap IS the staleness signal. Both defects
+    worsen together for the same candidates.
 
 16. **ADOPTED, not debt: tools/cluster_ci.py is the interval instrument** —
     research built it (side lane mutation-tested); every measurement brief I
@@ -159,7 +166,18 @@
     contrasts are computed BETWEEN shards, never as a pairing). (Side lane
     s48, DEFER.)
 
-18. **corefill.sh:310 shell error on the empty-worklist path** — after the s48
+18. **`tools/turbo_identity.py` DOES NOT EXIST — a doc cites a guard nobody
+    has.** bots/_v468kladturbo/eco.py:44 AND the eco study cite it as the
+    seam guard for the hand-merged TURBO×BODYAWARE block; it is not in this
+    checkout and never was. The eco-trio build covered the seam with a
+    strictly stronger instrument (replay-SHA flag-off equivalence with
+    positive controls, NOISE_ON=False + --tle 0 — banked as
+    scratchpad/s48_flagoff.sh). Fix: either build turbo_identity as a thin
+    wrapper over the flagoff harness or edit the two citations to point at
+    the harness. Same class as the CLAUDE.md fact-nobody-has lesson. (Eco
+    build agent s48.)
+
+19. **corefill.sh:310 shell error on the empty-worklist path** — after the s48
    re-pin, the runner printed "COREFILL done." then
    `tools/corefill.sh:310: command not found: SH:-` / `= not found` (looks like
    a `${SH:-...}` parsed under the wrong shell). Loop-relevant only if it
