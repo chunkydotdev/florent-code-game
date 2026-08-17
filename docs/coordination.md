@@ -70911,3 +70911,80 @@ v158 "Loki v9" (15:55:14Z, mislabelled — my lineage error, N taken from a tool
 
 ## INSTRUMENT DEBT (listed, NOT fixed — Magnus's budget rule; await his green light)
 submit_clean stale Loki-only guidance strings (s47's half-change) · dose.py: no --tle + retired 8-map default MAPS · replay_census: no damage channel (field-5 decode documented in the 15:1x note) · plank_status loki-era name collisions (8) + loki28 suspect · monitor loose GATE grep (mine) · the NORAY inner-bound fix exists only in `_v502bbstack` LEG 0, not in any shipped tree.
+
+# ============================================================================
+# 2026-08-17T16:1xZ — ⭐⭐ **RESEARCH ARM s49 WRAP — PROCESS DELTAS.** Fired by the
+# BUILDER'S WRAP-PING (standing rule since 2026-08-16, FOURTH firing), which was itself
+# Magnus's "wrap up after we ship". **Arm retro ran FIRST per charter —
+# `docs/retro-research-s49-2026-08-17.md`; instrument bumped v1.18 → v1.19, FIRINGS 7.**
+# Session 07:37:14Z → 16:1xZ (~8.6h). 5 opus/sonnet subagents, all completed, all relayed.
+# ============================================================================
+
+## ⛔⛔ D1 — THE ONE THAT CHANGES NEXT SESSION: **AN ANCHOR IS OPENED, OR IT TRAVELS LABELLED `RELAYED-UNVERIFIED`.**
+**INCIDENT:** I published *"the 8-tier target-ranking ladder at `main.py:503-508` is UNREACHABLE DEAD CODE"* into **`QUEUE.md`, a BOOTED file**, having never opened the lines. `main.py:495-512` is **live threat detection inside `_builder`** — it writes `SLOT_UNDER` / `SLOT_ATK_RND` / `SLOT_THREAT`. The phrase was a subagent's and I relayed its anchor unchecked.
+⛔⛔ **AND I DID IT IN THE SAME MESSAGE WHERE I WAS REPORTING THAT `#77`'s STALE GREP HAD ASSERTED A FALSE ABSENCE — the rule and its breach in one artefact.**
+✅ **Caught by the BUILDER declining to adopt a claim whose cited lines they had not read. Their discipline, not mine.** **Amended in place at the original site.**
+⇒ **ADOPTED MID-SESSION AND BY BOTH LANES WITHIN THE HOUR** — the builder took the same rule for their build-agent reports. **The only finding today that changed two lanes' behaviour.**
+
+## D2 — **A PRECISE ANCHOR ASSERTS PATH *AND* HOME WHILE EVIDENCING NEITHER.** The triage agent cited `ECOMMIT_FUND_BELT` at `bots/_v477ecommit/doctrine.py:1944` — **right line number, wrong tree; the constant is absent from `_v477ecommit` entirely** (it lives only in `_v489ecommit3`). ⇒ **precision reads as verification and is not.** *(The diagnosis survived and independently confirmed the builder's ECOMMIT3 re-target.)*
+
+## D3 — **A COLLIDER-CONDITIONED CUT GETS BANKED AS DO-NOT-BUILD-AGAINST, NEVER OMITTED.** Today's rated tape splits by kill-round band to **r121-200 0.580 (n=50) → r201-300 0.238 (n=21)** — the most arresting number of the decode. **The round a game ends at is partly determined by who won it.** ⇒ recorded WITH its refusal so nobody re-derives it and believes it; the ITT block asks the same question without the collider.
+
+## D4 — **A FAIL-TO-EXCLUDE CLAIM MUST BE RESTATED AS AN EXCLUSION BEFORE IT CARRIES POLICY WEIGHT.** *"Three arms stopped with the CI containing the floor"* is the justification for "iterate, don't close". Restated honestly: **the arm is UNPRICED, not fine.** ⇒ **exactly enough to forbid closure and not enough to claim merit — which is the policy Magnus set.** ✅ **Verified rather than repeated: ROUTESCORE 51.30 [49.48, 53.12] vs `TREND_FLOOR = 52.0` (read out of `auto_gate.py:261`, not out of prose) is exact and robust.** ⚠ **FREEROUND's inclusion is FRAGILE — 0.06pp on the banked row, FAILS on the current tape.** ⚠ **BELTBREAK-EARLY was stopped by `COMBO_BAR = 55.0`, which its CI EXCLUDES — unpriced against one bar and correctly measured against another. Two different claims.**
+
+## D5 — **A HEALTH LINE CAN BE TRUE ABOUT THE WRONG SUBJECT.** `corefill runner MISSING found=0` fired at boot; the runner had **exited CLEAN on a drained worklist** at 07:34:32Z with the supervisor alive and refusing to invent work. **Nothing crashed — 8 cores were idle because nobody had queued an arm.** ⇒ **the printed line would send an operator to restart something that works.** *(Builder reached it independently within the minute. Tool wording NOT fixed — Magnus's directive.)*
+
+## D6 — ⚠ **STRUCTURAL, ONE INSTANCE, ROUTED BUT NOT A STAFFING REQUEST: the side lane was stood down by directive for this entire session, and this is the run in which this lane published a false claim into a booted file.** One instance is not a pattern. **It is the mechanism the multi-lane protocol exists to cover, observed by its absence.** Magnus's call, on his own budget grounds.
+
+## ⭐⭐ THE RUN'S BEST RESULT WAS NOT COMMISSIONED, AND THE CREDIT BELONGS TO THE CONTROLS
+**Two studies converged on SIEGE CLEARANCE from independent fixtures. Neither brief asked for it.**
+```
+AUTOPSY (clearance):  we clear  8.6% (23/266) of enemy turrets sieging our core
+                      they clear 63.8% (240/376) of ours          ~7x asymmetry
+KLADDE  (shooting):   shots at enemy turrets  them 3,221  us 329           9.8 : 1
+                      live turret stock       them 7.68   us 0.88
+                      sentinels BUILT/game    them 8.11   us 11.71   <-- WE BUILD 44% MORE
+```
+⇒ **we build more turrets and hold 8.7x fewer.** ⭐ **What produced the convergence is that BOTH studies were forced to carry a control that could run the other way — not the questions I wrote.** ⇒ **the control requirement is the productive part of the brief; the question is the cheap part.**
+
+## PROCESS DELTAS — routed at write time
+| finding | route |
+|---|---|
+| Anchors: open it or label `RELAYED-UNVERIFIED` | **PROMOTED** — here + adopted by the builder; **INSTRUMENT** — retro Q3b' |
+| Precision-is-not-verification (path vs home) | **INSTRUMENT** — retro Q7 |
+| Collider cuts banked as do-not-build-against | **PROMOTED** — here |
+| Fail-to-exclude restated as exclusion | **PROMOTED** — here |
+| Health line true about the wrong subject | **PROMOTED** — here (tool wording NOT fixed, per directive) |
+| Unaudited session ↔ false publication | **PROMOTED** — here, for Magnus |
+| Convergence credit belongs to the controls | **OBSERVATION — NOT ROUTED** |
+
+--- 2026-08-17T16:1xZ ⭐⭐ **RESEARCH ARM s49 — STATE NOTE. LIVE SURFACES VERIFIED, NOT ASSERTED.** ---
+
+## ⛔⛔ WHAT A SUCCESSOR MUST NOT INHERIT UNCHECKED
+
+**1. ⭐⭐ WE SHIPPED. HOLDER IS `v159` "Sleipnir v2" AND THE CONTROL MOVED WITH IT.** Read by me off `now.py`/`fcode status` at **16:15:42Z**: **v159, uploaded 2026-08-17T16:13:18.623Z, rating 1786 (Emerald), rank #21 of 126, 1,192 matches, last 10 = 6W 4L.** **CONTROL `bots/_v488beltbreak2` — holder and control COINCIDE.**
+⛔ **`ship_watch` was 22.4 MINUTES STALE at that read and still printing `v155`. A poller and a blind line are byte-identical; I did not read the holder off it and neither should you.**
+⚠ **`ladder_games.tsv` was 82.7 minutes behind — its newest row is `ourver=v155`. THERE IS NO PER-MATCH v159 EVIDENCE YET AND ITS ABSENCE IS NOT EVIDENCE.**
+
+**2. ⭐⭐⭐ THE SHIP WENT OUT WITHOUT RULE 6's LIVE LEG — MAGNUS ORDERED IT DIRECTLY, AND THE FIRST ~8 RATED MATCHES *ARE* THAT CHECK.** ⇒ **THE SINGLE HIGHEST-VALUE THING THE NEXT RESEARCH BOOT DOES IS THE SAME-DAY PER-MATCH DECODE FILTERED TO `ourver = v159`.** **Do it before anything else. It is the missing half of a ship case, not a routine read.**
+
+**3. ⚠ THREE RETRACTIONS OF MINE REACHED THE BUILDER, ALL CORRECTED AT THEIR ORIGINAL SITES:** the `main.py:503-508` "dead ladder" (**FALSE — live threat detection**), the `#90` "one edit to `raid.py:688`" prescription (**superseded: already built and measured as `_v480beltbreak`**), and a rule-6 framing that implied an old result was *wrong* rather than *non-transferable*. ⇒ **A successor grepping for any of those lands on a struck block with its replacement. If you find one quoted CLEAN, it is stale.**
+
+**4. ⚠ THE QUEUE COUNT IS STILL NOT A HEALTH SIGNAL, AND IT IS NOW WORSE.** `queue_check` reads 78 unblocked. **58 of 78 carry a GREP checked against a pre-`kladturbo` tree and 5 name no tree — and the incumbent has since moved AGAIN to `_v488beltbreak2`, so EVERY row's grep is now at least one tree stale.** ⛔ **`#77` is the proof of what that costs: it asserted "0 hits in the incumbent" and was materially FALSE.** **Six rows came off today on re-greps; the rest are unverified, not alive.**
+
+**5. ⚠ `#8` IS AN UNRESOLVED BOOKKEEPING CONTRADICTION, PARKED DELIBERATELY BY BOTH LANES.** It sits at TIER 1 carrying the board's only Elo estimate (~+7-14) while `queue_check` reads its prose as `[do not re-queue, refuted]`. **Thirty seconds of work; it gates the Tier-1 ordering; neither lane spent them, on Magnus's no-bookkeeping directive.**
+
+## RESEARCH ARM STATE — VERIFIED
+* **NOTHING OF MINE IS RUNNING. FIVE subagents spawned (kladde move-mining study, buildable-arm triage, rated decode, sub-r120 autopsy, six-arm iteration triage); ALL COMPLETED, ALL RELAYED, NOTHING UNRELAYED.**
+* **BANKED:** `docs/research/REPLAY-STUDY-kladde-v119-2026-08-17.md` **with its move-mining ledger row in the same commit** (trigger re-run after: kladde and Big O cleared, **Juusto v13 now top candidate at score 37.3**) · `docs/research/AUTOPSY-sub-r120-core-losses-2026-08-17.md` · `docs/retro-research-s49-2026-08-17.md` · the `QUEUE.md` retirement block **with its own three amendments in place** · the same-day rated decode in this tail.
+* ⛔ **I BUILT NO TOOLS AND WROTE NO TOOL SPECS.** Magnus's directive — *"no token budget for sidelane or fixing tools, fully focused on only iterating new bots"* — is **stronger than the s48 wrap-only rule: not at the wrap either.** I asked rather than assumed the boundary and operated on the strict reading all session.
+* **FIRE ORDER: NONE, and that is correct rather than an empty board.** No new arms without Magnus's approval (his iterate-don't-close directive). `#93`, `#60` and the `LOKI_QUIET_ON` audit are **PROPOSALS PARKED FOR MAGNUS, deliberately NOT stocked as queue rows** — stocking a row claims it is buildable, and right now nothing new is.
+* **HARD LIMITS HELD: I edited no bot, submitted nothing, activated nothing, fired no match, ran no arena, typed no verdict, and wrote nothing to `HANDOVER.md`, `PROGRAMME.md`'s `INCUMBENT`, `BARS.tsv` or the tape.**
+
+## DIES WITH ME
+**Nothing.** All five agents completed and relayed; every finding is in `docs/coordination.md`, `QUEUE.md` or a banked file; everything is committed and pushed.
+
+## ⭐ THE TWO FINDINGS A SUCCESSOR SHOULD SPEND THE MORNING ON
+1. **SIEGE CLEARANCE — two independent fixtures, ~7x against us, and the mechanism is TWO LINES IN OUR OWN TREE:** `doctrine.py:1488 LOKI_QUIET_ON = True` silences the builder melee at `main.py:635`, and `main.py:578 _nearest_home_intruder` **skips every entity that is not a `BUILDER_BOT`** — so an enemy sentinel shelling our core is not an "intruder" and our only removal path is off. **0 of 264 builder attacks in the ten fast losses targeted a turret; the instrument returns 349 elsewhere the same day, so the zero is real.** ⚠ **Both anchors opened by me. Re-open them against `_v488beltbreak2` — the tree has moved.**
+2. **THE HEAL IS PRICED AGAINST A BUILDER PECK AND APPLIED UNDER TURRET FIRE.** `eco.py:468 _heal_adjacent` docstring, verbatim: *"1 Ti for +4 HP against an enemy peck's 2 Ti for 2 dmg -- eight to one on titanium"*; `raid.py:325` repeats it at the siege ring; `_ray_covers` = **0 occurrences in all four files**. **+4 HP/action against a gunner's 7/round or a sentinel's 18 is a loss every round.** **5,882 heals = 29.7% of our builder action budget; 4,677 (23.6%) into things dead within 10 rounds; kladde's equivalent waste is 2.9%.** ✅ **The control runs the other way in the same table — our CORE with 3+ heals dies 62.1% over a median 279 rounds, because a big HP pool compounds +4/action and a 30-40 HP building under a turret does not.**
+⇒ **These are ONE plank from both sides: stop paying for turrets we cannot keep, and point the freed actions at theirs.** **Both are edits to existing subsystems with named anchors — iterations, not new arms.**

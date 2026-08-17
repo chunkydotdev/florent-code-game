@@ -1,4 +1,4 @@
-# RESEARCH ARM RETRO — **v1.18** — run it at every wrap, before the process deltas
+# RESEARCH ARM RETRO — **v1.19** — run it at every wrap, before the process deltas
 
 **RETRO v1.2 · created 2026-08-10 (s28) · bumped twice 2026-08-11 (s29) · companion to `EXPERIMENT-METHOD-CHANGELOG.md`
 (method v3.4) and to `two-session-protocol.md` rule 5.**
@@ -1842,3 +1842,24 @@ after citing a rule in a message or commit, RE-READ MY OWN TEXT IN THAT SAME ART
 | Name-vs-comment: the comment is the evidence | **INSTRUMENT** — Q7 above, this file |
 | A published finding's instrument must outlive the session | **PROMOTED** — `tools/x3r0_measure.py` recovered |
 | Over-correction is a failure in the same family as under-hedging | **OBSERVATION — NOT ROUTED** |
+
+---
+### v1.19 — s49, 2026-08-17. Instance: `docs/retro-research-s49-2026-08-17.md`. **FIRINGS: SEVEN.**
+**INCIDENT THAT EARNED THE BUMP — and it is the worst single failure this lane has recorded:** I published
+*"the 8-tier target-ranking ladder at `main.py:503-508` is UNREACHABLE DEAD CODE"* into `QUEUE.md`, a
+**booted** file, having **never opened the lines**. They are live threat detection inside `_builder`. The
+phrase came from a subagent and I relayed its anchor unchecked — **in the same message where I was reporting
+that `#77`'s stale grep had asserted a false absence.** ⇒ **Q4b at maximum severity: the rule and its breach
+in one artefact.** Caught by the BUILDER declining to adopt a claim whose cited lines they had not read.
+**NEW SUB-QUESTION Q3b' — *did any file:line anchor reach another lane without my having opened it?*** with
+the mechanical form: **open it, or it travels labelled `RELAYED-UNVERIFIED`.** Adopted mid-session; the
+builder adopted it for their own build agents within the hour — **the only finding today that changed both
+lanes' behaviour.**
+**Q7 sharpened:** `ECOMMIT_FUND_BELT` was cited at `bots/_v477ecommit/doctrine.py:1944` — right line number,
+wrong tree, constant absent from that tree entirely. ⇒ **A FILE PATH AND A CONSTANT'S HOME ARE TWO SEPARATE
+FACTS, AND A WELL-FORMED ANCHOR ASSERTS BOTH WHILE EVIDENCING NEITHER. Precision reads as verification.**
+**COUNTS, both down:** retractions reaching a lane **8 → 3**; reaching Magnus **3 → 0**. Consumption 11/11,
+0 unread (third consecutive clean run).
+⚠ **STRUCTURAL OBSERVATION, one instance, routed but NOT a staffing request: the side lane was stood down by
+directive for this entire session, and this is the run in which this lane published a false claim into a
+booted file.** The sunset clause is NOT armed — this run changed behaviour in two lanes.
