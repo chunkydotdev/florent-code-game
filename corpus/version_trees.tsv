@@ -90,3 +90,4 @@ version	name	tree	evidence	recorded_at
 156	Loki leap v1 (repair+siege+collar, CB off)	bots/_x3r0v156lokileap (teammate, STAGED; never activated)	fcode submission download 156 (2026-08-17T06:13:40Z): zip member mtimes 2026-08-16 19:59 match the upload at 19:59	2026-08-17T06:13:40Z
 157	Odin	bots/_x3r0v157odin (teammate, STAGED from platform artifact; ACTIVE since 2026-08-17T06:00:23Z)	fcode submission download 157 (2026-08-17T06:13:40Z): zip member mtimes 2026-08-17 06:00 match the upload at 06:00	2026-08-17T06:13:40Z
 158	Loki v9	bots/_v488beltbreak2	submit_clean auto — `fcode status` Active bot: v158 (Loki v9)	2026-08-17T15:55:16Z
+159	Sleipnir v2	bots/_v488beltbreak2	submit_clean auto — `fcode status` Active bot: v159 (Sleipnir v2)	2026-08-17T16:13:19Z

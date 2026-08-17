@@ -1,7 +1,66 @@
 # ⭐⭐⭐ FIRST: `.venv/bin/python tools/now.py` — the holder comes from fcode status,
-# NEVER from a poller or any line below (this block is a CACHE). now.py gained a
-# retry at the s48 wrap; if it still reads BLIND, raw `fcode status` TEXT can
-# carry the Active bot: line during PARTIAL flaps — the line is the authority.
+# NEVER from a poller or any line below (this block is a CACHE).
+
+# ===== s49 WRAP (builder, 2026-08-17T16:15:11Z; Magnus called the wrap after the ship) =====
+
+## THE SLOT — WE SHIPPED
+**HOLDER v159 "Sleipnir v2" = `bots/_v488beltbreak2`** (activated 16:13:18Z; v158 "Loki v9" was the
+same bytes under a mislabelled name for one pairing window — `version_trees.tsv` maps both).
+**INCUMBENT/CONTROL = `bots/_v488beltbreak2`** (PROGRAMME.md updated by the ship tool, committed).
+**ROLLBACK TARGET: v155 "Sleipnir v1" = `bots/_v468kladturbo`.** SHIP_SIT_MIN_K protects v159 for
+k≥8 rated matches barring stop-loss. The ship case: Band 1 twice at full n (53.09 [51.76,54.42] and
+sibling 53.81 [52.49,55.14]) + fresh-seed/host replication 52.01 [50.48,53.53]; the kill-clock
+argument (+6.45pp timely-kill, non-overlapping) chose RND=10. ⚠ Rule 6's live-leg confirmation was
+NOT run pre-ship — Magnus ordered directly; the first ~8 rated matches ARE that check. **Watch
+per-match `ourver=v159` off `ladder_games.tsv`, never elo_history's poll tags.**
+
+## WHAT IS TRUE ON THE BOARD (all core-backed; every claim's row is in results.tsv or coordination)
+* **BELTBREAK is the proven plank** (Band 1 ×2 + replication). Its live iterations, in evidence order:
+  **SALT×RAY coordination** (SALT raiders bodily shield the belt tiles RAYDISC shoots — 21.8-34.6%
+  friendly-fire measured; v508 carries the correct guard, dose recovery needs the coordination arm) ·
+  **timing bracket** (r10 ≥ r25 ≫ r70, floor at pre-r30 SENTINELS per the RUSH2 cell) · v508's ray
+  mechanism is CORRECT (0/190 own-hits) and unpriced-positive on kill-clock hints.
+* **Roads closed BY ARITHMETIC (no legs owed):** conversion-throttling (ammo identity: converted−held
+  = 4g+10s exactly, pipeline 94% pass-through) · turret-count-vs-throughput on the control chassis ·
+  the cap axis at CAP=3 (3,240 games: the +12 tax cancels a real +5pp 3-shredder effect, and untaxed
+  it still buys no currency).
+* **Dismissals, all core-confirmed at n≈500:** RUSH2 36.5 (waivers active-and-HARMFUL: earlier-not-more)
+  · BBAMMO flat · SIEGEBREAK 45.7 (channel flat at end-state) · HEALBREAK flat · plus the RAYDISC dose
+  check (dose SURVIVED noise — the null is about VALUE, and the friendly-fire discovery explains it).
+* **SENTSURVIVE is parked for a LIVE fixture** — the replant treadmill (11.71 built/0.88 alive) exists
+  vs kladde, not vs ourselves (1.01/game locally, ≥92% of games carrier-identical). Mechanism verified
+  at unit level; ban-radius d²≤8 bans the raider's own neighbourhood (known first fix).
+* **Engine facts banked today:** tile shots resolve against the BUILDER ON THE TILE first (either team)
+  · sentinel rays pass through interposed bodies and damage only the named target (damage-probed) ·
+  gunner rays are blocked by any body incl. the CORE · `--seed` deterministic at NOISE_OFF with
+  DISTINCT seeds; repeated seeds are byte-copies; NOISE_ON pairing impossible (salt, main.py:445) ·
+  turn-update FIELD 5 = {1: entity_id, 2: hp_delta} (replay_census has no damage channel).
+
+## RUNNING / WAKE PATHS
+Daemons survive: 4 watchers + keeper + auto_gate --apply (reaches remote) + corefill_forever +
+fleet_dispatch + ship_watch (now watching v159). **No shards running anywhere** — local worklist
+drained, ws1/ws2 workers exit-on-empty (they need gen/push/start per arm; BARS ROW FIRST, always).
+**NOTHING WAKES A HUMAN.** All s49 agents landed; their reports are in the coordination tail.
+
+## QUEUE, priority order (per Magnus: iterate the planks, combinations allowed, new planks need his OK)
+1. **SALT×RAY coordination arm** (the named dose-recovery for v508; composition-check discipline applies).
+2. **Live unrated legs** for v159 itself and for SENTSURVIVE (both are away-game questions; leg naming
+   `Loki rcX.Y`, submit_clean handles holder restore; fire just after an observed pairing).
+3. **Timing bracket fine-scan** (r10 vs r15 vs r20 on the carrier, clause-isolation vs the carrier).
+4. Parked with evidence: OPENFAST (direction wrong until its cost-scale term is fixed) · ECOMMIT3 ·
+   the four s48 draft preregs (KL2 resumable-while-passing at 53.9, SEALPIERCE cancelled at parent level).
+5. Magnus-approved proposals not yet built: #93 point-blank core-sniper · kidnap-the-healer (pure Loki,
+   approved class) · the LOKI_QUIET_ON audit.
+
+## HAZARDS A SUCCESSOR MUST NOT RE-LEARN (s49 additions — full list in the wrap's PROCESS DELTAS)
+1. Reads carry their clocks INSIDE a verdict row (raydisc-final needed a correction row).
+2. Every dismissal gets its ~n=500 core confirmation BEFORE it is banked (Magnus standing rule).
+3. BARS row before worklist row on remote shards, or auto_gate's remote reach kills the arm at a look.
+4. Variation screens vs THE CARRIER (clause isolation) — vs-control screens read the pair.
+5. submit_clean's guidance strings are STALE (Loki-only) while its regex accepts Sleipnir — s47's
+   half-made change; do not trust the error text, and fix both halves together when tools reopen.
+
+## ===== ARCHIVE MARKER: everything below predates s49's wrap =====
 
 # ===== s48 WRAP (builder, 2026-08-17 ~07:3xZ; Magnus called the wrap) =====
 
