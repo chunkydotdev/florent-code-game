@@ -70352,3 +70352,35 @@ Verbatim: ***"NO tools should get fixed during the session, everything is fixed 
 
 ## DIES WITH ME
 **Nothing.** All six agents completed and relayed; all findings are in `docs/coordination.md`, `QUEUE.md` or a banked file; everything is committed and pushed.
+
+--- 2026-08-17T07:19:41Z ⛔⛔⛔ **SIDE LANE s48 POST-WRAP — THE CONTROL TREE MOVED UNDER THREE LIVE ARMS. CONTAMINATION BOUNDARY RECORDED HERE WHILE IT IS STILL MEASURABLE.** ---
+
+**Caught by `corefill`'s guard at 07:16:27Z (`REFUSING TO LAUNCH: control tree moved`), verified independently, and STILL UNREVERTED at 07:18:50Z.**
+```
+control_pin --check   ⛔ REFUSE: CONTROL TREE MOVED
+   pinned  a9228ccb56ed9a65dd7d72ad1cb96068
+   now     955ec18687221ddc867d9e51cc760e92
+git status            M bots/_v468kladturbo/eco.py     mtime 2026-08-17T07:17:12Z
+                      M bots/_v468kladturbo/raid.py    mtime 2026-08-17T07:16:34Z
+diff                  eco.py +30/-3 · raid.py +10/-4  (33 insertions, substantive)
+git log               NO commit since 2026-08-16T17:26:57Z -> UNCOMMITTED WORKING-TREE EDITS
+```
+⛔ **`git log` IS BLIND TO THIS — the edits are uncommitted, which is exactly the D20 sub-rule (verify the CONTENT HASH, never the commit history) proving itself on the incumbent tree, two hours after it was written down.**
+
+## ⭐⭐⭐ THE CONTAMINATION BOUNDARY — RECORDED NOW BECAUSE IT IS KNOWABLE NOW AND ARCHAEOLOGY LATER
+**⇒ ROWS WRITTEN BY THESE ARMS FROM `2026-08-17T07:16:34Z` ONWARD MEASURE `plank + (control_after − control_before)`, NOT the plank.**
+```
+ARM              n at 07:16:2xZ (guard fired)   n at 07:18:50Z    EXPOSED ROWS (approx)
+ROUTESCORE            ~2785 / 5400                  2823               ~40+ and growing
+BELTBREAK-EARLY       ~2601 / 5400                  2630               ~30+ and growing
+ODINVSSLEIP           ~2118 / 2700                  2160               ~40+ and growing
+```
+⛔ **`control_pin`'s own docstring states the direction: *"THE FAILURE IS SILENT AND DIRECTIONAL… the delta runs the SAME way for every arm — AGAINST THE TREATMENT."*** ⚠ **AND THIS IS A WALL-CLOCK `--tle 10` FIXTURE, so an `eco.py`/`raid.py` edit changes the control's SPEED as well as its behaviour — the same mechanism the builder priced at 2.67pp on a byte-identical null.**
+⭐ **THE DAMAGE IS BOUNDED AND DIAGNOSABLE *ONLY IF THIS BOUNDARY IS RECORDED*: every tape row carries a `ts`, so a reader can cut at 07:16:34Z. UNRECORDED, THE TAPES LOOK CLEAN AND THE CONTAMINATION IS INVISIBLE — which is the entire failure mode.** ⇒ **same shape as this morning's control-era boundary: cheap today, archaeology tomorrow.**
+⚠ **`ODINVSSLEIP` IS THE WORST-PLACED: it is the Magnus-facing calibration cell at ~80% and its contaminated fraction sits entirely at the END of its tape.**
+
+## ⇒ THE PRESCRIPTION IS THE TOOL'S OWN, QUOTED NOT INVENTED
+***"Re-base the arms, or revert the control, then `--pin` again. DO NOT JUST RE-PIN TO SILENCE THIS."***
+⇒ **Cheapest safe move (flagged to the builder, theirs to decide): the edits are UNCOMMITTED, so `git checkout -- bots/_v468kladturbo/` restores the pinned state EXACTLY; let the three arms finish against the control they were certified against; let the WRAP-FIX agent re-apply afterwards.** **`ODINVSSLEIP` is ~10 minutes from completion.**
+⚠ **LIKELY AUTHOR: the WRAP-FIX s48 agent.** ⭐ **Magnus's new rule sends TOOL fixes to the wrap — this is not a tool, it is THE CONTROL TREE, and the rule was not written to license editing an artefact three live shards are measuring against.** **A scope question for the next boot, and it is now in the builder's HANDOVER.**
+⚠ **AND A STALE CLAIM TO CORRECT: research's wrap state note (07:16:43Z) says *"control pin verified by content hash."* True when run, FALSE within the same minute. Their note wants its read time or a correction — and it is a clean instance of why a verification carries a clock.**
