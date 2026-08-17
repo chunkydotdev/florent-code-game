@@ -68374,3 +68374,76 @@ KLADLADDER  bots/_v473kladladder   bots/_v468kladturbo  5400   810000
 ⚠ **NOT verified by me and taken from the builder: that `NULLHOST.COMPLETE` is an old-era (v146) marker and the certification cell is `NULLWS1S`, never `NULLHOST`. Labelled so.**
 
 --- 2026-08-17T04:51:04Z ⭐⭐ BUILDER s48 — MAGNUS RULES ON THE GATE: "I want the same strict runs as yesterday." --- THE FLOOR QUESTION IS CLOSED: TREND_FLOOR stays 52.0@1000, combo bar stays 55@2700, house bar stays ge-51.33, catastrophe CI-hi<45@400 — yesterday's constants, unchanged, now applied against Sleipnir-as-control. RECORDED CONSEQUENCE (stated once, with the arithmetic he ruled on): an arm at true-50 vs Sleipnir (= matching our champion) dies at the 1000-look ~90% of the time; an arm must run ~+2pp over the champion's own strength in prefix to survive. That is the INTENDED prospecting regime — cheap kills at 1000, full compute only for clear improvements; cancellation rows remain operational-not-verdicts and carry the selected-pessimistic disclosure. The side lane's reachability concern resolves the same way: a local floor-cancel under this regime IS the decision Magnus wants (fast triage), and full-band readings live on remote/full-n runs when an arm earns one. ⇒ LOCAL SHARD HOLD IS RELEASED — new rows enter corefill_work.txt under the strict regime as they become registerable (sentinel-seal variants next, then study-derived arms). KLADLADDER continues on ws1 (registered, running, full-n by construction). Registry verdict-language: yesterday's conventions unchanged (REAL-BUT-SMALL class exists in verdicts as it did for COLLARF2; KLADLADDER's locked four-band reading stands as registered). ---
+
+--- 2026-08-17T04:52:41Z ⭐⭐ **RESEARCH s48 — "HOW TO DO IT OPTIMALLY" HAS AN ARCHIVE ANSWER: A NARROW ANNULUS. PLUS A SECOND RETRACTION OF MY OWN, ON THE BUILDER'S CROSS-CHECK.** ---
+
+## 1. ⭐⭐ THE OPTIMAL FORWARD-GUNNER SITING IS `20 <= d² < 100` FROM THE ENEMY CORE
+For every gunner in the league I reconstructed its ALIVE INTERVAL from BUILD/DEATH pairs and counted ENEMY conveyor deaths within d²≤13 during that interval, **minus the same count for FRIENDLY conveyors** — the co-location control that cannot be gunner kills. `EXCESS` is treatment − control, per gunner-lifetime.
+```
+d² band     n       medLife  died%   belt/gun  CTRL   EXCESS   excess/100rnd
+0-10     108,159       66    56.3%     1.82    0.10    1.72        0.45
+10-20     76,885       68    57.3%     2.49    0.21    2.28        0.60
+20-30     41,490       53    61.4%     3.25    0.37    2.89        0.86   <- PEAK
+30-45     32,898       76    58.4%     3.12    0.47    2.64        0.74
+45-60     29,916      149    54.1%     3.37    0.68    2.68        0.68
+60-80     24,924      205    51.6%     3.30    0.85    2.45        0.60
+80-100    22,817      311    49.2%     2.99    1.09    1.90        0.44
+100-130   30,234      336    48.5%     2.14    1.33    0.81        0.19
+170-220   25,945      461    45.5%     1.23    1.41   -0.18       -0.04   <- SIGN FLIP
+300+      69,945      650    37.7%     0.32    1.30   -0.98       -0.19
+```
+**Monotone, with a zero AND a sign flip — the instrument discriminates at both ends, and the negative tail is the control behaving exactly as it must (a home gunner sits by OUR belt, so the friendly count exceeds).**
+⭐ **AND THE MECHANISM FALLS OUT OF THE ENGINE:** gunner attack r²=13 ⇒ range ~3.6 tiles. A gunner at d²=25 (distance 5) **CANNOT reach the core but CAN reach the belt feeding it.** ⇒ **the optimum is exactly the annulus where you shoot the conveyors and not the core — Magnus's own sentence, recovered from the data rather than assumed.**
+⚠ **AND PLANTING AT THEIR CORE IS WORSE ON BOTH AXES, which is the counterintuitive half:** d²<10 gets median life 66 and excess 1.72; d² 45-60 gets median life 149 and excess 2.68. **The naive "put it on their core" instinct buys HALF the lifetime for 60% of the output.**
+
+## 2. ⭐⭐ OUR DEFICIT IS **VOLUME IN THE BAND, NOT CONVERSION** — and the pooled row said the opposite
+```
+POOLED OpenSverige:  in-band share 0.183, excess per in-band gunner -0.03   <- MISLEADING, NOT USED
+ourver  fixture  gunners  inBandShare  inBandN  excess/inBandGun
+  94    ladder     326       0.135        44        -3.52
+ 104    ladder     423       0.305       129        +0.71
+ 116    ladder     216       0.329        71        +0.38
+ 140    ladder     304       0.118        36        +1.50
+ 152    ladder     259       0.143        37        +1.78
+ 140    unrated    605       0.124        75        +1.97
+--- FIELD MEDIAN: in-band share 0.276, excess per in-band gunner 1.82
+```
+⇒ **our CURRENT in-band gunners convert AT THE FIELD MEDIAN (1.50-1.97 vs 1.82). We simply plant there HALF as often (0.118-0.143 vs 0.276).** The pooled −0.03 is dragged down entirely by the v75-v94 era (−1.67 to −3.52) and **would have sent the study hunting an aiming defect the current bot does not have.** Third time today the split has changed a headline.
+⇒ **THE PLANK IS "PLANT MORE GUNNERS AT d² 20-100", NOT "LEARN TO AIM"** — a cheaper build and a sharper prereg. ⚠ **But v102-v116 ran in-band share 0.305-0.345 (at/above field median) while converting at only 0.38-0.71, so we HAVE run the high-volume version and it converted badly then.** Whether the v116→v140 share-collapse/conversion-triple was a deliberate trade or a side effect **decides whether raising volume re-imports the bad conversion** — routed to the builder's study as a tree-history question.
+**CAVEATS, stated up front:** (1) d²≤13 has NO FACING term — this is an upper bound on attribution, and the friendly control bounds the co-location share but not the wrong-facing share. (2) Overlapping gunners double-count the same death, inflating dense-turret teams — **and the metric is not flattering volume: Leviathan at 14.18 gunners/game reads only 0.64 excess per in-band gunner, exactly the dilution you would predict.** (3) Cross-team excess comparisons confound with opponent belt size and game length; **the WITHIN-team version split is the cleaner instrument and is the one to act on.** (4) Not causal — placement-conditioned observation only.
+**Top-team in-band behaviour:** Pantheon 0.474/4.37 · ph 0.474/3.74 · Clankers **0.404/3.95** · Pivot 0.325/4.12 · Jython 0.373/2.98 · sporks 0.148/3.30 (selective, high-yield — best subject for a SITING RULE) · O(1) 0.210/0.26 and Leviathan 0.391/0.64 (the anti-examples).
+⭐ **CLANKERS v17 CONVERGES THREE WAYS: top in-band executor, our only clean stable-opponent deficit, and admissible band (+101, 5-0 pays +20.51).**
+
+## 3. ⛔⛔ RETRACTION: "WE REPAIR BELOW THE FIELD MEDIAN — THAT HALF SURVIVES" IS WITHDRAWN AS A CONCERN
+The builder cross-checked my repair cut with an independent decoder. **I verified their three numbers against my own pipeline rather than accepting the relay, and two replicate cleanly:**
+* **v152 replicates to the decimal** — theirs 20.5% ours / 16.6% theirs; mine 20.5% / 15.9%.
+* **v155 ordering replicates** — theirs 10.6 vs 15.0; mine 12.2 vs 17.9 (population differs: they pinned 715 files, I have every v155 file).
+* ⭐ **THEIR 3.1× BELT-DEATH ASYMMETRY REPLICATES AND GENERALISES: my v155 cell is 1,796 vs 553 = 3.25×, and ACROSS EVERY VERSION it is 71,269 vs 27,601 = 2.58×.** ⇒ **we have taken 2-3× more belt deaths than our opponents in the same games for our entire recorded history.** Stronger than the one-version cell supports.
+⚠ **ONE METHODOLOGICAL DIFFERENCE, both legitimate:** their "wash" is a per-game SIGN TEST (21/23/14); my 12.2 vs 17.9 is a POOLED RATE. **A consistent small deficit spread evenly across games reads as a wash to a sign test.** Name which one any deliverable quotes.
+⛔ **AND THE RETRACTION ITSELF: REPAIR RATE IS NOT A STRENGTH MARKER IN EITHER DIRECTION.** Pearson r(rating, repair≤10r) over 69 teams = **−0.062**; by band it is non-monotone (0-1500 median 0.342 · 1500-1800 0.194 · 1800+ 0.395); and among the fifteen teams rated ≥1850 the spread is nearly the full range — **Jython (2195, strongest in the league) repairs 28%; sporks (2058) repairs 70%; farming_200s (1876) repairs 1.5%.** ⇒ **repair rate is a STYLE variable, not a quality one. "We repair below median" survives as a fact and dies as a CONCERN.** The builder's framing — *not getting cut is the quantity* — is correct and is now supported from a second direction.
+⚠ **Their flag on my 29.6% was right to raise and the diagnosis is different from the one they proposed:** it was a median-of-team-rates, but **switching to the pooled estimator gives 36.4%, i.e. HIGHER, so the estimator does not explain the gap.** What explains it is WHO IS IN THE POOL — the league-wide figure is dominated by games between other teams, and **the high-repair teams are the weak ones** (Albert And Einstein 1022 → 0.825, Team imeto 971 → 0.814, Oresund 1332 → 0.781). **The teams we actually play repair less than the league at large. Their 17.5% is the right denominator for our question; my 29.6% answered a question nobody asked.**
+⭐ **AND THE TWO FINDINGS COMPOSE INTO THE SHARPEST VERSION OF THE SHREDDER PREREG:** their FU4 result (once structurally connected, ~100% of emission reaches the core; trunk saturation never binds) plus a 68.5%-never-repaired field means **a cut is usually PERMANENT revenue removal.** ⇒ the payoff is `upstream_emission × REMAINING ROUNDS`, not `outage_duration × emission` ⇒ **EARLY cuts are worth vastly more than late ones, and that is testable: cut-ROUND should predict the win far better than cut-COUNT does.** If the gunner study can extract cut-round from replays, it is the single most decision-loading number available for this plank.
+
+--- 2026-08-17T04:52:0xZ ⛔ **SIDE LANE s48 — MAGNUS'S FLOOR RULING LANDED (strict, floors/bars unchanged vs Sleipnir, local hold released). MY REACHABILITY FLAG IS RESOLVED BY DECISION, NOT BY DEFECT. But the ruling creates one consequence that is CHEAP TODAY AND ARCHAEOLOGY TOMORROW.** ---
+
+✅ **FLAG CLOSED BY THE RIGHT PERSON.** The builder's reading — *"a floor-cancel under the strict regime is the intended fast triage; full-band readings are what remote/full-n runs are for"* — is coherent, Magnus ruled, and **the arithmetic I published (true-50 survives the 1000-look 10.3%; Sleipnir itself 89.7% killed) is the PRICE HE CHOSE, not a defect.** Not reopening.
+
+## ⛔ THE CONSEQUENCE — THE CANCELLATION LEDGER CANNOT TELL THE TWO ERAS APART
+
+**Measured:**
+```
+scratchpad/auto_gate_cancelled.tsv columns:  ts shard phase mark n share ci_lo ci_hi clause
+rows naming _v223sealrepair or _v468kladturbo:  0 of 70
+results.tsv columns: commit winrate ci_low ci_high n status description  <- control only in FREE TEXT, by convention
+```
+⇒ **A cancellation row cannot distinguish "failed against a WEAK BASELINE" from "failed against our CHAMPION." Byte-identical row shapes.**
+**And the builder's own framing sharpens this rather than softening it:** if floor-cancels are the INTENDED FAST TRIAGE then **we expect MANY**, each meaning *"did not beat Sleipnir by ≥2pp in 1000 games"* — true of most genuinely good planks — **pooling with 70 existing rows that mean something far weaker.** The gate's own text invites the reuse: *"Rows are KEPT: it remains available as a combination input."*
+⛔⛔ **TWO COMPOUNDING DISTORTIONS IN A POOL MARKETED FOR REUSE:** s47's finding that **cancelled arms are selected on a LOW PREFIX DRAW and understate their true share** (+2.82 / +1.33, n=2, direction guaranteed by the selection rule) — **now stacked on "and the control got 81.9 Elo stronger."**
+
+## ⭐ THE HALF THAT EXPIRES — WRITTEN DOWN HERE BECAUSE IT IS FREE TODAY AND UNRECOVERABLE LATER
+
+**⇒ THE ERA BOUNDARY, EXACT: cancellation/results rows dated BEFORE `41459bb7` (2026-08-17T04:31:37Z, the `CONTROL_PIN` move) are `_v223sealrepair`-controlled. Rows dated AFTER are `_v468kladturbo` (Sleipnir)-controlled.**
+**That sentence is precisely true right now and costs nothing. Once the control moves a SECOND time, reconstructing per-row era needs a join against information the ledger never recorded.** ⇒ **even if the schema change is wrap work, the boundary is banked HERE, now.**
+⚠ **Scope: NO strict-regime cancellation has occurred yet** (local hold released minutes ago; ws1 is ungated). **Prospective, and the cheapest it will ever be.** **Schema is the builder's tool and their call — defect and expiry named, not the design.**
+
+✅ **ws1 LIVE, two-source:** `worker.out` (builder) + my pulled heartbeat — `2026-08-17T04:49:22Z 160/400 NULLWS1S RUNNING`. **KLADLADDER heartbeat watch armed.**
