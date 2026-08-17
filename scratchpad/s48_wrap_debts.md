@@ -9,7 +9,12 @@
    instrument that can tell FULL from PARTIAL; a text reader grepping `Rating:`
    cannot. Retry, don't relax. (Side lane s48 04:2xZ, consumed.)
 
-2. **submit_clean.py: fail CLOSED on unknown holder.** `_holder()` returns None
+2. ✅ **FIXED INLINE s48 ~05:0xZ under the loop carve-out** (side lane re-tagged
+   DEFER→NOW when the shredder leg made a submit today plausible; a prototype
+   leg IS the loop). `_restore_verdict` pure function per ship_ledger:567;
+   loud exit-2 unknown branch; `--selftest-holder-guard` drives all 6 states;
+   mutation-tested (broken guard → selftest exits 1). Original entry kept
+   below for the record. ~~submit_clean.py: fail CLOSED on unknown holder.~~ `_holder()` returns None
    when `Active bot:` is unreadable; the restore chain at :473/:497 folds
    None==None into "holder unchanged" and exits 0 — 4 of 6 before/after states
    leave a prototype live on the rated ladder reporting success; `--leg` mode's
