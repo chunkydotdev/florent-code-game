@@ -432,6 +432,15 @@ cmd_start() {
   # replicate. Added s44 after I started a host-term NULL on a 6-core box at
   # WORKERS=10 (1.67x) because I had assumed a core count I never measured.
   CAP_F="scratchpad/vps/host_capacity.tsv"
+  # ⛔ CORES MUST BE INITIALISED OUTSIDE THE BRANCH THAT SETS IT. This script runs
+  # under `set -u` (line 40) and the LOAD_CEIL block below tests `[ -n "$CORES" ]`
+  # unconditionally. With WORKERS omitted the capacity branch never runs, CORES is
+  # unbound, and `start` DIES with `CORES: unbound variable` before ever reaching
+  # r_exec — i.e. the documented `start <host>` form in the usage header at the top
+  # of this file was not callable. Worked around for weeks by always passing WORKERS
+  # explicitly. Empty means "no allocation known": the LOAD_CEIL line is skipped and
+  # worker.sh keeps its own default, which is the pre-existing behaviour for that path.
+  CORES=""
   if [ -n "$W" ] && [ -r "$CAP_F" ]; then
     # ⛔ MATCH ON THE BARE HOSTNAME. $HOST is whatever the caller typed —
     # "work-server-1" or "worker@work-server-1" — while the table is keyed with
