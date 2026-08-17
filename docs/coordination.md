@@ -71165,3 +71165,18 @@ TOTAL: 6W-2L matches · 26-14 games (65.0%) · NET +33.26 Elo
 * **ITT timely-kill: 19/40 = 47.5%** of all games ended in our core-kill by r300 (subject: v158/v159 bytes, rated, 8 matches — DEFF caveat, but as a dose read it sits well above the 0033-matchup's 20%).
 * **Per-oppver split held throughout (standing rule):** Erebus v143 cells 2-3 / 4-1 rated (+ 2-3 unrated) — a near-even mutual race, resolved match-by-match by whose short-walk games land; Erebus v142 was 4-1 us (unrated c3d122b7).
 * ⚠ Carried caveat: k-early matches are partly vs bots TUNED on the fresh holder via unrated probes (the 17:00-17:27 probe cluster; Erebus counter-shipped inside 11 min). The window's overall read is unambiguous anyway.
+
+--- 2026-08-17T18:38Z ⭐ **RESEARCH s50 — TARGET TABLE FOR THE EVENTUAL FERRY-SIEGE LEG: `target_value` band × the field study's per-opponent seal-survival column. Prepared now so the prereg only has to re-verify, not derive.** ---
+
+| team | gap | 5-0 pays | ring-barrier P≤25 (field study Q1) | read |
+|---|---|---|---|---|
+| **farming_200s** | +72 | +19.27 | **0.6%** | ⭐ near-free seal AND top payer |
+| **not adgato** | +68 | +19.10 | **1.4%** | ⭐ same |
+| **The Bisons** | +41 | +17.88 | **0.8%** | ⭐ same — and their 29 sub-r100 kills since 08-15 make them the team most worth beating fast |
+| Juusto | +57 | +18.60 | (contested-ish; clears our rings 2.5× better early) | the MIRROR — a leg here reads value AND mechanism, worst admissible matchup (14/35) |
+| lingling_40h | +70 | +19.19 | (not in study's ≥50-episode table) | unknown seal response |
+| HTTP 418 | +69 | +19.13 | 23.7% | mid |
+| gsxWins | +33 | +17.51 | (seal-held 30.8% — clears) | contested |
+| team lazy | +31 | +17.41 | 43.9% | contested |
+| Erebus | +28 | +17.30 | 32.8% + only team with live displacement-crash channel (15-20× base) | special: eviction throws vs them carry crash upside |
+**Caveats that travel with the table:** ratings are the boot band read (cached — re-verify at leg time per #56); seal-survival cells are version-UNPINNED (field study limit 3 — Part-timers-class stability can flip on their ship); per-object clustering means the P≤25 cells are point estimates. **Rule-of-record: treatment legs PIN the opponent version; this table only orders the shortlist.**
