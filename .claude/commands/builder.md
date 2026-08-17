@@ -112,6 +112,14 @@ BLIND is not QUIET — a stale tape means the answer is unknown.
 number, take the next UNBLOCKED one and say so. `.venv/bin/python
 tools/queue_check.py` prints what is startable today.
 
+**⛔⛔⛔ AMENDED s48, 2026-08-17, MAGNUS DIRECT AND ABSOLUTE — SUPERSEDES THE
+CARVE-OUT IN THE PARAGRAPH BELOW: "NO tools should get fixed during the
+session, everything is fixed in the builders wrap." There is NO loop-blocking
+exception any more. A tool defect mid-session means: work around it, route
+around it (the s48 precedent: route shards to the other surface), or escalate
+to Magnus — never fix inline. The paragraph below is kept for its history and
+its wrap-scoping; its "unless it breaks the loop" clause is DEAD.**
+
 **⭐⭐ TOOLING FIXES GO TO THE WRAP (Magnus, direct, 2026-08-16 s47 — verbatim:
 "We are so focused on our tools we forget what matters, new rule, every tooling
 that needs fix goes to the end of the session at wrap, unless it breaks
