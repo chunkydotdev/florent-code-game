@@ -68666,3 +68666,41 @@ Research self-caught an interpolated timestamp (`ce0b8ddd`, **35 s in the future
 ⚠ **THIRD SAME-SHAPE NEAR-MISS TODAY, and the pattern is about THIS LANE:** `ps` missing `holder_watch` (embedded newlines), the stale `overnight-remote` worklist mirror, and this. **All three were a defect claim that was an artefact of the surface I read; all three were caught by RE-DRIVING ON A SECOND SURFACE before publishing.** ⇒ **that habit is the only thing standing between this lane and a false flag, and it should be stated as such in any account of this lane's output.**
 
 --- 2026-08-17T05:09:17Z BUILDER s48 — REGISTERED DISCLOSURE: MAGNUS-REQUESTED INTERIM LOOK AT KLADLADDER (n=3,121 of 5,400): 42.07% ± 1.73 (naive95). The look is on the record per prereg hygiene; it CANNOT drive stopping (ws1 has no cancel primitive; the shard runs to full n regardless) and the verdict will still be typed at full n against the pre-registered bands, this look disclosed within it. Direction is already decisive: CI [40.3, 43.8] sits far below both the 51.33 bar and 50 — heading for BAND 4, the registered primary falsifier, and specifically the pre-named sub-50 outcome (the prereg's own live mechanism for it: the step-8 demotion making the treatment LESS aggressive about sentinel #3, plus the funding-priority waiver taxing the eco engine). ATTRIBUTION UPDATE THIS IMPLIES (final at full n): KLADTK2R read the four-plank (cap+ladder) at ~-8.5pp vs base; KLADLADDER reads the LADDER ALONE at ~-8pp — the subtraction was never mostly the cap, it was the sentinel COMMITMENT itself. The cherry-pick hypothesis dies with the falsifier, and the s47 morning guidance ("ladder without cap") resolves as WRONG in a useful direction: Sleipnir's engine does not want a standing sentinel funding priority; its uncommitted opportunistic form is load-bearing. ---
+
+--- 2026-08-17T05:09:46Z ⛔⛔ **RESEARCH s48 — THE SWEEP IS NOW COMPLETE (74/74 GREP-BEARING ROWS), AND MY OWN PRE-PASS'S FALSE-NEGATIVE RATE IS 10 OF 27 WITH ONE MATERIAL MISS. THE MECHANISM IS DIAGNOSED AND QUANTIFIED.** ---
+
+The side lane's challenge was correct and this note exists because of it: *"3/50 is the FALSE-POSITIVE rate and it is the SAFE direction — a false GONE gets caught. The unmeasured direction is the dangerous one: rows the pre-pass called PRESENT that were actually gone. That error is silent and nobody re-checks a row the instrument said was fine."* **I commissioned the measurement rather than arguing.** A fresh `opus` agent ran the POSITIVE-DIRECTION check on the 27 mechanically-clean rows — *does the live tree NOW DO THE THING, by any means, under any name?* — and audited the pre-pass at the same time.
+
+## RESULT — the 27 clean rows
+```
+STILL-OPEN         17    #5 #10 #12 #26 #37 #42 #47 #49 #67 #70 #71 #74 #79 #81 #87 #88 (+#12 blocked)
+PARTIALLY-SHIPPED   2    #54  #77
+NOT-A-BOT-ROW       8    #25 #27 #34 #35 #55 #56 #61 #65 #68   (tools/process rows)
+UNRESOLVED          0
+```
+⇒ **WITH THE 47 JUDGMENT ROWS, ALL 74 GREP-BEARING QUEUE ROWS ARE NOW DISPOSITIONED AGAINST `_v468kladturbo`.** s47's carry-forward — *"ZERO queue rows have been checked against the live control"* — is closed.
+
+## ⛔⛔ MY PRE-PASS: FALSE-POSITIVE 3/50, **FALSE-NEGATIVE 10/27**
+**Nine of the ten are pure line-number drift** (`#10` eco.py:183→326 · `#47` main.py:593→733 · `#54` eco.py:898→1458 and :1226→1810 · `#70` main.py:797→979 · `#79` six anchors · `#87` raid.py:636→653 · `#88` eco.py:626→1037; `#71` is a quantitative anchor — the row says `eco.py` carries **13** `get_current_round()` branches and the live count is **14**; `#49` is the one structural case, an inline `prio = {…}` hoisted to module-level `TURRET_PRIO`).
+⛔ **THE ONE THAT MATTERS IS `#77`, AND IT IS THE DANGEROUS SHAPE EXACTLY AS PREDICTED: the pre-pass's CLEAN verdict CONCEALS THAT A PLANK COMPONENT SHIPPED.** The row's GREP asserts *"`BODYAWARE`/`bodyaware`/`body_aware`: 0 hits in the incumbent tree"* — **false**: `doctrine.py:1879` reads *"composed by tools/stack.py from: turbo, **bodyaware** (_v242bodyaware), samestop"* and the merged flood is at `eco.py:1236-1456`. ⇒ **the row's additive prediction `50 + 0.799 × (3.70 + d76)` is denominated against a control that now CONTAINS one of its two terms, and by the row's own registered rule "a one-component composite is not a composite".** A builder trusting the clean verdict would have written that prediction.
+
+## ⭐⭐ THE MECHANISM, DIAGNOSED AND MEASURED — NOT "I SHOULD BE MORE CAREFUL"
+My extractor pulled `file.py:LINE` anchors with `` re.compile(r'`([a-z_]+\.py):(\d+)(?:-(\d+))?`') `` — **which requires the citation to be the ENTIRE backticked token.** Measured against `QUEUE.md`:
+```
+total file.py:LINE citations                       519
+matched by my regex (whole-token backtick only)    360   = 69.4%
+INVISIBLE to the pre-pass                          159   = 30.6%
+   of which, outside backticks entirely             87   = 16.8%
+   of which, inside backticks but embedded in text  72   = 13.9%
+```
+⇒ **30.6% of every line anchor in the queue was invisible to the instrument, and the misses are SYSTEMATIC (they follow `main.py` +182 / `eco.py` +601), not random.** ⇒ **AND THIS IS WHY THE FN RATE IS 10/27 WHILE THE FP RATE IS 3/50: a false GONE is a claim the instrument MAKES and someone checks; a false CLEAN is a claim it FAILS TO MAKE, and nothing downstream is triggered by silence.**
+⇒ **DURABLE RULE: AN EXTRACTOR'S COVERAGE IS A SEPARATE MEASUREMENT FROM ITS ACCURACY, AND ONLY THE FIRST EXPLAINS SILENT FAILURE.** I published accuracy (3/50) and treated it as the error rate. **Coverage was 69.4% and I never measured it.** Any tool that decides *"which things to look at"* must report what it did NOT look at.
+
+## ⚠ TWO LIMITS ON THE FN RATE ITSELF, from the agent, so it is not over-read
+* **`#26` has NO anchors at all** — its `GREP:` field is a declared `TODO BEFORE BUILD`. Its "clean" verdict is **vacuous rather than verified**; counted clean, but unmeasurable.
+* **The 8 tools/process rows were checked at PATH-EXISTENCE level only** — line numbers inside `tools/*.py` were not re-verified, so their clean verdicts are weaker evidence than the bot-tree ones.
+
+## TWO SUBSTANTIVE ROW FINDINGS WORTH THE BUILDER'S EYE
+* **`#54` PARTIALLY-SHIPPED — fix-variant (a) EXISTS ONE FILE OVER.** `main.py:843-872 _t4_chase_ok` is a last-K-position detector (`len(hist) >= T4_CHASE_MAX_RNDS and len(set(hist)) <= 2` → ban the target 20 rounds), implemented for ONE role and ONE target class. The general `_nav` population the 11.58% census measured is untouched — **but a builder taking arm 1 as written would re-invent machinery that now exists.**
+* **`#67` is worse than "unwired" and it re-confirms:** `def _hunt_turret` / `def _hunt` = **0** anywhere, and all six constants (`HUNT_DESIGNATE_DSQ` `:212`, `HUNT_MIN_HEALERS` `:213`, `HUNT_FINISH_HP` `:214`, `HUNT_FIRE_TI` `:215`, `HUNT_DEFER_BASE` `:252`, `HUNT_DEFER_SPREAD` `:253`) are **defined and read zero times.**
+* **Prior art handed over: `raid_ban` (`raid.py:192,234,800`) is already a per-unit EXPIRING TILE-BAN dict — the exact storage shape `#87` option (a) needs, keyed on stalls rather than deaths.**
