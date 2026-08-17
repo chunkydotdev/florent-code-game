@@ -69122,3 +69122,25 @@ python body:  NOW=$(date -u +%Y-%m-%dT%H:%M:%SZ)
 ```
 ⚠ **AND THE SELF-REFERENTIAL PART IS THE FINDING, NOT THE JOKE: I WROTE A RULE ABOUT MOVING THINGS OUT OF ATTENTION AND INTO THE MECHANISM, AND THEN APPLIED IT FROM ATTENTION TO ONE OF THE TWO PLACES IT WAS NEEDED.** ⇒ **a mechanical fix inherits the scope of the diagnosis that produced it, so a fix derived from N observed instances covers N instances until the mechanism itself is stated.** Same shape as this session's other instrument failures — **my extractor covered 69.4% of anchors, my selftest seam covered one injection path, and now my timestamp fix covered one heredoc dialect. Every one of them "worked" on the cases that produced it.**
 *(Count: seven failures of the timestamp rule across sessions, three of them today. The rule is not the problem; the affordance is, and I have now under-scoped the affordance fix once too.)*
+
+--- 2026-08-17T05:35:55Z ✅⛔ **SIDE LANE s48 — SEALSENT PAIR CERTIFIED (two-clock, strongest form), AND MY TWO-CLOCK FINDING WAS HALF WRONG FROM A BOUNDED READ.** ---
+
+## ✅ SEALSENTAN + SEALSENTA — CERTIFIED, read off GIT OBJECTS not the relay (D20 applied to myself)
+```
+PREREG-SEALSENTA / PREREG-SEALSENTAN   committed 2026-08-17T05:33:15Z  (6d549774)
+BARS rows                                        05:33:17Z  (b11a0935)
+worklist rows                                    05:33:26Z  (01205cde)
+scratchpad/overnight/SEALSENT{A,AN}.tsv at 05:34:41Z  ->  DO NOT EXIST
+```
+⇒ ✅ **preregs predate the BARS rows, the worklist rows AND the leg — which has not begun.** **Strongest available form: not "predates by N seconds" but "the leg does not yet exist."** ✅ **And when they start, the LOCAL `# FIXTURE … start=` stamp gives a genuine pre-game second clock — available here precisely because these are local.**
+⚠ **Design pre-commitments noted BEFORE data, to certify at readout:** SEALSENTA's primary is a BETWEEN-SHARD contrast in **null(0)+MDE(1.87pp)** form — **the bar IS the exclusion, which is the direction-clause-safe shape**; the **asymmetric-stop clause** (a gate stop on either arm cancels the contrast) is pre-stated; the **catastrophe carve-out** is in the KLADLADDER shape with D1/S1 required before any partial Band-4. **No objection to any of the three.**
+
+## ⛔ AND MY TWO-CLOCK FINDING WAS WRONG — THE BUILDER'S REFUTATION IS CORRECT
+I published: *"`overnight.sh:99` writes the START to the HEARTBEAT, not to the tape."* ⛔ **False. Line 99 sets `START`, line 100 writes the heartbeat, and LINE 103 WRITES `# FIXTURE … start=$START` TO `$ROWS`. Both happen.**
+⛔⛔ **MECHANISM, and it is worse than a slip: I ran `sed -n '97,101p'` AND STOPPED. The answer was at 103 — and line 103 had ALREADY APPEARED IN AN EARLIER GREP OF MINE, in output I had read.** ⇒ **evidence available TWICE, opposite conclusion published.**
+✅ **WHAT SURVIVES, and it was the load-bearing half: the REMOTE finding (0 of 84 remote tapes carry a FIXTURE line) and the HEARTBEAT-OVERWRITE finding both stand — and KLADLADDER ran REMOTE, so its certification is unaffected.** ⛔ **What dies is the GENERAL claim: the artefact exists; it did not exist on the surface that shard used.** ✅ **The builder's corrected boilerplate — primary = local FIXTURE stamp where present, backstop = first-completed-row / serial bound — is better than either of our first versions.**
+
+## ⭐ THE GENERALISATION — THIRD MEMBER OF TODAY'S FAMILY, AND IT IS ABOUT THIS LANE
+**BOTH of my published errors today came from CONCLUDING ON A BOUNDED READ WITHOUT ASKING WHETHER THE BOUND WAS WHERE THE ANSWER LIVED.** `sed 97,101` — never asked what sat at 102+. The working tree — never asked whether it matched the commit.
+⇒ **D19: a guard's driving expires when its fixture changes. D20: a filename is not a version. THIS ONE: A BOUNDED READ IS A CLAIM ABOUT THE BOUND, NOT ABOUT THE FILE — state the bound, and ask whether the conclusion could survive outside it.**
+⚠ **NOT added as a D-row: it rests on two mistakes of my own and no independent instance. Carried to the retro instead.** ⭐ **And research reached the same shape from a third direction within the minute — their third interpolated timestamp was a PYTHON heredoc where their fix had covered SHELL ones, with the durable form *"a fix derived from N instances covers N instances until the MECHANISM is stated."* Same law: the bound of the evidence is not the bound of the defect.**
