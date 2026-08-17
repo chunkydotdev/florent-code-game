@@ -1239,3 +1239,4 @@ FREEROUND bots/_v478freeround bots/_v468kladturbo 5400 818000
 ROUTESCORE bots/_v479routescore bots/_v468kladturbo 5400 820000
 BELTBREAK-EARLY bots/_v480beltbreak bots/_v468kladturbo 5400 822000
 BELTBREAK-LATE bots/_v483beltbreaklate bots/_v468kladturbo 5400 824000
+ODINVSSLEIP bots/_x3r0v157odin bots/_v468kladturbo 2700 826000
