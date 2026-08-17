@@ -158,3 +158,266 @@ ts	tool	user	host	mode	escapes	setter	reasons	subject
 2026-08-15T06:34:10Z	gate.py	junghard	MacBook-Pro.local	battery				plank=_v250homeearly;control=_v223sealrepair;parent=_v223sealrepair;opponents=_probe_border_raw;maps=hive,atoll,meander,archipelago,saga,nordkap
 2026-08-15T06:35:26Z	gate.py	junghard	MacBook-Pro.local	battery	off-programme	argv	off-programme=PROGRAMME.md LINE_DIRS is STALE: its last glob is bots/_v1[3-9]?* so it stops at _v199. The CURRENT INCUMBENT bots/_v223sealrepair and its predecessor _v218mapfix BOTH fail it. This is a dose probe on the loki line under Magnus's s44 launcher directive; the escape is taken because the field has not tracked the version numbering past v200, not because the plank is off-line. Flagged to Magnus; PROGRAMME.md is edit-on-his-directive-only.	plank=_det250homeearly;control=_det223sealrepair;parent=_det223sealrepair;opponents=_probe_border_raw;maps=hive,atoll,meander,archipelago,saga,nordkap
 2026-08-15T06:38:10Z	gate.py	junghard	MacBook-Pro.local	battery	off-programme	argv	off-programme=PROGRAMME.md LINE_DIRS stale past _v199; the live incumbent _v223sealrepair fails it too. Dose probe under Magnus's s44 launcher directive.	plank=_det250homeearly;control=_det223sealrepair;parent=_det223sealrepair;opponents=_probe_creeper;maps=hive,atoll,meander,archipelago,saga,nordkap
+2026-08-15T06:44:47Z	gate.py	junghard	MacBook-Pro.local	battery	off-programme	argv	off-programme=LINE_DIRS stale past _v199; live incumbent fails it too. Dose-escalation under Magnus s44 launcher directive.	plank=_det255homemax;control=_det223sealrepair;parent=_det223sealrepair;opponents=_probe_creeper;maps=hive,atoll,meander,archipelago,saga,nordkap
+2026-08-15T06:45:14Z	gate.py	junghard	MacBook-Pro.local	battery	off-programme	argv	off-programme=LINE_DIRS stale past _v199; live incumbent fails it too. Dose-escalation under Magnus s44 launcher directive.	plank=_det256pinmax;control=_det255homemax;parent=_det255homemax;opponents=_probe_creeper;maps=hive,atoll,meander,archipelago,saga,nordkap
+2026-08-15T06:47:22Z	prereg_check.py	junghard	MacBook-Pro.local	prereg				docs/prereg/PREREG-CAL418-2026-08-15.md
+2026-08-15T07:01:01Z	prereg_check.py	junghard	MacBook-Pro.local	prereg				docs/prereg/SCREEN-homeearly-2026-08-15.md
+2026-08-15T07:01:33Z	prereg_check.py	junghard	MacBook-Pro.local	prereg				docs/prereg/SCREEN-homeearly-2026-08-15.md
+2026-08-15T07:01:39Z	prereg_check.py	junghard	MacBook-Pro.local	prereg				docs/prereg/SCREEN-homeearly-2026-08-15.md
+2026-08-15T07:02:16Z	gate.py	junghard	MacBook-Pro.local	battery	off-programme,skip-tle	argv	off-programme=LINE_DIRS stale past _v199; live incumbent fails it too. s44 launcher directive. | skip-tle=CAL418 is live; the gate's test match shares the 5-per-20min budget and would starve the leg	plank=_det256pinmax;control=_det255homemax;parent=_det255homemax;opponents=_probe_creeper;maps=hive,atoll,meander,archipelago,saga,nordkap
+2026-08-15T07:02:43Z	prereg_check.py	junghard	MacBook-Pro.local	prereg				docs/prereg/SCREEN-homeearly-2026-08-15.md
+2026-08-15T07:02:43Z	prereg_check.py	junghard	MacBook-Pro.local	prereg				docs/prereg/SCREEN-homeearly-2026-08-15.md
+2026-08-15T07:02:46Z	gate.py	junghard	MacBook-Pro.local	battery	off-programme,skip-tle	argv	off-programme=LINE_DIRS stale past _v199; live incumbent fails it too. s44 launcher directive. | skip-tle=CAL418 is live; the gate's test match shares the 5-per-20min budget and would starve the leg	plank=_det252spawnlock;control=_det223sealrepair;parent=_det223sealrepair;opponents=_probe_creeper;maps=hive,atoll,meander,archipelago,saga,nordkap
+2026-08-15T07:03:13Z	gate.py	junghard	MacBook-Pro.local	battery	off-programme,skip-tle	argv	off-programme=LINE_DIRS stale past _v199; live incumbent fails it too. s44 launcher directive. | skip-tle=CAL418 is live; the gate's test match shares the 5-per-20min budget and would starve the leg	plank=_det253catapult;control=_det223sealrepair;parent=_det223sealrepair;opponents=_probe_creeper;maps=hive,atoll,meander,archipelago,saga,nordkap
+2026-08-15T07:03:39Z	gate.py	junghard	MacBook-Pro.local	battery	off-programme,skip-tle	argv	off-programme=LINE_DIRS stale past _v199; live incumbent fails it too. s44 launcher directive. | skip-tle=CAL418 is live; the gate's test match shares the 5-per-20min budget and would starve the leg	plank=_det254collarseal;control=_det223sealrepair;parent=_det223sealrepair;opponents=_probe_creeper;maps=hive,atoll,meander,archipelago,saga,nordkap
+2026-08-15T07:06:47Z	gate.py	junghard	MacBook-Pro.local	battery	off-programme,skip-tle	argv	off-programme=LINE_DIRS stale past _v199. s44 launcher dose escalation. | skip-tle=CAL418 live; gate test match shares the 5/20min budget	plank=_det257catmax;control=_det255homemax;parent=_det255homemax;opponents=_probe_creeper;maps=hive,atoll,meander,archipelago,saga,nordkap
+2026-08-15T07:07:17Z	gate.py	junghard	MacBook-Pro.local	battery	off-programme,skip-tle	argv	off-programme=LINE_DIRS stale past _v199. s44 launcher dose escalation. | skip-tle=CAL418 live; gate test match shares the 5/20min budget	plank=_det258sealmax;control=_det255homemax;parent=_det255homemax;opponents=_probe_creeper;maps=hive,atoll,meander,archipelago,saga,nordkap
+2026-08-15T07:26:57Z	gate.py	junghard	MacBook-Pro.local	battery	off-programme,skip-tle	argv	off-programme=LINE_DIRS stale past _v199. s44 launcher iteration. | skip-tle=CAL418 live; gate test match shares the 5/20min budget	plank=_det260catrnd1;control=_det26rnd1;parent=_det26rnd1;opponents=_probe_creeper;maps=hive,atoll,meander,archipelago,saga,nordkap
+2026-08-15T07:32:19Z	gate.py	junghard	MacBook-Pro.local	battery	off-programme,skip-tle	argv	off-programme=LINE_DIRS stale past _v199. s44 launcher dose escalation, rung 2 on collarseal. | skip-tle=CAL418 live; gate test match shares the 5/20min budget	plank=_det261sealquiet;control=_det26rnd1;parent=_det26rnd1;opponents=_probe_creeper;maps=hive,atoll,meander,archipelago,saga,nordkap
+2026-08-15T08:03:34Z	prereg_check.py	junghard	MacBook-Pro.local	prereg				docs/prereg/SCREEN-bodyblock-2026-08-15.md
+2026-08-15T08:04:08Z	prereg_check.py	junghard	MacBook-Pro.local	prereg				docs/prereg/SCREEN-bodyblock-2026-08-15.md
+2026-08-15T08:07:23Z	prereg_check.py	junghard	MacBook-Pro.local	prereg				docs/prereg/SCREEN-bodyblock-2026-08-15.md
+2026-08-15T08:07:47Z	gate.py	junghard	MacBook-Pro.local	battery	off-programme,skip-tle	argv	off-programme=LINE_DIRS stale past _v199. s44 idle-builder directive from Magnus. | skip-tle=CAL418 live; gate test match shares the 5/20min budget	plank=_det262bodyblock;control=_det223sealrepair;parent=_det223sealrepair;opponents=_probe_creeper;maps=hive,atoll,meander,archipelago,saga,nordkap
+2026-08-15T08:15:26Z	gate.py	junghard	MacBook-Pro.local	battery	off-programme,skip-tle	argv	off-programme=LINE_DIRS stale past _v199. s44 combination arm per Magnus. | skip-tle=CAL418 live; gate test shares the 5/20min budget	plank=_det267awrlnch;control=_det223sealrepair;parent=_det223sealrepair;opponents=_probe_creeper;maps=hive,atoll,meander,archipelago,saga,nordkap
+2026-08-15T08:25:13Z	gate.py	junghard	MacBook-Pro.local	battery	off-programme,skip-tle	argv	off-programme=LINE_DIRS stale past _v199. s44 3-way combination per Magnus. | skip-tle=no live leg; keeping the rate bucket clear	plank=_det268tricomb;control=_det26rnd1;parent=_det26rnd1;opponents=_probe_creeper;maps=hive,atoll,meander,archipelago,saga,nordkap
+2026-08-15T08:31:39Z	gate.py	junghard	MacBook-Pro.local	battery	off-programme,skip-tle	argv	off-programme=LINE_DIRS stale past _v199. s44 combination per Magnus. | skip-tle=no live leg; keeping the rate bucket clear	plank=_det269awrspawn;control=_det26rnd1;parent=_det26rnd1;opponents=_probe_creeper;maps=hive,atoll,meander,archipelago,saga,nordkap
+2026-08-15T08:39:48Z	gate.py	junghard	MacBook-Pro.local	battery	off-programme	argv	off-programme=LINE_DIRS stale past _v199. s44 ablation.	plank=_det270rndspawn;control=_det26rnd1;parent=_det26rnd1;opponents=_probe_creeper;maps=hive,atoll,meander,archipelago,saga,nordkap
+2026-08-15T08:40:04Z	gate.py	junghard	MacBook-Pro.local	battery	off-programme	argv	off-programme=LINE_DIRS stale past _v199. s44 ablation.	plank=_det270rndspawn;control=_det26rnd1;parent=_det26rnd1;opponents=_probe_creeper;maps=hive,atoll,meander,archipelago,saga,nordkap
+2026-08-15T08:40:20Z	gate.py	junghard	MacBook-Pro.local	battery	off-programme,skip-tle	argv	off-programme=LINE_DIRS stale past _v199; live incumbent fails it too. s44 bodyaware-ablation on the additive combination. | skip-tle=no live unrated leg is running; the gate's own test match spends a shared 5-per-20min rate slot and I am keeping the bucket clear	plank=_det270rndspawn;control=_det26rnd1;parent=_det26rnd1;opponents=_probe_creeper;maps=hive,atoll,meander,archipelago,saga,nordkap
+2026-08-15T08:46:27Z	gate.py	junghard	MacBook-Pro.local	battery	off-programme,skip-tle	argv	off-programme=LINE_DIRS stale past _v199; live incumbent fails it too. s44 increments on the additive combination. | skip-tle=no live unrated leg is running and the gate's own test match spends a shared 5-per-20-minute rate slot	plank=_det271capthree;control=_det269awrspawn;parent=_det269awrspawn;opponents=_probe_creeper;maps=hive,atoll,meander,archipelago,saga,nordkap
+2026-08-15T08:47:01Z	gate.py	junghard	MacBook-Pro.local	battery	off-programme,skip-tle	argv	off-programme=LINE_DIRS stale past _v199; live incumbent fails it too. s44 increments on the additive combination. | skip-tle=no live unrated leg is running and the gate's own test match spends a shared 5-per-20-minute rate slot	plank=_det272pinthree;control=_det269awrspawn;parent=_det269awrspawn;opponents=_probe_creeper;maps=hive,atoll,meander,archipelago,saga,nordkap
+2026-08-15T09:26:21Z	gate.py	junghard	MacBook-Pro.local	battery	off-programme,skip-tle	argv	off-programme=LINE_DIRS stale past _v199; live incumbent fails it too. s44 four-plank stack toward Magnus's 65 percent target. | skip-tle=no live unrated leg is running and the gate's own test match spends a shared 5-per-20-minute rate slot	plank=_det274maxstack;control=_det269awrspawn;parent=_det269awrspawn;opponents=_probe_creeper;maps=hive,atoll,meander,archipelago,saga,nordkap
+2026-08-15T09:42:17Z	gate.py	junghard	MacBook-Pro.local	battery	off-programme,skip-tle	argv	off-programme=LINE_DIRS stale past _v199; live incumbent fails it too. s44 sentinel-shell, the largest measured deficit we own. | skip-tle=no live unrated leg is running and the gate's own test match spends a shared 5-per-20-minute rate slot	plank=_det273sentshell;control=_det223sealrepair;parent=_det223sealrepair;opponents=_probe_creeper;maps=hive,atoll,meander,archipelago,saga,nordkap
+2026-08-15T12:47:46Z	gate.py	junghard	MacBook-Pro.local	battery	off-programme,skip-tle	argv	off-programme=LINE_DIRS stale past _v199; live incumbent fails it too. s44 SALT residual, one constant. | skip-tle=no live unrated leg is running and the gate's own test match spends a shared 5-per-20-minute rate slot	plank=_det314sealti;control=_det223sealrepair;parent=_det223sealrepair;opponents=_probe_creeper;maps=hive,atoll,meander,archipelago,saga,nordkap
+2026-08-15T13:09:10Z	gate.py	junghard	MacBook-Pro.local	battery	off-programme,skip-tle	argv	off-programme=LINE_DIRS stale past _v199; live incumbent fails it too. s44 Magnus rush tactic. | skip-tle=no live unrated leg is running and the gate's own test match spends a shared 5-per-20-minute rate slot	plank=_det314aimsite;control=_det223sealrepair;parent=_det223sealrepair;opponents=_probe_creeper;maps=hive,atoll,meander,archipelago,saga,nordkap
+2026-08-15T13:09:41Z	gate.py	junghard	MacBook-Pro.local	battery	off-programme,skip-tle	argv	off-programme=LINE_DIRS stale past _v199; live incumbent fails it too. s44 Magnus rush tactic. | skip-tle=no live unrated leg is running and the gate's own test match spends a shared 5-per-20-minute rate slot	plank=_det313rentgun;control=_det314aimsite;parent=_det314aimsite;opponents=_probe_creeper;maps=hive,atoll,meander,archipelago,saga,nordkap
+2026-08-16T04:39:51Z	prereg_check.py	junghard	MacBook-Pro.local	selftest				
+2026-08-16T04:42:55Z	prereg_check.py	junghard	MacBook-Pro.local	selftest				
+2026-08-16T05:54:23Z	prereg_check.py	junghard	MacBook-Pro.local	prereg				docs/prereg/LEG-fieldcal-2026-08-16.md
+2026-08-16T05:54:46Z	prereg_check.py	junghard	MacBook-Pro.local	prereg				docs/prereg/LEG-fieldcal-2026-08-16.md
+2026-08-16T05:54:54Z	prereg_check.py	junghard	MacBook-Pro.local	prereg				docs/prereg/LEG-fieldcal-2026-08-16.md
+2026-08-16T05:55:23Z	prereg_check.py	junghard	MacBook-Pro.local	prereg				docs/prereg/LEG-fieldcal-2026-08-16.md
+2026-08-16T05:58:33Z	prereg_check.py	junghard	MacBook-Pro.local	prereg				docs/prereg/LEG-fieldcal-2026-08-16.md
+2026-08-16T05:58:52Z	prereg_check.py	junghard	MacBook-Pro.local	prereg				docs/prereg/LEG-fieldcal-2026-08-16.md
+2026-08-16T06:00:47Z	prereg_check.py	junghard	MacBook-Pro.local	prereg				docs/prereg/LEG-fieldcal-2026-08-16.md
+2026-08-16T08:31:27Z	prereg_check.py	junghard	MacBook-Pro.local	prereg				docs/prereg/AMENDMENT-LEG-fieldcal-catchup-2026-08-16.md
+2026-08-16T08:31:35Z	prereg_check.py	junghard	MacBook-Pro.local	prereg				docs/prereg/AMENDMENT-LEG-fieldcal-catchup-2026-08-16.md
+2026-08-16T08:31:35Z	prereg_check.py	junghard	MacBook-Pro.local	amendment				docs/prereg/AMENDMENT-LEG-fieldcal-catchup-2026-08-16.md
+2026-08-16T08:32:06Z	prereg_check.py	junghard	MacBook-Pro.local	prereg				docs/prereg/AMENDMENT-LEG-fieldcal-catchup-2026-08-16.md
+2026-08-16T08:32:06Z	prereg_check.py	junghard	MacBook-Pro.local	prereg				docs/prereg/AMENDMENT-LEG-fieldcal-catchup-2026-08-16.md
+2026-08-16T09:19:42Z	gate.py	junghard	MacBook-Pro.local	battery				plank=_v131loki14;control=tree_OFF;parent=_v124loki8;opponents=_probe_oov_raw,_probe_oov_guard;maps=hive,atoll,meander,archipelago,saga,nordkap
+2026-08-16T09:21:12Z	gate.py	junghard	MacBook-Pro.local	battery	pooled-not-paired	argv	pooled-not-paired=QUEUE #17 mechanism dose: three cells read as raw engine-side crash counts (no_damage_removal) against their own MUST-BE-ZERO control cells; no paired seed-matched contrast is computed anywhere in the readout, so reseeding nondeterminism cannot corrupt the count semantics; a NOISE_ON=False copy would change the shipped behavior the row exists to test.	plank=_v131loki14;control=tree_OFF;parent=_v124loki8;opponents=_probe_oov_raw,_probe_oov_guard;maps=hive,atoll,meander,archipelago,saga,nordkap
+2026-08-16T11:08:24Z	prereg_check.py	junghard	MacBook-Pro.local	prereg				docs/prereg/AMENDMENT-LEG-fieldcal-catchup-2026-08-16.md
+2026-08-16T11:08:24Z	prereg_check.py	junghard	MacBook-Pro.local	prereg				docs/prereg/BRIEF-fieldcal-2026-08-16.md
+2026-08-16T11:08:24Z	prereg_check.py	junghard	MacBook-Pro.local	prereg				docs/prereg/DOSE-apprlaunch47-2026-08-13.md
+2026-08-16T11:08:24Z	prereg_check.py	junghard	MacBook-Pro.local	prereg				docs/prereg/DOSE-feeder45-2026-08-13.md
+2026-08-16T11:08:24Z	prereg_check.py	junghard	MacBook-Pro.local	prereg				docs/prereg/DOSE-idlepeck-quiet0-48-2026-08-13.md
+2026-08-16T11:08:24Z	prereg_check.py	junghard	MacBook-Pro.local	prereg				docs/prereg/DOSE-launch0evict45-2026-08-13.md
+2026-08-16T11:08:24Z	prereg_check.py	junghard	MacBook-Pro.local	prereg				docs/prereg/DOSE-pavefirst50-2026-08-13.md
+2026-08-16T11:08:24Z	prereg_check.py	junghard	MacBook-Pro.local	prereg				docs/prereg/DOSE-siegelaunch45-2026-08-13.md
+2026-08-16T11:08:24Z	prereg_check.py	junghard	MacBook-Pro.local	prereg				docs/prereg/LEG-fieldcal-2026-08-16.md
+2026-08-16T11:08:25Z	prereg_check.py	junghard	MacBook-Pro.local	prereg				docs/prereg/LEG-juustopin-2026-08-14.md
+2026-08-16T11:08:25Z	prereg_check.py	junghard	MacBook-Pro.local	prereg				docs/prereg/LEG-mapconditional-test-2026-08-14.md
+2026-08-16T11:08:25Z	prereg_check.py	junghard	MacBook-Pro.local	prereg				docs/prereg/LEG-pairpanel-2026-08-14.md
+2026-08-16T11:08:25Z	prereg_check.py	junghard	MacBook-Pro.local	prereg				docs/prereg/LEG-REGISTRY.md
+2026-08-16T11:08:25Z	prereg_check.py	junghard	MacBook-Pro.local	prereg				docs/prereg/LEG-upward-baseline-2026-08-14.md
+2026-08-16T11:08:25Z	prereg_check.py	junghard	MacBook-Pro.local	prereg				docs/prereg/PREREG-anti-salt-counter-2026-08-13.md
+2026-08-16T11:08:25Z	prereg_check.py	junghard	MacBook-Pro.local	prereg				docs/prereg/PREREG-CAL418-2026-08-15.md
+2026-08-16T11:08:25Z	prereg_check.py	junghard	MacBook-Pro.local	prereg				docs/prereg/PREREG-confirm-pavetrail-2026-08-10.md
+2026-08-16T11:08:25Z	prereg_check.py	junghard	MacBook-Pro.local	prereg				docs/prereg/PREREG-live-unrated-baseline-2026-08-10.md
+2026-08-16T11:08:25Z	prereg_check.py	junghard	MacBook-Pro.local	prereg				docs/prereg/PREREG-loki10-route-guard.md
+2026-08-16T11:08:25Z	prereg_check.py	junghard	MacBook-Pro.local	prereg				docs/prereg/PREREG-loki11-aimed-plant-2026-08-10.md
+2026-08-16T11:08:26Z	prereg_check.py	junghard	MacBook-Pro.local	prereg				docs/prereg/PREREG-loki11-rush-reopen-2026-08-10.md
+2026-08-16T11:08:26Z	prereg_check.py	junghard	MacBook-Pro.local	prereg				docs/prereg/PREREG-loki13-economy-suppression-2026-08-10.md
+2026-08-16T11:08:26Z	prereg_check.py	junghard	MacBook-Pro.local	prereg				docs/prereg/PREREG-loki14-crash-induction-2026-08-10.md
+2026-08-16T11:08:26Z	prereg_check.py	junghard	MacBook-Pro.local	prereg				docs/prereg/PREREG-loki14b-carrier-targeted-2026-08-10.md
+2026-08-16T11:08:26Z	prereg_check.py	junghard	MacBook-Pro.local	prereg				docs/prereg/PREREG-loki15-conveyor-quota-2026-08-10.md
+2026-08-16T11:08:26Z	prereg_check.py	junghard	MacBook-Pro.local	prereg				docs/prereg/PREREG-loki16-ring-hold-2026-08-10.md
+2026-08-16T11:08:26Z	prereg_check.py	junghard	MacBook-Pro.local	prereg				docs/prereg/PREREG-loki16b-confirm-2026-08-11.md
+2026-08-16T11:08:26Z	prereg_check.py	junghard	MacBook-Pro.local	prereg				docs/prereg/PREREG-loki16b-ring-retention-2026-08-10.md
+2026-08-16T11:08:26Z	prereg_check.py	junghard	MacBook-Pro.local	prereg				docs/prereg/PREREG-loki17-sentinel-siting-2026-08-10.md
+2026-08-16T11:08:26Z	prereg_check.py	junghard	MacBook-Pro.local	prereg				docs/prereg/PREREG-loki18-forward-sentinel-aims-at-core-2026-08-10.md
+2026-08-16T11:08:27Z	prereg_check.py	junghard	MacBook-Pro.local	prereg				docs/prereg/PREREG-loki19-core-peck-2026-08-11.md
+2026-08-16T11:08:27Z	prereg_check.py	junghard	MacBook-Pro.local	prereg				docs/prereg/PREREG-loki20-guns-not-walls-2026-08-11.md
+2026-08-16T11:08:27Z	prereg_check.py	junghard	MacBook-Pro.local	prereg				docs/prereg/PREREG-loki25-gunner-axis-2026-08-11.md
+2026-08-16T11:08:27Z	prereg_check.py	junghard	MacBook-Pro.local	prereg				docs/prereg/PREREG-loki27-ferryfirst-2026-08-11.md
+2026-08-16T11:08:27Z	prereg_check.py	junghard	MacBook-Pro.local	prereg				docs/prereg/PREREG-loki28-crash-induction-2026-08-11.md
+2026-08-16T11:08:27Z	prereg_check.py	junghard	MacBook-Pro.local	prereg				docs/prereg/PREREG-loki29-seat-relative-scan-2026-08-11.md
+2026-08-16T11:08:27Z	prereg_check.py	junghard	MacBook-Pro.local	prereg				docs/prereg/PREREG-loki30-gunaxis-live-2026-08-11.md
+2026-08-16T11:08:27Z	prereg_check.py	junghard	MacBook-Pro.local	prereg				docs/prereg/PREREG-loki42-launchlate-live-2026-08-12.md
+2026-08-16T11:08:27Z	prereg_check.py	junghard	MacBook-Pro.local	prereg				docs/prereg/PREREG-loki9-facing.md
+2026-08-16T11:08:28Z	prereg_check.py	junghard	MacBook-Pro.local	prereg				docs/prereg/PREREG-loki9-forward-survival.md
+2026-08-16T11:08:28Z	prereg_check.py	junghard	MacBook-Pro.local	prereg				docs/prereg/PREREG-mapcode-live-2026-08-13.md
+2026-08-16T11:08:28Z	prereg_check.py	junghard	MacBook-Pro.local	prereg				docs/prereg/PREREG-panel2-calibration-2026-08-10.md
+2026-08-16T11:08:28Z	prereg_check.py	junghard	MacBook-Pro.local	prereg				docs/prereg/PREREG-panel3-reachable-band-2026-08-10.md
+2026-08-16T11:08:28Z	prereg_check.py	junghard	MacBook-Pro.local	prereg				docs/prereg/PREREG-pinned-testbed-control-2026-08-10.md
+2026-08-16T11:08:28Z	prereg_check.py	junghard	MacBook-Pro.local	prereg				docs/prereg/PREREG-rc83-combo-live-2026-08-13.md
+2026-08-16T11:08:28Z	prereg_check.py	junghard	MacBook-Pro.local	prereg				docs/prereg/PREREG-triarm-live-2026-08-13.md
+2026-08-16T11:08:28Z	prereg_check.py	junghard	MacBook-Pro.local	prereg				docs/prereg/REREG-saltref2-2026-08-14.md
+2026-08-16T11:08:28Z	prereg_check.py	junghard	MacBook-Pro.local	prereg				docs/prereg/RULE-futility-gates-2026-08-13.md
+2026-08-16T11:08:28Z	prereg_check.py	junghard	MacBook-Pro.local	prereg				docs/prereg/SCREEN-aimthrow-2026-08-14.md
+2026-08-16T11:08:28Z	prereg_check.py	junghard	MacBook-Pro.local	prereg				docs/prereg/SCREEN-ammo0-2026-08-13.md
+2026-08-16T11:08:29Z	prereg_check.py	junghard	MacBook-Pro.local	prereg				docs/prereg/SCREEN-beltsever-2026-08-15.md
+2026-08-16T11:08:29Z	prereg_check.py	junghard	MacBook-Pro.local	prereg				docs/prereg/SCREEN-bodyaware-2026-08-14.md
+2026-08-16T11:08:29Z	prereg_check.py	junghard	MacBook-Pro.local	prereg				docs/prereg/SCREEN-bodyblock-2026-08-15.md
+2026-08-16T11:08:29Z	prereg_check.py	junghard	MacBook-Pro.local	prereg				docs/prereg/SCREEN-collarmedic-2026-08-14.md
+2026-08-16T11:08:29Z	prereg_check.py	junghard	MacBook-Pro.local	prereg				docs/prereg/SCREEN-crashdrive-2026-08-14.md
+2026-08-16T11:08:30Z	prereg_check.py	junghard	MacBook-Pro.local	prereg				docs/prereg/SCREEN-ecoraid-v9fix-2026-08-13.md
+2026-08-16T11:08:30Z	prereg_check.py	junghard	MacBook-Pro.local	prereg				docs/prereg/SCREEN-finishhp-2026-08-14.md
+2026-08-16T11:08:30Z	prereg_check.py	junghard	MacBook-Pro.local	prereg				docs/prereg/SCREEN-gbns-l4repair-2026-08-14.md
+2026-08-16T11:08:30Z	prereg_check.py	junghard	MacBook-Pro.local	prereg				docs/prereg/SCREEN-gunaxabl-2026-08-14.md
+2026-08-16T11:08:30Z	prereg_check.py	junghard	MacBook-Pro.local	prereg				docs/prereg/SCREEN-gunaxis0-2026-08-13.md
+2026-08-16T11:08:30Z	prereg_check.py	junghard	MacBook-Pro.local	prereg				docs/prereg/SCREEN-homeearly-2026-08-15.md
+2026-08-16T11:08:30Z	prereg_check.py	junghard	MacBook-Pro.local	prereg				docs/prereg/SCREEN-launchmax-2026-08-15.md
+2026-08-16T11:08:31Z	prereg_check.py	junghard	MacBook-Pro.local	prereg				docs/prereg/SCREEN-mapfix-2026-08-14.md
+2026-08-16T11:08:31Z	prereg_check.py	junghard	MacBook-Pro.local	prereg				docs/prereg/SCREEN-mapsalt-2026-08-14.md
+2026-08-16T11:08:31Z	prereg_check.py	junghard	MacBook-Pro.local	prereg				docs/prereg/SCREEN-mapseal-combo-2026-08-14.md
+2026-08-16T11:08:31Z	prereg_check.py	junghard	MacBook-Pro.local	prereg				docs/prereg/SCREEN-mapsealx7-2026-08-14.md
+2026-08-16T11:08:31Z	prereg_check.py	junghard	MacBook-Pro.local	prereg				docs/prereg/SCREEN-nestshot-2026-08-14.md
+2026-08-16T11:08:31Z	prereg_check.py	junghard	MacBook-Pro.local	prereg				docs/prereg/SCREEN-osclock-2026-08-14.md
+2026-08-16T11:08:31Z	prereg_check.py	junghard	MacBook-Pro.local	prereg				docs/prereg/SCREEN-osclock2-2026-08-14.md
+2026-08-16T11:08:31Z	prereg_check.py	junghard	MacBook-Pro.local	prereg				docs/prereg/SCREEN-seal139-2026-08-14.md
+2026-08-16T11:08:31Z	prereg_check.py	junghard	MacBook-Pro.local	prereg				docs/prereg/SCREEN-sealfloor6-2026-08-14.md
+2026-08-16T11:08:32Z	prereg_check.py	junghard	MacBook-Pro.local	prereg				docs/prereg/SCREEN-sealrepair-2026-08-14.md
+2026-08-16T11:08:32Z	prereg_check.py	junghard	MacBook-Pro.local	prereg				docs/prereg/SCREEN-sealsweep-2026-08-14.md
+2026-08-16T11:08:32Z	prereg_check.py	junghard	MacBook-Pro.local	prereg				docs/prereg/SCREEN-seatrel-2026-08-14.md
+2026-08-16T11:08:32Z	prereg_check.py	junghard	MacBook-Pro.local	prereg				docs/prereg/SCREEN-seatscan-2026-08-14.md
+2026-08-16T11:08:32Z	prereg_check.py	junghard	MacBook-Pro.local	prereg				docs/prereg/SCREEN-sentthreat-2026-08-14.md
+2026-08-16T11:08:32Z	prereg_check.py	junghard	MacBook-Pro.local	prereg				docs/prereg/SCREEN-v140vs142-2026-08-14.md
+2026-08-16T11:08:32Z	prereg_check.py	junghard	MacBook-Pro.local	prereg				docs/prereg/SCREEN-v140vs143-2026-08-14.md
+2026-08-16T11:08:32Z	prereg_check.py	junghard	MacBook-Pro.local	prereg				docs/prereg/SCREEN-v140vs145-2026-08-14.md
+2026-08-16T11:08:33Z	prereg_check.py	junghard	MacBook-Pro.local	prereg				docs/prereg/SCREEN-v140vs146-2026-08-14.md
+2026-08-16T11:08:33Z	prereg_check.py	junghard	MacBook-Pro.local	prereg				docs/prereg/SCREEN-v141vs140-2026-08-14.md
+2026-08-16T11:08:33Z	prereg_check.py	junghard	MacBook-Pro.local	prereg				docs/prereg/SCREEN-wirehold-2026-08-14.md
+2026-08-16T11:08:33Z	prereg_check.py	junghard	MacBook-Pro.local	prereg				docs/prereg/SCREEN-x3r0v134-2026-08-14.md
+2026-08-16T11:08:33Z	prereg_check.py	junghard	MacBook-Pro.local	prereg				docs/prereg/SHIP-mapcode-2026-08-13.md
+2026-08-16T11:08:33Z	prereg_check.py	junghard	MacBook-Pro.local	prereg				docs/prereg/SHIP-salt-v178-2026-08-13.md
+2026-08-16T11:08:33Z	prereg_check.py	junghard	MacBook-Pro.local	prereg				docs/prereg/SHIP-saltidle-v187-2026-08-13.md
+2026-08-16T11:08:33Z	prereg_check.py	junghard	MacBook-Pro.local	prereg				docs/prereg/TEST-coupling-hypothesis-2026-08-14.md
+2026-08-16T11:08:33Z	prereg_check.py	junghard	MacBook-Pro.local	prereg				docs/research/PREREG-amendments-and-lock-obligations-2026-08-09.md
+2026-08-16T11:08:34Z	prereg_check.py	junghard	MacBook-Pro.local	prereg				docs/research/PREREG-CAL5-2026-08-14.md
+2026-08-16T11:08:34Z	prereg_check.py	junghard	MacBook-Pro.local	prereg				docs/research/PREREG-CAL6-2026-08-14.md
+2026-08-16T11:08:34Z	prereg_check.py	junghard	MacBook-Pro.local	prereg				docs/research/PREREG-CAL7-2026-08-14.md
+2026-08-16T11:08:34Z	prereg_check.py	junghard	MacBook-Pro.local	prereg				docs/research/PREREG-CAL8-2026-08-14.md
+2026-08-16T11:08:34Z	prereg_check.py	junghard	MacBook-Pro.local	prereg				docs/research/PREREG-LEG-EVICT58-2026-08-14.md
+2026-08-16T11:08:34Z	prereg_check.py	junghard	MacBook-Pro.local	prereg				docs/research/PREREG-ouroboros-loki2-2026-08-09.md
+2026-08-16T11:08:34Z	prereg_check.py	junghard	MacBook-Pro.local	prereg				docs/research/PREREG-PANEL-CAL1-v123-field-2026-08-13.md
+2026-08-16T11:08:34Z	prereg_check.py	junghard	MacBook-Pro.local	prereg				docs/research/PREREG-PANEL-CAL2-v125-field-2026-08-13.md
+2026-08-16T11:08:34Z	prereg_check.py	junghard	MacBook-Pro.local	prereg				docs/research/PREREG-PANEL-CAL3-v125-band-2026-08-13.md
+2026-08-16T11:08:34Z	prereg_check.py	junghard	MacBook-Pro.local	prereg				docs/research/PREREG-PANEL-CAL4-selection-rule-2026-08-13.md
+2026-08-16T11:08:35Z	prereg_check.py	junghard	MacBook-Pro.local	prereg				docs/research/PREREG-SPAWNPOCKET-2026-08-14.md
+2026-08-16T11:08:35Z	prereg_check.py	junghard	MacBook-Pro.local	prereg				docs/research/PREREG-TINYECO62-2026-08-14.md
+2026-08-16T11:08:35Z	prereg_check.py	junghard	MacBook-Pro.local	prereg				docs/research/PREREG-V134CHAR-2026-08-14.md
+2026-08-16T11:08:35Z	prereg_check.py	junghard	MacBook-Pro.local	prereg				docs/research/PREREG-V135CHAR-2026-08-14.md
+2026-08-16T11:08:35Z	prereg_check.py	junghard	MacBook-Pro.local	prereg				docs/research/PREREG-V135ECORAIDLIVE-2026-08-14.md
+2026-08-16T11:08:35Z	prereg_check.py	junghard	MacBook-Pro.local	prereg				docs/PREREG-rush-map-interaction-2026-08-09.md
+2026-08-17T04:41:39Z	prereg_check.py	junghard	MacBook-Pro.local	prereg				docs/prereg/PREREG-KLADLADDER-2026-08-17.md
+2026-08-17T04:42:05Z	prereg_check.py	junghard	MacBook-Pro.local	prereg				docs/prereg/PREREG-KLADLADDER-2026-08-17.md
+2026-08-17T05:16:58Z	prereg_check.py	junghard	MacBook-Pro.local	prereg				docs/prereg/PREREG-KLADLADDER-2026-08-17.md
+2026-08-17T05:24:35Z	prereg_check.py	junghard	MacBook-Pro.local	prereg				docs/prereg/PREREG-SEALSENTAN-2026-08-17.md
+2026-08-17T05:24:51Z	prereg_check.py	junghard	MacBook-Pro.local	prereg				docs/prereg/PREREG-SEALSENTAN-2026-08-17.md
+2026-08-17T05:29:07Z	prereg_check.py	junghard	MacBook-Pro.local	prereg				docs/prereg/PREREG-SEALSENTA-2026-08-17.md
+2026-08-17T05:29:38Z	prereg_check.py	junghard	MacBook-Pro.local	prereg				docs/prereg/PREREG-SEALSENTA-2026-08-17.md
+2026-08-17T05:29:44Z	prereg_check.py	junghard	MacBook-Pro.local	prereg				docs/prereg/PREREG-SEALSENTA-2026-08-17.md
+2026-08-17T05:30:28Z	prereg_check.py	junghard	MacBook-Pro.local	prereg				docs/prereg/PREREG-SEALSENTA-2026-08-17.md
+2026-08-17T05:30:52Z	prereg_check.py	junghard	MacBook-Pro.local	prereg				docs/prereg/PREREG-SEALSENTAN-2026-08-17.md
+2026-08-17T05:30:53Z	prereg_check.py	junghard	MacBook-Pro.local	prereg				docs/prereg/PREREG-SEALSENTA-2026-08-17.md
+2026-08-17T05:41:52Z	prereg_check.py	junghard	MacBook-Pro.local	prereg				docs/prereg/PREREG-ECOMMIT-2026-08-17.md
+2026-08-17T05:42:10Z	prereg_check.py	junghard	MacBook-Pro.local	prereg				docs/prereg/PREREG-ECOMMIT-2026-08-17.md
+2026-08-17T05:45:44Z	prereg_check.py	junghard	MacBook-Pro.local	prereg				docs/prereg/PREREG-FREEROUND-2026-08-17.md
+2026-08-17T05:46:03Z	prereg_check.py	junghard	MacBook-Pro.local	prereg				docs/prereg/PREREG-FREEROUND-2026-08-17.md
+2026-08-17T05:49:35Z	prereg_check.py	junghard	MacBook-Pro.local	prereg				docs/prereg/PREREG-ROUTESCORE-2026-08-17.md
+2026-08-17T05:50:08Z	prereg_check.py	junghard	MacBook-Pro.local	prereg				docs/prereg/PREREG-ECOMMIT-2026-08-17.md
+2026-08-17T05:50:08Z	prereg_check.py	junghard	MacBook-Pro.local	prereg				docs/prereg/PREREG-FREEROUND-2026-08-17.md
+2026-08-17T05:50:08Z	prereg_check.py	junghard	MacBook-Pro.local	prereg				docs/prereg/PREREG-ROUTESCORE-2026-08-17.md
+2026-08-17T05:55:18Z	prereg_check.py	junghard	MacBook-Pro.local	prereg				docs/prereg/PREREG-BELTBREAK-EARLY-2026-08-17.md
+2026-08-17T05:55:26Z	prereg_check.py	junghard	MacBook-Pro.local	prereg				docs/prereg/PREREG-BELTBREAK-LATE-2026-08-17.md
+2026-08-17T05:55:28Z	prereg_check.py	junghard	MacBook-Pro.local	prereg				docs/prereg/PREREG-BELTBREAK-EARLY-2026-08-17.md
+2026-08-17T05:55:43Z	prereg_check.py	junghard	MacBook-Pro.local	prereg				docs/prereg/PREREG-BELTBREAK-LATE-2026-08-17.md
+2026-08-17T05:55:50Z	prereg_check.py	junghard	MacBook-Pro.local	prereg				docs/prereg/PREREG-BELTBREAK-EARLY-2026-08-17.md
+2026-08-17T05:55:50Z	prereg_check.py	junghard	MacBook-Pro.local	prereg				docs/prereg/PREREG-BELTBREAK-EARLY-2026-08-17.md
+2026-08-17T05:55:50Z	prereg_check.py	junghard	MacBook-Pro.local	prereg				docs/prereg/PREREG-BELTBREAK-LATE-2026-08-17.md
+2026-08-17T05:55:50Z	prereg_check.py	junghard	MacBook-Pro.local	prereg				docs/prereg/PREREG-BELTBREAK-LATE-2026-08-17.md
+2026-08-17T05:57:00Z	prereg_check.py	junghard	MacBook-Pro.local	prereg				docs/prereg/PREREG-BELTBREAK-EARLY-2026-08-17.md
+2026-08-17T05:57:00Z	prereg_check.py	junghard	MacBook-Pro.local	prereg				docs/prereg/PREREG-BELTBREAK-EARLY-2026-08-17.md
+2026-08-17T05:57:00Z	prereg_check.py	junghard	MacBook-Pro.local	prereg				docs/prereg/PREREG-BELTBREAK-LATE-2026-08-17.md
+2026-08-17T05:57:00Z	prereg_check.py	junghard	MacBook-Pro.local	prereg				docs/prereg/PREREG-BELTBREAK-LATE-2026-08-17.md
+2026-08-17T07:13:21Z	prereg_check.py	junghard	MacBook-Pro.local	prereg				/private/tmp/claude-501/-Users-junghard-Projects-Work-florent-code-game/f5152988-90aa-4653-9a6e-5a576001b098/scratchpad/PREREG-debt19.md
+2026-08-17T07:13:56Z	prereg_check.py	junghard	MacBook-Pro.local	prereg				/private/tmp/claude-501/-Users-junghard-Projects-Work-florent-code-game/f5152988-90aa-4653-9a6e-5a576001b098/scratchpad/PREREG-debt19.md
+2026-08-17T07:14:04Z	prereg_check.py	junghard	MacBook-Pro.local	prereg				/private/tmp/claude-501/-Users-junghard-Projects-Work-florent-code-game/f5152988-90aa-4653-9a6e-5a576001b098/scratchpad/PREREG-debt19.md
+2026-08-17T07:16:32Z	prereg_check.py	junghard	MacBook-Pro.local	selftest				
+2026-08-17T07:16:38Z	prereg_check.py	junghard	MacBook-Pro.local	selftest				
+2026-08-17T07:17:01Z	prereg_check.py	junghard	MacBook-Pro.local	selftest				
+2026-08-17T07:17:03Z	prereg_check.py	junghard	MacBook-Pro.local	selftest				
+2026-08-17T07:17:29Z	prereg_check.py	junghard	MacBook-Pro.local	selftest				
+2026-08-17T07:17:41Z	prereg_check.py	junghard	MacBook-Pro.local	selftest				
+2026-08-17T07:17:41Z	prereg_check.py	junghard	MacBook-Pro.local	selftest				
+2026-08-17T07:17:52Z	prereg_check.py	junghard	MacBook-Pro.local	selftest				
+2026-08-17T07:18:00Z	prereg_check.py	junghard	MacBook-Pro.local	selftest				
+2026-08-17T07:18:38Z	prereg_check.py	junghard	MacBook-Pro.local	selftest				
+2026-08-17T07:18:52Z	prereg_check.py	junghard	MacBook-Pro.local	selftest				
+2026-08-17T07:18:52Z	prereg_check.py	junghard	MacBook-Pro.local	selftest				
+2026-08-17T07:18:52Z	prereg_check.py	junghard	MacBook-Pro.local	selftest				
+2026-08-17T07:18:52Z	prereg_check.py	junghard	MacBook-Pro.local	selftest				
+2026-08-17T07:18:53Z	prereg_check.py	junghard	MacBook-Pro.local	selftest				
+2026-08-17T07:19:16Z	prereg_check.py	junghard	MacBook-Pro.local	selftest				
+2026-08-17T07:19:18Z	prereg_check.py	junghard	MacBook-Pro.local	selftest				
+2026-08-17T07:19:19Z	prereg_check.py	junghard	MacBook-Pro.local	selftest				
+2026-08-17T07:21:44Z	prereg_check.py	junghard	MacBook-Pro.local	selftest				
+2026-08-17T07:27:19Z	prereg_check.py	junghard	MacBook-Pro.local	selftest				
+2026-08-17T07:27:21Z	prereg_check.py	junghard	MacBook-Pro.local	selftest				
+2026-08-17T07:27:23Z	prereg_check.py	junghard	MacBook-Pro.local	prereg				/private/tmp/claude-501/-Users-junghard-Projects-Work-florent-code-game/f5152988-90aa-4653-9a6e-5a576001b098/scratchpad/PREREG-debt19.md
+2026-08-17T07:27:32Z	prereg_check.py	junghard	MacBook-Pro.local	prereg				/private/tmp/claude-501/-Users-junghard-Projects-Work-florent-code-game/f5152988-90aa-4653-9a6e-5a576001b098/scratchpad/PREREG-debt19.md
+2026-08-17T07:30:12Z	prereg_check.py	junghard	MacBook-Pro.local	prereg				docs/prereg/PREREG-KLADLADDER2-2026-08-17.md
+2026-08-17T07:30:12Z	prereg_check.py	junghard	MacBook-Pro.local	prereg				docs/prereg/PREREG-KLADLADDER3-2026-08-17.md
+2026-08-17T07:30:12Z	prereg_check.py	junghard	MacBook-Pro.local	prereg				docs/prereg/PREREG-SEALPIERCE-2026-08-17.md
+2026-08-17T07:30:12Z	prereg_check.py	junghard	MacBook-Pro.local	prereg				docs/prereg/PREREG-ECOMMIT2-2026-08-17.md
+2026-08-17T07:31:36Z	prereg_check.py	junghard	MacBook-Pro.local	prereg				docs/prereg/PREREG-KLADLADDER2-2026-08-17.md
+2026-08-17T07:31:36Z	prereg_check.py	junghard	MacBook-Pro.local	prereg				docs/prereg/PREREG-KLADLADDER3-2026-08-17.md
+2026-08-17T07:31:37Z	prereg_check.py	junghard	MacBook-Pro.local	prereg				docs/prereg/PREREG-SEALPIERCE-2026-08-17.md
+2026-08-17T07:31:37Z	prereg_check.py	junghard	MacBook-Pro.local	prereg				docs/prereg/PREREG-ECOMMIT2-2026-08-17.md
+2026-08-17T07:32:16Z	prereg_check.py	junghard	MacBook-Pro.local	prereg				docs/prereg/PREREG-KLADLADDER2-2026-08-17.md
+2026-08-17T07:32:16Z	prereg_check.py	junghard	MacBook-Pro.local	prereg				docs/prereg/PREREG-KLADLADDER3-2026-08-17.md
+2026-08-17T07:32:17Z	prereg_check.py	junghard	MacBook-Pro.local	prereg				docs/prereg/PREREG-SEALPIERCE-2026-08-17.md
+2026-08-17T07:32:17Z	prereg_check.py	junghard	MacBook-Pro.local	prereg				docs/prereg/PREREG-ECOMMIT2-2026-08-17.md
+2026-08-17T07:32:27Z	prereg_check.py	junghard	MacBook-Pro.local	prereg				docs/prereg/PREREG-KLADLADDER2-2026-08-17.md
+2026-08-17T07:32:27Z	prereg_check.py	junghard	MacBook-Pro.local	prereg				docs/prereg/PREREG-KLADLADDER3-2026-08-17.md
+2026-08-17T07:32:28Z	prereg_check.py	junghard	MacBook-Pro.local	prereg				docs/prereg/PREREG-SEALPIERCE-2026-08-17.md
+2026-08-17T07:32:28Z	prereg_check.py	junghard	MacBook-Pro.local	prereg				docs/prereg/PREREG-ECOMMIT2-2026-08-17.md
+2026-08-17T07:43:53Z	prereg_check.py	junghard	MacBook-Pro.local	prereg				docs/prereg/PREREG-ECOMMIT-2026-08-17.md
+2026-08-17T07:44:03Z	prereg_check.py	junghard	MacBook-Pro.local	prereg				docs/prereg/PREREG-BELTBREAK-EARLY-2026-08-17.md
+2026-08-17T08:04:37Z	prereg_check.py	junghard	MacBook-Pro.local	prereg				docs/prereg/PREREG-OPENFAST-2026-08-17.md
+2026-08-17T08:05:29Z	prereg_check.py	junghard	MacBook-Pro.local	prereg				docs/prereg/PREREG-OPENFAST-2026-08-17.md
+2026-08-17T08:05:58Z	prereg_check.py	junghard	MacBook-Pro.local	prereg				docs/prereg/PREREG-OPENFAST-2026-08-17.md
+2026-08-17T08:06:13Z	prereg_check.py	junghard	MacBook-Pro.local	prereg				docs/prereg/PREREG-OPENFAST-2026-08-17.md
+2026-08-17T08:11:20Z	prereg_check.py	junghard	MacBook-Pro.local	prereg				docs/prereg/PREREG-RUSH2-2026-08-17.md
+2026-08-17T08:12:28Z	prereg_check.py	junghard	MacBook-Pro.local	prereg				docs/prereg/PREREG-RUSH2-2026-08-17.md
+2026-08-17T08:12:50Z	prereg_check.py	junghard	MacBook-Pro.local	prereg				docs/prereg/PREREG-RUSH2-2026-08-17.md
+2026-08-17T08:12:50Z	prereg_check.py	junghard	MacBook-Pro.local	prereg				docs/prereg/PREREG-RUSH2-2026-08-17.md
+2026-08-17T09:11:31Z	prereg_check.py	junghard	MacBook-Pro.local	prereg				docs/prereg/PREREG-BELTBREAK2-2026-08-17.md
+2026-08-17T09:11:46Z	prereg_check.py	junghard	MacBook-Pro.local	prereg				docs/prereg/PREREG-BELTBREAK2-2026-08-17.md
+2026-08-17T11:37:21Z	prereg_check.py	junghard	MacBook-Pro.local	prereg				docs/prereg/PREREG-KLADLADDER2-2026-08-17.md
+2026-08-17T11:37:21Z	prereg_check.py	junghard	MacBook-Pro.local	prereg				docs/prereg/PREREG-KLADLADDER3-2026-08-17.md
+2026-08-17T11:38:03Z	prereg_check.py	junghard	MacBook-Pro.local	prereg				docs/prereg/PREREG-KLADLADDER3-2026-08-17.md
+2026-08-17T11:55:04Z	prereg_check.py	junghard	MacBook-Pro.local	prereg				docs/prereg/PREREG-SEALPIERCE-2026-08-17.md
+2026-08-17T13:07:46Z	prereg_check.py	junghard	MacBook-Pro.local	prereg				docs/prereg/PREREG-BBCAP3-2026-08-17.md
+2026-08-17T13:08:51Z	prereg_check.py	junghard	MacBook-Pro.local	prereg				docs/prereg/PREREG-BBCAP3-2026-08-17.md
+2026-08-17T13:09:07Z	prereg_check.py	junghard	MacBook-Pro.local	prereg				docs/prereg/PREREG-BBCAP3-2026-08-17.md
+2026-08-17T13:11:37Z	prereg_check.py	junghard	MacBook-Pro.local	prereg				docs/prereg/PREREG-BBAMMO-2026-08-17.md
+2026-08-17T13:11:55Z	prereg_check.py	junghard	MacBook-Pro.local	prereg				docs/prereg/PREREG-BBAMMO-2026-08-17.md
+2026-08-17T13:11:55Z	prereg_check.py	junghard	MacBook-Pro.local	prereg				docs/prereg/PREREG-BBAMMO-2026-08-17.md
+2026-08-17T13:21:28Z	prereg_check.py	junghard	MacBook-Pro.local	prereg				docs/prereg/PREREG-BBDEMAND-2026-08-17.md
+2026-08-17T13:22:13Z	prereg_check.py	junghard	MacBook-Pro.local	prereg				docs/prereg/PREREG-BBDEMAND-2026-08-17.md
+2026-08-17T13:22:36Z	prereg_check.py	junghard	MacBook-Pro.local	prereg				docs/prereg/PREREG-BBDEMAND-2026-08-17.md
+2026-08-17T14:28:57Z	prereg_check.py	junghard	MacBook-Pro.local	prereg				docs/prereg/PREREG-RAYDISC-2026-08-17.md
+2026-08-17T14:29:29Z	prereg_check.py	junghard	MacBook-Pro.local	prereg				docs/prereg/PREREG-RAYDISC-2026-08-17.md
+2026-08-17T14:29:30Z	prereg_check.py	junghard	MacBook-Pro.local	prereg				docs/prereg/PREREG-RAYDISC-2026-08-17.md
+2026-08-17T14:30:04Z	prereg_check.py	junghard	MacBook-Pro.local	prereg				docs/prereg/PREREG-RAYDISC-2026-08-17.md
+2026-08-17T14:30:04Z	prereg_check.py	junghard	MacBook-Pro.local	prereg				docs/prereg/PREREG-RAYDISC-2026-08-17.md
+2026-08-17T14:31:14Z	prereg_check.py	junghard	MacBook-Pro.local	prereg				docs/prereg/PREREG-RAYDISC-2026-08-17.md
+2026-08-17T18:34:09Z	prereg_check.py	junghard	MacBook-Pro.local	prereg				docs/prereg/PREREG-SALTRAY-2026-08-17.md
+2026-08-17T18:35:05Z	prereg_check.py	junghard	MacBook-Pro.local	prereg				docs/prereg/PREREG-SALTRAY-2026-08-17.md
+2026-08-17T18:35:29Z	prereg_check.py	junghard	MacBook-Pro.local	prereg				docs/prereg/PREREG-SALTRAY-2026-08-17.md
+2026-08-17T20:27:15Z	prereg_check.py	junghard	MacBook-Pro.local	prereg				docs/prereg/PREREG-RINGLADDER-2026-08-17.md
+2026-08-17T20:27:46Z	prereg_check.py	junghard	MacBook-Pro.local	prereg				docs/prereg/PREREG-RINGLADDER-2026-08-17.md
+2026-08-17T20:29:48Z	prereg_check.py	junghard	MacBook-Pro.local	prereg				docs/prereg/PREREG-RINGLADDER-2026-08-17.md

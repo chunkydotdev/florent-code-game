@@ -904,9 +904,73 @@ class TestHelpContract(unittest.TestCase):
         after = self._fs_signature()
         return {k for k in after if before.get(k) != after.get(k)} | set(after) - set(before)
 
+    def _confirm_write(self, f, suspects, before):
+        """Is `f` REALLY the writer of these paths, or did a daemon move them?
+
+        ⛔⛔ THE PROBLEM THIS REPLACES, and it is this repo's own favourite
+        failure: the churn control samples ONCE, for 6 s, before the loop. Every
+        daemon on this box with a cadence LONGER than that window is invisible
+        to it, so its write lands during whichever `--help` happens to be in
+        flight and is attributed to a tool that never opens the file. The
+        maintenance answer so far has been to APPEND THE FILENAME TO A STATIC
+        ALLOWLIST — `DAEMON_WRITTEN` is now 20+ entries and `DAEMON_PATTERNS`
+        exists because one of them is session-numbered. That list is embedded
+        world-state: it grows with every new daemon, it is only ever edited
+        AFTER a false red, and every entry silently REMOVES a real path from the
+        guard's reach. Measured at the s48 wrap: the suite failed with
+        `game_census.py: WROTE [...]` while `game_census.py --help` run three
+        times in isolation wrote NOTHING.
+
+        THE STRUCTURAL FIX — attribute on EVIDENCE, per suspect, measured now:
+          (1) RE-RUN the same `--help` and see whether the path moves AGAIN. A
+              tool that writes writes every time; a daemon on a 10-minute
+              cadence does not.
+          (2) A path that did not exist before and does now is confirmed WITHOUT
+              needing (1) — but only if the tool's OWN SOURCE names it. That is
+              the maintainers' own reasoning, mechanised: the static list's
+              comments read "attributed to collar_census.py, a tool with zero
+              occurrences of the string 'fleet'".
+        Anything else is EXONERATED and PRINTED, never dropped silently — an
+        exoneration that leaves no trace is how a real writer hides.
+
+        ⚠ KNOWN GAP, stated rather than papered over: a tool that creates a file
+        ONCE, does not name it in its own source, and never touches it again is
+        exonerated. Nothing in this test can currently see that case.
+        """
+        import time
+        try:
+            src = f.read_text(errors="ignore")
+        except OSError:
+            src = ""
+        created = [k for k in suspects if k not in before]
+        named = [k for k in created
+                 if Path(k).name in src or Path(k).stem in src]
+        if named:
+            return named, f"named in its own source: {named[:3]}"
+        # (1) the re-run control.
+        b2 = self._fs_signature()
+        try:
+            subprocess.run([sys.executable, str(f), "--help"],
+                           capture_output=True, text=True, timeout=120)
+        except subprocess.TimeoutExpired:
+            return suspects, "re-run TIMED OUT (it runs for real)"
+        a2 = self._fs_signature()
+        again = [k for k in suspects if b2.get(k) != a2.get(k)]
+        if again:
+            return again, f"reproduced on re-run: {again[:3]}"
+        # (2) idle control: did they move on their own in a comparable window?
+        b3 = self._fs_signature()
+        time.sleep(1.0)
+        a3 = self._fs_signature()
+        idle = [k for k in suspects if b3.get(k) != a3.get(k)]
+        return [], (f"EXONERATED {suspects[:3]} — did not reproduce on re-run"
+                    + (f"; {idle[:2]} moved during an idle window too" if idle else "")
+                    + " (a daemon on this shared box, not this tool)")
+
     def test_help_is_safe_and_exits_zero(self):
         churn = self._background_churn()
         bad_exit, empty, wrote, not_help = [], [], [], []
+        exonerated = []
         for f in self._tools():
             before = self._fs_signature()
             try:
@@ -921,7 +985,11 @@ class TestHelpContract(unittest.TestCase):
                        and not k.endswith(self.DAEMON_WRITTEN)
                        and not any(re.search(p, k) for p in self.DAEMON_PATTERNS)]
             if touched:
-                wrote.append(f"{f.name}: WROTE {touched[:3]}")
+                confirmed, why = self._confirm_write(f, touched, before)
+                if confirmed:
+                    wrote.append(f"{f.name}: WROTE {confirmed[:3]}")
+                else:
+                    exonerated.append(f"{f.name}: {why}")
             if f.name in self.EXEMPT:
                 continue
             if r.returncode != 0:
@@ -945,6 +1013,9 @@ class TestHelpContract(unittest.TestCase):
                                 f"neither a usage line nor its docstring "
                                 f"({out.strip()[:60]!r}) — it probably RAN")
 
+        # An exoneration must leave a trace, or a real writer hides behind it.
+        for line in exonerated:
+            print("  [help-contract] " + line)
         # (3) first: a --help that mutates state is the dangerous one.
         self.assertEqual(wrote, [], "\n⛔ --help MUTATED THE FILESYSTEM. A probe "
                          "must never be an action:\n  " + "\n  ".join(wrote))
