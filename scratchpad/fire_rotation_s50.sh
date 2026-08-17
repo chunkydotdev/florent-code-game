@@ -2,13 +2,29 @@
 # BUILDER s50 fire-order runner — remaining rotation round 1 (research's 17:24Z fire order).
 # One unrated 5-game HOLDER leg per ~21-min window (rate limit: 5/20min, shared).
 # Cell 1 (Erebus) fired manually 17:27:20Z. This fires cells 2-5.
-# Guard per standing rule: gate on the PRESENCE of the 'Active bot:' line == v159,
-# never on exit code. If the holder is not v159, SKIP the cell and log — never fire
-# a panel cell whose subject has changed.
+# Guard per standing rule: gate on the PRESENCE of the 'Active bot:' line, never on
+# exit code. The expected holder is CAPTURED AT START (see HOLDER0 below), not typed
+# in — if the holder line changes under the panel, SKIP the cell and log; never fire
+# a panel cell whose subject has changed. (This line said `== v159` until 2026-08-17.)
 cd /Users/junghard/Projects/Work/florent-code-game || exit 1
 FC=.venv/bin/fcode
 LOG=/private/tmp/claude-501/-Users-junghard-Projects-Work-florent-code-game/82720aae-f502-4b10-9dd5-ad5f55d16b94/scratchpad/fire_rotation_s50.log
 echo "$(date -u +%FT%TZ) runner start pid=$$" >> "$LOG"
+
+# ⛔ THE SUBJECT IS CAPTURED, NOT TYPED. This script shipped with a literal
+# `v159` in the holder gate. The holder is v160 as of 2026-08-17 (a teammate's
+# ship), so a copy-paste of the old form SKIPS EVERY CELL and logs a tidy reason
+# for doing nothing — a runner that fires zero games and looks healthy. The rule
+# the gate is really enforcing is "the subject did not change UNDER the panel",
+# and that is captured at start, never hardcoded. Fail CLOSED if the field is
+# absent: `fcode status` exits 0 while printing `Error: True`, so presence of the
+# `Active bot:` line is the only signal (project standing rule).
+HOLDER0=$($FC status 2>/dev/null | grep "Active bot:")
+if [[ -z "$HOLDER0" ]]; then
+  echo "$(date -u +%FT%TZ) ABORT — no 'Active bot:' line at start; the subject is UNKNOWN, not unchanged" >> "$LOG"
+  exit 1
+fi
+echo "$(date -u +%FT%TZ) subject captured: $HOLDER0" >> "$LOG"
 
 typeset -A CELLS
 ORDER=(gsxWins TheBisons teamlazy lingling40h)
@@ -24,8 +40,8 @@ for name in $ORDER; do
   now=$(date +%s)
   if (( NEXT > now )); then sleep $(( NEXT - now )); fi
   holder=$($FC status 2>/dev/null | grep "Active bot:")
-  if [[ "$holder" != *"v159"* ]]; then
-    echo "$(date -u +%FT%TZ) SKIP $name — holder line is '$holder' (need v159 present)" >> "$LOG"
+  if [[ "$holder" != "$HOLDER0" ]]; then
+    echo "$(date -u +%FT%TZ) SKIP $name — holder line is '$holder', captured subject was '$HOLDER0'" >> "$LOG"
     NEXT=$(( $(date +%s) + 1260 ))
     continue
   fi
