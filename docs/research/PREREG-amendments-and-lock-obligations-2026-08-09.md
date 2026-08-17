@@ -694,3 +694,67 @@ exactly what someone says before D31's expectation-shaped query returns the expe
 test is whether the answer is ESTABLISHED — a commit you read, a run you watched — not whether it is
 EXPECTED.** Checks 1 and 2 qualified because the fix had been read in the diff minutes earlier, not
 because it seemed likely.
+
+---
+
+## Addendum, 2026-08-17T07:24:55Z (`date -u`) — ⭐ CLOCK 2 FOR A **LOCAL SHARD** LEG: THE BOILERPLATE EVERY PREREG COPIES WAS NOT EXECUTABLE AS WRITTEN
+
+**s48 wrap-fix, debt 11.** The two-clock standard this document defines was written for a
+**PLATFORM** leg — git author time vs the platform's `createdAt` — and that form is executable.
+The **LOCAL SHARD** variant that eleven preregs now copy is not, and this addendum replaces it.
+
+**THE BOILERPLATE IN CIRCULATION** (verbatim, e.g. `docs/prereg/PREREG-KLADLADDER-2026-08-17.md:14`,
+`docs/prereg/SCREEN-homeearly-2026-08-15.md:25`): *"clock 2 = the shard tape's own
+`# FIXTURE … start=` stamp, which `tools/overnight.sh:99` writes BEFORE the first game."*
+**It prescribes a single instrument that a third of our own local tapes and ALL of our remote
+tapes do not have** — so a certifier following it literally must either refuse a legitimate leg
+or quietly substitute something and not say what.
+
+### THE MEASURED FACTS (counted 2026-08-17 for this addendum, not cited)
+
+`head -1` on every shard tape in the repo, testing for a leading `# FIXTURE`:
+
+| surface | path | WITH stamp | WITHOUT | total |
+| --- | --- | ---: | ---: | ---: |
+| **LOCAL** | `scratchpad/overnight/*.tsv` | **107** | **131** | **238** |
+| **REMOTE (worker-side)** | `scratchpad/overnight-remote/worker@*/*.tsv` | **0** | 63 | 63 |
+| **REMOTE (pulled)** | `scratchpad/overnight-remote/work-server-*/*.tsv` | **0** | 23 | 23 |
+| legacy local | `scratchpad/overnight_s31/`, `overnight_zombie_1840/` | **0** | 18 | 18 |
+
+⇒ **Local tapes DO carry it (107); the 131 without it PREDATE the stamp. Remote tapes carry it
+NEVER — 0 of 86** *(the brief this addendum answers said "0 of 84"; the discrepancy is the
+denominator, not the finding — 63 worker-side + 23 pulled = 86, and the WITH count is 0 either way).*
+
+**AND THE STAMP IS A GENUINE PRE-GAME CLOCK WHERE IT EXISTS.** `tools/overnight.sh:99` sets
+`START=$(date -u …)` and **`:103` writes `# FIXTURE … start=$START` to `$ROWS`** — before any game.
+Checked on all **107** stamped local tapes that have at least one data row: the stamp is **earlier
+than that tape's first completed row in 107 of 107**, typically by 1–2 s
+(`BELTBREAK-EARLY` 05:59:07Z stamp vs 05:59:09Z first row).
+
+⛔ **AND THE INSTRUMENT THAT LOOKS LIKE A SUBSTITUTE IS NOT ONE: the heartbeat's `STARTING` line is
+DESTROYED, not appended to.** `overnight.sh:100` writes it with `>`, and **every later state
+(`RUNNING` :216, `COMPLETE` :223, the three `ABORTED_*`) also writes with `>`** — so by the time
+anyone reads a heartbeat, the start time is gone. Do not reach for it.
+
+### THE CORRECT BOILERPLATE — COPY THIS INTO A LOCAL-SHARD PREREG
+
+> **LOCK, clock 2 (local shard).** **PRIMARY:** the shard tape's own `# FIXTURE … start=` stamp
+> (`tools/overnight.sh:99` sets it, `:103` writes it to the tape before the first game). Quote it
+> verbatim beside the prereg's git author time.
+> **BACKSTOP, when the tape has no `# FIXTURE` line** (every REMOTE tape, and every local tape from
+> before the stamp landed): use **the tape's FIRST COMPLETED ROW `ts`**. This is **CONSERVATIVE BY
+> CONSTRUCTION** — the true start is strictly earlier than the first completion, so the backstop can
+> only ever **OVERSTATE** the prereg-to-start gap, never invent one. *(Measured cost of the
+> substitution on the 107 tapes where both exist: 1–2 s.)*
+> **SECOND BACKSTOP, serial runners:** the `COMPLETE` time of the **preceding shard** on the same
+> worker bounds this shard's start from below — an ordering bound, valid when the runner is serial.
+> ⛔ **NOT AVAILABLE: the heartbeat's `STARTING` line.** It is overwritten by the first progress
+> update (`>` not `>>`) and is unreadable after the shard's first game.
+> **State which of the three you used.** A certificate that says "two-clock clean" without naming
+> the second clock's source is not checkable.
+
+**WHY THIS IS AN OBLIGATIONS-DOC ITEM AND NOT A PREREG FOOTNOTE:** the defective sentence was
+copied, not derived — it appears in **18 of the 42 docs under `docs/prereg/`** (measured
+2026-08-17: `grep -l '# FIXTURE' docs/prereg/*.md`), and no template file in
+this repo contains it. **A boilerplate with no home is a boilerplate nobody can fix once.** This
+addendum is now the home; preregs cite it rather than restating it.

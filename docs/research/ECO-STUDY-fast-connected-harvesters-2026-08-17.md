@@ -864,8 +864,18 @@ NOT a third detector** — it is a move-legality guard inside `_nav` that refuse
 the immediate reverse edge unless it is the only legal move. ⚠ **It touches
 `_bfs_direction`'s consumer, which is the hand-merged TURBO x BODYAWARE block
 (`eco.py:1236-1456`)** — the highest-risk file region in the tree, and
-`tools/turbo_identity.py` exists precisely to assert that block's behaviour is
-unchanged. **Run it.**
+⛔ **CORRECTED 2026-08-17 (s48 wrap-fix): this sentence used to read *"`tools/
+turbo_identity.py` exists precisely to assert that block's behaviour is
+unchanged — run it"*, and `tools/turbo_identity.py` DOES NOT EXIST.** `ls` finds
+no such file and `git log --all -- tools/turbo_identity.py` returns nothing, so
+it has never been in this checkout in any commit; the name came in with x3r0's
+v152 notes and was copied forward through ~25 bot trees and this study unread.
+**THE INSTRUMENT THAT ACTUALLY COVERS THIS SEAM IS
+`scratchpad/s48_flagoff.sh`** — replay-SHA-256 flag-off equivalence for the
+whole bot's move sequence (not two functions in isolation), under the
+`NOISE_ON=False` + `--tle 0` determinism precondition, with the flag-ON run as
+its positive control. **Run that.** Driven 2026-08-17 over 8 cells: flag-off ==
+base 8/8, flag-on != base 8/8.
 
 **ONE-GAME DEMO THAT IT FIRED.** Replay one local game through `walk.py` and read
 the OSC2 share of moves: the arm must land materially below the parent's ~20% on
@@ -939,10 +949,17 @@ ceiling still has to be watched in the screen.)*
 **RISK / INTERACTION.** **MEDIUM.** It changes `_link_path`, which SAMESTOP reads
 (`_samestop_plan` calls it verbatim, deliberately, so as not to invent a parallel
 router) — so a change here silently changes SAMESTOP's stop tile too. **That is a
-composition to state in the prereg, not a bug.** ⚠ `tools/turbo_identity.py`
-asserts `_link_path` is behaviour-identical to LOKI's; **this arm deliberately
-breaks that assertion and the tool's expectation must be updated with it, or the
-identity check will read as a regression.**
+composition to state in the prereg, not a bug.** ⛔ **CORRECTED 2026-08-17 (s48
+wrap-fix): this warning used to say *"`tools/turbo_identity.py` asserts
+`_link_path` is behaviour-identical to LOKI's… the tool's expectation must be
+updated"*. THAT TOOL DOES NOT EXIST AND NEVER DID** (`ls` finds nothing;
+`git log --all --` on the path returns nothing) — so there was no expectation to
+update, and the mitigation as written was unexecutable. **The live seam
+instrument is `scratchpad/s48_flagoff.sh`, and the warning it earns is the
+opposite shape: flag-ON runs of ROUTESCORE MUST differ from the base (that is
+the harness's positive control, and this arm is exactly why), while its
+flag-OFF run must still be byte-identical — which is what checks that the
+`_link_path` change is confined to the flag.**
 
 **ONE-GAME DEMO THAT IT FIRED.** One local game: total conveyors built must fall
 while `n_harv_connected` holds, and at least one harvester's route must
