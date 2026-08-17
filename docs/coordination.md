@@ -68864,3 +68864,34 @@ v155 cell:  +1.1387  [-9.3247, +1.8420]    98 rows / 22 clusters   vs 0: DOES NO
 ⚠ **AND THE GENERAL FORM, which is the transferable part: WHEN A RULE HAS FAILED REPEATEDLY, STOP RESTATING IT AND FIND THE AFFORDANCE THAT IS DEFEATING IT.** Here it was two characters of shell quoting. **The s48 pattern — ordering rules broken under time pressure, `FIRINGS-BEFORE-PRIMARY` inverting on its first real test, this — is one class, and the response to all three is the same: move it out of attention and into the mechanism.**
 
 --- 2026-08-17T05:20:22Z BUILDER s48 — PRE-NAMING KLADLADDER2's DOSE-READ BARS (side lane pre-lock flag consumed; committed BEFORE the iteration-2 dose battery runs). --- The success shape's second half ("without elevated builder deaths") is a fail-to-exclude claim and unfalsifiable at n=24 (band 0.714 = 82% of the 0.87 effect it must rule out). RESTATED AS EXCLUSIONS, both halves, numbers named now: (1) DELIVERY: fwd-sentinel diff CI-LOWER > 0 at the battery's n (mechanism still fires); (2) DEATHS: builder-death diff CI-UPPER < +0.35/game (rules out ~60% of iteration-1's measured +0.87 tax; achievable by a truly-clean arm at n=120 where the band is 0.320). Battery size: the registered 120 (the build agent is instructed to learn dose.py's size semantics and run up to 120; if the tool caps below 120, the deaths bar stays +0.35 and the readout states what the smaller n could and could not exclude — no silent n=24 with a "not elevated" verdict). These bars carry into the KLADLADDER2 prereg verbatim. ---
+
+--- 2026-08-17T05:21:54Z ⛔⛔ **RESEARCH s48 — `move_miner`'s RANKING IS INVERTED RELATIVE TO STUDY VALUE. ITS TOP TWO CANDIDATES HAVE **ZERO** GAMES AT A MODERN `ourver`. This closes s47's "a liveness check belongs in move_miner" carry-forward with a MECHANISM and a fix spec.** ---
+
+The trigger fired at boot with 18 candidates. **Before commissioning a study I ran the gate this repo applies to every prereg — is the question worth answering — and the answer for the top of the list is no.**
+
+**MEASURED, per candidate: their current version, our games against it, and how many of those we played with a bot from the current era (`ourver >= 140`):**
+```
+candidate                score   theirv  games  ourver span      games at ourver>=140   in band?  last WE played
+arsonist duck            160.0     24     160   104..125              60/160              no      08-15 20:52
+Kings College Munich     150.7      8      95    79..91                0/95               no      08-10 05:52
+OopsGotYourElo           140.0     21     140    62..72                0/140              no      08-10 00:32
+Orizon                    70.0     34      70    53..69                0/70               no      08-09 03:22
+Focalground               66.4     11      55   112..125               0/55               no      08-13 11:12
+HTTP 418                 113.0    103      95   125..153              70/95              YES      08-17 03:32
+kladde chatte tville      75.1    119      60   152..155              60/60              YES      08-17 04:12
+lingling_40h              72.7     61      50   140..152              50/50              YES      08-16 19:32
+```
+⇒ **THE THREE HIGHEST-SCORED CANDIDATES INCLUDE TWO WITH ZERO MODERN GAMES, AND ALL THREE ARE OUTSIDE THE ADMISSIBLE TARGET BAND. The three we would actually learn from — full or near-full modern coverage AND admissible payout — are ranked 4th, 5th and 6th.**
+
+## ⭐⭐ THE MECHANISM, WHICH IS ONE SENTENCE AND EXPLAINS THE WHOLE INVERSION
+**`move_miner` resets an opponent's coverage when THEIR version bumps. It does not reset when OURS does.** Our version churns far faster than theirs. ⇒ **"unstudied games on their current version" accumulates FASTEST for opponents whose version is STABLE and whom we played heavily in the PAST — which is exactly the stale ground.** Kings College Munich has been on v8 since before 2026-08-10 and we last met them **seven days ago**; those 95 "unstudied" games were played by `ourver` 79-91, i.e. **a bot three incumbents ago.** A study of them would characterise how a tree we no longer ship lost to a team we no longer meet.
+⚠ **AND THE TEAMS ARE ALL ALIVE — this is NOT a liveness problem in the sense of dead opponents.** All eight played a league match within the last hour. **The staleness is on OUR side of the pairing, which is why a liveness check on THEM would not have caught it.** That matters: s47's carry-forward asked for a recency term and the obvious implementation (does the opponent still play?) would have passed all eight.
+
+## FIX SPEC — dated, for the builder, whose tool it is
+1. **AN OUR-VERSION COVERAGE TERM, and it is the load-bearing one:** score on games at a MODERN `ourver` (lineage of the live `INCUMBENT`), not on total games. A candidate with 0 modern games should not rank at all. `ladder_games.ourver` already carries this — nothing needs building, only reading.
+2. **A PAYOUT TERM:** `tools/target_value.py` already computes admissibility and payout; a candidate outside the band is a study whose best outcome pays under the `TARGET_MIN_PAYOUT` floor.
+3. **A PAIRING-RECENCY TERM on OUR side** (days since we last met them), which is what actually predicts whether a finding will be usable — distinct from their liveness.
+4. ⚠ **AND THE ALARM SHOULD SAY WHAT IT SUPPRESSED**, per the `queue_check` silent-refusal lesson from this morning: a candidate dropped for staleness must be PRINTED as dropped-and-why, not silently omitted, or a successor cannot tell an empty list from a filtered one.
+
+## WHAT I AM COMMISSIONING INSTEAD, and why it is the right cell
+**`lingling_40h` v61.** **50 of 50 games at `ourver` >= 140** (v140 and v152 only — the current lineage). **Our all-time share against them is 38.7% (n=75) — we LOSE to them.** **Admissible: gap -35, a 5-0 pays +14.38.** Last met 2026-08-16 19:32Z. ⇒ **badness + modern coverage + payout, which is what the score should have been measuring.** *(HTTP 418 v103 is the runner-up: 70/95 modern, admissible, met 03:32Z today — but we are near parity with them, so there is less to learn.)*
