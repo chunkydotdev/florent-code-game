@@ -70443,3 +70443,42 @@ Boot: `now.py` 07:37:10Z — **HOLDER v155 "Sleipnir v1" (Moonfarm), 1789/Emeral
 QUEUE: 78 unblocked (research's own caveat noted: inflated by ~4 shipped + ~7 dead-premise rows, so the count is not a health signal). move_miner FIRES: top candidate **'kladde chatte tville (och oss)' v119, 65 unstudied MODERN of 65, share 48.6% (n=70), gap −29, a 5-0 pays +17.32** — research owns commissioning; I will commission it myself if no research lane takes it.
 FIRST BUILD: **OPENFAST (`_v486openfast`, 78965d91)** — s48's named lead candidate for the eco directive. Fresh-opus prereg agent spawning now (per the standing rule), seeds **836000+** (828–834k are claimed by s48's four unlocked drafts).
 ⛔ **THE QUARANTINE STASH STAYS PUT.** `stash@{0} s48-wrapfix-control-tree-edits-QUARANTINED` is re-appliable now that all three arms are down — **and I am NOT re-applying it while OPENFAST is about to be screened against the pinned control tree.** Re-applying moves `bots/_v468kladturbo`, which is the pin every queued row is scored against; the edits are documentation-only (certified) so there is zero measurement cost to leaving them stashed and a real one to landing them mid-screen. Disposition goes to the wrap, with Magnus if he wants the control tree's docstrings current sooner.
+
+--- 2026-08-17T07:41:38Z ⭐ **RESEARCH ARM s49 — BOOT NOTE + SPAWN ANNOUNCEMENT (anti-collision rule 1).** ---
+
+**Lane up at 07:37Z.** Boot sequence run in full; every figure below is read by me this session, not relayed.
+
+**LIVE SURFACES, with their subjects and ages (per `now.py` 07:37:14Z):**
+* **HOLDER `v155` "Sleipnir v1"** (Moonfarm, uploaded 2026-08-16T19:38:40Z), **rating 1799 Emerald, rank #19 of 126, 1,165 matches, last 10 = 5W 5L.**
+* **CONTROL `bots/_v468kladturbo`** — ✅ **holder and control COINCIDE**, so "beat the control" and "beat what is live" have not diverged this morning. (They did twice yesterday; do not assume it persists.)
+* `audit_trigger` **0/6 tripped**. `queue_check` **78 unblocked** — ⚠ **still not a health signal**: 8 rows carry a STALE GREP against a pre-`kladturbo` tree, 5 name no tree at all, and my predecessor priced ~4 shipped + ~7 dead-premise rows inside the 78.
+* `target_value --band` at our cached 1789: **15 admissible teams.** Top payers **not adgato +21.30 · Clankers +20.55 · Juusto +20.31 · gsxWins +19.90**; opponent ratings are CACHED (newest league observation 07:12, 0.4h) so any selected target gets re-verified before its payoff is quoted.
+
+## ⛔ THE FLEET-HEALTH ALARM IS A TRUE READING OF THE WRONG SUBJECT — AND IT IS **MY LANE'S** CHARACTERISTIC ERROR, SO I CHECKED IT BEFORE RELAYING IT
+The SessionStart hook fires **`corefill runner MISSING — found=0 expected=1`** with the note that two runners would oversubscribe. **That is not what happened.** From the logs directly:
+```
+corefill.log          2026-08-17T07:34:32Z  ALL WORK STARTED AND ALL SHARDS FINISHED. exiting.
+corefill_forever.log  2026-08-17T07:35:19Z  *** WORKLIST DRAINED AND NOTHING RUNNING -- ALWAYS_BE_RUNNING VIOLATED ***
+                                            *** Cores are idle and this script will NOT invent work. ***
+ps                    corefill_forever supervisor ALIVE (pid 68004); zero shard runners
+```
+⇒ **The runner did not die. It EXITED CLEAN on a drained worklist, and the supervisor is refusing to invent work by design.** ⇒ **The true statement is: THE LOCAL SCREENING FIXTURE HAS BEEN IDLE SINCE 07:34:32Z BECAUSE NOBODY HAS QUEUED AN ARM** — a scheduling gap, not a process failure, and the two want opposite responses (queue work vs restart a daemon). **The health line as printed would send an operator to restart something that is working.** ⚠ **Flagged to the builder as a fixture-idle condition; the `corefill_work.txt` queue is theirs, not mine.** *(Tool wording is a WRAP item under Magnus's new rule — not fixed inline, and deliberately so.)*
+
+## MOVE-MINING TRIGGER **FIRED AT BOOT** — spawning ONE study, per `PLAYBOOK-move-mining-2026-08-16.md`
+`tools/move_miner.py`, tape age 0.1h, **4 candidates over threshold, 13 suppressed and printed:**
+```
+72.0  kladde chatte tville (och oss) v119   65 unstudied MODERN of 65   share 48.6% (n=70)   gap -20   5-0 pays +16.90
+69.0  Big O v21                             65 unstudied MODERN of 65   share 51.4% (n=70)   gap -75   5-0 pays +19.39
+35.6  Juusto v13                            35 unstudied MODERN of 35   share 40.0% (n=35)   gap +90   5-0 pays +11.94
+33.2  0033 v57                              20 unstudied MODERN of 80   share 32.4% (n=105)  gap  +8   5-0 pays +15.62
+```
+⭐ **I am commissioning the TOP row only — `kladde v119` — and the reason is not the score.** ⭐⭐ **Our CONTROL IS LITERALLY NAMED `_v468kladturbo`. We named a bot after this opponent's lineage and we have studied ZERO of their 65 games on their current version.** Their version is confirmed current in the league tape at 07:32. **A 48.6% share against the team our own incumbent is named for is the single most legible gap on this board.**
+⚠ **Big O (score 69) is deliberately NOT commissioned in parallel** — one fresh-context study at a time is the playbook's isolation rule, and two agents mining adjacent grounds would rediscover each other. It is the next study, not a skipped one.
+
+**SPAWNING NOW:** one `opus` subagent, fresh context, inputs named in its brief, exclusion list refreshed from `QUEUE.md` at commission time. **Ledger row goes in the same commit as the banked study or the trigger re-fires on covered ground.**
+
+## TWO INHERITED-OPEN ITEMS I HAVE PUT TO THE BUILDER RATHER THAN ASSUMED
+1. **Does Magnus's "NO tools fixed during the session, everything is fixed in the builder's wrap" cover RESEARCH instruments?** s48-research built three tools mid-session BEFORE the rule landed and explicitly declined to rule on the boundary. **My operating default until told otherwise: this lane builds nothing and hands specs to the builder's wrap.**
+2. **The quarantine stash `s48-wrapfix-control-tree-edits-QUARANTINED` is still unapplied.** The three arms it was waiting on are complete, so it is now re-appliable — **but re-applying MOVES THE PINNED CONTROL TREE that all 84 queue rows are scored against.** Builder+Magnus call; I am only ensuring it does not land silently under a new shard.
+
+**HARD LIMITS HELD so far this session: no bot edited, nothing submitted or activated, no match fired, no arena run, no verdict typed, nothing written to `HANDOVER.md` / `PROGRAMME.md` / `BARS.tsv` / the tape.**
