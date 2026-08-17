@@ -70273,3 +70273,56 @@ EXCLUDED: ODINVSSLEIP -- `le` bar, G6-exempt, never subject to the floor
 **D9. ⭐ AN ESTIMATE ARRIVES WITH ITS INTERVAL OR IT DOES NOT ARRIVE — routed: a TOOL (`tools/cluster_ci.py`), adopted into the builder's verdict path, SCOPED to platform surfaces.** Three directional readings died today by quoting the point and computing the uncertainty afterwards. ⚠ **And the scope matters more than the tool: local shards are balanced by construction (DEFF 0.98 measured) so applying platform constants there would inflate intervals 24-35% for correlation that is not there — and an inflated interval makes a floor-stop HARDER and a null EASIER, i.e. it would systematically keep bad arms alive.** ⭐ **I narrowed the builder's own offer of an interval-pass on EVERY screen, because a precondition that fires on everything becomes ceremony.**
 
 **D10. ⚠ THE ARCHIVE'S CONTRIBUTION TODAY WAS DESCRIPTION, NOT IDENTIFICATION — routed: observation, and it is the frame for the eco directive.** The upstream-most link — WHEN the first conveyor exists — was invisible to every downstream instrument until a league-wide descriptive table existed. **Builders over belt is the opening's actual misallocation: we build +1.50 more builders by r8 in 97.4% of games and 3.57 fewer conveyors in 88.0%, and lay our first conveyor 4.42 rounds later — while our first HARVESTER is at parity.**
+
+# ============================================================================
+# 2026-08-17T07:16:25Z — **SIDE LANE s48 WRAP** (trigger: MAGNUS CALLED THE WRAP, relayed as the
+# BUILDER'S WRAP-PING — standing rule, FOURTH firing). **Arm retro ran FIRST per
+# charter — `docs/side-lane-retro.md` v1.17, FIRINGS 17; instance
+# `docs/retro-side-lane-2026-08-17-s48.md`, committed in the same action.**
+# Session 04:16:47Z -> 2026-08-17T07:16:25Z (~3.0 h). 54 commits.
+# ~9 outcome-changing flags - 5 PUBLISHED errors - ~7 killed pre-publication - 0 escalations.
+# ============================================================================
+
+## ⛔⛔ THE ONE THAT CHANGES NEXT SESSION — MAGNUS'S ABSOLUTE TOOLS-AT-WRAP RULE
+
+Verbatim: ***"NO tools should get fixed during the session, everything is fixed in the builders wrap"*** — **absolute, NO carve-out.**
+⇒ ⛔ **THIS SUPERSEDES THE MOMENTUM RULE'S EXCEPTION, AND THAT EXCEPTION IS WHAT PRODUCED THIS SESSION'S LARGEST WIN.** **I re-tagged the `submit_clean` unknown-holder flag `DEFER -> NOW` by arguing from *"unless it breaks something that makes our loop"*; the fix landed inline, mutation-tested, hours before the leg that needed it.** ⇒ **UNDER THE NEW RULE THAT RE-TAG IS NOT PERMITTED.**
+⇒ ⭐ **CONSEQUENCE FOR THIS LANE'S TAGGING, EFFECTIVE NOW: `NOW` CAN NO LONGER MEAN "FIX THE TOOL NOW" — ONLY "CHANGE BEHAVIOUR NOW"** (stop the unsafe action, add a constraint, hold a leg). **The `submit_clean` case would now resolve as *no `submit_clean` runs this session, fix at wrap*.** ⚠ **The flag survives, the remedy changes, and the hazard window stays open longer — Magnus's call, and it is priced.**
+
+## PROCESS DELTAS — routed at write time
+
+**S1. ⭐⭐ PUT THE QUALIFIER WHERE IT CANNOT BE SEPARATED FROM THE CLAIM.** *(behaviour → adopted repo-wide across five independent fixes.)* **The CONTROL belongs in the number (`60 vs Sleipnir`, never bare `60`) · the SHA in the file claim (D20) · the PROVENANCE in the cell's NAME (`ODINRECON` vs `ODINVSSLEIP`) · the INTERVAL with the estimate (`cluster_ci` refuses to print a point alone) · the CONTROL-ERA in the ledger's own COLUMN.** ⛔ **FOUR WERE MECHANICAL AND ONE WAS A RESOLUTION — MINE — AND I SUPERSEDED IT MYSELF SIX MINUTES LATER.** ⇒ **the principle generalises; the attention-held form of it does not.**
+
+**S2. ⛔⛔ THE EVIDENCE'S SCOPE WAS SMALLER THAN THE CLAIM'S — SEVEN INSTANCES, THREE LANES, ONE DAY.** *(instrument → `D21` with clauses (a)-(g) and a rider; `D18` GENERALISED from opponent-version to POPULATION MISMATCH; `D19`/`D20` added.)* **It arrived through CLAIMS, through FIXES, through CAVEATS, through AUDITS, through TOOL CITATIONS and through a MONITORING SET.** ⛔ **THIS LANE PRODUCED FIVE OF THEM AND BROKE THE ROW THAT DESCRIBES IT, THREE TIMES.** ⇒ **the checklist describes a mechanism this lane demonstrates as readily as anyone — the strongest argument that it must be MECHANICAL, not a matter of care.**
+
+**S3. ⛔ SPEED OF ADOPTION IS A COST OF BEING TRUSTED.** *(behaviour → practice.)* **A confident flag from here reached the builder's TREE in under a minute — and it was WRONG (the 06:00 decode boundary, an activation timestamp where the PAIRING boundary belonged, a rule I had cited myself 90 minutes earlier).** ⇒ ***a flag says "here is a thing"; a rule says "do this always" — check enough for the second before phrasing it as the second.***
+
+**S4. ⭐⭐ AN AUDIT RATIFIES WHAT IT DOES NOT TOUCH, IN BOTH DIRECTIONS.** *(instrument → `D21(f)`, two-sided, research's mirror.)* **Correcting a peer's arithmetic while saying nothing about their population ENDORSED the population; the matched repair later REVERSED THE SIGN.** ⇒ **CORRECTOR: before correcting a number's arithmetic, ask whether the number should exist at all. CORRECTED: when a correction lands on a detail, ask what was NOT corrected.**
+
+**S5. ⛔ AN INSTRUMENT THAT ONLY SEES FAILURES PRODUCES A REPORT THAT ONLY CONTAINS FAILURES — and the reporter does not notice, because nothing is missing from what they saw.** *(instrument → a fifth wake path; behaviour → the check form below.)* **All four of my watches were armed in response to something that WENT WRONG. I reported the strict regime as *"2 data-correct + 2 policy-correct"* — four stops — when TWO ARMS HAD PASSED THE SAME LOOK unseen.** ⇒ **the record is 3 stopped of 5, and the regime DISCRIMINATES rather than culls.** ⛔⛔ **AND WORSE: I NAMED THIS GAP AT 07:03Z, ARMED THE WATCH, AND DID NOT AUDIT WHAT IT HAD ALREADY COST — which was a number, already repeated to Magnus.** ⇒ ***A GAP NAMED FORWARD IS NOT A GAP CLOSED BACKWARD.***
+
+**S6. ⭐ BIND THE VERIFICATION TO THE MUTATION, NOT TO THE AUTHOR'S MEMORY.** *(behaviour → adopted; it is the only thing that stopped the third table break surviving.)* **Three identical breaks of my own primary artefact; the repair that held was running the structure check IN THE SAME SHELL COMMAND as the edit.**
+
+## ⚠ WHAT A SUCCESSOR MUST NOT INHERIT UNCHECKED — **SPLIT PER S2, s47**
+
+**RE-DERIVED AT THIS WRAP (checked, current at 07:15:27Z):**
+1. **HOLDER `v155` "Sleipnir v1"**, Moonfarm, **1799 (Emerald), rank #19/126, 1165 matches** — from `fcode status` via `now.py`, NEVER a poller (D28). ⚠ **This line expires; the slot moved TWICE today (v155->v157 06:00:23Z, v157->v155 07:08:01Z).**
+2. **HOLDER AND CONTROL COINCIDE** (`INCUMBENT bots/_v468kladturbo` = v155). ⚠ **Arms that ran 06:00-07:08 were screened against a NON-HOLDER and their rows keep that disclosure.**
+3. **THREE ARMS RUNNING:** `ROUTESCORE` 2704/5400 · `BELTBREAK-EARLY` 2523/5400 · `ODINVSSLEIP` 2046/2700. **All certified two-clock; all `control=_v468kladturbo`.**
+4. **REGIME RECORD: 3 STOPPED OF 5 at the 1000-look** (+`ECOMMIT` at the 400 catastrophe). **NOT "4 firings" — that was mine and it lacked a denominator.**
+5. **Repo clean: 54 side-lane commits, 0 unpushed.**
+
+**NOT RE-DERIVED — inherited and labelled so:**
+6. **`ODINVSSLEIP` is the ONLY instrument that can arbitrate Sleipnir vs Odin** — the ladder cannot, because tenures are hours (Sleipnir 10h20m unresolvable; Odin 68min). *Builder's framing, my synthesis, not independently re-measured.*
+7. **Odin's ladder record is EMPTY OF MEANING** — research pre-stated ~30 clusters (~16:2xZ) and it got 68 minutes. *Their horizon, confirmed by the rollback, not re-derived by me.*
+8. **Six builder wrap debts carry my flags** (`overnight.sh` substring scorer · `move_miner` · `fleet_dispatch`'s stale `--control` · `prereg_check`'s missing rule · `queue_check`'s silent refusal · the relaunch race). *Theirs to build, now under the ABSOLUTE wrap rule.*
+
+## SIDE LANE STATE — VERIFIED, NOT ASSERTED
+
+* **I edited no bot, ran no arena, fired no match, typed no verdict, took no platform action, and wrote nothing to `HANDOVER.md`, `PROGRAMME.md`, `QUEUE.md`, `BARS.tsv` or the tape.** **Zero subagents spawned** (this session's instruction).
+* **FIVE WAKE PATHS ARMED, all detached-log CONSUMERS:** ship-chain commits · ws1 heartbeats · corefill launches/holds · the CANCELLATION LEDGER · and a COMPLETION watch **added at 07:02Z because the first four all keyed on FAILURE**.
+* ⭐ **CHECK FORM FOR THE NEXT BOOT, and it is the session's most transferable item: DO NOT ONLY VERIFY THE WATCHES ARE ALIVE. ENUMERATE WHAT THEY CANNOT SEE — specifically (a) where does a DECISION travel that no file records, and (b) what does SUCCESS look like, and would anything fire?** **Both of this session's coverage holes were found that way and by no instrument.**
+
+## DIES WITH ME
+
+**Nothing.** All five watches are consumers of EXISTING detached logs — **what dies is the consumer, not the watch.** ⇒ **a successor re-arms on the existing logs rather than starting new processes, and arms ALL FIVE**: the commit watch is structurally blind to activations, the slot watch caught BOTH holder changes today, and the completion watch exists because the other four cannot see an arm succeeding.
