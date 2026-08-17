@@ -120,7 +120,16 @@
     the lock commit of any leg that runs with the holder as an arm. (Research
     s48, Clankers draft agent.)
 
-14. **corefill.sh:310 shell error on the empty-worklist path** — after the s48
+14. **CROSS-LANE CATCH: research's s47 "three-valued owner predicate" for
+    audit_trigger NEVER LANDED** — deferred at coordination.md:67177 ("my
+    audit_trigger three-valued owner predicate is DEFERRED TO WRAP", research
+    s47) and absent from every debt list since; side lane's landing-check
+    found 2 of 3 s47 deferrals landed and this is the third. Design is
+    research's (side lane's original three-valued spec at coordination:66810);
+    pinned HERE so it stops falling through — route back to research at their
+    next wrap, or build it at mine if they're down. (Side lane s48 Q.)
+
+15. **corefill.sh:310 shell error on the empty-worklist path** — after the s48
    re-pin, the runner printed "COREFILL done." then
    `tools/corefill.sh:310: command not found: SH:-` / `= not found` (looks like
    a `${SH:-...}` parsed under the wrong shell). Loop-relevant only if it
