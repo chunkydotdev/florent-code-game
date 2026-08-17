@@ -69626,3 +69626,25 @@ D21(d) a MECHANICAL FIX inherits the scope of its diagnosis        (mine)
 ```
 ⇒ **(d), (e) and (f) are all "the author saw the problem and it did not help" — naming a defect does not neutralise it, whether the naming is in the fix, in the correction, or in the same sentence.** **Offered to the side lane as theirs to place; I have supplied three of the six instances today and am the wrong judge of whether this is one family or two.**
 ⚠ **AND THE OPERATIONAL FORM I WOULD ACTUALLY USE, because a taxonomy does not fire: IF A SENTENCE CONTAINS BOTH A CONCLUSION AND THE REASON IT MIGHT BE WRONG, THE CONCLUSION DOES NOT GO IN.** Split them, or drop it. **That is checkable while writing, which is the only place it can be caught.**
+
+--- 2026-08-17T06:09:46Z ⭐ **SIDE LANE s48 — CLOSING MY OWN LOOP: THE SHIP I CERTIFIED AT s47 NOW HAS ITS CLOSED TENURE READ.** ---
+
+**I certified the Sleipnir ship at 19:4xZ yesterday. `v157 Odin` ended its tenure at 06:00:23Z. This is the other end of that certification, and the honest version is less flattering than the ship record's.**
+
+**RESEARCH'S CLOSED-TENURE READ (19:38:40Z -> 06:00:23Z, ~10h20m, per-match, `ourver == 155`):**
+```
+31 matches   19-12   game share 82/155 = 0.5290   net +50.15 Elo   rating 1754.5 -> 1804.7   mean opponent 1820
+clustered on MATCH:     [0.4387, 0.6194]   31 clusters   DOES NOT EXCLUDE 0.5
+clustered on OPPONENT:  11 clusters        ** NO VERDICT ISSUED **
+```
+⇒ ⛔ **SLEIPNIR'S ENTIRE TENURE CANNOT DISTINGUISH ITS GAME SHARE FROM 50%.** ⭐ **The +50.15 Elo is an ACCOUNTING FACT about what the rating did; the share is an ESTIMATE of what the bot is. Same 155 games, different questions, and only the second carries an interval — research's split, and it is right.**
+⭐ **AND `EXCLUSION_MIN_CLUSTERS` REFUSED A VERDICT AT 11 OPPONENT-CLUSTERS — the gate this lane asked about at 05:2xZ ("is 8 derived or a round number?") firing on a real production question four hours later, and refusing rather than warning.**
+
+## ⛔ MY OBJECTION, AND WHAT IT CHANGED
+**Research concluded Sleipnir *"does NOT show an improvement"* over v152 — 0.529 (n=155) against 0.536 (n=360), ACROSS DIFFERENT OPPONENT FIELDS, with *"on a HARDER field"* in the same sentence.**
+⛔ **Two problems: equal raw shares against unequal fields do not mean equal strength (and ELO ALREADY PERFORMS THAT ADJUSTMENT — it is what Elo is FOR); and decisively, `SLEIPH2H` ALREADY ANSWERS THIS QUESTION BETTER — controlled head-to-head, same maps and seeds, n=2,700, 55.33% [53.46, 57.21], EXCLUDING 50.**
+✅ **Corrected by research before it entered the ship record (`cec1d4b7`), with the generalisation that is better than my objection: ⭐⭐ THE FRESHEST DATA IS NOT THE BEST DATA.** **The tenure read was minutes old and uncontrolled at n=155; SLEIPH2H was a day old, controlled, at n=2,700. Recency was beating quality until it was challenged.**
+⇒ **THE DEFENSIBLE PAIR, and it is a WEAKER claim about the tenure and a STRONGER one about the bot: Sleipnir gained 50 Elo in ten hours against a strong field; its ladder tenure is too short to resolve its true share (43.9-61.9%); and its superiority over v152 rests on SLEIPH2H, not on the tenure.**
+
+⭐ **AND ONE SHAPE WORTH THE RETRO — third variant today of "naming a defect does not neutralise it": THE CONFOUND AND THE CONCLUSION WERE IN THE SAME SENTENCE.** *"essentially identical, on a HARDER field"* — **the clause that invalidates the comparison sits immediately after it.** ⇒ **a confound acknowledged beside its conclusion reads as due diligence and functions as none.** **(The other two: D21(e), a correction inheriting the defect it corrects; and the near-vs-far proxy defence that addressed measurement error while the confound was selection.)**
+✅ **METHOD NOTE ON MY OWN OBJECTION: I checked the ARTEFACT rather than assuming it matched the relayed message — their commit MESSAGE was correctly scoped to the tenure while the BANKED TEXT was not. D20 applied to my own flag, and the check confirmed rather than dissolved it.**
