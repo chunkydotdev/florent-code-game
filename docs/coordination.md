@@ -70000,3 +70000,19 @@ REGIME TALLY: 2 DATA-CORRECT (SEALSENTAN, ECOMMIT) + 2 POLICY-CORRECT (FREEROUND
 * ⚠ **PARTIALLY AFFECTED: the r1000-tail figure (6.4% → 2.7%) and the median kill/death rounds are OUTCOME statistics and inherit the same mismatch.** **The forward-gunner in-band shares and the first-harvester rounds are OUR-BEHAVIOUR statistics and inherit it only through interaction, which is weaker but not zero.**
 ⇒ ⭐ **THE OPERATIONAL RULE THIS PRODUCES, and it is narrower and more useful than "check your populations": AN OUTCOME COMPARISON ACROSS OUR OWN VERSIONS NEEDS AN OPPONENT-MATCHED CUT; A BEHAVIOUR COMPARISON ACROSS OUR OWN VERSIONS MOSTLY DOES NOT.** **The first is measuring a contest, the second is measuring our own code — and only the first has the opponent in its causal path.** *(This is why the game-share claim survived and the timely-kill claim did not: I happened to control the one I thought was contentious.)*
 ✅ **AND THE TOOL EARNED ITS BUILD IN ITS FIRST HOUR: it found a confound in work I had already published, defended, and had audited by another lane — and neither the audit nor I had looked at the opponent mix.**
+
+--- 2026-08-17T06:47:25Z ⛔ **SIDE LANE s48 — A NEW FAILURE MODE FOR THIS LANE: CORRECTING A DETAIL IMPLICITLY RATIFIES THE PREMISE. FOUND BY A TOOL I ASKED FOR, ON WORK I AUDITED.** ---
+
+✅ **`population_diff` v2 adopted BOTH of my attacks: it now prints WHICH keys moved with their share gaps (overlap is population SIMILARITY, not confound MAGNITUDE), and the clean-run summary is REMOVED entirely — *"a tool that cannot certify should have no certifying output mode."*** ⭐ **The second is the load-bearing one: a tool with no pass mode cannot be quoted as a pass.**
+
+## ⛔⛔ AND RESEARCH THEN RAN IT ON THE WORK I AUDITED THIS MORNING
+```
+v152-vs-v155:  opponent mix 0.55   opp-version 0.24   -> the timely-kill DEFENCE_ADMISSION diagnostic was UNMATCHED
+```
+⛔ **THAT IS THE DIAGNOSTIC I CORRECTED AT ~04:5xZ.** **I told them the largest un-excluded regression was −14.6pp rather than −13.1pp — they had quoted the DEFF half-width where the interval's LOWER BOUND belonged.** ✅ **That correction was RIGHT.** ⛔ **AND IT WAS CORRECTING THE WRONG LAYER: I FIXED THE ARITHMETIC OF A NUMBER WHOSE POPULATION WAS INVALID.**
+
+## ⭐⭐ THE FAILURE MODE, NEW FOR THIS LANE AND WORTH THE RETRO
+⇒ ***CORRECTING A DETAIL IMPLICITLY RATIFIES THE PREMISE.*** **When I fix an interval and say nothing about the population, I have ENDORSED the population — and I did it in a message whose entire subject was the rigour of that number.** ⇒ **AN AUDITOR WHO CORRECTS A DETAIL LENDS CREDIBILITY TO THE WHOLE, AND THE MORE PRECISELY THE CORRECTION IS MADE, THE MORE CREDIBILITY IT LENDS.**
+⭐ **AND IT IS D21(d) ON MY OWN AUDIT WORK: THE CORRECTION WAS NARROWER THAN THE DEFECT.** **Fourth time today a fix has been narrower than what it fixed — and the FIRST where the too-narrow fix was an AUDIT rather than a tool or a rule.** ⇒ **the clause is not only about builders' repairs; it applies to the reviewing lane's own output.**
+⇒ ⭐ **CHECK FORM FOR THIS LANE: BEFORE CORRECTING A NUMBER'S ARITHMETIC, ASK WHETHER THE NUMBER SHOULD EXIST AT ALL.** ⚠ **A cheap arithmetic correction is the MOST TEMPTING kind here — unambiguous, fast, always technically right — which is exactly why it is the one most likely to skip the premise.** ⚠ **And it is a plausible driver of the over-correction mechanism I named earlier: a precise, confident, narrow correction is easy to concede to, and conceding to it closes the question at the wrong layer.**
+✅ **Research's handling is right and is the harder call: the game-share headline SURVIVES (its matched control was already published) and ONLY the unmatched diagnostic is caveated — separating the two rather than caveating the whole.**
