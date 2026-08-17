@@ -70202,3 +70202,25 @@ IN (20<=d2<100) beats NEAR (d2<20)   in 2,729 / 6,157 team-games = 0.4432  mean 
 ⇒ **OPERATIONAL FOR BELTBREAK: keep the `20<=d²<100` siting rule, and cite §10.4's geometric identity as its reason — NOT my belt-excess ordering, which does not survive a within-game control.** **The arm still targets the right band; the sentence justifying it has to change.**
 ⚠ **CLUSTERING NOT APPLIED: these are team-games, and team-games within a match are clustered. The naive intervals are ±0.0125 and ±0.0139; both results sit far enough from 0.5 to survive a doubling of width, so I have not run the bootstrap — stated so nobody assumes I did.**
 ✅ **AND THE PROCESS NOTE: THIS IS THE FIRST FINDING TODAY I RAN THE CONTROL FOR BEFORE SENDING IT. It cost four minutes and it changed what the sentence could say — which is exactly what the previous six confounds cost far more to learn.**
+
+--- 2026-08-17T07:12:10Z ⛔ **SIDE LANE s48 — CORRECTING A NUMBER I REPEATED: THE REGIME IS 3 STOPPED OF 5, NOT 4 FIRINGS. MY INSTRUMENT ONLY SEES FAILURES.** ---
+
+**I reported the strict regime's record as *"2 data-correct + 2 policy-correct"* — to the builder and to Magnus, more than once.** ⛔ **THAT IS A NUMERATOR WITH NO DENOMINATOR.**
+```
+AT THE 1000-LOOK (subject to TREND-FLOOR):
+  STOPPED  SEALSENTAN      46.07 [43.15,48.99]  excludes 50   DATA-correct
+  STOPPED  FREEROUND       49.18 [46.29,52.06]  contains 50   POLICY-correct
+  STOPPED  BELTBREAK-LATE  47.39 [44.68,50.10]  contains 50   POLICY-correct
+  PASSED   ROUTESCORE       n=2495, no cancellation row  -> prefix >= 52.0
+  PASSED   BELTBREAK-EARLY  n=2351, no cancellation row  -> prefix >= 52.0
+                        ==> 3 STOPPED OF 5. NOT 3 OF 3.
+SEPARATELY, killed at the 400 CATASTROPHE mark: ECOMMIT 36.58 [32.41,40.74]  DATA-correct
+EXCLUDED: ODINVSSLEIP -- `le` bar, G6-exempt, never subject to the floor
+```
+⭐⭐ **THIS MATERIALLY CHANGES THE PICTURE: TWO ARMS CLEARED A 52.0 FLOOR AGAINST A CHAMPION CONTROL, so their prefixes were genuinely >=52.** ⇒ **the strict regime is DISCRIMINATING, not CULLING.** ⭐ **My 04:40Z arithmetic (a true-50 arm dies 89.7% of the time) remains correct AS ARITHMETIC; the OBSERVED regime has passed 40% of what it looked at. Both true, and I reported the one that was not the record.**
+
+## ⛔ THE CAUSE IS THE BLIND SPOT I BANKED AT 07:03Z, AND THE TIMING IS THE LESSON
+**My cancellation-ledger watch fires on STOPS. A SURVIVAL IS SILENT.** ⇒ **I reported everything my instrument showed me, and my instrument only shows failures.**
+⭐⭐ **AN INSTRUMENT THAT ONLY SEES FAILURES PRODUCES A REPORT THAT ONLY CONTAINS FAILURES — AND THE REPORTER DOES NOT NOTICE, BECAUSE NOTHING IS MISSING FROM WHAT THEY SAW.**
+⛔⛔ **AND THE PART THAT IS WORSE THAN THE ERROR: I NAMED THIS GAP IN THE ABSTRACT AT 07:03Z, ARMED A COMPLETION WATCH, AND DID NOT GO BACK TO AUDIT WHAT IT HAD ALREADY COST.** **It had already cost a number, and that number had been repeated to Magnus in the intervening hour.** ⇒ ***A GAP NAMED FORWARD IS NOT A GAP CLOSED BACKWARD.*** **Banked as a RIDER on D21 rather than an eighth clause — the VENUE is unchanged (an instrument's domain narrower than the claim's) and only the REMEDIATION is new.**
+⚠ **FIFTH TIME TODAY THIS SHAPE HAS LANDED ON MY OWN WORK, AND THE FIRST THAT REACHED A FIGURE I REPEATED MORE THAN ONCE.**
