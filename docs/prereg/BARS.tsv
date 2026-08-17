@@ -41,6 +41,30 @@
 # ablation arm is indistinguishable from an unregistered normal arm and IS
 # exposed to the catastrophe rule — register ablations before they reach n=400.
 #
+# ⛔⛔ HOW TO APPEND A ROW — THE CHECK IS BOUND TO THE MUTATION, IN ONE SHELL.
+# 2026-08-17 (s50): a RINGLADDER bar row was appended with an `awk` one-liner
+# that SILENTLY PRODUCED NOTHING (`NR==FNR` with an empty first file skips every
+# record), while the corefill worklist row landed normally. Result: the worklist
+# carried the shard ~2 minutes before this registry did — a BARS-after-worklist
+# inversion, i.e. a live shard with no bar. Exposure was zero only because the
+# earliest consumer look is `auto_gate` at n=400 and the shard had ~14 rows.
+# The append "succeeded" by every signal anyone looked at: exit 0, no stderr.
+# ⇒ AN APPEND IS NOT DONE UNTIL THE ROW IS GREPPED BACK OUT OF THE FILE, IN THE
+#   SAME SHELL CALL. Not the next command, not by eye — a separate look is a
+#   different check that can be skipped, and this one was.
+#
+#   ROW=$'MYSHARD\t51.33\tge\tdocs/prereg/SCREEN-x-2026-08-17.md:120'
+#   printf '%s\n' "$ROW" >> docs/prereg/BARS.tsv && \
+#     grep -qxF "$ROW" docs/prereg/BARS.tsv \
+#     && echo "BARS ROW PRESENT: $ROW" \
+#     || { echo "⛔ BARS APPEND PRODUCED NOTHING — DO NOT QUEUE THE WORKLIST ROW"; exit 1; }
+#
+# `grep -qxF` is whole-line and literal, so a partial write or a mangled tab
+# fails the check instead of passing it. Use `printf`, never `echo -e`/`awk`
+# gymnastics: the failure above came from a text tool that can legally emit
+# zero bytes. And keep the order — BARS ROW FIRST, worklist row second; the
+# grep-back is what earns the right to queue the shard.
+#
 # shard	bar	direction	source
 BODYAWR	51.93	ge	docs/prereg/SCREEN-bodyaware-2026-08-14.md:313
 BODYAWRR	51.93	ge	docs/prereg/SCREEN-bodyaware-2026-08-14.md:313
