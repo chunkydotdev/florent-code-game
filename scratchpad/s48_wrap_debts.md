@@ -26,7 +26,22 @@
    back NEGATIVE (defect isolated to submit_clean); scope was ship-chain
    live-holder readers only, not a repo-wide unknown-folding audit.
 
-3. **corefill.sh:310 shell error on the empty-worklist path** — after the s48
+3. **prereg_check: add the DEFENCE_ADMISSION_BAR rule** — 0 matches for
+   `DEFENCE_ADMISSION|RMST|r300` (35 `def ` positive control), unchanged since
+   s47's measurement; the s47 WRAP-FIX agent specced it at ~10 lines + fixtures
+   with both test verdicts routed. ⭐ JUSTIFICATION UPGRADED s48: research
+   applied the bar BY HAND for the v155-vs-v152 timely-kill read and slipped
+   exactly the way the rule would catch — quoted the DEFF half-width where the
+   interval's LOWER BOUND belonged (largest un-excluded regression −14.6pp,
+   not −13.1pp), erring in the null-flattering direction. n=1 and caught
+   (side lane), but the failure is no longer hypothetical. Cheapest item,
+   best-evidenced.
+
+4. **queue_check: prose-negation escape** — `GREP-TREE` appears only in a
+   comment (queue_check.py:571), 0 rows use the token. Re-derived s48 by the
+   side lane, still open.
+
+5. **corefill.sh:310 shell error on the empty-worklist path** — after the s48
    re-pin, the runner printed "COREFILL done." then
    `tools/corefill.sh:310: command not found: SH:-` / `= not found` (looks like
    a `${SH:-...}` parsed under the wrong shell). Loop-relevant only if it
