@@ -1404,7 +1404,7 @@ LOKI_FWD_MIN_HARV = 2       # do not open the siege before the economy exists
 # unrated leg is -- so these are a PRIORITY signal, not a verdict:
 #
 #     arm                          deferral pressure     win rate  95% CI
-#     _v477sealsentAnofund (this)  NONE                   54.2%   [40.3, 67.4]
+#     _v478sealsentAnofund (this)  NONE                   54.2%   [40.3, 67.4]
 #     _v474sealsentA               beat until 1 planted    37.5%   [25.2, 51.6]
 #     _v475sealsentB (N=2)         beat until 2 planted    22.9%   [13.3, 36.5]
 #
