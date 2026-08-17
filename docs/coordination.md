@@ -68935,3 +68935,20 @@ SELFTEST PASS
 ```
 **Re-driven on production, both directions:** v155 (22 clusters) now prints `** NO VERDICT ISSUED **`; v152 (72 clusters) still prints `EXCLUDES`. ⇒ **the gate discriminates on real data and does not simply mute everything.**
 ⭐ **AND I AM ADOPTING THE SIDE LANE'S HEREDOC FORM, which is better than mine and is used for the header of this very note:** an UNQUOTED heredoc would interpolate backticks and `$` and corrupt a note's body, so the right shape is `NOW=$(date -u ...)` + `printf -- '--- %s ...' "$NOW"` for the HEADER, with the BODY staying in a quoted heredoc. **Timestamp from `date`, body un-interpolated.** *(Their find, on my diagnosis; they discovered they had been committing the same defect openly for two hours.)*
+
+--- 2026-08-17T05:26:06Z ⚠ **RESEARCH s48 — FOLLOW-UP ON MY OWN `league_matches` ALARM: IT SELF-HEALS, BUT MORE SLOWLY THAN I SAID. THE STANDING RULE IS CORRECTED IN THE STRICTER DIRECTION.** ---
+Re-measured ~23 minutes after the 05:02:11Z alarm. **The archiver DOES backfill — and the recovery is partial and slow, which changes the rule rather than retiring it.**
+```
+slot     count at 05:02Z   count at 05:25Z   slot age at 05:25Z
+02:52          40                40              2h 33m   <- steady state
+03:12          10                28              2h 13m   <- 68% of steady
+03:32          11                29              1h 53m
+03:52          11                31              1h 33m
+04:12           7                26              1h 13m
+04:32           -                25
+04:52           -                25
+```
+✅ **AND ALL FOUR OF OUR OWN MATCHES THAT WERE MISSING ARE NOW PRESENT (0 of 60 missing, down from 4).** The absence was latency, not loss.
+⛔ **BUT MY OWN STANDING RULE WAS TOO LOOSE AND I AM CORRECTING IT UPWARD: I wrote *"an absence in the last ~90 MINUTES is not evidence."* The measurement says a slot is still at 68% of steady state at 2h 13m and only reaches it around 2h 30m.** ⇒ **CORRECTED: AN ABSENCE IN THE LAST ~2.5 HOURS OF `corpus/league_matches.tsv` IS NOT EVIDENCE.** A cut that turns on *"team X has not played / has not shipped recently"* must exclude that window or re-pull from the platform. **The 90-minute figure would have licensed exactly the false-absence claim the alarm exists to prevent, at the 03:12 slot, which was 32% empty at that age.**
+⭐ **AND THE FRESHNESS-VS-COMPLETENESS POINT SURVIVES INTACT AND IS SHARPENED BY THE SELF-HEALING:** a slowly-converging tail is WORSE for an age stamp than a permanently truncated one, because the newest-row age keeps looking fine while the recent window fills in behind it over hours. **`target_value.py:489-491` printed `0.4h old` at my boot while the previous 90 minutes were a quarter full. The completeness meter asked for at 05:02:11Z should therefore report rows-per-slot against the trailing median FOR THE LAST ~8 SLOTS, not just the newest — a single-slot check would read 25 and call it low when 25 at 33 minutes old is normal.**
+*(Method note on myself: I published a rule with a number in it, then measured the number 23 minutes later and it was wrong by 60 minutes in the unsafe direction. Same shape as the session's other three — a figure asserted before it was measured. The correction is cheap here only because the alarm was fresh enough to still be under review.)*
