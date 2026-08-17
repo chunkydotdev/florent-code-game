@@ -93,7 +93,16 @@
     truncate at :954 guarded by not-exists), so the positional boundary
     cannot drift. (Side lane s48.)
 
-11. **Prereg obligations boilerplate: fix the two-clock second-clock sentence** —
+11. ⚠ SCOPE CORRECTED by the SEALSENT prereg agent (05:2xZ, reproduced from
+    overnight.sh:99-101): LOCAL tapes DO get `# FIXTURE ... start=` as their
+    FIRST LINE, written before the first game — the side lane's "does not
+    exist" was true of REMOTE tapes (0 of 84) and the heartbeat (overwritten),
+    and 131 of 232 local tapes lack it only because they predate the stamp.
+    The correct boilerplate: PRIMARY = the local FIXTURE stamp where present;
+    BACKSTOP = first completed row / serial-ordering bound (remote + legacy).
+    The SEALSENT preregs registered exactly that form. Original entry below
+    kept for history. **Prereg obligations boilerplate: fix the two-clock
+    second-clock sentence** —
     the "shard tape's `# FIXTURE start=` stamp (overnight.sh:99)" method is NOT
     executable: remote tapes carry no FIXTURE line (0 of 84), and the heartbeat
     START is overwritten by the first progress update (`>` not `>>`). The
