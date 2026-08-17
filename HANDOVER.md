@@ -60,6 +60,14 @@ cross-subsystem (D1 s47). Regime record today: 3-of-5 stopped at the 1000-look
   +0.205 slope is RETRACTED — within-game control failed; cite the 49/49
   probe, never the slope); keep the rate+count pairing hedge.
 
+## ⛔ WRAP-FIX CONSTRAINT (widened post-incident): NEVER MUTATE ANY ARTIFACT A
+RUNNING PROCESS READS (bot trees, scripts, worklists) — two same-hour instances.
+Also: ROUTESCORE stopped at the 2700-look (51.30 [49.48,53.12], third policy-
+correct; routescore-final) — the FIRST Sleipnir-controlled floor instance with
+the CI containing the floor, attached to the record for whenever Magnus
+revisits the pricing. BELTBREAK-EARLY is the board's sole full-distance
+survivor. ODINVSSLEIP window-clean by certification.
+
 ## VERDICTS TYPED TODAY (results.tsv; all control=Sleipnir unless stated)
 KLADTURBO local 61.09 CONFIRMS the ship both-hosts · KILLTILER #87 REAL NEG
 48.43 · V140VS152 cert 57.02 (transitivity verified QUANTITATIVELY — amended
