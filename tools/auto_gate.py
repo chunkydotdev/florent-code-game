@@ -110,18 +110,49 @@ LOCAL : `touch scratchpad/corefill_cancel/<SHARD>`. That is corefill.sh's own
         ⛔ REQUIRES A LIVE REAPER. If no `corefill.sh` process is running, the
         cancel file has nobody to act on it AND nothing will launch the next
         item. We REFUSE to apply in that case rather than leave a dud flag.
-REMOTE: ⛔ REPORT ONLY. THERE IS NO PER-SHARD CANCEL PRIMITIVE ON A WORKER.
-        `orchestrate.sh` offers `stop` (writes a global STOP file — worker.sh
-        run_shard returns 10 and the shard loop BREAKS, halting the whole host,
-        not advancing to the next shard) and `kill` (whole worker). `stop` is
-        additionally a NO-OP during curfew, because worker.sh calls
-        curfew_wait() BEFORE its STOP test. And `stop` + `start` is worse than
-        either: cmd_start does `rm -f STOP`, so a sleeping worker wakes into a
+REMOTE: `tools/remote_cancel.py` — LIVE SINCE s48 (2026-08-17). Read its header
+        for the guards; what matters here is what changed and why it is safe.
+
+        ⛔ THE HISTORY, KEPT BECAUSE IT IS THE REASON THE GAP EXISTED AND STILL
+        CONSTRAINS THE FIX. This clause read REPORT ONLY — THERE IS NO PER-SHARD
+        CANCEL PRIMITIVE ON A WORKER, and it was CORRECT when written:
+        `orchestrate.sh` offered `stop` (a GLOBAL STOP file — worker.sh
+        run_shard returns 10 and the shard loop BREAKS, halting the whole host
+        WITHOUT advancing to the next shard) and `kill` (whole worker). `stop`
+        is additionally a NO-OP during curfew, because worker.sh calls
+        curfew_wait() BEFORE its STOP test. And `stop` + `start` was worse than
+        either: cmd_start does `rm -f STOP`, so a SLEEPING worker wakes into a
         world with no STOP file and double-subscribes the box, which silently
         corrupts every row both workers produce (`--tle 10` is wall-clock).
-        ⇒ We print the decision and the exact manual sequence. We never execute
-        it. Inventing a compound remote cancel is exactly the "do not invent a
-        second mechanism" failure.
+        We printed the decision and the manual sequence, and refused to execute
+        it, because inventing a compound remote cancel is exactly the "do not
+        invent a second mechanism" failure.
+
+        ⭐ WHAT CHANGED. `orchestrate.sh cancel <host> <SHARD> <reason>` now
+        exists — it writes the `results/<SHARD>.COMPLETE` skip marker whose TEXT
+        says `CANCELLED at <n> rows`, never `reached n/TARGET`, and worker.sh
+        reads that marker at shard START (worker.sh:254) and SKIPS the shard.
+        That IS the per-shard primitive the clause above said did not exist. The
+        double-subscription hazard is not inherent to STOP either: it is what
+        happens when you `start` without VERIFYING the old worker died. So the
+        composition is stop -> POLL until the host's own `worker: 0` -> cancel
+        -> start -> verify `WORKER up` in worker.out, with a refusal at every
+        step that cannot be verified. No new mechanism; the existing one-way
+        primitives in sequence.
+
+        ⇒ WHY IT IS AUTOMATED AT ALL (Magnus, 2026-08-17, verbatim): *"I don't
+        want you to stop and manage cores myself, can this be automated?"* —
+        asked after a builder hand-stopped KLADLADDER on work-server-1 (42% at
+        n=3,121) because this clause made the stopper blind on 2 of 3 hosts.
+
+        ⛔ WHAT IT STILL WILL NOT DO, and each is a guard driven both ways in
+        remote_cancel.selftest: act on a stale heartbeat (BLIND is not stopped);
+        halt a host for a shard that is NOT the one running (that shard gets its
+        skip marker instead — SKIP-POISONED — so no other shard's rows are ever
+        interrupted); act during curfew; relaunch without a verified halt, a
+        verified marker, and a verified `WORKER up`. Every unverified step fails
+        toward a STOPPED host: wrong-toward-sleeping costs cores,
+        wrong-toward-running costs rows.
 
 ROWS ARE ALWAYS KEPT. Nothing here deletes data. A stopped shard is readable and
 under-powered; `tools/overnight_read.py` already pools partial shards and prints
@@ -138,8 +169,9 @@ to imitate: SEALFLOOR6 went out as FUTILITY-ALONE.
 
 USAGE
     tools/auto_gate.py                 # --dry-run is the DEFAULT. Changes nothing.
-    tools/auto_gate.py --apply         # actually cancel (local shards only)
+    tools/auto_gate.py --apply         # actually cancel — LOCAL and REMOTE
     tools/auto_gate.py --selftest      # synthetic fixtures, every guard both ways
+    tools/remote_cancel.py --selftest  # the remote stop path's own guards
 """
 
 from __future__ import annotations
@@ -900,9 +932,16 @@ def _rel(p: Path) -> str:
 def results_row(sh: Shard, dec: Decision, ts: str) -> str:
     barstr = (f"{dec.bar.value:.2f} ({dec.bar.direction}, {dec.bar.source})"
               if dec.bar else "NONE — catastrophe rule needs no bar")
+    # The surface and the control travel WITH the number, per the standing
+    # "numbers carry subjects" rule: a remote row was produced on other
+    # hardware, and a cancellation says nothing reusable unless the reader knows
+    # what it was measured against.
+    where = (f"SURFACE: remote worker {sh.host}. " if sh.surface == "remote"
+             else "SURFACE: local. ")
     desc = (
         f"AUTO-STOP {sh.id} at MARK-{dec.mark} n={sh.tape.n} on {ts} by tools/auto_gate.py "
-        f"--apply. SHARE {dec.share:.2f}% [{dec.lo:.2f},{dec.hi:.2f}] (95%, naive "
+        f"--apply. {where}CONTROL: {sh.ctrl or 'unknown'}. "
+        f"SHARE {dec.share:.2f}% [{dec.lo:.2f},{dec.hi:.2f}] (95%, naive "
         f"1.96*sqrt(p(1-p)/n), DEFF 0.98 local so no inflation). BAR: {barstr}. "
         f"RULE CLAUSE FIRED: {dec.clause} — {dec.detail} "
         f"⛔ THIS IS NOT A VERDICT AND MUST NOT BE READ AS ONE. It is an OPERATIONAL "
@@ -936,29 +975,98 @@ def results_row(sh: Shard, dec: Decision, ts: str) -> str:
                       f"{dec.hi / 100:.4f}", str(sh.tape.n), "cancellation", desc])
 
 
+def ledger_line(ts: str, sh: Shard, dec: Decision, phase: str) -> str:
+    """One ledger row. TWELVE columns since 2026-08-17 (s48).
+
+    ⛔ THE TWO NEW COLUMNS ARE APPENDED, NEVER INSERTED, so every by-index
+    reader written against the 9- and 10-column eras stays correct — the same
+    rule the `fired_on` column followed. `host` names WHERE the shard ran
+    (`-` for local); `control` names WHAT it was measured against, which a
+    cancellation row could not previously distinguish: "failed vs the weak
+    baseline" and "failed vs the champion" are different facts and the strict
+    regime mints many of the latter into a pool advertised for combination
+    mining (s48 wrap debt 10).
+    """
+    fo = f"{dec.fired_on:.2f}" if dec.fired_on is not None else "-"
+    return "\t".join([ts, sh.id, phase, dec.mark, str(sh.tape.n),
+                      f"{dec.share:.2f}", f"{dec.lo:.2f}", f"{dec.hi:.2f}",
+                      dec.clause, fo, sh.host or "-", sh.ctrl or "-"])
+
+
+def _ledger_append(ledger: Path, line: str) -> None:
+    ledger.parent.mkdir(parents=True, exist_ok=True)
+    if not ledger.exists():
+        ledger.write_text("#ts\tshard\tphase\tmark\tn\tshare\tci_lo\tci_hi\tclause"
+                          "\tfired_on\thost\tcontrol\n")
+    with ledger.open("a") as fh:
+        fh.write(line + "\n")
+
+
+def apply_remote_stop(sh: Shard, dec: Decision, *, ledger: Path, results: Path,
+                      ts: str, runner=None, **kw) -> tuple[bool, str]:
+    """The remote stop cycle, via tools/remote_cancel.py.
+
+    ⛔ THE CLAIM IS WRITTEN ONLY ONCE A MUTATION IS ABOUT TO HAPPEN, and that
+    ordering is deliberate in BOTH directions:
+      * a REFUSAL (stale heartbeat, curfew, not-the-running-shard, unreadable
+        status) writes NO ledger row, so the next 600s tick can act once the
+        condition clears. A refusal is not a decision about the arm.
+      * once we touch the host, the CLAIM stands even if a later step fails —
+        so nothing auto-retries a half-finished cycle. A shard that dies is
+        logged and LEFT (the fleet_queue rule); recovering it is a human
+        decision with the evidence in front of them.
+    """
+    import remote_cancel
+
+    plan = remote_cancel.plan_cancel(sh.host, sh.id,
+                                     runner=runner or remote_cancel.orch_runner)
+    if plan.verdict == "REFUSE":
+        return False, ("REFUSED, no ledger claim written (so this can act on a "
+                       "later tick once the condition clears):\n      " + plan.reason)
+    reason = (f"auto_gate {dec.clause} n={sh.tape.n} share={dec.share:.2f} "
+              f"ci=[{dec.lo:.2f},{dec.hi:.2f}] at {ts}")
+    try:
+        _ledger_append(ledger, ledger_line(ts, sh, dec, "CLAIM"))
+    except OSError as e:
+        return False, f"apply failed before touching the host: {e}"
+    ok, log = remote_cancel.run_plan(plan, reason,
+                                     runner=runner or remote_cancel.orch_runner, **kw)
+    try:
+        if ok:
+            with results.open("a") as fh:
+                fh.write(results_row(sh, dec, ts) + "\n")
+            _ledger_append(ledger, ledger_line(ts, sh, dec, "DONE"))
+        else:
+            # ⛔ A FAILED ROW BLOCKS RETRY ON PURPOSE — `ledger_claimed` reads
+            # column 2 and does not care about the phase. That is the safe
+            # direction after a partial cycle.
+            _ledger_append(ledger, ledger_line(ts, sh, dec, "FAILED"))
+    except OSError as e:
+        return False, f"host cycle {'ok' if ok else 'FAILED'}, bookkeeping failed: {e}"
+    return ok, "\n      ".join(log)
+
+
 def apply_stop(sh: Shard, dec: Decision, *, cancel_dir: Path, ledger: Path,
-               results: Path, ts: str) -> tuple[bool, str]:
+               results: Path, ts: str, remote_runner=None,
+               remote_kw: dict | None = None) -> tuple[bool, str]:
     """Local stop. Ledger BEFORE the action, deliberately.
 
     If we crash between the claim and the touch, the shard keeps running and a
     human handles it exactly as today. If we crashed the other way round we
     could double-write the shared results tape. Fail toward not-stopping.
     """
+    if sh.surface == "remote":
+        return apply_remote_stop(sh, dec, ledger=ledger, results=results, ts=ts,
+                                 runner=remote_runner, **(remote_kw or {}))
     if sh.surface != "local":
-        return False, ("REMOTE — no per-shard cancel primitive exists on a worker; "
-                       "reported only, never executed")
+        return False, f"unknown surface {sh.surface!r} — refusing to act on it"
     try:
         cancel_dir.mkdir(parents=True, exist_ok=True)
-        ledger.parent.mkdir(parents=True, exist_ok=True)
-        if not ledger.exists():
-            ledger.write_text("#ts\tshard\tphase\tmark\tn\tshare\tci_lo\tci_hi\tclause\tfired_on\n")
-        # `fired_on` is LAST so every pre-existing by-index reader stays correct.
-        # "-" for clauses that decide on the full-tape CI (share IS their number).
+        # `fired_on` was appended LAST in the 10-column era, `host`/`control`
+        # LAST in the 12-column one, so every pre-existing by-index reader stays
+        # correct. "-" for clauses that decide on the full-tape CI.
         fo = f"{dec.fired_on:.2f}" if dec.fired_on is not None else "-"
-        with ledger.open("a") as fh:
-            fh.write("\t".join([ts, sh.id, "CLAIM", dec.mark, str(sh.tape.n),
-                                f"{dec.share:.2f}", f"{dec.lo:.2f}", f"{dec.hi:.2f}",
-                                dec.clause, fo]) + "\n")
+        _ledger_append(ledger, ledger_line(ts, sh, dec, "CLAIM"))
         (cancel_dir / sh.id).write_text(
             f"auto_gate {ts} {dec.clause} n={sh.tape.n} share={dec.share:.2f} "
             f"ci=[{dec.lo:.2f},{dec.hi:.2f}]"
@@ -968,23 +1076,22 @@ def apply_stop(sh: Shard, dec: Decision, *, cancel_dir: Path, ledger: Path,
             return False, "cancel flag did not appear on disk after write"
         with results.open("a") as fh:
             fh.write(results_row(sh, dec, ts) + "\n")
-        with ledger.open("a") as fh:
-            fh.write("\t".join([ts, sh.id, "DONE", dec.mark, str(sh.tape.n),
-                                f"{dec.share:.2f}", f"{dec.lo:.2f}", f"{dec.hi:.2f}",
-                                dec.clause, fo]) + "\n")
+        _ledger_append(ledger, ledger_line(ts, sh, dec, "DONE"))
         return True, f"cancel flag written to {cancel_dir / sh.id}; results.tsv row appended"
     except OSError as e:
         return False, f"apply failed: {e}"
 
 
 REMOTE_MANUAL = """\
-  # ⛔ NO PER-SHARD CANCEL EXISTS ON A WORKER. Sequence, in this order only:
-  tools/vps/orchestrate.sh kill {host}          # verify it prints 'workers remaining: 0'
-  ssh {host} 'cd fcode-worker && touch results/{shard}.COMPLETE'   # so it is SKIPPED, not resumed
-  tools/vps/orchestrate.sh start {host} <WORKERS>   # picks up the next shard in its worklist
-  # ⚠ NEVER `stop` then `start`: cmd_start does `rm -f STOP`, so a curfewed worker
-  #   wakes with no STOP file and double-subscribes the box (--tle 10 is wall-clock,
-  #   so that silently corrupts every row BOTH workers produce)."""
+  # The stop path, now EXECUTED by --apply (tools/remote_cancel.py). By hand it is:
+  tools/remote_cancel.py --host {host} --shard {shard} --reason '...'          # DRY-RUN
+  tools/remote_cancel.py --host {host} --shard {shard} --reason '...' --apply
+  # which composes, verifying each step: stop -> poll until `worker: 0` -> cancel
+  # (the skip marker, rows KEPT) -> start WORKERS-from-host_capacity -> confirm
+  # `WORKER up` in worker.out.
+  # ⚠ NEVER `stop` then `start` WITHOUT THE POLL: cmd_start does `rm -f STOP`, so a
+  #   curfewed worker wakes with no STOP file and double-subscribes the box (--tle 10
+  #   is wall-clock, so that silently corrupts every row BOTH workers produce)."""
 
 
 # ═════════════════════════════════════════════════════════════════════════════
@@ -1085,8 +1192,16 @@ def run(args) -> int:
     for sh, dec in stops:
         print(f"\n⛔ {sh.id} ({sh.surface}{'/' + sh.host if sh.host else ''})  {dec.clause}")
         if sh.surface == "remote":
-            print(REMOTE_MANUAL.format(host=sh.host.split("/")[-1], shard=sh.id))
-            print("  ⇒ REPORTED ONLY. --apply will not execute this.")
+            print(REMOTE_MANUAL.format(host=sh.host, shard=sh.id))
+            print(f"  row  : {results_row(sh, dec, ts)[:160]}...")
+            if args.apply:
+                if args.no_remote:
+                    print("  ⛔ REFUSED: --no-remote. Reported only, exactly as before s48.")
+                    continue
+                done, why = apply_stop(sh, dec, cancel_dir=Path(args.cancel_dir),
+                                       ledger=Path(args.ledger),
+                                       results=Path(args.results), ts=ts)
+                print(f"  {'APPLIED' if done else '⛔ NOT APPLIED'}: {why}")
             continue
         print(f"  would: touch {_rel(Path(args.cancel_dir))}/{sh.id}")
         print(f"  row  : {results_row(sh, dec, ts)[:160]}...")
@@ -1348,7 +1463,7 @@ def selftest() -> int:
         ("SELECTED-PESSIMISTIC" in _stripped or "FULL-TAPE SHARE" in _stripped
          or "+2.08pp" in _stripped), False)
 
-    print("\n── apply_stop: local writes the flag; remote is REFUSED ────────────────")
+    print("\n── apply_stop: local writes the flag ───────────────────────────────────")
     led2, res2, can2 = tmp / "l2.tsv", tmp / "r2.tsv", tmp / "c2"
     res2.write_text("commit\tw\tl\th\tn\tstatus\tdesc\n")
     done, why = apply_stop(sh_, decide(sh_, BARS, DEFAULT_STALE_S), cancel_dir=can2,
@@ -1363,13 +1478,95 @@ def selftest() -> int:
         ["CLAIM", "DONE"])
     chk("...and a re-run is now blocked by the ledger",
         already_cancelled("REAL", led2, started, can2, res2) is not None, True)
-    remote_sh = Shard("RSH", "remote", "worker@h", tmp / "x.tsv", "", "", 5400,
-                      tape(2700, 1242), 1.0, "remote heartbeat stamp", True, "RUNNING")
-    done_r, why_r = apply_stop(remote_sh, decide(remote_sh, BARS, DEFAULT_STALE_S),
-                               cancel_dir=can2, ledger=led2, results=res2,
-                               ts="2026-08-15T00:00:00Z")
-    chk("remote apply is REFUSED", done_r, False)
-    chk("...for the stated reason (no per-shard primitive)", "no per-shard" in why_r, True)
+    chk("...and the ledger row carries host + control (12 cols since s48)",
+        led2.read_text().splitlines()[-1].split("\t")[10:], ["-", str(tmp / "treeA")])
+
+    # ─────────────────────────────────────────────────────────────────────────
+    # REMOTE APPLY. ⛔ THESE CELLS USED TO ASSERT `remote apply is REFUSED` —
+    # that was the CORRECT assertion while no per-shard cancel primitive existed
+    # on a worker, and it is now the wrong one (s48; the history is in this
+    # file's header, which keeps it rather than deleting it). What they assert
+    # instead is that the remote path RUNS and that its guards still refuse the
+    # cases the blanket refusal used to cover, each driven BOTH ways. The
+    # transport is stubbed with remote_cancel's own FakeHost, so no ssh happens.
+    # ─────────────────────────────────────────────────────────────────────────
+    print("\n── apply_stop: remote now EXECUTES, and its guards still refuse ────────")
+    import remote_cancel as rc
+
+    def remote_shard(sid="RSH", host="worker@work-server-1", n=2700, wins=1242):
+        return Shard(sid, "remote", host, tmp / f"{sid}.tsv", "treeC", "bots/_v468kladturbo",
+                     5400, tape(n, wins), 1.0, "remote heartbeat stamp", True, "RUNNING")
+
+    led_r, res_r = tmp / "lremote.tsv", tmp / "rremote.tsv"
+    res_r.write_text("commit\tw\tl\th\tn\tstatus\tdesc\n")
+    fake = rc.FakeHost(shards={"RSH": (2700, 5400, 12, "RUNNING")}, halt_after=1,
+                       utc="2026-08-17T10:00:00Z")
+    rsh = remote_shard()
+    vc = [0.0]
+    done_r, why_r = apply_stop(rsh, decide(rsh, BARS, DEFAULT_STALE_S),
+                               cancel_dir=can2, ledger=led_r, results=res_r,
+                               ts="2026-08-17T10:00:00Z", remote_runner=fake,
+                               remote_kw=dict(sleep=lambda s: vc.__setitem__(0, vc[0] + s),
+                                              clock=lambda: vc[0], halt_wait_s=300,
+                                              halt_poll_s=30, up_wait_s=60, up_poll_s=10))
+    chk("a remote stop on a live, fresh, non-curfewed host APPLIES", done_r, True)
+    chk("...having written the skip marker on the host", fake.markers, ["RSH"])
+    chk("...and relaunched it", any(c.startswith("start") for c in fake.calls), True)
+    chk("...the results row is typed cancellation",
+        res_r.read_text().strip().splitlines()[-1].split("\t")[5], "cancellation")
+    chk("...the ledger reads CLAIM then DONE",
+        [l.split("\t")[2] for l in led_r.read_text().splitlines() if not l.startswith("#")],
+        ["CLAIM", "DONE"])
+    chk("...and names the HOST and the CONTROL it was measured against",
+        led_r.read_text().splitlines()[-1].split("\t")[10:],
+        ["worker@work-server-1", "bots/_v468kladturbo"])
+
+    # THE OTHER VERDICT, one per guard, through the SHIPPED entry point.
+    led4, res4 = tmp / "lremote4.tsv", tmp / "rremote4.tsv"
+    res4.write_text("commit\tw\tl\th\tn\tstatus\tdesc\n")
+
+    def remote_refusal(label, host_kw, sid="RSH", host="worker@work-server-1"):
+        fh = rc.FakeHost(**host_kw)
+        s2 = remote_shard(sid, host)
+        d2 = decide(s2, BARS, DEFAULT_STALE_S)
+        done, why = apply_stop(s2, d2, cancel_dir=can2, ledger=led4, results=res4,
+                               ts="2026-08-17T10:00:00Z", remote_runner=fh)
+        chk(label, (done, fh.markers, any(c.startswith(("stop", "start"))
+                                          for c in fh.calls)), (False, [], False))
+        return why
+
+    w1 = remote_refusal("⛔ a STALE heartbeat refuses, touching nothing",
+                        dict(shards={"RSH": (2700, 5400, 4000, "RUNNING")},
+                             utc="2026-08-17T10:00:00Z"))
+    chk("...naming G-R2", "G-R2" in w1, True)
+    w2 = remote_refusal("⛔ CURFEW refuses, touching nothing",
+                        dict(shards={"RSH": (2700, 5400, 12, "RUNNING")},
+                             utc="2026-08-17T22:30:00Z"))
+    chk("...naming G-R4", "G-R4" in w2, True)
+    w3 = remote_refusal("⛔ an unreadable status refuses, touching nothing",
+                        dict(status_blind=True, utc="2026-08-17T10:00:00Z"))
+    chk("...naming G-R1", "G-R1" in w3, True)
+    w4 = remote_refusal("⛔ an unknown host refuses, touching nothing",
+                        dict(shards={"RSH": (2700, 5400, 12, "RUNNING")},
+                             utc="2026-08-17T10:00:00Z"), host="work-server-1")
+    chk("...naming G-R0", "G-R0" in w4, True)
+    chk("⛔⛔ AND NO REFUSAL WROTE A LEDGER ROW (so a later tick can still act)",
+        led4.exists(), False)
+
+    # G-R3: flagged shard is NOT the running one -> the OTHER shard is never
+    # halted; the flagged one is poisoned instead. This is the cell that keeps a
+    # queued row's cancellation from costing a running row its rows.
+    fh3 = rc.FakeHost(shards={"OTHER": (900, 5400, 10, "RUNNING"),
+                              "RSH": (2700, 5400, 9000, "STOPPED")},
+                      utc="2026-08-17T10:00:00Z")
+    s3 = remote_shard()
+    done3, why3 = apply_stop(s3, decide(s3, BARS, DEFAULT_STALE_S), cancel_dir=can2,
+                             ledger=led4, results=res4, ts="2026-08-17T10:00:00Z",
+                             remote_runner=fh3, remote_kw=dict(sleep=lambda s: None))
+    chk("a NOT-running flagged shard is poisoned, not halted", done3, True)
+    chk("...the running shard's host was never stopped or restarted",
+        any(c.startswith(("stop", "start")) for c in fh3.calls), False)
+    chk("...and the marker went to the FLAGGED shard only", fh3.markers, ["RSH"])
 
     print("\n── liveness / freshness plumbing, both ways ────────────────────────────")
     chk("running_shards finds a runner in a ps line",
@@ -1590,7 +1787,9 @@ def selftest() -> int:
         [l.split("\t")[9] for l in led3.read_text().splitlines() if not l.startswith("#")],
         ["40.00", "40.00"])
     chk("...and the new-file header names the column",
-        led3.read_text().splitlines()[0].endswith("fired_on"), True)
+        "fired_on" in led3.read_text().splitlines()[0], True)
+    chk("...with host+control appended after it (12-column era, s48)",
+        led3.read_text().splitlines()[0].endswith("fired_on\thost\tcontrol"), True)
     chk("...and the cancel-flag text carries fired_on for the human who opens it",
         "fired_on=40.00" in (can3 / s_lowpfx_highnow.id).read_text(), True)
 
@@ -1659,7 +1858,7 @@ def selftest() -> int:
           "readable/unreadable + non-identical lines · G4 four detectors each ± · "
           "G5 null/real at identical numbers, incl. the two cells a NAME check gets "
           "wrong · G6 ablation/normal · edge cell one game either side of the bar · "
-          "catastrophe one game either side of 45.0 · marks drift ± · KILL SWITCH halts/resumes end-to-end through the shipped entry point · BAR PLAUSIBILITY refuses slipped-decimal/fraction/implausible and keeps a good one, leaving a refused shard UNSTOPPABLE)")
+          "catastrophe one game either side of 45.0 · marks drift ± · KILL SWITCH halts/resumes end-to-end through the shipped entry point · BAR PLAUSIBILITY refuses slipped-decimal/fraction/implausible and keeps a good one, leaving a refused shard UNSTOPPABLE · REMOTE apply executes on a verified host and refuses stale/curfew/blind-status/unknown-host/not-the-running-shard, none of which writes a ledger row)")
     return 0
 
 
@@ -1679,6 +1878,13 @@ def main() -> int:
     ap.add_argument("--dry-run", action="store_true",
                     help="print decisions, change nothing (DEFAULT; overrides --apply)")
     ap.add_argument("--selftest", action="store_true")
+    # ⛔ A NARROWER KILL SWITCH THAN scratchpad/AUTOGATE_STOP, which pauses
+    # everything. This restores the pre-s48 behaviour for REMOTE shards only
+    # (report, never execute) while local cancelling keeps working — so a lane
+    # that distrusts the remote path at 3am does not have to also give up the
+    # local stopper to say so.
+    ap.add_argument("--no-remote", action="store_true",
+                    help="report remote stops but never execute them (pre-s48 behaviour)")
     ap.add_argument("--all", action="store_true",
                     help="also print shards with no live runner")
     ap.add_argument("--worklist", default=str(DEFAULT_WORKLIST))

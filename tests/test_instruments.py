@@ -862,6 +862,12 @@ class TestHelpContract(unittest.TestCase):
         "keeper.log", "keeper.out", "keeper_state.json", "breakin_watch.log",
         "elo_history.tsv", "elo_logger.log", "match_watcher.log",
         "opp_watcher.log", "replay_archiver.log",
+        # The fleet dispatcher's LOCK, taken and released inside each 300s pass.
+        # It is TRANSIENT, so the 6s churn control can only learn it by luck —
+        # observed 2026-08-17 attributed to `collar_census.py`, a tool with zero
+        # occurrences of the string "fleet". Same misattribution class as
+        # corefill.log above, named rather than excluded silently.
+        "fleet_queue.lock",
         # Corpus tables the KEEPER rebuilds each sync cycle (~30 min, so the
         # 6s churn window cannot learn them). Observed 2026-08-16:
         # corpus/join.tsv rewritten mid-suite and attributed to camp_detect/

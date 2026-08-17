@@ -79,7 +79,23 @@ r_exec() {   # r_exec "<shell command, run in the worker root>"
 # carries the literal characters `[w]orker.sh`, which that regex does NOT match.
 # Self-match is broken by construction rather than by filtering after the fact.
 # Verified both ways live: dead host -> 0, host with a live worker -> nonzero.
-WCOUNT_CMD='ps ax -o command= 2>/dev/null | grep -c "[w]orker.sh" || true'
+# ⛔⛔ AND IT STILL OVER-COUNTED UNTIL s48 (2026-08-17), IN THE OTHER DIRECTION.
+# `[w]orker.sh` is a REGEX and the `.` matches ANY character, so on THIS
+# orchestrator (macOS) it matched Spotlight: `mdworker_shared` for the
+# unescaped dot, and `com.apple.mdworker.shared` — a literal `worker.sh` —
+# even after escaping it. **Measured: 28 "live workers" on a box running
+# zero.** Same fires-on-everything failure the bracket trick above was written
+# to end, surviving inside the same line. What it was silently producing:
+# `--local-sim` could NEVER exercise the drained case (cmd_push's live-worker
+# refusal refused unconditionally), and a halt verification built on this
+# count could only ever time out.
+# ⇒ ESCAPED DOT **AND** `-w`. The word-boundary test requires a non-word
+# character (or a line edge) on each side of the match: `bash
+# tools/vps/worker.sh` passes (`/` before, end-of-line after) while
+# `com.apple.mdworker.shared` fails (`d` before, `a` after). Driven both ways
+# on the mac: the two shipped invocation strings -> 1, the Spotlight string ->
+# 0, and `ps ax` on a worker-free box -> 0 where it read 28 before.
+WCOUNT_CMD='ps ax -o command= 2>/dev/null | grep -cw "[w]orker\.sh" || true'
 
 r_exec_home() {  # r_exec_home "<shell command, run in the remote HOME>"
   if [ -n "$SIM" ]; then ( cd "$(dirname "$SIM")" && bash -c "$1" )
@@ -106,10 +122,11 @@ HOST=${1:-}; shift 2>/dev/null || true
 [ -n "$CMD" ] || die "usage: $0 {gen|push|pull|status|setup|start|stop} <host> [...]  (see the header)" 2
 [ -n "$HOST" ] || die "⛔ no host. Format: user@1.2.3.4, or an ssh-config alias (Host vps1)." 2
 
-ARGS=(); NULL_TARGET=400; TARGET=""; EXECUTE=0; FROM="$SRC_WORKLIST"
+ARGS=(); NULL_TARGET=400; TARGET=""; EXECUTE=0; QUEUED=0; FROM="$SRC_WORKLIST"
 while [ $# -gt 0 ]; do
   case "$1" in
     --local-sim) mkdir -p "$2"; SIM=$(cd "$2" && pwd); shift 2;;
+    --queued) QUEUED=1; shift;;
     --null-target) NULL_TARGET=$2; shift 2;;
     --target) TARGET=$2; shift 2;;
     --from) FROM=$2; shift 2;;
@@ -234,7 +251,7 @@ cmd_push() {
     # pass — fires-on-everything, discovered when the first real drain-case
     # push was refused with a mangled "0\nBLIND" count (s46, 13:29Z). The
     # drain case is now driven for real, not assumed.
-    _wn=$(r_exec "ps ax -o command= 2>/dev/null | grep -c '[w]orker.sh'; true" 2>/dev/null | head -1 || echo BLIND)
+    _wn=$(r_exec "ps ax -o command= 2>/dev/null | grep -cw '[w]orker\.sh'; true" 2>/dev/null | head -1 || echo BLIND)
     case "$_wn" in
       0) : ;;                     # no worker: safe
       BLIND|"") die "⛔ REFUSING push: cannot count workers on $HOST (BLIND is not safe). FORCE_LIVE_PUSH=1 to override." 2 ;;
@@ -308,7 +325,7 @@ cmd_status() {
   r_exec '
     echo "host: $(hostname)   utc: $(date -u +%Y-%m-%dT%H:%M:%SZ)   NPROC: $(nproc 2>/dev/null || echo UNKNOWN)"
     if [ -r /proc/loadavg ]; then echo "load: $(cut -d" " -f1-3 /proc/loadavg)"; else echo "load: $(uptime | sed "s/.*averages*: *//")"; fi
-    echo "runners: $(ps ax -o command= 2>/dev/null | grep -c "[f]code run")   worker: $(ps ax -o command= 2>/dev/null | grep -c "[w]orker.sh")"
+    echo "runners: $(ps ax -o command= 2>/dev/null | grep -c "[f]code run")   worker: $(ps ax -o command= 2>/dev/null | grep -cw "[w]orker\.sh")"
     [ -f STOP ] && echo "*** STOP FILE PRESENT ***"
     now=$(date -u +%s)
     printf "%-14s %8s %8s %10s %s\n" SHARD ROWS TARGET HB_AGE STATUS
@@ -525,14 +542,44 @@ case "$CMD" in
     # G1: refuse while the worker lives. The marker is only read at shard start,
     # so cancelling a RUNNING shard silently does nothing — the caller would get
     # a success message and no effect. `kill` first, deliberately.
+    #
+    # ⭐ `--queued` NARROWS G1 TO WHAT IT IS ACTUALLY GUARDING (s48, for
+    # tools/remote_cancel.py). G1 as written refused whenever ANY worker was
+    # alive — but worker.sh is SERIAL, so a worker running shard X can be
+    # carrying a QUEUED shard Y in its worklist, and Y's marker takes effect
+    # perfectly well when the loop reaches Y's row. The blanket form left the
+    # one useful case (retire a queued row without halting the host, and
+    # without interrupting X's rows) with no path at all, so it had to be done
+    # by hand or not at all.
+    # ⛔ THE CALLER'S ASSERTION IS NOT TRUSTED. `--queued` only *permits* the
+    # host to re-derive it: the shard must have NO heartbeat (never started) or
+    # a heartbeat that is stale / not RUNNING|STARTING. If $SH turns out to be
+    # the live shard, this refuses exactly as the blanket form did — the flag
+    # cannot talk the host into cancelling the shard it is running.
     # G2: refuse an unknown shard name. A typo would otherwise write a marker
     # that suppresses a shard nobody meant to touch, and leave no trace.
     r_exec "
       n=\$($WCOUNT_CMD)
       if [ \"\$n\" -ne 0 ]; then
-        echo \"⛔ REFUSING: \$n worker(s) still alive. The .COMPLETE marker is read at shard START only,\"
-        echo \"   so cancelling now would report success and change nothing. Run 'kill $HOST' first.\"
-        exit 3
+        live=0; hbwhy='no heartbeat (never started)'
+        hb=results/$SH.heartbeat
+        if [ -f \"\$hb\" ]; then
+          mt=\$(stat -c %Y \"\$hb\" 2>/dev/null || stat -f %m \"\$hb\" 2>/dev/null || echo 0)
+          age=\$(( \$(date -u +%s) - mt ))
+          st=\$(cut -f5 \"\$hb\" | tr -d '[:space:]')
+          hbwhy=\"heartbeat \${age}s old, state \$st\"
+          case \"\$st\" in RUNNING|STARTING) [ \"\$age\" -le 600 ] && live=1;; esac
+        fi
+        if [ $QUEUED -eq 1 ] && [ \"\$live\" -eq 0 ]; then
+          echo \"--queued: \$n worker(s) alive but $SH is NOT the live shard (\$hbwhy).\"
+          echo \"   The marker takes effect when the worklist loop reaches its row; no shard is interrupted.\"
+        else
+          echo \"⛔ REFUSING: \$n worker(s) still alive and $SH looks LIVE (\$hbwhy).\"
+          echo \"   The .COMPLETE marker is read at shard START only, so cancelling now would report\"
+          echo \"   success and change nothing. Halt the host first ('stop' then verify 'worker: 0',\"
+          echo \"   or 'kill'), or pass --queued for a shard that has NOT started.\"
+          exit 3
+        fi
       fi
       # G2: the shard must be KNOWN to this host — either it has run (a tape) or
       # it is parked in the worklist waiting to run. ⛔ THE WORKLIST HALF WAS

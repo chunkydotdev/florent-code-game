@@ -540,6 +540,36 @@ def row_dispatchable(r: Row) -> tuple[bool, str]:
 # ═══════════════════════════════════════════════════════════════════════════
 # G4 — NULL PAIR
 # ═══════════════════════════════════════════════════════════════════════════
+STALE_CONTROL_FALLBACK = "bots/_v223sealrepair"   # the s44-era incumbent
+
+
+def default_control() -> str:
+    """The CONTROL tree, read from PROGRAMME.md's INCUMBENT, not hardcoded.
+
+    ⛔ WHY: this file's `--control` default was the literal `_v223sealrepair`,
+    frozen at the moment it was typed, while PROGRAMME.md's INCUMBENT moved on
+    twice. A seeding run that omitted the flag would have measured every new
+    arm against a superseded benchmark — silently, because the string is a
+    real tree that exists and imports fine. Same class as tools/stack.py's
+    ancestor bug: a tool that reads the authority cannot drift from it.
+    ⚠ THE FALLBACK IS THE OLD STRING, deliberately: if PROGRAMME is unreadable
+    we keep the historical behaviour rather than seed against nothing, and the
+    `--help` text prints whichever one is in force, so the drift is visible at
+    the point of use.
+    """
+    try:
+        import control_pin
+        inc = control_pin.incumbent()
+        if inc is not None:
+            try:
+                return str(Path(inc).resolve().relative_to(REPO))
+            except ValueError:
+                return str(inc)
+    except Exception:
+        pass
+    return STALE_CONTROL_FALLBACK
+
+
 def trees_identical(a: str, b: str) -> bool:
     """orchestrate.sh gen's structural rule: same *.py names AND same bytes.
 
@@ -1587,7 +1617,16 @@ def main(argv) -> int:
     ap.add_argument("--compose", action="store_true",
                     help="with --seed-from: actually build the trees via tools/stack.py")
     ap.add_argument("--target", type=int, default=5400, help="games per combination row (default 5400)")
-    ap.add_argument("--control", default="bots/_v223sealrepair", help="control tree for seeded rows")
+    # ⛔ NOT A HARDCODED TREE. `bots/_v223sealrepair` sat here as the default
+    # after the INCUMBENT moved on, so any `--seed-from` run that omitted
+    # `--control` would seed rows against a SUPERSEDED benchmark and then trip
+    # the guard-6 refusal downstream (s48 wrap debt 6). Resolved from
+    # PROGRAMME.md the way control_pin.incumbent() does — one authority, read
+    # rather than copied. `default_control()` falls back to the old string only
+    # if PROGRAMME is unreadable, and SAYS SO in the help text.
+    ap.add_argument("--control", default=default_control(),
+                    help=f"control tree for seeded rows (default: {default_control()}, "
+                         f"resolved from PROGRAMME.md INCUMBENT)")
     ap.add_argument("--remote-mode", choices=("drain", "live", "auto"), default="drain",
                     help="drain (default, worker must be DOWN) | live (in-place append to a live worker) | auto")
     ap.add_argument("--cores-per-shard", type=float, default=CORES_PER_SHARD)
