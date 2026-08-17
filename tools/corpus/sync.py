@@ -31,6 +31,9 @@ import sys
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[2]
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+from atomicio import atomic_write_text  # noqa: E402  (see atomicio.py: 62% incident)
+
 ARCHIVE = ROOT / "replay_archive"
 OUT = ROOT / "corpus"
 PY = str(ROOT / ".venv/bin/python")
@@ -72,7 +75,10 @@ def ledger() -> set[str]:
             if p.exists():
                 for r in csv.DictReader(p.open(), delimiter="\t"):
                     seen.add(r["file"])
-        LEDGER.write_text("\n".join(sorted(seen)) + ("\n" if seen else ""))
+        # ATOMIC: `decoded.txt` is the source of truth for "what is new". A
+        # reader (or a crashed bootstrap) that sees it short re-decodes files
+        # that are already folded in, which DOUBLE-APPENDS rows to every table.
+        atomic_write_text(LEDGER, "\n".join(sorted(seen)) + ("\n" if seen else ""))
         print(f"  bootstrapped ledger from existing tables: {len(seen)} files")
         return seen
     return {ln.strip() for ln in LEDGER.open() if ln.strip()}
@@ -82,7 +88,10 @@ def append_stripping_header(src: Path, dst: Path) -> int:
     lines = src.read_text().splitlines(True)
     body = lines[1:] if lines else []
     if not dst.exists() and lines:
-        dst.write_text(lines[0])
+        # Header-only creation of a NEW table. Atomic so the file never exists
+        # in a state where it has been created but has no header — a reader
+        # would take a headerless TSV's first data row AS the header.
+        atomic_write_text(dst, lines[0])
     elif lines and dst.exists():
         # HEADER-DRIFT GUARD (s39, 2026-08-14). The s36 COLS widening of
         # replay_econ.py landed 31,986 19-field rows under econ.tsv's 17-field

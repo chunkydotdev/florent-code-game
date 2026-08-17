@@ -55,6 +55,9 @@ import time
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[2]
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+from atomicio import atomic_open  # noqa: E402  (see atomicio.py: the 62% incident)
+
 FC = str(ROOT / ".venv/bin/fcode")
 MAX_PAGES = 40          # 4,000 matches per team; log if any team hits it
 
@@ -208,7 +211,10 @@ def main():
         print(f"  [{i+1}/{len(ts)}] {name[:24]:<24} rating {rating:7.0f} "
               f"played {played:5} -> pulled {got:5}  (unique so far {len(seen)})",
               file=sys.stderr, flush=True)
-    with out_path.open("w") as fh:
+    # ATOMIC (s50): 15 MB rewritten every net cycle, and CLAUDE.md names this
+    # table the authority for opponent version timelines — a reader that catches
+    # it mid-rewrite sees a truncated history and concludes "they never shipped".
+    with atomic_open(out_path) as fh:
         fh.write("\t".join(COLS) + "\n")
         for m in seen.values():
             fh.write("\t".join(str(m.get(c, "")) for c in COLS) + "\n")

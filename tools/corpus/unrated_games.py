@@ -75,6 +75,9 @@ OUT = ROOT / "corpus" / "unrated_games.tsv"
 sys.path.insert(0, str(ROOT / "tools"))
 import replay_view  # noqa: E402  (peek_outcome — the one implementation)
 
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+from atomicio import atomic_open  # noqa: E402  (see atomicio.py: the 62% incident)
+
 GAME_RE = re.compile(r"^([0-9a-fA-F-]{36})_game_(\d+)\.replay26$")
 MIN_CAL = 10
 
@@ -169,7 +172,10 @@ def build(archive: Path = ARCHIVE, out: Path = OUT) -> dict:
                     f"\t{ours}\t{pk['width']}\t{pk['height']}\t{pk['win_condition']}"
                     f"\t{pk['rounds']}\t{won}\t{m.get('createdAt')}\t{m.get('triggeredBy')}\n")
         kept += 1
-    with out.open("w") as fh:
+    # ATOMIC (s50): this table is read by the fieldcal readers WHILE a leg is
+    # running, i.e. by definition concurrently with the keeper's sync rebuilding
+    # it. In-place truncation gave those readers a short-but-valid table.
+    with atomic_open(out) as fh:
         fh.write(HEADER)
         fh.writelines(rows)
     stats = dict(our_id=our_id, kept=kept, skipped_side=skipped_side,

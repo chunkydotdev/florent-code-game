@@ -29,6 +29,8 @@ import time
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[2]
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+from atomicio import atomic_open  # noqa: E402  (see atomicio.py: the 62% incident)
 FC = str(ROOT / ".venv/bin/fcode")
 SRC = ROOT / "corpus/league_matches.tsv"
 
@@ -71,7 +73,10 @@ def main():
 
     t0 = time.time()
     n = 0
-    with Path(a.out).open("w") as fh:
+    # ATOMIC (s50), same class as the keeper's tables: this one is not on the
+    # keeper's path, but it rewrites a corpus TSV in place over a long network
+    # walk and any lane reading it meanwhile saw a short-but-valid table.
+    with atomic_open(Path(a.out)) as fh:
         fh.write("\t".join(COLS) + "\n")
         for i, m in enumerate(sel):
             p = subprocess.run([FC, "match", "info", m["id"], "--json"],

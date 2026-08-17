@@ -31,6 +31,15 @@ import sys
 import time
 
 ROOT = os.path.abspath(os.path.join(os.path.dirname(__file__), "..", ".."))
+# ⛔ ATOMIC WRITES (s50, 2026-08-17). `manifest.json` is the ledger of what has
+# already been downloaded. It was written in place, so an archiver killed (or
+# read) mid-`json.dump` left a TRUNCATED ledger, and a truncated ledger does not
+# raise "corrupt" — the next cycle's `json.load` fails, `done` comes back empty,
+# and the archiver re-downloads the entire 62,750-file archive from the platform.
+# Same class as the corpus tables; same fix, same helper.
+sys.path.insert(0, os.path.join(ROOT, "tools", "corpus"))
+from atomicio import atomic_write_text  # noqa: E402
+
 FCODE = os.path.join(ROOT, ".venv", "bin", "fcode")
 ARCHIVE = os.environ.get("REPLAY_ARCHIVE_DIR", os.path.join(ROOT, "replay_archive"))
 MANIFEST = os.path.join(ARCHIVE, "manifest.json")
@@ -135,15 +144,15 @@ def main() -> None:
 
     st["archived"] = sorted(done)
     st["failed"] = failed
-    with open(MANIFEST, "w") as f:
-        json.dump(st, f)
+    atomic_write_text(MANIFEST, json.dumps(st))
 
     # Drop fulfilled/abandoned ids from the priority file, preserve the rest.
     if pri_ids:
         pending = [pid for pid in read_priority() if pid not in done]
         try:
-            with open(PRIORITY, "w") as f:
-                f.write("\n".join(pending) + ("\n" if pending else ""))
+            # ATOMIC: either arm APPENDS ids to this file between cycles, so a
+            # truncated rewrite here silently drops a research request.
+            atomic_write_text(PRIORITY, "\n".join(pending) + ("\n" if pending else ""))
         except Exception:
             pass
 

@@ -49,6 +49,9 @@ import json, subprocess, sys, collections
 from pathlib import Path
 
 ROOT = Path("/Users/junghard/Projects/Work/florent-code-game")
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+from atomicio import atomic_open  # noqa: E402  (see atomicio.py: the 62% incident)
+
 FC = str(ROOT / ".venv/bin/fcode")
 OURS = "379a5d80-9921-4c9e-949b-f9b1dcba16be"
 OUT = Path(sys.argv[1])
@@ -106,7 +109,9 @@ for i, m in enumerate(matches):
 
 cols = ["match", "created", "opp", "oppver", "ourver", "ourbef", "oppbef",
         "map", "winner_seat", "won", "cond", "turns", "s3"]
-with OUT.open("w") as f:
+# ATOMIC (s50): this rewrites corpus/ladder_games.tsv — CLAUDE.md's named
+# authority for every rated denominator — after a long paginated network walk.
+with atomic_open(OUT) as f:
     f.write("\t".join(cols) + "\n")
     for g in games:
         f.write("\t".join(str(g[c]) for c in cols) + "\n")

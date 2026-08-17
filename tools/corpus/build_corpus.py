@@ -37,6 +37,10 @@ import sys
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[2]
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+from atomicio import (atomic_open, atomic_write_text,  # noqa: E402
+                      atomic_subprocess_target)
+
 ARCHIVE = ROOT / "replay_archive"
 OUT = ROOT / "corpus"
 PY = str(ROOT / ".venv/bin/python")
@@ -79,16 +83,25 @@ def stage_replays(files: list[Path], force: bool) -> None:
     args = [str(p) for p in files]
     if force or not throws.exists():
         print(f"  decoding throws over {len(files)} replays...")
-        with throws.open("w") as fh:
-            r = subprocess.run([PY, str(HERE / "replay_throws.py")] + args,
-                               cwd=ROOT, text=True, stdout=fh, stderr=subprocess.PIPE)
+        # ATOMIC (s50): a --force rebuild is MINUTES of decode with the old
+        # table truncated to zero the whole time. Any lane reading throws.tsv in
+        # that window read an empty or short table, silently.
+        with atomic_subprocess_target(throws) as tmp:
+            with open(tmp, "w") as fh:
+                r = subprocess.run([PY, str(HERE / "replay_throws.py")] + args,
+                                   cwd=ROOT, text=True, stdout=fh,
+                                   stderr=subprocess.PIPE)
         print("   ", r.stderr.strip().splitlines()[-1] if r.stderr.strip() else "ok")
     else:
         print("  throws.tsv exists — skip")
     if force or not builds.exists():
         print(f"  decoding builds/placement over {len(files)} replays...")
-        r = subprocess.run([PY, str(HERE / "replay_builds.py"), str(builds), str(agg)] + args,
-                           cwd=ROOT, text=True, capture_output=True)
+        # Same for the two-output decoder: it writes both paths itself, so the
+        # temps are handed to it as argv and renamed only once it returns.
+        with atomic_subprocess_target(builds) as tb, \
+                atomic_subprocess_target(agg) as ta:
+            r = subprocess.run([PY, str(HERE / "replay_builds.py"), str(tb), str(ta)] + args,
+                               cwd=ROOT, text=True, capture_output=True)
         print("   ", r.stderr.strip().splitlines()[-1] if r.stderr.strip() else "ok")
     else:
         print("  builds.tsv exists — skip")
@@ -127,7 +140,10 @@ def stage_join(files: list[Path]) -> dict:
 
     dst = OUT / "join.tsv"
     kept = dropped = unmatched = untested = 0
-    with dst.open("w") as fh:
+    # ATOMIC (s50): `join.tsv` is rebuilt on EVERY keeper sync (~10 min) and it
+    # is the file the DAEMON_WRITTEN list in tests/test_instruments.py already
+    # names as keeper-owned — i.e. it is known to be rewritten under readers.
+    with atomic_open(dst) as fh:
         fh.write("file\tmatch\tgame\topp\toppver\tourver\toppbef\tmap\tcond\tturns"
                  "\twon\tour_team\n")
         for p in files:
@@ -196,7 +212,9 @@ def main():
                                    "build_agg.tsv", "join.tsv")},
         join=j,
     )
-    (OUT / "manifest.json").write_text(json.dumps(manifest, indent=2) + "\n")
+    # ATOMIC: `sync.py --check` and the freshness tools read this manifest; an
+    # empty read is indistinguishable from "the corpus was never built".
+    atomic_write_text(OUT / "manifest.json", json.dumps(manifest, indent=2) + "\n")
     print(json.dumps(manifest, indent=2))
 
 

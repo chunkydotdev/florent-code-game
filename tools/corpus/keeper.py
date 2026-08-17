@@ -49,6 +49,15 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[2]
 PY = str(ROOT / ".venv/bin/python")
 HERE = Path(__file__).resolve().parent
+
+# ⛔ ATOMIC WRITES, s50 2026-08-17. Every whole-file write on the keeper's path
+# truncated its target first, so a reader inside the rewrite window got a VALID
+# BUT SHORT file and no error — the research lane lost 62% of `meta_join.tsv`'s
+# joins that way overnight. See `atomicio.py` for the mechanism and for what is
+# deliberately NOT converted (appends).
+sys.path.insert(0, str(HERE))
+from atomicio import atomic_write_text  # noqa: E402
+
 PIDFILE = ROOT / "corpus" / "keeper.pid"
 LOG = ROOT / "corpus" / "keeper.log"
 STATE = ROOT / "corpus" / "keeper_state.json"
@@ -66,6 +75,8 @@ def stamp() -> str:
 
 
 def log(msg: str) -> None:
+    # APPEND, deliberately not atomic-rewritten: an append never truncates, so
+    # the truncation class cannot happen here. One line per call, one write.
     LOG.parent.mkdir(exist_ok=True)
     with LOG.open("a") as fh:
         fh.write(f"{stamp()}  {msg}\n")
@@ -127,7 +138,10 @@ def ladder_watch() -> None:
     if should_log:
         log(f"ladder {bot} · {rating:.1f} @ {matches}"
             + (f" · last10 {wins}W" if wins is not None else ""))
-    STATE.write_text(json.dumps(st, indent=2))
+    # ATOMIC: `ship_watch` and the lanes read this state file on their own
+    # cadence. Truncate-then-refill made an empty/partial JSON readable, and a
+    # partial JSON here reads as "no prior bot" -> a spurious SHIP alert.
+    atomic_write_text(STATE, json.dumps(st, indent=2))
 
 
 def decide(st: dict, rating: float, matches: int, bot: str, wins):
@@ -276,7 +290,10 @@ def cycle(n: int) -> None:
 
 
 def loop() -> None:
-    PIDFILE.write_text(str(os.getpid()))
+    # ATOMIC: the pidfile is the ONLY handle a restart has on this process
+    # (`--stop`, and the documented restart procedure). A reader that catches it
+    # empty concludes "not running" and a second keeper gets started on top.
+    atomic_write_text(PIDFILE, str(os.getpid()))
     log(f"KEEPER START pid={os.getpid()} interval={INTERVAL}s "
         f"load_ceiling={LOAD_CEILING}")
     n = 0

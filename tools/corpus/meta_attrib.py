@@ -92,7 +92,6 @@ if __name__ == "__main__":
         print(__doc__ or ("usage: " + __file__ + "  (no module docstring)"))
         raise SystemExit(0)
 
-import gzip
 import json
 import mmap
 import re
@@ -100,6 +99,9 @@ import sys
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[2]
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+from atomicio import atomic_write_text, atomic_write_gzip  # noqa: E402
+
 ARCHIVE = ROOT / "replay_archive"
 OUT_DEFAULT = ROOT / "corpus" / "meta_join.tsv"
 JOIN = ROOT / "corpus" / "join.tsv"
@@ -427,9 +429,15 @@ def main(argv: list[str]) -> int:
     # corpus/.gitignore excludes *.tsv: the .gz sibling is the committed form.
     body = "\t".join(COLS) + "\n" + "".join(
         "\t".join(str(r[c]) for c in COLS) + "\n" for r in rows)
-    out.write_text(body)
-    with gzip.open(out.with_suffix(out.suffix + ".gz"), "wt") as gz:
-        gz.write(body)
+    # ⛔⛔ ATOMIC, s50 2026-08-17 — THIS IS THE SITE OF THE 62% INCIDENT. This
+    # table is ~24 MB and `write_text` truncated it before refilling, so for the
+    # seconds of the refill `corpus/meta_join.tsv` was a well-formed TSV with a
+    # header, whole rows, and the WRONG ROW COUNT. The research lane read it in
+    # that window overnight and silently lost 62% of the joins — nothing raised,
+    # because a short TSV parses exactly like a complete one. temp + os.replace
+    # means a reader gets the whole old table or the whole new one.
+    atomic_write_text(out, body)
+    atomic_write_gzip(out.with_suffix(out.suffix + ".gz"), body)
 
     ours = [r for r in rows if r["us_side"] != "none"]
     third = len(rows) - len(ours)
