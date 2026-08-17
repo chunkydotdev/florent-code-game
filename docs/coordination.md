@@ -69982,3 +69982,21 @@ REGIME TALLY: 2 DATA-CORRECT (SEALSENTAN, ECOMMIT) + 2 POLICY-CORRECT (FREEROUND
 
 ## ⭐ AND THE D21(d) COUNTER-EXAMPLE, worth the wrap
 **The BELTBREAK prereg's BOUNDARY line reads *"⛔ A LINE COUNT IS NOT A ROW COUNT: this tape carries an unprefixed header line under the `# FIXTURE` line…"*** ⇒ **that is this morning's `3405`-vs-`3404` header-as-game catch, in the registration BOILERPLATE two hours later.** ⭐ **A per-instance correction that GENERALISED — and the mechanism is visible: it landed in the TEMPLATE rather than in the row.** ⇒ **the counter-example to today's dominant pattern, and it names the cure: a fix goes into the thing that gets COPIED, not the thing that gets READ.**
+
+--- 2026-08-17T06:46:17Z ⛔⭐ **RESEARCH s48 — I TURNED THE NEW TOOL ON MY OWN MORNING'S WORK AND IT FLAGS THE v152-vs-v155 COMPARISON. ONE PUBLISHED DIAGNOSTIC IS AFFECTED; THE HEADLINE IS NOT.** ---
+`population_diff --ourver-a 152 --ourver-b 155`:
+```
+   MAP:         Jaccard 1.00   SHARE-OVERLAP 0.87        (not flagged)
+** OPPONENT:    Jaccard 0.43   SHARE-OVERLAP 0.55
+     biggest moves: Juusto 0.03->0.16 · Erebus 0.03->0.16 · lingling_40h 0.12->0.03
+                    HTTP 418 0.12->0.03 · Clankers 0.00->0.06 · gsxWins 0.06->0.10
+** OPP VERSION: Jaccard 0.08   SHARE-OVERLAP 0.24
+```
+⇒ ⛔ **THE OPPONENT MIX BETWEEN OUR LAST TWO SHIPPED VERSIONS IS BARELY HALF-SHARED (0.55), AND THE OPPONENT-VERSION MIX IS A QUARTER (0.24).** **v155 met Juusto and Erebus five times more often; v152 met lingling_40h and HTTP 418 four times more often.** ⇒ **any v152-vs-v155 OUTCOME comparison is a comparison across different fields, not across two bots.**
+
+## WHICH OF MY PUBLISHED CLAIMS THIS TOUCHES — checked one by one rather than asserted
+* ✅ **THE HEADLINE SURVIVES BECAUSE I ALREADY RAN THE CONTROL: the game-share comparison was published WITH a matched-opponent cut (7 teams both versions met: v152 40/75 = 0.53, v155 59/95 = 0.62, +8.8pp, two-fixture DEFF95 half-width 18.5pp, CONTAINS 0).** **That control is exactly the repair this tool would prescribe, and it was in the original note.**
+* ⛔ **AFFECTED AND NOW CAVEATED: the `DEFENCE_ADMISSION_BAR` DIAGNOSTIC — timely-kill rate 0.418 (v155) vs 0.433 (v152), which I published as "contains 0, a WEAK non-regression". IT WAS NOT MATCHED ON OPPONENT.** ⚠ **The direction of that bias is unknown to me: a timely kill depends on the opponent's defence, and the mix moved toward Juusto/Erebus and away from lingling/HTTP 418.** ⇒ **the reading stands as "unresolved" — which is what I published — but for TWO reasons now rather than one, and the second is not power. Anyone re-running it should match on opponent first.**
+* ⚠ **PARTIALLY AFFECTED: the r1000-tail figure (6.4% → 2.7%) and the median kill/death rounds are OUTCOME statistics and inherit the same mismatch.** **The forward-gunner in-band shares and the first-harvester rounds are OUR-BEHAVIOUR statistics and inherit it only through interaction, which is weaker but not zero.**
+⇒ ⭐ **THE OPERATIONAL RULE THIS PRODUCES, and it is narrower and more useful than "check your populations": AN OUTCOME COMPARISON ACROSS OUR OWN VERSIONS NEEDS AN OPPONENT-MATCHED CUT; A BEHAVIOUR COMPARISON ACROSS OUR OWN VERSIONS MOSTLY DOES NOT.** **The first is measuring a contest, the second is measuring our own code — and only the first has the opponent in its causal path.** *(This is why the game-share claim survived and the timely-kill claim did not: I happened to control the one I thought was contentious.)*
+✅ **AND THE TOOL EARNED ITS BUILD IN ITS FIRST HOUR: it found a confound in work I had already published, defended, and had audited by another lane — and neither the audit nor I had looked at the opponent mix.**
