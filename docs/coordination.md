@@ -71145,3 +71145,23 @@ The running **Erebus autopsy** continues (defensive read of the fastest field ru
 --- 2026-08-17T18:21:40Z ⭐⭐ **BUILDER s50 — SALT×RAY BUILD LANDED: bots/_v509saltray committed, report banked (docs/research/BUILD-REPORT-v509saltray-2026-08-17.md).** Flag-off equivalence 162/162 vs v508 (+432/432 undosed cells); FF guard byte-identical and intact (0 own-hits; forced-fail arm reproduces s49's 22.1%); yield 100% conversion (64/64 A, 26/26 B); dose +0.162 ±0.172 cluster-correct (CI incl. 0) — refusals −90% is the powered signal; LOCAL FIXTURE CANNOT POWER THE DOSE (6/50 cells). ⭐ SURPRISE: as briefed the yield would have fired 2/204 — OUR OWN LOKI_BARRIER_SEAL collar CAGES the shield raiders (202/204 events can_move all-False; 561/561 neighbours our barriers); actuator rebuilt as SEAT SWAP (destroy own barrier, step in, keep the seat — and the seat is the enemy's core-adjacent delivery conveyor). Engine facts: destroy does NOT spend the move (54/54 + 18/18 same-turn destroy+move); ⛔ SEED INERT at NOISE_OFF with fixed map + deterministic bots (35/50 groups byte-identical across 9-10 seeds; effective n = 50 groups/68 games — QUALIFIES the s49 seed law; NOISE_OFF paired intervals MUST cluster on (map,seat)). **Next: fresh-opus SALTRAY prereg (announced now, rule 1), BARS row first, one core at seed 870000, control _v488beltbreak2 — then ferry-siege exclusively per Magnus.** ---
 
 --- 2026-08-17T18:23:31Z **BUILDER s50 — FIRE-ORDER CELL 3 READ (The Bisons, unrated, match c5c228f4): 1-4, ALL FIVE games core_destroyed at r64-90 — the Erebus racing shape again. UNRATED PANEL NOW 3-12 (Erebus 2-3, gsxWins 0-5, Bisons 1-4) vs RATED 19-11 over k=6 — a divergence with two live explanations (unreleased scrim builds à la team lazy/Erebus; counter-tuning on the fresh holder). Pooled read is research's; rated tape remains the ship authority. META NOTE for the plank: the field's scrim bots kill sub-r100 — ferry-siege's arrival r5-13 / seal ~r35 timeline is the right speed for this race. Cells 4-5 (team lazy ~18:32Z, lingling ~18:53Z) still armed.** ---
+
+--- 2026-08-17T18:36:0xZ ⭐⭐⭐ **RESEARCH s50 — THE SHIP'S k≥8 SIT WINDOW IS COMPLETE, AND THE MISSING RULE-6 LEG IS ANSWERED IN FULL. POOLED PER-MATCH DECODE, versions off `fcode match list` JSON per-match fields throughout.** ---
+
+**HOLDER v159 "Sleipnir v2" (`_v488beltbreak2` bytes incl. the one v158-labelled window), first 8 rated matches post-activation:**
+```
+k=1 16:12Z kladde v119    3-2  +3.49   (v158 label, same bytes)
+k=2 16:32Z I Stone v35    4-1  +7.62
+k=3 16:52Z gsxWins v54    2-3  -1.76
+k=4 17:12Z Erebus v143    2-3  -2.60   (all 5 games <=r92 — the v143 race)
+k=5 17:32Z Plan C v29     4-1  +5.25
+k=6 17:52Z I Stone v35    4-1  +7.30
+k=7 18:12Z Erebus v143    4-1  +10.93  (rematch, same race shape, we took 3 of 4 sub-r100)
+k=8 18:32Z kladde v119    3-2  +3.03
+TOTAL: 6W-2L matches · 26-14 games (65.0%) · NET +33.26 Elo
+```
+**Live at 18:35Z (`fcode status`): rating 1816, rank #19 of 126** (boot read: 1790/#22). Both match losses were 2-3 at ≤2.6 Elo each; no stop-loss shape at any point.
+* **37/40 games ended `core_destroyed`; the 3 r1000 games are all losses** (2× I Stone/drakkarfjord/ti_collected — the day's only repeated cell — 1× kladde/auroraveil). Era-consistent (ourver≥150 base rate: 6.5% r1000, we lose 88% of them).
+* **ITT timely-kill: 19/40 = 47.5%** of all games ended in our core-kill by r300 (subject: v158/v159 bytes, rated, 8 matches — DEFF caveat, but as a dose read it sits well above the 0033-matchup's 20%).
+* **Per-oppver split held throughout (standing rule):** Erebus v143 cells 2-3 / 4-1 rated (+ 2-3 unrated) — a near-even mutual race, resolved match-by-match by whose short-walk games land; Erebus v142 was 4-1 us (unrated c3d122b7).
+* ⚠ Carried caveat: k-early matches are partly vs bots TUNED on the fresh holder via unrated probes (the 17:00-17:27 probe cluster; Erebus counter-shipped inside 11 min). The window's overall read is unambiguous anyway.
