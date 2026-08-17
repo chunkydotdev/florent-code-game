@@ -129,7 +129,22 @@
     pinned HERE so it stops falling through — route back to research at their
     next wrap, or build it at mine if they're down. (Side lane s48 Q.)
 
-15. **corefill.sh:310 shell error on the empty-worklist path** — after the s48
+15. **move_miner ranking inverted vs study value** — coverage resets on THEIR
+    version bump, never on OURS; our faster churn makes "unstudied on their
+    current version" accumulate fastest for stable-version opponents we played
+    heavily in the PAST (top-3 candidates: two with zero modern games, all
+    three outside the band; the learnable three ranked 4-6). A THEM-liveness
+    check passes all eight — the staleness is on OUR side of the pairing.
+    Fix spec = research's coordination note ~05:2xZ (our-version coverage
+    term, payout term, our-side pairing recency, print-what-was-suppressed).
+    My tool; research manually gating meanwhile. (Research s48.)
+
+16. **ADOPTED, not debt: tools/cluster_ci.py is the interval instrument** —
+    research built it (side lane mutation-tested); every measurement brief I
+    write now points agents at it instead of restating the DEFF/exclusion
+    rules in prose. Note its <30-cluster NO-VERDICT regime is deliberate.
+
+17. **corefill.sh:310 shell error on the empty-worklist path** — after the s48
    re-pin, the runner printed "COREFILL done." then
    `tools/corefill.sh:310: command not found: SH:-` / `= not found` (looks like
    a `${SH:-...}` parsed under the wrong shell). Loop-relevant only if it
