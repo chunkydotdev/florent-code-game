@@ -69798,3 +69798,34 @@ median difference 0.0pp at every mark; p10 and p90 both 0.0pp
 --- 2026-08-17T06:25:56Z ⭐⭐ BUILDER s48 — ODIN ANALYSIS BANKED (docs/research/ODIN-ANALYSIS-2026-08-17.md; sources staged byte-identical: _x3r0v157odin/_x3r0v156lokileap/_x3r0v153turbo6, PROVENANCE.md sidecars, version_trees closed). HEADLINES: (1) Odin is a STRICT FUNCTIONAL SUPERSET of Sleipnir — zero of our 93 functions absent, zero of v152's 199 constants changed, 215 added; our samestop planks lifted BYTE-IDENTICAL and credited in their own doc ("THE SLEIPNIR PORT") — cross-pollination working as designed. (2) The NOVEL piece is ARCH: a live opponent classifier (taxonomy from 400 ladder replays) switching subsystems by archetype — nothing like it in our tree, THE portable idea. (3) Their headline TW weapon CANNOT ARM AGAINST US (gates on archetype==MACRO + never-seen-a-turret; Sleipnir reads PRESSURE; 0/6 demos armed). (4) ~A third of the added surface is inert (T5 flags under a False master). (5) The ship is UNMEASURED BY ITS AUTHOR'S OWN RECORD (their §15.7.1: the pre-registered bar "has not been run"; their base's own verdict "REJECT as configured"). (6) ODINVSSLEIP (already running, n=2700) is thereby a NESTED A-vs-A+X on shared source — better-conditioned than V140VS152 ever was; pair within-invocation only (their tree is seed-nondeterministic by their own note). Mechanism diagnostics (ARCH class, TW arming, seat-seal marks) are NOT on the shard tape — a separate demo battery is the instrument if the distance warrants decomposition. (7) A COORDINATION ITEM FOR MAGNUS, stated neutrally on the record: x3r0's own shipped doc (§15.7.3) says displacing v155 "needs Moonfarm's agreement and the user's approval, separately. Nothing here was uploaded." — and it was then uploaded as v157. The hazard was flagged correctly in writing by them; whether the named agreement was given is Magnus & x3r0's, not a lane's. ---
 
 --- 2026-08-17T06:27:16Z BUILDER s48 — TW/ODINVSSLEIP FRAMING + A REGISTERED SIDE-EFFECT (side lane synthesis, consumed): (1) ODINVSSLEIP measures ODIN-WITH-TW-INERT — TW gates on "no enemy turret ever seen" and Sleipnir's forward sentinels fail that condition immediately — which is EXACTLY Magnus's registered question ("measure odins winrate against US") and simultaneously a named, DIRECTIONAL reason the local number understates Odin's ladder strength (compounding the statistical translation caveat; the readout carries the mechanistic form). (2) ⭐ DEFENSIVE PROPERTY WE DIDN'T KNOW WE HAD: forward sentinels are a HARD COUNTER to TW by construction — we already ship them. (3) ⛔ REGISTERED SIDE-EFFECT for the eco family and every KLADLADDER successor: an arm that DELAYS or REMOVES early visible turrets RE-ENABLES TW against us — a named cost term for any "trim turrets for eco" design from today forward. Scope caveat carried: reasoned from the gate's stated conditions, not third-party replay evidence; if MACRO classification is rare, TW may be near-inert generally. ---
+
+--- 2026-08-17T06:27:37Z ⭐ **RESEARCH s48 — WHERE OUR COST SCALE ACTUALLY GOES, AND THE ONE PLACE WE ARE AN OUTLIER. PLUS `#95` STOCKED (ARCH).** ---
+## 1. THE COMPOSITION CUT — we are NOT overspending on scale, and only one component is unusual
+Median scale added by r25 / r50 / r100, per team (80 teams with ≥200 archived sides):
+```
+Jython 2212      129 / 146 / 160        Pantheon 1988    147 / 165 / 193
+Lorem Ipsum 2074 142 / 171 / 182        Leviathan 1936   118 / 139 / 160
+Pivot 2068       149 / 171 / 195        Clankers 1913    132 / 164 / 188
+sporks 2048      138 / 164 / 206        FIELD MEDIAN     140 / 161 / 182
+--- OpenSverige v155 (n=265 sides):     154 / 172 / 184
+```
+⇒ **our TOTAL is ordinary — 184pp at r100 against a field median of 182.** ⚠ **And our own version series is flat from v102 onward (181-197 at r100), with the pre-v102 era markedly LOWER (164-172): the +20pp step lands at exactly the version where forward gunners collapsed and forward barriers appeared, which is the same v102 substitution seen from a third instrument.**
+**COMPOSITION at r100 (mean pp per side):**
+```
+team           builder  turret  harv  belt  launch
+OpenSverige      104.4    29.1  21.0  24.4    3.9
+Jython            94.6    27.5  15.3  20.6   10.6
+Pantheon         108.2    38.1  18.4  30.8    0.5
+Leviathan         92.3    29.8  22.2  25.2    0.0
+Clankers         120.3    30.1  14.1  25.7    0.1
+sporks           119.5    28.7  23.8  39.7    0.0
+ph               113.2    25.3  20.7  28.3    2.7
+Pivot            110.1    36.6  28.7  26.9    0.0
+```
+⇒ ⭐ **BUILDERS ARE THE DOMINANT SCALE COST FOR EVERYONE — 92-120pp of a ~180pp total, i.e. roughly 55-65%.** **Our five opening builders alone (`LOKI_BASE_BUILDERS = 5` × 20pp = 100pp, unconditional) are more than half the median team's ENTIRE r100 accumulation.** ⇒ **that prices `#62`'s map-conditional-opening plank properly for the first time: it is not a small economy tweak, it is the single largest scale lever in the game.**
+⇒ ⭐ **AND THE ONE PLACE WE ARE AN OUTLIER IS LAUNCHERS: we spend 3.9pp and SIX OF THE EIGHT top teams spend 0.0-0.5.** Only Jython spends more (10.6). ⇒ **`#24`'s "we are the only top-tier team that builds launchers" is now priced in scale terms rather than counted — and 3.9pp is p-nothing against a 180pp median, so THE SCALE ARGUMENT AGAINST LAUNCHERS IS DEAD. If launchers are wrong for us it is not because of what they cost.**
+⚠ **Ours is split by version (v155 cell, n=265 sides); the composition table is pooled across our versions and is therefore a WEAKER claim than the trajectory — flagged rather than fixed, because the component shares move much less than the total does.**
+
+## 2. `#95` STOCKED — LIVE OPPONENT-ARCHETYPE CLASSIFICATION (`ARCH`, from the Odin analysis)
+**GREP: `archetype`/`classif`/`opp_type`/`enemy_style` = 0 across all four files; `opponent`/`adapt` = 0 in `main.py`, 9 hits total and EVERY ONE IS PROSE.** ⛔ **And four of those comments are the tree explaining why it deliberately has NO opponent-specific behaviour.** ⭐ **THE ROW'S CASE IS THE DISTINCTION: what we removed was a TILE TABLE (coordinates keyed to one opponent's build, stale the moment they ship — and ours did). `ARCH` classifies BEHAVIOUR. A MACRO opponent that ships a new version is usually still a MACRO opponent; their gunner tile at (9,6) is not still at (9,6).** ⇒ **the failure we correctly retired does not transfer to the mechanism we are missing.**
+⚠ **Costs named: ZERO scale (`--price 0`), but CPU against a 10 ms budget on a tree with a TLE history, and ONE COMMS SLOT — which means it COMPETES with `#16` and `#66` for the single free slot (`SLOT_DEFEND_BEAT = 13`), and the queue should not pretend otherwise.** ⚠ **AND THE PROVENANCE LIMIT: Odin's own ship was UNMEASURED (its author's doc: "bar has not been run", base verdict "REJECT as configured"). THAT `ARCH` EXISTS IS NOT EVIDENCE THAT `ARCH` WORKS.**
