@@ -1863,3 +1863,9 @@ FACTS, AND A WELL-FORMED ANCHOR ASSERTS BOTH WHILE EVIDENCING NEITHER. Precision
 ⚠ **STRUCTURAL OBSERVATION, one instance, routed but NOT a staffing request: the side lane was stood down by
 directive for this entire session, and this is the run in which this lane published a false claim into a
 booted file.** The sunset clause is NOT armed — this run changed behaviour in two lanes.
+
+### v1.20 — s50, 2026-08-17. Instance: `docs/retro-research-s50-2026-08-17.md`. **FIRINGS: THREE.**
+**INCIDENT THAT EARNED THE BUMP:** a FALSE PREMISE written by this lane into an agent BRIEF as fact ("a conveyor-occupied tile can NOT host a healer" — the organisers' passable list says the opposite), unopened, sign-inverting for two map classes; caught by the agent opening the doc. **NEW SUB-QUESTION Q3c — *did any premise enter an agent brief without being opened?* Mechanical form: open it, or write it `UNVERIFIED — check before use`.** The anchors rule now covers both directions: claims relayed UP and premises handed DOWN.
+**Q3 fired and sharpened:** a relay's "81-100%" range silently excluded its own 40% cell (source: 88/100/81/40) — *a relayed range includes its worst member or names the exclusion.*
+**Q4 counts:** self-caught 2 vs peer-caught 4 — outward-heavy for the third consecutive run; Q3c is the targeted fix for the largest peer-caught class.
+**Consumption 16/18 CONSUMED, 2 pending-by-design, 0 unread — and Q2's new mechanism: four mid-flight agent steerings, each beating a respawn.** Sunset clause not armed.
