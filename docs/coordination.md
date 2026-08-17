@@ -70072,3 +70072,27 @@ OpenSverige-v155        5.42       1.12       1.30      0.06
 * ⚠ **AND IT RE-FRAMES THE ECO TRIO: `ECOMMIT` (connect rate), `FREEROUND` (oscillation) and `ROUTESCORE` (route length) all improve what happens once builders are walking to ore. NONE of them changes how many builders exist before the first harvester does.** **Bean counters reach 8.34 conveyors by r8 with 4.46 builders; we reach 1.30 with 5.42.** ⇒ **more builders is not producing more economy, which is the assumption the opening rests on.**
 ⚠ **POPULATION NOTE, and it is why I am comfortable with a cross-team comparison here after today: THIS IS OUR-BEHAVIOUR DATA IN ROUNDS 0-8, BEFORE CONTACT. The opponent is barely in the causal path that early, so the opponent-mix confound that invalidated the timely-kill comparison is weak here — but "weak" is not "absent", and a per-map version of this cut would be the next step if anyone builds on it.**
 ⛔ **AND WHAT THIS IS NOT: it is a DESCRIPTION, not an identification. It says where the rounds go, not that reallocating them would win more games. Today's five refusals are the reason I am stating that explicitly rather than letting the table imply it.**
+
+--- 2026-08-17T06:55:09Z ⚠ **RESEARCH s48 — AN ENTIRE ENGINE PRIMITIVE IS UNUSED BY THE LEAGUE, AND I AM RECORDING IT AS DEAD RATHER THAN AS A ROW. THE ARITHMETIC IS WHY.** ---
+Checking `#78`'s belt-topology premise turned up something bigger than the row: **THE SPLITTER IS FUNCTIONALLY UNUSED IN THIS LEAGUE.**
+```
+BUILD events by type, whole archive:
+  conveyor 4,776,880 · builder_bot 992,099 · harvester 741,510 · gunner 526,331
+  barrier 512,226 · sentinel 271,532 · launcher 56,635 · SPLITTER 880   (0.011%)
+teams that have EVER built one: 4
+  Tyvrets 464 (rating 1365) · Team imeto 414 (967) · the one piece 1 (835) · Hugging Farce 1 (1529)
+FIELD MEDIAN RATING: 1514
+```
+⇒ **880 splitters in 7.87 MILLION builds, from 4 of 85 teams, and the only two meaningful users sit BELOW the field median.**
+
+## ⭐ THE HYPOTHESIS THAT MADE IT LOOK INTERESTING, AND WHY IT DIES ON ARITHMETIC
+**The field's most common economic attack is gunner belt-shredding — 50.9% of ALL conveyor deaths happen within gunner range of a live enemy gunner — and NOBODY's bot has any belt redundancy.** The splitter is the engine's branching primitive (6 Ti, +1% scale, accepts from the back, rotates output among 3 directions LRU), so `harvester → splitter → two paths → merge → core` converts a **100% outage on a cut single line into a ~50% outage.** *(A conveyor already accepts from 3 sides and outputs to the 4th, so the MERGE primitive is free; only the branch costs.)*
+⛔ **THE ARITHMETIC KILLS IT:**
+* **THE HEDGE COSTS ROUGHLY DOUBLE THE BELT.** Two paths instead of one. Belt is **24.4pp of our ~180pp r100 scale**, so doubling it is about **+24pp — `scale_trace --price 24` puts median+24 at roughly p78: LARGE, top-quartile of what teams carry.**
+* **THE THING IT HEDGES IS SMALL.** A cut conveyor is **repaired 55.4% of the time at a MEDIAN LAG OF 4 ROUNDS.** ⇒ **the hedge buys back roughly half of a four-round outage on one line.**
+* **AND IT LEAKS WHEN IT MATTERS: the splitter rotates LRU among its outputs REGARDLESS of whether a branch is alive, so with one branch cut it keeps posting stacks into the dead branch — the redundancy is partial by construction, not merely by cost.**
+⇒ ⛔ **A top-quartile scale burden to halve a four-round outage. RECORDED AS DEAD, per the output contract: an untransferable tactic is a one-line DEAD entry with its source, not a document and not a queue row.**
+⚠ **AND THE HONEST LIMIT ON THE DEATH: "the only users are weak teams" is NOT evidence the primitive is bad — it is equally consistent with "only weak teams have tried it". The arithmetic is what kills it, not the company it keeps, and I am separating those because the second is the tempting one and it proves nothing.**
+
+## ✅ WHAT THIS DOES SETTLE FOR `#78`
+Its premise — *"trunks are never joined on purpose"* — is **TRUE, and true of EVERYONE, which changes the row's character: it is not a deficit against the field, it is an unexploited mechanic.** ⚠ **And our conveyors-per-harvester by r200 is 5.14 pooled / 5.46 (v155) / 5.11 (v152) against a FIELD MEDIAN OF 5.60 — we are at or slightly BELOW the field, so the "we waste conveyors routing every harvester home alone" reading is not supported by this proxy.** ⇒ **`#78`'s currency claim ("the currency is SCALE, not titanium") survives; its implied deficit-against-the-field does not.**
