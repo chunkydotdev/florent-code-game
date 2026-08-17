@@ -542,3 +542,11 @@ backstop, now primary); host certification = NULLWS1S (this host, TODAY,
 54.25 [49.37,59.13] n=400, collision/sanity scope as pre-committed). Everything
 else — bars, bands, contrast, stops semantics, FIRINGS-BEFORE-PRIMARY —
 unchanged. Local worklist rows retired with pointers here.
+
+### AMENDMENT 1a (2026-08-17T05:49:35Z, still before the arm's first game): seedbase correction
+Amendment 1 said "registered seedbases unchanged" — WRONG at execution: the
+registered 812000 collides with NULLWS1S's seedbase on this host (both would
+map to +32M offset 32812000, replaying the null's seeds as treatment games —
+the pooled-n-is-a-lie class). Actual seedbases: SEALSENTAN 816000 (host
+32816000), SEALSENTA 818000 (host 32818000). Disclosed before first game;
+seeds are identity-neutral to the hypotheses.
