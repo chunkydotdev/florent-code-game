@@ -19,3 +19,16 @@
    unaffected (returns earlier). Spec = side lane s48's driven state table
    (coordination tail ~04:2xZ). Session constraint until fixed: NO
    submit_clean invocation in any mode while status is flapping.
+   ⭐ FIX IS A COPY, NOT A DESIGN (side lane sweep, banked in
+   docs/research/FLAG-submit-clean-unknown-holder-2026-08-17.md): make
+   submit_clean do what `ship_ledger.py:567` already does — test None BEFORE
+   any comparison, return 2. Sweep of all six ship-chain holder consumers came
+   back NEGATIVE (defect isolated to submit_clean); scope was ship-chain
+   live-holder readers only, not a repo-wide unknown-folding audit.
+
+3. **corefill.sh:310 shell error on the empty-worklist path** — after the s48
+   re-pin, the runner printed "COREFILL done." then
+   `tools/corefill.sh:310: command not found: SH:-` / `= not found` (looks like
+   a `${SH:-...}` parsed under the wrong shell). Loop-relevant only if it
+   prevents relaunch when real work arrives — VERIFY when the ladder-no-cap
+   shard is queued; fix at wrap if benign.
