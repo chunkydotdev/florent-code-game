@@ -70422,3 +70422,16 @@ ODINVSSLEIP           ~2118 / 2700                  2160               ~40+ and 
 
 **ARMS at 07:30:01Z:** `BELTBREAK-EARLY` **2999** (past the mark, uncancelled — the sole full-distance survivor) · `ODINVSSLEIP` **2562/2700**, ~138 to go, **lands clean by construction**. Completion watch armed; if it lands after this terminal closes the row is in its own tape.
 **WATCHES:** drift_watch (2), corefill/SEALSENT transition watch, ship-chain commit consumer — all alive at 07:30Z. **Builder-owned monitors verified, not re-armed.**
+
+--- 2026-08-17T07:32:54Z ⛔⛔ **SIDE LANE s48 — TWO STALE CLAIMS IN THE CLOSING RECORD, ONE OF THEM MINE. `BELTBREAK-EARLY` FIRED 30 SECONDS AFTER IT WAS CALLED THE SOLE SURVIVOR.**
+```
+2026-08-17T07:30:33Z  BELTBREAK-EARLY  DONE  2700  3020  52.85  [51.07, 54.63]  COMBO-BAR@2700  fired_on 53.19  bots/_v468kladturbo
+```
+**`COMBO_BAR = 55.0` (`auto_gate.py:278`, Magnus 2026-08-16). Prefix 53.19 < 55.0 ⇒ STOP.**
+
+**⛔ STALE CLAIM 1 (builder's, in HANDOVER):** *"regime final for s48: 4-of-5 stopped + 1 catastrophe, BELTBREAK-EARLY the sole full-distance survivor."* **Written ~07:29–07:30Z; the arm fired at 07:30:33Z.** ⇒ **the s48 cancellation ledger now carries SIX `DONE` rows for today, all against `bots/_v468kladturbo`** — SEALSENTAN · ECOMMIT (catastrophe) · FREEROUND · BELTBREAK-LATE · ROUTESCORE · BELTBREAK-EARLY. **Of every arm that REACHED a mark today, none survived.** `ODINVSSLEIP` (2634) is the only one still running. **A successor reading HANDOVER will otherwise inherit a survivor that does not exist.**
+
+**⛔⛔ STALE CLAIM 2 IS MINE, AND IT IS Q9 AGAIN — MY OWN CORRECTION NOW NEEDS CORRECTING.** Earlier today I corrected my "4 firings" tally to *"3 stopped of 5 — the regime DISCRIMINATES rather than culls,"* resting on ROUTESCORE and BELTBREAK-EARLY having passed a look unseen. **Both have since been stopped.** ⇒ **the discrimination claim rested on two survivors and BOTH are gone; the completed record is 6 of 6.** ⚠ **The correction was right about the DEFECT (my watch fires on stops, so survivals were silent) and wrong about the CONCLUSION it licensed — a survivor is only a survivor until its mark arrives.** ⇒ **a tally taken mid-flight is a snapshot, not a rate, and I published it as a rate.**
+
+**⭐⭐ AND THE BARS FLAG NOW HAS ITS SECOND AND STRONGER INSTANTIATION — THE COMBO BAR, the row my flag singled out.** `FLAG-bars-not-repriced-after-control-move-2026-08-17.md` predicted: *"55+ vs Sleipnir has never been achieved by anything."* **BELTBREAK-EARLY died at 53.19 against a champion-class control, full tape 52.85 [51.07, 54.63].** **Two of the flag's four bars have now fired on real arms, ten minutes apart, both against the new control.**
+⛔ **THIS LANE STILL MAKES NO FALSE-KILL CLAIM — it cannot price these arms' merit and will not.** **The narrow, verifiable statement is: under the moved control, SIX of six completed arms were stopped, and the flag's caveat *"this is prospective"* is now spent twice over.** ⇒ **the question is Magnus's alone (both numbers are his pins): do `TREND_FLOOR = 52.0` and `COMBO_BAR = 55.0` still mean what you intended now that control is champion-class?** **Not urgent — nothing is corrupting and no shard is blocked — but it should be the successor's first read, not a rediscovery.**
