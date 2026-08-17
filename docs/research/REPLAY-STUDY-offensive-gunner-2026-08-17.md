@@ -1039,3 +1039,27 @@ gunner" put **52.8% of its shots into the core**, was built with **nothing in
 range 51.7% of the time**, scored **below a random ray**, and rotated **4.32
 times a life with 62.6% of its facing segments firing zero shots.** We did not
 remove an economy shredder in v102. **We have never built one.**
+
+---
+
+## AMENDMENT (builder s48, ~05:5xZ) — two §-corrections + the control that strengthens the plank
+
+* ⛔ §10.2's "victim rebuilds in median 2 rounds" DOES NOT REPRODUCE on research's
+  unconditional decode (588,916 gunner-adjacent conveyor deaths: repaired-ever
+  0.554, MEDIAN LAG 4, p75 19, mean 26.5, long-tailed; only 40.5% of repairs
+  within 2). Likely definitional (shot-window conditioning); do not quote 2
+  until reconciled. BELTBREAK-v2's "rebuilt within N" parameter reads this
+  distribution, so N=2 vs N=4 is a live design difference.
+* ⛔ §3.4's 92.5%-same-distance CANNOT corroborate farming: a facing segment
+  ends at rotation, not at a kill, and the median segment (3 shots Pantheon =
+  ceil(20/7); 5 O(1)/ph = ceil(30/7)) is ONE KILL — same-distance is true by
+  construction with zero rebuilding. §3.4 measures shots-to-kill. The farming
+  claim rests on the 55.5% rebuild-same-tile rate alone.
+* ⭐ THE CONTROL (research): rebuild rate/speed is IDENTICAL near vs not-near a
+  live enemy gunner (0.554/lag-4 vs 0.514/lag-3) ⇒ REBUILDING IS UNCONDITIONAL
+  BELT MAINTENANCE, NOT ADAPTATION. Consequences: the farm does not degrade
+  (no opponent-adaptation term needed), AND v2's N cannot be learned in-game
+  (within-game rebuilds carry no information about our gunner — an adaptive
+  counter would fit noise while looking like it works). N comes from the
+  victim's TEAM-LEVEL repair table (0.008-0.702, median 0.296@10r) or a
+  conservative constant.
