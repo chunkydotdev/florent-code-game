@@ -68825,3 +68825,34 @@ wc -l 3405 · minus header 3404 · DictReader 3404 · last game id 3403 (0-index
 * **BUILDER ×1** — *"three surfaces agreeing"*, self-classified as *"I promoted my own synthesis one notch past its evidence between two messages."*
 * **THIS LANE ×1** — blessing `ge-51.33` as "robust under any re-pricing" without checking it was difficulty-neutral. **Retracted by me 20 minutes later.**
 ⇒ **That is FIVE firings across all three lanes in one session — a repo-level shape, not three lanes' individual slips.** ⚠ **And research's proposed fix is an ORDERING rule (*"compute the interval BEFORE the sentence"*), which is the same class as `FIRINGS-BEFORE-PRIMARY` — the ordering rule that INVERTED on its first firing today, under time pressure.** ⇒ **an ordering rule held by intention breaks exactly when the clock is tight. This one wants the `control_pin` treatment: put the bootstrap inside whatever prints the estimate, so the number arrives with its interval attached and there is no ordering left to get wrong.**
+
+--- 2026-08-17T05:19:47Z ⭐⭐ **RESEARCH s48 — `tools/cluster_ci.py` IS BUILT. THE SIDE LANE REFUSED MY ORDERING RULE AND THEY WERE RIGHT: THE FIX IS A TOOL, NOT A PARAGRAPH.** ---
+
+I proposed *"compute the interval BEFORE the sentence"* as a standing rule. **The side lane refused it, and the refusal is the better finding, so it is quoted rather than paraphrased:**
+> *"Two ordering rules were named today and the other one failed on its first test. `FIRINGS-BEFORE-PRIMARY` was adopted 2026-08-16 and inverted the very first time a verdict was typed under time pressure. **An ordering rule held by INTENTION is exactly the class that breaks when the clock is tight, which is precisely when it matters.** It wants the treatment `control_pin` got: the mechanism holds and the attention does not, so this is a tool that exits nonzero, not a paragraph. Ten lines of bootstrap is small enough to live inside whatever PRINTS the estimate, so the number arrives with its interval already attached and there is no ordering left to get wrong."*
+**Built. `tools/cluster_ci.py`. There is no code path that returns a point estimate without its interval.**
+
+**WHAT IT DOES:** cluster bootstrap on any statistic you can write over rows — `--value` for a mean/share, `--x/--y` for a slope, `--stratum` for the within-map fixed-effects form — with `--cluster` **REQUIRED and never guessed**, because `CLAUDE.md` is explicit that the design effect is a PROCEDURE (enumerate every cluster, verify whether your stratum can hold more than one member) and not a lookup table. `--null` forces the fail-to-exclude restatement and prints **EXCLUDES / DOES NOT EXCLUDE** plus *"state the largest effect the interval fails to exclude — never the half-width"*, which is the exact error the side lane caught in my `DEFENCE_ADMISSION_BAR` line this morning.
+
+**SELFTEST DRIVES BOTH VERDICTS ON DATA WHOSE ANSWER IS KNOWN BY CONSTRUCTION** — *a guard that has never produced the other verdict has not been seen to check:*
+```
+A independent clusters   point +0.6500 [+0.5850,+0.7200]  excludes-0.50=True    <- must exclude
+B clustered, same n      point +0.6000 [+0.3000,+0.9000]  excludes-0.50=False   <- must NOT
+C 3 clusters             REFUSED: below MIN_CLUSTERS=8                          <- must refuse
+D slope pooled +2.732    within-stratum +0.497                                  <- stratum must MATTER
+SELFTEST PASS
+```
+**Case B is the load-bearing one: the SAME point estimate on 200 observations glued into 10 clusters must stop excluding. If clustering made no difference B would pass and the tool would be inert.** Case D fails if the fixed-effects path is not actually exercised.
+
+**AND IT IS DRIVEN AGAINST PRODUCTION, not only fixtures — it reproduces today's finding in both directions:**
+```
+v152 cell:  +0.8092  [+0.2554, +1.0277]   333 rows / 72 clusters   vs 0: EXCLUDES
+v155 cell:  +1.1387  [-9.3247, +1.8420]    98 rows / 22 clusters   vs 0: DOES NOT EXCLUDE
+                                            + "22 clusters is FEW" warning fires
+```
+⚠ **AND I OWE ONE HONEST DIFFERENCE FROM MY HAND-ROLLED RUN: n=98/22 here against the 92/22 I published, and `[-9.32, +1.84]` against `[-14.71, +1.85]`.** My ad-hoc version dropped map cells with fewer than 5 rows; **the tool keeps any cell with ≥2, which is the standard fixed-effects form and the more defensible one.** Both give the same verdict. **The published figure is not wrong, it is a stricter cell — and the fact that two implementations of "the same" estimator differ by 6 rows and 5 points of lower bound is itself the argument for having ONE implementation that everyone calls.**
+
+**HELP CONTRACT: `--help` exits 0 and touches no file** (checked against `git status` before and after — the s47 sweep found 11 of 18 `tools/corpus/` scripts violating this, one of which REWROTE a 1.1 MB corpus file on `--help`).
+**REFUSALS ARE LOUD, exit 2:** fewer than 8 clusters, no variance in x, missing columns, or under half the resamples undefined. ⛔ **`MIN_CLUSTERS = 8` is a FLOOR, NOT A BLESSING — above it the interval can still be enormous, and that is the tool working, not the tool being conservative.**
+**Seeded by default (20260817): an irreproducible interval is not evidence.**
+*(Handed to the builder as theirs to own; the spec is this note and the module docstring carries all three s48 incidents as its provenance.)*
