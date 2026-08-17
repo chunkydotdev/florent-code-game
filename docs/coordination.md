@@ -69529,3 +69529,22 @@ gunner   d2>=60     1.47   0.320       1.21   0.206       1.01   0.167
 * **I am NOT re-running the sweep.** It is correct for the control it names, and re-running it against a tree we do not have would be impossible anyway (see 2).
 * ⭐ **THE ASK THAT BELONGS TO MAGNUS, and it is the s47 question with today's facts attached: DO NEW REGISTRATIONS SCORE AGAINST THE LIVE HOLDER OR AGAINST THE PROGRAMME CONTROL, NOW THAT A TEAMMATE CAN MOVE THE FIRST WITHOUT MOVING THE SECOND?** Both answers are defensible; **what is not defensible is running shards for hours without knowing which one is in force.**
 * ⭐ **AND THE CHEAP INSTRUMENT FIX, offered to the builder: `version_trees.tsv` should carry a row for EVERY holder change, with `tree = UNKNOWN (teammate ship)` when we have no source — because an ABSENT row and a row saying UNKNOWN look identical to a reader but only the second admits it.**
+
+--- 2026-08-17T06:05:42Z ⛔⛔ **SIDE LANE s48 — A TEAMMATE SHIPPED. `v157 "Odin"` (x3r0) IS LIVE; SLEIPNIR IS OFF THE SLOT AFTER ~10h20m. HOLDER AND CONTROL HAVE DIVERGED.** ---
+
+**Caught by the slot watch at 06:03:29Z (`HOLDER CHANGE v155 -> v157`) and VERIFIED OFF THE AUTHORITY at 06:04:07Z — never off the poller (D28):**
+```
+fcode status            Active bot: v157 (Odin)   1805 Emerald   rank #19/126   1161 matches   last 10: 8W 2L
+fcode submission list   v157  Odin           ready  ACTIVE  uploaded by x3r0   2026-08-17 06:00
+                        v156  Loki leap v1   ready  —       uploaded by x3r0   2026-08-16 19:59
+```
+⇒ **Sleipnir (v155) held from 2026-08-16T19:38:40Z to 2026-08-17T06:00 — about 10h20m.** ⚠ **`v156` went up ONE MINUTE after our 19:38 ship and never activated; `v157` did.**
+
+## ⇒ CONSEQUENCES, and none of them is a drift flag against a lane
+✅ **NO LANE ACTION. Neither lane submitted, activated or touched the platform. The slot freeze was Magnus's instruction to US; a teammate shipping is within their rights, and whether this one was authorised is his and x3r0's business — this lane reports the STATE, not the propriety.**
+⛔ **`PROGRAMME.md INCUMBENT` is `bots/_v468kladturbo` = Sleipnir = v155, and that is NO LONGER WHAT IS ON THE LADDER.** ⇒ ⭐ **`now.py`'s standing warning has fired for real: *"the CONTROL and the HOLDER are different questions — if a teammate ships, 'beat the control' and 'beat what is live' diverge, and every queued row is still scored against the CONTROL."***
+⛔ **ALL SEVEN RUNNING ARMS carry `control=bots/_v468kladturbo`.** ⇒ **their results answer *"beats SLEIPNIR"*, not *"beats what is LIVE"*.** ⚠ **Not wrong — Magnus's benchmark-stability rule says do not move the benchmark constantly, and his `>60 vs Sleipnir` target names Sleipnir explicitly — so the arms stay valid ON THEIR OWN TERMS. What changes is what a READER may conclude.** ⇒ **worth one line in every verdict typed from here: the control is Sleipnir and Sleipnir is not the holder.**
+⛔ **THE ONE THAT BITES SOONEST: any same-day rated decode from here must SPLIT ON `ourver` AT THE 06:00 BOUNDARY.** **`elo_history`'s poll-time tag will start crediting v157 for matches Sleipnir played, and pooling the two is exactly what the per-match `ourver` rule exists to prevent.** ⭐ **Precedent is research's own s47 decode: pooled it read "47.5%, −38 Elo" and indicted nothing; split by `ourver` it named one version and exonerated the other. Same shape, new boundary.**
+
+⭐ **AND AN OPPORTUNITY THAT WILL NOT IMPROVE WITH TIME, flagged to research as theirs: SLEIPNIR NOW HAS A COMPLETE, BOUNDED RATED TENURE** — 19:38:40Z to 06:00, closed at both ends, **no successor contaminating the tail.** **That is a cleaner dataset than any mid-tenure cut of the bot we shipped, and it is available now.**
+**Slot watch re-armed on v157.**
