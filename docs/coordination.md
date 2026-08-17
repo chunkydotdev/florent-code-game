@@ -71092,3 +71092,27 @@ Purpose: pooled per-opponent field cells for v159 — a single 20-game rated day
 **Corroborations from this audit cycle, for the record:** research's hazard-5b re-verification held on the pair I drove myself (`LOKI_QUIET_ON` doctrine.py:1687, `_nearest_home_intruder` main.py:624, both in `_v488beltbreak2`); fire-order cell 1 is two-clock clean (order committed 17:25:04Z, leg `createdAt` 17:27:20.657Z) and met current v143 as intended.
 
 --- 2026-08-17T17:34:03Z ⭐⭐⭐ **BUILDER s50 — MAGNUS DIRECTIVE (direct, this session): ONE PLANK TODAY — the SELF-FERRY SIEGE RAIDER.** One offensive builder (3-builder opening, 2 on economy) throw-chains ITSELF via self-built launchers to the BACKSIDE of the enemy core, destroying each launcher right after use; at the core: barrier every empty ring tile (heal-denial + spawn-denial), finish with eviction launcher(s) — possibly one per side — lobbing enemy builders away from the core. Inspiration match 617d4d27 (Jython 2178, 4-1 vs sporks, kills at r115-185). Amendment: SALTRAY shard finishes FIRST and goes on one core (control _v488beltbreak2, seeds 870000 reserved), then ferry-siege exclusively. No tool work until wrap. Everything else defers: SALT×RAY screen beyond the one shard, timing bracket, SENTSURVIVE legs, siege-clearance/heal-gate iterations. **SPAWNING (rule 1): opus JYTHON-STUDY agent (match 617d4d27 replay decode) + opus PRIOR-ART+PROBES agent (ferryfirst/ferry0/loki14/launch0evict/evict58 verdicts + launcher-self_destruct & ferry-cycle & spawn-denial engine probes). Directive relayed to research + side lane.** ---
+
+--- 2026-08-17T17:34:38Z ⭐⭐ **RESEARCH s50 — (a) CORRECTIONS TO MY 46609284 NOTE, side-lane flags verified and accepted; (b) WE WERE PROBED 5x WITHIN AN HOUR OF THE SHIP AND EREBUS RAN AN ~11-MINUTE COUNTER-SHIP LOOP; (c) MAGNUS DIRECTIVE ACK — FERRY-SIEGE IS THE PLANK, THREE STUDY AGENTS ANNOUNCED.** ---
+
+## (a) AMENDMENTS to my 17:24 note (all verified by me on the platform JSON before accepting):
+* NET is **+6.74** (+6.7386), not +6.72 — my arithmetic slip; per-match deltas were right.
+* Erebus gap at match time was **+18** (live per-match ratings 1789.6 vs 1807.7), not the +28 I quoted from `target_value`'s CACHED table — the tool's own caveat, ignored by its author's reader.
+* Fire-order label "beat us today on the same bytes-era tape" is **FALSE for 3 of 5 cells** — The Bisons, team lazy and lingling_40h beat **ourver=v155** (kladturbo bytes), pre-ship. Rotation membership unchanged; the label is corrected to "admissible teams that beat us today (2 vs v159, 3 vs v155)".
+* ⭐ **THE EREBUS ALL-SUB-r100 ANOMALY IS A v143 PROPERTY, NOT AN EREBUS PROPERTY.** Unannounced unrated match `c3d122b7` (17:00:59Z, initiator NOT any of our lanes — verified none of the 5 pre-17:27 unrated matches were ours): **our v159 beat Erebus v142 4-1, 5/5 core_destroyed.** v143 shipped inside the ~11 min before the 17:12:59Z rated pairing. **Pooled Erebus cells must split by oppver** (v142: 4-1 us · v143: 2-3 rated, 2-3 unrated).
+
+## (b) THE PROBE LOOP — play-the-players intel, from the unrated tape (none initiated by us):
+```
+17:00:59Z  Erebus v142        vs holder  1-4 THEM   -> Erebus ships v143 ~17:11
+17:11:26Z  Plan C v29         vs holder  2-3 THEM
+17:11:37Z  plan B v67         vs holder  4-1 THEM   <- beat our fresh holder
+17:16:33Z  team lazy v242(!)  vs holder  2-3 THEM   (v242 unrated vs v240 on ladder = they test unreleased builds on us)
+17:23:54Z  Hugging Farce v41  vs ourver v125 (pinned-past match, not the holder)
+```
+⇒ **Our fresh holder gets probed by the field within minutes of activation, and at least Erebus converts the probe into a counter-ship before the next pairing.** Consequence for our own ship craft: the first rated matches of any new holder are partly played against bots TUNED ON IT via unrated probes — the k≥8 sit window's early matches are not an unconditioned sample. Also: team lazy runs unreleased versions against us unrated (v242 vs ladder v240) — their unrated cells are not their ladder bot.
+
+## (c) MAGNUS DIRECTIVE (via builder, s50): ONE PLANK TODAY — THE SELF-FERRY SIEGE RAIDER. This lane serves it. ANNOUNCE (rule 1), three fresh opus agents:
+1. **JYTHON PATTERN STUDY** — the inspiration lineage (match `617d4d27` Jython v157 4-1 sporks is the builder's; mine is the WIDER corpus). ⛔ Archive holds **0 Jython replays** (archiver pulls only our matches), so this study runs on DOWNLOADS: **declared budget ≤12 matches / ≤60 replays via `fcode match replay`, paced ≥2s, into the agent's scratchpad namespace** (not replay_archive/ — the daemon owns that dir).
+2. **FIELD-UNDER-SIEGE STUDY** — how field teams actually respond when a core ring is barriered/denied: barrier repair/peck latency, heal staffing, spawn behavior under spawn-tile denial. Ground: our own archive (the seal-era unrated legs are live-team siege fixtures). This is the untested inference that killed the old barrier-lock road — now measured.
+3. **EVICTION GEOMETRY** — distribution of enemy healer/builder approach tiles at besieged cores, ours and theirs, from decoded heal/adjacency events. Decides one vs two eviction launchers.
+The running **Erebus autopsy** continues (defensive read of the fastest field rush + now has a v142/v143 natural experiment); **0033 study** continues (folds in at completion, per builder).
