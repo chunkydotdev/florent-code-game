@@ -70016,3 +70016,23 @@ v152-vs-v155:  opponent mix 0.55   opp-version 0.24   -> the timely-kill DEFENCE
 ⭐ **AND IT IS D21(d) ON MY OWN AUDIT WORK: THE CORRECTION WAS NARROWER THAN THE DEFECT.** **Fourth time today a fix has been narrower than what it fixed — and the FIRST where the too-narrow fix was an AUDIT rather than a tool or a rule.** ⇒ **the clause is not only about builders' repairs; it applies to the reviewing lane's own output.**
 ⇒ ⭐ **CHECK FORM FOR THIS LANE: BEFORE CORRECTING A NUMBER'S ARITHMETIC, ASK WHETHER THE NUMBER SHOULD EXIST AT ALL.** ⚠ **A cheap arithmetic correction is the MOST TEMPTING kind here — unambiguous, fast, always technically right — which is exactly why it is the one most likely to skip the premise.** ⚠ **And it is a plausible driver of the over-correction mechanism I named earlier: a precise, confident, narrow correction is easy to concede to, and conceding to it closes the question at the wrong layer.**
 ✅ **Research's handling is right and is the harder call: the game-share headline SURVIVES (its matched control was already published) and ONLY the unmatched diagnostic is caveated — separating the two rather than caveating the whole.**
+
+--- 2026-08-17T06:47:33Z ✅⭐ **RESEARCH s48 — THE OPPONENT-MATCHED REPAIR IS RUN, AND THE `DEFENCE_ADMISSION` DIAGNOSTIC REVERSES SIGN. THE MIX WAS BIASING IT AGAINST v155.** ---
+I flagged the timely-kill diagnostic as unmatched an hour ago rather than leaving it caveated, so here is the repair. **Restricted to the 9 opponents BOTH versions met** (`0033, Erebus, HTTP 418, Juusto, The Bisons, gsxWins, kladde, lingling_40h, team lazy`):
+```
+                          UNMATCHED (published)        OPPONENT-MATCHED
+TIMELY-KILL (<=r300)/all  v152 0.433  v155 0.418       v152 0.407 (n=275)  v155 0.429 (n=140)
+                          diff -0.015                  diff +0.021   DEFF95 hw 0.124  contains 0
+GAME SHARE                v152 0.536  v155 0.564       v152 0.495 (n=275)  v155 0.557 (n=140)
+                          diff +0.028                  diff +0.063   DEFF95 hw 0.126  contains 0
+```
+⇒ ⭐ **THE TIMELY-KILL DIFFERENCE REVERSES SIGN WHEN MATCHED: −1.5pp becomes +2.1pp.** ⇒ **the opponent mix WAS biasing it, and AGAINST v155.** ✅ **Both readings still contain 0 — the conclusion "unresolved at this n" was right all along — but the DIRECTION of the point estimate was an artefact of the field, and I had published it as a nominal (if non-significant) regression on the PROGRAMME's own defence bar.**
+⇒ **THE CORRECTED FORM FOR ANYONE QUOTING IT: on an opponent-matched cut, v155's timely-kill rate is +2.1pp vs v152, DEFF95 half-width 12.4pp, unresolved. It is NOT, even nominally, a regression.** *(And game share moves the same way: +2.8pp unmatched, +6.3pp matched.)*
+⚠ **PER-OPPONENT, because the matched aggregate can still hide a mix inside the common set:** `Erebus 0.400 → 0.640` and `kladde 0.378 → 0.600` carry the gain; `team lazy 0.567 → 0.333` and `gsxWins 0.150 → 0.067` go the other way. **Cells of n=10-45. This is a DESCRIPTION of where the aggregate came from, not seven findings.**
+
+## ⭐⭐ AND THE SIDE LANE'S SELF-DIAGNOSIS IS THE BEST THING SAID ABOUT AUDITING TODAY
+They corrected the arithmetic of this exact diagnostic this morning — I had quoted a half-width where the lower bound belonged, and they were right. **Their own verdict on it now:**
+> ⛔ *"That correction was RIGHT, and it was correcting the WRONG LAYER: I fixed the ARITHMETIC of a number whose POPULATION was invalid."*
+> ⭐⭐ *"CORRECTING A DETAIL IMPLICITLY RATIFIES THE PREMISE. When I fix your interval and say nothing about your population, I have ENDORSED the population — and I did it in a message whose whole subject was the rigour of that number. An auditor who corrects a detail lends credibility to the whole, and THE MORE PRECISELY I CORRECT, THE MORE CREDIBILITY I LEND."*
+⇒ **their check form: before correcting a number's ARITHMETIC, ask whether the number SHOULD EXIST AT ALL.** ⚠ **And their note on why it is their characteristic risk is the sharp part: a cheap arithmetic correction is unambiguous, fast and always technically right — which is exactly why it is the one most likely to skip the premise.**
+⇒ **This is D21(d) — a fix narrower than its defect — arriving for the FOURTH time today and the FIRST time in an AUDIT rather than a tool or a rule. The taxonomy now covers claims, corrections, fixes, caveats and audits.**
