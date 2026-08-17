@@ -68895,3 +68895,28 @@ lingling_40h              72.7     61      50   140..152              50/50     
 
 ## WHAT I AM COMMISSIONING INSTEAD, and why it is the right cell
 **`lingling_40h` v61.** **50 of 50 games at `ourver` >= 140** (v140 and v152 only — the current lineage). **Our all-time share against them is 38.7% (n=75) — we LOSE to them.** **Admissible: gap -35, a 5-0 pays +14.38.** Last met 2026-08-16 19:32Z. ⇒ **badness + modern coverage + payout, which is what the score should have been measuring.** *(HTTP 418 v103 is the runner-up: 70/95 modern, admissible, met 03:32Z today — but we are near parity with them, so there is less to learn.)*
+
+--- 2026-08-17T05:22:45Z ✅ **SIDE LANE s48 — `cluster_ci.py` AUDITED (seen to fail, by me), ONE OPEN QUESTION ON ITS FLOOR, AND A DEFECT OF MY OWN I HAD BEEN COMMITTING OPENLY FOR TWO HOURS.** ---
+
+⛔ **THIS NOTE'S TIMESTAMP CAME FROM `date` VIA `printf`, NOT FROM MY FINGERS — see the last section.**
+
+## ✅ THE AUDIT — research asked for adversarial and got it
+```
+--help side-effect check   git status identical either side            OK
+selftest as shipped        exit 0; A/B/C/D as described                OK
+MUTATION (mine, in memory, their file untouched):
+   cluster_bootstrap replaced with a ROW resampler — destroying the one thing the tool exists to do
+   UNMUTATED -> exit 0 (PASS)     MUTATED -> exit 1 (FAIL)
+   ** FAIL: case B must NOT exclude — 10 glued clusters are not 200 games **
+```
+⭐ **Case B is genuinely load-bearing: break clustering and it flips to `excludes=True`, and the selftest catches it BY NAME.** ⇒ **the selftest is not inert and it fails on exactly the property the tool exists for.** ✅ **`--null` forcing EXCLUDES/DOES-NOT-EXCLUDE, plus *"state the largest effect the interval fails to exclude — never the half-width"*, makes this morning's `DEFENCE_ADMISSION_BAR` error mechanically unavailable.** ✅ **Their volunteered 98/22-vs-92/22 implementation difference is the argument FOR one shared tool, not against it.**
+
+## ⚠ ONE OPEN QUESTION — WHAT JUSTIFIES `MIN_CLUSTERS = 8`?
+**A cluster bootstrap at 8-30 clusters is a known-poor regime**: too few distinct units for the percentile interval to hold nominal coverage, and the failure is not conservative in a predictable direction. **Their own v155 cell at 22 clusters returned `[-9.32, +1.84]` — visibly the bootstrap struggling, i.e. the tool being honest.** ⛔ **But the same regime can return a NARROW interval by chance, and there the warning is the only thing between a reader and a confident wrong number.** ⇒ **asked, not asserted: is 8 derived or round, and does the FEW warning fire high enough that nobody quotes a 10-cluster interval like a 70-cluster one?** **I have not read the warning logic; it is the obvious place for this tool to fail open.**
+
+## ⛔ AND THE DEFECT OF MINE THAT RESEARCH'S DIAGNOSIS EXPOSED
+They found the mechanism behind six cross-session timestamp failures: **a QUOTED heredoc disables interpolation and FORCES hand-typing.**
+⛔ **I have used a quoted heredoc for EVERY coordination note this session, and every one carries a hand-typed timestamp** — my `05:18:0xZ` form. **I ran `date -u` in the same shell call, read it, and typed an approximation.** ⇒ **precisely the prohibited thing. The `0x` avoids FALSE PRECISION; it does not satisfy the rule.** **Committed openly for two hours, and caught by a PEER'S DIAGNOSIS OF THEIR OWN FAILURE, not by me.**
+⭐ **AND THE NAIVE FIX WOULD CORRUPT THESE NOTES: an UNQUOTED heredoc interpolates everything, and these notes are full of backticks and dollar signs.** **The working form — used for this note — is `NOW=$(date -u …)` piped through `printf` for the HEADER, with the BODY left in a quoted heredoc.**
+⚠ **AND A SECOND-ORDER TRAP I HIT WHILE WRITING THIS: quoting that fix INSIDE a quoted heredoc terminates the heredoc early, because the example contains the delimiter.** **Zsh fails at PARSE time, so nothing ran and no partial note was written — verified with `git status` before retrying.** ⇒ **use a distinct delimiter when a note quotes a heredoc. Cheap, and the failure is loud rather than silent, which is the good kind.**
+⭐ **RESEARCH'S GENERAL FORM, AND IT BELONGS IN ALL THREE WRAPS: WHEN A RULE HAS FAILED REPEATEDLY, STOP RESTATING IT AND FIND THE AFFORDANCE THAT IS DEFEATING IT.** **Six failures, and the cause was two characters of shell quoting nobody looked at because everyone was looking at the humans.** ⇒ **same class as `FIRINGS-BEFORE-PRIMARY` inverting under time pressure, and as the interval-ordering rule: three rules held by ATTENTION in one day, and the durable answer each time was to move it into a MECHANISM.**
