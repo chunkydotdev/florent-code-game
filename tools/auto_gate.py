@@ -237,9 +237,17 @@ if __name__ == "__main__":
 # n >= target (FINAL), n >= 2700, n >= 1000, n >= 400 (catastrophe), in that
 # order, so the effective mark is the HIGHEST boundary crossed. Replicated here
 # because parsing a shell elif chain is more fragile than duplicating four
-# integers — but the duplicate is checked: marks_agree_with_gate_watch() greps
-# that file for these literals and ALARMS if any is missing, so drift is caught
-# rather than assumed away.
+# integers — but the duplicate is checked: marks_agree_with_gate_watch() matches
+# that file for the EXECUTABLE `(( n >= NNNN ))` shape, with comments stripped,
+# and ALARMS if any is missing, so drift is caught rather than assumed away.
+# ⛔ IT USED TO MATCH THE BARE LITERAL `n >= NNNN` ANYWHERE IN THE FILE, COMMENTS
+# INCLUDED, and that is the "monitor loose GATE grep" debt item carried out of
+# s49 (docs/coordination.md:70913). Measured s50 2026-08-17 before the fix: with
+# the boundary genuinely moved 1000 -> 1200 in gate_watch's elif chain, ONE
+# comment line still carrying the old literal made this return True — i.e. the
+# duplicate-detector was satisfied by prose while the duplicate had drifted.
+# A duplicate that nothing checks is the one that rots (D24(e)); a duplicate
+# checked by a grep a comment can satisfy is the same thing wearing a check.
 # ─────────────────────────────────────────────────────────────────────────────
 MARK_CATASTROPHE = 400
 MARK_MID = 1000
@@ -1216,22 +1224,63 @@ REMOTE_MANUAL = """\
 # ═════════════════════════════════════════════════════════════════════════════
 # DRIFT CHECK ON THE MARKS
 # ═════════════════════════════════════════════════════════════════════════════
+def strip_shell_comments(src: str) -> str:
+    """Return `src` with shell comments removed, QUOTE-AWARE.
+
+    Exists because the mark check below is a DUPLICATE-DETECTOR, and a
+    duplicate-detector a COMMENT can satisfy detects nothing (see the block at
+    the MARK_* constants). Quote-aware rather than a naive cut at the first `#`
+    because gate_watch.sh:51 is `grep -v '^#' "$WORK"` — a live, load-bearing
+    line whose `#` is inside single quotes. Truncating it would be a second
+    defect introduced by the fix for the first.
+
+    A `#` starts a comment only at the start of a word (position 0, or preceded
+    by whitespace) and only outside quotes — that is the shell's own rule, which
+    is why `gate_n=2700   # covers …` is cut and `foo#bar` is not.
+    """
+    out = []
+    for line in src.splitlines():
+        quote = None
+        cut = len(line)
+        for i, ch in enumerate(line):
+            if quote is not None:
+                if ch == quote:
+                    quote = None
+            elif ch in ("'", '"'):
+                quote = ch
+            elif ch == "#" and (i == 0 or line[i - 1].isspace()):
+                cut = i
+                break
+        out.append(line[:cut])
+    return "\n".join(out)
+
+
 def marks_agree_with_gate_watch(path: Path | None = None) -> tuple[bool, str]:
     """The four integers above are a DUPLICATE of gate_watch's boundaries.
 
-    A duplicate that nothing checks is the one that rots (D24(e)). This greps the
-    authority for each literal and alarms if any has moved.
+    A duplicate that nothing checks is the one that rots (D24(e)). This matches
+    the authority for the EXECUTABLE `(( n >= NNNN ))` shape — comments stripped
+    first — and alarms if any mark has moved.
+
+    ⛔ THE SHAPE IS THE POINT, not the literal. The pre-s50 form searched for the
+    bare substring `n >= NNNN` across the whole file, so a comment, a docstring
+    line or a regression note mentioning an old boundary satisfied it while the
+    elif chain tested something else. Both looseness modes are driven in
+    --selftest (comment-only survival, and prose-only survival).
     """
     path = path or (REPO / "tools/monitors/gate_watch.sh")
     try:
         src = path.read_text()
     except OSError as e:
         return False, f"cannot read {path}: {e}"
+    code = strip_shell_comments(src)
     missing = [str(m) for m in (MARK_CATASTROPHE, MARK_MID, MARK_HALF)
-               if not re.search(rf"n >= {m}\b", src)]
+               if not re.search(rf"\(\(\s*n\s*>=\s*{m}\s*\)\)", code)]
     if missing:
-        return False, (f"gate_watch.sh no longer tests `n >= ` for: {', '.join(missing)} "
-                       f"— the marks have DRIFTED apart. Fix before trusting this tool.")
+        return False, (f"gate_watch.sh no longer TESTS `(( n >= NNNN ))` for: "
+                       f"{', '.join(missing)} — the marks have DRIFTED apart. "
+                       f"(A mention in a comment does not count; the executable "
+                       f"shape is what gates.) Fix before trusting this tool.")
     return True, f"marks {MARK_CATASTROPHE}/{MARK_MID}/{MARK_HALF} all still tested in {path.name}"
 
 
@@ -1831,6 +1880,39 @@ def selftest() -> int:
     ok2, msg2 = marks_agree_with_gate_watch(fake)
     chk("a gate_watch missing 400/2700 is DETECTED as drift", ok2, False)
     chk("...and the alarm names the missing marks", "400" in msg2 and "2700" in msg2, True)
+
+    # ── THE LOOSE-GREP DEBT, s50 2026-08-17 (carried from s49's wrap list,
+    # docs/coordination.md:70913). The pre-fix check searched the bare substring
+    # `n >= NNNN` across the WHOLE file. These four cells drive the two ways it
+    # could be satisfied by text that does not gate anything, plus the control
+    # that the fix did not simply break the live read. Each cell moves the
+    # boundary FOR REAL first, so a PASS can only come from prose.
+    real_gw = (REPO / "tools/monitors/gate_watch.sh").read_text()
+    moved = real_gw.replace("n >= 1000", "n >= 1200")     # the elif chain really changed
+    f_moved = tmp / "gw_moved.sh"; f_moved.write_text(moved)
+    chk("a mark moved 1000 -> 1200 everywhere is DETECTED",
+        marks_agree_with_gate_watch(f_moved)[0], False)
+    # (C) the same real move, with the old literal surviving in a COMMENT ONLY.
+    f_cmt = tmp / "gw_comment_only.sh"
+    f_cmt.write_text(moved.replace(
+        "# BLIND RULE:", "# note: this used to fire when n >= 1000\n# BLIND RULE:"))
+    chk("...and a COMMENT carrying the old literal does NOT rescue it "
+        "(the s49 loose-grep defect)", marks_agree_with_gate_watch(f_cmt)[0], False)
+    # (D) the catastrophe mark deleted from the code, mentioned in trailing prose.
+    f_prose = tmp / "gw_prose.sh"
+    f_prose.write_text(real_gw.replace("n >= 400", "n >= 500")
+                       + "\n# regression note: n >= 400 was the old catastrophe mark\n")
+    chk("...nor does a trailing prose mention of a deleted mark",
+        marks_agree_with_gate_watch(f_prose)[0], False)
+    # CONTROL — the fix must not break the live read for the wrong reason. A
+    # quote-aware stripper is required here: gate_watch.sh:51 is
+    # `grep -v '^#' "$WORK"`, whose `#` is INSIDE single quotes.
+    chk("...while the UNMODIFIED live file still reads OK (fix is not an off switch)",
+        marks_agree_with_gate_watch()[0], True)
+    chk("strip_shell_comments leaves a quoted `#` alone (gate_watch.sh:51)",
+        "grep -v '^#'" in strip_shell_comments("grep -v '^#' \"$WORK\"  # trailing"), True)
+    chk("...and still cuts the trailing comment beside it",
+        "trailing" in strip_shell_comments("grep -v '^#' \"$WORK\"  # trailing"), False)
 
     print("\n── bar registry parsing ────────────────────────────────────────────────")
     live_bars = load_bars(DEFAULT_BARS)
