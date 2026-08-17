@@ -27,6 +27,12 @@ inside a doc nobody boots, and then broken by its own author:
   * CAL-8's stop boundary was counted over ATTEMPT lines instead of ACCEPTS
     (2026-08-14). One arithmetic identity -- games = 5 x accepts -- separates
     the two, and nothing was checking it.
+  * DEFENCE_ADMISSION_BAR (`r300_crossing_non_regression`, PROGRAMME.md) had NO
+    rule here at all until s48, four sessions after the bar was re-priced. The
+    first hand-applied read got it wrong in the null-FLATTERING direction: a
+    v155-vs-v152 timely-kill comparison quoted the DEFF HALF-WIDTH where the
+    interval's LOWER BOUND belonged (largest un-excluded regression -14.6pp, not
+    -13.1pp). `PLANK CLASS:` + `KILL-ROUND NON-REGRESSION:` now carry it.
 
 The measured half-life of a prose rule in this repo is about one session. The
 durable surfaces are booted files and tools that exit non-zero. This is the
@@ -151,6 +157,8 @@ KNOWN_KEYS = [
     "POOL ERA", "SPANS-POOL-CHANGE", "TREATMENT TREE",
     # OBLIGATION 17 (routed 2026-08-15) — the metric window against the gates
     "METRIC WINDOW", "GATING CONSTANTS", "MECHANISM CAN OCCUR IN WINDOW",
+    # DEFENCE_ADMISSION_BAR (PROGRAMME.md, r300_crossing_non_regression) — s48
+    "PLANK CLASS", "KILL-ROUND NON-REGRESSION",
 ]
 
 # --- POOL ERA derivation constants (docs/research/SPEC-pool-era-token-2026-08-14.md)
@@ -364,11 +372,24 @@ def raw_number(s: str | None) -> float | None:
 
 
 def int_before(s: str | None, word: str) -> int | None:
-    """The integer immediately preceding `word` (commas tolerated)."""
+    """The integer immediately preceding `word` (thousands commas tolerated).
+
+    ⛔ s48: the pattern was `[\\d,]+`, which MATCHES A BARE COMMA -- so
+    `REFERENCE n: none, see the panel doc` made `int("")` raise and the whole
+    checker died with a traceback instead of printing a verdict. A checker that
+    crashes on a prose value is a checker that can be skipped, and the crash
+    landed on the one field whose `none`/`n/a` handling lives one line LATER in
+    check_arithmetic. The group now has to START with a digit, so the
+    comma-stripped string can never be empty and this cannot raise."""
     if not s:
         return None
-    m = re.search(r"([\d,]+)\s*" + word, s, re.IGNORECASE)
-    return int(m.group(1).replace(",", "")) if m else None
+    m = re.search(r"(\d[\d,]*)\s*" + word, s, re.IGNORECASE)
+    if not m:
+        return None
+    digits = m.group(1).replace(",", "")
+    # Structurally non-empty (the group starts with \d); the guard is here so a
+    # future pattern edit degrades to "no number found" rather than a traceback.
+    return int(digits) if digits else None
 
 
 # ---------------------------------------------------------------------------
@@ -435,6 +456,32 @@ def _seg_value(f: dict) -> str:
 def _named_segment(f: dict) -> bool:
     v = _seg_value(f)
     return bool(v) and not v.startswith("none")
+
+
+# --- DEFENCE_ADMISSION_BAR (PROGRAMME.md `r300_crossing_non_regression`) ------
+# Trigger and value test for the r300 kill-round non-regression read. Split out
+# of RULES so the vocabulary is in one place and testable on its own.
+_DEFENSIVE = ("defen", "survival", "survive", "screen", "seal", "turret", "barrier")
+_ITT_FORM = re.compile(r"\bitt\b|\brmst", re.I)
+_CONDITIONED = re.compile(r"kill[- ]win|conditioned", re.I)
+_EXCLUSION = re.compile(r"exclud|lower bound|upper bound", re.I)
+_FAIL_TO_EXCLUDE = re.compile(
+    r"no significant|not significant|consistent with zero|fails? to exclude|"
+    r"no detectable|no measurable (?:rise|fall)", re.I)
+
+
+def _defensive_plank(f: dict) -> bool:
+    return any(w in (f.get("PLANK CLASS") or "").lower() for w in _DEFENSIVE)
+
+
+def _defence_bar_ok(v: str) -> bool:
+    """The r300 read must be (a) an ITT form, (b) not the kill-win-CONDITIONED
+    form as primary, (c) stated as an EXCLUSION rather than a fail-to-exclude."""
+    if not _ITT_FORM.search(v) or not _EXCLUSION.search(v):
+        return False
+    if _FAIL_TO_EXCLUDE.search(v):
+        return False
+    return not (_CONDITIONED.search(v) and not re.search(r"diagnostic", v, re.I))
 
 
 RULES = [
@@ -550,6 +597,30 @@ RULES = [
              "five independent defects in one day. A high-churn cell is REPORTABLE BUT "
              "NOT POOLABLE, and the count is free off league_matches.tsv",
          na="no CELLS: line, so this is not a panel"),
+    dict(id="PLANK_CLASS", keys=["PLANK CLASS"], ob="PROGRAMME.md DEFENCE_ADMISSION_BAR",
+         why="the r300 admission bar binds on DEFENSIVE planks only, so the class has "
+             "to be declared rather than inferred -- exactly as MAP SEGMENT is declared "
+             "so OB15A_DIRECTION cannot be dodged by silence",
+         extra=lambda v: any(w in v.lower() for w in _DEFENSIVE + ("offens", "econom",
+                                                                  "instrument", "n/a")),
+         extra_why="PLANK CLASS: must name the class — defensive/survival/screen, or "
+                   "offensive / economic / instrument"),
+    dict(id="DEFENCE_R300_BAR", keys=["KILL-ROUND NON-REGRESSION"],
+         when=_defensive_plank,
+         ob="PROGRAMME.md DEFENCE_ADMISSION_BAR: r300_crossing_non_regression",
+         na="PLANK CLASS is not defensive, so the r300 admission bar does not bind",
+         why="a defensive plank is admissible ONLY if it does not slow the kill, so it "
+             "carries an r300 kill-round non-regression read BESIDE its own bar",
+         extra=_defence_bar_ok,
+         extra_why="the r300 read must be (a) an ITT form over ALL games (`ITT RMST300` "
+                   "or the ITT timely-kill rate) -- the kill-win-CONDITIONED share "
+                   "carries a collider (15.1% vs 7.8% ITT on the rated tape) and is a "
+                   "DIAGNOSTIC ONLY; and (b) written as an EXCLUSION -- `the CI bound "
+                   "EXCLUDES the registered rise`, never `no significant rise`. s48, "
+                   "n=1: a v155-vs-v152 timely-kill read quoted the DEFF HALF-WIDTH "
+                   "where the interval's LOWER BOUND belonged (largest un-excluded "
+                   "regression -14.6pp, not -13.1pp) -- an error in the "
+                   "null-FLATTERING direction, which is the direction DEFF launders"),
     dict(id="FALSIFIER", pat=r"(?im)^[^A-Za-z0-9]*#*\s*\**\s*FALSIFIER|FALSIFIER\s*:",
          ob="the iteration mill",
          why="a pre-registration without a falsifier is a plan, not an experiment"),
@@ -1731,6 +1802,8 @@ COMPLETE = """\
 **MAP SEGMENT: {midgard, fjordgate} — pave-sealing is a long-approach terrain effect**
 **EXPECTED DIRECTION: POSITIVE on-segment, ~ZERO off-segment**
 **SEGMENT VALUE CEILING: 25.0% pairing share x 6.0pp on-segment = 1.50pp pooled**
+**PLANK CLASS: defensive — pave-sealing is a survival mechanism on the approach lane**
+**KILL-ROUND NON-REGRESSION: ITT RMST300 over ALL 150 games, horizon r300, scored as an EXCLUSION — the 95% CI upper bound on the rise must EXCLUDE the registered MDE of +12.0 rounds. Kill-win-conditioned share and median-crossing-300 are REPORTED as DIAGNOSTICS only.**
 
 ## FALSIFIER
 If the dose moves and the on-segment share does not clear 60.0, the row closes.
@@ -1763,6 +1836,12 @@ def _mw(text: str, window: str, metric: str = "eco.py:934", gates: str | None = 
         out = out.replace("GATING CONSTANTS: none in the metric's own function.",
                           f"GATING CONSTANTS: {gates}.")
     return out
+
+
+def _kr(text: str, value: str) -> str:
+    """Replace the KILL-ROUND NON-REGRESSION value (DEFENCE_ADMISSION_BAR cells)."""
+    return re.sub(r"\*\*KILL-ROUND NON-REGRESSION:[^\n]*\*\*",
+                  "**KILL-ROUND NON-REGRESSION: " + value + "**", text)
 
 
 def _strip_rule(text: str, rule: dict) -> str:
@@ -1823,10 +1902,50 @@ def selftest() -> int:
     print(f"  [{'ok' if ok else 'FAIL'}] `MAP SEGMENT: none expected` skips DIRECTION and "
           f"CEILING  {'' if ok else hit}")
     bad += 0 if ok else 1
+    # DEFENCE_R300_BAR's skip branch: an OFFENSIVE plank owes no r300 read.
+    offensive = _strip_rule(COMPLETE, dict(keys=["KILL-ROUND NON-REGRESSION"])) \
+        .replace("**PLANK CLASS: defensive — pave-sealing is a survival mechanism "
+                 "on the approach lane**",
+                 "**PLANK CLASS: offensive — a faster core-rush opening**")
+    _r, fails, _w = run_checks(offensive, "<offensive plank>", diff_paths=["eco.py"], quiet=True)
+    ok = not any(x[0] == "DEFENCE_R300_BAR" for x in fails)
+    print(f"  [{'ok' if ok else 'FAIL'}] `PLANK CLASS: offensive` skips the r300 "
+          f"DEFENCE_ADMISSION_BAR")
+    bad += 0 if ok else 1
     with_cells = COMPLETE.replace("## FALSIFIER", "**CELLS: D1 0033 · D2 LingLing40**\n\n## FALSIFIER")
     _r, fails, _w = run_checks(with_cells, "<panel with CELLS>", diff_paths=["eco.py"], quiet=True)
     ok = any(x[0] == "OB14_CHURN" for x in fails)
     print(f"  [{'ok' if ok else 'FAIL'}] a `CELLS:` line ACTIVATES the Obligation-14 churn rule")
+    bad += 0 if ok else 1
+
+    # --- PARSING: int_before must never take the checker down (s48 DEBT 19) --
+    # `[\d,]+` matched a BARE COMMA, so `REFERENCE n: none, see the panel doc`
+    # raised ValueError out of check_arithmetic and the tool printed a traceback
+    # instead of a verdict. A checker that crashes on a prose value is a checker
+    # that can be skipped. Both verdicts: the value it must still READ, and the
+    # value that used to kill it.
+    print("\n  PARSING — int_before, both verdicts (s48 DEBT 19):")
+    for label, s, word, want in (("thousands comma", "1,055 games (us-only)", "games?", 1055),
+                                 ("plain", "150 games", "games?", 150),
+                                 ("bare comma in prose", "none, see the panel doc", r"\b", None),
+                                 ("no digits at all", "none", "games?", None)):
+        try:
+            got = int_before(s, word)
+            ok = got == want
+        except Exception as e:                                   # noqa: BLE001
+            got, ok = f"RAISED {type(e).__name__}", False
+        print(f"  [{'ok' if ok else 'FAIL'}] int_before({s!r}) -> {got!r} (want {want!r})  {label}")
+        bad += 0 if ok else 1
+    crasher = COMPLETE.replace("**REFERENCE n: none**",
+                               "**REFERENCE n: none, see the CAL-8 panel doc**")
+    try:
+        _r, fails, _w = run_checks(crasher, "<debt19>", diff_paths=["eco.py", "main.py"], quiet=True)
+        ok = not fails
+        detail = f"{len(fails)} failure(s)"
+    except Exception as e:                                       # noqa: BLE001
+        ok, detail = False, f"RAISED {type(e).__name__}: {e}"
+    print(f"  [{'ok' if ok else 'FAIL'}] a prose `REFERENCE n: none, ...` yields a VERDICT, "
+          f"not a traceback  ({detail})")
     bad += 0 if ok else 1
 
     # --- ARITHMETIC, both verdicts per check --------------------------------
@@ -1874,6 +1993,38 @@ def selftest() -> int:
         ("POOL_ERA_SINGLE", "a window that spans the 2026-08-13 rotation, unjustified",
          COMPLETE.replace("2026-08-13T07:12:59Z..2026-08-14T23:59:59Z",
                           "2026-08-01T00:00:00Z..2026-08-14T23:59:59Z"), True),
+        # --- s48: DEFENCE_ADMISSION_BAR (PROGRAMME.md r300_crossing_non_regression) ---
+        ("DEFENCE_R300_BAR", "ITT RMST300, scored as an exclusion", COMPLETE, False),
+        ("DEFENCE_R300_BAR", "a defensive plank with NO r300 read at all",
+         _strip_rule(COMPLETE, dict(keys=["KILL-ROUND NON-REGRESSION"])), True),
+        # ⭐ ONE CELL PER SUBCHECK, each satisfying the OTHER two — otherwise a cell
+        # proves only that SOME branch fired, and deleting the branch it names
+        # would go unnoticed (mutation-certified per guard, s48).
+        ("DEFENCE_R300_BAR", "kill-win-CONDITIONED as PRIMARY (ITT + exclusion present)",
+         _kr(COMPLETE, "ITT-style read whose PRIMARY is the kill-win-conditioned share "
+                       "of kills landing after r300; the 95% CI EXCLUDES a +5.0pp rise."), True),
+        # THE s48 n=1 DEFECT ITSELF: a bare fail-to-exclude with the DEFF half-width
+        # quoted where the interval's lower bound belonged.
+        ("DEFENCE_R300_BAR", "bare fail-to-exclude (ITT + exclusion word present)",
+         _kr(COMPLETE, "ITT RMST300 over ALL games; the CI would EXCLUDE +12.0 rounds, "
+                       "but we score it as no significant rise (DEFF half-width "
+                       "+-13.1pp)."), True),
+        ("DEFENCE_R300_BAR", "the CONDITIONED form, but labelled a DIAGNOSTIC",
+         _kr(COMPLETE, "ITT RMST300 over ALL games, CI upper bound EXCLUDES +12.0 "
+                       "rounds. Kill-win-conditioned share: DIAGNOSTIC only."), False),
+        ("DEFENCE_R300_BAR", "a kill-win-conditioned PRIMARY with no ITT form at all",
+         _kr(COMPLETE, "share of our KILL-WINS landing after r300 must not rise; its "
+                       "CI must EXCLUDE +5.0pp."), True),
+        ("DEFENCE_R300_BAR", "no ITT/RMST form named (exclusion + no conditioning)",
+         _kr(COMPLETE, "timely-kill rate by r300 over ALL 150 games; the 95% CI "
+                       "EXCLUDES a 5.0pp fall vs control."), True),
+        ("DEFENCE_R300_BAR", "ITT form named but NOT scored as an exclusion",
+         _kr(COMPLETE, "ITT RMST300 over ALL 150 games, horizon r300, registered MDE "
+                       "+12.0 rounds, reported as a point estimate with its DEFF "
+                       "interval."), True),
+        ("PLANK_CLASS", "a placeholder class value",
+         COMPLETE.replace("**PLANK CLASS: defensive — pave-sealing is a survival "
+                          "mechanism on the approach lane**", "**PLANK CLASS: TBD**"), True),
         ("POOL_ERA_SINGLE", "the same spanning window WITH SPANS-POOL-CHANGE",
          COMPLETE.replace("2026-08-13T07:12:59Z..2026-08-14T23:59:59Z",
                           "2026-08-01T00:00:00Z..2026-08-14T23:59:59Z")
