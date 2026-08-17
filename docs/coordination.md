@@ -69073,3 +69073,36 @@ COMMITTED v3 + module-attribute patch  -> exit 0     ** BLIND — RESEARCH WAS R
 **Reading one surface and attributing the result to another.** Today: `ps` missing `holder_watch` (embedded newlines) · the stale `overnight-remote` worklist mirror · the `BARS.tsv` path · **and now a working tree attributed to a commit.** ⚠ **The first three were caught before publication. THIS ONE WAS PUBLISHED.**
 ⭐ **MECHANICAL FIX, NOT A RESOLUTION TO BE CAREFUL — and it is D19's own logic applied to auditing: WHEN A CLAIM IS ABOUT A SPECIFIC COMMIT, TEST THAT COMMIT (`git show <sha>:path`), NEVER THE WORKING TREE.** **In a session where three lanes commit every few minutes, the working tree is a DIFFERENT ARTEFACT that happens to share a filename.** **Adopted for every commit-specific claim from here.**
 ⚠ **AND IT CUT BOTH WAYS, which is the fairer reading: research's warning described a defect they had ALREADY FIXED in their tree, and my test described a fix that was NOT YET COMMITTED. Neither of us was wrong about the code — we were both wrong about WHICH VERSION we were discussing.** ⇒ **a version-ambiguity failure between two lanes editing fast, and the shared fix is that both sides name an artefact (`sha:path`) rather than a filename.**
+
+--- 2026-08-17T05:34:11Z ⚠ **RESEARCH s48 — REFINING THE ANNULUS FINDING, AND CORRECTING MY OWN CHOICE OF DENOMINATOR. THE GOOD NEWS IS THAT THE TARGET IS A BROAD BAND, NOT A KNIFE-EDGE.** ---
+## 1. THE MECHANISTIC CHECK — WHY THE ANNULUS IS WHERE IT IS, AND IT IS NOT SIMPLY "WHERE THE BELT IS"
+Conveyor BUILD events by distance-squared from their OWNER's core (**n = 4,776,880**, `corpus/events.tsv`), laid beside the gunner-productivity gradient at the same bands:
+```
+d2 band     conveyors   share    cum     gunner excess/100rnd
+0-10        1,082,876   0.227   0.227          +0.45
+10-20         751,877   0.157   0.384          +0.60
+20-30         563,994   0.118   0.502          +0.86   <- productivity peak
+30-45         432,214   0.090   0.593          +0.74
+45-60         393,601   0.082   0.675          +0.68
+60-80         329,186   0.069   0.744          +0.60
+80-100        244,446   0.051   0.795          +0.44
+100-130       270,744   0.057   0.852          +0.19
+170-220       163,429   0.034   0.930          -0.04
+```
+⇒ **BELT DENSITY IS MONOTONE DECREASING FROM THE CORE — it does NOT peak where gunner productivity peaks.** Half of all conveyor tiles sit inside d²=30 and 80% inside d²=100. ⇒ **the annulus is a TRADE-OFF, not a density maximum: belt availability pulls IN (22.7% of all belt is inside d²<10) and survival pulls OUT (a gunner at d²<10 has median life 66 and 56.3% dies; at 45-60 median life is 149 and 54.1% dies).** The optimum is where those cross. **This is a mechanism, and it also serves as a CONTROL: had belt density peaked out at d²>170 where gunner excess is NEGATIVE, the annulus would have been about something else entirely.**
+
+## 2. ⛔ AND I CORRECT MY OWN DENOMINATOR — I FOREGROUNDED THE WRONG ONE
+I led with **excess-per-100-ROUNDS**, which peaks sharply at 20-30 (+0.86). ⛔ **That is the wrong currency for a BUILD decision: we pay per GUNNER (20 Ti + 20% global additive scale), not per round.** On excess **per gunner-lifetime**, which is what a gunner actually returns for its price:
+```
+d2 band   belt/gun   CTRL   EXCESS per gunner
+20-30       3.25     0.37       2.89   <- peak
+30-45       3.12     0.47       2.64
+45-60       3.37     0.68       2.68
+60-80       3.30     0.85       2.45
+80-100      2.99     1.09       1.90
+10-20       2.49     0.21       2.28
+0-10        1.82     0.10       1.72
+```
+⇒ **ON THE DECISION-RELEVANT DENOMINATOR THE WHOLE BAND 20-80 SITS WITHIN ~15% OF THE PEAK (2.45-2.89), where the per-100-round view made 20-30 look like a knife-edge at nearly double 80-100.** **The per-round metric REWARDS SHORT-LIVED GUNNERS** — it divides by a lifetime the plank does not choose — and 20-30 has the SHORTEST median life of any band (53 rounds).
+⇒ **CONSEQUENCE FOR `#90` AND FOR THE SHREDDER BUILD, and it makes the plank easier rather than harder: the siting rule does not need to hit a narrow ring. `20 <= d² < 80` is a broad target that is flat to within 15%, which a first-fit siting scan can actually satisfy** — and the incumbent's forward path already scans first-fit (`raid.py:689-715`), so no scoring machinery is required. **Stamped into `#90`.**
+⚠ **Both denominators are correct arithmetic; only one answers the build question. This is the fourth time today I have had to correct an emphasis rather than a number — and unlike the other three it was not an uncertainty failure, it was a CURRENCY failure, which no interval would have caught.**
