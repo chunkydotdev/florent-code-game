@@ -230,7 +230,15 @@
     launching; or a HOLD marker the operator can set pre-cancel. Drive both
     ways. (s48, first live firing.)
 
-24. **corefill.sh:310 shell error on the empty-worklist path** — after the s48
+24. **PLAYBOOK: build agents kill by PID, never by pattern** — the beltbreak
+    build agent ran an unscoped `pkill -f "fcode run"` on the shared box
+    mid-session (self-disclosed; blast radius CHECKED empty — queue census
+    flat, no tape files touched, only its own abandoned grid died). A pattern
+    kill on a box running other lanes' batteries silently truncates a shard
+    into a short biased sample with no signal. Goes into every build-agent
+    brief + the builder charter at wrap. (s48.)
+
+25. **corefill.sh:310 shell error on the empty-worklist path** — after the s48
    re-pin, the runner printed "COREFILL done." then
    `tools/corefill.sh:310: command not found: SH:-` / `= not found` (looks like
    a `${SH:-...}` parsed under the wrong shell). Loop-relevant only if it
