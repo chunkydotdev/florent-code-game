@@ -68483,3 +68483,29 @@ Each is confounded in the OPPOSITE direction and both mechanisms are nameable:
 ⚠ **AND A LIMIT ON MY OWN REFUSAL, so it is not over-read: I have NOT shown the effect is zero. I have shown it is NOT IDENTIFIED BY WHAT I CAN COMPUTE.** A cleverer design might identify it — instrumenting on map geometry, or on the opponent's first-harvester round — and I did not try those.
 
 --- 2026-08-17T04:57:04Z BUILDER s48 — NULLWS1S READ (side lane, consumed): PASSES — 54.25% [49.37,59.13] n=400, CI contains 50; collision fix confirmed BEHAVIOURALLY (a substring collision would have driven ~100%). Seat gap 9.5pp is in-family and cancelled by KLADLADDER's exact seat balance. ⚠ SCOPE NOTE FOR THE EVENTUAL VERDICT (pre-committed now so the readout can't inflate it): NULLWS1S is a COLLISION/SANITY CHECK, not certification at bar resolution — at n=400 its half-width (4.9pp) is 3.7x too blunt to see a 1-3pp fixture tilt, which is the size that decides a 51.33 bar. Certification at bar resolution rests on the two banked n=5400 A/A cells (IDNULL140 49.27, NULL125 51.04); the 54.25 point is NOT comparable to the prereg's [51.33,52.4] weak window (different n). KLADLADDER verdict will describe the null accordingly. KLADLADDER 720/5400 RUNNING at 04:54:42Z. ---
+
+--- 2026-08-17T04:56:0xZ ✅⚠ **SIDE LANE s48 — NULLWS1S COMPLETE AND READ. IT PASSES ITS REGISTERED CRITERION, AND READING IT FOUND A REAL LIMITATION IN WHAT IT CAN CERTIFY.** KLADLADDER is at 720/5400 behind it. ---
+
+```
+NULLWS1S   byte-identical A/A: _v468nullsleip vs _v468kladturbo
+  n=400   T=217   share=54.25%   CI [49.37, 59.13]   contains 50.0: YES
+  seat A 118/200 = 59.00%   seat B 99/200 = 49.50%   (9.5pp seat gap)
+  15 distinct maps · conds {core_destroyed, tiebreak}
+```
+✅ **CERTIFICATION PASSES — the CI contains 50, the fixture is not falsified.**
+✅ **AND THE COLLISION FIX IS CONFIRMED BEHAVIOURALLY, not merely textually: a substring collision would have driven this toward ~100% and it read 54.25.**
+✅ **The 9.5pp seat gap is in family with the prereg's own "~6.8pp on byte-identical arms" and is HANDLED BY DESIGN** — KLADLADDER's exact 2700/2700 balance cancels it in the pooled estimator. **The multiple-of-30 rule earning its keep.**
+
+## ⚠ THE LIMITATION — THE NULL IS POWERED FOR THE WRONG QUESTION
+```
+n= 400   A/A half-width 4.90pp   <- what this null can detect
+n=5400   A/A half-width 1.33pp
+the bar sits 51.33 - 50.00 = 1.33pp above parity
+=> the 400-game null is 3.7x TOO BLUNT to certify at the bar's resolution
+```
+⛔ **It catches a GROSS break — a substring collision, a swapped arm, a dead tree. It CANNOT detect a 1-3pp fixture bias, which is exactly the size that decides a 51.33 bar.** ⇒ **a systematic 2pp host tilt would pass this null silently and be indistinguishable from KLADLADDER's entire hypothesis.**
+⚠ **HONEST CAVEAT, pre-empting the tempting misreading: the 54.25 point is NOT evidence of such a tilt** — at n=400 it sits comfortably inside noise, and **it must NOT be compared against the prereg's `[51.33, 52.4]` weak window**, which was derived from **n=5400** A/A cells (`IDNULL140`, `NULL125`) and is a far finer instrument. **Different n, not comparable. The flag is on the null's POWER, not its point.**
+⇒ **This SHARPENS the prereg's §4 rather than contradicting it.** §4 already prices the bar as sitting inside this fixture's A/A spread. **What is new: the certification cell attached to THIS worklist cannot itself resolve the spread §4 warns about.** ⇒ **the two banked n=5400 A/A cells remain the real calibration; NULLWS1S is a COLLISION/SANITY check and should be described as one, never as certification at bar resolution.**
+**No action implied for the running shard** — nothing here is a reason to stop KLADLADDER, and the four-band reading already prices the A/A spread. **Wrap-shaped at most, and possibly not worth the spend given the two full-n A/A cells exist. Named as a gap, not as an ask.**
+
+⚠ **INSTRUMENT NOTE, minor, resolved not flagged: `holder_watch` is SILENT while ARMED and healthy, so log silence cannot distinguish healthy from dead.** My 04:55:14Z direct `fcode status` returned the EMPTY state while holder_watch had logged nothing since 04:30:42Z. **Discriminated with `pgrep` (ALIVE) plus three consecutive readable probes at 04:55:34Z — a transient blip, not an outage.** Its BLIND detector DOES fire (4 times today), so this is not an alarm that cannot fire; it is that the ABSENCE of output is ambiguous by design. **Use `pgrep`, never log age, to assess that watch.**
