@@ -312,3 +312,45 @@ while true; do
   sleep $POLL_S
 done
 say "COREFILL done."
+# ⛔⛔ EXPLICIT TERMINATOR. THIS IS NOT DECORATION — IT CLOSES A MEASURED DEFECT.
+#
+# WHAT HAPPENED (2026-08-17T04:30:22Z, corefill.log:8266-8269). The runner
+# printed `ALL WORK STARTED AND ALL SHARDS FINISHED. exiting.` then
+# `COREFILL done.` and then TWO SHELL ERRORS:
+#     tools/corefill.sh:310: command not found: SH:-
+#     tools/corefill.sh:310: = not found
+# It was read as "a broken ${SH:-...} expansion on a live fleet script". IT IS
+# NOT. There is no such bug in this file, and the SAME code path ran clean five
+# minutes later (04:35:41Z) off the SAME script.
+#
+# THE ACTUAL CAUSE IS THAT THIS FILE WAS REWRITTEN IN PLACE WHILE IT WAS
+# RUNNING. That instance started 2026-08-16T08:17:45Z (corefill.log:7016). Commit
+# cdceff02 edited this file at 2026-08-16T20:19:48Z — TWELVE HOURS INTO THE RUN —
+# adding 6 lines and removing 1. The pre-cdceff02 file was 309 lines and its LAST
+# line was `say "COREFILL done."`. zsh keeps an open fd with a byte offset; when
+# the `while` loop finally broke, the shell went back to the file for the next
+# command, found the file had GROWN under it, and executed fragments of the new
+# bytes. The reported line number, 310, is EXACTLY one past the old EOF —
+# `SH:-` and `=` are mid-token fragments, not a real expansion.
+#
+# REPRODUCED (WRAP-FIX s48) with a 260-line stand-in: grow it in place mid-run
+# and it prints its trailers and then `t3.zsh:261: === not found`, rc 1 — the
+# same shape at the same offset-past-old-EOF. With this `exit 0` present, the
+# identical experiment is CLEAN, rc 0. Both verdicts driven.
+#
+# ⚠ NOTE THE INODE RULE, because it is what decides whether an edit is dangerous:
+# only a SAME-INODE rewrite (`cat new > file`, in-place truncate) reaches a
+# running shell. An editor that writes a temp file and renames gives the new
+# content a NEW inode, and the running shell keeps reading the old, unlinked one
+# — verified here by comparing `lsof -p <pid>` against `stat -f %i`.
+#
+# SCOPE OF THIS FIX, stated honestly: `exit 0` closes the TAIL case (reading past
+# the old EOF) and nothing else. A mid-loop offset shift is still possible in
+# principle; the real immunity is to parse the whole file before executing any of
+# it (wrap the body in `main() { ... }; main "$@"`), which is a large restructure
+# of a script that is live on the fleet right now and was NOT done here.
+# The observed occurrence was harmless — it fired after the last statement, and
+# corefill_forever.sh relaunched 18 s later at 04:30:40Z and read the new file
+# correctly — so this CANNOT prevent relaunch when real work arrives. Cosmetic
+# in that instance; the class is not, which is why the terminator goes in.
+exit 0
