@@ -67991,8 +67991,12 @@ All expected daemons present, none duplicated. `keeper` **19708**. Three `drift_
 ```
 ⇒ the drawdown is **6 matches, 10/30 games (0.333)**, net **−30.08**, and it is **already half-recovered** by the 04:15 match. Authority `fcode status` at 04:16:47Z (side lane) read **1803 / rank #19 / 1156 matches** — consistent to the decimal with the last match's `teamBRating` 1803.162680307133.
 
-## ⛔ THE WINDOW'S OWN INTERVAL IS NOT HONEST, AND I AM SAYING SO BEFORE QUOTING IT
-The window was defined as **"since the maximum of the rating series"**. Selecting on the argmax **guarantees** a downward run afterwards, so any interval computed on it is **selected-pessimistic by construction** — the same shape as s47's cancelled-arms finding (selected on a LOW prefix draw). For the record, the arithmetic if you insist: window 0.333 vs rest-of-v155 0.600, diff **−26.7pp**, DEFF95 (rated 1.529, two-fixture form) half-width **25.2pp** — clears by 1.5pp. **A bar cleared that narrowly, on a window chosen by its own extremum, is not evidence. Do not bank it.**
+## ⛔ THE WINDOW CANNOT BE READ AT ALL. **AMENDED 04:3xZ ON THE SIDE LANE'S CHALLENGE — THE ARITHMETIC IS STRUCK, NOT HEDGED.**
+The window was defined as **"since the maximum of the rating series"**. **I first wrote this section as "the interval is not honest", flagged the selection, and then printed the arithmetic anyway with a warning attached. That was wrong, and the side lane named the load-bearing reason I had missed:**
+⛔ **UNDER ARGMAX ANCHORING THE INTERVAL IS NOT A 95% INTERVAL, SO "CLEARS BY 1.5pp" IS NOT A WEAK FINDING — IT IS NOT A FINDING.** A window anchored at the series maximum is chosen *because* what follows went down; conditional on that anchor a downward run is arithmetically guaranteed and the CI's coverage is **below nominal by an unquantified amount**. **Hedging a number does not fix an invalid denominator — it makes an invalid number quotable with a footnote.** And it sits in the class `CLAUDE.md` names as most exposed: an EXCLUSION claim clearing a DEFF-widened bar **narrowly**.
+⇒ **THE NUMBER IS STRUCK. THE DURABLE FINDING IS THE DESIGN FACT: an argmax-anchored window cannot support an exclusion claim, so THIS WINDOW WAS NOT READ.**
+⭐ **And it is the s47 auto-gate selection run FORWARDS instead of backwards** (side lane's connection, theirs): the gate selects arms on a LOW prefix draw so their recorded shares understate them; argmax-anchoring selects a window on a HIGH prefix draw so its subsequent shares overstate the fall. **Same guarantee-by-construction; direction free, magnitude unpriced by the nominal interval.**
+✅ **THE AVAILABLE REPLACEMENT, since I now have per-match records: a PRE-SPECIFIED window** — last N matches, or the v152→v155 version boundary — **is unselected and its interval means what it says.** The version-boundary read is the section below, and it is the one to use.
 
 ## ⭐⭐ THE READ THAT SURVIVES: SLEIPNIR IS AHEAD, ON THE PROGRAMME'S OWN CURRENCY
 Per-version, **all rated ladder GAMES** (`ladder_games.tsv`, per-game rows with `cond`/`turns`):
@@ -68028,3 +68032,65 @@ No verdict, no ship/rollback implication — the slot is frozen on Magnus's word
 *(Version-tagged: holder v155 "Sleipnir v1" per `fcode status` 04:16:47Z via the side lane; CONTROL `bots/_v468kladturbo`. Dirs read: `corpus/ladder_games.tsv`, `corpus/league_matches.tsv`, live `fcode match list --mine --type ladder --json`.)*
 
 --- 2026-08-17T04:25:45Z ⭐⭐ BUILDER s48 — MAGNUS DIRECTIVE (direct, verbatim): "Today we're experimenting with an offensive gunner that shreds the enemy economy by cutting conveyors and everything other than the core. A well placed gunner in a base can rotate and kill more conveyors left and right and up. A lot of the top teams do this, look at their games and figure out how to do it optimally." --- THIS IS THE DAY'S LANE. Fits the Sleipnir doctrine's DISABLE leg (quick eco + disable + early kill). Jumps the queue per the Magnus-priority rule; nearest queue rows are the #21/#22/#23 forward-arm cluster (our gunner count 1.86 vs field 10.77; forward arm opens late at half count) + #37 belt-tap — their readouts DEFER to this directive. IN-FLIGHT: fresh opus REPLAY STUDY commissioned by the builder (Magnus-priority carve-out; research mid-sweep, notified) — census of offensive-gunner usage across top teams off the corpus, then deep-read of the best executors; deliverable docs/research/REPLAY-STUDY-offensive-gunner-2026-08-17.md with operational parameters (placement geometry vs belt lines, facing/rotation policy given the 10 Ti rotate, target priority, timing, ammo funding, escort/survivability). Build follows the study. Also still in flight: sonnet overnight-readout agent, opus ladder-no-cap build agent (announced 04:2xZ). ---
+
+--- 2026-08-17T04:31:0xZ **RESEARCH s48 — SPAWN ANNOUNCEMENT (anti-collision rule 1) + the re-admission sweep's METHOD, published before its results.** ---
+
+**FOUR `opus` subagents, spawning now**, one per batch, to close the s47 carry-forward *"ZERO queue rows have been checked against the live control"*.
+
+**THE METHOD, and it is mechanical FIRST so the agents only spend judgment where judgment is needed.** I diffed `bots/_v223sealrepair` (previous incumbent, which every GREP names) against `bots/_v468kladturbo` (live CONTROL): **1,640 changed lines; `eco.py` 1,242 → 1,843, `main.py` 871 → 1,053, `doctrine.py` 1,686 → 1,885, `raid.py` 958 → 996.** ⇒ **a blanket re-stamp was never available; the tree really moved.**
+Then, per row, I extracted every anchor the `GREP:` cell cites — backticked `CONST = value` pairs, bare identifiers, and `file.py:line` refs — and checked each against the new tree (constant still present? same value? cited line's CONTENT still findable? which line is it on now?).
+```
+78 rows parsed · 75 carry a GREP · 3 carry none (#6, #9, #18)
+MECHANICALLY CLEAN (every cited anchor present AND unchanged): 28
+NEEDS JUDGMENT (an anchor moved or vanished):                  50
+```
+**⚠ "MECHANICALLY CLEAN" IS NOT "RE-ADMITTED" AND I WILL NOT LET IT BE READ THAT WAY.** It means *the symbols this row names still exist with the same values*. It does **not** mean the plank is still unbuilt — **new code can implement a plank without touching any constant the row happened to cite.** Those 28 rows get a cheap positive-direction check (does the NEW code do the thing?) after the 50 land; they are **not** being counted as current today.
+**The 28: #5 #10 #12 #25 #26 #27 #34 #35 #37 #42 #47 #49 #54 #55 #56 #61 #65 #67 #68 #70 #71 #74 #77 #78 #79 #81 #87 #88.**
+**⛔ #21/#22/#23 ARE HELD OUT OF THE SWEEP at the builder's request** — Magnus's gunner-shredder directive may rewrite the forward-arm cluster, and re-admitting a row the study is about to rewrite is wasted work. (#78 is in the mechanically-clean set and is held with them.)
+
+**THE HEADLINE FINDINGS ARE ALREADY VISIBLE FROM THE MECHANICAL PASS AND ARE WORTH THE BUILDER'S EYES BEFORE THE AGENTS REPORT:**
+* **`LOKI_SEAL_TI_FLOOR`: rows #52 and #53 both cite `= 12`; the live tree has `= 0`.** Two rows are pricing a mechanism against a floor that no longer exists.
+* **Five rows cite code CONTENT that is not in the live tree at all** — #30/#45 (`elif et in (EntityType.GUNNER, EntityType.SENTINEL…`), #41 (`if min(p.distance_squared(c) for c in tiles) > 50:`), #75 (`out = t.add(ct.get_direction(bid))`), #76 (`for d in CARDINALS:`), #83/#85/#86 (the `prio = {` / `pr = {` target-priority dicts). **A vanished `pr = {` under #85/#86 is exactly the shape of "the plank already shipped".**
+* **Line drift is large and systematic in `eco.py`** — `eco.py:773 → 1197`, `809 → 1261`, `898 → 1458`, `934 → 1494`, `504 → 800`, `530 → 832`, `619` gone. **Any row quoting an `eco.py` line number from the sealrepair era is pointing at unrelated code.**
+
+**BRIEF GIVEN TO EACH AGENT (identical, so the four are comparable):** for each assigned row, (1) re-run the GREP against `bots/_v468kladturbo` only, (2) return one of **STILL-OPEN / ALREADY-SHIPPED / ANCHOR-MOVED-ROW-STANDS / PREMISE-DEAD**, (3) give the corrected `GREP:` text naming `_v468kladturbo` with current file:line and current values, and (4) **say explicitly if the row's PREMISE (not just its line numbers) is falsified by the new tree** — that is the outcome that actually saves the builder a leg. **They are told a "STILL-OPEN" verdict requires them to have found the ABSENCE positively** (the side lane's s47 rule: absence claims need a stronger instrument than presence claims), not merely to have failed to find the feature.
+
+*(Nothing is written to `QUEUE.md` until all four report and I have read them; agent output is a proposal, this lane ratifies. Results relayed before idling — they die with the session.)*
+
+--- 2026-08-17T04:27:0xZ ⛔⛔ **SIDE LANE s48 — SHIP-CHAIN FLAG, ACCEPTED BY THE BUILDER. `submit_clean.py`'s HOLDER RESTORE IS DISARMED BY EXACTLY THE PLATFORM STATE WE ARE IN. Full record: `docs/research/FLAG-submit-clean-unknown-holder-2026-08-17.md`.** ---
+
+`_holder()` returns `None` when the `Active bot:` line is absent. **`None == None` is True**, so `submit_clean.py:473/497` folds UNKNOWN into UNCHANGED: a submit with unreadable holder reads prints **`"holder unchanged by submit."`** and exits **0**. **Since `fcode submit` ALWAYS auto-activates, that means the prototype stays live on the RATED ladder while the tool reports success.**
+
+**DRIVEN over the state space (read-only; nothing imported, nothing submitted, no platform contact) — 4 of 6 states leak:**
+
+| `holder_before` | `holder_after` | outcome | safe? |
+|---|---|---|---|
+| readable | readable-prototype | **RESTORE ATTEMPTED** | ✅ |
+| readable | readable-same | `"holder unchanged"` → 0 | n/a |
+| readable | **UNREADABLE** | falls through silently → 0 | ⛔ **PROTOTYPE STAYS LIVE** |
+| **UNREADABLE** | readable-prototype | falls through silently → 0 | ⛔ **PROTOTYPE STAYS LIVE** |
+| **UNREADABLE** | readable-same | falls through silently → 0 | ⛔ **PROTOTYPE STAYS LIVE** |
+| **UNREADABLE** | **UNREADABLE** | `"holder unchanged"` → 0 | ⛔ **PROTOTYPE STAYS LIVE** |
+
+⛔ **Row 4: the tool CAN SEE the prototype is live and still does nothing.** ⛔ **Row 6 prints the one sentence that cannot be true after an auto-activating submit.** ⛔ **`--leg`'s hold and `LEG_TIMEOUT_S` auto-restore live INSIDE the restore branch, so neither arms in a blind window — the timeout is not a backstop.** ✅ **`--activate` returns earlier and is UNAFFECTED: this bites the DEFAULT prototype-leg path, the one the restore was written for.**
+
+⛔ **`_holder()`'s own docstring states the invariant the branch breaks** — *"None is treated as UNKNOWN, never as 'unchanged'."* **The docstring is right and the code is not**, which is the shape that survives review longest.
+⭐ **DURABLE RULE, worth more than the diff: FAIL CLOSED ON UNKNOWN; NEVER FOLD UNKNOWN INTO UNCHANGED.** Two values in a type with no room for the third.
+
+✅ **BUILDER ACCEPTED BOTH HALVES** (04:25Z): NOW half — no `submit_clean` in any mode this session while the flap can recur, now a stated constraint rather than a coincidence. DEFER half — fail-closed fix on the wrap debt list with the state table as the spec, per Magnus's momentum rule.
+
+## ⚠ AND A CORRECTION TO MY OWN BOOT NOTE, 20 MINUTES AFTER I PUBLISHED IT
+
+My boot note gave the degradation signature as *"`Error: True` + Could not fetch live data"*. **`Error: True` IS NOT A DEGRADATION SIGNAL — it prints on fully good reads too** (04:23:19Z: one sample carried `Error: True` AND `Rating: 1803` AND `Active bot: v155`; four more in the same two seconds carried `Error: True` alone).
+
+⭐ **THE REPLACEMENT IS MORE USEFUL THAN WHAT IT CORRECTS — THREE RESPONSE STATES, NOT TWO:** **FULL** (rating + rank + `Active bot:`) · **PARTIAL** (rating + rank, NO `Active bot:`) · **EMPTY** (neither). **PARTIAL verified 04:22:41Z** — the text printed rating, rank and team and **no holder line at all**, while `--json` in the same second returned only `{"user":…,"team":…,"error":"could_not_fetch_live_data"}`.
+⇒ ⛔ **READING RATING/RANK/MATCHES OFF `fcode status` DOES NOT VERIFY THE HOLDER. EMPTY is safe because it is obvious; PARTIAL is dangerous because it looks like FULL.**
+✅ **THIS VINDICATES `now.py` RATHER THAN INDICTING IT** — it gates on `active_submission`, so in PARTIAL it is the ONLY one of the two instruments that can tell FULL from PARTIAL. **Its real gap is that it does not RETRY** (the flap is sub-second — 5 samples spanned 2 s and 1 was FULL). ⛔ **RETRY; DO NOT RELAX THE GATE** — relaxing it removes the D28 protection and breaks a guard `now.py`'s own selftest asserts. **Builder has accepted this correction to their `f8d63b8a` framing and is wording the debt entry so a successor cannot read it the other way. Their holder VERIFICATION was sound; the flag was on the DIAGNOSIS.**
+
+⭐ **PROCESS NOTE, because it was not diligence: this was found by CHECKING A PEER'S COMMIT-MESSAGE CLAIM, not by auditing the ship chain on a schedule.** Establishing whether `now.py` or the platform was at fault required reading what else consumes the `Active bot:` line — and `submit_clean`/`ship_ledger` are what came back. **Q4's mechanism for a fifth run: GOING TO USE THE THING.**
+
+--- 2026-08-17T04:27:0xZ **SIDE LANE s48 — ADVERSARIAL REVIEW RETURNED TO RESEARCH on the two items they asked me to treat adversarially.** ---
+
+**(1) THE ARGMAX-ANCHORED WINDOW — AGREED, STRIKE THE NUMBER, AND THE REASON IS HARDER THAN THE ONE THEY GAVE.** They justified striking on the s47 typographic-identity lesson. ⛔ **The load-bearing objection is that under argmax selection the interval is NOT a 95% interval, so *"clears by 1.5pp"* is not a weak finding — it is not a finding.** A window anchored at the series maximum is chosen *because* what follows went down; a CI computed as though it were pre-specified has coverage strictly below nominal by an unquantified amount. **Hedging does not fix an invalid denominator, it makes the invalid number quotable with a footnote.** ⭐ **Same mechanism this lane banked in s47 from the other end** — the auto-gate floor selects on a LOW prefix draw so stopped arms are understated (+2.82/+1.33, n=2); **argmax-anchoring is that selection run forwards.** ⛔ **And it sits in the class `CLAUDE.md` names as most exposed:** an exclusion claim clearing by **1.5pp** against an interval already too narrow for its own design. ⇒ **Strike the number, keep the provenance per the 2026-08-15 relocation rule** — the durable finding is the DESIGN fact, which cannot be misquoted.
+
+**(2) THE `DEFENCE_ADMISSION_BAR` RESTATEMENT — REAL, NOT DECORATIVE, AND NUMERICALLY WRONG BY THE POINT ESTIMATE.** ✅ They did convert "contains 0" into a fail-to-exclude statement BEFORE applying DEFF, which is the correct order and is usually skipped. ⛔ **But they quoted the HALF-WIDTH where the LOWER BOUND belongs:** point `0.418 − 0.433 = −1.5pp`, half-width `13.1pp`, so **CI = [−14.6, +11.6] and the largest regression not excluded is −14.6pp, not −13.1pp.** ⛔ **The error flatters the null** — it shrinks the compatible-with-regression range by exactly the point estimate, doing in miniature what the rule exists to stop ("DEFF launders a weak null into a confident one"). ⚠ **Caveat stated to them and it is load-bearing: computed from RELAYED numbers, not their primary — if their 13.1 is already the interval's lower edge my correction is void and I withdraw it.** ⚠ Softer, not a flag: `DEFENCE_ADMISSION_BAR` is written to admit a defence PLANK; a v155-vs-v152 shipped-version comparison uses it as a **diagnostic**, and *"clears DEFENCE_ADMISSION_BAR"* will be inherited as a gate result unless it says which.
