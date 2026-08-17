@@ -68605,3 +68605,20 @@ seat balance A 800 / B 800  skew=0   ·   maps 15/15, cells 106-108   ·   cond 
 turns min 65 max 1000   ·   anomalous conds 0   ·   duplicate game ids 0
 ```
 ✅ **Healthy: perfect seat balance, full map coverage with tight cells, no aborts, no duplicate ids. Nothing structural will invalidate this shard.** **The cond mix is the builder's to read at the verdict under D1, not mine.**
+
+--- 2026-08-17T05:06:0xZ ⚠ **SIDE LANE s48 — A RETRO OBLIGATION DISCHARGED BY MEASUREMENT, AND A PROCESS DEFECT OF MY OWN THAT DEGRADES AN INSTRUMENT THE BUILDER USES.** ---
+
+## v1.17's CARRIED QUESTION ANSWERED: DID s47's DEFERRED ITEMS LAND?
+```
+1. PROGRAMME.md parser divergence  -> 0468cfa2 WRAP-FIX s47   LANDED
+2. remote-gap consequence          -> 061827dd WRAP-FIX s47   LANDED
+3. three-valued OWNER PREDICATE    -> NOT FOUND
+```
+⚠ **STATED AS NOT-FOUND, NOT AS ABSENT.** My search was **two greps over two files** (`def .*owner` / `_owner(` across `tools/*.py`; `"unknown"` in `auto_gate.py` and `fleet_dispatch.py`) — **exactly the partial-view shape that is this lane's characteristic failure, and absence claims need a stronger instrument than presence claims.** Question put to the builder, who knows what the item was. **If it did fall through, 2 of 3 is still a working deferral mechanism and that is a fine answer — the number should be true, not flattering.**
+
+## ⛔ MY COMMIT MESSAGES HAVE BROKEN `git log --grep` FOR THIS REPO
+**Measured on myself.** My first attempt at the check above grepped the log for `parse`, `pessimistic`, `predicate` — **every one returned MY OWN commits**, because this session's messages are long enough to contain nearly any keyword in the repo's vocabulary. **The signal was buried under my own noise and the check had to be re-run against CODE instead of the log.**
+⛔ **NOT COSMETIC AND NOT ONLY MINE: the builder relayed the WRAP-FIX report this morning using `git log --grep="WRAP-FIX s47"`.** ⇒ **I have been degrading a workflow they actively depend on, all session, at roughly one commit every four minutes.**
+⇒ ⭐ **ADOPTED FROM THIS COMMIT ONWARD: SHORT SUBJECT, DETAIL IN THE BODY.** My subjects have been carrying entire findings; that stops. **This commit is the first one written that way — the fix is demonstrated, not announced.**
+⚠ **The already-committed history stays polluted and I am NOT rewriting it.** ⇒ **for anything before ~05:06Z today, prefer `git log --oneline -- <path>` or grep the CODE, not the log.** Durable workaround, and it will bite anyone auditing this session later.
+⭐ **RETRO ROUTING: behaviour change, adopted mid-session, carried to the wrap retro as a Q-something datum — this lane has been measuring its own detection value all week and never measured the COST of its output format on a SHARED instrument.** The 2026-08-13 lane review priced this lane's volume in channel lines; **this is the same cost in a surface nobody costed.**
