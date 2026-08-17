@@ -11,6 +11,12 @@ at commission: `Mon 17 Aug 2026 04:32:31 UTC`), repo `5a1e652c`.**
 `corpus/unrated_games.tsv` + `corpus/meta_join.tsv`. **No games fired, no
 platform window spent, nothing in the repo modified except this file.**
 
+⚠ **COMMIT PROVENANCE:** the body of this file was swept into the tree by another
+session's `commit -a` at **`304dc317`** while it sat staged, so its content is
+recorded under that session's message rather than this study's. **This commit is
+the study's own record of authorship** — nothing in the text changed between the
+two.
+
 **Baseline under study:** v155 "Sleipnir" = `bots/_v468kladturbo`
 (samestop x turbo x bodyaware). Every mechanism below is an INCREMENT on that
 tree, never on `_v223sealrepair`.
