@@ -36,9 +36,30 @@ add on BUILD, subtract on DEATH, in round order.
 
 ** THE ONE ASSUMPTION, STATED BECAUSE IT IS THE ONLY PLACE THIS CAN BE WRONG: **
 that `events.tsv` is complete for the entity types that carry a contribution.
-`--verify` checks the reconstruction against `corpus/econ.tsv`-derived scale
-columns where a game appears in both, and reports the disagreement rate rather
-than asserting agreement.
+
+⭐ VERIFIED AGAINST AN INDEPENDENT DECODER, 2026-08-17 (s48).  The builder's
+eco-study pipeline produced per-side `scale_r25 / r50 / r100` from a SEPARATE
+replay decode (`fu_side.tsv`, 1,430 team-sides).  This reconstruction was
+checked against it:
+
+    r25    n=1,430   EXACT agreement 99.93%
+    r50    n=1,416   EXACT agreement 99.51%
+    r100   n=1,260   EXACT agreement 98.81%
+    (median difference 0.0pp at every mark; the residual grows with the mark,
+     consistent with an off-by-one at the snapshot boundary -- mine samples on
+     the first event with rnd > mark.)
+
+⛔ AND THE PROCESS NOTE, BECAUSE IT IS THE POINT: THE FIRST VERSION OF THIS FILE
+SAID NO SECOND SURFACE EXISTED.  That was true of `corpus/econ.tsv` (its scale
+columns are banded, not per-round) and FALSE as a general claim -- the second
+surface was in a teammate's scratchpad the whole time.  ** "I could not find a
+control" is not "no control exists", and an unverified reconstruction published
+with an honest disclaimer is still an unverified reconstruction. **  The
+disclaimer was correct and the search behind it was not.
+
+`--verify` reports what it can reach and refuses to imply a check it did not
+run; the numbers above are the check that WAS run, recorded here because the
+comparison file is ephemeral session scratch and this docstring is not.
 
 ------------------------------------------------------------------------------
 ⛔ WHAT THIS TOOL WILL NOT TELL YOU, AND IT IS THE FIRST THING PEOPLE ASK
