@@ -1,95 +1,112 @@
 # ⭐⭐⭐ FIRST: `.venv/bin/python tools/now.py` — the holder comes from fcode status,
-# NEVER from a poller or from any line below (this block is a CACHE; holder lines
-# expire in minutes — twice today a correct-when-written line was wrong within ten).
+# NEVER from a poller or any line below (this block is a CACHE). now.py gained a
+# retry at the s48 wrap; if it still reads BLIND, raw `fcode status` TEXT can
+# carry the Active bot: line during PARTIAL flaps — the line is the authority.
 
-# ===== s47 WRAP (builder, 2026-08-16 ~20:0xZ; Magnus called the wrap after ordering the ship) =====
+# ===== s48 WRAP (builder, 2026-08-17 ~07:3xZ; Magnus called the wrap) =====
 
-## THE HEADLINE
-**SLEIPNIR v1 IS LIVE — v155, `bots/_v468kladturbo`, shipped 19:38:40Z on
-Magnus's direct order ("Alright, release Sleipnir"), OUR ship, uploaded by
-Moonfarm.** Combined-source md5 (all four .py, sorted): `19c9dc935fb90b279a5b2fe24ff251ea`.
-First arm ever to clear the 60±2 rule: KLADTURBOR (ws1 replication)
-**61.57 [60.28, 62.87] n=5,400** + local agreeing (61.29 mid-shard at fire
-time; local shard still finishing at wrap — TYPE ITS FINAL as confirmation).
-Ship record (pre-fire committed): `docs/prereg/SHIP-sleipnir-v1-2026-08-16.md`
-— the step-2 H2H waiver is explicit there. Composition: samestop (Magnus's
-kladde piece) × turbo (v152 family) × bodyaware — mechanisms in different
-subsystems ADD (D1). **ROLLBACK TARGET: v152 (x3r0's "Loki turbo4") — and any
-rollback is MAGNUS'S WORD ONLY (SLOT_STOP_LOSS: off; slot frozen on his word
-in BOTH directions). SHIP_SIT_MIN_K=8 protects Sleipnir's convergence.**
+## ⛔⛔ MAGNUS'S NEW ABSOLUTE RULE (verbatim, supersedes the s47 carve-out):
+## "NO tools should get fixed during the session, everything is fixed in the
+## builders wrap." NO exceptions — a loop-blocking defect means work around,
+## route around, or escalate to Magnus. Charter carries the amendment.
 
-## ERA + DOCTRINE (Magnus, verbatim-adjacent, ~19:3xZ)
-Named SLEIPNIR (Loki's own child — lineage kept, era marked; ship names under
-Sleipnir now, see memory `sleipnir-era`). Doctrine frame: **"rush phase —
-building quick eco and disabling + killing the enemy early."** Quick eco =
-samestop/kladde family; disable = plug/pit/exile trickster planks (queued);
-early kill = turbo tempo + committed sentinels.
+## THE SLOT
+**HOLDER v155 Sleipnir v1 = bots/_v468kladturbo — AND IT IS ALSO THE CONTROL
+(Magnus: "we benchmark against Sleipnir").** Rollback target v152. Slot frozen
+on Magnus's word BOTH directions. Odin (v157, x3r0) held 06:00-07:08 and was
+rolled back; its 68-min tenure resolves nothing (tenure-can't-rank, 3rd live
+instance). Odin/v156/v153 sources STAGED byte-identical (bots/_x3r0v157odin
+etc., PROVENANCE sidecars); analysis: docs/research/ODIN-ANALYSIS-2026-08-17.md
+(strict superset of Sleipnir; ARCH classifier = the portable idea, queue #95;
+their TW weapon CANNOT arm vs us — forward sentinels disable it BY CONSTRUCTION,
+and any arm that delays early visible turrets RE-ENABLES it: registered hazard).
 
-## OVERNIGHT READOUTS A SUCCESSOR TYPES (tapes carry everything; bars in BARS.tsv)
-* **SLEIPH2H (ws1)** — Sleipnir vs the STAGED v152 artifact, n=2,700, the
-  pipeline's step-2 read running as post-hoc confirmation. ⚠ If it reads ≤50
-  that is a FINDING (transitivity, #65), NOT a rollback trigger by itself —
-  the slot moves on Magnus's word only.
-* **KLADTURBO local full** (n=5,400, was 61.3@2,772) — the ship's local read.
-* **KLADTK2 (local) + KLADTK2R (ws1)** — Magnus's four-plank v3 (the v2
-  collapse post-mortem is in KLADTK2's BARS row; v469 is the BROKEN tree,
-  never re-queue it).
-* **GUNPINA** (hold-fire, zero-cost; expected small positive), **DRAINTURBO**
-  (drain on turbo; contrast vs TBA 55.25), **KILLTILER (ws2)** — #87's
-  full-powered read after the local floor stop.
-* Verdict style: every row carries bar/CI/scope inline; cancellations are not
-  verdicts; report cross-host cells separately, never pooled.
+## THE DAY'S TARGET (Magnus): >60% vs Sleipnir ("60-vs-Sleipnir" — the control
+is PART of the number; ≈70.6-vs-v140 through the logistic — a stretch target).
+Method: solos screen under strict floors (CONFIRMED constants: CATASTROPHE@400
+CI-hi<45, MARK-1000, TREND-FLOOR@1000 52.0, COMBO 55@2700), survivors compose
+cross-subsystem (D1 s47). Regime record today: 3-of-5 stopped at the 1000-look
++1 catastrophe, TWO PASSED (the regime discriminates).
 
-## THE CONTROL QUESTION (routed to research + Magnus, OPEN)
-Registrations keep **v140 (`_v223sealrepair`)** as control for every vintage
-row (Magnus's benchmark-stability rule). But with a 61-incumbent, the 51.33
-futility floor is nearly meaningless for NEW arms. Research owns putting the
-go-forward control re-pricing to Magnus. ⛔ Every QUEUE.md GREP was admitted
-against `_v223sealrepair` — the incumbent moved, so greps are potentially
-stale (s34 lesson); queue_check flags it.
+## RUNNING AT WRAP (daemons keep them alive; verdicts are the successor's)
+* **BELTBREAK-EARLY** (forward shredder gunner, gate r25) — PASSED the floor,
+  ~56 at half-mark, n=2351+ → 5400. THE LEAD SURVIVOR. Its LATE twin floor-
+  stopped (contrast void by pre-registration — EARLY reads as a SOLO vs 51.33).
+  Readout language: cite §10.4's geometric identity for the annulus, NEVER the
+  belt-excess ordering (research's within-game control). Prereg locked.
+* **ROUTESCORE** — PASSED the floor (prefix ≥52 at n=2495) → 5400. Its honest
+  route-length null is registered; F2 cross pre-committed.
+* **ODINVSSLEIP** — calibration, G6-exempt (structurally cannot be stopped),
+  n→2700. Measures the ARTIFACT PAIR (ablation of Odin's additions, NOT a
+  rivalry; TW inert in this matchup by construction). At n=345 read
+  [41.9,52.5] = NO SIGNAL; needs ~n=2000. THE ONLY instrument that can
+  arbitrate Sleipnir-vs-Odin (tenures can't).
+* **OPENFAST build agent** (may still be running — check its tree/commit):
+  RE-TARGETED mid-build to FIRST-CONVEYOR timing (-4.42 rounds vs who we
+  face; harvester timing is at PARITY and must NOT be broken — the
+  cross-team 4-round harvester gap was vs teams we rarely play).
+* **WRAP-FIX s48 agent** — discharging scratchpad/s48_wrap_debts.md (25
+  items, class-consolidated). Its report relays into the tail when it lands;
+  if missing: git log --grep="WRAP-FIX s48".
+* **Batch prereg agent** (KLADLADDER2, KLADLADDER3, SEALPIERCE, ECOMMIT2 —
+  4 drafts, possibly uncommitted in docs/prereg/ when it reports): THE
+  SUCCESSOR LOCKS THEM (ratify judgment lines, prereg_check, lock commit,
+  BARS+worklist rows; seeds from its report). ECOMMIT2's F-battery ran
+  (scratchpad/ecommit2_fbattery.log); leak metric is DIRECTION-ONLY (the
+  +0.205 slope is RETRACTED — within-game control failed; cite the 49/49
+  probe, never the slope); keep the rate+count pairing hedge.
 
-## FLEET / WAKE PATHS
-**Survives:** 4 watchers + keeper + auto_gate/gate_watch --apply loops +
-corefill filler + vps_pull + both remote workers + dashboard (NEW: fleet
-section on the FRONT page, PENDING-PULL badge, helper prose stripped — served
-by the restarted process). **Dies with s47:** all Monitor-class watches, the
-in-flight WRAP-FIX instrument agent (its commits are durable; its report is
-relayed into the coordination tail when it lands — if missing, `git log
---grep=WRAP-FIX` lists what it did). **Nothing wakes a human.**
-Worklist hygiene: H-family retired, fossils swept (file-order hazard bit
-twice — durable live-vs-archive worklist format is wrap debt).
-`scratchpad/s47_wrap_debts.md` holds the numbered debt list (1-19) with the
-fix agent working the verifiable half; unfixed items carry to the next boot.
+## VERDICTS TYPED TODAY (results.tsv; all control=Sleipnir unless stated)
+KLADTURBO local 61.09 CONFIRMS the ship both-hosts · KILLTILER #87 REAL NEG
+48.43 · V140VS152 cert 57.02 (transitivity verified QUANTITATIVELY — amended
+form) · KLADLADDER 41.86@3404 Band-4, dose-confirmed tax (1.30x deaths), the
+2.11x delivery claim RETRACTED as an n=24-control artifact — sweep any dose
+read with a small control · KLADLADDER2 built: tax severed (0.98x deaths) but
+delivery subset-of-base · SEALSENTAN 46.07 floor-stop (seat-sentinel plant
+trends below parity even unfunded) · SEALSENTA retired pre-clause (asymmetric
+stop; automation race disclosed) · ECOMMIT catastrophe 36.58 → pre-committed
+over-refusal branch → _v487ecommit2 built · FREEROUND 49.18 POLICY-correct
+stop · BELTBREAK-LATE 47.39 POLICY-correct stop.
 
-## HAZARDS A SUCCESSOR MUST NOT RE-LEARN
-1. Local replays do NOT record execTimeUs/tled (zero-filled) — CPU-starvation
-   diagnoses need another instrument.
-2. Foreground demo games on a loaded box are biased AGAINST CPU-tuned trees
-   (turbo lineage): 6 straight losses at a replicated-62 arm; judge arms by
-   the fixture, use demos only for MECHANISM checks.
-3. NOISE_ON pins an UNSEEDED RNG — equivalence checks must neutralise it
-   first; variance batteries must NOT (both statements in #19's row).
-4. Same-round double-builds corrupt buffered store counters (two read+1
-   writes record one build) — never trust SLOT_* exact counts near
-   simultaneous writers; KLADTK2's v3 pattern (parallel + downstream
-   tolerance) is the shipped resolution.
-5. plank_status COLLISION on 'loki28' remains OPEN (disclosed in the ship
-   record) — resolve the naming before acting on either plank's
-   withdrawal/ack.
-6. The demo-map rotation rule (D2): mechanism demos run on suspected FAILURE
-   geometry, never the same three convenient maps.
+## QUEUE / RESEARCH STATE
+Queue ~78, ALL 47 judgment rows re-admitted vs _v468kladturbo (research's
+sweep: 4 already-shipped, 2 partially, 8 premise-dead, tallies in the tail).
+#62 re-priced UPWARD (opening builders = 100pp scale, the largest lever;
+direction-as-treatment REQUIRED, trim-on-large-maps expected, composite
+hazard named). #95 ARCH stocked. #37 belt-tap PRICED (single-digit ceiling).
+Splitter DEAD. #94 = siting-discipline only (home sentinels are NOT dead
+weight). Leak-regression candidate: ~1.8pp vs v140's shipped record, suspect
+is the v152 lineage NOT samestop.
 
-## QUEUE (idea queue reads 72 rows BUT ⛔ 58 CARRY STALE GREPs after the
-incumbent move — the count is not the health signal it looks like;
-re-admission is research's named owed item; do not build off a stale-GREP
-row without re-running it. #78 must NOT be built before the #23 gating
-read, which was owed all day and never ran. Local shard queue is tonight's
-intentional board only). Next builds staged by evidence: #86 narrow
-(BELT_TYPES under move-gate) after GUNPINA reads; #82 vault edge-lane arm on
-the turbo base (vault-held-fixed design, research's forced shape); the drain
-grafts onto Sleipnir only if DRAINTURBO adds over TBA; trickster planks (#84
-plug — Ouroboros is its clean fixture) per the rush-phase doctrine.
+## INSTRUMENTS ADOPTED TODAY (use them, don't re-derive)
+tools/cluster_ci.py (platform surfaces; <30 clusters = NO VERDICT by design) ·
+tools/population_diff.py (outcome comparisons need opponent matching; local
+shards exempt) · tools/scale_trace.py --price (scale costs as percentiles,
+on-top-of-median reading) · tools/remote_cancel.py (auto_gate reaches remote;
+confirmation-class exemption is RULE-DECIDED, MECHANISM built at wrap — check
+before queueing any remote confirmation run) · ledger: two-keys convention
+(<shard>-autostop-<mark> = tool, <shard>-final = builder) + control column.
+
+## HAZARDS A SUCCESSOR MUST NOT RE-LEARN (s48 additions)
+1. Split same-day decodes on ladder_games.OURVER, never a timestamp.
+2. league_matches' last ~90 min can be PARTIAL, not just lagged.
+3. Odin-class TW gates on never-seen-a-turret: delaying early turrets
+   re-enables it against us.
+4. A dose read whose control is n=24 is not a mechanism license.
+5. Numbers travel with intervals from refusing tools; kill-tallies carry
+   their denominators (pass-counts).
+6. Local FIXTURE stamp = valid pre-game clock; remote tapes have none
+   (first-completed-row / serial bound).
+
+## WAKE PATHS
+Daemons survive: 4 watchers + keeper + auto_gate --apply (now reaching
+remote) + corefill + fleet_dispatch + dashboard. Shards fill and auto-stop
+without a human. NOTHING WAKES A HUMAN. The in-flight agents die with the
+session — their states are documented above; OPENFAST/WRAP-FIX/prereg-batch
+reports relay into the tail if they land before the terminal closes,
+otherwise: git log --grep="BUILDER s48\|WRAP-FIX s48" + this block.
 
 ## ===== ARCHIVE =====
+
 Everything superseded lives in `HANDOVER-archive.md`. The top block IS the
 state; the archive is history.
