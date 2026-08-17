@@ -70834,3 +70834,23 @@ econ kills 128 at 2.13 shots each · timely-kill ITT 26.4→28.4 · median kill 
 ⛔ **BUT THE GUARD SUPPRESSES RATHER THAN REDIRECTS: effective econ dose 0.695 → 0.517.** The shielded tile is usually the ONLY eligible tile on the ray (`es=1` throughout), so refused diversions fall back to the CORE (+1.13 core shots/game on SHORTER games — median turns 375→320, kill≤r300 +3.9pp ±7.3, r1000 −1.5pp: all favourable, none significant; h2h indication −3.5pp ±8.7, unfavourable sign, underpowered, NOT claimed).
 ⭐⭐ **WHY THE TILES ARE OCCUPIED — THE COLLISION:** the builders standing on enemy belt tiles are OUR SALT RAIDERS (salting/pecking is exactly standing on their belt). **Two shipped planks are interfering: SALT puts our bodies where RAYDISC wants to shoot.** The 21.8→34.6% own-hit rates are that overlap measured twice. ⇒ **dose recovery is a COORDINATION plank** (raiders yield ray tiles / diversion siting avoids our trail), its own arm, its own prereg — not a re-tune of the guard.
 ⇒ DISPOSITION: `_v508raydisc2` banked as the CORRECT form of the mechanism (any future ray-discipline arm builds on it, never v507); its value question stays open on the kill-clock channel per the agent's read. The next iteration in this family is the SALT×RAY coordination arm.
+
+--- 2026-08-17T15:5xZ ⭐⭐ **BUILDER s49 — MAGNUS'S BACK-EVERY-DISMISSAL-WITH-CORES SWEEP COMPLETE: 4/4 CONFIRMED IN DIRECTION AT n=510 EACH, WITH TWO REASONING CORRECTIONS AND ONE FIFTH CELL THE AGENT ADDED TO CATCH MY OWN CONTROL ERROR.** ---
+```
+CELL 1  RUSH2 vs control      36.47 [32.33, 40.61]  ⛔ CONFIRMS the disposition, CONTRADICTS my reason:
+        the waivers are NOT inert — median plant round 30 vs 100, pre-r60 plants 0.998 vs 0.537/game,
+        with ZERO extra turrets (1.34 vs 1.36) and timely-kill 19.8 vs 41.4. EARLIER, NOT MORE — and
+        earlier is measured HARMFUL. Stronger dismissal than the 2.2pp arithmetic ever implied.
+CELL 2  BBAMMO vs carrier     50.59 [46.29, 54.88]  CONFIRMS: the clause visibly works (−393 Ti ammo,
+        shots −67, shredders +0.43) and nets ZERO share. Not subtractive — flat.
+CELL 3  SIEGEBREAK vs control 45.69 [41.41, 49.97]  CONFIRMS at n=510 what n=30 said: 3,703 turret-pecks
+        vs 0 (perfect complement), r45 suppression small-but-real (−0.078, CI clear of 0 — 'flat' was
+        slightly too strong there), END-STATE SIEGE UNCHANGED, share below 50.
+CELL 4  HEALBREAK vs ITS OWN carrier (_v480)  50.59 [46.29, 54.88]  CONFIRMS: redirect nets ≈0.
+CELL 5  (agent-added) HEALBREAK vs _v488     44.71 [40.43, 48.98]  ⛔ MY ASSIGNED CONTROL WAS WRONG:
+        _v495 sits on the RND=25 chassis, so vs _v488 the contrast is TWO planks and the −5.3pp is the
+        RND 10-vs-25 DOSE, not the redirect — which INDEPENDENTLY corroborates beltbreak2's timing
+        result a third time. Running only my assigned pair would have mis-attributed a dose effect.
+```
+⚠ **INCIDENT, disclosed with its cost: 524 games lost to a shared-scratchpad race** — the sibling battery agent's cleanup `rm -rf`'d the shared `bots` copy dir mid-run; `fcode run` refused (`Bot not found`), the runner banked NOWINNER rather than scoring, the agent re-copied into a namespaced dir (content-hash-verified) and REPLAYED every lost game. Final populations complete, 0 NOWINNER scored. **Routing: agents namespace their bot copies; cleanups never `rm -rf` shared top-level dirs. Wrap list.**
+⇒ **EVERY DISMISSAL ON TODAY'S BOARD NOW CARRIES ITS OWN GAMES.** The sweep also produced its own finding: RUSH2's mechanism (plant EARLIER without planting MORE) being measured harmful is fresh evidence on the timing axis from the opposite direction — pre-r30 sentinel plants on THIS chassis hurt, which brackets the beltbreak-family timing sweet spot from below.
