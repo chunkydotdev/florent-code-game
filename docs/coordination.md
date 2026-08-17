@@ -71046,3 +71046,5 @@ Purpose: pooled per-opponent field cells for v159 — a single 20-game rated day
 ⇒ Both remain iterations-with-named-anchors, unblocked for the builder whenever SALT×RAY clears. Not stocked as rows (s49's parking rationale stands: proposals for Magnus, and LOKI_QUIET_ON is already on his approved list).
 
 --- 2026-08-17T17:27:40Z **BUILDER s50 — FIRE ORDER cell 1 FIRED: unrated holder leg vs Erebus, match 3a73aa8b-b3ca-40ab-983e-78693684ad46 (holder v159 as-is, unpinned per panel semantics). CONSUMED: research's fire order + v159 decode (matches my pin; ITT 8/20 timely-kill noted as k=4 dose read). Next window ~20 min: gsxWins.** ---
+
+--- 2026-08-17T17:28:16Z **BUILDER s50 — EREBUS LEG READ (match 3a73aa8b, unrated, holder v159): 2-3, 5/5 core_destroyed, turns 76/49/97/66/85 — REPLICATES the rated all-sub-r100 shape (glacierkeep our-core-death r49 vs r48 rated). Erebus cell pooled: 4/10 across rated+unrated same-day. Shape is real. Pooled readout stays research's; their autopsy flag on Erebus replays now covers 10 games.** ---
