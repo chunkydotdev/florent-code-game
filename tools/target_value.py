@@ -130,6 +130,150 @@ def _hours_since(iso: str) -> str:
         return "AGE UNKNOWN  ⛔"
 
 
+# ---- COMPLETENESS METER (added 2026-08-17, s48 WRAP-FIX, debt 12a) ----------
+# ⛔ WHY, and it is a measured failure of the line directly above this block.
+# `_hours_since` reports the age of the NEWEST row. FRESHNESS AND COMPLETENESS ARE
+# DIFFERENT PROPERTIES and only one of them was measured. Research s48
+# (docs/coordination.md 2026-08-17T05:02:11Z) measured `corpus/league_matches.tsv`
+# while this gate printed `0.4h old`:
+#     02:12 41 · 02:32 41 · 02:52 40   <- steady state
+#     03:12 10 · 03:32 11 · 03:52 11 · 04:12 7   <- ~25% complete
+# and ALL FOUR of our own rated matches in that window were missing. A file can be
+# perfectly fresh at its newest row and three-quarters empty across its last four
+# slots, and the age stamp cannot see that failure mode AT ALL. Same family as
+# `ship_watch` printing a healthy line off seven-minute-stale rows, one level down.
+#
+# ⭐ AND THE SELF-HEALING MAKES IT WORSE, NOT BETTER (research, 05:26:06Z): the
+# archiver backfills, but a slot is still at 68% of steady state at 2h13m and only
+# converges around 2h30m. A slowly-converging tail keeps the newest-row age looking
+# fine for hours while the recent window fills in behind it.
+#
+# ⇒ THE EXPECTATION MUST BE AGE-AWARE, which is why there are two floors rather
+# than one. A flat "must be at the median" would alarm on every young slot; a
+# single-slot check "would read 25 and call it low when 25 at 33 minutes old is
+# normal" (research, verbatim). Numbers below are read off that measured fill
+# curve: 61% at 0h33, 63% at 1h13, 76% at 1h33, 71% at 1h53, 68% at 2h13, 98% at
+# 2h33. FILLING_FRAC = 0.35 sits well under every measured filling value (so a
+# healthy tail cannot alarm) and well over the 0.17-0.27 the starved window
+# actually showed (so the failure this exists for does alarm).
+SLOT_MIN = 20            # the ladder pairs on a 20-minute clock (CLAUDE.md)
+COMPLETENESS_SLOTS = 12  # judged window = 4.0h.
+# ⛔ RESEARCH ASKED FOR ~8 SLOTS AND THIS IS 12 ON PURPOSE. 8 slots is 2h40m and
+# the settle time is 2h30m, so an 8-slot window contains AT MOST ONE settled slot
+# — a meter whose strong floor applies to one cell is a meter one archiver hiccup
+# away from being decorative. 12 slots holds 4-5 settled cells.
+SETTLE_H = 2.5           # measured: a slot reaches steady state ~2h30m after it opens
+SETTLED_FRAC = 0.80      # a settled slot must be at >= 80% of the trailing median
+FILLING_FRAC = 0.35      # a filling slot must be at >= 35% (see curve above)
+NEW_H = 0.75             # below this age a slot carries NO expectation at all
+REF_LO_H, REF_HI_H = 4.0, 28.0   # trailing-median window: strictly older than judged
+REF_MIN_SLOTS = 6        # fewer reference slots than this -> UNKNOWN, never OK
+
+
+def _slot_counts(path: Path, lo, hi) -> dict:
+    """{slot_start: rows} for every 20-min slot in [lo, hi). Absent slots are
+    NOT in the dict — the caller enumerates the clock and treats them as 0, which
+    is the whole point: a slot that is entirely missing must count as empty, not
+    as unobserved."""
+    from datetime import datetime, timezone
+    out: dict = {}
+    if not path.exists():
+        return out
+    with path.open() as fh:
+        for r in csv.DictReader(fh, delimiter="\t"):
+            ts = r.get("createdAt") or ""
+            try:
+                d = datetime.fromisoformat(ts.replace("Z", "+00:00"))
+            except ValueError:
+                continue
+            if d.tzinfo is None:
+                d = d.replace(tzinfo=timezone.utc)
+            if not (lo <= d < hi):
+                continue
+            s = d.replace(minute=(d.minute // SLOT_MIN) * SLOT_MIN,
+                          second=0, microsecond=0)
+            out[s] = out.get(s, 0) + 1
+    return out
+
+
+def completeness(path: Path | None = None, now=None,
+                 counts: dict | None = None) -> tuple[str, list[str]]:
+    """-> (verdict, lines). verdict in {'OK','THIN','UNKNOWN'}.
+
+    `counts` ({slot_start: rows}) is the injection point for the selftest, so the
+    starved case is DRIVEN rather than waited for.
+    """
+    from datetime import datetime, timedelta, timezone
+    import statistics
+    path = path or (ROOT / "corpus" / "league_matches.tsv")
+    now = now or datetime.now(timezone.utc)
+    slot = timedelta(minutes=SLOT_MIN)
+    newest_slot = now.replace(minute=(now.minute // SLOT_MIN) * SLOT_MIN,
+                              second=0, microsecond=0)
+    ref_lo = now - timedelta(hours=REF_HI_H)
+    if counts is None:
+        counts = _slot_counts(path, ref_lo, now + slot)
+
+    def n_at(s):
+        return counts.get(s, 0)
+
+    ref = []
+    s = newest_slot
+    while s >= ref_lo:
+        age_h = (now - s).total_seconds() / 3600.0
+        if REF_LO_H <= age_h <= REF_HI_H:
+            ref.append(n_at(s))
+        s -= slot
+    if len(ref) < REF_MIN_SLOTS:
+        return "UNKNOWN", [
+            f"COMPLETENESS UNKNOWN — only {len(ref)} reference slot(s) in the "
+            f"{REF_LO_H:.0f}-{REF_HI_H:.0f}h window (need {REF_MIN_SLOTS}); "
+            f"cannot calibrate a trailing median. NOT a healthy verdict."]
+    med = statistics.median(ref)
+    if med <= 0:
+        return "UNKNOWN", [
+            f"COMPLETENESS UNKNOWN — trailing median is {med:.0f} rows/slot over "
+            f"{len(ref)} slots; there is no steady state to compare against. "
+            f"NOT a healthy verdict."]
+
+    cells, thin = [], []
+    for i in range(COMPLETENESS_SLOTS):
+        s = newest_slot - i * slot
+        age_h = (now - s).total_seconds() / 3600.0
+        n = n_at(s)
+        if age_h < NEW_H:
+            cells.append(f"{s:%H:%M}={n}·new")
+            continue
+        frac = SETTLED_FRAC if age_h >= SETTLE_H else FILLING_FRAC
+        tag = "" if age_h >= SETTLE_H else "·fill"
+        if n < frac * med:
+            cells.append(f"{s:%H:%M}={n}{tag}⛔")
+            thin.append((s, n, frac, age_h))
+        else:
+            cells.append(f"{s:%H:%M}={n}{tag}")
+    cells.reverse()
+
+    head = (f"COMPLETENESS — rows per {SLOT_MIN}-min slot, trailing median "
+            f"{med:.0f} over {len(ref)} slots aged {REF_LO_H:.0f}-{REF_HI_H:.0f}h")
+    body = "    " + "  ".join(cells)
+    if not thin:
+        return "OK", [head, body,
+                      f"    ✅ every slot in the last "
+                      f"{COMPLETENESS_SLOTS * SLOT_MIN / 60:.1f}h is at or above its "
+                      f"expected fill ({SETTLED_FRAC:.0%} settled / "
+                      f"{FILLING_FRAC:.0%} still filling)."]
+    worst = min(thin, key=lambda t: t[1] / med)
+    return "THIN", [
+        head, body,
+        f"    ⛔⛔ INCOMPLETE — {len(thin)} of {COMPLETENESS_SLOTS} slots below "
+        f"expected fill (worst {worst[0]:%H:%M} at {worst[1]}/{med:.0f} = "
+        f"{100.0 * worst[1] / med:.0f}% at age {worst[3]:.1f}h). "
+        f"THE AGE STAMP ABOVE CANNOT SEE THIS.",
+        f"    ⇒ AN ABSENCE IN THE LAST ~{SETTLE_H:.1f}h OF THIS FILE IS NOT "
+        f"EVIDENCE. Any cut turning on \"team X has not played / has not "
+        f"shipped recently\" must exclude that window or re-pull."]
+
+
 def payout_for(gap: float) -> float:
     """Rating points a 5-0 pays against an opponent `gap` points from us."""
     E = 1.0 / (1.0 + 10 ** (-(-gap) / 400))
@@ -446,6 +590,50 @@ def selftest() -> int:
     if not ok_u:
         bad += 1
 
+    # ⛔ COMPLETENESS CELLS — DRIVEN BOTH WAYS ON CONSTRUCTED WINDOWS, because the
+    # failure this meter exists for is one we cannot wait for: the archive was
+    # already healthy again by the time the fix was written. The starved fixture is
+    # the MEASURED 05:02:11Z window (10/11/11/7 against a steady state of 41), so
+    # the alarm is tested against the real event and not a caricature.
+    print("  COMPLETENESS METER (fixtures; the alarm must fire AND must stay quiet):")
+    _slot = timedelta(minutes=SLOT_MIN)
+    _base = _now.replace(minute=(_now.minute // SLOT_MIN) * SLOT_MIN,
+                         second=0, microsecond=0)
+
+    def _window(recent):
+        """recent = counts newest-first for the judged window; older slots steady."""
+        c = {}
+        for i in range(COMPLETENESS_SLOTS, int(REF_HI_H * 60 / SLOT_MIN) + 2):
+            c[_base - i * _slot] = 41
+        for i, n in enumerate(recent):
+            c[_base - i * _slot] = n
+        return c
+
+    _healthy = _window([25, 30, 38, 41] + [41] * 8)
+    _starved = _window([7, 11, 11, 10] + [41] * 8)          # the measured event
+    _dead = _window([0, 0, 0, 0, 0, 0] + [41] * 6)          # archiver stopped
+    for _nm, _cts, _want in (("a full window reads OK", _healthy, "OK"),
+                             ("the MEASURED 05:02Z starved window ALARMS", _starved, "THIN"),
+                             ("a silently stopped archiver ALARMS", _dead, "THIN")):
+        _v, _lines = completeness(now=_now, counts=_cts)
+        _okc = _v == _want
+        print(f"  [{'ok' if _okc else 'FAIL'}] {_nm:<52} -> {_v} (want {_want})")
+        if not _okc:
+            bad += 1
+    # ...and the blind case must not read as healthy.
+    _v, _ = completeness(now=_now, counts={})
+    _okb = _v == "UNKNOWN"
+    print(f"  [{'ok' if _okb else 'FAIL'}] an EMPTY file reads UNKNOWN, never OK          -> {_v}")
+    if not _okb:
+        bad += 1
+    # ...and a young slot must NOT alarm just for being young, which is the
+    # over-correction that would make this meter cry wolf every 20 minutes.
+    _v, _ = completeness(now=_now, counts=_window([3] + [41] * 11))
+    _oky = _v == "OK"
+    print(f"  [{'ok' if _oky else 'FAIL'}] a nearly-empty <45-min-old slot does NOT alarm  -> {_v}")
+    if not _oky:
+        bad += 1
+
     import io, contextlib
     print("  ENTRY POINTS — the suite must exercise the SHIPPED surface, not just the predicate:")
     for label, args in (("--band", ["--band"]), ("named team", ["The Bisons"]), ("no args", [])):
@@ -489,6 +677,8 @@ def main(argv: list[str]) -> int:
         _age = _hours_since(_newest)
         print(f"RATINGS from corpus/league_matches.tsv — newest observation "
               f"{_newest[:16] or '?'} ({_age})")
+        for _l in completeness()[1]:
+            print("  " + _l)
         print(f"  ⚠ opponent ratings are CACHED. Ours is live off `fcode status`. "
               f"80-point drift over ~6h has been observed; verify the SELECTED "
               f"target before quoting its payoff.\n")
@@ -518,6 +708,13 @@ def main(argv: list[str]) -> int:
         return 2
 
     gaps_hist = pairing_gaps()
+    # the named-target path quotes the same CACHED ratings the --band path does,
+    # so it inherits the same completeness hazard and gets the same meter.
+    _newest = max(_RATING_AGE.values(), default="")
+    print(f"RATINGS from corpus/league_matches.tsv — newest observation "
+          f"{_newest[:16] or '?'} ({_hours_since(_newest)})")
+    for _l in completeness()[1]:
+        print("  " + _l)
     print(f"our rating {ours:.0f}   (reachable band us{BAND_LO:+d}..us{BAND_HI:+d}, "
           f"from {len(gaps_hist)} observed pairings)")
     print("  BAND EDGES ARE SAMPLE EXTREMES AND GROW WITH n -- read the "
