@@ -70224,3 +70224,25 @@ EXCLUDED: ODINVSSLEIP -- `le` bar, G6-exempt, never subject to the floor
 ⭐⭐ **AN INSTRUMENT THAT ONLY SEES FAILURES PRODUCES A REPORT THAT ONLY CONTAINS FAILURES — AND THE REPORTER DOES NOT NOTICE, BECAUSE NOTHING IS MISSING FROM WHAT THEY SAW.**
 ⛔⛔ **AND THE PART THAT IS WORSE THAN THE ERROR: I NAMED THIS GAP IN THE ABSTRACT AT 07:03Z, ARMED A COMPLETION WATCH, AND DID NOT GO BACK TO AUDIT WHAT IT HAD ALREADY COST.** **It had already cost a number, and that number had been repeated to Magnus in the intervening hour.** ⇒ ***A GAP NAMED FORWARD IS NOT A GAP CLOSED BACKWARD.*** **Banked as a RIDER on D21 rather than an eighth clause — the VENUE is unchanged (an instrument's domain narrower than the claim's) and only the REMEDIATION is new.**
 ⚠ **FIFTH TIME TODAY THIS SHAPE HAS LANDED ON MY OWN WORK, AND THE FIRST THAT REACHED A FIGURE I REPEATED MORE THAN ONCE.**
+
+# ============================================================================
+# BUILDER s48 WRAP — PROCESS DELTAS (retro instance: docs/retro-builder-s48-2026-08-17.md, ran FIRST per charter). Wrap called by Magnus ~07:2xZ.
+# ============================================================================
+
+**D1. ⭐⭐⭐ MAGNUS'S NEW ABSOLUTE RULE, VERBATIM, EFFECTIVE EVERY NEXT SESSION: "NO tools should get fixed during the session, everything is fixed in the builders wrap."** SUPERSEDES the s47 carve-out ("unless it breaks the loop") — the carve-out is GONE. A loop-blocking tool defect mid-session now means: work around it, route around it, or escalate to Magnus — never fix inline. Routed: charter amendment (committed with this wrap) + HANDOVER top block.
+
+**D2. ⭐⭐ FIX CLASSES, NOT INSTANCES (Magnus's too-much-tool-focus challenge, answered structurally).** Today's ~25 debts collapse into 4 classes: DERIVE-DON'T-EMBED (world-state expires at every ship), REGISTERED-PARAMETERS-NOT-DEFAULTS (dose.py's n=24), REFUSE-DON'T-DEFAULT-ON-UNKNOWN (submit_clean/now.py), TWO-AUTHORS-TWO-KEYS (ledger). WRAP-FIX s48 agent is executing the class-consolidated sweep. The test of the thesis: next session's debt stream should be visibly smaller — if it is not, something deeper is wrong.
+
+**D3. ⭐⭐ THE REGIME'S HONEST RECORD REQUIRES THE DENOMINATOR (side lane): at the 1000-look it is 3 STOPPED OF 5 LOOKED (+1 catastrophe@400), with ROUTESCORE and BELTBREAK-EARLY PASSING a 52.0 floor against the champion control — the strict regime DISCRIMINATES, it does not cull. Sub-lesson, theirs: an instrument that only sees failures produces a report that only contains failures, and the reporter does not notice. Kill-tallies carry pass-counts, always.**
+
+**D4. ⭐⭐ POLICY-CORRECT vs DATA-CORRECT stops are typed distinctly** (2 of each today): a stop whose CI contains 50 is right by Magnus's priced rule and is NOT evidence the arm was bad. On every cancellation row from today forward.
+
+**D5. ⭐⭐ THE CONFOUND ARC: seven population/confound errors across two lanes became three tools (cluster_ci, population_diff, scale_trace) + a taxonomy, and the closing instances were caught PRE-SEND by running the control first (twice: it changed a sentence, then a build target — OPENFAST re-pointed from harvester-timing (parity vs who we face) to FIRST-CONVEYOR (-4.42 rounds, the real gap)). Standing forms adopted: outcome-comparisons-need-opponent-matching; a number travels with the tool output that refuses to print it bare; a correction is a claim inheriting every obligation of what it corrects; a bounded read is a claim about the bound; "almost every interesting quantity is downstream of who is winning" = the data-side proof of FIXTURE_OF_RECORD.**
+
+**D6. ⭐ MECHANISMS THAT CANNOT FORGET beat conventions that must be remembered** — the day's fixes that stuck were all structural: control-era boundary IN the ledger, two-keys convention, G6's unconditional carve-out, refuse-on-unknown, the boilerplate absorbing the header-as-game catch within 2 hours. The one rule held by attention (FIRINGS-BEFORE-PRIMARY) inverted on first use — by the builder.
+
+**D7. ⭐ VERIFY OFF THE PRODUCTION CONSUMER, not the guard's selftest** (the 04:31Z "fleet unblocked" false claim; s47-S4 the durable cite). And SEALSENT's asymmetric-stop clause + BELTBREAK's cut-short clause both FIRED and were HONORED against visible data — pre-registration discipline paying at its most expensive point.
+
+**D8. Ship-chain safety landed pre-need**: submit_clean fails closed on unknown holder (mutation-tested); remote-stop automation (Magnus-ordered) took the human out of core management and fired correctly on its first live case; its relaunch race found+debt-listed same hour.
+
+**D9. OBSERVATION — the day produced ZERO ships and closed/priced ~10 roads cheaply (ladder funding axis 3 corners, seat-sentinel family, belt-tap ceiling, splitter, #94's cull-arm, ECOMMIT's constant branch, KILLTILER, plus two policy-kills). Under the mill that is a GOOD day: the 60-vs-Sleipnir target now has BELTBREAK-EARLY (passed the floor, 56-ish at half-mark) as its lead survivor.**
