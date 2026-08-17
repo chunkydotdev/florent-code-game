@@ -70168,3 +70168,24 @@ SLOPE of leak on unconnected-share:  +0.2051  [+0.1284, +0.2815]   332 clusters 
 ⚠ **AND THE HARVESTER-HALVING RISK CUTS THE OTHER WAY ON THIS METRIC, WHICH IS USEFUL: halving harvesters raises connect RATE mechanically, but it does NOT lower the leak unless the remaining harvesters are actually wired — so LEAK is the metric that catches the mechanically-inflated-rate failure mode the pair-reporting was invented to catch.**
 
 --- 2026-08-17T07:09:12Z BUILDER s48 — ODIN ROLLED BACK (~07:08:01Z, tenure ~68 min; authority-verified: Active bot v155 Sleipnir, 1805, #19). HOLDER AND CONTROL COINCIDE AGAIN. Disclosure line comes off verdicts PROSPECTIVELY; arms that ran 06:00-07:08 keep it (screened against a non-holder in that window). Odin's ladder tenure is UNRESOLVABLE BY CONSTRUCTION — exactly as research pre-stated at ~06:0xZ (~30 clusters needed, ~16:2xZ horizon; it got 68 minutes) — the THIRD live instance today of the SCREEN-PREDICTIVE-VALIDITY finding (tenures cannot rank our versions). ⇒ ODINVSSLEIP's justification UPGRADES: it is not merely the better instrument for Sleipnir-vs-Odin, it is the ONLY one that can answer at all; the readout carries that. The cell keeps running (it measures the artifact pair, indifferent to slot state). Whether the rollback was Magnus's or x3r0's act is theirs; state recorded, propriety not inferred. ---
+
+--- 2026-08-17T07:09:25Z ⛔⭐ **SIDE LANE s48 — ODIN ROLLED BACK AFTER 68 MINUTES. THE HOLDER/CONTROL DIVERGENCE IS RESOLVED, AND A PRE-STATED PREDICTION IS CONFIRMED.** ---
+
+**Caught by the slot watch at 07:08:01Z; VERIFIED FROM THE AUTHORITY, never the poller (D28):**
+```
+fcode status      Active bot: v155 (Sleipnir v1)   1805 Emerald   rank #19/126   1164 matches
+submission list   v157 Odin  ready  —  x3r0   (READY, NOT ACTIVE)
+                  v155 Sleipnir v1  ready  Yes  Moonfarm
+ODIN'S RATED TENURE: 2026-08-17T06:00:23Z -> 07:08:01Z  =  ~68 MINUTES
+```
+✅ **CONTROL AND HOLDER COINCIDE AGAIN — the divergence flagged at 06:03 is resolved, and the arms' `control=_v468kladturbo` is once more what is live.** ⚠ **NOT retroactive: arms that ran during the 06:00-07:08 window were screened against a NON-HOLDER and their rows should keep the disclosure line.**
+
+## ⭐⭐ ODIN'S TENURE IS UNRESOLVABLE BY CONSTRUCTION — AND IT WAS PRE-STATED
+**Research pre-committed at ~06:0xZ: *"Odin cannot support a share verdict before ~30 match-clusters, i.e. ~16:2xZ at the 20-minute cadence."*** ⇒ **it got 68 minutes.** ⇒ ⭐ **NOTHING CAN BE SAID ABOUT ODIN'S LADDER PERFORMANCE, AND THAT WAS KNOWABLE AND WRITTEN DOWN BEFORE THE DATA EXISTED** — a confirmed prediction rather than a post-hoc excuse, which is the difference between a horizon and an alibi.
+
+## ⭐⭐⭐ THIRD INSTANCE TODAY OF ONE STRUCTURAL FACT, AND IT IS NOW A LIVE DESCRIPTION RATHER THAN HISTORY
+`SCREEN-PREDICTIVE-VALIDITY-2026-08-14`: *"in FIVE of SIX historical pairs the LOSING version's rated tenure is 0-15 games — not a weak measurement, it is NO measurement"*, and *"our rated record, at the tenure lengths we actually grant a version, CANNOT RANK OUR OWN VERSIONS."*
+⇒ **TODAY IT HAPPENED TWICE IN REAL TIME: Sleipnir's 10h20m tenure could not resolve its own share (CI [43.9, 61.9]); Odin's 68 minutes cannot come close.** ⇒ **the study describes what the SLOT does to every version passing through it, not a quirk of the archive.**
+⭐ **THE CONSEQUENCE WORTH CARRYING: THE LADDER CANNOT ARBITRATE BETWEEN SLEIPNIR AND ODIN, AND NO AMOUNT OF WAITING FIXES IT WHILE TENURES ARE HOURS LONG.** ⇒ **`ODINVSSLEIP` (n=2,700, controlled, both arms at equal n) is not merely the BETTER instrument — it is the ONLY one that can answer the question at all.** **A far stronger justification for the cell than "Magnus asked", and it belongs in the readout.**
+
+⭐ **AND ON `ECOMMIT2`, WHERE MY OWN CAVEAT DID THE WORK: I suggested `LEAK` replace the connect-rate-plus-harvester-count pairing I certified, and caveated that if LEAK had its own feedback path the hedge should stay. Research then ran the within-game paired control — 0.4509 [0.4014, 0.5000], AT OR BELOW CHANCE — so the +0.205 slope was a BETWEEN-GAME association and the SIZE is retracted.** ⇒ **resolution: LEAK joins DIRECTION-ONLY (not-a-mediator survives), and the PAIRING HEDGE STAYS, because the argument for dropping it was the measured size.** ⭐ **Their process note is the keeper: *"the process failure is publishing with a control NAMED AS UNRUN"* — the same family as a disclaimer substituting for the looking.**
