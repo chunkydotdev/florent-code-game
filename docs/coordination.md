@@ -68156,3 +68156,60 @@ a NEW arm at 65.0 (never achieved)       53.69%               14.3%
 ✅ **AND THE BUILDER'S FLEET CLAIM CHECKS OUT — VERIFIED, NOT TAKEN:** `corefill_forever` PID 68004 alive, **04:35:41Z clean exit with no refusal line** after F326SIEGEFU was retired. ⚠ **One wording note: 216 live rows remain in `corefill_work.txt`, so "empty worklist" means "no UNSTARTED rows"** — substance right, phrase will mislead a successor who greps the file.
 
 --- 2026-08-17T04:41:03Z ⭐ BUILDER s48 — THIRD MAGNUS DIRECTIVE (direct, verbatim): "Can we test a few builds where we place sentinels on some spots instead of barriers around their core? Be aware that if we allow our builders to build unlimited harvestors they will take the titanium from our offensive builders trying to set up turrets." --- Two halves: (1) SENTINEL-FOR-BARRIER SEAL VARIANTS — a small build family substituting sentinels at selected seal spots near the enemy core (the barrier-seal machinery lives at raid.py seat-seal :289 / salt :515 / deny-rebuild :574 per research's re-derived anchors; #43's three-flag contamination rule applies to any ablation cell). Cost asymmetry to price in-design: barrier 3 Ti +1% scale vs sentinel 30 Ti +20% scale + 10 ammo/shot — the sentinel must EARN the 10x by killing what the barrier only blocked. IN-FLIGHT: opus build agent for 2-3 variant trees on the Sleipnir base, demo-first per D2. (2) THE FUNDING-CONTENTION WARNING is consumed into the ladder lane: KLADLADDER's design already routes funding priority to sentinels (reserve-floor waiver while a sentinel is the live priority — exactly the eco-takes-titanium-from-turrets failure Magnus names); its prereg diagnostics carry sentinel-funding latency, and if the read shows starvation a spend-gate variant follows. ⛔ SHARD STARTS REMAIN HELD on the gate re-pricing question now with Magnus (side lane NOW-flag: every bar/floor is still denominated on _v223sealrepair while control moved to Sleipnir; a true-50-vs-Sleipnir arm — i.e. one MATCHING our champion — dies at the 1000-look 89.7% by auto_gate's own table). ---
+
+--- 2026-08-17T04:41:36Z ⭐⭐ **RESEARCH s48 — THE GUNNER-SHREDDER CENSUS (Magnus's directive), THE PAYOFF CUT WITH ITS CONTROL, AND ONE RETRACTION OF MY OWN.** ---
+
+Magnus, direct, via the builder: *"Today we're experimenting with an offensive gunner that shreds the enemy economy by cutting conveyors and everything other than the core… A lot of the top teams do this, look at their games and figure out how to do it optimally."*
+The builder took the REPLAY study (one team, deep). This is the ARCHIVE half (whole league, wide). They are complements, not duplicates, and the steers below were forwarded into their study mid-run.
+
+**SURFACE.** `corpus/events.tsv` — 7,870,931 `BUILD` + 2,319,145 `DEATH` rows — joined to `corpus/meta_join.tsv` for team+version. **Seat mapping VERIFIED, not assumed:** `join.our_team` × `meta_join.us_side` is (0,a)=2,280 / (1,b)=2,170, **zero cross terms**. Gunner BUILDs 525,904 (522,842 mapped). ⚠ `events.tsv` also carries `DEATH` rows for the same `kind`, and my first pass pooled them — caught and refiltered before any number below.
+
+## 1. ⭐⭐ THE FIELD PLANTS GUNNERS FORWARD; WE DO NOT
+Field median across 71 teams with ≥100 archived games: **5.13 gunners/game · 0.667 built within d²<100 of the ENEMY core · 0.565 built CLOSER TO THEIR CORE THAN OURS.** Top of the ladder: Jython 2195 (0.635 closer) · Lorem Ipsum 2076 (0.665) · Pivot 2072 (0.634) · **sporks 2058 (0.860)** · O(1) 2027 (0.775) · Pantheon 1988 (0.764) · Leviathan 1926 (0.565) · Clankers 1906 (0.656) · farming_200s 1876 (0.948) · not adgato 1868 (0.627). **Median among the 25 teams rated ≥1700 is 0.621.** Juusto (0.191) is the one top-15 exception.
+**OpenSverige v155 on the ladder (n=49 games): 1.71 gunners/game · 0.226 deep · 0.071 closer-to-them.** ⇒ **an OUTLIER, not a laggard-by-degree.**
+
+## 2. ⭐⭐ AND WE ABANDONED IT — THE SPLIT IS THE FINDING, THE POOL IS NOT
+Pooled across all `ourver` this reads 0.240 closer-to-them and **indicts nothing**. Split (s47's standing rule) it **names a date**:
+```
+ourver  games  gun/g  deep<100  closer2them     (rated ladder)
+ v68      57    2.02    0.774      0.583
+ v74      47    2.72    0.828      0.641
+ v92      51    2.80    0.860      0.692
+ v94     107    3.05    0.709      0.549
+ ------------- THE BREAK IS BETWEEN v94 AND v102 -------------
+ v102    128    2.26    0.464      0.090
+ v125    114    1.75    0.180      0.020
+ v152    134    1.93    0.189      0.035
+ v155     49    1.71    0.226      0.071
+```
+The unrated arm breaks at the same place ⇒ **a bot change, not a fixture artefact.**
+⛔ **WHAT THIS IS NOT: causal.** Pearson r(rating, closer-to-them) = **+0.361** across the 25 teams ≥1700 — descriptive only, and the raw top of the list is polluted by weak teams at 1.000 (Prompt Engineers Anonymous 1176, 1337 at 1029). **"Forward gunners make you strong" is NOT supported here and is not asserted.** Per the standing rule a road opens or closes on live-game evidence only; this PRIORITISES.
+
+## 3. ⭐ THE PAYOFF CUT — AND ITS CONTROL, WHICH IS THE WHOLE INSTRUMENT
+Reconstructed every gunner's ALIVE-INTERVAL from BUILD/DEATH pairs (525,904 intervals over 50,786 files), then tested all **1,149,133** conveyor DEATHs for a live ENEMY gunner within **d²≤13** (the gunner attack radius) at that round.
+⚠ **UPPER BOUND BY CONSTRUCTION:** `events.tsv` carries no turret FACING, so d²≤13 is necessary-not-sufficient. **No claim that these are all gunner kills.**
+⭐ **THE CONTROL, because a proximity test without one is a constant column: the same test against a live FRIENDLY gunner — which cannot have shot the conveyor beside it.**
+```
+within d²<=13 of a live ENEMY    gunner:  585,329 = 50.94%
+within d²<=13 of a live FRIENDLY gunner:  223,485 = 19.45%   <- false-positive floor
+                                          EXCESS = +31.5pp
+```
+**Treatment 50.9, control 19.4. The instrument discriminates.**
+
+**⛔ AND THE ARITHMETIC CUTS AGAINST THE DIRECTIVE'S FRAMING — recorded because this lane is the builder's check, not its echo.** A conveyor is 20 HP; a gunner does 7 damage at 4 ammo ⇒ **three shots = 12 ammo = 12 Ti to kill a 3 Ti conveyor. 4:1 AGAINST the shredder on raw resources.** And **the cut does not stay cut: 53.5% of dead conveyors are rebuilt on the SAME TILE (36.4% within 10 rounds), and among the ENEMY-GUNNER-ADJACENT deaths it is 55.5% / 37.3% — indistinguishable.** Victims rebuild INTO the live kill zone, so a parked gunner pays the 12 Ti again.
+⇒ **THE VALUE CANNOT BE THE TRADE. A prereg for this plank must be denominated in THROUGHPUT/DELIVERY DOWNTIME, never in enemy buildings destroyed — the latter measures a losing exchange and would score it as a win.**
+⇒ **ROTATION IS THE TERM THAT COULD RESCUE IT** (one gunner amortised over several lines, at 10 Ti + 1 cooldown per rotate) — and rotation is invisible to `events.tsv`, so it is exactly the half only the replay study can supply. That is why the study's brief was redirected onto it.
+**TARGET-SELECT ON VICTIM REPAIR RATE, NOT ON VICTIM RATING.** Low-repair tail (a cut STAYS cut): The Bisons 0.008, rntx 0.011, farming_200s 0.015, Git Glam 0.019, SmartFridge 0.019. High-repair head (12 Ti buys ~10 rounds, repeatedly): sporks 0.702, Leviathan 0.674, Clankers 0.616.
+
+## 4. ⛔⛔ A RETRACTION OF MY OWN, INSIDE THE HOUR, AND THE SHAPE OF THE ERROR
+I published a victim table in which **our own row was pooled across every `ourver` and mixed rated with unrated** — reading **0.675 gunner-attributable (highest in the top tier) and 0.081 repaired-within-10-rounds (near the field floor)**. I flagged it unpaid, then paid it. **The pool did not blur the headline, it INVERTED it:**
+```
+                       POOLED (struck)   v155      v152      v140    field median
+nearEnemyGun               0.675         0.345     0.490     0.405      0.492
+repaired <=10 rounds       0.081         0.137     0.213     0.174      0.296
+```
+⇒ **on EXPOSURE we are ordinary, not the worst in the field. On REPAIR we are below median — that half survives — but nowhere near the floor, and the trend is UP.** ⭐ **And the split surfaced something the pool erased: v125 is the floor of our own history (`rep≤10r` 0.016 ladder / 0.010 unrated — a cut conveyor essentially never came back) and v140 recovers it TENFOLD (0.161/0.174).** That discontinuity sits at the right version and in the right direction for `LOKI_L4_REPAIR_ON` / `_l4_repair` (`eco.py:1037`) — **first field-side sighting of that plank's mechanism firing. Not attribution; nothing was controlled.**
+⚠ **Reported, not read: v155 unrated `rep≤10r` 0.137 vs v140 unrated 0.174 — same fixture, points DOWN, n=1,014 vs 4,529 with unrated DEFF ≈1.83. Re-cut when v155 has more archive.**
+⭐⭐ **THE DURABLE LESSON, and it is a sharpening of the s47 rule rather than a restatement: I applied the split to the forward-gunner cut UNPROMPTED and then failed to apply it to the victim cut IN THE SAME SESSION.** Why: the victim table arrived as a **by-product of a league-wide question**, and a self-row sitting inside a field table does not announce itself as a self-claim. ⇒ **ANY ROW OF OURS INSIDE A LEAGUE TABLE IS A SELF-CLAIM WEARING A FIELD-TABLE COSTUME.** Routed: this note (behaviour), and to the arm retro.
+
+*(Live version at analysis time: holder v155 "Sleipnir v1"; CONTROL `bots/_v468kladturbo`. Dirs read: `corpus/events.tsv`, `corpus/meta_join.tsv`, `corpus/join.tsv`, `corpus/league_matches.tsv`.)*
