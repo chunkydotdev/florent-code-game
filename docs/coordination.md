@@ -70406,3 +70406,19 @@ ODINVSSLEIP           ~2118 / 2700                  2160               ~40+ and 
 **RESULT across 1,150,322 banked rows: NO DRAW SIGNAL.** `cond` vocabulary is `core_destroyed`/`tiebreak`/`-` only. At the cap, tiebreak outnumbers core_destroyed **77,370 : 61** — the engine resolves r1000 by tiebreak and names a winner, so the `timeout` path essentially never fires locally. **And the control band is what makes the negative meaningful: cap C-share 40.98% [28.6,53.3] vs neighbour 900-999 at 48.09% [46.6,49.6] — BELOW, and a mis-scored draw can only push ABOVE.**
 ⭐ **Restated as an EXCLUSION per the DIRECTION clause: the interval excludes draw contamination beyond ~3 rows in 1,149,881 (≈0.0003%).** ⚠ **Bounded, not zero — n=61 at the cap is small.** **DEFF enumerated not assumed: local fixture, measured 0.98, naive intervals correct; platform constants must NOT be imported here.**
 ⇒ **The fix was necessary; NO re-scoring, excision or re-run is owed.** Full: `docs/research/AUDIT-overnight-draw-misscore-backward-closure-2026-08-17.md`.
+
+--- 2026-08-17T07:30:32Z ⭐⭐ **SIDE LANE s48 — POST-WRAP ADDENDUM TO THE REBOOT STATE. MY WRAP BLOCK PREDATES THE 07:16Z INCIDENT AND IS INCOMPLETE WITHOUT THIS.**
+**Holder line re-read from `now.py`/`fcode status`, NEVER a poller — D28, which this lane broke in its own closing artefact on 2026-08-15:**
+`HOLDER v155 "Sleipnir v1"` · rating **1799** (Emerald) · rank **#19 of 126** · 1165 matches · last 10: 5W 5L · read at 07:30:01Z.
+`CONTROL bots/_v468kladturbo` — **`control_pin --check` OK, `a9228ccb56ed9a65dd7d72ad1cb96068`, restored.**
+
+**⇒ THREE ARTEFACTS A SUCCESSOR MUST BOOT INTO, none of which existed when my wrap block was written:**
+1. `docs/research/CORRECTION-control-tree-window-certified-clean-2026-08-17.md` — **my 07:19Z contamination claim (`7d7d659f`) is RETRACTED.** The control-tree edits were comment/docstring-only (stripped-AST identical, verified by me off the quarantine stash with the instrument driven both ways). **No row was contaminated; nothing is owed.** ⚠ **If you read `7d7d659f` without this file you will excise ~600 good rows.**
+2. **D37** in `PROGRAMME-drift-watch-2026-08-09.md` — **QUARANTINE, DON'T REVERT.** Written against this lane's own prescription: I recommended `git checkout --`, which restores the bytes and **destroys the diff that certified the window**. State and evidence are two different repairs.
+3. `docs/research/AUDIT-overnight-draw-misscore-backward-closure-2026-08-17.md` — the banked corpus is **clean of the draw defect** (no signal in 1,150,322 rows; cap C-share 40.98% sits BELOW its 48.09% neighbour and a mis-scored draw can only push ABOVE). **No re-scoring owed.**
+
+**STILL LIVE, and the only thing I would hand forward as unfinished:**
+⚠ **`FLAG-bars-not-repriced-after-control-move-2026-08-17.md` HAS INSTANTIATED.** It closed *"this is prospective — no Sleipnir-controlled shard has completed a 1000-look yet."* **One has: ROUTESCORE, 07:20:33Z, STOP TREND-FLOOR@2700, prefix 51.15 vs floor 52.0, full tape 51.30 [49.48, 53.12] — a CI containing both 50 and the floor.** **NOT a false-kill claim and this lane will not make one** — the narrow claim is that the observation the flag asked for now exists, so the question for Magnus (*do 52.0 and the 55+ combo bar still mean what you intended now that control is champion-class?*) carries a concrete row instead of a model. **Only Magnus can move his own pinned number.**
+
+**ARMS at 07:30:01Z:** `BELTBREAK-EARLY` **2999** (past the mark, uncancelled — the sole full-distance survivor) · `ODINVSSLEIP` **2562/2700**, ~138 to go, **lands clean by construction**. Completion watch armed; if it lands after this terminal closes the row is in its own tape.
+**WATCHES:** drift_watch (2), corefill/SEALSENT transition watch, ship-chain commit consumer — all alive at 07:30Z. **Builder-owned monitors verified, not re-armed.**
