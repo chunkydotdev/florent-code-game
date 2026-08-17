@@ -99,11 +99,59 @@ G-R5 HALT VERIFIED   — relaunch only after the host's OWN worker count reads 0
 G-R6 MARKER VERIFIED — the cancel must print a marker containing `CANCELLED`.
                        If it did not take, relaunching would RESUME the very
                        shard we meant to kill, so we do not relaunch.
+G-R8 RELAUNCH HOLD   — ⭐ NEW s48. Before the relaunch (and ONLY the relaunch),
+                       an operator-settable HOLD marker is re-read. If one is
+                       present the worker is NOT restarted: the shard stays
+                       cancelled with its rows, the host stays stopped, and the
+                       refusal is shouted. See THE RELAUNCH RACE below.
 G-R7 RELAUNCH        — verified off the worker's OWN `WORKER up` line in
      VERIFIED          worker.out (which `cmd_start` truncates), never off an
                        exit code: on this platform an exit code is not a health
                        signal. If it cannot be read, say so loudly and leave
                        the host stopped.
+
+═══════════════════════════════════════════════════════════════════════════════
+⛔ THE RELAUNCH RACE, AND THE HOLD MARKER THAT CLOSES HALF OF IT (s48 debt 23)
+═══════════════════════════════════════════════════════════════════════════════
+THE INCIDENT, 2026-08-17: the stop -> poison -> RELAUNCH cycle picks up the next
+serial worklist row IMMEDIATELY, and on that day the relaunch landed inside the
+window between a SIBLING shard's clause firing and the operator decision that
+the sibling's prereg REQUIRED before anything further was launched. SEALSENTA
+went up on its own, ran 240 games, and had to be cancelled and disclosed on its
+own results row. Nothing in this module was wrong; the cycle simply had no way
+to be told "not yet".
+
+⇒ THE HOLD MARKER. A file under `scratchpad/fleet_hold/` whose NAME is either
+  the dispatchable host string (`worker@work-server-1`) or the literal `ALL`.
+  Its CONTENTS are free text and are quoted verbatim into the refusal, so the
+  operator's reason travels with the refusal instead of living in someone's
+  head. Set it BEFORE (or during) a cancel:
+      mkdir -p scratchpad/fleet_hold
+      echo 'SEALSENT sibling clause fired; decision pending' \
+          > scratchpad/fleet_hold/worker@work-server-1
+  and clear it with `rm` when the decision is made.
+
+⛔ IT GATES THE RELAUNCH, NOT THE CANCEL, AND THAT ASYMMETRY IS THE DESIGN.
+  Stopping a shard the gate has already condemned costs nothing and keeps its
+  rows; LAUNCHING the next row is the irreversible half (240 games and a
+  disclosure). So with a HOLD set the cycle still stops, still writes the skip
+  marker, and then leaves the host DOWN — idle cores and a loud line, which is
+  this module's standing direction of failure. Restarting is then a human
+  action taken with the decision already made.
+
+⛔ IT IS RE-READ AT THE RELAUNCH INSTANT, not only at plan time. The halt poll
+  can take up to 900s, and the SEALSENTA window was minutes wide — an operator
+  who sets the marker WHILE the host is halting must still be obeyed. plan_cancel
+  reports the marker it can see for the DRY-RUN's benefit; run_plan's read
+  immediately before `start` is the load-bearing one.
+
+⛔ BLIND RESOLVES TO HELD, the same way `in_curfew` resolves BLIND to CURFEWED.
+  An unreadable hold directory means we cannot tell, and the cheap error is a
+  stopped host.
+
+⚠ THE OTHER HALF IS NOT BUILT: automatically detecting that the NEXT worklist
+  row's prereg carries a FIRED SIBLING-CLAUSE. See the PROPOSED-NOT-BUILT note
+  above `relaunch_hold` for why that detection is riskier than the defect.
 
 USAGE
     tools/remote_cancel.py --selftest
@@ -157,6 +205,12 @@ HALT_POLL_S = 30
 UP_WAIT_S = 120        # how long a relaunched worker gets to print `WORKER up`
 UP_POLL_S = 10
 LIVE_STATES = ("RUNNING", "STARTING")
+
+# G-R8. One directory, two accepted names: the dispatchable host string, and the
+# literal ALL for a fleet-wide hold. Absent directory == no hold (the normal
+# state), so nothing has to be created for the tool to keep working.
+HOLD_DIR = REPO / "scratchpad/fleet_hold"
+HOLD_ALL = "ALL"
 
 
 # ═════════════════════════════════════════════════════════════════════════════
@@ -311,6 +365,58 @@ def in_curfew(host: str, host_utc: str | None,
 
 
 # ═════════════════════════════════════════════════════════════════════════════
+# G-R8 RELAUNCH HOLD — the operator's "not yet"
+# ═════════════════════════════════════════════════════════════════════════════
+# ⚠⚠ PROPOSED-NOT-BUILT, DELIBERATELY: AUTOMATIC FIRED-SIBLING-CLAUSE DETECTION.
+# The other half of debt 23 was to read the NEXT worklist row, resolve it to a
+# prereg, decide whether that prereg carries a FIRED sibling clause, and POISON
+# the row instead of launching it. It is not built, and the reason is that its
+# failure mode is WORSE THAN THE DEFECT:
+#   * NO SIBLING FIELD EXISTS. Neither the worklist (5 positional fields, and a
+#     6th lands inside $SL — see BARS.tsv's own header) nor BARS.tsv nor the
+#     heartbeat carries a sibling relation. It would have to be inferred by
+#     grepping docs/prereg/*.md, i.e. exactly the "derived by grep" mechanism
+#     BARS.tsv exists to avoid.
+#   * THE INPUT IS A STALE LOCAL MIRROR. This module learns nothing about
+#     worklist ORDER from the host; it would read
+#     scratchpad/overnight-remote/<host>/worklist.txt, a pull whose freshness is
+#     not verified here. Deciding what to poison off a stale mirror is the
+#     `overnight_watch.sh` shape that restarted nine completed shards.
+#   * ITS ERROR IS ONE-WAY AND SILENT. A poison writes a `.COMPLETE` skip marker
+#     on the host. A FALSE poison therefore RETIRES A LEGITIMATE SHARD FOREVER,
+#     with no rows and no alarm — strictly worse than the defect it closes,
+#     which cost 240 games that were cancelled and disclosed. A HOLD only ever
+#     errs toward idle cores.
+# The exact diff, if it is ever wanted, is recorded in the s48 WRAP-FIX report.
+# The HOLD marker below is the half whose worst case is cheap.
+def relaunch_hold(host: str, hold_dir: Path | None = None) -> tuple[bool, str]:
+    """(is_held, why). BLIND resolves to HELD.
+
+    Checked immediately before `start`, never before the cancel: see the module
+    header. A marker for ANOTHER host must not hold this one, which is why the
+    lookup is by exact filename and not by any substring match.
+    """
+    d = HOLD_DIR if hold_dir is None else hold_dir
+    try:
+        if not d.exists():
+            return False, f"no hold directory at {d} — nothing is holding relaunches"
+        if not d.is_dir():
+            return True, (f"⛔ {d} EXISTS BUT IS NOT A DIRECTORY — the hold check is "
+                          f"BLIND, and blind resolves to HELD")
+        for name in (host, HOLD_ALL):
+            p = d / name
+            if p.exists():
+                txt = " ".join(p.read_text(errors="replace").split())[:300]
+                scope = ("FLEET-WIDE" if name == HOLD_ALL else f"host {host}")
+                return True, (f"HOLD marker {p} ({scope}) says: "
+                              f"{txt or '(the marker file is empty)'}")
+    except OSError as e:
+        return True, (f"⛔ cannot read the hold directory {d} ({e.__class__.__name__}: "
+                      f"{e}) — BLIND, and blind resolves to HELD")
+    return False, f"no hold marker for {host} (or {HOLD_ALL}) in {d}"
+
+
+# ═════════════════════════════════════════════════════════════════════════════
 # THE PLAN — read-only. Nothing here mutates the host.
 # ═════════════════════════════════════════════════════════════════════════════
 @dataclass
@@ -326,8 +432,14 @@ class Plan:
 
 def plan_cancel(host: str, shard: str, *, runner=orch_runner,
                 fresh_s: int = FRESH_S, capacity=host_capacity,
-                hosts=hosts_list, window=None, exempt=None) -> Plan:
-    """Decide WHAT to do. Runs `status` only; changes nothing."""
+                hosts=hosts_list, window=None, exempt=None,
+                hold_dir: Path | None = None) -> Plan:
+    """Decide WHAT to do. Runs `status` only; changes nothing.
+
+    ⚠ The G-R8 hold is REPORTED here (so a DRY-RUN discloses it) but ENFORCED in
+    run_plan, which re-reads it at the relaunch instant. A hold seen at plan
+    time is not the decision; the one seen ~900s later is.
+    """
     log: list[str] = []
 
     def refuse(msg):
@@ -426,10 +538,16 @@ def plan_cancel(host: str, shard: str, *, runner=orch_runner,
                       f"the bounded wait could only time out. The cores are asleep anyway.")
     log.append(f"G-R4 curfew: {why}")
 
+    # ---- G-R8: report the hold now; run_plan re-reads it before `start` -----
+    held, hwhy = relaunch_hold(host, hold_dir)
+    log.append(f"G-R8 relaunch hold at plan time: {'HELD' if held else 'clear'} — {hwhy}")
+    tail = (f"stop -> verify halt -> cancel -> ⛔ NO RELAUNCH (G-R8 hold is set: "
+            f"{hwhy}); the host is left stopped"
+            if held else
+            f"stop -> verify halt -> cancel -> relaunch at WORKERS={cores}")
     return Plan("STOP-CYCLE",
                 f"{shard} is the live shard on {host} at {seen.rows}/{seen.target}; "
-                f"stop -> verify halt -> cancel -> relaunch at WORKERS={cores}",
-                host, shard, cores, st, log)
+                + tail, host, shard, cores, st, log)
 
 
 # ═════════════════════════════════════════════════════════════════════════════
@@ -449,7 +567,7 @@ def _cancel_marker(runner, host: str, shard: str, reason: str,
 def run_plan(plan: Plan, reason: str, *, runner=orch_runner, sleep=time.sleep,
              halt_wait_s: int = HALT_WAIT_S, halt_poll_s: int = HALT_POLL_S,
              up_wait_s: int = UP_WAIT_S, up_poll_s: int = UP_POLL_S,
-             clock=time.time) -> tuple[bool, list[str]]:
+             clock=time.time, hold_dir: Path | None = None) -> tuple[bool, list[str]]:
     """Execute a plan. Returns (ok, log lines). Never raises on a host fault."""
     log = list(plan.lines)
 
@@ -519,6 +637,27 @@ def run_plan(plan: Plan, reason: str, *, runner=orch_runner, sleep=time.sleep,
     log.append(f"  G-R6 skip marker CONFIRMED — {plan.shard} keeps its rows and will be "
                f"skipped, not resumed")
 
+    # ---- G-R8: THE LAST THING BEFORE THE IRREVERSIBLE HALF ------------------
+    # ⛔ RE-READ HERE, NOT AT PLAN TIME. Everything above this line can take up
+    # to halt_wait_s (900s default) and the operator's decision window is
+    # minutes wide — a marker set WHILE the host was halting must still be
+    # obeyed, which is exactly the SEALSENTA shape this guard exists for.
+    held, hwhy = relaunch_hold(plan.host, hold_dir)
+    if held:
+        log.append(
+            f"⛔⛔ G-R8 RELAUNCH HELD — NOT STARTING {plan.host}. {hwhy}\n"
+            f"      {plan.shard} IS CANCELLED and its rows are KEPT; the skip marker is "
+            f"written. What did NOT happen is the RELAUNCH, so the NEXT worklist row was "
+            f"NOT launched — which is the entire point of the marker (s48 debt 23: a "
+            f"relaunch inside a sibling's decision window burned 240 games on SEALSENTA).\n"
+            f"      THE HOST IS LEFT STOPPED: idle cores, the cheap error. When the "
+            f"decision is made, clear the marker and start it by hand:\n"
+            f"        rm {(HOLD_DIR if hold_dir is None else hold_dir)}/{plan.host}   "
+            f"# (or .../{HOLD_ALL})\n"
+            f"        tools/vps/orchestrate.sh start {plan.host} {plan.cores}")
+        return False, log
+    log.append(f"  G-R8 relaunch hold: clear — {hwhy}")
+
     # Relaunch. cmd_start removes STOP itself; the old worker is verified gone.
     rc, out, err = runner(["start", plan.host, str(plan.cores)])
     log.append("  start: " + " | ".join((out + err).strip().splitlines()[-3:]))
@@ -554,13 +693,18 @@ def run_plan(plan: Plan, reason: str, *, runner=orch_runner, sleep=time.sleep,
 
 
 def cancel_remote_shard(host: str, shard: str, reason: str, *, apply: bool,
-                        runner=orch_runner, **kw) -> tuple[bool, str, list[str]]:
-    """plan + (optionally) execute. Returns (ok, verdict, log lines)."""
-    plan = plan_cancel(host, shard, runner=runner)
+                        runner=orch_runner, hold_dir: Path | None = None,
+                        **kw) -> tuple[bool, str, list[str]]:
+    """plan + (optionally) execute. Returns (ok, verdict, log lines).
+
+    `hold_dir` goes to BOTH halves on purpose: plan_cancel so the DRY-RUN
+    discloses a hold, run_plan so it is re-read at the relaunch instant.
+    """
+    plan = plan_cancel(host, shard, runner=runner, hold_dir=hold_dir)
     if not apply:
         return (plan.verdict != "REFUSE"), plan.verdict, \
             plan.lines + [f"DRY-RUN — would {plan.verdict}: {plan.reason}"]
-    ok, log = run_plan(plan, reason, runner=runner, **kw)
+    ok, log = run_plan(plan, reason, runner=runner, hold_dir=hold_dir, **kw)
     return ok, plan.verdict, log
 
 
@@ -666,6 +810,13 @@ def selftest() -> int:
 
     HOSTS = lambda: ["local", "worker@work-server-1", "worker@work-server-2"]  # noqa: E731
     CAP = lambda h: {"worker@work-server-1": 10, "worker@work-server-2": 6}.get(h)  # noqa: E731
+    # ⛔ EVERY cell that reaches the relaunch passes an explicitly ABSENT hold
+    # directory. Without this the selftest would read the LIVE
+    # scratchpad/fleet_hold, and an operator who legitimately set a marker would
+    # make the "full cycle succeeds" cell FAIL for a reason that has nothing to
+    # do with the code. A test whose verdict depends on live operator state is
+    # not a test. The hold cells below supply their own fixture directories.
+    NOHOLD = Path("/nonexistent/remote_cancel-selftest-no-hold-dir")
     OUTSIDE = "2026-08-17T10:00:00Z"   # outside 2055-0400
     INSIDE = "2026-08-17T22:10:00Z"    # inside it
     WIN = (2055, 400)
@@ -787,7 +938,7 @@ def selftest() -> int:
     _c, _s = vclock()
     ok, good_log = run_plan(pg, "auto_gate TREND-FLOOR@2700", runner=good,
                             sleep=_s, clock=_c, halt_wait_s=300, halt_poll_s=30,
-                            up_wait_s=60, up_poll_s=10)
+                            up_wait_s=60, up_poll_s=10, hold_dir=NOHOLD)
     log = good_log
     chk("the full cycle succeeds when every step verifies", ok, True)
     chk("...the order is stop -> status* -> cancel -> start -> logs",
@@ -828,13 +979,102 @@ def selftest() -> int:
                      hosts=HOSTS, window=WIN, exempt=EXEMPT)
     _c, _s = vclock()
     ok, log = run_plan(pu, "r", runner=noup, sleep=_s, clock=_c, halt_wait_s=90,
-                       halt_poll_s=30, up_wait_s=30, up_poll_s=10)
+                       halt_poll_s=30, up_wait_s=30, up_poll_s=10, hold_dir=NOHOLD)
     chk("⛔ no `WORKER up` line => the cycle FAILS", ok, False)
     chk("...the marker still stands (rows kept, shard retired)", noup.markers, ["KLAD"])
     chk("...the host is left STOPPED, loudly", "LEFT STOPPED" in log[-1], True)
     chk("...and the worker's own refusal is quoted", "ENGINE PIN MISMATCH" in log[-1], True)
     chk("...while the verified relaunch NAMED the shard the worker picked up",
         any("NEXTONE" in ln for ln in good_log), True)
+
+    print("\n── G-R8 RELAUNCH HOLD, both verdicts (s48 debt 23) ─────────────────────")
+    import tempfile
+    hroot = Path(tempfile.mkdtemp(prefix="remote_cancel_hold_"))
+    empty_dir = hroot / "empty"
+    empty_dir.mkdir()
+    set_dir = hroot / "set"
+    set_dir.mkdir()
+    (set_dir / "worker@work-server-1").write_text(
+        "SEALSENT sibling clause fired 07:1x; operator decision pending\n")
+    all_dir = hroot / "all"
+    all_dir.mkdir()
+    (all_dir / HOLD_ALL).write_text("fleet frozen for the wrap\n")
+    notdir = hroot / "notadir"
+    notdir.write_text("someone made this a FILE\n")
+
+    chk("no hold directory at all           => NOT held",
+        relaunch_hold("worker@work-server-1", hroot / "does-not-exist")[0], False)
+    chk("an EMPTY hold directory            => NOT held",
+        relaunch_hold("worker@work-server-1", empty_dir)[0], False)
+    chk("a marker named for THIS host       => HELD",
+        relaunch_hold("worker@work-server-1", set_dir)[0], True)
+    chk("...and it quotes the operator's own reason",
+        "decision pending" in relaunch_hold("worker@work-server-1", set_dir)[1], True)
+    # ⛔ THE CELL THAT KEEPS THE MARKER FROM BEING A FLEET-WIDE STOP BY ACCIDENT.
+    chk("⛔ a marker for ws1 does NOT hold ws2",
+        relaunch_hold("worker@work-server-2", set_dir)[0], False)
+    chk(f"a marker named {HOLD_ALL} holds every host",
+        (relaunch_hold("worker@work-server-1", all_dir)[0],
+         relaunch_hold("worker@work-server-2", all_dir)[0]), (True, True))
+    chk("⛔ a hold path that is a FILE, not a directory => BLIND resolves to HELD",
+        relaunch_hold("worker@work-server-1", notdir)[0], True)
+
+    # ...and now through the WHOLE cycle, which is where it has to bite.
+    held_host = FakeHost(shards={"KLAD": (3404, 5400, 12, "RUNNING")}, halt_after=2)
+    ph8 = plan_cancel("worker@work-server-1", "KLAD", runner=held_host, capacity=CAP,
+                      hosts=HOSTS, window=WIN, exempt=EXEMPT, hold_dir=set_dir)
+    chk("the PLAN still says STOP-CYCLE (the cancel is not gated)", ph8.verdict,
+        "STOP-CYCLE")
+    chk("...but its reason already announces there will be no relaunch",
+        "NO RELAUNCH" in ph8.reason, True)
+    _c, _s = vclock()
+    ok8, log8 = run_plan(ph8, "auto_gate TREND-FLOOR@2700", runner=held_host, sleep=_s,
+                         clock=_c, halt_wait_s=300, halt_poll_s=30, up_wait_s=60,
+                         up_poll_s=10, hold_dir=set_dir)
+    chk("⛔ HOLD set => the cycle does NOT report success", ok8, False)
+    chk("⛔ ...and NEVER calls start",
+        any(c.startswith("start") for c in held_host.calls), False)
+    chk("...while the shard IS cancelled and its rows kept", held_host.markers, ["KLAD"])
+    chk("...the refusal names G-R8 and says the host is left stopped",
+        ("G-R8" in log8[-1] and "LEFT STOPPED" in log8[-1].upper()), True)
+    chk("...and prints the exact rm + start the operator needs",
+        ("rm " in log8[-1] and "orchestrate.sh start" in log8[-1]), True)
+
+    # THE OTHER VERDICT, same fixture, marker the ONLY difference.
+    free_host = FakeHost(shards={"KLAD": (3404, 5400, 12, "RUNNING")}, halt_after=2)
+    pf8 = plan_cancel("worker@work-server-1", "KLAD", runner=free_host, capacity=CAP,
+                      hosts=HOSTS, window=WIN, exempt=EXEMPT, hold_dir=empty_dir)
+    _c, _s = vclock()
+    okf, logf = run_plan(pf8, "auto_gate TREND-FLOOR@2700", runner=free_host, sleep=_s,
+                         clock=_c, halt_wait_s=300, halt_poll_s=30, up_wait_s=60,
+                         up_poll_s=10, hold_dir=empty_dir)
+    chk("NO hold, identical fixture => the cycle succeeds", okf, True)
+    chk("...and DOES relaunch", any(c.startswith("start") for c in free_host.calls), True)
+    chk("...picking up the next worklist row",
+        any("NEXTONE" in ln for ln in logf), True)
+
+    # ⛔ THE MARKER SET DURING THE HALT WAIT — the actual SEALSENTA window. The
+    # plan is made while the directory is clear; the marker appears mid-poll.
+    late_dir = hroot / "late"
+    late_dir.mkdir()
+    late_host = FakeHost(shards={"KLAD": (3404, 5400, 12, "RUNNING")}, halt_after=3)
+    pl8 = plan_cancel("worker@work-server-1", "KLAD", runner=late_host, capacity=CAP,
+                      hosts=HOSTS, window=WIN, exempt=EXEMPT, hold_dir=late_dir)
+    chk("plan made with a CLEAR directory reads clear",
+        "NO RELAUNCH" in pl8.reason, False)
+    _now = [0.0]
+
+    def _late_sleep(s):
+        _now[0] += s
+        if _now[0] >= 60:                      # operator sets it mid-halt-poll
+            (late_dir / "worker@work-server-1").write_text("hold, decision pending\n")
+
+    okl, logl = run_plan(pl8, "r", runner=late_host, sleep=_late_sleep,
+                         clock=lambda: _now[0], halt_wait_s=300, halt_poll_s=30,
+                         up_wait_s=60, up_poll_s=10, hold_dir=late_dir)
+    chk("⛔ a marker set DURING the halt wait still blocks the relaunch", okl, False)
+    chk("...no start was issued", any(c.startswith("start") for c in late_host.calls),
+        False)
 
     print("\n── the transport gates on the FIELD, never on the exit code ────────────")
     chk("a cancel that exits 0 but prints no marker is NOT confirmed",
@@ -848,7 +1088,9 @@ def selftest() -> int:
           f"(G-R0 host known · G-R1 status readable · G-R2 stale-vs-fresh · "
           f"G-R3 running-vs-queued · G-R4 curfew in/out/exempt · G-R5 halt "
           f"verified/timeout · G-R6 marker confirmed/not · G-R7 relaunch "
-          f"verified/not · G-R1b a human's STOP is not overridden — each in BOTH directions)")
+          f"verified/not · G-R1b a human's STOP is not overridden · G-R8 relaunch "
+          f"hold set/clear/other-host/ALL/blind and set-mid-halt — each in BOTH "
+          f"directions)")
     return 1 if fails else 0
 
 

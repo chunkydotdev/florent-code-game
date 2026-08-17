@@ -97,6 +97,17 @@ G5 NEVER STOP A NULL    — a byte-identical A/A pair is detected STRUCTURALLY b
 G6 ABLATION CARVE-OUT   — a shard registered with direction `le` is never
                           auto-stopped at all, catastrophe included. See
                           docs/prereg/BARS.tsv for why.
+G7 CONFIRMATION-CLASS   — a shard whose BARS.tsv source column carries the
+   RUN-TO-COMPLETION       literal token CONFIRMATION-CLASS **and** cites a
+                          prereg .md that EXISTS is never stopped by the trend
+                          floor, the combo bar or the futility bar. ONLY the
+                          CATASTROPHE brake may stop it, and the clause sits
+                          BELOW catastrophe on purpose so that stays true. The
+                          rule is commit 3be00e46; the token is set at
+                          REGISTRATION time by the human who registers the
+                          confirmation run, never inferred from a shard name.
+                          A token whose citation does not resolve is BROKEN: it
+                          grants nothing and shouts on every line.
 
 ═══════════════════════════════════════════════════════════════════════════════
 HOW IT STOPS
@@ -265,6 +276,42 @@ Z95 = 1.96                # pinned: naive normal interval, DEFF 0.98 => no infla
 # stop paying full price for the 51-54 class nobody would ship. A stop here is
 # a CANCELLATION (rows kept, combination input), never a verdict.
 COMBO_BAR = 55.0
+
+# ═════════════════════════════════════════════════════════════════════════════
+# CONFIRMATION-CLASS RUN-TO-COMPLETION EXEMPTION (rule: commit 3be00e46,
+# docs/coordination.md, 2026-08-17 — s48)
+# ═════════════════════════════════════════════════════════════════════════════
+# THE RULE, verbatim from that commit: *"CONFIRMATION-CLASS REGISTRATIONS CARRY
+# THE EXISTING RUN-TO-COMPLETION EXEMPTION — the G5-exempt/run-to-completion
+# class (IDNULL140's precedent) applies to any shard registered as a
+# confirmation run, so the TREND-FLOOR and MARK clauses do not stop it; ONLY the
+# CATASTROPHE clause (CI-hi < 45 at n>=400) may stop a confirmation run, as a
+# true disaster brake — a confirmation tracking that low has already answered
+# its question in the cheapest possible way."*
+#
+# ⛔⛔ THE RULE WAS DECIDED ON 2026-08-17 AND HAD NO MECHANISM UNTIL THIS BLOCK.
+# Between those two moments the only exemption this tool's remote path carried
+# was remote_cancel's HOST-KEYED CURFEW, which is a property of the CLOCK, not
+# of the SHARD — so a confirmation run queued on ws1 outside the blackout was
+# floor-stoppable, in direct contradiction to the rule that governs it. That
+# gap is what this token closes, and the same commit is why it is GATED work:
+# it had to exist BEFORE the first remote confirmation run was queued.
+#
+# ⛔ REGISTRATION-TIME, NEVER INFERRED AT STOP TIME. The token is a literal
+# string a HUMAN types into the shard's docs/prereg/BARS.tsv source column when
+# the confirmation run is REGISTERED — the same shape (and the same silencer
+# guard) as COMBO-BAR-EXEMPT. Nothing here derives the class from a shard NAME,
+# a tree, or a heuristic: a name convention rots, and a rule that lets the
+# canceller decide who is exempt from the canceller is not a rule. An arm cannot
+# acquire the exemption after its numbers turn bad, because acquiring it means
+# editing a committed registry row.
+#
+# ⛔ AND THE TOKEN ALONE GRANTS NOTHING. It must cite a prereg .md THAT EXISTS.
+# A token citing nothing is BROKEN and is treated as NO exemption at all — the
+# ordinary rules apply and the breakage is shouted on every line the shard
+# produces, because an exemption claimed against a document that does not exist
+# is strictly worse than claiming none.
+CONFIRMATION_TOKEN = "CONFIRMATION-CLASS"
 
 DEFAULT_WORKLIST = REPO / "scratchpad/corefill_work.txt"
 DEFAULT_TSVDIR = REPO / "scratchpad/overnight"
@@ -728,9 +775,17 @@ def decide(sh: Shard, bars: dict[str, Bar], stale_s: float,
     mark = mark_for(sh.tape.n, sh.target)
     bar = bars.get(sh.id)
 
+    # Set only by the CONFIRMATION-CLASS block below, and only when a registered
+    # token is BROKEN. It rides on the detail of WHATEVER clause ends up firing
+    # (catastrophe included) rather than replacing it, so a broken registration
+    # is loud on every line the shard produces instead of being a clause a
+    # reader has to go looking for. `d` reads it at CALL time, so the default
+    # must be set here, above every other `d(...)` in this function.
+    conf_warn = ""
+
     def d(action, clause, detail, fired_on=None):
-        return Decision(action, clause, detail, mark, share, lo, hi, bar, True,
-                        fired_on)
+        return Decision(action, clause, detail + conf_warn, mark, share, lo, hi,
+                        bar, True, fired_on)
 
     if mark == "FINAL":
         return d("NOACTION", "AT-TARGET",
@@ -767,6 +822,37 @@ def decide(sh: Shard, bars: dict[str, Bar], stale_s: float,
                  f"n>={MARK_CATASTROPHE} and the 95% CI UPPER bound {hi:.2f} < "
                  f"{CATASTROPHE_CI_HI:.1f} — the optimistic edge of its own data is "
                  f"still catastrophic")
+
+    # ---- G7: CONFIRMATION-CLASS RUN-TO-COMPLETION ---------------------------
+    # ⛔ POSITION IS THE WHOLE RULE, not a stylistic choice. It sits AFTER the
+    # catastrophe clause and BEFORE every other stop rule, which is exactly what
+    # commit 3be00e46 says: the TREND-FLOOR, COMBO-BAR and FUTILITY-BAR clauses
+    # may not stop a confirmation run; the CATASTROPHE brake still may. Moving
+    # this block one clause earlier would disarm the disaster brake and turn a
+    # run-to-completion exemption into an unstoppable shard.
+    if bar is not None and CONFIRMATION_TOKEN in bar.source:
+        _m = re.search(r"(\S+\.md)", bar.source)
+        _cite = _m.group(1) if _m else None
+        _cp = (Path(_cite) if _cite and os.path.isabs(_cite)
+               else (REPO / _cite) if _cite else None)
+        if _cp is not None and _cp.exists():
+            return d("CONTINUE", "CONFIRMATION-CLASS",
+                     f"registered CONFIRMATION-CLASS (citation resolved: {_cite}) "
+                     f"— a confirmation run is RUN-TO-COMPLETION per commit "
+                     f"3be00e46: the trend floor and the mark bars do not "
+                     f"adjudicate it, because a confirmation's job is to produce "
+                     f"the FULL registered n against a pre-stated read, not to "
+                     f"win a prospecting screen. The CATASTROPHE brake "
+                     f"(CI-hi < {CATASTROPHE_CI_HI:.1f} at n>={MARK_CATASTROPHE}) "
+                     f"is checked ABOVE this line and still applies.")
+        conf_warn = (
+            f"  ⛔⛔ {CONFIRMATION_TOKEN} TOKEN PRESENT BUT "
+            + (f"THE CITED PREREG IS MISSING: {_cite}" if _cite
+               else "IT CITES NO .md PREREG AT ALL")
+            + f" — a claimed exemption that resolves to nothing GRANTS NOTHING, so "
+              f"the ordinary stop rules were applied to this shard and the clause "
+              f"above is what decided it. FIX THE BARS.tsv ROW: either cite a "
+              f"prereg that exists or drop the token.")
 
     # ---- TREND FLOOR — the primary stop rule (Magnus, 2026-08-15) -----------
     # "the share needs to be above 51% at 1000 and at 2700 n otherwise it's no
@@ -930,6 +1016,30 @@ def _rel(p: Path) -> str:
 
 
 def results_row(sh: Shard, dec: Decision, ts: str) -> str:
+    """The results.tsv cancellation row. Its KEY is `<shard>-autostop-<mark>`.
+
+    ⭐ THE KEY IS WHERE THE TOOL/HUMAN DISTINCTION LIVES, AND THAT IS DELIBERATE.
+    This tool writes `<shard>-autostop-<mark>` AT STOP TIME. The human builder's
+    typed row for the same shard uses `<shard>-final` (or `<shard>-verdict`) and
+    is written against the FINAL tape. THE TWO IDS ARE NEVER THE SAME STRING, so
+    a reader can always tell which object they are holding without reading prose.
+
+    ⛔ WHY A CONVENTION AND NOT A MERGE: the two rows CANNOT agree on n, ever.
+    A stop is issued while the shard is still running, so rows keep landing
+    between the stop decision and the final tape — the recurring KLADLADDER
+    shape, where the autostop row reads n=3,121 and the final row reads n=3,404
+    for one and the same shard. Neither number is wrong; they are measurements
+    of different tapes at different instants. Collapsing them onto one id would
+    force one of the two to be overwritten and silently destroy that fact.
+
+    ⇒ Pairing rule for anyone mining results.tsv: `-autostop-` is an OPERATIONAL
+    CANCELLATION (rule-fired, share SELECTED-PESSIMISTIC — see the row text) and
+    `-final` is the banked read. Quote them together or say which one you used;
+    they are not duplicates and neither supersedes the other.
+
+    This docstring documents behaviour that was already adopted; nothing here
+    changes what is written.
+    """
     barstr = (f"{dec.bar.value:.2f} ({dec.bar.direction}, {dec.bar.source})"
               if dec.bar else "NONE — catastrophe rule needs no bar")
     # The surface and the control travel WITH the number, per the standing
@@ -1003,8 +1113,15 @@ def _ledger_append(ledger: Path, line: str) -> None:
 
 
 def apply_remote_stop(sh: Shard, dec: Decision, *, ledger: Path, results: Path,
-                      ts: str, runner=None, **kw) -> tuple[bool, str]:
+                      ts: str, runner=None, hold_dir=None, **kw) -> tuple[bool, str]:
     """The remote stop cycle, via tools/remote_cancel.py.
+
+    ⭐ `hold_dir` goes to BOTH halves (default None = remote_cancel's live
+    scratchpad/fleet_hold). A G-R8 relaunch hold makes the cycle return False
+    AFTER the shard is genuinely cancelled — so the FAILED ledger row it writes
+    is CORRECT and blocking retry is the right outcome: the cancel is done, only
+    the relaunch was withheld, and restarting the host is now the operator's
+    call. Debt 23 / remote_cancel's header has the reasoning.
 
     ⛔ THE CLAIM IS WRITTEN ONLY ONCE A MUTATION IS ABOUT TO HAPPEN, and that
     ordering is deliberate in BOTH directions:
@@ -1019,7 +1136,8 @@ def apply_remote_stop(sh: Shard, dec: Decision, *, ledger: Path, results: Path,
     import remote_cancel
 
     plan = remote_cancel.plan_cancel(sh.host, sh.id,
-                                     runner=runner or remote_cancel.orch_runner)
+                                     runner=runner or remote_cancel.orch_runner,
+                                     hold_dir=hold_dir)
     if plan.verdict == "REFUSE":
         return False, ("REFUSED, no ledger claim written (so this can act on a "
                        "later tick once the condition clears):\n      " + plan.reason)
@@ -1030,7 +1148,8 @@ def apply_remote_stop(sh: Shard, dec: Decision, *, ledger: Path, results: Path,
     except OSError as e:
         return False, f"apply failed before touching the host: {e}"
     ok, log = remote_cancel.run_plan(plan, reason,
-                                     runner=runner or remote_cancel.orch_runner, **kw)
+                                     runner=runner or remote_cancel.orch_runner,
+                                     hold_dir=hold_dir, **kw)
     try:
         if ok:
             with results.open("a") as fh:
@@ -1497,6 +1616,13 @@ def selftest() -> int:
         return Shard(sid, "remote", host, tmp / f"{sid}.tsv", "treeC", "bots/_v468kladturbo",
                      5400, tape(n, wins), 1.0, "remote heartbeat stamp", True, "RUNNING")
 
+    # ⛔ EVERY remote cell that reaches the relaunch passes an explicitly ABSENT
+    # hold directory. Without it these cells would read the LIVE
+    # scratchpad/fleet_hold, and an operator who legitimately set a marker would
+    # make "a remote stop APPLIES" FAIL for a reason unrelated to the code. A
+    # test whose verdict depends on live operator state is not a test.
+    NOHOLD = Path("/nonexistent/auto_gate-selftest-no-hold-dir")
+
     led_r, res_r = tmp / "lremote.tsv", tmp / "rremote.tsv"
     res_r.write_text("commit\tw\tl\th\tn\tstatus\tdesc\n")
     fake = rc.FakeHost(shards={"RSH": (2700, 5400, 12, "RUNNING")}, halt_after=1,
@@ -1508,7 +1634,8 @@ def selftest() -> int:
                                ts="2026-08-17T10:00:00Z", remote_runner=fake,
                                remote_kw=dict(sleep=lambda s: vc.__setitem__(0, vc[0] + s),
                                               clock=lambda: vc[0], halt_wait_s=300,
-                                              halt_poll_s=30, up_wait_s=60, up_poll_s=10))
+                                              halt_poll_s=30, up_wait_s=60, up_poll_s=10,
+                                              hold_dir=NOHOLD))
     chk("a remote stop on a live, fresh, non-curfewed host APPLIES", done_r, True)
     chk("...having written the skip marker on the host", fake.markers, ["RSH"])
     chk("...and relaunched it", any(c.startswith("start") for c in fake.calls), True)
@@ -1567,6 +1694,85 @@ def selftest() -> int:
     chk("...the running shard's host was never stopped or restarted",
         any(c.startswith(("stop", "start")) for c in fh3.calls), False)
     chk("...and the marker went to the FLAGGED shard only", fh3.markers, ["RSH"])
+
+    # ─────────────────────────────────────────────────────────────────────────
+    # DEBT 22 THROUGH THE REMOTE PATH. The decide() cells further down prove the
+    # rule; THIS pair proves the SHIPPED remote path honours it — i.e. that a
+    # registered confirmation run below the stop floor never reaches the host at
+    # all, while its tokenless twin does. Same tape, same bar, same fixture: the
+    # BARS.tsv token is the only difference.
+    # ─────────────────────────────────────────────────────────────────────────
+    print("\n── DEBT 22: a CONFIRMATION-CLASS shard is unstoppable ON THE REMOTE PATH ─")
+    (tmp / "PREREG-remote-confirm.md").write_text("# fixture remote confirmation\n")
+    rtd = tmp / "rconf"
+    rtd.mkdir(parents=True, exist_ok=True)
+
+    def remote_trend_shard(sid, bars_key):
+        p = rtd / f"{sid}.tsv"
+        rows = ["ts\ta\tb\tc\td\te\tres"]
+        rows += ["0\t1\t2\t3\t4\t5\tT"] * 519 + ["0\t1\t2\t3\t4\t5\tC"] * 481
+        p.write_text("\n".join(rows) + "\n")   # prefix@1000 = 51.90% < 52.0 floor
+        return Shard(bars_key, "remote", "worker@work-server-1", p, str(tmp / "treeC"),
+                     str(tmp / "treeA"), 5400, read_tape(p), 1.0,
+                     "remote heartbeat stamp", True, "RUNNING")
+
+    RB = {"RCONF": Bar(51.33, "ge", "CONFIRMATION-CLASS run-to-completion, "
+                       + str(tmp / "PREREG-remote-confirm.md")),
+          "RPLAIN": Bar(51.33, "ge", "house-standard corefill futility band")}
+    led5, res5 = tmp / "lremote5.tsv", tmp / "rremote5.tsv"
+    res5.write_text("commit\tw\tl\th\tn\tstatus\tdesc\n")
+    for key, want_action, want_touched in (("RCONF", "CONTINUE", False),
+                                           ("RPLAIN", "STOP", True)):
+        s5 = remote_trend_shard(key, key)
+        d5 = decide(s5, RB, DEFAULT_STALE_S)
+        fh5 = rc.FakeHost(shards={key: (1000, 5400, 12, "RUNNING")}, halt_after=1,
+                          utc="2026-08-17T10:00:00Z")
+        applied = False
+        if d5.action == "STOP":          # exactly what run() gates on
+            applied, _ = apply_stop(s5, d5, cancel_dir=can2, ledger=led5, results=res5,
+                                    ts="2026-08-17T10:00:00Z", remote_runner=fh5,
+                                    remote_kw=dict(sleep=lambda s: None,
+                                                   hold_dir=NOHOLD))
+        chk(f"remote {key}: decide => {want_action}", d5.action, want_action)
+        chk(f"   ...host touched (stop/cancel/start issued)?",
+            any(c.startswith(("stop", "cancel", "start")) for c in fh5.calls),
+            want_touched)
+        chk(f"   ...skip marker written on the host?", bool(fh5.markers), want_touched)
+
+    # ─────────────────────────────────────────────────────────────────────────
+    # DEBT 23 THROUGH THE REMOTE PATH: a G-R8 hold stops the RELAUNCH but not
+    # the cancel. remote_cancel's selftest drives the guard itself in six ways;
+    # this is the end-to-end cell, through apply_stop, that a caller sees.
+    # ─────────────────────────────────────────────────────────────────────────
+    print("\n── DEBT 23: an operator HOLD blocks the relaunch, not the cancel ────────")
+    hd = tmp / "fleet_hold"
+    hd.mkdir(parents=True, exist_ok=True)
+    (hd / "worker@work-server-1").write_text("sibling clause fired; decision pending\n")
+    led6, res6 = tmp / "lremote6.tsv", tmp / "rremote6.tsv"
+    res6.write_text("commit\tw\tl\th\tn\tstatus\tdesc\n")
+    held_why = ""
+    for label, hold, want_ok, want_start in (("HOLD set  ", hd, False, False),
+                                             ("HOLD clear", NOHOLD, True, True)):
+        s6 = remote_shard("RSH6")
+        fh6 = rc.FakeHost(shards={"RSH6": (2700, 5400, 12, "RUNNING")}, halt_after=1,
+                          utc="2026-08-17T10:00:00Z")
+        v6 = [0.0]
+        done6, why6 = apply_stop(s6, decide(s6, BARS, DEFAULT_STALE_S),
+                                 cancel_dir=can2, ledger=led6, results=res6,
+                                 ts="2026-08-17T10:00:00Z", remote_runner=fh6,
+                                 remote_kw=dict(sleep=lambda s: v6.__setitem__(0, v6[0] + s),
+                                                clock=lambda: v6[0], halt_wait_s=300,
+                                                halt_poll_s=30, up_wait_s=60,
+                                                up_poll_s=10, hold_dir=hold))
+        chk(f"{label}: apply_stop reports ok", done6, want_ok)
+        chk(f"{label}: the host was RELAUNCHED",
+            any(c.startswith("start") for c in fh6.calls), want_start)
+        chk(f"{label}: the shard was cancelled anyway (rows kept)",
+            fh6.markers, ["RSH6"])
+        if hold is hd:
+            held_why = why6
+    chk("...and the held cycle's reason names G-R8 and the operator's own text",
+        ("G-R8" in held_why and "decision pending" in held_why), True)
 
     print("\n── liveness / freshness plumbing, both ways ────────────────────────────")
     chk("running_shards finds a runner in a ps line",
@@ -1764,6 +1970,64 @@ def selftest() -> int:
     chk("EXEMPT token, NO citation, ABOVE the bar      => CONTINUE but broken FLAGGED",
         decide(cb_exn, TEX, DEFAULT_STALE_S).clause, "COMBO-BAR-BROKEN-EXEMPT-UNFIRED")
 
+    # ── G7 CONFIRMATION-CLASS (rule: commit 3be00e46, 2026-08-17) ──────────
+    # ⛔ THE TOKEN MUST BE THE ONLY DIFFERENCE IN EVERY PAIR BELOW. Same tape,
+    # same bar value, same trees, same n — otherwise this proves nothing about
+    # the token. The DEFECT it closes: before this, the ONLY exemption the
+    # remote path carried was remote_cancel's HOST-KEYED CURFEW, a property of
+    # the clock rather than of the shard, so a registered confirmation run
+    # outside the blackout was floor-stoppable in contradiction of its own rule.
+    print("\n── G7 confirmation-class: run-to-completion, catastrophe still bites ───")
+    (tmp / "PREREG-confirm.md").write_text("# fixture confirmation prereg\n")
+    TC = dict(TB)
+    TC["CONF"] = Bar(51.33, "ge",
+                     f"CONFIRMATION-CLASS run-to-completion, {tmp / 'PREREG-confirm.md'}")
+    TC["CONFM"] = Bar(51.33, "ge",
+                      f"CONFIRMATION-CLASS cites {tmp / 'no_such_confirm.md'}")
+    TC["CONFN"] = Bar(51.33, "ge", "CONFIRMATION-CLASS with no citation at all")
+    BELOW_FLOOR = [(519, "T"), (481, "C")]          # prefix@1000 = 51.90% < 52.0
+    conf_lo = trend_shard("CONF_LO", BELOW_FLOOR, "CONF")
+    plain_lo = trend_shard("PLAIN_LO", BELOW_FLOOR, "REAL")
+    chk("registered CONFIRMATION-CLASS, prefix@1000 51.90%  => CONTINUE",
+        decide(conf_lo, TC, DEFAULT_STALE_S).action, "CONTINUE")
+    chk("...on the confirmation clause, which NAMES itself",
+        decide(conf_lo, TC, DEFAULT_STALE_S).clause, "CONFIRMATION-CLASS")
+    chk("⛔ SAME numbers, SAME bar, NO token (token is the only difference) => STOP",
+        decide(plain_lo, TC, DEFAULT_STALE_S).clause, f"TREND-FLOOR@{MARK_MID}")
+    # the disaster brake must survive the exemption, or this is not a carve-out
+    # but an unkillable shard.
+    conf_cata = trend_shard("CONF_CATA", [(150, "T"), (850, "C")], "CONF")
+    chk("⛔ a CONFIRMATION-CLASS run at a catastrophic 15.0%  => STOP anyway",
+        decide(conf_cata, TC, DEFAULT_STALE_S).clause, "CATASTROPHE")
+    # the MARK bars (combo, futility) must not reach it either
+    conf_combo = trend_shard("CONF_CB", [(560, "T"), (440, "C"), (924, "T"), (776, "C")],
+                             "CONF", treat="treeD")
+    chk("a CONFIRMATION-CLASS COMBO under the 55.0 combo bar  => CONTINUE",
+        decide(conf_combo, TC, DEFAULT_STALE_S).clause, "CONFIRMATION-CLASS")
+    chk("...while its tokenless twin is stopped by that bar",
+        decide(trend_shard("CB_LOW2", [(560, "T"), (440, "C"), (924, "T"), (776, "C")],
+                           "REAL", treat="treeD"), TC, DEFAULT_STALE_S).clause,
+        f"COMBO-BAR@{MARK_HALF}")
+    # ⛔ THE SILENCER GUARD: a token that cites nothing grants nothing.
+    conf_m = trend_shard("CONF_M", BELOW_FLOOR, "CONFM")
+    chk("⛔ token + MISSING citation => the ordinary rule decides it (STOP)",
+        decide(conf_m, TC, DEFAULT_STALE_S).clause, f"TREND-FLOOR@{MARK_MID}")
+    chk("...and the broken registration is SHOUTED on that line",
+        "TOKEN PRESENT BUT" in decide(conf_m, TC, DEFAULT_STALE_S).detail, True)
+    conf_n = trend_shard("CONF_N", BELOW_FLOOR, "CONFN")
+    chk("⛔ token + NO .md citation at all => also stoppable, also shouted",
+        (decide(conf_n, TC, DEFAULT_STALE_S).action,
+         "CITES NO .md" in decide(conf_n, TC, DEFAULT_STALE_S).detail), ("STOP", True))
+    # ⛔ AND IT IS A REGISTRATION PROPERTY, NOT A NAME. A shard NAMED like a
+    # confirmation with no registry token gets no exemption; the token in the
+    # registry protects a shard whose name says nothing.
+    chk("⛔ a shard NAMED 'CONFIRMATION' with no bar row is NOT exempt",
+        decide(trend_shard("CONFIRMATION", BELOW_FLOOR), TC, DEFAULT_STALE_S).clause,
+        f"TREND-FLOOR@{MARK_MID}")
+    chk("...while a blandly-named shard WITH the token is",
+        decide(trend_shard("XQ7", BELOW_FLOOR, "CONF"), TC, DEFAULT_STALE_S).clause,
+        "CONFIRMATION-CLASS")
+
     # ── FLAG 3 (side lane, 2026-08-16): the LEDGER must carry the number the
     # rule actually READ. TREND-FLOOR fires on the first-N PREFIX while the
     # ledger's share column is the FULL tape; before this fix the fired-on
@@ -1858,7 +2122,13 @@ def selftest() -> int:
           "readable/unreadable + non-identical lines · G4 four detectors each ± · "
           "G5 null/real at identical numbers, incl. the two cells a NAME check gets "
           "wrong · G6 ablation/normal · edge cell one game either side of the bar · "
-          "catastrophe one game either side of 45.0 · marks drift ± · KILL SWITCH halts/resumes end-to-end through the shipped entry point · BAR PLAUSIBILITY refuses slipped-decimal/fraction/implausible and keeps a good one, leaving a refused shard UNSTOPPABLE · REMOTE apply executes on a verified host and refuses stale/curfew/blind-status/unknown-host/not-the-running-shard, none of which writes a ledger row)")
+          "catastrophe one game either side of 45.0 · marks drift ± · KILL SWITCH halts/resumes end-to-end through the shipped entry point · BAR PLAUSIBILITY refuses slipped-decimal/fraction/implausible and keeps a good one, leaving a refused shard UNSTOPPABLE · REMOTE apply executes on a verified host and refuses stale/curfew/blind-status/unknown-host/not-the-running-shard, none of which writes a ledger row · "
+          "G7 CONFIRMATION-CLASS exempt vs tokenless twin at identical "
+          "numbers, catastrophe still bites it, a broken citation grants "
+          "nothing, and the REGISTRY token beats the shard NAME in both "
+          "directions — driven through decide() AND through the shipped "
+          "REMOTE path · G-R8 an operator HOLD blocks the RELAUNCH while "
+          "the cancel still lands, the marker being the only difference)")
     return 0
 
 
