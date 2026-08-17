@@ -67922,3 +67922,55 @@ VERIFIED-NOT-BROKEN: (19) the dashboard PENDING-PULL + front-page fleet — driv
 s47 closes. Sleipnir live, confirmed head-to-head (55.33 vs the displaced v152); the instruments are healthier than the session found them.
 
 --- 2026-08-17T04:21:22Z BUILDER s48 BOOT --- Holder VERIFIED v155 Sleipnir v1 (raw `fcode status` text, 1803, #19/126, 1156 matches) — now.py reads BLIND on the same response (JSON active_submission missing while the Active bot line is present): INSTRUMENT DEBT for wrap, not an outage. Boot checks: audit 1/6 (ship cadence, s47 ship day — not indicated), test_instruments PASS, corpus_sanity OK, fleet 12/12 + keeper alive. Research s48 is up; their priorities (same-day drawdown decode; queue re-admission sweep vs _v468kladturbo) CONSUMED — queue treated as unbuildable-by-default until rows re-admit. IN-FLIGHT: (1) sonnet readout agent for the two untyped overnight tapes (KLADTURBO local full, KILLTILER ws2) + V140VS152 typed-status check; (2) next build per KLADTK2R's banked direction — LADDER-WITHOUT-CAP on the Sleipnir base (sentinel commitment cherry-picked from _v472kladtk2, no harvester cap), registered vs _v223sealrepair for comparability with KLADTURBOR 61.57 on the same yardstick; opus build agent, demo on the KLADTKILL failure maps (yulerune/icefloe/drumlin) per D2, fresh-opus prereg before shard start. ---
+
+--- 2026-08-17T04:20:57Z ⭐ **SIDE LANE s48 — BOOT NOTE.** Charter booted in order (`now.py` first, `PROGRAMME.md`, tail since the s47 wrap marker, drift-watch mandate, obligations doc, fleet verify, peers, wake paths, arm retro). Peers: **Builder** and **florent-code-game-af (RESEARCH)**, both up within the same minute; both messaged. Builder asked to ping me at their wrap (Magnus's standing rule, 2026-08-16 — the builder's wrap is this lane's wrap-call). ---
+
+## ⛔ THE ONE LIVE FINDING AT BOOT — **THE LADDER AUTHORITY IS BLIND, AND IT IS FLAPPING RATHER THAN DOWN**
+
+`fcode status` returns `Error: True` + `(Could not fetch live data)` **while exiting 0** — the failure convention `CLAUDE.md` already documents, so `$?` is worthless here. **Windows measured off `scratchpad/holder_watch.log`, not asserted:**
+
+```
+03:12:06Z -> 03:56:16Z   holder unreadable, 23 CONSECUTIVE polls (~44 min)
+03:58:16Z                ARMED on v155        (good read)
+04:02:17Z                BLIND (3-poll guard fired)
+04:02:23Z                ARMED on v155        (good read)
+04:12:26Z -> 04:20Z      holder unreadable, ongoing
+```
+
+⭐ **PARTIAL, NOT TOTAL — and this is the part worth carrying:** match/elo endpoints evidently served straight through it (our match count advanced **1152 -> 1155 -> 1156**) while `status`'s live fetch failed. ⇒ **`match list` may work while `status` does not, and no exit code distinguishes them.**
+
+**LAST CONFIRMED HOLDER — authority, never a poller (D28):** `tools/now.py` at **2026-08-17T04:16:47Z** — **v155 "Sleipnir v1"**, uploaded by Moonfarm 2026-08-16T19:38:40.236Z, **1803 Emerald, rank #19 of 126, 1156 matches, last 10 = 5W 5L.** ⚠ **Carries its read time and expires.** It is the newest good read I have and **I could not reproduce it 30 s later** (my own `now.py` at 04:17:16Z: no `active_submission`).
+
+**⇒ OPERATIONAL CONSEQUENCE, relayed to the builder as `NOW`: a ship right now could not verify its own holder.** `submit_clean.py` confirms its restore against the `Active bot:` line — the line currently absent. The fire-window derivation and the holder assertion both depend on a clean read. **A precondition that is currently unmet; not a veto.**
+
+## ⚠ AND A SECOND-ORDER ONE — **THE TAPE HAS A 65-MINUTE HOLE AND THE DRAWDOWN SITS INSIDE IT**
+
+`elo_history.tsv` rows: `03:01Z 1817 (#16)` -> `03:06Z 1817 (#16)` -> **[nothing]** -> `04:11Z 1796 (#19)`.
+⇒ **the whole 1817->1796 / rank #16->#19 leg is unobserved at poll resolution**, and `ship_watch`'s `net5=-37.0 / drawdown=-37.0` is computed across that boundary. ✅ **`ship_watch`'s own freshness guard behaved** — it wrote `BLIND / STALE: elo_history newest row 1.0h old ... VERDICT IS UNKNOWN, NOT CLEAN` at 04:03:06Z rather than printing a confident line over stale rows. **That is the fix from the outage that created the rule, working.**
+⚠ **Also: the authority's 04:16:47Z read (1803) is 7 points ABOVE the tape's newest row (1796).** The drawdown is real; it is **not the latest state**. Relayed to research before they anchor a same-day decode on it. `ladder_games.tsv` is the only surface that can resolve the leg per-match and is **84 min behind** (newest 01:52:59Z) — it cannot resolve it yet either.
+
+## ✅ FLEET — VERIFIED, NOT ASSERTED (I verify; re-arming is builder-owned)
+
+All expected daemons present, none duplicated. `keeper` **19708**. Three `drift_watch.sh` producers (**21664 / 21790 / 77617**) all writing current logs. `holder_watch` **ALIVE, PID 54165**, and its 3-consecutive-poll BLIND guard is firing correctly against the outage. **Nothing needs re-arming.**
+
+⛔ **AN INSTRUMENT NOTE THAT COST ME A NEAR-MISS, PUBLISHED BECAUSE THE NEXT LANE WILL HIT IT:** `ps -eo pid,command | grep holder_watch` returns **NOTHING** — that process's command line contains embedded newlines, so the string never appears in the column `ps` renders. **`pgrep -f holder_watch` finds it.** I had written "no holder_watch process in `ps`" into my working notes and was one step from reporting a fleet gap **on the watch that is the only instrument covering activations and holder changes**. Caught pre-publication by re-driving with a second tool. **This is exactly v1.16's Q5 `KILLED` class — a failed drive of my own instrument is not a finding about theirs — and its second consecutive firing on a live safety-relevant watch.**
+
+## STATE INHERITED — **AND PER S2, SPLIT INTO RE-DERIVED AND NOT**
+
+**RE-DERIVED AT THIS BOOT (checked, current at 04:20Z):**
+1. **Repo clean against origin: 13 commits since the s47 wrap, 0 unpushed, on `main`.** All are builder s47 post-wrap / WRAP-FIX work; newest `5a1e652c` at 20:43:16Z. **Nothing has touched the ship chain in the ~7.6 h since.**
+2. **`INCUMBENT: bots/_v468kladturbo`, `SLOT_STOP_LOSS: off`, `INCUMBENT_FROZEN: no`** — read off `PROGRAMME.md` directly.
+3. **`corpus/SHIP_ALERT` absent** — which IS the stop-loss retirement, not a monitor gap (certified s47).
+
+**NOT RE-DERIVED — inherited from the s47 wrap and labelled so:**
+4. **ZERO queue rows have been checked against the live control.** Research's counting-rule-independent form, which supersedes both "58" and "71". *Their number, their correction, not re-run by me.*
+5. **The control question for NEW registrations is OPEN and is Magnus's call** (a 61-incumbent makes the 51.33 futility floor nearly meaningless for new arms).
+6. **`prereg_check` still has no `DEFENCE_ADMISSION_BAR` rule**; **`queue_check`'s prose-negation escape survives**. *Measured by me at the s47 wrap, ~8 h ago, not re-run.*
+7. **`SLEIPH2H` READ IN AND CONFIRMED THE SHIP** (55.33 [53.46, 57.21] vs the displaced v152, `3633d42d`) — **so the transitivity assumption I named in the ship certification HELD.** The open item from my s47 wrap is **CLOSED**, and closed in the direction the ship record pre-registered.
+
+## WAKE PATHS ARMED — both, per the s47 DIES-WITH-ME note
+
+* **Commit watch** on the existing `scratchpad/drift_watch_s44.log` (consumer only — no fifth drift process started).
+* **Slot watch** on the existing `scratchpad/holder_watch.log`, filtered to ARMED/BLIND/FIRED/change lines so the 120 s `unreadable` spam does not drown it. **The commit watch is structurally blind to activations and holder changes; that is why both are armed.**
+
+**HARD LIMITS THIS SESSION: no bot edits, no arena, no unrated runs, no verdicts, no HANDOVER/PROGRAMME/QUEUE/BARS/tape writes, no platform actions.** Committing only my own named files.
