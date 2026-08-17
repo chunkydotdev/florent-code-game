@@ -70326,3 +70326,29 @@ Verbatim: ***"NO tools should get fixed during the session, everything is fixed 
 ## DIES WITH ME
 
 **Nothing.** All five watches are consumers of EXISTING detached logs — **what dies is the consumer, not the watch.** ⇒ **a successor re-arms on the existing logs rather than starting new processes, and arms ALL FIVE**: the commit watch is structurally blind to activations, the slot watch caught BOTH holder changes today, and the completion watch exists because the other four cannot see an arm succeeding.
+
+--- 2026-08-17T07:16:43Z ⭐⭐ **RESEARCH ARM s48 — STATE NOTE. LIVE SURFACES VERIFIED, NOT ASSERTED. AND THE HOLDER MOVED AGAIN WHILE I WAS WRITING IT.** ---
+
+## ⛔⛔ WHAT A SUCCESSOR MUST NOT INHERIT UNCHECKED
+
+**1. ⭐⭐ ODIN IS GONE. THE HOLDER IS v155 "Sleipnir v1" AGAIN.** Raw `fcode status` at **07:15:45Z**: `Active bot: v155 (Sleipnir v1)`, **rating 1799 (Emerald), rank #19 of 126, 1,165 matches, last 10 = 5W 5L.** ⇒ **x3r0's v157 held from 06:00:23Z to somewhere before 07:12:59Z — roughly one hour — and was rolled back. Neither this lane nor the builder did it.**
+**ODIN'S COMPLETE RATED TENURE, per-match from the platform: 3 matches, 8/15 games = 0.533, net +0.69 Elo.** `06:12 team lazy 2-3 −2.20 · 06:32 HTTP 418 4-1 +8.40 · 06:52 kladde 2-3 −5.51`. ⛔ **THREE MATCHES IS NOT A READ. Do not let "Odin went 0.533" or "Odin was rolled back after losing" enter any record — I said this morning that Odin could not support a share verdict before ~30 clusters, and it accumulated three.** **Whatever caused the rollback, this record cannot be the evidence for it.**
+⇒ **AND MY 04:2xZ WARNING NOW APPLIES IN REVERSE: the rated tape has TWO seams today (v155→v157 at ~06:12:59, v157→v155 at ~07:12:59), and `elo_history`'s version column is tagged AT POLL TIME. Any pooled read crossing either boundary mixes two bots by two authors.** **Per-match `ourver` is the only surface that marks them.**
+
+**2. ⭐ THE CONTROL IS PINNED AND VERIFIED BY CONTENT HASH, NOT BY `git log`.** `tools/control_pin.py --check` → `control pin OK: bots/_v468kladturbo = a9228ccb56ed9a65dd7d72ad1cb96068`. ⇒ **the 84 re-admitted queue rows read a STABLE artefact and every disposition stands.** ⚠ **`git log` alone would NOT have shown this — it is blind to uncommitted working-tree edits, which is how the incumbent got edited twice under running shards on 2026-08-15. Use `control_pin --check`, not the commit history** *(side lane's catch; I used the weak check first).*
+
+**3. ⚠ SEVEN RETRACTIONS OF MINE REACHED A LANE TODAY. All are corrected AT THEIR ORIGINAL SITES, not only in later notes.** The −1.5pp timely-kill · *"did not demonstrably out-share its predecessor"* · the v125 harvester regression · the leak slope · the *"3.7% best leak"* · the splitter percentile · the first-harvester-deficit framing. ⇒ **A successor grepping the tail for any of those numbers will land on a struck block with its replacement. If you find one of them quoted CLEAN anywhere, it is stale.**
+
+**4. ⚠ THE QUEUE'S HEALTH SIGNAL IS STILL NOT THE COUNT.** 78 unblocked, 84 rows, integrity verified (no dupes, no malformed rows, no unbalanced backticks). ⛔ **But `queue_check` has no notion of ALREADY-SHIPPED or PREMISE-DEAD, so the count is inflated by 4 shipped and 7 dead-premise rows.** **And `ANCHOR-MOVED-ROW-STANDS` means the row's ARGUMENT survives, not that it is buildable — every one still needs a screen against a control that absorbed three planks after those rows were written.**
+
+## RESEARCH ARM STATE — VERIFIED
+
+* **NOTHING OF MINE IS RUNNING.** **Six `opus` subagents spawned today (4 re-admission batches, 1 positive-direction check, 1 prereg draft, 1 move-mining study — seven counting the draft separately); ALL COMPLETED, ALL RELAYED, NOTHING UNRELAYED.**
+* **BANKED:** `docs/research/REPLAY-STUDY-lingling40h-2026-08-17.md` with its move-mining ledger row in the same commit (trigger 18 → 16, honoured) · `docs/prereg/DRAFT-PREREG-clankers-pin-2026-08-17.md` (**DRAFT, UNLOCKED, UNRATIFIED — and its own recommendation is NOT to fire the 12-window form**) · `docs/retro-research-s48-2026-08-17.md` (arm retro instance; the file is now **v1.18**).
+* **THREE TOOLS BUILT, all selftests PASS, all `--help` exit 0 and touch nothing:** `tools/cluster_ci.py` (v4; mutation ships in the file; scoped to PLATFORM surfaces — **local shards read naive, DEFF 0.98**) · `tools/scale_trace.py` (verified against an independent decoder at **99.93 / 99.51 / 98.81%**) · `tools/population_diff.py` (**no clean-run summary by design**).
+* ⛔ **NEW STANDING RULE FROM MAGNUS, carried into my next boot: "NO tools should get fixed during the session, everything is fixed in the builders wrap" — ABSOLUTE, supersedes the loop carve-out.** ⚠ **Note for the successor: the three tools above were BUILT before that rule landed. If it is read as covering research instruments too, this lane builds nothing mid-session and hands specs to the builder's wrap instead — I have not sought a ruling on that boundary and it should be settled at boot, not assumed.**
+* **FIRE ORDER: NONE, and the reason is a GATE not an empty board.** `X3R0_SLOT_RULE` parks live legs until an arm clears 60±2 locally or Magnus opens a window. **Two legs are staged behind it: the shredder plant-round pair (arms `r<=25` vs `r>=70`, both empirically derived) and the Clankers Stage-1 probe (`RATED EXPOSURE: none`).**
+* **HARD LIMITS HELD: I edited no bot, submitted nothing, activated nothing, fired no match, ran no arena, typed no verdict, and wrote nothing to `HANDOVER.md`, `PROGRAMME.md`'s `INCUMBENT`, `BARS.tsv` or the tape.** **I flagged the holder/control divergence and explicitly did NOT move the control — that is Magnus's call and the builder's to put.**
+
+## DIES WITH ME
+**Nothing.** All six agents completed and relayed; all findings are in `docs/coordination.md`, `QUEUE.md` or a banked file; everything is committed and pushed.
