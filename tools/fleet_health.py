@@ -69,6 +69,49 @@ if __name__ == "__main__":
 
 ROOT = Path(__file__).resolve().parent.parent
 
+# ===== D5: "corefill runner MISSING" also fired on a CLEAN, EXPECTED exit =====
+# `corefill.sh` has no supervisor of its own -- `corefill_forever.sh` is that
+# supervisor, and IT ALREADY discriminates "drained, nothing left to do" from
+# "died with work outstanding" every poll (its own `remaining` loop, right
+# above the `WORKLIST DRAINED` alarm in corefill_forever.sh). Before this fix,
+# the "corefill runner" row here re-derived only HALF of that: found==0 was
+# always reported as ⛔ MISSING, identical wording whether corefill.sh crashed
+# mid-work or exited 0 because the worklist was empty -- the second case is
+# the supervisor's own steady state (it keeps polling, no restart needed).
+# Fix: read the SAME two files corefill_forever.sh already reads (the
+# worklist + the `.started` marker directory) and compute the SAME
+# `remaining` count, so this row can tell the two apart using state that
+# already exists -- no new state file.
+DEFAULT_COREFILL_WORK = ROOT / "scratchpad/corefill_work.txt"
+DEFAULT_COREFILL_STATE_DIR = ROOT / "scratchpad/corefill_started"
+
+
+def _corefill_remaining(work: Path, state_dir: Path) -> int | None:
+    """Unstarted worklist rows -- mirrors corefill_forever.sh's own `remaining`
+    loop (`while read -r SH _rest; ... [[ -f $STATE/$SH ]] || remaining+=1`)
+    line for line: non-blank, non-`#` rows of `work`, first whitespace field is
+    the shard id, a marker file `state_dir/<id>` means it already started.
+
+    Returns None when the worklist cannot be read -- BLIND, not zero. A
+    caller must not treat None as "nothing pending"; that would silently
+    convert a genuine death into a false-healthy DRAINED verdict.
+    """
+    try:
+        lines = work.read_text().splitlines()
+    except OSError:
+        return None
+    remaining = 0
+    for line in lines:
+        s = line.strip()
+        if not s or s.startswith("#"):
+            continue
+        sh = s.split(None, 1)[0]
+        if not sh:
+            continue
+        if not (state_dir / sh).exists():
+            remaining += 1
+    return remaining
+
 # (label, match-substring, expected, why it matters, how to bring it back, AUTO)
 # `expected=None` means "one or more, count is informational" (worker shards).
 #
@@ -215,8 +258,17 @@ def _etime_s(e: str) -> int:
         return 0
 
 
-def evaluate(procs: list[tuple[int, str]]):
-    """-> (results, n_bad). A result is (label, state, found, expected, why, fix, pids)."""
+def evaluate(procs: list[tuple[int, str]],
+             corefill_work: Path = DEFAULT_COREFILL_WORK,
+             corefill_state_dir: Path = DEFAULT_COREFILL_STATE_DIR):
+    """-> (results, n_bad). A result is (label, state, found, expected, why, fix, pids).
+
+    `corefill_work`/`corefill_state_dir` are overridable ONLY so tests (and a
+    human pointing this at a scratchpad copy) can drive the "corefill runner"
+    row's DRAINED/MISSING split without touching live state. Production calls
+    leave them at the defaults, which are the same files corefill_forever.sh
+    itself reads.
+    """
     results, bad = [], 0
     for label, needle, expected, why, fix, auto in SPEC:
         # OLDEST FIRST, so `pids[expected:]` is always the newcomers -- keep the
@@ -244,8 +296,43 @@ def evaluate(procs: list[tuple[int, str]]):
         elif found == expected:
             state = "ok"
         elif found < expected:
-            state = "MISSING"
-            bad += 1
+            # D5: "corefill runner" absent is NOT always a fault -- it is the
+            # supervisor's own expected steady state once the worklist is
+            # drained. Discriminate using the SAME files corefill_forever.sh
+            # already reads, rather than reporting MISSING unconditionally.
+            if label == "corefill runner" and found == 0:
+                remaining = _corefill_remaining(corefill_work, corefill_state_dir)
+                if remaining is None:
+                    # Required fallback: no discriminating state was readable
+                    # this poll. State BOTH hypotheses explicitly rather than
+                    # picking one -- do not guess which is true.
+                    state = "MISSING"
+                    why = (f"runner not running, and {corefill_work} could not "
+                           "be read this poll -- either it exited CLEAN on a "
+                           "drained worklist, or it died with work outstanding; "
+                           "cannot tell without the worklist. Check "
+                           "scratchpad/corefill_forever.log.")
+                    bad += 1
+                elif remaining == 0:
+                    state = "DRAINED"
+                    why = ("corefill.sh exited CLEAN on an empty worklist (0 "
+                           "row(s) pending in "
+                           f"{corefill_work.name}) -- this is corefill_forever.sh's "
+                           "expected idle state, not a crash "
+                           "(see scratchpad/COREFILL_WORKLIST_DRAINED if it "
+                           "exists). Queue work to restart: append a row to "
+                           f"{corefill_work}.")
+                    # NOT bad: an expected, healthy state does not count as a
+                    # fleet problem. It is still reported (never silent).
+                else:
+                    state = "MISSING"
+                    why = (why + f" {remaining} worklist row(s) still pending "
+                           "and NO runner present -- not a clean drain, "
+                           "likely died.")
+                    bad += 1
+            else:
+                state = "MISSING"
+                bad += 1
         else:
             state = "DUPLICATE"
             bad += 1
@@ -253,7 +340,8 @@ def evaluate(procs: list[tuple[int, str]]):
     return results, bad
 
 
-def emit_json() -> int:
+def emit_json(corefill_work: Path = DEFAULT_COREFILL_WORK,
+              corefill_state_dir: Path = DEFAULT_COREFILL_STATE_DIR) -> int:
     """Machine-readable, for tools/watchdog.sh. Structure, never scraped text.
 
     A watchdog that greps a human report is one wording change away from
@@ -264,7 +352,7 @@ def emit_json() -> int:
     if procs is None:
         print(json.dumps({"blind": True, "problems": [], "rows": []}))
         return 2
-    results, bad = evaluate(procs)
+    results, bad = evaluate(procs, corefill_work, corefill_state_dir)
     print(json.dumps({
         "blind": False,
         "problems": bad,
@@ -275,16 +363,19 @@ def emit_json() -> int:
     return 1 if bad else 0
 
 
-def render(quiet: bool = False) -> int:
+def render(quiet: bool = False,
+           corefill_work: Path = DEFAULT_COREFILL_WORK,
+           corefill_state_dir: Path = DEFAULT_COREFILL_STATE_DIR) -> int:
     procs = scan()
     if procs is None:
         print("⛔ UNKNOWN — cannot read the process table. This is BLIND, not healthy.")
         print("   Refusing to report anything as MISSING on an unreadable table.")
         return 2
 
-    results, bad = evaluate(procs)
+    results, bad = evaluate(procs, corefill_work, corefill_state_dir)
+    drained = any(r[1] == "DRAINED" for r in results)
 
-    if quiet and not bad:
+    if quiet and not bad and not drained:
         n = sum(1 for r in results if r[1] == "ok")
         print(f"fleet OK — {n} expected daemon(s) present, no duplicates.")
         return 0
@@ -293,22 +384,30 @@ def render(quiet: bool = False) -> int:
     for label, state, found, expected, why, fix, pids, auto in results:
         exp = "1+" if expected is None else str(expected)
         mark = {"ok": "  ok", "info": "info", "MISSING": "⛔ MISSING",
-                "DUPLICATE": "⛔ DUPLICATE"}[state]
+                "DUPLICATE": "⛔ DUPLICATE", "DRAINED": " drained"}[state]
         print(f"  [{mark:>12}] {label:<18} found={found} expected={exp}"
-              + (f"  pids={','.join(map(str, pids))}" if pids and state != "ok" else ""))
-        if state in ("MISSING", "DUPLICATE"):
+              + (f"  pids={','.join(map(str, pids))}" if pids and state not in ("ok", "DRAINED") else ""))
+        if state in ("MISSING", "DUPLICATE", "DRAINED"):
             print(f"                 WHY IT MATTERS: {why}")
             if state == "MISSING":
                 print(f"                 RESTART: {fix}")
-            else:
+            elif state == "DUPLICATE":
                 extra = pids[expected:] if expected else pids[1:]
                 print(f"                 KILL THE EXTRAS: kill {' '.join(map(str, extra))}")
+            # DRAINED carries its own ACTION inline in `why` (append a
+            # worklist row) -- no separate RESTART/KILL line, since restarting
+            # it here would just be corefill_forever.sh's own job on its next
+            # poll once work exists.
     print()
     if bad:
         print(f"*** {bad} PROBLEM(S). A healthy shard count does NOT cover this layer: ***")
         print("    on 2026-08-15 eight shards were running at the load ceiling while the")
         print("    SUPERVISOR had been dead 22 hours and two cancellers were armed.")
         return 1
+    if drained:
+        print("0 PROBLEM(S) -- the DRAINED row above is corefill_forever.sh's expected")
+        print("idle state, not a fault. Queue work to resume shards.")
+        return 0
     print("OK — every expected daemon present, exactly once.")
     return 0
 
@@ -378,6 +477,60 @@ def selftest() -> int:
     res, nbad = evaluate(noshards)
     check("zero shard runners -> informational, NOT a problem", nbad, 0)
 
+    # ===== D5: "corefill runner" absent must NOT default to a fault. =====
+    # `no_runner` == every daemon present EXCEPT corefill.sh itself (the
+    # supervisor, corefill_forever, stays up -- that is the normal shape of
+    # "runner finished and the supervisor is polling for more work").
+    no_runner = [p for p in full if "corefill.sh scratchpad" not in p[1]]
+    import tempfile
+    with tempfile.TemporaryDirectory() as td:
+        tdp = Path(td)
+        work = tdp / "corefill_work.txt"
+        state_dir = tdp / "corefill_started"
+        state_dir.mkdir()
+
+        # --- both-ways case 1: DRAINED (every row has a marker -> healthy) ---
+        work.write_text("# shard  tr  ct  target  seed\nAAA t c 16 0\nBBB t c 16 0\n")
+        (state_dir / "AAA").write_text("started")
+        (state_dir / "BBB").write_text("started")
+        res, nbad = evaluate(no_runner, corefill_work=work, corefill_state_dir=state_dir)
+        row = [r for r in res if r[0] == "corefill runner"][0]
+        check("drained worklist -> corefill runner reads DRAINED, not MISSING",
+              row[1], "DRAINED")
+        check("...and DRAINED does not count as a problem", nbad, 0)
+        check("...and the why-line names the healthy reading",
+              "exited CLEAN" in row[4] and "not a crash" in row[4], True)
+
+        # --- both-ways case 2 (the complement/control): pending work, no
+        # runner -> the SAME absence must now read as a real fault. Flip only
+        # the marker state, nothing else, so this is a true both-ways drive
+        # of the one branch rather than two unrelated fixtures. ---
+        (state_dir / "AAA").unlink()
+        res, nbad = evaluate(no_runner, corefill_work=work, corefill_state_dir=state_dir)
+        row = [r for r in res if r[0] == "corefill runner"][0]
+        check("pending row + no runner -> corefill runner reads MISSING",
+              row[1], "MISSING")
+        check("...and MISSING still counts as a problem", nbad, 1)
+        check("...and the why-line says pending work, not a clean drain",
+              "still pending" in row[4] and "likely died" in row[4], True)
+
+        # --- fallback case: worklist unreadable -> state BOTH hypotheses,
+        # never guess. Required fallback per the D5 finding. ---
+        missing_work = tdp / "does_not_exist.txt"
+        res, nbad = evaluate(no_runner, corefill_work=missing_work, corefill_state_dir=state_dir)
+        row = [r for r in res if r[0] == "corefill runner"][0]
+        check("unreadable worklist -> falls back to MISSING (fail-safe, not silent)",
+              row[1], "MISSING")
+        check("...and the why-line states BOTH hypotheses explicitly",
+              "either it exited CLEAN" in row[4] and "or it died" in row[4], True)
+
+        # --- control: runner IS present -> must read ok regardless of
+        # worklist state (the discriminator must never fire when found>0). ---
+        res, nbad = evaluate(full, corefill_work=work, corefill_state_dir=state_dir)
+        row = [r for r in res if r[0] == "corefill runner"][0]
+        check("runner present -> ok even with a drained worklist on disk",
+              row[1], "ok")
+
     # BLIND must not read as "everything missing".
     import unittest.mock as m
     with m.patch(f"{__name__}.scan", return_value=None):
@@ -399,12 +552,21 @@ def main() -> int:
                     help="machine-readable output for tools/watchdog.sh")
     ap.add_argument("--selftest", action="store_true",
                     help="drive every verdict both ways and exit")
+    ap.add_argument("--corefill-work", default=str(DEFAULT_COREFILL_WORK),
+                    help="worklist file used to discriminate a DRAINED "
+                         "'corefill runner' from a real MISSING one (default: "
+                         f"{DEFAULT_COREFILL_WORK}). Point this at a scratchpad "
+                         "copy to inspect without touching live state.")
+    ap.add_argument("--corefill-state-dir", default=str(DEFAULT_COREFILL_STATE_DIR),
+                    help="'.started' marker directory paired with "
+                         f"--corefill-work (default: {DEFAULT_COREFILL_STATE_DIR}).")
     a = ap.parse_args()
     if a.selftest:
         return selftest()
+    cw, csd = Path(a.corefill_work), Path(a.corefill_state_dir)
     if a.json:
-        return emit_json()
-    return render(quiet=a.quiet)
+        return emit_json(cw, csd)
+    return render(quiet=a.quiet, corefill_work=cw, corefill_state_dir=csd)
 
 
 if __name__ == "__main__":
