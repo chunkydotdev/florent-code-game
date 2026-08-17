@@ -68511,3 +68511,35 @@ the bar sits 51.33 - 50.00 = 1.33pp above parity
 ⚠ **INSTRUMENT NOTE, minor, resolved not flagged: `holder_watch` is SILENT while ARMED and healthy, so log silence cannot distinguish healthy from dead.** My 04:55:14Z direct `fcode status` returned the EMPTY state while holder_watch had logged nothing since 04:30:42Z. **Discriminated with `pgrep` (ALIVE) plus three consecutive readable probes at 04:55:34Z — a transient blip, not an outage.** Its BLIND detector DOES fire (4 times today), so this is not an alarm that cannot fire; it is that the ABSENCE of output is ambiguous by design. **Use `pgrep`, never log age, to assess that watch.**
 
 --- 2026-08-17T04:59:29Z ⭐⭐ BUILDER s48 — ECO STUDY BANKED (docs/research/ECO-STUDY-fast-connected-harvesters-2026-08-17.md, 84cc03bd) + THREE MECHANISM BUILDS IN FLIGHT. --- Headline answers to Magnus's eco directive: our FIRST delivery is field-par (r14); the deficits are (a) 2x slower to FOUR standing harvesters (r20 vs the best's r10), (b) 25.1% of harvesters never connect (2x opponents; 0 terrain-unroutable; cause named by our own _l4_repair docstring — chains abandoned mid-walk), (c) slowest wire lag in the top set (+2.25 rounds), (d) 25.8% of builder-rounds wasted (12.0% oscillation + 13.8% pure-policy idle), (e) cost scale 254% vs 225% at r25 = turrets ~13% dearer all early game. ECO LATENCY IS THE KILL CLOCK: first-delivery round predicts first-sentinel round at slope 1.17 within-map. TWO PRIORS KILLED BY MEASUREMENT: CPU/TLE is DEAD as an eco cost on the current tree (0 TLEs in 1,268,678 builder-turns; the eco.py:29 "61% TLE" header is STALE — v125-era, do not quote it; #44's urgency partially resolves) and #66's multi-builder prize DEFLATES (we run 2.11 builders/chain, mid-field — the study self-retracted its own contrary first reading). SAMESTOP CONFIRMED FIRING AND FIELD-LEADING (same-stop double 1.0%→11.5% v152→v155, beats kladde's 9.2%). IN-FLIGHT: opus build agent, three one-mechanism trees on the Sleipnir base — ECOMMIT (route-commitment gate + orphan-chain adoption), FREEROUND (A→B→A guard ported from gunner rotation into _nav), ROUTESCORE (ore scored by route length, 2.00 rounds/tile lever) — each demo-first, then fresh-opus prereg each, then strict-regime shards vs _v468kladturbo on the freed local cores. ---
+
+--- 2026-08-17T05:01:0xZ ✅⛔ **SIDE LANE s48 — KLADLADDER TWO-CLOCK CERTIFIED IN THE POSITIVE FORM; THE PREREG'S REGISTERED METHOD IS UNEXECUTABLE AS WRITTEN; AND A LIVE SAFETY COLLISION ON TODAY'S SHREDDER LEG.** ---
+
+## ✅ TWO-CLOCK, POSITIVELY BOUNDED (my earlier pass was absence-based)
+```
+clock 1  prereg commit                 2026-08-17T04:44:44Z  (3054e006, git author, TZ=UTC)
+clock 2  KLADLADDER start        04:50:49Z <= start <= 04:50:54Z
+         => PREREG PREDATES THE LEG BY 5m55s - 6m10s.  CLEAN.
+```
+⭐ **Bounded rather than guessed: the worklist is SERIAL and null-first.** `NULLWS1S.COMPLETE` reads `04:50:49Z reached 400/400`; KLADLADDER's first completed row is `04:50:54Z`. ⇒ **the shard cannot have started before 04:50:49Z and had produced a game by 04:50:54Z. The serial ordering reconstructs what the overwrite destroyed.**
+
+## ⚠ THE REGISTERED METHOD NAMES AN ARTIFACT THAT DOES NOT EXIST ON THIS SURFACE
+The prereg registered clock 2 as *"the shard tape's own `# FIXTURE … start=` stamp, which `tools/overnight.sh:99` writes BEFORE the first game."* **Both halves fail here:**
+1. **`overnight.sh:99` writes START to the HEARTBEAT, not the tape** — `START=$(date -u …)` then `print -r -- "${START}…STARTING" > $HB`.
+2. ⛔ **Remote tapes carry NO `# FIXTURE` line: 0 of 84** (local: 101 of 232). **This shard is remote** — the prereg expected `scratchpad/overnight/KLADLADDER.*` and it landed in `overnight-remote/`.
+⛔⛔ **AND THE ARTIFACT THAT DOES CARRY THE START IS TRANSIENT: the heartbeat is written with `>`, not `>>`, so `STARTING` is OVERWRITTEN by the first progress update — on EVERY shard, local and remote alike.**
+⭐ **DURABLE RULE: A PREREG PLANNING TO READ A START STAMP IS PLANNING ON AN INSTRUMENT THAT IS EITHER ABSENT (remote tapes) OR ALREADY OVERWRITTEN (the heartbeat).** Same family as the LOKI-14 lesson. **Executable substitutes: (a) the first completed row — CONSERVATIVE, since the true start is earlier, so it can only overstate the gap; (b) the serial-ordering bound used above, which is tighter.**
+✅ **Builder routed it BOTH ways: wrap debt 11 for the obligations boilerplate, AND immediately — every prereg brief written today carries the corrected sentence inline, so the broken method is not copy-pasted into the next lock.** **The immediate half is the one that mattered.**
+
+## ⛔⛔ NOW — TWO COMMITMENTS THAT CANNOT BOTH BE HONOURED TODAY
+*(Surfaced via research, who established the prototype fact and asked that I carry it rather than relay it.)*
+```
+A (builder, to me, 04:3xZ):  "no submit_clean invocation in any mode this session while the flap can recur"
+B (Magnus's directive):       fire the GUNNER-SHREDDER prototype leg today
+```
+⛔ **A PROTOTYPE LEG CANNOT HAPPEN WITHOUT A SUBMIT.** `fcode match unrated` plays our ACTIVE submission; there is no local-tree flag. **A forward gunner does not exist in `_v468kladturbo`** — `build_gunner` has ONE call site (`main.py:708`), the HOME counterbattery, threat-gated to `HUNT_BAND_DSQ = 41` around our own core. ⇒ **testing it requires the active slot, i.e. the auto-activating path whose restore is disarmed in 4 of 6 holder-read states — and the trigger state is recurring every few minutes** (`BLIND 04:56:52Z`, `ARMED 04:58:59Z`).
+⭐ **THE RESOLUTION IS MAGNUS'S OWN RULE, NOT MY PREFERENCE:** *"every tooling that needs fix goes to the wrap, **unless it breaks something that makes our loop for finding better bots**."* ⇒ **a prototype leg IS the loop, so the fail-closed fix HITS THE CARVE-OUT and is not wrap debt today.** ⇒ **I RE-TAG MY OWN FLAG: DEFER → NOW.** Its stated basis this morning ("no platform action planned") is now false.
+**Fix needs no design: make `submit_clean` do what `ship_ledger.py:567` already does** — test `holder_before is None or holder_after is None` FIRST, fail loud, before the equality test.
+⚠ **Warned against: firing with commitment A "suspended" but unfixed — that drops the constraint exactly when the hazard it names is live. The constraint was right; the tooling should move.**
+⚠ **SCOPE: I have NOT seen the shredder leg's design. If it can be screened locally first, none of this binds today. Flagging the collision, not asserting their plan.**
+
+**KLADLADDER 1600/5400 at 04:59:47Z. NULLWS1S COMPLETE. Watch armed.**
