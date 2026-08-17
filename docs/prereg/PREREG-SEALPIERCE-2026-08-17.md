@@ -514,3 +514,19 @@ consolation prize afterwards.**
 ---
 
 **PROVENANCE:** `docs/research/PREREG-amendments-and-lock-obligations-2026-08-09.md` (read in full: OB1, OB7, OB12, OB13, OB14, OB15a/b/c, OB16 + its corollary and cross-host rider, OB17 + its rider) · `docs/prereg/PREREG-SEALSENTAN-2026-08-17.md` and `docs/prereg/PREREG-ECOMMIT-2026-08-17.md` (today's house style, both read in full) · `docs/prereg/BARS.tsv` (header, the FIRINGS-BEFORE-PRIMARY rule, rows `SEALSENTAN`:302 and `SEALSENTA`:303) · `CLAUDE.md` · `tools/prereg_check.py` (`RULES`, `DEFF`, `check_metric_window`, `check_pool_era`) · `tools/auto_gate.py:113,233-236,250` · `tools/overnight.sh:68,99,103,104,110,118-120,138-139` · `tools/det.py` · `tools/effective_n.py` · `tools/cluster_ci.py` · `tools/fieldcal_read.py:239` · `tools/scale_trace.py --price 20` (run at draft; READING 2 = p65.4 ORDINARY) · `bots/_v484sealpierce/{doctrine,eco,main,raid}.py` · `bots/_v481sealsentAnofund/{doctrine,eco,main,raid}.py` · `bots/_v468kladturbo/{doctrine,eco,main,raid}.py` · `bots/_probe_pierce/main.py` · `maps/invented/pierce16.map26` · `scratchpad/{sp_shots.py,sp_demo.py,mk_pierce_map.py}` · `scratchpad/{sweep_kladde3.txt,sweep_v78c.txt,sweep_base2.txt}` (the three committed demo tapes) · `scratchpad/pierce_probe.err` (⚠ UNTRACKED) · `det_results.json` (empty, stale — the F0 finding) · git commit `68c474dd` and `git diff --name-only 68c474dd^ 68c474dd` · `docs/coordination.md:68129` (Magnus's benchmark ruling), `:68158` (the seat-sentinel directive), `:69678` (the hold entry) · `docs/retro-builder-s48-2026-08-17.md:42` (the release) · `scratchpad/corefill_work.txt` · `scratchpad/CONTROL_PIN` · `results.tsv` (rows 346 `null125-final`, 454 `idnull140-cert-5400`, 466 `kladturbo-local-confirm-5400`, 471 the FIRINGS-BEFORE-PRIMARY precedent, 474 `kladladder-n-final-correction`, 477-478 `sealsentan-autostop-1000`, 479 `sealsenta-retired-preclause`) · `scratchpad/auto_gate_cancelled.tsv:73-74` · the drafting brief supplied by the builder lane s48. No file under `bots/`, `tools/`, `scratchpad/`, `docs/prereg/BARS.tsv`, `results.tsv`, `HANDOVER.md`, `PROGRAMME.md` or `QUEUE.md` was created or modified by this agent, and no game was run.
+
+---
+## PRE-LOCK ADDITION (2026-08-17T11:55:04Z, builder s49, ADD-only, blind to any screen data — nothing has run)
+**BLOCKER 4 DISCHARGED — THE FLAG-OFF EQUIVALENCE NOW HAS AN ARTIFACT.** `tools/det.py`,
+deterministic-paired, NOISE_ON=False in throwaway copies, `--tle 0`, 4 pool maps
+(antler/drumlin/midgard/ragnarok) × 2 seeds × 2 seats = 16 cells, opponent = a
+NOISE-off `_v468kladturbo` copy:
+* **FLAG-OFF (`LOKI_SEALPIERCE_ON=False`) vs `_v481sealsentAnofund`: 0/16 non-identical
+  end-states, 0 tracebacks** — the off-value restores the parent exactly.
+* **FLAG-ON positive control, same fixture: 4/16 games moved, delivered-Ti +555 mean**
+  (drumlin +1830, antler +390) — the harness can tell the trees apart, so the 0/16 means
+  something. Both verdicts driven.
+Artifacts of record: `scratchpad/sealpierce_det_flagoff.json`, `scratchpad/sealpierce_det_flagon.json`,
+committed with this addition. The "FLAG-OFF EQUIVALENCE UNVERIFIED" rider on the primary is VOID.
+**HOST: worker@work-server-2** (validated unbiased this hour: SLEIPNULL2 49.75 [47.30,52.20], n=1600,
+z=-0.20, results.tsv:sleipnull2-ws2-cal). Floors bind remote since a50f27ef.
