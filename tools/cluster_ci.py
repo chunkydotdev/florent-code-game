@@ -226,7 +226,19 @@ def pct(sorted_vals, p):
     return sorted_vals[i]
 
 
-def analyse(rows, cluster, statfn, stratum, B, seed, null, _boot=cluster_bootstrap):
+def analyse(rows, cluster, statfn, stratum, B, seed, null, _boot=None):
+    """_boot=None means LOOK THE BOOTSTRAP UP AT CALL TIME.
+
+    ⛔ It used to be `_boot=cluster_bootstrap`, a default argument bound at def
+    time -- which meant an auditor patching the MODULE ATTRIBUTE
+    (`m.cluster_bootstrap = ...`, the obvious way to mutate this file) would
+    not be seen by `analyse` at all.  The selftest would then pass against a
+    module the auditor believed they had broken: a green result for the wrong
+    reason, in the exact class of silent failure this file exists to close.
+    Self-found while documenting the injection point for the side lane's
+    harness; fixed before it bit anyone."""
+    if _boot is None:
+        _boot = globals()["cluster_bootstrap"]
     by_cluster = defaultdict(list)
     for r in rows:
         by_cluster[r["_c"]].append(r)
