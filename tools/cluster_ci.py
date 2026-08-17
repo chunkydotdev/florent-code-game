@@ -116,7 +116,38 @@ import random
 import sys
 from collections import defaultdict
 
+# ---------------------------------------------------------------------------
+# THE TWO THRESHOLDS, AND THEY ARE CONVENTIONS RATHER THAN DERIVED CONSTANTS.
+# Saying so is the point: the side lane asked "is 8 a derived floor or a round
+# number?" and the honest answer is a round number, so the design is arranged
+# so that being wrong about the exact value cannot produce a confident error.
+#
+#   MIN_CLUSTERS        below this, refuse outright -- too few distinct units
+#                       to resample at all.
+#   EXCLUSION_MIN_CLUSTERS
+#                       below this, print the interval but ISSUE NO VERDICT.
+#
+# WHY THE SECOND ONE EXISTS, and it is the failure the first one does NOT
+# cover.  A cluster bootstrap between roughly 8 and 30 clusters is a known-poor
+# regime: the percentile interval does not have its nominal coverage, AND THE
+# ERROR IS NOT CONSERVATIVE IN A PREDICTABLE DIRECTION.
+#
+#   * spuriously NARROW -> a false EXCLUDES, i.e. a confident wrong claim;
+#   * spuriously WIDE   -> a false DOES-NOT-EXCLUDE, which per CLAUDE.md's
+#                          direction clause is the one that LAUNDERS a real
+#                          effect into "consistent with zero" and flatters a
+#                          null.
+#
+# ** Both directions are live, so below EXCLUSION_MIN_CLUSTERS the tool
+#    reports the interval and refuses BOTH verdicts.  A warning a reader can
+#    skim past is not enough when the number itself is the hazard. **
+#
+# The s48 cell that motivated this sits at 22 clusters -- inside the bad
+# regime -- and happened to return a visibly enormous interval.  It could
+# equally have returned a narrow one, and then the warning would have been the
+# only thing between a reader and a confident wrong exclusion.
 MIN_CLUSTERS = 8
+EXCLUSION_MIN_CLUSTERS = 30
 DEFAULT_SEED = 20260817
 DEFAULT_B = 2000
 
@@ -199,6 +230,7 @@ def analyse(rows, cluster, statfn, stratum, B, seed, null):
     if null is not None:
         res["null"] = null
         res["excludes"] = (lo > null) or (hi < null)
+        res["verdict_issued"] = n_cl >= EXCLUSION_MIN_CLUSTERS
     return res, None
 
 
@@ -208,16 +240,24 @@ def report(res, label):
     print(f"  cluster-bootstrap 95%   [{res['lo']:+.4f}, {res['hi']:+.4f}]"
           f"   ({res['B']} resamples)")
     print(f"  n rows {res['n']}   clusters {res['clusters']}   mean rows/cluster {res['mbar']:.2f}")
-    if res["clusters"] < 30:
-        print(f"  ** {res['clusters']} clusters is FEW. The interval is wide because the")
-        print(f"     evidence is thin, not because the tool is conservative. **")
+    if res["clusters"] < EXCLUSION_MIN_CLUSTERS:
+        print(f"  ** {res['clusters']} clusters is BELOW EXCLUSION_MIN_CLUSTERS={EXCLUSION_MIN_CLUSTERS}.")
+        print(f"     A percentile interval does not have nominal coverage in this regime,")
+        print(f"     and the error is NOT conservative in a predictable direction. **")
     if "null" in res:
-        verdict = "EXCLUDES" if res["excludes"] else "DOES NOT EXCLUDE"
-        print(f"  vs null {res['null']:+.4f}:  {verdict}")
-        if not res["excludes"]:
-            print(f"  ** DOES-NOT-EXCLUDE is NOT 'no effect'. State the largest effect the")
-            print(f"     interval fails to exclude -- here {res['lo']:+.4f} on the low side,")
-            print(f"     {res['hi']:+.4f} on the high side -- never the half-width. **")
+        if not res["verdict_issued"]:
+            print(f"  vs null {res['null']:+.4f}:  ** NO VERDICT ISSUED **")
+            print(f"     Too few clusters to support EITHER direction: a spuriously NARROW")
+            print(f"     interval would give a false EXCLUDES, and a spuriously WIDE one a")
+            print(f"     false DOES-NOT-EXCLUDE, which launders a real effect into a null.")
+            print(f"     The interval above is DESCRIPTIVE. Get more clusters, not more games.")
+        else:
+            verdict = "EXCLUDES" if res["excludes"] else "DOES NOT EXCLUDE"
+            print(f"  vs null {res['null']:+.4f}:  {verdict}")
+            if not res["excludes"]:
+                print(f"  ** DOES-NOT-EXCLUDE is NOT 'no effect'. State the largest effect the")
+                print(f"     interval fails to exclude -- here {res['lo']:+.4f} on the low side,")
+                print(f"     {res['hi']:+.4f} on the high side -- never the half-width. **")
 
 
 # --------------------------------------------------------------------------
@@ -263,18 +303,37 @@ def selftest():
     if not res["excludes"]:
         print("  ** FAIL: case A should EXCLUDE the null **"); ok = False
 
-    # CASE B -- the SAME 200 observations, but they are 10 clusters of 20
-    # perfectly correlated rows.  Identical point estimate, no real evidence.
+    # CASE B -- the SAME 200 observations, but glued into 40 clusters of 5
+    # perfectly correlated rows.  Identical point estimate, a fifth of the
+    # independent information.  40 clusters is deliberately ABOVE
+    # EXCLUSION_MIN_CLUSTERS so this case tests CLUSTERING and not the gate.
     rows_b = []
-    for c in range(10):
+    for c in range(40):
         v = 1.0 if rng.random() < 0.62 else 0.0
-        rows_b.extend({"_c": f"m{c}", "_v": v} for _ in range(20))
+        rows_b.extend({"_c": f"m{c}", "_v": v} for _ in range(5))
     res_b, err = analyse(rows_b, "match", stat_mean, None, 500, 7, 0.50)
     assert err is None, err
     print(f"  B clustered, same n         point {res_b['point']:+.4f} "
-          f"[{res_b['lo']:+.4f},{res_b['hi']:+.4f}] excludes-0.50={res_b['excludes']}")
+          f"[{res_b['lo']:+.4f},{res_b['hi']:+.4f}] excludes-0.50={res_b['excludes']} "
+          f"(verdict issued={res_b['verdict_issued']})")
     if res_b["excludes"]:
-        print("  ** FAIL: case B must NOT exclude -- 10 glued clusters are not 200 games **")
+        print("  ** FAIL: case B must NOT exclude -- 40 glued clusters are not 200 games **")
+        ok = False
+    if not res_b["verdict_issued"]:
+        print("  ** FAIL: case B has 40 clusters and MUST issue a verdict, else it is")
+        print("     testing the gate rather than the clustering **")
+        ok = False
+
+    # CASE E -- the low-cluster regime must issue NO VERDICT in either
+    # direction, even when the interval happens to look decisive.
+    rows_e = [{"_c": f"m{i}", "_v": 1.0} for i in range(12)]
+    res_e, err = analyse(rows_e, "match", stat_mean, None, 300, 7, 0.50)
+    assert err is None, err
+    print(f"  E 12 clusters, degenerate   point {res_e['point']:+.4f} "
+          f"[{res_e['lo']:+.4f},{res_e['hi']:+.4f}] verdict issued={res_e['verdict_issued']}")
+    if res_e["verdict_issued"]:
+        print("  ** FAIL: 12 clusters is inside the bad regime; NO verdict may be issued,")
+        print("     because a spuriously narrow interval here is a confident wrong claim **")
         ok = False
 
     # CASE C -- the refusal must fire, not degrade into a number.
