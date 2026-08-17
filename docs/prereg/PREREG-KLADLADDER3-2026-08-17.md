@@ -461,3 +461,16 @@ not cover pooling or differencing across boxes.
 ---
 
 **PROVENANCE:** `docs/research/PREREG-amendments-and-lock-obligations-2026-08-09.md` (read in full: OB1, OB7, OB12, OB13, OB14, OB15a/b/c, OB16 + its corollary and cross-host rider, OB17 + its rider) · `docs/prereg/PREREG-SEALSENTAN-2026-08-17.md` and `docs/prereg/PREREG-ECOMMIT-2026-08-17.md` (today's house style, both read in full) · `docs/prereg/PREREG-KLADLADDER2-2026-08-17.md` (the sibling this arm contrasts against) · `docs/prereg/BARS.tsv` (header, the FIRINGS-BEFORE-PRIMARY rule, the SEALSENTA/BELTBREAK contrast-cannot-be-expressed precedent, and the sibling klad-family rows) · `CLAUDE.md` · `tools/prereg_check.py` (`RULES`, `DEFF`, `check_metric_window`, `check_pool_era`) · `tools/auto_gate.py:113,233-236,250` · `tools/overnight.sh:68` (the 15-map pool), `:99,103,110` (the FIXTURE stamp and its legacy-resume form), `:104` (the tape column header), `:118-120` (the row-count rule), `:138-139` (`--tle 10 --replay /dev/null`) · `tools/dose.py` (`:26-30` the serial rule, `:157` the replay unlink, and the `--games` default of 24) · `tools/corpus/replay_events.py` (the `rnd` column T2 needs) · `tools/fieldcal_read.py:239` · `tools/cluster_ci.py` · `tools/scale_trace.py --price 20` (run at draft; READING 2 = p65.4 ORDINARY) · `bots/_v485kladladder3/{doctrine,raid}.py` · `bots/_v482kladladder2/{doctrine,raid}.py` · `bots/_v468kladturbo/{doctrine,eco,main,raid}.py` · git commits `e9e40548` and `e2a71410` (full body, which carries the sibling's n=120 dose), `git diff --name-only e9e40548^ e9e40548`, `diff -r bots/_v482kladladder2 bots/_v485kladladder3` · `scratchpad/kladladder3_dose.log` and `scratchpad/dose_v485.tsv` (the n=160 battery) · `scratchpad/corefill_work.txt` · `scratchpad/CONTROL_PIN` · `results.tsv` (rows 346 `null125-final`, 454 `idnull140-cert-5400`, 466 `kladturbo-local-confirm-5400`, 470-476 the seven `kladladder-*` rows) · the drafting brief supplied by the builder lane s48. No file under `bots/`, `tools/`, `scratchpad/`, `docs/prereg/BARS.tsv`, `results.tsv`, `HANDOVER.md`, `PROGRAMME.md` or `QUEUE.md` was created or modified by this agent, and no game was run.
+
+---
+## PRE-LOCK ADDITION (2026-08-17T11:38:03Z, builder s49, ADD-only, blind to any data — nothing has run)
+**DOSE FIGURES OF RECORD (blocker 4, second half):** the paired delivery diff for this
+family is **−0.267/game, 2×SE 0.476 ⇒ 95% band [−0.743, +0.209]** — quoted from
+`PREREG-KLADLADDER2-2026-08-17.md:79-83`, which is the citation of record (the brief's
+original numbers did not reproduce; the reproduced band is the one above). Any dose
+sentence this arm's readout types cites THIS band, never the brief's.
+**SAME-HOST DISCHARGE:** the S1 contrast (this arm vs `_v482kladladder2`, one integer
+`doctrine.py:1264` 40→16) requires both shards on ONE host. Both are queued to
+`worker@work-server-1` back-to-back on its sequential runner — same host, same cores,
+same engine pin, adjacent wall-clock windows. The contrast is read ONLY if both complete
+there; a host migration of either shard VOIDS the S1 contrast (the solo reads survive).
