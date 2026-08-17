@@ -68981,3 +68981,21 @@ case "$L" in *"$B"*) WIN=T;; *) WIN=C;; esac
 ✅ **HISTORICAL CHECK CLEAN — 0 HITS.** All 101 tapes carrying a `# FIXTURE` header matched on `treatment=`/`control=` against the 36 pairs: **zero hazardous pairings ever ran. No banked result is affected.**
 ⚠ **SCOPE, because a negative is only as good as its coverage: 101 tapes is the FIXTURE-header subset. REMOTE tapes carry no such header, so remote shards are UNCHECKED and I am not claiming otherwise.**
 ⇒ **Routed DEFER, but flagged now because the shape is being built: `_v481sealsentAnofund` is a funding ablation (its actual pairing is SAFE — vs `_v468kladturbo`, neither a substring of the other), and "SEALSENT-A vs SEALSENT-A-NOFUND" is one naming choice away from the hazard; KLADLADDER2 is a "minus the tax" variant with the same shape.** ⭐ **THE FIX IS THE MATCHER, NOT THE NAMING** — naming discipline is exactly the class of rule that fails under time pressure, which is today's lesson three times over. **Exact-token match, or resolve against both names and REFUSE when both hit; the refuse-on-ambiguity form catches the original same-path case for free, so one fix retires both symptoms.**
+
+--- 2026-08-17T05:28:09Z ⭐⭐ **RESEARCH s48 — `cluster_ci.py` v3: THE SELFTEST NOW TESTS ITSELF. THE SIDE LANE CAUGHT MY v2 FIXTURE EDIT SILENTLY DESTROYING THE ONE CASE THAT MATTERED.** ---
+⛔⛔ **WHAT HAPPENED, AND IT IS A BETTER FINDING THAN THE TOOL.** In v2 I re-cut selftest case B from 10 clusters to 40 so it would test CLUSTERING rather than the new `EXCLUSION_MIN_CLUSTERS` gate, and I added `assert verdict_issued == True` to protect it from that gate. **Both changes were correct. The case still lost its entire purpose.** The side lane re-ran their mutation (swap the cluster resampler for a ROW resampler) and got:
+```
+v1 UNMUTATED -> exit 0     v1 MUTATED -> exit 1   (case B failed by name)
+v2 UNMUTATED -> exit 0     v2 MUTATED -> exit 0   (nothing failed)
+```
+**Clustering was still working — the interval narrowed 0.30 → 0.14, a 53% collapse — but the narrowed interval STILL STRADDLED the null, so B's assertion held in BOTH states.** Root cause: **my re-cut moved B's point estimate TOWARD the null (+0.60 → +0.55), and a case can only detect a narrowing that CROSSES the null.**
+⇒ ⭐⭐ **THE RULE, THEIRS, AND IT GENERALISES PAST THIS FILE: "A SELFTEST'S DISCRIMINATING POWER IS NOT PRESERVED BY ASSERTIONS; IT IS PRESERVED BY RE-RUNNING THE MUTATION AFTER EVERY EDIT TO THE FIXTURE. Editing a test case silently destroys the thing the case was for, and the edited case still passes — which is exactly why it is silent."** **No assertion about case B's own OUTPUT can encode "the mutation flips this case".**
+⇒ **FIXED BY PUTTING THE MUTATION IN THE FILE.** `_row_bootstrap_MUTANT` now ships alongside the real bootstrap, `analyse()` takes the bootstrap as an injectable argument, and **CASE F injects the mutant, re-runs case B's exact data, and requires the verdict to FLIP.** B's fixture is now deterministic (25 of 40 clusters positive → point exactly 0.6250, far enough from 0.50 that removing clustering crosses it).
+```
+B clustered      +0.6250 [+0.4750,+0.7750] excludes=False
+F mutated, SAME point +0.6250 [+0.5600,+0.6900] excludes=True
+   width 0.3000 -> 0.1300 (57% collapse), and the verdict FLIPS. Case B bites.
+```
+⭐ **AND F IS A SECOND, INDEPENDENT DETECTOR, which the first draft of F was not: if the SHIPPED bootstrap has itself been replaced by a row resampler, F compares mutant to mutant, the widths match, and its excludes-assertion passes VACUOUSLY — it printed "Case B bites" in exactly the state where nothing bites.** F now requires a real width collapse (≥30%) and fails if it does not see one.
+**DRIVEN BOTH WAYS END TO END: unmutated → exit 0. With the shipped bootstrap replaced by the row resampler → exit 1, with BOTH B and F failing by name.** `--help` exits 0 and touches no file.
+⇒ **"THIS SELFTEST HAS BEEN SEEN TO FAIL" IS NOW A PROPERTY OF THE FILE RATHER THAN OF WHOEVER LAST REMEMBERED TO CHECK — the same move as the tool itself: out of attention, into the mechanism.** *(Their catch, their rule, their fix direction. My v2 edit was the defect.)*

@@ -201,6 +201,24 @@ def cluster_bootstrap(by_cluster, statfn, stratum, B, seed):
     return out
 
 
+def _row_bootstrap_MUTANT(by_cluster, statfn, stratum, B, seed):
+    """THE MUTATION, SHIPPED ON PURPOSE.  Resamples ROWS, ignoring clusters --
+    i.e. the exact bug this whole file exists to prevent.
+
+    It is here so `selftest()` can inject it and PROVE that the discriminating
+    case still discriminates.  See case F.  Never call it from `analyse`."""
+    rng = random.Random(seed)
+    allrows = [r for rows in by_cluster.values() for r in rows]
+    out = []
+    for _ in range(B):
+        rows = [rng.choice(allrows) for _ in range(len(allrows))]
+        s = statfn(rows, stratum)
+        if s is not None:
+            out.append(s)
+    out.sort()
+    return out
+
+
 def pct(sorted_vals, p):
     if not sorted_vals:
         return None
@@ -208,7 +226,7 @@ def pct(sorted_vals, p):
     return sorted_vals[i]
 
 
-def analyse(rows, cluster, statfn, stratum, B, seed, null):
+def analyse(rows, cluster, statfn, stratum, B, seed, null, _boot=cluster_bootstrap):
     by_cluster = defaultdict(list)
     for r in rows:
         by_cluster[r["_c"]].append(r)
@@ -218,7 +236,7 @@ def analyse(rows, cluster, statfn, stratum, B, seed, null):
     point = statfn(rows, stratum)
     if point is None:
         return None, "REFUSED: the statistic is undefined on this input (no variance in x, or no usable stratum)."
-    boots = cluster_bootstrap(by_cluster, statfn, stratum, B, seed)
+    boots = _boot(by_cluster, statfn, stratum, B, seed)
     if len(boots) < B * 0.5:
         return None, f"REFUSED: only {len(boots)} of {B} resamples produced a defined statistic. The estimate is not stable enough to quote."
     lo, hi = pct(boots, 0.025), pct(boots, 0.975)
@@ -303,13 +321,23 @@ def selftest():
     if not res["excludes"]:
         print("  ** FAIL: case A should EXCLUDE the null **"); ok = False
 
-    # CASE B -- the SAME 200 observations, but glued into 40 clusters of 5
-    # perfectly correlated rows.  Identical point estimate, a fifth of the
-    # independent information.  40 clusters is deliberately ABOVE
-    # EXCLUSION_MIN_CLUSTERS so this case tests CLUSTERING and not the gate.
+    # CASE B -- 200 observations glued into 40 clusters of 5 perfectly
+    # correlated rows: a fifth of the independent information.
+    #
+    # ⛔ TWO CONSTRAINTS ON THIS FIXTURE, BOTH LEARNED THE HARD WAY, AND THEY
+    #    PULL AGAINST EACH OTHER:
+    #  * clusters must be ABOVE EXCLUSION_MIN_CLUSTERS, or the case tests the
+    #    gate instead of the clustering;
+    #  * the point estimate must be FAR ENOUGH FROM THE NULL that removing
+    #    clustering CROSSES it.  A first re-cut of this case sat at +0.55 and
+    #    the row-resampled interval still straddled 0.50 -- so the mutation
+    #    narrowed the interval by 53% and the assertion never noticed.  ** The
+    #    case passed in both states and its discriminating power was gone. **
+    #    (Caught by the side lane re-running the mutation after the edit.)
+    # 25 of 40 clusters positive => point 0.625, deterministic, not sampled.
     rows_b = []
     for c in range(40):
-        v = 1.0 if rng.random() < 0.62 else 0.0
+        v = 1.0 if c < 25 else 0.0
         rows_b.extend({"_c": f"m{c}", "_v": v} for _ in range(5))
     res_b, err = analyse(rows_b, "match", stat_mean, None, 500, 7, 0.50)
     assert err is None, err
@@ -358,6 +386,56 @@ def selftest():
     if abs(flat["point"] - within["point"]) < 0.5:
         print("  ** FAIL: the stratum should have CHANGED the answer; if it does not,")
         print("     the fixed-effects path is not being exercised **"); ok = False
+
+    # CASE F -- ⭐⭐ THE SELFTEST TESTS ITSELF.  Inject the mutation (resample
+    # ROWS, ignoring clusters) and require case B's verdict to FLIP.
+    #
+    # WHY THIS CASE EXISTS AND WHY IT IS THE MOST IMPORTANT ONE HERE.  Case B's
+    # job is to fail when clustering is broken.  NO ASSERTION ABOUT B'S OWN
+    # OUTPUT CAN GUARANTEE THAT -- and a fixture edit destroyed exactly that
+    # property once already, silently, while B kept passing.  The side lane's
+    # rule, which this case implements:
+    #
+    #    "A selftest's discriminating power is not preserved by assertions;
+    #     it is preserved by RE-RUNNING THE MUTATION after every edit to the
+    #     fixture.  Editing a test case silently destroys the thing the case
+    #     was for, and the edited case still passes -- which is exactly why
+    #     it is silent."
+    #
+    # So the mutation lives in the file.  "This selftest has been seen to fail"
+    # becomes a property of the code rather than of whoever last remembered to
+    # check.  Same move as the tool itself: out of attention, into mechanism.
+    res_f, err = analyse(rows_b, "match", stat_mean, None, 500, 7, 0.50,
+                         _boot=_row_bootstrap_MUTANT)
+    assert err is None, err
+    print(f"  F MUTATION (rows not clusters) same point {res_f['point']:+.4f} "
+          f"[{res_f['lo']:+.4f},{res_f['hi']:+.4f}] excludes-0.50={res_f['excludes']}")
+    if res_f["point"] != res_b["point"]:
+        print("  ** FAIL: the mutation must not change the POINT estimate -- if it does,")
+        print("     case F is testing something other than the interval **"); ok = False
+    if not res_f["excludes"]:
+        print("  ** FAIL: with clustering REMOVED, case B's data must EXCLUDE 0.50.")
+        print("     It does not, so case B cannot detect a broken bootstrap and its")
+        print("     discriminating power is gone. Move B's point further from the null. **")
+        ok = False
+    wc = res_b["hi"] - res_b["lo"]
+    wf = res_f["hi"] - res_f["lo"]
+    collapse = 1 - wf / wc if wc else 0.0
+    # ⛔ AND F IS ALSO A SECOND, INDEPENDENT DETECTOR: if the SHIPPED bootstrap
+    # has itself been replaced by a row resampler, F compares mutant to mutant,
+    # the widths match, and its excludes-assertion passes VACUOUSLY.  Requiring
+    # a real collapse catches that -- without this line F prints "Case B bites"
+    # in exactly the state where nothing bites.
+    if collapse < 0.30:
+        print(f"  ** FAIL: removing clustering collapsed the interval by only "
+              f"{100 * collapse:.0f}% ({wc:.4f} -> {wf:.4f}).")
+        print("     Either the fixture has too little clustering to matter, or the")
+        print("     SHIPPED bootstrap is already resampling rows and F is comparing")
+        print("     the mutant against itself. **")
+        ok = False
+    elif res_f["excludes"]:
+        print(f"    interval width {wc:.4f} clustered -> {wf:.4f} mutated "
+              f"({100 * collapse:.0f}% collapse), and the verdict FLIPS. Case B bites.")
 
     print("SELFTEST PASS" if ok else "SELFTEST FAIL")
     return 0 if ok else 1
