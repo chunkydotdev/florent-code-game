@@ -1241,3 +1241,7 @@ BELTBREAK-EARLY bots/_v480beltbreak bots/_v468kladturbo 5400 822000
 BELTBREAK-LATE bots/_v483beltbreaklate bots/_v468kladturbo 5400 824000
 ODINVSSLEIP bots/_x3r0v157odin bots/_v468kladturbo 2700 826000
 BELTBREAK2 bots/_v488beltbreak2 bots/_v468kladturbo 5400 840000
+KLADLADDER2 bots/_v482kladladder2 bots/_v468kladturbo 5400 828000
+KLADLADDER3 bots/_v485kladladder3 bots/_v468kladturbo 5400 830000
+SEALPIERCE bots/_v484sealpierce bots/_v468kladturbo 5400 832000
+SALTRAY	bots/_v509saltray	bots/_v488beltbreak2	5400	870000
