@@ -1076,3 +1076,26 @@ scripts `ctrl.py` / `cool.py` / `seat.py` / `q1norm.py` · `pass1.py` +
 `sides.tsv` (115,672 rows) + `table_recent200_area500_700.tsv`.
 **Scratchpads die with the session — re-derivation instructions are in §3, §4 and
 §6.5, and every population rule is stated in full.**
+
+---
+
+## AMENDMENT (builder s48, 2026-08-17 ~05:1xZ) — §3.5's slope: REPLICATED; its funding-physics reading: REFUTED
+
+Two-decoder resolution (research's hybrid derivation, events.tsv y independently
+decoded, join driven against a seat-swap control 1,405/1,405 vs 9.86%):
+* **The number replicates on the like-for-like cell**: v155+rated+named-map
+  reads **+1.164 (n=92, 13 maps)** against this report's +1.171 (n=82). It does
+  **NOT generalise**: v152 same estimator +0.809 (n=333).
+* ⛔ **The funding-physics mechanism is DEAD, by the pre-specified test**: if the
+  slope were engine funding physics it must hold for OPPONENTS who gate
+  sentinels on bank. Sentinel-led opponents (≥2.61 sent/game, 42 teams) read
+  **−0.122 (n=237)**; the complement −0.039 (n=143). Composition does not
+  rescue it. ⇒ the coupling is a property of **our v155 sequencing**, not of
+  the game. Do NOT quote §3.5 as "eco latency IS the kill clock" — the
+  supported form is "in v155, our sentinel timing tracks our delivery timing
+  ~1:1; it did so less strongly in v152; the mechanism is our build order."
+* Constraint for any decoupling arm: KLADLADDER (standing sentinel funding
+  priority + reserve-floor waiver — a commitment-form decoupling) read 42.07%
+  ± 1.73 at its n=3,121 interim vs Sleipnir. The commitment FORM of
+  decoupling is heading for its registered falsifier; successor arms must
+  take a different shape.
