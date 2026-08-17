@@ -68999,3 +68999,21 @@ F mutated, SAME point +0.6250 [+0.5600,+0.6900] excludes=True
 ⭐ **AND F IS A SECOND, INDEPENDENT DETECTOR, which the first draft of F was not: if the SHIPPED bootstrap has itself been replaced by a row resampler, F compares mutant to mutant, the widths match, and its excludes-assertion passes VACUOUSLY — it printed "Case B bites" in exactly the state where nothing bites.** F now requires a real width collapse (≥30%) and fails if it does not see one.
 **DRIVEN BOTH WAYS END TO END: unmutated → exit 0. With the shipped bootstrap replaced by the row resampler → exit 1, with BOTH B and F failing by name.** `--help` exits 0 and touches no file.
 ⇒ **"THIS SELFTEST HAS BEEN SEEN TO FAIL" IS NOW A PROPERTY OF THE FILE RATHER THAN OF WHOEVER LAST REMEMBERED TO CHECK — the same move as the tool itself: out of attention, into the mechanism.** *(Their catch, their rule, their fix direction. My v2 edit was the defect.)*
+
+--- 2026-08-17T05:28:47Z ⭐ **SIDE LANE s48 — RETRO INPUTS CAPTURED BY MEASUREMENT (not at wrap, not from memory), AND Q8 IS MISSING A THIRD BUCKET.** ---
+
+**Captured now because the artefacts are fresh and my charter says answer the retro FROM THE DAY'S ARTEFACTS. This is retro PREP, not a wrap — the retro fires on the builder's wrap.**
+
+**MEASURED FROM THE RECORD:** 19 side-lane commits · **26 peer commits citing this lane's flags** · session 04:16Z-05:27Z.
+
+## ⛔ Q8 IS MISSING A THIRD BUCKET, AND IT IS THIS LANE'S HIGHEST-VALUE OUTPUT TODAY
+**v1.16 split Q8 into `ADOPTED` and `BUILT` after the momentum rule suppressed the count. Measured on s48, the split is still wrong — there are THREE categories, not two:**
+* **BUILT AS CODE (~3-4):** `submit_clean` fail-closed (`844922a4`) · `cluster_ci.py` + its v2 gate (`85de2ecc`, `fb6d2a6a`) · the control-era boundary written in-band (`b3ba0be3`).
+* **ADOPTED, DEFERRED TO WRAP (~5):** `overnight.sh` scorer (debt 17) · `move_miner` inversion (15) · `fleet_dispatch` stale `--control` default · `prereg_check`'s missing `DEFENCE_ADMISSION_BAR` rule · `queue_check`'s silent refusal.
+* ⭐ **RECORD CORRECTIONS (~6) — A CATEGORY Q8 HAS NEVER COUNTED:** the V140VS152 transitivity units error (`8f1d175c`) · the KLADLADDER conditional-attribution amendment (`c9b95919`) · the n denominator 3121->3404 · the header-as-game 3405->3404 (`372590bd`) · the evidence-count inflation ("three surfaces" -> one arm plus a demo) · the era boundary's own placement.
+⇒ ⛔ **RECORD CORRECTIONS ARE NEITHER "adopted and waiting" NOR "became a script" — they land IMMEDIATELY and PERMANENTLY, and on this session's evidence they are the largest category and plausibly the highest-value one.** **A retro question that counts only scripts will under-report the mechanism by which this lane actually pays.**
+⇒ **CARRIED TO v1.17: Q8 needs `BUILT` / `DEFERRED` / `CORRECTED-IN-RECORD`.** ⚠ **And the measurement rule that goes with it: a record correction counts only if it changed what a SUCCESSOR would read, not merely what a peer acknowledged in a message.** All six above are on the tape or in `results.tsv`, not in the channel.
+
+## ⭐ AND ONE MECHANISM WORTH THE RETRO: THE `DEFER -> NOW` RE-TAG IS WHAT UNBLOCKED THE CODE
+**s47 scored Q8 = 1. s48 has 3-4 built.** ⛔ **The difference is NOT that this lane flagged more.** ⇒ **it is that Magnus's momentum rule carries a CARVE-OUT — *"unless it breaks something that makes our loop for finding better bots"* — and this lane invoked it exactly once, re-tagging its own `submit_clean` flag DEFER -> NOW when a prototype leg made the hazard live.** **That single re-tag moved a wrap-debt item into same-session code, and the fail-closed guard existed hours before the leg that needed it.**
+⚠ **The honest caveat: n=1 on the carve-out, and it worked because the trigger (a prototype leg is the loop) was UNAMBIGUOUS. A judgement call about whether something "breaks the loop" is exactly the kind of discretion that drifts.** ⇒ **worth recording as a mechanism that fired once and paid, not as a rule to lean on.**
