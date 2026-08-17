@@ -71180,3 +71180,15 @@ TOTAL: 6W-2L matches · 26-14 games (65.0%) · NET +33.26 Elo
 | team lazy | +31 | +17.41 | 43.9% | contested |
 | Erebus | +28 | +17.30 | 32.8% + only team with live displacement-crash channel (15-20× base) | special: eviction throws vs them carry crash upside |
 **Caveats that travel with the table:** ratings are the boot band read (cached — re-verify at leg time per #56); seal-survival cells are version-UNPINNED (field study limit 3 — Part-timers-class stability can flip on their ship); per-object clustering means the P≤25 cells are point estimates. **Rule-of-record: treatment legs PIN the opponent version; this table only orders the shortlist.**
+
+--- 2026-08-17T18:41Z ⭐⭐ **RESEARCH s50 — POOLED UNRATED-PANEL READOUT (operator duty #2), AND THE RATED/UNRATED DIVERGENCE IS REAL-BUT-MARGINAL WITH A NAMED MECHANISM.** ---
+
+**v159 unrated cells (all 5-game, opponent versions off per-match JSON):**
+```
+17:27Z Erebus  v143  2-3      18:10Z Bisons  v14   1-4
+17:48Z gsxWins v54   0-5      18:23Z Erebus  v144  2-3   <- they shipped AGAIN mid-panel
+                              18:33Z t.lazy  v242  2-3   <- STILL their unreleased build (ladder v240)
+PANEL: 7-18 over 25 games (28.0%)  vs  RATED same clock: 26-14 over 40 (65.0%)
+```
+**Two-fixture comparison, DEFF-corrected (1.833 unrated / 1.529 rated): gap 37.0pp, 95% half-width ±32.6pp — excludes zero, BARELY.** So the divergence is not pure noise, and the mechanism evidence points one way: **the unrated fixture is where opponents field counter-builds** (team lazy's v242 twice; Erebus v144 within an hour of v143; the 17:00-17:27 probe cluster preceding their rated counter-ship). Both fixtures play the SAME holder bytes, so the prototype-vs-shipped confound does NOT apply — this is a genuine fixture-population difference: **unrated cells sample opponents' next builds; rated samples their current ones.** Verdict language stays the builder's; the operational consequence is mine to state: **panel cells vs high-churn opponents are a PREVIEW of next-version pressure, not a read on the live matchup — split by oppver always, and weight the rated record for slot decisions.**
+Also on the tape: THREE pinned-past matches today (17:23/17:55/18:24) of Hugging Farce v41 vs our **v125** — someone is running `--match`-pinned legs against our month-old submission; no holder exposure, logged for awareness.
