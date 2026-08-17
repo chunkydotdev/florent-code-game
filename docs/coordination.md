@@ -68543,3 +68543,33 @@ B (Magnus's directive):       fire the GUNNER-SHREDDER prototype leg today
 ⚠ **SCOPE: I have NOT seen the shredder leg's design. If it can be screened locally first, none of this binds today. Flagging the collision, not asserting their plan.**
 
 **KLADLADDER 1600/5400 at 04:59:47Z. NULLWS1S COMPLETE. Watch armed.**
+
+--- 2026-08-17T05:02:11Z ⛔⛔ **RESEARCH s48 — INSTRUMENT ALARM, VERIFIED: `corpus/league_matches.tsv`'s TAIL IS PARTIAL, NOT MERELY LAGGED. A FRESHNESS STAMP CANNOT SEE THIS, AND `target_value.py` PRINTS EXACTLY THAT STAMP.** ---
+
+Found by the fresh `opus` agent drafting the Clankers prereg (its find, relayed as theirs); **verified here directly against a live platform pull before publishing.**
+
+**MEASURED — matches per 20-minute creation slot in `league_matches.tsv`:**
+```
+02:12  41    02:32  41    02:52  40
+03:12  10    03:32  11    03:52  11    04:12   7
+```
+**The steady state is ~41 per slot. The last four slots hold 10/11/11/7 — roughly 25% complete.**
+**And it is not random attrition: ALL FOUR of our own rated matches in that window are missing**, checked against the live `fcode match list --mine --type ladder --json` pull:
+```
+OUR last 60 rated matches: 56 present in league_matches, 4 MISSING
+   03:12:59  OpenSverige vs Clankers        (the 0-5)
+   03:32:59  HTTP 418 vs OpenSverige
+   03:52:59  OpenSverige vs 0033
+   04:12:59  kladde vs OpenSverige
+```
+The 03:12 match is **absent from `ladder_games.tsv` AND `league_matches.tsv` while PRESENT in `meta_join`.**
+
+## ⛔ THE DEFECT IS THAT FRESHNESS AND COMPLETENESS ARE DIFFERENT PROPERTIES AND WE ONLY MEASURE ONE
+`target_value.py:489-491` prints **`newest observation <ts> (<age>)`** — and at boot this session it read **`0.4h old`**, which is TRUE and which a reader takes as *"the file is current."* **A file can be perfectly fresh at its newest row and 75% empty across its last four slots.** ⇒ **the age stamp cannot see this failure mode at all.** Same family as the repo's stale-vs-blind rule (`ship_watch` printing a healthy line off seven-minute-stale rows) **one level down: this is a monitor that reports its newest row's age while being blind to how much of the recent window is missing underneath it.**
+⇒ **STANDING RULE, effective now: AN ABSENCE IN THE LAST ~90 MINUTES OF `league_matches.tsv` IS NOT EVIDENCE.** Any cut that turns on "team X has not played / has not shipped recently" must either exclude that window or re-pull from the platform.
+⇒ **AND THE CHEAP FIX IS A COMPLETENESS SIGNAL, NOT A FRESHER PULL: print rows-in-the-newest-N-slots against the trailing median** (here 10/11/11/7 vs ~41) **beside the age.** Handed to the builder as a `target_value.py` / ingest ask; dated spec is this note.
+
+## SCOPE ON MY OWN PUBLISHED WORK, stated rather than left for someone to find
+* **The drawdown decode is UNAFFECTED** — it was built from a live `fcode match list --json` pull, not from the archive, which is why it contains all four of the matches this file is missing.
+* **The gsxWins v52→v53 split IS affected at the tail and the finding survives.** It used `league_matches.tsv` with our matches excluded; the v53 profile (m=31) spans 16:12→02:52, so only the last ~90 minutes are thinned. **The measured 0.343 → 0.523 improvement is not carried by that window.** Re-derive before quoting it in a prereg.
+* **The forward-gunner and annulus censuses are UNAFFECTED** — they read `events.tsv` + `meta_join`, not `league_matches`.
