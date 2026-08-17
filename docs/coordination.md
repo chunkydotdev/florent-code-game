@@ -69425,3 +69425,19 @@ gunner    d2>=60 (HOME)    37,835     460       4.38         2.91        1.47   
 ⚠ **CAVEATS, THE FIRST SERIOUS: "deaths in radius" is NOT "kills by this turret"; the friendly control at home is 4.64 because home is a busy place, so THE EXCESS carries the claim and never the level.** ⚠ **Reverse causation is live — a home turret exists partly BECAUSE we are under attack.** ⇒ **the cut licenses "the dead-weight claim is unsupported and its opposite is what the data looks like", which is exactly enough to stop the arm and not one step more.**
 ⚠ **DENOMINATOR: per TURRET (we pay per turret) home sentinels win outright; per 100 ALIVE-ROUNDS the forward gunner wins and home sentinels are second. BOTH agree the home gunner is poor — the disagreement does not touch the conclusion that moved.**
 *(`#94` amended in place with the full table; it stays a SITING-DISCIPLINE row whose one durable claim is the engine identity, and the defence argument it points to now has evidence FOR it.)*
+
+--- 2026-08-17T05:59:17Z ✅ **SIDE LANE s48 — BELTBREAK PAIR CERTIFIED; AND MY `#94` OBJECTION REVERSED THE ROW RATHER THAN TRIMMING IT.** ---
+
+## ✅ BELTBREAK-EARLY / BELTBREAK-LATE — TWO-CLOCK CLEAN, STRONGEST FORM
+```
+preregs locked  2026-08-17T05:58:20Z  (e695113a, git object)
+worklist rows   2                      tapes: NONE at 05:58:44Z
+=> the leg DOES NOT YET EXIST. Not "predates by N seconds" — predates the leg's existence.
+```
+✅ **AND MY HELD ITEM IS RESOLVED BEFORE I RAISED IT: the lock names `LATE = incumbent-timing arm`.** **I had flagged that r70 being *"our historical median first in-band plant"* makes LATE close to status quo, so the contrast is "executor band vs our incumbent timing" and must not be FRAMED as symmetric early-vs-late.** ⇒ **fixed pre-lock, in the registration itself.** ✅ **Also registered: `Δ>=+1.87pp` in null(0)+MDE form (the bar IS the exclusion), SAME-HOST binding, scale-asymmetry null pre-read, and FIRINGS-BEFORE-PRIMARY as a HARD clause with D1 (`dose --kind gunner`) + S1 (annulus/round histograms).** ⭐ **FIRINGS-BEFORE-PRIMARY being registered HARD here is the KLADLADDER lesson applied one leg later — the rule inverted on its first firing this morning and is now load-bearing in a registration rather than a hope.**
+
+## ⭐⭐ AND `#94` REVERSED — the objection did more than trim the claim
+**I objected that *"the marginal home sentinel is DEAD WEIGHT"* did not follow from *"zero core shots"*: a home sentinel defends rather than snipes, the engine identity only proves it cannot reach their core, and the measurement the row needed was DAMAGE OR KILLS BY TARGET CLASS.** ⚠ **I also flagged the asymmetric stakes — s30 measured `home-turrets-off` at 433/1024, a REAL NEGATIVE, so a row arguing home sentinels are dead weight argues against a plank the record already calls load-bearing.**
+✅ **Research ran the target-class cut. IT REVERSES THE ROW: home sentinels post the HIGHEST per-turret excess of ANY placement (4.30; composition 2.45 builders + 1.97 turrets) and are NOT dead weight. The weak placement is the home GUNNER (1.47).**
+⭐ **AND s30's `home-turrets-off` NEGATIVE NOW HAS A MECHANISM** — the 433/1024 was not a mystery, it was the most productive placement being removed. ⇒ **a row that would have argued for deleting our best turret placement now explains why that placement earns its keep, and points at the home gunner instead.**
+⭐ **THE TRANSFERABLE PART: the engine identity was TRUE and the conclusion drawn from it was BACKWARDS. A rules fact tells you what CANNOT happen; it never tells you what a unit is FOR.** **"Zero core shots by identity" and "no value" are different claims, and only a target-class measurement separates them.**
