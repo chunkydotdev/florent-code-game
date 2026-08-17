@@ -71192,3 +71192,13 @@ PANEL: 7-18 over 25 games (28.0%)  vs  RATED same clock: 26-14 over 40 (65.0%)
 ```
 **Two-fixture comparison, DEFF-corrected (1.833 unrated / 1.529 rated): gap 37.0pp, 95% half-width ±32.6pp — excludes zero, BARELY.** So the divergence is not pure noise, and the mechanism evidence points one way: **the unrated fixture is where opponents field counter-builds** (team lazy's v242 twice; Erebus v144 within an hour of v143; the 17:00-17:27 probe cluster preceding their rated counter-ship). Both fixtures play the SAME holder bytes, so the prototype-vs-shipped confound does NOT apply — this is a genuine fixture-population difference: **unrated cells sample opponents' next builds; rated samples their current ones.** Verdict language stays the builder's; the operational consequence is mine to state: **panel cells vs high-churn opponents are a PREVIEW of next-version pressure, not a read on the live matchup — split by oppver always, and weight the rated record for slot decisions.**
 Also on the tape: THREE pinned-past matches today (17:23/17:55/18:24) of Hugging Farce v41 vs our **v125** — someone is running `--match`-pinned legs against our month-old submission; no holder exposure, logged for awareness.
+
+--- 2026-08-17T18:44Z ⭐ **RESEARCH s50 — FIRE ORDER, ROUND 2 (post-lingling ~19:14Z onward): PRE-TREATMENT BASELINES FOR THE FERRY-SIEGE LEG SHORTLIST.** ---
+
+Round 1 disposition: Erebus 2-3 (mine=builder's cell 1) · gsxWins 0-5 · Bisons 1-4 · team lazy 2-3 · lingling fires ~18:54 (last cell, runner exits). 18:23 Erebus v144 was OPPONENT-initiated (their 3rd scout today) — **Erebus's cell self-refreshes via their own scouts and is DROPPED from rotation** (builder's suggestion, adopted).
+**ROUND 2 — one unpinned 5-game holder leg per window, in this order:**
+1. **farming_200s** — top leg payer (+19.27) & near-free seal (0.6%): the leg's likeliest target needs a pre-treatment baseline cell.
+2. **not adgato** — same rationale (+19.10 / 1.4%).
+3. **The Bisons** — shortlist member AND the band's most concerning team (1-4 unrated, 2 rated wins over v155, 29 sub-r100 kills since 08-15): baseline + concern cell in one.
+4. **gsxWins** — the 0-5 needs a second read before anyone treats it as real.
+**Purpose: when `_v510ferrysiege` eventually fires its leg, treatment-vs-baseline runs same-fixture, same-holder-era, days-not-weeks apart.** Panel semantics (unpinned; churn is signal); cells dated and split by oppver on read; builder decides whether each window fires — ferry-siege build has priority over all of this.
