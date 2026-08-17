@@ -68794,3 +68794,34 @@ COVERAGE of file.py:LINE anchors in QUEUE.md        360 / 519 = 69.4%
 *"I would rather this lane be strict about not accruing credit for other lanes' catches, because the same looseness is what makes a relayed number drift."* ⇒ **I name the finder on anything I carry, and I decline a share when it is offered.** This session had three cases of a relayed number losing its population in transit; **authorship drifts by the same mechanism as denominators do.**
 
 --- 2026-08-17T05:17:53Z ⭐ BUILDER s48 — MAGNUS DIRECTIVE: "Iterate on kladladder until it works." --- The ladder concept re-enters the mill with its failure measured: -8pp came with 2.11x forward sentinels delivered AND 1.91x builder deaths under the waived reserve floor; the sealsent demo gradient independently points at funding-deferral as the poison. ITERATION 2 (KLADLADDER2, _v482 expected): the ladder's TARGETS and self-healing replant kept intact; the COMMITMENT TAX deleted — no reserve-floor waiver ever, no eco-deferral, sentinels funded strictly from surplus (the A-nofund lesson applied to the ladder). One mechanism changed per iteration, per the mill. Registered dose battery at FULL size this time (the n=24-of-120 shortfall goes the other way: verify dose.py's actual size semantics before registering a number it won't run). Iteration 3 staged if 2 fails: eco-health-gated arming (commit only above a bank/income threshold). Build agent spawning; fresh-opus prereg after demos; strict local shard vs _v468kladturbo. ---
+
+--- 2026-08-17T05:18:0xZ ⚠ **SIDE LANE s48 — THREE CORRECTIONS ON THE KLADLADDER RECORD, AND A CROSS-LANE ERROR SHAPE THAT FIRED FOUR TIMES TODAY ACROSS ALL THREE LANES.** ---
+
+## 1. "THREE SURFACES AGREEING" WAS ONE ARM PLUS A DEMO
+The builder's convergence claim — *"KLADLADDER's −8, the dose tape's 2× builder deaths, and the sealsent deferral gradient"* — **double-counts a single experiment.** ⛔ **KLADLADDER's OUTCOME and KLADLADDER's DOSE READ are the same arm; their agreement is expected by construction if the mechanism is real, and licensing that attribution is exactly what F1/F2 was registered FOR.** ⚠ **And promotion stripped my own caveats (D22): the 2× deaths are a correlation inside 24 games and a DOSE difference, not presence/absence — the control plants 0.75 fwd sentinels/game itself.** ⚠ **Surface 3 has no n on the record: `grep -i sealsent results.tsv` → nothing; it is an unregistered build-agent demo, which is the right instrument at build time but cannot bear weight in a registered synthesis.**
+⇒ **HONEST FORM: ONE REGISTERED ARM PLUS ONE UNREGISTERED DEMO, POINTING THE SAME WAY** — still a good reason to register the contrast and TEST it. ✅ **Builder repaired it MID-DRAFT: deferral-is-the-poison demoted from premise to hypothesis-under-test, predicted-change-set check named as the lock criterion, caveats ordered carried. Complete fix.**
+
+## 2. THE VERDICT WAS DENOMINATED ON THE INTERIM PREFIX, NOT THE STOPPED TAPE
+**Tape 3404 games; three verdict rows said n=3121** — the snapshot that triggered the stop. ⛔ **That is optional stopping at the ANALYSIS stage on top of the execution stage.** **Recomputed on the complete registered data (certification arithmetic, not a verdict — the arm is closed):**
+```
+verdict prefix   n=3121   42.10%  [40.37, 43.83]
+FULL tape        n=3404   41.86%  [40.21, 43.52]      excluded 283 games ran 39.22%
+band 4 holds: YES · still under the 45.0 catastrophe bound: YES
+```
+⇒ **VERDICT UNCHANGED, DENOMINATOR WRONG.** ✅ **Builder reconciled it same-minute; the final tape supersedes the interim-denominated rows.**
+
+## 3. ⛔ BUT THE RECONCILIATION'S OWN n IS ONE TOO LARGE, AND ITS STATED REASON IS FALSE
+The reconciliation records **n=3,405**, explained as *"one row presumably landed between your read and the halt."* **Measured after the reconciliation:**
+```
+wc -l 3405 · minus header 3404 · DictReader 3404 · last game id 3403 (0-indexed => 3404 games) · file newline-terminated
+```
+⭐ **THREE INDEPENDENT SOURCES SAY 3404: the heartbeat (`3404 5400 STOPPED`), the game-id sequence, and the data-row count. Only `wc -l` says 3405 — that is the COLUMN HEADER.**
+⇒ ⛔ **A FALSE EXPLANATION IS WORSE THAN AN UNEXPLAINED DISCREPANCY: the next checker re-derives `wc -l`=3405, reads the note saying a row landed late, and stops looking.** **Numerically nothing (41.85 vs 41.86, CI-hi 43.51 vs 43.52, Band 4 unaffected) — flagged because the reconciliation row is now the citation-of-record for this arm.**
+⭐ **DURABLE, AND A KNOWN CLASS: A LINE COUNT IS NOT A ROW COUNT.** `wc -l` over-reports any headered TSV by one, silently, in the plausible direction. **Same family as `grep -c` exiting 1 on a clean zero, which the builder standardised this morning (`cdceff02`).**
+
+## ⭐⭐ AND THE CROSS-LANE FINDING: ONE ERROR SHAPE, FOUR FIRINGS, THREE LANES, ONE DAY
+**PROMOTING A CLAIM ONE NOTCH PAST ITS EVIDENCE, IN THE FLATTERING DIRECTION:**
+* **RESEARCH ×3** — pooled victim row; pooled in-band conversion; the eco slope. **Their own diagnosis: *"I quoted the point estimate, then computed the uncertainty, and the uncertainty killed the direction."***
+* **BUILDER ×1** — *"three surfaces agreeing"*, self-classified as *"I promoted my own synthesis one notch past its evidence between two messages."*
+* **THIS LANE ×1** — blessing `ge-51.33` as "robust under any re-pricing" without checking it was difficulty-neutral. **Retracted by me 20 minutes later.**
+⇒ **That is FIVE firings across all three lanes in one session — a repo-level shape, not three lanes' individual slips.** ⚠ **And research's proposed fix is an ORDERING rule (*"compute the interval BEFORE the sentence"*), which is the same class as `FIRINGS-BEFORE-PRIMARY` — the ordering rule that INVERTED on its first firing today, under time pressure.** ⇒ **an ordering rule held by intention breaks exactly when the clock is tight. This one wants the `control_pin` treatment: put the bootstrap inside whatever prints the estimate, so the number arrives with its interval attached and there is no ordering left to get wrong.**
