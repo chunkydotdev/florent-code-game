@@ -70097,3 +70097,23 @@ FIELD MEDIAN RATING: 1514
 
 ## ✅ WHAT THIS DOES SETTLE FOR `#78`
 Its premise — *"trunks are never joined on purpose"* — is **TRUE, and true of EVERYONE, which changes the row's character: it is not a deficit against the field, it is an unexploited mechanic.** ⚠ **And our conveyors-per-harvester by r200 is 5.14 pooled / 5.46 (v155) / 5.11 (v152) against a FIELD MEDIAN OF 5.60 — we are at or slightly BELOW the field, so the "we waste conveyors routing every harvester home alone" reading is not supported by this proxy.** ⇒ **`#78`'s currency claim ("the currency is SCALE, not titanium") survives; its implied deficit-against-the-field does not.**
+
+--- 2026-08-17T07:01:53Z ⭐⭐ **RESEARCH s48 — THE FLOW READ THE BUILDER GATED `#37` ON. IT IS DONE, AND IT PRICES THE PLANK AT A FEW PERCENT.** ---
+`corpus/flow.tsv` carries the classes the census could not reach — **`OWN_CORE` "delivered home", `OWN_NET` "moved along own conveyor", `ENEMY_NET` "pushed onto enemy conveyors", `ENEMY_CORE` "delivered into the ENEMY core — a scored own-goal"** (`tools/corpus/replay_flow.py:14-17`, attributed to the SOURCE team at `:132-134`). ⚠ **These are MOVEMENT EVENTS, not stacks — a stack crossing five of our tiles logs five `OWN_NET` events — so a share taken over ALL events understates stack-level loss by roughly the path length. The right denominator is arrivals: `OWN_CORE + ENEMY_NET + ENEMY_CORE`, one event per stack reaching somewhere.** *(I computed the wrong denominator first and caught it by reading the decoder rather than assuming the field meant what its name suggested.)*
+```
+STACK-LEVEL LEAK — of the stacks that ARRIVE somewhere, what share arrived at the ENEMY?
+team              rating  deliv/game  LEAK      |  team            rating  deliv/g  LEAK
+gsxWins             1872     139.7   0.0145     |  Pantheon          1988    380.9  0.0323
+Jython              2212     234.8   0.0215     |  farming_200s      1888    123.7  0.0328
+sporks              2048     343.4   0.0280     |  Clankers          1913    186.6  0.0353
+Bean counters       2072     377.6   0.0409     |  Pivot             2068    239.3  0.0660
+--- OpenSverige v155         139.6   0.0575     |  FIELD MEDIAN                     0.0513
+                                                |  worst 0.7577   best 0.0145
+```
+## 1. ⇒ `#37`'s OFFENSIVE PLANK IS PRICED, AND THE PRIZE IS SMALL
+**The opponent's LEAK is the entire prize available to a tapper.** ⇒ **against admissible-band opponents that ceiling is 1.5-6.6% of their delivered stacks — gsxWins 1.5%, Clankers 3.5%, Juusto/Erebus-class 3-5%, Pivot 6.6% — and we would capture only PART of a ceiling that is already single-digit.** ⛔ **A plank whose maximum possible effect is a few percent of one opponent's economy is not a kill-window plank under `R1000_IS_DEFEAT`, and the 11× census gap I reported an hour ago should be read against THIS ceiling rather than as an opportunity in itself.** ⇒ **`#37` is priced, not killed: the mechanic is real and the prize is small.**
+
+## 2. ⭐ AND THE DEFENSIVE HALF IS OURS AND SIMILARLY SIZED — BUT IT IS REAL
+**v155 leaks 5.75% of arriving stacks; the field median is 5.13% and the best is gsxWins at 1.45%.** ⇒ **closing to best-in-class would recover roughly 4pp of our delivery.** ⚠ **Our version series is noisy but has a shape: v112-v116 ran 0.090-0.102, the worst modern era; v139/v154 reached 0.037; v155 is 0.0575.** ⇒ **we have been as good as 3.7% within the current lineage, so 5.75% is not a floor.**
+⛔ **AND A NUMBER I AM DELIBERATELY NOT LEADING WITH, because it is the trap I have hit five times today: DELIVERIES PER GAME — v155 139.6 against Pantheon 380.9, Bean counters 377.6, sporks 343.4. THAT IS 2.4x AND IT IS CONFOUNDED BY GAME LENGTH: a team that kills at r180 delivers less than one that plays to r400, and our median kill is ~180.** ⇒ **the LEAK RATE is a ratio and is far less sensitive to length, which is why it carries the finding and the raw delivery count does not.**
+✅ **THE GATE THE BUILDER SET IS SATISFIED: the flow surface CAN answer the tap question, it says the ceiling is single-digit percent, and no arm should be built off `#37` expecting more.**
