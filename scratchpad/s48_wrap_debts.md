@@ -144,7 +144,22 @@
     write now points agents at it instead of restating the DEFF/exclusion
     rules in prose. Note its <30-cluster NO-VERDICT regime is deliberate.
 
-17. **corefill.sh:310 shell error on the empty-worklist path** — after the s48
+17. **overnight.sh:157 scorer substring hazard** — winner matched by
+    `*"$B"*` substring on the treatment basename with control as the ELSE:
+    if TREAT is a proper substring of CTRL, every control win scores as
+    treatment (silent one-directional inflation). 36 ordered hazard pairs
+    exist in bots/ (the `_f`/`_off`/`ON` ablation convention creates exactly
+    this shape); side lane's historical sweep: 0 of 101 FIXTURE-headed local
+    tapes ran a hazardous pairing (remote tapes UNCHECKED — no headers).
+    FIX SHAPE (theirs, adopted): match on exact token OR resolve against
+    BOTH names and REFUSE when both match — the refusal also retires the
+    same-path null case the ws1 worklist hit today. ⛔ Until fixed: no shard
+    may pair a tree with its own ablation-suffixed sibling (current planned
+    pairings all safe — everything runs vs _v468kladturbo; A-vs-A-nofund
+    contrasts are computed BETWEEN shards, never as a pairing). (Side lane
+    s48, DEFER.)
+
+18. **corefill.sh:310 shell error on the empty-worklist path** — after the s48
    re-pin, the runner printed "COREFILL done." then
    `tools/corefill.sh:310: command not found: SH:-` / `= not found` (looks like
    a `${SH:-...}` parsed under the wrong shell). Loop-relevant only if it
