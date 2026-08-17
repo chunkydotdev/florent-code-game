@@ -128,6 +128,7 @@ import csv
 import gzip
 import re
 import sys
+from datetime import datetime
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
@@ -168,47 +169,162 @@ class EraSurfaceUnsupported(Exception):
     unfiltered rows in this case — see the module docstring's SURFACES section."""
 
 
-# ===== LIVE_VERSION_HINT — see "WHAT era=\"live\" MEANS" above for why this is
-# a hand-maintained constant rather than something parsed out of PROGRAMME.md. =====
+# ===== LIVE_VERSION_HINT — DERIVED, NOT EMBEDDED (rewritten s48 wrap, CLASS A) ==
 #
-# PROGRAMME.md's INCUMBENT field is a bot-TREE PATH (`bots/_v223sealrepair`), not
-# the platform submission-version number the corpus surfaces key on. The tree
-# name's own digits (223) are a DIFFERENT counter from the platform version (140)
-# — confirmed live 2026-08-14 against HANDOVER.md's banner ("LIVE: v140 =
-# `bots/_v223sealrepair`") and cross-checked as the max `ourver` present in
-# corpus/ladder_games.tsv. Update this by hand on every ship; do not attempt to
-# derive it from INCUMBENT's tree-path digits, and do not parse HANDOVER.md's
-# prose banner into this file — it is not a stable, parsed surface.
+# ⛔ WHAT THIS USED TO BE, AND WHY IT WAS REPLACED. Until 2026-08-17 this was a
+# hand-typed literal (`LIVE_VERSION_HINT = 140  # bots/_v223sealrepair`) with a
+# paragraph arguing it could not be derived: PROGRAMME.md's INCUMBENT is a bot-
+# TREE PATH (`bots/_v468kladturbo`), whose own digits are a DIFFERENT counter
+# from the platform submission version, and HANDOVER.md's banner is prose, not a
+# parsed surface. Both halves of that argument are still TRUE — and the
+# conclusion drawn from them was still wrong, because there is a third surface
+# neither considered: **`elo_history.tsv`'s `active_bot` column, which tags every
+# poll row with the version ACTIVE AT POLL TIME.** That is precisely this hint's
+# semantics ("who holds the slot RIGHT NOW", ahead of any completed match), it is
+# machine-written every ~5 minutes, and nobody has to remember to bump it.
+# Measured at the wrap: the literal read v140 while the platform was on v155 —
+# FIFTEEN versions and three days stale. A hand-maintained value nobody updates
+# is the exact failure class this file exists to close.
 #
-# ⭐ THIS CONSTANT IS A HINT, NOT THE LAST WORD, PER MAGNUS'S CATCH 2026-08-14 —
-# a hand-maintained value nobody updates on the next ship is the SAME failure
-# class this file exists to close: era="live" would then report a confident
-# WRONG era under this file's own name. `_resolve_live_version()` below turns it
-# into a TWO-WAY ALARM against the max `ourver` actually seen in
-# corpus/ladder_games.tsv (the one place this cross-check happens, so it can't
-# drift between callers): if the tape has gone PAST the hint, the hint is stale
-# (we shipped and forgot to bump this file) and the TAPE wins, loudly. If the
-# hint is AHEAD of the tape, that's the normal few minutes right after a ship —
-# the ladder hasn't paired the new version yet — and the HINT wins, quietly
-# noted rather than alarmed. Naively trusting the tape alone would be wrong in
-# THIS second direction: for ~20 minutes post-ship it would silently return the
-# previous version's rows under the name "live". Neither branch ever falls
-# through to a pooled read — both resolve to one concrete version number.
-LIVE_VERSION_HINT = 140  # bots/_v223sealrepair "Loki v10", shipped 2026-08-14T11:37Z
+# ⛔ AND THE SAME COLUMN IS THE WRONG READ ELSEWHERE — that is not a contradiction,
+# it is the reason to write the distinction down. `tools/ship_ledger.py:24` and
+# `tools/slot_rule.py` both forbid the poll-time tag for LEAK ACCOUNTING, because
+# it records who was active WHEN SAMPLED, not who played the match; that question
+# needs per-match `ourver`. Here we are asking who is active NOW, which is the one
+# question the poll-time tag answers correctly and the per-match column does not.
+#
+# THE RESOLUTION, and it now has FOUR live branches instead of three. The hint is
+# cross-checked against the max `ourver` actually seen in corpus/ladder_games.tsv
+# (the one place this happens, so it cannot drift between callers):
+#   * EQUAL              -> silent, normal.
+#   * HINT AHEAD of tape -> `fresh_ship`: the minutes after a ship, before the
+#                           ladder has paired the new version. HINT wins, noted.
+#   * HINT BEHIND tape, and the poll tape's newest row is OLDER than the ladder
+#     tape's newest row -> `stale_hint`: the poller is lagging. TAPE wins, loudly.
+#   * HINT BEHIND tape, and the poll tape's newest row is NEWER -> `rollback`:
+#     ⭐ THE BRANCH THE OLD CODE DID NOT HAVE, and it was live-wrong at the moment
+#     this was rewritten. 2026-08-17T07:12Z the poll tape read v155 (Odin v157
+#     rolled back after 68 minutes) while ladder_games.tsv still carried v157 rows
+#     from 06:12Z, so `era="live"` confidently returned the rows of a version that
+#     was NO LONGER LIVE. The general rule that fixes both directions is **the
+#     MORE RECENT OBSERVATION WINS**, so this branch resolves to the HINT.
+# Neither branch ever falls through to a pooled read — every one resolves to one
+# concrete version number, or REFUSES.
+#
+# ⛔ REFUSE, DON'T DEFAULT: if BOTH surfaces are unreadable there is no honest
+# answer to "which version is live", and the old code's "use the hint UNVERIFIED"
+# is not available any more — there is no embedded constant left to fall back on.
+# It raises `EraLiveUnresolvable`. An era guard that invents an era is worse than
+# one that stops.
+_LIVE_HINT_TAPE = ROOT / "elo_history.tsv"
 
 # The one place era="live" cross-checks the hint against reality.
 _LADDER_FOR_LIVE_CHECK = ROOT / "corpus" / "ladder_games.tsv"
 
 
-def _resolve_live_version():
-    """(resolved_version, tag). tag in {"stale_hint", "fresh_ship", None}.
+def _derive_live_hint():
+    """(version, iso_ts) off elo_history.tsv's newest poll row, or (None, None).
 
-    None means the hint and the tape agree (or the tape couldn't be read) —
-    the silent, normal path. Always prints when it disagrees; never silent
-    about a disagreement, never loud about agreement."""
-    hint = LIVE_VERSION_HINT
+    Reads the LAST row carrying a parseable `active_bot` — not the max, because
+    a ROLLBACK legitimately moves the tag DOWN and a max would be blind to
+    exactly that."""
+    ver = ts = None
+    try:
+        with _open_tsv(_LIVE_HINT_TAPE) as fh:
+            for r in csv.DictReader(fh, delimiter="\t"):
+                raw = (r.get("active_bot") or "").strip().lstrip("vV")
+                if not raw.isdigit():
+                    continue
+                ver, ts = int(raw), (r.get("timestamp") or "").strip() or None
+    except (FileNotFoundError, OSError):
+        return None, None
+    return ver, ts
+
+
+# ⛔ The module-level BINDING of these two lives further down, immediately after
+# `_open_tsv` is defined — `_derive_live_hint()` calls it, so binding here would
+# raise NameError at import. Declared here only so the reader meets them beside
+# the docstring that explains them.
+
+
+def _ts_cmp(s):
+    """ISO-ish stamp -> datetime, or None. ⛔ NOT a string compare: the two tapes
+    write DIFFERENT shapes (`2026-08-17T07:12Z` vs `2026-08-17T06:12:59.805Z`)
+    and lexicographic order gets the same-minute case backwards ('Z' > ':').
+    This comparison decides ROLLBACK vs LAG, so it parses."""
+    if not s:
+        return None
+    s = s.strip().replace("Z", "+00:00")
+    for cand in (s, s + ":00+00:00", s + "+00:00"):
+        try:
+            return datetime.fromisoformat(cand)
+        except ValueError:
+            continue
+    return None
+
+
+def _resolve_live(hint, hint_ts, tape_max, tape_ts):
+    """PURE. (version, tag, message). Every branch of the table above.
+
+    Pure on purpose: the selftest drives all six states through THIS function
+    with literal arguments, so no branch depends on what the two tapes happen to
+    say on the day the selftest runs. tag in
+    {None, "fresh_ship", "stale_hint", "rollback", "hint_blind", "tape_blind"}.
+    """
+    if hint is None and tape_max is None:
+        return None, "blind", (
+            "era='live' UNRESOLVABLE: neither elo_history.tsv (poll-time holder) "
+            "nor corpus/ladder_games.tsv (per-match ourver) could be read. There "
+            "is no embedded fallback version by design — refusing rather than "
+            "inventing an era.")
+    if hint is None:
+        return tape_max, "hint_blind", (
+            f"⛔ era='live' HINT BLIND: elo_history.tsv unreadable or carries no "
+            f"parseable `active_bot`, so the live holder is unknown. Falling back "
+            f"to the ladder tape's newest ourver v{tape_max}, which is the last "
+            f"version that PLAYED, not necessarily the one that HOLDS.")
+    if tape_max is None:
+        return hint, "tape_blind", (
+            f"era='live' cross-check UNAVAILABLE (corpus/ladder_games.tsv missing "
+            f"or unreadable) — using the poll tape's holder v{hint} UNVERIFIED.")
+    if hint == tape_max:
+        return hint, None, ""
+    if hint > tape_max:
+        return hint, "fresh_ship", (
+            f"era='live': the poll tape's holder is v{hint} but ladder_games.tsv "
+            f"has not seen it yet (newest ourver v{tape_max}) — normal in the "
+            f"minutes right after a ship, before the ladder has paired the new "
+            f"version. USING the holder v{hint}.")
+    # hint < tape_max: lag or rollback, and only the clocks can tell them apart.
+    _h, _t = _ts_cmp(hint_ts), _ts_cmp(tape_ts)
+    if _h is not None and _t is not None and _h > _t:
+        return hint, "rollback", (
+            f"⛔ era='live' ROLLBACK: the poll tape says v{hint} at {hint_ts}, "
+            f"NEWER than ladder_games.tsv's newest row {tape_ts} which still "
+            f"carries v{tape_max}. The higher version played and was then pulled. "
+            f"USING v{hint} (the more recent observation); v{tape_max}'s rows are "
+            f"a PAST era, not the live one.")
+    return tape_max, "stale_hint", (
+        f"⛔ era='live' STALE HINT: the poll tape says v{hint} (at "
+        f"{hint_ts or 'unknown time'}) but ladder_games.tsv's newest ourver is "
+        f"v{tape_max} (at {tape_ts or 'unknown time'}) and the LADDER tape is the "
+        f"more recent observation — the poller is lagging a ship. USING "
+        f"v{tape_max} (the tape), NOT the lagging hint.")
+
+
+class EraLiveUnresolvable(Exception):
+    """Both live-version surfaces are unreadable. era="live" refuses rather than
+    guessing — there is deliberately no embedded fallback constant."""
+
+
+def _resolve_live_version():
+    """(resolved_version, tag) — reads both surfaces, then defers to _resolve_live.
+
+    Always prints when the two surfaces disagree; never silent about a
+    disagreement, never loud about agreement."""
+    hint, hint_ts = LIVE_VERSION_HINT, LIVE_VERSION_HINT_TS
     data_max = None
-    with_freshness_age = None
+    data_ts = None
     try:
         with _open_tsv(_LADDER_FOR_LIVE_CHECK) as fh:
             for r in csv.DictReader(fh, delimiter="\t"):
@@ -221,36 +337,20 @@ def _resolve_live_version():
                     continue
                 if data_max is None or iv > data_max:
                     data_max = iv
-    except FileNotFoundError:
+                c = (r.get("created") or "").strip()
+                if c and (data_ts is None or c > data_ts):
+                    data_ts = c
+    except (FileNotFoundError, OSError):
         pass
     if _LADDER_FOR_LIVE_CHECK.exists():
-        _, with_freshness_age, _ = assert_fresh(_LADDER_FOR_LIVE_CHECK, max_age_h=24)
-    age_txt = f"{with_freshness_age:.1f}h" if with_freshness_age is not None else "unknown"
+        assert_fresh(_LADDER_FOR_LIVE_CHECK, max_age_h=24)
 
-    if data_max is None:
-        # No tape to cross-check against at all -- use the hint, unverified,
-        # and say so rather than pretending this was checked.
-        print(f"[era_guard] era='live' cross-check UNAVAILABLE "
-              f"({_LADDER_FOR_LIVE_CHECK} missing or unreadable) — using "
-              f"LIVE_VERSION_HINT v{hint} UNVERIFIED.", file=sys.stderr)
-        return hint, None
-
-    if data_max > hint:
-        print(f"[era_guard] ⛔ era='live' STALE HINT: LIVE_VERSION_HINT is v{hint} "
-              f"but ladder_games.tsv's newest ourver is v{data_max} (tape age "
-              f"{age_txt}) — the constant was not bumped after a ship. USING "
-              f"v{data_max} (the tape), NOT the stale hint.", file=sys.stderr)
-        return data_max, "stale_hint"
-
-    if data_max < hint:
-        print(f"[era_guard] era='live': LIVE_VERSION_HINT is v{hint} but "
-              f"ladder_games.tsv has not seen it yet (newest ourver v{data_max}, "
-              f"tape age {age_txt}) — normal in the minutes right after a ship, "
-              f"before the ladder has paired the new version. USING the hint "
-              f"v{hint}.", file=sys.stderr)
-        return hint, "fresh_ship"
-
-    return hint, None  # equal — silent, normal path
+    ver, tag, msg = _resolve_live(hint, hint_ts, data_max, data_ts)
+    if msg:
+        print(f"[era_guard] {msg}", file=sys.stderr)
+    if ver is None:
+        raise EraLiveUnresolvable(msg)
+    return ver, (None if tag is None else tag)
 
 
 _INT_RE = re.compile(r"\A\d+\Z")
@@ -309,6 +409,11 @@ def _open_tsv(path: Path):
     if gz.exists():
         return gzip.open(gz, "rt", newline="")
     raise FileNotFoundError(f"era_guard: neither {plain} nor {gz} exists")
+
+
+# ===== The DERIVED live-version hint (see the long block above). Bound HERE and
+# not at its docstring because `_derive_live_hint()` calls `_open_tsv`. =====
+LIVE_VERSION_HINT, LIVE_VERSION_HINT_TS = _derive_live_hint()
 
 
 def _report_freshness(path: Path, max_age_h: float) -> None:
@@ -605,27 +710,97 @@ def selftest() -> int:
         # mutation never took) — fixed there, and reapplied here rather than risk
         # reintroducing it. =====
         print("\n--- era='live' hint vs tape: two-way alarm (both directions + equal) ---")
-        global LIVE_VERSION_HINT
+        global LIVE_VERSION_HINT, LIVE_VERSION_HINT_TS
         original_hint = LIVE_VERSION_HINT
+        original_hint_ts = LIVE_VERSION_HINT_TS
         with open(LADDER, newline="") as fh:
-            real_data_max = max(int(r["ourver"]) for r in csv.DictReader(fh, delimiter="\t")
-                                 if r.get("ourver"))
+            _lad = list(csv.DictReader(fh, delimiter="\t"))
+        real_data_max = max(int(r["ourver"]) for r in _lad if r.get("ourver"))
+        real_data_ts = max((r.get("created") or "") for r in _lad)
 
-        # --- direction 1: hint STALE (below the tape) -> alarm fires, TAPE wins ---
+        # ===== THE PURE RESOLVER, ALL SEVEN STATES, WITH LITERAL ARGUMENTS =====
+        # Added s48 with the derive-don't-embed rewrite. The end-to-end cells
+        # below can only reach the states the two REAL tapes happen to be in
+        # today; this table reaches every branch on every day, which is the only
+        # way `rollback` and the two BLIND arms are ever seen to fire at all.
+        _H = "2026-08-17T07:12Z"          # a poll stamp NEWER than the ladder row
+        _OLD = "2026-08-17T05:00Z"        # a poll stamp OLDER than the ladder row
+        _T = "2026-08-17T06:12:59.805Z"   # the ladder tape's shape, note the format
+        for _label, _args, _want_v, _want_tag in (
+            ("equal -> silent", (155, _H, 155, _T), 155, None),
+            ("hint ahead -> fresh_ship, HINT wins", (158, _H, 157, _T), 158, "fresh_ship"),
+            ("hint behind + poll NEWER -> rollback, HINT wins",
+             (155, _H, 157, _T), 155, "rollback"),
+            ("hint behind + poll OLDER -> stale_hint, TAPE wins",
+             (155, _OLD, 157, _T), 157, "stale_hint"),
+            ("no poll tape -> hint_blind, TAPE wins loudly", (None, None, 157, _T), 157, "hint_blind"),
+            ("no ladder tape -> tape_blind, HINT unverified", (155, _H, None, None), 155, "tape_blind"),
+            ("neither -> REFUSES (no embedded fallback)", (None, None, None, None), None, "blind"),
+        ):
+            _v, _tag, _msg = _resolve_live(*_args)
+            check(f"_resolve_live: {_label}", (_v, _tag), (_want_v, _want_tag))
+        # ...and the refusal is a RAISE at the caller, not a None nobody checks.
+        _raised = False
+        try:
+            LIVE_VERSION_HINT, LIVE_VERSION_HINT_TS = None, None
+            _saved_ladder = globals()["_LADDER_FOR_LIVE_CHECK"]
+            globals()["_LADDER_FOR_LIVE_CHECK"] = ROOT / "corpus" / "__no_such_tape__.tsv"
+            with contextlib.redirect_stderr(io.StringIO()):
+                _resolve_live_version()
+        except EraLiveUnresolvable:
+            _raised = True
+        finally:
+            globals()["_LADDER_FOR_LIVE_CHECK"] = _saved_ladder
+            LIVE_VERSION_HINT, LIVE_VERSION_HINT_TS = original_hint, original_hint_ts
+        check("both surfaces blind -> EraLiveUnresolvable raised, never a guessed era",
+              _raised, True)
+        _ok_ver = None
+        with contextlib.redirect_stderr(io.StringIO()):
+            _ok_ver, _ = _resolve_live_version()
+        check("...but the same call with the real surfaces does NOT raise",
+              isinstance(_ok_ver, int) and _ok_ver > 0, True)
+
+        # --- direction 1: hint BEHIND the tape and the POLL TAPE IS OLDER (a
+        # lagging poller, not a rollback) -> STALE HINT alarm fires, TAPE wins.
+        # ⛔ The timestamp must be forced too. Before s48 the hint was a hand-typed
+        # int with no clock, so "below the tape" could only mean "stale"; now that
+        # it is derived from a poll tape, below-the-tape is AMBIGUOUS between lag
+        # and rollback and only the clock separates them. A cell that forced the
+        # version alone would silently test the ROLLBACK branch instead. ---
         stale_buf = io.StringIO()
         try:
-            LIVE_VERSION_HINT = 1
+            LIVE_VERSION_HINT, LIVE_VERSION_HINT_TS = 1, "2000-01-01T00:00Z"
             with contextlib.redirect_stderr(stale_buf):
                 rows_stale, used_stale = our_rows(LADDER, era="live")
         finally:
-            LIVE_VERSION_HINT = original_hint
-        check("stale hint (v1) -> resolves to the TAPE's max, not the hint",
+            LIVE_VERSION_HINT, LIVE_VERSION_HINT_TS = original_hint, original_hint_ts
+        check("stale hint (v1, old poll stamp) -> resolves to the TAPE's max, not the hint",
               used_stale, f"live (v{real_data_max})")
         check("stale hint -> STALE HINT alarm text fires",
               "STALE HINT" in stale_buf.getvalue(), True)
         rows_at_data_max, _ = our_rows(LADDER, era=real_data_max)
         check("stale hint -> rows match era=<tape max> exactly (not empty, not pooled)",
               len(rows_stale) == len(rows_at_data_max) and len(rows_stale) > 0, True)
+
+        # --- direction 1b: the SAME low hint with a NEWER poll stamp must take the
+        # OTHER branch. This is the cell that proves the clock is load-bearing
+        # rather than decorative — same version, opposite verdict. ---
+        roll_buf = io.StringIO()
+        try:
+            LIVE_VERSION_HINT, LIVE_VERSION_HINT_TS = 1, "2099-01-01T00:00Z"
+            with contextlib.redirect_stderr(roll_buf):
+                rows_roll, used_roll = our_rows(LADDER, era="live")
+        finally:
+            LIVE_VERSION_HINT, LIVE_VERSION_HINT_TS = original_hint, original_hint_ts
+        check("same low hint + NEWER poll stamp -> ROLLBACK, hint wins (clock is load-bearing)",
+              used_roll, "live (v1)")
+        check("rollback -> ROLLBACK text fires and STALE HINT does not",
+              ("ROLLBACK" in roll_buf.getvalue())
+              and ("STALE HINT" not in roll_buf.getvalue()), True)
+        _rows_v1, _ = our_rows(LADDER, era=1)
+        check("rollback -> rows are exactly era=1's, NOT pooled",
+              (len(rows_roll), len(rows_roll) == len(_lad)),
+              (len(_rows_v1), False))
 
         # --- direction 2: hint AHEAD of the tape (normal fresh-ship gap) -> a NOTE
         # fires (never the stale alarm), the HINT wins, and it must not read
@@ -645,6 +820,26 @@ def selftest() -> int:
         check("fresh-ship hint -> empty (no data at v999999), NOT pooled",
               len(rows_fresh), 0)
 
+        # --- the DERIVATION itself: it must actually read the poll tape, and it
+        # must read the LAST row rather than the max (a rollback moves the tag
+        # DOWN, and a max would be blind to exactly the case this rewrite exists
+        # for). Driven against a fixture whose last row is NOT its max. ---
+        _fix = ROOT / "scratchpad" / "_era_guard_hint_fixture.tsv"
+        try:
+            _fix.write_text("timestamp\trating\tmatches\tactive_bot\tnote\ttier\n"
+                            "2026-08-17T07:00Z\t1800\t1\tv157\tx\tE\n"
+                            "2026-08-17T07:05Z\t1800\t1\tv155\tx\tE\n")
+            _saved_tape = globals()["_LIVE_HINT_TAPE"]
+            globals()["_LIVE_HINT_TAPE"] = _fix
+            check("derive reads the LAST poll row, not the max (rollback-visible)",
+                  _derive_live_hint(), (155, "2026-08-17T07:05Z"))
+            globals()["_LIVE_HINT_TAPE"] = ROOT / "scratchpad" / "__no_such_poll_tape__.tsv"
+            check("...and a missing poll tape derives BLIND, never a number",
+                  _derive_live_hint(), (None, None))
+        finally:
+            globals()["_LIVE_HINT_TAPE"] = _saved_tape
+            _fix.unlink(missing_ok=True)
+
         # --- equal case: whatever the CURRENT unforced state actually is.
         # Computed against ground truth rather than hardcoded, so this cell stays
         # correct (and itself becomes part of the alarm) whether or not the hint
@@ -653,34 +848,80 @@ def selftest() -> int:
         with contextlib.redirect_stderr(equal_buf):
             rows_now, used_now = our_rows(LADDER, era="live")
         equal_text = equal_buf.getvalue()
-        expected_now = real_data_max if real_data_max > original_hint else original_hint
+        # Ground truth for TODAY'S state, computed the same way the resolver does
+        # — including the clock arm, so this cell does not quietly assume the
+        # pre-s48 "tape always wins when it is ahead" rule.
+        expected_now, _tag_now, _ = _resolve_live(
+            original_hint, original_hint_ts, real_data_max, real_data_ts)
         if original_hint == real_data_max:
             print(f"  [note] LIVE_VERSION_HINT (v{original_hint}) == tape max "
                   f"(v{real_data_max}) RIGHT NOW — the silent/equal path is "
                   f"exercised LIVE today, not only under forcing. (The two cells "
                   f"above are the only ones forcing a disagreement.)")
         else:
-            print(f"  [note] LIVE_VERSION_HINT (v{original_hint}) != tape max "
-                  f"(v{real_data_max}) RIGHT NOW — the constant is out of sync "
-                  f"with the tape at the moment this ran; the cross-check is "
-                  f"catching that live, which is the point of building it.")
+            print(f"  [note] the poll tape's holder (v{original_hint}) != ladder "
+                  f"tape max (v{real_data_max}) RIGHT NOW — resolved as "
+                  f"'{_tag_now}'. The two surfaces disagree at the moment this "
+                  f"ran and the cross-check is naming it live, which is the "
+                  f"point of building it.")
         check("current (unforced) state: era_used matches the actually-resolved version",
               used_now, f"live (v{expected_now})")
         # "silent" means silent about the HINT-vs-TAPE comparison specifically —
         # _rows_ladder_games still prints its own unrelated freshness line for
         # the surface it opened, so the bar is "no alarm/note markers", not a
         # literally empty buffer.
-        has_alarm_or_note = ("STALE HINT" in equal_text) or ("has not seen it yet" in equal_text)
+        has_alarm_or_note = any(m in equal_text for m in
+                                ("STALE HINT", "has not seen it yet", "ROLLBACK",
+                                 "HINT BLIND", "cross-check UNAVAILABLE"))
         check("current (unforced) state: silent iff hint==tape, else something fires",
               (not has_alarm_or_note) if original_hint == real_data_max else has_alarm_or_note,
               True)
 
         # ===== Multi-surface coverage: meta_join.tsv =====
+        #
+        # ⛔ THESE CELLS USED TO BE FROZEN ABSOLUTE COUNTS (8338 / 1185 / 42778 /
+        # 9018) AND ALL FOUR WERE FAILING, EVERY RUN, FOR DAYS — measured at the
+        # s48 wrap: `SELFTEST FAIL (4)`, entirely because the corpus GREW (and
+        # meta_join's v125 count grew too, from re-decoded archives: a "frozen"
+        # era is not a frozen ROW COUNT). A selftest that always fails is a
+        # selftest nobody can gate on; the four real assertions in this file were
+        # being read past to get to the noise. Same class as the derived hint
+        # above: EMBEDDED WORLD-STATE in a tool, drifting silently.
+        #
+        # WHAT REPLACES THEM: an INDEPENDENT recount written to the SPEC (the
+        # module docstring's SURFACES section), not copied from the reader under
+        # test, plus a MONOTONE FLOOR calibrated on a named date. A count that
+        # DROPS is still a failure — a corpus that shrinks is an alarm — but
+        # growth is not. Driven to the other verdict below by mutating the
+        # recount.
         print("\n--- meta_join.tsv (per-row resolution via us_side) ---")
+
+        def _recount_meta(want):
+            """Independent our-side count: us_side names the seat, the seat names
+            the version column, the version must parse. Written from the spec."""
+            n = 0
+            with _open_tsv(META) as fh:
+                for r in csv.DictReader(fh, delimiter="\t"):
+                    col = {"a": "teamAVersion", "b": "teamBVersion"}.get(r.get("us_side"))
+                    if not col:
+                        continue
+                    raw = r.get(col) or ""
+                    if not raw.lstrip("-").isdigit():
+                        continue
+                    if want is None or int(raw) == want:
+                        n += 1
+            return n
+
         mj_all, _ = our_rows(META, era="all")
         mj_125, _ = our_rows(META, era=125)
-        check("meta_join era='all' our-side rows", len(mj_all), 8338)
-        check("meta_join era=125 our-side rows", len(mj_125), 1185)
+        check("meta_join era='all' == an INDEPENDENT our-side recount", len(mj_all), _recount_meta(None))
+        check("meta_join era=125 == the same recount at v125", len(mj_125), _recount_meta(125))
+        check("meta_join era='all' has not SHRUNK below the 2026-08-17 floor (8338)",
+              len(mj_all) >= 8338, True)
+        # MUTATION: the recount must be able to disagree, or it is a constant
+        # column validating anything. Compare against a deliberately wrong recount.
+        check("...and the recount CAN disagree (mutation: wrong era)",
+              len(mj_all) == _recount_meta(125), False)
         check("meta_join both non-empty and different",
               len(mj_all) > 0 and len(mj_125) > 0 and len(mj_all) != len(mj_125), True)
         mj_raised = False
@@ -692,18 +933,55 @@ def selftest() -> int:
 
         # ===== Multi-surface coverage: a join.tsv-backed surface =====
         print("\n--- build_agg.tsv (via corpus/join.tsv) ---")
+        def _recount_join(surface, team_col_name, want):
+            """Independent count for a join.tsv-backed surface: join.tsv names our
+            engine team ordinal and our version per FILE; a row is ours iff its
+            team column equals that ordinal. Written from the spec, not copied."""
+            mapping = {}
+            with open(META.parent / "join.tsv", "rt", newline="") as fh:
+                for r in csv.DictReader(fh, delimiter="\t"):
+                    try:
+                        mapping[r["file"]] = (int(r["our_team"]), int(r["ourver"]))
+                    except (KeyError, ValueError):
+                        continue
+            n = 0
+            with _open_tsv(surface) as fh:
+                for r in csv.DictReader(fh, delimiter="\t"):
+                    info = mapping.get(r.get("file"))
+                    if info is None:
+                        continue
+                    ours, ver = info
+                    raw = r.get(team_col_name)
+                    if raw is None or not str(raw).strip().lstrip("-").isdigit():
+                        continue
+                    if int(raw) != ours:
+                        continue
+                    if want is None or ver == want:
+                        n += 1
+            return n
+
         ba_all, _ = our_rows(BUILD_AGG, era="all")
         ba_125, _ = our_rows(BUILD_AGG, era=125)
-        check("build_agg era='all' our rows", len(ba_all), 42778)
-        check("build_agg era=125 our rows", len(ba_125), 3203)
+        _ba_col = _team_column("build_agg.tsv", list(ba_all[0].keys())) if ba_all else "team"
+        check("build_agg era='all' == an INDEPENDENT join-table recount",
+              len(ba_all), _recount_join(BUILD_AGG, _ba_col, None))
+        check("build_agg era=125 == the same recount at v125",
+              len(ba_125), _recount_join(BUILD_AGG, _ba_col, 125))
+        check("build_agg era='all' has not SHRUNK below the 2026-08-17 floor (42778)",
+              len(ba_all) >= 42778, True)
         check("build_agg both non-empty and different",
               len(ba_all) > 0 and len(ba_125) > 0 and len(ba_all) != len(ba_125), True)
 
         print("\n--- econ.tsv (KNOWN CORRUPT, but era-filterable) ---")
         econ_all, _ = our_rows(ECON, era="all")
         econ_125, _ = our_rows(ECON, era=125)
-        check("econ era='all' our rows", len(econ_all), 9018)
-        check("econ era=125 our rows", len(econ_125), 679)
+        _ec_col = _team_column("econ.tsv", list(econ_all[0].keys())) if econ_all else "team"
+        check("econ era='all' == an INDEPENDENT join-table recount",
+              len(econ_all), _recount_join(ECON, _ec_col, None))
+        check("econ era=125 == the same recount at v125",
+              len(econ_125), _recount_join(ECON, _ec_col, 125))
+        check("econ era='all' has not SHRUNK below the 2026-08-17 floor (9018)",
+              len(econ_all) >= 9018, True)
 
         # Corruption warning must actually fire — checked OUTSIDE the redirect
         # below so we can inspect it; done as its own capture here.
