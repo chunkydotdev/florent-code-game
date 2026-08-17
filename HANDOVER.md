@@ -41,10 +41,14 @@ cross-subsystem (D1 s47). Regime record today: 3-of-5 stopped at the 1000-look
   rivalry; TW inert in this matchup by construction). At n=345 read
   [41.9,52.5] = NO SIGNAL; needs ~n=2000. THE ONLY instrument that can
   arbitrate Sleipnir-vs-Odin (tenures can't).
-* **OPENFAST build agent** (may still be running — check its tree/commit):
-  RE-TARGETED mid-build to FIRST-CONVEYOR timing (-4.42 rounds vs who we
-  face; harvester timing is at PARITY and must NOT be broken — the
-  cross-team 4-round harvester gap was vs teams we rarely play).
+* **OPENFAST LANDED (_v486openfast, 78965d91) — READY FOR PREREG, the eco
+  directive's lead candidate:** binding constraint = SPAWN PLACEMENT (pure
+  dispersion hash, no geometry; +10.5 median extra walk tiles); fix = ore-
+  distance-first spawn sort for eco ordinals. Demo: first conveyor -1.43
+  rounds paired, first harvester -1.49 (parity IMPROVED), flag-off 16/16
+  with positive control, TW does-not-bind. Structural fact: c1 cannot
+  precede h1 by construction (97/97). Successor: fresh-opus prereg + strict
+  local shard. Full relay in the tail ~07:3xZ.
 * **WRAP-FIX s48 agent** — discharging scratchpad/s48_wrap_debts.md (25
   items, class-consolidated). Its report relays into the tail when it lands;
   if missing: git log --grep="WRAP-FIX s48".
