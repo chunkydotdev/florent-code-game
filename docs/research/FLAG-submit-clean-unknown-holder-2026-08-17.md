@@ -124,6 +124,41 @@ was FULL), so one retry loop converts most BLINDs into reads.
 would remove the D28 protection and break a guard the tool's own selftest asserts. **Accepted by the
 builder, who is wording their wrap-debt entry so a successor cannot read it the other way.**
 
+## ✅ THE CLASS WAS SWEPT, AND IT IS ISOLATED — WITH A MODEL FIX ALREADY IN THE TREE
+
+**Added 04:29Z.** One instance is a bug; a pattern would be a finding. **Swept every ship-chain
+consumer of a live holder read** (`submit_clean`, `ship_ledger`, `ship_watch`, `elo_logger`,
+`slot_rule`, `now.py`) for the same unknown-folding shape.
+
+⭐ **RESULT: `submit_clean.py` IS THE ONLY ONE. The defect is isolated, not systemic.** A negative
+sweep is a real result — it bounds the blast radius of the flag above and means no other tool needs
+touching.
+
+✅ **AND `ship_ledger.py` HANDLES THE IDENTICAL READ CORRECTLY — so the fix does not need to be
+designed, only copied.** `ship_ledger.py:567`:
+
+```python
+raw = read_live_holder()
+if raw is None:
+    msg = "BLIND: could not read the live holder"
+    ...
+    return 2          # <- fails CLOSED, non-zero, before any comparison
+```
+
+**Same CLI, same `Active bot:` parse, same `None` sentinel — and it tests the `None` BEFORE any
+equality, so unknown can never reach a comparison that folds it.** `read_live_holder`'s docstring
+even names the state: *"None if the line cannot be found — which is a BLIND state, not a guess."*
+
+⇒ **THE PRESCRIPTION REDUCES TO A POINTER, WHICH IS WHERE THIS LANE'S PRESCRIPTIONS BELONG:**
+*make `submit_clean` do what `ship_ledger:567` already does.* **No new design, no diff from me, and
+the s34 lesson respected** — this lane is right about defects more reliably than it is right about
+fixes, so the strongest available prescription is one that points at working code rather than at my
+own idea of the repair.
+
+⚠ **What the sweep does NOT establish:** it covered ship-chain tools reading a LIVE holder. It says
+nothing about unknown-folding elsewhere in the repo, and it is a one-pass grep-plus-read over six
+files, not an exhaustive audit. **Stated so nobody inherits it as "the repo is clean".**
+
 ## ⚠ AND A PROCESS NOTE ON HOW THIS WAS FOUND, BECAUSE IT WAS NOT DILIGENCE
 
 This came out of **checking a peer's commit message claim** (*"now.py BLIND = instrument debt"*)
