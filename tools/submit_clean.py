@@ -180,6 +180,19 @@ def _holder() -> str | None:
     return None
 
 
+def _restore_verdict(before: str | None, after: str | None) -> str:
+    """UNKNOWN outranks every other answer: a None holder is BLIND, never
+    'unchanged'. Folding None==None into the equality test left a prototype
+    live on the rated ladder in 4 of 6 before/after read states while this
+    script printed 'holder unchanged by submit.' and exited 0 (side lane s48,
+    driven state table in docs/research/FLAG-submit-clean-unknown-holder-
+    2026-08-17.md). ship_ledger.py:567 is the in-tree model: test None BEFORE
+    any comparison, fail closed."""
+    if before is None or after is None:
+        return "unknown"
+    return "changed" if after != before else "unchanged"
+
+
 def _update_incumbent(prog: Path, new_tree: str) -> tuple[str, str]:
     """Rewrite PROGRAMME.md's INCUMBENT (and PREVIOUS_INCUMBENT) after a ship.
 
@@ -339,6 +352,28 @@ def check_name(name: str | None, activate: bool) -> tuple[bool, str]:
 
 
 def main(argv: list[str]) -> int:
+    if "--selftest-holder-guard" in argv:
+        # Drive the guard to BOTH verdicts (instruments rule): all six
+        # before/after states, including the four that used to fail open.
+        cells = [
+            (None, None, "unknown"),        # was: 'holder unchanged', exit 0
+            (None, "v9 proto", "unknown"),  # was: silent fall-through, exit 0
+            ("v155 x", None, "unknown"),    # was: silent fall-through, exit 0
+            ("v155 x", "v155 x", "unchanged"),
+            ("v155 x", "v9 proto", "changed"),
+            (None, "v155 x", "unknown"),    # was: silent fall-through, exit 0
+        ]
+        bad = 0
+        for before, after, want in cells:
+            got = _restore_verdict(before, after)
+            ok = "ok " if got == want else "FAIL"
+            if got != want:
+                bad += 1
+            print(f"  [{ok}] before={before!r:12} after={after!r:12} -> {got} (want {want})")
+        print("HOLDER-GUARD SELFTEST " + ("PASS — unknown fails closed in all "
+              "four blind states, known states unchanged." if not bad
+              else f"FAIL — {bad} cell(s) wrong."))
+        return 0 if not bad else 1
     args = [a for a in argv if not a.startswith("--")]
     # the value of --name is not a flag but must not be read as the bot dir
     _nm = _name_from(argv)
@@ -470,7 +505,19 @@ def main(argv: list[str]) -> int:
                 print("=" * 68)
                 return 3
             return 0
-        if holder_after and holder_before and holder_after != holder_before:
+        verdict = _restore_verdict(holder_before, holder_after)
+        if verdict == "unknown":
+            print("=" * 68)
+            print(f"** HOLDER UNKNOWN (before={holder_before or '?'} "
+                  f"after={holder_after or '?'}) -- THE RESTORE GUARD IS BLIND. **")
+            print("** `fcode submit` AUTO-ACTIVATES, so an unmeasured bot may hold")
+            print("** the rated slot RIGHT NOW and this script cannot see it.")
+            print("** VERIFY AND RESTORE BY HAND NOW: re-run `fcode status` until the")
+            print("** `Active bot:` line appears; if it names the prototype, restore")
+            print("** with `fcode submission activate <ver>` and confirm on that line.")
+            print("=" * 68)
+            return 2
+        if verdict == "changed":
             if leg:
                 print(f"** LEG MODE: {holder_after} IS LIVE. Fire the leg now; "
                       f"touch {LEG_SENTINEL} when done "
@@ -494,8 +541,8 @@ def main(argv: list[str]) -> int:
                       "UNINTENDED BOT. FIX THIS BEFORE ANYTHING ELSE. **")
                 return 1
             print("rollback confirmed against the holder, not the exit code.")
-        elif holder_after == holder_before:
-            print("holder unchanged by submit.")
+        else:
+            print("holder unchanged by submit (both reads present and equal).")
         return 0
 
 
