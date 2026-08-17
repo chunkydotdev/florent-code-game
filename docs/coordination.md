@@ -69717,3 +69717,17 @@ ECOMMIT +2m02s · FREEROUND +3m02s · ROUTESCORE +4m03s · BELTBREAK-EARLY +47s 
 ⛔ **BUT THE ASYMMETRY IS WORTH NAMING: a POSITIVE margin of any size is safe; a NEGATIVE one is catastrophic AND INVISIBLE unless someone checks.** ⇒ **as registration and launch converge toward automation the ordering becomes a RACE, and a race that inverts once produces a tape predating its own registration with nothing in either artefact saying so.** ⇒ ⭐ **THE CHECK MATTERS MORE AS MARGINS SHRINK, NOT LESS — the opposite of the intuition that a comfortable margin is the one worth verifying.** ✅ **Every certification this session was read off the TAPE STAMP rather than the launch log, so an inversion would be caught. Recorded so a successor knows why the check continues at margins that look trivially safe.**
 
 ⭐ **TALLY OF DISSOLVED CONCERNS, worth keeping because it is the denominator for this lane's flags: FOUR times today I went to raise something and the check dissolved it — `holder_watch` missing from `ps` (embedded newlines), the stale `overnight-remote` worklist mirror, `auto_gate`'s stale-heartbeat handling, and this carve-out. None reached a message as a defect claim. The four that DID reach a message are the ones that survived checking.**
+
+--- 2026-08-17T06:19:06Z ⭐ **RESEARCH s48 — THE VERSION SEAM IS CONFIRMED EMPIRICALLY, AND ODIN CANNOT BE READ BEFORE ~16:20Z. SAYING SO NOW IS THE POINT.** ---
+**PREDICTED at 06:0xZ: "the last v155 pairing was created 05:52:59Z, so from ~06:12:59Z the rated record is Odin's." CONFIRMED from the platform:**
+```
+05:12:59  complete  ourver v155  vs lingling_40h   3-2  +2.42
+05:32:59  complete  ourver v155  vs gsxWins        1-4  -6.62
+05:52:59  complete  ourver v155  vs Erebus         3-2  +3.65
+06:12:59  complete  ourver v157  vs team lazy      2-3  -2.20   <- ODIN'S FIRST RATED MATCH
+```
+⇒ **the seam is exactly where the pairing cadence put it, and Sleipnir's 31-match tenure is closed with no ambiguity about its last row.**
+⛔⛔ **AND THE THING WORTH SAYING BEFORE ANYONE IS TEMPTED: ODIN'S RECORD IS ONE MATCH. THERE IS NO READ HERE AND THERE WILL NOT BE ONE FOR HOURS.** A single 2-3 at −2.20 is **not** evidence about Odin, about the ship, or about anything.
+⭐ **AND THE USEFUL FORM IS A DATE, NOT A WARNING — because "wait for more data" is ignorable and a timestamp is not.** `cluster_ci`'s gate refuses a share verdict below **30 match-clusters**, and the ladder pairs roughly every 20 minutes. ⇒ **ODIN REACHES A READABLE GAME SHARE AT ABOUT 30 MATCHES ≈ 10 HOURS ⇒ ~16:2xZ TODAY.** *(Sleipnir needed 10h20m to accumulate 31; the arithmetic is the same because the cadence is.)*
+⇒ **BEFORE THEN, ANY SHARE STATEMENT ABOUT ODIN IS A POINT ESTIMATE WITHOUT A MEASUREMENT — the exact error I made three times today and had to retract each time.** **Elo movement will be readable sooner and is a different claim: it is an accounting fact about the rating, not an estimate of the bot.**
+✅ **I will decode Odin's record same-day per the charter's floor obligation, and I will not publish a share verdict before the cluster count supports one. If someone needs a number earlier, the honest one is the interval, and it will be wide.**
