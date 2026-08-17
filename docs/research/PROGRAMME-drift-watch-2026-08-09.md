@@ -3198,3 +3198,40 @@ PERMISSIVE KNOB — a cap, a ceiling, an `if allowed` — THE ALTERNATIVE EXPLAN
 ⭐ **Already registered once, one row over, by the lane that then did not carry it across:** `SENTBAN`'s
 *"K=2 is a DOSE, not the mechanism — a K=2 null does not refute attrition memory."* **Same morning,
 next soft knob, rule not re-applied — which is D36's shape and is why these two rows sit together.**
+
+## ⭐⭐ D37 — **A REVERT THAT RESTORES THE PINNED STATE ALSO DESTROYS THE EVIDENCE THAT WOULD CERTIFY THE EXPOSED WINDOW. QUARANTINE, DON'T REVERT — AND THE PRESCRIPTION THAT GOT THIS WRONG WAS THIS LANE'S.**
+
+**Written 2026-08-17T07:25:06Z, against this lane's own prescription in the 07:16Z control-tree incident.**
+
+The incumbent/control tree `bots/_v468kladturbo` was edited **uncommitted** while three certified
+arms wrote against it. `corefill`'s guard refused at 07:16:27Z; `control_pin --check` showed
+`pinned a9228ccb → now 955ec186`. **This lane flagged it correctly and fast (~1 min), and quoted the
+tool's own prescription — *"revert, then `--pin` again; DO NOT JUST RE-PIN TO SILENCE THIS."*
+Then it added a fix of its own: `git checkout -- bots/_v468kladturbo/`.**
+
+⛔ **THAT FIX WOULD HAVE BEEN A DISASTER OF A PARTICULAR AND NON-OBVIOUS KIND. It restores the pinned
+bytes exactly — and in doing so it deletes the only copy of the edits, which are the ONLY thing that
+can answer the question the incident actually poses: *were the rows written during the window
+contaminated, and by how much?*** The builder instead **stashed** (`s48-wrapfix-control-tree-edits-QUARANTINED`),
+which restored the identical bytes AND kept the diff — and the diff is what certified the window.
+
+⭐ **THE CERTIFICATION, verified INDEPENDENTLY by this lane rather than taken on relay** (peer claims
+get checked against primaries): a **stripped-AST** comparison — docstrings removed, because comments
+never reach the AST but docstrings DO, which is why a naive `ast.dump` flags a comment-only edit —
+returns `bytes_identical=False, stripped_AST_identical=True` for **both** `eco.py` and `raid.py`.
+**Instrument driven BOTH ways before use: a real change reads DIFFER, a comment-only change reads SAME.**
+⇒ **The edits were comment/docstring-only. NO ROW WAS CONTAMINATED. The window is CLEAN — certified, not assumed.**
+
+⇒ **THE GENERAL RULE. When a pinned artefact moves under a live fixture, the state and the evidence are
+TWO different things and the obvious repair conflates them:**
+* **RESTORE the bytes** (so the fixture stops drifting) — **and PRESERVE the diff** (so the exposed
+  window can be certified rather than excised). `git stash` does both; `git checkout --` does only the first.
+* **Excision is the fallback you pay when the evidence is gone.** Here it cost nothing because the
+  evidence survived — **by the builder's choice, not this lane's.**
+
+⚠ **AND THE HONEST SCORE, because it is this lane's recurring failure mode and it recurred:** the s34
+retro's headline — *"right that something was wrong, wrong about what would fix it, every time"* —
+**landed again, and this time the mechanism is nameable rather than just tallied: a one-line
+prescription optimises for restoring STATE, while the value of the incident is in the EVIDENCE.**
+**This is the argument for the rescoped charter's *"name the defect, hand the fix to the owning lane"*
+— the defect call was right, the fix call was wrong, and the split is exactly where the charter puts it.**
