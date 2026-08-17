@@ -154,7 +154,63 @@ while (( n < TARGET )); do
       fi
       TN=${L##*turn }; TN=${TN%%[!0-9]*}
       COND="core_destroyed"; [[ $L == *"tiebreak"* ]] && COND="tiebreak"
-      case "$L" in *"$B"*) WIN=T;; *) WIN=C;; esac
+      # ⛔⛔ RESOLVE THE WINNER AGAINST *BOTH* ARM NAMES. NEVER AGAINST ONE WITH
+      # THE OTHER AS AN `else`. This line used to read
+      #     case "$L" in *"$B"*) WIN=T;; *) WIN=C;; esac
+      # — a ONE-DIRECTIONAL substring test whose else-branch invents a control
+      # win out of every line it failed to recognise. Three ways that lies, all
+      # reproduced before this fix (WRAP-FIX s48):
+      #   (a) TREATMENT NAME IS A SUBSTRING OF CONTROL ('_v150cb' vs
+      #       '_v150cbturret'): every CONTROL win scores T, the arm reads ~100%.
+      #       36 ordered hazard pairs exist in bots/ — the `_f`/`_off`/`ON`
+      #       ablation naming convention manufactures exactly this shape.
+      #   (b) SAME-PATH NULL (treatment and control resolve to one tree): every
+      #       game scores T. A ws1 worklist hit this on 2026-08-17.
+      #   (c) NEITHER NAME PRESENT — the engine prints `Winner: Draw` for
+      #       win_condition `timeout` (fcode/commands/run.py:37) — silently
+      #       credited to CONTROL. Not a hazard-pair problem; the else-branch
+      #       problem. Note ALL THREE inflate in ONE direction, which is what
+      #       makes them invisible in the tape.
+      # The preflight basename guard above already refuses (a) and (b) at LAUNCH.
+      # This is the second line of defence at SCORE time, and it is the one that
+      # covers (c) and any future caller that reaches this loop another way.
+      # PROPERTY: match BOTH names; score only on an unambiguous single match.
+      # Exact-token first (the engine prints exactly one name, and every bots/
+      # basename is space-free), substring only as a fallback so an unexpected
+      # engine format degrades to the historical behaviour instead of aborting.
+      _WN=${L#*[Ww]inner: }; _WN=${_WN%%\(*}; _WN=${_WN// /}
+      _mT=0; _mC=0
+      [[ $_WN == "$B" ]] && _mT=1
+      [[ $_WN == "$C" ]] && _mC=1
+      if (( _mT + _mC == 0 )); then
+        case "$L" in *"$B"*) _mT=1;; esac
+        case "$L" in *"$C"*) _mC=1;; esac
+      fi
+      if (( _mT && _mC )); then
+        # BOTH ARMS MATCH => UNSCORABLE, AND IT IS A FIXTURE-CONSTANT FAULT: it
+        # will be true of every remaining game, so scoring on is worse than
+        # stopping. REFUSE LOUDLY. Do NOT write a game row.
+        print "ABORT $SHARD: winner line resolves to BOTH arms (treatment='$B', control='$C') -- unscorable fixture."
+        print "  line: $L"
+        print -r -- "$(date -u +%Y-%m-%dT%H:%M:%SZ)${T}$n${T}$TARGET${T}$SHARD${T}ABORTED_AMBIGUOUS_ARMS" > $HB
+        exit 4
+      fi
+      if (( _mT + _mC == 0 )); then
+        # NEITHER ARM MATCHES (draw, or an engine format change). Per-game, not
+        # fixture-constant, so it is banked as a NOWINNER-class row rather than
+        # killing the night — the >1% abort below catches it if it is systematic.
+        # ⛔ NOT scored to control. That was the bug.
+        print -r -- "$(date -u +%Y-%m-%dT%H:%M:%SZ)${T}$SHARD${T}$n${T}$M${T}$seed${T}$ORD${T}NOWINNER${T}unresolved_winner${T}${TN:--}" >> $ROWS
+        nowin=$((nowin+1))
+        n=$((n+1))
+        if (( n >= 200 && nowin * 100 > n )); then
+          print "ABORT $SHARD: $nowin/$n NOWINNER (>1%) -- fixture is broken."
+          print -r -- "$(date -u +%Y-%m-%dT%H:%M:%SZ)${T}$n${T}$TARGET${T}$SHARD${T}ABORTED_NOWINNER" > $HB
+          exit 3
+        fi
+        continue
+      fi
+      (( _mT )) && WIN=T || WIN=C
       print -r -- "$(date -u +%Y-%m-%dT%H:%M:%SZ)${T}$SHARD${T}$n${T}$M${T}$seed${T}$ORD${T}$WIN${T}$COND${T}${TN:--}" >> $ROWS
       n=$((n+1))
       print -r -- "$(date -u +%Y-%m-%dT%H:%M:%SZ)${T}$n${T}$TARGET${T}$SHARD${T}RUNNING" > $HB
@@ -167,3 +223,17 @@ done
 print -r -- "$(date -u +%Y-%m-%dT%H:%M:%SZ)${T}$n${T}$TARGET${T}$SHARD${T}COMPLETE" > $HB
 print -r -- "$(date -u +%Y-%m-%dT%H:%M:%SZ) $SHARD reached $n/$TARGET" > $DONEF
 print "SHARD $SHARD COMPLETE $n/$TARGET"
+# ⛔ EXPLICIT TERMINATOR — same defect as the one documented at the foot of
+# tools/corefill.sh, and this file is MORE exposed, not less. A shard runs for
+# hours while wrap-fix workers edit this script; if an edit lands SAME-INODE the
+# running shell reads past the old EOF after the loop and executes fragments of
+# the new bytes (measured on corefill.sh at 04:30:22Z: `command not found: SH:-`
+# at exactly one line past the old EOF). Here that garbage would sit between the
+# loop and the COMPLETE marker, and overnight_read.py REFUSES to pool a shard
+# with no marker — so the tail of this file is load-bearing, not cosmetic.
+# `exit 0` closes the read-past-EOF case; the full diagnosis, the reproduction
+# and the inode rule that decides whether any given edit is dangerous are all in
+# the corefill.sh footer. Verified this session: an editor that renames gives a
+# NEW inode and the three live shards kept reading the old one (lsof fd inode
+# 264496031 vs the edited file's 264731805), so THIS edit reached nothing.
+exit 0
