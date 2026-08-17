@@ -68279,3 +68279,37 @@ The mechanical pre-pass I ran before the agents **over-reports GONE on hoists**:
 
 ## ⚠ INSTRUMENT OBSERVATION, ROUTED TO THE BUILDER AS A TOOL ASK
 `queue_check` still reports **72 unblocked** after this sweep — **it has no notion of ALREADY-SHIPPED or PREMISE-DEAD, so the count is inflated by 4 shipped rows and 7 dead premises.** ⇒ **the floor alarm cannot see the failure mode the sweep just found.** Same family as s47's finding that its stale-GREP count is a lower bound, not a census. **Depth remains an unreliable health signal; the dispositions above are the real state.**
+
+--- 2026-08-17T04:46:46Z ⭐⭐ **RESEARCH s48 — MAGNUS DIRECTIVE 3 (sentinel-for-barrier seal near the enemy core), MEASURED. AND IT REFRAMES DIRECTIVE 1: WE ARE NOT A HOME-TURRET BOT. WE ARE A FORWARD-SENTINEL-AND-BARRIER BOT THAT DOES NOT USE GUNNERS.** ---
+
+Same surface as the gunner census (`events.tsv` BUILD rows, sentinel+barrier, **782,747 events**, joined via `meta_join`, seat mapping verified 2,280/2,170 with zero cross terms).
+```
+team                  rating  gms |  sent/g  deep<100  closer |  barr/g  deep<100  closer
+Jython                  2195 2303 |   2.99     0.818   0.759  |  21.08     0.927   0.937
+Bean counters           2092 1148 |   2.91     1.000   0.947  |  14.20     0.639   0.692
+sporks                  2058 2484 |   3.25     0.822   0.718  |   4.87     0.849   0.853
+O(1)                    2027 1860 |   3.40     0.943   0.848  |   8.83     0.805   0.767
+Leviathan               1926 1919 |   6.61     0.886   0.784  |   9.59     0.990   0.986
+Clankers                1906 1725 |   1.74     0.886   0.738  |  17.85     0.766   0.700
+--- FIELD MEDIAN (69 teams >=100 games) 2.61     0.856   0.738  |   3.44     0.766   0.722
+OpenSverige v155 LADDER (n=115 games)   3.72     0.787   0.727  |   9.49     1.000   1.000
+```
+⇒ **on SENTINELS we are at or above the field** (3.72/g vs 2.61 median, placement at median); **on BARRIERS we are ~2.8× the field median and EVERY ONE is in the enemy half** (deep 1.000, closer 1.000) — the `_salt_forward` gate the sweep re-confirmed (*"must never barrier our own ground"*, `raid.py:426-436`). **Our row is split by `ourver` and fixture and the v155 LADDER cell is the one quoted; the pooled row (3.52 / 0.754 / 0.617) is NOT used.**
+
+## ⭐⭐ THE v94→v102 BREAK APPEARS HERE WITH THE OPPOSITE SIGN — SO IT WAS A SUBSTITUTION, NOT AN ABANDONMENT
+Barriers/game **0.09 (v94) → 8.52 (v102)**. Sentinel deep-share **0.600 (v94) → 0.881 (v102)**. At the exact version where forward GUNNERS collapsed (closer-to-them **0.549 → 0.090**). ⇒ **v102 SWAPPED THE FORWARD GUNNER FOR A FORWARD SENTINEL PLUS A FORWARD BARRIER.** ⛔ **This materially corrects the frame of my own 04:41:36Z note, which read as "we stopped playing forward". We did not. We changed which turret plays forward.** The live question is narrower and better: **was the gunner→sentinel substitution right FOR THE BELT-CUTTING ROLE SPECIFICALLY?**
+
+## ⭐⭐ AND THE ENGINE ANSWERS THAT FROM THE CONSTANTS ALONE — NO STATISTICS INVOLVED
+```
+target        HP   gunner (7 dmg, 4 ammo)    sentinel (18 dmg, 10 ammo)
+conveyor      20   3 shots = 12 ammo         2 shots = 20 ammo
+splitter      20   3 shots = 12 ammo         2 shots = 20 ammo
+harvester     30   5 shots = 20 ammo         2 shots = 20 ammo
+barrier       30   5 shots = 20 ammo         2 shots = 20 ammo
+```
+**THE GUNNER IS 40% CHEAPER PER KILL ON 20-HP TARGETS AND EXACTLY EQUAL ON EVERYTHING ELSE.** The sentinel's 18 damage cannot one-shot a 20-HP conveyor, so it pays a second full 10-ammo shot for **2 points of overkill**. ⇒ **the gunner's cost advantage exists ONLY on the belt — precisely the target class Magnus named.** Add `rotate()` (10 Ti, 1 cooldown) amortising one emplacement across up to four lines against a sentinel that cannot re-aim at all, and the case is coherent; the sentinel keeps reach (r²=32 vs 13) and obstacle-piercing.
+⇒ **SUGGESTED PREREG FRAME: the shredder is not "add a gunner", it is "the gunner is the correct turret for the 20-HP target class and we currently field the wrong one there."** Falsifiable, engine-grounded, and it survives even if the throughput-denial arithmetic comes back weak. *(This is a rules-level arithmetic claim about the engine's own constants — the carve-out in point 6 of the directive — not a behavioural inference. It PRIORITISES; only live games can close the road.)*
+
+## ⛔ THE FUNDING CONTENTION MAGNUS FLAGGED IS REAL AND THE BIND IS SCALE, NOT TITANIUM
+We build **9.49 barriers/game** at 3 Ti and **+1% scale** each ⇒ ~28 Ti and **~+9.5% scale**. A FULL sentinel-for-barrier swap is **9.49 × 30 Ti = ~285 Ti and ~+190% SCALE**, which by itself roughly **triples the cost of every subsequent build of every type** (the scale factor is ONE GLOBAL ADDITIVE team factor — engine-confirmed s26, `bots/_probe_scale`). ⇒ **a full swap is not a variant, it is economic suicide, and 285 Ti is affordable in a long game while +190% scale never is.** Any arm must be a **PARTIAL, N-capped substitution** (one, perhaps two, of the highest-value seal tiles) and **the prereg must state N and price the scale delta explicitly.**
+⚠ **AND THE INTERACTION WITH THE SWEEP:** all three barrier sites (`raid.py:289` seat-seal, `:515` salt-corpse, `:574` deny-rebuild) are enemy-half-gated by `_salt_forward`, **so a sentinel variant of any of them inherits a siting rule written for a 3 Ti wall — one with no ammo term, no facing term and no survivability term.** Name that in the build.
