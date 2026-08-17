@@ -69843,3 +69843,21 @@ Pivot            110.1    36.6  28.7  26.9    0.0
 **I cannot watch another lane's outbound messages and should not try.** ⇒ ⭐⭐ **THE CONVENTION INSTEAD: A NUMBER GOING TO MAGNUS CARRIES ITS INTERVAL, EXACTLY AS A NUMBER GOING INTO THE RECORD DOES.** **Then the artefact limits itself and needs no reviewer.**
 ⭐⭐ **AND THIS IS THE SAME MOVE THE WHOLE DAY CONVERGED ON, FROM FIVE DIRECTIONS: the CONTROL belongs in the number (`60 vs Sleipnir`, never bare `60`) · the SHA belongs in the file claim (`sha:path`, D20) · the PROVENANCE belongs in the cell's NAME (`ODINRECON` vs `ODINVSSLEIP`) · the INTERVAL belongs with the estimate (`cluster_ci`: *"an estimate arrives with its interval or it does not arrive"*) · and now the INTERVAL belongs with the number that leaves the building.** ⇒ ***PUT THE QUALIFIER WHERE IT CANNOT BE SEPARATED FROM THE CLAIM.*** **Five independent fixes, one principle, and the outbound channel was the last place it had not been applied.**
 ✅ **The builder is correcting to Magnus with the interval, the resolution horizon (n≈2,000 to say anything, registered 2,700), and the ablation framing — Sleipnir IS Odin-minus-the-additions on shared source, so a resolved number is a statement about the ADDITIONS (TW named inert), never a rivalry result.**
+
+--- 2026-08-17T06:30:45Z ⚠ **RESEARCH s48 — I TESTED `#62`'S PREMISE AND I AM PUBLISHING A REFUSAL WITH ONE SURVIVING PIECE. THE CONFOUND GOES FIRST THIS TIME.** ---
+## ⛔ THE CONFOUND, STATED BEFORE ANY NUMBER — because I have been caught three times today putting it after
+**Opening-builder COUNT is not a treatment. A bot with a fixed policy builds fewer opening builders when it is RESOURCE-STARVED OR UNDER ATTACK — i.e. when it is already losing.** ⇒ **any association between "built more openers" and "won" is contaminated by the same reverse channel as the cut-round question and the near-vs-far rebuild cut.** **This is the fourth appearance of that shape today and I am not going to pretend the fourth one is different.**
+
+## THE CUTS, FOR THE RECORD
+**BETWEEN teams** (115,930 side-rows, opening builders built by r25 × map-area band): **win rate is remarkably FLAT at the modal count of 5 — 0.533 / 0.540 / 0.533 / 0.552 across `<300`, `300-499`, `500-699`, `>=700`** — and **5 is the median in every band.** Per-band argmaxes are 5 / 7 / 5 / 3 on 1-2k-game cells, i.e. noise.
+**WITHIN (team, version)** — controls for team strength AND bot version, 137 cells, 62,398 side-rows: **slope +0.0100 win-probability per extra opening builder; 81 of 137 cells positive against ~68 by chance.** ⚠ **And this design does NOT fix the confound above: it controls WHO is building, not WHY the count varied on that particular game.**
+
+## ⭐ THE ONE PIECE THAT PARTIALLY SURVIVES, AND IT POINTS THE OPPOSITE WAY FROM `#62`'s ASSUMPTION
+**Within the same cells, split by map area:**
+```
+area < 500    within-cell slope  +0.0135
+area >= 500   within-cell slope  +0.0020
+```
+⇒ **the marginal opening builder is worth ~6x more on SMALL maps than on large ones.** ⭐ **This is a DIFFERENCE-IN-DIFFERENCES: the starvation confound operates in BOTH bands, so it largely cancels in the CONTRAST even though it dominates each level.** ⇒ **the contrast is the only part of this cut I would let near a prereg.**
+⛔⛔ **AND IT CUTS AGAINST `#62`'s IMPLICIT DIRECTION. That row is "our opening is MAP-BLIND: we spawn 5 regardless", and the unstated intuition is that BIG maps need MORE openers (more ground to cover). The data says the marginal opener helps most where the ground is SMALLEST.** ⇒ **if `#62` is built as "scale the opening UP on large maps" it is building the wrong sign.** ✅ **The row's SURVIVING half — that the opening is unconditional and that `LOKI_BASE_BUILDERS = 5` is the single largest scale lever in the game at 100pp — is untouched. What this cut damages is the assumed DIRECTION of the conditioning, which the row never actually stated and would have been supplied by whoever built it.**
+⚠ **AND I AM NOT PROPOSING THE OPPOSITE ARM EITHER.** A difference-in-differences on an unidentified level is a hint about where to look, not a direction to build. ⇒ **the honest form: `#62` should register its conditioning direction EXPLICITLY and treat it as the thing under test, rather than inheriting an intuition nobody wrote down.**
