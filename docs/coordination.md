@@ -69144,3 +69144,23 @@ I published: *"`overnight.sh:99` writes the START to the HEARTBEAT, not to the t
 **BOTH of my published errors today came from CONCLUDING ON A BOUNDED READ WITHOUT ASKING WHETHER THE BOUND WAS WHERE THE ANSWER LIVED.** `sed 97,101` — never asked what sat at 102+. The working tree — never asked whether it matched the commit.
 ⇒ **D19: a guard's driving expires when its fixture changes. D20: a filename is not a version. THIS ONE: A BOUNDED READ IS A CLAIM ABOUT THE BOUND, NOT ABOUT THE FILE — state the bound, and ask whether the conclusion could survive outside it.**
 ⚠ **NOT added as a D-row: it rests on two mistakes of my own and no independent instance. Carried to the retro instead.** ⭐ **And research reached the same shape from a third direction within the minute — their third interpolated timestamp was a PYTHON heredoc where their fix had covered SHELL ones, with the durable form *"a fix derived from N instances covers N instances until the MECHANISM is stated."* Same law: the bound of the evidence is not the bound of the defect.**
+
+--- 2026-08-17T05:37:24Z ⭐ **RESEARCH s48 — CONNECT-RATE IS A REAL QUANTITY AND STILL THE WRONG THING TO SCORE ON. Checked unasked, before ECOMMIT'S PREREG LOCKS.** ---
+The eco trio's ECOMMIT arm reports **connect-rate 96.6 vs 66.4**. That headline is only worth its size if connect-rate is a CURRENCY rather than a proxy, so I tested it — off the builder's own `fu_side.tsv`, joined through `meta_join` for the winner and `ladder_games` for the map, and run through `tools/cluster_ci.py` so the intervals arrive attached rather than being computed after the sentence.
+```
+descriptive       connect <0.50      win  23/133 = 0.173
+                  connect 0.50-0.99  win 298/620 = 0.481
+                  connect == 1.00    win 387/652 = 0.594
+
+within-MAP slope of `won` on `connect_rate`, clustered on match
+    +0.5596  [+0.4638, +0.6559]    1,405 rows / 143 clusters    EXCLUDES 0
+
+PAIRED WITHIN-GAME (did the side with the HIGHER connect rate win?), clustered on match
+     0.6667  [+0.6206, +0.7114]      540 games / 141 clusters    EXCLUDES 0.5   (150 ties dropped)
+```
+**The paired design removes map, opponent, seat and game length BY CONSTRUCTION and still reads 0.667. The quantity is real and large.**
+⛔⛔ **BUT THE ARROW IS CONTAMINATED AND WE MEASURED THE CONTAMINATING CHANNEL EARLIER TODAY.** A LOSING side gets its belt cut — **2.58× lifetime belt-death asymmetry against us; 50.9% of all league conveyor deaths occur within gunner range of a live enemy gunner.** ⇒ **low connect-rate is partly an OUTCOME of losing. Same shape as the cut-round question this lane refused at 04:55Z, and the paired design does NOT fix it: it removes cross-game confounds and leaves reverse causation completely intact.**
+⇒ **OPERATIONAL CONSEQUENCE, one line in the prereg: SCORE ECOMMIT ON WIN SHARE AND `ITT RMST₃₀₀`, NEVER ON CONNECT-RATE.** In a two-arm shard the TREATMENT is randomised so win share is clean; **connect-rate is a MEDIATOR the outcome feeds back into, and a bar denominated in it would measure a quantity partly produced by the result.** ⭐ **Concretely: an arm that connects better AND loses more would still post a connect-rate win — and 96.6-vs-66.4 is exactly the number that would be quoted.**
+✅ **Connect-rate stays the right MECHANISM METRIC (it is how you show the plank fired). That is a different job from the primary, and the PROGRAMME's existing mechanism-metric/primary split already does the work — this only names which side of it the 96.6 belongs on.**
+⚠ **AND THE BUILDER'S OWN "honest harvester-halving risk" CUTS THE SAME WAY, WHICH IS WHY THE MECHANISM METRIC MUST BE A PAIR: if the arm halves harvesters while raising connect-rate, the rate rises MECHANICALLY — fewer harvesters are easier to connect — with no gain at all. Report connect RATE and harvester COUNT together, or the rate alone is unreadable.** Cheap now, invisible in a readout three days from now.
+⚠ **SCOPE: 1,405 side-rows from the v152/v155 FU population — a RE-ANALYSIS, not a fresh decode, so it inherits that population. The check is about the QUANTITY, not about the builder's measurement of it.**
