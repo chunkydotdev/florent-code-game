@@ -1356,3 +1356,89 @@ the brief that orders it.
 ## 3. OPEN ITEMS CARRIED (from s34, still live)
 * inside-band ⇒ NO SHIP needs the NEG cell check — UNCHANGED, still binds.
 * Self-play blindness rule — fired again this session (see FIRINGS); keep.
+
+# ============================================================================
+# INSTANCE — s50, 2026-08-17 (evening, Magnus live-iterating). FIRINGS: 6.
+# Answered from artefacts: results.tsv, the coordination tail, git log, the
+# platform (now.py reads), claim_check.py run at wrap (clean).
+# ============================================================================
+
+**FIRINGS (6):** anchors-or-RELAYED-UNVERIFIED (probe dossier §1 labelled
+agent-opened; siege/heal anchors double-opened by two lanes independently) ·
+self-play-blindness (the lying-fixture caveat carried on every v510/v511/v512
+number and into both preregs — the plank class exploits field behaviour our
+control does not exhibit) · two-keys (saltray-final, ringladder-final) ·
+instruments-both-ways (every build guard, P6's 40/40-vs-383/383, the rotation
+runner's certified skip) · error-direction (the BARS slip, self-disclosed with
+mechanism) · fresh-drafter (two preregs; the SALTRAY drafter surfaced the 48.82
+family prior and refused the combo exemption UNPROMPTED — the rule's best
+showcase yet).
+
+**Q1 VERDICTS (2 typed):** saltray-final — floor-stop as priced; the tempting
+sentence NOT written: "SALT×RAY doesn't work" (mechanism verified, value
+unpowered; UNPRICED, family shelved). ringladder-final — predicted Band 5
+realized, 25.00 [21.01,28.99] n=452; NOT written: "ferry-siege fails" (the
+lying-fixture caveat binds; the row retires v512 AS A SOLO CANDIDATE and routes
+to v513). Both scoped to their fixture in the row itself.
+
+**Q2 RETRACTIONS, direction:** (1) "Erebus v142 lost 1-4 TWICE" — miscount,
+side-lane-corrected; FLATTERING (inflated the shape story I liked). (2) my
+"BARS row added" while the append had silently produced nothing — FLATTERING
+(assumed my own mutation succeeded); caught by my own tail-check one command
+later, but the commit message had already claimed it. (3) v510's per-map
+single-game reads retroactively one-draw-caveated by the v511 agent's
+determinism discovery — direction NEUTRAL (against banked work, found by an
+agent). Two of three flattering: the mean is still not zero. The standing
+answer remains the anchors/self-check rules that caught them within minutes.
+
+**Q3 INSTRUMENTS:** built two runner scripts — round-1's UUID-grep defect was
+predicted by the side lane BEFORE it fired in production and fired exactly as
+predicted (the watcher-not-watched family; fix at wrap). The certified guard
+(fires-on-v159/skips-on-anything-else) worked in production at the v160 ship —
+zero contaminated cells. The awk BARS append was an instrument trusted on
+first output with no check bound to the mutation — the night's one process
+failure; the append-then-grep-back idiom is in WRAP-FIX. Agent instruments all
+carried both-verdict evidence (the strongest: P6, the mute-flag zero-reads,
+the dodge-off mutant).
+
+**Q4 CLAIMS AHEAD OF RECORD:** one — the BARS commit message asserting a row
+its own commit did not contain (the silent append). Corrected in the next
+commit with the mechanism named; side lane scoped its cert accordingly.
+claim_check.py at wrap: clean (24 files, every claim points at its record).
+
+**Q5 THE SLOT:** zero submissions, zero activations, zero rollbacks by this
+lane all session. The one holder transition (v159→v160, 18:56Z) was x3r0's
+ship, verified via now.py, tree imported per the Odin precedent. LOCK-IN
+(Magnus, 19:2xZ) honoured absolutely thereafter: the round-2 runner was killed
+by recorded PID before its first cell; the side lane's independent platform
+sweep confirmed the one post-lock-in unrated match was opponent-initiated.
+Rated cost of the day's builder activity: zero matches, zero Elo.
+
+**Q6 WHAT THE BUDGET BOUGHT:** ~10 opus agents (4 bot builds, 2 fresh-drafter
+preregs, 1 replay study, 1 probe dossier, 2 autopsies) + WRAP-FIX at close;
+~2,100 local shard games (SALTRAY 1,164 + RINGLADDER 452 + build grids ~500)
+and 6 unrated holder legs (30 games, 0 rated cost). Banked: 5 bot trees
+(v509-v513), 2 locked+certified preregs, 2 final verdict rows, 8 research
+docs, 4 engine facts (P6 bodies-block, is_in_vision-not-bounds, destroy-
+doesn't-spend-move, NOISE_ON one-draw law), and FOUR Magnus iterations each
+measured within the hour of his call. The mill ran at its intended cadence
+for the first time with Magnus in the loop live.
+
+**Q7 SUCCESSOR CANNOT RECONSTRUCT:** demo replays are LOCAL-ONLY (gitignored
+demos/ — the paths are in the banked reports but the bytes die with this
+machine's disk, not the repo); the v513 build agent's report lands in the tail
+if it completes before the kill, else its tree state is whatever bots/
+_v513siegecrew holds at commit time; autopsy instruments live in the session
+scratchpad (paths named in the banked docs).
+
+**THE ONE QUESTION:** mostly no — the day's judgment calls (fire-despite-P<2%,
+B1 branch-ii, ladder-order ratifications) were either Magnus's direct orders
+or had machinery-visible justifications on the page. The one decision the
+machinery could not have caught: choosing to spend the evening's build
+capacity on Magnus's live iteration loop instead of queueing the queue — and
+that was the standing directive, not this lane's invention. The near-failure
+was machinery-CATCHABLE (the BARS append) and the machine check now exists.
+
+**OPEN ITEMS CARRIED:** inside-band-needs-NEG-cell (unchanged) · self-play
+blindness (fired again ×3 — keep) · NEW: bind-every-append-to-its-readback
+(the s50 addition; WRAP-FIX item 12 is the mechanisation).
