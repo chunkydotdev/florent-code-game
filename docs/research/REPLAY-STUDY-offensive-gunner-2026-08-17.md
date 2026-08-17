@@ -11,7 +11,10 @@ Written 2026-08-17T04:49Z (`date -u`, same shell), repo at `75b098a3`.
 **Ground:** the whole local archive — 58,087 `.replay26` files, decoded fresh for
 this study with a purpose-built full-state walker (not `builds.tsv`, which has no
 shot attribution). Corpus manifest `built_utc 2026-08-17T04:22:55Z`.
-**Incumbent diffed against:** v155 "Sleipnir v1" = `bots/_v468kladturbo`.
+**Incumbent diffed against:** v155 "Sleipnir v1" = `bots/_v468kladturbo`, plus a
+source-tree archaeology pass over v94/v102/v116/v125/v140 (§5.1) commissioned by
+this study — the replay half and the source half were run blind to each other and
+agree on v94's failure mode.
 
 Every claim below is tagged **MEASURED** (counted off decoded events, with the
 denominator), **EYEBALL** (seen in ≤3 games, needs a count), or **INFERRED**
@@ -502,20 +505,87 @@ economy shredder. Nothing in the v94 tape argues against building the shredder;
 the tape argues that we have never built one.** (And the sentinel we substituted
 is the wrong turret for the belt — see §6.)
 
-⚠ **TWO TREE-HISTORY QUESTIONS THIS STUDY RAISED AND DID NOT CLOSE.** Both are
-code archaeology, not replay work, and both were commissioned but had not landed
-when this report was banked. **Neither is a blocker for the spec; both change how
-the first leg should be built.**
-1. **Was the v116→v140 quality-over-quantity trade deliberate?** Research
-   measured in-band share 0.305-0.345 with conversion 0.38-0.71 at v102-v116, then
-   share collapsing to 0.118-0.143 while conversion tripled to 1.50-1.97. If a
-   named gate caused that, raising volume back without keeping the gate
-   **re-imports the bad conversion.** §7.2's "reject any (T,d) scoring 0" is the
-   guard that should carry it either way.
-2. **Why is our first in-band plant late in EVERY era (r56-85 vs the field's
-   r37)?** Version-stable lateness points at opening sequencing — a round gate,
-   an eco-completion prerequisite, or builder allocation — not at the gunner code.
-   The spec's EARLY arm (§7.1) cannot be built until that knob is named.
+### 5.1 ⭐ THE TREE ANSWERS BOTH VERSION QUESTIONS — and one answer voids a framing
+
+Code archaeology (opus subagent, commissioned by this study; version→directory
+map established from the "= vNNN" ship lines in `docs/coordination.md` and
+`HANDOVER-archive.md`, since the `bots/_vNNN` prefix is a LOCAL build counter
+unrelated to the platform version):
+**v94 ≡ v101 = `bots/_v115dodge`** (md5 77ae5c09; v95-v100 were re-submits of the
+same tree) · **v102 = `bots/_v124loki8`** · **v116 = `bots/_v169launchlate160`** ·
+**v125 = `bots/_v197mapcode`** · **v140 = `bots/_v223sealrepair`** ·
+**v152 = `bots/_x3r0v152`** · **v155 = `bots/_v468kladturbo`**.
+
+**(1) THE REPLAY MEASUREMENT AND THE SOURCE AGREE ON v94, INDEPENDENTLY.**
+`_v115dodge/main.py:2616 _plan_siege` enumerated every tile whose weapon ray
+reaches `core_tiles(self.enemy)` and rejected a ray only if it crossed a **static
+map wall** (`main.py:2695-2699`). **There was no live-target predicate at all** —
+the plant was speculative, aimed at where the enemy core *is*, not at anything
+standing there. That is precisely the fingerprint §5 measured off the replays
+without seeing the code: **econ on the chosen ray 0.09 against a random-ray 0.11,
+51.7% built with nothing in range, 7.9% never firing.** Two instruments, one
+verdict. (`PRIMARY_SENTINEL = True`, `main.py:984`, made only the *first* forward
+turret a sentinel and **every one after it a gunner** — which is why v94 has
+forward gunners at all.)
+
+**(2) THE v94→v102 SUBSTITUTION WAS DELIBERATE, NAMED, AND REASONED IN-TREE —
+and its reason is about the CORE, not the belt.** `_v105loki1/raid.py:32-37`:
+*"The damage itself then comes from a forward SENTINEL. This is not a turret
+preference, it is forced: barriers block line of sight, so a Gunner ray dies on
+our own collar, while the Sentinel line ignores obstacles and shoots THROUGH
+it."* Promoted to constants at `_v223sealrepair/doctrine.py:1231-1237`
+(`LOKI_FWD_SENTINEL_ON`, `LOKI_FWD_GUN_CAP`). `_plan_siege` was **deleted**, not
+tuned, in the same change that introduced the barrier collar. **The argument is
+valid and it is about shooting the CORE through our own collar. It says nothing
+about a gunner at d²20-100 whose target is the belt** — see §7.5, which is now a
+hard constraint rather than a note.
+
+**(3) THE v116→v140 "QUALITY-OVER-QUANTITY TRADE" IS NOT A GUNNER CHANGE. NO
+GUNNER CODE CHANGED AT ALL.** `main.py` v116→v140 differs by **14 diff lines,
+all of them per-raider salt/idle state in `__init__`**; `_try_counterbattery`,
+`_defend` and the gunner branch of `_turret` are unchanged, and
+`HUNT_BAND_DSQ = 41`, `ECO_NEED = 3`, `SIEGE_HEAL_RESERVE_TI = 16` are
+**byte-identical in every `doctrine.py` from v102 to v155**.
+⛔ **AND THE FRAMING THIS VOIDS IS MINE.** `grep 'ct.build_gunner\|ct.build('`
+returns **exactly one gunner call site per tree from v102 to v155**:
+`_try_counterbattery` — **defender role only, threat inside `HUNT_BAND_DSQ = 41`
+of OUR OWN core, sentinel tried first and gunner as the fallback.** So **every
+gunner we have built since v102 is HOME counter-battery.** Whether one of them
+lands in "d²20-100 of the ENEMY core" is a **map-geometry accident** (true on
+small maps, false on large), not a decision.
+⇒ **"We already aim as well as the field once we plant" is NOT a finding about
+our aim.** It is a conversion rate measured on accidental placements, and the
+version axis cannot explain the share collapse because the code is constant
+across it. **Any reading of that trade needs a map-size and era control first.**
+The real source of our gunners' conversion is one line —
+`_v468kladturbo/main.py:695`
+`if not ct.can_fire_from(bp, facing, turret_type, threat): continue` —
+**a target-in-ray precondition that has been there since v102.**
+
+**(4) WHY WE PLANT LATE IN EVERY ERA: THE SITING PREDICATE, NOT A THRESHOLD.**
+`raid.py:653 _try_forward_sentinel` aims **only** at enemy core tiles —
+`tiles = core_tiles(E)` (`raid.py:688`), `if bp.distance_squared(target) > 32:
+continue` (`raid.py:694`), with a pre-scan bail `if dsq_core(p, E) > 50: return
+False` (`raid.py:684`). **No code path in the tree plants a forward turret at a
+d²20-100 belt-cutting site.** The raider must walk to d²≤32 of the core footprint
+before *any* forward plant is legal — which is ~20-30 rounds of walking past the
+band the field plants in, and it is a **predicate, not a knob.** The knobs sit on
+top of it, in the order the repo itself enumerates at `doctrine.py:1355-1382`:
+`LOKI_FWD_MIN_HARV = 2` (`doctrine.py:1265`, applied `raid.py:674,676` — doctrine
+calls it *"the single biggest source of delay: it structurally forbids the
+r14-r22 plant every specialist makes"*), `LOKI_FWD_TI_FLOOR = 40`
+(`doctrine.py:1264`), the seat roster (`main.py:444-457`, `LOKI_ECO_SEATS =
+(1,2,3)`), and `_raid_act`'s ordering, which ranks core-peck (`raid.py:266`) and
+**barrier-seal (`raid.py:280`) ABOVE the forward sentinel (`raid.py:295-297`)`.
+The release valve exists and is **OFF**: `LOKI2_RUSH_ON = False`
+(`doctrine.py:1409`) lifts all three gates inside r<60 — switched off on LOKI-4
+evidence whose failure the tree attributes to the monotone rubble cap that
+`LOKI2B_LIVE_CAP_ON` (`raid.py:669-671`) has since fixed, **so the rush arm is
+arguably re-testable.**
+**QUEUE #23 already owns this lever** (`QUEUE.md:92`, s34: our forward arm opens
+at r33 vs the field's r25, in 78% of games vs 87%, at 2.28/game vs 4.54) with two
+standing warnings — **the cap raise is DEAD (binds in ≤12.92% of games) and the
+pooled turret figure INVERTS the sign; do not re-derive either.**
 
 ---
 
@@ -652,17 +722,36 @@ the plan.
   not adgato r13, ph r21, Jython r33) vs *LATE* = our standing **r56-85 median,
   version-stable across every cell we have**. The leg reads as **"move our first
   plant ~45 rounds earlier"** and needs no synthetic control arm.
+  **AND THE KNOBS ARE NAMED (§5.1(4)), in the order they bind:** the
+  `core_tiles(E)` siting predicate (`raid.py:688`, not a knob — widening it is
+  the plank) → `LOKI_FWD_MIN_HARV = 2` (`doctrine.py:1265`, the tree's own
+  *"single biggest source of delay"*) → `LOKI_FWD_TI_FLOOR = 40`
+  (`doctrine.py:1264`) → `_raid_act` ordering, which ranks the barrier-seal above
+  the forward turret (`raid.py:280` vs `295-297`) → the seat roster
+  (`main.py:444-457`). **The first four move without diverting a builder the
+  economy depends on; only `LOKI2_RUSH_SEATS` (`doctrine.py:1413`) does, by
+  sending eco seat 1 forward.** `LOKI2_RUSH_ON = False` (`doctrine.py:1409`) is
+  the existing off-switch for gates 2-4 inside r<60, disabled on LOKI-4 evidence
+  whose named failure cause (the monotone rubble cap) has since been fixed by
+  `LOKI2B_LIVE_CAP_ON` — **so re-testing the rush arm is cheap and pre-built.**
+  ⚠ **QUEUE #23 already owns this lever** and carries two do-not-re-derive
+  warnings: **the cap raise is DEAD (binds in ≤12.92% of games) and the pooled
+  turret figure INVERTS the sign** (`QUEUE.md:92`, `:107-108`).
 * **Count:** **[MAX_LIVE_FWD_GUN = 2]** live at once, rising later if the
   recycle rule in 7.6 is working. O(1) runs 1.31 gunners/game and wins 80% of its
   games by core kill; Pantheon's 9.07 is the long-game shape.
   Each live gunner is +20% scale on everything else we build, which is why 3.5
   exists.
-* ⭐ **THE PLANK IS VOLUME, NOT AIM.** Research measured our current-version
-  in-band conversion at 1.50-1.97 excess belt-kills per gunner against a field
-  median of 1.82 — **we already aim as well as the field once we plant; we plant
-  in-band at 0.118-0.143 share against 0.276.** The spec's job is to remove the
-  reasons we don't plant, and 7.6's recycle rule is what makes planting more
-  affordable in scale terms.
+* ⛔ **"THE PLANK IS VOLUME, NOT AIM" — WITHDRAWN BY THE TREE, §5.1(3).**
+  Research's 1.50-1.97 excess belt-kills per in-band gunner (vs a field median
+  1.82) is real but is **not a measurement of our aim**: since v102 the tree has
+  exactly one gunner call site, `_try_counterbattery`, which is **home defence
+  keyed to `HUNT_BAND_DSQ = 41` of OUR OWN core.** Those in-band gunners are
+  **map-geometry accidents**, and the good conversion comes from that site's
+  `can_fire_from(..., threat)` precondition, not from siting judgement we could
+  reuse. **We have no forward-gunner aim to be good at.** The spec's job is
+  therefore to build the siting rule AND the volume, and 7.6's recycle rule is
+  what makes planting affordable in scale terms.
 
 ### 7.2 PLACEMENT — the selection rule, in API terms
 
@@ -697,16 +786,30 @@ turret-type change, not a new subsystem.**
 `bots/_v468kladturbo/raid.py:701` is
 `if not ct.can_fire_from(bp, facing, EntityType.SENTINEL, target): continue`
 inside `_try_forward_sentinel` — the identical tile×facing scan, run with
-`SENTINEL` and a target set of enemy **core** tiles. BELTBREAKER is the same loop
-with `EntityType.GUNNER` and a target set of enemy **harvesters and conveyors**,
-plus the band filter. (`main.py:943` already wraps `can_fire_from(..., GUNNER,
-target)` for the home counter-battery, so the gunner form of the call is live and
-exercised.) The docstring at `raid.py:653-666` explains why forward turrets are
-sentinel-only today — *"the collar blocks LOS, so a Gunner built to shoot the
-Core would be shooting our own barriers"* — **which is an argument about shooting
-the CORE, and does not apply to a gunner sited at d²20-100 whose target is the
-belt.** Do not let it block the plank; do respect it by keeping the collar off
-the gunner's ray (§7.5).
+`SENTINEL` and a target set of enemy **core** tiles (`raid.py:688
+tiles = core_tiles(E)`). BELTBREAKER is the same loop with `EntityType.GUNNER`
+and a target set of enemy **harvesters and conveyors**, plus the band filter.
+(`main.py:943` / `main.py:695` already wrap `can_fire_from(..., GUNNER, threat)`
+for the home counter-battery, so the gunner form of the call is live and
+exercised.)
+
+⛔ **AND THE TARGET SET IS THE WHOLE CHANGE — §5.1(4).** `core_tiles(E)` plus
+`d² ≤ 32` plus the pre-scan bail `dsq_core(p, E) > 50` means **no code path in
+the tree can plant a forward turret in the d²20-100 band at all**; the raider
+must first walk to d²≤32 of the core footprint. **That predicate, not
+`LOKI_FWD_MIN_HARV` or `LOKI_FWD_TI_FLOOR`, is why our first plant is ~45 rounds
+late in every era** — the thresholds sit on top of it. Widening the target set to
+enemy economy buildings *is* the timing fix and the siting fix in one edit.
+
+⭐⭐ **THE GUARD TO CARRY, AND IT IS ONE LINE.** §5.1(1) established from source
+that v94's `_plan_siege` scored tiles by **geometry against a static wall map**
+with no live-target check, and §5 measured what that produced (below-random ray
+score, 51.7% nothing in range). **Any tile-scoring rule of the form "the ray
+points at where the belt is" re-imports that failure mode verbatim.** The
+predicate that must gate every plant is the one already live at
+`_v468kladturbo/main.py:695` — `can_fire_from(bp, facing, turret_type, <a target
+that exists right now>)`. **Reject any (T,d) scoring 0** is the same rule stated
+in this spec's vocabulary; keep them the same rule.
 
 **Scoring ladder (MEASURED order, §6 table):**
 `HARVESTER 100 > CONVEYOR/SPLITTER 40 > enemy BUILDER_BOT 25 > enemy GUNNER 20 >
@@ -757,16 +860,39 @@ rotate only if   (the entity my ray was pointed at is GONE)
   10 Ti a rotation is half a gunner. This is the rotate-once-per-target-class
   guard the tape asked for after GUNPIN 44.27.
 
-### 7.5 ESCORT
+### 7.5 ESCORT — and the ONE HARD INCOMPATIBILITY in the live tree
 
 Optional and cheap: if a friendly builder is already orthogonally adjacent and
 idle, **heal the gunner (+4 HP for 1 Ti)** rather than parking. 30.1% of
 Pantheon's and 26.4% of Clankers' forward gunners get healed; **0.0% of ours did,
-while an idle builder sat within d²≤2 for 73% of gunner-life.** Do **not** build
-a barrier ring (falsified twice: `REPLAY-STUDY-TOPTEAM-MICRO`, `REPLAY-STUDY-0033`)
-— and note a friendly barrier next to the gunner would **block its own ray**.
+while an idle builder sat within d²≤2 for 73% of gunner-life.**
 Do not hold a builder in place for escort duty: the deaths are turret fire
 (98.5% for Pantheon), which a builder cannot answer.
+
+⛔⛔ **BARRIERS AND FORWARD GUNNERS ARE MUTUALLY EXCLUSIVE BY CONSTRUCTION, AND
+THIS IS THE REASON v102 DELETED THE FORWARD GUNNER.** `LOKI_BARRIER_SEAL_ON`
+(`raid.py:280`) puts **our own barriers** on the enemy ring, and
+`doctrine.py:1231-1237` states the consequence plainly: *"barriers block line of
+sight, so a Gunner ray dies on our own collar, while the Sentinel line ignores
+obstacles and shoots THROUGH it."* A gunner's line is blocked by **any friendly
+entity** (`turret-line-blocking-2026-08-09`). **A BELTBREAKER planted behind our
+own collar fires at a barrier we paid for.** The plank is compatible only if the
+gunner sits at d²20-100 — *outside* the ring the seal builds — or the seal is
+suppressed on that lane. **This is a design constraint to satisfy, not an
+objection to answer:** the v102 argument is about shooting the CORE **through**
+the collar, which BELTBREAKER never does. Note also that `raid.py:295-297`
+currently ranks the barrier-seal **above** the forward turret in `_raid_act`, so
+the collar wins the builder's action in the contested rounds.
+For the same reason, do **not** build a barrier ring around the gunner
+(independently falsified in `REPLAY-STUDY-TOPTEAM-MICRO` and `REPLAY-STUDY-0033`).
+
+⚠ **LATENT TRAP, check before firing:** `LOKI_FWD_GUN_CAP = 3`
+(`doctrine.py:1237`) counts **rubble** — `SLOT_FWD_GUN` is only ever written as
+`read + 1` and never decremented — so **three destroyed forward turrets close the
+arm permanently** unless `LOKI2B_LIVE_CAP_ON`'s live census
+(`raid.py:669-671`) is what is actually counting. This is the same monotone cap
+the tree blames for the LOKI-2 rush smoke failure (1 turret at r8 vs the
+control's 3). Verify which counter is live before reading any volume arm.
 
 ### 7.6 ABANDON / REPLANT / RECYCLE
 
@@ -888,6 +1014,25 @@ r300)** must not fall, per `DEFENCE_ADMISSION_BAR`.
    and neither identifies anything — which is the same verdict research reached
    from two other designs. **Three instruments, three refusals: this is a leg's
    question, not an archive's.**
+
+6. **The replay tape and the source tree independently fingerprinted the same
+   bug — and then the tree voided one of this study's own framings.** §5 measured
+   off replays that v94's forward gunners scored **below a random ray** and had
+   **nothing in range 51.7% of the time**; the archaeology then found the cause
+   in `_v115dodge/main.py:2695-2699` — `_plan_siege` checked its ray against the
+   **static wall map only**, with no live-target predicate. Two instruments, one
+   verdict, neither told about the other. **But the same pass killed "we already
+   aim as well as the field":** since v102 the tree has **exactly one gunner call
+   site**, `_try_counterbattery`, keyed to `HUNT_BAND_DSQ = 41` of **our own**
+   core — so every "in-band" gunner we have is a **map-geometry accident**, and
+   the version axis cannot explain the v116→v140 share collapse because
+   `main.py` differs by **14 lines, all of them raider salt state.**
+7. **Our lateness is a PREDICATE, not a threshold — and nobody had looked.**
+   `raid.py:688 tiles = core_tiles(E)` means **no code path in the live tree can
+   plant a forward turret in the productive d²20-100 band at all**; the raider
+   must walk to d²≤32 of the core footprint first. Every knob QUEUE #23 has been
+   sizing (`LOKI_FWD_MIN_HARV`, `LOKI_FWD_TI_FLOOR`) sits *on top of* that. The
+   timing fix and the siting fix are **the same one-line target-set edit.**
 
 **Bonus, on us:** the v102 removal was correct and irrelevant. Our v94 "forward
 gunner" put **52.8% of its shots into the core**, was built with **nothing in
