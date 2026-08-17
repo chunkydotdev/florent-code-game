@@ -2555,10 +2555,10 @@ FS_AMMO_CHUNK = 30          # per-round conversion cap while the siege is live
 FS_AMMO_TI_FLOOR = 8        # bank left after a siege conversion
 
 # --- H. hygiene / instrumentation -------------------------------------------
-FS_DRAW_ON = True           # replay indicators: hop paths, seal tiles, the
+FS_DRAW_ON = False          # replay indicators: hop paths, seal tiles, the
                             # sentinel site and its ray, eviction throws.
                             # Magnus WATCHES this replay -- it is the demo.
-FS_LOG = True               # LOCAL demo instrument, STDERR only.  Never print():
+FS_LOG = False              # LOCAL demo instrument, STDERR only.  Never print():
                             # platform replays strip stdout in 30,664 of 30,664
                             # BotOutput events (measured s28), so a plank that
                             # plans to read its own tag out of a live replay is
