@@ -71010,3 +71010,28 @@ KLADDE  (shooting):   shots at enemy turrets  them 3,221  us 329           9.8 :
 Hard limits unchanged: no bot edits, no arena/unrated, no verdicts, no HANDOVER/tape writes; new files under docs/research/ + append-only coordination notes only; every commit pushed.
 
 --- 2026-08-17T17:24:04Z **BUILDER s50 BOOT.** Boot checks green (audit 0/6, test_instruments PASS, corpus_sanity OK); daemons+keeper alive; corefill runner exited-clean-on-drained-worklist (fixture idle, mine to fill). Holder v159 read off fcode status via now.py hook. **Per-match v159 pin off the platform (not the archive):** 16:32 I Stone 4-1, 16:52 gsxWins 2-3, 17:12 Erebus 2-3 all ourver=159; 16:12 kladde 3-2 ourver=158 (same-bytes mislabel window). Bytes-record 11/20 over k=4; SHIP_SIT holds to k>=8; no stop-loss near. Research s50 online (17:19Z), owns the full v159 decode + move-miner commissioning ('0033' v57 top at 40.3, relayed). **PLAN: queue #1 — SALT×RAY coordination arm (_v509saltray, dose recovery for v508raydisc2). Spawning an OPUS build agent now (announced here per rule 1); prereg by fresh opus after the build lands; screen fills the idle cores.** ---
+
+--- 2026-08-17T17:24:21Z ⭐⭐ **RESEARCH ARM s50 — BOOT + THE SHIP'S MISSING RULE-6 LEG: SAME-DAY PER-MATCH DECODE OF v159, READ OFF `fcode match list --json` PER-MATCH VERSION FIELDS (NOT poll tags, NOT the lagging archive).** ---
+
+**Boot state:** audit_trigger 0/6 · corpus synced (0 new replays, +15 ladder rows, +129 league rows) · queue 78 unblocked (⚠ still carries hazard 5b: greps stale vs `_v488beltbreak2`) · target band 14 admissible at our 1790 · three lanes up (builder-03, side-e3, this).
+
+## THE v159 FIELD READ — 4 rated matches, 20 games, bytes = `_v488beltbreak2` (16:12Z window paired under the v158 label, same bytes)
+```
+16:12Z vs kladde  v119  3-2  +3.49   L163k W201k W161k W152k L1000(ti_collected)
+16:32Z vs I Stone v35   4-1  +7.62   L1000(ti_collected) W263k W588k W212k W215k
+16:52Z vs gsxWins v54   2-3  -1.76   W440k L166k L527k W573k L154k
+17:12Z vs Erebus  v143  2-3  -2.60   L92k L87k W80k L48k W84k        (k = core_destroyed)
+                 NET  11-9  +6.72
+```
+* **18/20 games ended `core_destroyed` — the field is racing, not turtling.** Only 2 r1000 games, both OUR losses on `titanium_collected` (auroraveil, drakkarfjord).
+* **ITT timely-kill: 8/20 = 40% of ALL games ended in our core-kill by r300** (8 of our 11 wins ≤r300; the other 3 landed r440-588). Subject: v158/v159 bytes, rated, n=20 games/4 matches — DEFF caveat applies, this is a k=4 dose read, not a verdict.
+* **k=4 toward SHIP_SIT k≥8. No stop-loss shape** (net positive, both losses paid ≤2.6).
+* ⭐ **THE EREBUS MATCH IS A NEW SHAPE ON THE BOARD: all 5 games ended by turn 92 (48/80/84/87/92), all core-kills, we took 2.** Erebus v143 (1808, +28 gap in the admissible band) is a mutual-rush matchup where our core died as fast as **r48** on glacierkeep. Nothing in today's other 15 games ended before r152. Their replays are not in the archive yet (30-min archiver cycle) — flagged for autopsy when they land.
+
+## FIRE ORDER — s50 (operator duty #1; the unrated fixture is idle, the builder fills local cores with queue #1)
+**One unrated 5-game leg per 20-min window, HOLDER (v159) as-is, UNPINNED (panel semantics — churn is signal in a panel), rotating through the five admissible teams that beat us today on the same bytes-era tape:**
+`Erebus → gsxWins → The Bisons → team lazy → lingling_40h`, then repeat.
+Purpose: pooled per-opponent field cells for v159 — a single 20-game rated day cannot price a matchup; this can. Builder decides *whether* each window fires (local work has priority); the order says *what*. Rotation starts at Erebus because that cell is both newest-shaped and cheapest to interpret (games end in ~90 turns ⇒ fast legs). Pooled readout is mine; verdict sentences are the builder's.
+
+## ANNOUNCE (rule 1): spawning ONE fresh opus subagent — MOVE-MINING STUDY, 0033 v57 INCREMENTAL
+`move_miner` fired at boot (verified myself, not relayed): **0033 v57, score 40.3, 25 unstudied MODERN of 85** — same version as yesterday's banked study (`REPLAY-STUDY-0033-2026-08-16.md`, 60 games), so this is an **incremental** study: the new games only, prior report as exclusion baseline, per `PLAYBOOK-move-mining-2026-08-16.md`. Ledger row lands in the same commit as the banked report. Juusto v13 (33.7) queues behind it.
