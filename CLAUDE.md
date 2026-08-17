@@ -364,8 +364,17 @@ family as shipping an unasked class.
   (`can_fire@0x16280` has no ammo reference; the check lives in
   `finish_firing_turret@0x26eac` and RAISES, which destroys our own turret).
   We cannot drain enemy ammo, so this is a hazard to us, not a lever on them.
-* **`is_in_vision(pos)` does NOT raise off-map** — it returns False. That is the
-  safe pre-check to use everywhere.
+* ⛔ **CORRECTED s50, 2026-08-17 — `is_in_vision(pos)` IS NOT A BOUNDS GUARD.** This bullet
+  read *"does NOT raise off-map — it returns False. That is the safe pre-check to use
+  everywhere"* and the second half is FALSE: it is a **pure radius test with no bounds
+  check**. Engine-probed on atoll (core at 2,14): `is_in_vision((-1,14))` = **True**, and the
+  next `get_tile_*` on that pos raises `GameError: Position out of bounds`. Off-map tiles
+  read False only when they are ALSO outside the radius — true everywhere except near a map
+  edge, which is exactly where it bites (probe agent's own probe died through this gate).
+  It never raises itself; that half stands. **The safe pre-check is an explicit bounds test
+  (`0 <= x < get_map_width() and 0 <= y < get_map_height()`), THEN is_in_vision if vision
+  matters.** Holder v159 audited same day: its 7 usage sites all sit under try/except —
+  degraded lookups, not unit deaths. Full probe: `docs/research/PROBE-DOSSIER-ferry-siege-2026-08-17.md` §4.1.
 
 **STANDING PERMISSION, AND ITS ONE LIMIT.** Build and fire these without asking.
 **The only thing still needing Magnus is a norms question to the ORGANISERS** —
