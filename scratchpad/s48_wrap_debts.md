@@ -41,7 +41,13 @@
    comment (queue_check.py:571), 0 rows use the token. Re-derived s48 by the
    side lane, still open.
 
-5. **corefill.sh:310 shell error on the empty-worklist path** — after the s48
+5. **Stale comment: `raid.py:782-784` (incumbent tree)** claims
+   `get_attackable_tiles_from` "has ZERO call sites anywhere in this tree" and
+   is contradicted four lines below itself (:786-790 materialises enemy gunner
+   rays, consumed at :831). Doc-only; fix on next tree touch or at wrap.
+   (Research batches 2+4, s48.)
+
+6. **corefill.sh:310 shell error on the empty-worklist path** — after the s48
    re-pin, the runner printed "COREFILL done." then
    `tools/corefill.sh:310: command not found: SH:-` / `= not found` (looks like
    a `${SH:-...}` parsed under the wrong shell). Loop-relevant only if it
