@@ -67974,3 +67974,57 @@ All expected daemons present, none duplicated. `keeper` **19708**. Three `drift_
 * **Slot watch** on the existing `scratchpad/holder_watch.log`, filtered to ARMED/BLIND/FIRED/change lines so the 120 s `unreadable` spam does not drown it. **The commit watch is structurally blind to activations and holder changes; that is why both are armed.**
 
 **HARD LIMITS THIS SESSION: no bot edits, no arena, no unrated runs, no verdicts, no HANDOVER/PROGRAMME/QUEUE/BARS/tape writes, no platform actions.** Committing only my own named files.
+
+--- 2026-08-17T04:23:40Z ⭐⭐ **RESEARCH s48 — SAME-DAY RATED DECODE OF THE −37 DRAWDOWN. THE ANSWER IS: NOT SLEIPNIR.** (builder priority 1, consumed) ---
+
+**SURFACE:** `fcode match list --mine --type ladder --limit 60 --json` read live at **04:2xZ** (60 rated matches, 2026-08-16 08:35:50Z → 2026-08-17 04:15:15Z) + `corpus/ladder_games.tsv` per-GAME rows (stale to 02:52Z, which covers all but the last three matches) + `corpus/league_matches.tsv` for opponent-version splits. **`match list` SERVED while `fcode status`'s live-data fetch was failing** — the side lane's partial-outage call is confirmed from my side.
+
+**⭐ THE BLIND GAP IS NOW FILLED.** The tape's 65-minute hole (03:06Z 1817/#16 → 04:11Z 1796/#19) contained **three matches**, and here they are per-match, from the platform's own `ratingBefore`/`eloDelta`:
+```
+02:15:13  Erebus v125    3-2   +2.35  -> 1833.2   <-- PEAK
+02:36:07  gsxWins v53    0-5  -14.89  -> 1818.4
+02:55:10  Juusto v13     2-3   -1.53  -> 1816.8
+03:16:41  Clankers v17   0-5  -12.21  -> 1804.6   [inside the tape's blind gap]
+03:35:15  HTTP 418 v105  3-2   +3.36  -> 1808.0   [inside the gap]
+03:57:18  0033 v57       1-4  -12.06  -> 1795.9   [inside the gap]
+04:15:15  kladde v119    4-1   +7.26  -> 1803.2
+```
+⇒ the drawdown is **6 matches, 10/30 games (0.333)**, net **−30.08**, and it is **already half-recovered** by the 04:15 match. Authority `fcode status` at 04:16:47Z (side lane) read **1803 / rank #19 / 1156 matches** — consistent to the decimal with the last match's `teamBRating` 1803.162680307133.
+
+## ⛔ THE WINDOW'S OWN INTERVAL IS NOT HONEST, AND I AM SAYING SO BEFORE QUOTING IT
+The window was defined as **"since the maximum of the rating series"**. Selecting on the argmax **guarantees** a downward run afterwards, so any interval computed on it is **selected-pessimistic by construction** — the same shape as s47's cancelled-arms finding (selected on a LOW prefix draw). For the record, the arithmetic if you insist: window 0.333 vs rest-of-v155 0.600, diff **−26.7pp**, DEFF95 (rated 1.529, two-fixture form) half-width **25.2pp** — clears by 1.5pp. **A bar cleared that narrowly, on a window chosen by its own extremum, is not evidence. Do not bank it.**
+
+## ⭐⭐ THE READ THAT SURVIVES: SLEIPNIR IS AHEAD, ON THE PROGRAMME'S OWN CURRENCY
+Per-version, **all rated ladder GAMES** (`ladder_games.tsv`, per-game rows with `cond`/`turns`):
+```
+             n     share   TIMELY-KILL(<=r300)/all  our-kill  our-death  r1000-tail  med kill  med death
+ourv140     360    0.519          0.422              0.500     0.456       0.044       174       175
+ourv152     360    0.536          0.433              0.525     0.411       0.064       178       209
+ourv153      25    0.200          0.160              0.200     0.600       0.200       134       162
+ourv155     110    0.564          0.418              0.564     0.409       0.027       186       170
+```
+* **Game share 0.564 (v155) vs 0.536 (v152).** Ladder currency is game share, not match wins.
+* **`DEFENCE_ADMISSION_BAR` primary — timely-kill rate 0.418 vs 0.433, diff −1.5pp, DEFF95 half-width 13.1pp → CONTAINS 0.** ⚠ **Stated as the EXCLUSION it has to be** (per the DEFF direction rule, a fail-to-exclude must be restated before the correction is applied): **the interval does NOT exclude a regression as large as −13.1pp.** At n=110 this is a **WEAK non-regression, not a clean one.** It gets stronger for free as v155 accumulates games; re-run it, don't re-quote it.
+* **⭐ THE r1000 TAIL COLLAPSED: 6.4% → 2.7%.** Under `R1000_IS_DEFEAT` that is a real gain nobody registered as a bar. Median kill drifted 178 → 186 — **inside r200-300, therefore reported, not disqualifying** (s45 re-pricing).
+* **v153 is the arm that actually bled** (0.200 share over 25 games, 0.600 our-death). It held the slot briefly on 08-16; it is not the current question but it is the worst per-version cell in the tape.
+
+## ⭐ THE ONE OPPONENT THAT LOOKED LIKE A SLEIPNIR MECHANISM — AND IT IS THEIR SHIP, NOT OUR BOT
+v155-era per-opponent, worst three: **gsxWins v53 1/10 (−23.73 elo) · Juusto v13 7/20 (−12.50) · Clankers v17 2/10 (−12.00)** — those three are **−48.23** while the rest of the v155 era is **+96.88**.
+**gsxWins is the collinear-confound case from `CLAUDE.md` verbatim, and it SPLITS:**
+```
+gsxWins league-wide, OUR matches EXCLUDED (corpus/league_matches.tsv):
+   v52   m=7    12/35 = 0.343   net elo  -30.23
+   v53   m=31   81/155 = 0.523  net elo  +53.84
+```
+⇒ **the FIELD's share against gsxWins fell 0.657 → 0.477, a −18.0pp drop.** **Our share against them fell 0.300 (v152 era, n=20) → 0.100 (v155, n=10), a −20.0pp drop.** **Our drop ≈ the field's drop. gsxWins shipped a genuinely better bot and everyone lost the same amount.** No Sleipnir-specific mechanism is needed to explain it, and none is asserted.
+**Clankers v17 (222 matches, 0.470, NO version change since 08-14) and Juusto v13 (177 matches, 0.485, stable since 08-14) are the CLEAN cells** — stable opponents, so a deficit there is attributable. We are 2/10 and 7/20 against them at gaps of ~+100 and ~+50 (expected ~0.36 and ~0.43). **n=10 and n=20; that is a DOSE probe, not a currency read.** ⚠ **And we have NO v152 baseline vs Clankers at all** (zero rows), so "v155 is worse vs Clankers" is unmeasurable today, not measured.
+
+## MATCHED-OPPONENT v152 vs v155 (the composition control)
+Restricting to the 7 teams both versions met in the 60-match window: **v152 40/75 = 0.53, v155 59/95 = 0.62, +8.8pp, two-fixture DEFF95 half-width 18.5pp → CONTAINS 0.** Point estimate favours Sleipnir; the sample cannot resolve it. **Composition, not regression, is the leading explanation of the drawdown.**
+
+## WHAT I AM **NOT** SAYING
+No verdict, no ship/rollback implication — the slot is frozen on Magnus's word in both directions and **this decode is evidence FOR HIM, not a trigger**. `k=25` and `armed=True` on `ship_watch` are the retired rule's residue.
+
+*(Version-tagged: holder v155 "Sleipnir v1" per `fcode status` 04:16:47Z via the side lane; CONTROL `bots/_v468kladturbo`. Dirs read: `corpus/ladder_games.tsv`, `corpus/league_matches.tsv`, live `fcode match list --mine --type ladder --json`.)*
+
+--- 2026-08-17T04:25:45Z ⭐⭐ BUILDER s48 — MAGNUS DIRECTIVE (direct, verbatim): "Today we're experimenting with an offensive gunner that shreds the enemy economy by cutting conveyors and everything other than the core. A well placed gunner in a base can rotate and kill more conveyors left and right and up. A lot of the top teams do this, look at their games and figure out how to do it optimally." --- THIS IS THE DAY'S LANE. Fits the Sleipnir doctrine's DISABLE leg (quick eco + disable + early kill). Jumps the queue per the Magnus-priority rule; nearest queue rows are the #21/#22/#23 forward-arm cluster (our gunner count 1.86 vs field 10.77; forward arm opens late at half count) + #37 belt-tap — their readouts DEFER to this directive. IN-FLIGHT: fresh opus REPLAY STUDY commissioned by the builder (Magnus-priority carve-out; research mid-sweep, notified) — census of offensive-gunner usage across top teams off the corpus, then deep-read of the best executors; deliverable docs/research/REPLAY-STUDY-offensive-gunner-2026-08-17.md with operational parameters (placement geometry vs belt lines, facing/rotation policy given the 10 Ti rotate, target priority, timing, ammo funding, escort/survivability). Build follows the study. Also still in flight: sonnet overnight-readout agent, opus ladder-no-cap build agent (announced 04:2xZ). ---
