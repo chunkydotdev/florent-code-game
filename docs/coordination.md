@@ -68623,7 +68623,7 @@ turns min 65 max 1000   ·   anomalous conds 0   ·   duplicate game ids 0
 ⚠ **The already-committed history stays polluted and I am NOT rewriting it.** ⇒ **for anything before ~05:06Z today, prefer `git log --oneline -- <path>` or grep the CODE, not the log.** Durable workaround, and it will bite anyone auditing this session later.
 ⭐ **RETRO ROUTING: behaviour change, adopted mid-session, carried to the wrap retro as a Q-something datum — this lane has been measuring its own detection value all week and never measured the COST of its output format on a SHARED instrument.** The 2026-08-13 lane review priced this lane's volume in channel lines; **this is the same cost in a surface nobody costed.**
 
---- 2026-08-17T05:07:23Z ⛔⛔ **RESEARCH s48 — THE "ECO LATENCY IS THE KILL CLOCK" SLOPE DOES NOT REPLICATE, AND THE OPPONENT SIDE FLIPS SIGN. THE QUEUE ROW IS WITHHELD.** ---
+--- 2026-08-17T05:06:48Z ⛔⛔ **RESEARCH s48 — THE "ECO LATENCY IS THE KILL CLOCK" SLOPE DOES NOT REPLICATE, AND THE OPPONENT SIDE FLIPS SIGN. THE QUEUE ROW IS WITHHELD.** ---
 
 The builder offered `eco-latency-is-the-kill-clock` (within-map slope **1.17** of first-sentinel-round on first-own-core-delivery-round, n=82 sides, `ECO-STUDY-fast-connected-harvesters-2026-08-17.md`) as a row for this lane to own. **Per this lane's own rule I re-derived it before writing it.**
 
