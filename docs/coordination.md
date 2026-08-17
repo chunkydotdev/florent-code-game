@@ -69052,3 +69052,24 @@ v66   n=22    2026-08-16T21:52 -> 2026-08-17T04:52     <- what they actually run
 ⇒ **FIX SPEC ADDENDUM, appended to the 05:2xZ spec: read the opponent's CURRENT version from `corpus/league_matches.tsv` (league-wide), never from `ladder_games` (our pairings only), and print both — "their current vN; our newest games are against vM" — because the GAP between those two IS the staleness signal the trigger is missing.**
 ⚠ **AND THIS FIRED ON THE CANDIDATE I HAND-PICKED AFTER REJECTING THE TRIGGER'S TOP THREE.** My manual gate checked our-version coverage, payout and pairing recency, and **still missed that their version had moved**, because I checked *their* recency in `league_matches` (they played an hour ago — true) without checking *which version* was playing. **Their liveness and their version-currency are different questions and I conflated them, one message after writing that their liveness and OUR staleness are different questions.**
 ✅ **THE STUDY IS NOT WASTED AND IT IS NOT BEING RESCOPED: v61 remains the ONLY version of theirs we have met with a current-lineage bot (50 of 50 games at `ourver` ≥ 140).** The agent has been sent a scope correction: put the version boundary in the provenance header, treat findings as LINEAGE evidence rather than current-opponent evidence, and — the useful addition — **attempt a v61-vs-v66 build-profile diff from the LEAGUE's own archived games (22 matches since 21:52Z, and `corpus/events.tsv` covers every archived replay, not only ours), which costs us no games and is a control on the study's own transferability.**
+
+--- 2026-08-17T05:31:58Z ⛔ **SIDE LANE s48 — CORRECTING A RESULT I PUBLISHED. I TESTED A WORKING TREE AND ATTRIBUTED IT TO A COMMIT.** ---
+
+**Research warned that `cluster_ci` v3's injection design might make MY mutation harness pass for the wrong reason, and asked me to re-run rather than trust them. I ran it at ~05:28:3xZ, saw a call-time lookup, and reported their concern unfounded — to Magnus, in my user-facing report.** ⛔ **THAT WAS FALSE.**
+
+**Checked against the committed objects rather than the checkout:**
+```
+git show f0cf4488 (v3):  def analyse(..., _boot=cluster_bootstrap)   <- def-time binding, as they warned
+git show 8b47a767 (v4):  def analyse(..., _boot=None) + globals() lookup at call time
+
+COMMITTED v3, unmutated                -> exit 0
+COMMITTED v3 + module-attribute patch  -> exit 0     ** BLIND — RESEARCH WAS RIGHT **
+```
+⇒ ✅ **their v4 fix was NECESSARY, not defensive.** **I was reading the working tree, which already carried the v4 change uncommitted, and attributed that result to the v3 commit.**
+
+⭐ **THE PRECISE PICTURE, BETTER THAN "v3 WAS BROKEN": v3 HAD ONE WORKING DETECTOR AND ONE BLIND ONE.** Case F injects the mutant EXPLICITLY (`_boot=_row_bootstrap_MUTANT`), so v3 could still catch clustering being removed **via its own path**; what was blind was the MODULE-ATTRIBUTE path — the obvious way an OUTSIDE auditor mutates it. ⇒ **v3 was defended against itself and undefended against me.** **v4 closes both, and the durable property is "two injection points, both must detect", not "the default was wrong".**
+
+## ⛔ THE FAILURE IS MINE AND IT IS THIS LANE'S CHARACTERISTIC ONE — FOURTH TODAY, FIRST PUBLISHED
+**Reading one surface and attributing the result to another.** Today: `ps` missing `holder_watch` (embedded newlines) · the stale `overnight-remote` worklist mirror · the `BARS.tsv` path · **and now a working tree attributed to a commit.** ⚠ **The first three were caught before publication. THIS ONE WAS PUBLISHED.**
+⭐ **MECHANICAL FIX, NOT A RESOLUTION TO BE CAREFUL — and it is D19's own logic applied to auditing: WHEN A CLAIM IS ABOUT A SPECIFIC COMMIT, TEST THAT COMMIT (`git show <sha>:path`), NEVER THE WORKING TREE.** **In a session where three lanes commit every few minutes, the working tree is a DIFFERENT ARTEFACT that happens to share a filename.** **Adopted for every commit-specific claim from here.**
+⚠ **AND IT CUT BOTH WAYS, which is the fairer reading: research's warning described a defect they had ALREADY FIXED in their tree, and my test described a fix that was NOT YET COMMITTED. Neither of us was wrong about the code — we were both wrong about WHICH VERSION we were discussing.** ⇒ **a version-ambiguity failure between two lanes editing fast, and the shared fix is that both sides name an artefact (`sha:path`) rather than a filename.**
