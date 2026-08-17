@@ -1,0 +1,29 @@
+antler      s1   A r=184  core_destroyed   win=True  seats=2 seatR=70   far(belt/mouth/heal)=10/3/0  shots M=2 A=4 H=0 C=29 O=0 thru=34  jitM=0  kills belt=3 heal=0 refarm=0  tb=0/0 tled=0
+antler      s1   B r=356  core_destroyed   win=True  seats=4 seatR=115  far(belt/mouth/heal)=111/3/0  shots M=2 A=0 H=0 C=54 O=0 thru=3  jitM=1  kills belt=1 heal=0 refarm=0  tb=0/0 tled=0
+atoll       s1   A r=377  core_destroyed   win=False seats=0 seatR=0    far(belt/mouth/heal)=0/0/0  shots M=0 A=0 H=0 C=0 O=0 thru=0  jitM=0  kills belt=0 heal=0 refarm=0  tb=0/0 tled=0
+atoll       s1   B r=1000 titanium_collected win=True  seats=1 seatR=28   far(belt/mouth/heal)=0/0/0  shots M=0 A=0 H=0 C=0 O=0 thru=0  jitM=0  kills belt=0 heal=0 refarm=0  tb=0/0 tled=0
+hive        s1   A r=323  core_destroyed   win=True  seats=2 seatR=22   far(belt/mouth/heal)=0/0/0  shots M=0 A=0 H=0 C=10 O=0 thru=10  jitM=0  kills belt=0 heal=0 refarm=0  tb=0/0 tled=0
+hive        s1   B r=323  core_destroyed   win=False seats=0 seatR=0    far(belt/mouth/heal)=0/0/0  shots M=0 A=0 H=0 C=0 O=0 thru=0  jitM=0  kills belt=0 heal=0 refarm=0  tb=0/0 tled=0
+drumlin     s1   A r=214  core_destroyed   win=False seats=0 seatR=0    far(belt/mouth/heal)=0/0/0  shots M=0 A=0 H=0 C=0 O=0 thru=0  jitM=0  kills belt=0 heal=0 refarm=0  tb=0/0 tled=0
+drumlin     s1   B r=291  core_destroyed   win=True  seats=1 seatR=254  far(belt/mouth/heal)=3/3/0  shots M=2 A=0 H=0 C=117 O=0 thru=2  jitM=0  kills belt=1 heal=0 refarm=0  tb=0/0 tled=0
+heart       s1   A r=234  core_destroyed   win=False seats=0 seatR=0    far(belt/mouth/heal)=0/0/0  shots M=0 A=0 H=0 C=0 O=0 thru=0  jitM=0  kills belt=0 heal=0 refarm=0  tb=0/0 tled=0
+heart       s1   B r=234  core_destroyed   win=True  seats=0 seatR=0    far(belt/mouth/heal)=0/0/0  shots M=0 A=0 H=0 C=0 O=0 thru=0  jitM=0  kills belt=0 heal=0 refarm=0  tb=0/0 tled=0
+moonrise    s1   A r=224  core_destroyed   win=False seats=3 seatR=35   far(belt/mouth/heal)=0/0/0  shots M=0 A=0 H=0 C=17 O=0 thru=17  jitM=0  kills belt=0 heal=0 refarm=0  tb=0/0 tled=0
+moonrise    s1   B r=224  core_destroyed   win=True  seats=0 seatR=0    far(belt/mouth/heal)=0/0/0  shots M=0 A=0 H=0 C=0 O=0 thru=0  jitM=0  kills belt=0 heal=0 refarm=0  tb=0/0 tled=0
+saga        s1   A r=163  core_destroyed   win=True  seats=1 seatR=110  far(belt/mouth/heal)=0/0/0  shots M=0 A=0 H=0 C=50 O=0 thru=0  jitM=0  kills belt=0 heal=0 refarm=0  tb=0/0 tled=0
+saga        s1   B r=163  core_destroyed   win=False seats=0 seatR=0    far(belt/mouth/heal)=0/0/0  shots M=0 A=0 H=0 C=0 O=0 thru=0  jitM=0  kills belt=0 heal=0 refarm=0  tb=0/0 tled=0
+eider       s1   A r=344  core_destroyed   win=True  seats=0 seatR=0    far(belt/mouth/heal)=0/0/0  shots M=0 A=0 H=0 C=0 O=0 thru=0  jitM=0  kills belt=0 heal=0 refarm=0  tb=0/0 tled=0
+eider       s1   B r=344  core_destroyed   win=False seats=0 seatR=0    far(belt/mouth/heal)=0/0/0  shots M=0 A=0 H=0 C=0 O=0 thru=0  jitM=0  kills belt=0 heal=0 refarm=0  tb=0/0 tled=0
+
+=== TOTALS over 16 games (_tmp_pierceon vs _tmp_baseoff) ===
+games with a seat Sentinel      7
+live seat-Sentinel rounds       634
+  ...with an enemy BELT on the far side       124
+  ...of which on a core MOUTH tile            9
+  COUNTERFACTUAL: rounds where SOME legal facing would have had one 364
+  ...with an enemy BUILDER on a far heal seat 0
+shots  MOUTH=6 APRON=4 HEALER=0 CORE=277 OTHER=0 empty=0  (through-core 66)
+JITTER CONTROL (+1,0)  MOUTH=1 APRON=4  -> PASS (lower)
+kills  belt=5 healer=0   tiles re-farmed after rebuild=0
+hygiene  our tracebacks=0  all tracebacks=0  tled bot-turns=0
+games won 9/16
