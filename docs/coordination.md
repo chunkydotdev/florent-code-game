@@ -69650,3 +69650,27 @@ clustered on OPPONENT:  11 clusters        ** NO VERDICT ISSUED **
 ✅ **METHOD NOTE ON MY OWN OBJECTION: I checked the ARTEFACT rather than assuming it matched the relayed message — their commit MESSAGE was correctly scoped to the tenure while the BANKED TEXT was not. D20 applied to my own flag, and the check confirmed rather than dissolved it.**
 
 --- 2026-08-17T06:10:43Z ⭐⭐ BUILDER s48 — MAGNUS RULES THE CONTROL QUESTION (direct, verbatim): "Yes we benchmark against Sleipnir, measure odins winrate against us so we can beat it" --- (1) CONTROL = bots/_v468kladturbo (Sleipnir) for all registrations, CONFIRMED — the anchored yardstick (SLEIPH2H 55.33 [53.46,57.21] n=2700 over v152 is the anchor argument). PROGRAMME INCUMBENT unchanged. (2) ODINVSSLEIP is now a MAGNUS-ORDERED calibration cell: Odin (v157, staging in flight) vs Sleipnir head-to-head, the V140VS152 pattern (calibration registration, le-in-band bar to invoke the never-stop carve-out, ANY value is the answer) — its number converts every "X vs Sleipnir" read into "X vs the live holder", and it tells us the size of the hill ("so we can beat it"). REGISTERS WHEN THE SOURCE STAGES. Routing: local preferred (the carve-out mechanism is proven on local auto_gate); ws1 requires the debt-22 exemption drive first — whichever is ready when the source lands. (3) The seven screening arms are unaffected and their yardstick is now Magnus-confirmed. ---
+
+--- 2026-08-17T06:13:07Z ⭐ **SIDE LANE s48 — THE STRICT REGIME'S RUNNING TALLY: TWO FIRINGS, TWO CORRECT. AND A "RACE DID NOT RECUR" THAT IS NOT EVIDENCE THE RACE IS FIXED.** ---
+
+## ⭐ THE TALLY — this lane is the only one tracking it, and it answers the concern I put to Magnus this morning
+```
+FIRING 1  05:59:42Z  SEALSENTAN  TREND-FLOOR@1000  n=1120  36.58 -> share 46.07  CI [43.15, 48.99]   excludes 50   ws1
+FIRING 2  06:10:26Z  ECOMMIT     CATASTROPHE       n=514            share 36.58  CI [32.41, 40.74]   excludes 45   local
+```
+⇒ ✅ **TWO FIRINGS, TWO UNAMBIGUOUS REAL NEGATIVES, ZERO FALSE KILLS.** **Both on different surfaces, both on different clauses, both with intervals excluding the relevant bound by wide margins.** ⭐ **The catastrophe clause caught a disaster at n=514 — about four minutes of shard time instead of 5,400 games — which is the triage working exactly as Magnus intended when he kept the floors strict.**
+⚠⚠ **AND THE HONEST LIMIT, WHICH MATTERS MORE THAN THE TALLY: NEITHER FIRING TESTS THE CASE I WORRIED ABOUT.** **My 04:40Z concern was arms NEAR the bar — a true-50 arm (champion-equal) dying 89.7% of the time at the 1000-look. These two were at true-46 and true-36, i.e. FAR below.** ⇒ **the regime has correctly killed two obviously-dead arms and has not yet been asked the question I raised.** **n=2, both easy cases. Reassuring, not dispositive, and I would rather say so than let a clean tally read as a clean bill.**
+
+## ⚠ AND THE RELAUNCH RACE DID NOT RECUR — FOR THE WRONG REASON
+**Checked after the ECOMMIT stop, since the builder filed the race as debt 23 an hour ago:**
+```
+new LAUNCH lines after 06:10:26  -> NONE
+unstarted rows at 06:12:11       -> 0
+```
+⛔ **The race did not recur BECAUSE THERE WAS NOTHING TO RELAUNCH INTO, not because it is fixed.** ⇒ **debt 23 is fully live; today simply lacked the trigger condition (a pending unstarted row at cancel time).** ⭐ **Presence-versus-absence again: the absence of a failure is not evidence the failure is gone, and a successor reading "the second cancellation was clean" would draw the wrong conclusion.**
+✅ **ECOMMIT still read `RUNNING` at 06:11:09Z, 43s after its cancellation row — that is the stop-poison latency, expected and not a defect.**
+
+## ✅ `ODINVSSLEIP` PRECONDITIONS ADOPTED, AND THE BUILDER IMPROVED THE FIX
+**Both raised pre-lock: (1) the staged tree must be the ACTUAL v157 or the cell measures our reconstruction; (2) both readings pre-committed symmetrically, because a result about a teammate's work is where post-hoc framing is most tempting.**
+⭐⭐ **THEIR IMPROVEMENT IS BETTER THAN MY SUGGESTION: I asked for a PROVENANCE LINE; they put it in the CELL'S NAME — `ODINRECON` if provenance cannot be established, `ODINVSSLEIP` only if it can.** ⇒ **a name travels with every citation; a line can be dropped in the retelling.** **Same principle as "the control is part of the number" and `sha:path` — put the qualifier where it cannot be separated from the claim.**
+✅ **And the registration will carry verbatim: *"the cell measures a distance, not a decision"*, with both lanes typing no inference about a teammate's judgement either way.**
