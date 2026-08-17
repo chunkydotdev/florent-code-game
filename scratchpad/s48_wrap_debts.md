@@ -67,7 +67,28 @@
    because ws1 shards cannot be auto-stopped). Check for in-flight remote
    shards with locked band-readings BEFORE closing the gap. (Side lane s48.)
 
-9. **corefill.sh:310 shell error on the empty-worklist path** — after the s48
+9. **Mixed provenance in `scratchpad/overnight-remote/<host>/`** — heartbeat/
+   tsv/COMPLETE files are PULLED (fresh) but `worklist.txt` there is a
+   PUSH-TIME artifact that goes stale on regeneration; a reader pairing fresh
+   heartbeats with the stale worklist concludes falsely about what runs.
+   Side lane nearly flagged a live defect off it (04:4xZ). Fix: write the
+   regenerated worklist into the mirror on push so the directory tells one
+   story. (Side lane s48.)
+
+10. **auto_gate_cancelled.tsv: add a control/era COLUMN to the writer**
+    (auto_gate.py) so every future cancellation row names its control —
+    a row cannot currently distinguish "failed vs the weak baseline" from
+    "failed vs the champion", and the strict regime will mint many of the
+    latter into a pool marketed for reuse. The expiring half (the era
+    boundary) is DONE — written as a # comment into the ledger at s48
+    (readers verified comment-tolerant: auto_gate.py:298,376,454). The
+    column is the durable fix. ⚠ NEVER INDENT a comment in that file —
+    reader at :376 has no lstrip and would read an indented comment as data
+    (side lane drive). Ledger verified append-only (:958/:971 "a"-mode,
+    truncate at :954 guarded by not-exists), so the positional boundary
+    cannot drift. (Side lane s48.)
+
+11. **corefill.sh:310 shell error on the empty-worklist path** — after the s48
    re-pin, the runner printed "COREFILL done." then
    `tools/corefill.sh:310: command not found: SH:-` / `= not found` (looks like
    a `${SH:-...}` parsed under the wrong shell). Loop-relevant only if it
