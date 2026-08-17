@@ -70854,3 +70854,16 @@ CELL 5  (agent-added) HEALBREAK vs _v488     44.71 [40.43, 48.98]  ⛔ MY ASSIGN
 ```
 ⚠ **INCIDENT, disclosed with its cost: 524 games lost to a shared-scratchpad race** — the sibling battery agent's cleanup `rm -rf`'d the shared `bots` copy dir mid-run; `fcode run` refused (`Bot not found`), the runner banked NOWINNER rather than scoring, the agent re-copied into a namespaced dir (content-hash-verified) and REPLAYED every lost game. Final populations complete, 0 NOWINNER scored. **Routing: agents namespace their bot copies; cleanups never `rm -rf` shared top-level dirs. Wrap list.**
 ⇒ **EVERY DISMISSAL ON TODAY'S BOARD NOW CARRIES ITS OWN GAMES.** The sweep also produced its own finding: RUSH2's mechanism (plant EARLIER without planting MORE) being measured harmful is fresh evidence on the timing axis from the opposite direction — pre-r30 sentinel plants on THIS chassis hurt, which brackets the beltbreak-family timing sweet spot from below.
+
+--- 2026-08-17T16:0xZ ⭐⭐ **BUILDER s49 — CAP PROBES LANDED (n=540/arm, 3,240 games): THE TAX IS REAL AND EXACTLY PRICED, THE DIAGNOSIS WAS RIGHT, AND THE UN-MISWIRED CAP STILL BUYS NO CURRENCY. CAP AXIS DEAD AT THIS DOSE, CORE-BACKED.** ---
+**The tax, measured off the code path with zero variance: the 2nd/3rd-plant surcharge is 64 Ti (carrier/A) → 76 Ti (v503 as-built) → 40 Ti (B, tax deleted) — the +12 confirmed exactly.** And a THIRD `LOKI_BELTBREAK_AMMO` coupling found: `main.py:1093` raises the gunner ROTATION gate 34→46 with the same constant (Probe B still carries it).
+```
+arm            plants     3+ live windows     kill≤300    share
+carrier        1.23        0.10               0.30        0.53
+A cap-only     1.39        0.15  (+5.0pp*)    0.30        0.53
+v503 as-built  1.26        0.10  (+0.2pp)     0.29        0.53     <- the tax CANCELS the cap's effect
+B tax-removed  1.41*       0.15  (+5.6pp*)    0.26        0.47     <- mechanism recovered, NO currency
+```
+⇒ **MISWIRED: confirmed (the +12 tax fully cancels a real +5pp 3-shredder-window effect). AND the repair does not pay: B's kill −4.1pp and share −5.2pp (both ~ns, wrong direction). The cap contributes ~zero on top of the magazine (+0.031±0.184). CAP AXIS DEAD AT THIS DOSE — closed on 3,240 games, per Magnus's back-it-with-cores rule.** TI remains 81-87% of refusals in every arm; raising the cap just converts CAP refusals into TI refusals.
+⛔ **TWO INSTRUMENT CATCHES BANKED:** (1) **`NOISE_ON=False` with repeated seeds is DEGENERATE — 180/180 cells byte-identical across 6 reps, effective n 30 not 180, CIs understated ×2.45**; its only "significant" result (an r1000 rise) did NOT replicate at the powered n. Distinct seeds differ (F0's fact); SAME-seed reps at NOISE-off are copies. (2) **The stack's 6.0 shots/shredder figure does not reproduce on this fixture** (floor across six arms: 20.1; carrier 22.9 matches doctrine's banked 22.4-25.7) — flagged as a fixture/denominator discrepancy in the stack's decoder, not a real collapse B avoids. The L1+L3 shots-collapse claim is accordingly DOWNGRADED pending re-decode.
+⇒ DISPOSITION: BBCAP3 stays unfired permanently at this dose; the fund-what-you-allow lesson survives (the tax was real); the beltbreak family's open iterations are the SALT×RAY coordination arm and the timing bracket. Awaiting SENTSURVIVE.
