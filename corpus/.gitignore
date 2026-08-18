@@ -24,3 +24,13 @@ corpus/keeper_state.json
 # would mean the dashboard's version labels exist on one machine only, and the
 # next lane would re-derive the same anchors from scratch.
 !version_trees.tsv
+
+# ⛔ SAME EXCEPTION, SAME REASON, 2026-08-18. `failure_reel.tsv` is the FAILURE
+# REEL manifest (Magnus: the worst losses of every build, watchable later at the
+# dashboard's /reel). Its `cause_class` and `narrative` are a JUDGEMENT written
+# once, at the end of the build that lost those games, against replays that live
+# in `scratchpad/` and are routinely swept. NOTHING REGENERATES IT — re-deriving
+# a narrative later would mean re-running the autopsy against artefacts that may
+# no longer exist, which is why the page is built to show MISSING rather than
+# drop a row. An ignored reel is a reel that dies with one machine.
+!failure_reel.tsv

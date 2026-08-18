@@ -54,6 +54,11 @@ import matches                                                    # noqa: E402
 # below) — so picking this route up REQUIRES RESTARTING THIS PROCESS, a hot
 # reload of serve.py's own routes is not a thing Python does.
 import replays                                                    # noqa: E402
+# Failure reel: the append-only `corpus/failure_reel.tsv` manifest of each
+# build's worst losses, plus a viewer for the LOCAL .replay26 files it names
+# (tools/dash/reel.py). No background thread — it parses a small file per
+# request — but the same restart rule applies to picking up its routes.
+import reel                                                       # noqa: E402
 
 OVERNIGHT = ROOT / "scratchpad" / "overnight"
 STARTED = ROOT / "scratchpad" / "corefill_started"
@@ -1156,7 +1161,7 @@ PAGES = {"/": "cores.html", "/cores": "cores.html",
          "/game": "game.html", "/lingo": "lingo.html",
          "/shards": "shards.html", "/shard": "shard.html",
          "/matches": "matches.html", "/match": "match.html",
-         "/replays": "replays.html"}
+         "/replays": "replays.html", "/reel": "reel.html"}
 TYPES = {".html": "text/html; charset=utf-8", ".css": "text/css; charset=utf-8",
          ".js": "application/javascript; charset=utf-8"}
 
@@ -1225,6 +1230,24 @@ class Handler(BaseHTTPRequestHandler):
             if err:
                 return self._send(404, err.encode(), "text/plain; charset=utf-8")
             return self._send(200, html, "text/html; charset=utf-8")
+        if path == "/api/reel":
+            body = json.dumps(reel.collect_reel(), indent=1).encode()
+            return self._send(200, body, "application/json; charset=utf-8")
+        if path == "/reel_view":
+            # ⛔ `?path=` is a PATH, not an id — the only route here that takes
+            # one. Validation lives in reel.resolve_reel_path (repo-relative,
+            # `.replay26`, and inside ROOT *after* resolve()); a refusal is a
+            # 400 and a valid-but-absent file is a 404, because "you asked for
+            # something you may not have" and "the artefact is gone" are
+            # different answers and the caller must be able to tell them apart.
+            rel = (query.get("path") or [""])[0]
+            _abs, why = reel.resolve_reel_path(rel)
+            if why:
+                return self._send(400, why.encode(), "text/plain; charset=utf-8")
+            html, err = reel.get_or_build_reel_view(rel)
+            if err:
+                return self._send(404, err.encode(), "text/plain; charset=utf-8")
+            return self._send(200, html, "text/html; charset=utf-8")
         name = PAGES.get(path) or path.lstrip("/")
         target = (STATIC / name).resolve()
         if not str(target).startswith(str(STATIC)) or not target.is_file():
@@ -1247,6 +1270,7 @@ def main() -> int:
     print(f"  shards  : http://127.0.0.1:{PORT}/shards")
     print(f"  matches : http://127.0.0.1:{PORT}/matches")
     print(f"  replays : http://127.0.0.1:{PORT}/replays")
+    print(f"  reel    : http://127.0.0.1:{PORT}/reel")
     print(f"  repo    : {ROOT}")
     print(f"  binds   : 127.0.0.1 only (not reachable from the network)")
     print(f"  reads   : files + `ps`. No fcode, no network, no writes.")

@@ -1,0 +1,215 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Failure reel — Loki dashboard</title>
+<link rel="stylesheet" href="/style.css">
+<script src="/tz.js"></script>
+<style>
+  /* Page-scoped so the shared stylesheet stays untouched. */
+  .buildhead { display: flex; align-items: baseline; gap: 10px; flex-wrap: wrap;
+               margin: 26px 0 8px; }
+  .buildhead h2 { margin: 0; font-size: 17px; }
+  .cause { font-family: var(--mono); font-size: 11.5px; font-weight: 700;
+           padding: 2px 7px; border-radius: 6px; white-space: nowrap; }
+  .c-MAG_STARVED { background: color-mix(in srgb, var(--warn) 20%, transparent); color: var(--warn); }
+  .c-HEAL_OUTRUN { background: color-mix(in srgb, var(--bad) 18%, transparent); color: var(--bad); }
+  .c-NO_TURRET   { background: color-mix(in srgb, var(--accent) 18%, transparent); color: var(--accent); }
+  .c-other       { background: var(--panel2); color: var(--dim); }
+  .watch {
+    display: inline-block; padding: 4px 11px; border-radius: 7px;
+    background: var(--accent); color: #0b0d12; text-decoration: none;
+    font-weight: 700; font-size: 12px; white-space: nowrap;
+  }
+  .watch:hover { opacity: .88; }
+  .watch.dead { background: var(--panel2); color: var(--dimmer); cursor: not-allowed;
+                font-weight: 600; }
+  td.narr { font-size: 12.5px; line-height: 1.5; max-width: 78ch; }
+  td.where { white-space: nowrap; }
+  .scroll table { min-width: 1000px; }
+  .rawline { font-family: var(--mono); font-size: 11px; color: var(--dimmer);
+             white-space: pre-wrap; word-break: break-all; }
+</style>
+</head>
+<body>
+<header>
+  <span class="brand">LOKI</span>
+  <nav>
+    <a href="/">Cores</a>
+    <a href="/shards">Shards</a>
+    <a href="/matches">Matches</a>
+    <a href="/replays">Replays</a>
+    <a href="/reel" class="on">Reel</a>
+    <a href="/game">Game</a>
+    <a href="/lingo">Lingo</a>
+  </nav>
+  <span class="spacer"></span>
+  <span class="clock" id="clock">…</span>
+</header>
+
+<main>
+  <h1>Failure reel</h1>
+
+  <div class="count" id="src">…</div>
+
+  <input class="filter" id="q" type="search"
+         placeholder="filter build / map / cause / arm / narrative…" autocomplete="off">
+  <div class="count" id="count">…</div>
+
+  <div id="builds"></div>
+
+  <footer>
+    <a href="/">&larr; Cores overview</a> · <a href="/replays">Replays</a> ·
+    30s refresh. Manifest: <code id="mpath" class="mono"></code> —
+    append-only, written by BUILD AGENTS; see the <code>#</code> header in that file
+    for the column convention. Rows are never edited or deleted, so a row whose
+    replay is gone renders <b>MISSING</b> rather than a dead link.
+  </footer>
+</main>
+
+<script>
+const $ = s => document.querySelector(s);
+const esc = s => String(s === null || s === undefined ? '' : s)
+  .replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
+
+// ⛔ NOT a freshness ALARM. This ledger has no cadence (see reel.py's
+// `cadence_note`) — an old row is history. So age is rendered as a neutral
+// disclosure and never as STALE, which would be a false alarm here.
+function ageText(min) {
+  if (min === null || min === undefined) return 'no stamp';
+  if (min < 90) return min.toFixed(1) + 'm ago';
+  if (min < 60 * 48) return (min / 60).toFixed(1) + 'h ago';
+  return (min / 1440).toFixed(1) + 'd ago';
+}
+function ageBadge(min, label) {
+  if (min === null || min === undefined)
+    return '<span class="badge b-blind">NO STAMP</span>';
+  return `<span class="badge b-dim" title="${esc(label || '')}">${esc(ageText(min))}</span>`;
+}
+
+function causeChip(c) {
+  const known = ['MAG_STARVED', 'HEAL_OUTRUN', 'NO_TURRET'];
+  const cls = known.indexOf(c) >= 0 ? 'c-' + c : 'c-other';
+  return `<span class="cause ${cls}">${esc(c || '—')}</span>`;
+}
+
+function watchCell(r) {
+  if (r.exists)
+    return `<a class="watch" target="_blank" rel="noopener" href="${esc(r.watch_url)}"
+              title="render this replay through tools/replay_view.py">WATCH</a>`;
+  const why = esc(r.note || 'file not available');
+  return `<span class="watch dead" title="${why}">${esc(r.state)}</span>
+          <div class="sub-mono">${why}</div>`;
+}
+
+function rowHtml(r) {
+  return `<tr>
+    <td class="where">
+      <span class="mono" style="font-size:12px">${esc(r.map)}</span>
+      <div class="sub-mono">seat ${esc(r.seat)} · ${esc(r.arm)}</div>
+    </td>
+    <td>${causeChip(r.cause_class)}</td>
+    <td class="narr">${esc(r.narrative)}
+      <div class="sub-mono" style="margin-top:5px">${esc(r.replay_path)}
+        · replay ${r.exists ? esc(ageText(r.replay_age_min)) : '—'}</div>
+    </td>
+    <td class="where">${esc(r.ts)}<div>${ageBadge(r.ts_age_min, 'age of the banked row')}</div></td>
+    <td>${watchCell(r)}</td>
+  </tr>`;
+}
+
+function matches(r, q) {
+  if (!q) return true;
+  return [r.build, r.map, r.seat, r.arm, r.cause_class, r.narrative, r.replay_path]
+    .join(' ').toLowerCase().indexOf(q) >= 0;
+}
+
+function render(s) {
+  $('#clock').innerHTML = s.served_at ? tzTime(s.served_at) : '(server sent no read time)';
+  $('#mpath').textContent = s.manifest;
+
+  const src = s.source || {};
+  if (!src.ok) {
+    // BLIND is a state, not a zero: no rows are drawn and no count is invented.
+    $('#src').innerHTML = tzNote() + '<br><span class="badge b-blind">REEL BLIND</span> '
+      + esc(src.error || 'unknown error reading the manifest')
+      + ' — this is NOT "no failures banked"; it is "the ledger could not be read".';
+    $('#count').innerHTML = '';
+    $('#builds').innerHTML = '<div class="count"><span class="badge b-blind">BLIND</span> '
+      + 'nothing is shown because nothing could be read.</div>';
+    return;
+  }
+
+  $('#src').innerHTML = tzNote() + '<br><code>' + esc(s.manifest) + '</code>: '
+    + '<strong>' + esc(s.n_rows) + '</strong> rows in <strong>'
+    + esc((s.builds || []).length) + '</strong> builds, last appended '
+    + tzTime(src.mtime) + ' ' + ageBadge(src.age_min, 'age of the manifest file')
+    + '<br><span class="sub-mono">' + esc(s.cadence_note) + '</span>';
+
+  const q = $('#q').value.trim().toLowerCase();
+  let shown = 0;
+  const parts = [];
+  for (const b of (s.builds || [])) {
+    const rows = (b.rows || []).filter(r => matches(r, q));
+    if (rows.length === 0) continue;
+    shown += rows.length;
+    parts.push(`<div class="buildhead">
+        <h2>${esc(b.build)}</h2>
+        <span class="badge b-dim">${esc(rows.length)}${rows.length !== b.n ? ' of ' + esc(b.n) : ''} rows</span>
+        ${b.n_missing ? '<span class="badge b-warn">' + esc(b.n_missing) + ' MISSING</span>' : ''}
+        <span class="sub-mono">newest ${esc(b.newest_ts || 'no stamp')}
+          ${b.newest_ts ? '(' + esc(ageText(b.newest_age_min)) + ')' : ''}
+          · arms ${esc((b.arms || []).join(', '))}</span>
+      </div>
+      <div class="scroll"><table>
+        <thead><tr>
+          <th>Map / seat / arm</th><th>Cause</th><th>Narrative</th>
+          <th title="when the row was appended">Banked</th><th>Replay</th>
+        </tr></thead>
+        <tbody>${rows.map(rowHtml).join('')}</tbody>
+      </table></div>`);
+  }
+  if (parts.length === 0)
+    parts.push('<div class="count">' + (s.n_rows === 0
+      ? 'The manifest is readable and has <strong>0</strong> rows — nothing has been banked yet. (Readable-and-empty, not blind.)'
+      : 'No row matches that filter.') + '</div>');
+
+  if (s.n_malformed) {
+    parts.push('<div class="buildhead"><h2>Malformed rows</h2>'
+      + '<span class="badge b-warn">' + esc(s.n_malformed) + '</span>'
+      + '<span class="sub-mono">shown, never silently dropped — expected '
+      + esc((s.columns || []).length) + ' tab-separated fields</span></div>'
+      + '<div class="scroll"><table><thead><tr><th>Line</th><th>Fields</th><th>Raw</th></tr></thead><tbody>'
+      + s.malformed.map(m => `<tr><td class="mono">${esc(m.line)}</td>`
+          + `<td class="mono">${esc(m.n_fields)}/${esc(m.expected)}</td>`
+          + `<td class="rawline">${esc(m.raw)}</td></tr>`).join('')
+      + '</tbody></table></div>');
+  }
+
+  $('#count').innerHTML = `${shown} of <strong>${esc(s.n_rows)}</strong> rows shown`
+    + (q ? ` matching filter "${esc(q)}"` : '')
+    + (s.n_missing ? ` · <span class="badge b-warn">${esc(s.n_missing)} rows point at a replay that is gone</span>` : '');
+  $('#builds').innerHTML = parts.join('');
+}
+
+let qTimer = null;
+$('#q').addEventListener('input', () => {
+  clearTimeout(qTimer);
+  qTimer = setTimeout(tick, 200);
+});
+
+async function tick() {
+  try {
+    const r = await fetch('/api/reel', {cache: 'no-store'});
+    render(await r.json());
+  } catch (e) {
+    $('#clock').innerHTML = '<span class="badge b-blind">SERVER UNREACHABLE</span>';
+    $('#src').innerHTML = '<span class="badge b-blind">SERVER UNREACHABLE</span> '
+      + 'the rows below are whatever was last read and are NOT being refreshed.';
+  }
+}
+tick(); setInterval(tick, 30000);
+</script>
+</body>
+</html>
