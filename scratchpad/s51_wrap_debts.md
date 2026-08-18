@@ -33,3 +33,8 @@ Non-tool notes for the wrap retro: my channel message transposed the two gsxWins
    (32-bit unsigned, negative raises) was never routed to the atlas; the v517 agent re-probed
    it from scratch. Route at wrap: store-slot width/sign + get_hp/get_position raise
    out-of-vision (v516) + the wrapping-clock-needs-liveness-pair instrument lesson (v517).
+7. **(s51, side-lane suggestion after the KILL_TARGET orphaning) gate.py FIELD-COMPLETENESS
+   canary**: the selftest checks name validity + duplicates but not that every EXPECTED
+   parsed field is present — a manifest of expected fields, diffed at selftest, catches an
+   orphaned/dropped field at edit time instead of a session later. (The orphaning survived a
+   side-lane audit whose filter read +lines only — D21c instance, their disclosure.)
