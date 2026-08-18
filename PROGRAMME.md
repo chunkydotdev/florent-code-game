@@ -28,6 +28,19 @@ successor session inherit it. The fields below are parsed; the prose is not.
     X3R0_SLOT_RULE: on_60pct_pm2pp_screen_vs_holder_switch_if_beats
     SLOT_STOP_LOSS: off
     SHIP_BAR: 70pct_vs_incumbent_full_pool_powered_n
+    KILL_TARGET: median_r180_share_by_r200_floor_r300
+
+## KILL_TARGET ADDED 2026-08-18 (Magnus, direct, in-session — s51: "Great, thats the new goal then")
+
+The ultra-rush design target, derived from measured anchors and ratified by Magnus:
+**median kill ≤ r180 · tracked metric = share of kills by r200 (currently ~16.5% of games,
+target >50%) · sub-r150 welcomed as tail, not planned as median · r300 stays the hard
+admissibility floor (DEFENCE_ADMISSION_BAR unchanged).** Basis, all on the tape: our-death
+p25 = r196 (the race we must beat), historic winning median r174, field converts against us
+at r300+ (0.82), physics floor ~r130-170 (arrival r9-16 + turret ≤r75 + funded kill window).
+Phase budget: ring ≤r16 · first funded turret ≤r75 · net-positive fire from first shot ·
+core dead ≤r180. **Every build report from v517 on carries the kill-round CDF against the
+r150/r180/r200/r300 marks.**
 
 ## SHIP_BAR ADDED 2026-08-18 (Magnus, direct, in-session — s51)
 
