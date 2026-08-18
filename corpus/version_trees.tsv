@@ -93,3 +93,4 @@ version	name	tree	evidence	recorded_at
 159	Sleipnir v2	bots/_v488beltbreak2	submit_clean auto — `fcode status` Active bot: v159 (Sleipnir v2)	2026-08-17T16:13:19Z
 160	Heimdall v1 (splitfork seat-war)	bots/_x3r0v160heimdall	imported s50 via `fcode submission download 160` (Odin-v157 precedent) — x3r0 ship, uploaded 2026-08-17T18:56:51.626Z	2026-08-17T18:56:52Z
 161	Gungnir v1 (sprint, kladde-fixed)	bots/_x3r0v161gungnir	imported s51 via `fcode submission download 161` (v160 precedent) — x3r0 ship, uploaded 2026-08-18T04:35:58.736Z	2026-08-18T04:35:59Z
+162	Mjolnir v1 (banded opening, ring claim, endgame)	bots/_x3r0v162mjolnir	imported s51 via `fcode submission download 162` (v161 precedent) — x3r0 ship, uploaded 2026-08-18T17:12:43Z	2026-08-18T17:12:44Z
