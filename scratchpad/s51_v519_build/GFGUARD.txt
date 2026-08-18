@@ -1,0 +1,14 @@
+BUDGET-GUARD CONTROL, driven both ways on the BEFORE tape (GFBUDGET, 10 games)
+guard: ti >= gunner_cost + FS_V519_GF_TI_FLOOR, evaluated at every IN-BAND ferry round
+
+FS_V519_GF_TI_FLOOR              passes    refuses
+0                                    16          0
+75                                   16          0
+150                                  16          0
+300                                   4         12
+400                                   2         14
+
+n in-band ferry rounds = 16 ; bank range 216-434 Ti ; gunner price 28-35 Ti
+=> the SHIPPED floor (75) refuses 0 of 16 and is a RAIL, not a dose;
+   the mGFPOOR floor (400) refuses 14 of 16 (the two survivors are the r1-r2
+   nordkap rounds at ti=434 -- the opening bank before anything is spent).  The predicate produces both verdicts.

@@ -1,0 +1,8 @@
+PHASE BUDGET SPLIT: treated cells vs untouched cells (settles open item 1)
+arm        cut                             nSENT   medARR  medSENT  medKILL  arr->sent fund->kill
+parent     TREATED {midgard,yulerune}        112     51.0     42.0    347.0       -9.0      103.0
+parent     UNTOUCHED (4 maps)                215      8.0     90.0    244.0       81.0      101.5
+v519       TREATED {midgard,yulerune}         96     43.0    178.0    274.5      134.5       75.5
+v519       UNTOUCHED (4 maps)                242      8.0     96.0    220.0       87.5       93.0
+msoff      TREATED {midgard,yulerune}        111     50.0     42.0    226.0       -9.0       92.0
+msoff      UNTOUCHED (4 maps)                232      8.0     97.0    216.0       87.0       97.0

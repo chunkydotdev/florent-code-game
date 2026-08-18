@@ -1,0 +1,13 @@
+tag	map	seed	seat	ours	winner	cond	turn	tracebacks	ours_mined	opp_mined
+atoll_s1_A	atoll	1	A	US	eqflagoff	Core destroyed	313	0	930	270
+atoll_s1_B	atoll	1	B	OPP	eq_opp	Core destroyed	288	0	410	3290
+drakkarfjord_s1_A	drakkarfjord	1	A	OPP	eq_opp	Titanium collected (tiebreak)	1000	0	4910	7180
+drakkarfjord_s1_B	drakkarfjord	1	B	US	eqflagoff	Core destroyed	638	0	1440	170
+glacierkeep_s1_A	glacierkeep	1	A	US	eqflagoff	Core destroyed	185	0	170	0
+glacierkeep_s1_B	glacierkeep	1	B	US	eqflagoff	Titanium collected (tiebreak)	1000	0	40	0
+midgard_s1_A	midgard	1	A	OPP	eq_opp	Core destroyed	390	0	450	3200
+midgard_s1_B	midgard	1	B	OPP	eq_opp	Core destroyed	121	0	570	1480
+nordkap_s1_A	nordkap	1	A	OPP	eq_opp	Core destroyed	407	0	2060	5460
+nordkap_s1_B	nordkap	1	B	US	eqflagoff	Core destroyed	216	0	570	90
+yulerune_s1_A	yulerune	1	A	OPP	eq_opp	Core destroyed	259	0	450	1990
+yulerune_s1_B	yulerune	1	B	OPP	eq_opp	Core destroyed	219	0	250	1770

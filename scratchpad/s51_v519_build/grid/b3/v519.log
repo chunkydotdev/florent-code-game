@@ -1,0 +1,36 @@
+atoll_s7_A	atoll	7	A	OPP	_v488beltbreak2	Core destroyed	313	0	370	370
+atoll_s7_B	atoll	7	B	OPP	_v488beltbreak2	Core destroyed	196	0	440	990
+atoll_s8_A	atoll	8	A	US	_v519cripple	Core destroyed	916	0	4550	6740
+atoll_s8_B	atoll	8	B	OPP	_v488beltbreak2	Core destroyed	733	0	360	1900
+atoll_s9_A	atoll	9	A	OPP	_v488beltbreak2	Core destroyed	236	0	920	1950
+atoll_s9_B	atoll	9	B	US	_v519cripple	Core destroyed	196	0	960	560
+drakkarfjord_s7_A	drakkarfjord	7	A	OPP	_v488beltbreak2	Titanium collected (tiebreak)	1000	0	8490	9010
+drakkarfjord_s7_B	drakkarfjord	7	B	US	_v519cripple	Titanium collected (tiebreak)	1000	0	10130	5510
+drakkarfjord_s8_A	drakkarfjord	8	A	US	_v519cripple	Core destroyed	170	0	1030	0
+drakkarfjord_s8_B	drakkarfjord	8	B	US	_v519cripple	Core destroyed	155	0	670	0
+drakkarfjord_s9_A	drakkarfjord	9	A	OPP	_v488beltbreak2	Core destroyed	515	0	3470	5500
+drakkarfjord_s9_B	drakkarfjord	9	B	OPP	_v488beltbreak2	Core destroyed	573	0	2190	8120
+glacierkeep_s7_A	glacierkeep	7	A	US	_v519cripple	Core destroyed	217	0	230	0
+glacierkeep_s7_B	glacierkeep	7	B	US	_v519cripple	Core destroyed	701	0	130	30
+glacierkeep_s8_A	glacierkeep	8	A	US	_v519cripple	Core destroyed	413	0	170	0
+glacierkeep_s8_B	glacierkeep	8	B	US	_v519cripple	Core destroyed	217	0	10	0
+glacierkeep_s9_A	glacierkeep	9	A	US	_v519cripple	Core destroyed	188	0	410	0
+glacierkeep_s9_B	glacierkeep	9	B	US	_v519cripple	Core destroyed	309	0	180	0
+midgard_s7_A	midgard	7	A	OPP	_v488beltbreak2	Core destroyed	453	0	710	1210
+midgard_s7_B	midgard	7	B	US	_v519cripple	Titanium collected (tiebreak)	1000	0	1010	640
+midgard_s8_A	midgard	8	A	OPP	_v488beltbreak2	Core destroyed	453	0	710	1210
+midgard_s8_B	midgard	8	B	OPP	_v488beltbreak2	Core destroyed	244	0	590	2270
+midgard_s9_A	midgard	9	A	US	_v519cripple	Core destroyed	399	0	1450	640
+midgard_s9_B	midgard	9	B	OPP	_v488beltbreak2	Core destroyed	265	0	700	1490
+nordkap_s7_A	nordkap	7	A	OPP	_v488beltbreak2	Core destroyed	312	0	930	2250
+nordkap_s7_B	nordkap	7	B	US	_v519cripple	Core destroyed	349	0	160	630
+nordkap_s8_A	nordkap	8	A	OPP	_v488beltbreak2	Core destroyed	112	0	110	930
+nordkap_s8_B	nordkap	8	B	US	_v519cripple	Core destroyed	196	0	730	90
+nordkap_s9_A	nordkap	9	A	US	_v519cripple	Core destroyed	370	0	1690	1420
+nordkap_s9_B	nordkap	9	B	OPP	_v488beltbreak2	Core destroyed	249	0	190	1310
+yulerune_s7_A	yulerune	7	A	US	_v519cripple	Core destroyed	256	0	1790	430
+yulerune_s7_B	yulerune	7	B	OPP	_v488beltbreak2	Core destroyed	573	0	510	460
+yulerune_s8_A	yulerune	8	A	OPP	_v488beltbreak2	Core destroyed	468	0	500	1120
+yulerune_s8_B	yulerune	8	B	OPP	_v488beltbreak2	Core destroyed	197	0	500	1670
+yulerune_s9_A	yulerune	9	A	US	_v519cripple	Core destroyed	748	0	1640	490
+yulerune_s9_B	yulerune	9	B	US	_v519cripple	Core destroyed	277	0	370	370

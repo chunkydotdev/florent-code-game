@@ -1,0 +1,37 @@
+tag	map	seed	seat	ours	winner	cond	turn	tracebacks	ours_mined	opp_mined
+atoll_s1_A	atoll	1	A	US	mGate10	Core destroyed	593	0	2930	2800
+atoll_s1_B	atoll	1	B	US	mGate10	Core destroyed	350	0	1990	820
+atoll_s2_A	atoll	2	A	OPP	_v488beltbreak2	Core destroyed	497	0	3190	2340
+atoll_s2_B	atoll	2	B	US	mGate10	Titanium collected (tiebreak)	1000	0	4960	2490
+atoll_s3_A	atoll	3	A	OPP	_v488beltbreak2	Core destroyed	674	0	1680	5140
+atoll_s3_B	atoll	3	B	OPP	_v488beltbreak2	Core destroyed	451	0	2220	3110
+drakkarfjord_s1_A	drakkarfjord	1	A	OPP	_v488beltbreak2	Core destroyed	243	0	430	1790
+drakkarfjord_s1_B	drakkarfjord	1	B	US	mGate10	Core destroyed	141	0	490	0
+drakkarfjord_s2_A	drakkarfjord	2	A	US	mGate10	Core destroyed	417	0	4650	3840
+drakkarfjord_s2_B	drakkarfjord	2	B	OPP	_v488beltbreak2	Core destroyed	693	0	4740	10550
+drakkarfjord_s3_A	drakkarfjord	3	A	OPP	_v488beltbreak2	Titanium collected (tiebreak)	1000	0	220	230
+drakkarfjord_s3_B	drakkarfjord	3	B	US	mGate10	Core destroyed	129	0	360	0
+glacierkeep_s1_A	glacierkeep	1	A	OPP	_v488beltbreak2	Core destroyed	473	0	190	290
+glacierkeep_s1_B	glacierkeep	1	B	US	mGate10	Core destroyed	305	0	20	0
+glacierkeep_s2_A	glacierkeep	2	A	US	mGate10	Core destroyed	245	0	180	0
+glacierkeep_s2_B	glacierkeep	2	B	OPP	_v488beltbreak2	Titanium collected (tiebreak)	1000	0	760	2320
+glacierkeep_s3_A	glacierkeep	3	A	US	mGate10	Core destroyed	173	0	370	0
+glacierkeep_s3_B	glacierkeep	3	B	OPP	_v488beltbreak2	Core destroyed	465	0	0	0
+midgard_s1_A	midgard	1	A	US	mGate10	Core destroyed	297	0	690	770
+midgard_s1_B	midgard	1	B	US	mGate10	Core destroyed	181	0	980	760
+midgard_s2_A	midgard	2	A	US	mGate10	Core destroyed	192	0	1800	520
+midgard_s2_B	midgard	2	B	US	mGate10	Core destroyed	169	0	1570	650
+midgard_s3_A	midgard	3	A	US	mGate10	Core destroyed	205	0	1520	600
+midgard_s3_B	midgard	3	B	US	mGate10	Core destroyed	689	0	550	620
+nordkap_s1_A	nordkap	1	A	US	mGate10	Core destroyed	427	0	2270	240
+nordkap_s1_B	nordkap	1	B	US	mGate10	Core destroyed	201	0	480	290
+nordkap_s2_A	nordkap	2	A	US	mGate10	Core destroyed	506	0	3310	160
+nordkap_s2_B	nordkap	2	B	US	mGate10	Core destroyed	148	0	690	40
+nordkap_s3_A	nordkap	3	A	US	mGate10	Titanium collected (tiebreak)	1000	0	160	100
+nordkap_s3_B	nordkap	3	B	OPP	_v488beltbreak2	Core destroyed	220	0	130	2530
+yulerune_s1_A	yulerune	1	A	OPP	_v488beltbreak2	Core destroyed	257	0	460	1650
+yulerune_s1_B	yulerune	1	B	US	mGate10	Core destroyed	298	0	590	470
+yulerune_s2_A	yulerune	2	A	OPP	_v488beltbreak2	Core destroyed	291	0	400	2120
+yulerune_s2_B	yulerune	2	B	OPP	_v488beltbreak2	Core destroyed	227	0	350	1000
+yulerune_s3_A	yulerune	3	A	US	mGate10	Titanium collected (tiebreak)	1000	0	360	340
+yulerune_s3_B	yulerune	3	B	OPP	_v488beltbreak2	Core destroyed	130	0	410	690

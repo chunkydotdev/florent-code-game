@@ -1,0 +1,7 @@
+arm         games  GFlines   PLANTS  MODE519 modegames
+mF             36      159        0       89  midgard,yulerune
+mG             36      161        0       93  midgard,yulerune
+mM             36      462        0        0  -
+mGate10        36      157        0       86  midgard,yulerune
+mGFPOOR        36      158        0       86  midgard,yulerune
+mOff           36        0        0        0  -

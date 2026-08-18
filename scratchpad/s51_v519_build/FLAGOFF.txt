@@ -1,0 +1,4 @@
+fo     n=180 each  flagoff 89 (49.4%)  parent 93 (51.7%)  dwins -2.22 pp (hw 10.33) inside  dk300 +2.78 pp (hw 9.54) inside
+fo2    n=180 each  flagoff 92 (51.1%)  parent 79 (43.9%)  dwins +7.22 pp (hw 10.32) inside  dk300 +3.33 pp (hw 9.01) inside
+POOLED n=360 each  flagoff 181 (50.3%)  parent 172 (47.8%)  dwins +2.50 pp (hw 7.30) inside  dk300 +3.06 pp (hw 6.57) inside
+  medkill 241 vs 244 | ourcore 170 vs 175 | r1000 29 vs 28 | tb 0/0

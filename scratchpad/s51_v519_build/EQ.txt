@@ -1,0 +1,4 @@
+== NEGATIVE CONTROL: parent run twice ==
+identical 12 / differing 0
+== TEST: parent vs FLAG-OFF ==
+identical 12 / differing 0

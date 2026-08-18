@@ -1,0 +1,22 @@
+Running match: diag vs _v488beltbreak2
+  Map: drakkarfjord.map26  Seed: 2  Replay: 
+scratchpad/s51_v519_build/diag/rep/drakkarfjord_s2_A.replay26  TLE: 10ms
+Completed turn 0
+Completed turn 100
+Completed turn 200
+Completed turn 300
+Completed turn 400
+Completed turn 500
+Completed turn 600
+Completed turn 700
+Completed turn 800
+Completed turn 900
+Replay written to scratchpad/s51_v519_build/diag/rep/drakkarfjord_s2_A.replay26
+
+  Winner: diag  (Titanium collected (tiebreak), turn 1000)
+
+                              diag       _v488beltbreak2  
+  Titanium     11359 (17290 mined)    5779 (11150 mined)  
+  Units                         13                    38  
+  Buildings                    101                   114  
+

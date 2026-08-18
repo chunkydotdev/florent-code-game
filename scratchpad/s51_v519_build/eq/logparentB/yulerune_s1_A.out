@@ -1,0 +1,15 @@
+Running match: eqparent vs eq_opp
+  Map: yulerune.map26  Seed: 1  Replay: 
+scratchpad/s51_v519_build/eq/repparentB/yulerune_s1_A.replay26  TLE: 10ms
+Completed turn 0
+Completed turn 100
+Completed turn 200
+Replay written to scratchpad/s51_v519_build/eq/repparentB/yulerune_s1_A.replay26
+
+  Winner: eq_opp  (Core destroyed, turn 259)
+
+                    eqparent             eq_opp  
+  Titanium     9 (450 mined)    72 (1990 mined)  
+  Units                    6                 16  
+  Buildings               33                 47  
+

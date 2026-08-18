@@ -1,0 +1,37 @@
+tag	map	seed	seat	ours	winner	cond	turn	tracebacks	ours_mined	opp_mined
+atoll_s37_A	atoll	37	A	US	_v519cripple	Core destroyed	187	0	570	610
+atoll_s37_B	atoll	37	B	OPP	_v488beltbreak2	Core destroyed	163	0	260	580
+atoll_s38_A	atoll	38	A	US	_v519cripple	Core destroyed	242	0	1180	270
+atoll_s38_B	atoll	38	B	US	_v519cripple	Core destroyed	473	0	2320	1270
+atoll_s39_A	atoll	39	A	OPP	_v488beltbreak2	Core destroyed	349	0	1990	2540
+atoll_s39_B	atoll	39	B	OPP	_v488beltbreak2	Core destroyed	493	0	640	1360
+drakkarfjord_s37_A	drakkarfjord	37	A	OPP	_v488beltbreak2	Core destroyed	746	0	5910	10620
+drakkarfjord_s37_B	drakkarfjord	37	B	US	_v519cripple	Core destroyed	302	0	1090	250
+drakkarfjord_s38_A	drakkarfjord	38	A	US	_v519cripple	Core destroyed	141	0	810	0
+drakkarfjord_s38_B	drakkarfjord	38	B	US	_v519cripple	Core destroyed	143	0	610	0
+drakkarfjord_s39_A	drakkarfjord	39	A	OPP	_v488beltbreak2	Core destroyed	468	0	2970	5790
+drakkarfjord_s39_B	drakkarfjord	39	B	US	_v519cripple	Core destroyed	148	0	670	0
+glacierkeep_s37_A	glacierkeep	37	A	US	_v519cripple	Core destroyed	265	0	600	0
+glacierkeep_s37_B	glacierkeep	37	B	OPP	_v488beltbreak2	Core destroyed	656	0	160	220
+glacierkeep_s38_A	glacierkeep	38	A	US	_v519cripple	Core destroyed	152	0	320	0
+glacierkeep_s38_B	glacierkeep	38	B	US	_v519cripple	Core destroyed	865	0	40	0
+glacierkeep_s39_A	glacierkeep	39	A	US	_v519cripple	Core destroyed	169	0	120	0
+glacierkeep_s39_B	glacierkeep	39	B	OPP	_v488beltbreak2	Core destroyed	957	0	40	10
+midgard_s37_A	midgard	37	A	US	_v519cripple	Core destroyed	273	0	620	790
+midgard_s37_B	midgard	37	B	US	_v519cripple	Core destroyed	189	0	760	650
+midgard_s38_A	midgard	38	A	OPP	_v488beltbreak2	Titanium collected (tiebreak)	1000	0	640	810
+midgard_s38_B	midgard	38	B	US	_v519cripple	Core destroyed	198	0	1810	660
+midgard_s39_A	midgard	39	A	OPP	_v488beltbreak2	Titanium collected (tiebreak)	1000	0	680	1160
+midgard_s39_B	midgard	39	B	OPP	_v488beltbreak2	Core destroyed	299	0	770	1320
+nordkap_s37_A	nordkap	37	A	US	_v519cripple	Core destroyed	200	0	480	130
+nordkap_s37_B	nordkap	37	B	US	_v519cripple	Core destroyed	402	0	4100	480
+nordkap_s38_A	nordkap	38	A	US	_v519cripple	Core destroyed	324	0	1910	10
+nordkap_s38_B	nordkap	38	B	OPP	_v488beltbreak2	Core destroyed	240	0	1210	4440
+nordkap_s39_A	nordkap	39	A	US	_v519cripple	Core destroyed	272	0	780	0
+nordkap_s39_B	nordkap	39	B	US	_v519cripple	Core destroyed	198	0	820	100
+yulerune_s37_A	yulerune	37	A	OPP	_v488beltbreak2	Core destroyed	291	0	300	3310
+yulerune_s37_B	yulerune	37	B	OPP	_v488beltbreak2	Core destroyed	255	0	330	890
+yulerune_s38_A	yulerune	38	A	US	_v519cripple	Titanium collected (tiebreak)	1000	0	590	430
+yulerune_s38_B	yulerune	38	B	OPP	_v488beltbreak2	Core destroyed	309	0	420	630
+yulerune_s39_A	yulerune	39	A	US	_v519cripple	Core destroyed	135	0	920	310
+yulerune_s39_B	yulerune	39	B	OPP	_v488beltbreak2	Core destroyed	237	0	350	1690

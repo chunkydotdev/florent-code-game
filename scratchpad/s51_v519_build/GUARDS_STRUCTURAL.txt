@@ -1,0 +1,28 @@
+STRUCTURAL FLAG-OFF AUDIT -- every behavioural site guarded by
+LOKI_FS_V519 and its own sub-flag, read at RUN time.
+
+siege.py    :476           if ok and LOKI_FS_V519 and FS_V519_MODESWITCH:
+siege.py    :487               if sig519 in FS_V519_CRIPPLE_MAPS:
+siege.py    :489                   if FS_V519_MODE_LOG and ct is not None:
+siege.py    :1013          if LOKI_FS_V519 and FS_V519_GF_LOG:
+siege.py    :1015          if LOKI_FS_V519 and FS_V519_GUNFIRST and self._v519_gunfirst(ct, E, p, rnd):
+siege.py    :1084          if rnd > FS_V519_GF_MAX_RND:
+siege.py    :1123            * the clause is bounded to the crossing (`FS_V519_GF_MAX_RND`) -- past
+siege.py    :1125            * one plant per body (`FS_V519_GF_MAX_PLANTS`), so a body cannot spend
+siege.py    :1129              leaves less than `FS_V519_GF_TI_FLOOR` behind is a shredder that
+siege.py    :1133          if not (LOKI_FS_V519 and FS_V519_GUNFIRST):
+siege.py    :1139          if rnd < FS_V519_GF_MIN_RND or rnd > FS_V519_GF_MAX_RND:
+siege.py    :1141          if getattr(self, "v519_gf_plants", 0) >= FS_V519_GF_MAX_PLANTS:
+siege.py    :1144              if ct.get_global_resources() < ct.get_gunner_cost() + FS_V519_GF_TI_FLOOR:
+siege.py    :1150                  ct, E, rnd_floor=FS_V519_GF_MIN_RND)
+siege.py    :1157          if FS_V519_GF_LOG:
+doctrine.py :3762  LOKI_FS_V519 = True
+doctrine.py :3794  FS_V519_GUNFIRST = True
+doctrine.py :3795  FS_V519_GF_MIN_RND = 3      # ⭐ THE ROUND FLOOR FOR A FERRY PLANT, and it is a
+doctrine.py :3810  FS_V519_GF_MAX_RND = 40     # "on the way" is a bounded clause.  Past this round
+doctrine.py :3815  FS_V519_GF_MAX_PLANTS = 1   # per BODY, per match.  The live census in
+doctrine.py :3820  FS_V519_GF_TI_FLOOR = 75    # ⭐ THE BUDGET GUARD, and its value is MEASURED,
+doctrine.py :3836  FS_V519_GF_LOG = False      # GF519: one stderr line per ferry round with the
+doctrine.py :3874  FS_V519_MODESWITCH = True
+doctrine.py :3875  FS_V519_CRIPPLE_MAPS = frozenset((
+doctrine.py :3879  FS_V519_MODE_LOG = False    # MODE519: one stderr line the first time the mode

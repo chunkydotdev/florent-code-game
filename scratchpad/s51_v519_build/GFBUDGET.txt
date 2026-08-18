@@ -1,0 +1,37 @@
+GFBUDGET -- the opening-budget BEFORE tape for FS_V519_GF_TI_FLOOR
+arm: gfbase = bots/_v519cripple + FS_V519_GUNFIRST=False + FS_V519_MODESWITCH=False + FS_V519_GF_LOG=True
+fixture: 5 siege maps x seed 1 x 2 seats = 10 games vs bots/_v488beltbreak2, --tle 10
+each line = one FERRY round of the raider (r<=FS_V519_GF_MAX_RND=40)
+
+atoll_s1_A             ferry rounds  4   IN THE ANNULUS (20<=d^2<=100) at rounds: r3(d72),r4(d72)
+atoll_s1_B             ferry rounds  4   IN THE ANNULUS (20<=d^2<=100) at rounds: r3(d72),r4(d72)
+drakkarfjord_s1_A      ferry rounds 10   IN THE ANNULUS (20<=d^2<=100) at rounds: r9(d32),r10(d32)
+drakkarfjord_s1_B      ferry rounds 10   IN THE ANNULUS (20<=d^2<=100) at rounds: r9(d32),r10(d32)
+glacierkeep_s1_A       ferry rounds  8   IN THE ANNULUS (20<=d^2<=100) at rounds: NONE
+glacierkeep_s1_B       ferry rounds  8   IN THE ANNULUS (20<=d^2<=100) at rounds: NONE
+midgard_s1_A           ferry rounds 13   IN THE ANNULUS (20<=d^2<=100) at rounds: r9(d85),r10(d85)
+midgard_s1_B           ferry rounds 40   IN THE ANNULUS (20<=d^2<=100) at rounds: r9(d85),r10(d85)
+nordkap_s1_A           ferry rounds  4   IN THE ANNULUS (20<=d^2<=100) at rounds: r1(d100),r2(d100)
+nordkap_s1_B           ferry rounds  4   IN THE ANNULUS (20<=d^2<=100) at rounds: r1(d100),r2(d100)
+
+=> THE CROSSING IS r1-r10.  LOKI_BELTBREAK_RND (the plant gate) IS 10.
+   atoll r3-4 | glacierkeep r5-6(d101, one outside) | nordkap r1-2 | drakkarfjord r9-10 | midgard r9-10
+   3 of 5 siege maps leave the band BEFORE the parent gate opens. -> FS_V519_GF_MIN_RND
+
+-- ALL ferry rounds  n=105
+   ti   min  101  p25  216  med 294.0  p75  361  max  434
+   gun  min   28  p25   32  med  34.0  p75   37  max   40
+   lau  min   28  p25   32  med  34.0  p75   37  max   40
+   bar  min    4  p25    4  med   5.0  p75    5  max    6
+-- ferry rounds INSIDE the annulus  n=16
+   ti   min  216  p25  219  med 289.5  p75  327  max  434
+   gun  min   28  p25   32  med  33.5  p75   35  max   35
+   lau  min   28  p25   32  med  33.5  p75   35  max   35
+   bar  min    4  p25    4  med   5.0  p75    5  max    5
+
+FLOOR DERIVATION: one more ferry link (launcher, median 34-38 on the crossing)
+                + the first collar (8 heal seats x barrier 5-6) = 40-48
+                => FS_V519_GF_TI_FLOOR = 75 Ti must remain after the gunner is paid.
+NON-BINDING ON THIS TAPE: min bank at an in-band ferry round is 216 Ti against a
+gunner at 32-40, so the guard refuses nothing here.  It is driven to the other
+verdict by the mGFPOOR mutant arm (FS_V519_GF_TI_FLOOR=400), not asserted.

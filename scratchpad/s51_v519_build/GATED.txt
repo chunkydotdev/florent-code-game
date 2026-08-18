@@ -1,0 +1,7 @@
+draw1 v519 v519               n= 36 wins= 23 (63.9%) kills= 21 k<=300= 17 (47.2%) k<=200= 11 k201-300=  6 k301-500=  3 k>500=  1 ourcore= 13 r1000=  2 tbwin=  2 medkill= 180 tb=0
+draw1 parent parent             n= 36 wins= 20 (55.6%) kills= 20 k<=300= 18 (50.0%) k<=200= 13 k201-300=  5 k301-500=  2 k>500=  0 ourcore= 16 r1000=  0 tbwin=  0 medkill= 153 tb=0
+draw2 v519 v519               n= 36 wins= 26 (72.2%) kills= 24 k<=300= 18 (50.0%) k<=200= 12 k201-300=  6 k301-500=  4 k>500=  2 ourcore= 10 r1000=  2 tbwin=  2 medkill= 213 tb=0
+draw2 parent parent             n= 36 wins= 25 (69.4%) kills= 22 k<=300= 18 (50.0%) k<=200= 13 k201-300=  5 k301-500=  2 k>500=  2 ourcore= 11 r1000=  3 tbwin=  3 medkill= 184 tb=0
+
+POOLED v519               n= 72 wins= 49 (68.1%) kills= 45 k<=300= 35 (48.6%) k<=200= 23 k201-300= 12 k301-500=  7 k>500=  3 ourcore= 23 r1000=  4 tbwin=  4 medkill= 194 tb=0
+POOLED parent             n= 72 wins= 45 (62.5%) kills= 42 k<=300= 36 (50.0%) k<=200= 26 k201-300= 10 k301-500=  4 k>500=  2 ourcore= 27 r1000=  3 tbwin=  3 medkill= 175 tb=0

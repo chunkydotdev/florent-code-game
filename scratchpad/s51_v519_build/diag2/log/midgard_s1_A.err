@@ -1,0 +1,79 @@
+Update available: 2.3.6 -> 2.3.8. Run: pip install --upgrade fcode
+GF519 1 id 3 d 1013 band 0 ti 434 ammo 0 gun 28 lau 28 bar 4 cd 0 lp 0 plants 0
+GF519 2 id 3 d 1013 band 0 ti 361 ammo 0 gun 34 lau 34 bar 5 cd 0 lp 1 plants 0
+GF519 3 id 3 d 685 band 0 ti 361 ammo 0 gun 32 lau 32 bar 4 cd 0 lp 0 plants 0
+GF519 TRY 3 planted 0 refuse {} d 685
+GF519 4 id 3 d 685 band 0 ti 305 ammo 0 gun 35 lau 35 bar 5 cd 0 lp 1 plants 0
+GF519 TRY 4 planted 0 refuse {} d 685
+GF519 5 id 3 d 421 band 0 ti 295 ammo 0 gun 33 lau 33 bar 5 cd 0 lp 0 plants 0
+GF519 TRY 5 planted 0 refuse {} d 421
+GF519 6 id 3 d 421 band 0 ti 262 ammo 0 gun 35 lau 35 bar 5 cd 0 lp 1 plants 0
+GF519 TRY 6 planted 0 refuse {} d 421
+GF519 7 id 3 d 221 band 0 ti 272 ammo 0 gun 33 lau 33 bar 5 cd 0 lp 0 plants 0
+GF519 TRY 7 planted 0 refuse {} d 221
+GF519 8 id 3 d 221 band 0 ti 249 ammo 0 gun 35 lau 35 bar 5 cd 0 lp 1 plants 0
+GF519 TRY 8 planted 0 refuse {} d 221
+GF519 9 id 3 d 85 band 1 ti 249 ammo 0 gun 33 lau 33 bar 5 cd 0 lp 0 plants 0
+GF519 TRY 9 planted 0 refuse {'NOTGT': 1} d 85
+GF519 10 id 3 d 85 band 1 ti 216 ammo 0 gun 35 lau 35 bar 5 cd 0 lp 1 plants 0
+GF519 TRY 10 planted 0 refuse {'NOTGT': 2} d 85
+GF519 11 id 3 d 13 band 1 ti 226 ammo 0 gun 33 lau 33 bar 5 cd 0 lp 0 plants 0
+GF519 TRY 11 planted 0 refuse {'NOTGT': 2, 'NORAY': 1} d 13
+GF519 12 id 3 d 13 band 1 ti 203 ammo 0 gun 35 lau 35 bar 5 cd 0 lp 1 plants 0
+GF519 TRY 12 planted 0 refuse {'NOTGT': 2, 'NORAY': 2} d 13
+GF519 13 id 3 d 13 band 1 ti 203 ammo 0 gun 35 lau 35 bar 5 cd 0 lp 1 plants 0
+GF519 TRY 13 planted 0 refuse {'NOTGT': 2, 'NORAY': 3} d 13
+GF519 14 id 3 d 10 band 1 ti 203 ammo 0 gun 35 lau 35 bar 5 cd 0 lp 1 plants 0
+GF519 TRY 14 planted 0 refuse {'NOTGT': 2, 'NORAY': 4} d 10
+GF519 15 id 3 d 10 band 1 ti 213 ammo 0 gun 35 lau 35 bar 5 cd 0 lp 1 plants 0
+GF519 TRY 15 planted 0 refuse {'NOTGT': 2, 'NORAY': 5} d 10
+GF519 16 id 3 d 10 band 1 ti 172 ammo 16 gun 36 lau 36 bar 5 cd 0 lp 1 plants 0
+GF519 TRY 16 planted 0 refuse {'NOTGT': 2, 'NORAY': 6} d 10
+GF519 17 id 3 d 10 band 1 ti 131 ammo 16 gun 37 lau 37 bar 5 cd 0 lp 1 plants 0
+GF519 TRY 17 planted 0 refuse {'NOTGT': 2, 'NORAY': 7} d 10
+GF519 18 id 3 d 10 band 1 ti 126 ammo 16 gun 37 lau 37 bar 5 cd 0 lp 1 plants 0
+GF519 TRY 18 planted 0 refuse {'NOTGT': 2, 'NORAY': 8} d 10
+GF519 19 id 3 d 10 band 1 ti 131 ammo 16 gun 38 lau 38 bar 5 cd 0 lp 1 plants 0
+GF519 TRY 19 planted 0 refuse {'NOTGT': 2, 'NORAY': 9} d 10
+GF519 20 id 3 d 10 band 1 ti 136 ammo 16 gun 38 lau 38 bar 5 cd 0 lp 1 plants 0
+GF519 TRY 20 planted 0 refuse {'NOTGT': 2, 'NORAY': 10} d 10
+GF519 21 id 3 d 10 band 1 ti 141 ammo 16 gun 38 lau 38 bar 5 cd 0 lp 1 plants 0
+GF519 TRY 21 planted 0 refuse {'NOTGT': 2, 'NORAY': 11} d 10
+GF519 22 id 3 d 10 band 1 ti 141 ammo 16 gun 38 lau 38 bar 5 cd 0 lp 1 plants 0
+GF519 TRY 22 planted 0 refuse {'NOTGT': 2, 'NORAY': 12} d 10
+GF519 23 id 3 d 10 band 1 ti 146 ammo 16 gun 38 lau 38 bar 5 cd 0 lp 1 plants 0
+GF519 TRY 23 planted 0 refuse {'NOTGT': 2, 'NORAY': 13} d 10
+GF519 24 id 3 d 10 band 1 ti 156 ammo 16 gun 38 lau 38 bar 5 cd 0 lp 1 plants 0
+GF519 TRY 24 planted 0 refuse {'NOTGT': 2, 'NORAY': 14} d 10
+GF519 25 id 3 d 10 band 1 ti 123 ammo 16 gun 39 lau 39 bar 5 cd 0 lp 1 plants 0
+GF519 TRY 25 planted 0 refuse {'NOTGT': 2, 'NORAY': 15} d 10
+GF519 26 id 3 d 10 band 1 ti 118 ammo 16 gun 40 lau 40 bar 6 cd 0 lp 1 plants 0
+GF519 TRY 26 planted 0 refuse {'NOTGT': 2, 'NORAY': 16} d 10
+GF519 27 id 3 d 10 band 1 ti 128 ammo 16 gun 40 lau 40 bar 6 cd 0 lp 1 plants 0
+GF519 TRY 27 planted 0 refuse {'NOTGT': 2, 'NORAY': 17} d 10
+GF519 28 id 3 d 10 band 1 ti 132 ammo 16 gun 40 lau 40 bar 6 cd 0 lp 1 plants 0
+GF519 TRY 28 planted 0 refuse {'NOTGT': 2, 'NORAY': 18} d 10
+GF519 29 id 3 d 10 band 1 ti 142 ammo 16 gun 40 lau 40 bar 6 cd 0 lp 1 plants 0
+GF519 TRY 29 planted 0 refuse {'NOTGT': 2, 'NORAY': 19} d 10
+GF519 30 id 3 d 10 band 1 ti 136 ammo 16 gun 40 lau 40 bar 6 cd 0 lp 1 plants 0
+GF519 TRY 30 planted 0 refuse {'NOTGT': 2, 'NORAY': 20} d 10
+GF519 31 id 3 d 10 band 1 ti 146 ammo 16 gun 40 lau 40 bar 6 cd 0 lp 1 plants 0
+GF519 TRY 31 planted 0 refuse {'NOTGT': 2, 'NORAY': 21} d 10
+GF519 32 id 3 d 10 band 1 ti 150 ammo 16 gun 40 lau 40 bar 6 cd 0 lp 1 plants 0
+GF519 TRY 32 planted 0 refuse {'NOTGT': 2, 'NORAY': 22} d 10
+GF519 33 id 3 d 10 band 1 ti 170 ammo 16 gun 40 lau 40 bar 6 cd 0 lp 1 plants 0
+GF519 TRY 33 planted 0 refuse {'NOTGT': 2, 'NORAY': 23} d 10
+GF519 34 id 3 d 10 band 1 ti 180 ammo 16 gun 40 lau 40 bar 6 cd 0 lp 1 plants 0
+GF519 TRY 34 planted 0 refuse {'NOTGT': 2, 'NORAY': 24} d 10
+GF519 35 id 3 d 10 band 1 ti 200 ammo 16 gun 40 lau 40 bar 6 cd 0 lp 1 plants 0
+GF519 TRY 35 planted 0 refuse {'NOTGT': 2, 'NORAY': 25} d 10
+GF519 36 id 3 d 10 band 1 ti 220 ammo 16 gun 40 lau 40 bar 6 cd 0 lp 1 plants 0
+GF519 TRY 36 planted 0 refuse {'NOTGT': 2, 'NORAY': 26} d 10
+GF519 37 id 3 d 10 band 1 ti 230 ammo 16 gun 40 lau 40 bar 6 cd 0 lp 1 plants 0
+GF519 TRY 37 planted 0 refuse {'NOTGT': 2, 'NORAY': 27} d 10
+GF519 38 id 3 d 10 band 1 ti 240 ammo 16 gun 40 lau 40 bar 6 cd 0 lp 1 plants 0
+GF519 TRY 38 planted 0 refuse {'NOTGT': 2, 'NORAY': 28} d 10
+GF519 39 id 3 d 10 band 1 ti 260 ammo 16 gun 40 lau 40 bar 6 cd 0 lp 1 plants 0
+GF519 TRY 39 planted 0 refuse {'NOTGT': 2, 'NORAY': 29} d 10
+GF519 40 id 3 d 10 band 1 ti 270 ammo 16 gun 40 lau 40 bar 6 cd 0 lp 1 plants 0
+GF519 TRY 40 planted 0 refuse {'NOTGT': 2, 'NORAY': 30} d 10

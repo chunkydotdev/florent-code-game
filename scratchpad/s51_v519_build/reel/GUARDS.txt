@@ -1,0 +1,1 @@
+guards OK: HP identity 6/6, fireTurret vs UpdateHp channel agreement 6/6

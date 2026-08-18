@@ -1,0 +1,27 @@
+blocks pooled: 13  (n = 468 per arm)
+
+=== THE KILL_TARGET PANEL ===
+arm               n   wins%   <=r150   <=r180   <=r200   <=r250   <=r300  medkill ourcore
+parent518       468   43.6%  26(0.056)  44(0.094)  59(0.126)  88(0.188) 103(0.220)     262     236
+v519_FIRED      468   61.8%  23(0.049)  61(0.130)  98(0.209) 132(0.282) 165(0.353)     241     157
+v519_msoff      468   47.2%  23(0.049)  59(0.126)  81(0.173) 111(0.237) 128(0.274)     221     230
+
+v519_FIRED   vs parent  wins    +18.16 pp (hw 6.40) OUTSIDE
+v519_FIRED   vs parent  k<=200   +8.33 pp (hw 4.79) OUTSIDE
+v519_FIRED   vs parent  k<=300  +13.25 pp (hw 5.79) OUTSIDE
+
+v519_msoff   vs parent  wins     +3.63 pp (hw 6.38) inside
+v519_msoff   vs parent  k<=200   +4.70 pp (hw 4.57) OUTSIDE
+v519_msoff   vs parent  k<=300   +5.34 pp (hw 5.52) inside
+
+=== PER MAP: wins/n  [k<=300]  {k<=200} ===
+map            parent518                 v519_FIRED                v519_msoff              
+atoll          36/78 [10] { 4}        35/78 [15] {10}        30/78 [ 9] { 7}      
+drakkarfjord   45/78 [29] {24}        58/78 [33] {24}        59/78 [38] {30}      
+glacierkeep    64/78 [39] {15}        63/78 [45] {28}        67/78 [46] {24}      
+midgard        17/78 [ 5] { 2}        48/78 [27] {12}        13/78 [ 8] { 3}      
+nordkap        34/78 [15] { 9}        52/78 [29] {15}        40/78 [19] {12}      
+yulerune        8/78 [ 5] { 5}        33/78 [16] { 9}        12/78 [ 8] { 5}      
+
+=== PER BLOCK wins/36   parent518 / v519_FIRED / v519_msoff ===
+17/24/18 · 15/22/20 · 18/19/19 · 14/21/16 · 14/21/17 · 14/27/14 · 18/18/20 · 17/27/16 · 22/21/15 · 13/23/17 · 12/23/17 · 18/22/18 · 12/21/14

@@ -1,0 +1,37 @@
+tag	map	seed	seat	ours	winner	cond	turn	tracebacks	ours_mined	opp_mined
+atoll_s301_A	atoll	301	A	US	parent	Core destroyed	160	0	1220	310
+atoll_s301_B	atoll	301	B	OPP	_v488beltbreak2	Core destroyed	198	0	610	1490
+atoll_s302_A	atoll	302	A	OPP	_v488beltbreak2	Core destroyed	313	0	370	370
+atoll_s302_B	atoll	302	B	OPP	_v488beltbreak2	Titanium collected (tiebreak)	1000	0	3770	8970
+atoll_s303_A	atoll	303	A	US	parent	Core destroyed	182	0	1270	420
+atoll_s303_B	atoll	303	B	OPP	_v488beltbreak2	Core destroyed	690	0	4740	4490
+drakkarfjord_s301_A	drakkarfjord	301	A	US	parent	Core destroyed	132	0	750	0
+drakkarfjord_s301_B	drakkarfjord	301	B	OPP	_v488beltbreak2	Titanium collected (tiebreak)	1000	0	8260	12860
+drakkarfjord_s302_A	drakkarfjord	302	A	OPP	_v488beltbreak2	Core destroyed	357	0	390	2800
+drakkarfjord_s302_B	drakkarfjord	302	B	US	parent	Core destroyed	152	0	650	0
+drakkarfjord_s303_A	drakkarfjord	303	A	OPP	_v488beltbreak2	Core destroyed	521	0	4680	5830
+drakkarfjord_s303_B	drakkarfjord	303	B	US	parent	Titanium collected (tiebreak)	1000	0	840	340
+glacierkeep_s301_A	glacierkeep	301	A	US	parent	Titanium collected (tiebreak)	1000	0	160	30
+glacierkeep_s301_B	glacierkeep	301	B	OPP	_v488beltbreak2	Core destroyed	465	0	0	0
+glacierkeep_s302_A	glacierkeep	302	A	OPP	_v488beltbreak2	Core destroyed	825	0	350	0
+glacierkeep_s302_B	glacierkeep	302	B	US	parent	Core destroyed	469	0	20	0
+glacierkeep_s303_A	glacierkeep	303	A	US	parent	Core destroyed	185	0	170	0
+glacierkeep_s303_B	glacierkeep	303	B	US	parent	Titanium collected (tiebreak)	1000	0	30	0
+midgard_s301_A	midgard	301	A	OPP	_v488beltbreak2	Core destroyed	245	0	2040	2900
+midgard_s301_B	midgard	301	B	OPP	_v488beltbreak2	Core destroyed	173	0	580	1920
+midgard_s302_A	midgard	302	A	US	parent	Core destroyed	283	0	1560	1420
+midgard_s302_B	midgard	302	B	OPP	_v488beltbreak2	Core destroyed	480	0	670	1820
+midgard_s303_A	midgard	303	A	US	parent	Core destroyed	353	0	2880	510
+midgard_s303_B	midgard	303	B	OPP	_v488beltbreak2	Core destroyed	116	0	730	1300
+nordkap_s301_A	nordkap	301	A	OPP	_v488beltbreak2	Core destroyed	255	0	630	2440
+nordkap_s301_B	nordkap	301	B	US	parent	Core destroyed	173	0	390	280
+nordkap_s302_A	nordkap	302	A	OPP	_v488beltbreak2	Core destroyed	230	0	130	1830
+nordkap_s302_B	nordkap	302	B	US	parent	Core destroyed	488	0	4600	520
+nordkap_s303_A	nordkap	303	A	OPP	_v488beltbreak2	Core destroyed	159	0	120	2290
+nordkap_s303_B	nordkap	303	B	OPP	_v488beltbreak2	Core destroyed	201	0	110	700
+yulerune_s301_A	yulerune	301	A	OPP	_v488beltbreak2	Core destroyed	159	0	320	1920
+yulerune_s301_B	yulerune	301	B	OPP	_v488beltbreak2	Core destroyed	252	0	260	2290
+yulerune_s302_A	yulerune	302	A	US	parent	Core destroyed	535	0	4030	1420
+yulerune_s302_B	yulerune	302	B	US	parent	Core destroyed	140	0	810	0
+yulerune_s303_A	yulerune	303	A	OPP	_v488beltbreak2	Core destroyed	241	0	450	630
+yulerune_s303_B	yulerune	303	B	US	parent	Core destroyed	144	0	650	210

@@ -1,0 +1,24 @@
+=== TREATED CELLS {midgard,yulerune} ===
+  parent518    n=156 wins= 25 (16.0%) k<=200=  7 (4.5%) k<=300= 10 (6.4%) medkill=351 ourcore=123
+  v519_FIRED   n=156 wins= 81 (51.9%) k<=200= 21 (13.5%) k<=300= 43 (27.6%) medkill=277 ourcore=64
+  v519_msoff   n=156 wins= 25 (16.0%) k<=200=  8 (5.1%) k<=300= 16 (10.3%) medkill=227 ourcore=128
+   v519_FIRED   vs parent wins +35.90 pp (hw 10.51) OUTSIDE
+   v519_msoff   vs parent wins  +0.00 pp (hw 8.14) inside
+   ⭐ v519_FIRED vs v519_msoff (the ISOLATED MODESWITCH contrast) wins +35.90 pp (hw 10.51) OUTSIDE
+
+=== UNTOUCHED CELLS (4 maps) -- the KNOWN-ZERO control ===
+  parent518    n=312 wins=179 (57.4%) k<=200= 52 (16.7%) k<=300= 93 (29.8%) medkill=245 ourcore=113
+  v519_FIRED   n=312 wins=208 (66.7%) k<=200= 77 (24.7%) k<=300=122 (39.1%) medkill=221 ourcore=93
+  v519_msoff   n=312 wins=196 (62.8%) k<=200= 73 (23.4%) k<=300=112 (35.9%) medkill=217 ourcore=102
+   v519_FIRED   vs parent wins  +9.29 pp (hw 7.62) OUTSIDE
+   v519_msoff   vs parent wins  +5.45 pp (hw 7.68) inside
+   ⭐ v519_FIRED vs v519_msoff (the ISOLATED MODESWITCH contrast) wins  +3.85 pp (hw 7.50) inside
+
+=== OUR BELTBREAK SHREDDERS (gunner of ours at d^2<=100 of THEIR core) ===
+map            parent                      v519                        msoff                     
+atoll          n/game 1.01  med 1st r36     n/game 0.77  med 1st r52     n/game 0.97  med 1st r46   
+drakkarfjord   n/game 0.49  med 1st r99     n/game 0.47  med 1st r85     n/game 0.49  med 1st r83   
+glacierkeep    n/game 0.49  med 1st r36     n/game 0.45  med 1st r36     n/game 0.46  med 1st r36   
+midgard        n/game 0.96  med 1st r61     n/game 1.91  med 1st r38     n/game 0.74  med 1st r58   
+nordkap        n/game 1.36  med 1st r16     n/game 1.67  med 1st r16     n/game 1.60  med 1st r16   
+yulerune       n/game 0.50  med 1st r41     n/game 1.40  med 1st r19     n/game 0.54  med 1st r41   

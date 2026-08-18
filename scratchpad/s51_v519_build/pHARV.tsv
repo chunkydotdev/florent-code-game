@@ -1,0 +1,31 @@
+tag	map	seed	seat	ours	winner	cond	turn	tracebacks	ours_mined	opp_mined
+atoll_s1_A	atoll	1	A	US	pHARV	Core destroyed	835	0	4210	4100
+atoll_s1_B	atoll	1	B	OPP	_v488beltbreak2	Core destroyed	209	0	1020	1950
+atoll_s2_A	atoll	2	A	OPP	_v488beltbreak2	Core destroyed	216	0	640	1570
+atoll_s2_B	atoll	2	B	OPP	_v488beltbreak2	Core destroyed	114	0	290	530
+atoll_s3_A	atoll	3	A	US	pHARV	Core destroyed	657	0	5320	3240
+atoll_s3_B	atoll	3	B	US	pHARV	Titanium collected (tiebreak)	1000	0	4960	2490
+drakkarfjord_s1_A	drakkarfjord	1	A	US	pHARV	Core destroyed	206	0	1320	0
+drakkarfjord_s1_B	drakkarfjord	1	B	US	pHARV	Core destroyed	325	0	2220	0
+drakkarfjord_s2_A	drakkarfjord	2	A	US	pHARV	Core destroyed	129	0	730	0
+drakkarfjord_s2_B	drakkarfjord	2	B	US	pHARV	Core destroyed	638	0	1440	170
+drakkarfjord_s3_A	drakkarfjord	3	A	US	pHARV	Core destroyed	718	0	8910	3200
+drakkarfjord_s3_B	drakkarfjord	3	B	US	pHARV	Core destroyed	201	0	820	0
+glacierkeep_s1_A	glacierkeep	1	A	US	pHARV	Titanium collected (tiebreak)	1000	0	170	0
+glacierkeep_s1_B	glacierkeep	1	B	OPP	_v488beltbreak2	Core destroyed	533	0	20	0
+glacierkeep_s2_A	glacierkeep	2	A	US	pHARV	Core destroyed	217	0	160	0
+glacierkeep_s2_B	glacierkeep	2	B	US	pHARV	Core destroyed	157	0	170	0
+glacierkeep_s3_A	glacierkeep	3	A	US	pHARV	Titanium collected (tiebreak)	1000	0	150	0
+glacierkeep_s3_B	glacierkeep	3	B	US	pHARV	Core destroyed	333	0	30	0
+midgard_s1_A	midgard	1	A	OPP	_v488beltbreak2	Core destroyed	267	0	810	3160
+midgard_s1_B	midgard	1	B	OPP	_v488beltbreak2	Core destroyed	164	0	650	1520
+midgard_s2_A	midgard	2	A	US	pHARV	Core destroyed	245	0	660	900
+midgard_s2_B	midgard	2	B	OPP	_v488beltbreak2	Core destroyed	165	0	560	1370
+midgard_s3_A	midgard	3	A	OPP	_v488beltbreak2	Core destroyed	162	0	680	1500
+midgard_s3_B	midgard	3	B	OPP	_v488beltbreak2	Core destroyed	253	0	690	1700
+nordkap_s1_A	nordkap	1	A	OPP	_v488beltbreak2	Core destroyed	348	0	160	940
+nordkap_s1_B	nordkap	1	B	OPP	_v488beltbreak2	Core destroyed	448	0	2460	3430
+nordkap_s2_A	nordkap	2	A	OPP	_v488beltbreak2	Core destroyed	314	0	170	2810
+nordkap_s2_B	nordkap	2	B	OPP	_v488beltbreak2	Core destroyed	564	0	1380	7040
+nordkap_s3_A	nordkap	3	A	OPP	_v488beltbreak2	Core destroyed	168	0	140	770
+nordkap_s3_B	nordkap	3	B	US	pHARV	Core destroyed	170	0	560	130

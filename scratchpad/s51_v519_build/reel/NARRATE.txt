@@ -1,0 +1,85 @@
+==============================================================================
+nordkap_s8_A  (nordkap seat A)  OUR CORE DEAD r112   CLASS NO_TURRET
+  ring rounds (a builder of ours inside d^2<=8 of their core): 100 of 112
+  OUR turrets: 4 total | core-hitting 0 | shots on their core 0 (0 dmg) | funded share 0.00
+  their core: dealt 0 healed 0  HEAL-BACK 0.000 | their core HP end 500
+  our beltbreak shredders (gunner, d^2<=100 of their core): 0 first rNone | our fwd sentinels 0 first rNone
+  their economy: 7 harvesters + 23 belts built, 3 of it destroyed
+  THEIR core-hitting turrets: 3, first opened r10, 31 shots on us
+  our forward launchers 2, collar barriers 8
+     launcher  (9, 9)   built r1    died 2     life 1    d2opp 90    shots 0   core 0  
+     launcher  (10, 15) built r3    died 4     life 1    d2opp 12    shots 0   core 0  
+     sentinel  (14, 8)  built r10   died None  life 102  d2opp 130   shots 8   core 0  
+     sentinel  (11, 3)  built r48   died None  life 64   d2opp 242   shots 7   core 0  
+==============================================================================
+atoll_s4_B  (atoll seat B)  OUR CORE DEAD r114   CLASS NO_TURRET
+  ring rounds (a builder of ours inside d^2<=8 of their core): 22 of 114
+  OUR turrets: 7 total | core-hitting 0 | shots on their core 0 (0 dmg) | funded share 0.00
+  their core: dealt 0 healed 0  HEAL-BACK 0.000 | their core HP end 500
+  our beltbreak shredders (gunner, d^2<=100 of their core): 2 first r20 | our fwd sentinels 0 first rNone
+  their economy: 3 harvesters + 14 belts built, 5 of it destroyed
+  THEIR core-hitting turrets: 1, first opened r59, 28 shots on us
+  our forward launchers 2, collar barriers 5
+     launcher  (13, 5)  built r1    died 2     life 1    d2opp 200   shots 0   core 0  
+     launcher  (9, 9)   built r3    died 4     life 1    d2opp 72    shots 0   core 0  
+     launcher  (2, 12)  built r8    died None  life 106  d2opp 6     shots 0   core 0  
+     gunner    (4, 7)   built r20   died None  life 94   d2opp 58    shots 15  core 0  
+     gunner    (17, 7)  built r35   died None  life 79   d2opp 266   shots 2   core 0  
+     sentinel  (12, 8)  built r44   died None  life 70   d2opp 132   shots 2   core 0  
+     gunner    (7, 10)  built r62   died None  life 52   d2opp 40    shots 14  core 0  
+==============================================================================
+yulerune_s36_A  (yulerune seat A)  OUR CORE DEAD r132   CLASS NO_TURRET
+  ring rounds (a builder of ours inside d^2<=8 of their core): 99 of 132
+  OUR turrets: 2 total | core-hitting 0 | shots on their core 0 (0 dmg) | funded share 0.00
+  their core: dealt 0 healed 0  HEAL-BACK 0.000 | their core HP end 500
+  our beltbreak shredders (gunner, d^2<=100 of their core): 1 first r19 | our fwd sentinels 0 first rNone
+  their economy: 6 harvesters + 38 belts built, 9 of it destroyed
+  THEIR core-hitting turrets: 2, first opened r69, 28 shots on us
+  our forward launchers 0, collar barriers 5
+     gunner    (14, 2)  built r19   died None  life 113  d2opp 62    shots 31  core 0  
+     gunner    (2, 13)  built r30   died None  life 102  d2opp 222   shots 33  core 0  
+==============================================================================
+midgard_s15_A  (midgard seat A)  OUR CORE DEAD r146   CLASS NO_TURRET
+  ring rounds (a builder of ours inside d^2<=8 of their core): 99 of 146
+  OUR turrets: 4 total | core-hitting 0 | shots on their core 0 (0 dmg) | funded share 0.00
+  their core: dealt 0 healed 0  HEAL-BACK 0.000 | their core HP end 500
+  our beltbreak shredders (gunner, d^2<=100 of their core): 2 first r37 | our fwd sentinels 0 first rNone
+  their economy: 6 harvesters + 16 belts built, 3 of it destroyed
+  THEIR core-hitting turrets: 2, first opened r109, 29 shots on us
+  our forward launchers 0, collar barriers 7
+     gunner    (21, 21) built r37   died None  life 109  d2opp 60    shots 12  core 0  
+     gunner    (21, 25) built r53   died None  life 93   d2opp 32    shots 11  core 0  
+     sentinel  (1, 6)   built r61   died None  life 85   d2opp 1070  shots 2   core 0  
+     sentinel  (0, 1)   built r128  died None  life 18   d2opp 1352  shots 4   core 0  
+==============================================================================
+drakkarfjord_s10_B  (drakkarfjord seat B)  OUR CORE DEAD r242   CLASS NO_TURRET
+  ring rounds (a builder of ours inside d^2<=8 of their core): 86 of 242
+  OUR turrets: 8 total | core-hitting 0 | shots on their core 0 (0 dmg) | funded share 0.00
+  their core: dealt 0 healed 0  HEAL-BACK 0.000 | their core HP end 500
+  our beltbreak shredders (gunner, d^2<=100 of their core): 0 first rNone | our fwd sentinels 0 first rNone
+  their economy: 9 harvesters + 100 belts built, 0 of it destroyed
+  THEIR core-hitting turrets: 1, first opened r187, 28 shots on us
+  our forward launchers 1, collar barriers 19
+     launcher  (24, 6)  built r1    died 2     life 1    d2opp 804   shots 0   core 0  
+     launcher  (19, 9)  built r3    died 4     life 1    d2opp 512   shots 0   core 0  
+     launcher  (15, 13) built r5    died 6     life 1    d2opp 288   shots 0   core 0  
+     launcher  (11, 17) built r7    died 8     life 1    d2opp 128   shots 0   core 0  
+     launcher  (7, 21)  built r9    died 10    life 1    d2opp 32    shots 0   core 0  
+     sentinel  (24, 1)  built r46   died None  life 196  d2opp 1014  shots 0   core 0  
+     sentinel  (29, 1)  built r57   died None  life 185  d2opp 1254  shots 2   core 0  
+     gunner    (27, 7)  built r68   died None  life 174  d2opp 906   shots 110 core 0  
+==============================================================================
+glacierkeep_s20_B  (glacierkeep seat B)  OUR CORE DEAD r518   CLASS MAG_STARVED
+  ring rounds (a builder of ours inside d^2<=8 of their core): 127 of 518
+  OUR turrets: 6 total | core-hitting 1 | shots on their core 23 (414 dmg) | funded share 0.05
+  their core: dealt 414 healed 252  HEAL-BACK 0.609 | their core HP end 338
+  our beltbreak shredders (gunner, d^2<=100 of their core): 0 first rNone | our fwd sentinels 1 first r80
+  their economy: 10 harvesters + 69 belts built, 0 of it destroyed
+  THEIR core-hitting turrets: 1, first opened r463, 28 shots on us
+  our forward launchers 2, collar barriers 16
+     launcher  (14, 24) built r1    died 2     life 1    d2opp 462   shots 0   core 0  
+     launcher  (15, 18) built r3    died 4     life 1    d2opp 240   shots 0   core 0  
+     launcher  (16, 12) built r5    died 6     life 1    d2opp 92    shots 0   core 0  
+     launcher  (16, 6)  built r7    died 8     life 1    d2opp 14    shots 0   core 0  
+     sentinel  (15, 6)  built r80   died 167   life 87   d2opp 12    shots 23  core 23 
+     launcher  (17, 25) built r460  died 461   life 1    d2opp 512   shots 0   core 0  

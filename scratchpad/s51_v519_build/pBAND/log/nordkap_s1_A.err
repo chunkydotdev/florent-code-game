@@ -1,0 +1,11 @@
+Update available: 2.3.6 -> 2.3.8. Run: pip install --upgrade fcode
+GF519 1 id 3 d 100 band 1 ti 434 ammo 0 gun 28 lau 28 bar 4 cd 0 lp 0 plants 0
+GF519 2 id 3 d 100 band 1 ti 361 ammo 0 gun 34 lau 34 bar 5 cd 0 lp 1 plants 0
+GF519 3 id 3 d 16 band 1 ti 361 ammo 0 gun 32 lau 32 bar 4 cd 0 lp 0 plants 0
+GF519 TRY 3 planted 0 refuse {'NOTGT': 1} d 16
+GF519 4 id 3 d 16 band 1 ti 339 ammo 0 gun 34 lau 34 bar 5 cd 0 lp 1 plants 0
+GF519 TRY 4 planted 0 refuse {'NOTGT': 2} d 16
+GF519 TRY 5 planted 0 refuse {'NOTGT': 3} d 2
+GF519 TRY 6 planted 0 refuse {'NOTGT': 4} d 2
+GF519 TRY 8 planted 0 refuse {'NOTGT': 4, 'NORAY': 1} d 5
+GF519 PLANT 10 id 3 d 5 ti 76

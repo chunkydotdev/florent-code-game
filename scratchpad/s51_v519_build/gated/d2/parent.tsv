@@ -1,0 +1,37 @@
+tag	map	seed	seat	ours	winner	cond	turn	tracebacks	ours_mined	opp_mined
+archipelago_s19_A	archipelago	19	A	US	parent	Core destroyed	184	0	1690	760
+archipelago_s19_B	archipelago	19	B	OPP	_v468kladturbo	Core destroyed	673	0	4930	5010
+archipelago_s20_A	archipelago	20	A	US	parent	Core destroyed	114	0	1010	640
+archipelago_s20_B	archipelago	20	B	US	parent	Core destroyed	138	0	1200	910
+archipelago_s21_A	archipelago	21	A	US	parent	Titanium collected (tiebreak)	1000	0	2860	2840
+archipelago_s21_B	archipelago	21	B	OPP	_v468kladturbo	Core destroyed	399	0	3030	6210
+archipelago_s22_A	archipelago	22	A	OPP	_v468kladturbo	Core destroyed	106	0	710	800
+archipelago_s22_B	archipelago	22	B	US	parent	Titanium collected (tiebreak)	1000	0	5110	2870
+archipelago_s23_A	archipelago	23	A	US	parent	Core destroyed	224	0	2090	1600
+archipelago_s23_B	archipelago	23	B	US	parent	Core destroyed	773	0	2650	3050
+archipelago_s24_A	archipelago	24	A	US	parent	Core destroyed	437	0	4240	1210
+archipelago_s24_B	archipelago	24	B	OPP	_v468kladturbo	Core destroyed	180	0	1400	1630
+archipelago_s25_A	archipelago	25	A	US	parent	Core destroyed	341	0	3620	2200
+archipelago_s25_B	archipelago	25	B	US	parent	Core destroyed	291	0	2060	1490
+archipelago_s26_A	archipelago	26	A	US	parent	Core destroyed	107	0	930	710
+archipelago_s26_B	archipelago	26	B	OPP	_v468kladturbo	Core destroyed	100	0	810	840
+archipelago_s27_A	archipelago	27	A	US	parent	Core destroyed	299	0	2230	1490
+archipelago_s27_B	archipelago	27	B	US	parent	Core destroyed	175	0	1560	710
+archipelago_s28_A	archipelago	28	A	OPP	_v468kladturbo	Core destroyed	537	0	3950	3930
+archipelago_s28_B	archipelago	28	B	OPP	_v468kladturbo	Core destroyed	157	0	990	1120
+archipelago_s29_A	archipelago	29	A	OPP	_v468kladturbo	Core destroyed	182	0	1650	1290
+archipelago_s29_B	archipelago	29	B	US	parent	Core destroyed	136	0	1190	710
+archipelago_s30_A	archipelago	30	A	US	parent	Core destroyed	295	0	2120	1450
+archipelago_s30_B	archipelago	30	B	OPP	_v468kladturbo	Core destroyed	278	0	1000	1800
+archipelago_s31_A	archipelago	31	A	US	parent	Core destroyed	151	0	1370	1160
+archipelago_s31_B	archipelago	31	B	US	parent	Core destroyed	114	0	700	530
+archipelago_s32_A	archipelago	32	A	US	parent	Core destroyed	186	0	1730	630
+archipelago_s32_B	archipelago	32	B	US	parent	Core destroyed	124	0	1080	820
+archipelago_s33_A	archipelago	33	A	US	parent	Core destroyed	236	0	2210	1370
+archipelago_s33_B	archipelago	33	B	US	parent	Core destroyed	122	0	1070	710
+archipelago_s34_A	archipelago	34	A	OPP	_v468kladturbo	Core destroyed	537	0	3950	3930
+archipelago_s34_B	archipelago	34	B	US	parent	Core destroyed	512	0	2710	2610
+archipelago_s35_A	archipelago	35	A	US	parent	Titanium collected (tiebreak)	1000	0	5120	2760
+archipelago_s35_B	archipelago	35	B	US	parent	Core destroyed	174	0	1590	940
+archipelago_s36_A	archipelago	36	A	OPP	_v468kladturbo	Core destroyed	475	0	2970	2600
+archipelago_s36_B	archipelago	36	B	US	parent	Core destroyed	122	0	1080	860

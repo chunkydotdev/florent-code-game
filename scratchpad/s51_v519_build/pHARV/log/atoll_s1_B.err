@@ -1,0 +1,21 @@
+Update available: 2.3.6 -> 2.3.8. Run: pip install --upgrade fcode
+GF519 1 id 4 d 200 band 0 ti 434 ammo 0 gun 28 lau 28 bar 4 cd 0 lp 0 plants 0
+GF519 2 id 4 d 200 band 0 ti 361 ammo 0 gun 34 lau 34 bar 5 cd 0 lp 1 plants 0
+GF519 3 id 4 d 72 band 1 ti 327 ammo 0 gun 33 lau 33 bar 4 cd 0 lp 0 plants 0
+GF519 TRY 3 planted 0 refuse {'NOTGT': 1} d 72
+GF519 4 id 4 d 72 band 1 ti 294 ammo 0 gun 35 lau 35 bar 5 cd 0 lp 1 plants 0
+GF519 TRY 4 planted 0 refuse {'NOTGT': 2} d 72
+GF519 TRY 5 planted 0 refuse {'NOTGT': 2, 'NORAY': 1} d 8
+GF519 TRY 6 planted 0 refuse {'NOTGT': 2, 'NORAY': 2} d 5
+GF519 TRY 8 planted 0 refuse {'NOTGT': 2, 'NORAY': 3} d 8
+GF519 26 id 60 d 313 band 0 ti 89 ammo 16 gun 46 lau 46 bar 6 cd 0 lp 0 plants 0
+GF519 27 id 60 d 290 band 0 ti 83 ammo 16 gun 46 lau 46 bar 6 cd 0 lp 0 plants 0
+GF519 28 id 60 d 290 band 0 ti 47 ammo 16 gun 48 lau 48 bar 7 cd 0 lp 1 plants 0
+GF519 29 id 60 d 130 band 0 ti 41 ammo 16 gun 46 lau 46 bar 6 cd 0 lp 0 plants 0
+GF519 30 id 60 d 149 band 0 ti 61 ammo 16 gun 46 lau 46 bar 6 cd 0 lp 0 plants 0
+GF519 31 id 60 d 136 band 0 ti 55 ammo 16 gun 42 lau 42 bar 6 cd 0 lp 0 plants 0
+GF519 32 id 60 d 136 band 0 ti 23 ammo 16 gun 44 lau 44 bar 6 cd 0 lp 1 plants 0
+GF519 33 id 60 d 40 band 1 ti 25 ammo 24 gun 42 lau 42 bar 6 cd 0 lp 0 plants 0
+GF519 34 id 60 d 29 band 1 ti 13 ammo 24 gun 46 lau 46 bar 6 cd 0 lp 0 plants 0
+GF519 35 id 60 d 20 band 1 ti 13 ammo 24 gun 46 lau 46 bar 6 cd 0 lp 0 plants 0
+GF519 36 id 60 d 13 band 1 ti 19 ammo 24 gun 46 lau 46 bar 6 cd 0 lp 0 plants 0

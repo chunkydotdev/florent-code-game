@@ -1,0 +1,4 @@
+GUARD synthetic: PASS
+kill-mark cross-check vs the grid TSV: alarms 0 / 468 games; tsv_turn - walker_round histogram {1: 179}  <- SINGLE VALUE = consistent indexing
+arm_parent   n=468 | med ARRIVE= 9.5 (456/468 games) med SENT=  81 (327) med FUNDED=  81 (325) med KILL= 261 (179)
+                  | med GAPS: spawn->arrive  9.5 | arrive->sent 71.5 | sent->funded    0 | funded->kill 101.5
