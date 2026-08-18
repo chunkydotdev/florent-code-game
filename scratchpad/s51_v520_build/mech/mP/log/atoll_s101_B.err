@@ -1,0 +1,86 @@
+Update available: 2.3.6 -> 2.3.8. Run: pip install --upgrade fcode
+FS GATE 0 sig (18, 18, (2, 14), (14, 2)) ok 1
+FS GATE 1 sig (18, 18, (2, 14), (14, 2)) ok 1
+FS PHASE 1 id 4 ph 1 d 200 at (13, 4)
+GF519 1 id 4 d 200 band 0 ti 434 ammo 0 gun 28 lau 28 bar 4 cd 0 lp 0 plants 0
+FS HOPBUILD 1 at (13, 4) lch (13, 5) T (1, 16)
+GF519 2 id 4 d 200 band 0 ti 361 ammo 0 gun 34 lau 34 bar 5 cd 0 lp 1 plants 0
+FS GATE 2 sig (18, 18, (2, 14), (14, 2)) ok 1
+FS GATE 2 sig (18, 18, (2, 14), (14, 2)) ok 1
+FS THROW 2 from (12, 4) to (9, 8) T (1, 16) body 4 n 1 dsq 72
+GF519 3 id 4 d 72 band 1 ti 327 ammo 0 gun 33 lau 33 bar 4 cd 0 lp 0 plants 0
+FS HOPBUILD 3 at (9, 8) lch (9, 9) T (1, 16)
+FS GATE 3 sig (18, 18, (2, 14), (14, 2)) ok 1
+GF519 4 id 4 d 72 band 1 ti 294 ammo 0 gun 35 lau 35 bar 5 cd 0 lp 1 plants 0
+FS GATE 4 sig (18, 18, (2, 14), (14, 2)) ok 1
+FS THROW 4 from (8, 8) to (5, 12) T (1, 16) body 4 n 1 dsq 8
+FS ARRIVE 5 id 4 body 1 at (5, 12) dsq 8
+FS PHASE 5 id 4 ph 2 d 8 at (5, 12)
+FS SEAL 7 tile (3, 13) n 1
+FS GATE 7 sig (18, 18, (2, 14), (14, 2)) ok 1
+FS GATE 8 sig (18, 18, (2, 14), (14, 2)) ok 1
+FS SEAL 9 tile (2, 13) n 2
+FS GATE 9 sig (18, 18, (2, 14), (14, 2)) ok 1
+FS SEAL 13 tile (1, 13) n 3
+FS SEAL 15 tile (1, 14) n 4
+FS SEAL 19 tile (2, 16) n 5
+FS STAT 20 id 4 at (1, 16) need 4 orth 4 ti 15 ammo 10 sen 0 hp 40 covden 0 eco 1 lost 0
+FS CLEAR 26 tile (1, 15) peck 1
+FS RUNG 26 id 4 r 3 hi -
+FS CLEAR 27 tile (1, 15) peck 2
+FS RUNG 27 id 4 r 3 hi -
+FS CLEAR 28 tile (1, 15) peck 3
+FS RUNG 28 id 4 r 3 hi -
+FS CLEAR 29 tile (1, 15) peck 4
+FS RUNG 29 id 4 r 3 hi -
+FS CLEAR 30 tile (1, 15) peck 5
+FS RUNG 30 id 4 r 3 hi -
+FS CLEAR 31 tile (1, 15) peck 6
+FS RUNG 31 id 4 r 3 hi -
+FS CLEAR 32 tile (1, 15) peck 7
+FS RUNG 32 id 4 r 3 hi -
+FS CLEAR 33 tile (1, 15) peck 8
+FS RUNG 33 id 4 r 3 hi -
+FS STAT 40 id 4 at (3, 12) need 3 orth 3 ti 24 ammo 24 sen 0 hp 40 covden 0 eco 1 lost 0
+FS DODGE 41 id 4 from (4, 12) to (3, 12) cov 1 -> 0 hit 0 hp 22
+FS DODGE 43 id 4 from (4, 12) to (3, 12) cov 1 -> 0 hit 0 hp 4
+PRES520 51 ti 46 res 136 floor 136 bind 1 rounds 1 vacant 1 until 71
+PRES520 52 ti 54 res 136 floor 136 bind 2 rounds 2 vacant 2 until 72
+PRES520 53 ti 52 res 136 floor 136 bind 3 rounds 3 vacant 3 until 73
+PRES520 54 ti 70 res 136 floor 136 bind 4 rounds 4 vacant 4 until 74
+PRES520 55 ti 68 res 136 floor 136 bind 5 rounds 5 vacant 5 until 75
+PRES520 56 ti 76 res 136 floor 136 bind 6 rounds 6 vacant 6 until 76
+PRES520 57 ti 74 res 136 floor 136 bind 7 rounds 7 vacant 7 until 77
+PRES520 58 ti 87 res 136 floor 136 bind 8 rounds 8 vacant 8 until 78
+PRES520 59 ti 87 res 136 floor 136 bind 9 rounds 9 vacant 9 until 79
+PRES520 60 ti 97 res 136 floor 136 bind 10 rounds 10 vacant 10 until 80
+PRES520 61 ti 97 res 136 floor 136 bind 11 rounds 11 vacant 11 until 81
+PRES520 62 ti 117 res 136 floor 136 bind 12 rounds 12 vacant 12 until 82
+PRES520 63 ti 65 res 138 floor 138 bind 13 rounds 13 vacant 13 until 83
+PRES520 64 ti 60 res 139 floor 139 bind 14 rounds 14 vacant 14 until 84
+FS GATE 133 sig (18, 18, (2, 14), (14, 2)) ok 1
+FS PHASE 133 id 213 ph 1 d 221 at (14, 4)
+FS HOPBUILD 134 at (14, 5) lch (13, 5) T (1, 16)
+FS GATE 135 sig (18, 18, (2, 14), (14, 2)) ok 1
+FS THROW 135 from (14, 6) to (10, 9) T (1, 16) body 213 n 1 dsq 74
+FS HOPBUILD 136 at (10, 9) lch (10, 10) T (1, 16)
+FS GATE 137 sig (18, 18, (2, 14), (14, 2)) ok 1
+FS THROW 137 from (10, 9) to (6, 13) T (1, 16) body 213 n 1 dsq 10
+FS ARRIVE 139 id 213 body 1 at (5, 13) dsq 5
+FS PHASE 139 id 213 ph 2 d 5 at (5, 13)
+FS DODGE 139 id 213 from (5, 13) to (5, 14) cov 1 -> 0 hit 0 hp 22
+FS STAT 140 id 213 at (5, 14) need 4 orth 4 ti 94 ammo 24 sen 0 hp 22 covden 0 eco 1 lost 0
+FS DODGE 140 id 213 from (5, 14) to (6, 14) cov 1 -> 0 hit 0 hp 22
+FS DODGE 142 id 213 from (5, 14) to (6, 14) cov 1 -> 0 hit 0 hp 4
+FS GATE 151 sig (18, 18, (2, 14), (14, 2)) ok 1
+FS PHASE 151 id 242 ph 1 d 269 at (13, 1)
+FS GATE 162 sig (18, 18, (2, 14), (14, 2)) ok 1
+FS DEGRADE 182 id 242
+FS GATE 184 sig (18, 18, (2, 14), (14, 2)) ok 1
+FS GATE 185 sig (18, 18, (2, 14), (14, 2)) ok 1
+FS GATE 186 sig (18, 18, (2, 14), (14, 2)) ok 1
+FS GATE 187 sig (18, 18, (2, 14), (14, 2)) ok 1
+FS GATE 189 sig (18, 18, (2, 14), (14, 2)) ok 1
+FS GATE 235 sig (18, 18, (2, 14), (14, 2)) ok 1
+FS GATE 247 sig (18, 18, (2, 14), (14, 2)) ok 1
+FS GATE 259 sig (18, 18, (2, 14), (14, 2)) ok 1

@@ -1,0 +1,37 @@
+tag	map	seed	seat	ours	cond	turn	arm	arrive	sent	kill	last	window	ge1	ge2	nobody	two_body_share	bought_sentinel	ge1_fp	ge2_fp	nobody_fp
+atoll_s22_A	atoll	22	A	US	Core destroyed	404	parent	9	348	403	403	339	195	10	0.4248	0.0295	1	210	119	0.3805
+atoll_s22_B	atoll	22	B	OPP	Core destroyed	244	parent	58	-1	-1	243	186	21	0	0.8871	0.0	0	50	0	0.7312
+atoll_s23_A	atoll	23	A	OPP	Core destroyed	302	parent	6	66	-1	301	60	40	1	0.3333	0.0167	1	58	27	0.0333
+atoll_s23_B	atoll	23	B	US	Core destroyed	204	parent	9	126	203	203	117	60	0	0.4872	0.0	1	88	3	0.2479
+atoll_s24_A	atoll	24	A	US	Core destroyed	251	parent	6	195	250	250	189	54	0	0.7143	0.0	1	104	6	0.4497
+atoll_s24_B	atoll	24	B	OPP	Core destroyed	315	parent	269	-1	-1	314	46	2	0	0.9565	0.0	0	12	0	0.7391
+drakkarfjord_s22_A	drakkarfjord	22	A	US	Titanium collected (tiebreak)	1000	parent	10	-1	-1	999	990	43	0	0.9566	0.0	0	103	0	0.896
+drakkarfjord_s22_B	drakkarfjord	22	B	US	Core destroyed	143	parent	10	87	142	142	77	39	0	0.4935	0.0	1	77	0	0.0
+drakkarfjord_s23_A	drakkarfjord	23	A	OPP	Titanium collected (tiebreak)	1000	parent	10	-1	-1	999	990	59	1	0.9404	0.001	0	98	4	0.901
+drakkarfjord_s23_B	drakkarfjord	23	B	US	Core destroyed	260	parent	10	136	259	259	126	62	0	0.5079	0.0	1	81	0	0.3571
+drakkarfjord_s24_A	drakkarfjord	24	A	OPP	Core destroyed	188	parent	10	63	-1	187	53	33	0	0.3774	0.0	1	50	0	0.0566
+drakkarfjord_s24_B	drakkarfjord	24	B	US	Core destroyed	268	parent	10	60	267	267	50	27	0	0.46	0.0	1	47	0	0.06
+glacierkeep_s22_A	glacierkeep	22	A	OPP	Core destroyed	833	parent	8	68	-1	832	60	47	9	0.2167	0.15	1	60	29	0.0
+glacierkeep_s22_B	glacierkeep	22	B	US	Core destroyed	365	parent	8	56	364	364	48	38	8	0.2083	0.1667	1	48	18	0.0
+glacierkeep_s23_A	glacierkeep	23	A	US	Core destroyed	185	parent	8	95	184	184	87	67	13	0.2299	0.1494	1	87	62	0.0
+glacierkeep_s23_B	glacierkeep	23	B	OPP	Core destroyed	533	parent	8	64	-1	532	56	45	12	0.1964	0.2143	1	56	24	0.0
+glacierkeep_s24_A	glacierkeep	24	A	US	Core destroyed	253	parent	8	76	252	252	68	43	0	0.3676	0.0	1	62	35	0.0882
+glacierkeep_s24_B	glacierkeep	24	B	US	Core destroyed	209	parent	8	108	208	208	100	58	0	0.42	0.0	1	100	51	0.0
+midgard_s22_A	midgard	22	A	US	Core destroyed	509	parent	56	348	508	508	292	292	280	0.0	0.9589	1	292	288	0.0
+midgard_s22_B	midgard	22	B	US	Core destroyed	283	parent	52	237	282	282	185	184	170	0.0054	0.9189	1	185	183	0.0
+midgard_s23_A	midgard	23	A	OPP	Core destroyed	241	parent	53	-1	-1	240	188	186	170	0.0106	0.9043	0	188	183	0.0
+midgard_s23_B	midgard	23	B	US	Core destroyed	181	parent	54	125	180	180	71	71	66	0.0	0.9296	1	71	69	0.0
+midgard_s24_A	midgard	24	A	US	Core destroyed	353	parent	53	297	352	352	244	244	238	0.0	0.9754	1	244	244	0.0
+midgard_s24_B	midgard	24	B	OPP	Core destroyed	253	parent	53	-1	-1	252	200	102	35	0.49	0.175	0	102	44	0.49
+nordkap_s22_A	nordkap	22	A	US	Core destroyed	323	parent	4	267	322	322	263	255	46	0.0304	0.1749	1	263	71	0.0
+nordkap_s22_B	nordkap	22	B	US	Core destroyed	444	parent	4	348	443	443	344	136	0	0.6047	0.0	1	189	0	0.4506
+nordkap_s23_A	nordkap	23	A	US	Core destroyed	226	parent	4	60	225	225	56	45	28	0.1964	0.5	1	48	41	0.1429
+nordkap_s23_B	nordkap	23	B	OPP	Core destroyed	641	parent	4	-1	-1	640	637	153	0	0.7598	0.0	0	294	42	0.5385
+nordkap_s24_A	nordkap	24	A	US	Core destroyed	240	parent	4	184	239	239	180	177	90	0.0167	0.5	1	180	164	0.0
+nordkap_s24_B	nordkap	24	B	US	Core destroyed	241	parent	4	140	240	240	136	126	103	0.0735	0.7574	1	136	114	0.0
+yulerune_s22_A	yulerune	22	A	OPP	Core destroyed	221	parent	29	-1	-1	220	192	190	174	0.0104	0.9062	0	192	184	0.0
+yulerune_s22_B	yulerune	22	B	OPP	Core destroyed	180	parent	30	-1	-1	179	150	149	135	0.0067	0.9	0	150	139	0.0
+yulerune_s23_A	yulerune	23	A	US	Core destroyed	305	parent	26	215	304	304	189	187	173	0.0106	0.9153	1	189	178	0.0
+yulerune_s23_B	yulerune	23	B	US	Core destroyed	519	parent	31	458	518	518	427	426	414	0.0023	0.9696	1	427	421	0.0
+yulerune_s24_A	yulerune	24	A	OPP	Titanium collected (tiebreak)	1000	parent	35	-1	-1	999	965	964	945	0.001	0.9793	0	965	957	0.0
+yulerune_s24_B	yulerune	24	B	OPP	Core destroyed	293	parent	32	153	-1	292	121	76	40	0.3719	0.3306	1	86	55	0.2893

@@ -1,0 +1,263 @@
+Update available: 2.3.6 -> 2.3.8. Run: pip install --upgrade fcode
+FS GATE 0 sig (30, 30, (14, 2), (14, 26)) ok 1
+FS GATE 1 sig (30, 30, (14, 2), (14, 26)) ok 1
+FS PHASE 1 id 4 ph 1 d 484 at (14, 25)
+GF519 1 id 4 d 484 band 0 ti 434 ammo 0 gun 28 lau 28 bar 4 cd 0 lp 0 plants 0
+GF519 2 id 4 d 484 band 0 ti 392 ammo 0 gun 32 lau 32 bar 4 cd 0 lp 0 plants 0
+FS GATE 2 sig (30, 30, (14, 2), (14, 26)) ok 1
+GF519 3 id 4 d 484 band 0 ti 344 ammo 0 gun 36 lau 36 bar 5 cd 0 lp 0 plants 0
+FS GATE 3 sig (30, 30, (14, 2), (14, 26)) ok 1
+GF519 4 id 4 d 484 band 0 ti 354 ammo 0 gun 36 lau 36 bar 5 cd 0 lp 0 plants 0
+FS GATE 4 sig (30, 30, (14, 2), (14, 26)) ok 1
+APPT520 CLAIM 4 id 10
+FS PHASE 4 id 10 ph 1 d 484 at (15, 25)
+GF519 4 id 10 d 484 band 0 ti 354 ammo 0 gun 36 lau 36 bar 5 cd 0 lp 0 plants 0
+GF519 5 id 4 d 484 band 0 ti 354 ammo 0 gun 36 lau 36 bar 5 cd 0 lp 0 plants 0
+FS HOPBUILD 5 at (14, 25) lch (14, 24) T (16, 1)
+GF519 5 id 10 d 441 band 0 ti 318 ammo 0 gun 38 lau 38 bar 5 cd 0 lp 1 plants 0
+GF519 6 id 4 d 484 band 0 ti 318 ammo 0 gun 38 lau 38 bar 5 cd 0 lp 1 plants 0
+GF519 6 id 10 d 400 band 0 ti 318 ammo 0 gun 38 lau 38 bar 5 cd 0 lp 1 plants 0
+FS GATE 6 sig (30, 30, (14, 2), (14, 26)) ok 1
+FS THROW 6 from (15, 25) to (15, 19) T (16, 1) body 4 n 1 dsq 256
+GF519 7 id 4 d 256 band 0 ti 318 ammo 0 gun 38 lau 38 bar 5 cd 0 lp 0 plants 0
+FS HOPBUILD 7 at (15, 19) lch (15, 18) T (16, 1)
+GF519 7 id 10 d 400 band 0 ti 280 ammo 0 gun 40 lau 40 bar 6 cd 0 lp 1 plants 0
+FS THROW 7 from (15, 23) to (14, 19) T (16, 1) body 10 n 2 dsq 256
+GF519 8 id 4 d 256 band 0 ti 290 ammo 0 gun 38 lau 38 bar 5 cd 0 lp 1 plants 0
+GF519 8 id 10 d 256 band 0 ti 290 ammo 0 gun 38 lau 38 bar 5 cd 0 lp 1 plants 0
+FS GATE 8 sig (30, 30, (14, 2), (14, 26)) ok 1
+FS THROW 8 from (16, 19) to (16, 13) T (16, 1) body 4 n 1 dsq 101
+GF519 9 id 4 d 101 band 1 ti 290 ammo 0 gun 38 lau 38 bar 5 cd 0 lp 0 plants 0
+FS HOPBUILD 9 at (16, 13) lch (16, 12) T (16, 1)
+GF519 9 id 10 d 225 band 0 ti 252 ammo 0 gun 40 lau 40 bar 6 cd 0 lp 1 plants 0
+FS THROW 9 from (14, 17) to (14, 13) T (16, 1) body 10 n 2 dsq 100
+GF519 10 id 4 d 101 band 1 ti 252 ammo 0 gun 38 lau 38 bar 5 cd 0 lp 1 plants 0
+GF519 10 id 10 d 100 band 1 ti 252 ammo 0 gun 38 lau 38 bar 5 cd 0 lp 0 plants 0
+FS GATE 10 sig (30, 30, (14, 2), (14, 26)) ok 1
+FS THROW 10 from (16, 13) to (16, 7) T (16, 1) body 4 n 1 dsq 17
+GF519 11 id 4 d 17 band 1 ti 252 ammo 0 gun 38 lau 38 bar 5 cd 0 lp 0 plants 0
+TERM520 11 id 4 at (16, 7) n 1 pick (16, 6) arcs 2 cov 0 covbest 0 conflict 0 dsq 10
+FS HOPBUILD 11 at (16, 7) lch (16, 6) T (16, 1)
+GF519 11 id 10 d 100 band 1 ti 214 ammo 0 gun 40 lau 40 bar 6 cd 0 lp 1 plants 0
+FS THROW 11 from (15, 12) to (15, 7) T (16, 1) body 10 n 2 dsq 16
+GF519 12 id 4 d 17 band 1 ti 224 ammo 0 gun 38 lau 38 bar 5 cd 0 lp 1 plants 0
+GF519 12 id 10 d 16 band 1 ti 224 ammo 0 gun 38 lau 38 bar 5 cd 0 lp 1 plants 0
+FS GATE 12 sig (30, 30, (14, 2), (14, 26)) ok 1
+SPLIT520 12 lch (16, 6) body 4 arc 2 to (15, 1) dsq 1 walk 1 n 1
+FS SPLIT 12 arc 2 to (15, 1) body 4 walk 1
+FS ARRIVE 13 id 4 body 1 at (15, 1) dsq 1
+ARC520 CLAIM 13 id 4 body 1 arc 2 at (15, 1)
+FS PHASE 13 id 4 ph 2 d 1 at (15, 1)
+FS SEAL 13 tile (14, 1) n 1
+GF519 13 id 10 d 9 band 1 ti 219 ammo 0 gun 38 lau 38 bar 5 cd 0 lp 1 plants 0
+SPLIT520 13 lch (16, 6) body 10 arc 1 to (13, 4) dsq 2 walk 1 n 2
+FS SPLIT 13 arc 1 to (13, 4) body 10 walk 1
+FS ARRIVE 14 id 10 body 2 at (13, 4) dsq 2
+ARC520 CLAIM 14 id 10 body 2 arc 1 at (13, 4)
+FS PHASE 14 id 10 ph 2 d 2 at (13, 4)
+FS DODGE 15 id 4 from (16, 1) to (16, 2) cov 1 -> 0 hit 0 hp 40
+FS GATE 15 sig (30, 30, (14, 2), (14, 26)) ok 1
+FS SEAL 16 tile (16, 3) n 2
+FS GATE 17 sig (30, 30, (14, 2), (14, 26)) ok 1
+FS SEAL 18 tile (16, 2) n 3
+FS STAT 20 id 4 at (17, 3) need 6 orth 5 ti 57 ammo 0 sen 0 hp 40 covden 0 eco 0 lost 0
+FS STAT 20 id 10 at (15, 4) need 6 orth 5 ti 57 ammo 0 sen 0 hp 40 covden 0 eco 0 lost 0
+FS EVICTOR 20 at (15, 5) ucov 0 cov 1 unseal 0 obs 3
+FS RUNG 20 id 10 r 2 hi -
+FS GATE 21 sig (30, 30, (14, 2), (14, 26)) ok 1
+FS EVICT 21 from (14, 4) to (16, 10)
+FS EVICT 25 from (16, 6) to (10, 6)
+FS EVICT 29 from (14, 6) to (20, 6)
+FS EVICT 35 from (16, 5) to (10, 6)
+FS EVICT 39 from (14, 6) to (20, 6)
+FS STAT 40 id 4 at (16, 4) need 6 orth 5 ti 14 ammo 6 sen 0 hp 40 covden 0 eco 0 lost 0
+FS STAT 40 id 10 at (15, 4) need 6 orth 5 ti 7 ammo 6 sen 0 hp 40 covden 0 eco 0 lost 0
+SPLIT520 45 lch (15, 5) body 4 arc 2 to (14, 1) dsq 1 walk 0 n 1
+FS SPLIT 45 arc 2 to (14, 1) body 4 walk 0
+FS DODGE 46 id 4 from (14, 1) to (14, 0) cov 1 -> 0 hit 0 hp 40
+FS EVICT 46 from (16, 5) to (10, 6)
+FS SEAL 48 tile (14, 1) n 4
+FS SEAL 50 tile (15, 1) n 5
+FS SEAL 52 tile (14, 1) n 6
+FS EVICT 52 from (14, 5) to (20, 6)
+FS EVICT 56 from (16, 6) to (10, 6)
+FS EVICT 59 from (14, 6) to (20, 6)
+FS STAT 60 id 4 at (13, 0) need 2 orth 1 ti 10 ammo 11 sen 0 hp 40 covden 0 eco 0 lost 0
+FS STAT 60 id 10 at (14, 5) need 2 orth 1 ti 10 ammo 11 sen 0 hp 40 covden 0 eco 0 lost 0
+FS EVICT 63 from (16, 6) to (10, 6)
+FS EVICT 67 from (14, 6) to (20, 6)
+FS EVICT 71 from (16, 6) to (10, 6)
+FS DODGE 73 id 10 from (15, 1) to (15, 0) cov 1 -> 0 hit 0 hp 22
+FS DODGE 75 id 10 from (15, 1) to (15, 0) cov 1 -> 0 hit 0 hp 4
+FS EVICT 75 from (14, 6) to (20, 6)
+FS CLEAR 77 tile (13, 2) peck 1
+FS RUNG 77 id 4 r 3 hi -
+FS DODGE 77 id 10 from (15, 1) to (15, 0) cov 1 -> 0 hit 0 hp 4
+FS CLEAR 79 tile (13, 2) peck 2
+FS RUNG 79 id 4 r 3 hi -
+FS DODGE 79 id 10 from (15, 1) to (15, 0) cov 1 -> 0 hit 0 hp 4
+FS EVICT 79 from (16, 6) to (10, 6)
+FS STAT 80 id 4 at (12, 2) need 4 orth 3 ti 43 ammo 24 sen 0 hp 40 covden 0 eco 0 lost 0
+FS CLEAR 80 tile (13, 2) peck 3
+FS RUNG 80 id 4 r 3 hi -
+FS STAT 80 id 10 at (15, 0) need 4 orth 3 ti 41 ammo 24 sen 0 hp 4 covden 0 eco 0 lost 0
+FS CLEAR 81 tile (13, 2) peck 4
+FS RUNG 81 id 4 r 3 hi -
+FS CLEAR 82 tile (13, 2) peck 5
+FS RUNG 82 id 4 r 3 hi -
+FS CLEAR 83 tile (13, 2) peck 6
+FS RUNG 83 id 4 r 3 hi -
+FS EVICT 83 from (14, 6) to (20, 6)
+FS CLEAR 84 tile (13, 2) peck 7
+FS RUNG 84 id 4 r 3 hi -
+FS CLEAR 85 tile (13, 2) peck 8
+FS RUNG 85 id 4 r 3 hi -
+PRES520 87 ti 41 res 119 floor 119 bind 1 rounds 1 vacant 1 until 107
+FS CLEAR 87 tile (13, 1) peck 1
+FS RUNG 87 id 4 r 3 hi -
+FS EVICT 87 from (16, 6) to (10, 6)
+PRES520 88 ti 49 res 119 floor 119 bind 2 rounds 2 vacant 2 until 108
+FS CLEAR 88 tile (13, 1) peck 2
+FS RUNG 88 id 4 r 3 hi -
+FS EVICT 88 from (15, 6) to (16, 0)
+PRES520 89 ti 2 res 129 floor 129 bind 3 rounds 3 vacant 3 until 109
+PRES520 90 ti 2 res 129 floor 129 bind 4 rounds 4 vacant 4 until 110
+PRES520 91 ti 2 res 129 floor 129 bind 5 rounds 5 vacant 5 until 111
+FS EVICT 91 from (14, 6) to (20, 6)
+PRES520 92 ti 12 res 129 floor 129 bind 6 rounds 6 vacant 6 until 112
+PRES520 93 ti 5 res 131 floor 131 bind 7 rounds 7 vacant 7 until 113
+PRES520 94 ti 4 res 131 floor 131 bind 8 rounds 8 vacant 8 until 114
+FS EVICT 94 from (16, 4) to (16, 10)
+PRES520 95 ti 3 res 131 floor 131 bind 9 rounds 9 vacant 9 until 115
+FS EVICT 95 from (16, 6) to (10, 6)
+PRES520 96 ti 12 res 131 floor 131 bind 10 rounds 10 vacant 10 until 116
+PRES520 97 ti 1 res 131 floor 131 bind 11 rounds 11 vacant 11 until 117
+PRES520 98 ti 1 res 129 floor 129 bind 12 rounds 12 vacant 12 until 118
+PRES520 99 ti 1 res 129 floor 129 bind 13 rounds 13 vacant 13 until 119
+FS EVICT 99 from (14, 6) to (20, 6)
+PRES520 100 ti 11 res 129 floor 129 bind 14 rounds 14 vacant 14 until 120
+FS STAT 100 id 4 at (13, 2) need 4 orth 3 ti 11 ammo 0 sen 0 hp 40 covden 0 eco 0 lost 0
+FS EVICT 100 from (16, 6) to (10, 6)
+FS EVICT 103 from (16, 6) to (10, 5)
+FS EVICT 104 from (14, 6) to (20, 6)
+FS EVICT 108 from (14, 5) to (20, 6)
+FS EVICT 109 from (15, 6) to (16, 0)
+FS EVICT 112 from (16, 6) to (10, 6)
+FS EVICT 115 from (16, 4) to (16, 10)
+FS EVICT 117 from (14, 5) to (20, 6)
+FS EVICT 119 from (16, 6) to (10, 6)
+FS STAT 120 id 4 at (13, 2) need 4 orth 3 ti 12 ammo 10 sen 0 hp 40 covden 0 eco 0 lost 0
+FS EVICT 121 from (16, 6) to (10, 6)
+FS EVICT 123 from (14, 6) to (20, 6)
+FS EVICT 126 from (14, 5) to (20, 6)
+FS EVICT 127 from (16, 6) to (10, 6)
+FS EVICT 130 from (16, 6) to (10, 6)
+FS EVICT 131 from (14, 6) to (20, 6)
+FS EVICT 135 from (14, 5) to (20, 6)
+FS EVICT 136 from (15, 6) to (16, 0)
+FS EVICT 139 from (16, 6) to (10, 6)
+FS STAT 140 id 4 at (13, 2) need 4 orth 3 ti 12 ammo 12 sen 0 hp 40 covden 0 eco 0 lost 0
+FS EVICT 142 from (16, 4) to (16, 10)
+FS EVICT 144 from (14, 5) to (20, 6)
+FS EVICT 145 from (14, 6) to (20, 6)
+FS EVICT 146 from (16, 6) to (10, 6)
+FS EVICT 148 from (16, 6) to (10, 6)
+FS EVICT 149 from (16, 6) to (10, 6)
+FS EVICT 150 from (14, 6) to (20, 6)
+FS DODGE 153 id 4 from (13, 2) to (12, 2) cov 1 -> 0 hit 0 hp 40
+FS EVICT 153 from (14, 5) to (20, 6)
+FS EVICT 154 from (16, 6) to (10, 6)
+FS EVICT 157 from (16, 6) to (10, 6)
+FS EVICT 158 from (14, 6) to (20, 6)
+FS STAT 160 id 4 at (12, 2) need 4 orth 3 ti 12 ammo 12 sen 0 hp 40 covden 0 eco 0 lost 0
+FS EVICT 162 from (14, 5) to (20, 6)
+FS EVICT 163 from (14, 5) to (20, 6)
+FS EVICT 164 from (16, 6) to (10, 6)
+FS EVICT 166 from (16, 6) to (10, 6)
+FS EVICT 167 from (16, 6) to (10, 6)
+FS EVICT 168 from (14, 6) to (20, 6)
+FS DODGE 171 id 4 from (12, 2) to (12, 1) cov 1 -> 0 hit 0 hp 40
+FS EVICT 171 from (14, 5) to (20, 6)
+FS EVICT 172 from (16, 6) to (10, 6)
+FS EVICT 173 from (14, 5) to (20, 6)
+FS EVICT 175 from (16, 6) to (10, 6)
+FS EVICT 176 from (14, 6) to (20, 6)
+FS EVICT 177 from (16, 6) to (10, 6)
+FS STAT 180 id 4 at (12, 1) need 4 orth 3 ti 12 ammo 10 sen 0 hp 40 covden 0 eco 0 lost 0
+FS EVICT 180 from (14, 5) to (20, 6)
+FS EVICT 181 from (16, 5) to (10, 6)
+FS EVICT 184 from (16, 6) to (10, 6)
+FS EVICT 185 from (14, 6) to (20, 6)
+FS EVICT 189 from (14, 5) to (20, 6)
+FS EVICT 190 from (16, 5) to (10, 6)
+FS EVICT 193 from (16, 6) to (10, 6)
+FS EVICT 194 from (14, 6) to (20, 6)
+FS DODGE 196 id 4 from (12, 1) to (11, 1) cov 1 -> 0 hit 0 hp 40
+FS DODGE 198 id 4 from (12, 1) to (11, 1) cov 1 -> 0 hit 0 hp 22
+FS EVICT 198 from (14, 5) to (20, 6)
+FS EVICT 199 from (16, 5) to (10, 6)
+FS STAT 200 id 4 at (12, 1) need 4 orth 3 ti 12 ammo 12 sen 0 hp 4 covden 0 eco 0 lost 0
+FS DODGE 200 id 4 from (12, 1) to (11, 1) cov 1 -> 0 hit 0 hp 4
+FS EVICT 202 from (16, 6) to (10, 6)
+FS EVICT 203 from (14, 6) to (20, 6)
+FS EVICT 205 from (14, 5) to (20, 6)
+FS EVICT 207 from (14, 5) to (20, 6)
+FS EVICT 208 from (16, 5) to (10, 6)
+FS EVICT 209 from (16, 6) to (10, 6)
+FS EVICT 211 from (16, 6) to (10, 6)
+FS EVICT 212 from (14, 6) to (20, 6)
+FS EVICT 214 from (14, 5) to (20, 6)
+FS EVICT 216 from (14, 5) to (20, 6)
+FS EVICT 217 from (16, 5) to (10, 6)
+FS EVICT 218 from (16, 6) to (10, 6)
+FS EVICT 220 from (16, 6) to (10, 6)
+FS EVICT 221 from (14, 6) to (20, 6)
+FS EVICT 223 from (14, 5) to (20, 6)
+FS EVICT 225 from (14, 5) to (20, 6)
+FS EVICT 226 from (16, 5) to (10, 6)
+FS EVICT 227 from (16, 6) to (10, 6)
+FS EVICT 229 from (16, 6) to (10, 6)
+FS EVICT 230 from (14, 6) to (20, 6)
+FS EVICT 234 from (16, 6) to (10, 6)
+FS EVICT 235 from (14, 5) to (20, 6)
+FS EVICT 238 from (14, 5) to (20, 6)
+FS EVICT 239 from (16, 6) to (10, 6)
+FS EVICT 240 from (14, 6) to (20, 6)
+FS EVICT 242 from (16, 6) to (10, 6)
+FS EVICT 244 from (16, 6) to (10, 6)
+FS EVICT 246 from (14, 5) to (20, 6)
+FS EVICT 249 from (14, 5) to (20, 6)
+FS EVICT 250 from (14, 6) to (20, 6)
+FS EVICT 251 from (15, 6) to (16, 0)
+FS EVICT 253 from (16, 6) to (10, 6)
+FS EVICT 255 from (16, 5) to (10, 6)
+FS EVICT 260 from (14, 5) to (20, 6)
+FS EVICT 261 from (14, 6) to (20, 6)
+FS EVICT 264 from (16, 6) to (10, 6)
+FS EVICT 266 from (16, 5) to (10, 6)
+FS EVICT 271 from (14, 5) to (20, 6)
+FS EVICT 272 from (14, 6) to (20, 6)
+FS EVICT 275 from (16, 6) to (10, 6)
+FS EVICT 277 from (16, 5) to (10, 6)
+FS EVICT 282 from (14, 5) to (20, 6)
+FS EVICT 283 from (14, 6) to (20, 6)
+FS EVICT 286 from (16, 6) to (10, 6)
+FS EVICT 288 from (16, 5) to (10, 6)
+FS EVICT 293 from (14, 5) to (20, 6)
+FS EVICT 294 from (14, 6) to (20, 6)
+FS EVICT 297 from (16, 6) to (10, 6)
+FS EVICT 299 from (16, 5) to (10, 6)
+FS EVICT 304 from (14, 5) to (20, 6)
+FS EVICT 305 from (14, 6) to (20, 6)
+FS EVICT 308 from (16, 6) to (10, 6)
+FS EVICT 310 from (16, 5) to (10, 6)
+FS EVICT 315 from (14, 5) to (20, 6)
+FS EVICT 316 from (14, 6) to (20, 6)
+FS EVICT 319 from (16, 6) to (10, 6)
+FS EVICT 321 from (16, 5) to (10, 6)
+FS EVICT 326 from (14, 5) to (20, 6)
+FS EVICT 327 from (14, 6) to (20, 6)
+FS EVICT 330 from (16, 6) to (10, 6)
+FS EVICT 332 from (16, 5) to (10, 6)
+FS EVICT 337 from (14, 5) to (20, 6)
+FS EVICT 338 from (14, 6) to (20, 6)

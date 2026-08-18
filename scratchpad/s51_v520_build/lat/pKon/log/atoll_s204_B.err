@@ -1,0 +1,121 @@
+Update available: 2.3.6 -> 2.3.8. Run: pip install --upgrade fcode
+FS GATE 0 sig (18, 18, (2, 14), (14, 2)) ok 1
+FS GATE 1 sig (18, 18, (2, 14), (14, 2)) ok 1
+FS PHASE 1 id 4 ph 1 d 200 at (13, 4)
+FS GATE 2 sig (18, 18, (2, 14), (14, 2)) ok 1
+FS GATE 3 sig (18, 18, (2, 14), (14, 2)) ok 1
+FS GATE 4 sig (18, 18, (2, 14), (14, 2)) ok 1
+FS PHASE 4 id 12 ph 1 d 221 at (13, 3)
+FS HOPBUILD 5 at (13, 4) lch (13, 5) T (1, 16)
+FS GATE 6 sig (18, 18, (2, 14), (14, 2)) ok 1
+FS THROW 6 from (13, 4) to (9, 8) T (1, 16) body 4 n 1 dsq 72
+FS HOPBUILD 7 at (9, 8) lch (9, 9) T (1, 16)
+FS THROW 7 from (12, 6) to (10, 9) T (1, 16) body 12 n 2 dsq 74
+FS GATE 8 sig (18, 18, (2, 14), (14, 2)) ok 1
+FS THROW 8 from (8, 8) to (5, 12) T (1, 16) body 4 n 1 dsq 8
+FS ARRIVE 9 id 4 body 1 at (5, 12) dsq 8
+FS PHASE 9 id 4 ph 2 d 8 at (5, 12)
+FS EVICTOR 9 at (4, 12) ucov 0 cov 1 unseal 1 obs 1
+FS RUNG 9 id 4 r 2 hi -
+FS THROW 9 from (9, 10) to (6, 13) T (1, 16) body 12 n 2 dsq 10
+FS GATE 10 sig (18, 18, (2, 14), (14, 2)) ok 1
+FS EVICT 10 from (3, 11) to (9, 12)
+FS EVICT 11 from (3, 12) to (9, 12)
+FS GATE 11 sig (18, 18, (2, 14), (14, 2)) ok 1
+FS SEAL 12 tile (3, 13) n 1
+FS ARRIVE 13 id 12 body 2 at (5, 15) dsq 4
+FS PHASE 13 id 12 ph 2 d 4 at (5, 15)
+FS SEAL 13 tile (4, 15) n 1
+FS EVICT 14 from (5, 13) to (5, 7)
+FS SEAL 15 tile (4, 14) n 2
+FS EVICT 15 from (5, 11) to (5, 17)
+FS SPLIT 18 arc 2 to (1, 14) body 4 walk 0
+FS SEAL 19 tile (1, 13) n 3
+FS STAT 20 id 4 at (1, 14) need 4 orth 4 ti 130 ammo 24 sen 0 hp 40 covden 0 eco 1 lost 0
+FS CLEAR 20 tile (1, 15) peck 1
+FS RUNG 20 id 4 r 3 hi -
+FS STAT 20 id 12 at (5, 15) need 4 orth 4 ti 127 ammo 24 sen 0 hp 40 covden 0 eco 1 lost 0
+FS CLEAR 21 tile (1, 15) peck 2
+FS RUNG 21 id 4 r 3 hi -
+FS CLEAR 22 tile (1, 15) peck 3
+FS RUNG 22 id 4 r 3 hi -
+FS CLEAR 23 tile (1, 15) peck 4
+FS RUNG 23 id 4 r 3 hi -
+FS CLEAR 24 tile (1, 15) peck 5
+FS RUNG 24 id 4 r 3 hi -
+FS CLEAR 25 tile (1, 15) peck 6
+FS RUNG 25 id 4 r 3 hi -
+FS CLEAR 26 tile (1, 15) peck 7
+FS RUNG 26 id 4 r 3 hi -
+FS CLEAR 27 tile (1, 15) peck 8
+FS RUNG 27 id 4 r 3 hi -
+FS CLEAR 29 tile (3, 16) peck 1
+FS RUNG 29 id 12 r 3 hi -
+FS SEAL 30 tile (2, 16) n 4
+FS CLEAR 30 tile (3, 16) peck 2
+FS RUNG 30 id 12 r 3 hi -
+FS EVICT 32 from (3, 11) to (9, 12)
+FS EVICT 36 from (5, 12) to (5, 7)
+FS EVICT 38 from (3, 12) to (9, 12)
+FS STAT 40 id 4 at (1, 16) need 4 orth 4 ti 12 ammo 23 sen 0 hp 40 covden 0 eco 1 lost 0
+FS STAT 40 id 12 at (4, 16) need 4 orth 4 ti 10 ammo 23 sen 0 hp 40 covden 0 eco 1 lost 0
+FS EVICT 41 from (4, 11) to (5, 17)
+FS EVICT 45 from (5, 13) to (5, 7)
+FS EVICT 50 from (4, 11) to (5, 17)
+FS EVICT 56 from (5, 13) to (5, 7)
+PRESKILL520 60 id 4 body 1
+FS STAT 60 id 12 at (4, 16) need 4 orth 4 ti 10 ammo 12 sen 0 hp 40 covden 0 eco 1 lost 0
+FS EVICT 61 from (4, 11) to (5, 17)
+FS EVICT 65 from (5, 13) to (5, 7)
+PRES520 66 ti 28 res 129 floor 129 bind 1 rounds 1 vacant 1 until 86
+FS PROMOTE 66 id 12
+PRES520 67 ti 26 res 129 floor 129 bind 2 rounds 2 vacant 2 until 87
+PRES520 68 ti 34 res 129 floor 129 bind 3 rounds 3 vacant 2 until 87
+PRES520 69 ti 32 res 129 floor 129 bind 4 rounds 4 vacant 2 until 87
+PRES520 70 ti 50 res 129 floor 129 bind 5 rounds 5 vacant 2 until 87
+FS CLEAR 70 tile (3, 16) peck 1
+FS RUNG 70 id 12 r 3 hi -
+FS EVICT 70 from (4, 11) to (5, 17)
+PRES520 71 ti 46 res 129 floor 129 bind 6 rounds 6 vacant 2 until 87
+FS CLEAR 71 tile (3, 16) peck 2
+FS RUNG 71 id 12 r 3 hi -
+PRES520 72 ti 52 res 129 floor 129 bind 7 rounds 7 vacant 2 until 87
+FS CLEAR 72 tile (3, 16) peck 3
+FS RUNG 72 id 12 r 3 hi -
+PRES520 73 ti 48 res 129 floor 129 bind 8 rounds 8 vacant 2 until 87
+FS CLEAR 73 tile (3, 16) peck 4
+FS RUNG 73 id 12 r 3 hi -
+PRES520 74 ti 64 res 129 floor 129 bind 9 rounds 9 vacant 2 until 87
+FS EVICT 74 from (5, 13) to (5, 7)
+PRES520 75 ti 13 res 132 floor 132 bind 10 rounds 10 vacant 2 until 87
+PRES520 76 ti 21 res 132 floor 132 bind 11 rounds 11 vacant 2 until 87
+PRES520 77 ti 19 res 132 floor 132 bind 12 rounds 12 vacant 2 until 87
+PRES520 78 ti 37 res 132 floor 132 bind 13 rounds 13 vacant 2 until 87
+PRES520 79 ti 28 res 133 floor 133 bind 14 rounds 14 vacant 2 until 87
+FS EVICT 79 from (4, 11) to (5, 17)
+PRES520 80 ti 36 res 133 floor 133 bind 15 rounds 15 vacant 2 until 87
+FS STAT 80 id 12 at (4, 16) need 4 orth 4 ti 28 ammo 16 sen 0 hp 40 covden 0 eco 1 lost 0
+PRES520 81 ti 27 res 133 floor 133 bind 16 rounds 16 vacant 2 until 87
+PRES520 82 ti 45 res 133 floor 133 bind 17 rounds 17 vacant 2 until 87
+PRES520 83 ti 36 res 134 floor 134 bind 18 rounds 18 vacant 2 until 87
+FS EVICT 83 from (5, 13) to (5, 7)
+PRES520 84 ti 44 res 134 floor 134 bind 19 rounds 19 vacant 2 until 87
+PRES520 85 ti 35 res 134 floor 134 bind 20 rounds 20 vacant 2 until 87
+PRES520 86 ti 53 res 134 floor 134 bind 21 rounds 21 vacant 2 until 87
+FS CLEAR 86 tile (3, 16) peck 1
+FS RUNG 86 id 12 r 3 hi -
+FS CLEAR 88 tile (3, 16) peck 2
+FS RUNG 88 id 12 r 3 hi -
+FS EVICT 88 from (4, 11) to (5, 17)
+FS CLEAR 89 tile (3, 16) peck 3
+FS RUNG 89 id 12 r 3 hi -
+FS CLEAR 90 tile (3, 16) peck 4
+FS RUNG 90 id 12 r 3 hi -
+FS CLEARED 91 tile (3, 16) n 1
+FS SEAL 91 tile (3, 16) n 2
+FS SEALCLR 91 tile (3, 16) lag 0
+FS STAT 100 id 12 at (5, 15) need 3 orth 3 ti 85 ammo 24 sen 0 hp 40 covden 0 eco 1 lost 0
+FS SENTINEL 104 at (5, 14) face WEST tgt (2, 14) score 9 n 1 onring 0 lost 0 gate (1, 1, 9) onsray 0 olddsq -1
+FS PHASE 105 id 12 ph 5 d 4 at (5, 15)
+FS STAT 120 id 12 at (5, 16) need 4 orth 3 ti 14 ammo 17 sen 1 hp 40 covden 0 eco 1 lost 0
+FS STAT 140 id 12 at (5, 16) need 4 orth 3 ti 14 ammo 21 sen 1 hp 40 covden 0 eco 1 lost 0

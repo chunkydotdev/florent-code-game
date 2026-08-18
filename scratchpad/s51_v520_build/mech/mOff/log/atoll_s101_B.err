@@ -1,0 +1,100 @@
+Update available: 2.3.6 -> 2.3.8. Run: pip install --upgrade fcode
+FS GATE 0 sig (18, 18, (2, 14), (14, 2)) ok 1
+FS GATE 1 sig (18, 18, (2, 14), (14, 2)) ok 1
+FS PHASE 1 id 4 ph 1 d 200 at (13, 4)
+GF519 1 id 4 d 200 band 0 ti 434 ammo 0 gun 28 lau 28 bar 4 cd 0 lp 0 plants 0
+FS HOPBUILD 1 at (13, 4) lch (13, 5) T (1, 16)
+GF519 2 id 4 d 200 band 0 ti 361 ammo 0 gun 34 lau 34 bar 5 cd 0 lp 1 plants 0
+FS GATE 2 sig (18, 18, (2, 14), (14, 2)) ok 1
+FS GATE 2 sig (18, 18, (2, 14), (14, 2)) ok 1
+FS THROW 2 from (12, 4) to (9, 8) T (1, 16) body 4 n 1 dsq 72
+GF519 3 id 4 d 72 band 1 ti 327 ammo 0 gun 33 lau 33 bar 4 cd 0 lp 0 plants 0
+FS HOPBUILD 3 at (9, 8) lch (9, 9) T (1, 16)
+FS GATE 3 sig (18, 18, (2, 14), (14, 2)) ok 1
+GF519 4 id 4 d 72 band 1 ti 294 ammo 0 gun 35 lau 35 bar 5 cd 0 lp 1 plants 0
+FS GATE 4 sig (18, 18, (2, 14), (14, 2)) ok 1
+FS THROW 4 from (8, 8) to (5, 12) T (1, 16) body 4 n 1 dsq 8
+FS ARRIVE 5 id 4 body 1 at (5, 12) dsq 8
+FS PHASE 5 id 4 ph 2 d 8 at (5, 12)
+FS EVICTOR 6 at (4, 13) ucov 0 cov 2 unseal 1 obs 5
+FS RUNG 6 id 4 r 2 hi -
+FS DODGE 7 id 4 from (4, 12) to (4, 11) cov 1 -> 0 hit 0 hp 40
+FS GATE 7 sig (18, 18, (2, 14), (14, 2)) ok 1
+FS GATE 7 sig (18, 18, (2, 14), (14, 2)) ok 1
+FS EVICT 7 from (3, 13) to (9, 12)
+FS EVICT 8 from (5, 12) to (0, 16)
+FS GATE 8 sig (18, 18, (2, 14), (14, 2)) ok 1
+FS DODGE 9 id 4 from (4, 12) to (4, 11) cov 1 -> 0 hit 0 hp 22
+FS EVICT 10 from (3, 13) to (9, 13)
+FS EVICT 12 from (5, 12) to (0, 16)
+FS EVICT 14 from (3, 13) to (9, 13)
+FS EVICT 15 from (5, 14) to (5, 8)
+FS EVICT 18 from (3, 13) to (9, 14)
+FS EVICT 22 from (5, 14) to (5, 8)
+FS GATE 24 sig (18, 18, (2, 14), (14, 2)) ok 1
+FS PHASE 24 id 53 ph 1 d 221 at (13, 3)
+GF519 24 id 53 d 221 band 0 ti 80 ammo 16 gun 46 lau 46 bar 6 cd 0 lp 0 plants 0
+FS HOPBUILD 24 at (13, 3) lch (13, 4) T (1, 16)
+GF519 25 id 53 d 221 band 0 ti 27 ammo 16 gun 48 lau 48 bar 7 cd 0 lp 1 plants 0
+FS GATE 25 sig (18, 18, (2, 14), (14, 2)) ok 1
+FS THROW 25 from (12, 3) to (9, 7) T (1, 16) body 53 n 1 dsq 85
+GF519 26 id 53 d 85 band 1 ti 47 ammo 16 gun 46 lau 46 bar 7 cd 0 lp 0 plants 0
+FS EVICT 27 from (4, 12) to (8, 10)
+GF519 27 id 53 d 74 band 1 ti 40 ammo 16 gun 46 lau 46 bar 6 cd 0 lp 0 plants 0
+GF519 28 id 53 d 61 band 1 ti 50 ammo 16 gun 46 lau 46 bar 6 cd 0 lp 0 plants 0
+GF519 29 id 53 d 52 band 1 ti 44 ammo 16 gun 46 lau 46 bar 6 cd 0 lp 0 plants 0
+GF519 30 id 53 d 41 band 1 ti 64 ammo 16 gun 46 lau 46 bar 6 cd 0 lp 0 plants 0
+FS HOPBUILD 30 at (7, 9) lch (7, 10) T (1, 16)
+GF519 31 id 53 d 41 band 1 ti 4 ammo 16 gun 48 lau 48 bar 7 cd 0 lp 1 plants 0
+FS GATE 31 sig (18, 18, (2, 14), (14, 2)) ok 1
+FS THROW 31 from (6, 9) to (3, 13) T (1, 16) body 53 n 1 dsq 1
+FS ARRIVE 32 id 53 body 1 at (3, 13) dsq 1
+FS PHASE 32 id 53 ph 2 d 1 at (3, 13)
+FS STAT 40 id 53 at (3, 13) need 8 orth 7 ti 11 ammo 14 sen 0 hp 40 covden 0 eco 1 lost 0
+FS EVICT 43 from (4, 12) to (8, 10)
+FS EVICT 49 from (5, 12) to (0, 16)
+FS DODGE 58 id 53 from (3, 12) to (3, 13) cov 1 -> 0 hit 0 hp 22
+FS STAT 60 id 53 at (3, 12) need 7 orth 6 ti 33 ammo 24 sen 0 hp 4 covden 0 eco 1 lost 0
+FS DODGE 60 id 53 from (3, 12) to (3, 13) cov 1 -> 0 hit 0 hp 4
+FS EVICT 78 from (4, 12) to (8, 10)
+FS EVICT 83 from (3, 12) to (9, 13)
+FS EVICT 87 from (5, 13) to (8, 10)
+FS EVICT 90 from (3, 12) to (9, 13)
+FS EVICT 93 from (4, 12) to (8, 10)
+FS EVICT 94 from (5, 13) to (8, 10)
+FS EVICT 106 from (4, 12) to (8, 10)
+FS EVICT 108 from (3, 12) to (9, 13)
+FS EVICT 112 from (5, 13) to (8, 10)
+FS EVICT 115 from (3, 12) to (9, 13)
+FS EVICT 116 from (3, 12) to (9, 13)
+FS EVICT 119 from (5, 13) to (8, 10)
+FS EVICT 120 from (4, 12) to (8, 10)
+FS EVICT 121 from (5, 14) to (5, 8)
+FS EVICT 126 from (4, 12) to (5, 8)
+FS EVICT 129 from (4, 12) to (8, 10)
+FS EVICT 131 from (4, 12) to (5, 8)
+FS EVICT 137 from (3, 12) to (9, 13)
+FS EVICT 138 from (4, 12) to (8, 10)
+FS EVICT 141 from (4, 12) to (8, 10)
+FS EVICT 142 from (5, 14) to (5, 8)
+FS EVICT 148 from (4, 12) to (8, 10)
+FS EVICT 149 from (4, 12) to (8, 10)
+FS EVICT 157 from (4, 12) to (8, 10)
+FS EVICT 166 from (4, 12) to (8, 10)
+FS EVICT 171 from (4, 12) to (8, 10)
+FS EVICT 176 from (4, 12) to (8, 10)
+FS EVICT 180 from (4, 12) to (8, 10)
+FS EVICT 184 from (4, 12) to (8, 10)
+FS EVICT 189 from (4, 12) to (8, 10)
+FS EVICT 192 from (4, 12) to (8, 10)
+FS EVICT 197 from (4, 12) to (8, 10)
+FS EVICT 200 from (4, 12) to (8, 10)
+FS EVICT 209 from (3, 12) to (9, 13)
+FS GATE 269 sig (18, 18, (2, 14), (14, 2)) ok 1
+FS PHASE 269 id 283 ph 1 d 269 at (16, 4)
+FS HOPBUILD 269 at (16, 4) lch (16, 5) T (1, 16)
+FS GATE 270 sig (18, 18, (2, 14), (14, 2)) ok 1
+FS THROW 270 from (15, 4) to (12, 8) T (1, 16) body 283 n 1 dsq 117
+FS ARRIVE 283 id 283 body 1 at (5, 13) dsq 5
+FS PHASE 283 id 283 ph 2 d 5 at (5, 13)
+FS DODGE 283 id 283 from (5, 13) to (6, 13) cov 1 -> 0 hit 0 hp 22

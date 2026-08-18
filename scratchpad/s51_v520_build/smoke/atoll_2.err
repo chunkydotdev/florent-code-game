@@ -1,0 +1,33 @@
+Update available: 2.3.6 -> 2.3.8. Run: pip install --upgrade fcode
+APPT520 CLAIM 4 id 10
+ARC520 CLAIM 9 id 3 body 1 arc 1 at (12, 5)
+ARC520 COLLIDE 12 id 10 body 2 peer 1 took 2 n 1
+ARC520 CLAIM 12 id 10 body 2 arc 2 at (12, 4)
+SPLIT520 46 lch (15, 5) body 10 arc 2 to (14, 1) dsq 1 walk 0 n 1
+PRES520 56 ti 37 res 133 floor 133 bind 1 rounds 1 vacant 1 until 76
+PRES520 57 ti 37 res 133 floor 133 bind 2 rounds 2 vacant 2 until 77
+PRES520 58 ti 47 res 133 floor 133 bind 3 rounds 3 vacant 2 until 77
+PRES520 59 ti 47 res 133 floor 133 bind 4 rounds 4 vacant 2 until 77
+PRES520 60 ti 67 res 133 floor 133 bind 5 rounds 5 vacant 2 until 77
+PRES520 61 ti 65 res 133 floor 133 bind 6 rounds 6 vacant 2 until 77
+PRES520 62 ti 73 res 133 floor 133 bind 7 rounds 7 vacant 2 until 77
+PRES520 63 ti 22 res 136 floor 136 bind 8 rounds 8 vacant 2 until 77
+PRES520 64 ti 42 res 136 floor 136 bind 9 rounds 9 vacant 2 until 77
+PRES520 65 ti 42 res 136 floor 136 bind 10 rounds 10 vacant 2 until 77
+PRES520 66 ti 42 res 136 floor 136 bind 11 rounds 11 vacant 2 until 77
+PRES520 67 ti 42 res 136 floor 136 bind 12 rounds 12 vacant 2 until 77
+PRES520 68 ti 62 res 136 floor 136 bind 13 rounds 13 vacant 2 until 77
+PRES520 69 ti 60 res 136 floor 136 bind 14 rounds 14 vacant 2 until 77
+PRES520 70 ti 8 res 138 floor 138 bind 15 rounds 15 vacant 2 until 77
+PRES520 71 ti 1 res 138 floor 138 bind 16 rounds 16 vacant 2 until 77
+PRES520 72 ti 21 res 128 floor 128 bind 17 rounds 17 vacant 2 until 77
+PRES520 73 ti 14 res 129 floor 129 bind 18 rounds 18 vacant 2 until 77
+PRES520 74 ti 7 res 129 floor 129 bind 19 rounds 19 vacant 2 until 77
+PRES520 75 ti 7 res 129 floor 129 bind 20 rounds 20 vacant 2 until 77
+PRES520 76 ti 20 res 129 floor 129 bind 21 rounds 21 vacant 2 until 77
+PRES520 112 ti 35 res 131 floor 131 bind 22 rounds 22 vacant 3 until 132
+TERM520 252 id 297 at (8, 5) n 2 pick (9, 5) arcs 2 cov 0 covbest 0 conflict 0 dsq 29
+ARC520 CLAIM 254 id 297 body 1 arc 1 at (13, 2)
+TERM520 324 id 357 at (10, 5) n 2 pick (11, 5) arcs 2 cov 0 covbest 0 conflict 0 dsq 13
+APPT520 CLAIM 610 id 608
+ARC520 CLAIM 627 id 608 body 2 arc 1 at (14, 5)

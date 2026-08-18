@@ -1,0 +1,81 @@
+Update available: 2.3.6 -> 2.3.8. Run: pip install --upgrade fcode
+FS GATE 0 sig (30, 30, (14, 2), (14, 26)) ok 1
+FS GATE 1 sig (30, 30, (14, 2), (14, 26)) ok 1
+FS PHASE 1 id 4 ph 1 d 484 at (14, 25)
+GF519 1 id 4 d 484 band 0 ti 434 ammo 0 gun 28 lau 28 bar 4 cd 0 lp 0 plants 0
+FS HOPBUILD 1 at (14, 25) lch (14, 24) T (16, 1)
+GF519 2 id 4 d 484 band 0 ti 361 ammo 0 gun 34 lau 34 bar 5 cd 0 lp 1 plants 0
+FS GATE 2 sig (30, 30, (14, 2), (14, 26)) ok 1
+FS GATE 2 sig (30, 30, (14, 2), (14, 26)) ok 1
+FS THROW 2 from (15, 25) to (15, 19) T (16, 1) body 4 n 1 dsq 256
+GF519 3 id 4 d 256 band 0 ti 361 ammo 0 gun 32 lau 32 bar 4 cd 0 lp 0 plants 0
+FS HOPBUILD 3 at (15, 19) lch (15, 18) T (16, 1)
+FS GATE 3 sig (30, 30, (14, 2), (14, 26)) ok 1
+GF519 4 id 4 d 256 band 0 ti 339 ammo 0 gun 34 lau 34 bar 5 cd 0 lp 1 plants 0
+FS GATE 4 sig (30, 30, (14, 2), (14, 26)) ok 1
+FS THROW 4 from (16, 19) to (16, 13) T (16, 1) body 4 n 1 dsq 101
+GF519 5 id 4 d 101 band 1 ti 339 ammo 0 gun 32 lau 32 bar 4 cd 0 lp 0 plants 0
+FS HOPBUILD 5 at (16, 13) lch (16, 12) T (16, 1)
+GF519 6 id 4 d 101 band 1 ti 307 ammo 0 gun 34 lau 34 bar 5 cd 0 lp 1 plants 0
+FS GATE 6 sig (30, 30, (14, 2), (14, 26)) ok 1
+FS THROW 6 from (16, 13) to (16, 7) T (16, 1) body 4 n 1 dsq 17
+GF519 7 id 4 d 17 band 1 ti 307 ammo 0 gun 32 lau 32 bar 4 cd 0 lp 0 plants 0
+FS HOPBUILD 7 at (16, 7) lch (16, 6) T (16, 1)
+GF519 8 id 4 d 17 band 1 ti 285 ammo 0 gun 34 lau 34 bar 5 cd 0 lp 1 plants 0
+FS GATE 8 sig (30, 30, (14, 2), (14, 26)) ok 1
+FS THROW 8 from (16, 7) to (15, 1) T (16, 1) body 4 n 1 dsq 1
+FS ARRIVE 9 id 4 body 1 at (15, 1) dsq 1
+FS PHASE 9 id 4 ph 2 d 1 at (15, 1)
+FS SEAL 9 tile (14, 1) n 1
+FS DODGE 11 id 4 from (16, 1) to (16, 2) cov 1 -> 0 hit 0 hp 40
+FS GATE 11 sig (30, 30, (14, 2), (14, 26)) ok 1
+FS SEAL 12 tile (16, 3) n 2
+FS GATE 12 sig (30, 30, (14, 2), (14, 26)) ok 1
+FS GATE 13 sig (30, 30, (14, 2), (14, 26)) ok 1
+FS SEAL 14 tile (16, 2) n 3
+FS SEAL 18 tile (15, 4) n 4
+FS STAT 20 id 4 at (16, 5) need 6 orth 5 ti 63 ammo 0 sen 0 hp 40 covden 0 eco 0 lost 0
+FS SEAL 22 tile (14, 4) n 5
+FS SEAL 25 tile (13, 3) n 6
+FS SEAL 29 tile (13, 2) n 7
+FS SEAL 35 tile (13, 1) n 8
+FS SEAL 37 tile (14, 1) n 9
+FS SEAL 39 tile (15, 1) n 10
+FS PHASE 40 id 4 ph 3 d 4 at (15, 0)
+FS STAT 40 id 4 at (15, 0) need 2 orth 0 ti 42 ammo 24 sen 0 hp 40 covden 0 eco 0 lost 0
+FS DODGE 43 id 4 from (17, 1) to (17, 2) cov 1 -> 0 hit 0 hp 40
+FS PHASE 47 id 4 ph 2 d 8 at (17, 5)
+FS PHASE 48 id 4 ph 3 d 5 at (16, 5)
+FS SEAL 51 tile (13, 4) n 11
+FS STAT 60 id 4 at (15, 5) need 0 orth 0 ti 85 ammo 24 sen 0 hp 40 covden 0 eco 0 lost 0
+FS SENTINEL 60 at (15, 6) face NORTH tgt (15, 2) score 16 n 1 onring 0 lost 0 gate (0, 1, -1) onsray 0 olddsq -1
+FS PHASE 61 id 4 ph 4 d 4 at (15, 5)
+FS DODGE 72 id 4 from (16, 1) to (16, 0) cov 1 -> 0 hit 0 hp 40
+FS DODGE 74 id 4 from (16, 1) to (16, 0) cov 1 -> 0 hit 0 hp 40
+FS STAT 80 id 4 at (16, 1) need 0 orth 0 ti 14 ammo 13 sen 1 hp 40 covden 0 eco 0 lost 0
+FS DODGE 80 id 4 from (16, 1) to (16, 0) cov 1 -> 0 hit 0 hp 40
+FS DODGE 83 id 4 from (17, 1) to (17, 2) cov 1 -> 0 hit 0 hp 40
+FS DODGE 85 id 4 from (17, 1) to (17, 2) cov 1 -> 0 hit 0 hp 22
+FS RETREAT 89 id 4 hp 4 from (17, 1) to (18, 1)
+FS RETREAT 91 id 4 hp 4 from (17, 1) to (18, 1)
+FS RETREAT 93 id 4 hp 4 from (17, 1) to (18, 1)
+FS RETREAT 95 id 4 hp 4 from (17, 1) to (18, 1)
+FS RETREAT 97 id 4 hp 4 from (17, 1) to (18, 1)
+FS RETREAT 99 id 4 hp 4 from (17, 1) to (18, 1)
+FS STAT 100 id 4 at (18, 1) need 4 orth 3 ti 14 ammo 13 sen 1 hp 4 covden 0 eco 0 lost 0
+FS RETREAT 101 id 4 hp 4 from (17, 1) to (18, 1)
+FS RETREAT 103 id 4 hp 4 from (17, 1) to (18, 1)
+PRES520 111 ti 12 res 114 floor 114 bind 1 rounds 1 vacant 1 until 131
+PRES520 112 ti 22 res 114 floor 114 bind 2 rounds 2 vacant 2 until 132
+PRES520 113 ti 22 res 114 floor 114 bind 3 rounds 3 vacant 3 until 133
+PRES520 114 ti 22 res 114 floor 114 bind 4 rounds 4 vacant 4 until 134
+PRES520 115 ti 22 res 114 floor 114 bind 5 rounds 5 vacant 5 until 135
+PRES520 116 ti 32 res 114 floor 114 bind 6 rounds 6 vacant 6 until 136
+PRES520 117 ti 32 res 114 floor 114 bind 7 rounds 7 vacant 7 until 137
+PRES520 118 ti 32 res 114 floor 114 bind 8 rounds 8 vacant 8 until 138
+PRES520 119 ti 32 res 114 floor 114 bind 9 rounds 9 vacant 9 until 139
+PRES520 120 ti 42 res 114 floor 114 bind 10 rounds 10 vacant 10 until 140
+PRES520 121 ti 42 res 114 floor 114 bind 11 rounds 11 vacant 11 until 141
+PRES520 122 ti 42 res 114 floor 114 bind 12 rounds 12 vacant 12 until 142
+PRES520 123 ti 42 res 114 floor 114 bind 13 rounds 13 vacant 13 until 143
+PRES520 124 ti 52 res 114 floor 114 bind 14 rounds 14 vacant 14 until 144

@@ -1,0 +1,37 @@
+tag	map	seed	seat	ours	cond	turn	arm	arrive	sent	kill	last	window	ge1	ge2	nobody	two_body_share	bought_sentinel	ge1_fp	ge2_fp	nobody_fp
+atoll_s91_A	atoll	91	A	US	Core destroyed	380	parent	6	126	379	379	120	16	0	0.8667	0.0	1	20	0	0.8333
+atoll_s91_B	atoll	91	B	OPP	Core destroyed	231	parent	43	-1	-1	230	188	4	0	0.9787	0.0	0	4	0	0.9787
+atoll_s92_A	atoll	92	A	OPP	Core destroyed	256	parent	7	31	-1	255	24	4	0	0.8333	0.0	1	9	0	0.625
+atoll_s92_B	atoll	92	B	US	Core destroyed	500	parent	6	372	499	499	366	71	20	0.806	0.0546	1	94	31	0.7432
+atoll_s93_A	atoll	93	A	US	Core destroyed	670	parent	7	224	669	669	217	56	0	0.7419	0.0	1	91	0	0.5806
+atoll_s93_B	atoll	93	B	US	Core destroyed	254	parent	6	130	253	253	124	73	20	0.4113	0.1613	1	122	40	0.0161
+drakkarfjord_s91_A	drakkarfjord	91	A	US	Core destroyed	221	parent	10	159	220	220	149	88	4	0.4094	0.0268	1	149	9	0.0
+drakkarfjord_s91_B	drakkarfjord	91	B	OPP	Core destroyed	358	parent	10	-1	-1	357	348	95	0	0.727	0.0	0	107	0	0.6925
+drakkarfjord_s92_A	drakkarfjord	92	A	OPP	Titanium collected (tiebreak)	1000	parent	10	65	-1	999	55	33	0	0.4	0.0	1	51	0	0.0727
+drakkarfjord_s92_B	drakkarfjord	92	B	US	Core destroyed	495	parent	10	327	494	494	317	157	24	0.5047	0.0757	1	170	31	0.4637
+drakkarfjord_s93_A	drakkarfjord	93	A	US	Core destroyed	157	parent	10	69	156	156	59	32	0	0.4576	0.0	1	59	0	0.0
+drakkarfjord_s93_B	drakkarfjord	93	B	US	Core destroyed	145	parent	10	89	144	144	79	40	0	0.4937	0.0	1	79	0	0.0
+glacierkeep_s91_A	glacierkeep	91	A	OPP	Core destroyed	816	parent	8	80	-1	815	72	47	3	0.3472	0.0417	1	71	42	0.0139
+glacierkeep_s91_B	glacierkeep	91	B	US	Core destroyed	241	parent	8	132	240	240	124	93	6	0.25	0.0484	1	124	60	0.0
+glacierkeep_s92_A	glacierkeep	92	A	US	Core destroyed	293	parent	9	180	292	292	171	128	0	0.2515	0.0	1	147	0	0.1404
+glacierkeep_s92_B	glacierkeep	92	B	US	Core destroyed	373	parent	8	92	372	372	84	73	17	0.131	0.2024	1	84	52	0.0
+glacierkeep_s93_A	glacierkeep	93	A	US	Core destroyed	293	parent	9	124	292	292	115	94	6	0.1826	0.0522	1	115	87	0.0
+glacierkeep_s93_B	glacierkeep	93	B	US	Core destroyed	401	parent	8	60	400	400	52	41	11	0.2115	0.2115	1	52	21	0.0
+midgard_s91_A	midgard	91	A	US	Core destroyed	249	parent	51	193	248	248	142	138	115	0.0282	0.8099	1	142	116	0.0
+midgard_s91_B	midgard	91	B	OPP	Titanium collected (tiebreak)	1000	parent	52	-1	-1	999	948	947	26	0.0011	0.0274	0	948	33	0.0
+midgard_s92_A	midgard	92	A	US	Core destroyed	345	parent	53	252	344	344	199	199	189	0.0	0.9497	1	199	198	0.0
+midgard_s92_B	midgard	92	B	US	Core destroyed	180	parent	51	124	179	179	73	73	56	0.0	0.7671	1	73	69	0.0
+midgard_s93_A	midgard	93	A	US	Core destroyed	161	parent	50	105	160	160	55	53	42	0.0364	0.7636	1	55	46	0.0
+midgard_s93_B	midgard	93	B	US	Core destroyed	227	parent	51	171	226	226	120	119	110	0.0083	0.9167	1	120	113	0.0
+nordkap_s91_A	nordkap	91	A	US	Core destroyed	324	parent	4	268	323	323	264	80	8	0.697	0.0303	1	108	34	0.5909
+nordkap_s91_B	nordkap	91	B	US	Core destroyed	357	parent	4	261	356	356	257	107	6	0.5837	0.0233	1	140	14	0.4553
+nordkap_s92_A	nordkap	92	A	US	Core destroyed	220	parent	4	151	219	219	147	146	76	0.0068	0.517	1	147	134	0.0
+nordkap_s92_B	nordkap	92	B	US	Core destroyed	175	parent	4	104	174	174	100	65	18	0.35	0.18	1	92	52	0.08
+nordkap_s93_A	nordkap	93	A	US	Core destroyed	228	parent	4	99	227	227	95	37	1	0.6105	0.0105	1	92	19	0.0316
+nordkap_s93_B	nordkap	93	B	US	Core destroyed	179	parent	4	100	178	178	96	72	27	0.25	0.2812	1	85	42	0.1146
+yulerune_s91_A	yulerune	91	A	US	Core destroyed	216	parent	35	175	215	215	140	139	125	0.0071	0.8929	1	140	140	0.0
+yulerune_s91_B	yulerune	91	B	OPP	Titanium collected (tiebreak)	1000	parent	35	-1	-1	999	965	964	955	0.001	0.9896	0	965	963	0.0
+yulerune_s92_A	yulerune	92	A	OPP	Core destroyed	329	parent	37	316	-1	328	279	277	267	0.0072	0.957	1	279	276	0.0
+yulerune_s92_B	yulerune	92	B	OPP	Core destroyed	293	parent	29	-1	-1	292	264	257	247	0.0265	0.9356	0	264	256	0.0
+yulerune_s93_A	yulerune	93	A	OPP	Titanium collected (tiebreak)	1000	parent	30	-1	-1	999	970	969	949	0.001	0.9784	0	970	964	0.0
+yulerune_s93_B	yulerune	93	B	US	Core destroyed	219	parent	30	163	218	218	133	132	122	0.0075	0.9173	1	133	133	0.0

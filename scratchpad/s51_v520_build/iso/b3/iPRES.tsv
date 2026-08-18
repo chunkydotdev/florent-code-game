@@ -1,0 +1,37 @@
+tag	map	seed	seat	ours	winner	cond	turn	tracebacks	ours_mined	opp_mined
+atoll_s507_A	atoll	507	A	OPP	_v488beltbreak2	Harvesters (tiebreak)	1000	0	4970	4970
+atoll_s507_B	atoll	507	B	OPP	_v488beltbreak2	Core destroyed	228	0	1100	1100
+atoll_s508_A	atoll	508	A	OPP	_v488beltbreak2	Titanium collected (tiebreak)	1000	0	4970	6810
+atoll_s508_B	atoll	508	B	OPP	_v488beltbreak2	Core destroyed	511	0	4390	1960
+atoll_s509_A	atoll	509	A	OPP	_v488beltbreak2	Core destroyed	385	0	2390	4090
+atoll_s509_B	atoll	509	B	OPP	_v488beltbreak2	Core destroyed	186	0	900	840
+drakkarfjord_s507_A	drakkarfjord	507	A	US	iPRES	Titanium collected (tiebreak)	1000	0	6860	1900
+drakkarfjord_s507_B	drakkarfjord	507	B	US	iPRES	Core destroyed	497	0	1130	150
+drakkarfjord_s508_A	drakkarfjord	508	A	US	iPRES	Core destroyed	173	0	760	280
+drakkarfjord_s508_B	drakkarfjord	508	B	OPP	_v488beltbreak2	Core destroyed	444	0	3970	6330
+drakkarfjord_s509_A	drakkarfjord	509	A	US	iPRES	Core destroyed	544	0	560	0
+drakkarfjord_s509_B	drakkarfjord	509	B	US	iPRES	Core destroyed	122	0	500	0
+glacierkeep_s507_A	glacierkeep	507	A	US	iPRES	Core destroyed	261	0	280	0
+glacierkeep_s507_B	glacierkeep	507	B	US	iPRES	Core destroyed	301	0	30	0
+glacierkeep_s508_A	glacierkeep	508	A	US	iPRES	Core destroyed	633	0	150	0
+glacierkeep_s508_B	glacierkeep	508	B	US	iPRES	Core destroyed	197	0	0	0
+glacierkeep_s509_A	glacierkeep	509	A	US	iPRES	Core destroyed	377	0	160	0
+glacierkeep_s509_B	glacierkeep	509	B	US	iPRES	Titanium collected (tiebreak)	1000	0	30	0
+midgard_s507_A	midgard	507	A	US	iPRES	Core destroyed	525	0	950	600
+midgard_s507_B	midgard	507	B	OPP	_v488beltbreak2	Core destroyed	290	0	570	1420
+midgard_s508_A	midgard	508	A	OPP	_v488beltbreak2	Core destroyed	390	0	680	1500
+midgard_s508_B	midgard	508	B	OPP	_v488beltbreak2	Core destroyed	340	0	580	2350
+midgard_s509_A	midgard	509	A	US	iPRES	Titanium collected (tiebreak)	1000	0	2860	440
+midgard_s509_B	midgard	509	B	OPP	_v488beltbreak2	Core destroyed	177	0	500	1910
+nordkap_s507_A	nordkap	507	A	US	iPRES	Harvesters (tiebreak)	1000	0	450	450
+nordkap_s507_B	nordkap	507	B	OPP	_v488beltbreak2	Core destroyed	332	0	1160	6110
+nordkap_s508_A	nordkap	508	A	US	iPRES	Core destroyed	256	0	780	640
+nordkap_s508_B	nordkap	508	B	OPP	_v488beltbreak2	Core destroyed	308	0	150	3390
+nordkap_s509_A	nordkap	509	A	US	iPRES	Core destroyed	412	0	2750	120
+nordkap_s509_B	nordkap	509	B	US	iPRES	Core destroyed	113	0	280	0
+yulerune_s507_A	yulerune	507	A	OPP	_v488beltbreak2	Core destroyed	203	0	270	1100
+yulerune_s507_B	yulerune	507	B	US	iPRES	Core destroyed	140	0	1040	390
+yulerune_s508_A	yulerune	508	A	OPP	_v488beltbreak2	Core destroyed	233	0	370	390
+yulerune_s508_B	yulerune	508	B	US	iPRES	Core destroyed	849	0	470	1940
+yulerune_s509_A	yulerune	509	A	US	iPRES	Core destroyed	252	0	1190	330
+yulerune_s509_B	yulerune	509	B	OPP	_v488beltbreak2	Core destroyed	296	0	300	1540

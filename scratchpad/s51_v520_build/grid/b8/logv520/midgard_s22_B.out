@@ -1,0 +1,19 @@
+Running match: _v488beltbreak2 vs _v520pincer
+  Map: midgard.map26  Seed: 22  Replay: 
+scratchpad/s51_v520_build/grid/b8/repv520/midgard_s22_B.replay26  TLE: 10ms
+Completed turn 0
+Completed turn 100
+Completed turn 200
+Completed turn 300
+Completed turn 400
+Completed turn 500
+Replay written to 
+scratchpad/s51_v520_build/grid/b8/repv520/midgard_s22_B.replay26
+
+  Winner: _v520pincer  (Core destroyed, turn 592)
+
+               _v488beltbreak2        _v520pincer  
+  Titanium      12 (600 mined)    24 (2180 mined)  
+  Units                      8                 13  
+  Buildings                 20                 59  
+

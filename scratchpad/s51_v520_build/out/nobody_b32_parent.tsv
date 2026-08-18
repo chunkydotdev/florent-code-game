@@ -1,0 +1,37 @@
+tag	map	seed	seat	ours	cond	turn	arm	arrive	sent	kill	last	window	ge1	ge2	nobody	two_body_share	bought_sentinel	ge1_fp	ge2_fp	nobody_fp
+atoll_s94_A	atoll	94	A	OPP	Core destroyed	302	parent	6	66	-1	301	60	40	1	0.3333	0.0167	1	58	27	0.0333
+atoll_s94_B	atoll	94	B	OPP	Core destroyed	266	parent	7	64	-1	265	57	44	1	0.2281	0.0175	1	54	3	0.0526
+atoll_s95_A	atoll	95	A	US	Core destroyed	468	parent	8	88	467	467	80	56	3	0.3	0.0375	1	80	16	0.0
+atoll_s95_B	atoll	95	B	OPP	Core destroyed	435	parent	6	380	-1	434	374	26	1	0.9305	0.0027	1	54	3	0.8556
+atoll_s96_A	atoll	96	A	US	Core destroyed	392	parent	11	336	391	391	325	60	0	0.8154	0.0	1	103	0	0.6831
+atoll_s96_B	atoll	96	B	OPP	Core destroyed	130	parent	6	-1	-1	129	124	85	0	0.3145	0.0	0	104	7	0.1613
+drakkarfjord_s94_A	drakkarfjord	94	A	US	Core destroyed	208	parent	10	152	207	207	142	58	0	0.5915	0.0	1	139	0	0.0211
+drakkarfjord_s94_B	drakkarfjord	94	B	US	Core destroyed	325	parent	10	60	324	324	50	35	0	0.3	0.0	1	47	0	0.06
+drakkarfjord_s95_A	drakkarfjord	95	A	OPP	Titanium collected (tiebreak)	1000	parent	10	-1	-1	999	990	40	0	0.9596	0.0	0	67	0	0.9323
+drakkarfjord_s95_B	drakkarfjord	95	B	US	Core destroyed	325	parent	10	60	324	324	50	35	0	0.3	0.0	1	47	0	0.06
+drakkarfjord_s96_A	drakkarfjord	96	A	US	Core destroyed	249	parent	10	132	248	248	122	67	3	0.4508	0.0246	1	106	6	0.1311
+drakkarfjord_s96_B	drakkarfjord	96	B	OPP	Titanium collected (tiebreak)	1000	parent	10	69	-1	999	59	43	0	0.2712	0.0	1	57	0	0.0339
+glacierkeep_s94_A	glacierkeep	94	A	OPP	Core destroyed	521	parent	8	87	-1	520	79	56	7	0.2911	0.0886	1	79	50	0.0
+glacierkeep_s94_B	glacierkeep	94	B	US	Titanium collected (tiebreak)	1000	parent	8	64	-1	999	56	43	6	0.2321	0.1071	1	56	27	0.0
+glacierkeep_s95_A	glacierkeep	95	A	US	Core destroyed	129	parent	8	56	128	128	48	30	5	0.375	0.1042	1	48	18	0.0
+glacierkeep_s95_B	glacierkeep	95	B	US	Titanium collected (tiebreak)	1000	parent	8	68	-1	999	60	44	5	0.2667	0.0833	1	60	24	0.0
+glacierkeep_s96_A	glacierkeep	96	A	US	Titanium collected (tiebreak)	1000	parent	8	-1	-1	999	992	92	0	0.9073	0.0	0	144	0	0.8548
+glacierkeep_s96_B	glacierkeep	96	B	US	Core destroyed	193	parent	8	88	192	192	80	64	14	0.2	0.175	1	80	48	0.0
+midgard_s94_A	midgard	94	A	US	Core destroyed	241	parent	53	156	240	240	103	103	90	0.0	0.8738	1	103	103	0.0
+midgard_s94_B	midgard	94	B	OPP	Core destroyed	685	parent	52	-1	-1	684	633	181	108	0.7141	0.1706	0	181	126	0.7141
+midgard_s95_A	midgard	95	A	OPP	Core destroyed	241	parent	52	-1	-1	240	189	189	184	0.0	0.9735	0	189	189	0.0
+midgard_s95_B	midgard	95	B	OPP	Core destroyed	364	parent	54	-1	-1	363	310	98	69	0.6839	0.2226	0	98	73	0.6839
+midgard_s96_A	midgard	96	A	US	Core destroyed	404	parent	53	356	403	403	303	303	282	0.0	0.9307	1	303	298	0.0
+midgard_s96_B	midgard	96	B	OPP	Core destroyed	221	parent	53	-1	-1	220	168	168	161	0.0	0.9583	0	168	166	0.0
+nordkap_s94_A	nordkap	94	A	US	Core destroyed	493	parent	4	323	492	492	319	314	295	0.0157	0.9248	1	316	306	0.0094
+nordkap_s94_B	nordkap	94	B	US	Core destroyed	280	parent	4	224	279	279	220	102	9	0.5364	0.0409	1	125	26	0.4318
+nordkap_s95_A	nordkap	95	A	US	Core destroyed	558	parent	4	214	557	557	210	90	9	0.5714	0.0429	1	210	31	0.0
+nordkap_s95_B	nordkap	95	B	US	Core destroyed	267	parent	4	72	266	266	68	48	29	0.2941	0.4265	1	68	40	0.0
+nordkap_s96_A	nordkap	96	A	OPP	Core destroyed	168	parent	4	-1	-1	167	164	160	148	0.0244	0.9024	0	164	151	0.0
+nordkap_s96_B	nordkap	96	B	US	Core destroyed	116	parent	4	60	115	115	56	37	1	0.3393	0.0179	1	56	39	0.0
+yulerune_s94_A	yulerune	94	A	OPP	Core destroyed	257	parent	29	-1	-1	256	228	153	77	0.3289	0.3377	0	154	95	0.3246
+yulerune_s94_B	yulerune	94	B	US	Core destroyed	140	parent	32	104	139	139	72	72	67	0.0	0.9306	1	72	70	0.0
+yulerune_s95_A	yulerune	95	A	OPP	Core destroyed	204	parent	34	-1	-1	203	170	167	46	0.0176	0.2706	0	170	52	0.0
+yulerune_s95_B	yulerune	95	B	OPP	Core destroyed	214	parent	33	-1	-1	213	181	180	42	0.0055	0.232	0	181	48	0.0
+yulerune_s96_A	yulerune	96	A	US	Core destroyed	296	parent	33	227	295	295	194	192	183	0.0103	0.9433	1	194	186	0.0
+yulerune_s96_B	yulerune	96	B	OPP	Core destroyed	460	parent	31	-1	-1	459	429	277	251	0.3543	0.5851	0	280	258	0.3473

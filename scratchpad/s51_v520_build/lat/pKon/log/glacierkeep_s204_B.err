@@ -1,0 +1,246 @@
+Update available: 2.3.6 -> 2.3.8. Run: pip install --upgrade fcode
+FS GATE 0 sig (30, 30, (14, 2), (14, 26)) ok 1
+FS GATE 1 sig (30, 30, (14, 2), (14, 26)) ok 1
+FS PHASE 1 id 4 ph 1 d 484 at (14, 25)
+FS GATE 2 sig (30, 30, (14, 2), (14, 26)) ok 1
+FS GATE 3 sig (30, 30, (14, 2), (14, 26)) ok 1
+FS GATE 4 sig (30, 30, (14, 2), (14, 26)) ok 1
+FS PHASE 4 id 10 ph 1 d 484 at (15, 25)
+FS HOPBUILD 5 at (14, 25) lch (14, 24) T (16, 1)
+FS GATE 6 sig (30, 30, (14, 2), (14, 26)) ok 1
+FS THROW 6 from (15, 25) to (15, 19) T (16, 1) body 4 n 1 dsq 256
+FS HOPBUILD 7 at (15, 19) lch (15, 18) T (16, 1)
+FS THROW 7 from (15, 23) to (14, 19) T (16, 1) body 10 n 2 dsq 256
+FS GATE 8 sig (30, 30, (14, 2), (14, 26)) ok 1
+FS THROW 8 from (16, 19) to (16, 13) T (16, 1) body 4 n 1 dsq 101
+FS HOPBUILD 9 at (16, 13) lch (16, 12) T (16, 1)
+FS THROW 9 from (14, 17) to (15, 13) T (16, 1) body 10 n 2 dsq 100
+FS GATE 10 sig (30, 30, (14, 2), (14, 26)) ok 1
+FS THROW 10 from (16, 13) to (16, 7) T (16, 1) body 4 n 1 dsq 17
+FS HOPBUILD 11 at (16, 7) lch (16, 6) T (16, 1)
+FS THROW 11 from (15, 11) to (15, 7) T (16, 1) body 10 n 2 dsq 16
+FS GATE 12 sig (30, 30, (14, 2), (14, 26)) ok 1
+FS SPLIT 12 arc 2 to (15, 1) body 4 walk 1
+FS ARRIVE 13 id 4 body 1 at (15, 1) dsq 1
+FS PHASE 13 id 4 ph 2 d 1 at (15, 1)
+FS SEAL 13 tile (14, 1) n 1
+FS SPLIT 13 arc 1 to (13, 3) body 10 walk 0
+FS ARRIVE 14 id 10 body 2 at (13, 3) dsq 1
+FS PHASE 14 id 10 ph 2 d 1 at (13, 3)
+FS SEAL 14 tile (13, 2) n 1
+FS DODGE 15 id 4 from (16, 1) to (16, 2) cov 1 -> 0 hit 0 hp 40
+FS GATE 15 sig (30, 30, (14, 2), (14, 26)) ok 1
+FS SEAL 16 tile (16, 3) n 2
+FS SEAL 16 tile (13, 3) n 2
+FS SEAL 17 tile (14, 4) n 3
+FS SEAL 18 tile (16, 2) n 3
+FS DODGE 18 id 10 from (13, 4) to (12, 4) cov 1 -> 0 hit 0 hp 40
+FS STAT 20 id 4 at (17, 3) need 4 orth 3 ti 103 ammo 0 sen 0 hp 40 covden 0 eco 0 lost 0
+FS STAT 20 id 10 at (13, 4) need 4 orth 3 ti 61 ammo 0 sen 0 hp 40 covden 0 eco 0 lost 0
+FS DODGE 20 id 10 from (13, 4) to (12, 4) cov 1 -> 0 hit 0 hp 40
+FS SEAL 22 tile (15, 4) n 4
+FS DODGE 22 id 10 from (13, 4) to (12, 4) cov 1 -> 0 hit 0 hp 40
+FS DODGE 24 id 10 from (13, 4) to (12, 4) cov 1 -> 0 hit 0 hp 40
+FS DODGE 26 id 10 from (13, 4) to (12, 4) cov 1 -> 0 hit 0 hp 40
+FS DODGE 28 id 10 from (13, 4) to (12, 4) cov 1 -> 0 hit 0 hp 40
+FS DODGE 30 id 10 from (13, 4) to (12, 4) cov 1 -> 0 hit 0 hp 40
+FS DODGE 32 id 10 from (13, 4) to (12, 4) cov 1 -> 0 hit 0 hp 40
+FS DODGE 34 id 4 from (16, 1) to (16, 0) cov 1 -> 0 hit 0 hp 40
+FS DODGE 34 id 10 from (13, 4) to (12, 4) cov 1 -> 0 hit 0 hp 40
+FS DODGE 36 id 10 from (13, 4) to (12, 4) cov 1 -> 0 hit 0 hp 40
+FS DODGE 38 id 10 from (13, 4) to (12, 4) cov 1 -> 0 hit 0 hp 40
+FS STAT 40 id 4 at (14, 0) need 3 orth 2 ti 12 ammo 9 sen 0 hp 40 covden 0 eco 0 lost 0
+FS SEAL 40 tile (14, 1) n 5
+FS STAT 40 id 10 at (13, 4) need 2 orth 1 ti 0 ammo 9 sen 0 hp 40 covden 0 eco 0 lost 0
+FS DODGE 40 id 10 from (13, 4) to (12, 4) cov 1 -> 0 hit 0 hp 40
+FS DODGE 42 id 10 from (13, 4) to (12, 4) cov 1 -> 0 hit 0 hp 40
+FS SEAL 44 tile (15, 1) n 6
+FS PHASE 44 id 10 ph 3 d 2 at (13, 4)
+FS DODGE 44 id 10 from (13, 4) to (12, 4) cov 1 -> 0 hit 0 hp 40
+FS PHASE 45 id 4 ph 3 d 4 at (15, 0)
+FS DODGE 47 id 4 from (16, 1) to (16, 0) cov 1 -> 0 hit 0 hp 40
+FS DODGE 49 id 4 from (16, 1) to (16, 0) cov 1 -> 0 hit 0 hp 40
+FS DODGE 51 id 4 from (16, 1) to (16, 0) cov 1 -> 0 hit 0 hp 40
+FS SEAL 52 tile (13, 4) n 4
+FS DODGE 53 id 4 from (16, 1) to (16, 0) cov 1 -> 0 hit 0 hp 40
+FS PHASE 54 id 10 ph 2 d 10 at (11, 4)
+FS DODGE 55 id 4 from (16, 1) to (16, 0) cov 1 -> 0 hit 0 hp 40
+FS PHASE 55 id 10 ph 3 d 5 at (12, 4)
+FS PHASE 56 id 10 ph 2 d 10 at (11, 4)
+FS DODGE 57 id 4 from (16, 1) to (16, 0) cov 1 -> 0 hit 0 hp 40
+FS PHASE 57 id 10 ph 3 d 5 at (12, 4)
+FS PHASE 58 id 10 ph 2 d 10 at (11, 4)
+FS DODGE 59 id 4 from (16, 1) to (16, 0) cov 1 -> 0 hit 0 hp 40
+FS PHASE 59 id 10 ph 3 d 5 at (12, 4)
+PRESKILL520 60 id 4 body 1
+FS PHASE 60 id 10 ph 2 d 8 at (12, 5)
+FS STAT 60 id 10 at (12, 5) need 3 orth 2 ti 22 ammo 9 sen 0 hp 40 covden 0 eco 0 lost 0
+PRES520 66 ti 32 res 114 floor 114 bind 1 rounds 1 vacant 1 until 86
+FS PROMOTE 66 id 10
+PRES520 67 ti 32 res 114 floor 114 bind 2 rounds 2 vacant 2 until 87
+PRES520 68 ti 42 res 114 floor 114 bind 3 rounds 3 vacant 2 until 87
+PRES520 69 ti 42 res 114 floor 114 bind 4 rounds 4 vacant 2 until 87
+PRES520 70 ti 42 res 114 floor 114 bind 5 rounds 5 vacant 2 until 87
+PRES520 71 ti 42 res 114 floor 114 bind 6 rounds 6 vacant 2 until 87
+PRES520 72 ti 52 res 114 floor 114 bind 7 rounds 7 vacant 2 until 87
+PRES520 73 ti 9 res 116 floor 116 bind 8 rounds 8 vacant 2 until 87
+PRES520 74 ti 3 res 116 floor 116 bind 9 rounds 9 vacant 2 until 87
+PRES520 75 ti 3 res 116 floor 116 bind 10 rounds 10 vacant 2 until 87
+PRES520 76 ti 13 res 116 floor 116 bind 11 rounds 11 vacant 2 until 87
+PRES520 77 ti 7 res 117 floor 117 bind 12 rounds 12 vacant 2 until 87
+PRES520 78 ti 1 res 118 floor 118 bind 13 rounds 13 vacant 2 until 87
+PRES520 79 ti 1 res 118 floor 118 bind 14 rounds 14 vacant 2 until 87
+PRES520 80 ti 11 res 118 floor 118 bind 15 rounds 15 vacant 2 until 87
+FS STAT 80 id 10 at (12, 5) need 4 orth 3 ti 5 ammo 9 sen 0 hp 40 covden 0 eco 0 lost 0
+PRES520 81 ti 5 res 118 floor 118 bind 16 rounds 16 vacant 2 until 87
+PRES520 82 ti 5 res 118 floor 118 bind 17 rounds 17 vacant 2 until 87
+PRES520 83 ti 5 res 118 floor 118 bind 18 rounds 18 vacant 2 until 87
+PRES520 84 ti 15 res 118 floor 118 bind 19 rounds 19 vacant 2 until 87
+PRES520 85 ti 9 res 119 floor 119 bind 20 rounds 20 vacant 2 until 87
+PRES520 86 ti 9 res 119 floor 119 bind 21 rounds 21 vacant 2 until 87
+FS STAT 100 id 10 at (12, 5) need 4 orth 3 ti 7 ammo 9 sen 0 hp 40 covden 0 eco 0 lost 0
+FS STAT 120 id 10 at (12, 5) need 4 orth 3 ti 43 ammo 9 sen 0 hp 40 covden 0 eco 0 lost 0
+FS SEAL 127 tile (13, 2) n 5
+FS STAT 140 id 10 at (12, 2) need 4 orth 3 ti 40 ammo 9 sen 0 hp 40 covden 0 eco 0 lost 0
+FS SEAL 140 tile (13, 2) n 6
+FS SEAL 147 tile (13, 2) n 7
+FS SEAL 156 tile (13, 2) n 8
+FS STAT 160 id 10 at (12, 5) need 4 orth 3 ti 20 ammo 9 sen 0 hp 40 covden 0 eco 0 lost 0
+FS SEAL 163 tile (13, 2) n 9
+FS SEAL 172 tile (13, 2) n 10
+FS SEAL 179 tile (13, 2) n 11
+FS STAT 180 id 10 at (12, 2) need 3 orth 2 ti 21 ammo 9 sen 0 hp 40 covden 0 eco 0 lost 0
+FS SEAL 188 tile (13, 2) n 12
+FS STAT 200 id 10 at (12, 5) need 4 orth 3 ti 33 ammo 9 sen 0 hp 40 covden 0 eco 0 lost 0
+FS STAT 220 id 10 at (12, 5) need 4 orth 3 ti 68 ammo 9 sen 0 hp 40 covden 0 eco 0 lost 0
+FS SEAL 223 tile (13, 2) n 13
+FS SEAL 232 tile (13, 2) n 14
+FS SEAL 239 tile (13, 2) n 15
+FS STAT 240 id 10 at (12, 2) need 3 orth 2 ti 26 ammo 9 sen 0 hp 40 covden 0 eco 0 lost 0
+FS SEAL 248 tile (13, 2) n 16
+FS SEAL 255 tile (13, 2) n 17
+FS STAT 260 id 10 at (12, 4) need 3 orth 2 ti 41 ammo 9 sen 0 hp 40 covden 0 eco 0 lost 0
+FS SEAL 264 tile (13, 2) n 18
+FS SEAL 271 tile (13, 2) n 19
+FS STAT 280 id 10 at (12, 2) need 4 orth 3 ti 18 ammo 9 sen 0 hp 40 covden 0 eco 0 lost 0
+FS SEAL 280 tile (13, 2) n 20
+FS SEAL 287 tile (13, 2) n 21
+FS SEAL 296 tile (13, 2) n 22
+FS STAT 300 id 10 at (12, 5) need 4 orth 3 ti 36 ammo 9 sen 0 hp 40 covden 0 eco 0 lost 0
+FS SEAL 303 tile (13, 2) n 23
+FS SEAL 312 tile (13, 2) n 24
+FS SEAL 319 tile (13, 2) n 25
+FS STAT 320 id 10 at (12, 2) need 3 orth 2 ti 62 ammo 9 sen 0 hp 40 covden 0 eco 0 lost 0
+FS SEAL 328 tile (13, 2) n 26
+FS SEAL 335 tile (13, 2) n 27
+FS STAT 340 id 10 at (12, 4) need 3 orth 2 ti 26 ammo 9 sen 0 hp 40 covden 0 eco 0 lost 0
+FS SEAL 344 tile (13, 2) n 28
+FS SEAL 351 tile (13, 2) n 29
+FS STAT 360 id 10 at (12, 2) need 4 orth 3 ti 52 ammo 9 sen 0 hp 40 covden 0 eco 0 lost 0
+FS SEAL 360 tile (13, 2) n 30
+FS SEAL 367 tile (13, 2) n 31
+FS SEAL 376 tile (13, 2) n 32
+FS STAT 380 id 10 at (12, 5) need 4 orth 3 ti 15 ammo 9 sen 0 hp 40 covden 0 eco 0 lost 0
+FS SEAL 383 tile (13, 2) n 33
+FS SEAL 392 tile (13, 2) n 34
+FS SEAL 399 tile (13, 2) n 35
+FS STAT 400 id 10 at (12, 2) need 3 orth 2 ti 17 ammo 9 sen 0 hp 40 covden 0 eco 0 lost 0
+FS SEAL 408 tile (13, 2) n 36
+FS SEAL 415 tile (13, 2) n 37
+FS STAT 420 id 10 at (12, 4) need 3 orth 2 ti 19 ammo 9 sen 0 hp 40 covden 0 eco 0 lost 0
+FS SEAL 424 tile (13, 2) n 38
+FS SEAL 431 tile (13, 2) n 39
+FS STAT 440 id 10 at (12, 2) need 4 orth 3 ti 21 ammo 9 sen 0 hp 40 covden 0 eco 0 lost 0
+FS SEAL 440 tile (13, 2) n 40
+FS SEAL 447 tile (13, 2) n 41
+FS SEAL 456 tile (13, 2) n 42
+FS STAT 460 id 10 at (12, 5) need 4 orth 3 ti 39 ammo 9 sen 0 hp 40 covden 0 eco 0 lost 0
+FS SEAL 463 tile (13, 2) n 43
+FS SEAL 472 tile (13, 2) n 44
+FS SEAL 479 tile (13, 2) n 45
+FS STAT 480 id 10 at (12, 2) need 3 orth 2 ti 65 ammo 9 sen 0 hp 40 covden 0 eco 0 lost 0
+FS SEAL 488 tile (13, 2) n 46
+FS SEAL 495 tile (13, 2) n 47
+FS STAT 500 id 10 at (12, 4) need 3 orth 2 ti 38 ammo 9 sen 0 hp 40 covden 0 eco 0 lost 0
+FS SEAL 504 tile (13, 2) n 48
+FS SEAL 511 tile (13, 2) n 49
+FS STAT 520 id 10 at (12, 2) need 4 orth 3 ti 70 ammo 9 sen 0 hp 40 covden 0 eco 0 lost 0
+FS SEAL 520 tile (13, 2) n 50
+FS SEAL 527 tile (13, 2) n 51
+FS SEAL 536 tile (13, 2) n 52
+FS STAT 540 id 10 at (12, 5) need 4 orth 3 ti 24 ammo 9 sen 0 hp 40 covden 0 eco 0 lost 0
+FS SEAL 543 tile (13, 2) n 53
+FS SEAL 552 tile (13, 2) n 54
+FS SEAL 559 tile (13, 2) n 55
+FS STAT 560 id 10 at (12, 2) need 3 orth 2 ti 20 ammo 9 sen 0 hp 40 covden 0 eco 0 lost 0
+FS SEAL 568 tile (13, 2) n 56
+FS SEAL 575 tile (13, 2) n 57
+FS STAT 580 id 10 at (12, 4) need 3 orth 2 ti 34 ammo 9 sen 0 hp 40 covden 0 eco 0 lost 0
+FS SEAL 584 tile (13, 2) n 58
+FS SEAL 591 tile (13, 2) n 59
+FS STAT 600 id 10 at (12, 2) need 4 orth 3 ti 66 ammo 9 sen 0 hp 40 covden 0 eco 0 lost 0
+FS SEAL 600 tile (13, 2) n 60
+FS SEAL 607 tile (13, 2) n 61
+FS SEAL 616 tile (13, 2) n 62
+FS STAT 620 id 10 at (12, 5) need 4 orth 3 ti 18 ammo 9 sen 0 hp 40 covden 0 eco 0 lost 0
+FS SEAL 623 tile (13, 2) n 63
+FS SEAL 632 tile (13, 2) n 64
+FS SEAL 639 tile (13, 2) n 65
+FS STAT 640 id 10 at (12, 2) need 3 orth 2 ti 23 ammo 9 sen 0 hp 40 covden 0 eco 0 lost 0
+FS SEAL 648 tile (13, 2) n 66
+FS SEAL 655 tile (13, 2) n 67
+FS STAT 660 id 10 at (12, 4) need 3 orth 2 ti 19 ammo 9 sen 0 hp 40 covden 0 eco 0 lost 0
+FS SEAL 664 tile (13, 2) n 68
+FS SEAL 671 tile (13, 2) n 69
+FS STAT 680 id 10 at (12, 2) need 4 orth 3 ti 42 ammo 9 sen 0 hp 40 covden 0 eco 0 lost 0
+FS SEAL 680 tile (13, 2) n 70
+FS SEAL 687 tile (13, 2) n 71
+FS SEAL 696 tile (13, 2) n 72
+FS STAT 700 id 10 at (12, 5) need 4 orth 3 ti 65 ammo 9 sen 0 hp 40 covden 0 eco 0 lost 0
+FS SEAL 703 tile (13, 2) n 73
+FS SEAL 712 tile (13, 2) n 74
+FS SEAL 719 tile (13, 2) n 75
+FS STAT 720 id 10 at (12, 2) need 3 orth 2 ti 14 ammo 9 sen 0 hp 40 covden 0 eco 0 lost 0
+FS SEAL 728 tile (13, 2) n 76
+FS SEAL 735 tile (13, 2) n 77
+FS STAT 740 id 10 at (12, 4) need 3 orth 2 ti 28 ammo 9 sen 0 hp 40 covden 0 eco 0 lost 0
+FS SEAL 744 tile (13, 2) n 78
+FS SEAL 751 tile (13, 2) n 79
+FS STAT 760 id 10 at (12, 2) need 4 orth 3 ti 38 ammo 9 sen 0 hp 40 covden 0 eco 0 lost 0
+FS SEAL 760 tile (13, 2) n 80
+FS SEAL 767 tile (13, 2) n 81
+FS SEAL 776 tile (13, 2) n 82
+FS STAT 780 id 10 at (12, 5) need 4 orth 3 ti 28 ammo 9 sen 0 hp 40 covden 0 eco 0 lost 0
+FS SEAL 783 tile (13, 2) n 83
+FS SEAL 792 tile (13, 2) n 84
+FS SEAL 799 tile (13, 2) n 85
+FS STAT 800 id 10 at (12, 2) need 3 orth 2 ti 38 ammo 9 sen 0 hp 40 covden 0 eco 0 lost 0
+FS SEAL 808 tile (13, 2) n 86
+FS SEAL 815 tile (13, 2) n 87
+FS STAT 820 id 10 at (12, 4) need 3 orth 2 ti 68 ammo 9 sen 0 hp 40 covden 0 eco 0 lost 0
+FS SEAL 824 tile (13, 2) n 88
+FS SEAL 831 tile (13, 2) n 89
+FS STAT 840 id 10 at (12, 2) need 4 orth 3 ti 21 ammo 9 sen 0 hp 40 covden 0 eco 0 lost 0
+FS SEAL 840 tile (13, 2) n 90
+FS SEAL 847 tile (13, 2) n 91
+FS SEAL 856 tile (13, 2) n 92
+FS STAT 860 id 10 at (12, 5) need 4 orth 3 ti 21 ammo 9 sen 0 hp 40 covden 0 eco 0 lost 0
+FS SEAL 863 tile (13, 2) n 93
+FS SEAL 872 tile (13, 2) n 94
+FS SEAL 879 tile (13, 2) n 95
+FS STAT 880 id 10 at (12, 2) need 3 orth 2 ti 21 ammo 9 sen 0 hp 40 covden 0 eco 0 lost 0
+FS SEAL 888 tile (13, 2) n 96
+FS SEAL 895 tile (13, 2) n 97
+FS STAT 900 id 10 at (12, 4) need 3 orth 2 ti 41 ammo 9 sen 0 hp 40 covden 0 eco 0 lost 0
+FS SEAL 904 tile (13, 2) n 98
+FS SEAL 911 tile (13, 2) n 99
+FS STAT 920 id 10 at (12, 2) need 4 orth 3 ti 71 ammo 9 sen 0 hp 40 covden 0 eco 0 lost 0
+FS SEAL 920 tile (13, 2) n 100
+FS SEAL 927 tile (13, 2) n 101
+FS SEAL 936 tile (13, 2) n 102
+FS STAT 940 id 10 at (12, 5) need 4 orth 3 ti 91 ammo 9 sen 0 hp 40 covden 0 eco 0 lost 0
+FS SEAL 943 tile (13, 2) n 103
+FS SEAL 952 tile (13, 2) n 104
+FS SEAL 959 tile (13, 2) n 105
+FS STAT 960 id 10 at (12, 2) need 3 orth 2 ti 109 ammo 11 sen 0 hp 40 covden 0 eco 0 lost 0
+FS STAT 980 id 10 at (12, 4) need 3 orth 2 ti 109 ammo 61 sen 0 hp 40 covden 0 eco 0 lost 0

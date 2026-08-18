@@ -1,0 +1,37 @@
+tag	map	seed	seat	ours	cond	turn	arm	arrive	sent	kill	last	window	ge1	ge2	nobody	two_body_share	bought_sentinel	ge1_fp	ge2_fp	nobody_fp
+atoll_s67_A	atoll	67	A	OPP	Core destroyed	293	parent	6	-1	-1	292	287	30	0	0.8955	0.0	0	58	0	0.7979
+atoll_s67_B	atoll	67	B	US	Core destroyed	536	parent	7	81	535	535	74	23	0	0.6892	0.0	1	31	0	0.5811
+atoll_s68_A	atoll	68	A	OPP	Harvesters (tiebreak)	1000	parent	7	-1	-1	999	993	7	0	0.993	0.0	0	11	0	0.9889
+atoll_s68_B	atoll	68	B	OPP	Core destroyed	223	parent	33	-1	-1	222	190	33	5	0.8263	0.0263	0	33	7	0.8263
+atoll_s69_A	atoll	69	A	US	Core destroyed	531	parent	7	171	530	530	164	43	0	0.7378	0.0	1	70	0	0.5732
+atoll_s69_B	atoll	69	B	US	Core destroyed	550	parent	7	90	549	549	83	27	0	0.6747	0.0	1	74	11	0.1084
+drakkarfjord_s67_A	drakkarfjord	67	A	OPP	Core destroyed	736	parent	10	661	-1	735	651	42	0	0.9355	0.0	1	65	0	0.9002
+drakkarfjord_s67_B	drakkarfjord	67	B	US	Core destroyed	171	parent	10	77	170	170	67	34	0	0.4925	0.0	1	67	0	0.0
+drakkarfjord_s68_A	drakkarfjord	68	A	OPP	Titanium collected (tiebreak)	1000	parent	10	-1	-1	999	990	49	0	0.9505	0.0	0	77	0	0.9222
+drakkarfjord_s68_B	drakkarfjord	68	B	US	Core destroyed	181	parent	10	120	180	180	110	60	0	0.4545	0.0	1	70	0	0.3636
+drakkarfjord_s69_A	drakkarfjord	69	A	OPP	Core destroyed	920	parent	10	180	-1	919	170	48	0	0.7176	0.0	1	72	0	0.5765
+drakkarfjord_s69_B	drakkarfjord	69	B	US	Core destroyed	456	parent	10	378	455	455	368	135	0	0.6332	0.0	1	153	0	0.5842
+glacierkeep_s67_A	glacierkeep	67	A	US	Core destroyed	181	parent	8	76	180	180	68	40	3	0.4118	0.0441	1	67	37	0.0147
+glacierkeep_s67_B	glacierkeep	67	B	OPP	Core destroyed	688	parent	8	56	-1	687	48	40	4	0.1667	0.0833	1	48	23	0.0
+glacierkeep_s68_A	glacierkeep	68	A	US	Core destroyed	152	parent	8	95	151	151	87	63	6	0.2759	0.069	1	87	59	0.0
+glacierkeep_s68_B	glacierkeep	68	B	US	Core destroyed	280	parent	9	224	279	279	215	24	0	0.8884	0.0	1	212	0	0.014
+glacierkeep_s69_A	glacierkeep	69	A	US	Core destroyed	152	parent	8	95	151	151	87	63	6	0.2759	0.069	1	87	59	0.0
+glacierkeep_s69_B	glacierkeep	69	B	OPP	Core destroyed	465	parent	8	65	-1	464	57	41	5	0.2807	0.0877	1	57	20	0.0
+midgard_s67_A	midgard	67	A	OPP	Core destroyed	255	parent	53	-1	-1	254	202	103	64	0.4901	0.3168	0	106	78	0.4752
+midgard_s67_B	midgard	67	B	US	Core destroyed	611	parent	51	512	610	610	461	212	153	0.5401	0.3319	1	218	157	0.5271
+midgard_s68_A	midgard	68	A	US	Titanium collected (tiebreak)	1000	parent	48	47	-1	999	0	0	0			1	0	0	
+midgard_s68_B	midgard	68	B	OPP	Core destroyed	278	parent	51	100	-1	277	49	49	30	0.0	0.6122	1	49	44	0.0
+midgard_s69_A	midgard	69	A	OPP	Core destroyed	429	parent	51	423	-1	428	372	371	356	0.0027	0.957	1	372	369	0.0
+midgard_s69_B	midgard	69	B	OPP	Core destroyed	283	parent	51	-1	-1	282	232	37	21	0.8405	0.0905	0	38	24	0.8362
+nordkap_s67_A	nordkap	67	A	OPP	Core destroyed	293	parent	4	-1	-1	292	289	27	1	0.9066	0.0035	0	39	10	0.8651
+nordkap_s67_B	nordkap	67	B	OPP	Core destroyed	691	parent	4	92	-1	690	88	78	4	0.1136	0.0455	1	88	69	0.0
+nordkap_s68_A	nordkap	68	A	OPP	Core destroyed	777	parent	4	135	-1	776	131	118	15	0.0992	0.1145	1	122	115	0.0687
+nordkap_s68_B	nordkap	68	B	US	Core destroyed	170	parent	4	97	169	169	93	47	4	0.4946	0.043	1	88	37	0.0538
+nordkap_s69_A	nordkap	69	A	OPP	Core destroyed	228	parent	4	-1	-1	227	224	221	69	0.0134	0.308	0	224	74	0.0
+nordkap_s69_B	nordkap	69	B	US	Core destroyed	199	parent	4	133	198	198	129	122	56	0.0543	0.4341	1	129	102	0.0
+yulerune_s67_A	yulerune	67	A	OPP	Titanium collected (tiebreak)	1000	parent	34	-1	-1	999	966	964	954	0.0021	0.9876	0	966	962	0.0
+yulerune_s67_B	yulerune	67	B	OPP	Core destroyed	377	parent	31	-1	-1	376	346	101	57	0.7081	0.1647	0	104	65	0.6994
+yulerune_s68_A	yulerune	68	A	US	Core destroyed	145	parent	29	72	144	144	43	42	34	0.0233	0.7907	1	43	40	0.0
+yulerune_s68_B	yulerune	68	B	US	Core destroyed	305	parent	32	216	304	304	184	174	158	0.0543	0.8587	1	184	168	0.0
+yulerune_s69_A	yulerune	69	A	OPP	Core destroyed	151	parent	31	-1	-1	150	120	114	94	0.05	0.7833	0	120	102	0.0
+yulerune_s69_B	yulerune	69	B	OPP	Core destroyed	501	parent	29	-1	-1	500	472	471	466	0.0021	0.9873	0	472	470	0.0

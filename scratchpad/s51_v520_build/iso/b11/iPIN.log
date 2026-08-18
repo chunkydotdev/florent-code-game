@@ -1,0 +1,36 @@
+atoll_s531_A	atoll	531	A	US	iPIN	Core destroyed	390	0	3140	2820
+atoll_s531_B	atoll	531	B	OPP	_v488beltbreak2	Core destroyed	325	0	910	2860
+atoll_s532_A	atoll	532	A	US	iPIN	Titanium collected (tiebreak)	1000	0	2670	160
+atoll_s532_B	atoll	532	B	OPP	_v488beltbreak2	Core destroyed	212	0	270	1160
+atoll_s533_A	atoll	533	A	US	iPIN	Titanium collected (tiebreak)	1000	0	2620	2590
+atoll_s533_B	atoll	533	B	OPP	_v488beltbreak2	Core destroyed	585	0	250	1540
+drakkarfjord_s531_A	drakkarfjord	531	A	US	iPIN	Core destroyed	90	0	300	0
+drakkarfjord_s531_B	drakkarfjord	531	B	US	iPIN	Titanium collected (tiebreak)	1000	0	330	0
+drakkarfjord_s532_A	drakkarfjord	532	A	US	iPIN	Core destroyed	115	0	340	0
+drakkarfjord_s532_B	drakkarfjord	532	B	US	iPIN	Core destroyed	101	0	310	0
+drakkarfjord_s533_A	drakkarfjord	533	A	US	iPIN	Core destroyed	101	0	320	0
+drakkarfjord_s533_B	drakkarfjord	533	B	US	iPIN	Core destroyed	98	0	300	0
+glacierkeep_s531_A	glacierkeep	531	A	US	iPIN	Core destroyed	127	0	310	0
+glacierkeep_s531_B	glacierkeep	531	B	OPP	_v488beltbreak2	Titanium collected (tiebreak)	1000	0	290	1290
+glacierkeep_s532_A	glacierkeep	532	A	US	iPIN	Core destroyed	123	0	330	0
+glacierkeep_s532_B	glacierkeep	532	B	US	iPIN	Core destroyed	660	0	0	0
+glacierkeep_s533_A	glacierkeep	533	A	US	iPIN	Core destroyed	119	0	380	0
+glacierkeep_s533_B	glacierkeep	533	B	US	iPIN	Core destroyed	389	0	0	0
+midgard_s531_A	midgard	531	A	US	iPIN	Core destroyed	189	0	1620	1170
+midgard_s531_B	midgard	531	B	OPP	_v488beltbreak2	Core destroyed	200	0	720	950
+midgard_s532_A	midgard	532	A	US	iPIN	Core destroyed	815	0	2490	690
+midgard_s532_B	midgard	532	B	US	iPIN	Core destroyed	150	0	840	660
+midgard_s533_A	midgard	533	A	US	iPIN	Core destroyed	165	0	800	720
+midgard_s533_B	midgard	533	B	OPP	_v488beltbreak2	Core destroyed	577	0	760	620
+nordkap_s531_A	nordkap	531	A	OPP	_v488beltbreak2	Core destroyed	586	0	1230	3010
+nordkap_s531_B	nordkap	531	B	US	iPIN	Core destroyed	365	0	190	90
+nordkap_s532_A	nordkap	532	A	US	iPIN	Core destroyed	132	0	310	90
+nordkap_s532_B	nordkap	532	B	US	iPIN	Core destroyed	464	0	4690	1090
+nordkap_s533_A	nordkap	533	A	US	iPIN	Titanium collected (tiebreak)	1000	0	140	100
+nordkap_s533_B	nordkap	533	B	OPP	_v488beltbreak2	Core destroyed	169	0	70	340
+yulerune_s531_A	yulerune	531	A	US	iPIN	Core destroyed	393	0	230	280
+yulerune_s531_B	yulerune	531	B	OPP	_v488beltbreak2	Titanium collected (tiebreak)	1000	0	370	1700
+yulerune_s532_A	yulerune	532	A	OPP	_v488beltbreak2	Core destroyed	156	0	270	560
+yulerune_s532_B	yulerune	532	B	OPP	_v488beltbreak2	Core destroyed	245	0	330	1260
+yulerune_s533_A	yulerune	533	A	OPP	_v488beltbreak2	Core destroyed	217	0	300	240
+yulerune_s533_B	yulerune	533	B	US	iPIN	Core destroyed	204	0	1080	290

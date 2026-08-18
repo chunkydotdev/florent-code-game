@@ -1,0 +1,594 @@
+Update available: 2.3.6 -> 2.3.8. Run: pip install --upgrade fcode
+FS GATE 0 sig (20, 26, (9, 6), (9, 18)) ok 1
+FS GATE 1 sig (20, 26, (9, 6), (9, 18)) ok 1
+FS PHASE 1 id 3 ph 1 d 100 at (9, 8)
+FS GATE 2 sig (20, 26, (9, 6), (9, 18)) ok 1
+FS GATE 3 sig (20, 26, (9, 6), (9, 18)) ok 1
+FS GATE 4 sig (20, 26, (9, 6), (9, 18)) ok 1
+APPT520 CLAIM 4 id 9
+FS PHASE 4 id 9 ph 1 d 101 at (8, 8)
+FS HOPBUILD 5 at (9, 8) lch (9, 9) T (11, 20)
+FS GATE 6 sig (20, 26, (9, 6), (9, 18)) ok 1
+SPLIT520 6 lch (9, 9) body 3 arc 2 to (8, 14) dsq 17 walk 25 n 1
+FS SPLIT 6 arc 2 to (8, 14) body 3 walk 25
+TERM520 7 id 3 at (8, 14) n 1 pick (9, 14) arcs 2 cov 0 covbest 0 conflict 0 dsq 16
+FS HOPBUILD 7 at (8, 14) lch (9, 14) T (11, 20)
+SPLIT520 7 lch (9, 9) body 9 arc 1 to (10, 14) dsq 16 walk 10 n 2
+FS SPLIT 7 arc 1 to (10, 14) body 9 walk 10
+FS GATE 8 sig (20, 26, (9, 6), (9, 18)) ok 1
+SPLIT520 8 lch (9, 14) body 3 arc 2 to (8, 19) dsq 1 walk 0 n 1
+FS SPLIT 8 arc 2 to (8, 19) body 3 walk 0
+FS ARRIVE 9 id 3 body 1 at (8, 19) dsq 1
+ARC520 CLAIM 9 id 3 body 1 arc 2 at (8, 19)
+FS PHASE 9 id 3 ph 2 d 1 at (8, 19)
+FS SEAL 9 tile (8, 18) n 1
+SPLIT520 9 lch (9, 14) body 9 arc 1 to (9, 17) dsq 1 walk 0 n 2
+FS SPLIT 9 arc 1 to (9, 17) body 9 walk 0
+FS ARRIVE 10 id 9 body 2 at (9, 17) dsq 1
+ARC520 CLAIM 10 id 9 body 2 arc 1 at (9, 17)
+FS PHASE 10 id 9 ph 2 d 1 at (9, 17)
+FS SEAL 10 tile (10, 17) n 1
+FS SEAL 11 tile (8, 19) n 2
+FS SEAL 11 tile (8, 17) n 2
+FS GATE 11 sig (20, 26, (9, 6), (9, 18)) ok 1
+FS SEAL 12 tile (9, 20) n 3
+FS SEAL 13 tile (9, 17) n 3
+FS SEAL 16 tile (10, 20) n 4
+FS DODGE 16 id 9 from (11, 16) to (10, 16) cov 1 -> 0 hit 0 hp 22
+FS SEAL 19 tile (11, 19) n 5
+FS STAT 20 id 3 at (11, 20) need 1 orth 1 ti 64 ammo 24 sen 0 hp 40 covden 0 eco 0 lost 0
+FS STAT 20 id 9 at (7, 16) need 3 orth 3 ti 64 ammo 24 sen 0 hp 22 covden 0 eco 0 lost 0
+ARC520 COLLIDE 23 id 3 body 1 peer 1 took 1 n 1
+ARC520 CLAIM 23 id 3 body 1 arc 1 at (12, 18)
+FS EVICTOR 23 at (12, 19) ucov 1 cov 3 unseal 1 obs 7
+FS RUNG 23 id 3 r 2 hi -
+ARC520 COLLIDE 24 id 3 body 1 peer 1 took 1 n 2
+FS PHASE 24 id 3 ph 3 d 4 at (12, 18)
+FS CLEAR 24 tile (11, 18) peck 1
+FS RUNG 24 id 3 r 3 hi -
+ARC520 COLLIDE 24 id 9 body 2 peer 1 took 2 n 1
+ARC520 CLAIM 24 id 9 body 2 arc 2 at (9, 14)
+FS GATE 24 sig (20, 26, (9, 6), (9, 18)) ok 1
+FS CLEAR 25 tile (11, 18) peck 2
+FS RUNG 25 id 3 r 3 hi -
+ARC520 COLLIDE 25 id 9 body 2 peer 1 took 2 n 2
+FS CLEAR 26 tile (11, 18) peck 3
+FS RUNG 26 id 3 r 3 hi -
+ARC520 COLLIDE 26 id 9 body 2 peer 1 took 2 n 3
+FS RETREAT 26 id 9 hp 4 from (10, 15) to (11, 15)
+FS EVICT 26 from (11, 18) to (17, 18)
+FS CLEAR 27 tile (11, 18) peck 4
+FS RUNG 27 id 3 r 3 hi -
+ARC520 COLLIDE 27 id 9 body 2 peer 1 took 2 n 4
+FS CLEAR 28 tile (11, 18) peck 5
+FS RUNG 28 id 3 r 3 hi -
+ARC520 COLLIDE 28 id 9 body 2 peer 1 took 2 n 5
+FS CLEAR 29 tile (11, 18) peck 6
+FS RUNG 29 id 3 r 3 hi -
+ARC520 COLLIDE 29 id 9 body 2 peer 1 took 2 n 6
+FS EVICT 29 from (11, 18) to (17, 18)
+FS CLEAR 30 tile (11, 18) peck 7
+FS RUNG 30 id 3 r 3 hi -
+FS CLEAR 31 tile (11, 18) peck 8
+FS RUNG 31 id 3 r 3 hi -
+SPLIT520 32 lch (12, 19) body 3 arc 2 to (8, 20) dsq 2 walk 1 n 1
+FS SPLIT 32 arc 2 to (8, 20) body 3 walk 1
+ARC520 COLLIDE 33 id 3 body 1 peer 2 took 2 n 3
+ARC520 CLAIM 33 id 3 body 1 arc 2 at (8, 20)
+ARC520 COLLIDE 34 id 3 body 1 peer 2 took 2 n 4
+FS SEAL 34 tile (8, 20) n 6
+FS EVICT 34 from (13, 18) to (13, 24)
+ARC520 COLLIDE 35 id 3 body 1 peer 2 took 2 n 5
+PRES520 36 ti 75 res 119 floor 119 bind 1 rounds 1 vacant 1 until 56
+PRES520 37 ti 75 res 119 floor 119 bind 2 rounds 2 vacant 2 until 57
+PRES520 38 ti 75 res 119 floor 119 bind 3 rounds 3 vacant 3 until 58
+PRES520 39 ti 85 res 119 floor 119 bind 4 rounds 4 vacant 4 until 59
+FS SENTINEL 39 at (12, 20) face NORTHWEST tgt (10, 18) score 8 n 1 onring 0 lost 0 gate (0, 1, -1) onsray 0 olddsq -1
+PRES520 40 ti 27 res 129 floor 129 bind 5 rounds 5 vacant 5 until 60
+FS PHASE 40 id 3 ph 4 d 2 at (11, 20)
+FS STAT 40 id 3 at (11, 20) need 1 orth 0 ti 27 ammo 4 sen 1 hp 22 covden 17 eco 0 lost 0
+PRES520 41 ti 26 res 129 floor 129 bind 6 rounds 6 vacant 6 until 61
+PRES520 42 ti 25 res 129 floor 129 bind 7 rounds 7 vacant 7 until 62
+PRES520 43 ti 34 res 129 floor 129 bind 8 rounds 8 vacant 8 until 63
+PRES520 44 ti 43 res 129 floor 129 bind 9 rounds 9 vacant 9 until 64
+PRES520 45 ti 43 res 129 floor 129 bind 10 rounds 10 vacant 10 until 65
+PRES520 46 ti 43 res 129 floor 129 bind 11 rounds 11 vacant 11 until 66
+PRES520 47 ti 53 res 129 floor 129 bind 12 rounds 12 vacant 12 until 67
+PRES520 48 ti 63 res 129 floor 129 bind 13 rounds 13 vacant 13 until 68
+PRES520 49 ti 63 res 129 floor 129 bind 14 rounds 14 vacant 14 until 69
+PRES520 50 ti 63 res 129 floor 129 bind 15 rounds 15 vacant 15 until 70
+PRES520 51 ti 73 res 129 floor 129 bind 16 rounds 16 vacant 16 until 71
+PRES520 52 ti 83 res 129 floor 129 bind 17 rounds 17 vacant 17 until 72
+ARC520 CLAIM 52 id 3 body 1 arc 1 at (13, 18)
+FS DODGE 52 id 3 from (13, 18) to (12, 18) cov 1 -> 0 hit 0 hp 4
+PRES520 53 ti 83 res 128 floor 128 bind 18 rounds 18 vacant 18 until 73
+FS CLEAR 53 tile (11, 18) peck 1
+FS RUNG 53 id 3 r 3 hi -
+PRES520 54 ti 81 res 128 floor 128 bind 19 rounds 19 vacant 19 until 74
+FS CLEAR 54 tile (11, 18) peck 2
+FS RUNG 54 id 3 r 3 hi -
+PRES520 55 ti 79 res 128 floor 128 bind 20 rounds 20 vacant 20 until 75
+FS CLEARED 55 tile (11, 18) n 1
+FS SEAL 55 tile (11, 18) n 7
+FS SEALCLR 55 tile (11, 18) lag 0
+PRES520 56 ti 82 res 129 floor 129 bind 21 rounds 21 vacant 21 until 76
+PRES520 57 ti 82 res 119 floor 119 bind 22 rounds 22 vacant 22 until 77
+PRES520 58 ti 82 res 119 floor 119 bind 23 rounds 23 vacant 23 until 78
+PRES520 59 ti 82 res 119 floor 119 bind 24 rounds 24 vacant 24 until 79
+PRES520 60 ti 92 res 119 floor 119 bind 25 rounds 25 vacant 25 until 80
+PRES520 61 ti 92 res 119 floor 119 bind 26 rounds 26 vacant 26 until 81
+PRES520 62 ti 92 res 119 floor 119 bind 27 rounds 27 vacant 27 until 82
+PRES520 63 ti 92 res 119 floor 119 bind 28 rounds 28 vacant 28 until 83
+PRES520 64 ti 102 res 119 floor 119 bind 29 rounds 29 vacant 29 until 84
+PRES520 65 ti 57 res 121 floor 121 bind 30 rounds 30 vacant 30 until 85
+PRES520 66 ti 51 res 121 floor 121 bind 31 rounds 31 vacant 31 until 86
+PRES520 67 ti 51 res 121 floor 121 bind 32 rounds 32 vacant 32 until 87
+PRES520 68 ti 55 res 122 floor 122 bind 33 rounds 33 vacant 33 until 88
+PRES520 69 ti 48 res 123 floor 123 bind 34 rounds 34 vacant 34 until 89
+PRES520 70 ti 1 res 126 floor 126 bind 35 rounds 35 vacant 35 until 90
+PRES520 71 ti 1 res 126 floor 126 bind 36 rounds 36 vacant 36 until 91
+PRES520 72 ti 11 res 126 floor 126 bind 37 rounds 37 vacant 37 until 92
+PRES520 73 ti 4 res 126 floor 126 bind 38 rounds 38 vacant 38 until 93
+PRES520 74 ti 4 res 126 floor 126 bind 39 rounds 39 vacant 39 until 94
+PRES520 75 ti 4 res 126 floor 126 bind 40 rounds 40 vacant 40 until 95
+PRES520 76 ti 14 res 126 floor 126 bind 41 rounds 41 vacant 41 until 96
+PRES520 77 ti 14 res 126 floor 126 bind 42 rounds 42 vacant 42 until 97
+PRES520 78 ti 7 res 126 floor 126 bind 43 rounds 43 vacant 43 until 98
+PRES520 79 ti 7 res 126 floor 126 bind 44 rounds 44 vacant 44 until 99
+PRES520 80 ti 10 res 126 floor 126 bind 45 rounds 45 vacant 45 until 100
+PRES520 81 ti 10 res 126 floor 126 bind 46 rounds 46 vacant 46 until 101
+PRES520 82 ti 3 res 126 floor 126 bind 47 rounds 47 vacant 47 until 102
+PRES520 83 ti 3 res 126 floor 126 bind 48 rounds 48 vacant 48 until 103
+PRES520 84 ti 13 res 126 floor 126 bind 49 rounds 49 vacant 49 until 104
+PRES520 85 ti 13 res 126 floor 126 bind 50 rounds 50 vacant 50 until 105
+PRES520 86 ti 6 res 127 floor 127 bind 51 rounds 51 vacant 51 until 106
+PRES520 87 ti 16 res 127 floor 127 bind 52 rounds 52 vacant 52 until 107
+PRES520 88 ti 36 res 127 floor 127 bind 53 rounds 53 vacant 53 until 108
+PRES520 89 ti 46 res 127 floor 127 bind 54 rounds 54 vacant 54 until 109
+PRES520 90 ti 56 res 127 floor 127 bind 55 rounds 55 vacant 55 until 110
+PRES520 91 ti 8 res 129 floor 129 bind 56 rounds 56 vacant 56 until 111
+PRES520 92 ti 11 res 129 floor 129 bind 57 rounds 57 vacant 57 until 112
+PRES520 93 ti 11 res 129 floor 129 bind 58 rounds 58 vacant 58 until 113
+PRES520 94 ti 4 res 131 floor 131 bind 59 rounds 59 vacant 59 until 114
+PRES520 95 ti 4 res 131 floor 131 bind 60 rounds 60 vacant 60 until 115
+PRES520 96 ti 14 res 131 floor 131 bind 61 rounds 61 vacant 61 until 116
+PRES520 97 ti 14 res 131 floor 131 bind 62 rounds 62 vacant 62 until 117
+PRES520 98 ti 14 res 131 floor 131 bind 63 rounds 63 vacant 63 until 118
+PRES520 99 ti 14 res 131 floor 131 bind 64 rounds 64 vacant 64 until 119
+PRES520 100 ti 24 res 131 floor 131 bind 65 rounds 65 vacant 65 until 120
+PRES520 101 ti 24 res 131 floor 131 bind 66 rounds 66 vacant 66 until 121
+PRES520 102 ti 24 res 131 floor 131 bind 67 rounds 67 vacant 67 until 122
+PRES520 103 ti 17 res 131 floor 131 bind 68 rounds 68 vacant 68 until 123
+PRES520 104 ti 27 res 131 floor 131 bind 69 rounds 69 vacant 69 until 124
+PRES520 105 ti 20 res 131 floor 131 bind 70 rounds 70 vacant 70 until 125
+PRES520 106 ti 20 res 131 floor 131 bind 71 rounds 71 vacant 71 until 126
+PRES520 107 ti 20 res 131 floor 131 bind 72 rounds 72 vacant 72 until 127
+PRES520 108 ti 30 res 131 floor 131 bind 73 rounds 73 vacant 73 until 128
+PRES520 109 ti 30 res 131 floor 131 bind 74 rounds 74 vacant 74 until 129
+PRES520 110 ti 30 res 131 floor 131 bind 75 rounds 75 vacant 75 until 130
+PRES520 111 ti 30 res 131 floor 131 bind 76 rounds 76 vacant 76 until 131
+PRES520 112 ti 40 res 131 floor 131 bind 77 rounds 77 vacant 77 until 132
+PRES520 113 ti 40 res 131 floor 131 bind 78 rounds 78 vacant 78 until 133
+PRES520 114 ti 40 res 131 floor 131 bind 79 rounds 79 vacant 79 until 134
+PRES520 115 ti 40 res 131 floor 131 bind 80 rounds 80 vacant 80 until 135
+PRES520 116 ti 50 res 131 floor 131 bind 81 rounds 81 vacant 81 until 136
+PRES520 117 ti 50 res 131 floor 131 bind 82 rounds 82 vacant 82 until 137
+PRES520 118 ti 0 res 134 floor 134 bind 83 rounds 83 vacant 83 until 138
+PRES520 119 ti 0 res 124 floor 124 bind 84 rounds 84 vacant 84 until 139
+PRES520 120 ti 10 res 124 floor 124 bind 85 rounds 85 vacant 85 until 140
+PRES520 121 ti 10 res 124 floor 124 bind 86 rounds 86 vacant 86 until 141
+PRES520 122 ti 10 res 124 floor 124 bind 87 rounds 87 vacant 87 until 142
+PRES520 123 ti 10 res 124 floor 124 bind 88 rounds 88 vacant 88 until 143
+PRES520 124 ti 20 res 124 floor 124 bind 89 rounds 89 vacant 89 until 144
+PRES520 125 ti 20 res 124 floor 124 bind 90 rounds 90 vacant 90 until 145
+PRES520 126 ti 20 res 124 floor 124 bind 91 rounds 91 vacant 91 until 146
+PRES520 127 ti 20 res 124 floor 124 bind 92 rounds 92 vacant 92 until 147
+PRES520 128 ti 30 res 124 floor 124 bind 93 rounds 93 vacant 93 until 148
+PRES520 129 ti 30 res 124 floor 124 bind 94 rounds 94 vacant 94 until 149
+PRES520 130 ti 30 res 123 floor 123 bind 95 rounds 95 vacant 95 until 150
+PRES520 131 ti 30 res 123 floor 123 bind 96 rounds 96 vacant 96 until 151
+PRES520 132 ti 40 res 123 floor 123 bind 97 rounds 97 vacant 97 until 152
+PRES520 133 ti 40 res 123 floor 123 bind 98 rounds 98 vacant 98 until 153
+PRES520 134 ti 40 res 123 floor 123 bind 99 rounds 99 vacant 99 until 154
+PRES520 135 ti 40 res 123 floor 123 bind 100 rounds 100 vacant 100 until 155
+PRES520 136 ti 50 res 123 floor 123 bind 101 rounds 101 vacant 101 until 156
+PRES520 137 ti 50 res 123 floor 123 bind 102 rounds 102 vacant 102 until 157
+PRES520 138 ti 50 res 123 floor 123 bind 103 rounds 103 vacant 103 until 158
+PRES520 139 ti 50 res 123 floor 123 bind 104 rounds 104 vacant 104 until 159
+PRES520 140 ti 60 res 123 floor 123 bind 105 rounds 105 vacant 105 until 160
+PRES520 141 ti 60 res 123 floor 123 bind 106 rounds 106 vacant 106 until 161
+PRES520 142 ti 60 res 123 floor 123 bind 107 rounds 107 vacant 107 until 162
+PRES520 143 ti 60 res 123 floor 123 bind 108 rounds 108 vacant 108 until 163
+PRES520 144 ti 70 res 123 floor 123 bind 109 rounds 109 vacant 109 until 164
+PRES520 145 ti 0 res 133 floor 133 bind 110 rounds 110 vacant 110 until 165
+PRES520 146 ti 0 res 133 floor 133 bind 111 rounds 111 vacant 111 until 166
+PRES520 147 ti 0 res 133 floor 133 bind 112 rounds 112 vacant 112 until 167
+PRES520 148 ti 10 res 133 floor 133 bind 113 rounds 113 vacant 113 until 168
+PRES520 149 ti 10 res 133 floor 133 bind 114 rounds 114 vacant 114 until 169
+PRES520 150 ti 10 res 133 floor 133 bind 115 rounds 115 vacant 115 until 170
+PRES520 151 ti 10 res 133 floor 133 bind 116 rounds 116 vacant 116 until 171
+PRES520 152 ti 20 res 133 floor 133 bind 117 rounds 117 vacant 117 until 172
+PRES520 153 ti 20 res 133 floor 133 bind 118 rounds 118 vacant 118 until 173
+PRES520 154 ti 20 res 133 floor 133 bind 119 rounds 119 vacant 119 until 174
+PRES520 155 ti 20 res 133 floor 133 bind 120 rounds 120 vacant 120 until 175
+PRES520 156 ti 30 res 133 floor 133 bind 121 rounds 121 vacant 121 until 176
+PRES520 157 ti 30 res 133 floor 133 bind 122 rounds 122 vacant 122 until 177
+PRES520 158 ti 30 res 133 floor 133 bind 123 rounds 123 vacant 123 until 178
+PRES520 159 ti 30 res 133 floor 133 bind 124 rounds 124 vacant 124 until 179
+PRES520 160 ti 40 res 133 floor 133 bind 125 rounds 125 vacant 125 until 180
+PRES520 161 ti 40 res 133 floor 133 bind 126 rounds 126 vacant 126 until 181
+PRES520 162 ti 40 res 133 floor 133 bind 127 rounds 127 vacant 127 until 182
+PRES520 163 ti 40 res 133 floor 133 bind 128 rounds 128 vacant 128 until 183
+PRES520 164 ti 50 res 133 floor 133 bind 129 rounds 129 vacant 129 until 184
+PRES520 165 ti 50 res 133 floor 133 bind 130 rounds 130 vacant 130 until 185
+PRES520 166 ti 50 res 133 floor 133 bind 131 rounds 131 vacant 131 until 186
+PRES520 167 ti 50 res 133 floor 133 bind 132 rounds 132 vacant 132 until 187
+PRES520 168 ti 60 res 133 floor 133 bind 133 rounds 133 vacant 133 until 188
+PRES520 169 ti 60 res 133 floor 133 bind 134 rounds 134 vacant 134 until 189
+PRES520 170 ti 60 res 133 floor 133 bind 135 rounds 135 vacant 135 until 190
+PRES520 171 ti 60 res 133 floor 133 bind 136 rounds 136 vacant 136 until 191
+PRES520 172 ti 70 res 133 floor 133 bind 137 rounds 137 vacant 137 until 192
+PRES520 173 ti 70 res 133 floor 133 bind 138 rounds 138 vacant 138 until 193
+PRES520 174 ti 70 res 133 floor 133 bind 139 rounds 139 vacant 139 until 194
+PRES520 175 ti 70 res 133 floor 133 bind 140 rounds 140 vacant 140 until 195
+PRES520 176 ti 80 res 133 floor 133 bind 141 rounds 141 vacant 141 until 196
+PRES520 177 ti 80 res 133 floor 133 bind 142 rounds 142 vacant 142 until 197
+PRES520 178 ti 80 res 133 floor 133 bind 143 rounds 143 vacant 143 until 198
+PRES520 179 ti 80 res 133 floor 133 bind 144 rounds 144 vacant 144 until 199
+PRES520 180 ti 90 res 133 floor 133 bind 145 rounds 145 vacant 145 until 200
+PRES520 181 ti 90 res 133 floor 133 bind 146 rounds 146 vacant 146 until 201
+PRES520 182 ti 90 res 133 floor 133 bind 147 rounds 147 vacant 147 until 202
+PRES520 183 ti 90 res 133 floor 133 bind 148 rounds 148 vacant 148 until 203
+PRES520 184 ti 49 res 136 floor 136 bind 149 rounds 149 vacant 149 until 204
+PRES520 185 ti 42 res 136 floor 136 bind 150 rounds 150 vacant 150 until 205
+PRES520 186 ti 35 res 136 floor 136 bind 151 rounds 151 vacant 151 until 206
+PRES520 187 ti 28 res 137 floor 137 bind 152 rounds 152 vacant 152 until 207
+PRES520 188 ti 38 res 137 floor 137 bind 153 rounds 153 vacant 153 until 208
+PRES520 189 ti 38 res 137 floor 137 bind 154 rounds 154 vacant 154 until 209
+PRES520 190 ti 38 res 137 floor 137 bind 155 rounds 155 vacant 155 until 210
+PRES520 191 ti 38 res 137 floor 137 bind 156 rounds 156 vacant 156 until 211
+PRES520 192 ti 48 res 137 floor 137 bind 157 rounds 157 vacant 157 until 212
+PRES520 193 ti 48 res 137 floor 137 bind 158 rounds 158 vacant 158 until 213
+PRES520 194 ti 48 res 137 floor 137 bind 159 rounds 159 vacant 159 until 214
+PRES520 195 ti 48 res 137 floor 137 bind 160 rounds 160 vacant 160 until 215
+PRES520 196 ti 58 res 137 floor 137 bind 161 rounds 161 vacant 161 until 216
+PRES520 197 ti 58 res 137 floor 137 bind 162 rounds 162 vacant 162 until 217
+PRES520 198 ti 58 res 137 floor 137 bind 163 rounds 163 vacant 163 until 218
+PRES520 199 ti 58 res 137 floor 137 bind 164 rounds 164 vacant 164 until 219
+PRES520 200 ti 68 res 137 floor 137 bind 165 rounds 165 vacant 165 until 220
+PRES520 201 ti 68 res 137 floor 137 bind 166 rounds 166 vacant 166 until 221
+PRES520 202 ti 68 res 137 floor 137 bind 167 rounds 167 vacant 167 until 222
+PRES520 203 ti 68 res 137 floor 137 bind 168 rounds 168 vacant 168 until 223
+PRES520 204 ti 78 res 137 floor 137 bind 169 rounds 169 vacant 169 until 224
+PRES520 205 ti 78 res 137 floor 137 bind 170 rounds 170 vacant 170 until 225
+PRES520 206 ti 78 res 137 floor 137 bind 171 rounds 171 vacant 171 until 226
+PRES520 207 ti 26 res 139 floor 139 bind 172 rounds 172 vacant 172 until 227
+PRES520 208 ti 36 res 139 floor 139 bind 173 rounds 173 vacant 173 until 228
+PRES520 209 ti 28 res 141 floor 141 bind 174 rounds 174 vacant 174 until 229
+PRES520 210 ti 28 res 141 floor 141 bind 175 rounds 175 vacant 175 until 230
+PRES520 211 ti 20 res 141 floor 141 bind 176 rounds 176 vacant 176 until 231
+PRES520 212 ti 30 res 141 floor 141 bind 177 rounds 177 vacant 177 until 232
+PRES520 213 ti 22 res 141 floor 141 bind 178 rounds 178 vacant 178 until 233
+PRES520 214 ti 22 res 141 floor 141 bind 179 rounds 179 vacant 179 until 234
+PRES520 215 ti 22 res 141 floor 141 bind 180 rounds 180 vacant 180 until 235
+PRES520 216 ti 32 res 141 floor 141 bind 181 rounds 181 vacant 181 until 236
+PRES520 217 ti 24 res 141 floor 141 bind 182 rounds 182 vacant 182 until 237
+PRES520 218 ti 24 res 141 floor 141 bind 183 rounds 183 vacant 183 until 238
+PRES520 219 ti 24 res 141 floor 141 bind 184 rounds 184 vacant 184 until 239
+PRES520 220 ti 34 res 141 floor 141 bind 185 rounds 185 vacant 185 until 240
+PRES520 221 ti 34 res 141 floor 141 bind 186 rounds 186 vacant 186 until 241
+PRES520 222 ti 34 res 141 floor 141 bind 187 rounds 187 vacant 187 until 242
+PRES520 223 ti 34 res 141 floor 141 bind 188 rounds 188 vacant 188 until 243
+PRES520 224 ti 44 res 141 floor 141 bind 189 rounds 189 vacant 189 until 244
+PRES520 225 ti 44 res 141 floor 141 bind 190 rounds 190 vacant 190 until 245
+PRES520 226 ti 44 res 141 floor 141 bind 191 rounds 191 vacant 191 until 246
+PRES520 227 ti 44 res 141 floor 141 bind 192 rounds 192 vacant 192 until 247
+PRES520 228 ti 54 res 141 floor 141 bind 193 rounds 193 vacant 193 until 248
+PRES520 229 ti 54 res 141 floor 141 bind 194 rounds 194 vacant 194 until 249
+PRES520 230 ti 0 res 151 floor 151 bind 195 rounds 195 vacant 195 until 250
+PRES520 231 ti 0 res 151 floor 151 bind 196 rounds 196 vacant 196 until 251
+PRES520 232 ti 10 res 151 floor 151 bind 197 rounds 197 vacant 197 until 252
+PRES520 233 ti 0 res 151 floor 151 bind 198 rounds 198 vacant 198 until 253
+PRES520 234 ti 0 res 151 floor 151 bind 199 rounds 199 vacant 199 until 254
+PRES520 235 ti 0 res 151 floor 151 bind 200 rounds 200 vacant 200 until 255
+PRES520 236 ti 10 res 151 floor 151 bind 201 rounds 201 vacant 201 until 256
+PRES520 237 ti 10 res 151 floor 151 bind 202 rounds 202 vacant 202 until 257
+PRES520 238 ti 10 res 151 floor 151 bind 203 rounds 203 vacant 203 until 258
+PRES520 239 ti 10 res 151 floor 151 bind 204 rounds 204 vacant 204 until 259
+PRES520 240 ti 20 res 151 floor 151 bind 205 rounds 205 vacant 205 until 260
+PRES520 241 ti 20 res 151 floor 151 bind 206 rounds 206 vacant 206 until 261
+PRES520 242 ti 20 res 151 floor 151 bind 207 rounds 207 vacant 207 until 262
+PRES520 243 ti 20 res 151 floor 151 bind 208 rounds 208 vacant 208 until 263
+PRES520 244 ti 30 res 151 floor 151 bind 209 rounds 209 vacant 209 until 264
+PRES520 245 ti 30 res 151 floor 151 bind 210 rounds 210 vacant 210 until 265
+PRES520 246 ti 30 res 151 floor 151 bind 211 rounds 211 vacant 211 until 266
+PRES520 247 ti 30 res 151 floor 151 bind 212 rounds 212 vacant 212 until 267
+PRES520 248 ti 32 res 152 floor 152 bind 213 rounds 213 vacant 213 until 268
+PRES520 249 ti 32 res 152 floor 152 bind 214 rounds 214 vacant 214 until 269
+PRES520 250 ti 24 res 153 floor 153 bind 215 rounds 215 vacant 215 until 270
+PRES520 251 ti 24 res 153 floor 153 bind 216 rounds 216 vacant 216 until 271
+PRES520 252 ti 34 res 153 floor 153 bind 217 rounds 217 vacant 217 until 272
+PRES520 253 ti 34 res 153 floor 153 bind 218 rounds 218 vacant 218 until 273
+PRES520 254 ti 34 res 153 floor 153 bind 219 rounds 219 vacant 219 until 274
+PRES520 255 ti 34 res 153 floor 153 bind 220 rounds 220 vacant 220 until 275
+FS EVICT 255 from (13, 18) to (13, 24)
+PRES520 256 ti 44 res 153 floor 153 bind 221 rounds 221 vacant 221 until 276
+PRES520 257 ti 44 res 153 floor 153 bind 222 rounds 222 vacant 222 until 277
+PRES520 258 ti 44 res 153 floor 153 bind 223 rounds 223 vacant 223 until 278
+PRES520 259 ti 44 res 153 floor 153 bind 224 rounds 224 vacant 224 until 279
+FS EVICT 259 from (13, 20) to (7, 20)
+PRES520 260 ti 54 res 153 floor 153 bind 225 rounds 225 vacant 225 until 280
+PRES520 261 ti 54 res 153 floor 153 bind 226 rounds 226 vacant 226 until 281
+PRES520 262 ti 54 res 153 floor 153 bind 227 rounds 227 vacant 227 until 282
+PRES520 263 ti 54 res 153 floor 153 bind 228 rounds 228 vacant 228 until 283
+PRES520 264 ti 64 res 153 floor 153 bind 229 rounds 229 vacant 229 until 284
+PRES520 265 ti 64 res 153 floor 153 bind 230 rounds 230 vacant 230 until 285
+FS EVICT 265 from (11, 20) to (17, 18)
+PRES520 266 ti 64 res 153 floor 153 bind 231 rounds 231 vacant 231 until 286
+PRES520 267 ti 64 res 153 floor 153 bind 232 rounds 232 vacant 232 until 287
+PRES520 268 ti 74 res 153 floor 153 bind 233 rounds 233 vacant 233 until 288
+PRES520 269 ti 74 res 153 floor 153 bind 234 rounds 234 vacant 234 until 289
+PRES520 270 ti 74 res 153 floor 153 bind 235 rounds 235 vacant 235 until 290
+PRES520 271 ti 74 res 153 floor 153 bind 236 rounds 236 vacant 236 until 291
+FS EVICT 271 from (13, 18) to (13, 24)
+PRES520 272 ti 84 res 153 floor 153 bind 237 rounds 237 vacant 237 until 292
+PRES520 273 ti 84 res 153 floor 153 bind 238 rounds 238 vacant 238 until 293
+PRES520 274 ti 84 res 153 floor 153 bind 239 rounds 239 vacant 239 until 294
+PRES520 275 ti 84 res 153 floor 153 bind 240 rounds 240 vacant 240 until 295
+FS EVICT 275 from (13, 20) to (7, 20)
+PRES520 276 ti 94 res 153 floor 153 bind 241 rounds 241 vacant 241 until 296
+PRES520 277 ti 6 res 160 floor 160 bind 242 rounds 242 vacant 242 until 297
+PRES520 278 ti 6 res 160 floor 160 bind 243 rounds 243 vacant 243 until 298
+PRES520 279 ti 6 res 160 floor 160 bind 244 rounds 244 vacant 244 until 299
+PRES520 280 ti 16 res 160 floor 160 bind 245 rounds 245 vacant 245 until 300
+PRES520 281 ti 16 res 160 floor 160 bind 246 rounds 246 vacant 246 until 301
+FS EVICT 281 from (11, 20) to (17, 18)
+PRES520 282 ti 16 res 160 floor 160 bind 247 rounds 247 vacant 247 until 302
+PRES520 283 ti 16 res 160 floor 160 bind 248 rounds 248 vacant 248 until 303
+PRES520 284 ti 26 res 160 floor 160 bind 249 rounds 249 vacant 249 until 304
+PRES520 285 ti 26 res 160 floor 160 bind 250 rounds 250 vacant 250 until 305
+PRES520 286 ti 26 res 160 floor 160 bind 251 rounds 251 vacant 251 until 306
+PRES520 287 ti 26 res 160 floor 160 bind 252 rounds 252 vacant 252 until 307
+FS EVICT 287 from (13, 18) to (13, 24)
+PRES520 288 ti 36 res 160 floor 160 bind 253 rounds 253 vacant 253 until 308
+PRES520 289 ti 36 res 160 floor 160 bind 254 rounds 254 vacant 254 until 309
+PRES520 290 ti 36 res 160 floor 160 bind 255 rounds 255 vacant 255 until 310
+PRES520 291 ti 36 res 160 floor 160 bind 256 rounds 256 vacant 256 until 311
+FS EVICT 291 from (13, 20) to (7, 20)
+PRES520 292 ti 46 res 160 floor 160 bind 257 rounds 257 vacant 257 until 312
+PRES520 293 ti 46 res 160 floor 160 bind 258 rounds 258 vacant 258 until 313
+PRES520 294 ti 46 res 160 floor 160 bind 259 rounds 259 vacant 259 until 314
+PRES520 295 ti 46 res 160 floor 160 bind 260 rounds 260 vacant 260 until 315
+PRES520 296 ti 56 res 160 floor 160 bind 261 rounds 261 vacant 261 until 316
+PRES520 297 ti 56 res 160 floor 160 bind 262 rounds 262 vacant 262 until 317
+FS EVICT 297 from (11, 20) to (17, 18)
+PRES520 298 ti 56 res 160 floor 160 bind 263 rounds 263 vacant 263 until 318
+PRES520 299 ti 56 res 160 floor 160 bind 264 rounds 264 vacant 264 until 319
+PRES520 300 ti 66 res 160 floor 160 bind 265 rounds 265 vacant 265 until 320
+PRES520 301 ti 66 res 160 floor 160 bind 266 rounds 266 vacant 266 until 321
+PRES520 302 ti 66 res 160 floor 160 bind 267 rounds 267 vacant 267 until 322
+PRES520 303 ti 66 res 160 floor 160 bind 268 rounds 268 vacant 268 until 323
+FS EVICT 303 from (13, 18) to (13, 24)
+PRES520 304 ti 76 res 160 floor 160 bind 269 rounds 269 vacant 269 until 324
+PRES520 305 ti 76 res 160 floor 160 bind 270 rounds 270 vacant 270 until 325
+PRES520 306 ti 76 res 160 floor 160 bind 271 rounds 271 vacant 271 until 326
+PRES520 307 ti 76 res 160 floor 160 bind 272 rounds 272 vacant 272 until 327
+FS EVICT 307 from (13, 20) to (7, 20)
+PRES520 308 ti 86 res 160 floor 160 bind 273 rounds 273 vacant 273 until 328
+PRES520 309 ti 86 res 160 floor 160 bind 274 rounds 274 vacant 274 until 329
+PRES520 310 ti 23 res 160 floor 160 bind 275 rounds 275 vacant 275 until 330
+PRES520 311 ti 14 res 160 floor 160 bind 276 rounds 276 vacant 276 until 331
+PRES520 312 ti 24 res 160 floor 160 bind 277 rounds 277 vacant 277 until 332
+PRES520 313 ti 24 res 160 floor 160 bind 278 rounds 278 vacant 278 until 333
+FS EVICT 313 from (11, 20) to (17, 18)
+PRES520 314 ti 24 res 160 floor 160 bind 279 rounds 279 vacant 279 until 334
+PRES520 315 ti 24 res 160 floor 160 bind 280 rounds 280 vacant 280 until 335
+PRES520 316 ti 34 res 160 floor 160 bind 281 rounds 281 vacant 281 until 336
+PRES520 317 ti 25 res 160 floor 160 bind 282 rounds 282 vacant 282 until 337
+PRES520 318 ti 16 res 160 floor 160 bind 283 rounds 283 vacant 283 until 338
+PRES520 319 ti 16 res 160 floor 160 bind 284 rounds 284 vacant 284 until 339
+FS EVICT 319 from (13, 18) to (13, 24)
+PRES520 320 ti 26 res 160 floor 160 bind 285 rounds 285 vacant 285 until 340
+PRES520 321 ti 17 res 160 floor 160 bind 286 rounds 286 vacant 286 until 341
+PRES520 322 ti 17 res 160 floor 160 bind 287 rounds 287 vacant 287 until 342
+PRES520 323 ti 17 res 160 floor 160 bind 288 rounds 288 vacant 288 until 343
+FS EVICT 323 from (13, 20) to (7, 20)
+PRES520 324 ti 27 res 160 floor 160 bind 289 rounds 289 vacant 289 until 344
+PRES520 325 ti 18 res 160 floor 160 bind 290 rounds 290 vacant 290 until 345
+PRES520 326 ti 18 res 160 floor 160 bind 291 rounds 291 vacant 291 until 346
+PRES520 327 ti 18 res 160 floor 160 bind 292 rounds 292 vacant 292 until 347
+PRES520 328 ti 28 res 160 floor 160 bind 293 rounds 293 vacant 293 until 348
+PRES520 329 ti 19 res 160 floor 160 bind 294 rounds 294 vacant 294 until 349
+FS EVICT 329 from (11, 20) to (17, 18)
+PRES520 330 ti 19 res 160 floor 160 bind 295 rounds 295 vacant 295 until 350
+PRES520 331 ti 19 res 160 floor 160 bind 296 rounds 296 vacant 296 until 351
+PRES520 332 ti 29 res 160 floor 160 bind 297 rounds 297 vacant 297 until 352
+PRES520 333 ti 20 res 160 floor 160 bind 298 rounds 298 vacant 298 until 353
+PRES520 334 ti 20 res 160 floor 160 bind 299 rounds 299 vacant 299 until 354
+PRES520 335 ti 20 res 160 floor 160 bind 300 rounds 300 vacant 300 until 355
+FS EVICT 335 from (13, 18) to (13, 24)
+PRES520 336 ti 30 res 160 floor 160 bind 301 rounds 301 vacant 301 until 356
+PRES520 337 ti 21 res 160 floor 160 bind 302 rounds 302 vacant 302 until 357
+PRES520 338 ti 21 res 160 floor 160 bind 303 rounds 303 vacant 303 until 358
+PRES520 339 ti 21 res 160 floor 160 bind 304 rounds 304 vacant 304 until 359
+FS EVICT 339 from (13, 20) to (7, 20)
+PRES520 340 ti 31 res 160 floor 160 bind 305 rounds 305 vacant 305 until 360
+PRES520 341 ti 22 res 160 floor 160 bind 306 rounds 306 vacant 306 until 361
+PRES520 342 ti 22 res 160 floor 160 bind 307 rounds 307 vacant 307 until 362
+PRES520 343 ti 22 res 160 floor 160 bind 308 rounds 308 vacant 308 until 363
+PRES520 344 ti 32 res 160 floor 160 bind 309 rounds 309 vacant 309 until 364
+PRES520 345 ti 23 res 160 floor 160 bind 310 rounds 310 vacant 310 until 365
+PRES520 346 ti 23 res 160 floor 160 bind 311 rounds 311 vacant 311 until 366
+PRES520 347 ti 23 res 160 floor 160 bind 312 rounds 312 vacant 312 until 367
+PRES520 348 ti 33 res 160 floor 160 bind 313 rounds 313 vacant 313 until 368
+PRES520 349 ti 33 res 160 floor 160 bind 314 rounds 314 vacant 314 until 369
+PRES520 350 ti 33 res 160 floor 160 bind 315 rounds 315 vacant 315 until 370
+PRES520 351 ti 33 res 160 floor 160 bind 316 rounds 316 vacant 316 until 371
+FS EVICT 351 from (13, 18) to (13, 24)
+PRES520 352 ti 43 res 160 floor 160 bind 317 rounds 317 vacant 317 until 372
+PRES520 353 ti 43 res 160 floor 160 bind 318 rounds 318 vacant 318 until 373
+PRES520 354 ti 43 res 160 floor 160 bind 319 rounds 319 vacant 319 until 374
+PRES520 355 ti 43 res 160 floor 160 bind 320 rounds 320 vacant 320 until 375
+FS EVICT 355 from (13, 20) to (7, 20)
+PRES520 356 ti 53 res 160 floor 160 bind 321 rounds 321 vacant 321 until 376
+PRES520 357 ti 53 res 160 floor 160 bind 322 rounds 322 vacant 322 until 377
+PRES520 358 ti 53 res 160 floor 160 bind 323 rounds 323 vacant 323 until 378
+PRES520 359 ti 53 res 160 floor 160 bind 324 rounds 324 vacant 324 until 379
+PRES520 360 ti 63 res 160 floor 160 bind 325 rounds 325 vacant 325 until 380
+PRES520 361 ti 63 res 160 floor 160 bind 326 rounds 326 vacant 326 until 381
+FS EVICT 361 from (11, 20) to (17, 18)
+PRES520 362 ti 63 res 160 floor 160 bind 327 rounds 327 vacant 327 until 382
+PRES520 363 ti 63 res 160 floor 160 bind 328 rounds 328 vacant 328 until 383
+PRES520 364 ti 73 res 160 floor 160 bind 329 rounds 329 vacant 329 until 384
+PRES520 365 ti 73 res 160 floor 160 bind 330 rounds 330 vacant 330 until 385
+PRES520 366 ti 73 res 160 floor 160 bind 331 rounds 331 vacant 331 until 386
+PRES520 367 ti 73 res 160 floor 160 bind 332 rounds 332 vacant 332 until 387
+FS EVICT 367 from (13, 18) to (13, 24)
+PRES520 368 ti 83 res 160 floor 160 bind 333 rounds 333 vacant 333 until 388
+PRES520 369 ti 83 res 160 floor 160 bind 334 rounds 334 vacant 334 until 389
+PRES520 370 ti 83 res 160 floor 160 bind 335 rounds 335 vacant 335 until 390
+PRES520 371 ti 83 res 160 floor 160 bind 336 rounds 336 vacant 336 until 391
+FS EVICT 371 from (13, 20) to (7, 20)
+PRES520 372 ti 93 res 160 floor 160 bind 337 rounds 337 vacant 337 until 392
+PRES520 373 ti 93 res 160 floor 160 bind 338 rounds 338 vacant 338 until 393
+PRES520 374 ti 93 res 160 floor 160 bind 339 rounds 339 vacant 339 until 394
+PRES520 375 ti 93 res 160 floor 160 bind 340 rounds 340 vacant 340 until 395
+PRES520 376 ti 103 res 160 floor 160 bind 341 rounds 341 vacant 341 until 396
+PRES520 377 ti 4 res 160 floor 160 bind 342 rounds 342 vacant 342 until 397
+FS EVICT 377 from (11, 20) to (17, 18)
+PRES520 378 ti 4 res 160 floor 160 bind 343 rounds 343 vacant 343 until 398
+PRES520 379 ti 4 res 160 floor 160 bind 344 rounds 344 vacant 344 until 399
+PRES520 380 ti 14 res 160 floor 160 bind 345 rounds 345 vacant 345 until 400
+PRES520 381 ti 14 res 160 floor 160 bind 346 rounds 346 vacant 346 until 401
+PRES520 382 ti 14 res 160 floor 160 bind 347 rounds 347 vacant 347 until 402
+PRES520 383 ti 14 res 160 floor 160 bind 348 rounds 348 vacant 348 until 403
+FS EVICT 383 from (13, 18) to (13, 24)
+PRES520 384 ti 24 res 160 floor 160 bind 349 rounds 349 vacant 349 until 404
+PRES520 385 ti 24 res 160 floor 160 bind 350 rounds 350 vacant 350 until 405
+PRES520 386 ti 24 res 160 floor 160 bind 351 rounds 351 vacant 351 until 406
+PRES520 387 ti 24 res 160 floor 160 bind 352 rounds 352 vacant 352 until 407
+FS EVICT 387 from (13, 20) to (7, 20)
+PRES520 388 ti 34 res 160 floor 160 bind 353 rounds 353 vacant 353 until 408
+PRES520 389 ti 34 res 160 floor 160 bind 354 rounds 354 vacant 354 until 409
+PRES520 390 ti 34 res 160 floor 160 bind 355 rounds 355 vacant 355 until 410
+PRES520 391 ti 34 res 160 floor 160 bind 356 rounds 356 vacant 356 until 411
+PRES520 392 ti 44 res 160 floor 160 bind 357 rounds 357 vacant 357 until 412
+PRES520 393 ti 44 res 160 floor 160 bind 358 rounds 358 vacant 358 until 413
+FS EVICT 393 from (11, 20) to (17, 18)
+PRES520 394 ti 44 res 160 floor 160 bind 359 rounds 359 vacant 359 until 414
+PRES520 395 ti 44 res 160 floor 160 bind 360 rounds 360 vacant 360 until 415
+PRES520 396 ti 54 res 160 floor 160 bind 361 rounds 361 vacant 361 until 416
+PRES520 397 ti 54 res 160 floor 160 bind 362 rounds 362 vacant 362 until 417
+PRES520 398 ti 54 res 160 floor 160 bind 363 rounds 363 vacant 363 until 418
+PRES520 399 ti 54 res 160 floor 160 bind 364 rounds 364 vacant 364 until 419
+FS EVICT 399 from (13, 18) to (13, 24)
+PRES520 400 ti 64 res 160 floor 160 bind 365 rounds 365 vacant 365 until 420
+PRES520 401 ti 64 res 160 floor 160 bind 366 rounds 366 vacant 366 until 421
+PRES520 402 ti 64 res 160 floor 160 bind 367 rounds 367 vacant 367 until 422
+PRES520 403 ti 64 res 160 floor 160 bind 368 rounds 368 vacant 368 until 423
+FS EVICT 403 from (13, 20) to (7, 20)
+PRES520 404 ti 74 res 160 floor 160 bind 369 rounds 369 vacant 369 until 424
+PRES520 405 ti 74 res 160 floor 160 bind 370 rounds 370 vacant 370 until 425
+PRES520 406 ti 74 res 160 floor 160 bind 371 rounds 371 vacant 371 until 426
+PRES520 407 ti 74 res 160 floor 160 bind 372 rounds 372 vacant 372 until 427
+PRES520 408 ti 84 res 160 floor 160 bind 373 rounds 373 vacant 373 until 428
+PRES520 409 ti 84 res 160 floor 160 bind 374 rounds 374 vacant 374 until 429
+FS EVICT 409 from (11, 20) to (17, 18)
+PRES520 410 ti 84 res 160 floor 160 bind 375 rounds 375 vacant 375 until 430
+PRES520 411 ti 84 res 160 floor 160 bind 376 rounds 376 vacant 376 until 431
+PRES520 412 ti 94 res 160 floor 160 bind 377 rounds 377 vacant 377 until 432
+PRES520 413 ti 94 res 160 floor 160 bind 378 rounds 378 vacant 378 until 433
+PRES520 414 ti 1 res 160 floor 160 bind 379 rounds 379 vacant 379 until 434
+PRES520 415 ti 1 res 160 floor 160 bind 380 rounds 380 vacant 380 until 435
+FS EVICT 415 from (13, 18) to (13, 24)
+PRES520 416 ti 11 res 160 floor 160 bind 381 rounds 381 vacant 381 until 436
+PRES520 417 ti 11 res 160 floor 160 bind 382 rounds 382 vacant 382 until 437
+PRES520 418 ti 11 res 160 floor 160 bind 383 rounds 383 vacant 383 until 438
+PRES520 419 ti 11 res 160 floor 160 bind 384 rounds 384 vacant 384 until 439
+FS EVICT 419 from (13, 20) to (7, 20)
+PRES520 420 ti 21 res 160 floor 160 bind 385 rounds 385 vacant 385 until 440
+PRES520 421 ti 21 res 160 floor 160 bind 386 rounds 386 vacant 386 until 441
+PRES520 422 ti 21 res 160 floor 160 bind 387 rounds 387 vacant 387 until 442
+PRES520 423 ti 21 res 160 floor 160 bind 388 rounds 388 vacant 388 until 443
+PRES520 424 ti 31 res 160 floor 160 bind 389 rounds 389 vacant 389 until 444
+PRES520 425 ti 31 res 160 floor 160 bind 390 rounds 390 vacant 390 until 445
+FS EVICT 425 from (11, 20) to (17, 18)
+PRES520 426 ti 31 res 160 floor 160 bind 391 rounds 391 vacant 391 until 446
+PRES520 427 ti 31 res 160 floor 160 bind 392 rounds 392 vacant 392 until 447
+PRES520 428 ti 41 res 160 floor 160 bind 393 rounds 393 vacant 393 until 448
+PRES520 429 ti 41 res 160 floor 160 bind 394 rounds 394 vacant 394 until 449
+PRES520 430 ti 41 res 160 floor 160 bind 395 rounds 395 vacant 395 until 450
+PRES520 431 ti 41 res 160 floor 160 bind 396 rounds 396 vacant 396 until 451
+FS EVICT 431 from (13, 18) to (13, 24)
+PRES520 432 ti 51 res 160 floor 160 bind 397 rounds 397 vacant 397 until 452
+PRES520 433 ti 51 res 160 floor 160 bind 398 rounds 398 vacant 398 until 453
+PRES520 434 ti 51 res 160 floor 160 bind 399 rounds 399 vacant 399 until 454
+PRES520 435 ti 51 res 160 floor 160 bind 400 rounds 400 vacant 400 until 455
+FS EVICT 435 from (13, 20) to (7, 20)
+PRES520 436 ti 61 res 160 floor 160 bind 401 rounds 401 vacant 401 until 456
+PRES520 437 ti 61 res 160 floor 160 bind 402 rounds 402 vacant 402 until 457
+PRES520 438 ti 61 res 160 floor 160 bind 403 rounds 403 vacant 403 until 458
+PRES520 439 ti 61 res 160 floor 160 bind 404 rounds 404 vacant 404 until 459
+PRES520 440 ti 71 res 160 floor 160 bind 405 rounds 405 vacant 405 until 460
+PRES520 441 ti 71 res 160 floor 160 bind 406 rounds 406 vacant 406 until 461
+FS EVICT 441 from (11, 20) to (17, 18)
+PRES520 442 ti 71 res 160 floor 160 bind 407 rounds 407 vacant 407 until 462
+PRES520 443 ti 71 res 160 floor 160 bind 408 rounds 408 vacant 408 until 463
+PRES520 444 ti 81 res 160 floor 160 bind 409 rounds 409 vacant 409 until 464
+PRES520 445 ti 81 res 160 floor 160 bind 410 rounds 410 vacant 410 until 465
+PRES520 446 ti 81 res 160 floor 160 bind 411 rounds 411 vacant 411 until 466
+PRES520 447 ti 81 res 160 floor 160 bind 412 rounds 412 vacant 412 until 467
+FS EVICT 447 from (13, 18) to (13, 24)
+PRES520 448 ti 91 res 160 floor 160 bind 413 rounds 413 vacant 413 until 468
+PRES520 449 ti 91 res 160 floor 160 bind 414 rounds 414 vacant 414 until 469
+PRES520 450 ti 91 res 160 floor 160 bind 415 rounds 415 vacant 415 until 470
+PRES520 451 ti 91 res 160 floor 160 bind 416 rounds 416 vacant 416 until 471
+FS EVICT 451 from (13, 20) to (7, 20)
+PRES520 452 ti 101 res 160 floor 160 bind 417 rounds 417 vacant 417 until 472
+PRES520 453 ti 101 res 160 floor 160 bind 418 rounds 418 vacant 418 until 473
+PRES520 454 ti 2 res 160 floor 160 bind 419 rounds 419 vacant 419 until 474
+PRES520 455 ti 2 res 160 floor 160 bind 420 rounds 420 vacant 420 until 475
+PRES520 456 ti 12 res 160 floor 160 bind 421 rounds 421 vacant 421 until 476
+PRES520 457 ti 12 res 160 floor 160 bind 422 rounds 422 vacant 422 until 477
+FS EVICT 457 from (11, 20) to (17, 18)
+PRES520 458 ti 12 res 160 floor 160 bind 423 rounds 423 vacant 423 until 478
+PRES520 459 ti 12 res 160 floor 160 bind 424 rounds 424 vacant 424 until 479
+PRES520 460 ti 22 res 160 floor 160 bind 425 rounds 425 vacant 425 until 480
+PRES520 461 ti 22 res 160 floor 160 bind 426 rounds 426 vacant 426 until 481
+PRES520 462 ti 22 res 160 floor 160 bind 427 rounds 427 vacant 427 until 482
+PRES520 463 ti 22 res 160 floor 160 bind 428 rounds 428 vacant 428 until 483
+FS EVICT 463 from (13, 18) to (13, 24)
+PRES520 464 ti 32 res 160 floor 160 bind 429 rounds 429 vacant 429 until 484
+PRES520 465 ti 32 res 160 floor 160 bind 430 rounds 430 vacant 430 until 485
+PRES520 466 ti 32 res 160 floor 160 bind 431 rounds 431 vacant 431 until 486
+PRES520 467 ti 32 res 160 floor 160 bind 432 rounds 432 vacant 432 until 487
+FS EVICT 467 from (13, 20) to (7, 20)
+PRES520 468 ti 42 res 160 floor 160 bind 433 rounds 433 vacant 433 until 488
+PRES520 469 ti 42 res 160 floor 160 bind 434 rounds 434 vacant 434 until 489
+PRES520 470 ti 42 res 160 floor 160 bind 435 rounds 435 vacant 435 until 490
+PRES520 471 ti 42 res 160 floor 160 bind 436 rounds 436 vacant 436 until 491
+PRES520 472 ti 52 res 160 floor 160 bind 437 rounds 437 vacant 437 until 492
+PRES520 473 ti 52 res 160 floor 160 bind 438 rounds 438 vacant 438 until 493
+FS EVICT 473 from (11, 20) to (17, 18)
+PRES520 474 ti 52 res 160 floor 160 bind 439 rounds 439 vacant 439 until 494
+PRES520 475 ti 52 res 160 floor 160 bind 440 rounds 440 vacant 440 until 495
+PRES520 476 ti 62 res 160 floor 160 bind 441 rounds 441 vacant 441 until 496
+PRES520 477 ti 62 res 160 floor 160 bind 442 rounds 442 vacant 442 until 497
+PRES520 478 ti 62 res 160 floor 160 bind 443 rounds 443 vacant 443 until 498
+PRES520 479 ti 62 res 160 floor 160 bind 444 rounds 444 vacant 444 until 499
+FS EVICT 479 from (13, 18) to (13, 24)
+PRES520 480 ti 72 res 160 floor 160 bind 445 rounds 445 vacant 445 until 500
+PRES520 481 ti 72 res 160 floor 160 bind 446 rounds 446 vacant 446 until 501
+PRES520 482 ti 72 res 160 floor 160 bind 447 rounds 447 vacant 447 until 502
+PRES520 483 ti 72 res 160 floor 160 bind 448 rounds 448 vacant 448 until 503
+FS EVICT 483 from (13, 20) to (7, 20)
+PRES520 484 ti 82 res 160 floor 160 bind 449 rounds 449 vacant 449 until 504
+PRES520 485 ti 82 res 160 floor 160 bind 450 rounds 450 vacant 450 until 505
+PRES520 486 ti 82 res 160 floor 160 bind 451 rounds 451 vacant 451 until 506
+PRES520 487 ti 82 res 160 floor 160 bind 452 rounds 452 vacant 452 until 507
+PRES520 488 ti 92 res 160 floor 160 bind 453 rounds 453 vacant 453 until 508
+PRES520 489 ti 92 res 160 floor 160 bind 454 rounds 454 vacant 454 until 509
+FS EVICT 489 from (11, 20) to (17, 18)
+PRES520 490 ti 92 res 160 floor 160 bind 455 rounds 455 vacant 455 until 510
+FS EVICT 490 from (13, 18) to (13, 24)
+PRES520 491 ti 92 res 160 floor 160 bind 456 rounds 456 vacant 456 until 511

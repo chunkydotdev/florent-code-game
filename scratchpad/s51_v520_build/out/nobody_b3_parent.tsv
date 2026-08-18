@@ -1,0 +1,37 @@
+tag	map	seed	seat	ours	cond	turn	arm	arrive	sent	kill	last	window	ge1	ge2	nobody	two_body_share	bought_sentinel	ge1_fp	ge2_fp	nobody_fp
+atoll_s7_A	atoll	7	A	OPP	Core destroyed	256	parent	11	-1	-1	255	245	49	0	0.8	0.0	0	81	3	0.6694
+atoll_s7_B	atoll	7	B	US	Titanium collected (tiebreak)	1000	parent	7	396	-1	999	389	85	0	0.7815	0.0	1	108	0	0.7224
+atoll_s8_A	atoll	8	A	US	Core destroyed	664	parent	7	188	663	663	181	39	0	0.7845	0.0	1	57	0	0.6851
+atoll_s8_B	atoll	8	B	US	Core destroyed	196	parent	7	98	195	195	91	82	26	0.0989	0.2857	1	91	41	0.0
+atoll_s9_A	atoll	9	A	US	Core destroyed	205	parent	6	72	204	204	66	47	0	0.2879	0.0	1	61	0	0.0758
+atoll_s9_B	atoll	9	B	OPP	Core destroyed	134	parent	6	54	-1	133	48	22	0	0.5417	0.0	1	29	3	0.3958
+drakkarfjord_s7_A	drakkarfjord	7	A	OPP	Core destroyed	662	parent	10	65	-1	661	55	33	0	0.4	0.0	1	51	0	0.0727
+drakkarfjord_s7_B	drakkarfjord	7	B	OPP	Core destroyed	966	parent	10	85	-1	965	75	39	0	0.48	0.0	1	62	0	0.1733
+drakkarfjord_s8_A	drakkarfjord	8	A	US	Core destroyed	152	parent	10	64	151	151	54	25	0	0.537	0.0	1	54	0	0.0
+drakkarfjord_s8_B	drakkarfjord	8	B	OPP	Core destroyed	329	parent	10	-1	-1	328	319	33	0	0.8966	0.0	0	55	0	0.8276
+drakkarfjord_s9_A	drakkarfjord	9	A	OPP	Core destroyed	376	parent	10	75	-1	375	65	36	0	0.4462	0.0	1	58	0	0.1077
+drakkarfjord_s9_B	drakkarfjord	9	B	US	Titanium collected (tiebreak)	1000	parent	10	91	-1	999	81	31	0	0.6173	0.0	1	40	0	0.5062
+glacierkeep_s7_A	glacierkeep	7	A	US	Core destroyed	157	parent	8	71	156	156	63	44	1	0.3016	0.0159	1	63	33	0.0
+glacierkeep_s7_B	glacierkeep	7	B	US	Core destroyed	217	parent	8	109	216	216	101	76	23	0.2475	0.2277	1	101	57	0.0
+glacierkeep_s8_A	glacierkeep	8	A	US	Core destroyed	228	parent	8	85	227	227	77	56	4	0.2727	0.0519	1	76	48	0.013
+glacierkeep_s8_B	glacierkeep	8	B	US	Core destroyed	149	parent	8	64	148	148	56	41	3	0.2679	0.0536	1	56	26	0.0
+glacierkeep_s9_A	glacierkeep	9	A	OPP	Core destroyed	816	parent	8	80	-1	815	72	47	3	0.3472	0.0417	1	71	42	0.0139
+glacierkeep_s9_B	glacierkeep	9	B	US	Core destroyed	217	parent	8	109	216	216	101	76	23	0.2475	0.2277	1	101	57	0.0
+midgard_s7_A	midgard	7	A	OPP	Core destroyed	371	parent	53	-1	-1	370	318	53	2	0.8333	0.0063	0	62	11	0.805
+midgard_s7_B	midgard	7	B	US	Core destroyed	168	parent	52	112	167	167	60	56	36	0.0667	0.6	1	60	48	0.0
+midgard_s8_A	midgard	8	A	US	Core destroyed	215	parent	57	159	214	214	102	101	89	0.0098	0.8725	1	102	96	0.0
+midgard_s8_B	midgard	8	B	OPP	Core destroyed	173	parent	53	-1	-1	172	120	119	109	0.0083	0.9083	0	120	116	0.0
+midgard_s9_A	midgard	9	A	US	Core destroyed	233	parent	55	144	232	232	89	89	81	0.0	0.9101	1	89	89	0.0
+midgard_s9_B	midgard	9	B	OPP	Core destroyed	165	parent	53	-1	-1	164	112	109	100	0.0268	0.8929	0	111	105	0.0089
+nordkap_s7_A	nordkap	7	A	US	Core destroyed	327	parent	4	253	326	326	249	41	3	0.8353	0.012	1	54	6	0.7831
+nordkap_s7_B	nordkap	7	B	US	Core destroyed	156	parent	4	60	155	155	56	41	0	0.2679	0.0	1	50	0	0.1071
+nordkap_s8_A	nordkap	8	A	US	Core destroyed	506	parent	4	416	505	505	412	165	60	0.5995	0.1456	1	253	79	0.3859
+nordkap_s8_B	nordkap	8	B	US	Core destroyed	152	parent	4	92	151	151	88	60	6	0.3182	0.0682	1	88	65	0.0
+nordkap_s9_A	nordkap	9	A	US	Core destroyed	153	parent	4	80	152	152	76	42	9	0.4474	0.1184	1	74	20	0.0263
+nordkap_s9_B	nordkap	9	B	OPP	Core destroyed	439	parent	4	189	-1	438	185	111	67	0.4	0.3622	1	130	82	0.2973
+yulerune_s7_A	yulerune	7	A	OPP	Core destroyed	141	parent	37	-1	-1	140	104	104	98	0.0	0.9423	0	104	104	0.0
+yulerune_s7_B	yulerune	7	B	US	Core destroyed	175	parent	29	133	174	174	104	101	88	0.0288	0.8462	1	104	98	0.0
+yulerune_s8_A	yulerune	8	A	OPP	Core destroyed	515	parent	31	-1	-1	514	484	482	470	0.0041	0.9711	0	484	477	0.0
+yulerune_s8_B	yulerune	8	B	US	Core destroyed	271	parent	31	210	270	270	179	173	165	0.0335	0.9218	1	179	176	0.0
+yulerune_s9_A	yulerune	9	A	OPP	Core destroyed	220	parent	29	-1	-1	219	191	98	73	0.4869	0.3822	0	101	90	0.4712
+yulerune_s9_B	yulerune	9	B	US	Core destroyed	297	parent	33	211	296	296	178	177	171	0.0056	0.9607	1	178	173	0.0

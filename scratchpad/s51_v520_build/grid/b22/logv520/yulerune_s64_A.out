@@ -1,0 +1,16 @@
+Running match: _v520pincer vs _v488beltbreak2
+  Map: yulerune.map26  Seed: 64  Replay: 
+scratchpad/s51_v520_build/grid/b22/repv520/yulerune_s64_A.replay26  TLE: 10ms
+Completed turn 0
+Completed turn 100
+Completed turn 200
+Replay written to 
+scratchpad/s51_v520_build/grid/b22/repv520/yulerune_s64_A.replay26
+
+  Winner: _v488beltbreak2  (Core destroyed, turn 205)
+
+                  _v520pincer    _v488beltbreak2  
+  Titanium     12 (260 mined)     11 (620 mined)  
+  Units                     8                  6  
+  Buildings                28                 38  
+

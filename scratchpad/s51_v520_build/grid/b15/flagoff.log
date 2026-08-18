@@ -1,0 +1,36 @@
+atoll_s43_A	atoll	43	A	OPP	_v488beltbreak2	Core destroyed	785	0	4070	6280
+atoll_s43_B	atoll	43	B	OPP	_v488beltbreak2	Core destroyed	353	0	1720	2240
+atoll_s44_A	atoll	44	A	US	flagoff	Core destroyed	552	0	2730	2720
+atoll_s44_B	atoll	44	B	OPP	_v488beltbreak2	Core destroyed	194	0	310	1250
+atoll_s45_A	atoll	45	A	US	flagoff	Core destroyed	568	0	2810	1530
+atoll_s45_B	atoll	45	B	OPP	_v488beltbreak2	Core destroyed	166	0	450	1700
+drakkarfjord_s43_A	drakkarfjord	43	A	OPP	_v488beltbreak2	Core destroyed	267	0	1800	3270
+drakkarfjord_s43_B	drakkarfjord	43	B	US	flagoff	Core destroyed	137	0	510	0
+drakkarfjord_s44_A	drakkarfjord	44	A	US	flagoff	Core destroyed	173	0	760	280
+drakkarfjord_s44_B	drakkarfjord	44	B	US	flagoff	Core destroyed	161	0	700	0
+drakkarfjord_s45_A	drakkarfjord	45	A	OPP	_v488beltbreak2	Core destroyed	649	0	5670	6720
+drakkarfjord_s45_B	drakkarfjord	45	B	US	flagoff	Titanium collected (tiebreak)	1000	0	2110	2080
+glacierkeep_s43_A	glacierkeep	43	A	US	flagoff	Core destroyed	146	0	300	0
+glacierkeep_s43_B	glacierkeep	43	B	US	flagoff	Core destroyed	709	0	150	0
+glacierkeep_s44_A	glacierkeep	44	A	US	flagoff	Core destroyed	629	0	2360	320
+glacierkeep_s44_B	glacierkeep	44	B	US	flagoff	Core destroyed	185	0	170	0
+glacierkeep_s45_A	glacierkeep	45	A	US	flagoff	Core destroyed	124	0	250	0
+glacierkeep_s45_B	glacierkeep	45	B	US	flagoff	Core destroyed	185	0	180	0
+midgard_s43_A	midgard	43	A	US	flagoff	Core destroyed	422	0	2120	690
+midgard_s43_B	midgard	43	B	OPP	_v488beltbreak2	Core destroyed	300	0	570	1850
+midgard_s44_A	midgard	44	A	US	flagoff	Core destroyed	381	0	610	700
+midgard_s44_B	midgard	44	B	US	flagoff	Core destroyed	259	0	1930	710
+midgard_s45_A	midgard	45	A	OPP	_v488beltbreak2	Core destroyed	598	0	690	3700
+midgard_s45_B	midgard	45	B	OPP	_v488beltbreak2	Core destroyed	561	0	830	1280
+nordkap_s43_A	nordkap	43	A	OPP	_v488beltbreak2	Core destroyed	175	0	120	2550
+nordkap_s43_B	nordkap	43	B	US	flagoff	Core destroyed	314	0	1660	30
+nordkap_s44_A	nordkap	44	A	US	flagoff	Core destroyed	377	0	160	20
+nordkap_s44_B	nordkap	44	B	US	flagoff	Core destroyed	215	0	500	70
+nordkap_s45_A	nordkap	45	A	US	flagoff	Harvesters (tiebreak)	1000	0	450	450
+nordkap_s45_B	nordkap	45	B	US	flagoff	Core destroyed	213	0	510	270
+yulerune_s43_A	yulerune	43	A	US	flagoff	Core destroyed	312	0	1480	500
+yulerune_s43_B	yulerune	43	B	OPP	_v488beltbreak2	Titanium collected (tiebreak)	1000	0	370	720
+yulerune_s44_A	yulerune	44	A	OPP	_v488beltbreak2	Core destroyed	720	0	480	4600
+yulerune_s44_B	yulerune	44	B	US	flagoff	Core destroyed	458	0	3610	460
+yulerune_s45_A	yulerune	45	A	US	flagoff	Core destroyed	561	0	460	770
+yulerune_s45_B	yulerune	45	B	OPP	_v488beltbreak2	Core destroyed	366	0	450	2080

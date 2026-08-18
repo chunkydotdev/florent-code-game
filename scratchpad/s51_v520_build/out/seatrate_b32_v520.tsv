@@ -1,0 +1,37 @@
+tag	map	seed	seat	ours	cond	turn	arm	n_seats	seats_sealed	first_seal	last_seal	closure_round	closure_cum_round	atring_rounds	atring2_rounds	two_body_share	seal_rate	sealed_by_bldg	sealed_by_body	seat_first_rounds	rounds	our_team	enemy_core
+atoll_s94_A	atoll	94	A	OPP	Core destroyed	262	v520	8	6	14	25	-1	-1	40	21	0.525	15.0	5	1	17,14,16,18,25,21	262	0	14,2
+atoll_s94_B	atoll	94	B	US	Core destroyed	441	v520	8	8	12	159	-1	159	378	21	0.0556	2.116	7	1	26,45,18,42,16,159,12,141	441	1	2,14
+atoll_s95_A	atoll	95	A	US	Core destroyed	208	v520	8	8	13	52	52	52	200	149	0.745	4.0	8	0	28,14,48,15,13,20,52,23	208	0	14,2
+atoll_s95_B	atoll	95	B	OPP	Core destroyed	176	v520	8	6	12	39	-1	-1	168	39	0.2321	3.571	5	1	22,39,15,36,12,20	176	1	2,14
+atoll_s96_A	atoll	96	A	US	Core destroyed	359	v520	8	6	11	217	-1	-1	351	176	0.5014	1.709	6	0	11,12,217,199,206,202	359	0	14,2
+atoll_s96_B	atoll	96	B	US	Core destroyed	342	v520	8	6	11	243	-1	-1	240	69	0.2875	2.5	5	1	11,26,19,24,14,243	342	1	2,14
+drakkarfjord_s94_A	drakkarfjord	94	A	OPP	Core destroyed	315	v520	8	8	14	33	-1	33	163	69	0.4233	4.908	6	2	14,15,24,27,26,28,29,33	315	0	26,4
+drakkarfjord_s94_B	drakkarfjord	94	B	US	Core destroyed	120	v520	8	8	14	29	47	29	108	106	0.9815	7.407	6	2	24,26,14,29,15,25,19,20	120	1	2,24
+drakkarfjord_s95_A	drakkarfjord	95	A	US	Core destroyed	88	v520	8	8	14	31	31	31	76	74	0.9737	10.526	7	1	15,14,25,18,27,22,30,31	88	0	26,4
+drakkarfjord_s95_B	drakkarfjord	95	B	US	Core destroyed	122	v520	8	8	14	31	31	31	110	108	0.9818	7.273	7	1	20,22,14,26,15,30,27,31	122	1	2,24
+drakkarfjord_s96_A	drakkarfjord	96	A	US	Core destroyed	214	v520	8	8	14	33	57	33	202	201	0.995	3.96	6	2	14,15,24,27,26,28,29,33	214	0	26,4
+drakkarfjord_s96_B	drakkarfjord	96	B	US	Titanium collected (tiebreak)	1000	v520	8	8	14	31	31	31	988	602	0.6093	0.81	7	1	20,22,14,26,15,30,27,31	1000	1	2,24
+glacierkeep_s94_A	glacierkeep	94	A	US	Core destroyed	111	v520	8	8	12	40	40	40	101	100	0.9901	7.921	6	2	28,22,13,13,14,12,40,15	111	0	14,26
+glacierkeep_s94_B	glacierkeep	94	B	OPP	Core destroyed	769	v520	8	8	12	21	-1	21	108	82	0.7593	7.407	5	3	14,13,13,17,12,21,15,16	769	1	14,2
+glacierkeep_s95_A	glacierkeep	95	A	US	Core destroyed	128	v520	8	8	12	28	46	28	118	86	0.7288	6.78	6	2	13,12,13,16,14,20,28,24	128	0	14,26
+glacierkeep_s95_B	glacierkeep	95	B	OPP	Titanium collected (tiebreak)	1000	v520	8	8	12	25	25	25	731	390	0.5335	1.094	6	2	14,13,13,17,12,25,16,23	1000	1	14,2
+glacierkeep_s96_A	glacierkeep	96	A	US	Core destroyed	129	v520	8	8	12	28	28	28	119	118	0.9916	6.723	6	2	13,12,13,16,14,20,28,23	129	0	14,26
+glacierkeep_s96_B	glacierkeep	96	B	US	Titanium collected (tiebreak)	1000	v520	8	8	12	21	-1	21	508	42	0.0827	1.575	5	3	14,13,13,17,12,21,15,16	1000	1	14,2
+midgard_s94_A	midgard	94	A	US	Core destroyed	413	v520	8	6	49	70	-1	-1	372	368	0.9892	1.613	6	0	49,57,70,63,67,61	413	0	26,26
+midgard_s94_B	midgard	94	B	OPP	Core destroyed	469	v520	8	6	51	78	-1	-1	426	422	0.9906	1.408	5	1	60,64,57,51,78,64	469	1	2,2
+midgard_s95_A	midgard	95	A	OPP	Core destroyed	437	v520	8	7	48	133	-1	-1	396	392	0.9899	1.768	5	2	48,120,55,133,62,74,67	437	0	26,26
+midgard_s95_B	midgard	95	B	OPP	Titanium collected (tiebreak)	1000	v520	8	5	54	66	-1	-1	956	898	0.9393	0.523	5	0	62,66,59,54,65	1000	1	2,2
+midgard_s96_A	midgard	96	A	OPP	Core destroyed	218	v520	8	5	49	78	-1	-1	88	58	0.6591	5.682	5	0	49,78,70,59,67	218	0	26,26
+midgard_s96_B	midgard	96	B	OPP	Titanium collected (tiebreak)	1000	v520	8	7	53	100	-1	-1	955	952	0.9969	0.733	6	1	60,58,57,53,72,100,83	1000	1	2,2
+nordkap_s94_A	nordkap	94	A	US	Core destroyed	157	v520	8	8	8	47	47	47	151	150	0.9934	5.298	6	2	9,8,9,12,10,35,47,32	157	0	9,18
+nordkap_s94_B	nordkap	94	B	US	Core destroyed	205	v520	8	8	8	64	64	64	199	198	0.995	4.02	6	2	11,10,18,14,11,64,8,9	205	1	9,6
+nordkap_s95_A	nordkap	95	A	US	Core destroyed	465	v520	8	8	9	158	172	158	459	458	0.9978	1.743	6	2	10,9,10,13,149,23,158,26	465	0	9,18
+nordkap_s95_B	nordkap	95	B	OPP	Core destroyed	223	v520	8	4	8	24	-1	-1	145	129	0.8897	2.759	2	2	24,20,8,9	223	1	9,6
+nordkap_s96_A	nordkap	96	A	US	Core destroyed	320	v520	8	8	8	56	56	56	314	313	0.9968	2.548	6	2	9,8,9,12,10,30,56,29	320	0	9,18
+nordkap_s96_B	nordkap	96	B	OPP	Core destroyed	174	v520	8	7	10	46	-1	-1	85	54	0.6353	8.235	5	2	10,11,46,12,20,33,37	174	1	9,6
+yulerune_s94_A	yulerune	94	A	US	Core destroyed	165	v520	8	6	33	44	-1	-1	139	137	0.9856	4.317	6	0	39,33,42,35,43,44	165	0	16,9
+yulerune_s94_B	yulerune	94	B	US	Core destroyed	629	v520	8	7	31	68	-1	-1	458	400	0.8734	1.528	6	1	31,37,31,40,68,36,33	629	1	2,9
+yulerune_s95_A	yulerune	95	A	US	Core destroyed	267	v520	8	7	31	57	-1	-1	242	242	1.0	2.893	6	1	38,57,32,31,40,34,42	267	0	16,9
+yulerune_s95_B	yulerune	95	B	OPP	Core destroyed	196	v520	8	6	34	69	-1	-1	53	33	0.6226	11.321	6	0	42,47,69,44,38,34	196	1	2,9
+yulerune_s96_A	yulerune	96	A	OPP	Core destroyed	191	v520	8	5	35	47	-1	-1	96	63	0.6562	5.208	5	0	35,41,37,40,47	191	0	16,9
+yulerune_s96_B	yulerune	96	B	OPP	Core destroyed	441	v520	8	7	30	62	-1	-1	418	146	0.3493	1.675	6	1	36,43,34,45,39,30,62	441	1	2,9

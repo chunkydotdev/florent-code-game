@@ -1,0 +1,37 @@
+tag	map	seed	seat	ours	cond	turn	arm	arrive	sent	kill	last	window	ge1	ge2	nobody	two_body_share	bought_sentinel	ge1_fp	ge2_fp	nobody_fp
+atoll_s76_A	atoll	76	A	OPP	Core destroyed	405	parent	9	-1	-1	404	396	98	1	0.7525	0.0025	0	211	1	0.4672
+atoll_s76_B	atoll	76	B	OPP	Core destroyed	131	parent	6	62	-1	130	56	48	16	0.1429	0.2857	1	56	33	0.0
+atoll_s77_A	atoll	77	A	US	Core destroyed	372	parent	7	60	371	371	53	32	3	0.3962	0.0566	1	53	5	0.0
+atoll_s77_B	atoll	77	B	US	Core destroyed	156	parent	6	62	155	155	56	30	3	0.4643	0.0536	1	49	5	0.125
+atoll_s78_A	atoll	78	A	US	Core destroyed	185	parent	11	66	184	184	55	36	0	0.3455	0.0	1	55	0	0.0
+atoll_s78_B	atoll	78	B	US	Core destroyed	329	parent	9	106	328	328	97	50	0	0.4845	0.0	1	97	2	0.0
+drakkarfjord_s76_A	drakkarfjord	76	A	OPP	Core destroyed	741	parent	10	-1	-1	740	731	51	1	0.9302	0.0014	0	85	5	0.8837
+drakkarfjord_s76_B	drakkarfjord	76	B	US	Titanium collected (tiebreak)	1000	parent	10	256	-1	999	246	121	24	0.5081	0.0976	1	131	31	0.4675
+drakkarfjord_s77_A	drakkarfjord	77	A	OPP	Core destroyed	413	parent	10	69	-1	412	59	29	0	0.5085	0.0	1	59	0	0.0
+drakkarfjord_s77_B	drakkarfjord	77	B	US	Titanium collected (tiebreak)	1000	parent	10	84	-1	999	74	43	0	0.4189	0.0	1	60	0	0.1892
+drakkarfjord_s78_A	drakkarfjord	78	A	US	Core destroyed	168	parent	10	112	167	167	102	51	0	0.5	0.0	1	79	0	0.2255
+drakkarfjord_s78_B	drakkarfjord	78	B	OPP	Core destroyed	504	parent	10	-1	-1	503	494	125	34	0.747	0.0688	0	145	69	0.7065
+glacierkeep_s76_A	glacierkeep	76	A	US	Core destroyed	125	parent	8	48	124	124	40	26	5	0.35	0.125	1	40	11	0.0
+glacierkeep_s76_B	glacierkeep	76	B	US	Core destroyed	185	parent	8	82	184	184	74	54	7	0.2703	0.0946	1	74	37	0.0
+glacierkeep_s77_A	glacierkeep	77	A	US	Core destroyed	364	parent	9	212	363	363	203	188	29	0.0739	0.1429	1	203	173	0.0
+glacierkeep_s77_B	glacierkeep	77	B	OPP	Core destroyed	783	parent	8	74	-1	782	66	53	10	0.197	0.1515	1	66	27	0.0
+glacierkeep_s78_A	glacierkeep	78	A	US	Core destroyed	201	parent	8	92	200	200	84	58	2	0.3095	0.0238	1	77	47	0.0833
+glacierkeep_s78_B	glacierkeep	78	B	US	Titanium collected (tiebreak)	1000	parent	8	76	-1	999	68	45	2	0.3382	0.0294	1	68	33	0.0
+midgard_s76_A	midgard	76	A	OPP	Titanium collected (tiebreak)	1000	parent	51	-1	-1	999	949	947	297	0.0021	0.313	0	949	300	0.0
+midgard_s76_B	midgard	76	B	OPP	Core destroyed	151	parent	54	120	-1	150	66	66	60	0.0	0.9091	1	66	66	0.0
+midgard_s77_A	midgard	77	A	OPP	Core destroyed	732	parent	49	244	-1	731	195	194	185	0.0051	0.9487	1	195	190	0.0
+midgard_s77_B	midgard	77	B	US	Core destroyed	533	parent	53	364	532	532	311	311	298	0.0	0.9582	1	311	309	0.0
+midgard_s78_A	midgard	78	A	US	Core destroyed	370	parent	57	296	369	369	239	239	80	0.0	0.3347	1	239	92	0.0
+midgard_s78_B	midgard	78	B	OPP	Core destroyed	168	parent	53	-1	-1	167	115	114	106	0.0087	0.9217	0	115	109	0.0
+nordkap_s76_A	nordkap	76	A	OPP	Core destroyed	227	parent	4	-1	-1	226	223	69	15	0.6906	0.0673	0	79	31	0.6457
+nordkap_s76_B	nordkap	76	B	US	Core destroyed	309	parent	4	108	308	308	104	74	27	0.2885	0.2596	1	95	36	0.0865
+nordkap_s77_A	nordkap	77	A	OPP	Core destroyed	218	parent	4	-1	-1	217	214	97	31	0.5467	0.1449	0	116	49	0.4579
+nordkap_s77_B	nordkap	77	B	OPP	Core destroyed	324	parent	4	-1	-1	323	320	141	102	0.5594	0.3187	0	153	115	0.5219
+nordkap_s78_A	nordkap	78	A	OPP	Core destroyed	893	parent	4	64	-1	892	60	55	20	0.0833	0.3333	1	60	42	0.0
+nordkap_s78_B	nordkap	78	B	US	Core destroyed	252	parent	4	100	251	251	96	66	10	0.3125	0.1042	1	96	58	0.0
+yulerune_s76_A	yulerune	76	A	US	Core destroyed	361	parent	29	180	360	360	151	148	141	0.0199	0.9338	1	151	145	0.0
+yulerune_s76_B	yulerune	76	B	OPP	Core destroyed	301	parent	36	-1	-1	300	265	119	48	0.5509	0.1811	0	121	51	0.5434
+yulerune_s77_A	yulerune	77	A	US	Core destroyed	244	parent	29	167	243	243	138	136	129	0.0145	0.9348	1	138	132	0.0
+yulerune_s77_B	yulerune	77	B	US	Core destroyed	188	parent	27	132	187	187	105	103	91	0.019	0.8667	1	105	95	0.0
+yulerune_s78_A	yulerune	78	A	US	Core destroyed	477	parent	28	324	476	476	296	293	278	0.0101	0.9392	1	296	285	0.0
+yulerune_s78_B	yulerune	78	B	US	Core destroyed	359	parent	29	233	358	358	204	203	188	0.0049	0.9216	1	204	199	0.0

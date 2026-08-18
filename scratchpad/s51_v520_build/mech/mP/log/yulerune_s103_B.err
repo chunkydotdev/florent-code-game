@@ -1,0 +1,15 @@
+Update available: 2.3.6 -> 2.3.8. Run: pip install --upgrade fcode
+FS GATE 0 sig (20, 20, (2, 9), (16, 9)) ok 1
+FS GATE 1 sig (20, 20, (2, 9), (16, 9)) ok 1
+FS GATE 2 sig (20, 20, (2, 9), (16, 9)) ok 1
+FS GATE 3 sig (20, 20, (2, 9), (16, 9)) ok 1
+FS GATE 4 sig (20, 20, (2, 9), (16, 9)) ok 1
+FS GATE 5 sig (20, 20, (2, 9), (16, 9)) ok 1
+FS GATE 8 sig (20, 20, (2, 9), (16, 9)) ok 1
+FS GATE 225 sig (20, 20, (2, 9), (16, 9)) ok 1
+FS GATE 234 sig (20, 20, (2, 9), (16, 9)) ok 1
+FS GATE 250 sig (20, 20, (2, 9), (16, 9)) ok 1
+FS GATE 266 sig (20, 20, (2, 9), (16, 9)) ok 1
+FS GATE 353 sig (20, 20, (2, 9), (16, 9)) ok 1
+FS GATE 370 sig (20, 20, (2, 9), (16, 9)) ok 1
+FS GATE 390 sig (20, 20, (2, 9), (16, 9)) ok 1

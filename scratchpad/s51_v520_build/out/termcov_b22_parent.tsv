@@ -1,0 +1,58 @@
+tag	map	seed	seat	ours	cond	turn	arm	game_rounds	game_jumps	eid	birth	pos	dsq_core	dsq_centre	n_seats	coverage	coverage_ferry	best_cov_site	lifetime	died	death_round	n_launch	n_launch_seat	ever_launched
+atoll_s64_A	atoll	64	A	OPP	Core destroyed	990	parent	990	32	20	5	13,5	5	8.5	8	1	1	2	78	1	83	20	3	1
+atoll_s64_A	atoll	64	A	OPP	Core destroyed	990	parent	990	32	1393	983	15,8	25	30.5	8	0	0	2	1	1	984	1	0	1
+atoll_s64_A	atoll	64	A	OPP	Core destroyed	990	parent	990	32	1404	987	15,5	4	6.5	8	2	2	2	3	0	-1	0	0	0
+atoll_s64_B	atoll	64	B	OPP	Core destroyed	304	parent	304	27	28	7	5,13	5	8.5	8	1	1	2	4	1	11	2	0	1
+atoll_s64_B	atoll	64	B	OPP	Core destroyed	304	parent	304	27	39	12	5,14	4	6.5	8	2	2	2	3	1	15	1	0	1
+atoll_s64_B	atoll	64	B	OPP	Core destroyed	304	parent	304	27	47	18	2,12	1	6.5	8	2	2	2	99	1	117	22	0	1
+atoll_s65_A	atoll	65	A	US	Core destroyed	158	parent	158	15	21	6	13,4	2	4.5	8	2	2	2	3	1	9	0	0	0
+atoll_s65_A	atoll	65	A	US	Core destroyed	158	parent	158	15	39	12	12,2	1	6.5	8	2	2	2	146	0	-1	13	0	1
+atoll_s65_B	atoll	65	B	US	Core destroyed	670	parent	670	8	572	419	7,10	25	40.5	8	0	0	2	1	1	420	1	0	1
+atoll_s65_B	atoll	65	B	US	Core destroyed	670	parent	670	8	679	518	8,12	26	36.5	8	0	0	2	1	1	519	1	0	1
+atoll_s66_A	atoll	66	A	US	Core destroyed	394	parent	394	12	22	6	13,4	2	4.5	8	2	2	2	5	1	11	2	0	1
+atoll_s66_A	atoll	66	A	US	Core destroyed	394	parent	394	12	41	12	13,4	2	4.5	8	2	2	2	3	1	15	0	0	0
+atoll_s66_A	atoll	66	A	US	Core destroyed	394	parent	394	12	50	16	12,3	1	6.5	8	2	2	2	378	0	-1	7	0	1
+drakkarfjord_s64_A	drakkarfjord	64	A	OPP	Core destroyed	188	parent	188	28	15	9	22,8	18	32.5	8	0	0	2	1	1	10	1	0	1
+drakkarfjord_s64_A	drakkarfjord	64	A	OPP	Core destroyed	188	parent	188	28	96	39	27,7	4	6.5	8	2	2	2	149	0	-1	23	1	1
+drakkarfjord_s64_B	drakkarfjord	64	B	OPP	Core destroyed	504	parent	504	5	15	9	7,21	20	32.5	8	0	0	2	1	1	10	1	0	1
+drakkarfjord_s65_A	drakkarfjord	65	A	OPP	Titanium collected (tiebreak)	1000	parent	1000	363	15	9	22,8	18	32.5	8	0	0	2	1	1	10	1	0	1
+drakkarfjord_s65_A	drakkarfjord	65	A	OPP	Titanium collected (tiebreak)	1000	parent	1000	363	657	208	24,4	1	6.5	8	2	2	2	84	1	292	1	1	1
+drakkarfjord_s65_A	drakkarfjord	65	A	OPP	Titanium collected (tiebreak)	1000	parent	1000	363	891	285	24,7	5	12.5	8	0	0	2	11	1	296	0	0	0
+drakkarfjord_s65_A	drakkarfjord	65	A	OPP	Titanium collected (tiebreak)	1000	parent	1000	363	1150	387	24,7	5	12.5	8	0	0	2	11	1	398	2	0	1
+drakkarfjord_s65_A	drakkarfjord	65	A	OPP	Titanium collected (tiebreak)	1000	parent	1000	363	1250	426	23,8	13	24.5	8	0	0	2	1	1	427	1	0	1
+drakkarfjord_s65_A	drakkarfjord	65	A	OPP	Titanium collected (tiebreak)	1000	parent	1000	363	1342	462	24,7	5	12.5	8	0	0	2	11	1	473	0	0	0
+drakkarfjord_s65_A	drakkarfjord	65	A	OPP	Titanium collected (tiebreak)	1000	parent	1000	363	1582	555	23,8	13	24.5	8	0	0	2	1	1	556	1	0	1
+drakkarfjord_s65_B	drakkarfjord	65	B	US	Core destroyed	129	parent	129	5	15	9	7,21	20	32.5	8	0	0	2	1	1	10	1	0	1
+drakkarfjord_s66_A	drakkarfjord	66	A	US	Titanium collected (tiebreak)	1000	parent	1000	381	15	9	22,8	18	32.5	8	0	0	2	1	1	10	1	0	1
+drakkarfjord_s66_A	drakkarfjord	66	A	US	Titanium collected (tiebreak)	1000	parent	1000	381	498	176	23,9	20	32.5	8	0	0	2	1	1	177	1	0	1
+drakkarfjord_s66_A	drakkarfjord	66	A	US	Titanium collected (tiebreak)	1000	parent	1000	381	728	247	23,9	20	32.5	8	0	0	2	1	1	248	1	0	1
+drakkarfjord_s66_A	drakkarfjord	66	A	US	Titanium collected (tiebreak)	1000	parent	1000	381	751	259	24,4	1	6.5	8	2	2	2	741	0	-1	84	41	1
+drakkarfjord_s66_B	drakkarfjord	66	B	US	Core destroyed	201	parent	201	5	15	9	7,21	20	32.5	8	0	0	2	1	1	10	1	0	1
+glacierkeep_s64_A	glacierkeep	64	A	US	Titanium collected (tiebreak)	1000	parent	1000	4	14	8	15,23	4	12.5	8	0	0	2	1	1	9	1	0	1
+glacierkeep_s64_B	glacierkeep	64	B	US	Core destroyed	517	parent	517	10	14	7	15,6	9	12.5	8	0	0	2	1	1	8	1	0	1
+glacierkeep_s64_B	glacierkeep	64	B	US	Core destroyed	517	parent	517	10	95	168	15,0	1	6.5	8	2	2	2	349	0	-1	6	3	1
+glacierkeep_s65_A	glacierkeep	65	A	US	Core destroyed	124	parent	124	4	14	7	16,23	5	14.5	8	0	0	2	1	1	8	1	0	1
+glacierkeep_s65_B	glacierkeep	65	B	US	Core destroyed	269	parent	269	24	14	7	16,6	10	14.5	8	0	0	2	1	1	8	1	0	1
+glacierkeep_s65_B	glacierkeep	65	B	US	Core destroyed	269	parent	269	24	81	148	15,0	1	6.5	8	2	2	2	121	0	-1	20	3	1
+glacierkeep_s66_A	glacierkeep	66	A	US	Core destroyed	133	parent	133	4	14	7	15,23	4	12.5	8	0	0	2	1	1	8	1	0	1
+glacierkeep_s66_B	glacierkeep	66	B	US	Core destroyed	201	parent	201	4	14	7	16,6	10	14.5	8	0	0	2	1	1	8	1	0	1
+nordkap_s64_A	nordkap	64	A	US	Core destroyed	441	parent	441	2	11	3	10,15	4	12.5	8	0	0	2	1	1	4	1	0	1
+nordkap_s64_A	nordkap	64	A	US	Core destroyed	441	parent	441	2	145	135	11,20	2	4.5	8	2	2	2	2	1	137	0	0	0
+nordkap_s64_A	nordkap	64	A	US	Core destroyed	441	parent	441	2	148	189	10,16	1	6.5	8	2	2	2	68	1	257	0	0	0
+nordkap_s64_A	nordkap	64	A	US	Core destroyed	441	parent	441	2	149	220	8,20	2	4.5	8	2	2	2	221	0	-1	0	0	0
+nordkap_s64_B	nordkap	64	B	OPP	Core destroyed	249	parent	249	2	11	3	10,10	9	12.5	8	0	0	2	1	1	4	1	0	1
+nordkap_s65_A	nordkap	65	A	US	Core destroyed	532	parent	532	76	11	3	10,15	4	12.5	8	0	0	2	1	1	4	1	0	1
+nordkap_s65_A	nordkap	65	A	US	Core destroyed	532	parent	532	76	25	8	10,21	4	6.5	8	2	2	2	6	1	14	1	0	1
+nordkap_s65_A	nordkap	65	A	US	Core destroyed	532	parent	532	76	101	83	12,17	5	8.5	8	1	1	2	449	0	-1	63	0	1
+nordkap_s65_A	nordkap	65	A	US	Core destroyed	532	parent	532	76	113	96	7,18	1	6.5	8	2	2	2	140	1	236	4	0	1
+nordkap_s65_A	nordkap	65	A	US	Core destroyed	532	parent	532	76	489	380	8,13	17	32.5	8	0	0	2	1	1	381	1	0	1
+nordkap_s65_A	nordkap	65	A	US	Core destroyed	532	parent	532	76	547	416	8,14	10	22.5	8	0	0	2	1	1	417	1	0	1
+nordkap_s65_B	nordkap	65	B	US	Core destroyed	415	parent	415	7	11	3	10,10	9	12.5	8	0	0	2	1	1	4	1	0	1
+nordkap_s65_B	nordkap	65	B	US	Core destroyed	415	parent	415	7	241	335	9,10	9	12.5	8	0	0	2	1	1	336	1	0	1
+nordkap_s65_B	nordkap	65	B	US	Core destroyed	415	parent	415	7	401	413	9,10	9	12.5	8	0	0	2	1	1	414	1	0	1
+nordkap_s66_A	nordkap	66	A	US	Core destroyed	639	parent	639	24	11	3	10,15	4	12.5	8	0	0	2	1	1	4	1	0	1
+nordkap_s66_A	nordkap	66	A	US	Core destroyed	639	parent	639	24	24	8	11,20	2	4.5	8	2	2	2	3	1	11	1	0	1
+nordkap_s66_A	nordkap	66	A	US	Core destroyed	639	parent	639	24	106	81	11,17	2	4.5	8	2	2	2	507	1	588	11	0	1
+nordkap_s66_A	nordkap	66	A	US	Core destroyed	639	parent	639	24	488	400	12,13	20	36.5	8	0	0	2	1	1	401	1	0	1
+nordkap_s66_B	nordkap	66	B	US	Core destroyed	383	parent	383	2	11	3	10,10	9	12.5	8	0	0	2	1	1	4	1	0	1
+nordkap_s66_B	nordkap	66	B	US	Core destroyed	383	parent	383	2	72	60	11,4	2	8.5	8	1	1	2	4	1	64	0	0	0

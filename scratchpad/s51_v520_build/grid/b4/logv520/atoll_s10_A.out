@@ -1,0 +1,21 @@
+Running match: _v520pincer vs _v488beltbreak2
+  Map: atoll.map26  Seed: 10  Replay: 
+scratchpad/s51_v520_build/grid/b4/repv520/atoll_s10_A.replay26  TLE: 10ms
+Completed turn 0
+Completed turn 100
+Completed turn 200
+Completed turn 300
+Completed turn 400
+Completed turn 500
+Completed turn 600
+Completed turn 700
+Completed turn 800
+Replay written to scratchpad/s51_v520_build/grid/b4/repv520/atoll_s10_A.replay26
+
+  Winner: _v488beltbreak2  (Core destroyed, turn 872)
+
+                   _v520pincer    _v488beltbreak2  
+  Titanium     60 (2290 mined)    32 (6710 mined)  
+  Units                     14                 37  
+  Buildings                 12                 25  
+

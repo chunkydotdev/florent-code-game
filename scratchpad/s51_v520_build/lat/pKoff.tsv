@@ -1,0 +1,49 @@
+tag	map	seed	seat	ours	winner	cond	turn	tracebacks	ours_mined	opp_mined
+atoll_s201_A	atoll	201	A	US	pKoff	Core destroyed	362	0	1040	1010
+atoll_s201_B	atoll	201	B	US	pKoff	Core destroyed	348	0	1700	840
+atoll_s202_A	atoll	202	A	US	pKoff	Core destroyed	249	0	1210	190
+atoll_s202_B	atoll	202	B	OPP	_v488beltbreak2	Core destroyed	136	0	260	510
+atoll_s203_A	atoll	203	A	OPP	_v488beltbreak2	Core destroyed	855	0	2760	4120
+atoll_s203_B	atoll	203	B	OPP	_v488beltbreak2	Core destroyed	465	0	2280	5930
+atoll_s204_A	atoll	204	A	OPP	_v488beltbreak2	Core destroyed	277	0	1230	2260
+atoll_s204_B	atoll	204	B	OPP	_v488beltbreak2	Core destroyed	925	0	4210	4590
+drakkarfjord_s201_A	drakkarfjord	201	A	US	pKoff	Core destroyed	171	0	1040	0
+drakkarfjord_s201_B	drakkarfjord	201	B	OPP	_v488beltbreak2	Core destroyed	288	0	480	2740
+drakkarfjord_s202_A	drakkarfjord	202	A	OPP	_v488beltbreak2	Core destroyed	206	0	330	1620
+drakkarfjord_s202_B	drakkarfjord	202	B	OPP	_v488beltbreak2	Titanium collected (tiebreak)	1000	0	8020	16700
+drakkarfjord_s203_A	drakkarfjord	203	A	OPP	_v488beltbreak2	Titanium collected (tiebreak)	1000	0	3420	6100
+drakkarfjord_s203_B	drakkarfjord	203	B	US	pKoff	Core destroyed	229	0	1730	0
+drakkarfjord_s204_A	drakkarfjord	204	A	US	pKoff	Core destroyed	200	0	1450	0
+drakkarfjord_s204_B	drakkarfjord	204	B	US	pKoff	Titanium collected (tiebreak)	1000	0	410	0
+glacierkeep_s201_A	glacierkeep	201	A	US	pKoff	Titanium collected (tiebreak)	1000	0	140	0
+glacierkeep_s201_B	glacierkeep	201	B	US	pKoff	Core destroyed	244	0	730	0
+glacierkeep_s202_A	glacierkeep	202	A	OPP	_v488beltbreak2	Core destroyed	601	0	160	0
+glacierkeep_s202_B	glacierkeep	202	B	US	pKoff	Core destroyed	240	0	1400	0
+glacierkeep_s203_A	glacierkeep	203	A	US	pKoff	Core destroyed	848	0	2060	1720
+glacierkeep_s203_B	glacierkeep	203	B	US	pKoff	Titanium collected (tiebreak)	1000	0	1230	0
+glacierkeep_s204_A	glacierkeep	204	A	US	pKoff	Core destroyed	216	0	480	0
+glacierkeep_s204_B	glacierkeep	204	B	US	pKoff	Core destroyed	685	0	2530	0
+midgard_s201_A	midgard	201	A	US	pKoff	Core destroyed	297	0	690	770
+midgard_s201_B	midgard	201	B	US	pKoff	Core destroyed	231	0	1500	630
+midgard_s202_A	midgard	202	A	US	pKoff	Core destroyed	174	0	1330	760
+midgard_s202_B	midgard	202	B	OPP	_v488beltbreak2	Core destroyed	225	0	780	840
+midgard_s203_A	midgard	203	A	US	pKoff	Core destroyed	422	0	2120	690
+midgard_s203_B	midgard	203	B	US	pKoff	Core destroyed	127	0	940	730
+midgard_s204_A	midgard	204	A	OPP	_v488beltbreak2	Core destroyed	634	0	700	1330
+midgard_s204_B	midgard	204	B	US	pKoff	Core destroyed	166	0	1180	690
+nordkap_s201_A	nordkap	201	A	OPP	_v488beltbreak2	Core destroyed	242	0	110	1570
+nordkap_s201_B	nordkap	201	B	US	pKoff	Core destroyed	451	0	5740	2920
+nordkap_s202_A	nordkap	202	A	OPP	_v488beltbreak2	Core destroyed	155	0	140	1040
+nordkap_s202_B	nordkap	202	B	US	pKoff	Core destroyed	445	0	760	1070
+nordkap_s203_A	nordkap	203	A	OPP	_v488beltbreak2	Core destroyed	248	0	140	3000
+nordkap_s203_B	nordkap	203	B	OPP	_v488beltbreak2	Core destroyed	148	0	130	1600
+nordkap_s204_A	nordkap	204	A	OPP	_v488beltbreak2	Core destroyed	365	0	130	3930
+nordkap_s204_B	nordkap	204	B	US	pKoff	Core destroyed	157	0	990	110
+yulerune_s201_A	yulerune	201	A	OPP	_v488beltbreak2	Core destroyed	184	0	490	1610
+yulerune_s201_B	yulerune	201	B	US	pKoff	Core destroyed	225	0	1580	370
+yulerune_s202_A	yulerune	202	A	US	pKoff	Core destroyed	340	0	1580	370
+yulerune_s202_B	yulerune	202	B	OPP	_v488beltbreak2	Core destroyed	254	0	330	1080
+yulerune_s203_A	yulerune	203	A	US	pKoff	Core destroyed	302	0	2690	500
+yulerune_s203_B	yulerune	203	B	OPP	_v488beltbreak2	Titanium collected (tiebreak)	1000	0	330	680
+yulerune_s204_A	yulerune	204	A	OPP	_v488beltbreak2	Core destroyed	729	0	1180	400
+yulerune_s204_B	yulerune	204	B	OPP	_v488beltbreak2	Core destroyed	281	0	400	2420

@@ -1,0 +1,36 @@
+atoll_s37_A	atoll	37	A	US	parent	Core destroyed	531	0	4740	2100
+atoll_s37_B	atoll	37	B	OPP	_v488beltbreak2	Core destroyed	128	0	280	970
+atoll_s38_A	atoll	38	A	US	parent	Core destroyed	162	0	650	740
+atoll_s38_B	atoll	38	B	OPP	_v488beltbreak2	Core destroyed	186	0	900	820
+atoll_s39_A	atoll	39	A	OPP	_v488beltbreak2	Core destroyed	322	0	850	3120
+atoll_s39_B	atoll	39	B	US	parent	Core destroyed	952	0	4720	2500
+drakkarfjord_s37_A	drakkarfjord	37	A	OPP	_v488beltbreak2	Core destroyed	276	0	430	850
+drakkarfjord_s37_B	drakkarfjord	37	B	US	parent	Core destroyed	141	0	490	0
+drakkarfjord_s38_A	drakkarfjord	38	A	OPP	_v488beltbreak2	Core destroyed	608	0	4320	7960
+drakkarfjord_s38_B	drakkarfjord	38	B	US	parent	Core destroyed	582	0	2160	150
+drakkarfjord_s39_A	drakkarfjord	39	A	OPP	_v488beltbreak2	Core destroyed	243	0	430	1790
+drakkarfjord_s39_B	drakkarfjord	39	B	US	parent	Core destroyed	129	0	360	0
+glacierkeep_s37_A	glacierkeep	37	A	US	parent	Core destroyed	413	0	170	0
+glacierkeep_s37_B	glacierkeep	37	B	US	parent	Core destroyed	189	0	170	0
+glacierkeep_s38_A	glacierkeep	38	A	US	parent	Core destroyed	473	0	290	0
+glacierkeep_s38_B	glacierkeep	38	B	OPP	_v488beltbreak2	Core destroyed	656	0	160	220
+glacierkeep_s39_A	glacierkeep	39	A	US	parent	Titanium collected (tiebreak)	1000	0	2360	0
+glacierkeep_s39_B	glacierkeep	39	B	US	parent	Core destroyed	157	0	170	0
+midgard_s37_A	midgard	37	A	US	parent	Core destroyed	193	0	1320	800
+midgard_s37_B	midgard	37	B	OPP	_v488beltbreak2	Core destroyed	213	0	740	920
+midgard_s38_A	midgard	38	A	OPP	_v488beltbreak2	Titanium collected (tiebreak)	1000	0	590	3100
+midgard_s38_B	midgard	38	B	OPP	_v488beltbreak2	Core destroyed	333	0	1100	720
+midgard_s39_A	midgard	39	A	US	parent	Core destroyed	485	0	750	710
+midgard_s39_B	midgard	39	B	US	parent	Core destroyed	241	0	2070	1050
+nordkap_s37_A	nordkap	37	A	OPP	_v488beltbreak2	Core destroyed	293	0	140	3330
+nordkap_s37_B	nordkap	37	B	US	parent	Core destroyed	348	0	880	390
+nordkap_s38_A	nordkap	38	A	OPP	_v488beltbreak2	Titanium collected (tiebreak)	1000	0	190	950
+nordkap_s38_B	nordkap	38	B	US	parent	Core destroyed	252	0	610	0
+nordkap_s39_A	nordkap	39	A	US	parent	Core destroyed	264	0	800	660
+nordkap_s39_B	nordkap	39	B	OPP	_v488beltbreak2	Core destroyed	149	0	350	1510
+yulerune_s37_A	yulerune	37	A	US	parent	Core destroyed	236	0	2560	270
+yulerune_s37_B	yulerune	37	B	OPP	_v488beltbreak2	Core destroyed	283	0	300	1980
+yulerune_s38_A	yulerune	38	A	US	parent	Core destroyed	347	0	1870	1090
+yulerune_s38_B	yulerune	38	B	OPP	_v488beltbreak2	Core destroyed	188	0	360	780
+yulerune_s39_A	yulerune	39	A	OPP	_v488beltbreak2	Core destroyed	425	0	1040	470
+yulerune_s39_B	yulerune	39	B	US	parent	Core destroyed	199	0	2000	230

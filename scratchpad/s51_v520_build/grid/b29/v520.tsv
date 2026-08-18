@@ -1,0 +1,37 @@
+tag	map	seed	seat	ours	winner	cond	turn	tracebacks	ours_mined	opp_mined
+atoll_s85_A	atoll	85	A	US	_v520pincer	Core destroyed	429	0	2160	430
+atoll_s85_B	atoll	85	B	US	_v520pincer	Core destroyed	556	0	4080	1430
+atoll_s86_A	atoll	86	A	US	_v520pincer	Core destroyed	300	0	2300	1050
+atoll_s86_B	atoll	86	B	OPP	_v488beltbreak2	Core destroyed	528	0	1720	2350
+atoll_s87_A	atoll	87	A	US	_v520pincer	Core destroyed	364	0	3030	220
+atoll_s87_B	atoll	87	B	OPP	_v488beltbreak2	Core destroyed	285	0	1360	2650
+drakkarfjord_s85_A	drakkarfjord	85	A	US	_v520pincer	Core destroyed	92	0	330	0
+drakkarfjord_s85_B	drakkarfjord	85	B	US	_v520pincer	Titanium collected (tiebreak)	1000	0	330	0
+drakkarfjord_s86_A	drakkarfjord	86	A	OPP	_v488beltbreak2	Core destroyed	444	0	480	3660
+drakkarfjord_s86_B	drakkarfjord	86	B	US	_v520pincer	Core destroyed	114	0	340	0
+drakkarfjord_s87_A	drakkarfjord	87	A	US	_v520pincer	Core destroyed	116	0	360	90
+drakkarfjord_s87_B	drakkarfjord	87	B	US	_v520pincer	Core destroyed	98	0	320	0
+glacierkeep_s85_A	glacierkeep	85	A	US	_v520pincer	Core destroyed	146	0	310	0
+glacierkeep_s85_B	glacierkeep	85	B	OPP	_v488beltbreak2	Core destroyed	821	0	320	1130
+glacierkeep_s86_A	glacierkeep	86	A	US	_v520pincer	Core destroyed	145	0	440	0
+glacierkeep_s86_B	glacierkeep	86	B	OPP	_v488beltbreak2	Core destroyed	578	0	0	1120
+glacierkeep_s87_A	glacierkeep	87	A	US	_v520pincer	Core destroyed	162	0	350	130
+glacierkeep_s87_B	glacierkeep	87	B	OPP	_v488beltbreak2	Titanium collected (tiebreak)	1000	0	290	980
+midgard_s85_A	midgard	85	A	US	_v520pincer	Core destroyed	241	0	2370	580
+midgard_s85_B	midgard	85	B	US	_v520pincer	Core destroyed	192	0	1470	780
+midgard_s86_A	midgard	86	A	US	_v520pincer	Titanium collected (tiebreak)	1000	0	710	610
+midgard_s86_B	midgard	86	B	US	_v520pincer	Core destroyed	804	0	2620	770
+midgard_s87_A	midgard	87	A	OPP	_v488beltbreak2	Core destroyed	215	0	680	1610
+midgard_s87_B	midgard	87	B	OPP	_v488beltbreak2	Core destroyed	220	0	590	1190
+nordkap_s85_A	nordkap	85	A	US	_v520pincer	Core destroyed	862	0	7040	1080
+nordkap_s85_B	nordkap	85	B	OPP	_v488beltbreak2	Core destroyed	321	0	90	100
+nordkap_s86_A	nordkap	86	A	US	_v520pincer	Core destroyed	177	0	110	0
+nordkap_s86_B	nordkap	86	B	OPP	_v488beltbreak2	Core destroyed	232	0	350	2310
+nordkap_s87_A	nordkap	87	A	US	_v520pincer	Core destroyed	239	0	630	60
+nordkap_s87_B	nordkap	87	B	US	_v520pincer	Core destroyed	153	0	360	120
+yulerune_s85_A	yulerune	85	A	US	_v520pincer	Core destroyed	231	0	1640	260
+yulerune_s85_B	yulerune	85	B	OPP	_v488beltbreak2	Titanium collected (tiebreak)	1000	0	490	780
+yulerune_s86_A	yulerune	86	A	US	_v520pincer	Core destroyed	357	0	370	330
+yulerune_s86_B	yulerune	86	B	OPP	_v488beltbreak2	Core destroyed	275	0	370	710
+yulerune_s87_A	yulerune	87	A	US	_v520pincer	Core destroyed	309	0	1150	450
+yulerune_s87_B	yulerune	87	B	US	_v520pincer	Core destroyed	585	0	290	960

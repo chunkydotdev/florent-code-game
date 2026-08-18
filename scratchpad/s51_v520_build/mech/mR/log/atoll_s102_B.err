@@ -1,0 +1,142 @@
+Update available: 2.3.6 -> 2.3.8. Run: pip install --upgrade fcode
+FS GATE 0 sig (18, 18, (2, 14), (14, 2)) ok 1
+FS GATE 1 sig (18, 18, (2, 14), (14, 2)) ok 1
+FS PHASE 1 id 4 ph 1 d 200 at (13, 4)
+GF519 1 id 4 d 200 band 0 ti 434 ammo 0 gun 28 lau 28 bar 4 cd 0 lp 0 plants 0
+GF519 2 id 4 d 200 band 0 ti 392 ammo 0 gun 32 lau 32 bar 4 cd 0 lp 0 plants 0
+FS GATE 2 sig (18, 18, (2, 14), (14, 2)) ok 1
+GF519 3 id 4 d 200 band 0 ti 311 ammo 0 gun 37 lau 37 bar 5 cd 0 lp 0 plants 0
+FS GATE 3 sig (18, 18, (2, 14), (14, 2)) ok 1
+GF519 4 id 4 d 200 band 0 ti 311 ammo 0 gun 37 lau 37 bar 5 cd 0 lp 0 plants 0
+FS GATE 4 sig (18, 18, (2, 14), (14, 2)) ok 1
+APPT520 CLAIM 4 id 11
+FS PHASE 4 id 11 ph 1 d 221 at (13, 3)
+GF519 4 id 11 d 221 band 0 ti 311 ammo 0 gun 37 lau 37 bar 5 cd 0 lp 0 plants 0
+GF519 5 id 4 d 200 band 0 ti 311 ammo 0 gun 37 lau 37 bar 5 cd 0 lp 0 plants 0
+FS HOPBUILD 5 at (13, 4) lch (13, 5) T (1, 16)
+GF519 5 id 11 d 202 band 0 ti 274 ammo 0 gun 39 lau 39 bar 5 cd 0 lp 0 plants 0
+GF519 6 id 4 d 200 band 0 ti 284 ammo 0 gun 39 lau 39 bar 5 cd 0 lp 1 plants 0
+GF519 6 id 11 d 181 band 0 ti 284 ammo 0 gun 39 lau 39 bar 5 cd 0 lp 1 plants 0
+FS GATE 6 sig (18, 18, (2, 14), (14, 2)) ok 1
+FS THROW 6 from (13, 4) to (9, 8) T (1, 16) body 4 n 1 dsq 72
+GF519 7 id 4 d 72 band 1 ti 284 ammo 0 gun 39 lau 39 bar 5 cd 0 lp 0 plants 0
+FS HOPBUILD 7 at (9, 8) lch (9, 9) T (1, 16)
+GF519 7 id 11 d 162 band 0 ti 245 ammo 0 gun 41 lau 41 bar 6 cd 0 lp 1 plants 0
+FS THROW 7 from (12, 6) to (10, 9) T (1, 16) body 11 n 2 dsq 74
+GF519 8 id 4 d 72 band 1 ti 255 ammo 0 gun 39 lau 39 bar 5 cd 0 lp 1 plants 0
+GF519 8 id 11 d 74 band 1 ti 216 ammo 0 gun 40 lau 40 bar 6 cd 0 lp 1 plants 0
+FS GATE 8 sig (18, 18, (2, 14), (14, 2)) ok 1
+FS THROW 8 from (8, 8) to (6, 13) T (1, 16) body 4 n 1 dsq 10
+GF519 9 id 4 d 10 band 1 ti 200 ammo 16 gun 40 lau 40 bar 6 cd 0 lp 0 plants 0
+TERM520 9 id 4 at (6, 13) n 2 pick (5, 13) arcs 2 cov 1 covbest 1 conflict 0 dsq 5
+FS HOPBUILD 9 at (6, 13) lch (5, 13) T (1, 16)
+GF519 9 id 11 d 65 band 1 ti 154 ammo 16 gun 42 lau 42 bar 6 cd 0 lp 1 plants 0
+FS THROW 9 from (9, 10) to (5, 12) T (1, 16) body 11 n 2 dsq 8
+GF519 10 id 4 d 10 band 1 ti 164 ammo 16 gun 40 lau 40 bar 6 cd 0 lp 1 plants 0
+GF519 PLANT 10 id 4 d 10 ti 124
+FS ARRIVE 10 id 11 body 2 at (5, 12) dsq 8
+ARC520 CLAIM 10 id 11 body 2 arc 1 at (5, 12)
+FS PHASE 10 id 11 ph 2 d 8 at (5, 12)
+FS GATE 10 sig (18, 18, (2, 14), (14, 2)) ok 1
+SPLIT520 10 lch (5, 13) body 4 arc 2 to (1, 14) dsq 1 walk 0 n 1
+FS SPLIT 10 arc 2 to (1, 14) body 4 walk 0
+FS ARRIVE 11 id 4 body 1 at (1, 14) dsq 1
+ARC520 CLAIM 11 id 4 body 1 arc 2 at (1, 14)
+FS PHASE 11 id 4 ph 2 d 1 at (1, 14)
+FS SEAL 11 tile (1, 13) n 1
+FS EVICT 11 from (4, 13) to (10, 12)
+FS CLEAR 12 tile (1, 15) peck 1
+FS RUNG 12 id 4 r 3 hi -
+FS SEAL 12 tile (3, 13) n 1
+FS EVICT 12 from (5, 12) to (10, 12)
+FS CLEAR 13 tile (1, 15) peck 2
+FS RUNG 13 id 4 r 3 hi -
+FS CLEAR 14 tile (1, 15) peck 3
+FS RUNG 14 id 4 r 3 hi -
+FS SEAL 14 tile (2, 13) n 2
+FS CLEAR 15 tile (1, 15) peck 4
+FS RUNG 15 id 4 r 3 hi -
+FS CLEAR 16 tile (1, 15) peck 5
+FS RUNG 16 id 4 r 3 hi -
+FS EVICT 16 from (6, 12) to (0, 12)
+FS CLEAR 17 tile (1, 15) peck 6
+FS RUNG 17 id 4 r 3 hi -
+FS GATE 17 sig (18, 18, (2, 14), (14, 2)) ok 1
+FS CLEAR 18 tile (1, 15) peck 7
+FS RUNG 18 id 4 r 3 hi -
+FS CLEAR 18 tile (4, 14) peck 1
+FS RUNG 18 id 11 r 3 hi -
+FS EVICT 18 from (6, 14) to (5, 8)
+FS CLEAR 19 tile (1, 15) peck 8
+FS RUNG 19 id 4 r 3 hi -
+FS CLEAR 19 tile (4, 14) peck 2
+FS RUNG 19 id 11 r 3 hi -
+FS STAT 20 id 4 at (1, 14) need 5 orth 4 ti 72 ammo 16 sen 0 hp 40 covden 9 eco 1 lost 0
+FS STAT 20 id 11 at (4, 13) need 6 orth 5 ti 72 ammo 16 sen 0 hp 40 covden 9 eco 1 lost 0
+FS CLEAR 20 tile (4, 14) peck 3
+FS RUNG 20 id 11 r 3 hi -
+FS EVICT 20 from (4, 12) to (10, 12)
+FS SEAL 21 tile (1, 14) n 2
+FS CLEAR 21 tile (4, 14) peck 4
+FS RUNG 21 id 11 r 3 hi -
+FS CLEAR 22 tile (4, 14) peck 5
+FS RUNG 22 id 11 r 3 hi -
+FS CLEAR 23 tile (4, 14) peck 6
+FS RUNG 23 id 11 r 3 hi -
+FS CLEAR 24 tile (4, 14) peck 7
+FS RUNG 24 id 11 r 3 hi -
+FS CLEAR 25 tile (4, 14) peck 8
+FS RUNG 25 id 11 r 3 hi -
+FS DODGE 26 id 11 from (4, 13) to (4, 12) cov 1 -> 0 hit 0 hp 40
+SPLIT520 28 lch (5, 13) body 11 arc 1 to (2, 12) dsq 4 walk 1 n 2
+FS SPLIT 28 arc 1 to (2, 12) body 11 walk 1
+FS DODGE 31 id 4 from (4, 13) to (4, 12) cov 1 -> 0 hit 0 hp 40
+FS DODGE 34 id 4 from (5, 13) to (6, 13) cov 1 -> 0 hit 0 hp 22
+FS DODGE 35 id 11 from (5, 13) to (6, 13) cov 1 -> 0 hit 0 hp 40
+FS DODGE 36 id 4 from (6, 14) to (6, 15) cov 1 -> 0 hit 0 hp 22
+FS DODGE 37 id 11 from (6, 14) to (6, 15) cov 1 -> 0 hit 0 hp 40
+FS SEAL 38 tile (4, 15) n 3
+FS STAT 40 id 4 at (5, 14) need 4 orth 4 ti 57 ammo 24 sen 0 hp 4 covden 13 eco 1 lost 0
+FS DODGE 40 id 4 from (5, 14) to (5, 15) cov 1 -> 0 hit 0 hp 4
+FS STAT 40 id 11 at (6, 17) need 8 orth 7 ti 57 ammo 24 sen 0 hp 40 covden 17 eco 1 lost 0
+FS EVICTOR 42 at (3, 17) ucov 1 cov 3 unseal 3 obs 10
+FS RUNG 42 id 11 r 2 hi -
+FS DODGE 43 id 4 from (6, 14) to (6, 15) cov 1 -> 0 hit 0 hp 4
+FS GATE 43 sig (18, 18, (2, 14), (14, 2)) ok 1
+FS CLEAR 45 tile (3, 16) peck 1
+FS RUNG 45 id 11 r 3 hi -
+FS CLEAR 46 tile (3, 16) peck 2
+FS RUNG 46 id 11 r 3 hi -
+FS CLEAR 47 tile (3, 16) peck 3
+FS RUNG 47 id 11 r 3 hi -
+FS CLEAR 48 tile (3, 16) peck 4
+FS RUNG 48 id 11 r 3 hi -
+FS CLEAR 49 tile (3, 16) peck 5
+FS RUNG 49 id 11 r 3 hi -
+FS CLEAR 50 tile (3, 16) peck 6
+FS RUNG 50 id 11 r 3 hi -
+FS EVICT 50 from (4, 17) to (8, 17)
+FS PROMOTE 51 id 11
+FS CLEAR 51 tile (3, 16) peck 7
+FS RUNG 51 id 11 r 3 hi -
+FS CLEAR 52 tile (3, 16) peck 8
+FS RUNG 52 id 11 r 3 hi -
+FS SEAL 54 tile (2, 16) n 3
+FS EVICT 54 from (4, 17) to (8, 17)
+FS CLEAR 56 tile (3, 16) peck 1
+FS RUNG 56 id 11 r 3 hi -
+FS CLEAR 57 tile (3, 16) peck 2
+FS RUNG 57 id 11 r 3 hi -
+FS CLEARED 58 tile (3, 16) n 1
+FS SEAL 58 tile (3, 16) n 4
+FS SEALCLR 58 tile (3, 16) lag 0
+FS EVICT 58 from (4, 17) to (8, 17)
+FS STAT 60 id 11 at (4, 17) need 5 orth 4 ti 26 ammo 24 sen 0 hp 40 covden 32 eco 1 lost 0
+FS DODGE 62 id 11 from (4, 17) to (4, 16) cov 1 -> 0 hit 0 hp 40
+FS DODGE 64 id 11 from (4, 17) to (4, 16) cov 1 -> 0 hit 0 hp 33
+FS DODGE 66 id 11 from (4, 17) to (4, 16) cov 1 -> 0 hit 0 hp 26
+FS DODGE 68 id 11 from (4, 17) to (4, 16) cov 1 -> 0 hit 0 hp 19
+FS DODGE 70 id 11 from (4, 17) to (4, 16) cov 1 -> 0 hit 0 hp 12
+FS DODGE 72 id 11 from (4, 17) to (4, 16) cov 1 -> 0 hit 0 hp 5
+FS RETREAT 73 id 11 hp 5 from (4, 16) to (4, 17)
+FS STAT 80 id 11 at (2, 17) need 5 orth 4 ti 14 ammo 24 sen 0 hp 5 covden 32 eco 1 lost 0

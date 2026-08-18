@@ -1,0 +1,127 @@
+Update available: 2.3.6 -> 2.3.8. Run: pip install --upgrade fcode
+FS GATE 0 sig (30, 30, (14, 2), (14, 26)) ok 1
+FS GATE 1 sig (30, 30, (14, 2), (14, 26)) ok 1
+FS PHASE 1 id 3 ph 1 d 484 at (14, 4)
+FS HOPBUILD 1 at (14, 4) lch (14, 5) T (16, 28)
+FS GATE 2 sig (30, 30, (14, 2), (14, 26)) ok 1
+FS GATE 2 sig (30, 30, (14, 2), (14, 26)) ok 1
+FS THROW 2 from (15, 4) to (15, 10) T (16, 28) body 3 n 1 dsq 256
+FS HOPBUILD 3 at (15, 10) lch (15, 11) T (16, 28)
+FS GATE 3 sig (30, 30, (14, 2), (14, 26)) ok 1
+FS GATE 4 sig (30, 30, (14, 2), (14, 26)) ok 1
+FS THROW 4 from (16, 10) to (16, 16) T (16, 28) body 3 n 1 dsq 101
+FS HOPBUILD 5 at (16, 16) lch (16, 17) T (16, 28)
+FS GATE 6 sig (30, 30, (14, 2), (14, 26)) ok 1
+FS THROW 6 from (16, 16) to (16, 22) T (16, 28) body 3 n 1 dsq 17
+FS HOPBUILD 7 at (16, 22) lch (16, 23) T (16, 28)
+FS GATE 8 sig (30, 30, (14, 2), (14, 26)) ok 1
+FS THROW 8 from (16, 22) to (16, 28) T (16, 28) body 3 n 1 dsq 2
+FS ARRIVE 9 id 3 body 1 at (16, 28) dsq 2
+FS PHASE 9 id 3 ph 2 d 2 at (16, 28)
+FS SEAL 9 tile (16, 27) n 1
+FS SEAL 10 tile (15, 28) n 2
+FS DODGE 11 id 3 from (16, 28) to (17, 28) cov 1 -> 0 hit 0 hp 40
+FS GATE 11 sig (30, 30, (14, 2), (14, 26)) ok 1
+FS GATE 12 sig (30, 30, (14, 2), (14, 26)) ok 1
+FS GATE 13 sig (30, 30, (14, 2), (14, 26)) ok 1
+FS SEAL 14 tile (16, 26) n 3
+FS SEAL 17 tile (15, 25) n 4
+FS DODGE 18 id 3 from (16, 25) to (17, 25) cov 1 -> 0 hit 0 hp 40
+FS STAT 20 id 3 at (16, 25) need 5 orth 4 ti 64 ammo 0 sen 0 hp 40 covden 0 eco 0 lost 0
+FS DODGE 20 id 3 from (16, 25) to (17, 25) cov 1 -> 0 hit 0 hp 40
+FS SEAL 22 tile (16, 26) n 5
+FS DODGE 26 id 3 from (16, 24) to (15, 24) cov 1 -> 0 hit 0 hp 40
+FS SEAL 28 tile (14, 25) n 6
+FS CLEAR 35 tile (13, 25) peck 1
+FS RUNG 35 id 3 r 3 hi -
+FS CLEAR 36 tile (13, 25) peck 2
+FS RUNG 36 id 3 r 3 hi -
+FS STAT 40 id 3 at (13, 24) need 4 orth 3 ti 12 ammo 24 sen 0 hp 40 covden 0 eco 0 lost 0
+FS CLEAR 47 tile (13, 25) peck 1
+FS RUNG 47 id 3 r 3 hi -
+FS CLEAR 48 tile (13, 25) peck 2
+FS RUNG 48 id 3 r 3 hi -
+FS CLEAR 52 tile (13, 25) peck 1
+FS RUNG 52 id 3 r 3 hi -
+FS CLEAR 53 tile (13, 25) peck 2
+FS RUNG 53 id 3 r 3 hi -
+FS CLEAR 54 tile (13, 25) peck 3
+FS RUNG 54 id 3 r 3 hi -
+FS CLEAR 55 tile (13, 25) peck 4
+FS RUNG 55 id 3 r 3 hi -
+FS CLEAR 56 tile (13, 25) peck 5
+FS RUNG 56 id 3 r 3 hi -
+FS CLEAR 57 tile (13, 25) peck 6
+FS RUNG 57 id 3 r 3 hi -
+FS CLEAR 58 tile (13, 25) peck 7
+FS RUNG 58 id 3 r 3 hi -
+FS CLEAR 59 tile (13, 25) peck 8
+FS RUNG 59 id 3 r 3 hi -
+PRESKILL520 60 id 3 body 1
+FS GATE 345 sig (30, 30, (14, 2), (14, 26)) ok 1
+FS PHASE 345 id 282 ph 1 d 485 at (13, 4)
+FS HOPBUILD 348 at (13, 7) lch (13, 8) T (16, 28)
+FS GATE 349 sig (30, 30, (14, 2), (14, 26)) ok 1
+FS THROW 349 from (14, 7) to (13, 13) T (16, 28) body 282 n 1 dsq 170
+FS ARRIVE 364 id 282 body 1 at (14, 24) dsq 4
+FS PHASE 364 id 282 ph 2 d 4 at (14, 24)
+FS CLEAR 365 tile (13, 25) peck 1
+FS RUNG 365 id 282 r 3 hi -
+FS CLEAR 366 tile (13, 25) peck 2
+FS RUNG 366 id 282 r 3 hi -
+FS CLEAR 367 tile (13, 25) peck 3
+FS RUNG 367 id 282 r 3 hi -
+FS CLEAR 368 tile (13, 25) peck 4
+FS RUNG 368 id 282 r 3 hi -
+FS CLEAR 369 tile (13, 25) peck 5
+FS RUNG 369 id 282 r 3 hi -
+FS CLEAR 370 tile (13, 25) peck 6
+FS RUNG 370 id 282 r 3 hi -
+FS CLEAR 371 tile (13, 25) peck 7
+FS RUNG 371 id 282 r 3 hi -
+FS CLEAR 372 tile (13, 25) peck 8
+FS RUNG 372 id 282 r 3 hi -
+FS CLEARED 373 tile (13, 25) n 1
+FS SEAL 373 tile (13, 25) n 1
+FS SEALCLR 373 tile (13, 25) lag 0
+FS SEAL 378 tile (13, 25) n 2
+FS STAT 380 id 282 at (14, 24) need 2 orth 2 ti 47 ammo 1 sen 0 hp 40 covden 0 eco 1 lost 0
+FS SEAL 383 tile (13, 25) n 3
+FS SEAL 388 tile (13, 25) n 4
+FS SEAL 393 tile (13, 25) n 5
+FS SEAL 398 tile (13, 25) n 6
+FS STAT 400 id 282 at (14, 24) need 2 orth 2 ti 49 ammo 1 sen 0 hp 40 covden 0 eco 1 lost 0
+FS SEAL 403 tile (13, 25) n 7
+FS SEAL 408 tile (13, 25) n 8
+FS SEAL 413 tile (13, 25) n 9
+FS SEAL 418 tile (13, 25) n 10
+FS STAT 420 id 282 at (14, 24) need 2 orth 2 ti 49 ammo 15 sen 0 hp 40 covden 0 eco 1 lost 0
+FS SEAL 423 tile (13, 25) n 11
+FS SEAL 428 tile (13, 25) n 12
+FS SEAL 433 tile (13, 25) n 13
+FS SEAL 438 tile (13, 25) n 14
+FS STAT 440 id 282 at (14, 24) need 2 orth 2 ti 63 ammo 15 sen 0 hp 40 covden 0 eco 1 lost 0
+FS SEAL 443 tile (13, 25) n 15
+FS SEAL 448 tile (13, 25) n 16
+FS SEAL 453 tile (13, 25) n 17
+FS SEAL 458 tile (13, 25) n 18
+FS STAT 460 id 282 at (14, 24) need 2 orth 2 ti 77 ammo 15 sen 0 hp 40 covden 0 eco 1 lost 0
+FS SEAL 463 tile (13, 25) n 19
+FS SEAL 468 tile (13, 25) n 20
+FS SEAL 473 tile (13, 25) n 21
+FS SEAL 478 tile (13, 25) n 22
+FS STAT 480 id 282 at (14, 24) need 2 orth 2 ti 91 ammo 15 sen 0 hp 40 covden 0 eco 1 lost 0
+FS SEAL 483 tile (13, 25) n 23
+FS SEAL 488 tile (13, 25) n 24
+FS SEAL 493 tile (13, 25) n 25
+FS SEAL 498 tile (13, 25) n 26
+FS STAT 500 id 282 at (14, 24) need 2 orth 2 ti 105 ammo 15 sen 0 hp 40 covden 0 eco 1 lost 0
+FS SEAL 503 tile (13, 25) n 27
+FS SEAL 508 tile (13, 25) n 28
+FS SEAL 513 tile (13, 25) n 29
+FS SEAL 518 tile (13, 25) n 30
+FS STAT 520 id 282 at (14, 24) need 2 orth 2 ti 119 ammo 15 sen 0 hp 40 covden 0 eco 1 lost 0
+FS SEAL 523 tile (13, 25) n 31
+FS SENTINEL 524 at (12, 24) face SOUTHEAST tgt (15, 27) score 18 n 1 onring 0 lost 0 gate (1, 1, 77) onsray 0 olddsq -1
+FS PHASE 525 id 282 ph 5 d 5 at (13, 24)
+FS DODGE 528 id 282 from (16, 24) to (15, 24) cov 1 -> 0 hit 0 hp 4

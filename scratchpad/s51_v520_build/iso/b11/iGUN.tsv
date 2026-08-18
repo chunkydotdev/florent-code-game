@@ -1,0 +1,37 @@
+tag	map	seed	seat	ours	winner	cond	turn	tracebacks	ours_mined	opp_mined
+atoll_s531_A	atoll	531	A	OPP	_v488beltbreak2	Core destroyed	242	0	320	1390
+atoll_s531_B	atoll	531	B	OPP	_v488beltbreak2	Core destroyed	476	0	1670	2070
+atoll_s532_A	atoll	532	A	OPP	_v488beltbreak2	Core destroyed	552	0	1500	2590
+atoll_s532_B	atoll	532	B	OPP	_v488beltbreak2	Core destroyed	258	0	230	2200
+atoll_s533_A	atoll	533	A	US	iGUN	Core destroyed	177	0	1460	840
+atoll_s533_B	atoll	533	B	OPP	_v488beltbreak2	Core destroyed	139	0	230	1140
+drakkarfjord_s531_A	drakkarfjord	531	A	OPP	_v488beltbreak2	Core destroyed	357	0	390	2800
+drakkarfjord_s531_B	drakkarfjord	531	B	US	iGUN	Core destroyed	152	0	650	0
+drakkarfjord_s532_A	drakkarfjord	532	A	US	iGUN	Core destroyed	170	0	1030	0
+drakkarfjord_s532_B	drakkarfjord	532	B	OPP	_v488beltbreak2	Core destroyed	301	0	2460	3690
+drakkarfjord_s533_A	drakkarfjord	533	A	US	iGUN	Titanium collected (tiebreak)	1000	0	12780	11470
+drakkarfjord_s533_B	drakkarfjord	533	B	US	iGUN	Core destroyed	141	0	490	0
+glacierkeep_s531_A	glacierkeep	531	A	US	iGUN	Core destroyed	146	0	300	0
+glacierkeep_s531_B	glacierkeep	531	B	US	iGUN	Core destroyed	293	0	20	0
+glacierkeep_s532_A	glacierkeep	532	A	US	iGUN	Core destroyed	266	0	220	0
+glacierkeep_s532_B	glacierkeep	532	B	US	iGUN	Titanium collected (tiebreak)	1000	0	40	0
+glacierkeep_s533_A	glacierkeep	533	A	US	iGUN	Core destroyed	325	0	750	0
+glacierkeep_s533_B	glacierkeep	533	B	US	iGUN	Core destroyed	241	0	20	0
+midgard_s531_A	midgard	531	A	OPP	_v488beltbreak2	Core destroyed	177	0	710	1320
+midgard_s531_B	midgard	531	B	US	iGUN	Core destroyed	252	0	2010	680
+midgard_s532_A	midgard	532	A	US	iGUN	Core destroyed	569	0	680	820
+midgard_s532_B	midgard	532	B	US	iGUN	Core destroyed	161	0	1480	750
+midgard_s533_A	midgard	533	A	US	iGUN	Core destroyed	473	0	590	660
+midgard_s533_B	midgard	533	B	OPP	_v488beltbreak2	Core destroyed	405	0	760	1790
+nordkap_s531_A	nordkap	531	A	OPP	_v488beltbreak2	Core destroyed	303	0	790	1720
+nordkap_s531_B	nordkap	531	B	OPP	_v488beltbreak2	Core destroyed	384	0	2130	5710
+nordkap_s532_A	nordkap	532	A	US	iGUN	Core destroyed	274	0	1790	2600
+nordkap_s532_B	nordkap	532	B	OPP	_v488beltbreak2	Core destroyed	211	0	90	1540
+nordkap_s533_A	nordkap	533	A	US	iGUN	Core destroyed	288	0	2870	1470
+nordkap_s533_B	nordkap	533	B	US	iGUN	Core destroyed	632	0	340	770
+yulerune_s531_A	yulerune	531	A	US	iGUN	Core destroyed	217	0	380	470
+yulerune_s531_B	yulerune	531	B	OPP	_v488beltbreak2	Core destroyed	115	0	410	890
+yulerune_s532_A	yulerune	532	A	US	iGUN	Titanium collected (tiebreak)	1000	0	420	350
+yulerune_s532_B	yulerune	532	B	US	iGUN	Core destroyed	464	0	3660	2370
+yulerune_s533_A	yulerune	533	A	OPP	_v488beltbreak2	Core destroyed	177	0	360	610
+yulerune_s533_B	yulerune	533	B	US	iGUN	Core destroyed	398	0	2860	650

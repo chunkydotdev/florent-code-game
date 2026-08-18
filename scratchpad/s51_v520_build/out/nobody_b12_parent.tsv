@@ -1,0 +1,37 @@
+tag	map	seed	seat	ours	cond	turn	arm	arrive	sent	kill	last	window	ge1	ge2	nobody	two_body_share	bought_sentinel	ge1_fp	ge2_fp	nobody_fp
+atoll_s34_A	atoll	34	A	OPP	Core destroyed	233	parent	7	-1	-1	232	226	27	0	0.8805	0.0	0	41	0	0.8186
+atoll_s34_B	atoll	34	B	US	Core destroyed	616	parent	7	81	615	615	74	23	0	0.6892	0.0	1	31	0	0.5811
+atoll_s35_A	atoll	35	A	OPP	Core destroyed	662	parent	7	180	-1	661	173	140	0	0.1908	0.0	1	164	2	0.052
+atoll_s35_B	atoll	35	B	OPP	Core destroyed	275	parent	6	-1	-1	274	269	36	0	0.8662	0.0	0	117	0	0.5651
+atoll_s36_A	atoll	36	A	US	Core destroyed	657	parent	6	211	656	656	205	69	1	0.6634	0.0049	1	88	5	0.5707
+atoll_s36_B	atoll	36	B	OPP	Core destroyed	175	parent	6	-1	-1	174	169	72	10	0.574	0.0592	0	76	14	0.5503
+drakkarfjord_s34_A	drakkarfjord	34	A	US	Core destroyed	379	parent	10	323	378	378	313	82	14	0.738	0.0447	1	128	17	0.5911
+drakkarfjord_s34_B	drakkarfjord	34	B	OPP	Core destroyed	902	parent	10	161	-1	901	151	59	0	0.6093	0.0	1	71	0	0.5298
+drakkarfjord_s35_A	drakkarfjord	35	A	OPP	Core destroyed	290	parent	10	-1	-1	289	280	28	0	0.9	0.0	0	33	0	0.8821
+drakkarfjord_s35_B	drakkarfjord	35	B	US	Core destroyed	161	parent	10	97	160	160	87	48	0	0.4483	0.0	1	87	0	0.0
+drakkarfjord_s36_A	drakkarfjord	36	A	OPP	Core destroyed	588	parent	10	-1	-1	587	578	80	10	0.8616	0.0173	0	111	16	0.808
+drakkarfjord_s36_B	drakkarfjord	36	B	US	Core destroyed	150	parent	10	64	149	149	54	28	0	0.4815	0.0	1	54	0	0.0
+glacierkeep_s34_A	glacierkeep	34	A	US	Core destroyed	152	parent	9	85	151	151	76	43	8	0.4342	0.1053	1	76	47	0.0
+glacierkeep_s34_B	glacierkeep	34	B	US	Core destroyed	509	parent	8	76	508	508	68	56	7	0.1765	0.1029	1	68	40	0.0
+glacierkeep_s35_A	glacierkeep	35	A	US	Core destroyed	241	parent	9	101	240	240	92	78	9	0.1522	0.0978	1	92	61	0.0
+glacierkeep_s35_B	glacierkeep	35	B	OPP	Core destroyed	437	parent	8	74	-1	436	66	53	9	0.197	0.1364	1	66	28	0.0
+glacierkeep_s36_A	glacierkeep	36	A	US	Core destroyed	163	parent	8	107	162	162	99	57	7	0.4242	0.0707	1	99	46	0.0
+glacierkeep_s36_B	glacierkeep	36	B	US	Core destroyed	509	parent	8	76	508	508	68	56	7	0.1765	0.1029	1	68	40	0.0
+midgard_s34_A	midgard	34	A	OPP	Core destroyed	243	parent	53	-1	-1	242	190	67	26	0.6474	0.1368	0	69	39	0.6368
+midgard_s34_B	midgard	34	B	US	Titanium collected (tiebreak)	1000	parent	52	47	-1	999	0	0	0			1	0	0	
+midgard_s35_A	midgard	35	A	OPP	Core destroyed	296	parent	57	184	-1	295	127	127	77	0.0	0.6063	1	127	88	0.0
+midgard_s35_B	midgard	35	B	OPP	Core destroyed	505	parent	53	-1	-1	504	452	452	444	0.0	0.9823	0	452	451	0.0
+midgard_s36_A	midgard	36	A	OPP	Core destroyed	447	parent	50	433	-1	446	383	374	367	0.0235	0.9582	1	380	373	0.0078
+midgard_s36_B	midgard	36	B	US	Core destroyed	385	parent	51	220	384	384	169	168	159	0.0059	0.9408	1	169	162	0.0
+nordkap_s34_A	nordkap	34	A	OPP	Core destroyed	192	parent	4	-1	-1	191	188	179	16	0.0479	0.0851	0	185	31	0.016
+nordkap_s34_B	nordkap	34	B	US	Core destroyed	541	parent	4	364	540	540	360	356	290	0.0111	0.8056	1	360	340	0.0
+nordkap_s35_A	nordkap	35	A	OPP	Core destroyed	469	parent	4	160	-1	468	156	104	5	0.3333	0.0321	1	116	16	0.2564
+nordkap_s35_B	nordkap	35	B	US	Core destroyed	403	parent	4	112	402	402	108	94	11	0.1296	0.1019	1	108	88	0.0
+nordkap_s36_A	nordkap	36	A	OPP	Core destroyed	334	parent	4	-1	-1	333	330	287	255	0.1303	0.7727	0	296	268	0.103
+nordkap_s36_B	nordkap	36	B	OPP	Core destroyed	178	parent	4	-1	-1	177	174	81	23	0.5345	0.1322	0	85	28	0.5115
+yulerune_s34_A	yulerune	34	A	OPP	Core destroyed	251	parent	33	-1	-1	250	218	217	206	0.0046	0.945	0	218	213	0.0
+yulerune_s34_B	yulerune	34	B	US	Core destroyed	236	parent	33	180	235	235	147	146	132	0.0068	0.898	1	147	144	0.0
+yulerune_s35_A	yulerune	35	A	US	Core destroyed	781	parent	27	564	780	780	537	535	517	0.0037	0.9628	1	537	524	0.0
+yulerune_s35_B	yulerune	35	B	US	Titanium collected (tiebreak)	1000	parent	35	-1	-1	999	965	964	313	0.001	0.3244	0	965	325	0.0
+yulerune_s36_A	yulerune	36	A	US	Core destroyed	785	parent	37	328	784	784	291	291	77	0.0	0.2646	1	291	136	0.0
+yulerune_s36_B	yulerune	36	B	OPP	Core destroyed	237	parent	41	152	-1	236	111	111	94	0.0	0.8468	1	111	111	0.0

@@ -1,0 +1,116 @@
+Update available: 2.3.6 -> 2.3.8. Run: pip install --upgrade fcode
+FS GATE 0 sig (18, 18, (2, 14), (14, 2)) ok 1
+FS GATE 1 sig (18, 18, (2, 14), (14, 2)) ok 1
+FS PHASE 1 id 3 ph 1 d 200 at (4, 13)
+FS GATE 2 sig (18, 18, (2, 14), (14, 2)) ok 1
+FS GATE 3 sig (18, 18, (2, 14), (14, 2)) ok 1
+FS GATE 4 sig (18, 18, (2, 14), (14, 2)) ok 1
+FS PHASE 4 id 10 ph 1 d 221 at (3, 13)
+FS HOPBUILD 5 at (4, 13) lch (4, 12) T (16, 1)
+FS GATE 6 sig (18, 18, (2, 14), (14, 2)) ok 1
+FS THROW 6 from (5, 13) to (8, 9) T (16, 1) body 3 n 1 dsq 72
+FS HOPBUILD 7 at (8, 9) lch (8, 8) T (16, 1)
+FS THROW 7 from (5, 11) to (7, 8) T (16, 1) body 10 n 2 dsq 74
+FS GATE 8 sig (18, 18, (2, 14), (14, 2)) ok 1
+FS THROW 8 from (9, 9) to (12, 5) T (16, 1) body 3 n 1 dsq 8
+FS ARRIVE 9 id 3 body 1 at (12, 5) dsq 8
+FS PHASE 9 id 3 ph 2 d 8 at (12, 5)
+FS THROW 9 from (8, 7) to (12, 5) T (16, 1) body 10 n 2 dsq 8
+FS EVICTOR 10 at (12, 3) ucov 0 cov 1 unseal 1 obs 3
+FS RUNG 10 id 3 r 2 hi -
+FS ARRIVE 10 id 10 body 2 at (12, 5) dsq 8
+FS PHASE 10 id 10 ph 2 d 8 at (12, 5)
+FS DODGE 11 id 3 from (12, 4) to (12, 5) cov 1 -> 0 hit 0 hp 40
+FS GATE 11 sig (18, 18, (2, 14), (14, 2)) ok 1
+FS GATE 11 sig (18, 18, (2, 14), (14, 2)) ok 1
+FS EVICT 11 from (13, 2) to (7, 4)
+FS DODGE 13 id 3 from (12, 4) to (12, 5) cov 1 -> 0 hit 0 hp 22
+FS EVICT 13 from (13, 4) to (7, 4)
+FS DODGE 15 id 3 from (12, 4) to (12, 5) cov 1 -> 0 hit 0 hp 4
+FS EVICT 17 from (13, 2) to (7, 4)
+FS STAT 20 id 10 at (15, 6) need 9 orth 8 ti 125 ammo 16 sen 0 hp 40 covden 0 eco 1 lost 0
+FS SEAL 21 tile (15, 4) n 1
+FS PROMOTE 23 id 10
+FS SEAL 23 tile (14, 4) n 2
+FS EVICT 24 from (11, 4) to (17, 4)
+FS DODGE 26 id 10 from (13, 4) to (13, 3) cov 1 -> 0 hit 0 hp 22
+FS SEAL 27 tile (13, 2) n 3
+FS DODGE 29 id 10 from (13, 4) to (13, 3) cov 1 -> 0 hit 0 hp 22
+FS DODGE 31 id 10 from (13, 4) to (13, 3) cov 1 -> 0 hit 0 hp 22
+FS EVICT 32 from (11, 4) to (17, 4)
+FS DODGE 33 id 10 from (13, 4) to (13, 3) cov 1 -> 0 hit 0 hp 4
+FS EVICT 40 from (11, 4) to (17, 4)
+FS EVICT 48 from (11, 4) to (17, 4)
+FS EVICT 56 from (11, 4) to (17, 4)
+FS EVICT 57 from (13, 4) to (7, 4)
+FS EVICT 63 from (13, 4) to (7, 4)
+FS EVICT 67 from (11, 4) to (17, 2)
+FS EVICT 68 from (11, 4) to (17, 2)
+FS EVICT 77 from (11, 2) to (11, 8)
+FS EVICT 80 from (11, 2) to (11, 8)
+FS EVICT 87 from (11, 4) to (17, 2)
+FS EVICT 92 from (12, 4) to (7, 4)
+FS EVICT 93 from (13, 2) to (7, 4)
+FS EVICT 96 from (11, 4) to (17, 2)
+FS EVICT 97 from (11, 4) to (17, 2)
+FS EVICT 98 from (12, 4) to (7, 4)
+FS EVICT 101 from (13, 2) to (7, 4)
+FS EVICT 102 from (13, 2) to (7, 4)
+FS EVICT 103 from (13, 2) to (7, 4)
+FS EVICT 104 from (13, 4) to (7, 4)
+FS EVICT 107 from (11, 4) to (17, 2)
+FS EVICT 109 from (11, 3) to (17, 2)
+FS EVICT 112 from (13, 2) to (7, 4)
+FS EVICT 113 from (13, 2) to (7, 4)
+FS EVICT 117 from (13, 2) to (7, 4)
+FS EVICT 125 from (12, 4) to (7, 4)
+FS EVICT 129 from (11, 4) to (17, 2)
+FS EVICT 135 from (13, 2) to (7, 4)
+FS EVICT 140 from (12, 4) to (7, 4)
+FS EVICT 144 from (11, 4) to (17, 2)
+FS EVICT 148 from (13, 2) to (7, 4)
+FS EVICT 152 from (13, 2) to (7, 4)
+FS EVICT 153 from (12, 4) to (7, 4)
+FS EVICT 155 from (13, 2) to (7, 4)
+FS EVICT 156 from (13, 3) to (7, 4)
+FS EVICT 157 from (11, 4) to (17, 2)
+FS EVICT 160 from (12, 4) to (7, 2)
+FS EVICT 163 from (13, 2) to (7, 2)
+FS EVICT 164 from (11, 2) to (11, 8)
+FS EVICT 167 from (11, 2) to (11, 8)
+FS EVICT 169 from (12, 4) to (7, 2)
+FS EVICT 173 from (11, 2) to (11, 8)
+FS EVICT 178 from (12, 4) to (7, 2)
+FS EVICT 182 from (11, 2) to (11, 8)
+FS EVICT 184 from (13, 2) to (7, 2)
+FS GATE 185 sig (18, 18, (2, 14), (14, 2)) ok 1
+FS PHASE 185 id 393 ph 1 d 338 at (1, 16)
+FS EVICT 189 from (12, 4) to (7, 2)
+FS EVICT 193 from (11, 2) to (11, 8)
+FS EVICT 201 from (13, 4) to (7, 2)
+FS EVICT 205 from (11, 2) to (11, 8)
+FS EVICT 213 from (13, 4) to (7, 2)
+FS EVICT 217 from (11, 2) to (11, 8)
+FS DEGRADE 217 id 393
+FS EVICT 225 from (13, 4) to (7, 2)
+FS EVICT 229 from (11, 2) to (11, 8)
+FS GATE 229 sig (18, 18, (2, 14), (14, 2)) ok 1
+FS EVICT 237 from (13, 4) to (7, 2)
+FS EVICT 241 from (11, 2) to (11, 8)
+FS EVICT 249 from (13, 4) to (7, 2)
+FS EVICT 250 from (13, 2) to (7, 2)
+FS EVICT 253 from (11, 2) to (11, 8)
+FS GATE 259 sig (18, 18, (2, 14), (14, 2)) ok 1
+FS EVICT 261 from (13, 4) to (7, 2)
+FS EVICT 265 from (11, 2) to (11, 8)
+FS EVICT 273 from (13, 4) to (7, 2)
+FS EVICT 277 from (11, 2) to (11, 8)
+FS EVICT 285 from (13, 4) to (7, 2)
+FS EVICT 289 from (11, 2) to (12, 8)
+FS GATE 289 sig (18, 18, (2, 14), (14, 2)) ok 1
+FS EVICT 291 from (13, 4) to (7, 2)
+FS EVICT 296 from (13, 4) to (7, 3)
+FS EVICT 300 from (11, 3) to (17, 2)
+FS EVICT 305 from (13, 4) to (7, 3)
+FS EVICT 309 from (11, 3) to (17, 2)
+FS GATE 311 sig (18, 18, (2, 14), (14, 2)) ok 1

@@ -1,0 +1,37 @@
+tag	map	seed	seat	ours	winner	cond	turn	tracebacks	ours_mined	opp_mined
+atoll_s28_A	atoll	28	A	US	_v520pincer	Core destroyed	159	0	760	220
+atoll_s28_B	atoll	28	B	US	_v520pincer	Core destroyed	609	0	1270	2060
+atoll_s29_A	atoll	29	A	US	_v520pincer	Titanium collected (tiebreak)	1000	0	2580	120
+atoll_s29_B	atoll	29	B	US	_v520pincer	Core destroyed	161	0	270	120
+atoll_s30_A	atoll	30	A	OPP	_v488beltbreak2	Core destroyed	427	0	1410	4890
+atoll_s30_B	atoll	30	B	OPP	_v488beltbreak2	Core destroyed	306	0	280	1110
+drakkarfjord_s28_A	drakkarfjord	28	A	US	_v520pincer	Core destroyed	101	0	400	0
+drakkarfjord_s28_B	drakkarfjord	28	B	US	_v520pincer	Titanium collected (tiebreak)	1000	0	340	0
+drakkarfjord_s29_A	drakkarfjord	29	A	US	_v520pincer	Core destroyed	133	0	380	0
+drakkarfjord_s29_B	drakkarfjord	29	B	US	_v520pincer	Core destroyed	122	0	350	0
+drakkarfjord_s30_A	drakkarfjord	30	A	US	_v520pincer	Core destroyed	92	0	340	0
+drakkarfjord_s30_B	drakkarfjord	30	B	OPP	_v488beltbreak2	Titanium collected (tiebreak)	1000	0	350	850
+glacierkeep_s28_A	glacierkeep	28	A	US	_v520pincer	Core destroyed	144	0	300	0
+glacierkeep_s28_B	glacierkeep	28	B	US	_v520pincer	Harvesters (tiebreak)	1000	0	0	0
+glacierkeep_s29_A	glacierkeep	29	A	US	_v520pincer	Core destroyed	190	0	820	150
+glacierkeep_s29_B	glacierkeep	29	B	US	_v520pincer	Core destroyed	261	0	0	0
+glacierkeep_s30_A	glacierkeep	30	A	US	_v520pincer	Core destroyed	123	0	330	0
+glacierkeep_s30_B	glacierkeep	30	B	US	_v520pincer	Core destroyed	217	0	0	0
+midgard_s28_A	midgard	28	A	OPP	_v488beltbreak2	Core destroyed	216	0	650	1590
+midgard_s28_B	midgard	28	B	US	_v520pincer	Core destroyed	377	0	1580	770
+midgard_s29_A	midgard	29	A	US	_v520pincer	Core destroyed	301	0	710	440
+midgard_s29_B	midgard	29	B	US	_v520pincer	Core destroyed	237	0	1070	580
+midgard_s30_A	midgard	30	A	OPP	_v488beltbreak2	Core destroyed	501	0	650	1780
+midgard_s30_B	midgard	30	B	OPP	_v488beltbreak2	Core destroyed	317	0	680	500
+nordkap_s28_A	nordkap	28	A	OPP	_v488beltbreak2	Core destroyed	575	0	260	2790
+nordkap_s28_B	nordkap	28	B	US	_v520pincer	Core destroyed	153	0	360	120
+nordkap_s29_A	nordkap	29	A	US	_v520pincer	Core destroyed	419	0	880	80
+nordkap_s29_B	nordkap	29	B	OPP	_v488beltbreak2	Core destroyed	243	0	150	1770
+nordkap_s30_A	nordkap	30	A	OPP	_v488beltbreak2	Core destroyed	526	0	130	2240
+nordkap_s30_B	nordkap	30	B	OPP	_v488beltbreak2	Core destroyed	597	0	820	600
+yulerune_s28_A	yulerune	28	A	OPP	_v488beltbreak2	Core destroyed	147	0	210	1390
+yulerune_s28_B	yulerune	28	B	OPP	_v488beltbreak2	Core destroyed	317	0	370	3050
+yulerune_s29_A	yulerune	29	A	US	_v520pincer	Core destroyed	397	0	4930	300
+yulerune_s29_B	yulerune	29	B	US	_v520pincer	Core destroyed	263	0	2350	790
+yulerune_s30_A	yulerune	30	A	OPP	_v488beltbreak2	Core destroyed	304	0	390	1080
+yulerune_s30_B	yulerune	30	B	OPP	_v488beltbreak2	Core destroyed	312	0	210	1880

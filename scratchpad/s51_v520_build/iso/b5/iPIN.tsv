@@ -1,0 +1,37 @@
+tag	map	seed	seat	ours	winner	cond	turn	tracebacks	ours_mined	opp_mined
+atoll_s513_A	atoll	513	A	US	iPIN	Core destroyed	116	0	610	160
+atoll_s513_B	atoll	513	B	OPP	_v488beltbreak2	Core destroyed	175	0	540	1740
+atoll_s514_A	atoll	514	A	US	iPIN	Core destroyed	467	0	1330	860
+atoll_s514_B	atoll	514	B	OPP	_v488beltbreak2	Core destroyed	325	0	910	2860
+atoll_s515_A	atoll	515	A	US	iPIN	Core destroyed	364	0	1790	60
+atoll_s515_B	atoll	515	B	US	iPIN	Core destroyed	576	0	360	220
+drakkarfjord_s513_A	drakkarfjord	513	A	US	iPIN	Core destroyed	88	0	320	0
+drakkarfjord_s513_B	drakkarfjord	513	B	US	iPIN	Core destroyed	149	0	340	0
+drakkarfjord_s514_A	drakkarfjord	514	A	US	iPIN	Core destroyed	93	0	340	0
+drakkarfjord_s514_B	drakkarfjord	514	B	US	iPIN	Core destroyed	117	0	360	0
+drakkarfjord_s515_A	drakkarfjord	515	A	US	iPIN	Core destroyed	92	0	330	0
+drakkarfjord_s515_B	drakkarfjord	515	B	US	iPIN	Core destroyed	125	0	360	0
+glacierkeep_s513_A	glacierkeep	513	A	US	iPIN	Core destroyed	112	0	230	0
+glacierkeep_s513_B	glacierkeep	513	B	OPP	_v488beltbreak2	Core destroyed	838	0	0	860
+glacierkeep_s514_A	glacierkeep	514	A	OPP	_v488beltbreak2	Core destroyed	609	0	280	0
+glacierkeep_s514_B	glacierkeep	514	B	OPP	_v488beltbreak2	Harvesters (tiebreak)	1000	0	0	0
+glacierkeep_s515_A	glacierkeep	515	A	US	iPIN	Core destroyed	110	0	230	0
+glacierkeep_s515_B	glacierkeep	515	B	US	iPIN	Core destroyed	441	0	0	0
+midgard_s513_A	midgard	513	A	OPP	_v488beltbreak2	Core destroyed	717	0	770	740
+midgard_s513_B	midgard	513	B	US	iPIN	Core destroyed	773	0	3700	600
+midgard_s514_A	midgard	514	A	US	iPIN	Core destroyed	171	0	1520	940
+midgard_s514_B	midgard	514	B	US	iPIN	Core destroyed	701	0	820	700
+midgard_s515_A	midgard	515	A	US	iPIN	Titanium collected (tiebreak)	1000	0	720	710
+midgard_s515_B	midgard	515	B	US	iPIN	Titanium collected (tiebreak)	1000	0	790	570
+nordkap_s513_A	nordkap	513	A	US	iPIN	Core destroyed	204	0	490	110
+nordkap_s513_B	nordkap	513	B	OPP	_v488beltbreak2	Core destroyed	309	0	90	60
+nordkap_s514_A	nordkap	514	A	US	iPIN	Core destroyed	169	0	430	100
+nordkap_s514_B	nordkap	514	B	US	iPIN	Core destroyed	565	0	3170	1840
+nordkap_s515_A	nordkap	515	A	US	iPIN	Core destroyed	549	0	1070	1860
+nordkap_s515_B	nordkap	515	B	OPP	_v488beltbreak2	Core destroyed	309	0	90	60
+yulerune_s513_A	yulerune	513	A	US	iPIN	Core destroyed	142	0	910	280
+yulerune_s513_B	yulerune	513	B	OPP	_v488beltbreak2	Core destroyed	148	0	220	510
+yulerune_s514_A	yulerune	514	A	OPP	_v488beltbreak2	Core destroyed	224	0	140	1210
+yulerune_s514_B	yulerune	514	B	OPP	_v488beltbreak2	Core destroyed	197	0	300	320
+yulerune_s515_A	yulerune	515	A	US	iPIN	Core destroyed	465	0	1350	390
+yulerune_s515_B	yulerune	515	B	OPP	_v488beltbreak2	Core destroyed	549	0	380	370

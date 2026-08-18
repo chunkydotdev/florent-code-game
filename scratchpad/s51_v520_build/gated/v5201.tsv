@@ -1,0 +1,37 @@
+tag	map	seed	seat	ours	winner	cond	turn	tracebacks	ours_mined	opp_mined
+archipelago_s1_A	archipelago	1	A	US	_v520pincer	Core destroyed	180	0	1550	630
+archipelago_s1_B	archipelago	1	B	US	_v520pincer	Core destroyed	146	0	980	470
+archipelago_s2_A	archipelago	2	A	US	_v520pincer	Core destroyed	132	0	1240	480
+archipelago_s2_B	archipelago	2	B	OPP	_v468kladturbo	Core destroyed	350	0	3650	1180
+archipelago_s3_A	archipelago	3	A	US	_v520pincer	Core destroyed	578	0	2990	3180
+archipelago_s3_B	archipelago	3	B	US	_v520pincer	Core destroyed	195	0	1740	1340
+archipelago_s4_A	archipelago	4	A	OPP	_v468kladturbo	Core destroyed	605	0	2360	2320
+archipelago_s4_B	archipelago	4	B	OPP	_v468kladturbo	Core destroyed	156	0	1040	1110
+archipelago_s5_A	archipelago	5	A	OPP	_v468kladturbo	Core destroyed	250	0	1300	1820
+archipelago_s5_B	archipelago	5	B	US	_v520pincer	Core destroyed	143	0	780	510
+archipelago_s6_A	archipelago	6	A	US	_v520pincer	Core destroyed	578	0	2990	3180
+archipelago_s6_B	archipelago	6	B	US	_v520pincer	Core destroyed	237	0	1660	1220
+archipelago_s7_A	archipelago	7	A	US	_v520pincer	Core destroyed	132	0	1240	480
+archipelago_s7_B	archipelago	7	B	US	_v520pincer	Core destroyed	140	0	1190	580
+archipelago_s8_A	archipelago	8	A	US	_v520pincer	Core destroyed	578	0	2990	3180
+archipelago_s8_B	archipelago	8	B	US	_v520pincer	Core destroyed	200	0	2470	1450
+archipelago_s9_A	archipelago	9	A	OPP	_v468kladturbo	Core destroyed	138	0	770	930
+archipelago_s9_B	archipelago	9	B	US	_v520pincer	Titanium collected (tiebreak)	1000	0	18880	13360
+archipelago_s10_A	archipelago	10	A	US	_v520pincer	Core destroyed	246	0	2630	780
+archipelago_s10_B	archipelago	10	B	US	_v520pincer	Core destroyed	436	0	3150	2540
+archipelago_s11_A	archipelago	11	A	OPP	_v468kladturbo	Core destroyed	606	0	6990	4470
+archipelago_s11_B	archipelago	11	B	US	_v520pincer	Core destroyed	137	0	1170	480
+archipelago_s12_A	archipelago	12	A	US	_v520pincer	Core destroyed	195	0	1780	980
+archipelago_s12_B	archipelago	12	B	OPP	_v468kladturbo	Core destroyed	615	0	4500	4500
+archipelago_s13_A	archipelago	13	A	US	_v520pincer	Core destroyed	197	0	1450	1070
+archipelago_s13_B	archipelago	13	B	US	_v520pincer	Core destroyed	130	0	910	440
+archipelago_s14_A	archipelago	14	A	US	_v520pincer	Core destroyed	167	0	1250	660
+archipelago_s14_B	archipelago	14	B	US	_v520pincer	Core destroyed	438	0	2370	1310
+archipelago_s15_A	archipelago	15	A	OPP	_v468kladturbo	Core destroyed	351	0	1960	1810
+archipelago_s15_B	archipelago	15	B	OPP	_v468kladturbo	Core destroyed	371	0	2670	2700
+archipelago_s16_A	archipelago	16	A	OPP	_v468kladturbo	Core destroyed	153	0	1080	1060
+archipelago_s16_B	archipelago	16	B	OPP	_v468kladturbo	Core destroyed	129	0	1040	770
+archipelago_s17_A	archipelago	17	A	OPP	_v468kladturbo	Core destroyed	260	0	1850	1830
+archipelago_s17_B	archipelago	17	B	US	_v520pincer	Core destroyed	251	0	2590	880
+archipelago_s18_A	archipelago	18	A	OPP	_v468kladturbo	Titanium collected (tiebreak)	1000	0	2810	5330
+archipelago_s18_B	archipelago	18	B	US	_v520pincer	Core destroyed	126	0	830	620

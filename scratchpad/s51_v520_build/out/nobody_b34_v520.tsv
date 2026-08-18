@@ -1,0 +1,37 @@
+tag	map	seed	seat	ours	cond	turn	arm	arrive	sent	kill	last	window	ge1	ge2	nobody	two_body_share	bought_sentinel	ge1_fp	ge2_fp	nobody_fp
+atoll_s100_A	atoll	100	A	US	Core destroyed	634	v520	11	567	633	633	556	123	25	0.7788	0.045	1	169	42	0.696
+atoll_s100_B	atoll	100	B	OPP	Core destroyed	250	v520	11	-1	-1	249	239	51	11	0.7866	0.046	0	78	32	0.6736
+atoll_s101_A	atoll	101	A	OPP	Core destroyed	408	v520	13	-1	-1	407	395	29	9	0.9266	0.0228	0	65	14	0.8354
+atoll_s101_B	atoll	101	B	US	Core destroyed	167	v520	11	62	166	166	51	42	10	0.1765	0.1961	1	51	16	0.0
+atoll_s102_A	atoll	102	A	US	Core destroyed	245	v520	10	150	244	244	140	135	36	0.0357	0.2571	1	140	132	0.0
+atoll_s102_B	atoll	102	B	OPP	Core destroyed	380	v520	11	-1	-1	379	369	54	5	0.8537	0.0136	0	111	18	0.6992
+drakkarfjord_s100_A	drakkarfjord	100	A	US	Core destroyed	91	v520	14	35	90	90	21	17	6	0.1905	0.2857	1	21	16	0.0
+drakkarfjord_s100_B	drakkarfjord	100	B	US	Titanium collected (tiebreak)	1000	v520	14	-1	-1	999	986	120	6	0.8783	0.0061	0	190	17	0.8073
+drakkarfjord_s101_A	drakkarfjord	101	A	US	Titanium collected (tiebreak)	1000	v520	14	92	-1	999	78	54	11	0.3077	0.141	1	78	48	0.0
+drakkarfjord_s101_B	drakkarfjord	101	B	US	Titanium collected (tiebreak)	1000	v520	14	40	-1	999	26	21	11	0.1923	0.4231	1	26	25	0.0
+drakkarfjord_s102_A	drakkarfjord	102	A	US	Core destroyed	117	v520	14	37	116	116	23	18	7	0.2174	0.3043	1	23	19	0.0
+drakkarfjord_s102_B	drakkarfjord	102	B	US	Titanium collected (tiebreak)	1000	v520	14	40	-1	999	26	23	10	0.1154	0.3846	1	26	25	0.0
+glacierkeep_s100_A	glacierkeep	100	A	US	Core destroyed	165	v520	12	80	164	164	68	62	38	0.0882	0.5588	1	68	59	0.0
+glacierkeep_s100_B	glacierkeep	100	B	US	Core destroyed	245	v520	12	137	244	244	125	83	21	0.336	0.168	1	125	116	0.0
+glacierkeep_s101_A	glacierkeep	101	A	US	Core destroyed	165	v520	12	80	164	164	68	65	47	0.0441	0.6912	1	68	66	0.0
+glacierkeep_s101_B	glacierkeep	101	B	OPP	Titanium collected (tiebreak)	1000	v520	12	56	-1	999	44	14	9	0.6818	0.2045	1	42	14	0.0455
+glacierkeep_s102_A	glacierkeep	102	A	US	Core destroyed	126	v520	12	68	125	125	56	47	17	0.1607	0.3036	1	56	50	0.0
+glacierkeep_s102_B	glacierkeep	102	B	US	Core destroyed	245	v520	12	137	244	244	125	83	21	0.336	0.168	1	125	116	0.0
+midgard_s100_A	midgard	100	A	US	Core destroyed	689	v520	49	264	688	688	215	215	203	0.0	0.9442	1	215	214	0.0
+midgard_s100_B	midgard	100	B	US	Titanium collected (tiebreak)	1000	v520	48	-1	-1	999	952	951	923	0.0011	0.9695	0	952	942	0.0
+midgard_s101_A	midgard	101	A	OPP	Core destroyed	429	v520	47	244	-1	428	197	192	63	0.0254	0.3198	1	197	76	0.0
+midgard_s101_B	midgard	101	B	OPP	Titanium collected (tiebreak)	1000	v520	47	-1	-1	999	953	950	20	0.0031	0.021	0	953	26	0.0
+midgard_s102_A	midgard	102	A	OPP	Core destroyed	157	v520	49	43	-1	156	0	0	0			1	0	0	
+midgard_s102_B	midgard	102	B	US	Core destroyed	188	v520	52	132	187	187	80	80	73	0.0	0.9125	1	80	78	0.0
+nordkap_s100_A	nordkap	100	A	US	Core destroyed	105	v520	8	49	104	104	41	33	12	0.1951	0.2927	1	41	41	0.0
+nordkap_s100_B	nordkap	100	B	US	Core destroyed	409	v520	8	108	408	408	100	47	25	0.53	0.25	1	100	98	0.0
+nordkap_s101_A	nordkap	101	A	OPP	Core destroyed	641	v520	8	-1	-1	640	633	633	19	0.0	0.03	0	633	629	0.0
+nordkap_s101_B	nordkap	101	B	US	Core destroyed	177	v520	13	84	176	176	71	61	23	0.1408	0.3239	1	71	64	0.0
+nordkap_s102_A	nordkap	102	A	US	Titanium collected (tiebreak)	1000	v520	8	76	-1	999	68	68	50	0.0	0.7353	1	68	68	0.0
+nordkap_s102_B	nordkap	102	B	US	Core destroyed	395	v520	8	172	394	394	164	143	52	0.128	0.3171	1	163	113	0.0061
+yulerune_s100_A	yulerune	100	A	US	Core destroyed	208	v520	34	152	207	207	118	118	113	0.0	0.9576	1	118	118	0.0
+yulerune_s100_B	yulerune	100	B	OPP	Core destroyed	313	v520	29	-1	-1	312	284	110	55	0.6127	0.1937	0	111	67	0.6092
+yulerune_s101_A	yulerune	101	A	OPP	Core destroyed	400	v520	29	-1	-1	399	371	323	241	0.1294	0.6496	0	330	256	0.1105
+yulerune_s101_B	yulerune	101	B	OPP	Core destroyed	463	v520	30	-1	-1	462	433	86	57	0.8014	0.1316	0	92	72	0.7875
+yulerune_s102_A	yulerune	102	A	OPP	Titanium collected (tiebreak)	1000	v520	36	236	-1	999	200	196	172	0.02	0.86	1	200	200	0.0
+yulerune_s102_B	yulerune	102	B	OPP	Titanium collected (tiebreak)	1000	v520	34	-1	-1	999	966	966	921	0.0	0.9534	0	966	932	0.0

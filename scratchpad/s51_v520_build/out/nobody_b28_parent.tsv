@@ -1,0 +1,37 @@
+tag	map	seed	seat	ours	cond	turn	arm	arrive	sent	kill	last	window	ge1	ge2	nobody	two_body_share	bought_sentinel	ge1_fp	ge2_fp	nobody_fp
+atoll_s82_A	atoll	82	A	US	Core destroyed	458	parent	9	68	457	457	59	47	15	0.2034	0.2542	1	59	18	0.0
+atoll_s82_B	atoll	82	B	OPP	Core destroyed	299	parent	9	-1	-1	298	290	55	3	0.8103	0.0103	0	69	5	0.7621
+atoll_s83_A	atoll	83	A	US	Core destroyed	593	parent	11	472	592	592	461	92	0	0.8004	0.0	1	111	0	0.7592
+atoll_s83_B	atoll	83	B	OPP	Core destroyed	185	parent	41	-1	-1	184	144	3	0	0.9792	0.0	0	3	0	0.9792
+atoll_s84_A	atoll	84	A	US	Core destroyed	160	parent	7	92	159	159	85	22	0	0.7412	0.0	1	26	0	0.6941
+atoll_s84_B	atoll	84	B	OPP	Core destroyed	669	parent	7	81	-1	668	74	23	0	0.6892	0.0	1	31	0	0.5811
+drakkarfjord_s82_A	drakkarfjord	82	A	OPP	Core destroyed	243	parent	10	-1	-1	242	233	137	25	0.412	0.1073	0	164	32	0.2961
+drakkarfjord_s82_B	drakkarfjord	82	B	US	Titanium collected (tiebreak)	1000	parent	10	91	-1	999	81	38	0	0.5309	0.0	1	81	0	0.0
+drakkarfjord_s83_A	drakkarfjord	83	A	OPP	Core destroyed	413	parent	10	69	-1	412	59	29	0	0.5085	0.0	1	59	0	0.0
+drakkarfjord_s83_B	drakkarfjord	83	B	US	Core destroyed	161	parent	10	97	160	160	87	48	0	0.4483	0.0	1	87	0	0.0
+drakkarfjord_s84_A	drakkarfjord	84	A	US	Core destroyed	410	parent	10	213	409	409	203	50	0	0.7537	0.0	1	59	0	0.7094
+drakkarfjord_s84_B	drakkarfjord	84	B	OPP	Core destroyed	431	parent	10	-1	-1	430	421	35	0	0.9169	0.0	0	47	0	0.8884
+glacierkeep_s82_A	glacierkeep	82	A	US	Core destroyed	349	parent	8	74	348	348	66	47	9	0.2879	0.1364	1	60	29	0.0909
+glacierkeep_s82_B	glacierkeep	82	B	US	Core destroyed	469	parent	8	84	468	468	76	63	13	0.1711	0.1711	1	76	44	0.0
+glacierkeep_s83_A	glacierkeep	83	A	US	Core destroyed	412	parent	8	48	411	411	40	25	4	0.375	0.1	1	40	9	0.0
+glacierkeep_s83_B	glacierkeep	83	B	US	Core destroyed	197	parent	8	84	196	196	76	57	7	0.25	0.0921	1	76	40	0.0
+glacierkeep_s84_A	glacierkeep	84	A	US	Core destroyed	137	parent	8	55	136	136	47	26	1	0.4468	0.0213	1	47	19	0.0
+glacierkeep_s84_B	glacierkeep	84	B	US	Titanium collected (tiebreak)	1000	parent	8	76	-1	999	68	48	4	0.2941	0.0588	1	68	35	0.0
+midgard_s82_A	midgard	82	A	US	Core destroyed	256	parent	53	99	255	255	46	46	29	0.0	0.6304	1	46	40	0.0
+midgard_s82_B	midgard	82	B	US	Core destroyed	678	parent	55	312	677	677	257	255	64	0.0078	0.249	1	257	79	0.0
+midgard_s83_A	midgard	83	A	OPP	Core destroyed	372	parent	51	-1	-1	371	321	142	118	0.5576	0.3676	0	146	123	0.5452
+midgard_s83_B	midgard	83	B	OPP	Core destroyed	232	parent	52	-1	-1	231	180	180	170	0.0	0.9444	0	180	174	0.0
+midgard_s84_A	midgard	84	A	OPP	Core destroyed	283	parent	57	52	-1	282	0	0	0			1	0	0	
+midgard_s84_B	midgard	84	B	OPP	Core destroyed	533	parent	53	-1	-1	532	480	480	459	0.0	0.9563	0	480	474	0.0
+nordkap_s82_A	nordkap	82	A	OPP	Core destroyed	325	parent	4	55	-1	324	51	50	22	0.0196	0.4314	1	51	34	0.0
+nordkap_s82_B	nordkap	82	B	US	Core destroyed	303	parent	4	65	302	302	61	50	24	0.1803	0.3934	1	61	47	0.0
+nordkap_s83_A	nordkap	83	A	US	Core destroyed	297	parent	4	241	296	296	237	102	0	0.5696	0.0	1	124	1	0.4768
+nordkap_s83_B	nordkap	83	B	OPP	Core destroyed	152	parent	4	84	-1	151	80	59	0	0.2625	0.0	1	80	0	0.0
+nordkap_s84_A	nordkap	84	A	US	Core destroyed	593	parent	4	537	592	592	533	89	10	0.833	0.0188	1	160	27	0.6998
+nordkap_s84_B	nordkap	84	B	US	Core destroyed	242	parent	4	152	241	241	148	141	69	0.0473	0.4662	1	148	91	0.0
+yulerune_s82_A	yulerune	82	A	US	Core destroyed	384	parent	29	192	383	383	163	161	147	0.0123	0.9018	1	163	156	0.0
+yulerune_s82_B	yulerune	82	B	US	Core destroyed	433	parent	38	393	432	432	355	355	332	0.0	0.9352	1	355	349	0.0
+yulerune_s83_A	yulerune	83	A	US	Core destroyed	236	parent	28	180	235	235	152	151	139	0.0066	0.9145	1	152	143	0.0
+yulerune_s83_B	yulerune	83	B	US	Core destroyed	292	parent	31	236	291	291	205	204	196	0.0049	0.9561	1	205	203	0.0
+yulerune_s84_A	yulerune	84	A	US	Core destroyed	221	parent	27	165	220	220	138	135	130	0.0217	0.942	1	138	134	0.0
+yulerune_s84_B	yulerune	84	B	OPP	Titanium collected (tiebreak)	1000	parent	29	-1	-1	999	971	969	952	0.0021	0.9804	0	971	962	0.0

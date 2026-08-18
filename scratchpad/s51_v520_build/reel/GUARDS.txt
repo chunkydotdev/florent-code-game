@@ -1,0 +1,2 @@
+negative control on midgard_s54_B: as-played oppcore_heal 432, team-flipped 0 -- guard CAN fail
+guards OK: HP identity 6/6, fireTurret vs UpdateHp channel agreement 6/6, seatrate team agreement 6/6, per-round heal vs crip oppcore_heal 6/6

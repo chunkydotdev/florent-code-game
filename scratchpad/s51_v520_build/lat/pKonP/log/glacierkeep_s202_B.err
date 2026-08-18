@@ -1,0 +1,321 @@
+Update available: 2.3.6 -> 2.3.8. Run: pip install --upgrade fcode
+FS GATE 0 sig (30, 30, (14, 2), (14, 26)) ok 1
+FS GATE 1 sig (30, 30, (14, 2), (14, 26)) ok 1
+FS PHASE 1 id 4 ph 1 d 484 at (14, 25)
+FS GATE 2 sig (30, 30, (14, 2), (14, 26)) ok 1
+FS GATE 3 sig (30, 30, (14, 2), (14, 26)) ok 1
+FS GATE 4 sig (30, 30, (14, 2), (14, 26)) ok 1
+FS PHASE 4 id 10 ph 1 d 485 at (13, 25)
+FS HOPBUILD 5 at (14, 25) lch (14, 24) T (16, 1)
+FS GATE 6 sig (30, 30, (14, 2), (14, 26)) ok 1
+FS THROW 6 from (15, 25) to (15, 19) T (16, 1) body 4 n 1 dsq 256
+FS HOPBUILD 7 at (15, 19) lch (15, 18) T (16, 1)
+FS THROW 7 from (15, 23) to (14, 19) T (16, 1) body 10 n 2 dsq 256
+FS GATE 8 sig (30, 30, (14, 2), (14, 26)) ok 1
+FS THROW 8 from (16, 19) to (16, 13) T (16, 1) body 4 n 1 dsq 101
+FS HOPBUILD 9 at (16, 13) lch (16, 12) T (16, 1)
+FS THROW 9 from (14, 17) to (15, 13) T (16, 1) body 10 n 2 dsq 100
+FS GATE 10 sig (30, 30, (14, 2), (14, 26)) ok 1
+FS THROW 10 from (16, 13) to (16, 7) T (16, 1) body 4 n 1 dsq 17
+FS HOPBUILD 11 at (16, 7) lch (16, 6) T (16, 1)
+FS THROW 11 from (15, 11) to (15, 7) T (16, 1) body 10 n 2 dsq 16
+FS GATE 12 sig (30, 30, (14, 2), (14, 26)) ok 1
+FS SPLIT 12 arc 2 to (15, 1) body 4 walk 1
+FS ARRIVE 13 id 4 body 1 at (15, 1) dsq 1
+FS PHASE 13 id 4 ph 2 d 1 at (15, 1)
+FS SEAL 13 tile (14, 1) n 1
+FS SPLIT 13 arc 1 to (13, 3) body 10 walk 0
+FS ARRIVE 14 id 10 body 2 at (13, 3) dsq 1
+FS PHASE 14 id 10 ph 2 d 1 at (13, 3)
+FS SEAL 14 tile (13, 2) n 1
+FS DODGE 15 id 4 from (16, 1) to (16, 2) cov 1 -> 0 hit 0 hp 40
+FS GATE 15 sig (30, 30, (14, 2), (14, 26)) ok 1
+FS SEAL 16 tile (16, 3) n 2
+FS SEAL 16 tile (13, 3) n 2
+FS SEAL 17 tile (14, 4) n 3
+FS SEAL 18 tile (16, 2) n 3
+FS STAT 20 id 4 at (17, 3) need 4 orth 3 ti 103 ammo 0 sen 0 hp 40 covden 0 eco 0 lost 0
+FS STAT 20 id 10 at (14, 5) need 4 orth 3 ti 61 ammo 0 sen 0 hp 40 covden 0 eco 0 lost 0
+FS SEAL 21 tile (15, 4) n 4
+FS DODGE 26 id 4 from (17, 1) to (17, 2) cov 1 -> 0 hit 0 hp 22
+FS DODGE 28 id 4 from (17, 1) to (17, 2) cov 1 -> 0 hit 0 hp 22
+FS DODGE 30 id 4 from (17, 1) to (17, 2) cov 1 -> 0 hit 0 hp 22
+FS DODGE 32 id 4 from (17, 1) to (17, 2) cov 1 -> 0 hit 0 hp 22
+FS DODGE 34 id 4 from (17, 1) to (17, 2) cov 1 -> 0 hit 0 hp 22
+FS DODGE 38 id 4 from (17, 1) to (17, 2) cov 1 -> 0 hit 0 hp 22
+FS STAT 40 id 4 at (17, 1) need 3 orth 2 ti 12 ammo 9 sen 0 hp 22 covden 0 eco 0 lost 0
+FS DODGE 40 id 4 from (17, 1) to (17, 2) cov 1 -> 0 hit 0 hp 22
+FS STAT 40 id 10 at (17, 3) need 3 orth 2 ti 0 ammo 9 sen 0 hp 40 covden 0 eco 0 lost 0
+FS DODGE 44 id 4 from (17, 1) to (17, 2) cov 1 -> 0 hit 0 hp 22
+FS DODGE 46 id 4 from (17, 1) to (17, 2) cov 1 -> 0 hit 0 hp 22
+FS DODGE 48 id 4 from (17, 1) to (17, 2) cov 1 -> 0 hit 0 hp 22
+FS DODGE 50 id 4 from (17, 1) to (17, 2) cov 1 -> 0 hit 0 hp 22
+FS DODGE 52 id 4 from (17, 1) to (17, 2) cov 1 -> 0 hit 0 hp 22
+FS DODGE 54 id 4 from (17, 1) to (17, 2) cov 1 -> 0 hit 0 hp 22
+FS DODGE 56 id 4 from (17, 1) to (17, 2) cov 1 -> 0 hit 0 hp 22
+FS DODGE 58 id 4 from (17, 1) to (17, 2) cov 1 -> 0 hit 0 hp 22
+PRESKILL520 60 id 4 body 1
+FS STAT 60 id 10 at (17, 3) need 3 orth 2 ti 16 ammo 24 sen 0 hp 40 covden 0 eco 0 lost 0
+FS DODGE 62 id 10 from (17, 1) to (17, 0) cov 1 -> 0 hit 0 hp 40
+FS PROMOTE 66 id 10
+FS SEAL 71 tile (15, 1) n 5
+FS SEAL 73 tile (14, 1) n 6
+FS PHASE 74 id 10 ph 3 d 4 at (14, 0)
+FS CLEAR 75 tile (13, 1) peck 1
+FS RUNG 75 id 10 r 3 hi -
+FS CLEAR 76 tile (13, 1) peck 2
+FS RUNG 76 id 10 r 3 hi -
+FS CLEAR 77 tile (13, 1) peck 3
+FS RUNG 77 id 10 r 3 hi -
+FS CLEAR 78 tile (13, 1) peck 4
+FS RUNG 78 id 10 r 3 hi -
+FS CLEAR 79 tile (13, 1) peck 5
+FS RUNG 79 id 10 r 3 hi -
+FS STAT 80 id 10 at (13, 0) need 3 orth 0 ti 1 ammo 24 sen 0 hp 40 covden 0 eco 0 lost 0
+FS PHASE 93 id 10 ph 2 d 5 at (13, 0)
+FS STAT 100 id 10 at (13, 0) need 2 orth 1 ti 9 ammo 24 sen 0 hp 40 covden 0 eco 0 lost 0
+FS STAT 120 id 10 at (13, 0) need 3 orth 2 ti 11 ammo 24 sen 0 hp 40 covden 0 eco 0 lost 0
+FS CLEAR 128 tile (13, 1) peck 1
+FS RUNG 128 id 10 r 3 hi -
+FS CLEAR 129 tile (13, 1) peck 2
+FS RUNG 129 id 10 r 3 hi -
+FS CLEAR 132 tile (13, 1) peck 3
+FS RUNG 132 id 10 r 3 hi -
+FS CLEAR 133 tile (13, 1) peck 4
+FS RUNG 133 id 10 r 3 hi -
+FS CLEAR 134 tile (13, 1) peck 5
+FS RUNG 134 id 10 r 3 hi -
+FS CLEAR 135 tile (13, 1) peck 6
+FS RUNG 135 id 10 r 3 hi -
+FS CLEAR 136 tile (13, 1) peck 7
+FS RUNG 136 id 10 r 3 hi -
+FS CLEAR 137 tile (13, 1) peck 8
+FS RUNG 137 id 10 r 3 hi -
+FS SEAL 139 tile (14, 1) n 7
+FS STAT 140 id 10 at (14, 0) need 2 orth 1 ti 39 ammo 24 sen 0 hp 40 covden 0 eco 0 lost 0
+FS SEAL 141 tile (15, 1) n 8
+FS SEAL 143 tile (14, 1) n 9
+FS PHASE 144 id 10 ph 3 d 4 at (14, 0)
+FS CLEAR 145 tile (13, 1) peck 1
+FS RUNG 145 id 10 r 3 hi -
+FS PHASE 146 id 10 ph 2 d 5 at (13, 0)
+FS CLEAR 146 tile (13, 1) peck 2
+FS RUNG 146 id 10 r 3 hi -
+FS CLEAR 147 tile (13, 1) peck 3
+FS RUNG 147 id 10 r 3 hi -
+FS CLEAR 148 tile (13, 1) peck 4
+FS RUNG 148 id 10 r 3 hi -
+FS CLEAR 149 tile (13, 1) peck 5
+FS RUNG 149 id 10 r 3 hi -
+FS CLEAR 150 tile (13, 1) peck 6
+FS RUNG 150 id 10 r 3 hi -
+FS CLEAR 151 tile (13, 1) peck 7
+FS RUNG 151 id 10 r 3 hi -
+FS CLEARED 152 tile (13, 1) n 1
+FS SEAL 152 tile (13, 1) n 10
+FS SEALCLR 152 tile (13, 1) lag 0
+FS SEAL 154 tile (14, 1) n 11
+FS SEAL 156 tile (15, 1) n 12
+FS PHASE 157 id 10 ph 3 d 4 at (15, 0)
+FS STAT 160 id 10 at (17, 1) need 2 orth 0 ti 44 ammo 24 sen 0 hp 40 covden 0 eco 0 lost 0
+FS SEAL 163 tile (16, 4) n 13
+FS PHASE 165 id 10 ph 2 d 8 at (17, 5)
+FS PHASE 166 id 10 ph 3 d 5 at (16, 5)
+FS SEAL 169 tile (13, 4) n 14
+FS STAT 180 id 10 at (15, 5) need 0 orth 0 ti 33 ammo 24 sen 0 hp 40 covden 0 eco 0 lost 0
+FS PHASE 186 id 10 ph 2 d 8 at (17, 5)
+FS PHASE 187 id 10 ph 3 d 5 at (16, 5)
+FS PHASE 188 id 10 ph 2 d 8 at (17, 5)
+FS PHASE 189 id 10 ph 3 d 5 at (16, 5)
+FS PHASE 190 id 10 ph 2 d 8 at (17, 5)
+FS PHASE 191 id 10 ph 3 d 5 at (16, 5)
+FS PHASE 192 id 10 ph 2 d 8 at (17, 5)
+FS PHASE 193 id 10 ph 3 d 5 at (16, 5)
+FS PHASE 194 id 10 ph 2 d 8 at (17, 5)
+FS PHASE 195 id 10 ph 3 d 5 at (16, 5)
+FS STAT 200 id 10 at (15, 5) need 0 orth 0 ti 28 ammo 24 sen 0 hp 40 covden 0 eco 0 lost 0
+FS STAT 220 id 10 at (15, 5) need 0 orth 0 ti 50 ammo 24 sen 0 hp 40 covden 0 eco 0 lost 0
+FS STAT 240 id 10 at (15, 5) need 0 orth 0 ti 29 ammo 24 sen 0 hp 40 covden 0 eco 0 lost 0
+FS PHASE 252 id 10 ph 2 d 8 at (17, 5)
+FS PHASE 253 id 10 ph 3 d 5 at (16, 5)
+FS PHASE 254 id 10 ph 2 d 8 at (17, 5)
+FS PHASE 255 id 10 ph 3 d 5 at (16, 5)
+FS PHASE 256 id 10 ph 2 d 8 at (17, 5)
+FS PHASE 257 id 10 ph 3 d 5 at (16, 5)
+FS PHASE 258 id 10 ph 2 d 8 at (17, 5)
+FS PHASE 259 id 10 ph 3 d 5 at (16, 5)
+FS PHASE 260 id 10 ph 2 d 8 at (17, 5)
+FS STAT 260 id 10 at (17, 5) need 3 orth 2 ti 22 ammo 24 sen 0 hp 40 covden 0 eco 0 lost 0
+FS PHASE 269 id 10 ph 3 d 5 at (16, 5)
+FS STAT 280 id 10 at (15, 5) need 0 orth 0 ti 40 ammo 24 sen 0 hp 40 covden 0 eco 0 lost 0
+FS STAT 300 id 10 at (15, 5) need 0 orth 0 ti 36 ammo 24 sen 0 hp 40 covden 0 eco 0 lost 0
+FS STAT 320 id 10 at (15, 5) need 0 orth 0 ti 22 ammo 24 sen 0 hp 40 covden 0 eco 0 lost 0
+FS STAT 340 id 10 at (15, 5) need 0 orth 0 ti 40 ammo 24 sen 0 hp 40 covden 0 eco 0 lost 0
+FS PHASE 350 id 10 ph 2 d 8 at (17, 5)
+FS PHASE 351 id 10 ph 3 d 5 at (16, 5)
+FS PHASE 352 id 10 ph 2 d 8 at (17, 5)
+FS PHASE 353 id 10 ph 3 d 5 at (16, 5)
+FS PHASE 354 id 10 ph 2 d 8 at (17, 5)
+FS PHASE 355 id 10 ph 3 d 5 at (16, 5)
+FS PHASE 356 id 10 ph 2 d 8 at (17, 5)
+FS STAT 360 id 10 at (16, 6) need 4 orth 3 ti 25 ammo 24 sen 0 hp 40 covden 0 eco 0 lost 0
+FS PHASE 362 id 10 ph 3 d 4 at (15, 5)
+FS PHASE 364 id 10 ph 2 d 8 at (17, 5)
+FS PHASE 365 id 10 ph 3 d 5 at (16, 5)
+FS PHASE 366 id 10 ph 2 d 8 at (17, 5)
+FS PHASE 367 id 10 ph 3 d 5 at (16, 5)
+FS STAT 380 id 10 at (15, 5) need 0 orth 0 ti 17 ammo 24 sen 0 hp 40 covden 0 eco 0 lost 0
+FS STAT 400 id 10 at (15, 5) need 0 orth 0 ti 58 ammo 24 sen 0 hp 40 covden 0 eco 0 lost 0
+FS PHASE 415 id 10 ph 2 d 9 at (15, 6)
+FS STAT 420 id 10 at (16, 6) need 4 orth 3 ti 21 ammo 24 sen 0 hp 40 covden 0 eco 0 lost 0
+FS PHASE 422 id 10 ph 3 d 4 at (15, 5)
+FS PHASE 424 id 10 ph 2 d 8 at (17, 5)
+FS PHASE 425 id 10 ph 3 d 5 at (16, 5)
+FS STAT 440 id 10 at (15, 5) need 0 orth 0 ti 44 ammo 24 sen 0 hp 40 covden 0 eco 0 lost 0
+FS PHASE 457 id 10 ph 2 d 9 at (15, 6)
+FS STAT 460 id 10 at (16, 6) need 4 orth 3 ti 94 ammo 24 sen 0 hp 40 covden 0 eco 0 lost 0
+FS PHASE 464 id 10 ph 3 d 4 at (15, 5)
+FS SENTINEL 464 at (16, 5) face NORTHWEST tgt (14, 3) score 8 n 1 onring 0 lost 0 gate (1, 0, 50) onsray 0 olddsq -1
+FS PHASE 465 id 10 ph 4 d 4 at (15, 5)
+FS DODGE 469 id 10 from (15, 5) to (15, 6) cov 1 -> 0 hit 0 hp 40
+FS DODGE 471 id 10 from (15, 5) to (15, 6) cov 1 -> 0 hit 0 hp 40
+FS DODGE 473 id 10 from (15, 5) to (15, 6) cov 1 -> 0 hit 0 hp 40
+FS DODGE 475 id 10 from (15, 5) to (15, 6) cov 1 -> 0 hit 0 hp 40
+FS DODGE 477 id 10 from (15, 5) to (15, 6) cov 1 -> 0 hit 0 hp 40
+FS SENTDEAD 478 at (16, 5) lost 1
+FS DODGE 479 id 10 from (15, 5) to (15, 6) cov 1 -> 0 hit 0 hp 40
+FS PHASE 480 id 10 ph 2 d 9 at (15, 6)
+FS STAT 480 id 10 at (15, 6) need 3 orth 2 ti 12 ammo 22 sen 0 hp 40 covden 0 eco 0 lost 1
+FS PHASE 481 id 10 ph 3 d 4 at (15, 5)
+FS DODGE 481 id 10 from (15, 5) to (15, 6) cov 1 -> 0 hit 0 hp 40
+FS PHASE 482 id 10 ph 2 d 9 at (15, 6)
+FS PHASE 483 id 10 ph 3 d 4 at (15, 5)
+FS SEAL 490 tile (16, 4) n 15
+FS DODGE 499 id 10 from (16, 5) to (16, 6) cov 1 -> 0 hit 0 hp 40
+FS PHASE 500 id 10 ph 2 d 10 at (16, 6)
+FS STAT 500 id 10 at (16, 6) need 4 orth 3 ti 53 ammo 22 sen 0 hp 40 covden 0 eco 0 lost 1
+FS PHASE 501 id 10 ph 3 d 5 at (16, 5)
+FS DODGE 501 id 10 from (16, 5) to (16, 6) cov 1 -> 0 hit 0 hp 33
+FS PHASE 502 id 10 ph 2 d 10 at (16, 6)
+FS PHASE 503 id 10 ph 3 d 5 at (16, 5)
+FS DODGE 503 id 10 from (16, 5) to (16, 6) cov 1 -> 0 hit 0 hp 33
+FS PHASE 504 id 10 ph 2 d 10 at (16, 6)
+FS PHASE 505 id 10 ph 3 d 5 at (16, 5)
+FS DODGE 505 id 10 from (16, 5) to (16, 4) cov 1 -> 0 hit 0 hp 26
+FS DODGE 507 id 10 from (17, 4) to (16, 4) cov 1 -> 0 hit 0 hp 26
+FS DODGE 509 id 10 from (17, 4) to (16, 4) cov 1 -> 0 hit 0 hp 19
+FS DODGE 511 id 10 from (17, 4) to (16, 4) cov 1 -> 0 hit 0 hp 19
+FS DODGE 513 id 10 from (17, 4) to (16, 4) cov 1 -> 0 hit 0 hp 12
+FS DODGE 515 id 10 from (17, 4) to (16, 4) cov 1 -> 0 hit 0 hp 5
+FS DODGE 516 id 10 from (16, 4) to (16, 5) cov 1 -> 0 hit 0 hp 5
+FS SEAL 517 tile (16, 4) n 16
+FS STAT 520 id 10 at (16, 5) need 1 orth 0 ti 94 ammo 22 sen 0 hp 5 covden 0 eco 0 lost 1
+FS SEAL 526 tile (16, 4) n 17
+FS DODGE 535 id 10 from (16, 5) to (16, 6) cov 1 -> 0 hit 0 hp 5
+FS PHASE 536 id 10 ph 2 d 10 at (16, 6)
+FS GATE 549 sig (30, 30, (14, 2), (14, 26)) ok 1
+FS PHASE 549 id 361 ph 1 d 626 at (16, 28)
+FS HOPBUILD 550 at (17, 28) lch (17, 27) T (16, 1)
+FS GATE 551 sig (30, 30, (14, 2), (14, 26)) ok 1
+FS THROW 551 from (16, 28) to (16, 22) T (16, 1) body 361 n 1 dsq 362
+FS ARRIVE 572 id 361 body 1 at (15, 5) dsq 4
+FS PHASE 572 id 361 ph 3 d 4 at (15, 5)
+FS DODGE 572 id 361 from (15, 5) to (15, 6) cov 1 -> 0 hit 0 hp 26
+FS PHASE 573 id 361 ph 2 d 9 at (15, 6)
+FS PHASE 574 id 361 ph 3 d 4 at (15, 5)
+FS DODGE 574 id 361 from (15, 5) to (15, 6) cov 1 -> 0 hit 0 hp 19
+FS PHASE 575 id 361 ph 2 d 9 at (15, 6)
+FS PHASE 576 id 361 ph 3 d 4 at (15, 5)
+FS DODGE 576 id 361 from (15, 5) to (15, 6) cov 1 -> 0 hit 0 hp 12
+FS PHASE 577 id 361 ph 2 d 9 at (15, 6)
+FS PHASE 578 id 361 ph 3 d 4 at (15, 5)
+FS DODGE 578 id 361 from (15, 5) to (15, 6) cov 1 -> 0 hit 0 hp 5
+FS PHASE 579 id 361 ph 2 d 9 at (15, 6)
+FS GATE 609 sig (30, 30, (14, 2), (14, 26)) ok 1
+FS PHASE 609 id 372 ph 1 d 485 at (13, 25)
+FS HOPBUILD 617 at (14, 18) lch (14, 17) T (16, 1)
+FS GATE 618 sig (30, 30, (14, 2), (14, 26)) ok 1
+FS THROW 618 from (15, 18) to (15, 12) T (16, 1) body 372 n 1 dsq 81
+FS ARRIVE 626 id 372 body 1 at (15, 5) dsq 4
+FS PHASE 626 id 372 ph 3 d 4 at (15, 5)
+FS DODGE 626 id 372 from (15, 5) to (15, 6) cov 1 -> 0 hit 0 hp 33
+FS PHASE 627 id 372 ph 2 d 9 at (15, 6)
+FS PHASE 628 id 372 ph 3 d 4 at (15, 5)
+FS DODGE 628 id 372 from (15, 5) to (15, 6) cov 1 -> 0 hit 0 hp 26
+FS PHASE 629 id 372 ph 2 d 9 at (15, 6)
+FS PHASE 630 id 372 ph 3 d 4 at (15, 5)
+FS DODGE 630 id 372 from (15, 5) to (15, 6) cov 1 -> 0 hit 0 hp 19
+FS PHASE 631 id 372 ph 2 d 9 at (15, 6)
+FS PHASE 632 id 372 ph 3 d 4 at (15, 5)
+FS DODGE 632 id 372 from (15, 5) to (15, 6) cov 1 -> 0 hit 0 hp 12
+FS PHASE 633 id 372 ph 2 d 9 at (15, 6)
+FS PHASE 634 id 372 ph 3 d 4 at (15, 5)
+FS DODGE 634 id 372 from (15, 5) to (15, 6) cov 1 -> 0 hit 0 hp 5
+FS PHASE 635 id 372 ph 2 d 9 at (15, 6)
+FS GATE 665 sig (30, 30, (14, 2), (14, 26)) ok 1
+FS PHASE 665 id 384 ph 1 d 485 at (13, 25)
+FS HOPBUILD 673 at (14, 18) lch (14, 17) T (16, 1)
+FS GATE 674 sig (30, 30, (14, 2), (14, 26)) ok 1
+FS THROW 674 from (15, 18) to (15, 12) T (16, 1) body 384 n 1 dsq 81
+FS ARRIVE 688 id 384 body 1 at (17, 3) dsq 4
+FS PHASE 688 id 384 ph 3 d 4 at (17, 3)
+FS CLEAR 689 tile (16, 4) peck 1
+FS RUNG 689 id 384 r 3 hi -
+FS CLEAR 690 tile (16, 4) peck 2
+FS RUNG 690 id 384 r 3 hi -
+FS CLEAR 691 tile (16, 4) peck 3
+FS RUNG 691 id 384 r 3 hi -
+FS DODGE 692 id 384 from (17, 4) to (16, 4) cov 1 -> 0 hit 0 hp 40
+FS PHASE 693 id 384 ph 2 d 2 at (16, 4)
+FS DODGE 694 id 384 from (17, 4) to (16, 4) cov 1 -> 0 hit 0 hp 33
+FS STAT 700 id 384 at (18, 7) need 7 orth 6 ti 82 ammo 22 sen 0 hp 33 covden 0 eco 0 lost 0
+FS DODGE 712 id 384 from (17, 6) to (16, 6) cov 1 -> 0 hit 0 hp 33
+FS DODGE 714 id 384 from (17, 6) to (16, 6) cov 1 -> 0 hit 0 hp 26
+FS EVICTOR 718 at (17, 3) ucov 0 cov 6 unseal 0 obs 7
+FS RUNG 718 id 384 r 2 hi -
+FS CLEAR 719 tile (16, 4) peck 1
+FS RUNG 719 id 384 r 3 hi -
+FS GATE 719 sig (30, 30, (14, 2), (14, 26)) ok 1
+FS EVICT 719 from (16, 2) to (22, 4)
+FS STAT 720 id 384 at (17, 4) need 3 orth 2 ti 68 ammo 22 sen 0 hp 26 covden 0 eco 0 lost 0
+FS DODGE 720 id 384 from (17, 4) to (16, 4) cov 1 -> 0 hit 0 hp 26
+FS DODGE 722 id 384 from (17, 4) to (16, 4) cov 1 -> 0 hit 0 hp 26
+FS DODGE 724 id 384 from (17, 4) to (16, 4) cov 1 -> 0 hit 0 hp 26
+FS DODGE 726 id 384 from (17, 4) to (16, 4) cov 1 -> 0 hit 0 hp 26
+FS DODGE 728 id 384 from (17, 4) to (16, 4) cov 1 -> 0 hit 0 hp 19
+FS DODGE 729 id 384 from (16, 4) to (16, 5) cov 1 -> 0 hit 0 hp 19
+FS DODGE 731 id 384 from (16, 4) to (16, 5) cov 1 -> 0 hit 0 hp 12
+FS DODGE 733 id 384 from (16, 4) to (16, 5) cov 1 -> 0 hit 0 hp 12
+FS DODGE 735 id 384 from (16, 4) to (17, 4) cov 1 -> 0 hit 0 hp 12
+FS GATE 753 sig (30, 30, (14, 2), (14, 26)) ok 1
+FS PHASE 753 id 388 ph 1 d 485 at (13, 25)
+FS HOPBUILD 761 at (14, 18) lch (14, 17) T (16, 1)
+FS GATE 762 sig (30, 30, (14, 2), (14, 26)) ok 1
+FS THROW 762 from (15, 18) to (15, 12) T (16, 1) body 388 n 1 dsq 81
+FS ARRIVE 770 id 388 body 1 at (15, 5) dsq 4
+FS PHASE 770 id 388 ph 2 d 4 at (15, 5)
+FS DODGE 771 id 388 from (16, 5) to (16, 6) cov 1 -> 0 hit 0 hp 40
+FS DODGE 773 id 388 from (16, 5) to (16, 6) cov 1 -> 0 hit 0 hp 33
+FS DODGE 779 id 388 from (18, 5) to (18, 6) cov 1 -> 0 hit 0 hp 33
+FS STAT 780 id 388 at (18, 6) need 6 orth 5 ti 69 ammo 22 sen 0 hp 33 covden 0 eco 0 lost 0
+FS DODGE 783 id 388 from (16, 5) to (16, 4) cov 1 -> 0 hit 0 hp 33
+FS DODGE 786 id 388 from (17, 3) to (17, 2) cov 1 -> 0 hit 0 hp 15
+FS SEAL 787 tile (16, 2) n 1
+FS SEAL 790 tile (15, 1) n 2
+FS SEAL 791 tile (16, 2) n 3
+FS PHASE 792 id 388 ph 3 d 2 at (16, 1)
+FS PHASE 794 id 388 ph 2 d 8 at (17, 0)
+FS SEAL 796 tile (15, 1) n 4
+FS PHASE 797 id 388 ph 3 d 4 at (15, 0)
+FS PHASE 800 id 388 ph 2 d 5 at (17, 1)
+FS STAT 800 id 388 at (17, 1) need 1 orth 1 ti 83 ammo 22 sen 0 hp 15 covden 0 eco 0 lost 0
+FS SEAL 801 tile (15, 1) n 5
+FS PHASE 802 id 388 ph 3 d 2 at (16, 1)
+FS DODGE 805 id 388 from (17, 3) to (17, 2) cov 1 -> 0 hit 0 hp 15
+FS DODGE 807 id 388 from (17, 3) to (17, 2) cov 1 -> 0 hit 0 hp 15
+FS PHASE 808 id 388 ph 2 d 4 at (17, 2)
+FS SEAL 810 tile (15, 1) n 6
+FS PHASE 811 id 388 ph 3 d 2 at (16, 1)
+FS DODGE 814 id 388 from (17, 3) to (17, 2) cov 1 -> 0 hit 0 hp 15
+FS GATE 945 sig (30, 30, (14, 2), (14, 26)) ok 1
+FS PHASE 945 id 431 ph 1 d 485 at (13, 25)

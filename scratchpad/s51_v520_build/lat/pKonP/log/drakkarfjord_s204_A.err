@@ -1,0 +1,64 @@
+Update available: 2.3.6 -> 2.3.8. Run: pip install --upgrade fcode
+FS GATE 0 sig (30, 30, (2, 24), (26, 4)) ok 1
+FS GATE 1 sig (30, 30, (2, 24), (26, 4)) ok 1
+FS PHASE 1 id 3 ph 1 d 808 at (4, 23)
+FS GATE 2 sig (30, 30, (2, 24), (26, 4)) ok 1
+FS GATE 3 sig (30, 30, (2, 24), (26, 4)) ok 1
+FS GATE 4 sig (30, 30, (2, 24), (26, 4)) ok 1
+FS PHASE 4 id 9 ph 1 d 845 at (4, 24)
+FS HOPBUILD 5 at (4, 23) lch (5, 23) T (28, 3)
+FS GATE 6 sig (30, 30, (2, 24), (26, 4)) ok 1
+FS THROW 6 from (4, 22) to (9, 20) T (28, 3) body 3 n 1 dsq 514
+FS HOPBUILD 7 at (9, 20) lch (10, 20) T (28, 3)
+FS THROW 7 from (6, 22) to (8, 19) T (28, 3) body 9 n 2 dsq 520
+FS GATE 8 sig (30, 30, (2, 24), (26, 4)) ok 1
+FS THROW 8 from (9, 19) to (14, 17) T (28, 3) body 3 n 1 dsq 288
+FS HOPBUILD 9 at (14, 17) lch (14, 16) T (28, 3)
+FS THROW 9 from (9, 20) to (13, 16) T (28, 3) body 9 n 2 dsq 290
+FS GATE 10 sig (30, 30, (2, 24), (26, 4)) ok 1
+FS THROW 10 from (15, 17) to (18, 13) T (28, 3) body 3 n 1 dsq 128
+FS HOPBUILD 11 at (18, 13) lch (18, 12) T (28, 3)
+FS THROW 11 from (14, 15) to (17, 13) T (28, 3) body 9 n 2 dsq 145
+FS GATE 12 sig (30, 30, (2, 24), (26, 4)) ok 1
+FS THROW 12 from (19, 13) to (22, 9) T (28, 3) body 3 n 1 dsq 32
+FS HOPBUILD 13 at (22, 9) lch (22, 8) T (28, 3)
+FS THROW 13 from (19, 13) to (21, 8) T (28, 3) body 9 n 2 dsq 34
+FS GATE 14 sig (30, 30, (2, 24), (26, 4)) ok 1
+FS SPLIT 14 arc 2 to (25, 4) body 3 walk 2
+FS ARRIVE 15 id 3 body 1 at (25, 4) dsq 1
+FS PHASE 15 id 3 ph 2 d 1 at (25, 4)
+FS SEAL 15 tile (25, 5) n 1
+FS SPLIT 15 arc 1 to (24, 4) body 9 walk 1
+FS SEAL 16 tile (25, 3) n 2
+FS ARRIVE 16 id 9 body 2 at (24, 4) dsq 4
+FS PHASE 16 id 9 ph 2 d 4 at (24, 4)
+FS DODGE 17 id 3 from (25, 4) to (24, 4) cov 1 -> 0 hit 0 hp 40
+FS SEAL 18 tile (25, 4) n 3
+FS STAT 20 id 3 at (24, 5) need 7 orth 6 ti 47 ammo 16 sen 0 hp 40 covden 0 eco 0 lost 0
+FS STAT 20 id 9 at (24, 0) need 8 orth 7 ti 47 ammo 16 sen 0 hp 40 covden 0 eco 0 lost 0
+FS SEAL 22 tile (25, 3) n 4
+FS SEAL 26 tile (26, 3) n 1
+FS SEAL 28 tile (27, 3) n 2
+FS DODGE 29 id 3 from (25, 6) to (26, 6) cov 1 -> 0 hit 0 hp 40
+FS SEAL 30 tile (27, 6) n 5
+FS SEAL 31 tile (28, 4) n 3
+FS SEAL 35 tile (28, 5) n 6
+FS SEAL 38 tile (28, 6) n 7
+FS GATE 38 sig (30, 30, (2, 24), (26, 4)) ok 1
+FS STAT 40 id 3 at (29, 5) need 1 orth 1 ti 63 ammo 24 sen 0 hp 40 covden 0 eco 1 lost 0
+FS STAT 40 id 9 at (28, 3) need 1 orth 1 ti 63 ammo 24 sen 0 hp 40 covden 0 eco 1 lost 0
+FS DODGE 44 id 9 from (25, 2) to (26, 2) cov 1 -> 0 hit 0 hp 40
+FS DODGE 46 id 9 from (25, 2) to (26, 2) cov 1 -> 0 hit 0 hp 40
+FS DODGE 48 id 9 from (25, 2) to (26, 2) cov 1 -> 0 hit 0 hp 40
+FS DODGE 50 id 9 from (25, 2) to (26, 2) cov 1 -> 0 hit 0 hp 40
+FS DODGE 52 id 9 from (25, 2) to (26, 2) cov 1 -> 0 hit 0 hp 40
+FS DODGE 54 id 9 from (25, 2) to (26, 2) cov 1 -> 0 hit 0 hp 40
+FS DODGE 56 id 9 from (25, 2) to (26, 2) cov 1 -> 0 hit 0 hp 40
+FS DODGE 58 id 9 from (25, 2) to (26, 2) cov 1 -> 0 hit 0 hp 22
+PRESKILL520 60 id 3 body 1
+FS STAT 60 id 9 at (25, 2) need 4 orth 3 ti 56 ammo 24 sen 0 hp 22 covden 0 eco 1 lost 0
+FS DODGE 60 id 9 from (25, 2) to (26, 2) cov 1 -> 0 hit 0 hp 22
+FS DODGE 62 id 9 from (25, 2) to (26, 2) cov 1 -> 0 hit 0 hp 4
+FS DODGE 64 id 9 from (25, 2) to (26, 2) cov 1 -> 0 hit 0 hp 4
+FS PROMOTE 66 id 9
+FS DODGE 66 id 9 from (25, 2) to (26, 2) cov 1 -> 0 hit 0 hp 4

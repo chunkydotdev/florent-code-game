@@ -1,0 +1,37 @@
+tag	map	seed	seat	ours	cond	turn	arm	arrive	sent	kill	last	window	ge1	ge2	nobody	two_body_share	bought_sentinel	ge1_fp	ge2_fp	nobody_fp
+atoll_s112_A	atoll	112	A	OPP	Titanium collected (tiebreak)	1000	flagoff	6	642	-1	999	636	90	0	0.8585	0.0	1	94	0	0.8522
+atoll_s112_B	atoll	112	B	OPP	Core destroyed	256	flagoff	6	-1	-1	255	250	39	11	0.844	0.044	0	76	19	0.696
+atoll_s113_A	atoll	113	A	US	Core destroyed	187	flagoff	9	52	186	186	43	23	3	0.4651	0.0698	1	40	18	0.0698
+atoll_s113_B	atoll	113	B	OPP	Core destroyed	341	flagoff	6	51	-1	340	45	41	7	0.0889	0.1556	1	45	13	0.0
+atoll_s114_A	atoll	114	A	OPP	Core destroyed	505	flagoff	6	-1	-1	504	499	58	0	0.8838	0.0	0	120	5	0.7595
+atoll_s114_B	atoll	114	B	OPP	Core destroyed	128	flagoff	7	-1	-1	127	121	3	0	0.9752	0.0	0	14	0	0.8843
+drakkarfjord_s112_A	drakkarfjord	112	A	OPP	Core destroyed	482	flagoff	10	-1	-1	481	472	81	0	0.8284	0.0	0	131	0	0.7225
+drakkarfjord_s112_B	drakkarfjord	112	B	OPP	Core destroyed	309	flagoff	10	-1	-1	308	299	71	0	0.7625	0.0	0	90	0	0.699
+drakkarfjord_s113_A	drakkarfjord	113	A	US	Core destroyed	169	flagoff	10	109	168	168	99	53	0	0.4646	0.0	1	76	0	0.2323
+drakkarfjord_s113_B	drakkarfjord	113	B	OPP	Core destroyed	325	flagoff	10	-1	-1	324	315	33	0	0.8952	0.0	0	55	0	0.8254
+drakkarfjord_s114_A	drakkarfjord	114	A	OPP	Core destroyed	805	flagoff	10	-1	-1	804	795	53	0	0.9333	0.0	0	79	0	0.9006
+drakkarfjord_s114_B	drakkarfjord	114	B	US	Core destroyed	173	flagoff	10	76	172	172	66	38	0	0.4242	0.0	1	61	0	0.0758
+glacierkeep_s112_A	glacierkeep	112	A	OPP	Titanium collected (tiebreak)	1000	flagoff	8	180	-1	999	172	132	0	0.2326	0.0	1	155	0	0.0988
+glacierkeep_s112_B	glacierkeep	112	B	US	Core destroyed	277	flagoff	8	56	276	276	48	37	4	0.2292	0.0833	1	48	20	0.0
+glacierkeep_s113_A	glacierkeep	113	A	US	Core destroyed	377	flagoff	8	88	376	376	80	59	6	0.2625	0.075	1	79	51	0.0125
+glacierkeep_s113_B	glacierkeep	113	B	US	Titanium collected (tiebreak)	1000	flagoff	8	76	-1	999	68	45	2	0.3382	0.0294	1	68	33	0.0
+glacierkeep_s114_A	glacierkeep	114	A	US	Core destroyed	237	flagoff	9	134	236	236	125	110	15	0.12	0.12	1	125	85	0.0
+glacierkeep_s114_B	glacierkeep	114	B	US	Core destroyed	177	flagoff	8	84	176	176	76	56	4	0.2632	0.0526	1	76	40	0.0
+midgard_s112_A	midgard	112	A	US	Core destroyed	174	flagoff	50	118	173	173	68	67	59	0.0147	0.8676	1	68	68	0.0
+midgard_s112_B	midgard	112	B	OPP	Core destroyed	508	flagoff	52	-1	-1	507	456	82	43	0.8202	0.0943	0	82	51	0.8202
+midgard_s113_A	midgard	113	A	US	Core destroyed	212	flagoff	48	160	211	211	112	111	101	0.0089	0.9018	1	112	107	0.0
+midgard_s113_B	midgard	113	B	OPP	Core destroyed	308	flagoff	51	-1	-1	307	257	256	250	0.0039	0.9728	0	257	250	0.0
+midgard_s114_A	midgard	114	A	US	Core destroyed	196	flagoff	52	140	195	195	88	87	79	0.0114	0.8977	1	88	87	0.0
+midgard_s114_B	midgard	114	B	US	Titanium collected (tiebreak)	1000	flagoff	52	-1	-1	999	948	948	403	0.0	0.4251	0	948	923	0.0
+nordkap_s112_A	nordkap	112	A	US	Core destroyed	417	flagoff	4	229	416	416	225	222	103	0.0133	0.4578	1	225	184	0.0
+nordkap_s112_B	nordkap	112	B	US	Core destroyed	164	flagoff	4	68	163	163	64	54	28	0.1562	0.4375	1	61	39	0.0469
+nordkap_s113_A	nordkap	113	A	OPP	Core destroyed	314	flagoff	4	-1	-1	313	310	65	2	0.7903	0.0065	0	104	7	0.6645
+nordkap_s113_B	nordkap	113	B	US	Core destroyed	213	flagoff	4	144	212	212	140	130	57	0.0714	0.4071	1	135	115	0.0357
+nordkap_s114_A	nordkap	114	A	US	Core destroyed	296	flagoff	4	240	295	295	236	185	25	0.2161	0.1059	1	220	43	0.0678
+nordkap_s114_B	nordkap	114	B	OPP	Core destroyed	330	flagoff	4	-1	-1	329	326	41	0	0.8742	0.0	0	64	3	0.8037
+yulerune_s112_A	yulerune	112	A	OPP	Core destroyed	577	flagoff	37	279	-1	576	242	242	234	0.0	0.9669	1	242	242	0.0
+yulerune_s112_B	yulerune	112	B	US	Core destroyed	310	flagoff	31	254	309	309	223	218	210	0.0224	0.9417	1	223	213	0.0
+yulerune_s113_A	yulerune	113	A	OPP	Core destroyed	401	flagoff	29	316	-1	400	287	283	270	0.0139	0.9408	1	287	276	0.0
+yulerune_s113_B	yulerune	113	B	US	Core destroyed	479	flagoff	31	423	478	478	392	353	273	0.0995	0.6964	1	361	283	0.0791
+yulerune_s114_A	yulerune	114	A	US	Core destroyed	205	flagoff	29	149	204	204	120	117	105	0.025	0.875	1	120	111	0.0
+yulerune_s114_B	yulerune	114	B	OPP	Core destroyed	184	flagoff	29	-1	-1	183	155	155	60	0.0	0.3871	0	155	68	0.0

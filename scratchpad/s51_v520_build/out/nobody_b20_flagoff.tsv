@@ -1,0 +1,36 @@
+tag	map	seed	seat	ours	cond	turn	arm	arrive	sent	kill	last	window	ge1	ge2	nobody	two_body_share	bought_sentinel	ge1_fp	ge2_fp	nobody_fp
+atoll_s58_A	atoll	58	A	US	Core destroyed	610	flagoff	7	68	609	609	61	14	0	0.7705	0.0	1	19	0	0.6885
+atoll_s59_A	atoll	59	A	US	Core destroyed	808	flagoff	11	590	807	807	579	259	7	0.5527	0.0121	1	307	20	0.4698
+atoll_s59_B	atoll	59	B	US	Core destroyed	206	flagoff	42	110	205	205	68	43	0	0.3676	0.0	1	50	0	0.2647
+atoll_s60_A	atoll	60	A	OPP	Core destroyed	433	flagoff	6	96	-1	432	90	33	0	0.6333	0.0	1	90	0	0.0
+atoll_s60_B	atoll	60	B	OPP	Core destroyed	422	flagoff	6	-1	-1	421	416	60	3	0.8558	0.0072	0	82	7	0.8029
+drakkarfjord_s58_A	drakkarfjord	58	A	OPP	Titanium collected (tiebreak)	1000	flagoff	10	-1	-1	999	990	38	0	0.9616	0.0	0	62	0	0.9374
+drakkarfjord_s58_B	drakkarfjord	58	B	US	Core destroyed	126	flagoff	10	70	125	125	60	32	0	0.4667	0.0	1	60	0	0.0
+drakkarfjord_s59_A	drakkarfjord	59	A	US	Core destroyed	359	flagoff	10	303	358	358	293	65	0	0.7782	0.0	1	93	0	0.6826
+drakkarfjord_s59_B	drakkarfjord	59	B	US	Core destroyed	143	flagoff	10	65	142	142	55	31	0	0.4364	0.0	1	55	0	0.0
+drakkarfjord_s60_A	drakkarfjord	60	A	US	Core destroyed	334	flagoff	10	278	333	333	268	80	14	0.7015	0.0522	1	107	17	0.6007
+drakkarfjord_s60_B	drakkarfjord	60	B	US	Core destroyed	148	flagoff	10	60	147	147	50	21	0	0.58	0.0	1	50	0	0.0
+glacierkeep_s58_A	glacierkeep	58	A	US	Core destroyed	725	flagoff	8	84	724	724	76	48	3	0.3684	0.0395	1	75	44	0.0132
+glacierkeep_s58_B	glacierkeep	58	B	OPP	Harvesters (tiebreak)	1000	flagoff	8	856	-1	999	848	109	0	0.8715	0.0	1	179	51	0.7889
+glacierkeep_s59_A	glacierkeep	59	A	US	Core destroyed	217	flagoff	9	89	216	216	80	55	4	0.3125	0.05	1	80	48	0.0
+glacierkeep_s59_B	glacierkeep	59	B	OPP	Core destroyed	449	flagoff	8	74	-1	448	66	55	11	0.1667	0.1667	1	66	30	0.0
+glacierkeep_s60_A	glacierkeep	60	A	US	Core destroyed	173	flagoff	8	68	172	172	60	41	3	0.3167	0.05	1	60	35	0.0
+glacierkeep_s60_B	glacierkeep	60	B	OPP	Core destroyed	453	flagoff	8	72	-1	452	64	49	10	0.2344	0.1562	1	64	30	0.0
+midgard_s58_A	midgard	58	A	OPP	Core destroyed	135	flagoff	50	57	-1	134	7	7	3	0.0	0.4286	1	7	7	0.0
+midgard_s58_B	midgard	58	B	OPP	Core destroyed	359	flagoff	53	-1	-1	358	306	161	95	0.4739	0.3105	0	167	122	0.4542
+midgard_s59_A	midgard	59	A	US	Core destroyed	303	flagoff	53	240	302	302	187	185	108	0.0107	0.5775	1	187	130	0.0
+midgard_s59_B	midgard	59	B	US	Core destroyed	192	flagoff	51	136	191	191	85	85	77	0.0	0.9059	1	85	82	0.0
+midgard_s60_A	midgard	60	A	US	Core destroyed	207	flagoff	49	145	206	206	96	96	89	0.0	0.9271	1	96	91	0.0
+midgard_s60_B	midgard	60	B	OPP	Core destroyed	224	flagoff	55	-1	-1	223	169	139	94	0.1775	0.5562	0	139	100	0.1775
+nordkap_s58_A	nordkap	58	A	US	Core destroyed	620	flagoff	4	448	619	619	444	64	0	0.8559	0.0	1	142	0	0.6802
+nordkap_s58_B	nordkap	58	B	US	Core destroyed	536	flagoff	4	128	535	535	124	109	13	0.121	0.1048	1	124	100	0.0
+nordkap_s59_A	nordkap	59	A	OPP	Core destroyed	196	flagoff	4	-1	-1	195	192	24	0	0.875	0.0	0	31	0	0.8385
+nordkap_s59_B	nordkap	59	B	OPP	Core destroyed	322	flagoff	4	-1	-1	321	318	169	0	0.4686	0.0	0	182	0	0.4277
+nordkap_s60_A	nordkap	60	A	OPP	Core destroyed	139	flagoff	4	-1	-1	138	135	41	12	0.6963	0.0889	0	46	21	0.6593
+nordkap_s60_B	nordkap	60	B	US	Core destroyed	300	flagoff	4	144	299	299	140	132	29	0.0571	0.2071	1	140	44	0.0
+yulerune_s58_A	yulerune	58	A	US	Core destroyed	217	flagoff	29	89	216	216	60	56	45	0.0667	0.75	1	60	53	0.0
+yulerune_s58_B	yulerune	58	B	OPP	Core destroyed	161	flagoff	29	-1	-1	160	132	129	120	0.0227	0.9091	0	132	126	0.0
+yulerune_s59_A	yulerune	59	A	US	Core destroyed	386	flagoff	29	330	385	385	301	297	287	0.0133	0.9535	1	301	290	0.0
+yulerune_s59_B	yulerune	59	B	OPP	Core destroyed	121	flagoff	39	-1	-1	120	82	81	74	0.0122	0.9024	0	82	82	0.0
+yulerune_s60_A	yulerune	60	A	OPP	Core destroyed	342	flagoff	31	-1	-1	341	311	309	297	0.0064	0.955	0	311	304	0.0
+yulerune_s60_B	yulerune	60	B	OPP	Core destroyed	370	flagoff	32	-1	-1	369	338	119	82	0.6479	0.2426	0	127	92	0.6243

@@ -1,0 +1,37 @@
+tag	map	seed	seat	ours	cond	turn	arm	arrive	sent	kill	last	window	ge1	ge2	nobody	two_body_share	bought_sentinel	ge1_fp	ge2_fp	nobody_fp
+atoll_s10_A	atoll	10	A	OPP	Core destroyed	872	v520	11	164	-1	871	153	81	0	0.4706	0.0	1	101	5	0.3399
+atoll_s10_B	atoll	10	B	OPP	Titanium collected (tiebreak)	1000	v520	11	-1	-1	999	989	34	3	0.9656	0.003	0	68	16	0.9312
+atoll_s11_A	atoll	11	A	US	Core destroyed	534	v520	11	164	533	533	153	149	113	0.0261	0.7386	1	153	124	0.0
+atoll_s11_B	atoll	11	B	US	Core destroyed	131	v520	11	65	130	130	54	47	27	0.1296	0.5	1	54	34	0.0
+atoll_s12_A	atoll	12	A	US	Core destroyed	976	v520	11	920	975	975	909	153	28	0.8317	0.0308	1	203	73	0.7767
+atoll_s12_B	atoll	12	B	US	Core destroyed	158	v520	11	70	157	157	59	39	5	0.339	0.0847	1	59	8	0.0
+drakkarfjord_s10_A	drakkarfjord	10	A	OPP	Core destroyed	315	v520	14	-1	-1	314	301	150	28	0.5017	0.093	0	161	64	0.4651
+drakkarfjord_s10_B	drakkarfjord	10	B	OPP	Core destroyed	521	v520	14	60	-1	520	46	42	10	0.087	0.2174	1	46	44	0.0
+drakkarfjord_s11_A	drakkarfjord	11	A	US	Core destroyed	105	v520	14	35	104	104	21	19	9	0.0952	0.4286	1	21	18	0.0
+drakkarfjord_s11_B	drakkarfjord	11	B	US	Core destroyed	101	v520	14	45	100	100	31	26	5	0.1613	0.1613	1	31	28	0.0
+drakkarfjord_s12_A	drakkarfjord	12	A	US	Core destroyed	90	v520	14	34	89	89	20	18	4	0.1	0.2	1	20	19	0.0
+drakkarfjord_s12_B	drakkarfjord	12	B	US	Titanium collected (tiebreak)	1000	v520	14	40	-1	999	26	23	10	0.1154	0.3846	1	26	25	0.0
+glacierkeep_s10_A	glacierkeep	10	A	US	Core destroyed	119	v520	12	63	118	118	51	42	29	0.1765	0.5686	1	51	48	0.0
+glacierkeep_s10_B	glacierkeep	10	B	US	Core destroyed	329	v520	12	184	328	328	172	122	24	0.2907	0.1395	1	172	165	0.0
+glacierkeep_s11_A	glacierkeep	11	A	US	Core destroyed	541	v520	12	124	540	540	112	81	36	0.2768	0.3214	1	112	112	0.0
+glacierkeep_s11_B	glacierkeep	11	B	US	Harvesters (tiebreak)	1000	v520	12	924	-1	999	912	396	83	0.5658	0.091	1	880	177	0.0351
+glacierkeep_s12_A	glacierkeep	12	A	US	Core destroyed	119	v520	12	63	118	118	51	42	29	0.1765	0.5686	1	51	48	0.0
+glacierkeep_s12_B	glacierkeep	12	B	OPP	Titanium collected (tiebreak)	1000	v520	12	96	-1	999	84	38	11	0.5476	0.131	1	84	74	0.0
+midgard_s10_A	midgard	10	A	US	Core destroyed	200	v520	49	144	199	199	95	95	90	0.0	0.9474	1	95	93	0.0
+midgard_s10_B	midgard	10	B	OPP	Core destroyed	202	v520	53	-1	-1	201	149	148	138	0.0067	0.9262	0	149	146	0.0
+midgard_s11_A	midgard	11	A	OPP	Core destroyed	361	v520	56	46	-1	360	0	0	0			1	0	0	
+midgard_s11_B	midgard	11	B	US	Titanium collected (tiebreak)	1000	v520	49	792	-1	999	743	743	734	0.0	0.9879	1	743	740	0.0
+midgard_s12_A	midgard	12	A	OPP	Core destroyed	281	v520	55	221	-1	280	166	166	158	0.0	0.9518	1	166	166	0.0
+midgard_s12_B	midgard	12	B	OPP	Titanium collected (tiebreak)	1000	v520	47	-1	-1	999	953	950	20	0.0031	0.021	0	953	26	0.0
+nordkap_s10_A	nordkap	10	A	US	Core destroyed	124	v520	8	52	123	123	44	44	35	0.0	0.7955	1	44	44	0.0
+nordkap_s10_B	nordkap	10	B	US	Core destroyed	133	v520	12	64	132	132	52	45	23	0.1346	0.4423	1	52	52	0.0
+nordkap_s11_A	nordkap	11	A	US	Core destroyed	353	v520	8	108	352	352	100	94	62	0.06	0.62	1	100	100	0.0
+nordkap_s11_B	nordkap	11	B	US	Core destroyed	117	v520	12	52	116	116	40	28	8	0.3	0.2	1	40	38	0.0
+nordkap_s12_A	nordkap	12	A	US	Core destroyed	480	v520	8	47	479	479	39	29	9	0.2564	0.2308	1	39	38	0.0
+nordkap_s12_B	nordkap	12	B	US	Core destroyed	954	v520	8	432	953	953	424	414	218	0.0236	0.5142	1	424	412	0.0
+yulerune_s10_A	yulerune	10	A	OPP	Core destroyed	191	v520	31	-1	-1	190	160	157	10	0.0188	0.0625	0	160	20	0.0
+yulerune_s10_B	yulerune	10	B	OPP	Core destroyed	609	v520	31	492	-1	608	461	129	102	0.7202	0.2213	1	256	104	0.4447
+yulerune_s11_A	yulerune	11	A	US	Core destroyed	153	v520	29	76	152	152	47	47	41	0.0	0.8723	1	47	47	0.0
+yulerune_s11_B	yulerune	11	B	US	Core destroyed	273	v520	32	184	272	272	152	149	140	0.0197	0.9211	1	152	150	0.0
+yulerune_s12_A	yulerune	12	A	OPP	Core destroyed	517	v520	34	-1	-1	516	483	482	479	0.0021	0.9917	0	483	482	0.0
+yulerune_s12_B	yulerune	12	B	US	Core destroyed	657	v520	29	484	656	656	455	453	443	0.0044	0.9736	1	455	452	0.0

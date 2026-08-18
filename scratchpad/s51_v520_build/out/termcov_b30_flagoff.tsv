@@ -1,0 +1,37 @@
+tag	map	seed	seat	ours	cond	turn	arm	game_rounds	game_jumps	eid	birth	pos	dsq_core	dsq_centre	n_seats	coverage	coverage_ferry	best_cov_site	lifetime	died	death_round	n_launch	n_launch_seat	ever_launched
+atoll_s88_A	atoll	88	A	OPP	Core destroyed	162	flagoff	162	16	17	5	12,4	2	8.5	8	1	1	2	4	1	9	3	1	1
+atoll_s88_A	atoll	88	A	OPP	Core destroyed	162	flagoff	162	16	36	15	13,0	2	8.5	8	1	1	2	147	0	-1	10	0	1
+atoll_s88_B	atoll	88	B	OPP	Core destroyed	175	flagoff	175	8	50	18	3,17	4	6.5	8	2	2	2	35	1	53	6	0	1
+atoll_s89_A	atoll	89	A	US	Core destroyed	187	flagoff	187	26	29	8	13,4	2	4.5	8	2	2	2	179	0	-1	24	4	1
+atoll_s89_B	atoll	89	B	OPP	Titanium collected (tiebreak)	1000	flagoff	1000	697	24	6	3,12	1	6.5	8	2	2	2	994	0	-1	432	46	1
+atoll_s90_A	atoll	90	A	US	Core destroyed	355	flagoff	355	73	25	9	14,5	4	6.5	8	2	2	2	346	0	-1	69	0	1
+atoll_s90_B	atoll	90	B	OPP	Core destroyed	209	flagoff	209	7	95	50	0,14	1	6.5	8	2	2	2	50	1	100	5	0	1
+drakkarfjord_s88_A	drakkarfjord	88	A	US	Core destroyed	173	flagoff	173	11	15	9	22,8	18	32.5	8	0	0	2	1	1	10	1	0	1
+drakkarfjord_s88_A	drakkarfjord	88	A	US	Core destroyed	173	flagoff	173	11	93	39	27,7	4	6.5	8	2	2	2	134	0	-1	6	0	1
+drakkarfjord_s88_B	drakkarfjord	88	B	US	Core destroyed	332	flagoff	332	7	15	9	6,20	18	32.5	8	0	0	2	1	1	10	1	0	1
+drakkarfjord_s89_A	drakkarfjord	89	A	US	Core destroyed	182	flagoff	182	5	15	9	22,8	18	32.5	8	0	0	2	1	1	10	1	0	1
+drakkarfjord_s89_B	drakkarfjord	89	B	US	Core destroyed	173	flagoff	173	5	15	9	7,21	20	32.5	8	0	0	2	1	1	10	1	0	1
+drakkarfjord_s90_A	drakkarfjord	90	A	OPP	Titanium collected (tiebreak)	1000	flagoff	1000	405	15	9	22,8	18	32.5	8	0	0	2	1	1	10	1	0	1
+drakkarfjord_s90_A	drakkarfjord	90	A	OPP	Titanium collected (tiebreak)	1000	flagoff	1000	405	842	280	22,8	18	32.5	8	0	0	2	1	1	281	1	0	1
+drakkarfjord_s90_B	drakkarfjord	90	B	US	Core destroyed	308	flagoff	308	5	15	9	6,20	18	32.5	8	0	0	2	1	1	10	1	0	1
+glacierkeep_s88_A	glacierkeep	88	A	US	Core destroyed	161	flagoff	161	4	14	8	15,23	4	12.5	8	0	0	2	1	1	9	1	0	1
+glacierkeep_s88_B	glacierkeep	88	B	OPP	Core destroyed	825	flagoff	825	8	14	7	16,6	10	14.5	8	0	0	2	1	1	8	1	0	1
+glacierkeep_s88_B	glacierkeep	88	B	OPP	Core destroyed	825	flagoff	825	8	124	160	12,3	1	6.5	8	2	2	2	665	0	-1	2	0	1
+glacierkeep_s88_B	glacierkeep	88	B	OPP	Core destroyed	825	flagoff	825	8	140	396	15,0	1	6.5	8	2	2	2	429	0	-1	2	1	1
+glacierkeep_s89_A	glacierkeep	89	A	US	Core destroyed	414	flagoff	414	4	14	7	16,23	5	14.5	8	0	0	2	1	1	8	1	0	1
+glacierkeep_s89_B	glacierkeep	89	B	OPP	Core destroyed	825	flagoff	825	8	14	7	16,6	10	14.5	8	0	0	2	1	1	8	1	0	1
+glacierkeep_s89_B	glacierkeep	89	B	OPP	Core destroyed	825	flagoff	825	8	124	160	12,3	1	6.5	8	2	2	2	665	0	-1	2	0	1
+glacierkeep_s89_B	glacierkeep	89	B	OPP	Core destroyed	825	flagoff	825	8	140	396	15,0	1	6.5	8	2	2	2	429	0	-1	2	1	1
+glacierkeep_s90_A	glacierkeep	90	A	US	Core destroyed	181	flagoff	181	4	14	7	16,23	5	14.5	8	0	0	2	1	1	8	1	0	1
+glacierkeep_s90_B	glacierkeep	90	B	US	Core destroyed	217	flagoff	217	5	14	7	16,6	10	14.5	8	0	0	2	1	1	8	1	0	1
+glacierkeep_s90_B	glacierkeep	90	B	US	Core destroyed	217	flagoff	217	5	90	89	15,5	4	6.5	8	2	2	2	128	0	-1	1	0	1
+nordkap_s88_A	nordkap	88	A	OPP	Core destroyed	197	flagoff	197	47	11	3	10,15	4	12.5	8	0	0	2	1	1	4	1	0	1
+nordkap_s88_A	nordkap	88	A	OPP	Core destroyed	197	flagoff	197	47	19	6	10,21	4	6.5	8	2	2	2	191	0	-1	45	0	1
+nordkap_s88_B	nordkap	88	B	US	Core destroyed	358	flagoff	358	2	11	3	10,10	9	12.5	8	0	0	2	1	1	4	1	0	1
+nordkap_s89_A	nordkap	89	A	OPP	Core destroyed	197	flagoff	197	19	11	3	10,15	4	12.5	8	0	0	2	1	1	4	1	0	1
+nordkap_s89_A	nordkap	89	A	OPP	Core destroyed	197	flagoff	197	19	19	6	10,21	4	6.5	8	2	2	2	191	0	-1	17	1	1
+nordkap_s89_B	nordkap	89	B	OPP	Core destroyed	184	flagoff	184	4	11	3	10,10	9	12.5	8	0	0	2	1	1	4	1	0	1
+nordkap_s89_B	nordkap	89	B	OPP	Core destroyed	184	flagoff	184	4	243	133	7,10	10	18.5	8	0	0	2	1	1	134	1	0	1
+nordkap_s90_A	nordkap	90	A	OPP	Core destroyed	196	flagoff	196	17	11	3	10,15	4	12.5	8	0	0	2	1	1	4	1	0	1
+nordkap_s90_A	nordkap	90	A	OPP	Core destroyed	196	flagoff	196	17	19	6	10,21	4	6.5	8	2	2	2	190	0	-1	14	1	1
+nordkap_s90_B	nordkap	90	B	OPP	Core destroyed	292	flagoff	292	3	11	3	10,10	9	12.5	8	0	0	2	1	1	4	1	0	1

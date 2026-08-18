@@ -1,0 +1,300 @@
+Update available: 2.3.6 -> 2.3.8. Run: pip install --upgrade fcode
+FS GATE 0 sig (18, 18, (2, 14), (14, 2)) ok 1
+FS GATE 1 sig (18, 18, (2, 14), (14, 2)) ok 1
+FS PHASE 1 id 3 ph 1 d 200 at (4, 13)
+FS GATE 2 sig (18, 18, (2, 14), (14, 2)) ok 1
+FS GATE 3 sig (18, 18, (2, 14), (14, 2)) ok 1
+FS GATE 4 sig (18, 18, (2, 14), (14, 2)) ok 1
+APPT520 CLAIM 4 id 10
+FS PHASE 4 id 10 ph 1 d 221 at (3, 13)
+FS HOPBUILD 5 at (4, 13) lch (4, 12) T (16, 1)
+FS GATE 6 sig (18, 18, (2, 14), (14, 2)) ok 1
+SPLIT520 6 lch (4, 12) body 3 arc 2 to (7, 8) dsq 74 walk 98 n 1
+FS SPLIT 6 arc 2 to (7, 8) body 3 walk 98
+FS HOPBUILD 7 at (7, 8) lch (8, 8) T (16, 1)
+SPLIT520 7 lch (4, 12) body 10 arc 1 to (8, 9) dsq 72 walk 74 n 2
+FS SPLIT 7 arc 1 to (8, 9) body 10 walk 74
+FS GATE 8 sig (18, 18, (2, 14), (14, 2)) ok 1
+SPLIT520 8 lch (8, 8) body 3 arc 2 to (11, 4) dsq 10 walk 18 n 1
+FS SPLIT 8 arc 2 to (11, 4) body 3 walk 18
+TERM520 9 id 3 at (11, 4) n 1 pick (11, 3) arcs 2 cov 0 covbest 0 conflict 0 dsq 9
+FS HOPBUILD 9 at (11, 4) lch (11, 3) T (16, 1)
+SPLIT520 9 lch (8, 8) body 10 arc 1 to (10, 4) dsq 17 walk 13 n 2
+FS SPLIT 9 arc 1 to (10, 4) body 10 walk 13
+FS GATE 10 sig (18, 18, (2, 14), (14, 2)) ok 1
+SPLIT520 10 lch (11, 3) body 3 arc 2 to (14, 1) dsq 1 walk 0 n 1
+FS SPLIT 10 arc 2 to (14, 1) body 3 walk 0
+FS ARRIVE 11 id 3 body 1 at (14, 1) dsq 1
+ARC520 CLAIM 11 id 3 body 1 arc 2 at (14, 1)
+FS PHASE 11 id 3 ph 2 d 1 at (14, 1)
+FS SEAL 11 tile (15, 1) n 1
+SPLIT520 11 lch (11, 3) body 10 arc 1 to (13, 2) dsq 1 walk 0 n 2
+FS SPLIT 11 arc 1 to (13, 2) body 10 walk 0
+FS ARRIVE 12 id 10 body 2 at (13, 2) dsq 1
+ARC520 CLAIM 12 id 10 body 2 arc 1 at (13, 2)
+FS PHASE 12 id 10 ph 2 d 1 at (13, 2)
+FS SEAL 12 tile (13, 3) n 1
+FS GATE 13 sig (18, 18, (2, 14), (14, 2)) ok 1
+FS SEAL 14 tile (13, 2) n 2
+FS DODGE 18 id 10 from (11, 2) to (12, 2) cov 1 -> 0 hit 0 hp 40
+FS STAT 20 id 3 at (15, 0) need 6 orth 5 ti 85 ammo 24 sen 0 hp 40 covden 0 eco 1 lost 0
+FS STAT 20 id 10 at (11, 2) need 6 orth 5 ti 85 ammo 24 sen 0 hp 40 covden 0 eco 1 lost 0
+FS DODGE 20 id 10 from (11, 2) to (11, 3) cov 1 -> 0 hit 0 hp 40
+FS SEAL 24 tile (14, 4) n 3
+FS SEAL 28 tile (15, 4) n 4
+FS CLEAR 30 tile (14, 1) peck 1
+FS RUNG 30 id 3 r 3 hi -
+FS CLEAR 31 tile (14, 1) peck 2
+FS RUNG 31 id 3 r 3 hi -
+FS SEAL 31 tile (16, 3) n 5
+FS CLEAR 32 tile (14, 1) peck 3
+FS RUNG 32 id 3 r 3 hi -
+FS CLEAR 33 tile (14, 1) peck 4
+FS RUNG 33 id 3 r 3 hi -
+FS CLEAR 34 tile (14, 1) peck 5
+FS RUNG 34 id 3 r 3 hi -
+FS CLEAR 35 tile (14, 1) peck 6
+FS RUNG 35 id 3 r 3 hi -
+FS CLEAR 36 tile (14, 1) peck 7
+FS RUNG 36 id 3 r 3 hi -
+FS CLEAR 37 tile (14, 1) peck 8
+FS RUNG 37 id 3 r 3 hi -
+ARC520 COLLIDE 37 id 10 body 2 peer 2 took 1 n 1
+FS CLEAR 39 tile (13, 1) peck 1
+FS RUNG 39 id 3 r 3 hi -
+ARC520 COLLIDE 39 id 10 body 2 peer 2 took 1 n 2
+FS STAT 40 id 3 at (14, 1) need 3 orth 2 ti 101 ammo 24 sen 0 hp 40 covden 0 eco 1 lost 0
+FS EVICTOR 40 at (14, 0) ucov 1 cov 3 unseal 1 obs 3
+FS RUNG 40 id 3 r 2 hi -
+ARC520 COLLIDE 40 id 10 body 2 peer 2 took 1 n 3
+FS STAT 40 id 10 at (17, 3) need 3 orth 1 ti 53 ammo 24 sen 0 hp 40 covden 1 eco 1 lost 0
+FS CLEAR 41 tile (13, 1) peck 2
+FS RUNG 41 id 3 r 3 hi -
+ARC520 COLLIDE 41 id 10 body 2 peer 2 took 1 n 4
+FS SEAL 41 tile (16, 2) n 6
+FS GATE 41 sig (18, 18, (2, 14), (14, 2)) ok 1
+FS PHASE 42 id 3 ph 3 d 1 at (14, 1)
+FS CLEAR 42 tile (13, 1) peck 3
+FS RUNG 42 id 3 r 3 hi -
+ARC520 COLLIDE 42 id 10 body 2 peer 2 took 1 n 5
+FS PHASE 42 id 10 ph 3 d 4 at (17, 2)
+FS EVICT 42 from (13, 1) to (9, 0)
+FS CLEAR 43 tile (13, 1) peck 4
+FS RUNG 43 id 3 r 3 hi -
+ARC520 COLLIDE 43 id 10 body 2 peer 2 took 1 n 6
+FS CLEAR 44 tile (13, 1) peck 5
+FS RUNG 44 id 3 r 3 hi -
+ARC520 COLLIDE 44 id 10 body 2 peer 2 took 1 n 7
+FS PHASE 44 id 10 ph 2 d 5 at (17, 4)
+FS CLEAR 45 tile (13, 1) peck 6
+FS RUNG 45 id 3 r 3 hi -
+FS PHASE 45 id 10 ph 3 d 2 at (16, 4)
+FS EVICT 45 from (13, 1) to (9, 0)
+FS CLEAR 46 tile (13, 1) peck 7
+FS RUNG 46 id 3 r 3 hi -
+FS CLEAR 47 tile (13, 1) peck 8
+FS RUNG 47 id 3 r 3 hi -
+FS PHASE 47 id 10 ph 2 d 5 at (16, 5)
+FS EVICT 47 from (13, 1) to (9, 0)
+FS PHASE 48 id 10 ph 3 d 2 at (16, 4)
+FS PHASE 49 id 10 ph 2 d 5 at (16, 5)
+FS PHASE 50 id 10 ph 3 d 2 at (16, 4)
+FS PHASE 51 id 10 ph 2 d 5 at (16, 5)
+FS CLEAR 52 tile (14, 1) peck 1
+FS RUNG 52 id 3 r 3 hi -
+FS PHASE 52 id 10 ph 3 d 2 at (16, 4)
+FS CLEAR 53 tile (14, 1) peck 2
+FS RUNG 53 id 3 r 3 hi -
+ARC520 COLLIDE 53 id 10 body 2 peer 2 took 1 n 8
+FS PHASE 53 id 10 ph 2 d 5 at (17, 4)
+FS CLEARED 54 tile (14, 1) n 1
+FS PHASE 54 id 3 ph 2 d 2 at (13, 1)
+FS SEAL 54 tile (14, 1) n 2
+FS SEALCLR 54 tile (14, 1) lag 0
+FS PHASE 54 id 10 ph 3 d 2 at (16, 4)
+FS PHASE 55 id 3 ph 3 d 2 at (13, 1)
+ARC520 COLLIDE 55 id 10 body 2 peer 2 took 1 n 9
+FS SEAL 55 tile (16, 4) n 7
+ARC520 COLLIDE 56 id 10 body 2 peer 2 took 1 n 10
+FS PHASE 57 id 10 ph 2 d 8 at (17, 5)
+ARC520 COLLIDE 58 id 10 body 2 peer 2 took 1 n 11
+FS PHASE 58 id 10 ph 3 d 5 at (17, 4)
+FS PHASE 59 id 10 ph 2 d 8 at (17, 5)
+FS STAT 60 id 3 at (13, 1) need 2 orth 0 ti 58 ammo 3 sen 0 hp 40 covden 13 eco 1 lost 0
+ARC520 COLLIDE 60 id 10 body 2 peer 2 took 1 n 12
+FS PHASE 60 id 10 ph 3 d 5 at (17, 4)
+FS STAT 60 id 10 at (17, 4) need 2 orth 0 ti 58 ammo 3 sen 0 hp 40 covden 9 eco 1 lost 0
+FS PHASE 61 id 10 ph 2 d 8 at (17, 5)
+ARC520 COLLIDE 62 id 10 body 2 peer 2 took 1 n 13
+FS PHASE 62 id 10 ph 3 d 5 at (17, 4)
+FS PHASE 63 id 10 ph 2 d 8 at (17, 5)
+ARC520 COLLIDE 64 id 10 body 2 peer 2 took 1 n 14
+FS PHASE 64 id 10 ph 3 d 5 at (17, 4)
+FS PHASE 65 id 10 ph 2 d 8 at (17, 5)
+ARC520 COLLIDE 66 id 10 body 2 peer 2 took 1 n 15
+FS PHASE 66 id 10 ph 3 d 5 at (17, 4)
+FS PHASE 67 id 10 ph 2 d 8 at (17, 5)
+ARC520 COLLIDE 68 id 10 body 2 peer 2 took 1 n 16
+FS PHASE 68 id 10 ph 3 d 5 at (17, 4)
+FS PHASE 69 id 10 ph 2 d 8 at (17, 5)
+ARC520 COLLIDE 70 id 10 body 2 peer 2 took 1 n 17
+FS PHASE 70 id 10 ph 3 d 5 at (17, 4)
+FS PHASE 71 id 10 ph 2 d 8 at (17, 5)
+ARC520 COLLIDE 72 id 10 body 2 peer 2 took 1 n 18
+FS PHASE 72 id 10 ph 3 d 5 at (17, 4)
+FS PHASE 73 id 10 ph 2 d 8 at (17, 5)
+ARC520 COLLIDE 74 id 10 body 2 peer 2 took 1 n 19
+FS PHASE 74 id 10 ph 3 d 5 at (17, 4)
+FS PHASE 75 id 10 ph 2 d 8 at (17, 5)
+FS EVICT 75 from (13, 1) to (9, 0)
+ARC520 COLLIDE 76 id 10 body 2 peer 2 took 1 n 20
+FS PHASE 76 id 10 ph 3 d 5 at (17, 4)
+FS PHASE 77 id 10 ph 2 d 8 at (17, 5)
+ARC520 COLLIDE 78 id 10 body 2 peer 2 took 1 n 21
+FS PHASE 78 id 10 ph 3 d 5 at (17, 4)
+FS EVICT 78 from (13, 1) to (9, 0)
+FS PHASE 79 id 10 ph 2 d 8 at (17, 5)
+ARC520 COLLIDE 80 id 10 body 2 peer 2 took 1 n 22
+FS PHASE 80 id 10 ph 3 d 5 at (17, 4)
+FS STAT 80 id 10 at (17, 4) need 2 orth 0 ti 85 ammo 25 sen 0 hp 40 covden 9 eco 1 lost 0
+FS EVICT 80 from (13, 1) to (9, 0)
+PRES520 81 ti 85 res 141 floor 141 bind 1 rounds 1 vacant 1 until 101
+FS PROMOTE 81 id 10
+FS PHASE 81 id 10 ph 2 d 8 at (17, 5)
+PRES520 82 ti 95 res 141 floor 141 bind 2 rounds 2 vacant 2 until 102
+ARC520 CLAIM 82 id 10 body 2 arc 2 at (17, 4)
+FS PHASE 82 id 10 ph 3 d 5 at (17, 4)
+PRES520 83 ti 95 res 141 floor 141 bind 3 rounds 3 vacant 2 until 102
+ARC520 CLAIM 83 id 10 body 2 arc 1 at (17, 5)
+FS PHASE 83 id 10 ph 2 d 8 at (17, 5)
+FS EVICT 83 from (13, 1) to (9, 0)
+PRES520 84 ti 115 res 141 floor 141 bind 4 rounds 4 vacant 2 until 102
+ARC520 CLAIM 84 id 10 body 2 arc 2 at (17, 4)
+FS PHASE 84 id 10 ph 3 d 5 at (17, 4)
+FS SENTINEL 84 at (17, 5) face NORTHWEST tgt (14, 2) score 18 n 1 onring 0 lost 0 gate (1, 1, 7) onsray 0 olddsq -1
+PRES520 85 ti 34 res 151 floor 151 bind 5 rounds 5 vacant 2 until 102
+FS PHASE 85 id 10 ph 4 d 5 at (17, 4)
+FS EVICT 85 from (13, 1) to (9, 0)
+PRES520 86 ti 44 res 151 floor 151 bind 6 rounds 6 vacant 2 until 102
+PRES520 87 ti 44 res 151 floor 151 bind 7 rounds 7 vacant 2 until 102
+PRES520 88 ti 64 res 151 floor 151 bind 8 rounds 8 vacant 2 until 102
+FS EVICT 88 from (13, 1) to (9, 0)
+PRES520 89 ti 6 res 154 floor 154 bind 9 rounds 9 vacant 2 until 102
+PRES520 90 ti 16 res 154 floor 154 bind 10 rounds 10 vacant 2 until 102
+PRES520 91 ti 16 res 154 floor 154 bind 11 rounds 11 vacant 2 until 102
+PRES520 92 ti 36 res 154 floor 154 bind 12 rounds 12 vacant 2 until 102
+PRES520 93 ti 28 res 154 floor 154 bind 13 rounds 13 vacant 2 until 102
+PRES520 94 ti 38 res 154 floor 154 bind 14 rounds 14 vacant 2 until 102
+PRES520 95 ti 30 res 156 floor 156 bind 15 rounds 15 vacant 2 until 102
+PRES520 96 ti 50 res 156 floor 156 bind 16 rounds 16 vacant 2 until 102
+PRES520 97 ti 41 res 156 floor 156 bind 17 rounds 17 vacant 2 until 102
+PRES520 98 ti 51 res 156 floor 156 bind 18 rounds 18 vacant 2 until 102
+PRES520 99 ti 42 res 156 floor 156 bind 19 rounds 19 vacant 2 until 102
+PRES520 100 ti 62 res 156 floor 156 bind 20 rounds 20 vacant 2 until 102
+FS STAT 100 id 10 at (17, 1) need 2 orth 0 ti 53 ammo 5 sen 1 hp 40 covden 9 eco 1 lost 0
+PRES520 101 ti 53 res 156 floor 156 bind 21 rounds 21 vacant 2 until 102
+FS STAT 120 id 10 at (17, 1) need 2 orth 0 ti 18 ammo 36 sen 1 hp 40 covden 9 eco 1 lost 0
+FS SENTDEAD 137 at (17, 5) lost 1
+FS PHASE 140 id 10 ph 3 d 4 at (17, 3)
+FS STAT 140 id 10 at (17, 3) need 2 orth 0 ti 36 ammo 78 sen 0 hp 40 covden 9 eco 1 lost 1
+FS STAT 160 id 10 at (17, 3) need 2 orth 0 ti 63 ammo 78 sen 0 hp 40 covden 9 eco 1 lost 1
+PRES520 184 ti 108 res 146 floor 146 bind 22 rounds 22 vacant 3 until 204
+PRES520 185 ti 108 res 144 floor 144 bind 23 rounds 23 vacant 4 until 205
+PRES520 186 ti 118 res 144 floor 144 bind 24 rounds 24 vacant 5 until 206
+PRES520 187 ti 118 res 144 floor 144 bind 25 rounds 25 vacant 6 until 207
+PRES520 188 ti 138 res 144 floor 144 bind 26 rounds 26 vacant 7 until 208
+PRES520 189 ti 83 res 149 floor 149 bind 27 rounds 27 vacant 8 until 209
+FS GATE 189 sig (18, 18, (2, 14), (14, 2)) ok 1
+PRES520 190 ti 93 res 149 floor 149 bind 28 rounds 28 vacant 9 until 210
+PRES520 191 ti 93 res 149 floor 149 bind 29 rounds 29 vacant 10 until 211
+PRES520 192 ti 113 res 149 floor 149 bind 30 rounds 30 vacant 11 until 212
+PRES520 193 ti 113 res 149 floor 149 bind 31 rounds 31 vacant 12 until 213
+PRES520 194 ti 123 res 149 floor 149 bind 32 rounds 32 vacant 13 until 214
+PRES520 195 ti 123 res 149 floor 149 bind 33 rounds 33 vacant 14 until 215
+PRES520 196 ti 143 res 149 floor 149 bind 34 rounds 34 vacant 15 until 216
+PRES520 197 ti 86 res 154 floor 154 bind 35 rounds 35 vacant 16 until 217
+FS GATE 197 sig (18, 18, (2, 14), (14, 2)) ok 1
+PRES520 198 ti 96 res 154 floor 154 bind 36 rounds 36 vacant 17 until 218
+PRES520 199 ti 96 res 154 floor 154 bind 37 rounds 37 vacant 18 until 219
+PRES520 200 ti 116 res 154 floor 154 bind 38 rounds 38 vacant 19 until 220
+PRES520 201 ti 116 res 154 floor 154 bind 39 rounds 39 vacant 20 until 221
+PRES520 202 ti 126 res 154 floor 154 bind 40 rounds 40 vacant 21 until 222
+PRES520 203 ti 126 res 154 floor 154 bind 41 rounds 41 vacant 22 until 223
+PRES520 204 ti 146 res 154 floor 154 bind 42 rounds 42 vacant 23 until 224
+PRES520 205 ti 146 res 154 floor 154 bind 43 rounds 43 vacant 24 until 225
+PRES520 206 ti 97 res 159 floor 159 bind 44 rounds 44 vacant 25 until 226
+FS GATE 206 sig (18, 18, (2, 14), (14, 2)) ok 1
+PRES520 207 ti 97 res 159 floor 159 bind 45 rounds 45 vacant 26 until 227
+PRES520 208 ti 117 res 159 floor 159 bind 46 rounds 46 vacant 27 until 228
+PRES520 209 ti 117 res 159 floor 159 bind 47 rounds 47 vacant 28 until 229
+PRES520 210 ti 127 res 159 floor 159 bind 48 rounds 48 vacant 29 until 230
+PRES520 211 ti 127 res 159 floor 159 bind 49 rounds 49 vacant 30 until 231
+PRES520 212 ti 147 res 159 floor 159 bind 50 rounds 50 vacant 31 until 232
+PRES520 213 ti 147 res 159 floor 159 bind 51 rounds 51 vacant 32 until 233
+PRES520 214 ti 157 res 159 floor 159 bind 52 rounds 52 vacant 33 until 234
+PRES520 215 ti 65 res 160 floor 160 bind 53 rounds 53 vacant 34 until 235
+FS GATE 215 sig (18, 18, (2, 14), (14, 2)) ok 1
+FS PHASE 215 id 210 ph 1 d 313 at (2, 16)
+PRES520 216 ti 85 res 160 floor 160 bind 54 rounds 54 vacant 35 until 236
+FS THROW 216 from (3, 16) to (6, 13) T (16, 1) body 210 n 1 dsq 164
+PRES520 217 ti 85 res 160 floor 160 bind 55 rounds 55 vacant 36 until 237
+FS THROW 217 from (7, 13) to (9, 10) T (16, 1) body 210 n 1 dsq 74
+FS HOPBUILD 217 at (9, 10) lch (10, 10) T (16, 1)
+PRES520 218 ti 34 res 160 floor 160 bind 56 rounds 56 vacant 37 until 238
+FS GATE 218 sig (18, 18, (2, 14), (14, 2)) ok 1
+FS THROW 218 from (9, 10) to (13, 6) T (16, 1) body 210 n 1 dsq 10
+PRES520 219 ti 34 res 160 floor 160 bind 57 rounds 57 vacant 38 until 239
+PRES520 220 ti 54 res 160 floor 160 bind 58 rounds 58 vacant 39 until 240
+PRES520 221 ti 54 res 160 floor 160 bind 59 rounds 59 vacant 40 until 241
+PRES520 222 ti 64 res 159 floor 159 bind 60 rounds 60 vacant 41 until 242
+PRES520 223 ti 64 res 159 floor 159 bind 61 rounds 61 vacant 42 until 243
+PRES520 224 ti 84 res 159 floor 159 bind 62 rounds 62 vacant 43 until 244
+FS ARRIVE 224 id 210 body 1 at (17, 5) dsq 8
+ARC520 CLAIM 224 id 210 body 1 arc 1 at (17, 5)
+FS PHASE 224 id 210 ph 2 d 8 at (17, 5)
+PRES520 225 ti 84 res 159 floor 159 bind 63 rounds 63 vacant 44 until 245
+ARC520 CLAIM 225 id 210 body 1 arc 2 at (17, 4)
+FS PHASE 225 id 210 ph 3 d 5 at (17, 4)
+PRES520 226 ti 94 res 159 floor 159 bind 64 rounds 64 vacant 45 until 246
+ARC520 CLAIM 226 id 210 body 1 arc 1 at (17, 5)
+FS PHASE 226 id 210 ph 2 d 8 at (17, 5)
+PRES520 227 ti 94 res 159 floor 159 bind 65 rounds 65 vacant 46 until 247
+PRES520 228 ti 114 res 159 floor 159 bind 66 rounds 66 vacant 47 until 248
+PRES520 229 ti 114 res 159 floor 159 bind 67 rounds 67 vacant 48 until 249
+FS IDLETEAR 229 at (11, 16) born 189 lastthrow None downsq 85 dopp 178
+PRES520 230 ti 124 res 154 floor 154 bind 68 rounds 68 vacant 49 until 250
+PRES520 231 ti 124 res 154 floor 154 bind 69 rounds 69 vacant 50 until 251
+PRES520 232 ti 144 res 154 floor 154 bind 70 rounds 70 vacant 51 until 252
+FS SENTINEL 232 at (15, 8) face NORTH tgt (15, 3) score 25 n 1 onring 0 lost 0 gate (1, 1, 7) onsray 0 olddsq -1
+PRES520 233 ti 55 res 160 floor 160 bind 71 rounds 71 vacant 52 until 253
+FS PHASE 233 id 210 ph 4 d 16 at (15, 7)
+PRES520 234 ti 65 res 160 floor 160 bind 72 rounds 72 vacant 53 until 254
+PRES520 235 ti 65 res 160 floor 160 bind 73 rounds 73 vacant 54 until 255
+PRES520 236 ti 85 res 160 floor 160 bind 74 rounds 74 vacant 55 until 256
+PRES520 237 ti 85 res 160 floor 160 bind 75 rounds 75 vacant 56 until 257
+PRES520 238 ti 95 res 160 floor 160 bind 76 rounds 76 vacant 57 until 258
+PRES520 239 ti 95 res 160 floor 160 bind 77 rounds 77 vacant 58 until 259
+PRES520 240 ti 115 res 160 floor 160 bind 78 rounds 78 vacant 59 until 260
+FS STAT 240 id 210 at (17, 6) need 6 orth 5 ti 115 ammo 173 sen 1 hp 4 covden 0 eco 1 lost 0
+PRES520 241 ti 115 res 160 floor 160 bind 79 rounds 79 vacant 60 until 261
+PRES520 242 ti 125 res 160 floor 160 bind 80 rounds 80 vacant 61 until 262
+PRES520 243 ti 125 res 160 floor 160 bind 81 rounds 81 vacant 62 until 263
+PRES520 244 ti 145 res 160 floor 160 bind 82 rounds 82 vacant 63 until 264
+PRES520 245 ti 145 res 160 floor 160 bind 83 rounds 83 vacant 64 until 265
+PRES520 246 ti 155 res 160 floor 160 bind 84 rounds 84 vacant 65 until 266
+PRES520 247 ti 155 res 160 floor 160 bind 85 rounds 85 vacant 66 until 267
+FS SENTINEL 247 at (17, 6) face NORTHWEST tgt (14, 3) score -6 n 2 onring 0 lost 0 gate (1, 1, 7) onsray 0 olddsq -1
+FS RUNG 247 id 210 r 4 hi -
+PRES520 248 ti 80 res 160 floor 160 bind 86 rounds 86 vacant 67 until 268
+PRES520 249 ti 80 res 160 floor 160 bind 87 rounds 87 vacant 68 until 269
+FS DODGE 249 id 210 from (16, 5) to (16, 6) cov 2 -> 0 hit 0 hp 4
+PRES520 250 ti 90 res 160 floor 160 bind 88 rounds 88 vacant 69 until 270
+PRES520 251 ti 90 res 160 floor 160 bind 89 rounds 89 vacant 70 until 271
+PRES520 252 ti 110 res 160 floor 160 bind 90 rounds 90 vacant 71 until 272
+PRES520 253 ti 110 res 160 floor 160 bind 91 rounds 91 vacant 72 until 273
+PRES520 254 ti 120 res 160 floor 160 bind 92 rounds 92 vacant 73 until 274
+PRES520 255 ti 120 res 160 floor 160 bind 93 rounds 93 vacant 74 until 275
+PRES520 256 ti 140 res 160 floor 160 bind 94 rounds 94 vacant 75 until 276
+PRES520 257 ti 140 res 160 floor 160 bind 95 rounds 95 vacant 76 until 277
+PRES520 258 ti 150 res 160 floor 160 bind 96 rounds 96 vacant 77 until 278
+PRES520 259 ti 150 res 160 floor 160 bind 97 rounds 97 vacant 78 until 279

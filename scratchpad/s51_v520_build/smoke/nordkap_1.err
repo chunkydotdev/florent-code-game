@@ -1,0 +1,21 @@
+Update available: 2.3.6 -> 2.3.8. Run: pip install --upgrade fcode
+APPT520 CLAIM 4 id 9
+TERM520 7 id 3 at (10, 14) n 2 pick (10, 15) arcs 2 cov 0 covbest 0 conflict 0 dsq 9
+SPLIT520 8 lch (10, 15) body 3 arc 2 to (8, 19) dsq 1 walk 0 n 1
+ARC520 CLAIM 9 id 3 body 1 arc 2 at (8, 19)
+SPLIT520 9 lch (10, 15) body 9 arc 1 to (10, 17) dsq 1 walk 1 n 2
+ARC520 CLAIM 10 id 9 body 2 arc 1 at (10, 17)
+PRES520 32 ti 67 res 119 floor 119 bind 1 rounds 1 vacant 1 until 52
+PRES520 33 ti 67 res 119 floor 119 bind 2 rounds 2 vacant 2 until 53
+PRES520 34 ti 67 res 119 floor 119 bind 3 rounds 3 vacant 3 until 54
+PRES520 35 ti 77 res 119 floor 119 bind 4 rounds 4 vacant 4 until 55
+PRES520 36 ti 85 res 119 floor 119 bind 5 rounds 5 vacant 5 until 56
+PRES520 37 ti 17 res 129 floor 129 bind 6 rounds 6 vacant 6 until 57
+PRES520 38 ti 17 res 129 floor 129 bind 7 rounds 7 vacant 7 until 58
+PRES520 39 ti 27 res 129 floor 129 bind 8 rounds 8 vacant 8 until 59
+PRES520 40 ti 35 res 129 floor 129 bind 9 rounds 9 vacant 9 until 60
+PRES520 41 ti 28 res 129 floor 129 bind 10 rounds 10 vacant 10 until 61
+PRES520 42 ti 28 res 129 floor 129 bind 11 rounds 11 vacant 11 until 62
+PRES520 43 ti 38 res 129 floor 129 bind 12 rounds 12 vacant 12 until 63
+PRES520 44 ti 48 res 129 floor 129 bind 13 rounds 13 vacant 13 until 64
+PRES520 45 ti 48 res 119 floor 119 bind 14 rounds 14 vacant 14 until 65

@@ -1,0 +1,129 @@
+Update available: 2.3.6 -> 2.3.8. Run: pip install --upgrade fcode
+FS GATE 0 sig (18, 18, (2, 14), (14, 2)) ok 1
+FS GATE 1 sig (18, 18, (2, 14), (14, 2)) ok 1
+FS PHASE 1 id 3 ph 1 d 200 at (4, 13)
+FS HOPBUILD 1 at (4, 13) lch (4, 12) T (16, 1)
+FS GATE 2 sig (18, 18, (2, 14), (14, 2)) ok 1
+FS GATE 2 sig (18, 18, (2, 14), (14, 2)) ok 1
+FS THROW 2 from (5, 13) to (8, 9) T (16, 1) body 3 n 1 dsq 72
+FS HOPBUILD 3 at (8, 9) lch (8, 8) T (16, 1)
+FS GATE 3 sig (18, 18, (2, 14), (14, 2)) ok 1
+FS GATE 4 sig (18, 18, (2, 14), (14, 2)) ok 1
+FS THROW 4 from (9, 9) to (12, 5) T (16, 1) body 3 n 1 dsq 8
+FS ARRIVE 5 id 3 body 1 at (12, 5) dsq 8
+FS PHASE 5 id 3 ph 2 d 8 at (12, 5)
+FS SEAL 7 tile (14, 4) n 1
+FS GATE 7 sig (18, 18, (2, 14), (14, 2)) ok 1
+FS GATE 8 sig (18, 18, (2, 14), (14, 2)) ok 1
+FS SEAL 9 tile (15, 4) n 2
+FS SEAL 12 tile (16, 3) n 3
+FS DODGE 13 id 3 from (16, 4) to (17, 4) cov 1 -> 0 hit 0 hp 40
+FS SEAL 16 tile (16, 2) n 4
+FS GATE 17 sig (18, 18, (2, 14), (14, 2)) ok 1
+FS STAT 20 id 3 at (16, 1) need 5 orth 4 ti 10 ammo 20 sen 0 hp 40 covden 0 eco 1 lost 0
+FS DODGE 23 id 3 from (13, 1) to (13, 2) cov 1 -> 0 hit 0 hp 22
+FS CLEAR 32 tile (13, 3) peck 1
+FS RUNG 32 id 3 r 3 hi -
+FS CLEAR 33 tile (13, 3) peck 2
+FS RUNG 33 id 3 r 3 hi -
+FS CLEAR 34 tile (13, 3) peck 3
+FS RUNG 34 id 3 r 3 hi -
+FS CLEAR 35 tile (13, 3) peck 4
+FS RUNG 35 id 3 r 3 hi -
+FS CLEAR 36 tile (13, 3) peck 5
+FS RUNG 36 id 3 r 3 hi -
+FS CLEAR 37 tile (13, 3) peck 6
+FS RUNG 37 id 3 r 3 hi -
+FS CLEAR 38 tile (13, 3) peck 7
+FS RUNG 38 id 3 r 3 hi -
+FS CLEAR 39 tile (13, 3) peck 8
+FS RUNG 39 id 3 r 3 hi -
+FS STAT 40 id 3 at (12, 3) need 5 orth 4 ti 111 ammo 24 sen 0 hp 26 covden 0 eco 1 lost 0
+FS SEAL 41 tile (13, 2) n 5
+FS CLEAR 47 tile (13, 3) peck 1
+FS RUNG 47 id 3 r 3 hi -
+FS CLEAR 48 tile (13, 3) peck 2
+FS RUNG 48 id 3 r 3 hi -
+FS CLEAR 49 tile (13, 3) peck 3
+FS RUNG 49 id 3 r 3 hi -
+FS CLEAR 50 tile (13, 3) peck 4
+FS RUNG 50 id 3 r 3 hi -
+FS CLEAR 51 tile (13, 3) peck 5
+FS RUNG 51 id 3 r 3 hi -
+FS CLEAR 52 tile (13, 3) peck 6
+FS RUNG 52 id 3 r 3 hi -
+FS CLEAR 53 tile (13, 3) peck 7
+FS RUNG 53 id 3 r 3 hi -
+FS CLEAR 54 tile (13, 3) peck 8
+FS RUNG 54 id 3 r 3 hi -
+PRESKILL520 60 id 3 body 1
+PRES520 66 ti 111 res 146 floor 146 bind 1 rounds 1 vacant 1 until 86
+PRES520 67 ti 113 res 146 floor 146 bind 2 rounds 2 vacant 2 until 87
+PRES520 68 ti 115 res 136 floor 136 bind 3 rounds 3 vacant 3 until 88
+PRES520 69 ti 115 res 136 floor 136 bind 4 rounds 4 vacant 4 until 89
+PRES520 70 ti 125 res 136 floor 136 bind 5 rounds 5 vacant 5 until 90
+PRES520 71 ti 135 res 136 floor 136 bind 6 rounds 6 vacant 6 until 91
+PRES520 72 ti 145 res 136 floor 136 bind 7 rounds 7 vacant 7 until 92
+PRES520 73 ti 141 res 136 floor 136 bind 8 rounds 8 vacant 8 until 93
+PRES520 74 ti 151 res 136 floor 136 bind 9 rounds 9 vacant 9 until 94
+PRES520 75 ti 161 res 136 floor 136 bind 10 rounds 10 vacant 10 until 95
+PRES520 76 ti 161 res 136 floor 136 bind 11 rounds 11 vacant 11 until 96
+PRES520 77 ti 161 res 136 floor 136 bind 12 rounds 12 vacant 12 until 97
+PRES520 78 ti 167 res 136 floor 136 bind 13 rounds 13 vacant 13 until 98
+PRES520 79 ti 95 res 146 floor 146 bind 14 rounds 14 vacant 14 until 99
+FS GATE 96 sig (18, 18, (2, 14), (14, 2)) ok 1
+FS PHASE 96 id 141 ph 1 d 269 at (1, 13)
+FS HOPBUILD 96 at (1, 13) lch (1, 12) T (16, 1)
+FS GATE 97 sig (18, 18, (2, 14), (14, 2)) ok 1
+FS THROW 97 from (1, 13) to (5, 9) T (16, 1) body 141 n 1 dsq 117
+FS HOPBUILD 103 at (6, 5) lch (7, 5) T (16, 1)
+FS GATE 104 sig (18, 18, (2, 14), (14, 2)) ok 1
+FS THROW 104 from (6, 4) to (12, 4) T (16, 1) body 141 n 1 dsq 5
+FS ARRIVE 105 id 141 body 1 at (12, 4) dsq 5
+FS PHASE 105 id 141 ph 2 d 5 at (12, 4)
+FS CLEAR 108 tile (13, 3) peck 1
+FS RUNG 108 id 141 r 3 hi -
+FS DODGE 109 id 141 from (12, 3) to (11, 3) cov 1 -> 0 hit 0 hp 40
+FS CLEAR 111 tile (13, 3) peck 2
+FS RUNG 111 id 141 r 3 hi -
+FS CLEAR 112 tile (13, 3) peck 3
+FS RUNG 112 id 141 r 3 hi -
+FS CLEAR 113 tile (13, 3) peck 4
+FS RUNG 113 id 141 r 3 hi -
+FS CLEARED 114 tile (13, 3) n 1
+FS DODGE 114 id 141 from (12, 3) to (13, 3) cov 1 -> 0 hit 0 hp 12
+FS DODGE 116 id 141 from (13, 4) to (13, 3) cov 1 -> 0 hit 0 hp 12
+FS DODGE 118 id 141 from (12, 3) to (13, 3) cov 1 -> 0 hit 0 hp 12
+FS STAT 120 id 141 at (12, 3) need 4 orth 3 ti 139 ammo 24 sen 0 hp 12 covden 0 eco 1 lost 0
+FS SENTINEL 120 at (11, 3) face EAST tgt (15, 3) score 16 n 1 onring 0 lost 0 gate (1, 1, 7) onsray 0 olddsq -1
+FS PHASE 121 id 141 ph 5 d 4 at (12, 3)
+FS SEAL 121 tile (13, 3) n 1
+FS SEALCLR 121 tile (13, 3) lag 7
+FS RETREAT 128 id 141 hp 12 from (13, 4) to (12, 4)
+FS SENTDEAD 138 at (11, 3) lost 1
+FS PHASE 140 id 141 ph 2 d 4 at (12, 3)
+FS STAT 140 id 141 at (12, 3) need 4 orth 3 ti 38 ammo 92 sen 0 hp 12 covden 0 eco 1 lost 1
+FS DODGE 141 id 141 from (11, 3) to (12, 3) cov 1 -> 0 hit 0 hp 5
+FS DODGE 143 id 141 from (11, 3) to (12, 3) cov 1 -> 0 hit 0 hp 5
+FS DODGE 145 id 141 from (11, 3) to (12, 3) cov 1 -> 0 hit 0 hp 5
+FS EVICTOR 153 at (12, 3) ucov 0 cov 22 unseal 1 obs 28
+FS RUNG 153 id 141 r 2 hi -
+FS GATE 154 sig (18, 18, (2, 14), (14, 2)) ok 1
+FS EVICT 154 from (13, 2) to (7, 4)
+FS STAT 160 id 141 at (12, 0) need 6 orth 5 ti 128 ammo 80 sen 0 hp 5 covden 0 eco 1 lost 1
+FS EVICT 160 from (11, 2) to (11, 8)
+FS CLEAR 161 tile (13, 1) peck 1
+FS RUNG 161 id 141 r 3 hi -
+FS CLEAR 162 tile (13, 1) peck 2
+FS RUNG 162 id 141 r 3 hi -
+FS SENTINEL 163 at (12, 0) face SOUTHEAST tgt (15, 3) score 18 n 2 onring 0 lost 1 gate (1, 1, 7) onsray 0 olddsq 10
+FS PHASE 164 id 141 ph 5 d 5 at (13, 0)
+FS CLEAR 164 tile (13, 1) peck 3
+FS RUNG 164 id 141 r 3 hi -
+FS EVICT 170 from (12, 4) to (7, 4)
+FS EVICT 173 from (12, 4) to (7, 4)
+FS EVICT 174 from (11, 4) to (16, 0)
+FS STAT 180 id 141 at (13, 0) need 5 orth 4 ti 18 ammo 143 sen 1 hp 5 covden 0 eco 1 lost 1
+FS STAT 200 id 141 at (13, 0) need 5 orth 4 ti 18 ammo 193 sen 1 hp 5 covden 0 eco 1 lost 1
+FS STAT 220 id 141 at (13, 0) need 5 orth 4 ti 18 ammo 243 sen 1 hp 5 covden 0 eco 1 lost 1
+FS STAT 240 id 141 at (13, 0) need 5 orth 4 ti 18 ammo 293 sen 1 hp 5 covden 0 eco 1 lost 1

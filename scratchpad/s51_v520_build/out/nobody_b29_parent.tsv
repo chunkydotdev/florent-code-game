@@ -1,0 +1,37 @@
+tag	map	seed	seat	ours	cond	turn	arm	arrive	sent	kill	last	window	ge1	ge2	nobody	two_body_share	bought_sentinel	ge1_fp	ge2_fp	nobody_fp
+atoll_s85_A	atoll	85	A	US	Core destroyed	657	parent	6	456	656	656	450	53	0	0.8822	0.0	1	122	4	0.7289
+atoll_s85_B	atoll	85	B	OPP	Core destroyed	265	parent	9	-1	-1	264	256	57	0	0.7773	0.0	0	71	1	0.7227
+atoll_s86_A	atoll	86	A	OPP	Core destroyed	196	parent	6	168	-1	195	162	32	0	0.8025	0.0	1	62	0	0.6173
+atoll_s86_B	atoll	86	B	OPP	Core destroyed	223	parent	6	-1	-1	222	217	19	0	0.9124	0.0	0	32	0	0.8525
+atoll_s87_A	atoll	87	A	US	Core destroyed	200	parent	7	144	199	199	137	105	11	0.2336	0.0803	1	134	70	0.0219
+atoll_s87_B	atoll	87	B	OPP	Core destroyed	128	parent	47	-1	-1	127	81	3	0	0.963	0.0	0	4	0	0.9506
+drakkarfjord_s85_A	drakkarfjord	85	A	US	Core destroyed	447	parent	10	391	446	446	381	99	0	0.7402	0.0	1	151	0	0.6037
+drakkarfjord_s85_B	drakkarfjord	85	B	US	Core destroyed	648	parent	10	192	647	647	182	98	3	0.4615	0.0165	1	133	14	0.2692
+drakkarfjord_s86_A	drakkarfjord	86	A	OPP	Core destroyed	528	parent	10	-1	-1	527	518	86	0	0.834	0.0	0	109	0	0.7896
+drakkarfjord_s86_B	drakkarfjord	86	B	US	Titanium collected (tiebreak)	1000	parent	10	148	-1	999	138	69	0	0.5	0.0	1	92	0	0.3333
+drakkarfjord_s87_A	drakkarfjord	87	A	US	Core destroyed	194	parent	10	151	193	193	141	93	13	0.3404	0.0922	1	141	77	0.0
+drakkarfjord_s87_B	drakkarfjord	87	B	OPP	Core destroyed	262	parent	10	-1	-1	261	252	94	21	0.627	0.0833	0	107	28	0.5754
+glacierkeep_s85_A	glacierkeep	85	A	US	Titanium collected (tiebreak)	1000	parent	8	67	-1	999	59	33	6	0.4407	0.1017	1	55	28	0.0678
+glacierkeep_s85_B	glacierkeep	85	B	US	Core destroyed	137	parent	8	80	136	136	72	54	6	0.25	0.0833	1	72	41	0.0
+glacierkeep_s86_A	glacierkeep	86	A	US	Core destroyed	177	parent	8	72	176	176	64	38	1	0.4062	0.0156	1	63	34	0.0156
+glacierkeep_s86_B	glacierkeep	86	B	US	Core destroyed	169	parent	8	80	168	168	72	50	4	0.3056	0.0556	1	72	38	0.0
+glacierkeep_s87_A	glacierkeep	87	A	OPP	Core destroyed	833	parent	8	68	-1	832	60	47	9	0.2167	0.15	1	60	29	0.0
+glacierkeep_s87_B	glacierkeep	87	B	US	Titanium collected (tiebreak)	1000	parent	8	68	-1	999	60	44	5	0.2667	0.0833	1	60	24	0.0
+midgard_s85_A	midgard	85	A	US	Core destroyed	194	parent	53	138	193	193	85	84	70	0.0118	0.8235	1	85	83	0.0
+midgard_s85_B	midgard	85	B	US	Core destroyed	350	parent	52	310	349	349	258	255	237	0.0116	0.9186	1	258	254	0.0
+midgard_s86_A	midgard	86	A	US	Core destroyed	210	parent	56	173	209	209	117	117	107	0.0	0.9145	1	117	112	0.0
+midgard_s86_B	midgard	86	B	OPP	Core destroyed	280	parent	55	-1	-1	279	225	225	224	0.0	0.9956	0	225	225	0.0
+midgard_s87_A	midgard	87	A	OPP	Core destroyed	285	parent	51	-1	-1	284	234	227	215	0.0299	0.9188	0	234	224	0.0
+midgard_s87_B	midgard	87	B	OPP	Core destroyed	301	parent	47	-1	-1	300	254	254	247	0.0	0.9724	0	254	249	0.0
+nordkap_s85_A	nordkap	85	A	OPP	Core destroyed	141	parent	4	-1	-1	140	137	76	34	0.4453	0.2482	0	94	40	0.3139
+nordkap_s85_B	nordkap	85	B	US	Core destroyed	592	parent	4	160	591	591	156	65	3	0.5833	0.0192	1	82	5	0.4744
+nordkap_s86_A	nordkap	86	A	US	Core destroyed	439	parent	4	320	438	438	316	141	7	0.5538	0.0222	1	190	30	0.3987
+nordkap_s86_B	nordkap	86	B	US	Core destroyed	184	parent	4	128	183	183	124	116	70	0.0645	0.5645	1	124	96	0.0
+nordkap_s87_A	nordkap	87	A	OPP	Core destroyed	493	parent	4	215	-1	492	211	141	4	0.3318	0.019	1	149	8	0.2938
+nordkap_s87_B	nordkap	87	B	US	Core destroyed	521	parent	4	153	520	520	149	52	1	0.651	0.0067	1	149	44	0.0
+yulerune_s85_A	yulerune	85	A	OPP	Titanium collected (tiebreak)	1000	parent	41	-1	-1	999	959	957	944	0.0021	0.9844	0	959	959	0.0
+yulerune_s85_B	yulerune	85	B	OPP	Core destroyed	328	parent	38	-1	-1	327	290	290	285	0.0	0.9828	0	290	290	0.0
+yulerune_s86_A	yulerune	86	A	OPP	Core destroyed	867	parent	29	386	-1	866	357	355	349	0.0056	0.9776	1	357	353	0.0
+yulerune_s86_B	yulerune	86	B	US	Core destroyed	479	parent	31	423	478	478	392	353	273	0.0995	0.6964	1	361	283	0.0791
+yulerune_s87_A	yulerune	87	A	US	Core destroyed	199	parent	29	143	198	198	114	109	98	0.0439	0.8596	1	114	105	0.0
+yulerune_s87_B	yulerune	87	B	US	Core destroyed	265	parent	33	172	264	264	139	137	130	0.0144	0.9353	1	139	134	0.0

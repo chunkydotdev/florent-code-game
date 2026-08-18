@@ -1,0 +1,37 @@
+tag	map	seed	seat	ours	cond	turn	arm	arrive	sent	kill	last	window	ge1	ge2	nobody	two_body_share	bought_sentinel	ge1_fp	ge2_fp	nobody_fp
+atoll_s25_A	atoll	25	A	US	Core destroyed	159	v520	10	88	158	158	78	68	26	0.1282	0.3333	1	78	73	0.0
+atoll_s25_B	atoll	25	B	US	Core destroyed	182	v520	11	89	181	181	78	33	4	0.5769	0.0513	1	78	24	0.0
+atoll_s26_A	atoll	26	A	US	Core destroyed	245	v520	10	150	244	244	140	135	36	0.0357	0.2571	1	140	132	0.0
+atoll_s26_B	atoll	26	B	OPP	Core destroyed	515	v520	10	60	-1	514	50	44	18	0.12	0.36	1	50	44	0.0
+atoll_s27_A	atoll	27	A	OPP	Core destroyed	292	v520	10	-1	-1	291	282	49	27	0.8262	0.0957	0	49	28	0.8262
+atoll_s27_B	atoll	27	B	US	Core destroyed	645	v520	10	156	644	644	146	103	36	0.2945	0.2466	1	146	97	0.0
+drakkarfjord_s25_A	drakkarfjord	25	A	US	Titanium collected (tiebreak)	1000	v520	14	92	-1	999	78	54	11	0.3077	0.141	1	78	48	0.0
+drakkarfjord_s25_B	drakkarfjord	25	B	US	Core destroyed	98	v520	14	42	97	97	28	23	11	0.1786	0.3929	1	28	22	0.0
+drakkarfjord_s26_A	drakkarfjord	26	A	US	Core destroyed	92	v520	14	36	91	91	22	20	9	0.0909	0.4091	1	22	20	0.0
+drakkarfjord_s26_B	drakkarfjord	26	B	US	Core destroyed	96	v520	14	40	95	95	26	20	11	0.2308	0.4231	1	26	25	0.0
+drakkarfjord_s27_A	drakkarfjord	27	A	US	Core destroyed	199	v520	14	105	198	198	91	73	11	0.1978	0.1209	1	91	38	0.0
+drakkarfjord_s27_B	drakkarfjord	27	B	OPP	Core destroyed	521	v520	14	60	-1	520	46	42	10	0.087	0.2174	1	46	44	0.0
+glacierkeep_s25_A	glacierkeep	25	A	US	Core destroyed	162	v520	12	99	161	161	87	83	47	0.046	0.5402	1	87	83	0.0
+glacierkeep_s25_B	glacierkeep	25	B	US	Core destroyed	123	v520	12	59	122	122	47	24	12	0.4894	0.2553	1	47	43	0.0
+glacierkeep_s26_A	glacierkeep	26	A	US	Core destroyed	124	v520	12	68	123	123	56	43	27	0.2321	0.4821	1	56	52	0.0
+glacierkeep_s26_B	glacierkeep	26	B	US	Titanium collected (tiebreak)	1000	v520	12	-1	-1	999	988	162	8	0.836	0.0081	0	204	65	0.7935
+glacierkeep_s27_A	glacierkeep	27	A	US	Core destroyed	188	v520	12	55	187	187	43	34	14	0.2093	0.3256	1	43	41	0.0
+glacierkeep_s27_B	glacierkeep	27	B	OPP	Harvesters (tiebreak)	1000	v520	12	96	-1	999	84	57	7	0.3214	0.0833	1	84	66	0.0
+midgard_s25_A	midgard	25	A	OPP	Core destroyed	200	v520	50	-1	-1	199	150	150	144	0.0	0.96	0	150	150	0.0
+midgard_s25_B	midgard	25	B	OPP	Core destroyed	182	v520	50	-1	-1	181	132	76	31	0.4242	0.2348	0	79	43	0.4015
+midgard_s26_A	midgard	26	A	US	Core destroyed	251	v520	47	195	250	250	148	148	139	0.0	0.9392	1	148	145	0.0
+midgard_s26_B	midgard	26	B	US	Core destroyed	351	v520	52	261	350	350	209	209	195	0.0	0.933	1	209	206	0.0
+midgard_s27_A	midgard	27	A	US	Core destroyed	327	v520	49	271	326	326	222	220	213	0.009	0.9595	1	222	222	0.0
+midgard_s27_B	midgard	27	B	US	Core destroyed	610	v520	54	42	609	609	0	0	0			1	0	0	
+nordkap_s25_A	nordkap	25	A	US	Core destroyed	303	v520	8	67	302	302	59	46	29	0.2203	0.4915	1	58	57	0.0169
+nordkap_s25_B	nordkap	25	B	US	Core destroyed	177	v520	13	88	176	176	75	65	37	0.1333	0.4933	1	75	65	0.0
+nordkap_s26_A	nordkap	26	A	OPP	Core destroyed	619	v520	8	43	-1	618	35	30	4	0.1429	0.1143	1	35	17	0.0
+nordkap_s26_B	nordkap	26	B	US	Core destroyed	373	v520	12	317	372	372	305	294	138	0.0361	0.4525	1	303	292	0.0066
+nordkap_s27_A	nordkap	27	A	US	Core destroyed	104	v520	8	36	103	103	28	22	10	0.2143	0.3571	1	28	27	0.0
+nordkap_s27_B	nordkap	27	B	OPP	Core destroyed	190	v520	8	-1	-1	189	182	21	5	0.8846	0.0275	0	25	8	0.8626
+yulerune_s25_A	yulerune	25	A	US	Core destroyed	188	v520	29	132	187	187	103	100	94	0.0291	0.9126	1	103	100	0.0
+yulerune_s25_B	yulerune	25	B	OPP	Core destroyed	336	v520	32	-1	-1	335	304	303	205	0.0033	0.6743	0	304	225	0.0
+yulerune_s26_A	yulerune	26	A	US	Core destroyed	233	v520	27	140	232	232	113	113	106	0.0	0.9381	1	113	111	0.0
+yulerune_s26_B	yulerune	26	B	US	Core destroyed	335	v520	33	279	334	334	246	246	243	0.0	0.9878	1	246	246	0.0
+yulerune_s27_A	yulerune	27	A	OPP	Core destroyed	517	v520	34	-1	-1	516	483	482	479	0.0021	0.9917	0	483	482	0.0
+yulerune_s27_B	yulerune	27	B	OPP	Core destroyed	242	v520	31	-1	-1	241	211	103	59	0.5118	0.2796	0	104	65	0.5071

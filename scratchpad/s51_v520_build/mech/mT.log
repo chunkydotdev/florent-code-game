@@ -1,0 +1,36 @@
+atoll_s101_A	atoll	101	A	OPP	_v488beltbreak2	Core destroyed	889	0	4550	5330
+atoll_s101_B	atoll	101	B	OPP	_v488beltbreak2	Core destroyed	774	0	240	60
+atoll_s102_A	atoll	102	A	US	mT	Core destroyed	122	0	630	160
+atoll_s102_B	atoll	102	B	US	mT	Core destroyed	325	0	300	360
+atoll_s103_A	atoll	103	A	US	mT	Core destroyed	495	0	1360	1490
+atoll_s103_B	atoll	103	B	US	mT	Core destroyed	220	0	980	270
+drakkarfjord_s101_A	drakkarfjord	101	A	US	mT	Core destroyed	106	0	410	0
+drakkarfjord_s101_B	drakkarfjord	101	B	US	mT	Core destroyed	197	0	920	670
+drakkarfjord_s102_A	drakkarfjord	102	A	US	mT	Titanium collected (tiebreak)	1000	0	660	190
+drakkarfjord_s102_B	drakkarfjord	102	B	US	mT	Core destroyed	103	0	340	0
+drakkarfjord_s103_A	drakkarfjord	103	A	OPP	_v488beltbreak2	Titanium collected (tiebreak)	1000	0	380	1130
+drakkarfjord_s103_B	drakkarfjord	103	B	US	mT	Core destroyed	350	0	120	130
+glacierkeep_s101_A	glacierkeep	101	A	US	mT	Core destroyed	116	0	450	0
+glacierkeep_s101_B	glacierkeep	101	B	US	mT	Core destroyed	217	0	0	0
+glacierkeep_s102_A	glacierkeep	102	A	US	mT	Core destroyed	123	0	250	0
+glacierkeep_s102_B	glacierkeep	102	B	OPP	_v488beltbreak2	Core destroyed	858	0	0	1050
+glacierkeep_s103_A	glacierkeep	103	A	US	mT	Core destroyed	166	0	470	0
+glacierkeep_s103_B	glacierkeep	103	B	US	mT	Core destroyed	241	0	0	0
+midgard_s101_A	midgard	101	A	US	mT	Core destroyed	297	0	530	640
+midgard_s101_B	midgard	101	B	US	mT	Core destroyed	225	0	2390	620
+midgard_s102_A	midgard	102	A	US	mT	Core destroyed	297	0	1210	600
+midgard_s102_B	midgard	102	B	OPP	_v488beltbreak2	Core destroyed	191	0	660	1460
+midgard_s103_A	midgard	103	A	US	mT	Core destroyed	364	0	3230	580
+midgard_s103_B	midgard	103	B	OPP	_v488beltbreak2	Titanium collected (tiebreak)	1000	0	760	900
+nordkap_s101_A	nordkap	101	A	US	mT	Core destroyed	303	0	880	60
+nordkap_s101_B	nordkap	101	B	OPP	_v488beltbreak2	Core destroyed	410	0	110	1650
+nordkap_s102_A	nordkap	102	A	US	mT	Titanium collected (tiebreak)	1000	0	1470	60
+nordkap_s102_B	nordkap	102	B	US	mT	Core destroyed	253	0	100	130
+nordkap_s103_A	nordkap	103	A	US	mT	Core destroyed	137	0	120	70
+nordkap_s103_B	nordkap	103	B	OPP	_v488beltbreak2	Core destroyed	350	0	2210	2970
+yulerune_s101_A	yulerune	101	A	US	mT	Core destroyed	268	0	1620	210
+yulerune_s101_B	yulerune	101	B	OPP	_v488beltbreak2	Core destroyed	156	0	350	720
+yulerune_s102_A	yulerune	102	A	US	mT	Core destroyed	193	0	850	320
+yulerune_s102_B	yulerune	102	B	OPP	_v488beltbreak2	Core destroyed	353	0	340	270
+yulerune_s103_A	yulerune	103	A	US	mT	Core destroyed	269	0	340	310
+yulerune_s103_B	yulerune	103	B	US	mT	Core destroyed	357	0	300	290

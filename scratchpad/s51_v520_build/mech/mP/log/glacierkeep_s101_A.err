@@ -1,0 +1,92 @@
+Update available: 2.3.6 -> 2.3.8. Run: pip install --upgrade fcode
+FS GATE 0 sig (30, 30, (14, 2), (14, 26)) ok 1
+FS GATE 1 sig (30, 30, (14, 2), (14, 26)) ok 1
+FS PHASE 1 id 3 ph 1 d 484 at (14, 4)
+GF519 1 id 3 d 484 band 0 ti 434 ammo 0 gun 28 lau 28 bar 4 cd 0 lp 0 plants 0
+FS HOPBUILD 1 at (14, 4) lch (14, 5) T (16, 28)
+GF519 2 id 3 d 484 band 0 ti 361 ammo 0 gun 34 lau 34 bar 5 cd 0 lp 1 plants 0
+FS GATE 2 sig (30, 30, (14, 2), (14, 26)) ok 1
+FS GATE 2 sig (30, 30, (14, 2), (14, 26)) ok 1
+FS THROW 2 from (15, 4) to (15, 10) T (16, 28) body 3 n 1 dsq 256
+GF519 3 id 3 d 256 band 0 ti 361 ammo 0 gun 32 lau 32 bar 4 cd 0 lp 0 plants 0
+FS HOPBUILD 3 at (15, 10) lch (15, 11) T (16, 28)
+FS GATE 3 sig (30, 30, (14, 2), (14, 26)) ok 1
+GF519 4 id 3 d 256 band 0 ti 339 ammo 0 gun 34 lau 34 bar 5 cd 0 lp 1 plants 0
+FS GATE 4 sig (30, 30, (14, 2), (14, 26)) ok 1
+FS THROW 4 from (16, 10) to (16, 16) T (16, 28) body 3 n 1 dsq 101
+GF519 5 id 3 d 101 band 1 ti 339 ammo 0 gun 32 lau 32 bar 4 cd 0 lp 0 plants 0
+FS HOPBUILD 5 at (16, 16) lch (16, 17) T (16, 28)
+GF519 6 id 3 d 101 band 1 ti 307 ammo 0 gun 34 lau 34 bar 5 cd 0 lp 1 plants 0
+FS GATE 6 sig (30, 30, (14, 2), (14, 26)) ok 1
+FS THROW 6 from (16, 16) to (16, 22) T (16, 28) body 3 n 1 dsq 17
+GF519 7 id 3 d 17 band 1 ti 307 ammo 0 gun 32 lau 32 bar 4 cd 0 lp 0 plants 0
+GF519 8 id 3 d 16 band 1 ti 317 ammo 0 gun 32 lau 32 bar 4 cd 0 lp 0 plants 0
+FS HOPBUILD 8 at (15, 22) lch (15, 23) T (16, 28)
+GF519 9 id 3 d 16 band 1 ti 285 ammo 0 gun 34 lau 34 bar 5 cd 0 lp 1 plants 0
+FS GATE 9 sig (30, 30, (14, 2), (14, 26)) ok 1
+FS THROW 9 from (16, 22) to (16, 28) T (16, 28) body 3 n 1 dsq 2
+FS ARRIVE 10 id 3 body 1 at (16, 28) dsq 2
+FS PHASE 10 id 3 ph 2 d 2 at (16, 28)
+FS SEAL 10 tile (16, 27) n 1
+FS SEAL 11 tile (15, 28) n 2
+FS GATE 12 sig (30, 30, (14, 2), (14, 26)) ok 1
+FS GATE 13 sig (30, 30, (14, 2), (14, 26)) ok 1
+FS GATE 14 sig (30, 30, (14, 2), (14, 26)) ok 1
+FS SEAL 15 tile (16, 26) n 3
+FS SEAL 18 tile (15, 25) n 4
+FS STAT 20 id 3 at (16, 24) need 5 orth 4 ti 64 ammo 0 sen 0 hp 40 covden 0 eco 0 lost 0
+FS SEAL 30 tile (14, 25) n 5
+FS SEAL 32 tile (13, 25) n 6
+FS SEAL 37 tile (13, 25) n 7
+FS STAT 40 id 3 at (12, 23) need 6 orth 6 ti 12 ammo 20 sen 0 hp 40 covden 0 eco 0 lost 0
+FS SEAL 45 tile (13, 26) n 8
+FS SEAL 47 tile (13, 27) n 9
+FS SEAL 50 tile (14, 28) n 10
+FS PHASE 51 id 3 ph 3 d 2 at (13, 28)
+FS SEAL 52 tile (13, 28) n 11
+FS PHASE 54 id 3 ph 2 d 8 at (12, 29)
+FS PHASE 55 id 3 ph 3 d 5 at (12, 28)
+FS PHASE 56 id 3 ph 2 d 8 at (12, 29)
+FS PHASE 57 id 3 ph 3 d 5 at (12, 28)
+FS PHASE 58 id 3 ph 2 d 8 at (12, 29)
+FS PHASE 59 id 3 ph 3 d 5 at (12, 28)
+FS PHASE 60 id 3 ph 2 d 8 at (12, 29)
+FS STAT 60 id 3 at (12, 29) need 2 orth 2 ti 42 ammo 24 sen 0 hp 40 covden 0 eco 0 lost 0
+FS PHASE 61 id 3 ph 3 d 5 at (12, 28)
+FS PHASE 62 id 3 ph 2 d 8 at (12, 29)
+FS PHASE 63 id 3 ph 3 d 5 at (12, 28)
+FS PHASE 64 id 3 ph 2 d 8 at (12, 29)
+FS PHASE 65 id 3 ph 3 d 5 at (12, 28)
+FS PHASE 66 id 3 ph 2 d 8 at (12, 29)
+FS PHASE 67 id 3 ph 3 d 5 at (12, 28)
+FS PHASE 68 id 3 ph 2 d 8 at (12, 29)
+FS PHASE 69 id 3 ph 3 d 5 at (12, 28)
+FS PHASE 70 id 3 ph 2 d 8 at (12, 29)
+FS PHASE 71 id 3 ph 3 d 5 at (12, 28)
+FS PHASE 72 id 3 ph 2 d 8 at (12, 29)
+FS PHASE 73 id 3 ph 3 d 5 at (12, 28)
+FS SENTINEL 73 at (12, 29) face NORTHEAST tgt (15, 26) score 18 n 1 onring 0 lost 0 gate (0, 1, -1) onsray 0 olddsq -1
+FS PHASE 74 id 3 ph 4 d 5 at (12, 28)
+FS STAT 80 id 3 at (11, 23) need 4 orth 4 ti 16 ammo 29 sen 1 hp 40 covden 0 eco 0 lost 0
+FS SEAL 99 tile (13, 25) n 12
+FS STAT 100 id 3 at (13, 24) need 1 orth 0 ti 14 ammo 4 sen 1 hp 40 covden 0 eco 0 lost 0
+FS SEAL 103 tile (16, 25) n 13
+FS SEAL 109 tile (13, 25) n 14
+FS SEAL 116 tile (13, 25) n 15
+FS STAT 120 id 3 at (16, 24) need 1 orth 0 ti 14 ammo 3 sen 1 hp 40 covden 0 eco 0 lost 0
+FS SEAL 125 tile (13, 25) n 16
+FS SEAL 132 tile (13, 25) n 17
+FS STAT 140 id 3 at (14, 24) need 1 orth 0 ti 14 ammo 19 sen 1 hp 40 covden 0 eco 0 lost 0
+FS SEAL 141 tile (13, 25) n 18
+FS SEAL 148 tile (13, 25) n 19
+FS SEAL 157 tile (13, 25) n 20
+FS STAT 160 id 3 at (15, 24) need 0 orth 0 ti 14 ammo 8 sen 1 hp 40 covden 0 eco 0 lost 0
+FS SEAL 164 tile (13, 25) n 21
+FS SEAL 173 tile (13, 25) n 22
+FS STAT 180 id 3 at (13, 24) need 1 orth 0 ti 14 ammo 14 sen 1 hp 40 covden 0 eco 0 lost 0
+FS SEAL 180 tile (13, 25) n 23
+FS SEAL 189 tile (13, 25) n 24
+FS SEAL 196 tile (13, 25) n 25
+FS STAT 200 id 3 at (16, 24) need 1 orth 0 ti 14 ammo 3 sen 1 hp 40 covden 0 eco 0 lost 0
+FS SEAL 205 tile (13, 25) n 26
+FS SEAL 212 tile (13, 25) n 27

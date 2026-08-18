@@ -1,0 +1,106 @@
+Update available: 2.3.6 -> 2.3.8. Run: pip install --upgrade fcode
+FS GATE 0 sig (18, 18, (2, 14), (14, 2)) ok 1
+FS GATE 1 sig (18, 18, (2, 14), (14, 2)) ok 1
+FS PHASE 1 id 3 ph 1 d 200 at (4, 13)
+FS GATE 2 sig (18, 18, (2, 14), (14, 2)) ok 1
+FS GATE 3 sig (18, 18, (2, 14), (14, 2)) ok 1
+FS GATE 4 sig (18, 18, (2, 14), (14, 2)) ok 1
+FS PHASE 4 id 10 ph 1 d 221 at (3, 13)
+FS HOPBUILD 5 at (4, 13) lch (4, 12) T (16, 1)
+FS GATE 6 sig (18, 18, (2, 14), (14, 2)) ok 1
+FS THROW 6 from (5, 13) to (8, 9) T (16, 1) body 3 n 1 dsq 72
+FS HOPBUILD 7 at (8, 9) lch (8, 8) T (16, 1)
+FS THROW 7 from (5, 11) to (7, 8) T (16, 1) body 10 n 2 dsq 74
+FS GATE 8 sig (18, 18, (2, 14), (14, 2)) ok 1
+FS THROW 8 from (9, 9) to (12, 5) T (16, 1) body 3 n 1 dsq 8
+FS ARRIVE 9 id 3 body 1 at (12, 5) dsq 8
+FS PHASE 9 id 3 ph 2 d 8 at (12, 5)
+FS THROW 9 from (8, 7) to (12, 5) T (16, 1) body 10 n 2 dsq 8
+FS ARRIVE 10 id 10 body 2 at (12, 5) dsq 8
+FS PHASE 10 id 10 ph 2 d 8 at (12, 5)
+FS SEAL 11 tile (13, 3) n 1
+FS GATE 11 sig (18, 18, (2, 14), (14, 2)) ok 1
+FS DODGE 12 id 3 from (13, 4) to (12, 4) cov 1 -> 0 hit 0 hp 40
+FS SEAL 14 tile (13, 2) n 1
+FS SEAL 17 tile (13, 2) n 2
+FS DODGE 18 id 3 from (13, 4) to (14, 4) cov 1 -> 0 hit 0 hp 40
+FS STAT 20 id 3 at (14, 5) need 7 orth 6 ti 84 ammo 24 sen 0 hp 40 covden 0 eco 1 lost 0
+FS STAT 20 id 10 at (12, 4) need 7 orth 6 ti 77 ammo 24 sen 0 hp 40 covden 0 eco 1 lost 0
+FS EVICTOR 20 at (13, 4) ucov 0 cov 3 unseal 2 obs 19
+FS RUNG 20 id 10 r 2 hi -
+FS GATE 21 sig (18, 18, (2, 14), (14, 2)) ok 1
+FS EVICT 21 from (14, 4) to (8, 5)
+FS SEAL 22 tile (14, 4) n 2
+FS SEAL 24 tile (15, 4) n 3
+FS DODGE 24 id 10 from (13, 4) to (12, 4) cov 1 -> 0 hit 0 hp 40
+FS SEAL 27 tile (16, 3) n 4
+FS DODGE 29 id 10 from (13, 5) to (14, 5) cov 1 -> 0 hit 0 hp 22
+FS SEAL 31 tile (16, 2) n 5
+FS CLEAR 36 tile (14, 1) peck 1
+FS RUNG 36 id 3 r 3 hi -
+FS CLEAR 37 tile (14, 1) peck 2
+FS RUNG 37 id 3 r 3 hi -
+FS CLEAR 38 tile (14, 1) peck 3
+FS RUNG 38 id 3 r 3 hi -
+FS CLEAR 39 tile (14, 1) peck 4
+FS RUNG 39 id 3 r 3 hi -
+FS STAT 40 id 3 at (15, 1) need 5 orth 4 ti 71 ammo 24 sen 0 hp 40 covden 0 eco 1 lost 0
+FS CLEAR 40 tile (14, 1) peck 5
+FS RUNG 40 id 3 r 3 hi -
+FS STAT 40 id 10 at (17, 4) need 5 orth 4 ti 69 ammo 24 sen 0 hp 22 covden 0 eco 1 lost 0
+FS EVICTOR 40 at (16, 4) ucov 0 cov 10 unseal 2 obs 23
+FS RUNG 40 id 10 r 2 hi -
+FS GATE 41 sig (18, 18, (2, 14), (14, 2)) ok 1
+FS EVICT 41 from (15, 5) to (17, 9)
+FS CLEAR 44 tile (14, 1) peck 1
+FS RUNG 44 id 3 r 3 hi -
+FS CLEAR 45 tile (14, 1) peck 2
+FS RUNG 45 id 3 r 3 hi -
+FS EVICT 45 from (17, 5) to (11, 5)
+FS CLEAR 46 tile (14, 1) peck 3
+FS RUNG 46 id 3 r 3 hi -
+FS CLEAR 47 tile (14, 1) peck 4
+FS RUNG 47 id 3 r 3 hi -
+FS CLEAR 47 tile (15, 1) peck 1
+FS RUNG 47 id 10 r 3 hi -
+FS CLEAR 48 tile (14, 1) peck 5
+FS RUNG 48 id 3 r 3 hi -
+FS CLEAR 48 tile (15, 1) peck 2
+FS RUNG 48 id 10 r 3 hi -
+FS CLEARED 49 tile (14, 1) n 1
+FS SEAL 49 tile (14, 1) n 6
+FS SEALCLR 49 tile (14, 1) lag 0
+FS CLEAR 49 tile (15, 1) peck 3
+FS RUNG 49 id 10 r 3 hi -
+FS CLEAR 50 tile (15, 1) peck 4
+FS RUNG 50 id 10 r 3 hi -
+FS CLEAR 51 tile (15, 1) peck 1
+FS RUNG 51 id 3 r 3 hi -
+FS CLEAR 51 tile (15, 1) peck 5
+FS RUNG 51 id 10 r 3 hi -
+FS CLEAR 52 tile (15, 1) peck 2
+FS RUNG 52 id 3 r 3 hi -
+FS CLEAR 52 tile (15, 1) peck 6
+FS RUNG 52 id 10 r 3 hi -
+FS CLEAR 53 tile (15, 1) peck 3
+FS RUNG 53 id 3 r 3 hi -
+FS CLEAR 53 tile (15, 1) peck 7
+FS RUNG 53 id 10 r 3 hi -
+FS CLEARED 54 tile (15, 1) n 2
+FS SEAL 54 tile (15, 1) n 7
+FS SEALCLR 54 tile (15, 1) lag 0
+PRESKILL520 60 id 3 body 1
+FS STAT 60 id 10 at (16, 5) need 3 orth 2 ti 125 ammo 24 sen 0 hp 22 covden 0 eco 1 lost 0
+FS SENTINEL 60 at (17, 5) face NORTHWEST tgt (14, 2) score 18 n 1 onring 0 lost 0 gate (1, 1, 7) onsray 0 olddsq -1
+FS PHASE 61 id 10 ph 5 d 5 at (16, 5)
+FS PROMOTE 66 id 10
+FS RETREAT 68 id 10 hp 4 from (13, 5) to (13, 6)
+FS RETREAT 70 id 10 hp 4 from (13, 5) to (13, 6)
+FS RETREAT 72 id 10 hp 4 from (13, 5) to (13, 6)
+FS RETREAT 74 id 10 hp 4 from (13, 5) to (13, 6)
+FS RETREAT 76 id 10 hp 4 from (13, 5) to (13, 6)
+FS RETREAT 78 id 10 hp 4 from (13, 5) to (13, 6)
+FS STAT 80 id 10 at (13, 5) need 3 orth 2 ti 14 ammo 35 sen 1 hp 4 covden 0 eco 1 lost 0
+FS RETREAT 80 id 10 hp 4 from (13, 5) to (13, 6)
+FS RETREAT 82 id 10 hp 4 from (13, 5) to (13, 6)
+FS RETREAT 84 id 10 hp 4 from (13, 5) to (13, 6)

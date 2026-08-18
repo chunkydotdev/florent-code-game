@@ -1,0 +1,40 @@
+tag	map	seed	seat	ours	cond	turn	arm	game_rounds	game_jumps	eid	birth	pos	dsq_core	dsq_centre	n_seats	coverage	coverage_ferry	best_cov_site	lifetime	died	death_round	n_launch	n_launch_seat	ever_launched
+atoll_s4_A	atoll	4	A	US	Core destroyed	603	flagoff	603	72	28	10	13,4	2	4.5	8	2	2	2	2	1	12	0	0	0
+atoll_s4_A	atoll	4	A	US	Core destroyed	603	flagoff	603	72	38	14	14,5	4	6.5	8	2	2	2	589	0	-1	70	2	1
+atoll_s4_B	atoll	4	B	OPP	Core destroyed	174	flagoff	174	32	22	6	4,13	2	4.5	8	2	2	2	168	0	-1	30	3	1
+atoll_s5_A	atoll	5	A	US	Core destroyed	485	flagoff	485	36	21	6	13,4	2	4.5	8	2	2	2	4	1	10	1	0	1
+atoll_s5_A	atoll	5	A	US	Core destroyed	485	flagoff	485	36	40	12	12,2	1	6.5	8	2	2	2	122	1	134	31	0	1
+atoll_s6_A	atoll	6	A	US	Core destroyed	205	flagoff	205	30	29	10	14,5	4	6.5	8	2	2	2	3	1	13	1	0	1
+atoll_s6_A	atoll	6	A	US	Core destroyed	205	flagoff	205	30	40	14	16,4	2	4.5	8	2	2	2	191	0	-1	27	0	1
+atoll_s6_B	atoll	6	B	US	Core destroyed	190	flagoff	190	3	41	18	4,13	2	4.5	8	2	2	2	2	1	20	1	0	1
+atoll_s6_B	atoll	6	B	US	Core destroyed	190	flagoff	190	3	90	58	5,14	4	6.5	8	2	2	2	132	0	-1	0	0	0
+drakkarfjord_s4_A	drakkarfjord	4	A	US	Titanium collected (tiebreak)	1000	flagoff	1000	1122	15	9	22,8	18	32.5	8	0	0	2	1	1	10	1	0	1
+drakkarfjord_s4_A	drakkarfjord	4	A	US	Titanium collected (tiebreak)	1000	flagoff	1000	1122	3150	811	20,4	25	42.5	8	0	0	2	41	1	852	0	0	0
+drakkarfjord_s4_B	drakkarfjord	4	B	US	Core destroyed	129	flagoff	129	5	15	9	7,21	20	32.5	8	0	0	2	1	1	10	1	0	1
+drakkarfjord_s5_A	drakkarfjord	5	A	OPP	Core destroyed	343	flagoff	343	5	15	9	22,8	18	32.5	8	0	0	2	1	1	10	1	0	1
+drakkarfjord_s5_B	drakkarfjord	5	B	US	Core destroyed	123	flagoff	123	5	15	9	7,21	20	32.5	8	0	0	2	1	1	10	1	0	1
+drakkarfjord_s6_A	drakkarfjord	6	A	US	Core destroyed	417	flagoff	417	11	15	9	22,8	18	32.5	8	0	0	2	1	1	10	1	0	1
+drakkarfjord_s6_B	drakkarfjord	6	B	US	Core destroyed	126	flagoff	126	5	15	9	7,21	20	32.5	8	0	0	2	1	1	10	1	0	1
+glacierkeep_s4_A	glacierkeep	4	A	US	Core destroyed	132	flagoff	132	4	14	7	15,23	4	12.5	8	0	0	2	1	1	8	1	0	1
+glacierkeep_s4_B	glacierkeep	4	B	OPP	Core destroyed	656	flagoff	656	4	14	7	16,6	10	14.5	8	0	0	2	1	1	8	1	0	1
+glacierkeep_s5_A	glacierkeep	5	A	US	Core destroyed	229	flagoff	229	4	14	7	16,23	5	14.5	8	0	0	2	1	1	8	1	0	1
+glacierkeep_s5_B	glacierkeep	5	B	US	Core destroyed	185	flagoff	185	4	14	7	16,6	10	14.5	8	0	0	2	1	1	8	1	0	1
+glacierkeep_s6_A	glacierkeep	6	A	US	Core destroyed	160	flagoff	160	4	14	7	15,23	4	12.5	8	0	0	2	1	1	8	1	0	1
+glacierkeep_s6_B	glacierkeep	6	B	US	Core destroyed	237	flagoff	237	4	14	7	16,6	10	14.5	8	0	0	2	1	1	8	1	0	1
+nordkap_s4_A	nordkap	4	A	OPP	Core destroyed	205	flagoff	205	48	11	3	10,15	4	12.5	8	0	0	2	1	1	4	1	0	1
+nordkap_s4_A	nordkap	4	A	OPP	Core destroyed	205	flagoff	205	48	19	6	10,21	4	6.5	8	2	2	2	199	0	-1	46	0	1
+nordkap_s4_B	nordkap	4	B	US	Core destroyed	185	flagoff	185	15	11	3	10,10	9	12.5	8	0	0	2	1	1	4	1	0	1
+nordkap_s4_B	nordkap	4	B	US	Core destroyed	185	flagoff	185	15	130	105	11,5	2	4.5	8	2	2	2	7	1	112	0	0	0
+nordkap_s4_B	nordkap	4	B	US	Core destroyed	185	flagoff	185	15	137	116	12,6	4	6.5	8	2	2	2	69	0	-1	13	0	1
+nordkap_s5_A	nordkap	5	A	OPP	Core destroyed	196	flagoff	196	2	11	3	10,15	4	12.5	8	0	0	2	1	1	4	1	0	1
+nordkap_s5_B	nordkap	5	B	US	Core destroyed	344	flagoff	344	2	11	3	10,10	9	12.5	8	0	0	2	1	1	4	1	0	1
+nordkap_s6_A	nordkap	6	A	US	Core destroyed	807	flagoff	807	184	11	3	10,15	4	12.5	8	0	0	2	1	1	4	1	0	1
+nordkap_s6_A	nordkap	6	A	US	Core destroyed	807	flagoff	807	184	29	10	12,19	4	6.5	8	2	2	2	2	1	12	0	0	0
+nordkap_s6_B	nordkap	6	B	US	Core destroyed	204	flagoff	204	34	11	3	10,10	9	12.5	8	0	0	2	1	1	4	1	0	1
+nordkap_s6_B	nordkap	6	B	US	Core destroyed	204	flagoff	204	34	32	10	10,4	1	6.5	8	2	2	2	194	0	-1	30	0	1
+nordkap_s6_B	nordkap	6	B	US	Core destroyed	204	flagoff	204	34	309	146	11,11	17	22.5	8	0	0	2	1	1	147	1	0	1
+yulerune_s6_A	yulerune	6	A	US	Core destroyed	427	flagoff	427	68	420	220	14,4	17	36.5	8	0	0	2	207	0	-1	2	0	1
+yulerune_s6_A	yulerune	6	A	US	Core destroyed	427	flagoff	427	68	428	233	14,8	2	8.5	8	1	1	2	194	0	-1	4	0	1
+yulerune_s6_A	yulerune	6	A	US	Core destroyed	427	flagoff	427	68	435	244	14,12	5	12.5	8	0	0	2	183	0	-1	0	0	0
+yulerune_s6_B	yulerune	6	B	US	Titanium collected (tiebreak)	1000	flagoff	1000	291	782	394	0,7	2	12.5	8	0	0	2	606	0	-1	0	0	0
+yulerune_s6_B	yulerune	6	B	US	Titanium collected (tiebreak)	1000	flagoff	1000	291	796	404	1,11	2	4.5	8	2	2	2	596	0	-1	0	0	0

@@ -1,0 +1,37 @@
+tag	map	seed	seat	ours	cond	turn	arm	arrive	sent	kill	last	window	ge1	ge2	nobody	two_body_share	bought_sentinel	ge1_fp	ge2_fp	nobody_fp
+atoll_s37_A	atoll	37	A	OPP	Core destroyed	388	flagoff	7	31	-1	387	24	4	0	0.8333	0.0	1	9	0	0.625
+atoll_s37_B	atoll	37	B	OPP	Core destroyed	988	flagoff	6	-1	-1	987	982	42	1	0.9572	0.001	0	58	6	0.9409
+atoll_s38_A	atoll	38	A	OPP	Core destroyed	267	flagoff	6	248	-1	266	242	21	0	0.9132	0.0	1	38	9	0.843
+atoll_s38_B	atoll	38	B	OPP	Core destroyed	774	flagoff	6	-1	-1	773	768	57	15	0.9258	0.0195	0	88	25	0.8854
+atoll_s39_A	atoll	39	A	OPP	Core destroyed	339	flagoff	6	-1	-1	338	333	76	3	0.7718	0.009	0	91	8	0.7267
+atoll_s39_B	atoll	39	B	OPP	Core destroyed	215	flagoff	67	-1	-1	214	148	17	0	0.8851	0.0	0	23	0	0.8446
+drakkarfjord_s37_A	drakkarfjord	37	A	OPP	Core destroyed	986	flagoff	10	962	-1	985	952	72	15	0.9244	0.0158	1	99	23	0.896
+drakkarfjord_s37_B	drakkarfjord	37	B	US	Core destroyed	616	flagoff	10	456	615	615	446	109	0	0.7556	0.0	1	142	0	0.6816
+drakkarfjord_s38_A	drakkarfjord	38	A	US	Core destroyed	268	flagoff	10	144	267	267	134	52	0	0.6119	0.0	1	77	0	0.4254
+drakkarfjord_s38_B	drakkarfjord	38	B	OPP	Titanium collected (tiebreak)	1000	flagoff	10	120	-1	999	110	38	0	0.6545	0.0	1	110	0	0.0
+drakkarfjord_s39_A	drakkarfjord	39	A	US	Core destroyed	558	flagoff	10	365	557	557	355	103	0	0.7099	0.0	1	151	0	0.5746
+drakkarfjord_s39_B	drakkarfjord	39	B	US	Core destroyed	173	flagoff	10	97	172	172	87	48	0	0.4483	0.0	1	87	0	0.0
+glacierkeep_s37_A	glacierkeep	37	A	US	Core destroyed	261	flagoff	9	115	260	260	106	70	20	0.3396	0.1887	1	106	71	0.0
+glacierkeep_s37_B	glacierkeep	37	B	US	Core destroyed	189	flagoff	8	73	188	188	65	42	3	0.3538	0.0462	1	65	15	0.0
+glacierkeep_s38_A	glacierkeep	38	A	US	Core destroyed	725	flagoff	8	84	724	724	76	48	3	0.3684	0.0395	1	75	44	0.0132
+glacierkeep_s38_B	glacierkeep	38	B	US	Core destroyed	365	flagoff	8	56	364	364	48	38	8	0.2083	0.1667	1	48	18	0.0
+glacierkeep_s39_A	glacierkeep	39	A	US	Core destroyed	157	flagoff	8	71	156	156	63	35	0	0.4444	0.0	1	57	22	0.0952
+glacierkeep_s39_B	glacierkeep	39	B	US	Core destroyed	280	flagoff	9	224	279	279	215	24	0	0.8884	0.0	1	212	0	0.014
+midgard_s37_A	midgard	37	A	OPP	Core destroyed	220	flagoff	55	52	-1	219	0	0	0			1	0	0	
+midgard_s37_B	midgard	37	B	US	Core destroyed	307	flagoff	51	251	306	306	200	200	197	0.0	0.985	1	200	199	0.0
+midgard_s38_A	midgard	38	A	OPP	Core destroyed	241	flagoff	53	-1	-1	240	188	186	170	0.0106	0.9043	0	188	183	0.0
+midgard_s38_B	midgard	38	B	US	Core destroyed	283	flagoff	52	237	282	282	185	184	170	0.0054	0.9189	1	185	183	0.0
+midgard_s39_A	midgard	39	A	OPP	Core destroyed	384	flagoff	53	-1	-1	383	331	174	12	0.4743	0.0363	0	176	34	0.4683
+midgard_s39_B	midgard	39	B	US	Core destroyed	146	flagoff	51	97	145	145	46	46	41	0.0	0.8913	1	46	46	0.0
+nordkap_s37_A	nordkap	37	A	OPP	Core destroyed	507	flagoff	4	464	-1	506	460	76	8	0.8348	0.0174	1	121	36	0.737
+nordkap_s37_B	nordkap	37	B	OPP	Core destroyed	211	flagoff	4	-1	-1	210	207	102	58	0.5072	0.2802	0	122	94	0.4106
+nordkap_s38_A	nordkap	38	A	US	Core destroyed	158	flagoff	4	100	157	157	96	65	5	0.3229	0.0521	1	84	19	0.125
+nordkap_s38_B	nordkap	38	B	US	Core destroyed	665	flagoff	4	609	664	664	605	393	39	0.3504	0.0645	1	409	70	0.324
+nordkap_s39_A	nordkap	39	A	OPP	Core destroyed	162	flagoff	4	-1	-1	161	158	155	126	0.019	0.7975	0	158	129	0.0
+nordkap_s39_B	nordkap	39	B	US	Core destroyed	524	flagoff	4	148	523	523	144	100	19	0.3056	0.1319	1	141	25	0.0208
+yulerune_s37_A	yulerune	37	A	OPP	Core destroyed	169	flagoff	37	-1	-1	168	132	132	126	0.0	0.9545	0	132	132	0.0
+yulerune_s37_B	yulerune	37	B	OPP	Titanium collected (tiebreak)	1000	flagoff	29	-1	-1	999	971	969	952	0.0021	0.9804	0	971	962	0.0
+yulerune_s38_A	yulerune	38	A	US	Core destroyed	282	flagoff	29	226	281	281	197	194	181	0.0152	0.9188	1	197	192	0.0
+yulerune_s38_B	yulerune	38	B	OPP	Titanium collected (tiebreak)	1000	flagoff	29	-1	-1	999	971	966	957	0.0051	0.9856	0	971	966	0.0
+yulerune_s39_A	yulerune	39	A	OPP	Core destroyed	193	flagoff	29	-1	-1	192	164	160	147	0.0244	0.8963	0	164	154	0.0
+yulerune_s39_B	yulerune	39	B	US	Core destroyed	491	flagoff	35	435	490	490	400	398	385	0.005	0.9625	1	400	388	0.0

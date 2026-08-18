@@ -1,0 +1,37 @@
+tag	map	seed	seat	ours	cond	turn	arm	arrive	sent	kill	last	window	ge1	ge2	nobody	two_body_share	bought_sentinel	ge1_fp	ge2_fp	nobody_fp
+atoll_s13_A	atoll	13	A	US	Core destroyed	416	flagoff	6	360	415	415	354	253	8	0.2853	0.0226	1	277	8	0.2175
+atoll_s13_B	atoll	13	B	OPP	Core destroyed	375	flagoff	7	246	-1	374	239	89	0	0.6276	0.0	1	111	5	0.5356
+atoll_s14_A	atoll	14	A	US	Core destroyed	251	flagoff	7	94	250	250	87	46	4	0.4713	0.046	1	87	5	0.0
+atoll_s14_B	atoll	14	B	OPP	Core destroyed	256	flagoff	34	-1	-1	255	222	15	0	0.9324	0.0	0	18	0	0.9189
+atoll_s15_A	atoll	15	A	US	Core destroyed	621	flagoff	6	512	620	620	506	165	1	0.6739	0.002	1	176	1	0.6522
+atoll_s15_B	atoll	15	B	US	Core destroyed	164	flagoff	6	70	163	163	64	42	15	0.3438	0.2344	1	64	20	0.0
+drakkarfjord_s13_A	drakkarfjord	13	A	OPP	Core destroyed	357	flagoff	10	-1	-1	356	347	47	0	0.8646	0.0	0	69	0	0.8012
+drakkarfjord_s13_B	drakkarfjord	13	B	US	Core destroyed	192	flagoff	10	136	191	191	126	76	0	0.3968	0.0	1	86	0	0.3175
+drakkarfjord_s14_A	drakkarfjord	14	A	US	Titanium collected (tiebreak)	1000	flagoff	10	303	-1	999	293	61	0	0.7918	0.0	1	90	0	0.6928
+drakkarfjord_s14_B	drakkarfjord	14	B	US	Core destroyed	249	flagoff	10	60	248	248	50	27	0	0.46	0.0	1	47	0	0.06
+drakkarfjord_s15_A	drakkarfjord	15	A	OPP	Core destroyed	647	flagoff	10	-1	-1	646	637	115	3	0.8195	0.0047	0	187	44	0.7064
+drakkarfjord_s15_B	drakkarfjord	15	B	US	Core destroyed	171	flagoff	10	77	170	170	67	34	0	0.4925	0.0	1	67	0	0.0
+glacierkeep_s13_A	glacierkeep	13	A	US	Titanium collected (tiebreak)	1000	flagoff	8	188	-1	999	180	146	0	0.1889	0.0	1	161	0	0.1056
+glacierkeep_s13_B	glacierkeep	13	B	US	Core destroyed	293	flagoff	8	65	292	292	57	46	11	0.193	0.193	1	57	25	0.0
+glacierkeep_s14_A	glacierkeep	14	A	US	Core destroyed	216	flagoff	9	128	215	215	119	94	8	0.2101	0.0672	1	119	87	0.0
+glacierkeep_s14_B	glacierkeep	14	B	US	Core destroyed	697	flagoff	8	641	696	696	633	166	3	0.7378	0.0047	1	214	147	0.6619
+glacierkeep_s15_A	glacierkeep	15	A	US	Core destroyed	169	flagoff	8	68	168	168	60	41	4	0.3167	0.0667	1	59	33	0.0167
+glacierkeep_s15_B	glacierkeep	15	B	US	Core destroyed	933	flagoff	8	64	932	932	56	44	11	0.2143	0.1964	1	56	22	0.0
+midgard_s13_A	midgard	13	A	US	Core destroyed	237	flagoff	55	152	236	236	97	95	85	0.0206	0.8763	1	97	88	0.0
+midgard_s13_B	midgard	13	B	OPP	Core destroyed	218	flagoff	54	48	-1	217	0	0	0			1	0	0	
+midgard_s14_A	midgard	14	A	US	Core destroyed	289	flagoff	52	128	288	288	76	76	67	0.0	0.8816	1	76	76	0.0
+midgard_s14_B	midgard	14	B	OPP	Core destroyed	218	flagoff	54	48	-1	217	0	0	0			1	0	0	
+midgard_s15_A	midgard	15	A	US	Core destroyed	385	flagoff	52	185	384	384	133	130	116	0.0226	0.8722	1	133	131	0.0
+midgard_s15_B	midgard	15	B	US	Core destroyed	280	flagoff	51	188	279	279	137	137	45	0.0	0.3285	1	137	59	0.0
+nordkap_s13_A	nordkap	13	A	US	Core destroyed	349	flagoff	4	175	348	348	171	64	5	0.6257	0.0292	1	152	16	0.1111
+nordkap_s13_B	nordkap	13	B	OPP	Core destroyed	216	flagoff	4	-1	-1	215	212	49	1	0.7689	0.0047	0	69	5	0.6745
+nordkap_s14_A	nordkap	14	A	OPP	Core destroyed	159	flagoff	4	-1	-1	158	155	95	15	0.3871	0.0968	0	108	23	0.3032
+nordkap_s14_B	nordkap	14	B	US	Core destroyed	214	flagoff	4	128	213	213	124	43	3	0.6532	0.0242	1	119	33	0.0403
+nordkap_s15_A	nordkap	15	A	US	Titanium collected (tiebreak)	1000	flagoff	4	-1	-1	999	996	86	23	0.9137	0.0231	0	132	60	0.8675
+nordkap_s15_B	nordkap	15	B	OPP	Core destroyed	227	flagoff	4	145	-1	226	141	63	0	0.5532	0.0	1	76	0	0.461
+yulerune_s13_A	yulerune	13	A	OPP	Core destroyed	290	flagoff	27	-1	-1	289	263	181	149	0.3118	0.5665	0	184	154	0.3004
+yulerune_s13_B	yulerune	13	B	OPP	Core destroyed	213	flagoff	31	-1	-1	212	182	180	170	0.011	0.9341	0	182	173	0.0
+yulerune_s14_A	yulerune	14	A	OPP	Titanium collected (tiebreak)	1000	flagoff	29	-1	-1	999	971	970	962	0.001	0.9907	0	971	967	0.0
+yulerune_s14_B	yulerune	14	B	OPP	Core destroyed	159	flagoff	38	-1	-1	158	121	121	27	0.0	0.2231	0	121	29	0.0
+yulerune_s15_A	yulerune	15	A	US	Core destroyed	176	flagoff	36	120	175	175	84	83	73	0.0119	0.869	1	84	84	0.0
+yulerune_s15_B	yulerune	15	B	US	Core destroyed	173	flagoff	32	96	172	172	64	63	51	0.0156	0.7969	1	64	58	0.0

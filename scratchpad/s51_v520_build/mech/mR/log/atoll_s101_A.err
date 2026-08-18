@@ -1,0 +1,494 @@
+Update available: 2.3.6 -> 2.3.8. Run: pip install --upgrade fcode
+FS GATE 0 sig (18, 18, (2, 14), (14, 2)) ok 1
+FS GATE 1 sig (18, 18, (2, 14), (14, 2)) ok 1
+FS PHASE 1 id 3 ph 1 d 200 at (4, 13)
+GF519 1 id 3 d 200 band 0 ti 434 ammo 0 gun 28 lau 28 bar 4 cd 0 lp 0 plants 0
+GF519 2 id 3 d 200 band 0 ti 392 ammo 0 gun 32 lau 32 bar 4 cd 0 lp 0 plants 0
+FS GATE 2 sig (18, 18, (2, 14), (14, 2)) ok 1
+GF519 3 id 3 d 200 band 0 ti 311 ammo 0 gun 37 lau 37 bar 5 cd 0 lp 0 plants 0
+FS GATE 3 sig (18, 18, (2, 14), (14, 2)) ok 1
+GF519 4 id 3 d 200 band 0 ti 311 ammo 0 gun 37 lau 37 bar 5 cd 0 lp 0 plants 0
+FS GATE 4 sig (18, 18, (2, 14), (14, 2)) ok 1
+APPT520 CLAIM 4 id 10
+FS PHASE 4 id 10 ph 1 d 221 at (3, 13)
+GF519 4 id 10 d 221 band 0 ti 311 ammo 0 gun 37 lau 37 bar 5 cd 0 lp 0 plants 0
+GF519 5 id 3 d 200 band 0 ti 311 ammo 0 gun 37 lau 37 bar 5 cd 0 lp 0 plants 0
+FS HOPBUILD 5 at (4, 13) lch (4, 12) T (16, 1)
+GF519 5 id 10 d 202 band 0 ti 274 ammo 0 gun 39 lau 39 bar 5 cd 0 lp 1 plants 0
+GF519 6 id 3 d 200 band 0 ti 284 ammo 0 gun 39 lau 39 bar 5 cd 0 lp 1 plants 0
+GF519 6 id 10 d 185 band 0 ti 245 ammo 0 gun 40 lau 40 bar 6 cd 0 lp 1 plants 0
+FS GATE 6 sig (18, 18, (2, 14), (14, 2)) ok 1
+FS THROW 6 from (5, 13) to (8, 9) T (16, 1) body 3 n 1 dsq 72
+GF519 7 id 3 d 72 band 1 ti 229 ammo 16 gun 40 lau 40 bar 6 cd 0 lp 0 plants 0
+FS HOPBUILD 7 at (8, 9) lch (8, 8) T (16, 1)
+GF519 7 id 10 d 164 band 0 ti 183 ammo 16 gun 42 lau 42 bar 6 cd 0 lp 1 plants 0
+FS THROW 7 from (5, 11) to (7, 8) T (16, 1) body 10 n 2 dsq 74
+GF519 8 id 3 d 72 band 1 ti 193 ammo 16 gun 40 lau 40 bar 6 cd 0 lp 1 plants 0
+GF519 8 id 10 d 74 band 1 ti 193 ammo 16 gun 40 lau 40 bar 6 cd 0 lp 1 plants 0
+FS GATE 8 sig (18, 18, (2, 14), (14, 2)) ok 1
+FS THROW 8 from (9, 9) to (12, 5) T (16, 1) body 3 n 1 dsq 8
+FS ARRIVE 9 id 3 body 1 at (12, 5) dsq 8
+ARC520 CLAIM 9 id 3 body 1 arc 1 at (12, 5)
+FS PHASE 9 id 3 ph 2 d 8 at (12, 5)
+FS EVICTOR 9 at (13, 5) ucov 0 cov 1 unseal 1 obs 2
+FS RUNG 9 id 3 r 2 hi -
+GF519 9 id 10 d 65 band 1 ti 147 ammo 16 gun 42 lau 42 bar 6 cd 0 lp 1 plants 0
+FS THROW 9 from (8, 7) to (11, 5) T (16, 1) body 10 n 2 dsq 13
+GF519 10 id 10 d 13 band 1 ti 96 ammo 16 gun 44 lau 44 bar 6 cd 0 lp 0 plants 0
+FS GATE 10 sig (18, 18, (2, 14), (14, 2)) ok 1
+SPLIT520 10 lch (13, 5) body 3 arc 2 to (14, 1) dsq 1 walk 0 n 1
+FS SPLIT 10 arc 2 to (14, 1) body 3 walk 0
+FS CLEAR 11 tile (13, 1) peck 1
+FS RUNG 11 id 3 r 3 hi -
+FS ARRIVE 11 id 10 body 2 at (12, 5) dsq 8
+ARC520 COLLIDE 11 id 10 body 2 peer 1 took 2 n 1
+ARC520 CLAIM 11 id 10 body 2 arc 2 at (12, 5)
+FS PHASE 11 id 10 ph 2 d 8 at (12, 5)
+FS EVICT 11 from (12, 4) to (12, 10)
+FS GATE 11 sig (18, 18, (2, 14), (14, 2)) ok 1
+FS CLEAR 12 tile (13, 1) peck 2
+FS RUNG 12 id 3 r 3 hi -
+FS EVICT 12 from (12, 6) to (12, 0)
+FS CLEAR 13 tile (15, 1) peck 1
+FS RUNG 13 id 3 r 3 hi -
+FS CLEAR 14 tile (13, 1) peck 3
+FS RUNG 14 id 3 r 3 hi -
+FS CLEAR 15 tile (13, 1) peck 4
+FS RUNG 15 id 3 r 3 hi -
+FS DODGE 15 id 10 from (13, 4) to (13, 3) cov 1 -> 0 hit 0 hp 4
+FS CLEAR 16 tile (13, 1) peck 5
+FS RUNG 16 id 3 r 3 hi -
+FS SEAL 16 tile (13, 2) n 1
+FS EVICT 16 from (12, 4) to (12, 10)
+FS CLEAR 17 tile (15, 1) peck 1
+FS RUNG 17 id 3 r 3 hi -
+FS CLEAR 18 tile (15, 1) peck 2
+FS RUNG 18 id 3 r 3 hi -
+FS SEAL 18 tile (13, 3) n 2
+FS CLEAR 19 tile (15, 1) peck 3
+FS RUNG 19 id 3 r 3 hi -
+FS STAT 20 id 3 at (14, 1) need 7 orth 6 ti 95 ammo 16 sen 0 hp 40 covden 0 eco 1 lost 0
+FS CLEAR 20 tile (15, 1) peck 4
+FS RUNG 20 id 3 r 3 hi -
+FS STAT 20 id 10 at (12, 2) need 7 orth 6 ti 87 ammo 16 sen 0 hp 4 covden 0 eco 1 lost 0
+FS CLEAR 21 tile (15, 1) peck 5
+FS RUNG 21 id 3 r 3 hi -
+FS CLEAR 22 tile (15, 1) peck 6
+FS RUNG 22 id 3 r 3 hi -
+FS CLEAR 23 tile (15, 1) peck 7
+FS RUNG 23 id 3 r 3 hi -
+FS CLEAR 24 tile (15, 1) peck 8
+FS RUNG 24 id 3 r 3 hi -
+FS EVICT 26 from (14, 6) to (8, 5)
+FS EVICT 30 from (12, 5) to (12, 10)
+FS EVICT 35 from (13, 6) to (13, 0)
+FS CLEAR 36 tile (15, 1) peck 1
+FS RUNG 36 id 3 r 3 hi -
+FS CLEARED 37 tile (15, 1) n 1
+FS SEAL 37 tile (15, 1) n 1
+FS SEALCLR 37 tile (15, 1) lag 0
+FS CLEAR 38 tile (13, 1) peck 1
+FS RUNG 38 id 3 r 3 hi -
+FS CLEAR 39 tile (13, 1) peck 2
+FS RUNG 39 id 3 r 3 hi -
+FS STAT 40 id 3 at (14, 1) need 6 orth 5 ti 80 ammo 24 sen 0 hp 40 covden 0 eco 1 lost 0
+FS CLEAR 40 tile (13, 1) peck 3
+FS RUNG 40 id 3 r 3 hi -
+FS STAT 40 id 10 at (12, 2) need 6 orth 5 ti 78 ammo 24 sen 0 hp 4 covden 0 eco 1 lost 0
+FS EVICT 47 from (12, 4) to (12, 10)
+FS EVICT 48 from (12, 6) to (12, 0)
+FS EVICT 50 from (12, 4) to (12, 10)
+FS EVICT 52 from (13, 6) to (12, 0)
+FS EVICT 56 from (14, 6) to (8, 5)
+FS EVICT 58 from (12, 4) to (12, 10)
+FS EVICT 59 from (14, 5) to (8, 5)
+FS STAT 60 id 3 at (14, 1) need 6 orth 5 ti 61 ammo 24 sen 0 hp 40 covden 0 eco 1 lost 0
+FS CLEAR 60 tile (13, 1) peck 1
+FS RUNG 60 id 3 r 3 hi -
+FS STAT 60 id 10 at (13, 1) need 6 orth 5 ti 59 ammo 24 sen 0 hp 4 covden 0 eco 1 lost 0
+FS CLEAR 60 tile (14, 1) peck 1
+FS RUNG 60 id 10 r 3 hi -
+FS EVICT 60 from (12, 5) to (12, 10)
+FS CLEAR 62 tile (13, 1) peck 2
+FS RUNG 62 id 3 r 3 hi -
+FS CLEAR 62 tile (14, 1) peck 2
+FS RUNG 62 id 10 r 3 hi -
+FS CLEAR 63 tile (13, 1) peck 3
+FS RUNG 63 id 3 r 3 hi -
+FS CLEAR 63 tile (14, 1) peck 3
+FS RUNG 63 id 10 r 3 hi -
+FS EVICT 63 from (13, 6) to (12, 0)
+FS CLEAR 64 tile (13, 1) peck 4
+FS RUNG 64 id 3 r 3 hi -
+FS CLEAR 64 tile (14, 1) peck 4
+FS RUNG 64 id 10 r 3 hi -
+FS CLEAR 65 tile (13, 1) peck 5
+FS RUNG 65 id 3 r 3 hi -
+FS DODGE 65 id 10 from (13, 1) to (13, 0) cov 1 -> 0 hit 0 hp 4
+FS EVICT 65 from (12, 4) to (12, 10)
+FS CLEAR 66 tile (13, 1) peck 6
+FS RUNG 66 id 3 r 3 hi -
+FS EVICTOR 66 at (14, 0) ucov 1 cov 2 unseal 1 obs 4
+FS RUNG 66 id 10 r 2 hi -
+FS EVICT 66 from (14, 6) to (8, 5)
+FS EVICT 67 from (12, 4) to (12, 10)
+FS GATE 67 sig (18, 18, (2, 14), (14, 2)) ok 1
+FS EVICT 69 from (12, 4) to (12, 10)
+FS EVICT 70 from (12, 5) to (12, 10)
+FS EVICT 71 from (12, 6) to (12, 0)
+FS EVICT 74 from (13, 6) to (12, 10)
+FS EVICT 76 from (14, 6) to (8, 5)
+FS CLEAR 78 tile (13, 1) peck 1
+FS RUNG 78 id 3 r 3 hi -
+FS EVICT 79 from (13, 6) to (12, 0)
+FS STAT 80 id 3 at (14, 1) need 7 orth 5 ti 85 ammo 24 sen 0 hp 40 covden 14 eco 1 lost 0
+FS CLEAR 80 tile (13, 1) peck 2
+FS RUNG 80 id 3 r 3 hi -
+FS STAT 80 id 10 at (13, 0) need 7 orth 5 ti 83 ammo 24 sen 0 hp 4 covden 14 eco 1 lost 0
+FS SEAL 80 tile (13, 1) n 3
+FS EVICT 80 from (12, 5) to (12, 10)
+FS EVICT 83 from (12, 6) to (12, 0)
+FS DODGE 85 id 10 from (11, 2) to (12, 2) cov 1 -> 0 hit 0 hp 4
+FS EVICT 85 from (12, 5) to (12, 10)
+FS EVICT 86 from (13, 4) to (12, 10)
+FS DODGE 87 id 10 from (12, 3) to (12, 2) cov 2 -> 0 hit 0 hp 4
+FS EVICT 87 from (14, 6) to (8, 5)
+FS DODGE 89 id 10 from (12, 3) to (12, 2) cov 2 -> 0 hit 0 hp 4
+FS SEAL 91 tile (13, 3) n 4
+FS EVICT 91 from (12, 5) to (12, 10)
+FS EVICT 92 from (14, 6) to (8, 5)
+FS DODGE 93 id 10 from (12, 4) to (12, 3) cov 1 -> 0 hit 0 hp 4
+FS EVICT 95 from (12, 6) to (12, 0)
+FS EVICT 96 from (12, 5) to (12, 10)
+FS STAT 100 id 3 at (14, 1) need 5 orth 4 ti 64 ammo 24 sen 0 hp 40 covden 34 eco 1 lost 0
+FS STAT 120 id 3 at (14, 1) need 6 orth 5 ti 101 ammo 24 sen 0 hp 40 covden 54 eco 1 lost 0
+FS EVICT 137 from (13, 1) to (9, 0)
+FS EVICT 147 from (13, 1) to (9, 0)
+FS GATE 193 sig (18, 18, (2, 14), (14, 2)) ok 1
+FS GATE 203 sig (18, 18, (2, 14), (14, 2)) ok 1
+FS GATE 215 sig (18, 18, (2, 14), (14, 2)) ok 1
+FS PHASE 215 id 342 ph 1 d 290 at (3, 16)
+FS HOPBUILD 217 at (4, 17) lch (5, 17) T (16, 1)
+FS GATE 218 sig (18, 18, (2, 14), (14, 2)) ok 1
+FS THROW 218 from (4, 16) to (8, 13) T (16, 1) body 342 n 1 dsq 136
+TERM520 226 id 342 at (12, 10) n 2 pick (12, 9) arcs 2 cov 0 covbest 0 conflict 0 dsq 40
+FS HOPBUILD 226 at (12, 10) lch (12, 9) T (16, 1)
+FS GATE 227 sig (18, 18, (2, 14), (14, 2)) ok 1
+FS THROW 227 from (13, 10) to (15, 5) T (16, 1) body 342 n 1 dsq 4
+FS ARRIVE 228 id 342 body 1 at (15, 5) dsq 4
+ARC520 CLAIM 228 id 342 body 1 arc 1 at (15, 5)
+FS PHASE 228 id 342 ph 2 d 4 at (15, 5)
+FS IDLETEAR 233 at (0, 1) born 193 lastthrow None downsq 173 dopp 197
+FS STAT 240 id 342 at (14, 4) need 9 orth 8 ti 36 ammo 26 sen 0 hp 40 covden 0 eco 1 lost 0
+FS IDLETEAR 243 at (8, 2) born 203 lastthrow None downsq 180 dopp 36
+FS CLEAR 256 tile (14, 4) peck 1
+FS RUNG 256 id 342 r 3 hi -
+FS CLEAR 257 tile (14, 4) peck 2
+FS RUNG 257 id 342 r 3 hi -
+FS CLEAR 258 tile (14, 4) peck 3
+FS RUNG 258 id 342 r 3 hi -
+FS CLEAR 259 tile (14, 4) peck 4
+FS RUNG 259 id 342 r 3 hi -
+FS STAT 260 id 342 at (15, 4) need 8 orth 7 ti 118 ammo 36 sen 0 hp 40 covden 0 eco 1 lost 0
+FS CLEAR 260 tile (14, 4) peck 5
+FS RUNG 260 id 342 r 3 hi -
+FS CLEAR 261 tile (14, 4) peck 6
+FS RUNG 261 id 342 r 3 hi -
+FS CLEAR 262 tile (14, 4) peck 7
+FS RUNG 262 id 342 r 3 hi -
+FS CLEAR 263 tile (14, 4) peck 8
+FS RUNG 263 id 342 r 3 hi -
+FS SEAL 265 tile (15, 4) n 1
+FS SEAL 268 tile (16, 3) n 2
+FS SEAL 270 tile (16, 2) n 3
+FS EVICTOR 271 at (17, 3) ucov 0 cov 3 unseal 3 obs 18
+FS RUNG 271 id 342 r 2 hi -
+FS GATE 272 sig (18, 18, (2, 14), (14, 2)) ok 1
+FS STAT 280 id 342 at (17, 0) need 6 orth 5 ti 160 ammo 36 sen 0 hp 40 covden 0 eco 1 lost 0
+FS SENTINEL 284 at (17, 1) face SOUTHWEST tgt (15, 3) score 8 n 1 onring 0 lost 0 gate (1, 1, 7) onsray 0 olddsq -1
+FS PHASE 285 id 342 ph 5 d 8 at (17, 0)
+FS STAT 300 id 342 at (17, 0) need 6 orth 5 ti 21 ammo 28 sen 1 hp 40 covden 0 eco 1 lost 0
+FS EVICT 303 from (16, 4) to (17, 8)
+FS STAT 320 id 342 at (17, 0) need 6 orth 5 ti 22 ammo 42 sen 1 hp 40 covden 0 eco 1 lost 0
+FS STAT 340 id 342 at (17, 0) need 6 orth 5 ti 20 ammo 94 sen 1 hp 40 covden 0 eco 1 lost 0
+FS STAT 360 id 342 at (17, 0) need 6 orth 5 ti 20 ammo 144 sen 1 hp 40 covden 0 eco 1 lost 0
+FS STAT 380 id 342 at (17, 0) need 6 orth 5 ti 50 ammo 164 sen 1 hp 40 covden 0 eco 1 lost 0
+FS STAT 400 id 342 at (17, 0) need 6 orth 5 ti 106 ammo 158 sen 1 hp 40 covden 0 eco 1 lost 0
+FS STAT 420 id 342 at (17, 0) need 6 orth 5 ti 106 ammo 208 sen 1 hp 40 covden 0 eco 1 lost 0
+FS STAT 440 id 342 at (17, 0) need 6 orth 5 ti 106 ammo 258 sen 1 hp 40 covden 0 eco 1 lost 0
+FS EVICT 453 from (16, 4) to (16, 8)
+FS STAT 460 id 342 at (17, 0) need 6 orth 5 ti 114 ammo 300 sen 1 hp 40 covden 0 eco 1 lost 0
+FS STAT 480 id 342 at (17, 0) need 6 orth 5 ti 62 ammo 300 sen 1 hp 40 covden 0 eco 1 lost 0
+FS GATE 481 sig (18, 18, (2, 14), (14, 2)) ok 1
+APPT520 CLAIM 481 id 768
+FS PHASE 481 id 768 ph 1 d 338 at (1, 16)
+FS HOPBUILD 490 at (3, 9) lch (4, 9) T (16, 1)
+FS GATE 491 sig (18, 18, (2, 14), (14, 2)) ok 1
+FS THROW 491 from (3, 8) to (7, 5) T (16, 1) body 768 n 1 dsq 53
+TERM520 497 id 768 at (10, 5) n 2 pick (11, 5) arcs 2 cov 0 covbest 0 conflict 0 dsq 13
+FS HOPBUILD 497 at (10, 5) lch (11, 5) T (16, 1)
+FS GATE 498 sig (18, 18, (2, 14), (14, 2)) ok 1
+FS THROW 498 from (10, 4) to (16, 4) T (16, 1) body 768 n 1 dsq 2
+FS ARRIVE 499 id 768 body 2 at (16, 4) dsq 2
+ARC520 COLLIDE 499 id 768 body 2 peer 1 took 2 n 1
+ARC520 CLAIM 499 id 768 body 2 arc 2 at (16, 4)
+FS PHASE 499 id 768 ph 5 d 2 at (16, 4)
+FS STAT 500 id 342 at (17, 0) need 6 orth 5 ti 48 ammo 220 sen 1 hp 40 covden 0 eco 1 lost 0
+FS STAT 500 id 768 at (16, 5) need 8 orth 5 ti 48 ammo 220 sen 1 hp 8 covden 0 eco 1 lost 0
+FS SEAL 506 tile (16, 4) n 1
+FS CLEAR 510 tile (14, 4) peck 1
+FS RUNG 510 id 768 r 3 hi -
+FS CLEAR 511 tile (14, 4) peck 2
+FS RUNG 511 id 768 r 3 hi -
+FS CLEAR 512 tile (14, 4) peck 3
+FS RUNG 512 id 768 r 3 hi -
+FS CLEAR 513 tile (14, 4) peck 4
+FS RUNG 513 id 768 r 3 hi -
+FS CLEAR 514 tile (14, 4) peck 5
+FS RUNG 514 id 768 r 3 hi -
+FS CLEAR 515 tile (14, 4) peck 6
+FS RUNG 515 id 768 r 3 hi -
+FS CLEAR 516 tile (14, 4) peck 7
+FS RUNG 516 id 768 r 3 hi -
+FS CLEAR 517 tile (14, 4) peck 8
+FS RUNG 517 id 768 r 3 hi -
+FS CLEAR 518 tile (14, 4) peck 9
+FS RUNG 518 id 768 r 3 hi -
+FS CLEAR 519 tile (14, 4) peck 10
+FS RUNG 519 id 768 r 3 hi -
+FS STAT 520 id 342 at (17, 0) need 6 orth 5 ti 113 ammo 175 sen 1 hp 40 covden 0 eco 1 lost 0
+FS STAT 520 id 768 at (14, 5) need 7 orth 5 ti 113 ammo 175 sen 1 hp 8 covden 0 eco 1 lost 0
+FS CLEAR 520 tile (14, 4) peck 11
+FS RUNG 520 id 768 r 3 hi -
+FS CLEAR 521 tile (14, 4) peck 12
+FS RUNG 521 id 768 r 3 hi -
+FS CLEAR 522 tile (14, 4) peck 13
+FS RUNG 522 id 768 r 3 hi -
+FS CLEAR 523 tile (14, 4) peck 14
+FS RUNG 523 id 768 r 3 hi -
+FS CLEAR 524 tile (14, 4) peck 15
+FS RUNG 524 id 768 r 3 hi -
+FS CLEAR 525 tile (14, 4) peck 16
+FS RUNG 525 id 768 r 3 hi -
+FS CLEAR 526 tile (14, 4) peck 17
+FS RUNG 526 id 768 r 3 hi -
+FS CLEAR 527 tile (14, 4) peck 18
+FS RUNG 527 id 768 r 3 hi -
+FS CLEAR 528 tile (14, 4) peck 19
+FS RUNG 528 id 768 r 3 hi -
+FS CLEAR 529 tile (14, 4) peck 20
+FS RUNG 529 id 768 r 3 hi -
+FS CLEAR 530 tile (14, 4) peck 21
+FS RUNG 530 id 768 r 3 hi -
+FS CLEAR 531 tile (14, 4) peck 22
+FS RUNG 531 id 768 r 3 hi -
+FS CLEAR 532 tile (14, 4) peck 23
+FS RUNG 532 id 768 r 3 hi -
+FS CLEAR 533 tile (14, 4) peck 24
+FS RUNG 533 id 768 r 3 hi -
+FS CLEAR 534 tile (14, 4) peck 25
+FS RUNG 534 id 768 r 3 hi -
+FS CLEAR 535 tile (14, 4) peck 26
+FS RUNG 535 id 768 r 3 hi -
+FS CLEAR 536 tile (14, 4) peck 27
+FS RUNG 536 id 768 r 3 hi -
+FS CLEAR 537 tile (14, 4) peck 28
+FS RUNG 537 id 768 r 3 hi -
+FS CLEAR 538 tile (14, 4) peck 29
+FS RUNG 538 id 768 r 3 hi -
+FS CLEAR 539 tile (14, 4) peck 30
+FS RUNG 539 id 768 r 3 hi -
+FS STAT 540 id 342 at (17, 0) need 6 orth 5 ti 113 ammo 185 sen 1 hp 40 covden 0 eco 1 lost 0
+FS STAT 540 id 768 at (14, 5) need 7 orth 5 ti 113 ammo 185 sen 1 hp 8 covden 0 eco 1 lost 0
+FS CLEAR 540 tile (14, 4) peck 31
+FS RUNG 540 id 768 r 3 hi -
+FS CLEAR 541 tile (14, 4) peck 32
+FS RUNG 541 id 768 r 3 hi -
+FS CLEAR 542 tile (14, 4) peck 33
+FS RUNG 542 id 768 r 3 hi -
+FS CLEAR 543 tile (14, 4) peck 34
+FS RUNG 543 id 768 r 3 hi -
+FS CLEAR 544 tile (14, 4) peck 35
+FS RUNG 544 id 768 r 3 hi -
+FS CLEAR 545 tile (14, 4) peck 36
+FS RUNG 545 id 768 r 3 hi -
+FS CLEAR 546 tile (14, 4) peck 37
+FS RUNG 546 id 768 r 3 hi -
+FS CLEAR 547 tile (14, 4) peck 38
+FS RUNG 547 id 768 r 3 hi -
+FS CLEAR 548 tile (14, 4) peck 39
+FS RUNG 548 id 768 r 3 hi -
+FS CLEAR 549 tile (14, 4) peck 40
+FS RUNG 549 id 768 r 3 hi -
+FS CLEAR 550 tile (14, 4) peck 41
+FS RUNG 550 id 768 r 3 hi -
+FS CLEAR 551 tile (14, 4) peck 42
+FS RUNG 551 id 768 r 3 hi -
+FS CLEAR 552 tile (14, 4) peck 43
+FS RUNG 552 id 768 r 3 hi -
+FS CLEAR 553 tile (14, 4) peck 44
+FS RUNG 553 id 768 r 3 hi -
+FS CLEAR 554 tile (14, 4) peck 45
+FS RUNG 554 id 768 r 3 hi -
+FS CLEAR 555 tile (14, 4) peck 46
+FS RUNG 555 id 768 r 3 hi -
+FS CLEAR 556 tile (14, 4) peck 47
+FS RUNG 556 id 768 r 3 hi -
+FS CLEAR 557 tile (14, 4) peck 48
+FS RUNG 557 id 768 r 3 hi -
+FS CLEAR 558 tile (14, 4) peck 49
+FS RUNG 558 id 768 r 3 hi -
+FS CLEAR 559 tile (14, 4) peck 50
+FS RUNG 559 id 768 r 3 hi -
+FS STAT 560 id 342 at (17, 0) need 6 orth 5 ti 113 ammo 195 sen 1 hp 40 covden 0 eco 1 lost 0
+FS STAT 560 id 768 at (14, 5) need 7 orth 5 ti 113 ammo 195 sen 1 hp 8 covden 0 eco 1 lost 0
+FS CLEAR 560 tile (14, 4) peck 51
+FS RUNG 560 id 768 r 3 hi -
+FS CLEAR 561 tile (14, 4) peck 52
+FS RUNG 561 id 768 r 3 hi -
+FS CLEAR 562 tile (14, 4) peck 53
+FS RUNG 562 id 768 r 3 hi -
+FS CLEAR 563 tile (14, 4) peck 54
+FS RUNG 563 id 768 r 3 hi -
+FS CLEAR 564 tile (14, 4) peck 55
+FS RUNG 564 id 768 r 3 hi -
+FS CLEAR 565 tile (14, 4) peck 56
+FS RUNG 565 id 768 r 3 hi -
+FS CLEAR 566 tile (14, 4) peck 57
+FS RUNG 566 id 768 r 3 hi -
+FS CLEAR 567 tile (14, 4) peck 58
+FS RUNG 567 id 768 r 3 hi -
+FS CLEAR 568 tile (14, 4) peck 59
+FS RUNG 568 id 768 r 3 hi -
+FS CLEAR 569 tile (14, 4) peck 60
+FS RUNG 569 id 768 r 3 hi -
+FS CLEAR 570 tile (14, 4) peck 61
+FS RUNG 570 id 768 r 3 hi -
+FS CLEAR 571 tile (14, 4) peck 62
+FS RUNG 571 id 768 r 3 hi -
+FS CLEAR 572 tile (14, 4) peck 63
+FS RUNG 572 id 768 r 3 hi -
+FS CLEAR 573 tile (14, 4) peck 64
+FS RUNG 573 id 768 r 3 hi -
+FS CLEAR 574 tile (14, 4) peck 65
+FS RUNG 574 id 768 r 3 hi -
+FS CLEAR 575 tile (14, 4) peck 66
+FS RUNG 575 id 768 r 3 hi -
+FS CLEAR 576 tile (14, 4) peck 67
+FS RUNG 576 id 768 r 3 hi -
+FS CLEAR 577 tile (14, 4) peck 68
+FS RUNG 577 id 768 r 3 hi -
+FS CLEAR 578 tile (14, 4) peck 69
+FS RUNG 578 id 768 r 3 hi -
+FS CLEAR 579 tile (14, 4) peck 70
+FS RUNG 579 id 768 r 3 hi -
+FS STAT 580 id 342 at (17, 0) need 6 orth 5 ti 113 ammo 205 sen 1 hp 40 covden 0 eco 1 lost 0
+FS STAT 580 id 768 at (14, 5) need 7 orth 5 ti 113 ammo 205 sen 1 hp 8 covden 0 eco 1 lost 0
+FS CLEAR 580 tile (14, 4) peck 71
+FS RUNG 580 id 768 r 3 hi -
+FS CLEAR 581 tile (14, 4) peck 72
+FS RUNG 581 id 768 r 3 hi -
+FS CLEAR 582 tile (14, 4) peck 73
+FS RUNG 582 id 768 r 3 hi -
+FS CLEAR 583 tile (14, 4) peck 74
+FS RUNG 583 id 768 r 3 hi -
+FS CLEAR 584 tile (14, 4) peck 75
+FS RUNG 584 id 768 r 3 hi -
+FS CLEAR 585 tile (14, 4) peck 76
+FS RUNG 585 id 768 r 3 hi -
+FS CLEAR 586 tile (14, 4) peck 77
+FS RUNG 586 id 768 r 3 hi -
+FS CLEAR 587 tile (14, 4) peck 78
+FS RUNG 587 id 768 r 3 hi -
+FS CLEAR 588 tile (14, 4) peck 79
+FS RUNG 588 id 768 r 3 hi -
+FS CLEAR 589 tile (14, 4) peck 80
+FS RUNG 589 id 768 r 3 hi -
+FS CLEAR 590 tile (14, 4) peck 81
+FS RUNG 590 id 768 r 3 hi -
+FS CLEAR 591 tile (14, 4) peck 82
+FS RUNG 591 id 768 r 3 hi -
+FS CLEAR 592 tile (14, 4) peck 83
+FS RUNG 592 id 768 r 3 hi -
+FS CLEAR 593 tile (14, 4) peck 84
+FS RUNG 593 id 768 r 3 hi -
+FS CLEAR 594 tile (14, 4) peck 85
+FS RUNG 594 id 768 r 3 hi -
+FS CLEAR 595 tile (14, 4) peck 86
+FS RUNG 595 id 768 r 3 hi -
+FS CLEAR 596 tile (14, 4) peck 87
+FS RUNG 596 id 768 r 3 hi -
+FS CLEAR 597 tile (14, 4) peck 88
+FS RUNG 597 id 768 r 3 hi -
+FS CLEAR 598 tile (14, 4) peck 89
+FS RUNG 598 id 768 r 3 hi -
+FS CLEAR 599 tile (14, 4) peck 90
+FS RUNG 599 id 768 r 3 hi -
+FS STAT 600 id 342 at (17, 0) need 6 orth 5 ti 113 ammo 215 sen 1 hp 40 covden 0 eco 1 lost 0
+FS STAT 600 id 768 at (14, 5) need 7 orth 5 ti 113 ammo 215 sen 1 hp 8 covden 0 eco 1 lost 0
+FS CLEAR 600 tile (14, 4) peck 91
+FS RUNG 600 id 768 r 3 hi -
+FS CLEAR 601 tile (14, 4) peck 92
+FS RUNG 601 id 768 r 3 hi -
+FS CLEAR 602 tile (14, 4) peck 93
+FS RUNG 602 id 768 r 3 hi -
+FS CLEAR 603 tile (14, 4) peck 94
+FS RUNG 603 id 768 r 3 hi -
+FS CLEAR 604 tile (14, 4) peck 95
+FS RUNG 604 id 768 r 3 hi -
+FS CLEAR 605 tile (14, 4) peck 96
+FS RUNG 605 id 768 r 3 hi -
+FS CLEAR 606 tile (14, 4) peck 97
+FS RUNG 606 id 768 r 3 hi -
+FS CLEAR 607 tile (14, 4) peck 98
+FS RUNG 607 id 768 r 3 hi -
+FS CLEAR 608 tile (14, 4) peck 99
+FS RUNG 608 id 768 r 3 hi -
+FS CLEAR 609 tile (14, 4) peck 100
+FS RUNG 609 id 768 r 3 hi -
+FS CLEAR 610 tile (14, 4) peck 101
+FS RUNG 610 id 768 r 3 hi -
+FS CLEAR 611 tile (14, 4) peck 102
+FS RUNG 611 id 768 r 3 hi -
+FS CLEAR 612 tile (14, 4) peck 103
+FS RUNG 612 id 768 r 3 hi -
+FS CLEAR 613 tile (14, 4) peck 104
+FS RUNG 613 id 768 r 3 hi -
+FS CLEAR 614 tile (14, 4) peck 105
+FS RUNG 614 id 768 r 3 hi -
+FS CLEAR 615 tile (14, 4) peck 106
+FS RUNG 615 id 768 r 3 hi -
+FS CLEAR 616 tile (14, 4) peck 107
+FS RUNG 616 id 768 r 3 hi -
+FS CLEAR 617 tile (14, 4) peck 108
+FS RUNG 617 id 768 r 3 hi -
+FS CLEAR 618 tile (14, 4) peck 109
+FS RUNG 618 id 768 r 3 hi -
+FS CLEAR 619 tile (14, 4) peck 110
+FS RUNG 619 id 768 r 3 hi -
+FS STAT 620 id 342 at (17, 0) need 6 orth 5 ti 113 ammo 225 sen 1 hp 40 covden 0 eco 1 lost 0
+FS STAT 620 id 768 at (14, 5) need 7 orth 5 ti 113 ammo 225 sen 1 hp 8 covden 0 eco 1 lost 0
+FS CLEAR 620 tile (14, 4) peck 111
+FS RUNG 620 id 768 r 3 hi -
+FS CLEAR 621 tile (14, 4) peck 112
+FS RUNG 621 id 768 r 3 hi -
+FS CLEAR 622 tile (14, 4) peck 113
+FS RUNG 622 id 768 r 3 hi -
+FS CLEAR 623 tile (14, 4) peck 114
+FS RUNG 623 id 768 r 3 hi -
+FS CLEAR 624 tile (14, 4) peck 115
+FS RUNG 624 id 768 r 3 hi -
+FS CLEAR 625 tile (14, 4) peck 116
+FS RUNG 625 id 768 r 3 hi -
+FS CLEAR 626 tile (14, 4) peck 117
+FS RUNG 626 id 768 r 3 hi -
+FS CLEAR 627 tile (14, 4) peck 118
+FS RUNG 627 id 768 r 3 hi -
+FS CLEAR 628 tile (14, 4) peck 119
+FS RUNG 628 id 768 r 3 hi -
+FS CLEAR 629 tile (14, 4) peck 120
+FS RUNG 629 id 768 r 3 hi -
+FS CLEAR 630 tile (14, 4) peck 121
+FS RUNG 630 id 768 r 3 hi -
+FS CLEAR 631 tile (14, 4) peck 122
+FS RUNG 631 id 768 r 3 hi -

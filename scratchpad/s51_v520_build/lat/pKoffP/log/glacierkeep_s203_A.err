@@ -1,0 +1,42 @@
+Update available: 2.3.6 -> 2.3.8. Run: pip install --upgrade fcode
+FS GATE 0 sig (30, 30, (14, 2), (14, 26)) ok 1
+FS GATE 1 sig (30, 30, (14, 2), (14, 26)) ok 1
+FS PHASE 1 id 3 ph 1 d 484 at (14, 4)
+FS HOPBUILD 1 at (14, 4) lch (14, 5) T (16, 28)
+FS GATE 2 sig (30, 30, (14, 2), (14, 26)) ok 1
+FS GATE 2 sig (30, 30, (14, 2), (14, 26)) ok 1
+FS THROW 2 from (15, 4) to (15, 10) T (16, 28) body 3 n 1 dsq 256
+FS HOPBUILD 3 at (15, 10) lch (15, 11) T (16, 28)
+FS GATE 3 sig (30, 30, (14, 2), (14, 26)) ok 1
+FS GATE 4 sig (30, 30, (14, 2), (14, 26)) ok 1
+FS THROW 4 from (16, 10) to (16, 16) T (16, 28) body 3 n 1 dsq 101
+FS HOPBUILD 5 at (16, 16) lch (16, 17) T (16, 28)
+FS GATE 6 sig (30, 30, (14, 2), (14, 26)) ok 1
+FS THROW 6 from (16, 16) to (15, 22) T (16, 28) body 3 n 1 dsq 16
+FS HOPBUILD 7 at (15, 22) lch (15, 23) T (16, 28)
+FS GATE 8 sig (30, 30, (14, 2), (14, 26)) ok 1
+FS THROW 8 from (16, 22) to (16, 28) T (16, 28) body 3 n 1 dsq 2
+FS ARRIVE 9 id 3 body 1 at (16, 28) dsq 2
+FS PHASE 9 id 3 ph 2 d 2 at (16, 28)
+FS SEAL 9 tile (16, 27) n 1
+FS SEAL 10 tile (15, 28) n 2
+FS GATE 11 sig (30, 30, (14, 2), (14, 26)) ok 1
+FS GATE 12 sig (30, 30, (14, 2), (14, 26)) ok 1
+FS GATE 13 sig (30, 30, (14, 2), (14, 26)) ok 1
+FS SEAL 14 tile (16, 26) n 3
+FS SEAL 17 tile (15, 25) n 4
+FS STAT 20 id 3 at (15, 24) need 5 orth 4 ti 64 ammo 0 sen 0 hp 40 covden 0 eco 0 lost 0
+FS SEAL 21 tile (14, 25) n 5
+FS DODGE 22 id 3 from (14, 24) to (15, 24) cov 1 -> 0 hit 0 hp 40
+FS SEAL 31 tile (13, 25) n 6
+FS DODGE 33 id 3 from (14, 24) to (15, 24) cov 1 -> 0 hit 0 hp 33
+FS STAT 40 id 3 at (14, 23) need 5 orth 4 ti 15 ammo 24 sen 0 hp 33 covden 0 eco 0 lost 0
+FS DODGE 41 id 3 from (14, 24) to (15, 24) cov 1 -> 0 hit 0 hp 26
+FS DODGE 43 id 3 from (14, 24) to (15, 24) cov 1 -> 0 hit 0 hp 26
+FS PHASE 52 id 3 ph 3 d 5 at (13, 24)
+FS SEAL 52 tile (13, 25) n 7
+FS DODGE 54 id 3 from (14, 24) to (15, 24) cov 1 -> 0 hit 0 hp 26
+FS SEAL 56 tile (16, 25) n 8
+FS PHASE 58 id 3 ph 2 d 8 at (17, 24)
+FS PHASE 59 id 3 ph 3 d 5 at (17, 25)
+PRESKILL520 60 id 3 body 1

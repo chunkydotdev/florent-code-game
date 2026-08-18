@@ -1,0 +1,128 @@
+v520 FAILURE REEL -- arm bots/_v520pincer vs bots/_v488beltbreak2, headline grid scratchpad/s51_v520_build/grid/b1..b27
+SELECTION (a CHOICE, not a discovery): the EARLIEST our-core-death in EACH of the six maps for the v520 arm -- one board per map, so the reel is not six copies of one board.
+  our-core-death = grid row with ours == 'OPP' and cond starting 'Core destroyed'; earliest = lowest `turn`; ties break lowest block, then lowest seed, then seat A.
+  drawn from 315 our-core-deaths in 972 v520 rows across 27 blocks; NO tie occurred on any of the six maps.
+CLASS THRESHOLDS (v519's, unchanged): FUNDED_MIN=0.25 HEAL_MAX=0.80 KILL_SHOTS=28 -> NO_TURRET / MAG_STARVED / HEAL_OUTRUN / TURRET_LOST
+
+==============================================================================
+nordkap_s72_B  (nordkap seat B, grid b24)  OUR CORE DEAD r101   CLASS NO_TURRET
+  ring rounds (a builder of ours inside d^2<=8 of their core): 93 of 101
+  OUR turrets: 5 total | core-hitting 0 | shots on their core 0 (0 dmg) | funded share 0.00
+  their core: dealt 0 healed 0  HEAL-BACK 0.000 | their core HP end 500
+  our beltbreak shredders (gunner, d^2<=100 of their core): 1 first r9 | our fwd sentinels 0 first rNone
+  their economy: 10 harvesters + 38 belts built, 0 of it destroyed
+  THEIR core-hitting turrets: 2, first opened r61, 36 shots on us
+  our forward launchers 2, collar barriers 6
+  [v520] TWO-BODY PRESENCE (our builders, d^2<=50 of their core): >=1 in 95 rounds, >=2 in 94 (share 0.9895), MAX simultaneous 4
+  [v520] HEAL SEATS DENIED: 6 of 8 legal seats, first r8 last r39 (5 by building, 1 by body) | closure r-1 cumulative r-1 | seal rate 6.316 per 100 at-ring rounds
+  [v520] SEAL vs HEAL: max seats denied simultaneously 5; rounds with ALL 8 denied 0 (rNone..rNone); enemy-core heal rounds 0 (rNone..rNone), of which 0 fell in a fully-sealed round
+  [v520] TERMINAL LAUNCHER within d^2<=2 of a heal seat: NO (0 of 1 of our launchers in the throw envelope; union alive 0 rounds; best coverage reachable from the evictor envelope 2 seats)
+        launcher id14   10,10   born r7    dsq_core 9    cover 0 (ferry-form 0) life 4    throws 1 (0 from a seat)
+     launcher  (9, 16)  built r5    died 7     life 2    d2opp 90    shots 0   core 0  
+     launcher  (10, 10) built r7    died 11    life 4    d2opp 12    shots 0   core 0  
+     gunner    (8, 11)  built r9    died 13    life 4    d2opp 22    shots 4   core 0  
+     sentinel  (8, 20)  built r14   died None  life 87   d2opp 184   shots 0   core 0  
+     gunner    (13, 19) built r21   died None  life 80   d2opp 168   shots 79  core 0  
+==============================================================================
+yulerune_s14_A  (yulerune seat A, grid b5)  OUR CORE DEAD r124   CLASS NO_TURRET
+  ring rounds (a builder of ours inside d^2<=8 of their core): 95 of 124
+  OUR turrets: 2 total | core-hitting 0 | shots on their core 0 (0 dmg) | funded share 0.00
+  their core: dealt 0 healed 0  HEAL-BACK 0.000 | their core HP end 500
+  our beltbreak shredders (gunner, d^2<=100 of their core): 1 first r19 | our fwd sentinels 0 first rNone
+  their economy: 8 harvesters + 28 belts built, 12 of it destroyed
+  THEIR core-hitting turrets: 1, first opened r69, 28 shots on us
+  our forward launchers 0, collar barriers 6
+  [v520] TWO-BODY PRESENCE (our builders, d^2<=50 of their core): >=1 in 99 rounds, >=2 in 29 (share 0.2929), MAX simultaneous 3
+  [v520] HEAL SEATS DENIED: 4 of 8 legal seats, first r31 last r43 (4 by building, 0 by body) | closure r-1 cumulative r-1 | seal rate 4.04 per 100 at-ring rounds
+  [v520] SEAL vs HEAL: max seats denied simultaneously 4; rounds with ALL 8 denied 0 (rNone..rNone); enemy-core heal rounds 0 (rNone..rNone), of which 0 fell in a fully-sealed round
+  [v520] TERMINAL LAUNCHER within d^2<=2 of a heal seat: NO (0 of 0 of our launchers in the throw envelope; union alive 0 rounds; best coverage reachable from the evictor envelope n/a - no launcher of ours in the envelope seats)
+     gunner    (14, 2)  built r19   died None  life 105  d2opp 62    shots 50  core 0  
+     sentinel  (1, 7)   built r92   died None  life 32   d2opp 246   shots 5   core 0  
+==============================================================================
+midgard_s54_B  (midgard seat B, grid b18)  OUR CORE DEAD r145   CLASS HEAL_OUTRUN
+  ring rounds (a builder of ours inside d^2<=8 of their core): 91 of 145
+  OUR turrets: 3 total | core-hitting 1 | shots on their core 24 (432 dmg) | funded share 0.33
+  their core: dealt 432 healed 432  HEAL-BACK 1.000 | their core HP end 500
+  our beltbreak shredders (gunner, d^2<=100 of their core): 1 first r35 | our fwd sentinels 1 first r45
+  their economy: 8 harvesters + 36 belts built, 6 of it destroyed
+  THEIR core-hitting turrets: 2, first opened r102, 28 shots on us
+  our forward launchers 0, collar barriers 6
+  [v520] TWO-BODY PRESENCE (our builders, d^2<=50 of their core): >=1 in 101 rounds, >=2 in 94 (share 0.9307), MAX simultaneous 3
+  [v520] HEAL SEATS DENIED: 6 of 8 legal seats, first r55 last r121 (6 by building, 0 by body) | closure r-1 cumulative r-1 | seal rate 5.941 per 100 at-ring rounds
+  [v520] SEAL vs HEAL: max seats denied simultaneously 6; rounds with ALL 8 denied 0 (rNone..rNone); enemy-core heal rounds 47 (r56..r102), of which 0 fell in a fully-sealed round
+  [v520] TERMINAL LAUNCHER within d^2<=2 of a heal seat: NO (0 of 0 of our launchers in the throw envelope; union alive 0 rounds; best coverage reachable from the evictor envelope n/a - no launcher of ours in the envelope seats)
+     gunner    (9, 11)  built r31   died None  life 114  d2opp 114   shots 6   core 0  
+     gunner    (10, 9)  built r35   died None  life 110  d2opp 98    shots 1   core 0  
+     sentinel  (7, 6)   built r45   died None  life 100  d2opp 32    shots 24  core 24 
+==============================================================================
+atoll_s77_A  (atoll seat A, grid b26)  OUR CORE DEAD r149   CLASS NO_TURRET
+  ring rounds (a builder of ours inside d^2<=8 of their core): 9 of 149
+  OUR turrets: 9 total | core-hitting 0 | shots on their core 0 (0 dmg) | funded share 0.00
+  their core: dealt 0 healed 0  HEAL-BACK 0.000 | their core HP end 500
+  our beltbreak shredders (gunner, d^2<=100 of their core): 0 first rNone | our fwd sentinels 0 first rNone
+  their economy: 3 harvesters + 12 belts built, 0 of it destroyed
+  THEIR core-hitting turrets: 1, first opened r94, 28 shots on us
+  our forward launchers 5, collar barriers 3
+  [v520] TWO-BODY PRESENCE (our builders, d^2<=50 of their core): >=1 in 42 rounds, >=2 in 16 (share 0.381), MAX simultaneous 2
+  [v520] HEAL SEATS DENIED: 3 of 8 legal seats, first r12 last r13 (3 by building, 0 by body) | closure r-1 cumulative r-1 | seal rate 7.143 per 100 at-ring rounds
+  [v520] SEAL vs HEAL: max seats denied simultaneously 3; rounds with ALL 8 denied 0 (rNone..rNone); enemy-core heal rounds 0 (rNone..rNone), of which 0 fell in a fully-sealed round
+  [v520] TERMINAL LAUNCHER within d^2<=2 of a heal seat: YES (4 of 4 of our launchers in the throw envelope; union alive 130 rounds; best coverage reachable from the evictor envelope 2 seats)
+        launcher id29   13,5    born r9    dsq_core 5    cover 1 (ferry-form 1) life 4    throws 1 (1 from a seat)
+        launcher id43   13,5    born r14   dsq_core 5    cover 1 (ferry-form 1) life 5    throws 1 (0 from a seat)
+        launcher id50   13,4    born r20   dsq_core 2    cover 2 (ferry-form 2) life 2    throws 0 (0 from a seat)
+        launcher id64   13,0    born r30   dsq_core 2    cover 1 (ferry-form 1) life 119  throws 0 (0 from a seat)
+     launcher  (4, 12)  built r5    died 7     life 2    d2opp 200   shots 0   core 0  
+     launcher  (8, 8)   built r7    died 9     life 2    d2opp 72    shots 0   core 0  
+     launcher  (13, 5)  built r9    died 13    life 4    d2opp 8     shots 0   core 0  
+     launcher  (13, 5)  built r14   died 19    life 5    d2opp 8     shots 0   core 0  
+     launcher  (13, 4)  built r20   died 22    life 2    d2opp 4     shots 0   core 0  
+     sentinel  (3, 13)  built r22   died None  life 127  d2opp 242   shots 1   core 0  
+     launcher  (13, 0)  built r30   died None  life 119  d2opp 8     shots 0   core 0  
+     sentinel  (2, 10)  built r44   died None  life 105  d2opp 212   shots 0   core 0  
+==============================================================================
+drakkarfjord_s17_A  (drakkarfjord seat A, grid b6)  OUR CORE DEAD r217   CLASS HEAL_OUTRUN
+  ring rounds (a builder of ours inside d^2<=8 of their core): 38 of 217
+  OUR turrets: 9 total | core-hitting 1 | shots on their core 27 (486 dmg) | funded share 0.28
+  their core: dealt 486 healed 468  HEAL-BACK 0.963 | their core HP end 482
+  our beltbreak shredders (gunner, d^2<=100 of their core): 0 first rNone | our fwd sentinels 1 first r63
+  their economy: 6 harvesters + 59 belts built, 0 of it destroyed
+  THEIR core-hitting turrets: 1, first opened r162, 28 shots on us
+  our forward launchers 2, collar barriers 10
+  [v520] TWO-BODY PRESENCE (our builders, d^2<=50 of their core): >=1 in 52 rounds, >=2 in 32 (share 0.6154), MAX simultaneous 2
+  [v520] HEAL SEATS DENIED: 8 of 8 legal seats, first r14 last r33 (6 by building, 2 by body) | closure r-1 cumulative r33 | seal rate 15.385 per 100 at-ring rounds
+  [v520] SEAL vs HEAL: max seats denied simultaneously 7; rounds with ALL 8 denied 0 (rNone..rNone); enemy-core heal rounds 72 (r81..r159), of which 0 fell in a fully-sealed round
+  [v520] TERMINAL LAUNCHER within d^2<=2 of a heal seat: YES (1 of 2 of our launchers in the throw envelope; union alive 176 rounds; best coverage reachable from the evictor envelope 2 seats)
+        launcher id22   22,8    born r13   dsq_core 18   cover 0 (ferry-form 0) life 2    throws 2 (0 from a seat)
+        launcher id87   29,5    born r41   dsq_core 4    cover 2 (ferry-form 2) life 176  throws 1 (0 from a seat)
+     launcher  (5, 23)  built r5    died 7     life 2    d2opp 804   shots 0   core 0  
+     launcher  (10, 20) built r7    died 9     life 2    d2opp 512   shots 0   core 0  
+     launcher  (14, 16) built r9    died 11    life 2    d2opp 288   shots 0   core 0  
+     launcher  (18, 12) built r11   died 13    life 2    d2opp 128   shots 0   core 0  
+     launcher  (22, 8)  built r13   died 15    life 2    d2opp 32    shots 0   core 0  
+     launcher  (29, 5)  built r41   died None  life 176  d2opp 6     shots 0   core 0  
+     gunner    (5, 24)  built r44   died None  life 173  d2opp 842   shots 89  core 0  
+     sentinel  (27, 2)  built r63   died None  life 154  d2opp 6     shots 27  core 27 
+==============================================================================
+glacierkeep_s37_A  (glacierkeep seat A, grid b13)  OUR CORE DEAD r431   CLASS MAG_STARVED
+  ring rounds (a builder of ours inside d^2<=8 of their core): 122 of 431
+  OUR turrets: 8 total | core-hitting 1 | shots on their core 12 (216 dmg) | funded share 0.22
+  their core: dealt 216 healed 216  HEAL-BACK 1.000 | their core HP end 500
+  our beltbreak shredders (gunner, d^2<=100 of their core): 0 first rNone | our fwd sentinels 1 first r76
+  their economy: 14 harvesters + 116 belts built, 0 of it destroyed
+  THEIR core-hitting turrets: 2, first opened r380, 37 shots on us
+  our forward launchers 2, collar barriers 10
+  [v520] TWO-BODY PRESENCE (our builders, d^2<=50 of their core): >=1 in 133 rounds, >=2 in 105 (share 0.7895), MAX simultaneous 2
+  [v520] HEAL SEATS DENIED: 8 of 8 legal seats, first r12 last r28 (6 by building, 2 by body) | closure r28 cumulative r28 | seal rate 6.015 per 100 at-ring rounds
+  [v520] SEAL vs HEAL: max seats denied simultaneously 8; rounds with ALL 8 denied 43 (r28..r71); enemy-core heal rounds 37 (r128..r164), of which 0 fell in a fully-sealed round
+  [v520] TERMINAL LAUNCHER within d^2<=2 of a heal seat: NO (0 of 1 of our launchers in the throw envelope; union alive 0 rounds; best coverage reachable from the evictor envelope 2 seats)
+        launcher id15   16,23   born r11   dsq_core 5    cover 0 (ferry-form 0) life 2    throws 2 (0 from a seat)
+     launcher  (14, 5)  built r5    died 7     life 2    d2opp 462   shots 0   core 0  
+     launcher  (15, 11) built r7    died 9     life 2    d2opp 240   shots 0   core 0  
+     launcher  (16, 17) built r9    died 11    life 2    d2opp 92    shots 0   core 0  
+     launcher  (16, 23) built r11   died 13    life 2    d2opp 14    shots 0   core 0  
+     gunner    (19, 1)  built r52   died None  life 379  d2opp 670   shots 6   core 0  
+     sentinel  (17, 24) built r76   died 113   life 37   d2opp 12    shots 12  core 12 
+     sentinel  (23, 8)  built r196  died None  life 235  d2opp 414   shots 2   core 0  
+     gunner    (17, 3)  built r260  died None  life 171  d2opp 558   shots 91  core 0  
+==============================================================================
+CLASS DISTRIBUTION over the 6 reel games: HEAL_OUTRUN 2, MAG_STARVED 1, NO_TURRET 3

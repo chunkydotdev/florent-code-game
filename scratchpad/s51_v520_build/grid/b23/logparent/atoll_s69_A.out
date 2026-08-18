@@ -1,0 +1,19 @@
+Running match: parent vs _v488beltbreak2
+  Map: atoll.map26  Seed: 69  Replay: 
+scratchpad/s51_v520_build/grid/b23/repparent/atoll_s69_A.replay26  TLE: 10ms
+Completed turn 0
+Completed turn 100
+Completed turn 200
+Completed turn 300
+Completed turn 400
+Completed turn 500
+Replay written to 
+scratchpad/s51_v520_build/grid/b23/repparent/atoll_s69_A.replay26
+
+  Winner: parent  (Core destroyed, turn 531)
+
+                         parent     _v488beltbreak2  
+  Titanium     191 (4740 mined)    604 (2100 mined)  
+  Units                      13                  16  
+  Buildings                  21                  19  
+

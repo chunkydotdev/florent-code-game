@@ -1,0 +1,114 @@
+Update available: 2.3.6 -> 2.3.8. Run: pip install --upgrade fcode
+FS GATE 0 sig (30, 30, (2, 24), (26, 4)) ok 1
+FS GATE 1 sig (30, 30, (2, 24), (26, 4)) ok 1
+FS PHASE 1 id 3 ph 1 d 808 at (4, 23)
+FS GATE 2 sig (30, 30, (2, 24), (26, 4)) ok 1
+FS GATE 3 sig (30, 30, (2, 24), (26, 4)) ok 1
+FS GATE 4 sig (30, 30, (2, 24), (26, 4)) ok 1
+FS PHASE 4 id 9 ph 1 d 845 at (4, 24)
+FS HOPBUILD 5 at (4, 23) lch (5, 23) T (28, 3)
+FS GATE 6 sig (30, 30, (2, 24), (26, 4)) ok 1
+FS THROW 6 from (4, 22) to (9, 20) T (28, 3) body 3 n 1 dsq 514
+FS HOPBUILD 7 at (9, 20) lch (10, 20) T (28, 3)
+FS THROW 7 from (6, 22) to (8, 19) T (28, 3) body 9 n 2 dsq 520
+FS GATE 8 sig (30, 30, (2, 24), (26, 4)) ok 1
+FS THROW 8 from (9, 19) to (14, 17) T (28, 3) body 3 n 1 dsq 288
+FS HOPBUILD 9 at (14, 17) lch (14, 16) T (28, 3)
+FS THROW 9 from (9, 20) to (13, 16) T (28, 3) body 9 n 2 dsq 290
+FS GATE 10 sig (30, 30, (2, 24), (26, 4)) ok 1
+FS THROW 10 from (15, 17) to (18, 13) T (28, 3) body 3 n 1 dsq 128
+FS HOPBUILD 11 at (18, 13) lch (18, 12) T (28, 3)
+FS THROW 11 from (14, 15) to (17, 13) T (28, 3) body 9 n 2 dsq 145
+FS GATE 12 sig (30, 30, (2, 24), (26, 4)) ok 1
+FS THROW 12 from (19, 13) to (22, 9) T (28, 3) body 3 n 1 dsq 32
+FS HOPBUILD 13 at (22, 9) lch (22, 8) T (28, 3)
+FS THROW 13 from (19, 13) to (21, 8) T (28, 3) body 9 n 2 dsq 34
+FS GATE 14 sig (30, 30, (2, 24), (26, 4)) ok 1
+FS SPLIT 14 arc 2 to (25, 4) body 3 walk 2
+FS ARRIVE 15 id 3 body 1 at (25, 4) dsq 1
+FS PHASE 15 id 3 ph 2 d 1 at (25, 4)
+FS SEAL 15 tile (25, 5) n 1
+FS SPLIT 15 arc 1 to (24, 4) body 9 walk 1
+FS SEAL 16 tile (25, 3) n 2
+FS ARRIVE 16 id 9 body 2 at (24, 4) dsq 4
+FS PHASE 16 id 9 ph 2 d 4 at (24, 4)
+FS DODGE 17 id 3 from (25, 4) to (24, 4) cov 1 -> 0 hit 0 hp 40
+FS SEAL 18 tile (25, 4) n 3
+FS DODGE 19 id 9 from (25, 2) to (26, 2) cov 1 -> 0 hit 0 hp 40
+FS STAT 20 id 3 at (24, 5) need 7 orth 6 ti 47 ammo 16 sen 0 hp 40 covden 0 eco 0 lost 0
+FS STAT 20 id 9 at (26, 2) need 7 orth 6 ti 47 ammo 16 sen 0 hp 40 covden 0 eco 0 lost 0
+FS SEAL 20 tile (26, 3) n 1
+FS SEAL 22 tile (26, 6) n 4
+FS SEAL 22 tile (27, 3) n 2
+FS SEAL 25 tile (28, 4) n 3
+FS SEAL 26 tile (27, 6) n 5
+FS SEAL 29 tile (28, 5) n 6
+FS PHASE 29 id 9 ph 3 d 4 at (29, 5)
+FS PHASE 30 id 3 ph 3 d 2 at (28, 6)
+FS SEAL 30 tile (28, 6) n 4
+FS PHASE 32 id 9 ph 2 d 8 at (29, 7)
+FS PHASE 33 id 3 ph 2 d 9 at (27, 8)
+FS PHASE 33 id 9 ph 3 d 5 at (28, 7)
+FS PHASE 35 id 9 ph 2 d 9 at (27, 8)
+FS PHASE 36 id 3 ph 3 d 5 at (25, 7)
+FS SENTINEL 36 at (24, 7) face NORTHEAST tgt (27, 4) score 18 n 1 onring 0 lost 0 gate (1, 1, 24) onsray 0 olddsq -1
+FS PHASE 36 id 9 ph 4 d 10 at (28, 8)
+FS PHASE 37 id 3 ph 4 d 5 at (25, 7)
+FS SEAL 37 tile (25, 6) n 7
+FS PHASE 37 id 9 ph 2 d 13 at (29, 8)
+FS PHASE 38 id 9 ph 4 d 10 at (28, 8)
+FS STAT 40 id 3 at (24, 8) need 5 orth 4 ti 12 ammo 49 sen 1 hp 40 covden 0 eco 1 lost 0
+FS STAT 40 id 9 at (28, 8) need 4 orth 3 ti 12 ammo 49 sen 1 hp 40 covden 0 eco 1 lost 0
+FS SEAL 47 tile (25, 3) n 8
+FS DODGE 50 id 3 from (25, 2) to (26, 2) cov 1 -> 0 hit 0 hp 40
+PRESKILL520 60 id 3 body 1
+FS STAT 60 id 9 at (28, 8) need 4 orth 3 ti 12 ammo 93 sen 1 hp 40 covden 0 eco 1 lost 0
+PRES520 66 ti 12 res 111 floor 111 bind 1 rounds 1 vacant 1 until 86
+FS PROMOTE 66 id 9
+PRES520 67 ti 22 res 111 floor 111 bind 2 rounds 2 vacant 2 until 87
+PRES520 68 ti 32 res 111 floor 111 bind 3 rounds 3 vacant 2 until 87
+PRES520 69 ti 42 res 111 floor 111 bind 4 rounds 4 vacant 2 until 87
+PRES520 70 ti 42 res 111 floor 111 bind 5 rounds 5 vacant 2 until 87
+PRES520 71 ti 52 res 111 floor 111 bind 6 rounds 6 vacant 2 until 87
+PRES520 72 ti 62 res 111 floor 111 bind 7 rounds 7 vacant 2 until 87
+PRES520 73 ti 30 res 113 floor 113 bind 8 rounds 8 vacant 2 until 87
+PRES520 74 ti 24 res 114 floor 114 bind 9 rounds 9 vacant 2 until 87
+PRES520 75 ti 34 res 114 floor 114 bind 10 rounds 10 vacant 2 until 87
+PRES520 76 ti 38 res 114 floor 114 bind 11 rounds 11 vacant 2 until 87
+PRES520 77 ti 42 res 114 floor 114 bind 12 rounds 12 vacant 2 until 87
+PRES520 78 ti 42 res 114 floor 114 bind 13 rounds 13 vacant 2 until 87
+PRES520 79 ti 46 res 114 floor 114 bind 14 rounds 14 vacant 2 until 87
+PRES520 80 ti 13 res 117 floor 117 bind 15 rounds 15 vacant 2 until 87
+FS STAT 80 id 9 at (28, 8) need 4 orth 3 ti 1 ammo 33 sen 1 hp 40 covden 0 eco 1 lost 0
+PRES520 81 ti 11 res 118 floor 118 bind 16 rounds 16 vacant 2 until 87
+PRES520 82 ti 11 res 118 floor 118 bind 17 rounds 17 vacant 2 until 87
+PRES520 83 ti 15 res 119 floor 119 bind 18 rounds 18 vacant 2 until 87
+PRES520 84 ti 19 res 119 floor 119 bind 19 rounds 19 vacant 2 until 87
+PRES520 85 ti 17 res 121 floor 121 bind 20 rounds 20 vacant 2 until 87
+PRES520 86 ti 17 res 121 floor 121 bind 21 rounds 21 vacant 2 until 87
+FS STAT 100 id 9 at (28, 8) need 4 orth 3 ti 3 ammo 0 sen 1 hp 40 covden 0 eco 1 lost 0
+FS STAT 120 id 9 at (28, 8) need 4 orth 3 ti 46 ammo 2 sen 1 hp 40 covden 0 eco 1 lost 0
+FS GATE 125 sig (30, 30, (2, 24), (26, 4)) ok 1
+FS STAT 140 id 9 at (28, 8) need 4 orth 3 ti 30 ammo 2 sen 1 hp 40 covden 0 eco 1 lost 0
+FS STAT 160 id 9 at (29, 7) need 4 orth 3 ti 41 ammo 2 sen 1 hp 40 covden 0 eco 1 lost 0
+FS DODGE 169 id 9 from (25, 2) to (26, 2) cov 1 -> 0 hit 0 hp 22
+FS DODGE 171 id 9 from (25, 2) to (26, 2) cov 1 -> 0 hit 0 hp 22
+FS DODGE 173 id 9 from (25, 2) to (26, 2) cov 1 -> 0 hit 0 hp 22
+FS DODGE 175 id 9 from (25, 2) to (26, 2) cov 1 -> 0 hit 0 hp 22
+FS DODGE 177 id 9 from (25, 2) to (26, 2) cov 1 -> 0 hit 0 hp 22
+FS DODGE 179 id 9 from (25, 2) to (26, 2) cov 1 -> 0 hit 0 hp 22
+FS STAT 180 id 9 at (26, 2) need 3 orth 2 ti 18 ammo 10 sen 1 hp 22 covden 0 eco 1 lost 0
+FS DODGE 181 id 9 from (25, 2) to (26, 2) cov 1 -> 0 hit 0 hp 22
+FS DODGE 183 id 9 from (25, 2) to (26, 2) cov 1 -> 0 hit 0 hp 22
+FS DODGE 185 id 9 from (25, 2) to (26, 2) cov 1 -> 0 hit 0 hp 22
+FS DODGE 187 id 9 from (25, 2) to (26, 2) cov 1 -> 0 hit 0 hp 22
+FS DODGE 189 id 9 from (25, 2) to (26, 2) cov 1 -> 0 hit 0 hp 22
+FS DODGE 191 id 9 from (25, 2) to (26, 2) cov 1 -> 0 hit 0 hp 22
+FS DODGE 193 id 9 from (25, 2) to (26, 2) cov 1 -> 0 hit 0 hp 4
+FS DODGE 195 id 9 from (25, 2) to (26, 2) cov 1 -> 0 hit 0 hp 4
+FS DODGE 197 id 9 from (25, 2) to (26, 2) cov 1 -> 0 hit 0 hp 4
+FS DODGE 199 id 9 from (25, 2) to (26, 2) cov 1 -> 0 hit 0 hp 4
+FS STAT 200 id 9 at (26, 2) need 3 orth 2 ti 68 ammo 0 sen 1 hp 4 covden 0 eco 1 lost 0
+FS DODGE 201 id 9 from (25, 2) to (26, 2) cov 1 -> 0 hit 0 hp 4
+FS DODGE 203 id 9 from (25, 2) to (26, 2) cov 1 -> 0 hit 0 hp 4
+PRES520 211 ti 20 res 156 floor 156 bind 22 rounds 22 vacant 3 until 231

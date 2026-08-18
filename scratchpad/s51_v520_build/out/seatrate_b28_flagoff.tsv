@@ -1,0 +1,37 @@
+tag	map	seed	seat	ours	cond	turn	arm	n_seats	seats_sealed	first_seal	last_seal	closure_round	closure_cum_round	atring_rounds	atring2_rounds	two_body_share	seal_rate	sealed_by_bldg	sealed_by_body	seat_first_rounds	rounds	our_team	enemy_core
+atoll_s82_A	atoll	82	A	OPP	Core destroyed	197	flagoff	8	1	21	21	-1	-1	158	49	0.3101	0.633	1	0	21	197	0	14,2
+atoll_s82_B	atoll	82	B	US	Core destroyed	208	flagoff	8	6	7	40	-1	-1	204	85	0.4167	2.941	5	1	36,40,33,7,8,21	208	1	2,14
+atoll_s83_A	atoll	83	A	OPP	Core destroyed	450	flagoff	8	2	7	10	-1	-1	88	9	0.1023	2.273	1	1	10,7	450	0	14,2
+atoll_s83_B	atoll	83	B	OPP	Core destroyed	192	flagoff	8	7	7	46	-1	-1	82	29	0.3537	8.537	7	0	26,46,20,30,7,8,41	192	1	2,14
+atoll_s84_A	atoll	84	A	US	Titanium collected (tiebreak)	1000	flagoff	8	4	8	174	-1	-1	165	26	0.1576	2.424	2	2	12,8,104,174	1000	0	14,2
+atoll_s84_B	atoll	84	B	OPP	Core destroyed	219	flagoff	8	5	8	35	-1	-1	122	53	0.4344	4.098	5	0	20,35,15,31,8	219	1	2,14
+drakkarfjord_s82_A	drakkarfjord	82	A	OPP	Core destroyed	695	flagoff	8	6	10	42	-1	-1	203	30	0.1478	2.956	5	1	10,11,29,31,34,42	695	0	26,4
+drakkarfjord_s82_B	drakkarfjord	82	B	US	Core destroyed	148	flagoff	8	8	10	35	-1	35	140	78	0.5571	5.714	6	2	35,31,10,25,11,24,17,21	148	1	2,24
+drakkarfjord_s83_A	drakkarfjord	83	A	OPP	Core destroyed	546	flagoff	8	7	10	99	-1	-1	147	50	0.3401	4.762	5	2	10,11,29,31,99,34,42	546	0	26,4
+drakkarfjord_s83_B	drakkarfjord	83	B	US	Core destroyed	123	flagoff	8	8	10	48	48	48	115	0	0.0	6.957	7	1	40,36,48,33,21,14,11,10	123	1	2,24
+drakkarfjord_s84_A	drakkarfjord	84	A	US	Core destroyed	208	flagoff	8	8	10	61	80	61	200	0	0.0	4.0	7	1	10,11,25,61,27,37,30,34	208	0	26,4
+drakkarfjord_s84_B	drakkarfjord	84	B	US	Core destroyed	123	flagoff	8	8	10	48	48	48	115	0	0.0	6.957	7	1	40,36,48,33,21,14,11,10	123	1	2,24
+glacierkeep_s82_A	glacierkeep	82	A	US	Core destroyed	185	flagoff	8	8	9	44	44	44	179	155	0.8659	4.469	8	0	39,41,29,44,17,10,14,9	185	0	14,26
+glacierkeep_s82_B	glacierkeep	82	B	US	Core destroyed	301	flagoff	8	8	9	36	44	36	295	63	0.2136	2.712	8	0	36,32,14,29,9,25,10,22	301	1	14,2
+glacierkeep_s83_A	glacierkeep	83	A	US	Core destroyed	205	flagoff	8	8	9	62	62	62	199	173	0.8693	4.02	8	0	62,55,21,52,17,10,14,9	205	0	14,26
+glacierkeep_s83_B	glacierkeep	83	B	OPP	Titanium collected (tiebreak)	1000	flagoff	8	8	9	36	44	36	249	88	0.3534	3.213	8	0	36,32,14,29,9,25,10,22	1000	1	14,2
+glacierkeep_s84_A	glacierkeep	84	A	US	Core destroyed	217	flagoff	8	8	9	62	62	62	211	79	0.3744	3.791	7	1	62,57,21,54,17,10,14,9	217	0	14,26
+glacierkeep_s84_B	glacierkeep	84	B	US	Titanium collected (tiebreak)	1000	flagoff	8	8	8	29	39	29	994	121	0.1217	0.805	6	2	29,25,9,22,8,18,11,12	1000	1	14,2
+midgard_s82_A	midgard	82	A	US	Core destroyed	465	flagoff	8	7	60	148	-1	-1	414	406	0.9807	1.691	5	2	95,148,60,128,64,71,67	465	0	26,26
+midgard_s82_B	midgard	82	B	OPP	Core destroyed	204	flagoff	8	5	55	83	-1	-1	159	154	0.9686	3.145	4	1	60,56,63,55,83	204	1	2,2
+midgard_s83_A	midgard	83	A	US	Core destroyed	605	flagoff	8	6	51	73	-1	-1	561	558	0.9947	1.07	6	0	51,55,73,61,57,61	605	0	26,26
+midgard_s83_B	midgard	83	B	US	Core destroyed	174	flagoff	8	8	57	137	137	137	127	126	0.9921	6.299	4	4	65,57,64,137,59,132,88,82	174	1	2,2
+midgard_s84_A	midgard	84	A	OPP	Core destroyed	167	flagoff	8	7	52	132	-1	-1	122	119	0.9754	5.738	5	2	52,94,63,132,65,75,68	167	0	26,26
+midgard_s84_B	midgard	84	B	US	Core destroyed	164	flagoff	8	6	55	92	-1	-1	116	114	0.9828	5.172	5	1	68,62,65,92,59,55	164	1	2,2
+nordkap_s82_A	nordkap	82	A	US	Core destroyed	482	flagoff	8	8	4	42	42	42	398	197	0.495	2.01	6	2	23,25,42,5,14,4,8,7	482	0	9,18
+nordkap_s82_B	nordkap	82	B	US	Core destroyed	125	flagoff	8	8	5	30	39	30	123	110	0.8943	6.504	8	0	16,18,10,21,5,25,6,30	125	1	9,6
+nordkap_s83_A	nordkap	83	A	US	Core destroyed	369	flagoff	8	7	4	216	-1	-1	203	113	0.5567	3.448	5	2	216,212,23,5,4,8,7	369	0	9,18
+nordkap_s83_B	nordkap	83	B	US	Titanium collected (tiebreak)	1000	flagoff	8	8	5	40	40	40	998	983	0.985	0.802	7	1	20,22,10,34,5,40,6,23	1000	1	9,6
+nordkap_s84_A	nordkap	84	A	OPP	Core destroyed	513	flagoff	8	8	5	60	-1	60	511	244	0.4775	1.566	8	0	27,29,16,34,60,6,10,5	513	0	9,18
+nordkap_s84_B	nordkap	84	B	US	Core destroyed	121	flagoff	8	8	5	110	110	110	119	101	0.8487	6.723	7	1	19,21,110,38,5,41,6,40	121	1	9,6
+yulerune_s82_A	yulerune	82	A	OPP	Core destroyed	193	flagoff	8	5	31	42	-1	-1	168	161	0.9583	2.976	5	0	38,42,31,34,42	193	0	16,9
+yulerune_s82_B	yulerune	82	B	OPP	Core destroyed	629	flagoff	8	6	33	72	-1	-1	602	595	0.9884	0.997	6	0	33,54,51,72,45,37	629	1	2,9
+yulerune_s83_A	yulerune	83	A	OPP	Core destroyed	156	flagoff	8	7	34	86	-1	-1	131	119	0.9084	5.344	6	1	34,86,44,46,48,52,51	156	0	16,9
+yulerune_s83_B	yulerune	83	B	OPP	Core destroyed	188	flagoff	8	7	35	92	-1	-1	163	158	0.9693	4.294	6	1	45,47,40,44,92,35,38	188	1	2,9
+yulerune_s84_A	yulerune	84	A	OPP	Core destroyed	377	flagoff	8	7	34	67	-1	-1	350	346	0.9886	2.0	6	1	34,67,44,48,45,53,48	377	0	16,9
+yulerune_s84_B	yulerune	84	B	OPP	Core destroyed	248	flagoff	8	6	40	80	-1	-1	101	45	0.4455	5.941	5	1	47,51,54,80,48,40	248	1	2,9

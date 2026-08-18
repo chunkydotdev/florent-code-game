@@ -1,0 +1,8 @@
+Update available: 2.3.6 -> 2.3.8. Run: pip install --upgrade fcode
+APPT520 CLAIM 4 id 9
+TERM520 13 id 3 at (22, 9) n 2 pick (22, 8) arcs 2 cov 0 covbest 0 conflict 0 dsq 25
+SPLIT520 14 lch (22, 8) body 3 arc 2 to (25, 4) dsq 1 walk 2 n 1
+ARC520 CLAIM 15 id 3 body 1 arc 1 at (25, 4)
+SPLIT520 15 lch (22, 8) body 9 arc 1 to (24, 4) dsq 4 walk 1 n 2
+ARC520 COLLIDE 16 id 9 body 2 peer 1 took 2 n 1
+ARC520 CLAIM 16 id 9 body 2 arc 2 at (24, 4)

@@ -1,0 +1,111 @@
+Update available: 2.3.6 -> 2.3.8. Run: pip install --upgrade fcode
+FS GATE 0 sig (18, 18, (2, 14), (14, 2)) ok 1
+FS GATE 1 sig (18, 18, (2, 14), (14, 2)) ok 1
+FS PHASE 1 id 4 ph 1 d 200 at (13, 4)
+FS HOPBUILD 1 at (13, 4) lch (13, 5) T (1, 16)
+FS GATE 2 sig (18, 18, (2, 14), (14, 2)) ok 1
+FS GATE 2 sig (18, 18, (2, 14), (14, 2)) ok 1
+FS THROW 2 from (12, 4) to (9, 8) T (1, 16) body 4 n 1 dsq 72
+FS HOPBUILD 3 at (9, 8) lch (9, 9) T (1, 16)
+FS GATE 3 sig (18, 18, (2, 14), (14, 2)) ok 1
+FS GATE 4 sig (18, 18, (2, 14), (14, 2)) ok 1
+FS THROW 4 from (8, 8) to (5, 12) T (1, 16) body 4 n 1 dsq 8
+FS ARRIVE 5 id 4 body 1 at (5, 12) dsq 8
+FS PHASE 5 id 4 ph 2 d 8 at (5, 12)
+FS EVICTOR 7 at (5, 15) ucov 0 cov 1 unseal 1 obs 6
+FS RUNG 7 id 4 r 2 hi -
+FS GATE 7 sig (18, 18, (2, 14), (14, 2)) ok 1
+FS SEAL 8 tile (4, 14) n 1
+FS GATE 8 sig (18, 18, (2, 14), (14, 2)) ok 1
+FS GATE 8 sig (18, 18, (2, 14), (14, 2)) ok 1
+FS EVICT 8 from (4, 15) to (10, 16)
+FS DODGE 10 id 4 from (5, 13) to (5, 14) cov 1 -> 0 hit 0 hp 22
+FS EVICT 11 from (4, 16) to (10, 16)
+FS EVICT 12 from (6, 16) to (5, 10)
+FS DODGE 14 id 4 from (6, 14) to (5, 14) cov 1 -> 0 hit 0 hp 22
+FS DODGE 16 id 4 from (5, 13) to (5, 14) cov 1 -> 0 hit 0 hp 4
+FS EVICT 16 from (6, 16) to (4, 10)
+PRES520 25 ti 70 res 104 floor 104 bind 1 rounds 1 vacant 1 until 45
+PRES520 26 ti 90 res 104 floor 104 bind 2 rounds 2 vacant 2 until 46
+PRES520 27 ti 51 res 107 floor 107 bind 3 rounds 3 vacant 3 until 47
+PRES520 28 ti 61 res 107 floor 107 bind 4 rounds 4 vacant 4 until 48
+PRES520 29 ti 61 res 107 floor 107 bind 5 rounds 5 vacant 5 until 49
+PRES520 30 ti 81 res 107 floor 107 bind 6 rounds 6 vacant 6 until 50
+PRES520 31 ti 81 res 104 floor 104 bind 7 rounds 7 vacant 7 until 51
+PRES520 32 ti 52 res 107 floor 107 bind 8 rounds 8 vacant 8 until 52
+PRES520 33 ti 52 res 107 floor 107 bind 9 rounds 9 vacant 9 until 53
+PRES520 34 ti 32 res 109 floor 109 bind 10 rounds 10 vacant 10 until 54
+PRES520 35 ti 26 res 109 floor 109 bind 11 rounds 11 vacant 11 until 55
+PRES520 36 ti 36 res 109 floor 109 bind 12 rounds 12 vacant 12 until 56
+PRES520 37 ti 36 res 109 floor 109 bind 13 rounds 13 vacant 13 until 57
+PRES520 38 ti 56 res 109 floor 109 bind 14 rounds 14 vacant 14 until 58
+FS GATE 137 sig (18, 18, (2, 14), (14, 2)) ok 1
+FS PHASE 137 id 240 ph 1 d 200 at (13, 4)
+FS HOPBUILD 137 at (13, 4) lch (12, 4) T (1, 16)
+FS GATE 138 sig (18, 18, (2, 14), (14, 2)) ok 1
+FS THROW 138 from (13, 4) to (8, 7) T (1, 16) body 240 n 1 dsq 74
+FS HOPBUILD 144 at (12, 8) lch (12, 9) T (1, 16)
+FS GATE 145 sig (18, 18, (2, 14), (14, 2)) ok 1
+FS THROW 145 from (11, 8) to (8, 12) T (1, 16) body 240 n 1 dsq 29
+FS ARRIVE 149 id 240 body 1 at (5, 12) dsq 8
+FS PHASE 149 id 240 ph 2 d 8 at (5, 12)
+FS GATE 263 sig (18, 18, (2, 14), (14, 2)) ok 1
+FS PHASE 263 id 382 ph 1 d 200 at (13, 4)
+FS HOPBUILD 274 at (5, 7) lch (5, 8) T (1, 16)
+FS GATE 275 sig (18, 18, (2, 14), (14, 2)) ok 1
+FS THROW 275 from (4, 7) to (2, 12) T (1, 16) body 382 n 1 dsq 4
+FS ARRIVE 276 id 382 body 1 at (2, 12) dsq 4
+FS PHASE 276 id 382 ph 2 d 4 at (2, 12)
+FS DODGE 277 id 382 from (2, 13) to (2, 12) cov 2 -> 0 hit 0 hp 4
+FS GATE 299 sig (18, 18, (2, 14), (14, 2)) ok 1
+FS PHASE 299 id 422 ph 1 d 338 at (16, 1)
+FS HOPBUILD 303 at (13, 0) lch (12, 0) T (1, 16)
+FS GATE 304 sig (18, 18, (2, 14), (14, 2)) ok 1
+FS THROW 304 from (13, 1) to (9, 4) T (1, 16) body 422 n 1 dsq 136
+FS ARRIVE 317 id 422 body 1 at (5, 12) dsq 8
+FS PHASE 317 id 422 ph 2 d 8 at (5, 12)
+FS GATE 351 sig (18, 18, (2, 14), (14, 2)) ok 1
+FS PHASE 351 id 480 ph 1 d 269 at (16, 4)
+FS HOPBUILD 354 at (13, 4) lch (12, 4) T (1, 16)
+FS GATE 355 sig (18, 18, (2, 14), (14, 2)) ok 1
+FS THROW 355 from (13, 4) to (8, 7) T (1, 16) body 480 n 1 dsq 74
+FS ARRIVE 374 id 480 body 1 at (5, 12) dsq 8
+FS PHASE 374 id 480 ph 2 d 8 at (5, 12)
+FS GATE 403 sig (18, 18, (2, 14), (14, 2)) ok 1
+FS PHASE 403 id 536 ph 1 d 244 at (15, 4)
+FS HOPBUILD 406 at (16, 6) lch (16, 7) T (1, 16)
+FS GATE 407 sig (18, 18, (2, 14), (14, 2)) ok 1
+FS THROW 407 from (15, 6) to (12, 10) T (1, 16) body 536 n 1 dsq 97
+FS HOPBUILD 416 at (6, 12) lch (5, 12) T (1, 16)
+FS GATE 417 sig (18, 18, (2, 14), (14, 2)) ok 1
+FS EVICT 420 from (4, 13) to (5, 7)
+FS EVICT 434 from (5, 13) to (4, 7)
+FS EVICT 447 from (5, 13) to (4, 7)
+FS GATE 447 sig (18, 18, (2, 14), (14, 2)) ok 1
+FS PHASE 447 id 587 ph 1 d 290 at (14, 1)
+FS HOPBUILD 449 at (13, 2) lch (12, 2) T (1, 16)
+FS GATE 450 sig (18, 18, (2, 14), (14, 2)) ok 1
+FS THROW 450 from (13, 2) to (8, 5) T (1, 16) body 587 n 1 dsq 106
+FS ARRIVE 464 id 587 body 1 at (4, 12) dsq 5
+FS PHASE 464 id 587 ph 2 d 5 at (4, 12)
+FS DODGE 465 id 587 from (4, 13) to (4, 12) cov 2 -> 0 hit 0 hp 4
+FS GATE 679 sig (18, 18, (2, 14), (14, 2)) ok 1
+FS PHASE 679 id 802 ph 1 d 269 at (13, 1)
+FS HOPBUILD 682 at (11, 0) lch (11, 1) T (1, 16)
+FS GATE 683 sig (18, 18, (2, 14), (14, 2)) ok 1
+FS THROW 683 from (10, 0) to (8, 5) T (1, 16) body 802 n 1 dsq 106
+FS ARRIVE 695 id 802 body 1 at (4, 12) dsq 5
+FS PHASE 695 id 802 ph 2 d 5 at (4, 12)
+FS DODGE 696 id 802 from (4, 13) to (4, 12) cov 2 -> 0 hit 0 hp 4
+FS GATE 711 sig (18, 18, (2, 14), (14, 2)) ok 1
+FS PHASE 711 id 830 ph 1 d 200 at (13, 4)
+FS HOPBUILD 714 at (11, 5) lch (10, 5) T (1, 16)
+FS GATE 715 sig (18, 18, (2, 14), (14, 2)) ok 1
+FS THROW 715 from (11, 5) to (7, 9) T (1, 16) body 830 n 1 dsq 41
+FS EVICT 731 from (5, 13) to (4, 7)
+FS EVICT 742 from (5, 13) to (4, 7)
+FS DEGRADE 748 id 830
+FS GATE 815 sig (18, 18, (2, 14), (14, 2)) ok 1
+FS GATE 833 sig (18, 18, (2, 14), (14, 2)) ok 1
+FS GATE 853 sig (18, 18, (2, 14), (14, 2)) ok 1
+FS EVICT 897 from (5, 13) to (4, 7)

@@ -1,0 +1,37 @@
+tag	map	seed	seat	ours	cond	turn	arm	arrive	sent	kill	last	window	ge1	ge2	nobody	two_body_share	bought_sentinel	ge1_fp	ge2_fp	nobody_fp
+atoll_s43_A	atoll	43	A	US	Core destroyed	245	v520	10	150	244	244	140	135	36	0.0357	0.2571	1	140	132	0.0
+atoll_s43_B	atoll	43	B	OPP	Core destroyed	211	v520	11	-1	-1	210	200	49	1	0.755	0.005	0	67	12	0.665
+atoll_s44_A	atoll	44	A	OPP	Core destroyed	309	v520	11	-1	-1	308	298	134	5	0.5503	0.0168	0	146	6	0.5101
+atoll_s44_B	atoll	44	B	US	Titanium collected (tiebreak)	1000	v520	10	68	-1	999	58	49	26	0.1552	0.4483	1	58	48	0.0
+atoll_s45_A	atoll	45	A	US	Core destroyed	299	v520	10	207	298	298	197	141	2	0.2843	0.0102	1	197	6	0.0
+atoll_s45_B	atoll	45	B	OPP	Core destroyed	542	v520	11	-1	-1	541	531	60	5	0.887	0.0094	0	143	18	0.7307
+drakkarfjord_s43_A	drakkarfjord	43	A	US	Titanium collected (tiebreak)	1000	v520	14	92	-1	999	78	54	11	0.3077	0.141	1	78	48	0.0
+drakkarfjord_s43_B	drakkarfjord	43	B	US	Titanium collected (tiebreak)	1000	v520	14	40	-1	999	26	23	10	0.1154	0.3846	1	26	25	0.0
+drakkarfjord_s44_A	drakkarfjord	44	A	OPP	Core destroyed	344	v520	14	63	-1	343	49	38	11	0.2245	0.2245	1	49	33	0.0
+drakkarfjord_s44_B	drakkarfjord	44	B	US	Core destroyed	122	v520	14	40	121	121	26	23	10	0.1154	0.3846	1	26	25	0.0
+drakkarfjord_s45_A	drakkarfjord	45	A	US	Core destroyed	234	v520	14	168	233	233	154	68	13	0.5584	0.0844	1	147	40	0.0455
+drakkarfjord_s45_B	drakkarfjord	45	B	US	Core destroyed	122	v520	14	40	121	121	26	23	10	0.1154	0.3846	1	26	25	0.0
+glacierkeep_s43_A	glacierkeep	43	A	US	Core destroyed	177	v520	12	63	176	176	51	42	29	0.1765	0.5686	1	51	48	0.0
+glacierkeep_s43_B	glacierkeep	43	B	OPP	Titanium stored (tiebreak)	1000	v520	12	-1	-1	999	988	148	8	0.8502	0.0081	0	165	72	0.833
+glacierkeep_s44_A	glacierkeep	44	A	US	Core destroyed	157	v520	12	101	156	156	89	85	60	0.0449	0.6742	1	89	87	0.0
+glacierkeep_s44_B	glacierkeep	44	B	OPP	Core destroyed	781	v520	12	-1	-1	780	769	123	8	0.8401	0.0104	0	159	47	0.7932
+glacierkeep_s45_A	glacierkeep	45	A	US	Core destroyed	162	v520	12	99	161	161	87	83	47	0.046	0.5402	1	87	83	0.0
+glacierkeep_s45_B	glacierkeep	45	B	US	Titanium collected (tiebreak)	1000	v520	12	52	-1	999	40	26	7	0.35	0.175	1	40	37	0.0
+midgard_s43_A	midgard	43	A	US	Core destroyed	144	v520	48	56	143	143	8	8	4	0.0	0.5	1	8	8	0.0
+midgard_s43_B	midgard	43	B	OPP	Core destroyed	214	v520	46	-1	-1	213	168	46	11	0.7262	0.0655	0	47	20	0.7202
+midgard_s44_A	midgard	44	A	OPP	Core destroyed	249	v520	51	-1	-1	248	198	198	193	0.0	0.9747	0	198	195	0.0
+midgard_s44_B	midgard	44	B	OPP	Core destroyed	362	v520	50	341	-1	361	291	32	15	0.89	0.0515	1	32	21	0.89
+midgard_s45_A	midgard	45	A	US	Titanium collected (tiebreak)	1000	v520	48	-1	-1	999	952	952	941	0.0	0.9884	0	952	952	0.0
+midgard_s45_B	midgard	45	B	OPP	Core destroyed	188	v520	50	-1	-1	187	138	138	58	0.0	0.4203	0	138	68	0.0
+nordkap_s43_A	nordkap	43	A	US	Core destroyed	104	v520	8	36	103	103	28	22	10	0.2143	0.3571	1	28	27	0.0
+nordkap_s43_B	nordkap	43	B	OPP	Core destroyed	232	v520	8	-1	-1	231	224	52	2	0.7679	0.0089	0	53	4	0.7634
+nordkap_s44_A	nordkap	44	A	US	Titanium collected (tiebreak)	1000	v520	8	93	-1	999	85	80	37	0.0588	0.4353	1	85	74	0.0
+nordkap_s44_B	nordkap	44	B	US	Core destroyed	373	v520	12	317	372	372	305	294	138	0.0361	0.4525	1	303	292	0.0066
+nordkap_s45_A	nordkap	45	A	US	Core destroyed	253	v520	8	43	252	252	35	33	16	0.0571	0.4571	1	35	34	0.0
+nordkap_s45_B	nordkap	45	B	US	Core destroyed	189	v520	12	56	188	188	44	38	15	0.1364	0.3409	1	44	38	0.0
+yulerune_s43_A	yulerune	43	A	OPP	Core destroyed	289	v520	31	-1	-1	288	258	258	252	0.0	0.9767	0	258	257	0.0
+yulerune_s43_B	yulerune	43	B	OPP	Core destroyed	244	v520	29	-1	-1	243	215	211	207	0.0186	0.9628	0	215	212	0.0
+yulerune_s44_A	yulerune	44	A	US	Core destroyed	505	v520	30	409	504	504	379	219	143	0.4222	0.3773	1	250	148	0.3404
+yulerune_s44_B	yulerune	44	B	OPP	Core destroyed	153	v520	31	-1	-1	152	122	100	88	0.1803	0.7213	0	101	95	0.1721
+yulerune_s45_A	yulerune	45	A	US	Core destroyed	377	v520	34	224	376	376	190	189	177	0.0053	0.9316	1	190	190	0.0
+yulerune_s45_B	yulerune	45	B	OPP	Core destroyed	220	v520	34	-1	-1	219	186	186	183	0.0	0.9839	0	186	186	0.0

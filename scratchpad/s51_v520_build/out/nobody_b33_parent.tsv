@@ -1,0 +1,37 @@
+tag	map	seed	seat	ours	cond	turn	arm	arrive	sent	kill	last	window	ge1	ge2	nobody	two_body_share	bought_sentinel	ge1_fp	ge2_fp	nobody_fp
+atoll_s97_A	atoll	97	A	US	Titanium collected (tiebreak)	1000	parent	6	-1	-1	999	994	63	2	0.9366	0.002	0	93	4	0.9064
+atoll_s97_B	atoll	97	B	OPP	Core destroyed	135	parent	6	-1	-1	134	129	79	4	0.3876	0.031	0	85	7	0.3411
+atoll_s98_A	atoll	98	A	OPP	Core destroyed	793	parent	6	144	-1	792	138	43	0	0.6884	0.0	1	54	0	0.6087
+atoll_s98_B	atoll	98	B	OPP	Core destroyed	293	parent	7	106	-1	292	99	65	19	0.3434	0.1919	1	72	27	0.2727
+atoll_s99_A	atoll	99	A	OPP	Core destroyed	716	parent	11	260	-1	715	249	69	0	0.7229	0.0	1	116	3	0.5341
+atoll_s99_B	atoll	99	B	OPP	Core destroyed	671	parent	6	186	-1	670	180	165	42	0.0833	0.2333	1	175	56	0.0278
+drakkarfjord_s97_A	drakkarfjord	97	A	US	Core destroyed	393	parent	10	89	392	392	79	50	9	0.3671	0.1139	1	79	20	0.0
+drakkarfjord_s97_B	drakkarfjord	97	B	US	Core destroyed	204	parent	10	59	203	203	49	29	0	0.4082	0.0	1	49	0	0.0
+drakkarfjord_s98_A	drakkarfjord	98	A	OPP	Core destroyed	512	parent	10	-1	-1	511	502	186	1	0.6295	0.002	0	213	9	0.5757
+drakkarfjord_s98_B	drakkarfjord	98	B	US	Core destroyed	123	parent	10	67	122	122	57	28	0	0.5088	0.0	1	57	0	0.0
+drakkarfjord_s99_A	drakkarfjord	99	A	US	Core destroyed	362	parent	10	264	361	361	254	111	34	0.563	0.1339	1	135	44	0.4685
+drakkarfjord_s99_B	drakkarfjord	99	B	US	Core destroyed	155	parent	10	91	154	154	81	37	0	0.5432	0.0	1	81	0	0.0
+glacierkeep_s97_A	glacierkeep	97	A	US	Core destroyed	329	parent	8	148	328	328	140	86	7	0.3857	0.05	1	140	62	0.0
+glacierkeep_s97_B	glacierkeep	97	B	OPP	Core destroyed	437	parent	8	74	-1	436	66	53	9	0.197	0.1364	1	66	28	0.0
+glacierkeep_s98_A	glacierkeep	98	A	US	Core destroyed	221	parent	8	135	220	220	127	102	0	0.1969	0.0	1	115	0	0.0945
+glacierkeep_s98_B	glacierkeep	98	B	US	Core destroyed	173	parent	8	80	172	172	72	56	4	0.2222	0.0556	1	72	41	0.0
+glacierkeep_s99_A	glacierkeep	99	A	US	Titanium collected (tiebreak)	1000	parent	8	125	-1	999	117	92	20	0.2137	0.1709	1	116	85	0.0085
+glacierkeep_s99_B	glacierkeep	99	B	US	Core destroyed	301	parent	8	72	300	300	64	49	10	0.2344	0.1562	1	64	30	0.0
+midgard_s97_A	midgard	97	A	US	Core destroyed	285	parent	50	192	284	284	142	142	136	0.0	0.9577	1	142	137	0.0
+midgard_s97_B	midgard	97	B	OPP	Core destroyed	305	parent	55	-1	-1	304	250	248	239	0.008	0.956	0	250	250	0.0
+midgard_s98_A	midgard	98	A	US	Core destroyed	118	parent	50	62	117	117	12	12	4	0.0	0.3333	1	12	12	0.0
+midgard_s98_B	midgard	98	B	US	Core destroyed	533	parent	55	380	532	532	325	325	321	0.0	0.9877	1	325	324	0.0
+midgard_s99_A	midgard	99	A	OPP	Titanium collected (tiebreak)	1000	parent	48	156	-1	999	108	108	96	0.0	0.8889	1	108	108	0.0
+midgard_s99_B	midgard	99	B	OPP	Core destroyed	641	parent	53	-1	-1	640	588	166	100	0.7177	0.1701	0	167	109	0.716
+nordkap_s97_A	nordkap	97	A	US	Core destroyed	293	parent	4	207	292	292	203	64	0	0.6847	0.0	1	81	0	0.601
+nordkap_s97_B	nordkap	97	B	US	Core destroyed	326	parent	4	160	325	325	156	65	3	0.5833	0.0192	1	82	5	0.4744
+nordkap_s98_A	nordkap	98	A	US	Titanium collected (tiebreak)	1000	parent	4	248	-1	999	244	26	3	0.8934	0.0123	1	43	11	0.8238
+nordkap_s98_B	nordkap	98	B	OPP	Core destroyed	173	parent	4	92	-1	172	88	64	0	0.2727	0.0	1	88	0	0.0
+nordkap_s99_A	nordkap	99	A	OPP	Core destroyed	171	parent	4	-1	-1	170	167	162	38	0.0299	0.2275	0	165	50	0.012
+nordkap_s99_B	nordkap	99	B	OPP	Core destroyed	224	parent	4	-1	-1	223	220	104	0	0.5273	0.0	0	139	0	0.3682
+yulerune_s97_A	yulerune	97	A	US	Core destroyed	448	parent	29	392	447	447	363	361	350	0.0055	0.9642	1	363	356	0.0
+yulerune_s97_B	yulerune	97	B	OPP	Core destroyed	224	parent	31	-1	-1	223	193	191	179	0.0104	0.9275	0	193	183	0.0
+yulerune_s98_A	yulerune	98	A	US	Core destroyed	253	parent	37	197	252	252	160	159	149	0.0062	0.9313	1	160	160	0.0
+yulerune_s98_B	yulerune	98	B	US	Core destroyed	146	parent	27	90	145	145	63	63	56	0.0	0.8889	1	63	61	0.0
+yulerune_s99_A	yulerune	99	A	OPP	Core destroyed	285	parent	29	-1	-1	284	256	253	239	0.0117	0.9336	0	256	245	0.0
+yulerune_s99_B	yulerune	99	B	US	Core destroyed	442	parent	29	271	441	441	242	242	100	0.0	0.4132	1	242	133	0.0

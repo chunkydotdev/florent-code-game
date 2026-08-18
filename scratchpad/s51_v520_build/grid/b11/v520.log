@@ -1,0 +1,36 @@
+atoll_s31_A	atoll	31	A	OPP	_v488beltbreak2	Core destroyed	314	0	370	790
+atoll_s31_B	atoll	31	B	US	_v520pincer	Core destroyed	211	0	1020	550
+atoll_s32_A	atoll	32	A	OPP	_v488beltbreak2	Titanium collected (tiebreak)	1000	0	2630	4960
+atoll_s32_B	atoll	32	B	US	_v520pincer	Core destroyed	116	0	540	100
+atoll_s33_A	atoll	33	A	US	_v520pincer	Core destroyed	228	0	1110	300
+atoll_s33_B	atoll	33	B	US	_v520pincer	Core destroyed	438	0	2160	1350
+drakkarfjord_s31_A	drakkarfjord	31	A	US	_v520pincer	Core destroyed	88	0	270	0
+drakkarfjord_s31_B	drakkarfjord	31	B	US	_v520pincer	Core destroyed	100	0	280	0
+drakkarfjord_s32_A	drakkarfjord	32	A	US	_v520pincer	Core destroyed	89	0	340	0
+drakkarfjord_s32_B	drakkarfjord	32	B	US	_v520pincer	Core destroyed	125	0	360	0
+drakkarfjord_s33_A	drakkarfjord	33	A	US	_v520pincer	Core destroyed	101	0	400	0
+drakkarfjord_s33_B	drakkarfjord	33	B	US	_v520pincer	Core destroyed	96	0	320	0
+glacierkeep_s31_A	glacierkeep	31	A	US	_v520pincer	Core destroyed	217	0	250	160
+glacierkeep_s31_B	glacierkeep	31	B	US	_v520pincer	Harvesters (tiebreak)	1000	0	0	0
+glacierkeep_s32_A	glacierkeep	32	A	US	_v520pincer	Core destroyed	201	0	440	0
+glacierkeep_s32_B	glacierkeep	32	B	OPP	_v488beltbreak2	Core destroyed	773	0	0	0
+glacierkeep_s33_A	glacierkeep	33	A	US	_v520pincer	Core destroyed	110	0	230	0
+glacierkeep_s33_B	glacierkeep	33	B	OPP	_v488beltbreak2	Harvesters (tiebreak)	1000	0	0	0
+midgard_s31_A	midgard	31	A	OPP	_v488beltbreak2	Core destroyed	245	0	650	1540
+midgard_s31_B	midgard	31	B	US	_v520pincer	Core destroyed	481	0	780	550
+midgard_s32_A	midgard	32	A	US	_v520pincer	Titanium collected (tiebreak)	1000	0	1490	590
+midgard_s32_B	midgard	32	B	OPP	_v488beltbreak2	Core destroyed	396	0	4060	3680
+midgard_s33_A	midgard	33	A	US	_v520pincer	Core destroyed	220	0	1910	640
+midgard_s33_B	midgard	33	B	US	_v520pincer	Core destroyed	130	0	880	600
+nordkap_s31_A	nordkap	31	A	US	_v520pincer	Core destroyed	813	0	140	100
+nordkap_s31_B	nordkap	31	B	US	_v520pincer	Core destroyed	423	0	1840	50
+nordkap_s32_A	nordkap	32	A	US	_v520pincer	Core destroyed	483	0	3550	590
+nordkap_s32_B	nordkap	32	B	US	_v520pincer	Core destroyed	191	0	450	50
+nordkap_s33_A	nordkap	33	A	US	_v520pincer	Titanium collected (tiebreak)	1000	0	120	60
+nordkap_s33_B	nordkap	33	B	US	_v520pincer	Core destroyed	157	0	370	190
+yulerune_s31_A	yulerune	31	A	OPP	_v488beltbreak2	Core destroyed	397	0	310	490
+yulerune_s31_B	yulerune	31	B	OPP	_v488beltbreak2	Core destroyed	207	0	290	680
+yulerune_s32_A	yulerune	32	A	US	_v520pincer	Core destroyed	192	0	840	310
+yulerune_s32_B	yulerune	32	B	OPP	_v488beltbreak2	Core destroyed	308	0	380	1570
+yulerune_s33_A	yulerune	33	A	US	_v520pincer	Core destroyed	492	0	2970	610
+yulerune_s33_B	yulerune	33	B	US	_v520pincer	Core destroyed	179	0	1310	980

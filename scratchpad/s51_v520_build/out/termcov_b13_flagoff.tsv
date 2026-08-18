@@ -1,0 +1,44 @@
+tag	map	seed	seat	ours	cond	turn	arm	game_rounds	game_jumps	eid	birth	pos	dsq_core	dsq_centre	n_seats	coverage	coverage_ferry	best_cov_site	lifetime	died	death_round	n_launch	n_launch_seat	ever_launched
+atoll_s37_A	atoll	37	A	OPP	Core destroyed	388	flagoff	388	46	21	6	14,5	4	6.5	8	2	2	2	3	1	9	2	1	1
+atoll_s37_A	atoll	37	A	OPP	Core destroyed	388	flagoff	388	46	40	13	12,3	1	6.5	8	2	2	2	375	0	-1	42	1	1
+atoll_s38_A	atoll	38	A	OPP	Core destroyed	267	flagoff	267	4	53	18	16,1	2	4.5	8	2	2	2	249	0	-1	2	1	1
+atoll_s38_B	atoll	38	B	OPP	Core destroyed	774	flagoff	774	220	140	86	0,15	1	6.5	8	2	2	2	688	0	-1	6	1	1
+atoll_s39_A	atoll	39	A	OPP	Core destroyed	339	flagoff	339	8	27	8	13,5	5	8.5	8	1	1	2	3	1	11	1	0	1
+atoll_s39_A	atoll	39	A	OPP	Core destroyed	339	flagoff	339	8	48	20	16,4	2	4.5	8	2	2	2	89	1	109	2	0	1
+atoll_s39_A	atoll	39	A	OPP	Core destroyed	339	flagoff	339	8	303	140	16,4	2	4.5	8	2	2	2	5	1	145	0	0	0
+atoll_s39_B	atoll	39	B	OPP	Core destroyed	215	flagoff	215	24	21	6	4,13	2	4.5	8	2	2	2	209	0	-1	20	5	1
+drakkarfjord_s37_A	drakkarfjord	37	A	OPP	Core destroyed	986	flagoff	986	125	15	9	22,8	18	32.5	8	0	0	2	1	1	10	1	0	1
+drakkarfjord_s37_A	drakkarfjord	37	A	OPP	Core destroyed	986	flagoff	986	125	668	236	23,7	8	18.5	8	0	0	2	1	1	237	1	0	1
+drakkarfjord_s37_A	drakkarfjord	37	A	OPP	Core destroyed	986	flagoff	986	125	1886	763	22,9	25	40.5	8	0	0	2	1	1	764	1	0	1
+drakkarfjord_s37_A	drakkarfjord	37	A	OPP	Core destroyed	986	flagoff	986	125	2254	936	22,8	18	32.5	8	0	0	2	1	1	937	1	0	1
+drakkarfjord_s37_B	drakkarfjord	37	B	US	Core destroyed	616	flagoff	616	11	15	9	7,21	20	32.5	8	0	0	2	1	1	10	1	0	1
+drakkarfjord_s38_A	drakkarfjord	38	A	US	Core destroyed	268	flagoff	268	6	15	9	22,8	18	32.5	8	0	0	2	1	1	10	1	0	1
+drakkarfjord_s38_A	drakkarfjord	38	A	US	Core destroyed	268	flagoff	268	6	123	53	24,4	1	6.5	8	2	2	2	12	1	65	1	0	1
+drakkarfjord_s38_B	drakkarfjord	38	B	OPP	Titanium collected (tiebreak)	1000	flagoff	1000	6	15	9	7,21	20	32.5	8	0	0	2	1	1	10	1	0	1
+drakkarfjord_s38_B	drakkarfjord	38	B	OPP	Titanium collected (tiebreak)	1000	flagoff	1000	6	206	224	1,22	2	8.5	8	1	1	2	4	1	228	1	1	1
+drakkarfjord_s38_B	drakkarfjord	38	B	OPP	Titanium collected (tiebreak)	1000	flagoff	1000	6	216	320	1,22	2	8.5	8	1	1	2	4	1	324	0	0	0
+drakkarfjord_s39_A	drakkarfjord	39	A	US	Core destroyed	558	flagoff	558	63	15	9	22,8	18	32.5	8	0	0	2	1	1	10	1	0	1
+drakkarfjord_s39_A	drakkarfjord	39	A	US	Core destroyed	558	flagoff	558	63	612	317	24,4	1	6.5	8	2	2	2	76	1	393	20	11	1
+drakkarfjord_s39_A	drakkarfjord	39	A	US	Core destroyed	558	flagoff	558	63	927	488	23,8	13	24.5	8	0	0	2	1	1	489	1	0	1
+drakkarfjord_s39_A	drakkarfjord	39	A	US	Core destroyed	558	flagoff	558	63	952	500	24,4	1	6.5	8	2	2	2	58	0	-1	22	11	1
+drakkarfjord_s39_B	drakkarfjord	39	B	US	Core destroyed	173	flagoff	173	5	15	9	7,21	20	32.5	8	0	0	2	1	1	10	1	0	1
+glacierkeep_s37_A	glacierkeep	37	A	US	Core destroyed	261	flagoff	261	4	14	8	15,23	4	12.5	8	0	0	2	1	1	9	1	0	1
+glacierkeep_s37_B	glacierkeep	37	B	US	Core destroyed	189	flagoff	189	4	14	7	16,6	10	14.5	8	0	0	2	1	1	8	1	0	1
+glacierkeep_s38_A	glacierkeep	38	A	US	Core destroyed	725	flagoff	725	36	14	7	16,23	5	14.5	8	0	0	2	1	1	8	1	0	1
+glacierkeep_s38_A	glacierkeep	38	A	US	Core destroyed	725	flagoff	725	36	128	221	14,24	1	6.5	8	2	2	2	504	0	-1	32	0	1
+glacierkeep_s38_A	glacierkeep	38	A	US	Core destroyed	725	flagoff	725	36	161	630	13,28	2	4.5	8	2	2	2	20	1	650	0	0	0
+glacierkeep_s38_B	glacierkeep	38	B	US	Core destroyed	365	flagoff	365	4	14	7	16,6	10	14.5	8	0	0	2	1	1	8	1	0	1
+glacierkeep_s39_A	glacierkeep	39	A	US	Core destroyed	157	flagoff	157	4	14	7	16,23	5	14.5	8	0	0	2	1	1	8	1	0	1
+glacierkeep_s39_B	glacierkeep	39	B	US	Core destroyed	280	flagoff	280	4	14	8	17,6	13	18.5	8	0	0	2	1	1	9	1	0	1
+nordkap_s37_A	nordkap	37	A	OPP	Core destroyed	507	flagoff	507	26	11	3	10,15	4	12.5	8	0	0	2	1	1	4	1	0	1
+nordkap_s37_A	nordkap	37	A	OPP	Core destroyed	507	flagoff	507	26	118	56	11,16	2	8.5	8	1	1	2	2	1	58	0	0	0
+nordkap_s37_A	nordkap	37	A	OPP	Core destroyed	507	flagoff	507	26	466	241	7,13	17	36.5	8	0	0	2	1	1	242	1	0	1
+nordkap_s37_B	nordkap	37	B	OPP	Core destroyed	211	flagoff	211	2	11	3	10,10	9	12.5	8	0	0	2	1	1	4	1	0	1
+nordkap_s37_B	nordkap	37	B	OPP	Core destroyed	211	flagoff	211	2	23	8	11,5	2	4.5	8	2	2	2	2	1	10	0	0	0
+nordkap_s38_A	nordkap	38	A	US	Core destroyed	158	flagoff	158	24	11	3	10,15	4	12.5	8	0	0	2	1	1	4	1	0	1
+nordkap_s38_A	nordkap	38	A	US	Core destroyed	158	flagoff	158	24	80	71	9,21	4	6.5	8	2	2	2	87	0	-1	22	2	1
+nordkap_s38_B	nordkap	38	B	US	Core destroyed	665	flagoff	665	5	11	3	10,10	9	12.5	8	0	0	2	1	1	4	1	0	1
+nordkap_s38_B	nordkap	38	B	US	Core destroyed	665	flagoff	665	5	587	576	10,12	25	30.5	8	0	0	2	1	1	577	1	0	1
+nordkap_s39_A	nordkap	39	A	OPP	Core destroyed	162	flagoff	162	2	11	3	10,15	4	12.5	8	0	0	2	1	1	4	1	0	1
+nordkap_s39_B	nordkap	39	B	US	Core destroyed	524	flagoff	524	2	11	3	10,10	9	12.5	8	0	0	2	1	1	4	1	0	1
+nordkap_s39_B	nordkap	39	B	US	Core destroyed	524	flagoff	524	2	176	269	9,9	4	6.5	8	2	2	2	255	0	-1	0	0	0

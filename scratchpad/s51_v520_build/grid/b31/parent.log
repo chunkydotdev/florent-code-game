@@ -1,0 +1,36 @@
+atoll_s91_A	atoll	91	A	US	parent	Core destroyed	380	0	3140	1110
+atoll_s91_B	atoll	91	B	OPP	_v488beltbreak2	Core destroyed	231	0	550	2430
+atoll_s92_A	atoll	92	A	OPP	_v488beltbreak2	Core destroyed	256	0	860	1240
+atoll_s92_B	atoll	92	B	US	parent	Core destroyed	500	0	2460	2010
+atoll_s93_A	atoll	93	A	US	parent	Core destroyed	670	0	3320	570
+atoll_s93_B	atoll	93	B	US	parent	Core destroyed	254	0	1240	610
+drakkarfjord_s91_A	drakkarfjord	91	A	US	parent	Core destroyed	221	0	980	200
+drakkarfjord_s91_B	drakkarfjord	91	B	OPP	_v488beltbreak2	Core destroyed	358	0	340	4120
+drakkarfjord_s92_A	drakkarfjord	92	A	OPP	_v488beltbreak2	Titanium collected (tiebreak)	1000	0	7070	14080
+drakkarfjord_s92_B	drakkarfjord	92	B	US	parent	Core destroyed	495	0	5040	3600
+drakkarfjord_s93_A	drakkarfjord	93	A	US	parent	Core destroyed	157	0	680	0
+drakkarfjord_s93_B	drakkarfjord	93	B	US	parent	Core destroyed	145	0	600	0
+glacierkeep_s91_A	glacierkeep	91	A	OPP	_v488beltbreak2	Core destroyed	816	0	160	570
+glacierkeep_s91_B	glacierkeep	91	B	US	parent	Core destroyed	241	0	0	0
+glacierkeep_s92_A	glacierkeep	92	A	US	parent	Core destroyed	293	0	220	0
+glacierkeep_s92_B	glacierkeep	92	B	US	parent	Core destroyed	373	0	100	0
+glacierkeep_s93_A	glacierkeep	93	A	US	parent	Core destroyed	293	0	320	0
+glacierkeep_s93_B	glacierkeep	93	B	US	parent	Core destroyed	401	0	30	0
+midgard_s91_A	midgard	91	A	US	parent	Core destroyed	249	0	2670	680
+midgard_s91_B	midgard	91	B	OPP	_v488beltbreak2	Titanium collected (tiebreak)	1000	0	680	2920
+midgard_s92_A	midgard	92	A	US	parent	Core destroyed	345	0	590	1000
+midgard_s92_B	midgard	92	B	US	parent	Core destroyed	180	0	1380	770
+midgard_s93_A	midgard	93	A	US	parent	Core destroyed	161	0	1450	670
+midgard_s93_B	midgard	93	B	US	parent	Core destroyed	227	0	2350	520
+nordkap_s91_A	nordkap	91	A	US	parent	Core destroyed	324	0	2190	430
+nordkap_s91_B	nordkap	91	B	US	parent	Core destroyed	357	0	1800	920
+nordkap_s92_A	nordkap	92	A	US	parent	Core destroyed	220	0	530	140
+nordkap_s92_B	nordkap	92	B	US	parent	Core destroyed	175	0	410	120
+nordkap_s93_A	nordkap	93	A	US	parent	Core destroyed	228	0	540	40
+nordkap_s93_B	nordkap	93	B	US	parent	Core destroyed	179	0	1080	100
+yulerune_s91_A	yulerune	91	A	US	parent	Core destroyed	216	0	1350	280
+yulerune_s91_B	yulerune	91	B	OPP	_v488beltbreak2	Titanium collected (tiebreak)	1000	0	370	720
+yulerune_s92_A	yulerune	92	A	OPP	_v488beltbreak2	Core destroyed	329	0	280	320
+yulerune_s92_B	yulerune	92	B	OPP	_v488beltbreak2	Core destroyed	293	0	430	490
+yulerune_s93_A	yulerune	93	A	OPP	_v488beltbreak2	Titanium collected (tiebreak)	1000	0	580	2890
+yulerune_s93_B	yulerune	93	B	US	parent	Core destroyed	219	0	1050	350

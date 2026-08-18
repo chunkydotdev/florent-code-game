@@ -1,0 +1,213 @@
+Update available: 2.3.6 -> 2.3.8. Run: pip install --upgrade fcode
+FS GATE 0 sig (20, 26, (9, 6), (9, 18)) ok 1
+FS GATE 1 sig (20, 26, (9, 6), (9, 18)) ok 1
+FS PHASE 1 id 4 ph 1 d 100 at (9, 17)
+GF519 1 id 4 d 100 band 1 ti 434 ammo 0 gun 28 lau 28 bar 4 cd 0 lp 0 plants 0
+GF519 2 id 4 d 100 band 1 ti 392 ammo 0 gun 32 lau 32 bar 4 cd 0 lp 0 plants 0
+FS GATE 2 sig (20, 26, (9, 6), (9, 18)) ok 1
+GF519 3 id 4 d 100 band 1 ti 344 ammo 0 gun 36 lau 36 bar 5 cd 0 lp 0 plants 0
+FS GATE 3 sig (20, 26, (9, 6), (9, 18)) ok 1
+GF519 4 id 4 d 100 band 1 ti 354 ammo 0 gun 36 lau 36 bar 5 cd 0 lp 0 plants 0
+FS GATE 4 sig (20, 26, (9, 6), (9, 18)) ok 1
+APPT520 CLAIM 4 id 10
+FS PHASE 4 id 10 ph 1 d 101 at (8, 17)
+GF519 4 id 10 d 101 band 1 ti 354 ammo 0 gun 36 lau 36 bar 5 cd 0 lp 0 plants 0
+GF519 5 id 4 d 100 band 1 ti 354 ammo 0 gun 36 lau 36 bar 5 cd 0 lp 0 plants 0
+FS HOPBUILD 5 at (9, 17) lch (9, 16) T (11, 5)
+GF519 5 id 10 d 82 band 1 ti 318 ammo 0 gun 38 lau 38 bar 5 cd 0 lp 1 plants 0
+GF519 6 id 4 d 100 band 1 ti 318 ammo 0 gun 38 lau 38 bar 5 cd 0 lp 1 plants 0
+GF519 6 id 10 d 82 band 1 ti 280 ammo 0 gun 39 lau 39 bar 5 cd 0 lp 1 plants 0
+FS GATE 6 sig (20, 26, (9, 6), (9, 18)) ok 1
+FS THROW 6 from (10, 17) to (10, 11) T (11, 5) body 4 n 1 dsq 16
+GF519 7 id 4 d 16 band 1 ti 264 ammo 16 gun 39 lau 39 bar 5 cd 0 lp 0 plants 0
+TERM520 7 id 4 at (10, 11) n 2 pick (10, 10) arcs 2 cov 0 covbest 0 conflict 0 dsq 9
+FS HOPBUILD 7 at (10, 11) lch (10, 10) T (11, 5)
+GF519 7 id 10 d 82 band 1 ti 219 ammo 16 gun 41 lau 41 bar 6 cd 0 lp 1 plants 0
+FS THROW 7 from (8, 16) to (8, 11) T (11, 5) body 10 n 2 dsq 17
+GF519 8 id 4 d 16 band 1 ti 221 ammo 24 gun 39 lau 39 bar 5 cd 0 lp 1 plants 0
+GF519 8 id 10 d 17 band 1 ti 216 ammo 24 gun 39 lau 39 bar 5 cd 0 lp 0 plants 0
+FS GATE 8 sig (20, 26, (9, 6), (9, 18)) ok 1
+FS THROW 8 from (11, 11) to (11, 5) T (11, 5) body 4 n 1 dsq 2
+FS ARRIVE 9 id 4 body 1 at (11, 5) dsq 2
+ARC520 CLAIM 9 id 4 body 1 arc 2 at (11, 5)
+FS PHASE 9 id 4 ph 2 d 2 at (11, 5)
+FS SEAL 9 tile (10, 5) n 1
+GF519 9 id 10 d 20 band 1 ti 206 ammo 24 gun 39 lau 39 bar 5 cd 0 lp 0 plants 0
+GF519 PLANT 9 id 10 d 20 ti 167
+FS SEAL 10 tile (11, 6) n 2
+GF519 10 id 10 d 20 band 1 ti 95 ammo 24 gun 48 lau 48 bar 7 cd 0 lp 0 plants 1
+FS DODGE 11 id 4 from (11, 5) to (11, 4) cov 1 -> 0 hit 0 hp 40
+GF519 11 id 10 d 13 band 1 ti 91 ammo 24 gun 48 lau 48 bar 7 cd 0 lp 0 plants 1
+FS GATE 11 sig (20, 26, (9, 6), (9, 18)) ok 1
+FS ARRIVE 12 id 10 body 2 at (7, 9) dsq 8
+ARC520 CLAIM 12 id 10 body 2 arc 1 at (7, 9)
+FS PHASE 12 id 10 ph 2 d 8 at (7, 9)
+FS DODGE 13 id 4 from (11, 5) to (11, 4) cov 1 -> 0 hit 0 hp 22
+FS DODGE 17 id 4 from (12, 6) to (12, 7) cov 1 -> 0 hit 0 hp 4
+FS SEAL 18 tile (11, 7) n 3
+FS STAT 20 id 4 at (12, 8) need 6 orth 5 ti 23 ammo 24 sen 0 hp 4 covden 0 eco 0 lost 0
+FS STAT 20 id 10 at (8, 8) need 6 orth 5 ti 23 ammo 24 sen 0 hp 40 covden 0 eco 0 lost 0
+FS SEAL 21 tile (10, 8) n 4
+FS SEAL 30 tile (8, 6) n 5
+FS SEAL 32 tile (8, 5) n 6
+FS SEAL 39 tile (8, 7) n 7
+FS STAT 40 id 4 at (7, 7) need 2 orth 2 ti 13 ammo 24 sen 0 hp 4 covden 0 eco 0 lost 0
+FS STAT 40 id 10 at (7, 4) need 4 orth 4 ti 13 ammo 24 sen 0 hp 40 covden 0 eco 0 lost 0
+FS CLEAR 44 tile (9, 8) peck 1
+FS RUNG 44 id 4 r 3 hi -
+FS CLEAR 44 tile (9, 5) peck 1
+FS RUNG 44 id 10 r 3 hi -
+FS CLEAR 45 tile (9, 8) peck 2
+FS RUNG 45 id 4 r 3 hi -
+FS CLEAR 45 tile (9, 5) peck 2
+FS RUNG 45 id 10 r 3 hi -
+FS CLEAR 46 tile (9, 8) peck 3
+FS RUNG 46 id 4 r 3 hi -
+FS CLEAR 48 tile (9, 8) peck 4
+FS RUNG 48 id 4 r 3 hi -
+FS CLEAR 48 tile (9, 5) peck 3
+FS RUNG 48 id 10 r 3 hi -
+FS CLEAR 49 tile (9, 8) peck 5
+FS RUNG 49 id 4 r 3 hi -
+FS CLEAR 49 tile (9, 5) peck 4
+FS RUNG 49 id 10 r 3 hi -
+FS CLEAR 50 tile (9, 8) peck 6
+FS RUNG 50 id 4 r 3 hi -
+FS CLEAR 52 tile (9, 8) peck 7
+FS RUNG 52 id 4 r 3 hi -
+FS CLEAR 52 tile (9, 5) peck 5
+FS RUNG 52 id 10 r 3 hi -
+FS CLEAR 53 tile (9, 8) peck 8
+FS RUNG 53 id 4 r 3 hi -
+FS CLEAR 53 tile (9, 5) peck 6
+FS RUNG 53 id 10 r 3 hi -
+FS CLEAR 54 tile (9, 5) peck 7
+FS RUNG 54 id 10 r 3 hi -
+FS CLEAR 56 tile (9, 5) peck 8
+FS RUNG 56 id 10 r 3 hi -
+FS STAT 60 id 4 at (7, 7) need 2 orth 2 ti 41 ammo 24 sen 0 hp 4 covden 0 eco 0 lost 0
+FS STAT 60 id 10 at (8, 4) need 2 orth 2 ti 41 ammo 24 sen 0 hp 40 covden 0 eco 0 lost 0
+FS CLEAR 61 tile (9, 5) peck 1
+FS RUNG 61 id 10 r 3 hi -
+FS CLEAR 62 tile (9, 5) peck 2
+FS RUNG 62 id 10 r 3 hi -
+FS CLEARED 63 tile (9, 5) n 1
+FS SEAL 63 tile (9, 5) n 1
+FS SEALCLR 63 tile (9, 5) lag 0
+FS CLEAR 64 tile (9, 8) peck 1
+FS RUNG 64 id 4 r 3 hi -
+FS CLEAR 65 tile (9, 8) peck 2
+FS RUNG 65 id 4 r 3 hi -
+FS CLEAR 66 tile (9, 8) peck 3
+FS RUNG 66 id 4 r 3 hi -
+FS CLEAR 67 tile (9, 8) peck 4
+FS RUNG 67 id 4 r 3 hi -
+FS CLEAR 68 tile (9, 8) peck 5
+FS RUNG 68 id 4 r 3 hi -
+FS CLEAR 69 tile (9, 8) peck 6
+FS RUNG 69 id 4 r 3 hi -
+FS CLEAR 72 tile (9, 8) peck 7
+FS RUNG 72 id 4 r 3 hi -
+FS STAT 80 id 4 at (9, 9) need 1 orth 1 ti 12 ammo 10 sen 0 hp 4 covden 0 eco 0 lost 0
+FS STAT 80 id 10 at (8, 8) need 1 orth 1 ti 12 ammo 10 sen 0 hp 40 covden 0 eco 0 lost 0
+FS STAT 100 id 4 at (9, 9) need 1 orth 1 ti 12 ammo 10 sen 0 hp 4 covden 0 eco 0 lost 0
+FS STAT 100 id 10 at (8, 8) need 1 orth 1 ti 12 ammo 10 sen 0 hp 40 covden 0 eco 0 lost 0
+FS CLEAR 108 tile (9, 8) peck 1
+FS RUNG 108 id 4 r 3 hi -
+FS SEAL 108 tile (9, 8) n 2
+FS PHASE 109 id 4 ph 3 d 4 at (9, 9)
+FS PHASE 109 id 10 ph 3 d 2 at (8, 8)
+FS CLEAR 116 tile (8, 8) peck 1
+FS RUNG 116 id 4 r 3 hi -
+FS CLEAR 116 tile (8, 8) peck 1
+FS RUNG 116 id 10 r 3 hi -
+FS CLEAR 117 tile (8, 8) peck 2
+FS RUNG 117 id 4 r 3 hi -
+FS STAT 120 id 4 at (8, 9) need 2 orth 0 ti 33 ammo 24 sen 0 hp 4 covden 0 eco 0 lost 0
+FS CLEAR 120 tile (8, 8) peck 3
+FS RUNG 120 id 4 r 3 hi -
+FS STAT 120 id 10 at (7, 8) need 2 orth 0 ti 31 ammo 24 sen 0 hp 40 covden 0 eco 0 lost 0
+FS CLEAR 120 tile (8, 8) peck 1
+FS RUNG 120 id 10 r 3 hi -
+FS CLEAR 121 tile (8, 8) peck 4
+FS RUNG 121 id 4 r 3 hi -
+FS CLEAR 121 tile (8, 8) peck 2
+FS RUNG 121 id 10 r 3 hi -
+FS CLEAR 122 tile (8, 8) peck 5
+FS RUNG 122 id 4 r 3 hi -
+FS CLEAR 124 tile (8, 8) peck 6
+FS RUNG 124 id 4 r 3 hi -
+FS CLEAR 124 tile (8, 8) peck 3
+FS RUNG 124 id 10 r 3 hi -
+FS CLEARED 125 tile (8, 8) n 1
+FS SEAL 125 tile (8, 8) n 8
+FS SEALCLR 125 tile (8, 8) lag 0
+FS PHASE 126 id 10 ph 2 d 8 at (7, 9)
+FS PHASE 127 id 10 ph 3 d 5 at (7, 8)
+FS PHASE 129 id 4 ph 2 d 8 at (7, 9)
+FS PHASE 130 id 4 ph 3 d 5 at (7, 8)
+FS PHASE 131 id 10 ph 2 d 8 at (7, 4)
+FS PHASE 132 id 10 ph 3 d 5 at (8, 4)
+FS PHASE 134 id 4 ph 2 d 8 at (7, 4)
+FS PHASE 134 id 10 ph 2 d 9 at (9, 3)
+FS PHASE 135 id 4 ph 3 d 5 at (7, 5)
+FS PHASE 135 id 10 ph 3 d 4 at (9, 4)
+FS PHASE 136 id 4 ph 2 d 8 at (7, 4)
+FS PHASE 136 id 10 ph 2 d 9 at (9, 3)
+FS PHASE 137 id 4 ph 3 d 5 at (7, 5)
+FS PHASE 137 id 10 ph 3 d 4 at (9, 4)
+FS PHASE 138 id 4 ph 2 d 8 at (7, 4)
+FS PHASE 138 id 10 ph 2 d 9 at (9, 3)
+FS PHASE 139 id 4 ph 3 d 5 at (7, 5)
+FS PHASE 139 id 10 ph 3 d 4 at (9, 4)
+FS PHASE 140 id 4 ph 2 d 8 at (7, 4)
+FS STAT 140 id 4 at (7, 4) need 2 orth 2 ti 52 ammo 24 sen 0 hp 4 covden 0 eco 0 lost 0
+FS PHASE 140 id 10 ph 2 d 9 at (9, 3)
+FS STAT 140 id 10 at (9, 3) need 2 orth 2 ti 52 ammo 24 sen 0 hp 40 covden 0 eco 0 lost 0
+FS PHASE 141 id 4 ph 3 d 5 at (7, 5)
+FS PHASE 141 id 10 ph 3 d 4 at (9, 4)
+FS PHASE 142 id 4 ph 2 d 8 at (7, 4)
+FS PHASE 142 id 10 ph 2 d 9 at (9, 3)
+FS PHASE 143 id 4 ph 3 d 5 at (7, 5)
+FS PHASE 143 id 10 ph 3 d 4 at (9, 4)
+FS PHASE 144 id 4 ph 2 d 8 at (7, 4)
+FS PHASE 144 id 10 ph 2 d 9 at (9, 3)
+FS PHASE 145 id 4 ph 3 d 5 at (7, 5)
+FS PHASE 145 id 10 ph 3 d 4 at (9, 4)
+FS EVICTOR 145 at (8, 4) ucov 0 cov 1 unseal 0 obs 4
+FS RUNG 145 id 10 r 2 hi -
+FS PHASE 146 id 4 ph 2 d 8 at (7, 4)
+FS GATE 146 sig (20, 26, (9, 6), (9, 18)) ok 1
+FS PHASE 147 id 4 ph 3 d 5 at (7, 5)
+FS PHASE 147 id 10 ph 2 d 9 at (9, 3)
+FS PHASE 148 id 4 ph 2 d 8 at (7, 4)
+FS PHASE 149 id 4 ph 3 d 5 at (7, 5)
+FS PHASE 150 id 4 ph 2 d 8 at (7, 4)
+FS PHASE 150 id 10 ph 3 d 5 at (11, 4)
+FS PHASE 151 id 4 ph 3 d 5 at (7, 5)
+FS DODGE 151 id 10 from (11, 5) to (11, 4) cov 1 -> 0 hit 0 hp 40
+FS PHASE 152 id 4 ph 2 d 8 at (7, 4)
+FS PHASE 153 id 4 ph 3 d 5 at (7, 5)
+FS DODGE 153 id 10 from (11, 5) to (11, 4) cov 1 -> 0 hit 0 hp 22
+FS PHASE 154 id 4 ph 2 d 8 at (7, 4)
+FS PHASE 155 id 4 ph 3 d 5 at (7, 5)
+FS DODGE 155 id 10 from (11, 5) to (11, 4) cov 1 -> 0 hit 0 hp 22
+FS PHASE 156 id 4 ph 2 d 8 at (7, 4)
+FS PHASE 157 id 4 ph 3 d 5 at (7, 5)
+FS DODGE 157 id 10 from (11, 5) to (11, 4) cov 1 -> 0 hit 0 hp 4
+FS PHASE 158 id 4 ph 2 d 8 at (7, 4)
+FS PHASE 159 id 4 ph 3 d 5 at (7, 5)
+FS DODGE 159 id 10 from (11, 5) to (11, 4) cov 1 -> 0 hit 0 hp 4
+FS PHASE 160 id 4 ph 2 d 8 at (7, 4)
+FS STAT 160 id 4 at (7, 4) need 2 orth 2 ti 35 ammo 24 sen 0 hp 4 covden 0 eco 0 lost 0
+FS STAT 160 id 10 at (11, 4) need 2 orth 0 ti 35 ammo 24 sen 0 hp 4 covden 0 eco 0 lost 0
+FS PHASE 161 id 4 ph 3 d 5 at (7, 5)
+FS PHASE 162 id 4 ph 2 d 8 at (7, 4)
+FS PHASE 163 id 4 ph 3 d 5 at (7, 5)
+FS PHASE 164 id 4 ph 2 d 8 at (7, 4)
+FS PHASE 165 id 4 ph 3 d 5 at (7, 5)
+FS PHASE 166 id 4 ph 2 d 8 at (7, 4)
+PRES520 167 ti 45 res 119 floor 119 bind 1 rounds 1 vacant 1 until 187
+FS PHASE 167 id 4 ph 3 d 5 at (7, 5)
+PRES520 168 ti 55 res 119 floor 119 bind 2 rounds 2 vacant 2 until 188
+FS PHASE 168 id 4 ph 2 d 8 at (7, 4)

@@ -1,0 +1,4 @@
+Update available: 2.3.6 -> 2.3.8. Run: pip install --upgrade fcode
+ARC520 CLAIM 14 id 3 body 1 arc 1 at (25, 4)
+ARC520 COLLIDE 15 id 9 body 2 peer 1 took 2 n 1
+ARC520 CLAIM 15 id 9 body 2 arc 2 at (24, 4)

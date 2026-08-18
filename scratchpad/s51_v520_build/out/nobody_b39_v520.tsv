@@ -1,0 +1,37 @@
+tag	map	seed	seat	ours	cond	turn	arm	arrive	sent	kill	last	window	ge1	ge2	nobody	two_body_share	bought_sentinel	ge1_fp	ge2_fp	nobody_fp
+atoll_s115_A	atoll	115	A	US	Core destroyed	603	v520	11	126	602	602	115	90	6	0.2174	0.0522	1	115	7	0.0
+atoll_s115_B	atoll	115	B	OPP	Core destroyed	182	v520	11	-1	-1	181	171	80	51	0.5322	0.2982	0	171	63	0.0
+atoll_s116_A	atoll	116	A	US	Core destroyed	130	v520	11	74	129	129	63	58	7	0.0794	0.1111	1	63	12	0.0
+atoll_s116_B	atoll	116	B	US	Core destroyed	860	v520	11	366	859	859	355	123	2	0.6535	0.0056	1	180	4	0.493
+atoll_s117_A	atoll	117	A	OPP	Core destroyed	200	v520	10	-1	-1	199	190	189	48	0.0053	0.2526	0	190	66	0.0
+atoll_s117_B	atoll	117	B	US	Titanium collected (tiebreak)	1000	v520	14	748	-1	999	734	60	5	0.9183	0.0068	1	251	18	0.658
+drakkarfjord_s115_A	drakkarfjord	115	A	US	Core destroyed	115	v520	14	33	114	114	19	18	8	0.0526	0.4211	1	19	15	0.0
+drakkarfjord_s115_B	drakkarfjord	115	B	US	Core destroyed	147	v520	14	57	146	146	43	30	14	0.3023	0.3256	1	43	35	0.0
+drakkarfjord_s116_A	drakkarfjord	116	A	US	Core destroyed	90	v520	14	34	89	89	20	18	4	0.1	0.2	1	20	19	0.0
+drakkarfjord_s116_B	drakkarfjord	116	B	US	Core destroyed	514	v520	14	353	513	513	339	54	1	0.8407	0.0029	1	76	6	0.7758
+drakkarfjord_s117_A	drakkarfjord	117	A	US	Core destroyed	103	v520	14	47	102	102	33	20	7	0.3939	0.2121	1	33	20	0.0
+drakkarfjord_s117_B	drakkarfjord	117	B	US	Core destroyed	120	v520	14	64	119	119	50	38	13	0.24	0.26	1	50	39	0.0
+glacierkeep_s115_A	glacierkeep	115	A	US	Core destroyed	166	v520	12	60	165	165	48	40	31	0.1667	0.6458	1	48	48	0.0
+glacierkeep_s115_B	glacierkeep	115	B	US	Core destroyed	653	v520	12	140	652	652	128	113	14	0.1172	0.1094	1	128	86	0.0
+glacierkeep_s116_A	glacierkeep	116	A	OPP	Core destroyed	391	v520	12	-1	-1	390	379	208	116	0.4512	0.3061	0	260	190	0.314
+glacierkeep_s116_B	glacierkeep	116	B	US	Core destroyed	228	v520	12	168	227	227	156	116	9	0.2564	0.0577	1	156	108	0.0
+glacierkeep_s117_A	glacierkeep	117	A	US	Core destroyed	162	v520	12	99	161	161	87	83	47	0.046	0.5402	1	87	83	0.0
+glacierkeep_s117_B	glacierkeep	117	B	OPP	Core destroyed	858	v520	12	92	-1	857	80	58	6	0.275	0.075	1	80	66	0.0
+midgard_s115_A	midgard	115	A	US	Core destroyed	226	v520	47	158	225	225	111	111	93	0.0	0.8378	1	111	110	0.0
+midgard_s115_B	midgard	115	B	US	Core destroyed	188	v520	47	132	187	187	85	85	80	0.0	0.9412	1	85	80	0.0
+midgard_s116_A	midgard	116	A	US	Core destroyed	229	v520	51	173	228	228	122	122	113	0.0	0.9262	1	122	118	0.0
+midgard_s116_B	midgard	116	B	OPP	Titanium collected (tiebreak)	1000	v520	47	-1	-1	999	953	950	20	0.0031	0.021	0	953	26	0.0
+midgard_s117_A	midgard	117	A	US	Core destroyed	343	v520	48	287	342	342	239	238	85	0.0042	0.3556	1	239	114	0.0
+midgard_s117_B	midgard	117	B	US	Core destroyed	237	v520	47	181	236	236	134	133	120	0.0075	0.8955	1	134	130	0.0
+nordkap_s115_A	nordkap	115	A	US	Titanium collected (tiebreak)	1000	v520	8	45	-1	999	37	35	21	0.0541	0.5676	1	37	36	0.0
+nordkap_s115_B	nordkap	115	B	US	Core destroyed	287	v520	8	60	286	286	52	37	15	0.2885	0.2885	1	52	50	0.0
+nordkap_s116_A	nordkap	116	A	US	Core destroyed	217	v520	8	108	216	216	100	87	40	0.13	0.4	1	100	95	0.0
+nordkap_s116_B	nordkap	116	B	OPP	Core destroyed	279	v520	10	41	-1	278	31	23	10	0.2581	0.3226	1	31	13	0.0
+nordkap_s117_A	nordkap	117	A	US	Core destroyed	177	v520	8	88	176	176	80	78	66	0.025	0.825	1	80	80	0.0
+nordkap_s117_B	nordkap	117	B	US	Core destroyed	373	v520	12	317	372	372	305	294	138	0.0361	0.4525	1	303	292	0.0066
+yulerune_s115_A	yulerune	115	A	US	Core destroyed	481	v520	32	388	480	480	356	356	350	0.0	0.9831	1	356	353	0.0
+yulerune_s115_B	yulerune	115	B	US	Core destroyed	640	v520	29	192	639	639	163	162	96	0.0061	0.589	1	163	106	0.0
+yulerune_s116_A	yulerune	116	A	OPP	Titanium collected (tiebreak)	1000	v520	33	816	-1	999	783	782	777	0.0013	0.9923	1	783	783	0.0
+yulerune_s116_B	yulerune	116	B	OPP	Core destroyed	463	v520	30	-1	-1	462	433	86	57	0.8014	0.1316	0	92	72	0.7875
+yulerune_s117_A	yulerune	117	A	US	Core destroyed	214	v520	29	158	213	213	129	126	113	0.0233	0.876	1	129	124	0.0
+yulerune_s117_B	yulerune	117	B	OPP	Core destroyed	128	v520	31	-1	-1	127	97	97	92	0.0	0.9485	0	97	95	0.0

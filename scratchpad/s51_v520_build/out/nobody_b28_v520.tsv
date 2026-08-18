@@ -1,0 +1,37 @@
+tag	map	seed	seat	ours	cond	turn	arm	arrive	sent	kill	last	window	ge1	ge2	nobody	two_body_share	bought_sentinel	ge1_fp	ge2_fp	nobody_fp
+atoll_s82_A	atoll	82	A	US	Core destroyed	480	v520	10	93	479	479	83	83	21	0.0	0.253	1	83	33	0.0
+atoll_s82_B	atoll	82	B	US	Core destroyed	161	v520	11	60	160	160	49	28	5	0.4286	0.102	1	49	23	0.0
+atoll_s83_A	atoll	83	A	US	Core destroyed	465	v520	10	354	464	464	344	336	4	0.0233	0.0116	1	344	14	0.0
+atoll_s83_B	atoll	83	B	US	Core destroyed	350	v520	13	71	349	349	58	53	25	0.0862	0.431	1	57	31	0.0172
+atoll_s84_A	atoll	84	A	OPP	Core destroyed	893	v520	20	450	-1	892	430	84	0	0.8047	0.0	1	122	6	0.7163
+atoll_s84_B	atoll	84	B	US	Core destroyed	147	v520	11	66	146	146	55	49	25	0.1091	0.4545	1	55	53	0.0
+drakkarfjord_s82_A	drakkarfjord	82	A	US	Core destroyed	88	v520	14	32	87	87	18	15	6	0.1667	0.3333	1	18	17	0.0
+drakkarfjord_s82_B	drakkarfjord	82	B	OPP	Titanium collected (tiebreak)	1000	v520	14	-1	-1	999	986	102	1	0.8966	0.001	0	138	6	0.86
+drakkarfjord_s83_A	drakkarfjord	83	A	US	Core destroyed	106	v520	14	36	105	105	22	20	9	0.0909	0.4091	1	22	20	0.0
+drakkarfjord_s83_B	drakkarfjord	83	B	US	Core destroyed	248	v520	14	192	247	247	178	40	1	0.7753	0.0056	1	60	6	0.6629
+drakkarfjord_s84_A	drakkarfjord	84	A	US	Core destroyed	92	v520	14	36	91	91	22	20	9	0.0909	0.4091	1	22	20	0.0
+drakkarfjord_s84_B	drakkarfjord	84	B	US	Core destroyed	96	v520	14	40	95	95	26	24	12	0.0769	0.4615	1	26	24	0.0
+glacierkeep_s82_A	glacierkeep	82	A	US	Core destroyed	144	v520	12	75	143	143	63	53	23	0.1587	0.3651	1	63	63	0.0
+glacierkeep_s82_B	glacierkeep	82	B	US	Core destroyed	143	v520	12	84	142	142	72	65	8	0.0972	0.1111	1	72	44	0.0
+glacierkeep_s83_A	glacierkeep	83	A	US	Titanium collected (tiebreak)	1000	v520	12	84	-1	999	72	66	39	0.0833	0.5417	1	72	61	0.0
+glacierkeep_s83_B	glacierkeep	83	B	US	Core destroyed	660	v520	12	604	659	659	592	165	8	0.7213	0.0135	1	317	75	0.4645
+glacierkeep_s84_A	glacierkeep	84	A	US	Core destroyed	173	v520	12	65	172	172	53	53	24	0.0	0.4528	1	53	53	0.0
+glacierkeep_s84_B	glacierkeep	84	B	US	Core destroyed	245	v520	12	88	244	244	76	47	13	0.3816	0.1711	1	76	68	0.0
+midgard_s82_A	midgard	82	A	US	Core destroyed	277	v520	48	221	276	276	173	173	166	0.0	0.9595	1	173	173	0.0
+midgard_s82_B	midgard	82	B	US	Core destroyed	482	v520	49	404	481	481	355	354	337	0.0028	0.9493	1	355	354	0.0
+midgard_s83_A	midgard	83	A	OPP	Core destroyed	243	v520	47	68	-1	242	21	21	11	0.0	0.5238	1	21	21	0.0
+midgard_s83_B	midgard	83	B	OPP	Core destroyed	313	v520	47	-1	-1	312	266	265	254	0.0038	0.9549	0	266	261	0.0
+midgard_s84_A	midgard	84	A	OPP	Core destroyed	222	v520	48	140	-1	221	92	92	82	0.0	0.8913	1	92	90	0.0
+midgard_s84_B	midgard	84	B	OPP	Core destroyed	209	v520	51	45	-1	208	0	0	0			1	0	0	
+nordkap_s82_A	nordkap	82	A	OPP	Titanium collected (tiebreak)	1000	v520	8	-1	-1	999	992	102	19	0.8972	0.0192	0	217	38	0.7812
+nordkap_s82_B	nordkap	82	B	OPP	Core destroyed	543	v520	8	-1	-1	542	535	117	14	0.7813	0.0262	0	132	25	0.7533
+nordkap_s83_A	nordkap	83	A	US	Core destroyed	228	v520	8	154	227	227	146	82	10	0.4384	0.0685	1	146	41	0.0
+nordkap_s83_B	nordkap	83	B	OPP	Core destroyed	241	v520	13	-1	-1	240	228	222	125	0.0263	0.5482	0	228	138	0.0
+nordkap_s84_A	nordkap	84	A	US	Core destroyed	133	v520	8	44	132	132	36	31	15	0.1389	0.4167	1	36	33	0.0
+nordkap_s84_B	nordkap	84	B	OPP	Core destroyed	184	v520	13	-1	-1	183	171	161	142	0.0585	0.8304	0	171	155	0.0
+yulerune_s82_A	yulerune	82	A	US	Core destroyed	230	v520	30	179	229	229	149	148	140	0.0067	0.9396	1	149	146	0.0
+yulerune_s82_B	yulerune	82	B	US	Core destroyed	283	v520	26	158	282	282	132	125	115	0.053	0.8712	1	132	122	0.0
+yulerune_s83_A	yulerune	83	A	US	Core destroyed	204	v520	29	148	203	203	119	117	111	0.0168	0.9328	1	119	115	0.0
+yulerune_s83_B	yulerune	83	B	OPP	Titanium collected (tiebreak)	1000	v520	31	552	-1	999	521	520	509	0.0019	0.977	1	521	513	0.0
+yulerune_s84_A	yulerune	84	A	OPP	Titanium collected (tiebreak)	1000	v520	32	-1	-1	999	968	968	962	0.0	0.9938	0	968	965	0.0
+yulerune_s84_B	yulerune	84	B	OPP	Core destroyed	247	v520	33	-1	-1	246	214	108	44	0.4953	0.2056	0	111	50	0.4813

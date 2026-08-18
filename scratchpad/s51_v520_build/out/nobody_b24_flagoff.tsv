@@ -1,0 +1,37 @@
+tag	map	seed	seat	ours	cond	turn	arm	arrive	sent	kill	last	window	ge1	ge2	nobody	two_body_share	bought_sentinel	ge1_fp	ge2_fp	nobody_fp
+atoll_s70_A	atoll	70	A	OPP	Core destroyed	364	flagoff	7	31	-1	363	24	4	0	0.8333	0.0	1	9	0	0.625
+atoll_s70_B	atoll	70	B	US	Core destroyed	929	flagoff	6	844	928	928	838	827	82	0.0131	0.0979	1	836	155	0.0024
+atoll_s71_A	atoll	71	A	OPP	Core destroyed	349	flagoff	6	194	-1	348	188	92	12	0.5106	0.0638	1	108	29	0.4255
+atoll_s71_B	atoll	71	B	US	Core destroyed	196	flagoff	7	98	195	195	91	82	26	0.0989	0.2857	1	91	41	0.0
+atoll_s72_A	atoll	72	A	US	Core destroyed	162	flagoff	9	106	161	161	97	79	27	0.1856	0.2784	1	94	71	0.0309
+atoll_s72_B	atoll	72	B	OPP	Core destroyed	192	flagoff	6	-1	-1	191	186	53	10	0.7151	0.0538	0	57	14	0.6935
+drakkarfjord_s70_A	drakkarfjord	70	A	US	Core destroyed	358	flagoff	10	312	357	357	302	216	18	0.2848	0.0596	1	221	22	0.2682
+drakkarfjord_s70_B	drakkarfjord	70	B	US	Titanium collected (tiebreak)	1000	flagoff	10	69	-1	999	59	43	0	0.2712	0.0	1	57	0	0.0339
+drakkarfjord_s71_A	drakkarfjord	71	A	US	Core destroyed	249	flagoff	10	132	248	248	122	67	3	0.4508	0.0246	1	106	6	0.1311
+drakkarfjord_s71_B	drakkarfjord	71	B	US	Core destroyed	193	flagoff	10	92	192	192	82	41	0	0.5	0.0	1	80	0	0.0244
+drakkarfjord_s72_A	drakkarfjord	72	A	OPP	Core destroyed	792	flagoff	10	356	-1	791	346	55	0	0.841	0.0	1	86	0	0.7514
+drakkarfjord_s72_B	drakkarfjord	72	B	US	Core destroyed	143	flagoff	10	65	142	142	55	31	0	0.4364	0.0	1	55	0	0.0
+glacierkeep_s70_A	glacierkeep	70	A	US	Core destroyed	217	flagoff	8	79	216	216	71	55	4	0.2254	0.0563	1	71	37	0.0
+glacierkeep_s70_B	glacierkeep	70	B	US	Core destroyed	157	flagoff	8	52	156	156	44	32	4	0.2727	0.0909	1	44	13	0.0
+glacierkeep_s71_A	glacierkeep	71	A	US	Core destroyed	133	flagoff	8	56	132	132	48	28	8	0.4167	0.1667	1	48	21	0.0
+glacierkeep_s71_B	glacierkeep	71	B	OPP	Core destroyed	533	flagoff	8	64	-1	532	56	45	12	0.1964	0.2143	1	56	24	0.0
+glacierkeep_s72_A	glacierkeep	72	A	US	Core destroyed	269	flagoff	8	120	268	268	112	69	0	0.3839	0.0	1	112	59	0.0
+glacierkeep_s72_B	glacierkeep	72	B	US	Core destroyed	185	flagoff	8	82	184	184	74	54	7	0.2703	0.0946	1	74	37	0.0
+midgard_s70_A	midgard	70	A	US	Core destroyed	341	flagoff	53	188	340	340	135	133	119	0.0148	0.8815	1	135	130	0.0
+midgard_s70_B	midgard	70	B	US	Core destroyed	166	flagoff	51	116	165	165	65	65	47	0.0	0.7231	1	65	61	0.0
+midgard_s71_A	midgard	71	A	OPP	Core destroyed	201	flagoff	53	-1	-1	200	148	148	137	0.0	0.9257	0	148	144	0.0
+midgard_s71_B	midgard	71	B	OPP	Core destroyed	309	flagoff	54	-1	-1	308	255	255	243	0.0	0.9529	0	255	254	0.0
+midgard_s72_A	midgard	72	A	US	Core destroyed	254	flagoff	50	198	253	253	148	147	139	0.0068	0.9392	1	148	148	0.0
+midgard_s72_B	midgard	72	B	US	Core destroyed	371	flagoff	53	315	370	370	262	262	237	0.0	0.9046	1	262	246	0.0
+nordkap_s70_A	nordkap	70	A	OPP	Core destroyed	362	flagoff	4	-1	-1	361	358	41	7	0.8855	0.0196	0	67	23	0.8128
+nordkap_s70_B	nordkap	70	B	US	Core destroyed	205	flagoff	4	132	204	204	128	120	69	0.0625	0.5391	1	125	106	0.0234
+nordkap_s71_A	nordkap	71	A	US	Core destroyed	401	flagoff	4	332	400	400	328	258	14	0.2134	0.0427	1	325	109	0.0091
+nordkap_s71_B	nordkap	71	B	OPP	Core destroyed	363	flagoff	4	-1	-1	362	359	118	22	0.6713	0.0613	0	136	48	0.6212
+nordkap_s72_A	nordkap	72	A	US	Core destroyed	348	flagoff	4	292	347	347	288	101	73	0.6493	0.2535	1	288	84	0.0
+nordkap_s72_B	nordkap	72	B	US	Core destroyed	144	flagoff	4	88	143	143	84	67	10	0.2024	0.119	1	84	19	0.0
+yulerune_s70_A	yulerune	70	A	OPP	Core destroyed	693	flagoff	36	-1	-1	692	657	657	654	0.0	0.9954	0	657	657	0.0
+yulerune_s70_B	yulerune	70	B	OPP	Core destroyed	315	flagoff	33	-1	-1	314	282	60	40	0.7872	0.1418	0	64	46	0.773
+yulerune_s71_A	yulerune	71	A	US	Core destroyed	261	flagoff	29	168	260	260	139	137	127	0.0144	0.9137	1	139	134	0.0
+yulerune_s71_B	yulerune	71	B	OPP	Core destroyed	336	flagoff	29	-1	-1	335	307	80	36	0.7394	0.1173	0	91	42	0.7036
+yulerune_s72_A	yulerune	72	A	US	Core destroyed	890	flagoff	28	834	889	889	806	346	242	0.5707	0.3002	1	373	251	0.5372
+yulerune_s72_B	yulerune	72	B	US	Core destroyed	377	flagoff	31	212	376	376	181	179	167	0.011	0.9227	1	181	176	0.0

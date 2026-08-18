@@ -1,0 +1,5 @@
+Update available: 2.3.6 -> 2.3.8. Run: pip install --upgrade fcode
+APPT520 CLAIM 3 id 7
+APPT520 BUSY 4 id 9 held 7
+ARC520 CLAIM 11 id 3 body 1 arc 2 at (8, 19)
+ARC520 CLAIM 12 id 7 body 2 arc 1 at (9, 17)

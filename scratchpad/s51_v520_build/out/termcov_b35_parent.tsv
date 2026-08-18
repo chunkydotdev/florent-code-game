@@ -1,0 +1,43 @@
+tag	map	seed	seat	ours	cond	turn	arm	game_rounds	game_jumps	eid	birth	pos	dsq_core	dsq_centre	n_seats	coverage	coverage_ferry	best_cov_site	lifetime	died	death_round	n_launch	n_launch_seat	ever_launched
+atoll_s103_A	atoll	103	A	OPP	Titanium collected (tiebreak)	1000	parent	1000	14	28	8	13,5	5	8.5	8	1	1	2	2	1	10	1	0	1
+atoll_s103_A	atoll	103	A	OPP	Titanium collected (tiebreak)	1000	parent	1000	14	36	12	13,5	5	8.5	8	1	1	2	4	1	16	2	0	1
+atoll_s103_B	atoll	103	B	OPP	Core destroyed	271	parent	271	41	28	8	2,12	1	6.5	8	2	2	2	263	0	-1	31	1	1
+atoll_s103_B	atoll	103	B	OPP	Core destroyed	271	parent	271	41	312	197	4,8	26	44.5	8	0	0	2	1	1	198	1	0	1
+atoll_s103_B	atoll	103	B	OPP	Core destroyed	271	parent	271	41	360	237	4,10	10	22.5	8	0	0	2	1	1	238	1	0	1
+atoll_s103_B	atoll	103	B	OPP	Core destroyed	271	parent	271	41	387	261	7,10	25	40.5	8	0	0	2	1	1	262	1	0	1
+atoll_s104_A	atoll	104	A	OPP	Core destroyed	208	parent	208	24	17	5	12,4	2	8.5	8	1	1	2	4	1	9	3	1	1
+atoll_s104_A	atoll	104	A	OPP	Core destroyed	208	parent	208	24	36	15	13,0	2	8.5	8	1	1	2	193	0	-1	17	0	1
+atoll_s104_B	atoll	104	B	US	Core destroyed	196	parent	196	30	23	6	3,12	1	6.5	8	2	2	2	190	0	-1	28	1	1
+atoll_s105_A	atoll	105	A	OPP	Core destroyed	399	parent	399	33	28	8	13,5	5	8.5	8	1	1	2	2	1	10	1	0	1
+atoll_s105_A	atoll	105	A	OPP	Core destroyed	399	parent	399	33	36	12	13,5	5	8.5	8	1	1	2	4	1	16	2	0	1
+atoll_s105_A	atoll	105	A	OPP	Core destroyed	399	parent	399	33	417	247	13,0	2	8.5	8	1	1	2	152	0	-1	23	0	1
+atoll_s105_B	atoll	105	B	OPP	Core destroyed	280	parent	280	6	22	6	4,13	2	4.5	8	2	2	2	13	1	19	4	1	1
+drakkarfjord_s103_A	drakkarfjord	103	A	OPP	Core destroyed	270	parent	270	52	15	9	22,8	18	32.5	8	0	0	2	1	1	10	1	0	1
+drakkarfjord_s103_A	drakkarfjord	103	A	OPP	Core destroyed	270	parent	270	52	93	39	27,7	4	6.5	8	2	2	2	231	0	-1	47	3	1
+drakkarfjord_s103_B	drakkarfjord	103	B	US	Core destroyed	404	parent	404	32	15	9	6,20	18	32.5	8	0	0	2	1	1	10	1	0	1
+drakkarfjord_s103_B	drakkarfjord	103	B	US	Core destroyed	404	parent	404	32	510	234	6,21	13	24.5	8	0	0	2	1	1	235	1	0	1
+drakkarfjord_s103_B	drakkarfjord	103	B	US	Core destroyed	404	parent	404	32	589	264	7,21	20	32.5	8	0	0	2	1	1	265	1	0	1
+drakkarfjord_s103_B	drakkarfjord	103	B	US	Core destroyed	404	parent	404	32	748	335	6,21	13	24.5	8	0	0	2	1	1	336	1	0	1
+drakkarfjord_s103_B	drakkarfjord	103	B	US	Core destroyed	404	parent	404	32	886	398	6,21	13	24.5	8	0	0	2	1	1	399	1	0	1
+drakkarfjord_s104_A	drakkarfjord	104	A	OPP	Core destroyed	792	parent	792	44	15	9	22,8	18	32.5	8	0	0	2	1	1	10	1	0	1
+drakkarfjord_s104_B	drakkarfjord	104	B	US	Core destroyed	201	parent	201	5	15	9	7,21	20	32.5	8	0	0	2	1	1	10	1	0	1
+drakkarfjord_s105_A	drakkarfjord	105	A	US	Core destroyed	240	parent	240	5	15	9	22,8	18	32.5	8	0	0	2	1	1	10	1	0	1
+drakkarfjord_s105_B	drakkarfjord	105	B	US	Core destroyed	153	parent	153	5	15	9	7,21	20	32.5	8	0	0	2	1	1	10	1	0	1
+glacierkeep_s103_A	glacierkeep	103	A	US	Core destroyed	209	parent	209	4	14	7	16,23	5	14.5	8	0	0	2	1	1	8	1	0	1
+glacierkeep_s103_B	glacierkeep	103	B	US	Titanium collected (tiebreak)	1000	parent	1000	4	14	7	16,6	10	14.5	8	0	0	2	1	1	8	1	0	1
+glacierkeep_s104_A	glacierkeep	104	A	US	Core destroyed	193	parent	193	4	14	7	16,23	5	14.5	8	0	0	2	1	1	8	1	0	1
+glacierkeep_s104_B	glacierkeep	104	B	US	Core destroyed	357	parent	357	37	14	7	16,6	10	14.5	8	0	0	2	1	1	8	1	0	1
+glacierkeep_s104_B	glacierkeep	104	B	US	Core destroyed	357	parent	357	37	100	256	14,0	1	6.5	8	2	2	2	101	0	-1	33	1	1
+glacierkeep_s105_A	glacierkeep	105	A	US	Core destroyed	193	parent	193	4	14	7	16,23	5	14.5	8	0	0	2	1	1	8	1	0	1
+glacierkeep_s105_B	glacierkeep	105	B	US	Core destroyed	213	parent	213	4	14	7	16,6	10	14.5	8	0	0	2	1	1	8	1	0	1
+glacierkeep_s105_B	glacierkeep	105	B	US	Core destroyed	213	parent	213	4	86	80	12,3	1	6.5	8	2	2	2	133	0	-1	0	0	0
+nordkap_s103_A	nordkap	103	A	OPP	Core destroyed	159	parent	159	10	11	3	10,15	4	12.5	8	0	0	2	1	1	4	1	0	1
+nordkap_s103_A	nordkap	103	A	OPP	Core destroyed	159	parent	159	10	17	6	11,20	2	4.5	8	2	2	2	153	0	-1	8	1	1
+nordkap_s103_B	nordkap	103	B	US	Titanium collected (tiebreak)	1000	parent	1000	2	11	3	10,10	9	12.5	8	0	0	2	1	1	4	1	0	1
+nordkap_s104_A	nordkap	104	A	US	Core destroyed	160	parent	160	2	11	3	10,15	4	12.5	8	0	0	2	1	1	4	1	0	1
+nordkap_s104_A	nordkap	104	A	US	Core destroyed	160	parent	160	2	79	56	9,16	1	6.5	8	2	2	2	104	0	-1	0	0	0
+nordkap_s104_B	nordkap	104	B	US	Core destroyed	169	parent	169	5	11	3	10,10	9	12.5	8	0	0	2	1	1	4	1	0	1
+nordkap_s104_B	nordkap	104	B	US	Core destroyed	169	parent	169	5	18	7	11,5	2	4.5	8	2	2	2	2	1	9	1	0	1
+nordkap_s104_B	nordkap	104	B	US	Core destroyed	169	parent	169	5	73	49	7,6	1	6.5	8	2	2	2	120	0	-1	2	0	1
+nordkap_s105_A	nordkap	105	A	OPP	Core destroyed	177	parent	177	2	11	3	10,15	4	12.5	8	0	0	2	1	1	4	1	0	1
+nordkap_s105_B	nordkap	105	B	US	Core destroyed	708	parent	708	2	11	3	10,10	9	12.5	8	0	0	2	1	1	4	1	0	1

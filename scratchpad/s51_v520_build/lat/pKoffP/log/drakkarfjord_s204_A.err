@@ -1,0 +1,42 @@
+Update available: 2.3.6 -> 2.3.8. Run: pip install --upgrade fcode
+FS GATE 0 sig (30, 30, (2, 24), (26, 4)) ok 1
+FS GATE 1 sig (30, 30, (2, 24), (26, 4)) ok 1
+FS PHASE 1 id 3 ph 1 d 808 at (4, 23)
+FS HOPBUILD 1 at (4, 23) lch (5, 23) T (28, 3)
+FS GATE 2 sig (30, 30, (2, 24), (26, 4)) ok 1
+FS GATE 2 sig (30, 30, (2, 24), (26, 4)) ok 1
+FS THROW 2 from (4, 22) to (9, 20) T (28, 3) body 3 n 1 dsq 514
+FS HOPBUILD 3 at (9, 20) lch (10, 20) T (28, 3)
+FS GATE 3 sig (30, 30, (2, 24), (26, 4)) ok 1
+FS GATE 4 sig (30, 30, (2, 24), (26, 4)) ok 1
+FS THROW 4 from (9, 19) to (14, 17) T (28, 3) body 3 n 1 dsq 288
+FS HOPBUILD 5 at (14, 17) lch (14, 16) T (28, 3)
+FS GATE 6 sig (30, 30, (2, 24), (26, 4)) ok 1
+FS THROW 6 from (15, 17) to (18, 13) T (28, 3) body 3 n 1 dsq 128
+FS HOPBUILD 7 at (18, 13) lch (18, 12) T (28, 3)
+FS GATE 8 sig (30, 30, (2, 24), (26, 4)) ok 1
+FS THROW 8 from (19, 13) to (22, 9) T (28, 3) body 3 n 1 dsq 32
+FS HOPBUILD 9 at (22, 9) lch (22, 8) T (28, 3)
+FS GATE 10 sig (30, 30, (2, 24), (26, 4)) ok 1
+FS THROW 10 from (23, 9) to (25, 4) T (28, 3) body 3 n 1 dsq 1
+FS ARRIVE 11 id 3 body 1 at (25, 4) dsq 1
+FS PHASE 11 id 3 ph 2 d 1 at (25, 4)
+FS SEAL 11 tile (25, 5) n 1
+FS SEAL 12 tile (25, 3) n 2
+FS GATE 13 sig (30, 30, (2, 24), (26, 4)) ok 1
+FS SEAL 14 tile (25, 4) n 3
+FS GATE 14 sig (30, 30, (2, 24), (26, 4)) ok 1
+FS STAT 20 id 3 at (23, 4) need 7 orth 6 ti 36 ammo 4 sen 0 hp 40 covden 0 eco 0 lost 0
+FS SEAL 21 tile (25, 4) n 4
+FS SEAL 23 tile (25, 3) n 5
+FS SEAL 31 tile (26, 3) n 6
+FS SEAL 33 tile (27, 3) n 7
+FS SEAL 36 tile (28, 4) n 8
+FS STAT 40 id 3 at (29, 5) need 5 orth 4 ti 64 ammo 24 sen 0 hp 40 covden 0 eco 1 lost 0
+FS SEAL 40 tile (28, 5) n 9
+FS SEAL 43 tile (27, 6) n 10
+FS CLEAR 55 tile (26, 6) peck 1
+FS RUNG 55 id 3 r 3 hi -
+FS CLEAR 56 tile (26, 6) peck 2
+FS RUNG 56 id 3 r 3 hi -
+FS RETREAT 58 id 3 hp 4 from (25, 7) to (25, 8)

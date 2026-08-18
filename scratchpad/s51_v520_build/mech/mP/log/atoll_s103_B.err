@@ -1,0 +1,103 @@
+Update available: 2.3.6 -> 2.3.8. Run: pip install --upgrade fcode
+FS GATE 0 sig (18, 18, (2, 14), (14, 2)) ok 1
+FS GATE 1 sig (18, 18, (2, 14), (14, 2)) ok 1
+FS PHASE 1 id 4 ph 1 d 200 at (13, 4)
+GF519 1 id 4 d 200 band 0 ti 434 ammo 0 gun 28 lau 28 bar 4 cd 0 lp 0 plants 0
+FS HOPBUILD 1 at (13, 4) lch (13, 5) T (1, 16)
+GF519 2 id 4 d 200 band 0 ti 361 ammo 0 gun 34 lau 34 bar 5 cd 0 lp 1 plants 0
+FS GATE 2 sig (18, 18, (2, 14), (14, 2)) ok 1
+FS GATE 2 sig (18, 18, (2, 14), (14, 2)) ok 1
+FS THROW 2 from (12, 4) to (9, 8) T (1, 16) body 4 n 1 dsq 72
+GF519 3 id 4 d 72 band 1 ti 327 ammo 0 gun 33 lau 33 bar 4 cd 0 lp 0 plants 0
+FS HOPBUILD 3 at (9, 8) lch (9, 9) T (1, 16)
+FS GATE 3 sig (18, 18, (2, 14), (14, 2)) ok 1
+GF519 4 id 4 d 72 band 1 ti 294 ammo 0 gun 35 lau 35 bar 5 cd 0 lp 1 plants 0
+FS GATE 4 sig (18, 18, (2, 14), (14, 2)) ok 1
+FS THROW 4 from (8, 8) to (5, 12) T (1, 16) body 4 n 1 dsq 8
+FS ARRIVE 5 id 4 body 1 at (5, 12) dsq 8
+FS PHASE 5 id 4 ph 2 d 8 at (5, 12)
+FS EVICTOR 6 at (4, 13) ucov 0 cov 1 unseal 2 obs 2
+FS RUNG 6 id 4 r 2 hi -
+FS GATE 7 sig (18, 18, (2, 14), (14, 2)) ok 1
+FS GATE 7 sig (18, 18, (2, 14), (14, 2)) ok 1
+FS EVICT 7 from (5, 14) to (5, 8)
+FS SEAL 8 tile (3, 13) n 1
+FS GATE 8 sig (18, 18, (2, 14), (14, 2)) ok 1
+FS EVICT 9 from (3, 12) to (9, 12)
+FS DODGE 10 id 4 from (3, 11) to (2, 11) cov 2 -> 0 hit 0 hp 22
+FS EVICT 10 from (4, 14) to (5, 8)
+FS EVICT 12 from (3, 12) to (9, 12)
+FS SEAL 13 tile (1, 13) n 2
+FS SEAL 15 tile (2, 13) n 3
+FS STAT 20 id 4 at (0, 14) need 7 orth 7 ti 151 ammo 24 sen 0 hp 22 covden 0 eco 1 lost 0
+FS SEAL 20 tile (1, 14) n 4
+FS CLEAR 22 tile (1, 15) peck 1
+FS RUNG 22 id 4 r 3 hi -
+FS CLEAR 23 tile (1, 15) peck 2
+FS RUNG 23 id 4 r 3 hi -
+FS CLEAR 24 tile (1, 15) peck 3
+FS RUNG 24 id 4 r 3 hi -
+FS CLEAR 25 tile (1, 15) peck 4
+FS RUNG 25 id 4 r 3 hi -
+FS CLEAR 26 tile (1, 15) peck 5
+FS RUNG 26 id 4 r 3 hi -
+FS CLEAR 27 tile (1, 15) peck 6
+FS RUNG 27 id 4 r 3 hi -
+FS CLEAR 28 tile (1, 15) peck 7
+FS RUNG 28 id 4 r 3 hi -
+FS DODGE 29 id 4 from (0, 15) to (1, 15) cov 1 -> 0 hit 0 hp 22
+FS EVICT 29 from (3, 12) to (9, 12)
+FS SEAL 31 tile (2, 16) n 5
+FS CLEAR 32 tile (1, 15) peck 1
+FS RUNG 32 id 4 r 3 hi -
+FS EVICT 32 from (3, 12) to (9, 12)
+FS CLEAR 33 tile (1, 15) peck 2
+FS RUNG 33 id 4 r 3 hi -
+FS EVICT 33 from (5, 12) to (0, 16)
+FS CLEAR 34 tile (1, 15) peck 3
+FS RUNG 34 id 4 r 3 hi -
+FS CLEARED 35 tile (1, 15) n 1
+FS SEAL 35 tile (1, 15) n 6
+FS SEALCLR 35 tile (1, 15) lag 0
+FS EVICT 36 from (5, 12) to (0, 16)
+FS STAT 40 id 4 at (1, 16) need 5 orth 5 ti 85 ammo 24 sen 0 hp 22 covden 0 eco 1 lost 0
+FS EVICT 50 from (5, 12) to (8, 10)
+FS STAT 60 id 4 at (1, 16) need 7 orth 6 ti 40 ammo 24 sen 0 hp 22 covden 0 eco 1 lost 0
+FS EVICT 68 from (3, 12) to (9, 12)
+FS EVICT 72 from (5, 12) to (0, 16)
+FS STAT 80 id 4 at (1, 16) need 4 orth 4 ti 11 ammo 18 sen 0 hp 22 covden 0 eco 1 lost 0
+FS EVICT 95 from (3, 12) to (9, 12)
+FS EVICT 99 from (5, 12) to (0, 16)
+FS STAT 100 id 4 at (1, 16) need 4 orth 4 ti 22 ammo 23 sen 0 hp 22 covden 0 eco 1 lost 0
+FS DODGE 101 id 4 from (1, 16) to (1, 15) cov 1 -> 0 hit 0 hp 22
+FS DODGE 105 id 4 from (1, 16) to (1, 15) cov 1 -> 0 hit 0 hp 4
+PRES520 115 ti 31 res 144 floor 144 bind 1 rounds 1 vacant 1 until 135
+PRES520 116 ti 41 res 134 floor 134 bind 2 rounds 2 vacant 2 until 136
+PRES520 117 ti 41 res 134 floor 134 bind 3 rounds 3 vacant 3 until 137
+PRES520 118 ti 41 res 134 floor 134 bind 4 rounds 4 vacant 4 until 138
+PRES520 119 ti 41 res 134 floor 134 bind 5 rounds 5 vacant 5 until 139
+FS EVICT 119 from (3, 12) to (9, 12)
+PRES520 120 ti 51 res 134 floor 134 bind 6 rounds 6 vacant 6 until 140
+PRES520 121 ti 51 res 134 floor 134 bind 7 rounds 7 vacant 7 until 141
+FS EVICT 121 from (3, 12) to (9, 12)
+PRES520 122 ti 51 res 134 floor 134 bind 8 rounds 8 vacant 8 until 142
+PRES520 123 ti 51 res 134 floor 134 bind 9 rounds 9 vacant 9 until 143
+FS EVICT 123 from (5, 12) to (0, 16)
+PRES520 124 ti 61 res 134 floor 134 bind 10 rounds 10 vacant 10 until 144
+PRES520 125 ti 61 res 134 floor 134 bind 11 rounds 11 vacant 11 until 145
+FS EVICT 125 from (5, 12) to (0, 16)
+PRES520 126 ti 61 res 134 floor 134 bind 12 rounds 12 vacant 12 until 146
+PRES520 127 ti 61 res 134 floor 134 bind 13 rounds 13 vacant 13 until 147
+PRES520 128 ti 71 res 134 floor 134 bind 14 rounds 14 vacant 14 until 148
+FS EVICT 135 from (3, 12) to (9, 12)
+FS EVICT 138 from (3, 12) to (9, 12)
+FS EVICT 140 from (5, 12) to (0, 16)
+FS EVICT 142 from (5, 12) to (0, 16)
+FS GATE 157 sig (18, 18, (2, 14), (14, 2)) ok 1
+FS PHASE 157 id 203 ph 1 d 200 at (13, 4)
+FS HOPBUILD 157 at (13, 4) lch (13, 5) T (1, 16)
+FS GATE 158 sig (18, 18, (2, 14), (14, 2)) ok 1
+FS THROW 158 from (12, 4) to (10, 9) T (1, 16) body 203 n 1 dsq 74
+FS ARRIVE 171 id 203 body 1 at (3, 12) dsq 4
+FS PHASE 171 id 203 ph 2 d 4 at (3, 12)
+FS DODGE 172 id 203 from (4, 12) to (3, 12) cov 1 -> 0 hit 0 hp 4

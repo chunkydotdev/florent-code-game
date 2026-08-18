@@ -1,0 +1,185 @@
+Update available: 2.3.6 -> 2.3.8. Run: pip install --upgrade fcode
+FS GATE 0 sig (18, 18, (2, 14), (14, 2)) ok 1
+FS GATE 1 sig (18, 18, (2, 14), (14, 2)) ok 1
+FS PHASE 1 id 3 ph 1 d 200 at (4, 13)
+FS GATE 2 sig (18, 18, (2, 14), (14, 2)) ok 1
+FS GATE 3 sig (18, 18, (2, 14), (14, 2)) ok 1
+FS GATE 4 sig (18, 18, (2, 14), (14, 2)) ok 1
+FS PHASE 4 id 10 ph 1 d 221 at (3, 13)
+FS HOPBUILD 5 at (4, 13) lch (4, 12) T (16, 1)
+FS GATE 6 sig (18, 18, (2, 14), (14, 2)) ok 1
+FS THROW 6 from (5, 13) to (8, 9) T (16, 1) body 3 n 1 dsq 72
+FS HOPBUILD 7 at (8, 9) lch (8, 8) T (16, 1)
+FS THROW 7 from (5, 11) to (7, 8) T (16, 1) body 10 n 2 dsq 74
+FS GATE 8 sig (18, 18, (2, 14), (14, 2)) ok 1
+FS THROW 8 from (9, 9) to (12, 5) T (16, 1) body 3 n 1 dsq 8
+FS ARRIVE 9 id 3 body 1 at (12, 5) dsq 8
+FS PHASE 9 id 3 ph 2 d 8 at (12, 5)
+FS EVICTOR 9 at (12, 4) ucov 0 cov 1 unseal 1 obs 1
+FS RUNG 9 id 3 r 2 hi -
+FS THROW 9 from (8, 7) to (11, 4) T (16, 1) body 10 n 2 dsq 10
+FS GATE 10 sig (18, 18, (2, 14), (14, 2)) ok 1
+FS SPLIT 10 arc 2 to (13, 1) body 3 walk 1
+FS SEAL 11 tile (13, 2) n 1
+FS EVICT 11 from (13, 4) to (7, 5)
+FS GATE 11 sig (18, 18, (2, 14), (14, 2)) ok 1
+FS CLEAR 12 tile (14, 1) peck 1
+FS RUNG 12 id 3 r 3 hi -
+FS ARRIVE 12 id 10 body 2 at (12, 3) dsq 4
+FS PHASE 12 id 10 ph 2 d 4 at (12, 3)
+FS SEAL 12 tile (13, 3) n 1
+FS CLEAR 13 tile (14, 1) peck 2
+FS RUNG 13 id 3 r 3 hi -
+FS SPLIT 13 arc 1 to (12, 2) body 10 walk 1
+FS CLEAR 14 tile (14, 1) peck 3
+FS RUNG 14 id 3 r 3 hi -
+FS DODGE 15 id 3 from (13, 1) to (13, 0) cov 1 -> 0 hit 0 hp 40
+FS DODGE 16 id 10 from (11, 3) to (12, 3) cov 1 -> 0 hit 0 hp 22
+FS CLEAR 17 tile (13, 1) peck 1
+FS RUNG 17 id 3 r 3 hi -
+FS EVICT 17 from (11, 3) to (12, 9)
+FS CLEAR 18 tile (13, 1) peck 2
+FS RUNG 18 id 3 r 3 hi -
+FS DODGE 18 id 10 from (12, 2) to (12, 3) cov 1 -> 0 hit 0 hp 4
+FS CLEAR 19 tile (13, 1) peck 3
+FS RUNG 19 id 3 r 3 hi -
+FS STAT 20 id 3 at (13, 0) need 7 orth 6 ti 87 ammo 24 sen 0 hp 40 covden 0 eco 1 lost 0
+FS CLEAR 20 tile (13, 1) peck 4
+FS RUNG 20 id 3 r 3 hi -
+FS CLEAR 21 tile (13, 1) peck 5
+FS RUNG 21 id 3 r 3 hi -
+FS CLEAR 22 tile (13, 1) peck 6
+FS RUNG 22 id 3 r 3 hi -
+FS CLEAR 23 tile (13, 1) peck 7
+FS RUNG 23 id 3 r 3 hi -
+FS CLEARED 24 tile (13, 1) n 1
+FS SEAL 24 tile (13, 1) n 2
+FS SEALCLR 24 tile (13, 1) lag 0
+PRES520 26 ti 86 res 119 floor 119 bind 1 rounds 1 vacant 1 until 46
+PRES520 27 ti 17 res 129 floor 129 bind 2 rounds 2 vacant 2 until 47
+PRES520 28 ti 35 res 129 floor 129 bind 3 rounds 3 vacant 3 until 48
+PRES520 29 ti 33 res 129 floor 129 bind 4 rounds 4 vacant 4 until 49
+PRES520 30 ti 41 res 129 floor 129 bind 5 rounds 5 vacant 5 until 50
+PRES520 31 ti 39 res 129 floor 129 bind 6 rounds 6 vacant 6 until 51
+FS EVICT 31 from (13, 4) to (7, 5)
+PRES520 32 ti 57 res 128 floor 128 bind 7 rounds 7 vacant 7 until 52
+FS SEAL 32 tile (13, 1) n 3
+PRES520 33 ti 48 res 129 floor 129 bind 8 rounds 8 vacant 8 until 53
+PRES520 34 ti 56 res 129 floor 129 bind 9 rounds 9 vacant 9 until 54
+PRES520 35 ti 53 res 129 floor 129 bind 10 rounds 10 vacant 10 until 55
+PRES520 36 ti 70 res 129 floor 129 bind 11 rounds 11 vacant 11 until 56
+FS EVICT 36 from (13, 4) to (7, 5)
+PRES520 37 ti 69 res 128 floor 128 bind 12 rounds 12 vacant 12 until 57
+FS SEAL 37 tile (13, 1) n 4
+PRES520 38 ti 72 res 129 floor 129 bind 13 rounds 13 vacant 13 until 58
+PRES520 39 ti 71 res 129 floor 129 bind 14 rounds 14 vacant 14 until 59
+FS STAT 40 id 3 at (13, 0) need 6 orth 6 ti 73 ammo 16 sen 0 hp 40 covden 0 eco 1 lost 0
+FS EVICT 42 from (11, 3) to (12, 9)
+FS SEAL 44 tile (13, 1) n 5
+FS EVICT 47 from (13, 5) to (7, 5)
+FS SEAL 50 tile (13, 1) n 6
+FS EVICT 51 from (11, 5) to (17, 5)
+FS SEAL 56 tile (13, 1) n 7
+PRESKILL520 60 id 3 body 1
+FS GATE 169 sig (18, 18, (2, 14), (14, 2)) ok 1
+FS PHASE 169 id 222 ph 1 d 290 at (1, 14)
+FS HOPBUILD 170 at (1, 13) lch (1, 12) T (16, 1)
+FS GATE 171 sig (18, 18, (2, 14), (14, 2)) ok 1
+FS THROW 171 from (1, 13) to (5, 9) T (16, 1) body 222 n 1 dsq 117
+FS ARRIVE 183 id 222 body 1 at (12, 5) dsq 8
+FS PHASE 183 id 222 ph 2 d 8 at (12, 5)
+FS DODGE 186 id 222 from (11, 3) to (12, 3) cov 1 -> 0 hit 0 hp 22
+FS DODGE 188 id 222 from (12, 2) to (12, 3) cov 1 -> 0 hit 0 hp 4
+FS GATE 285 sig (18, 18, (2, 14), (14, 2)) ok 1
+FS PHASE 285 id 340 ph 1 d 290 at (1, 14)
+FS HOPBUILD 286 at (1, 13) lch (1, 12) T (16, 1)
+FS GATE 287 sig (18, 18, (2, 14), (14, 2)) ok 1
+FS THROW 287 from (1, 13) to (5, 9) T (16, 1) body 340 n 1 dsq 117
+FS ARRIVE 299 id 340 body 1 at (12, 5) dsq 8
+FS PHASE 299 id 340 ph 2 d 8 at (12, 5)
+FS STAT 300 id 340 at (11, 5) need 7 orth 6 ti 27 ammo 20 sen 0 hp 40 covden 0 eco 1 lost 0
+FS DODGE 302 id 340 from (11, 3) to (12, 3) cov 1 -> 0 hit 0 hp 22
+FS DODGE 304 id 340 from (12, 2) to (12, 3) cov 1 -> 0 hit 0 hp 4
+FS GATE 401 sig (18, 18, (2, 14), (14, 2)) ok 1
+FS PHASE 401 id 465 ph 1 d 290 at (1, 14)
+FS HOPBUILD 402 at (1, 13) lch (1, 12) T (16, 1)
+FS GATE 403 sig (18, 18, (2, 14), (14, 2)) ok 1
+FS THROW 403 from (1, 13) to (5, 9) T (16, 1) body 465 n 1 dsq 117
+FS ARRIVE 415 id 465 body 1 at (12, 5) dsq 8
+FS PHASE 415 id 465 ph 2 d 8 at (12, 5)
+FS DODGE 418 id 465 from (11, 3) to (12, 3) cov 1 -> 0 hit 0 hp 22
+FS STAT 420 id 465 at (12, 2) need 7 orth 6 ti 31 ammo 20 sen 0 hp 4 covden 0 eco 1 lost 0
+FS DODGE 420 id 465 from (12, 2) to (12, 3) cov 1 -> 0 hit 0 hp 4
+FS EVICT 433 from (13, 5) to (7, 5)
+FS EVICT 438 from (11, 4) to (17, 5)
+FS EVICT 442 from (13, 4) to (7, 5)
+FS EVICT 450 from (13, 4) to (7, 5)
+FS EVICT 452 from (13, 4) to (7, 5)
+FS EVICT 456 from (11, 5) to (17, 5)
+FS EVICT 460 from (13, 5) to (7, 5)
+FS GATE 461 sig (18, 18, (2, 14), (14, 2)) ok 1
+FS PHASE 461 id 542 ph 1 d 338 at (1, 16)
+FS HOPBUILD 463 at (1, 14) lch (1, 13) T (16, 1)
+FS EVICT 464 from (11, 5) to (17, 5)
+FS GATE 464 sig (18, 18, (2, 14), (14, 2)) ok 1
+FS THROW 464 from (1, 14) to (5, 10) T (16, 1) body 542 n 1 dsq 130
+FS EVICT 468 from (13, 5) to (7, 5)
+FS HOPBUILD 468 at (5, 7) lch (5, 6) T (16, 1)
+FS GATE 469 sig (18, 18, (2, 14), (14, 2)) ok 1
+FS THROW 469 from (5, 7) to (10, 5) T (16, 1) body 542 n 1 dsq 20
+FS EVICT 471 from (11, 3) to (12, 9)
+FS ARRIVE 472 id 542 body 1 at (12, 5) dsq 8
+FS PHASE 472 id 542 ph 2 d 8 at (12, 5)
+FS EVICT 476 from (13, 5) to (7, 5)
+FS DODGE 477 id 542 from (14, 5) to (14, 4) cov 1 -> 0 hit 0 hp 40
+FS SEAL 478 tile (15, 4) n 1
+FS EVICT 480 from (13, 5) to (7, 5)
+FS STAT 480 id 542 at (13, 4) need 6 orth 5 ti 62 ammo 24 sen 0 hp 22 covden 0 eco 1 lost 0
+FS DODGE 480 id 542 from (13, 4) to (14, 4) cov 1 -> 0 hit 0 hp 22
+FS EVICT 481 from (12, 5) to (7, 5)
+FS DODGE 482 id 542 from (14, 5) to (14, 4) cov 1 -> 0 hit 0 hp 4
+FS EVICT 484 from (11, 5) to (17, 5)
+FS EVICT 487 from (11, 3) to (12, 9)
+FS EVICT 488 from (13, 5) to (7, 5)
+FS EVICT 492 from (13, 5) to (7, 5)
+FS EVICT 493 from (12, 5) to (7, 5)
+FS EVICT 496 from (11, 5) to (17, 5)
+FS GATE 497 sig (18, 18, (2, 14), (14, 2)) ok 1
+FS PHASE 497 id 608 ph 1 d 338 at (1, 16)
+FS EVICT 498 from (13, 4) to (7, 5)
+FS HOPBUILD 499 at (1, 14) lch (1, 13) T (16, 1)
+FS EVICT 500 from (11, 3) to (12, 9)
+FS GATE 500 sig (18, 18, (2, 14), (14, 2)) ok 1
+FS THROW 500 from (1, 14) to (5, 10) T (16, 1) body 608 n 1 dsq 130
+FS HOPBUILD 502 at (5, 9) lch (6, 9) T (16, 1)
+FS GATE 503 sig (18, 18, (2, 14), (14, 2)) ok 1
+FS THROW 503 from (5, 8) to (9, 5) T (16, 1) body 608 n 1 dsq 29
+FS GATE 527 sig (18, 18, (2, 14), (14, 2)) ok 1
+FS GATE 633 sig (18, 18, (2, 14), (14, 2)) ok 1
+FS PHASE 633 id 889 ph 1 d 313 at (1, 15)
+FS HOPBUILD 634 at (1, 14) lch (1, 13) T (16, 1)
+FS GATE 634 sig (18, 18, (2, 14), (14, 2)) ok 1
+FS PHASE 634 id 894 ph 1 d 200 at (4, 13)
+FS GATE 635 sig (18, 18, (2, 14), (14, 2)) ok 1
+FS GATE 635 sig (18, 18, (2, 14), (14, 2)) ok 1
+FS THROW 635 from (1, 14) to (5, 10) T (16, 1) body 889 n 1 dsq 130
+FS HOPBUILD 636 at (5, 10) lch (5, 9) T (16, 1)
+FS THROW 636 from (2, 12) to (4, 9) T (16, 1) body 894 n 2 dsq 136
+FS GATE 636 sig (18, 18, (2, 14), (14, 2)) ok 1
+FS GATE 637 sig (18, 18, (2, 14), (14, 2)) ok 1
+FS THROW 637 from (5, 10) to (8, 5) T (16, 1) body 889 n 1 dsq 40
+FS THROW 638 from (5, 8) to (8, 5) T (16, 1) body 894 n 2 dsq 40
+FS HOPBUILD 639 at (7, 5) lch (7, 4) T (16, 1)
+FS GATE 640 sig (18, 18, (2, 14), (14, 2)) ok 1
+FS THROW 640 from (7, 5) to (12, 3) T (16, 1) body 889 n 1 dsq 4
+FS ARRIVE 641 id 889 body 1 at (12, 3) dsq 4
+FS PHASE 641 id 889 ph 2 d 4 at (12, 3)
+FS DODGE 641 id 889 from (12, 3) to (13, 3) cov 2 -> 0 hit 0 hp 22
+FS THROW 641 from (8, 5) to (12, 3) T (16, 1) body 894 n 2 dsq 4
+FS ARRIVE 642 id 894 body 2 at (12, 3) dsq 4
+FS PHASE 642 id 894 ph 2 d 4 at (12, 3)
+FS DODGE 642 id 894 from (12, 3) to (13, 3) cov 3 -> 1 hit 0 hp 33
+FS EVICTOR 643 at (13, 4) ucov 1 cov 0 unseal 3 obs 1
+FS RUNG 643 id 894 r 2 hi -
+FS GATE 644 sig (18, 18, (2, 14), (14, 2)) ok 1
+FS EVICT 644 from (14, 4) to (8, 5)

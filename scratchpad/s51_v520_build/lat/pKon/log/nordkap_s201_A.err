@@ -1,0 +1,144 @@
+Update available: 2.3.6 -> 2.3.8. Run: pip install --upgrade fcode
+FS GATE 0 sig (20, 26, (9, 6), (9, 18)) ok 1
+FS GATE 1 sig (20, 26, (9, 6), (9, 18)) ok 1
+FS PHASE 1 id 3 ph 1 d 100 at (9, 8)
+FS GATE 2 sig (20, 26, (9, 6), (9, 18)) ok 1
+FS GATE 3 sig (20, 26, (9, 6), (9, 18)) ok 1
+FS GATE 4 sig (20, 26, (9, 6), (9, 18)) ok 1
+FS PHASE 4 id 9 ph 1 d 100 at (10, 8)
+FS HOPBUILD 5 at (9, 8) lch (9, 9) T (11, 20)
+FS GATE 6 sig (20, 26, (9, 6), (9, 18)) ok 1
+FS THROW 6 from (10, 8) to (10, 14) T (11, 20) body 3 n 1 dsq 16
+FS HOPBUILD 7 at (10, 14) lch (11, 14) T (11, 20)
+FS THROW 7 from (10, 10) to (9, 14) T (11, 20) body 9 n 2 dsq 16
+FS GATE 8 sig (20, 26, (9, 6), (9, 18)) ok 1
+FS SPLIT 8 arc 2 to (11, 19) body 3 walk 9
+FS ARRIVE 9 id 3 body 1 at (11, 19) dsq 1
+FS PHASE 9 id 3 ph 2 d 1 at (11, 19)
+FS SEAL 9 tile (11, 18) n 1
+FS SPLIT 9 arc 1 to (9, 17) body 9 walk 0
+FS ARRIVE 10 id 9 body 2 at (9, 17) dsq 1
+FS PHASE 10 id 9 ph 2 d 1 at (9, 17)
+FS SEAL 10 tile (10, 17) n 1
+FS SEAL 11 tile (11, 19) n 2
+FS SEAL 11 tile (8, 17) n 2
+FS GATE 11 sig (20, 26, (9, 6), (9, 18)) ok 1
+FS SEAL 12 tile (10, 20) n 3
+FS SEAL 16 tile (9, 20) n 4
+FS SEAL 19 tile (8, 19) n 5
+FS STAT 20 id 3 at (8, 20) need 2 orth 2 ti 14 ammo 21 sen 0 hp 40 covden 0 eco 1 lost 0
+FS STAT 20 id 9 at (9, 16) need 2 orth 2 ti 13 ammo 21 sen 0 hp 40 covden 0 eco 1 lost 0
+FS SEAL 20 tile (9, 17) n 3
+FS SEAL 23 tile (8, 18) n 6
+FS PHASE 23 id 9 ph 3 d 5 at (8, 16)
+FS PHASE 24 id 3 ph 3 d 4 at (7, 18)
+FS PHASE 24 id 9 ph 2 d 8 at (7, 16)
+FS SEAL 26 tile (8, 20) n 7
+FS PHASE 28 id 3 ph 2 d 8 at (7, 21)
+FS PHASE 29 id 3 ph 3 d 5 at (7, 20)
+FS PHASE 31 id 9 ph 3 d 5 at (8, 16)
+FS PHASE 32 id 3 ph 2 d 8 at (7, 21)
+FS PHASE 33 id 3 ph 3 d 5 at (7, 20)
+FS SEAL 34 tile (11, 17) n 4
+FS STAT 40 id 3 at (7, 19) need 0 orth 0 ti 51 ammo 24 sen 0 hp 40 covden 0 eco 1 lost 0
+FS STAT 40 id 9 at (10, 16) need 0 orth 0 ti 51 ammo 24 sen 0 hp 40 covden 0 eco 1 lost 0
+FS PHASE 48 id 9 ph 2 d 8 at (12, 16)
+FS PHASE 49 id 9 ph 3 d 5 at (12, 17)
+FS PHASE 50 id 3 ph 2 d 8 at (7, 21)
+FS PHASE 51 id 3 ph 3 d 5 at (7, 20)
+PRESKILL520 60 id 3 body 1
+FS STAT 60 id 9 at (12, 20) need 1 orth 0 ti 83 ammo 29 sen 0 hp 40 covden 0 eco 1 lost 0
+FS SENTINEL 61 at (13, 19) face WEST tgt (9, 19) score 16 n 1 onring 0 lost 0 gate (1, 1, 11) onsray 0 olddsq -1
+FS PHASE 62 id 9 ph 4 d 4 at (12, 19)
+PRES520 66 ti 14 res 138 floor 138 bind 1 rounds 1 vacant 1 until 86
+FS PROMOTE 66 id 9
+PRES520 67 ti 24 res 138 floor 138 bind 2 rounds 2 vacant 2 until 87
+PRES520 68 ti 34 res 138 floor 138 bind 3 rounds 3 vacant 2 until 87
+PRES520 69 ti 34 res 138 floor 138 bind 4 rounds 4 vacant 2 until 87
+PRES520 70 ti 34 res 138 floor 138 bind 5 rounds 5 vacant 2 until 87
+PRES520 71 ti 44 res 138 floor 138 bind 6 rounds 6 vacant 2 until 87
+PRES520 72 ti 54 res 138 floor 138 bind 7 rounds 7 vacant 2 until 87
+PRES520 73 ti 1 res 141 floor 141 bind 8 rounds 8 vacant 2 until 87
+PRES520 74 ti 1 res 141 floor 141 bind 9 rounds 9 vacant 2 until 87
+PRES520 75 ti 11 res 141 floor 141 bind 10 rounds 10 vacant 2 until 87
+PRES520 76 ti 21 res 141 floor 141 bind 11 rounds 11 vacant 2 until 87
+PRES520 77 ti 13 res 141 floor 141 bind 12 rounds 12 vacant 2 until 87
+PRES520 78 ti 13 res 141 floor 141 bind 13 rounds 13 vacant 2 until 87
+PRES520 79 ti 15 res 141 floor 141 bind 14 rounds 14 vacant 2 until 87
+PRES520 80 ti 25 res 141 floor 141 bind 15 rounds 15 vacant 2 until 87
+FS STAT 80 id 9 at (12, 19) need 0 orth 0 ti 17 ammo 1 sen 1 hp 40 covden 0 eco 1 lost 0
+PRES520 81 ti 17 res 142 floor 142 bind 16 rounds 16 vacant 2 until 87
+PRES520 82 ti 17 res 141 floor 141 bind 17 rounds 17 vacant 2 until 87
+PRES520 83 ti 9 res 142 floor 142 bind 18 rounds 18 vacant 2 until 87
+PRES520 84 ti 19 res 142 floor 142 bind 19 rounds 19 vacant 2 until 87
+PRES520 85 ti 11 res 143 floor 143 bind 20 rounds 20 vacant 2 until 87
+PRES520 86 ti 11 res 143 floor 143 bind 21 rounds 21 vacant 2 until 87
+FS STAT 100 id 9 at (12, 15) need 4 orth 4 ti 16 ammo 12 sen 1 hp 40 covden 0 eco 1 lost 0
+FS STAT 120 id 9 at (12, 19) need 0 orth 0 ti 16 ammo 10 sen 1 hp 40 covden 0 eco 1 lost 0
+FS SENTDEAD 137 at (13, 19) lost 1
+FS PHASE 140 id 9 ph 3 d 4 at (12, 19)
+FS STAT 140 id 9 at (12, 19) need 0 orth 0 ti 24 ammo 4 sen 0 hp 40 covden 0 eco 1 lost 1
+FS STAT 160 id 9 at (12, 19) need 0 orth 0 ti 74 ammo 0 sen 0 hp 40 covden 0 eco 1 lost 1
+FS STAT 180 id 9 at (12, 19) need 0 orth 0 ti 38 ammo 0 sen 0 hp 40 covden 0 eco 1 lost 1
+FS STAT 200 id 9 at (12, 19) need 0 orth 0 ti 27 ammo 0 sen 0 hp 40 covden 0 eco 1 lost 1
+FS PHASE 209 id 9 ph 2 d 9 at (13, 19)
+FS DODGE 209 id 9 from (13, 19) to (14, 19) cov 1 -> 0 hit 0 hp 22
+FS DODGE 211 id 9 from (13, 19) to (12, 19) cov 1 -> 0 hit 0 hp 4
+FS PHASE 212 id 9 ph 3 d 4 at (12, 19)
+FS STAT 220 id 9 at (12, 19) need 0 orth 0 ti 61 ammo 0 sen 0 hp 4 covden 0 eco 1 lost 1
+FS STAT 240 id 9 at (12, 19) need 0 orth 0 ti 33 ammo 0 sen 0 hp 4 covden 0 eco 1 lost 1
+FS STAT 260 id 9 at (12, 19) need 0 orth 0 ti 83 ammo 0 sen 0 hp 4 covden 0 eco 1 lost 1
+FS STAT 280 id 9 at (12, 19) need 0 orth 0 ti 86 ammo 11 sen 0 hp 4 covden 0 eco 1 lost 1
+PRES520 299 ti 80 res 133 floor 133 bind 22 rounds 22 vacant 3 until 319
+FS GATE 553 sig (20, 26, (9, 6), (9, 18)) ok 1
+FS PHASE 553 id 189 ph 1 d 101 at (11, 8)
+FS HOPBUILD 554 at (12, 8) lch (12, 9) T (11, 20)
+FS GATE 555 sig (20, 26, (9, 6), (9, 18)) ok 1
+FS THROW 555 from (11, 8) to (11, 14) T (11, 20) body 189 n 1 dsq 17
+FS ARRIVE 558 id 189 body 1 at (11, 16) dsq 5
+FS PHASE 558 id 189 ph 2 d 5 at (11, 16)
+FS STAT 560 id 189 at (11, 16) need 3 orth 2 ti 34 ammo 300 sen 0 hp 33 covden 0 eco 1 lost 0
+FS STAT 580 id 189 at (9, 14) need 6 orth 5 ti 84 ammo 300 sen 0 hp 15 covden 0 eco 1 lost 0
+FS DODGE 580 id 189 from (9, 14) to (9, 15) cov 1 -> 0 hit 0 hp 15
+FS GATE 601 sig (20, 26, (9, 6), (9, 18)) ok 1
+FS PHASE 601 id 197 ph 1 d 101 at (11, 8)
+FS HOPBUILD 602 at (12, 8) lch (12, 9) T (11, 20)
+FS GATE 603 sig (20, 26, (9, 6), (9, 18)) ok 1
+FS THROW 603 from (11, 8) to (11, 14) T (11, 20) body 197 n 1 dsq 17
+FS ARRIVE 606 id 197 body 1 at (11, 16) dsq 5
+FS PHASE 606 id 197 ph 2 d 5 at (11, 16)
+FS STAT 620 id 197 at (11, 16) need 3 orth 2 ti 72 ammo 300 sen 0 hp 33 covden 0 eco 1 lost 0
+FS DODGE 625 id 197 from (9, 15) to (9, 16) cov 1 -> 0 hit 0 hp 15
+FS DODGE 627 id 197 from (10, 16) to (9, 16) cov 1 -> 0 hit 0 hp 15
+FS DODGE 629 id 197 from (10, 16) to (9, 16) cov 1 -> 0 hit 0 hp 15
+FS DODGE 631 id 197 from (10, 16) to (9, 16) cov 1 -> 0 hit 0 hp 15
+FS SENTINEL 632 at (10, 16) face SOUTH tgt (10, 19) score -119 n 1 onring 0 lost 0 gate (1, 1, 11) onsray 0 olddsq -1
+FS PHASE 633 id 197 ph 5 d 4 at (9, 16)
+FS DODGE 634 id 197 from (9, 15) to (9, 16) cov 1 -> 0 hit 0 hp 8
+FS DODGE 636 id 197 from (9, 15) to (9, 16) cov 1 -> 0 hit 0 hp 1
+FS GATE 825 sig (20, 26, (9, 6), (9, 18)) ok 1
+FS PHASE 825 id 202 ph 1 d 101 at (11, 8)
+FS HOPBUILD 826 at (12, 8) lch (12, 9) T (11, 20)
+FS GATE 827 sig (20, 26, (9, 6), (9, 18)) ok 1
+FS THROW 827 from (11, 8) to (11, 14) T (11, 20) body 202 n 1 dsq 17
+FS ARRIVE 830 id 202 body 1 at (11, 16) dsq 5
+FS PHASE 830 id 202 ph 2 d 5 at (11, 16)
+FS DODGE 831 id 202 from (10, 16) to (9, 16) cov 1 -> 0 hit 0 hp 15
+FS GATE 873 sig (20, 26, (9, 6), (9, 18)) ok 1
+FS PHASE 873 id 210 ph 1 d 170 at (11, 5)
+FS HOPBUILD 874 at (12, 5) lch (12, 6) T (11, 20)
+FS GATE 875 sig (20, 26, (9, 6), (9, 18)) ok 1
+FS THROW 875 from (11, 5) to (11, 11) T (11, 20) body 210 n 1 dsq 50
+FS ARRIVE 886 id 210 body 1 at (12, 16) dsq 8
+FS PHASE 886 id 210 ph 2 d 8 at (12, 16)
+FS DODGE 896 id 210 from (8, 20) to (7, 20) cov 1 -> 0 hit 0 hp 15
+FS GATE 917 sig (20, 26, (9, 6), (9, 18)) ok 1
+FS PHASE 917 id 231 ph 1 d 101 at (11, 8)
+FS HOPBUILD 918 at (12, 8) lch (12, 9) T (11, 20)
+FS GATE 919 sig (20, 26, (9, 6), (9, 18)) ok 1
+FS THROW 919 from (11, 8) to (11, 14) T (11, 20) body 231 n 1 dsq 17
+FS ARRIVE 922 id 231 body 1 at (11, 16) dsq 5
+FS PHASE 922 id 231 ph 2 d 5 at (11, 16)
+FS DODGE 923 id 231 from (10, 16) to (9, 16) cov 1 -> 0 hit 0 hp 15
+FS CLEAR 924 tile (9, 17) peck 1
+FS RUNG 924 id 231 r 3 hi -

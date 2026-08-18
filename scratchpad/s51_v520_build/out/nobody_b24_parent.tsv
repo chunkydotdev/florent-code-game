@@ -1,0 +1,37 @@
+tag	map	seed	seat	ours	cond	turn	arm	arrive	sent	kill	last	window	ge1	ge2	nobody	two_body_share	bought_sentinel	ge1_fp	ge2_fp	nobody_fp
+atoll_s70_A	atoll	70	A	OPP	Core destroyed	534	parent	6	-1	-1	533	528	17	0	0.9678	0.0	0	34	0	0.9356
+atoll_s70_B	atoll	70	B	OPP	Core destroyed	290	parent	7	64	-1	289	57	44	1	0.2281	0.0175	1	54	3	0.0526
+atoll_s71_A	atoll	71	A	OPP	Core destroyed	417	parent	7	-1	-1	416	410	14	0	0.9659	0.0	0	20	0	0.9512
+atoll_s71_B	atoll	71	B	OPP	Core destroyed	280	parent	9	-1	-1	279	271	6	0	0.9779	0.0	0	6	0	0.9779
+atoll_s72_A	atoll	72	A	US	Core destroyed	802	parent	7	128	801	801	121	53	0	0.562	0.0	1	86	0	0.2893
+atoll_s72_B	atoll	72	B	US	Core destroyed	212	parent	6	120	211	211	114	62	10	0.4561	0.0877	1	107	32	0.0614
+drakkarfjord_s70_A	drakkarfjord	70	A	US	Titanium collected (tiebreak)	1000	parent	10	-1	-1	999	990	63	0	0.9364	0.0	0	117	0	0.8818
+drakkarfjord_s70_B	drakkarfjord	70	B	OPP	Core destroyed	553	parent	10	-1	-1	552	543	30	0	0.9448	0.0	0	52	0	0.9042
+drakkarfjord_s71_A	drakkarfjord	71	A	US	Core destroyed	584	parent	10	528	583	583	518	126	48	0.7568	0.0927	1	169	83	0.6737
+drakkarfjord_s71_B	drakkarfjord	71	B	US	Core destroyed	252	parent	10	60	251	251	50	27	0	0.46	0.0	1	47	0	0.06
+drakkarfjord_s72_A	drakkarfjord	72	A	US	Titanium collected (tiebreak)	1000	parent	10	-1	-1	999	990	90	2	0.9091	0.002	0	149	3	0.8495
+drakkarfjord_s72_B	drakkarfjord	72	B	US	Core destroyed	143	parent	10	87	142	142	77	38	5	0.5065	0.0649	1	75	13	0.026
+glacierkeep_s70_A	glacierkeep	70	A	OPP	Core destroyed	521	parent	8	87	-1	520	79	56	7	0.2911	0.0886	1	79	50	0.0
+glacierkeep_s70_B	glacierkeep	70	B	US	Core destroyed	301	parent	8	76	300	300	68	54	14	0.2059	0.2059	1	68	31	0.0
+glacierkeep_s71_A	glacierkeep	71	A	US	Core destroyed	363	parent	9	317	362	362	308	88	2	0.7143	0.0065	1	108	18	0.6494
+glacierkeep_s71_B	glacierkeep	71	B	US	Titanium collected (tiebreak)	1000	parent	8	48	-1	999	40	31	5	0.225	0.125	1	40	10	0.0
+glacierkeep_s72_A	glacierkeep	72	A	US	Core destroyed	124	parent	8	68	123	123	60	39	4	0.35	0.0667	1	59	35	0.0167
+glacierkeep_s72_B	glacierkeep	72	B	US	Core destroyed	280	parent	9	224	279	279	215	24	0	0.8884	0.0	1	212	0	0.014
+midgard_s70_A	midgard	70	A	US	Core destroyed	426	parent	49	216	425	425	167	167	157	0.0	0.9401	1	167	166	0.0
+midgard_s70_B	midgard	70	B	OPP	Core destroyed	244	parent	49	-1	-1	243	195	195	54	0.0	0.2769	0	195	56	0.0
+midgard_s71_A	midgard	71	A	US	Core destroyed	819	parent	46	765	818	818	719	716	703	0.0042	0.9777	1	719	706	0.0
+midgard_s71_B	midgard	71	B	OPP	Core destroyed	769	parent	55	-1	-1	768	714	235	139	0.6709	0.1947	0	237	152	0.6681
+midgard_s72_A	midgard	72	A	US	Core destroyed	188	parent	50	132	187	187	82	81	71	0.0122	0.8659	1	82	79	0.0
+midgard_s72_B	midgard	72	B	US	Core destroyed	198	parent	51	142	197	197	91	91	83	0.0	0.9121	1	91	87	0.0
+nordkap_s70_A	nordkap	70	A	OPP	Core destroyed	578	parent	4	-1	-1	577	574	109	9	0.8101	0.0157	0	167	29	0.7091
+nordkap_s70_B	nordkap	70	B	US	Core destroyed	351	parent	4	281	350	350	277	269	248	0.0289	0.8953	1	277	260	0.0
+nordkap_s71_A	nordkap	71	A	OPP	Core destroyed	862	parent	4	176	-1	861	172	105	5	0.3895	0.0291	1	125	16	0.2733
+nordkap_s71_B	nordkap	71	B	US	Core destroyed	198	parent	4	104	197	197	100	84	27	0.16	0.27	1	90	39	0.1
+nordkap_s72_A	nordkap	72	A	OPP	Titanium collected (tiebreak)	1000	parent	4	-1	-1	999	996	986	12	0.01	0.012	0	996	24	0.0
+nordkap_s72_B	nordkap	72	B	OPP	Core destroyed	645	parent	4	107	-1	644	103	92	6	0.1068	0.0583	1	99	75	0.0388
+yulerune_s70_A	yulerune	70	A	US	Titanium collected (tiebreak)	1000	parent	29	240	-1	999	211	209	194	0.0095	0.9194	1	211	204	0.0
+yulerune_s70_B	yulerune	70	B	US	Core destroyed	255	parent	29	213	254	254	184	180	54	0.0217	0.2935	1	184	114	0.0
+yulerune_s71_A	yulerune	71	A	US	Core destroyed	389	parent	33	224	388	388	191	191	177	0.0	0.9267	1	191	188	0.0
+yulerune_s71_B	yulerune	71	B	OPP	Core destroyed	208	parent	29	-1	-1	207	179	175	162	0.0223	0.905	0	179	167	0.0
+yulerune_s72_A	yulerune	72	A	OPP	Core destroyed	177	parent	29	-1	-1	176	148	146	139	0.0135	0.9392	0	148	143	0.0
+yulerune_s72_B	yulerune	72	B	OPP	Core destroyed	234	parent	37	-1	-1	233	197	100	88	0.4924	0.4467	0	100	93	0.4924

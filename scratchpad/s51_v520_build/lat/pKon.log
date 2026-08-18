@@ -1,0 +1,48 @@
+atoll_s201_A	atoll	201	A	US	pKon	Core destroyed	357	0	390	60
+atoll_s201_B	atoll	201	B	US	pKon	Core destroyed	345	0	1630	120
+atoll_s202_A	atoll	202	A	US	pKon	Core destroyed	176	0	850	220
+atoll_s202_B	atoll	202	B	US	pKon	Core destroyed	247	0	1420	640
+atoll_s203_A	atoll	203	A	OPP	_v488beltbreak2	Core destroyed	712	0	3520	5600
+atoll_s203_B	atoll	203	B	US	pKon	Titanium collected (tiebreak)	1000	0	390	70
+atoll_s204_A	atoll	204	A	OPP	_v488beltbreak2	Core destroyed	421	0	450	430
+atoll_s204_B	atoll	204	B	US	pKon	Core destroyed	160	0	760	440
+drakkarfjord_s201_A	drakkarfjord	201	A	OPP	_v488beltbreak2	Core destroyed	628	0	4850	7890
+drakkarfjord_s201_B	drakkarfjord	201	B	US	pKon	Core destroyed	483	0	1920	0
+drakkarfjord_s202_A	drakkarfjord	202	A	OPP	_v488beltbreak2	Core destroyed	863	0	630	460
+drakkarfjord_s202_B	drakkarfjord	202	B	US	pKon	Core destroyed	503	0	970	0
+drakkarfjord_s203_A	drakkarfjord	203	A	OPP	_v488beltbreak2	Core destroyed	266	0	1200	1780
+drakkarfjord_s203_B	drakkarfjord	203	B	OPP	_v488beltbreak2	Titanium collected (tiebreak)	1000	0	570	3940
+drakkarfjord_s204_A	drakkarfjord	204	A	US	pKon	Titanium collected (tiebreak)	1000	0	2070	1110
+drakkarfjord_s204_B	drakkarfjord	204	B	US	pKon	Titanium collected (tiebreak)	1000	0	590	0
+glacierkeep_s201_A	glacierkeep	201	A	US	pKon	Core destroyed	134	0	340	0
+glacierkeep_s201_B	glacierkeep	201	B	US	pKon	Core destroyed	416	0	280	0
+glacierkeep_s202_A	glacierkeep	202	A	US	pKon	Core destroyed	142	0	370	0
+glacierkeep_s202_B	glacierkeep	202	B	OPP	_v488beltbreak2	Harvesters (tiebreak)	1000	0	0	0
+glacierkeep_s203_A	glacierkeep	203	A	US	pKon	Titanium collected (tiebreak)	1000	0	190	0
+glacierkeep_s203_B	glacierkeep	203	B	OPP	_v488beltbreak2	Core destroyed	552	0	0	1870
+glacierkeep_s204_A	glacierkeep	204	A	US	pKon	Core destroyed	142	0	300	0
+glacierkeep_s204_B	glacierkeep	204	B	US	pKon	Harvesters (tiebreak)	1000	0	0	0
+midgard_s201_A	midgard	201	A	US	pKon	Core destroyed	469	0	630	860
+midgard_s201_B	midgard	201	B	OPP	_v488beltbreak2	Titanium collected (tiebreak)	1000	0	3090	4520
+midgard_s202_A	midgard	202	A	US	pKon	Core destroyed	172	0	1370	690
+midgard_s202_B	midgard	202	B	US	pKon	Core destroyed	208	0	1300	740
+midgard_s203_A	midgard	203	A	OPP	_v488beltbreak2	Core destroyed	167	0	550	1360
+midgard_s203_B	midgard	203	B	US	pKon	Core destroyed	929	0	4600	1460
+midgard_s204_A	midgard	204	A	US	pKon	Titanium collected (tiebreak)	1000	0	720	710
+midgard_s204_B	midgard	204	B	OPP	_v488beltbreak2	Core destroyed	202	0	500	1400
+nordkap_s201_A	nordkap	201	A	OPP	_v488beltbreak2	Titanium collected (tiebreak)	1000	0	180	460
+nordkap_s201_B	nordkap	201	B	US	pKon	Core destroyed	244	0	2000	240
+nordkap_s202_A	nordkap	202	A	US	pKon	Core destroyed	134	0	440	90
+nordkap_s202_B	nordkap	202	B	US	pKon	Core destroyed	201	0	350	140
+nordkap_s203_A	nordkap	203	A	US	pKon	Core destroyed	165	0	160	110
+nordkap_s203_B	nordkap	203	B	OPP	_v488beltbreak2	Core destroyed	204	0	130	1270
+nordkap_s204_A	nordkap	204	A	US	pKon	Core destroyed	280	0	1080	40
+nordkap_s204_B	nordkap	204	B	OPP	_v488beltbreak2	Core destroyed	465	0	130	90
+yulerune_s201_A	yulerune	201	A	OPP	_v488beltbreak2	Core destroyed	210	0	480	1730
+yulerune_s201_B	yulerune	201	B	OPP	_v488beltbreak2	Titanium collected (tiebreak)	1000	0	500	2030
+yulerune_s202_A	yulerune	202	A	OPP	_v488beltbreak2	Core destroyed	345	0	330	310
+yulerune_s202_B	yulerune	202	B	US	pKon	Titanium collected (tiebreak)	1000	0	590	230
+yulerune_s203_A	yulerune	203	A	US	pKon	Core destroyed	481	0	250	420
+yulerune_s203_B	yulerune	203	B	OPP	_v488beltbreak2	Core destroyed	204	0	350	1700
+yulerune_s204_A	yulerune	204	A	OPP	_v488beltbreak2	Core destroyed	468	0	300	730
+yulerune_s204_B	yulerune	204	B	US	pKon	Core destroyed	253	0	440	360

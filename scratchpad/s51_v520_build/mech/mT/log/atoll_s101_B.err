@@ -1,0 +1,398 @@
+Update available: 2.3.6 -> 2.3.8. Run: pip install --upgrade fcode
+FS GATE 0 sig (18, 18, (2, 14), (14, 2)) ok 1
+FS GATE 1 sig (18, 18, (2, 14), (14, 2)) ok 1
+FS PHASE 1 id 4 ph 1 d 200 at (13, 4)
+GF519 1 id 4 d 200 band 0 ti 434 ammo 0 gun 28 lau 28 bar 4 cd 0 lp 0 plants 0
+GF519 2 id 4 d 200 band 0 ti 392 ammo 0 gun 32 lau 32 bar 4 cd 0 lp 0 plants 0
+FS GATE 2 sig (18, 18, (2, 14), (14, 2)) ok 1
+GF519 3 id 4 d 200 band 0 ti 311 ammo 0 gun 37 lau 37 bar 5 cd 0 lp 0 plants 0
+FS GATE 3 sig (18, 18, (2, 14), (14, 2)) ok 1
+GF519 4 id 4 d 200 band 0 ti 311 ammo 0 gun 37 lau 37 bar 5 cd 0 lp 0 plants 0
+FS GATE 4 sig (18, 18, (2, 14), (14, 2)) ok 1
+APPT520 CLAIM 4 id 11
+FS PHASE 4 id 11 ph 1 d 221 at (13, 3)
+GF519 4 id 11 d 221 band 0 ti 311 ammo 0 gun 37 lau 37 bar 5 cd 0 lp 0 plants 0
+GF519 5 id 4 d 200 band 0 ti 311 ammo 0 gun 37 lau 37 bar 5 cd 0 lp 0 plants 0
+FS HOPBUILD 5 at (13, 4) lch (13, 5) T (1, 16)
+GF519 5 id 11 d 202 band 0 ti 274 ammo 0 gun 39 lau 39 bar 5 cd 0 lp 0 plants 0
+GF519 6 id 4 d 200 band 0 ti 284 ammo 0 gun 39 lau 39 bar 5 cd 0 lp 1 plants 0
+GF519 6 id 11 d 181 band 0 ti 284 ammo 0 gun 39 lau 39 bar 5 cd 0 lp 1 plants 0
+FS GATE 6 sig (18, 18, (2, 14), (14, 2)) ok 1
+FS THROW 6 from (13, 4) to (9, 8) T (1, 16) body 4 n 1 dsq 72
+GF519 7 id 4 d 72 band 1 ti 284 ammo 0 gun 39 lau 39 bar 5 cd 0 lp 0 plants 0
+FS HOPBUILD 7 at (9, 8) lch (9, 9) T (1, 16)
+GF519 7 id 11 d 162 band 0 ti 245 ammo 0 gun 41 lau 41 bar 6 cd 0 lp 1 plants 0
+FS THROW 7 from (12, 6) to (10, 9) T (1, 16) body 11 n 2 dsq 74
+GF519 8 id 4 d 72 band 1 ti 255 ammo 0 gun 39 lau 39 bar 5 cd 0 lp 1 plants 0
+GF519 8 id 11 d 74 band 1 ti 216 ammo 0 gun 40 lau 40 bar 6 cd 0 lp 1 plants 0
+FS GATE 8 sig (18, 18, (2, 14), (14, 2)) ok 1
+FS THROW 8 from (8, 8) to (5, 12) T (1, 16) body 4 n 1 dsq 8
+FS ARRIVE 9 id 4 body 1 at (5, 12) dsq 8
+ARC520 CLAIM 9 id 4 body 1 arc 1 at (5, 12)
+FS PHASE 9 id 4 ph 2 d 8 at (5, 12)
+GF519 9 id 11 d 65 band 1 ti 194 ammo 16 gun 40 lau 40 bar 6 cd 0 lp 1 plants 0
+FS THROW 9 from (9, 10) to (5, 12) T (1, 16) body 11 n 2 dsq 8
+FS EVICTOR 10 at (3, 12) ucov 0 cov 2 unseal 1 obs 5
+FS RUNG 10 id 4 r 2 hi -
+FS ARRIVE 10 id 11 body 2 at (5, 12) dsq 8
+ARC520 COLLIDE 10 id 11 body 2 peer 1 took 2 n 1
+ARC520 CLAIM 10 id 11 body 2 arc 2 at (5, 12)
+FS PHASE 10 id 11 ph 2 d 8 at (5, 12)
+FS GATE 11 sig (18, 18, (2, 14), (14, 2)) ok 1
+FS GATE 11 sig (18, 18, (2, 14), (14, 2)) ok 1
+SPLIT520 11 lch (3, 12) body 4 arc 2 to (1, 15) dsq 1 walk 1 n 1
+FS SPLIT 11 arc 2 to (1, 15) body 4 walk 1
+FS SEAL 13 tile (1, 15) n 1
+FS SEAL 13 tile (4, 15) n 1
+FS EVICT 13 from (4, 13) to (4, 7)
+FS SEAL 15 tile (4, 14) n 2
+GF519 PLANT 16 id 11 d 4 ti 76
+FS STAT 20 id 4 at (0, 17) need 7 orth 6 ti 94 ammo 24 sen 0 hp 40 covden 0 eco 1 lost 0
+FS STAT 20 id 11 at (5, 15) need 6 orth 5 ti 94 ammo 24 sen 0 hp 40 covden 0 eco 1 lost 0
+FS SEAL 26 tile (2, 16) n 2
+FS EVICT 27 from (3, 11) to (4, 17)
+FS SEAL 30 tile (1, 14) n 3
+FS CLEAR 34 tile (1, 13) peck 1
+FS RUNG 34 id 4 r 3 hi -
+FS CLEAR 35 tile (1, 13) peck 2
+FS RUNG 35 id 4 r 3 hi -
+FS CLEAR 36 tile (1, 13) peck 3
+FS RUNG 36 id 4 r 3 hi -
+FS DODGE 36 id 11 from (5, 13) to (5, 14) cov 1 -> 0 hit 0 hp 22
+FS CLEAR 38 tile (1, 13) peck 4
+FS RUNG 38 id 4 r 3 hi -
+FS DODGE 38 id 11 from (5, 13) to (5, 14) cov 1 -> 0 hit 0 hp 4
+FS CLEAR 39 tile (1, 13) peck 5
+FS RUNG 39 id 4 r 3 hi -
+FS STAT 40 id 4 at (1, 12) need 4 orth 3 ti 50 ammo 24 sen 0 hp 40 covden 0 eco 1 lost 0
+FS CLEAR 40 tile (1, 13) peck 6
+FS RUNG 40 id 4 r 3 hi -
+FS STAT 40 id 11 at (5, 15) need 4 orth 3 ti 48 ammo 24 sen 0 hp 4 covden 0 eco 1 lost 0
+FS EVICT 40 from (4, 13) to (4, 7)
+FS CLEAR 41 tile (1, 13) peck 7
+FS RUNG 41 id 4 r 3 hi -
+FS CLEAR 42 tile (1, 13) peck 8
+FS RUNG 42 id 4 r 3 hi -
+FS SEAL 44 tile (2, 13) n 4
+FS EVICT 44 from (4, 11) to (0, 16)
+FS CLEAR 48 tile (1, 13) peck 1
+FS RUNG 48 id 4 r 3 hi -
+FS CLEAR 49 tile (1, 13) peck 2
+FS RUNG 49 id 4 r 3 hi -
+FS CLEAR 50 tile (1, 13) peck 3
+FS RUNG 50 id 4 r 3 hi -
+FS CLEAR 51 tile (1, 13) peck 4
+FS RUNG 51 id 4 r 3 hi -
+FS EVICT 51 from (4, 13) to (4, 7)
+FS CLEAR 52 tile (1, 13) peck 5
+FS RUNG 52 id 4 r 3 hi -
+FS EVICTOR 52 at (4, 17) ucov 1 cov 5 unseal 1 obs 13
+FS RUNG 52 id 11 r 2 hi -
+FS EVICT 52 from (3, 11) to (2, 17)
+FS CLEAR 53 tile (1, 13) peck 6
+FS RUNG 53 id 4 r 3 hi -
+FS GATE 53 sig (18, 18, (2, 14), (14, 2)) ok 1
+FS EVICT 53 from (3, 17) to (9, 17)
+FS CLEAR 54 tile (1, 13) peck 7
+FS RUNG 54 id 4 r 3 hi -
+FS CLEAR 55 tile (1, 13) peck 8
+FS RUNG 55 id 4 r 3 hi -
+FS EVICT 56 from (3, 11) to (2, 17)
+FS SEAL 57 tile (2, 13) n 5
+FS EVICT 57 from (3, 17) to (9, 17)
+FS CLEAR 59 tile (1, 13) peck 1
+FS RUNG 59 id 4 r 3 hi -
+FS DODGE 59 id 11 from (5, 13) to (5, 14) cov 1 -> 0 hit 0 hp 4
+FS STAT 60 id 4 at (1, 12) need 3 orth 2 ti 57 ammo 24 sen 0 hp 40 covden 0 eco 1 lost 0
+FS CLEAR 60 tile (1, 13) peck 2
+FS RUNG 60 id 4 r 3 hi -
+FS STAT 60 id 11 at (5, 14) need 3 orth 1 ti 55 ammo 24 sen 0 hp 4 covden 8 eco 1 lost 0
+FS CLEAR 61 tile (1, 13) peck 3
+FS RUNG 61 id 4 r 3 hi -
+FS DODGE 61 id 11 from (5, 13) to (5, 14) cov 1 -> 0 hit 0 hp 4
+FS CLEAR 62 tile (1, 13) peck 4
+FS RUNG 62 id 4 r 3 hi -
+FS CLEARED 63 tile (1, 13) n 1
+FS SEAL 63 tile (1, 13) n 6
+FS SEALCLR 63 tile (1, 13) lag 0
+FS DODGE 63 id 11 from (5, 13) to (5, 14) cov 1 -> 0 hit 0 hp 4
+FS EVICT 63 from (4, 12) to (4, 7)
+FS DODGE 65 id 11 from (5, 13) to (5, 14) cov 1 -> 0 hit 0 hp 4
+FS EVICT 66 from (4, 13) to (4, 7)
+FS EVICT 67 from (4, 11) to (0, 16)
+FS RETREAT 69 id 11 hp 4 from (5, 13) to (5, 12)
+FS RETREAT 71 id 11 hp 4 from (5, 13) to (5, 12)
+FS EVICT 72 from (4, 11) to (0, 16)
+FS RETREAT 73 id 11 hp 4 from (5, 13) to (5, 14)
+FS EVICT 73 from (2, 12) to (8, 12)
+FS SEAL 76 tile (3, 13) n 7
+FS PHASE 76 id 11 ph 3 d 4 at (5, 14)
+FS PHASE 77 id 4 ph 3 d 2 at (4, 13)
+FS RETREAT 77 id 11 hp 4 from (5, 13) to (5, 12)
+FS PHASE 78 id 4 ph 2 d 5 at (4, 12)
+FS PHASE 78 id 11 ph 2 d 8 at (5, 12)
+FS EVICT 78 from (2, 12) to (8, 12)
+FS PHASE 79 id 4 ph 3 d 2 at (4, 13)
+FS PHASE 79 id 11 ph 3 d 5 at (5, 13)
+FS RETREAT 79 id 11 hp 4 from (5, 13) to (5, 12)
+FS EVICT 79 from (3, 11) to (2, 17)
+FS PHASE 80 id 4 ph 2 d 5 at (4, 12)
+FS STAT 80 id 4 at (4, 12) need 1 orth 1 ti 88 ammo 27 sen 0 hp 40 covden 4 eco 1 lost 0
+FS PHASE 80 id 11 ph 2 d 8 at (5, 12)
+FS STAT 80 id 11 at (5, 12) need 3 orth 3 ti 88 ammo 27 sen 0 hp 4 covden 24 eco 1 lost 0
+FS EVICT 80 from (3, 17) to (9, 17)
+FS PHASE 81 id 4 ph 3 d 2 at (4, 13)
+FS PHASE 81 id 11 ph 3 d 5 at (5, 13)
+FS RETREAT 81 id 11 hp 4 from (5, 13) to (5, 12)
+FS PHASE 82 id 4 ph 2 d 5 at (4, 12)
+FS PHASE 82 id 11 ph 2 d 8 at (5, 12)
+FS PHASE 83 id 4 ph 3 d 2 at (4, 13)
+FS PHASE 83 id 11 ph 3 d 5 at (5, 13)
+FS RETREAT 83 id 11 hp 4 from (5, 13) to (5, 14)
+FS PHASE 84 id 4 ph 2 d 5 at (4, 12)
+FS PHASE 85 id 4 ph 3 d 2 at (4, 13)
+FS RETREAT 85 id 11 hp 4 from (5, 13) to (5, 14)
+FS PHASE 86 id 4 ph 2 d 5 at (4, 12)
+FS EVICT 86 from (4, 12) to (4, 7)
+FS PHASE 87 id 4 ph 3 d 2 at (4, 13)
+FS RETREAT 87 id 11 hp 4 from (5, 13) to (5, 12)
+FS PHASE 88 id 4 ph 2 d 5 at (4, 12)
+FS PHASE 88 id 11 ph 2 d 8 at (5, 12)
+FS PHASE 89 id 4 ph 3 d 2 at (4, 13)
+FS PHASE 89 id 11 ph 3 d 5 at (5, 13)
+FS RETREAT 89 id 11 hp 4 from (5, 13) to (5, 14)
+FS PHASE 90 id 4 ph 2 d 5 at (4, 12)
+FS EVICT 90 from (4, 12) to (4, 7)
+FS PHASE 91 id 4 ph 3 d 2 at (4, 13)
+FS RETREAT 91 id 11 hp 4 from (5, 13) to (5, 12)
+FS EVICT 91 from (4, 11) to (0, 16)
+FS PHASE 92 id 4 ph 2 d 5 at (4, 12)
+FS PHASE 92 id 11 ph 2 d 8 at (5, 12)
+FS PHASE 93 id 4 ph 3 d 2 at (4, 13)
+FS PHASE 93 id 11 ph 3 d 5 at (5, 13)
+FS RETREAT 93 id 11 hp 4 from (5, 13) to (5, 12)
+FS PHASE 94 id 4 ph 2 d 5 at (4, 12)
+FS PHASE 94 id 11 ph 2 d 8 at (5, 12)
+FS EVICT 94 from (4, 11) to (0, 16)
+FS PHASE 95 id 4 ph 3 d 2 at (4, 13)
+FS PHASE 95 id 11 ph 3 d 5 at (5, 13)
+FS RETREAT 95 id 11 hp 4 from (5, 13) to (5, 12)
+FS PHASE 96 id 4 ph 2 d 5 at (4, 12)
+FS PHASE 96 id 11 ph 2 d 8 at (5, 12)
+FS PHASE 97 id 4 ph 3 d 2 at (4, 13)
+FS PHASE 97 id 11 ph 3 d 5 at (5, 13)
+FS RETREAT 97 id 11 hp 4 from (5, 13) to (5, 12)
+FS EVICT 97 from (2, 12) to (8, 12)
+FS PHASE 98 id 4 ph 2 d 5 at (4, 12)
+FS PHASE 98 id 11 ph 2 d 8 at (5, 12)
+FS PHASE 99 id 4 ph 3 d 2 at (4, 13)
+FS PHASE 99 id 11 ph 3 d 5 at (5, 13)
+FS RETREAT 99 id 11 hp 4 from (5, 13) to (5, 12)
+FS PHASE 100 id 4 ph 2 d 5 at (4, 12)
+FS STAT 100 id 4 at (4, 12) need 1 orth 1 ti 88 ammo 55 sen 0 hp 40 covden 14 eco 1 lost 0
+FS PHASE 100 id 11 ph 2 d 8 at (5, 12)
+FS STAT 100 id 11 at (5, 12) need 3 orth 3 ti 88 ammo 55 sen 0 hp 4 covden 37 eco 1 lost 0
+FS EVICT 100 from (2, 12) to (8, 12)
+FS PHASE 101 id 4 ph 3 d 2 at (4, 13)
+FS PHASE 101 id 11 ph 3 d 5 at (5, 13)
+FS RETREAT 101 id 11 hp 4 from (5, 13) to (5, 14)
+FS EVICT 101 from (4, 11) to (0, 16)
+FS PHASE 102 id 4 ph 2 d 5 at (4, 12)
+FS EVICT 102 from (4, 12) to (4, 7)
+FS PHASE 103 id 4 ph 3 d 2 at (4, 13)
+FS RETREAT 103 id 11 hp 4 from (5, 13) to (5, 12)
+FS PHASE 104 id 4 ph 2 d 5 at (4, 12)
+FS PHASE 104 id 11 ph 2 d 8 at (5, 12)
+FS PHASE 105 id 4 ph 3 d 2 at (4, 13)
+FS PHASE 105 id 11 ph 3 d 5 at (5, 13)
+FS RETREAT 105 id 11 hp 4 from (5, 13) to (5, 14)
+FS PHASE 106 id 4 ph 2 d 5 at (4, 12)
+FS EVICT 106 from (4, 12) to (4, 7)
+FS PHASE 107 id 4 ph 3 d 2 at (4, 13)
+FS RETREAT 107 id 11 hp 4 from (5, 13) to (5, 12)
+FS EVICT 107 from (2, 12) to (8, 12)
+FS PHASE 108 id 4 ph 2 d 5 at (4, 12)
+FS PHASE 108 id 11 ph 2 d 8 at (5, 12)
+FS EVICT 108 from (4, 12) to (4, 7)
+FS PHASE 109 id 4 ph 3 d 2 at (4, 13)
+FS PHASE 109 id 11 ph 3 d 5 at (5, 13)
+FS RETREAT 109 id 11 hp 4 from (5, 13) to (5, 12)
+FS PHASE 110 id 4 ph 2 d 5 at (4, 12)
+FS PHASE 110 id 11 ph 2 d 8 at (5, 12)
+FS EVICT 110 from (4, 11) to (0, 16)
+FS PHASE 111 id 4 ph 3 d 2 at (4, 13)
+FS PHASE 111 id 11 ph 3 d 5 at (5, 13)
+FS RETREAT 111 id 11 hp 4 from (5, 13) to (5, 12)
+FS PHASE 112 id 4 ph 2 d 5 at (4, 12)
+FS PHASE 112 id 11 ph 2 d 8 at (5, 12)
+FS EVICT 112 from (4, 11) to (0, 16)
+FS PHASE 113 id 4 ph 3 d 2 at (4, 13)
+FS PHASE 113 id 11 ph 3 d 5 at (5, 13)
+FS RETREAT 113 id 11 hp 4 from (5, 13) to (5, 12)
+FS PHASE 114 id 4 ph 2 d 5 at (4, 12)
+FS PHASE 114 id 11 ph 2 d 8 at (5, 12)
+FS PHASE 115 id 4 ph 3 d 2 at (4, 13)
+FS PHASE 115 id 11 ph 3 d 5 at (5, 13)
+FS RETREAT 115 id 11 hp 4 from (5, 13) to (5, 12)
+FS PHASE 116 id 4 ph 2 d 5 at (4, 12)
+FS PHASE 116 id 11 ph 2 d 8 at (5, 12)
+FS EVICT 116 from (2, 12) to (8, 12)
+FS PHASE 117 id 4 ph 3 d 2 at (4, 13)
+FS PHASE 117 id 11 ph 3 d 5 at (5, 13)
+FS RETREAT 117 id 11 hp 4 from (5, 13) to (5, 12)
+FS PHASE 118 id 4 ph 2 d 5 at (4, 12)
+FS DODGE 118 id 4 from (4, 12) to (4, 13) cov 1 -> 0 hit 0 hp 22
+FS PHASE 118 id 11 ph 2 d 8 at (5, 12)
+FS PHASE 119 id 4 ph 3 d 2 at (4, 13)
+FS PHASE 119 id 11 ph 3 d 5 at (5, 13)
+FS RETREAT 119 id 11 hp 4 from (5, 13) to (5, 12)
+FS PHASE 120 id 4 ph 2 d 5 at (4, 12)
+FS STAT 120 id 4 at (4, 12) need 1 orth 1 ti 88 ammo 69 sen 0 hp 4 covden 24 eco 1 lost 0
+FS DODGE 120 id 4 from (4, 12) to (4, 13) cov 1 -> 0 hit 0 hp 4
+FS PHASE 120 id 11 ph 2 d 8 at (5, 12)
+FS STAT 120 id 11 at (5, 12) need 3 orth 3 ti 88 ammo 69 sen 0 hp 4 covden 49 eco 1 lost 0
+FS PHASE 121 id 4 ph 3 d 2 at (4, 13)
+FS PHASE 121 id 11 ph 3 d 5 at (5, 13)
+FS RETREAT 121 id 11 hp 4 from (5, 13) to (5, 12)
+FS PHASE 122 id 4 ph 2 d 5 at (4, 12)
+FS DODGE 122 id 4 from (4, 12) to (4, 13) cov 1 -> 0 hit 0 hp 4
+FS PHASE 122 id 11 ph 2 d 8 at (5, 12)
+FS PHASE 123 id 4 ph 3 d 2 at (4, 13)
+FS PHASE 123 id 11 ph 3 d 5 at (5, 13)
+FS RETREAT 123 id 11 hp 4 from (5, 13) to (5, 12)
+FS PHASE 124 id 4 ph 2 d 5 at (4, 12)
+FS DODGE 124 id 4 from (4, 12) to (4, 13) cov 1 -> 0 hit 0 hp 4
+FS PHASE 124 id 11 ph 2 d 8 at (5, 12)
+FS PHASE 125 id 4 ph 3 d 2 at (4, 13)
+FS PHASE 125 id 11 ph 3 d 5 at (5, 13)
+FS RETREAT 125 id 11 hp 4 from (5, 13) to (5, 12)
+FS PHASE 126 id 4 ph 2 d 5 at (4, 12)
+FS DODGE 126 id 4 from (4, 12) to (4, 13) cov 1 -> 0 hit 0 hp 4
+FS PHASE 126 id 11 ph 2 d 8 at (5, 12)
+FS PHASE 127 id 4 ph 3 d 2 at (4, 13)
+FS PHASE 127 id 11 ph 3 d 5 at (5, 13)
+FS RETREAT 127 id 11 hp 4 from (5, 13) to (5, 12)
+FS PHASE 128 id 4 ph 2 d 5 at (4, 12)
+FS DODGE 128 id 4 from (4, 12) to (4, 13) cov 1 -> 0 hit 0 hp 4
+FS PHASE 128 id 11 ph 2 d 8 at (5, 12)
+FS PHASE 129 id 4 ph 3 d 2 at (4, 13)
+FS PHASE 129 id 11 ph 3 d 5 at (5, 13)
+FS RETREAT 129 id 11 hp 4 from (5, 13) to (5, 12)
+FS PHASE 130 id 4 ph 2 d 5 at (4, 12)
+FS DODGE 130 id 4 from (4, 12) to (4, 13) cov 1 -> 0 hit 0 hp 4
+FS PHASE 130 id 11 ph 2 d 8 at (5, 12)
+FS EVICTOR 130 at (5, 13) ucov 0 cov 1 unseal 1 obs 13
+FS RUNG 130 id 11 r 2 hi -
+FS PHASE 131 id 4 ph 3 d 2 at (4, 13)
+FS GATE 131 sig (18, 18, (2, 14), (14, 2)) ok 1
+FS PHASE 132 id 4 ph 2 d 5 at (4, 12)
+FS DODGE 132 id 4 from (4, 12) to (4, 13) cov 1 -> 0 hit 0 hp 4
+FS PHASE 133 id 4 ph 3 d 2 at (4, 13)
+FS PHASE 134 id 4 ph 2 d 5 at (4, 12)
+FS DODGE 134 id 4 from (4, 12) to (4, 13) cov 1 -> 0 hit 0 hp 4
+FS PHASE 135 id 4 ph 3 d 2 at (4, 13)
+FS PHASE 136 id 4 ph 2 d 5 at (4, 12)
+FS DODGE 136 id 4 from (4, 12) to (4, 13) cov 1 -> 0 hit 0 hp 4
+FS PHASE 137 id 4 ph 3 d 2 at (4, 13)
+PRES520 139 ti 51 res 126 floor 126 bind 1 rounds 1 vacant 1 until 159
+PRES520 140 ti 61 res 126 floor 126 bind 2 rounds 2 vacant 2 until 160
+PRES520 141 ti 61 res 126 floor 126 bind 3 rounds 3 vacant 3 until 161
+PRES520 142 ti 61 res 126 floor 126 bind 4 rounds 4 vacant 4 until 162
+PRES520 143 ti 61 res 126 floor 126 bind 5 rounds 5 vacant 5 until 163
+PRES520 144 ti 71 res 126 floor 126 bind 6 rounds 6 vacant 6 until 164
+PRES520 145 ti 71 res 126 floor 126 bind 7 rounds 7 vacant 7 until 165
+PRES520 146 ti 71 res 126 floor 126 bind 8 rounds 8 vacant 8 until 166
+PRES520 147 ti 71 res 126 floor 126 bind 9 rounds 9 vacant 9 until 167
+PRES520 148 ti 81 res 126 floor 126 bind 10 rounds 10 vacant 10 until 168
+PRES520 149 ti 81 res 126 floor 126 bind 11 rounds 11 vacant 11 until 169
+PRES520 150 ti 81 res 126 floor 126 bind 12 rounds 12 vacant 12 until 170
+PRES520 151 ti 81 res 126 floor 126 bind 13 rounds 13 vacant 13 until 171
+PRES520 152 ti 91 res 126 floor 126 bind 14 rounds 14 vacant 14 until 172
+FS EVICT 192 from (4, 16) to (9, 17)
+FS EVICT 220 from (3, 16) to (9, 16)
+FS EVICT 252 from (3, 16) to (8, 17)
+FS GATE 253 sig (18, 18, (2, 14), (14, 2)) ok 1
+FS PHASE 253 id 107 ph 1 d 269 at (16, 4)
+FS HOPBUILD 253 at (16, 4) lch (16, 5) T (1, 16)
+FS GATE 254 sig (18, 18, (2, 14), (14, 2)) ok 1
+FS THROW 254 from (16, 4) to (12, 8) T (1, 16) body 107 n 1 dsq 117
+FS ARRIVE 266 id 107 body 1 at (5, 12) dsq 8
+ARC520 CLAIM 266 id 107 body 1 arc 1 at (5, 12)
+FS PHASE 266 id 107 ph 2 d 8 at (5, 12)
+FS GATE 305 sig (18, 18, (2, 14), (14, 2)) ok 1
+FS PHASE 305 id 110 ph 1 d 200 at (13, 4)
+FS HOPBUILD 305 at (13, 4) lch (13, 5) T (1, 16)
+FS GATE 306 sig (18, 18, (2, 14), (14, 2)) ok 1
+FS THROW 306 from (12, 4) to (9, 7) T (1, 16) body 110 n 1 dsq 85
+FS ARRIVE 316 id 110 body 1 at (5, 12) dsq 8
+ARC520 CLAIM 316 id 110 body 1 arc 1 at (5, 12)
+FS PHASE 316 id 110 ph 2 d 8 at (5, 12)
+FS GATE 353 sig (18, 18, (2, 14), (14, 2)) ok 1
+FS PHASE 353 id 112 ph 1 d 200 at (13, 4)
+FS HOPBUILD 353 at (13, 4) lch (13, 5) T (1, 16)
+FS GATE 354 sig (18, 18, (2, 14), (14, 2)) ok 1
+FS THROW 354 from (12, 4) to (9, 7) T (1, 16) body 112 n 1 dsq 85
+FS ARRIVE 364 id 112 body 1 at (5, 12) dsq 8
+ARC520 CLAIM 364 id 112 body 1 arc 1 at (5, 12)
+FS PHASE 364 id 112 ph 2 d 8 at (5, 12)
+FS EVICT 388 from (3, 16) to (8, 16)
+FS GATE 405 sig (18, 18, (2, 14), (14, 2)) ok 1
+FS PHASE 405 id 115 ph 1 d 200 at (13, 4)
+FS HOPBUILD 405 at (13, 4) lch (13, 5) T (1, 16)
+FS GATE 406 sig (18, 18, (2, 14), (14, 2)) ok 1
+FS THROW 406 from (12, 4) to (9, 7) T (1, 16) body 115 n 1 dsq 85
+FS ARRIVE 416 id 115 body 1 at (5, 12) dsq 8
+ARC520 CLAIM 416 id 115 body 1 arc 1 at (5, 12)
+FS PHASE 416 id 115 ph 2 d 8 at (5, 12)
+FS EVICT 436 from (3, 16) to (8, 14)
+FS GATE 453 sig (18, 18, (2, 14), (14, 2)) ok 1
+FS PHASE 453 id 118 ph 1 d 269 at (16, 4)
+FS HOPBUILD 453 at (16, 4) lch (16, 5) T (1, 16)
+FS GATE 454 sig (18, 18, (2, 14), (14, 2)) ok 1
+FS THROW 454 from (16, 4) to (12, 8) T (1, 16) body 118 n 1 dsq 117
+FS ARRIVE 466 id 118 body 1 at (5, 12) dsq 8
+ARC520 CLAIM 466 id 118 body 1 arc 1 at (5, 12)
+FS PHASE 466 id 118 ph 2 d 8 at (5, 12)
+FS EVICT 484 from (3, 16) to (8, 15)
+FS GATE 501 sig (18, 18, (2, 14), (14, 2)) ok 1
+FS PHASE 501 id 121 ph 1 d 269 at (16, 4)
+FS HOPBUILD 501 at (16, 4) lch (16, 5) T (1, 16)
+FS GATE 502 sig (18, 18, (2, 14), (14, 2)) ok 1
+FS THROW 502 from (16, 4) to (12, 8) T (1, 16) body 121 n 1 dsq 117
+FS ARRIVE 514 id 121 body 1 at (5, 12) dsq 8
+ARC520 CLAIM 514 id 121 body 1 arc 1 at (5, 12)
+FS PHASE 514 id 121 ph 2 d 8 at (5, 12)
+FS GATE 553 sig (18, 18, (2, 14), (14, 2)) ok 1
+FS PHASE 553 id 123 ph 1 d 269 at (16, 4)
+FS HOPBUILD 553 at (16, 4) lch (16, 5) T (1, 16)
+FS GATE 554 sig (18, 18, (2, 14), (14, 2)) ok 1
+FS THROW 554 from (16, 4) to (12, 8) T (1, 16) body 123 n 1 dsq 117
+FS ARRIVE 566 id 123 body 1 at (5, 12) dsq 8
+ARC520 CLAIM 566 id 123 body 1 arc 1 at (5, 12)
+FS PHASE 566 id 123 ph 2 d 8 at (5, 12)
+FS GATE 601 sig (18, 18, (2, 14), (14, 2)) ok 1
+FS PHASE 601 id 125 ph 1 d 269 at (16, 4)
+FS HOPBUILD 601 at (16, 4) lch (16, 5) T (1, 16)
+FS GATE 602 sig (18, 18, (2, 14), (14, 2)) ok 1
+FS THROW 602 from (16, 4) to (12, 8) T (1, 16) body 125 n 1 dsq 117
+FS ARRIVE 614 id 125 body 1 at (5, 12) dsq 8
+ARC520 CLAIM 614 id 125 body 1 arc 1 at (5, 12)
+FS PHASE 614 id 125 ph 2 d 8 at (5, 12)
+FS GATE 657 sig (18, 18, (2, 14), (14, 2)) ok 1
+FS IDLETEAR 697 at (10, 10) born 657 lastthrow None downsq 80 dopp 65
+FS GATE 699 sig (18, 18, (2, 14), (14, 2)) ok 1
+FS EVICT 736 from (3, 16) to (7, 17)
+FS IDLETEAR 739 at (10, 10) born 699 lastthrow None downsq 80 dopp 65
+FS GATE 741 sig (18, 18, (2, 14), (14, 2)) ok 1
+FS PHASE 741 id 130 ph 1 d 200 at (13, 4)
+FS HOPBUILD 741 at (13, 4) lch (13, 5) T (1, 16)
+FS GATE 741 sig (18, 18, (2, 14), (14, 2)) ok 1
+FS GATE 742 sig (18, 18, (2, 14), (14, 2)) ok 1
+FS THROW 742 from (12, 4) to (9, 7) T (1, 16) body 130 n 1 dsq 85
+FS HOPBUILD 743 at (9, 7) lch (8, 7) T (1, 16)
+FS GATE 744 sig (18, 18, (2, 14), (14, 2)) ok 1
+FS THROW 744 from (9, 7) to (5, 11) T (1, 16) body 130 n 1 dsq 13
+FS ARRIVE 746 id 130 body 1 at (5, 12) dsq 8
+ARC520 CLAIM 746 id 130 body 1 arc 1 at (5, 12)
+FS PHASE 746 id 130 ph 2 d 8 at (5, 12)
+FS EVICT 760 from (6, 12) to (0, 13)

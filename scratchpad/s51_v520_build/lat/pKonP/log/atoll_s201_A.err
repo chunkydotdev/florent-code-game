@@ -1,0 +1,66 @@
+Update available: 2.3.6 -> 2.3.8. Run: pip install --upgrade fcode
+FS GATE 0 sig (18, 18, (2, 14), (14, 2)) ok 1
+FS GATE 1 sig (18, 18, (2, 14), (14, 2)) ok 1
+FS PHASE 1 id 3 ph 1 d 200 at (4, 13)
+FS GATE 2 sig (18, 18, (2, 14), (14, 2)) ok 1
+FS GATE 3 sig (18, 18, (2, 14), (14, 2)) ok 1
+FS GATE 4 sig (18, 18, (2, 14), (14, 2)) ok 1
+FS PHASE 4 id 10 ph 1 d 221 at (3, 13)
+FS HOPBUILD 5 at (4, 13) lch (4, 12) T (16, 1)
+FS GATE 6 sig (18, 18, (2, 14), (14, 2)) ok 1
+FS THROW 6 from (5, 13) to (8, 9) T (16, 1) body 3 n 1 dsq 72
+FS HOPBUILD 7 at (8, 9) lch (8, 8) T (16, 1)
+FS THROW 7 from (5, 11) to (7, 8) T (16, 1) body 10 n 2 dsq 74
+FS GATE 8 sig (18, 18, (2, 14), (14, 2)) ok 1
+FS THROW 8 from (9, 9) to (12, 5) T (16, 1) body 3 n 1 dsq 8
+FS ARRIVE 9 id 3 body 1 at (12, 5) dsq 8
+FS PHASE 9 id 3 ph 2 d 8 at (12, 5)
+FS THROW 9 from (8, 7) to (12, 5) T (16, 1) body 10 n 2 dsq 8
+FS ARRIVE 10 id 10 body 2 at (12, 5) dsq 8
+FS PHASE 10 id 10 ph 2 d 8 at (12, 5)
+FS SEAL 11 tile (13, 3) n 1
+FS EVICTOR 11 at (12, 3) ucov 0 cov 1 unseal 1 obs 4
+FS RUNG 11 id 10 r 2 hi -
+FS GATE 11 sig (18, 18, (2, 14), (14, 2)) ok 1
+FS DODGE 12 id 3 from (13, 4) to (14, 4) cov 1 -> 0 hit 0 hp 40
+FS GATE 12 sig (18, 18, (2, 14), (14, 2)) ok 1
+FS SPLIT 12 arc 2 to (14, 1) body 10 walk 0
+FS SEAL 13 tile (15, 4) n 2
+FS SEAL 13 tile (15, 1) n 1
+FS EVICT 13 from (11, 3) to (17, 4)
+FS CLEAR 14 tile (13, 1) peck 1
+FS RUNG 14 id 10 r 3 hi -
+FS EVICT 14 from (13, 2) to (7, 4)
+FS DODGE 15 id 3 from (13, 4) to (14, 4) cov 1 -> 0 hit 0 hp 22
+FS CLEAR 15 tile (13, 1) peck 2
+FS RUNG 15 id 10 r 3 hi -
+FS CLEAR 16 tile (13, 1) peck 3
+FS RUNG 16 id 10 r 3 hi -
+FS DODGE 17 id 3 from (13, 4) to (14, 4) cov 1 -> 0 hit 0 hp 4
+FS CLEAR 17 tile (13, 1) peck 4
+FS RUNG 17 id 10 r 3 hi -
+FS CLEAR 18 tile (13, 1) peck 5
+FS RUNG 18 id 10 r 3 hi -
+FS CLEAR 19 tile (13, 1) peck 6
+FS RUNG 19 id 10 r 3 hi -
+FS STAT 20 id 10 at (14, 1) need 6 orth 5 ti 81 ammo 24 sen 0 hp 40 covden 0 eco 1 lost 0
+FS CLEAR 20 tile (13, 1) peck 7
+FS RUNG 20 id 10 r 3 hi -
+FS PROMOTE 25 id 10
+FS STAT 40 id 10 at (14, 1) need 6 orth 5 ti 45 ammo 24 sen 0 hp 40 covden 0 eco 1 lost 0
+FS CLEAR 42 tile (13, 1) peck 1
+FS RUNG 42 id 10 r 3 hi -
+FS DODGE 55 id 10 from (14, 1) to (13, 1) cov 1 -> 0 hit 0 hp 40
+FS SEAL 56 tile (13, 2) n 2
+FS CLEAR 57 tile (14, 1) peck 1
+FS RUNG 57 id 10 r 3 hi -
+FS CLEAR 58 tile (14, 1) peck 2
+FS RUNG 58 id 10 r 3 hi -
+FS CLEAR 59 tile (14, 1) peck 3
+FS RUNG 59 id 10 r 3 hi -
+PRESKILL520 60 id 10 body 2
+FS EVICT 60 from (13, 4) to (7, 4)
+FS EVICT 95 from (12, 4) to (7, 4)
+FS EVICT 99 from (11, 4) to (17, 4)
+FS EVICT 114 from (13, 4) to (7, 4)
+FS EVICT 118 from (11, 4) to (17, 4)

@@ -1,0 +1,101 @@
+Update available: 2.3.6 -> 2.3.8. Run: pip install --upgrade fcode
+FS GATE 0 sig (30, 30, (2, 24), (26, 4)) ok 1
+FS GATE 1 sig (30, 30, (2, 24), (26, 4)) ok 1
+FS PHASE 1 id 3 ph 1 d 808 at (4, 23)
+GF519 1 id 3 d 808 band 0 ti 434 ammo 0 gun 28 lau 28 bar 4 cd 0 lp 0 plants 0
+GF519 2 id 3 d 808 band 0 ti 392 ammo 0 gun 32 lau 32 bar 4 cd 0 lp 0 plants 0
+FS GATE 2 sig (30, 30, (2, 24), (26, 4)) ok 1
+GF519 3 id 3 d 808 band 0 ti 344 ammo 0 gun 36 lau 36 bar 5 cd 0 lp 0 plants 0
+FS GATE 3 sig (30, 30, (2, 24), (26, 4)) ok 1
+GF519 4 id 3 d 808 band 0 ti 354 ammo 0 gun 36 lau 36 bar 5 cd 0 lp 0 plants 0
+FS GATE 4 sig (30, 30, (2, 24), (26, 4)) ok 1
+APPT520 CLAIM 4 id 9
+FS PHASE 4 id 9 ph 1 d 845 at (4, 24)
+GF519 4 id 9 d 845 band 0 ti 354 ammo 0 gun 36 lau 36 bar 5 cd 0 lp 0 plants 0
+GF519 5 id 3 d 808 band 0 ti 354 ammo 0 gun 36 lau 36 bar 5 cd 0 lp 0 plants 0
+FS HOPBUILD 5 at (4, 23) lch (5, 23) T (28, 3)
+GF519 5 id 9 d 802 band 0 ti 318 ammo 0 gun 38 lau 38 bar 5 cd 0 lp 1 plants 0
+GF519 6 id 3 d 808 band 0 ti 318 ammo 0 gun 38 lau 38 bar 5 cd 0 lp 1 plants 0
+GF519 6 id 9 d 761 band 0 ti 318 ammo 0 gun 38 lau 38 bar 5 cd 0 lp 1 plants 0
+FS GATE 6 sig (30, 30, (2, 24), (26, 4)) ok 1
+FS THROW 6 from (4, 22) to (9, 20) T (28, 3) body 3 n 1 dsq 514
+GF519 7 id 3 d 514 band 0 ti 318 ammo 0 gun 38 lau 38 bar 5 cd 0 lp 0 plants 0
+FS HOPBUILD 7 at (9, 20) lch (10, 20) T (28, 3)
+GF519 7 id 9 d 724 band 0 ti 280 ammo 0 gun 40 lau 40 bar 6 cd 0 lp 1 plants 0
+FS THROW 7 from (6, 22) to (8, 19) T (28, 3) body 9 n 2 dsq 520
+GF519 8 id 3 d 514 band 0 ti 290 ammo 0 gun 38 lau 38 bar 5 cd 0 lp 1 plants 0
+GF519 8 id 9 d 520 band 0 ti 290 ammo 0 gun 38 lau 38 bar 5 cd 0 lp 0 plants 0
+FS GATE 8 sig (30, 30, (2, 24), (26, 4)) ok 1
+FS THROW 8 from (9, 19) to (14, 17) T (28, 3) body 3 n 1 dsq 288
+GF519 9 id 3 d 288 band 0 ti 290 ammo 0 gun 38 lau 38 bar 5 cd 0 lp 0 plants 0
+FS HOPBUILD 9 at (14, 17) lch (14, 16) T (28, 3)
+GF519 9 id 9 d 549 band 0 ti 212 ammo 0 gun 41 lau 41 bar 6 cd 0 lp 0 plants 0
+FS THROW 9 from (9, 20) to (13, 16) T (28, 3) body 9 n 2 dsq 290
+GF519 10 id 3 d 288 band 0 ti 212 ammo 0 gun 39 lau 39 bar 5 cd 0 lp 1 plants 0
+GF519 10 id 9 d 290 band 0 ti 207 ammo 0 gun 39 lau 39 bar 5 cd 0 lp 1 plants 0
+FS GATE 10 sig (30, 30, (2, 24), (26, 4)) ok 1
+FS THROW 10 from (15, 17) to (18, 13) T (28, 3) body 3 n 1 dsq 128
+GF519 11 id 3 d 128 band 0 ti 207 ammo 0 gun 39 lau 39 bar 5 cd 0 lp 0 plants 0
+FS HOPBUILD 11 at (18, 13) lch (18, 12) T (28, 3)
+GF519 11 id 9 d 269 band 0 ti 168 ammo 0 gun 41 lau 41 bar 6 cd 0 lp 1 plants 0
+FS THROW 11 from (14, 15) to (17, 13) T (28, 3) body 9 n 2 dsq 145
+GF519 12 id 3 d 128 band 0 ti 178 ammo 0 gun 39 lau 39 bar 5 cd 0 lp 1 plants 0
+GF519 12 id 9 d 145 band 0 ti 173 ammo 0 gun 39 lau 39 bar 5 cd 0 lp 1 plants 0
+FS GATE 12 sig (30, 30, (2, 24), (26, 4)) ok 1
+FS THROW 12 from (19, 13) to (22, 9) T (28, 3) body 3 n 1 dsq 32
+GF519 13 id 3 d 32 band 1 ti 173 ammo 0 gun 39 lau 39 bar 5 cd 0 lp 0 plants 0
+TERM520 13 id 3 at (22, 9) n 2 pick (22, 8) arcs 2 cov 0 covbest 0 conflict 0 dsq 25
+FS HOPBUILD 13 at (22, 9) lch (22, 8) T (28, 3)
+GF519 13 id 9 d 128 band 0 ti 87 ammo 0 gun 42 lau 42 bar 6 cd 0 lp 1 plants 0
+FS THROW 13 from (19, 13) to (21, 8) T (28, 3) body 9 n 2 dsq 34
+GF519 14 id 3 d 32 band 1 ti 71 ammo 16 gun 40 lau 40 bar 6 cd 0 lp 1 plants 0
+GF519 14 id 9 d 34 band 1 ti 65 ammo 16 gun 40 lau 40 bar 6 cd 0 lp 1 plants 0
+FS GATE 14 sig (30, 30, (2, 24), (26, 4)) ok 1
+FS THROW 14 from (23, 9) to (25, 4) T (28, 3) body 3 n 1 dsq 1
+FS ARRIVE 15 id 3 body 1 at (25, 4) dsq 1
+ARC520 CLAIM 15 id 3 body 1 arc 1 at (25, 4)
+FS PHASE 15 id 3 ph 2 d 1 at (25, 4)
+FS SEAL 15 tile (25, 5) n 1
+GF519 15 id 9 d 29 band 1 ti 53 ammo 16 gun 41 lau 41 bar 6 cd 0 lp 1 plants 0
+FS THROW 15 from (22, 7) to (26, 6) T (28, 3) body 9 n 2 dsq 1
+FS SEAL 16 tile (25, 3) n 2
+FS ARRIVE 16 id 9 body 2 at (26, 6) dsq 1
+ARC520 COLLIDE 16 id 9 body 2 peer 1 took 2 n 1
+ARC520 CLAIM 16 id 9 body 2 arc 2 at (26, 6)
+FS PHASE 16 id 9 ph 2 d 1 at (26, 6)
+FS SEAL 16 tile (27, 6) n 1
+FS DODGE 17 id 3 from (25, 4) to (24, 4) cov 1 -> 0 hit 0 hp 40
+FS SEAL 18 tile (25, 4) n 3
+FS SEAL 18 tile (26, 6) n 2
+FS STAT 20 id 3 at (23, 4) need 5 orth 4 ti 35 ammo 16 sen 0 hp 40 covden 0 eco 0 lost 0
+FS STAT 20 id 9 at (27, 7) need 5 orth 4 ti 35 ammo 16 sen 0 hp 40 covden 0 eco 0 lost 0
+FS SEAL 22 tile (28, 5) n 3
+FS SEAL 26 tile (25, 3) n 4
+FS SEAL 26 tile (28, 4) n 4
+FS DODGE 29 id 3 from (25, 2) to (26, 2) cov 1 -> 0 hit 0 hp 40
+FS SEAL 29 tile (27, 3) n 5
+FS SEAL 30 tile (26, 3) n 5
+FS PHASE 30 id 9 ph 3 d 2 at (28, 3)
+FS PHASE 31 id 3 ph 3 d 4 at (26, 2)
+FS DODGE 32 id 3 from (25, 2) to (26, 2) cov 1 -> 0 hit 0 hp 40
+FS DODGE 34 id 3 from (25, 2) to (26, 2) cov 1 -> 0 hit 0 hp 40
+FS SEAL 34 tile (28, 6) n 6
+FS DODGE 36 id 3 from (25, 2) to (26, 2) cov 1 -> 0 hit 0 hp 40
+FS PHASE 36 id 9 ph 2 d 8 at (29, 7)
+FS PHASE 37 id 9 ph 3 d 5 at (29, 6)
+FS DODGE 38 id 3 from (25, 2) to (26, 2) cov 1 -> 0 hit 0 hp 40
+FS PHASE 38 id 9 ph 2 d 8 at (29, 7)
+FS PHASE 39 id 9 ph 3 d 5 at (28, 7)
+FS STAT 40 id 3 at (25, 2) need 2 orth 0 ti 67 ammo 76 sen 0 hp 40 covden 0 eco 1 lost 0
+FS DODGE 40 id 3 from (25, 2) to (26, 2) cov 1 -> 0 hit 0 hp 40
+FS STAT 40 id 9 at (27, 7) need 1 orth 0 ti 67 ammo 76 sen 0 hp 40 covden 0 eco 1 lost 0
+FS DODGE 42 id 3 from (25, 2) to (26, 2) cov 1 -> 0 hit 0 hp 40
+FS SEAL 42 tile (25, 6) n 7
+FS SENTINEL 43 at (26, 1) face SOUTH tgt (26, 5) score 16 n 1 onring 0 lost 0 gate (1, 1, 24) onsray 0 olddsq -1
+FS PHASE 44 id 3 ph 4 d 4 at (26, 2)
+FS PHASE 45 id 9 ph 4 d 9 at (26, 8)
+FS STAT 60 id 3 at (28, 3) need 0 orth 0 ti 12 ammo 132 sen 1 hp 40 covden 0 eco 1 lost 0
+FS STAT 60 id 9 at (24, 7) need 2 orth 2 ti 12 ammo 132 sen 1 hp 40 covden 0 eco 1 lost 0
+FS STAT 80 id 3 at (28, 2) need 2 orth 0 ti 32 ammo 162 sen 1 hp 40 covden 0 eco 1 lost 0
+FS STAT 80 id 9 at (23, 3) need 4 orth 3 ti 32 ammo 162 sen 1 hp 40 covden 0 eco 1 lost 0
+FS SEAL 81 tile (25, 3) n 8

@@ -1,0 +1,23 @@
+Update available: 2.3.6 -> 2.3.8. Run: pip install --upgrade fcode
+FS GATE 0 sig (30, 30, (2, 2), (26, 26)) ok 1
+FS GATE 1 sig (30, 30, (2, 2), (26, 26)) ok 1
+FS GATE 2 sig (30, 30, (2, 2), (26, 26)) ok 1
+FS GATE 3 sig (30, 30, (2, 2), (26, 26)) ok 1
+FS GATE 4 sig (30, 30, (2, 2), (26, 26)) ok 1
+FS GATE 5 sig (30, 30, (2, 2), (26, 26)) ok 1
+FS GATE 9 sig (30, 30, (2, 2), (26, 26)) ok 1
+FS GATE 231 sig (30, 30, (2, 2), (26, 26)) ok 1
+FS GATE 249 sig (30, 30, (2, 2), (26, 26)) ok 1
+FS GATE 265 sig (30, 30, (2, 2), (26, 26)) ok 1
+FS GATE 279 sig (30, 30, (2, 2), (26, 26)) ok 1
+FS GATE 299 sig (30, 30, (2, 2), (26, 26)) ok 1
+FS GATE 333 sig (30, 30, (2, 2), (26, 26)) ok 1
+FS GATE 417 sig (30, 30, (2, 2), (26, 26)) ok 1
+FS GATE 437 sig (30, 30, (2, 2), (26, 26)) ok 1
+FS GATE 461 sig (30, 30, (2, 2), (26, 26)) ok 1
+FS GATE 501 sig (30, 30, (2, 2), (26, 26)) ok 1
+FS GATE 523 sig (30, 30, (2, 2), (26, 26)) ok 1
+FS GATE 737 sig (30, 30, (2, 2), (26, 26)) ok 1
+FS GATE 847 sig (30, 30, (2, 2), (26, 26)) ok 1
+FS GATE 871 sig (30, 30, (2, 2), (26, 26)) ok 1
+FS GATE 895 sig (30, 30, (2, 2), (26, 26)) ok 1

@@ -1,0 +1,37 @@
+tag	map	seed	seat	ours	cond	turn	arm	arrive	sent	kill	last	window	ge1	ge2	nobody	two_body_share	bought_sentinel	ge1_fp	ge2_fp	nobody_fp
+atoll_s58_A	atoll	58	A	US	Titanium collected (tiebreak)	1000	parent	9	360	-1	999	351	82	0	0.7664	0.0	1	103	0	0.7066
+atoll_s58_B	atoll	58	B	US	Core destroyed	225	parent	7	127	224	224	120	111	49	0.075	0.4083	1	120	61	0.0
+atoll_s59_A	atoll	59	A	OPP	Core destroyed	640	parent	7	134	-1	639	127	30	0	0.7638	0.0	1	57	0	0.5512
+atoll_s59_B	atoll	59	B	US	Core destroyed	196	parent	7	98	195	195	91	82	26	0.0989	0.2857	1	91	41	0.0
+atoll_s60_A	atoll	60	A	US	Core destroyed	160	parent	7	92	159	159	85	22	0	0.7412	0.0	1	26	0	0.6941
+atoll_s60_B	atoll	60	B	OPP	Core destroyed	981	parent	7	81	-1	980	74	23	0	0.6892	0.0	1	31	0	0.5811
+drakkarfjord_s58_A	drakkarfjord	58	A	OPP	Core destroyed	206	parent	10	-1	-1	205	196	73	0	0.6276	0.0	0	87	0	0.5561
+drakkarfjord_s58_B	drakkarfjord	58	B	OPP	Core destroyed	562	parent	10	-1	-1	561	552	30	0	0.9457	0.0	0	52	0	0.9058
+drakkarfjord_s59_A	drakkarfjord	59	A	US	Core destroyed	831	parent	10	775	830	830	765	72	0	0.9059	0.0	1	120	0	0.8431
+drakkarfjord_s59_B	drakkarfjord	59	B	US	Titanium collected (tiebreak)	1000	parent	10	80	-1	999	70	33	0	0.5286	0.0	1	70	0	0.0
+drakkarfjord_s60_A	drakkarfjord	60	A	US	Core destroyed	173	parent	10	71	172	172	61	42	0	0.3115	0.0	1	58	0	0.0492
+drakkarfjord_s60_B	drakkarfjord	60	B	US	Core destroyed	143	parent	10	65	142	142	55	31	0	0.4364	0.0	1	55	0	0.0
+glacierkeep_s58_A	glacierkeep	58	A	US	Core destroyed	261	parent	8	107	260	260	99	84	42	0.1515	0.4242	1	99	69	0.0
+glacierkeep_s58_B	glacierkeep	58	B	US	Core destroyed	185	parent	8	84	184	184	76	56	4	0.2632	0.0526	1	76	39	0.0
+glacierkeep_s59_A	glacierkeep	59	A	US	Core destroyed	261	parent	9	115	260	260	106	70	20	0.3396	0.1887	1	106	71	0.0
+glacierkeep_s59_B	glacierkeep	59	B	US	Core destroyed	157	parent	8	52	156	156	44	32	4	0.2727	0.0909	1	44	13	0.0
+glacierkeep_s60_A	glacierkeep	60	A	US	Titanium collected (tiebreak)	1000	parent	8	968	-1	999	960	199	49	0.7927	0.051	1	219	125	0.7719
+glacierkeep_s60_B	glacierkeep	60	B	US	Core destroyed	173	parent	8	80	172	172	72	54	11	0.25	0.1528	1	72	35	0.0
+midgard_s58_A	midgard	58	A	OPP	Core destroyed	312	parent	57	-1	-1	311	255	167	137	0.3451	0.5373	0	167	151	0.3451
+midgard_s58_B	midgard	58	B	US	Core destroyed	201	parent	51	145	200	200	94	90	75	0.0426	0.7979	1	94	87	0.0
+midgard_s59_A	midgard	59	A	OPP	Core destroyed	243	parent	49	-1	-1	242	194	108	19	0.4433	0.0979	0	114	26	0.4124
+midgard_s59_B	midgard	59	B	OPP	Core destroyed	373	parent	52	-1	-1	372	321	56	31	0.8255	0.0966	0	58	52	0.8193
+midgard_s60_A	midgard	60	A	US	Core destroyed	331	parent	50	291	330	330	241	237	204	0.0166	0.8465	1	241	214	0.0
+midgard_s60_B	midgard	60	B	OPP	Core destroyed	165	parent	53	-1	-1	164	112	109	100	0.0268	0.8929	0	111	105	0.0089
+nordkap_s58_A	nordkap	58	A	US	Core destroyed	328	parent	4	272	327	327	268	91	22	0.6604	0.0821	1	116	37	0.5672
+nordkap_s58_B	nordkap	58	B	US	Core destroyed	169	parent	4	101	168	168	97	50	0	0.4845	0.0	1	97	0	0.0
+nordkap_s59_A	nordkap	59	A	US	Core destroyed	671	parent	4	615	670	670	611	167	5	0.7267	0.0082	1	244	38	0.6007
+nordkap_s59_B	nordkap	59	B	US	Core destroyed	488	parent	4	64	487	487	60	38	4	0.3667	0.0667	1	54	28	0.1
+nordkap_s60_A	nordkap	60	A	US	Core destroyed	160	parent	4	88	159	159	84	71	25	0.1548	0.2976	1	84	54	0.0
+nordkap_s60_B	nordkap	60	B	OPP	Core destroyed	575	parent	4	156	-1	574	152	109	5	0.2829	0.0329	1	151	12	0.0066
+yulerune_s58_A	yulerune	58	A	US	Core destroyed	581	parent	27	543	580	580	516	513	303	0.0058	0.5872	1	516	309	0.0
+yulerune_s58_B	yulerune	58	B	OPP	Core destroyed	249	parent	31	192	-1	248	161	160	151	0.0062	0.9379	1	161	157	0.0
+yulerune_s59_A	yulerune	59	A	US	Core destroyed	188	parent	37	87	187	187	50	50	47	0.0	0.94	1	50	50	0.0
+yulerune_s59_B	yulerune	59	B	OPP	Core destroyed	250	parent	34	-1	-1	249	216	51	40	0.7639	0.1852	0	53	43	0.7546
+yulerune_s60_A	yulerune	60	A	US	Core destroyed	185	parent	35	104	184	184	69	68	59	0.0145	0.8551	1	69	64	0.0
+yulerune_s60_B	yulerune	60	B	OPP	Titanium collected (tiebreak)	1000	parent	31	-1	-1	999	969	966	956	0.0031	0.9866	0	969	962	0.0

@@ -1,0 +1,41 @@
+tag	map	seed	seat	ours	cond	turn	arm	game_rounds	game_jumps	eid	birth	pos	dsq_core	dsq_centre	n_seats	coverage	coverage_ferry	best_cov_site	lifetime	died	death_round	n_launch	n_launch_seat	ever_launched
+atoll_s52_A	atoll	52	A	OPP	Core destroyed	236	v520	236	29	30	11	12,3	1	6.5	8	2	2	2	225	0	-1	25	1	1
+atoll_s52_B	atoll	52	B	US	Titanium collected (tiebreak)	1000	v520	1000	51	50	20	3,12	1	6.5	8	2	2	2	980	0	-1	40	4	1
+atoll_s53_A	atoll	53	A	OPP	Core destroyed	376	v520	376	82	34	10	12,4	2	8.5	8	1	1	2	3	1	13	2	0	1
+atoll_s53_A	atoll	53	A	OPP	Core destroyed	376	v520	376	82	41	14	14,0	1	6.5	8	2	2	2	362	0	-1	1	1	1
+atoll_s53_A	atoll	53	A	OPP	Core destroyed	376	v520	376	82	42	14	15,5	4	6.5	8	2	2	2	269	1	283	73	17	1
+atoll_s53_A	atoll	53	A	OPP	Core destroyed	376	v520	376	82	130	74	12,6	10	18.5	8	0	0	2	4	1	78	1	0	1
+atoll_s53_B	atoll	53	B	US	Core destroyed	181	v520	181	15	28	10	3,12	1	6.5	8	2	2	2	171	0	-1	11	0	1
+atoll_s54_A	atoll	54	A	US	Titanium collected (tiebreak)	1000	v520	1000	15	33	10	12,4	2	8.5	8	1	1	2	990	0	-1	11	1	1
+atoll_s54_A	atoll	54	A	US	Titanium collected (tiebreak)	1000	v520	1000	15	82	36	14,0	1	6.5	8	2	2	2	964	0	-1	0	0	0
+atoll_s54_B	atoll	54	B	OPP	Core destroyed	160	v520	160	4	90	42	4,17	5	8.5	8	1	1	2	118	0	-1	0	0	0
+drakkarfjord_s52_A	drakkarfjord	52	A	US	Core destroyed	141	v520	141	18	23	13	22,8	18	32.5	8	0	0	2	2	1	15	2	0	1
+drakkarfjord_s52_A	drakkarfjord	52	A	US	Core destroyed	141	v520	141	18	77	36	25,6	2	4.5	8	2	2	2	2	1	38	0	0	0
+drakkarfjord_s52_A	drakkarfjord	52	A	US	Core destroyed	141	v520	141	18	83	39	27,7	4	6.5	8	2	2	2	102	0	-1	8	0	1
+drakkarfjord_s52_B	drakkarfjord	52	B	US	Core destroyed	162	v520	162	19	25	13	6,20	18	32.5	8	0	0	2	2	1	15	2	0	1
+drakkarfjord_s52_B	drakkarfjord	52	B	US	Core destroyed	162	v520	162	19	85	42	1,22	2	8.5	8	1	1	2	120	0	-1	9	0	1
+drakkarfjord_s53_A	drakkarfjord	53	A	US	Core destroyed	89	v520	89	10	20	13	22,8	18	32.5	8	0	0	2	2	1	15	2	0	1
+drakkarfjord_s53_B	drakkarfjord	53	B	US	Core destroyed	98	v520	98	10	20	13	6,20	18	32.5	8	0	0	2	2	1	15	2	0	1
+drakkarfjord_s54_A	drakkarfjord	54	A	US	Core destroyed	90	v520	90	10	23	13	22,8	18	32.5	8	0	0	2	2	1	15	2	0	1
+drakkarfjord_s54_B	drakkarfjord	54	B	US	Core destroyed	100	v520	100	10	24	13	6,20	18	32.5	8	0	0	2	2	1	15	2	0	1
+glacierkeep_s52_A	glacierkeep	52	A	US	Core destroyed	127	v520	127	8	15	11	16,23	5	14.5	8	0	0	2	2	1	13	2	0	1
+glacierkeep_s52_B	glacierkeep	52	B	US	Core destroyed	221	v520	221	8	15	11	16,6	10	14.5	8	0	0	2	2	1	13	2	0	1
+glacierkeep_s53_A	glacierkeep	53	A	US	Core destroyed	165	v520	165	8	15	11	16,23	5	14.5	8	0	0	2	2	1	13	2	0	1
+glacierkeep_s53_B	glacierkeep	53	B	OPP	Harvesters (tiebreak)	1000	v520	1000	12	15	11	16,6	10	14.5	8	0	0	2	2	1	13	2	0	1
+glacierkeep_s53_B	glacierkeep	53	B	OPP	Harvesters (tiebreak)	1000	v520	1000	12	128	317	16,1	2	4.5	8	2	2	2	683	0	-1	1	0	1
+glacierkeep_s53_B	glacierkeep	53	B	OPP	Harvesters (tiebreak)	1000	v520	1000	12	398	858	16,6	10	14.5	8	0	0	2	4	1	862	1	0	1
+glacierkeep_s54_A	glacierkeep	54	A	US	Core destroyed	161	v520	161	8	15	11	16,23	5	14.5	8	0	0	2	2	1	13	2	0	1
+glacierkeep_s54_B	glacierkeep	54	B	US	Core destroyed	245	v520	245	15	15	11	16,6	10	14.5	8	0	0	2	2	1	13	2	0	1
+glacierkeep_s54_B	glacierkeep	54	B	US	Core destroyed	245	v520	245	15	106	84	15,0	1	6.5	8	2	2	2	161	0	-1	7	0	1
+nordkap_s52_A	nordkap	52	A	US	Core destroyed	353	v520	353	36	18	7	11,14	10	22.5	8	0	0	2	2	1	9	2	0	1
+nordkap_s52_A	nordkap	52	A	US	Core destroyed	353	v520	353	36	25	9	12,19	4	6.5	8	2	2	2	344	0	-1	32	0	1
+nordkap_s52_B	nordkap	52	B	OPP	Core destroyed	889	v520	889	15	25	9	9,11	16	20.5	8	0	0	2	2	1	11	2	0	1
+nordkap_s52_B	nordkap	52	B	OPP	Core destroyed	889	v520	889	15	221	592	12,11	20	26.5	8	0	0	2	4	1	596	1	0	1
+nordkap_s53_A	nordkap	53	A	US	Titanium collected (tiebreak)	1000	v520	1000	47	15	7	10,15	4	12.5	8	0	0	2	2	1	9	1	0	1
+nordkap_s53_A	nordkap	53	A	US	Titanium collected (tiebreak)	1000	v520	1000	47	40	16	11,17	2	4.5	8	2	2	2	984	0	-1	13	0	1
+nordkap_s53_A	nordkap	53	A	US	Titanium collected (tiebreak)	1000	v520	1000	47	92	133	7,20	2	8.5	8	1	1	2	867	0	-1	31	0	1
+nordkap_s53_B	nordkap	53	B	US	Core destroyed	213	v520	213	4	14	7	11,11	17	22.5	8	0	0	2	3	1	10	2	0	1
+nordkap_s54_A	nordkap	54	A	US	Core destroyed	273	v520	273	8	15	7	10,15	4	12.5	8	0	0	2	2	1	9	1	0	1
+nordkap_s54_A	nordkap	54	A	US	Core destroyed	273	v520	273	8	43	16	11,17	2	4.5	8	2	2	2	257	0	-1	5	0	1
+nordkap_s54_B	nordkap	54	B	OPP	Core destroyed	193	v520	193	22	14	7	10,10	9	12.5	8	0	0	2	2	1	9	2	0	1
+nordkap_s54_B	nordkap	54	B	OPP	Core destroyed	193	v520	193	22	40	15	9,9	4	6.5	8	2	2	2	178	0	-1	18	0	1

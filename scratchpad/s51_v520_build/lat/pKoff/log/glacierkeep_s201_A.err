@@ -1,0 +1,51 @@
+Update available: 2.3.6 -> 2.3.8. Run: pip install --upgrade fcode
+FS GATE 0 sig (30, 30, (14, 2), (14, 26)) ok 1
+FS GATE 1 sig (30, 30, (14, 2), (14, 26)) ok 1
+FS PHASE 1 id 3 ph 1 d 484 at (14, 4)
+FS HOPBUILD 1 at (14, 4) lch (14, 5) T (16, 28)
+FS GATE 2 sig (30, 30, (14, 2), (14, 26)) ok 1
+FS GATE 2 sig (30, 30, (14, 2), (14, 26)) ok 1
+FS THROW 2 from (15, 4) to (15, 10) T (16, 28) body 3 n 1 dsq 256
+FS HOPBUILD 3 at (15, 10) lch (15, 11) T (16, 28)
+FS GATE 3 sig (30, 30, (14, 2), (14, 26)) ok 1
+FS GATE 4 sig (30, 30, (14, 2), (14, 26)) ok 1
+FS THROW 4 from (16, 10) to (16, 16) T (16, 28) body 3 n 1 dsq 101
+FS HOPBUILD 5 at (16, 16) lch (16, 17) T (16, 28)
+FS GATE 6 sig (30, 30, (14, 2), (14, 26)) ok 1
+FS THROW 6 from (16, 16) to (16, 22) T (16, 28) body 3 n 1 dsq 17
+FS HOPBUILD 8 at (15, 22) lch (15, 23) T (16, 28)
+FS GATE 9 sig (30, 30, (14, 2), (14, 26)) ok 1
+FS THROW 9 from (16, 22) to (16, 28) T (16, 28) body 3 n 1 dsq 2
+FS ARRIVE 10 id 3 body 1 at (16, 28) dsq 2
+FS PHASE 10 id 3 ph 2 d 2 at (16, 28)
+FS SEAL 10 tile (16, 27) n 1
+FS SEAL 11 tile (15, 28) n 2
+FS GATE 12 sig (30, 30, (14, 2), (14, 26)) ok 1
+FS GATE 13 sig (30, 30, (14, 2), (14, 26)) ok 1
+FS GATE 14 sig (30, 30, (14, 2), (14, 26)) ok 1
+FS SEAL 15 tile (16, 26) n 3
+FS SEAL 18 tile (15, 25) n 4
+FS STAT 20 id 3 at (16, 24) need 5 orth 4 ti 64 ammo 0 sen 0 hp 40 covden 0 eco 0 lost 0
+FS SEAL 30 tile (14, 25) n 5
+FS SEAL 32 tile (13, 25) n 6
+FS SEAL 37 tile (13, 25) n 7
+FS STAT 40 id 3 at (12, 23) need 6 orth 6 ti 12 ammo 20 sen 0 hp 40 covden 0 eco 0 lost 0
+FS SEAL 48 tile (14, 28) n 8
+FS PHASE 49 id 3 ph 3 d 2 at (13, 28)
+FS SEAL 50 tile (13, 28) n 9
+FS SEAL 59 tile (16, 25) n 10
+PRESKILL520 60 id 3 body 1
+PRES520 66 ti 18 res 138 floor 138 bind 1 rounds 1 vacant 1 until 86
+PRES520 67 ti 28 res 138 floor 138 bind 2 rounds 2 vacant 2 until 87
+PRES520 68 ti 38 res 138 floor 138 bind 3 rounds 3 vacant 3 until 88
+PRES520 69 ti 28 res 138 floor 138 bind 4 rounds 4 vacant 4 until 89
+PRES520 70 ti 28 res 138 floor 138 bind 5 rounds 5 vacant 5 until 90
+PRES520 71 ti 38 res 138 floor 138 bind 6 rounds 6 vacant 6 until 91
+PRES520 72 ti 48 res 138 floor 138 bind 7 rounds 7 vacant 7 until 92
+PRES520 73 ti 48 res 138 floor 138 bind 8 rounds 8 vacant 8 until 93
+PRES520 74 ti 48 res 138 floor 138 bind 9 rounds 9 vacant 9 until 94
+PRES520 75 ti 58 res 138 floor 138 bind 10 rounds 10 vacant 10 until 95
+PRES520 76 ti 15 res 148 floor 148 bind 11 rounds 11 vacant 11 until 96
+PRES520 77 ti 15 res 148 floor 148 bind 12 rounds 12 vacant 12 until 97
+PRES520 78 ti 15 res 148 floor 148 bind 13 rounds 13 vacant 13 until 98
+PRES520 79 ti 25 res 148 floor 148 bind 14 rounds 14 vacant 14 until 99

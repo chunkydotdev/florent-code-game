@@ -1,0 +1,37 @@
+tag	map	seed	seat	ours	cond	turn	arm	n_seats	seats_sealed	first_seal	last_seal	closure_round	closure_cum_round	atring_rounds	atring2_rounds	two_body_share	seal_rate	sealed_by_bldg	sealed_by_body	seat_first_rounds	rounds	our_team	enemy_core
+atoll_s88_A	atoll	88	A	US	Core destroyed	255	parent	8	5	10	48	-1	-1	217	4	0.0184	2.304	5	0	22,10,12,48,39	255	0	14,2
+atoll_s88_B	atoll	88	B	OPP	Core destroyed	128	parent	8	2	48	49	-1	-1	45	0	0.0	4.444	2	0	49,48	128	1	2,14
+atoll_s89_A	atoll	89	A	US	Core destroyed	377	parent	8	7	10	262	-1	-1	316	82	0.2595	2.215	7	0	15,10,82,262,58,69,61	377	0	14,2
+atoll_s89_B	atoll	89	B	OPP	Core destroyed	271	parent	8	5	8	59	-1	-1	267	18	0.0674	1.873	5	0	59,8,55,9,18	271	1	2,14
+atoll_s90_A	atoll	90	A	OPP	Core destroyed	396	parent	8	6	8	305	-1	-1	94	10	0.1064	6.383	4	2	89,91,8,9,153,305	396	0	14,2
+atoll_s90_B	atoll	90	B	OPP	Core destroyed	735	parent	8	4	8	38	-1	-1	143	12	0.0839	2.797	4	0	10,38,8,30	735	1	2,14
+drakkarfjord_s88_A	drakkarfjord	88	A	US	Core destroyed	132	parent	8	8	10	36	41	36	124	70	0.5645	6.452	7	1	10,11,36,18,32,22,29,25	132	0	26,4
+drakkarfjord_s88_B	drakkarfjord	88	B	OPP	Core destroyed	373	parent	8	5	10	103	-1	-1	168	59	0.3512	2.976	4	1	45,103,14,11,10	373	1	2,24
+drakkarfjord_s89_A	drakkarfjord	89	A	US	Core destroyed	208	parent	8	8	10	61	80	61	200	0	0.0	4.0	7	1	10,11,25,61,27,37,30,34	208	0	26,4
+drakkarfjord_s89_B	drakkarfjord	89	B	US	Core destroyed	127	parent	8	8	10	48	48	48	119	0	0.0	6.723	7	1	40,36,48,33,21,14,11,10	127	1	2,24
+drakkarfjord_s90_A	drakkarfjord	90	A	US	Titanium collected (tiebreak)	1000	parent	8	7	10	43	-1	-1	142	0	0.0	4.93	6	1	10,11,31,33,43,36,40	1000	0	26,4
+drakkarfjord_s90_B	drakkarfjord	90	B	OPP	Core destroyed	517	parent	8	4	10	219	-1	-1	133	0	0.0	3.008	3	1	219,14,11,10	517	1	2,24
+glacierkeep_s88_A	glacierkeep	88	A	US	Core destroyed	205	parent	8	8	9	56	56	56	199	173	0.8693	4.02	8	0	56,52,21,49,17,10,14,9	205	0	14,26
+glacierkeep_s88_B	glacierkeep	88	B	US	Core destroyed	213	parent	8	8	8	35	52	35	207	176	0.8502	3.865	6	2	35,31,9,28,8,26,11,12	213	1	14,2
+glacierkeep_s89_A	glacierkeep	89	A	US	Core destroyed	448	parent	8	8	9	60	-1	60	431	0	0.0	1.856	7	1	43,57,18,60,17,10,14,9	448	0	14,26
+glacierkeep_s89_B	glacierkeep	89	B	US	Core destroyed	237	parent	8	8	9	36	60	36	231	49	0.2121	3.463	8	0	36,32,14,29,9,25,10,22	237	1	14,2
+glacierkeep_s90_A	glacierkeep	90	A	US	Core destroyed	229	parent	8	8	9	55	55	55	223	82	0.3677	3.587	8	0	50,52,21,55,17,10,14,9	229	0	14,26
+glacierkeep_s90_B	glacierkeep	90	B	US	Core destroyed	253	parent	8	8	9	45	52	45	247	59	0.2389	3.239	8	0	33,35,20,38,9,42,10,45	253	1	14,2
+midgard_s88_A	midgard	88	A	US	Core destroyed	501	parent	8	6	51	103	-1	-1	457	451	0.9869	1.313	6	0	51,103,55,69,87,72	501	0	26,26
+midgard_s88_B	midgard	88	B	US	Core destroyed	401	parent	8	7	55	133	-1	-1	356	352	0.9888	1.966	6	1	62,66,59,55,84,133,80	401	1	2,2
+midgard_s89_A	midgard	89	A	US	Core destroyed	297	parent	8	7	53	100	-1	-1	251	247	0.9841	2.789	6	1	53,88,57,100,63,70,66	297	0	26,26
+midgard_s89_B	midgard	89	B	OPP	Core destroyed	321	parent	8	7	56	94	-1	-1	273	147	0.5385	2.564	5	2	60,56,63,94,64,88,60	321	1	2,2
+midgard_s90_A	midgard	90	A	US	Core destroyed	243	parent	8	7	53	125	-1	-1	198	197	0.9949	3.535	5	2	53,121,57,125,63,56,62	243	0	26,26
+midgard_s90_B	midgard	90	B	OPP	Core destroyed	257	parent	8	5	53	63	-1	-1	211	209	0.9905	2.37	4	1	57,54,63,58,53	257	1	2,2
+nordkap_s88_A	nordkap	88	A	OPP	Core destroyed	208	parent	8	2	5	6	-1	-1	206	166	0.8058	0.971	2	0	6,5	208	0	9,18
+nordkap_s88_B	nordkap	88	B	OPP	Core destroyed	168	parent	8	6	5	35	-1	-1	166	102	0.6145	3.614	6	0	19,21,35,5,6,29	168	1	9,6
+nordkap_s89_A	nordkap	89	A	US	Core destroyed	469	parent	8	8	5	124	-1	124	360	160	0.4444	2.222	7	1	24,26,16,31,124,6,10,5	469	0	9,18
+nordkap_s89_B	nordkap	89	B	OPP	Core destroyed	283	parent	8	5	4	31	-1	-1	123	57	0.4634	4.065	4	1	5,4,31,8,15	283	1	9,6
+nordkap_s90_A	nordkap	90	A	OPP	Core destroyed	307	parent	8	6	5	29	-1	-1	218	92	0.422	2.752	6	0	22,18,29,15,6,5	307	0	9,18
+nordkap_s90_B	nordkap	90	B	US	Core destroyed	696	parent	8	6	5	25	-1	-1	314	106	0.3376	1.911	6	0	25,21,16,6,5,11	696	1	9,6
+yulerune_s88_A	yulerune	88	A	US	Core destroyed	193	parent	8	7	32	70	-1	-1	168	160	0.9524	4.167	6	1	32,70,38,39,42,42,44	193	0	16,9
+yulerune_s88_B	yulerune	88	B	US	Core destroyed	257	parent	8	6	32	51	-1	-1	231	71	0.3074	2.597	6	0	48,44,51,41,34,32	257	1	2,9
+yulerune_s89_A	yulerune	89	A	OPP	Core destroyed	466	parent	8	5	31	44	-1	-1	383	196	0.5117	1.305	5	0	38,44,31,34,42	466	0	16,9
+yulerune_s89_B	yulerune	89	B	OPP	Core destroyed	286	parent	8	6	32	54	-1	-1	162	99	0.6111	3.704	5	1	54,47,53,44,38,32	286	1	2,9
+yulerune_s90_A	yulerune	90	A	OPP	Core destroyed	469	parent	8	6	33	44	-1	-1	441	42	0.0952	1.361	6	0	44,33,40,35,43,38	469	0	16,9
+yulerune_s90_B	yulerune	90	B	US	Titanium collected (tiebreak)	1000	parent	8	7	32	66	-1	-1	975	970	0.9949	0.718	5	2	50,46,66,43,63,36,32	1000	1	2,9
