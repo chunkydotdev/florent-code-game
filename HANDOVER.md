@@ -36,6 +36,10 @@ lock-in.
 4. CPU platform `match test` still owed before ANY ship talk (local CPU is a stub; blocked by
    lock-in). 5. A live unrated leg (the honest fixture) whenever he reopens — leg decode plan
    pre-banked (LEG-DECODE-PLAN-ferrysiege), round-2 baseline cells partially fired pre-lock-in.
+6. *(added s51, side-lane F1)* **Door-turret response (change B, FS_HOME_TURRET_RESPONSE) is ON
+   and live in the fired config** (doctrine.py:2653 via LOKI_FS_CREW) — s50's own 20:32Z note
+   said it "needs Magnus's nod (home doctrine)" and this list omitted it. Needs his nod or his
+   veto; it is home-doctrine behaviour shipping by default in every v513-family arm.
 
 ## STATE / WAKE PATHS
 Daemons alive: 4 watchers (keeper RESTARTED at wrap-fix, new pid in corpus/keeper.pid) +
