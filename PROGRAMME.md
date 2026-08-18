@@ -27,7 +27,23 @@ successor session inherit it. The fields below are parsed; the prose is not.
     SHIP_SIT_MIN_K: 8
     X3R0_SLOT_RULE: on_60pct_pm2pp_screen_vs_holder_switch_if_beats
     SLOT_STOP_LOSS: off
-    SHIP_BAR: 70pct_vs_incumbent_full_pool_powered_n
+    SHIP_BAR: 75pct_floor_80_target_vs_sleipnirv2_full_pool_powered_n
+    STEALTH_UNTIL_DROP: yes
+
+## SHIP_BAR RAISED + STEALTH ADDED 2026-08-18 (Magnus + x3r0 jointly, in-session — s51)
+
+**Verbatim (Magnus): "Me and x3r0 have been talking and we agreed that we need to get around
+75-80 winrate against Sleipnir v2 to have a shot at the finals, and we both think you can get
+us there. We dont want to release the bot yet, it needs to chock the ladder when we drop it."**
+Supersedes the same-day 70 bar (kept below for provenance). Operational form: **75% = the
+floor that opens a drop conversation, 80% = the target, both vs `bots/_v488beltbreak2`
+(Sleipnir v2) on the full-pool powered fixture; the 6-map grid remains a non-arming read.**
+**STEALTH: the new line is NOT released, NOT submitted, and NOT exposed in unrated legs
+against live teams until the drop** — the panel-preview law cuts both ways (team lazy
+rehearsed their v242 on us unrated before shipping it; we do not teach the field our planks).
+The drop is a coordinated event with x3r0. Live-transfer confirmation happens AT the drop,
+not before it — an accepted risk, stated: the two-opponent local panel (incumbent verdict +
+Gungnir transfer guard) is the stealth-compatible substitute until then.
     KILL_TARGET: median_r180_share_by_r200_floor_r300
 
 ## KILL_TARGET ADDED 2026-08-18 (Magnus, direct, in-session — s51: "Great, thats the new goal then")
@@ -42,7 +58,7 @@ Phase budget: ring ≤r16 · first funded turret ≤r75 · net-positive fire fro
 core dead ≤r180. **Every build report from v517 on carries the kill-round CDF against the
 r150/r180/r200/r300 marks.**
 
-## SHIP_BAR ADDED 2026-08-18 (Magnus, direct, in-session — s51)
+## SHIP_BAR (70) ADDED EARLIER 2026-08-18 — SUPERSEDED SAME DAY by the 75-80 block above, kept for provenance
 
 **Verbatim: "We're looking for a 70+ build before we ship this time."**
 Operational form (builder s51, on the record in the coordination tail
