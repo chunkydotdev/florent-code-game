@@ -98,7 +98,10 @@ seat, everything else identical, n=60): **24 wins / 20 kills / 31 core deaths �
 from the full crew.** It is not the denial; it is the second body. The likeliest remaining
 reading is the one these games cannot prove: a fourth opening builder and its launcher are
 bought out of the same bank the collar, the belt and the sentinel come out of, and the economy
-column moves with it (median collected 380 with the crew, 640 without).
+column moves with it (median collected 380 with the crew, **565** without — corrected s51:
+this prose said 640, the PRE-MOVE shipA/B/C pool's median; the number of record is the
+fired-config headline blocks shipA2/B2/C = 565 (49/90), side-lane mapping + builder-verified
+on the banked TSVs, same A→A2 vintage seam as the D-pass's F4/F11).
 ⚠ 15.6pp at n=90/arm is around the edge of the 95% interval (half-width ≈14.5pp at this base
 rate, local DEFF ≈ 0.98) — a DIRECTION on every column, not a significance claim. **The code
 stays behind the flag** with E's funding exemption (inert while D is off), for a fixture that
