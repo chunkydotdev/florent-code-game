@@ -1,0 +1,1202 @@
+Update available: 2.3.6 -> 2.3.8. Run: pip install --upgrade fcode
+SYNC521 9 st 0 orth 7 live 0 ammo 0 body 1 rung -1
+RUNG521 9 rung 1 st 0 body 1
+SYNC521 10 st 0 orth 5 live 0 ammo 0 body 1 rung -1
+SYNC521 10 st 0 orth 6 live 0 ammo 0 body 2 rung -1
+RUNG521 10 rung 1 st 0 body 2
+SYNC521 11 st 0 orth 5 live 0 ammo 16 body 1 rung -1
+RUNG521 11 rung 1 st 0 body 1
+SYNC521 11 st 0 orth 4 live 0 ammo 16 body 2 rung -1
+RUNG521 11 rung 1 st 0 body 2
+SYNC521 12 st 0 orth 4 live 0 ammo 24 body 1 rung -1
+RUNG521 12 rung 1 st 0 body 1
+SYNC521 12 st 0 orth 3 live 0 ammo 24 body 2 rung -1
+SYNC521 13 st 0 orth 4 live 0 ammo 24 body 1 rung -1
+SYNC521 13 st 0 orth 4 live 0 ammo 24 body 2 rung -1
+RUNG521 13 rung 1 st 0 body 2
+SYNC521 14 st 0 orth 4 live 0 ammo 24 body 1 rung -1
+SYNC521 14 st 0 orth 4 live 0 ammo 24 body 2 rung -1
+SYNC521 15 st 0 orth 4 live 0 ammo 24 body 1 rung -1
+RUNG521 15 rung 1 st 0 body 1
+SYNC521 15 st 0 orth 3 live 0 ammo 24 body 2 rung -1
+SYNC521 16 st 0 orth 3 live 0 ammo 24 body 1 rung -1
+SYNC521 16 st 0 orth 3 live 0 ammo 24 body 2 rung -1
+RUNG521 16 rung 2 st 0 body 2
+SYNC521 17 st 0 orth 3 live 0 ammo 24 body 1 rung -1
+SYNC521 17 st 3 orth 2 live 0 ammo 24 body 2 rung -1
+SYNC521 18 st 0 orth 3 live 0 ammo 24 body 1 rung -1
+RUNG521 18 rung 1 st 0 body 1
+SYNC521 18 st 0 orth 4 live 0 ammo 24 body 2 rung -1
+SYNC521 19 st 3 orth 2 live 0 ammo 21 body 1 rung -1
+SYNC521 19 st 3 orth 2 live 0 ammo 21 body 2 rung -1
+SYNC521 20 st 0 orth 3 live 0 ammo 21 body 1 rung -1
+SYNC521 20 st 3 orth 2 live 0 ammo 21 body 2 rung -1
+SYNC521 21 st 3 orth 2 live 0 ammo 21 body 1 rung -1
+SYNC521 21 st 3 orth 2 live 0 ammo 21 body 2 rung -1
+SYNC521 22 st 0 orth 6 live 0 ammo 21 body 1 rung -1
+SYNC521 22 st 0 orth 3 live 0 ammo 21 body 2 rung -1
+SYNC521 23 st 0 orth 3 live 0 ammo 21 body 1 rung -1
+SYNC521 23 st 0 orth 3 live 0 ammo 21 body 2 rung -1
+SYNC521 24 st 0 orth 4 live 0 ammo 21 body 1 rung -1
+SYNC521 24 st 0 orth 3 live 0 ammo 21 body 2 rung -1
+SYNC521 25 st 0 orth 3 live 0 ammo 21 body 1 rung -1
+RUNG521 25 rung 1 st 0 body 1
+SYNC521 25 st 3 orth 2 live 0 ammo 21 body 2 rung -1
+SYNC521 26 st 3 orth 2 live 0 ammo 21 body 1 rung -1
+SYNC521 26 st 3 orth 2 live 0 ammo 21 body 2 rung -1
+SYNC521 27 st 0 orth 3 live 0 ammo 21 body 1 rung -1
+SYNC521 27 st 3 orth 2 live 0 ammo 21 body 2 rung -1
+RUNG521 27 rung 3 st 3 body 2
+SYNC521 28 st 3 orth 2 live 0 ammo 21 body 1 rung -1
+SYNC521 28 st 3 orth 2 live 0 ammo 21 body 2 rung -1
+RUNG521 28 rung 3 st 3 body 2
+SYNC521 29 st 0 orth 3 live 0 ammo 21 body 1 rung -1
+SYNC521 29 st 3 orth 2 live 0 ammo 21 body 2 rung -1
+RUNG521 29 rung 3 st 3 body 2
+SYNC521 30 st 3 orth 2 live 0 ammo 21 body 1 rung -1
+SYNC521 30 st 3 orth 2 live 0 ammo 21 body 2 rung -1
+RUNG521 30 rung 3 st 3 body 2
+SYNC521 31 st 0 orth 3 live 0 ammo 21 body 1 rung -1
+SYNC521 31 st 3 orth 2 live 0 ammo 21 body 2 rung -1
+RUNG521 31 rung 3 st 3 body 2
+SYNC521 32 st 3 orth 2 live 0 ammo 21 body 1 rung -1
+SYNC521 32 st 3 orth 2 live 0 ammo 21 body 2 rung -1
+RUNG521 32 rung 3 st 3 body 2
+SYNC521 33 st 0 orth 4 live 0 ammo 21 body 1 rung -1
+SYNC521 33 st 0 orth 3 live 0 ammo 21 body 2 rung -1
+RUNG521 33 rung 3 st 0 body 2
+SYNC521 34 st 0 orth 3 live 0 ammo 21 body 1 rung -1
+SYNC521 34 st 0 orth 3 live 0 ammo 21 body 2 rung -1
+RUNG521 34 rung 3 st 0 body 2
+SYNC521 35 st 0 orth 4 live 0 ammo 21 body 1 rung -1
+SYNC521 35 st 0 orth 3 live 0 ammo 21 body 2 rung -1
+SYNC521 36 st 0 orth 3 live 0 ammo 21 body 1 rung -1
+SYNC521 36 st 0 orth 3 live 0 ammo 21 body 2 rung -1
+RUNG521 36 rung 1 st 0 body 2
+SYNC521 37 st 0 orth 3 live 0 ammo 21 body 1 rung -1
+SYNC521 37 st 3 orth 2 live 0 ammo 21 body 2 rung -1
+SYNC521 38 st 3 orth 2 live 0 ammo 21 body 1 rung -1
+RUNG521 38 rung 1 st 3 body 1
+SYNC521 38 st 3 orth 1 live 0 ammo 21 body 2 rung -1
+RUNG521 38 rung 3 st 3 body 2
+SYNC521 39 st 3 orth 1 live 0 ammo 21 body 1 rung -1
+SYNC521 39 st 3 orth 1 live 0 ammo 21 body 2 rung -1
+RUNG521 39 rung 3 st 3 body 2
+SYNC521 40 st 3 orth 2 live 0 ammo 21 body 1 rung -1
+SYNC521 40 st 3 orth 2 live 0 ammo 21 body 2 rung -1
+RUNG521 40 rung 1 st 3 body 2
+SYNC521 41 st 0 orth 4 live 0 ammo 21 body 1 rung -1
+SYNC521 41 st 3 orth 1 live 0 ammo 21 body 2 rung -1
+SYNC521 42 st 0 orth 5 live 0 ammo 21 body 1 rung -1
+SYNC521 42 st 3 orth 1 live 0 ammo 21 body 2 rung -1
+SYNC521 43 st 0 orth 4 live 0 ammo 21 body 1 rung -1
+SYNC521 43 st 3 orth 1 live 0 ammo 21 body 2 rung -1
+SYNC521 44 st 0 orth 3 live 0 ammo 21 body 1 rung -1
+SYNC521 44 st 3 orth 1 live 0 ammo 21 body 2 rung -1
+RUNG521 44 rung 1 st 3 body 2
+SYNC521 45 st 0 orth 3 live 0 ammo 21 body 1 rung -1
+SYNC521 45 st 3 orth 0 live 0 ammo 21 body 2 rung -1
+SYNC521 46 st 0 orth 4 live 0 ammo 21 body 1 rung -1
+SYNC521 46 st 3 orth 0 live 0 ammo 21 body 2 rung -1
+SYNC521 47 st 0 orth 3 live 0 ammo 21 body 1 rung -1
+SYNC521 47 st 0 orth 3 live 0 ammo 21 body 2 rung -1
+SYNC521 48 st 0 orth 4 live 0 ammo 21 body 1 rung -1
+SYNC521 48 st 3 orth 0 live 0 ammo 21 body 2 rung -1
+RUNG521 48 rung 0 st 3 body 2
+SYNC521 49 st 0 orth 3 live 1 ammo 21 body 1 rung -1
+SYNC521 49 st 2 orth 0 live 1 ammo 21 body 2 rung -1
+MAG521 50 ph 5 ti 23 floor 70 bar 8 ammo 11
+SYNC521 50 st 0 orth 4 live 1 ammo 11 body 1 rung -1
+SYNC521 50 st 0 orth 3 live 1 ammo 11 body 2 rung -1
+MAG521 51 ph 5 ti 33 floor 70 bar 8 ammo 11
+SYNC521 51 st 0 orth 3 live 1 ammo 11 body 1 rung -1
+SYNC521 51 st 2 orth 0 live 1 ammo 11 body 2 rung -1
+MAG521 52 ph 5 ti 43 floor 70 bar 8 ammo 1
+SYNC521 52 st 2 orth 0 live 1 ammo 1 body 1 rung -1
+SYNC521 52 st 2 orth 0 live 1 ammo 1 body 2 rung -1
+SYNC521 53 st 1 orth 2 live 1 ammo 28 body 1 rung -1
+SYNC521 53 st 2 orth 0 live 1 ammo 28 body 2 rung -1
+SYNC521 54 st 0 orth 4 live 1 ammo 18 body 1 rung -1
+SYNC521 54 st 2 orth 0 live 1 ammo 18 body 2 rung -1
+SYNC521 55 st 1 orth 2 live 1 ammo 28 body 1 rung -1
+SYNC521 55 st 2 orth 0 live 1 ammo 28 body 2 rung -1
+SYNC521 56 st 0 orth 4 live 1 ammo 28 body 1 rung -1
+SYNC521 56 st 2 orth 0 live 1 ammo 28 body 2 rung -1
+SYNC521 57 st 1 orth 2 live 1 ammo 28 body 1 rung -1
+SYNC521 57 st 2 orth 0 live 1 ammo 28 body 2 rung -1
+SYNC521 58 st 0 orth 4 live 1 ammo 18 body 1 rung -1
+SYNC521 58 st 2 orth 0 live 1 ammo 18 body 2 rung -1
+SYNC521 59 st 1 orth 2 live 1 ammo 28 body 1 rung -1
+SYNC521 59 st 2 orth 0 live 1 ammo 28 body 2 rung -1
+SYNC521 60 st 0 orth 4 live 1 ammo 30 body 1 rung -1
+SYNC521 60 st 2 orth 0 live 1 ammo 30 body 2 rung -1
+SYNC521 61 st 1 orth 2 live 1 ammo 30 body 1 rung -1
+SYNC521 61 st 2 orth 0 live 1 ammo 30 body 2 rung -1
+SYNC521 62 st 0 orth 4 live 1 ammo 20 body 1 rung -1
+SYNC521 62 st 2 orth 0 live 1 ammo 20 body 2 rung -1
+SYNC521 63 st 1 orth 2 live 1 ammo 20 body 1 rung -1
+SYNC521 63 st 2 orth 0 live 1 ammo 20 body 2 rung -1
+SYNC521 64 st 0 orth 4 live 1 ammo 20 body 1 rung -1
+SYNC521 64 st 2 orth 0 live 1 ammo 20 body 2 rung -1
+SYNC521 65 st 0 orth 3 live 1 ammo 20 body 1 rung -1
+SYNC521 65 st 1 orth 1 live 1 ammo 20 body 2 rung -1
+SYNC521 66 st 1 orth 1 live 1 ammo 10 body 1 rung -1
+SYNC521 66 st 1 orth 1 live 1 ammo 10 body 2 rung -1
+SYNC521 67 st 0 orth 3 live 1 ammo 10 body 1 rung -1
+SYNC521 67 st 1 orth 1 live 1 ammo 10 body 2 rung -1
+SYNC521 68 st 1 orth 1 live 1 ammo 10 body 1 rung -1
+RUNG521 68 rung 1 st 1 body 1
+SYNC521 68 st 1 orth 1 live 1 ammo 10 body 2 rung -1
+SYNC521 69 st 1 orth 1 live 1 ammo 10 body 1 rung -1
+SYNC521 69 st 1 orth 1 live 1 ammo 10 body 2 rung -1
+SYNC521 70 st 0 orth 1 live 1 ammo 0 body 1 rung -1
+SYNC521 70 st 0 orth 1 live 1 ammo 0 body 2 rung -1
+SYNC521 71 st 0 orth 2 live 1 ammo 0 body 1 rung -1
+SYNC521 71 st 0 orth 2 live 1 ammo 0 body 2 rung -1
+SYNC521 72 st 0 orth 4 live 1 ammo 3 body 1 rung -1
+SYNC521 72 st 0 orth 2 live 1 ammo 3 body 2 rung -1
+SYNC521 73 st 0 orth 5 live 1 ammo 3 body 1 rung -1
+SYNC521 73 st 0 orth 5 live 1 ammo 3 body 2 rung -1
+SYNC521 74 st 0 orth 2 live 1 ammo 3 body 1 rung -1
+SYNC521 74 st 0 orth 2 live 1 ammo 3 body 2 rung -1
+SYNC521 75 st 0 orth 2 live 1 ammo 3 body 1 rung -1
+SYNC521 75 st 0 orth 2 live 1 ammo 3 body 2 rung -1
+SYNC521 76 st 1 orth 2 live 1 ammo 13 body 1 rung -1
+SYNC521 76 st 1 orth 2 live 1 ammo 13 body 2 rung -1
+SYNC521 77 st 0 orth 2 live 1 ammo 3 body 1 rung -1
+SYNC521 77 st 0 orth 2 live 1 ammo 3 body 2 rung -1
+SYNC521 78 st 0 orth 2 live 1 ammo 3 body 1 rung -1
+SYNC521 78 st 0 orth 2 live 1 ammo 3 body 2 rung -1
+SYNC521 79 st 0 orth 2 live 1 ammo 3 body 1 rung -1
+SYNC521 79 st 0 orth 2 live 1 ammo 3 body 2 rung -1
+SYNC521 80 st 1 orth 2 live 1 ammo 13 body 1 rung -1
+SYNC521 80 st 1 orth 2 live 1 ammo 13 body 2 rung -1
+SYNC521 81 st 1 orth 2 live 1 ammo 13 body 1 rung -1
+SYNC521 81 st 1 orth 2 live 1 ammo 13 body 2 rung -1
+SYNC521 82 st 1 orth 2 live 1 ammo 13 body 1 rung -1
+SYNC521 82 st 1 orth 2 live 1 ammo 13 body 2 rung -1
+SYNC521 83 st 1 orth 2 live 1 ammo 13 body 1 rung -1
+SYNC521 83 st 1 orth 2 live 1 ammo 13 body 2 rung -1
+SYNC521 84 st 1 orth 2 live 1 ammo 13 body 1 rung -1
+RUNG521 84 rung 3 st 1 body 1
+SYNC521 84 st 1 orth 2 live 1 ammo 13 body 2 rung -1
+SYNC521 85 st 1 orth 2 live 1 ammo 13 body 1 rung -1
+SYNC521 85 st 1 orth 2 live 1 ammo 13 body 2 rung -1
+SYNC521 86 st 1 orth 2 live 1 ammo 13 body 1 rung -1
+SYNC521 86 st 1 orth 2 live 1 ammo 13 body 2 rung -1
+SYNC521 87 st 0 orth 5 live 1 ammo 13 body 1 rung -1
+SYNC521 87 st 1 orth 2 live 1 ammo 13 body 2 rung -1
+SYNC521 88 st 0 orth 6 live 1 ammo 13 body 1 rung -1
+SYNC521 88 st 1 orth 2 live 1 ammo 13 body 2 rung -1
+SYNC521 89 st 0 orth 4 live 1 ammo 13 body 1 rung -1
+SYNC521 89 st 1 orth 2 live 1 ammo 13 body 2 rung -1
+SYNC521 90 st 0 orth 6 live 1 ammo 13 body 1 rung -1
+SYNC521 90 st 1 orth 2 live 1 ammo 13 body 2 rung -1
+SYNC521 91 st 0 orth 4 live 1 ammo 13 body 1 rung -1
+SYNC521 91 st 1 orth 2 live 1 ammo 13 body 2 rung -1
+SYNC521 92 st 0 orth 6 live 1 ammo 13 body 1 rung -1
+SYNC521 92 st 1 orth 2 live 1 ammo 13 body 2 rung -1
+SYNC521 93 st 0 orth 4 live 1 ammo 13 body 1 rung -1
+SYNC521 93 st 1 orth 2 live 1 ammo 13 body 2 rung -1
+SYNC521 94 st 0 orth 6 live 1 ammo 13 body 1 rung -1
+SYNC521 94 st 1 orth 2 live 1 ammo 13 body 2 rung -1
+SYNC521 95 st 0 orth 4 live 1 ammo 13 body 1 rung -1
+SYNC521 95 st 1 orth 2 live 1 ammo 13 body 2 rung -1
+SYNC521 96 st 0 orth 6 live 1 ammo 13 body 1 rung -1
+SYNC521 96 st 1 orth 2 live 1 ammo 13 body 2 rung -1
+SYNC521 97 st 0 orth 4 live 1 ammo 13 body 1 rung -1
+SYNC521 97 st 1 orth 2 live 1 ammo 13 body 2 rung -1
+SYNC521 98 st 1 orth 2 live 1 ammo 13 body 1 rung -1
+SYNC521 98 st 1 orth 2 live 1 ammo 13 body 2 rung -1
+SYNC521 99 st 1 orth 2 live 1 ammo 13 body 1 rung -1
+RUNG521 99 rung 3 st 1 body 1
+SYNC521 99 st 1 orth 2 live 1 ammo 13 body 2 rung -1
+SYNC521 100 st 1 orth 2 live 1 ammo 13 body 1 rung -1
+RUNG521 100 rung 3 st 1 body 1
+SYNC521 100 st 1 orth 2 live 1 ammo 13 body 2 rung -1
+SYNC521 101 st 1 orth 2 live 1 ammo 13 body 1 rung -1
+RUNG521 101 rung 3 st 1 body 1
+SYNC521 101 st 1 orth 2 live 1 ammo 13 body 2 rung -1
+SYNC521 102 st 1 orth 2 live 1 ammo 13 body 1 rung -1
+RUNG521 102 rung 3 st 1 body 1
+SYNC521 102 st 1 orth 2 live 1 ammo 13 body 2 rung -1
+SYNC521 103 st 1 orth 2 live 1 ammo 13 body 1 rung -1
+RUNG521 103 rung 3 st 1 body 1
+SYNC521 103 st 1 orth 2 live 1 ammo 13 body 2 rung -1
+SYNC521 104 st 1 orth 2 live 1 ammo 13 body 1 rung -1
+RUNG521 104 rung 3 st 1 body 1
+SYNC521 104 st 1 orth 2 live 1 ammo 13 body 2 rung -1
+SYNC521 105 st 0 orth 2 live 1 ammo 3 body 1 rung -1
+RUNG521 105 rung 3 st 0 body 1
+SYNC521 105 st 0 orth 5 live 1 ammo 3 body 2 rung -1
+SYNC521 106 st 0 orth 2 live 1 ammo 3 body 1 rung -1
+SYNC521 106 st 0 orth 4 live 1 ammo 3 body 2 rung -1
+SYNC521 107 st 0 orth 2 live 1 ammo 3 body 1 rung -1
+SYNC521 107 st 0 orth 4 live 1 ammo 3 body 2 rung -1
+SYNC521 108 st 0 orth 4 live 1 ammo 3 body 1 rung -1
+SYNC521 108 st 0 orth 5 live 1 ammo 3 body 2 rung -1
+SYNC521 109 st 0 orth 2 live 1 ammo 3 body 1 rung -1
+SYNC521 109 st 0 orth 6 live 1 ammo 3 body 2 rung -1
+SYNC521 110 st 0 orth 2 live 1 ammo 3 body 1 rung -1
+RUNG521 110 rung 1 st 0 body 1
+SYNC521 110 st 0 orth 3 live 1 ammo 3 body 2 rung -1
+SYNC521 111 st 0 orth 1 live 1 ammo 3 body 1 rung -1
+SYNC521 111 st 0 orth 1 live 1 ammo 3 body 2 rung -1
+SYNC521 112 st 0 orth 1 live 1 ammo 3 body 1 rung -1
+SYNC521 112 st 0 orth 4 live 1 ammo 3 body 2 rung -1
+RUNG521 112 rung 2 st 0 body 2
+SYNC521 113 st 0 orth 1 live 1 ammo 3 body 1 rung -1
+RUNG521 113 rung 1 st 0 body 1
+SYNC521 113 st 0 orth 3 live 1 ammo 3 body 2 rung -1
+SYNC521 114 st 2 orth 0 live 1 ammo 3 body 1 rung -1
+SYNC521 114 st 0 orth 4 live 1 ammo 3 body 2 rung -1
+SYNC521 115 st 2 orth 0 live 1 ammo 3 body 1 rung -1
+SYNC521 115 st 0 orth 3 live 1 ammo 3 body 2 rung -1
+SYNC521 116 st 0 orth 2 live 1 ammo 3 body 1 rung -1
+SYNC521 116 st 0 orth 2 live 1 ammo 3 body 2 rung -1
+SYNC521 117 st 0 orth 5 live 1 ammo 3 body 1 rung -1
+SYNC521 117 st 0 orth 1 live 1 ammo 3 body 2 rung -1
+SYNC521 118 st 0 orth 3 live 1 ammo 3 body 1 rung -1
+SYNC521 118 st 0 orth 1 live 1 ammo 3 body 2 rung -1
+SYNC521 119 st 0 orth 1 live 1 ammo 3 body 1 rung -1
+SYNC521 119 st 0 orth 1 live 1 ammo 3 body 2 rung -1
+SYNC521 120 st 0 orth 1 live 1 ammo 3 body 1 rung -1
+RUNG521 120 rung 1 st 0 body 1
+SYNC521 120 st 2 orth 0 live 1 ammo 3 body 2 rung -1
+SYNC521 121 st 2 orth 0 live 1 ammo 3 body 1 rung -1
+SYNC521 121 st 2 orth 0 live 1 ammo 3 body 2 rung -1
+SYNC521 122 st 2 orth 0 live 1 ammo 3 body 1 rung -1
+SYNC521 122 st 2 orth 0 live 1 ammo 3 body 2 rung -1
+SYNC521 123 st 0 orth 1 live 1 ammo 3 body 1 rung -1
+RUNG521 123 rung 1 st 0 body 1
+SYNC521 123 st 2 orth 0 live 1 ammo 3 body 2 rung -1
+SYNC521 124 st 2 orth 0 live 1 ammo 3 body 1 rung -1
+SYNC521 124 st 2 orth 0 live 1 ammo 3 body 2 rung -1
+SYNC521 125 st 2 orth 0 live 1 ammo 3 body 1 rung -1
+SYNC521 125 st 2 orth 0 live 1 ammo 3 body 2 rung -1
+SYNC521 126 st 2 orth 0 live 1 ammo 3 body 1 rung -1
+SYNC521 126 st 2 orth 0 live 1 ammo 3 body 2 rung -1
+SYNC521 127 st 0 orth 1 live 1 ammo 3 body 1 rung -1
+RUNG521 127 rung 1 st 0 body 1
+SYNC521 127 st 2 orth 0 live 1 ammo 3 body 2 rung -1
+SYNC521 128 st 2 orth 0 live 1 ammo 3 body 1 rung -1
+SYNC521 128 st 2 orth 0 live 1 ammo 3 body 2 rung -1
+SYNC521 129 st 2 orth 0 live 1 ammo 3 body 1 rung -1
+SYNC521 129 st 2 orth 0 live 1 ammo 3 body 2 rung -1
+SYNC521 130 st 2 orth 0 live 1 ammo 3 body 1 rung -1
+SYNC521 130 st 2 orth 0 live 1 ammo 3 body 2 rung -1
+SYNC521 131 st 0 orth 1 live 1 ammo 3 body 1 rung -1
+RUNG521 131 rung 1 st 0 body 1
+SYNC521 132 st 2 orth 0 live 1 ammo 3 body 1 rung -1
+SYNC521 132 st 0 orth 2 live 1 ammo 3 body 2 rung -1
+SYNC521 133 st 2 orth 0 live 1 ammo 3 body 1 rung -1
+SYNC521 133 st 0 orth 3 live 1 ammo 3 body 2 rung -1
+SYNC521 134 st 0 orth 2 live 1 ammo 3 body 1 rung -1
+SYNC521 134 st 0 orth 4 live 1 ammo 3 body 2 rung -1
+SYNC521 135 st 1 orth 1 live 1 ammo 15 body 1 rung -1
+SYNC521 135 st 0 orth 3 live 1 ammo 15 body 2 rung -1
+SYNC521 136 st 1 orth 1 live 1 ammo 15 body 1 rung -1
+RUNG521 136 rung 1 st 1 body 1
+SYNC521 136 st 0 orth 4 live 1 ammo 15 body 2 rung -1
+SYNC521 137 st 2 orth 0 live 1 ammo 15 body 1 rung -1
+SYNC521 137 st 1 orth 2 live 1 ammo 15 body 2 rung -1
+SYNC521 138 st 0 orth 2 live 1 ammo 5 body 1 rung -1
+SYNC521 138 st 0 orth 4 live 1 ammo 5 body 2 rung -1
+SYNC521 139 st 0 orth 3 live 1 ammo 5 body 1 rung -1
+SYNC521 139 st 0 orth 3 live 1 ammo 5 body 2 rung -1
+SYNC521 140 st 0 orth 3 live 1 ammo 7 body 1 rung -1
+SYNC521 140 st 0 orth 1 live 1 ammo 7 body 2 rung -1
+SYNC521 141 st 0 orth 1 live 1 ammo 7 body 1 rung -1
+RUNG521 141 rung 1 st 0 body 1
+SYNC521 141 st 0 orth 2 live 1 ammo 7 body 2 rung -1
+SYNC521 142 st 2 orth 0 live 1 ammo 7 body 1 rung -1
+SYNC521 142 st 0 orth 4 live 1 ammo 7 body 2 rung -1
+SYNC521 143 st 2 orth 0 live 1 ammo 7 body 1 rung -1
+SYNC521 143 st 0 orth 2 live 1 ammo 7 body 2 rung -1
+SYNC521 144 st 0 orth 4 live 1 ammo 9 body 1 rung -1
+SYNC521 144 st 0 orth 5 live 1 ammo 9 body 2 rung -1
+SYNC521 145 st 0 orth 3 live 1 ammo 9 body 1 rung -1
+SYNC521 145 st 0 orth 3 live 1 ammo 9 body 2 rung -1
+SYNC521 146 st 0 orth 1 live 1 ammo 9 body 1 rung -1
+RUNG521 146 rung 1 st 0 body 1
+SYNC521 146 st 0 orth 4 live 1 ammo 9 body 2 rung -1
+SYNC521 147 st 2 orth 0 live 1 ammo 9 body 1 rung -1
+SYNC521 147 st 0 orth 2 live 1 ammo 9 body 2 rung -1
+SYNC521 148 st 2 orth 0 live 1 ammo 11 body 1 rung -1
+SYNC521 148 st 0 orth 4 live 1 ammo 11 body 2 rung -1
+SYNC521 149 st 0 orth 3 live 1 ammo 1 body 1 rung -1
+SYNC521 149 st 0 orth 4 live 1 ammo 1 body 2 rung -1
+SYNC521 150 st 0 orth 1 live 1 ammo 1 body 1 rung -1
+SYNC521 150 st 0 orth 5 live 1 ammo 1 body 2 rung -1
+SYNC521 151 st 0 orth 1 live 1 ammo 1 body 1 rung -1
+RUNG521 151 rung 1 st 0 body 1
+SYNC521 151 st 0 orth 2 live 1 ammo 1 body 2 rung -1
+SYNC521 152 st 2 orth 0 live 1 ammo 3 body 1 rung -1
+SYNC521 152 st 0 orth 4 live 1 ammo 3 body 2 rung -1
+SYNC521 153 st 2 orth 0 live 1 ammo 3 body 1 rung -1
+SYNC521 153 st 0 orth 2 live 1 ammo 3 body 2 rung -1
+SYNC521 154 st 0 orth 4 live 1 ammo 3 body 1 rung -1
+SYNC521 154 st 0 orth 5 live 1 ammo 3 body 2 rung -1
+SYNC521 155 st 0 orth 3 live 1 ammo 3 body 1 rung -1
+SYNC521 155 st 0 orth 3 live 1 ammo 3 body 2 rung -1
+SYNC521 156 st 1 orth 1 live 1 ammo 13 body 1 rung -1
+RUNG521 156 rung 1 st 1 body 1
+SYNC521 156 st 0 orth 4 live 1 ammo 13 body 2 rung -1
+SYNC521 157 st 2 orth 0 live 1 ammo 3 body 1 rung -1
+SYNC521 157 st 0 orth 2 live 1 ammo 3 body 2 rung -1
+SYNC521 158 st 2 orth 0 live 1 ammo 3 body 1 rung -1
+SYNC521 158 st 0 orth 4 live 1 ammo 3 body 2 rung -1
+SYNC521 159 st 0 orth 3 live 1 ammo 3 body 1 rung -1
+SYNC521 159 st 0 orth 5 live 1 ammo 3 body 2 rung -1
+SYNC521 160 st 0 orth 1 live 1 ammo 5 body 1 rung -1
+SYNC521 160 st 0 orth 5 live 1 ammo 5 body 2 rung -1
+SYNC521 161 st 0 orth 1 live 1 ammo 5 body 1 rung -1
+RUNG521 161 rung 1 st 0 body 1
+SYNC521 161 st 0 orth 2 live 1 ammo 5 body 2 rung -1
+SYNC521 162 st 2 orth 0 live 1 ammo 5 body 1 rung -1
+SYNC521 162 st 0 orth 4 live 1 ammo 5 body 2 rung -1
+SYNC521 163 st 2 orth 0 live 1 ammo 5 body 1 rung -1
+SYNC521 163 st 0 orth 2 live 1 ammo 5 body 2 rung -1
+SYNC521 164 st 0 orth 4 live 1 ammo 7 body 1 rung -1
+SYNC521 164 st 0 orth 5 live 1 ammo 7 body 2 rung -1
+SYNC521 165 st 0 orth 3 live 1 ammo 7 body 1 rung -1
+SYNC521 165 st 0 orth 3 live 1 ammo 7 body 2 rung -1
+SYNC521 166 st 0 orth 1 live 1 ammo 7 body 1 rung -1
+RUNG521 166 rung 1 st 0 body 1
+SYNC521 166 st 0 orth 4 live 1 ammo 7 body 2 rung -1
+SYNC521 167 st 2 orth 0 live 1 ammo 7 body 1 rung -1
+SYNC521 167 st 0 orth 2 live 1 ammo 7 body 2 rung -1
+SYNC521 168 st 2 orth 0 live 1 ammo 9 body 1 rung -1
+SYNC521 168 st 0 orth 4 live 1 ammo 9 body 2 rung -1
+SYNC521 169 st 0 orth 3 live 1 ammo 9 body 1 rung -1
+SYNC521 169 st 0 orth 5 live 1 ammo 9 body 2 rung -1
+SYNC521 170 st 0 orth 1 live 1 ammo 9 body 1 rung -1
+SYNC521 170 st 0 orth 5 live 1 ammo 9 body 2 rung -1
+SYNC521 171 st 0 orth 1 live 1 ammo 9 body 1 rung -1
+RUNG521 171 rung 1 st 0 body 1
+SYNC521 171 st 0 orth 2 live 1 ammo 9 body 2 rung -1
+SYNC521 172 st 2 orth 0 live 1 ammo 11 body 1 rung -1
+SYNC521 172 st 0 orth 4 live 1 ammo 11 body 2 rung -1
+SYNC521 173 st 2 orth 0 live 1 ammo 1 body 1 rung -1
+SYNC521 173 st 0 orth 2 live 1 ammo 1 body 2 rung -1
+SYNC521 174 st 0 orth 1 live 1 ammo 1 body 1 rung -1
+RUNG521 174 rung 1 st 0 body 1
+SYNC521 174 st 0 orth 4 live 1 ammo 1 body 2 rung -1
+SYNC521 175 st 2 orth 0 live 1 ammo 1 body 1 rung -1
+SYNC521 175 st 0 orth 2 live 1 ammo 1 body 2 rung -1
+SYNC521 176 st 2 orth 0 live 1 ammo 3 body 1 rung -1
+SYNC521 176 st 0 orth 4 live 1 ammo 3 body 2 rung -1
+SYNC521 177 st 0 orth 3 live 1 ammo 3 body 1 rung -1
+SYNC521 177 st 0 orth 4 live 1 ammo 3 body 2 rung -1
+SYNC521 178 st 0 orth 1 live 1 ammo 3 body 1 rung -1
+SYNC521 178 st 0 orth 5 live 1 ammo 3 body 2 rung -1
+SYNC521 179 st 0 orth 4 live 1 ammo 3 body 1 rung -1
+SYNC521 179 st 0 orth 3 live 1 ammo 3 body 2 rung -1
+SYNC521 180 st 1 orth 1 live 1 ammo 13 body 1 rung -1
+SYNC521 180 st 0 orth 5 live 1 ammo 13 body 2 rung -1
+SYNC521 181 st 0 orth 1 live 1 ammo 3 body 1 rung -1
+RUNG521 181 rung 1 st 0 body 1
+SYNC521 181 st 0 orth 2 live 1 ammo 3 body 2 rung -1
+SYNC521 182 st 2 orth 0 live 1 ammo 3 body 1 rung -1
+SYNC521 182 st 0 orth 4 live 1 ammo 3 body 2 rung -1
+SYNC521 183 st 2 orth 0 live 1 ammo 3 body 1 rung -1
+SYNC521 183 st 0 orth 2 live 1 ammo 3 body 2 rung -1
+SYNC521 184 st 2 orth 0 live 1 ammo 5 body 1 rung -1
+SYNC521 184 st 0 orth 4 live 1 ammo 5 body 2 rung -1
+SYNC521 185 st 0 orth 1 live 1 ammo 5 body 1 rung -1
+SYNC521 185 st 0 orth 5 live 1 ammo 5 body 2 rung -1
+SYNC521 186 st 0 orth 1 live 1 ammo 5 body 1 rung -1
+RUNG521 186 rung 1 st 0 body 1
+SYNC521 186 st 0 orth 6 live 1 ammo 5 body 2 rung -1
+SYNC521 187 st 2 orth 0 live 1 ammo 5 body 1 rung -1
+SYNC521 187 st 0 orth 4 live 1 ammo 5 body 2 rung -1
+SYNC521 188 st 2 orth 0 live 1 ammo 9 body 1 rung -1
+SYNC521 188 st 0 orth 4 live 1 ammo 9 body 2 rung -1
+SYNC521 189 st 0 orth 1 live 1 ammo 9 body 1 rung -1
+RUNG521 189 rung 1 st 0 body 1
+SYNC521 189 st 0 orth 2 live 1 ammo 9 body 2 rung -1
+SYNC521 190 st 3 orth 0 live 0 ammo 9 body 1 rung -1
+SYNC521 190 st 0 orth 4 live 0 ammo 9 body 2 rung -1
+SYNC521 191 st 3 orth 0 live 0 ammo 9 body 1 rung -1
+SYNC521 191 st 0 orth 4 live 0 ammo 9 body 2 rung -1
+SYNC521 192 st 3 orth 2 live 0 ammo 9 body 1 rung -1
+SYNC521 192 st 0 orth 4 live 0 ammo 9 body 2 rung -1
+SYNC521 193 st 3 orth 1 live 0 ammo 14 body 1 rung -1
+SYNC521 193 st 0 orth 5 live 0 ammo 14 body 2 rung -1
+SYNC521 194 st 3 orth 1 live 0 ammo 4 body 1 rung -1
+RUNG521 194 rung 1 st 3 body 1
+SYNC521 194 st 0 orth 4 live 0 ammo 4 body 2 rung -1
+SYNC521 195 st 3 orth 0 live 0 ammo 4 body 1 rung -1
+SYNC521 195 st 3 orth 2 live 0 ammo 4 body 2 rung -1
+SYNC521 196 st 3 orth 0 live 0 ammo 4 body 1 rung -1
+SYNC521 196 st 0 orth 4 live 0 ammo 4 body 2 rung -1
+SYNC521 197 st 3 orth 1 live 0 ammo 4 body 1 rung -1
+RUNG521 197 rung 1 st 3 body 1
+SYNC521 197 st 3 orth 2 live 0 ammo 4 body 2 rung -1
+SYNC521 198 st 3 orth 0 live 0 ammo 4 body 1 rung -1
+SYNC521 198 st 0 orth 4 live 0 ammo 4 body 2 rung -1
+SYNC521 199 st 3 orth 0 live 0 ammo 4 body 1 rung -1
+SYNC521 199 st 3 orth 2 live 0 ammo 4 body 2 rung -1
+SYNC521 200 st 0 orth 3 live 0 ammo 4 body 1 rung -1
+SYNC521 200 st 0 orth 4 live 0 ammo 4 body 2 rung -1
+SYNC521 201 st 0 orth 5 live 0 ammo 10 body 1 rung -1
+SYNC521 201 st 0 orth 3 live 0 ammo 10 body 2 rung -1
+SYNC521 202 st 0 orth 4 live 0 ammo 0 body 1 rung -1
+SYNC521 202 st 3 orth 1 live 0 ammo 0 body 2 rung -1
+SYNC521 203 st 0 orth 3 live 0 ammo 0 body 1 rung -1
+SYNC521 203 st 3 orth 1 live 0 ammo 0 body 2 rung -1
+RUNG521 203 rung 1 st 3 body 2
+SYNC521 204 st 0 orth 3 live 0 ammo 0 body 1 rung -1
+SYNC521 204 st 3 orth 0 live 0 ammo 0 body 2 rung -1
+SYNC521 205 st 3 orth 0 live 0 ammo 0 body 1 rung -1
+SYNC521 205 st 3 orth 2 live 0 ammo 0 body 2 rung -1
+SYNC521 206 st 0 orth 3 live 0 ammo 0 body 1 rung -1
+SYNC521 206 st 0 orth 4 live 0 ammo 0 body 2 rung -1
+SYNC521 207 st 3 orth 1 live 0 ammo 0 body 1 rung -1
+SYNC521 207 st 0 orth 3 live 0 ammo 0 body 2 rung -1
+SYNC521 208 st 3 orth 1 live 0 ammo 13 body 1 rung -1
+RUNG521 208 rung 1 st 3 body 1
+SYNC521 208 st 0 orth 3 live 0 ammo 13 body 2 rung -1
+SYNC521 209 st 3 orth 0 live 0 ammo 13 body 2 rung -1
+SYNC521 210 st 3 orth 2 live 0 ammo 13 body 1 rung -1
+SYNC521 210 st 3 orth 2 live 0 ammo 13 body 2 rung -1
+SYNC521 211 st 0 orth 5 live 0 ammo 13 body 2 rung -1
+SYNC521 212 st 0 orth 5 live 0 ammo 13 body 1 rung -1
+SYNC521 212 st 0 orth 3 live 0 ammo 13 body 2 rung -1
+SYNC521 213 st 0 orth 5 live 0 ammo 13 body 2 rung -1
+SYNC521 214 st 0 orth 5 live 0 ammo 13 body 1 rung -1
+SYNC521 214 st 0 orth 3 live 0 ammo 13 body 2 rung -1
+SYNC521 215 st 0 orth 5 live 0 ammo 13 body 2 rung -1
+SYNC521 216 st 0 orth 5 live 0 ammo 26 body 1 rung -1
+SYNC521 216 st 0 orth 3 live 0 ammo 26 body 2 rung -1
+SYNC521 217 st 3 orth 1 live 0 ammo 26 body 2 rung -1
+SYNC521 218 st 0 orth 5 live 0 ammo 26 body 1 rung -1
+SYNC521 219 st 3 orth 1 live 0 ammo 26 body 2 rung -1
+SYNC521 220 st 0 orth 5 live 0 ammo 26 body 1 rung -1
+SYNC521 221 st 3 orth 1 live 0 ammo 26 body 2 rung -1
+SYNC521 222 st 0 orth 3 live 0 ammo 26 body 2 rung -1
+SYNC521 223 st 0 orth 7 live 0 ammo 26 body 1 rung -1
+SYNC521 223 st 3 orth 1 live 0 ammo 26 body 2 rung -1
+SYNC521 224 st 0 orth 3 live 0 ammo 26 body 2 rung -1
+SYNC521 225 st 0 orth 3 live 0 ammo 26 body 1 rung -1
+SYNC521 225 st 0 orth 5 live 0 ammo 26 body 2 rung -1
+SYNC521 226 st 0 orth 3 live 0 ammo 26 body 2 rung -1
+SYNC521 227 st 0 orth 3 live 0 ammo 26 body 1 rung -1
+SYNC521 227 st 0 orth 5 live 0 ammo 26 body 2 rung -1
+SYNC521 228 st 0 orth 3 live 0 ammo 26 body 2 rung -1
+SYNC521 230 st 0 orth 3 live 0 ammo 26 body 2 rung -1
+SYNC521 231 st 0 orth 5 live 0 ammo 26 body 2 rung -1
+SYNC521 232 st 0 orth 3 live 0 ammo 26 body 2 rung -1
+SYNC521 235 st 0 orth 3 live 0 ammo 26 body 2 rung -1
+SYNC521 237 st 0 orth 3 live 0 ammo 26 body 2 rung -1
+SYNC521 239 st 3 orth 1 live 0 ammo 26 body 2 rung -1
+SYNC521 241 st 3 orth 1 live 0 ammo 26 body 2 rung -1
+SYNC521 341 st 0 orth 4 live 0 ammo 50 body 1 rung -1
+SYNC521 342 st 0 orth 4 live 0 ammo 60 body 1 rung -1
+SYNC521 343 st 0 orth 4 live 0 ammo 60 body 1 rung -1
+SYNC521 344 st 0 orth 4 live 0 ammo 60 body 1 rung -1
+SYNC521 345 st 0 orth 4 live 0 ammo 60 body 1 rung -1
+RUNG521 345 rung 1 st 0 body 1
+SYNC521 346 st 0 orth 3 live 0 ammo 60 body 1 rung -1
+SYNC521 347 st 0 orth 3 live 0 ammo 60 body 1 rung -1
+SYNC521 348 st 0 orth 3 live 0 ammo 60 body 1 rung -1
+SYNC521 349 st 0 orth 3 live 0 ammo 60 body 1 rung -1
+SYNC521 350 st 0 orth 4 live 1 ammo 76 body 1 rung -1
+MAG521 351 ph 5 ti 21 floor 78 bar 9 ammo 66
+SYNC521 351 st 0 orth 4 live 1 ammo 66 body 1 rung -1
+MAG521 352 ph 5 ti 40 floor 78 bar 9 ammo 66
+SYNC521 352 st 0 orth 4 live 1 ammo 66 body 1 rung -1
+MAG521 353 ph 5 ti 49 floor 78 bar 9 ammo 56
+SYNC521 353 st 0 orth 4 live 1 ammo 56 body 1 rung -1
+RUNG521 353 rung 1 st 0 body 1
+MAG521 354 ph 5 ti 49 floor 78 bar 9 ammo 56
+SYNC521 354 st 0 orth 3 live 1 ammo 46 body 1 rung -1
+MAG521 355 ph 5 ti 58 floor 78 bar 9 ammo 36
+SYNC521 355 st 0 orth 3 live 1 ammo 36 body 1 rung -1
+MAG521 356 ph 5 ti 68 floor 78 bar 9 ammo 36
+SYNC521 356 st 0 orth 3 live 1 ammo 36 body 1 rung -1
+MAG521 357 ph 5 ti 78 floor 78 bar 9 ammo 26
+SYNC521 357 st 0 orth 3 live 1 ammo 26 body 1 rung -1
+MAG521 358 ph 5 ti 78 floor 78 bar 9 ammo 26
+SYNC521 358 st 0 orth 4 live 1 ammo 26 body 1 rung -1
+MAG521 359 ph 5 ti 79 floor 78 bar 9 ammo 16
+SYNC521 359 st 0 orth 4 live 1 ammo 17 body 1 rung -1
+MAG521 360 ph 5 ti 97 floor 78 bar 9 ammo 17
+SYNC521 360 st 0 orth 4 live 1 ammo 36 body 1 rung -1
+MAG521 361 ph 5 ti 87 floor 78 bar 9 ammo 26
+SYNC521 361 st 0 orth 4 live 1 ammo 35 body 1 rung -1
+MAG521 362 ph 5 ti 87 floor 78 bar 9 ammo 35
+SYNC521 362 st 0 orth 4 live 1 ammo 44 body 1 rung -1
+RUNG521 362 rung 1 st 0 body 1
+MAG521 363 ph 5 ti 78 floor 78 bar 9 ammo 34
+SYNC521 363 st 0 orth 3 live 1 ammo 34 body 1 rung -1
+MAG521 364 ph 5 ti 87 floor 78 bar 9 ammo 34
+SYNC521 364 st 0 orth 4 live 1 ammo 43 body 1 rung -1
+MAG521 365 ph 5 ti 79 floor 78 bar 9 ammo 33
+SYNC521 365 st 0 orth 3 live 1 ammo 34 body 1 rung -1
+MAG521 366 ph 5 ti 77 floor 78 bar 9 ammo 34
+SYNC521 366 st 0 orth 4 live 1 ammo 34 body 1 rung -1
+MAG521 367 ph 5 ti 86 floor 78 bar 9 ammo 24
+SYNC521 367 st 0 orth 4 live 1 ammo 32 body 1 rung -1
+RUNG521 367 rung 1 st 0 body 1
+MAG521 368 ph 5 ti 88 floor 78 bar 9 ammo 32
+SYNC521 368 st 0 orth 3 live 1 ammo 42 body 1 rung -1
+MAG521 369 ph 5 ti 87 floor 78 bar 9 ammo 32
+SYNC521 369 st 0 orth 4 live 1 ammo 41 body 1 rung -1
+MAG521 370 ph 5 ti 87 floor 78 bar 9 ammo 41
+SYNC521 370 st 0 orth 3 live 1 ammo 50 body 1 rung -1
+MAG521 371 ph 5 ti 79 floor 78 bar 9 ammo 40
+SYNC521 371 st 0 orth 4 live 1 ammo 41 body 1 rung -1
+MAG521 372 ph 5 ti 87 floor 78 bar 9 ammo 41
+SYNC521 372 st 0 orth 3 live 1 ammo 50 body 1 rung -1
+MAG521 373 ph 5 ti 87 floor 78 bar 9 ammo 40
+SYNC521 373 st 0 orth 4 live 1 ammo 49 body 1 rung -1
+MAG521 374 ph 5 ti 77 floor 78 bar 9 ammo 49
+SYNC521 374 st 0 orth 3 live 1 ammo 49 body 1 rung -1
+MAG521 375 ph 5 ti 86 floor 78 bar 9 ammo 39
+SYNC521 375 st 0 orth 4 live 1 ammo 47 body 1 rung -1
+MAG521 376 ph 5 ti 97 floor 78 bar 9 ammo 47
+SYNC521 376 st 0 orth 3 live 1 ammo 66 body 1 rung -1
+MAG521 377 ph 5 ti 79 floor 78 bar 9 ammo 56
+SYNC521 377 st 0 orth 5 live 1 ammo 57 body 1 rung -1
+MAG521 378 ph 5 ti 87 floor 78 bar 9 ammo 57
+SYNC521 378 st 0 orth 4 live 1 ammo 66 body 1 rung -1
+RUNG521 378 rung 1 st 0 body 1
+MAG521 379 ph 5 ti 78 floor 78 bar 9 ammo 56
+SYNC521 379 st 0 orth 3 live 1 ammo 56 body 1 rung -1
+MAG521 380 ph 5 ti 87 floor 78 bar 9 ammo 56
+SYNC521 380 st 0 orth 4 live 1 ammo 65 body 1 rung -1
+MAG521 381 ph 5 ti 87 floor 78 bar 9 ammo 55
+SYNC521 381 st 0 orth 3 live 1 ammo 64 body 1 rung -1
+MAG521 382 ph 5 ti 77 floor 78 bar 9 ammo 64
+SYNC521 382 st 0 orth 4 live 1 ammo 64 body 1 rung -1
+MAG521 383 ph 5 ti 78 floor 78 bar 9 ammo 54
+SYNC521 383 st 0 orth 4 live 1 ammo 54 body 1 rung -1
+RUNG521 383 rung 1 st 0 body 1
+MAG521 384 ph 5 ti 88 floor 78 bar 9 ammo 54
+SYNC521 384 st 0 orth 3 live 1 ammo 64 body 1 rung -1
+MAG521 385 ph 5 ti 87 floor 78 bar 9 ammo 54
+SYNC521 385 st 0 orth 4 live 1 ammo 63 body 1 rung -1
+MAG521 386 ph 5 ti 87 floor 78 bar 9 ammo 63
+SYNC521 386 st 0 orth 3 live 1 ammo 72 body 1 rung -1
+MAG521 387 ph 5 ti 87 floor 78 bar 9 ammo 62
+SYNC521 387 st 0 orth 4 live 1 ammo 71 body 1 rung -1
+MAG521 388 ph 5 ti 87 floor 78 bar 9 ammo 71
+SYNC521 388 st 0 orth 4 live 1 ammo 80 body 1 rung -1
+RUNG521 388 rung 1 st 0 body 1
+MAG521 389 ph 5 ti 70 floor 78 bar 9 ammo 70
+SYNC521 389 st 0 orth 3 live 1 ammo 70 body 1 rung -1
+MAG521 390 ph 5 ti 69 floor 78 bar 9 ammo 70
+SYNC521 390 st 0 orth 3 live 1 ammo 70 body 1 rung -1
+MAG521 391 ph 5 ti 78 floor 78 bar 9 ammo 60
+SYNC521 391 st 0 orth 3 live 1 ammo 60 body 1 rung -1
+MAG521 392 ph 5 ti 97 floor 78 bar 9 ammo 60
+SYNC521 392 st 0 orth 4 live 1 ammo 79 body 1 rung -1
+MAG521 393 ph 5 ti 87 floor 78 bar 9 ammo 69
+SYNC521 393 st 0 orth 4 live 1 ammo 78 body 1 rung -1
+RUNG521 393 rung 1 st 0 body 1
+MAG521 394 ph 5 ti 78 floor 78 bar 9 ammo 78
+SYNC521 394 st 0 orth 3 live 1 ammo 78 body 1 rung -1
+MAG521 395 ph 5 ti 79 floor 78 bar 9 ammo 68
+SYNC521 395 st 0 orth 4 live 1 ammo 69 body 1 rung -1
+MAG521 396 ph 5 ti 87 floor 78 bar 9 ammo 69
+SYNC521 396 st 0 orth 3 live 1 ammo 68 body 1 rung -1
+MAG521 397 ph 5 ti 87 floor 78 bar 9 ammo 58
+SYNC521 397 st 0 orth 4 live 1 ammo 67 body 1 rung -1
+MAG521 398 ph 5 ti 77 floor 78 bar 9 ammo 67
+SYNC521 398 st 0 orth 4 live 1 ammo 57 body 1 rung -1
+RUNG521 398 rung 1 st 0 body 1
+MAG521 399 ph 5 ti 77 floor 78 bar 9 ammo 47
+SYNC521 399 st 0 orth 3 live 1 ammo 47 body 1 rung -1
+MAG521 400 ph 5 ti 96 floor 78 bar 9 ammo 47
+SYNC521 400 st 0 orth 4 live 1 ammo 55 body 1 rung -1
+MAG521 401 ph 5 ti 79 floor 78 bar 9 ammo 45
+SYNC521 401 st 0 orth 3 live 1 ammo 46 body 1 rung -1
+MAG521 402 ph 5 ti 87 floor 78 bar 9 ammo 46
+SYNC521 402 st 0 orth 4 live 1 ammo 55 body 1 rung -1
+MAG521 403 ph 5 ti 87 floor 78 bar 9 ammo 45
+SYNC521 403 st 0 orth 4 live 1 ammo 54 body 1 rung -1
+RUNG521 403 rung 1 st 0 body 1
+MAG521 404 ph 5 ti 78 floor 78 bar 9 ammo 54
+SYNC521 404 st 0 orth 3 live 1 ammo 54 body 1 rung -1
+MAG521 405 ph 5 ti 87 floor 78 bar 9 ammo 44
+SYNC521 405 st 0 orth 4 live 1 ammo 53 body 1 rung -1
+MAG521 406 ph 5 ti 77 floor 78 bar 9 ammo 53
+SYNC521 406 st 0 orth 3 live 1 ammo 53 body 1 rung -1
+MAG521 407 ph 5 ti 78 floor 78 bar 9 ammo 43
+SYNC521 407 st 0 orth 4 live 1 ammo 43 body 1 rung -1
+MAG521 408 ph 5 ti 97 floor 78 bar 9 ammo 43
+SYNC521 408 st 0 orth 3 live 1 ammo 62 body 1 rung -1
+MAG521 409 ph 5 ti 87 floor 78 bar 9 ammo 52
+SYNC521 409 st 0 orth 4 live 1 ammo 61 body 1 rung -1
+MAG521 410 ph 5 ti 87 floor 78 bar 9 ammo 61
+SYNC521 410 st 0 orth 3 live 1 ammo 70 body 1 rung -1
+MAG521 411 ph 5 ti 87 floor 78 bar 9 ammo 60
+SYNC521 411 st 0 orth 4 live 1 ammo 69 body 1 rung -1
+MAG521 412 ph 5 ti 87 floor 78 bar 9 ammo 69
+SYNC521 412 st 0 orth 3 live 1 ammo 78 body 1 rung -1
+MAG521 413 ph 5 ti 79 floor 78 bar 9 ammo 68
+SYNC521 413 st 0 orth 4 live 1 ammo 69 body 1 rung -1
+MAG521 414 ph 5 ti 77 floor 78 bar 9 ammo 69
+SYNC521 414 st 0 orth 3 live 1 ammo 69 body 1 rung -1
+MAG521 415 ph 5 ti 86 floor 78 bar 9 ammo 59
+SYNC521 415 st 0 orth 4 live 1 ammo 67 body 1 rung -1
+MAG521 416 ph 5 ti 97 floor 78 bar 9 ammo 67
+SYNC521 416 st 0 orth 3 live 1 ammo 86 body 1 rung -1
+MAG521 417 ph 5 ti 87 floor 78 bar 9 ammo 76
+SYNC521 417 st 0 orth 4 live 1 ammo 85 body 1 rung -1
+MAG521 418 ph 5 ti 87 floor 78 bar 9 ammo 85
+SYNC521 418 st 0 orth 3 live 1 ammo 94 body 1 rung -1
+MAG521 419 ph 5 ti 79 floor 78 bar 9 ammo 84
+SYNC521 419 st 0 orth 4 live 1 ammo 85 body 1 rung -1
+MAG521 420 ph 5 ti 87 floor 78 bar 9 ammo 85
+SYNC521 420 st 0 orth 3 live 1 ammo 94 body 1 rung -1
+MAG521 421 ph 5 ti 87 floor 78 bar 9 ammo 84
+SYNC521 421 st 0 orth 4 live 1 ammo 93 body 1 rung -1
+MAG521 422 ph 5 ti 77 floor 78 bar 9 ammo 93
+SYNC521 422 st 0 orth 3 live 1 ammo 93 body 1 rung -1
+MAG521 423 ph 5 ti 86 floor 78 bar 9 ammo 83
+SYNC521 423 st 0 orth 3 live 1 ammo 91 body 1 rung -1
+MAG521 424 ph 5 ti 97 floor 78 bar 9 ammo 91
+SYNC521 424 st 0 orth 3 live 1 ammo 110 body 1 rung -1
+MAG521 425 ph 5 ti 79 floor 78 bar 9 ammo 100
+SYNC521 425 st 0 orth 3 live 1 ammo 101 body 1 rung -1
+MAG521 426 ph 5 ti 87 floor 78 bar 9 ammo 101
+SYNC521 426 st 0 orth 3 live 1 ammo 110 body 1 rung -1
+MAG521 427 ph 5 ti 87 floor 78 bar 9 ammo 100
+SYNC521 427 st 0 orth 3 live 1 ammo 109 body 1 rung -1
+MAG521 428 ph 5 ti 87 floor 78 bar 9 ammo 109
+SYNC521 428 st 0 orth 3 live 1 ammo 118 body 1 rung -1
+MAG521 429 ph 5 ti 87 floor 78 bar 9 ammo 108
+SYNC521 429 st 0 orth 3 live 1 ammo 117 body 1 rung -1
+MAG521 430 ph 5 ti 77 floor 78 bar 9 ammo 117
+SYNC521 430 st 0 orth 3 live 1 ammo 117 body 1 rung -1
+MAG521 431 ph 5 ti 78 floor 78 bar 9 ammo 107
+SYNC521 431 st 0 orth 3 live 1 ammo 107 body 1 rung -1
+MAG521 432 ph 5 ti 97 floor 78 bar 9 ammo 107
+SYNC521 432 st 0 orth 3 live 1 ammo 126 body 1 rung -1
+MAG521 433 ph 5 ti 87 floor 78 bar 9 ammo 116
+SYNC521 433 st 0 orth 3 live 1 ammo 125 body 1 rung -1
+MAG521 434 ph 5 ti 87 floor 78 bar 9 ammo 125
+SYNC521 434 st 0 orth 3 live 1 ammo 134 body 1 rung -1
+MAG521 435 ph 5 ti 87 floor 78 bar 9 ammo 124
+SYNC521 435 st 0 orth 3 live 1 ammo 133 body 1 rung -1
+MAG521 436 ph 5 ti 87 floor 78 bar 9 ammo 133
+SYNC521 436 st 0 orth 3 live 1 ammo 142 body 1 rung -1
+MAG521 437 ph 5 ti 79 floor 78 bar 9 ammo 132
+SYNC521 437 st 0 orth 3 live 1 ammo 133 body 1 rung -1
+MAG521 438 ph 5 ti 77 floor 78 bar 9 ammo 133
+SYNC521 438 st 0 orth 3 live 1 ammo 133 body 1 rung -1
+MAG521 439 ph 5 ti 86 floor 78 bar 9 ammo 123
+SYNC521 439 st 0 orth 3 live 1 ammo 131 body 1 rung -1
+MAG521 440 ph 5 ti 97 floor 78 bar 9 ammo 131
+SYNC521 440 st 0 orth 3 live 1 ammo 150 body 1 rung -1
+MAG521 441 ph 5 ti 87 floor 78 bar 9 ammo 140
+SYNC521 441 st 0 orth 3 live 1 ammo 149 body 1 rung -1
+MAG521 442 ph 5 ti 87 floor 78 bar 9 ammo 149
+SYNC521 442 st 0 orth 3 live 1 ammo 158 body 1 rung -1
+MAG521 443 ph 5 ti 79 floor 78 bar 9 ammo 148
+SYNC521 443 st 0 orth 3 live 1 ammo 149 body 1 rung -1
+MAG521 444 ph 5 ti 87 floor 78 bar 9 ammo 149
+SYNC521 444 st 0 orth 3 live 1 ammo 158 body 1 rung -1
+MAG521 445 ph 5 ti 87 floor 78 bar 9 ammo 148
+SYNC521 445 st 0 orth 3 live 1 ammo 157 body 1 rung -1
+MAG521 446 ph 5 ti 77 floor 78 bar 9 ammo 157
+SYNC521 446 st 0 orth 3 live 1 ammo 157 body 1 rung -1
+MAG521 447 ph 5 ti 86 floor 78 bar 9 ammo 147
+SYNC521 447 st 0 orth 3 live 1 ammo 155 body 1 rung -1
+MAG521 448 ph 5 ti 97 floor 78 bar 9 ammo 155
+SYNC521 448 st 0 orth 3 live 1 ammo 174 body 1 rung -1
+MAG521 449 ph 5 ti 79 floor 78 bar 9 ammo 164
+SYNC521 449 st 0 orth 3 live 1 ammo 165 body 1 rung -1
+MAG521 450 ph 5 ti 87 floor 78 bar 9 ammo 165
+SYNC521 450 st 0 orth 3 live 1 ammo 174 body 1 rung -1
+MAG521 451 ph 5 ti 87 floor 78 bar 9 ammo 164
+SYNC521 451 st 0 orth 3 live 1 ammo 173 body 1 rung -1
+MAG521 452 ph 5 ti 87 floor 78 bar 9 ammo 173
+SYNC521 452 st 0 orth 3 live 1 ammo 182 body 1 rung -1
+MAG521 453 ph 5 ti 87 floor 78 bar 9 ammo 172
+SYNC521 453 st 0 orth 3 live 1 ammo 181 body 1 rung -1
+MAG521 454 ph 5 ti 77 floor 78 bar 9 ammo 181
+SYNC521 454 st 0 orth 3 live 1 ammo 181 body 1 rung -1
+MAG521 455 ph 5 ti 78 floor 78 bar 9 ammo 171
+SYNC521 455 st 0 orth 3 live 1 ammo 171 body 1 rung -1
+MAG521 456 ph 5 ti 97 floor 78 bar 9 ammo 171
+SYNC521 456 st 0 orth 3 live 1 ammo 190 body 1 rung -1
+MAG521 457 ph 5 ti 87 floor 78 bar 9 ammo 180
+SYNC521 457 st 0 orth 3 live 1 ammo 189 body 1 rung -1
+MAG521 458 ph 5 ti 87 floor 78 bar 9 ammo 189
+SYNC521 458 st 0 orth 3 live 1 ammo 198 body 1 rung -1
+MAG521 459 ph 5 ti 87 floor 78 bar 9 ammo 188
+SYNC521 459 st 0 orth 3 live 1 ammo 197 body 1 rung -1
+MAG521 460 ph 5 ti 87 floor 78 bar 9 ammo 197
+SYNC521 460 st 0 orth 3 live 1 ammo 206 body 1 rung -1
+MAG521 461 ph 5 ti 79 floor 78 bar 9 ammo 196
+SYNC521 461 st 0 orth 3 live 1 ammo 197 body 1 rung -1
+MAG521 462 ph 5 ti 77 floor 78 bar 9 ammo 197
+SYNC521 462 st 0 orth 3 live 1 ammo 197 body 1 rung -1
+MAG521 463 ph 5 ti 86 floor 78 bar 9 ammo 187
+SYNC521 463 st 0 orth 3 live 1 ammo 195 body 1 rung -1
+MAG521 464 ph 5 ti 97 floor 78 bar 9 ammo 195
+SYNC521 464 st 0 orth 3 live 1 ammo 214 body 1 rung -1
+MAG521 465 ph 5 ti 87 floor 78 bar 9 ammo 204
+SYNC521 465 st 0 orth 3 live 1 ammo 213 body 1 rung -1
+MAG521 466 ph 5 ti 87 floor 78 bar 9 ammo 213
+SYNC521 466 st 0 orth 3 live 1 ammo 222 body 1 rung -1
+MAG521 467 ph 5 ti 79 floor 78 bar 9 ammo 212
+SYNC521 467 st 0 orth 3 live 1 ammo 213 body 1 rung -1
+MAG521 468 ph 5 ti 87 floor 78 bar 9 ammo 213
+SYNC521 468 st 0 orth 3 live 1 ammo 222 body 1 rung -1
+MAG521 469 ph 5 ti 87 floor 78 bar 9 ammo 212
+SYNC521 469 st 0 orth 3 live 1 ammo 221 body 1 rung -1
+MAG521 470 ph 5 ti 77 floor 78 bar 9 ammo 221
+SYNC521 470 st 0 orth 3 live 1 ammo 221 body 1 rung -1
+MAG521 471 ph 5 ti 86 floor 78 bar 9 ammo 211
+SYNC521 471 st 0 orth 3 live 1 ammo 219 body 1 rung -1
+MAG521 472 ph 5 ti 97 floor 78 bar 9 ammo 219
+SYNC521 472 st 0 orth 3 live 1 ammo 238 body 1 rung -1
+MAG521 473 ph 5 ti 79 floor 78 bar 9 ammo 228
+SYNC521 473 st 0 orth 3 live 1 ammo 229 body 1 rung -1
+MAG521 474 ph 5 ti 87 floor 78 bar 9 ammo 229
+SYNC521 474 st 0 orth 3 live 1 ammo 238 body 1 rung -1
+MAG521 475 ph 5 ti 87 floor 78 bar 9 ammo 228
+SYNC521 475 st 0 orth 3 live 1 ammo 237 body 1 rung -1
+MAG521 476 ph 5 ti 87 floor 78 bar 9 ammo 237
+SYNC521 476 st 0 orth 3 live 1 ammo 246 body 1 rung -1
+MAG521 477 ph 5 ti 87 floor 78 bar 9 ammo 236
+SYNC521 477 st 0 orth 3 live 1 ammo 245 body 1 rung -1
+MAG521 478 ph 5 ti 77 floor 78 bar 9 ammo 245
+SYNC521 478 st 0 orth 3 live 1 ammo 245 body 1 rung -1
+MAG521 479 ph 5 ti 78 floor 78 bar 9 ammo 235
+SYNC521 479 st 0 orth 3 live 1 ammo 235 body 1 rung -1
+MAG521 480 ph 5 ti 97 floor 78 bar 9 ammo 235
+SYNC521 480 st 0 orth 3 live 1 ammo 254 body 1 rung -1
+MAG521 481 ph 5 ti 87 floor 78 bar 9 ammo 244
+SYNC521 481 st 0 orth 3 live 1 ammo 253 body 1 rung -1
+MAG521 482 ph 5 ti 87 floor 78 bar 9 ammo 253
+SYNC521 482 st 0 orth 4 live 1 ammo 262 body 1 rung -1
+MAG521 483 ph 5 ti 87 floor 78 bar 9 ammo 252
+SYNC521 483 st 0 orth 3 live 1 ammo 261 body 1 rung -1
+MAG521 484 ph 5 ti 87 floor 78 bar 9 ammo 261
+MAG521 485 ph 5 ti 79 floor 78 bar 9 ammo 260
+SYNC521 485 st 0 orth 3 live 1 ammo 261 body 1 rung -1
+MAG521 486 ph 5 ti 77 floor 78 bar 9 ammo 261
+MAG521 487 ph 5 ti 86 floor 70 bar 8 ammo 251
+MAG521 488 ph 5 ti 89 floor 70 bar 8 ammo 267
+MAG521 489 ph 5 ti 79 floor 70 bar 8 ammo 276
+MAG521 490 ph 5 ti 79 floor 70 bar 8 ammo 285
+MAG521 491 ph 5 ti 72 floor 70 bar 8 ammo 284
+MAG521 492 ph 5 ti 79 floor 70 bar 8 ammo 286
+MAG521 493 ph 5 ti 79 floor 70 bar 8 ammo 285
+MAG521 494 ph 5 ti 69 floor 70 bar 8 ammo 294
+MAG521 495 ph 5 ti 78 floor 70 bar 8 ammo 284
+MAG521 496 ph 5 ti 89 floor 70 bar 8 ammo 292
+MAG521 497 ph 5 ti 83 floor 70 bar 8 ammo 290
+MAG521 498 ph 5 ti 82 floor 70 bar 8 ammo 300
+MAG521 499 ph 5 ti 33 floor 70 bar 8 ammo 290
+MAG521 500 ph 5 ti 34 floor 70 bar 8 ammo 290
+MAG521 501 ph 5 ti 43 floor 70 bar 8 ammo 280
+MAG521 502 ph 5 ti 34 floor 70 bar 8 ammo 280
+MAG521 503 ph 5 ti 27 floor 78 bar 9 ammo 270
+MAG521 504 ph 5 ti 46 floor 78 bar 9 ammo 270
+MAG521 505 ph 5 ti 46 floor 78 bar 9 ammo 260
+MAG521 506 ph 5 ti 55 floor 78 bar 9 ammo 260
+MAG521 507 ph 5 ti 55 floor 78 bar 9 ammo 250
+MAG521 508 ph 5 ti 64 floor 78 bar 9 ammo 250
+MAG521 509 ph 5 ti 56 floor 78 bar 9 ammo 240
+MAG521 510 ph 5 ti 55 floor 78 bar 9 ammo 240
+MAG521 511 ph 5 ti 55 floor 78 bar 9 ammo 230
+MAG521 512 ph 5 ti 74 floor 78 bar 9 ammo 230
+MAG521 513 ph 5 ti 83 floor 78 bar 9 ammo 220
+MAG521 514 ph 5 ti 26 floor 78 bar 9 ammo 225
+MAG521 515 ph 5 ti 27 floor 78 bar 9 ammo 215
+MAG521 516 ph 5 ti 27 floor 78 bar 9 ammo 215
+MAG521 517 ph 5 ti 36 floor 78 bar 9 ammo 205
+MAG521 518 ph 5 ti 26 floor 78 bar 9 ammo 205
+MAG521 519 ph 5 ti 35 floor 78 bar 9 ammo 195
+MAG521 520 ph 5 ti 45 floor 78 bar 9 ammo 195
+MAG521 521 ph 5 ti 37 floor 78 bar 9 ammo 185
+MAG521 522 ph 5 ti 37 floor 78 bar 9 ammo 185
+MAG521 523 ph 5 ti 46 floor 78 bar 9 ammo 175
+MAG521 524 ph 5 ti 46 floor 78 bar 9 ammo 175
+MAG521 525 ph 5 ti 46 floor 78 bar 9 ammo 165
+MAG521 526 ph 5 ti 36 floor 78 bar 9 ammo 165
+MAG521 527 ph 5 ti 37 floor 78 bar 9 ammo 155
+MAG521 528 ph 5 ti 47 floor 78 bar 9 ammo 155
+MAG521 529 ph 5 ti 56 floor 78 bar 9 ammo 145
+MAG521 530 ph 5 ti 56 floor 78 bar 9 ammo 145
+MAG521 531 ph 5 ti 65 floor 78 bar 9 ammo 135
+MAG521 532 ph 5 ti 65 floor 78 bar 9 ammo 135
+MAG521 533 ph 5 ti 66 floor 78 bar 9 ammo 125
+MAG521 534 ph 5 ti 56 floor 78 bar 9 ammo 125
+MAG521 535 ph 5 ti 65 floor 78 bar 9 ammo 115
+MAG521 536 ph 5 ti 84 floor 78 bar 9 ammo 115
+MAG521 537 ph 5 ti 87 floor 78 bar 9 ammo 111
+MAG521 538 ph 5 ti 87 floor 78 bar 9 ammo 120
+MAG521 539 ph 5 ti 79 floor 78 bar 9 ammo 119
+MAG521 540 ph 5 ti 87 floor 78 bar 9 ammo 120
+MAG521 541 ph 5 ti 87 floor 78 bar 9 ammo 119
+MAG521 542 ph 5 ti 77 floor 78 bar 9 ammo 128
+MAG521 543 ph 5 ti 86 floor 78 bar 9 ammo 118
+MAG521 544 ph 5 ti 97 floor 78 bar 9 ammo 126
+MAG521 545 ph 5 ti 79 floor 78 bar 9 ammo 135
+MAG521 546 ph 5 ti 87 floor 78 bar 9 ammo 136
+MAG521 547 ph 5 ti 87 floor 78 bar 9 ammo 135
+MAG521 548 ph 5 ti 87 floor 78 bar 9 ammo 144
+MAG521 549 ph 5 ti 87 floor 78 bar 9 ammo 143
+MAG521 550 ph 5 ti 77 floor 78 bar 9 ammo 152
+MAG521 551 ph 5 ti 78 floor 78 bar 9 ammo 142
+MAG521 552 ph 5 ti 97 floor 78 bar 9 ammo 142
+MAG521 553 ph 5 ti 87 floor 78 bar 9 ammo 151
+MAG521 554 ph 5 ti 87 floor 78 bar 9 ammo 160
+MAG521 555 ph 5 ti 23 floor 86 bar 10 ammo 159
+MAG521 556 ph 5 ti 32 floor 86 bar 10 ammo 155
+MAG521 557 ph 5 ti 32 floor 86 bar 10 ammo 141
+MAG521 558 ph 5 ti 31 floor 86 bar 10 ammo 137
+MAG521 559 ph 5 ti 40 floor 86 bar 10 ammo 123
+MAG521 560 ph 5 ti 59 floor 86 bar 10 ammo 119
+MAG521 561 ph 5 ti 67 floor 86 bar 10 ammo 105
+MAG521 562 ph 5 ti 76 floor 86 bar 10 ammo 101
+MAG521 563 ph 5 ti 76 floor 86 bar 10 ammo 91
+MAG521 564 ph 5 ti 86 floor 86 bar 10 ammo 87
+MAG521 565 ph 5 ti 28 floor 86 bar 10 ammo 73
+MAG521 566 ph 5 ti 28 floor 86 bar 10 ammo 69
+MAG521 567 ph 5 ti 28 floor 86 bar 10 ammo 55
+MAG521 568 ph 5 ti 48 floor 86 bar 10 ammo 51
+MAG521 569 ph 5 ti 58 floor 86 bar 10 ammo 37
+MAG521 570 ph 5 ti 68 floor 86 bar 10 ammo 37
+MAG521 571 ph 5 ti 78 floor 86 bar 10 ammo 27
+MAG521 572 ph 5 ti 88 floor 86 bar 10 ammo 27
+MAG521 573 ph 5 ti 96 floor 86 bar 10 ammo 19
+MAG521 574 ph 5 ti 27 floor 86 bar 10 ammo 29
+MAG521 575 ph 5 ti 37 floor 86 bar 10 ammo 19
+MAG521 576 ph 5 ti 47 floor 86 bar 10 ammo 19
+MAG521 577 ph 5 ti 57 floor 86 bar 10 ammo 9
+MAG521 578 ph 5 ti 67 floor 86 bar 10 ammo 9
+MAG521 579 ph 5 ti 77 floor 86 bar 10 ammo 9
+MAG521 580 ph 5 ti 97 floor 86 bar 10 ammo 9
+MAG521 581 ph 5 ti 107 floor 86 bar 10 ammo 9
+MAG521 582 ph 5 ti 117 floor 86 bar 10 ammo 9
+MAG521 583 ph 5 ti 22 floor 94 bar 11 ammo 9
+MAG521 584 ph 5 ti 42 floor 94 bar 11 ammo 9
+MAG521 585 ph 5 ti 52 floor 94 bar 11 ammo 9
+MAG521 586 ph 5 ti 62 floor 94 bar 11 ammo 9
+MAG521 587 ph 5 ti 72 floor 94 bar 11 ammo 9
+MAG521 588 ph 5 ti 92 floor 94 bar 11 ammo 9
+MAG521 589 ph 5 ti 102 floor 94 bar 11 ammo 9
+MAG521 590 ph 5 ti 112 floor 94 bar 11 ammo 9
+MAG521 591 ph 5 ti 122 floor 94 bar 11 ammo 9
+MAG521 592 ph 5 ti 142 floor 94 bar 11 ammo 9
+MAG521 593 ph 5 ti 149 floor 94 bar 11 ammo 2
+MAG521 594 ph 5 ti 149 floor 94 bar 11 ammo 12
+MAG521 595 ph 5 ti 149 floor 94 bar 11 ammo 12
+MAG521 596 ph 5 ti 159 floor 94 bar 11 ammo 22
+MAG521 597 ph 5 ti 149 floor 94 bar 11 ammo 32
+MAG521 598 ph 5 ti 149 floor 94 bar 11 ammo 42
+MAG521 599 ph 5 ti 149 floor 94 bar 11 ammo 42
+MAG521 600 ph 5 ti 159 floor 94 bar 11 ammo 52
+MAG521 601 ph 5 ti 149 floor 94 bar 11 ammo 62
+MAG521 602 ph 5 ti 149 floor 94 bar 11 ammo 72
+MAG521 603 ph 5 ti 149 floor 94 bar 11 ammo 72
+MAG521 604 ph 5 ti 159 floor 94 bar 11 ammo 82
+MAG521 605 ph 5 ti 149 floor 94 bar 11 ammo 92
+MAG521 606 ph 5 ti 149 floor 94 bar 11 ammo 102
+MAG521 607 ph 5 ti 149 floor 94 bar 11 ammo 102
+MAG521 608 ph 5 ti 48 floor 94 bar 11 ammo 112
+MAG521 609 ph 5 ti 58 floor 94 bar 11 ammo 92
+MAG521 610 ph 5 ti 68 floor 94 bar 11 ammo 92
+MAG521 611 ph 5 ti 78 floor 94 bar 11 ammo 72
+MAG521 612 ph 5 ti 98 floor 94 bar 11 ammo 72
+MAG521 613 ph 5 ti 104 floor 94 bar 11 ammo 56
+MAG521 614 ph 5 ti 104 floor 94 bar 11 ammo 66
+MAG521 615 ph 5 ti 104 floor 94 bar 11 ammo 56
+MAG521 616 ph 5 ti 114 floor 94 bar 11 ammo 66
+MAG521 617 ph 5 ti 104 floor 94 bar 11 ammo 76
+MAG521 618 ph 5 ti 104 floor 94 bar 11 ammo 86
+MAG521 619 ph 5 ti 104 floor 94 bar 11 ammo 86
+MAG521 620 ph 5 ti 114 floor 94 bar 11 ammo 96
+MAG521 621 ph 5 ti 104 floor 94 bar 11 ammo 106
+MAG521 622 ph 5 ti 104 floor 94 bar 11 ammo 116
+MAG521 623 ph 5 ti 104 floor 94 bar 11 ammo 116
+MAG521 624 ph 5 ti 114 floor 94 bar 11 ammo 126
+MAG521 625 ph 5 ti 104 floor 94 bar 11 ammo 136
+MAG521 626 ph 5 ti 104 floor 94 bar 11 ammo 146
+MAG521 627 ph 5 ti 104 floor 94 bar 11 ammo 146
+MAG521 628 ph 5 ti 114 floor 94 bar 11 ammo 156
+MAG521 629 ph 5 ti 104 floor 94 bar 11 ammo 166
+MAG521 630 ph 5 ti 104 floor 94 bar 11 ammo 176
+MAG521 631 ph 5 ti 104 floor 94 bar 11 ammo 176
+MAG521 632 ph 5 ti 114 floor 94 bar 11 ammo 186
+MAG521 633 ph 5 ti 104 floor 94 bar 11 ammo 196
+MAG521 634 ph 5 ti 104 floor 94 bar 11 ammo 206
+MAG521 635 ph 5 ti 104 floor 94 bar 11 ammo 206
+MAG521 636 ph 5 ti 114 floor 94 bar 11 ammo 216
+MAG521 637 ph 5 ti 104 floor 94 bar 11 ammo 226
+MAG521 638 ph 5 ti 104 floor 94 bar 11 ammo 236
+MAG521 639 ph 5 ti 104 floor 94 bar 11 ammo 236
+MAG521 640 ph 5 ti 114 floor 94 bar 11 ammo 246
+MAG521 641 ph 5 ti 104 floor 94 bar 11 ammo 256
+MAG521 642 ph 5 ti 104 floor 94 bar 11 ammo 266
+MAG521 643 ph 5 ti 104 floor 94 bar 11 ammo 266
+MAG521 644 ph 5 ti 114 floor 94 bar 11 ammo 276
+MAG521 645 ph 5 ti 104 floor 94 bar 11 ammo 286
+MAG521 646 ph 5 ti 104 floor 94 bar 11 ammo 296
+MAG521 647 ph 5 ti 110 floor 94 bar 11 ammo 290
+MAG521 648 ph 5 ti 120 floor 94 bar 11 ammo 300
+MAG521 649 ph 5 ti 130 floor 94 bar 11 ammo 290
+MAG521 650 ph 5 ti 130 floor 94 bar 11 ammo 300
+MAG521 651 ph 5 ti 140 floor 94 bar 11 ammo 290
+MAG521 652 ph 5 ti 150 floor 94 bar 11 ammo 300
+MAG521 653 ph 5 ti 160 floor 94 bar 11 ammo 290
+MAG521 654 ph 5 ti 160 floor 94 bar 11 ammo 300
+MAG521 655 ph 5 ti 92 floor 102 bar 12 ammo 290
+MAG521 656 ph 5 ti 112 floor 102 bar 12 ammo 290
+MAG521 657 ph 5 ti 112 floor 102 bar 12 ammo 290
+MAG521 658 ph 5 ti 112 floor 102 bar 12 ammo 300
+MAG521 659 ph 5 ti 122 floor 102 bar 12 ammo 290
+MAG521 660 ph 5 ti 132 floor 102 bar 12 ammo 300
+MAG521 661 ph 5 ti 142 floor 102 bar 12 ammo 290
+MAG521 662 ph 5 ti 142 floor 102 bar 12 ammo 300
+MAG521 663 ph 5 ti 152 floor 102 bar 12 ammo 290
+MAG521 664 ph 5 ti 162 floor 102 bar 12 ammo 300
+MAG521 665 ph 5 ti 172 floor 102 bar 12 ammo 290
+MAG521 666 ph 5 ti 172 floor 102 bar 12 ammo 300
+MAG521 667 ph 5 ti 182 floor 102 bar 12 ammo 290
+MAG521 668 ph 5 ti 192 floor 102 bar 12 ammo 300
+MAG521 669 ph 5 ti 82 floor 102 bar 12 ammo 290
+MAG521 670 ph 1 ti 92 floor 102 bar 12 ammo 290
+MAG521 671 ph 1 ti 102 floor 102 bar 12 ammo 280
+MAG521 672 ph 1 ti 122 floor 102 bar 12 ammo 280
+MAG521 673 ph 1 ti 112 floor 102 bar 12 ammo 290
+MAG521 674 ph 1 ti 28 floor 102 bar 12 ammo 300
+MAG521 675 ph 1 ti 38 floor 102 bar 12 ammo 290
+SYNC521 675 st 0 orth 3 live 1 ammo 290 body 1 rung -1
+MAG521 676 ph 5 ti 58 floor 102 bar 12 ammo 290
+SYNC521 676 st 0 orth 3 live 1 ammo 280 body 1 rung -1
+MAG521 677 ph 5 ti 68 floor 102 bar 12 ammo 280
+SYNC521 677 st 0 orth 4 live 1 ammo 280 body 1 rung -1
+MAG521 678 ph 5 ti 78 floor 102 bar 12 ammo 280
+SYNC521 678 st 0 orth 3 live 1 ammo 270 body 1 rung -1
+MAG521 679 ph 5 ti 88 floor 102 bar 12 ammo 270
+SYNC521 679 st 0 orth 3 live 1 ammo 270 body 1 rung -1
+MAG521 680 ph 5 ti 108 floor 102 bar 12 ammo 270
+SYNC521 680 st 0 orth 3 live 1 ammo 266 body 1 rung -1
+MAG521 681 ph 5 ti 112 floor 102 bar 12 ammo 266
+SYNC521 681 st 0 orth 3 live 1 ammo 276 body 1 rung -1
+MAG521 682 ph 5 ti 112 floor 102 bar 12 ammo 276
+SYNC521 682 st 0 orth 3 live 1 ammo 276 body 1 rung -1
+MAG521 683 ph 5 ti 112 floor 102 bar 12 ammo 276
+SYNC521 683 st 0 orth 3 live 1 ammo 286 body 1 rung -1
+MAG521 684 ph 5 ti 122 floor 102 bar 12 ammo 286
+SYNC521 684 st 0 orth 3 live 1 ammo 290 body 1 rung -1
+MAG521 685 ph 5 ti 118 floor 102 bar 12 ammo 290
+SYNC521 685 st 0 orth 3 live 1 ammo 300 body 1 rung -1
+MAG521 686 ph 5 ti 118 floor 102 bar 12 ammo 300
+SYNC521 686 st 0 orth 3 live 1 ammo 290 body 1 rung -1
+MAG521 687 ph 5 ti 128 floor 102 bar 12 ammo 290
+SYNC521 687 st 0 orth 3 live 1 ammo 300 body 1 rung -1
+MAG521 688 ph 5 ti 138 floor 102 bar 12 ammo 300
+SYNC521 688 st 0 orth 3 live 1 ammo 290 body 1 rung -1
+MAG521 689 ph 5 ti 148 floor 102 bar 12 ammo 290
+SYNC521 689 st 0 orth 3 live 1 ammo 300 body 1 rung -1
+MAG521 690 ph 5 ti 64 floor 102 bar 12 ammo 300
+SYNC521 690 st 0 orth 3 live 1 ammo 290 body 1 rung -1
+MAG521 691 ph 5 ti 62 floor 102 bar 12 ammo 290
+SYNC521 691 st 0 orth 3 live 1 ammo 290 body 1 rung -1
+MAG521 692 ph 5 ti 82 floor 102 bar 12 ammo 290
+SYNC521 692 st 0 orth 3 live 1 ammo 280 body 1 rung -1
+MAG521 693 ph 5 ti 80 floor 102 bar 12 ammo 280
+SYNC521 693 st 0 orth 3 live 1 ammo 280 body 1 rung -1
+MAG521 694 ph 5 ti 90 floor 102 bar 12 ammo 280
+SYNC521 694 st 0 orth 3 live 1 ammo 270 body 1 rung -1
+MAG521 695 ph 5 ti 14 floor 110 bar 13 ammo 270
+SYNC521 695 st 0 orth 3 live 1 ammo 270 body 1 rung -1
+MAG521 696 ph 5 ti 21 floor 102 bar 12 ammo 270
+SYNC521 696 st 0 orth 3 live 1 ammo 260 body 1 rung -1
+MAG521 697 ph 5 ti 31 floor 102 bar 12 ammo 260
+SYNC521 697 st 0 orth 3 live 1 ammo 260 body 1 rung -1
+MAG521 698 ph 5 ti 29 floor 102 bar 12 ammo 260
+SYNC521 698 st 0 orth 3 live 1 ammo 250 body 1 rung -1
+MAG521 699 ph 5 ti 27 floor 102 bar 12 ammo 250
+SYNC521 699 st 0 orth 3 live 1 ammo 250 body 1 rung -1
+MAG521 700 ph 5 ti 47 floor 102 bar 12 ammo 250
+SYNC521 700 st 0 orth 3 live 1 ammo 240 body 1 rung -1
+MAG521 701 ph 5 ti 45 floor 102 bar 12 ammo 240
+SYNC521 701 st 0 orth 3 live 1 ammo 240 body 1 rung -1
+MAG521 702 ph 5 ti 55 floor 102 bar 12 ammo 240
+SYNC521 702 st 0 orth 3 live 1 ammo 230 body 1 rung -1
+MAG521 703 ph 5 ti 53 floor 102 bar 12 ammo 230
+SYNC521 703 st 0 orth 3 live 1 ammo 230 body 1 rung -1
+MAG521 704 ph 5 ti 73 floor 102 bar 12 ammo 230
+SYNC521 704 st 0 orth 3 live 1 ammo 220 body 1 rung -1
+MAG521 705 ph 5 ti 71 floor 102 bar 12 ammo 220
+SYNC521 705 st 0 orth 3 live 1 ammo 220 body 1 rung -1
+MAG521 706 ph 5 ti 81 floor 102 bar 12 ammo 220
+SYNC521 706 st 0 orth 3 live 1 ammo 210 body 1 rung -1
+MAG521 707 ph 5 ti 79 floor 102 bar 12 ammo 210
+SYNC521 707 st 0 orth 3 live 1 ammo 210 body 1 rung -1
+MAG521 708 ph 5 ti 99 floor 102 bar 12 ammo 210
+SYNC521 708 st 0 orth 3 live 1 ammo 200 body 1 rung -1
+MAG521 709 ph 5 ti 97 floor 102 bar 12 ammo 200
+SYNC521 709 st 0 orth 3 live 1 ammo 200 body 1 rung -1
+MAG521 710 ph 5 ti 107 floor 102 bar 12 ammo 200
+SYNC521 710 st 0 orth 3 live 1 ammo 195 body 1 rung -1
+MAG521 711 ph 5 ti 100 floor 110 bar 13 ammo 195
+SYNC521 711 st 0 orth 3 live 1 ammo 195 body 1 rung -1
+MAG521 712 ph 5 ti 120 floor 110 bar 13 ammo 195
+SYNC521 712 st 0 orth 3 live 1 ammo 195 body 1 rung -1
+MAG521 713 ph 5 ti 120 floor 110 bar 13 ammo 195
+SYNC521 713 st 0 orth 3 live 1 ammo 205 body 1 rung -1
+MAG521 714 ph 5 ti 107 floor 110 bar 13 ammo 205
+SYNC521 714 st 0 orth 3 live 1 ammo 195 body 1 rung -1
+MAG521 715 ph 5 ti 117 floor 110 bar 13 ammo 195
+SYNC521 715 st 0 orth 3 live 1 ammo 202 body 1 rung -1
+MAG521 716 ph 5 ti 130 floor 110 bar 13 ammo 202
+SYNC521 716 st 0 orth 3 live 1 ammo 212 body 1 rung -1
+MAG521 717 ph 5 ti 120 floor 110 bar 13 ammo 212
+SYNC521 717 st 0 orth 3 live 1 ammo 222 body 1 rung -1
+MAG521 718 ph 5 ti 120 floor 110 bar 13 ammo 222
+SYNC521 718 st 0 orth 3 live 1 ammo 222 body 1 rung -1
+MAG521 719 ph 5 ti 120 floor 110 bar 13 ammo 222
+SYNC521 719 st 0 orth 3 live 1 ammo 232 body 1 rung -1
+MAG521 720 ph 5 ti 104 floor 110 bar 13 ammo 232
+SYNC521 720 st 0 orth 3 live 1 ammo 222 body 1 rung -1
+MAG521 721 ph 5 ti 114 floor 110 bar 13 ammo 222
+SYNC521 721 st 0 orth 3 live 1 ammo 226 body 1 rung -1
+MAG521 722 ph 5 ti 94 floor 110 bar 13 ammo 226
+SYNC521 722 st 0 orth 3 live 1 ammo 216 body 1 rung -1
+MAG521 723 ph 5 ti 104 floor 110 bar 13 ammo 216
+SYNC521 723 st 0 orth 3 live 1 ammo 216 body 1 rung -1
+MAG521 724 ph 5 ti 98 floor 110 bar 13 ammo 216
+SYNC521 724 st 0 orth 3 live 1 ammo 206 body 1 rung -1
+MAG521 725 ph 5 ti 108 floor 110 bar 13 ammo 206
+SYNC521 725 st 0 orth 3 live 1 ammo 206 body 1 rung -1
+MAG521 726 ph 5 ti 92 floor 110 bar 13 ammo 206
+SYNC521 726 st 0 orth 3 live 1 ammo 196 body 1 rung -1
+MAG521 727 ph 5 ti 102 floor 110 bar 13 ammo 196
+SYNC521 727 st 0 orth 3 live 1 ammo 196 body 1 rung -1
+MAG521 728 ph 5 ti 96 floor 110 bar 13 ammo 196
+SYNC521 728 st 0 orth 3 live 1 ammo 186 body 1 rung -1
+MAG521 729 ph 5 ti 106 floor 110 bar 13 ammo 186
+SYNC521 729 st 0 orth 3 live 1 ammo 186 body 1 rung -1
+MAG521 730 ph 5 ti 90 floor 110 bar 13 ammo 186
+SYNC521 730 st 0 orth 3 live 1 ammo 176 body 1 rung -1
+MAG521 731 ph 5 ti 100 floor 110 bar 13 ammo 176
+SYNC521 731 st 0 orth 3 live 1 ammo 176 body 1 rung -1
+MAG521 732 ph 5 ti 107 floor 110 bar 13 ammo 176
+SYNC521 732 st 0 orth 3 live 1 ammo 166 body 1 rung -1
+MAG521 733 ph 5 ti 117 floor 110 bar 13 ammo 166
+SYNC521 733 st 0 orth 3 live 1 ammo 173 body 1 rung -1
+MAG521 734 ph 5 ti 107 floor 110 bar 13 ammo 173
+SYNC521 734 st 0 orth 3 live 1 ammo 163 body 1 rung -1
+MAG521 735 ph 5 ti 117 floor 110 bar 13 ammo 163
+SYNC521 735 st 0 orth 3 live 1 ammo 170 body 1 rung -1
+MAG521 736 ph 5 ti 117 floor 110 bar 13 ammo 170
+SYNC521 736 st 0 orth 3 live 1 ammo 167 body 1 rung -1
+MAG521 737 ph 5 ti 120 floor 110 bar 13 ammo 167
+SYNC521 737 st 0 orth 3 live 1 ammo 177 body 1 rung -1
+MAG521 738 ph 5 ti 107 floor 110 bar 13 ammo 177
+SYNC521 738 st 0 orth 3 live 1 ammo 167 body 1 rung -1
+MAG521 739 ph 5 ti 117 floor 110 bar 13 ammo 167
+SYNC521 739 st 0 orth 3 live 1 ammo 174 body 1 rung -1
+MAG521 740 ph 5 ti 117 floor 110 bar 13 ammo 174
+SYNC521 740 st 0 orth 3 live 1 ammo 171 body 1 rung -1
+MAG521 741 ph 5 ti 120 floor 110 bar 13 ammo 171
+SYNC521 741 st 0 orth 3 live 1 ammo 181 body 1 rung -1
+MAG521 742 ph 5 ti 107 floor 110 bar 13 ammo 181
+SYNC521 742 st 0 orth 3 live 1 ammo 171 body 1 rung -1
+MAG521 743 ph 5 ti 117 floor 110 bar 13 ammo 171
+SYNC521 743 st 0 orth 3 live 1 ammo 178 body 1 rung -1
+MAG521 744 ph 5 ti 117 floor 110 bar 13 ammo 178
+SYNC521 744 st 0 orth 3 live 1 ammo 175 body 1 rung -1
+MAG521 745 ph 5 ti 120 floor 110 bar 13 ammo 175
+SYNC521 745 st 0 orth 3 live 1 ammo 185 body 1 rung -1
+MAG521 746 ph 5 ti 107 floor 110 bar 13 ammo 185
+SYNC521 746 st 0 orth 3 live 1 ammo 175 body 1 rung -1
+MAG521 747 ph 5 ti 117 floor 110 bar 13 ammo 175
+SYNC521 747 st 0 orth 3 live 1 ammo 182 body 1 rung -1
+MAG521 748 ph 5 ti 130 floor 110 bar 13 ammo 182
+SYNC521 748 st 0 orth 3 live 1 ammo 192 body 1 rung -1
+MAG521 749 ph 5 ti 120 floor 110 bar 13 ammo 192
+SYNC521 749 st 0 orth 3 live 1 ammo 202 body 1 rung -1
+MAG521 750 ph 5 ti 120 floor 110 bar 13 ammo 202
+SYNC521 750 st 0 orth 3 live 1 ammo 202 body 1 rung -1
+MAG521 751 ph 5 ti 120 floor 110 bar 13 ammo 202
+SYNC521 751 st 0 orth 3 live 1 ammo 212 body 1 rung -1
+MAG521 752 ph 5 ti 130 floor 110 bar 13 ammo 212
+SYNC521 752 st 0 orth 3 live 1 ammo 222 body 1 rung -1
+MAG521 753 ph 5 ti 120 floor 110 bar 13 ammo 222
+SYNC521 753 st 0 orth 3 live 1 ammo 232 body 1 rung -1
+MAG521 754 ph 5 ti 120 floor 110 bar 13 ammo 232
+SYNC521 754 st 0 orth 3 live 1 ammo 232 body 1 rung -1
+MAG521 755 ph 5 ti 120 floor 110 bar 13 ammo 232
+SYNC521 755 st 0 orth 3 live 1 ammo 242 body 1 rung -1
+MAG521 756 ph 5 ti 130 floor 110 bar 13 ammo 242
+SYNC521 756 st 0 orth 3 live 1 ammo 252 body 1 rung -1
+MAG521 757 ph 5 ti 120 floor 110 bar 13 ammo 252
+SYNC521 757 st 0 orth 3 live 1 ammo 262 body 1 rung -1
+MAG521 758 ph 5 ti 120 floor 110 bar 13 ammo 262
+SYNC521 758 st 0 orth 3 live 1 ammo 262 body 1 rung -1
+MAG521 759 ph 5 ti 120 floor 110 bar 13 ammo 262
+SYNC521 759 st 0 orth 3 live 1 ammo 272 body 1 rung -1
+MAG521 760 ph 5 ti 130 floor 110 bar 13 ammo 272
+SYNC521 760 st 0 orth 3 live 1 ammo 282 body 1 rung -1
+MAG521 761 ph 5 ti 120 floor 110 bar 13 ammo 282
+SYNC521 761 st 0 orth 3 live 1 ammo 292 body 1 rung -1
+MAG521 762 ph 5 ti 120 floor 110 bar 13 ammo 292
+SYNC521 762 st 0 orth 3 live 1 ammo 290 body 1 rung -1
+MAG521 763 ph 5 ti 122 floor 110 bar 13 ammo 290
+SYNC521 763 st 0 orth 3 live 1 ammo 300 body 1 rung -1
+MAG521 764 ph 5 ti 132 floor 110 bar 13 ammo 300
+SYNC521 764 st 0 orth 3 live 1 ammo 290 body 1 rung -1
+MAG521 765 ph 5 ti 142 floor 110 bar 13 ammo 290
+SYNC521 765 st 0 orth 3 live 1 ammo 300 body 1 rung -1
+MAG521 766 ph 5 ti 142 floor 110 bar 13 ammo 300
+SYNC521 766 st 0 orth 3 live 1 ammo 290 body 1 rung -1
+MAG521 767 ph 5 ti 152 floor 110 bar 13 ammo 290
+SYNC521 767 st 0 orth 3 live 1 ammo 300 body 1 rung -1
+MAG521 768 ph 5 ti 162 floor 110 bar 13 ammo 300
+SYNC521 768 st 0 orth 3 live 1 ammo 290 body 1 rung -1
+MAG521 769 ph 5 ti 172 floor 110 bar 13 ammo 290
+SYNC521 769 st 0 orth 3 live 1 ammo 300 body 1 rung -1
+MAG521 770 ph 5 ti 172 floor 110 bar 13 ammo 300
+SYNC521 770 st 0 orth 3 live 1 ammo 290 body 1 rung -1
+MAG521 771 ph 5 ti 182 floor 110 bar 13 ammo 290
+SYNC521 771 st 0 orth 3 live 1 ammo 300 body 1 rung -1
+MAG521 772 ph 5 ti 192 floor 110 bar 13 ammo 300
+SYNC521 772 st 0 orth 3 live 1 ammo 290 body 1 rung -1
+RUNG521 772 rung 4 st 0 body 1
+MAG521 773 ph 5 ti 66 floor 118 bar 14 ammo 290
+SYNC521 773 st 0 orth 3 live 1 ammo 290 body 1 rung -1
+MAG521 774 ph 5 ti 76 floor 118 bar 14 ammo 280
+SYNC521 774 st 0 orth 4 live 1 ammo 270 body 1 rung -1
+MAG521 775 ph 5 ti 86 floor 118 bar 14 ammo 270
+SYNC521 775 st 0 orth 3 live 1 ammo 270 body 1 rung -1
+MAG521 776 ph 5 ti 106 floor 118 bar 14 ammo 260
+SYNC521 776 st 0 orth 4 live 1 ammo 250 body 1 rung -1
+MAG521 777 ph 5 ti 116 floor 118 bar 14 ammo 250
+SYNC521 777 st 0 orth 3 live 1 ammo 250 body 1 rung -1
+MAG521 778 ph 5 ti 126 floor 118 bar 14 ammo 240
+SYNC521 778 st 0 orth 4 live 1 ammo 238 body 1 rung -1
+MAG521 779 ph 5 ti 128 floor 118 bar 14 ammo 238
+SYNC521 779 st 0 orth 3 live 1 ammo 248 body 1 rung -1
+MAG521 780 ph 5 ti 138 floor 118 bar 14 ammo 238
+SYNC521 780 st 0 orth 4 live 1 ammo 248 body 1 rung -1
+MAG521 781 ph 5 ti 128 floor 118 bar 14 ammo 248
+SYNC521 781 st 0 orth 3 live 1 ammo 258 body 1 rung -1
+MAG521 782 ph 5 ti 128 floor 118 bar 14 ammo 248
+SYNC521 782 st 0 orth 4 live 1 ammo 248 body 1 rung -1
+MAG521 783 ph 5 ti 128 floor 118 bar 14 ammo 248
+SYNC521 783 st 0 orth 3 live 1 ammo 258 body 1 rung -1
+MAG521 784 ph 5 ti 138 floor 118 bar 14 ammo 248
+SYNC521 784 st 0 orth 4 live 1 ammo 258 body 1 rung -1
+MAG521 785 ph 5 ti 128 floor 118 bar 14 ammo 258
+SYNC521 785 st 0 orth 3 live 1 ammo 268 body 1 rung -1
+MAG521 786 ph 5 ti 128 floor 118 bar 14 ammo 258
+SYNC521 786 st 0 orth 4 live 1 ammo 258 body 1 rung -1
+MAG521 787 ph 5 ti 128 floor 118 bar 14 ammo 258
+SYNC521 787 st 0 orth 3 live 1 ammo 268 body 1 rung -1
+MAG521 788 ph 5 ti 138 floor 118 bar 14 ammo 258
+SYNC521 788 st 0 orth 4 live 1 ammo 268 body 1 rung -1
+MAG521 789 ph 5 ti 128 floor 118 bar 14 ammo 268
+SYNC521 789 st 0 orth 3 live 1 ammo 278 body 1 rung -1

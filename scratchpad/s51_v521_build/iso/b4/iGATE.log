@@ -1,0 +1,36 @@
+atoll_s510_A	atoll	510	A	OPP	_v488beltbreak2	Core destroyed	462	0	2200	2250
+atoll_s510_B	atoll	510	B	OPP	_v488beltbreak2	Core destroyed	752	0	5530	3730
+atoll_s511_A	atoll	511	A	OPP	_v488beltbreak2	Core destroyed	373	0	230	230
+atoll_s511_B	atoll	511	B	OPP	_v488beltbreak2	Core destroyed	407	0	270	1470
+atoll_s512_A	atoll	512	A	OPP	_v488beltbreak2	Core destroyed	229	0	340	1100
+atoll_s512_B	atoll	512	B	OPP	_v488beltbreak2	Core destroyed	688	0	1810	2290
+drakkarfjord_s510_A	drakkarfjord	510	A	US	iGATE	Core destroyed	92	0	340	0
+drakkarfjord_s510_B	drakkarfjord	510	B	US	iGATE	Core destroyed	101	0	300	0
+drakkarfjord_s511_A	drakkarfjord	511	A	US	iGATE	Core destroyed	88	0	280	0
+drakkarfjord_s511_B	drakkarfjord	511	B	US	iGATE	Titanium collected (tiebreak)	1000	0	330	0
+drakkarfjord_s512_A	drakkarfjord	512	A	US	iGATE	Core destroyed	106	0	410	0
+drakkarfjord_s512_B	drakkarfjord	512	B	US	iGATE	Core destroyed	140	0	640	0
+glacierkeep_s510_A	glacierkeep	510	A	US	iGATE	Core destroyed	124	0	260	0
+glacierkeep_s510_B	glacierkeep	510	B	US	iGATE	Harvesters (tiebreak)	1000	0	0	0
+glacierkeep_s511_A	glacierkeep	511	A	US	iGATE	Core destroyed	177	0	320	0
+glacierkeep_s511_B	glacierkeep	511	B	US	iGATE	Core destroyed	745	0	380	0
+glacierkeep_s512_A	glacierkeep	512	A	US	iGATE	Core destroyed	149	0	310	0
+glacierkeep_s512_B	glacierkeep	512	B	OPP	_v488beltbreak2	Harvesters (tiebreak)	1000	0	0	0
+midgard_s510_A	midgard	510	A	US	iGATE	Core destroyed	207	0	920	580
+midgard_s510_B	midgard	510	B	OPP	_v488beltbreak2	Core destroyed	151	0	630	870
+midgard_s511_A	midgard	511	A	US	iGATE	Core destroyed	626	0	690	680
+midgard_s511_B	midgard	511	B	OPP	_v488beltbreak2	Core destroyed	341	0	890	560
+midgard_s512_A	midgard	512	A	OPP	_v488beltbreak2	Core destroyed	348	0	700	2290
+midgard_s512_B	midgard	512	B	US	iGATE	Core destroyed	194	0	1550	500
+nordkap_s510_A	nordkap	510	A	US	iGATE	Core destroyed	197	0	590	60
+nordkap_s510_B	nordkap	510	B	OPP	_v488beltbreak2	Core destroyed	435	0	110	1580
+nordkap_s511_A	nordkap	511	A	US	iGATE	Core destroyed	313	0	790	50
+nordkap_s511_B	nordkap	511	B	OPP	_v488beltbreak2	Core destroyed	776	0	5110	5420
+nordkap_s512_A	nordkap	512	A	US	iGATE	Core destroyed	225	0	1470	80
+nordkap_s512_B	nordkap	512	B	US	iGATE	Core destroyed	247	0	2060	260
+yulerune_s510_A	yulerune	510	A	OPP	_v488beltbreak2	Core destroyed	597	0	380	510
+yulerune_s510_B	yulerune	510	B	US	iGATE	Core destroyed	268	0	3390	610
+yulerune_s511_A	yulerune	511	A	OPP	_v488beltbreak2	Titanium collected (tiebreak)	1000	0	460	3280
+yulerune_s511_B	yulerune	511	B	US	iGATE	Core destroyed	269	0	3340	730
+yulerune_s512_A	yulerune	512	A	US	iGATE	Core destroyed	191	0	2130	670
+yulerune_s512_B	yulerune	512	B	OPP	_v488beltbreak2	Core destroyed	243	0	280	1910

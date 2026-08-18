@@ -1,0 +1,36 @@
+atoll_s531_A	atoll	531	A	US	iMAG	Core destroyed	453	0	3050	900
+atoll_s531_B	atoll	531	B	US	iMAG	Core destroyed	181	0	860	700
+atoll_s532_A	atoll	532	A	US	iMAG	Core destroyed	251	0	1780	150
+atoll_s532_B	atoll	532	B	US	iMAG	Core destroyed	178	0	900	370
+atoll_s533_A	atoll	533	A	US	iMAG	Core destroyed	137	0	650	210
+atoll_s533_B	atoll	533	B	OPP	_v488beltbreak2	Core destroyed	154	0	400	420
+drakkarfjord_s531_A	drakkarfjord	531	A	US	iMAG	Core destroyed	922	0	3830	0
+drakkarfjord_s531_B	drakkarfjord	531	B	US	iMAG	Core destroyed	101	0	280	0
+drakkarfjord_s532_A	drakkarfjord	532	A	US	iMAG	Core destroyed	225	0	440	0
+drakkarfjord_s532_B	drakkarfjord	532	B	US	iMAG	Core destroyed	332	0	2130	0
+drakkarfjord_s533_A	drakkarfjord	533	A	US	iMAG	Core destroyed	141	0	600	0
+drakkarfjord_s533_B	drakkarfjord	533	B	US	iMAG	Core destroyed	495	0	3080	0
+glacierkeep_s531_A	glacierkeep	531	A	US	iMAG	Core destroyed	131	0	280	0
+glacierkeep_s531_B	glacierkeep	531	B	US	iMAG	Core destroyed	214	0	580	0
+glacierkeep_s532_A	glacierkeep	532	A	OPP	_v488beltbreak2	Titanium collected (tiebreak)	1000	0	230	1330
+glacierkeep_s532_B	glacierkeep	532	B	US	iMAG	Core destroyed	233	0	0	0
+glacierkeep_s533_A	glacierkeep	533	A	US	iMAG	Core destroyed	112	0	230	0
+glacierkeep_s533_B	glacierkeep	533	B	US	iMAG	Core destroyed	277	0	0	0
+midgard_s531_A	midgard	531	A	OPP	_v488beltbreak2	Core destroyed	308	0	550	2510
+midgard_s531_B	midgard	531	B	US	iMAG	Core destroyed	456	0	1040	690
+midgard_s532_A	midgard	532	A	US	iMAG	Core destroyed	245	0	2600	740
+midgard_s532_B	midgard	532	B	OPP	_v488beltbreak2	Core destroyed	159	0	720	1110
+midgard_s533_A	midgard	533	A	OPP	_v488beltbreak2	Core destroyed	309	0	620	2510
+midgard_s533_B	midgard	533	B	OPP	_v488beltbreak2	Core destroyed	293	0	760	1650
+nordkap_s531_A	nordkap	531	A	US	iMAG	Core destroyed	167	0	610	20
+nordkap_s531_B	nordkap	531	B	OPP	_v488beltbreak2	Titanium collected (tiebreak)	1000	0	2480	3860
+nordkap_s532_A	nordkap	532	A	OPP	_v488beltbreak2	Core destroyed	374	0	120	3070
+nordkap_s532_B	nordkap	532	B	US	iMAG	Core destroyed	141	0	110	130
+nordkap_s533_A	nordkap	533	A	US	iMAG	Core destroyed	313	0	3110	550
+nordkap_s533_B	nordkap	533	B	OPP	_v488beltbreak2	Core destroyed	271	0	190	1670
+yulerune_s531_A	yulerune	531	A	US	iMAG	Titanium collected (tiebreak)	1000	0	2920	300
+yulerune_s531_B	yulerune	531	B	US	iMAG	Core destroyed	305	0	290	270
+yulerune_s532_A	yulerune	532	A	US	iMAG	Core destroyed	207	0	2140	240
+yulerune_s532_B	yulerune	532	B	OPP	_v488beltbreak2	Core destroyed	259	0	210	1400
+yulerune_s533_A	yulerune	533	A	US	iMAG	Core destroyed	340	0	3400	310
+yulerune_s533_B	yulerune	533	B	US	iMAG	Core destroyed	372	0	560	870

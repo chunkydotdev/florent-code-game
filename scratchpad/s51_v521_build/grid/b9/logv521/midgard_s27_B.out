@@ -1,0 +1,16 @@
+Running match: _v488beltbreak2 vs _v521sync
+  Map: midgard.map26  Seed: 27  Replay: 
+scratchpad/s51_v521_build/grid/b9/repv521/midgard_s27_B.replay26  TLE: 10ms
+Completed turn 0
+Completed turn 100
+Completed turn 200
+Replay written to 
+scratchpad/s51_v521_build/grid/b9/repv521/midgard_s27_B.replay26
+
+  Winner: _v488beltbreak2  (Core destroyed, turn 208)
+
+               _v488beltbreak2         _v521sync  
+  Titanium     77 (1500 mined)    21 (730 mined)  
+  Units                     11                 4  
+  Buildings                 46                19  
+

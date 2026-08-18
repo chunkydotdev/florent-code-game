@@ -1,0 +1,37 @@
+tag	map	seed	seat	ours	winner	cond	turn	tracebacks	ours_mined	opp_mined
+atoll_s534_A	atoll	534	A	OPP	_v488beltbreak2	Core destroyed	666	0	3100	3300
+atoll_s534_B	atoll	534	B	US	iGATE	Core destroyed	124	0	580	200
+atoll_s535_A	atoll	535	A	US	iGATE	Core destroyed	149	0	300	50
+atoll_s535_B	atoll	535	B	US	iGATE	Core destroyed	156	0	750	500
+atoll_s536_A	atoll	536	A	OPP	_v488beltbreak2	Titanium collected (tiebreak)	1000	0	260	2590
+atoll_s536_B	atoll	536	B	US	iGATE	Core destroyed	193	0	930	650
+drakkarfjord_s534_A	drakkarfjord	534	A	US	iGATE	Core destroyed	92	0	340	0
+drakkarfjord_s534_B	drakkarfjord	534	B	OPP	_v488beltbreak2	Core destroyed	521	0	250	0
+drakkarfjord_s535_A	drakkarfjord	535	A	US	iGATE	Core destroyed	105	0	380	0
+drakkarfjord_s535_B	drakkarfjord	535	B	US	iGATE	Core destroyed	140	0	640	0
+drakkarfjord_s536_A	drakkarfjord	536	A	US	iGATE	Core destroyed	397	0	310	0
+drakkarfjord_s536_B	drakkarfjord	536	B	US	iGATE	Core destroyed	117	0	360	0
+glacierkeep_s534_A	glacierkeep	534	A	US	iGATE	Core destroyed	111	0	240	0
+glacierkeep_s534_B	glacierkeep	534	B	US	iGATE	Harvesters (tiebreak)	1000	0	0	0
+glacierkeep_s535_A	glacierkeep	535	A	US	iGATE	Core destroyed	116	0	450	0
+glacierkeep_s535_B	glacierkeep	535	B	US	iGATE	Core destroyed	159	0	330	0
+glacierkeep_s536_A	glacierkeep	536	A	US	iGATE	Core destroyed	112	0	230	0
+glacierkeep_s536_B	glacierkeep	536	B	US	iGATE	Core destroyed	245	0	0	0
+midgard_s534_A	midgard	534	A	OPP	_v488beltbreak2	Core destroyed	301	0	960	1400
+midgard_s534_B	midgard	534	B	US	iGATE	Core destroyed	167	0	1420	640
+midgard_s535_A	midgard	535	A	US	iGATE	Core destroyed	217	0	920	910
+midgard_s535_B	midgard	535	B	OPP	_v488beltbreak2	Core destroyed	186	0	710	1490
+midgard_s536_A	midgard	536	A	OPP	_v488beltbreak2	Core destroyed	314	0	590	2130
+midgard_s536_B	midgard	536	B	US	iGATE	Titanium collected (tiebreak)	1000	0	800	640
+nordkap_s534_A	nordkap	534	A	US	iGATE	Core destroyed	301	0	150	140
+nordkap_s534_B	nordkap	534	B	OPP	_v488beltbreak2	Core destroyed	293	0	1170	3050
+nordkap_s535_A	nordkap	535	A	US	iGATE	Titanium collected (tiebreak)	1000	0	180	90
+nordkap_s535_B	nordkap	535	B	US	iGATE	Core destroyed	217	0	820	130
+nordkap_s536_A	nordkap	536	A	US	iGATE	Core destroyed	372	0	3700	100
+nordkap_s536_B	nordkap	536	B	US	iGATE	Core destroyed	241	0	90	60
+yulerune_s534_A	yulerune	534	A	OPP	_v488beltbreak2	Core destroyed	148	0	260	600
+yulerune_s534_B	yulerune	534	B	OPP	_v488beltbreak2	Core destroyed	468	0	2360	4950
+yulerune_s535_A	yulerune	535	A	OPP	_v488beltbreak2	Core destroyed	151	0	350	1080
+yulerune_s535_B	yulerune	535	B	US	iGATE	Core destroyed	317	0	350	280
+yulerune_s536_A	yulerune	536	A	OPP	_v488beltbreak2	Titanium collected (tiebreak)	1000	0	470	790
+yulerune_s536_B	yulerune	536	B	OPP	_v488beltbreak2	Core destroyed	251	0	420	2350

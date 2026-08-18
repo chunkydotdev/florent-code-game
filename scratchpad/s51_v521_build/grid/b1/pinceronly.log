@@ -1,0 +1,36 @@
+atoll_s1_A	atoll	1	A	OPP	_v488beltbreak2	Core destroyed	303	0	1210	3370
+atoll_s1_B	atoll	1	B	US	pinceronly	Core destroyed	258	0	1260	580
+atoll_s2_A	atoll	2	A	US	pinceronly	Core destroyed	424	0	2090	410
+atoll_s2_B	atoll	2	B	US	pinceronly	Core destroyed	127	0	600	390
+atoll_s3_A	atoll	3	A	OPP	_v488beltbreak2	Titanium collected (tiebreak)	1000	0	3860	5010
+atoll_s3_B	atoll	3	B	OPP	_v488beltbreak2	Titanium collected (tiebreak)	1000	0	4960	4970
+drakkarfjord_s1_A	drakkarfjord	1	A	US	pinceronly	Core destroyed	88	0	330	0
+drakkarfjord_s1_B	drakkarfjord	1	B	US	pinceronly	Core destroyed	96	0	320	0
+drakkarfjord_s2_A	drakkarfjord	2	A	US	pinceronly	Core destroyed	100	0	430	0
+drakkarfjord_s2_B	drakkarfjord	2	B	US	pinceronly	Titanium collected (tiebreak)	1000	0	330	0
+drakkarfjord_s3_A	drakkarfjord	3	A	US	pinceronly	Core destroyed	283	0	480	360
+drakkarfjord_s3_B	drakkarfjord	3	B	US	pinceronly	Core destroyed	98	0	300	0
+glacierkeep_s1_A	glacierkeep	1	A	US	pinceronly	Core destroyed	120	0	310	0
+glacierkeep_s1_B	glacierkeep	1	B	US	pinceronly	Core destroyed	457	0	60	240
+glacierkeep_s2_A	glacierkeep	2	A	OPP	_v488beltbreak2	Core destroyed	884	0	220	5540
+glacierkeep_s2_B	glacierkeep	2	B	US	pinceronly	Core destroyed	441	0	0	0
+glacierkeep_s3_A	glacierkeep	3	A	US	pinceronly	Core destroyed	205	0	450	0
+glacierkeep_s3_B	glacierkeep	3	B	US	pinceronly	Core destroyed	277	0	0	0
+midgard_s1_A	midgard	1	A	OPP	_v488beltbreak2	Core destroyed	209	0	820	1640
+midgard_s1_B	midgard	1	B	OPP	_v488beltbreak2	Core destroyed	286	0	650	2620
+midgard_s2_A	midgard	2	A	OPP	_v488beltbreak2	Core destroyed	267	0	880	2060
+midgard_s2_B	midgard	2	B	US	pinceronly	Core destroyed	170	0	1540	670
+midgard_s3_A	midgard	3	A	US	pinceronly	Core destroyed	425	0	860	800
+midgard_s3_B	midgard	3	B	OPP	_v488beltbreak2	Titanium collected (tiebreak)	1000	0	650	2830
+nordkap_s1_A	nordkap	1	A	OPP	_v488beltbreak2	Titanium collected (tiebreak)	1000	0	230	3530
+nordkap_s1_B	nordkap	1	B	OPP	_v488beltbreak2	Core destroyed	161	0	80	1270
+nordkap_s2_A	nordkap	2	A	US	pinceronly	Core destroyed	148	0	660	150
+nordkap_s2_B	nordkap	2	B	US	pinceronly	Core destroyed	321	0	120	480
+nordkap_s3_A	nordkap	3	A	OPP	_v488beltbreak2	Core destroyed	454	0	120	1190
+nordkap_s3_B	nordkap	3	B	OPP	_v488beltbreak2	Titanium collected (tiebreak)	1000	0	120	130
+yulerune_s1_A	yulerune	1	A	OPP	_v488beltbreak2	Core destroyed	148	0	360	830
+yulerune_s1_B	yulerune	1	B	OPP	_v488beltbreak2	Core destroyed	277	0	340	410
+yulerune_s2_A	yulerune	2	A	US	pinceronly	Core destroyed	259	0	1020	410
+yulerune_s2_B	yulerune	2	B	US	pinceronly	Core destroyed	256	0	1650	430
+yulerune_s3_A	yulerune	3	A	US	pinceronly	Core destroyed	407	0	630	260
+yulerune_s3_B	yulerune	3	B	OPP	_v488beltbreak2	Core destroyed	383	0	350	3200

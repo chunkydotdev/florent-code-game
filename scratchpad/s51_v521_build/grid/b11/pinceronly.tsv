@@ -1,0 +1,37 @@
+tag	map	seed	seat	ours	winner	cond	turn	tracebacks	ours_mined	opp_mined
+atoll_s31_A	atoll	31	A	OPP	_v488beltbreak2	Core destroyed	343	0	1200	3890
+atoll_s31_B	atoll	31	B	US	pinceronly	Titanium collected (tiebreak)	1000	0	9310	200
+atoll_s32_A	atoll	32	A	OPP	_v488beltbreak2	Core destroyed	193	0	600	920
+atoll_s32_B	atoll	32	B	OPP	_v488beltbreak2	Core destroyed	116	0	270	410
+atoll_s33_A	atoll	33	A	US	pinceronly	Core destroyed	875	0	7330	4340
+atoll_s33_B	atoll	33	B	US	pinceronly	Core destroyed	342	0	2020	920
+drakkarfjord_s31_A	drakkarfjord	31	A	US	pinceronly	Core destroyed	89	0	340	0
+drakkarfjord_s31_B	drakkarfjord	31	B	US	pinceronly	Titanium collected (tiebreak)	1000	0	330	0
+drakkarfjord_s32_A	drakkarfjord	32	A	US	pinceronly	Core destroyed	121	0	380	0
+drakkarfjord_s32_B	drakkarfjord	32	B	US	pinceronly	Core destroyed	147	0	410	0
+drakkarfjord_s33_A	drakkarfjord	33	A	US	pinceronly	Core destroyed	141	0	600	80
+drakkarfjord_s33_B	drakkarfjord	33	B	US	pinceronly	Titanium collected (tiebreak)	1000	0	520	0
+glacierkeep_s31_A	glacierkeep	31	A	US	pinceronly	Core destroyed	804	0	3510	4680
+glacierkeep_s31_B	glacierkeep	31	B	OPP	_v488beltbreak2	Core destroyed	838	0	0	860
+glacierkeep_s32_A	glacierkeep	32	A	US	pinceronly	Core destroyed	127	0	310	0
+glacierkeep_s32_B	glacierkeep	32	B	US	pinceronly	Harvesters (tiebreak)	1000	0	0	0
+glacierkeep_s33_A	glacierkeep	33	A	US	pinceronly	Core destroyed	126	0	330	0
+glacierkeep_s33_B	glacierkeep	33	B	OPP	_v488beltbreak2	Titanium collected (tiebreak)	1000	0	320	3450
+midgard_s31_A	midgard	31	A	US	pinceronly	Core destroyed	201	0	1230	580
+midgard_s31_B	midgard	31	B	OPP	_v488beltbreak2	Core destroyed	345	0	680	430
+midgard_s32_A	midgard	32	A	US	pinceronly	Core destroyed	299	0	2210	880
+midgard_s32_B	midgard	32	B	US	pinceronly	Core destroyed	179	0	1310	640
+midgard_s33_A	midgard	33	A	US	pinceronly	Core destroyed	150	0	1360	650
+midgard_s33_B	midgard	33	B	OPP	_v488beltbreak2	Titanium collected (tiebreak)	1000	0	840	2980
+nordkap_s31_A	nordkap	31	A	US	pinceronly	Core destroyed	253	0	1540	420
+nordkap_s31_B	nordkap	31	B	OPP	_v488beltbreak2	Titanium collected (tiebreak)	1000	0	120	130
+nordkap_s32_A	nordkap	32	A	US	pinceronly	Core destroyed	269	0	800	80
+nordkap_s32_B	nordkap	32	B	OPP	_v488beltbreak2	Core destroyed	309	0	90	60
+nordkap_s33_A	nordkap	33	A	OPP	_v488beltbreak2	Core destroyed	705	0	970	100
+nordkap_s33_B	nordkap	33	B	US	pinceronly	Core destroyed	213	0	80	10
+yulerune_s31_A	yulerune	31	A	OPP	_v488beltbreak2	Core destroyed	311	0	380	1610
+yulerune_s31_B	yulerune	31	B	OPP	_v488beltbreak2	Core destroyed	216	0	550	1420
+yulerune_s32_A	yulerune	32	A	OPP	_v488beltbreak2	Core destroyed	167	0	290	1690
+yulerune_s32_B	yulerune	32	B	US	pinceronly	Core destroyed	179	0	1310	980
+yulerune_s33_A	yulerune	33	A	OPP	_v488beltbreak2	Core destroyed	253	0	320	330
+yulerune_s33_B	yulerune	33	B	OPP	_v488beltbreak2	Core destroyed	545	0	730	400

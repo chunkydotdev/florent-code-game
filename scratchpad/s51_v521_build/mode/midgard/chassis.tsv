@@ -1,0 +1,25 @@
+tag	map	seed	seat	ours	winner	cond	turn	tracebacks	ours_mined	opp_mined
+midgard_s201_A	midgard	201	A	OPP	_v488beltbreak2	Core destroyed	177	0	760	1260
+midgard_s201_B	midgard	201	B	US	chassis	Core destroyed	233	0	1780	690
+midgard_s202_A	midgard	202	A	OPP	_v488beltbreak2	Core destroyed	347	0	910	1650
+midgard_s202_B	midgard	202	B	US	chassis	Core destroyed	194	0	1810	580
+midgard_s203_A	midgard	203	A	OPP	_v488beltbreak2	Core destroyed	226	0	830	2150
+midgard_s203_B	midgard	203	B	OPP	_v488beltbreak2	Core destroyed	248	0	820	2270
+midgard_s204_A	midgard	204	A	OPP	_v488beltbreak2	Core destroyed	308	0	830	690
+midgard_s204_B	midgard	204	B	US	chassis	Core destroyed	169	0	1050	610
+midgard_s205_A	midgard	205	A	OPP	_v488beltbreak2	Core destroyed	350	0	700	2290
+midgard_s205_B	midgard	205	B	US	chassis	Core destroyed	198	0	1810	660
+midgard_s206_A	midgard	206	A	US	chassis	Core destroyed	725	0	820	670
+midgard_s206_B	midgard	206	B	OPP	_v488beltbreak2	Core destroyed	175	0	1140	1320
+midgard_s207_A	midgard	207	A	OPP	_v488beltbreak2	Core destroyed	565	0	680	680
+midgard_s207_B	midgard	207	B	OPP	_v488beltbreak2	Core destroyed	852	0	640	1360
+midgard_s208_A	midgard	208	A	US	chassis	Core destroyed	417	0	720	680
+midgard_s208_B	midgard	208	B	US	chassis	Core destroyed	177	0	1010	620
+midgard_s209_A	midgard	209	A	OPP	_v488beltbreak2	Titanium collected (tiebreak)	1000	0	620	660
+midgard_s209_B	midgard	209	B	OPP	_v488beltbreak2	Core destroyed	265	0	600	1880
+midgard_s210_A	midgard	210	A	OPP	_v488beltbreak2	Core destroyed	646	0	610	1490
+midgard_s210_B	midgard	210	B	US	chassis	Core destroyed	581	0	680	890
+midgard_s211_A	midgard	211	A	US	chassis	Core destroyed	192	0	1800	520
+midgard_s211_B	midgard	211	B	US	chassis	Core destroyed	256	0	2010	900
+midgard_s212_A	midgard	212	A	OPP	_v488beltbreak2	Core destroyed	260	0	910	2530
+midgard_s212_B	midgard	212	B	OPP	_v488beltbreak2	Titanium collected (tiebreak)	1000	0	490	1130

@@ -1,0 +1,37 @@
+tag	map	seed	seat	ours	winner	cond	turn	tracebacks	ours_mined	opp_mined
+atoll_s61_A	atoll	61	A	US	mSYNC	Core destroyed	249	0	1340	300
+atoll_s61_B	atoll	61	B	US	mSYNC	Core destroyed	205	0	980	990
+atoll_s62_A	atoll	62	A	OPP	_v488beltbreak2	Core destroyed	343	0	1200	3890
+atoll_s62_B	atoll	62	B	US	mSYNC	Core destroyed	151	0	730	410
+atoll_s63_A	atoll	63	A	US	mSYNC	Core destroyed	322	0	2460	2310
+atoll_s63_B	atoll	63	B	US	mSYNC	Core destroyed	137	0	640	420
+drakkarfjord_s61_A	drakkarfjord	61	A	US	mSYNC	Titanium collected (tiebreak)	1000	0	600	0
+drakkarfjord_s61_B	drakkarfjord	61	B	US	mSYNC	Core destroyed	191	0	720	0
+drakkarfjord_s62_A	drakkarfjord	62	A	US	mSYNC	Core destroyed	269	0	1390	0
+drakkarfjord_s62_B	drakkarfjord	62	B	US	mSYNC	Core destroyed	241	0	1590	0
+drakkarfjord_s63_A	drakkarfjord	63	A	US	mSYNC	Core destroyed	115	0	430	0
+drakkarfjord_s63_B	drakkarfjord	63	B	US	mSYNC	Core destroyed	269	0	390	0
+glacierkeep_s61_A	glacierkeep	61	A	US	mSYNC	Core destroyed	177	0	670	0
+glacierkeep_s61_B	glacierkeep	61	B	US	mSYNC	Core destroyed	155	0	630	0
+glacierkeep_s62_A	glacierkeep	62	A	US	mSYNC	Core destroyed	525	0	2080	0
+glacierkeep_s62_B	glacierkeep	62	B	US	mSYNC	Core destroyed	329	0	0	0
+glacierkeep_s63_A	glacierkeep	63	A	US	mSYNC	Core destroyed	149	0	130	0
+glacierkeep_s63_B	glacierkeep	63	B	US	mSYNC	Core destroyed	123	0	320	0
+midgard_s61_A	midgard	61	A	US	mSYNC	Core destroyed	207	0	920	580
+midgard_s61_B	midgard	61	B	OPP	_v488beltbreak2	Core destroyed	818	0	810	1080
+midgard_s62_A	midgard	62	A	US	mSYNC	Titanium collected (tiebreak)	1000	0	1130	700
+midgard_s62_B	midgard	62	B	US	mSYNC	Titanium collected (tiebreak)	1000	0	630	520
+midgard_s63_A	midgard	63	A	OPP	_v488beltbreak2	Core destroyed	464	0	660	4560
+midgard_s63_B	midgard	63	B	US	mSYNC	Core destroyed	316	0	3240	490
+nordkap_s61_A	nordkap	61	A	US	mSYNC	Core destroyed	104	0	240	0
+nordkap_s61_B	nordkap	61	B	OPP	_v488beltbreak2	Core destroyed	268	0	110	490
+nordkap_s62_A	nordkap	62	A	US	mSYNC	Core destroyed	442	0	1230	0
+nordkap_s62_B	nordkap	62	B	OPP	_v488beltbreak2	Core destroyed	390	0	2840	3540
+nordkap_s63_A	nordkap	63	A	OPP	_v488beltbreak2	Core destroyed	839	0	1610	2820
+nordkap_s63_B	nordkap	63	B	US	mSYNC	Core destroyed	129	0	570	110
+yulerune_s61_A	yulerune	61	A	OPP	_v488beltbreak2	Core destroyed	176	0	270	1060
+yulerune_s61_B	yulerune	61	B	US	mSYNC	Core destroyed	613	0	750	300
+yulerune_s62_A	yulerune	62	A	OPP	_v488beltbreak2	Core destroyed	285	0	380	510
+yulerune_s62_B	yulerune	62	B	OPP	_v488beltbreak2	Core destroyed	545	0	440	370
+yulerune_s63_A	yulerune	63	A	OPP	_v488beltbreak2	Core destroyed	317	0	420	530
+yulerune_s63_B	yulerune	63	B	OPP	_v488beltbreak2	Core destroyed	545	0	440	370

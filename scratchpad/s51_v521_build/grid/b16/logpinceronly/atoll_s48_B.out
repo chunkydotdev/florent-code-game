@@ -1,0 +1,16 @@
+Running match: _v488beltbreak2 vs pinceronly
+  Map: atoll.map26  Seed: 48  Replay: 
+scratchpad/s51_v521_build/grid/b16/reppinceronly/atoll_s48_B.replay26  TLE: 10ms
+Completed turn 0
+Completed turn 100
+Completed turn 200
+Replay written to 
+scratchpad/s51_v521_build/grid/b16/reppinceronly/atoll_s48_B.replay26
+
+  Winner: pinceronly  (Core destroyed, turn 278)
+
+               _v488beltbreak2          pinceronly  
+  Titanium      80 (760 mined)    136 (1890 mined)  
+  Units                     13                   9  
+  Buildings                 21                  21  
+

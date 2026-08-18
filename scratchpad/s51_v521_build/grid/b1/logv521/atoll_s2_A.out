@@ -1,0 +1,22 @@
+Running match: _v521sync vs _v488beltbreak2
+  Map: atoll.map26  Seed: 2  Replay: 
+scratchpad/s51_v521_build/grid/b1/repv521/atoll_s2_A.replay26  TLE: 10ms
+Completed turn 0
+Completed turn 100
+Completed turn 200
+Completed turn 300
+Completed turn 400
+Completed turn 500
+Completed turn 600
+Completed turn 700
+Completed turn 800
+Completed turn 900
+Replay written to scratchpad/s51_v521_build/grid/b1/repv521/atoll_s2_A.replay26
+
+  Winner: _v521sync  (Titanium collected (tiebreak), turn 1000)
+
+                     _v521sync    _v488beltbreak2  
+  Titanium     148 (770 mined)    103 (150 mined)  
+  Units                     11                 11  
+  Buildings                 24                 19  
+

@@ -1,0 +1,37 @@
+tag	map	seed	seat	ours	winner	cond	turn	tracebacks	ours_mined	opp_mined
+atoll_s501_A	atoll	501	A	US	iLADDER	Core destroyed	405	0	1990	2350
+atoll_s501_B	atoll	501	B	US	iLADDER	Core destroyed	525	0	430	850
+atoll_s502_A	atoll	502	A	US	iLADDER	Core destroyed	506	0	2500	210
+atoll_s502_B	atoll	502	B	OPP	_v488beltbreak2	Core destroyed	207	0	320	570
+atoll_s503_A	atoll	503	A	US	iLADDER	Core destroyed	427	0	2100	1290
+atoll_s503_B	atoll	503	B	OPP	_v488beltbreak2	Titanium collected (tiebreak)	1000	0	4960	9810
+drakkarfjord_s501_A	drakkarfjord	501	A	US	iLADDER	Core destroyed	105	0	380	0
+drakkarfjord_s501_B	drakkarfjord	501	B	US	iLADDER	Titanium collected (tiebreak)	1000	0	340	0
+drakkarfjord_s502_A	drakkarfjord	502	A	US	iLADDER	Core destroyed	89	0	340	0
+drakkarfjord_s502_B	drakkarfjord	502	B	US	iLADDER	Core destroyed	101	0	280	0
+drakkarfjord_s503_A	drakkarfjord	503	A	US	iLADDER	Core destroyed	116	0	360	90
+drakkarfjord_s503_B	drakkarfjord	503	B	US	iLADDER	Core destroyed	140	0	640	0
+glacierkeep_s501_A	glacierkeep	501	A	OPP	_v488beltbreak2	Core destroyed	332	0	300	3180
+glacierkeep_s501_B	glacierkeep	501	B	US	iLADDER	Core destroyed	217	0	0	0
+glacierkeep_s502_A	glacierkeep	502	A	US	iLADDER	Core destroyed	143	0	590	0
+glacierkeep_s502_B	glacierkeep	502	B	US	iLADDER	Core destroyed	245	0	0	0
+glacierkeep_s503_A	glacierkeep	503	A	US	iLADDER	Core destroyed	195	0	430	0
+glacierkeep_s503_B	glacierkeep	503	B	US	iLADDER	Core destroyed	257	0	0	0
+midgard_s501_A	midgard	501	A	US	iLADDER	Core destroyed	174	0	1540	920
+midgard_s501_B	midgard	501	B	US	iLADDER	Core destroyed	208	0	1630	730
+midgard_s502_A	midgard	502	A	OPP	_v488beltbreak2	Core destroyed	485	0	590	680
+midgard_s502_B	midgard	502	B	OPP	_v488beltbreak2	Core destroyed	357	0	570	3210
+midgard_s503_A	midgard	503	A	US	iLADDER	Core destroyed	260	0	2260	670
+midgard_s503_B	midgard	503	B	US	iLADDER	Core destroyed	264	0	1100	700
+nordkap_s501_A	nordkap	501	A	US	iLADDER	Core destroyed	145	0	360	100
+nordkap_s501_B	nordkap	501	B	US	iLADDER	Core destroyed	321	0	120	480
+nordkap_s502_A	nordkap	502	A	US	iLADDER	Core destroyed	643	0	3070	60
+nordkap_s502_B	nordkap	502	B	OPP	_v488beltbreak2	Core destroyed	251	0	130	2390
+nordkap_s503_A	nordkap	503	A	US	iLADDER	Core destroyed	157	0	110	0
+nordkap_s503_B	nordkap	503	B	US	iLADDER	Core destroyed	269	0	90	10
+yulerune_s501_A	yulerune	501	A	OPP	_v488beltbreak2	Core destroyed	525	0	410	370
+yulerune_s501_B	yulerune	501	B	OPP	_v488beltbreak2	Core destroyed	805	0	390	430
+yulerune_s502_A	yulerune	502	A	US	iLADDER	Core destroyed	293	0	340	400
+yulerune_s502_B	yulerune	502	B	OPP	_v488beltbreak2	Core destroyed	171	0	560	1560
+yulerune_s503_A	yulerune	503	A	OPP	_v488beltbreak2	Core destroyed	413	0	260	390
+yulerune_s503_B	yulerune	503	B	OPP	_v488beltbreak2	Core destroyed	147	0	280	810

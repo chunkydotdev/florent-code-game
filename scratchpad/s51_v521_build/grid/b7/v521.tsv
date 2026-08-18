@@ -1,0 +1,37 @@
+tag	map	seed	seat	ours	winner	cond	turn	tracebacks	ours_mined	opp_mined
+atoll_s19_A	atoll	19	A	US	_v521sync	Core destroyed	624	0	4920	3590
+atoll_s19_B	atoll	19	B	US	_v521sync	Core destroyed	213	0	1570	980
+atoll_s20_A	atoll	20	A	US	_v521sync	Core destroyed	287	0	1190	220
+atoll_s20_B	atoll	20	B	OPP	_v488beltbreak2	Core destroyed	276	0	270	1110
+atoll_s21_A	atoll	21	A	OPP	_v488beltbreak2	Titanium collected (tiebreak)	1000	0	260	2590
+atoll_s21_B	atoll	21	B	US	_v521sync	Core destroyed	153	0	720	470
+drakkarfjord_s19_A	drakkarfjord	19	A	US	_v521sync	Core destroyed	401	0	3270	0
+drakkarfjord_s19_B	drakkarfjord	19	B	US	_v521sync	Core destroyed	248	0	1810	0
+drakkarfjord_s20_A	drakkarfjord	20	A	US	_v521sync	Core destroyed	122	0	380	0
+drakkarfjord_s20_B	drakkarfjord	20	B	US	_v521sync	Core destroyed	437	0	2170	0
+drakkarfjord_s21_A	drakkarfjord	21	A	OPP	_v488beltbreak2	Core destroyed	476	0	440	1240
+drakkarfjord_s21_B	drakkarfjord	21	B	US	_v521sync	Core destroyed	309	0	1980	0
+glacierkeep_s19_A	glacierkeep	19	A	US	_v521sync	Core destroyed	177	0	170	0
+glacierkeep_s19_B	glacierkeep	19	B	US	_v521sync	Core destroyed	305	0	20	0
+glacierkeep_s20_A	glacierkeep	20	A	US	_v521sync	Core destroyed	186	0	1350	0
+glacierkeep_s20_B	glacierkeep	20	B	US	_v521sync	Core destroyed	286	0	0	0
+glacierkeep_s21_A	glacierkeep	21	A	US	_v521sync	Core destroyed	141	0	150	0
+glacierkeep_s21_B	glacierkeep	21	B	US	_v521sync	Titanium collected (tiebreak)	1000	0	1270	0
+midgard_s19_A	midgard	19	A	OPP	_v488beltbreak2	Core destroyed	301	0	960	1400
+midgard_s19_B	midgard	19	B	OPP	_v488beltbreak2	Core destroyed	201	0	660	1600
+midgard_s20_A	midgard	20	A	US	_v521sync	Core destroyed	253	0	1470	730
+midgard_s20_B	midgard	20	B	OPP	_v488beltbreak2	Core destroyed	249	0	560	620
+midgard_s21_A	midgard	21	A	US	_v521sync	Core destroyed	243	0	1870	590
+midgard_s21_B	midgard	21	B	US	_v521sync	Core destroyed	829	0	810	620
+nordkap_s19_A	nordkap	19	A	US	_v521sync	Core destroyed	652	0	1530	130
+nordkap_s19_B	nordkap	19	B	US	_v521sync	Core destroyed	373	0	110	120
+nordkap_s20_A	nordkap	20	A	US	_v521sync	Core destroyed	190	0	1310	60
+nordkap_s20_B	nordkap	20	B	OPP	_v488beltbreak2	Core destroyed	309	0	90	60
+nordkap_s21_A	nordkap	21	A	US	_v521sync	Titanium collected (tiebreak)	1000	0	1450	90
+nordkap_s21_B	nordkap	21	B	US	_v521sync	Core destroyed	197	0	470	160
+yulerune_s19_A	yulerune	19	A	US	_v521sync	Core destroyed	219	0	1560	520
+yulerune_s19_B	yulerune	19	B	OPP	_v488beltbreak2	Core destroyed	288	0	410	2100
+yulerune_s20_A	yulerune	20	A	US	_v521sync	Core destroyed	455	0	4240	400
+yulerune_s20_B	yulerune	20	B	US	_v521sync	Core destroyed	613	0	750	300
+yulerune_s21_A	yulerune	21	A	US	_v521sync	Titanium collected (tiebreak)	1000	0	2720	440
+yulerune_s21_B	yulerune	21	B	OPP	_v488beltbreak2	Core destroyed	641	0	290	290

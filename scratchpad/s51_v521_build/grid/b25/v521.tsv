@@ -1,0 +1,37 @@
+tag	map	seed	seat	ours	winner	cond	turn	tracebacks	ours_mined	opp_mined
+atoll_s73_A	atoll	73	A	US	_v521sync	Core destroyed	167	0	800	250
+atoll_s73_B	atoll	73	B	OPP	_v488beltbreak2	Core destroyed	647	0	370	1820
+atoll_s74_A	atoll	74	A	OPP	_v488beltbreak2	Core destroyed	940	0	4590	4650
+atoll_s74_B	atoll	74	B	US	_v521sync	Core destroyed	185	0	880	220
+atoll_s75_A	atoll	75	A	US	_v521sync	Core destroyed	745	0	3390	5850
+atoll_s75_B	atoll	75	B	US	_v521sync	Core destroyed	433	0	1410	160
+drakkarfjord_s73_A	drakkarfjord	73	A	US	_v521sync	Core destroyed	213	0	300	0
+drakkarfjord_s73_B	drakkarfjord	73	B	US	_v521sync	Core destroyed	343	0	1810	0
+drakkarfjord_s74_A	drakkarfjord	74	A	US	_v521sync	Titanium collected (tiebreak)	1000	0	350	0
+drakkarfjord_s74_B	drakkarfjord	74	B	US	_v521sync	Core destroyed	484	0	4690	0
+drakkarfjord_s75_A	drakkarfjord	75	A	US	_v521sync	Titanium collected (tiebreak)	1000	0	310	0
+drakkarfjord_s75_B	drakkarfjord	75	B	US	_v521sync	Core destroyed	199	0	820	0
+glacierkeep_s73_A	glacierkeep	73	A	US	_v521sync	Core destroyed	159	0	630	0
+glacierkeep_s73_B	glacierkeep	73	B	US	_v521sync	Core destroyed	229	0	140	0
+glacierkeep_s74_A	glacierkeep	74	A	US	_v521sync	Core destroyed	472	0	2600	140
+glacierkeep_s74_B	glacierkeep	74	B	OPP	_v488beltbreak2	Core destroyed	785	0	0	0
+glacierkeep_s75_A	glacierkeep	75	A	US	_v521sync	Core destroyed	111	0	420	0
+glacierkeep_s75_B	glacierkeep	75	B	OPP	_v488beltbreak2	Core destroyed	789	0	0	0
+midgard_s73_A	midgard	73	A	US	_v521sync	Titanium collected (tiebreak)	1000	0	2100	800
+midgard_s73_B	midgard	73	B	US	_v521sync	Core destroyed	495	0	980	800
+midgard_s74_A	midgard	74	A	US	_v521sync	Core destroyed	205	0	1670	710
+midgard_s74_B	midgard	74	B	US	_v521sync	Core destroyed	142	0	1170	640
+midgard_s75_A	midgard	75	A	OPP	_v488beltbreak2	Core destroyed	308	0	830	690
+midgard_s75_B	midgard	75	B	OPP	_v488beltbreak2	Core destroyed	600	0	1180	450
+nordkap_s73_A	nordkap	73	A	OPP	_v488beltbreak2	Core destroyed	490	0	360	3900
+nordkap_s73_B	nordkap	73	B	OPP	_v488beltbreak2	Core destroyed	177	0	110	1290
+nordkap_s74_A	nordkap	74	A	OPP	_v488beltbreak2	Core destroyed	244	0	140	1250
+nordkap_s74_B	nordkap	74	B	US	_v521sync	Core destroyed	141	0	110	0
+nordkap_s75_A	nordkap	75	A	OPP	_v488beltbreak2	Core destroyed	812	0	220	530
+nordkap_s75_B	nordkap	75	B	OPP	_v488beltbreak2	Core destroyed	394	0	1250	3310
+yulerune_s73_A	yulerune	73	A	US	_v521sync	Core destroyed	526	0	2910	1600
+yulerune_s73_B	yulerune	73	B	OPP	_v488beltbreak2	Core destroyed	545	0	440	370
+yulerune_s74_A	yulerune	74	A	US	_v521sync	Core destroyed	269	0	2070	570
+yulerune_s74_B	yulerune	74	B	OPP	_v488beltbreak2	Core destroyed	318	0	290	3090
+yulerune_s75_A	yulerune	75	A	US	_v521sync	Core destroyed	216	0	1350	280
+yulerune_s75_B	yulerune	75	B	OPP	_v488beltbreak2	Core destroyed	255	0	420	1730

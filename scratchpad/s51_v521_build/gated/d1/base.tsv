@@ -1,0 +1,37 @@
+tag	map	seed	seat	ours	winner	cond	turn	tracebacks	ours_mined	opp_mined
+archipelago_s101_A	archipelago	101	A	OPP	_v468kladturbo	Core destroyed	189	0	1390	1360
+archipelago_s101_B	archipelago	101	B	US	pinceronly	Core destroyed	543	0	2640	2730
+archipelago_s102_A	archipelago	102	A	US	pinceronly	Titanium collected (tiebreak)	1000	0	3050	2700
+archipelago_s102_B	archipelago	102	B	OPP	_v468kladturbo	Core destroyed	176	0	950	920
+archipelago_s103_A	archipelago	103	A	US	pinceronly	Core destroyed	535	0	3420	790
+archipelago_s103_B	archipelago	103	B	US	pinceronly	Core destroyed	164	0	1770	950
+archipelago_s104_A	archipelago	104	A	US	pinceronly	Core destroyed	253	0	1930	1440
+archipelago_s104_B	archipelago	104	B	US	pinceronly	Core destroyed	172	0	1230	940
+archipelago_s105_A	archipelago	105	A	OPP	_v468kladturbo	Core destroyed	335	0	1460	3260
+archipelago_s105_B	archipelago	105	B	US	pinceronly	Core destroyed	301	0	2110	1560
+archipelago_s106_A	archipelago	106	A	US	pinceronly	Titanium collected (tiebreak)	1000	0	5240	5030
+archipelago_s106_B	archipelago	106	B	US	pinceronly	Core destroyed	353	0	1770	1100
+archipelago_s107_A	archipelago	107	A	US	pinceronly	Core destroyed	283	0	2100	1390
+archipelago_s107_B	archipelago	107	B	US	pinceronly	Core destroyed	144	0	1400	810
+archipelago_s108_A	archipelago	108	A	US	pinceronly	Core destroyed	594	0	6290	3070
+archipelago_s108_B	archipelago	108	B	US	pinceronly	Core destroyed	557	0	2850	2040
+archipelago_s109_A	archipelago	109	A	US	pinceronly	Core destroyed	197	0	1450	1070
+archipelago_s109_B	archipelago	109	B	US	pinceronly	Core destroyed	140	0	1190	580
+archipelago_s110_A	archipelago	110	A	US	pinceronly	Core destroyed	165	0	1530	600
+archipelago_s110_B	archipelago	110	B	US	pinceronly	Titanium collected (tiebreak)	1000	0	5340	4960
+archipelago_s111_A	archipelago	111	A	US	pinceronly	Core destroyed	224	0	2060	730
+archipelago_s111_B	archipelago	111	B	US	pinceronly	Core destroyed	434	0	4980	2120
+archipelago_s112_A	archipelago	112	A	US	pinceronly	Core destroyed	131	0	1110	790
+archipelago_s112_B	archipelago	112	B	OPP	_v468kladturbo	Core destroyed	242	0	1950	1220
+archipelago_s113_A	archipelago	113	A	US	pinceronly	Core destroyed	180	0	1550	630
+archipelago_s113_B	archipelago	113	B	OPP	_v468kladturbo	Core destroyed	283	0	1340	2040
+archipelago_s114_A	archipelago	114	A	US	pinceronly	Core destroyed	278	0	2680	340
+archipelago_s114_B	archipelago	114	B	OPP	_v468kladturbo	Core destroyed	387	0	3660	2810
+archipelago_s115_A	archipelago	115	A	OPP	_v468kladturbo	Core destroyed	685	0	3000	3420
+archipelago_s115_B	archipelago	115	B	US	pinceronly	Core destroyed	114	0	950	430
+archipelago_s116_A	archipelago	116	A	US	pinceronly	Core destroyed	372	0	4540	1820
+archipelago_s116_B	archipelago	116	B	US	pinceronly	Core destroyed	167	0	1600	1390
+archipelago_s117_A	archipelago	117	A	OPP	_v468kladturbo	Core destroyed	114	0	990	910
+archipelago_s117_B	archipelago	117	B	US	pinceronly	Core destroyed	126	0	830	620
+archipelago_s118_A	archipelago	118	A	US	pinceronly	Core destroyed	159	0	1440	770
+archipelago_s118_B	archipelago	118	B	US	pinceronly	Core destroyed	198	0	1280	490

@@ -1,0 +1,37 @@
+tag	map	seed	seat	ours	winner	cond	turn	tracebacks	ours_mined	opp_mined
+atoll_s516_A	atoll	516	A	OPP	_v488beltbreak2	Core destroyed	714	0	3530	3540
+atoll_s516_B	atoll	516	B	US	iLADDER	Core destroyed	613	0	290	2220
+atoll_s517_A	atoll	517	A	US	iLADDER	Core destroyed	159	0	760	190
+atoll_s517_B	atoll	517	B	US	iLADDER	Core destroyed	904	0	4420	4470
+atoll_s518_A	atoll	518	A	OPP	_v488beltbreak2	Core destroyed	202	0	970	1740
+atoll_s518_B	atoll	518	B	US	iLADDER	Core destroyed	127	0	600	390
+drakkarfjord_s516_A	drakkarfjord	516	A	US	iLADDER	Core destroyed	92	0	340	0
+drakkarfjord_s516_B	drakkarfjord	516	B	OPP	_v488beltbreak2	Core destroyed	521	0	250	0
+drakkarfjord_s517_A	drakkarfjord	517	A	US	iLADDER	Core destroyed	90	0	280	0
+drakkarfjord_s517_B	drakkarfjord	517	B	US	iLADDER	Titanium collected (tiebreak)	1000	0	330	0
+drakkarfjord_s518_A	drakkarfjord	518	A	US	iLADDER	Core destroyed	99	0	290	0
+drakkarfjord_s518_B	drakkarfjord	518	B	OPP	_v488beltbreak2	Core destroyed	521	0	240	0
+glacierkeep_s516_A	glacierkeep	516	A	US	iLADDER	Core destroyed	111	0	420	0
+glacierkeep_s516_B	glacierkeep	516	B	US	iLADDER	Core destroyed	457	0	60	240
+glacierkeep_s517_A	glacierkeep	517	A	US	iLADDER	Core destroyed	195	0	430	0
+glacierkeep_s517_B	glacierkeep	517	B	OPP	_v488beltbreak2	Titanium collected (tiebreak)	1000	0	0	1240
+glacierkeep_s518_A	glacierkeep	518	A	US	iLADDER	Core destroyed	183	0	400	0
+glacierkeep_s518_B	glacierkeep	518	B	US	iLADDER	Core destroyed	329	0	370	0
+midgard_s516_A	midgard	516	A	US	iLADDER	Core destroyed	286	0	1750	830
+midgard_s516_B	midgard	516	B	OPP	_v488beltbreak2	Core destroyed	313	0	630	420
+midgard_s517_A	midgard	517	A	US	iLADDER	Core destroyed	175	0	1570	440
+midgard_s517_B	midgard	517	B	OPP	_v488beltbreak2	Core destroyed	369	0	580	760
+midgard_s518_A	midgard	518	A	US	iLADDER	Core destroyed	281	0	650	610
+midgard_s518_B	midgard	518	B	US	iLADDER	Core destroyed	740	0	2320	490
+nordkap_s516_A	nordkap	516	A	US	iLADDER	Core destroyed	652	0	1530	130
+nordkap_s516_B	nordkap	516	B	OPP	_v488beltbreak2	Titanium collected (tiebreak)	1000	0	130	150
+nordkap_s517_A	nordkap	517	A	US	iLADDER	Core destroyed	173	0	700	110
+nordkap_s517_B	nordkap	517	B	US	iLADDER	Core destroyed	342	0	3960	1610
+nordkap_s518_A	nordkap	518	A	US	iLADDER	Titanium collected (tiebreak)	1000	0	130	70
+nordkap_s518_B	nordkap	518	B	US	iLADDER	Core destroyed	290	0	360	90
+yulerune_s516_A	yulerune	516	A	OPP	_v488beltbreak2	Core destroyed	375	0	410	2130
+yulerune_s516_B	yulerune	516	B	OPP	_v488beltbreak2	Core destroyed	196	0	380	1940
+yulerune_s517_A	yulerune	517	A	OPP	_v488beltbreak2	Core destroyed	145	0	240	630
+yulerune_s517_B	yulerune	517	B	US	iLADDER	Core destroyed	597	0	470	320
+yulerune_s518_A	yulerune	518	A	US	iLADDER	Core destroyed	429	0	290	250
+yulerune_s518_B	yulerune	518	B	OPP	_v488beltbreak2	Core destroyed	221	0	480	700

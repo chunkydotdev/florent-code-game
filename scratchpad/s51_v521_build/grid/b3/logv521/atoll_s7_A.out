@@ -1,0 +1,17 @@
+Running match: _v521sync vs _v488beltbreak2
+  Map: atoll.map26  Seed: 7  Replay: 
+scratchpad/s51_v521_build/grid/b3/repv521/atoll_s7_A.replay26  TLE: 10ms
+Completed turn 0
+Completed turn 100
+Completed turn 200
+Completed turn 300
+Completed turn 400
+Replay written to scratchpad/s51_v521_build/grid/b3/repv521/atoll_s7_A.replay26
+
+  Winner: _v521sync  (Core destroyed, turn 455)
+
+                      _v521sync    _v488beltbreak2  
+  Titanium     102 (2240 mined)     14 (290 mined)  
+  Units                      15                  6  
+  Buildings                  23                 12  
+

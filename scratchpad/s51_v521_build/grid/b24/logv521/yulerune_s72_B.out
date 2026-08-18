@@ -1,0 +1,20 @@
+Running match: _v488beltbreak2 vs _v521sync
+  Map: yulerune.map26  Seed: 72  Replay: 
+scratchpad/s51_v521_build/grid/b24/repv521/yulerune_s72_B.replay26  TLE: 10ms
+Completed turn 0
+Completed turn 100
+Completed turn 200
+Completed turn 300
+Completed turn 400
+Completed turn 500
+Completed turn 600
+Replay written to 
+scratchpad/s51_v521_build/grid/b24/repv521/yulerune_s72_B.replay26
+
+  Winner: _v521sync  (Core destroyed, turn 628)
+
+               _v488beltbreak2           _v521sync  
+  Titanium      82 (190 mined)    116 (1370 mined)  
+  Units                      3                  12  
+  Buildings                 23                  62  
+

@@ -1,0 +1,36 @@
+atoll_s61_A	atoll	61	A	US	mHOLD	Core destroyed	298	0	870	300
+atoll_s61_B	atoll	61	B	OPP	_v488beltbreak2	Core destroyed	201	0	1390	970
+atoll_s62_A	atoll	62	A	US	mHOLD	Core destroyed	628	0	3110	410
+atoll_s62_B	atoll	62	B	OPP	_v488beltbreak2	Core destroyed	298	0	1190	1460
+atoll_s63_A	atoll	63	A	US	mHOLD	Core destroyed	245	0	730	50
+atoll_s63_B	atoll	63	B	US	mHOLD	Core destroyed	265	0	1160	230
+drakkarfjord_s61_A	drakkarfjord	61	A	US	mHOLD	Core destroyed	417	0	390	90
+drakkarfjord_s61_B	drakkarfjord	61	B	US	mHOLD	Core destroyed	257	0	600	0
+drakkarfjord_s62_A	drakkarfjord	62	A	US	mHOLD	Core destroyed	93	0	340	0
+drakkarfjord_s62_B	drakkarfjord	62	B	OPP	_v488beltbreak2	Core destroyed	528	0	580	910
+drakkarfjord_s63_A	drakkarfjord	63	A	OPP	_v488beltbreak2	Core destroyed	525	0	450	0
+drakkarfjord_s63_B	drakkarfjord	63	B	US	mHOLD	Core destroyed	248	0	1820	0
+glacierkeep_s61_A	glacierkeep	61	A	US	mHOLD	Core destroyed	212	0	830	0
+glacierkeep_s61_B	glacierkeep	61	B	US	mHOLD	Titanium stored (tiebreak)	1000	0	0	0
+glacierkeep_s62_A	glacierkeep	62	A	US	mHOLD	Core destroyed	111	0	310	0
+glacierkeep_s62_B	glacierkeep	62	B	US	mHOLD	Titanium collected (tiebreak)	1000	0	200	0
+glacierkeep_s63_A	glacierkeep	63	A	US	mHOLD	Core destroyed	119	0	240	0
+glacierkeep_s63_B	glacierkeep	63	B	US	mHOLD	Core destroyed	225	0	0	0
+midgard_s61_A	midgard	61	A	US	mHOLD	Titanium collected (tiebreak)	1000	0	780	690
+midgard_s61_B	midgard	61	B	US	mHOLD	Core destroyed	276	0	3080	550
+midgard_s62_A	midgard	62	A	US	mHOLD	Core destroyed	217	0	1350	550
+midgard_s62_B	midgard	62	B	OPP	_v488beltbreak2	Core destroyed	341	0	600	740
+midgard_s63_A	midgard	63	A	OPP	_v488beltbreak2	Core destroyed	313	0	580	1950
+midgard_s63_B	midgard	63	B	OPP	_v488beltbreak2	Core destroyed	290	0	570	1420
+nordkap_s61_A	nordkap	61	A	US	mHOLD	Titanium collected (tiebreak)	1000	0	120	60
+nordkap_s61_B	nordkap	61	B	US	mHOLD	Core destroyed	156	0	370	60
+nordkap_s62_A	nordkap	62	A	US	mHOLD	Core destroyed	289	0	1990	340
+nordkap_s62_B	nordkap	62	B	US	mHOLD	Core destroyed	449	0	1920	90
+nordkap_s63_A	nordkap	63	A	US	mHOLD	Core destroyed	149	0	160	70
+nordkap_s63_B	nordkap	63	B	US	mHOLD	Core destroyed	344	0	2840	1090
+yulerune_s61_A	yulerune	61	A	US	mHOLD	Core destroyed	533	0	430	750
+yulerune_s61_B	yulerune	61	B	OPP	_v488beltbreak2	Core destroyed	246	0	410	2560
+yulerune_s62_A	yulerune	62	A	US	mHOLD	Core destroyed	219	0	1560	520
+yulerune_s62_B	yulerune	62	B	US	mHOLD	Core destroyed	290	0	1880	790
+yulerune_s63_A	yulerune	63	A	OPP	_v488beltbreak2	Harvesters (tiebreak)	1000	0	310	310
+yulerune_s63_B	yulerune	63	B	OPP	_v488beltbreak2	Core destroyed	180	0	320	1490

@@ -1,0 +1,37 @@
+tag	map	seed	seat	ours	winner	cond	turn	tracebacks	ours_mined	opp_mined
+atoll_s525_A	atoll	525	A	OPP	_v488beltbreak2	Core destroyed	376	0	1840	4110
+atoll_s525_B	atoll	525	B	US	iMAG	Core destroyed	198	0	1560	570
+atoll_s526_A	atoll	526	A	OPP	_v488beltbreak2	Titanium collected (tiebreak)	1000	0	2620	11700
+atoll_s526_B	atoll	526	B	US	iMAG	Core destroyed	930	0	4630	5620
+atoll_s527_A	atoll	527	A	OPP	_v488beltbreak2	Core destroyed	870	0	4230	4310
+atoll_s527_B	atoll	527	B	OPP	_v488beltbreak2	Titanium collected (tiebreak)	1000	0	460	2930
+drakkarfjord_s525_A	drakkarfjord	525	A	US	iMAG	Core destroyed	88	0	270	0
+drakkarfjord_s525_B	drakkarfjord	525	B	US	iMAG	Core destroyed	100	0	280	0
+drakkarfjord_s526_A	drakkarfjord	526	A	US	iMAG	Core destroyed	277	0	1710	0
+drakkarfjord_s526_B	drakkarfjord	526	B	US	iMAG	Core destroyed	101	0	280	0
+drakkarfjord_s527_A	drakkarfjord	527	A	OPP	_v488beltbreak2	Core destroyed	476	0	440	1240
+drakkarfjord_s527_B	drakkarfjord	527	B	US	iMAG	Titanium collected (tiebreak)	1000	0	530	0
+glacierkeep_s525_A	glacierkeep	525	A	US	iMAG	Core destroyed	173	0	210	0
+glacierkeep_s525_B	glacierkeep	525	B	OPP	_v488beltbreak2	Core destroyed	525	0	0	0
+glacierkeep_s526_A	glacierkeep	526	A	OPP	_v488beltbreak2	Core destroyed	374	0	300	2940
+glacierkeep_s526_B	glacierkeep	526	B	OPP	_v488beltbreak2	Core destroyed	769	0	0	0
+glacierkeep_s527_A	glacierkeep	527	A	US	iMAG	Core destroyed	119	0	380	0
+glacierkeep_s527_B	glacierkeep	527	B	US	iMAG	Harvesters (tiebreak)	1000	0	0	0
+midgard_s525_A	midgard	525	A	US	iMAG	Core destroyed	193	0	1430	770
+midgard_s525_B	midgard	525	B	US	iMAG	Core destroyed	341	0	600	820
+midgard_s526_A	midgard	526	A	OPP	_v488beltbreak2	Titanium collected (tiebreak)	1000	0	720	790
+midgard_s526_B	midgard	526	B	US	iMAG	Core destroyed	213	0	2290	1990
+midgard_s527_A	midgard	527	A	OPP	_v488beltbreak2	Core destroyed	282	0	640	1360
+midgard_s527_B	midgard	527	B	OPP	_v488beltbreak2	Core destroyed	745	0	610	560
+nordkap_s525_A	nordkap	525	A	US	iMAG	Core destroyed	585	0	3630	60
+nordkap_s525_B	nordkap	525	B	OPP	_v488beltbreak2	Core destroyed	272	0	1850	2650
+nordkap_s526_A	nordkap	526	A	US	iMAG	Core destroyed	486	0	880	100
+nordkap_s526_B	nordkap	526	B	US	iMAG	Core destroyed	297	0	1770	4640
+nordkap_s527_A	nordkap	527	A	US	iMAG	Core destroyed	489	0	800	70
+nordkap_s527_B	nordkap	527	B	US	iMAG	Core destroyed	493	0	3640	1500
+yulerune_s525_A	yulerune	525	A	US	iMAG	Core destroyed	481	0	250	420
+yulerune_s525_B	yulerune	525	B	US	iMAG	Core destroyed	154	0	920	310
+yulerune_s526_A	yulerune	526	A	US	iMAG	Core destroyed	370	0	3030	270
+yulerune_s526_B	yulerune	526	B	US	iMAG	Core destroyed	333	0	410	590
+yulerune_s527_A	yulerune	527	A	OPP	_v488beltbreak2	Core destroyed	147	0	210	1390
+yulerune_s527_B	yulerune	527	B	OPP	_v488beltbreak2	Core destroyed	307	0	380	2160

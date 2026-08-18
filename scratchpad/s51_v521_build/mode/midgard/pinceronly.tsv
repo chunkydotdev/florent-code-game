@@ -1,0 +1,25 @@
+tag	map	seed	seat	ours	winner	cond	turn	tracebacks	ours_mined	opp_mined
+midgard_s201_A	midgard	201	A	US	pinceronly	Core destroyed	166	0	1460	560
+midgard_s201_B	midgard	201	B	OPP	_v488beltbreak2	Core destroyed	385	0	620	450
+midgard_s202_A	midgard	202	A	US	pinceronly	Core destroyed	473	0	1310	590
+midgard_s202_B	midgard	202	B	US	pinceronly	Titanium collected (tiebreak)	1000	0	750	520
+midgard_s203_A	midgard	203	A	OPP	_v488beltbreak2	Core destroyed	171	0	550	840
+midgard_s203_B	midgard	203	B	OPP	_v488beltbreak2	Core destroyed	313	0	620	380
+midgard_s204_A	midgard	204	A	OPP	_v488beltbreak2	Core destroyed	657	0	1290	590
+midgard_s204_B	midgard	204	B	OPP	_v488beltbreak2	Core destroyed	481	0	670	730
+midgard_s205_A	midgard	205	A	US	pinceronly	Core destroyed	385	0	1330	520
+midgard_s205_B	midgard	205	B	US	pinceronly	Core destroyed	256	0	1890	770
+midgard_s206_A	midgard	206	A	OPP	_v488beltbreak2	Core destroyed	413	0	720	1310
+midgard_s206_B	midgard	206	B	US	pinceronly	Core destroyed	237	0	1070	580
+midgard_s207_A	midgard	207	A	OPP	_v488beltbreak2	Core destroyed	485	0	590	680
+midgard_s207_B	midgard	207	B	OPP	_v488beltbreak2	Titanium collected (tiebreak)	1000	0	490	2980
+midgard_s208_A	midgard	208	A	US	pinceronly	Core destroyed	259	0	2810	740
+midgard_s208_B	midgard	208	B	OPP	_v488beltbreak2	Core destroyed	337	0	570	2570
+midgard_s209_A	midgard	209	A	OPP	_v488beltbreak2	Core destroyed	278	0	770	1210
+midgard_s209_B	midgard	209	B	US	pinceronly	Core destroyed	249	0	560	620
+midgard_s210_A	midgard	210	A	OPP	_v488beltbreak2	Core destroyed	244	0	1370	1840
+midgard_s210_B	midgard	210	B	US	pinceronly	Core destroyed	338	0	1040	570
+midgard_s211_A	midgard	211	A	US	pinceronly	Core destroyed	208	0	1220	990
+midgard_s211_B	midgard	211	B	US	pinceronly	Core destroyed	286	0	1110	590
+midgard_s212_A	midgard	212	A	OPP	_v488beltbreak2	Core destroyed	701	0	790	660
+midgard_s212_B	midgard	212	B	US	pinceronly	Core destroyed	441	0	1690	680

@@ -1,0 +1,37 @@
+tag	map	seed	seat	ours	winner	cond	turn	tracebacks	ours_mined	opp_mined
+atoll_s88_A	atoll	88	A	OPP	_v488beltbreak2	Core destroyed	611	0	290	2290
+atoll_s88_B	atoll	88	B	US	pinceronly	Core destroyed	124	0	580	200
+atoll_s89_A	atoll	89	A	OPP	_v488beltbreak2	Core destroyed	358	0	1040	2870
+atoll_s89_B	atoll	89	B	US	pinceronly	Core destroyed	127	0	600	390
+atoll_s90_A	atoll	90	A	OPP	_v488beltbreak2	Core destroyed	372	0	1820	4250
+atoll_s90_B	atoll	90	B	US	pinceronly	Core destroyed	117	0	540	320
+drakkarfjord_s88_A	drakkarfjord	88	A	US	pinceronly	Core destroyed	99	0	390	0
+drakkarfjord_s88_B	drakkarfjord	88	B	US	pinceronly	Core destroyed	122	0	350	0
+drakkarfjord_s89_A	drakkarfjord	89	A	US	pinceronly	Core destroyed	90	0	300	0
+drakkarfjord_s89_B	drakkarfjord	89	B	US	pinceronly	Titanium collected (tiebreak)	1000	0	520	0
+drakkarfjord_s90_A	drakkarfjord	90	A	US	pinceronly	Core destroyed	88	0	320	0
+drakkarfjord_s90_B	drakkarfjord	90	B	US	pinceronly	Core destroyed	98	0	300	0
+glacierkeep_s88_A	glacierkeep	88	A	US	pinceronly	Core destroyed	203	0	450	0
+glacierkeep_s88_B	glacierkeep	88	B	US	pinceronly	Core destroyed	357	0	0	0
+glacierkeep_s89_A	glacierkeep	89	A	US	pinceronly	Core destroyed	162	0	350	130
+glacierkeep_s89_B	glacierkeep	89	B	US	pinceronly	Core destroyed	265	0	0	0
+glacierkeep_s90_A	glacierkeep	90	A	US	pinceronly	Core destroyed	121	0	140	0
+glacierkeep_s90_B	glacierkeep	90	B	OPP	_v488beltbreak2	Core destroyed	621	0	500	170
+midgard_s88_A	midgard	88	A	OPP	_v488beltbreak2	Core destroyed	325	0	1400	3000
+midgard_s88_B	midgard	88	B	OPP	_v488beltbreak2	Core destroyed	505	0	600	630
+midgard_s89_A	midgard	89	A	OPP	_v488beltbreak2	Core destroyed	163	0	740	1270
+midgard_s89_B	midgard	89	B	OPP	_v488beltbreak2	Core destroyed	141	0	540	1330
+midgard_s90_A	midgard	90	A	US	pinceronly	Core destroyed	165	0	800	720
+midgard_s90_B	midgard	90	B	US	pinceronly	Core destroyed	170	0	1540	670
+nordkap_s88_A	nordkap	88	A	OPP	_v488beltbreak2	Core destroyed	421	0	70	2580
+nordkap_s88_B	nordkap	88	B	OPP	_v488beltbreak2	Titanium collected (tiebreak)	1000	0	80	2480
+nordkap_s89_A	nordkap	89	A	US	pinceronly	Core destroyed	108	0	260	40
+nordkap_s89_B	nordkap	89	B	US	pinceronly	Core destroyed	290	0	160	50
+nordkap_s90_A	nordkap	90	A	OPP	_v488beltbreak2	Core destroyed	317	0	120	110
+nordkap_s90_B	nordkap	90	B	US	pinceronly	Core destroyed	241	0	90	60
+yulerune_s88_A	yulerune	88	A	OPP	_v488beltbreak2	Core destroyed	217	0	300	240
+yulerune_s88_B	yulerune	88	B	US	pinceronly	Core destroyed	175	0	470	160
+yulerune_s89_A	yulerune	89	A	OPP	_v488beltbreak2	Core destroyed	244	0	210	2200
+yulerune_s89_B	yulerune	89	B	OPP	_v488beltbreak2	Core destroyed	449	0	370	370
+yulerune_s90_A	yulerune	90	A	OPP	_v488beltbreak2	Core destroyed	680	0	290	450
+yulerune_s90_B	yulerune	90	B	OPP	_v488beltbreak2	Core destroyed	294	0	390	3680

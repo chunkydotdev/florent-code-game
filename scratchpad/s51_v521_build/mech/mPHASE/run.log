@@ -1,0 +1,36 @@
+atoll_s61_A	atoll	61	A	OPP	_v488beltbreak2	Core destroyed	338	0	320	2660
+atoll_s61_B	atoll	61	B	OPP	_v488beltbreak2	Core destroyed	243	0	270	2290
+atoll_s62_A	atoll	62	A	OPP	_v488beltbreak2	Core destroyed	280	0	280	1350
+atoll_s62_B	atoll	62	B	OPP	_v488beltbreak2	Titanium collected (tiebreak)	1000	0	290	2590
+atoll_s63_A	atoll	63	A	OPP	_v488beltbreak2	Core destroyed	342	0	960	1680
+atoll_s63_B	atoll	63	B	US	mPHASE	Core destroyed	746	0	6530	3680
+drakkarfjord_s61_A	drakkarfjord	61	A	US	mPHASE	Core destroyed	88	0	270	0
+drakkarfjord_s61_B	drakkarfjord	61	B	US	mPHASE	Core destroyed	122	0	350	0
+drakkarfjord_s62_A	drakkarfjord	62	A	US	mPHASE	Core destroyed	89	0	340	0
+drakkarfjord_s62_B	drakkarfjord	62	B	US	mPHASE	Titanium collected (tiebreak)	1000	0	330	0
+drakkarfjord_s63_A	drakkarfjord	63	A	OPP	_v488beltbreak2	Core destroyed	338	0	1030	4020
+drakkarfjord_s63_B	drakkarfjord	63	B	US	mPHASE	Titanium collected (tiebreak)	1000	0	300	0
+glacierkeep_s61_A	glacierkeep	61	A	US	mPHASE	Core destroyed	121	0	140	0
+glacierkeep_s61_B	glacierkeep	61	B	US	mPHASE	Core destroyed	217	0	0	0
+glacierkeep_s62_A	glacierkeep	62	A	US	mPHASE	Core destroyed	126	0	330	0
+glacierkeep_s62_B	glacierkeep	62	B	OPP	_v488beltbreak2	Core destroyed	813	0	270	0
+glacierkeep_s63_A	glacierkeep	63	A	US	mPHASE	Core destroyed	166	0	470	0
+glacierkeep_s63_B	glacierkeep	63	B	US	mPHASE	Core destroyed	245	0	0	0
+midgard_s61_A	midgard	61	A	US	mPHASE	Titanium collected (tiebreak)	1000	0	2100	800
+midgard_s61_B	midgard	61	B	US	mPHASE	Core destroyed	148	0	1180	770
+midgard_s62_A	midgard	62	A	US	mPHASE	Core destroyed	380	0	2560	780
+midgard_s62_B	midgard	62	B	OPP	_v488beltbreak2	Core destroyed	309	0	750	700
+midgard_s63_A	midgard	63	A	US	mPHASE	Core destroyed	565	0	620	810
+midgard_s63_B	midgard	63	B	US	mPHASE	Titanium collected (tiebreak)	1000	0	800	700
+nordkap_s61_A	nordkap	61	A	US	mPHASE	Core destroyed	790	0	4680	6660
+nordkap_s61_B	nordkap	61	B	OPP	_v488beltbreak2	Core destroyed	593	0	90	240
+nordkap_s62_A	nordkap	62	A	US	mPHASE	Core destroyed	296	0	1560	110
+nordkap_s62_B	nordkap	62	B	OPP	_v488beltbreak2	Titanium collected (tiebreak)	1000	0	130	150
+nordkap_s63_A	nordkap	63	A	US	mPHASE	Core destroyed	133	0	310	90
+nordkap_s63_B	nordkap	63	B	OPP	_v488beltbreak2	Core destroyed	155	0	130	980
+yulerune_s61_A	yulerune	61	A	OPP	_v488beltbreak2	Titanium collected (tiebreak)	1000	0	300	710
+yulerune_s61_B	yulerune	61	B	OPP	_v488beltbreak2	Core destroyed	509	0	410	480
+yulerune_s62_A	yulerune	62	A	US	mPHASE	Titanium collected (tiebreak)	1000	0	2750	410
+yulerune_s62_B	yulerune	62	B	OPP	_v488beltbreak2	Core destroyed	258	0	350	2330
+yulerune_s63_A	yulerune	63	A	US	mPHASE	Core destroyed	361	0	440	260
+yulerune_s63_B	yulerune	63	B	OPP	_v488beltbreak2	Core destroyed	317	0	510	360

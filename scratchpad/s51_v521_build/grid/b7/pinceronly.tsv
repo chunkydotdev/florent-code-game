@@ -1,0 +1,37 @@
+tag	map	seed	seat	ours	winner	cond	turn	tracebacks	ours_mined	opp_mined
+atoll_s19_A	atoll	19	A	US	pinceronly	Core destroyed	200	0	970	200
+atoll_s19_B	atoll	19	B	US	pinceronly	Core destroyed	237	0	360	680
+atoll_s20_A	atoll	20	A	US	pinceronly	Core destroyed	245	0	1220	280
+atoll_s20_B	atoll	20	B	US	pinceronly	Core destroyed	114	0	430	160
+atoll_s21_A	atoll	21	A	US	pinceronly	Core destroyed	344	0	1370	1730
+atoll_s21_B	atoll	21	B	US	pinceronly	Core destroyed	575	0	2840	1460
+drakkarfjord_s19_A	drakkarfjord	19	A	US	pinceronly	Core destroyed	116	0	350	240
+drakkarfjord_s19_B	drakkarfjord	19	B	US	pinceronly	Core destroyed	125	0	360	0
+drakkarfjord_s20_A	drakkarfjord	20	A	OPP	_v488beltbreak2	Core destroyed	730	0	3470	9400
+drakkarfjord_s20_B	drakkarfjord	20	B	US	pinceronly	Core destroyed	96	0	320	0
+drakkarfjord_s21_A	drakkarfjord	21	A	US	pinceronly	Core destroyed	173	0	370	170
+drakkarfjord_s21_B	drakkarfjord	21	B	US	pinceronly	Core destroyed	265	0	2860	0
+glacierkeep_s19_A	glacierkeep	19	A	US	pinceronly	Core destroyed	217	0	290	280
+glacierkeep_s19_B	glacierkeep	19	B	OPP	_v488beltbreak2	Titanium stored (tiebreak)	1000	0	0	0
+glacierkeep_s20_A	glacierkeep	20	A	US	pinceronly	Core destroyed	161	0	170	0
+glacierkeep_s20_B	glacierkeep	20	B	US	pinceronly	Core destroyed	441	0	0	0
+glacierkeep_s21_A	glacierkeep	21	A	OPP	_v488beltbreak2	Core destroyed	581	0	1970	5010
+glacierkeep_s21_B	glacierkeep	21	B	OPP	_v488beltbreak2	Harvesters (tiebreak)	1000	0	0	0
+midgard_s19_A	midgard	19	A	US	pinceronly	Core destroyed	287	0	1090	520
+midgard_s19_B	midgard	19	B	OPP	_v488beltbreak2	Core destroyed	829	0	570	1670
+midgard_s20_A	midgard	20	A	US	pinceronly	Core destroyed	401	0	860	1360
+midgard_s20_B	midgard	20	B	US	pinceronly	Core destroyed	170	0	1540	670
+midgard_s21_A	midgard	21	A	OPP	_v488beltbreak2	Core destroyed	290	0	650	1830
+midgard_s21_B	midgard	21	B	OPP	_v488beltbreak2	Core destroyed	216	0	570	930
+nordkap_s19_A	nordkap	19	A	US	pinceronly	Core destroyed	104	0	240	0
+nordkap_s19_B	nordkap	19	B	OPP	_v488beltbreak2	Titanium collected (tiebreak)	1000	0	90	2480
+nordkap_s20_A	nordkap	20	A	US	pinceronly	Core destroyed	421	0	90	180
+nordkap_s20_B	nordkap	20	B	OPP	_v488beltbreak2	Core destroyed	248	0	90	2730
+nordkap_s21_A	nordkap	21	A	US	pinceronly	Core destroyed	160	0	1090	70
+nordkap_s21_B	nordkap	21	B	US	pinceronly	Core destroyed	129	0	570	110
+yulerune_s19_A	yulerune	19	A	US	pinceronly	Core destroyed	353	0	750	450
+yulerune_s19_B	yulerune	19	B	OPP	_v488beltbreak2	Core destroyed	241	0	310	290
+yulerune_s20_A	yulerune	20	A	US	pinceronly	Core destroyed	405	0	250	350
+yulerune_s20_B	yulerune	20	B	OPP	_v488beltbreak2	Titanium collected (tiebreak)	1000	0	480	560
+yulerune_s21_A	yulerune	21	A	OPP	_v488beltbreak2	Core destroyed	317	0	760	180
+yulerune_s21_B	yulerune	21	B	US	pinceronly	Core destroyed	381	0	2420	330

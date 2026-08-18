@@ -1,0 +1,131 @@
+HEADLINE PID 51456
+51466 51467 51468
+51931 51932 51933
+53633 53634 53635
+53827 53828 53829
+55499 55500 55501
+55710 55711 55712
+57380 57381 57382
+57999 58000 58001
+59692 59693 59694
+59882 59883 59884
+61430 61431 61432
+61755 61756 61757
+63845 63846 63847
+65060 65061 65062
+66734 66735 66736
+66959 66960 66961
+68621 68622 68623
+69038 69039 69040
+71802 71803 71804
+72657 72658 72659
+74708 74709 74710
+75655 75656 75657
+77899 77900 77901
+78579 78580 78581
+81040 81041 81042
+81792 81793 81794
+83973 83974 83975
+84663 84664 84665
+86928 86929 86930
+87640 87641 87642
+MECH PID 93425
+93492 mF
+93495 mSYNC
+93497 mNEAR
+93499 mHOLD
+93501 mBUY
+93503 mCOLLAR
+93505 mPHASE
+93507 mGATE
+93509 mOff
+MODE PID 99869
+99876 mode-yulerune-v521
+99879 mode-yulerune-pinceronly
+99883 mode-yulerune-chassis
+702 mode-midgard-v521
+704 mode-midgard-pinceronly
+708 mode-midgard-chassis
+1044 mode-archipelago-v521
+1046 mode-archipelago-pinceronly
+1048 mode-archipelago-chassis
+1137 mode-nordkap-v521
+1139 mode-nordkap-pinceronly
+1141 mode-nordkap-chassis
+ISO PID 6923
+6958 iso-b1-pinceronly
+6959 iso-b1-iLADDER
+6960 iso-b1-iMAG
+6961 iso-b1-iGATE
+MODE2 PID 7946
+7951 mode-yulerune-v521
+7953 mode-yulerune-pinceronly
+7955 mode-yulerune-chassis
+10268 iso-b2-pinceronly
+10269 iso-b2-iLADDER
+10270 iso-b2-iMAG
+10271 iso-b2-iGATE
+10411 mode-midgard-v521
+10413 mode-midgard-pinceronly
+10415 mode-midgard-chassis
+13012 mode-archipelago-v521
+13017 mode-archipelago-pinceronly
+13021 mode-archipelago-chassis
+13433 iso-b3-pinceronly
+13434 iso-b3-iLADDER
+13435 iso-b3-iMAG
+13436 iso-b3-iGATE
+13941 mode-nordkap-v521
+13943 mode-nordkap-pinceronly
+13945 mode-nordkap-chassis
+16866 iso-b4-pinceronly
+16867 iso-b4-iLADDER
+16868 iso-b4-iMAG
+16869 iso-b4-iGATE
+19482 iso-b5-pinceronly
+19483 iso-b5-iLADDER
+19484 iso-b5-iMAG
+19485 iso-b5-iGATE
+21017 iso-b6-pinceronly
+21019 iso-b6-iLADDER
+21020 iso-b6-iMAG
+21021 iso-b6-iGATE
+23170 iso-b7-pinceronly
+23171 iso-b7-iLADDER
+23172 iso-b7-iMAG
+23173 iso-b7-iGATE
+26411 iso-b8-pinceronly
+26412 iso-b8-iLADDER
+26413 iso-b8-iMAG
+26414 iso-b8-iGATE
+29367 iso-b9-pinceronly
+29368 iso-b9-iLADDER
+29369 iso-b9-iMAG
+29370 iso-b9-iGATE
+OVERLAP PID 29632
+32075 iso-b10-pinceronly
+32076 iso-b10-iLADDER
+32077 iso-b10-iMAG
+32078 iso-b10-iGATE
+36102 iso-b11-pinceronly
+36103 iso-b11-iLADDER
+36104 iso-b11-iMAG
+36106 iso-b11-iGATE
+37311 iso-b12-pinceronly
+37312 iso-b12-iLADDER
+37313 iso-b12-iMAG
+37314 iso-b12-iGATE
+39847 iso-b13-pinceronly
+39848 iso-b13-iLADDER
+39849 iso-b13-iMAG
+39850 iso-b13-iGATE
+GATED PID 41269
+CRIP PID 41274
+41289 gated-d1-base
+41295 gated-d1-v521
+41307 gated-d2-base
+41310 gated-d2-v521
+51086 gated-d1-base
+51088 gated-d1-v521
+51567 gated-d2-base
+51571 gated-d2-v521

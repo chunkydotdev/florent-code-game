@@ -1,0 +1,16 @@
+Running match: _v488beltbreak2 vs _v521sync
+  Map: drakkarfjord.map26  Seed: 9  Replay: 
+scratchpad/s51_v521_build/grid/b3/repv521/drakkarfjord_s9_B.replay26  TLE: 10ms
+Completed turn 0
+Completed turn 100
+Completed turn 200
+Replay written to 
+scratchpad/s51_v521_build/grid/b3/repv521/drakkarfjord_s9_B.replay26
+
+  Winner: _v521sync  (Core destroyed, turn 261)
+
+               _v488beltbreak2          _v521sync  
+  Titanium        15 (0 mined)    32 (1360 mined)  
+  Units                      6                  8  
+  Buildings                 24                 90  
+

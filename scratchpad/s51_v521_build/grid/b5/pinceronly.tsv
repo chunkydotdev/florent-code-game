@@ -1,0 +1,37 @@
+tag	map	seed	seat	ours	winner	cond	turn	tracebacks	ours_mined	opp_mined
+atoll_s13_A	atoll	13	A	OPP	_v488beltbreak2	Core destroyed	268	0	300	2460
+atoll_s13_B	atoll	13	B	US	pinceronly	Core destroyed	191	0	920	500
+atoll_s14_A	atoll	14	A	OPP	_v488beltbreak2	Core destroyed	137	0	370	1120
+atoll_s14_B	atoll	14	B	OPP	_v488beltbreak2	Titanium collected (tiebreak)	1000	0	4520	4970
+atoll_s15_A	atoll	15	A	OPP	_v488beltbreak2	Core destroyed	221	0	630	1050
+atoll_s15_B	atoll	15	B	US	pinceronly	Core destroyed	238	0	1100	2100
+drakkarfjord_s13_A	drakkarfjord	13	A	US	pinceronly	Core destroyed	90	0	300	0
+drakkarfjord_s13_B	drakkarfjord	13	B	US	pinceronly	Titanium collected (tiebreak)	1000	0	330	0
+drakkarfjord_s14_A	drakkarfjord	14	A	OPP	_v488beltbreak2	Core destroyed	569	0	4210	7000
+drakkarfjord_s14_B	drakkarfjord	14	B	US	pinceronly	Titanium collected (tiebreak)	1000	0	340	0
+drakkarfjord_s15_A	drakkarfjord	15	A	US	pinceronly	Core destroyed	90	0	280	0
+drakkarfjord_s15_B	drakkarfjord	15	B	US	pinceronly	Core destroyed	125	0	360	0
+glacierkeep_s13_A	glacierkeep	13	A	US	pinceronly	Core destroyed	281	0	270	0
+glacierkeep_s13_B	glacierkeep	13	B	US	pinceronly	Core destroyed	309	0	200	230
+glacierkeep_s14_A	glacierkeep	14	A	US	pinceronly	Core destroyed	424	0	170	0
+glacierkeep_s14_B	glacierkeep	14	B	US	pinceronly	Titanium collected (tiebreak)	1000	0	430	0
+glacierkeep_s15_A	glacierkeep	15	A	US	pinceronly	Core destroyed	119	0	240	0
+glacierkeep_s15_B	glacierkeep	15	B	US	pinceronly	Core destroyed	457	0	60	240
+midgard_s13_A	midgard	13	A	OPP	_v488beltbreak2	Core destroyed	424	0	810	1810
+midgard_s13_B	midgard	13	B	OPP	_v488beltbreak2	Core destroyed	267	0	1120	2560
+midgard_s14_A	midgard	14	A	OPP	_v488beltbreak2	Core destroyed	198	0	700	1460
+midgard_s14_B	midgard	14	B	US	pinceronly	Core destroyed	309	0	3200	2880
+midgard_s15_A	midgard	15	A	OPP	_v488beltbreak2	Core destroyed	701	0	790	660
+midgard_s15_B	midgard	15	B	OPP	_v488beltbreak2	Core destroyed	200	0	720	950
+nordkap_s13_A	nordkap	13	A	US	pinceronly	Core destroyed	277	0	260	60
+nordkap_s13_B	nordkap	13	B	OPP	_v488beltbreak2	Core destroyed	593	0	90	240
+nordkap_s14_A	nordkap	14	A	US	pinceronly	Core destroyed	185	0	440	90
+nordkap_s14_B	nordkap	14	B	US	pinceronly	Core destroyed	157	0	370	130
+nordkap_s15_A	nordkap	15	A	OPP	_v488beltbreak2	Harvesters (tiebreak)	1000	0	110	110
+nordkap_s15_B	nordkap	15	B	US	pinceronly	Core destroyed	428	0	1050	470
+yulerune_s13_A	yulerune	13	A	US	pinceronly	Core destroyed	254	0	3340	370
+yulerune_s13_B	yulerune	13	B	US	pinceronly	Core destroyed	276	0	1080	1110
+yulerune_s14_A	yulerune	14	A	OPP	_v488beltbreak2	Core destroyed	249	0	290	560
+yulerune_s14_B	yulerune	14	B	US	pinceronly	Core destroyed	305	0	290	270
+yulerune_s15_A	yulerune	15	A	US	pinceronly	Core destroyed	481	0	250	420
+yulerune_s15_B	yulerune	15	B	OPP	_v488beltbreak2	Core destroyed	241	0	260	1850

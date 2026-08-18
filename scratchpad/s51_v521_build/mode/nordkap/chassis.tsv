@@ -1,0 +1,25 @@
+tag	map	seed	seat	ours	winner	cond	turn	tracebacks	ours_mined	opp_mined
+nordkap_s201_A	nordkap	201	A	OPP	_v488beltbreak2	Core destroyed	220	0	140	2930
+nordkap_s201_B	nordkap	201	B	US	chassis	Core destroyed	148	0	1320	280
+nordkap_s202_A	nordkap	202	A	US	chassis	Core destroyed	201	0	120	120
+nordkap_s202_B	nordkap	202	B	US	chassis	Core destroyed	188	0	2100	120
+nordkap_s203_A	nordkap	203	A	US	chassis	Core destroyed	793	0	170	1020
+nordkap_s203_B	nordkap	203	B	US	chassis	Core destroyed	147	0	950	110
+nordkap_s204_A	nordkap	204	A	OPP	_v488beltbreak2	Core destroyed	451	0	370	2770
+nordkap_s204_B	nordkap	204	B	OPP	_v488beltbreak2	Core destroyed	176	0	100	400
+nordkap_s205_A	nordkap	205	A	US	chassis	Core destroyed	382	0	2730	110
+nordkap_s205_B	nordkap	205	B	US	chassis	Core destroyed	195	0	1300	370
+nordkap_s206_A	nordkap	206	A	US	chassis	Core destroyed	176	0	420	280
+nordkap_s206_B	nordkap	206	B	US	chassis	Core destroyed	213	0	1150	130
+nordkap_s207_A	nordkap	207	A	US	chassis	Core destroyed	181	0	400	210
+nordkap_s207_B	nordkap	207	B	OPP	_v488beltbreak2	Core destroyed	250	0	580	4360
+nordkap_s208_A	nordkap	208	A	OPP	_v488beltbreak2	Core destroyed	293	0	720	2400
+nordkap_s208_B	nordkap	208	B	US	chassis	Core destroyed	206	0	490	580
+nordkap_s209_A	nordkap	209	A	OPP	_v488beltbreak2	Core destroyed	175	0	140	2530
+nordkap_s209_B	nordkap	209	B	US	chassis	Core destroyed	701	0	130	290
+nordkap_s210_A	nordkap	210	A	US	chassis	Core destroyed	243	0	2320	170
+nordkap_s210_B	nordkap	210	B	US	chassis	Core destroyed	146	0	340	210
+nordkap_s211_A	nordkap	211	A	US	chassis	Core destroyed	201	0	120	120
+nordkap_s211_B	nordkap	211	B	US	chassis	Core destroyed	462	0	240	360
+nordkap_s212_A	nordkap	212	A	OPP	_v488beltbreak2	Core destroyed	261	0	250	1280
+nordkap_s212_B	nordkap	212	B	OPP	_v488beltbreak2	Core destroyed	270	0	140	3560

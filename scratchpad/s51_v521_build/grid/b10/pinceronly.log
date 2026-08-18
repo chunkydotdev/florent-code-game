@@ -1,0 +1,36 @@
+atoll_s28_A	atoll	28	A	US	pinceronly	Core destroyed	245	0	1220	280
+atoll_s28_B	atoll	28	B	US	pinceronly	Core destroyed	419	0	3130	1160
+atoll_s29_A	atoll	29	A	US	pinceronly	Core destroyed	116	0	400	50
+atoll_s29_B	atoll	29	B	OPP	_v488beltbreak2	Core destroyed	337	0	540	200
+atoll_s30_A	atoll	30	A	OPP	_v488beltbreak2	Titanium collected (tiebreak)	1000	0	2610	2790
+atoll_s30_B	atoll	30	B	OPP	_v488beltbreak2	Core destroyed	215	0	270	1190
+drakkarfjord_s28_A	drakkarfjord	28	A	US	pinceronly	Core destroyed	88	0	270	0
+drakkarfjord_s28_B	drakkarfjord	28	B	US	pinceronly	Titanium collected (tiebreak)	1000	0	330	0
+drakkarfjord_s29_A	drakkarfjord	29	A	US	pinceronly	Core destroyed	101	0	400	0
+drakkarfjord_s29_B	drakkarfjord	29	B	US	pinceronly	Titanium collected (tiebreak)	1000	0	420	0
+drakkarfjord_s30_A	drakkarfjord	30	A	US	pinceronly	Core destroyed	169	0	550	210
+drakkarfjord_s30_B	drakkarfjord	30	B	US	pinceronly	Core destroyed	147	0	410	0
+glacierkeep_s28_A	glacierkeep	28	A	US	pinceronly	Core destroyed	132	0	370	0
+glacierkeep_s28_B	glacierkeep	28	B	OPP	_v488beltbreak2	Core destroyed	769	0	0	0
+glacierkeep_s29_A	glacierkeep	29	A	US	pinceronly	Core destroyed	177	0	320	0
+glacierkeep_s29_B	glacierkeep	29	B	US	pinceronly	Harvesters (tiebreak)	1000	0	0	0
+glacierkeep_s30_A	glacierkeep	30	A	US	pinceronly	Core destroyed	111	0	420	0
+glacierkeep_s30_B	glacierkeep	30	B	OPP	_v488beltbreak2	Titanium collected (tiebreak)	1000	0	320	3450
+midgard_s28_A	midgard	28	A	OPP	_v488beltbreak2	Core destroyed	589	0	610	670
+midgard_s28_B	midgard	28	B	OPP	_v488beltbreak2	Core destroyed	257	0	670	420
+midgard_s29_A	midgard	29	A	US	pinceronly	Titanium collected (tiebreak)	1000	0	710	610
+midgard_s29_B	midgard	29	B	US	pinceronly	Core destroyed	621	0	2760	710
+midgard_s30_A	midgard	30	A	US	pinceronly	Core destroyed	310	0	1310	1160
+midgard_s30_B	midgard	30	B	OPP	_v488beltbreak2	Core destroyed	253	0	610	470
+nordkap_s28_A	nordkap	28	A	US	pinceronly	Core destroyed	234	0	580	110
+nordkap_s28_B	nordkap	28	B	US	pinceronly	Core destroyed	365	0	190	90
+nordkap_s29_A	nordkap	29	A	US	pinceronly	Core destroyed	164	0	560	110
+nordkap_s29_B	nordkap	29	B	OPP	_v488beltbreak2	Core destroyed	193	0	490	1380
+nordkap_s30_A	nordkap	30	A	US	pinceronly	Core destroyed	132	0	310	90
+nordkap_s30_B	nordkap	30	B	US	pinceronly	Core destroyed	466	0	4720	1090
+yulerune_s28_A	yulerune	28	A	OPP	_v488beltbreak2	Core destroyed	261	0	370	310
+yulerune_s28_B	yulerune	28	B	US	pinceronly	Core destroyed	202	0	1390	560
+yulerune_s29_A	yulerune	29	A	OPP	_v488beltbreak2	Core destroyed	304	0	390	1080
+yulerune_s29_B	yulerune	29	B	OPP	_v488beltbreak2	Core destroyed	269	0	370	430
+yulerune_s30_A	yulerune	30	A	US	pinceronly	Core destroyed	300	0	2120	580
+yulerune_s30_B	yulerune	30	B	US	pinceronly	Core destroyed	173	0	500	340
