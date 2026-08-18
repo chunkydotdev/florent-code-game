@@ -1,0 +1,37 @@
+tag	map	seed	seat	ours	winner	cond	turn	tracebacks	ours_mined	opp_mined
+atoll_s510_A	atoll	510	A	OPP	_v488beltbreak2	Titanium collected (tiebreak)	1000	0	2610	2790
+atoll_s510_B	atoll	510	B	OPP	_v488beltbreak2	Core destroyed	533	0	270	2620
+atoll_s511_A	atoll	511	A	US	iCREW	Core destroyed	148	0	710	260
+atoll_s511_B	atoll	511	B	US	iCREW	Core destroyed	238	0	1100	2100
+atoll_s512_A	atoll	512	A	OPP	_v488beltbreak2	Core destroyed	429	0	1260	4030
+atoll_s512_B	atoll	512	B	US	iCREW	Core destroyed	238	0	1100	2100
+drakkarfjord_s510_A	drakkarfjord	510	A	US	iCREW	Core destroyed	90	0	300	0
+drakkarfjord_s510_B	drakkarfjord	510	B	US	iCREW	Core destroyed	250	0	2390	0
+drakkarfjord_s511_A	drakkarfjord	511	A	US	iCREW	Core destroyed	103	0	300	0
+drakkarfjord_s511_B	drakkarfjord	511	B	US	iCREW	Titanium collected (tiebreak)	1000	0	330	0
+drakkarfjord_s512_A	drakkarfjord	512	A	US	iCREW	Core destroyed	285	0	480	360
+drakkarfjord_s512_B	drakkarfjord	512	B	US	iCREW	Core destroyed	140	0	640	0
+glacierkeep_s510_A	glacierkeep	510	A	US	iCREW	Core destroyed	189	0	180	0
+glacierkeep_s510_B	glacierkeep	510	B	US	iCREW	Core destroyed	629	0	320	0
+glacierkeep_s511_A	glacierkeep	511	A	US	iCREW	Core destroyed	213	0	230	120
+glacierkeep_s511_B	glacierkeep	511	B	OPP	_v488beltbreak2	Core destroyed	808	0	0	1120
+glacierkeep_s512_A	glacierkeep	512	A	US	iCREW	Core destroyed	127	0	340	0
+glacierkeep_s512_B	glacierkeep	512	B	US	iCREW	Core destroyed	277	0	0	0
+midgard_s510_A	midgard	510	A	OPP	_v488beltbreak2	Core destroyed	321	0	730	500
+midgard_s510_B	midgard	510	B	OPP	_v488beltbreak2	Core destroyed	267	0	2410	1920
+midgard_s511_A	midgard	511	A	US	iCREW	Core destroyed	190	0	940	800
+midgard_s511_B	midgard	511	B	US	iCREW	Core destroyed	338	0	1610	630
+midgard_s512_A	midgard	512	A	OPP	_v488beltbreak2	Core destroyed	135	0	680	1200
+midgard_s512_B	midgard	512	B	US	iCREW	Core destroyed	278	0	1170	880
+nordkap_s510_A	nordkap	510	A	US	iCREW	Core destroyed	277	0	190	190
+nordkap_s510_B	nordkap	510	B	US	iCREW	Core destroyed	235	0	890	140
+nordkap_s511_A	nordkap	511	A	US	iCREW	Core destroyed	239	0	1570	60
+nordkap_s511_B	nordkap	511	B	US	iCREW	Core destroyed	338	0	2720	1070
+nordkap_s512_A	nordkap	512	A	US	iCREW	Core destroyed	442	0	1090	90
+nordkap_s512_B	nordkap	512	B	OPP	_v488beltbreak2	Core destroyed	802	0	3840	6260
+yulerune_s510_A	yulerune	510	A	OPP	_v488beltbreak2	Core destroyed	397	0	400	330
+yulerune_s510_B	yulerune	510	B	OPP	_v488beltbreak2	Core destroyed	276	0	290	1400
+yulerune_s511_A	yulerune	511	A	US	iCREW	Core destroyed	181	0	530	360
+yulerune_s511_B	yulerune	511	B	US	iCREW	Core destroyed	837	0	6480	3170
+yulerune_s512_A	yulerune	512	A	US	iCREW	Core destroyed	191	0	2130	670
+yulerune_s512_B	yulerune	512	B	US	iCREW	Core destroyed	344	0	2700	1240

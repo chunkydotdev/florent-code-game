@@ -1,0 +1,37 @@
+tag	map	seed	seat	ours	winner	cond	turn	tracebacks	ours_mined	opp_mined
+atoll_s519_A	atoll	519	A	US	iNOPHASE	Core destroyed	116	0	400	50
+atoll_s519_B	atoll	519	B	OPP	_v488beltbreak2	Core destroyed	373	0	710	1840
+atoll_s520_A	atoll	520	A	US	iNOPHASE	Core destroyed	153	0	640	170
+atoll_s520_B	atoll	520	B	OPP	_v488beltbreak2	Core destroyed	652	0	3860	3230
+atoll_s521_A	atoll	521	A	US	iNOPHASE	Core destroyed	148	0	710	260
+atoll_s521_B	atoll	521	B	OPP	_v488beltbreak2	Core destroyed	721	0	1170	1780
+drakkarfjord_s519_A	drakkarfjord	519	A	US	iNOPHASE	Core destroyed	397	0	310	0
+drakkarfjord_s519_B	drakkarfjord	519	B	US	iNOPHASE	Core destroyed	101	0	280	0
+drakkarfjord_s520_A	drakkarfjord	520	A	US	iNOPHASE	Titanium collected (tiebreak)	1000	0	660	190
+drakkarfjord_s520_B	drakkarfjord	520	B	US	iNOPHASE	Core destroyed	114	0	340	0
+drakkarfjord_s521_A	drakkarfjord	521	A	US	iNOPHASE	Core destroyed	99	0	390	0
+drakkarfjord_s521_B	drakkarfjord	521	B	US	iNOPHASE	Core destroyed	114	0	340	0
+glacierkeep_s519_A	glacierkeep	519	A	US	iNOPHASE	Core destroyed	143	0	590	0
+glacierkeep_s519_B	glacierkeep	519	B	US	iNOPHASE	Core destroyed	309	0	200	230
+glacierkeep_s520_A	glacierkeep	520	A	US	iNOPHASE	Core destroyed	161	0	170	0
+glacierkeep_s520_B	glacierkeep	520	B	OPP	_v488beltbreak2	Titanium collected (tiebreak)	1000	0	0	1240
+glacierkeep_s521_A	glacierkeep	521	A	US	iNOPHASE	Titanium collected (tiebreak)	1000	0	310	0
+glacierkeep_s521_B	glacierkeep	521	B	US	iNOPHASE	Core destroyed	445	0	0	0
+midgard_s519_A	midgard	519	A	US	iNOPHASE	Core destroyed	201	0	780	720
+midgard_s519_B	midgard	519	B	US	iNOPHASE	Core destroyed	157	0	1110	590
+midgard_s520_A	midgard	520	A	OPP	_v488beltbreak2	Core destroyed	161	0	620	860
+midgard_s520_B	midgard	520	B	US	iNOPHASE	Core destroyed	254	0	2040	620
+midgard_s521_A	midgard	521	A	US	iNOPHASE	Core destroyed	347	0	3100	2650
+midgard_s521_B	midgard	521	B	OPP	_v488beltbreak2	Core destroyed	628	0	800	610
+nordkap_s519_A	nordkap	519	A	US	iNOPHASE	Core destroyed	277	0	190	190
+nordkap_s519_B	nordkap	519	B	OPP	_v488beltbreak2	Core destroyed	210	0	500	1600
+nordkap_s520_A	nordkap	520	A	US	iNOPHASE	Core destroyed	472	0	1620	540
+nordkap_s520_B	nordkap	520	B	US	iNOPHASE	Core destroyed	185	0	130	220
+nordkap_s521_A	nordkap	521	A	US	iNOPHASE	Core destroyed	127	0	580	70
+nordkap_s521_B	nordkap	521	B	OPP	_v488beltbreak2	Core destroyed	309	0	90	60
+yulerune_s519_A	yulerune	519	A	US	iNOPHASE	Core destroyed	380	0	3400	310
+yulerune_s519_B	yulerune	519	B	OPP	_v488beltbreak2	Core destroyed	233	0	410	1230
+yulerune_s520_A	yulerune	520	A	OPP	_v488beltbreak2	Core destroyed	151	0	400	900
+yulerune_s520_B	yulerune	520	B	OPP	_v488beltbreak2	Core destroyed	288	0	410	2100
+yulerune_s521_A	yulerune	521	A	US	iNOPHASE	Core destroyed	282	0	690	450
+yulerune_s521_B	yulerune	521	B	OPP	_v488beltbreak2	Titanium collected (tiebreak)	1000	0	400	440

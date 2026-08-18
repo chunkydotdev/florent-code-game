@@ -1,0 +1,181 @@
+Update available: 2.3.6 -> 2.3.8. Run: pip install --upgrade fcode
+FS GATE 0 sig (30, 30, (2, 24), (26, 4)) ok 1
+FS GATE 1 sig (30, 30, (2, 24), (26, 4)) ok 1
+FS PHASE 1 id 3 ph 1 d 808 at (4, 23)
+FS GATE 2 sig (30, 30, (2, 24), (26, 4)) ok 1
+FS GATE 3 sig (30, 30, (2, 24), (26, 4)) ok 1
+FS GATE 4 sig (30, 30, (2, 24), (26, 4)) ok 1
+FS PHASE 4 id 9 ph 1 d 845 at (4, 24)
+FS HOPBUILD 5 at (4, 23) lch (5, 23) T (28, 3)
+FS GATE 6 sig (30, 30, (2, 24), (26, 4)) ok 1
+FS THROW 6 from (4, 22) to (9, 20) T (28, 3) body 3 n 1 dsq 514
+FS HOPBUILD 7 at (9, 20) lch (10, 20) T (28, 3)
+FS THROW 7 from (6, 22) to (8, 19) T (28, 3) body 9 n 2 dsq 520
+FS GATE 8 sig (30, 30, (2, 24), (26, 4)) ok 1
+FS THROW 8 from (9, 19) to (14, 17) T (28, 3) body 3 n 1 dsq 288
+FS HOPBUILD 9 at (14, 17) lch (14, 16) T (28, 3)
+FS THROW 9 from (9, 20) to (13, 16) T (28, 3) body 9 n 2 dsq 290
+FS GATE 10 sig (30, 30, (2, 24), (26, 4)) ok 1
+FS THROW 10 from (15, 17) to (18, 13) T (28, 3) body 3 n 1 dsq 128
+FS HOPBUILD 11 at (18, 13) lch (18, 12) T (28, 3)
+FS THROW 11 from (14, 15) to (17, 13) T (28, 3) body 9 n 2 dsq 145
+FS GATE 12 sig (30, 30, (2, 24), (26, 4)) ok 1
+FS THROW 12 from (19, 13) to (22, 9) T (28, 3) body 3 n 1 dsq 32
+FS HOPBUILD 13 at (22, 9) lch (23, 9) T (28, 3)
+FS THROW 13 from (19, 13) to (21, 9) T (28, 3) body 9 n 2 dsq 41
+FS GATE 14 sig (30, 30, (2, 24), (26, 4)) ok 1
+FS SPLIT 14 arc 2 to (25, 5) body 3 walk 5
+FS ARRIVE 15 id 3 body 1 at (25, 5) dsq 1
+FS PHASE 15 id 3 ph 2 d 1 at (25, 5)
+FS SEAL 15 tile (25, 4) n 1
+FS SPLIT 15 arc 1 to (24, 4) body 9 walk 1
+FS ARRIVE 16 id 9 body 2 at (24, 4) dsq 4
+FS PHASE 16 id 9 ph 2 d 4 at (24, 4)
+FS SEAL 17 tile (25, 5) n 2
+FS SEAL 18 tile (26, 6) n 3
+FS STAT 20 id 3 at (25, 7) need 6 orth 5 ti 47 ammo 16 sen 0 hp 22 covden 0 eco 0 lost 0
+FS STAT 20 id 9 at (24, 4) need 6 orth 5 ti 47 ammo 16 sen 0 hp 40 covden 0 eco 0 lost 0
+FS SEAL 21 tile (25, 3) n 1
+FS SEAL 22 tile (27, 6) n 4
+FS DODGE 24 id 9 from (25, 2) to (26, 2) cov 1 -> 0 hit 0 hp 40
+FS SEAL 25 tile (26, 3) n 2
+FS SEAL 27 tile (27, 3) n 3
+FS SEAL 30 tile (28, 4) n 4
+FS SEAL 31 tile (28, 5) n 5
+FS PHASE 31 id 9 ph 3 d 2 at (28, 3)
+FS PHASE 32 id 3 ph 3 d 4 at (29, 5)
+FS SENTINEL 32 at (29, 4) face WEST tgt (26, 4) score 9 n 1 onring 0 lost 0 gate (1, 1, 24) onsray 0 olddsq -1
+FS PHASE 32 id 9 ph 4 d 5 at (28, 2)
+FS PHASE 33 id 3 ph 4 d 4 at (29, 5)
+MAG522 34 ph 4 on 1 near 0 fund 0 ttl 1 ti 27 ammo 6 bar 6 want 18 floor 12 bind 0 nbind 0 nnear 0
+FS SEAL 34 tile (28, 6) n 6
+MAG522 35 ph 4 on 1 near 0 fund 1 ttl 1 ti 16 ammo 21 bar 6 want 18 floor 12 bind 0 nbind 0 nnear 0
+FS DODGE 35 id 9 from (25, 2) to (26, 2) cov 1 -> 0 hit 0 hp 40
+MAG522 36 ph 4 on 1 near 0 fund 1 ttl 1 ti 22 ammo 15 bar 6 want 18 floor 12 bind 0 nbind 0 nnear 0
+PH522 36 orth 2 bar 6 price 18 allow 12 on 1 pub 1 body 1
+FS PHASE 36 id 3 ph 6 d 8 at (29, 7)
+MAG522 37 ph 6 on 1 near 1 fund 1 ttl 1 ti 22 ammo 25 bar 6 want 18 floor 12 bind 0 nbind 0 nnear 1
+FS PHASE 37 id 3 ph 4 d 5 at (28, 7)
+FS DODGE 37 id 9 from (25, 2) to (26, 2) cov 1 -> 0 hit 0 hp 40
+MAG522 38 ph 4 on 1 near 0 fund 1 ttl 1 ti 12 ammo 25 bar 6 want 18 floor 12 bind 0 nbind 0 nnear 1
+MAG522 39 ph 4 on 1 near 0 fund 1 ttl 1 ti 22 ammo 25 bar 6 want 18 floor 12 bind 0 nbind 0 nnear 1
+FS DODGE 39 id 9 from (25, 2) to (26, 2) cov 1 -> 0 hit 0 hp 40
+MAG522 40 ph 4 on 1 near 0 fund 1 ttl 1 ti 22 ammo 25 bar 6 want 18 floor 12 bind 0 nbind 0 nnear 1
+FS STAT 40 id 3 at (28, 7) need 2 orth 0 ti 12 ammo 35 sen 1 hp 22 covden 0 eco 1 lost 0
+FS STAT 40 id 9 at (26, 2) need 1 orth 0 ti 12 ammo 35 sen 1 hp 40 covden 0 eco 1 lost 0
+MAG522 41 ph 4 on 1 near 0 fund 1 ttl 1 ti 22 ammo 35 bar 6 want 18 floor 12 bind 0 nbind 0 nnear 1
+FS PHASE 41 id 3 ph 5 d 10 at (28, 8)
+FS DODGE 41 id 9 from (25, 2) to (26, 2) cov 1 -> 0 hit 0 hp 40
+MAG522 42 ph 5 on 1 near 0 fund 1 ttl 1 ti 12 ammo 35 bar 6 want 18 floor 12 bind 0 nbind 0 nnear 1
+PH522 42 orth 2 bar 6 price 18 allow 12 on 1 pub 1 body 1
+FS PHASE 42 id 3 ph 6 d 9 at (27, 8)
+MAG522 43 ph 6 on 1 near 1 fund 1 ttl 1 ti 22 ammo 35 bar 6 want 18 floor 12 bind 0 nbind 0 nnear 2
+PH522 43 orth 2 bar 6 price 18 allow 12 on 1 pub 1 body 1
+FS DODGE 43 id 9 from (25, 2) to (26, 2) cov 1 -> 0 hit 0 hp 40
+MAG522 44 ph 6 on 1 near 1 fund 1 ttl 1 ti 22 ammo 35 bar 6 want 18 floor 12 bind 0 nbind 0 nnear 3
+FS PHASE 44 id 3 ph 4 d 4 at (26, 7)
+MAG522 45 ph 4 on 1 near 0 fund 1 ttl 1 ti 22 ammo 45 bar 6 want 18 floor 12 bind 0 nbind 0 nnear 3
+FS DODGE 45 id 9 from (25, 2) to (26, 2) cov 1 -> 0 hit 0 hp 40
+MAG522 46 ph 4 on 1 near 0 fund 1 ttl 1 ti 12 ammo 45 bar 6 want 18 floor 12 bind 0 nbind 0 nnear 3
+FS SEAL 46 tile (25, 6) n 7
+MAG522 47 ph 4 on 1 near 0 fund 1 ttl 1 ti 16 ammo 45 bar 6 want 18 floor 12 bind 0 nbind 0 nnear 3
+MAG522 48 ph 4 on 1 near 0 fund 1 ttl 1 ti 22 ammo 39 bar 6 want 18 floor 12 bind 0 nbind 0 nnear 3
+MAG522 49 ph 4 on 1 near 0 fund 1 ttl 1 ti 22 ammo 49 bar 6 want 18 floor 12 bind 0 nbind 0 nnear 3
+MAG522 50 ph 4 on 1 near 0 fund 1 ttl 1 ti 12 ammo 49 bar 6 want 18 floor 12 bind 0 nbind 0 nnear 3
+MAG522 51 ph 4 on 1 near 0 fund 1 ttl 1 ti 22 ammo 49 bar 6 want 18 floor 12 bind 0 nbind 0 nnear 3
+MAG522 52 ph 4 on 1 near 0 fund 1 ttl 1 ti 22 ammo 49 bar 6 want 18 floor 12 bind 0 nbind 0 nnear 3
+MAG522 53 ph 4 on 1 near 0 fund 1 ttl 1 ti 22 ammo 59 bar 6 want 18 floor 12 bind 0 nbind 0 nnear 3
+MAG522 54 ph 4 on 1 near 0 fund 1 ttl 1 ti 12 ammo 59 bar 6 want 18 floor 12 bind 0 nbind 0 nnear 3
+MAG522 55 ph 4 on 1 near 0 fund 1 ttl 1 ti 22 ammo 59 bar 6 want 18 floor 12 bind 0 nbind 0 nnear 3
+MAG522 56 ph 4 on 1 near 0 fund 1 ttl 1 ti 22 ammo 59 bar 6 want 18 floor 12 bind 0 nbind 0 nnear 3
+MAG522 57 ph 4 on 1 near 0 fund 1 ttl 1 ti 22 ammo 69 bar 6 want 18 floor 12 bind 0 nbind 0 nnear 3
+MAG522 58 ph 4 on 1 near 0 fund 1 ttl 1 ti 12 ammo 69 bar 6 want 18 floor 12 bind 0 nbind 0 nnear 3
+FS PHASE 58 id 3 ph 5 d 10 at (25, 8)
+MAG522 59 ph 5 on 1 near 0 fund 1 ttl 1 ti 22 ammo 69 bar 6 want 18 floor 12 bind 0 nbind 0 nnear 3
+FS DODGE 59 id 9 from (25, 2) to (26, 2) cov 1 -> 0 hit 0 hp 40
+MAG522 60 ph 5 on 1 near 0 fund 1 ttl 1 ti 22 ammo 69 bar 6 want 18 floor 12 bind 0 nbind 0 nnear 3
+PH522 60 orth 2 bar 6 price 18 allow 12 on 1 pub 1 body 1
+FS PHASE 60 id 3 ph 6 d 8 at (24, 7)
+FS STAT 60 id 3 at (24, 7) need 3 orth 2 ti 12 ammo 79 sen 1 hp 22 covden 0 eco 1 lost 0
+FS STAT 60 id 9 at (26, 2) need 1 orth 0 ti 12 ammo 79 sen 1 hp 40 covden 0 eco 1 lost 0
+MAG522 61 ph 6 on 1 near 1 fund 1 ttl 1 ti 22 ammo 79 bar 6 want 18 floor 12 bind 0 nbind 0 nnear 4
+FS PHASE 61 id 3 ph 4 d 5 at (24, 6)
+PH522 61 orth 2 bar 6 price 18 allow 12 on 1 pub 1 body 2
+FS PHASE 61 id 9 ph 6 d 9 at (26, 1)
+MAG522 62 ph 4 on 1 near 0 fund 1 ttl 1 ti 12 ammo 79 bar 6 want 18 floor 12 bind 0 nbind 0 nnear 4
+FS PHASE 62 id 9 ph 4 d 4 at (26, 2)
+MAG522 63 ph 4 on 1 near 0 fund 1 ttl 1 ti 22 ammo 79 bar 6 want 18 floor 12 bind 0 nbind 0 nnear 4
+MAG522 64 ph 4 on 1 near 0 fund 1 ttl 1 ti 22 ammo 79 bar 6 want 18 floor 12 bind 0 nbind 0 nnear 4
+FS DODGE 64 id 9 from (25, 2) to (26, 2) cov 1 -> 0 hit 0 hp 40
+MAG522 65 ph 4 on 1 near 0 fund 1 ttl 1 ti 22 ammo 89 bar 6 want 18 floor 12 bind 0 nbind 0 nnear 4
+PH522 65 orth 1 bar 6 price 12 allow 12 on 1 pub 0 body 1
+FS PHASE 65 id 3 ph 5 d 4 at (24, 4)
+FS SEAL 65 tile (25, 4) n 8
+MAG522 66 ph 5 on 1 near 0 fund 1 ttl 1 ti 6 ammo 89 bar 6 want 18 floor 12 bind 0 nbind 0 nnear 4
+FS PHASE 66 id 3 ph 4 d 4 at (24, 4)
+PH522 66 orth 2 bar 6 price 18 allow 12 on 1 pub 1 body 2
+FS PHASE 66 id 9 ph 6 d 9 at (26, 1)
+MAG522 67 ph 4 on 1 near 0 fund 1 ttl 1 ti 16 ammo 89 bar 6 want 18 floor 12 bind 0 nbind 0 nnear 4
+FS SEAL 67 tile (25, 3) n 9
+FS PHASE 67 id 9 ph 5 d 16 at (26, 0)
+MAG522 68 ph 4 on 1 near 0 fund 1 ttl 1 ti 16 ammo 83 bar 6 want 18 floor 12 bind 0 nbind 0 nnear 4
+PH522 68 orth 2 bar 6 price 18 allow 12 on 1 pub 1 body 2
+FS PHASE 68 id 9 ph 6 d 9 at (26, 1)
+MAG522 69 ph 4 on 1 near 0 fund 1 ttl 1 ti 22 ammo 87 bar 6 want 18 floor 12 bind 0 nbind 0 nnear 4
+FS PHASE 69 id 9 ph 5 d 16 at (26, 0)
+MAG522 70 ph 4 on 1 near 0 fund 1 ttl 1 ti 12 ammo 87 bar 6 want 18 floor 12 bind 0 nbind 0 nnear 4
+PH522 70 orth 2 bar 6 price 18 allow 12 on 1 pub 1 body 2
+FS PHASE 70 id 9 ph 6 d 9 at (26, 1)
+MAG522 71 ph 4 on 1 near 0 fund 1 ttl 1 ti 22 ammo 87 bar 6 want 18 floor 12 bind 0 nbind 0 nnear 4
+FS PHASE 71 id 9 ph 5 d 16 at (26, 0)
+MAG522 72 ph 4 on 1 near 0 fund 1 ttl 1 ti 22 ammo 87 bar 6 want 18 floor 12 bind 0 nbind 0 nnear 4
+PH522 72 orth 2 bar 6 price 18 allow 12 on 1 pub 1 body 2
+FS PHASE 72 id 9 ph 6 d 9 at (26, 1)
+MAG522 73 ph 4 on 1 near 0 fund 1 ttl 1 ti 22 ammo 97 bar 6 want 18 floor 12 bind 0 nbind 0 nnear 4
+FS PHASE 73 id 9 ph 5 d 16 at (26, 0)
+MAG522 74 ph 4 on 1 near 0 fund 1 ttl 1 ti 12 ammo 97 bar 6 want 18 floor 12 bind 0 nbind 0 nnear 4
+PH522 74 orth 2 bar 6 price 18 allow 12 on 1 pub 1 body 2
+FS PHASE 74 id 9 ph 6 d 9 at (26, 1)
+MAG522 75 ph 4 on 1 near 0 fund 1 ttl 1 ti 22 ammo 97 bar 6 want 18 floor 12 bind 0 nbind 0 nnear 4
+FS PHASE 75 id 9 ph 5 d 16 at (26, 0)
+MAG522 76 ph 4 on 1 near 0 fund 1 ttl 1 ti 22 ammo 97 bar 6 want 18 floor 12 bind 0 nbind 0 nnear 4
+PH522 76 orth 2 bar 6 price 18 allow 12 on 1 pub 1 body 2
+FS PHASE 76 id 9 ph 6 d 9 at (26, 1)
+MAG522 77 ph 4 on 1 near 0 fund 1 ttl 1 ti 22 ammo 107 bar 6 want 18 floor 12 bind 0 nbind 0 nnear 4
+FS PHASE 77 id 9 ph 5 d 16 at (26, 0)
+MAG522 78 ph 4 on 1 near 0 fund 1 ttl 1 ti 12 ammo 107 bar 6 want 18 floor 12 bind 0 nbind 0 nnear 4
+PH522 78 orth 2 bar 6 price 18 allow 12 on 1 pub 1 body 2
+FS PHASE 78 id 9 ph 6 d 9 at (26, 1)
+MAG522 79 ph 4 on 1 near 0 fund 1 ttl 1 ti 22 ammo 107 bar 6 want 18 floor 12 bind 0 nbind 0 nnear 4
+FS PHASE 79 id 9 ph 5 d 16 at (26, 0)
+MAG522 80 ph 4 on 1 near 0 fund 1 ttl 1 ti 22 ammo 107 bar 6 want 18 floor 12 bind 0 nbind 0 nnear 4
+FS STAT 80 id 3 at (24, 5) need 0 orth 0 ti 12 ammo 117 sen 1 hp 22 covden 0 eco 1 lost 0
+PH522 80 orth 2 bar 6 price 18 allow 12 on 1 pub 1 body 2
+FS PHASE 80 id 9 ph 6 d 9 at (26, 1)
+FS STAT 80 id 9 at (26, 1) need 2 orth 2 ti 12 ammo 117 sen 1 hp 40 covden 0 eco 1 lost 0
+MAG522 81 ph 4 on 1 near 0 fund 1 ttl 1 ti 22 ammo 117 bar 6 want 18 floor 12 bind 0 nbind 0 nnear 4
+FS PHASE 81 id 9 ph 5 d 16 at (26, 0)
+MAG522 82 ph 4 on 1 near 0 fund 1 ttl 1 ti 12 ammo 117 bar 6 want 18 floor 12 bind 0 nbind 0 nnear 4
+PH522 82 orth 2 bar 6 price 18 allow 12 on 1 pub 1 body 1
+FS PHASE 82 id 3 ph 6 d 9 at (23, 4)
+PH522 82 orth 2 bar 6 price 18 allow 12 on 1 pub 1 body 2
+FS PHASE 82 id 9 ph 6 d 9 at (26, 1)
+MAG522 83 ph 6 on 1 near 1 fund 1 ttl 1 ti 22 ammo 117 bar 6 want 18 floor 12 bind 0 nbind 0 nnear 5
+FS PHASE 83 id 3 ph 4 d 4 at (24, 4)
+FS PHASE 83 id 9 ph 5 d 16 at (26, 0)
+MAG522 84 ph 4 on 1 near 0 fund 1 ttl 1 ti 22 ammo 117 bar 6 want 18 floor 12 bind 0 nbind 0 nnear 5
+PH522 84 orth 2 bar 6 price 18 allow 12 on 1 pub 1 body 1
+FS PHASE 84 id 3 ph 6 d 9 at (23, 4)
+PH522 84 orth 2 bar 6 price 18 allow 12 on 1 pub 1 body 2
+FS PHASE 84 id 9 ph 6 d 9 at (26, 1)
+MAG522 85 ph 6 on 1 near 1 fund 1 ttl 1 ti 22 ammo 127 bar 6 want 18 floor 12 bind 0 nbind 0 nnear 6
+FS PHASE 85 id 3 ph 4 d 4 at (24, 4)
+FS PHASE 85 id 9 ph 5 d 16 at (26, 0)
+MAG522 86 ph 4 on 1 near 0 fund 1 ttl 1 ti 12 ammo 127 bar 6 want 18 floor 12 bind 0 nbind 0 nnear 6
+PH522 86 orth 2 bar 6 price 18 allow 12 on 1 pub 1 body 1
+FS PHASE 86 id 3 ph 6 d 9 at (23, 4)
+PH522 86 orth 2 bar 6 price 18 allow 12 on 1 pub 1 body 2
+FS PHASE 86 id 9 ph 6 d 9 at (26, 1)
+MAG522 87 ph 6 on 1 near 1 fund 1 ttl 1 ti 22 ammo 127 bar 6 want 18 floor 12 bind 0 nbind 0 nnear 7
+FS PHASE 87 id 3 ph 4 d 4 at (24, 4)
+FS PHASE 87 id 9 ph 5 d 16 at (26, 0)

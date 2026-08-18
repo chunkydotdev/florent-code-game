@@ -1,0 +1,25 @@
+tag	map	seed	seat	ours	winner	cond	turn	tracebacks	ours_mined	opp_mined
+yulerune_s201_A	yulerune	201	A	US	mF	Core destroyed	169	0	760	270
+yulerune_s201_B	yulerune	201	B	OPP	_v488beltbreak2	Core destroyed	124	0	510	1000
+yulerune_s202_A	yulerune	202	A	OPP	_v488beltbreak2	Titanium collected (tiebreak)	1000	0	470	790
+yulerune_s202_B	yulerune	202	B	US	mF	Core destroyed	201	0	660	800
+yulerune_s203_A	yulerune	203	A	OPP	_v488beltbreak2	Core destroyed	184	0	600	1300
+yulerune_s203_B	yulerune	203	B	OPP	_v488beltbreak2	Core destroyed	170	0	370	1060
+yulerune_s204_A	yulerune	204	A	US	mF	Core destroyed	145	0	880	270
+yulerune_s204_B	yulerune	204	B	OPP	_v488beltbreak2	Core destroyed	256	0	650	1880
+yulerune_s205_A	yulerune	205	A	US	mF	Core destroyed	516	0	8810	3730
+yulerune_s205_B	yulerune	205	B	OPP	_v488beltbreak2	Core destroyed	218	0	590	1040
+yulerune_s206_A	yulerune	206	A	OPP	_v488beltbreak2	Titanium collected (tiebreak)	1000	0	390	480
+yulerune_s206_B	yulerune	206	B	US	mF	Core destroyed	519	0	1430	600
+yulerune_s207_A	yulerune	207	A	OPP	_v488beltbreak2	Titanium collected (tiebreak)	1000	0	280	690
+yulerune_s207_B	yulerune	207	B	OPP	_v488beltbreak2	Core destroyed	233	0	410	1230
+yulerune_s208_A	yulerune	208	A	OPP	_v488beltbreak2	Core destroyed	271	0	400	2180
+yulerune_s208_B	yulerune	208	B	US	mF	Core destroyed	245	0	1280	1070
+yulerune_s209_A	yulerune	209	A	OPP	_v488beltbreak2	Core destroyed	649	0	420	1680
+yulerune_s209_B	yulerune	209	B	OPP	_v488beltbreak2	Core destroyed	286	0	440	2870
+yulerune_s210_A	yulerune	210	A	US	mF	Core destroyed	389	0	640	300
+yulerune_s210_B	yulerune	210	B	US	mF	Core destroyed	417	0	460	400
+yulerune_s211_A	yulerune	211	A	US	mF	Core destroyed	369	0	3140	310
+yulerune_s211_B	yulerune	211	B	OPP	_v488beltbreak2	Core destroyed	285	0	480	3160
+yulerune_s212_A	yulerune	212	A	OPP	_v488beltbreak2	Core destroyed	237	0	380	510
+yulerune_s212_B	yulerune	212	B	OPP	_v488beltbreak2	Core destroyed	633	0	460	2040

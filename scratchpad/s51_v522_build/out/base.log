@@ -1,0 +1,14 @@
+atoll A neg=SAME test=SAME
+atoll B neg=SAME test=SAME
+drakkarfjord A neg=SAME test=DIFF
+drakkarfjord B neg=SAME test=DIFF
+glacierkeep A neg=SAME test=DIFF
+glacierkeep B neg=SAME test=SAME
+midgard A neg=SAME test=SAME
+midgard B neg=SAME test=SAME
+nordkap A neg=SAME test=DIFF
+nordkap B neg=SAME test=SAME
+yulerune A neg=SAME test=SAME
+yulerune B neg=SAME test=SAME
+NEG   v520ref vs v520ref : identical 12 / differing 0   (want 12/0)
+TEST  v520ref vs parent  : identical 8 / differing 4   (PHASE_HONEST dose)

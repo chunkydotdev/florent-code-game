@@ -1,0 +1,37 @@
+tag	map	seed	seat	ours	winner	cond	turn	tracebacks	ours_mined	opp_mined
+atoll_s501_A	atoll	501	A	US	parent	Core destroyed	277	0	2150	250
+atoll_s501_B	atoll	501	B	US	parent	Core destroyed	111	0	520	330
+atoll_s502_A	atoll	502	A	US	parent	Core destroyed	252	0	1800	150
+atoll_s502_B	atoll	502	B	US	parent	Core destroyed	184	0	650	520
+atoll_s503_A	atoll	503	A	US	parent	Core destroyed	988	0	4830	4390
+atoll_s503_B	atoll	503	B	US	parent	Core destroyed	238	0	1100	2100
+drakkarfjord_s501_A	drakkarfjord	501	A	US	parent	Core destroyed	99	0	290	0
+drakkarfjord_s501_B	drakkarfjord	501	B	US	parent	Core destroyed	383	0	800	0
+drakkarfjord_s502_A	drakkarfjord	502	A	US	parent	Core destroyed	88	0	270	0
+drakkarfjord_s502_B	drakkarfjord	502	B	US	parent	Core destroyed	249	0	2720	0
+drakkarfjord_s503_A	drakkarfjord	503	A	OPP	_v488beltbreak2	Core destroyed	865	0	310	0
+drakkarfjord_s503_B	drakkarfjord	503	B	US	parent	Core destroyed	461	0	420	0
+glacierkeep_s501_A	glacierkeep	501	A	US	parent	Core destroyed	149	0	430	200
+glacierkeep_s501_B	glacierkeep	501	B	OPP	_v488beltbreak2	Core destroyed	893	0	0	0
+glacierkeep_s502_A	glacierkeep	502	A	US	parent	Core destroyed	388	0	3520	800
+glacierkeep_s502_B	glacierkeep	502	B	OPP	_v488beltbreak2	Harvesters (tiebreak)	1000	0	0	0
+glacierkeep_s503_A	glacierkeep	503	A	US	parent	Core destroyed	203	0	450	0
+glacierkeep_s503_B	glacierkeep	503	B	US	parent	Core destroyed	217	0	0	0
+midgard_s501_A	midgard	501	A	US	parent	Core destroyed	190	0	940	800
+midgard_s501_B	midgard	501	B	US	parent	Core destroyed	412	0	1580	590
+midgard_s502_A	midgard	502	A	US	parent	Core destroyed	200	0	1480	540
+midgard_s502_B	midgard	502	B	US	parent	Titanium collected (tiebreak)	1000	0	1010	640
+midgard_s503_A	midgard	503	A	US	parent	Core destroyed	196	0	1780	660
+midgard_s503_B	midgard	503	B	US	parent	Core destroyed	269	0	1240	580
+nordkap_s501_A	nordkap	501	A	US	parent	Titanium collected (tiebreak)	1000	0	80	70
+nordkap_s501_B	nordkap	501	B	US	parent	Core destroyed	491	0	7330	3250
+nordkap_s502_A	nordkap	502	A	OPP	_v488beltbreak2	Core destroyed	247	0	760	2150
+nordkap_s502_B	nordkap	502	B	US	parent	Core destroyed	141	0	110	0
+nordkap_s503_A	nordkap	503	A	US	parent	Titanium collected (tiebreak)	1000	0	1540	60
+nordkap_s503_B	nordkap	503	B	OPP	_v488beltbreak2	Core destroyed	349	0	2950	5210
+yulerune_s501_A	yulerune	501	A	US	parent	Titanium collected (tiebreak)	1000	0	420	350
+yulerune_s501_B	yulerune	501	B	OPP	_v488beltbreak2	Core destroyed	208	0	480	1720
+yulerune_s502_A	yulerune	502	A	US	parent	Core destroyed	145	0	880	270
+yulerune_s502_B	yulerune	502	B	OPP	_v488beltbreak2	Core destroyed	233	0	540	2130
+yulerune_s503_A	yulerune	503	A	US	parent	Core destroyed	172	0	710	330
+yulerune_s503_B	yulerune	503	B	OPP	_v488beltbreak2	Core destroyed	392	0	350	2980

@@ -1,0 +1,138 @@
+Update available: 2.3.6 -> 2.3.8. Run: pip install --upgrade fcode
+MAG522 110 ph 4 on 0 near 0 fund 1 fuse 1 ttl 1 ti 4 ammo 17 bar 8 want 22 floor 16 bind 0 nbind 0 nnear 0
+MAG522 111 ph 4 on 0 near 0 fund 1 fuse 1 ttl 1 ti 4 ammo 17 bar 8 want 22 floor 16 bind 0 nbind 0 nnear 0
+MAG522 112 ph 4 on 0 near 0 fund 0 fuse 1 ttl 1 ti 14 ammo 7 bar 8 want 22 floor 16 bind 0 nbind 0 nnear 0
+MAG522 113 ph 4 on 0 near 0 fund 0 fuse 1 ttl 1 ti 14 ammo 7 bar 8 want 22 floor 16 bind 0 nbind 0 nnear 0
+MAG522 114 ph 4 on 0 near 0 fund 0 fuse 1 ttl 1 ti 14 ammo 7 bar 8 want 22 floor 16 bind 0 nbind 0 nnear 0
+PH522 114 orth 2 bar 8 price 22 allow 16 on 0 pub 0 body 2
+MAG522 115 ph 4 on 0 near 0 fund 0 fuse 1 ttl 1 ti 14 ammo 7 bar 8 want 22 floor 16 bind 0 nbind 0 nnear 0
+MAG522 116 ph 4 on 0 near 0 fund 0 fuse 1 ttl 1 ti 24 ammo 7 bar 8 want 22 floor 16 bind 0 nbind 0 nnear 0
+MAG522 117 ph 4 on 0 near 0 fund 0 fuse 1 ttl 1 ti 16 ammo 5 bar 8 want 22 floor 16 bind 0 nbind 0 nnear 0
+MAG522 118 ph 4 on 0 near 0 fund 0 fuse 1 ttl 1 ti 16 ammo 5 bar 8 want 22 floor 16 bind 0 nbind 0 nnear 0
+MAG522 119 ph 4 on 0 near 0 fund 0 fuse 1 ttl 1 ti 16 ammo 5 bar 8 want 22 floor 16 bind 0 nbind 0 nnear 0
+MAG522 120 ph 4 on 0 near 0 fund 0 fuse 1 ttl 1 ti 26 ammo 5 bar 8 want 22 floor 16 bind 0 nbind 0 nnear 0
+MAG522 121 ph 4 on 0 near 0 fund 0 fuse 1 ttl 1 ti 16 ammo 5 bar 8 want 22 floor 16 bind 0 nbind 0 nnear 0
+MAG522 122 ph 4 on 0 near 0 fund 0 fuse 1 ttl 1 ti 16 ammo 5 bar 8 want 22 floor 16 bind 0 nbind 0 nnear 0
+MAG522 123 ph 4 on 0 near 0 fund 0 fuse 1 ttl 1 ti 16 ammo 5 bar 8 want 22 floor 16 bind 0 nbind 0 nnear 0
+PH522 123 orth 2 bar 8 price 22 allow 16 on 0 pub 0 body 1
+PH522 123 orth 2 bar 8 price 22 allow 16 on 0 pub 0 body 2
+MAG522 124 ph 5 on 0 near 0 fund 0 fuse 1 ttl 1 ti 26 ammo 5 bar 8 want 22 floor 16 bind 0 nbind 0 nnear 0
+MAG522 125 ph 4 on 0 near 0 fund 0 fuse 1 ttl 1 ti 16 ammo 5 bar 7 want 20 floor 14 bind 0 nbind 0 nnear 0
+MAG522 126 ph 4 on 0 near 0 fund 0 fuse 1 ttl 1 ti 14 ammo 7 bar 7 want 20 floor 14 bind 0 nbind 0 nnear 0
+MAG522 127 ph 4 on 0 near 0 fund 0 fuse 1 ttl 1 ti 14 ammo 7 bar 7 want 20 floor 14 bind 0 nbind 0 nnear 0
+PH522 127 orth 2 bar 7 price 20 allow 14 on 0 pub 0 body 1
+MAG522 128 ph 5 on 0 near 0 fund 0 fuse 1 ttl 1 ti 24 ammo 7 bar 7 want 20 floor 14 bind 0 nbind 0 nnear 0
+MAG522 129 ph 4 on 0 near 0 fund 0 fuse 1 ttl 1 ti 14 ammo 7 bar 7 want 20 floor 14 bind 0 nbind 0 nnear 0
+PH522 129 orth 2 bar 7 price 20 allow 14 on 0 pub 0 body 1
+MAG522 130 ph 5 on 0 near 0 fund 0 fuse 1 ttl 1 ti 14 ammo 7 bar 7 want 20 floor 14 bind 0 nbind 0 nnear 0
+MAG522 131 ph 4 on 0 near 0 fund 0 fuse 1 ttl 1 ti 14 ammo 7 bar 7 want 20 floor 14 bind 0 nbind 0 nnear 0
+PH522 131 orth 2 bar 7 price 20 allow 14 on 0 pub 0 body 1
+MAG522 132 ph 5 on 0 near 0 fund 0 fuse 1 ttl 1 ti 24 ammo 7 bar 7 want 20 floor 14 bind 0 nbind 0 nnear 0
+MAG522 133 ph 4 on 0 near 0 fund 0 fuse 1 ttl 1 ti 14 ammo 7 bar 7 want 20 floor 14 bind 0 nbind 0 nnear 0
+PH522 133 orth 2 bar 7 price 20 allow 14 on 0 pub 0 body 1
+MAG522 134 ph 5 on 0 near 0 fund 0 fuse 1 ttl 1 ti 14 ammo 7 bar 7 want 20 floor 14 bind 0 nbind 0 nnear 0
+MAG522 135 ph 4 on 0 near 0 fund 0 fuse 1 ttl 1 ti 14 ammo 7 bar 7 want 20 floor 14 bind 0 nbind 0 nnear 0
+PH522 135 orth 2 bar 7 price 20 allow 14 on 0 pub 0 body 1
+MAG522 136 ph 5 on 0 near 0 fund 0 fuse 1 ttl 1 ti 24 ammo 7 bar 7 want 20 floor 14 bind 0 nbind 0 nnear 0
+MAG522 137 ph 4 on 0 near 0 fund 0 fuse 1 ttl 1 ti 14 ammo 7 bar 7 want 20 floor 14 bind 0 nbind 0 nnear 0
+PH522 137 orth 2 bar 7 price 20 allow 14 on 0 pub 0 body 1
+MAG522 138 ph 5 on 0 near 0 fund 0 fuse 1 ttl 1 ti 14 ammo 7 bar 7 want 20 floor 14 bind 0 nbind 0 nnear 0
+MAG522 139 ph 4 on 0 near 0 fund 0 fuse 1 ttl 1 ti 14 ammo 7 bar 7 want 20 floor 14 bind 0 nbind 0 nnear 0
+PH522 139 orth 2 bar 7 price 20 allow 14 on 0 pub 0 body 1
+MAG522 140 ph 5 on 0 near 0 fund 0 fuse 1 ttl 1 ti 24 ammo 7 bar 7 want 20 floor 14 bind 0 nbind 0 nnear 0
+MAG522 141 ph 4 on 0 near 0 fund 0 fuse 1 ttl 1 ti 14 ammo 7 bar 7 want 20 floor 14 bind 0 nbind 0 nnear 0
+PH522 141 orth 2 bar 7 price 20 allow 14 on 0 pub 0 body 1
+MAG522 142 ph 5 on 0 near 0 fund 0 fuse 1 ttl 1 ti 14 ammo 7 bar 7 want 20 floor 14 bind 0 nbind 0 nnear 0
+PH522 142 orth 1 bar 7 price 13 allow 14 on 0 pub 0 body 1
+MAG522 143 ph 5 on 0 near 0 fund 0 fuse 1 ttl 1 ti 14 ammo 7 bar 7 want 20 floor 14 bind 0 nbind 0 nnear 0
+PH522 143 orth 2 bar 7 price 20 allow 14 on 0 pub 0 body 1
+MAG522 144 ph 5 on 0 near 0 fund 0 fuse 1 ttl 1 ti 24 ammo 7 bar 7 want 20 floor 14 bind 0 nbind 0 nnear 0
+PH522 144 orth 1 bar 7 price 13 allow 14 on 0 pub 0 body 1
+MAG522 145 ph 5 on 0 near 0 fund 0 fuse 1 ttl 1 ti 14 ammo 7 bar 7 want 20 floor 14 bind 0 nbind 0 nnear 0
+PH522 145 orth 2 bar 7 price 20 allow 14 on 0 pub 0 body 1
+MAG522 146 ph 5 on 0 near 0 fund 0 fuse 1 ttl 1 ti 14 ammo 7 bar 7 want 20 floor 14 bind 0 nbind 0 nnear 0
+PH522 146 orth 1 bar 7 price 13 allow 14 on 0 pub 0 body 1
+MAG522 147 ph 5 on 0 near 0 fund 0 fuse 1 ttl 1 ti 14 ammo 7 bar 7 want 20 floor 14 bind 0 nbind 0 nnear 0
+PH522 147 orth 2 bar 7 price 20 allow 14 on 0 pub 0 body 1
+MAG522 148 ph 5 on 0 near 0 fund 0 fuse 1 ttl 1 ti 24 ammo 7 bar 7 want 20 floor 14 bind 0 nbind 0 nnear 0
+PH522 148 orth 1 bar 7 price 13 allow 14 on 0 pub 0 body 1
+MAG522 149 ph 5 on 0 near 0 fund 0 fuse 1 ttl 1 ti 14 ammo 7 bar 7 want 20 floor 14 bind 0 nbind 0 nnear 0
+MAG522 150 ph 5 on 0 near 0 fund 0 fuse 1 ttl 1 ti 14 ammo 7 bar 7 want 20 floor 14 bind 0 nbind 0 nnear 0
+PH522 150 orth 2 bar 7 price 20 allow 14 on 0 pub 0 body 1
+MAG522 151 ph 5 on 0 near 0 fund 0 fuse 1 ttl 1 ti 14 ammo 7 bar 7 want 20 floor 14 bind 0 nbind 0 nnear 0
+PH522 151 orth 2 bar 7 price 20 allow 14 on 0 pub 0 body 1
+MAG522 152 ph 5 on 0 near 0 fund 0 fuse 1 ttl 1 ti 24 ammo 7 bar 7 want 20 floor 14 bind 0 nbind 0 nnear 0
+PH522 152 orth 2 bar 7 price 20 allow 14 on 0 pub 0 body 1
+MAG522 153 ph 5 on 0 near 0 fund 0 fuse 1 ttl 1 ti 14 ammo 7 bar 7 want 20 floor 14 bind 0 nbind 0 nnear 0
+PH522 153 orth 2 bar 7 price 20 allow 14 on 0 pub 0 body 1
+MAG522 154 ph 5 on 0 near 0 fund 0 fuse 1 ttl 1 ti 14 ammo 7 bar 7 want 20 floor 14 bind 0 nbind 0 nnear 0
+PH522 154 orth 2 bar 7 price 20 allow 14 on 0 pub 0 body 1
+MAG522 155 ph 5 on 0 near 0 fund 0 fuse 1 ttl 1 ti 14 ammo 7 bar 7 want 20 floor 14 bind 0 nbind 0 nnear 0
+PH522 155 orth 2 bar 7 price 20 allow 14 on 0 pub 0 body 1
+MAG522 156 ph 5 on 0 near 0 fund 0 fuse 1 ttl 1 ti 24 ammo 7 bar 7 want 20 floor 14 bind 0 nbind 0 nnear 0
+PH522 156 orth 2 bar 7 price 20 allow 14 on 0 pub 0 body 1
+MAG522 157 ph 5 on 0 near 0 fund 0 fuse 1 ttl 1 ti 14 ammo 7 bar 7 want 20 floor 14 bind 0 nbind 0 nnear 0
+PH522 157 orth 2 bar 7 price 20 allow 14 on 0 pub 0 body 1
+MAG522 158 ph 5 on 0 near 0 fund 0 fuse 1 ttl 1 ti 14 ammo 7 bar 7 want 20 floor 14 bind 0 nbind 0 nnear 0
+PH522 158 orth 2 bar 7 price 20 allow 14 on 0 pub 0 body 1
+MAG522 159 ph 5 on 0 near 0 fund 0 fuse 1 ttl 1 ti 14 ammo 7 bar 7 want 20 floor 14 bind 0 nbind 0 nnear 0
+PH522 159 orth 2 bar 7 price 20 allow 14 on 0 pub 0 body 1
+MAG522 160 ph 5 on 0 near 0 fund 0 fuse 1 ttl 1 ti 24 ammo 7 bar 7 want 20 floor 14 bind 0 nbind 0 nnear 0
+PH522 160 orth 2 bar 7 price 20 allow 14 on 0 pub 0 body 1
+MAG522 161 ph 5 on 0 near 0 fund 0 fuse 1 ttl 1 ti 14 ammo 7 bar 7 want 20 floor 14 bind 0 nbind 0 nnear 0
+PH522 161 orth 2 bar 7 price 20 allow 14 on 0 pub 0 body 1
+MAG522 162 ph 5 on 0 near 0 fund 0 fuse 1 ttl 1 ti 14 ammo 7 bar 6 want 18 floor 12 bind 0 nbind 0 nnear 0
+MAG522 163 ph 5 on 0 near 0 fund 0 fuse 1 ttl 1 ti 12 ammo 9 bar 6 want 18 floor 12 bind 0 nbind 0 nnear 0
+MAG522 164 ph 5 on 0 near 0 fund 0 fuse 1 ttl 1 ti 22 ammo 9 bar 6 want 18 floor 12 bind 0 nbind 0 nnear 0
+MAG522 165 ph 5 on 0 near 0 fund 0 fuse 1 ttl 1 ti 12 ammo 9 bar 6 want 18 floor 12 bind 0 nbind 0 nnear 0
+MAG522 166 ph 5 on 0 near 0 fund 0 fuse 1 ttl 1 ti 12 ammo 9 bar 6 want 18 floor 12 bind 0 nbind 0 nnear 0
+MAG522 167 ph 5 on 0 near 0 fund 0 fuse 1 ttl 1 ti 12 ammo 9 bar 6 want 18 floor 12 bind 0 nbind 0 nnear 0
+MAG522 168 ph 5 on 0 near 0 fund 0 fuse 1 ttl 1 ti 22 ammo 9 bar 6 want 18 floor 12 bind 0 nbind 0 nnear 0
+MAG522 169 ph 5 on 0 near 0 fund 0 fuse 1 ttl 1 ti 12 ammo 9 bar 6 want 18 floor 12 bind 0 nbind 0 nnear 0
+MAG522 170 ph 5 on 0 near 0 fund 0 fuse 1 ttl 1 ti 12 ammo 9 bar 6 want 18 floor 12 bind 0 nbind 0 nnear 0
+MAG522 171 ph 5 on 0 near 0 fund 0 fuse 1 ttl 1 ti 12 ammo 9 bar 6 want 18 floor 12 bind 0 nbind 0 nnear 0
+MAG522 172 ph 5 on 0 near 0 fund 0 fuse 1 ttl 1 ti 22 ammo 9 bar 6 want 18 floor 12 bind 0 nbind 0 nnear 0
+MAG522 173 ph 5 on 0 near 0 fund 0 fuse 1 ttl 1 ti 12 ammo 9 bar 6 want 18 floor 12 bind 0 nbind 0 nnear 0
+MAG522 174 ph 5 on 0 near 0 fund 0 fuse 1 ttl 1 ti 12 ammo 9 bar 6 want 18 floor 12 bind 0 nbind 0 nnear 0
+MAG522 175 ph 5 on 0 near 0 fund 0 fuse 1 ttl 1 ti 12 ammo 9 bar 6 want 18 floor 12 bind 0 nbind 0 nnear 0
+MAG522 176 ph 5 on 0 near 0 fund 0 fuse 1 ttl 1 ti 22 ammo 9 bar 6 want 18 floor 12 bind 0 nbind 0 nnear 0
+MAG522 177 ph 5 on 0 near 0 fund 0 fuse 1 ttl 1 ti 12 ammo 9 bar 6 want 18 floor 12 bind 0 nbind 0 nnear 0
+MAG522 178 ph 5 on 0 near 0 fund 0 fuse 1 ttl 1 ti 12 ammo 9 bar 6 want 18 floor 12 bind 0 nbind 0 nnear 0
+MAG522 179 ph 5 on 0 near 0 fund 0 fuse 1 ttl 1 ti 12 ammo 9 bar 6 want 18 floor 12 bind 0 nbind 0 nnear 0
+MAG522 180 ph 5 on 0 near 0 fund 0 fuse 1 ttl 1 ti 22 ammo 9 bar 6 want 18 floor 12 bind 0 nbind 0 nnear 0
+MAG522 181 ph 5 on 0 near 0 fund 0 fuse 1 ttl 1 ti 12 ammo 9 bar 6 want 18 floor 12 bind 0 nbind 0 nnear 0
+MAG522 182 ph 5 on 0 near 0 fund 0 fuse 1 ttl 1 ti 12 ammo 9 bar 6 want 18 floor 12 bind 0 nbind 0 nnear 0
+MAG522 183 ph 5 on 0 near 0 fund 0 fuse 1 ttl 1 ti 12 ammo 9 bar 6 want 18 floor 12 bind 0 nbind 0 nnear 0
+MAG522 184 ph 5 on 0 near 0 fund 0 fuse 1 ttl 1 ti 22 ammo 9 bar 6 want 18 floor 12 bind 0 nbind 0 nnear 0
+MAG522 185 ph 5 on 0 near 0 fund 0 fuse 1 ttl 1 ti 12 ammo 9 bar 6 want 18 floor 12 bind 0 nbind 0 nnear 0
+MAG522 186 ph 5 on 0 near 0 fund 0 fuse 1 ttl 1 ti 12 ammo 9 bar 6 want 18 floor 12 bind 0 nbind 0 nnear 0
+MAG522 187 ph 5 on 0 near 0 fund 0 fuse 1 ttl 1 ti 12 ammo 9 bar 6 want 18 floor 12 bind 0 nbind 0 nnear 0
+MAG522 188 ph 5 on 0 near 0 fund 0 fuse 1 ttl 1 ti 22 ammo 9 bar 6 want 18 floor 12 bind 0 nbind 0 nnear 0
+MAG522 189 ph 5 on 0 near 0 fund 0 fuse 1 ttl 1 ti 12 ammo 9 bar 6 want 18 floor 12 bind 0 nbind 0 nnear 0
+MAG522 190 ph 5 on 0 near 0 fund 0 fuse 1 ttl 1 ti 12 ammo 9 bar 6 want 18 floor 12 bind 0 nbind 0 nnear 0
+MAG522 191 ph 5 on 0 near 0 fund 0 fuse 1 ttl 1 ti 12 ammo 9 bar 6 want 18 floor 12 bind 0 nbind 0 nnear 0
+MAG522 192 ph 5 on 0 near 0 fund 0 fuse 1 ttl 1 ti 22 ammo 9 bar 6 want 18 floor 12 bind 0 nbind 0 nnear 0
+MAG522 193 ph 5 on 0 near 0 fund 0 fuse 1 ttl 1 ti 12 ammo 9 bar 6 want 18 floor 12 bind 0 nbind 0 nnear 0
+MAG522 194 ph 5 on 0 near 0 fund 0 fuse 1 ttl 1 ti 12 ammo 9 bar 6 want 18 floor 12 bind 0 nbind 0 nnear 0
+MAG522 195 ph 5 on 0 near 0 fund 0 fuse 1 ttl 1 ti 12 ammo 9 bar 6 want 18 floor 12 bind 0 nbind 0 nnear 0
+MAG522 196 ph 5 on 0 near 0 fund 0 fuse 1 ttl 1 ti 22 ammo 9 bar 6 want 18 floor 12 bind 0 nbind 0 nnear 0
+MAG522 197 ph 5 on 0 near 0 fund 0 fuse 1 ttl 1 ti 12 ammo 9 bar 6 want 18 floor 12 bind 0 nbind 0 nnear 0
+MAG522 198 ph 5 on 0 near 0 fund 0 fuse 1 ttl 1 ti 12 ammo 9 bar 6 want 18 floor 12 bind 0 nbind 0 nnear 0
+MAG522 199 ph 5 on 0 near 0 fund 0 fuse 1 ttl 1 ti 12 ammo 9 bar 6 want 18 floor 12 bind 0 nbind 0 nnear 0
+MAG522 200 ph 5 on 0 near 0 fund 0 fuse 1 ttl 1 ti 22 ammo 9 bar 6 want 18 floor 12 bind 0 nbind 0 nnear 0
+MAG522 201 ph 5 on 0 near 0 fund 0 fuse 1 ttl 1 ti 12 ammo 9 bar 6 want 18 floor 12 bind 0 nbind 0 nnear 0
+MAG522 202 ph 5 on 0 near 0 fund 0 fuse 1 ttl 1 ti 12 ammo 9 bar 6 want 18 floor 12 bind 0 nbind 0 nnear 0
+MAG522 203 ph 5 on 0 near 0 fund 0 fuse 1 ttl 1 ti 12 ammo 9 bar 6 want 18 floor 12 bind 0 nbind 0 nnear 0
+MAG522 204 ph 5 on 0 near 0 fund 0 fuse 1 ttl 1 ti 22 ammo 9 bar 6 want 18 floor 12 bind 0 nbind 0 nnear 0
+MAG522 205 ph 5 on 0 near 0 fund 0 fuse 1 ttl 1 ti 12 ammo 9 bar 6 want 18 floor 12 bind 0 nbind 0 nnear 0
+MAG522 206 ph 5 on 0 near 0 fund 0 fuse 1 ttl 1 ti 12 ammo 9 bar 6 want 18 floor 12 bind 0 nbind 0 nnear 0
+MAG522 207 ph 5 on 0 near 0 fund 0 fuse 1 ttl 1 ti 12 ammo 9 bar 6 want 18 floor 12 bind 0 nbind 0 nnear 0
+MAG522 208 ph 5 on 0 near 0 fund 0 fuse 1 ttl 1 ti 22 ammo 9 bar 6 want 18 floor 12 bind 0 nbind 0 nnear 0
+MAG522 209 ph 5 on 0 near 0 fund 0 fuse 1 ttl 1 ti 12 ammo 9 bar 6 want 18 floor 12 bind 0 nbind 0 nnear 0
+MAG522 210 ph 5 on 0 near 0 fund 0 fuse 1 ttl 1 ti 12 ammo 9 bar 6 want 18 floor 12 bind 0 nbind 0 nnear 0
+MAG522 211 ph 5 on 0 near 0 fund 0 fuse 1 ttl 1 ti 12 ammo 9 bar 6 want 18 floor 12 bind 0 nbind 0 nnear 0
+MAG522 212 ph 5 on 0 near 0 fund 0 fuse 1 ttl 1 ti 22 ammo 9 bar 6 want 18 floor 12 bind 0 nbind 0 nnear 0
+MAG522 213 ph 5 on 0 near 0 fund 0 fuse 1 ttl 1 ti 12 ammo 9 bar 6 want 18 floor 12 bind 0 nbind 0 nnear 0
+MAG522 214 ph 5 on 0 near 0 fund 0 fuse 1 ttl 1 ti 12 ammo 9 bar 6 want 18 floor 12 bind 0 nbind 0 nnear 0
+MAG522 215 ph 5 on 0 near 0 fund 0 fuse 1 ttl 1 ti 12 ammo 9 bar 6 want 18 floor 12 bind 0 nbind 0 nnear 0
+MAG522 216 ph 5 on 0 near 0 fund 0 fuse 1 ttl 1 ti 22 ammo 9 bar 6 want 18 floor 12 bind 0 nbind 0 nnear 0

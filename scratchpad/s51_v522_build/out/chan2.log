@@ -1,0 +1,16 @@
+atoll A  A_reads=SAME  B_phaseval=SAME  MECH_floor=SAME
+atoll B  A_reads=SAME  B_phaseval=DIFF  MECH_floor=DIFF
+drakkarfjord A  A_reads=SAME  B_phaseval=DIFF  MECH_floor=DIFF
+drakkarfjord B  A_reads=SAME  B_phaseval=DIFF  MECH_floor=DIFF
+glacierkeep A  A_reads=SAME  B_phaseval=DIFF  MECH_floor=DIFF
+glacierkeep B  A_reads=SAME  B_phaseval=SAME  MECH_floor=SAME
+midgard A  A_reads=SAME  B_phaseval=SAME  MECH_floor=SAME
+midgard B  A_reads=SAME  B_phaseval=SAME  MECH_floor=SAME
+nordkap A  A_reads=SAME  B_phaseval=DIFF  MECH_floor=DIFF
+nordkap B  A_reads=SAME  B_phaseval=SAME  MECH_floor=SAME
+yulerune A  A_reads=SAME  B_phaseval=SAME  MECH_floor=SAME
+yulerune B  A_reads=SAME  B_phaseval=SAME  MECH_floor=SAME
+(A) parent vs PROBE  [extra engine reads]  : identical 12 / differing 0
+(B) PROBE  vs CHAN   [the phase VALUE]     : identical 7 / differing 5
+(M) CHAN   vs FIRED  [THE FLOOR ITSELF]    : identical 7 / differing 5
+CHANDONE

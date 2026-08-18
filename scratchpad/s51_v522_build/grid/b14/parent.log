@@ -1,0 +1,36 @@
+atoll_s40_A	atoll	40	A	OPP	_v488beltbreak2	Core destroyed	929	0	4610	2360
+atoll_s40_B	atoll	40	B	US	parent	Core destroyed	613	0	290	2220
+atoll_s41_A	atoll	41	A	US	parent	Core destroyed	220	0	1370	530
+atoll_s41_B	atoll	41	B	US	parent	Core destroyed	127	0	600	390
+atoll_s42_A	atoll	42	A	OPP	_v488beltbreak2	Core destroyed	401	0	1610	2190
+atoll_s42_B	atoll	42	B	OPP	_v488beltbreak2	Core destroyed	369	0	1060	950
+drakkarfjord_s40_A	drakkarfjord	40	A	OPP	_v488beltbreak2	Core destroyed	291	0	530	2410
+drakkarfjord_s40_B	drakkarfjord	40	B	US	parent	Core destroyed	98	0	300	0
+drakkarfjord_s41_A	drakkarfjord	41	A	US	parent	Core destroyed	99	0	390	0
+drakkarfjord_s41_B	drakkarfjord	41	B	US	parent	Core destroyed	122	0	350	0
+drakkarfjord_s42_A	drakkarfjord	42	A	OPP	_v488beltbreak2	Titanium collected (tiebreak)	1000	0	310	370
+drakkarfjord_s42_B	drakkarfjord	42	B	US	parent	Core destroyed	117	0	360	0
+glacierkeep_s40_A	glacierkeep	40	A	OPP	_v488beltbreak2	Core destroyed	601	0	320	210
+glacierkeep_s40_B	glacierkeep	40	B	US	parent	Core destroyed	445	0	0	0
+glacierkeep_s41_A	glacierkeep	41	A	US	parent	Core destroyed	127	0	310	0
+glacierkeep_s41_B	glacierkeep	41	B	US	parent	Core destroyed	225	0	0	0
+glacierkeep_s42_A	glacierkeep	42	A	US	parent	Core destroyed	180	0	780	260
+glacierkeep_s42_B	glacierkeep	42	B	US	parent	Core destroyed	445	0	0	0
+midgard_s40_A	midgard	40	A	US	parent	Titanium collected (tiebreak)	1000	0	1340	830
+midgard_s40_B	midgard	40	B	US	parent	Core destroyed	350	0	2110	650
+midgard_s41_A	midgard	41	A	US	parent	Core destroyed	200	0	2510	530
+midgard_s41_B	midgard	41	B	OPP	_v488beltbreak2	Core destroyed	333	0	590	1140
+midgard_s42_A	midgard	42	A	OPP	_v488beltbreak2	Core destroyed	135	0	680	1310
+midgard_s42_B	midgard	42	B	US	parent	Core destroyed	685	0	1320	1200
+nordkap_s40_A	nordkap	40	A	US	parent	Core destroyed	137	0	460	70
+nordkap_s40_B	nordkap	40	B	OPP	_v488beltbreak2	Titanium collected (tiebreak)	1000	0	110	260
+nordkap_s41_A	nordkap	41	A	US	parent	Core destroyed	157	0	110	0
+nordkap_s41_B	nordkap	41	B	US	parent	Core destroyed	183	0	430	160
+nordkap_s42_A	nordkap	42	A	OPP	_v488beltbreak2	Core destroyed	454	0	120	1190
+nordkap_s42_B	nordkap	42	B	US	parent	Core destroyed	604	0	2460	1570
+yulerune_s40_A	yulerune	40	A	US	parent	Core destroyed	413	0	670	300
+yulerune_s40_B	yulerune	40	B	US	parent	Core destroyed	253	0	510	390
+yulerune_s41_A	yulerune	41	A	OPP	_v488beltbreak2	Core destroyed	361	0	2930	3680
+yulerune_s41_B	yulerune	41	B	US	parent	Core destroyed	628	0	1370	190
+yulerune_s42_A	yulerune	42	A	US	parent	Core destroyed	773	0	240	310
+yulerune_s42_B	yulerune	42	B	OPP	_v488beltbreak2	Core destroyed	183	0	420	670

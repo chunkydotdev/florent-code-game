@@ -1,0 +1,19 @@
+Running match: parent vs _v488beltbreak2
+  Map: yulerune.map26  Seed: 13  Replay: 
+scratchpad/s51_v522_build/grid/b5/repparent/yulerune_s13_A.replay26  TLE: 10ms
+Completed turn 0
+Completed turn 100
+Completed turn 200
+Completed turn 300
+Completed turn 400
+Completed turn 500
+Replay written to 
+scratchpad/s51_v522_build/grid/b5/repparent/yulerune_s13_A.replay26
+
+  Winner: parent  (Core destroyed, turn 527)
+
+                         parent     _v488beltbreak2  
+  Titanium     177 (4760 mined)    285 (1940 mined)  
+  Units                      24                  13  
+  Buildings                  59                  40  
+

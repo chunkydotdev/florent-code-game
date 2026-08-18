@@ -1,0 +1,36 @@
+atoll_s525_A	atoll	525	A	OPP	_v488beltbreak2	Core destroyed	609	0	2060	4910
+atoll_s525_B	atoll	525	B	OPP	_v488beltbreak2	Core destroyed	233	0	280	1120
+atoll_s526_A	atoll	526	A	US	iCREW	Core destroyed	119	0	400	100
+atoll_s526_B	atoll	526	B	OPP	_v488beltbreak2	Core destroyed	188	0	1250	880
+atoll_s527_A	atoll	527	A	US	iCREW	Core destroyed	194	0	1410	250
+atoll_s527_B	atoll	527	B	OPP	_v488beltbreak2	Core destroyed	407	0	270	1470
+drakkarfjord_s525_A	drakkarfjord	525	A	US	iCREW	Core destroyed	141	0	670	80
+drakkarfjord_s525_B	drakkarfjord	525	B	OPP	_v488beltbreak2	Core destroyed	521	0	240	0
+drakkarfjord_s526_A	drakkarfjord	526	A	US	iCREW	Core destroyed	100	0	430	0
+drakkarfjord_s526_B	drakkarfjord	526	B	US	iCREW	Core destroyed	100	0	280	0
+drakkarfjord_s527_A	drakkarfjord	527	A	US	iCREW	Core destroyed	92	0	330	0
+drakkarfjord_s527_B	drakkarfjord	527	B	US	iCREW	Core destroyed	117	0	360	0
+glacierkeep_s525_A	glacierkeep	525	A	OPP	_v488beltbreak2	Titanium collected (tiebreak)	1000	0	230	6150
+glacierkeep_s525_B	glacierkeep	525	B	OPP	_v488beltbreak2	Titanium collected (tiebreak)	1000	0	290	1430
+glacierkeep_s526_A	glacierkeep	526	A	US	iCREW	Core destroyed	557	0	980	0
+glacierkeep_s526_B	glacierkeep	526	B	OPP	_v488beltbreak2	Core destroyed	617	0	320	0
+glacierkeep_s527_A	glacierkeep	527	A	US	iCREW	Core destroyed	157	0	330	120
+glacierkeep_s527_B	glacierkeep	527	B	US	iCREW	Core destroyed	245	0	0	0
+midgard_s525_A	midgard	525	A	US	iCREW	Core destroyed	185	0	1110	700
+midgard_s525_B	midgard	525	B	OPP	_v488beltbreak2	Core destroyed	257	0	590	440
+midgard_s526_A	midgard	526	A	US	iCREW	Core destroyed	331	0	2680	690
+midgard_s526_B	midgard	526	B	OPP	_v488beltbreak2	Core destroyed	931	0	770	2090
+midgard_s527_A	midgard	527	A	US	iCREW	Titanium collected (tiebreak)	1000	0	880	740
+midgard_s527_B	midgard	527	B	OPP	_v488beltbreak2	Core destroyed	193	0	630	710
+nordkap_s525_A	nordkap	525	A	OPP	_v488beltbreak2	Core destroyed	491	0	1900	2430
+nordkap_s525_B	nordkap	525	B	OPP	_v488beltbreak2	Core destroyed	348	0	580	1910
+nordkap_s526_A	nordkap	526	A	US	iCREW	Core destroyed	181	0	500	90
+nordkap_s526_B	nordkap	526	B	US	iCREW	Core destroyed	201	0	120	160
+nordkap_s527_A	nordkap	527	A	US	iCREW	Core destroyed	169	0	240	130
+nordkap_s527_B	nordkap	527	B	OPP	_v488beltbreak2	Core destroyed	700	0	150	920
+yulerune_s525_A	yulerune	525	A	OPP	_v488beltbreak2	Core destroyed	284	0	2880	3690
+yulerune_s525_B	yulerune	525	B	OPP	_v488beltbreak2	Core destroyed	250	0	310	2650
+yulerune_s526_A	yulerune	526	A	US	iCREW	Core destroyed	244	0	800	1280
+yulerune_s526_B	yulerune	526	B	US	iCREW	Core destroyed	200	0	1390	480
+yulerune_s527_A	yulerune	527	A	OPP	_v488beltbreak2	Core destroyed	401	0	430	560
+yulerune_s527_B	yulerune	527	B	OPP	_v488beltbreak2	Titanium collected (tiebreak)	1000	0	250	300

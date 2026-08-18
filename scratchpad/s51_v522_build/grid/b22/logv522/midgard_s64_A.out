@@ -1,0 +1,17 @@
+Running match: _v522floor vs _v488beltbreak2
+  Map: midgard.map26  Seed: 64  Replay: 
+scratchpad/s51_v522_build/grid/b22/repv522/midgard_s64_A.replay26  TLE: 10ms
+Completed turn 0
+Completed turn 100
+Completed turn 200
+Completed turn 300
+Replay written to 
+scratchpad/s51_v522_build/grid/b22/repv522/midgard_s64_A.replay26
+
+  Winner: _v488beltbreak2  (Core destroyed, turn 312)
+
+                   _v522floor    _v488beltbreak2  
+  Titanium     22 (770 mined)    77 (1930 mined)  
+  Units                     3                 15  
+  Buildings                32                 31  
+

@@ -1,0 +1,36 @@
+atoll_s519_A	atoll	519	A	US	parent	Core destroyed	144	0	690	220
+atoll_s519_B	atoll	519	B	US	parent	Core destroyed	445	0	710	670
+atoll_s520_A	atoll	520	A	US	parent	Core destroyed	326	0	1600	420
+atoll_s520_B	atoll	520	B	OPP	_v488beltbreak2	Core destroyed	191	0	930	930
+atoll_s521_A	atoll	521	A	OPP	_v488beltbreak2	Core destroyed	356	0	1690	1250
+atoll_s521_B	atoll	521	B	OPP	_v488beltbreak2	Core destroyed	220	0	210	700
+drakkarfjord_s519_A	drakkarfjord	519	A	US	parent	Titanium collected (tiebreak)	1000	0	340	260
+drakkarfjord_s519_B	drakkarfjord	519	B	US	parent	Core destroyed	287	0	1480	0
+drakkarfjord_s520_A	drakkarfjord	520	A	OPP	_v488beltbreak2	Titanium collected (tiebreak)	1000	0	6510	10590
+drakkarfjord_s520_B	drakkarfjord	520	B	US	parent	Core destroyed	614	0	3650	0
+drakkarfjord_s521_A	drakkarfjord	521	A	US	parent	Core destroyed	99	0	390	0
+drakkarfjord_s521_B	drakkarfjord	521	B	US	parent	Core destroyed	461	0	420	0
+glacierkeep_s519_A	glacierkeep	519	A	OPP	_v488beltbreak2	Core destroyed	609	0	280	0
+glacierkeep_s519_B	glacierkeep	519	B	US	parent	Core destroyed	225	0	0	0
+glacierkeep_s520_A	glacierkeep	520	A	OPP	_v488beltbreak2	Core destroyed	476	0	360	2250
+glacierkeep_s520_B	glacierkeep	520	B	US	parent	Core destroyed	225	0	0	0
+glacierkeep_s521_A	glacierkeep	521	A	US	parent	Core destroyed	157	0	330	120
+glacierkeep_s521_B	glacierkeep	521	B	US	parent	Core destroyed	245	0	0	0
+midgard_s519_A	midgard	519	A	OPP	_v488beltbreak2	Core destroyed	245	0	560	1100
+midgard_s519_B	midgard	519	B	OPP	_v488beltbreak2	Core destroyed	165	0	560	980
+midgard_s520_A	midgard	520	A	OPP	_v488beltbreak2	Core destroyed	597	0	680	790
+midgard_s520_B	midgard	520	B	OPP	_v488beltbreak2	Core destroyed	333	0	590	1140
+midgard_s521_A	midgard	521	A	US	parent	Core destroyed	461	0	630	650
+midgard_s521_B	midgard	521	B	US	parent	Titanium collected (tiebreak)	1000	0	810	550
+nordkap_s519_A	nordkap	519	A	OPP	_v488beltbreak2	Core destroyed	205	0	820	2110
+nordkap_s519_B	nordkap	519	B	OPP	_v488beltbreak2	Titanium collected (tiebreak)	1000	0	60	2450
+nordkap_s520_A	nordkap	520	A	OPP	_v488beltbreak2	Core destroyed	913	0	560	2330
+nordkap_s520_B	nordkap	520	B	OPP	_v488beltbreak2	Core destroyed	309	0	90	60
+nordkap_s521_A	nordkap	521	A	OPP	_v488beltbreak2	Core destroyed	262	0	90	3440
+nordkap_s521_B	nordkap	521	B	OPP	_v488beltbreak2	Core destroyed	206	0	210	1800
+yulerune_s519_A	yulerune	519	A	OPP	_v488beltbreak2	Core destroyed	176	0	270	1060
+yulerune_s519_B	yulerune	519	B	OPP	_v488beltbreak2	Core destroyed	545	0	440	370
+yulerune_s520_A	yulerune	520	A	US	parent	Core destroyed	347	0	1870	1090
+yulerune_s520_B	yulerune	520	B	OPP	_v488beltbreak2	Core destroyed	233	0	790	810
+yulerune_s521_A	yulerune	521	A	OPP	_v488beltbreak2	Core destroyed	173	0	300	1840
+yulerune_s521_B	yulerune	521	B	OPP	_v488beltbreak2	Core destroyed	691	0	380	1670

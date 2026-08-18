@@ -1,0 +1,37 @@
+tag	map	seed	seat	ours	winner	cond	turn	tracebacks	ours_mined	opp_mined
+atoll_s828_A	atoll	828	A	US	parentB	Core destroyed	364	0	1790	60
+atoll_s828_B	atoll	828	B	US	parentB	Core destroyed	200	0	1580	940
+atoll_s829_A	atoll	829	A	OPP	_v488beltbreak2	Core destroyed	203	0	650	2020
+atoll_s829_B	atoll	829	B	OPP	_v488beltbreak2	Core destroyed	177	0	270	1690
+atoll_s830_A	atoll	830	A	US	parentB	Core destroyed	189	0	610	330
+atoll_s830_B	atoll	830	B	OPP	_v488beltbreak2	Core destroyed	281	0	810	760
+drakkarfjord_s828_A	drakkarfjord	828	A	US	parentB	Titanium collected (tiebreak)	1000	0	310	0
+drakkarfjord_s828_B	drakkarfjord	828	B	US	parentB	Core destroyed	98	0	320	0
+drakkarfjord_s829_A	drakkarfjord	829	A	US	parentB	Core destroyed	100	0	430	0
+drakkarfjord_s829_B	drakkarfjord	829	B	US	parentB	Core destroyed	101	0	280	0
+drakkarfjord_s830_A	drakkarfjord	830	A	US	parentB	Core destroyed	121	0	300	0
+drakkarfjord_s830_B	drakkarfjord	830	B	US	parentB	Core destroyed	321	0	3630	0
+glacierkeep_s828_A	glacierkeep	828	A	US	parentB	Core destroyed	116	0	450	0
+glacierkeep_s828_B	glacierkeep	828	B	US	parentB	Titanium collected (tiebreak)	1000	0	1270	0
+glacierkeep_s829_A	glacierkeep	829	A	OPP	_v488beltbreak2	Core destroyed	797	0	330	4530
+glacierkeep_s829_B	glacierkeep	829	B	US	parentB	Core destroyed	281	0	0	0
+glacierkeep_s830_A	glacierkeep	830	A	US	parentB	Core destroyed	143	0	410	0
+glacierkeep_s830_B	glacierkeep	830	B	US	parentB	Core destroyed	217	0	0	0
+midgard_s828_A	midgard	828	A	US	parentB	Core destroyed	237	0	990	750
+midgard_s828_B	midgard	828	B	OPP	_v488beltbreak2	Core destroyed	239	0	2110	1720
+midgard_s829_A	midgard	829	A	US	parentB	Core destroyed	198	0	1550	730
+midgard_s829_B	midgard	829	B	OPP	_v488beltbreak2	Core destroyed	698	0	2010	3330
+midgard_s830_A	midgard	830	A	OPP	_v488beltbreak2	Core destroyed	216	0	640	1130
+midgard_s830_B	midgard	830	B	OPP	_v488beltbreak2	Core destroyed	290	0	570	1420
+nordkap_s828_A	nordkap	828	A	US	parentB	Core destroyed	132	0	310	60
+nordkap_s828_B	nordkap	828	B	OPP	_v488beltbreak2	Titanium collected (tiebreak)	1000	0	130	150
+nordkap_s829_A	nordkap	829	A	US	parentB	Core destroyed	453	0	110	100
+nordkap_s829_B	nordkap	829	B	OPP	_v488beltbreak2	Core destroyed	195	0	140	2180
+nordkap_s830_A	nordkap	830	A	OPP	_v488beltbreak2	Core destroyed	337	0	120	90
+nordkap_s830_B	nordkap	830	B	OPP	_v488beltbreak2	Core destroyed	354	0	2030	5320
+yulerune_s828_A	yulerune	828	A	US	parentB	Core destroyed	217	0	1280	300
+yulerune_s828_B	yulerune	828	B	OPP	_v488beltbreak2	Core destroyed	247	0	430	1180
+yulerune_s829_A	yulerune	829	A	US	parentB	Core destroyed	372	0	3760	290
+yulerune_s829_B	yulerune	829	B	US	parentB	Core destroyed	152	0	1300	360
+yulerune_s830_A	yulerune	830	A	US	parentB	Core destroyed	282	0	690	450
+yulerune_s830_B	yulerune	830	B	OPP	_v488beltbreak2	Core destroyed	188	0	360	780

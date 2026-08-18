@@ -1,0 +1,36 @@
+atoll_s531_A	atoll	531	A	US	iCOREFUND	Core destroyed	185	0	1180	260
+atoll_s531_B	atoll	531	B	US	iCOREFUND	Core destroyed	525	0	430	850
+atoll_s532_A	atoll	532	A	OPP	_v488beltbreak2	Titanium collected (tiebreak)	1000	0	7320	9280
+atoll_s532_B	atoll	532	B	US	iCOREFUND	Core destroyed	375	0	1820	1040
+atoll_s533_A	atoll	533	A	US	iCOREFUND	Core destroyed	245	0	1220	280
+atoll_s533_B	atoll	533	B	OPP	_v488beltbreak2	Core destroyed	271	0	330	730
+drakkarfjord_s531_A	drakkarfjord	531	A	US	iCOREFUND	Core destroyed	141	0	670	80
+drakkarfjord_s531_B	drakkarfjord	531	B	US	iCOREFUND	Core destroyed	125	0	360	0
+drakkarfjord_s532_A	drakkarfjord	532	A	US	iCOREFUND	Core destroyed	103	0	300	0
+drakkarfjord_s532_B	drakkarfjord	532	B	US	iCOREFUND	Core destroyed	149	0	340	0
+drakkarfjord_s533_A	drakkarfjord	533	A	US	iCOREFUND	Core destroyed	100	0	420	0
+drakkarfjord_s533_B	drakkarfjord	533	B	US	iCOREFUND	Titanium collected (tiebreak)	1000	0	330	0
+glacierkeep_s531_A	glacierkeep	531	A	US	iCOREFUND	Core destroyed	162	0	350	130
+glacierkeep_s531_B	glacierkeep	531	B	OPP	_v488beltbreak2	Core destroyed	769	0	0	0
+glacierkeep_s532_A	glacierkeep	532	A	US	iCOREFUND	Core destroyed	127	0	310	0
+glacierkeep_s532_B	glacierkeep	532	B	OPP	_v488beltbreak2	Titanium collected (tiebreak)	1000	0	290	1430
+glacierkeep_s533_A	glacierkeep	533	A	US	iCOREFUND	Core destroyed	127	0	310	0
+glacierkeep_s533_B	glacierkeep	533	B	US	iCOREFUND	Core destroyed	217	0	0	0
+midgard_s531_A	midgard	531	A	US	iCOREFUND	Core destroyed	454	0	2550	1640
+midgard_s531_B	midgard	531	B	US	iCOREFUND	Core destroyed	305	0	3960	730
+midgard_s532_A	midgard	532	A	OPP	_v488beltbreak2	Core destroyed	321	0	730	500
+midgard_s532_B	midgard	532	B	US	iCOREFUND	Core destroyed	475	0	4590	630
+midgard_s533_A	midgard	533	A	OPP	_v488beltbreak2	Core destroyed	282	0	710	2110
+midgard_s533_B	midgard	533	B	OPP	_v488beltbreak2	Core destroyed	244	0	570	1710
+nordkap_s531_A	nordkap	531	A	US	iCOREFUND	Core destroyed	168	0	400	200
+nordkap_s531_B	nordkap	531	B	OPP	_v488beltbreak2	Core destroyed	826	0	90	340
+nordkap_s532_A	nordkap	532	A	US	iCOREFUND	Core destroyed	140	0	340	40
+nordkap_s532_B	nordkap	532	B	US	iCOREFUND	Core destroyed	121	0	270	10
+nordkap_s533_A	nordkap	533	A	US	iCOREFUND	Core destroyed	108	0	260	40
+nordkap_s533_B	nordkap	533	B	OPP	_v488beltbreak2	Core destroyed	309	0	90	60
+yulerune_s531_A	yulerune	531	A	US	iCOREFUND	Core destroyed	196	0	2530	230
+yulerune_s531_B	yulerune	531	B	US	iCOREFUND	Core destroyed	341	0	2350	3090
+yulerune_s532_A	yulerune	532	A	US	iCOREFUND	Core destroyed	548	0	3100	360
+yulerune_s532_B	yulerune	532	B	OPP	_v488beltbreak2	Core destroyed	257	0	350	2510
+yulerune_s533_A	yulerune	533	A	US	iCOREFUND	Core destroyed	236	0	2560	270
+yulerune_s533_B	yulerune	533	B	OPP	_v488beltbreak2	Core destroyed	212	0	290	1930

@@ -1,0 +1,36 @@
+atoll_s516_A	atoll	516	A	US	iNOPHASE	Core destroyed	124	0	560	220
+atoll_s516_B	atoll	516	B	US	iNOPHASE	Core destroyed	435	0	3530	3700
+atoll_s517_A	atoll	517	A	US	iNOPHASE	Core destroyed	396	0	1950	40
+atoll_s517_B	atoll	517	B	US	iNOPHASE	Core destroyed	449	0	3010	2210
+atoll_s518_A	atoll	518	A	OPP	_v488beltbreak2	Titanium collected (tiebreak)	1000	0	2610	2790
+atoll_s518_B	atoll	518	B	US	iNOPHASE	Core destroyed	430	0	2130	2830
+drakkarfjord_s516_A	drakkarfjord	516	A	US	iNOPHASE	Core destroyed	141	0	600	80
+drakkarfjord_s516_B	drakkarfjord	516	B	US	iNOPHASE	Core destroyed	98	0	320	0
+drakkarfjord_s517_A	drakkarfjord	517	A	US	iNOPHASE	Core destroyed	121	0	500	0
+drakkarfjord_s517_B	drakkarfjord	517	B	US	iNOPHASE	Titanium collected (tiebreak)	1000	0	420	0
+drakkarfjord_s518_A	drakkarfjord	518	A	US	iNOPHASE	Titanium collected (tiebreak)	1000	0	660	190
+drakkarfjord_s518_B	drakkarfjord	518	B	US	iNOPHASE	Titanium collected (tiebreak)	1000	0	520	0
+glacierkeep_s516_A	glacierkeep	516	A	US	iNOPHASE	Core destroyed	173	0	170	0
+glacierkeep_s516_B	glacierkeep	516	B	OPP	_v488beltbreak2	Core destroyed	769	0	0	0
+glacierkeep_s517_A	glacierkeep	517	A	US	iNOPHASE	Core destroyed	110	0	230	0
+glacierkeep_s517_B	glacierkeep	517	B	OPP	_v488beltbreak2	Core destroyed	585	0	0	290
+glacierkeep_s518_A	glacierkeep	518	A	US	iNOPHASE	Core destroyed	201	0	560	0
+glacierkeep_s518_B	glacierkeep	518	B	US	iNOPHASE	Core destroyed	245	0	0	0
+midgard_s516_A	midgard	516	A	OPP	_v488beltbreak2	Core destroyed	243	0	550	2370
+midgard_s516_B	midgard	516	B	US	iNOPHASE	Core destroyed	183	0	1730	760
+midgard_s517_A	midgard	517	A	US	iNOPHASE	Core destroyed	465	0	780	1070
+midgard_s517_B	midgard	517	B	US	iNOPHASE	Core destroyed	330	0	2640	650
+midgard_s518_A	midgard	518	A	OPP	_v488beltbreak2	Core destroyed	481	0	700	650
+midgard_s518_B	midgard	518	B	OPP	_v488beltbreak2	Core destroyed	132	0	580	1120
+nordkap_s516_A	nordkap	516	A	US	iNOPHASE	Core destroyed	679	0	3020	70
+nordkap_s516_B	nordkap	516	B	OPP	_v488beltbreak2	Core destroyed	272	0	1040	4150
+nordkap_s517_A	nordkap	517	A	US	iNOPHASE	Core destroyed	175	0	530	110
+nordkap_s517_B	nordkap	517	B	US	iNOPHASE	Core destroyed	673	0	4620	9140
+nordkap_s518_A	nordkap	518	A	US	iNOPHASE	Core destroyed	184	0	710	100
+nordkap_s518_B	nordkap	518	B	US	iNOPHASE	Core destroyed	107	0	240	80
+yulerune_s516_A	yulerune	516	A	OPP	_v488beltbreak2	Core destroyed	148	0	260	600
+yulerune_s516_B	yulerune	516	B	OPP	_v488beltbreak2	Core destroyed	216	0	270	1600
+yulerune_s517_A	yulerune	517	A	US	iNOPHASE	Core destroyed	386	0	2970	290
+yulerune_s517_B	yulerune	517	B	OPP	_v488beltbreak2	Core destroyed	748	0	240	4910
+yulerune_s518_A	yulerune	518	A	US	iNOPHASE	Core destroyed	466	0	3250	510
+yulerune_s518_B	yulerune	518	B	US	iNOPHASE	Core destroyed	336	0	3120	1310

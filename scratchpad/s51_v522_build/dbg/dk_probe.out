@@ -1,0 +1,13 @@
+Running match: dbg_probe vs c_opp
+  Map: drakkarfjord.map26  Seed: 7  Replay: 
+scratchpad/s51_v522_build/dbg/dk_probe.replay26  TLE: 10ms
+Completed turn 0
+Replay written to scratchpad/s51_v522_build/dbg/dk_probe.replay26
+
+  Winner: dbg_probe  (Core destroyed, turn 88)
+
+                    dbg_probe           c_opp  
+  Titanium     22 (330 mined)    20 (0 mined)  
+  Units                     5               7  
+  Buildings                24              23  
+

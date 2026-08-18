@@ -1,0 +1,36 @@
+atoll_s28_A	atoll	28	A	OPP	_v488beltbreak2	Core destroyed	777	0	3600	3850
+atoll_s28_B	atoll	28	B	OPP	_v488beltbreak2	Core destroyed	327	0	230	1640
+atoll_s29_A	atoll	29	A	US	_v522floor	Core destroyed	116	0	610	160
+atoll_s29_B	atoll	29	B	US	_v522floor	Core destroyed	119	0	570	320
+atoll_s30_A	atoll	30	A	OPP	_v488beltbreak2	Core destroyed	458	0	1620	2250
+atoll_s30_B	atoll	30	B	US	_v522floor	Core destroyed	238	0	1100	2100
+drakkarfjord_s28_A	drakkarfjord	28	A	US	_v522floor	Core destroyed	99	0	290	0
+drakkarfjord_s28_B	drakkarfjord	28	B	US	_v522floor	Core destroyed	96	0	320	0
+drakkarfjord_s29_A	drakkarfjord	29	A	US	_v522floor	Core destroyed	90	0	280	0
+drakkarfjord_s29_B	drakkarfjord	29	B	US	_v522floor	Core destroyed	125	0	360	0
+drakkarfjord_s30_A	drakkarfjord	30	A	US	_v522floor	Core destroyed	88	0	270	0
+drakkarfjord_s30_B	drakkarfjord	30	B	US	_v522floor	Core destroyed	417	0	1340	0
+glacierkeep_s28_A	glacierkeep	28	A	US	_v522floor	Core destroyed	180	0	780	260
+glacierkeep_s28_B	glacierkeep	28	B	US	_v522floor	Core destroyed	245	0	0	0
+glacierkeep_s29_A	glacierkeep	29	A	US	_v522floor	Core destroyed	131	0	350	0
+glacierkeep_s29_B	glacierkeep	29	B	OPP	_v488beltbreak2	Titanium collected (tiebreak)	1000	0	0	2380
+glacierkeep_s30_A	glacierkeep	30	A	US	_v522floor	Core destroyed	165	0	140	0
+glacierkeep_s30_B	glacierkeep	30	B	US	_v522floor	Titanium collected (tiebreak)	1000	0	1270	0
+midgard_s28_A	midgard	28	A	OPP	_v488beltbreak2	Core destroyed	529	0	980	600
+midgard_s28_B	midgard	28	B	OPP	_v488beltbreak2	Core destroyed	429	0	800	740
+midgard_s29_A	midgard	29	A	US	_v522floor	Titanium collected (tiebreak)	1000	0	2920	960
+midgard_s29_B	midgard	29	B	US	_v522floor	Core destroyed	648	0	1340	770
+midgard_s30_A	midgard	30	A	OPP	_v488beltbreak2	Core destroyed	153	0	1000	1070
+midgard_s30_B	midgard	30	B	US	_v522floor	Core destroyed	297	0	3010	1430
+nordkap_s28_A	nordkap	28	A	US	_v522floor	Core destroyed	104	0	240	0
+nordkap_s28_B	nordkap	28	B	US	_v522floor	Core destroyed	127	0	290	60
+nordkap_s29_A	nordkap	29	A	OPP	_v488beltbreak2	Core destroyed	497	0	170	550
+nordkap_s29_B	nordkap	29	B	OPP	_v488beltbreak2	Titanium collected (tiebreak)	1000	0	150	2450
+nordkap_s30_A	nordkap	30	A	OPP	_v488beltbreak2	Core destroyed	641	0	120	60
+nordkap_s30_B	nordkap	30	B	US	_v522floor	Core destroyed	379	0	3040	5270
+yulerune_s28_A	yulerune	28	A	US	_v522floor	Core destroyed	241	0	3040	420
+yulerune_s28_B	yulerune	28	B	OPP	_v488beltbreak2	Core destroyed	194	0	440	1300
+yulerune_s29_A	yulerune	29	A	US	_v522floor	Titanium collected (tiebreak)	1000	0	710	500
+yulerune_s29_B	yulerune	29	B	OPP	_v488beltbreak2	Core destroyed	568	0	390	1560
+yulerune_s30_A	yulerune	30	A	OPP	_v488beltbreak2	Titanium collected (tiebreak)	1000	0	290	610
+yulerune_s30_B	yulerune	30	B	OPP	_v488beltbreak2	Core destroyed	273	0	280	1980

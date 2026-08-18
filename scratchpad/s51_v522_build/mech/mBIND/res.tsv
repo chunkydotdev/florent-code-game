@@ -1,0 +1,37 @@
+tag	map	seed	seat	ours	winner	cond	turn	tracebacks	ours_mined	opp_mined
+atoll_s61_A	atoll	61	A	OPP	_v488beltbreak2	Core destroyed	569	0	2810	5040
+atoll_s61_B	atoll	61	B	US	mBIND	Core destroyed	160	0	760	450
+atoll_s62_A	atoll	62	A	OPP	_v488beltbreak2	Core destroyed	432	0	2120	3360
+atoll_s62_B	atoll	62	B	US	mBIND	Core destroyed	636	0	4460	3120
+atoll_s63_A	atoll	63	A	US	mBIND	Titanium collected (tiebreak)	1000	0	2980	1290
+atoll_s63_B	atoll	63	B	US	mBIND	Core destroyed	165	0	1000	760
+drakkarfjord_s61_A	drakkarfjord	61	A	US	mBIND	Titanium collected (tiebreak)	1000	0	310	0
+drakkarfjord_s61_B	drakkarfjord	61	B	US	mBIND	Core destroyed	114	0	340	0
+drakkarfjord_s62_A	drakkarfjord	62	A	US	mBIND	Core destroyed	90	0	280	0
+drakkarfjord_s62_B	drakkarfjord	62	B	US	mBIND	Core destroyed	323	0	1430	0
+drakkarfjord_s63_A	drakkarfjord	63	A	US	mBIND	Core destroyed	100	0	430	0
+drakkarfjord_s63_B	drakkarfjord	63	B	US	mBIND	Core destroyed	125	0	360	0
+glacierkeep_s61_A	glacierkeep	61	A	US	mBIND	Core destroyed	112	0	230	0
+glacierkeep_s61_B	glacierkeep	61	B	US	mBIND	Core destroyed	159	0	330	0
+glacierkeep_s62_A	glacierkeep	62	A	US	mBIND	Core destroyed	162	0	350	130
+glacierkeep_s62_B	glacierkeep	62	B	US	mBIND	Titanium stored (tiebreak)	1000	0	0	0
+glacierkeep_s63_A	glacierkeep	63	A	US	mBIND	Core destroyed	112	0	230	0
+glacierkeep_s63_B	glacierkeep	63	B	US	mBIND	Harvesters (tiebreak)	1000	0	0	0
+midgard_s61_A	midgard	61	A	US	mBIND	Core destroyed	143	0	1090	760
+midgard_s61_B	midgard	61	B	US	mBIND	Core destroyed	164	0	1360	560
+midgard_s62_A	midgard	62	A	OPP	_v488beltbreak2	Core destroyed	296	0	710	1660
+midgard_s62_B	midgard	62	B	OPP	_v488beltbreak2	Core destroyed	665	0	840	630
+midgard_s63_A	midgard	63	A	US	mBIND	Core destroyed	200	0	1230	530
+midgard_s63_B	midgard	63	B	US	mBIND	Titanium collected (tiebreak)	1000	0	1130	500
+nordkap_s61_A	nordkap	61	A	US	mBIND	Core destroyed	173	0	700	110
+nordkap_s61_B	nordkap	61	B	OPP	_v488beltbreak2	Core destroyed	784	0	80	960
+nordkap_s62_A	nordkap	62	A	US	mBIND	Core destroyed	127	0	580	70
+nordkap_s62_B	nordkap	62	B	OPP	_v488beltbreak2	Core destroyed	306	0	130	2390
+nordkap_s63_A	nordkap	63	A	US	mBIND	Core destroyed	241	0	110	70
+nordkap_s63_B	nordkap	63	B	US	mBIND	Core destroyed	117	0	270	10
+yulerune_s61_A	yulerune	61	A	OPP	_v488beltbreak2	Core destroyed	505	0	400	550
+yulerune_s61_B	yulerune	61	B	US	mBIND	Core destroyed	323	0	920	450
+yulerune_s62_A	yulerune	62	A	US	mBIND	Core destroyed	533	0	430	750
+yulerune_s62_B	yulerune	62	B	US	mBIND	Core destroyed	168	0	1610	460
+yulerune_s63_A	yulerune	63	A	OPP	_v488beltbreak2	Core destroyed	269	0	320	310
+yulerune_s63_B	yulerune	63	B	US	mBIND	Core destroyed	193	0	700	590

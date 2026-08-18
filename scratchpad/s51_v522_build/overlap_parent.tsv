@@ -1,0 +1,1081 @@
+tag	map	seed	seat	ours	turn	n_seats	rounds	sealed_r	live_r	funded_r	livefund_r	overlap_r	overlap_first	seal_only_r	shot_only_r	dmg_in	heal_in	net_in	dmg_out	heal_out	net_out	net_per_overlap	net_per_nonoverlap
+atoll_s1_A	atoll	1	A	US	289	8	289	0	107	262	88	0	-1	0	88	0	0		716	212	504		1.7439
+atoll_s1_B	atoll	1	B	US	257	8	257	198	158	109	34	34	98	164	0	288	0	288	216	0	216	8.4706	0.9686
+atoll_s2_A	atoll	2	A	US	771	8	771	0	79	737	79	0	-1	0	79	0	0		696	192	504		0.6537
+atoll_s2_B	atoll	2	B	OPP	515	8	515	0	455	58	7	0	-1	0	7	0	0		468	0	468		0.9087
+atoll_s3_A	atoll	3	A	OPP	764	8	764	24	197	745	197	0	-1	24	197	0	0		1076	1076	0		0.0
+atoll_s3_B	atoll	3	B	US	152	8	152	0	90	138	85	0	-1	0	85	0	0		658	152	506		3.3289
+drakkarfjord_s1_A	drakkarfjord	1	A	US	92	8	92	63	56	78	56	56	36	7	0	504	0	504	0	0	0	9.0	0.0
+drakkarfjord_s1_B	drakkarfjord	1	B	OPP	793	8	793	0	0	779	0	0	-1	0	0	0	0		0	0	0		0.0
+drakkarfjord_s2_A	drakkarfjord	2	A	US	99	8	99	53	56	85	56	43	48	10	13	378	0	378	126	0	126	8.7907	2.25
+drakkarfjord_s2_B	drakkarfjord	2	B	US	96	8	96	66	56	82	56	55	40	11	1	504	0	504	0	0	0	9.1636	0.0
+drakkarfjord_s3_A	drakkarfjord	3	A	US	91	8	91	62	56	77	56	56	35	6	0	504	0	504	0	0	0	9.0	0.0
+drakkarfjord_s3_B	drakkarfjord	3	B	US	98	8	98	52	56	84	56	51	42	1	5	468	0	468	36	0	36	9.1765	0.766
+glacierkeep_s1_A	glacierkeep	1	A	US	177	8	177	134	114	61	20	20	68	114	0	0	0	0	504	0	504	0.0	3.2102
+glacierkeep_s1_B	glacierkeep	1	B	US	123	8	123	64	64	70	64	37	59	27	27	324	0	324	212	36	176	8.7568	2.0465
+glacierkeep_s2_A	glacierkeep	2	A	US	164	8	164	121	76	55	12	12	100	109	0	0	0	0	504	0	504	0.0	3.3158
+glacierkeep_s2_B	glacierkeep	2	B	OPP	889	8	889	89	797	52	25	3	92	86	22	18	0	18	2076	1894	182	6.0	0.2054
+glacierkeep_s3_A	glacierkeep	3	A	US	153	8	153	108	57	133	53	53	96	55	0	468	0	468	36	0	36	8.8302	0.36
+glacierkeep_s3_B	glacierkeep	3	B	US	245	8	245	186	157	49	3	3	88	183	0	18	0	18	486	0	486	6.0	2.0083
+midgard_s1_A	midgard	1	A	US	140	8	140	0	39	124	39	0	-1	0	39	0	0		504	0	504		3.6
+midgard_s1_B	midgard	1	B	OPP	378	8	378	0	0	78	0	0	-1	0	0	0	0		0	0	0		0.0
+midgard_s2_A	midgard	2	A	US	196	8	196	0	56	183	56	0	-1	0	56	0	0		504	0	504		2.5714
+midgard_s2_B	midgard	2	B	OPP	1000	8	1000	0	560	298	20	0	-1	0	20	0	0		1428	1428	0		0.0
+midgard_s3_A	midgard	3	A	US	103	8	103	0	56	93	55	0	-1	0	55	0	0		504	0	504		4.8932
+midgard_s3_B	midgard	3	B	US	192	8	192	0	108	185	108	0	-1	0	108	0	0		504	0	504		2.625
+nordkap_s1_A	nordkap	1	A	US	442	8	442	32	365	155	94	3	77	29	91	18	0	18	1866	1384	482	6.0	1.0979
+nordkap_s1_B	nordkap	1	B	OPP	326	8	326	0	12	316	12	0	-1	0	12	0	0		68	68	0		0.0
+nordkap_s2_A	nordkap	2	A	US	578	8	578	485	91	566	91	54	487	431	37	108	0	108	484	92	392	2.0	0.7481
+nordkap_s2_B	nordkap	2	B	OPP	1000	8	1000	171	131	911	52	8	52	163	44	54	0	54	752	572	180	6.75	0.1815
+nordkap_s3_A	nordkap	3	A	US	578	8	578	0	252	503	199	0	-1	0	199	0	0		1226	722	504		0.872
+nordkap_s3_B	nordkap	3	B	US	309	8	309	253	204	56	47	28	56	225	19	0	0	0	504	0	504	0.0	1.7936
+yulerune_s1_A	yulerune	1	A	OPP	825	8	825	0	0	371	0	0	-1	0	0	0	0		0	0	0		0.0
+yulerune_s1_B	yulerune	1	B	US	318	8	318	0	58	301	58	0	-1	0	58	0	0		504	0	504		1.5849
+yulerune_s2_A	yulerune	2	A	US	237	8	237	0	56	221	56	0	-1	0	56	0	0		504	0	504		2.1266
+yulerune_s2_B	yulerune	2	B	OPP	197	8	197	0	0	54	0	0	-1	0	0	0	0		0	0	0		0.0
+yulerune_s3_A	yulerune	3	A	US	260	8	260	0	56	240	56	0	-1	0	56	0	0		504	0	504		1.9385
+yulerune_s3_B	yulerune	3	B	OPP	393	8	393	0	92	90	69	0	-1	0	69	0	0		0	0	0		0.0
+atoll_s4_A	atoll	4	A	US	116	8	116	0	56	109	56	0	-1	0	56	0	0		504	0	504		4.3448
+atoll_s4_B	atoll	4	B	OPP	358	8	358	0	0	49	0	0	-1	0	0	0	0		0	0	0		0.0
+atoll_s5_A	atoll	5	A	OPP	1000	8	1000	0	760	527	302	0	-1	0	302	0	0		2226	2226	0		0.0
+atoll_s5_B	atoll	5	B	US	257	8	257	198	158	109	34	34	98	164	0	288	0	288	216	0	216	8.4706	0.9686
+atoll_s6_A	atoll	6	A	US	153	8	153	92	77	68	15	14	88	78	1	162	0	162	342	0	342	11.5714	2.4604
+atoll_s6_B	atoll	6	B	US	127	8	127	0	61	102	49	0	-1	0	49	0	0		504	0	504		3.9685
+drakkarfjord_s4_A	drakkarfjord	4	A	US	90	8	90	57	56	75	55	55	34	2	0	486	0	486	18	0	18	8.8364	0.5143
+drakkarfjord_s4_B	drakkarfjord	4	B	US	1000	8	1000	29	960	241	215	20	40	9	195	180	0	180	1420	1600	-180	9.0	-0.1837
+drakkarfjord_s5_A	drakkarfjord	5	A	US	103	8	103	74	56	89	56	56	47	18	0	504	0	504	0	0	0	9.0	0.0
+drakkarfjord_s5_B	drakkarfjord	5	B	US	124	8	124	27	84	110	84	16	40	11	68	144	0	144	484	128	356	9.0	3.2963
+drakkarfjord_s6_A	drakkarfjord	6	A	OPP	452	8	452	0	0	265	0	0	-1	0	0	0	0		0	0	0		0.0
+drakkarfjord_s6_B	drakkarfjord	6	B	US	493	8	493	54	453	193	167	20	40	34	147	180	0	180	1400	1080	320	9.0	0.6765
+glacierkeep_s4_A	glacierkeep	4	A	US	119	8	119	76	56	104	56	56	63	20	0	504	0	504	0	0	0	9.0	0.0
+glacierkeep_s4_B	glacierkeep	4	B	US	585	8	585	494	533	28	10	10	52	484	0	72	0	72	432	0	432	7.2	0.7513
+glacierkeep_s5_A	glacierkeep	5	A	US	119	8	119	76	56	76	56	56	63	20	0	504	0	504	0	0	0	9.0	0.0
+glacierkeep_s5_B	glacierkeep	5	B	US	1000	8	1000	299	860	95	6	6	140	293	0	54	0	54	0	54	-54	9.0	-0.0543
+glacierkeep_s6_A	glacierkeep	6	A	US	123	8	123	78	56	106	56	56	67	22	0	504	0	504	0	0	0	9.0	0.0
+glacierkeep_s6_B	glacierkeep	6	B	US	245	8	245	92	133	97	3	3	112	89	0	18	0	18	486	0	486	6.0	2.0083
+midgard_s4_A	midgard	4	A	OPP	275	8	275	0	0	247	0	0	-1	0	0	0	0		0	0	0		0.0
+midgard_s4_B	midgard	4	B	OPP	241	8	241	0	61	170	16	0	-1	0	16	0	0		360	0	360		1.4938
+midgard_s5_A	midgard	5	A	US	210	8	210	0	158	194	149	0	-1	0	149	0	0		504	0	504		2.4
+midgard_s5_B	midgard	5	B	US	198	8	198	0	56	189	56	0	-1	0	56	0	0		504	0	504		2.5455
+midgard_s6_A	midgard	6	A	US	193	8	193	0	104	149	77	0	-1	0	77	0	0		712	204	508		2.6321
+midgard_s6_B	midgard	6	B	US	228	8	228	0	44	190	44	0	-1	0	44	0	0		504	0	504		2.2105
+nordkap_s4_A	nordkap	4	A	US	277	8	277	217	173	87	3	3	104	214	0	18	0	18	486	0	486	6.0	1.7737
+nordkap_s4_B	nordkap	4	B	US	129	8	129	71	122	121	121	71	58	0	50	504	0	504	0	0	0	7.0986	0.0
+nordkap_s5_A	nordkap	5	A	US	245	8	245	202	165	76	5	5	80	197	0	36	0	36	468	0	468	7.2	1.95
+nordkap_s5_B	nordkap	5	B	US	379	8	379	0	164	369	164	0	-1	0	164	0	0		684	180	504		1.3298
+nordkap_s6_A	nordkap	6	A	US	113	8	113	90	61	25	15	15	52	75	0	18	0	18	486	0	486	1.2	4.9592
+nordkap_s6_B	nordkap	6	B	OPP	1000	8	1000	75	896	157	60	5	108	70	55	36	0	36	2660	2458	202	7.2	0.203
+yulerune_s4_A	yulerune	4	A	US	431	8	431	0	57	239	24	0	-1	0	24	0	0		504	0	504		1.1694
+yulerune_s4_B	yulerune	4	B	OPP	318	8	318	0	0	123	0	0	-1	0	0	0	0		0	0	0		0.0
+yulerune_s5_A	yulerune	5	A	US	1000	8	1000	0	972	165	148	0	-1	0	148	0	0		0	0	0		0.0
+yulerune_s5_B	yulerune	5	B	OPP	208	8	208	0	0	122	0	0	-1	0	0	0	0		0	0	0		0.0
+yulerune_s6_A	yulerune	6	A	OPP	696	8	696	0	0	683	0	0	-1	0	0	0	0		0	0	0		0.0
+yulerune_s6_B	yulerune	6	B	OPP	246	8	246	0	0	116	0	0	-1	0	0	0	0		0	0	0		0.0
+atoll_s7_A	atoll	7	A	OPP	936	8	936	0	15	925	15	0	-1	0	15	0	0		122	122	0		0.0
+atoll_s7_B	atoll	7	B	OPP	328	8	328	0	4	318	4	0	-1	0	4	0	0		36	20	16		0.0488
+atoll_s8_A	atoll	8	A	OPP	1000	8	1000	0	0	981	0	0	-1	0	0	0	0		0	0	0		0.0
+atoll_s8_B	atoll	8	B	OPP	721	8	721	0	0	226	0	0	-1	0	0	0	0		0	0	0		0.0
+atoll_s9_A	atoll	9	A	US	116	8	116	0	56	109	56	0	-1	0	56	0	0		504	0	504		4.3448
+atoll_s9_B	atoll	9	B	OPP	250	8	250	0	0	112	0	0	-1	0	0	0	0		0	0	0		0.0
+drakkarfjord_s7_A	drakkarfjord	7	A	US	88	8	88	57	56	73	55	55	32	2	0	486	0	486	18	0	18	8.8364	0.5455
+drakkarfjord_s7_B	drakkarfjord	7	B	US	461	8	461	18	385	113	51	18	86	0	33	162	0	162	906	564	342	9.0	0.772
+drakkarfjord_s8_A	drakkarfjord	8	A	US	106	8	106	30	70	92	70	24	36	6	46	216	0	216	350	64	286	9.0	3.4878
+drakkarfjord_s8_B	drakkarfjord	8	B	US	101	8	101	63	56	87	56	56	45	7	0	504	0	504	0	0	0	9.0	0.0
+drakkarfjord_s9_A	drakkarfjord	9	A	US	105	8	105	42	70	91	70	37	35	5	33	324	0	324	242	60	182	8.7568	2.6765
+drakkarfjord_s9_B	drakkarfjord	9	B	US	632	8	632	19	559	423	364	7	73	12	357	54	0	54	2078	1628	450	7.7143	0.72
+glacierkeep_s7_A	glacierkeep	7	A	US	111	8	111	83	56	56	56	56	55	27	0	504	0	504	0	0	0	9.0	0.0
+glacierkeep_s7_B	glacierkeep	7	B	US	143	8	143	10	59	91	51	5	87	5	46	54	0	54	450	0	450	10.8	3.2609
+glacierkeep_s8_A	glacierkeep	8	A	US	123	8	123	78	56	107	56	56	67	22	0	504	0	504	0	0	0	9.0	0.0
+glacierkeep_s8_B	glacierkeep	8	B	US	225	8	225	92	112	96	1	1	113	91	0	0	0	0	504	0	504	0.0	2.25
+glacierkeep_s9_A	glacierkeep	9	A	US	203	8	203	106	75	137	43	35	96	71	8	288	0	288	240	28	212	8.2286	1.2619
+glacierkeep_s9_B	glacierkeep	9	B	OPP	1000	8	1000	46	0	948	0	0	-1	46	0	0	0		0	0	0		0.0
+midgard_s7_A	midgard	7	A	US	185	8	185	0	51	174	47	0	-1	0	47	0	0		582	78	504		2.7243
+midgard_s7_B	midgard	7	B	OPP	406	8	406	0	0	177	0	0	-1	0	0	0	0		0	0	0		0.0
+midgard_s8_A	midgard	8	A	US	289	8	289	0	93	185	16	0	-1	0	16	0	0		504	0	504		1.7439
+midgard_s8_B	midgard	8	B	US	897	8	897	0	843	848	804	0	-1	0	804	0	0		662	158	504		0.5619
+midgard_s9_A	midgard	9	A	OPP	863	8	863	0	126	657	12	0	-1	0	12	0	0		450	450	0		0.0
+midgard_s9_B	midgard	9	B	US	1000	8	1000	0	910	102	25	0	-1	0	25	0	0		2402	2402	0		0.0
+nordkap_s7_A	nordkap	7	A	US	304	8	304	34	249	113	69	10	55	24	59	54	0	54	1310	864	446	5.4	1.517
+nordkap_s7_B	nordkap	7	B	OPP	349	8	349	283	4	278	2	0	-1	283	2	0	0		0	0	0		0.0
+nordkap_s8_A	nordkap	8	A	US	732	8	732	35	664	545	504	0	-1	35	504	0	0		2688	2178	510		0.6967
+nordkap_s8_B	nordkap	8	B	OPP	146	8	146	0	137	111	109	0	-1	0	109	0	0		0	0	0		0.0
+nordkap_s9_A	nordkap	9	A	US	253	8	253	9	210	99	67	5	43	4	62	36	0	36	984	520	464	7.2	1.871
+nordkap_s9_B	nordkap	9	B	US	150	8	150	74	64	138	63	45	94	29	18	378	0	378	126	0	126	8.4	1.2
+yulerune_s7_A	yulerune	7	A	OPP	1000	8	1000	0	0	568	0	0	-1	0	0	0	0		0	0	0		0.0
+yulerune_s7_B	yulerune	7	B	OPP	638	8	638	0	371	170	8	0	-1	0	8	0	0		324	0	324		0.5078
+yulerune_s8_A	yulerune	8	A	OPP	132	8	132	0	0	29	0	0	-1	0	0	0	0		0	0	0		0.0
+yulerune_s8_B	yulerune	8	B	US	289	8	289	0	81	166	19	0	-1	0	19	0	0		504	0	504		1.7439
+yulerune_s9_A	yulerune	9	A	US	133	8	133	0	49	122	49	0	-1	0	49	0	0		504	0	504		3.7895
+yulerune_s9_B	yulerune	9	B	US	492	8	492	0	465	408	395	0	-1	0	395	0	0		504	0	504		1.0244
+atoll_s10_A	atoll	10	A	US	1000	8	1000	0	735	980	735	0	-1	0	735	0	0		268	268	0		0.0
+atoll_s10_B	atoll	10	B	OPP	287	8	287	0	221	181	124	0	-1	0	124	0	0		890	602	288		1.0035
+atoll_s11_A	atoll	11	A	US	257	8	257	0	98	240	88	0	-1	0	88	0	0		770	268	502		1.9533
+atoll_s11_B	atoll	11	B	OPP	217	8	217	0	0	71	0	0	-1	0	0	0	0		0	0	0		0.0
+atoll_s12_A	atoll	12	A	US	429	8	429	124	189	203	3	0	-1	124	3	0	0		504	0	504		1.1748
+atoll_s12_B	atoll	12	B	OPP	522	8	522	0	440	513	440	0	-1	0	440	0	0		2212	1744	468		0.8966
+drakkarfjord_s10_A	drakkarfjord	10	A	US	100	8	100	59	59	72	45	45	41	14	0	378	0	378	126	0	126	8.4	2.2909
+drakkarfjord_s10_B	drakkarfjord	10	B	US	101	8	101	63	56	87	56	56	45	7	0	504	0	504	0	0	0	9.0	0.0
+drakkarfjord_s11_A	drakkarfjord	11	A	US	103	8	103	74	56	89	56	56	47	18	0	504	0	504	0	0	0	9.0	0.0
+drakkarfjord_s11_B	drakkarfjord	11	B	US	116	8	116	39	76	102	76	28	40	11	48	252	0	252	340	88	252	9.0	2.8636
+drakkarfjord_s12_A	drakkarfjord	12	A	US	106	8	106	30	70	92	70	24	36	6	46	216	0	216	350	64	286	9.0	3.4878
+drakkarfjord_s12_B	drakkarfjord	12	B	US	101	8	101	63	56	87	56	56	45	7	0	504	0	504	0	0	0	9.0	0.0
+glacierkeep_s10_A	glacierkeep	10	A	OPP	206	8	206	22	0	176	0	0	-1	22	0	0	0		0	0	0		0.0
+glacierkeep_s10_B	glacierkeep	10	B	US	1000	8	1000	887	908	78	4	4	92	883	0	18	0	18	288	162	126	4.5	0.1265
+glacierkeep_s11_A	glacierkeep	11	A	OPP	596	8	596	40	56	419	5	0	-1	40	5	0	0		288	288	0		0.0
+glacierkeep_s11_B	glacierkeep	11	B	OPP	838	8	838	167	574	302	94	23	128	144	71	198	0	198	1352	1550	-198	8.6087	-0.2429
+glacierkeep_s12_A	glacierkeep	12	A	US	1000	8	1000	267	655	115	0	0	-1	267	0	0	0		334	334	0		0.0
+glacierkeep_s12_B	glacierkeep	12	B	OPP	781	8	781	0	0	729	0	0	-1	0	0	0	0		0	0	0		0.0
+midgard_s10_A	midgard	10	A	US	357	8	357	0	101	256	16	0	-1	0	16	0	0		504	0	504		1.4118
+midgard_s10_B	midgard	10	B	US	254	8	254	0	79	241	79	0	-1	0	79	0	0		588	76	512		2.0157
+midgard_s11_A	midgard	11	A	OPP	265	8	265	0	215	57	17	0	-1	0	17	0	0		0	0	0		0.0
+midgard_s11_B	midgard	11	B	OPP	272	8	272	0	7	265	7	0	-1	0	7	0	0		60	60	0		0.0
+midgard_s12_A	midgard	12	A	US	237	8	237	0	85	160	24	0	-1	0	24	0	0		504	0	504		2.1266
+midgard_s12_B	midgard	12	B	US	333	8	333	0	56	284	52	0	-1	0	52	0	0		504	0	504		1.5135
+nordkap_s10_A	nordkap	10	A	US	566	8	566	0	261	362	119	0	-1	0	119	0	0		1080	578	502		0.8869
+nordkap_s10_B	nordkap	10	B	US	1000	8	1000	0	72	990	72	0	-1	0	72	0	0		18	0	18		0.018
+nordkap_s11_A	nordkap	11	A	US	108	8	108	69	59	83	47	47	49	22	0	396	0	396	108	0	108	8.4255	1.7705
+nordkap_s11_B	nordkap	11	B	OPP	248	8	248	0	103	162	77	0	-1	0	77	0	0		0	0	0		0.0
+nordkap_s12_A	nordkap	12	A	US	413	8	413	290	321	63	7	6	238	284	1	36	0	36	606	138	468	6.0	1.1499
+nordkap_s12_B	nordkap	12	B	US	814	8	814	0	415	803	415	0	-1	0	415	0	0		2284	1784	500		0.6143
+yulerune_s10_A	yulerune	10	A	US	239	8	239	0	56	220	55	0	-1	0	55	0	0		504	0	504		2.1088
+yulerune_s10_B	yulerune	10	B	US	318	8	318	0	56	302	56	0	-1	0	56	0	0		504	0	504		1.5849
+yulerune_s11_A	yulerune	11	A	US	441	8	441	0	56	419	56	0	-1	0	56	0	0		504	0	504		1.1429
+yulerune_s11_B	yulerune	11	B	OPP	264	8	264	0	0	78	0	0	-1	0	0	0	0		0	0	0		0.0
+yulerune_s12_A	yulerune	12	A	US	638	8	638	0	82	577	82	0	-1	0	82	0	0		638	128	510		0.7994
+yulerune_s12_B	yulerune	12	B	US	172	8	172	0	56	157	56	0	-1	0	56	0	0		504	0	504		2.9302
+atoll_s13_A	atoll	13	A	US	1000	8	1000	0	928	78	13	0	-1	0	13	0	0		6092	5870	222		0.222
+atoll_s13_B	atoll	13	B	US	117	8	117	0	57	90	39	0	-1	0	39	0	0		504	0	504		4.3077
+atoll_s14_A	atoll	14	A	US	296	8	296	0	228	286	225	0	-1	0	225	0	0		1276	776	500		1.6892
+atoll_s14_B	atoll	14	B	US	438	8	438	0	308	429	308	0	-1	0	308	0	0		1636	1136	500		1.1416
+atoll_s15_A	atoll	15	A	OPP	340	8	340	0	0	333	0	0	-1	0	0	0	0		0	0	0		0.0
+atoll_s15_B	atoll	15	B	US	127	8	127	0	61	102	49	0	-1	0	49	0	0		504	0	504		3.9685
+drakkarfjord_s13_A	drakkarfjord	13	A	US	121	8	121	22	84	107	84	15	37	7	69	126	0	126	506	124	382	8.4	3.6038
+drakkarfjord_s13_B	drakkarfjord	13	B	US	127	8	127	20	86	113	86	15	41	5	71	126	0	126	512	132	380	8.4	3.3929
+drakkarfjord_s14_A	drakkarfjord	14	A	US	88	8	88	57	56	73	55	55	32	2	0	486	0	486	18	0	18	8.8364	0.5455
+drakkarfjord_s14_B	drakkarfjord	14	B	OPP	521	8	521	0	461	56	10	0	-1	0	10	0	0		1702	1344	358		0.6871
+drakkarfjord_s15_A	drakkarfjord	15	A	US	224	8	224	34	188	210	188	28	36	6	160	252	0	252	840	592	248	9.0	1.2653
+drakkarfjord_s15_B	drakkarfjord	15	B	OPP	521	8	521	0	461	55	9	0	-1	0	9	0	0		1688	1348	340		0.6526
+glacierkeep_s13_A	glacierkeep	13	A	OPP	429	8	429	401	361	1	1	1	88	400	0	0	0	0	162	0	162	0.0	0.3785
+glacierkeep_s13_B	glacierkeep	13	B	US	1000	8	1000	145	0	79	0	0	-1	145	0	0	0		0	0	0		0.0
+glacierkeep_s14_A	glacierkeep	14	A	US	110	8	110	82	58	14	14	14	56	68	0	0	0	0	504	0	504	0.0	5.25
+glacierkeep_s14_B	glacierkeep	14	B	OPP	838	8	838	167	574	302	94	23	128	144	71	198	0	198	1352	1550	-198	8.6087	-0.2429
+glacierkeep_s15_A	glacierkeep	15	A	US	123	8	123	80	56	94	42	42	67	38	0	252	0	252	252	0	252	6.0	3.1111
+glacierkeep_s15_B	glacierkeep	15	B	US	346	8	346	92	274	148	120	24	72	68	96	180	0	180	792	468	324	7.5	1.0062
+midgard_s13_A	midgard	13	A	OPP	348	8	348	0	0	78	0	0	-1	0	0	0	0		0	0	0		0.0
+midgard_s13_B	midgard	13	B	OPP	653	8	653	0	352	520	286	0	-1	0	286	0	0		224	224	0		0.0
+midgard_s14_A	midgard	14	A	OPP	546	8	546	0	82	102	42	0	-1	0	42	0	0		252	252	0		0.0
+midgard_s14_B	midgard	14	B	OPP	241	8	241	0	0	138	0	0	-1	0	0	0	0		0	0	0		0.0
+midgard_s15_A	midgard	15	A	US	357	8	357	0	308	265	226	0	-1	0	226	0	0		504	0	504		1.4118
+midgard_s15_B	midgard	15	B	US	421	8	421	0	153	268	12	0	-1	0	12	0	0		504	0	504		1.1971
+nordkap_s13_A	nordkap	13	A	US	529	8	529	30	441	409	341	5	88	25	336	36	0	36	1940	1476	464	7.2	0.8855
+nordkap_s13_B	nordkap	13	B	US	290	8	290	222	62	279	58	50	56	172	8	396	0	396	108	0	108	7.92	0.45
+nordkap_s14_A	nordkap	14	A	US	1000	8	1000	20	442	463	107	3	68	17	104	18	0	18	1866	1804	62	6.0	0.0622
+nordkap_s14_B	nordkap	14	B	US	171	8	171	119	91	68	18	18	104	101	0	162	0	162	342	0	342	9.0	2.2353
+nordkap_s15_A	nordkap	15	A	US	578	8	578	0	252	503	199	0	-1	0	199	0	0		1226	722	504		0.872
+nordkap_s15_B	nordkap	15	B	US	309	8	309	253	204	56	47	28	56	225	19	0	0	0	504	0	504	0.0	1.7936
+yulerune_s13_A	yulerune	13	A	US	527	8	527	0	264	508	264	0	-1	0	264	0	0		558	54	504		0.9564
+yulerune_s13_B	yulerune	13	B	US	205	8	205	0	56	175	56	0	-1	0	56	0	0		504	0	504		2.4585
+yulerune_s14_A	yulerune	14	A	OPP	485	8	485	0	82	289	13	0	-1	0	13	0	0		306	0	306		0.6309
+yulerune_s14_B	yulerune	14	B	OPP	338	8	338	0	0	103	0	0	-1	0	0	0	0		0	0	0		0.0
+yulerune_s15_A	yulerune	15	A	US	328	8	328	0	56	318	56	0	-1	0	56	0	0		504	0	504		1.5366
+yulerune_s15_B	yulerune	15	B	OPP	556	8	556	0	372	190	20	0	-1	0	20	0	0		1388	1378	10		0.018
+atoll_s16_A	atoll	16	A	US	284	8	284	0	103	270	103	0	-1	0	103	0	0		684	180	504		1.7746
+atoll_s16_B	atoll	16	B	US	194	8	194	0	29	185	29	0	-1	0	29	0	0		504	0	504		2.5979
+atoll_s17_A	atoll	17	A	OPP	269	8	269	0	0	177	0	0	-1	0	0	0	0		0	0	0		0.0
+atoll_s17_B	atoll	17	B	US	127	8	127	0	61	102	49	0	-1	0	49	0	0		504	0	504		3.9685
+atoll_s18_A	atoll	18	A	US	237	8	237	0	69	177	24	0	-1	0	24	0	0		504	0	504		2.1266
+atoll_s18_B	atoll	18	B	US	398	8	398	0	338	92	41	0	-1	0	41	0	0		1416	916	500		1.2563
+drakkarfjord_s16_A	drakkarfjord	16	A	US	88	8	88	57	56	73	55	55	32	2	0	486	0	486	18	0	18	8.8364	0.5455
+drakkarfjord_s16_B	drakkarfjord	16	B	US	122	8	122	29	82	108	82	20	40	9	62	180	0	180	442	116	326	9.0	3.1961
+drakkarfjord_s17_A	drakkarfjord	17	A	US	88	8	88	57	56	73	55	55	32	2	0	486	0	486	18	0	18	8.8364	0.5455
+drakkarfjord_s17_B	drakkarfjord	17	B	US	284	8	284	60	244	227	201	44	40	16	157	396	0	396	838	734	104	9.0	0.4333
+drakkarfjord_s18_A	drakkarfjord	18	A	US	106	8	106	30	70	92	70	24	36	6	46	216	0	216	350	64	286	9.0	3.4878
+drakkarfjord_s18_B	drakkarfjord	18	B	US	125	8	125	20	84	111	84	15	41	5	69	126	0	126	502	124	378	8.4	3.4364
+glacierkeep_s16_A	glacierkeep	16	A	US	123	8	123	77	56	94	55	55	67	22	0	486	0	486	18	0	18	8.8364	0.2647
+glacierkeep_s16_B	glacierkeep	16	B	US	329	8	329	141	109	135	3	3	220	138	0	18	0	18	486	0	486	6.0	1.4908
+glacierkeep_s17_A	glacierkeep	17	A	US	123	8	123	78	56	106	56	56	67	22	0	504	0	504	0	0	0	9.0	0.0
+glacierkeep_s17_B	glacierkeep	17	B	US	445	8	445	64	349	30	3	0	-1	64	3	0	0		918	414	504		1.1326
+glacierkeep_s18_A	glacierkeep	18	A	OPP	277	8	277	234	64	212	44	44	63	190	0	378	0	378	108	0	108	8.5909	0.4635
+glacierkeep_s18_B	glacierkeep	18	B	US	388	8	388	0	164	361	164	0	-1	0	164	0	0		1036	532	504		1.299
+midgard_s16_A	midgard	16	A	US	308	8	308	0	258	288	247	0	-1	0	247	0	0		504	0	504		1.6364
+midgard_s16_B	midgard	16	B	US	206	8	206	0	46	180	46	0	-1	0	46	0	0		504	0	504		2.4466
+midgard_s17_A	midgard	17	A	US	253	8	253	0	203	234	203	0	-1	0	203	0	0		504	0	504		1.9921
+midgard_s17_B	midgard	17	B	US	1000	8	1000	0	944	839	796	0	-1	0	796	0	0		0	0	0		0.0
+midgard_s18_A	midgard	18	A	US	340	8	340	0	280	328	277	0	-1	0	277	0	0		668	160	508		1.4941
+midgard_s18_B	midgard	18	B	US	609	8	609	0	165	315	12	0	-1	0	12	0	0		504	0	504		0.8276
+nordkap_s16_A	nordkap	16	A	US	137	8	137	114	89	19	7	7	48	107	0	0	0	0	504	0	504	0.0	3.8769
+nordkap_s16_B	nordkap	16	B	OPP	377	8	377	14	370	112	112	4	99	10	108	18	0	18	860	670	190	4.5	0.5094
+nordkap_s17_A	nordkap	17	A	US	197	8	197	170	149	42	6	6	48	164	0	18	0	18	486	0	486	3.0	2.5445
+nordkap_s17_B	nordkap	17	B	US	290	8	290	0	159	232	140	0	-1	0	140	0	0		650	148	502		1.731
+nordkap_s18_A	nordkap	18	A	US	433	8	433	56	345	116	49	4	88	52	45	18	0	18	1660	1174	486	4.5	1.1329
+nordkap_s18_B	nordkap	18	B	US	117	8	117	80	85	66	41	33	41	47	8	288	0	288	216	0	216	8.7273	2.5714
+yulerune_s16_A	yulerune	16	A	OPP	203	8	203	0	0	142	0	0	-1	0	0	0	0		0	0	0		0.0
+yulerune_s16_B	yulerune	16	B	OPP	268	8	268	0	0	93	0	0	-1	0	0	0	0		0	0	0		0.0
+yulerune_s17_A	yulerune	17	A	US	211	8	211	0	187	201	187	0	-1	0	187	0	0		504	0	504		2.3886
+yulerune_s17_B	yulerune	17	B	OPP	222	8	222	0	0	58	0	0	-1	0	0	0	0		0	0	0		0.0
+yulerune_s18_A	yulerune	18	A	OPP	1000	8	1000	0	0	146	0	0	-1	0	0	0	0		0	0	0		0.0
+yulerune_s18_B	yulerune	18	B	OPP	213	8	213	0	189	51	36	0	-1	0	36	0	0		0	0	0		0.0
+atoll_s19_A	atoll	19	A	US	429	8	429	124	189	203	3	0	-1	124	3	0	0		504	0	504		1.1748
+atoll_s19_B	atoll	19	B	OPP	454	8	454	0	0	413	0	0	-1	0	0	0	0		0	0	0		0.0
+atoll_s20_A	atoll	20	A	OPP	373	8	373	0	305	77	16	0	-1	0	16	0	0		930	886	44		0.118
+atoll_s20_B	atoll	20	B	US	238	8	238	0	92	229	92	0	-1	0	92	0	0		664	164	500		2.1008
+atoll_s21_A	atoll	21	A	US	285	8	285	0	140	262	138	0	-1	0	138	0	0		504	0	504		1.7684
+atoll_s21_B	atoll	21	B	US	118	8	118	0	56	105	56	0	-1	0	56	0	0		504	0	504		4.2712
+drakkarfjord_s19_A	drakkarfjord	19	A	US	88	8	88	57	56	73	55	55	32	2	0	486	0	486	18	0	18	8.8364	0.5455
+drakkarfjord_s19_B	drakkarfjord	19	B	US	544	8	544	40	504	227	201	25	40	15	176	216	0	216	1804	1520	284	8.64	0.5472
+drakkarfjord_s20_A	drakkarfjord	20	A	US	106	8	106	30	70	92	70	24	36	6	46	216	0	216	350	64	286	9.0	3.4878
+drakkarfjord_s20_B	drakkarfjord	20	B	US	116	8	116	39	76	102	76	28	40	11	48	252	0	252	340	88	252	9.0	2.8636
+drakkarfjord_s21_A	drakkarfjord	21	A	US	105	8	105	42	70	91	70	37	35	5	33	324	0	324	242	60	182	8.7568	2.6765
+drakkarfjord_s21_B	drakkarfjord	21	B	US	125	8	125	20	84	111	84	15	41	5	69	126	0	126	502	124	378	8.4	3.4364
+glacierkeep_s19_A	glacierkeep	19	A	US	129	8	129	101	77	9	9	9	56	92	0	0	0	0	504	0	504	0.0	4.2
+glacierkeep_s19_B	glacierkeep	19	B	US	265	8	265	138	109	107	3	3	156	135	0	18	0	18	486	0	486	6.0	1.855
+glacierkeep_s20_A	glacierkeep	20	A	US	145	8	145	117	93	4	4	4	60	113	0	0	0	0	504	0	504	0.0	3.5745
+glacierkeep_s20_B	glacierkeep	20	B	OPP	1000	8	1000	114	0	128	0	0	-1	114	0	0	0		0	0	0		0.0
+glacierkeep_s21_A	glacierkeep	21	A	US	126	8	126	80	59	94	55	55	71	25	0	504	0	504	0	0	0	9.1636	0.0
+glacierkeep_s21_B	glacierkeep	21	B	US	265	8	265	198	173	0	0	0	-1	198	0	0	0		504	0	504		1.9019
+midgard_s19_A	midgard	19	A	OPP	135	8	135	0	88	90	55	0	-1	0	55	0	0		354	204	150		1.1111
+midgard_s19_B	midgard	19	B	US	1000	8	1000	0	0	610	0	0	-1	0	0	0	0		0	0	0		0.0
+midgard_s20_A	midgard	20	A	US	273	8	273	0	93	186	16	0	-1	0	16	0	0		504	0	504		1.8462
+midgard_s20_B	midgard	20	B	US	1000	8	1000	0	948	159	121	0	-1	0	121	0	0		0	0	0		0.0
+midgard_s21_A	midgard	21	A	US	263	8	263	0	55	245	55	0	-1	0	55	0	0		504	0	504		1.9163
+midgard_s21_B	midgard	21	B	OPP	224	8	224	0	0	91	0	0	-1	0	0	0	0		0	0	0		0.0
+nordkap_s19_A	nordkap	19	A	US	364	8	364	0	98	298	98	0	-1	0	98	0	0		694	188	506		1.3901
+nordkap_s19_B	nordkap	19	B	OPP	268	8	268	0	4	193	4	0	-1	0	4	0	0		0	0	0		0.0
+nordkap_s20_A	nordkap	20	A	US	202	8	202	33	111	89	28	7	91	26	21	36	0	36	688	220	468	5.1429	2.4
+nordkap_s20_B	nordkap	20	B	US	238	8	238	184	231	49	49	3	54	181	46	0	0	0	504	0	504	0.0	2.1447
+nordkap_s21_A	nordkap	21	A	OPP	1000	8	1000	0	832	146	1	0	-1	0	1	0	0		2776	2532	244		0.244
+nordkap_s21_B	nordkap	21	B	US	141	8	141	120	132	45	45	33	21	87	12	72	0	72	432	0	432	2.1818	4.0
+yulerune_s19_A	yulerune	19	A	OPP	515	8	515	0	0	480	0	0	-1	0	0	0	0		0	0	0		0.0
+yulerune_s19_B	yulerune	19	B	US	417	8	417	0	93	253	16	0	-1	0	16	0	0		504	0	504		1.2086
+yulerune_s20_A	yulerune	20	A	US	1000	8	1000	0	760	230	20	0	-1	0	20	0	0		2050	2050	0		0.0
+yulerune_s20_B	yulerune	20	B	OPP	233	8	233	0	45	193	16	0	-1	0	16	0	0		288	0	288		1.2361
+yulerune_s21_A	yulerune	21	A	OPP	509	8	509	0	0	178	0	0	-1	0	0	0	0		0	0	0		0.0
+yulerune_s21_B	yulerune	21	B	US	877	8	877	0	97	791	35	0	-1	0	35	0	0		504	0	504		0.5747
+atoll_s22_A	atoll	22	A	OPP	1000	8	1000	0	760	527	302	0	-1	0	302	0	0		2226	2226	0		0.0
+atoll_s22_B	atoll	22	B	OPP	191	8	191	0	61	116	14	0	-1	0	14	0	0		128	128	0		0.0
+atoll_s23_A	atoll	23	A	OPP	389	8	389	0	273	117	13	0	-1	0	13	0	0		1030	792	238		0.6118
+atoll_s23_B	atoll	23	B	US	226	8	226	29	95	213	95	0	-1	29	95	0	0		696	188	508		2.2478
+atoll_s24_A	atoll	24	A	OPP	777	8	777	0	409	623	354	0	-1	0	354	0	0		1788	1788	0		0.0
+atoll_s24_B	atoll	24	B	US	459	8	459	0	62	449	62	0	-1	0	62	0	0		550	46	504		1.098
+drakkarfjord_s22_A	drakkarfjord	22	A	US	99	8	99	55	62	85	62	47	37	8	15	414	0	414	116	24	92	8.8085	1.7692
+drakkarfjord_s22_B	drakkarfjord	22	B	US	101	8	101	63	56	87	56	56	45	7	0	504	0	504	0	0	0	9.0	0.0
+drakkarfjord_s23_A	drakkarfjord	23	A	US	92	8	92	63	56	78	56	56	36	7	0	504	0	504	0	0	0	9.0	0.0
+drakkarfjord_s23_B	drakkarfjord	23	B	US	96	8	96	54	56	80	54	48	40	6	6	414	0	414	90	0	90	8.625	1.875
+drakkarfjord_s24_A	drakkarfjord	24	A	US	106	8	106	30	70	92	70	24	36	6	46	216	0	216	350	64	286	9.0	3.4878
+drakkarfjord_s24_B	drakkarfjord	24	B	US	544	8	544	40	504	227	201	25	40	15	176	216	0	216	1804	1520	284	8.64	0.5472
+glacierkeep_s22_A	glacierkeep	22	A	US	355	8	355	114	100	332	94	43	100	71	51	360	0	360	522	378	144	8.3721	0.4615
+glacierkeep_s22_B	glacierkeep	22	B	US	617	8	617	96	501	102	55	12	116	84	43	108	0	108	840	444	396	9.0	0.6545
+glacierkeep_s23_A	glacierkeep	23	A	US	123	8	123	78	56	108	56	56	67	22	0	504	0	504	0	0	0	9.0	0.0
+glacierkeep_s23_B	glacierkeep	23	B	US	388	8	388	0	164	361	164	0	-1	0	164	0	0		1036	532	504		1.299
+glacierkeep_s24_A	glacierkeep	24	A	US	112	8	112	84	60	13	13	13	60	71	0	0	0	0	504	0	504	0.0	5.0909
+glacierkeep_s24_B	glacierkeep	24	B	US	337	8	337	261	185	126	3	3	152	258	0	18	0	18	486	0	486	6.0	1.4551
+midgard_s22_A	midgard	22	A	OPP	178	8	178	0	128	147	115	0	-1	0	115	0	0		0	0	0		0.0
+midgard_s22_B	midgard	22	B	US	161	8	161	0	100	148	100	0	-1	0	100	0	0		504	0	504		3.1304
+midgard_s23_A	midgard	23	A	US	143	8	143	0	58	119	53	0	-1	0	53	0	0		504	0	504		3.5245
+midgard_s23_B	midgard	23	B	OPP	196	8	196	0	146	186	144	0	-1	0	144	0	0		0	0	0		0.0
+midgard_s24_A	midgard	24	A	US	157	8	157	0	52	135	52	0	-1	0	52	0	0		504	0	504		3.2102
+midgard_s24_B	midgard	24	B	US	1000	8	1000	0	946	390	346	0	-1	0	346	0	0		306	0	306		0.306
+nordkap_s22_A	nordkap	22	A	US	568	8	568	0	312	556	312	0	-1	0	312	0	0		562	52	510		0.8979
+nordkap_s22_B	nordkap	22	B	US	129	8	129	71	122	121	121	71	58	0	50	504	0	504	0	0	0	7.0986	0.0
+nordkap_s23_A	nordkap	23	A	US	182	8	182	139	157	111	99	81	43	58	18	18	0	18	486	0	486	0.2222	4.8119
+nordkap_s23_B	nordkap	23	B	US	373	8	373	308	366	365	365	308	64	0	57	504	0	504	0	0	0	1.6364	0.0
+nordkap_s24_A	nordkap	24	A	US	165	8	165	127	109	48	3	3	56	124	0	18	0	18	486	0	486	6.0	3.0
+nordkap_s24_B	nordkap	24	B	US	209	8	209	101	169	45	14	14	48	87	0	90	0	90	558	148	410	6.4286	2.1026
+yulerune_s22_A	yulerune	22	A	OPP	818	8	818	0	0	618	0	0	-1	0	0	0	0		0	0	0		0.0
+yulerune_s22_B	yulerune	22	B	OPP	205	8	205	0	0	52	0	0	-1	0	0	0	0		0	0	0		0.0
+yulerune_s23_A	yulerune	23	A	OPP	533	8	533	0	0	181	0	0	-1	0	0	0	0		0	0	0		0.0
+yulerune_s23_B	yulerune	23	B	OPP	748	8	748	0	175	559	19	0	-1	0	19	0	0		648	648	0		0.0
+yulerune_s24_A	yulerune	24	A	OPP	285	8	285	0	0	204	0	0	-1	0	0	0	0		0	0	0		0.0
+yulerune_s24_B	yulerune	24	B	OPP	541	8	541	0	504	123	101	0	-1	0	101	0	0		0	0	0		0.0
+atoll_s25_A	atoll	25	A	US	189	8	189	0	65	142	29	0	-1	0	29	0	0		504	0	504		2.6667
+atoll_s25_B	atoll	25	B	US	124	8	124	69	56	115	56	56	68	13	0	504	0	504	0	0	0	9.0	0.0
+atoll_s26_A	atoll	26	A	OPP	585	8	585	0	306	567	305	0	-1	0	305	0	0		0	0	0		0.0
+atoll_s26_B	atoll	26	B	OPP	984	8	984	0	0	959	0	0	-1	0	0	0	0		0	0	0		0.0
+atoll_s27_A	atoll	27	A	US	1000	8	1000	20	33	980	33	0	-1	20	33	0	0		286	286	0		0.0
+atoll_s27_B	atoll	27	B	US	306	8	306	0	9	286	9	0	-1	0	9	0	0		662	152	510		1.6667
+drakkarfjord_s25_A	drakkarfjord	25	A	US	101	8	101	57	56	87	56	56	45	1	0	504	0	504	0	0	0	9.0	0.0
+drakkarfjord_s25_B	drakkarfjord	25	B	US	122	8	122	29	82	108	82	20	40	9	62	180	0	180	442	116	326	9.0	3.1961
+drakkarfjord_s26_A	drakkarfjord	26	A	OPP	327	8	327	4	0	116	0	0	-1	4	0	0	0		0	0	0		0.0
+drakkarfjord_s26_B	drakkarfjord	26	B	US	361	8	361	61	321	237	211	36	40	25	175	324	0	324	1004	824	180	9.0	0.5538
+drakkarfjord_s27_A	drakkarfjord	27	A	US	224	8	224	34	188	210	188	28	36	6	160	252	0	252	840	592	248	9.0	1.2653
+drakkarfjord_s27_B	drakkarfjord	27	B	US	295	8	295	0	56	281	56	0	-1	0	56	0	0		504	0	504		1.7085
+glacierkeep_s25_A	glacierkeep	25	A	US	110	8	110	82	58	14	14	14	56	68	0	0	0	0	504	0	504	0.0	5.25
+glacierkeep_s25_B	glacierkeep	25	B	US	321	8	321	276	157	83	7	7	164	269	0	54	0	54	450	0	450	7.7143	1.4331
+glacierkeep_s26_A	glacierkeep	26	A	US	161	8	161	118	93	17	5	5	76	113	0	0	0	0	504	0	504	0.0	3.2308
+glacierkeep_s26_B	glacierkeep	26	B	OPP	1000	8	1000	186	0	796	0	0	-1	186	0	0	0		0	0	0		0.0
+glacierkeep_s27_A	glacierkeep	27	A	US	144	8	144	117	69	77	38	38	75	79	0	234	0	234	270	0	270	6.1579	2.5472
+glacierkeep_s27_B	glacierkeep	27	B	US	123	8	123	84	56	70	56	49	67	35	7	414	0	414	90	0	90	8.449	1.2162
+midgard_s25_A	midgard	25	A	OPP	308	8	308	0	0	189	0	0	-1	0	0	0	0		0	0	0		0.0
+midgard_s25_B	midgard	25	B	OPP	177	8	177	0	131	53	19	0	-1	0	19	0	0		126	126	0		0.0
+midgard_s26_A	midgard	26	A	US	157	8	157	0	52	135	52	0	-1	0	52	0	0		504	0	504		3.2102
+midgard_s26_B	midgard	26	B	OPP	276	8	276	0	56	200	52	0	-1	0	52	0	0		0	0	0		0.0
+midgard_s27_A	midgard	27	A	OPP	1000	8	1000	0	769	238	30	0	-1	0	30	0	0		1208	1118	90		0.09
+midgard_s27_B	midgard	27	B	US	281	8	281	0	56	263	56	0	-1	0	56	0	0		504	0	504		1.7936
+nordkap_s25_A	nordkap	25	A	US	1000	8	1000	951	30	64	3	3	64	948	0	18	0	18	126	0	126	6.0	0.1264
+nordkap_s25_B	nordkap	25	B	US	290	8	290	229	281	280	280	229	61	0	51	504	0	504	0	0	0	2.2009	0.0
+nordkap_s26_A	nordkap	26	A	US	412	8	412	34	345	170	119	9	325	25	110	90	0	90	1240	826	414	10.0	1.0273
+nordkap_s26_B	nordkap	26	B	US	534	8	534	165	222	412	115	25	49	140	90	216	0	216	746	452	294	8.64	0.5776
+nordkap_s27_A	nordkap	27	A	US	529	8	529	30	441	409	341	5	88	25	336	36	0	36	1940	1476	464	7.2	0.8855
+nordkap_s27_B	nordkap	27	B	US	205	8	205	169	188	8	8	0	-1	169	8	0	0		504	0	504		2.4585
+yulerune_s25_A	yulerune	25	A	US	340	8	340	0	56	324	56	0	-1	0	56	0	0		504	0	504		1.4824
+yulerune_s25_B	yulerune	25	B	US	156	8	156	0	56	146	56	0	-1	0	56	0	0		504	0	504		3.2308
+yulerune_s26_A	yulerune	26	A	OPP	193	8	193	0	0	142	0	0	-1	0	0	0	0		0	0	0		0.0
+yulerune_s26_B	yulerune	26	B	OPP	741	8	741	0	349	389	11	0	-1	0	11	0	0		1304	940	364		0.4912
+yulerune_s27_A	yulerune	27	A	OPP	249	8	249	0	0	143	0	0	-1	0	0	0	0		0	0	0		0.0
+yulerune_s27_B	yulerune	27	B	US	492	8	492	0	465	408	395	0	-1	0	395	0	0		504	0	504		1.0244
+atoll_s28_A	atoll	28	A	US	372	8	372	0	100	362	100	0	-1	0	100	0	0		704	196	508		1.3656
+atoll_s28_B	atoll	28	B	US	765	8	765	0	424	754	424	0	-1	0	424	0	0		2156	1656	500		0.6536
+atoll_s29_A	atoll	29	A	US	202	8	202	0	92	195	92	0	-1	0	92	0	0		664	164	500		2.4752
+atoll_s29_B	atoll	29	B	OPP	805	8	805	0	53	796	53	0	-1	0	53	0	0		252	252	0		0.0
+atoll_s30_A	atoll	30	A	OPP	220	8	220	0	65	210	65	0	-1	0	65	0	0		380	196	184		0.8364
+atoll_s30_B	atoll	30	B	US	114	8	114	70	56	105	56	56	58	14	0	504	0	504	0	0	0	9.0	0.0
+drakkarfjord_s28_A	drakkarfjord	28	A	US	215	8	215	0	94	201	94	0	-1	0	94	0	0		674	172	502		2.3349
+drakkarfjord_s28_B	drakkarfjord	28	B	US	98	8	98	59	56	84	56	53	42	6	3	486	0	486	18	0	18	9.1698	0.4
+drakkarfjord_s29_A	drakkarfjord	29	A	US	185	8	185	0	94	113	36	0	-1	0	36	0	0		504	0	504		2.7243
+drakkarfjord_s29_B	drakkarfjord	29	B	US	600	8	600	86	560	254	228	21	40	65	207	180	0	180	2212	1892	320	8.5714	0.5527
+drakkarfjord_s30_A	drakkarfjord	30	A	US	88	8	88	57	56	73	55	55	32	2	0	486	0	486	18	0	18	8.8364	0.5455
+drakkarfjord_s30_B	drakkarfjord	30	B	US	120	8	120	73	56	106	56	56	64	17	0	504	0	504	0	0	0	9.0	0.0
+glacierkeep_s28_A	glacierkeep	28	A	US	165	8	165	137	101	3	3	3	72	134	0	0	0	0	504	0	504	0.0	3.1111
+glacierkeep_s28_B	glacierkeep	28	B	US	143	8	143	10	59	91	51	5	87	5	46	54	0	54	450	0	450	10.8	3.2609
+glacierkeep_s29_A	glacierkeep	29	A	US	130	8	130	87	58	55	14	14	72	73	0	0	0	0	504	0	504	0.0	4.3448
+glacierkeep_s29_B	glacierkeep	29	B	US	245	8	245	89	108	88	11	0	-1	89	11	0	0		504	0	504		2.0571
+glacierkeep_s30_A	glacierkeep	30	A	US	110	8	110	82	58	14	14	14	56	68	0	0	0	0	504	0	504	0.0	5.25
+glacierkeep_s30_B	glacierkeep	30	B	US	617	8	617	96	501	102	55	12	116	84	43	108	0	108	840	444	396	9.0	0.6545
+midgard_s28_A	midgard	28	A	US	441	8	441	0	264	195	32	0	-1	0	32	0	0		1196	696	500		1.1338
+midgard_s28_B	midgard	28	B	OPP	267	8	267	0	0	242	0	0	-1	0	0	0	0		0	0	0		0.0
+midgard_s29_A	midgard	29	A	OPP	181	8	181	0	131	125	82	0	-1	0	82	0	0		598	580	18		0.0994
+midgard_s29_B	midgard	29	B	US	192	8	192	0	108	185	108	0	-1	0	108	0	0		504	0	504		2.625
+midgard_s30_A	midgard	30	A	OPP	449	8	449	0	400	354	318	0	-1	0	318	0	0		0	0	0		0.0
+midgard_s30_B	midgard	30	B	OPP	1000	8	1000	0	906	103	31	0	-1	0	31	0	0		1086	1086	0		0.0
+nordkap_s28_A	nordkap	28	A	US	288	8	288	257	56	264	56	56	232	201	0	504	0	504	0	0	0	9.0	0.0
+nordkap_s28_B	nordkap	28	B	US	177	8	177	141	137	42	11	11	40	130	0	90	0	90	414	0	414	8.1818	2.494
+nordkap_s29_A	nordkap	29	A	US	257	8	257	204	197	55	4	4	60	200	0	18	0	18	486	0	486	4.5	1.9209
+nordkap_s29_B	nordkap	29	B	US	168	8	168	71	60	159	60	54	112	17	6	486	0	486	18	0	18	9.0	0.1579
+nordkap_s30_A	nordkap	30	A	US	408	8	408	342	64	356	46	12	36	330	34	90	0	90	414	0	414	7.5	1.0455
+nordkap_s30_B	nordkap	30	B	US	121	8	121	83	114	68	68	39	38	44	29	270	0	270	234	0	234	6.9231	2.8537
+yulerune_s28_A	yulerune	28	A	US	295	8	295	0	79	230	24	0	-1	0	24	0	0		504	0	504		1.7085
+yulerune_s28_B	yulerune	28	B	OPP	170	8	170	0	0	83	0	0	-1	0	0	0	0		0	0	0		0.0
+yulerune_s29_A	yulerune	29	A	OPP	197	8	197	0	100	52	38	0	-1	0	38	0	0		0	0	0		0.0
+yulerune_s29_B	yulerune	29	B	OPP	176	8	176	0	0	160	0	0	-1	0	0	0	0		0	0	0		0.0
+yulerune_s30_A	yulerune	30	A	OPP	193	8	193	0	0	142	0	0	-1	0	0	0	0		0	0	0		0.0
+yulerune_s30_B	yulerune	30	B	OPP	318	8	318	0	0	213	0	0	-1	0	0	0	0		0	0	0		0.0
+atoll_s31_A	atoll	31	A	OPP	479	8	479	0	0	468	0	0	-1	0	0	0	0		0	0	0		0.0
+atoll_s31_B	atoll	31	B	OPP	825	8	825	0	248	398	6	0	-1	0	6	0	0		136	136	0		0.0
+atoll_s32_A	atoll	32	A	US	632	8	632	0	348	621	347	0	-1	0	347	0	0		1816	1316	500		0.7911
+atoll_s32_B	atoll	32	B	US	448	8	448	0	388	439	388	0	-1	0	388	0	0		1992	1492	500		1.1161
+atoll_s33_A	atoll	33	A	US	364	8	364	0	285	331	264	0	-1	0	264	0	0		1516	1016	500		1.3736
+atoll_s33_B	atoll	33	B	OPP	191	8	191	0	61	116	14	0	-1	0	14	0	0		128	128	0		0.0
+drakkarfjord_s31_A	drakkarfjord	31	A	US	88	8	88	57	56	73	55	55	32	2	0	486	0	486	18	0	18	8.8364	0.5455
+drakkarfjord_s31_B	drakkarfjord	31	B	US	125	8	125	20	84	111	84	15	41	5	69	126	0	126	502	124	378	8.4	3.4364
+drakkarfjord_s32_A	drakkarfjord	32	A	US	92	8	92	35	56	78	56	29	36	6	27	270	0	270	234	0	234	9.3103	3.7143
+drakkarfjord_s32_B	drakkarfjord	32	B	US	124	8	124	27	84	110	84	16	40	11	68	144	0	144	484	128	356	9.0	3.2963
+drakkarfjord_s33_A	drakkarfjord	33	A	US	99	8	99	53	56	85	56	43	48	10	13	378	0	378	126	0	126	8.7907	2.25
+drakkarfjord_s33_B	drakkarfjord	33	B	US	101	8	101	63	56	87	56	56	45	7	0	504	0	504	0	0	0	9.0	0.0
+glacierkeep_s31_A	glacierkeep	31	A	US	112	8	112	84	60	16	16	16	60	68	0	36	0	36	468	0	468	2.25	4.875
+glacierkeep_s31_B	glacierkeep	31	B	US	265	8	265	198	173	0	0	0	-1	198	0	0	0		504	0	504		1.9019
+glacierkeep_s32_A	glacierkeep	32	A	US	124	8	124	79	56	109	56	56	68	23	0	504	0	504	0	0	0	9.0	0.0
+glacierkeep_s32_B	glacierkeep	32	B	US	217	8	217	96	109	93	3	3	108	93	0	18	0	18	486	0	486	6.0	2.271
+glacierkeep_s33_A	glacierkeep	33	A	US	110	8	110	82	58	14	14	14	56	68	0	0	0	0	504	0	504	0.0	5.25
+glacierkeep_s33_B	glacierkeep	33	B	OPP	1000	8	1000	55	944	211	203	24	56	31	179	216	0	216	1730	1946	-216	9.0	-0.2213
+midgard_s31_A	midgard	31	A	OPP	598	8	598	0	0	169	0	0	-1	0	0	0	0		0	0	0		0.0
+midgard_s31_B	midgard	31	B	US	401	8	401	0	68	335	37	0	-1	0	37	0	0		504	0	504		1.2569
+midgard_s32_A	midgard	32	A	US	228	8	228	0	88	209	88	0	-1	0	88	0	0		504	0	504		2.2105
+midgard_s32_B	midgard	32	B	OPP	486	8	486	0	0	177	0	0	-1	0	0	0	0		0	0	0		0.0
+midgard_s33_A	midgard	33	A	OPP	141	8	141	0	84	125	84	0	-1	0	84	0	0		456	296	160		1.1348
+midgard_s33_B	midgard	33	B	OPP	177	8	177	0	0	164	0	0	-1	0	0	0	0		0	0	0		0.0
+nordkap_s31_A	nordkap	31	A	US	529	8	529	30	441	409	341	5	88	25	336	36	0	36	1940	1476	464	7.2	0.8855
+nordkap_s31_B	nordkap	31	B	US	130	8	130	0	50	120	50	0	-1	0	50	0	0		504	0	504		3.8769
+nordkap_s32_A	nordkap	32	A	US	171	8	171	0	67	112	19	0	-1	0	19	0	0		504	0	504		2.9474
+nordkap_s32_B	nordkap	32	B	OPP	433	8	433	396	393	39	6	3	45	393	3	36	0	36	54	0	54	12.0	0.1256
+nordkap_s33_A	nordkap	33	A	OPP	241	8	241	0	165	67	7	0	-1	0	7	0	0		462	338	124		0.5145
+nordkap_s33_B	nordkap	33	B	US	282	8	282	0	245	227	198	0	-1	0	198	0	0		780	278	502		1.7801
+yulerune_s31_A	yulerune	31	A	US	171	8	171	0	40	158	40	0	-1	0	40	0	0		504	0	504		2.9474
+yulerune_s31_B	yulerune	31	B	US	168	8	168	0	56	159	56	0	-1	0	56	0	0		504	0	504		3.0
+yulerune_s32_A	yulerune	32	A	OPP	177	8	177	0	0	129	0	0	-1	0	0	0	0		0	0	0		0.0
+yulerune_s32_B	yulerune	32	B	OPP	321	8	321	0	0	310	0	0	-1	0	0	0	0		0	0	0		0.0
+yulerune_s33_A	yulerune	33	A	US	524	8	524	0	109	506	109	0	-1	0	109	0	0		504	0	504		0.9618
+yulerune_s33_B	yulerune	33	B	OPP	318	8	318	0	0	76	0	0	-1	0	0	0	0		0	0	0		0.0
+atoll_s34_A	atoll	34	A	US	424	8	424	0	364	417	364	0	-1	0	364	0	0		1896	1396	500		1.1792
+atoll_s34_B	atoll	34	B	OPP	316	8	316	0	0	298	0	0	-1	0	0	0	0		0	0	0		0.0
+atoll_s35_A	atoll	35	A	OPP	1000	8	1000	0	0	983	0	0	-1	0	0	0	0		0	0	0		0.0
+atoll_s35_B	atoll	35	B	US	420	8	420	0	292	410	292	0	-1	0	292	0	0		1564	1064	500		1.1905
+atoll_s36_A	atoll	36	A	OPP	160	8	160	0	0	143	0	0	-1	0	0	0	0		0	0	0		0.0
+atoll_s36_B	atoll	36	B	OPP	351	8	351	0	0	116	0	0	-1	0	0	0	0		0	0	0		0.0
+drakkarfjord_s34_A	drakkarfjord	34	A	US	89	8	89	49	56	74	55	47	33	2	8	396	0	396	108	0	108	8.4255	2.5714
+drakkarfjord_s34_B	drakkarfjord	34	B	US	120	8	120	73	56	106	56	56	64	17	0	504	0	504	0	0	0	9.0	0.0
+drakkarfjord_s35_A	drakkarfjord	35	A	US	106	8	106	30	70	92	70	24	36	6	46	216	0	216	350	64	286	9.0	3.4878
+drakkarfjord_s35_B	drakkarfjord	35	B	US	122	8	122	29	82	108	82	20	40	9	62	180	0	180	442	116	326	9.0	3.1961
+drakkarfjord_s36_A	drakkarfjord	36	A	OPP	702	8	702	0	167	530	45	0	-1	0	45	0	0		596	596	0		0.0
+drakkarfjord_s36_B	drakkarfjord	36	B	US	113	8	113	54	56	99	56	48	57	6	8	414	0	414	90	0	90	8.625	1.3846
+glacierkeep_s34_A	glacierkeep	34	A	US	123	8	123	78	56	108	56	56	67	22	0	504	0	504	0	0	0	9.0	0.0
+glacierkeep_s34_B	glacierkeep	34	B	US	245	8	245	89	108	88	11	0	-1	89	11	0	0		504	0	504		2.0571
+glacierkeep_s35_A	glacierkeep	35	A	US	165	8	165	137	101	3	3	3	72	134	0	0	0	0	504	0	504	0.0	3.1111
+glacierkeep_s35_B	glacierkeep	35	B	US	544	8	544	69	76	497	52	14	490	55	38	108	0	108	536	144	392	7.7143	0.7396
+glacierkeep_s36_A	glacierkeep	36	A	US	119	8	119	76	56	76	56	56	63	20	0	504	0	504	0	0	0	9.0	0.0
+glacierkeep_s36_B	glacierkeep	36	B	US	217	8	217	179	149	35	4	4	68	175	0	18	0	18	486	0	486	4.5	2.2817
+midgard_s34_A	midgard	34	A	OPP	272	8	272	0	222	179	149	0	-1	0	149	0	0		0	0	0		0.0
+midgard_s34_B	midgard	34	B	OPP	529	8	529	0	0	177	0	0	-1	0	0	0	0		0	0	0		0.0
+midgard_s35_A	midgard	35	A	OPP	355	8	355	0	0	238	0	0	-1	0	0	0	0		0	0	0		0.0
+midgard_s35_B	midgard	35	B	US	183	8	183	0	98	166	95	0	-1	0	95	0	0		504	0	504		2.7541
+midgard_s36_A	midgard	36	A	OPP	441	8	441	0	394	88	53	0	-1	0	53	0	0		1432	1296	136		0.3084
+midgard_s36_B	midgard	36	B	US	257	8	257	0	57	231	48	0	-1	0	48	0	0		504	0	504		1.9611
+nordkap_s34_A	nordkap	34	A	US	401	8	401	65	336	212	159	10	157	55	149	90	0	90	1096	686	410	9.0	1.0486
+nordkap_s34_B	nordkap	34	B	OPP	372	8	372	2	4	178	3	0	-1	2	3	0	0		0	0	0		0.0
+nordkap_s35_A	nordkap	35	A	US	1000	8	1000	306	864	153	30	24	136	282	6	216	0	216	630	846	-216	9.0	-0.2213
+nordkap_s35_B	nordkap	35	B	OPP	456	8	456	0	0	37	0	0	-1	0	0	0	0		0	0	0		0.0
+nordkap_s36_A	nordkap	36	A	US	549	8	549	114	81	392	16	16	468	98	0	126	0	126	378	0	378	7.875	0.7092
+nordkap_s36_B	nordkap	36	B	OPP	326	8	326	0	12	316	12	0	-1	0	12	0	0		68	68	0		0.0
+yulerune_s34_A	yulerune	34	A	US	736	8	736	0	120	651	120	0	-1	0	120	0	0		504	0	504		0.6848
+yulerune_s34_B	yulerune	34	B	OPP	212	8	212	0	84	135	20	0	-1	0	20	0	0		468	0	468		2.2075
+yulerune_s35_A	yulerune	35	A	OPP	233	8	233	0	0	167	0	0	-1	0	0	0	0		0	0	0		0.0
+yulerune_s35_B	yulerune	35	B	OPP	208	8	208	0	0	193	0	0	-1	0	0	0	0		0	0	0		0.0
+yulerune_s36_A	yulerune	36	A	US	219	8	219	0	35	207	35	0	-1	0	35	0	0		504	0	504		2.3014
+yulerune_s36_B	yulerune	36	B	OPP	315	8	315	0	0	266	0	0	-1	0	0	0	0		0	0	0		0.0
+atoll_s37_A	atoll	37	A	OPP	204	8	204	0	0	46	0	0	-1	0	0	0	0		0	0	0		0.0
+atoll_s37_B	atoll	37	B	US	284	8	284	0	56	275	56	0	-1	0	56	0	0		504	0	504		1.7746
+atoll_s38_A	atoll	38	A	OPP	1000	8	1000	0	0	987	0	0	-1	0	0	0	0		0	0	0		0.0
+atoll_s38_B	atoll	38	B	US	126	8	126	0	56	116	56	0	-1	0	56	0	0		504	0	504		4.0
+atoll_s39_A	atoll	39	A	US	285	8	285	0	140	262	138	0	-1	0	138	0	0		504	0	504		1.7684
+atoll_s39_B	atoll	39	B	OPP	340	8	340	0	0	52	0	0	-1	0	0	0	0		0	0	0		0.0
+drakkarfjord_s37_A	drakkarfjord	37	A	US	105	8	105	42	70	91	70	37	35	5	33	324	0	324	242	60	182	8.7568	2.6765
+drakkarfjord_s37_B	drakkarfjord	37	B	US	459	8	459	29	419	407	381	20	40	9	361	180	0	180	1862	1542	320	9.0	0.7289
+drakkarfjord_s38_A	drakkarfjord	38	A	US	93	8	93	64	56	79	56	56	37	8	0	504	0	504	0	0	0	9.0	0.0
+drakkarfjord_s38_B	drakkarfjord	38	B	US	114	8	114	39	74	100	74	28	40	11	46	252	0	252	334	80	254	9.0	2.9535
+drakkarfjord_s39_A	drakkarfjord	39	A	US	99	8	99	56	56	85	56	46	48	10	10	414	0	414	90	0	90	9.0	1.6981
+drakkarfjord_s39_B	drakkarfjord	39	B	US	98	8	98	52	56	84	56	51	42	1	5	468	0	468	36	0	36	9.1765	0.766
+glacierkeep_s37_A	glacierkeep	37	A	US	162	8	162	110	63	73	29	29	99	81	0	144	0	144	360	0	360	4.9655	2.7068
+glacierkeep_s37_B	glacierkeep	37	B	US	445	8	445	326	109	311	3	3	336	323	0	18	0	18	486	0	486	6.0	1.0995
+glacierkeep_s38_A	glacierkeep	38	A	US	111	8	111	65	56	96	56	56	55	9	0	504	0	504	0	0	0	9.0	0.0
+glacierkeep_s38_B	glacierkeep	38	B	OPP	1000	8	1000	89	210	735	25	3	96	86	22	18	0	18	678	696	-18	6.0	-0.0181
+glacierkeep_s39_A	glacierkeep	39	A	US	121	8	121	85	73	65	36	36	48	49	0	306	0	306	198	0	198	8.5	2.3294
+glacierkeep_s39_B	glacierkeep	39	B	OPP	1000	8	1000	924	884	42	0	0	-1	924	0	0	0		0	0	0		0.0
+midgard_s37_A	midgard	37	A	OPP	1000	8	1000	0	0	118	0	0	-1	0	0	0	0		0	0	0		0.0
+midgard_s37_B	midgard	37	B	US	180	8	180	0	56	163	56	0	-1	0	56	0	0		504	0	504		2.8
+midgard_s38_A	midgard	38	A	US	196	8	196	0	56	183	56	0	-1	0	56	0	0		504	0	504		2.5714
+midgard_s38_B	midgard	38	B	OPP	957	8	957	0	904	476	436	0	-1	0	436	0	0		450	0	450		0.4702
+midgard_s39_A	midgard	39	A	US	187	8	187	0	128	174	125	0	-1	0	125	0	0		504	0	504		2.6952
+midgard_s39_B	midgard	39	B	US	153	8	153	0	63	111	30	0	-1	0	30	0	0		504	0	504		3.2941
+nordkap_s37_A	nordkap	37	A	OPP	256	8	256	0	0	215	0	0	-1	0	0	0	0		0	0	0		0.0
+nordkap_s37_B	nordkap	37	B	US	173	8	173	115	166	72	72	22	58	93	50	54	0	54	450	0	450	2.4545	2.9801
+nordkap_s38_A	nordkap	38	A	US	124	8	124	96	76	38	11	11	48	85	0	18	0	18	486	0	486	1.6364	4.3009
+nordkap_s38_B	nordkap	38	B	US	217	8	217	168	208	58	57	24	49	144	33	0	0	0	504	0	504	0.0	2.6114
+nordkap_s39_A	nordkap	39	A	US	180	8	180	72	138	108	79	45	52	27	34	54	0	54	546	96	450	1.2	3.3333
+nordkap_s39_B	nordkap	39	B	OPP	349	8	349	290	281	64	10	0	-1	290	10	0	0		432	0	432		1.2378
+yulerune_s37_A	yulerune	37	A	US	381	8	381	0	45	364	45	0	-1	0	45	0	0		504	0	504		1.3228
+yulerune_s37_B	yulerune	37	B	US	146	8	146	0	122	135	120	0	-1	0	120	0	0		504	0	504		3.4521
+yulerune_s38_A	yulerune	38	A	OPP	481	8	481	0	452	410	391	0	-1	0	391	0	0		0	0	0		0.0
+yulerune_s38_B	yulerune	38	B	US	183	8	183	0	56	169	56	0	-1	0	56	0	0		504	0	504		2.7541
+yulerune_s39_A	yulerune	39	A	OPP	426	8	426	0	0	377	0	0	-1	0	0	0	0		0	0	0		0.0
+yulerune_s39_B	yulerune	39	B	US	277	8	277	0	89	172	20	0	-1	0	20	0	0		504	0	504		1.8195
+atoll_s40_A	atoll	40	A	OPP	929	8	929	20	19	886	19	0	-1	20	19	0	0		180	180	0		0.0
+atoll_s40_B	atoll	40	B	US	613	8	613	0	93	373	16	0	-1	0	16	0	0		504	0	504		0.8222
+atoll_s41_A	atoll	41	A	US	220	8	220	0	56	210	56	0	-1	0	56	0	0		504	0	504		2.2909
+atoll_s41_B	atoll	41	B	US	127	8	127	0	61	102	49	0	-1	0	49	0	0		504	0	504		3.9685
+atoll_s42_A	atoll	42	A	OPP	401	8	401	0	0	342	0	0	-1	0	0	0	0		0	0	0		0.0
+atoll_s42_B	atoll	42	B	OPP	369	8	369	0	0	59	0	0	-1	0	0	0	0		0	0	0		0.0
+drakkarfjord_s40_A	drakkarfjord	40	A	OPP	291	8	291	0	0	274	0	0	-1	0	0	0	0		0	0	0		0.0
+drakkarfjord_s40_B	drakkarfjord	40	B	US	98	8	98	59	56	84	56	53	42	6	3	486	0	486	18	0	18	9.1698	0.4
+drakkarfjord_s41_A	drakkarfjord	41	A	US	99	8	99	55	62	85	62	47	37	8	15	414	0	414	116	24	92	8.8085	1.7692
+drakkarfjord_s41_B	drakkarfjord	41	B	US	122	8	122	29	82	108	82	20	40	9	62	180	0	180	442	116	326	9.0	3.1961
+drakkarfjord_s42_A	drakkarfjord	42	A	OPP	1000	8	1000	71	923	196	133	45	33	26	88	378	0	378	2034	2412	-378	8.4	-0.3958
+drakkarfjord_s42_B	drakkarfjord	42	B	US	117	8	117	73	60	103	60	47	57	26	13	414	0	414	106	16	90	8.8085	1.2857
+glacierkeep_s40_A	glacierkeep	40	A	OPP	601	8	601	544	480	87	1	1	121	543	0	0	0	0	144	0	144	0.0	0.24
+glacierkeep_s40_B	glacierkeep	40	B	US	445	8	445	64	349	30	3	0	-1	64	3	0	0		918	414	504		1.1326
+glacierkeep_s41_A	glacierkeep	41	A	US	127	8	127	80	56	96	42	42	71	38	0	252	0	252	252	0	252	6.0	2.9647
+glacierkeep_s41_B	glacierkeep	41	B	US	225	8	225	92	112	96	1	1	113	91	0	0	0	0	504	0	504	0.0	2.25
+glacierkeep_s42_A	glacierkeep	42	A	US	180	8	180	65	68	162	68	34	112	31	34	306	0	306	250	52	198	9.0	1.3562
+glacierkeep_s42_B	glacierkeep	42	B	US	445	8	445	326	109	311	3	3	336	323	0	18	0	18	486	0	486	6.0	1.0995
+midgard_s40_A	midgard	40	A	US	1000	8	1000	0	156	888	58	0	-1	0	58	0	0		670	670	0		0.0
+midgard_s40_B	midgard	40	B	US	350	8	350	0	304	343	304	0	-1	0	304	0	0		504	0	504		1.44
+midgard_s41_A	midgard	41	A	US	200	8	200	0	150	192	150	0	-1	0	150	0	0		504	0	504		2.52
+midgard_s41_B	midgard	41	B	OPP	333	8	333	0	0	171	0	0	-1	0	0	0	0		0	0	0		0.0
+midgard_s42_A	midgard	42	A	OPP	135	8	135	0	88	81	43	0	-1	0	43	0	0		362	342	20		0.1481
+midgard_s42_B	midgard	42	B	US	685	8	685	0	125	489	123	0	-1	0	123	0	0		504	0	504		0.7358
+nordkap_s40_A	nordkap	40	A	US	137	8	137	25	82	126	82	15	55	10	67	126	0	126	496	116	380	8.4	3.1148
+nordkap_s40_B	nordkap	40	B	OPP	1000	8	1000	327	173	861	48	32	85	295	16	270	0	270	568	676	-108	8.4375	-0.1116
+nordkap_s41_A	nordkap	41	A	US	157	8	157	134	109	28	1	1	48	133	0	0	0	0	504	0	504	0.0	3.2308
+nordkap_s41_B	nordkap	41	B	US	183	8	183	105	71	92	24	24	112	81	0	198	0	198	306	0	306	8.25	1.9245
+nordkap_s42_A	nordkap	42	A	OPP	454	8	454	29	71	364	8	8	84	21	0	54	0	54	110	164	-54	6.75	-0.1211
+nordkap_s42_B	nordkap	42	B	US	604	8	604	0	495	588	487	0	-1	0	487	0	0		1308	804	504		0.8344
+yulerune_s40_A	yulerune	40	A	US	413	8	413	0	93	326	16	0	-1	0	16	0	0		504	0	504		1.2203
+yulerune_s40_B	yulerune	40	B	US	253	8	253	0	93	167	16	0	-1	0	16	0	0		504	0	504		1.9921
+yulerune_s41_A	yulerune	41	A	OPP	361	8	361	0	0	324	0	0	-1	0	0	0	0		0	0	0		0.0
+yulerune_s41_B	yulerune	41	B	US	628	8	628	0	601	523	508	0	-1	0	508	0	0		504	0	504		0.8025
+yulerune_s42_A	yulerune	42	A	US	773	8	773	0	153	228	12	0	-1	0	12	0	0		504	0	504		0.652
+yulerune_s42_B	yulerune	42	B	OPP	183	8	183	0	0	87	0	0	-1	0	0	0	0		0	0	0		0.0
+atoll_s43_A	atoll	43	A	US	364	8	364	0	285	331	264	0	-1	0	264	0	0		1516	1016	500		1.3736
+atoll_s43_B	atoll	43	B	US	467	8	467	0	76	456	76	0	-1	0	76	0	0		596	88	508		1.0878
+atoll_s44_A	atoll	44	A	OPP	190	8	190	0	0	124	0	0	-1	0	0	0	0		0	0	0		0.0
+atoll_s44_B	atoll	44	B	US	458	8	458	0	56	441	56	0	-1	0	56	0	0		504	0	504		1.1004
+atoll_s45_A	atoll	45	A	US	318	8	318	0	215	186	91	0	-1	0	91	0	0		824	316	508		1.5975
+atoll_s45_B	atoll	45	B	OPP	201	8	201	0	0	189	0	0	-1	0	0	0	0		0	0	0		0.0
+drakkarfjord_s43_A	drakkarfjord	43	A	US	101	8	101	52	56	86	55	50	45	2	5	432	0	432	72	0	72	8.64	1.4118
+drakkarfjord_s43_B	drakkarfjord	43	B	US	114	8	114	39	74	100	74	28	40	11	46	252	0	252	334	80	254	9.0	2.9535
+drakkarfjord_s44_A	drakkarfjord	44	A	OPP	865	8	865	71	788	196	133	45	33	26	88	378	0	378	2096	2326	-230	8.4	-0.2805
+drakkarfjord_s44_B	drakkarfjord	44	B	US	117	8	117	73	60	103	60	47	57	26	13	414	0	414	106	16	90	8.8085	1.2857
+drakkarfjord_s45_A	drakkarfjord	45	A	US	92	8	92	63	56	78	56	56	36	7	0	504	0	504	0	0	0	9.0	0.0
+drakkarfjord_s45_B	drakkarfjord	45	B	US	383	8	383	27	343	174	148	16	40	11	132	144	0	144	1354	998	356	9.0	0.97
+glacierkeep_s43_A	glacierkeep	43	A	US	138	8	138	95	66	56	13	13	88	82	0	0	0	0	504	0	504	0.0	4.032
+glacierkeep_s43_B	glacierkeep	43	B	US	228	8	228	5	60	187	60	0	-1	5	60	0	0		520	16	504		2.2105
+glacierkeep_s44_A	glacierkeep	44	A	US	162	8	162	110	63	73	29	29	99	81	0	144	0	144	360	0	360	4.9655	2.7068
+glacierkeep_s44_B	glacierkeep	44	B	US	253	8	253	207	161	1	1	1	92	206	0	0	0	0	504	0	504	0.0	2.0
+glacierkeep_s45_A	glacierkeep	45	A	US	177	8	177	134	105	49	3	3	84	131	0	0	0	0	504	0	504	0.0	2.8966
+glacierkeep_s45_B	glacierkeep	45	B	US	225	8	225	92	112	96	1	1	113	91	0	0	0	0	504	0	504	0.0	2.25
+midgard_s43_A	midgard	43	A	OPP	243	8	243	0	0	126	0	0	-1	0	0	0	0		0	0	0		0.0
+midgard_s43_B	midgard	43	B	OPP	1000	8	1000	0	0	534	0	0	-1	0	0	0	0		0	0	0		0.0
+midgard_s44_A	midgard	44	A	OPP	261	8	261	0	0	252	0	0	-1	0	0	0	0		0	0	0		0.0
+midgard_s44_B	midgard	44	B	US	1000	8	1000	0	944	839	796	0	-1	0	796	0	0		0	0	0		0.0
+midgard_s45_A	midgard	45	A	US	457	8	457	0	68	426	47	0	-1	0	47	0	0		504	0	504		1.1028
+midgard_s45_B	midgard	45	B	US	164	8	164	0	56	154	56	0	-1	0	56	0	0		504	0	504		3.0732
+nordkap_s43_A	nordkap	43	A	US	288	8	288	257	56	264	56	56	232	201	0	504	0	504	0	0	0	9.0	0.0
+nordkap_s43_B	nordkap	43	B	OPP	1000	8	1000	934	16	902	14	12	944	922	2	108	0	108	0	0	0	9.0	0.0
+nordkap_s44_A	nordkap	44	A	US	102	8	102	66	57	81	49	49	45	17	0	414	0	414	90	0	90	8.449	1.6981
+nordkap_s44_B	nordkap	44	B	OPP	301	8	301	0	0	197	0	0	-1	0	0	0	0		0	0	0		0.0
+nordkap_s45_A	nordkap	45	A	US	1000	8	1000	165	34	101	1	1	108	164	0	0	0	0	54	54	0	0.0	0.0
+nordkap_s45_B	nordkap	45	B	OPP	377	8	377	18	369	259	259	18	137	0	241	0	0	0	144	0	144	0.0	0.4011
+yulerune_s43_A	yulerune	43	A	US	934	8	934	0	83	904	83	0	-1	0	83	0	0		504	0	504		0.5396
+yulerune_s43_B	yulerune	43	B	US	1000	8	1000	0	964	139	117	0	-1	0	117	0	0		0	0	0		0.0
+yulerune_s44_A	yulerune	44	A	US	305	8	305	0	54	294	54	0	-1	0	54	0	0		504	0	504		1.6525
+yulerune_s44_B	yulerune	44	B	US	808	8	808	0	766	700	672	0	-1	0	672	0	0		504	0	504		0.6238
+yulerune_s45_A	yulerune	45	A	OPP	269	8	269	0	0	203	0	0	-1	0	0	0	0		0	0	0		0.0
+yulerune_s45_B	yulerune	45	B	OPP	180	8	180	0	0	90	0	0	-1	0	0	0	0		0	0	0		0.0
+atoll_s46_A	atoll	46	A	OPP	1000	8	1000	0	328	555	267	0	-1	0	267	0	0		1434	1096	338		0.338
+atoll_s46_B	atoll	46	B	OPP	285	8	285	0	0	80	0	0	-1	0	0	0	0		0	0	0		0.0
+atoll_s47_A	atoll	47	A	US	534	8	534	260	68	521	68	19	324	241	49	0	0	0	504	0	504	0.0	0.9786
+atoll_s47_B	atoll	47	B	US	146	8	146	0	56	134	56	0	-1	0	56	0	0		504	0	504		3.4521
+atoll_s48_A	atoll	48	A	US	253	8	253	199	196	68	18	18	57	181	0	144	0	144	360	0	360	8.0	1.5319
+atoll_s48_B	atoll	48	B	US	474	8	474	0	305	463	305	0	-1	0	305	0	0		1664	1160	504		1.0633
+drakkarfjord_s46_A	drakkarfjord	46	A	US	112	8	112	10	76	98	76	4	36	6	72	36	0	36	560	88	472	9.0	4.3704
+drakkarfjord_s46_B	drakkarfjord	46	B	US	124	8	124	27	84	110	84	16	40	11	68	144	0	144	484	128	356	9.0	3.2963
+drakkarfjord_s47_A	drakkarfjord	47	A	US	116	8	116	49	56	102	56	49	63	0	7	450	0	450	50	0	50	9.1837	0.7463
+drakkarfjord_s47_B	drakkarfjord	47	B	US	101	8	101	63	56	87	56	56	45	7	0	504	0	504	0	0	0	9.0	0.0
+drakkarfjord_s48_A	drakkarfjord	48	A	US	168	8	168	54	91	153	90	42	33	12	48	360	0	360	354	212	142	8.5714	1.127
+drakkarfjord_s48_B	drakkarfjord	48	B	US	544	8	544	40	504	227	201	25	40	15	176	216	0	216	1804	1520	284	8.64	0.5472
+glacierkeep_s46_A	glacierkeep	46	A	US	123	8	123	78	56	106	56	56	67	22	0	504	0	504	0	0	0	9.0	0.0
+glacierkeep_s46_B	glacierkeep	46	B	US	123	8	123	64	64	70	64	37	59	27	27	324	0	324	212	36	176	8.7568	2.0465
+glacierkeep_s47_A	glacierkeep	47	A	US	120	8	120	75	56	104	56	56	64	19	0	504	0	504	0	0	0	9.0	0.0
+glacierkeep_s47_B	glacierkeep	47	B	US	1000	8	1000	68	0	940	0	0	-1	68	0	0	0		0	0	0		0.0
+glacierkeep_s48_A	glacierkeep	48	A	US	119	8	119	71	56	76	56	51	63	20	5	450	0	450	54	0	54	8.8235	0.7941
+glacierkeep_s48_B	glacierkeep	48	B	US	349	8	349	130	257	30	3	3	92	127	0	18	0	18	674	188	486	6.0	1.4046
+midgard_s46_A	midgard	46	A	OPP	372	8	372	0	149	65	20	0	-1	0	20	0	0		176	176	0		0.0
+midgard_s46_B	midgard	46	B	OPP	277	8	277	0	56	206	52	0	-1	0	52	0	0		0	0	0		0.0
+midgard_s47_A	midgard	47	A	OPP	1000	8	1000	0	724	256	13	0	-1	0	13	0	0		1896	1896	0		0.0
+midgard_s47_B	midgard	47	B	US	793	8	793	0	177	462	13	0	-1	0	13	0	0		504	0	504		0.6356
+midgard_s48_A	midgard	48	A	US	233	8	233	0	50	164	50	0	-1	0	50	0	0		504	0	504		2.1631
+midgard_s48_B	midgard	48	B	US	190	8	190	0	56	166	56	0	-1	0	56	0	0		504	0	504		2.6526
+nordkap_s46_A	nordkap	46	A	US	148	8	148	54	84	81	28	15	64	39	13	108	0	108	496	96	400	7.2	3.0075
+nordkap_s46_B	nordkap	46	B	US	1000	8	1000	733	0	125	0	0	-1	733	0	0	0		0	0	0		0.0
+nordkap_s47_A	nordkap	47	A	US	173	8	173	115	57	160	57	37	71	78	20	324	0	324	180	0	180	8.7568	1.3235
+nordkap_s47_B	nordkap	47	B	OPP	293	8	293	0	0	269	0	0	-1	0	0	0	0		0	0	0		0.0
+nordkap_s48_A	nordkap	48	A	US	197	8	197	0	58	165	47	0	-1	0	47	0	0		504	0	504		2.5584
+nordkap_s48_B	nordkap	48	B	OPP	239	8	239	0	68	221	57	0	-1	0	57	0	0		64	64	0		0.0
+yulerune_s46_A	yulerune	46	A	US	134	8	134	0	50	123	50	0	-1	0	50	0	0		504	0	504		3.7612
+yulerune_s46_B	yulerune	46	B	US	305	8	305	0	279	225	210	0	-1	0	210	0	0		504	0	504		1.6525
+yulerune_s47_A	yulerune	47	A	OPP	177	8	177	0	149	56	39	0	-1	0	39	0	0		0	0	0		0.0
+yulerune_s47_B	yulerune	47	B	OPP	268	8	268	0	0	89	0	0	-1	0	0	0	0		0	0	0		0.0
+yulerune_s48_A	yulerune	48	A	OPP	1000	8	1000	0	0	146	0	0	-1	0	0	0	0		0	0	0		0.0
+yulerune_s48_B	yulerune	48	B	OPP	204	8	204	0	161	151	124	0	-1	0	124	0	0		0	0	0		0.0
+atoll_s49_A	atoll	49	A	US	221	8	221	0	57	207	53	0	-1	0	53	0	0		504	0	504		2.2805
+atoll_s49_B	atoll	49	B	US	1000	8	1000	922	5	983	5	0	-1	922	5	0	0		36	0	36		0.036
+atoll_s50_A	atoll	50	A	US	286	8	286	0	84	279	84	0	-1	0	84	0	0		726	222	504		1.7622
+atoll_s50_B	atoll	50	B	US	116	8	116	0	56	107	56	0	-1	0	56	0	0		504	0	504		4.3448
+atoll_s51_A	atoll	51	A	OPP	272	8	272	0	0	250	0	0	-1	0	0	0	0		0	0	0		0.0
+atoll_s51_B	atoll	51	B	OPP	400	8	400	0	0	360	0	0	-1	0	0	0	0		0	0	0		0.0
+drakkarfjord_s49_A	drakkarfjord	49	A	US	100	8	100	59	59	72	45	45	41	14	0	378	0	378	126	0	126	8.4	2.2909
+drakkarfjord_s49_B	drakkarfjord	49	B	US	124	8	124	27	84	110	84	16	40	11	68	144	0	144	484	128	356	9.0	3.2963
+drakkarfjord_s50_A	drakkarfjord	50	A	US	116	8	116	49	56	102	56	49	63	0	7	450	0	450	50	0	50	9.1837	0.7463
+drakkarfjord_s50_B	drakkarfjord	50	B	US	121	8	121	33	80	107	80	23	41	10	57	198	0	198	414	108	306	8.6087	3.1224
+drakkarfjord_s51_A	drakkarfjord	51	A	OPP	538	8	538	0	45	432	45	0	-1	0	45	0	0		346	346	0		0.0
+drakkarfjord_s51_B	drakkarfjord	51	B	US	310	8	310	0	96	296	96	0	-1	0	96	0	0		694	184	510		1.6452
+glacierkeep_s49_A	glacierkeep	49	A	US	120	8	120	75	56	104	56	56	64	19	0	504	0	504	0	0	0	9.0	0.0
+glacierkeep_s49_B	glacierkeep	49	B	US	217	8	217	96	109	93	3	3	108	93	0	18	0	18	486	0	486	6.0	2.271
+glacierkeep_s50_A	glacierkeep	50	A	US	143	8	143	100	55	128	55	55	63	45	0	486	0	486	18	0	18	8.8364	0.2045
+glacierkeep_s50_B	glacierkeep	50	B	US	1000	8	1000	52	26	915	1	0	-1	52	1	0	0		36	0	36		0.036
+glacierkeep_s51_A	glacierkeep	51	A	US	143	8	143	100	55	100	55	55	63	45	0	486	0	486	18	0	18	8.8364	0.2045
+glacierkeep_s51_B	glacierkeep	51	B	OPP	889	8	889	89	797	52	25	3	92	86	22	18	0	18	2076	1894	182	6.0	0.2054
+midgard_s49_A	midgard	49	A	OPP	161	8	161	0	112	94	53	0	-1	0	53	0	0		0	0	0		0.0
+midgard_s49_B	midgard	49	B	OPP	628	8	628	0	0	175	0	0	-1	0	0	0	0		0	0	0		0.0
+midgard_s50_A	midgard	50	A	US	293	8	293	0	93	191	16	0	-1	0	16	0	0		504	0	504		1.7201
+midgard_s50_B	midgard	50	B	OPP	481	8	481	0	430	404	366	0	-1	0	366	0	0		234	0	234		0.4865
+midgard_s51_A	midgard	51	A	OPP	283	8	283	0	0	99	0	0	-1	0	0	0	0		0	0	0		0.0
+midgard_s51_B	midgard	51	B	OPP	218	8	218	0	170	107	72	0	-1	0	72	0	0		634	616	18		0.0826
+nordkap_s49_A	nordkap	49	A	US	222	8	222	185	175	36	7	7	55	178	0	36	0	36	468	0	468	5.1429	2.1767
+nordkap_s49_B	nordkap	49	B	US	193	8	193	139	186	75	75	29	54	110	46	18	0	18	486	0	486	0.6207	2.9634
+nordkap_s50_A	nordkap	50	A	US	763	8	763	26	691	342	280	5	72	21	275	36	0	36	3076	2612	464	7.2	0.6121
+nordkap_s50_B	nordkap	50	B	OPP	1000	8	1000	934	16	902	14	12	856	922	2	108	0	108	0	0	0	9.0	0.0
+nordkap_s51_A	nordkap	51	A	US	225	8	225	202	165	51	8	8	60	194	0	18	0	18	486	0	486	2.25	2.2396
+nordkap_s51_B	nordkap	51	B	US	392	8	392	37	161	299	148	0	-1	37	148	0	0		684	180	504		1.2857
+yulerune_s49_A	yulerune	49	A	OPP	515	8	515	0	0	480	0	0	-1	0	0	0	0		0	0	0		0.0
+yulerune_s49_B	yulerune	49	B	OPP	121	8	121	0	0	55	0	0	-1	0	0	0	0		0	0	0		0.0
+yulerune_s50_A	yulerune	50	A	OPP	149	8	149	0	0	131	0	0	-1	0	0	0	0		0	0	0		0.0
+yulerune_s50_B	yulerune	50	B	US	229	8	229	0	56	215	56	0	-1	0	56	0	0		504	0	504		2.2009
+yulerune_s51_A	yulerune	51	A	OPP	247	8	247	0	223	194	180	0	-1	0	180	0	0		0	0	0		0.0
+yulerune_s51_B	yulerune	51	B	OPP	222	8	222	0	0	82	0	0	-1	0	0	0	0		0	0	0		0.0
+atoll_s52_A	atoll	52	A	US	124	8	124	0	56	117	56	0	-1	0	56	0	0		504	0	504		4.0645
+atoll_s52_B	atoll	52	B	OPP	1000	8	1000	0	940	75	24	0	-1	0	24	0	0		324	0	324		0.324
+atoll_s53_A	atoll	53	A	US	451	8	451	0	233	431	233	0	-1	0	233	0	0		1442	942	500		1.1086
+atoll_s53_B	atoll	53	B	US	121	8	121	0	56	112	56	0	-1	0	56	0	0		504	0	504		4.1653
+atoll_s54_A	atoll	54	A	US	730	8	730	0	124	717	124	0	-1	0	124	0	0		504	0	504		0.6904
+atoll_s54_B	atoll	54	B	OPP	454	8	454	0	0	413	0	0	-1	0	0	0	0		0	0	0		0.0
+drakkarfjord_s52_A	drakkarfjord	52	A	US	1000	8	1000	71	923	206	143	45	33	26	98	378	0	378	1870	2248	-378	8.4	-0.3958
+drakkarfjord_s52_B	drakkarfjord	52	B	US	917	8	917	127	877	373	347	25	40	102	322	234	0	234	2276	2006	270	9.36	0.3027
+drakkarfjord_s53_A	drakkarfjord	53	A	US	92	8	92	35	56	78	56	29	36	6	27	270	0	270	234	0	234	9.3103	3.7143
+drakkarfjord_s53_B	drakkarfjord	53	B	US	147	8	147	0	56	133	56	0	-1	0	56	0	0		504	0	504		3.4286
+drakkarfjord_s54_A	drakkarfjord	54	A	US	1000	8	1000	0	181	965	181	0	-1	0	181	0	0		144	144	0		0.0
+drakkarfjord_s54_B	drakkarfjord	54	B	US	383	8	383	27	343	174	148	16	40	11	132	144	0	144	1354	998	356	9.0	0.97
+glacierkeep_s52_A	glacierkeep	52	A	US	173	8	173	126	99	46	1	1	89	125	0	0	0	0	504	0	504	0.0	2.9302
+glacierkeep_s52_B	glacierkeep	52	B	US	1000	8	1000	0	0	832	0	0	-1	0	0	0	0		0	0	0		0.0
+glacierkeep_s53_A	glacierkeep	53	A	US	125	8	125	97	73	10	10	10	56	87	0	0	0	0	504	0	504	0.0	4.3826
+glacierkeep_s53_B	glacierkeep	53	B	US	1000	8	1000	65	23	940	23	13	987	52	10	0	0	0	0	0	0	0.0	0.0
+glacierkeep_s54_A	glacierkeep	54	A	US	143	8	143	100	55	128	55	55	63	45	0	486	0	486	18	0	18	8.8364	0.2045
+glacierkeep_s54_B	glacierkeep	54	B	OPP	1000	8	1000	55	944	211	203	24	56	31	179	216	0	216	1730	1946	-216	9.0	-0.2213
+midgard_s52_A	midgard	52	A	US	340	8	340	0	56	332	56	0	-1	0	56	0	0		504	0	504		1.4824
+midgard_s52_B	midgard	52	B	OPP	378	8	378	0	0	78	0	0	-1	0	0	0	0		0	0	0		0.0
+midgard_s53_A	midgard	53	A	OPP	696	8	696	0	0	53	0	0	-1	0	0	0	0		0	0	0		0.0
+midgard_s53_B	midgard	53	B	OPP	290	8	290	0	86	116	32	0	-1	0	32	0	0		282	282	0		0.0
+midgard_s54_A	midgard	54	A	US	247	8	247	0	54	235	54	0	-1	0	54	0	0		504	0	504		2.0405
+midgard_s54_B	midgard	54	B	OPP	271	8	271	0	81	165	72	0	-1	0	72	0	0		0	0	0		0.0
+nordkap_s52_A	nordkap	52	A	US	253	8	253	9	210	99	67	5	43	4	62	36	0	36	984	520	464	7.2	1.871
+nordkap_s52_B	nordkap	52	B	OPP	539	8	539	0	63	50	46	0	-1	0	46	0	0		0	0	0		0.0
+nordkap_s53_A	nordkap	53	A	US	393	8	393	12	352	382	352	11	41	1	341	90	0	90	1742	1332	410	8.1818	1.0733
+nordkap_s53_B	nordkap	53	B	US	183	8	183	105	71	92	24	24	112	81	0	198	0	198	306	0	306	8.25	1.9245
+nordkap_s54_A	nordkap	54	A	OPP	424	8	424	43	182	119	61	9	77	34	52	72	0	72	266	338	-72	8.0	-0.1735
+nordkap_s54_B	nordkap	54	B	OPP	309	8	309	268	302	201	201	168	41	100	33	18	0	18	450	0	450	0.1071	3.1915
+yulerune_s52_A	yulerune	52	A	US	441	8	441	0	133	303	11	0	-1	0	11	0	0		504	0	504		1.1429
+yulerune_s52_B	yulerune	52	B	OPP	269	8	269	0	0	118	0	0	-1	0	0	0	0		0	0	0		0.0
+yulerune_s53_A	yulerune	53	A	US	1000	8	1000	0	760	230	20	0	-1	0	20	0	0		2050	2050	0		0.0
+yulerune_s53_B	yulerune	53	B	US	248	8	248	0	56	221	56	0	-1	0	56	0	0		504	0	504		2.0323
+yulerune_s54_A	yulerune	54	A	US	157	8	157	0	129	145	128	0	-1	0	128	0	0		504	0	504		3.2102
+yulerune_s54_B	yulerune	54	B	US	189	8	189	0	40	174	40	0	-1	0	40	0	0		504	0	504		2.6667
+atoll_s55_A	atoll	55	A	OPP	202	8	202	0	0	179	0	0	-1	0	0	0	0		0	0	0		0.0
+atoll_s55_B	atoll	55	B	US	170	8	170	0	56	161	56	0	-1	0	56	0	0		504	0	504		2.9647
+atoll_s56_A	atoll	56	A	OPP	1000	8	1000	0	30	985	29	0	-1	0	29	0	0		0	0	0		0.0
+atoll_s56_B	atoll	56	B	OPP	749	8	749	0	0	227	0	0	-1	0	0	0	0		0	0	0		0.0
+atoll_s57_A	atoll	57	A	US	245	8	245	0	92	189	43	0	-1	0	43	0	0		778	266	512		2.0898
+atoll_s57_B	atoll	57	B	OPP	177	8	177	0	0	150	0	0	-1	0	0	0	0		0	0	0		0.0
+drakkarfjord_s55_A	drakkarfjord	55	A	US	89	8	89	49	56	74	55	47	33	2	8	396	0	396	108	0	108	8.4255	2.5714
+drakkarfjord_s55_B	drakkarfjord	55	B	US	96	8	96	66	56	82	56	55	40	11	1	504	0	504	0	0	0	9.1636	0.0
+drakkarfjord_s56_A	drakkarfjord	56	A	US	89	8	89	49	56	74	55	47	33	2	8	396	0	396	108	0	108	8.4255	2.5714
+drakkarfjord_s56_B	drakkarfjord	56	B	US	116	8	116	39	76	102	76	28	40	11	48	252	0	252	340	88	252	9.0	2.8636
+drakkarfjord_s57_A	drakkarfjord	57	A	US	89	8	89	49	56	74	55	47	33	2	8	396	0	396	108	0	108	8.4255	2.5714
+drakkarfjord_s57_B	drakkarfjord	57	B	US	475	8	475	25	418	202	159	0	-1	25	159	0	0		1458	956	502		1.0568
+glacierkeep_s55_A	glacierkeep	55	A	US	195	8	195	94	84	110	39	13	60	81	26	0	0	0	676	176	500	0.0	2.7473
+glacierkeep_s55_B	glacierkeep	55	B	OPP	769	8	769	0	0	638	0	0	-1	0	0	0	0		0	0	0		0.0
+glacierkeep_s56_A	glacierkeep	56	A	US	111	8	111	83	56	56	56	56	55	27	0	504	0	504	0	0	0	9.0	0.0
+glacierkeep_s56_B	glacierkeep	56	B	OPP	1000	8	1000	924	884	42	0	0	-1	924	0	0	0		0	0	0		0.0
+glacierkeep_s57_A	glacierkeep	57	A	US	162	8	162	110	63	73	29	29	99	81	0	144	0	144	360	0	360	4.9655	2.7068
+glacierkeep_s57_B	glacierkeep	57	B	US	617	8	617	96	501	102	55	12	116	84	43	108	0	108	840	444	396	9.0	0.6545
+midgard_s55_A	midgard	55	A	US	185	8	185	0	51	174	47	0	-1	0	47	0	0		582	78	504		2.7243
+midgard_s55_B	midgard	55	B	OPP	769	8	769	0	0	267	0	0	-1	0	0	0	0		0	0	0		0.0
+midgard_s56_A	midgard	56	A	OPP	465	8	465	0	416	85	44	0	-1	0	44	0	0		1150	980	170		0.3656
+midgard_s56_B	midgard	56	B	US	192	8	192	0	108	185	108	0	-1	0	108	0	0		504	0	504		2.625
+midgard_s57_A	midgard	57	A	OPP	521	8	521	0	0	171	0	0	-1	0	0	0	0		0	0	0		0.0
+midgard_s57_B	midgard	57	B	OPP	132	8	132	0	87	93	62	0	-1	0	62	0	0		376	376	0		0.0
+nordkap_s55_A	nordkap	55	A	US	149	8	149	107	69	88	18	18	80	89	0	72	0	72	432	0	432	4.0	3.2977
+nordkap_s55_B	nordkap	55	B	OPP	311	8	311	0	101	301	101	0	-1	0	101	0	0		520	196	324		1.0418
+nordkap_s56_A	nordkap	56	A	US	102	8	102	66	57	81	49	49	45	17	0	414	0	414	90	0	90	8.449	1.6981
+nordkap_s56_B	nordkap	56	B	OPP	797	8	797	189	237	589	65	0	-1	189	65	0	0		764	764	0		0.0
+nordkap_s57_A	nordkap	57	A	US	304	8	304	267	56	172	56	56	248	211	0	504	0	504	0	0	0	9.0	0.0
+nordkap_s57_B	nordkap	57	B	OPP	210	8	210	0	31	31	19	0	-1	0	19	0	0		0	0	0		0.0
+yulerune_s55_A	yulerune	55	A	US	436	8	436	0	336	361	272	0	-1	0	272	0	0		592	92	500		1.1468
+yulerune_s55_B	yulerune	55	B	OPP	153	8	153	0	0	143	0	0	-1	0	0	0	0		0	0	0		0.0
+yulerune_s56_A	yulerune	56	A	US	171	8	171	0	40	158	40	0	-1	0	40	0	0		504	0	504		2.9474
+yulerune_s56_B	yulerune	56	B	OPP	167	8	167	0	0	80	0	0	-1	0	0	0	0		0	0	0		0.0
+yulerune_s57_A	yulerune	57	A	US	188	8	188	0	101	93	20	0	-1	0	20	0	0		576	76	500		2.6596
+yulerune_s57_B	yulerune	57	B	OPP	201	8	201	0	0	30	0	0	-1	0	0	0	0		0	0	0		0.0
+atoll_s58_A	atoll	58	A	OPP	493	8	493	0	111	480	109	0	-1	0	109	0	0		470	328	142		0.288
+atoll_s58_B	atoll	58	B	US	525	8	525	228	461	104	49	3	325	225	46	18	0	18	954	468	486	6.0	0.931
+atoll_s59_A	atoll	59	A	US	1000	8	1000	0	19	980	19	0	-1	0	19	0	0		180	180	0		0.0
+atoll_s59_B	atoll	59	B	US	122	8	122	0	56	113	56	0	-1	0	56	0	0		504	0	504		4.1311
+atoll_s60_A	atoll	60	A	US	234	8	234	0	133	220	126	0	-1	0	126	0	0		704	196	508		2.1709
+atoll_s60_B	atoll	60	B	US	162	8	162	0	56	153	56	0	-1	0	56	0	0		504	0	504		3.1111
+drakkarfjord_s58_A	drakkarfjord	58	A	US	103	8	103	74	56	89	56	56	47	18	0	504	0	504	0	0	0	9.0	0.0
+drakkarfjord_s58_B	drakkarfjord	58	B	US	96	8	96	66	56	82	56	55	40	11	1	504	0	504	0	0	0	9.1636	0.0
+drakkarfjord_s59_A	drakkarfjord	59	A	US	91	8	91	62	56	77	56	56	35	6	0	504	0	504	0	0	0	9.0	0.0
+drakkarfjord_s59_B	drakkarfjord	59	B	US	124	8	124	27	84	110	84	16	40	11	68	144	0	144	484	128	356	9.0	3.2963
+drakkarfjord_s60_A	drakkarfjord	60	A	US	106	8	106	30	70	92	70	24	36	6	46	216	0	216	350	64	286	9.0	3.4878
+drakkarfjord_s60_B	drakkarfjord	60	B	US	98	8	98	59	56	84	56	53	42	6	3	486	0	486	18	0	18	9.1698	0.4
+glacierkeep_s58_A	glacierkeep	58	A	US	149	8	149	121	94	5	5	5	60	116	0	0	0	0	504	0	504	0.0	3.5
+glacierkeep_s58_B	glacierkeep	58	B	OPP	1000	8	1000	898	748	42	0	0	-1	898	0	0	0		0	0	0		0.0
+glacierkeep_s59_A	glacierkeep	59	A	US	137	8	137	111	85	21	7	7	52	104	0	0	0	0	504	0	504	0.0	3.8769
+glacierkeep_s59_B	glacierkeep	59	B	US	249	8	249	141	145	76	16	8	104	133	8	54	0	54	450	0	450	6.75	1.8672
+glacierkeep_s60_A	glacierkeep	60	A	US	141	8	141	98	74	87	35	35	67	63	0	306	0	306	198	0	198	8.7429	1.8679
+glacierkeep_s60_B	glacierkeep	60	B	US	1000	8	1000	887	908	78	4	4	92	883	0	18	0	18	288	162	126	4.5	0.1265
+midgard_s58_A	midgard	58	A	US	626	8	626	0	334	540	276	0	-1	0	276	0	0		504	0	504		0.8051
+midgard_s58_B	midgard	58	B	OPP	217	8	217	0	166	185	146	0	-1	0	146	0	0		66	66	0		0.0
+midgard_s59_A	midgard	59	A	US	525	8	525	0	340	272	143	0	-1	0	143	0	0		504	0	504		0.96
+midgard_s59_B	midgard	59	B	OPP	342	8	342	0	240	104	18	0	-1	0	18	0	0		298	298	0		0.0
+midgard_s60_A	midgard	60	A	OPP	429	8	429	0	0	115	0	0	-1	0	0	0	0		0	0	0		0.0
+midgard_s60_B	midgard	60	B	OPP	477	8	477	0	297	182	12	0	-1	0	12	0	0		1120	744	376		0.7883
+nordkap_s58_A	nordkap	58	A	OPP	355	8	355	0	134	345	134	0	-1	0	134	0	0		714	492	222		0.6254
+nordkap_s58_B	nordkap	58	B	OPP	539	8	539	0	63	50	46	0	-1	0	46	0	0		0	0	0		0.0
+nordkap_s59_A	nordkap	59	A	US	351	8	351	100	59	297	42	0	-1	100	42	0	0		504	0	504		1.4359
+nordkap_s59_B	nordkap	59	B	US	261	8	261	221	214	19	19	12	40	209	7	0	0	0	504	0	504	0.0	2.0241
+nordkap_s60_A	nordkap	60	A	US	377	8	377	39	297	180	110	1	82	38	109	0	0	0	1002	498	504	0.0	1.3404
+nordkap_s60_B	nordkap	60	B	US	309	8	309	253	204	56	47	28	56	225	19	0	0	0	504	0	504	0.0	1.7936
+yulerune_s58_A	yulerune	58	A	US	573	8	573	0	97	470	12	0	-1	0	12	0	0		504	0	504		0.8796
+yulerune_s58_B	yulerune	58	B	OPP	1000	8	1000	0	0	125	0	0	-1	0	0	0	0		0	0	0		0.0
+yulerune_s59_A	yulerune	59	A	US	371	8	371	0	223	359	222	0	-1	0	222	0	0		1208	704	504		1.3585
+yulerune_s59_B	yulerune	59	B	OPP	200	8	200	0	0	119	0	0	-1	0	0	0	0		0	0	0		0.0
+yulerune_s60_A	yulerune	60	A	US	209	8	209	0	56	196	56	0	-1	0	56	0	0		504	0	504		2.4115
+yulerune_s60_B	yulerune	60	B	OPP	523	8	523	0	0	82	0	0	-1	0	0	0	0		0	0	0		0.0
+atoll_s61_A	atoll	61	A	US	632	8	632	0	348	621	347	0	-1	0	347	0	0		1816	1316	500		0.7911
+atoll_s61_B	atoll	61	B	OPP	535	8	535	0	0	60	0	0	-1	0	0	0	0		0	0	0		0.0
+atoll_s62_A	atoll	62	A	OPP	229	8	229	0	0	106	0	0	-1	0	0	0	0		0	0	0		0.0
+atoll_s62_B	atoll	62	B	US	200	8	200	0	55	184	55	0	-1	0	55	0	0		504	0	504		2.52
+atoll_s63_A	atoll	63	A	US	329	8	329	0	245	94	17	0	-1	0	17	0	0		1370	868	502		1.5258
+atoll_s63_B	atoll	63	B	US	346	8	346	0	272	333	272	0	-1	0	272	0	0		1472	972	500		1.4451
+drakkarfjord_s61_A	drakkarfjord	61	A	OPP	443	8	443	0	55	326	32	0	-1	0	32	0	0		248	248	0		0.0
+drakkarfjord_s61_B	drakkarfjord	61	B	US	414	8	414	0	72	400	72	0	-1	0	72	0	0		632	116	516		1.2464
+drakkarfjord_s62_A	drakkarfjord	62	A	OPP	338	8	338	0	277	52	5	0	-1	0	5	0	0		162	162	0		0.0
+drakkarfjord_s62_B	drakkarfjord	62	B	US	140	8	140	0	56	126	56	0	-1	0	56	0	0		504	0	504		3.6
+drakkarfjord_s63_A	drakkarfjord	63	A	US	116	8	116	49	56	102	56	49	63	0	7	450	0	450	50	0	50	9.1837	0.7463
+drakkarfjord_s63_B	drakkarfjord	63	B	US	226	8	226	0	56	211	56	0	-1	0	56	0	0		504	0	504		2.2301
+glacierkeep_s61_A	glacierkeep	61	A	US	143	8	143	0	66	101	49	0	-1	0	49	0	0		504	0	504		3.5245
+glacierkeep_s61_B	glacierkeep	61	B	US	217	8	217	90	103	99	3	3	114	87	0	18	0	18	486	0	486	6.0	2.271
+glacierkeep_s62_A	glacierkeep	62	A	US	123	8	123	77	56	94	55	55	67	22	0	486	0	486	18	0	18	8.8364	0.2647
+glacierkeep_s62_B	glacierkeep	62	B	US	293	8	293	219	56	267	56	56	237	163	0	504	0	504	0	0	0	9.0	0.0
+glacierkeep_s63_A	glacierkeep	63	A	US	249	8	249	146	105	95	8	8	144	138	0	54	0	54	450	0	450	6.75	1.8672
+glacierkeep_s63_B	glacierkeep	63	B	OPP	1000	8	1000	55	944	211	203	24	56	31	179	216	0	216	1730	1946	-216	9.0	-0.2213
+midgard_s61_A	midgard	61	A	OPP	348	8	348	0	0	78	0	0	-1	0	0	0	0		0	0	0		0.0
+midgard_s61_B	midgard	61	B	OPP	836	8	836	0	43	752	43	0	-1	0	43	0	0		0	0	0		0.0
+midgard_s62_A	midgard	62	A	US	176	8	176	0	56	162	56	0	-1	0	56	0	0		504	0	504		2.8636
+midgard_s62_B	midgard	62	B	OPP	201	8	201	0	5	178	5	0	-1	0	5	0	0		36	0	36		0.1791
+midgard_s63_A	midgard	63	A	US	465	8	465	0	413	87	42	0	-1	0	42	0	0		744	240	504		1.0839
+midgard_s63_B	midgard	63	B	US	164	8	164	0	56	143	56	0	-1	0	56	0	0		504	0	504		3.0732
+nordkap_s61_A	nordkap	61	A	US	351	8	351	100	59	297	42	0	-1	100	42	0	0		504	0	504		1.4359
+nordkap_s61_B	nordkap	61	B	US	130	8	130	0	50	120	50	0	-1	0	50	0	0		504	0	504		3.8769
+nordkap_s62_A	nordkap	62	A	US	189	8	189	144	90	102	16	16	56	128	0	108	0	108	396	0	396	6.75	2.289
+nordkap_s62_B	nordkap	62	B	OPP	1000	8	1000	864	992	313	313	243	136	621	70	0	0	0	0	0	0	0.0	0.0
+nordkap_s63_A	nordkap	63	A	US	109	8	109	66	65	47	14	14	44	52	0	18	0	18	486	0	486	1.2857	5.1158
+nordkap_s63_B	nordkap	63	B	OPP	161	8	161	96	154	82	82	27	65	69	55	18	0	18	324	0	324	0.6667	2.4179
+yulerune_s61_A	yulerune	61	A	US	340	8	340	0	85	315	78	0	-1	0	78	0	0		504	0	504		1.4824
+yulerune_s61_B	yulerune	61	B	OPP	251	8	251	0	15	157	15	0	-1	0	15	0	0		126	0	126		0.502
+yulerune_s62_A	yulerune	62	A	US	393	8	393	0	56	330	56	0	-1	0	56	0	0		504	0	504		1.2824
+yulerune_s62_B	yulerune	62	B	OPP	343	8	343	0	0	304	0	0	-1	0	0	0	0		0	0	0		0.0
+yulerune_s63_A	yulerune	63	A	US	389	8	389	0	89	310	20	0	-1	0	20	0	0		504	0	504		1.2956
+yulerune_s63_B	yulerune	63	B	OPP	170	8	170	0	0	83	0	0	-1	0	0	0	0		0	0	0		0.0
+atoll_s64_A	atoll	64	A	OPP	556	8	556	0	0	540	0	0	-1	0	0	0	0		0	0	0		0.0
+atoll_s64_B	atoll	64	B	US	126	8	126	0	56	116	56	0	-1	0	56	0	0		504	0	504		4.0
+atoll_s65_A	atoll	65	A	US	424	8	424	0	364	417	364	0	-1	0	364	0	0		1896	1396	500		1.1792
+atoll_s65_B	atoll	65	B	OPP	298	8	298	0	0	269	0	0	-1	0	0	0	0		0	0	0		0.0
+atoll_s66_A	atoll	66	A	US	128	8	128	0	56	121	56	0	-1	0	56	0	0		504	0	504		3.9375
+atoll_s66_B	atoll	66	B	US	165	8	165	0	56	149	56	0	-1	0	56	0	0		504	0	504		3.0545
+drakkarfjord_s64_A	drakkarfjord	64	A	US	101	8	101	52	56	86	55	50	45	2	5	432	0	432	72	0	72	8.64	1.4118
+drakkarfjord_s64_B	drakkarfjord	64	B	US	284	8	284	60	244	227	201	44	40	16	157	396	0	396	838	734	104	9.0	0.4333
+drakkarfjord_s65_A	drakkarfjord	65	A	OPP	338	8	338	0	277	52	5	0	-1	0	5	0	0		162	162	0		0.0
+drakkarfjord_s65_B	drakkarfjord	65	B	US	101	8	101	63	56	87	56	56	45	7	0	504	0	504	0	0	0	9.0	0.0
+drakkarfjord_s66_A	drakkarfjord	66	A	US	92	8	92	63	56	78	56	56	36	7	0	504	0	504	0	0	0	9.0	0.0
+drakkarfjord_s66_B	drakkarfjord	66	B	US	349	8	349	25	292	154	111	0	-1	25	111	0	0		1302	792	510		1.4613
+glacierkeep_s64_A	glacierkeep	64	A	US	119	8	119	76	56	76	56	56	63	20	0	504	0	504	0	0	0	9.0	0.0
+glacierkeep_s64_B	glacierkeep	64	B	OPP	893	8	893	159	0	315	0	0	-1	159	0	0	0		0	0	0		0.0
+glacierkeep_s65_A	glacierkeep	65	A	US	129	8	129	101	77	9	9	9	60	92	0	0	0	0	504	0	504	0.0	4.2
+glacierkeep_s65_B	glacierkeep	65	B	US	1000	8	1000	887	908	78	4	4	92	883	0	18	0	18	288	162	126	4.5	0.1265
+glacierkeep_s66_A	glacierkeep	66	A	US	126	8	126	98	58	52	52	52	72	46	0	468	0	468	36	0	36	9.0	0.4865
+glacierkeep_s66_B	glacierkeep	66	B	US	1000	8	1000	68	0	940	0	0	-1	68	0	0	0		0	0	0		0.0
+midgard_s64_A	midgard	64	A	OPP	573	8	573	0	79	498	51	0	-1	0	51	0	0		0	0	0		0.0
+midgard_s64_B	midgard	64	B	OPP	136	8	136	0	89	128	89	0	-1	0	89	0	0		474	468	6		0.0441
+midgard_s65_A	midgard	65	A	US	289	8	289	0	239	176	142	0	-1	0	142	0	0		504	0	504		1.7439
+midgard_s65_B	midgard	65	B	OPP	208	8	208	0	0	148	0	0	-1	0	0	0	0		0	0	0		0.0
+midgard_s66_A	midgard	66	A	US	215	8	215	0	60	197	60	0	-1	0	60	0	0		520	16	504		2.3442
+midgard_s66_B	midgard	66	B	US	156	8	156	0	107	143	107	0	-1	0	107	0	0		504	0	504		3.2308
+nordkap_s64_A	nordkap	64	A	US	261	8	261	234	198	22	1	1	84	233	0	0	0	0	504	0	504	0.0	1.9385
+nordkap_s64_B	nordkap	64	B	OPP	453	8	453	0	446	444	444	0	-1	0	444	0	0		0	0	0		0.0
+nordkap_s65_A	nordkap	65	A	US	277	8	277	27	270	143	143	0	-1	27	143	0	0		504	0	504		1.8195
+nordkap_s65_B	nordkap	65	B	OPP	700	8	700	191	614	42	7	0	-1	191	7	0	0		328	328	0		0.0
+nordkap_s66_A	nordkap	66	A	US	189	8	189	145	109	70	3	3	80	142	0	18	0	18	486	0	486	6.0	2.6129
+nordkap_s66_B	nordkap	66	B	US	117	8	117	79	110	62	62	44	41	35	18	288	0	288	216	0	216	6.5455	2.9589
+yulerune_s64_A	yulerune	64	A	US	219	8	219	0	56	208	56	0	-1	0	56	0	0		504	0	504		2.3014
+yulerune_s64_B	yulerune	64	B	US	172	8	172	0	56	159	56	0	-1	0	56	0	0		504	0	504		2.9302
+yulerune_s65_A	yulerune	65	A	US	282	8	282	0	56	270	56	0	-1	0	56	0	0		504	0	504		1.7872
+yulerune_s65_B	yulerune	65	B	OPP	240	8	240	0	0	229	0	0	-1	0	0	0	0		0	0	0		0.0
+yulerune_s66_A	yulerune	66	A	US	515	8	515	0	56	502	56	0	-1	0	56	0	0		504	0	504		0.9786
+yulerune_s66_B	yulerune	66	B	OPP	336	8	336	0	0	80	0	0	-1	0	0	0	0		0	0	0		0.0
+atoll_s67_A	atoll	67	A	OPP	286	8	286	0	0	251	0	0	-1	0	0	0	0		0	0	0		0.0
+atoll_s67_B	atoll	67	B	US	124	8	124	0	56	115	56	0	-1	0	56	0	0		504	0	504		4.0645
+atoll_s68_A	atoll	68	A	OPP	373	8	373	0	305	77	16	0	-1	0	16	0	0		930	886	44		0.118
+atoll_s68_B	atoll	68	B	OPP	351	8	351	0	0	116	0	0	-1	0	0	0	0		0	0	0		0.0
+atoll_s69_A	atoll	69	A	US	153	8	153	92	77	68	15	14	88	78	1	162	0	162	342	0	342	11.5714	2.4604
+atoll_s69_B	atoll	69	B	US	193	8	193	0	101	149	80	0	-1	0	80	0	0		692	192	500		2.5907
+drakkarfjord_s67_A	drakkarfjord	67	A	US	92	8	92	56	56	77	55	55	36	1	0	486	0	486	18	0	18	8.8364	0.4865
+drakkarfjord_s67_B	drakkarfjord	67	B	US	696	8	696	25	482	515	315	0	-1	25	315	0	0		2056	1548	508		0.7299
+drakkarfjord_s68_A	drakkarfjord	68	A	US	88	8	88	57	56	73	55	55	32	2	0	486	0	486	18	0	18	8.8364	0.5455
+drakkarfjord_s68_B	drakkarfjord	68	B	US	122	8	122	29	82	108	82	20	40	9	62	180	0	180	442	116	326	9.0	3.1961
+drakkarfjord_s69_A	drakkarfjord	69	A	US	92	8	92	56	56	77	55	55	36	1	0	486	0	486	18	0	18	8.8364	0.4865
+drakkarfjord_s69_B	drakkarfjord	69	B	US	101	8	101	63	56	87	56	56	45	7	0	504	0	504	0	0	0	9.0	0.0
+glacierkeep_s67_A	glacierkeep	67	A	OPP	625	8	625	597	541	0	0	0	-1	597	0	0	0		252	0	252		0.4032
+glacierkeep_s67_B	glacierkeep	67	B	OPP	1000	8	1000	186	0	796	0	0	-1	186	0	0	0		0	0	0		0.0
+glacierkeep_s68_A	glacierkeep	68	A	US	112	8	112	84	60	13	13	13	60	71	0	0	0	0	504	0	504	0.0	5.0909
+glacierkeep_s68_B	glacierkeep	68	B	US	1000	8	1000	85	222	703	3	3	92	82	0	18	0	18	786	804	-18	6.0	-0.0181
+glacierkeep_s69_A	glacierkeep	69	A	US	111	8	111	83	56	56	56	56	55	27	0	504	0	504	0	0	0	9.0	0.0
+glacierkeep_s69_B	glacierkeep	69	B	OPP	1000	8	1000	3	0	948	0	0	-1	3	0	0	0		0	0	0		0.0
+midgard_s67_A	midgard	67	A	US	250	8	250	0	38	220	38	0	-1	0	38	0	0		504	0	504		2.016
+midgard_s67_B	midgard	67	B	US	640	8	640	0	65	588	26	0	-1	0	26	0	0		504	0	504		0.7875
+midgard_s68_A	midgard	68	A	US	140	8	140	0	39	124	39	0	-1	0	39	0	0		504	0	504		3.6
+midgard_s68_B	midgard	68	B	US	256	8	256	0	67	244	67	0	-1	0	67	0	0		590	86	504		1.9688
+midgard_s69_A	midgard	69	A	US	1000	8	1000	0	0	111	0	0	-1	0	0	0	0		0	0	0		0.0
+midgard_s69_B	midgard	69	B	US	256	8	256	0	67	244	67	0	-1	0	67	0	0		590	86	504		1.9688
+nordkap_s67_A	nordkap	67	A	US	160	8	160	0	76	84	12	0	-1	0	12	0	0		504	0	504		3.15
+nordkap_s67_B	nordkap	67	B	US	193	8	193	83	182	147	147	47	110	36	100	360	0	360	144	0	144	7.6596	0.9863
+nordkap_s68_A	nordkap	68	A	US	1000	8	1000	977	30	948	12	12	36	965	0	90	0	90	108	0	108	7.5	0.1093
+nordkap_s68_B	nordkap	68	B	OPP	508	8	508	0	29	490	29	0	-1	0	29	0	0		208	104	104		0.2047
+nordkap_s69_A	nordkap	69	A	US	284	8	284	13	64	274	64	0	-1	13	64	0	0		632	120	512		1.8028
+nordkap_s69_B	nordkap	69	B	US	161	8	161	0	154	59	59	0	-1	0	59	0	0		504	0	504		3.1304
+yulerune_s67_A	yulerune	67	A	OPP	505	8	505	0	0	342	0	0	-1	0	0	0	0		0	0	0		0.0
+yulerune_s67_B	yulerune	67	B	OPP	305	8	305	0	0	58	0	0	-1	0	0	0	0		0	0	0		0.0
+yulerune_s68_A	yulerune	68	A	OPP	444	8	444	0	0	231	0	0	-1	0	0	0	0		0	0	0		0.0
+yulerune_s68_B	yulerune	68	B	US	429	8	429	0	56	389	56	0	-1	0	56	0	0		504	0	504		1.1748
+yulerune_s69_A	yulerune	69	A	US	247	8	247	0	219	236	219	0	-1	0	219	0	0		504	0	504		2.0405
+yulerune_s69_B	yulerune	69	B	US	249	8	249	0	93	162	16	0	-1	0	16	0	0		504	0	504		2.0241
+atoll_s70_A	atoll	70	A	US	1000	8	1000	0	0	72	0	0	-1	0	0	0	0		0	0	0		0.0
+atoll_s70_B	atoll	70	B	OPP	285	8	285	0	0	80	0	0	-1	0	0	0	0		0	0	0		0.0
+atoll_s71_A	atoll	71	A	US	234	8	234	0	70	227	70	0	-1	0	70	0	0		632	124	508		2.1709
+atoll_s71_B	atoll	71	B	US	220	8	220	0	86	206	86	0	-1	0	86	0	0		638	136	502		2.2818
+atoll_s72_A	atoll	72	A	US	1000	8	1000	0	4	992	4	0	-1	0	4	0	0		36	36	0		0.0
+atoll_s72_B	atoll	72	B	US	418	8	418	0	251	407	251	0	-1	0	251	0	0		1528	1024	504		1.2057
+drakkarfjord_s70_A	drakkarfjord	70	A	US	141	8	141	32	80	127	80	23	61	9	57	198	0	198	410	108	302	8.6087	2.5593
+drakkarfjord_s70_B	drakkarfjord	70	B	US	125	8	125	20	84	111	84	15	41	5	69	126	0	126	502	124	378	8.4	3.4364
+drakkarfjord_s71_A	drakkarfjord	71	A	US	116	8	116	49	56	102	56	49	63	0	7	450	0	450	50	0	50	9.1837	0.7463
+drakkarfjord_s71_B	drakkarfjord	71	B	US	98	8	98	59	56	84	56	53	42	6	3	486	0	486	18	0	18	9.1698	0.4
+drakkarfjord_s72_A	drakkarfjord	72	A	US	88	8	88	56	56	73	55	54	32	2	1	486	0	486	18	0	18	9.0	0.5294
+drakkarfjord_s72_B	drakkarfjord	72	B	US	96	8	96	54	56	80	54	48	40	6	6	414	0	414	90	0	90	8.625	1.875
+glacierkeep_s70_A	glacierkeep	70	A	US	133	8	133	87	69	88	40	40	64	47	0	342	0	342	162	0	162	8.55	1.7419
+glacierkeep_s70_B	glacierkeep	70	B	OPP	801	8	801	0	0	68	0	0	-1	0	0	0	0		0	0	0		0.0
+glacierkeep_s71_A	glacierkeep	71	A	US	201	8	201	130	97	86	13	13	104	117	0	108	0	108	396	0	396	8.3077	2.1064
+glacierkeep_s71_B	glacierkeep	71	B	US	245	8	245	92	133	97	3	3	112	89	0	18	0	18	486	0	486	6.0	2.0083
+glacierkeep_s72_A	glacierkeep	72	A	US	444	8	444	235	95	413	92	14	267	221	78	90	0	90	666	248	418	6.4286	0.9721
+glacierkeep_s72_B	glacierkeep	72	B	OPP	769	8	769	0	0	638	0	0	-1	0	0	0	0		0	0	0		0.0
+midgard_s70_A	midgard	70	A	US	289	8	289	0	239	164	135	0	-1	0	135	0	0		504	0	504		1.7439
+midgard_s70_B	midgard	70	B	OPP	193	8	193	0	0	134	0	0	-1	0	0	0	0		0	0	0		0.0
+midgard_s71_A	midgard	71	A	US	439	8	439	0	386	406	374	0	-1	0	374	0	0		504	0	504		1.1481
+midgard_s71_B	midgard	71	B	US	537	8	537	0	169	339	12	0	-1	0	12	0	0		504	0	504		0.9385
+midgard_s72_A	midgard	72	A	US	189	8	189	0	77	151	48	0	-1	0	48	0	0		576	72	504		2.6667
+midgard_s72_B	midgard	72	B	US	668	8	668	0	613	446	404	0	-1	0	404	0	0		504	0	504		0.7545
+nordkap_s70_A	nordkap	70	A	US	349	8	349	67	282	75	21	7	67	60	14	54	0	54	796	346	450	7.7143	1.3158
+nordkap_s70_B	nordkap	70	B	US	321	8	321	140	252	145	89	4	216	136	85	18	0	18	486	0	486	4.5	1.5331
+nordkap_s71_A	nordkap	71	A	US	486	8	486	397	42	428	32	30	455	367	2	486	0	486	18	0	18	16.2	0.0395
+nordkap_s71_B	nordkap	71	B	US	117	8	117	80	85	66	41	33	41	47	8	288	0	288	216	0	216	8.7273	2.5714
+nordkap_s72_A	nordkap	72	A	US	140	8	140	107	76	45	10	9	96	98	1	0	0	0	504	0	504	0.0	3.8473
+nordkap_s72_B	nordkap	72	B	OPP	826	8	826	189	283	618	111	0	-1	189	111	0	0		1102	836	266		0.322
+yulerune_s70_A	yulerune	70	A	OPP	515	8	515	0	0	480	0	0	-1	0	0	0	0		0	0	0		0.0
+yulerune_s70_B	yulerune	70	B	US	475	8	475	0	395	420	353	0	-1	0	353	0	0		504	0	504		1.0611
+yulerune_s71_A	yulerune	71	A	US	233	8	233	0	84	150	25	0	-1	0	25	0	0		504	0	504		2.1631
+yulerune_s71_B	yulerune	71	B	OPP	212	8	212	0	0	62	0	0	-1	0	0	0	0		0	0	0		0.0
+yulerune_s72_A	yulerune	72	A	OPP	515	8	515	0	0	480	0	0	-1	0	0	0	0		0	0	0		0.0
+yulerune_s72_B	yulerune	72	B	OPP	440	8	440	0	0	58	0	0	-1	0	0	0	0		0	0	0		0.0
+atoll_s73_A	atoll	73	A	US	1000	8	1000	0	32	992	32	0	-1	0	32	0	0		228	56	172		0.172
+atoll_s73_B	atoll	73	B	US	160	8	160	0	98	151	98	0	-1	0	98	0	0		690	188	502		3.1375
+atoll_s74_A	atoll	74	A	US	368	8	368	0	92	338	91	0	-1	0	91	0	0		664	164	500		1.3587
+atoll_s74_B	atoll	74	B	OPP	250	8	250	0	0	112	0	0	-1	0	0	0	0		0	0	0		0.0
+atoll_s75_A	atoll	75	A	OPP	1000	8	1000	0	10	988	10	0	-1	0	10	0	0		0	0	0		0.0
+atoll_s75_B	atoll	75	B	OPP	215	8	215	0	43	142	23	0	-1	0	23	0	0		114	114	0		0.0
+drakkarfjord_s73_A	drakkarfjord	73	A	US	99	8	99	56	56	85	56	46	48	10	10	414	0	414	90	0	90	9.0	1.6981
+drakkarfjord_s73_B	drakkarfjord	73	B	US	461	8	461	18	385	113	51	18	86	0	33	162	0	162	906	564	342	9.0	0.772
+drakkarfjord_s74_A	drakkarfjord	74	A	OPP	452	8	452	0	0	265	0	0	-1	0	0	0	0		0	0	0		0.0
+drakkarfjord_s74_B	drakkarfjord	74	B	US	544	8	544	40	504	227	201	25	40	15	176	216	0	216	1804	1520	284	8.64	0.5472
+drakkarfjord_s75_A	drakkarfjord	75	A	OPP	311	8	311	0	0	294	0	0	-1	0	0	0	0		0	0	0		0.0
+drakkarfjord_s75_B	drakkarfjord	75	B	US	122	8	122	29	82	108	82	20	40	9	62	180	0	180	442	116	326	9.0	3.1961
+glacierkeep_s73_A	glacierkeep	73	A	US	112	8	112	84	60	13	13	13	60	71	0	0	0	0	504	0	504	0.0	5.0909
+glacierkeep_s73_B	glacierkeep	73	B	OPP	769	8	769	0	0	638	0	0	-1	0	0	0	0		0	0	0		0.0
+glacierkeep_s74_A	glacierkeep	74	A	US	195	8	195	94	84	110	39	13	60	81	26	0	0	0	676	176	500	0.0	2.7473
+glacierkeep_s74_B	glacierkeep	74	B	US	228	8	228	5	60	187	60	0	-1	5	60	0	0		520	16	504		2.2105
+glacierkeep_s75_A	glacierkeep	75	A	US	126	8	126	98	58	52	52	52	72	46	0	468	0	468	36	0	36	9.0	0.4865
+glacierkeep_s75_B	glacierkeep	75	B	US	123	8	123	64	64	70	64	37	59	27	27	324	0	324	212	36	176	8.7568	2.0465
+midgard_s73_A	midgard	73	A	OPP	838	8	838	0	73	475	44	0	-1	0	44	0	0		432	108	324		0.3866
+midgard_s73_B	midgard	73	B	OPP	389	8	389	0	129	201	11	0	-1	0	11	0	0		486	0	486		1.2494
+midgard_s74_A	midgard	74	A	OPP	241	8	241	0	0	79	0	0	-1	0	0	0	0		0	0	0		0.0
+midgard_s74_B	midgard	74	B	US	1000	8	1000	0	953	158	123	0	-1	0	123	0	0		2860	2860	0		0.0
+midgard_s75_A	midgard	75	A	US	1000	8	1000	0	0	983	0	0	-1	0	0	0	0		0	0	0		0.0
+midgard_s75_B	midgard	75	B	US	273	8	273	0	226	258	218	0	-1	0	218	0	0		504	0	504		1.8462
+nordkap_s73_A	nordkap	73	A	US	277	8	277	217	173	87	3	3	104	214	0	18	0	18	486	0	486	6.0	1.7737
+nordkap_s73_B	nordkap	73	B	US	373	8	373	308	366	365	365	308	64	0	57	504	0	504	0	0	0	1.6364	0.0
+nordkap_s74_A	nordkap	74	A	US	354	8	354	10	280	151	92	6	82	4	86	54	0	54	1454	1008	446	9.0	1.2816
+nordkap_s74_B	nordkap	74	B	US	217	8	217	168	208	58	57	24	49	144	33	0	0	0	504	0	504	0.0	2.6114
+nordkap_s75_A	nordkap	75	A	US	735	8	735	698	67	316	67	67	588	631	0	504	0	504	0	0	0	7.5224	0.0
+nordkap_s75_B	nordkap	75	B	OPP	271	8	271	0	169	135	57	0	-1	0	57	0	0		0	0	0		0.0
+yulerune_s73_A	yulerune	73	A	OPP	336	8	336	0	0	145	0	0	-1	0	0	0	0		0	0	0		0.0
+yulerune_s73_B	yulerune	73	B	OPP	222	8	222	0	0	58	0	0	-1	0	0	0	0		0	0	0		0.0
+yulerune_s74_A	yulerune	74	A	US	188	8	188	0	101	93	20	0	-1	0	20	0	0		576	76	500		2.6596
+yulerune_s74_B	yulerune	74	B	OPP	741	8	741	0	349	389	11	0	-1	0	11	0	0		1304	940	364		0.4912
+yulerune_s75_A	yulerune	75	A	OPP	448	8	448	0	0	317	0	0	-1	0	0	0	0		0	0	0		0.0
+yulerune_s75_B	yulerune	75	B	OPP	224	8	224	0	12	131	12	0	-1	0	12	0	0		108	0	108		0.4821
+atoll_s76_A	atoll	76	A	US	788	8	788	0	25	779	25	0	-1	0	25	0	0		536	32	504		0.6396
+atoll_s76_B	atoll	76	B	US	249	8	249	174	109	126	3	3	140	171	0	18	0	18	486	0	486	6.0	1.9756
+atoll_s77_A	atoll	77	A	US	161	8	161	0	69	100	23	0	-1	0	23	0	0		504	0	504		3.1304
+atoll_s77_B	atoll	77	B	US	471	8	471	0	404	459	404	0	-1	0	404	0	0		2064	1564	500		1.0616
+atoll_s78_A	atoll	78	A	OPP	179	8	179	0	0	171	0	0	-1	0	0	0	0		0	0	0		0.0
+atoll_s78_B	atoll	78	B	US	356	8	356	0	250	345	250	0	-1	0	250	0	0		1400	900	500		1.4045
+drakkarfjord_s76_A	drakkarfjord	76	A	US	91	8	91	62	56	77	56	56	35	6	0	504	0	504	0	0	0	9.0	0.0
+drakkarfjord_s76_B	drakkarfjord	76	B	US	1000	8	1000	25	959	251	224	15	41	10	209	126	0	126	1634	1760	-126	8.4	-0.1279
+drakkarfjord_s77_A	drakkarfjord	77	A	US	100	8	100	59	59	72	45	45	41	14	0	378	0	378	126	0	126	8.4	2.2909
+drakkarfjord_s77_B	drakkarfjord	77	B	US	98	8	98	52	56	84	56	51	42	1	5	468	0	468	36	0	36	9.1765	0.766
+drakkarfjord_s78_A	drakkarfjord	78	A	US	88	8	88	57	56	73	55	55	32	2	0	486	0	486	18	0	18	8.8364	0.5455
+drakkarfjord_s78_B	drakkarfjord	78	B	US	493	8	493	54	453	193	167	20	40	34	147	180	0	180	1400	1080	320	9.0	0.6765
+glacierkeep_s76_A	glacierkeep	76	A	US	162	8	162	110	63	73	29	29	99	81	0	144	0	144	360	0	360	4.9655	2.7068
+glacierkeep_s76_B	glacierkeep	76	B	OPP	1000	8	1000	924	884	42	0	0	-1	924	0	0	0		0	0	0		0.0
+glacierkeep_s77_A	glacierkeep	77	A	US	127	8	127	80	56	96	42	42	71	38	0	252	0	252	252	0	252	6.0	2.9647
+glacierkeep_s77_B	glacierkeep	77	B	US	1000	8	1000	299	860	95	6	6	140	293	0	54	0	54	0	54	-54	9.0	-0.0543
+glacierkeep_s78_A	glacierkeep	78	A	US	137	8	137	109	85	7	7	7	56	102	0	0	0	0	504	0	504	0.0	3.8769
+glacierkeep_s78_B	glacierkeep	78	B	US	433	8	433	229	373	79	64	32	60	197	32	270	0	270	734	500	234	8.4375	0.5835
+midgard_s76_A	midgard	76	A	US	422	8	422	0	373	377	340	0	-1	0	340	0	0		504	0	504		1.1943
+midgard_s76_B	midgard	76	B	US	184	8	184	0	131	171	131	0	-1	0	131	0	0		504	0	504		2.7391
+midgard_s77_A	midgard	77	A	US	254	8	254	0	56	242	56	0	-1	0	56	0	0		504	0	504		1.9843
+midgard_s77_B	midgard	77	B	OPP	596	8	596	0	55	167	15	0	-1	0	15	0	0		0	0	0		0.0
+midgard_s78_A	midgard	78	A	US	195	8	195	0	70	185	70	0	-1	0	70	0	0		622	118	504		2.5846
+midgard_s78_B	midgard	78	B	US	184	8	184	0	56	173	56	0	-1	0	56	0	0		504	0	504		2.7391
+nordkap_s76_A	nordkap	76	A	US	261	8	261	234	198	22	1	1	84	233	0	0	0	0	504	0	504	0.0	1.9385
+nordkap_s76_B	nordkap	76	B	OPP	349	8	349	290	281	64	10	0	-1	290	10	0	0		432	0	432		1.2378
+nordkap_s77_A	nordkap	77	A	US	127	8	127	47	63	82	40	28	64	19	12	234	0	234	280	8	272	8.3571	2.7475
+nordkap_s77_B	nordkap	77	B	US	469	8	469	183	385	137	71	30	88	153	41	234	0	234	950	680	270	7.8	0.615
+nordkap_s78_A	nordkap	78	A	US	137	8	137	25	82	126	82	15	55	10	67	126	0	126	496	116	380	8.4	3.1148
+nordkap_s78_B	nordkap	78	B	US	189	8	189	6	180	167	167	6	126	0	161	54	0	54	554	108	446	9.0	2.4372
+yulerune_s76_A	yulerune	76	A	US	294	8	294	0	265	284	265	0	-1	0	265	0	0		504	0	504		1.7143
+yulerune_s76_B	yulerune	76	B	US	425	8	425	0	273	263	124	0	-1	0	124	0	0		504	0	504		1.1859
+yulerune_s77_A	yulerune	77	A	OPP	233	8	233	0	0	183	0	0	-1	0	0	0	0		0	0	0		0.0
+yulerune_s77_B	yulerune	77	B	OPP	1000	8	1000	0	17	970	17	0	-1	0	17	0	0		0	0	0		0.0
+yulerune_s78_A	yulerune	78	A	US	183	8	183	0	155	164	147	0	-1	0	147	0	0		504	0	504		2.7541
+yulerune_s78_B	yulerune	78	B	OPP	208	8	208	0	0	193	0	0	-1	0	0	0	0		0	0	0		0.0
+atoll_s79_A	atoll	79	A	US	233	8	233	0	105	226	105	0	-1	0	105	0	0		808	300	508		2.1803
+atoll_s79_B	atoll	79	B	US	162	8	162	0	56	152	56	0	-1	0	56	0	0		504	0	504		3.1111
+atoll_s80_A	atoll	80	A	US	347	8	347	0	242	340	242	0	-1	0	242	0	0		1312	808	504		1.4524
+atoll_s80_B	atoll	80	B	OPP	1000	8	1000	0	918	151	78	0	-1	0	78	0	0		980	980	0		0.0
+atoll_s81_A	atoll	81	A	OPP	179	8	179	0	0	171	0	0	-1	0	0	0	0		0	0	0		0.0
+atoll_s81_B	atoll	81	B	OPP	451	8	451	0	294	440	294	0	-1	0	294	0	0		1486	1156	330		0.7317
+drakkarfjord_s79_A	drakkarfjord	79	A	US	204	8	204	15	82	189	82	15	126	0	67	144	0	144	478	116	362	9.6	1.9153
+drakkarfjord_s79_B	drakkarfjord	79	B	US	98	8	98	52	56	84	56	51	42	1	5	468	0	468	36	0	36	9.1765	0.766
+drakkarfjord_s80_A	drakkarfjord	80	A	US	153	8	153	67	65	122	48	31	89	36	17	288	0	288	216	0	216	9.2903	1.7705
+drakkarfjord_s80_B	drakkarfjord	80	B	US	101	8	101	63	56	87	56	56	45	7	0	504	0	504	0	0	0	9.0	0.0
+drakkarfjord_s81_A	drakkarfjord	81	A	US	333	8	333	246	221	106	8	8	112	238	0	36	0	36	468	0	468	4.5	1.44
+drakkarfjord_s81_B	drakkarfjord	81	B	US	412	8	412	0	96	398	96	0	-1	0	96	0	0		684	180	504		1.2233
+glacierkeep_s79_A	glacierkeep	79	A	US	127	8	127	80	56	96	42	42	71	38	0	252	0	252	252	0	252	6.0	2.9647
+glacierkeep_s79_B	glacierkeep	79	B	OPP	838	8	838	167	574	302	94	23	128	144	71	198	0	198	1352	1550	-198	8.6087	-0.2429
+glacierkeep_s80_A	glacierkeep	80	A	US	111	8	111	83	56	56	56	56	55	27	0	504	0	504	0	0	0	9.0	0.0
+glacierkeep_s80_B	glacierkeep	80	B	OPP	1000	8	1000	89	908	77	50	3	92	86	47	18	0	18	2126	2144	-18	6.0	-0.0181
+glacierkeep_s81_A	glacierkeep	81	A	US	143	8	143	100	55	100	55	55	63	45	0	486	0	486	18	0	18	8.8364	0.2045
+glacierkeep_s81_B	glacierkeep	81	B	US	1000	8	1000	65	23	940	23	13	987	52	10	0	0	0	0	0	0	0.0	0.0
+midgard_s79_A	midgard	79	A	OPP	196	8	196	0	146	91	50	0	-1	0	50	0	0		356	356	0		0.0
+midgard_s79_B	midgard	79	B	US	1000	8	1000	0	8	288	8	0	-1	0	8	0	0		72	72	0		0.0
+midgard_s80_A	midgard	80	A	US	1000	8	1000	0	534	359	6	0	-1	0	6	0	0		1516	1312	204		0.204
+midgard_s80_B	midgard	80	B	OPP	1000	8	1000	0	0	639	0	0	-1	0	0	0	0		0	0	0		0.0
+midgard_s81_A	midgard	81	A	OPP	441	8	441	0	394	88	53	0	-1	0	53	0	0		1432	1296	136		0.3084
+midgard_s81_B	midgard	81	B	US	140	8	140	0	88	121	82	0	-1	0	82	0	0		660	152	508		3.6286
+nordkap_s79_A	nordkap	79	A	US	255	8	255	10	56	221	56	0	-1	10	56	0	0		632	120	512		2.0078
+nordkap_s79_B	nordkap	79	B	US	1000	8	1000	177	349	82	16	14	88	163	2	108	0	108	868	694	174	7.7143	0.1765
+nordkap_s80_A	nordkap	80	A	OPP	265	8	265	0	0	111	0	0	-1	0	0	0	0		0	0	0		0.0
+nordkap_s80_B	nordkap	80	B	OPP	518	8	518	0	45	507	45	0	-1	0	45	0	0		378	378	0		0.0
+nordkap_s81_A	nordkap	81	A	US	141	8	141	18	86	128	86	17	55	1	69	144	0	144	494	132	362	8.4706	2.9194
+nordkap_s81_B	nordkap	81	B	US	317	8	317	239	209	107	14	5	117	234	9	36	0	36	468	0	468	7.2	1.5
+yulerune_s79_A	yulerune	79	A	US	146	8	146	0	56	135	56	0	-1	0	56	0	0		504	0	504		3.4521
+yulerune_s79_B	yulerune	79	B	OPP	200	8	200	0	0	113	0	0	-1	0	0	0	0		0	0	0		0.0
+yulerune_s80_A	yulerune	80	A	US	508	8	508	0	30	476	30	0	-1	0	30	0	0		504	0	504		0.9921
+yulerune_s80_B	yulerune	80	B	OPP	240	8	240	0	0	229	0	0	-1	0	0	0	0		0	0	0		0.0
+yulerune_s81_A	yulerune	81	A	US	209	8	209	0	56	196	56	0	-1	0	56	0	0		504	0	504		2.4115
+yulerune_s81_B	yulerune	81	B	OPP	180	8	180	0	0	90	0	0	-1	0	0	0	0		0	0	0		0.0
+atoll_s82_A	atoll	82	A	US	244	8	244	0	101	237	101	0	-1	0	101	0	0		742	234	508		2.082
+atoll_s82_B	atoll	82	B	OPP	293	8	293	0	0	70	0	0	-1	0	0	0	0		0	0	0		0.0
+atoll_s83_A	atoll	83	A	US	1000	8	1000	0	0	989	0	0	-1	0	0	0	0		0	0	0		0.0
+atoll_s83_B	atoll	83	B	US	111	8	111	0	56	102	56	0	-1	0	56	0	0		504	0	504		4.5405
+atoll_s84_A	atoll	84	A	US	202	8	202	0	92	195	92	0	-1	0	92	0	0		664	164	500		2.4752
+atoll_s84_B	atoll	84	B	US	308	8	308	0	139	299	139	0	-1	0	139	0	0		900	392	508		1.6494
+drakkarfjord_s82_A	drakkarfjord	82	A	US	799	8	799	0	326	771	326	0	-1	0	326	0	0		1764	1260	504		0.6308
+drakkarfjord_s82_B	drakkarfjord	82	B	US	98	8	98	59	56	84	56	53	42	6	3	486	0	486	18	0	18	9.1698	0.4
+drakkarfjord_s83_A	drakkarfjord	83	A	US	93	8	93	64	56	79	56	56	37	8	0	504	0	504	0	0	0	9.0	0.0
+drakkarfjord_s83_B	drakkarfjord	83	B	US	127	8	127	20	86	113	86	15	41	5	71	126	0	126	512	132	380	8.4	3.3929
+drakkarfjord_s84_A	drakkarfjord	84	A	US	248	8	248	113	87	111	4	3	189	110	1	0	0	0	518	16	502	0.0	2.049
+drakkarfjord_s84_B	drakkarfjord	84	B	US	544	8	544	40	504	227	201	25	40	15	176	216	0	216	1804	1520	284	8.64	0.5472
+glacierkeep_s82_A	glacierkeep	82	A	US	162	8	162	110	63	73	29	29	99	81	0	144	0	144	360	0	360	4.9655	2.7068
+glacierkeep_s82_B	glacierkeep	82	B	US	261	8	261	196	153	66	3	3	108	193	0	18	0	18	486	0	486	6.0	1.8837
+glacierkeep_s83_A	glacierkeep	83	A	US	131	8	131	101	56	77	56	56	75	45	0	504	0	504	0	0	0	9.0	0.0
+glacierkeep_s83_B	glacierkeep	83	B	US	346	8	346	92	274	148	120	24	72	68	96	180	0	180	792	468	324	7.5	1.0062
+glacierkeep_s84_A	glacierkeep	84	A	US	429	8	429	40	131	294	79	0	-1	40	79	0	0		806	304	502		1.1702
+glacierkeep_s84_B	glacierkeep	84	B	US	1000	8	1000	934	0	121	0	0	-1	934	0	0	0		0	0	0		0.0
+midgard_s82_A	midgard	82	A	OPP	429	8	429	0	0	115	0	0	-1	0	0	0	0		0	0	0		0.0
+midgard_s82_B	midgard	82	B	OPP	161	8	161	0	114	61	24	0	-1	0	24	0	0		516	498	18		0.1118
+midgard_s83_A	midgard	83	A	US	457	8	457	0	68	426	47	0	-1	0	47	0	0		504	0	504		1.1028
+midgard_s83_B	midgard	83	B	OPP	290	8	290	0	0	213	0	0	-1	0	0	0	0		0	0	0		0.0
+midgard_s84_A	midgard	84	A	US	248	8	248	0	198	220	191	0	-1	0	191	0	0		504	0	504		2.0323
+midgard_s84_B	midgard	84	B	US	239	8	239	0	66	217	64	0	-1	0	64	0	0		570	66	504		2.1088
+nordkap_s82_A	nordkap	82	A	US	108	8	108	69	59	83	47	47	49	22	0	396	0	396	108	0	108	8.4255	1.7705
+nordkap_s82_B	nordkap	82	B	OPP	206	8	206	0	78	161	78	0	-1	0	78	0	0		0	0	0		0.0
+nordkap_s83_A	nordkap	83	A	US	249	8	249	57	158	160	89	19	91	38	70	108	0	108	746	350	396	5.6842	1.7217
+nordkap_s83_B	nordkap	83	B	US	130	8	130	0	50	120	50	0	-1	0	50	0	0		504	0	504		3.8769
+nordkap_s84_A	nordkap	84	A	US	360	8	360	209	84	330	84	15	277	194	69	144	0	144	484	124	360	9.6	1.0435
+nordkap_s84_B	nordkap	84	B	US	241	8	241	116	233	129	129	57	125	59	72	54	0	54	450	0	450	0.9474	2.4457
+yulerune_s82_A	yulerune	82	A	OPP	184	8	184	0	0	149	0	0	-1	0	0	0	0		0	0	0		0.0
+yulerune_s82_B	yulerune	82	B	OPP	315	8	315	0	0	194	0	0	-1	0	0	0	0		0	0	0		0.0
+yulerune_s83_A	yulerune	83	A	OPP	936	8	936	0	0	603	0	0	-1	0	0	0	0		0	0	0		0.0
+yulerune_s83_B	yulerune	83	B	US	443	8	443	0	100	392	100	0	-1	0	100	0	0		664	164	500		1.1287
+yulerune_s84_A	yulerune	84	A	US	1000	8	1000	0	760	230	20	0	-1	0	20	0	0		2050	2050	0		0.0
+yulerune_s84_B	yulerune	84	B	OPP	264	8	264	0	0	198	0	0	-1	0	0	0	0		0	0	0		0.0
+atoll_s85_A	atoll	85	A	US	284	8	284	0	116	270	116	0	-1	0	116	0	0		674	172	502		1.7676
+atoll_s85_B	atoll	85	B	US	1000	8	1000	0	0	990	0	0	-1	0	0	0	0		0	0	0		0.0
+atoll_s86_A	atoll	86	A	OPP	200	8	200	0	17	153	17	0	-1	0	17	0	0		0	0	0		0.0
+atoll_s86_B	atoll	86	B	US	122	8	122	0	56	113	56	0	-1	0	56	0	0		504	0	504		4.1311
+atoll_s87_A	atoll	87	A	US	364	8	364	0	285	331	264	0	-1	0	264	0	0		1516	1016	500		1.3736
+atoll_s87_B	atoll	87	B	US	190	8	190	0	96	181	96	0	-1	0	96	0	0		680	180	500		2.6316
+drakkarfjord_s85_A	drakkarfjord	85	A	US	101	8	101	52	56	86	55	50	45	2	5	432	0	432	72	0	72	8.64	1.4118
+drakkarfjord_s85_B	drakkarfjord	85	B	US	544	8	544	40	504	227	201	25	40	15	176	216	0	216	1804	1520	284	8.64	0.5472
+drakkarfjord_s86_A	drakkarfjord	86	A	US	99	8	99	56	56	85	56	46	48	10	10	414	0	414	90	0	90	9.0	1.6981
+drakkarfjord_s86_B	drakkarfjord	86	B	US	249	8	249	0	56	235	56	0	-1	0	56	0	0		504	0	504		2.0241
+drakkarfjord_s87_A	drakkarfjord	87	A	US	101	8	101	52	56	86	55	50	45	2	5	432	0	432	72	0	72	8.64	1.4118
+drakkarfjord_s87_B	drakkarfjord	87	B	OPP	521	8	521	0	461	56	10	0	-1	0	10	0	0		1702	1344	358		0.6871
+glacierkeep_s85_A	glacierkeep	85	A	US	127	8	127	80	56	96	42	42	71	38	0	252	0	252	252	0	252	6.0	2.9647
+glacierkeep_s85_B	glacierkeep	85	B	US	265	8	265	198	173	0	0	0	-1	198	0	0	0		504	0	504		1.9019
+glacierkeep_s86_A	glacierkeep	86	A	US	111	8	111	83	56	56	56	56	55	27	0	504	0	504	0	0	0	9.0	0.0
+glacierkeep_s86_B	glacierkeep	86	B	US	1000	8	1000	89	170	766	3	3	92	86	0	18	0	18	608	626	-18	6.0	-0.0181
+glacierkeep_s87_A	glacierkeep	87	A	US	123	8	123	78	56	106	56	56	67	22	0	504	0	504	0	0	0	9.0	0.0
+glacierkeep_s87_B	glacierkeep	87	B	US	617	8	617	96	501	102	55	12	116	84	43	108	0	108	840	444	396	9.0	0.6545
+midgard_s85_A	midgard	85	A	OPP	218	8	218	0	0	92	0	0	-1	0	0	0	0		0	0	0		0.0
+midgard_s85_B	midgard	85	B	US	545	8	545	0	57	526	53	0	-1	0	53	0	0		504	0	504		0.9248
+midgard_s86_A	midgard	86	A	OPP	501	8	501	0	306	220	32	0	-1	0	32	0	0		1264	886	378		0.7545
+midgard_s86_B	midgard	86	B	OPP	244	8	244	0	0	137	0	0	-1	0	0	0	0		0	0	0		0.0
+midgard_s87_A	midgard	87	A	OPP	201	8	201	0	152	106	65	0	-1	0	65	0	0		576	560	16		0.0796
+midgard_s87_B	midgard	87	B	OPP	1000	8	1000	0	0	99	0	0	-1	0	0	0	0		0	0	0		0.0
+nordkap_s85_A	nordkap	85	A	US	153	8	153	108	72	80	12	12	81	96	0	18	0	18	486	0	486	1.5	3.4468
+nordkap_s85_B	nordkap	85	B	US	855	8	855	816	69	780	25	25	84	791	0	270	0	270	234	0	234	10.8	0.2819
+nordkap_s86_A	nordkap	86	A	OPP	759	8	759	129	50	421	23	23	47	106	0	198	0	198	144	342	-198	8.6087	-0.269
+nordkap_s86_B	nordkap	86	B	US	188	8	188	89	86	160	78	30	80	59	48	198	0	198	424	120	304	6.6	1.9241
+nordkap_s87_A	nordkap	87	A	US	112	8	112	67	64	82	47	47	48	20	0	396	0	396	108	0	108	8.4255	1.6615
+nordkap_s87_B	nordkap	87	B	US	150	8	150	74	64	138	63	45	94	29	18	378	0	378	126	0	126	8.4	1.2
+yulerune_s85_A	yulerune	85	A	OPP	325	8	325	0	0	157	0	0	-1	0	0	0	0		0	0	0		0.0
+yulerune_s85_B	yulerune	85	B	OPP	167	8	167	0	0	80	0	0	-1	0	0	0	0		0	0	0		0.0
+yulerune_s86_A	yulerune	86	A	US	194	8	194	0	34	181	34	0	-1	0	34	0	0		504	0	504		2.5979
+yulerune_s86_B	yulerune	86	B	US	1000	8	1000	0	0	172	0	0	-1	0	0	0	0		0	0	0		0.0
+yulerune_s87_A	yulerune	87	A	OPP	289	8	289	0	77	211	16	0	-1	0	16	0	0		432	0	432		1.4948
+yulerune_s87_B	yulerune	87	B	US	219	8	219	0	193	208	193	0	-1	0	193	0	0		504	0	504		2.3014
+atoll_s88_A	atoll	88	A	OPP	397	8	397	0	0	386	0	0	-1	0	0	0	0		0	0	0		0.0
+atoll_s88_B	atoll	88	B	OPP	201	8	201	0	0	189	0	0	-1	0	0	0	0		0	0	0		0.0
+atoll_s89_A	atoll	89	A	US	452	8	452	0	226	409	226	0	-1	0	226	0	0		1036	536	500		1.1062
+atoll_s89_B	atoll	89	B	US	111	8	111	0	56	102	56	0	-1	0	56	0	0		504	0	504		4.5405
+atoll_s90_A	atoll	90	A	OPP	268	8	268	0	0	79	0	0	-1	0	0	0	0		0	0	0		0.0
+atoll_s90_B	atoll	90	B	OPP	144	8	144	0	0	135	0	0	-1	0	0	0	0		0	0	0		0.0
+drakkarfjord_s88_A	drakkarfjord	88	A	US	112	8	112	10	76	98	76	4	36	6	72	36	0	36	560	88	472	9.0	4.3704
+drakkarfjord_s88_B	drakkarfjord	88	B	US	124	8	124	27	84	110	84	16	40	11	68	144	0	144	484	128	356	9.0	3.2963
+drakkarfjord_s89_A	drakkarfjord	89	A	US	121	8	121	22	84	107	84	15	37	7	69	126	0	126	506	124	382	8.4	3.6038
+drakkarfjord_s89_B	drakkarfjord	89	B	US	254	8	254	0	58	240	58	0	-1	0	58	0	0		510	8	502		1.9764
+drakkarfjord_s90_A	drakkarfjord	90	A	US	92	8	92	56	56	77	55	55	36	1	0	486	0	486	18	0	18	8.8364	0.4865
+drakkarfjord_s90_B	drakkarfjord	90	B	US	287	8	287	60	247	230	204	44	40	16	160	396	0	396	848	738	110	9.0	0.4527
+glacierkeep_s88_A	glacierkeep	88	A	US	124	8	124	79	56	109	56	56	68	23	0	504	0	504	0	0	0	9.0	0.0
+glacierkeep_s88_B	glacierkeep	88	B	US	1000	8	1000	84	0	916	0	0	-1	84	0	0	0		0	0	0		0.0
+glacierkeep_s89_A	glacierkeep	89	A	US	119	8	119	76	56	103	56	56	63	20	0	504	0	504	0	0	0	9.0	0.0
+glacierkeep_s89_B	glacierkeep	89	B	OPP	579	8	579	85	286	229	3	3	92	82	0	18	0	18	862	880	-18	6.0	-0.0312
+glacierkeep_s90_A	glacierkeep	90	A	US	165	8	165	119	94	67	12	12	71	107	0	72	0	72	432	0	432	6.0	2.8235
+glacierkeep_s90_B	glacierkeep	90	B	US	617	8	617	96	501	102	55	12	116	84	43	108	0	108	840	444	396	9.0	0.6545
+midgard_s88_A	midgard	88	A	OPP	1000	8	1000	0	844	155	8	0	-1	0	8	0	0		2518	2500	18		0.018
+midgard_s88_B	midgard	88	B	OPP	1000	8	1000	0	0	832	0	0	-1	0	0	0	0		0	0	0		0.0
+midgard_s89_A	midgard	89	A	OPP	308	8	308	0	0	189	0	0	-1	0	0	0	0		0	0	0		0.0
+midgard_s89_B	midgard	89	B	US	257	8	257	0	89	175	20	0	-1	0	20	0	0		504	0	504		1.9611
+midgard_s90_A	midgard	90	A	US	141	8	141	0	56	121	56	0	-1	0	56	0	0		504	0	504		3.5745
+midgard_s90_B	midgard	90	B	US	495	8	495	0	75	351	9	0	-1	0	9	0	0		514	8	506		1.0222
+nordkap_s88_A	nordkap	88	A	US	121	8	121	81	70	67	26	26	51	55	0	198	0	198	306	0	306	7.6154	3.2211
+nordkap_s88_B	nordkap	88	B	OPP	497	8	497	0	83	49	49	0	-1	0	49	0	0		0	0	0		0.0
+nordkap_s89_A	nordkap	89	A	US	206	8	206	8	72	196	72	0	-1	8	72	0	0		720	212	508		2.466
+nordkap_s89_B	nordkap	89	B	US	246	8	246	0	47	236	47	0	-1	0	47	0	0		504	0	504		2.0488
+nordkap_s90_A	nordkap	90	A	US	425	8	425	0	329	88	3	0	-1	0	3	0	0		1312	812	500		1.1765
+nordkap_s90_B	nordkap	90	B	US	241	8	241	55	234	140	140	25	42	30	115	36	0	36	468	0	468	1.44	2.1667
+yulerune_s88_A	yulerune	88	A	US	1000	8	1000	0	760	230	20	0	-1	0	20	0	0		2050	2050	0		0.0
+yulerune_s88_B	yulerune	88	B	OPP	541	8	541	0	504	123	101	0	-1	0	101	0	0		0	0	0		0.0
+yulerune_s89_A	yulerune	89	A	US	219	8	219	0	56	208	56	0	-1	0	56	0	0		504	0	504		2.3014
+yulerune_s89_B	yulerune	89	B	OPP	293	8	293	0	64	115	64	0	-1	0	64	0	0		0	0	0		0.0
+yulerune_s90_A	yulerune	90	A	OPP	382	8	382	0	0	302	0	0	-1	0	0	0	0		0	0	0		0.0
+yulerune_s90_B	yulerune	90	B	OPP	412	8	412	0	0	170	0	0	-1	0	0	0	0		0	0	0		0.0

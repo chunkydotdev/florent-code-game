@@ -1,0 +1,23 @@
+Running match: _v488beltbreak2 vs _v522floor
+  Map: glacierkeep.map26  Seed: 47  Replay: 
+scratchpad/s51_v522_build/grid/b16/repv522/glacierkeep_s47_B.replay26  TLE: 10ms
+Completed turn 0
+Completed turn 100
+Completed turn 200
+Completed turn 300
+Completed turn 400
+Completed turn 500
+Completed turn 600
+Completed turn 700
+Completed turn 800
+Completed turn 900
+Replay written to 
+scratchpad/s51_v522_build/grid/b16/repv522/glacierkeep_s47_B.replay26
+
+  Winner: _v522floor  (Harvesters (tiebreak), turn 1000)
+
+               _v488beltbreak2       _v522floor  
+  Titanium       176 (0 mined)    126 (0 mined)  
+  Units                      8                7  
+  Buildings                 68              104  
+

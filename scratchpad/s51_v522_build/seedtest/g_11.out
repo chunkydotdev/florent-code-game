@@ -1,0 +1,19 @@
+Running match: instd vs c_opp
+  Map: glacierkeep.map26  Seed: 11  Replay: 
+scratchpad/s51_v522_build/seedtest/g_11.replay26  TLE: 10ms
+Completed turn 0
+Completed turn 100
+Completed turn 200
+Completed turn 300
+Completed turn 400
+Completed turn 500
+Completed turn 600
+Replay written to scratchpad/s51_v522_build/seedtest/g_11.replay26
+
+  Winner: c_opp  (Core destroyed, turn 601)
+
+                        instd             c_opp  
+  Titanium     14 (320 mined)    11 (210 mined)  
+  Units                     6                 8  
+  Buildings                28                52  
+

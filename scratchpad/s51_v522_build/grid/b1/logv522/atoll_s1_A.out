@@ -1,0 +1,16 @@
+Running match: _v522floor vs _v488beltbreak2
+  Map: atoll.map26  Seed: 1  Replay: 
+scratchpad/s51_v522_build/grid/b1/repv522/atoll_s1_A.replay26  TLE: 10ms
+Completed turn 0
+Completed turn 100
+Completed turn 200
+Completed turn 300
+Replay written to scratchpad/s51_v522_build/grid/b1/repv522/atoll_s1_A.replay26
+
+  Winner: _v522floor  (Core destroyed, turn 305)
+
+                     _v522floor    _v488beltbreak2  
+  Titanium     180 (2440 mined)      7 (220 mined)  
+  Units                      13                  7  
+  Buildings                  24                 21  
+

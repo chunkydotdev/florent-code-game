@@ -1,0 +1,23 @@
+Running match: _v488beltbreak2 vs parent
+  Map: atoll.map26  Seed: 49  Replay: 
+scratchpad/s51_v522_build/grid/b17/repparent/atoll_s49_B.replay26  TLE: 10ms
+Completed turn 0
+Completed turn 100
+Completed turn 200
+Completed turn 300
+Completed turn 400
+Completed turn 500
+Completed turn 600
+Completed turn 700
+Completed turn 800
+Completed turn 900
+Replay written to 
+scratchpad/s51_v522_build/grid/b17/repparent/atoll_s49_B.replay26
+
+  Winner: parent  (Titanium collected (tiebreak), turn 1000)
+
+               _v488beltbreak2               parent  
+  Titanium     178 (250 mined)    1073 (5760 mined)  
+  Units                     14                   25  
+  Buildings                 20                   23  
+

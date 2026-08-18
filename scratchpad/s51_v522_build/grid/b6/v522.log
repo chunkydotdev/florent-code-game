@@ -1,0 +1,36 @@
+atoll_s16_A	atoll	16	A	US	_v522floor	Core destroyed	471	0	2320	250
+atoll_s16_B	atoll	16	B	US	_v522floor	Core destroyed	184	0	650	520
+atoll_s17_A	atoll	17	A	US	_v522floor	Core destroyed	124	0	560	220
+atoll_s17_B	atoll	17	B	US	_v522floor	Core destroyed	157	0	710	420
+atoll_s18_A	atoll	18	A	US	_v522floor	Core destroyed	194	0	1410	250
+atoll_s18_B	atoll	18	B	US	_v522floor	Core destroyed	259	0	1730	1180
+drakkarfjord_s16_A	drakkarfjord	16	A	US	_v522floor	Core destroyed	101	0	320	0
+drakkarfjord_s16_B	drakkarfjord	16	B	US	_v522floor	Core destroyed	326	0	1610	0
+drakkarfjord_s17_A	drakkarfjord	17	A	US	_v522floor	Core destroyed	88	0	270	0
+drakkarfjord_s17_B	drakkarfjord	17	B	US	_v522floor	Core destroyed	255	0	2910	0
+drakkarfjord_s18_A	drakkarfjord	18	A	OPP	_v488beltbreak2	Core destroyed	377	0	960	3740
+drakkarfjord_s18_B	drakkarfjord	18	B	OPP	_v488beltbreak2	Core destroyed	521	0	240	0
+glacierkeep_s16_A	glacierkeep	16	A	US	_v522floor	Core destroyed	127	0	310	0
+glacierkeep_s16_B	glacierkeep	16	B	US	_v522floor	Core destroyed	217	0	0	0
+glacierkeep_s17_A	glacierkeep	17	A	US	_v522floor	Core destroyed	119	0	380	0
+glacierkeep_s17_B	glacierkeep	17	B	OPP	_v488beltbreak2	Harvesters (tiebreak)	1000	0	0	0
+glacierkeep_s18_A	glacierkeep	18	A	US	_v522floor	Core destroyed	143	0	590	0
+glacierkeep_s18_B	glacierkeep	18	B	US	_v522floor	Core destroyed	217	0	0	0
+midgard_s16_A	midgard	16	A	US	_v522floor	Core destroyed	347	0	3100	2650
+midgard_s16_B	midgard	16	B	OPP	_v488beltbreak2	Core destroyed	502	0	600	1870
+midgard_s17_A	midgard	17	A	US	_v522floor	Titanium collected (tiebreak)	1000	0	730	630
+midgard_s17_B	midgard	17	B	OPP	_v488beltbreak2	Titanium collected (tiebreak)	1000	0	690	700
+midgard_s18_A	midgard	18	A	US	_v522floor	Core destroyed	293	0	660	490
+midgard_s18_B	midgard	18	B	US	_v522floor	Core destroyed	261	0	720	670
+nordkap_s16_A	nordkap	16	A	US	_v522floor	Core destroyed	266	0	2050	50
+nordkap_s16_B	nordkap	16	B	OPP	_v488beltbreak2	Core destroyed	251	0	130	2390
+nordkap_s17_A	nordkap	17	A	OPP	_v488beltbreak2	Core destroyed	238	0	90	1820
+nordkap_s17_B	nordkap	17	B	OPP	_v488beltbreak2	Core destroyed	784	0	80	960
+nordkap_s18_A	nordkap	18	A	US	_v522floor	Core destroyed	277	0	190	190
+nordkap_s18_B	nordkap	18	B	US	_v522floor	Core destroyed	117	0	170	10
+yulerune_s16_A	yulerune	16	A	US	_v522floor	Core destroyed	568	0	1550	790
+yulerune_s16_B	yulerune	16	B	OPP	_v488beltbreak2	Core destroyed	108	0	310	880
+yulerune_s17_A	yulerune	17	A	OPP	_v488beltbreak2	Core destroyed	193	0	380	1070
+yulerune_s17_B	yulerune	17	B	OPP	_v488beltbreak2	Core destroyed	278	0	430	3210
+yulerune_s18_A	yulerune	18	A	OPP	_v488beltbreak2	Core destroyed	264	0	730	2450
+yulerune_s18_B	yulerune	18	B	OPP	_v488beltbreak2	Core destroyed	545	0	440	370

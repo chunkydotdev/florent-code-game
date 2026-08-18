@@ -1,0 +1,36 @@
+atoll_s816_A	atoll	816	A	US	iNOPHASE	Core destroyed	134	0	640	140
+atoll_s816_B	atoll	816	B	US	iNOPHASE	Core destroyed	525	0	430	850
+atoll_s817_A	atoll	817	A	US	iNOPHASE	Core destroyed	144	0	690	220
+atoll_s817_B	atoll	817	B	OPP	_v488beltbreak2	Core destroyed	207	0	320	570
+atoll_s818_A	atoll	818	A	US	iNOPHASE	Core destroyed	323	0	970	260
+atoll_s818_B	atoll	818	B	OPP	_v488beltbreak2	Core destroyed	454	0	470	2220
+drakkarfjord_s816_A	drakkarfjord	816	A	US	iNOPHASE	Core destroyed	397	0	310	0
+drakkarfjord_s816_B	drakkarfjord	816	B	US	iNOPHASE	Core destroyed	117	0	360	0
+drakkarfjord_s817_A	drakkarfjord	817	A	US	iNOPHASE	Core destroyed	397	0	310	0
+drakkarfjord_s817_B	drakkarfjord	817	B	US	iNOPHASE	Core destroyed	98	0	320	0
+drakkarfjord_s818_A	drakkarfjord	818	A	US	iNOPHASE	Core destroyed	141	0	600	80
+drakkarfjord_s818_B	drakkarfjord	818	B	US	iNOPHASE	Titanium collected (tiebreak)	1000	0	330	0
+glacierkeep_s816_A	glacierkeep	816	A	US	iNOPHASE	Core destroyed	173	0	170	0
+glacierkeep_s816_B	glacierkeep	816	B	US	iNOPHASE	Core destroyed	873	0	0	0
+glacierkeep_s817_A	glacierkeep	817	A	US	iNOPHASE	Core destroyed	110	0	230	0
+glacierkeep_s817_B	glacierkeep	817	B	US	iNOPHASE	Core destroyed	225	0	0	0
+glacierkeep_s818_A	glacierkeep	818	A	US	iNOPHASE	Core destroyed	177	0	670	0
+glacierkeep_s818_B	glacierkeep	818	B	US	iNOPHASE	Core destroyed	237	0	0	0
+midgard_s816_A	midgard	816	A	US	iNOPHASE	Core destroyed	332	0	2220	3730
+midgard_s816_B	midgard	816	B	US	iNOPHASE	Titanium collected (tiebreak)	1000	0	1030	730
+midgard_s817_A	midgard	817	A	OPP	_v488beltbreak2	Core destroyed	546	0	660	3330
+midgard_s817_B	midgard	817	B	US	iNOPHASE	Core destroyed	179	0	1310	720
+midgard_s818_A	midgard	818	A	OPP	_v488beltbreak2	Titanium collected (tiebreak)	1000	0	820	970
+midgard_s818_B	midgard	818	B	OPP	_v488beltbreak2	Core destroyed	628	0	800	610
+nordkap_s816_A	nordkap	816	A	US	iNOPHASE	Core destroyed	222	0	590	70
+nordkap_s816_B	nordkap	816	B	US	iNOPHASE	Core destroyed	370	0	3300	1100
+nordkap_s817_A	nordkap	817	A	US	iNOPHASE	Core destroyed	104	0	240	0
+nordkap_s817_B	nordkap	817	B	US	iNOPHASE	Titanium collected (tiebreak)	1000	0	2480	290
+nordkap_s818_A	nordkap	818	A	US	iNOPHASE	Core destroyed	493	0	150	180
+nordkap_s818_B	nordkap	818	B	OPP	_v488beltbreak2	Core destroyed	371	0	110	3090
+yulerune_s816_A	yulerune	816	A	US	iNOPHASE	Core destroyed	431	0	970	410
+yulerune_s816_B	yulerune	816	B	OPP	_v488beltbreak2	Core destroyed	309	0	420	630
+yulerune_s817_A	yulerune	817	A	OPP	_v488beltbreak2	Titanium collected (tiebreak)	1000	0	270	310
+yulerune_s817_B	yulerune	817	B	OPP	_v488beltbreak2	Core destroyed	182	0	320	1510
+yulerune_s818_A	yulerune	818	A	US	iNOPHASE	Core destroyed	387	0	1010	350
+yulerune_s818_B	yulerune	818	B	OPP	_v488beltbreak2	Core destroyed	300	0	400	2270

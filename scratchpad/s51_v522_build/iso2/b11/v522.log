@@ -1,0 +1,36 @@
+atoll_s831_A	atoll	831	A	OPP	_v488beltbreak2	Core destroyed	268	0	320	1300
+atoll_s831_B	atoll	831	B	US	v522	Core destroyed	127	0	600	390
+atoll_s832_A	atoll	832	A	US	v522	Core destroyed	261	0	1340	760
+atoll_s832_B	atoll	832	B	US	v522	Core destroyed	127	0	600	390
+atoll_s833_A	atoll	833	A	US	v522	Core destroyed	216	0	700	240
+atoll_s833_B	atoll	833	B	US	v522	Core destroyed	422	0	2590	1100
+drakkarfjord_s831_A	drakkarfjord	831	A	US	v522	Core destroyed	99	0	390	0
+drakkarfjord_s831_B	drakkarfjord	831	B	US	v522	Core destroyed	100	0	280	0
+drakkarfjord_s832_A	drakkarfjord	832	A	US	v522	Titanium collected (tiebreak)	1000	0	660	190
+drakkarfjord_s832_B	drakkarfjord	832	B	US	v522	Core destroyed	120	0	380	0
+drakkarfjord_s833_A	drakkarfjord	833	A	US	v522	Core destroyed	90	0	280	0
+drakkarfjord_s833_B	drakkarfjord	833	B	US	v522	Core destroyed	122	0	350	0
+glacierkeep_s831_A	glacierkeep	831	A	US	v522	Core destroyed	146	0	310	0
+glacierkeep_s831_B	glacierkeep	831	B	US	v522	Harvesters (tiebreak)	1000	0	0	0
+glacierkeep_s832_A	glacierkeep	832	A	US	v522	Core destroyed	119	0	380	0
+glacierkeep_s832_B	glacierkeep	832	B	US	v522	Core destroyed	123	0	320	0
+glacierkeep_s833_A	glacierkeep	833	A	US	v522	Core destroyed	111	0	420	0
+glacierkeep_s833_B	glacierkeep	833	B	US	v522	Core destroyed	329	0	0	0
+midgard_s831_A	midgard	831	A	OPP	_v488beltbreak2	Core destroyed	573	0	610	630
+midgard_s831_B	midgard	831	B	US	v522	Core destroyed	685	0	1320	1200
+midgard_s832_A	midgard	832	A	OPP	_v488beltbreak2	Core destroyed	309	0	640	2360
+midgard_s832_B	midgard	832	B	OPP	_v488beltbreak2	Core destroyed	281	0	780	600
+midgard_s833_A	midgard	833	A	OPP	_v488beltbreak2	Core destroyed	314	0	590	2130
+midgard_s833_B	midgard	833	B	OPP	_v488beltbreak2	Core destroyed	279	0	710	2410
+nordkap_s831_A	nordkap	831	A	US	v522	Core destroyed	704	0	4540	11380
+nordkap_s831_B	nordkap	831	B	OPP	_v488beltbreak2	Core destroyed	294	0	100	2460
+nordkap_s832_A	nordkap	832	A	US	v522	Core destroyed	676	0	2910	520
+nordkap_s832_B	nordkap	832	B	US	v522	Core destroyed	157	0	990	40
+nordkap_s833_A	nordkap	833	A	US	v522	Core destroyed	249	0	80	70
+nordkap_s833_B	nordkap	833	B	OPP	_v488beltbreak2	Core destroyed	308	0	1220	5000
+yulerune_s831_A	yulerune	831	A	OPP	_v488beltbreak2	Titanium collected (tiebreak)	1000	0	360	510
+yulerune_s831_B	yulerune	831	B	OPP	_v488beltbreak2	Core destroyed	233	0	790	810
+yulerune_s832_A	yulerune	832	A	OPP	_v488beltbreak2	Core destroyed	194	0	710	1790
+yulerune_s832_B	yulerune	832	B	US	v522	Core destroyed	277	0	370	370
+yulerune_s833_A	yulerune	833	A	US	v522	Core destroyed	342	0	1970	350
+yulerune_s833_B	yulerune	833	B	OPP	_v488beltbreak2	Core destroyed	130	0	410	690
