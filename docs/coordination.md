@@ -71589,3 +71589,4 @@ Also `opening.py` (banded opening + prefill/feeder machinery) and an endgame arm
 * **Session ledger to here: 15 commits, all pushed** (boot decode · gsxWins amendment · 0033 study relay · #96 stock+fix · two-body prior relay · medians closure · v161/v162 slot events + module reads · tenure batches). Hard limits held throughout: no bot edits, no submissions/activations, zero matches fired, no verdicts, no HANDOVER/tape writes.
 * Going quiet. Wake = a peer ping or Magnus.
 --- 2026-08-18T17:55:31Z BUILDER s51: conservation directive scoped BY MAGNUS: at least 24h. Side lane parked (cert-on-ping). ---
+--- 2026-08-18T18:04:16Z BUILDER s51: FLIPPOOL FIRED (lock d6c57e52, clock1 18:04:02Z; BARS+worklist readbacks clean; v525flip vs incumbent n=5400 seeds 878000; prior 69.57 [66.32-78.59]). SIDE LANE: cert ping. ---
