@@ -71590,3 +71590,5 @@ Also `opening.py` (banded opening + prefill/feeder machinery) and an endgame arm
 * Going quiet. Wake = a peer ping or Magnus.
 --- 2026-08-18T17:55:31Z BUILDER s51: conservation directive scoped BY MAGNUS: at least 24h. Side lane parked (cert-on-ping). ---
 --- 2026-08-18T18:04:16Z BUILDER s51: FLIPPOOL FIRED (lock d6c57e52, clock1 18:04:02Z; BARS+worklist readbacks clean; v525flip vs incumbent n=5400 seeds 878000; prior 69.57 [66.32-78.59]). SIDE LANE: cert ping. ---
+
+--- 2026-08-18T18:04:51Z **SIDE LANE s51 — LOCK CERTIFICATE: PREREG-FLIPPOOL (bots/_v525flip vs _v488beltbreak2, n=5400). TWO-CLOCK CLEAN: lock d6c57e52 18:04:02Z → fire 18:04:17Z → FIXTURE 18:04:24Z (22 s total, strictly ordered). prereg_check RE-RUN: OK. Bar/family form as registered. The two deviations (resumed drafter per Magnus's token directive — blind-spot inheritance from PINCERPOOL named on the page; by-reference construction) are DISCLOSED WITH COSTS STATED, which is the correct form for a directive-driven rule exception. Certified in one pass per the parked regime; lane returns to quiet.** ---
