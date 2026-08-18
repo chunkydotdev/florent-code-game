@@ -38,10 +38,12 @@ lock-in.
 4. CPU platform `match test` still owed before ANY ship talk (local CPU is a stub; blocked by
    lock-in). 5. A live unrated leg (the honest fixture) whenever he reopens — leg decode plan
    pre-banked (LEG-DECODE-PLAN-ferrysiege), round-2 baseline cells partially fired pre-lock-in.
-6. *(added s51, side-lane F1)* **Door-turret response (change B, FS_HOME_TURRET_RESPONSE) is ON
-   and live in the fired config** (doctrine.py:2653 via LOKI_FS_CREW) — s50's own 20:32Z note
-   said it "needs Magnus's nod (home doctrine)" and this list omitted it. Needs his nod or his
-   veto; it is home-doctrine behaviour shipping by default in every v513-family arm.
+6. *(added s51, side-lane F1; ⭐ ESCALATED s51 ~05:0x with TWO MEASUREMENTS)* **Door-turret
+   response (change B, FS_HOME_TURRET_RESPONSE) is ON and live in the fired config** and it is
+   now measured as **the entire gated-map regression** (v513+door-off recovers archipelago to
+   v512's exact 26/36 vs v513's 13/36 — the SIEGECREW 36.5% gated alarm's cause) **and worth
+   +18.9pp to v514 on siege maps** (36/90→53/90) while free for v513 there (51→50). Needs his
+   nod or veto MORE than ever; BUILD-REPORT-v514ferrycrew has the isolation tables.
 
 ## STATE / WAKE PATHS
 Daemons alive: 4 watchers (keeper RESTARTED at wrap-fix, new pid in corpus/keeper.pid) +
