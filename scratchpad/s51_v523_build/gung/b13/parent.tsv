@@ -1,0 +1,37 @@
+tag	map	seed	seat	ours	winner	cond	turn	tracebacks	ours_mined	opp_mined
+atoll_s437_A	atoll	437	A	US	parent	Core destroyed	249	0	690	490
+atoll_s437_B	atoll	437	B	US	parent	Core destroyed	308	0	820	590
+atoll_s438_A	atoll	438	A	US	parent	Core destroyed	457	0	6350	2220
+atoll_s438_B	atoll	438	B	OPP	_x3r0v161gungnir	Core destroyed	253	0	410	1220
+atoll_s439_A	atoll	439	A	US	parent	Core destroyed	251	0	1780	90
+atoll_s439_B	atoll	439	B	US	parent	Core destroyed	366	0	1660	1020
+drakkarfjord_s437_A	drakkarfjord	437	A	US	parent	Core destroyed	96	0	270	0
+drakkarfjord_s437_B	drakkarfjord	437	B	US	parent	Core destroyed	251	0	1720	0
+drakkarfjord_s438_A	drakkarfjord	438	A	US	parent	Core destroyed	126	0	300	0
+drakkarfjord_s438_B	drakkarfjord	438	B	US	parent	Core destroyed	207	0	310	0
+drakkarfjord_s439_A	drakkarfjord	439	A	US	parent	Core destroyed	169	0	260	0
+drakkarfjord_s439_B	drakkarfjord	439	B	US	parent	Core destroyed	96	0	250	0
+glacierkeep_s437_A	glacierkeep	437	A	US	parent	Core destroyed	128	0	260	0
+glacierkeep_s437_B	glacierkeep	437	B	US	parent	Harvesters (tiebreak)	1000	0	0	0
+glacierkeep_s438_A	glacierkeep	438	A	US	parent	Core destroyed	366	0	0	0
+glacierkeep_s438_B	glacierkeep	438	B	OPP	_x3r0v161gungnir	Core destroyed	765	0	0	0
+glacierkeep_s439_A	glacierkeep	439	A	US	parent	Core destroyed	360	0	0	0
+glacierkeep_s439_B	glacierkeep	439	B	US	parent	Core destroyed	349	0	0	0
+midgard_s437_A	midgard	437	A	US	parent	Core destroyed	172	0	1710	1000
+midgard_s437_B	midgard	437	B	OPP	_x3r0v161gungnir	Core destroyed	139	0	660	1050
+midgard_s438_A	midgard	438	A	OPP	_x3r0v161gungnir	Core destroyed	106	0	760	800
+midgard_s438_B	midgard	438	B	OPP	_x3r0v161gungnir	Core destroyed	311	0	580	1020
+midgard_s439_A	midgard	439	A	US	parent	Core destroyed	206	0	2100	670
+midgard_s439_B	midgard	439	B	OPP	_x3r0v161gungnir	Core destroyed	121	0	730	780
+nordkap_s437_A	nordkap	437	A	OPP	_x3r0v161gungnir	Core destroyed	233	0	560	1090
+nordkap_s437_B	nordkap	437	B	US	parent	Core destroyed	521	0	1280	20
+nordkap_s438_A	nordkap	438	A	US	parent	Core destroyed	389	0	920	0
+nordkap_s438_B	nordkap	438	B	US	parent	Core destroyed	449	0	370	530
+nordkap_s439_A	nordkap	439	A	US	parent	Core destroyed	169	0	990	670
+nordkap_s439_B	nordkap	439	B	OPP	_x3r0v161gungnir	Core destroyed	331	0	140	1260
+yulerune_s437_A	yulerune	437	A	OPP	_x3r0v161gungnir	Core destroyed	420	0	90	620
+yulerune_s437_B	yulerune	437	B	OPP	_x3r0v161gungnir	Core destroyed	195	0	0	1980
+yulerune_s438_A	yulerune	438	A	OPP	_x3r0v161gungnir	Core destroyed	265	0	230	1690
+yulerune_s438_B	yulerune	438	B	OPP	_x3r0v161gungnir	Core destroyed	314	0	3380	1920
+yulerune_s439_A	yulerune	439	A	OPP	_x3r0v161gungnir	Titanium collected (tiebreak)	1000	0	0	60
+yulerune_s439_B	yulerune	439	B	OPP	_x3r0v161gungnir	Core destroyed	251	0	1600	2740

@@ -1,0 +1,37 @@
+tag	map	seed	seat	ours	winner	cond	turn	tracebacks	ours_mined	opp_mined
+atoll_s834_A	atoll	834	A	US	iCREW	Core destroyed	803	0	2130	1770
+atoll_s834_B	atoll	834	B	US	iCREW	Core destroyed	185	0	880	580
+atoll_s835_A	atoll	835	A	US	iCREW	Core destroyed	536	0	2680	170
+atoll_s835_B	atoll	835	B	US	iCREW	Core destroyed	360	0	1770	1770
+atoll_s836_A	atoll	836	A	OPP	_v488beltbreak2	Core destroyed	344	0	240	1910
+atoll_s836_B	atoll	836	B	US	iCREW	Core destroyed	267	0	1880	690
+drakkarfjord_s834_A	drakkarfjord	834	A	US	iCREW	Core destroyed	93	0	340	0
+drakkarfjord_s834_B	drakkarfjord	834	B	OPP	_v488beltbreak2	Titanium collected (tiebreak)	1000	0	350	850
+drakkarfjord_s835_A	drakkarfjord	835	A	US	iCREW	Core destroyed	121	0	300	0
+drakkarfjord_s835_B	drakkarfjord	835	B	US	iCREW	Core destroyed	101	0	280	0
+drakkarfjord_s836_A	drakkarfjord	836	A	OPP	_v488beltbreak2	Core destroyed	338	0	1030	4020
+drakkarfjord_s836_B	drakkarfjord	836	B	US	iCREW	Core destroyed	461	0	420	0
+glacierkeep_s834_A	glacierkeep	834	A	US	iCREW	Core destroyed	144	0	310	0
+glacierkeep_s834_B	glacierkeep	834	B	US	iCREW	Core destroyed	445	0	0	0
+glacierkeep_s835_A	glacierkeep	835	A	US	iCREW	Core destroyed	161	0	340	120
+glacierkeep_s835_B	glacierkeep	835	B	OPP	_v488beltbreak2	Core destroyed	532	0	300	350
+glacierkeep_s836_A	glacierkeep	836	A	US	iCREW	Core destroyed	126	0	330	0
+glacierkeep_s836_B	glacierkeep	836	B	US	iCREW	Harvesters (tiebreak)	1000	0	0	0
+midgard_s834_A	midgard	834	A	US	iCREW	Core destroyed	228	0	1760	1890
+midgard_s834_B	midgard	834	B	OPP	_v488beltbreak2	Core destroyed	313	0	620	560
+midgard_s835_A	midgard	835	A	OPP	_v488beltbreak2	Core destroyed	241	0	590	1000
+midgard_s835_B	midgard	835	B	US	iCREW	Core destroyed	142	0	1170	640
+midgard_s836_A	midgard	836	A	OPP	_v488beltbreak2	Core destroyed	315	0	900	3160
+midgard_s836_B	midgard	836	B	US	iCREW	Core destroyed	142	0	1170	640
+nordkap_s834_A	nordkap	834	A	US	iCREW	Core destroyed	457	0	360	380
+nordkap_s834_B	nordkap	834	B	US	iCREW	Core destroyed	526	0	120	480
+nordkap_s835_A	nordkap	835	A	US	iCREW	Core destroyed	705	0	140	100
+nordkap_s835_B	nordkap	835	B	US	iCREW	Core destroyed	484	0	1400	470
+nordkap_s836_A	nordkap	836	A	OPP	_v488beltbreak2	Titanium collected (tiebreak)	1000	0	120	2730
+nordkap_s836_B	nordkap	836	B	US	iCREW	Core destroyed	361	0	620	90
+yulerune_s834_A	yulerune	834	A	US	iCREW	Core destroyed	191	0	1280	600
+yulerune_s834_B	yulerune	834	B	OPP	_v488beltbreak2	Core destroyed	266	0	340	2840
+yulerune_s835_A	yulerune	835	A	OPP	_v488beltbreak2	Core destroyed	293	0	470	560
+yulerune_s835_B	yulerune	835	B	OPP	_v488beltbreak2	Core destroyed	315	0	540	2880
+yulerune_s836_A	yulerune	836	A	US	iCREW	Core destroyed	181	0	650	420
+yulerune_s836_B	yulerune	836	B	OPP	_v488beltbreak2	Core destroyed	277	0	490	1490

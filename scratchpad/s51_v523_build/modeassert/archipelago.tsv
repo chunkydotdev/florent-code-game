@@ -1,0 +1,25 @@
+tag	map	seed	seat	ours	winner	cond	turn	tracebacks	ours_mined	opp_mined
+archipelago_s201_A	archipelago	201	A	US	mF	Core destroyed	368	0	3530	1880
+archipelago_s201_B	archipelago	201	B	US	mF	Core destroyed	263	0	1850	2300
+archipelago_s202_A	archipelago	202	A	US	mF	Core destroyed	637	0	3210	3440
+archipelago_s202_B	archipelago	202	B	US	mF	Core destroyed	180	0	1640	750
+archipelago_s203_A	archipelago	203	A	OPP	_v468kladturbo	Core destroyed	196	0	1380	1350
+archipelago_s203_B	archipelago	203	B	OPP	_v468kladturbo	Core destroyed	269	0	1400	1950
+archipelago_s204_A	archipelago	204	A	US	mF	Core destroyed	153	0	1430	1030
+archipelago_s204_B	archipelago	204	B	US	mF	Core destroyed	114	0	700	530
+archipelago_s205_A	archipelago	205	A	US	mF	Core destroyed	390	0	3030	500
+archipelago_s205_B	archipelago	205	B	US	mF	Core destroyed	116	0	920	820
+archipelago_s206_A	archipelago	206	A	US	mF	Core destroyed	308	0	2360	1560
+archipelago_s206_B	archipelago	206	B	US	mF	Core destroyed	93	0	650	570
+archipelago_s207_A	archipelago	207	A	OPP	_v468kladturbo	Core destroyed	162	0	1450	1140
+archipelago_s207_B	archipelago	207	B	US	mF	Core destroyed	257	0	1830	2500
+archipelago_s208_A	archipelago	208	A	OPP	_v468kladturbo	Core destroyed	281	0	1440	2020
+archipelago_s208_B	archipelago	208	B	US	mF	Core destroyed	110	0	930	760
+archipelago_s209_A	archipelago	209	A	OPP	_v468kladturbo	Core destroyed	113	0	760	980
+archipelago_s209_B	archipelago	209	B	US	mF	Core destroyed	295	0	2180	1270
+archipelago_s210_A	archipelago	210	A	US	mF	Core destroyed	183	0	1420	670
+archipelago_s210_B	archipelago	210	B	US	mF	Core destroyed	270	0	2110	1380
+archipelago_s211_A	archipelago	211	A	US	mF	Core destroyed	111	0	1160	740
+archipelago_s211_B	archipelago	211	B	US	mF	Core destroyed	209	0	1910	1870
+archipelago_s212_A	archipelago	212	A	OPP	_v468kladturbo	Core destroyed	603	0	4430	4410
+archipelago_s212_B	archipelago	212	B	US	mF	Core destroyed	194	0	1650	980

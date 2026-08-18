@@ -1,0 +1,16 @@
+atoll A neg=SAME test=SAME store=SAME pos=SAME
+atoll B neg=SAME test=SAME store=DIFF pos=DIFF
+drakkarfjord A neg=SAME test=SAME store=DIFF pos=DIFF
+drakkarfjord B neg=SAME test=SAME store=DIFF pos=DIFF
+glacierkeep A neg=SAME test=SAME store=DIFF pos=DIFF
+glacierkeep B neg=SAME test=SAME store=DIFF pos=DIFF
+midgard A neg=SAME test=SAME store=SAME pos=SAME
+midgard B neg=SAME test=SAME store=SAME pos=SAME
+nordkap A neg=SAME test=SAME store=DIFF pos=DIFF
+nordkap B neg=SAME test=SAME store=SAME pos=SAME
+yulerune A neg=SAME test=SAME store=SAME pos=SAME
+yulerune B neg=SAME test=SAME store=SAME pos=SAME
+NEG   parent vs parent        : identical 12 / differing 0   (want 12/0)
+TEST  parent vs v523 FLAG-OFF : identical 12 / differing 0   (want 12/0)
+STORE parent vs v523 STORE_ONLY: identical 6 / differing 6   (DIFF expected, store bytes)
+POS   parent vs v523 FIRED    : identical 6 / differing 6   (want some DIFF)

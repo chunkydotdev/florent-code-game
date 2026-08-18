@@ -1,0 +1,37 @@
+tag	map	seed	seat	ours	winner	cond	turn	tracebacks	ours_mined	opp_mined
+atoll_s816_A	atoll	816	A	OPP	_v488beltbreak2	Titanium collected (tiebreak)	1000	0	2610	2790
+atoll_s816_B	atoll	816	B	OPP	_v488beltbreak2	Core destroyed	316	0	1540	1550
+atoll_s817_A	atoll	817	A	US	iSALT	Core destroyed	261	0	1340	760
+atoll_s817_B	atoll	817	B	US	iSALT	Core destroyed	443	0	3030	1960
+atoll_s818_A	atoll	818	A	US	iSALT	Core destroyed	420	0	2070	2430
+atoll_s818_B	atoll	818	B	US	iSALT	Core destroyed	410	0	1920	1780
+drakkarfjord_s816_A	drakkarfjord	816	A	US	iSALT	Core destroyed	115	0	340	0
+drakkarfjord_s816_B	drakkarfjord	816	B	US	iSALT	Core destroyed	153	0	580	0
+drakkarfjord_s817_A	drakkarfjord	817	A	US	iSALT	Core destroyed	204	0	1300	520
+drakkarfjord_s817_B	drakkarfjord	817	B	US	iSALT	Core destroyed	514	0	4630	0
+drakkarfjord_s818_A	drakkarfjord	818	A	US	iSALT	Core destroyed	149	0	360	90
+drakkarfjord_s818_B	drakkarfjord	818	B	US	iSALT	Core destroyed	114	0	340	0
+glacierkeep_s816_A	glacierkeep	816	A	OPP	_v488beltbreak2	Core destroyed	439	0	380	3640
+glacierkeep_s816_B	glacierkeep	816	B	US	iSALT	Core destroyed	349	0	0	0
+glacierkeep_s817_A	glacierkeep	817	A	US	iSALT	Core destroyed	751	0	240	110
+glacierkeep_s817_B	glacierkeep	817	B	US	iSALT	Core destroyed	301	0	0	0
+glacierkeep_s818_A	glacierkeep	818	A	US	iSALT	Core destroyed	144	0	310	0
+glacierkeep_s818_B	glacierkeep	818	B	US	iSALT	Harvesters (tiebreak)	1000	0	0	0
+midgard_s816_A	midgard	816	A	US	iSALT	Core destroyed	246	0	1590	760
+midgard_s816_B	midgard	816	B	OPP	_v488beltbreak2	Core destroyed	301	0	630	670
+midgard_s817_A	midgard	817	A	OPP	_v488beltbreak2	Core destroyed	220	0	660	1850
+midgard_s817_B	midgard	817	B	US	iSALT	Core destroyed	411	0	1730	1500
+midgard_s818_A	midgard	818	A	OPP	_v488beltbreak2	Core destroyed	161	0	620	860
+midgard_s818_B	midgard	818	B	OPP	_v488beltbreak2	Core destroyed	280	0	660	1120
+nordkap_s816_A	nordkap	816	A	US	iSALT	Core destroyed	349	0	500	670
+nordkap_s816_B	nordkap	816	B	US	iSALT	Core destroyed	189	0	580	30
+nordkap_s817_A	nordkap	817	A	US	iSALT	Core destroyed	133	0	140	0
+nordkap_s817_B	nordkap	817	B	OPP	_v488beltbreak2	Core destroyed	309	0	90	60
+nordkap_s818_A	nordkap	818	A	US	iSALT	Core destroyed	108	0	380	100
+nordkap_s818_B	nordkap	818	B	US	iSALT	Core destroyed	373	0	110	120
+yulerune_s816_A	yulerune	816	A	OPP	_v488beltbreak2	Core destroyed	141	0	330	550
+yulerune_s816_B	yulerune	816	B	US	iSALT	Core destroyed	312	0	1650	1080
+yulerune_s817_A	yulerune	817	A	US	iSALT	Core destroyed	216	0	1350	280
+yulerune_s817_B	yulerune	817	B	OPP	_v488beltbreak2	Core destroyed	222	0	370	2050
+yulerune_s818_A	yulerune	818	A	US	iSALT	Core destroyed	329	0	360	320
+yulerune_s818_B	yulerune	818	B	US	iSALT	Core destroyed	372	0	2630	1350

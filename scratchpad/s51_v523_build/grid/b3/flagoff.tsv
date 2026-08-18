@@ -1,0 +1,37 @@
+tag	map	seed	seat	ours	winner	cond	turn	tracebacks	ours_mined	opp_mined
+atoll_s7_A	atoll	7	A	OPP	_v488beltbreak2	Core destroyed	393	0	2150	4430
+atoll_s7_B	atoll	7	B	OPP	_v488beltbreak2	Core destroyed	369	0	1060	950
+atoll_s8_A	atoll	8	A	OPP	_v488beltbreak2	Core destroyed	229	0	310	1100
+atoll_s8_B	atoll	8	B	OPP	_v488beltbreak2	Core destroyed	325	0	2120	1650
+atoll_s9_A	atoll	9	A	US	flagoff	Core destroyed	246	0	1790	160
+atoll_s9_B	atoll	9	B	US	flagoff	Core destroyed	120	0	560	200
+drakkarfjord_s7_A	drakkarfjord	7	A	OPP	_v488beltbreak2	Core destroyed	261	0	530	2230
+drakkarfjord_s7_B	drakkarfjord	7	B	US	flagoff	Core destroyed	459	0	3960	0
+drakkarfjord_s8_A	drakkarfjord	8	A	US	flagoff	Core destroyed	106	0	410	0
+drakkarfjord_s8_B	drakkarfjord	8	B	US	flagoff	Core destroyed	361	0	1580	0
+drakkarfjord_s9_A	drakkarfjord	9	A	US	flagoff	Core destroyed	88	0	270	0
+drakkarfjord_s9_B	drakkarfjord	9	B	US	flagoff	Core destroyed	284	0	1450	0
+glacierkeep_s7_A	glacierkeep	7	A	OPP	_v488beltbreak2	Core destroyed	609	0	280	0
+glacierkeep_s7_B	glacierkeep	7	B	US	flagoff	Core destroyed	217	0	0	0
+glacierkeep_s8_A	glacierkeep	8	A	OPP	_v488beltbreak2	Core destroyed	277	0	140	0
+glacierkeep_s8_B	glacierkeep	8	B	US	flagoff	Core destroyed	253	0	0	0
+glacierkeep_s9_A	glacierkeep	9	A	US	flagoff	Core destroyed	120	0	310	0
+glacierkeep_s9_B	glacierkeep	9	B	US	flagoff	Core destroyed	285	0	20	0
+midgard_s7_A	midgard	7	A	OPP	_v488beltbreak2	Titanium collected (tiebreak)	1000	0	780	980
+midgard_s7_B	midgard	7	B	US	flagoff	Core destroyed	269	0	820	730
+midgard_s8_A	midgard	8	A	US	flagoff	Core destroyed	303	0	1170	1130
+midgard_s8_B	midgard	8	B	US	flagoff	Core destroyed	224	0	1670	650
+midgard_s9_A	midgard	9	A	US	flagoff	Core destroyed	247	0	2650	680
+midgard_s9_B	midgard	9	B	US	flagoff	Titanium collected (tiebreak)	1000	0	3140	610
+nordkap_s7_A	nordkap	7	A	US	flagoff	Core destroyed	173	0	270	70
+nordkap_s7_B	nordkap	7	B	US	flagoff	Core destroyed	168	0	400	630
+nordkap_s8_A	nordkap	8	A	US	flagoff	Core destroyed	372	0	3700	100
+nordkap_s8_B	nordkap	8	B	OPP	_v488beltbreak2	Core destroyed	248	0	90	2730
+nordkap_s9_A	nordkap	9	A	US	flagoff	Core destroyed	236	0	720	60
+nordkap_s9_B	nordkap	9	B	US	flagoff	Core destroyed	213	0	80	10
+yulerune_s7_A	yulerune	7	A	US	flagoff	Core destroyed	413	0	670	300
+yulerune_s7_B	yulerune	7	B	OPP	_v488beltbreak2	Core destroyed	208	0	410	900
+yulerune_s8_A	yulerune	8	A	US	flagoff	Core destroyed	199	0	1350	290
+yulerune_s8_B	yulerune	8	B	OPP	_v488beltbreak2	Core destroyed	341	0	450	190
+yulerune_s9_A	yulerune	9	A	OPP	_v488beltbreak2	Titanium collected (tiebreak)	1000	0	330	580
+yulerune_s9_B	yulerune	9	B	OPP	_v488beltbreak2	Core destroyed	121	0	370	750

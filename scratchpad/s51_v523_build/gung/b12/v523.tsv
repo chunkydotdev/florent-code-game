@@ -1,0 +1,37 @@
+tag	map	seed	seat	ours	winner	cond	turn	tracebacks	ours_mined	opp_mined
+atoll_s434_A	atoll	434	A	US	_v523eyes	Core destroyed	221	0	1760	250
+atoll_s434_B	atoll	434	B	US	_v523eyes	Core destroyed	137	0	640	320
+atoll_s435_A	atoll	435	A	US	_v523eyes	Titanium collected (tiebreak)	1000	0	1350	860
+atoll_s435_B	atoll	435	B	US	_v523eyes	Core destroyed	292	0	1420	1020
+atoll_s436_A	atoll	436	A	OPP	_x3r0v161gungnir	Core destroyed	510	0	1150	1310
+atoll_s436_B	atoll	436	B	OPP	_x3r0v161gungnir	Core destroyed	857	0	560	2220
+drakkarfjord_s434_A	drakkarfjord	434	A	US	_v523eyes	Core destroyed	112	0	330	0
+drakkarfjord_s434_B	drakkarfjord	434	B	US	_v523eyes	Core destroyed	218	0	240	0
+drakkarfjord_s435_A	drakkarfjord	435	A	US	_v523eyes	Core destroyed	125	0	380	0
+drakkarfjord_s435_B	drakkarfjord	435	B	US	_v523eyes	Core destroyed	202	0	280	0
+drakkarfjord_s436_A	drakkarfjord	436	A	OPP	_x3r0v161gungnir	Titanium collected (tiebreak)	1000	0	250	730
+drakkarfjord_s436_B	drakkarfjord	436	B	OPP	_x3r0v161gungnir	Core destroyed	178	0	130	900
+glacierkeep_s434_A	glacierkeep	434	A	OPP	_x3r0v161gungnir	Core destroyed	401	0	0	0
+glacierkeep_s434_B	glacierkeep	434	B	OPP	_x3r0v161gungnir	Core destroyed	729	0	0	0
+glacierkeep_s435_A	glacierkeep	435	A	OPP	_x3r0v161gungnir	Core destroyed	361	0	0	0
+glacierkeep_s435_B	glacierkeep	435	B	OPP	_x3r0v161gungnir	Harvesters (tiebreak)	1000	0	0	0
+glacierkeep_s436_A	glacierkeep	436	A	OPP	_x3r0v161gungnir	Core destroyed	640	0	0	1530
+glacierkeep_s436_B	glacierkeep	436	B	US	_v523eyes	Titanium collected (tiebreak)	1000	0	6350	4590
+midgard_s434_A	midgard	434	A	US	_v523eyes	Core destroyed	237	0	2560	1190
+midgard_s434_B	midgard	434	B	OPP	_x3r0v161gungnir	Core destroyed	382	0	4250	5610
+midgard_s435_A	midgard	435	A	OPP	_x3r0v161gungnir	Core destroyed	156	0	720	1190
+midgard_s435_B	midgard	435	B	OPP	_x3r0v161gungnir	Core destroyed	161	0	630	710
+midgard_s436_A	midgard	436	A	OPP	_x3r0v161gungnir	Core destroyed	358	0	500	3650
+midgard_s436_B	midgard	436	B	OPP	_x3r0v161gungnir	Core destroyed	237	0	1940	1670
+nordkap_s434_A	nordkap	434	A	OPP	_x3r0v161gungnir	Core destroyed	149	0	190	630
+nordkap_s434_B	nordkap	434	B	US	_v523eyes	Core destroyed	189	0	290	30
+nordkap_s435_A	nordkap	435	A	OPP	_x3r0v161gungnir	Core destroyed	193	0	1180	2680
+nordkap_s435_B	nordkap	435	B	OPP	_x3r0v161gungnir	Core destroyed	203	0	0	2630
+nordkap_s436_A	nordkap	436	A	US	_v523eyes	Core destroyed	116	0	320	0
+nordkap_s436_B	nordkap	436	B	US	_v523eyes	Core destroyed	448	0	3720	140
+yulerune_s434_A	yulerune	434	A	US	_v523eyes	Core destroyed	410	0	6580	3030
+yulerune_s434_B	yulerune	434	B	OPP	_x3r0v161gungnir	Core destroyed	137	0	380	970
+yulerune_s435_A	yulerune	435	A	OPP	_x3r0v161gungnir	Core destroyed	138	0	210	1180
+yulerune_s435_B	yulerune	435	B	US	_v523eyes	Core destroyed	215	0	1930	950
+yulerune_s436_A	yulerune	436	A	OPP	_x3r0v161gungnir	Core destroyed	305	0	620	2950
+yulerune_s436_B	yulerune	436	B	US	_v523eyes	Core destroyed	191	0	1250	260

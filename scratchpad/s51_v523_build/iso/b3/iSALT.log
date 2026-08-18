@@ -1,0 +1,36 @@
+atoll_s807_A	atoll	807	A	US	iSALT	Core destroyed	201	0	610	300
+atoll_s807_B	atoll	807	B	US	iSALT	Core destroyed	127	0	600	390
+atoll_s808_A	atoll	808	A	US	iSALT	Core destroyed	512	0	1450	570
+atoll_s808_B	atoll	808	B	US	iSALT	Core destroyed	185	0	880	580
+atoll_s809_A	atoll	809	A	US	iSALT	Core destroyed	148	0	1000	200
+atoll_s809_B	atoll	809	B	US	iSALT	Core destroyed	128	0	600	350
+drakkarfjord_s807_A	drakkarfjord	807	A	US	iSALT	Core destroyed	101	0	400	0
+drakkarfjord_s807_B	drakkarfjord	807	B	US	iSALT	Core destroyed	163	0	690	0
+drakkarfjord_s808_A	drakkarfjord	808	A	US	iSALT	Core destroyed	121	0	380	0
+drakkarfjord_s808_B	drakkarfjord	808	B	US	iSALT	Core destroyed	284	0	1450	0
+drakkarfjord_s809_A	drakkarfjord	809	A	US	iSALT	Core destroyed	90	0	280	0
+drakkarfjord_s809_B	drakkarfjord	809	B	US	iSALT	Core destroyed	226	0	2280	0
+glacierkeep_s807_A	glacierkeep	807	A	US	iSALT	Core destroyed	177	0	670	0
+glacierkeep_s807_B	glacierkeep	807	B	US	iSALT	Core destroyed	155	0	630	0
+glacierkeep_s808_A	glacierkeep	808	A	OPP	_v488beltbreak2	Core destroyed	439	0	380	3640
+glacierkeep_s808_B	glacierkeep	808	B	US	iSALT	Core destroyed	353	0	0	0
+glacierkeep_s809_A	glacierkeep	809	A	US	iSALT	Core destroyed	180	0	440	0
+glacierkeep_s809_B	glacierkeep	809	B	US	iSALT	Core destroyed	256	0	0	0
+midgard_s807_A	midgard	807	A	US	iSALT	Titanium collected (tiebreak)	1000	0	810	730
+midgard_s807_B	midgard	807	B	OPP	_v488beltbreak2	Core destroyed	382	0	710	2220
+midgard_s808_A	midgard	808	A	US	iSALT	Core destroyed	316	0	3280	1100
+midgard_s808_B	midgard	808	B	US	iSALT	Core destroyed	633	0	1070	1040
+midgard_s809_A	midgard	809	A	OPP	_v488beltbreak2	Core destroyed	320	0	940	3210
+midgard_s809_B	midgard	809	B	OPP	_v488beltbreak2	Core destroyed	493	0	1460	940
+nordkap_s807_A	nordkap	807	A	US	iSALT	Core destroyed	222	0	1970	470
+nordkap_s807_B	nordkap	807	B	US	iSALT	Core destroyed	193	0	110	60
+nordkap_s808_A	nordkap	808	A	US	iSALT	Core destroyed	484	0	1060	960
+nordkap_s808_B	nordkap	808	B	OPP	_v488beltbreak2	Core destroyed	222	0	30	2470
+nordkap_s809_A	nordkap	809	A	US	iSALT	Core destroyed	603	0	2180	460
+nordkap_s809_B	nordkap	809	B	OPP	_v488beltbreak2	Titanium collected (tiebreak)	1000	0	110	290
+yulerune_s807_A	yulerune	807	A	OPP	_v488beltbreak2	Core destroyed	577	0	400	600
+yulerune_s807_B	yulerune	807	B	OPP	_v488beltbreak2	Core destroyed	356	0	330	3310
+yulerune_s808_A	yulerune	808	A	OPP	_v488beltbreak2	Core destroyed	249	0	480	950
+yulerune_s808_B	yulerune	808	B	US	iSALT	Core destroyed	491	0	990	370
+yulerune_s809_A	yulerune	809	A	OPP	_v488beltbreak2	Core destroyed	489	0	310	1910
+yulerune_s809_B	yulerune	809	B	OPP	_v488beltbreak2	Core destroyed	289	0	200	200

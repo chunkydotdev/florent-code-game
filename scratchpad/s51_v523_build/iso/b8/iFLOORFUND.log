@@ -1,0 +1,36 @@
+atoll_s822_A	atoll	822	A	US	iFLOORFUND	Core destroyed	503	0	2480	40
+atoll_s822_B	atoll	822	B	US	iFLOORFUND	Core destroyed	121	0	560	190
+atoll_s823_A	atoll	823	A	OPP	_v488beltbreak2	Core destroyed	826	0	4010	4090
+atoll_s823_B	atoll	823	B	US	iFLOORFUND	Core destroyed	373	0	350	980
+atoll_s824_A	atoll	824	A	OPP	_v488beltbreak2	Core destroyed	765	0	1500	3790
+atoll_s824_B	atoll	824	B	US	iFLOORFUND	Core destroyed	127	0	600	390
+drakkarfjord_s822_A	drakkarfjord	822	A	US	iFLOORFUND	Core destroyed	149	0	360	90
+drakkarfjord_s822_B	drakkarfjord	822	B	OPP	_v488beltbreak2	Core destroyed	521	0	240	0
+drakkarfjord_s823_A	drakkarfjord	823	A	US	iFLOORFUND	Core destroyed	101	0	400	0
+drakkarfjord_s823_B	drakkarfjord	823	B	US	iFLOORFUND	Core destroyed	140	0	640	0
+drakkarfjord_s824_A	drakkarfjord	824	A	US	iFLOORFUND	Core destroyed	91	0	260	0
+drakkarfjord_s824_B	drakkarfjord	824	B	US	iFLOORFUND	Core destroyed	122	0	350	0
+glacierkeep_s822_A	glacierkeep	822	A	US	iFLOORFUND	Core destroyed	119	0	380	0
+glacierkeep_s822_B	glacierkeep	822	B	OPP	_v488beltbreak2	Harvesters (tiebreak)	1000	0	0	0
+glacierkeep_s823_A	glacierkeep	823	A	US	iFLOORFUND	Core destroyed	172	0	380	0
+glacierkeep_s823_B	glacierkeep	823	B	US	iFLOORFUND	Titanium collected (tiebreak)	1000	0	1270	0
+glacierkeep_s824_A	glacierkeep	824	A	US	iFLOORFUND	Core destroyed	119	0	380	0
+glacierkeep_s824_B	glacierkeep	824	B	US	iFLOORFUND	Core destroyed	457	0	60	240
+midgard_s822_A	midgard	822	A	US	iFLOORFUND	Core destroyed	145	0	1110	610
+midgard_s822_B	midgard	822	B	OPP	_v488beltbreak2	Core destroyed	204	0	970	1550
+midgard_s823_A	midgard	823	A	US	iFLOORFUND	Core destroyed	257	0	2220	900
+midgard_s823_B	midgard	823	B	US	iFLOORFUND	Core destroyed	309	0	1640	510
+midgard_s824_A	midgard	824	A	OPP	_v488beltbreak2	Core destroyed	210	0	620	1630
+midgard_s824_B	midgard	824	B	OPP	_v488beltbreak2	Titanium collected (tiebreak)	1000	0	680	2920
+nordkap_s822_A	nordkap	822	A	US	iFLOORFUND	Core destroyed	294	0	1350	200
+nordkap_s822_B	nordkap	822	B	OPP	_v488beltbreak2	Core destroyed	146	0	90	830
+nordkap_s823_A	nordkap	823	A	US	iFLOORFUND	Core destroyed	309	0	160	20
+nordkap_s823_B	nordkap	823	B	OPP	_v488beltbreak2	Core destroyed	142	0	160	1000
+nordkap_s824_A	nordkap	824	A	US	iFLOORFUND	Core destroyed	386	0	4330	1060
+nordkap_s824_B	nordkap	824	B	OPP	_v488beltbreak2	Titanium collected (tiebreak)	1000	0	80	2480
+yulerune_s822_A	yulerune	822	A	US	iFLOORFUND	Core destroyed	656	0	650	300
+yulerune_s822_B	yulerune	822	B	OPP	_v488beltbreak2	Core destroyed	262	0	540	3020
+yulerune_s823_A	yulerune	823	A	US	iFLOORFUND	Core destroyed	401	0	2260	450
+yulerune_s823_B	yulerune	823	B	OPP	_v488beltbreak2	Core destroyed	237	0	350	1690
+yulerune_s824_A	yulerune	824	A	OPP	_v488beltbreak2	Titanium collected (tiebreak)	1000	0	470	790
+yulerune_s824_B	yulerune	824	B	OPP	_v488beltbreak2	Core destroyed	241	0	370	2520

@@ -1,0 +1,36 @@
+atoll_s25_A	atoll	25	A	OPP	_v488beltbreak2	Core destroyed	861	0	2410	4140
+atoll_s25_B	atoll	25	B	US	_v523eyes	Core destroyed	241	0	720	660
+atoll_s26_A	atoll	26	A	US	_v523eyes	Core destroyed	149	0	300	60
+atoll_s26_B	atoll	26	B	OPP	_v488beltbreak2	Core destroyed	203	0	720	560
+atoll_s27_A	atoll	27	A	US	_v523eyes	Core destroyed	438	0	2160	410
+atoll_s27_B	atoll	27	B	US	_v523eyes	Core destroyed	380	0	1690	960
+drakkarfjord_s25_A	drakkarfjord	25	A	OPP	_v488beltbreak2	Core destroyed	716	0	330	1550
+drakkarfjord_s25_B	drakkarfjord	25	B	US	_v523eyes	Core destroyed	100	0	280	0
+drakkarfjord_s26_A	drakkarfjord	26	A	US	_v523eyes	Core destroyed	88	0	270	0
+drakkarfjord_s26_B	drakkarfjord	26	B	US	_v523eyes	Core destroyed	383	0	800	0
+drakkarfjord_s27_A	drakkarfjord	27	A	US	_v523eyes	Core destroyed	211	0	950	190
+drakkarfjord_s27_B	drakkarfjord	27	B	US	_v523eyes	Core destroyed	153	0	330	0
+glacierkeep_s25_A	glacierkeep	25	A	US	_v523eyes	Core destroyed	409	0	2940	0
+glacierkeep_s25_B	glacierkeep	25	B	US	_v523eyes	Core destroyed	325	0	0	0
+glacierkeep_s26_A	glacierkeep	26	A	US	_v523eyes	Core destroyed	120	0	310	0
+glacierkeep_s26_B	glacierkeep	26	B	US	_v523eyes	Titanium collected (tiebreak)	1000	0	310	0
+glacierkeep_s27_A	glacierkeep	27	A	OPP	_v488beltbreak2	Core destroyed	389	0	930	2420
+glacierkeep_s27_B	glacierkeep	27	B	OPP	_v488beltbreak2	Titanium stored (tiebreak)	1000	0	0	0
+midgard_s25_A	midgard	25	A	OPP	_v488beltbreak2	Core destroyed	813	0	930	680
+midgard_s25_B	midgard	25	B	US	_v523eyes	Core destroyed	293	0	1460	650
+midgard_s26_A	midgard	26	A	US	_v523eyes	Core destroyed	193	0	1340	590
+midgard_s26_B	midgard	26	B	OPP	_v488beltbreak2	Core destroyed	257	0	640	1840
+midgard_s27_A	midgard	27	A	US	_v523eyes	Core destroyed	305	0	630	780
+midgard_s27_B	midgard	27	B	US	_v523eyes	Core destroyed	140	0	1180	700
+nordkap_s25_A	nordkap	25	A	US	_v523eyes	Core destroyed	277	0	190	190
+nordkap_s25_B	nordkap	25	B	OPP	_v488beltbreak2	Core destroyed	544	0	2250	4370
+nordkap_s26_A	nordkap	26	A	US	_v523eyes	Core destroyed	277	0	190	190
+nordkap_s26_B	nordkap	26	B	OPP	_v488beltbreak2	Core destroyed	161	0	80	1270
+nordkap_s27_A	nordkap	27	A	US	_v523eyes	Core destroyed	211	0	1270	70
+nordkap_s27_B	nordkap	27	B	OPP	_v488beltbreak2	Core destroyed	313	0	270	360
+yulerune_s25_A	yulerune	25	A	OPP	_v488beltbreak2	Core destroyed	466	0	340	3080
+yulerune_s25_B	yulerune	25	B	OPP	_v488beltbreak2	Core destroyed	374	0	320	1790
+yulerune_s26_A	yulerune	26	A	US	_v523eyes	Core destroyed	221	0	930	390
+yulerune_s26_B	yulerune	26	B	OPP	_v488beltbreak2	Core destroyed	224	0	350	1000
+yulerune_s27_A	yulerune	27	A	US	_v523eyes	Core destroyed	188	0	720	1000
+yulerune_s27_B	yulerune	27	B	US	_v523eyes	Core destroyed	505	0	470	190

@@ -1,0 +1,37 @@
+tag	map	seed	seat	ours	winner	cond	turn	tracebacks	ours_mined	opp_mined
+atoll_s422_A	atoll	422	A	US	parent	Core destroyed	246	0	2470	240
+atoll_s422_B	atoll	422	B	OPP	_x3r0v161gungnir	Titanium collected (tiebreak)	1000	0	3530	4940
+atoll_s423_A	atoll	423	A	US	parent	Core destroyed	340	0	3150	400
+atoll_s423_B	atoll	423	B	OPP	_x3r0v161gungnir	Core destroyed	271	0	1850	1310
+atoll_s424_A	atoll	424	A	OPP	_x3r0v161gungnir	Core destroyed	339	0	440	1660
+atoll_s424_B	atoll	424	B	US	parent	Core destroyed	458	0	2240	550
+drakkarfjord_s422_A	drakkarfjord	422	A	US	parent	Core destroyed	96	0	220	0
+drakkarfjord_s422_B	drakkarfjord	422	B	US	parent	Core destroyed	164	0	390	0
+drakkarfjord_s423_A	drakkarfjord	423	A	US	parent	Core destroyed	145	0	810	0
+drakkarfjord_s423_B	drakkarfjord	423	B	US	parent	Core destroyed	250	0	150	0
+drakkarfjord_s424_A	drakkarfjord	424	A	US	parent	Core destroyed	181	0	440	0
+drakkarfjord_s424_B	drakkarfjord	424	B	US	parent	Core destroyed	196	0	270	0
+glacierkeep_s422_A	glacierkeep	422	A	OPP	_x3r0v161gungnir	Core destroyed	377	0	0	1630
+glacierkeep_s422_B	glacierkeep	422	B	US	parent	Core destroyed	478	0	2350	0
+glacierkeep_s423_A	glacierkeep	423	A	OPP	_x3r0v161gungnir	Core destroyed	641	0	0	0
+glacierkeep_s423_B	glacierkeep	423	B	OPP	_x3r0v161gungnir	Core destroyed	537	0	0	0
+glacierkeep_s424_A	glacierkeep	424	A	OPP	_x3r0v161gungnir	Core destroyed	338	0	0	1640
+glacierkeep_s424_B	glacierkeep	424	B	US	parent	Core destroyed	574	0	1120	0
+midgard_s422_A	midgard	422	A	US	parent	Titanium collected (tiebreak)	1000	0	860	600
+midgard_s422_B	midgard	422	B	OPP	_x3r0v161gungnir	Core destroyed	135	0	1190	1130
+midgard_s423_A	midgard	423	A	US	parent	Core destroyed	317	0	4830	2020
+midgard_s423_B	midgard	423	B	OPP	_x3r0v161gungnir	Core destroyed	184	0	750	1130
+midgard_s424_A	midgard	424	A	US	parent	Core destroyed	287	0	2900	2280
+midgard_s424_B	midgard	424	B	US	parent	Core destroyed	354	0	4060	1990
+nordkap_s422_A	nordkap	422	A	OPP	_x3r0v161gungnir	Core destroyed	393	0	100	190
+nordkap_s422_B	nordkap	422	B	OPP	_x3r0v161gungnir	Core destroyed	313	0	0	140
+nordkap_s423_A	nordkap	423	A	OPP	_x3r0v161gungnir	Core destroyed	141	0	500	320
+nordkap_s423_B	nordkap	423	B	OPP	_x3r0v161gungnir	Core destroyed	178	0	0	900
+nordkap_s424_A	nordkap	424	A	OPP	_x3r0v161gungnir	Core destroyed	371	0	1150	2550
+nordkap_s424_B	nordkap	424	B	OPP	_x3r0v161gungnir	Core destroyed	233	0	1220	290
+yulerune_s422_A	yulerune	422	A	OPP	_x3r0v161gungnir	Core destroyed	240	0	90	1500
+yulerune_s422_B	yulerune	422	B	OPP	_x3r0v161gungnir	Core destroyed	172	0	620	1720
+yulerune_s423_A	yulerune	423	A	OPP	_x3r0v161gungnir	Core destroyed	185	0	0	1780
+yulerune_s423_B	yulerune	423	B	OPP	_x3r0v161gungnir	Core destroyed	161	0	0	1460
+yulerune_s424_A	yulerune	424	A	OPP	_x3r0v161gungnir	Core destroyed	253	0	840	2360
+yulerune_s424_B	yulerune	424	B	OPP	_x3r0v161gungnir	Core destroyed	169	0	0	1730

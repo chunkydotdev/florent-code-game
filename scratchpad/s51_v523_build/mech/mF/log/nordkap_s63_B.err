@@ -1,0 +1,1606 @@
+Update available: 2.3.6 -> 2.3.8. Run: pip install --upgrade fcode
+CREW523 0 site mag slotfs 0 merged 0 won 0 n 0 of 1
+CREW523 0 site budget slotfs 0 merged 0 won 0 n 0 of 2
+CREW523 0 site spawn slotfs 0 merged 0 won 0 n 0 of 3
+CREW523 1 site mag slotfs 0 merged 0 won 0 n 0 of 4
+CREW523 1 site budget slotfs 0 merged 0 won 0 n 0 of 5
+CREW523 1 site spawn slotfs 0 merged 0 won 0 n 0 of 6
+CREW523 2 site mag slotfs 1 merged 1 won 0 n 0 of 7
+CREW523 2 site budget slotfs 1 merged 1 won 0 n 0 of 8
+CREW523 2 site spawn slotfs 1 merged 1 won 0 n 0 of 9
+CREW523 3 site mag slotfs 1 merged 1 won 0 n 0 of 10
+CREW523 3 site budget slotfs 1 merged 1 won 0 n 0 of 11
+CREW523 3 site spawn slotfs 1 merged 1 won 0 n 0 of 12
+CREW523 4 site mag slotfs 1 merged 1 won 0 n 0 of 13
+CREW523 4 site budget slotfs 1 merged 1 won 0 n 0 of 14
+CREW523 5 site mag slotfs 1 merged 1 won 0 n 0 of 15
+CREW523 5 site budget slotfs 1 merged 1 won 0 n 0 of 16
+CREW523 6 site mag slotfs 1 merged 1 won 0 n 0 of 17
+CREW523 6 site budget slotfs 1 merged 1 won 0 n 0 of 18
+CREW523 7 site mag slotfs 1 merged 1 won 0 n 0 of 19
+CREW523 7 site budget slotfs 1 merged 1 won 0 n 0 of 20
+CREW523 8 site mag slotfs 1 merged 1 won 0 n 0 of 21
+CREW523 8 site budget slotfs 1 merged 1 won 0 n 0 of 22
+CREW523 9 site mag slotfs 1 merged 1 won 0 n 0 of 23
+CREW523 9 site budget slotfs 1 merged 1 won 0 n 0 of 24
+CREW523 10 site mag slotfs 1 merged 1 won 0 n 0 of 25
+CREW523 10 site budget slotfs 1 merged 1 won 0 n 0 of 26
+PH523 10 id 4 body 1 arc 2 orth 7 own 0 merged 0 arcclosed 0 ph 2
+CREW523 11 site mag slotfs 2 merged 2 won 0 n 0 of 27
+CREW523 11 site budget slotfs 2 merged 2 won 0 n 0 of 28
+CREW523 11 site spawn slotfs 2 merged 2 won 0 n 0 of 29
+PH523 11 id 4 body 1 arc 2 orth 5 own 0 merged 0 arcclosed 0 ph 2
+PH523 11 id 10 body 2 arc 1 orth 6 own 0 merged 0 arcclosed 0 ph 2
+CREW523 12 site mag slotfs 2 merged 2 won 0 n 0 of 30
+CREW523 12 site budget slotfs 2 merged 2 won 0 n 0 of 31
+CREW523 12 site spawn slotfs 2 merged 2 won 0 n 0 of 32
+PH523 12 id 4 body 1 arc 2 orth 5 own 0 merged 0 arcclosed 0 ph 2
+PH523 12 id 10 body 2 arc 1 orth 5 own 0 merged 0 arcclosed 0 ph 2
+CREW523 13 site mag slotfs 2 merged 2 won 0 n 0 of 33
+CREW523 13 site budget slotfs 2 merged 2 won 0 n 0 of 34
+CREW523 13 site spawn slotfs 2 merged 2 won 0 n 0 of 35
+PH523 13 id 4 body 1 arc 2 orth 5 own 0 merged 0 arcclosed 0 ph 2
+PH523 13 id 10 body 2 arc 1 orth 5 own 0 merged 0 arcclosed 0 ph 2
+CREW523 14 site mag slotfs 2 merged 2 won 0 n 0 of 36
+CREW523 14 site budget slotfs 2 merged 2 won 0 n 0 of 37
+CREW523 14 site spawn slotfs 2 merged 2 won 0 n 0 of 38
+PH523 14 id 4 body 1 arc 2 orth 6 own 0 merged 0 arcclosed 0 ph 2
+PH523 14 id 10 body 2 arc 1 orth 6 own 0 merged 0 arcclosed 0 ph 2
+CREW523 15 site mag slotfs 2 merged 2 won 0 n 0 of 39
+CREW523 15 site budget slotfs 2 merged 2 won 0 n 0 of 40
+CREW523 15 site spawn slotfs 2 merged 2 won 0 n 0 of 41
+PH523 15 id 4 body 1 arc 2 orth 5 own 0 merged 0 arcclosed 0 ph 2
+PH523 15 id 10 body 2 arc 1 orth 5 own 0 merged 0 arcclosed 0 ph 2
+CREW523 16 site mag slotfs 2 merged 2 won 0 n 0 of 42
+CREW523 16 site budget slotfs 2 merged 2 won 0 n 0 of 43
+CREW523 16 site spawn slotfs 2 merged 2 won 0 n 0 of 44
+PH523 16 id 4 body 1 arc 2 orth 5 own 0 merged 0 arcclosed 0 ph 2
+PH523 16 id 10 body 2 arc 1 orth 5 own 0 merged 0 arcclosed 0 ph 2
+CREW523 17 site mag slotfs 2 merged 2 won 0 n 0 of 45
+CREW523 17 site budget slotfs 2 merged 2 won 0 n 0 of 46
+CREW523 17 site spawn slotfs 2 merged 2 won 0 n 0 of 47
+PH523 17 id 4 body 1 arc 2 orth 5 own 0 merged 0 arcclosed 0 ph 2
+PH523 17 id 10 body 2 arc 1 orth 6 own 0 merged 0 arcclosed 0 ph 2
+CREW523 18 site mag slotfs 2 merged 2 won 0 n 0 of 48
+CREW523 18 site budget slotfs 2 merged 2 won 0 n 0 of 49
+CREW523 18 site spawn slotfs 2 merged 2 won 0 n 0 of 50
+PH523 18 id 4 body 1 arc 2 orth 5 own 0 merged 0 arcclosed 0 ph 2
+PH523 18 id 10 body 2 arc 1 orth 5 own 0 merged 0 arcclosed 0 ph 2
+CREW523 19 site mag slotfs 2 merged 2 won 0 n 0 of 51
+CREW523 19 site budget slotfs 2 merged 2 won 0 n 0 of 52
+CREW523 19 site spawn slotfs 2 merged 2 won 0 n 0 of 53
+PH523 19 id 4 body 1 arc 2 orth 5 own 0 merged 0 arcclosed 0 ph 2
+PH523 19 id 10 body 2 arc 1 orth 5 own 0 merged 0 arcclosed 0 ph 2
+CREW523 20 site mag slotfs 2 merged 2 won 0 n 0 of 54
+CREW523 20 site budget slotfs 2 merged 2 won 0 n 0 of 55
+CREW523 20 site spawn slotfs 2 merged 2 won 0 n 0 of 56
+PH523 20 id 4 body 1 arc 2 orth 5 own 0 merged 0 arcclosed 0 ph 2
+PH523 20 id 10 body 2 arc 1 orth 4 own 0 merged 0 arcclosed 0 ph 2
+CREW523 21 site mag slotfs 2 merged 2 won 0 n 0 of 57
+CREW523 21 site budget slotfs 2 merged 2 won 0 n 0 of 58
+CREW523 21 site spawn slotfs 2 merged 2 won 0 n 0 of 59
+PH523 21 id 4 body 1 arc 2 orth 5 own 0 merged 0 arcclosed 0 ph 2
+PH523 21 id 10 body 2 arc 1 orth 4 own 0 merged 0 arcclosed 0 ph 2
+CREW523 22 site mag slotfs 2 merged 2 won 0 n 0 of 60
+CREW523 22 site budget slotfs 2 merged 2 won 0 n 0 of 61
+CREW523 22 site spawn slotfs 2 merged 2 won 0 n 0 of 62
+PH523 22 id 4 body 1 arc 2 orth 5 own 0 merged 0 arcclosed 0 ph 2
+PH523 22 id 10 body 2 arc 1 orth 4 own 0 merged 0 arcclosed 0 ph 2
+CREW523 23 site mag slotfs 2 merged 2 won 0 n 0 of 63
+CREW523 23 site budget slotfs 2 merged 2 won 0 n 0 of 64
+CREW523 23 site spawn slotfs 2 merged 2 won 0 n 0 of 65
+PH523 23 id 4 body 1 arc 2 orth 5 own 0 merged 0 arcclosed 0 ph 2
+PH523 23 id 10 body 2 arc 1 orth 4 own 0 merged 0 arcclosed 0 ph 2
+CREW523 24 site mag slotfs 2 merged 2 won 0 n 0 of 66
+CREW523 24 site budget slotfs 2 merged 2 won 0 n 0 of 67
+CREW523 24 site spawn slotfs 2 merged 2 won 0 n 0 of 68
+PH523 24 id 4 body 1 arc 2 orth 4 own 0 merged 0 arcclosed 0 ph 2
+PH523 24 id 10 body 2 arc 1 orth 4 own 0 merged 0 arcclosed 0 ph 2
+CREW523 25 site mag slotfs 2 merged 2 won 0 n 0 of 69
+CREW523 25 site budget slotfs 2 merged 2 won 0 n 0 of 70
+CREW523 25 site spawn slotfs 2 merged 2 won 0 n 0 of 71
+PH523 25 id 4 body 1 arc 2 orth 4 own 0 merged 0 arcclosed 0 ph 2
+PH523 25 id 10 body 2 arc 1 orth 4 own 0 merged 0 arcclosed 0 ph 2
+CREW523 26 site mag slotfs 2 merged 2 won 0 n 0 of 72
+CREW523 26 site budget slotfs 2 merged 2 won 0 n 0 of 73
+CREW523 26 site spawn slotfs 2 merged 2 won 0 n 0 of 74
+PH523 26 id 4 body 1 arc 2 orth 4 own 0 merged 0 arcclosed 0 ph 2
+PH523 26 id 10 body 2 arc 1 orth 4 own 0 merged 0 arcclosed 0 ph 2
+CREW523 27 site mag slotfs 2 merged 2 won 0 n 0 of 75
+CREW523 27 site budget slotfs 2 merged 2 won 0 n 0 of 76
+CREW523 27 site spawn slotfs 2 merged 2 won 0 n 0 of 77
+PH523 27 id 4 body 1 arc 2 orth 4 own 0 merged 0 arcclosed 0 ph 2
+PH523 27 id 10 body 2 arc 1 orth 4 own 0 merged 0 arcclosed 0 ph 2
+CREW523 28 site mag slotfs 2 merged 2 won 0 n 0 of 78
+CREW523 28 site budget slotfs 2 merged 2 won 0 n 0 of 79
+CREW523 28 site spawn slotfs 2 merged 2 won 0 n 0 of 80
+PH523 28 id 4 body 1 arc 2 orth 4 own 0 merged 0 arcclosed 0 ph 2
+PH523 28 id 10 body 2 arc 1 orth 4 own 0 merged 0 arcclosed 0 ph 2
+CREW523 29 site mag slotfs 2 merged 2 won 0 n 0 of 81
+CREW523 29 site budget slotfs 2 merged 2 won 0 n 0 of 82
+CREW523 29 site spawn slotfs 2 merged 2 won 0 n 0 of 83
+PH523 29 id 4 body 1 arc 2 orth 4 own 0 merged 0 arcclosed 0 ph 2
+PH523 29 id 10 body 2 arc 1 orth 4 own 0 merged 0 arcclosed 0 ph 2
+CREW523 30 site mag slotfs 2 merged 2 won 0 n 0 of 84
+CREW523 30 site budget slotfs 2 merged 2 won 0 n 0 of 85
+CREW523 30 site spawn slotfs 2 merged 2 won 0 n 0 of 86
+PH523 30 id 4 body 1 arc 2 orth 4 own 0 merged 0 arcclosed 0 ph 2
+PH523 30 id 10 body 2 arc 1 orth 4 own 0 merged 0 arcclosed 0 ph 2
+CREW523 31 site mag slotfs 2 merged 2 won 0 n 0 of 87
+CREW523 31 site budget slotfs 2 merged 2 won 0 n 0 of 88
+CREW523 31 site spawn slotfs 2 merged 2 won 0 n 0 of 89
+PH523 31 id 4 body 1 arc 2 orth 4 own 0 merged 0 arcclosed 0 ph 2
+PH523 31 id 10 body 2 arc 1 orth 4 own 0 merged 0 arcclosed 0 ph 2
+CREW523 32 site mag slotfs 2 merged 2 won 0 n 0 of 90
+CREW523 32 site budget slotfs 2 merged 2 won 0 n 0 of 91
+CREW523 32 site spawn slotfs 2 merged 2 won 0 n 0 of 92
+PH523 32 id 4 body 1 arc 2 orth 4 own 0 merged 0 arcclosed 0 ph 2
+PH523 32 id 10 body 2 arc 1 orth 3 own 0 merged 0 arcclosed 0 ph 2
+CREW523 33 site mag slotfs 2 merged 2 won 0 n 0 of 93
+CREW523 33 site budget slotfs 2 merged 2 won 0 n 0 of 94
+CREW523 33 site spawn slotfs 2 merged 2 won 0 n 0 of 95
+PH523 33 id 4 body 1 arc 2 orth 2 own 0 merged 0 arcclosed 0 ph 2
+PH523 33 id 10 body 2 arc 1 orth 2 own 0 merged 0 arcclosed 0 ph 2
+CREW523 34 site mag slotfs 2 merged 2 won 0 n 0 of 96
+CREW523 34 site budget slotfs 2 merged 2 won 0 n 0 of 97
+CREW523 34 site spawn slotfs 2 merged 2 won 0 n 0 of 98
+PH523 34 id 4 body 1 arc 2 orth 2 own 0 merged 0 arcclosed 0 ph 2
+PH523 34 id 10 body 2 arc 1 orth 2 own 0 merged 0 arcclosed 0 ph 2
+CREW523 35 site mag slotfs 2 merged 2 won 0 n 0 of 99
+CREW523 35 site budget slotfs 2 merged 2 won 0 n 0 of 100
+CREW523 35 site spawn slotfs 2 merged 2 won 0 n 0 of 101
+PH523 35 id 4 body 1 arc 2 orth 2 own 0 merged 0 arcclosed 0 ph 2
+PH523 35 id 10 body 2 arc 1 orth 2 own 0 merged 0 arcclosed 0 ph 2
+CREW523 36 site mag slotfs 2 merged 2 won 0 n 0 of 102
+CREW523 36 site budget slotfs 2 merged 2 won 0 n 0 of 103
+CREW523 36 site spawn slotfs 2 merged 2 won 0 n 0 of 104
+PH523 36 id 4 body 1 arc 2 orth 1 own 0 merged 0 arcclosed 0 ph 2
+PH523 36 id 10 body 2 arc 1 orth 1 own 0 merged 0 arcclosed 1 ph 2
+CREW523 37 site mag slotfs 2 merged 2 won 0 n 0 of 105
+CREW523 37 site budget slotfs 2 merged 2 won 0 n 0 of 106
+CREW523 37 site spawn slotfs 2 merged 2 won 0 n 0 of 107
+PH523 37 id 4 body 1 arc 2 orth 1 own 0 merged 0 arcclosed 0 ph 2
+PH523 37 id 10 body 2 arc 1 orth 1 own 0 merged 0 arcclosed 1 ph 2
+CREW523 38 site mag slotfs 2 merged 2 won 0 n 0 of 108
+CREW523 38 site budget slotfs 2 merged 2 won 0 n 0 of 109
+CREW523 38 site spawn slotfs 2 merged 2 won 0 n 0 of 110
+PH523 38 id 4 body 1 arc 2 orth 1 own 0 merged 0 arcclosed 0 ph 2
+PH523 38 id 10 body 2 arc 1 orth 1 own 0 merged 0 arcclosed 1 ph 2
+CREW523 39 site mag slotfs 2 merged 2 won 0 n 0 of 111
+CREW523 39 site budget slotfs 2 merged 2 won 0 n 0 of 112
+CREW523 39 site spawn slotfs 2 merged 2 won 0 n 0 of 113
+PH523 39 id 4 body 1 arc 2 orth 1 own 0 merged 0 arcclosed 0 ph 2
+PH523 39 id 10 body 2 arc 1 orth 1 own 0 merged 0 arcclosed 1 ph 2
+CREW523 40 site mag slotfs 2 merged 2 won 0 n 0 of 114
+CREW523 40 site budget slotfs 2 merged 2 won 0 n 0 of 115
+CREW523 40 site spawn slotfs 2 merged 2 won 0 n 0 of 116
+PH523 40 id 4 body 1 arc 2 orth 1 own 0 merged 0 arcclosed 0 ph 2
+PH523 40 id 10 body 2 arc 1 orth 1 own 0 merged 0 arcclosed 1 ph 2
+CREW523 41 site mag slotfs 2 merged 2 won 0 n 0 of 117
+CREW523 41 site budget slotfs 2 merged 2 won 0 n 0 of 118
+CREW523 41 site spawn slotfs 2 merged 2 won 0 n 0 of 119
+PH523 41 id 4 body 1 arc 2 orth 1 own 0 merged 0 arcclosed 0 ph 2
+PH523 41 id 10 body 2 arc 1 orth 1 own 0 merged 0 arcclosed 1 ph 2
+CREW523 42 site mag slotfs 2 merged 2 won 0 n 0 of 120
+CREW523 42 site budget slotfs 2 merged 2 won 0 n 0 of 121
+CREW523 42 site spawn slotfs 2 merged 2 won 0 n 0 of 122
+PH523 42 id 4 body 1 arc 2 orth 0 own 1 merged 1 arcclosed 0 ph 3
+PH523 42 id 10 body 2 arc 1 orth 0 own 1 merged 1 arcclosed 0 ph 3
+CREW523 43 site mag slotfs 3 merged 3 won 0 n 0 of 123
+CREW523 43 site budget slotfs 3 merged 3 won 0 n 0 of 124
+CREW523 43 site spawn slotfs 3 merged 3 won 0 n 0 of 125
+PH523 43 id 4 body 1 arc 2 orth 0 own 1 merged 1 arcclosed 0 ph 3
+PH523 43 id 10 body 2 arc 1 orth 2 own 0 merged 1 arcclosed 0 ph 3
+SALT523 43 id 10 orth 2 own 0 union 1 n 1 ownN 2
+SALT523 43 id 10 orth 2 own 0 union 1 n 2 ownN 2
+CREW523 44 site mag slotfs 3 merged 3 won 0 n 0 of 126
+CREW523 44 site budget slotfs 3 merged 3 won 0 n 0 of 127
+CREW523 44 site spawn slotfs 3 merged 3 won 0 n 0 of 128
+PH523 44 id 4 body 1 arc 2 orth 0 own 1 merged 1 arcclosed 0 ph 3
+PH523 44 id 10 body 2 arc 1 orth 2 own 0 merged 1 arcclosed 0 ph 3
+SALT523 44 id 10 orth 2 own 0 union 1 n 3 ownN 2
+SALT523 44 id 10 orth 2 own 0 union 1 n 4 ownN 2
+CREW523 45 site mag slotfs 3 merged 3 won 0 n 0 of 129
+CREW523 45 site budget slotfs 3 merged 3 won 0 n 0 of 130
+CREW523 45 site spawn slotfs 3 merged 3 won 0 n 0 of 131
+PH523 45 id 4 body 1 arc 2 orth 0 own 1 merged 1 arcclosed 0 ph 3
+PH523 45 id 10 body 2 arc 1 orth 2 own 0 merged 1 arcclosed 0 ph 3
+SALT523 45 id 10 orth 2 own 0 union 1 n 5 ownN 2
+SALT523 45 id 10 orth 2 own 0 union 1 n 6 ownN 2
+CREW523 46 site mag slotfs 3 merged 3 won 0 n 0 of 132
+CREW523 46 site budget slotfs 3 merged 3 won 0 n 0 of 133
+CREW523 46 site spawn slotfs 3 merged 3 won 0 n 0 of 134
+PH523 46 id 4 body 1 arc 2 orth 0 own 1 merged 1 arcclosed 0 ph 3
+PH523 46 id 10 body 2 arc 1 orth 0 own 1 merged 1 arcclosed 0 ph 3
+CREW523 47 site mag slotfs 3 merged 3 won 0 n 0 of 135
+CREW523 47 site budget slotfs 3 merged 3 won 0 n 0 of 136
+CREW523 47 site spawn slotfs 3 merged 3 won 0 n 0 of 137
+PH523 47 id 4 body 1 arc 2 orth 0 own 1 merged 1 arcclosed 0 ph 3
+PH523 47 id 10 body 2 arc 1 orth 0 own 1 merged 1 arcclosed 0 ph 3
+CREW523 48 site mag slotfs 3 merged 3 won 0 n 0 of 138
+CREW523 48 site budget slotfs 3 merged 3 won 0 n 0 of 139
+CREW523 48 site spawn slotfs 3 merged 3 won 0 n 0 of 140
+PH523 48 id 4 body 1 arc 2 orth 0 own 1 merged 1 arcclosed 0 ph 3
+PH523 48 id 10 body 2 arc 1 orth 0 own 1 merged 1 arcclosed 0 ph 3
+CREW523 49 site mag slotfs 3 merged 3 won 0 n 0 of 141
+CREW523 49 site budget slotfs 3 merged 3 won 0 n 0 of 142
+CREW523 49 site spawn slotfs 3 merged 3 won 0 n 0 of 143
+PH523 49 id 4 body 1 arc 2 orth 0 own 1 merged 1 arcclosed 0 ph 3
+PH523 49 id 10 body 2 arc 1 orth 0 own 1 merged 1 arcclosed 0 ph 3
+CREW523 50 site mag slotfs 3 merged 3 won 0 n 0 of 144
+CREW523 50 site budget slotfs 3 merged 3 won 0 n 0 of 145
+CREW523 50 site spawn slotfs 3 merged 3 won 0 n 0 of 146
+PH523 50 id 4 body 1 arc 2 orth 0 own 1 merged 1 arcclosed 0 ph 3
+PH523 50 id 10 body 2 arc 1 orth 0 own 1 merged 1 arcclosed 0 ph 3
+CREW523 51 site mag slotfs 3 merged 3 won 0 n 0 of 147
+CREW523 51 site budget slotfs 3 merged 3 won 0 n 0 of 148
+CREW523 51 site spawn slotfs 3 merged 3 won 0 n 0 of 149
+PH523 51 id 4 body 1 arc 2 orth 0 own 1 merged 1 arcclosed 0 ph 3
+PH523 51 id 10 body 2 arc 1 orth 0 own 1 merged 1 arcclosed 0 ph 3
+CREW523 52 site mag slotfs 3 merged 3 won 0 n 0 of 150
+CREW523 52 site budget slotfs 3 merged 3 won 0 n 0 of 151
+CREW523 52 site spawn slotfs 3 merged 3 won 0 n 0 of 152
+PH523 52 id 4 body 1 arc 2 orth 0 own 1 merged 1 arcclosed 0 ph 3
+PH523 52 id 10 body 2 arc 1 orth 0 own 1 merged 1 arcclosed 0 ph 3
+CREW523 53 site mag slotfs 3 merged 3 won 0 n 0 of 153
+CREW523 53 site budget slotfs 3 merged 3 won 0 n 0 of 154
+CREW523 53 site spawn slotfs 3 merged 3 won 0 n 0 of 155
+PH523 53 id 4 body 1 arc 2 orth 0 own 1 merged 1 arcclosed 0 ph 3
+PH523 53 id 10 body 2 arc 1 orth 0 own 1 merged 1 arcclosed 0 ph 3
+CREW523 54 site mag slotfs 3 merged 3 won 0 n 0 of 156
+CREW523 54 site budget slotfs 3 merged 3 won 0 n 0 of 157
+CREW523 54 site spawn slotfs 3 merged 3 won 0 n 0 of 158
+PH523 54 id 4 body 1 arc 2 orth 0 own 1 merged 1 arcclosed 0 ph 3
+PH523 54 id 10 body 2 arc 1 orth 0 own 1 merged 1 arcclosed 0 ph 3
+CREW523 55 site mag slotfs 3 merged 3 won 0 n 0 of 159
+CREW523 55 site budget slotfs 3 merged 3 won 0 n 0 of 160
+CREW523 55 site spawn slotfs 3 merged 3 won 0 n 0 of 161
+PH523 55 id 4 body 1 arc 2 orth 0 own 1 merged 1 arcclosed 0 ph 3
+PH523 55 id 10 body 2 arc 1 orth 0 own 1 merged 1 arcclosed 0 ph 3
+CREW523 56 site mag slotfs 3 merged 3 won 0 n 0 of 162
+CREW523 56 site budget slotfs 3 merged 3 won 0 n 0 of 163
+CREW523 56 site spawn slotfs 3 merged 3 won 0 n 0 of 164
+PH523 56 id 4 body 1 arc 2 orth 0 own 1 merged 1 arcclosed 0 ph 3
+PH523 56 id 10 body 2 arc 1 orth 0 own 1 merged 1 arcclosed 0 ph 3
+CREW523 57 site mag slotfs 3 merged 3 won 0 n 0 of 165
+CREW523 57 site budget slotfs 3 merged 3 won 0 n 0 of 166
+CREW523 57 site spawn slotfs 3 merged 3 won 0 n 0 of 167
+PH523 57 id 4 body 1 arc 2 orth 0 own 1 merged 1 arcclosed 0 ph 3
+PH523 57 id 10 body 2 arc 1 orth 0 own 1 merged 1 arcclosed 0 ph 3
+CREW523 58 site mag slotfs 3 merged 3 won 0 n 0 of 168
+CREW523 58 site budget slotfs 3 merged 3 won 0 n 0 of 169
+CREW523 58 site spawn slotfs 3 merged 3 won 0 n 0 of 170
+PH523 58 id 4 body 1 arc 2 orth 0 own 1 merged 1 arcclosed 0 ph 3
+PH523 58 id 10 body 2 arc 1 orth 0 own 1 merged 1 arcclosed 0 ph 3
+CREW523 59 site mag slotfs 3 merged 3 won 0 n 0 of 171
+CREW523 59 site budget slotfs 3 merged 3 won 0 n 0 of 172
+CREW523 59 site spawn slotfs 3 merged 3 won 0 n 0 of 173
+PH523 59 id 4 body 1 arc 2 orth 0 own 1 merged 1 arcclosed 0 ph 3
+PH523 59 id 10 body 2 arc 1 orth 0 own 1 merged 1 arcclosed 0 ph 3
+CREW523 60 site mag slotfs 3 merged 3 won 0 n 0 of 174
+CREW523 60 site budget slotfs 3 merged 3 won 0 n 0 of 175
+CREW523 60 site spawn slotfs 3 merged 3 won 0 n 0 of 176
+PH523 60 id 4 body 1 arc 2 orth 0 own 1 merged 1 arcclosed 0 ph 3
+PH523 60 id 10 body 2 arc 1 orth 0 own 1 merged 1 arcclosed 0 ph 3
+CREW523 61 site mag slotfs 3 merged 3 won 0 n 0 of 177
+CREW523 61 site budget slotfs 3 merged 3 won 0 n 0 of 178
+CREW523 61 site spawn slotfs 3 merged 3 won 0 n 0 of 179
+PH523 61 id 4 body 1 arc 2 orth 0 own 1 merged 1 arcclosed 0 ph 3
+PH523 61 id 10 body 2 arc 1 orth 0 own 1 merged 1 arcclosed 0 ph 3
+CREW523 62 site mag slotfs 3 merged 3 won 0 n 0 of 180
+CREW523 62 site budget slotfs 3 merged 3 won 0 n 0 of 181
+CREW523 62 site spawn slotfs 3 merged 3 won 0 n 0 of 182
+PH523 62 id 4 body 1 arc 2 orth 0 own 1 merged 1 arcclosed 0 ph 3
+PH523 62 id 10 body 2 arc 1 orth 0 own 1 merged 1 arcclosed 0 ph 3
+CREW523 63 site mag slotfs 3 merged 3 won 0 n 0 of 183
+CREW523 63 site budget slotfs 3 merged 3 won 0 n 0 of 184
+CREW523 63 site spawn slotfs 3 merged 3 won 0 n 0 of 185
+PH523 63 id 4 body 1 arc 2 orth 0 own 1 merged 1 arcclosed 0 ph 3
+PH523 63 id 10 body 2 arc 1 orth 0 own 1 merged 1 arcclosed 0 ph 3
+CREW523 64 site mag slotfs 3 merged 3 won 0 n 0 of 186
+CREW523 64 site budget slotfs 3 merged 3 won 0 n 0 of 187
+CREW523 64 site spawn slotfs 3 merged 3 won 0 n 0 of 188
+PH523 64 id 4 body 1 arc 2 orth 0 own 1 merged 1 arcclosed 0 ph 3
+PH523 64 id 10 body 2 arc 1 orth 0 own 1 merged 1 arcclosed 0 ph 4
+CREW523 65 site mag slotfs 3 merged 4 won 1 n 1 of 189
+FUND523 65 ammo 29 bank 0 floor 14 need 20 spare 1 sust 1 flip 0 of 1
+MAG522 65 ph 4 on 0 near 0 fund 1 fuse 1 ttl 1 ti 4 ammo 29 bar 7 want 20 floor 14 bind 0 nbind 0 nnear 0
+CREW523 65 site budget slotfs 3 merged 4 won 1 n 2 of 190
+CREW523 65 site spawn slotfs 3 merged 4 won 1 n 3 of 191
+PH523 65 id 4 body 1 arc 2 orth 0 own 1 merged 1 arcclosed 0 ph 4
+PH523 65 id 10 body 2 arc 1 orth 0 own 1 merged 1 arcclosed 0 ph 4
+CREW523 66 site mag slotfs 4 merged 4 won 0 n 3 of 192
+FUND523 66 ammo 15 bank 0 floor 14 need 20 spare 1 sust 0 flip 1 of 2
+MAG522 66 ph 4 on 0 near 0 fund 1 fuse 0 ttl 1 ti 4 ammo 15 bar 7 want 20 floor 14 bind 0 nbind 0 nnear 0
+CREW523 66 site budget slotfs 4 merged 4 won 0 n 3 of 193
+CREW523 66 site spawn slotfs 4 merged 4 won 0 n 3 of 194
+PH523 66 id 4 body 1 arc 2 orth 0 own 1 merged 1 arcclosed 0 ph 4
+PH523 66 id 10 body 2 arc 1 orth 0 own 1 merged 1 arcclosed 0 ph 4
+CREW523 67 site mag slotfs 4 merged 4 won 0 n 3 of 195
+FUND523 67 ammo 15 bank 0 floor 14 need 20 spare 1 sust 0 flip 2 of 3
+MAG522 67 ph 4 on 0 near 0 fund 1 fuse 0 ttl 1 ti 4 ammo 15 bar 7 want 20 floor 14 bind 0 nbind 0 nnear 0
+CREW523 67 site budget slotfs 4 merged 4 won 0 n 3 of 196
+CREW523 67 site spawn slotfs 4 merged 4 won 0 n 3 of 197
+PH523 67 id 4 body 1 arc 2 orth 0 own 1 merged 1 arcclosed 0 ph 4
+PH523 67 id 10 body 2 arc 1 orth 0 own 1 merged 1 arcclosed 0 ph 4
+CREW523 68 site mag slotfs 4 merged 4 won 0 n 3 of 198
+FUND523 68 ammo 5 bank 0 floor 14 need 20 spare 0 sust 0 flip 2 of 4
+MAG522 68 ph 4 on 0 near 0 fund 0 fuse 0 ttl 1 ti 14 ammo 5 bar 7 want 20 floor 14 bind 0 nbind 0 nnear 0
+CREW523 68 site budget slotfs 4 merged 4 won 0 n 3 of 199
+CREW523 68 site spawn slotfs 4 merged 4 won 0 n 3 of 200
+PH523 68 id 4 body 1 arc 2 orth 0 own 1 merged 1 arcclosed 0 ph 4
+PH523 68 id 10 body 2 arc 1 orth 0 own 1 merged 1 arcclosed 0 ph 4
+CREW523 69 site mag slotfs 4 merged 4 won 0 n 3 of 201
+FUND523 69 ammo 5 bank 0 floor 14 need 20 spare 0 sust 0 flip 2 of 5
+MAG522 69 ph 4 on 0 near 0 fund 0 fuse 0 ttl 1 ti 14 ammo 5 bar 7 want 20 floor 14 bind 0 nbind 0 nnear 0
+CREW523 69 site budget slotfs 4 merged 4 won 0 n 3 of 202
+CREW523 69 site spawn slotfs 4 merged 4 won 0 n 3 of 203
+PH523 69 id 4 body 1 arc 2 orth 0 own 1 merged 1 arcclosed 0 ph 4
+PH523 69 id 10 body 2 arc 1 orth 0 own 1 merged 1 arcclosed 0 ph 4
+CREW523 70 site mag slotfs 4 merged 4 won 0 n 3 of 204
+FUND523 70 ammo 1 bank 0 floor 14 need 20 spare 0 sust 0 flip 2 of 6
+MAG522 70 ph 4 on 0 near 0 fund 0 fuse 0 ttl 1 ti 14 ammo 1 bar 7 want 20 floor 14 bind 0 nbind 0 nnear 0
+CREW523 70 site budget slotfs 4 merged 4 won 0 n 3 of 205
+CREW523 70 site spawn slotfs 4 merged 4 won 0 n 3 of 206
+PH523 70 id 4 body 1 arc 2 orth 0 own 1 merged 1 arcclosed 0 ph 4
+PH523 70 id 10 body 2 arc 1 orth 0 own 1 merged 1 arcclosed 0 ph 4
+CREW523 71 site mag slotfs 4 merged 4 won 0 n 3 of 207
+FUND523 71 ammo 1 bank 0 floor 14 need 20 spare 0 sust 0 flip 2 of 7
+MAG522 71 ph 4 on 0 near 0 fund 0 fuse 0 ttl 1 ti 14 ammo 1 bar 7 want 20 floor 14 bind 0 nbind 0 nnear 0
+CREW523 71 site budget slotfs 4 merged 4 won 0 n 3 of 208
+CREW523 71 site spawn slotfs 4 merged 4 won 0 n 3 of 209
+PH523 71 id 4 body 1 arc 2 orth 0 own 1 merged 1 arcclosed 0 ph 4
+PH523 71 id 10 body 2 arc 1 orth 0 own 1 merged 1 arcclosed 0 ph 4
+CREW523 72 site mag slotfs 4 merged 4 won 0 n 3 of 210
+FUND523 72 ammo 1 bank 10 floor 14 need 20 spare 0 sust 0 flip 2 of 8
+MAG522 72 ph 4 on 0 near 0 fund 0 fuse 0 ttl 1 ti 24 ammo 1 bar 7 want 20 floor 14 bind 0 nbind 0 nnear 0
+CREW523 72 site budget slotfs 4 merged 4 won 0 n 3 of 211
+CREW523 72 site spawn slotfs 4 merged 4 won 0 n 3 of 212
+PH523 72 id 4 body 1 arc 2 orth 0 own 1 merged 1 arcclosed 0 ph 4
+PH523 72 id 10 body 2 arc 1 orth 0 own 1 merged 1 arcclosed 0 ph 4
+CREW523 73 site mag slotfs 4 merged 4 won 0 n 3 of 213
+FUND523 73 ammo 7 bank 0 floor 14 need 20 spare 0 sust 0 flip 2 of 9
+MAG522 73 ph 4 on 0 near 0 fund 0 fuse 0 ttl 1 ti 14 ammo 7 bar 7 want 20 floor 14 bind 0 nbind 0 nnear 0
+CREW523 73 site budget slotfs 4 merged 4 won 0 n 3 of 214
+CREW523 73 site spawn slotfs 4 merged 4 won 0 n 3 of 215
+PH523 73 id 4 body 1 arc 2 orth 0 own 1 merged 1 arcclosed 0 ph 4
+PH523 73 id 10 body 2 arc 1 orth 0 own 1 merged 1 arcclosed 0 ph 4
+CREW523 74 site mag slotfs 4 merged 4 won 0 n 3 of 216
+FUND523 74 ammo 7 bank 0 floor 14 need 20 spare 0 sust 0 flip 2 of 10
+MAG522 74 ph 4 on 0 near 0 fund 0 fuse 0 ttl 1 ti 14 ammo 7 bar 7 want 20 floor 14 bind 0 nbind 0 nnear 0
+CREW523 74 site budget slotfs 4 merged 4 won 0 n 3 of 217
+CREW523 74 site spawn slotfs 4 merged 4 won 0 n 3 of 218
+PH523 74 id 4 body 1 arc 2 orth 0 own 1 merged 1 arcclosed 0 ph 4
+PH523 74 id 10 body 2 arc 1 orth 0 own 1 merged 1 arcclosed 0 ph 4
+CREW523 75 site mag slotfs 4 merged 4 won 0 n 3 of 219
+FUND523 75 ammo 7 bank 0 floor 14 need 20 spare 0 sust 0 flip 2 of 11
+MAG522 75 ph 4 on 0 near 0 fund 0 fuse 0 ttl 1 ti 14 ammo 7 bar 7 want 20 floor 14 bind 0 nbind 0 nnear 0
+CREW523 75 site budget slotfs 4 merged 4 won 0 n 3 of 220
+CREW523 75 site spawn slotfs 4 merged 4 won 0 n 3 of 221
+PH523 75 id 4 body 1 arc 2 orth 0 own 1 merged 1 arcclosed 0 ph 4
+PH523 75 id 10 body 2 arc 1 orth 0 own 1 merged 1 arcclosed 0 ph 4
+CREW523 76 site mag slotfs 4 merged 4 won 0 n 3 of 222
+FUND523 76 ammo 7 bank 10 floor 14 need 20 spare 0 sust 0 flip 2 of 12
+MAG522 76 ph 4 on 0 near 0 fund 0 fuse 0 ttl 1 ti 24 ammo 7 bar 7 want 20 floor 14 bind 0 nbind 0 nnear 0
+CREW523 76 site budget slotfs 4 merged 4 won 0 n 3 of 223
+CREW523 76 site spawn slotfs 4 merged 4 won 0 n 3 of 224
+PH523 76 id 4 body 1 arc 2 orth 0 own 1 merged 1 arcclosed 0 ph 4
+PH523 76 id 10 body 2 arc 1 orth 0 own 1 merged 1 arcclosed 0 ph 4
+CREW523 77 site mag slotfs 4 merged 4 won 0 n 3 of 225
+FUND523 77 ammo 7 bank 0 floor 14 need 20 spare 0 sust 0 flip 2 of 13
+MAG522 77 ph 4 on 0 near 0 fund 0 fuse 0 ttl 1 ti 14 ammo 7 bar 7 want 20 floor 14 bind 0 nbind 0 nnear 0
+CREW523 77 site budget slotfs 4 merged 4 won 0 n 3 of 226
+CREW523 77 site spawn slotfs 4 merged 4 won 0 n 3 of 227
+PH523 77 id 4 body 1 arc 2 orth 0 own 1 merged 1 arcclosed 0 ph 4
+PH523 77 id 10 body 2 arc 1 orth 0 own 1 merged 1 arcclosed 0 ph 4
+CREW523 78 site mag slotfs 4 merged 4 won 0 n 3 of 228
+FUND523 78 ammo 7 bank 0 floor 14 need 20 spare 0 sust 0 flip 2 of 14
+MAG522 78 ph 4 on 0 near 0 fund 0 fuse 0 ttl 1 ti 14 ammo 7 bar 7 want 20 floor 14 bind 0 nbind 0 nnear 0
+CREW523 78 site budget slotfs 4 merged 4 won 0 n 3 of 229
+CREW523 78 site spawn slotfs 4 merged 4 won 0 n 3 of 230
+PH523 78 id 4 body 1 arc 2 orth 0 own 1 merged 1 arcclosed 0 ph 4
+PH523 78 id 10 body 2 arc 1 orth 0 own 1 merged 1 arcclosed 0 ph 4
+CREW523 79 site mag slotfs 4 merged 4 won 0 n 3 of 231
+FUND523 79 ammo 7 bank 0 floor 14 need 20 spare 0 sust 0 flip 2 of 15
+MAG522 79 ph 4 on 0 near 0 fund 0 fuse 0 ttl 1 ti 14 ammo 7 bar 7 want 20 floor 14 bind 0 nbind 0 nnear 0
+CREW523 79 site budget slotfs 4 merged 4 won 0 n 3 of 232
+CREW523 79 site spawn slotfs 4 merged 4 won 0 n 3 of 233
+PH523 79 id 4 body 1 arc 2 orth 0 own 1 merged 1 arcclosed 0 ph 4
+PH523 79 id 10 body 2 arc 1 orth 0 own 1 merged 1 arcclosed 0 ph 4
+CREW523 80 site mag slotfs 4 merged 4 won 0 n 3 of 234
+FUND523 80 ammo 7 bank 10 floor 14 need 20 spare 0 sust 0 flip 2 of 16
+MAG522 80 ph 4 on 0 near 0 fund 0 fuse 0 ttl 1 ti 24 ammo 7 bar 7 want 20 floor 14 bind 0 nbind 0 nnear 0
+CREW523 80 site budget slotfs 4 merged 4 won 0 n 3 of 235
+CREW523 80 site spawn slotfs 4 merged 4 won 0 n 3 of 236
+PH523 80 id 4 body 1 arc 2 orth 0 own 1 merged 1 arcclosed 0 ph 4
+PH523 80 id 10 body 2 arc 1 orth 0 own 1 merged 1 arcclosed 0 ph 4
+CREW523 81 site mag slotfs 4 merged 4 won 0 n 3 of 237
+FUND523 81 ammo 7 bank 0 floor 14 need 20 spare 0 sust 0 flip 2 of 17
+MAG522 81 ph 4 on 0 near 0 fund 0 fuse 0 ttl 1 ti 14 ammo 7 bar 7 want 20 floor 14 bind 0 nbind 0 nnear 0
+CREW523 81 site budget slotfs 4 merged 4 won 0 n 3 of 238
+CREW523 81 site spawn slotfs 4 merged 4 won 0 n 3 of 239
+PH523 81 id 4 body 1 arc 2 orth 0 own 1 merged 1 arcclosed 0 ph 4
+PH523 81 id 10 body 2 arc 1 orth 0 own 1 merged 1 arcclosed 0 ph 4
+CREW523 82 site mag slotfs 4 merged 4 won 0 n 3 of 240
+FUND523 82 ammo 7 bank 0 floor 14 need 20 spare 0 sust 0 flip 2 of 18
+MAG522 82 ph 4 on 0 near 0 fund 0 fuse 0 ttl 1 ti 14 ammo 7 bar 7 want 20 floor 14 bind 0 nbind 0 nnear 0
+CREW523 82 site budget slotfs 4 merged 4 won 0 n 3 of 241
+CREW523 82 site spawn slotfs 4 merged 4 won 0 n 3 of 242
+PH523 82 id 4 body 1 arc 2 orth 0 own 1 merged 1 arcclosed 0 ph 4
+PH523 82 id 10 body 2 arc 1 orth 0 own 1 merged 1 arcclosed 0 ph 4
+CREW523 83 site mag slotfs 4 merged 4 won 0 n 3 of 243
+FUND523 83 ammo 7 bank 0 floor 14 need 20 spare 0 sust 0 flip 2 of 19
+MAG522 83 ph 4 on 0 near 0 fund 0 fuse 0 ttl 1 ti 14 ammo 7 bar 7 want 20 floor 14 bind 0 nbind 0 nnear 0
+CREW523 83 site budget slotfs 4 merged 4 won 0 n 3 of 244
+CREW523 83 site spawn slotfs 4 merged 4 won 0 n 3 of 245
+PH523 83 id 4 body 1 arc 2 orth 2 own 0 merged 1 arcclosed 1 ph 5
+SALT523 83 id 4 orth 2 own 0 union 1 n 1 ownN 62
+PH523 83 id 10 body 2 arc 1 orth 0 own 1 merged 1 arcclosed 0 ph 4
+CREW523 84 site mag slotfs 5 merged 4 won 1 n 4 of 246
+FUND523 84 ammo 7 bank 10 floor 14 need 20 spare 0 sust 0 flip 2 of 20
+MAG522 84 ph 4 on 0 near 0 fund 0 fuse 0 ttl 1 ti 24 ammo 7 bar 7 want 20 floor 14 bind 0 nbind 0 nnear 0
+CREW523 84 site budget slotfs 5 merged 4 won 1 n 5 of 247
+CREW523 84 site spawn slotfs 5 merged 4 won 1 n 6 of 248
+PH523 84 id 4 body 1 arc 2 orth 0 own 1 merged 1 arcclosed 0 ph 4
+PH523 84 id 10 body 2 arc 1 orth 0 own 1 merged 1 arcclosed 0 ph 4
+CREW523 85 site mag slotfs 4 merged 4 won 0 n 6 of 249
+FUND523 85 ammo 7 bank 0 floor 14 need 20 spare 0 sust 0 flip 2 of 21
+MAG522 85 ph 4 on 0 near 0 fund 0 fuse 0 ttl 1 ti 14 ammo 7 bar 7 want 20 floor 14 bind 0 nbind 0 nnear 0
+CREW523 85 site budget slotfs 4 merged 4 won 0 n 6 of 250
+CREW523 85 site spawn slotfs 4 merged 4 won 0 n 6 of 251
+PH523 85 id 4 body 1 arc 2 orth 2 own 0 merged 1 arcclosed 1 ph 5
+SALT523 85 id 4 orth 2 own 0 union 1 n 2 ownN 63
+PH523 85 id 10 body 2 arc 1 orth 0 own 1 merged 1 arcclosed 0 ph 4
+CREW523 86 site mag slotfs 5 merged 4 won 1 n 7 of 252
+FUND523 86 ammo 7 bank 0 floor 14 need 20 spare 0 sust 0 flip 2 of 22
+MAG522 86 ph 4 on 0 near 0 fund 0 fuse 0 ttl 1 ti 14 ammo 7 bar 7 want 20 floor 14 bind 0 nbind 0 nnear 0
+CREW523 86 site budget slotfs 5 merged 4 won 1 n 8 of 253
+CREW523 86 site spawn slotfs 5 merged 4 won 1 n 9 of 254
+PH523 86 id 4 body 1 arc 2 orth 0 own 1 merged 1 arcclosed 0 ph 4
+PH523 86 id 10 body 2 arc 1 orth 0 own 1 merged 1 arcclosed 0 ph 4
+CREW523 87 site mag slotfs 4 merged 4 won 0 n 9 of 255
+FUND523 87 ammo 7 bank 0 floor 14 need 20 spare 0 sust 0 flip 2 of 23
+MAG522 87 ph 4 on 0 near 0 fund 0 fuse 0 ttl 1 ti 14 ammo 7 bar 7 want 20 floor 14 bind 0 nbind 0 nnear 0
+CREW523 87 site budget slotfs 4 merged 4 won 0 n 9 of 256
+CREW523 87 site spawn slotfs 4 merged 4 won 0 n 9 of 257
+PH523 87 id 4 body 1 arc 2 orth 0 own 1 merged 1 arcclosed 0 ph 4
+PH523 87 id 10 body 2 arc 1 orth 0 own 1 merged 1 arcclosed 0 ph 4
+CREW523 88 site mag slotfs 4 merged 4 won 0 n 9 of 258
+FUND523 88 ammo 7 bank 10 floor 14 need 20 spare 0 sust 0 flip 2 of 24
+MAG522 88 ph 4 on 0 near 0 fund 0 fuse 0 ttl 1 ti 24 ammo 7 bar 7 want 20 floor 14 bind 0 nbind 0 nnear 0
+CREW523 88 site budget slotfs 4 merged 4 won 0 n 9 of 259
+CREW523 88 site spawn slotfs 4 merged 4 won 0 n 9 of 260
+PH523 88 id 4 body 1 arc 2 orth 0 own 1 merged 1 arcclosed 0 ph 4
+PH523 88 id 10 body 2 arc 1 orth 0 own 1 merged 1 arcclosed 0 ph 4
+CREW523 89 site mag slotfs 4 merged 4 won 0 n 9 of 261
+FUND523 89 ammo 7 bank 0 floor 14 need 20 spare 0 sust 0 flip 2 of 25
+MAG522 89 ph 4 on 0 near 0 fund 0 fuse 0 ttl 1 ti 14 ammo 7 bar 7 want 20 floor 14 bind 0 nbind 0 nnear 0
+CREW523 89 site budget slotfs 4 merged 4 won 0 n 9 of 262
+CREW523 89 site spawn slotfs 4 merged 4 won 0 n 9 of 263
+PH523 89 id 4 body 1 arc 2 orth 0 own 1 merged 1 arcclosed 0 ph 4
+PH523 89 id 10 body 2 arc 1 orth 0 own 1 merged 1 arcclosed 0 ph 4
+CREW523 90 site mag slotfs 4 merged 4 won 0 n 9 of 264
+FUND523 90 ammo 7 bank 0 floor 14 need 20 spare 0 sust 0 flip 2 of 26
+MAG522 90 ph 4 on 0 near 0 fund 0 fuse 0 ttl 1 ti 14 ammo 7 bar 7 want 20 floor 14 bind 0 nbind 0 nnear 0
+CREW523 90 site budget slotfs 4 merged 4 won 0 n 9 of 265
+CREW523 90 site spawn slotfs 4 merged 4 won 0 n 9 of 266
+PH523 90 id 4 body 1 arc 2 orth 0 own 1 merged 1 arcclosed 0 ph 4
+PH523 90 id 10 body 2 arc 1 orth 0 own 1 merged 1 arcclosed 0 ph 4
+CREW523 91 site mag slotfs 4 merged 4 won 0 n 9 of 267
+FUND523 91 ammo 7 bank 0 floor 14 need 20 spare 0 sust 0 flip 2 of 27
+MAG522 91 ph 4 on 0 near 0 fund 0 fuse 0 ttl 1 ti 14 ammo 7 bar 7 want 20 floor 14 bind 0 nbind 0 nnear 0
+CREW523 91 site budget slotfs 4 merged 4 won 0 n 9 of 268
+CREW523 91 site spawn slotfs 4 merged 4 won 0 n 9 of 269
+PH523 91 id 4 body 1 arc 2 orth 0 own 1 merged 1 arcclosed 0 ph 4
+PH523 91 id 10 body 2 arc 1 orth 0 own 1 merged 1 arcclosed 0 ph 4
+CREW523 92 site mag slotfs 4 merged 4 won 0 n 9 of 270
+FUND523 92 ammo 7 bank 10 floor 14 need 20 spare 0 sust 0 flip 2 of 28
+MAG522 92 ph 4 on 0 near 0 fund 0 fuse 0 ttl 1 ti 24 ammo 7 bar 7 want 20 floor 14 bind 0 nbind 0 nnear 0
+CREW523 92 site budget slotfs 4 merged 4 won 0 n 9 of 271
+CREW523 92 site spawn slotfs 4 merged 4 won 0 n 9 of 272
+PH523 92 id 4 body 1 arc 2 orth 0 own 1 merged 1 arcclosed 0 ph 4
+PH523 92 id 10 body 2 arc 1 orth 0 own 1 merged 1 arcclosed 0 ph 4
+CREW523 93 site mag slotfs 4 merged 4 won 0 n 9 of 273
+FUND523 93 ammo 7 bank 0 floor 14 need 20 spare 0 sust 0 flip 2 of 29
+MAG522 93 ph 4 on 0 near 0 fund 0 fuse 0 ttl 1 ti 14 ammo 7 bar 7 want 20 floor 14 bind 0 nbind 0 nnear 0
+CREW523 93 site budget slotfs 4 merged 4 won 0 n 9 of 274
+CREW523 93 site spawn slotfs 4 merged 4 won 0 n 9 of 275
+PH523 93 id 4 body 1 arc 2 orth 2 own 0 merged 1 arcclosed 1 ph 5
+SALT523 93 id 4 orth 2 own 0 union 1 n 3 ownN 70
+PH523 93 id 10 body 2 arc 1 orth 0 own 1 merged 1 arcclosed 0 ph 4
+CREW523 94 site mag slotfs 5 merged 4 won 1 n 10 of 276
+FUND523 94 ammo 7 bank 0 floor 14 need 20 spare 0 sust 0 flip 2 of 30
+MAG522 94 ph 4 on 0 near 0 fund 0 fuse 0 ttl 1 ti 14 ammo 7 bar 7 want 20 floor 14 bind 0 nbind 0 nnear 0
+CREW523 94 site budget slotfs 5 merged 4 won 1 n 11 of 277
+CREW523 94 site spawn slotfs 5 merged 4 won 1 n 12 of 278
+PH523 94 id 4 body 1 arc 2 orth 0 own 1 merged 1 arcclosed 0 ph 4
+PH523 94 id 10 body 2 arc 1 orth 0 own 1 merged 1 arcclosed 0 ph 4
+CREW523 95 site mag slotfs 4 merged 4 won 0 n 12 of 279
+FUND523 95 ammo 7 bank 0 floor 14 need 20 spare 0 sust 0 flip 2 of 31
+MAG522 95 ph 4 on 0 near 0 fund 0 fuse 0 ttl 1 ti 14 ammo 7 bar 7 want 20 floor 14 bind 0 nbind 0 nnear 0
+CREW523 95 site budget slotfs 4 merged 4 won 0 n 12 of 280
+CREW523 95 site spawn slotfs 4 merged 4 won 0 n 12 of 281
+PH523 95 id 4 body 1 arc 2 orth 2 own 0 merged 1 arcclosed 1 ph 5
+SALT523 95 id 4 orth 2 own 0 union 1 n 4 ownN 71
+PH523 95 id 10 body 2 arc 1 orth 0 own 1 merged 1 arcclosed 0 ph 4
+CREW523 96 site mag slotfs 5 merged 4 won 1 n 13 of 282
+FUND523 96 ammo 7 bank 10 floor 14 need 20 spare 0 sust 0 flip 2 of 32
+MAG522 96 ph 4 on 0 near 0 fund 0 fuse 0 ttl 1 ti 24 ammo 7 bar 7 want 20 floor 14 bind 0 nbind 0 nnear 0
+CREW523 96 site budget slotfs 5 merged 4 won 1 n 14 of 283
+CREW523 96 site spawn slotfs 5 merged 4 won 1 n 15 of 284
+PH523 96 id 4 body 1 arc 2 orth 0 own 1 merged 1 arcclosed 0 ph 4
+PH523 96 id 10 body 2 arc 1 orth 0 own 1 merged 1 arcclosed 0 ph 4
+CREW523 97 site mag slotfs 4 merged 4 won 0 n 15 of 285
+FUND523 97 ammo 7 bank 0 floor 14 need 20 spare 0 sust 0 flip 2 of 33
+MAG522 97 ph 4 on 0 near 0 fund 0 fuse 0 ttl 1 ti 14 ammo 7 bar 7 want 20 floor 14 bind 0 nbind 0 nnear 0
+CREW523 97 site budget slotfs 4 merged 4 won 0 n 15 of 286
+CREW523 97 site spawn slotfs 4 merged 4 won 0 n 15 of 287
+PH523 97 id 4 body 1 arc 2 orth 0 own 1 merged 1 arcclosed 0 ph 4
+PH523 97 id 10 body 2 arc 1 orth 0 own 1 merged 1 arcclosed 0 ph 4
+CREW523 98 site mag slotfs 4 merged 4 won 0 n 15 of 288
+FUND523 98 ammo 7 bank 0 floor 14 need 20 spare 0 sust 0 flip 2 of 34
+MAG522 98 ph 4 on 0 near 0 fund 0 fuse 0 ttl 1 ti 14 ammo 7 bar 7 want 20 floor 14 bind 0 nbind 0 nnear 0
+CREW523 98 site budget slotfs 4 merged 4 won 0 n 15 of 289
+CREW523 98 site spawn slotfs 4 merged 4 won 0 n 15 of 290
+PH523 98 id 4 body 1 arc 2 orth 0 own 1 merged 1 arcclosed 0 ph 4
+PH523 98 id 10 body 2 arc 1 orth 0 own 1 merged 1 arcclosed 0 ph 4
+CREW523 99 site mag slotfs 4 merged 4 won 0 n 15 of 291
+FUND523 99 ammo 7 bank 0 floor 14 need 20 spare 0 sust 0 flip 2 of 35
+MAG522 99 ph 4 on 0 near 0 fund 0 fuse 0 ttl 1 ti 14 ammo 7 bar 7 want 20 floor 14 bind 0 nbind 0 nnear 0
+CREW523 99 site budget slotfs 4 merged 4 won 0 n 15 of 292
+CREW523 99 site spawn slotfs 4 merged 4 won 0 n 15 of 293
+PH523 99 id 4 body 1 arc 2 orth 0 own 1 merged 1 arcclosed 0 ph 4
+PH523 99 id 10 body 2 arc 1 orth 0 own 1 merged 1 arcclosed 0 ph 4
+CREW523 100 site mag slotfs 4 merged 4 won 0 n 15 of 294
+FUND523 100 ammo 7 bank 10 floor 14 need 20 spare 0 sust 0 flip 2 of 36
+MAG522 100 ph 4 on 0 near 0 fund 0 fuse 0 ttl 1 ti 24 ammo 7 bar 7 want 20 floor 14 bind 0 nbind 0 nnear 0
+CREW523 100 site budget slotfs 4 merged 4 won 0 n 15 of 295
+CREW523 100 site spawn slotfs 4 merged 4 won 0 n 15 of 296
+PH523 100 id 4 body 1 arc 2 orth 0 own 1 merged 1 arcclosed 0 ph 4
+PH523 100 id 10 body 2 arc 1 orth 0 own 1 merged 1 arcclosed 0 ph 4
+CREW523 101 site mag slotfs 4 merged 4 won 0 n 15 of 297
+FUND523 101 ammo 7 bank 0 floor 14 need 20 spare 0 sust 0 flip 2 of 37
+MAG522 101 ph 4 on 0 near 0 fund 0 fuse 0 ttl 1 ti 14 ammo 7 bar 7 want 20 floor 14 bind 0 nbind 0 nnear 0
+CREW523 101 site budget slotfs 4 merged 4 won 0 n 15 of 298
+CREW523 101 site spawn slotfs 4 merged 4 won 0 n 15 of 299
+PH523 101 id 4 body 1 arc 2 orth 0 own 1 merged 1 arcclosed 0 ph 4
+PH523 101 id 10 body 2 arc 1 orth 0 own 1 merged 1 arcclosed 0 ph 4
+CREW523 102 site mag slotfs 4 merged 4 won 0 n 15 of 300
+FUND523 102 ammo 7 bank 0 floor 14 need 20 spare 0 sust 0 flip 2 of 38
+MAG522 102 ph 4 on 0 near 0 fund 0 fuse 0 ttl 1 ti 14 ammo 7 bar 7 want 20 floor 14 bind 0 nbind 0 nnear 0
+CREW523 102 site budget slotfs 4 merged 4 won 0 n 15 of 301
+CREW523 102 site spawn slotfs 4 merged 4 won 0 n 15 of 302
+PH523 102 id 4 body 1 arc 2 orth 0 own 1 merged 1 arcclosed 0 ph 4
+PH523 102 id 10 body 2 arc 1 orth 0 own 1 merged 1 arcclosed 0 ph 4
+CREW523 103 site mag slotfs 4 merged 4 won 0 n 15 of 303
+FUND523 103 ammo 7 bank 0 floor 14 need 20 spare 0 sust 0 flip 2 of 39
+MAG522 103 ph 4 on 0 near 0 fund 0 fuse 0 ttl 1 ti 14 ammo 7 bar 7 want 20 floor 14 bind 0 nbind 0 nnear 0
+CREW523 103 site budget slotfs 4 merged 4 won 0 n 15 of 304
+CREW523 103 site spawn slotfs 4 merged 4 won 0 n 15 of 305
+PH523 103 id 4 body 1 arc 2 orth 2 own 0 merged 1 arcclosed 1 ph 5
+SALT523 103 id 4 orth 2 own 0 union 1 n 5 ownN 78
+PH523 103 id 10 body 2 arc 1 orth 0 own 1 merged 1 arcclosed 0 ph 4
+CREW523 104 site mag slotfs 5 merged 4 won 1 n 16 of 306
+FUND523 104 ammo 7 bank 10 floor 14 need 20 spare 0 sust 0 flip 2 of 40
+MAG522 104 ph 4 on 0 near 0 fund 0 fuse 0 ttl 1 ti 24 ammo 7 bar 7 want 20 floor 14 bind 0 nbind 0 nnear 0
+CREW523 104 site budget slotfs 5 merged 4 won 1 n 17 of 307
+CREW523 104 site spawn slotfs 5 merged 4 won 1 n 18 of 308
+PH523 104 id 4 body 1 arc 2 orth 0 own 1 merged 1 arcclosed 0 ph 4
+PH523 104 id 10 body 2 arc 1 orth 0 own 1 merged 1 arcclosed 0 ph 4
+CREW523 105 site mag slotfs 4 merged 4 won 0 n 18 of 309
+FUND523 105 ammo 7 bank 0 floor 14 need 20 spare 0 sust 0 flip 2 of 41
+MAG522 105 ph 4 on 0 near 0 fund 0 fuse 0 ttl 1 ti 14 ammo 7 bar 7 want 20 floor 14 bind 0 nbind 0 nnear 0
+CREW523 105 site budget slotfs 4 merged 4 won 0 n 18 of 310
+CREW523 105 site spawn slotfs 4 merged 4 won 0 n 18 of 311
+PH523 105 id 4 body 1 arc 2 orth 2 own 0 merged 1 arcclosed 1 ph 5
+SALT523 105 id 4 orth 2 own 0 union 1 n 6 ownN 79
+PH523 105 id 10 body 2 arc 1 orth 0 own 1 merged 1 arcclosed 0 ph 4
+CREW523 106 site mag slotfs 5 merged 4 won 1 n 19 of 312
+FUND523 106 ammo 7 bank 0 floor 14 need 20 spare 0 sust 0 flip 2 of 42
+MAG522 106 ph 4 on 0 near 0 fund 0 fuse 0 ttl 1 ti 14 ammo 7 bar 7 want 20 floor 14 bind 0 nbind 0 nnear 0
+CREW523 106 site budget slotfs 5 merged 4 won 1 n 20 of 313
+CREW523 106 site spawn slotfs 5 merged 4 won 1 n 21 of 314
+PH523 106 id 4 body 1 arc 2 orth 4 own 0 merged 1 arcclosed 0 ph 5
+SALT523 106 id 4 orth 4 own 0 union 1 n 7 ownN 79
+PH523 106 id 10 body 2 arc 1 orth 0 own 1 merged 1 arcclosed 0 ph 4
+CREW523 107 site mag slotfs 5 merged 4 won 1 n 22 of 315
+FUND523 107 ammo 7 bank 0 floor 14 need 20 spare 0 sust 0 flip 2 of 43
+MAG522 107 ph 4 on 0 near 0 fund 0 fuse 0 ttl 1 ti 14 ammo 7 bar 7 want 20 floor 14 bind 0 nbind 0 nnear 0
+CREW523 107 site budget slotfs 5 merged 4 won 1 n 23 of 316
+CREW523 107 site spawn slotfs 5 merged 4 won 1 n 24 of 317
+PH523 107 id 4 body 1 arc 2 orth 2 own 0 merged 1 arcclosed 1 ph 5
+SALT523 107 id 4 orth 2 own 0 union 1 n 8 ownN 79
+PH523 107 id 10 body 2 arc 1 orth 0 own 1 merged 1 arcclosed 0 ph 4
+CREW523 108 site mag slotfs 5 merged 4 won 1 n 25 of 318
+FUND523 108 ammo 7 bank 10 floor 14 need 20 spare 0 sust 0 flip 2 of 44
+MAG522 108 ph 4 on 0 near 0 fund 0 fuse 0 ttl 1 ti 24 ammo 7 bar 7 want 20 floor 14 bind 0 nbind 0 nnear 0
+CREW523 108 site budget slotfs 5 merged 4 won 1 n 26 of 319
+CREW523 108 site spawn slotfs 5 merged 4 won 1 n 27 of 320
+PH523 108 id 4 body 1 arc 2 orth 0 own 1 merged 1 arcclosed 0 ph 4
+PH523 108 id 10 body 2 arc 1 orth 0 own 1 merged 1 arcclosed 0 ph 4
+CREW523 109 site mag slotfs 4 merged 4 won 0 n 27 of 321
+FUND523 109 ammo 7 bank 0 floor 14 need 20 spare 0 sust 0 flip 2 of 45
+MAG522 109 ph 4 on 0 near 0 fund 0 fuse 0 ttl 1 ti 14 ammo 7 bar 7 want 20 floor 14 bind 0 nbind 0 nnear 0
+CREW523 109 site budget slotfs 4 merged 4 won 0 n 27 of 322
+CREW523 109 site spawn slotfs 4 merged 4 won 0 n 27 of 323
+PH523 109 id 4 body 1 arc 2 orth 2 own 0 merged 1 arcclosed 1 ph 5
+SALT523 109 id 4 orth 2 own 0 union 1 n 9 ownN 80
+PH523 109 id 10 body 2 arc 1 orth 0 own 1 merged 1 arcclosed 0 ph 4
+CREW523 110 site mag slotfs 5 merged 4 won 1 n 28 of 324
+FUND523 110 ammo 7 bank 0 floor 14 need 20 spare 0 sust 0 flip 2 of 46
+MAG522 110 ph 4 on 0 near 0 fund 0 fuse 0 ttl 1 ti 14 ammo 7 bar 7 want 20 floor 14 bind 0 nbind 0 nnear 0
+CREW523 110 site budget slotfs 5 merged 4 won 1 n 29 of 325
+CREW523 110 site spawn slotfs 5 merged 4 won 1 n 30 of 326
+PH523 110 id 4 body 1 arc 2 orth 0 own 1 merged 1 arcclosed 0 ph 4
+PH523 110 id 10 body 2 arc 1 orth 0 own 1 merged 1 arcclosed 0 ph 4
+CREW523 111 site mag slotfs 4 merged 4 won 0 n 30 of 327
+FUND523 111 ammo 7 bank 0 floor 14 need 20 spare 0 sust 0 flip 2 of 47
+MAG522 111 ph 4 on 0 near 0 fund 0 fuse 0 ttl 1 ti 14 ammo 7 bar 7 want 20 floor 14 bind 0 nbind 0 nnear 0
+CREW523 111 site budget slotfs 4 merged 4 won 0 n 30 of 328
+CREW523 111 site spawn slotfs 4 merged 4 won 0 n 30 of 329
+PH523 111 id 4 body 1 arc 2 orth 2 own 0 merged 1 arcclosed 1 ph 5
+SALT523 111 id 4 orth 2 own 0 union 1 n 10 ownN 81
+PH523 111 id 10 body 2 arc 1 orth 0 own 1 merged 1 arcclosed 0 ph 4
+CREW523 112 site mag slotfs 5 merged 4 won 1 n 31 of 330
+FUND523 112 ammo 7 bank 10 floor 14 need 20 spare 0 sust 0 flip 2 of 48
+MAG522 112 ph 4 on 0 near 0 fund 0 fuse 0 ttl 1 ti 24 ammo 7 bar 7 want 20 floor 14 bind 0 nbind 0 nnear 0
+CREW523 112 site budget slotfs 5 merged 4 won 1 n 32 of 331
+CREW523 112 site spawn slotfs 5 merged 4 won 1 n 33 of 332
+PH523 112 id 4 body 1 arc 2 orth 0 own 1 merged 1 arcclosed 0 ph 4
+PH523 112 id 10 body 2 arc 1 orth 0 own 1 merged 1 arcclosed 0 ph 4
+CREW523 113 site mag slotfs 4 merged 4 won 0 n 33 of 333
+FUND523 113 ammo 7 bank 0 floor 14 need 20 spare 0 sust 0 flip 2 of 49
+MAG522 113 ph 4 on 0 near 0 fund 0 fuse 0 ttl 1 ti 14 ammo 7 bar 7 want 20 floor 14 bind 0 nbind 0 nnear 0
+CREW523 113 site budget slotfs 4 merged 4 won 0 n 33 of 334
+CREW523 113 site spawn slotfs 4 merged 4 won 0 n 33 of 335
+PH523 113 id 4 body 1 arc 2 orth 2 own 0 merged 1 arcclosed 1 ph 5
+SALT523 113 id 4 orth 2 own 0 union 1 n 11 ownN 82
+PH523 113 id 10 body 2 arc 1 orth 0 own 1 merged 1 arcclosed 0 ph 4
+CREW523 114 site mag slotfs 5 merged 4 won 1 n 34 of 336
+FUND523 114 ammo 7 bank 0 floor 14 need 20 spare 0 sust 0 flip 2 of 50
+MAG522 114 ph 4 on 0 near 0 fund 0 fuse 0 ttl 1 ti 14 ammo 7 bar 7 want 20 floor 14 bind 0 nbind 0 nnear 0
+CREW523 114 site budget slotfs 5 merged 4 won 1 n 35 of 337
+CREW523 114 site spawn slotfs 5 merged 4 won 1 n 36 of 338
+PH523 114 id 4 body 1 arc 2 orth 4 own 0 merged 1 arcclosed 0 ph 5
+SALT523 114 id 4 orth 4 own 0 union 1 n 12 ownN 82
+PH523 114 id 10 body 2 arc 1 orth 0 own 1 merged 1 arcclosed 0 ph 4
+CREW523 115 site mag slotfs 5 merged 4 won 1 n 37 of 339
+FUND523 115 ammo 7 bank 0 floor 14 need 20 spare 0 sust 0 flip 2 of 51
+MAG522 115 ph 4 on 0 near 0 fund 0 fuse 0 ttl 1 ti 14 ammo 7 bar 7 want 20 floor 14 bind 0 nbind 0 nnear 0
+CREW523 115 site budget slotfs 5 merged 4 won 1 n 38 of 340
+CREW523 115 site spawn slotfs 5 merged 4 won 1 n 39 of 341
+PH523 115 id 4 body 1 arc 2 orth 2 own 0 merged 1 arcclosed 1 ph 5
+SALT523 115 id 4 orth 2 own 0 union 1 n 13 ownN 82
+PH523 115 id 10 body 2 arc 1 orth 0 own 1 merged 1 arcclosed 0 ph 4
+CREW523 116 site mag slotfs 5 merged 4 won 1 n 40 of 342
+FUND523 116 ammo 7 bank 10 floor 14 need 20 spare 0 sust 0 flip 2 of 52
+MAG522 116 ph 4 on 0 near 0 fund 0 fuse 0 ttl 1 ti 24 ammo 7 bar 7 want 20 floor 14 bind 0 nbind 0 nnear 0
+CREW523 116 site budget slotfs 5 merged 4 won 1 n 41 of 343
+CREW523 116 site spawn slotfs 5 merged 4 won 1 n 42 of 344
+PH523 116 id 4 body 1 arc 2 orth 0 own 1 merged 1 arcclosed 0 ph 4
+PH523 116 id 10 body 2 arc 1 orth 0 own 1 merged 1 arcclosed 0 ph 4
+CREW523 117 site mag slotfs 4 merged 4 won 0 n 42 of 345
+FUND523 117 ammo 7 bank 2 floor 12 need 20 spare 0 sust 0 flip 2 of 53
+MAG522 117 ph 4 on 0 near 0 fund 0 fuse 0 ttl 1 ti 14 ammo 7 bar 6 want 18 floor 12 bind 0 nbind 0 nnear 0
+CREW523 117 site budget slotfs 4 merged 4 won 0 n 42 of 346
+CREW523 117 site spawn slotfs 4 merged 4 won 0 n 42 of 347
+PH523 117 id 4 body 1 arc 2 orth 2 own 0 merged 1 arcclosed 1 ph 5
+SALT523 117 id 4 orth 2 own 0 union 1 n 14 ownN 83
+PH523 117 id 10 body 2 arc 1 orth 0 own 1 merged 1 arcclosed 0 ph 4
+CREW523 118 site mag slotfs 5 merged 4 won 1 n 43 of 348
+FUND523 118 ammo 9 bank 0 floor 12 need 20 spare 0 sust 0 flip 2 of 54
+MAG522 118 ph 4 on 0 near 0 fund 0 fuse 0 ttl 1 ti 12 ammo 9 bar 6 want 18 floor 12 bind 0 nbind 0 nnear 0
+CREW523 118 site budget slotfs 5 merged 4 won 1 n 44 of 349
+CREW523 118 site spawn slotfs 5 merged 4 won 1 n 45 of 350
+PH523 118 id 4 body 1 arc 2 orth 0 own 1 merged 1 arcclosed 0 ph 4
+PH523 118 id 10 body 2 arc 1 orth 0 own 1 merged 1 arcclosed 0 ph 4
+CREW523 119 site mag slotfs 4 merged 4 won 0 n 45 of 351
+FUND523 119 ammo 9 bank 0 floor 12 need 20 spare 0 sust 0 flip 2 of 55
+MAG522 119 ph 4 on 0 near 0 fund 0 fuse 0 ttl 1 ti 12 ammo 9 bar 6 want 18 floor 12 bind 0 nbind 0 nnear 0
+CREW523 119 site budget slotfs 4 merged 4 won 0 n 45 of 352
+CREW523 119 site spawn slotfs 4 merged 4 won 0 n 45 of 353
+PH523 119 id 4 body 1 arc 2 orth 0 own 1 merged 1 arcclosed 0 ph 4
+PH523 119 id 10 body 2 arc 1 orth 0 own 1 merged 1 arcclosed 0 ph 4
+CREW523 120 site mag slotfs 4 merged 4 won 0 n 45 of 354
+FUND523 120 ammo 9 bank 10 floor 12 need 20 spare 0 sust 0 flip 2 of 56
+MAG522 120 ph 4 on 0 near 0 fund 0 fuse 0 ttl 1 ti 22 ammo 9 bar 6 want 18 floor 12 bind 0 nbind 0 nnear 0
+CREW523 120 site budget slotfs 4 merged 4 won 0 n 45 of 355
+CREW523 120 site spawn slotfs 4 merged 4 won 0 n 45 of 356
+PH523 120 id 4 body 1 arc 2 orth 0 own 1 merged 1 arcclosed 0 ph 4
+PH523 120 id 10 body 2 arc 1 orth 0 own 1 merged 1 arcclosed 0 ph 4
+CREW523 121 site mag slotfs 4 merged 4 won 0 n 45 of 357
+FUND523 121 ammo 9 bank 0 floor 12 need 20 spare 0 sust 0 flip 2 of 57
+MAG522 121 ph 4 on 0 near 0 fund 0 fuse 0 ttl 1 ti 12 ammo 9 bar 6 want 18 floor 12 bind 0 nbind 0 nnear 0
+CREW523 121 site budget slotfs 4 merged 4 won 0 n 45 of 358
+CREW523 121 site spawn slotfs 4 merged 4 won 0 n 45 of 359
+PH523 121 id 4 body 1 arc 2 orth 3 own 0 merged 1 arcclosed 0 ph 5
+SALT523 121 id 4 orth 3 own 0 union 1 n 15 ownN 85
+PH523 121 id 10 body 2 arc 1 orth 0 own 1 merged 1 arcclosed 0 ph 4
+CREW523 122 site mag slotfs 5 merged 4 won 1 n 46 of 360
+FUND523 122 ammo 9 bank 0 floor 12 need 20 spare 0 sust 0 flip 2 of 58
+MAG522 122 ph 4 on 0 near 0 fund 0 fuse 0 ttl 1 ti 12 ammo 9 bar 6 want 18 floor 12 bind 0 nbind 0 nnear 0
+CREW523 122 site budget slotfs 5 merged 4 won 1 n 47 of 361
+CREW523 122 site spawn slotfs 5 merged 4 won 1 n 48 of 362
+PH523 122 id 4 body 1 arc 2 orth 0 own 1 merged 1 arcclosed 0 ph 4
+CREW523 123 site mag slotfs 4 merged 4 won 0 n 48 of 363
+FUND523 123 ammo 9 bank 0 floor 12 need 20 spare 0 sust 0 flip 2 of 59
+MAG522 123 ph 4 on 0 near 0 fund 0 fuse 0 ttl 1 ti 12 ammo 9 bar 6 want 18 floor 12 bind 0 nbind 0 nnear 0
+CREW523 123 site budget slotfs 4 merged 4 won 0 n 48 of 364
+CREW523 123 site spawn slotfs 4 merged 4 won 0 n 48 of 365
+PH523 123 id 4 body 1 arc 2 orth 0 own 1 merged 1 arcclosed 0 ph 4
+CREW523 124 site mag slotfs 4 merged 4 won 0 n 48 of 366
+FUND523 124 ammo 9 bank 10 floor 12 need 20 spare 0 sust 0 flip 2 of 60
+MAG522 124 ph 4 on 0 near 0 fund 0 fuse 0 ttl 1 ti 22 ammo 9 bar 6 want 18 floor 12 bind 0 nbind 0 nnear 0
+CREW523 124 site budget slotfs 4 merged 4 won 0 n 48 of 367
+CREW523 124 site spawn slotfs 4 merged 4 won 0 n 48 of 368
+PH523 124 id 4 body 1 arc 2 orth 0 own 1 merged 1 arcclosed 0 ph 4
+CREW523 125 site mag slotfs 4 merged 4 won 0 n 48 of 369
+FUND523 125 ammo 9 bank 0 floor 12 need 20 spare 0 sust 0 flip 2 of 61
+MAG522 125 ph 4 on 0 near 0 fund 0 fuse 0 ttl 1 ti 12 ammo 9 bar 6 want 18 floor 12 bind 0 nbind 0 nnear 0
+CREW523 125 site budget slotfs 4 merged 4 won 0 n 48 of 370
+CREW523 125 site spawn slotfs 4 merged 4 won 0 n 48 of 371
+PH523 125 id 4 body 1 arc 2 orth 2 own 0 merged 1 arcclosed 0 ph 5
+CREW523 126 site mag slotfs 5 merged 4 won 1 n 49 of 372
+FUND523 126 ammo 9 bank 0 floor 12 need 20 spare 0 sust 0 flip 2 of 62
+MAG522 126 ph 4 on 0 near 0 fund 0 fuse 0 ttl 1 ti 12 ammo 9 bar 6 want 18 floor 12 bind 0 nbind 0 nnear 0
+CREW523 126 site budget slotfs 5 merged 4 won 1 n 50 of 373
+CREW523 126 site spawn slotfs 5 merged 4 won 1 n 51 of 374
+PH523 126 id 4 body 1 arc 2 orth 0 own 1 merged 1 arcclosed 0 ph 4
+CREW523 127 site mag slotfs 4 merged 4 won 0 n 51 of 375
+FUND523 127 ammo 9 bank 0 floor 12 need 20 spare 0 sust 0 flip 2 of 63
+MAG522 127 ph 4 on 0 near 0 fund 0 fuse 0 ttl 1 ti 12 ammo 9 bar 6 want 18 floor 12 bind 0 nbind 0 nnear 0
+CREW523 127 site budget slotfs 4 merged 4 won 0 n 51 of 376
+CREW523 127 site spawn slotfs 4 merged 4 won 0 n 51 of 377
+PH523 127 id 4 body 1 arc 2 orth 2 own 0 merged 1 arcclosed 0 ph 5
+CREW523 128 site mag slotfs 5 merged 5 won 0 n 51 of 378
+FUND523 128 ammo 9 bank 10 floor 12 need 20 spare 0 sust 0 flip 2 of 64
+MAG522 128 ph 5 on 0 near 0 fund 0 fuse 0 ttl 1 ti 22 ammo 9 bar 6 want 18 floor 12 bind 0 nbind 0 nnear 0
+CREW523 128 site budget slotfs 5 merged 5 won 0 n 51 of 379
+CREW523 128 site spawn slotfs 5 merged 5 won 0 n 51 of 380
+PH523 128 id 4 body 1 arc 2 orth 0 own 1 merged 1 arcclosed 0 ph 4
+CREW523 129 site mag slotfs 4 merged 4 won 0 n 51 of 381
+FUND523 129 ammo 9 bank 0 floor 12 need 20 spare 0 sust 0 flip 2 of 65
+MAG522 129 ph 4 on 0 near 0 fund 0 fuse 0 ttl 1 ti 12 ammo 9 bar 6 want 18 floor 12 bind 0 nbind 0 nnear 0
+CREW523 129 site budget slotfs 4 merged 4 won 0 n 51 of 382
+CREW523 129 site spawn slotfs 4 merged 4 won 0 n 51 of 383
+PH523 129 id 4 body 1 arc 2 orth 2 own 0 merged 1 arcclosed 0 ph 5
+CREW523 130 site mag slotfs 5 merged 5 won 0 n 51 of 384
+FUND523 130 ammo 9 bank 0 floor 12 need 20 spare 0 sust 0 flip 2 of 66
+MAG522 130 ph 5 on 0 near 0 fund 0 fuse 0 ttl 1 ti 12 ammo 9 bar 6 want 18 floor 12 bind 0 nbind 0 nnear 0
+CREW523 130 site budget slotfs 5 merged 5 won 0 n 51 of 385
+CREW523 130 site spawn slotfs 5 merged 5 won 0 n 51 of 386
+PH523 130 id 4 body 1 arc 2 orth 0 own 1 merged 1 arcclosed 0 ph 4
+CREW523 131 site mag slotfs 4 merged 4 won 0 n 51 of 387
+FUND523 131 ammo 9 bank 0 floor 12 need 20 spare 0 sust 0 flip 2 of 67
+MAG522 131 ph 4 on 0 near 0 fund 0 fuse 0 ttl 1 ti 12 ammo 9 bar 6 want 18 floor 12 bind 0 nbind 0 nnear 0
+CREW523 131 site budget slotfs 4 merged 4 won 0 n 51 of 388
+CREW523 131 site spawn slotfs 4 merged 4 won 0 n 51 of 389
+PH523 131 id 4 body 1 arc 2 orth 2 own 0 merged 1 arcclosed 0 ph 5
+CREW523 132 site mag slotfs 5 merged 5 won 0 n 51 of 390
+FUND523 132 ammo 9 bank 10 floor 12 need 20 spare 0 sust 0 flip 2 of 68
+MAG522 132 ph 5 on 0 near 0 fund 0 fuse 0 ttl 1 ti 22 ammo 9 bar 6 want 18 floor 12 bind 0 nbind 0 nnear 0
+CREW523 132 site budget slotfs 5 merged 5 won 0 n 51 of 391
+CREW523 132 site spawn slotfs 5 merged 5 won 0 n 51 of 392
+PH523 132 id 4 body 1 arc 2 orth 0 own 1 merged 1 arcclosed 0 ph 4
+CREW523 133 site mag slotfs 4 merged 4 won 0 n 51 of 393
+FUND523 133 ammo 9 bank 2 floor 10 need 20 spare 0 sust 0 flip 2 of 69
+MAG522 133 ph 4 on 0 near 0 fund 0 fuse 0 ttl 1 ti 12 ammo 9 bar 5 want 16 floor 10 bind 0 nbind 0 nnear 0
+CREW523 133 site budget slotfs 4 merged 4 won 0 n 51 of 394
+CREW523 133 site spawn slotfs 4 merged 4 won 0 n 51 of 395
+CREW523 134 site mag slotfs 4 merged 4 won 0 n 51 of 396
+FUND523 134 ammo 11 bank 0 floor 10 need 20 spare 1 sust 0 flip 3 of 70
+MAG522 134 ph 4 on 0 near 0 fund 1 fuse 0 ttl 1 ti 10 ammo 11 bar 5 want 16 floor 10 bind 0 nbind 0 nnear 0
+CREW523 134 site budget slotfs 4 merged 4 won 0 n 51 of 397
+CREW523 134 site spawn slotfs 4 merged 4 won 0 n 51 of 398
+CREW523 135 site mag slotfs 4 merged 4 won 0 n 51 of 399
+FUND523 135 ammo 1 bank 0 floor 10 need 20 spare 0 sust 0 flip 3 of 71
+MAG522 135 ph 4 on 0 near 0 fund 0 fuse 0 ttl 1 ti 10 ammo 1 bar 5 want 16 floor 10 bind 0 nbind 0 nnear 0
+CREW523 135 site budget slotfs 4 merged 4 won 0 n 51 of 400
+CREW523 135 site spawn slotfs 4 merged 4 won 0 n 51 of 401
+CREW523 136 site mag slotfs 4 merged 4 won 0 n 51 of 402
+FUND523 136 ammo 1 bank 10 floor 10 need 20 spare 0 sust 0 flip 3 of 72
+MAG522 136 ph 4 on 0 near 0 fund 0 fuse 0 ttl 1 ti 20 ammo 1 bar 5 want 16 floor 10 bind 0 nbind 0 nnear 0
+CREW523 136 site budget slotfs 4 merged 4 won 0 n 51 of 403
+CREW523 136 site spawn slotfs 4 merged 4 won 0 n 51 of 404
+CREW523 137 site mag slotfs 4 merged 4 won 0 n 51 of 405
+FUND523 137 ammo 1 bank 0 floor 10 need 20 spare 0 sust 0 flip 3 of 73
+MAG522 137 ph 4 on 0 near 0 fund 0 fuse 0 ttl 1 ti 10 ammo 1 bar 5 want 16 floor 10 bind 0 nbind 0 nnear 0
+CREW523 137 site budget slotfs 4 merged 4 won 0 n 51 of 406
+CREW523 137 site spawn slotfs 4 merged 4 won 0 n 51 of 407
+CREW523 138 site mag slotfs 4 merged 4 won 0 n 51 of 408
+FUND523 138 ammo 1 bank 0 floor 10 need 20 spare 0 sust 0 flip 3 of 74
+MAG522 138 ph 4 on 0 near 0 fund 0 fuse 0 ttl 1 ti 10 ammo 1 bar 5 want 16 floor 10 bind 0 nbind 0 nnear 0
+CREW523 138 site budget slotfs 4 merged 4 won 0 n 51 of 409
+CREW523 138 site spawn slotfs 4 merged 4 won 0 n 51 of 410
+CREW523 139 site mag slotfs 4 merged 4 won 0 n 51 of 411
+FUND523 139 ammo 1 bank 0 floor 10 need 20 spare 0 sust 0 flip 3 of 75
+MAG522 139 ph 4 on 0 near 0 fund 0 fuse 0 ttl 1 ti 10 ammo 1 bar 5 want 16 floor 10 bind 0 nbind 0 nnear 0
+CREW523 139 site budget slotfs 4 merged 4 won 0 n 51 of 412
+CREW523 139 site spawn slotfs 4 merged 4 won 0 n 51 of 413
+CREW523 140 site mag slotfs 4 merged 4 won 0 n 51 of 414
+FUND523 140 ammo 1 bank 10 floor 10 need 20 spare 0 sust 0 flip 3 of 76
+MAG522 140 ph 4 on 0 near 0 fund 0 fuse 0 ttl 1 ti 20 ammo 1 bar 5 want 16 floor 10 bind 0 nbind 0 nnear 0
+CREW523 140 site budget slotfs 4 merged 4 won 0 n 51 of 415
+CREW523 140 site spawn slotfs 4 merged 4 won 0 n 51 of 416
+CREW523 141 site mag slotfs 4 merged 4 won 0 n 51 of 417
+FUND523 141 ammo 1 bank 0 floor 10 need 20 spare 0 sust 0 flip 3 of 77
+MAG522 141 ph 4 on 0 near 0 fund 0 fuse 0 ttl 1 ti 10 ammo 1 bar 5 want 16 floor 10 bind 0 nbind 0 nnear 0
+CREW523 141 site budget slotfs 4 merged 4 won 0 n 51 of 418
+CREW523 141 site spawn slotfs 4 merged 4 won 0 n 51 of 419
+CREW523 142 site mag slotfs 4 merged 4 won 0 n 51 of 420
+FUND523 142 ammo 1 bank 0 floor 10 need 20 spare 0 sust 0 flip 3 of 78
+MAG522 142 ph 4 on 0 near 0 fund 0 fuse 0 ttl 1 ti 10 ammo 1 bar 5 want 16 floor 10 bind 0 nbind 0 nnear 0
+CREW523 142 site budget slotfs 4 merged 4 won 0 n 51 of 421
+CREW523 142 site spawn slotfs 4 merged 4 won 0 n 51 of 422
+CREW523 143 site mag slotfs 4 merged 4 won 0 n 51 of 423
+FUND523 143 ammo 1 bank 0 floor 10 need 20 spare 0 sust 0 flip 3 of 79
+MAG522 143 ph 4 on 0 near 0 fund 0 fuse 0 ttl 1 ti 10 ammo 1 bar 5 want 16 floor 10 bind 0 nbind 0 nnear 0
+CREW523 143 site budget slotfs 4 merged 4 won 0 n 51 of 424
+CREW523 143 site spawn slotfs 4 merged 4 won 0 n 51 of 425
+CREW523 144 site mag slotfs 4 merged 4 won 0 n 51 of 426
+FUND523 144 ammo 1 bank 10 floor 10 need 20 spare 0 sust 0 flip 3 of 80
+MAG522 144 ph 4 on 0 near 0 fund 0 fuse 0 ttl 1 ti 20 ammo 1 bar 5 want 16 floor 10 bind 0 nbind 0 nnear 0
+CREW523 144 site budget slotfs 4 merged 4 won 0 n 51 of 427
+CREW523 144 site spawn slotfs 4 merged 4 won 0 n 51 of 428
+CREW523 145 site mag slotfs 4 merged 4 won 0 n 51 of 429
+FUND523 145 ammo 1 bank 0 floor 10 need 20 spare 0 sust 0 flip 3 of 81
+MAG522 145 ph 4 on 0 near 0 fund 0 fuse 0 ttl 1 ti 10 ammo 1 bar 5 want 16 floor 10 bind 0 nbind 0 nnear 0
+CREW523 145 site budget slotfs 4 merged 4 won 0 n 51 of 430
+CREW523 145 site spawn slotfs 4 merged 4 won 0 n 51 of 431
+CREW523 146 site mag slotfs 4 merged 4 won 0 n 51 of 432
+FUND523 146 ammo 1 bank 0 floor 10 need 20 spare 0 sust 0 flip 3 of 82
+MAG522 146 ph 4 on 0 near 0 fund 0 fuse 0 ttl 1 ti 10 ammo 1 bar 5 want 16 floor 10 bind 0 nbind 0 nnear 0
+CREW523 146 site budget slotfs 4 merged 4 won 0 n 51 of 433
+CREW523 146 site spawn slotfs 4 merged 4 won 0 n 51 of 434
+CREW523 147 site mag slotfs 4 merged 4 won 0 n 51 of 435
+FUND523 147 ammo 1 bank 0 floor 10 need 20 spare 0 sust 0 flip 3 of 83
+MAG522 147 ph 4 on 0 near 0 fund 0 fuse 0 ttl 1 ti 10 ammo 1 bar 5 want 16 floor 10 bind 0 nbind 0 nnear 0
+CREW523 147 site budget slotfs 4 merged 4 won 0 n 51 of 436
+CREW523 147 site spawn slotfs 4 merged 4 won 0 n 51 of 437
+CREW523 148 site mag slotfs 4 merged 4 won 0 n 51 of 438
+FUND523 148 ammo 1 bank 10 floor 10 need 20 spare 0 sust 0 flip 3 of 84
+MAG522 148 ph 4 on 0 near 0 fund 0 fuse 0 ttl 1 ti 20 ammo 1 bar 5 want 16 floor 10 bind 0 nbind 0 nnear 0
+CREW523 148 site budget slotfs 4 merged 4 won 0 n 51 of 439
+CREW523 148 site spawn slotfs 4 merged 4 won 0 n 51 of 440
+CREW523 149 site mag slotfs 4 merged 4 won 0 n 51 of 441
+FUND523 149 ammo 1 bank 0 floor 10 need 20 spare 0 sust 0 flip 3 of 85
+MAG522 149 ph 4 on 0 near 0 fund 0 fuse 0 ttl 1 ti 10 ammo 1 bar 5 want 16 floor 10 bind 0 nbind 0 nnear 0
+CREW523 149 site budget slotfs 4 merged 4 won 0 n 51 of 442
+CREW523 149 site spawn slotfs 4 merged 4 won 0 n 51 of 443
+CREW523 150 site mag slotfs 4 merged 4 won 0 n 51 of 444
+FUND523 150 ammo 1 bank 0 floor 10 need 20 spare 0 sust 0 flip 3 of 86
+MAG522 150 ph 4 on 0 near 0 fund 0 fuse 0 ttl 1 ti 10 ammo 1 bar 5 want 16 floor 10 bind 0 nbind 0 nnear 0
+CREW523 150 site budget slotfs 4 merged 4 won 0 n 51 of 445
+CREW523 150 site spawn slotfs 4 merged 4 won 0 n 51 of 446
+CREW523 151 site mag slotfs 4 merged 4 won 0 n 51 of 447
+FUND523 151 ammo 1 bank 0 floor 10 need 20 spare 0 sust 0 flip 3 of 87
+MAG522 151 ph 4 on 0 near 0 fund 0 fuse 0 ttl 1 ti 10 ammo 1 bar 5 want 16 floor 10 bind 0 nbind 0 nnear 0
+CREW523 151 site budget slotfs 4 merged 4 won 0 n 51 of 448
+CREW523 151 site spawn slotfs 4 merged 4 won 0 n 51 of 449
+CREW523 152 site mag slotfs 4 merged 4 won 0 n 51 of 450
+FUND523 152 ammo 1 bank 10 floor 10 need 20 spare 0 sust 0 flip 3 of 88
+MAG522 152 ph 4 on 0 near 0 fund 0 fuse 0 ttl 1 ti 20 ammo 1 bar 5 want 16 floor 10 bind 0 nbind 0 nnear 0
+CREW523 152 site budget slotfs 4 merged 4 won 0 n 51 of 451
+CREW523 152 site spawn slotfs 4 merged 4 won 0 n 51 of 452
+CREW523 153 site mag slotfs 4 merged 4 won 0 n 51 of 453
+FUND523 153 ammo 1 bank 0 floor 10 need 20 spare 0 sust 0 flip 3 of 89
+MAG522 153 ph 4 on 0 near 0 fund 0 fuse 0 ttl 1 ti 10 ammo 1 bar 5 want 16 floor 10 bind 0 nbind 0 nnear 0
+CREW523 153 site budget slotfs 4 merged 4 won 0 n 51 of 454
+CREW523 153 site spawn slotfs 4 merged 4 won 0 n 51 of 455
+CREW523 154 site mag slotfs 4 merged 4 won 0 n 51 of 456
+FUND523 154 ammo 1 bank 0 floor 10 need 20 spare 0 sust 0 flip 3 of 90
+MAG522 154 ph 4 on 0 near 0 fund 0 fuse 0 ttl 1 ti 10 ammo 1 bar 5 want 16 floor 10 bind 0 nbind 0 nnear 0
+CREW523 154 site budget slotfs 4 merged 4 won 0 n 51 of 457
+CREW523 154 site spawn slotfs 4 merged 4 won 0 n 51 of 458
+CREW523 155 site mag slotfs 4 merged 4 won 0 n 51 of 459
+FUND523 155 ammo 1 bank 0 floor 10 need 20 spare 0 sust 0 flip 3 of 91
+MAG522 155 ph 4 on 0 near 0 fund 0 fuse 0 ttl 1 ti 10 ammo 1 bar 5 want 16 floor 10 bind 0 nbind 0 nnear 0
+CREW523 155 site budget slotfs 4 merged 4 won 0 n 51 of 460
+CREW523 155 site spawn slotfs 4 merged 4 won 0 n 51 of 461
+CREW523 156 site mag slotfs 4 merged 4 won 0 n 51 of 462
+FUND523 156 ammo 1 bank 10 floor 10 need 20 spare 0 sust 0 flip 3 of 92
+MAG522 156 ph 4 on 0 near 0 fund 0 fuse 0 ttl 1 ti 20 ammo 1 bar 5 want 16 floor 10 bind 0 nbind 0 nnear 0
+CREW523 156 site budget slotfs 4 merged 4 won 0 n 51 of 463
+CREW523 156 site spawn slotfs 4 merged 4 won 0 n 51 of 464
+CREW523 157 site mag slotfs 4 merged 4 won 0 n 51 of 465
+FUND523 157 ammo 1 bank 0 floor 10 need 20 spare 0 sust 0 flip 3 of 93
+MAG522 157 ph 4 on 0 near 0 fund 0 fuse 0 ttl 1 ti 10 ammo 1 bar 5 want 16 floor 10 bind 0 nbind 0 nnear 0
+CREW523 157 site budget slotfs 4 merged 4 won 0 n 51 of 466
+CREW523 157 site spawn slotfs 4 merged 4 won 0 n 51 of 467
+CREW523 158 site mag slotfs 4 merged 4 won 0 n 51 of 468
+FUND523 158 ammo 1 bank 0 floor 10 need 20 spare 0 sust 0 flip 3 of 94
+MAG522 158 ph 4 on 0 near 0 fund 0 fuse 0 ttl 1 ti 10 ammo 1 bar 5 want 16 floor 10 bind 0 nbind 0 nnear 0
+CREW523 158 site budget slotfs 4 merged 4 won 0 n 51 of 469
+CREW523 158 site spawn slotfs 4 merged 4 won 0 n 51 of 470
+CREW523 159 site mag slotfs 4 merged 4 won 0 n 51 of 471
+FUND523 159 ammo 1 bank 0 floor 10 need 20 spare 0 sust 0 flip 3 of 95
+MAG522 159 ph 4 on 0 near 0 fund 0 fuse 0 ttl 1 ti 10 ammo 1 bar 5 want 16 floor 10 bind 0 nbind 0 nnear 0
+CREW523 159 site budget slotfs 4 merged 4 won 0 n 51 of 472
+CREW523 159 site spawn slotfs 4 merged 4 won 0 n 51 of 473
+CREW523 160 site mag slotfs 4 merged 4 won 0 n 51 of 474
+FUND523 160 ammo 1 bank 10 floor 10 need 20 spare 0 sust 0 flip 3 of 96
+MAG522 160 ph 4 on 0 near 0 fund 0 fuse 0 ttl 1 ti 20 ammo 1 bar 5 want 16 floor 10 bind 0 nbind 0 nnear 0
+CREW523 160 site budget slotfs 4 merged 4 won 0 n 51 of 475
+CREW523 160 site spawn slotfs 4 merged 4 won 0 n 51 of 476
+CREW523 161 site mag slotfs 4 merged 4 won 0 n 51 of 477
+FUND523 161 ammo 1 bank 0 floor 10 need 20 spare 0 sust 0 flip 3 of 97
+MAG522 161 ph 4 on 0 near 0 fund 0 fuse 0 ttl 1 ti 10 ammo 1 bar 5 want 16 floor 10 bind 0 nbind 0 nnear 0
+CREW523 161 site budget slotfs 4 merged 4 won 0 n 51 of 478
+CREW523 161 site spawn slotfs 4 merged 4 won 0 n 51 of 479
+CREW523 162 site mag slotfs 4 merged 4 won 0 n 51 of 480
+FUND523 162 ammo 1 bank 0 floor 10 need 20 spare 0 sust 0 flip 3 of 98
+MAG522 162 ph 4 on 0 near 0 fund 0 fuse 0 ttl 1 ti 10 ammo 1 bar 5 want 16 floor 10 bind 0 nbind 0 nnear 0
+CREW523 162 site budget slotfs 4 merged 4 won 0 n 51 of 481
+CREW523 162 site spawn slotfs 4 merged 4 won 0 n 51 of 482
+CREW523 163 site mag slotfs 4 merged 4 won 0 n 51 of 483
+FUND523 163 ammo 1 bank 0 floor 10 need 20 spare 0 sust 0 flip 3 of 99
+MAG522 163 ph 4 on 0 near 0 fund 0 fuse 0 ttl 1 ti 10 ammo 1 bar 5 want 16 floor 10 bind 0 nbind 0 nnear 0
+CREW523 163 site budget slotfs 4 merged 4 won 0 n 51 of 484
+CREW523 163 site spawn slotfs 4 merged 4 won 0 n 51 of 485
+CREW523 164 site mag slotfs 4 merged 4 won 0 n 51 of 486
+FUND523 164 ammo 1 bank 10 floor 10 need 20 spare 0 sust 0 flip 3 of 100
+MAG522 164 ph 4 on 0 near 0 fund 0 fuse 0 ttl 1 ti 20 ammo 1 bar 5 want 16 floor 10 bind 0 nbind 0 nnear 0
+CREW523 164 site budget slotfs 4 merged 4 won 0 n 51 of 487
+CREW523 164 site spawn slotfs 4 merged 4 won 0 n 51 of 488
+CREW523 165 site mag slotfs 4 merged 4 won 0 n 51 of 489
+FUND523 165 ammo 1 bank 0 floor 10 need 20 spare 0 sust 0 flip 3 of 101
+MAG522 165 ph 4 on 0 near 0 fund 0 fuse 0 ttl 1 ti 10 ammo 1 bar 5 want 16 floor 10 bind 0 nbind 0 nnear 0
+CREW523 165 site budget slotfs 4 merged 4 won 0 n 51 of 490
+CREW523 165 site spawn slotfs 4 merged 4 won 0 n 51 of 491
+CREW523 166 site mag slotfs 4 merged 4 won 0 n 51 of 492
+FUND523 166 ammo 1 bank 0 floor 10 need 20 spare 0 sust 0 flip 3 of 102
+MAG522 166 ph 4 on 0 near 0 fund 0 fuse 0 ttl 1 ti 10 ammo 1 bar 5 want 16 floor 10 bind 0 nbind 0 nnear 0
+CREW523 166 site budget slotfs 4 merged 4 won 0 n 51 of 493
+CREW523 166 site spawn slotfs 4 merged 4 won 0 n 51 of 494
+CREW523 167 site mag slotfs 4 merged 4 won 0 n 51 of 495
+FUND523 167 ammo 1 bank 0 floor 10 need 20 spare 0 sust 0 flip 3 of 103
+MAG522 167 ph 4 on 0 near 0 fund 0 fuse 0 ttl 1 ti 10 ammo 1 bar 5 want 16 floor 10 bind 0 nbind 0 nnear 0
+CREW523 167 site budget slotfs 4 merged 4 won 0 n 51 of 496
+CREW523 167 site spawn slotfs 4 merged 4 won 0 n 51 of 497
+CREW523 168 site mag slotfs 4 merged 4 won 0 n 51 of 498
+FUND523 168 ammo 1 bank 10 floor 10 need 20 spare 0 sust 0 flip 3 of 104
+MAG522 168 ph 4 on 0 near 0 fund 0 fuse 0 ttl 1 ti 20 ammo 1 bar 5 want 16 floor 10 bind 0 nbind 0 nnear 0
+CREW523 168 site budget slotfs 4 merged 4 won 0 n 51 of 499
+CREW523 168 site spawn slotfs 4 merged 4 won 0 n 51 of 500
+CREW523 169 site mag slotfs 4 merged 4 won 0 n 51 of 501
+FUND523 169 ammo 11 bank 0 floor 10 need 20 spare 1 sust 0 flip 4 of 105
+MAG522 169 ph 4 on 0 near 0 fund 1 fuse 0 ttl 1 ti 10 ammo 11 bar 5 want 16 floor 10 bind 0 nbind 0 nnear 0
+CREW523 169 site budget slotfs 4 merged 4 won 0 n 51 of 502
+CREW523 169 site spawn slotfs 4 merged 4 won 0 n 51 of 503
+CREW523 170 site mag slotfs 4 merged 4 won 0 n 51 of 504
+FUND523 170 ammo 11 bank 0 floor 10 need 20 spare 1 sust 0 flip 5 of 106
+MAG522 170 ph 4 on 0 near 0 fund 1 fuse 0 ttl 1 ti 10 ammo 11 bar 5 want 16 floor 10 bind 0 nbind 0 nnear 0
+CREW523 170 site budget slotfs 4 merged 4 won 0 n 51 of 505
+CREW523 170 site spawn slotfs 4 merged 4 won 0 n 51 of 506
+CREW523 171 site mag slotfs 4 merged 4 won 0 n 51 of 507
+FUND523 171 ammo 11 bank 0 floor 10 need 20 spare 1 sust 0 flip 6 of 107
+MAG522 171 ph 4 on 0 near 0 fund 1 fuse 0 ttl 1 ti 10 ammo 11 bar 5 want 16 floor 10 bind 0 nbind 0 nnear 0
+CREW523 171 site budget slotfs 4 merged 4 won 0 n 51 of 508
+CREW523 171 site spawn slotfs 4 merged 4 won 0 n 51 of 509
+CREW523 172 site mag slotfs 4 merged 4 won 0 n 51 of 510
+FUND523 172 ammo 11 bank 10 floor 10 need 20 spare 1 sust 1 flip 6 of 108
+MAG522 172 ph 4 on 0 near 0 fund 1 fuse 1 ttl 1 ti 20 ammo 11 bar 5 want 16 floor 10 bind 0 nbind 0 nnear 0
+CREW523 172 site budget slotfs 4 merged 4 won 0 n 51 of 511
+CREW523 172 site spawn slotfs 4 merged 4 won 0 n 51 of 512
+CREW523 173 site mag slotfs 4 merged 4 won 0 n 51 of 513
+FUND523 173 ammo 21 bank 0 floor 10 need 20 spare 1 sust 1 flip 6 of 109
+MAG522 173 ph 4 on 0 near 0 fund 1 fuse 1 ttl 1 ti 10 ammo 21 bar 5 want 16 floor 10 bind 0 nbind 0 nnear 0
+CREW523 173 site budget slotfs 4 merged 4 won 0 n 51 of 514
+CREW523 173 site spawn slotfs 4 merged 4 won 0 n 51 of 515
+CREW523 174 site mag slotfs 4 merged 4 won 0 n 51 of 516
+FUND523 174 ammo 21 bank 0 floor 10 need 20 spare 1 sust 1 flip 6 of 110
+MAG522 174 ph 4 on 0 near 0 fund 1 fuse 1 ttl 1 ti 10 ammo 21 bar 5 want 16 floor 10 bind 0 nbind 0 nnear 0
+CREW523 174 site budget slotfs 4 merged 4 won 0 n 51 of 517
+CREW523 174 site spawn slotfs 4 merged 4 won 0 n 51 of 518
+CREW523 175 site mag slotfs 4 merged 4 won 0 n 51 of 519
+FUND523 175 ammo 21 bank 0 floor 10 need 20 spare 1 sust 1 flip 6 of 111
+MAG522 175 ph 4 on 0 near 0 fund 1 fuse 1 ttl 1 ti 10 ammo 21 bar 5 want 16 floor 10 bind 0 nbind 0 nnear 0
+CREW523 175 site budget slotfs 4 merged 4 won 0 n 51 of 520
+CREW523 175 site spawn slotfs 4 merged 4 won 0 n 51 of 521
+CREW523 176 site mag slotfs 4 merged 4 won 0 n 51 of 522
+FUND523 176 ammo 21 bank 10 floor 10 need 20 spare 1 sust 1 flip 6 of 112
+MAG522 176 ph 4 on 0 near 0 fund 1 fuse 1 ttl 1 ti 20 ammo 21 bar 5 want 16 floor 10 bind 0 nbind 0 nnear 0
+CREW523 176 site budget slotfs 4 merged 4 won 0 n 51 of 523
+CREW523 176 site spawn slotfs 4 merged 4 won 0 n 51 of 524
+CREW523 177 site mag slotfs 4 merged 4 won 0 n 51 of 525
+FUND523 177 ammo 31 bank 0 floor 10 need 20 spare 1 sust 1 flip 6 of 113
+MAG522 177 ph 4 on 0 near 0 fund 1 fuse 1 ttl 1 ti 10 ammo 31 bar 5 want 16 floor 10 bind 0 nbind 0 nnear 0
+CREW523 177 site budget slotfs 4 merged 4 won 0 n 51 of 526
+CREW523 177 site spawn slotfs 4 merged 4 won 0 n 51 of 527
+CREW523 178 site mag slotfs 4 merged 4 won 0 n 51 of 528
+FUND523 178 ammo 31 bank 0 floor 10 need 20 spare 1 sust 1 flip 6 of 114
+MAG522 178 ph 4 on 0 near 0 fund 1 fuse 1 ttl 1 ti 10 ammo 31 bar 5 want 16 floor 10 bind 0 nbind 0 nnear 0
+CREW523 178 site budget slotfs 4 merged 4 won 0 n 51 of 529
+CREW523 178 site spawn slotfs 4 merged 4 won 0 n 51 of 530
+CREW523 179 site mag slotfs 4 merged 4 won 0 n 51 of 531
+FUND523 179 ammo 31 bank 0 floor 10 need 20 spare 1 sust 1 flip 6 of 115
+MAG522 179 ph 4 on 0 near 0 fund 1 fuse 1 ttl 1 ti 10 ammo 31 bar 5 want 16 floor 10 bind 0 nbind 0 nnear 0
+CREW523 179 site budget slotfs 4 merged 4 won 0 n 51 of 532
+CREW523 179 site spawn slotfs 4 merged 4 won 0 n 51 of 533
+CREW523 180 site mag slotfs 4 merged 4 won 0 n 51 of 534
+FUND523 180 ammo 31 bank 10 floor 10 need 20 spare 1 sust 1 flip 6 of 116
+MAG522 180 ph 4 on 0 near 0 fund 1 fuse 1 ttl 1 ti 20 ammo 31 bar 5 want 16 floor 10 bind 0 nbind 0 nnear 0
+CREW523 180 site budget slotfs 4 merged 4 won 0 n 51 of 535
+CREW523 180 site spawn slotfs 4 merged 4 won 0 n 51 of 536
+CREW523 181 site mag slotfs 4 merged 4 won 0 n 51 of 537
+FUND523 181 ammo 41 bank 0 floor 10 need 20 spare 1 sust 1 flip 6 of 117
+MAG522 181 ph 4 on 0 near 0 fund 1 fuse 1 ttl 1 ti 10 ammo 41 bar 5 want 16 floor 10 bind 0 nbind 0 nnear 0
+CREW523 181 site budget slotfs 4 merged 4 won 0 n 51 of 538
+CREW523 181 site spawn slotfs 4 merged 4 won 0 n 51 of 539
+CREW523 182 site mag slotfs 4 merged 4 won 0 n 51 of 540
+FUND523 182 ammo 41 bank 0 floor 10 need 20 spare 1 sust 1 flip 6 of 118
+MAG522 182 ph 4 on 0 near 0 fund 1 fuse 1 ttl 1 ti 10 ammo 41 bar 5 want 16 floor 10 bind 0 nbind 0 nnear 0
+CREW523 182 site budget slotfs 4 merged 4 won 0 n 51 of 541
+CREW523 182 site spawn slotfs 4 merged 4 won 0 n 51 of 542
+CREW523 183 site mag slotfs 4 merged 4 won 0 n 51 of 543
+FUND523 183 ammo 41 bank 0 floor 10 need 20 spare 1 sust 1 flip 6 of 119
+MAG522 183 ph 4 on 0 near 0 fund 1 fuse 1 ttl 1 ti 10 ammo 41 bar 5 want 16 floor 10 bind 0 nbind 0 nnear 0
+CREW523 183 site budget slotfs 4 merged 4 won 0 n 51 of 544
+CREW523 183 site spawn slotfs 4 merged 4 won 0 n 51 of 545
+CREW523 184 site mag slotfs 4 merged 4 won 0 n 51 of 546
+FUND523 184 ammo 41 bank 10 floor 10 need 20 spare 1 sust 1 flip 6 of 120
+MAG522 184 ph 4 on 0 near 0 fund 1 fuse 1 ttl 1 ti 20 ammo 41 bar 5 want 16 floor 10 bind 0 nbind 0 nnear 0
+CREW523 184 site budget slotfs 4 merged 4 won 0 n 51 of 547
+CREW523 184 site spawn slotfs 4 merged 4 won 0 n 51 of 548
+CREW523 185 site mag slotfs 4 merged 4 won 0 n 51 of 549
+FUND523 185 ammo 51 bank 0 floor 10 need 20 spare 1 sust 1 flip 6 of 121
+MAG522 185 ph 4 on 0 near 0 fund 1 fuse 1 ttl 1 ti 10 ammo 51 bar 5 want 16 floor 10 bind 0 nbind 0 nnear 0
+CREW523 185 site budget slotfs 4 merged 4 won 0 n 51 of 550
+CREW523 185 site spawn slotfs 4 merged 4 won 0 n 51 of 551
+CREW523 186 site mag slotfs 4 merged 4 won 0 n 51 of 552
+FUND523 186 ammo 51 bank 0 floor 10 need 20 spare 1 sust 1 flip 6 of 122
+MAG522 186 ph 4 on 0 near 0 fund 1 fuse 1 ttl 1 ti 10 ammo 51 bar 5 want 16 floor 10 bind 0 nbind 0 nnear 0
+CREW523 186 site budget slotfs 4 merged 4 won 0 n 51 of 553
+CREW523 186 site spawn slotfs 4 merged 4 won 0 n 51 of 554
+CREW523 187 site mag slotfs 4 merged 4 won 0 n 51 of 555
+FUND523 187 ammo 51 bank 0 floor 10 need 20 spare 1 sust 1 flip 6 of 123
+MAG522 187 ph 4 on 0 near 0 fund 1 fuse 1 ttl 1 ti 10 ammo 51 bar 5 want 16 floor 10 bind 0 nbind 0 nnear 0
+CREW523 187 site budget slotfs 4 merged 4 won 0 n 51 of 556
+CREW523 187 site spawn slotfs 4 merged 4 won 0 n 51 of 557
+CREW523 188 site mag slotfs 4 merged 4 won 0 n 51 of 558
+FUND523 188 ammo 51 bank 10 floor 10 need 20 spare 1 sust 1 flip 6 of 124
+MAG522 188 ph 4 on 0 near 0 fund 1 fuse 1 ttl 1 ti 20 ammo 51 bar 5 want 16 floor 10 bind 0 nbind 0 nnear 0
+CREW523 188 site budget slotfs 4 merged 4 won 0 n 51 of 559
+CREW523 188 site spawn slotfs 4 merged 4 won 0 n 51 of 560
+CREW523 189 site mag slotfs 4 merged 4 won 0 n 51 of 561
+FUND523 189 ammo 61 bank 0 floor 10 need 20 spare 1 sust 1 flip 6 of 125
+MAG522 189 ph 4 on 0 near 0 fund 1 fuse 1 ttl 1 ti 10 ammo 61 bar 5 want 16 floor 10 bind 0 nbind 0 nnear 0
+CREW523 189 site budget slotfs 4 merged 4 won 0 n 51 of 562
+CREW523 189 site spawn slotfs 4 merged 4 won 0 n 51 of 563
+CREW523 190 site mag slotfs 4 merged 4 won 0 n 51 of 564
+FUND523 190 ammo 61 bank 0 floor 10 need 20 spare 1 sust 1 flip 6 of 126
+MAG522 190 ph 4 on 0 near 0 fund 1 fuse 1 ttl 1 ti 10 ammo 61 bar 5 want 16 floor 10 bind 0 nbind 0 nnear 0
+CREW523 190 site budget slotfs 4 merged 4 won 0 n 51 of 565
+CREW523 190 site spawn slotfs 4 merged 4 won 0 n 51 of 566
+CREW523 191 site mag slotfs 4 merged 4 won 0 n 51 of 567
+FUND523 191 ammo 61 bank 0 floor 10 need 20 spare 1 sust 1 flip 6 of 127
+MAG522 191 ph 4 on 0 near 0 fund 1 fuse 1 ttl 1 ti 10 ammo 61 bar 5 want 16 floor 10 bind 0 nbind 0 nnear 0
+CREW523 191 site budget slotfs 4 merged 4 won 0 n 51 of 568
+CREW523 191 site spawn slotfs 4 merged 4 won 0 n 51 of 569
+CREW523 192 site mag slotfs 4 merged 4 won 0 n 51 of 570
+FUND523 192 ammo 61 bank 10 floor 10 need 20 spare 1 sust 1 flip 6 of 128
+MAG522 192 ph 4 on 0 near 0 fund 1 fuse 1 ttl 1 ti 20 ammo 61 bar 5 want 16 floor 10 bind 0 nbind 0 nnear 0
+CREW523 192 site budget slotfs 4 merged 4 won 0 n 51 of 571
+CREW523 192 site spawn slotfs 4 merged 4 won 0 n 51 of 572
+CREW523 193 site mag slotfs 4 merged 4 won 0 n 51 of 573
+FUND523 193 ammo 71 bank 0 floor 10 need 20 spare 1 sust 1 flip 6 of 129
+MAG522 193 ph 4 on 0 near 0 fund 1 fuse 1 ttl 1 ti 10 ammo 71 bar 5 want 16 floor 10 bind 0 nbind 0 nnear 0
+CREW523 193 site budget slotfs 4 merged 4 won 0 n 51 of 574
+CREW523 193 site spawn slotfs 4 merged 4 won 0 n 51 of 575
+CREW523 194 site mag slotfs 4 merged 4 won 0 n 51 of 576
+FUND523 194 ammo 71 bank 0 floor 10 need 20 spare 1 sust 1 flip 6 of 130
+MAG522 194 ph 4 on 0 near 0 fund 1 fuse 1 ttl 1 ti 10 ammo 71 bar 5 want 16 floor 10 bind 0 nbind 0 nnear 0
+CREW523 194 site budget slotfs 4 merged 4 won 0 n 51 of 577
+CREW523 194 site spawn slotfs 4 merged 4 won 0 n 51 of 578
+CREW523 195 site mag slotfs 4 merged 4 won 0 n 51 of 579
+FUND523 195 ammo 71 bank 0 floor 10 need 20 spare 1 sust 1 flip 6 of 131
+MAG522 195 ph 4 on 0 near 0 fund 1 fuse 1 ttl 1 ti 10 ammo 71 bar 5 want 16 floor 10 bind 0 nbind 0 nnear 0
+CREW523 195 site budget slotfs 4 merged 4 won 0 n 51 of 580
+CREW523 195 site spawn slotfs 4 merged 4 won 0 n 51 of 581
+CREW523 196 site mag slotfs 4 merged 4 won 0 n 51 of 582
+FUND523 196 ammo 71 bank 10 floor 10 need 20 spare 1 sust 1 flip 6 of 132
+MAG522 196 ph 4 on 0 near 0 fund 1 fuse 1 ttl 1 ti 20 ammo 71 bar 5 want 16 floor 10 bind 0 nbind 0 nnear 0
+CREW523 196 site budget slotfs 4 merged 4 won 0 n 51 of 583
+CREW523 196 site spawn slotfs 4 merged 4 won 0 n 51 of 584
+CREW523 197 site mag slotfs 4 merged 4 won 0 n 51 of 585
+FUND523 197 ammo 81 bank 0 floor 10 need 20 spare 1 sust 1 flip 6 of 133
+MAG522 197 ph 4 on 0 near 0 fund 1 fuse 1 ttl 1 ti 10 ammo 81 bar 5 want 16 floor 10 bind 0 nbind 0 nnear 0
+CREW523 197 site budget slotfs 4 merged 4 won 0 n 51 of 586
+CREW523 197 site spawn slotfs 4 merged 4 won 0 n 51 of 587
+CREW523 198 site mag slotfs 4 merged 4 won 0 n 51 of 588
+FUND523 198 ammo 81 bank 0 floor 10 need 20 spare 1 sust 1 flip 6 of 134
+MAG522 198 ph 4 on 0 near 0 fund 1 fuse 1 ttl 1 ti 10 ammo 81 bar 5 want 16 floor 10 bind 0 nbind 0 nnear 0
+CREW523 198 site budget slotfs 4 merged 4 won 0 n 51 of 589
+CREW523 198 site spawn slotfs 4 merged 4 won 0 n 51 of 590
+CREW523 199 site mag slotfs 4 merged 4 won 0 n 51 of 591
+FUND523 199 ammo 81 bank 0 floor 10 need 20 spare 1 sust 1 flip 6 of 135
+MAG522 199 ph 4 on 0 near 0 fund 1 fuse 1 ttl 1 ti 10 ammo 81 bar 5 want 16 floor 10 bind 0 nbind 0 nnear 0
+CREW523 199 site budget slotfs 4 merged 4 won 0 n 51 of 592
+CREW523 199 site spawn slotfs 4 merged 4 won 0 n 51 of 593
+CREW523 200 site mag slotfs 4 merged 4 won 0 n 51 of 594
+FUND523 200 ammo 81 bank 10 floor 10 need 20 spare 1 sust 1 flip 6 of 136
+MAG522 200 ph 4 on 0 near 0 fund 1 fuse 1 ttl 1 ti 20 ammo 81 bar 5 want 16 floor 10 bind 0 nbind 0 nnear 0
+CREW523 200 site budget slotfs 4 merged 4 won 0 n 51 of 595
+CREW523 200 site spawn slotfs 4 merged 4 won 0 n 51 of 596
+CREW523 201 site mag slotfs 4 merged 4 won 0 n 51 of 597
+FUND523 201 ammo 91 bank 0 floor 10 need 20 spare 1 sust 1 flip 6 of 137
+MAG522 201 ph 4 on 0 near 0 fund 1 fuse 1 ttl 1 ti 10 ammo 91 bar 5 want 16 floor 10 bind 0 nbind 0 nnear 0
+CREW523 201 site budget slotfs 4 merged 4 won 0 n 51 of 598
+CREW523 201 site spawn slotfs 4 merged 4 won 0 n 51 of 599
+CREW523 202 site mag slotfs 4 merged 4 won 0 n 51 of 600
+FUND523 202 ammo 91 bank 0 floor 10 need 20 spare 1 sust 1 flip 6 of 138
+MAG522 202 ph 4 on 0 near 0 fund 1 fuse 1 ttl 1 ti 10 ammo 91 bar 5 want 16 floor 10 bind 0 nbind 0 nnear 0
+CREW523 202 site budget slotfs 4 merged 4 won 0 n 51 of 601
+CREW523 202 site spawn slotfs 4 merged 4 won 0 n 51 of 602
+CREW523 203 site mag slotfs 4 merged 4 won 0 n 51 of 603
+FUND523 203 ammo 91 bank 0 floor 10 need 20 spare 1 sust 1 flip 6 of 139
+MAG522 203 ph 4 on 0 near 0 fund 1 fuse 1 ttl 1 ti 10 ammo 91 bar 5 want 16 floor 10 bind 0 nbind 0 nnear 0
+CREW523 203 site budget slotfs 4 merged 4 won 0 n 51 of 604
+CREW523 203 site spawn slotfs 4 merged 4 won 0 n 51 of 605
+CREW523 204 site mag slotfs 4 merged 4 won 0 n 51 of 606
+FUND523 204 ammo 91 bank 10 floor 10 need 20 spare 1 sust 1 flip 6 of 140
+MAG522 204 ph 4 on 0 near 0 fund 1 fuse 1 ttl 1 ti 20 ammo 91 bar 5 want 16 floor 10 bind 0 nbind 0 nnear 0
+CREW523 204 site budget slotfs 4 merged 4 won 0 n 51 of 607
+CREW523 204 site spawn slotfs 4 merged 4 won 0 n 51 of 608
+CREW523 205 site mag slotfs 4 merged 4 won 0 n 51 of 609
+FUND523 205 ammo 101 bank 0 floor 10 need 20 spare 1 sust 1 flip 6 of 141
+MAG522 205 ph 4 on 0 near 0 fund 1 fuse 1 ttl 1 ti 10 ammo 101 bar 5 want 16 floor 10 bind 0 nbind 0 nnear 0
+CREW523 205 site budget slotfs 4 merged 4 won 0 n 51 of 610
+CREW523 205 site spawn slotfs 4 merged 4 won 0 n 51 of 611
+CREW523 206 site mag slotfs 4 merged 4 won 0 n 51 of 612
+FUND523 206 ammo 101 bank 0 floor 10 need 20 spare 1 sust 1 flip 6 of 142
+MAG522 206 ph 4 on 0 near 0 fund 1 fuse 1 ttl 1 ti 10 ammo 101 bar 5 want 16 floor 10 bind 0 nbind 0 nnear 0
+CREW523 206 site budget slotfs 4 merged 4 won 0 n 51 of 613
+CREW523 206 site spawn slotfs 4 merged 4 won 0 n 51 of 614
+CREW523 207 site mag slotfs 4 merged 4 won 0 n 51 of 615
+FUND523 207 ammo 101 bank 0 floor 10 need 20 spare 1 sust 1 flip 6 of 143
+MAG522 207 ph 4 on 0 near 0 fund 1 fuse 1 ttl 1 ti 10 ammo 101 bar 5 want 16 floor 10 bind 0 nbind 0 nnear 0
+CREW523 207 site budget slotfs 4 merged 4 won 0 n 51 of 616
+CREW523 207 site spawn slotfs 4 merged 4 won 0 n 51 of 617
+CREW523 208 site mag slotfs 4 merged 4 won 0 n 51 of 618
+FUND523 208 ammo 101 bank 10 floor 10 need 20 spare 1 sust 1 flip 6 of 144
+MAG522 208 ph 4 on 0 near 0 fund 1 fuse 1 ttl 1 ti 20 ammo 101 bar 5 want 16 floor 10 bind 0 nbind 0 nnear 0
+CREW523 208 site budget slotfs 4 merged 4 won 0 n 51 of 619
+CREW523 208 site spawn slotfs 4 merged 4 won 0 n 51 of 620
+CREW523 209 site mag slotfs 4 merged 4 won 0 n 51 of 621
+FUND523 209 ammo 111 bank 0 floor 10 need 20 spare 1 sust 1 flip 6 of 145
+MAG522 209 ph 4 on 0 near 0 fund 1 fuse 1 ttl 1 ti 10 ammo 111 bar 5 want 16 floor 10 bind 0 nbind 0 nnear 0
+CREW523 209 site budget slotfs 4 merged 4 won 0 n 51 of 622
+CREW523 209 site spawn slotfs 4 merged 4 won 0 n 51 of 623
+CREW523 210 site mag slotfs 4 merged 4 won 0 n 51 of 624
+FUND523 210 ammo 111 bank 0 floor 10 need 20 spare 1 sust 1 flip 6 of 146
+MAG522 210 ph 4 on 0 near 0 fund 1 fuse 1 ttl 1 ti 10 ammo 111 bar 5 want 16 floor 10 bind 0 nbind 0 nnear 0
+CREW523 210 site budget slotfs 4 merged 4 won 0 n 51 of 625
+CREW523 210 site spawn slotfs 4 merged 4 won 0 n 51 of 626
+CREW523 211 site mag slotfs 4 merged 4 won 0 n 51 of 627
+FUND523 211 ammo 111 bank 0 floor 10 need 20 spare 1 sust 1 flip 6 of 147
+MAG522 211 ph 4 on 0 near 0 fund 1 fuse 1 ttl 1 ti 10 ammo 111 bar 5 want 16 floor 10 bind 0 nbind 0 nnear 0
+CREW523 211 site budget slotfs 4 merged 4 won 0 n 51 of 628
+CREW523 211 site spawn slotfs 4 merged 4 won 0 n 51 of 629
+CREW523 212 site mag slotfs 4 merged 4 won 0 n 51 of 630
+FUND523 212 ammo 111 bank 10 floor 10 need 20 spare 1 sust 1 flip 6 of 148
+MAG522 212 ph 4 on 0 near 0 fund 1 fuse 1 ttl 1 ti 20 ammo 111 bar 5 want 16 floor 10 bind 0 nbind 0 nnear 0
+CREW523 212 site budget slotfs 4 merged 4 won 0 n 51 of 631
+CREW523 212 site spawn slotfs 4 merged 4 won 0 n 51 of 632
+CREW523 213 site mag slotfs 4 merged 4 won 0 n 51 of 633
+FUND523 213 ammo 121 bank 0 floor 10 need 20 spare 1 sust 1 flip 6 of 149
+MAG522 213 ph 4 on 0 near 0 fund 1 fuse 1 ttl 1 ti 10 ammo 121 bar 5 want 16 floor 10 bind 0 nbind 0 nnear 0
+CREW523 213 site budget slotfs 4 merged 4 won 0 n 51 of 634
+CREW523 213 site spawn slotfs 4 merged 4 won 0 n 51 of 635
+CREW523 214 site mag slotfs 4 merged 4 won 0 n 51 of 636
+FUND523 214 ammo 121 bank 0 floor 10 need 20 spare 1 sust 1 flip 6 of 150
+MAG522 214 ph 4 on 0 near 0 fund 1 fuse 1 ttl 1 ti 10 ammo 121 bar 5 want 16 floor 10 bind 0 nbind 0 nnear 0
+CREW523 214 site budget slotfs 4 merged 4 won 0 n 51 of 637
+CREW523 214 site spawn slotfs 4 merged 4 won 0 n 51 of 638
+CREW523 215 site mag slotfs 4 merged 4 won 0 n 51 of 639
+FUND523 215 ammo 121 bank 0 floor 10 need 20 spare 1 sust 1 flip 6 of 151
+MAG522 215 ph 4 on 0 near 0 fund 1 fuse 1 ttl 1 ti 10 ammo 121 bar 5 want 16 floor 10 bind 0 nbind 0 nnear 0
+CREW523 215 site budget slotfs 4 merged 4 won 0 n 51 of 640
+CREW523 215 site spawn slotfs 4 merged 4 won 0 n 51 of 641
+CREW523 216 site mag slotfs 4 merged 4 won 0 n 51 of 642
+FUND523 216 ammo 121 bank 10 floor 10 need 20 spare 1 sust 1 flip 6 of 152
+MAG522 216 ph 4 on 0 near 0 fund 1 fuse 1 ttl 1 ti 20 ammo 121 bar 5 want 16 floor 10 bind 0 nbind 0 nnear 0
+CREW523 216 site budget slotfs 4 merged 4 won 0 n 51 of 643
+CREW523 216 site spawn slotfs 4 merged 4 won 0 n 51 of 644
+CREW523 217 site mag slotfs 4 merged 4 won 0 n 51 of 645
+FUND523 217 ammo 131 bank 0 floor 10 need 20 spare 1 sust 1 flip 6 of 153
+MAG522 217 ph 4 on 0 near 0 fund 1 fuse 1 ttl 1 ti 10 ammo 131 bar 5 want 16 floor 10 bind 0 nbind 0 nnear 0
+CREW523 217 site budget slotfs 4 merged 4 won 0 n 51 of 646
+CREW523 217 site spawn slotfs 4 merged 4 won 0 n 51 of 647
+CREW523 218 site mag slotfs 4 merged 4 won 0 n 51 of 648
+FUND523 218 ammo 131 bank 0 floor 10 need 20 spare 1 sust 1 flip 6 of 154
+MAG522 218 ph 4 on 0 near 0 fund 1 fuse 1 ttl 1 ti 10 ammo 131 bar 5 want 16 floor 10 bind 0 nbind 0 nnear 0
+CREW523 218 site budget slotfs 4 merged 4 won 0 n 51 of 649
+CREW523 218 site spawn slotfs 4 merged 4 won 0 n 51 of 650
+CREW523 219 site mag slotfs 4 merged 4 won 0 n 51 of 651
+FUND523 219 ammo 131 bank 0 floor 10 need 20 spare 1 sust 1 flip 6 of 155
+MAG522 219 ph 4 on 0 near 0 fund 1 fuse 1 ttl 1 ti 10 ammo 131 bar 5 want 16 floor 10 bind 0 nbind 0 nnear 0
+CREW523 219 site budget slotfs 4 merged 4 won 0 n 51 of 652
+CREW523 219 site spawn slotfs 4 merged 4 won 0 n 51 of 653
+CREW523 220 site mag slotfs 4 merged 4 won 0 n 51 of 654
+FUND523 220 ammo 131 bank 10 floor 10 need 20 spare 1 sust 1 flip 6 of 156
+MAG522 220 ph 4 on 0 near 0 fund 1 fuse 1 ttl 1 ti 20 ammo 131 bar 5 want 16 floor 10 bind 0 nbind 0 nnear 0
+CREW523 220 site budget slotfs 4 merged 4 won 0 n 51 of 655
+CREW523 220 site spawn slotfs 4 merged 4 won 0 n 51 of 656
+CREW523 221 site mag slotfs 4 merged 4 won 0 n 51 of 657
+FUND523 221 ammo 141 bank 0 floor 10 need 20 spare 1 sust 1 flip 6 of 157
+MAG522 221 ph 4 on 0 near 0 fund 1 fuse 1 ttl 1 ti 10 ammo 141 bar 5 want 16 floor 10 bind 0 nbind 0 nnear 0
+CREW523 221 site budget slotfs 4 merged 4 won 0 n 51 of 658
+CREW523 221 site spawn slotfs 4 merged 4 won 0 n 51 of 659
+CREW523 222 site mag slotfs 4 merged 4 won 0 n 51 of 660
+FUND523 222 ammo 141 bank 0 floor 10 need 20 spare 1 sust 1 flip 6 of 158
+MAG522 222 ph 4 on 0 near 0 fund 1 fuse 1 ttl 1 ti 10 ammo 141 bar 5 want 16 floor 10 bind 0 nbind 0 nnear 0
+CREW523 222 site budget slotfs 4 merged 4 won 0 n 51 of 661
+CREW523 222 site spawn slotfs 4 merged 4 won 0 n 51 of 662
+CREW523 223 site mag slotfs 4 merged 4 won 0 n 51 of 663
+FUND523 223 ammo 141 bank 0 floor 10 need 20 spare 1 sust 1 flip 6 of 159
+MAG522 223 ph 4 on 0 near 0 fund 1 fuse 1 ttl 1 ti 10 ammo 141 bar 5 want 16 floor 10 bind 0 nbind 0 nnear 0
+CREW523 223 site budget slotfs 4 merged 4 won 0 n 51 of 664
+CREW523 223 site spawn slotfs 4 merged 4 won 0 n 51 of 665
+CREW523 224 site mag slotfs 4 merged 4 won 0 n 51 of 666
+FUND523 224 ammo 141 bank 10 floor 10 need 20 spare 1 sust 1 flip 6 of 160
+MAG522 224 ph 4 on 0 near 0 fund 1 fuse 1 ttl 1 ti 20 ammo 141 bar 5 want 16 floor 10 bind 0 nbind 0 nnear 0
+CREW523 224 site budget slotfs 4 merged 4 won 0 n 51 of 667
+CREW523 224 site spawn slotfs 4 merged 4 won 0 n 51 of 668
+CREW523 225 site mag slotfs 4 merged 4 won 0 n 51 of 669
+FUND523 225 ammo 151 bank 0 floor 10 need 20 spare 1 sust 1 flip 6 of 161
+MAG522 225 ph 4 on 0 near 0 fund 1 fuse 1 ttl 1 ti 10 ammo 151 bar 5 want 16 floor 10 bind 0 nbind 0 nnear 0
+CREW523 225 site budget slotfs 4 merged 4 won 0 n 51 of 670
+CREW523 225 site spawn slotfs 4 merged 4 won 0 n 51 of 671
+CREW523 226 site mag slotfs 4 merged 4 won 0 n 51 of 672
+FUND523 226 ammo 151 bank 0 floor 10 need 20 spare 1 sust 1 flip 6 of 162
+MAG522 226 ph 4 on 0 near 0 fund 1 fuse 1 ttl 1 ti 10 ammo 151 bar 5 want 16 floor 10 bind 0 nbind 0 nnear 0
+CREW523 226 site budget slotfs 4 merged 4 won 0 n 51 of 673
+CREW523 226 site spawn slotfs 4 merged 4 won 0 n 51 of 674
+CREW523 227 site mag slotfs 4 merged 4 won 0 n 51 of 675
+FUND523 227 ammo 151 bank 0 floor 10 need 20 spare 1 sust 1 flip 6 of 163
+MAG522 227 ph 4 on 0 near 0 fund 1 fuse 1 ttl 1 ti 10 ammo 151 bar 5 want 16 floor 10 bind 0 nbind 0 nnear 0
+CREW523 227 site budget slotfs 4 merged 4 won 0 n 51 of 676
+CREW523 227 site spawn slotfs 4 merged 4 won 0 n 51 of 677
+CREW523 228 site mag slotfs 4 merged 4 won 0 n 51 of 678
+FUND523 228 ammo 151 bank 10 floor 10 need 20 spare 1 sust 1 flip 6 of 164
+MAG522 228 ph 4 on 0 near 0 fund 1 fuse 1 ttl 1 ti 20 ammo 151 bar 5 want 16 floor 10 bind 0 nbind 0 nnear 0
+CREW523 228 site budget slotfs 4 merged 4 won 0 n 51 of 679
+CREW523 228 site spawn slotfs 4 merged 4 won 0 n 51 of 680
+CREW523 229 site mag slotfs 4 merged 4 won 0 n 51 of 681
+FUND523 229 ammo 151 bank 10 floor 10 need 20 spare 1 sust 1 flip 6 of 165
+MAG522 229 ph 4 on 0 near 0 fund 1 fuse 1 ttl 1 ti 20 ammo 151 bar 5 want 16 floor 10 bind 0 nbind 0 nnear 0
+CREW523 229 site budget slotfs 4 merged 4 won 0 n 51 of 682
+CREW523 229 site spawn slotfs 4 merged 4 won 0 n 51 of 683
+CREW523 230 site mag slotfs 4 merged 4 won 0 n 51 of 684
+FUND523 230 ammo 151 bank 10 floor 10 need 20 spare 1 sust 1 flip 6 of 166
+MAG522 230 ph 4 on 0 near 0 fund 1 fuse 1 ttl 1 ti 20 ammo 151 bar 5 want 16 floor 10 bind 0 nbind 0 nnear 0
+CREW523 230 site budget slotfs 4 merged 4 won 0 n 51 of 685
+CREW523 230 site spawn slotfs 4 merged 4 won 0 n 51 of 686
+CREW523 231 site mag slotfs 4 merged 4 won 0 n 51 of 687
+FUND523 231 ammo 151 bank 10 floor 10 need 20 spare 1 sust 1 flip 6 of 167
+MAG522 231 ph 4 on 0 near 0 fund 1 fuse 1 ttl 1 ti 20 ammo 151 bar 5 want 16 floor 10 bind 0 nbind 0 nnear 0
+CREW523 231 site budget slotfs 4 merged 4 won 0 n 51 of 688
+CREW523 231 site spawn slotfs 4 merged 4 won 0 n 51 of 689
+CREW523 232 site mag slotfs 4 merged 4 won 0 n 51 of 690
+FUND523 232 ammo 151 bank 20 floor 10 need 20 spare 1 sust 1 flip 6 of 168
+MAG522 232 ph 4 on 0 near 0 fund 1 fuse 1 ttl 1 ti 30 ammo 151 bar 5 want 16 floor 10 bind 0 nbind 0 nnear 0
+CREW523 232 site budget slotfs 4 merged 4 won 0 n 51 of 691
+CREW523 232 site spawn slotfs 4 merged 4 won 0 n 51 of 692
+CREW523 233 site mag slotfs 4 merged 4 won 0 n 51 of 693
+FUND523 233 ammo 151 bank 20 floor 10 need 20 spare 1 sust 1 flip 6 of 169
+MAG522 233 ph 4 on 0 near 0 fund 1 fuse 1 ttl 1 ti 30 ammo 151 bar 5 want 16 floor 10 bind 0 nbind 0 nnear 0
+CREW523 233 site budget slotfs 4 merged 4 won 0 n 51 of 694
+CREW523 233 site spawn slotfs 4 merged 4 won 0 n 51 of 695
+CREW523 234 site mag slotfs 4 merged 4 won 0 n 51 of 696
+FUND523 234 ammo 151 bank 20 floor 10 need 20 spare 1 sust 1 flip 6 of 170
+MAG522 234 ph 4 on 0 near 0 fund 1 fuse 1 ttl 1 ti 30 ammo 151 bar 5 want 16 floor 10 bind 0 nbind 0 nnear 0
+CREW523 234 site budget slotfs 4 merged 4 won 0 n 51 of 697
+CREW523 234 site spawn slotfs 4 merged 4 won 0 n 51 of 698
+CREW523 235 site mag slotfs 4 merged 4 won 0 n 51 of 699
+FUND523 235 ammo 151 bank 20 floor 10 need 20 spare 1 sust 1 flip 6 of 171
+MAG522 235 ph 4 on 0 near 0 fund 1 fuse 1 ttl 1 ti 30 ammo 151 bar 5 want 16 floor 10 bind 0 nbind 0 nnear 0
+CREW523 235 site budget slotfs 4 merged 4 won 0 n 51 of 700
+CREW523 235 site spawn slotfs 4 merged 4 won 0 n 51 of 701
+CREW523 236 site mag slotfs 4 merged 4 won 0 n 51 of 702
+FUND523 236 ammo 151 bank 30 floor 10 need 20 spare 1 sust 1 flip 6 of 172
+MAG522 236 ph 4 on 0 near 0 fund 1 fuse 1 ttl 1 ti 40 ammo 151 bar 5 want 16 floor 10 bind 0 nbind 0 nnear 0
+CREW523 236 site budget slotfs 4 merged 4 won 0 n 51 of 703
+CREW523 236 site spawn slotfs 4 merged 4 won 0 n 51 of 704
+CREW523 237 site mag slotfs 4 merged 4 won 0 n 51 of 705
+FUND523 237 ammo 151 bank 30 floor 10 need 20 spare 1 sust 1 flip 6 of 173
+MAG522 237 ph 4 on 0 near 0 fund 1 fuse 1 ttl 1 ti 40 ammo 151 bar 5 want 16 floor 10 bind 0 nbind 0 nnear 0
+CREW523 237 site budget slotfs 4 merged 4 won 0 n 51 of 706
+CREW523 237 site spawn slotfs 4 merged 4 won 0 n 51 of 707
+CREW523 238 site mag slotfs 4 merged 4 won 0 n 51 of 708
+FUND523 238 ammo 151 bank 30 floor 10 need 20 spare 1 sust 1 flip 6 of 174
+MAG522 238 ph 4 on 0 near 0 fund 1 fuse 1 ttl 1 ti 40 ammo 151 bar 5 want 16 floor 10 bind 0 nbind 0 nnear 0
+CREW523 238 site budget slotfs 4 merged 4 won 0 n 51 of 709
+CREW523 238 site spawn slotfs 4 merged 4 won 0 n 51 of 710
+CREW523 239 site mag slotfs 4 merged 4 won 0 n 51 of 711
+FUND523 239 ammo 151 bank 30 floor 10 need 20 spare 1 sust 1 flip 6 of 175
+MAG522 239 ph 4 on 0 near 0 fund 1 fuse 1 ttl 1 ti 40 ammo 151 bar 5 want 16 floor 10 bind 0 nbind 0 nnear 0
+CREW523 239 site budget slotfs 4 merged 4 won 0 n 51 of 712
+CREW523 239 site spawn slotfs 4 merged 4 won 0 n 51 of 713
+CREW523 240 site mag slotfs 4 merged 4 won 0 n 51 of 714
+FUND523 240 ammo 151 bank 40 floor 10 need 20 spare 1 sust 1 flip 6 of 176
+MAG522 240 ph 4 on 0 near 0 fund 1 fuse 1 ttl 1 ti 50 ammo 151 bar 5 want 16 floor 10 bind 0 nbind 0 nnear 0
+CREW523 240 site budget slotfs 4 merged 4 won 0 n 51 of 715
+CREW523 240 site spawn slotfs 4 merged 4 won 0 n 51 of 716
+CREW523 241 site mag slotfs 4 merged 4 won 0 n 51 of 717
+FUND523 241 ammo 151 bank 40 floor 10 need 20 spare 1 sust 1 flip 6 of 177
+MAG522 241 ph 4 on 0 near 0 fund 1 fuse 1 ttl 1 ti 50 ammo 151 bar 5 want 16 floor 10 bind 0 nbind 0 nnear 0
+CREW523 241 site budget slotfs 4 merged 4 won 0 n 51 of 718
+CREW523 241 site spawn slotfs 4 merged 4 won 0 n 51 of 719
+CREW523 242 site mag slotfs 4 merged 4 won 0 n 51 of 720
+FUND523 242 ammo 151 bank 0 floor 10 need 20 spare 1 sust 1 flip 6 of 178
+MAG522 242 ph 4 on 0 near 0 fund 1 fuse 1 ttl 1 ti 0 ammo 151 bar 5 want 16 floor 10 bind 0 nbind 0 nnear 0
+CREW523 242 site budget slotfs 4 merged 4 won 0 n 51 of 721
+CREW523 242 site spawn slotfs 4 merged 4 won 0 n 51 of 722
+CREW523 243 site mag slotfs 1 merged 1 won 0 n 51 of 723
+CREW523 243 site budget slotfs 1 merged 1 won 0 n 51 of 724
+CREW523 243 site spawn slotfs 1 merged 1 won 0 n 51 of 725
+CREW523 244 site mag slotfs 1 merged 1 won 0 n 51 of 726
+CREW523 244 site budget slotfs 1 merged 1 won 0 n 51 of 727
+CREW523 244 site spawn slotfs 1 merged 1 won 0 n 51 of 728
+CREW523 245 site mag slotfs 1 merged 1 won 0 n 51 of 729
+CREW523 245 site budget slotfs 1 merged 1 won 0 n 51 of 730
+CREW523 245 site spawn slotfs 1 merged 1 won 0 n 51 of 731
+CREW523 246 site mag slotfs 1 merged 1 won 0 n 51 of 732
+CREW523 246 site budget slotfs 1 merged 1 won 0 n 51 of 733
+CREW523 246 site spawn slotfs 1 merged 1 won 0 n 51 of 734
+CREW523 247 site mag slotfs 1 merged 1 won 0 n 51 of 735
+CREW523 247 site budget slotfs 1 merged 1 won 0 n 51 of 736
+CREW523 247 site spawn slotfs 1 merged 1 won 0 n 51 of 737
+CREW523 248 site mag slotfs 1 merged 1 won 0 n 51 of 738
+CREW523 248 site budget slotfs 1 merged 1 won 0 n 51 of 739
+CREW523 248 site spawn slotfs 1 merged 1 won 0 n 51 of 740
+CREW523 249 site mag slotfs 1 merged 1 won 0 n 51 of 741
+CREW523 249 site budget slotfs 1 merged 1 won 0 n 51 of 742
+CREW523 249 site spawn slotfs 1 merged 1 won 0 n 51 of 743
+CREW523 250 site mag slotfs 1 merged 1 won 0 n 51 of 744
+CREW523 250 site budget slotfs 1 merged 1 won 0 n 51 of 745
+CREW523 250 site spawn slotfs 1 merged 1 won 0 n 51 of 746
+CREW523 251 site mag slotfs 1 merged 1 won 0 n 51 of 747
+CREW523 251 site budget slotfs 1 merged 1 won 0 n 51 of 748
+CREW523 251 site spawn slotfs 1 merged 1 won 0 n 51 of 749
+PH523 251 id 80 body 1 arc 1 orth 2 own 0 merged 0 arcclosed 1 ph 2
+CREW523 252 site mag slotfs 2 merged 2 won 0 n 51 of 750
+CREW523 252 site budget slotfs 2 merged 2 won 0 n 51 of 751
+CREW523 252 site spawn slotfs 2 merged 2 won 0 n 51 of 752
+PH523 252 id 80 body 1 arc 1 orth 0 own 1 merged 1 arcclosed 0 ph 3
+CREW523 253 site mag slotfs 3 merged 3 won 0 n 51 of 753
+CREW523 253 site budget slotfs 3 merged 3 won 0 n 51 of 754
+CREW523 253 site spawn slotfs 3 merged 3 won 0 n 51 of 755
+PH523 253 id 80 body 1 arc 1 orth 0 own 1 merged 1 arcclosed 0 ph 3
+CREW523 254 site mag slotfs 3 merged 3 won 0 n 51 of 756
+CREW523 254 site budget slotfs 3 merged 3 won 0 n 51 of 757
+CREW523 254 site spawn slotfs 3 merged 3 won 0 n 51 of 758
+PH523 254 id 80 body 1 arc 1 orth 0 own 1 merged 1 arcclosed 0 ph 3
+CREW523 255 site mag slotfs 3 merged 3 won 0 n 51 of 759
+CREW523 255 site budget slotfs 3 merged 3 won 0 n 51 of 760
+CREW523 255 site spawn slotfs 3 merged 3 won 0 n 51 of 761
+PH523 255 id 80 body 1 arc 1 orth 0 own 1 merged 1 arcclosed 0 ph 3
+CREW523 256 site mag slotfs 3 merged 3 won 0 n 51 of 762
+CREW523 256 site budget slotfs 3 merged 3 won 0 n 51 of 763
+CREW523 256 site spawn slotfs 3 merged 3 won 0 n 51 of 764
+PH523 256 id 80 body 1 arc 1 orth 0 own 1 merged 1 arcclosed 0 ph 3
+CREW523 257 site mag slotfs 3 merged 3 won 0 n 51 of 765
+CREW523 257 site budget slotfs 3 merged 3 won 0 n 51 of 766
+CREW523 257 site spawn slotfs 3 merged 3 won 0 n 51 of 767
+PH523 257 id 80 body 1 arc 1 orth 0 own 1 merged 1 arcclosed 0 ph 3
+CREW523 258 site mag slotfs 3 merged 3 won 0 n 51 of 768
+CREW523 258 site budget slotfs 3 merged 3 won 0 n 51 of 769
+CREW523 258 site spawn slotfs 3 merged 3 won 0 n 51 of 770
+PH523 258 id 80 body 1 arc 1 orth 0 own 1 merged 1 arcclosed 0 ph 3
+CREW523 259 site mag slotfs 3 merged 3 won 0 n 51 of 771
+CREW523 259 site budget slotfs 3 merged 3 won 0 n 51 of 772
+CREW523 259 site spawn slotfs 3 merged 3 won 0 n 51 of 773
+PH523 259 id 80 body 1 arc 1 orth 0 own 1 merged 1 arcclosed 0 ph 3
+CREW523 260 site mag slotfs 3 merged 3 won 0 n 51 of 774
+CREW523 260 site budget slotfs 3 merged 3 won 0 n 51 of 775
+CREW523 260 site spawn slotfs 3 merged 3 won 0 n 51 of 776
+PH523 260 id 80 body 1 arc 1 orth 0 own 1 merged 1 arcclosed 0 ph 3
+CREW523 261 site mag slotfs 3 merged 3 won 0 n 51 of 777
+CREW523 261 site budget slotfs 3 merged 3 won 0 n 51 of 778
+CREW523 261 site spawn slotfs 3 merged 3 won 0 n 51 of 779
+PH523 261 id 80 body 1 arc 1 orth 2 own 0 merged 1 arcclosed 0 ph 3
+SALT523 261 id 80 orth 2 own 0 union 1 n 1 ownN 18
+SALT523 261 id 80 orth 2 own 0 union 1 n 2 ownN 18
+CREW523 262 site mag slotfs 3 merged 3 won 0 n 51 of 780
+CREW523 262 site budget slotfs 3 merged 3 won 0 n 51 of 781
+CREW523 262 site spawn slotfs 3 merged 3 won 0 n 51 of 782
+PH523 262 id 80 body 1 arc 1 orth 0 own 1 merged 1 arcclosed 0 ph 3
+CREW523 263 site mag slotfs 3 merged 3 won 0 n 51 of 783
+CREW523 263 site budget slotfs 3 merged 3 won 0 n 51 of 784
+CREW523 263 site spawn slotfs 3 merged 3 won 0 n 51 of 785
+PH523 263 id 80 body 1 arc 1 orth 2 own 0 merged 1 arcclosed 0 ph 3
+SALT523 263 id 80 orth 2 own 0 union 1 n 3 ownN 20
+SALT523 263 id 80 orth 2 own 0 union 1 n 4 ownN 20
+CREW523 264 site mag slotfs 3 merged 3 won 0 n 51 of 786
+CREW523 264 site budget slotfs 3 merged 3 won 0 n 51 of 787
+CREW523 264 site spawn slotfs 3 merged 3 won 0 n 51 of 788
+PH523 264 id 80 body 1 arc 1 orth 0 own 1 merged 1 arcclosed 0 ph 3
+CREW523 265 site mag slotfs 3 merged 3 won 0 n 51 of 789
+CREW523 265 site budget slotfs 3 merged 3 won 0 n 51 of 790
+CREW523 265 site spawn slotfs 3 merged 3 won 0 n 51 of 791
+PH523 265 id 80 body 1 arc 1 orth 2 own 0 merged 1 arcclosed 0 ph 3
+SALT523 265 id 80 orth 2 own 0 union 1 n 5 ownN 22
+SALT523 265 id 80 orth 2 own 0 union 1 n 6 ownN 22
+CREW523 266 site mag slotfs 3 merged 3 won 0 n 51 of 792
+CREW523 266 site budget slotfs 3 merged 3 won 0 n 51 of 793
+CREW523 266 site spawn slotfs 3 merged 3 won 0 n 51 of 794
+PH523 266 id 80 body 1 arc 1 orth 0 own 1 merged 1 arcclosed 0 ph 3
+CREW523 267 site mag slotfs 3 merged 3 won 0 n 51 of 795
+CREW523 267 site budget slotfs 3 merged 3 won 0 n 51 of 796
+CREW523 267 site spawn slotfs 3 merged 3 won 0 n 51 of 797
+PH523 267 id 80 body 1 arc 1 orth 0 own 1 merged 1 arcclosed 0 ph 3
+CREW523 268 site mag slotfs 3 merged 3 won 0 n 51 of 798
+CREW523 268 site budget slotfs 3 merged 3 won 0 n 51 of 799
+CREW523 268 site spawn slotfs 3 merged 3 won 0 n 51 of 800
+PH523 268 id 80 body 1 arc 1 orth 2 own 0 merged 1 arcclosed 0 ph 3
+SALT523 268 id 80 orth 2 own 0 union 1 n 7 ownN 26
+SALT523 268 id 80 orth 2 own 0 union 1 n 8 ownN 26
+CREW523 269 site mag slotfs 3 merged 3 won 0 n 51 of 801
+CREW523 269 site budget slotfs 3 merged 3 won 0 n 51 of 802
+CREW523 269 site spawn slotfs 3 merged 3 won 0 n 51 of 803
+PH523 269 id 80 body 1 arc 1 orth 0 own 1 merged 1 arcclosed 0 ph 3
+CREW523 270 site mag slotfs 3 merged 3 won 0 n 51 of 804
+CREW523 270 site budget slotfs 3 merged 3 won 0 n 51 of 805
+CREW523 270 site spawn slotfs 3 merged 3 won 0 n 51 of 806
+PH523 270 id 80 body 1 arc 1 orth 0 own 1 merged 1 arcclosed 0 ph 3
+CREW523 271 site mag slotfs 3 merged 3 won 0 n 51 of 807
+CREW523 271 site budget slotfs 3 merged 3 won 0 n 51 of 808
+CREW523 271 site spawn slotfs 3 merged 3 won 0 n 51 of 809
+PH523 271 id 80 body 1 arc 1 orth 0 own 1 merged 1 arcclosed 0 ph 3
+CREW523 272 site mag slotfs 3 merged 3 won 0 n 51 of 810
+CREW523 272 site budget slotfs 3 merged 3 won 0 n 51 of 811
+CREW523 272 site spawn slotfs 3 merged 3 won 0 n 51 of 812
+PH523 272 id 80 body 1 arc 1 orth 0 own 1 merged 1 arcclosed 0 ph 3
+CREW523 273 site mag slotfs 3 merged 3 won 0 n 51 of 813
+CREW523 273 site budget slotfs 3 merged 3 won 0 n 51 of 814
+CREW523 273 site spawn slotfs 3 merged 3 won 0 n 51 of 815
+PH523 273 id 80 body 1 arc 1 orth 0 own 1 merged 1 arcclosed 0 ph 3
+CREW523 274 site mag slotfs 3 merged 3 won 0 n 51 of 816
+CREW523 274 site budget slotfs 3 merged 3 won 0 n 51 of 817
+CREW523 274 site spawn slotfs 3 merged 3 won 0 n 51 of 818
+PH523 274 id 80 body 1 arc 1 orth 0 own 1 merged 1 arcclosed 0 ph 3
+CREW523 275 site mag slotfs 3 merged 3 won 0 n 51 of 819
+CREW523 275 site budget slotfs 3 merged 3 won 0 n 51 of 820
+CREW523 275 site spawn slotfs 3 merged 3 won 0 n 51 of 821
+PH523 275 id 80 body 1 arc 1 orth 0 own 1 merged 1 arcclosed 0 ph 3
+CREW523 276 site mag slotfs 3 merged 3 won 0 n 51 of 822
+CREW523 276 site budget slotfs 3 merged 3 won 0 n 51 of 823
+CREW523 276 site spawn slotfs 3 merged 3 won 0 n 51 of 824
+PH523 276 id 80 body 1 arc 1 orth 0 own 1 merged 1 arcclosed 0 ph 3
+CREW523 277 site mag slotfs 3 merged 3 won 0 n 51 of 825
+CREW523 277 site budget slotfs 3 merged 3 won 0 n 51 of 826
+CREW523 277 site spawn slotfs 3 merged 3 won 0 n 51 of 827
+PH523 277 id 80 body 1 arc 1 orth 0 own 1 merged 1 arcclosed 0 ph 3
+CREW523 278 site mag slotfs 3 merged 3 won 0 n 51 of 828
+CREW523 278 site budget slotfs 3 merged 3 won 0 n 51 of 829
+CREW523 278 site spawn slotfs 3 merged 3 won 0 n 51 of 830
+PH523 278 id 80 body 1 arc 1 orth 0 own 1 merged 1 arcclosed 0 ph 3
+CREW523 279 site mag slotfs 3 merged 3 won 0 n 51 of 831
+CREW523 279 site budget slotfs 3 merged 3 won 0 n 51 of 832
+CREW523 279 site spawn slotfs 3 merged 3 won 0 n 51 of 833
+PH523 279 id 80 body 1 arc 1 orth 0 own 1 merged 1 arcclosed 0 ph 3
+CREW523 280 site mag slotfs 3 merged 3 won 0 n 51 of 834
+CREW523 280 site budget slotfs 3 merged 3 won 0 n 51 of 835
+CREW523 280 site spawn slotfs 3 merged 3 won 0 n 51 of 836
+PH523 280 id 80 body 1 arc 1 orth 0 own 1 merged 1 arcclosed 0 ph 3
+CREW523 281 site mag slotfs 3 merged 3 won 0 n 51 of 837
+CREW523 281 site budget slotfs 3 merged 3 won 0 n 51 of 838
+CREW523 281 site spawn slotfs 3 merged 3 won 0 n 51 of 839
+PH523 281 id 80 body 1 arc 1 orth 0 own 1 merged 1 arcclosed 0 ph 3
+CREW523 282 site mag slotfs 3 merged 3 won 0 n 51 of 840
+CREW523 282 site budget slotfs 3 merged 3 won 0 n 51 of 841
+CREW523 282 site spawn slotfs 3 merged 3 won 0 n 51 of 842
+PH523 282 id 80 body 1 arc 1 orth 0 own 1 merged 1 arcclosed 0 ph 3
+CREW523 283 site mag slotfs 3 merged 3 won 0 n 51 of 843
+CREW523 283 site budget slotfs 3 merged 3 won 0 n 51 of 844
+CREW523 283 site spawn slotfs 3 merged 3 won 0 n 51 of 845
+PH523 283 id 80 body 1 arc 1 orth 0 own 1 merged 1 arcclosed 0 ph 3
+CREW523 284 site mag slotfs 3 merged 3 won 0 n 51 of 846
+CREW523 284 site budget slotfs 3 merged 3 won 0 n 51 of 847
+CREW523 284 site spawn slotfs 3 merged 3 won 0 n 51 of 848
+PH523 284 id 80 body 1 arc 1 orth 0 own 1 merged 1 arcclosed 0 ph 3
+CREW523 285 site mag slotfs 3 merged 3 won 0 n 51 of 849
+CREW523 285 site budget slotfs 3 merged 3 won 0 n 51 of 850
+CREW523 285 site spawn slotfs 3 merged 3 won 0 n 51 of 851
+PH523 285 id 80 body 1 arc 1 orth 0 own 1 merged 1 arcclosed 0 ph 3
+CREW523 286 site mag slotfs 3 merged 3 won 0 n 51 of 852
+CREW523 286 site budget slotfs 3 merged 3 won 0 n 51 of 853
+CREW523 286 site spawn slotfs 3 merged 3 won 0 n 51 of 854
+PH523 286 id 80 body 1 arc 1 orth 0 own 1 merged 1 arcclosed 0 ph 3
+CREW523 287 site mag slotfs 3 merged 3 won 0 n 51 of 855
+CREW523 287 site budget slotfs 3 merged 3 won 0 n 51 of 856
+CREW523 287 site spawn slotfs 3 merged 3 won 0 n 51 of 857
+PH523 287 id 80 body 1 arc 1 orth 0 own 1 merged 1 arcclosed 0 ph 3
+CREW523 288 site mag slotfs 3 merged 3 won 0 n 51 of 858
+CREW523 288 site budget slotfs 3 merged 3 won 0 n 51 of 859
+CREW523 288 site spawn slotfs 3 merged 3 won 0 n 51 of 860
+PH523 288 id 80 body 1 arc 1 orth 0 own 1 merged 1 arcclosed 0 ph 3
+CREW523 289 site mag slotfs 3 merged 3 won 0 n 51 of 861
+CREW523 289 site budget slotfs 3 merged 3 won 0 n 51 of 862
+CREW523 289 site spawn slotfs 3 merged 3 won 0 n 51 of 863
+PH523 289 id 80 body 1 arc 1 orth 0 own 1 merged 1 arcclosed 0 ph 3
+CREW523 290 site mag slotfs 3 merged 3 won 0 n 51 of 864
+CREW523 290 site budget slotfs 3 merged 3 won 0 n 51 of 865
+CREW523 290 site spawn slotfs 3 merged 3 won 0 n 51 of 866
+PH523 290 id 80 body 1 arc 1 orth 0 own 1 merged 1 arcclosed 0 ph 3
+CREW523 291 site mag slotfs 3 merged 3 won 0 n 51 of 867
+CREW523 291 site budget slotfs 3 merged 3 won 0 n 51 of 868
+CREW523 291 site spawn slotfs 3 merged 3 won 0 n 51 of 869
+PH523 291 id 80 body 1 arc 1 orth 0 own 1 merged 1 arcclosed 0 ph 3
+CREW523 292 site mag slotfs 3 merged 3 won 0 n 51 of 870
+CREW523 292 site budget slotfs 3 merged 3 won 0 n 51 of 871
+CREW523 292 site spawn slotfs 3 merged 3 won 0 n 51 of 872
+PH523 292 id 80 body 1 arc 1 orth 0 own 1 merged 1 arcclosed 0 ph 3
+CREW523 293 site mag slotfs 3 merged 3 won 0 n 51 of 873
+CREW523 293 site budget slotfs 3 merged 3 won 0 n 51 of 874
+CREW523 293 site spawn slotfs 3 merged 3 won 0 n 51 of 875
+PH523 293 id 80 body 1 arc 1 orth 2 own 0 merged 1 arcclosed 0 ph 3
+SALT523 293 id 80 orth 2 own 0 union 1 n 9 ownN 74
+SALT523 293 id 80 orth 2 own 0 union 1 n 10 ownN 74
+CREW523 294 site mag slotfs 3 merged 3 won 0 n 51 of 876
+CREW523 294 site budget slotfs 3 merged 3 won 0 n 51 of 877
+CREW523 294 site spawn slotfs 3 merged 3 won 0 n 51 of 878
+PH523 294 id 80 body 1 arc 1 orth 0 own 1 merged 1 arcclosed 0 ph 3
+CREW523 295 site mag slotfs 3 merged 3 won 0 n 51 of 879
+CREW523 295 site budget slotfs 3 merged 3 won 0 n 51 of 880
+CREW523 295 site spawn slotfs 3 merged 3 won 0 n 51 of 881
+PH523 295 id 80 body 1 arc 1 orth 2 own 0 merged 1 arcclosed 0 ph 3
+SALT523 295 id 80 orth 2 own 0 union 1 n 11 ownN 76
+SALT523 295 id 80 orth 2 own 0 union 1 n 12 ownN 76
+CREW523 296 site mag slotfs 3 merged 3 won 0 n 51 of 882
+CREW523 296 site budget slotfs 3 merged 3 won 0 n 51 of 883
+CREW523 296 site spawn slotfs 3 merged 3 won 0 n 51 of 884
+PH523 296 id 80 body 1 arc 1 orth 0 own 1 merged 1 arcclosed 0 ph 3
+CREW523 297 site mag slotfs 3 merged 3 won 0 n 51 of 885
+CREW523 297 site budget slotfs 3 merged 3 won 0 n 51 of 886
+CREW523 297 site spawn slotfs 3 merged 3 won 0 n 51 of 887
+PH523 297 id 80 body 1 arc 1 orth 2 own 0 merged 1 arcclosed 0 ph 3
+SALT523 297 id 80 orth 2 own 0 union 1 n 13 ownN 78
+SALT523 297 id 80 orth 2 own 0 union 1 n 14 ownN 78
+CREW523 298 site mag slotfs 3 merged 3 won 0 n 51 of 888
+CREW523 298 site budget slotfs 3 merged 3 won 0 n 51 of 889
+CREW523 298 site spawn slotfs 3 merged 3 won 0 n 51 of 890
+PH523 298 id 80 body 1 arc 1 orth 0 own 1 merged 1 arcclosed 0 ph 3
+CREW523 299 site mag slotfs 3 merged 3 won 0 n 51 of 891
+CREW523 299 site budget slotfs 3 merged 3 won 0 n 51 of 892
+CREW523 299 site spawn slotfs 3 merged 3 won 0 n 51 of 893
+PH523 299 id 80 body 1 arc 1 orth 0 own 1 merged 1 arcclosed 0 ph 3
+CREW523 300 site mag slotfs 3 merged 3 won 0 n 51 of 894
+CREW523 300 site budget slotfs 3 merged 3 won 0 n 51 of 895
+CREW523 300 site spawn slotfs 3 merged 3 won 0 n 51 of 896
+PH523 300 id 80 body 1 arc 1 orth 2 own 0 merged 1 arcclosed 0 ph 3
+SALT523 300 id 80 orth 2 own 0 union 1 n 15 ownN 82
+SALT523 300 id 80 orth 2 own 0 union 1 n 16 ownN 82
+CREW523 301 site mag slotfs 3 merged 3 won 0 n 51 of 897
+CREW523 301 site budget slotfs 3 merged 3 won 0 n 51 of 898
+CREW523 301 site spawn slotfs 3 merged 3 won 0 n 51 of 899
+PH523 301 id 80 body 1 arc 1 orth 0 own 1 merged 1 arcclosed 0 ph 3
+CREW523 302 site mag slotfs 3 merged 3 won 0 n 51 of 900
+CREW523 302 site budget slotfs 3 merged 3 won 0 n 51 of 901
+CREW523 302 site spawn slotfs 3 merged 3 won 0 n 51 of 902
+PH523 302 id 80 body 1 arc 1 orth 0 own 1 merged 1 arcclosed 0 ph 3
+CREW523 303 site mag slotfs 3 merged 3 won 0 n 51 of 903
+CREW523 303 site budget slotfs 3 merged 3 won 0 n 51 of 904
+CREW523 303 site spawn slotfs 3 merged 3 won 0 n 51 of 905
+PH523 303 id 80 body 1 arc 1 orth 0 own 1 merged 1 arcclosed 0 ph 3
+CREW523 304 site mag slotfs 3 merged 3 won 0 n 51 of 906
+CREW523 304 site budget slotfs 3 merged 3 won 0 n 51 of 907
+CREW523 304 site spawn slotfs 3 merged 3 won 0 n 51 of 908
+PH523 304 id 80 body 1 arc 1 orth 0 own 1 merged 1 arcclosed 0 ph 3
+CREW523 305 site mag slotfs 3 merged 3 won 0 n 51 of 909
+CREW523 305 site budget slotfs 3 merged 3 won 0 n 51 of 910
+CREW523 305 site spawn slotfs 3 merged 3 won 0 n 51 of 911
+PH523 305 id 80 body 1 arc 1 orth 0 own 1 merged 1 arcclosed 0 ph 3
+CREW523 306 site mag slotfs 3 merged 3 won 0 n 51 of 912
+CREW523 306 site budget slotfs 3 merged 3 won 0 n 51 of 913
+CREW523 306 site spawn slotfs 3 merged 3 won 0 n 51 of 914
+PH523 306 id 80 body 1 arc 1 orth 0 own 1 merged 1 arcclosed 0 ph 3
+CREW523 307 site mag slotfs 3 merged 3 won 0 n 51 of 915
+CREW523 307 site budget slotfs 3 merged 3 won 0 n 51 of 916
+CREW523 307 site spawn slotfs 3 merged 3 won 0 n 51 of 917
+PH523 307 id 80 body 1 arc 1 orth 0 own 1 merged 1 arcclosed 0 ph 3
+CREW523 308 site mag slotfs 3 merged 3 won 0 n 51 of 918
+CREW523 308 site budget slotfs 3 merged 3 won 0 n 51 of 919
+CREW523 308 site spawn slotfs 3 merged 3 won 0 n 51 of 920
+PH523 308 id 80 body 1 arc 1 orth 0 own 1 merged 1 arcclosed 0 ph 3

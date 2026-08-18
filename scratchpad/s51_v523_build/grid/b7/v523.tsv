@@ -1,0 +1,37 @@
+tag	map	seed	seat	ours	winner	cond	turn	tracebacks	ours_mined	opp_mined
+atoll_s19_A	atoll	19	A	OPP	_v488beltbreak2	Core destroyed	290	0	1440	3200
+atoll_s19_B	atoll	19	B	US	_v523eyes	Core destroyed	454	0	3560	1180
+atoll_s20_A	atoll	20	A	US	_v523eyes	Core destroyed	266	0	1300	220
+atoll_s20_B	atoll	20	B	OPP	_v488beltbreak2	Core destroyed	540	0	600	2540
+atoll_s21_A	atoll	21	A	OPP	_v488beltbreak2	Core destroyed	819	0	4060	4060
+atoll_s21_B	atoll	21	B	US	_v523eyes	Titanium collected (tiebreak)	1000	0	9370	4940
+drakkarfjord_s19_A	drakkarfjord	19	A	US	_v523eyes	Core destroyed	101	0	400	0
+drakkarfjord_s19_B	drakkarfjord	19	B	US	_v523eyes	Core destroyed	461	0	420	0
+drakkarfjord_s20_A	drakkarfjord	20	A	US	_v523eyes	Core destroyed	88	0	270	0
+drakkarfjord_s20_B	drakkarfjord	20	B	US	_v523eyes	Core destroyed	98	0	300	0
+drakkarfjord_s21_A	drakkarfjord	21	A	US	_v523eyes	Core destroyed	211	0	950	190
+drakkarfjord_s21_B	drakkarfjord	21	B	US	_v523eyes	Core destroyed	287	0	1480	0
+glacierkeep_s19_A	glacierkeep	19	A	US	_v523eyes	Core destroyed	165	0	140	0
+glacierkeep_s19_B	glacierkeep	19	B	US	_v523eyes	Core destroyed	582	0	0	0
+glacierkeep_s20_A	glacierkeep	20	A	US	_v523eyes	Core destroyed	137	0	140	0
+glacierkeep_s20_B	glacierkeep	20	B	US	_v523eyes	Core destroyed	325	0	0	0
+glacierkeep_s21_A	glacierkeep	21	A	US	_v523eyes	Core destroyed	253	0	570	120
+glacierkeep_s21_B	glacierkeep	21	B	US	_v523eyes	Core destroyed	624	0	0	0
+midgard_s19_A	midgard	19	A	US	_v523eyes	Core destroyed	213	0	890	580
+midgard_s19_B	midgard	19	B	US	_v523eyes	Core destroyed	300	0	2760	1310
+midgard_s20_A	midgard	20	A	OPP	_v488beltbreak2	Core destroyed	340	0	730	2680
+midgard_s20_B	midgard	20	B	OPP	_v488beltbreak2	Core destroyed	631	0	670	4530
+midgard_s21_A	midgard	21	A	US	_v523eyes	Core destroyed	272	0	2640	710
+midgard_s21_B	midgard	21	B	US	_v523eyes	Core destroyed	301	0	620	690
+nordkap_s19_A	nordkap	19	A	US	_v523eyes	Core destroyed	276	0	640	60
+nordkap_s19_B	nordkap	19	B	US	_v523eyes	Core destroyed	221	0	530	10
+nordkap_s20_A	nordkap	20	A	US	_v523eyes	Core destroyed	566	0	860	270
+nordkap_s20_B	nordkap	20	B	OPP	_v488beltbreak2	Core destroyed	445	0	350	3530
+nordkap_s21_A	nordkap	21	A	US	_v523eyes	Core destroyed	107	0	420	60
+nordkap_s21_B	nordkap	21	B	US	_v523eyes	Core destroyed	211	0	1920	1530
+yulerune_s19_A	yulerune	19	A	OPP	_v488beltbreak2	Core destroyed	496	0	420	2330
+yulerune_s19_B	yulerune	19	B	OPP	_v488beltbreak2	Core destroyed	188	0	360	780
+yulerune_s20_A	yulerune	20	A	US	_v523eyes	Core destroyed	507	0	1640	330
+yulerune_s20_B	yulerune	20	B	OPP	_v488beltbreak2	Core destroyed	159	0	590	940
+yulerune_s21_A	yulerune	21	A	US	_v523eyes	Core destroyed	323	0	2500	610
+yulerune_s21_B	yulerune	21	B	OPP	_v488beltbreak2	Core destroyed	224	0	350	1000

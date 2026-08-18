@@ -1,0 +1,37 @@
+tag	map	seed	seat	ours	winner	cond	turn	tracebacks	ours_mined	opp_mined
+atoll_s834_A	atoll	834	A	OPP	_v488beltbreak2	Core destroyed	356	0	1690	1250
+atoll_s834_B	atoll	834	B	US	parentB	Core destroyed	250	0	1130	2140
+atoll_s835_A	atoll	835	A	US	parentB	Core destroyed	189	0	610	330
+atoll_s835_B	atoll	835	B	OPP	_v488beltbreak2	Titanium collected (tiebreak)	1000	0	310	4960
+atoll_s836_A	atoll	836	A	OPP	_v488beltbreak2	Core destroyed	344	0	240	1910
+atoll_s836_B	atoll	836	B	US	parentB	Titanium collected (tiebreak)	1000	0	7220	4480
+drakkarfjord_s834_A	drakkarfjord	834	A	US	parentB	Core destroyed	224	0	1620	0
+drakkarfjord_s834_B	drakkarfjord	834	B	US	parentB	Core destroyed	287	0	1480	0
+drakkarfjord_s835_A	drakkarfjord	835	A	US	parentB	Core destroyed	106	0	410	0
+drakkarfjord_s835_B	drakkarfjord	835	B	US	parentB	Core destroyed	117	0	360	0
+drakkarfjord_s836_A	drakkarfjord	836	A	US	parentB	Core destroyed	88	0	280	0
+drakkarfjord_s836_B	drakkarfjord	836	B	OPP	_v488beltbreak2	Core destroyed	521	0	250	0
+glacierkeep_s834_A	glacierkeep	834	A	US	parentB	Core destroyed	123	0	300	0
+glacierkeep_s834_B	glacierkeep	834	B	US	parentB	Core destroyed	445	0	0	0
+glacierkeep_s835_A	glacierkeep	835	A	US	parentB	Core destroyed	112	0	230	0
+glacierkeep_s835_B	glacierkeep	835	B	US	parentB	Core destroyed	445	0	0	0
+glacierkeep_s836_A	glacierkeep	836	A	US	parentB	Core destroyed	130	0	280	0
+glacierkeep_s836_B	glacierkeep	836	B	US	parentB	Titanium stored (tiebreak)	1000	0	0	0
+midgard_s834_A	midgard	834	A	US	parentB	Core destroyed	913	0	1040	890
+midgard_s834_B	midgard	834	B	OPP	_v488beltbreak2	Core destroyed	628	0	800	610
+midgard_s835_A	midgard	835	A	US	parentB	Core destroyed	305	0	720	640
+midgard_s835_B	midgard	835	B	US	parentB	Core destroyed	318	0	3000	570
+midgard_s836_A	midgard	836	A	OPP	_v488beltbreak2	Core destroyed	340	0	730	2680
+midgard_s836_B	midgard	836	B	OPP	_v488beltbreak2	Core destroyed	285	0	620	630
+nordkap_s834_A	nordkap	834	A	US	parentB	Core destroyed	137	0	460	70
+nordkap_s834_B	nordkap	834	B	US	parentB	Core destroyed	336	0	2390	50
+nordkap_s835_A	nordkap	835	A	US	parentB	Core destroyed	284	0	1000	80
+nordkap_s835_B	nordkap	835	B	US	parentB	Core destroyed	121	0	270	10
+nordkap_s836_A	nordkap	836	A	US	parentB	Core destroyed	261	0	260	20
+nordkap_s836_B	nordkap	836	B	OPP	_v488beltbreak2	Core destroyed	349	0	110	50
+yulerune_s834_A	yulerune	834	A	OPP	_v488beltbreak2	Core destroyed	151	0	350	1080
+yulerune_s834_B	yulerune	834	B	OPP	_v488beltbreak2	Core destroyed	222	0	370	2050
+yulerune_s835_A	yulerune	835	A	US	parentB	Core destroyed	259	0	1800	270
+yulerune_s835_B	yulerune	835	B	OPP	_v488beltbreak2	Core destroyed	137	0	320	840
+yulerune_s836_A	yulerune	836	A	OPP	_v488beltbreak2	Core destroyed	175	0	260	1830
+yulerune_s836_B	yulerune	836	B	OPP	_v488beltbreak2	Core destroyed	369	0	340	340

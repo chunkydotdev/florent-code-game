@@ -1,0 +1,37 @@
+tag	map	seed	seat	ours	winner	cond	turn	tracebacks	ours_mined	opp_mined
+atoll_s416_A	atoll	416	A	US	parent	Core destroyed	153	0	1310	180
+atoll_s416_B	atoll	416	B	US	parent	Core destroyed	528	0	2600	1400
+atoll_s417_A	atoll	417	A	US	parent	Core destroyed	221	0	1760	250
+atoll_s417_B	atoll	417	B	OPP	_x3r0v161gungnir	Core destroyed	218	0	1200	570
+atoll_s418_A	atoll	418	A	OPP	_x3r0v161gungnir	Core destroyed	468	0	1110	1060
+atoll_s418_B	atoll	418	B	US	parent	Core destroyed	241	0	600	660
+drakkarfjord_s416_A	drakkarfjord	416	A	US	parent	Core destroyed	170	0	300	0
+drakkarfjord_s416_B	drakkarfjord	416	B	US	parent	Core destroyed	188	0	300	0
+drakkarfjord_s417_A	drakkarfjord	417	A	US	parent	Core destroyed	201	0	360	0
+drakkarfjord_s417_B	drakkarfjord	417	B	OPP	_x3r0v161gungnir	Core destroyed	178	0	130	900
+drakkarfjord_s418_A	drakkarfjord	418	A	US	parent	Core destroyed	201	0	360	0
+drakkarfjord_s418_B	drakkarfjord	418	B	US	parent	Core destroyed	368	0	280	0
+glacierkeep_s416_A	glacierkeep	416	A	OPP	_x3r0v161gungnir	Core destroyed	668	0	0	1590
+glacierkeep_s416_B	glacierkeep	416	B	US	parent	Core destroyed	393	0	0	0
+glacierkeep_s417_A	glacierkeep	417	A	US	parent	Core destroyed	522	0	1690	0
+glacierkeep_s417_B	glacierkeep	417	B	OPP	_x3r0v161gungnir	Harvesters (tiebreak)	1000	0	0	0
+glacierkeep_s418_A	glacierkeep	418	A	OPP	_x3r0v161gungnir	Core destroyed	909	0	0	2210
+glacierkeep_s418_B	glacierkeep	418	B	US	parent	Titanium stored (tiebreak)	1000	0	0	0
+midgard_s416_A	midgard	416	A	OPP	_x3r0v161gungnir	Core destroyed	85	0	480	710
+midgard_s416_B	midgard	416	B	US	parent	Core destroyed	188	0	1980	560
+midgard_s417_A	midgard	417	A	OPP	_x3r0v161gungnir	Core destroyed	169	0	1830	1570
+midgard_s417_B	midgard	417	B	OPP	_x3r0v161gungnir	Core destroyed	289	0	1670	1840
+midgard_s418_A	midgard	418	A	OPP	_x3r0v161gungnir	Core destroyed	361	0	300	3570
+midgard_s418_B	midgard	418	B	OPP	_x3r0v161gungnir	Core destroyed	277	0	710	2600
+nordkap_s416_A	nordkap	416	A	OPP	_x3r0v161gungnir	Core destroyed	243	0	700	920
+nordkap_s416_B	nordkap	416	B	US	parent	Core destroyed	380	0	930	140
+nordkap_s417_A	nordkap	417	A	OPP	_x3r0v161gungnir	Core destroyed	104	0	360	720
+nordkap_s417_B	nordkap	417	B	US	parent	Core destroyed	507	0	1820	100
+nordkap_s418_A	nordkap	418	A	OPP	_x3r0v161gungnir	Core destroyed	831	0	100	2450
+nordkap_s418_B	nordkap	418	B	US	parent	Core destroyed	296	0	2980	260
+yulerune_s416_A	yulerune	416	A	US	parent	Core destroyed	196	0	1960	530
+yulerune_s416_B	yulerune	416	B	OPP	_x3r0v161gungnir	Core destroyed	264	0	1190	2520
+yulerune_s417_A	yulerune	417	A	OPP	_x3r0v161gungnir	Core destroyed	440	0	0	2610
+yulerune_s417_B	yulerune	417	B	OPP	_x3r0v161gungnir	Core destroyed	93	0	0	510
+yulerune_s418_A	yulerune	418	A	OPP	_x3r0v161gungnir	Core destroyed	109	0	0	660
+yulerune_s418_B	yulerune	418	B	OPP	_x3r0v161gungnir	Core destroyed	194	0	110	1710

@@ -1,0 +1,37 @@
+tag	map	seed	seat	ours	winner	cond	turn	tracebacks	ours_mined	opp_mined
+atoll_s801_A	atoll	801	A	US	iFLOORFUND	Core destroyed	194	0	1410	250
+atoll_s801_B	atoll	801	B	OPP	_v488beltbreak2	Core destroyed	327	0	230	1640
+atoll_s802_A	atoll	802	A	US	iFLOORFUND	Core destroyed	159	0	760	190
+atoll_s802_B	atoll	802	B	US	iFLOORFUND	Core destroyed	455	0	2250	1250
+atoll_s803_A	atoll	803	A	OPP	_v488beltbreak2	Core destroyed	215	0	310	1020
+atoll_s803_B	atoll	803	B	US	iFLOORFUND	Core destroyed	612	0	5450	3000
+drakkarfjord_s801_A	drakkarfjord	801	A	OPP	_v488beltbreak2	Core destroyed	800	0	4780	7800
+drakkarfjord_s801_B	drakkarfjord	801	B	US	iFLOORFUND	Core destroyed	123	0	390	0
+drakkarfjord_s802_A	drakkarfjord	802	A	US	iFLOORFUND	Core destroyed	634	0	310	0
+drakkarfjord_s802_B	drakkarfjord	802	B	US	iFLOORFUND	Core destroyed	122	0	350	0
+drakkarfjord_s803_A	drakkarfjord	803	A	US	iFLOORFUND	Core destroyed	153	0	280	0
+drakkarfjord_s803_B	drakkarfjord	803	B	US	iFLOORFUND	Core destroyed	96	0	300	0
+glacierkeep_s801_A	glacierkeep	801	A	OPP	_v488beltbreak2	Core destroyed	726	0	1770	4090
+glacierkeep_s801_B	glacierkeep	801	B	US	iFLOORFUND	Harvesters (tiebreak)	1000	0	0	0
+glacierkeep_s802_A	glacierkeep	802	A	US	iFLOORFUND	Core destroyed	143	0	590	0
+glacierkeep_s802_B	glacierkeep	802	B	OPP	_v488beltbreak2	Core destroyed	954	0	0	0
+glacierkeep_s803_A	glacierkeep	803	A	OPP	_v488beltbreak2	Titanium collected (tiebreak)	1000	0	150	160
+glacierkeep_s803_B	glacierkeep	803	B	US	iFLOORFUND	Core destroyed	936	0	0	0
+midgard_s801_A	midgard	801	A	US	iFLOORFUND	Core destroyed	246	0	1590	760
+midgard_s801_B	midgard	801	B	OPP	_v488beltbreak2	Titanium collected (tiebreak)	1000	0	780	850
+midgard_s802_A	midgard	802	A	OPP	_v488beltbreak2	Core destroyed	453	0	710	1210
+midgard_s802_B	midgard	802	B	US	iFLOORFUND	Titanium collected (tiebreak)	1000	0	920	640
+midgard_s803_A	midgard	803	A	US	iFLOORFUND	Core destroyed	725	0	820	670
+midgard_s803_B	midgard	803	B	OPP	_v488beltbreak2	Core destroyed	181	0	780	1000
+nordkap_s801_A	nordkap	801	A	US	iFLOORFUND	Core destroyed	174	0	420	90
+nordkap_s801_B	nordkap	801	B	US	iFLOORFUND	Core destroyed	165	0	90	80
+nordkap_s802_A	nordkap	802	A	US	iFLOORFUND	Core destroyed	126	0	390	20
+nordkap_s802_B	nordkap	802	B	OPP	_v488beltbreak2	Core destroyed	236	0	140	1570
+nordkap_s803_A	nordkap	803	A	US	iFLOORFUND	Core destroyed	185	0	400	90
+nordkap_s803_B	nordkap	803	B	US	iFLOORFUND	Core destroyed	174	0	410	630
+yulerune_s801_A	yulerune	801	A	US	iFLOORFUND	Core destroyed	785	0	340	2190
+yulerune_s801_B	yulerune	801	B	OPP	_v488beltbreak2	Core destroyed	262	0	350	2030
+yulerune_s802_A	yulerune	802	A	OPP	_v488beltbreak2	Core destroyed	221	0	390	380
+yulerune_s802_B	yulerune	802	B	OPP	_v488beltbreak2	Core destroyed	237	0	350	1690
+yulerune_s803_A	yulerune	803	A	US	iFLOORFUND	Core destroyed	157	0	1340	360
+yulerune_s803_B	yulerune	803	B	OPP	_v488beltbreak2	Core destroyed	741	0	310	230

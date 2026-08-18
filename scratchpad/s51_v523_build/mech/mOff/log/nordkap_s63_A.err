@@ -1,0 +1,1840 @@
+Update available: 2.3.6 -> 2.3.8. Run: pip install --upgrade fcode
+PH523 9 id 3 body 1 arc 2 orth 7 own 0 merged 0 arcclosed 0 ph 2
+PH523 10 id 3 body 1 arc 2 orth 5 own 0 merged 0 arcclosed 0 ph 2
+PH523 10 id 9 body 2 arc 1 orth 6 own 0 merged 0 arcclosed 0 ph 2
+PH523 11 id 3 body 1 arc 2 orth 5 own 0 merged 0 arcclosed 0 ph 2
+PH523 11 id 9 body 2 arc 1 orth 4 own 0 merged 0 arcclosed 0 ph 2
+PH523 12 id 3 body 1 arc 2 orth 4 own 0 merged 0 arcclosed 0 ph 2
+PH523 12 id 9 body 2 arc 1 orth 3 own 0 merged 0 arcclosed 0 ph 2
+PH523 13 id 3 body 1 arc 2 orth 4 own 0 merged 0 arcclosed 0 ph 2
+PH523 13 id 9 body 2 arc 1 orth 4 own 0 merged 0 arcclosed 0 ph 2
+PH523 14 id 3 body 1 arc 2 orth 4 own 0 merged 0 arcclosed 0 ph 2
+PH523 14 id 9 body 2 arc 1 orth 4 own 0 merged 0 arcclosed 0 ph 2
+PH523 15 id 3 body 1 arc 2 orth 4 own 0 merged 0 arcclosed 0 ph 2
+PH523 15 id 9 body 2 arc 1 orth 3 own 0 merged 0 arcclosed 0 ph 2
+PH523 16 id 3 body 1 arc 2 orth 3 own 0 merged 0 arcclosed 0 ph 2
+PH523 16 id 9 body 2 arc 1 orth 3 own 0 merged 0 arcclosed 0 ph 2
+PH523 17 id 3 body 1 arc 2 orth 3 own 0 merged 0 arcclosed 0 ph 2
+PH523 17 id 9 body 2 arc 1 orth 3 own 0 merged 0 arcclosed 0 ph 2
+PH523 18 id 3 body 1 arc 2 orth 4 own 0 merged 0 arcclosed 0 ph 2
+PH523 18 id 9 body 2 arc 1 orth 3 own 0 merged 0 arcclosed 0 ph 2
+PH523 19 id 3 body 1 arc 2 orth 3 own 0 merged 0 arcclosed 0 ph 2
+PH523 19 id 9 body 2 arc 1 orth 3 own 0 merged 0 arcclosed 0 ph 2
+PH523 20 id 3 body 1 arc 2 orth 3 own 0 merged 0 arcclosed 0 ph 2
+PH523 20 id 9 body 2 arc 1 orth 3 own 0 merged 0 arcclosed 0 ph 2
+PH523 21 id 3 body 1 arc 2 orth 3 own 0 merged 0 arcclosed 0 ph 2
+PH523 21 id 9 body 2 arc 1 orth 3 own 0 merged 0 arcclosed 0 ph 2
+PH523 22 id 3 body 1 arc 2 orth 6 own 0 merged 0 arcclosed 0 ph 2
+PH523 22 id 9 body 2 arc 1 orth 4 own 0 merged 0 arcclosed 0 ph 2
+PH523 23 id 3 body 1 arc 2 orth 4 own 0 merged 0 arcclosed 0 ph 2
+PH523 23 id 9 body 2 arc 1 orth 4 own 0 merged 0 arcclosed 0 ph 2
+PH523 24 id 3 body 1 arc 2 orth 4 own 0 merged 0 arcclosed 0 ph 2
+PH523 24 id 9 body 2 arc 1 orth 4 own 0 merged 0 arcclosed 0 ph 2
+PH523 25 id 3 body 1 arc 2 orth 3 own 0 merged 0 arcclosed 0 ph 2
+PH523 25 id 9 body 2 arc 1 orth 1 own 0 merged 0 arcclosed 0 ph 2
+PH523 26 id 3 body 1 arc 2 orth 2 own 0 merged 0 arcclosed 0 ph 2
+PH523 26 id 9 body 2 arc 1 orth 1 own 0 merged 0 arcclosed 0 ph 2
+PH523 27 id 3 body 1 arc 2 orth 2 own 0 merged 0 arcclosed 0 ph 2
+PH523 27 id 9 body 2 arc 1 orth 1 own 0 merged 0 arcclosed 0 ph 2
+PH523 28 id 3 body 1 arc 2 orth 2 own 0 merged 0 arcclosed 0 ph 2
+PH523 28 id 9 body 2 arc 1 orth 0 own 1 merged 1 arcclosed 0 ph 3
+PH523 29 id 3 body 1 arc 2 orth 1 own 0 merged 0 arcclosed 0 ph 2
+PH523 29 id 9 body 2 arc 1 orth 0 own 1 merged 1 arcclosed 0 ph 3
+PH523 30 id 3 body 1 arc 2 orth 1 own 0 merged 0 arcclosed 0 ph 2
+PH523 30 id 9 body 2 arc 1 orth 0 own 1 merged 1 arcclosed 0 ph 3
+PH523 31 id 3 body 1 arc 2 orth 1 own 0 merged 0 arcclosed 0 ph 2
+PH523 31 id 9 body 2 arc 1 orth 0 own 1 merged 1 arcclosed 0 ph 3
+PH523 32 id 3 body 1 arc 2 orth 1 own 0 merged 0 arcclosed 0 ph 2
+PH523 32 id 9 body 2 arc 1 orth 0 own 1 merged 1 arcclosed 0 ph 3
+PH523 33 id 3 body 1 arc 2 orth 2 own 0 merged 0 arcclosed 0 ph 2
+PH523 33 id 9 body 2 arc 1 orth 0 own 1 merged 1 arcclosed 0 ph 3
+PH523 34 id 3 body 1 arc 2 orth 1 own 0 merged 0 arcclosed 0 ph 2
+PH523 34 id 9 body 2 arc 1 orth 1 own 0 merged 0 arcclosed 0 ph 2
+PH523 35 id 3 body 1 arc 2 orth 0 own 1 merged 1 arcclosed 0 ph 3
+PH523 35 id 9 body 2 arc 1 orth 0 own 1 merged 1 arcclosed 0 ph 3
+PH523 36 id 3 body 1 arc 2 orth 0 own 1 merged 1 arcclosed 0 ph 3
+PH523 36 id 9 body 2 arc 1 orth 0 own 1 merged 1 arcclosed 0 ph 3
+PH523 37 id 3 body 1 arc 2 orth 1 own 0 merged 0 arcclosed 0 ph 2
+PH523 37 id 9 body 2 arc 1 orth 1 own 0 merged 0 arcclosed 0 ph 2
+PH523 38 id 3 body 1 arc 2 orth 3 own 0 merged 0 arcclosed 0 ph 2
+PH523 38 id 9 body 2 arc 1 orth 1 own 0 merged 0 arcclosed 0 ph 2
+PH523 39 id 3 body 1 arc 2 orth 1 own 0 merged 0 arcclosed 0 ph 2
+PH523 39 id 9 body 2 arc 1 orth 1 own 0 merged 0 arcclosed 0 ph 2
+PH523 40 id 3 body 1 arc 2 orth 1 own 0 merged 0 arcclosed 0 ph 2
+PH523 40 id 9 body 2 arc 1 orth 0 own 1 merged 1 arcclosed 0 ph 3
+PH523 41 id 3 body 1 arc 2 orth 0 own 1 merged 1 arcclosed 0 ph 3
+PH523 41 id 9 body 2 arc 1 orth 0 own 1 merged 1 arcclosed 0 ph 3
+PH523 42 id 3 body 1 arc 2 orth 0 own 1 merged 1 arcclosed 0 ph 3
+PH523 42 id 9 body 2 arc 1 orth 0 own 1 merged 1 arcclosed 0 ph 3
+PH523 43 id 3 body 1 arc 2 orth 0 own 1 merged 1 arcclosed 0 ph 3
+PH523 43 id 9 body 2 arc 1 orth 0 own 1 merged 1 arcclosed 0 ph 3
+PH523 44 id 3 body 1 arc 2 orth 2 own 0 merged 0 arcclosed 0 ph 2
+PH523 44 id 9 body 2 arc 1 orth 0 own 1 merged 1 arcclosed 0 ph 3
+PH523 45 id 3 body 1 arc 2 orth 0 own 1 merged 1 arcclosed 0 ph 3
+PH523 45 id 9 body 2 arc 1 orth 0 own 1 merged 1 arcclosed 0 ph 3
+PH523 46 id 3 body 1 arc 2 orth 2 own 0 merged 0 arcclosed 0 ph 2
+PH523 46 id 9 body 2 arc 1 orth 0 own 1 merged 1 arcclosed 0 ph 3
+PH523 47 id 3 body 1 arc 2 orth 0 own 1 merged 1 arcclosed 0 ph 3
+PH523 47 id 9 body 2 arc 1 orth 0 own 1 merged 1 arcclosed 0 ph 3
+PH523 48 id 3 body 1 arc 2 orth 2 own 0 merged 0 arcclosed 0 ph 2
+PH523 48 id 9 body 2 arc 1 orth 0 own 1 merged 1 arcclosed 0 ph 3
+PH523 49 id 3 body 1 arc 2 orth 0 own 1 merged 1 arcclosed 0 ph 3
+PH523 49 id 9 body 2 arc 1 orth 0 own 1 merged 1 arcclosed 0 ph 3
+PH523 50 id 3 body 1 arc 2 orth 0 own 1 merged 1 arcclosed 0 ph 3
+PH523 50 id 9 body 2 arc 1 orth 0 own 1 merged 1 arcclosed 0 ph 3
+PH523 51 id 3 body 1 arc 2 orth 0 own 1 merged 1 arcclosed 0 ph 3
+PH523 51 id 9 body 2 arc 1 orth 0 own 1 merged 1 arcclosed 0 ph 3
+PH523 52 id 3 body 1 arc 2 orth 0 own 1 merged 1 arcclosed 0 ph 3
+PH523 52 id 9 body 2 arc 1 orth 0 own 1 merged 1 arcclosed 0 ph 3
+PH523 53 id 3 body 1 arc 2 orth 0 own 1 merged 1 arcclosed 0 ph 3
+PH523 53 id 9 body 2 arc 1 orth 0 own 1 merged 1 arcclosed 0 ph 3
+PH523 54 id 3 body 1 arc 2 orth 0 own 1 merged 1 arcclosed 0 ph 3
+PH523 54 id 9 body 2 arc 1 orth 0 own 1 merged 1 arcclosed 0 ph 3
+PH523 55 id 3 body 1 arc 2 orth 0 own 1 merged 1 arcclosed 0 ph 3
+PH523 55 id 9 body 2 arc 1 orth 0 own 1 merged 1 arcclosed 0 ph 3
+PH523 56 id 3 body 1 arc 2 orth 0 own 1 merged 1 arcclosed 0 ph 3
+PH523 56 id 9 body 2 arc 1 orth 0 own 1 merged 1 arcclosed 0 ph 3
+PH523 57 id 3 body 1 arc 2 orth 0 own 1 merged 1 arcclosed 0 ph 3
+PH523 57 id 9 body 2 arc 1 orth 0 own 1 merged 1 arcclosed 0 ph 3
+PH523 58 id 3 body 1 arc 2 orth 0 own 1 merged 1 arcclosed 0 ph 3
+PH523 58 id 9 body 2 arc 1 orth 0 own 1 merged 1 arcclosed 0 ph 3
+PH523 59 id 3 body 1 arc 2 orth 0 own 1 merged 1 arcclosed 0 ph 3
+PH523 59 id 9 body 2 arc 1 orth 0 own 1 merged 1 arcclosed 0 ph 3
+PH523 60 id 3 body 1 arc 2 orth 0 own 1 merged 1 arcclosed 0 ph 3
+PH523 60 id 9 body 2 arc 1 orth 0 own 1 merged 1 arcclosed 0 ph 3
+PH523 61 id 3 body 1 arc 2 orth 0 own 1 merged 1 arcclosed 0 ph 3
+PH523 61 id 9 body 2 arc 1 orth 0 own 1 merged 1 arcclosed 0 ph 3
+PH523 62 id 3 body 1 arc 2 orth 0 own 1 merged 1 arcclosed 0 ph 3
+PH523 62 id 9 body 2 arc 1 orth 0 own 1 merged 1 arcclosed 0 ph 3
+PH523 63 id 3 body 1 arc 2 orth 0 own 1 merged 1 arcclosed 0 ph 3
+PH523 63 id 9 body 2 arc 1 orth 0 own 1 merged 1 arcclosed 0 ph 3
+PH523 64 id 3 body 1 arc 2 orth 0 own 1 merged 1 arcclosed 0 ph 4
+PH523 64 id 9 body 2 arc 1 orth 0 own 1 merged 1 arcclosed 0 ph 3
+MAG522 65 ph 2 on 0 near 0 fund 1 fuse 1 ttl 1 ti 14 ammo 10 bar 8 want 22 floor 16 bind 0 nbind 0 nnear 0
+PH523 65 id 3 body 1 arc 2 orth 0 own 1 merged 1 arcclosed 0 ph 4
+PH523 65 id 9 body 2 arc 1 orth 0 own 1 merged 1 arcclosed 0 ph 4
+MAG522 66 ph 2 on 0 near 0 fund 0 fuse 1 ttl 1 ti 14 ammo 6 bar 8 want 22 floor 16 bind 0 nbind 0 nnear 0
+PH523 66 id 3 body 1 arc 2 orth 0 own 1 merged 1 arcclosed 0 ph 4
+PH523 66 id 9 body 2 arc 1 orth 0 own 1 merged 1 arcclosed 0 ph 4
+MAG522 67 ph 2 on 0 near 0 fund 0 fuse 1 ttl 1 ti 24 ammo 2 bar 8 want 22 floor 16 bind 0 nbind 0 nnear 0
+PH523 67 id 3 body 1 arc 2 orth 0 own 1 merged 1 arcclosed 0 ph 4
+PH523 67 id 9 body 2 arc 1 orth 0 own 1 merged 1 arcclosed 0 ph 4
+MAG522 68 ph 2 on 0 near 0 fund 0 fuse 1 ttl 1 ti 26 ammo 6 bar 8 want 22 floor 16 bind 0 nbind 0 nnear 0
+PH523 68 id 3 body 1 arc 2 orth 0 own 1 merged 1 arcclosed 0 ph 4
+PH523 68 id 9 body 2 arc 1 orth 0 own 1 merged 1 arcclosed 0 ph 4
+MAG522 69 ph 2 on 0 near 0 fund 0 fuse 1 ttl 1 ti 16 ammo 2 bar 8 want 22 floor 16 bind 0 nbind 0 nnear 0
+PH523 69 id 3 body 1 arc 2 orth 0 own 1 merged 1 arcclosed 0 ph 4
+PH523 69 id 9 body 2 arc 1 orth 0 own 1 merged 1 arcclosed 0 ph 4
+MAG522 70 ph 2 on 0 near 0 fund 0 fuse 1 ttl 1 ti 6 ammo 2 bar 8 want 22 floor 16 bind 0 nbind 0 nnear 0
+PH523 70 id 3 body 1 arc 2 orth 0 own 1 merged 1 arcclosed 0 ph 4
+PH523 70 id 9 body 2 arc 1 orth 0 own 1 merged 1 arcclosed 0 ph 4
+MAG522 71 ph 2 on 0 near 0 fund 0 fuse 1 ttl 1 ti 16 ammo 2 bar 8 want 22 floor 16 bind 0 nbind 0 nnear 0
+PH523 71 id 3 body 1 arc 2 orth 0 own 1 merged 1 arcclosed 0 ph 4
+PH523 71 id 9 body 2 arc 1 orth 2 own 0 merged 0 arcclosed 0 ph 5
+MAG522 72 ph 2 on 0 near 0 fund 0 fuse 1 ttl 1 ti 26 ammo 2 bar 8 want 22 floor 16 bind 0 nbind 0 nnear 0
+PH523 72 id 3 body 1 arc 2 orth 0 own 1 merged 1 arcclosed 0 ph 4
+PH523 72 id 9 body 2 arc 1 orth 4 own 0 merged 0 arcclosed 0 ph 5
+MAG522 73 ph 2 on 0 near 0 fund 0 fuse 1 ttl 1 ti 16 ammo 8 bar 8 want 22 floor 16 bind 0 nbind 0 nnear 0
+PH523 73 id 3 body 1 arc 2 orth 0 own 1 merged 1 arcclosed 0 ph 4
+PH523 73 id 9 body 2 arc 1 orth 2 own 0 merged 0 arcclosed 0 ph 5
+MAG522 74 ph 2 on 0 near 0 fund 0 fuse 1 ttl 1 ti 16 ammo 4 bar 8 want 22 floor 16 bind 0 nbind 0 nnear 0
+PH523 74 id 3 body 1 arc 2 orth 2 own 0 merged 0 arcclosed 0 ph 5
+PH523 74 id 9 body 2 arc 1 orth 0 own 1 merged 1 arcclosed 0 ph 4
+MAG522 75 ph 2 on 0 near 0 fund 0 fuse 1 ttl 1 ti 26 ammo 0 bar 8 want 22 floor 16 bind 0 nbind 0 nnear 0
+PH523 75 id 3 body 1 arc 2 orth 0 own 1 merged 1 arcclosed 0 ph 4
+PH523 75 id 9 body 2 arc 1 orth 2 own 0 merged 0 arcclosed 0 ph 5
+MAG522 76 ph 2 on 0 near 0 fund 0 fuse 1 ttl 1 ti 26 ammo 6 bar 8 want 22 floor 16 bind 0 nbind 0 nnear 0
+PH523 76 id 3 body 1 arc 2 orth 0 own 1 merged 1 arcclosed 0 ph 4
+PH523 76 id 9 body 2 arc 1 orth 0 own 1 merged 1 arcclosed 0 ph 4
+MAG522 77 ph 2 on 0 near 0 fund 0 fuse 1 ttl 1 ti 16 ammo 2 bar 8 want 22 floor 16 bind 0 nbind 0 nnear 0
+PH523 77 id 3 body 1 arc 2 orth 2 own 0 merged 0 arcclosed 0 ph 5
+PH523 77 id 9 body 2 arc 1 orth 0 own 1 merged 1 arcclosed 0 ph 4
+MAG522 78 ph 2 on 0 near 0 fund 0 fuse 1 ttl 1 ti 6 ammo 2 bar 8 want 22 floor 16 bind 0 nbind 0 nnear 0
+PH523 78 id 3 body 1 arc 2 orth 3 own 0 merged 0 arcclosed 0 ph 5
+PH523 78 id 9 body 2 arc 1 orth 0 own 1 merged 1 arcclosed 0 ph 4
+MAG522 79 ph 2 on 0 near 0 fund 0 fuse 1 ttl 1 ti 16 ammo 2 bar 8 want 22 floor 16 bind 0 nbind 0 nnear 0
+PH523 79 id 3 body 1 arc 2 orth 2 own 0 merged 0 arcclosed 0 ph 5
+PH523 79 id 9 body 2 arc 1 orth 2 own 0 merged 0 arcclosed 0 ph 5
+MAG522 80 ph 2 on 0 near 0 fund 0 fuse 1 ttl 1 ti 26 ammo 2 bar 8 want 22 floor 16 bind 0 nbind 0 nnear 0
+PH523 80 id 3 body 1 arc 2 orth 2 own 0 merged 0 arcclosed 0 ph 5
+PH523 80 id 9 body 2 arc 1 orth 4 own 0 merged 0 arcclosed 0 ph 5
+MAG522 81 ph 2 on 0 near 0 fund 0 fuse 1 ttl 1 ti 16 ammo 8 bar 8 want 22 floor 16 bind 0 nbind 0 nnear 0
+PH523 81 id 3 body 1 arc 2 orth 3 own 0 merged 0 arcclosed 0 ph 5
+PH523 81 id 9 body 2 arc 1 orth 2 own 0 merged 0 arcclosed 0 ph 5
+MAG522 82 ph 2 on 0 near 0 fund 0 fuse 1 ttl 1 ti 16 ammo 4 bar 8 want 22 floor 16 bind 0 nbind 0 nnear 0
+PH523 82 id 3 body 1 arc 2 orth 0 own 1 merged 1 arcclosed 0 ph 4
+PH523 82 id 9 body 2 arc 1 orth 4 own 0 merged 0 arcclosed 0 ph 5
+MAG522 83 ph 2 on 0 near 0 fund 0 fuse 1 ttl 1 ti 16 ammo 0 bar 8 want 22 floor 16 bind 0 nbind 0 nnear 0
+PH523 83 id 3 body 1 arc 2 orth 2 own 0 merged 0 arcclosed 0 ph 5
+PH523 83 id 9 body 2 arc 1 orth 2 own 0 merged 0 arcclosed 0 ph 5
+MAG522 84 ph 2 on 0 near 0 fund 0 fuse 1 ttl 1 ti 26 ammo 0 bar 8 want 22 floor 16 bind 0 nbind 0 nnear 0
+PH523 84 id 3 body 1 arc 2 orth 0 own 1 merged 1 arcclosed 0 ph 4
+PH523 84 id 9 body 2 arc 1 orth 4 own 0 merged 0 arcclosed 0 ph 5
+MAG522 85 ph 2 on 0 near 0 fund 0 fuse 1 ttl 1 ti 16 ammo 6 bar 8 want 22 floor 16 bind 0 nbind 0 nnear 0
+PH523 85 id 3 body 1 arc 2 orth 1 own 0 merged 0 arcclosed 0 ph 5
+PH523 85 id 9 body 2 arc 1 orth 2 own 0 merged 0 arcclosed 0 ph 5
+MAG522 86 ph 2 on 0 near 0 fund 0 fuse 1 ttl 1 ti 16 ammo 2 bar 8 want 22 floor 16 bind 0 nbind 0 nnear 0
+PH523 86 id 3 body 1 arc 2 orth 1 own 0 merged 0 arcclosed 0 ph 5
+PH523 86 id 9 body 2 arc 1 orth 4 own 0 merged 0 arcclosed 0 ph 5
+MAG522 87 ph 2 on 0 near 0 fund 0 fuse 1 ttl 1 ti 16 ammo 2 bar 8 want 22 floor 16 bind 0 nbind 0 nnear 0
+PH523 87 id 3 body 1 arc 2 orth 3 own 0 merged 0 arcclosed 0 ph 5
+PH523 87 id 9 body 2 arc 1 orth 2 own 0 merged 0 arcclosed 0 ph 5
+MAG522 88 ph 2 on 0 near 0 fund 0 fuse 1 ttl 1 ti 26 ammo 2 bar 8 want 22 floor 16 bind 0 nbind 0 nnear 0
+PH523 88 id 3 body 1 arc 2 orth 4 own 0 merged 0 arcclosed 0 ph 5
+PH523 88 id 9 body 2 arc 1 orth 4 own 0 merged 0 arcclosed 0 ph 5
+MAG522 89 ph 2 on 0 near 0 fund 0 fuse 1 ttl 1 ti 16 ammo 8 bar 8 want 22 floor 16 bind 0 nbind 0 nnear 0
+PH523 89 id 3 body 1 arc 2 orth 5 own 0 merged 0 arcclosed 0 ph 5
+PH523 89 id 9 body 2 arc 1 orth 2 own 0 merged 0 arcclosed 0 ph 5
+MAG522 90 ph 2 on 0 near 0 fund 0 fuse 1 ttl 1 ti 16 ammo 4 bar 8 want 22 floor 16 bind 0 nbind 0 nnear 0
+PH523 90 id 3 body 1 arc 2 orth 5 own 0 merged 0 arcclosed 0 ph 5
+PH523 90 id 9 body 2 arc 1 orth 4 own 0 merged 0 arcclosed 0 ph 5
+MAG522 91 ph 2 on 0 near 0 fund 0 fuse 1 ttl 1 ti 16 ammo 0 bar 8 want 22 floor 16 bind 0 nbind 0 nnear 0
+PH523 91 id 3 body 1 arc 2 orth 6 own 0 merged 0 arcclosed 0 ph 5
+PH523 91 id 9 body 2 arc 1 orth 2 own 0 merged 0 arcclosed 0 ph 5
+MAG522 92 ph 2 on 0 near 0 fund 0 fuse 1 ttl 1 ti 26 ammo 0 bar 8 want 22 floor 16 bind 0 nbind 0 nnear 0
+PH523 92 id 3 body 1 arc 2 orth 6 own 0 merged 0 arcclosed 0 ph 5
+PH523 92 id 9 body 2 arc 1 orth 2 own 0 merged 0 arcclosed 0 ph 5
+MAG522 93 ph 2 on 0 near 0 fund 0 fuse 1 ttl 1 ti 16 ammo 6 bar 8 want 22 floor 16 bind 0 nbind 0 nnear 0
+PH523 93 id 3 body 1 arc 2 orth 6 own 0 merged 0 arcclosed 0 ph 5
+PH523 93 id 9 body 2 arc 1 orth 2 own 0 merged 0 arcclosed 0 ph 5
+MAG522 94 ph 2 on 0 near 0 fund 0 fuse 1 ttl 1 ti 16 ammo 2 bar 8 want 22 floor 16 bind 0 nbind 0 nnear 0
+PH523 94 id 3 body 1 arc 2 orth 6 own 0 merged 0 arcclosed 0 ph 5
+PH523 94 id 9 body 2 arc 1 orth 2 own 0 merged 0 arcclosed 0 ph 5
+MAG522 95 ph 2 on 0 near 0 fund 0 fuse 1 ttl 1 ti 16 ammo 2 bar 8 want 22 floor 16 bind 0 nbind 0 nnear 0
+PH523 95 id 3 body 1 arc 2 orth 7 own 0 merged 0 arcclosed 0 ph 5
+PH523 95 id 9 body 2 arc 1 orth 2 own 0 merged 0 arcclosed 0 ph 5
+MAG522 96 ph 2 on 0 near 0 fund 0 fuse 1 ttl 1 ti 26 ammo 2 bar 8 want 22 floor 16 bind 0 nbind 0 nnear 0
+PH523 96 id 3 body 1 arc 2 orth 6 own 0 merged 0 arcclosed 0 ph 5
+PH523 96 id 9 body 2 arc 1 orth 2 own 0 merged 0 arcclosed 0 ph 5
+MAG522 97 ph 2 on 0 near 0 fund 0 fuse 1 ttl 1 ti 16 ammo 8 bar 8 want 22 floor 16 bind 0 nbind 0 nnear 0
+PH523 97 id 3 body 1 arc 2 orth 7 own 0 merged 0 arcclosed 0 ph 5
+PH523 97 id 9 body 2 arc 1 orth 2 own 0 merged 0 arcclosed 0 ph 5
+MAG522 98 ph 2 on 0 near 0 fund 0 fuse 1 ttl 1 ti 16 ammo 4 bar 8 want 22 floor 16 bind 0 nbind 0 nnear 0
+PH523 98 id 3 body 1 arc 2 orth 7 own 0 merged 0 arcclosed 0 ph 5
+PH523 98 id 9 body 2 arc 1 orth 4 own 0 merged 0 arcclosed 0 ph 5
+MAG522 99 ph 2 on 0 near 0 fund 0 fuse 1 ttl 1 ti 16 ammo 0 bar 8 want 22 floor 16 bind 0 nbind 0 nnear 0
+PH523 99 id 3 body 1 arc 2 orth 7 own 0 merged 0 arcclosed 0 ph 5
+PH523 99 id 9 body 2 arc 1 orth 2 own 0 merged 0 arcclosed 0 ph 5
+MAG522 100 ph 2 on 0 near 0 fund 0 fuse 1 ttl 1 ti 26 ammo 0 bar 8 want 22 floor 16 bind 0 nbind 0 nnear 0
+PH523 100 id 3 body 1 arc 2 orth 7 own 0 merged 0 arcclosed 0 ph 5
+PH523 100 id 9 body 2 arc 1 orth 4 own 0 merged 0 arcclosed 0 ph 5
+MAG522 101 ph 2 on 0 near 0 fund 0 fuse 1 ttl 1 ti 16 ammo 6 bar 8 want 22 floor 16 bind 0 nbind 0 nnear 0
+PH523 101 id 3 body 1 arc 2 orth 7 own 0 merged 0 arcclosed 0 ph 5
+PH523 101 id 9 body 2 arc 1 orth 2 own 0 merged 0 arcclosed 0 ph 5
+MAG522 102 ph 2 on 0 near 0 fund 0 fuse 1 ttl 1 ti 16 ammo 2 bar 8 want 22 floor 16 bind 0 nbind 0 nnear 0
+PH523 102 id 3 body 1 arc 2 orth 6 own 0 merged 0 arcclosed 0 ph 5
+PH523 102 id 9 body 2 arc 1 orth 4 own 0 merged 0 arcclosed 0 ph 5
+MAG522 103 ph 2 on 0 near 0 fund 0 fuse 1 ttl 1 ti 16 ammo 2 bar 8 want 22 floor 16 bind 0 nbind 0 nnear 0
+PH523 103 id 3 body 1 arc 2 orth 7 own 0 merged 0 arcclosed 0 ph 5
+PH523 103 id 9 body 2 arc 1 orth 5 own 0 merged 0 arcclosed 0 ph 5
+MAG522 104 ph 2 on 0 near 0 fund 0 fuse 1 ttl 1 ti 26 ammo 2 bar 8 want 22 floor 16 bind 0 nbind 0 nnear 0
+PH523 104 id 3 body 1 arc 2 orth 7 own 0 merged 0 arcclosed 0 ph 5
+PH523 104 id 9 body 2 arc 1 orth 5 own 0 merged 0 arcclosed 0 ph 5
+MAG522 105 ph 2 on 0 near 0 fund 0 fuse 1 ttl 1 ti 16 ammo 8 bar 8 want 22 floor 16 bind 0 nbind 0 nnear 0
+PH523 105 id 3 body 1 arc 2 orth 6 own 0 merged 0 arcclosed 0 ph 5
+PH523 105 id 9 body 2 arc 1 orth 4 own 0 merged 0 arcclosed 0 ph 5
+MAG522 106 ph 2 on 0 near 0 fund 0 fuse 1 ttl 1 ti 16 ammo 4 bar 8 want 22 floor 16 bind 0 nbind 0 nnear 0
+PH523 106 id 3 body 1 arc 2 orth 4 own 0 merged 0 arcclosed 0 ph 5
+PH523 106 id 9 body 2 arc 1 orth 2 own 0 merged 0 arcclosed 0 ph 5
+MAG522 107 ph 2 on 0 near 0 fund 0 fuse 1 ttl 1 ti 16 ammo 0 bar 8 want 22 floor 16 bind 0 nbind 0 nnear 0
+PH523 107 id 3 body 1 arc 2 orth 5 own 0 merged 0 arcclosed 0 ph 5
+PH523 107 id 9 body 2 arc 1 orth 2 own 0 merged 0 arcclosed 0 ph 5
+MAG522 108 ph 2 on 0 near 0 fund 0 fuse 1 ttl 1 ti 18 ammo 0 bar 8 want 22 floor 16 bind 0 nbind 0 nnear 0
+PH523 108 id 3 body 1 arc 2 orth 3 own 0 merged 0 arcclosed 0 ph 5
+PH523 108 id 9 body 2 arc 1 orth 1 own 0 merged 0 arcclosed 0 ph 5
+MAG522 109 ph 2 on 0 near 0 fund 0 fuse 1 ttl 1 ti 16 ammo 2 bar 8 want 22 floor 16 bind 0 nbind 0 nnear 0
+PH523 109 id 3 body 1 arc 2 orth 3 own 0 merged 0 arcclosed 0 ph 5
+PH523 109 id 9 body 2 arc 1 orth 1 own 0 merged 0 arcclosed 0 ph 5
+MAG522 110 ph 2 on 0 near 0 fund 0 fuse 1 ttl 1 ti 16 ammo 2 bar 8 want 22 floor 16 bind 0 nbind 0 nnear 0
+PH523 110 id 3 body 1 arc 2 orth 1 own 0 merged 0 arcclosed 0 ph 5
+PH523 110 id 9 body 2 arc 1 orth 0 own 1 merged 1 arcclosed 0 ph 4
+MAG522 111 ph 2 on 0 near 0 fund 0 fuse 1 ttl 1 ti 8 ammo 2 bar 8 want 22 floor 16 bind 0 nbind 0 nnear 0
+PH523 111 id 3 body 1 arc 2 orth 0 own 1 merged 1 arcclosed 0 ph 4
+PH523 111 id 9 body 2 arc 1 orth 0 own 1 merged 1 arcclosed 0 ph 4
+MAG522 112 ph 2 on 0 near 0 fund 0 fuse 1 ttl 1 ti 18 ammo 2 bar 8 want 22 floor 16 bind 0 nbind 0 nnear 0
+PH523 112 id 3 body 1 arc 2 orth 2 own 0 merged 0 arcclosed 0 ph 5
+PH523 112 id 9 body 2 arc 1 orth 0 own 1 merged 1 arcclosed 0 ph 4
+MAG522 113 ph 2 on 0 near 0 fund 0 fuse 1 ttl 1 ti 16 ammo 0 bar 8 want 22 floor 16 bind 0 nbind 0 nnear 0
+PH523 113 id 3 body 1 arc 2 orth 3 own 0 merged 0 arcclosed 0 ph 5
+PH523 113 id 9 body 2 arc 1 orth 0 own 1 merged 1 arcclosed 0 ph 4
+MAG522 114 ph 2 on 0 near 0 fund 0 fuse 1 ttl 1 ti 16 ammo 0 bar 8 want 22 floor 16 bind 0 nbind 0 nnear 0
+PH523 114 id 3 body 1 arc 2 orth 4 own 0 merged 0 arcclosed 0 ph 5
+PH523 114 id 9 body 2 arc 1 orth 0 own 1 merged 1 arcclosed 0 ph 4
+MAG522 115 ph 2 on 0 near 0 fund 0 fuse 1 ttl 1 ti 16 ammo 0 bar 8 want 22 floor 16 bind 0 nbind 0 nnear 0
+PH523 115 id 3 body 1 arc 2 orth 4 own 0 merged 0 arcclosed 0 ph 5
+PH523 115 id 9 body 2 arc 1 orth 0 own 1 merged 1 arcclosed 0 ph 4
+MAG522 116 ph 2 on 0 near 0 fund 0 fuse 1 ttl 1 ti 26 ammo 0 bar 8 want 22 floor 16 bind 0 nbind 0 nnear 0
+PH523 116 id 3 body 1 arc 2 orth 6 own 0 merged 0 arcclosed 0 ph 5
+PH523 116 id 9 body 2 arc 1 orth 0 own 1 merged 1 arcclosed 0 ph 4
+MAG522 117 ph 2 on 0 near 0 fund 0 fuse 1 ttl 1 ti 16 ammo 6 bar 8 want 22 floor 16 bind 0 nbind 0 nnear 0
+PH523 117 id 3 body 1 arc 2 orth 5 own 0 merged 0 arcclosed 0 ph 5
+PH523 117 id 9 body 2 arc 1 orth 1 own 0 merged 0 arcclosed 0 ph 5
+MAG522 118 ph 2 on 0 near 0 fund 0 fuse 1 ttl 1 ti 8 ammo 2 bar 8 want 22 floor 16 bind 0 nbind 0 nnear 0
+PH523 118 id 3 body 1 arc 2 orth 6 own 0 merged 0 arcclosed 0 ph 5
+PH523 118 id 9 body 2 arc 1 orth 0 own 1 merged 1 arcclosed 0 ph 4
+MAG522 119 ph 2 on 0 near 0 fund 0 fuse 1 ttl 1 ti 8 ammo 2 bar 8 want 22 floor 16 bind 0 nbind 0 nnear 0
+PH523 119 id 3 body 1 arc 2 orth 4 own 0 merged 0 arcclosed 0 ph 5
+PH523 119 id 9 body 2 arc 1 orth 0 own 1 merged 1 arcclosed 0 ph 4
+MAG522 120 ph 2 on 0 near 0 fund 0 fuse 1 ttl 1 ti 18 ammo 2 bar 8 want 22 floor 16 bind 0 nbind 0 nnear 0
+PH523 120 id 3 body 1 arc 2 orth 6 own 0 merged 0 arcclosed 0 ph 5
+PH523 120 id 9 body 2 arc 1 orth 0 own 1 merged 1 arcclosed 0 ph 4
+MAG522 121 ph 2 on 0 near 0 fund 0 fuse 1 ttl 1 ti 16 ammo 0 bar 8 want 22 floor 16 bind 0 nbind 0 nnear 0
+PH523 121 id 3 body 1 arc 2 orth 4 own 0 merged 0 arcclosed 0 ph 5
+PH523 121 id 9 body 2 arc 1 orth 0 own 1 merged 1 arcclosed 0 ph 4
+MAG522 122 ph 2 on 0 near 0 fund 0 fuse 1 ttl 1 ti 16 ammo 0 bar 8 want 22 floor 16 bind 0 nbind 0 nnear 0
+PH523 122 id 3 body 1 arc 2 orth 6 own 0 merged 0 arcclosed 0 ph 5
+PH523 122 id 9 body 2 arc 1 orth 0 own 1 merged 1 arcclosed 0 ph 4
+MAG522 123 ph 2 on 0 near 0 fund 0 fuse 1 ttl 1 ti 16 ammo 0 bar 8 want 22 floor 16 bind 0 nbind 0 nnear 0
+PH523 123 id 3 body 1 arc 2 orth 4 own 0 merged 0 arcclosed 0 ph 5
+PH523 123 id 9 body 2 arc 1 orth 0 own 1 merged 1 arcclosed 0 ph 4
+MAG522 124 ph 2 on 0 near 0 fund 0 fuse 1 ttl 1 ti 26 ammo 0 bar 8 want 22 floor 16 bind 0 nbind 0 nnear 0
+PH523 124 id 3 body 1 arc 2 orth 6 own 0 merged 0 arcclosed 0 ph 5
+PH523 124 id 9 body 2 arc 1 orth 0 own 1 merged 1 arcclosed 0 ph 4
+MAG522 125 ph 2 on 0 near 0 fund 0 fuse 1 ttl 1 ti 16 ammo 6 bar 8 want 22 floor 16 bind 0 nbind 0 nnear 0
+PH523 125 id 3 body 1 arc 2 orth 4 own 0 merged 0 arcclosed 0 ph 5
+PH523 125 id 9 body 2 arc 1 orth 0 own 1 merged 1 arcclosed 0 ph 4
+MAG522 126 ph 2 on 0 near 0 fund 0 fuse 1 ttl 1 ti 16 ammo 2 bar 8 want 22 floor 16 bind 0 nbind 0 nnear 0
+PH523 126 id 3 body 1 arc 2 orth 6 own 0 merged 0 arcclosed 0 ph 5
+PH523 126 id 9 body 2 arc 1 orth 0 own 1 merged 1 arcclosed 0 ph 4
+MAG522 127 ph 2 on 0 near 0 fund 0 fuse 1 ttl 1 ti 16 ammo 2 bar 8 want 22 floor 16 bind 0 nbind 0 nnear 0
+PH523 127 id 3 body 1 arc 2 orth 4 own 0 merged 0 arcclosed 0 ph 5
+PH523 127 id 9 body 2 arc 1 orth 0 own 1 merged 1 arcclosed 0 ph 4
+MAG522 128 ph 2 on 0 near 0 fund 0 fuse 1 ttl 1 ti 26 ammo 2 bar 8 want 22 floor 16 bind 0 nbind 0 nnear 0
+PH523 128 id 3 body 1 arc 2 orth 6 own 0 merged 0 arcclosed 0 ph 5
+PH523 128 id 9 body 2 arc 1 orth 0 own 1 merged 1 arcclosed 0 ph 4
+MAG522 129 ph 2 on 0 near 0 fund 0 fuse 1 ttl 1 ti 16 ammo 8 bar 8 want 22 floor 16 bind 0 nbind 0 nnear 0
+PH523 129 id 3 body 1 arc 2 orth 4 own 0 merged 0 arcclosed 0 ph 5
+PH523 129 id 9 body 2 arc 1 orth 0 own 1 merged 1 arcclosed 0 ph 4
+MAG522 130 ph 2 on 0 near 0 fund 0 fuse 1 ttl 1 ti 16 ammo 4 bar 8 want 22 floor 16 bind 0 nbind 0 nnear 0
+PH523 130 id 3 body 1 arc 2 orth 6 own 0 merged 0 arcclosed 0 ph 5
+PH523 130 id 9 body 2 arc 1 orth 0 own 1 merged 1 arcclosed 0 ph 4
+MAG522 131 ph 2 on 0 near 0 fund 0 fuse 1 ttl 1 ti 16 ammo 0 bar 8 want 22 floor 16 bind 0 nbind 0 nnear 0
+PH523 131 id 3 body 1 arc 2 orth 4 own 0 merged 0 arcclosed 0 ph 5
+PH523 131 id 9 body 2 arc 1 orth 0 own 1 merged 1 arcclosed 0 ph 4
+MAG522 132 ph 2 on 0 near 0 fund 0 fuse 1 ttl 1 ti 16 ammo 0 bar 8 want 22 floor 16 bind 0 nbind 0 nnear 0
+PH523 132 id 3 body 1 arc 2 orth 6 own 0 merged 0 arcclosed 0 ph 5
+PH523 132 id 9 body 2 arc 1 orth 0 own 1 merged 1 arcclosed 0 ph 4
+MAG522 133 ph 2 on 0 near 0 fund 0 fuse 1 ttl 1 ti 16 ammo 0 bar 8 want 22 floor 16 bind 0 nbind 0 nnear 0
+PH523 133 id 3 body 1 arc 2 orth 5 own 0 merged 0 arcclosed 0 ph 5
+PH523 133 id 9 body 2 arc 1 orth 1 own 0 merged 0 arcclosed 0 ph 5
+MAG522 134 ph 2 on 0 near 0 fund 0 fuse 1 ttl 1 ti 16 ammo 0 bar 8 want 22 floor 16 bind 0 nbind 0 nnear 0
+PH523 134 id 3 body 1 arc 2 orth 7 own 0 merged 0 arcclosed 0 ph 5
+PH523 134 id 9 body 2 arc 1 orth 1 own 0 merged 0 arcclosed 0 ph 5
+MAG522 135 ph 2 on 0 near 0 fund 0 fuse 1 ttl 1 ti 8 ammo 0 bar 8 want 22 floor 16 bind 0 nbind 0 nnear 0
+PH523 135 id 3 body 1 arc 2 orth 4 own 0 merged 0 arcclosed 0 ph 5
+PH523 135 id 9 body 2 arc 1 orth 0 own 1 merged 1 arcclosed 0 ph 4
+MAG522 136 ph 2 on 0 near 0 fund 0 fuse 1 ttl 1 ti 18 ammo 0 bar 8 want 22 floor 16 bind 0 nbind 0 nnear 0
+PH523 136 id 3 body 1 arc 2 orth 6 own 0 merged 0 arcclosed 0 ph 5
+PH523 136 id 9 body 2 arc 1 orth 0 own 1 merged 1 arcclosed 0 ph 4
+MAG522 137 ph 2 on 0 near 0 fund 0 fuse 1 ttl 1 ti 16 ammo 2 bar 8 want 22 floor 16 bind 0 nbind 0 nnear 0
+PH523 137 id 3 body 1 arc 2 orth 4 own 0 merged 0 arcclosed 0 ph 5
+PH523 137 id 9 body 2 arc 1 orth 0 own 1 merged 1 arcclosed 0 ph 4
+MAG522 138 ph 2 on 0 near 0 fund 0 fuse 1 ttl 1 ti 16 ammo 2 bar 8 want 22 floor 16 bind 0 nbind 0 nnear 0
+PH523 138 id 3 body 1 arc 2 orth 6 own 0 merged 0 arcclosed 0 ph 5
+PH523 138 id 9 body 2 arc 1 orth 0 own 1 merged 1 arcclosed 0 ph 4
+MAG522 139 ph 2 on 0 near 0 fund 0 fuse 1 ttl 1 ti 16 ammo 2 bar 8 want 22 floor 16 bind 0 nbind 0 nnear 0
+PH523 139 id 3 body 1 arc 2 orth 4 own 0 merged 0 arcclosed 0 ph 5
+PH523 139 id 9 body 2 arc 1 orth 0 own 1 merged 1 arcclosed 0 ph 4
+MAG522 140 ph 2 on 0 near 0 fund 0 fuse 1 ttl 1 ti 26 ammo 2 bar 8 want 22 floor 16 bind 0 nbind 0 nnear 0
+PH523 140 id 3 body 1 arc 2 orth 6 own 0 merged 0 arcclosed 0 ph 5
+PH523 140 id 9 body 2 arc 1 orth 0 own 1 merged 1 arcclosed 0 ph 4
+MAG522 141 ph 2 on 0 near 0 fund 0 fuse 1 ttl 1 ti 16 ammo 8 bar 8 want 22 floor 16 bind 0 nbind 0 nnear 0
+PH523 141 id 3 body 1 arc 2 orth 5 own 0 merged 0 arcclosed 0 ph 5
+PH523 141 id 9 body 2 arc 1 orth 1 own 0 merged 0 arcclosed 0 ph 5
+MAG522 142 ph 2 on 0 near 0 fund 0 fuse 1 ttl 1 ti 8 ammo 4 bar 8 want 22 floor 16 bind 0 nbind 0 nnear 0
+PH523 142 id 3 body 1 arc 2 orth 6 own 0 merged 0 arcclosed 0 ph 5
+PH523 142 id 9 body 2 arc 1 orth 0 own 1 merged 1 arcclosed 0 ph 4
+MAG522 143 ph 2 on 0 near 0 fund 0 fuse 1 ttl 1 ti 8 ammo 0 bar 8 want 22 floor 16 bind 0 nbind 0 nnear 0
+PH523 143 id 3 body 1 arc 2 orth 4 own 0 merged 0 arcclosed 0 ph 5
+PH523 143 id 9 body 2 arc 1 orth 0 own 1 merged 1 arcclosed 0 ph 4
+MAG522 144 ph 2 on 0 near 0 fund 0 fuse 1 ttl 1 ti 18 ammo 0 bar 8 want 22 floor 16 bind 0 nbind 0 nnear 0
+PH523 144 id 3 body 1 arc 2 orth 6 own 0 merged 0 arcclosed 0 ph 5
+PH523 144 id 9 body 2 arc 1 orth 0 own 1 merged 1 arcclosed 0 ph 4
+MAG522 145 ph 2 on 0 near 0 fund 0 fuse 1 ttl 1 ti 16 ammo 2 bar 8 want 22 floor 16 bind 0 nbind 0 nnear 0
+PH523 145 id 3 body 1 arc 2 orth 4 own 0 merged 0 arcclosed 0 ph 5
+PH523 145 id 9 body 2 arc 1 orth 0 own 1 merged 1 arcclosed 0 ph 4
+MAG522 146 ph 2 on 0 near 0 fund 0 fuse 1 ttl 1 ti 16 ammo 2 bar 8 want 22 floor 16 bind 0 nbind 0 nnear 0
+PH523 146 id 3 body 1 arc 2 orth 6 own 0 merged 0 arcclosed 0 ph 5
+PH523 146 id 9 body 2 arc 1 orth 0 own 1 merged 1 arcclosed 0 ph 4
+MAG522 147 ph 2 on 0 near 0 fund 0 fuse 1 ttl 1 ti 16 ammo 2 bar 8 want 22 floor 16 bind 0 nbind 0 nnear 0
+PH523 147 id 3 body 1 arc 2 orth 4 own 0 merged 0 arcclosed 0 ph 5
+PH523 147 id 9 body 2 arc 1 orth 0 own 1 merged 1 arcclosed 0 ph 4
+MAG522 148 ph 2 on 0 near 0 fund 0 fuse 1 ttl 1 ti 26 ammo 2 bar 8 want 22 floor 16 bind 0 nbind 0 nnear 0
+PH523 148 id 3 body 1 arc 2 orth 6 own 0 merged 0 arcclosed 0 ph 5
+PH523 148 id 9 body 2 arc 1 orth 0 own 1 merged 1 arcclosed 0 ph 4
+MAG522 149 ph 2 on 0 near 0 fund 0 fuse 1 ttl 1 ti 16 ammo 8 bar 8 want 22 floor 16 bind 0 nbind 0 nnear 0
+PH523 149 id 3 body 1 arc 2 orth 5 own 0 merged 0 arcclosed 0 ph 5
+PH523 149 id 9 body 2 arc 1 orth 1 own 0 merged 0 arcclosed 0 ph 5
+MAG522 150 ph 2 on 0 near 0 fund 0 fuse 1 ttl 1 ti 16 ammo 4 bar 8 want 22 floor 16 bind 0 nbind 0 nnear 0
+PH523 150 id 3 body 1 arc 2 orth 7 own 0 merged 0 arcclosed 0 ph 5
+PH523 150 id 9 body 2 arc 1 orth 1 own 0 merged 0 arcclosed 0 ph 5
+MAG522 151 ph 2 on 0 near 0 fund 0 fuse 1 ttl 1 ti 8 ammo 4 bar 8 want 22 floor 16 bind 0 nbind 0 nnear 0
+PH523 151 id 3 body 1 arc 2 orth 4 own 0 merged 0 arcclosed 0 ph 5
+PH523 151 id 9 body 2 arc 1 orth 0 own 1 merged 1 arcclosed 0 ph 4
+MAG522 152 ph 2 on 0 near 0 fund 0 fuse 1 ttl 1 ti 18 ammo 4 bar 8 want 22 floor 16 bind 0 nbind 0 nnear 0
+PH523 152 id 3 body 1 arc 2 orth 6 own 0 merged 0 arcclosed 0 ph 5
+PH523 152 id 9 body 2 arc 1 orth 0 own 1 merged 1 arcclosed 0 ph 4
+MAG522 153 ph 2 on 0 near 0 fund 0 fuse 1 ttl 1 ti 6 ammo 6 bar 8 want 22 floor 16 bind 0 nbind 0 nnear 0
+PH523 153 id 3 body 1 arc 2 orth 4 own 0 merged 0 arcclosed 0 ph 5
+PH523 153 id 9 body 2 arc 1 orth 0 own 1 merged 1 arcclosed 0 ph 4
+MAG522 154 ph 2 on 0 near 0 fund 0 fuse 1 ttl 1 ti 6 ammo 2 bar 8 want 22 floor 16 bind 0 nbind 0 nnear 0
+PH523 154 id 3 body 1 arc 2 orth 6 own 0 merged 0 arcclosed 0 ph 5
+PH523 154 id 9 body 2 arc 1 orth 0 own 1 merged 1 arcclosed 0 ph 4
+MAG522 155 ph 2 on 0 near 0 fund 0 fuse 1 ttl 1 ti 6 ammo 2 bar 8 want 22 floor 16 bind 0 nbind 0 nnear 0
+PH523 155 id 3 body 1 arc 2 orth 4 own 0 merged 0 arcclosed 0 ph 5
+PH523 155 id 9 body 2 arc 1 orth 0 own 1 merged 1 arcclosed 0 ph 4
+MAG522 156 ph 2 on 0 near 0 fund 0 fuse 1 ttl 1 ti 16 ammo 2 bar 8 want 22 floor 16 bind 0 nbind 0 nnear 0
+PH523 156 id 3 body 1 arc 2 orth 6 own 0 merged 0 arcclosed 0 ph 5
+PH523 156 id 9 body 2 arc 1 orth 0 own 1 merged 1 arcclosed 0 ph 4
+MAG522 157 ph 2 on 0 near 0 fund 0 fuse 1 ttl 1 ti 16 ammo 2 bar 8 want 22 floor 16 bind 0 nbind 0 nnear 0
+PH523 157 id 3 body 1 arc 2 orth 5 own 0 merged 0 arcclosed 0 ph 5
+PH523 157 id 9 body 2 arc 1 orth 1 own 0 merged 0 arcclosed 0 ph 5
+MAG522 158 ph 2 on 0 near 0 fund 0 fuse 1 ttl 1 ti 8 ammo 2 bar 8 want 22 floor 16 bind 0 nbind 0 nnear 0
+PH523 158 id 3 body 1 arc 2 orth 6 own 0 merged 0 arcclosed 0 ph 5
+PH523 158 id 9 body 2 arc 1 orth 0 own 1 merged 1 arcclosed 0 ph 4
+MAG522 159 ph 2 on 0 near 0 fund 0 fuse 1 ttl 1 ti 8 ammo 2 bar 8 want 22 floor 16 bind 0 nbind 0 nnear 0
+PH523 159 id 3 body 1 arc 2 orth 4 own 0 merged 0 arcclosed 0 ph 5
+PH523 159 id 9 body 2 arc 1 orth 0 own 1 merged 1 arcclosed 0 ph 4
+MAG522 160 ph 2 on 0 near 0 fund 0 fuse 1 ttl 1 ti 18 ammo 2 bar 8 want 22 floor 16 bind 0 nbind 0 nnear 0
+PH523 160 id 3 body 1 arc 2 orth 6 own 0 merged 0 arcclosed 0 ph 5
+PH523 160 id 9 body 2 arc 1 orth 0 own 1 merged 1 arcclosed 0 ph 4
+MAG522 161 ph 2 on 0 near 0 fund 0 fuse 1 ttl 1 ti 16 ammo 0 bar 8 want 22 floor 16 bind 0 nbind 0 nnear 0
+PH523 161 id 3 body 1 arc 2 orth 4 own 0 merged 0 arcclosed 0 ph 5
+PH523 161 id 9 body 2 arc 1 orth 0 own 1 merged 1 arcclosed 0 ph 4
+MAG522 162 ph 2 on 0 near 0 fund 0 fuse 1 ttl 1 ti 6 ammo 0 bar 8 want 22 floor 16 bind 0 nbind 0 nnear 0
+PH523 162 id 3 body 1 arc 2 orth 6 own 0 merged 0 arcclosed 0 ph 5
+PH523 162 id 9 body 2 arc 1 orth 0 own 1 merged 1 arcclosed 0 ph 4
+MAG522 163 ph 2 on 0 near 0 fund 0 fuse 1 ttl 1 ti 6 ammo 0 bar 8 want 22 floor 16 bind 0 nbind 0 nnear 0
+PH523 163 id 3 body 1 arc 2 orth 4 own 0 merged 0 arcclosed 0 ph 5
+PH523 163 id 9 body 2 arc 1 orth 0 own 1 merged 1 arcclosed 0 ph 4
+MAG522 164 ph 2 on 0 near 0 fund 0 fuse 1 ttl 1 ti 16 ammo 0 bar 8 want 22 floor 16 bind 0 nbind 0 nnear 0
+PH523 164 id 3 body 1 arc 2 orth 6 own 0 merged 0 arcclosed 0 ph 5
+PH523 164 id 9 body 2 arc 1 orth 0 own 1 merged 1 arcclosed 0 ph 4
+MAG522 165 ph 2 on 0 near 0 fund 0 fuse 1 ttl 1 ti 16 ammo 0 bar 8 want 22 floor 16 bind 0 nbind 0 nnear 0
+PH523 165 id 3 body 1 arc 2 orth 4 own 0 merged 0 arcclosed 0 ph 5
+PH523 165 id 9 body 2 arc 1 orth 0 own 1 merged 1 arcclosed 0 ph 4
+MAG522 166 ph 2 on 0 near 0 fund 0 fuse 1 ttl 1 ti 16 ammo 0 bar 8 want 22 floor 16 bind 0 nbind 0 nnear 0
+PH523 166 id 3 body 1 arc 2 orth 6 own 0 merged 0 arcclosed 0 ph 5
+PH523 166 id 9 body 2 arc 1 orth 0 own 1 merged 1 arcclosed 0 ph 4
+MAG522 167 ph 2 on 0 near 0 fund 0 fuse 1 ttl 1 ti 16 ammo 0 bar 8 want 22 floor 16 bind 0 nbind 0 nnear 0
+PH523 167 id 3 body 1 arc 2 orth 4 own 0 merged 0 arcclosed 0 ph 5
+PH523 167 id 9 body 2 arc 1 orth 0 own 1 merged 1 arcclosed 0 ph 4
+MAG522 168 ph 2 on 0 near 0 fund 0 fuse 1 ttl 1 ti 26 ammo 0 bar 8 want 22 floor 16 bind 0 nbind 0 nnear 0
+PH523 168 id 3 body 1 arc 2 orth 6 own 0 merged 0 arcclosed 0 ph 5
+PH523 168 id 9 body 2 arc 1 orth 0 own 1 merged 1 arcclosed 0 ph 4
+MAG522 169 ph 2 on 0 near 0 fund 0 fuse 1 ttl 1 ti 16 ammo 6 bar 8 want 22 floor 16 bind 0 nbind 0 nnear 0
+PH523 169 id 3 body 1 arc 2 orth 5 own 0 merged 0 arcclosed 0 ph 5
+PH523 169 id 9 body 2 arc 1 orth 1 own 0 merged 0 arcclosed 0 ph 5
+MAG522 170 ph 2 on 0 near 0 fund 0 fuse 1 ttl 1 ti 16 ammo 2 bar 8 want 22 floor 16 bind 0 nbind 0 nnear 0
+PH523 170 id 3 body 1 arc 2 orth 7 own 0 merged 0 arcclosed 0 ph 5
+PH523 170 id 9 body 2 arc 1 orth 1 own 0 merged 0 arcclosed 0 ph 5
+MAG522 171 ph 2 on 0 near 0 fund 0 fuse 1 ttl 1 ti 8 ammo 2 bar 8 want 22 floor 16 bind 0 nbind 0 nnear 0
+PH523 171 id 3 body 1 arc 2 orth 8 own 0 merged 0 arcclosed 0 ph 5
+PH523 171 id 9 body 2 arc 1 orth 0 own 1 merged 1 arcclosed 0 ph 4
+MAG522 172 ph 2 on 0 near 0 fund 0 fuse 1 ttl 1 ti 18 ammo 2 bar 8 want 22 floor 16 bind 0 nbind 0 nnear 0
+PH523 172 id 3 body 1 arc 2 orth 6 own 0 merged 0 arcclosed 0 ph 5
+PH523 172 id 9 body 2 arc 1 orth 0 own 1 merged 1 arcclosed 0 ph 4
+MAG522 173 ph 2 on 0 near 0 fund 0 fuse 1 ttl 1 ti 16 ammo 0 bar 8 want 22 floor 16 bind 0 nbind 0 nnear 0
+PH523 173 id 3 body 1 arc 2 orth 4 own 0 merged 0 arcclosed 0 ph 5
+PH523 173 id 9 body 2 arc 1 orth 0 own 1 merged 1 arcclosed 0 ph 4
+MAG522 174 ph 2 on 0 near 0 fund 0 fuse 1 ttl 1 ti 16 ammo 0 bar 8 want 22 floor 16 bind 0 nbind 0 nnear 0
+PH523 174 id 3 body 1 arc 2 orth 6 own 0 merged 0 arcclosed 0 ph 5
+PH523 174 id 9 body 2 arc 1 orth 0 own 1 merged 1 arcclosed 0 ph 4
+MAG522 175 ph 2 on 0 near 0 fund 0 fuse 1 ttl 1 ti 16 ammo 0 bar 8 want 22 floor 16 bind 0 nbind 0 nnear 0
+PH523 175 id 3 body 1 arc 2 orth 4 own 0 merged 0 arcclosed 0 ph 5
+PH523 175 id 9 body 2 arc 1 orth 0 own 1 merged 1 arcclosed 0 ph 4
+MAG522 176 ph 2 on 0 near 0 fund 0 fuse 1 ttl 1 ti 26 ammo 0 bar 8 want 22 floor 16 bind 0 nbind 0 nnear 0
+PH523 176 id 3 body 1 arc 2 orth 6 own 0 merged 0 arcclosed 0 ph 5
+PH523 176 id 9 body 2 arc 1 orth 0 own 1 merged 1 arcclosed 0 ph 4
+MAG522 177 ph 2 on 0 near 0 fund 0 fuse 1 ttl 1 ti 16 ammo 6 bar 8 want 22 floor 16 bind 0 nbind 0 nnear 0
+PH523 177 id 3 body 1 arc 2 orth 5 own 0 merged 0 arcclosed 0 ph 5
+PH523 177 id 9 body 2 arc 1 orth 1 own 0 merged 0 arcclosed 0 ph 5
+MAG522 178 ph 2 on 0 near 0 fund 0 fuse 1 ttl 1 ti 8 ammo 2 bar 8 want 22 floor 16 bind 0 nbind 0 nnear 0
+PH523 178 id 3 body 1 arc 2 orth 6 own 0 merged 0 arcclosed 0 ph 5
+PH523 178 id 9 body 2 arc 1 orth 0 own 1 merged 1 arcclosed 0 ph 4
+MAG522 179 ph 2 on 0 near 0 fund 0 fuse 1 ttl 1 ti 8 ammo 2 bar 8 want 22 floor 16 bind 0 nbind 0 nnear 0
+PH523 179 id 3 body 1 arc 2 orth 4 own 0 merged 0 arcclosed 0 ph 5
+PH523 179 id 9 body 2 arc 1 orth 0 own 1 merged 1 arcclosed 0 ph 4
+MAG522 180 ph 2 on 0 near 0 fund 0 fuse 1 ttl 1 ti 18 ammo 2 bar 8 want 22 floor 16 bind 0 nbind 0 nnear 0
+PH523 180 id 3 body 1 arc 2 orth 6 own 0 merged 0 arcclosed 0 ph 5
+PH523 180 id 9 body 2 arc 1 orth 0 own 1 merged 1 arcclosed 0 ph 4
+MAG522 181 ph 2 on 0 near 0 fund 0 fuse 1 ttl 1 ti 6 ammo 4 bar 8 want 22 floor 16 bind 0 nbind 0 nnear 0
+PH523 181 id 3 body 1 arc 2 orth 4 own 0 merged 0 arcclosed 0 ph 5
+PH523 181 id 9 body 2 arc 1 orth 0 own 1 merged 1 arcclosed 0 ph 4
+MAG522 182 ph 2 on 0 near 0 fund 0 fuse 1 ttl 1 ti 6 ammo 0 bar 8 want 22 floor 16 bind 0 nbind 0 nnear 0
+PH523 182 id 3 body 1 arc 2 orth 6 own 0 merged 0 arcclosed 0 ph 5
+PH523 182 id 9 body 2 arc 1 orth 0 own 1 merged 1 arcclosed 0 ph 4
+MAG522 183 ph 2 on 0 near 0 fund 0 fuse 1 ttl 1 ti 6 ammo 0 bar 8 want 22 floor 16 bind 0 nbind 0 nnear 0
+PH523 183 id 3 body 1 arc 2 orth 4 own 0 merged 0 arcclosed 0 ph 5
+PH523 183 id 9 body 2 arc 1 orth 0 own 1 merged 1 arcclosed 0 ph 4
+MAG522 184 ph 2 on 0 near 0 fund 0 fuse 1 ttl 1 ti 16 ammo 0 bar 8 want 22 floor 16 bind 0 nbind 0 nnear 0
+PH523 184 id 3 body 1 arc 2 orth 6 own 0 merged 0 arcclosed 0 ph 5
+PH523 184 id 9 body 2 arc 1 orth 0 own 1 merged 1 arcclosed 0 ph 4
+MAG522 185 ph 2 on 0 near 0 fund 0 fuse 1 ttl 1 ti 16 ammo 0 bar 8 want 22 floor 16 bind 0 nbind 0 nnear 0
+PH523 185 id 3 body 1 arc 2 orth 5 own 0 merged 0 arcclosed 0 ph 5
+PH523 185 id 9 body 2 arc 1 orth 1 own 0 merged 0 arcclosed 0 ph 5
+MAG522 186 ph 2 on 0 near 0 fund 0 fuse 1 ttl 1 ti 16 ammo 0 bar 8 want 22 floor 16 bind 0 nbind 0 nnear 0
+PH523 186 id 3 body 1 arc 2 orth 7 own 0 merged 0 arcclosed 0 ph 5
+PH523 186 id 9 body 2 arc 1 orth 1 own 0 merged 0 arcclosed 0 ph 5
+MAG522 187 ph 2 on 0 near 0 fund 0 fuse 1 ttl 1 ti 8 ammo 0 bar 8 want 22 floor 16 bind 0 nbind 0 nnear 0
+PH523 187 id 3 body 1 arc 2 orth 4 own 0 merged 0 arcclosed 0 ph 5
+PH523 187 id 9 body 2 arc 1 orth 0 own 1 merged 1 arcclosed 0 ph 4
+MAG522 188 ph 2 on 0 near 0 fund 0 fuse 1 ttl 1 ti 18 ammo 0 bar 8 want 22 floor 16 bind 0 nbind 0 nnear 0
+PH523 188 id 3 body 1 arc 2 orth 6 own 0 merged 0 arcclosed 0 ph 5
+PH523 188 id 9 body 2 arc 1 orth 0 own 1 merged 1 arcclosed 0 ph 4
+MAG522 189 ph 2 on 0 near 0 fund 0 fuse 1 ttl 1 ti 16 ammo 2 bar 8 want 22 floor 16 bind 0 nbind 0 nnear 0
+PH523 189 id 3 body 1 arc 2 orth 4 own 0 merged 0 arcclosed 0 ph 5
+PH523 189 id 9 body 2 arc 1 orth 0 own 1 merged 1 arcclosed 0 ph 4
+MAG522 190 ph 2 on 0 near 0 fund 0 fuse 1 ttl 1 ti 16 ammo 2 bar 8 want 22 floor 16 bind 0 nbind 0 nnear 0
+PH523 190 id 3 body 1 arc 2 orth 6 own 0 merged 0 arcclosed 0 ph 5
+PH523 190 id 9 body 2 arc 1 orth 0 own 1 merged 1 arcclosed 0 ph 4
+MAG522 191 ph 2 on 0 near 0 fund 0 fuse 1 ttl 1 ti 6 ammo 2 bar 8 want 22 floor 16 bind 0 nbind 0 nnear 0
+PH523 191 id 3 body 1 arc 2 orth 4 own 0 merged 0 arcclosed 0 ph 5
+PH523 191 id 9 body 2 arc 1 orth 0 own 1 merged 1 arcclosed 0 ph 4
+MAG522 192 ph 2 on 0 near 0 fund 0 fuse 1 ttl 1 ti 16 ammo 2 bar 8 want 22 floor 16 bind 0 nbind 0 nnear 0
+PH523 192 id 3 body 1 arc 2 orth 6 own 0 merged 0 arcclosed 0 ph 5
+PH523 192 id 9 body 2 arc 1 orth 0 own 1 merged 1 arcclosed 0 ph 4
+MAG522 193 ph 2 on 0 near 0 fund 0 fuse 1 ttl 1 ti 16 ammo 2 bar 8 want 22 floor 16 bind 0 nbind 0 nnear 0
+PH523 193 id 3 body 1 arc 2 orth 4 own 0 merged 0 arcclosed 0 ph 5
+PH523 193 id 9 body 2 arc 1 orth 0 own 1 merged 1 arcclosed 0 ph 4
+MAG522 194 ph 2 on 0 near 0 fund 0 fuse 1 ttl 1 ti 16 ammo 2 bar 8 want 22 floor 16 bind 0 nbind 0 nnear 0
+PH523 194 id 3 body 1 arc 2 orth 6 own 0 merged 0 arcclosed 0 ph 5
+PH523 194 id 9 body 2 arc 1 orth 0 own 1 merged 1 arcclosed 0 ph 4
+MAG522 195 ph 2 on 0 near 0 fund 0 fuse 1 ttl 1 ti 16 ammo 2 bar 8 want 22 floor 16 bind 0 nbind 0 nnear 0
+PH523 195 id 3 body 1 arc 2 orth 4 own 0 merged 0 arcclosed 0 ph 5
+PH523 195 id 9 body 2 arc 1 orth 0 own 1 merged 1 arcclosed 0 ph 4
+MAG522 196 ph 2 on 0 near 0 fund 0 fuse 1 ttl 1 ti 26 ammo 2 bar 8 want 22 floor 16 bind 0 nbind 0 nnear 0
+PH523 196 id 3 body 1 arc 2 orth 6 own 0 merged 0 arcclosed 0 ph 5
+PH523 196 id 9 body 2 arc 1 orth 0 own 1 merged 1 arcclosed 0 ph 4
+MAG522 197 ph 2 on 0 near 0 fund 0 fuse 1 ttl 1 ti 16 ammo 2 bar 8 want 22 floor 16 bind 0 nbind 0 nnear 0
+PH523 197 id 3 body 1 arc 2 orth 5 own 0 merged 0 arcclosed 0 ph 5
+PH523 197 id 9 body 2 arc 1 orth 1 own 0 merged 0 arcclosed 0 ph 5
+MAG522 198 ph 2 on 0 near 0 fund 0 fuse 1 ttl 1 ti 8 ammo 2 bar 8 want 22 floor 16 bind 0 nbind 0 nnear 0
+PH523 198 id 3 body 1 arc 2 orth 6 own 0 merged 0 arcclosed 0 ph 5
+PH523 198 id 9 body 2 arc 1 orth 0 own 1 merged 1 arcclosed 0 ph 4
+MAG522 199 ph 2 on 0 near 0 fund 0 fuse 1 ttl 1 ti 8 ammo 2 bar 8 want 22 floor 16 bind 0 nbind 0 nnear 0
+PH523 199 id 3 body 1 arc 2 orth 4 own 0 merged 0 arcclosed 0 ph 5
+PH523 199 id 9 body 2 arc 1 orth 0 own 1 merged 1 arcclosed 0 ph 4
+MAG522 200 ph 2 on 0 near 0 fund 0 fuse 1 ttl 1 ti 18 ammo 2 bar 8 want 22 floor 16 bind 0 nbind 0 nnear 0
+PH523 200 id 3 body 1 arc 2 orth 6 own 0 merged 0 arcclosed 0 ph 5
+PH523 200 id 9 body 2 arc 1 orth 0 own 1 merged 1 arcclosed 0 ph 4
+MAG522 201 ph 2 on 0 near 0 fund 0 fuse 1 ttl 1 ti 6 ammo 4 bar 8 want 22 floor 16 bind 0 nbind 0 nnear 0
+PH523 201 id 3 body 1 arc 2 orth 4 own 0 merged 0 arcclosed 0 ph 5
+PH523 201 id 9 body 2 arc 1 orth 0 own 1 merged 1 arcclosed 0 ph 4
+MAG522 202 ph 2 on 0 near 0 fund 0 fuse 1 ttl 1 ti 6 ammo 0 bar 8 want 22 floor 16 bind 0 nbind 0 nnear 0
+PH523 202 id 3 body 1 arc 2 orth 6 own 0 merged 0 arcclosed 0 ph 5
+PH523 202 id 9 body 2 arc 1 orth 0 own 1 merged 1 arcclosed 0 ph 4
+MAG522 203 ph 2 on 0 near 0 fund 0 fuse 1 ttl 1 ti 6 ammo 0 bar 8 want 22 floor 16 bind 0 nbind 0 nnear 0
+PH523 203 id 3 body 1 arc 2 orth 4 own 0 merged 0 arcclosed 0 ph 5
+PH523 203 id 9 body 2 arc 1 orth 0 own 1 merged 1 arcclosed 0 ph 4
+MAG522 204 ph 2 on 0 near 0 fund 0 fuse 1 ttl 1 ti 16 ammo 0 bar 8 want 22 floor 16 bind 0 nbind 0 nnear 0
+PH523 204 id 3 body 1 arc 2 orth 6 own 0 merged 0 arcclosed 0 ph 5
+PH523 204 id 9 body 2 arc 1 orth 0 own 1 merged 1 arcclosed 0 ph 4
+MAG522 205 ph 2 on 0 near 0 fund 0 fuse 1 ttl 1 ti 16 ammo 0 bar 8 want 22 floor 16 bind 0 nbind 0 nnear 0
+PH523 205 id 3 body 1 arc 2 orth 5 own 0 merged 0 arcclosed 0 ph 5
+PH523 205 id 9 body 2 arc 1 orth 1 own 0 merged 0 arcclosed 0 ph 5
+MAG522 206 ph 2 on 0 near 0 fund 0 fuse 1 ttl 1 ti 16 ammo 0 bar 8 want 22 floor 16 bind 0 nbind 0 nnear 0
+PH523 206 id 3 body 1 arc 2 orth 7 own 0 merged 0 arcclosed 0 ph 5
+PH523 206 id 9 body 2 arc 1 orth 1 own 0 merged 0 arcclosed 0 ph 5
+MAG522 207 ph 2 on 0 near 0 fund 0 fuse 1 ttl 1 ti 8 ammo 0 bar 8 want 22 floor 16 bind 0 nbind 0 nnear 0
+PH523 207 id 3 body 1 arc 2 orth 4 own 0 merged 0 arcclosed 0 ph 5
+PH523 207 id 9 body 2 arc 1 orth 0 own 1 merged 1 arcclosed 0 ph 4
+MAG522 208 ph 2 on 0 near 0 fund 0 fuse 1 ttl 1 ti 18 ammo 0 bar 8 want 22 floor 16 bind 0 nbind 0 nnear 0
+PH523 208 id 3 body 1 arc 2 orth 6 own 0 merged 0 arcclosed 0 ph 5
+PH523 208 id 9 body 2 arc 1 orth 0 own 1 merged 1 arcclosed 0 ph 4
+MAG522 209 ph 2 on 0 near 0 fund 0 fuse 1 ttl 1 ti 16 ammo 2 bar 8 want 22 floor 16 bind 0 nbind 0 nnear 0
+PH523 209 id 3 body 1 arc 2 orth 4 own 0 merged 0 arcclosed 0 ph 5
+PH523 209 id 9 body 2 arc 1 orth 2 own 0 merged 0 arcclosed 0 ph 5
+MAG522 210 ph 2 on 0 near 0 fund 0 fuse 1 ttl 1 ti 16 ammo 2 bar 8 want 22 floor 16 bind 0 nbind 0 nnear 0
+PH523 210 id 3 body 1 arc 2 orth 6 own 0 merged 0 arcclosed 0 ph 5
+PH523 210 id 9 body 2 arc 1 orth 0 own 1 merged 1 arcclosed 0 ph 4
+MAG522 211 ph 2 on 0 near 0 fund 0 fuse 1 ttl 1 ti 16 ammo 2 bar 8 want 22 floor 16 bind 0 nbind 0 nnear 0
+PH523 211 id 3 body 1 arc 2 orth 4 own 0 merged 0 arcclosed 0 ph 5
+PH523 211 id 9 body 2 arc 1 orth 0 own 1 merged 1 arcclosed 0 ph 4
+MAG522 212 ph 2 on 0 near 0 fund 0 fuse 1 ttl 1 ti 26 ammo 2 bar 8 want 22 floor 16 bind 0 nbind 0 nnear 0
+PH523 212 id 3 body 1 arc 2 orth 4 own 0 merged 0 arcclosed 0 ph 5
+PH523 212 id 9 body 2 arc 1 orth 2 own 0 merged 0 arcclosed 0 ph 5
+MAG522 213 ph 2 on 0 near 0 fund 0 fuse 1 ttl 1 ti 16 ammo 8 bar 8 want 22 floor 16 bind 0 nbind 0 nnear 0
+PH523 213 id 3 body 1 arc 2 orth 3 own 0 merged 0 arcclosed 0 ph 5
+PH523 213 id 9 body 2 arc 1 orth 3 own 0 merged 0 arcclosed 0 ph 5
+MAG522 214 ph 2 on 0 near 0 fund 0 fuse 1 ttl 1 ti 16 ammo 4 bar 8 want 22 floor 16 bind 0 nbind 0 nnear 0
+PH523 214 id 3 body 1 arc 2 orth 1 own 0 merged 0 arcclosed 0 ph 5
+PH523 214 id 9 body 2 arc 1 orth 4 own 0 merged 0 arcclosed 0 ph 5
+MAG522 215 ph 2 on 0 near 0 fund 0 fuse 1 ttl 1 ti 16 ammo 0 bar 8 want 22 floor 16 bind 0 nbind 0 nnear 0
+PH523 215 id 3 body 1 arc 2 orth 3 own 0 merged 0 arcclosed 0 ph 5
+PH523 215 id 9 body 2 arc 1 orth 4 own 0 merged 0 arcclosed 0 ph 5
+MAG522 216 ph 2 on 0 near 0 fund 0 fuse 1 ttl 1 ti 26 ammo 0 bar 8 want 22 floor 16 bind 0 nbind 0 nnear 0
+PH523 216 id 3 body 1 arc 2 orth 1 own 0 merged 0 arcclosed 0 ph 5
+PH523 216 id 9 body 2 arc 1 orth 3 own 0 merged 0 arcclosed 0 ph 5
+MAG522 217 ph 2 on 0 near 0 fund 0 fuse 1 ttl 1 ti 16 ammo 6 bar 8 want 22 floor 16 bind 0 nbind 0 nnear 0
+PH523 217 id 3 body 1 arc 2 orth 3 own 0 merged 0 arcclosed 0 ph 5
+PH523 217 id 9 body 2 arc 1 orth 1 own 0 merged 0 arcclosed 0 ph 5
+MAG522 218 ph 2 on 0 near 0 fund 0 fuse 1 ttl 1 ti 6 ammo 6 bar 8 want 22 floor 16 bind 0 nbind 0 nnear 0
+PH523 218 id 3 body 1 arc 2 orth 1 own 0 merged 0 arcclosed 0 ph 5
+PH523 218 id 9 body 2 arc 1 orth 3 own 0 merged 0 arcclosed 0 ph 5
+MAG522 219 ph 2 on 0 near 0 fund 0 fuse 1 ttl 1 ti 6 ammo 2 bar 8 want 22 floor 16 bind 0 nbind 0 nnear 0
+PH523 219 id 3 body 1 arc 2 orth 3 own 0 merged 0 arcclosed 0 ph 5
+PH523 219 id 9 body 2 arc 1 orth 4 own 0 merged 0 arcclosed 0 ph 5
+MAG522 220 ph 2 on 0 near 0 fund 0 fuse 1 ttl 1 ti 16 ammo 2 bar 8 want 22 floor 16 bind 0 nbind 0 nnear 0
+PH523 220 id 3 body 1 arc 2 orth 1 own 0 merged 0 arcclosed 0 ph 5
+PH523 220 id 9 body 2 arc 1 orth 3 own 0 merged 0 arcclosed 0 ph 5
+MAG522 221 ph 2 on 0 near 0 fund 0 fuse 1 ttl 1 ti 16 ammo 2 bar 8 want 22 floor 16 bind 0 nbind 0 nnear 0
+PH523 221 id 3 body 1 arc 2 orth 1 own 0 merged 0 arcclosed 0 ph 5
+PH523 221 id 9 body 2 arc 1 orth 1 own 0 merged 0 arcclosed 0 ph 5
+MAG522 222 ph 2 on 0 near 0 fund 0 fuse 1 ttl 1 ti 16 ammo 2 bar 8 want 22 floor 16 bind 0 nbind 0 nnear 0
+PH523 222 id 3 body 1 arc 2 orth 1 own 0 merged 0 arcclosed 0 ph 5
+PH523 222 id 9 body 2 arc 1 orth 0 own 1 merged 1 arcclosed 0 ph 4
+MAG522 223 ph 2 on 0 near 0 fund 0 fuse 1 ttl 1 ti 8 ammo 2 bar 8 want 22 floor 16 bind 0 nbind 0 nnear 0
+PH523 223 id 3 body 1 arc 2 orth 0 own 1 merged 1 arcclosed 0 ph 4
+PH523 223 id 9 body 2 arc 1 orth 0 own 1 merged 1 arcclosed 0 ph 4
+MAG522 224 ph 2 on 0 near 0 fund 0 fuse 1 ttl 1 ti 18 ammo 2 bar 8 want 22 floor 16 bind 0 nbind 0 nnear 0
+PH523 224 id 3 body 1 arc 2 orth 0 own 1 merged 1 arcclosed 0 ph 4
+PH523 224 id 9 body 2 arc 1 orth 0 own 1 merged 1 arcclosed 0 ph 4
+MAG522 225 ph 2 on 0 near 0 fund 0 fuse 1 ttl 1 ti 18 ammo 2 bar 8 want 22 floor 16 bind 0 nbind 0 nnear 0
+PH523 225 id 3 body 1 arc 2 orth 0 own 1 merged 1 arcclosed 0 ph 4
+PH523 225 id 9 body 2 arc 1 orth 0 own 1 merged 1 arcclosed 0 ph 4
+MAG522 226 ph 2 on 0 near 0 fund 0 fuse 1 ttl 1 ti 18 ammo 2 bar 8 want 22 floor 16 bind 0 nbind 0 nnear 0
+PH523 226 id 3 body 1 arc 2 orth 0 own 1 merged 1 arcclosed 0 ph 4
+PH523 226 id 9 body 2 arc 1 orth 0 own 1 merged 1 arcclosed 0 ph 4
+MAG522 227 ph 2 on 0 near 0 fund 0 fuse 1 ttl 1 ti 18 ammo 2 bar 8 want 22 floor 16 bind 0 nbind 0 nnear 0
+PH523 227 id 3 body 1 arc 2 orth 0 own 1 merged 1 arcclosed 0 ph 4
+PH523 227 id 9 body 2 arc 1 orth 0 own 1 merged 1 arcclosed 0 ph 4
+MAG522 228 ph 2 on 0 near 0 fund 0 fuse 1 ttl 1 ti 18 ammo 2 bar 8 want 22 floor 16 bind 0 nbind 0 nnear 0
+PH523 228 id 3 body 1 arc 2 orth 0 own 1 merged 1 arcclosed 0 ph 4
+PH523 228 id 9 body 2 arc 1 orth 0 own 1 merged 1 arcclosed 0 ph 4
+MAG522 229 ph 2 on 0 near 0 fund 0 fuse 1 ttl 1 ti 18 ammo 2 bar 8 want 22 floor 16 bind 0 nbind 0 nnear 0
+PH523 229 id 3 body 1 arc 2 orth 0 own 1 merged 1 arcclosed 0 ph 4
+PH523 229 id 9 body 2 arc 1 orth 0 own 1 merged 1 arcclosed 0 ph 4
+MAG522 230 ph 2 on 0 near 0 fund 0 fuse 1 ttl 1 ti 18 ammo 2 bar 8 want 22 floor 16 bind 0 nbind 0 nnear 0
+PH523 230 id 3 body 1 arc 2 orth 0 own 1 merged 1 arcclosed 0 ph 4
+PH523 230 id 9 body 2 arc 1 orth 0 own 1 merged 1 arcclosed 0 ph 4
+MAG522 231 ph 2 on 0 near 0 fund 0 fuse 1 ttl 1 ti 18 ammo 2 bar 8 want 22 floor 16 bind 0 nbind 0 nnear 0
+PH523 231 id 3 body 1 arc 2 orth 0 own 1 merged 1 arcclosed 0 ph 4
+PH523 231 id 9 body 2 arc 1 orth 0 own 1 merged 1 arcclosed 0 ph 4
+MAG522 232 ph 2 on 0 near 0 fund 0 fuse 1 ttl 1 ti 28 ammo 2 bar 8 want 22 floor 16 bind 0 nbind 0 nnear 0
+PH523 232 id 3 body 1 arc 2 orth 0 own 1 merged 1 arcclosed 0 ph 4
+PH523 232 id 9 body 2 arc 1 orth 0 own 1 merged 1 arcclosed 0 ph 4
+MAG522 233 ph 2 on 0 near 0 fund 0 fuse 1 ttl 1 ti 28 ammo 2 bar 8 want 22 floor 16 bind 0 nbind 0 nnear 0
+PH523 233 id 3 body 1 arc 2 orth 1 own 0 merged 0 arcclosed 0 ph 5
+PH523 233 id 9 body 2 arc 1 orth 0 own 1 merged 1 arcclosed 0 ph 4
+MAG522 234 ph 2 on 0 near 0 fund 0 fuse 1 ttl 1 ti 20 ammo 2 bar 8 want 22 floor 16 bind 0 nbind 0 nnear 0
+PH523 234 id 3 body 1 arc 2 orth 0 own 1 merged 1 arcclosed 0 ph 4
+PH523 234 id 9 body 2 arc 1 orth 0 own 1 merged 1 arcclosed 0 ph 4
+MAG522 235 ph 2 on 0 near 0 fund 0 fuse 1 ttl 1 ti 20 ammo 2 bar 8 want 22 floor 16 bind 0 nbind 0 nnear 0
+PH523 235 id 3 body 1 arc 2 orth 0 own 1 merged 1 arcclosed 0 ph 4
+PH523 235 id 9 body 2 arc 1 orth 0 own 1 merged 1 arcclosed 0 ph 4
+MAG522 236 ph 2 on 0 near 0 fund 0 fuse 1 ttl 1 ti 20 ammo 2 bar 8 want 22 floor 16 bind 0 nbind 0 nnear 0
+PH523 236 id 3 body 1 arc 2 orth 0 own 1 merged 1 arcclosed 0 ph 4
+PH523 236 id 9 body 2 arc 1 orth 0 own 1 merged 1 arcclosed 0 ph 4
+MAG522 237 ph 2 on 0 near 0 fund 0 fuse 1 ttl 1 ti 20 ammo 2 bar 8 want 22 floor 16 bind 0 nbind 0 nnear 0
+PH523 237 id 3 body 1 arc 2 orth 0 own 1 merged 1 arcclosed 0 ph 4
+PH523 237 id 9 body 2 arc 1 orth 0 own 1 merged 1 arcclosed 0 ph 4
+MAG522 238 ph 2 on 0 near 0 fund 0 fuse 1 ttl 1 ti 20 ammo 2 bar 8 want 22 floor 16 bind 0 nbind 0 nnear 0
+PH523 238 id 3 body 1 arc 2 orth 0 own 1 merged 1 arcclosed 0 ph 4
+PH523 238 id 9 body 2 arc 1 orth 0 own 1 merged 1 arcclosed 0 ph 4
+MAG522 239 ph 2 on 0 near 0 fund 0 fuse 1 ttl 1 ti 20 ammo 2 bar 8 want 22 floor 16 bind 0 nbind 0 nnear 0
+PH523 239 id 3 body 1 arc 2 orth 0 own 1 merged 1 arcclosed 0 ph 4
+PH523 239 id 9 body 2 arc 1 orth 0 own 1 merged 1 arcclosed 0 ph 4
+MAG522 240 ph 2 on 0 near 0 fund 0 fuse 1 ttl 1 ti 30 ammo 2 bar 8 want 22 floor 16 bind 0 nbind 0 nnear 0
+PH523 240 id 3 body 1 arc 2 orth 0 own 1 merged 1 arcclosed 0 ph 4
+PH523 240 id 9 body 2 arc 1 orth 0 own 1 merged 1 arcclosed 0 ph 4
+MAG522 241 ph 2 on 0 near 0 fund 0 fuse 1 ttl 1 ti 30 ammo 2 bar 8 want 22 floor 16 bind 0 nbind 0 nnear 0
+PH523 241 id 3 body 1 arc 2 orth 1 own 0 merged 0 arcclosed 0 ph 5
+PH523 241 id 9 body 2 arc 1 orth 1 own 0 merged 0 arcclosed 0 ph 5
+MAG522 242 ph 2 on 0 near 0 fund 0 fuse 1 ttl 1 ti 30 ammo 2 bar 8 want 22 floor 16 bind 0 nbind 0 nnear 0
+PH523 242 id 3 body 1 arc 2 orth 1 own 0 merged 0 arcclosed 0 ph 5
+PH523 242 id 9 body 2 arc 1 orth 0 own 1 merged 1 arcclosed 0 ph 4
+MAG522 243 ph 2 on 0 near 0 fund 0 fuse 1 ttl 1 ti 22 ammo 2 bar 8 want 22 floor 16 bind 0 nbind 0 nnear 0
+PH523 243 id 3 body 1 arc 2 orth 0 own 1 merged 1 arcclosed 0 ph 4
+PH523 243 id 9 body 2 arc 1 orth 0 own 1 merged 1 arcclosed 0 ph 4
+MAG522 244 ph 2 on 0 near 0 fund 0 fuse 1 ttl 1 ti 32 ammo 2 bar 8 want 22 floor 16 bind 0 nbind 0 nnear 0
+PH523 244 id 3 body 1 arc 2 orth 0 own 1 merged 1 arcclosed 0 ph 4
+PH523 244 id 9 body 2 arc 1 orth 0 own 1 merged 1 arcclosed 0 ph 4
+MAG522 245 ph 2 on 0 near 0 fund 0 fuse 1 ttl 1 ti 32 ammo 2 bar 8 want 22 floor 16 bind 0 nbind 0 nnear 0
+PH523 245 id 3 body 1 arc 2 orth 0 own 1 merged 1 arcclosed 0 ph 4
+PH523 245 id 9 body 2 arc 1 orth 0 own 1 merged 1 arcclosed 0 ph 4
+MAG522 246 ph 2 on 0 near 0 fund 0 fuse 1 ttl 1 ti 32 ammo 2 bar 8 want 22 floor 16 bind 0 nbind 0 nnear 0
+PH523 246 id 3 body 1 arc 2 orth 0 own 1 merged 1 arcclosed 0 ph 4
+PH523 246 id 9 body 2 arc 1 orth 0 own 1 merged 1 arcclosed 0 ph 4
+MAG522 247 ph 2 on 0 near 0 fund 0 fuse 1 ttl 1 ti 32 ammo 2 bar 8 want 22 floor 16 bind 0 nbind 0 nnear 0
+PH523 247 id 3 body 1 arc 2 orth 0 own 1 merged 1 arcclosed 0 ph 4
+PH523 247 id 9 body 2 arc 1 orth 0 own 1 merged 1 arcclosed 0 ph 4
+MAG522 248 ph 2 on 0 near 0 fund 0 fuse 1 ttl 1 ti 42 ammo 2 bar 8 want 22 floor 16 bind 0 nbind 0 nnear 0
+PH523 248 id 3 body 1 arc 2 orth 0 own 1 merged 1 arcclosed 0 ph 4
+PH523 248 id 9 body 2 arc 1 orth 0 own 1 merged 1 arcclosed 0 ph 4
+MAG522 249 ph 2 on 0 near 0 fund 0 fuse 1 ttl 1 ti 42 ammo 2 bar 8 want 22 floor 16 bind 0 nbind 0 nnear 0
+PH523 249 id 3 body 1 arc 2 orth 1 own 0 merged 0 arcclosed 0 ph 5
+PH523 249 id 9 body 2 arc 1 orth 0 own 1 merged 1 arcclosed 0 ph 4
+MAG522 250 ph 2 on 0 near 0 fund 0 fuse 1 ttl 1 ti 34 ammo 2 bar 8 want 22 floor 16 bind 0 nbind 0 nnear 0
+PH523 250 id 3 body 1 arc 2 orth 0 own 1 merged 1 arcclosed 0 ph 4
+PH523 250 id 9 body 2 arc 1 orth 0 own 1 merged 1 arcclosed 0 ph 4
+MAG522 251 ph 2 on 0 near 0 fund 0 fuse 1 ttl 1 ti 34 ammo 2 bar 8 want 22 floor 16 bind 0 nbind 0 nnear 0
+PH523 251 id 3 body 1 arc 2 orth 0 own 1 merged 1 arcclosed 0 ph 4
+PH523 251 id 9 body 2 arc 1 orth 0 own 1 merged 1 arcclosed 0 ph 4
+MAG522 252 ph 2 on 0 near 0 fund 0 fuse 1 ttl 1 ti 44 ammo 2 bar 8 want 22 floor 16 bind 0 nbind 0 nnear 0
+PH523 252 id 3 body 1 arc 2 orth 2 own 0 merged 0 arcclosed 0 ph 5
+PH523 252 id 9 body 2 arc 1 orth 0 own 1 merged 1 arcclosed 0 ph 4
+MAG522 253 ph 2 on 0 near 0 fund 0 fuse 1 ttl 1 ti 43 ammo 2 bar 8 want 22 floor 16 bind 0 nbind 0 nnear 0
+PH523 253 id 3 body 1 arc 2 orth 0 own 1 merged 1 arcclosed 0 ph 4
+PH523 253 id 9 body 2 arc 1 orth 0 own 1 merged 1 arcclosed 0 ph 4
+MAG522 254 ph 2 on 0 near 0 fund 0 fuse 1 ttl 1 ti 42 ammo 2 bar 8 want 22 floor 16 bind 0 nbind 0 nnear 0
+PH523 254 id 3 body 1 arc 2 orth 3 own 0 merged 0 arcclosed 0 ph 5
+PH523 254 id 9 body 2 arc 1 orth 0 own 1 merged 1 arcclosed 0 ph 4
+MAG522 255 ph 2 on 0 near 0 fund 0 fuse 1 ttl 1 ti 41 ammo 2 bar 8 want 22 floor 16 bind 0 nbind 0 nnear 0
+PH523 255 id 3 body 1 arc 2 orth 2 own 0 merged 0 arcclosed 0 ph 5
+PH523 255 id 9 body 2 arc 1 orth 0 own 1 merged 1 arcclosed 0 ph 4
+MAG522 256 ph 2 on 0 near 0 fund 0 fuse 1 ttl 1 ti 50 ammo 2 bar 8 want 22 floor 16 bind 0 nbind 0 nnear 0
+PH523 256 id 3 body 1 arc 2 orth 2 own 0 merged 0 arcclosed 0 ph 5
+PH523 256 id 9 body 2 arc 1 orth 0 own 1 merged 1 arcclosed 0 ph 4
+MAG522 257 ph 2 on 0 near 0 fund 0 fuse 1 ttl 1 ti 49 ammo 2 bar 8 want 22 floor 16 bind 0 nbind 0 nnear 0
+PH523 257 id 3 body 1 arc 2 orth 3 own 0 merged 0 arcclosed 0 ph 5
+PH523 257 id 9 body 2 arc 1 orth 0 own 1 merged 1 arcclosed 0 ph 4
+MAG522 258 ph 2 on 0 near 0 fund 0 fuse 1 ttl 1 ti 48 ammo 2 bar 8 want 22 floor 16 bind 0 nbind 0 nnear 0
+PH523 258 id 3 body 1 arc 2 orth 0 own 1 merged 1 arcclosed 0 ph 4
+PH523 258 id 9 body 2 arc 1 orth 0 own 1 merged 1 arcclosed 0 ph 4
+MAG522 259 ph 2 on 0 near 0 fund 0 fuse 1 ttl 1 ti 47 ammo 2 bar 8 want 22 floor 16 bind 0 nbind 0 nnear 0
+PH523 259 id 3 body 1 arc 2 orth 2 own 0 merged 0 arcclosed 0 ph 5
+PH523 259 id 9 body 2 arc 1 orth 0 own 1 merged 1 arcclosed 0 ph 4
+MAG522 260 ph 2 on 0 near 0 fund 0 fuse 1 ttl 1 ti 56 ammo 2 bar 8 want 22 floor 16 bind 0 nbind 0 nnear 0
+PH523 260 id 3 body 1 arc 2 orth 0 own 1 merged 1 arcclosed 0 ph 4
+PH523 260 id 9 body 2 arc 1 orth 0 own 1 merged 1 arcclosed 0 ph 4
+MAG522 261 ph 2 on 0 near 0 fund 0 fuse 1 ttl 1 ti 55 ammo 2 bar 8 want 22 floor 16 bind 0 nbind 0 nnear 0
+PH523 261 id 3 body 1 arc 2 orth 0 own 1 merged 1 arcclosed 0 ph 4
+PH523 261 id 9 body 2 arc 1 orth 0 own 1 merged 1 arcclosed 0 ph 4
+MAG522 262 ph 2 on 0 near 0 fund 0 fuse 1 ttl 1 ti 54 ammo 2 bar 8 want 22 floor 16 bind 0 nbind 0 nnear 0
+PH523 262 id 3 body 1 arc 2 orth 0 own 1 merged 1 arcclosed 0 ph 4
+PH523 262 id 9 body 2 arc 1 orth 0 own 1 merged 1 arcclosed 0 ph 4
+MAG522 263 ph 2 on 0 near 0 fund 0 fuse 1 ttl 1 ti 53 ammo 2 bar 8 want 22 floor 16 bind 0 nbind 0 nnear 0
+PH523 263 id 3 body 1 arc 2 orth 0 own 1 merged 1 arcclosed 0 ph 4
+PH523 263 id 9 body 2 arc 1 orth 0 own 1 merged 1 arcclosed 0 ph 4
+MAG522 264 ph 2 on 0 near 0 fund 0 fuse 1 ttl 1 ti 62 ammo 2 bar 8 want 22 floor 16 bind 0 nbind 0 nnear 0
+PH523 264 id 3 body 1 arc 2 orth 0 own 1 merged 1 arcclosed 0 ph 4
+PH523 264 id 9 body 2 arc 1 orth 0 own 1 merged 1 arcclosed 0 ph 4
+MAG522 265 ph 2 on 0 near 0 fund 0 fuse 1 ttl 1 ti 61 ammo 2 bar 8 want 22 floor 16 bind 0 nbind 0 nnear 0
+PH523 265 id 3 body 1 arc 2 orth 0 own 1 merged 1 arcclosed 0 ph 4
+PH523 265 id 9 body 2 arc 1 orth 0 own 1 merged 1 arcclosed 0 ph 4
+MAG522 266 ph 2 on 0 near 0 fund 0 fuse 1 ttl 1 ti 59 ammo 2 bar 8 want 22 floor 16 bind 0 nbind 0 nnear 0
+PH523 266 id 3 body 1 arc 2 orth 0 own 1 merged 1 arcclosed 0 ph 4
+PH523 266 id 9 body 2 arc 1 orth 0 own 1 merged 1 arcclosed 0 ph 4
+MAG522 267 ph 2 on 0 near 0 fund 0 fuse 1 ttl 1 ti 57 ammo 2 bar 8 want 22 floor 16 bind 0 nbind 0 nnear 0
+PH523 267 id 3 body 1 arc 2 orth 0 own 1 merged 1 arcclosed 0 ph 4
+PH523 267 id 9 body 2 arc 1 orth 0 own 1 merged 1 arcclosed 0 ph 4
+MAG522 268 ph 2 on 0 near 0 fund 0 fuse 1 ttl 1 ti 66 ammo 2 bar 8 want 22 floor 16 bind 0 nbind 0 nnear 0
+PH523 268 id 3 body 1 arc 2 orth 0 own 1 merged 1 arcclosed 0 ph 4
+PH523 268 id 9 body 2 arc 1 orth 0 own 1 merged 1 arcclosed 0 ph 4
+MAG522 269 ph 2 on 0 near 0 fund 0 fuse 1 ttl 1 ti 57 ammo 2 bar 8 want 22 floor 16 bind 0 nbind 0 nnear 0
+PH523 269 id 3 body 1 arc 2 orth 0 own 1 merged 1 arcclosed 0 ph 4
+PH523 269 id 9 body 2 arc 1 orth 0 own 1 merged 1 arcclosed 0 ph 4
+MAG522 270 ph 2 on 0 near 0 fund 0 fuse 1 ttl 1 ti 55 ammo 2 bar 8 want 22 floor 16 bind 0 nbind 0 nnear 0
+PH523 270 id 3 body 1 arc 2 orth 0 own 1 merged 1 arcclosed 0 ph 4
+PH523 270 id 9 body 2 arc 1 orth 0 own 1 merged 1 arcclosed 0 ph 4
+MAG522 271 ph 2 on 0 near 0 fund 0 fuse 1 ttl 1 ti 63 ammo 2 bar 8 want 22 floor 16 bind 0 nbind 0 nnear 0
+PH523 271 id 3 body 1 arc 2 orth 0 own 1 merged 1 arcclosed 0 ph 4
+PH523 271 id 9 body 2 arc 1 orth 0 own 1 merged 1 arcclosed 0 ph 4
+MAG522 272 ph 2 on 0 near 0 fund 0 fuse 1 ttl 1 ti 81 ammo 2 bar 8 want 22 floor 16 bind 0 nbind 0 nnear 0
+PH523 272 id 3 body 1 arc 2 orth 0 own 1 merged 1 arcclosed 0 ph 4
+PH523 272 id 9 body 2 arc 1 orth 0 own 1 merged 1 arcclosed 0 ph 4
+MAG522 273 ph 2 on 0 near 0 fund 1 fuse 1 ttl 1 ti 49 ammo 18 bar 8 want 22 floor 16 bind 0 nbind 0 nnear 0
+PH523 273 id 3 body 1 arc 2 orth 0 own 1 merged 1 arcclosed 0 ph 4
+PH523 273 id 9 body 2 arc 1 orth 0 own 1 merged 1 arcclosed 0 ph 4
+MAG522 274 ph 2 on 0 near 0 fund 1 fuse 1 ttl 1 ti 18 ammo 44 bar 8 want 22 floor 16 bind 0 nbind 0 nnear 0
+PH523 274 id 3 body 1 arc 2 orth 0 own 1 merged 1 arcclosed 0 ph 4
+PH523 274 id 9 body 2 arc 1 orth 0 own 1 merged 1 arcclosed 0 ph 4
+MAG522 275 ph 2 on 0 near 0 fund 1 fuse 1 ttl 1 ti 15 ammo 32 bar 8 want 22 floor 16 bind 0 nbind 0 nnear 0
+PH523 275 id 3 body 1 arc 2 orth 0 own 1 merged 1 arcclosed 0 ph 4
+PH523 275 id 9 body 2 arc 1 orth 0 own 1 merged 1 arcclosed 0 ph 4
+MAG522 276 ph 2 on 0 near 0 fund 1 fuse 1 ttl 1 ti 34 ammo 28 bar 8 want 22 floor 16 bind 0 nbind 0 nnear 0
+PH523 276 id 3 body 1 arc 2 orth 0 own 1 merged 1 arcclosed 0 ph 4
+PH523 276 id 9 body 2 arc 1 orth 0 own 1 merged 1 arcclosed 0 ph 4
+MAG522 277 ph 2 on 0 near 0 fund 1 fuse 1 ttl 1 ti 15 ammo 32 bar 8 want 22 floor 16 bind 0 nbind 0 nnear 0
+PH523 277 id 3 body 1 arc 2 orth 0 own 1 merged 1 arcclosed 0 ph 4
+PH523 277 id 9 body 2 arc 1 orth 0 own 1 merged 1 arcclosed 0 ph 4
+MAG522 278 ph 2 on 0 near 0 fund 1 fuse 1 ttl 1 ti 4 ammo 32 bar 8 want 22 floor 16 bind 0 nbind 0 nnear 0
+PH523 278 id 3 body 1 arc 2 orth 0 own 1 merged 1 arcclosed 0 ph 4
+PH523 278 id 9 body 2 arc 1 orth 0 own 1 merged 1 arcclosed 0 ph 4
+MAG522 279 ph 2 on 0 near 0 fund 1 fuse 1 ttl 1 ti 3 ammo 18 bar 8 want 22 floor 16 bind 0 nbind 0 nnear 0
+PH523 279 id 3 body 1 arc 2 orth 0 own 1 merged 1 arcclosed 0 ph 4
+PH523 279 id 9 body 2 arc 1 orth 0 own 1 merged 1 arcclosed 0 ph 4
+MAG522 280 ph 2 on 0 near 0 fund 1 fuse 1 ttl 1 ti 23 ammo 14 bar 8 want 22 floor 16 bind 0 nbind 0 nnear 0
+PH523 280 id 3 body 1 arc 2 orth 0 own 1 merged 1 arcclosed 0 ph 4
+PH523 280 id 9 body 2 arc 1 orth 0 own 1 merged 1 arcclosed 0 ph 4
+MAG522 281 ph 2 on 0 near 0 fund 0 fuse 1 ttl 1 ti 16 ammo 7 bar 8 want 22 floor 16 bind 0 nbind 0 nnear 0
+PH523 281 id 3 body 1 arc 2 orth 0 own 1 merged 1 arcclosed 0 ph 4
+PH523 281 id 9 body 2 arc 1 orth 0 own 1 merged 1 arcclosed 0 ph 4
+MAG522 282 ph 2 on 0 near 0 fund 0 fuse 1 ttl 1 ti 16 ammo 3 bar 8 want 22 floor 16 bind 0 nbind 0 nnear 0
+PH523 282 id 3 body 1 arc 2 orth 0 own 1 merged 1 arcclosed 0 ph 4
+PH523 282 id 9 body 2 arc 1 orth 0 own 1 merged 1 arcclosed 0 ph 4
+MAG522 283 ph 2 on 0 near 0 fund 0 fuse 1 ttl 1 ti 16 ammo 3 bar 8 want 22 floor 16 bind 0 nbind 0 nnear 0
+PH523 283 id 3 body 1 arc 2 orth 0 own 1 merged 1 arcclosed 0 ph 4
+PH523 283 id 9 body 2 arc 1 orth 0 own 1 merged 1 arcclosed 0 ph 4
+MAG522 284 ph 2 on 0 near 0 fund 0 fuse 1 ttl 1 ti 26 ammo 3 bar 8 want 22 floor 16 bind 0 nbind 0 nnear 0
+PH523 284 id 3 body 1 arc 2 orth 0 own 1 merged 1 arcclosed 0 ph 4
+PH523 284 id 9 body 2 arc 1 orth 0 own 1 merged 1 arcclosed 0 ph 4
+MAG522 285 ph 2 on 0 near 0 fund 0 fuse 1 ttl 1 ti 16 ammo 9 bar 8 want 22 floor 16 bind 0 nbind 0 nnear 0
+PH523 285 id 3 body 1 arc 2 orth 0 own 1 merged 1 arcclosed 0 ph 4
+PH523 285 id 9 body 2 arc 1 orth 0 own 1 merged 1 arcclosed 0 ph 4
+MAG522 286 ph 2 on 0 near 0 fund 0 fuse 1 ttl 1 ti 16 ammo 5 bar 8 want 22 floor 16 bind 0 nbind 0 nnear 0
+PH523 286 id 3 body 1 arc 2 orth 0 own 1 merged 1 arcclosed 0 ph 4
+PH523 286 id 9 body 2 arc 1 orth 0 own 1 merged 1 arcclosed 0 ph 4
+MAG522 287 ph 2 on 0 near 0 fund 0 fuse 1 ttl 1 ti 16 ammo 1 bar 8 want 22 floor 16 bind 0 nbind 0 nnear 0
+PH523 287 id 3 body 1 arc 2 orth 0 own 1 merged 1 arcclosed 0 ph 4
+PH523 287 id 9 body 2 arc 1 orth 0 own 1 merged 1 arcclosed 0 ph 4
+MAG522 288 ph 2 on 0 near 0 fund 0 fuse 1 ttl 1 ti 26 ammo 1 bar 8 want 22 floor 16 bind 0 nbind 0 nnear 0
+PH523 288 id 3 body 1 arc 2 orth 0 own 1 merged 1 arcclosed 0 ph 4
+PH523 288 id 9 body 2 arc 1 orth 0 own 1 merged 1 arcclosed 0 ph 4
+MAG522 289 ph 2 on 0 near 0 fund 0 fuse 1 ttl 1 ti 16 ammo 7 bar 8 want 22 floor 16 bind 0 nbind 0 nnear 0
+PH523 289 id 3 body 1 arc 2 orth 0 own 1 merged 1 arcclosed 0 ph 4
+PH523 289 id 9 body 2 arc 1 orth 0 own 1 merged 1 arcclosed 0 ph 4
+MAG522 290 ph 2 on 0 near 0 fund 0 fuse 1 ttl 1 ti 16 ammo 3 bar 8 want 22 floor 16 bind 0 nbind 0 nnear 0
+PH523 290 id 3 body 1 arc 2 orth 0 own 1 merged 1 arcclosed 0 ph 4
+PH523 290 id 9 body 2 arc 1 orth 0 own 1 merged 1 arcclosed 0 ph 4
+MAG522 291 ph 2 on 0 near 0 fund 0 fuse 1 ttl 1 ti 16 ammo 3 bar 8 want 22 floor 16 bind 0 nbind 0 nnear 0
+PH523 291 id 3 body 1 arc 2 orth 0 own 1 merged 1 arcclosed 0 ph 4
+PH523 291 id 9 body 2 arc 1 orth 0 own 1 merged 1 arcclosed 0 ph 4
+MAG522 292 ph 2 on 0 near 0 fund 0 fuse 1 ttl 1 ti 26 ammo 3 bar 8 want 22 floor 16 bind 0 nbind 0 nnear 0
+PH523 292 id 3 body 1 arc 2 orth 0 own 1 merged 1 arcclosed 0 ph 4
+PH523 292 id 9 body 2 arc 1 orth 0 own 1 merged 1 arcclosed 0 ph 4
+MAG522 293 ph 2 on 0 near 0 fund 0 fuse 1 ttl 1 ti 16 ammo 9 bar 8 want 22 floor 16 bind 0 nbind 0 nnear 0
+PH523 293 id 3 body 1 arc 2 orth 0 own 1 merged 1 arcclosed 0 ph 4
+PH523 293 id 9 body 2 arc 1 orth 0 own 1 merged 1 arcclosed 0 ph 4
+MAG522 294 ph 2 on 0 near 0 fund 0 fuse 1 ttl 1 ti 16 ammo 5 bar 8 want 22 floor 16 bind 0 nbind 0 nnear 0
+PH523 294 id 3 body 1 arc 2 orth 0 own 1 merged 1 arcclosed 0 ph 4
+PH523 294 id 9 body 2 arc 1 orth 0 own 1 merged 1 arcclosed 0 ph 4
+MAG522 295 ph 2 on 0 near 0 fund 0 fuse 1 ttl 1 ti 16 ammo 1 bar 8 want 22 floor 16 bind 0 nbind 0 nnear 0
+PH523 295 id 3 body 1 arc 2 orth 0 own 1 merged 1 arcclosed 0 ph 4
+PH523 295 id 9 body 2 arc 1 orth 0 own 1 merged 1 arcclosed 0 ph 4
+MAG522 296 ph 2 on 0 near 0 fund 0 fuse 1 ttl 1 ti 26 ammo 1 bar 8 want 22 floor 16 bind 0 nbind 0 nnear 0
+PH523 296 id 3 body 1 arc 2 orth 0 own 1 merged 1 arcclosed 0 ph 4
+PH523 296 id 9 body 2 arc 1 orth 0 own 1 merged 1 arcclosed 0 ph 4
+MAG522 297 ph 2 on 0 near 0 fund 0 fuse 1 ttl 1 ti 16 ammo 7 bar 8 want 22 floor 16 bind 0 nbind 0 nnear 0
+PH523 297 id 3 body 1 arc 2 orth 1 own 0 merged 0 arcclosed 0 ph 5
+PH523 297 id 9 body 2 arc 1 orth 1 own 0 merged 0 arcclosed 0 ph 5
+MAG522 298 ph 2 on 0 near 0 fund 0 fuse 1 ttl 1 ti 16 ammo 3 bar 8 want 22 floor 16 bind 0 nbind 0 nnear 0
+PH523 298 id 3 body 1 arc 2 orth 1 own 0 merged 0 arcclosed 0 ph 5
+PH523 298 id 9 body 2 arc 1 orth 1 own 0 merged 0 arcclosed 0 ph 5
+MAG522 299 ph 2 on 0 near 0 fund 0 fuse 1 ttl 1 ti 16 ammo 3 bar 8 want 22 floor 16 bind 0 nbind 0 nnear 0
+PH523 299 id 3 body 1 arc 2 orth 3 own 0 merged 0 arcclosed 0 ph 5
+PH523 299 id 9 body 2 arc 1 orth 1 own 0 merged 0 arcclosed 0 ph 5
+MAG522 300 ph 2 on 0 near 0 fund 0 fuse 1 ttl 1 ti 26 ammo 3 bar 8 want 22 floor 16 bind 0 nbind 0 nnear 0
+PH523 300 id 3 body 1 arc 2 orth 4 own 0 merged 0 arcclosed 0 ph 5
+PH523 300 id 9 body 2 arc 1 orth 1 own 0 merged 0 arcclosed 0 ph 5
+MAG522 301 ph 2 on 0 near 0 fund 0 fuse 1 ttl 1 ti 16 ammo 9 bar 8 want 22 floor 16 bind 0 nbind 0 nnear 0
+PH523 301 id 3 body 1 arc 2 orth 4 own 0 merged 0 arcclosed 0 ph 5
+PH523 301 id 9 body 2 arc 1 orth 2 own 0 merged 0 arcclosed 0 ph 5
+MAG522 302 ph 2 on 0 near 0 fund 0 fuse 1 ttl 1 ti 16 ammo 5 bar 8 want 22 floor 16 bind 0 nbind 0 nnear 0
+PH523 302 id 3 body 1 arc 2 orth 5 own 0 merged 0 arcclosed 0 ph 5
+PH523 302 id 9 body 2 arc 1 orth 5 own 0 merged 0 arcclosed 0 ph 5
+MAG522 303 ph 2 on 0 near 0 fund 0 fuse 1 ttl 1 ti 16 ammo 1 bar 8 want 22 floor 16 bind 0 nbind 0 nnear 0
+PH523 303 id 3 body 1 arc 2 orth 4 own 0 merged 0 arcclosed 0 ph 5
+PH523 303 id 9 body 2 arc 1 orth 2 own 0 merged 0 arcclosed 0 ph 5
+MAG522 304 ph 2 on 0 near 0 fund 0 fuse 1 ttl 1 ti 26 ammo 1 bar 8 want 22 floor 16 bind 0 nbind 0 nnear 0
+PH523 304 id 3 body 1 arc 2 orth 2 own 0 merged 0 arcclosed 0 ph 5
+PH523 304 id 9 body 2 arc 1 orth 4 own 0 merged 0 arcclosed 0 ph 5
+MAG522 305 ph 2 on 0 near 0 fund 0 fuse 1 ttl 1 ti 16 ammo 7 bar 8 want 22 floor 16 bind 0 nbind 0 nnear 0
+PH523 305 id 3 body 1 arc 2 orth 2 own 0 merged 0 arcclosed 0 ph 5
+PH523 305 id 9 body 2 arc 1 orth 2 own 0 merged 0 arcclosed 0 ph 5
+MAG522 306 ph 2 on 0 near 0 fund 0 fuse 1 ttl 1 ti 16 ammo 3 bar 8 want 22 floor 16 bind 0 nbind 0 nnear 0
+PH523 306 id 3 body 1 arc 2 orth 3 own 0 merged 0 arcclosed 0 ph 5
+PH523 306 id 9 body 2 arc 1 orth 2 own 0 merged 0 arcclosed 0 ph 5
+MAG522 307 ph 2 on 0 near 0 fund 0 fuse 1 ttl 1 ti 16 ammo 3 bar 8 want 22 floor 16 bind 0 nbind 0 nnear 0
+PH523 307 id 3 body 1 arc 2 orth 3 own 0 merged 0 arcclosed 0 ph 5
+PH523 307 id 9 body 2 arc 1 orth 2 own 0 merged 0 arcclosed 0 ph 5
+MAG522 308 ph 2 on 0 near 0 fund 0 fuse 1 ttl 1 ti 26 ammo 3 bar 8 want 22 floor 16 bind 0 nbind 0 nnear 0
+PH523 308 id 3 body 1 arc 2 orth 3 own 0 merged 0 arcclosed 0 ph 5
+PH523 308 id 9 body 2 arc 1 orth 2 own 0 merged 0 arcclosed 0 ph 5
+MAG522 309 ph 2 on 0 near 0 fund 0 fuse 1 ttl 1 ti 16 ammo 9 bar 8 want 22 floor 16 bind 0 nbind 0 nnear 0
+PH523 309 id 3 body 1 arc 2 orth 4 own 0 merged 0 arcclosed 0 ph 5
+PH523 309 id 9 body 2 arc 1 orth 2 own 0 merged 0 arcclosed 0 ph 5
+MAG522 310 ph 2 on 0 near 0 fund 0 fuse 1 ttl 1 ti 16 ammo 5 bar 8 want 22 floor 16 bind 0 nbind 0 nnear 0
+PH523 310 id 3 body 1 arc 2 orth 2 own 0 merged 0 arcclosed 0 ph 5
+PH523 310 id 9 body 2 arc 1 orth 2 own 0 merged 0 arcclosed 0 ph 5
+MAG522 311 ph 2 on 0 near 0 fund 0 fuse 1 ttl 1 ti 16 ammo 1 bar 8 want 22 floor 16 bind 0 nbind 0 nnear 0
+PH523 311 id 3 body 1 arc 2 orth 4 own 0 merged 0 arcclosed 0 ph 5
+PH523 311 id 9 body 2 arc 1 orth 2 own 0 merged 0 arcclosed 0 ph 5
+MAG522 312 ph 2 on 0 near 0 fund 0 fuse 1 ttl 1 ti 26 ammo 1 bar 8 want 22 floor 16 bind 0 nbind 0 nnear 0
+PH523 312 id 3 body 1 arc 2 orth 2 own 0 merged 0 arcclosed 0 ph 5
+PH523 312 id 9 body 2 arc 1 orth 2 own 0 merged 0 arcclosed 0 ph 5
+MAG522 313 ph 2 on 0 near 0 fund 0 fuse 1 ttl 1 ti 26 ammo 1 bar 8 want 22 floor 16 bind 0 nbind 0 nnear 0
+PH523 313 id 3 body 1 arc 2 orth 4 own 0 merged 0 arcclosed 0 ph 5
+PH523 313 id 9 body 2 arc 1 orth 2 own 0 merged 0 arcclosed 0 ph 5
+MAG522 314 ph 2 on 0 near 0 fund 0 fuse 1 ttl 1 ti 26 ammo 1 bar 8 want 22 floor 16 bind 0 nbind 0 nnear 0
+PH523 314 id 3 body 1 arc 2 orth 2 own 0 merged 0 arcclosed 0 ph 5
+PH523 314 id 9 body 2 arc 1 orth 2 own 0 merged 0 arcclosed 0 ph 5
+MAG522 315 ph 2 on 0 near 0 fund 0 fuse 1 ttl 1 ti 26 ammo 1 bar 8 want 22 floor 16 bind 0 nbind 0 nnear 0
+PH523 315 id 3 body 1 arc 2 orth 4 own 0 merged 0 arcclosed 0 ph 5
+PH523 315 id 9 body 2 arc 1 orth 2 own 0 merged 0 arcclosed 0 ph 5
+MAG522 316 ph 2 on 0 near 0 fund 0 fuse 1 ttl 1 ti 36 ammo 1 bar 8 want 22 floor 16 bind 0 nbind 0 nnear 0
+PH523 316 id 3 body 1 arc 2 orth 2 own 0 merged 0 arcclosed 0 ph 5
+PH523 316 id 9 body 2 arc 1 orth 5 own 0 merged 0 arcclosed 0 ph 5
+MAG522 317 ph 2 on 0 near 0 fund 0 fuse 1 ttl 1 ti 36 ammo 1 bar 8 want 22 floor 16 bind 0 nbind 0 nnear 0
+PH523 317 id 3 body 1 arc 2 orth 4 own 0 merged 0 arcclosed 0 ph 5
+PH523 317 id 9 body 2 arc 1 orth 2 own 0 merged 0 arcclosed 0 ph 5
+MAG522 318 ph 2 on 0 near 0 fund 0 fuse 1 ttl 1 ti 36 ammo 1 bar 8 want 22 floor 16 bind 0 nbind 0 nnear 0
+PH523 318 id 3 body 1 arc 2 orth 2 own 0 merged 0 arcclosed 0 ph 5
+PH523 318 id 9 body 2 arc 1 orth 5 own 0 merged 0 arcclosed 0 ph 5
+MAG522 319 ph 2 on 0 near 0 fund 0 fuse 1 ttl 1 ti 36 ammo 1 bar 8 want 22 floor 16 bind 0 nbind 0 nnear 0
+PH523 319 id 3 body 1 arc 2 orth 4 own 0 merged 0 arcclosed 0 ph 5
+PH523 319 id 9 body 2 arc 1 orth 2 own 0 merged 0 arcclosed 0 ph 5
+MAG522 320 ph 2 on 0 near 0 fund 0 fuse 1 ttl 1 ti 46 ammo 1 bar 8 want 22 floor 16 bind 0 nbind 0 nnear 0
+PH523 320 id 3 body 1 arc 2 orth 2 own 0 merged 0 arcclosed 0 ph 5
+PH523 320 id 9 body 2 arc 1 orth 5 own 0 merged 0 arcclosed 0 ph 5
+MAG522 321 ph 2 on 0 near 0 fund 0 fuse 1 ttl 1 ti 46 ammo 1 bar 8 want 22 floor 16 bind 0 nbind 0 nnear 0
+PH523 321 id 3 body 1 arc 2 orth 4 own 0 merged 0 arcclosed 0 ph 5
+PH523 321 id 9 body 2 arc 1 orth 2 own 0 merged 0 arcclosed 0 ph 5
+MAG522 322 ph 2 on 0 near 0 fund 0 fuse 1 ttl 1 ti 46 ammo 1 bar 8 want 22 floor 16 bind 0 nbind 0 nnear 0
+PH523 322 id 3 body 1 arc 2 orth 2 own 0 merged 0 arcclosed 0 ph 5
+PH523 322 id 9 body 2 arc 1 orth 5 own 0 merged 0 arcclosed 0 ph 5
+MAG522 323 ph 2 on 0 near 0 fund 0 fuse 1 ttl 1 ti 46 ammo 1 bar 8 want 22 floor 16 bind 0 nbind 0 nnear 0
+PH523 323 id 3 body 1 arc 2 orth 4 own 0 merged 0 arcclosed 0 ph 5
+PH523 323 id 9 body 2 arc 1 orth 2 own 0 merged 0 arcclosed 0 ph 5
+MAG522 324 ph 2 on 0 near 0 fund 0 fuse 1 ttl 1 ti 48 ammo 1 bar 8 want 22 floor 16 bind 0 nbind 0 nnear 0
+PH523 324 id 3 body 1 arc 2 orth 2 own 0 merged 0 arcclosed 0 ph 5
+PH523 324 id 9 body 2 arc 1 orth 4 own 0 merged 0 arcclosed 0 ph 5
+MAG522 325 ph 2 on 0 near 0 fund 0 fuse 1 ttl 1 ti 48 ammo 1 bar 8 want 22 floor 16 bind 0 nbind 0 nnear 0
+PH523 325 id 3 body 1 arc 2 orth 4 own 0 merged 0 arcclosed 0 ph 5
+PH523 325 id 9 body 2 arc 1 orth 3 own 0 merged 0 arcclosed 0 ph 5
+MAG522 326 ph 2 on 0 near 0 fund 0 fuse 1 ttl 1 ti 48 ammo 1 bar 8 want 22 floor 16 bind 0 nbind 0 nnear 0
+PH523 326 id 3 body 1 arc 2 orth 2 own 0 merged 0 arcclosed 0 ph 5
+PH523 326 id 9 body 2 arc 1 orth 3 own 0 merged 0 arcclosed 0 ph 5
+MAG522 327 ph 2 on 0 near 0 fund 0 fuse 1 ttl 1 ti 38 ammo 1 bar 8 want 22 floor 16 bind 0 nbind 0 nnear 0
+PH523 327 id 3 body 1 arc 2 orth 4 own 0 merged 0 arcclosed 0 ph 5
+PH523 327 id 9 body 2 arc 1 orth 1 own 0 merged 0 arcclosed 0 ph 5
+MAG522 328 ph 2 on 0 near 0 fund 0 fuse 1 ttl 1 ti 40 ammo 1 bar 8 want 22 floor 16 bind 0 nbind 0 nnear 0
+PH523 328 id 3 body 1 arc 2 orth 2 own 0 merged 0 arcclosed 0 ph 5
+PH523 328 id 9 body 2 arc 1 orth 0 own 1 merged 1 arcclosed 0 ph 4
+MAG522 329 ph 2 on 0 near 0 fund 0 fuse 1 ttl 1 ti 39 ammo 1 bar 8 want 22 floor 16 bind 0 nbind 0 nnear 0
+PH523 329 id 3 body 1 arc 2 orth 4 own 0 merged 0 arcclosed 0 ph 5
+PH523 329 id 9 body 2 arc 1 orth 0 own 1 merged 1 arcclosed 0 ph 4
+MAG522 330 ph 2 on 0 near 0 fund 0 fuse 1 ttl 1 ti 39 ammo 1 bar 8 want 22 floor 16 bind 0 nbind 0 nnear 0
+PH523 330 id 3 body 1 arc 2 orth 2 own 0 merged 0 arcclosed 0 ph 5
+PH523 330 id 9 body 2 arc 1 orth 2 own 0 merged 0 arcclosed 0 ph 5
+MAG522 331 ph 2 on 0 near 0 fund 0 fuse 1 ttl 1 ti 39 ammo 1 bar 8 want 22 floor 16 bind 0 nbind 0 nnear 0
+PH523 331 id 3 body 1 arc 2 orth 4 own 0 merged 0 arcclosed 0 ph 5
+PH523 331 id 9 body 2 arc 1 orth 4 own 0 merged 0 arcclosed 0 ph 5
+MAG522 332 ph 2 on 0 near 0 fund 0 fuse 1 ttl 1 ti 48 ammo 1 bar 8 want 22 floor 16 bind 0 nbind 0 nnear 0
+PH523 332 id 3 body 1 arc 2 orth 2 own 0 merged 0 arcclosed 0 ph 5
+PH523 332 id 9 body 2 arc 1 orth 1 own 0 merged 0 arcclosed 0 ph 5
+MAG522 333 ph 2 on 0 near 0 fund 0 fuse 1 ttl 1 ti 47 ammo 1 bar 8 want 22 floor 16 bind 0 nbind 0 nnear 0
+PH523 333 id 3 body 1 arc 2 orth 4 own 0 merged 0 arcclosed 0 ph 5
+PH523 333 id 9 body 2 arc 1 orth 3 own 0 merged 0 arcclosed 0 ph 5
+MAG522 334 ph 2 on 0 near 0 fund 0 fuse 1 ttl 1 ti 46 ammo 1 bar 8 want 22 floor 16 bind 0 nbind 0 nnear 0
+PH523 334 id 3 body 1 arc 2 orth 2 own 0 merged 0 arcclosed 0 ph 5
+PH523 334 id 9 body 2 arc 1 orth 1 own 0 merged 0 arcclosed 0 ph 5
+MAG522 335 ph 2 on 0 near 0 fund 0 fuse 1 ttl 1 ti 35 ammo 1 bar 8 want 22 floor 16 bind 0 nbind 0 nnear 0
+PH523 335 id 3 body 1 arc 2 orth 4 own 0 merged 0 arcclosed 0 ph 5
+PH523 335 id 9 body 2 arc 1 orth 1 own 0 merged 0 arcclosed 0 ph 5
+MAG522 336 ph 2 on 0 near 0 fund 0 fuse 1 ttl 1 ti 36 ammo 1 bar 8 want 22 floor 16 bind 0 nbind 0 nnear 0
+PH523 336 id 3 body 1 arc 2 orth 2 own 0 merged 0 arcclosed 0 ph 5
+PH523 336 id 9 body 2 arc 1 orth 0 own 1 merged 1 arcclosed 0 ph 4
+MAG522 337 ph 2 on 0 near 0 fund 0 fuse 1 ttl 1 ti 35 ammo 1 bar 8 want 22 floor 16 bind 0 nbind 0 nnear 0
+PH523 337 id 3 body 1 arc 2 orth 4 own 0 merged 0 arcclosed 0 ph 5
+PH523 337 id 9 body 2 arc 1 orth 0 own 1 merged 1 arcclosed 0 ph 4
+MAG522 338 ph 2 on 0 near 0 fund 0 fuse 1 ttl 1 ti 35 ammo 1 bar 8 want 22 floor 16 bind 0 nbind 0 nnear 0
+PH523 338 id 3 body 1 arc 2 orth 2 own 0 merged 0 arcclosed 0 ph 5
+PH523 338 id 9 body 2 arc 1 orth 0 own 1 merged 1 arcclosed 0 ph 4
+MAG522 339 ph 2 on 0 near 0 fund 0 fuse 1 ttl 1 ti 35 ammo 1 bar 8 want 22 floor 16 bind 0 nbind 0 nnear 0
+PH523 339 id 3 body 1 arc 2 orth 4 own 0 merged 0 arcclosed 0 ph 5
+PH523 339 id 9 body 2 arc 1 orth 0 own 1 merged 1 arcclosed 0 ph 4
+MAG522 340 ph 2 on 0 near 0 fund 0 fuse 1 ttl 1 ti 45 ammo 1 bar 8 want 22 floor 16 bind 0 nbind 0 nnear 0
+PH523 340 id 3 body 1 arc 2 orth 2 own 0 merged 0 arcclosed 0 ph 5
+PH523 340 id 9 body 2 arc 1 orth 0 own 1 merged 1 arcclosed 0 ph 4
+MAG522 341 ph 2 on 0 near 0 fund 0 fuse 1 ttl 1 ti 45 ammo 1 bar 8 want 22 floor 16 bind 0 nbind 0 nnear 0
+PH523 341 id 3 body 1 arc 2 orth 4 own 0 merged 0 arcclosed 0 ph 5
+PH523 341 id 9 body 2 arc 1 orth 1 own 0 merged 0 arcclosed 0 ph 5
+MAG522 342 ph 2 on 0 near 0 fund 0 fuse 1 ttl 1 ti 45 ammo 1 bar 8 want 22 floor 16 bind 0 nbind 0 nnear 0
+PH523 342 id 3 body 1 arc 2 orth 2 own 0 merged 0 arcclosed 0 ph 5
+PH523 342 id 9 body 2 arc 1 orth 1 own 0 merged 0 arcclosed 0 ph 5
+MAG522 343 ph 2 on 0 near 0 fund 0 fuse 1 ttl 1 ti 37 ammo 1 bar 8 want 22 floor 16 bind 0 nbind 0 nnear 0
+PH523 343 id 3 body 1 arc 2 orth 4 own 0 merged 0 arcclosed 0 ph 5
+PH523 343 id 9 body 2 arc 1 orth 0 own 1 merged 1 arcclosed 0 ph 4
+MAG522 344 ph 2 on 0 near 0 fund 0 fuse 1 ttl 1 ti 47 ammo 1 bar 8 want 22 floor 16 bind 0 nbind 0 nnear 0
+PH523 344 id 3 body 1 arc 2 orth 2 own 0 merged 0 arcclosed 0 ph 5
+PH523 344 id 9 body 2 arc 1 orth 0 own 1 merged 1 arcclosed 0 ph 4
+MAG522 345 ph 2 on 0 near 0 fund 0 fuse 1 ttl 1 ti 47 ammo 1 bar 8 want 22 floor 16 bind 0 nbind 0 nnear 0
+PH523 345 id 3 body 1 arc 2 orth 4 own 0 merged 0 arcclosed 0 ph 5
+PH523 345 id 9 body 2 arc 1 orth 0 own 1 merged 1 arcclosed 0 ph 4
+MAG522 346 ph 2 on 0 near 0 fund 0 fuse 1 ttl 1 ti 47 ammo 1 bar 8 want 22 floor 16 bind 0 nbind 0 nnear 0
+PH523 346 id 3 body 1 arc 2 orth 2 own 0 merged 0 arcclosed 0 ph 5
+PH523 346 id 9 body 2 arc 1 orth 0 own 1 merged 1 arcclosed 0 ph 4
+MAG522 347 ph 2 on 0 near 0 fund 0 fuse 1 ttl 1 ti 47 ammo 1 bar 8 want 22 floor 16 bind 0 nbind 0 nnear 0
+PH523 347 id 3 body 1 arc 2 orth 4 own 0 merged 0 arcclosed 0 ph 5
+PH523 347 id 9 body 2 arc 1 orth 0 own 1 merged 1 arcclosed 0 ph 4
+MAG522 348 ph 2 on 0 near 0 fund 0 fuse 1 ttl 1 ti 57 ammo 1 bar 8 want 22 floor 16 bind 0 nbind 0 nnear 0
+PH523 348 id 3 body 1 arc 2 orth 2 own 0 merged 0 arcclosed 0 ph 5
+PH523 348 id 9 body 2 arc 1 orth 0 own 1 merged 1 arcclosed 0 ph 4
+MAG522 349 ph 2 on 0 near 0 fund 0 fuse 1 ttl 1 ti 57 ammo 1 bar 8 want 22 floor 16 bind 0 nbind 0 nnear 0
+PH523 349 id 3 body 1 arc 2 orth 4 own 0 merged 0 arcclosed 0 ph 5
+PH523 349 id 9 body 2 arc 1 orth 1 own 0 merged 0 arcclosed 0 ph 5
+MAG522 350 ph 2 on 0 near 0 fund 0 fuse 1 ttl 1 ti 49 ammo 1 bar 8 want 22 floor 16 bind 0 nbind 0 nnear 0
+PH523 350 id 3 body 1 arc 2 orth 2 own 0 merged 0 arcclosed 0 ph 5
+PH523 350 id 9 body 2 arc 1 orth 0 own 1 merged 1 arcclosed 0 ph 4
+MAG522 351 ph 2 on 0 near 0 fund 0 fuse 1 ttl 1 ti 49 ammo 1 bar 8 want 22 floor 16 bind 0 nbind 0 nnear 0
+PH523 351 id 3 body 1 arc 2 orth 4 own 0 merged 0 arcclosed 0 ph 5
+PH523 351 id 9 body 2 arc 1 orth 0 own 1 merged 1 arcclosed 0 ph 4
+MAG522 352 ph 2 on 0 near 0 fund 0 fuse 1 ttl 1 ti 59 ammo 1 bar 8 want 22 floor 16 bind 0 nbind 0 nnear 0
+PH523 352 id 3 body 1 arc 2 orth 2 own 0 merged 0 arcclosed 0 ph 5
+PH523 352 id 9 body 2 arc 1 orth 0 own 1 merged 1 arcclosed 0 ph 4
+MAG522 353 ph 2 on 0 near 0 fund 0 fuse 1 ttl 1 ti 59 ammo 1 bar 8 want 22 floor 16 bind 0 nbind 0 nnear 0
+PH523 353 id 3 body 1 arc 2 orth 4 own 0 merged 0 arcclosed 0 ph 5
+PH523 353 id 9 body 2 arc 1 orth 0 own 1 merged 1 arcclosed 0 ph 4
+MAG522 354 ph 2 on 0 near 0 fund 0 fuse 1 ttl 1 ti 59 ammo 1 bar 8 want 22 floor 16 bind 0 nbind 0 nnear 0
+PH523 354 id 3 body 1 arc 2 orth 2 own 0 merged 0 arcclosed 0 ph 5
+PH523 354 id 9 body 2 arc 1 orth 0 own 1 merged 1 arcclosed 0 ph 4
+MAG522 355 ph 2 on 0 near 0 fund 0 fuse 1 ttl 1 ti 59 ammo 1 bar 8 want 22 floor 16 bind 0 nbind 0 nnear 0
+PH523 355 id 3 body 1 arc 2 orth 4 own 0 merged 0 arcclosed 0 ph 5
+PH523 355 id 9 body 2 arc 1 orth 0 own 1 merged 1 arcclosed 0 ph 4
+MAG522 356 ph 2 on 0 near 0 fund 0 fuse 1 ttl 1 ti 69 ammo 1 bar 8 want 22 floor 16 bind 0 nbind 0 nnear 0
+PH523 356 id 3 body 1 arc 2 orth 2 own 0 merged 0 arcclosed 0 ph 5
+PH523 356 id 9 body 2 arc 1 orth 0 own 1 merged 1 arcclosed 0 ph 4
+MAG522 357 ph 2 on 0 near 0 fund 0 fuse 1 ttl 1 ti 69 ammo 1 bar 8 want 22 floor 16 bind 0 nbind 0 nnear 0
+PH523 357 id 3 body 1 arc 2 orth 4 own 0 merged 0 arcclosed 0 ph 5
+PH523 357 id 9 body 2 arc 1 orth 1 own 0 merged 0 arcclosed 0 ph 5
+MAG522 358 ph 2 on 0 near 0 fund 0 fuse 1 ttl 1 ti 69 ammo 1 bar 8 want 22 floor 16 bind 0 nbind 0 nnear 0
+PH523 358 id 3 body 1 arc 2 orth 2 own 0 merged 0 arcclosed 0 ph 5
+PH523 358 id 9 body 2 arc 1 orth 1 own 0 merged 0 arcclosed 0 ph 5
+MAG522 359 ph 2 on 0 near 0 fund 0 fuse 1 ttl 1 ti 61 ammo 1 bar 8 want 22 floor 16 bind 0 nbind 0 nnear 0
+PH523 359 id 3 body 1 arc 2 orth 4 own 0 merged 0 arcclosed 0 ph 5
+PH523 359 id 9 body 2 arc 1 orth 0 own 1 merged 1 arcclosed 0 ph 4
+MAG522 360 ph 2 on 0 near 0 fund 0 fuse 1 ttl 1 ti 71 ammo 1 bar 8 want 22 floor 16 bind 0 nbind 0 nnear 0
+PH523 360 id 3 body 1 arc 2 orth 2 own 0 merged 0 arcclosed 0 ph 5
+PH523 360 id 9 body 2 arc 1 orth 0 own 1 merged 1 arcclosed 0 ph 4
+MAG522 361 ph 2 on 0 near 0 fund 0 fuse 1 ttl 1 ti 12 ammo 1 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+PH523 361 id 3 body 1 arc 2 orth 4 own 0 merged 0 arcclosed 0 ph 5
+PH523 361 id 9 body 2 arc 1 orth 0 own 1 merged 1 arcclosed 0 ph 4
+MAG522 362 ph 2 on 0 near 0 fund 0 fuse 1 ttl 1 ti 12 ammo 1 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+PH523 362 id 3 body 1 arc 2 orth 2 own 0 merged 0 arcclosed 0 ph 5
+PH523 362 id 9 body 2 arc 1 orth 2 own 0 merged 0 arcclosed 0 ph 5
+MAG522 363 ph 2 on 0 near 0 fund 0 fuse 1 ttl 1 ti 12 ammo 1 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+PH523 363 id 3 body 1 arc 2 orth 4 own 0 merged 0 arcclosed 0 ph 5
+PH523 363 id 9 body 2 arc 1 orth 4 own 0 merged 0 arcclosed 0 ph 5
+MAG522 364 ph 2 on 0 near 0 fund 0 fuse 1 ttl 1 ti 22 ammo 1 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+PH523 364 id 3 body 1 arc 2 orth 2 own 0 merged 0 arcclosed 0 ph 5
+PH523 364 id 9 body 2 arc 1 orth 2 own 0 merged 0 arcclosed 0 ph 5
+MAG522 365 ph 2 on 0 near 0 fund 0 fuse 1 ttl 1 ti 22 ammo 1 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+PH523 365 id 3 body 1 arc 2 orth 4 own 0 merged 0 arcclosed 0 ph 5
+PH523 365 id 9 body 2 arc 1 orth 5 own 0 merged 0 arcclosed 0 ph 5
+MAG522 366 ph 2 on 0 near 0 fund 0 fuse 1 ttl 1 ti 18 ammo 1 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+PH523 366 id 3 body 1 arc 2 orth 2 own 0 merged 0 arcclosed 0 ph 5
+PH523 366 id 9 body 2 arc 1 orth 3 own 0 merged 0 arcclosed 0 ph 5
+MAG522 367 ph 2 on 0 near 0 fund 0 fuse 1 ttl 1 ti 18 ammo 1 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+PH523 367 id 3 body 1 arc 2 orth 4 own 0 merged 0 arcclosed 0 ph 5
+PH523 367 id 9 body 2 arc 1 orth 5 own 0 merged 0 arcclosed 0 ph 5
+MAG522 368 ph 2 on 0 near 0 fund 0 fuse 1 ttl 1 ti 28 ammo 1 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+PH523 368 id 3 body 1 arc 2 orth 2 own 0 merged 0 arcclosed 0 ph 5
+PH523 368 id 9 body 2 arc 1 orth 3 own 0 merged 0 arcclosed 0 ph 5
+MAG522 369 ph 2 on 0 near 0 fund 0 fuse 1 ttl 1 ti 18 ammo 7 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+PH523 369 id 3 body 1 arc 2 orth 4 own 0 merged 0 arcclosed 0 ph 5
+PH523 369 id 9 body 2 arc 1 orth 5 own 0 merged 0 arcclosed 0 ph 5
+MAG522 370 ph 2 on 0 near 0 fund 0 fuse 1 ttl 1 ti 17 ammo 3 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+PH523 370 id 3 body 1 arc 2 orth 2 own 0 merged 0 arcclosed 0 ph 5
+PH523 370 id 9 body 2 arc 1 orth 3 own 0 merged 0 arcclosed 0 ph 5
+MAG522 371 ph 2 on 0 near 0 fund 0 fuse 1 ttl 1 ti 16 ammo 3 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+PH523 371 id 3 body 1 arc 2 orth 4 own 0 merged 0 arcclosed 0 ph 5
+PH523 371 id 9 body 2 arc 1 orth 1 own 0 merged 0 arcclosed 0 ph 5
+MAG522 372 ph 2 on 0 near 0 fund 0 fuse 1 ttl 1 ti 25 ammo 3 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+PH523 372 id 3 body 1 arc 2 orth 2 own 0 merged 0 arcclosed 0 ph 5
+PH523 372 id 9 body 2 arc 1 orth 1 own 0 merged 0 arcclosed 0 ph 5
+MAG522 373 ph 2 on 0 near 0 fund 0 fuse 1 ttl 1 ti 17 ammo 6 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+PH523 373 id 3 body 1 arc 2 orth 4 own 0 merged 0 arcclosed 0 ph 5
+PH523 373 id 9 body 2 arc 1 orth 1 own 0 merged 0 arcclosed 0 ph 5
+MAG522 374 ph 2 on 0 near 0 fund 0 fuse 1 ttl 1 ti 16 ammo 2 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+PH523 374 id 3 body 1 arc 2 orth 2 own 0 merged 0 arcclosed 0 ph 5
+PH523 374 id 9 body 2 arc 1 orth 1 own 0 merged 0 arcclosed 0 ph 5
+MAG522 375 ph 2 on 0 near 0 fund 0 fuse 1 ttl 1 ti 5 ammo 2 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+PH523 375 id 3 body 1 arc 2 orth 4 own 0 merged 0 arcclosed 0 ph 5
+PH523 375 id 9 body 2 arc 1 orth 1 own 0 merged 0 arcclosed 0 ph 5
+MAG522 376 ph 2 on 0 near 0 fund 0 fuse 1 ttl 1 ti 14 ammo 2 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+PH523 376 id 3 body 1 arc 2 orth 2 own 0 merged 0 arcclosed 0 ph 5
+PH523 376 id 9 body 2 arc 1 orth 1 own 0 merged 0 arcclosed 0 ph 5
+MAG522 377 ph 2 on 0 near 0 fund 0 fuse 1 ttl 1 ti 5 ammo 2 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+PH523 377 id 3 body 1 arc 2 orth 4 own 0 merged 0 arcclosed 0 ph 5
+PH523 377 id 9 body 2 arc 1 orth 1 own 0 merged 0 arcclosed 0 ph 5
+MAG522 378 ph 2 on 0 near 0 fund 0 fuse 1 ttl 1 ti 5 ammo 2 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+PH523 378 id 3 body 1 arc 2 orth 2 own 0 merged 0 arcclosed 0 ph 5
+PH523 378 id 9 body 2 arc 1 orth 1 own 0 merged 0 arcclosed 0 ph 5
+MAG522 379 ph 2 on 0 near 0 fund 0 fuse 1 ttl 1 ti 5 ammo 2 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+PH523 379 id 3 body 1 arc 2 orth 4 own 0 merged 0 arcclosed 0 ph 5
+PH523 379 id 9 body 2 arc 1 orth 1 own 0 merged 0 arcclosed 0 ph 5
+MAG522 380 ph 2 on 0 near 0 fund 0 fuse 1 ttl 1 ti 15 ammo 2 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+PH523 380 id 3 body 1 arc 2 orth 2 own 0 merged 0 arcclosed 0 ph 5
+PH523 380 id 9 body 2 arc 1 orth 1 own 0 merged 0 arcclosed 0 ph 5
+MAG522 381 ph 2 on 0 near 0 fund 0 fuse 1 ttl 1 ti 14 ammo 2 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+PH523 381 id 3 body 1 arc 2 orth 4 own 0 merged 0 arcclosed 0 ph 5
+PH523 381 id 9 body 2 arc 1 orth 1 own 0 merged 0 arcclosed 0 ph 5
+MAG522 382 ph 2 on 0 near 0 fund 0 fuse 1 ttl 1 ti 13 ammo 2 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+PH523 382 id 3 body 1 arc 2 orth 2 own 0 merged 0 arcclosed 0 ph 5
+PH523 382 id 9 body 2 arc 1 orth 1 own 0 merged 0 arcclosed 0 ph 5
+MAG522 383 ph 2 on 0 near 0 fund 0 fuse 1 ttl 1 ti 12 ammo 2 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+PH523 383 id 3 body 1 arc 2 orth 4 own 0 merged 0 arcclosed 0 ph 5
+PH523 383 id 9 body 2 arc 1 orth 1 own 0 merged 0 arcclosed 0 ph 5
+MAG522 384 ph 2 on 0 near 0 fund 0 fuse 1 ttl 1 ti 21 ammo 2 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+PH523 384 id 3 body 1 arc 2 orth 2 own 0 merged 0 arcclosed 0 ph 5
+PH523 384 id 9 body 2 arc 1 orth 1 own 0 merged 0 arcclosed 0 ph 5
+MAG522 385 ph 2 on 0 near 0 fund 0 fuse 1 ttl 1 ti 17 ammo 1 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+PH523 385 id 3 body 1 arc 2 orth 4 own 0 merged 0 arcclosed 0 ph 5
+PH523 385 id 9 body 2 arc 1 orth 1 own 0 merged 0 arcclosed 0 ph 5
+MAG522 386 ph 2 on 0 near 0 fund 0 fuse 1 ttl 1 ti 6 ammo 1 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+PH523 386 id 3 body 1 arc 2 orth 2 own 0 merged 0 arcclosed 0 ph 5
+PH523 386 id 9 body 2 arc 1 orth 1 own 0 merged 0 arcclosed 0 ph 5
+MAG522 387 ph 2 on 0 near 0 fund 0 fuse 1 ttl 1 ti 5 ammo 1 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+PH523 387 id 3 body 1 arc 2 orth 4 own 0 merged 0 arcclosed 0 ph 5
+PH523 387 id 9 body 2 arc 1 orth 1 own 0 merged 0 arcclosed 0 ph 5
+MAG522 388 ph 2 on 0 near 0 fund 0 fuse 1 ttl 1 ti 14 ammo 1 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+PH523 388 id 3 body 1 arc 2 orth 2 own 0 merged 0 arcclosed 0 ph 5
+PH523 388 id 9 body 2 arc 1 orth 1 own 0 merged 0 arcclosed 0 ph 5
+MAG522 389 ph 2 on 0 near 0 fund 0 fuse 1 ttl 1 ti 13 ammo 1 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+PH523 389 id 3 body 1 arc 2 orth 4 own 0 merged 0 arcclosed 0 ph 5
+PH523 389 id 9 body 2 arc 1 orth 1 own 0 merged 0 arcclosed 0 ph 5
+MAG522 390 ph 2 on 0 near 0 fund 0 fuse 1 ttl 1 ti 13 ammo 1 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+PH523 390 id 3 body 1 arc 2 orth 2 own 0 merged 0 arcclosed 0 ph 5
+PH523 390 id 9 body 2 arc 1 orth 1 own 0 merged 0 arcclosed 0 ph 5
+MAG522 391 ph 2 on 0 near 0 fund 0 fuse 1 ttl 1 ti 13 ammo 1 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+PH523 391 id 3 body 1 arc 2 orth 4 own 0 merged 0 arcclosed 0 ph 5
+PH523 391 id 9 body 2 arc 1 orth 1 own 0 merged 0 arcclosed 0 ph 5
+MAG522 392 ph 2 on 0 near 0 fund 0 fuse 1 ttl 1 ti 23 ammo 1 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+PH523 392 id 3 body 1 arc 2 orth 2 own 0 merged 0 arcclosed 0 ph 5
+PH523 392 id 9 body 2 arc 1 orth 1 own 0 merged 0 arcclosed 0 ph 5
+MAG522 393 ph 2 on 0 near 0 fund 0 fuse 1 ttl 1 ti 18 ammo 2 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+PH523 393 id 3 body 1 arc 2 orth 4 own 0 merged 0 arcclosed 0 ph 5
+PH523 393 id 9 body 2 arc 1 orth 1 own 0 merged 0 arcclosed 0 ph 5
+MAG522 394 ph 2 on 0 near 0 fund 0 fuse 1 ttl 1 ti 17 ammo 2 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+PH523 394 id 3 body 1 arc 2 orth 2 own 0 merged 0 arcclosed 0 ph 5
+PH523 394 id 9 body 2 arc 1 orth 1 own 0 merged 0 arcclosed 0 ph 5
+MAG522 395 ph 2 on 0 near 0 fund 0 fuse 1 ttl 1 ti 16 ammo 2 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+PH523 395 id 3 body 1 arc 2 orth 4 own 0 merged 0 arcclosed 0 ph 5
+PH523 395 id 9 body 2 arc 1 orth 1 own 0 merged 0 arcclosed 0 ph 5
+MAG522 396 ph 2 on 0 near 0 fund 0 fuse 1 ttl 1 ti 25 ammo 2 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+PH523 396 id 3 body 1 arc 2 orth 2 own 0 merged 0 arcclosed 0 ph 5
+PH523 396 id 9 body 2 arc 1 orth 1 own 0 merged 0 arcclosed 0 ph 5
+MAG522 397 ph 2 on 0 near 0 fund 0 fuse 1 ttl 1 ti 17 ammo 5 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+PH523 397 id 3 body 1 arc 2 orth 4 own 0 merged 0 arcclosed 0 ph 5
+PH523 397 id 9 body 2 arc 1 orth 1 own 0 merged 0 arcclosed 0 ph 5
+MAG522 398 ph 2 on 0 near 0 fund 0 fuse 1 ttl 1 ti 16 ammo 1 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+PH523 398 id 3 body 1 arc 2 orth 2 own 0 merged 0 arcclosed 0 ph 5
+PH523 398 id 9 body 2 arc 1 orth 1 own 0 merged 0 arcclosed 0 ph 5
+MAG522 399 ph 2 on 0 near 0 fund 0 fuse 1 ttl 1 ti 15 ammo 1 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+PH523 399 id 3 body 1 arc 2 orth 4 own 0 merged 0 arcclosed 0 ph 5
+PH523 399 id 9 body 2 arc 1 orth 1 own 0 merged 0 arcclosed 0 ph 5
+MAG522 400 ph 2 on 0 near 0 fund 0 fuse 1 ttl 1 ti 24 ammo 1 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+PH523 400 id 3 body 1 arc 2 orth 2 own 0 merged 0 arcclosed 0 ph 5
+PH523 400 id 9 body 2 arc 1 orth 1 own 0 merged 0 arcclosed 0 ph 5
+MAG522 401 ph 2 on 0 near 0 fund 0 fuse 1 ttl 1 ti 17 ammo 3 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+PH523 401 id 3 body 1 arc 2 orth 4 own 0 merged 0 arcclosed 0 ph 5
+PH523 401 id 9 body 2 arc 1 orth 1 own 0 merged 0 arcclosed 0 ph 5
+MAG522 402 ph 2 on 0 near 0 fund 0 fuse 1 ttl 1 ti 16 ammo 3 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+PH523 402 id 3 body 1 arc 2 orth 2 own 0 merged 0 arcclosed 0 ph 5
+PH523 402 id 9 body 2 arc 1 orth 1 own 0 merged 0 arcclosed 0 ph 5
+MAG522 403 ph 2 on 0 near 0 fund 0 fuse 1 ttl 1 ti 15 ammo 3 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+PH523 403 id 3 body 1 arc 2 orth 4 own 0 merged 0 arcclosed 0 ph 5
+PH523 403 id 9 body 2 arc 1 orth 1 own 0 merged 0 arcclosed 0 ph 5
+MAG522 404 ph 2 on 0 near 0 fund 0 fuse 1 ttl 1 ti 24 ammo 3 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+PH523 404 id 3 body 1 arc 2 orth 2 own 0 merged 0 arcclosed 0 ph 5
+PH523 404 id 9 body 2 arc 1 orth 1 own 0 merged 0 arcclosed 0 ph 5
+MAG522 405 ph 2 on 0 near 0 fund 0 fuse 1 ttl 1 ti 17 ammo 5 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+PH523 405 id 3 body 1 arc 2 orth 4 own 0 merged 0 arcclosed 0 ph 5
+PH523 405 id 9 body 2 arc 1 orth 1 own 0 merged 0 arcclosed 0 ph 5
+MAG522 406 ph 2 on 0 near 0 fund 0 fuse 1 ttl 1 ti 6 ammo 5 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+PH523 406 id 3 body 1 arc 2 orth 2 own 0 merged 0 arcclosed 0 ph 5
+PH523 406 id 9 body 2 arc 1 orth 1 own 0 merged 0 arcclosed 0 ph 5
+MAG522 407 ph 2 on 0 near 0 fund 0 fuse 1 ttl 1 ti 5 ammo 1 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+PH523 407 id 3 body 1 arc 2 orth 4 own 0 merged 0 arcclosed 0 ph 5
+PH523 407 id 9 body 2 arc 1 orth 1 own 0 merged 0 arcclosed 0 ph 5
+MAG522 408 ph 2 on 0 near 0 fund 0 fuse 1 ttl 1 ti 14 ammo 1 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+PH523 408 id 3 body 1 arc 2 orth 2 own 0 merged 0 arcclosed 0 ph 5
+PH523 408 id 9 body 2 arc 1 orth 1 own 0 merged 0 arcclosed 0 ph 5
+MAG522 409 ph 2 on 0 near 0 fund 0 fuse 1 ttl 1 ti 5 ammo 1 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+PH523 409 id 3 body 1 arc 2 orth 4 own 0 merged 0 arcclosed 0 ph 5
+PH523 409 id 9 body 2 arc 1 orth 1 own 0 merged 0 arcclosed 0 ph 5
+MAG522 410 ph 2 on 0 near 0 fund 0 fuse 1 ttl 1 ti 5 ammo 1 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+PH523 410 id 3 body 1 arc 2 orth 2 own 0 merged 0 arcclosed 0 ph 5
+PH523 410 id 9 body 2 arc 1 orth 1 own 0 merged 0 arcclosed 0 ph 5
+MAG522 411 ph 2 on 0 near 0 fund 0 fuse 1 ttl 1 ti 5 ammo 1 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+PH523 411 id 3 body 1 arc 2 orth 4 own 0 merged 0 arcclosed 0 ph 5
+PH523 411 id 9 body 2 arc 1 orth 1 own 0 merged 0 arcclosed 0 ph 5
+MAG522 412 ph 2 on 0 near 0 fund 0 fuse 1 ttl 1 ti 15 ammo 1 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+PH523 412 id 3 body 1 arc 2 orth 2 own 0 merged 0 arcclosed 0 ph 5
+PH523 412 id 9 body 2 arc 1 orth 1 own 0 merged 0 arcclosed 0 ph 5
+MAG522 413 ph 2 on 0 near 0 fund 0 fuse 1 ttl 1 ti 15 ammo 1 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+PH523 413 id 3 body 1 arc 2 orth 4 own 0 merged 0 arcclosed 0 ph 5
+PH523 413 id 9 body 2 arc 1 orth 1 own 0 merged 0 arcclosed 0 ph 5
+MAG522 414 ph 2 on 0 near 0 fund 0 fuse 1 ttl 1 ti 14 ammo 1 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+PH523 414 id 3 body 1 arc 2 orth 2 own 0 merged 0 arcclosed 0 ph 5
+PH523 414 id 9 body 2 arc 1 orth 1 own 0 merged 0 arcclosed 0 ph 5
+MAG522 415 ph 2 on 0 near 0 fund 0 fuse 1 ttl 1 ti 13 ammo 1 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+PH523 415 id 3 body 1 arc 2 orth 4 own 0 merged 0 arcclosed 0 ph 5
+PH523 415 id 9 body 2 arc 1 orth 1 own 0 merged 0 arcclosed 0 ph 5
+MAG522 416 ph 2 on 0 near 0 fund 0 fuse 1 ttl 1 ti 22 ammo 1 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+PH523 416 id 3 body 1 arc 2 orth 2 own 0 merged 0 arcclosed 0 ph 5
+PH523 416 id 9 body 2 arc 1 orth 1 own 0 merged 0 arcclosed 0 ph 5
+MAG522 417 ph 2 on 0 near 0 fund 0 fuse 1 ttl 1 ti 17 ammo 1 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+PH523 417 id 3 body 1 arc 2 orth 4 own 0 merged 0 arcclosed 0 ph 5
+PH523 417 id 9 body 2 arc 1 orth 1 own 0 merged 0 arcclosed 0 ph 5
+MAG522 418 ph 2 on 0 near 0 fund 0 fuse 1 ttl 1 ti 16 ammo 1 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+PH523 418 id 3 body 1 arc 2 orth 2 own 0 merged 0 arcclosed 0 ph 5
+PH523 418 id 9 body 2 arc 1 orth 1 own 0 merged 0 arcclosed 0 ph 5
+MAG522 419 ph 2 on 0 near 0 fund 0 fuse 1 ttl 1 ti 15 ammo 1 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+PH523 419 id 3 body 1 arc 2 orth 4 own 0 merged 0 arcclosed 0 ph 5
+PH523 419 id 9 body 2 arc 1 orth 1 own 0 merged 0 arcclosed 0 ph 5
+MAG522 420 ph 2 on 0 near 0 fund 0 fuse 1 ttl 1 ti 24 ammo 1 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+PH523 420 id 3 body 1 arc 2 orth 2 own 0 merged 0 arcclosed 0 ph 5
+PH523 420 id 9 body 2 arc 1 orth 1 own 0 merged 0 arcclosed 0 ph 5
+MAG522 421 ph 2 on 0 near 0 fund 0 fuse 1 ttl 1 ti 17 ammo 3 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+PH523 421 id 3 body 1 arc 2 orth 4 own 0 merged 0 arcclosed 0 ph 5
+PH523 421 id 9 body 2 arc 1 orth 1 own 0 merged 0 arcclosed 0 ph 5
+MAG522 422 ph 2 on 0 near 0 fund 0 fuse 1 ttl 1 ti 16 ammo 3 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+PH523 422 id 3 body 1 arc 2 orth 2 own 0 merged 0 arcclosed 0 ph 5
+PH523 422 id 9 body 2 arc 1 orth 1 own 0 merged 0 arcclosed 0 ph 5
+MAG522 423 ph 2 on 0 near 0 fund 0 fuse 1 ttl 1 ti 15 ammo 3 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+PH523 423 id 3 body 1 arc 2 orth 4 own 0 merged 0 arcclosed 0 ph 5
+PH523 423 id 9 body 2 arc 1 orth 1 own 0 merged 0 arcclosed 0 ph 5
+MAG522 424 ph 2 on 0 near 0 fund 0 fuse 1 ttl 1 ti 24 ammo 3 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+PH523 424 id 3 body 1 arc 2 orth 2 own 0 merged 0 arcclosed 0 ph 5
+PH523 424 id 9 body 2 arc 1 orth 1 own 0 merged 0 arcclosed 0 ph 5
+MAG522 425 ph 2 on 0 near 0 fund 0 fuse 1 ttl 1 ti 17 ammo 5 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+PH523 425 id 3 body 1 arc 2 orth 4 own 0 merged 0 arcclosed 0 ph 5
+PH523 425 id 9 body 2 arc 1 orth 1 own 0 merged 0 arcclosed 0 ph 5
+MAG522 426 ph 2 on 0 near 0 fund 0 fuse 1 ttl 1 ti 16 ammo 1 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+PH523 426 id 3 body 1 arc 2 orth 2 own 0 merged 0 arcclosed 0 ph 5
+PH523 426 id 9 body 2 arc 1 orth 1 own 0 merged 0 arcclosed 0 ph 5
+MAG522 427 ph 2 on 0 near 0 fund 0 fuse 1 ttl 1 ti 15 ammo 1 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+PH523 427 id 3 body 1 arc 2 orth 4 own 0 merged 0 arcclosed 0 ph 5
+PH523 427 id 9 body 2 arc 1 orth 1 own 0 merged 0 arcclosed 0 ph 5
+MAG522 428 ph 2 on 0 near 0 fund 0 fuse 1 ttl 1 ti 24 ammo 1 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+PH523 428 id 3 body 1 arc 2 orth 2 own 0 merged 0 arcclosed 0 ph 5
+PH523 428 id 9 body 2 arc 1 orth 1 own 0 merged 0 arcclosed 0 ph 5
+MAG522 429 ph 2 on 0 near 0 fund 0 fuse 1 ttl 1 ti 9 ammo 7 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+PH523 429 id 3 body 1 arc 2 orth 4 own 0 merged 0 arcclosed 0 ph 5
+PH523 429 id 9 body 2 arc 1 orth 1 own 0 merged 0 arcclosed 0 ph 5
+MAG522 430 ph 2 on 0 near 0 fund 0 fuse 1 ttl 1 ti 9 ammo 7 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+PH523 430 id 3 body 1 arc 2 orth 2 own 0 merged 0 arcclosed 0 ph 5
+PH523 430 id 9 body 2 arc 1 orth 1 own 0 merged 0 arcclosed 0 ph 5
+MAG522 431 ph 2 on 0 near 0 fund 0 fuse 1 ttl 1 ti 9 ammo 7 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+PH523 431 id 3 body 1 arc 2 orth 4 own 0 merged 0 arcclosed 0 ph 5
+PH523 431 id 9 body 2 arc 1 orth 1 own 0 merged 0 arcclosed 0 ph 5
+MAG522 432 ph 2 on 0 near 0 fund 0 fuse 1 ttl 1 ti 19 ammo 7 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+PH523 432 id 3 body 1 arc 2 orth 2 own 0 merged 0 arcclosed 0 ph 5
+PH523 432 id 9 body 2 arc 1 orth 1 own 0 merged 0 arcclosed 0 ph 5
+MAG522 433 ph 2 on 0 near 0 fund 0 fuse 1 ttl 1 ti 18 ammo 8 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+PH523 433 id 3 body 1 arc 2 orth 4 own 0 merged 0 arcclosed 0 ph 5
+PH523 433 id 9 body 2 arc 1 orth 1 own 0 merged 0 arcclosed 0 ph 5
+MAG522 434 ph 2 on 0 near 0 fund 0 fuse 1 ttl 1 ti 17 ammo 8 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+PH523 434 id 3 body 1 arc 2 orth 2 own 0 merged 0 arcclosed 0 ph 5
+PH523 434 id 9 body 2 arc 1 orth 1 own 0 merged 0 arcclosed 0 ph 5
+MAG522 435 ph 2 on 0 near 0 fund 0 fuse 1 ttl 1 ti 16 ammo 8 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+PH523 435 id 3 body 1 arc 2 orth 4 own 0 merged 0 arcclosed 0 ph 5
+PH523 435 id 9 body 2 arc 1 orth 1 own 0 merged 0 arcclosed 0 ph 5
+MAG522 436 ph 2 on 0 near 0 fund 0 fuse 1 ttl 1 ti 25 ammo 8 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+PH523 436 id 3 body 1 arc 2 orth 2 own 0 merged 0 arcclosed 0 ph 5
+PH523 436 id 9 body 2 arc 1 orth 1 own 0 merged 0 arcclosed 0 ph 5
+MAG522 437 ph 2 on 0 near 0 fund 0 fuse 1 ttl 1 ti 17 ammo 5 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+PH523 437 id 3 body 1 arc 2 orth 4 own 0 merged 0 arcclosed 0 ph 5
+PH523 437 id 9 body 2 arc 1 orth 1 own 0 merged 0 arcclosed 0 ph 5
+MAG522 438 ph 2 on 0 near 0 fund 0 fuse 1 ttl 1 ti 16 ammo 5 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+PH523 438 id 3 body 1 arc 2 orth 2 own 0 merged 0 arcclosed 0 ph 5
+PH523 438 id 9 body 2 arc 1 orth 1 own 0 merged 0 arcclosed 0 ph 5
+MAG522 439 ph 2 on 0 near 0 fund 0 fuse 1 ttl 1 ti 15 ammo 5 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+PH523 439 id 3 body 1 arc 2 orth 4 own 0 merged 0 arcclosed 0 ph 5
+PH523 439 id 9 body 2 arc 1 orth 1 own 0 merged 0 arcclosed 0 ph 5
+MAG522 440 ph 2 on 0 near 0 fund 0 fuse 1 ttl 1 ti 24 ammo 5 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+PH523 440 id 3 body 1 arc 2 orth 2 own 0 merged 0 arcclosed 0 ph 5
+PH523 440 id 9 body 2 arc 1 orth 1 own 0 merged 0 arcclosed 0 ph 5
+MAG522 441 ph 2 on 0 near 0 fund 0 fuse 1 ttl 1 ti 17 ammo 1 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+PH523 441 id 3 body 1 arc 2 orth 4 own 0 merged 0 arcclosed 0 ph 5
+PH523 441 id 9 body 2 arc 1 orth 1 own 0 merged 0 arcclosed 0 ph 5
+MAG522 442 ph 2 on 0 near 0 fund 0 fuse 1 ttl 1 ti 16 ammo 1 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+PH523 442 id 3 body 1 arc 2 orth 2 own 0 merged 0 arcclosed 0 ph 5
+PH523 442 id 9 body 2 arc 1 orth 1 own 0 merged 0 arcclosed 0 ph 5
+MAG522 443 ph 2 on 0 near 0 fund 0 fuse 1 ttl 1 ti 15 ammo 1 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+PH523 443 id 3 body 1 arc 2 orth 4 own 0 merged 0 arcclosed 0 ph 5
+PH523 443 id 9 body 2 arc 1 orth 1 own 0 merged 0 arcclosed 0 ph 5
+MAG522 444 ph 2 on 0 near 0 fund 0 fuse 1 ttl 1 ti 24 ammo 1 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+PH523 444 id 3 body 1 arc 2 orth 2 own 0 merged 0 arcclosed 0 ph 5
+PH523 444 id 9 body 2 arc 1 orth 1 own 0 merged 0 arcclosed 0 ph 5
+MAG522 445 ph 2 on 0 near 0 fund 0 fuse 1 ttl 1 ti 17 ammo 7 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+PH523 445 id 3 body 1 arc 2 orth 4 own 0 merged 0 arcclosed 0 ph 5
+PH523 445 id 9 body 2 arc 1 orth 1 own 0 merged 0 arcclosed 0 ph 5
+MAG522 446 ph 2 on 0 near 0 fund 0 fuse 1 ttl 1 ti 16 ammo 7 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+PH523 446 id 3 body 1 arc 2 orth 2 own 0 merged 0 arcclosed 0 ph 5
+PH523 446 id 9 body 2 arc 1 orth 1 own 0 merged 0 arcclosed 0 ph 5
+MAG522 447 ph 2 on 0 near 0 fund 0 fuse 1 ttl 1 ti 15 ammo 7 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+PH523 447 id 3 body 1 arc 2 orth 4 own 0 merged 0 arcclosed 0 ph 5
+PH523 447 id 9 body 2 arc 1 orth 1 own 0 merged 0 arcclosed 0 ph 5
+MAG522 448 ph 2 on 0 near 0 fund 0 fuse 1 ttl 1 ti 24 ammo 7 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+PH523 448 id 3 body 1 arc 2 orth 2 own 0 merged 0 arcclosed 0 ph 5
+PH523 448 id 9 body 2 arc 1 orth 1 own 0 merged 0 arcclosed 0 ph 5
+MAG522 449 ph 2 on 0 near 0 fund 0 fuse 1 ttl 1 ti 9 ammo 3 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+PH523 449 id 3 body 1 arc 2 orth 4 own 0 merged 0 arcclosed 0 ph 5
+PH523 449 id 9 body 2 arc 1 orth 1 own 0 merged 0 arcclosed 0 ph 5
+MAG522 450 ph 2 on 0 near 0 fund 0 fuse 1 ttl 1 ti 9 ammo 3 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+PH523 450 id 3 body 1 arc 2 orth 2 own 0 merged 0 arcclosed 0 ph 5
+PH523 450 id 9 body 2 arc 1 orth 1 own 0 merged 0 arcclosed 0 ph 5
+MAG522 451 ph 2 on 0 near 0 fund 0 fuse 1 ttl 1 ti 9 ammo 3 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+PH523 451 id 3 body 1 arc 2 orth 4 own 0 merged 0 arcclosed 0 ph 5
+PH523 451 id 9 body 2 arc 1 orth 1 own 0 merged 0 arcclosed 0 ph 5
+MAG522 452 ph 2 on 0 near 0 fund 0 fuse 1 ttl 1 ti 19 ammo 3 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+PH523 452 id 3 body 1 arc 2 orth 2 own 0 merged 0 arcclosed 0 ph 5
+PH523 452 id 9 body 2 arc 1 orth 1 own 0 merged 0 arcclosed 0 ph 5
+MAG522 453 ph 2 on 0 near 0 fund 0 fuse 1 ttl 1 ti 18 ammo 4 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+PH523 453 id 3 body 1 arc 2 orth 4 own 0 merged 0 arcclosed 0 ph 5
+PH523 453 id 9 body 2 arc 1 orth 1 own 0 merged 0 arcclosed 0 ph 5
+MAG522 454 ph 2 on 0 near 0 fund 0 fuse 1 ttl 1 ti 17 ammo 4 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+PH523 454 id 3 body 1 arc 2 orth 2 own 0 merged 0 arcclosed 0 ph 5
+PH523 454 id 9 body 2 arc 1 orth 1 own 0 merged 0 arcclosed 0 ph 5
+MAG522 455 ph 2 on 0 near 0 fund 0 fuse 1 ttl 1 ti 16 ammo 4 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+PH523 455 id 3 body 1 arc 2 orth 4 own 0 merged 0 arcclosed 0 ph 5
+PH523 455 id 9 body 2 arc 1 orth 1 own 0 merged 0 arcclosed 0 ph 5
+MAG522 456 ph 2 on 0 near 0 fund 0 fuse 1 ttl 1 ti 25 ammo 4 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+PH523 456 id 3 body 1 arc 2 orth 2 own 0 merged 0 arcclosed 0 ph 5
+PH523 456 id 9 body 2 arc 1 orth 1 own 0 merged 0 arcclosed 0 ph 5
+MAG522 457 ph 2 on 0 near 0 fund 0 fuse 1 ttl 1 ti 17 ammo 1 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+PH523 457 id 3 body 1 arc 2 orth 4 own 0 merged 0 arcclosed 0 ph 5
+PH523 457 id 9 body 2 arc 1 orth 1 own 0 merged 0 arcclosed 0 ph 5
+MAG522 458 ph 2 on 0 near 0 fund 0 fuse 1 ttl 1 ti 16 ammo 1 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+PH523 458 id 3 body 1 arc 2 orth 2 own 0 merged 0 arcclosed 0 ph 5
+PH523 458 id 9 body 2 arc 1 orth 1 own 0 merged 0 arcclosed 0 ph 5
+MAG522 459 ph 2 on 0 near 0 fund 0 fuse 1 ttl 1 ti 15 ammo 1 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+PH523 459 id 3 body 1 arc 2 orth 4 own 0 merged 0 arcclosed 0 ph 5
+PH523 459 id 9 body 2 arc 1 orth 1 own 0 merged 0 arcclosed 0 ph 5
+MAG522 460 ph 2 on 0 near 0 fund 0 fuse 1 ttl 1 ti 24 ammo 1 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+PH523 460 id 3 body 1 arc 2 orth 2 own 0 merged 0 arcclosed 0 ph 5
+PH523 460 id 9 body 2 arc 1 orth 1 own 0 merged 0 arcclosed 0 ph 5
+MAG522 461 ph 2 on 0 near 0 fund 0 fuse 1 ttl 1 ti 17 ammo 7 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+PH523 461 id 3 body 1 arc 2 orth 4 own 0 merged 0 arcclosed 0 ph 5
+PH523 461 id 9 body 2 arc 1 orth 1 own 0 merged 0 arcclosed 0 ph 5
+MAG522 462 ph 2 on 0 near 0 fund 0 fuse 1 ttl 1 ti 16 ammo 7 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+PH523 462 id 3 body 1 arc 2 orth 2 own 0 merged 0 arcclosed 0 ph 5
+PH523 462 id 9 body 2 arc 1 orth 1 own 0 merged 0 arcclosed 0 ph 5
+MAG522 463 ph 2 on 0 near 0 fund 0 fuse 1 ttl 1 ti 15 ammo 7 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+PH523 463 id 3 body 1 arc 2 orth 4 own 0 merged 0 arcclosed 0 ph 5
+PH523 463 id 9 body 2 arc 1 orth 1 own 0 merged 0 arcclosed 0 ph 5
+MAG522 464 ph 2 on 0 near 0 fund 0 fuse 1 ttl 1 ti 24 ammo 7 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+PH523 464 id 3 body 1 arc 2 orth 2 own 0 merged 0 arcclosed 0 ph 5
+PH523 464 id 9 body 2 arc 1 orth 1 own 0 merged 0 arcclosed 0 ph 5
+MAG522 465 ph 2 on 0 near 0 fund 0 fuse 1 ttl 1 ti 17 ammo 3 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+PH523 465 id 3 body 1 arc 2 orth 4 own 0 merged 0 arcclosed 0 ph 5
+PH523 465 id 9 body 2 arc 1 orth 1 own 0 merged 0 arcclosed 0 ph 5
+MAG522 466 ph 2 on 0 near 0 fund 0 fuse 1 ttl 1 ti 16 ammo 3 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+PH523 466 id 3 body 1 arc 2 orth 2 own 0 merged 0 arcclosed 0 ph 5
+PH523 466 id 9 body 2 arc 1 orth 1 own 0 merged 0 arcclosed 0 ph 5
+MAG522 467 ph 2 on 0 near 0 fund 0 fuse 1 ttl 1 ti 15 ammo 3 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+PH523 467 id 3 body 1 arc 2 orth 4 own 0 merged 0 arcclosed 0 ph 5
+PH523 467 id 9 body 2 arc 1 orth 1 own 0 merged 0 arcclosed 0 ph 5
+MAG522 468 ph 2 on 0 near 0 fund 0 fuse 1 ttl 1 ti 24 ammo 3 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+PH523 468 id 3 body 1 arc 2 orth 2 own 0 merged 0 arcclosed 0 ph 5
+PH523 468 id 9 body 2 arc 1 orth 1 own 0 merged 0 arcclosed 0 ph 5
+MAG522 469 ph 2 on 0 near 0 fund 0 fuse 1 ttl 1 ti 9 ammo 9 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+PH523 469 id 3 body 1 arc 2 orth 4 own 0 merged 0 arcclosed 0 ph 5
+PH523 469 id 9 body 2 arc 1 orth 1 own 0 merged 0 arcclosed 0 ph 5
+MAG522 470 ph 2 on 0 near 0 fund 0 fuse 1 ttl 1 ti 9 ammo 9 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+PH523 470 id 3 body 1 arc 2 orth 2 own 0 merged 0 arcclosed 0 ph 5
+PH523 470 id 9 body 2 arc 1 orth 1 own 0 merged 0 arcclosed 0 ph 5
+MAG522 471 ph 2 on 0 near 0 fund 0 fuse 1 ttl 1 ti 9 ammo 9 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+PH523 471 id 3 body 1 arc 2 orth 4 own 0 merged 0 arcclosed 0 ph 5
+PH523 471 id 9 body 2 arc 1 orth 1 own 0 merged 0 arcclosed 0 ph 5
+MAG522 472 ph 2 on 0 near 0 fund 0 fuse 1 ttl 1 ti 19 ammo 9 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+PH523 472 id 3 body 1 arc 2 orth 2 own 0 merged 0 arcclosed 0 ph 5
+PH523 472 id 9 body 2 arc 1 orth 1 own 0 merged 0 arcclosed 0 ph 5
+MAG522 473 ph 2 on 0 near 0 fund 0 fuse 1 ttl 1 ti 18 ammo 0 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+PH523 473 id 3 body 1 arc 2 orth 4 own 0 merged 0 arcclosed 0 ph 5
+PH523 473 id 9 body 2 arc 1 orth 1 own 0 merged 0 arcclosed 0 ph 5
+MAG522 474 ph 2 on 0 near 0 fund 0 fuse 1 ttl 1 ti 17 ammo 0 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+PH523 474 id 3 body 1 arc 2 orth 2 own 0 merged 0 arcclosed 0 ph 5
+PH523 474 id 9 body 2 arc 1 orth 1 own 0 merged 0 arcclosed 0 ph 5
+MAG522 475 ph 2 on 0 near 0 fund 0 fuse 1 ttl 1 ti 16 ammo 0 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+PH523 475 id 3 body 1 arc 2 orth 4 own 0 merged 0 arcclosed 0 ph 5
+PH523 475 id 9 body 2 arc 1 orth 1 own 0 merged 0 arcclosed 0 ph 5
+MAG522 476 ph 2 on 0 near 0 fund 0 fuse 1 ttl 1 ti 25 ammo 0 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+PH523 476 id 3 body 1 arc 2 orth 2 own 0 merged 0 arcclosed 0 ph 5
+PH523 476 id 9 body 2 arc 1 orth 1 own 0 merged 0 arcclosed 0 ph 5
+MAG522 477 ph 2 on 0 near 0 fund 0 fuse 1 ttl 1 ti 17 ammo 7 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+PH523 477 id 3 body 1 arc 2 orth 4 own 0 merged 0 arcclosed 0 ph 5
+PH523 477 id 9 body 2 arc 1 orth 1 own 0 merged 0 arcclosed 0 ph 5
+MAG522 478 ph 2 on 0 near 0 fund 0 fuse 1 ttl 1 ti 16 ammo 7 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+PH523 478 id 3 body 1 arc 2 orth 2 own 0 merged 0 arcclosed 0 ph 5
+PH523 478 id 9 body 2 arc 1 orth 1 own 0 merged 0 arcclosed 0 ph 5
+MAG522 479 ph 2 on 0 near 0 fund 0 fuse 1 ttl 1 ti 15 ammo 7 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+PH523 479 id 3 body 1 arc 2 orth 4 own 0 merged 0 arcclosed 0 ph 5
+PH523 479 id 9 body 2 arc 1 orth 1 own 0 merged 0 arcclosed 0 ph 5
+MAG522 480 ph 2 on 0 near 0 fund 0 fuse 1 ttl 1 ti 24 ammo 7 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+PH523 480 id 3 body 1 arc 2 orth 2 own 0 merged 0 arcclosed 0 ph 5
+PH523 480 id 9 body 2 arc 1 orth 1 own 0 merged 0 arcclosed 0 ph 5
+MAG522 481 ph 2 on 0 near 0 fund 0 fuse 1 ttl 1 ti 17 ammo 3 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+PH523 481 id 3 body 1 arc 2 orth 4 own 0 merged 0 arcclosed 0 ph 5
+PH523 481 id 9 body 2 arc 1 orth 1 own 0 merged 0 arcclosed 0 ph 5
+MAG522 482 ph 2 on 0 near 0 fund 0 fuse 1 ttl 1 ti 16 ammo 3 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+PH523 482 id 3 body 1 arc 2 orth 2 own 0 merged 0 arcclosed 0 ph 5
+PH523 482 id 9 body 2 arc 1 orth 1 own 0 merged 0 arcclosed 0 ph 5
+MAG522 483 ph 2 on 0 near 0 fund 0 fuse 1 ttl 1 ti 15 ammo 3 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+PH523 483 id 3 body 1 arc 2 orth 4 own 0 merged 0 arcclosed 0 ph 5
+PH523 483 id 9 body 2 arc 1 orth 1 own 0 merged 0 arcclosed 0 ph 5
+MAG522 484 ph 2 on 0 near 0 fund 0 fuse 1 ttl 1 ti 24 ammo 3 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+PH523 484 id 3 body 1 arc 2 orth 2 own 0 merged 0 arcclosed 0 ph 5
+PH523 484 id 9 body 2 arc 1 orth 1 own 0 merged 0 arcclosed 0 ph 5
+MAG522 485 ph 2 on 0 near 0 fund 0 fuse 1 ttl 1 ti 17 ammo 9 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+PH523 485 id 3 body 1 arc 2 orth 4 own 0 merged 0 arcclosed 0 ph 5
+PH523 485 id 9 body 2 arc 1 orth 1 own 0 merged 0 arcclosed 0 ph 5
+MAG522 486 ph 2 on 0 near 0 fund 0 fuse 1 ttl 1 ti 16 ammo 9 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+PH523 486 id 3 body 1 arc 2 orth 2 own 0 merged 0 arcclosed 0 ph 5
+PH523 486 id 9 body 2 arc 1 orth 1 own 0 merged 0 arcclosed 0 ph 5
+MAG522 487 ph 2 on 0 near 0 fund 0 fuse 1 ttl 1 ti 15 ammo 9 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+PH523 487 id 3 body 1 arc 2 orth 4 own 0 merged 0 arcclosed 0 ph 5
+PH523 487 id 9 body 2 arc 1 orth 1 own 0 merged 0 arcclosed 0 ph 5
+MAG522 488 ph 2 on 0 near 0 fund 0 fuse 1 ttl 1 ti 24 ammo 9 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+PH523 488 id 3 body 1 arc 2 orth 2 own 0 merged 0 arcclosed 0 ph 5
+PH523 488 id 9 body 2 arc 1 orth 1 own 0 merged 0 arcclosed 0 ph 5
+MAG522 489 ph 2 on 0 near 0 fund 0 fuse 1 ttl 1 ti 9 ammo 5 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+PH523 489 id 3 body 1 arc 2 orth 4 own 0 merged 0 arcclosed 0 ph 5
+PH523 489 id 9 body 2 arc 1 orth 1 own 0 merged 0 arcclosed 0 ph 5
+MAG522 490 ph 2 on 0 near 0 fund 0 fuse 1 ttl 1 ti 9 ammo 5 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+PH523 490 id 3 body 1 arc 2 orth 2 own 0 merged 0 arcclosed 0 ph 5
+PH523 490 id 9 body 2 arc 1 orth 1 own 0 merged 0 arcclosed 0 ph 5
+MAG522 491 ph 2 on 0 near 0 fund 0 fuse 1 ttl 1 ti 9 ammo 5 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+PH523 491 id 3 body 1 arc 2 orth 4 own 0 merged 0 arcclosed 0 ph 5
+PH523 491 id 9 body 2 arc 1 orth 1 own 0 merged 0 arcclosed 0 ph 5
+MAG522 492 ph 2 on 0 near 0 fund 0 fuse 1 ttl 1 ti 19 ammo 5 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+PH523 492 id 3 body 1 arc 2 orth 2 own 0 merged 0 arcclosed 0 ph 5
+PH523 492 id 9 body 2 arc 1 orth 1 own 0 merged 0 arcclosed 0 ph 5
+MAG522 493 ph 2 on 0 near 0 fund 0 fuse 1 ttl 1 ti 18 ammo 6 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+PH523 493 id 3 body 1 arc 2 orth 4 own 0 merged 0 arcclosed 0 ph 5
+PH523 493 id 9 body 2 arc 1 orth 1 own 0 merged 0 arcclosed 0 ph 5
+MAG522 494 ph 2 on 0 near 0 fund 0 fuse 1 ttl 1 ti 17 ammo 6 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+PH523 494 id 3 body 1 arc 2 orth 2 own 0 merged 0 arcclosed 0 ph 5
+PH523 494 id 9 body 2 arc 1 orth 1 own 0 merged 0 arcclosed 0 ph 5
+MAG522 495 ph 2 on 0 near 0 fund 0 fuse 1 ttl 1 ti 16 ammo 6 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+PH523 495 id 3 body 1 arc 2 orth 4 own 0 merged 0 arcclosed 0 ph 5
+PH523 495 id 9 body 2 arc 1 orth 1 own 0 merged 0 arcclosed 0 ph 5
+MAG522 496 ph 2 on 0 near 0 fund 0 fuse 1 ttl 1 ti 25 ammo 6 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+PH523 496 id 3 body 1 arc 2 orth 2 own 0 merged 0 arcclosed 0 ph 5
+PH523 496 id 9 body 2 arc 1 orth 1 own 0 merged 0 arcclosed 0 ph 5
+MAG522 497 ph 2 on 0 near 0 fund 0 fuse 1 ttl 1 ti 17 ammo 3 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+PH523 497 id 3 body 1 arc 2 orth 4 own 0 merged 0 arcclosed 0 ph 5
+PH523 497 id 9 body 2 arc 1 orth 1 own 0 merged 0 arcclosed 0 ph 5
+MAG522 498 ph 2 on 0 near 0 fund 0 fuse 1 ttl 1 ti 16 ammo 3 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+PH523 498 id 3 body 1 arc 2 orth 2 own 0 merged 0 arcclosed 0 ph 5
+PH523 498 id 9 body 2 arc 1 orth 1 own 0 merged 0 arcclosed 0 ph 5
+MAG522 499 ph 2 on 0 near 0 fund 0 fuse 1 ttl 1 ti 15 ammo 3 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+PH523 499 id 3 body 1 arc 2 orth 4 own 0 merged 0 arcclosed 0 ph 5
+PH523 499 id 9 body 2 arc 1 orth 1 own 0 merged 0 arcclosed 0 ph 5
+MAG522 500 ph 2 on 0 near 0 fund 0 fuse 1 ttl 1 ti 24 ammo 3 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+PH523 500 id 3 body 1 arc 2 orth 2 own 0 merged 0 arcclosed 0 ph 5
+PH523 500 id 9 body 2 arc 1 orth 1 own 0 merged 0 arcclosed 0 ph 5
+MAG522 501 ph 2 on 0 near 0 fund 0 fuse 1 ttl 1 ti 17 ammo 9 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+PH523 501 id 3 body 1 arc 2 orth 4 own 0 merged 0 arcclosed 0 ph 5
+PH523 501 id 9 body 2 arc 1 orth 1 own 0 merged 0 arcclosed 0 ph 5
+MAG522 502 ph 2 on 0 near 0 fund 0 fuse 1 ttl 1 ti 16 ammo 9 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+PH523 502 id 3 body 1 arc 2 orth 2 own 0 merged 0 arcclosed 0 ph 5
+PH523 502 id 9 body 2 arc 1 orth 1 own 0 merged 0 arcclosed 0 ph 5
+MAG522 503 ph 2 on 0 near 0 fund 0 fuse 1 ttl 1 ti 15 ammo 9 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+PH523 503 id 3 body 1 arc 2 orth 4 own 0 merged 0 arcclosed 0 ph 5
+PH523 503 id 9 body 2 arc 1 orth 1 own 0 merged 0 arcclosed 0 ph 5
+MAG522 504 ph 2 on 0 near 0 fund 0 fuse 1 ttl 1 ti 24 ammo 9 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+PH523 504 id 3 body 1 arc 2 orth 2 own 0 merged 0 arcclosed 0 ph 5
+PH523 504 id 9 body 2 arc 1 orth 1 own 0 merged 0 arcclosed 0 ph 5
+MAG522 505 ph 2 on 0 near 0 fund 0 fuse 1 ttl 1 ti 17 ammo 5 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+PH523 505 id 3 body 1 arc 2 orth 4 own 0 merged 0 arcclosed 0 ph 5
+PH523 505 id 9 body 2 arc 1 orth 1 own 0 merged 0 arcclosed 0 ph 5
+MAG522 506 ph 2 on 0 near 0 fund 0 fuse 1 ttl 1 ti 16 ammo 5 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+PH523 506 id 3 body 1 arc 2 orth 2 own 0 merged 0 arcclosed 0 ph 5
+PH523 506 id 9 body 2 arc 1 orth 1 own 0 merged 0 arcclosed 0 ph 5
+MAG522 507 ph 2 on 0 near 0 fund 0 fuse 1 ttl 1 ti 15 ammo 5 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+PH523 507 id 3 body 1 arc 2 orth 4 own 0 merged 0 arcclosed 0 ph 5
+PH523 507 id 9 body 2 arc 1 orth 1 own 0 merged 0 arcclosed 0 ph 5
+MAG522 508 ph 2 on 0 near 0 fund 0 fuse 1 ttl 1 ti 24 ammo 5 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+PH523 508 id 3 body 1 arc 2 orth 2 own 0 merged 0 arcclosed 0 ph 5
+PH523 508 id 9 body 2 arc 1 orth 1 own 0 merged 0 arcclosed 0 ph 5
+MAG522 509 ph 2 on 0 near 0 fund 0 fuse 1 ttl 1 ti 9 ammo 1 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+PH523 509 id 3 body 1 arc 2 orth 4 own 0 merged 0 arcclosed 0 ph 5
+PH523 509 id 9 body 2 arc 1 orth 1 own 0 merged 0 arcclosed 0 ph 5
+MAG522 510 ph 2 on 0 near 0 fund 0 fuse 1 ttl 1 ti 9 ammo 1 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+PH523 510 id 3 body 1 arc 2 orth 2 own 0 merged 0 arcclosed 0 ph 5
+PH523 510 id 9 body 2 arc 1 orth 1 own 0 merged 0 arcclosed 0 ph 5
+MAG522 511 ph 2 on 0 near 0 fund 0 fuse 1 ttl 1 ti 9 ammo 1 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+PH523 511 id 3 body 1 arc 2 orth 4 own 0 merged 0 arcclosed 0 ph 5
+PH523 511 id 9 body 2 arc 1 orth 1 own 0 merged 0 arcclosed 0 ph 5
+MAG522 512 ph 2 on 0 near 0 fund 0 fuse 1 ttl 1 ti 19 ammo 1 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+PH523 512 id 3 body 1 arc 2 orth 2 own 0 merged 0 arcclosed 0 ph 5
+PH523 512 id 9 body 2 arc 1 orth 1 own 0 merged 0 arcclosed 0 ph 5
+MAG522 513 ph 2 on 0 near 0 fund 0 fuse 1 ttl 1 ti 18 ammo 2 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+PH523 513 id 3 body 1 arc 2 orth 4 own 0 merged 0 arcclosed 0 ph 5
+PH523 513 id 9 body 2 arc 1 orth 1 own 0 merged 0 arcclosed 0 ph 5
+MAG522 514 ph 2 on 0 near 0 fund 0 fuse 1 ttl 1 ti 17 ammo 2 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+PH523 514 id 3 body 1 arc 2 orth 2 own 0 merged 0 arcclosed 0 ph 5
+PH523 514 id 9 body 2 arc 1 orth 1 own 0 merged 0 arcclosed 0 ph 5
+MAG522 515 ph 2 on 0 near 0 fund 0 fuse 1 ttl 1 ti 16 ammo 2 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+PH523 515 id 3 body 1 arc 2 orth 4 own 0 merged 0 arcclosed 0 ph 5
+PH523 515 id 9 body 2 arc 1 orth 1 own 0 merged 0 arcclosed 0 ph 5
+MAG522 516 ph 2 on 0 near 0 fund 0 fuse 1 ttl 1 ti 25 ammo 2 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+PH523 516 id 3 body 1 arc 2 orth 2 own 0 merged 0 arcclosed 0 ph 5
+PH523 516 id 9 body 2 arc 1 orth 1 own 0 merged 0 arcclosed 0 ph 5
+MAG522 517 ph 2 on 0 near 0 fund 0 fuse 1 ttl 1 ti 17 ammo 9 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+PH523 517 id 3 body 1 arc 2 orth 4 own 0 merged 0 arcclosed 0 ph 5
+PH523 517 id 9 body 2 arc 1 orth 1 own 0 merged 0 arcclosed 0 ph 5
+MAG522 518 ph 2 on 0 near 0 fund 0 fuse 1 ttl 1 ti 16 ammo 9 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+PH523 518 id 3 body 1 arc 2 orth 2 own 0 merged 0 arcclosed 0 ph 5
+PH523 518 id 9 body 2 arc 1 orth 1 own 0 merged 0 arcclosed 0 ph 5
+MAG522 519 ph 2 on 0 near 0 fund 0 fuse 1 ttl 1 ti 15 ammo 9 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+PH523 519 id 3 body 1 arc 2 orth 4 own 0 merged 0 arcclosed 0 ph 5
+PH523 519 id 9 body 2 arc 1 orth 1 own 0 merged 0 arcclosed 0 ph 5
+MAG522 520 ph 2 on 0 near 0 fund 0 fuse 1 ttl 1 ti 24 ammo 9 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+PH523 520 id 3 body 1 arc 2 orth 2 own 0 merged 0 arcclosed 0 ph 5
+PH523 520 id 9 body 2 arc 1 orth 1 own 0 merged 0 arcclosed 0 ph 5
+MAG522 521 ph 2 on 0 near 0 fund 0 fuse 1 ttl 1 ti 17 ammo 5 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+PH523 521 id 3 body 1 arc 2 orth 4 own 0 merged 0 arcclosed 0 ph 5
+PH523 521 id 9 body 2 arc 1 orth 1 own 0 merged 0 arcclosed 0 ph 5
+MAG522 522 ph 2 on 0 near 0 fund 0 fuse 1 ttl 1 ti 16 ammo 5 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+PH523 522 id 3 body 1 arc 2 orth 2 own 0 merged 0 arcclosed 0 ph 5
+PH523 522 id 9 body 2 arc 1 orth 1 own 0 merged 0 arcclosed 0 ph 5
+MAG522 523 ph 2 on 0 near 0 fund 0 fuse 1 ttl 1 ti 15 ammo 5 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+PH523 523 id 3 body 1 arc 2 orth 4 own 0 merged 0 arcclosed 0 ph 5
+PH523 523 id 9 body 2 arc 1 orth 1 own 0 merged 0 arcclosed 0 ph 5
+MAG522 524 ph 2 on 0 near 0 fund 0 fuse 1 ttl 1 ti 24 ammo 5 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+PH523 524 id 3 body 1 arc 2 orth 2 own 0 merged 0 arcclosed 0 ph 5
+PH523 524 id 9 body 2 arc 1 orth 1 own 0 merged 0 arcclosed 0 ph 5
+MAG522 525 ph 2 on 0 near 0 fund 0 fuse 1 ttl 1 ti 17 ammo 1 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+PH523 525 id 3 body 1 arc 2 orth 4 own 0 merged 0 arcclosed 0 ph 5
+PH523 525 id 9 body 2 arc 1 orth 1 own 0 merged 0 arcclosed 0 ph 5
+MAG522 526 ph 2 on 0 near 0 fund 0 fuse 1 ttl 1 ti 16 ammo 1 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+PH523 526 id 3 body 1 arc 2 orth 2 own 0 merged 0 arcclosed 0 ph 5
+PH523 526 id 9 body 2 arc 1 orth 1 own 0 merged 0 arcclosed 0 ph 5
+MAG522 527 ph 2 on 0 near 0 fund 0 fuse 1 ttl 1 ti 15 ammo 1 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+PH523 527 id 3 body 1 arc 2 orth 4 own 0 merged 0 arcclosed 0 ph 5
+PH523 527 id 9 body 2 arc 1 orth 1 own 0 merged 0 arcclosed 0 ph 5
+MAG522 528 ph 2 on 0 near 0 fund 0 fuse 1 ttl 1 ti 24 ammo 1 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+PH523 528 id 3 body 1 arc 2 orth 2 own 0 merged 0 arcclosed 0 ph 5
+PH523 528 id 9 body 2 arc 1 orth 1 own 0 merged 0 arcclosed 0 ph 5
+MAG522 529 ph 2 on 0 near 0 fund 0 fuse 1 ttl 1 ti 9 ammo 7 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+PH523 529 id 3 body 1 arc 2 orth 4 own 0 merged 0 arcclosed 0 ph 5
+PH523 529 id 9 body 2 arc 1 orth 1 own 0 merged 0 arcclosed 0 ph 5
+MAG522 530 ph 2 on 0 near 0 fund 0 fuse 1 ttl 1 ti 9 ammo 7 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+PH523 530 id 3 body 1 arc 2 orth 2 own 0 merged 0 arcclosed 0 ph 5
+PH523 530 id 9 body 2 arc 1 orth 1 own 0 merged 0 arcclosed 0 ph 5
+MAG522 531 ph 2 on 0 near 0 fund 0 fuse 1 ttl 1 ti 9 ammo 7 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+PH523 531 id 3 body 1 arc 2 orth 4 own 0 merged 0 arcclosed 0 ph 5
+PH523 531 id 9 body 2 arc 1 orth 1 own 0 merged 0 arcclosed 0 ph 5
+MAG522 532 ph 2 on 0 near 0 fund 0 fuse 1 ttl 1 ti 19 ammo 7 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+PH523 532 id 3 body 1 arc 2 orth 2 own 0 merged 0 arcclosed 0 ph 5
+PH523 532 id 9 body 2 arc 1 orth 1 own 0 merged 0 arcclosed 0 ph 5
+MAG522 533 ph 2 on 0 near 0 fund 0 fuse 1 ttl 1 ti 18 ammo 8 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+PH523 533 id 3 body 1 arc 2 orth 4 own 0 merged 0 arcclosed 0 ph 5
+PH523 533 id 9 body 2 arc 1 orth 1 own 0 merged 0 arcclosed 0 ph 5
+MAG522 534 ph 2 on 0 near 0 fund 0 fuse 1 ttl 1 ti 17 ammo 8 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+PH523 534 id 3 body 1 arc 2 orth 2 own 0 merged 0 arcclosed 0 ph 5
+PH523 534 id 9 body 2 arc 1 orth 1 own 0 merged 0 arcclosed 0 ph 5
+MAG522 535 ph 2 on 0 near 0 fund 0 fuse 1 ttl 1 ti 16 ammo 8 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+PH523 535 id 3 body 1 arc 2 orth 4 own 0 merged 0 arcclosed 0 ph 5
+PH523 535 id 9 body 2 arc 1 orth 1 own 0 merged 0 arcclosed 0 ph 5
+MAG522 536 ph 2 on 0 near 0 fund 0 fuse 1 ttl 1 ti 25 ammo 8 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+PH523 536 id 3 body 1 arc 2 orth 2 own 0 merged 0 arcclosed 0 ph 5
+PH523 536 id 9 body 2 arc 1 orth 1 own 0 merged 0 arcclosed 0 ph 5
+MAG522 537 ph 2 on 0 near 0 fund 0 fuse 1 ttl 1 ti 17 ammo 5 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+PH523 537 id 3 body 1 arc 2 orth 4 own 0 merged 0 arcclosed 0 ph 5
+PH523 537 id 9 body 2 arc 1 orth 1 own 0 merged 0 arcclosed 0 ph 5
+MAG522 538 ph 2 on 0 near 0 fund 0 fuse 1 ttl 1 ti 16 ammo 5 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+PH523 538 id 3 body 1 arc 2 orth 2 own 0 merged 0 arcclosed 0 ph 5
+PH523 538 id 9 body 2 arc 1 orth 1 own 0 merged 0 arcclosed 0 ph 5
+MAG522 539 ph 2 on 0 near 0 fund 0 fuse 1 ttl 1 ti 15 ammo 5 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+PH523 539 id 3 body 1 arc 2 orth 4 own 0 merged 0 arcclosed 0 ph 5
+PH523 539 id 9 body 2 arc 1 orth 1 own 0 merged 0 arcclosed 0 ph 5
+MAG522 540 ph 2 on 0 near 0 fund 0 fuse 1 ttl 1 ti 24 ammo 5 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+PH523 540 id 3 body 1 arc 2 orth 2 own 0 merged 0 arcclosed 0 ph 5
+PH523 540 id 9 body 2 arc 1 orth 1 own 0 merged 0 arcclosed 0 ph 5
+MAG522 541 ph 2 on 0 near 0 fund 0 fuse 1 ttl 1 ti 17 ammo 1 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+PH523 541 id 3 body 1 arc 2 orth 4 own 0 merged 0 arcclosed 0 ph 5
+PH523 541 id 9 body 2 arc 1 orth 1 own 0 merged 0 arcclosed 0 ph 5
+MAG522 542 ph 2 on 0 near 0 fund 0 fuse 1 ttl 1 ti 16 ammo 1 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+PH523 542 id 3 body 1 arc 2 orth 2 own 0 merged 0 arcclosed 0 ph 5
+PH523 542 id 9 body 2 arc 1 orth 1 own 0 merged 0 arcclosed 0 ph 5
+MAG522 543 ph 2 on 0 near 0 fund 0 fuse 1 ttl 1 ti 15 ammo 1 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+PH523 543 id 3 body 1 arc 2 orth 4 own 0 merged 0 arcclosed 0 ph 5
+PH523 543 id 9 body 2 arc 1 orth 1 own 0 merged 0 arcclosed 0 ph 5
+MAG522 544 ph 2 on 0 near 0 fund 0 fuse 1 ttl 1 ti 24 ammo 1 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+PH523 544 id 3 body 1 arc 2 orth 2 own 0 merged 0 arcclosed 0 ph 5
+PH523 544 id 9 body 2 arc 1 orth 1 own 0 merged 0 arcclosed 0 ph 5
+MAG522 545 ph 2 on 0 near 0 fund 0 fuse 1 ttl 1 ti 17 ammo 7 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+PH523 545 id 3 body 1 arc 2 orth 4 own 0 merged 0 arcclosed 0 ph 5
+PH523 545 id 9 body 2 arc 1 orth 1 own 0 merged 0 arcclosed 0 ph 5
+MAG522 546 ph 2 on 0 near 0 fund 0 fuse 1 ttl 1 ti 16 ammo 7 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+PH523 546 id 3 body 1 arc 2 orth 2 own 0 merged 0 arcclosed 0 ph 5
+PH523 546 id 9 body 2 arc 1 orth 1 own 0 merged 0 arcclosed 0 ph 5
+MAG522 547 ph 2 on 0 near 0 fund 0 fuse 1 ttl 1 ti 15 ammo 7 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+PH523 547 id 3 body 1 arc 2 orth 4 own 0 merged 0 arcclosed 0 ph 5
+PH523 547 id 9 body 2 arc 1 orth 1 own 0 merged 0 arcclosed 0 ph 5
+MAG522 548 ph 2 on 0 near 0 fund 0 fuse 1 ttl 1 ti 24 ammo 7 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+PH523 548 id 3 body 1 arc 2 orth 2 own 0 merged 0 arcclosed 0 ph 5
+PH523 548 id 9 body 2 arc 1 orth 1 own 0 merged 0 arcclosed 0 ph 5
+MAG522 549 ph 2 on 0 near 0 fund 0 fuse 1 ttl 1 ti 9 ammo 3 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+PH523 549 id 3 body 1 arc 2 orth 4 own 0 merged 0 arcclosed 0 ph 5
+PH523 549 id 9 body 2 arc 1 orth 1 own 0 merged 0 arcclosed 0 ph 5
+MAG522 550 ph 2 on 0 near 0 fund 0 fuse 1 ttl 1 ti 9 ammo 3 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+PH523 550 id 3 body 1 arc 2 orth 2 own 0 merged 0 arcclosed 0 ph 5
+PH523 550 id 9 body 2 arc 1 orth 1 own 0 merged 0 arcclosed 0 ph 5
+MAG522 551 ph 2 on 0 near 0 fund 0 fuse 1 ttl 1 ti 9 ammo 3 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+PH523 551 id 3 body 1 arc 2 orth 4 own 0 merged 0 arcclosed 0 ph 5
+PH523 551 id 9 body 2 arc 1 orth 1 own 0 merged 0 arcclosed 0 ph 5
+MAG522 552 ph 2 on 0 near 0 fund 0 fuse 1 ttl 1 ti 19 ammo 3 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+PH523 552 id 3 body 1 arc 2 orth 2 own 0 merged 0 arcclosed 0 ph 5
+PH523 552 id 9 body 2 arc 1 orth 1 own 0 merged 0 arcclosed 0 ph 5
+MAG522 553 ph 2 on 0 near 0 fund 0 fuse 1 ttl 1 ti 18 ammo 4 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+PH523 553 id 3 body 1 arc 2 orth 4 own 0 merged 0 arcclosed 0 ph 5
+PH523 553 id 9 body 2 arc 1 orth 1 own 0 merged 0 arcclosed 0 ph 5
+MAG522 554 ph 2 on 0 near 0 fund 0 fuse 1 ttl 1 ti 17 ammo 4 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+PH523 554 id 3 body 1 arc 2 orth 2 own 0 merged 0 arcclosed 0 ph 5
+PH523 554 id 9 body 2 arc 1 orth 1 own 0 merged 0 arcclosed 0 ph 5
+MAG522 555 ph 2 on 0 near 0 fund 0 fuse 1 ttl 1 ti 16 ammo 4 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+PH523 555 id 3 body 1 arc 2 orth 4 own 0 merged 0 arcclosed 0 ph 5
+PH523 555 id 9 body 2 arc 1 orth 1 own 0 merged 0 arcclosed 0 ph 5
+MAG522 556 ph 2 on 0 near 0 fund 0 fuse 1 ttl 1 ti 25 ammo 4 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+PH523 556 id 3 body 1 arc 2 orth 2 own 0 merged 0 arcclosed 0 ph 5
+PH523 556 id 9 body 2 arc 1 orth 1 own 0 merged 0 arcclosed 0 ph 5
+MAG522 557 ph 2 on 0 near 0 fund 0 fuse 1 ttl 1 ti 17 ammo 1 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+PH523 557 id 3 body 1 arc 2 orth 4 own 0 merged 0 arcclosed 0 ph 5
+PH523 557 id 9 body 2 arc 1 orth 1 own 0 merged 0 arcclosed 0 ph 5
+MAG522 558 ph 2 on 0 near 0 fund 0 fuse 1 ttl 1 ti 16 ammo 1 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+PH523 558 id 3 body 1 arc 2 orth 2 own 0 merged 0 arcclosed 0 ph 5
+PH523 558 id 9 body 2 arc 1 orth 1 own 0 merged 0 arcclosed 0 ph 5
+MAG522 559 ph 2 on 0 near 0 fund 0 fuse 1 ttl 1 ti 15 ammo 1 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+PH523 559 id 3 body 1 arc 2 orth 4 own 0 merged 0 arcclosed 0 ph 5
+PH523 559 id 9 body 2 arc 1 orth 1 own 0 merged 0 arcclosed 0 ph 5
+MAG522 560 ph 2 on 0 near 0 fund 0 fuse 1 ttl 1 ti 24 ammo 1 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+PH523 560 id 3 body 1 arc 2 orth 2 own 0 merged 0 arcclosed 0 ph 5
+PH523 560 id 9 body 2 arc 1 orth 1 own 0 merged 0 arcclosed 0 ph 5
+MAG522 561 ph 2 on 0 near 0 fund 0 fuse 1 ttl 1 ti 17 ammo 7 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+PH523 561 id 3 body 1 arc 2 orth 4 own 0 merged 0 arcclosed 0 ph 5
+PH523 561 id 9 body 2 arc 1 orth 1 own 0 merged 0 arcclosed 0 ph 5
+MAG522 562 ph 2 on 0 near 0 fund 0 fuse 1 ttl 1 ti 16 ammo 7 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+PH523 562 id 3 body 1 arc 2 orth 2 own 0 merged 0 arcclosed 0 ph 5
+PH523 562 id 9 body 2 arc 1 orth 1 own 0 merged 0 arcclosed 0 ph 5
+MAG522 563 ph 2 on 0 near 0 fund 0 fuse 1 ttl 1 ti 15 ammo 7 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+PH523 563 id 3 body 1 arc 2 orth 4 own 0 merged 0 arcclosed 0 ph 5
+PH523 563 id 9 body 2 arc 1 orth 1 own 0 merged 0 arcclosed 0 ph 5
+MAG522 564 ph 2 on 0 near 0 fund 0 fuse 1 ttl 1 ti 24 ammo 7 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+PH523 564 id 3 body 1 arc 2 orth 2 own 0 merged 0 arcclosed 0 ph 5
+PH523 564 id 9 body 2 arc 1 orth 1 own 0 merged 0 arcclosed 0 ph 5
+MAG522 565 ph 2 on 0 near 0 fund 0 fuse 1 ttl 1 ti 17 ammo 3 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+PH523 565 id 3 body 1 arc 2 orth 4 own 0 merged 0 arcclosed 0 ph 5
+PH523 565 id 9 body 2 arc 1 orth 1 own 0 merged 0 arcclosed 0 ph 5
+MAG522 566 ph 2 on 0 near 0 fund 0 fuse 1 ttl 1 ti 16 ammo 3 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+PH523 566 id 3 body 1 arc 2 orth 2 own 0 merged 0 arcclosed 0 ph 5
+PH523 566 id 9 body 2 arc 1 orth 1 own 0 merged 0 arcclosed 0 ph 5
+MAG522 567 ph 2 on 0 near 0 fund 0 fuse 1 ttl 1 ti 15 ammo 3 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+PH523 567 id 3 body 1 arc 2 orth 4 own 0 merged 0 arcclosed 0 ph 5
+PH523 567 id 9 body 2 arc 1 orth 1 own 0 merged 0 arcclosed 0 ph 5
+MAG522 568 ph 2 on 0 near 0 fund 0 fuse 1 ttl 1 ti 24 ammo 3 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+PH523 568 id 3 body 1 arc 2 orth 2 own 0 merged 0 arcclosed 0 ph 5
+PH523 568 id 9 body 2 arc 1 orth 1 own 0 merged 0 arcclosed 0 ph 5
+MAG522 569 ph 2 on 0 near 0 fund 0 fuse 1 ttl 1 ti 9 ammo 9 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+PH523 569 id 3 body 1 arc 2 orth 4 own 0 merged 0 arcclosed 0 ph 5
+PH523 569 id 9 body 2 arc 1 orth 1 own 0 merged 0 arcclosed 0 ph 5
+MAG522 570 ph 2 on 0 near 0 fund 0 fuse 1 ttl 1 ti 9 ammo 9 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+PH523 570 id 3 body 1 arc 2 orth 2 own 0 merged 0 arcclosed 0 ph 5
+PH523 570 id 9 body 2 arc 1 orth 1 own 0 merged 0 arcclosed 0 ph 5
+MAG522 571 ph 2 on 0 near 0 fund 0 fuse 1 ttl 1 ti 9 ammo 9 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+PH523 571 id 3 body 1 arc 2 orth 4 own 0 merged 0 arcclosed 0 ph 5
+PH523 571 id 9 body 2 arc 1 orth 1 own 0 merged 0 arcclosed 0 ph 5
+MAG522 572 ph 2 on 0 near 0 fund 0 fuse 1 ttl 1 ti 19 ammo 9 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+PH523 572 id 3 body 1 arc 2 orth 2 own 0 merged 0 arcclosed 0 ph 5
+PH523 572 id 9 body 2 arc 1 orth 1 own 0 merged 0 arcclosed 0 ph 5
+MAG522 573 ph 2 on 0 near 0 fund 0 fuse 1 ttl 1 ti 18 ammo 0 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+PH523 573 id 3 body 1 arc 2 orth 4 own 0 merged 0 arcclosed 0 ph 5
+PH523 573 id 9 body 2 arc 1 orth 1 own 0 merged 0 arcclosed 0 ph 5
+MAG522 574 ph 2 on 0 near 0 fund 0 fuse 1 ttl 1 ti 17 ammo 0 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+PH523 574 id 3 body 1 arc 2 orth 2 own 0 merged 0 arcclosed 0 ph 5
+PH523 574 id 9 body 2 arc 1 orth 1 own 0 merged 0 arcclosed 0 ph 5
+MAG522 575 ph 2 on 0 near 0 fund 0 fuse 1 ttl 1 ti 16 ammo 0 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+PH523 575 id 3 body 1 arc 2 orth 4 own 0 merged 0 arcclosed 0 ph 5
+PH523 575 id 9 body 2 arc 1 orth 1 own 0 merged 0 arcclosed 0 ph 5
+MAG522 576 ph 2 on 0 near 0 fund 0 fuse 1 ttl 1 ti 25 ammo 0 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+PH523 576 id 3 body 1 arc 2 orth 2 own 0 merged 0 arcclosed 0 ph 5
+PH523 576 id 9 body 2 arc 1 orth 1 own 0 merged 0 arcclosed 0 ph 5
+MAG522 577 ph 2 on 0 near 0 fund 0 fuse 1 ttl 1 ti 17 ammo 7 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+PH523 577 id 3 body 1 arc 2 orth 4 own 0 merged 0 arcclosed 0 ph 5
+PH523 577 id 9 body 2 arc 1 orth 1 own 0 merged 0 arcclosed 0 ph 5
+MAG522 578 ph 2 on 0 near 0 fund 0 fuse 1 ttl 1 ti 16 ammo 7 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+PH523 578 id 3 body 1 arc 2 orth 2 own 0 merged 0 arcclosed 0 ph 5
+PH523 578 id 9 body 2 arc 1 orth 1 own 0 merged 0 arcclosed 0 ph 5
+MAG522 579 ph 2 on 0 near 0 fund 0 fuse 1 ttl 1 ti 15 ammo 7 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+PH523 579 id 3 body 1 arc 2 orth 4 own 0 merged 0 arcclosed 0 ph 5
+PH523 579 id 9 body 2 arc 1 orth 1 own 0 merged 0 arcclosed 0 ph 5
+MAG522 580 ph 2 on 0 near 0 fund 0 fuse 1 ttl 1 ti 24 ammo 7 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+PH523 580 id 3 body 1 arc 2 orth 2 own 0 merged 0 arcclosed 0 ph 5
+PH523 580 id 9 body 2 arc 1 orth 1 own 0 merged 0 arcclosed 0 ph 5
+MAG522 581 ph 2 on 0 near 0 fund 0 fuse 1 ttl 1 ti 17 ammo 3 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+PH523 581 id 3 body 1 arc 2 orth 4 own 0 merged 0 arcclosed 0 ph 5
+PH523 581 id 9 body 2 arc 1 orth 1 own 0 merged 0 arcclosed 0 ph 5
+MAG522 582 ph 2 on 0 near 0 fund 0 fuse 1 ttl 1 ti 16 ammo 3 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+PH523 582 id 3 body 1 arc 2 orth 2 own 0 merged 0 arcclosed 0 ph 5
+PH523 582 id 9 body 2 arc 1 orth 1 own 0 merged 0 arcclosed 0 ph 5
+MAG522 583 ph 2 on 0 near 0 fund 0 fuse 1 ttl 1 ti 15 ammo 3 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+PH523 583 id 3 body 1 arc 2 orth 4 own 0 merged 0 arcclosed 0 ph 5
+PH523 583 id 9 body 2 arc 1 orth 1 own 0 merged 0 arcclosed 0 ph 5
+MAG522 584 ph 2 on 0 near 0 fund 0 fuse 1 ttl 1 ti 24 ammo 3 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+PH523 584 id 3 body 1 arc 2 orth 2 own 0 merged 0 arcclosed 0 ph 5
+PH523 584 id 9 body 2 arc 1 orth 1 own 0 merged 0 arcclosed 0 ph 5
+MAG522 585 ph 2 on 0 near 0 fund 0 fuse 1 ttl 1 ti 17 ammo 9 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+PH523 585 id 3 body 1 arc 2 orth 4 own 0 merged 0 arcclosed 0 ph 5
+PH523 585 id 9 body 2 arc 1 orth 1 own 0 merged 0 arcclosed 0 ph 5
+MAG522 586 ph 2 on 0 near 0 fund 0 fuse 1 ttl 1 ti 16 ammo 9 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+PH523 586 id 3 body 1 arc 2 orth 2 own 0 merged 0 arcclosed 0 ph 5
+PH523 586 id 9 body 2 arc 1 orth 1 own 0 merged 0 arcclosed 0 ph 5
+MAG522 587 ph 2 on 0 near 0 fund 0 fuse 1 ttl 1 ti 15 ammo 9 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+PH523 587 id 3 body 1 arc 2 orth 4 own 0 merged 0 arcclosed 0 ph 5
+PH523 587 id 9 body 2 arc 1 orth 1 own 0 merged 0 arcclosed 0 ph 5
+MAG522 588 ph 2 on 0 near 0 fund 0 fuse 1 ttl 1 ti 24 ammo 9 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+PH523 588 id 3 body 1 arc 2 orth 2 own 0 merged 0 arcclosed 0 ph 5
+PH523 588 id 9 body 2 arc 1 orth 1 own 0 merged 0 arcclosed 0 ph 5
+MAG522 589 ph 2 on 0 near 0 fund 0 fuse 1 ttl 1 ti 9 ammo 5 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+PH523 589 id 3 body 1 arc 2 orth 4 own 0 merged 0 arcclosed 0 ph 5
+PH523 589 id 9 body 2 arc 1 orth 1 own 0 merged 0 arcclosed 0 ph 5
+MAG522 590 ph 2 on 0 near 0 fund 0 fuse 1 ttl 1 ti 9 ammo 5 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+PH523 590 id 3 body 1 arc 2 orth 2 own 0 merged 0 arcclosed 0 ph 5
+PH523 590 id 9 body 2 arc 1 orth 1 own 0 merged 0 arcclosed 0 ph 5
+MAG522 591 ph 2 on 0 near 0 fund 0 fuse 1 ttl 1 ti 9 ammo 5 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+PH523 591 id 3 body 1 arc 2 orth 4 own 0 merged 0 arcclosed 0 ph 5
+PH523 591 id 9 body 2 arc 1 orth 1 own 0 merged 0 arcclosed 0 ph 5
+MAG522 592 ph 2 on 0 near 0 fund 0 fuse 1 ttl 1 ti 19 ammo 5 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+PH523 592 id 3 body 1 arc 2 orth 2 own 0 merged 0 arcclosed 0 ph 5
+PH523 592 id 9 body 2 arc 1 orth 1 own 0 merged 0 arcclosed 0 ph 5
+MAG522 593 ph 2 on 0 near 0 fund 0 fuse 1 ttl 1 ti 18 ammo 6 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+PH523 593 id 3 body 1 arc 2 orth 4 own 0 merged 0 arcclosed 0 ph 5
+PH523 593 id 9 body 2 arc 1 orth 1 own 0 merged 0 arcclosed 0 ph 5
+MAG522 594 ph 2 on 0 near 0 fund 0 fuse 1 ttl 1 ti 17 ammo 6 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+PH523 594 id 3 body 1 arc 2 orth 2 own 0 merged 0 arcclosed 0 ph 5
+PH523 594 id 9 body 2 arc 1 orth 1 own 0 merged 0 arcclosed 0 ph 5
+MAG522 595 ph 2 on 0 near 0 fund 0 fuse 1 ttl 1 ti 16 ammo 6 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+PH523 595 id 3 body 1 arc 2 orth 4 own 0 merged 0 arcclosed 0 ph 5
+PH523 595 id 9 body 2 arc 1 orth 1 own 0 merged 0 arcclosed 0 ph 5
+MAG522 596 ph 2 on 0 near 0 fund 0 fuse 1 ttl 1 ti 25 ammo 6 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+PH523 596 id 3 body 1 arc 2 orth 2 own 0 merged 0 arcclosed 0 ph 5
+PH523 596 id 9 body 2 arc 1 orth 1 own 0 merged 0 arcclosed 0 ph 5
+MAG522 597 ph 2 on 0 near 0 fund 0 fuse 1 ttl 1 ti 17 ammo 3 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+PH523 597 id 3 body 1 arc 2 orth 4 own 0 merged 0 arcclosed 0 ph 5
+PH523 597 id 9 body 2 arc 1 orth 1 own 0 merged 0 arcclosed 0 ph 5
+MAG522 598 ph 2 on 0 near 0 fund 0 fuse 1 ttl 1 ti 16 ammo 3 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+PH523 598 id 3 body 1 arc 2 orth 2 own 0 merged 0 arcclosed 0 ph 5
+PH523 598 id 9 body 2 arc 1 orth 1 own 0 merged 0 arcclosed 0 ph 5
+MAG522 599 ph 2 on 0 near 0 fund 0 fuse 1 ttl 1 ti 15 ammo 3 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+PH523 599 id 3 body 1 arc 2 orth 4 own 0 merged 0 arcclosed 0 ph 5
+PH523 599 id 9 body 2 arc 1 orth 1 own 0 merged 0 arcclosed 0 ph 5
+MAG522 600 ph 2 on 0 near 0 fund 0 fuse 1 ttl 1 ti 24 ammo 3 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+PH523 600 id 3 body 1 arc 2 orth 2 own 0 merged 0 arcclosed 0 ph 5
+PH523 600 id 9 body 2 arc 1 orth 1 own 0 merged 0 arcclosed 0 ph 5
+MAG522 601 ph 2 on 0 near 0 fund 0 fuse 1 ttl 1 ti 17 ammo 9 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+PH523 601 id 3 body 1 arc 2 orth 4 own 0 merged 0 arcclosed 0 ph 5
+PH523 601 id 9 body 2 arc 1 orth 1 own 0 merged 0 arcclosed 0 ph 5
+MAG522 602 ph 2 on 0 near 0 fund 0 fuse 1 ttl 1 ti 16 ammo 9 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+PH523 602 id 3 body 1 arc 2 orth 2 own 0 merged 0 arcclosed 0 ph 5
+PH523 602 id 9 body 2 arc 1 orth 1 own 0 merged 0 arcclosed 0 ph 5
+MAG522 603 ph 2 on 0 near 0 fund 0 fuse 1 ttl 1 ti 15 ammo 9 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+PH523 603 id 3 body 1 arc 2 orth 4 own 0 merged 0 arcclosed 0 ph 5
+PH523 603 id 9 body 2 arc 1 orth 1 own 0 merged 0 arcclosed 0 ph 5
+MAG522 604 ph 2 on 0 near 0 fund 0 fuse 1 ttl 1 ti 24 ammo 9 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+PH523 604 id 3 body 1 arc 2 orth 2 own 0 merged 0 arcclosed 0 ph 5
+PH523 604 id 9 body 2 arc 1 orth 1 own 0 merged 0 arcclosed 0 ph 5
+MAG522 605 ph 2 on 0 near 0 fund 0 fuse 1 ttl 1 ti 17 ammo 5 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+PH523 605 id 3 body 1 arc 2 orth 4 own 0 merged 0 arcclosed 0 ph 5
+PH523 605 id 9 body 2 arc 1 orth 1 own 0 merged 0 arcclosed 0 ph 5
+MAG522 606 ph 2 on 0 near 0 fund 0 fuse 1 ttl 1 ti 16 ammo 5 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+PH523 606 id 3 body 1 arc 2 orth 2 own 0 merged 0 arcclosed 0 ph 5
+PH523 606 id 9 body 2 arc 1 orth 1 own 0 merged 0 arcclosed 0 ph 5
+MAG522 607 ph 2 on 0 near 0 fund 0 fuse 1 ttl 1 ti 15 ammo 5 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+PH523 607 id 3 body 1 arc 2 orth 4 own 0 merged 0 arcclosed 0 ph 5
+PH523 607 id 9 body 2 arc 1 orth 1 own 0 merged 0 arcclosed 0 ph 5
+MAG522 608 ph 2 on 0 near 0 fund 0 fuse 1 ttl 1 ti 24 ammo 5 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+PH523 608 id 3 body 1 arc 2 orth 2 own 0 merged 0 arcclosed 0 ph 5
+PH523 608 id 9 body 2 arc 1 orth 1 own 0 merged 0 arcclosed 0 ph 5
+MAG522 609 ph 2 on 0 near 0 fund 0 fuse 1 ttl 1 ti 9 ammo 1 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+PH523 609 id 3 body 1 arc 2 orth 4 own 0 merged 0 arcclosed 0 ph 5
+PH523 609 id 9 body 2 arc 1 orth 1 own 0 merged 0 arcclosed 0 ph 5
+MAG522 610 ph 2 on 0 near 0 fund 0 fuse 1 ttl 1 ti 9 ammo 1 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+PH523 610 id 3 body 1 arc 2 orth 2 own 0 merged 0 arcclosed 0 ph 5
+PH523 610 id 9 body 2 arc 1 orth 1 own 0 merged 0 arcclosed 0 ph 5
+MAG522 611 ph 2 on 0 near 0 fund 0 fuse 1 ttl 1 ti 9 ammo 1 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+PH523 611 id 3 body 1 arc 2 orth 4 own 0 merged 0 arcclosed 0 ph 5
+PH523 611 id 9 body 2 arc 1 orth 1 own 0 merged 0 arcclosed 0 ph 5
+MAG522 612 ph 2 on 0 near 0 fund 0 fuse 1 ttl 1 ti 19 ammo 1 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+PH523 612 id 3 body 1 arc 2 orth 2 own 0 merged 0 arcclosed 0 ph 5
+PH523 612 id 9 body 2 arc 1 orth 1 own 0 merged 0 arcclosed 0 ph 5
+MAG522 613 ph 2 on 0 near 0 fund 0 fuse 1 ttl 1 ti 18 ammo 2 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+PH523 613 id 3 body 1 arc 2 orth 4 own 0 merged 0 arcclosed 0 ph 5
+PH523 613 id 9 body 2 arc 1 orth 1 own 0 merged 0 arcclosed 0 ph 5
+MAG522 614 ph 2 on 0 near 0 fund 0 fuse 1 ttl 1 ti 17 ammo 2 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+PH523 614 id 3 body 1 arc 2 orth 2 own 0 merged 0 arcclosed 0 ph 5
+PH523 614 id 9 body 2 arc 1 orth 1 own 0 merged 0 arcclosed 0 ph 5
+MAG522 615 ph 2 on 0 near 0 fund 0 fuse 1 ttl 1 ti 16 ammo 2 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+PH523 615 id 3 body 1 arc 2 orth 4 own 0 merged 0 arcclosed 0 ph 5
+PH523 615 id 9 body 2 arc 1 orth 1 own 0 merged 0 arcclosed 0 ph 5
+MAG522 616 ph 2 on 0 near 0 fund 0 fuse 1 ttl 1 ti 25 ammo 2 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+PH523 616 id 3 body 1 arc 2 orth 2 own 0 merged 0 arcclosed 0 ph 5
+PH523 616 id 9 body 2 arc 1 orth 1 own 0 merged 0 arcclosed 0 ph 5
+MAG522 617 ph 2 on 0 near 0 fund 0 fuse 1 ttl 1 ti 17 ammo 9 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+PH523 617 id 3 body 1 arc 2 orth 4 own 0 merged 0 arcclosed 0 ph 5
+PH523 617 id 9 body 2 arc 1 orth 1 own 0 merged 0 arcclosed 0 ph 5
+MAG522 618 ph 2 on 0 near 0 fund 0 fuse 1 ttl 1 ti 16 ammo 9 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+PH523 618 id 3 body 1 arc 2 orth 2 own 0 merged 0 arcclosed 0 ph 5
+PH523 618 id 9 body 2 arc 1 orth 1 own 0 merged 0 arcclosed 0 ph 5
+MAG522 619 ph 2 on 0 near 0 fund 0 fuse 1 ttl 1 ti 15 ammo 9 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+PH523 619 id 3 body 1 arc 2 orth 4 own 0 merged 0 arcclosed 0 ph 5
+PH523 619 id 9 body 2 arc 1 orth 1 own 0 merged 0 arcclosed 0 ph 5
+MAG522 620 ph 2 on 0 near 0 fund 0 fuse 1 ttl 1 ti 24 ammo 9 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+PH523 620 id 3 body 1 arc 2 orth 2 own 0 merged 0 arcclosed 0 ph 5
+PH523 620 id 9 body 2 arc 1 orth 1 own 0 merged 0 arcclosed 0 ph 5
+MAG522 621 ph 2 on 0 near 0 fund 0 fuse 1 ttl 1 ti 17 ammo 5 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+PH523 621 id 3 body 1 arc 2 orth 4 own 0 merged 0 arcclosed 0 ph 5
+PH523 621 id 9 body 2 arc 1 orth 1 own 0 merged 0 arcclosed 0 ph 5
+MAG522 622 ph 2 on 0 near 0 fund 0 fuse 1 ttl 1 ti 16 ammo 5 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+PH523 622 id 3 body 1 arc 2 orth 2 own 0 merged 0 arcclosed 0 ph 5
+PH523 622 id 9 body 2 arc 1 orth 1 own 0 merged 0 arcclosed 0 ph 5
+MAG522 623 ph 2 on 0 near 0 fund 0 fuse 1 ttl 1 ti 15 ammo 5 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+PH523 623 id 3 body 1 arc 2 orth 4 own 0 merged 0 arcclosed 0 ph 5
+PH523 623 id 9 body 2 arc 1 orth 1 own 0 merged 0 arcclosed 0 ph 5
+MAG522 624 ph 2 on 0 near 0 fund 0 fuse 1 ttl 1 ti 24 ammo 5 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+PH523 624 id 3 body 1 arc 2 orth 2 own 0 merged 0 arcclosed 0 ph 5
+PH523 624 id 9 body 2 arc 1 orth 1 own 0 merged 0 arcclosed 0 ph 5
+MAG522 625 ph 2 on 0 near 0 fund 0 fuse 1 ttl 1 ti 17 ammo 1 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+PH523 625 id 3 body 1 arc 2 orth 4 own 0 merged 0 arcclosed 0 ph 5
+PH523 625 id 9 body 2 arc 1 orth 1 own 0 merged 0 arcclosed 0 ph 5
+MAG522 626 ph 2 on 0 near 0 fund 0 fuse 1 ttl 1 ti 16 ammo 1 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+PH523 626 id 3 body 1 arc 2 orth 2 own 0 merged 0 arcclosed 0 ph 5
+PH523 626 id 9 body 2 arc 1 orth 1 own 0 merged 0 arcclosed 0 ph 5
+MAG522 627 ph 2 on 0 near 0 fund 0 fuse 1 ttl 1 ti 15 ammo 1 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+PH523 627 id 3 body 1 arc 2 orth 4 own 0 merged 0 arcclosed 0 ph 5
+PH523 627 id 9 body 2 arc 1 orth 1 own 0 merged 0 arcclosed 0 ph 5
+MAG522 628 ph 2 on 0 near 0 fund 0 fuse 1 ttl 1 ti 24 ammo 1 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+PH523 628 id 3 body 1 arc 2 orth 2 own 0 merged 0 arcclosed 0 ph 5
+PH523 628 id 9 body 2 arc 1 orth 1 own 0 merged 0 arcclosed 0 ph 5
+MAG522 629 ph 2 on 0 near 0 fund 0 fuse 1 ttl 1 ti 9 ammo 7 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+PH523 629 id 3 body 1 arc 2 orth 4 own 0 merged 0 arcclosed 0 ph 5
+PH523 629 id 9 body 2 arc 1 orth 1 own 0 merged 0 arcclosed 0 ph 5
+MAG522 630 ph 2 on 0 near 0 fund 0 fuse 1 ttl 1 ti 9 ammo 7 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+PH523 630 id 3 body 1 arc 2 orth 2 own 0 merged 0 arcclosed 0 ph 5
+PH523 630 id 9 body 2 arc 1 orth 1 own 0 merged 0 arcclosed 0 ph 5
+MAG522 631 ph 2 on 0 near 0 fund 0 fuse 1 ttl 1 ti 9 ammo 7 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+PH523 631 id 3 body 1 arc 2 orth 4 own 0 merged 0 arcclosed 0 ph 5
+PH523 631 id 9 body 2 arc 1 orth 1 own 0 merged 0 arcclosed 0 ph 5
+MAG522 632 ph 2 on 0 near 0 fund 0 fuse 1 ttl 1 ti 19 ammo 7 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+PH523 632 id 3 body 1 arc 2 orth 2 own 0 merged 0 arcclosed 0 ph 5
+PH523 632 id 9 body 2 arc 1 orth 1 own 0 merged 0 arcclosed 0 ph 5
+MAG522 633 ph 2 on 0 near 0 fund 0 fuse 1 ttl 1 ti 18 ammo 8 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+PH523 633 id 3 body 1 arc 2 orth 4 own 0 merged 0 arcclosed 0 ph 5
+PH523 633 id 9 body 2 arc 1 orth 1 own 0 merged 0 arcclosed 0 ph 5
+MAG522 634 ph 2 on 0 near 0 fund 0 fuse 1 ttl 1 ti 17 ammo 8 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+PH523 634 id 3 body 1 arc 2 orth 2 own 0 merged 0 arcclosed 0 ph 5
+PH523 634 id 9 body 2 arc 1 orth 1 own 0 merged 0 arcclosed 0 ph 5
+MAG522 635 ph 2 on 0 near 0 fund 0 fuse 1 ttl 1 ti 16 ammo 8 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+PH523 635 id 3 body 1 arc 2 orth 4 own 0 merged 0 arcclosed 0 ph 5
+PH523 635 id 9 body 2 arc 1 orth 1 own 0 merged 0 arcclosed 0 ph 5
+MAG522 636 ph 2 on 0 near 0 fund 0 fuse 1 ttl 1 ti 25 ammo 8 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+PH523 636 id 3 body 1 arc 2 orth 2 own 0 merged 0 arcclosed 0 ph 5
+PH523 636 id 9 body 2 arc 1 orth 1 own 0 merged 0 arcclosed 0 ph 5
+MAG522 637 ph 2 on 0 near 0 fund 0 fuse 1 ttl 1 ti 17 ammo 5 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+PH523 637 id 3 body 1 arc 2 orth 4 own 0 merged 0 arcclosed 0 ph 5
+PH523 637 id 9 body 2 arc 1 orth 1 own 0 merged 0 arcclosed 0 ph 5
+MAG522 638 ph 2 on 0 near 0 fund 0 fuse 1 ttl 1 ti 16 ammo 5 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+PH523 638 id 3 body 1 arc 2 orth 2 own 0 merged 0 arcclosed 0 ph 5
+PH523 638 id 9 body 2 arc 1 orth 1 own 0 merged 0 arcclosed 0 ph 5
+MAG522 639 ph 2 on 0 near 0 fund 0 fuse 1 ttl 1 ti 15 ammo 5 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+PH523 639 id 3 body 1 arc 2 orth 4 own 0 merged 0 arcclosed 0 ph 5
+PH523 639 id 9 body 2 arc 1 orth 1 own 0 merged 0 arcclosed 0 ph 5
+MAG522 640 ph 2 on 0 near 0 fund 0 fuse 1 ttl 1 ti 24 ammo 5 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+PH523 640 id 3 body 1 arc 2 orth 2 own 0 merged 0 arcclosed 0 ph 5
+PH523 640 id 9 body 2 arc 1 orth 1 own 0 merged 0 arcclosed 0 ph 5

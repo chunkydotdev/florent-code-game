@@ -1,0 +1,1993 @@
+Update available: 2.3.6 -> 2.3.8. Run: pip install --upgrade fcode
+PH523 13 id 4 body 1 arc 2 orth 7 own 0 merged 0 arcclosed 0 ph 2
+PH523 14 id 4 body 1 arc 2 orth 5 own 0 merged 0 arcclosed 0 ph 2
+PH523 14 id 10 body 2 arc 1 orth 6 own 0 merged 0 arcclosed 0 ph 2
+PH523 15 id 4 body 1 arc 2 orth 5 own 0 merged 0 arcclosed 0 ph 2
+PH523 15 id 10 body 2 arc 1 orth 4 own 0 merged 0 arcclosed 0 ph 2
+PH523 16 id 4 body 1 arc 2 orth 5 own 0 merged 0 arcclosed 0 ph 2
+PH523 16 id 10 body 2 arc 1 orth 4 own 0 merged 0 arcclosed 0 ph 2
+PH523 17 id 4 body 1 arc 2 orth 3 own 0 merged 0 arcclosed 0 ph 2
+PH523 17 id 10 body 2 arc 1 orth 4 own 0 merged 0 arcclosed 0 ph 2
+PH523 18 id 4 body 1 arc 2 orth 4 own 0 merged 0 arcclosed 0 ph 2
+PH523 18 id 10 body 2 arc 1 orth 3 own 0 merged 0 arcclosed 0 ph 2
+PH523 19 id 4 body 1 arc 2 orth 3 own 0 merged 0 arcclosed 0 ph 2
+PH523 19 id 10 body 2 arc 1 orth 3 own 0 merged 0 arcclosed 0 ph 2
+PH523 20 id 4 body 1 arc 2 orth 3 own 0 merged 0 arcclosed 0 ph 2
+PH523 20 id 10 body 2 arc 1 orth 3 own 0 merged 0 arcclosed 0 ph 2
+PH523 21 id 4 body 1 arc 2 orth 3 own 0 merged 0 arcclosed 0 ph 2
+PH523 21 id 10 body 2 arc 1 orth 3 own 0 merged 0 arcclosed 0 ph 2
+PH523 22 id 4 body 1 arc 2 orth 2 own 0 merged 0 arcclosed 0 ph 2
+PH523 22 id 10 body 2 arc 1 orth 2 own 0 merged 0 arcclosed 1 ph 2
+PH523 23 id 4 body 1 arc 2 orth 2 own 0 merged 0 arcclosed 0 ph 2
+PH523 23 id 10 body 2 arc 1 orth 2 own 0 merged 0 arcclosed 1 ph 2
+PH523 24 id 4 body 1 arc 2 orth 2 own 0 merged 0 arcclosed 0 ph 2
+PH523 24 id 10 body 2 arc 1 orth 2 own 0 merged 0 arcclosed 1 ph 2
+PH523 25 id 4 body 1 arc 2 orth 2 own 0 merged 0 arcclosed 0 ph 2
+PH523 25 id 10 body 2 arc 1 orth 2 own 0 merged 0 arcclosed 1 ph 2
+PH523 26 id 4 body 1 arc 2 orth 2 own 0 merged 0 arcclosed 0 ph 2
+PH523 26 id 10 body 2 arc 1 orth 2 own 0 merged 0 arcclosed 1 ph 2
+PH523 27 id 4 body 1 arc 2 orth 2 own 0 merged 0 arcclosed 0 ph 2
+PH523 27 id 10 body 2 arc 1 orth 4 own 0 merged 0 arcclosed 0 ph 2
+PH523 28 id 4 body 1 arc 2 orth 2 own 0 merged 0 arcclosed 0 ph 2
+PH523 28 id 10 body 2 arc 1 orth 2 own 0 merged 0 arcclosed 1 ph 2
+PH523 29 id 4 body 1 arc 2 orth 2 own 0 merged 0 arcclosed 0 ph 2
+PH523 29 id 10 body 2 arc 1 orth 4 own 0 merged 0 arcclosed 0 ph 2
+PH523 30 id 4 body 1 arc 2 orth 2 own 0 merged 0 arcclosed 0 ph 2
+PH523 30 id 10 body 2 arc 1 orth 2 own 0 merged 0 arcclosed 1 ph 2
+PH523 31 id 4 body 1 arc 2 orth 2 own 0 merged 0 arcclosed 0 ph 2
+PH523 31 id 10 body 2 arc 1 orth 4 own 0 merged 0 arcclosed 0 ph 2
+PH523 32 id 4 body 1 arc 2 orth 2 own 0 merged 0 arcclosed 0 ph 2
+PH523 32 id 10 body 2 arc 1 orth 2 own 0 merged 0 arcclosed 1 ph 2
+PH523 33 id 4 body 1 arc 2 orth 2 own 0 merged 0 arcclosed 0 ph 2
+PH523 33 id 10 body 2 arc 1 orth 2 own 0 merged 0 arcclosed 1 ph 2
+PH523 34 id 4 body 1 arc 2 orth 2 own 0 merged 0 arcclosed 0 ph 2
+PH523 34 id 10 body 2 arc 1 orth 2 own 0 merged 0 arcclosed 1 ph 2
+PH523 35 id 4 body 1 arc 2 orth 2 own 0 merged 0 arcclosed 0 ph 2
+PH523 35 id 10 body 2 arc 1 orth 4 own 0 merged 0 arcclosed 0 ph 2
+PH523 36 id 4 body 1 arc 2 orth 4 own 0 merged 0 arcclosed 0 ph 2
+PH523 36 id 10 body 2 arc 1 orth 2 own 0 merged 0 arcclosed 1 ph 2
+PH523 37 id 4 body 1 arc 2 orth 2 own 0 merged 0 arcclosed 0 ph 2
+PH523 37 id 10 body 2 arc 1 orth 4 own 0 merged 0 arcclosed 0 ph 2
+PH523 38 id 4 body 1 arc 2 orth 2 own 0 merged 0 arcclosed 0 ph 2
+PH523 38 id 10 body 2 arc 1 orth 2 own 0 merged 0 arcclosed 1 ph 2
+PH523 39 id 4 body 1 arc 2 orth 2 own 0 merged 0 arcclosed 0 ph 2
+PH523 39 id 10 body 2 arc 1 orth 4 own 0 merged 0 arcclosed 0 ph 2
+PH523 40 id 4 body 1 arc 2 orth 2 own 0 merged 0 arcclosed 0 ph 2
+PH523 40 id 10 body 2 arc 1 orth 2 own 0 merged 0 arcclosed 1 ph 2
+PH523 41 id 4 body 1 arc 2 orth 2 own 0 merged 0 arcclosed 0 ph 2
+PH523 41 id 10 body 2 arc 1 orth 4 own 0 merged 0 arcclosed 0 ph 2
+PH523 42 id 4 body 1 arc 2 orth 4 own 0 merged 0 arcclosed 0 ph 2
+PH523 42 id 10 body 2 arc 1 orth 2 own 0 merged 0 arcclosed 1 ph 2
+PH523 43 id 4 body 1 arc 2 orth 2 own 0 merged 0 arcclosed 0 ph 2
+PH523 43 id 10 body 2 arc 1 orth 4 own 0 merged 0 arcclosed 0 ph 2
+PH523 44 id 4 body 1 arc 2 orth 2 own 0 merged 0 arcclosed 0 ph 2
+PH523 44 id 10 body 2 arc 1 orth 2 own 0 merged 0 arcclosed 1 ph 2
+PH523 45 id 4 body 1 arc 2 orth 2 own 0 merged 0 arcclosed 0 ph 2
+PH523 45 id 10 body 2 arc 1 orth 2 own 0 merged 0 arcclosed 1 ph 2
+PH523 46 id 4 body 1 arc 2 orth 2 own 0 merged 0 arcclosed 0 ph 2
+PH523 46 id 10 body 2 arc 1 orth 2 own 0 merged 0 arcclosed 1 ph 2
+PH523 47 id 4 body 1 arc 2 orth 2 own 0 merged 0 arcclosed 0 ph 2
+PH523 47 id 10 body 2 arc 1 orth 4 own 0 merged 0 arcclosed 0 ph 2
+PH523 48 id 4 body 1 arc 2 orth 2 own 0 merged 0 arcclosed 0 ph 2
+PH523 48 id 10 body 2 arc 1 orth 2 own 0 merged 0 arcclosed 1 ph 2
+PH523 49 id 4 body 1 arc 2 orth 2 own 0 merged 0 arcclosed 0 ph 2
+PH523 49 id 10 body 2 arc 1 orth 4 own 0 merged 0 arcclosed 0 ph 2
+PH523 50 id 4 body 1 arc 2 orth 2 own 0 merged 0 arcclosed 0 ph 2
+PH523 50 id 10 body 2 arc 1 orth 2 own 0 merged 0 arcclosed 1 ph 2
+PH523 51 id 4 body 1 arc 2 orth 2 own 0 merged 0 arcclosed 0 ph 2
+PH523 51 id 10 body 2 arc 1 orth 4 own 0 merged 0 arcclosed 0 ph 2
+PH523 52 id 4 body 1 arc 2 orth 2 own 0 merged 0 arcclosed 0 ph 2
+PH523 52 id 10 body 2 arc 1 orth 2 own 0 merged 0 arcclosed 1 ph 2
+PH523 53 id 4 body 1 arc 2 orth 2 own 0 merged 0 arcclosed 0 ph 2
+PH523 53 id 10 body 2 arc 1 orth 4 own 0 merged 0 arcclosed 0 ph 2
+PH523 54 id 4 body 1 arc 2 orth 2 own 0 merged 0 arcclosed 0 ph 2
+PH523 54 id 10 body 2 arc 1 orth 2 own 0 merged 0 arcclosed 1 ph 2
+PH523 55 id 4 body 1 arc 2 orth 2 own 0 merged 0 arcclosed 0 ph 2
+PH523 55 id 10 body 2 arc 1 orth 4 own 0 merged 0 arcclosed 0 ph 2
+PH523 56 id 4 body 1 arc 2 orth 2 own 0 merged 0 arcclosed 0 ph 2
+PH523 56 id 10 body 2 arc 1 orth 2 own 0 merged 0 arcclosed 1 ph 2
+PH523 57 id 4 body 1 arc 2 orth 2 own 0 merged 0 arcclosed 0 ph 2
+PH523 57 id 10 body 2 arc 1 orth 4 own 0 merged 0 arcclosed 0 ph 2
+PH523 58 id 4 body 1 arc 2 orth 2 own 0 merged 0 arcclosed 0 ph 2
+PH523 58 id 10 body 2 arc 1 orth 2 own 0 merged 0 arcclosed 1 ph 2
+PH523 59 id 4 body 1 arc 2 orth 2 own 0 merged 0 arcclosed 0 ph 2
+PH523 59 id 10 body 2 arc 1 orth 4 own 0 merged 0 arcclosed 0 ph 2
+PH523 60 id 4 body 1 arc 2 orth 2 own 0 merged 0 arcclosed 0 ph 2
+PH523 60 id 10 body 2 arc 1 orth 2 own 0 merged 0 arcclosed 1 ph 2
+PH523 61 id 4 body 1 arc 2 orth 2 own 0 merged 0 arcclosed 0 ph 2
+PH523 61 id 10 body 2 arc 1 orth 4 own 0 merged 0 arcclosed 0 ph 2
+PH523 62 id 4 body 1 arc 2 orth 2 own 0 merged 0 arcclosed 0 ph 2
+PH523 62 id 10 body 2 arc 1 orth 2 own 0 merged 0 arcclosed 1 ph 2
+PH523 63 id 4 body 1 arc 2 orth 2 own 0 merged 0 arcclosed 0 ph 2
+PH523 63 id 10 body 2 arc 1 orth 2 own 0 merged 0 arcclosed 1 ph 2
+PH523 64 id 4 body 1 arc 2 orth 2 own 0 merged 0 arcclosed 0 ph 2
+PH523 64 id 10 body 2 arc 1 orth 2 own 0 merged 0 arcclosed 1 ph 2
+PH523 65 id 4 body 1 arc 2 orth 2 own 0 merged 0 arcclosed 0 ph 2
+PH523 65 id 10 body 2 arc 1 orth 4 own 0 merged 0 arcclosed 0 ph 2
+PH523 66 id 4 body 1 arc 2 orth 2 own 0 merged 0 arcclosed 0 ph 2
+PH523 66 id 10 body 2 arc 1 orth 2 own 0 merged 0 arcclosed 1 ph 2
+PH523 67 id 4 body 1 arc 2 orth 2 own 0 merged 0 arcclosed 0 ph 2
+PH523 67 id 10 body 2 arc 1 orth 4 own 0 merged 0 arcclosed 0 ph 2
+PH523 68 id 4 body 1 arc 2 orth 2 own 0 merged 0 arcclosed 0 ph 2
+PH523 68 id 10 body 2 arc 1 orth 2 own 0 merged 0 arcclosed 1 ph 2
+PH523 69 id 4 body 1 arc 2 orth 2 own 0 merged 0 arcclosed 0 ph 2
+PH523 69 id 10 body 2 arc 1 orth 4 own 0 merged 0 arcclosed 0 ph 2
+PH523 70 id 4 body 1 arc 2 orth 2 own 0 merged 0 arcclosed 0 ph 2
+PH523 70 id 10 body 2 arc 1 orth 2 own 0 merged 0 arcclosed 1 ph 2
+PH523 71 id 4 body 1 arc 2 orth 2 own 0 merged 0 arcclosed 0 ph 2
+PH523 71 id 10 body 2 arc 1 orth 4 own 0 merged 0 arcclosed 0 ph 2
+PH523 72 id 4 body 1 arc 2 orth 2 own 0 merged 0 arcclosed 0 ph 2
+PH523 72 id 10 body 2 arc 1 orth 2 own 0 merged 0 arcclosed 1 ph 2
+PH523 73 id 4 body 1 arc 2 orth 2 own 0 merged 0 arcclosed 0 ph 2
+PH523 73 id 10 body 2 arc 1 orth 4 own 0 merged 0 arcclosed 0 ph 2
+PH523 74 id 4 body 1 arc 2 orth 2 own 0 merged 0 arcclosed 0 ph 2
+PH523 74 id 10 body 2 arc 1 orth 2 own 0 merged 0 arcclosed 1 ph 2
+PH523 75 id 4 body 1 arc 2 orth 2 own 0 merged 0 arcclosed 0 ph 2
+PH523 75 id 10 body 2 arc 1 orth 4 own 0 merged 0 arcclosed 0 ph 2
+PH523 76 id 4 body 1 arc 2 orth 2 own 0 merged 0 arcclosed 0 ph 2
+PH523 76 id 10 body 2 arc 1 orth 2 own 0 merged 0 arcclosed 1 ph 2
+PH523 77 id 4 body 1 arc 2 orth 2 own 0 merged 0 arcclosed 0 ph 2
+PH523 77 id 10 body 2 arc 1 orth 4 own 0 merged 0 arcclosed 0 ph 2
+PH523 78 id 4 body 1 arc 2 orth 2 own 0 merged 0 arcclosed 0 ph 2
+PH523 78 id 10 body 2 arc 1 orth 2 own 0 merged 0 arcclosed 1 ph 2
+PH523 79 id 4 body 1 arc 2 orth 2 own 0 merged 0 arcclosed 0 ph 2
+PH523 79 id 10 body 2 arc 1 orth 4 own 0 merged 0 arcclosed 0 ph 2
+PH523 80 id 4 body 1 arc 2 orth 2 own 0 merged 0 arcclosed 0 ph 2
+PH523 80 id 10 body 2 arc 1 orth 2 own 0 merged 0 arcclosed 1 ph 2
+PH523 81 id 4 body 1 arc 2 orth 2 own 0 merged 0 arcclosed 0 ph 2
+PH523 81 id 10 body 2 arc 1 orth 4 own 0 merged 0 arcclosed 0 ph 2
+PH523 82 id 4 body 1 arc 2 orth 2 own 0 merged 0 arcclosed 0 ph 2
+PH523 82 id 10 body 2 arc 1 orth 2 own 0 merged 0 arcclosed 1 ph 2
+PH523 83 id 4 body 1 arc 2 orth 2 own 0 merged 0 arcclosed 0 ph 2
+PH523 83 id 10 body 2 arc 1 orth 4 own 0 merged 0 arcclosed 0 ph 2
+PH523 84 id 4 body 1 arc 2 orth 2 own 0 merged 0 arcclosed 0 ph 2
+PH523 84 id 10 body 2 arc 1 orth 2 own 0 merged 0 arcclosed 1 ph 2
+PH523 85 id 4 body 1 arc 2 orth 2 own 0 merged 0 arcclosed 0 ph 2
+PH523 85 id 10 body 2 arc 1 orth 4 own 0 merged 0 arcclosed 0 ph 2
+PH523 86 id 4 body 1 arc 2 orth 2 own 0 merged 0 arcclosed 0 ph 2
+PH523 86 id 10 body 2 arc 1 orth 2 own 0 merged 0 arcclosed 1 ph 2
+PH523 87 id 4 body 1 arc 2 orth 2 own 0 merged 0 arcclosed 0 ph 2
+PH523 87 id 10 body 2 arc 1 orth 4 own 0 merged 0 arcclosed 0 ph 2
+PH523 88 id 4 body 1 arc 2 orth 2 own 0 merged 0 arcclosed 0 ph 2
+PH523 88 id 10 body 2 arc 1 orth 2 own 0 merged 0 arcclosed 1 ph 2
+PH523 89 id 4 body 1 arc 2 orth 2 own 0 merged 0 arcclosed 0 ph 2
+PH523 89 id 10 body 2 arc 1 orth 4 own 0 merged 0 arcclosed 0 ph 2
+PH523 90 id 4 body 1 arc 2 orth 2 own 0 merged 0 arcclosed 0 ph 2
+PH523 90 id 10 body 2 arc 1 orth 2 own 0 merged 0 arcclosed 1 ph 2
+PH523 91 id 4 body 1 arc 2 orth 2 own 0 merged 0 arcclosed 0 ph 2
+PH523 91 id 10 body 2 arc 1 orth 4 own 0 merged 0 arcclosed 0 ph 2
+PH523 92 id 4 body 1 arc 2 orth 2 own 0 merged 0 arcclosed 0 ph 2
+PH523 92 id 10 body 2 arc 1 orth 2 own 0 merged 0 arcclosed 1 ph 2
+PH523 93 id 4 body 1 arc 2 orth 2 own 0 merged 0 arcclosed 0 ph 5
+PH523 93 id 10 body 2 arc 1 orth 2 own 0 merged 0 arcclosed 1 ph 5
+FUND523 94 ammo 14 bank 11 floor 18 need 20 spare 1 sust 1 flip 0 of 1
+MAG522 94 ph 5 on 0 near 0 fund 1 fuse 1 ttl 1 ti 29 ammo 14 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+PH523 94 id 4 body 1 arc 2 orth 2 own 0 merged 0 arcclosed 0 ph 5
+PH523 94 id 10 body 2 arc 1 orth 2 own 0 merged 0 arcclosed 1 ph 5
+FUND523 95 ammo 25 bank 0 floor 18 need 20 spare 1 sust 1 flip 0 of 2
+MAG522 95 ph 5 on 0 near 0 fund 1 fuse 1 ttl 1 ti 18 ammo 25 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+PH523 95 id 4 body 1 arc 2 orth 2 own 0 merged 0 arcclosed 0 ph 5
+PH523 95 id 10 body 2 arc 1 orth 4 own 0 merged 0 arcclosed 0 ph 5
+FUND523 96 ammo 15 bank 20 floor 18 need 20 spare 1 sust 1 flip 0 of 3
+MAG522 96 ph 5 on 0 near 0 fund 1 fuse 1 ttl 1 ti 38 ammo 15 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+PH523 96 id 4 body 1 arc 2 orth 2 own 0 merged 0 arcclosed 0 ph 5
+PH523 96 id 10 body 2 arc 1 orth 2 own 0 merged 0 arcclosed 1 ph 5
+FUND523 97 ammo 35 bank 0 floor 18 need 20 spare 1 sust 1 flip 0 of 4
+MAG522 97 ph 5 on 0 near 0 fund 1 fuse 1 ttl 1 ti 18 ammo 35 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+PH523 97 id 4 body 1 arc 2 orth 2 own 0 merged 0 arcclosed 0 ph 5
+PH523 97 id 10 body 2 arc 1 orth 4 own 0 merged 0 arcclosed 0 ph 5
+FUND523 98 ammo 25 bank 0 floor 18 need 20 spare 1 sust 1 flip 0 of 5
+MAG522 98 ph 5 on 0 near 0 fund 1 fuse 1 ttl 1 ti 18 ammo 25 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+PH523 98 id 4 body 1 arc 2 orth 2 own 0 merged 0 arcclosed 0 ph 5
+PH523 98 id 10 body 2 arc 1 orth 2 own 0 merged 0 arcclosed 1 ph 5
+FUND523 99 ammo 25 bank 0 floor 18 need 20 spare 1 sust 1 flip 0 of 6
+MAG522 99 ph 5 on 0 near 0 fund 1 fuse 1 ttl 1 ti 18 ammo 25 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+PH523 99 id 4 body 1 arc 2 orth 2 own 0 merged 0 arcclosed 0 ph 5
+PH523 99 id 10 body 2 arc 1 orth 4 own 0 merged 0 arcclosed 0 ph 5
+FUND523 100 ammo 15 bank 20 floor 18 need 20 spare 1 sust 1 flip 0 of 7
+MAG522 100 ph 5 on 0 near 0 fund 1 fuse 1 ttl 1 ti 38 ammo 15 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+PH523 100 id 4 body 1 arc 2 orth 2 own 0 merged 0 arcclosed 0 ph 5
+PH523 100 id 10 body 2 arc 1 orth 2 own 0 merged 0 arcclosed 1 ph 5
+FUND523 101 ammo 35 bank 0 floor 18 need 20 spare 1 sust 1 flip 0 of 8
+MAG522 101 ph 5 on 0 near 0 fund 1 fuse 1 ttl 1 ti 18 ammo 35 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+PH523 101 id 4 body 1 arc 2 orth 2 own 0 merged 0 arcclosed 0 ph 5
+PH523 101 id 10 body 2 arc 1 orth 4 own 0 merged 0 arcclosed 0 ph 5
+FUND523 102 ammo 25 bank 0 floor 18 need 20 spare 1 sust 1 flip 0 of 9
+MAG522 102 ph 5 on 0 near 0 fund 1 fuse 1 ttl 1 ti 18 ammo 25 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+PH523 102 id 4 body 1 arc 2 orth 2 own 0 merged 0 arcclosed 0 ph 5
+PH523 102 id 10 body 2 arc 1 orth 2 own 0 merged 0 arcclosed 1 ph 5
+FUND523 103 ammo 25 bank 0 floor 18 need 20 spare 1 sust 1 flip 0 of 10
+MAG522 103 ph 5 on 0 near 0 fund 1 fuse 1 ttl 1 ti 18 ammo 25 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+PH523 103 id 4 body 1 arc 2 orth 2 own 0 merged 0 arcclosed 0 ph 5
+PH523 103 id 10 body 2 arc 1 orth 4 own 0 merged 0 arcclosed 0 ph 5
+FUND523 104 ammo 15 bank 20 floor 18 need 20 spare 1 sust 1 flip 0 of 11
+MAG522 104 ph 5 on 0 near 0 fund 1 fuse 1 ttl 1 ti 38 ammo 15 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+PH523 104 id 4 body 1 arc 2 orth 2 own 0 merged 0 arcclosed 0 ph 5
+PH523 104 id 10 body 2 arc 1 orth 2 own 0 merged 0 arcclosed 1 ph 5
+FUND523 105 ammo 35 bank 0 floor 18 need 20 spare 1 sust 1 flip 0 of 12
+MAG522 105 ph 5 on 0 near 0 fund 1 fuse 1 ttl 1 ti 18 ammo 35 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+PH523 105 id 4 body 1 arc 2 orth 2 own 0 merged 0 arcclosed 0 ph 5
+PH523 105 id 10 body 2 arc 1 orth 4 own 0 merged 0 arcclosed 0 ph 5
+FUND523 106 ammo 25 bank 0 floor 18 need 20 spare 1 sust 1 flip 0 of 13
+MAG522 106 ph 5 on 0 near 0 fund 1 fuse 1 ttl 1 ti 18 ammo 25 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+PH523 106 id 4 body 1 arc 2 orth 2 own 0 merged 0 arcclosed 0 ph 5
+PH523 106 id 10 body 2 arc 1 orth 2 own 0 merged 0 arcclosed 1 ph 5
+FUND523 107 ammo 25 bank 0 floor 18 need 20 spare 1 sust 1 flip 0 of 14
+MAG522 107 ph 5 on 0 near 0 fund 1 fuse 1 ttl 1 ti 18 ammo 25 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+PH523 107 id 4 body 1 arc 2 orth 2 own 0 merged 0 arcclosed 0 ph 5
+PH523 107 id 10 body 2 arc 1 orth 4 own 0 merged 0 arcclosed 0 ph 5
+FUND523 108 ammo 15 bank 20 floor 18 need 20 spare 1 sust 1 flip 0 of 15
+MAG522 108 ph 5 on 0 near 0 fund 1 fuse 1 ttl 1 ti 38 ammo 15 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+PH523 108 id 4 body 1 arc 2 orth 2 own 0 merged 0 arcclosed 0 ph 5
+PH523 108 id 10 body 2 arc 1 orth 2 own 0 merged 0 arcclosed 1 ph 5
+FUND523 109 ammo 35 bank 0 floor 18 need 20 spare 1 sust 1 flip 0 of 16
+MAG522 109 ph 5 on 0 near 0 fund 1 fuse 1 ttl 1 ti 18 ammo 35 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+PH523 109 id 4 body 1 arc 2 orth 2 own 0 merged 0 arcclosed 0 ph 5
+PH523 109 id 10 body 2 arc 1 orth 4 own 0 merged 0 arcclosed 0 ph 5
+FUND523 110 ammo 25 bank 0 floor 18 need 20 spare 1 sust 1 flip 0 of 17
+MAG522 110 ph 5 on 0 near 0 fund 1 fuse 1 ttl 1 ti 18 ammo 25 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+PH523 110 id 4 body 1 arc 2 orth 2 own 0 merged 0 arcclosed 0 ph 5
+PH523 110 id 10 body 2 arc 1 orth 2 own 0 merged 0 arcclosed 1 ph 5
+FUND523 111 ammo 25 bank 0 floor 18 need 20 spare 1 sust 1 flip 0 of 18
+MAG522 111 ph 5 on 0 near 0 fund 1 fuse 1 ttl 1 ti 18 ammo 25 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+PH523 111 id 4 body 1 arc 2 orth 2 own 0 merged 0 arcclosed 0 ph 5
+PH523 111 id 10 body 2 arc 1 orth 4 own 0 merged 0 arcclosed 0 ph 5
+FUND523 112 ammo 15 bank 20 floor 18 need 20 spare 1 sust 1 flip 0 of 19
+MAG522 112 ph 5 on 0 near 0 fund 1 fuse 1 ttl 1 ti 38 ammo 15 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+PH523 112 id 4 body 1 arc 2 orth 2 own 0 merged 0 arcclosed 0 ph 5
+PH523 112 id 10 body 2 arc 1 orth 2 own 0 merged 0 arcclosed 1 ph 5
+FUND523 113 ammo 35 bank 0 floor 18 need 20 spare 1 sust 1 flip 0 of 20
+MAG522 113 ph 5 on 0 near 0 fund 1 fuse 1 ttl 1 ti 18 ammo 35 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+PH523 113 id 4 body 1 arc 2 orth 2 own 0 merged 0 arcclosed 0 ph 5
+PH523 113 id 10 body 2 arc 1 orth 4 own 0 merged 0 arcclosed 0 ph 5
+FUND523 114 ammo 25 bank 0 floor 18 need 20 spare 1 sust 1 flip 0 of 21
+MAG522 114 ph 5 on 0 near 0 fund 1 fuse 1 ttl 1 ti 18 ammo 25 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+PH523 114 id 4 body 1 arc 2 orth 2 own 0 merged 0 arcclosed 0 ph 5
+PH523 114 id 10 body 2 arc 1 orth 2 own 0 merged 0 arcclosed 1 ph 5
+FUND523 115 ammo 25 bank 0 floor 18 need 20 spare 1 sust 1 flip 0 of 22
+MAG522 115 ph 5 on 0 near 0 fund 1 fuse 1 ttl 1 ti 18 ammo 25 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+PH523 115 id 4 body 1 arc 2 orth 2 own 0 merged 0 arcclosed 0 ph 5
+PH523 115 id 10 body 2 arc 1 orth 4 own 0 merged 0 arcclosed 0 ph 5
+FUND523 116 ammo 15 bank 20 floor 18 need 20 spare 1 sust 1 flip 0 of 23
+MAG522 116 ph 5 on 0 near 0 fund 1 fuse 1 ttl 1 ti 38 ammo 15 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+PH523 116 id 4 body 1 arc 2 orth 2 own 0 merged 0 arcclosed 0 ph 5
+PH523 116 id 10 body 2 arc 1 orth 2 own 0 merged 0 arcclosed 1 ph 5
+FUND523 117 ammo 35 bank 0 floor 18 need 20 spare 1 sust 1 flip 0 of 24
+MAG522 117 ph 5 on 0 near 0 fund 1 fuse 1 ttl 1 ti 18 ammo 35 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+PH523 117 id 4 body 1 arc 2 orth 2 own 0 merged 0 arcclosed 0 ph 5
+PH523 117 id 10 body 2 arc 1 orth 4 own 0 merged 0 arcclosed 0 ph 5
+FUND523 118 ammo 25 bank 0 floor 18 need 20 spare 1 sust 1 flip 0 of 25
+MAG522 118 ph 5 on 0 near 0 fund 1 fuse 1 ttl 1 ti 18 ammo 25 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+PH523 118 id 4 body 1 arc 2 orth 2 own 0 merged 0 arcclosed 0 ph 5
+PH523 118 id 10 body 2 arc 1 orth 2 own 0 merged 0 arcclosed 1 ph 5
+FUND523 119 ammo 25 bank 0 floor 18 need 20 spare 1 sust 1 flip 0 of 26
+MAG522 119 ph 5 on 0 near 0 fund 1 fuse 1 ttl 1 ti 18 ammo 25 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+PH523 119 id 4 body 1 arc 2 orth 2 own 0 merged 0 arcclosed 0 ph 5
+PH523 119 id 10 body 2 arc 1 orth 4 own 0 merged 0 arcclosed 0 ph 5
+FUND523 120 ammo 15 bank 20 floor 18 need 20 spare 1 sust 1 flip 0 of 27
+MAG522 120 ph 5 on 0 near 0 fund 1 fuse 1 ttl 1 ti 38 ammo 15 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+PH523 120 id 4 body 1 arc 2 orth 2 own 0 merged 0 arcclosed 0 ph 5
+PH523 120 id 10 body 2 arc 1 orth 2 own 0 merged 0 arcclosed 1 ph 5
+FUND523 121 ammo 35 bank 0 floor 18 need 20 spare 1 sust 1 flip 0 of 28
+MAG522 121 ph 5 on 0 near 0 fund 1 fuse 1 ttl 1 ti 18 ammo 35 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+PH523 121 id 4 body 1 arc 2 orth 2 own 0 merged 0 arcclosed 0 ph 5
+PH523 121 id 10 body 2 arc 1 orth 4 own 0 merged 0 arcclosed 0 ph 5
+FUND523 122 ammo 25 bank 0 floor 18 need 20 spare 1 sust 1 flip 0 of 29
+MAG522 122 ph 5 on 0 near 0 fund 1 fuse 1 ttl 1 ti 18 ammo 25 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+PH523 122 id 4 body 1 arc 2 orth 2 own 0 merged 0 arcclosed 0 ph 5
+PH523 122 id 10 body 2 arc 1 orth 2 own 0 merged 0 arcclosed 1 ph 5
+FUND523 123 ammo 25 bank 0 floor 18 need 20 spare 1 sust 1 flip 0 of 30
+MAG522 123 ph 5 on 0 near 0 fund 1 fuse 1 ttl 1 ti 18 ammo 25 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+PH523 123 id 4 body 1 arc 2 orth 2 own 0 merged 0 arcclosed 0 ph 5
+PH523 123 id 10 body 2 arc 1 orth 4 own 0 merged 0 arcclosed 0 ph 5
+FUND523 124 ammo 15 bank 10 floor 18 need 20 spare 1 sust 1 flip 0 of 31
+MAG522 124 ph 5 on 0 near 0 fund 1 fuse 1 ttl 1 ti 28 ammo 15 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+PH523 124 id 4 body 1 arc 2 orth 2 own 0 merged 0 arcclosed 0 ph 5
+PH523 124 id 10 body 2 arc 1 orth 2 own 0 merged 0 arcclosed 1 ph 5
+FUND523 125 ammo 25 bank 0 floor 18 need 20 spare 1 sust 1 flip 0 of 32
+MAG522 125 ph 5 on 0 near 0 fund 1 fuse 1 ttl 1 ti 18 ammo 25 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+PH523 125 id 4 body 1 arc 2 orth 2 own 0 merged 0 arcclosed 0 ph 5
+PH523 125 id 10 body 2 arc 1 orth 4 own 0 merged 0 arcclosed 0 ph 5
+FUND523 126 ammo 15 bank 0 floor 18 need 20 spare 1 sust 0 flip 1 of 33
+MAG522 126 ph 5 on 0 near 0 fund 1 fuse 0 ttl 1 ti 18 ammo 15 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+PH523 126 id 4 body 1 arc 2 orth 2 own 0 merged 0 arcclosed 0 ph 5
+PH523 126 id 10 body 2 arc 1 orth 2 own 0 merged 0 arcclosed 1 ph 5
+FUND523 127 ammo 15 bank 0 floor 18 need 20 spare 1 sust 0 flip 2 of 34
+MAG522 127 ph 5 on 0 near 0 fund 1 fuse 0 ttl 1 ti 18 ammo 15 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+PH523 127 id 4 body 1 arc 2 orth 2 own 0 merged 0 arcclosed 0 ph 5
+PH523 127 id 10 body 2 arc 1 orth 4 own 0 merged 0 arcclosed 0 ph 5
+FUND523 128 ammo 5 bank 10 floor 18 need 20 spare 0 sust 0 flip 2 of 35
+MAG522 128 ph 5 on 0 near 0 fund 0 fuse 0 ttl 1 ti 28 ammo 5 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+PH523 128 id 4 body 1 arc 2 orth 2 own 0 merged 0 arcclosed 0 ph 5
+PH523 128 id 10 body 2 arc 1 orth 2 own 0 merged 0 arcclosed 1 ph 5
+FUND523 129 ammo 15 bank 0 floor 18 need 20 spare 1 sust 0 flip 3 of 36
+MAG522 129 ph 5 on 0 near 0 fund 1 fuse 0 ttl 1 ti 18 ammo 15 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+PH523 129 id 4 body 1 arc 2 orth 2 own 0 merged 0 arcclosed 0 ph 5
+PH523 129 id 10 body 2 arc 1 orth 4 own 0 merged 0 arcclosed 0 ph 5
+FUND523 130 ammo 5 bank 0 floor 18 need 20 spare 0 sust 0 flip 3 of 37
+MAG522 130 ph 5 on 0 near 0 fund 0 fuse 0 ttl 1 ti 18 ammo 5 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+PH523 130 id 4 body 1 arc 2 orth 2 own 0 merged 0 arcclosed 0 ph 5
+PH523 130 id 10 body 2 arc 1 orth 2 own 0 merged 0 arcclosed 1 ph 5
+FUND523 131 ammo 5 bank 0 floor 18 need 20 spare 0 sust 0 flip 3 of 38
+MAG522 131 ph 5 on 0 near 0 fund 0 fuse 0 ttl 1 ti 18 ammo 5 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+PH523 131 id 4 body 1 arc 2 orth 2 own 0 merged 0 arcclosed 0 ph 5
+PH523 131 id 10 body 2 arc 1 orth 4 own 0 merged 0 arcclosed 0 ph 5
+FUND523 132 ammo 5 bank 10 floor 18 need 20 spare 0 sust 0 flip 3 of 39
+MAG522 132 ph 5 on 0 near 0 fund 0 fuse 0 ttl 1 ti 28 ammo 5 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+PH523 132 id 4 body 1 arc 2 orth 2 own 0 merged 0 arcclosed 0 ph 5
+PH523 132 id 10 body 2 arc 1 orth 2 own 0 merged 0 arcclosed 1 ph 5
+FUND523 133 ammo 5 bank 0 floor 18 need 20 spare 0 sust 0 flip 3 of 40
+MAG522 133 ph 5 on 0 near 0 fund 0 fuse 0 ttl 1 ti 18 ammo 5 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+PH523 133 id 4 body 1 arc 2 orth 2 own 0 merged 0 arcclosed 0 ph 5
+PH523 133 id 10 body 2 arc 1 orth 4 own 0 merged 0 arcclosed 0 ph 5
+FUND523 134 ammo 5 bank 2 floor 16 need 20 spare 0 sust 0 flip 3 of 41
+MAG522 134 ph 5 on 0 near 0 fund 0 fuse 0 ttl 1 ti 18 ammo 5 bar 8 want 22 floor 16 bind 0 nbind 0 nnear 0
+PH523 134 id 10 body 2 arc 1 orth 2 own 0 merged 0 arcclosed 1 ph 5
+FUND523 135 ammo 7 bank 0 floor 16 need 20 spare 0 sust 0 flip 3 of 42
+MAG522 135 ph 5 on 0 near 0 fund 0 fuse 0 ttl 1 ti 16 ammo 7 bar 8 want 22 floor 16 bind 0 nbind 0 nnear 0
+PH523 135 id 10 body 2 arc 1 orth 2 own 0 merged 0 arcclosed 1 ph 5
+FUND523 136 ammo 7 bank 10 floor 16 need 20 spare 0 sust 0 flip 3 of 43
+MAG522 136 ph 5 on 0 near 0 fund 0 fuse 0 ttl 1 ti 26 ammo 7 bar 8 want 22 floor 16 bind 0 nbind 0 nnear 0
+PH523 136 id 10 body 2 arc 1 orth 2 own 0 merged 0 arcclosed 1 ph 5
+FUND523 137 ammo 7 bank 0 floor 16 need 20 spare 0 sust 0 flip 3 of 44
+MAG522 137 ph 5 on 0 near 0 fund 0 fuse 0 ttl 1 ti 16 ammo 7 bar 8 want 22 floor 16 bind 0 nbind 0 nnear 0
+PH523 137 id 10 body 2 arc 1 orth 2 own 0 merged 0 arcclosed 1 ph 5
+FUND523 138 ammo 7 bank 0 floor 16 need 20 spare 0 sust 0 flip 3 of 45
+MAG522 138 ph 5 on 0 near 0 fund 0 fuse 0 ttl 1 ti 16 ammo 7 bar 8 want 22 floor 16 bind 0 nbind 0 nnear 0
+PH523 138 id 10 body 2 arc 1 orth 2 own 0 merged 0 arcclosed 1 ph 5
+FUND523 139 ammo 7 bank 0 floor 16 need 20 spare 0 sust 0 flip 3 of 46
+MAG522 139 ph 5 on 0 near 0 fund 0 fuse 0 ttl 1 ti 16 ammo 7 bar 8 want 22 floor 16 bind 0 nbind 0 nnear 0
+PH523 139 id 10 body 2 arc 1 orth 2 own 0 merged 0 arcclosed 1 ph 5
+FUND523 140 ammo 7 bank 10 floor 16 need 20 spare 0 sust 0 flip 3 of 47
+MAG522 140 ph 5 on 0 near 0 fund 0 fuse 0 ttl 1 ti 26 ammo 7 bar 8 want 22 floor 16 bind 0 nbind 0 nnear 0
+PH523 140 id 10 body 2 arc 1 orth 2 own 0 merged 0 arcclosed 1 ph 5
+FUND523 141 ammo 7 bank 0 floor 16 need 20 spare 0 sust 0 flip 3 of 48
+MAG522 141 ph 5 on 0 near 0 fund 0 fuse 0 ttl 1 ti 16 ammo 7 bar 8 want 22 floor 16 bind 0 nbind 0 nnear 0
+PH523 141 id 10 body 2 arc 1 orth 2 own 0 merged 0 arcclosed 1 ph 5
+FUND523 142 ammo 7 bank 0 floor 16 need 20 spare 0 sust 0 flip 3 of 49
+MAG522 142 ph 5 on 0 near 0 fund 0 fuse 0 ttl 1 ti 16 ammo 7 bar 8 want 22 floor 16 bind 0 nbind 0 nnear 0
+PH523 142 id 10 body 2 arc 1 orth 2 own 0 merged 0 arcclosed 1 ph 5
+FUND523 143 ammo 7 bank 0 floor 16 need 20 spare 0 sust 0 flip 3 of 50
+MAG522 143 ph 5 on 0 near 0 fund 0 fuse 0 ttl 1 ti 16 ammo 7 bar 8 want 22 floor 16 bind 0 nbind 0 nnear 0
+PH523 143 id 10 body 2 arc 1 orth 2 own 0 merged 0 arcclosed 1 ph 5
+FUND523 144 ammo 7 bank 10 floor 16 need 20 spare 0 sust 0 flip 3 of 51
+MAG522 144 ph 5 on 0 near 0 fund 0 fuse 0 ttl 1 ti 26 ammo 7 bar 8 want 22 floor 16 bind 0 nbind 0 nnear 0
+PH523 144 id 10 body 2 arc 1 orth 2 own 0 merged 0 arcclosed 1 ph 5
+FUND523 145 ammo 7 bank 0 floor 16 need 20 spare 0 sust 0 flip 3 of 52
+MAG522 145 ph 5 on 0 near 0 fund 0 fuse 0 ttl 1 ti 16 ammo 7 bar 8 want 22 floor 16 bind 0 nbind 0 nnear 0
+PH523 145 id 10 body 2 arc 1 orth 2 own 0 merged 0 arcclosed 1 ph 5
+FUND523 146 ammo 7 bank 0 floor 16 need 20 spare 0 sust 0 flip 3 of 53
+MAG522 146 ph 5 on 0 near 0 fund 0 fuse 0 ttl 1 ti 16 ammo 7 bar 8 want 22 floor 16 bind 0 nbind 0 nnear 0
+PH523 146 id 10 body 2 arc 1 orth 2 own 0 merged 0 arcclosed 1 ph 5
+FUND523 147 ammo 7 bank 0 floor 16 need 20 spare 0 sust 0 flip 3 of 54
+MAG522 147 ph 5 on 0 near 0 fund 0 fuse 0 ttl 1 ti 16 ammo 7 bar 8 want 22 floor 16 bind 0 nbind 0 nnear 0
+PH523 147 id 10 body 2 arc 1 orth 2 own 0 merged 0 arcclosed 1 ph 5
+FUND523 148 ammo 7 bank 10 floor 16 need 20 spare 0 sust 0 flip 3 of 55
+MAG522 148 ph 5 on 0 near 0 fund 0 fuse 0 ttl 1 ti 26 ammo 7 bar 8 want 22 floor 16 bind 0 nbind 0 nnear 0
+PH523 148 id 10 body 2 arc 1 orth 2 own 0 merged 0 arcclosed 1 ph 5
+FUND523 149 ammo 7 bank 0 floor 16 need 20 spare 0 sust 0 flip 3 of 56
+MAG522 149 ph 5 on 0 near 0 fund 0 fuse 0 ttl 1 ti 16 ammo 7 bar 8 want 22 floor 16 bind 0 nbind 0 nnear 0
+PH523 149 id 10 body 2 arc 1 orth 2 own 0 merged 0 arcclosed 1 ph 5
+FUND523 150 ammo 7 bank 0 floor 16 need 20 spare 0 sust 0 flip 3 of 57
+MAG522 150 ph 5 on 0 near 0 fund 0 fuse 0 ttl 1 ti 16 ammo 7 bar 8 want 22 floor 16 bind 0 nbind 0 nnear 0
+PH523 150 id 10 body 2 arc 1 orth 2 own 0 merged 0 arcclosed 1 ph 5
+FUND523 151 ammo 7 bank 0 floor 16 need 20 spare 0 sust 0 flip 3 of 58
+MAG522 151 ph 5 on 0 near 0 fund 0 fuse 0 ttl 1 ti 16 ammo 7 bar 8 want 22 floor 16 bind 0 nbind 0 nnear 0
+PH523 151 id 10 body 2 arc 1 orth 2 own 0 merged 0 arcclosed 1 ph 5
+FUND523 152 ammo 7 bank 10 floor 16 need 20 spare 0 sust 0 flip 3 of 59
+MAG522 152 ph 5 on 0 near 0 fund 0 fuse 0 ttl 1 ti 26 ammo 7 bar 8 want 22 floor 16 bind 0 nbind 0 nnear 0
+PH523 152 id 10 body 2 arc 1 orth 2 own 0 merged 0 arcclosed 1 ph 5
+FUND523 153 ammo 7 bank 0 floor 16 need 20 spare 0 sust 0 flip 3 of 60
+MAG522 153 ph 5 on 0 near 0 fund 0 fuse 0 ttl 1 ti 16 ammo 7 bar 8 want 22 floor 16 bind 0 nbind 0 nnear 0
+FUND523 154 ammo 7 bank 0 floor 16 need 20 spare 0 sust 0 flip 3 of 61
+MAG522 154 ph 5 on 0 near 0 fund 0 fuse 0 ttl 1 ti 16 ammo 7 bar 8 want 22 floor 16 bind 0 nbind 0 nnear 0
+FUND523 155 ammo 7 bank 0 floor 16 need 20 spare 0 sust 0 flip 3 of 62
+MAG522 155 ph 5 on 0 near 0 fund 0 fuse 0 ttl 1 ti 16 ammo 7 bar 8 want 22 floor 16 bind 0 nbind 0 nnear 0
+FUND523 156 ammo 7 bank 10 floor 16 need 20 spare 0 sust 0 flip 3 of 63
+MAG522 156 ph 5 on 0 near 0 fund 0 fuse 0 ttl 1 ti 26 ammo 7 bar 8 want 22 floor 16 bind 0 nbind 0 nnear 0
+FUND523 157 ammo 7 bank 0 floor 16 need 20 spare 0 sust 0 flip 3 of 64
+MAG522 157 ph 5 on 0 near 0 fund 0 fuse 0 ttl 1 ti 16 ammo 7 bar 8 want 22 floor 16 bind 0 nbind 0 nnear 0
+FUND523 158 ammo 7 bank 0 floor 16 need 20 spare 0 sust 0 flip 3 of 65
+MAG522 158 ph 5 on 0 near 0 fund 0 fuse 0 ttl 1 ti 16 ammo 7 bar 8 want 22 floor 16 bind 0 nbind 0 nnear 0
+FUND523 159 ammo 7 bank 0 floor 16 need 20 spare 0 sust 0 flip 3 of 66
+MAG522 159 ph 5 on 0 near 0 fund 0 fuse 0 ttl 1 ti 16 ammo 7 bar 8 want 22 floor 16 bind 0 nbind 0 nnear 0
+FUND523 160 ammo 7 bank 10 floor 16 need 20 spare 0 sust 0 flip 3 of 67
+MAG522 160 ph 5 on 0 near 0 fund 0 fuse 0 ttl 1 ti 26 ammo 7 bar 8 want 22 floor 16 bind 0 nbind 0 nnear 0
+FUND523 161 ammo 7 bank 0 floor 16 need 20 spare 0 sust 0 flip 3 of 68
+MAG522 161 ph 5 on 0 near 0 fund 0 fuse 0 ttl 1 ti 16 ammo 7 bar 8 want 22 floor 16 bind 0 nbind 0 nnear 0
+FUND523 162 ammo 7 bank 0 floor 16 need 20 spare 0 sust 0 flip 3 of 69
+MAG522 162 ph 5 on 0 near 0 fund 0 fuse 0 ttl 1 ti 16 ammo 7 bar 8 want 22 floor 16 bind 0 nbind 0 nnear 0
+FUND523 163 ammo 7 bank 0 floor 16 need 20 spare 0 sust 0 flip 3 of 70
+MAG522 163 ph 5 on 0 near 0 fund 0 fuse 0 ttl 1 ti 16 ammo 7 bar 8 want 22 floor 16 bind 0 nbind 0 nnear 0
+FUND523 164 ammo 7 bank 10 floor 16 need 20 spare 0 sust 0 flip 3 of 71
+MAG522 164 ph 5 on 0 near 0 fund 0 fuse 0 ttl 1 ti 26 ammo 7 bar 8 want 22 floor 16 bind 0 nbind 0 nnear 0
+FUND523 165 ammo 7 bank 0 floor 16 need 20 spare 0 sust 0 flip 3 of 72
+MAG522 165 ph 5 on 0 near 0 fund 0 fuse 0 ttl 1 ti 16 ammo 7 bar 8 want 22 floor 16 bind 0 nbind 0 nnear 0
+FUND523 166 ammo 7 bank 0 floor 16 need 20 spare 0 sust 0 flip 3 of 73
+MAG522 166 ph 5 on 0 near 0 fund 0 fuse 0 ttl 1 ti 16 ammo 7 bar 8 want 22 floor 16 bind 0 nbind 0 nnear 0
+FUND523 167 ammo 7 bank 0 floor 16 need 20 spare 0 sust 0 flip 3 of 74
+MAG522 167 ph 5 on 0 near 0 fund 0 fuse 0 ttl 1 ti 16 ammo 7 bar 8 want 22 floor 16 bind 0 nbind 0 nnear 0
+FUND523 168 ammo 7 bank 10 floor 16 need 20 spare 0 sust 0 flip 3 of 75
+MAG522 168 ph 5 on 0 near 0 fund 0 fuse 0 ttl 1 ti 26 ammo 7 bar 8 want 22 floor 16 bind 0 nbind 0 nnear 0
+FUND523 169 ammo 7 bank 0 floor 16 need 20 spare 0 sust 0 flip 3 of 76
+MAG522 169 ph 5 on 0 near 0 fund 0 fuse 0 ttl 1 ti 16 ammo 7 bar 8 want 22 floor 16 bind 0 nbind 0 nnear 0
+FUND523 170 ammo 7 bank 0 floor 16 need 20 spare 0 sust 0 flip 3 of 77
+MAG522 170 ph 5 on 0 near 0 fund 0 fuse 0 ttl 1 ti 16 ammo 7 bar 8 want 22 floor 16 bind 0 nbind 0 nnear 0
+FUND523 171 ammo 7 bank 0 floor 16 need 20 spare 0 sust 0 flip 3 of 78
+MAG522 171 ph 5 on 0 near 0 fund 0 fuse 0 ttl 1 ti 16 ammo 7 bar 8 want 22 floor 16 bind 0 nbind 0 nnear 0
+FUND523 172 ammo 7 bank 10 floor 16 need 20 spare 0 sust 0 flip 3 of 79
+MAG522 172 ph 5 on 0 near 0 fund 0 fuse 0 ttl 1 ti 26 ammo 7 bar 8 want 22 floor 16 bind 0 nbind 0 nnear 0
+FUND523 173 ammo 7 bank 0 floor 16 need 20 spare 0 sust 0 flip 3 of 80
+MAG522 173 ph 5 on 0 near 0 fund 0 fuse 0 ttl 1 ti 16 ammo 7 bar 8 want 22 floor 16 bind 0 nbind 0 nnear 0
+FUND523 174 ammo 7 bank 0 floor 16 need 20 spare 0 sust 0 flip 3 of 81
+MAG522 174 ph 5 on 0 near 0 fund 0 fuse 0 ttl 1 ti 16 ammo 7 bar 8 want 22 floor 16 bind 0 nbind 0 nnear 0
+FUND523 175 ammo 7 bank 0 floor 16 need 20 spare 0 sust 0 flip 3 of 82
+MAG522 175 ph 5 on 0 near 0 fund 0 fuse 0 ttl 1 ti 16 ammo 7 bar 8 want 22 floor 16 bind 0 nbind 0 nnear 0
+FUND523 176 ammo 7 bank 10 floor 16 need 20 spare 0 sust 0 flip 3 of 83
+MAG522 176 ph 5 on 0 near 0 fund 0 fuse 0 ttl 1 ti 26 ammo 7 bar 8 want 22 floor 16 bind 0 nbind 0 nnear 0
+FUND523 177 ammo 7 bank 0 floor 16 need 20 spare 0 sust 0 flip 3 of 84
+MAG522 177 ph 5 on 0 near 0 fund 0 fuse 0 ttl 1 ti 16 ammo 7 bar 8 want 22 floor 16 bind 0 nbind 0 nnear 0
+FUND523 178 ammo 7 bank 0 floor 16 need 20 spare 0 sust 0 flip 3 of 85
+MAG522 178 ph 5 on 0 near 0 fund 0 fuse 0 ttl 1 ti 16 ammo 7 bar 8 want 22 floor 16 bind 0 nbind 0 nnear 0
+FUND523 179 ammo 7 bank 0 floor 16 need 20 spare 0 sust 0 flip 3 of 86
+MAG522 179 ph 5 on 0 near 0 fund 0 fuse 0 ttl 1 ti 16 ammo 7 bar 8 want 22 floor 16 bind 0 nbind 0 nnear 0
+FUND523 180 ammo 7 bank 10 floor 16 need 20 spare 0 sust 0 flip 3 of 87
+MAG522 180 ph 5 on 0 near 0 fund 0 fuse 0 ttl 1 ti 26 ammo 7 bar 8 want 22 floor 16 bind 0 nbind 0 nnear 0
+FUND523 181 ammo 7 bank 0 floor 16 need 20 spare 0 sust 0 flip 3 of 88
+MAG522 181 ph 5 on 0 near 0 fund 0 fuse 0 ttl 1 ti 16 ammo 7 bar 8 want 22 floor 16 bind 0 nbind 0 nnear 0
+FUND523 182 ammo 7 bank 0 floor 16 need 20 spare 0 sust 0 flip 3 of 89
+MAG522 182 ph 5 on 0 near 0 fund 0 fuse 0 ttl 1 ti 16 ammo 7 bar 8 want 22 floor 16 bind 0 nbind 0 nnear 0
+FUND523 183 ammo 7 bank 0 floor 16 need 20 spare 0 sust 0 flip 3 of 90
+MAG522 183 ph 5 on 0 near 0 fund 0 fuse 0 ttl 1 ti 16 ammo 7 bar 8 want 22 floor 16 bind 0 nbind 0 nnear 0
+FUND523 184 ammo 7 bank 10 floor 16 need 20 spare 0 sust 0 flip 3 of 91
+MAG522 184 ph 5 on 0 near 0 fund 0 fuse 0 ttl 1 ti 26 ammo 7 bar 8 want 22 floor 16 bind 0 nbind 0 nnear 0
+FUND523 185 ammo 7 bank 0 floor 16 need 20 spare 0 sust 0 flip 3 of 92
+MAG522 185 ph 5 on 0 near 0 fund 0 fuse 0 ttl 1 ti 16 ammo 7 bar 8 want 22 floor 16 bind 0 nbind 0 nnear 0
+FUND523 186 ammo 7 bank 0 floor 16 need 20 spare 0 sust 0 flip 3 of 93
+MAG522 186 ph 5 on 0 near 0 fund 0 fuse 0 ttl 1 ti 16 ammo 7 bar 8 want 22 floor 16 bind 0 nbind 0 nnear 0
+FUND523 187 ammo 7 bank 0 floor 16 need 20 spare 0 sust 0 flip 3 of 94
+MAG522 187 ph 5 on 0 near 0 fund 0 fuse 0 ttl 1 ti 16 ammo 7 bar 8 want 22 floor 16 bind 0 nbind 0 nnear 0
+FUND523 188 ammo 7 bank 10 floor 16 need 20 spare 0 sust 0 flip 3 of 95
+MAG522 188 ph 5 on 0 near 0 fund 0 fuse 0 ttl 1 ti 26 ammo 7 bar 8 want 22 floor 16 bind 0 nbind 0 nnear 0
+FUND523 189 ammo 7 bank 0 floor 16 need 20 spare 0 sust 0 flip 3 of 96
+MAG522 189 ph 5 on 0 near 0 fund 0 fuse 0 ttl 1 ti 16 ammo 7 bar 8 want 22 floor 16 bind 0 nbind 0 nnear 0
+FUND523 190 ammo 7 bank 0 floor 16 need 20 spare 0 sust 0 flip 3 of 97
+MAG522 190 ph 5 on 0 near 0 fund 0 fuse 0 ttl 1 ti 16 ammo 7 bar 8 want 22 floor 16 bind 0 nbind 0 nnear 0
+FUND523 191 ammo 7 bank 0 floor 16 need 20 spare 0 sust 0 flip 3 of 98
+MAG522 191 ph 5 on 0 near 0 fund 0 fuse 0 ttl 1 ti 16 ammo 7 bar 8 want 22 floor 16 bind 0 nbind 0 nnear 0
+FUND523 192 ammo 7 bank 10 floor 16 need 20 spare 0 sust 0 flip 3 of 99
+MAG522 192 ph 5 on 0 near 0 fund 0 fuse 0 ttl 1 ti 26 ammo 7 bar 8 want 22 floor 16 bind 0 nbind 0 nnear 0
+FUND523 193 ammo 7 bank 0 floor 16 need 20 spare 0 sust 0 flip 3 of 100
+MAG522 193 ph 5 on 0 near 0 fund 0 fuse 0 ttl 1 ti 16 ammo 7 bar 8 want 22 floor 16 bind 0 nbind 0 nnear 0
+FUND523 194 ammo 7 bank 0 floor 16 need 20 spare 0 sust 0 flip 3 of 101
+MAG522 194 ph 5 on 0 near 0 fund 0 fuse 0 ttl 1 ti 16 ammo 7 bar 8 want 22 floor 16 bind 0 nbind 0 nnear 0
+FUND523 195 ammo 7 bank 0 floor 16 need 20 spare 0 sust 0 flip 3 of 102
+MAG522 195 ph 5 on 0 near 0 fund 0 fuse 0 ttl 1 ti 16 ammo 7 bar 8 want 22 floor 16 bind 0 nbind 0 nnear 0
+FUND523 196 ammo 7 bank 10 floor 16 need 20 spare 0 sust 0 flip 3 of 103
+MAG522 196 ph 5 on 0 near 0 fund 0 fuse 0 ttl 1 ti 26 ammo 7 bar 8 want 22 floor 16 bind 0 nbind 0 nnear 0
+FUND523 197 ammo 7 bank 0 floor 16 need 20 spare 0 sust 0 flip 3 of 104
+MAG522 197 ph 5 on 0 near 0 fund 0 fuse 0 ttl 1 ti 16 ammo 7 bar 8 want 22 floor 16 bind 0 nbind 0 nnear 0
+FUND523 198 ammo 7 bank 0 floor 16 need 20 spare 0 sust 0 flip 3 of 105
+MAG522 198 ph 5 on 0 near 0 fund 0 fuse 0 ttl 1 ti 16 ammo 7 bar 8 want 22 floor 16 bind 0 nbind 0 nnear 0
+FUND523 199 ammo 7 bank 0 floor 16 need 20 spare 0 sust 0 flip 3 of 106
+MAG522 199 ph 5 on 0 near 0 fund 0 fuse 0 ttl 1 ti 16 ammo 7 bar 8 want 22 floor 16 bind 0 nbind 0 nnear 0
+FUND523 200 ammo 7 bank 10 floor 16 need 20 spare 0 sust 0 flip 3 of 107
+MAG522 200 ph 5 on 0 near 0 fund 0 fuse 0 ttl 1 ti 26 ammo 7 bar 8 want 22 floor 16 bind 0 nbind 0 nnear 0
+FUND523 201 ammo 7 bank 0 floor 16 need 20 spare 0 sust 0 flip 3 of 108
+MAG522 201 ph 5 on 0 near 0 fund 0 fuse 0 ttl 1 ti 16 ammo 7 bar 8 want 22 floor 16 bind 0 nbind 0 nnear 0
+FUND523 202 ammo 7 bank 0 floor 16 need 20 spare 0 sust 0 flip 3 of 109
+MAG522 202 ph 5 on 0 near 0 fund 0 fuse 0 ttl 1 ti 16 ammo 7 bar 8 want 22 floor 16 bind 0 nbind 0 nnear 0
+FUND523 203 ammo 7 bank 0 floor 16 need 20 spare 0 sust 0 flip 3 of 110
+MAG522 203 ph 5 on 0 near 0 fund 0 fuse 0 ttl 1 ti 16 ammo 7 bar 8 want 22 floor 16 bind 0 nbind 0 nnear 0
+FUND523 204 ammo 7 bank 10 floor 16 need 20 spare 0 sust 0 flip 3 of 111
+MAG522 204 ph 5 on 0 near 0 fund 0 fuse 0 ttl 1 ti 26 ammo 7 bar 8 want 22 floor 16 bind 0 nbind 0 nnear 0
+FUND523 205 ammo 7 bank 0 floor 16 need 20 spare 0 sust 0 flip 3 of 112
+MAG522 205 ph 5 on 0 near 0 fund 0 fuse 0 ttl 1 ti 16 ammo 7 bar 8 want 22 floor 16 bind 0 nbind 0 nnear 0
+FUND523 206 ammo 7 bank 0 floor 16 need 20 spare 0 sust 0 flip 3 of 113
+MAG522 206 ph 5 on 0 near 0 fund 0 fuse 0 ttl 1 ti 16 ammo 7 bar 8 want 22 floor 16 bind 0 nbind 0 nnear 0
+FUND523 207 ammo 7 bank 0 floor 16 need 20 spare 0 sust 0 flip 3 of 114
+MAG522 207 ph 5 on 0 near 0 fund 0 fuse 0 ttl 1 ti 16 ammo 7 bar 8 want 22 floor 16 bind 0 nbind 0 nnear 0
+FUND523 208 ammo 7 bank 10 floor 16 need 20 spare 0 sust 0 flip 3 of 115
+MAG522 208 ph 5 on 0 near 0 fund 0 fuse 0 ttl 1 ti 26 ammo 7 bar 8 want 22 floor 16 bind 0 nbind 0 nnear 0
+FUND523 209 ammo 7 bank 0 floor 16 need 20 spare 0 sust 0 flip 3 of 116
+MAG522 209 ph 5 on 0 near 0 fund 0 fuse 0 ttl 1 ti 16 ammo 7 bar 8 want 22 floor 16 bind 0 nbind 0 nnear 0
+FUND523 210 ammo 7 bank 0 floor 16 need 20 spare 0 sust 0 flip 3 of 117
+MAG522 210 ph 5 on 0 near 0 fund 0 fuse 0 ttl 1 ti 16 ammo 7 bar 8 want 22 floor 16 bind 0 nbind 0 nnear 0
+FUND523 211 ammo 7 bank 0 floor 16 need 20 spare 0 sust 0 flip 3 of 118
+MAG522 211 ph 5 on 0 near 0 fund 0 fuse 0 ttl 1 ti 16 ammo 7 bar 8 want 22 floor 16 bind 0 nbind 0 nnear 0
+FUND523 212 ammo 7 bank 10 floor 16 need 20 spare 0 sust 0 flip 3 of 119
+MAG522 212 ph 5 on 0 near 0 fund 0 fuse 0 ttl 1 ti 26 ammo 7 bar 8 want 22 floor 16 bind 0 nbind 0 nnear 0
+FUND523 213 ammo 7 bank 0 floor 16 need 20 spare 0 sust 0 flip 3 of 120
+MAG522 213 ph 5 on 0 near 0 fund 0 fuse 0 ttl 1 ti 16 ammo 7 bar 8 want 22 floor 16 bind 0 nbind 0 nnear 0
+FUND523 214 ammo 7 bank 0 floor 16 need 20 spare 0 sust 0 flip 3 of 121
+MAG522 214 ph 5 on 0 near 0 fund 0 fuse 0 ttl 1 ti 16 ammo 7 bar 8 want 22 floor 16 bind 0 nbind 0 nnear 0
+FUND523 215 ammo 7 bank 0 floor 16 need 20 spare 0 sust 0 flip 3 of 122
+MAG522 215 ph 5 on 0 near 0 fund 0 fuse 0 ttl 1 ti 16 ammo 7 bar 8 want 22 floor 16 bind 0 nbind 0 nnear 0
+FUND523 216 ammo 7 bank 10 floor 16 need 20 spare 0 sust 0 flip 3 of 123
+MAG522 216 ph 5 on 0 near 0 fund 0 fuse 0 ttl 1 ti 26 ammo 7 bar 8 want 22 floor 16 bind 0 nbind 0 nnear 0
+FUND523 217 ammo 7 bank 0 floor 16 need 20 spare 0 sust 0 flip 3 of 124
+MAG522 217 ph 5 on 0 near 0 fund 0 fuse 0 ttl 1 ti 16 ammo 7 bar 8 want 22 floor 16 bind 0 nbind 0 nnear 0
+FUND523 218 ammo 7 bank 0 floor 16 need 20 spare 0 sust 0 flip 3 of 125
+MAG522 218 ph 5 on 0 near 0 fund 0 fuse 0 ttl 1 ti 16 ammo 7 bar 8 want 22 floor 16 bind 0 nbind 0 nnear 0
+FUND523 219 ammo 7 bank 0 floor 16 need 20 spare 0 sust 0 flip 3 of 126
+MAG522 219 ph 5 on 0 near 0 fund 0 fuse 0 ttl 1 ti 16 ammo 7 bar 8 want 22 floor 16 bind 0 nbind 0 nnear 0
+FUND523 220 ammo 7 bank 10 floor 16 need 20 spare 0 sust 0 flip 3 of 127
+MAG522 220 ph 5 on 0 near 0 fund 0 fuse 0 ttl 1 ti 26 ammo 7 bar 8 want 22 floor 16 bind 0 nbind 0 nnear 0
+FUND523 221 ammo 7 bank 0 floor 16 need 20 spare 0 sust 0 flip 3 of 128
+MAG522 221 ph 5 on 0 near 0 fund 0 fuse 0 ttl 1 ti 16 ammo 7 bar 8 want 22 floor 16 bind 0 nbind 0 nnear 0
+FUND523 222 ammo 7 bank 0 floor 16 need 20 spare 0 sust 0 flip 3 of 129
+MAG522 222 ph 5 on 0 near 0 fund 0 fuse 0 ttl 1 ti 16 ammo 7 bar 8 want 22 floor 16 bind 0 nbind 0 nnear 0
+FUND523 223 ammo 7 bank 0 floor 16 need 20 spare 0 sust 0 flip 3 of 130
+MAG522 223 ph 5 on 0 near 0 fund 0 fuse 0 ttl 1 ti 16 ammo 7 bar 8 want 22 floor 16 bind 0 nbind 0 nnear 0
+FUND523 224 ammo 7 bank 10 floor 16 need 20 spare 0 sust 0 flip 3 of 131
+MAG522 224 ph 5 on 0 near 0 fund 0 fuse 0 ttl 1 ti 26 ammo 7 bar 8 want 22 floor 16 bind 0 nbind 0 nnear 0
+FUND523 225 ammo 7 bank 0 floor 16 need 20 spare 0 sust 0 flip 3 of 132
+MAG522 225 ph 5 on 0 near 0 fund 0 fuse 0 ttl 1 ti 16 ammo 7 bar 8 want 22 floor 16 bind 0 nbind 0 nnear 0
+FUND523 226 ammo 7 bank 0 floor 16 need 20 spare 0 sust 0 flip 3 of 133
+MAG522 226 ph 5 on 0 near 0 fund 0 fuse 0 ttl 1 ti 16 ammo 7 bar 8 want 22 floor 16 bind 0 nbind 0 nnear 0
+FUND523 227 ammo 7 bank 0 floor 16 need 20 spare 0 sust 0 flip 3 of 134
+MAG522 227 ph 5 on 0 near 0 fund 0 fuse 0 ttl 1 ti 16 ammo 7 bar 8 want 22 floor 16 bind 0 nbind 0 nnear 0
+FUND523 228 ammo 7 bank 10 floor 16 need 20 spare 0 sust 0 flip 3 of 135
+MAG522 228 ph 5 on 0 near 0 fund 0 fuse 0 ttl 1 ti 26 ammo 7 bar 8 want 22 floor 16 bind 0 nbind 0 nnear 0
+FUND523 229 ammo 7 bank 0 floor 16 need 20 spare 0 sust 0 flip 3 of 136
+MAG522 229 ph 5 on 0 near 0 fund 0 fuse 0 ttl 1 ti 16 ammo 7 bar 8 want 22 floor 16 bind 0 nbind 0 nnear 0
+FUND523 230 ammo 7 bank 0 floor 16 need 20 spare 0 sust 0 flip 3 of 137
+MAG522 230 ph 5 on 0 near 0 fund 0 fuse 0 ttl 1 ti 16 ammo 7 bar 8 want 22 floor 16 bind 0 nbind 0 nnear 0
+FUND523 231 ammo 7 bank 0 floor 16 need 20 spare 0 sust 0 flip 3 of 138
+MAG522 231 ph 5 on 0 near 0 fund 0 fuse 0 ttl 1 ti 16 ammo 7 bar 8 want 22 floor 16 bind 0 nbind 0 nnear 0
+FUND523 232 ammo 7 bank 10 floor 16 need 20 spare 0 sust 0 flip 3 of 139
+MAG522 232 ph 5 on 0 near 0 fund 0 fuse 0 ttl 1 ti 26 ammo 7 bar 8 want 22 floor 16 bind 0 nbind 0 nnear 0
+FUND523 233 ammo 7 bank 0 floor 16 need 20 spare 0 sust 0 flip 3 of 140
+MAG522 233 ph 5 on 0 near 0 fund 0 fuse 0 ttl 1 ti 16 ammo 7 bar 8 want 22 floor 16 bind 0 nbind 0 nnear 0
+FUND523 234 ammo 7 bank 0 floor 16 need 20 spare 0 sust 0 flip 3 of 141
+MAG522 234 ph 5 on 0 near 0 fund 0 fuse 0 ttl 1 ti 16 ammo 7 bar 8 want 22 floor 16 bind 0 nbind 0 nnear 0
+FUND523 235 ammo 7 bank 0 floor 16 need 20 spare 0 sust 0 flip 3 of 142
+MAG522 235 ph 5 on 0 near 0 fund 0 fuse 0 ttl 1 ti 16 ammo 7 bar 8 want 22 floor 16 bind 0 nbind 0 nnear 0
+FUND523 236 ammo 7 bank 10 floor 16 need 20 spare 0 sust 0 flip 3 of 143
+MAG522 236 ph 5 on 0 near 0 fund 0 fuse 0 ttl 1 ti 26 ammo 7 bar 8 want 22 floor 16 bind 0 nbind 0 nnear 0
+FUND523 237 ammo 7 bank 0 floor 16 need 20 spare 0 sust 0 flip 3 of 144
+MAG522 237 ph 5 on 0 near 0 fund 0 fuse 0 ttl 1 ti 16 ammo 7 bar 8 want 22 floor 16 bind 0 nbind 0 nnear 0
+FUND523 238 ammo 7 bank 0 floor 16 need 20 spare 0 sust 0 flip 3 of 145
+MAG522 238 ph 5 on 0 near 0 fund 0 fuse 0 ttl 1 ti 16 ammo 7 bar 8 want 22 floor 16 bind 0 nbind 0 nnear 0
+FUND523 239 ammo 7 bank 0 floor 16 need 20 spare 0 sust 0 flip 3 of 146
+MAG522 239 ph 5 on 0 near 0 fund 0 fuse 0 ttl 1 ti 16 ammo 7 bar 8 want 22 floor 16 bind 0 nbind 0 nnear 0
+FUND523 240 ammo 7 bank 10 floor 16 need 20 spare 0 sust 0 flip 3 of 147
+MAG522 240 ph 5 on 0 near 0 fund 0 fuse 0 ttl 1 ti 26 ammo 7 bar 8 want 22 floor 16 bind 0 nbind 0 nnear 0
+FUND523 241 ammo 7 bank 0 floor 16 need 20 spare 0 sust 0 flip 3 of 148
+MAG522 241 ph 5 on 0 near 0 fund 0 fuse 0 ttl 1 ti 16 ammo 7 bar 8 want 22 floor 16 bind 0 nbind 0 nnear 0
+FUND523 242 ammo 7 bank 0 floor 16 need 20 spare 0 sust 0 flip 3 of 149
+MAG522 242 ph 5 on 0 near 0 fund 0 fuse 0 ttl 1 ti 16 ammo 7 bar 8 want 22 floor 16 bind 0 nbind 0 nnear 0
+FUND523 243 ammo 7 bank 0 floor 16 need 20 spare 0 sust 0 flip 3 of 150
+MAG522 243 ph 5 on 0 near 0 fund 0 fuse 0 ttl 1 ti 16 ammo 7 bar 8 want 22 floor 16 bind 0 nbind 0 nnear 0
+FUND523 244 ammo 7 bank 10 floor 16 need 20 spare 0 sust 0 flip 3 of 151
+MAG522 244 ph 5 on 0 near 0 fund 0 fuse 0 ttl 1 ti 26 ammo 7 bar 8 want 22 floor 16 bind 0 nbind 0 nnear 0
+FUND523 245 ammo 7 bank 0 floor 16 need 20 spare 0 sust 0 flip 3 of 152
+MAG522 245 ph 5 on 0 near 0 fund 0 fuse 0 ttl 1 ti 16 ammo 7 bar 8 want 22 floor 16 bind 0 nbind 0 nnear 0
+FUND523 246 ammo 7 bank 0 floor 16 need 20 spare 0 sust 0 flip 3 of 153
+MAG522 246 ph 5 on 0 near 0 fund 0 fuse 0 ttl 1 ti 16 ammo 7 bar 8 want 22 floor 16 bind 0 nbind 0 nnear 0
+FUND523 247 ammo 7 bank 0 floor 16 need 20 spare 0 sust 0 flip 3 of 154
+MAG522 247 ph 5 on 0 near 0 fund 0 fuse 0 ttl 1 ti 16 ammo 7 bar 8 want 22 floor 16 bind 0 nbind 0 nnear 0
+FUND523 248 ammo 7 bank 10 floor 16 need 20 spare 0 sust 0 flip 3 of 155
+MAG522 248 ph 5 on 0 near 0 fund 0 fuse 0 ttl 1 ti 26 ammo 7 bar 8 want 22 floor 16 bind 0 nbind 0 nnear 0
+FUND523 249 ammo 7 bank 0 floor 16 need 20 spare 0 sust 0 flip 3 of 156
+MAG522 249 ph 5 on 0 near 0 fund 0 fuse 0 ttl 1 ti 16 ammo 7 bar 8 want 22 floor 16 bind 0 nbind 0 nnear 0
+FUND523 250 ammo 7 bank 0 floor 16 need 20 spare 0 sust 0 flip 3 of 157
+MAG522 250 ph 5 on 0 near 0 fund 0 fuse 0 ttl 1 ti 16 ammo 7 bar 8 want 22 floor 16 bind 0 nbind 0 nnear 0
+FUND523 251 ammo 7 bank 0 floor 16 need 20 spare 0 sust 0 flip 3 of 158
+MAG522 251 ph 5 on 0 near 0 fund 0 fuse 0 ttl 1 ti 16 ammo 7 bar 8 want 22 floor 16 bind 0 nbind 0 nnear 0
+FUND523 252 ammo 7 bank 10 floor 16 need 20 spare 0 sust 0 flip 3 of 159
+MAG522 252 ph 5 on 0 near 0 fund 0 fuse 0 ttl 1 ti 26 ammo 7 bar 8 want 22 floor 16 bind 0 nbind 0 nnear 0
+FUND523 253 ammo 7 bank 0 floor 16 need 20 spare 0 sust 0 flip 3 of 160
+MAG522 253 ph 5 on 0 near 0 fund 0 fuse 0 ttl 1 ti 16 ammo 7 bar 8 want 22 floor 16 bind 0 nbind 0 nnear 0
+FUND523 254 ammo 7 bank 0 floor 16 need 20 spare 0 sust 0 flip 3 of 161
+MAG522 254 ph 5 on 0 near 0 fund 0 fuse 0 ttl 1 ti 16 ammo 7 bar 8 want 22 floor 16 bind 0 nbind 0 nnear 0
+FUND523 255 ammo 7 bank 0 floor 16 need 20 spare 0 sust 0 flip 3 of 162
+MAG522 255 ph 5 on 0 near 0 fund 0 fuse 0 ttl 1 ti 16 ammo 7 bar 8 want 22 floor 16 bind 0 nbind 0 nnear 0
+FUND523 256 ammo 7 bank 10 floor 16 need 20 spare 0 sust 0 flip 3 of 163
+MAG522 256 ph 5 on 0 near 0 fund 0 fuse 0 ttl 1 ti 26 ammo 7 bar 8 want 22 floor 16 bind 0 nbind 0 nnear 0
+FUND523 257 ammo 7 bank 0 floor 16 need 20 spare 0 sust 0 flip 3 of 164
+MAG522 257 ph 5 on 0 near 0 fund 0 fuse 0 ttl 1 ti 16 ammo 7 bar 8 want 22 floor 16 bind 0 nbind 0 nnear 0
+FUND523 258 ammo 7 bank 0 floor 16 need 20 spare 0 sust 0 flip 3 of 165
+MAG522 258 ph 5 on 0 near 0 fund 0 fuse 0 ttl 1 ti 16 ammo 7 bar 8 want 22 floor 16 bind 0 nbind 0 nnear 0
+FUND523 259 ammo 7 bank 0 floor 16 need 20 spare 0 sust 0 flip 3 of 166
+MAG522 259 ph 5 on 0 near 0 fund 0 fuse 0 ttl 1 ti 16 ammo 7 bar 8 want 22 floor 16 bind 0 nbind 0 nnear 0
+FUND523 260 ammo 7 bank 10 floor 16 need 20 spare 0 sust 0 flip 3 of 167
+MAG522 260 ph 5 on 0 near 0 fund 0 fuse 0 ttl 1 ti 26 ammo 7 bar 8 want 22 floor 16 bind 0 nbind 0 nnear 0
+FUND523 261 ammo 7 bank 0 floor 16 need 20 spare 0 sust 0 flip 3 of 168
+MAG522 261 ph 5 on 0 near 0 fund 0 fuse 0 ttl 1 ti 16 ammo 7 bar 8 want 22 floor 16 bind 0 nbind 0 nnear 0
+FUND523 262 ammo 7 bank 0 floor 16 need 20 spare 0 sust 0 flip 3 of 169
+MAG522 262 ph 5 on 0 near 0 fund 0 fuse 0 ttl 1 ti 16 ammo 7 bar 8 want 22 floor 16 bind 0 nbind 0 nnear 0
+FUND523 263 ammo 7 bank 0 floor 16 need 20 spare 0 sust 0 flip 3 of 170
+MAG522 263 ph 5 on 0 near 0 fund 0 fuse 0 ttl 1 ti 16 ammo 7 bar 8 want 22 floor 16 bind 0 nbind 0 nnear 0
+FUND523 264 ammo 7 bank 10 floor 16 need 20 spare 0 sust 0 flip 3 of 171
+MAG522 264 ph 5 on 0 near 0 fund 0 fuse 0 ttl 1 ti 26 ammo 7 bar 8 want 22 floor 16 bind 0 nbind 0 nnear 0
+FUND523 265 ammo 7 bank 0 floor 16 need 20 spare 0 sust 0 flip 3 of 172
+MAG522 265 ph 5 on 0 near 0 fund 0 fuse 0 ttl 1 ti 16 ammo 7 bar 8 want 22 floor 16 bind 0 nbind 0 nnear 0
+FUND523 266 ammo 7 bank 0 floor 16 need 20 spare 0 sust 0 flip 3 of 173
+MAG522 266 ph 5 on 0 near 0 fund 0 fuse 0 ttl 1 ti 16 ammo 7 bar 8 want 22 floor 16 bind 0 nbind 0 nnear 0
+FUND523 267 ammo 7 bank 0 floor 16 need 20 spare 0 sust 0 flip 3 of 174
+MAG522 267 ph 5 on 0 near 0 fund 0 fuse 0 ttl 1 ti 16 ammo 7 bar 8 want 22 floor 16 bind 0 nbind 0 nnear 0
+FUND523 268 ammo 7 bank 10 floor 16 need 20 spare 0 sust 0 flip 3 of 175
+MAG522 268 ph 5 on 0 near 0 fund 0 fuse 0 ttl 1 ti 26 ammo 7 bar 8 want 22 floor 16 bind 0 nbind 0 nnear 0
+FUND523 269 ammo 17 bank 0 floor 16 need 20 spare 1 sust 0 flip 4 of 176
+MAG522 269 ph 5 on 0 near 0 fund 1 fuse 0 ttl 1 ti 16 ammo 17 bar 8 want 22 floor 16 bind 0 nbind 0 nnear 0
+FUND523 270 ammo 17 bank 0 floor 16 need 20 spare 1 sust 0 flip 5 of 177
+MAG522 270 ph 5 on 0 near 0 fund 1 fuse 0 ttl 1 ti 16 ammo 17 bar 8 want 22 floor 16 bind 0 nbind 0 nnear 0
+FUND523 271 ammo 17 bank 0 floor 16 need 20 spare 1 sust 0 flip 6 of 178
+MAG522 271 ph 5 on 0 near 0 fund 1 fuse 0 ttl 1 ti 16 ammo 17 bar 8 want 22 floor 16 bind 0 nbind 0 nnear 0
+FUND523 272 ammo 17 bank 10 floor 16 need 20 spare 1 sust 1 flip 6 of 179
+MAG522 272 ph 5 on 0 near 0 fund 1 fuse 1 ttl 1 ti 26 ammo 17 bar 8 want 22 floor 16 bind 0 nbind 0 nnear 0
+FUND523 273 ammo 17 bank 10 floor 16 need 20 spare 1 sust 1 flip 6 of 180
+MAG522 273 ph 5 on 0 near 0 fund 1 fuse 1 ttl 1 ti 26 ammo 17 bar 8 want 22 floor 16 bind 0 nbind 0 nnear 0
+FUND523 274 ammo 17 bank 10 floor 16 need 20 spare 1 sust 1 flip 6 of 181
+MAG522 274 ph 5 on 0 near 0 fund 1 fuse 1 ttl 1 ti 26 ammo 17 bar 8 want 22 floor 16 bind 0 nbind 0 nnear 0
+FUND523 275 ammo 17 bank 10 floor 16 need 20 spare 1 sust 1 flip 6 of 182
+MAG522 275 ph 5 on 0 near 0 fund 1 fuse 1 ttl 1 ti 26 ammo 17 bar 8 want 22 floor 16 bind 0 nbind 0 nnear 0
+FUND523 276 ammo 17 bank 20 floor 16 need 20 spare 1 sust 1 flip 6 of 183
+MAG522 276 ph 5 on 0 near 0 fund 1 fuse 1 ttl 1 ti 36 ammo 17 bar 8 want 22 floor 16 bind 0 nbind 0 nnear 0
+FUND523 277 ammo 17 bank 20 floor 16 need 20 spare 1 sust 1 flip 6 of 184
+MAG522 277 ph 5 on 0 near 0 fund 1 fuse 1 ttl 1 ti 36 ammo 17 bar 8 want 22 floor 16 bind 0 nbind 0 nnear 0
+FUND523 278 ammo 17 bank 20 floor 16 need 20 spare 1 sust 1 flip 6 of 185
+MAG522 278 ph 5 on 0 near 0 fund 1 fuse 1 ttl 1 ti 36 ammo 17 bar 8 want 22 floor 16 bind 0 nbind 0 nnear 0
+FUND523 279 ammo 17 bank 20 floor 16 need 20 spare 1 sust 1 flip 6 of 186
+MAG522 279 ph 5 on 0 near 0 fund 1 fuse 1 ttl 1 ti 36 ammo 17 bar 8 want 22 floor 16 bind 0 nbind 0 nnear 0
+FUND523 280 ammo 17 bank 30 floor 16 need 20 spare 1 sust 1 flip 6 of 187
+MAG522 280 ph 5 on 0 near 0 fund 1 fuse 1 ttl 1 ti 46 ammo 17 bar 8 want 22 floor 16 bind 0 nbind 0 nnear 0
+FUND523 281 ammo 17 bank 30 floor 16 need 20 spare 1 sust 1 flip 6 of 188
+MAG522 281 ph 5 on 0 near 0 fund 1 fuse 1 ttl 1 ti 46 ammo 17 bar 8 want 22 floor 16 bind 0 nbind 0 nnear 0
+FUND523 282 ammo 17 bank 30 floor 16 need 20 spare 1 sust 1 flip 6 of 189
+MAG522 282 ph 5 on 0 near 0 fund 1 fuse 1 ttl 1 ti 46 ammo 17 bar 8 want 22 floor 16 bind 0 nbind 0 nnear 0
+FUND523 283 ammo 17 bank 30 floor 16 need 20 spare 1 sust 1 flip 6 of 190
+MAG522 283 ph 5 on 0 near 0 fund 1 fuse 1 ttl 1 ti 46 ammo 17 bar 8 want 22 floor 16 bind 0 nbind 0 nnear 0
+FUND523 284 ammo 17 bank 40 floor 16 need 20 spare 1 sust 1 flip 6 of 191
+MAG522 284 ph 5 on 0 near 0 fund 1 fuse 1 ttl 1 ti 56 ammo 17 bar 8 want 22 floor 16 bind 0 nbind 0 nnear 0
+FUND523 285 ammo 17 bank 0 floor 16 need 20 spare 1 sust 0 flip 7 of 192
+MAG522 285 ph 5 on 0 near 0 fund 1 fuse 0 ttl 1 ti 3 ammo 17 bar 8 want 22 floor 16 bind 0 nbind 0 nnear 0
+FUND523 286 ammo 17 bank 0 floor 16 need 20 spare 1 sust 0 flip 8 of 193
+MAG522 286 ph 5 on 0 near 0 fund 1 fuse 0 ttl 1 ti 3 ammo 17 bar 8 want 22 floor 16 bind 0 nbind 0 nnear 0
+FUND523 287 ammo 17 bank 0 floor 16 need 20 spare 1 sust 0 flip 9 of 194
+MAG522 287 ph 5 on 0 near 0 fund 1 fuse 0 ttl 1 ti 3 ammo 17 bar 8 want 22 floor 16 bind 0 nbind 0 nnear 0
+FUND523 288 ammo 17 bank 0 floor 16 need 20 spare 1 sust 0 flip 10 of 195
+MAG522 288 ph 5 on 0 near 0 fund 1 fuse 0 ttl 1 ti 13 ammo 17 bar 8 want 22 floor 16 bind 0 nbind 0 nnear 0
+FUND523 289 ammo 17 bank 0 floor 16 need 20 spare 1 sust 0 flip 11 of 196
+MAG522 289 ph 5 on 0 near 0 fund 1 fuse 0 ttl 1 ti 5 ammo 17 bar 8 want 22 floor 16 bind 0 nbind 0 nnear 0
+FUND523 290 ammo 17 bank 0 floor 16 need 20 spare 1 sust 0 flip 12 of 197
+MAG522 290 ph 5 on 0 near 0 fund 1 fuse 0 ttl 1 ti 5 ammo 17 bar 8 want 22 floor 16 bind 0 nbind 0 nnear 0
+FUND523 291 ammo 17 bank 0 floor 16 need 20 spare 1 sust 0 flip 13 of 198
+MAG522 291 ph 5 on 0 near 0 fund 1 fuse 0 ttl 1 ti 5 ammo 17 bar 8 want 22 floor 16 bind 0 nbind 0 nnear 0
+FUND523 292 ammo 17 bank 0 floor 16 need 20 spare 1 sust 0 flip 14 of 199
+MAG522 292 ph 5 on 0 near 0 fund 1 fuse 0 ttl 1 ti 15 ammo 17 bar 8 want 22 floor 16 bind 0 nbind 0 nnear 0
+FUND523 293 ammo 7 bank 0 floor 16 need 20 spare 0 sust 0 flip 14 of 200
+MAG522 293 ph 5 on 0 near 0 fund 0 fuse 0 ttl 1 ti 7 ammo 7 bar 8 want 22 floor 16 bind 0 nbind 0 nnear 0
+FUND523 294 ammo 7 bank 0 floor 16 need 20 spare 0 sust 0 flip 14 of 201
+MAG522 294 ph 5 on 0 near 0 fund 0 fuse 0 ttl 1 ti 7 ammo 7 bar 8 want 22 floor 16 bind 0 nbind 0 nnear 0
+FUND523 295 ammo 7 bank 0 floor 16 need 20 spare 0 sust 0 flip 14 of 202
+MAG522 295 ph 5 on 0 near 0 fund 0 fuse 0 ttl 1 ti 7 ammo 7 bar 8 want 22 floor 16 bind 0 nbind 0 nnear 0
+FUND523 296 ammo 7 bank 1 floor 16 need 20 spare 0 sust 0 flip 14 of 203
+MAG522 296 ph 5 on 0 near 0 fund 0 fuse 0 ttl 1 ti 17 ammo 7 bar 8 want 22 floor 16 bind 0 nbind 0 nnear 0
+FUND523 297 ammo 7 bank 0 floor 16 need 20 spare 0 sust 0 flip 14 of 204
+MAG522 297 ph 5 on 0 near 0 fund 0 fuse 0 ttl 1 ti 9 ammo 7 bar 8 want 22 floor 16 bind 0 nbind 0 nnear 0
+FUND523 298 ammo 7 bank 0 floor 16 need 20 spare 0 sust 0 flip 14 of 205
+MAG522 298 ph 5 on 0 near 0 fund 0 fuse 0 ttl 1 ti 9 ammo 7 bar 8 want 22 floor 16 bind 0 nbind 0 nnear 0
+FUND523 299 ammo 7 bank 0 floor 16 need 20 spare 0 sust 0 flip 14 of 206
+MAG522 299 ph 5 on 0 near 0 fund 0 fuse 0 ttl 1 ti 1 ammo 7 bar 8 want 22 floor 16 bind 0 nbind 0 nnear 0
+FUND523 300 ammo 7 bank 0 floor 16 need 20 spare 0 sust 0 flip 14 of 207
+MAG522 300 ph 5 on 0 near 0 fund 0 fuse 0 ttl 1 ti 11 ammo 7 bar 8 want 22 floor 16 bind 0 nbind 0 nnear 0
+FUND523 301 ammo 7 bank 0 floor 16 need 20 spare 0 sust 0 flip 14 of 208
+MAG522 301 ph 5 on 0 near 0 fund 0 fuse 0 ttl 1 ti 3 ammo 7 bar 8 want 22 floor 16 bind 0 nbind 0 nnear 0
+FUND523 302 ammo 7 bank 0 floor 16 need 20 spare 0 sust 0 flip 14 of 209
+MAG522 302 ph 5 on 0 near 0 fund 0 fuse 0 ttl 1 ti 3 ammo 7 bar 8 want 22 floor 16 bind 0 nbind 0 nnear 0
+FUND523 303 ammo 7 bank 0 floor 16 need 20 spare 0 sust 0 flip 14 of 210
+MAG522 303 ph 5 on 0 near 0 fund 0 fuse 0 ttl 1 ti 3 ammo 7 bar 8 want 22 floor 16 bind 0 nbind 0 nnear 0
+FUND523 304 ammo 7 bank 0 floor 16 need 20 spare 0 sust 0 flip 14 of 211
+MAG522 304 ph 5 on 0 near 0 fund 0 fuse 0 ttl 1 ti 13 ammo 7 bar 8 want 22 floor 16 bind 0 nbind 0 nnear 0
+FUND523 305 ammo 7 bank 0 floor 16 need 20 spare 0 sust 0 flip 14 of 212
+MAG522 305 ph 5 on 0 near 0 fund 0 fuse 0 ttl 1 ti 5 ammo 7 bar 8 want 22 floor 16 bind 0 nbind 0 nnear 0
+FUND523 306 ammo 7 bank 0 floor 16 need 20 spare 0 sust 0 flip 14 of 213
+MAG522 306 ph 5 on 0 near 0 fund 0 fuse 0 ttl 1 ti 5 ammo 7 bar 8 want 22 floor 16 bind 0 nbind 0 nnear 0
+FUND523 307 ammo 7 bank 0 floor 16 need 20 spare 0 sust 0 flip 14 of 214
+MAG522 307 ph 5 on 0 near 0 fund 0 fuse 0 ttl 1 ti 5 ammo 7 bar 8 want 22 floor 16 bind 0 nbind 0 nnear 0
+FUND523 308 ammo 7 bank 0 floor 16 need 20 spare 0 sust 0 flip 14 of 215
+MAG522 308 ph 5 on 0 near 0 fund 0 fuse 0 ttl 1 ti 15 ammo 7 bar 8 want 22 floor 16 bind 0 nbind 0 nnear 0
+FUND523 309 ammo 7 bank 0 floor 16 need 20 spare 0 sust 0 flip 14 of 216
+MAG522 309 ph 5 on 0 near 0 fund 0 fuse 0 ttl 1 ti 7 ammo 7 bar 8 want 22 floor 16 bind 0 nbind 0 nnear 0
+FUND523 310 ammo 7 bank 0 floor 16 need 20 spare 0 sust 0 flip 14 of 217
+MAG522 310 ph 5 on 0 near 0 fund 0 fuse 0 ttl 1 ti 7 ammo 7 bar 8 want 22 floor 16 bind 0 nbind 0 nnear 0
+FUND523 311 ammo 7 bank 0 floor 16 need 20 spare 0 sust 0 flip 14 of 218
+MAG522 311 ph 5 on 0 near 0 fund 0 fuse 0 ttl 1 ti 7 ammo 7 bar 8 want 22 floor 16 bind 0 nbind 0 nnear 0
+FUND523 312 ammo 7 bank 1 floor 16 need 20 spare 0 sust 0 flip 14 of 219
+MAG522 312 ph 5 on 0 near 0 fund 0 fuse 0 ttl 1 ti 17 ammo 7 bar 8 want 22 floor 16 bind 0 nbind 0 nnear 0
+FUND523 313 ammo 7 bank 0 floor 16 need 20 spare 0 sust 0 flip 14 of 220
+MAG522 313 ph 5 on 0 near 0 fund 0 fuse 0 ttl 1 ti 9 ammo 7 bar 8 want 22 floor 16 bind 0 nbind 0 nnear 0
+FUND523 314 ammo 7 bank 0 floor 16 need 20 spare 0 sust 0 flip 14 of 221
+MAG522 314 ph 5 on 0 near 0 fund 0 fuse 0 ttl 1 ti 9 ammo 7 bar 8 want 22 floor 16 bind 0 nbind 0 nnear 0
+FUND523 315 ammo 7 bank 0 floor 16 need 20 spare 0 sust 0 flip 14 of 222
+MAG522 315 ph 5 on 0 near 0 fund 0 fuse 0 ttl 1 ti 1 ammo 7 bar 8 want 22 floor 16 bind 0 nbind 0 nnear 0
+FUND523 316 ammo 7 bank 0 floor 16 need 20 spare 0 sust 0 flip 14 of 223
+MAG522 316 ph 5 on 0 near 0 fund 0 fuse 0 ttl 1 ti 11 ammo 7 bar 8 want 22 floor 16 bind 0 nbind 0 nnear 0
+FUND523 317 ammo 7 bank 0 floor 16 need 20 spare 0 sust 0 flip 14 of 224
+MAG522 317 ph 5 on 0 near 0 fund 0 fuse 0 ttl 1 ti 3 ammo 7 bar 8 want 22 floor 16 bind 0 nbind 0 nnear 0
+FUND523 318 ammo 7 bank 0 floor 16 need 20 spare 0 sust 0 flip 14 of 225
+MAG522 318 ph 5 on 0 near 0 fund 0 fuse 0 ttl 1 ti 3 ammo 7 bar 8 want 22 floor 16 bind 0 nbind 0 nnear 0
+FUND523 319 ammo 7 bank 0 floor 16 need 20 spare 0 sust 0 flip 14 of 226
+MAG522 319 ph 5 on 0 near 0 fund 0 fuse 0 ttl 1 ti 3 ammo 7 bar 8 want 22 floor 16 bind 0 nbind 0 nnear 0
+FUND523 320 ammo 7 bank 0 floor 16 need 20 spare 0 sust 0 flip 14 of 227
+MAG522 320 ph 5 on 0 near 0 fund 0 fuse 0 ttl 1 ti 13 ammo 7 bar 8 want 22 floor 16 bind 0 nbind 0 nnear 0
+FUND523 321 ammo 7 bank 0 floor 16 need 20 spare 0 sust 0 flip 14 of 228
+MAG522 321 ph 5 on 0 near 0 fund 0 fuse 0 ttl 1 ti 5 ammo 7 bar 8 want 22 floor 16 bind 0 nbind 0 nnear 0
+FUND523 322 ammo 7 bank 0 floor 16 need 20 spare 0 sust 0 flip 14 of 229
+MAG522 322 ph 5 on 0 near 0 fund 0 fuse 0 ttl 1 ti 5 ammo 7 bar 8 want 22 floor 16 bind 0 nbind 0 nnear 0
+FUND523 323 ammo 7 bank 0 floor 16 need 20 spare 0 sust 0 flip 14 of 230
+MAG522 323 ph 5 on 0 near 0 fund 0 fuse 0 ttl 1 ti 5 ammo 7 bar 8 want 22 floor 16 bind 0 nbind 0 nnear 0
+FUND523 324 ammo 7 bank 0 floor 16 need 20 spare 0 sust 0 flip 14 of 231
+MAG522 324 ph 5 on 0 near 0 fund 0 fuse 0 ttl 1 ti 15 ammo 7 bar 8 want 22 floor 16 bind 0 nbind 0 nnear 0
+FUND523 325 ammo 7 bank 0 floor 16 need 20 spare 0 sust 0 flip 14 of 232
+MAG522 325 ph 5 on 0 near 0 fund 0 fuse 0 ttl 1 ti 7 ammo 7 bar 8 want 22 floor 16 bind 0 nbind 0 nnear 0
+FUND523 326 ammo 7 bank 0 floor 16 need 20 spare 0 sust 0 flip 14 of 233
+MAG522 326 ph 5 on 0 near 0 fund 0 fuse 0 ttl 1 ti 7 ammo 7 bar 8 want 22 floor 16 bind 0 nbind 0 nnear 0
+FUND523 327 ammo 7 bank 0 floor 16 need 20 spare 0 sust 0 flip 14 of 234
+MAG522 327 ph 5 on 0 near 0 fund 0 fuse 0 ttl 1 ti 7 ammo 7 bar 8 want 22 floor 16 bind 0 nbind 0 nnear 0
+FUND523 328 ammo 7 bank 1 floor 16 need 20 spare 0 sust 0 flip 14 of 235
+MAG522 328 ph 5 on 0 near 0 fund 0 fuse 0 ttl 1 ti 17 ammo 7 bar 8 want 22 floor 16 bind 0 nbind 0 nnear 0
+FUND523 329 ammo 8 bank 0 floor 16 need 20 spare 0 sust 0 flip 14 of 236
+MAG522 329 ph 5 on 0 near 0 fund 0 fuse 0 ttl 1 ti 8 ammo 8 bar 8 want 22 floor 16 bind 0 nbind 0 nnear 0
+FUND523 330 ammo 8 bank 0 floor 16 need 20 spare 0 sust 0 flip 14 of 237
+MAG522 330 ph 5 on 0 near 0 fund 0 fuse 0 ttl 1 ti 8 ammo 8 bar 8 want 22 floor 16 bind 0 nbind 0 nnear 0
+FUND523 331 ammo 8 bank 0 floor 16 need 20 spare 0 sust 0 flip 14 of 238
+MAG522 331 ph 5 on 0 near 0 fund 0 fuse 0 ttl 1 ti 0 ammo 8 bar 8 want 22 floor 16 bind 0 nbind 0 nnear 0
+FUND523 332 ammo 8 bank 0 floor 16 need 20 spare 0 sust 0 flip 14 of 239
+MAG522 332 ph 5 on 0 near 0 fund 0 fuse 0 ttl 1 ti 10 ammo 8 bar 8 want 22 floor 16 bind 0 nbind 0 nnear 0
+FUND523 333 ammo 8 bank 0 floor 16 need 20 spare 0 sust 0 flip 14 of 240
+MAG522 333 ph 5 on 0 near 0 fund 0 fuse 0 ttl 1 ti 2 ammo 8 bar 8 want 22 floor 16 bind 0 nbind 0 nnear 0
+FUND523 334 ammo 8 bank 0 floor 16 need 20 spare 0 sust 0 flip 14 of 241
+MAG522 334 ph 5 on 0 near 0 fund 0 fuse 0 ttl 1 ti 2 ammo 8 bar 8 want 22 floor 16 bind 0 nbind 0 nnear 0
+FUND523 335 ammo 8 bank 0 floor 16 need 20 spare 0 sust 0 flip 14 of 242
+MAG522 335 ph 5 on 0 near 0 fund 0 fuse 0 ttl 1 ti 2 ammo 8 bar 8 want 22 floor 16 bind 0 nbind 0 nnear 0
+FUND523 336 ammo 8 bank 0 floor 16 need 20 spare 0 sust 0 flip 14 of 243
+MAG522 336 ph 5 on 0 near 0 fund 0 fuse 0 ttl 1 ti 12 ammo 8 bar 8 want 22 floor 16 bind 0 nbind 0 nnear 0
+FUND523 337 ammo 8 bank 0 floor 16 need 20 spare 0 sust 0 flip 14 of 244
+MAG522 337 ph 5 on 0 near 0 fund 0 fuse 0 ttl 1 ti 12 ammo 8 bar 8 want 22 floor 16 bind 0 nbind 0 nnear 0
+FUND523 338 ammo 8 bank 0 floor 16 need 20 spare 0 sust 0 flip 14 of 245
+MAG522 338 ph 5 on 0 near 0 fund 0 fuse 0 ttl 1 ti 12 ammo 8 bar 8 want 22 floor 16 bind 0 nbind 0 nnear 0
+FUND523 339 ammo 8 bank 0 floor 16 need 20 spare 0 sust 0 flip 14 of 246
+MAG522 339 ph 5 on 0 near 0 fund 0 fuse 0 ttl 1 ti 12 ammo 8 bar 8 want 22 floor 16 bind 0 nbind 0 nnear 0
+FUND523 340 ammo 8 bank 6 floor 16 need 20 spare 0 sust 0 flip 14 of 247
+MAG522 340 ph 5 on 0 near 0 fund 0 fuse 0 ttl 1 ti 22 ammo 8 bar 8 want 22 floor 16 bind 0 nbind 0 nnear 0
+FUND523 341 ammo 4 bank 0 floor 16 need 20 spare 0 sust 0 flip 14 of 248
+MAG522 341 ph 5 on 0 near 0 fund 0 fuse 0 ttl 1 ti 16 ammo 4 bar 8 want 22 floor 16 bind 0 nbind 0 nnear 0
+FUND523 342 ammo 4 bank 0 floor 16 need 20 spare 0 sust 0 flip 14 of 249
+MAG522 342 ph 5 on 0 near 0 fund 0 fuse 0 ttl 1 ti 16 ammo 4 bar 8 want 22 floor 16 bind 0 nbind 0 nnear 0
+FUND523 343 ammo 4 bank 0 floor 16 need 20 spare 0 sust 0 flip 14 of 250
+MAG522 343 ph 5 on 0 near 0 fund 0 fuse 0 ttl 1 ti 16 ammo 4 bar 8 want 22 floor 16 bind 0 nbind 0 nnear 0
+FUND523 344 ammo 4 bank 10 floor 16 need 20 spare 0 sust 0 flip 14 of 251
+MAG522 344 ph 5 on 0 near 0 fund 0 fuse 0 ttl 1 ti 26 ammo 4 bar 8 want 22 floor 16 bind 0 nbind 0 nnear 0
+FUND523 345 ammo 4 bank 0 floor 16 need 20 spare 0 sust 0 flip 14 of 252
+MAG522 345 ph 5 on 0 near 0 fund 0 fuse 0 ttl 1 ti 16 ammo 4 bar 8 want 22 floor 16 bind 0 nbind 0 nnear 0
+FUND523 346 ammo 4 bank 0 floor 16 need 20 spare 0 sust 0 flip 14 of 253
+MAG522 346 ph 5 on 0 near 0 fund 0 fuse 0 ttl 1 ti 16 ammo 4 bar 8 want 22 floor 16 bind 0 nbind 0 nnear 0
+FUND523 347 ammo 4 bank 0 floor 16 need 20 spare 0 sust 0 flip 14 of 254
+MAG522 347 ph 5 on 0 near 0 fund 0 fuse 0 ttl 1 ti 16 ammo 4 bar 8 want 22 floor 16 bind 0 nbind 0 nnear 0
+FUND523 348 ammo 4 bank 2 floor 16 need 20 spare 0 sust 0 flip 14 of 255
+MAG522 348 ph 5 on 0 near 0 fund 0 fuse 0 ttl 1 ti 18 ammo 4 bar 8 want 22 floor 16 bind 0 nbind 0 nnear 0
+FUND523 349 ammo 6 bank 0 floor 16 need 20 spare 0 sust 0 flip 14 of 256
+MAG522 349 ph 5 on 0 near 0 fund 0 fuse 0 ttl 1 ti 16 ammo 6 bar 8 want 22 floor 16 bind 0 nbind 0 nnear 0
+FUND523 350 ammo 6 bank 0 floor 16 need 20 spare 0 sust 0 flip 14 of 257
+MAG522 350 ph 5 on 0 near 0 fund 0 fuse 0 ttl 1 ti 16 ammo 6 bar 8 want 22 floor 16 bind 0 nbind 0 nnear 0
+FUND523 351 ammo 6 bank 0 floor 16 need 20 spare 0 sust 0 flip 14 of 258
+MAG522 351 ph 5 on 0 near 0 fund 0 fuse 0 ttl 1 ti 8 ammo 6 bar 8 want 22 floor 16 bind 0 nbind 0 nnear 0
+FUND523 352 ammo 6 bank 0 floor 16 need 20 spare 0 sust 0 flip 14 of 259
+MAG522 352 ph 5 on 0 near 0 fund 0 fuse 0 ttl 1 ti 10 ammo 6 bar 8 want 22 floor 16 bind 0 nbind 0 nnear 0
+FUND523 353 ammo 6 bank 0 floor 16 need 20 spare 0 sust 0 flip 14 of 260
+MAG522 353 ph 5 on 0 near 0 fund 0 fuse 0 ttl 1 ti 10 ammo 6 bar 8 want 22 floor 16 bind 0 nbind 0 nnear 0
+FUND523 354 ammo 6 bank 0 floor 16 need 20 spare 0 sust 0 flip 14 of 261
+MAG522 354 ph 5 on 0 near 0 fund 0 fuse 0 ttl 1 ti 10 ammo 6 bar 8 want 22 floor 16 bind 0 nbind 0 nnear 0
+FUND523 355 ammo 6 bank 0 floor 16 need 20 spare 0 sust 0 flip 14 of 262
+MAG522 355 ph 5 on 0 near 0 fund 0 fuse 0 ttl 1 ti 2 ammo 6 bar 8 want 22 floor 16 bind 0 nbind 0 nnear 0
+FUND523 356 ammo 6 bank 0 floor 16 need 20 spare 0 sust 0 flip 14 of 263
+MAG522 356 ph 5 on 0 near 0 fund 0 fuse 0 ttl 1 ti 12 ammo 6 bar 8 want 22 floor 16 bind 0 nbind 0 nnear 0
+FUND523 357 ammo 6 bank 0 floor 16 need 20 spare 0 sust 0 flip 14 of 264
+MAG522 357 ph 5 on 0 near 0 fund 0 fuse 0 ttl 1 ti 12 ammo 6 bar 8 want 22 floor 16 bind 0 nbind 0 nnear 0
+FUND523 358 ammo 6 bank 0 floor 16 need 20 spare 0 sust 0 flip 14 of 265
+MAG522 358 ph 5 on 0 near 0 fund 0 fuse 0 ttl 1 ti 4 ammo 6 bar 8 want 22 floor 16 bind 0 nbind 0 nnear 0
+FUND523 359 ammo 6 bank 0 floor 16 need 20 spare 0 sust 0 flip 14 of 266
+MAG522 359 ph 5 on 0 near 0 fund 0 fuse 0 ttl 1 ti 4 ammo 6 bar 8 want 22 floor 16 bind 0 nbind 0 nnear 0
+FUND523 360 ammo 6 bank 0 floor 16 need 20 spare 0 sust 0 flip 14 of 267
+MAG522 360 ph 5 on 0 near 0 fund 0 fuse 0 ttl 1 ti 14 ammo 6 bar 8 want 22 floor 16 bind 0 nbind 0 nnear 0
+FUND523 361 ammo 6 bank 0 floor 16 need 20 spare 0 sust 0 flip 14 of 268
+MAG522 361 ph 5 on 0 near 0 fund 0 fuse 0 ttl 1 ti 6 ammo 6 bar 8 want 22 floor 16 bind 0 nbind 0 nnear 0
+FUND523 362 ammo 6 bank 0 floor 16 need 20 spare 0 sust 0 flip 14 of 269
+MAG522 362 ph 5 on 0 near 0 fund 0 fuse 0 ttl 1 ti 6 ammo 6 bar 8 want 22 floor 16 bind 0 nbind 0 nnear 0
+FUND523 363 ammo 6 bank 0 floor 16 need 20 spare 0 sust 0 flip 14 of 270
+MAG522 363 ph 5 on 0 near 0 fund 0 fuse 0 ttl 1 ti 6 ammo 6 bar 8 want 22 floor 16 bind 0 nbind 0 nnear 0
+FUND523 364 ammo 6 bank 0 floor 16 need 20 spare 0 sust 0 flip 14 of 271
+MAG522 364 ph 5 on 0 near 0 fund 0 fuse 0 ttl 1 ti 16 ammo 6 bar 8 want 22 floor 16 bind 0 nbind 0 nnear 0
+FUND523 365 ammo 6 bank 0 floor 16 need 20 spare 0 sust 0 flip 14 of 272
+MAG522 365 ph 5 on 0 near 0 fund 0 fuse 0 ttl 1 ti 16 ammo 6 bar 8 want 22 floor 16 bind 0 nbind 0 nnear 0
+FUND523 366 ammo 6 bank 0 floor 16 need 20 spare 0 sust 0 flip 14 of 273
+MAG522 366 ph 5 on 0 near 0 fund 0 fuse 0 ttl 1 ti 8 ammo 6 bar 8 want 22 floor 16 bind 0 nbind 0 nnear 0
+FUND523 367 ammo 6 bank 2 floor 16 need 20 spare 0 sust 0 flip 14 of 274
+MAG522 367 ph 5 on 0 near 0 fund 0 fuse 0 ttl 1 ti 18 ammo 6 bar 8 want 22 floor 16 bind 0 nbind 0 nnear 0
+FUND523 368 ammo 8 bank 10 floor 16 need 20 spare 0 sust 0 flip 14 of 275
+MAG522 368 ph 5 on 0 near 0 fund 0 fuse 0 ttl 1 ti 26 ammo 8 bar 8 want 22 floor 16 bind 0 nbind 0 nnear 0
+FUND523 369 ammo 8 bank 0 floor 16 need 20 spare 0 sust 0 flip 14 of 276
+MAG522 369 ph 5 on 0 near 0 fund 0 fuse 0 ttl 1 ti 8 ammo 8 bar 8 want 22 floor 16 bind 0 nbind 0 nnear 0
+FUND523 370 ammo 8 bank 2 floor 16 need 20 spare 0 sust 0 flip 14 of 277
+MAG522 370 ph 5 on 0 near 0 fund 0 fuse 0 ttl 1 ti 18 ammo 8 bar 8 want 22 floor 16 bind 0 nbind 0 nnear 0
+FUND523 371 ammo 8 bank 2 floor 16 need 20 spare 0 sust 0 flip 14 of 278
+MAG522 371 ph 5 on 0 near 0 fund 0 fuse 0 ttl 1 ti 18 ammo 8 bar 8 want 22 floor 16 bind 0 nbind 0 nnear 0
+FUND523 372 ammo 8 bank 4 floor 16 need 20 spare 0 sust 0 flip 14 of 279
+MAG522 372 ph 5 on 0 near 0 fund 0 fuse 0 ttl 1 ti 20 ammo 8 bar 8 want 22 floor 16 bind 0 nbind 0 nnear 0
+FUND523 373 ammo 8 bank 4 floor 16 need 20 spare 0 sust 0 flip 14 of 280
+MAG522 373 ph 5 on 0 near 0 fund 0 fuse 0 ttl 1 ti 20 ammo 8 bar 8 want 22 floor 16 bind 0 nbind 0 nnear 0
+FUND523 374 ammo 8 bank 4 floor 16 need 20 spare 0 sust 0 flip 14 of 281
+MAG522 374 ph 5 on 0 near 0 fund 0 fuse 0 ttl 1 ti 20 ammo 8 bar 8 want 22 floor 16 bind 0 nbind 0 nnear 0
+FUND523 375 ammo 8 bank 13 floor 16 need 20 spare 0 sust 1 flip 15 of 282
+MAG522 375 ph 5 on 0 near 0 fund 0 fuse 1 ttl 1 ti 29 ammo 8 bar 8 want 22 floor 16 bind 0 nbind 0 nnear 0
+FUND523 376 ammo 8 bank 22 floor 16 need 20 spare 0 sust 1 flip 16 of 283
+MAG522 376 ph 5 on 0 near 0 fund 0 fuse 1 ttl 1 ti 38 ammo 8 bar 8 want 22 floor 16 bind 0 nbind 0 nnear 0
+FUND523 377 ammo 8 bank 21 floor 16 need 20 spare 0 sust 1 flip 17 of 284
+MAG522 377 ph 5 on 0 near 0 fund 0 fuse 1 ttl 1 ti 37 ammo 8 bar 8 want 22 floor 16 bind 0 nbind 0 nnear 0
+FUND523 378 ammo 8 bank 30 floor 16 need 20 spare 0 sust 1 flip 18 of 285
+MAG522 378 ph 5 on 0 near 0 fund 0 fuse 1 ttl 1 ti 46 ammo 8 bar 8 want 22 floor 16 bind 0 nbind 0 nnear 0
+FUND523 379 ammo 8 bank 29 floor 16 need 20 spare 0 sust 1 flip 19 of 286
+MAG522 379 ph 5 on 0 near 0 fund 0 fuse 1 ttl 1 ti 45 ammo 8 bar 8 want 22 floor 16 bind 0 nbind 0 nnear 0
+FUND523 380 ammo 8 bank 38 floor 16 need 20 spare 0 sust 1 flip 20 of 287
+MAG522 380 ph 5 on 0 near 0 fund 0 fuse 1 ttl 1 ti 54 ammo 8 bar 8 want 22 floor 16 bind 0 nbind 0 nnear 0
+FUND523 381 ammo 8 bank 37 floor 16 need 20 spare 0 sust 1 flip 21 of 288
+MAG522 381 ph 5 on 0 near 0 fund 0 fuse 1 ttl 1 ti 53 ammo 8 bar 8 want 22 floor 16 bind 0 nbind 0 nnear 0
+FUND523 382 ammo 8 bank 46 floor 16 need 20 spare 0 sust 1 flip 22 of 289
+MAG522 382 ph 5 on 0 near 0 fund 0 fuse 1 ttl 1 ti 62 ammo 8 bar 8 want 22 floor 16 bind 0 nbind 0 nnear 0
+FUND523 383 ammo 8 bank 0 floor 16 need 20 spare 0 sust 0 flip 22 of 290
+MAG522 383 ph 5 on 0 near 0 fund 0 fuse 0 ttl 1 ti 5 ammo 8 bar 8 want 22 floor 16 bind 0 nbind 0 nnear 0
+FUND523 384 ammo 8 bank 0 floor 16 need 20 spare 0 sust 0 flip 22 of 291
+MAG522 384 ph 5 on 0 near 0 fund 0 fuse 0 ttl 1 ti 15 ammo 8 bar 8 want 22 floor 16 bind 0 nbind 0 nnear 0
+FUND523 385 ammo 8 bank 0 floor 16 need 20 spare 0 sust 0 flip 22 of 292
+MAG522 385 ph 5 on 0 near 0 fund 0 fuse 0 ttl 1 ti 15 ammo 8 bar 8 want 22 floor 16 bind 0 nbind 0 nnear 0
+FUND523 386 ammo 8 bank 9 floor 16 need 20 spare 0 sust 0 flip 22 of 293
+MAG522 386 ph 5 on 0 near 0 fund 0 fuse 0 ttl 1 ti 25 ammo 8 bar 8 want 22 floor 16 bind 0 nbind 0 nnear 0
+FUND523 387 ammo 8 bank 9 floor 16 need 20 spare 0 sust 0 flip 22 of 294
+MAG522 387 ph 5 on 0 near 0 fund 0 fuse 0 ttl 1 ti 25 ammo 8 bar 8 want 22 floor 16 bind 0 nbind 0 nnear 0
+FUND523 388 ammo 8 bank 19 floor 16 need 20 spare 0 sust 1 flip 23 of 295
+MAG522 388 ph 5 on 0 near 0 fund 0 fuse 1 ttl 1 ti 35 ammo 8 bar 8 want 22 floor 16 bind 0 nbind 0 nnear 0
+FUND523 389 ammo 8 bank 19 floor 16 need 20 spare 0 sust 1 flip 24 of 296
+MAG522 389 ph 5 on 0 near 0 fund 0 fuse 1 ttl 1 ti 35 ammo 8 bar 8 want 22 floor 16 bind 0 nbind 0 nnear 0
+FUND523 390 ammo 8 bank 29 floor 16 need 20 spare 0 sust 1 flip 25 of 297
+MAG522 390 ph 5 on 0 near 0 fund 0 fuse 1 ttl 1 ti 45 ammo 8 bar 8 want 22 floor 16 bind 0 nbind 0 nnear 0
+FUND523 391 ammo 8 bank 29 floor 16 need 20 spare 0 sust 1 flip 26 of 298
+MAG522 391 ph 5 on 0 near 0 fund 0 fuse 1 ttl 1 ti 45 ammo 8 bar 8 want 22 floor 16 bind 0 nbind 0 nnear 0
+FUND523 392 ammo 8 bank 38 floor 16 need 20 spare 0 sust 1 flip 27 of 299
+MAG522 392 ph 5 on 0 near 0 fund 0 fuse 1 ttl 1 ti 54 ammo 8 bar 8 want 22 floor 16 bind 0 nbind 0 nnear 0
+FUND523 393 ammo 8 bank 47 floor 16 need 20 spare 0 sust 1 flip 28 of 300
+MAG522 393 ph 5 on 0 near 0 fund 0 fuse 1 ttl 1 ti 63 ammo 8 bar 8 want 22 floor 16 bind 0 nbind 0 nnear 0
+FUND523 394 ammo 8 bank 47 floor 16 need 20 spare 0 sust 1 flip 29 of 301
+MAG522 394 ph 5 on 0 near 0 fund 0 fuse 1 ttl 1 ti 63 ammo 8 bar 8 want 22 floor 16 bind 0 nbind 0 nnear 0
+FUND523 395 ammo 8 bank 39 floor 16 need 20 spare 0 sust 1 flip 30 of 302
+MAG522 395 ph 5 on 0 near 0 fund 0 fuse 1 ttl 1 ti 55 ammo 8 bar 8 want 22 floor 16 bind 0 nbind 0 nnear 0
+FUND523 396 ammo 8 bank 49 floor 16 need 20 spare 0 sust 1 flip 31 of 303
+MAG522 396 ph 5 on 0 near 0 fund 0 fuse 1 ttl 1 ti 65 ammo 8 bar 8 want 22 floor 16 bind 0 nbind 0 nnear 0
+FUND523 397 ammo 8 bank 0 floor 16 need 20 spare 0 sust 0 flip 31 of 304
+MAG522 397 ph 5 on 0 near 0 fund 0 fuse 0 ttl 1 ti 7 ammo 8 bar 8 want 22 floor 16 bind 0 nbind 0 nnear 0
+FUND523 398 ammo 8 bank 0 floor 16 need 20 spare 0 sust 0 flip 31 of 305
+MAG522 398 ph 5 on 0 near 0 fund 0 fuse 0 ttl 1 ti 7 ammo 8 bar 8 want 22 floor 16 bind 0 nbind 0 nnear 0
+FUND523 399 ammo 8 bank 0 floor 16 need 20 spare 0 sust 0 flip 31 of 306
+MAG522 399 ph 5 on 0 near 0 fund 0 fuse 0 ttl 1 ti 7 ammo 8 bar 8 want 22 floor 16 bind 0 nbind 0 nnear 0
+FUND523 400 ammo 8 bank 1 floor 16 need 20 spare 0 sust 0 flip 31 of 307
+MAG522 400 ph 5 on 0 near 0 fund 0 fuse 0 ttl 1 ti 17 ammo 8 bar 8 want 22 floor 16 bind 0 nbind 0 nnear 0
+FUND523 401 ammo 8 bank 1 floor 16 need 20 spare 0 sust 0 flip 31 of 308
+MAG522 401 ph 5 on 0 near 0 fund 0 fuse 0 ttl 1 ti 17 ammo 8 bar 8 want 22 floor 16 bind 0 nbind 0 nnear 0
+FUND523 402 ammo 8 bank 1 floor 16 need 20 spare 0 sust 0 flip 31 of 309
+MAG522 402 ph 5 on 0 near 0 fund 0 fuse 0 ttl 1 ti 17 ammo 8 bar 8 want 22 floor 16 bind 0 nbind 0 nnear 0
+FUND523 403 ammo 8 bank 0 floor 18 need 20 spare 0 sust 0 flip 31 of 310
+MAG522 403 ph 5 on 0 near 0 fund 0 fuse 0 ttl 1 ti 9 ammo 8 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+FUND523 404 ammo 8 bank 1 floor 18 need 20 spare 0 sust 0 flip 31 of 311
+MAG522 404 ph 5 on 0 near 0 fund 0 fuse 0 ttl 1 ti 19 ammo 8 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+FUND523 405 ammo 8 bank 1 floor 18 need 20 spare 0 sust 0 flip 31 of 312
+MAG522 405 ph 5 on 0 near 0 fund 0 fuse 0 ttl 1 ti 19 ammo 8 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+FUND523 406 ammo 8 bank 1 floor 18 need 20 spare 0 sust 0 flip 31 of 313
+MAG522 406 ph 5 on 0 near 0 fund 0 fuse 0 ttl 1 ti 19 ammo 8 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+FUND523 407 ammo 8 bank 0 floor 18 need 20 spare 0 sust 0 flip 31 of 314
+MAG522 407 ph 5 on 0 near 0 fund 0 fuse 0 ttl 1 ti 10 ammo 8 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+FUND523 408 ammo 8 bank 0 floor 18 need 20 spare 0 sust 0 flip 31 of 315
+MAG522 408 ph 5 on 0 near 0 fund 0 fuse 0 ttl 1 ti 11 ammo 8 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+FUND523 409 ammo 8 bank 0 floor 18 need 20 spare 0 sust 0 flip 31 of 316
+MAG522 409 ph 5 on 0 near 0 fund 0 fuse 0 ttl 1 ti 2 ammo 8 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+FUND523 410 ammo 8 bank 0 floor 18 need 20 spare 0 sust 0 flip 31 of 317
+MAG522 410 ph 5 on 0 near 0 fund 0 fuse 0 ttl 1 ti 2 ammo 8 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+FUND523 411 ammo 8 bank 0 floor 18 need 20 spare 0 sust 0 flip 31 of 318
+MAG522 411 ph 5 on 0 near 0 fund 0 fuse 0 ttl 1 ti 2 ammo 8 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+FUND523 412 ammo 8 bank 4 floor 18 need 20 spare 0 sust 0 flip 31 of 319
+MAG522 412 ph 5 on 0 near 0 fund 0 fuse 0 ttl 1 ti 22 ammo 8 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+FUND523 413 ammo 8 bank 5 floor 18 need 20 spare 0 sust 0 flip 31 of 320
+MAG522 413 ph 5 on 0 near 0 fund 0 fuse 0 ttl 1 ti 23 ammo 8 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+FUND523 414 ammo 8 bank 15 floor 18 need 20 spare 0 sust 1 flip 32 of 321
+MAG522 414 ph 5 on 0 near 0 fund 0 fuse 1 ttl 1 ti 33 ammo 8 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+FUND523 415 ammo 8 bank 6 floor 18 need 20 spare 0 sust 0 flip 32 of 322
+MAG522 415 ph 5 on 0 near 0 fund 0 fuse 0 ttl 1 ti 24 ammo 8 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+FUND523 416 ammo 8 bank 16 floor 18 need 20 spare 0 sust 1 flip 33 of 323
+MAG522 416 ph 5 on 0 near 0 fund 0 fuse 1 ttl 1 ti 34 ammo 8 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+FUND523 417 ammo 8 bank 7 floor 18 need 20 spare 0 sust 0 flip 33 of 324
+MAG522 417 ph 5 on 0 near 0 fund 0 fuse 0 ttl 1 ti 25 ammo 8 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+FUND523 418 ammo 8 bank 7 floor 18 need 20 spare 0 sust 0 flip 33 of 325
+MAG522 418 ph 5 on 0 near 0 fund 0 fuse 0 ttl 1 ti 25 ammo 8 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+FUND523 419 ammo 8 bank 0 floor 18 need 20 spare 0 sust 0 flip 33 of 326
+MAG522 419 ph 5 on 0 near 0 fund 0 fuse 0 ttl 1 ti 16 ammo 8 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+FUND523 420 ammo 8 bank 8 floor 18 need 20 spare 0 sust 0 flip 33 of 327
+MAG522 420 ph 5 on 0 near 0 fund 0 fuse 0 ttl 1 ti 26 ammo 8 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+FUND523 421 ammo 8 bank 0 floor 18 need 20 spare 0 sust 0 flip 33 of 328
+MAG522 421 ph 5 on 0 near 0 fund 0 fuse 0 ttl 1 ti 17 ammo 8 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+FUND523 422 ammo 8 bank 0 floor 18 need 20 spare 0 sust 0 flip 33 of 329
+MAG522 422 ph 5 on 0 near 0 fund 0 fuse 0 ttl 1 ti 17 ammo 8 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+FUND523 423 ammo 8 bank 0 floor 18 need 20 spare 0 sust 0 flip 33 of 330
+MAG522 423 ph 5 on 0 near 0 fund 0 fuse 0 ttl 1 ti 8 ammo 8 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+FUND523 424 ammo 8 bank 0 floor 18 need 20 spare 0 sust 0 flip 33 of 331
+MAG522 424 ph 5 on 0 near 0 fund 0 fuse 0 ttl 1 ti 18 ammo 8 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+FUND523 425 ammo 8 bank 0 floor 18 need 20 spare 0 sust 0 flip 33 of 332
+MAG522 425 ph 5 on 0 near 0 fund 0 fuse 0 ttl 1 ti 9 ammo 8 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+FUND523 426 ammo 8 bank 0 floor 18 need 20 spare 0 sust 0 flip 33 of 333
+MAG522 426 ph 5 on 0 near 0 fund 0 fuse 0 ttl 1 ti 9 ammo 8 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+FUND523 427 ammo 8 bank 0 floor 18 need 20 spare 0 sust 0 flip 33 of 334
+MAG522 427 ph 5 on 0 near 0 fund 0 fuse 0 ttl 1 ti 0 ammo 8 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+FUND523 428 ammo 8 bank 0 floor 18 need 20 spare 0 sust 0 flip 33 of 335
+MAG522 428 ph 5 on 0 near 0 fund 0 fuse 0 ttl 1 ti 10 ammo 8 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+FUND523 429 ammo 8 bank 0 floor 18 need 20 spare 0 sust 0 flip 33 of 336
+MAG522 429 ph 5 on 0 near 0 fund 0 fuse 0 ttl 1 ti 1 ammo 8 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+FUND523 430 ammo 8 bank 0 floor 18 need 20 spare 0 sust 0 flip 33 of 337
+MAG522 430 ph 5 on 0 near 0 fund 0 fuse 0 ttl 1 ti 1 ammo 8 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+FUND523 431 ammo 8 bank 0 floor 18 need 20 spare 0 sust 0 flip 33 of 338
+MAG522 431 ph 5 on 0 near 0 fund 0 fuse 0 ttl 1 ti 1 ammo 8 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+FUND523 432 ammo 8 bank 0 floor 18 need 20 spare 0 sust 0 flip 33 of 339
+MAG522 432 ph 5 on 0 near 0 fund 0 fuse 0 ttl 1 ti 11 ammo 8 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+FUND523 433 ammo 8 bank 0 floor 18 need 20 spare 0 sust 0 flip 33 of 340
+MAG522 433 ph 5 on 0 near 0 fund 0 fuse 0 ttl 1 ti 2 ammo 8 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+FUND523 434 ammo 8 bank 0 floor 18 need 20 spare 0 sust 0 flip 33 of 341
+MAG522 434 ph 5 on 0 near 0 fund 0 fuse 0 ttl 1 ti 2 ammo 8 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+FUND523 435 ammo 8 bank 0 floor 18 need 20 spare 0 sust 0 flip 33 of 342
+MAG522 435 ph 5 on 0 near 0 fund 0 fuse 0 ttl 1 ti 2 ammo 8 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+FUND523 436 ammo 8 bank 0 floor 18 need 20 spare 0 sust 0 flip 33 of 343
+MAG522 436 ph 5 on 0 near 0 fund 0 fuse 0 ttl 1 ti 12 ammo 8 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+FUND523 437 ammo 8 bank 0 floor 18 need 20 spare 0 sust 0 flip 33 of 344
+MAG522 437 ph 5 on 0 near 0 fund 0 fuse 0 ttl 1 ti 3 ammo 8 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+FUND523 438 ammo 8 bank 0 floor 18 need 20 spare 0 sust 0 flip 33 of 345
+MAG522 438 ph 5 on 0 near 0 fund 0 fuse 0 ttl 1 ti 3 ammo 8 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+FUND523 439 ammo 8 bank 0 floor 18 need 20 spare 0 sust 0 flip 33 of 346
+MAG522 439 ph 5 on 0 near 0 fund 0 fuse 0 ttl 1 ti 3 ammo 8 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+FUND523 440 ammo 8 bank 0 floor 18 need 20 spare 0 sust 0 flip 33 of 347
+MAG522 440 ph 5 on 0 near 0 fund 0 fuse 0 ttl 1 ti 13 ammo 8 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+FUND523 441 ammo 8 bank 0 floor 18 need 20 spare 0 sust 0 flip 33 of 348
+MAG522 441 ph 5 on 0 near 0 fund 0 fuse 0 ttl 1 ti 4 ammo 8 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+FUND523 442 ammo 8 bank 0 floor 18 need 20 spare 0 sust 0 flip 33 of 349
+MAG522 442 ph 5 on 0 near 0 fund 0 fuse 0 ttl 1 ti 4 ammo 8 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+FUND523 443 ammo 8 bank 0 floor 18 need 20 spare 0 sust 0 flip 33 of 350
+MAG522 443 ph 5 on 0 near 0 fund 0 fuse 0 ttl 1 ti 4 ammo 8 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+FUND523 444 ammo 8 bank 0 floor 18 need 20 spare 0 sust 0 flip 33 of 351
+MAG522 444 ph 5 on 0 near 0 fund 0 fuse 0 ttl 1 ti 14 ammo 8 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+FUND523 445 ammo 8 bank 0 floor 18 need 20 spare 0 sust 0 flip 33 of 352
+MAG522 445 ph 5 on 0 near 0 fund 0 fuse 0 ttl 1 ti 14 ammo 8 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+FUND523 446 ammo 8 bank 0 floor 18 need 20 spare 0 sust 0 flip 33 of 353
+MAG522 446 ph 5 on 0 near 0 fund 0 fuse 0 ttl 1 ti 14 ammo 8 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+FUND523 447 ammo 8 bank 0 floor 18 need 20 spare 0 sust 0 flip 33 of 354
+MAG522 447 ph 5 on 0 near 0 fund 0 fuse 0 ttl 1 ti 14 ammo 8 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+FUND523 448 ammo 8 bank 6 floor 18 need 20 spare 0 sust 0 flip 33 of 355
+MAG522 448 ph 5 on 0 near 0 fund 0 fuse 0 ttl 1 ti 24 ammo 8 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+FUND523 449 ammo 4 bank 0 floor 18 need 20 spare 0 sust 0 flip 33 of 356
+MAG522 449 ph 5 on 0 near 0 fund 0 fuse 0 ttl 1 ti 18 ammo 4 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+FUND523 450 ammo 4 bank 0 floor 18 need 20 spare 0 sust 0 flip 33 of 357
+MAG522 450 ph 5 on 0 near 0 fund 0 fuse 0 ttl 1 ti 18 ammo 4 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+FUND523 451 ammo 4 bank 0 floor 18 need 20 spare 0 sust 0 flip 33 of 358
+MAG522 451 ph 5 on 0 near 0 fund 0 fuse 0 ttl 1 ti 18 ammo 4 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+FUND523 452 ammo 4 bank 10 floor 18 need 20 spare 0 sust 0 flip 33 of 359
+MAG522 452 ph 5 on 0 near 0 fund 0 fuse 0 ttl 1 ti 28 ammo 4 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+FUND523 453 ammo 4 bank 0 floor 18 need 20 spare 0 sust 0 flip 33 of 360
+MAG522 453 ph 5 on 0 near 0 fund 0 fuse 0 ttl 1 ti 18 ammo 4 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+FUND523 454 ammo 4 bank 0 floor 18 need 20 spare 0 sust 0 flip 33 of 361
+MAG522 454 ph 5 on 0 near 0 fund 0 fuse 0 ttl 1 ti 18 ammo 4 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+FUND523 455 ammo 4 bank 0 floor 18 need 20 spare 0 sust 0 flip 33 of 362
+MAG522 455 ph 5 on 0 near 0 fund 0 fuse 0 ttl 1 ti 18 ammo 4 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+FUND523 456 ammo 4 bank 10 floor 18 need 20 spare 0 sust 0 flip 33 of 363
+MAG522 456 ph 5 on 0 near 0 fund 0 fuse 0 ttl 1 ti 28 ammo 4 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+FUND523 457 ammo 4 bank 0 floor 18 need 20 spare 0 sust 0 flip 33 of 364
+MAG522 457 ph 5 on 0 near 0 fund 0 fuse 0 ttl 1 ti 18 ammo 4 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+FUND523 458 ammo 4 bank 0 floor 18 need 20 spare 0 sust 0 flip 33 of 365
+MAG522 458 ph 5 on 0 near 0 fund 0 fuse 0 ttl 1 ti 18 ammo 4 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+FUND523 459 ammo 4 bank 0 floor 18 need 20 spare 0 sust 0 flip 33 of 366
+MAG522 459 ph 5 on 0 near 0 fund 0 fuse 0 ttl 1 ti 18 ammo 4 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+FUND523 460 ammo 4 bank 10 floor 18 need 20 spare 0 sust 0 flip 33 of 367
+MAG522 460 ph 5 on 0 near 0 fund 0 fuse 0 ttl 1 ti 28 ammo 4 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+FUND523 461 ammo 4 bank 0 floor 18 need 20 spare 0 sust 0 flip 33 of 368
+MAG522 461 ph 5 on 0 near 0 fund 0 fuse 0 ttl 1 ti 18 ammo 4 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+FUND523 462 ammo 4 bank 0 floor 18 need 20 spare 0 sust 0 flip 33 of 369
+MAG522 462 ph 5 on 0 near 0 fund 0 fuse 0 ttl 1 ti 18 ammo 4 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+FUND523 463 ammo 4 bank 0 floor 18 need 20 spare 0 sust 0 flip 33 of 370
+MAG522 463 ph 5 on 0 near 0 fund 0 fuse 0 ttl 1 ti 18 ammo 4 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+FUND523 464 ammo 4 bank 10 floor 18 need 20 spare 0 sust 0 flip 33 of 371
+MAG522 464 ph 5 on 0 near 0 fund 0 fuse 0 ttl 1 ti 28 ammo 4 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+FUND523 465 ammo 4 bank 0 floor 18 need 20 spare 0 sust 0 flip 33 of 372
+MAG522 465 ph 5 on 0 near 0 fund 0 fuse 0 ttl 1 ti 18 ammo 4 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+FUND523 466 ammo 4 bank 0 floor 18 need 20 spare 0 sust 0 flip 33 of 373
+MAG522 466 ph 5 on 0 near 0 fund 0 fuse 0 ttl 1 ti 18 ammo 4 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+FUND523 467 ammo 4 bank 0 floor 18 need 20 spare 0 sust 0 flip 33 of 374
+MAG522 467 ph 5 on 0 near 0 fund 0 fuse 0 ttl 1 ti 18 ammo 4 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+FUND523 468 ammo 4 bank 10 floor 18 need 20 spare 0 sust 0 flip 33 of 375
+MAG522 468 ph 5 on 0 near 0 fund 0 fuse 0 ttl 1 ti 28 ammo 4 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+FUND523 469 ammo 4 bank 0 floor 18 need 20 spare 0 sust 0 flip 33 of 376
+MAG522 469 ph 5 on 0 near 0 fund 0 fuse 0 ttl 1 ti 18 ammo 4 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+FUND523 470 ammo 4 bank 0 floor 18 need 20 spare 0 sust 0 flip 33 of 377
+MAG522 470 ph 5 on 0 near 0 fund 0 fuse 0 ttl 1 ti 18 ammo 4 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+FUND523 471 ammo 4 bank 0 floor 18 need 20 spare 0 sust 0 flip 33 of 378
+MAG522 471 ph 5 on 0 near 0 fund 0 fuse 0 ttl 1 ti 18 ammo 4 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+FUND523 472 ammo 4 bank 10 floor 18 need 20 spare 0 sust 0 flip 33 of 379
+MAG522 472 ph 5 on 0 near 0 fund 0 fuse 0 ttl 1 ti 28 ammo 4 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+FUND523 473 ammo 4 bank 0 floor 18 need 20 spare 0 sust 0 flip 33 of 380
+MAG522 473 ph 5 on 0 near 0 fund 0 fuse 0 ttl 1 ti 18 ammo 4 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+FUND523 474 ammo 4 bank 0 floor 18 need 20 spare 0 sust 0 flip 33 of 381
+MAG522 474 ph 5 on 0 near 0 fund 0 fuse 0 ttl 1 ti 18 ammo 4 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+FUND523 475 ammo 4 bank 0 floor 18 need 20 spare 0 sust 0 flip 33 of 382
+MAG522 475 ph 5 on 0 near 0 fund 0 fuse 0 ttl 1 ti 18 ammo 4 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+FUND523 476 ammo 4 bank 10 floor 18 need 20 spare 0 sust 0 flip 33 of 383
+MAG522 476 ph 5 on 0 near 0 fund 0 fuse 0 ttl 1 ti 28 ammo 4 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+FUND523 477 ammo 4 bank 0 floor 18 need 20 spare 0 sust 0 flip 33 of 384
+MAG522 477 ph 5 on 0 near 0 fund 0 fuse 0 ttl 1 ti 18 ammo 4 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+FUND523 478 ammo 4 bank 0 floor 18 need 20 spare 0 sust 0 flip 33 of 385
+MAG522 478 ph 5 on 0 near 0 fund 0 fuse 0 ttl 1 ti 18 ammo 4 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+FUND523 479 ammo 4 bank 0 floor 18 need 20 spare 0 sust 0 flip 33 of 386
+MAG522 479 ph 5 on 0 near 0 fund 0 fuse 0 ttl 1 ti 18 ammo 4 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+FUND523 480 ammo 4 bank 10 floor 18 need 20 spare 0 sust 0 flip 33 of 387
+MAG522 480 ph 5 on 0 near 0 fund 0 fuse 0 ttl 1 ti 28 ammo 4 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+FUND523 481 ammo 4 bank 0 floor 18 need 20 spare 0 sust 0 flip 33 of 388
+MAG522 481 ph 5 on 0 near 0 fund 0 fuse 0 ttl 1 ti 18 ammo 4 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+FUND523 482 ammo 4 bank 0 floor 18 need 20 spare 0 sust 0 flip 33 of 389
+MAG522 482 ph 5 on 0 near 0 fund 0 fuse 0 ttl 1 ti 18 ammo 4 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+FUND523 483 ammo 4 bank 0 floor 18 need 20 spare 0 sust 0 flip 33 of 390
+MAG522 483 ph 5 on 0 near 0 fund 0 fuse 0 ttl 1 ti 18 ammo 4 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+FUND523 484 ammo 4 bank 10 floor 18 need 20 spare 0 sust 0 flip 33 of 391
+MAG522 484 ph 5 on 0 near 0 fund 0 fuse 0 ttl 1 ti 28 ammo 4 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+FUND523 485 ammo 4 bank 0 floor 18 need 20 spare 0 sust 0 flip 33 of 392
+MAG522 485 ph 5 on 0 near 0 fund 0 fuse 0 ttl 1 ti 18 ammo 4 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+FUND523 486 ammo 4 bank 0 floor 18 need 20 spare 0 sust 0 flip 33 of 393
+MAG522 486 ph 5 on 0 near 0 fund 0 fuse 0 ttl 1 ti 18 ammo 4 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+FUND523 487 ammo 4 bank 0 floor 18 need 20 spare 0 sust 0 flip 33 of 394
+MAG522 487 ph 5 on 0 near 0 fund 0 fuse 0 ttl 1 ti 18 ammo 4 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+FUND523 488 ammo 4 bank 10 floor 18 need 20 spare 0 sust 0 flip 33 of 395
+MAG522 488 ph 5 on 0 near 0 fund 0 fuse 0 ttl 1 ti 28 ammo 4 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+FUND523 489 ammo 4 bank 0 floor 18 need 20 spare 0 sust 0 flip 33 of 396
+MAG522 489 ph 5 on 0 near 0 fund 0 fuse 0 ttl 1 ti 18 ammo 4 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+FUND523 490 ammo 4 bank 0 floor 18 need 20 spare 0 sust 0 flip 33 of 397
+MAG522 490 ph 5 on 0 near 0 fund 0 fuse 0 ttl 1 ti 18 ammo 4 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+FUND523 491 ammo 4 bank 0 floor 18 need 20 spare 0 sust 0 flip 33 of 398
+MAG522 491 ph 5 on 0 near 0 fund 0 fuse 0 ttl 1 ti 18 ammo 4 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+FUND523 492 ammo 4 bank 10 floor 18 need 20 spare 0 sust 0 flip 33 of 399
+MAG522 492 ph 5 on 0 near 0 fund 0 fuse 0 ttl 1 ti 28 ammo 4 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+FUND523 493 ammo 4 bank 0 floor 18 need 20 spare 0 sust 0 flip 33 of 400
+MAG522 493 ph 5 on 0 near 0 fund 0 fuse 0 ttl 1 ti 18 ammo 4 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+FUND523 494 ammo 4 bank 0 floor 18 need 20 spare 0 sust 0 flip 33 of 401
+MAG522 494 ph 5 on 0 near 0 fund 0 fuse 0 ttl 1 ti 18 ammo 4 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+FUND523 495 ammo 4 bank 0 floor 18 need 20 spare 0 sust 0 flip 33 of 402
+MAG522 495 ph 5 on 0 near 0 fund 0 fuse 0 ttl 1 ti 18 ammo 4 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+FUND523 496 ammo 4 bank 10 floor 18 need 20 spare 0 sust 0 flip 33 of 403
+MAG522 496 ph 5 on 0 near 0 fund 0 fuse 0 ttl 1 ti 28 ammo 4 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+FUND523 497 ammo 4 bank 0 floor 18 need 20 spare 0 sust 0 flip 33 of 404
+MAG522 497 ph 5 on 0 near 0 fund 0 fuse 0 ttl 1 ti 18 ammo 4 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+FUND523 498 ammo 4 bank 0 floor 18 need 20 spare 0 sust 0 flip 33 of 405
+MAG522 498 ph 5 on 0 near 0 fund 0 fuse 0 ttl 1 ti 18 ammo 4 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+FUND523 499 ammo 4 bank 0 floor 18 need 20 spare 0 sust 0 flip 33 of 406
+MAG522 499 ph 5 on 0 near 0 fund 0 fuse 0 ttl 1 ti 18 ammo 4 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+FUND523 500 ammo 4 bank 10 floor 18 need 20 spare 0 sust 0 flip 33 of 407
+MAG522 500 ph 5 on 0 near 0 fund 0 fuse 0 ttl 1 ti 28 ammo 4 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+FUND523 501 ammo 4 bank 0 floor 18 need 20 spare 0 sust 0 flip 33 of 408
+MAG522 501 ph 5 on 0 near 0 fund 0 fuse 0 ttl 1 ti 18 ammo 4 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+FUND523 502 ammo 4 bank 0 floor 18 need 20 spare 0 sust 0 flip 33 of 409
+MAG522 502 ph 5 on 0 near 0 fund 0 fuse 0 ttl 1 ti 18 ammo 4 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+FUND523 503 ammo 4 bank 0 floor 18 need 20 spare 0 sust 0 flip 33 of 410
+MAG522 503 ph 5 on 0 near 0 fund 0 fuse 0 ttl 1 ti 18 ammo 4 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+FUND523 504 ammo 4 bank 10 floor 18 need 20 spare 0 sust 0 flip 33 of 411
+MAG522 504 ph 5 on 0 near 0 fund 0 fuse 0 ttl 1 ti 28 ammo 4 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+FUND523 505 ammo 4 bank 0 floor 18 need 20 spare 0 sust 0 flip 33 of 412
+MAG522 505 ph 5 on 0 near 0 fund 0 fuse 0 ttl 1 ti 18 ammo 4 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+FUND523 506 ammo 4 bank 0 floor 18 need 20 spare 0 sust 0 flip 33 of 413
+MAG522 506 ph 5 on 0 near 0 fund 0 fuse 0 ttl 1 ti 18 ammo 4 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+FUND523 507 ammo 4 bank 0 floor 18 need 20 spare 0 sust 0 flip 33 of 414
+MAG522 507 ph 5 on 0 near 0 fund 0 fuse 0 ttl 1 ti 18 ammo 4 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+FUND523 508 ammo 4 bank 10 floor 18 need 20 spare 0 sust 0 flip 33 of 415
+MAG522 508 ph 5 on 0 near 0 fund 0 fuse 0 ttl 1 ti 28 ammo 4 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+FUND523 509 ammo 4 bank 0 floor 18 need 20 spare 0 sust 0 flip 33 of 416
+MAG522 509 ph 5 on 0 near 0 fund 0 fuse 0 ttl 1 ti 18 ammo 4 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+FUND523 510 ammo 4 bank 0 floor 18 need 20 spare 0 sust 0 flip 33 of 417
+MAG522 510 ph 5 on 0 near 0 fund 0 fuse 0 ttl 1 ti 18 ammo 4 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+FUND523 511 ammo 4 bank 0 floor 18 need 20 spare 0 sust 0 flip 33 of 418
+MAG522 511 ph 5 on 0 near 0 fund 0 fuse 0 ttl 1 ti 18 ammo 4 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+FUND523 512 ammo 4 bank 10 floor 18 need 20 spare 0 sust 0 flip 33 of 419
+MAG522 512 ph 5 on 0 near 0 fund 0 fuse 0 ttl 1 ti 28 ammo 4 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+FUND523 513 ammo 4 bank 0 floor 18 need 20 spare 0 sust 0 flip 33 of 420
+MAG522 513 ph 5 on 0 near 0 fund 0 fuse 0 ttl 1 ti 18 ammo 4 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+FUND523 514 ammo 4 bank 0 floor 18 need 20 spare 0 sust 0 flip 33 of 421
+MAG522 514 ph 5 on 0 near 0 fund 0 fuse 0 ttl 1 ti 18 ammo 4 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+FUND523 515 ammo 4 bank 0 floor 18 need 20 spare 0 sust 0 flip 33 of 422
+MAG522 515 ph 5 on 0 near 0 fund 0 fuse 0 ttl 1 ti 18 ammo 4 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+FUND523 516 ammo 4 bank 10 floor 18 need 20 spare 0 sust 0 flip 33 of 423
+MAG522 516 ph 5 on 0 near 0 fund 0 fuse 0 ttl 1 ti 28 ammo 4 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+FUND523 517 ammo 4 bank 0 floor 18 need 20 spare 0 sust 0 flip 33 of 424
+MAG522 517 ph 5 on 0 near 0 fund 0 fuse 0 ttl 1 ti 18 ammo 4 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+FUND523 518 ammo 4 bank 0 floor 18 need 20 spare 0 sust 0 flip 33 of 425
+MAG522 518 ph 5 on 0 near 0 fund 0 fuse 0 ttl 1 ti 18 ammo 4 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+FUND523 519 ammo 4 bank 0 floor 18 need 20 spare 0 sust 0 flip 33 of 426
+MAG522 519 ph 5 on 0 near 0 fund 0 fuse 0 ttl 1 ti 18 ammo 4 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+FUND523 520 ammo 4 bank 10 floor 18 need 20 spare 0 sust 0 flip 33 of 427
+MAG522 520 ph 5 on 0 near 0 fund 0 fuse 0 ttl 1 ti 28 ammo 4 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+FUND523 521 ammo 4 bank 0 floor 18 need 20 spare 0 sust 0 flip 33 of 428
+MAG522 521 ph 5 on 0 near 0 fund 0 fuse 0 ttl 1 ti 18 ammo 4 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+FUND523 522 ammo 4 bank 0 floor 18 need 20 spare 0 sust 0 flip 33 of 429
+MAG522 522 ph 5 on 0 near 0 fund 0 fuse 0 ttl 1 ti 18 ammo 4 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+FUND523 523 ammo 4 bank 0 floor 18 need 20 spare 0 sust 0 flip 33 of 430
+MAG522 523 ph 5 on 0 near 0 fund 0 fuse 0 ttl 1 ti 18 ammo 4 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+FUND523 524 ammo 4 bank 10 floor 18 need 20 spare 0 sust 0 flip 33 of 431
+MAG522 524 ph 5 on 0 near 0 fund 0 fuse 0 ttl 1 ti 28 ammo 4 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+FUND523 525 ammo 4 bank 0 floor 18 need 20 spare 0 sust 0 flip 33 of 432
+MAG522 525 ph 5 on 0 near 0 fund 0 fuse 0 ttl 1 ti 18 ammo 4 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+FUND523 526 ammo 4 bank 0 floor 18 need 20 spare 0 sust 0 flip 33 of 433
+MAG522 526 ph 5 on 0 near 0 fund 0 fuse 0 ttl 1 ti 18 ammo 4 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+FUND523 527 ammo 4 bank 0 floor 18 need 20 spare 0 sust 0 flip 33 of 434
+MAG522 527 ph 5 on 0 near 0 fund 0 fuse 0 ttl 1 ti 18 ammo 4 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+FUND523 528 ammo 4 bank 10 floor 18 need 20 spare 0 sust 0 flip 33 of 435
+MAG522 528 ph 5 on 0 near 0 fund 0 fuse 0 ttl 1 ti 28 ammo 4 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+FUND523 529 ammo 4 bank 0 floor 18 need 20 spare 0 sust 0 flip 33 of 436
+MAG522 529 ph 5 on 0 near 0 fund 0 fuse 0 ttl 1 ti 18 ammo 4 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+FUND523 530 ammo 4 bank 0 floor 18 need 20 spare 0 sust 0 flip 33 of 437
+MAG522 530 ph 5 on 0 near 0 fund 0 fuse 0 ttl 1 ti 18 ammo 4 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+FUND523 531 ammo 4 bank 0 floor 18 need 20 spare 0 sust 0 flip 33 of 438
+MAG522 531 ph 5 on 0 near 0 fund 0 fuse 0 ttl 1 ti 18 ammo 4 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+FUND523 532 ammo 4 bank 10 floor 18 need 20 spare 0 sust 0 flip 33 of 439
+MAG522 532 ph 5 on 0 near 0 fund 0 fuse 0 ttl 1 ti 28 ammo 4 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+FUND523 533 ammo 4 bank 0 floor 18 need 20 spare 0 sust 0 flip 33 of 440
+MAG522 533 ph 5 on 0 near 0 fund 0 fuse 0 ttl 1 ti 18 ammo 4 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+FUND523 534 ammo 4 bank 0 floor 18 need 20 spare 0 sust 0 flip 33 of 441
+MAG522 534 ph 5 on 0 near 0 fund 0 fuse 0 ttl 1 ti 18 ammo 4 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+FUND523 535 ammo 4 bank 0 floor 18 need 20 spare 0 sust 0 flip 33 of 442
+MAG522 535 ph 5 on 0 near 0 fund 0 fuse 0 ttl 1 ti 18 ammo 4 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+FUND523 536 ammo 4 bank 10 floor 18 need 20 spare 0 sust 0 flip 33 of 443
+MAG522 536 ph 5 on 0 near 0 fund 0 fuse 0 ttl 1 ti 28 ammo 4 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+FUND523 537 ammo 4 bank 0 floor 18 need 20 spare 0 sust 0 flip 33 of 444
+MAG522 537 ph 5 on 0 near 0 fund 0 fuse 0 ttl 1 ti 18 ammo 4 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+FUND523 538 ammo 4 bank 0 floor 18 need 20 spare 0 sust 0 flip 33 of 445
+MAG522 538 ph 5 on 0 near 0 fund 0 fuse 0 ttl 1 ti 18 ammo 4 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+FUND523 539 ammo 4 bank 0 floor 18 need 20 spare 0 sust 0 flip 33 of 446
+MAG522 539 ph 5 on 0 near 0 fund 0 fuse 0 ttl 1 ti 18 ammo 4 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+FUND523 540 ammo 4 bank 10 floor 18 need 20 spare 0 sust 0 flip 33 of 447
+MAG522 540 ph 5 on 0 near 0 fund 0 fuse 0 ttl 1 ti 28 ammo 4 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+FUND523 541 ammo 4 bank 0 floor 18 need 20 spare 0 sust 0 flip 33 of 448
+MAG522 541 ph 5 on 0 near 0 fund 0 fuse 0 ttl 1 ti 18 ammo 4 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+FUND523 542 ammo 4 bank 0 floor 18 need 20 spare 0 sust 0 flip 33 of 449
+MAG522 542 ph 5 on 0 near 0 fund 0 fuse 0 ttl 1 ti 18 ammo 4 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+FUND523 543 ammo 4 bank 0 floor 18 need 20 spare 0 sust 0 flip 33 of 450
+MAG522 543 ph 5 on 0 near 0 fund 0 fuse 0 ttl 1 ti 18 ammo 4 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+FUND523 544 ammo 4 bank 10 floor 18 need 20 spare 0 sust 0 flip 33 of 451
+MAG522 544 ph 5 on 0 near 0 fund 0 fuse 0 ttl 1 ti 28 ammo 4 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+FUND523 545 ammo 4 bank 0 floor 18 need 20 spare 0 sust 0 flip 33 of 452
+MAG522 545 ph 5 on 0 near 0 fund 0 fuse 0 ttl 1 ti 18 ammo 4 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+FUND523 546 ammo 4 bank 0 floor 18 need 20 spare 0 sust 0 flip 33 of 453
+MAG522 546 ph 5 on 0 near 0 fund 0 fuse 0 ttl 1 ti 18 ammo 4 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+FUND523 547 ammo 4 bank 0 floor 18 need 20 spare 0 sust 0 flip 33 of 454
+MAG522 547 ph 5 on 0 near 0 fund 0 fuse 0 ttl 1 ti 18 ammo 4 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+FUND523 548 ammo 4 bank 10 floor 18 need 20 spare 0 sust 0 flip 33 of 455
+MAG522 548 ph 5 on 0 near 0 fund 0 fuse 0 ttl 1 ti 28 ammo 4 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+FUND523 549 ammo 4 bank 0 floor 18 need 20 spare 0 sust 0 flip 33 of 456
+MAG522 549 ph 5 on 0 near 0 fund 0 fuse 0 ttl 1 ti 18 ammo 4 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+FUND523 550 ammo 4 bank 0 floor 18 need 20 spare 0 sust 0 flip 33 of 457
+MAG522 550 ph 5 on 0 near 0 fund 0 fuse 0 ttl 1 ti 18 ammo 4 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+FUND523 551 ammo 4 bank 0 floor 18 need 20 spare 0 sust 0 flip 33 of 458
+MAG522 551 ph 5 on 0 near 0 fund 0 fuse 0 ttl 1 ti 18 ammo 4 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+FUND523 552 ammo 4 bank 10 floor 18 need 20 spare 0 sust 0 flip 33 of 459
+MAG522 552 ph 5 on 0 near 0 fund 0 fuse 0 ttl 1 ti 28 ammo 4 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+FUND523 553 ammo 4 bank 0 floor 18 need 20 spare 0 sust 0 flip 33 of 460
+MAG522 553 ph 5 on 0 near 0 fund 0 fuse 0 ttl 1 ti 18 ammo 4 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+FUND523 554 ammo 4 bank 0 floor 18 need 20 spare 0 sust 0 flip 33 of 461
+MAG522 554 ph 5 on 0 near 0 fund 0 fuse 0 ttl 1 ti 18 ammo 4 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+FUND523 555 ammo 4 bank 0 floor 18 need 20 spare 0 sust 0 flip 33 of 462
+MAG522 555 ph 5 on 0 near 0 fund 0 fuse 0 ttl 1 ti 18 ammo 4 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+FUND523 556 ammo 4 bank 10 floor 18 need 20 spare 0 sust 0 flip 33 of 463
+MAG522 556 ph 5 on 0 near 0 fund 0 fuse 0 ttl 1 ti 28 ammo 4 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+FUND523 557 ammo 4 bank 0 floor 18 need 20 spare 0 sust 0 flip 33 of 464
+MAG522 557 ph 5 on 0 near 0 fund 0 fuse 0 ttl 1 ti 18 ammo 4 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+FUND523 558 ammo 4 bank 0 floor 18 need 20 spare 0 sust 0 flip 33 of 465
+MAG522 558 ph 5 on 0 near 0 fund 0 fuse 0 ttl 1 ti 18 ammo 4 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+FUND523 559 ammo 4 bank 0 floor 18 need 20 spare 0 sust 0 flip 33 of 466
+MAG522 559 ph 5 on 0 near 0 fund 0 fuse 0 ttl 1 ti 18 ammo 4 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+FUND523 560 ammo 4 bank 10 floor 18 need 20 spare 0 sust 0 flip 33 of 467
+MAG522 560 ph 5 on 0 near 0 fund 0 fuse 0 ttl 1 ti 28 ammo 4 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+FUND523 561 ammo 4 bank 0 floor 18 need 20 spare 0 sust 0 flip 33 of 468
+MAG522 561 ph 5 on 0 near 0 fund 0 fuse 0 ttl 1 ti 18 ammo 4 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+FUND523 562 ammo 4 bank 0 floor 18 need 20 spare 0 sust 0 flip 33 of 469
+MAG522 562 ph 5 on 0 near 0 fund 0 fuse 0 ttl 1 ti 18 ammo 4 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+FUND523 563 ammo 4 bank 0 floor 18 need 20 spare 0 sust 0 flip 33 of 470
+MAG522 563 ph 5 on 0 near 0 fund 0 fuse 0 ttl 1 ti 18 ammo 4 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+FUND523 564 ammo 4 bank 10 floor 18 need 20 spare 0 sust 0 flip 33 of 471
+MAG522 564 ph 5 on 0 near 0 fund 0 fuse 0 ttl 1 ti 28 ammo 4 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+FUND523 565 ammo 4 bank 0 floor 18 need 20 spare 0 sust 0 flip 33 of 472
+MAG522 565 ph 5 on 0 near 0 fund 0 fuse 0 ttl 1 ti 18 ammo 4 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+FUND523 566 ammo 4 bank 0 floor 18 need 20 spare 0 sust 0 flip 33 of 473
+MAG522 566 ph 5 on 0 near 0 fund 0 fuse 0 ttl 1 ti 18 ammo 4 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+FUND523 567 ammo 4 bank 0 floor 18 need 20 spare 0 sust 0 flip 33 of 474
+MAG522 567 ph 5 on 0 near 0 fund 0 fuse 0 ttl 1 ti 18 ammo 4 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+FUND523 568 ammo 4 bank 10 floor 18 need 20 spare 0 sust 0 flip 33 of 475
+MAG522 568 ph 5 on 0 near 0 fund 0 fuse 0 ttl 1 ti 28 ammo 4 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+FUND523 569 ammo 4 bank 0 floor 18 need 20 spare 0 sust 0 flip 33 of 476
+MAG522 569 ph 5 on 0 near 0 fund 0 fuse 0 ttl 1 ti 18 ammo 4 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+FUND523 570 ammo 4 bank 0 floor 18 need 20 spare 0 sust 0 flip 33 of 477
+MAG522 570 ph 5 on 0 near 0 fund 0 fuse 0 ttl 1 ti 18 ammo 4 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+FUND523 571 ammo 4 bank 0 floor 18 need 20 spare 0 sust 0 flip 33 of 478
+MAG522 571 ph 5 on 0 near 0 fund 0 fuse 0 ttl 1 ti 18 ammo 4 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+FUND523 572 ammo 4 bank 10 floor 18 need 20 spare 0 sust 0 flip 33 of 479
+MAG522 572 ph 5 on 0 near 0 fund 0 fuse 0 ttl 1 ti 28 ammo 4 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+FUND523 573 ammo 4 bank 0 floor 18 need 20 spare 0 sust 0 flip 33 of 480
+MAG522 573 ph 5 on 0 near 0 fund 0 fuse 0 ttl 1 ti 18 ammo 4 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+FUND523 574 ammo 4 bank 0 floor 18 need 20 spare 0 sust 0 flip 33 of 481
+MAG522 574 ph 5 on 0 near 0 fund 0 fuse 0 ttl 1 ti 18 ammo 4 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+FUND523 575 ammo 4 bank 0 floor 18 need 20 spare 0 sust 0 flip 33 of 482
+MAG522 575 ph 5 on 0 near 0 fund 0 fuse 0 ttl 1 ti 18 ammo 4 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+FUND523 576 ammo 4 bank 10 floor 18 need 20 spare 0 sust 0 flip 33 of 483
+MAG522 576 ph 5 on 0 near 0 fund 0 fuse 0 ttl 1 ti 28 ammo 4 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+FUND523 577 ammo 4 bank 0 floor 18 need 20 spare 0 sust 0 flip 33 of 484
+MAG522 577 ph 5 on 0 near 0 fund 0 fuse 0 ttl 1 ti 18 ammo 4 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+FUND523 578 ammo 4 bank 0 floor 18 need 20 spare 0 sust 0 flip 33 of 485
+MAG522 578 ph 5 on 0 near 0 fund 0 fuse 0 ttl 1 ti 18 ammo 4 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+FUND523 579 ammo 4 bank 0 floor 18 need 20 spare 0 sust 0 flip 33 of 486
+MAG522 579 ph 5 on 0 near 0 fund 0 fuse 0 ttl 1 ti 18 ammo 4 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+FUND523 580 ammo 4 bank 10 floor 18 need 20 spare 0 sust 0 flip 33 of 487
+MAG522 580 ph 5 on 0 near 0 fund 0 fuse 0 ttl 1 ti 28 ammo 4 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+FUND523 581 ammo 4 bank 0 floor 18 need 20 spare 0 sust 0 flip 33 of 488
+MAG522 581 ph 5 on 0 near 0 fund 0 fuse 0 ttl 1 ti 18 ammo 4 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+FUND523 582 ammo 4 bank 0 floor 18 need 20 spare 0 sust 0 flip 33 of 489
+MAG522 582 ph 5 on 0 near 0 fund 0 fuse 0 ttl 1 ti 18 ammo 4 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+FUND523 583 ammo 4 bank 0 floor 18 need 20 spare 0 sust 0 flip 33 of 490
+MAG522 583 ph 5 on 0 near 0 fund 0 fuse 0 ttl 1 ti 18 ammo 4 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+FUND523 584 ammo 4 bank 10 floor 18 need 20 spare 0 sust 0 flip 33 of 491
+MAG522 584 ph 5 on 0 near 0 fund 0 fuse 0 ttl 1 ti 28 ammo 4 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+FUND523 585 ammo 4 bank 0 floor 18 need 20 spare 0 sust 0 flip 33 of 492
+MAG522 585 ph 5 on 0 near 0 fund 0 fuse 0 ttl 1 ti 18 ammo 4 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+FUND523 586 ammo 4 bank 0 floor 18 need 20 spare 0 sust 0 flip 33 of 493
+MAG522 586 ph 5 on 0 near 0 fund 0 fuse 0 ttl 1 ti 18 ammo 4 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+FUND523 587 ammo 4 bank 0 floor 18 need 20 spare 0 sust 0 flip 33 of 494
+MAG522 587 ph 5 on 0 near 0 fund 0 fuse 0 ttl 1 ti 18 ammo 4 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+FUND523 588 ammo 4 bank 10 floor 18 need 20 spare 0 sust 0 flip 33 of 495
+MAG522 588 ph 5 on 0 near 0 fund 0 fuse 0 ttl 1 ti 28 ammo 4 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+FUND523 589 ammo 4 bank 0 floor 18 need 20 spare 0 sust 0 flip 33 of 496
+MAG522 589 ph 5 on 0 near 0 fund 0 fuse 0 ttl 1 ti 18 ammo 4 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+FUND523 590 ammo 4 bank 0 floor 18 need 20 spare 0 sust 0 flip 33 of 497
+MAG522 590 ph 5 on 0 near 0 fund 0 fuse 0 ttl 1 ti 18 ammo 4 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+FUND523 591 ammo 4 bank 0 floor 18 need 20 spare 0 sust 0 flip 33 of 498
+MAG522 591 ph 5 on 0 near 0 fund 0 fuse 0 ttl 1 ti 18 ammo 4 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+FUND523 592 ammo 4 bank 10 floor 18 need 20 spare 0 sust 0 flip 33 of 499
+MAG522 592 ph 5 on 0 near 0 fund 0 fuse 0 ttl 1 ti 28 ammo 4 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+FUND523 593 ammo 4 bank 0 floor 18 need 20 spare 0 sust 0 flip 33 of 500
+MAG522 593 ph 5 on 0 near 0 fund 0 fuse 0 ttl 1 ti 18 ammo 4 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+FUND523 594 ammo 4 bank 0 floor 18 need 20 spare 0 sust 0 flip 33 of 501
+MAG522 594 ph 5 on 0 near 0 fund 0 fuse 0 ttl 1 ti 18 ammo 4 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+FUND523 595 ammo 4 bank 0 floor 18 need 20 spare 0 sust 0 flip 33 of 502
+MAG522 595 ph 5 on 0 near 0 fund 0 fuse 0 ttl 1 ti 18 ammo 4 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+FUND523 596 ammo 4 bank 10 floor 18 need 20 spare 0 sust 0 flip 33 of 503
+MAG522 596 ph 5 on 0 near 0 fund 0 fuse 0 ttl 1 ti 28 ammo 4 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+FUND523 597 ammo 4 bank 0 floor 18 need 20 spare 0 sust 0 flip 33 of 504
+MAG522 597 ph 5 on 0 near 0 fund 0 fuse 0 ttl 1 ti 18 ammo 4 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+FUND523 598 ammo 4 bank 0 floor 18 need 20 spare 0 sust 0 flip 33 of 505
+MAG522 598 ph 5 on 0 near 0 fund 0 fuse 0 ttl 1 ti 18 ammo 4 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+FUND523 599 ammo 4 bank 0 floor 18 need 20 spare 0 sust 0 flip 33 of 506
+MAG522 599 ph 5 on 0 near 0 fund 0 fuse 0 ttl 1 ti 18 ammo 4 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+FUND523 600 ammo 4 bank 10 floor 18 need 20 spare 0 sust 0 flip 33 of 507
+MAG522 600 ph 5 on 0 near 0 fund 0 fuse 0 ttl 1 ti 28 ammo 4 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+FUND523 601 ammo 4 bank 0 floor 18 need 20 spare 0 sust 0 flip 33 of 508
+MAG522 601 ph 5 on 0 near 0 fund 0 fuse 0 ttl 1 ti 18 ammo 4 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+FUND523 602 ammo 4 bank 0 floor 18 need 20 spare 0 sust 0 flip 33 of 509
+MAG522 602 ph 5 on 0 near 0 fund 0 fuse 0 ttl 1 ti 18 ammo 4 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+FUND523 603 ammo 4 bank 0 floor 18 need 20 spare 0 sust 0 flip 33 of 510
+MAG522 603 ph 5 on 0 near 0 fund 0 fuse 0 ttl 1 ti 18 ammo 4 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+FUND523 604 ammo 4 bank 10 floor 18 need 20 spare 0 sust 0 flip 33 of 511
+MAG522 604 ph 5 on 0 near 0 fund 0 fuse 0 ttl 1 ti 28 ammo 4 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+FUND523 605 ammo 4 bank 0 floor 18 need 20 spare 0 sust 0 flip 33 of 512
+MAG522 605 ph 5 on 0 near 0 fund 0 fuse 0 ttl 1 ti 18 ammo 4 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+FUND523 606 ammo 4 bank 0 floor 18 need 20 spare 0 sust 0 flip 33 of 513
+MAG522 606 ph 5 on 0 near 0 fund 0 fuse 0 ttl 1 ti 18 ammo 4 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+FUND523 607 ammo 4 bank 0 floor 18 need 20 spare 0 sust 0 flip 33 of 514
+MAG522 607 ph 5 on 0 near 0 fund 0 fuse 0 ttl 1 ti 18 ammo 4 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+FUND523 608 ammo 4 bank 10 floor 18 need 20 spare 0 sust 0 flip 33 of 515
+MAG522 608 ph 5 on 0 near 0 fund 0 fuse 0 ttl 1 ti 28 ammo 4 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+FUND523 609 ammo 4 bank 0 floor 18 need 20 spare 0 sust 0 flip 33 of 516
+MAG522 609 ph 5 on 0 near 0 fund 0 fuse 0 ttl 1 ti 18 ammo 4 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+FUND523 610 ammo 4 bank 0 floor 18 need 20 spare 0 sust 0 flip 33 of 517
+MAG522 610 ph 5 on 0 near 0 fund 0 fuse 0 ttl 1 ti 18 ammo 4 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+FUND523 611 ammo 4 bank 0 floor 18 need 20 spare 0 sust 0 flip 33 of 518
+MAG522 611 ph 5 on 0 near 0 fund 0 fuse 0 ttl 1 ti 18 ammo 4 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+FUND523 612 ammo 4 bank 10 floor 18 need 20 spare 0 sust 0 flip 33 of 519
+MAG522 612 ph 5 on 0 near 0 fund 0 fuse 0 ttl 1 ti 28 ammo 4 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+FUND523 613 ammo 4 bank 0 floor 18 need 20 spare 0 sust 0 flip 33 of 520
+MAG522 613 ph 5 on 0 near 0 fund 0 fuse 0 ttl 1 ti 18 ammo 4 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+FUND523 614 ammo 4 bank 0 floor 18 need 20 spare 0 sust 0 flip 33 of 521
+MAG522 614 ph 5 on 0 near 0 fund 0 fuse 0 ttl 1 ti 18 ammo 4 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+FUND523 615 ammo 4 bank 0 floor 18 need 20 spare 0 sust 0 flip 33 of 522
+MAG522 615 ph 5 on 0 near 0 fund 0 fuse 0 ttl 1 ti 18 ammo 4 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+FUND523 616 ammo 4 bank 10 floor 18 need 20 spare 0 sust 0 flip 33 of 523
+MAG522 616 ph 5 on 0 near 0 fund 0 fuse 0 ttl 1 ti 28 ammo 4 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+FUND523 617 ammo 4 bank 0 floor 18 need 20 spare 0 sust 0 flip 33 of 524
+MAG522 617 ph 5 on 0 near 0 fund 0 fuse 0 ttl 1 ti 18 ammo 4 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+FUND523 618 ammo 4 bank 0 floor 18 need 20 spare 0 sust 0 flip 33 of 525
+MAG522 618 ph 5 on 0 near 0 fund 0 fuse 0 ttl 1 ti 18 ammo 4 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+FUND523 619 ammo 4 bank 0 floor 18 need 20 spare 0 sust 0 flip 33 of 526
+MAG522 619 ph 5 on 0 near 0 fund 0 fuse 0 ttl 1 ti 18 ammo 4 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+FUND523 620 ammo 4 bank 10 floor 18 need 20 spare 0 sust 0 flip 33 of 527
+MAG522 620 ph 5 on 0 near 0 fund 0 fuse 0 ttl 1 ti 28 ammo 4 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+FUND523 621 ammo 4 bank 0 floor 18 need 20 spare 0 sust 0 flip 33 of 528
+MAG522 621 ph 5 on 0 near 0 fund 0 fuse 0 ttl 1 ti 18 ammo 4 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+FUND523 622 ammo 4 bank 0 floor 18 need 20 spare 0 sust 0 flip 33 of 529
+MAG522 622 ph 5 on 0 near 0 fund 0 fuse 0 ttl 1 ti 18 ammo 4 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+FUND523 623 ammo 4 bank 0 floor 18 need 20 spare 0 sust 0 flip 33 of 530
+MAG522 623 ph 5 on 0 near 0 fund 0 fuse 0 ttl 1 ti 18 ammo 4 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+FUND523 624 ammo 4 bank 10 floor 18 need 20 spare 0 sust 0 flip 33 of 531
+MAG522 624 ph 5 on 0 near 0 fund 0 fuse 0 ttl 1 ti 28 ammo 4 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+FUND523 625 ammo 4 bank 0 floor 18 need 20 spare 0 sust 0 flip 33 of 532
+MAG522 625 ph 5 on 0 near 0 fund 0 fuse 0 ttl 1 ti 18 ammo 4 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+FUND523 626 ammo 4 bank 0 floor 18 need 20 spare 0 sust 0 flip 33 of 533
+MAG522 626 ph 5 on 0 near 0 fund 0 fuse 0 ttl 1 ti 18 ammo 4 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+FUND523 627 ammo 4 bank 0 floor 18 need 20 spare 0 sust 0 flip 33 of 534
+MAG522 627 ph 5 on 0 near 0 fund 0 fuse 0 ttl 1 ti 18 ammo 4 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+FUND523 628 ammo 4 bank 10 floor 18 need 20 spare 0 sust 0 flip 33 of 535
+MAG522 628 ph 5 on 0 near 0 fund 0 fuse 0 ttl 1 ti 28 ammo 4 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+FUND523 629 ammo 4 bank 0 floor 18 need 20 spare 0 sust 0 flip 33 of 536
+MAG522 629 ph 5 on 0 near 0 fund 0 fuse 0 ttl 1 ti 18 ammo 4 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+FUND523 630 ammo 4 bank 0 floor 18 need 20 spare 0 sust 0 flip 33 of 537
+MAG522 630 ph 5 on 0 near 0 fund 0 fuse 0 ttl 1 ti 18 ammo 4 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+FUND523 631 ammo 4 bank 0 floor 18 need 20 spare 0 sust 0 flip 33 of 538
+MAG522 631 ph 5 on 0 near 0 fund 0 fuse 0 ttl 1 ti 18 ammo 4 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+FUND523 632 ammo 4 bank 10 floor 18 need 20 spare 0 sust 0 flip 33 of 539
+MAG522 632 ph 5 on 0 near 0 fund 0 fuse 0 ttl 1 ti 28 ammo 4 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+FUND523 633 ammo 4 bank 0 floor 18 need 20 spare 0 sust 0 flip 33 of 540
+MAG522 633 ph 5 on 0 near 0 fund 0 fuse 0 ttl 1 ti 18 ammo 4 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+FUND523 634 ammo 4 bank 0 floor 18 need 20 spare 0 sust 0 flip 33 of 541
+MAG522 634 ph 5 on 0 near 0 fund 0 fuse 0 ttl 1 ti 18 ammo 4 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+FUND523 635 ammo 4 bank 0 floor 18 need 20 spare 0 sust 0 flip 33 of 542
+MAG522 635 ph 5 on 0 near 0 fund 0 fuse 0 ttl 1 ti 18 ammo 4 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+FUND523 636 ammo 4 bank 10 floor 18 need 20 spare 0 sust 0 flip 33 of 543
+MAG522 636 ph 5 on 0 near 0 fund 0 fuse 0 ttl 1 ti 28 ammo 4 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+FUND523 637 ammo 4 bank 0 floor 18 need 20 spare 0 sust 0 flip 33 of 544
+MAG522 637 ph 5 on 0 near 0 fund 0 fuse 0 ttl 1 ti 18 ammo 4 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+FUND523 638 ammo 4 bank 0 floor 18 need 20 spare 0 sust 0 flip 33 of 545
+MAG522 638 ph 5 on 0 near 0 fund 0 fuse 0 ttl 1 ti 18 ammo 4 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+FUND523 639 ammo 4 bank 0 floor 18 need 20 spare 0 sust 0 flip 33 of 546
+MAG522 639 ph 5 on 0 near 0 fund 0 fuse 0 ttl 1 ti 18 ammo 4 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+FUND523 640 ammo 4 bank 10 floor 18 need 20 spare 0 sust 0 flip 33 of 547
+MAG522 640 ph 5 on 0 near 0 fund 0 fuse 0 ttl 1 ti 28 ammo 4 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+FUND523 641 ammo 4 bank 0 floor 18 need 20 spare 0 sust 0 flip 33 of 548
+MAG522 641 ph 5 on 0 near 0 fund 0 fuse 0 ttl 1 ti 18 ammo 4 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+FUND523 642 ammo 4 bank 0 floor 18 need 20 spare 0 sust 0 flip 33 of 549
+MAG522 642 ph 5 on 0 near 0 fund 0 fuse 0 ttl 1 ti 18 ammo 4 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+FUND523 643 ammo 4 bank 0 floor 18 need 20 spare 0 sust 0 flip 33 of 550
+MAG522 643 ph 5 on 0 near 0 fund 0 fuse 0 ttl 1 ti 18 ammo 4 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+FUND523 644 ammo 4 bank 10 floor 18 need 20 spare 0 sust 0 flip 33 of 551
+MAG522 644 ph 5 on 0 near 0 fund 0 fuse 0 ttl 1 ti 28 ammo 4 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+FUND523 645 ammo 4 bank 0 floor 18 need 20 spare 0 sust 0 flip 33 of 552
+MAG522 645 ph 5 on 0 near 0 fund 0 fuse 0 ttl 1 ti 18 ammo 4 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+FUND523 646 ammo 4 bank 0 floor 18 need 20 spare 0 sust 0 flip 33 of 553
+MAG522 646 ph 5 on 0 near 0 fund 0 fuse 0 ttl 1 ti 18 ammo 4 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+FUND523 647 ammo 4 bank 0 floor 18 need 20 spare 0 sust 0 flip 33 of 554
+MAG522 647 ph 5 on 0 near 0 fund 0 fuse 0 ttl 1 ti 18 ammo 4 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+FUND523 648 ammo 4 bank 10 floor 18 need 20 spare 0 sust 0 flip 33 of 555
+MAG522 648 ph 5 on 0 near 0 fund 0 fuse 0 ttl 1 ti 28 ammo 4 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+FUND523 649 ammo 4 bank 0 floor 18 need 20 spare 0 sust 0 flip 33 of 556
+MAG522 649 ph 5 on 0 near 0 fund 0 fuse 0 ttl 1 ti 18 ammo 4 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+FUND523 650 ammo 4 bank 0 floor 18 need 20 spare 0 sust 0 flip 33 of 557
+MAG522 650 ph 5 on 0 near 0 fund 0 fuse 0 ttl 1 ti 18 ammo 4 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+FUND523 651 ammo 4 bank 0 floor 18 need 20 spare 0 sust 0 flip 33 of 558
+MAG522 651 ph 5 on 0 near 0 fund 0 fuse 0 ttl 1 ti 18 ammo 4 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+FUND523 652 ammo 4 bank 10 floor 18 need 20 spare 0 sust 0 flip 33 of 559
+MAG522 652 ph 5 on 0 near 0 fund 0 fuse 0 ttl 1 ti 28 ammo 4 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+FUND523 653 ammo 4 bank 0 floor 18 need 20 spare 0 sust 0 flip 33 of 560
+MAG522 653 ph 5 on 0 near 0 fund 0 fuse 0 ttl 1 ti 18 ammo 4 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+FUND523 654 ammo 4 bank 0 floor 18 need 20 spare 0 sust 0 flip 33 of 561
+MAG522 654 ph 5 on 0 near 0 fund 0 fuse 0 ttl 1 ti 18 ammo 4 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+FUND523 655 ammo 4 bank 0 floor 18 need 20 spare 0 sust 0 flip 33 of 562
+MAG522 655 ph 5 on 0 near 0 fund 0 fuse 0 ttl 1 ti 18 ammo 4 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+FUND523 656 ammo 4 bank 10 floor 18 need 20 spare 0 sust 0 flip 33 of 563
+MAG522 656 ph 5 on 0 near 0 fund 0 fuse 0 ttl 1 ti 28 ammo 4 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+FUND523 657 ammo 4 bank 0 floor 18 need 20 spare 0 sust 0 flip 33 of 564
+MAG522 657 ph 5 on 0 near 0 fund 0 fuse 0 ttl 1 ti 18 ammo 4 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+FUND523 658 ammo 4 bank 0 floor 18 need 20 spare 0 sust 0 flip 33 of 565
+MAG522 658 ph 5 on 0 near 0 fund 0 fuse 0 ttl 1 ti 18 ammo 4 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+FUND523 659 ammo 4 bank 0 floor 18 need 20 spare 0 sust 0 flip 33 of 566
+MAG522 659 ph 5 on 0 near 0 fund 0 fuse 0 ttl 1 ti 18 ammo 4 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+FUND523 660 ammo 4 bank 10 floor 18 need 20 spare 0 sust 0 flip 33 of 567
+MAG522 660 ph 5 on 0 near 0 fund 0 fuse 0 ttl 1 ti 28 ammo 4 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+FUND523 661 ammo 4 bank 0 floor 18 need 20 spare 0 sust 0 flip 33 of 568
+MAG522 661 ph 5 on 0 near 0 fund 0 fuse 0 ttl 1 ti 18 ammo 4 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+FUND523 662 ammo 4 bank 0 floor 18 need 20 spare 0 sust 0 flip 33 of 569
+MAG522 662 ph 5 on 0 near 0 fund 0 fuse 0 ttl 1 ti 18 ammo 4 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+FUND523 663 ammo 4 bank 0 floor 18 need 20 spare 0 sust 0 flip 33 of 570
+MAG522 663 ph 5 on 0 near 0 fund 0 fuse 0 ttl 1 ti 18 ammo 4 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+FUND523 664 ammo 4 bank 10 floor 18 need 20 spare 0 sust 0 flip 33 of 571
+MAG522 664 ph 5 on 0 near 0 fund 0 fuse 0 ttl 1 ti 28 ammo 4 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+FUND523 665 ammo 4 bank 0 floor 18 need 20 spare 0 sust 0 flip 33 of 572
+MAG522 665 ph 5 on 0 near 0 fund 0 fuse 0 ttl 1 ti 18 ammo 4 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+FUND523 666 ammo 4 bank 0 floor 18 need 20 spare 0 sust 0 flip 33 of 573
+MAG522 666 ph 5 on 0 near 0 fund 0 fuse 0 ttl 1 ti 18 ammo 4 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+FUND523 667 ammo 4 bank 0 floor 18 need 20 spare 0 sust 0 flip 33 of 574
+MAG522 667 ph 5 on 0 near 0 fund 0 fuse 0 ttl 1 ti 18 ammo 4 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+FUND523 668 ammo 4 bank 10 floor 18 need 20 spare 0 sust 0 flip 33 of 575
+MAG522 668 ph 5 on 0 near 0 fund 0 fuse 0 ttl 1 ti 28 ammo 4 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+FUND523 669 ammo 4 bank 0 floor 18 need 20 spare 0 sust 0 flip 33 of 576
+MAG522 669 ph 5 on 0 near 0 fund 0 fuse 0 ttl 1 ti 18 ammo 4 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+FUND523 670 ammo 4 bank 0 floor 18 need 20 spare 0 sust 0 flip 33 of 577
+MAG522 670 ph 5 on 0 near 0 fund 0 fuse 0 ttl 1 ti 18 ammo 4 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+FUND523 671 ammo 4 bank 0 floor 18 need 20 spare 0 sust 0 flip 33 of 578
+MAG522 671 ph 5 on 0 near 0 fund 0 fuse 0 ttl 1 ti 18 ammo 4 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+FUND523 672 ammo 4 bank 10 floor 18 need 20 spare 0 sust 0 flip 33 of 579
+MAG522 672 ph 5 on 0 near 0 fund 0 fuse 0 ttl 1 ti 28 ammo 4 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+FUND523 673 ammo 4 bank 0 floor 18 need 20 spare 0 sust 0 flip 33 of 580
+MAG522 673 ph 5 on 0 near 0 fund 0 fuse 0 ttl 1 ti 18 ammo 4 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+FUND523 674 ammo 4 bank 0 floor 18 need 20 spare 0 sust 0 flip 33 of 581
+MAG522 674 ph 5 on 0 near 0 fund 0 fuse 0 ttl 1 ti 18 ammo 4 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+FUND523 675 ammo 4 bank 0 floor 18 need 20 spare 0 sust 0 flip 33 of 582
+MAG522 675 ph 5 on 0 near 0 fund 0 fuse 0 ttl 1 ti 18 ammo 4 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+FUND523 676 ammo 4 bank 10 floor 18 need 20 spare 0 sust 0 flip 33 of 583
+MAG522 676 ph 5 on 0 near 0 fund 0 fuse 0 ttl 1 ti 28 ammo 4 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+FUND523 677 ammo 4 bank 0 floor 18 need 20 spare 0 sust 0 flip 33 of 584
+MAG522 677 ph 5 on 0 near 0 fund 0 fuse 0 ttl 1 ti 18 ammo 4 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+FUND523 678 ammo 4 bank 0 floor 18 need 20 spare 0 sust 0 flip 33 of 585
+MAG522 678 ph 5 on 0 near 0 fund 0 fuse 0 ttl 1 ti 18 ammo 4 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+FUND523 679 ammo 4 bank 0 floor 18 need 20 spare 0 sust 0 flip 33 of 586
+MAG522 679 ph 5 on 0 near 0 fund 0 fuse 0 ttl 1 ti 18 ammo 4 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+FUND523 680 ammo 4 bank 10 floor 18 need 20 spare 0 sust 0 flip 33 of 587
+MAG522 680 ph 5 on 0 near 0 fund 0 fuse 0 ttl 1 ti 28 ammo 4 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+FUND523 681 ammo 4 bank 0 floor 18 need 20 spare 0 sust 0 flip 33 of 588
+MAG522 681 ph 5 on 0 near 0 fund 0 fuse 0 ttl 1 ti 18 ammo 4 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+FUND523 682 ammo 4 bank 0 floor 18 need 20 spare 0 sust 0 flip 33 of 589
+MAG522 682 ph 5 on 0 near 0 fund 0 fuse 0 ttl 1 ti 18 ammo 4 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+FUND523 683 ammo 4 bank 0 floor 18 need 20 spare 0 sust 0 flip 33 of 590
+MAG522 683 ph 5 on 0 near 0 fund 0 fuse 0 ttl 1 ti 18 ammo 4 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+FUND523 684 ammo 4 bank 10 floor 18 need 20 spare 0 sust 0 flip 33 of 591
+MAG522 684 ph 5 on 0 near 0 fund 0 fuse 0 ttl 1 ti 28 ammo 4 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+FUND523 685 ammo 4 bank 0 floor 18 need 20 spare 0 sust 0 flip 33 of 592
+MAG522 685 ph 5 on 0 near 0 fund 0 fuse 0 ttl 1 ti 18 ammo 4 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+FUND523 686 ammo 4 bank 0 floor 18 need 20 spare 0 sust 0 flip 33 of 593
+MAG522 686 ph 5 on 0 near 0 fund 0 fuse 0 ttl 1 ti 18 ammo 4 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+FUND523 687 ammo 4 bank 0 floor 18 need 20 spare 0 sust 0 flip 33 of 594
+MAG522 687 ph 5 on 0 near 0 fund 0 fuse 0 ttl 1 ti 18 ammo 4 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+FUND523 688 ammo 4 bank 10 floor 18 need 20 spare 0 sust 0 flip 33 of 595
+MAG522 688 ph 5 on 0 near 0 fund 0 fuse 0 ttl 1 ti 28 ammo 4 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+FUND523 689 ammo 4 bank 0 floor 18 need 20 spare 0 sust 0 flip 33 of 596
+MAG522 689 ph 5 on 0 near 0 fund 0 fuse 0 ttl 1 ti 18 ammo 4 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+FUND523 690 ammo 4 bank 0 floor 18 need 20 spare 0 sust 0 flip 33 of 597
+MAG522 690 ph 5 on 0 near 0 fund 0 fuse 0 ttl 1 ti 18 ammo 4 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+FUND523 691 ammo 4 bank 0 floor 18 need 20 spare 0 sust 0 flip 33 of 598
+MAG522 691 ph 5 on 0 near 0 fund 0 fuse 0 ttl 1 ti 18 ammo 4 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+FUND523 692 ammo 4 bank 10 floor 18 need 20 spare 0 sust 0 flip 33 of 599
+MAG522 692 ph 5 on 0 near 0 fund 0 fuse 0 ttl 1 ti 28 ammo 4 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+FUND523 693 ammo 4 bank 0 floor 18 need 20 spare 0 sust 0 flip 33 of 600
+MAG522 693 ph 5 on 0 near 0 fund 0 fuse 0 ttl 1 ti 18 ammo 4 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+FUND523 694 ammo 4 bank 0 floor 18 need 20 spare 0 sust 0 flip 33 of 601
+MAG522 694 ph 5 on 0 near 0 fund 0 fuse 0 ttl 1 ti 18 ammo 4 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+FUND523 695 ammo 4 bank 0 floor 18 need 20 spare 0 sust 0 flip 33 of 602
+MAG522 695 ph 5 on 0 near 0 fund 0 fuse 0 ttl 1 ti 18 ammo 4 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+FUND523 696 ammo 4 bank 10 floor 18 need 20 spare 0 sust 0 flip 33 of 603
+MAG522 696 ph 5 on 0 near 0 fund 0 fuse 0 ttl 1 ti 28 ammo 4 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+FUND523 697 ammo 4 bank 0 floor 18 need 20 spare 0 sust 0 flip 33 of 604
+MAG522 697 ph 5 on 0 near 0 fund 0 fuse 0 ttl 1 ti 18 ammo 4 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+FUND523 698 ammo 4 bank 0 floor 18 need 20 spare 0 sust 0 flip 33 of 605
+MAG522 698 ph 5 on 0 near 0 fund 0 fuse 0 ttl 1 ti 18 ammo 4 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+FUND523 699 ammo 4 bank 0 floor 18 need 20 spare 0 sust 0 flip 33 of 606
+MAG522 699 ph 5 on 0 near 0 fund 0 fuse 0 ttl 1 ti 18 ammo 4 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+FUND523 700 ammo 4 bank 10 floor 18 need 20 spare 0 sust 0 flip 33 of 607
+MAG522 700 ph 5 on 0 near 0 fund 0 fuse 0 ttl 1 ti 28 ammo 4 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+FUND523 701 ammo 4 bank 0 floor 18 need 20 spare 0 sust 0 flip 33 of 608
+MAG522 701 ph 5 on 0 near 0 fund 0 fuse 0 ttl 1 ti 18 ammo 4 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+FUND523 702 ammo 4 bank 0 floor 18 need 20 spare 0 sust 0 flip 33 of 609
+MAG522 702 ph 5 on 0 near 0 fund 0 fuse 0 ttl 1 ti 18 ammo 4 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+FUND523 703 ammo 4 bank 0 floor 18 need 20 spare 0 sust 0 flip 33 of 610
+MAG522 703 ph 5 on 0 near 0 fund 0 fuse 0 ttl 1 ti 18 ammo 4 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+FUND523 704 ammo 4 bank 10 floor 18 need 20 spare 0 sust 0 flip 33 of 611
+MAG522 704 ph 5 on 0 near 0 fund 0 fuse 0 ttl 1 ti 28 ammo 4 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+FUND523 705 ammo 4 bank 0 floor 18 need 20 spare 0 sust 0 flip 33 of 612
+MAG522 705 ph 5 on 0 near 0 fund 0 fuse 0 ttl 1 ti 18 ammo 4 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+FUND523 706 ammo 4 bank 0 floor 18 need 20 spare 0 sust 0 flip 33 of 613
+MAG522 706 ph 5 on 0 near 0 fund 0 fuse 0 ttl 1 ti 18 ammo 4 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+FUND523 707 ammo 4 bank 0 floor 18 need 20 spare 0 sust 0 flip 33 of 614
+MAG522 707 ph 5 on 0 near 0 fund 0 fuse 0 ttl 1 ti 18 ammo 4 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+FUND523 708 ammo 4 bank 10 floor 18 need 20 spare 0 sust 0 flip 33 of 615
+MAG522 708 ph 5 on 0 near 0 fund 0 fuse 0 ttl 1 ti 28 ammo 4 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+FUND523 709 ammo 4 bank 0 floor 18 need 20 spare 0 sust 0 flip 33 of 616
+MAG522 709 ph 5 on 0 near 0 fund 0 fuse 0 ttl 1 ti 18 ammo 4 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+FUND523 710 ammo 4 bank 0 floor 18 need 20 spare 0 sust 0 flip 33 of 617
+MAG522 710 ph 5 on 0 near 0 fund 0 fuse 0 ttl 1 ti 18 ammo 4 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+FUND523 711 ammo 4 bank 0 floor 18 need 20 spare 0 sust 0 flip 33 of 618
+MAG522 711 ph 5 on 0 near 0 fund 0 fuse 0 ttl 1 ti 18 ammo 4 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+FUND523 712 ammo 4 bank 10 floor 18 need 20 spare 0 sust 0 flip 33 of 619
+MAG522 712 ph 5 on 0 near 0 fund 0 fuse 0 ttl 1 ti 28 ammo 4 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+FUND523 713 ammo 4 bank 0 floor 18 need 20 spare 0 sust 0 flip 33 of 620
+MAG522 713 ph 5 on 0 near 0 fund 0 fuse 0 ttl 1 ti 18 ammo 4 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+FUND523 714 ammo 4 bank 0 floor 18 need 20 spare 0 sust 0 flip 33 of 621
+MAG522 714 ph 5 on 0 near 0 fund 0 fuse 0 ttl 1 ti 18 ammo 4 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+FUND523 715 ammo 4 bank 0 floor 18 need 20 spare 0 sust 0 flip 33 of 622
+MAG522 715 ph 5 on 0 near 0 fund 0 fuse 0 ttl 1 ti 18 ammo 4 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+FUND523 716 ammo 4 bank 10 floor 18 need 20 spare 0 sust 0 flip 33 of 623
+MAG522 716 ph 5 on 0 near 0 fund 0 fuse 0 ttl 1 ti 28 ammo 4 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+FUND523 717 ammo 4 bank 0 floor 18 need 20 spare 0 sust 0 flip 33 of 624
+MAG522 717 ph 5 on 0 near 0 fund 0 fuse 0 ttl 1 ti 18 ammo 4 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+FUND523 718 ammo 4 bank 0 floor 18 need 20 spare 0 sust 0 flip 33 of 625
+MAG522 718 ph 5 on 0 near 0 fund 0 fuse 0 ttl 1 ti 18 ammo 4 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+FUND523 719 ammo 4 bank 0 floor 18 need 20 spare 0 sust 0 flip 33 of 626
+MAG522 719 ph 5 on 0 near 0 fund 0 fuse 0 ttl 1 ti 18 ammo 4 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+FUND523 720 ammo 4 bank 10 floor 18 need 20 spare 0 sust 0 flip 33 of 627
+MAG522 720 ph 5 on 0 near 0 fund 0 fuse 0 ttl 1 ti 28 ammo 4 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+FUND523 721 ammo 4 bank 0 floor 18 need 20 spare 0 sust 0 flip 33 of 628
+MAG522 721 ph 5 on 0 near 0 fund 0 fuse 0 ttl 1 ti 18 ammo 4 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+FUND523 722 ammo 4 bank 0 floor 18 need 20 spare 0 sust 0 flip 33 of 629
+MAG522 722 ph 5 on 0 near 0 fund 0 fuse 0 ttl 1 ti 18 ammo 4 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+FUND523 723 ammo 4 bank 0 floor 18 need 20 spare 0 sust 0 flip 33 of 630
+MAG522 723 ph 5 on 0 near 0 fund 0 fuse 0 ttl 1 ti 18 ammo 4 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+FUND523 724 ammo 4 bank 10 floor 18 need 20 spare 0 sust 0 flip 33 of 631
+MAG522 724 ph 5 on 0 near 0 fund 0 fuse 0 ttl 1 ti 28 ammo 4 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+FUND523 725 ammo 4 bank 0 floor 18 need 20 spare 0 sust 0 flip 33 of 632
+MAG522 725 ph 5 on 0 near 0 fund 0 fuse 0 ttl 1 ti 18 ammo 4 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+FUND523 726 ammo 4 bank 0 floor 18 need 20 spare 0 sust 0 flip 33 of 633
+MAG522 726 ph 5 on 0 near 0 fund 0 fuse 0 ttl 1 ti 18 ammo 4 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+FUND523 727 ammo 4 bank 0 floor 18 need 20 spare 0 sust 0 flip 33 of 634
+MAG522 727 ph 5 on 0 near 0 fund 0 fuse 0 ttl 1 ti 18 ammo 4 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+FUND523 728 ammo 4 bank 10 floor 18 need 20 spare 0 sust 0 flip 33 of 635
+MAG522 728 ph 5 on 0 near 0 fund 0 fuse 0 ttl 1 ti 28 ammo 4 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+FUND523 729 ammo 4 bank 0 floor 18 need 20 spare 0 sust 0 flip 33 of 636
+MAG522 729 ph 5 on 0 near 0 fund 0 fuse 0 ttl 1 ti 18 ammo 4 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+FUND523 730 ammo 4 bank 0 floor 18 need 20 spare 0 sust 0 flip 33 of 637
+MAG522 730 ph 5 on 0 near 0 fund 0 fuse 0 ttl 1 ti 18 ammo 4 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+FUND523 731 ammo 4 bank 0 floor 18 need 20 spare 0 sust 0 flip 33 of 638
+MAG522 731 ph 5 on 0 near 0 fund 0 fuse 0 ttl 1 ti 18 ammo 4 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+FUND523 732 ammo 4 bank 10 floor 18 need 20 spare 0 sust 0 flip 33 of 639
+MAG522 732 ph 5 on 0 near 0 fund 0 fuse 0 ttl 1 ti 28 ammo 4 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+FUND523 733 ammo 4 bank 0 floor 18 need 20 spare 0 sust 0 flip 33 of 640
+MAG522 733 ph 5 on 0 near 0 fund 0 fuse 0 ttl 1 ti 18 ammo 4 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+FUND523 734 ammo 4 bank 0 floor 18 need 20 spare 0 sust 0 flip 33 of 641
+MAG522 734 ph 5 on 0 near 0 fund 0 fuse 0 ttl 1 ti 18 ammo 4 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+FUND523 735 ammo 4 bank 0 floor 18 need 20 spare 0 sust 0 flip 33 of 642
+MAG522 735 ph 5 on 0 near 0 fund 0 fuse 0 ttl 1 ti 18 ammo 4 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+FUND523 736 ammo 4 bank 10 floor 18 need 20 spare 0 sust 0 flip 33 of 643
+MAG522 736 ph 5 on 0 near 0 fund 0 fuse 0 ttl 1 ti 28 ammo 4 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+FUND523 737 ammo 4 bank 0 floor 18 need 20 spare 0 sust 0 flip 33 of 644
+MAG522 737 ph 5 on 0 near 0 fund 0 fuse 0 ttl 1 ti 18 ammo 4 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+FUND523 738 ammo 4 bank 0 floor 18 need 20 spare 0 sust 0 flip 33 of 645
+MAG522 738 ph 5 on 0 near 0 fund 0 fuse 0 ttl 1 ti 18 ammo 4 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+FUND523 739 ammo 4 bank 0 floor 18 need 20 spare 0 sust 0 flip 33 of 646
+MAG522 739 ph 5 on 0 near 0 fund 0 fuse 0 ttl 1 ti 18 ammo 4 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+FUND523 740 ammo 4 bank 10 floor 18 need 20 spare 0 sust 0 flip 33 of 647
+MAG522 740 ph 5 on 0 near 0 fund 0 fuse 0 ttl 1 ti 28 ammo 4 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+FUND523 741 ammo 4 bank 0 floor 18 need 20 spare 0 sust 0 flip 33 of 648
+MAG522 741 ph 5 on 0 near 0 fund 0 fuse 0 ttl 1 ti 18 ammo 4 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+FUND523 742 ammo 4 bank 0 floor 18 need 20 spare 0 sust 0 flip 33 of 649
+MAG522 742 ph 5 on 0 near 0 fund 0 fuse 0 ttl 1 ti 18 ammo 4 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+FUND523 743 ammo 4 bank 0 floor 18 need 20 spare 0 sust 0 flip 33 of 650
+MAG522 743 ph 5 on 0 near 0 fund 0 fuse 0 ttl 1 ti 18 ammo 4 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+FUND523 744 ammo 4 bank 10 floor 18 need 20 spare 0 sust 0 flip 33 of 651
+MAG522 744 ph 5 on 0 near 0 fund 0 fuse 0 ttl 1 ti 28 ammo 4 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+FUND523 745 ammo 4 bank 0 floor 18 need 20 spare 0 sust 0 flip 33 of 652
+MAG522 745 ph 5 on 0 near 0 fund 0 fuse 0 ttl 1 ti 18 ammo 4 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+FUND523 746 ammo 4 bank 0 floor 18 need 20 spare 0 sust 0 flip 33 of 653
+MAG522 746 ph 5 on 0 near 0 fund 0 fuse 0 ttl 1 ti 18 ammo 4 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+FUND523 747 ammo 4 bank 0 floor 18 need 20 spare 0 sust 0 flip 33 of 654
+MAG522 747 ph 5 on 0 near 0 fund 0 fuse 0 ttl 1 ti 18 ammo 4 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+FUND523 748 ammo 4 bank 10 floor 18 need 20 spare 0 sust 0 flip 33 of 655
+MAG522 748 ph 5 on 0 near 0 fund 0 fuse 0 ttl 1 ti 28 ammo 4 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+FUND523 749 ammo 4 bank 0 floor 18 need 20 spare 0 sust 0 flip 33 of 656
+MAG522 749 ph 5 on 0 near 0 fund 0 fuse 0 ttl 1 ti 18 ammo 4 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+FUND523 750 ammo 4 bank 0 floor 18 need 20 spare 0 sust 0 flip 33 of 657
+MAG522 750 ph 5 on 0 near 0 fund 0 fuse 0 ttl 1 ti 18 ammo 4 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+FUND523 751 ammo 4 bank 0 floor 18 need 20 spare 0 sust 0 flip 33 of 658
+MAG522 751 ph 5 on 0 near 0 fund 0 fuse 0 ttl 1 ti 18 ammo 4 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+FUND523 752 ammo 4 bank 10 floor 18 need 20 spare 0 sust 0 flip 33 of 659
+MAG522 752 ph 5 on 0 near 0 fund 0 fuse 0 ttl 1 ti 28 ammo 4 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+FUND523 753 ammo 4 bank 0 floor 18 need 20 spare 0 sust 0 flip 33 of 660
+MAG522 753 ph 5 on 0 near 0 fund 0 fuse 0 ttl 1 ti 18 ammo 4 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+FUND523 754 ammo 4 bank 0 floor 18 need 20 spare 0 sust 0 flip 33 of 661
+MAG522 754 ph 5 on 0 near 0 fund 0 fuse 0 ttl 1 ti 18 ammo 4 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+FUND523 755 ammo 4 bank 0 floor 18 need 20 spare 0 sust 0 flip 33 of 662
+MAG522 755 ph 5 on 0 near 0 fund 0 fuse 0 ttl 1 ti 18 ammo 4 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+FUND523 756 ammo 4 bank 10 floor 18 need 20 spare 0 sust 0 flip 33 of 663
+MAG522 756 ph 5 on 0 near 0 fund 0 fuse 0 ttl 1 ti 28 ammo 4 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+FUND523 757 ammo 4 bank 0 floor 18 need 20 spare 0 sust 0 flip 33 of 664
+MAG522 757 ph 5 on 0 near 0 fund 0 fuse 0 ttl 1 ti 18 ammo 4 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+FUND523 758 ammo 4 bank 0 floor 18 need 20 spare 0 sust 0 flip 33 of 665
+MAG522 758 ph 5 on 0 near 0 fund 0 fuse 0 ttl 1 ti 18 ammo 4 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+FUND523 759 ammo 4 bank 0 floor 18 need 20 spare 0 sust 0 flip 33 of 666
+MAG522 759 ph 5 on 0 near 0 fund 0 fuse 0 ttl 1 ti 18 ammo 4 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+FUND523 760 ammo 4 bank 10 floor 18 need 20 spare 0 sust 0 flip 33 of 667
+MAG522 760 ph 5 on 0 near 0 fund 0 fuse 0 ttl 1 ti 28 ammo 4 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+FUND523 761 ammo 4 bank 0 floor 18 need 20 spare 0 sust 0 flip 33 of 668
+MAG522 761 ph 5 on 0 near 0 fund 0 fuse 0 ttl 1 ti 18 ammo 4 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+FUND523 762 ammo 4 bank 0 floor 18 need 20 spare 0 sust 0 flip 33 of 669
+MAG522 762 ph 5 on 0 near 0 fund 0 fuse 0 ttl 1 ti 18 ammo 4 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+FUND523 763 ammo 4 bank 0 floor 18 need 20 spare 0 sust 0 flip 33 of 670
+MAG522 763 ph 5 on 0 near 0 fund 0 fuse 0 ttl 1 ti 18 ammo 4 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+FUND523 764 ammo 4 bank 10 floor 18 need 20 spare 0 sust 0 flip 33 of 671
+MAG522 764 ph 5 on 0 near 0 fund 0 fuse 0 ttl 1 ti 28 ammo 4 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+FUND523 765 ammo 4 bank 0 floor 18 need 20 spare 0 sust 0 flip 33 of 672
+MAG522 765 ph 5 on 0 near 0 fund 0 fuse 0 ttl 1 ti 18 ammo 4 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+FUND523 766 ammo 4 bank 0 floor 18 need 20 spare 0 sust 0 flip 33 of 673
+MAG522 766 ph 5 on 0 near 0 fund 0 fuse 0 ttl 1 ti 18 ammo 4 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+FUND523 767 ammo 4 bank 0 floor 18 need 20 spare 0 sust 0 flip 33 of 674
+MAG522 767 ph 5 on 0 near 0 fund 0 fuse 0 ttl 1 ti 18 ammo 4 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+FUND523 768 ammo 4 bank 10 floor 18 need 20 spare 0 sust 0 flip 33 of 675
+MAG522 768 ph 5 on 0 near 0 fund 0 fuse 0 ttl 1 ti 28 ammo 4 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+FUND523 769 ammo 4 bank 0 floor 18 need 20 spare 0 sust 0 flip 33 of 676
+MAG522 769 ph 5 on 0 near 0 fund 0 fuse 0 ttl 1 ti 18 ammo 4 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+FUND523 770 ammo 4 bank 0 floor 18 need 20 spare 0 sust 0 flip 33 of 677
+MAG522 770 ph 5 on 0 near 0 fund 0 fuse 0 ttl 1 ti 18 ammo 4 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+FUND523 771 ammo 4 bank 0 floor 18 need 20 spare 0 sust 0 flip 33 of 678
+MAG522 771 ph 5 on 0 near 0 fund 0 fuse 0 ttl 1 ti 18 ammo 4 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+FUND523 772 ammo 4 bank 10 floor 18 need 20 spare 0 sust 0 flip 33 of 679
+MAG522 772 ph 5 on 0 near 0 fund 0 fuse 0 ttl 1 ti 28 ammo 4 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+FUND523 773 ammo 4 bank 0 floor 18 need 20 spare 0 sust 0 flip 33 of 680
+MAG522 773 ph 5 on 0 near 0 fund 0 fuse 0 ttl 1 ti 18 ammo 4 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+FUND523 774 ammo 4 bank 0 floor 18 need 20 spare 0 sust 0 flip 33 of 681
+MAG522 774 ph 5 on 0 near 0 fund 0 fuse 0 ttl 1 ti 18 ammo 4 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+FUND523 775 ammo 4 bank 0 floor 18 need 20 spare 0 sust 0 flip 33 of 682
+MAG522 775 ph 5 on 0 near 0 fund 0 fuse 0 ttl 1 ti 18 ammo 4 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+FUND523 776 ammo 4 bank 10 floor 18 need 20 spare 0 sust 0 flip 33 of 683
+MAG522 776 ph 5 on 0 near 0 fund 0 fuse 0 ttl 1 ti 28 ammo 4 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+FUND523 777 ammo 4 bank 0 floor 18 need 20 spare 0 sust 0 flip 33 of 684
+MAG522 777 ph 5 on 0 near 0 fund 0 fuse 0 ttl 1 ti 18 ammo 4 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+FUND523 778 ammo 4 bank 0 floor 18 need 20 spare 0 sust 0 flip 33 of 685
+MAG522 778 ph 5 on 0 near 0 fund 0 fuse 0 ttl 1 ti 18 ammo 4 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+FUND523 779 ammo 4 bank 0 floor 18 need 20 spare 0 sust 0 flip 33 of 686
+MAG522 779 ph 5 on 0 near 0 fund 0 fuse 0 ttl 1 ti 18 ammo 4 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+FUND523 780 ammo 4 bank 10 floor 18 need 20 spare 0 sust 0 flip 33 of 687
+MAG522 780 ph 5 on 0 near 0 fund 0 fuse 0 ttl 1 ti 28 ammo 4 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+FUND523 781 ammo 4 bank 0 floor 18 need 20 spare 0 sust 0 flip 33 of 688
+MAG522 781 ph 5 on 0 near 0 fund 0 fuse 0 ttl 1 ti 18 ammo 4 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+FUND523 782 ammo 4 bank 0 floor 18 need 20 spare 0 sust 0 flip 33 of 689
+MAG522 782 ph 5 on 0 near 0 fund 0 fuse 0 ttl 1 ti 18 ammo 4 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+FUND523 783 ammo 4 bank 0 floor 18 need 20 spare 0 sust 0 flip 33 of 690
+MAG522 783 ph 5 on 0 near 0 fund 0 fuse 0 ttl 1 ti 18 ammo 4 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+FUND523 784 ammo 4 bank 10 floor 18 need 20 spare 0 sust 0 flip 33 of 691
+MAG522 784 ph 5 on 0 near 0 fund 0 fuse 0 ttl 1 ti 28 ammo 4 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+FUND523 785 ammo 4 bank 0 floor 18 need 20 spare 0 sust 0 flip 33 of 692
+MAG522 785 ph 5 on 0 near 0 fund 0 fuse 0 ttl 1 ti 18 ammo 4 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+FUND523 786 ammo 4 bank 0 floor 18 need 20 spare 0 sust 0 flip 33 of 693
+MAG522 786 ph 5 on 0 near 0 fund 0 fuse 0 ttl 1 ti 18 ammo 4 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+FUND523 787 ammo 4 bank 0 floor 18 need 20 spare 0 sust 0 flip 33 of 694
+MAG522 787 ph 5 on 0 near 0 fund 0 fuse 0 ttl 1 ti 18 ammo 4 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+FUND523 788 ammo 4 bank 10 floor 18 need 20 spare 0 sust 0 flip 33 of 695
+MAG522 788 ph 5 on 0 near 0 fund 0 fuse 0 ttl 1 ti 28 ammo 4 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+FUND523 789 ammo 4 bank 0 floor 18 need 20 spare 0 sust 0 flip 33 of 696
+MAG522 789 ph 5 on 0 near 0 fund 0 fuse 0 ttl 1 ti 18 ammo 4 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+FUND523 790 ammo 4 bank 0 floor 18 need 20 spare 0 sust 0 flip 33 of 697
+MAG522 790 ph 5 on 0 near 0 fund 0 fuse 0 ttl 1 ti 18 ammo 4 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+FUND523 791 ammo 4 bank 0 floor 18 need 20 spare 0 sust 0 flip 33 of 698
+MAG522 791 ph 5 on 0 near 0 fund 0 fuse 0 ttl 1 ti 18 ammo 4 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+FUND523 792 ammo 4 bank 10 floor 18 need 20 spare 0 sust 0 flip 33 of 699
+MAG522 792 ph 5 on 0 near 0 fund 0 fuse 0 ttl 1 ti 28 ammo 4 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+FUND523 793 ammo 4 bank 0 floor 18 need 20 spare 0 sust 0 flip 33 of 700
+MAG522 793 ph 5 on 0 near 0 fund 0 fuse 0 ttl 1 ti 18 ammo 4 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+FUND523 794 ammo 4 bank 0 floor 18 need 20 spare 0 sust 0 flip 33 of 701
+MAG522 794 ph 5 on 0 near 0 fund 0 fuse 0 ttl 1 ti 18 ammo 4 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+FUND523 795 ammo 4 bank 0 floor 18 need 20 spare 0 sust 0 flip 33 of 702
+MAG522 795 ph 5 on 0 near 0 fund 0 fuse 0 ttl 1 ti 18 ammo 4 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+FUND523 796 ammo 4 bank 10 floor 18 need 20 spare 0 sust 0 flip 33 of 703
+MAG522 796 ph 5 on 0 near 0 fund 0 fuse 0 ttl 1 ti 28 ammo 4 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+FUND523 797 ammo 4 bank 0 floor 18 need 20 spare 0 sust 0 flip 33 of 704
+MAG522 797 ph 5 on 0 near 0 fund 0 fuse 0 ttl 1 ti 18 ammo 4 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+FUND523 798 ammo 4 bank 0 floor 18 need 20 spare 0 sust 0 flip 33 of 705
+MAG522 798 ph 5 on 0 near 0 fund 0 fuse 0 ttl 1 ti 18 ammo 4 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+FUND523 799 ammo 4 bank 0 floor 18 need 20 spare 0 sust 0 flip 33 of 706
+MAG522 799 ph 5 on 0 near 0 fund 0 fuse 0 ttl 1 ti 18 ammo 4 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+FUND523 800 ammo 4 bank 10 floor 18 need 20 spare 0 sust 0 flip 33 of 707
+MAG522 800 ph 5 on 0 near 0 fund 0 fuse 0 ttl 1 ti 28 ammo 4 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+FUND523 801 ammo 4 bank 0 floor 18 need 20 spare 0 sust 0 flip 33 of 708
+MAG522 801 ph 5 on 0 near 0 fund 0 fuse 0 ttl 1 ti 18 ammo 4 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+FUND523 802 ammo 4 bank 0 floor 18 need 20 spare 0 sust 0 flip 33 of 709
+MAG522 802 ph 5 on 0 near 0 fund 0 fuse 0 ttl 1 ti 18 ammo 4 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+FUND523 803 ammo 4 bank 0 floor 18 need 20 spare 0 sust 0 flip 33 of 710
+MAG522 803 ph 5 on 0 near 0 fund 0 fuse 0 ttl 1 ti 18 ammo 4 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+FUND523 804 ammo 4 bank 10 floor 18 need 20 spare 0 sust 0 flip 33 of 711
+MAG522 804 ph 5 on 0 near 0 fund 0 fuse 0 ttl 1 ti 28 ammo 4 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+FUND523 805 ammo 4 bank 0 floor 18 need 20 spare 0 sust 0 flip 33 of 712
+MAG522 805 ph 5 on 0 near 0 fund 0 fuse 0 ttl 1 ti 18 ammo 4 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+FUND523 806 ammo 4 bank 0 floor 18 need 20 spare 0 sust 0 flip 33 of 713
+MAG522 806 ph 5 on 0 near 0 fund 0 fuse 0 ttl 1 ti 18 ammo 4 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+FUND523 807 ammo 4 bank 0 floor 18 need 20 spare 0 sust 0 flip 33 of 714
+MAG522 807 ph 5 on 0 near 0 fund 0 fuse 0 ttl 1 ti 18 ammo 4 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+FUND523 808 ammo 4 bank 10 floor 18 need 20 spare 0 sust 0 flip 33 of 715
+MAG522 808 ph 5 on 0 near 0 fund 0 fuse 0 ttl 1 ti 28 ammo 4 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+FUND523 809 ammo 4 bank 0 floor 18 need 20 spare 0 sust 0 flip 33 of 716
+MAG522 809 ph 5 on 0 near 0 fund 0 fuse 0 ttl 1 ti 18 ammo 4 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+FUND523 810 ammo 4 bank 0 floor 18 need 20 spare 0 sust 0 flip 33 of 717
+MAG522 810 ph 5 on 0 near 0 fund 0 fuse 0 ttl 1 ti 18 ammo 4 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+FUND523 811 ammo 4 bank 0 floor 18 need 20 spare 0 sust 0 flip 33 of 718
+MAG522 811 ph 5 on 0 near 0 fund 0 fuse 0 ttl 1 ti 18 ammo 4 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+FUND523 812 ammo 4 bank 10 floor 18 need 20 spare 0 sust 0 flip 33 of 719
+MAG522 812 ph 5 on 0 near 0 fund 0 fuse 0 ttl 1 ti 28 ammo 4 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+FUND523 813 ammo 4 bank 0 floor 18 need 20 spare 0 sust 0 flip 33 of 720
+MAG522 813 ph 5 on 0 near 0 fund 0 fuse 0 ttl 1 ti 18 ammo 4 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+FUND523 814 ammo 4 bank 0 floor 18 need 20 spare 0 sust 0 flip 33 of 721
+MAG522 814 ph 5 on 0 near 0 fund 0 fuse 0 ttl 1 ti 18 ammo 4 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+FUND523 815 ammo 4 bank 0 floor 18 need 20 spare 0 sust 0 flip 33 of 722
+MAG522 815 ph 5 on 0 near 0 fund 0 fuse 0 ttl 1 ti 18 ammo 4 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+FUND523 816 ammo 4 bank 10 floor 18 need 20 spare 0 sust 0 flip 33 of 723
+MAG522 816 ph 5 on 0 near 0 fund 0 fuse 0 ttl 1 ti 28 ammo 4 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+FUND523 817 ammo 4 bank 0 floor 18 need 20 spare 0 sust 0 flip 33 of 724
+MAG522 817 ph 5 on 0 near 0 fund 0 fuse 0 ttl 1 ti 18 ammo 4 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+FUND523 818 ammo 4 bank 0 floor 18 need 20 spare 0 sust 0 flip 33 of 725
+MAG522 818 ph 5 on 0 near 0 fund 0 fuse 0 ttl 1 ti 18 ammo 4 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+FUND523 819 ammo 4 bank 0 floor 18 need 20 spare 0 sust 0 flip 33 of 726
+MAG522 819 ph 5 on 0 near 0 fund 0 fuse 0 ttl 1 ti 18 ammo 4 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+FUND523 820 ammo 4 bank 10 floor 18 need 20 spare 0 sust 0 flip 33 of 727
+MAG522 820 ph 5 on 0 near 0 fund 0 fuse 0 ttl 1 ti 28 ammo 4 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+FUND523 821 ammo 4 bank 0 floor 18 need 20 spare 0 sust 0 flip 33 of 728
+MAG522 821 ph 5 on 0 near 0 fund 0 fuse 0 ttl 1 ti 18 ammo 4 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+FUND523 822 ammo 4 bank 0 floor 18 need 20 spare 0 sust 0 flip 33 of 729
+MAG522 822 ph 5 on 0 near 0 fund 0 fuse 0 ttl 1 ti 18 ammo 4 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+FUND523 823 ammo 4 bank 0 floor 18 need 20 spare 0 sust 0 flip 33 of 730
+MAG522 823 ph 5 on 0 near 0 fund 0 fuse 0 ttl 1 ti 18 ammo 4 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+FUND523 824 ammo 4 bank 10 floor 18 need 20 spare 0 sust 0 flip 33 of 731
+MAG522 824 ph 5 on 0 near 0 fund 0 fuse 0 ttl 1 ti 28 ammo 4 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+FUND523 825 ammo 4 bank 0 floor 18 need 20 spare 0 sust 0 flip 33 of 732
+MAG522 825 ph 5 on 0 near 0 fund 0 fuse 0 ttl 1 ti 18 ammo 4 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+FUND523 826 ammo 4 bank 0 floor 18 need 20 spare 0 sust 0 flip 33 of 733
+MAG522 826 ph 5 on 0 near 0 fund 0 fuse 0 ttl 1 ti 18 ammo 4 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+FUND523 827 ammo 4 bank 0 floor 18 need 20 spare 0 sust 0 flip 33 of 734
+MAG522 827 ph 5 on 0 near 0 fund 0 fuse 0 ttl 1 ti 18 ammo 4 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+FUND523 828 ammo 4 bank 10 floor 18 need 20 spare 0 sust 0 flip 33 of 735
+MAG522 828 ph 5 on 0 near 0 fund 0 fuse 0 ttl 1 ti 28 ammo 4 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+FUND523 829 ammo 4 bank 0 floor 18 need 20 spare 0 sust 0 flip 33 of 736
+MAG522 829 ph 5 on 0 near 0 fund 0 fuse 0 ttl 1 ti 18 ammo 4 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+FUND523 830 ammo 4 bank 0 floor 18 need 20 spare 0 sust 0 flip 33 of 737
+MAG522 830 ph 5 on 0 near 0 fund 0 fuse 0 ttl 1 ti 18 ammo 4 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+FUND523 831 ammo 4 bank 0 floor 18 need 20 spare 0 sust 0 flip 33 of 738
+MAG522 831 ph 5 on 0 near 0 fund 0 fuse 0 ttl 1 ti 18 ammo 4 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+FUND523 832 ammo 4 bank 10 floor 18 need 20 spare 0 sust 0 flip 33 of 739
+MAG522 832 ph 5 on 0 near 0 fund 0 fuse 0 ttl 1 ti 28 ammo 4 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+FUND523 833 ammo 4 bank 0 floor 18 need 20 spare 0 sust 0 flip 33 of 740
+MAG522 833 ph 5 on 0 near 0 fund 0 fuse 0 ttl 1 ti 18 ammo 4 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+FUND523 834 ammo 4 bank 0 floor 18 need 20 spare 0 sust 0 flip 33 of 741
+MAG522 834 ph 5 on 0 near 0 fund 0 fuse 0 ttl 1 ti 18 ammo 4 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+FUND523 835 ammo 4 bank 0 floor 18 need 20 spare 0 sust 0 flip 33 of 742
+MAG522 835 ph 5 on 0 near 0 fund 0 fuse 0 ttl 1 ti 18 ammo 4 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+FUND523 836 ammo 4 bank 10 floor 18 need 20 spare 0 sust 0 flip 33 of 743
+MAG522 836 ph 5 on 0 near 0 fund 0 fuse 0 ttl 1 ti 28 ammo 4 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+FUND523 837 ammo 4 bank 0 floor 18 need 20 spare 0 sust 0 flip 33 of 744
+MAG522 837 ph 5 on 0 near 0 fund 0 fuse 0 ttl 1 ti 18 ammo 4 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+FUND523 838 ammo 4 bank 0 floor 18 need 20 spare 0 sust 0 flip 33 of 745
+MAG522 838 ph 5 on 0 near 0 fund 0 fuse 0 ttl 1 ti 18 ammo 4 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+FUND523 839 ammo 4 bank 0 floor 18 need 20 spare 0 sust 0 flip 33 of 746
+MAG522 839 ph 5 on 0 near 0 fund 0 fuse 0 ttl 1 ti 18 ammo 4 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+FUND523 840 ammo 4 bank 10 floor 18 need 20 spare 0 sust 0 flip 33 of 747
+MAG522 840 ph 5 on 0 near 0 fund 0 fuse 0 ttl 1 ti 28 ammo 4 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+FUND523 841 ammo 4 bank 0 floor 18 need 20 spare 0 sust 0 flip 33 of 748
+MAG522 841 ph 5 on 0 near 0 fund 0 fuse 0 ttl 1 ti 18 ammo 4 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+FUND523 842 ammo 4 bank 0 floor 18 need 20 spare 0 sust 0 flip 33 of 749
+MAG522 842 ph 5 on 0 near 0 fund 0 fuse 0 ttl 1 ti 18 ammo 4 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+FUND523 843 ammo 4 bank 0 floor 18 need 20 spare 0 sust 0 flip 33 of 750
+MAG522 843 ph 5 on 0 near 0 fund 0 fuse 0 ttl 1 ti 18 ammo 4 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+FUND523 844 ammo 4 bank 10 floor 18 need 20 spare 0 sust 0 flip 33 of 751
+MAG522 844 ph 5 on 0 near 0 fund 0 fuse 0 ttl 1 ti 28 ammo 4 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+FUND523 845 ammo 4 bank 0 floor 18 need 20 spare 0 sust 0 flip 33 of 752
+MAG522 845 ph 5 on 0 near 0 fund 0 fuse 0 ttl 1 ti 18 ammo 4 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+FUND523 846 ammo 4 bank 0 floor 18 need 20 spare 0 sust 0 flip 33 of 753
+MAG522 846 ph 5 on 0 near 0 fund 0 fuse 0 ttl 1 ti 18 ammo 4 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+FUND523 847 ammo 4 bank 0 floor 18 need 20 spare 0 sust 0 flip 33 of 754
+MAG522 847 ph 5 on 0 near 0 fund 0 fuse 0 ttl 1 ti 18 ammo 4 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+FUND523 848 ammo 4 bank 10 floor 18 need 20 spare 0 sust 0 flip 33 of 755
+MAG522 848 ph 5 on 0 near 0 fund 0 fuse 0 ttl 1 ti 28 ammo 4 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+FUND523 849 ammo 4 bank 0 floor 18 need 20 spare 0 sust 0 flip 33 of 756
+MAG522 849 ph 5 on 0 near 0 fund 0 fuse 0 ttl 1 ti 18 ammo 4 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+FUND523 850 ammo 4 bank 0 floor 18 need 20 spare 0 sust 0 flip 33 of 757
+MAG522 850 ph 5 on 0 near 0 fund 0 fuse 0 ttl 1 ti 18 ammo 4 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+FUND523 851 ammo 4 bank 0 floor 18 need 20 spare 0 sust 0 flip 33 of 758
+MAG522 851 ph 5 on 0 near 0 fund 0 fuse 0 ttl 1 ti 18 ammo 4 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+FUND523 852 ammo 4 bank 10 floor 18 need 20 spare 0 sust 0 flip 33 of 759
+MAG522 852 ph 5 on 0 near 0 fund 0 fuse 0 ttl 1 ti 28 ammo 4 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+FUND523 853 ammo 4 bank 0 floor 18 need 20 spare 0 sust 0 flip 33 of 760
+MAG522 853 ph 5 on 0 near 0 fund 0 fuse 0 ttl 1 ti 18 ammo 4 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+FUND523 854 ammo 4 bank 0 floor 18 need 20 spare 0 sust 0 flip 33 of 761
+MAG522 854 ph 5 on 0 near 0 fund 0 fuse 0 ttl 1 ti 18 ammo 4 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+FUND523 855 ammo 4 bank 0 floor 18 need 20 spare 0 sust 0 flip 33 of 762
+MAG522 855 ph 5 on 0 near 0 fund 0 fuse 0 ttl 1 ti 18 ammo 4 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+FUND523 856 ammo 4 bank 10 floor 18 need 20 spare 0 sust 0 flip 33 of 763
+MAG522 856 ph 5 on 0 near 0 fund 0 fuse 0 ttl 1 ti 28 ammo 4 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+FUND523 857 ammo 4 bank 0 floor 18 need 20 spare 0 sust 0 flip 33 of 764
+MAG522 857 ph 5 on 0 near 0 fund 0 fuse 0 ttl 1 ti 18 ammo 4 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+FUND523 858 ammo 4 bank 0 floor 18 need 20 spare 0 sust 0 flip 33 of 765
+MAG522 858 ph 5 on 0 near 0 fund 0 fuse 0 ttl 1 ti 18 ammo 4 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+FUND523 859 ammo 4 bank 0 floor 18 need 20 spare 0 sust 0 flip 33 of 766
+MAG522 859 ph 5 on 0 near 0 fund 0 fuse 0 ttl 1 ti 18 ammo 4 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+FUND523 860 ammo 4 bank 10 floor 18 need 20 spare 0 sust 0 flip 33 of 767
+MAG522 860 ph 5 on 0 near 0 fund 0 fuse 0 ttl 1 ti 28 ammo 4 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+FUND523 861 ammo 4 bank 0 floor 18 need 20 spare 0 sust 0 flip 33 of 768
+MAG522 861 ph 5 on 0 near 0 fund 0 fuse 0 ttl 1 ti 18 ammo 4 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+FUND523 862 ammo 4 bank 0 floor 18 need 20 spare 0 sust 0 flip 33 of 769
+MAG522 862 ph 5 on 0 near 0 fund 0 fuse 0 ttl 1 ti 18 ammo 4 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+FUND523 863 ammo 4 bank 0 floor 18 need 20 spare 0 sust 0 flip 33 of 770
+MAG522 863 ph 5 on 0 near 0 fund 0 fuse 0 ttl 1 ti 18 ammo 4 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+FUND523 864 ammo 4 bank 10 floor 18 need 20 spare 0 sust 0 flip 33 of 771
+MAG522 864 ph 5 on 0 near 0 fund 0 fuse 0 ttl 1 ti 28 ammo 4 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+FUND523 865 ammo 4 bank 0 floor 18 need 20 spare 0 sust 0 flip 33 of 772
+MAG522 865 ph 5 on 0 near 0 fund 0 fuse 0 ttl 1 ti 18 ammo 4 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+FUND523 866 ammo 4 bank 0 floor 18 need 20 spare 0 sust 0 flip 33 of 773
+MAG522 866 ph 5 on 0 near 0 fund 0 fuse 0 ttl 1 ti 18 ammo 4 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+FUND523 867 ammo 4 bank 0 floor 18 need 20 spare 0 sust 0 flip 33 of 774
+MAG522 867 ph 5 on 0 near 0 fund 0 fuse 0 ttl 1 ti 18 ammo 4 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+FUND523 868 ammo 4 bank 10 floor 18 need 20 spare 0 sust 0 flip 33 of 775
+MAG522 868 ph 5 on 0 near 0 fund 0 fuse 0 ttl 1 ti 28 ammo 4 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+FUND523 869 ammo 4 bank 0 floor 18 need 20 spare 0 sust 0 flip 33 of 776
+MAG522 869 ph 5 on 0 near 0 fund 0 fuse 0 ttl 1 ti 18 ammo 4 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+FUND523 870 ammo 4 bank 0 floor 18 need 20 spare 0 sust 0 flip 33 of 777
+MAG522 870 ph 5 on 0 near 0 fund 0 fuse 0 ttl 1 ti 18 ammo 4 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+FUND523 871 ammo 4 bank 0 floor 18 need 20 spare 0 sust 0 flip 33 of 778
+MAG522 871 ph 5 on 0 near 0 fund 0 fuse 0 ttl 1 ti 18 ammo 4 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+FUND523 872 ammo 4 bank 10 floor 18 need 20 spare 0 sust 0 flip 33 of 779
+MAG522 872 ph 5 on 0 near 0 fund 0 fuse 0 ttl 1 ti 28 ammo 4 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+FUND523 873 ammo 4 bank 0 floor 18 need 20 spare 0 sust 0 flip 33 of 780
+MAG522 873 ph 5 on 0 near 0 fund 0 fuse 0 ttl 1 ti 18 ammo 4 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+FUND523 874 ammo 4 bank 0 floor 18 need 20 spare 0 sust 0 flip 33 of 781
+MAG522 874 ph 5 on 0 near 0 fund 0 fuse 0 ttl 1 ti 18 ammo 4 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+FUND523 875 ammo 4 bank 0 floor 18 need 20 spare 0 sust 0 flip 33 of 782
+MAG522 875 ph 5 on 0 near 0 fund 0 fuse 0 ttl 1 ti 18 ammo 4 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+FUND523 876 ammo 4 bank 10 floor 18 need 20 spare 0 sust 0 flip 33 of 783
+MAG522 876 ph 5 on 0 near 0 fund 0 fuse 0 ttl 1 ti 28 ammo 4 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+FUND523 877 ammo 4 bank 0 floor 18 need 20 spare 0 sust 0 flip 33 of 784
+MAG522 877 ph 5 on 0 near 0 fund 0 fuse 0 ttl 1 ti 18 ammo 4 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+FUND523 878 ammo 4 bank 0 floor 18 need 20 spare 0 sust 0 flip 33 of 785
+MAG522 878 ph 5 on 0 near 0 fund 0 fuse 0 ttl 1 ti 18 ammo 4 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+FUND523 879 ammo 4 bank 0 floor 18 need 20 spare 0 sust 0 flip 33 of 786
+MAG522 879 ph 5 on 0 near 0 fund 0 fuse 0 ttl 1 ti 18 ammo 4 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+FUND523 880 ammo 4 bank 10 floor 18 need 20 spare 0 sust 0 flip 33 of 787
+MAG522 880 ph 5 on 0 near 0 fund 0 fuse 0 ttl 1 ti 28 ammo 4 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+FUND523 881 ammo 4 bank 0 floor 18 need 20 spare 0 sust 0 flip 33 of 788
+MAG522 881 ph 5 on 0 near 0 fund 0 fuse 0 ttl 1 ti 18 ammo 4 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+FUND523 882 ammo 4 bank 0 floor 18 need 20 spare 0 sust 0 flip 33 of 789
+MAG522 882 ph 5 on 0 near 0 fund 0 fuse 0 ttl 1 ti 18 ammo 4 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+FUND523 883 ammo 4 bank 0 floor 18 need 20 spare 0 sust 0 flip 33 of 790
+MAG522 883 ph 5 on 0 near 0 fund 0 fuse 0 ttl 1 ti 18 ammo 4 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+FUND523 884 ammo 4 bank 10 floor 18 need 20 spare 0 sust 0 flip 33 of 791
+MAG522 884 ph 5 on 0 near 0 fund 0 fuse 0 ttl 1 ti 28 ammo 4 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+FUND523 885 ammo 4 bank 0 floor 18 need 20 spare 0 sust 0 flip 33 of 792
+MAG522 885 ph 5 on 0 near 0 fund 0 fuse 0 ttl 1 ti 18 ammo 4 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+FUND523 886 ammo 4 bank 0 floor 18 need 20 spare 0 sust 0 flip 33 of 793
+MAG522 886 ph 5 on 0 near 0 fund 0 fuse 0 ttl 1 ti 18 ammo 4 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+FUND523 887 ammo 4 bank 0 floor 18 need 20 spare 0 sust 0 flip 33 of 794
+MAG522 887 ph 5 on 0 near 0 fund 0 fuse 0 ttl 1 ti 18 ammo 4 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+FUND523 888 ammo 4 bank 10 floor 18 need 20 spare 0 sust 0 flip 33 of 795
+MAG522 888 ph 5 on 0 near 0 fund 0 fuse 0 ttl 1 ti 28 ammo 4 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+FUND523 889 ammo 4 bank 0 floor 18 need 20 spare 0 sust 0 flip 33 of 796
+MAG522 889 ph 5 on 0 near 0 fund 0 fuse 0 ttl 1 ti 18 ammo 4 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+FUND523 890 ammo 4 bank 0 floor 18 need 20 spare 0 sust 0 flip 33 of 797
+MAG522 890 ph 5 on 0 near 0 fund 0 fuse 0 ttl 1 ti 18 ammo 4 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+FUND523 891 ammo 4 bank 0 floor 18 need 20 spare 0 sust 0 flip 33 of 798
+MAG522 891 ph 5 on 0 near 0 fund 0 fuse 0 ttl 1 ti 18 ammo 4 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+FUND523 892 ammo 4 bank 10 floor 18 need 20 spare 0 sust 0 flip 33 of 799
+MAG522 892 ph 5 on 0 near 0 fund 0 fuse 0 ttl 1 ti 28 ammo 4 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+FUND523 893 ammo 4 bank 0 floor 18 need 20 spare 0 sust 0 flip 33 of 800
+MAG522 893 ph 5 on 0 near 0 fund 0 fuse 0 ttl 1 ti 18 ammo 4 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+FUND523 894 ammo 4 bank 0 floor 18 need 20 spare 0 sust 0 flip 33 of 801
+MAG522 894 ph 5 on 0 near 0 fund 0 fuse 0 ttl 1 ti 18 ammo 4 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+FUND523 895 ammo 4 bank 0 floor 18 need 20 spare 0 sust 0 flip 33 of 802
+MAG522 895 ph 5 on 0 near 0 fund 0 fuse 0 ttl 1 ti 18 ammo 4 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+FUND523 896 ammo 4 bank 10 floor 18 need 20 spare 0 sust 0 flip 33 of 803
+MAG522 896 ph 5 on 0 near 0 fund 0 fuse 0 ttl 1 ti 28 ammo 4 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+FUND523 897 ammo 4 bank 0 floor 18 need 20 spare 0 sust 0 flip 33 of 804
+MAG522 897 ph 5 on 0 near 0 fund 0 fuse 0 ttl 1 ti 18 ammo 4 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+FUND523 898 ammo 4 bank 0 floor 18 need 20 spare 0 sust 0 flip 33 of 805
+MAG522 898 ph 5 on 0 near 0 fund 0 fuse 0 ttl 1 ti 18 ammo 4 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+FUND523 899 ammo 4 bank 0 floor 18 need 20 spare 0 sust 0 flip 33 of 806
+MAG522 899 ph 5 on 0 near 0 fund 0 fuse 0 ttl 1 ti 18 ammo 4 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+FUND523 900 ammo 4 bank 10 floor 18 need 20 spare 0 sust 0 flip 33 of 807
+MAG522 900 ph 5 on 0 near 0 fund 0 fuse 0 ttl 1 ti 28 ammo 4 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+FUND523 901 ammo 4 bank 0 floor 18 need 20 spare 0 sust 0 flip 33 of 808
+MAG522 901 ph 5 on 0 near 0 fund 0 fuse 0 ttl 1 ti 18 ammo 4 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+FUND523 902 ammo 4 bank 0 floor 18 need 20 spare 0 sust 0 flip 33 of 809
+MAG522 902 ph 5 on 0 near 0 fund 0 fuse 0 ttl 1 ti 18 ammo 4 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+FUND523 903 ammo 4 bank 0 floor 18 need 20 spare 0 sust 0 flip 33 of 810
+MAG522 903 ph 5 on 0 near 0 fund 0 fuse 0 ttl 1 ti 18 ammo 4 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+FUND523 904 ammo 4 bank 10 floor 18 need 20 spare 0 sust 0 flip 33 of 811
+MAG522 904 ph 5 on 0 near 0 fund 0 fuse 0 ttl 1 ti 28 ammo 4 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+FUND523 905 ammo 4 bank 0 floor 18 need 20 spare 0 sust 0 flip 33 of 812
+MAG522 905 ph 5 on 0 near 0 fund 0 fuse 0 ttl 1 ti 18 ammo 4 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+FUND523 906 ammo 4 bank 0 floor 18 need 20 spare 0 sust 0 flip 33 of 813
+MAG522 906 ph 5 on 0 near 0 fund 0 fuse 0 ttl 1 ti 18 ammo 4 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+FUND523 907 ammo 4 bank 0 floor 18 need 20 spare 0 sust 0 flip 33 of 814
+MAG522 907 ph 5 on 0 near 0 fund 0 fuse 0 ttl 1 ti 18 ammo 4 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+FUND523 908 ammo 4 bank 10 floor 18 need 20 spare 0 sust 0 flip 33 of 815
+MAG522 908 ph 5 on 0 near 0 fund 0 fuse 0 ttl 1 ti 28 ammo 4 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+FUND523 909 ammo 4 bank 0 floor 18 need 20 spare 0 sust 0 flip 33 of 816
+MAG522 909 ph 5 on 0 near 0 fund 0 fuse 0 ttl 1 ti 18 ammo 4 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+FUND523 910 ammo 4 bank 0 floor 18 need 20 spare 0 sust 0 flip 33 of 817
+MAG522 910 ph 5 on 0 near 0 fund 0 fuse 0 ttl 1 ti 18 ammo 4 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+FUND523 911 ammo 4 bank 0 floor 18 need 20 spare 0 sust 0 flip 33 of 818
+MAG522 911 ph 5 on 0 near 0 fund 0 fuse 0 ttl 1 ti 18 ammo 4 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+FUND523 912 ammo 4 bank 10 floor 18 need 20 spare 0 sust 0 flip 33 of 819
+MAG522 912 ph 5 on 0 near 0 fund 0 fuse 0 ttl 1 ti 28 ammo 4 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+FUND523 913 ammo 4 bank 0 floor 18 need 20 spare 0 sust 0 flip 33 of 820
+MAG522 913 ph 5 on 0 near 0 fund 0 fuse 0 ttl 1 ti 18 ammo 4 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+FUND523 914 ammo 4 bank 0 floor 18 need 20 spare 0 sust 0 flip 33 of 821
+MAG522 914 ph 5 on 0 near 0 fund 0 fuse 0 ttl 1 ti 18 ammo 4 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+FUND523 915 ammo 4 bank 0 floor 18 need 20 spare 0 sust 0 flip 33 of 822
+MAG522 915 ph 5 on 0 near 0 fund 0 fuse 0 ttl 1 ti 18 ammo 4 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+FUND523 916 ammo 4 bank 10 floor 18 need 20 spare 0 sust 0 flip 33 of 823
+MAG522 916 ph 5 on 0 near 0 fund 0 fuse 0 ttl 1 ti 28 ammo 4 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+FUND523 917 ammo 4 bank 0 floor 18 need 20 spare 0 sust 0 flip 33 of 824
+MAG522 917 ph 5 on 0 near 0 fund 0 fuse 0 ttl 1 ti 18 ammo 4 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+FUND523 918 ammo 4 bank 0 floor 18 need 20 spare 0 sust 0 flip 33 of 825
+MAG522 918 ph 5 on 0 near 0 fund 0 fuse 0 ttl 1 ti 18 ammo 4 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+FUND523 919 ammo 4 bank 0 floor 18 need 20 spare 0 sust 0 flip 33 of 826
+MAG522 919 ph 5 on 0 near 0 fund 0 fuse 0 ttl 1 ti 18 ammo 4 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+FUND523 920 ammo 4 bank 10 floor 18 need 20 spare 0 sust 0 flip 33 of 827
+MAG522 920 ph 5 on 0 near 0 fund 0 fuse 0 ttl 1 ti 28 ammo 4 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+FUND523 921 ammo 4 bank 0 floor 18 need 20 spare 0 sust 0 flip 33 of 828
+MAG522 921 ph 5 on 0 near 0 fund 0 fuse 0 ttl 1 ti 18 ammo 4 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+FUND523 922 ammo 4 bank 0 floor 18 need 20 spare 0 sust 0 flip 33 of 829
+MAG522 922 ph 5 on 0 near 0 fund 0 fuse 0 ttl 1 ti 18 ammo 4 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+FUND523 923 ammo 4 bank 0 floor 18 need 20 spare 0 sust 0 flip 33 of 830
+MAG522 923 ph 5 on 0 near 0 fund 0 fuse 0 ttl 1 ti 18 ammo 4 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+FUND523 924 ammo 4 bank 10 floor 18 need 20 spare 0 sust 0 flip 33 of 831
+MAG522 924 ph 5 on 0 near 0 fund 0 fuse 0 ttl 1 ti 28 ammo 4 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+FUND523 925 ammo 4 bank 0 floor 18 need 20 spare 0 sust 0 flip 33 of 832
+MAG522 925 ph 5 on 0 near 0 fund 0 fuse 0 ttl 1 ti 18 ammo 4 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+FUND523 926 ammo 4 bank 0 floor 18 need 20 spare 0 sust 0 flip 33 of 833
+MAG522 926 ph 5 on 0 near 0 fund 0 fuse 0 ttl 1 ti 18 ammo 4 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+FUND523 927 ammo 4 bank 0 floor 18 need 20 spare 0 sust 0 flip 33 of 834
+MAG522 927 ph 5 on 0 near 0 fund 0 fuse 0 ttl 1 ti 18 ammo 4 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+FUND523 928 ammo 4 bank 10 floor 18 need 20 spare 0 sust 0 flip 33 of 835
+MAG522 928 ph 5 on 0 near 0 fund 0 fuse 0 ttl 1 ti 28 ammo 4 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+FUND523 929 ammo 4 bank 0 floor 18 need 20 spare 0 sust 0 flip 33 of 836
+MAG522 929 ph 5 on 0 near 0 fund 0 fuse 0 ttl 1 ti 18 ammo 4 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+FUND523 930 ammo 4 bank 0 floor 18 need 20 spare 0 sust 0 flip 33 of 837
+MAG522 930 ph 5 on 0 near 0 fund 0 fuse 0 ttl 1 ti 18 ammo 4 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+FUND523 931 ammo 4 bank 0 floor 18 need 20 spare 0 sust 0 flip 33 of 838
+MAG522 931 ph 5 on 0 near 0 fund 0 fuse 0 ttl 1 ti 18 ammo 4 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+FUND523 932 ammo 4 bank 10 floor 18 need 20 spare 0 sust 0 flip 33 of 839
+MAG522 932 ph 5 on 0 near 0 fund 0 fuse 0 ttl 1 ti 28 ammo 4 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+FUND523 933 ammo 4 bank 0 floor 18 need 20 spare 0 sust 0 flip 33 of 840
+MAG522 933 ph 5 on 0 near 0 fund 0 fuse 0 ttl 1 ti 18 ammo 4 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+FUND523 934 ammo 4 bank 0 floor 18 need 20 spare 0 sust 0 flip 33 of 841
+MAG522 934 ph 5 on 0 near 0 fund 0 fuse 0 ttl 1 ti 18 ammo 4 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+FUND523 935 ammo 4 bank 0 floor 18 need 20 spare 0 sust 0 flip 33 of 842
+MAG522 935 ph 5 on 0 near 0 fund 0 fuse 0 ttl 1 ti 18 ammo 4 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+FUND523 936 ammo 4 bank 10 floor 18 need 20 spare 0 sust 0 flip 33 of 843
+MAG522 936 ph 5 on 0 near 0 fund 0 fuse 0 ttl 1 ti 28 ammo 4 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+FUND523 937 ammo 4 bank 0 floor 18 need 20 spare 0 sust 0 flip 33 of 844
+MAG522 937 ph 5 on 0 near 0 fund 0 fuse 0 ttl 1 ti 18 ammo 4 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+FUND523 938 ammo 4 bank 0 floor 18 need 20 spare 0 sust 0 flip 33 of 845
+MAG522 938 ph 5 on 0 near 0 fund 0 fuse 0 ttl 1 ti 18 ammo 4 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+FUND523 939 ammo 4 bank 0 floor 18 need 20 spare 0 sust 0 flip 33 of 846
+MAG522 939 ph 5 on 0 near 0 fund 0 fuse 0 ttl 1 ti 18 ammo 4 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+FUND523 940 ammo 4 bank 10 floor 18 need 20 spare 0 sust 0 flip 33 of 847
+MAG522 940 ph 5 on 0 near 0 fund 0 fuse 0 ttl 1 ti 28 ammo 4 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+FUND523 941 ammo 4 bank 0 floor 18 need 20 spare 0 sust 0 flip 33 of 848
+MAG522 941 ph 5 on 0 near 0 fund 0 fuse 0 ttl 1 ti 18 ammo 4 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+FUND523 942 ammo 4 bank 0 floor 18 need 20 spare 0 sust 0 flip 33 of 849
+MAG522 942 ph 5 on 0 near 0 fund 0 fuse 0 ttl 1 ti 18 ammo 4 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+FUND523 943 ammo 4 bank 0 floor 18 need 20 spare 0 sust 0 flip 33 of 850
+MAG522 943 ph 5 on 0 near 0 fund 0 fuse 0 ttl 1 ti 18 ammo 4 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+FUND523 944 ammo 4 bank 10 floor 18 need 20 spare 0 sust 0 flip 33 of 851
+MAG522 944 ph 5 on 0 near 0 fund 0 fuse 0 ttl 1 ti 28 ammo 4 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+FUND523 945 ammo 4 bank 0 floor 18 need 20 spare 0 sust 0 flip 33 of 852
+MAG522 945 ph 5 on 0 near 0 fund 0 fuse 0 ttl 1 ti 18 ammo 4 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+FUND523 946 ammo 4 bank 0 floor 18 need 20 spare 0 sust 0 flip 33 of 853
+MAG522 946 ph 5 on 0 near 0 fund 0 fuse 0 ttl 1 ti 18 ammo 4 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+FUND523 947 ammo 4 bank 0 floor 18 need 20 spare 0 sust 0 flip 33 of 854
+MAG522 947 ph 5 on 0 near 0 fund 0 fuse 0 ttl 1 ti 18 ammo 4 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+FUND523 948 ammo 4 bank 10 floor 18 need 20 spare 0 sust 0 flip 33 of 855
+MAG522 948 ph 5 on 0 near 0 fund 0 fuse 0 ttl 1 ti 28 ammo 4 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+FUND523 949 ammo 4 bank 0 floor 18 need 20 spare 0 sust 0 flip 33 of 856
+MAG522 949 ph 5 on 0 near 0 fund 0 fuse 0 ttl 1 ti 18 ammo 4 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+FUND523 950 ammo 4 bank 0 floor 18 need 20 spare 0 sust 0 flip 33 of 857
+MAG522 950 ph 5 on 0 near 0 fund 0 fuse 0 ttl 1 ti 18 ammo 4 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+FUND523 951 ammo 4 bank 0 floor 18 need 20 spare 0 sust 0 flip 33 of 858
+MAG522 951 ph 5 on 0 near 0 fund 0 fuse 0 ttl 1 ti 18 ammo 4 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+FUND523 952 ammo 4 bank 10 floor 18 need 20 spare 0 sust 0 flip 33 of 859
+MAG522 952 ph 5 on 0 near 0 fund 0 fuse 0 ttl 1 ti 28 ammo 4 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+FUND523 953 ammo 4 bank 0 floor 18 need 20 spare 0 sust 0 flip 33 of 860
+MAG522 953 ph 5 on 0 near 0 fund 0 fuse 0 ttl 1 ti 18 ammo 4 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+FUND523 954 ammo 4 bank 0 floor 18 need 20 spare 0 sust 0 flip 33 of 861
+MAG522 954 ph 5 on 0 near 0 fund 0 fuse 0 ttl 1 ti 18 ammo 4 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+FUND523 955 ammo 4 bank 0 floor 18 need 20 spare 0 sust 0 flip 33 of 862
+MAG522 955 ph 5 on 0 near 0 fund 0 fuse 0 ttl 1 ti 18 ammo 4 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+FUND523 956 ammo 4 bank 10 floor 18 need 20 spare 0 sust 0 flip 33 of 863
+MAG522 956 ph 5 on 0 near 0 fund 0 fuse 0 ttl 1 ti 28 ammo 4 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+FUND523 957 ammo 4 bank 0 floor 18 need 20 spare 0 sust 0 flip 33 of 864
+MAG522 957 ph 5 on 0 near 0 fund 0 fuse 0 ttl 1 ti 18 ammo 4 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+FUND523 958 ammo 4 bank 0 floor 18 need 20 spare 0 sust 0 flip 33 of 865
+MAG522 958 ph 5 on 0 near 0 fund 0 fuse 0 ttl 1 ti 18 ammo 4 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0
+FUND523 959 ammo 4 bank 0 floor 18 need 20 spare 0 sust 0 flip 33 of 866
+MAG522 959 ph 5 on 0 near 0 fund 0 fuse 0 ttl 1 ti 18 ammo 4 bar 9 want 24 floor 18 bind 0 nbind 0 nnear 0

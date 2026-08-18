@@ -1,0 +1,36 @@
+atoll_s76_A	atoll	76	A	US	parent	Core destroyed	316	0	2170	270
+atoll_s76_B	atoll	76	B	US	parent	Core destroyed	162	0	780	460
+atoll_s77_A	atoll	77	A	OPP	_v488beltbreak2	Core destroyed	372	0	1820	4250
+atoll_s77_B	atoll	77	B	OPP	_v488beltbreak2	Core destroyed	316	0	1540	1550
+atoll_s78_A	atoll	78	A	US	parent	Core destroyed	292	0	1430	100
+atoll_s78_B	atoll	78	B	US	parent	Core destroyed	405	0	4010	1970
+drakkarfjord_s76_A	drakkarfjord	76	A	US	parent	Core destroyed	92	0	340	0
+drakkarfjord_s76_B	drakkarfjord	76	B	US	parent	Core destroyed	153	0	330	0
+drakkarfjord_s77_A	drakkarfjord	77	A	US	parent	Core destroyed	92	0	330	0
+drakkarfjord_s77_B	drakkarfjord	77	B	US	parent	Titanium collected (tiebreak)	1000	0	330	0
+drakkarfjord_s78_A	drakkarfjord	78	A	US	parent	Core destroyed	153	0	370	0
+drakkarfjord_s78_B	drakkarfjord	78	B	US	parent	Core destroyed	600	0	1550	0
+glacierkeep_s76_A	glacierkeep	76	A	US	parent	Core destroyed	119	0	300	0
+glacierkeep_s76_B	glacierkeep	76	B	US	parent	Titanium collected (tiebreak)	1000	0	330	0
+glacierkeep_s77_A	glacierkeep	77	A	US	parent	Core destroyed	145	0	130	0
+glacierkeep_s77_B	glacierkeep	77	B	US	parent	Core destroyed	217	0	0	0
+glacierkeep_s78_A	glacierkeep	78	A	US	parent	Core destroyed	241	0	590	0
+glacierkeep_s78_B	glacierkeep	78	B	US	parent	Core destroyed	123	0	320	0
+midgard_s76_A	midgard	76	A	OPP	_v488beltbreak2	Core destroyed	317	0	1240	2690
+midgard_s76_B	midgard	76	B	OPP	_v488beltbreak2	Core destroyed	193	0	640	700
+midgard_s77_A	midgard	77	A	US	parent	Titanium collected (tiebreak)	1000	0	2860	440
+midgard_s77_B	midgard	77	B	OPP	_v488beltbreak2	Core destroyed	301	0	630	670
+midgard_s78_A	midgard	78	A	US	parent	Core destroyed	297	0	690	770
+midgard_s78_B	midgard	78	B	US	parent	Core destroyed	345	0	3130	700
+nordkap_s76_A	nordkap	76	A	US	parent	Core destroyed	210	0	1170	230
+nordkap_s76_B	nordkap	76	B	OPP	_v488beltbreak2	Core destroyed	275	0	30	3250
+nordkap_s77_A	nordkap	77	A	US	parent	Core destroyed	303	0	880	60
+nordkap_s77_B	nordkap	77	B	US	parent	Core destroyed	241	0	90	60
+nordkap_s78_A	nordkap	78	A	US	parent	Core destroyed	442	0	1090	90
+nordkap_s78_B	nordkap	78	B	US	parent	Core destroyed	133	0	310	90
+yulerune_s76_A	yulerune	76	A	US	parent	Core destroyed	773	0	240	310
+yulerune_s76_B	yulerune	76	B	OPP	_v488beltbreak2	Core destroyed	208	0	410	900
+yulerune_s77_A	yulerune	77	A	US	parent	Core destroyed	136	0	1020	360
+yulerune_s77_B	yulerune	77	B	US	parent	Core destroyed	593	0	410	530
+yulerune_s78_A	yulerune	78	A	OPP	_v488beltbreak2	Core destroyed	233	0	370	390
+yulerune_s78_B	yulerune	78	B	OPP	_v488beltbreak2	Core destroyed	220	0	370	820

@@ -1,0 +1,36 @@
+atoll_s61_A	atoll	61	A	US	mSALT	Core destroyed	606	0	3000	430
+atoll_s61_B	atoll	61	B	US	mSALT	Core destroyed	190	0	1330	710
+atoll_s62_A	atoll	62	A	US	mSALT	Core destroyed	161	0	580	350
+atoll_s62_B	atoll	62	B	US	mSALT	Core destroyed	645	0	310	1650
+atoll_s63_A	atoll	63	A	OPP	_v488beltbreak2	Core destroyed	245	0	1190	2400
+atoll_s63_B	atoll	63	B	US	mSALT	Core destroyed	150	0	730	490
+drakkarfjord_s61_A	drakkarfjord	61	A	US	mSALT	Core destroyed	92	0	330	0
+drakkarfjord_s61_B	drakkarfjord	61	B	US	mSALT	Core destroyed	98	0	320	0
+drakkarfjord_s62_A	drakkarfjord	62	A	US	mSALT	Core destroyed	232	0	1440	1470
+drakkarfjord_s62_B	drakkarfjord	62	B	US	mSALT	Core destroyed	101	0	280	0
+drakkarfjord_s63_A	drakkarfjord	63	A	US	mSALT	Core destroyed	101	0	400	0
+drakkarfjord_s63_B	drakkarfjord	63	B	US	mSALT	Core destroyed	101	0	280	0
+glacierkeep_s61_A	glacierkeep	61	A	US	mSALT	Core destroyed	114	0	220	0
+glacierkeep_s61_B	glacierkeep	61	B	US	mSALT	Core destroyed	617	0	0	0
+glacierkeep_s62_A	glacierkeep	62	A	OPP	_v488beltbreak2	Titanium collected (tiebreak)	1000	0	240	1780
+glacierkeep_s62_B	glacierkeep	62	B	US	mSALT	Core destroyed	445	0	0	0
+glacierkeep_s63_A	glacierkeep	63	A	US	mSALT	Core destroyed	120	0	310	0
+glacierkeep_s63_B	glacierkeep	63	B	US	mSALT	Core destroyed	285	0	110	0
+midgard_s61_A	midgard	61	A	OPP	_v488beltbreak2	Core destroyed	243	0	550	2370
+midgard_s61_B	midgard	61	B	US	mSALT	Core destroyed	177	0	1400	630
+midgard_s62_A	midgard	62	A	US	mSALT	Titanium collected (tiebreak)	1000	0	780	630
+midgard_s62_B	midgard	62	B	OPP	_v488beltbreak2	Core destroyed	160	0	780	1390
+midgard_s63_A	midgard	63	A	US	mSALT	Core destroyed	241	0	970	630
+midgard_s63_B	midgard	63	B	US	mSALT	Core destroyed	264	0	1400	740
+nordkap_s61_A	nordkap	61	A	OPP	_v488beltbreak2	Core destroyed	257	0	140	1180
+nordkap_s61_B	nordkap	61	B	OPP	_v488beltbreak2	Core destroyed	267	0	130	2730
+nordkap_s62_A	nordkap	62	A	US	mSALT	Core destroyed	834	0	4950	70
+nordkap_s62_B	nordkap	62	B	US	mSALT	Core destroyed	189	0	180	20
+nordkap_s63_A	nordkap	63	A	US	mSALT	Core destroyed	104	0	240	0
+nordkap_s63_B	nordkap	63	B	US	mSALT	Core destroyed	211	0	1920	1530
+yulerune_s61_A	yulerune	61	A	US	mSALT	Core destroyed	429	0	430	1000
+yulerune_s61_B	yulerune	61	B	OPP	_v488beltbreak2	Core destroyed	581	0	340	450
+yulerune_s62_A	yulerune	62	A	OPP	_v488beltbreak2	Core destroyed	469	0	580	490
+yulerune_s62_B	yulerune	62	B	US	mSALT	Core destroyed	225	0	910	190
+yulerune_s63_A	yulerune	63	A	US	mSALT	Titanium collected (tiebreak)	1000	0	710	500
+yulerune_s63_B	yulerune	63	B	US	mSALT	Core destroyed	255	0	3520	300

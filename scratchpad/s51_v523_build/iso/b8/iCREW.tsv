@@ -1,0 +1,37 @@
+tag	map	seed	seat	ours	winner	cond	turn	tracebacks	ours_mined	opp_mined
+atoll_s822_A	atoll	822	A	US	iCREW	Core destroyed	116	0	610	160
+atoll_s822_B	atoll	822	B	US	iCREW	Core destroyed	117	0	540	320
+atoll_s823_A	atoll	823	A	OPP	_v488beltbreak2	Core destroyed	202	0	970	1740
+atoll_s823_B	atoll	823	B	OPP	_v488beltbreak2	Core destroyed	437	0	2140	4750
+atoll_s824_A	atoll	824	A	OPP	_v488beltbreak2	Core destroyed	220	0	320	1270
+atoll_s824_B	atoll	824	B	US	iCREW	Core destroyed	420	0	3100	2050
+drakkarfjord_s822_A	drakkarfjord	822	A	US	iCREW	Core destroyed	100	0	430	0
+drakkarfjord_s822_B	drakkarfjord	822	B	US	iCREW	Core destroyed	280	0	2780	0
+drakkarfjord_s823_A	drakkarfjord	823	A	US	iCREW	Core destroyed	168	0	730	0
+drakkarfjord_s823_B	drakkarfjord	823	B	US	iCREW	Core destroyed	122	0	350	0
+drakkarfjord_s824_A	drakkarfjord	824	A	US	iCREW	Titanium collected (tiebreak)	1000	0	310	0
+drakkarfjord_s824_B	drakkarfjord	824	B	US	iCREW	Core destroyed	357	0	930	0
+glacierkeep_s822_A	glacierkeep	822	A	US	iCREW	Core destroyed	857	0	320	200
+glacierkeep_s822_B	glacierkeep	822	B	OPP	_v488beltbreak2	Core destroyed	893	0	0	0
+glacierkeep_s823_A	glacierkeep	823	A	US	iCREW	Core destroyed	115	0	350	0
+glacierkeep_s823_B	glacierkeep	823	B	US	iCREW	Titanium collected (tiebreak)	1000	0	40	0
+glacierkeep_s824_A	glacierkeep	824	A	US	iCREW	Core destroyed	222	0	490	0
+glacierkeep_s824_B	glacierkeep	824	B	US	iCREW	Core destroyed	582	0	0	0
+midgard_s822_A	midgard	822	A	US	iCREW	Core destroyed	169	0	1390	540
+midgard_s822_B	midgard	822	B	OPP	_v488beltbreak2	Core destroyed	297	0	540	740
+midgard_s823_A	midgard	823	A	US	iCREW	Core destroyed	325	0	810	620
+midgard_s823_B	midgard	823	B	US	iCREW	Core destroyed	495	0	980	800
+midgard_s824_A	midgard	824	A	US	iCREW	Core destroyed	849	0	3590	680
+midgard_s824_B	midgard	824	B	OPP	_v488beltbreak2	Core destroyed	445	0	560	1650
+nordkap_s822_A	nordkap	822	A	US	iCREW	Core destroyed	433	0	900	60
+nordkap_s822_B	nordkap	822	B	US	iCREW	Core destroyed	428	0	640	790
+nordkap_s823_A	nordkap	823	A	OPP	_v488beltbreak2	Core destroyed	641	0	120	60
+nordkap_s823_B	nordkap	823	B	US	iCREW	Core destroyed	548	0	4810	5730
+nordkap_s824_A	nordkap	824	A	US	iCREW	Core destroyed	197	0	590	60
+nordkap_s824_B	nordkap	824	B	OPP	_v488beltbreak2	Core destroyed	349	0	110	50
+yulerune_s822_A	yulerune	822	A	US	iCREW	Core destroyed	329	0	2520	570
+yulerune_s822_B	yulerune	822	B	OPP	_v488beltbreak2	Core destroyed	309	0	420	630
+yulerune_s823_A	yulerune	823	A	OPP	_v488beltbreak2	Core destroyed	176	0	270	1060
+yulerune_s823_B	yulerune	823	B	US	iCREW	Core destroyed	441	0	230	230
+yulerune_s824_A	yulerune	824	A	OPP	_v488beltbreak2	Core destroyed	193	0	540	710
+yulerune_s824_B	yulerune	824	B	US	iCREW	Core destroyed	312	0	1650	1080
