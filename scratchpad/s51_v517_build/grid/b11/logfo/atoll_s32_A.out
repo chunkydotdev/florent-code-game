@@ -1,0 +1,19 @@
+Running match: flagoff vs _v488beltbreak2
+  Map: atoll.map26  Seed: 32  Replay: 
+scratchpad/s51_v517_build/grid/b11/repfo/atoll_s32_A.replay26  TLE: 10ms
+Completed turn 0
+Completed turn 100
+Completed turn 200
+Completed turn 300
+Completed turn 400
+Completed turn 500
+Completed turn 600
+Replay written to scratchpad/s51_v517_build/grid/b11/repfo/atoll_s32_A.replay26
+
+  Winner: flagoff  (Core destroyed, turn 677)
+
+                       flagoff    _v488beltbreak2  
+  Titanium     30 (5130 mined)    11 (3340 mined)  
+  Units                     23                 16  
+  Buildings                 18                 14  
+

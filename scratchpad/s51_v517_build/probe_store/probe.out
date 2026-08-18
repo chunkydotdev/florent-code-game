@@ -1,0 +1,21 @@
+Running match: probe_store vs starter
+  Map: nordkap.map26  Seed: 1  Replay: replay.replay26  TLE: 10ms
+Completed turn 0
+Completed turn 100
+Completed turn 200
+Completed turn 300
+Completed turn 400
+Completed turn 500
+Completed turn 600
+Completed turn 700
+Completed turn 800
+Completed turn 900
+Replay written to replay.replay26
+
+  Winner: starter  (Titanium collected (tiebreak), turn 1000)
+
+                  probe_store            starter  
+  Titanium     3000 (0 mined)    64 (7160 mined)  
+  Units                     0                 17  
+  Buildings                 1                 62  
+

@@ -1,0 +1,30 @@
+atoll_s1_A	atoll	1	A	US	_v517twin	Core destroyed	971	0	4820	3960
+atoll_s1_B	atoll	1	B	OPP	_v488beltbreak2	Core destroyed	222	0	360	710
+atoll_s2_A	atoll	2	A	US	_v517twin	Core destroyed	360	0	3190	1270
+atoll_s2_B	atoll	2	B	OPP	_v488beltbreak2	Core destroyed	219	0	240	1410
+atoll_s3_A	atoll	3	A	US	_v517twin	Core destroyed	268	0	1320	290
+atoll_s3_B	atoll	3	B	US	_v517twin	Core destroyed	193	0	920	950
+drakkarfjord_s1_A	drakkarfjord	1	A	US	_v517twin	Core destroyed	452	0	2420	200
+drakkarfjord_s1_B	drakkarfjord	1	B	OPP	_v488beltbreak2	Core destroyed	431	0	1210	4150
+drakkarfjord_s2_A	drakkarfjord	2	A	OPP	_v488beltbreak2	Core destroyed	414	0	330	3780
+drakkarfjord_s2_B	drakkarfjord	2	B	US	_v517twin	Core destroyed	128	0	360	0
+drakkarfjord_s3_A	drakkarfjord	3	A	OPP	_v488beltbreak2	Core destroyed	892	0	7200	11340
+drakkarfjord_s3_B	drakkarfjord	3	B	US	_v517twin	Titanium collected (tiebreak)	1000	0	15620	11030
+glacierkeep_s1_A	glacierkeep	1	A	US	_v517twin	Core destroyed	266	0	220	0
+glacierkeep_s1_B	glacierkeep	1	B	US	_v517twin	Core destroyed	821	0	170	0
+glacierkeep_s2_A	glacierkeep	2	A	US	_v517twin	Core destroyed	217	0	230	0
+glacierkeep_s2_B	glacierkeep	2	B	US	_v517twin	Core destroyed	129	0	180	0
+glacierkeep_s3_A	glacierkeep	3	A	US	_v517twin	Core destroyed	281	0	230	0
+glacierkeep_s3_B	glacierkeep	3	B	US	_v517twin	Core destroyed	353	0	170	0
+midgard_s1_A	midgard	1	A	US	_v517twin	Core destroyed	324	0	3490	1270
+midgard_s1_B	midgard	1	B	OPP	_v488beltbreak2	Core destroyed	395	0	560	1490
+midgard_s2_A	midgard	2	A	OPP	_v488beltbreak2	Core destroyed	305	0	480	630
+midgard_s2_B	midgard	2	B	OPP	_v488beltbreak2	Core destroyed	185	0	510	2060
+midgard_s3_A	midgard	3	A	US	_v517twin	Core destroyed	326	0	2700	1120
+midgard_s3_B	midgard	3	B	OPP	_v488beltbreak2	Core destroyed	122	0	500	1550
+nordkap_s1_A	nordkap	1	A	US	_v517twin	Core destroyed	307	0	1330	270
+nordkap_s1_B	nordkap	1	B	US	_v517twin	Titanium collected (tiebreak)	1000	0	6780	2560
+nordkap_s2_A	nordkap	2	A	US	_v517twin	Core destroyed	829	0	2030	2240
+nordkap_s2_B	nordkap	2	B	OPP	_v488beltbreak2	Core destroyed	286	0	1780	6440
+nordkap_s3_A	nordkap	3	A	OPP	_v488beltbreak2	Core destroyed	402	0	800	1420
+nordkap_s3_B	nordkap	3	B	US	_v517twin	Core destroyed	336	0	1630	110

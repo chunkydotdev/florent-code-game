@@ -1,0 +1,258 @@
+Update available: 2.3.6 -> 2.3.8. Run: pip install --upgrade fcode
+TWIN517 74 at (15, 6) hold 0 live 1 floor 4 rebuy 24 ti 4 cost 72 n 1
+FIREDISC517 75 at (15, 6) hp 500 ti 4 ammo 24 win 0 shots 0 net None code 0 twin 0 peer 0 pub 1 hold 0 held 0 heldfund 0 resets 0 viol 0
+FIREDISC517 76 at (15, 6) hp 482 ti 14 ammo 14 win 1 shots 1 net None code 0 twin 0 peer 0 pub 1 hold 0 held 0 heldfund 0 resets 0 viol 0
+FIREDISC517 77 at (15, 6) hp 482 ti 14 ammo 14 win 1 shots 1 net None code 0 twin 0 peer 0 pub 1 hold 0 held 0 heldfund 0 resets 0 viol 0
+FIREDISC517 78 at (15, 6) hp 464 ti 14 ammo 4 win 2 shots 2 net None code 0 twin 0 peer 0 pub 1 hold 0 held 0 heldfund 0 resets 0 viol 0
+FIREDISC517 79 at (15, 6) hp 464 ti 14 ammo 4 win 2 shots 2 net None code 0 twin 0 peer 0 pub 1 hold 0 held 0 heldfund 0 resets 0 viol 0
+FIREDISC517 80 at (15, 6) hp 464 ti 14 ammo 14 win 2 shots 2 net None code 0 twin 0 peer 0 pub 1 hold 0 held 0 heldfund 0 resets 0 viol 0
+FIREDISC517 81 at (15, 6) hp 446 ti 14 ammo 4 win 3 shots 3 net None code 0 twin 0 peer 0 pub 1 hold 0 held 0 heldfund 0 resets 0 viol 0
+FIREDISC517 82 at (15, 6) hp 446 ti 14 ammo 4 win 3 shots 3 net None code 0 twin 0 peer 0 pub 1 hold 0 held 0 heldfund 0 resets 0 viol 0
+FIREDISC517 83 at (15, 6) hp 446 ti 14 ammo 4 win 3 shots 3 net None code 0 twin 0 peer 0 pub 1 hold 0 held 0 heldfund 0 resets 0 viol 0
+FIREDISC517 84 at (15, 6) hp 446 ti 14 ammo 14 win 3 shots 3 net None code 0 twin 0 peer 0 pub 1 hold 0 held 0 heldfund 0 resets 0 viol 0
+FIREDISC517 85 at (15, 6) hp 428 ti 14 ammo 4 win 4 shots 4 net 72 code 6 twin 0 peer 0 pub 1 hold 0 held 0 heldfund 0 resets 0 viol 0
+FIREDISC517 86 at (15, 6) hp 428 ti 14 ammo 4 win 4 shots 4 net 72 code 6 twin 0 peer 0 pub 1 hold 0 held 0 heldfund 0 resets 0 viol 0
+FIREDISC517 87 at (15, 6) hp 428 ti 14 ammo 4 win 4 shots 4 net 72 code 6 twin 0 peer 0 pub 1 hold 0 held 0 heldfund 0 resets 0 viol 0
+FIREDISC517 88 at (15, 6) hp 428 ti 14 ammo 14 win 4 shots 4 net 72 code 6 twin 0 peer 0 pub 1 hold 0 held 0 heldfund 0 resets 0 viol 0
+FIREDISC517 89 at (15, 6) hp 410 ti 14 ammo 4 win 4 shots 5 net 72 code 6 twin 0 peer 0 pub 1 hold 0 held 0 heldfund 0 resets 0 viol 0
+FIREDISC517 90 at (15, 6) hp 410 ti 14 ammo 4 win 4 shots 5 net 72 code 6 twin 0 peer 0 pub 1 hold 0 held 0 heldfund 0 resets 0 viol 0
+FIREDISC517 91 at (15, 6) hp 410 ti 14 ammo 4 win 4 shots 5 net 72 code 6 twin 0 peer 0 pub 1 hold 0 held 0 heldfund 0 resets 0 viol 0
+FIREDISC517 92 at (15, 6) hp 410 ti 14 ammo 14 win 4 shots 5 net 72 code 6 twin 0 peer 0 pub 1 hold 0 held 0 heldfund 0 resets 0 viol 0
+FIREDISC517 93 at (15, 6) hp 392 ti 14 ammo 4 win 4 shots 6 net 72 code 6 twin 0 peer 0 pub 1 hold 0 held 0 heldfund 0 resets 0 viol 0
+FIREDISC517 94 at (15, 6) hp 392 ti 14 ammo 4 win 4 shots 6 net 72 code 6 twin 0 peer 0 pub 1 hold 0 held 0 heldfund 0 resets 0 viol 0
+FIREDISC517 95 at (15, 6) hp 392 ti 14 ammo 4 win 4 shots 6 net 72 code 6 twin 0 peer 0 pub 1 hold 0 held 0 heldfund 0 resets 0 viol 0
+FIREDISC517 96 at (15, 6) hp 392 ti 14 ammo 14 win 4 shots 6 net 72 code 6 twin 0 peer 0 pub 1 hold 0 held 0 heldfund 0 resets 0 viol 0
+FIREDISC517 97 at (15, 6) hp 374 ti 14 ammo 4 win 4 shots 7 net 72 code 6 twin 0 peer 0 pub 1 hold 0 held 0 heldfund 0 resets 0 viol 0
+FIREDISC517 98 at (15, 6) hp 374 ti 14 ammo 4 win 4 shots 7 net 72 code 6 twin 0 peer 0 pub 1 hold 0 held 0 heldfund 0 resets 0 viol 0
+FIREDISC517 99 at (15, 6) hp 374 ti 14 ammo 4 win 4 shots 7 net 72 code 6 twin 0 peer 0 pub 1 hold 0 held 0 heldfund 0 resets 0 viol 0
+FIREDISC517 100 at (15, 6) hp 374 ti 14 ammo 14 win 4 shots 7 net 72 code 6 twin 0 peer 0 pub 1 hold 0 held 0 heldfund 0 resets 0 viol 0
+FIREDISC517 101 at (15, 6) hp 356 ti 14 ammo 4 win 4 shots 8 net 72 code 6 twin 0 peer 0 pub 1 hold 0 held 0 heldfund 0 resets 0 viol 0
+FIREDISC517 102 at (15, 6) hp 356 ti 14 ammo 4 win 4 shots 8 net 72 code 6 twin 0 peer 0 pub 1 hold 0 held 0 heldfund 0 resets 0 viol 0
+FIREDISC517 103 at (15, 6) hp 356 ti 14 ammo 4 win 4 shots 8 net 72 code 6 twin 0 peer 0 pub 1 hold 0 held 0 heldfund 0 resets 0 viol 0
+FIREDISC517 104 at (15, 6) hp 356 ti 14 ammo 14 win 4 shots 8 net 72 code 6 twin 0 peer 0 pub 1 hold 0 held 0 heldfund 0 resets 0 viol 0
+FIREDISC517 105 at (15, 6) hp 338 ti 14 ammo 4 win 4 shots 9 net 72 code 6 twin 0 peer 0 pub 1 hold 0 held 0 heldfund 0 resets 0 viol 0
+FIREDISC517 106 at (15, 6) hp 338 ti 14 ammo 4 win 4 shots 9 net 72 code 6 twin 0 peer 0 pub 1 hold 0 held 0 heldfund 0 resets 0 viol 0
+FIREDISC517 107 at (15, 6) hp 338 ti 14 ammo 4 win 4 shots 9 net 72 code 6 twin 0 peer 0 pub 1 hold 0 held 0 heldfund 0 resets 0 viol 0
+FIREDISC517 108 at (15, 6) hp 338 ti 14 ammo 14 win 4 shots 9 net 72 code 6 twin 0 peer 0 pub 1 hold 0 held 0 heldfund 0 resets 0 viol 0
+FIREDISC517 109 at (15, 6) hp 320 ti 14 ammo 4 win 4 shots 10 net 72 code 6 twin 0 peer 0 pub 1 hold 0 held 0 heldfund 0 resets 0 viol 0
+FIREDISC517 110 at (15, 6) hp 320 ti 14 ammo 4 win 4 shots 10 net 72 code 6 twin 0 peer 0 pub 1 hold 0 held 0 heldfund 0 resets 0 viol 0
+FIREDISC517 111 at (15, 6) hp 320 ti 14 ammo 4 win 4 shots 10 net 72 code 6 twin 0 peer 0 pub 1 hold 0 held 0 heldfund 0 resets 0 viol 0
+FIREDISC517 112 at (15, 6) hp 320 ti 14 ammo 14 win 4 shots 10 net 72 code 6 twin 0 peer 0 pub 1 hold 0 held 0 heldfund 0 resets 0 viol 0
+FIREDISC517 113 at (15, 6) hp 306 ti 14 ammo 4 win 4 shots 11 net 68 code 6 twin 0 peer 0 pub 1 hold 0 held 0 heldfund 0 resets 0 viol 0
+FIREDISC517 114 at (15, 6) hp 310 ti 14 ammo 4 win 4 shots 11 net 64 code 6 twin 0 peer 0 pub 1 hold 0 held 0 heldfund 0 resets 0 viol 0
+FIREDISC517 115 at (15, 6) hp 314 ti 14 ammo 4 win 4 shots 11 net 60 code 6 twin 0 peer 0 pub 1 hold 0 held 0 heldfund 0 resets 0 viol 0
+FIREDISC517 116 at (15, 6) hp 318 ti 14 ammo 14 win 4 shots 11 net 56 code 6 twin 0 peer 0 pub 1 hold 0 held 0 heldfund 0 resets 0 viol 0
+FIREDISC517 117 at (15, 6) hp 304 ti 14 ammo 4 win 4 shots 12 net 52 code 6 twin 0 peer 0 pub 1 hold 0 held 0 heldfund 0 resets 0 viol 0
+FIREDISC517 118 at (15, 6) hp 308 ti 14 ammo 4 win 4 shots 12 net 48 code 5 twin 0 peer 0 pub 1 hold 0 held 0 heldfund 0 resets 0 viol 0
+FIREDISC517 119 at (15, 6) hp 312 ti 14 ammo 4 win 4 shots 12 net 44 code 5 twin 0 peer 0 pub 1 hold 0 held 0 heldfund 0 resets 0 viol 0
+FIREDISC517 120 at (15, 6) hp 316 ti 14 ammo 14 win 4 shots 12 net 40 code 5 twin 0 peer 0 pub 1 hold 0 held 0 heldfund 0 resets 0 viol 0
+FIREDISC517 121 at (15, 6) hp 302 ti 14 ammo 4 win 4 shots 13 net 36 code 5 twin 0 peer 0 pub 1 hold 0 held 0 heldfund 0 resets 0 viol 0
+FIREDISC517 122 at (15, 6) hp 306 ti 14 ammo 4 win 4 shots 13 net 32 code 5 twin 0 peer 0 pub 1 hold 0 held 0 heldfund 0 resets 0 viol 0
+FIREDISC517 123 at (15, 6) hp 310 ti 14 ammo 4 win 4 shots 13 net 28 code 5 twin 0 peer 0 pub 1 hold 0 held 0 heldfund 0 resets 0 viol 0
+FIREDISC517 124 at (15, 6) hp 314 ti 14 ammo 14 win 4 shots 13 net 24 code 4 twin 0 peer 0 pub 1 hold 0 held 0 heldfund 0 resets 0 viol 0
+FIREDISC517 125 at (15, 6) hp 300 ti 14 ammo 4 win 4 shots 14 net 20 code 4 twin 0 peer 0 pub 1 hold 0 held 0 heldfund 0 resets 0 viol 0
+FIREDISC517 126 at (15, 6) hp 304 ti 14 ammo 4 win 4 shots 14 net 16 code 4 twin 0 peer 0 pub 1 hold 0 held 0 heldfund 0 resets 0 viol 0
+FIREDISC517 127 at (15, 6) hp 308 ti 14 ammo 4 win 4 shots 14 net 12 code 3 twin 0 peer 0 pub 1 hold 0 held 0 heldfund 0 resets 0 viol 0
+FIREDISC517 128 at (15, 6) hp 312 ti 14 ammo 14 win 4 shots 14 net 8 code 3 twin 0 peer 0 pub 1 hold 0 held 0 heldfund 0 resets 0 viol 0
+FIREDISC517 129 at (15, 6) hp 302 ti 14 ammo 4 win 4 shots 15 net 16 code 4 twin 0 peer 0 pub 1 hold 0 held 0 heldfund 0 resets 0 viol 0
+FIREDISC517 130 at (15, 6) hp 310 ti 14 ammo 4 win 4 shots 15 net 8 code 3 twin 0 peer 0 pub 1 hold 0 held 0 heldfund 0 resets 0 viol 0
+FIREDISC517 131 at (15, 6) hp 318 ti 14 ammo 4 win 4 shots 15 net 0 code 1 twin 0 peer 0 pub 1 hold 1 held 0 heldfund 0 resets 0 viol 0
+TWINBANK517 132 ti 24 ammo 4 sen 72 bought 1 until 162
+FIREDISC517 132 at (15, 6) hp 326 ti 24 ammo 4 win 4 shots 15 net -8 code 1 twin 0 peer 0 pub 1 hold 1 held 0 heldfund 0 resets 0 viol 0
+TWINBANK517 133 ti 24 ammo 4 sen 72 bought 1 until 163
+FIREDISC517 133 at (15, 6) hp 334 ti 24 ammo 4 win 4 shots 15 net -16 code 1 twin 0 peer 0 pub 1 hold 1 held 0 heldfund 0 resets 0 viol 0
+TWINBANK517 134 ti 24 ammo 4 sen 72 bought 1 until 164
+FIREDISC517 134 at (15, 6) hp 342 ti 24 ammo 4 win 4 shots 15 net -24 code 1 twin 0 peer 0 pub 1 hold 1 held 0 heldfund 0 resets 0 viol 0
+TWINBANK517 135 ti 24 ammo 4 sen 72 bought 1 until 165
+FIREDISC517 135 at (15, 6) hp 350 ti 24 ammo 4 win 4 shots 15 net -32 code 1 twin 0 peer 0 pub 1 hold 1 held 0 heldfund 0 resets 0 viol 0
+TWINBANK517 136 ti 34 ammo 4 sen 72 bought 1 until 166
+FIREDISC517 136 at (15, 6) hp 358 ti 34 ammo 4 win 4 shots 15 net -40 code 1 twin 0 peer 0 pub 1 hold 1 held 0 heldfund 0 resets 0 viol 0
+TWINBANK517 137 ti 34 ammo 4 sen 72 bought 1 until 167
+FIREDISC517 137 at (15, 6) hp 366 ti 34 ammo 4 win 4 shots 15 net -48 code 1 twin 0 peer 0 pub 1 hold 1 held 0 heldfund 0 resets 0 viol 0
+TWINBANK517 138 ti 34 ammo 4 sen 72 bought 1 until 168
+FIREDISC517 138 at (15, 6) hp 374 ti 34 ammo 4 win 4 shots 15 net -56 code 1 twin 0 peer 0 pub 1 hold 1 held 0 heldfund 0 resets 0 viol 0
+TWINBANK517 139 ti 34 ammo 4 sen 72 bought 1 until 169
+FIREDISC517 139 at (15, 6) hp 382 ti 34 ammo 4 win 4 shots 15 net -64 code 1 twin 0 peer 0 pub 1 hold 1 held 0 heldfund 0 resets 0 viol 0
+TWINBANK517 140 ti 44 ammo 4 sen 72 bought 1 until 170
+FIREDISC517 140 at (15, 6) hp 390 ti 44 ammo 4 win 4 shots 15 net -72 code 1 twin 0 peer 0 pub 1 hold 1 held 0 heldfund 0 resets 0 viol 0
+TWINBANK517 141 ti 44 ammo 4 sen 72 bought 1 until 171
+FIREDISC517 141 at (15, 6) hp 398 ti 44 ammo 4 win 4 shots 15 net -80 code 1 twin 0 peer 0 pub 1 hold 1 held 0 heldfund 0 resets 0 viol 0
+TWINBANK517 142 ti 44 ammo 4 sen 72 bought 1 until 172
+FIREDISC517 142 at (15, 6) hp 406 ti 44 ammo 4 win 4 shots 15 net -88 code 1 twin 0 peer 0 pub 1 hold 1 held 0 heldfund 0 resets 0 viol 0
+TWINBANK517 143 ti 44 ammo 4 sen 72 bought 1 until 173
+FIREDISC517 143 at (15, 6) hp 414 ti 44 ammo 4 win 4 shots 15 net -96 code 1 twin 0 peer 0 pub 1 hold 1 held 0 heldfund 0 resets 0 viol 0
+TWINBANK517 144 ti 54 ammo 4 sen 72 bought 1 until 174
+FIREDISC517 144 at (15, 6) hp 422 ti 54 ammo 4 win 4 shots 15 net -104 code 1 twin 0 peer 0 pub 1 hold 1 held 0 heldfund 0 resets 0 viol 0
+TWINBANK517 145 ti 54 ammo 4 sen 66 bought 1 until 175
+FIREDISC517 145 at (15, 6) hp 430 ti 54 ammo 4 win 4 shots 15 net -112 code 1 twin 0 peer 0 pub 1 hold 1 held 0 heldfund 0 resets 0 viol 0
+TWINBANK517 146 ti 54 ammo 4 sen 66 bought 1 until 176
+FIREDISC517 146 at (15, 6) hp 438 ti 54 ammo 4 win 4 shots 15 net -120 code 1 twin 0 peer 0 pub 1 hold 1 held 0 heldfund 0 resets 0 viol 0
+TWINBANK517 147 ti 54 ammo 4 sen 66 bought 1 until 177
+FIREDISC517 147 at (15, 6) hp 446 ti 54 ammo 4 win 4 shots 15 net -128 code 1 twin 0 peer 0 pub 1 hold 1 held 0 heldfund 0 resets 0 viol 0
+TWINBANK517 148 ti 64 ammo 4 sen 66 bought 1 until 178
+FIREDISC517 148 at (15, 6) hp 454 ti 64 ammo 4 win 4 shots 15 net -136 code 1 twin 0 peer 0 pub 1 hold 1 held 0 heldfund 0 resets 0 viol 0
+TWINBANK517 149 ti 64 ammo 4 sen 66 bought 1 until 179
+FIREDISC517 149 at (15, 6) hp 462 ti 64 ammo 4 win 4 shots 15 net -144 code 1 twin 0 peer 0 pub 1 hold 1 held 0 heldfund 0 resets 0 viol 0
+TWINBANK517 150 ti 64 ammo 4 sen 66 bought 1 until 180
+FIREDISC517 150 at (15, 6) hp 470 ti 64 ammo 4 win 4 shots 15 net -152 code 1 twin 0 peer 0 pub 1 hold 1 held 0 heldfund 0 resets 0 viol 0
+TWINBANK517 151 ti 64 ammo 4 sen 66 bought 1 until 181
+FIREDISC517 151 at (15, 6) hp 478 ti 64 ammo 4 win 4 shots 15 net -160 code 1 twin 0 peer 0 pub 1 hold 1 held 0 heldfund 0 resets 0 viol 0
+TWINBANK517 152 ti 74 ammo 4 sen 66 bought 1 until 182
+FIREDISC517 152 at (15, 6) hp 486 ti 70 ammo 8 win 4 shots 15 net -168 code 1 twin 0 peer 0 pub 1 hold 1 held 0 heldfund 0 resets 0 viol 0
+TWINBANK517 153 ti 70 ammo 8 sen 66 bought 1 until 183
+FIREDISC517 153 at (15, 6) hp 494 ti 70 ammo 8 win 4 shots 15 net -176 code 1 twin 0 peer 0 pub 1 hold 1 held 0 heldfund 0 resets 0 viol 0
+TWINBANK517 154 ti 70 ammo 8 sen 66 bought 1 until 184
+FIREDISC517 154 at (15, 6) hp 500 ti 70 ammo 8 win 4 shots 15 net -182 code 1 twin 0 peer 0 pub 1 hold 1 held 0 heldfund 0 resets 0 viol 0
+TWINBANK517 155 ti 70 ammo 8 sen 66 bought 1 until 185
+FIREDISC517 155 at (15, 6) hp 500 ti 70 ammo 8 win 0 shots 15 net -182 code 1 twin 0 peer 0 pub 1 hold 0 held 0 heldfund 0 resets 1 viol 0
+TWINBANK517 156 ti 80 ammo 8 sen 66 bought 1 until 186
+FIREDISC517 156 at (15, 6) hp 500 ti 26 ammo 18 win 0 shots 15 net None code 0 twin 0 peer 0 pub 1 hold 0 held 0 heldfund 0 resets 1 viol 0
+TWINBANK517 157 ti 26 ammo 8 sen 67 bought 1 until 186
+FIREDISC517 157 at (15, 6) hp 482 ti 26 ammo 8 win 1 shots 16 net None code 0 twin 0 peer 0 pub 1 hold 0 held 0 heldfund 0 resets 1 viol 0
+TWINBANK517 158 ti 26 ammo 8 sen 67 bought 1 until 186
+FIREDISC517 158 at (15, 6) hp 486 ti 20 ammo 8 win 1 shots 16 net None code 0 twin 0 peer 0 pub 1 hold 0 held 0 heldfund 0 resets 1 viol 0
+TWINBANK517 159 ti 20 ammo 8 sen 67 bought 1 until 186
+FIREDISC517 159 at (15, 6) hp 490 ti 20 ammo 8 win 1 shots 16 net None code 0 twin 0 peer 0 pub 1 hold 0 held 0 heldfund 0 resets 1 viol 0
+TWINBANK517 160 ti 30 ammo 8 sen 67 bought 1 until 186
+FIREDISC517 160 at (15, 6) hp 498 ti 30 ammo 8 win 1 shots 16 net None code 0 twin 0 peer 0 pub 1 hold 0 held 0 heldfund 0 resets 1 viol 0
+TWINBANK517 161 ti 30 ammo 8 sen 67 bought 1 until 186
+FIREDISC517 161 at (15, 6) hp 500 ti 30 ammo 8 win 1 shots 16 net None code 0 twin 0 peer 0 pub 1 hold 0 held 0 heldfund 0 resets 1 viol 0
+TWINBANK517 162 ti 30 ammo 8 sen 67 bought 1 until 186
+FIREDISC517 162 at (15, 6) hp 500 ti 30 ammo 8 win 1 shots 16 net None code 0 twin 0 peer 0 pub 1 hold 0 held 0 heldfund 0 resets 1 viol 0
+TWINBANK517 163 ti 30 ammo 8 sen 67 bought 1 until 186
+FIREDISC517 163 at (15, 6) hp 500 ti 30 ammo 8 win 1 shots 16 net None code 0 twin 0 peer 0 pub 1 hold 0 held 0 heldfund 0 resets 1 viol 0
+TWINBANK517 164 ti 40 ammo 8 sen 67 bought 1 until 186
+FIREDISC517 164 at (15, 6) hp 500 ti 34 ammo 8 win 1 shots 16 net None code 0 twin 0 peer 0 pub 1 hold 0 held 0 heldfund 0 resets 1 viol 0
+TWINBANK517 165 ti 34 ammo 8 sen 68 bought 1 until 186
+FIREDISC517 165 at (15, 6) hp 500 ti 33 ammo 8 win 1 shots 16 net None code 0 twin 0 peer 0 pub 1 hold 0 held 0 heldfund 0 resets 1 viol 0
+TWINBANK517 166 ti 33 ammo 8 sen 68 bought 1 until 186
+FIREDISC517 166 at (15, 6) hp 500 ti 32 ammo 8 win 1 shots 16 net None code 0 twin 0 peer 0 pub 1 hold 0 held 0 heldfund 0 resets 1 viol 0
+TWINBANK517 167 ti 32 ammo 8 sen 68 bought 1 until 186
+FIREDISC517 167 at (15, 6) hp 500 ti 31 ammo 8 win 1 shots 16 net None code 0 twin 0 peer 0 pub 1 hold 0 held 0 heldfund 0 resets 1 viol 0
+TWINBANK517 168 ti 41 ammo 8 sen 68 bought 1 until 186
+FIREDISC517 168 at (15, 6) hp 500 ti 40 ammo 8 win 1 shots 16 net None code 0 twin 0 peer 0 pub 1 hold 0 held 0 heldfund 0 resets 1 viol 0
+TWINBANK517 169 ti 40 ammo 8 sen 68 bought 1 until 186
+FIREDISC517 169 at (15, 6) hp 500 ti 39 ammo 8 win 1 shots 16 net None code 0 twin 0 peer 0 pub 1 hold 0 held 0 heldfund 0 resets 1 viol 0
+TWINBANK517 170 ti 39 ammo 8 sen 67 bought 1 until 186
+FIREDISC517 170 at (15, 6) hp 500 ti 33 ammo 8 win 1 shots 16 net None code 0 twin 0 peer 0 pub 1 hold 0 held 0 heldfund 0 resets 1 viol 0
+TWINBANK517 171 ti 33 ammo 8 sen 68 bought 1 until 186
+FIREDISC517 171 at (15, 6) hp 500 ti 32 ammo 8 win 1 shots 16 net None code 0 twin 0 peer 0 pub 1 hold 0 held 0 heldfund 0 resets 1 viol 0
+TWINBANK517 172 ti 42 ammo 8 sen 68 bought 1 until 186
+FIREDISC517 172 at (15, 6) hp 500 ti 41 ammo 8 win 1 shots 16 net None code 0 twin 0 peer 0 pub 1 hold 0 held 0 heldfund 0 resets 1 viol 0
+TWINBANK517 173 ti 41 ammo 8 sen 68 bought 1 until 186
+FIREDISC517 173 at (15, 6) hp 500 ti 40 ammo 8 win 1 shots 16 net None code 0 twin 0 peer 0 pub 1 hold 0 held 0 heldfund 0 resets 1 viol 0
+TWINBANK517 174 ti 40 ammo 8 sen 68 bought 1 until 186
+FIREDISC517 174 at (15, 6) hp 500 ti 39 ammo 8 win 1 shots 16 net None code 0 twin 0 peer 0 pub 1 hold 0 held 0 heldfund 0 resets 1 viol 0
+TWINBANK517 175 ti 39 ammo 8 sen 68 bought 1 until 186
+FIREDISC517 175 at (15, 6) hp 500 ti 38 ammo 8 win 1 shots 16 net None code 0 twin 0 peer 0 pub 1 hold 0 held 0 heldfund 0 resets 1 viol 0
+TWINBANK517 176 ti 48 ammo 8 sen 68 bought 1 until 186
+FIREDISC517 176 at (15, 6) hp 500 ti 47 ammo 8 win 1 shots 16 net None code 0 twin 0 peer 0 pub 1 hold 0 held 0 heldfund 0 resets 1 viol 0
+TWINBANK517 177 ti 47 ammo 8 sen 68 bought 1 until 186
+FIREDISC517 177 at (15, 6) hp 500 ti 46 ammo 8 win 1 shots 16 net None code 0 twin 0 peer 0 pub 1 hold 0 held 0 heldfund 0 resets 1 viol 0
+TWINBANK517 178 ti 46 ammo 8 sen 67 bought 1 until 186
+FIREDISC517 178 at (15, 6) hp 500 ti 40 ammo 8 win 1 shots 16 net None code 0 twin 0 peer 0 pub 1 hold 0 held 0 heldfund 0 resets 1 viol 0
+TWINBANK517 179 ti 40 ammo 8 sen 68 bought 1 until 186
+FIREDISC517 179 at (15, 6) hp 500 ti 39 ammo 8 win 1 shots 16 net None code 0 twin 0 peer 0 pub 1 hold 0 held 0 heldfund 0 resets 1 viol 0
+TWINBANK517 180 ti 49 ammo 8 sen 68 bought 1 until 186
+FIREDISC517 180 at (15, 6) hp 500 ti 48 ammo 8 win 1 shots 16 net None code 0 twin 0 peer 0 pub 1 hold 0 held 0 heldfund 0 resets 1 viol 0
+TWINBANK517 181 ti 48 ammo 8 sen 68 bought 1 until 186
+FIREDISC517 181 at (15, 6) hp 500 ti 47 ammo 8 win 1 shots 16 net None code 0 twin 0 peer 0 pub 1 hold 0 held 0 heldfund 0 resets 1 viol 0
+TWINBANK517 182 ti 47 ammo 8 sen 68 bought 1 until 186
+FIREDISC517 182 at (15, 6) hp 500 ti 46 ammo 8 win 1 shots 16 net None code 0 twin 0 peer 0 pub 1 hold 0 held 0 heldfund 0 resets 1 viol 0
+TWINBANK517 183 ti 46 ammo 8 sen 68 bought 1 until 186
+FIREDISC517 183 at (15, 6) hp 500 ti 45 ammo 8 win 1 shots 16 net None code 0 twin 0 peer 0 pub 1 hold 0 held 0 heldfund 0 resets 1 viol 0
+TWINBANK517 184 ti 55 ammo 8 sen 68 bought 1 until 186
+FIREDISC517 184 at (15, 6) hp 500 ti 54 ammo 8 win 1 shots 16 net None code 0 twin 0 peer 0 pub 1 hold 0 held 0 heldfund 0 resets 1 viol 0
+TWINBANK517 185 ti 54 ammo 8 sen 68 bought 1 until 186
+FIREDISC517 185 at (15, 6) hp 500 ti 53 ammo 8 win 1 shots 16 net None code 0 twin 0 peer 0 pub 1 hold 0 held 0 heldfund 0 resets 1 viol 0
+FIREDISC517 186 at (15, 6) hp 500 ti 22 ammo 38 win 1 shots 16 net None code 0 twin 0 peer 0 pub 1 hold 0 held 0 heldfund 0 resets 1 viol 0
+FIREDISC517 187 at (15, 6) hp 482 ti 12 ammo 38 win 2 shots 17 net None code 0 twin 0 peer 0 pub 1 hold 0 held 0 heldfund 0 resets 1 viol 0
+FIREDISC517 188 at (15, 6) hp 482 ti 12 ammo 48 win 2 shots 17 net None code 0 twin 0 peer 0 pub 1 hold 0 held 0 heldfund 0 resets 1 viol 0
+FIREDISC517 189 at (15, 6) hp 464 ti 12 ammo 38 win 3 shots 18 net None code 0 twin 0 peer 0 pub 1 hold 0 held 0 heldfund 0 resets 1 viol 0
+FIREDISC517 190 at (15, 6) hp 464 ti 12 ammo 38 win 3 shots 18 net None code 0 twin 0 peer 0 pub 1 hold 0 held 0 heldfund 0 resets 1 viol 0
+FIREDISC517 191 at (15, 6) hp 446 ti 12 ammo 28 win 4 shots 19 net 54 code 6 twin 0 peer 0 pub 1 hold 0 held 0 heldfund 0 resets 1 viol 0
+FIREDISC517 192 at (15, 6) hp 446 ti 12 ammo 38 win 4 shots 19 net 54 code 6 twin 0 peer 0 pub 1 hold 0 held 0 heldfund 0 resets 1 viol 0
+FIREDISC517 193 at (15, 6) hp 428 ti 12 ammo 28 win 4 shots 20 net 72 code 6 twin 0 peer 0 pub 1 hold 0 held 0 heldfund 0 resets 1 viol 0
+FIREDISC517 194 at (15, 6) hp 428 ti 12 ammo 28 win 4 shots 20 net 72 code 6 twin 0 peer 0 pub 1 hold 0 held 0 heldfund 0 resets 1 viol 0
+FIREDISC517 195 at (15, 6) hp 410 ti 12 ammo 18 win 4 shots 21 net 72 code 6 twin 0 peer 0 pub 1 hold 0 held 0 heldfund 0 resets 1 viol 0
+FIREDISC517 196 at (15, 6) hp 410 ti 12 ammo 28 win 4 shots 21 net 72 code 6 twin 0 peer 0 pub 1 hold 0 held 0 heldfund 0 resets 1 viol 0
+FIREDISC517 197 at (15, 6) hp 392 ti 12 ammo 18 win 4 shots 22 net 72 code 6 twin 0 peer 0 pub 1 hold 0 held 0 heldfund 0 resets 1 viol 0
+FIREDISC517 198 at (15, 6) hp 392 ti 12 ammo 18 win 4 shots 22 net 72 code 6 twin 0 peer 0 pub 1 hold 0 held 0 heldfund 0 resets 1 viol 0
+FIREDISC517 199 at (15, 6) hp 374 ti 12 ammo 8 win 4 shots 23 net 72 code 6 twin 0 peer 0 pub 1 hold 0 held 0 heldfund 0 resets 1 viol 0
+FIREDISC517 200 at (15, 6) hp 374 ti 12 ammo 18 win 4 shots 23 net 72 code 6 twin 0 peer 0 pub 1 hold 0 held 0 heldfund 0 resets 1 viol 0
+FIREDISC517 201 at (15, 6) hp 356 ti 12 ammo 8 win 4 shots 24 net 72 code 6 twin 0 peer 0 pub 1 hold 0 held 0 heldfund 0 resets 1 viol 0
+FIREDISC517 202 at (15, 6) hp 356 ti 12 ammo 8 win 4 shots 24 net 72 code 6 twin 0 peer 0 pub 1 hold 0 held 0 heldfund 0 resets 1 viol 0
+FIREDISC517 203 at (15, 6) hp 356 ti 12 ammo 8 win 4 shots 24 net 72 code 6 twin 0 peer 0 pub 1 hold 0 held 0 heldfund 0 resets 1 viol 0
+FIREDISC517 204 at (15, 6) hp 356 ti 12 ammo 18 win 4 shots 24 net 72 code 6 twin 0 peer 0 pub 1 hold 0 held 0 heldfund 0 resets 1 viol 0
+FIREDISC517 205 at (15, 6) hp 338 ti 12 ammo 8 win 4 shots 25 net 72 code 6 twin 0 peer 0 pub 1 hold 0 held 0 heldfund 0 resets 1 viol 0
+FIREDISC517 206 at (15, 6) hp 338 ti 12 ammo 8 win 4 shots 25 net 72 code 6 twin 0 peer 0 pub 1 hold 0 held 0 heldfund 0 resets 1 viol 0
+FIREDISC517 207 at (15, 6) hp 338 ti 12 ammo 8 win 4 shots 25 net 72 code 6 twin 0 peer 0 pub 1 hold 0 held 0 heldfund 0 resets 1 viol 0
+FIREDISC517 208 at (15, 6) hp 338 ti 12 ammo 18 win 4 shots 25 net 72 code 6 twin 0 peer 0 pub 1 hold 0 held 0 heldfund 0 resets 1 viol 0
+FIREDISC517 209 at (15, 6) hp 320 ti 12 ammo 8 win 4 shots 26 net 72 code 6 twin 0 peer 0 pub 1 hold 0 held 0 heldfund 0 resets 1 viol 0
+FIREDISC517 210 at (15, 6) hp 320 ti 12 ammo 8 win 4 shots 26 net 72 code 6 twin 0 peer 0 pub 1 hold 0 held 0 heldfund 0 resets 1 viol 0
+FIREDISC517 211 at (15, 6) hp 320 ti 12 ammo 8 win 4 shots 26 net 72 code 6 twin 0 peer 0 pub 1 hold 0 held 0 heldfund 0 resets 1 viol 0
+FIREDISC517 212 at (15, 6) hp 320 ti 12 ammo 18 win 4 shots 26 net 72 code 6 twin 0 peer 0 pub 1 hold 0 held 0 heldfund 0 resets 1 viol 0
+FIREDISC517 213 at (15, 6) hp 302 ti 12 ammo 8 win 4 shots 27 net 72 code 6 twin 0 peer 0 pub 1 hold 0 held 0 heldfund 0 resets 1 viol 0
+FIREDISC517 214 at (15, 6) hp 302 ti 12 ammo 8 win 4 shots 27 net 72 code 6 twin 0 peer 0 pub 1 hold 0 held 0 heldfund 0 resets 1 viol 0
+FIREDISC517 215 at (15, 6) hp 302 ti 12 ammo 8 win 4 shots 27 net 72 code 6 twin 0 peer 0 pub 1 hold 0 held 0 heldfund 0 resets 1 viol 0
+FIREDISC517 216 at (15, 6) hp 302 ti 12 ammo 18 win 4 shots 27 net 72 code 6 twin 0 peer 0 pub 1 hold 0 held 0 heldfund 0 resets 1 viol 0
+FIREDISC517 217 at (15, 6) hp 284 ti 12 ammo 8 win 4 shots 28 net 72 code 6 twin 0 peer 0 pub 1 hold 0 held 0 heldfund 0 resets 1 viol 0
+FIREDISC517 218 at (15, 6) hp 284 ti 12 ammo 8 win 4 shots 28 net 72 code 6 twin 0 peer 0 pub 1 hold 0 held 0 heldfund 0 resets 1 viol 0
+FIREDISC517 219 at (15, 6) hp 284 ti 12 ammo 8 win 4 shots 28 net 72 code 6 twin 0 peer 0 pub 1 hold 0 held 0 heldfund 0 resets 1 viol 0
+FIREDISC517 220 at (15, 6) hp 284 ti 12 ammo 18 win 4 shots 28 net 72 code 6 twin 0 peer 0 pub 1 hold 0 held 0 heldfund 0 resets 1 viol 0
+FIREDISC517 221 at (15, 6) hp 266 ti 12 ammo 8 win 4 shots 29 net 72 code 6 twin 0 peer 0 pub 1 hold 0 held 0 heldfund 0 resets 1 viol 0
+FIREDISC517 222 at (15, 6) hp 266 ti 12 ammo 8 win 4 shots 29 net 72 code 6 twin 0 peer 0 pub 1 hold 0 held 0 heldfund 0 resets 1 viol 0
+FIREDISC517 223 at (15, 6) hp 266 ti 12 ammo 8 win 4 shots 29 net 72 code 6 twin 0 peer 0 pub 1 hold 0 held 0 heldfund 0 resets 1 viol 0
+FIREDISC517 224 at (15, 6) hp 266 ti 12 ammo 18 win 4 shots 29 net 72 code 6 twin 0 peer 0 pub 1 hold 0 held 0 heldfund 0 resets 1 viol 0
+FIREDISC517 225 at (15, 6) hp 248 ti 12 ammo 8 win 4 shots 30 net 72 code 6 twin 0 peer 0 pub 1 hold 0 held 0 heldfund 0 resets 1 viol 0
+FIREDISC517 226 at (15, 6) hp 248 ti 12 ammo 8 win 4 shots 30 net 72 code 6 twin 0 peer 0 pub 1 hold 0 held 0 heldfund 0 resets 1 viol 0
+FIREDISC517 227 at (15, 6) hp 248 ti 12 ammo 8 win 4 shots 30 net 72 code 6 twin 0 peer 0 pub 1 hold 0 held 0 heldfund 0 resets 1 viol 0
+FIREDISC517 228 at (15, 6) hp 248 ti 12 ammo 18 win 4 shots 30 net 72 code 6 twin 0 peer 0 pub 1 hold 0 held 0 heldfund 0 resets 1 viol 0
+FIREDISC517 229 at (15, 6) hp 230 ti 12 ammo 8 win 4 shots 31 net 72 code 6 twin 0 peer 0 pub 1 hold 0 held 0 heldfund 0 resets 1 viol 0
+FIREDISC517 230 at (15, 6) hp 230 ti 10 ammo 10 win 4 shots 31 net 72 code 6 twin 0 peer 0 pub 1 hold 0 held 0 heldfund 0 resets 1 viol 0
+FIREDISC517 231 at (15, 6) hp 212 ti 10 ammo 0 win 4 shots 32 net 72 code 6 twin 0 peer 0 pub 1 hold 0 held 0 heldfund 0 resets 1 viol 0
+FIREDISC517 232 at (15, 6) hp 212 ti 10 ammo 10 win 4 shots 32 net 72 code 6 twin 0 peer 0 pub 1 hold 0 held 0 heldfund 0 resets 1 viol 0
+FIREDISC517 233 at (15, 6) hp 194 ti 10 ammo 0 win 4 shots 33 net 72 code 6 twin 0 peer 0 pub 1 hold 0 held 0 heldfund 0 resets 1 viol 0
+FIREDISC517 234 at (15, 6) hp 194 ti 10 ammo 0 win 4 shots 33 net 72 code 6 twin 0 peer 0 pub 1 hold 0 held 0 heldfund 0 resets 1 viol 0
+FIREDISC517 235 at (15, 6) hp 194 ti 10 ammo 0 win 4 shots 33 net 72 code 6 twin 0 peer 0 pub 1 hold 0 held 0 heldfund 0 resets 1 viol 0
+FIREDISC517 236 at (15, 6) hp 194 ti 10 ammo 10 win 4 shots 33 net 72 code 6 twin 0 peer 0 pub 1 hold 0 held 0 heldfund 0 resets 1 viol 0
+FIREDISC517 237 at (15, 6) hp 176 ti 10 ammo 0 win 4 shots 34 net 72 code 6 twin 0 peer 0 pub 1 hold 0 held 0 heldfund 0 resets 1 viol 0
+FIREDISC517 238 at (15, 6) hp 176 ti 10 ammo 0 win 4 shots 34 net 72 code 6 twin 0 peer 0 pub 1 hold 0 held 0 heldfund 0 resets 1 viol 0
+FIREDISC517 239 at (15, 6) hp 176 ti 10 ammo 0 win 4 shots 34 net 72 code 6 twin 0 peer 0 pub 1 hold 0 held 0 heldfund 0 resets 1 viol 0
+FIREDISC517 240 at (15, 6) hp 176 ti 10 ammo 10 win 4 shots 34 net 72 code 6 twin 0 peer 0 pub 1 hold 0 held 0 heldfund 0 resets 1 viol 0
+FIREDISC517 241 at (15, 6) hp 158 ti 10 ammo 0 win 4 shots 35 net 72 code 6 twin 0 peer 0 pub 1 hold 0 held 0 heldfund 0 resets 1 viol 0
+FIREDISC517 242 at (15, 6) hp 158 ti 10 ammo 0 win 4 shots 35 net 72 code 6 twin 0 peer 0 pub 1 hold 0 held 0 heldfund 0 resets 1 viol 0
+FIREDISC517 243 at (15, 6) hp 158 ti 10 ammo 0 win 4 shots 35 net 72 code 6 twin 0 peer 0 pub 1 hold 0 held 0 heldfund 0 resets 1 viol 0
+FIREDISC517 244 at (15, 6) hp 158 ti 10 ammo 10 win 4 shots 35 net 72 code 6 twin 0 peer 0 pub 1 hold 0 held 0 heldfund 0 resets 1 viol 0
+FIREDISC517 245 at (15, 6) hp 140 ti 10 ammo 0 win 4 shots 36 net 72 code 6 twin 0 peer 0 pub 1 hold 0 held 0 heldfund 0 resets 1 viol 0
+FIREDISC517 246 at (15, 6) hp 140 ti 10 ammo 0 win 4 shots 36 net 72 code 6 twin 0 peer 0 pub 1 hold 0 held 0 heldfund 0 resets 1 viol 0
+FIREDISC517 247 at (15, 6) hp 140 ti 10 ammo 0 win 4 shots 36 net 72 code 6 twin 0 peer 0 pub 1 hold 0 held 0 heldfund 0 resets 1 viol 0
+FIREDISC517 248 at (15, 6) hp 140 ti 10 ammo 10 win 4 shots 36 net 72 code 6 twin 0 peer 0 pub 1 hold 0 held 0 heldfund 0 resets 1 viol 0
+FIREDISC517 249 at (15, 6) hp 122 ti 10 ammo 0 win 4 shots 37 net 72 code 6 twin 0 peer 0 pub 1 hold 0 held 0 heldfund 0 resets 1 viol 0
+FIREDISC517 250 at (15, 6) hp 122 ti 10 ammo 0 win 4 shots 37 net 72 code 6 twin 0 peer 0 pub 1 hold 0 held 0 heldfund 0 resets 1 viol 0
+FIREDISC517 251 at (15, 6) hp 122 ti 10 ammo 0 win 4 shots 37 net 72 code 6 twin 0 peer 0 pub 1 hold 0 held 0 heldfund 0 resets 1 viol 0
+FIREDISC517 252 at (15, 6) hp 122 ti 10 ammo 10 win 4 shots 37 net 72 code 6 twin 0 peer 0 pub 1 hold 0 held 0 heldfund 0 resets 1 viol 0
+FIREDISC517 253 at (15, 6) hp 104 ti 10 ammo 0 win 4 shots 38 net 72 code 6 twin 0 peer 0 pub 1 hold 0 held 0 heldfund 0 resets 1 viol 0
+FIREDISC517 254 at (15, 6) hp 104 ti 10 ammo 0 win 4 shots 38 net 72 code 6 twin 0 peer 0 pub 1 hold 0 held 0 heldfund 0 resets 1 viol 0
+FIREDISC517 255 at (15, 6) hp 104 ti 10 ammo 0 win 4 shots 38 net 72 code 6 twin 0 peer 0 pub 1 hold 0 held 0 heldfund 0 resets 1 viol 0
+FIREDISC517 256 at (15, 6) hp 104 ti 10 ammo 10 win 4 shots 38 net 72 code 6 twin 0 peer 0 pub 1 hold 0 held 0 heldfund 0 resets 1 viol 0
+FIREDISC517 257 at (15, 6) hp 86 ti 10 ammo 0 win 4 shots 39 net 72 code 6 twin 0 peer 0 pub 1 hold 0 held 0 heldfund 0 resets 1 viol 0
+FIREDISC517 258 at (15, 6) hp 86 ti 10 ammo 0 win 4 shots 39 net 72 code 6 twin 0 peer 0 pub 1 hold 0 held 0 heldfund 0 resets 1 viol 0
+FIREDISC517 259 at (15, 6) hp 86 ti 10 ammo 0 win 4 shots 39 net 72 code 6 twin 0 peer 0 pub 1 hold 0 held 0 heldfund 0 resets 1 viol 0
+FIREDISC517 260 at (15, 6) hp 86 ti 10 ammo 10 win 4 shots 39 net 72 code 6 twin 0 peer 0 pub 1 hold 0 held 0 heldfund 0 resets 1 viol 0
+FIREDISC517 261 at (15, 6) hp 68 ti 10 ammo 0 win 4 shots 40 net 72 code 6 twin 0 peer 0 pub 1 hold 0 held 0 heldfund 0 resets 1 viol 0
+FIREDISC517 262 at (15, 6) hp 68 ti 10 ammo 0 win 4 shots 40 net 72 code 6 twin 0 peer 0 pub 1 hold 0 held 0 heldfund 0 resets 1 viol 0
+FIREDISC517 263 at (15, 6) hp 68 ti 10 ammo 0 win 4 shots 40 net 72 code 6 twin 0 peer 0 pub 1 hold 0 held 0 heldfund 0 resets 1 viol 0
+FIREDISC517 264 at (15, 6) hp 68 ti 10 ammo 10 win 4 shots 40 net 72 code 6 twin 0 peer 0 pub 1 hold 0 held 0 heldfund 0 resets 1 viol 0
+FIREDISC517 265 at (15, 6) hp 50 ti 10 ammo 0 win 4 shots 41 net 72 code 6 twin 0 peer 0 pub 1 hold 0 held 0 heldfund 0 resets 1 viol 0
+FIREDISC517 266 at (15, 6) hp 50 ti 10 ammo 0 win 4 shots 41 net 72 code 6 twin 0 peer 0 pub 1 hold 0 held 0 heldfund 0 resets 1 viol 0
+FIREDISC517 267 at (15, 6) hp 50 ti 10 ammo 0 win 4 shots 41 net 72 code 6 twin 0 peer 0 pub 1 hold 0 held 0 heldfund 0 resets 1 viol 0
+FIREDISC517 268 at (15, 6) hp 50 ti 10 ammo 10 win 4 shots 41 net 72 code 6 twin 0 peer 0 pub 1 hold 0 held 0 heldfund 0 resets 1 viol 0
+FIREDISC517 269 at (15, 6) hp 32 ti 10 ammo 0 win 4 shots 42 net 72 code 6 twin 0 peer 0 pub 1 hold 0 held 0 heldfund 0 resets 1 viol 0
+FIREDISC517 270 at (15, 6) hp 32 ti 10 ammo 0 win 4 shots 42 net 72 code 6 twin 0 peer 0 pub 1 hold 0 held 0 heldfund 0 resets 1 viol 0
+FIREDISC517 271 at (15, 6) hp 32 ti 10 ammo 0 win 4 shots 42 net 72 code 6 twin 0 peer 0 pub 1 hold 0 held 0 heldfund 0 resets 1 viol 0
+FIREDISC517 272 at (15, 6) hp 32 ti 10 ammo 10 win 4 shots 42 net 72 code 6 twin 0 peer 0 pub 1 hold 0 held 0 heldfund 0 resets 1 viol 0
+FIREDISC517 273 at (15, 6) hp 14 ti 10 ammo 0 win 4 shots 43 net 72 code 6 twin 0 peer 0 pub 1 hold 0 held 0 heldfund 0 resets 1 viol 0
+FIREDISC517 274 at (15, 6) hp 14 ti 10 ammo 0 win 4 shots 43 net 72 code 6 twin 0 peer 0 pub 1 hold 0 held 0 heldfund 0 resets 1 viol 0
+FIREDISC517 275 at (15, 6) hp 14 ti 10 ammo 0 win 4 shots 43 net 72 code 6 twin 0 peer 0 pub 1 hold 0 held 0 heldfund 0 resets 1 viol 0
+FIREDISC517 276 at (15, 6) hp 14 ti 10 ammo 10 win 4 shots 43 net 72 code 6 twin 0 peer 0 pub 1 hold 0 held 0 heldfund 0 resets 1 viol 0

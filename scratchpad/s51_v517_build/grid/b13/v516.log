@@ -1,0 +1,30 @@
+atoll_s37_A	atoll	37	A	OPP	_v488beltbreak2	Core destroyed	417	0	1180	3130
+atoll_s37_B	atoll	37	B	OPP	_v488beltbreak2	Core destroyed	178	0	520	1690
+atoll_s38_A	atoll	38	A	OPP	_v488beltbreak2	Core destroyed	319	0	1560	1850
+atoll_s38_B	atoll	38	B	US	parent516	Core destroyed	176	0	840	530
+atoll_s39_A	atoll	39	A	US	parent516	Core destroyed	380	0	1950	1450
+atoll_s39_B	atoll	39	B	OPP	_v488beltbreak2	Core destroyed	192	0	270	840
+drakkarfjord_s37_A	drakkarfjord	37	A	OPP	_v488beltbreak2	Core destroyed	996	0	7900	13000
+drakkarfjord_s37_B	drakkarfjord	37	B	OPP	_v488beltbreak2	Core destroyed	504	0	330	3470
+drakkarfjord_s38_A	drakkarfjord	38	A	US	parent516	Core destroyed	208	0	930	240
+drakkarfjord_s38_B	drakkarfjord	38	B	US	parent516	Titanium collected (tiebreak)	1000	0	420	0
+drakkarfjord_s39_A	drakkarfjord	39	A	OPP	_v488beltbreak2	Core destroyed	394	0	410	2820
+drakkarfjord_s39_B	drakkarfjord	39	B	OPP	_v488beltbreak2	Titanium collected (tiebreak)	1000	0	290	1690
+glacierkeep_s37_A	glacierkeep	37	A	US	parent516	Core destroyed	193	0	160	0
+glacierkeep_s37_B	glacierkeep	37	B	OPP	_v488beltbreak2	Core destroyed	947	0	170	3360
+glacierkeep_s38_A	glacierkeep	38	A	US	parent516	Titanium collected (tiebreak)	1000	0	250	0
+glacierkeep_s38_B	glacierkeep	38	B	OPP	_v488beltbreak2	Core destroyed	705	0	0	0
+glacierkeep_s39_A	glacierkeep	39	A	US	parent516	Core destroyed	261	0	160	0
+glacierkeep_s39_B	glacierkeep	39	B	US	parent516	Core destroyed	280	0	0	0
+midgard_s37_A	midgard	37	A	US	parent516	Core destroyed	210	0	1290	510
+midgard_s37_B	midgard	37	B	OPP	_v488beltbreak2	Core destroyed	152	0	530	1570
+midgard_s38_A	midgard	38	A	OPP	_v488beltbreak2	Titanium collected (tiebreak)	1000	0	390	450
+midgard_s38_B	midgard	38	B	OPP	_v488beltbreak2	Core destroyed	124	0	570	1380
+midgard_s39_A	midgard	39	A	OPP	_v488beltbreak2	Core destroyed	204	0	590	1420
+midgard_s39_B	midgard	39	B	OPP	_v488beltbreak2	Core destroyed	114	0	630	1390
+nordkap_s37_A	nordkap	37	A	OPP	_v488beltbreak2	Core destroyed	123	0	120	1300
+nordkap_s37_B	nordkap	37	B	US	parent516	Core destroyed	197	0	320	0
+nordkap_s38_A	nordkap	38	A	US	parent516	Core destroyed	186	0	450	60
+nordkap_s38_B	nordkap	38	B	US	parent516	Core destroyed	404	0	2150	0
+nordkap_s39_A	nordkap	39	A	US	parent516	Core destroyed	365	0	3450	1200
+nordkap_s39_B	nordkap	39	B	US	parent516	Core destroyed	591	0	1610	60

@@ -1,0 +1,16 @@
+Update available: 2.3.6 -> 2.3.8. Run: pip install --upgrade fcode
+STOREPROBE rnd 1 wrote 12345 read 12345 match 1 exc 
+STOREPROBE rnd 3 wrote 1048575 read 1048575 match 1 exc 
+STOREPROBE rnd 5 wrote 536870911 read 536870911 match 1 exc 
+STOREPROBE rnd 7 wrote 1073741823 read 1073741823 match 1 exc 
+STOREPROBE rnd 9 wrote 2147483647 read 2147483647 match 1 exc 
+STOREPROBE rnd 11 wrote 2147483648 read 2147483648 match 1 exc 
+STOREPROBE rnd 13 wrote 4294967295 read 4294967295 match 1 exc 
+STOREPROBE rnd 14 wrote 1099511627775 read None match 0 exc WRITE:OverflowError
+STOREPROBE rnd 16 wrote 9007199254740991 read None match 0 exc WRITE:OverflowError
+STOREPROBE rnd 18 wrote 4611686018427387903 read None match 0 exc WRITE:OverflowError
+STOREPROBE rnd 20 wrote 9223372036854775807 read None match 0 exc WRITE:OverflowError
+STOREPROBE rnd 22 wrote 9223372036854775808 read None match 0 exc WRITE:OverflowError
+STOREPROBE rnd 24 wrote -1 read None match 0 exc WRITE:OverflowError
+STOREPROBE rnd 26 wrote -2147483648 read None match 0 exc WRITE:OverflowError
+STOREPROBE rnd 28 wrote -9223372036854775808 read None match 0 exc WRITE:OverflowError

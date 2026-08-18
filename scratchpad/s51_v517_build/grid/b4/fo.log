@@ -1,0 +1,30 @@
+atoll_s10_A	atoll	10	A	OPP	_v488beltbreak2	Core destroyed	527	0	3000	2660
+atoll_s10_B	atoll	10	B	OPP	_v488beltbreak2	Core destroyed	233	0	420	720
+atoll_s11_A	atoll	11	A	US	flagoff	Core destroyed	301	0	860	890
+atoll_s11_B	atoll	11	B	US	flagoff	Core destroyed	141	0	390	190
+atoll_s12_A	atoll	12	A	US	flagoff	Core destroyed	264	0	1290	1130
+atoll_s12_B	atoll	12	B	OPP	_v488beltbreak2	Core destroyed	186	0	900	840
+drakkarfjord_s10_A	drakkarfjord	10	A	US	flagoff	Core destroyed	596	0	680	0
+drakkarfjord_s10_B	drakkarfjord	10	B	US	flagoff	Core destroyed	249	0	1730	0
+drakkarfjord_s11_A	drakkarfjord	11	A	US	flagoff	Core destroyed	323	0	2840	140
+drakkarfjord_s11_B	drakkarfjord	11	B	OPP	_v488beltbreak2	Core destroyed	560	0	350	5880
+drakkarfjord_s12_A	drakkarfjord	12	A	US	flagoff	Core destroyed	170	0	1030	0
+drakkarfjord_s12_B	drakkarfjord	12	B	US	flagoff	Core destroyed	145	0	600	0
+glacierkeep_s10_A	glacierkeep	10	A	US	flagoff	Core destroyed	225	0	500	0
+glacierkeep_s10_B	glacierkeep	10	B	US	flagoff	Core destroyed	872	0	170	0
+glacierkeep_s11_A	glacierkeep	11	A	US	flagoff	Core destroyed	293	0	320	0
+glacierkeep_s11_B	glacierkeep	11	B	US	flagoff	Titanium collected (tiebreak)	1000	0	30	0
+glacierkeep_s12_A	glacierkeep	12	A	US	flagoff	Core destroyed	633	0	150	0
+glacierkeep_s12_B	glacierkeep	12	B	US	flagoff	Titanium collected (tiebreak)	1000	0	160	0
+midgard_s10_A	midgard	10	A	OPP	_v488beltbreak2	Core destroyed	208	0	1110	1950
+midgard_s10_B	midgard	10	B	OPP	_v488beltbreak2	Core destroyed	121	0	570	1480
+midgard_s11_A	midgard	11	A	OPP	_v488beltbreak2	Core destroyed	173	0	500	1570
+midgard_s11_B	midgard	11	B	OPP	_v488beltbreak2	Core destroyed	165	0	590	1360
+midgard_s12_A	midgard	12	A	US	flagoff	Core destroyed	713	0	5240	7590
+midgard_s12_B	midgard	12	B	OPP	_v488beltbreak2	Core destroyed	173	0	750	1040
+nordkap_s10_A	nordkap	10	A	OPP	_v488beltbreak2	Core destroyed	277	0	140	3240
+nordkap_s10_B	nordkap	10	B	OPP	_v488beltbreak2	Core destroyed	216	0	700	3210
+nordkap_s11_A	nordkap	11	A	US	flagoff	Core destroyed	441	0	260	310
+nordkap_s11_B	nordkap	11	B	OPP	_v488beltbreak2	Core destroyed	321	0	120	1010
+nordkap_s12_A	nordkap	12	A	OPP	_v488beltbreak2	Core destroyed	493	0	110	180
+nordkap_s12_B	nordkap	12	B	US	flagoff	Core destroyed	373	0	2290	1640

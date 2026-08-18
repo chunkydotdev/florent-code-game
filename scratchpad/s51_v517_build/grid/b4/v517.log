@@ -1,0 +1,30 @@
+atoll_s10_A	atoll	10	A	US	_v517twin	Core destroyed	648	0	2170	4410
+atoll_s10_B	atoll	10	B	US	_v517twin	Core destroyed	550	0	2720	1360
+atoll_s11_A	atoll	11	A	US	_v517twin	Core destroyed	261	0	1720	900
+atoll_s11_B	atoll	11	B	OPP	_v488beltbreak2	Core destroyed	206	0	650	1010
+atoll_s12_A	atoll	12	A	US	_v517twin	Core destroyed	583	0	2880	2750
+atoll_s12_B	atoll	12	B	US	_v517twin	Core destroyed	196	0	960	560
+drakkarfjord_s10_A	drakkarfjord	10	A	US	_v517twin	Core destroyed	132	0	750	0
+drakkarfjord_s10_B	drakkarfjord	10	B	US	_v517twin	Core destroyed	142	0	440	0
+drakkarfjord_s11_A	drakkarfjord	11	A	OPP	_v488beltbreak2	Core destroyed	744	0	6640	9760
+drakkarfjord_s11_B	drakkarfjord	11	B	US	_v517twin	Core destroyed	200	0	850	400
+drakkarfjord_s12_A	drakkarfjord	12	A	OPP	_v488beltbreak2	Core destroyed	775	0	460	1190
+drakkarfjord_s12_B	drakkarfjord	12	B	US	_v517twin	Core destroyed	638	0	1440	170
+glacierkeep_s10_A	glacierkeep	10	A	US	_v517twin	Core destroyed	217	0	230	0
+glacierkeep_s10_B	glacierkeep	10	B	US	_v517twin	Titanium collected (tiebreak)	1000	0	20	0
+glacierkeep_s11_A	glacierkeep	11	A	US	_v517twin	Core destroyed	181	0	160	0
+glacierkeep_s11_B	glacierkeep	11	B	US	_v517twin	Core destroyed	209	0	0	0
+glacierkeep_s12_A	glacierkeep	12	A	US	_v517twin	Core destroyed	293	0	180	0
+glacierkeep_s12_B	glacierkeep	12	B	US	_v517twin	Core destroyed	409	0	240	0
+midgard_s10_A	midgard	10	A	US	_v517twin	Core destroyed	283	0	1560	1420
+midgard_s10_B	midgard	10	B	OPP	_v488beltbreak2	Core destroyed	220	0	1750	2650
+midgard_s11_A	midgard	11	A	OPP	_v488beltbreak2	Core destroyed	214	0	400	2160
+midgard_s11_B	midgard	11	B	OPP	_v488beltbreak2	Core destroyed	524	0	670	1920
+midgard_s12_A	midgard	12	A	OPP	_v488beltbreak2	Core destroyed	141	0	500	1290
+midgard_s12_B	midgard	12	B	OPP	_v488beltbreak2	Core destroyed	133	0	530	1530
+nordkap_s10_A	nordkap	10	A	US	_v517twin	Core destroyed	224	0	540	220
+nordkap_s10_B	nordkap	10	B	US	_v517twin	Core destroyed	222	0	550	100
+nordkap_s11_A	nordkap	11	A	OPP	_v488beltbreak2	Core destroyed	228	0	120	1180
+nordkap_s11_B	nordkap	11	B	US	_v517twin	Core destroyed	302	0	1450	270
+nordkap_s12_A	nordkap	12	A	US	_v517twin	Core destroyed	226	0	660	100
+nordkap_s12_B	nordkap	12	B	OPP	_v488beltbreak2	Titanium collected (tiebreak)	1000	0	40	2500

@@ -29,3 +29,7 @@ Non-tool notes for the wrap retro: my channel message transposed the two gsxWins
    the READ-SITE fix is a v516 build change (like the door flag), NOT a tool fix — listed here
    so the mkarm audit (item 4) knows there were exactly two found instances, one fixed, one
    pending in v516.
+6. **(s51) ATLAS ROUTING DEBT, now with measured cost:** the s50 store-slot engine fact
+   (32-bit unsigned, negative raises) was never routed to the atlas; the v517 agent re-probed
+   it from scratch. Route at wrap: store-slot width/sign + get_hp/get_position raise
+   out-of-vision (v516) + the wrapping-clock-needs-liveness-pair instrument lesson (v517).

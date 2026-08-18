@@ -1,0 +1,37 @@
+tag	map	seed	seat	ours	winner	cond	turn	tracebacks	ours_mined	opp_mined
+archipelago_s1_A	archipelago	1	A	OPP	_v468kladturbo	Core destroyed	853	0	4720	4250
+archipelago_s1_B	archipelago	1	B	US	_v517twin	Titanium collected (tiebreak)	1000	0	5010	3440
+archipelago_s2_A	archipelago	2	A	US	_v517twin	Core destroyed	445	0	2310	1870
+archipelago_s2_B	archipelago	2	B	US	_v517twin	Core destroyed	144	0	1250	960
+archipelago_s3_A	archipelago	3	A	US	_v517twin	Core destroyed	224	0	2870	1260
+archipelago_s3_B	archipelago	3	B	OPP	_v468kladturbo	Core destroyed	341	0	2140	1930
+archipelago_s4_A	archipelago	4	A	OPP	_v468kladturbo	Core destroyed	580	0	5620	2930
+archipelago_s4_B	archipelago	4	B	US	_v517twin	Core destroyed	196	0	1920	1210
+archipelago_s5_A	archipelago	5	A	US	_v517twin	Titanium collected (tiebreak)	1000	0	5060	2710
+archipelago_s5_B	archipelago	5	B	US	_v517twin	Core destroyed	257	0	1810	1840
+archipelago_s6_A	archipelago	6	A	OPP	_v468kladturbo	Core destroyed	162	0	1450	1140
+archipelago_s6_B	archipelago	6	B	US	_v517twin	Core destroyed	152	0	1290	660
+archipelago_s7_A	archipelago	7	A	US	_v517twin	Core destroyed	449	0	4610	2120
+archipelago_s7_B	archipelago	7	B	US	_v517twin	Titanium collected (tiebreak)	1000	0	5050	2690
+archipelago_s8_A	archipelago	8	A	OPP	_v468kladturbo	Core destroyed	213	0	1560	1540
+archipelago_s8_B	archipelago	8	B	OPP	_v468kladturbo	Core destroyed	677	0	4950	4980
+archipelago_s9_A	archipelago	9	A	US	_v517twin	Core destroyed	224	0	2090	1600
+archipelago_s9_B	archipelago	9	B	US	_v517twin	Core destroyed	150	0	1360	1070
+archipelago_s10_A	archipelago	10	A	US	_v517twin	Core destroyed	257	0	1850	1250
+archipelago_s10_B	archipelago	10	B	OPP	_v468kladturbo	Core destroyed	181	0	1320	1210
+archipelago_s11_A	archipelago	11	A	OPP	_v468kladturbo	Core destroyed	196	0	1380	1350
+archipelago_s11_B	archipelago	11	B	US	_v517twin	Core destroyed	136	0	840	650
+archipelago_s12_A	archipelago	12	A	US	_v517twin	Core destroyed	513	0	3770	3750
+archipelago_s12_B	archipelago	12	B	US	_v517twin	Titanium collected (tiebreak)	1000	0	5020	5000
+archipelago_s13_A	archipelago	13	A	US	_v517twin	Core destroyed	312	0	2400	780
+archipelago_s13_B	archipelago	13	B	US	_v517twin	Core destroyed	239	0	3840	1380
+archipelago_s14_A	archipelago	14	A	US	_v517twin	Core destroyed	164	0	1480	850
+archipelago_s14_B	archipelago	14	B	US	_v517twin	Core destroyed	157	0	1370	810
+archipelago_s15_A	archipelago	15	A	OPP	_v468kladturbo	Core destroyed	415	0	5230	2110
+archipelago_s15_B	archipelago	15	B	US	_v517twin	Core destroyed	192	0	1700	1060
+archipelago_s16_A	archipelago	16	A	OPP	_v468kladturbo	Core destroyed	329	0	2160	1630
+archipelago_s16_B	archipelago	16	B	US	_v517twin	Core destroyed	170	0	1560	1200
+archipelago_s17_A	archipelago	17	A	US	_v517twin	Core destroyed	989	0	7680	4870
+archipelago_s17_B	archipelago	17	B	OPP	_v468kladturbo	Core destroyed	251	0	900	2070
+archipelago_s18_A	archipelago	18	A	OPP	_v468kladturbo	Core destroyed	565	0	2090	1930
+archipelago_s18_B	archipelago	18	B	OPP	_v468kladturbo	Core destroyed	218	0	1590	2160
