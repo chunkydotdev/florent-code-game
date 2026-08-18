@@ -29,6 +29,7 @@ successor session inherit it. The fields below are parsed; the prose is not.
     SLOT_STOP_LOSS: off
     SHIP_BAR: 75pct_floor_80_target_vs_sleipnirv2_full_pool_powered_n
     STEALTH_UNTIL_DROP: yes
+    KILL_TARGET: median_r180_share_by_r200_floor_r300
 
 ## SHIP_BAR RAISED + STEALTH ADDED 2026-08-18 (Magnus + x3r0 jointly, in-session — s51)
 
@@ -44,7 +45,6 @@ rehearsed their v242 on us unrated before shipping it; we do not teach the field
 The drop is a coordinated event with x3r0. Live-transfer confirmation happens AT the drop,
 not before it — an accepted risk, stated: the two-opponent local panel (incumbent verdict +
 Gungnir transfer guard) is the stealth-compatible substitute until then.
-    KILL_TARGET: median_r180_share_by_r200_floor_r300
 
 ## KILL_TARGET ADDED 2026-08-18 (Magnus, direct, in-session — s51: "Great, thats the new goal then")
 
