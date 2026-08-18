@@ -1,0 +1,15 @@
+Running match: _v526transit vs _v488beltbreak2
+  Map: drakkarfjord.map26  Seed: 1  Replay: /tmp/smoke_drakkarfjord.replay26  
+TLE: 10ms
+Completed turn 0
+Completed turn 100
+Completed turn 200
+Replay written to /tmp/smoke_drakkarfjord.replay26
+
+  Winner: _v526transit  (Core destroyed, turn 241)
+
+                 _v526transit    _v488beltbreak2  
+  Titanium     12 (340 mined)     18 (100 mined)  
+  Units                     5                  6  
+  Buildings                22                 26  
+

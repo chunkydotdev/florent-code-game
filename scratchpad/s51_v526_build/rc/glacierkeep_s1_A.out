@@ -1,0 +1,14 @@
+Running match: probe_rc vs _v488beltbreak2
+  Map: glacierkeep.map26  Seed: 1  Replay: 
+scratchpad/s51_v526_build/rc/glacierkeep_s1_A.replay26  TLE: 10ms
+Completed turn 0
+Completed turn 100
+Replay written to scratchpad/s51_v526_build/rc/glacierkeep_s1_A.replay26
+
+  Winner: probe_rc  (Core destroyed, turn 119)
+
+                     probe_rc    _v488beltbreak2  
+  Titanium     26 (380 mined)        5 (0 mined)  
+  Units                     7                  6  
+  Buildings                33                 41  
+

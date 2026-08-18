@@ -1,0 +1,1088 @@
+Update available: 2.3.6 -> 2.3.8. Run: pip install --upgrade fcode
+RC SEAT 1 id 3 seat 0
+RC POS 1 id 3 seat 0 role raid fs 1 body 1 pos 4,14 stuck 0
+RC TEMPO 1 id 3 body 1 born 1 lp 0 must 0 why norid ride None ti 434 lcost 28 acd 0 mcd 0 pos 4,14 dsq 484
+RC POS 2 id 3 seat 0 role raid fs 1 body 1 pos 4,14 stuck 1
+RC TEMPO 2 id 3 body 1 born 1 lp 0 must 0 why norid ride None ti 392 lcost 32 acd 0 mcd 0 pos 4,14 dsq 484
+RC SEAT 2 id 5 seat 1
+RC POS 2 id 5 seat 1 role expand fs 0 body 1 pos 3,16 stuck 0
+RC WALK 2 id 5 role expand fs 0 body 1 pos 3,17 tgt 2,7 want SOUTH verdict moved mcd 1 acd 0
+RC POS 3 id 3 seat 0 role raid fs 1 body 1 pos 4,14 stuck 2
+RC TEMPO 3 id 3 body 1 born 1 lp 0 must 0 why norid ride None ti 344 lcost 36 acd 0 mcd 0 pos 4,14 dsq 484
+RC POS 3 id 5 seat 1 role expand fs 0 body 1 pos 3,17 stuck 0
+RC WALK 3 id 5 role expand fs 0 body 1 pos 2,17 tgt 2,7 want WEST verdict moved mcd 1 acd 0
+RC SEAT 3 id 7 seat 2
+RC POS 3 id 7 seat 2 role expand fs 0 body 1 pos 2,16 stuck 0
+RC WALK 3 id 7 role expand fs 0 body 1 pos 3,16 tgt 4,19 want EAST verdict moved mcd 1 acd 0
+RC POS 4 id 3 seat 0 role raid fs 1 body 1 pos 4,14 stuck 3
+RC TEMPO 4 id 3 body 1 born 1 lp 0 must 0 why norid ride None ti 354 lcost 36 acd 0 mcd 0 pos 4,14 dsq 484
+RC POS 4 id 5 seat 1 role expand fs 0 body 1 pos 2,17 stuck 0
+RC WALK 4 id 5 role expand fs 0 body 1 pos 2,16 tgt 2,7 want NORTH verdict moved mcd 1 acd 0
+RC POS 4 id 7 seat 2 role expand fs 0 body 1 pos 3,16 stuck 0
+RC WALK 4 id 7 role expand fs 0 body 1 pos 3,17 tgt 4,19 want SOUTH verdict moved mcd 1 acd 0
+RC SEAT 4 id 9 seat 3
+RC POS 4 id 9 seat 3 role raid fs 1 body 2 pos 4,15 stuck 0
+RC TEMPO 4 id 9 body 2 born 4 lp 0 must 0 why norid ride None ti 354 lcost 36 acd 0 mcd 0 pos 4,15 dsq 484
+RC WALK 4 id 9 role raid fs 1 body 2 pos 5,15 tgt 28,16 want EAST verdict moved mcd 1 acd 0
+RC POS 5 id 3 seat 0 role raid fs 1 body 1 pos 4,14 stuck 4
+RC TEMPO 5 id 3 body 1 born 1 lp 0 must 1 why near2 ride None ti 354 lcost 36 acd 0 mcd 0 pos 4,14 dsq 484
+RC HOP 5 id 3 body 1 at 5,14 from 4,14 dsq 441
+RC POS 5 id 5 seat 1 role expand fs 0 body 1 pos 2,16 stuck 0
+RC WALK 5 id 5 role expand fs 0 body 1 pos 1,16 tgt 2,7 want WEST verdict moved mcd 1 acd 0
+RC POS 5 id 7 seat 2 role expand fs 0 body 1 pos 3,17 stuck 0
+RC WALK 5 id 7 role expand fs 0 body 1 pos 3,18 tgt 4,19 want SOUTH verdict moved mcd 1 acd 0
+RC POS 5 id 9 seat 3 role raid fs 1 body 2 pos 5,15 stuck 0
+RC TEMPO 5 id 9 body 2 born 4 lp 1 must 1 why near0 ride None ti 318 lcost 38 acd 0 mcd 0 pos 5,15 dsq 441
+RC POS 6 id 3 seat 0 role raid fs 1 body 1 pos 4,14 stuck 5
+RC TEMPO 6 id 3 body 1 born 1 lp 1 must 1 why near2 ride None ti 318 lcost 38 acd 0 mcd 0 pos 4,14 dsq 484
+RC POS 6 id 5 seat 1 role expand fs 0 body 1 pos 1,16 stuck 0
+RC WALK 6 id 5 role expand fs 0 body 1 pos 1,15 tgt 2,7 want NORTH verdict moved mcd 1 acd 0
+RC POS 6 id 7 seat 2 role expand fs 0 body 1 pos 3,18 stuck 0
+RC WALK 6 id 7 role expand fs 0 body 1 pos 4,18 tgt 4,19 want EAST verdict moved mcd 1 acd 0
+RC POS 6 id 9 seat 3 role raid fs 1 body 2 pos 5,15 stuck 1
+RC TEMPO 6 id 9 body 2 born 4 lp 1 must 1 why near0 ride 5 ti 318 lcost 38 acd 0 mcd 0 pos 5,15 dsq 441
+RC POS 7 id 3 seat 0 role raid fs 1 body 1 pos 10,15 stuck 0
+RC TEMPO 7 id 3 body 1 born 1 lp 0 must 0 why notseen ride 6 ti 318 lcost 38 acd 0 mcd 0 pos 10,15 dsq 256
+RC HOP 7 id 3 body 1 at 11,15 from 10,15 dsq 225
+RC POS 7 id 5 seat 1 role expand fs 0 body 1 pos 1,15 stuck 0
+RC WALK 7 id 5 role expand fs 0 body 1 pos 1,14 tgt 2,7 want NORTH verdict moved mcd 1 acd 0
+RC POS 7 id 7 seat 2 role expand fs 0 body 1 pos 4,18 stuck 0
+RC WALK 7 id 7 role expand fs 0 body 1 pos 4,19 tgt 4,19 want SOUTH verdict moved mcd 1 acd 0
+RC POS 7 id 9 seat 3 role raid fs 1 body 2 pos 5,15 stuck 2
+RC TEMPO 7 id 9 body 2 born 4 lp 1 must 1 why near0 ride 6 ti 280 lcost 40 acd 0 mcd 0 pos 5,15 dsq 441
+RC POS 8 id 3 seat 0 role raid fs 1 body 1 pos 10,15 stuck 1
+RC TEMPO 8 id 3 body 1 born 1 lp 1 must 1 why near1 ride 6 ti 290 lcost 38 acd 0 mcd 0 pos 10,15 dsq 256
+RC POS 8 id 5 seat 1 role expand fs 0 body 1 pos 1,14 stuck 0
+RC WALK 8 id 5 role expand fs 0 body 1 pos 1,13 tgt 2,7 want NORTH verdict moved mcd 1 acd 0
+RC POS 8 id 7 seat 2 role expand fs 0 body 1 pos 4,19 stuck 0
+RC POS 8 id 9 seat 3 role raid fs 1 body 2 pos 10,14 stuck 0
+RC TEMPO 8 id 9 body 2 born 4 lp 1 must 1 why near0 ride 7 ti 252 lcost 39 acd 0 mcd 0 pos 10,14 dsq 256
+RC POS 9 id 3 seat 0 role raid fs 1 body 1 pos 16,16 stuck 0
+RC TEMPO 9 id 3 body 1 born 1 lp 0 must 1 why waitexp ride 8 ti 252 lcost 39 acd 0 mcd 0 pos 16,16 dsq 101
+RC HOP 9 id 3 body 1 at 17,16 from 16,16 dsq 82
+RC POS 9 id 5 seat 1 role expand fs 0 body 1 pos 1,13 stuck 0
+RC WALK 9 id 5 role expand fs 0 body 1 pos 1,12 tgt 2,7 want NORTH verdict moved mcd 1 acd 0
+RC POS 9 id 7 seat 2 role expand fs 0 body 1 pos 4,19 stuck 1
+RC POS 9 id 9 seat 3 role raid fs 1 body 2 pos 11,14 stuck 0
+RC TEMPO 9 id 9 body 2 born 4 lp 1 must 1 why near0 ride 8 ti 207 lcost 41 acd 0 mcd 0 pos 11,14 dsq 225
+RC POS 10 id 3 seat 0 role raid fs 1 body 1 pos 16,16 stuck 1
+RC TEMPO 10 id 3 body 1 born 1 lp 1 must 1 why waitexp ride 8 ti 207 lcost 39 acd 0 mcd 0 pos 16,16 dsq 101
+RC POS 10 id 5 seat 1 role expand fs 0 body 1 pos 1,12 stuck 0
+RC WALK 10 id 5 role expand fs 0 body 1 pos 1,11 tgt 2,7 want NORTH verdict moved mcd 1 acd 0
+RC POS 10 id 7 seat 2 role expand fs 0 body 1 pos 4,19 stuck 2
+RC POS 10 id 9 seat 3 role raid fs 1 body 2 pos 16,15 stuck 0
+RC TEMPO 10 id 9 body 2 born 4 lp 1 must 1 why near0 ride 9 ti 207 lcost 39 acd 0 mcd 0 pos 16,15 dsq 100
+RC POS 11 id 3 seat 0 role raid fs 1 body 1 pos 22,16 stuck 0
+RC TEMPO 11 id 3 body 1 born 1 lp 0 must 1 why waitexp ride 10 ti 207 lcost 39 acd 0 mcd 0 pos 22,16 dsq 17
+RC HOP 11 id 3 body 1 at 23,16 from 22,16 dsq 10
+RC POS 11 id 5 seat 1 role expand fs 0 body 1 pos 1,11 stuck 0
+RC WALK 11 id 5 role expand fs 0 body 1 pos 1,10 tgt 2,8 want NORTH verdict moved mcd 1 acd 0
+RC POS 11 id 7 seat 2 role expand fs 0 body 1 pos 4,18 stuck 0
+RC POS 11 id 9 seat 3 role raid fs 1 body 2 pos 17,15 stuck 0
+RC TEMPO 11 id 9 body 2 born 4 lp 1 must 1 why near0 ride 10 ti 162 lcost 41 acd 0 mcd 0 pos 17,15 dsq 81
+RC POS 12 id 3 seat 0 role raid fs 1 body 1 pos 22,16 stuck 1
+RC TEMPO 12 id 3 body 1 born 1 lp 1 must 1 why waitexp ride 10 ti 172 lcost 39 acd 0 mcd 0 pos 22,16 dsq 17
+RC POS 12 id 5 seat 1 role expand fs 0 body 1 pos 1,10 stuck 0
+RC WALK 12 id 5 role expand fs 0 body 1 pos 1,9 tgt 2,8 want NORTH verdict moved mcd 1 acd 0
+RC POS 12 id 7 seat 2 role expand fs 0 body 1 pos 4,18 stuck 1
+RC POS 12 id 9 seat 3 role raid fs 1 body 2 pos 22,15 stuck 0
+RC TEMPO 12 id 9 body 2 born 4 lp 1 must 1 why waitexp ride 11 ti 167 lcost 39 acd 0 mcd 0 pos 22,15 dsq 16
+RC POS 13 id 3 seat 0 role raid fs 1 body 1 pos 27,13 stuck 0
+RC POS 13 id 5 seat 1 role expand fs 0 body 1 pos 1,9 stuck 0
+RC WALK 13 id 5 role expand fs 0 body 1 pos 2,9 tgt 2,8 want EAST verdict moved mcd 1 acd 0
+RC POS 13 id 7 seat 2 role expand fs 0 body 1 pos 4,18 stuck 2
+RC WALK 13 id 7 role expand fs 0 body 1 pos 3,18 tgt 3,17 want WEST verdict moved mcd 1 acd 0
+RC POS 13 id 9 seat 3 role raid fs 1 body 2 pos 22,15 stuck 1
+RC TEMPO 13 id 9 body 2 born 4 lp 1 must 1 why waitexp ride 12 ti 162 lcost 39 acd 0 mcd 0 pos 22,15 dsq 16
+RC POS 14 id 3 seat 0 role raid fs 1 body 1 pos 27,13 stuck 1
+RC WALK 14 id 3 role raid fs 1 body 1 pos 28,13 tgt 28,13 want EAST verdict moved mcd 1 acd 0
+RC POS 14 id 5 seat 1 role expand fs 0 body 1 pos 2,9 stuck 0
+RC WALK 14 id 5 role expand fs 0 body 1 pos 2,8 tgt 2,8 want NORTH verdict moved mcd 1 acd 0
+RC POS 14 id 7 seat 2 role expand fs 0 body 1 pos 3,18 stuck 0
+RC POS 14 id 9 seat 3 role raid fs 1 body 2 pos 26,12 stuck 0
+RC WALK 14 id 9 role raid fs 1 body 2 pos 27,12 tgt 27,12 want EAST verdict moved mcd 1 acd 0
+RC POS 15 id 3 seat 0 role raid fs 1 body 1 pos 28,13 stuck 0
+RC POS 15 id 5 seat 1 role expand fs 0 body 1 pos 2,8 stuck 0
+RC WALK 15 id 5 role expand fs 0 body 1 pos 2,7 tgt 2,7 want NORTH verdict moved mcd 1 acd 0
+RC POS 15 id 7 seat 2 role expand fs 0 body 1 pos 3,18 stuck 1
+RC WALK 15 id 7 role expand fs 0 body 1 pos 3,17 tgt 3,16 want NORTH verdict moved mcd 1 acd 0
+RC POS 15 id 9 seat 3 role raid fs 1 body 2 pos 27,12 stuck 0
+RC WALK 15 id 9 role raid fs 1 body 2 pos 28,12 tgt 28,14 want EAST verdict moved mcd 1 acd 0
+RC SEAT 15 id 29 seat 4
+RC POS 15 id 29 seat 4 role defend fs 0 body 1 pos 4,15 stuck 0
+RC WALK 15 id 29 role defend fs 0 body 1 pos 4,14 tgt 2,8 want NORTH verdict moved mcd 1 acd 0
+RC POS 16 id 3 seat 0 role raid fs 1 body 1 pos 28,13 stuck 1
+RC POS 16 id 5 seat 1 role expand fs 0 body 1 pos 2,7 stuck 0
+RC WALK 16 id 5 role expand fs 0 body 1 pos 3,7 tgt 18,15 want EAST verdict moved mcd 1 acd 0
+RC POS 16 id 7 seat 2 role expand fs 0 body 1 pos 3,17 stuck 0
+RC POS 16 id 9 seat 3 role raid fs 1 body 2 pos 28,12 stuck 0
+RC WALK 16 id 9 role raid fs 1 body 2 pos 29,12 tgt 29,15 want EAST verdict moved mcd 1 acd 0
+RC POS 16 id 29 seat 4 role defend fs 0 body 1 pos 4,14 stuck 0
+RC WALK 16 id 29 role defend fs 0 body 1 pos 5,14 tgt 2,8 want EAST verdict moved mcd 1 acd 0
+RC POS 17 id 3 seat 0 role raid fs 1 body 1 pos 28,13 stuck 2
+RC WALK 17 id 3 role raid fs 1 body 1 pos 29,13 tgt 29,15 want EAST verdict moved mcd 1 acd 0
+RC POS 17 id 5 seat 1 role expand fs 0 body 1 pos 3,7 stuck 0
+RC WALK 17 id 5 role expand fs 0 body 1 pos 2,7 tgt 2,8 want WEST verdict moved mcd 1 acd 0
+RC POS 17 id 7 seat 2 role expand fs 0 body 1 pos 3,17 stuck 1
+RC WALK 17 id 7 role expand fs 0 body 1 pos 3,16 tgt 3,16 want NORTH verdict moved mcd 1 acd 0
+RC POS 17 id 9 seat 3 role raid fs 1 body 2 pos 29,12 stuck 0
+RC WALK 17 id 9 role raid fs 1 body 2 pos 28,12 tgt 29,15 want WEST verdict moved mcd 1 acd 0
+RC POS 17 id 29 seat 4 role defend fs 0 body 1 pos 5,14 stuck 0
+RC WALK 17 id 29 role defend fs 0 body 1 pos 5,13 tgt 2,8 want NORTH verdict moved mcd 1 acd 0
+RC POS 18 id 3 seat 0 role raid fs 1 body 1 pos 29,13 stuck 0
+RC WALK 18 id 3 role raid fs 1 body 1 pos 29,14 tgt 29,15 want SOUTH verdict moved mcd 1 acd 0
+RC POS 18 id 5 seat 1 role expand fs 0 body 1 pos 2,7 stuck 0
+RC WALK 18 id 5 role expand fs 0 body 1 pos 2,8 tgt 2,8 want SOUTH verdict moved mcd 1 acd 0
+RC POS 18 id 7 seat 2 role expand fs 0 body 1 pos 3,16 stuck 0
+RC WALK 18 id 7 role expand fs 0 body 1 pos 2,16 tgt 9,9 want WEST verdict moved mcd 1 acd 0
+RC POS 18 id 9 seat 3 role raid fs 1 body 2 pos 28,12 stuck 0
+RC WALK 18 id 9 role raid fs 1 body 2 pos 27,12 tgt 29,15 want WEST verdict moved mcd 1 acd 0
+RC POS 18 id 29 seat 4 role defend fs 0 body 1 pos 5,13 stuck 0
+RC WALK 18 id 29 role defend fs 0 body 1 pos 6,13 tgt 2,8 want EAST verdict moved mcd 1 acd 0
+RC POS 19 id 3 seat 0 role raid fs 1 body 1 pos 29,14 stuck 0
+RC WALK 19 id 3 role raid fs 1 body 1 pos 29,15 tgt 29,15 want SOUTH verdict moved mcd 1 acd 0
+RC POS 19 id 5 seat 1 role expand fs 0 body 1 pos 2,8 stuck 0
+RC POS 19 id 7 seat 2 role expand fs 0 body 1 pos 2,16 stuck 0
+RC WALK 19 id 7 role expand fs 0 body 1 pos 1,16 tgt 9,9 want WEST verdict moved mcd 1 acd 0
+RC POS 19 id 9 seat 3 role raid fs 1 body 2 pos 27,12 stuck 0
+RC WALK 19 id 9 role raid fs 1 body 2 pos 26,12 tgt 25,14 want WEST verdict moved mcd 1 acd 0
+RC POS 19 id 29 seat 4 role defend fs 0 body 1 pos 6,13 stuck 0
+RC WALK 19 id 29 role defend fs 0 body 1 pos 7,13 tgt 2,8 want EAST verdict moved mcd 1 acd 0
+RC POS 20 id 3 seat 0 role raid fs 1 body 1 pos 29,15 stuck 0
+RC POS 20 id 5 seat 1 role expand fs 0 body 1 pos 2,8 stuck 1
+RC POS 20 id 7 seat 2 role expand fs 0 body 1 pos 1,16 stuck 0
+RC WALK 20 id 7 role expand fs 0 body 1 pos 1,15 tgt 9,9 want NORTH verdict moved mcd 1 acd 0
+RC POS 20 id 9 seat 3 role raid fs 1 body 2 pos 26,12 stuck 0
+RC WALK 20 id 9 role raid fs 1 body 2 pos 26,11 tgt 25,14 want NORTH verdict moved mcd 1 acd 0
+RC POS 20 id 29 seat 4 role defend fs 0 body 1 pos 7,13 stuck 0
+RC WALK 20 id 29 role defend fs 0 body 1 pos 8,13 tgt 2,8 want EAST verdict moved mcd 1 acd 0
+RC POS 21 id 3 seat 0 role raid fs 1 body 1 pos 29,15 stuck 1
+RC WALK 21 id 3 role raid fs 1 body 1 pos 29,16 tgt 28,16 want SOUTH verdict moved mcd 1 acd 0
+RC POS 21 id 5 seat 1 role expand fs 0 body 1 pos 2,8 stuck 2
+RC POS 21 id 7 seat 2 role expand fs 0 body 1 pos 1,15 stuck 0
+RC WALK 21 id 7 role expand fs 0 body 1 pos 1,14 tgt 9,9 want NORTH verdict moved mcd 1 acd 0
+RC POS 21 id 9 seat 3 role raid fs 1 body 2 pos 26,11 stuck 0
+RC WALK 21 id 9 role raid fs 1 body 2 pos 26,12 tgt 25,14 want SOUTH verdict moved mcd 1 acd 0
+RC POS 21 id 29 seat 4 role defend fs 0 body 1 pos 8,13 stuck 0
+RC WALK 21 id 29 role defend fs 0 body 1 pos 8,12 tgt 2,8 want NORTH verdict moved mcd 1 acd 0
+RC POS 22 id 3 seat 0 role raid fs 1 body 1 pos 29,16 stuck 0
+RC WALK 22 id 3 role raid fs 1 body 1 pos 28,16 tgt 25,14 want WEST verdict moved mcd 1 acd 0
+RC POS 22 id 5 seat 1 role expand fs 0 body 1 pos 2,9 stuck 0
+RC POS 22 id 7 seat 2 role expand fs 0 body 1 pos 1,14 stuck 0
+RC WALK 22 id 7 role expand fs 0 body 1 pos 1,13 tgt 9,9 want NORTH verdict moved mcd 1 acd 0
+RC POS 22 id 9 seat 3 role raid fs 1 body 2 pos 26,12 stuck 0
+RC WALK 22 id 9 role raid fs 1 body 2 pos 27,12 tgt 25,14 want EAST verdict moved mcd 1 acd 0
+RC POS 22 id 29 seat 4 role defend fs 0 body 1 pos 8,12 stuck 0
+RC WALK 22 id 29 role defend fs 0 body 1 pos 9,12 tgt 2,8 want EAST verdict moved mcd 1 acd 0
+RC POS 23 id 3 seat 0 role raid fs 1 body 1 pos 28,16 stuck 0
+RC POS 23 id 5 seat 1 role expand fs 0 body 1 pos 2,9 stuck 1
+RC POS 23 id 7 seat 2 role expand fs 0 body 1 pos 1,13 stuck 0
+RC WALK 23 id 7 role expand fs 0 body 1 pos 2,13 tgt 9,9 want EAST verdict moved mcd 1 acd 0
+RC POS 23 id 9 seat 3 role raid fs 1 body 2 pos 27,12 stuck 0
+RC WALK 23 id 9 role raid fs 1 body 2 pos 26,12 tgt 25,14 want WEST verdict moved mcd 1 acd 0
+RC POS 23 id 29 seat 4 role defend fs 0 body 1 pos 9,12 stuck 0
+RC WALK 23 id 29 role defend fs 0 body 1 pos 9,11 tgt 2,8 want NORTH verdict moved mcd 1 acd 0
+RC POS 24 id 3 seat 0 role raid fs 1 body 1 pos 28,16 stuck 1
+RC WALK 24 id 3 role raid fs 1 body 1 pos 29,16 tgt 25,14 want EAST verdict moved mcd 1 acd 0
+RC POS 24 id 5 seat 1 role expand fs 0 body 1 pos 2,9 stuck 2
+RC WALK 24 id 5 role expand fs 0 body 1 pos 2,10 tgt 2,11 want SOUTH verdict moved mcd 1 acd 0
+RC POS 24 id 7 seat 2 role expand fs 0 body 1 pos 2,13 stuck 0
+RC WALK 24 id 7 role expand fs 0 body 1 pos 3,13 tgt 9,9 want EAST verdict moved mcd 1 acd 0
+RC POS 24 id 9 seat 3 role raid fs 1 body 2 pos 26,12 stuck 0
+RC WALK 24 id 9 role raid fs 1 body 2 pos 26,11 tgt 25,14 want NORTH verdict moved mcd 1 acd 0
+RC POS 24 id 29 seat 4 role defend fs 0 body 1 pos 9,11 stuck 0
+RC WALK 24 id 29 role defend fs 0 body 1 pos 9,10 tgt 2,8 want NORTH verdict moved mcd 1 acd 0
+RC POS 25 id 3 seat 0 role raid fs 1 body 1 pos 29,16 stuck 0
+RC WALK 25 id 3 role raid fs 1 body 1 pos 28,16 tgt 25,14 want WEST verdict moved mcd 1 acd 0
+RC POS 25 id 5 seat 1 role expand fs 0 body 1 pos 2,10 stuck 0
+RC POS 25 id 7 seat 2 role expand fs 0 body 1 pos 3,13 stuck 0
+RC WALK 25 id 7 role expand fs 0 body 1 pos 3,12 tgt 9,9 want NORTH verdict moved mcd 1 acd 0
+RC POS 25 id 9 seat 3 role raid fs 1 body 2 pos 26,11 stuck 0
+RC WALK 25 id 9 role raid fs 1 body 2 pos 25,11 tgt 25,14 want WEST verdict moved mcd 1 acd 0
+RC POS 25 id 29 seat 4 role defend fs 0 body 1 pos 9,10 stuck 0
+RC WALK 25 id 29 role defend fs 0 body 1 pos 9,9 tgt 9,9 want NORTH verdict moved mcd 1 acd 0
+RC POS 26 id 3 seat 0 role raid fs 1 body 1 pos 28,16 stuck 0
+RC WALK 26 id 3 role raid fs 1 body 1 pos 29,16 tgt 25,14 want EAST verdict moved mcd 1 acd 0
+RC POS 26 id 5 seat 1 role expand fs 0 body 1 pos 2,10 stuck 1
+RC WALK 26 id 5 role expand fs 0 body 1 pos 2,11 tgt 2,12 want SOUTH verdict moved mcd 1 acd 0
+RC POS 26 id 7 seat 2 role expand fs 0 body 1 pos 3,12 stuck 0
+RC WALK 26 id 7 role expand fs 0 body 1 pos 3,11 tgt 9,9 want NORTH verdict moved mcd 1 acd 0
+RC POS 26 id 9 seat 3 role raid fs 1 body 2 pos 25,11 stuck 0
+RC WALK 26 id 9 role raid fs 1 body 2 pos 25,10 tgt 25,14 want NORTH verdict moved mcd 1 acd 0
+RC POS 26 id 29 seat 4 role defend fs 0 body 1 pos 9,9 stuck 0
+RC WALK 26 id 29 role defend fs 0 body 1 pos 9,10 tgt 9,10 want SOUTH verdict moved mcd 1 acd 0
+RC POS 27 id 3 seat 0 role raid fs 1 body 1 pos 29,16 stuck 0
+RC WALK 27 id 3 role raid fs 1 body 1 pos 28,16 tgt 25,14 want WEST verdict moved mcd 1 acd 0
+RC POS 27 id 5 seat 1 role expand fs 0 body 1 pos 2,11 stuck 0
+RC POS 27 id 7 seat 2 role expand fs 0 body 1 pos 3,11 stuck 0
+RC WALK 27 id 7 role expand fs 0 body 1 pos 4,11 tgt 9,9 want EAST verdict moved mcd 1 acd 0
+RC POS 27 id 9 seat 3 role raid fs 1 body 2 pos 25,10 stuck 0
+RC WALK 27 id 9 role raid fs 1 body 2 pos 24,10 tgt 25,14 want WEST verdict moved mcd 1 acd 0
+RC POS 27 id 29 seat 4 role defend fs 0 body 1 pos 9,10 stuck 0
+RC WALK 27 id 29 role defend fs 0 body 1 pos 9,9 tgt 9,9 want NORTH verdict moved mcd 1 acd 0
+RC POS 28 id 3 seat 0 role raid fs 1 body 1 pos 28,16 stuck 0
+RC WALK 28 id 3 role raid fs 1 body 1 pos 29,16 tgt 25,14 want EAST verdict moved mcd 1 acd 0
+RC POS 28 id 5 seat 1 role expand fs 0 body 1 pos 2,11 stuck 1
+RC WALK 28 id 5 role expand fs 0 body 1 pos 2,12 tgt 2,13 want SOUTH verdict moved mcd 1 acd 0
+RC POS 28 id 7 seat 2 role expand fs 0 body 1 pos 4,11 stuck 0
+RC WALK 28 id 7 role expand fs 0 body 1 pos 5,11 tgt 9,9 want EAST verdict moved mcd 1 acd 0
+RC POS 28 id 9 seat 3 role raid fs 1 body 2 pos 24,10 stuck 0
+RC WALK 28 id 9 role raid fs 1 body 2 pos 23,10 tgt 25,14 want WEST verdict moved mcd 1 acd 0
+RC POS 28 id 29 seat 4 role defend fs 0 body 1 pos 9,9 stuck 0
+RC WALK 28 id 29 role defend fs 0 body 1 pos 9,10 tgt 9,10 want SOUTH verdict moved mcd 1 acd 0
+RC POS 29 id 3 seat 0 role raid fs 1 body 1 pos 29,16 stuck 0
+RC WALK 29 id 3 role raid fs 1 body 1 pos 28,16 tgt 25,14 want WEST verdict moved mcd 1 acd 0
+RC POS 29 id 5 seat 1 role expand fs 0 body 1 pos 2,12 stuck 0
+RC POS 29 id 7 seat 2 role expand fs 0 body 1 pos 5,11 stuck 0
+RC WALK 29 id 7 role expand fs 0 body 1 pos 4,11 tgt 9,9 want WEST verdict moved mcd 1 acd 0
+RC POS 29 id 9 seat 3 role raid fs 1 body 2 pos 23,10 stuck 0
+RC WALK 29 id 9 role raid fs 1 body 2 pos 22,10 tgt 25,14 want WEST verdict moved mcd 1 acd 0
+RC POS 29 id 29 seat 4 role defend fs 0 body 1 pos 9,10 stuck 0
+RC WALK 29 id 29 role defend fs 0 body 1 pos 9,11 tgt 6,13 want SOUTH verdict moved mcd 1 acd 0
+RC POS 30 id 3 seat 0 role raid fs 1 body 1 pos 28,16 stuck 0
+RC WALK 30 id 3 role raid fs 1 body 1 pos 29,16 tgt 25,14 want EAST verdict moved mcd 1 acd 0
+RC POS 30 id 5 seat 1 role expand fs 0 body 1 pos 2,12 stuck 1
+RC WALK 30 id 5 role expand fs 0 body 1 pos 2,13 tgt 2,13 want SOUTH verdict moved mcd 1 acd 0
+RC POS 30 id 7 seat 2 role expand fs 0 body 1 pos 4,11 stuck 0
+RC WALK 30 id 7 role expand fs 0 body 1 pos 5,11 tgt 9,9 want EAST verdict moved mcd 1 acd 0
+RC POS 30 id 9 seat 3 role raid fs 1 body 2 pos 22,10 stuck 0
+RC WALK 30 id 9 role raid fs 1 body 2 pos 23,10 tgt 26,12 want EAST verdict moved mcd 1 acd 0
+RC POS 30 id 29 seat 4 role defend fs 0 body 1 pos 9,11 stuck 0
+RC WALK 30 id 29 role defend fs 0 body 1 pos 9,12 tgt 7,13 want SOUTH verdict moved mcd 1 acd 0
+RC POS 31 id 3 seat 0 role raid fs 1 body 1 pos 29,16 stuck 0
+RC POS 31 id 5 seat 1 role expand fs 0 body 1 pos 2,13 stuck 0
+RC WALK 31 id 5 role expand fs 0 body 1 pos 1,13 tgt 21,26 want WEST verdict moved mcd 1 acd 0
+RC POS 31 id 7 seat 2 role expand fs 0 body 1 pos 5,11 stuck 0
+RC WALK 31 id 7 role expand fs 0 body 1 pos 5,10 tgt 9,10 want NORTH verdict moved mcd 1 acd 0
+RC POS 31 id 9 seat 3 role raid fs 1 body 2 pos 23,10 stuck 0
+RC WALK 31 id 9 role raid fs 1 body 2 pos 22,10 tgt 24,14 want WEST verdict moved mcd 1 acd 0
+RC POS 31 id 29 seat 4 role defend fs 0 body 1 pos 9,12 stuck 0
+RC WALK 31 id 29 role defend fs 0 body 1 pos 9,13 tgt 7,13 want SOUTH verdict moved mcd 1 acd 0
+RC POS 32 id 3 seat 0 role raid fs 1 body 1 pos 28,16 stuck 0
+RC WALK 32 id 3 role raid fs 1 body 1 pos 29,16 tgt 25,14 want EAST verdict moved mcd 1 acd 0
+RC POS 32 id 5 seat 1 role expand fs 0 body 1 pos 1,13 stuck 0
+RC WALK 32 id 5 role expand fs 0 body 1 pos 1,14 tgt 21,26 want SOUTH verdict moved mcd 1 acd 0
+RC POS 32 id 7 seat 2 role expand fs 0 body 1 pos 5,10 stuck 0
+RC WALK 32 id 7 role expand fs 0 body 1 pos 6,10 tgt 9,10 want EAST verdict moved mcd 1 acd 0
+RC POS 32 id 9 seat 3 role raid fs 1 body 2 pos 22,10 stuck 0
+RC WALK 32 id 9 role raid fs 1 body 2 pos 23,10 tgt 26,12 want EAST verdict moved mcd 1 acd 0
+RC POS 32 id 29 seat 4 role defend fs 0 body 1 pos 9,13 stuck 0
+RC POS 33 id 3 seat 0 role raid fs 1 body 1 pos 29,16 stuck 0
+RC POS 33 id 5 seat 1 role expand fs 0 body 1 pos 1,14 stuck 0
+RC WALK 33 id 5 role expand fs 0 body 1 pos 1,15 tgt 21,26 want SOUTH verdict moved mcd 1 acd 0
+RC POS 33 id 7 seat 2 role expand fs 0 body 1 pos 6,10 stuck 0
+RC WALK 33 id 7 role expand fs 0 body 1 pos 7,10 tgt 9,10 want EAST verdict moved mcd 1 acd 0
+RC POS 33 id 9 seat 3 role raid fs 1 body 2 pos 23,10 stuck 0
+RC WALK 33 id 9 role raid fs 1 body 2 pos 22,10 tgt 24,14 want WEST verdict moved mcd 1 acd 0
+RC POS 33 id 29 seat 4 role defend fs 0 body 1 pos 9,13 stuck 1
+RC WALK 33 id 29 role defend fs 0 body 1 pos 8,13 tgt 7,13 want WEST verdict moved mcd 1 acd 0
+RC POS 34 id 3 seat 0 role raid fs 1 body 1 pos 28,16 stuck 0
+RC WALK 34 id 3 role raid fs 1 body 1 pos 29,16 tgt 25,14 want EAST verdict moved mcd 1 acd 0
+RC POS 34 id 5 seat 1 role expand fs 0 body 1 pos 1,15 stuck 0
+RC WALK 34 id 5 role expand fs 0 body 1 pos 1,16 tgt 21,26 want SOUTH verdict moved mcd 1 acd 0
+RC POS 34 id 7 seat 2 role expand fs 0 body 1 pos 7,10 stuck 0
+RC WALK 34 id 7 role expand fs 0 body 1 pos 8,10 tgt 9,10 want EAST verdict moved mcd 1 acd 0
+RC POS 34 id 9 seat 3 role raid fs 1 body 2 pos 22,10 stuck 0
+RC WALK 34 id 9 role raid fs 1 body 2 pos 23,10 tgt 26,12 want EAST verdict moved mcd 1 acd 0
+RC POS 34 id 29 seat 4 role defend fs 0 body 1 pos 8,13 stuck 0
+RC WALK 34 id 29 role defend fs 0 body 1 pos 7,13 tgt 7,13 want WEST verdict moved mcd 1 acd 0
+RC POS 35 id 5 seat 1 role expand fs 0 body 1 pos 1,16 stuck 0
+RC WALK 35 id 5 role expand fs 0 body 1 pos 2,16 tgt 21,26 want EAST verdict moved mcd 1 acd 0
+RC POS 35 id 7 seat 2 role expand fs 0 body 1 pos 8,10 stuck 0
+RC WALK 35 id 7 role expand fs 0 body 1 pos 9,10 tgt 9,10 want EAST verdict moved mcd 1 acd 0
+RC POS 35 id 9 seat 3 role raid fs 1 body 2 pos 23,10 stuck 0
+RC WALK 35 id 9 role raid fs 1 body 2 pos 22,10 tgt 24,14 want WEST verdict moved mcd 1 acd 0
+RC POS 35 id 29 seat 4 role defend fs 0 body 1 pos 7,13 stuck 0
+RC WALK 35 id 29 role defend fs 0 body 1 pos 7,14 tgt 9,9 want SOUTH verdict moved mcd 1 acd 0
+RC POS 36 id 5 seat 1 role expand fs 0 body 1 pos 2,16 stuck 0
+RC WALK 36 id 5 role expand fs 0 body 1 pos 3,16 tgt 21,26 want EAST verdict moved mcd 1 acd 0
+RC POS 36 id 7 seat 2 role expand fs 0 body 1 pos 9,10 stuck 0
+RC WALK 36 id 7 role expand fs 0 body 1 pos 9,9 tgt 9,9 want NORTH verdict moved mcd 1 acd 0
+RC POS 36 id 9 seat 3 role raid fs 1 body 2 pos 22,10 stuck 0
+RC WALK 36 id 9 role raid fs 1 body 2 pos 23,10 tgt 26,12 want EAST verdict moved mcd 1 acd 0
+RC POS 36 id 29 seat 4 role defend fs 0 body 1 pos 7,14 stuck 0
+RC WALK 36 id 29 role defend fs 0 body 1 pos 7,14 tgt 7,13 want CENTRE verdict centre mcd 0 acd 0
+RC POS 37 id 5 seat 1 role expand fs 0 body 1 pos 3,16 stuck 0
+RC WALK 37 id 5 role expand fs 0 body 1 pos 3,17 tgt 21,26 want SOUTH verdict moved mcd 1 acd 0
+RC POS 37 id 7 seat 2 role expand fs 0 body 1 pos 9,9 stuck 0
+RC WALK 37 id 7 role expand fs 0 body 1 pos 10,9 tgt 27,7 want EAST verdict moved mcd 1 acd 0
+RC POS 37 id 9 seat 3 role raid fs 1 body 2 pos 23,10 stuck 0
+RC WALK 37 id 9 role raid fs 1 body 2 pos 22,10 tgt 24,14 want WEST verdict moved mcd 1 acd 0
+RC POS 37 id 29 seat 4 role defend fs 0 body 1 pos 7,14 stuck 1
+RC WALK 37 id 29 role defend fs 0 body 1 pos 7,13 tgt 6,13 want NORTH verdict moved mcd 1 acd 0
+RC POS 38 id 5 seat 1 role expand fs 0 body 1 pos 3,17 stuck 0
+RC WALK 38 id 5 role expand fs 0 body 1 pos 3,18 tgt 21,26 want SOUTH verdict moved mcd 1 acd 0
+RC POS 38 id 7 seat 2 role expand fs 0 body 1 pos 10,9 stuck 0
+RC WALK 38 id 7 role expand fs 0 body 1 pos 9,9 tgt 9,10 want WEST verdict moved mcd 1 acd 0
+RC POS 38 id 9 seat 3 role raid fs 1 body 2 pos 22,10 stuck 0
+RC WALK 38 id 9 role raid fs 1 body 2 pos 21,10 tgt 24,14 want WEST verdict moved mcd 1 acd 0
+RC POS 38 id 29 seat 4 role defend fs 0 body 1 pos 7,13 stuck 0
+RC WALK 38 id 29 role defend fs 0 body 1 pos 6,13 tgt 5,13 want WEST verdict moved mcd 1 acd 0
+RC POS 39 id 5 seat 1 role expand fs 0 body 1 pos 3,18 stuck 0
+RC WALK 39 id 5 role expand fs 0 body 1 pos 4,18 tgt 21,26 want EAST verdict moved mcd 1 acd 0
+RC POS 39 id 7 seat 2 role expand fs 0 body 1 pos 9,9 stuck 0
+RC WALK 39 id 7 role expand fs 0 body 1 pos 9,10 tgt 9,10 want SOUTH verdict moved mcd 1 acd 0
+RC POS 39 id 9 seat 3 role raid fs 1 body 2 pos 21,10 stuck 0
+RC WALK 39 id 9 role raid fs 1 body 2 pos 22,10 tgt 26,12 want EAST verdict moved mcd 1 acd 0
+RC POS 39 id 29 seat 4 role defend fs 0 body 1 pos 6,13 stuck 0
+RC WALK 39 id 29 role defend fs 0 body 1 pos 5,13 tgt 5,13 want WEST verdict moved mcd 1 acd 0
+RC POS 40 id 5 seat 1 role expand fs 0 body 1 pos 4,18 stuck 0
+RC WALK 40 id 5 role expand fs 0 body 1 pos 5,18 tgt 21,26 want EAST verdict moved mcd 1 acd 0
+RC POS 40 id 7 seat 2 role expand fs 0 body 1 pos 9,10 stuck 0
+RC WALK 40 id 7 role expand fs 0 body 1 pos 9,9 tgt 9,9 want NORTH verdict moved mcd 1 acd 0
+RC POS 40 id 9 seat 3 role raid fs 1 body 2 pos 22,10 stuck 0
+RC WALK 40 id 9 role raid fs 1 body 2 pos 21,10 tgt 24,14 want WEST verdict moved mcd 1 acd 0
+RC POS 40 id 29 seat 4 role defend fs 0 body 1 pos 5,13 stuck 0
+RC WALK 40 id 29 role defend fs 0 body 1 pos 5,14 tgt 7,16 want SOUTH verdict moved mcd 1 acd 0
+RC POS 41 id 5 seat 1 role expand fs 0 body 1 pos 5,18 stuck 0
+RC WALK 41 id 5 role expand fs 0 body 1 pos 5,19 tgt 21,26 want SOUTH verdict moved mcd 1 acd 0
+RC POS 41 id 7 seat 2 role expand fs 0 body 1 pos 9,9 stuck 0
+RC WALK 41 id 7 role expand fs 0 body 1 pos 9,10 tgt 9,10 want SOUTH verdict moved mcd 1 acd 0
+RC POS 41 id 9 seat 3 role raid fs 1 body 2 pos 21,10 stuck 0
+RC WALK 41 id 9 role raid fs 1 body 2 pos 22,10 tgt 26,12 want EAST verdict moved mcd 1 acd 0
+RC POS 41 id 29 seat 4 role defend fs 0 body 1 pos 5,14 stuck 0
+RC WALK 41 id 29 role defend fs 0 body 1 pos 5,15 tgt 6,16 want SOUTH verdict moved mcd 1 acd 0
+RC POS 42 id 5 seat 1 role expand fs 0 body 1 pos 5,19 stuck 0
+RC WALK 42 id 5 role expand fs 0 body 1 pos 6,19 tgt 21,26 want EAST verdict moved mcd 1 acd 0
+RC POS 42 id 7 seat 2 role expand fs 0 body 1 pos 9,10 stuck 0
+RC WALK 42 id 7 role expand fs 0 body 1 pos 9,9 tgt 9,9 want NORTH verdict moved mcd 1 acd 0
+RC POS 42 id 9 seat 3 role raid fs 1 body 2 pos 22,10 stuck 0
+RC WALK 42 id 9 role raid fs 1 body 2 pos 21,10 tgt 24,14 want WEST verdict moved mcd 1 acd 0
+RC POS 42 id 29 seat 4 role defend fs 0 body 1 pos 5,15 stuck 0
+RC WALK 42 id 29 role defend fs 0 body 1 pos 5,15 tgt 5,16 want CENTRE verdict centre mcd 0 acd 0
+RC POS 43 id 5 seat 1 role expand fs 0 body 1 pos 6,19 stuck 0
+RC WALK 43 id 5 role expand fs 0 body 1 pos 7,19 tgt 21,26 want EAST verdict moved mcd 1 acd 0
+RC POS 43 id 7 seat 2 role expand fs 0 body 1 pos 9,9 stuck 0
+RC WALK 43 id 7 role expand fs 0 body 1 pos 10,9 tgt 27,7 want EAST verdict moved mcd 1 acd 0
+RC POS 43 id 9 seat 3 role raid fs 1 body 2 pos 21,10 stuck 0
+RC WALK 43 id 9 role raid fs 1 body 2 pos 22,10 tgt 26,12 want EAST verdict moved mcd 1 acd 0
+RC POS 43 id 29 seat 4 role defend fs 0 body 1 pos 5,15 stuck 1
+RC WALK 43 id 29 role defend fs 0 body 1 pos 5,16 tgt 6,16 want SOUTH verdict moved mcd 1 acd 0
+RC POS 44 id 5 seat 1 role expand fs 0 body 1 pos 7,19 stuck 0
+RC WALK 44 id 5 role expand fs 0 body 1 pos 8,19 tgt 21,26 want EAST verdict moved mcd 1 acd 0
+RC POS 44 id 7 seat 2 role expand fs 0 body 1 pos 10,9 stuck 0
+RC WALK 44 id 7 role expand fs 0 body 1 pos 9,9 tgt 9,10 want WEST verdict moved mcd 1 acd 0
+RC POS 44 id 9 seat 3 role raid fs 1 body 2 pos 22,10 stuck 0
+RC WALK 44 id 9 role raid fs 1 body 2 pos 21,10 tgt 24,14 want WEST verdict moved mcd 1 acd 0
+RC POS 44 id 29 seat 4 role defend fs 0 body 1 pos 5,16 stuck 0
+RC POS 45 id 5 seat 1 role expand fs 0 body 1 pos 8,19 stuck 0
+RC WALK 45 id 5 role expand fs 0 body 1 pos 9,19 tgt 21,26 want EAST verdict moved mcd 1 acd 0
+RC POS 45 id 7 seat 2 role expand fs 0 body 1 pos 9,9 stuck 0
+RC WALK 45 id 7 role expand fs 0 body 1 pos 9,10 tgt 9,10 want SOUTH verdict moved mcd 1 acd 0
+RC POS 45 id 9 seat 3 role raid fs 1 body 2 pos 21,10 stuck 0
+RC WALK 45 id 9 role raid fs 1 body 2 pos 22,10 tgt 26,12 want EAST verdict moved mcd 1 acd 0
+RC POS 45 id 29 seat 4 role defend fs 0 body 1 pos 5,16 stuck 1
+RC WALK 45 id 29 role defend fs 0 body 1 pos 6,16 tgt 7,15 want EAST verdict moved mcd 1 acd 0
+RC POS 46 id 5 seat 1 role expand fs 0 body 1 pos 9,19 stuck 0
+RC WALK 46 id 5 role expand fs 0 body 1 pos 10,19 tgt 21,26 want EAST verdict moved mcd 1 acd 0
+RC POS 46 id 7 seat 2 role expand fs 0 body 1 pos 9,10 stuck 0
+RC WALK 46 id 7 role expand fs 0 body 1 pos 9,9 tgt 9,9 want NORTH verdict moved mcd 1 acd 0
+RC POS 46 id 9 seat 3 role raid fs 1 body 2 pos 22,10 stuck 0
+RC WALK 46 id 9 role raid fs 1 body 2 pos 21,10 tgt 24,14 want WEST verdict moved mcd 1 acd 0
+RC POS 46 id 29 seat 4 role defend fs 0 body 1 pos 6,16 stuck 0
+RC WALK 46 id 29 role defend fs 0 body 1 pos 7,16 tgt 7,15 want EAST verdict moved mcd 1 acd 0
+RC POS 47 id 5 seat 1 role expand fs 0 body 1 pos 10,19 stuck 0
+RC WALK 47 id 5 role expand fs 0 body 1 pos 11,19 tgt 21,26 want EAST verdict moved mcd 1 acd 0
+RC POS 47 id 7 seat 2 role expand fs 0 body 1 pos 9,9 stuck 0
+RC WALK 47 id 7 role expand fs 0 body 1 pos 9,10 tgt 9,10 want SOUTH verdict moved mcd 1 acd 0
+RC POS 47 id 9 seat 3 role raid fs 1 body 2 pos 21,10 stuck 0
+RC WALK 47 id 9 role raid fs 1 body 2 pos 22,10 tgt 26,12 want EAST verdict moved mcd 1 acd 0
+RC POS 47 id 29 seat 4 role defend fs 0 body 1 pos 7,16 stuck 0
+RC WALK 47 id 29 role defend fs 0 body 1 pos 7,15 tgt 7,15 want NORTH verdict moved mcd 1 acd 0
+RC POS 48 id 5 seat 1 role expand fs 0 body 1 pos 11,19 stuck 0
+RC WALK 48 id 5 role expand fs 0 body 1 pos 12,19 tgt 21,26 want EAST verdict moved mcd 1 acd 0
+RC POS 48 id 7 seat 2 role expand fs 0 body 1 pos 9,10 stuck 0
+RC WALK 48 id 7 role expand fs 0 body 1 pos 9,9 tgt 9,9 want NORTH verdict moved mcd 1 acd 0
+RC POS 48 id 9 seat 3 role raid fs 1 body 2 pos 22,10 stuck 0
+RC WALK 48 id 9 role raid fs 1 body 2 pos 21,10 tgt 24,14 want WEST verdict moved mcd 1 acd 0
+RC POS 48 id 29 seat 4 role defend fs 0 body 1 pos 7,15 stuck 0
+RC WALK 48 id 29 role defend fs 0 body 1 pos 8,15 tgt 11,13 want EAST verdict moved mcd 1 acd 0
+RC POS 49 id 5 seat 1 role expand fs 0 body 1 pos 12,19 stuck 0
+RC WALK 49 id 5 role expand fs 0 body 1 pos 13,19 tgt 21,26 want EAST verdict moved mcd 1 acd 0
+RC POS 49 id 7 seat 2 role expand fs 0 body 1 pos 9,9 stuck 0
+RC WALK 49 id 7 role expand fs 0 body 1 pos 10,9 tgt 27,7 want EAST verdict moved mcd 1 acd 0
+RC POS 49 id 9 seat 3 role raid fs 1 body 2 pos 21,10 stuck 0
+RC WALK 49 id 9 role raid fs 1 body 2 pos 22,10 tgt 26,12 want EAST verdict moved mcd 1 acd 0
+RC POS 49 id 29 seat 4 role defend fs 0 body 1 pos 8,15 stuck 0
+RC WALK 49 id 29 role defend fs 0 body 1 pos 9,15 tgt 11,13 want EAST verdict moved mcd 1 acd 0
+RC POS 50 id 5 seat 1 role expand fs 0 body 1 pos 13,19 stuck 0
+RC WALK 50 id 5 role expand fs 0 body 1 pos 14,19 tgt 21,26 want EAST verdict moved mcd 1 acd 0
+RC POS 50 id 7 seat 2 role expand fs 0 body 1 pos 10,9 stuck 0
+RC WALK 50 id 7 role expand fs 0 body 1 pos 9,9 tgt 9,10 want WEST verdict moved mcd 1 acd 0
+RC POS 50 id 9 seat 3 role raid fs 1 body 2 pos 22,10 stuck 0
+RC WALK 50 id 9 role raid fs 1 body 2 pos 21,10 tgt 24,14 want WEST verdict moved mcd 1 acd 0
+RC POS 50 id 29 seat 4 role defend fs 0 body 1 pos 9,15 stuck 0
+RC WALK 50 id 29 role defend fs 0 body 1 pos 8,15 tgt 7,16 want WEST verdict moved mcd 1 acd 0
+RC POS 51 id 5 seat 1 role expand fs 0 body 1 pos 14,19 stuck 0
+RC WALK 51 id 5 role expand fs 0 body 1 pos 15,19 tgt 21,26 want EAST verdict moved mcd 1 acd 0
+RC POS 51 id 7 seat 2 role expand fs 0 body 1 pos 9,9 stuck 0
+RC WALK 51 id 7 role expand fs 0 body 1 pos 9,10 tgt 9,10 want SOUTH verdict moved mcd 1 acd 0
+RC POS 51 id 9 seat 3 role raid fs 1 body 2 pos 21,10 stuck 0
+RC WALK 51 id 9 role raid fs 1 body 2 pos 22,10 tgt 26,12 want EAST verdict moved mcd 1 acd 0
+RC POS 51 id 29 seat 4 role defend fs 0 body 1 pos 8,15 stuck 0
+RC WALK 51 id 29 role defend fs 0 body 1 pos 7,15 tgt 6,16 want WEST verdict moved mcd 1 acd 0
+RC POS 52 id 5 seat 1 role expand fs 0 body 1 pos 15,19 stuck 0
+RC WALK 52 id 5 role expand fs 0 body 1 pos 16,19 tgt 21,26 want EAST verdict moved mcd 1 acd 0
+RC POS 52 id 7 seat 2 role expand fs 0 body 1 pos 9,10 stuck 0
+RC WALK 52 id 7 role expand fs 0 body 1 pos 9,9 tgt 9,9 want NORTH verdict moved mcd 1 acd 0
+RC POS 52 id 9 seat 3 role raid fs 1 body 2 pos 22,10 stuck 0
+RC WALK 52 id 9 role raid fs 1 body 2 pos 21,10 tgt 24,14 want WEST verdict moved mcd 1 acd 0
+RC POS 52 id 29 seat 4 role defend fs 0 body 1 pos 7,15 stuck 0
+RC WALK 52 id 29 role defend fs 0 body 1 pos 7,16 tgt 5,16 want SOUTH verdict moved mcd 1 acd 0
+RC POS 53 id 5 seat 1 role expand fs 0 body 1 pos 16,19 stuck 0
+RC WALK 53 id 5 role expand fs 0 body 1 pos 17,19 tgt 21,26 want EAST verdict moved mcd 1 acd 0
+RC POS 53 id 7 seat 2 role expand fs 0 body 1 pos 9,9 stuck 0
+RC WALK 53 id 7 role expand fs 0 body 1 pos 9,10 tgt 9,10 want SOUTH verdict moved mcd 1 acd 0
+RC POS 53 id 9 seat 3 role raid fs 1 body 2 pos 21,10 stuck 0
+RC WALK 53 id 9 role raid fs 1 body 2 pos 22,10 tgt 26,12 want EAST verdict moved mcd 1 acd 0
+RC POS 53 id 29 seat 4 role defend fs 0 body 1 pos 7,16 stuck 0
+RC WALK 53 id 29 role defend fs 0 body 1 pos 6,16 tgt 5,16 want WEST verdict moved mcd 1 acd 0
+RC POS 54 id 5 seat 1 role expand fs 0 body 1 pos 17,19 stuck 0
+RC WALK 54 id 5 role expand fs 0 body 1 pos 18,19 tgt 21,26 want EAST verdict moved mcd 1 acd 0
+RC POS 54 id 7 seat 2 role expand fs 0 body 1 pos 9,10 stuck 0
+RC POS 54 id 9 seat 3 role raid fs 1 body 2 pos 22,10 stuck 0
+RC WALK 54 id 9 role raid fs 1 body 2 pos 21,10 tgt 24,14 want WEST verdict moved mcd 1 acd 0
+RC POS 54 id 29 seat 4 role defend fs 0 body 1 pos 6,16 stuck 0
+RC WALK 54 id 29 role defend fs 0 body 1 pos 6,16 tgt 5,16 want CENTRE verdict centre mcd 0 acd 0
+RC POS 55 id 5 seat 1 role expand fs 0 body 1 pos 18,19 stuck 0
+RC WALK 55 id 5 role expand fs 0 body 1 pos 19,19 tgt 21,26 want EAST verdict moved mcd 1 acd 0
+RC POS 55 id 7 seat 2 role expand fs 0 body 1 pos 9,10 stuck 1
+RC POS 55 id 9 seat 3 role raid fs 1 body 2 pos 21,10 stuck 0
+RC WALK 55 id 9 role raid fs 1 body 2 pos 22,10 tgt 26,12 want EAST verdict moved mcd 1 acd 0
+RC POS 55 id 29 seat 4 role defend fs 0 body 1 pos 6,16 stuck 1
+RC WALK 55 id 29 role defend fs 0 body 1 pos 6,16 tgt 5,16 want CENTRE verdict centre mcd 0 acd 0
+RC POS 56 id 5 seat 1 role expand fs 0 body 1 pos 19,19 stuck 0
+RC WALK 56 id 5 role expand fs 0 body 1 pos 20,19 tgt 21,26 want EAST verdict moved mcd 1 acd 0
+RC POS 56 id 7 seat 2 role expand fs 0 body 1 pos 9,10 stuck 2
+RC POS 56 id 9 seat 3 role raid fs 1 body 2 pos 22,10 stuck 0
+RC WALK 56 id 9 role raid fs 1 body 2 pos 21,10 tgt 24,14 want WEST verdict moved mcd 1 acd 0
+RC POS 56 id 29 seat 4 role defend fs 0 body 1 pos 6,16 stuck 2
+RC WALK 56 id 29 role defend fs 0 body 1 pos 6,16 tgt 5,16 want CENTRE verdict centre mcd 0 acd 0
+RC POS 57 id 5 seat 1 role expand fs 0 body 1 pos 20,19 stuck 0
+RC WALK 57 id 5 role expand fs 0 body 1 pos 21,19 tgt 21,26 want EAST verdict moved mcd 1 acd 0
+RC POS 57 id 7 seat 2 role expand fs 0 body 1 pos 8,10 stuck 0
+RC POS 57 id 9 seat 3 role raid fs 1 body 2 pos 21,10 stuck 0
+RC WALK 57 id 9 role raid fs 1 body 2 pos 22,10 tgt 26,12 want EAST verdict moved mcd 1 acd 0
+RC POS 57 id 29 seat 4 role defend fs 0 body 1 pos 6,16 stuck 3
+RC WALK 57 id 29 role defend fs 0 body 1 pos 6,16 tgt 5,16 want CENTRE verdict centre mcd 0 acd 0
+RC POS 58 id 5 seat 1 role expand fs 0 body 1 pos 21,19 stuck 0
+RC WALK 58 id 5 role expand fs 0 body 1 pos 22,19 tgt 21,26 want EAST verdict moved mcd 1 acd 0
+RC POS 58 id 7 seat 2 role expand fs 0 body 1 pos 8,10 stuck 1
+RC POS 58 id 9 seat 3 role raid fs 1 body 2 pos 22,10 stuck 0
+RC WALK 58 id 9 role raid fs 1 body 2 pos 21,10 tgt 24,14 want WEST verdict moved mcd 1 acd 0
+RC POS 58 id 29 seat 4 role defend fs 0 body 1 pos 6,16 stuck 4
+RC WALK 58 id 29 role defend fs 0 body 1 pos 6,16 tgt 5,16 want CENTRE verdict centre mcd 0 acd 0
+RC POS 59 id 5 seat 1 role expand fs 0 body 1 pos 22,19 stuck 0
+RC WALK 59 id 5 role expand fs 0 body 1 pos 22,20 tgt 21,26 want SOUTH verdict moved mcd 1 acd 0
+RC POS 59 id 7 seat 2 role expand fs 0 body 1 pos 8,10 stuck 2
+RC WALK 59 id 7 role expand fs 0 body 1 pos 7,10 tgt 6,10 want WEST verdict moved mcd 1 acd 0
+RC POS 59 id 9 seat 3 role raid fs 1 body 2 pos 21,10 stuck 0
+RC WALK 59 id 9 role raid fs 1 body 2 pos 22,10 tgt 26,12 want EAST verdict moved mcd 1 acd 0
+RC POS 59 id 29 seat 4 role defend fs 0 body 1 pos 6,16 stuck 5
+RC WALK 59 id 29 role defend fs 0 body 1 pos 7,16 tgt 5,8 want EAST verdict moved mcd 1 acd 0
+RC POS 60 id 5 seat 1 role expand fs 0 body 1 pos 22,20 stuck 0
+RC WALK 60 id 5 role expand fs 0 body 1 pos 22,21 tgt 21,26 want SOUTH verdict moved mcd 1 acd 0
+RC POS 60 id 7 seat 2 role expand fs 0 body 1 pos 7,10 stuck 0
+RC POS 60 id 9 seat 3 role raid fs 1 body 2 pos 22,10 stuck 0
+RC WALK 60 id 9 role raid fs 1 body 2 pos 21,10 tgt 24,14 want WEST verdict moved mcd 1 acd 0
+RC POS 60 id 29 seat 4 role defend fs 0 body 1 pos 7,16 stuck 0
+RC WALK 60 id 29 role defend fs 0 body 1 pos 7,15 tgt 5,8 want NORTH verdict moved mcd 1 acd 0
+RC POS 61 id 5 seat 1 role expand fs 0 body 1 pos 22,21 stuck 0
+RC WALK 61 id 5 role expand fs 0 body 1 pos 22,22 tgt 21,26 want SOUTH verdict moved mcd 1 acd 0
+RC POS 61 id 7 seat 2 role expand fs 0 body 1 pos 7,10 stuck 1
+RC WALK 61 id 7 role expand fs 0 body 1 pos 6,10 tgt 5,10 want WEST verdict moved mcd 1 acd 0
+RC POS 61 id 9 seat 3 role raid fs 1 body 2 pos 21,10 stuck 0
+RC WALK 61 id 9 role raid fs 1 body 2 pos 22,10 tgt 26,12 want EAST verdict moved mcd 1 acd 0
+RC POS 61 id 29 seat 4 role defend fs 0 body 1 pos 7,15 stuck 0
+RC WALK 61 id 29 role defend fs 0 body 1 pos 7,14 tgt 5,8 want NORTH verdict moved mcd 1 acd 0
+RC POS 62 id 5 seat 1 role expand fs 0 body 1 pos 22,22 stuck 0
+RC WALK 62 id 5 role expand fs 0 body 1 pos 22,23 tgt 22,26 want SOUTH verdict moved mcd 1 acd 0
+RC POS 62 id 7 seat 2 role expand fs 0 body 1 pos 6,10 stuck 0
+RC POS 62 id 9 seat 3 role raid fs 1 body 2 pos 22,10 stuck 0
+RC WALK 62 id 9 role raid fs 1 body 2 pos 21,10 tgt 24,14 want WEST verdict moved mcd 1 acd 0
+RC POS 62 id 29 seat 4 role defend fs 0 body 1 pos 7,14 stuck 0
+RC WALK 62 id 29 role defend fs 0 body 1 pos 7,13 tgt 5,8 want NORTH verdict moved mcd 1 acd 0
+RC POS 63 id 5 seat 1 role expand fs 0 body 1 pos 22,23 stuck 0
+RC WALK 63 id 5 role expand fs 0 body 1 pos 22,24 tgt 22,26 want SOUTH verdict moved mcd 1 acd 0
+RC POS 63 id 7 seat 2 role expand fs 0 body 1 pos 6,10 stuck 1
+RC POS 63 id 9 seat 3 role raid fs 1 body 2 pos 21,10 stuck 0
+RC WALK 63 id 9 role raid fs 1 body 2 pos 22,10 tgt 26,12 want EAST verdict moved mcd 1 acd 0
+RC POS 63 id 29 seat 4 role defend fs 0 body 1 pos 7,13 stuck 0
+RC WALK 63 id 29 role defend fs 0 body 1 pos 8,13 tgt 5,8 want EAST verdict moved mcd 1 acd 0
+RC POS 64 id 5 seat 1 role expand fs 0 body 1 pos 22,24 stuck 0
+RC WALK 64 id 5 role expand fs 0 body 1 pos 22,25 tgt 22,26 want SOUTH verdict moved mcd 1 acd 0
+RC POS 64 id 7 seat 2 role expand fs 0 body 1 pos 6,10 stuck 2
+RC POS 64 id 9 seat 3 role raid fs 1 body 2 pos 22,10 stuck 0
+RC WALK 64 id 9 role raid fs 1 body 2 pos 21,10 tgt 24,14 want WEST verdict moved mcd 1 acd 0
+RC POS 64 id 29 seat 4 role defend fs 0 body 1 pos 8,13 stuck 0
+RC WALK 64 id 29 role defend fs 0 body 1 pos 8,12 tgt 5,8 want NORTH verdict moved mcd 1 acd 0
+RC POS 65 id 5 seat 1 role expand fs 0 body 1 pos 22,25 stuck 0
+RC WALK 65 id 5 role expand fs 0 body 1 pos 22,26 tgt 22,26 want SOUTH verdict moved mcd 1 acd 0
+RC POS 65 id 7 seat 2 role expand fs 0 body 1 pos 6,10 stuck 3
+RC WALK 65 id 7 role expand fs 0 body 1 pos 5,10 tgt 4,10 want WEST verdict moved mcd 1 acd 0
+RC POS 65 id 9 seat 3 role raid fs 1 body 2 pos 21,10 stuck 0
+RC WALK 65 id 9 role raid fs 1 body 2 pos 22,10 tgt 26,12 want EAST verdict moved mcd 1 acd 0
+RC POS 65 id 29 seat 4 role defend fs 0 body 1 pos 8,12 stuck 0
+RC WALK 65 id 29 role defend fs 0 body 1 pos 9,12 tgt 5,8 want EAST verdict moved mcd 1 acd 0
+RC POS 66 id 5 seat 1 role expand fs 0 body 1 pos 22,26 stuck 0
+RC WALK 66 id 5 role expand fs 0 body 1 pos 21,26 tgt 21,26 want WEST verdict moved mcd 1 acd 0
+RC POS 66 id 7 seat 2 role expand fs 0 body 1 pos 5,10 stuck 0
+RC POS 66 id 9 seat 3 role raid fs 1 body 2 pos 22,10 stuck 0
+RC WALK 66 id 9 role raid fs 1 body 2 pos 21,10 tgt 24,14 want WEST verdict moved mcd 1 acd 0
+RC POS 66 id 29 seat 4 role defend fs 0 body 1 pos 9,12 stuck 0
+RC WALK 66 id 29 role defend fs 0 body 1 pos 9,11 tgt 5,8 want NORTH verdict moved mcd 1 acd 0
+RC POS 67 id 5 seat 1 role expand fs 0 body 1 pos 21,26 stuck 0
+RC WALK 67 id 5 role expand fs 0 body 1 pos 21,25 tgt 11,15 want NORTH verdict moved mcd 1 acd 0
+RC POS 67 id 7 seat 2 role expand fs 0 body 1 pos 5,10 stuck 1
+RC WALK 67 id 7 role expand fs 0 body 1 pos 4,10 tgt 3,10 want WEST verdict moved mcd 1 acd 0
+RC POS 67 id 9 seat 3 role raid fs 1 body 2 pos 21,10 stuck 0
+RC WALK 67 id 9 role raid fs 1 body 2 pos 22,10 tgt 26,12 want EAST verdict moved mcd 1 acd 0
+RC POS 67 id 29 seat 4 role defend fs 0 body 1 pos 9,11 stuck 0
+RC WALK 67 id 29 role defend fs 0 body 1 pos 9,10 tgt 5,8 want NORTH verdict moved mcd 1 acd 0
+RC POS 68 id 5 seat 1 role expand fs 0 body 1 pos 21,25 stuck 0
+RC WALK 68 id 5 role expand fs 0 body 1 pos 22,25 tgt 22,26 want EAST verdict moved mcd 1 acd 0
+RC POS 68 id 7 seat 2 role expand fs 0 body 1 pos 4,10 stuck 0
+RC POS 68 id 9 seat 3 role raid fs 1 body 2 pos 22,10 stuck 0
+RC WALK 68 id 9 role raid fs 1 body 2 pos 21,10 tgt 24,14 want WEST verdict moved mcd 1 acd 0
+RC POS 68 id 29 seat 4 role defend fs 0 body 1 pos 9,10 stuck 0
+RC WALK 68 id 29 role defend fs 0 body 1 pos 8,10 tgt 5,8 want WEST verdict moved mcd 1 acd 0
+RC POS 69 id 5 seat 1 role expand fs 0 body 1 pos 22,25 stuck 0
+RC WALK 69 id 5 role expand fs 0 body 1 pos 22,26 tgt 22,26 want SOUTH verdict moved mcd 1 acd 0
+RC POS 69 id 7 seat 2 role expand fs 0 body 1 pos 4,10 stuck 1
+RC WALK 69 id 7 role expand fs 0 body 1 pos 3,10 tgt 3,11 want WEST verdict moved mcd 1 acd 0
+RC POS 69 id 9 seat 3 role raid fs 1 body 2 pos 21,10 stuck 0
+RC WALK 69 id 9 role raid fs 1 body 2 pos 22,10 tgt 26,12 want EAST verdict moved mcd 1 acd 0
+RC POS 69 id 29 seat 4 role defend fs 0 body 1 pos 8,10 stuck 0
+RC WALK 69 id 29 role defend fs 0 body 1 pos 7,10 tgt 5,8 want WEST verdict moved mcd 1 acd 0
+RC POS 70 id 5 seat 1 role expand fs 0 body 1 pos 22,26 stuck 0
+RC WALK 70 id 5 role expand fs 0 body 1 pos 21,26 tgt 21,26 want WEST verdict moved mcd 1 acd 0
+RC POS 70 id 7 seat 2 role expand fs 0 body 1 pos 3,10 stuck 0
+RC POS 70 id 9 seat 3 role raid fs 1 body 2 pos 22,10 stuck 0
+RC WALK 70 id 9 role raid fs 1 body 2 pos 21,10 tgt 24,14 want WEST verdict moved mcd 1 acd 0
+RC POS 70 id 29 seat 4 role defend fs 0 body 1 pos 7,10 stuck 0
+RC WALK 70 id 29 role defend fs 0 body 1 pos 6,10 tgt 5,8 want WEST verdict moved mcd 1 acd 0
+RC POS 71 id 5 seat 1 role expand fs 0 body 1 pos 21,26 stuck 0
+RC WALK 71 id 5 role expand fs 0 body 1 pos 22,26 tgt 22,26 want EAST verdict moved mcd 1 acd 0
+RC POS 71 id 7 seat 2 role expand fs 0 body 1 pos 3,10 stuck 1
+RC WALK 71 id 7 role expand fs 0 body 1 pos 3,11 tgt 3,12 want SOUTH verdict moved mcd 1 acd 0
+RC POS 71 id 9 seat 3 role raid fs 1 body 2 pos 21,10 stuck 0
+RC WALK 71 id 9 role raid fs 1 body 2 pos 22,10 tgt 26,12 want EAST verdict moved mcd 1 acd 0
+RC POS 71 id 29 seat 4 role defend fs 0 body 1 pos 6,10 stuck 0
+RC WALK 71 id 29 role defend fs 0 body 1 pos 6,9 tgt 5,8 want NORTH verdict moved mcd 1 acd 0
+RC POS 72 id 5 seat 1 role expand fs 0 body 1 pos 22,26 stuck 0
+RC WALK 72 id 5 role expand fs 0 body 1 pos 21,26 tgt 21,26 want WEST verdict moved mcd 1 acd 0
+RC POS 72 id 7 seat 2 role expand fs 0 body 1 pos 3,11 stuck 0
+RC POS 72 id 9 seat 3 role raid fs 1 body 2 pos 22,10 stuck 0
+RC WALK 72 id 9 role raid fs 1 body 2 pos 21,10 tgt 24,14 want WEST verdict moved mcd 1 acd 0
+RC POS 72 id 29 seat 4 role defend fs 0 body 1 pos 6,9 stuck 0
+RC WALK 72 id 29 role defend fs 0 body 1 pos 5,9 tgt 5,8 want WEST verdict moved mcd 1 acd 0
+RC POS 73 id 5 seat 1 role expand fs 0 body 1 pos 21,26 stuck 0
+RC WALK 73 id 5 role expand fs 0 body 1 pos 21,25 tgt 11,15 want NORTH verdict moved mcd 1 acd 0
+RC POS 73 id 7 seat 2 role expand fs 0 body 1 pos 3,11 stuck 1
+RC WALK 73 id 7 role expand fs 0 body 1 pos 3,12 tgt 3,13 want SOUTH verdict moved mcd 1 acd 0
+RC POS 73 id 9 seat 3 role raid fs 1 body 2 pos 21,10 stuck 0
+RC WALK 73 id 9 role raid fs 1 body 2 pos 22,10 tgt 26,12 want EAST verdict moved mcd 1 acd 0
+RC POS 73 id 29 seat 4 role defend fs 0 body 1 pos 5,9 stuck 0
+RC WALK 73 id 29 role defend fs 0 body 1 pos 5,8 tgt 5,8 want NORTH verdict moved mcd 1 acd 0
+RC POS 74 id 5 seat 1 role expand fs 0 body 1 pos 21,25 stuck 0
+RC WALK 74 id 5 role expand fs 0 body 1 pos 22,25 tgt 22,26 want EAST verdict moved mcd 1 acd 0
+RC POS 74 id 7 seat 2 role expand fs 0 body 1 pos 3,12 stuck 0
+RC WALK 74 id 7 role expand fs 0 body 1 pos 3,12 tgt 3,13 want CENTRE verdict centre mcd 0 acd 0
+RC POS 74 id 9 seat 3 role raid fs 1 body 2 pos 22,10 stuck 0
+RC WALK 74 id 9 role raid fs 1 body 2 pos 21,10 tgt 24,14 want WEST verdict moved mcd 1 acd 0
+RC POS 74 id 29 seat 4 role defend fs 0 body 1 pos 5,8 stuck 0
+RC WALK 74 id 29 role defend fs 0 body 1 pos 6,8 tgt 10,11 want EAST verdict moved mcd 1 acd 0
+RC POS 75 id 5 seat 1 role expand fs 0 body 1 pos 22,25 stuck 0
+RC WALK 75 id 5 role expand fs 0 body 1 pos 22,26 tgt 22,26 want SOUTH verdict moved mcd 1 acd 0
+RC POS 75 id 7 seat 2 role expand fs 0 body 1 pos 3,12 stuck 1
+RC WALK 75 id 7 role expand fs 0 body 1 pos 3,12 tgt 3,13 want CENTRE verdict centre mcd 0 acd 0
+RC POS 75 id 9 seat 3 role raid fs 1 body 2 pos 21,10 stuck 0
+RC WALK 75 id 9 role raid fs 1 body 2 pos 22,10 tgt 26,12 want EAST verdict moved mcd 1 acd 0
+RC POS 75 id 29 seat 4 role defend fs 0 body 1 pos 6,8 stuck 0
+RC WALK 75 id 29 role defend fs 0 body 1 pos 7,8 tgt 10,11 want EAST verdict moved mcd 1 acd 0
+RC POS 76 id 5 seat 1 role expand fs 0 body 1 pos 22,26 stuck 0
+RC POS 76 id 7 seat 2 role expand fs 0 body 1 pos 3,12 stuck 2
+RC WALK 76 id 7 role expand fs 0 body 1 pos 3,12 tgt 3,13 want CENTRE verdict centre mcd 0 acd 0
+RC POS 76 id 9 seat 3 role raid fs 1 body 2 pos 22,10 stuck 0
+RC WALK 76 id 9 role raid fs 1 body 2 pos 21,10 tgt 24,14 want WEST verdict moved mcd 1 acd 0
+RC POS 76 id 29 seat 4 role defend fs 0 body 1 pos 7,8 stuck 0
+RC WALK 76 id 29 role defend fs 0 body 1 pos 7,9 tgt 10,11 want SOUTH verdict moved mcd 1 acd 0
+RC POS 77 id 5 seat 1 role expand fs 0 body 1 pos 22,26 stuck 1
+RC POS 77 id 7 seat 2 role expand fs 0 body 1 pos 3,12 stuck 3
+RC WALK 77 id 7 role expand fs 0 body 1 pos 3,12 tgt 3,13 want CENTRE verdict centre mcd 0 acd 0
+RC POS 77 id 9 seat 3 role raid fs 1 body 2 pos 21,10 stuck 0
+RC WALK 77 id 9 role raid fs 1 body 2 pos 22,10 tgt 26,12 want EAST verdict moved mcd 1 acd 0
+RC POS 77 id 29 seat 4 role defend fs 0 body 1 pos 7,9 stuck 0
+RC WALK 77 id 29 role defend fs 0 body 1 pos 7,10 tgt 10,11 want SOUTH verdict moved mcd 1 acd 0
+RC POS 78 id 5 seat 1 role expand fs 0 body 1 pos 22,26 stuck 2
+RC POS 78 id 7 seat 2 role expand fs 0 body 1 pos 3,12 stuck 4
+RC WALK 78 id 7 role expand fs 0 body 1 pos 3,12 tgt 3,13 want CENTRE verdict centre mcd 0 acd 0
+RC POS 78 id 9 seat 3 role raid fs 1 body 2 pos 22,10 stuck 0
+RC WALK 78 id 9 role raid fs 1 body 2 pos 21,10 tgt 24,14 want WEST verdict moved mcd 1 acd 0
+RC POS 78 id 29 seat 4 role defend fs 0 body 1 pos 7,10 stuck 0
+RC WALK 78 id 29 role defend fs 0 body 1 pos 8,10 tgt 10,11 want EAST verdict moved mcd 1 acd 0
+RC POS 79 id 5 seat 1 role expand fs 0 body 1 pos 22,25 stuck 0
+RC POS 79 id 7 seat 2 role expand fs 0 body 1 pos 3,12 stuck 5
+RC WALK 79 id 7 role expand fs 0 body 1 pos 3,11 tgt 4,14 want NORTH verdict moved mcd 1 acd 0
+RC POS 79 id 9 seat 3 role raid fs 1 body 2 pos 21,10 stuck 0
+RC WALK 79 id 9 role raid fs 1 body 2 pos 22,10 tgt 26,12 want EAST verdict moved mcd 1 acd 0
+RC POS 79 id 29 seat 4 role defend fs 0 body 1 pos 8,10 stuck 0
+RC WALK 79 id 29 role defend fs 0 body 1 pos 9,10 tgt 10,11 want EAST verdict moved mcd 1 acd 0
+RC POS 80 id 5 seat 1 role expand fs 0 body 1 pos 22,25 stuck 1
+RC POS 80 id 7 seat 2 role expand fs 0 body 1 pos 3,11 stuck 0
+RC WALK 80 id 7 role expand fs 0 body 1 pos 4,11 tgt 4,14 want EAST verdict moved mcd 1 acd 0
+RC POS 80 id 9 seat 3 role raid fs 1 body 2 pos 22,10 stuck 0
+RC WALK 80 id 9 role raid fs 1 body 2 pos 21,10 tgt 24,14 want WEST verdict moved mcd 1 acd 0
+RC POS 80 id 29 seat 4 role defend fs 0 body 1 pos 9,10 stuck 0
+RC WALK 80 id 29 role defend fs 0 body 1 pos 10,10 tgt 10,11 want EAST verdict moved mcd 1 acd 0
+RC POS 81 id 5 seat 1 role expand fs 0 body 1 pos 22,25 stuck 2
+RC POS 81 id 7 seat 2 role expand fs 0 body 1 pos 4,11 stuck 0
+RC WALK 81 id 7 role expand fs 0 body 1 pos 5,11 tgt 4,14 want EAST verdict moved mcd 1 acd 0
+RC POS 81 id 9 seat 3 role raid fs 1 body 2 pos 21,10 stuck 0
+RC WALK 81 id 9 role raid fs 1 body 2 pos 22,10 tgt 26,12 want EAST verdict moved mcd 1 acd 0
+RC POS 81 id 29 seat 4 role defend fs 0 body 1 pos 10,10 stuck 0
+RC WALK 81 id 29 role defend fs 0 body 1 pos 10,11 tgt 10,11 want SOUTH verdict moved mcd 1 acd 0
+RC POS 82 id 5 seat 1 role expand fs 0 body 1 pos 22,25 stuck 3
+RC WALK 82 id 5 role expand fs 0 body 1 pos 22,24 tgt 22,23 want NORTH verdict moved mcd 1 acd 0
+RC POS 82 id 7 seat 2 role expand fs 0 body 1 pos 5,11 stuck 0
+RC WALK 82 id 7 role expand fs 0 body 1 pos 5,10 tgt 4,14 want NORTH verdict moved mcd 1 acd 0
+RC POS 82 id 9 seat 3 role raid fs 1 body 2 pos 22,10 stuck 0
+RC WALK 82 id 9 role raid fs 1 body 2 pos 21,10 tgt 24,14 want WEST verdict moved mcd 1 acd 0
+RC POS 82 id 29 seat 4 role defend fs 0 body 1 pos 10,11 stuck 0
+RC WALK 82 id 29 role defend fs 0 body 1 pos 10,12 tgt 11,13 want SOUTH verdict moved mcd 1 acd 0
+RC POS 83 id 5 seat 1 role expand fs 0 body 1 pos 22,24 stuck 0
+RC POS 83 id 7 seat 2 role expand fs 0 body 1 pos 5,10 stuck 0
+RC WALK 83 id 7 role expand fs 0 body 1 pos 6,10 tgt 4,14 want EAST verdict moved mcd 1 acd 0
+RC POS 83 id 9 seat 3 role raid fs 1 body 2 pos 21,10 stuck 0
+RC WALK 83 id 9 role raid fs 1 body 2 pos 22,10 tgt 26,12 want EAST verdict moved mcd 1 acd 0
+RC POS 83 id 29 seat 4 role defend fs 0 body 1 pos 10,12 stuck 0
+RC WALK 83 id 29 role defend fs 0 body 1 pos 11,12 tgt 11,13 want EAST verdict moved mcd 1 acd 0
+RC POS 84 id 5 seat 1 role expand fs 0 body 1 pos 22,24 stuck 1
+RC WALK 84 id 5 role expand fs 0 body 1 pos 22,23 tgt 22,22 want NORTH verdict moved mcd 1 acd 0
+RC POS 84 id 7 seat 2 role expand fs 0 body 1 pos 6,10 stuck 0
+RC WALK 84 id 7 role expand fs 0 body 1 pos 7,10 tgt 4,14 want EAST verdict moved mcd 1 acd 0
+RC POS 84 id 9 seat 3 role raid fs 1 body 2 pos 22,10 stuck 0
+RC WALK 84 id 9 role raid fs 1 body 2 pos 21,10 tgt 24,14 want WEST verdict moved mcd 1 acd 0
+RC POS 84 id 29 seat 4 role defend fs 0 body 1 pos 11,12 stuck 0
+RC WALK 84 id 29 role defend fs 0 body 1 pos 11,13 tgt 11,13 want SOUTH verdict moved mcd 1 acd 0
+RC POS 85 id 5 seat 1 role expand fs 0 body 1 pos 22,23 stuck 0
+RC POS 85 id 7 seat 2 role expand fs 0 body 1 pos 7,10 stuck 0
+RC WALK 85 id 7 role expand fs 0 body 1 pos 6,10 tgt 2,14 want WEST verdict moved mcd 1 acd 0
+RC POS 85 id 9 seat 3 role raid fs 1 body 2 pos 21,10 stuck 0
+RC WALK 85 id 9 role raid fs 1 body 2 pos 22,10 tgt 26,12 want EAST verdict moved mcd 1 acd 0
+RC POS 85 id 29 seat 4 role defend fs 0 body 1 pos 11,13 stuck 0
+RC WALK 85 id 29 role defend fs 0 body 1 pos 11,14 tgt 11,14 want SOUTH verdict moved mcd 1 acd 0
+RC POS 86 id 5 seat 1 role expand fs 0 body 1 pos 22,23 stuck 1
+RC WALK 86 id 5 role expand fs 0 body 1 pos 22,22 tgt 22,21 want NORTH verdict moved mcd 1 acd 0
+RC POS 86 id 7 seat 2 role expand fs 0 body 1 pos 6,10 stuck 0
+RC WALK 86 id 7 role expand fs 0 body 1 pos 7,10 tgt 4,14 want EAST verdict moved mcd 1 acd 0
+RC POS 86 id 9 seat 3 role raid fs 1 body 2 pos 22,10 stuck 0
+RC WALK 86 id 9 role raid fs 1 body 2 pos 21,10 tgt 24,14 want WEST verdict moved mcd 1 acd 0
+RC POS 86 id 29 seat 4 role defend fs 0 body 1 pos 11,14 stuck 0
+RC WALK 86 id 29 role defend fs 0 body 1 pos 10,14 tgt 10,15 want WEST verdict moved mcd 1 acd 0
+RC POS 87 id 5 seat 1 role expand fs 0 body 1 pos 22,22 stuck 0
+RC POS 87 id 7 seat 2 role expand fs 0 body 1 pos 7,10 stuck 0
+RC WALK 87 id 7 role expand fs 0 body 1 pos 6,10 tgt 2,14 want WEST verdict moved mcd 1 acd 0
+RC POS 87 id 9 seat 3 role raid fs 1 body 2 pos 21,10 stuck 0
+RC WALK 87 id 9 role raid fs 1 body 2 pos 22,10 tgt 26,12 want EAST verdict moved mcd 1 acd 0
+RC POS 87 id 29 seat 4 role defend fs 0 body 1 pos 10,14 stuck 0
+RC WALK 87 id 29 role defend fs 0 body 1 pos 9,14 tgt 2,14 want WEST verdict moved mcd 1 acd 0
+RC POS 88 id 5 seat 1 role expand fs 0 body 1 pos 22,22 stuck 1
+RC POS 88 id 7 seat 2 role expand fs 0 body 1 pos 6,10 stuck 0
+RC WALK 88 id 7 role expand fs 0 body 1 pos 7,10 tgt 4,14 want EAST verdict moved mcd 1 acd 0
+RC POS 88 id 9 seat 3 role raid fs 1 body 2 pos 22,10 stuck 0
+RC WALK 88 id 9 role raid fs 1 body 2 pos 21,10 tgt 24,14 want WEST verdict moved mcd 1 acd 0
+RC POS 88 id 29 seat 4 role defend fs 0 body 1 pos 9,14 stuck 0
+RC WALK 88 id 29 role defend fs 0 body 1 pos 8,14 tgt 2,14 want WEST verdict moved mcd 1 acd 0
+RC POS 89 id 5 seat 1 role expand fs 0 body 1 pos 22,22 stuck 2
+RC WALK 89 id 5 role expand fs 0 body 1 pos 22,21 tgt 22,20 want NORTH verdict moved mcd 1 acd 0
+RC POS 89 id 7 seat 2 role expand fs 0 body 1 pos 7,10 stuck 0
+RC WALK 89 id 7 role expand fs 0 body 1 pos 6,10 tgt 2,14 want WEST verdict moved mcd 1 acd 0
+RC POS 89 id 9 seat 3 role raid fs 1 body 2 pos 21,10 stuck 0
+RC WALK 89 id 9 role raid fs 1 body 2 pos 22,10 tgt 26,12 want EAST verdict moved mcd 1 acd 0
+RC POS 89 id 29 seat 4 role defend fs 0 body 1 pos 8,14 stuck 0
+RC WALK 89 id 29 role defend fs 0 body 1 pos 7,14 tgt 4,14 want WEST verdict moved mcd 1 acd 0
+RC POS 90 id 5 seat 1 role expand fs 0 body 1 pos 22,21 stuck 0
+RC POS 90 id 7 seat 2 role expand fs 0 body 1 pos 6,10 stuck 0
+RC WALK 90 id 7 role expand fs 0 body 1 pos 7,10 tgt 4,14 want EAST verdict moved mcd 1 acd 0
+RC POS 90 id 9 seat 3 role raid fs 1 body 2 pos 22,10 stuck 0
+RC WALK 90 id 9 role raid fs 1 body 2 pos 21,10 tgt 24,14 want WEST verdict moved mcd 1 acd 0
+RC POS 90 id 29 seat 4 role defend fs 0 body 1 pos 7,14 stuck 0
+RC WALK 90 id 29 role defend fs 0 body 1 pos 7,13 tgt 4,14 want NORTH verdict moved mcd 1 acd 0
+RC POS 91 id 5 seat 1 role expand fs 0 body 1 pos 22,21 stuck 1
+RC WALK 91 id 5 role expand fs 0 body 1 pos 22,20 tgt 22,19 want NORTH verdict moved mcd 1 acd 0
+RC POS 91 id 7 seat 2 role expand fs 0 body 1 pos 7,10 stuck 0
+RC WALK 91 id 7 role expand fs 0 body 1 pos 6,10 tgt 2,14 want WEST verdict moved mcd 1 acd 0
+RC POS 91 id 9 seat 3 role raid fs 1 body 2 pos 21,10 stuck 0
+RC WALK 91 id 9 role raid fs 1 body 2 pos 22,10 tgt 26,12 want EAST verdict moved mcd 1 acd 0
+RC POS 91 id 29 seat 4 role defend fs 0 body 1 pos 7,13 stuck 0
+RC WALK 91 id 29 role defend fs 0 body 1 pos 6,13 tgt 4,14 want WEST verdict moved mcd 1 acd 0
+RC POS 92 id 5 seat 1 role expand fs 0 body 1 pos 22,20 stuck 0
+RC POS 92 id 7 seat 2 role expand fs 0 body 1 pos 6,10 stuck 0
+RC WALK 92 id 7 role expand fs 0 body 1 pos 5,10 tgt 2,14 want WEST verdict moved mcd 1 acd 0
+RC POS 92 id 9 seat 3 role raid fs 1 body 2 pos 22,10 stuck 0
+RC WALK 92 id 9 role raid fs 1 body 2 pos 21,10 tgt 24,14 want WEST verdict moved mcd 1 acd 0
+RC POS 92 id 29 seat 4 role defend fs 0 body 1 pos 6,13 stuck 0
+RC WALK 92 id 29 role defend fs 0 body 1 pos 5,13 tgt 4,14 want WEST verdict moved mcd 1 acd 0
+RC POS 93 id 5 seat 1 role expand fs 0 body 1 pos 22,20 stuck 1
+RC WALK 93 id 5 role expand fs 0 body 1 pos 22,19 tgt 21,19 want NORTH verdict moved mcd 1 acd 0
+RC POS 93 id 7 seat 2 role expand fs 0 body 1 pos 5,10 stuck 0
+RC WALK 93 id 7 role expand fs 0 body 1 pos 5,11 tgt 2,14 want SOUTH verdict moved mcd 1 acd 0
+RC POS 93 id 9 seat 3 role raid fs 1 body 2 pos 21,10 stuck 0
+RC WALK 93 id 9 role raid fs 1 body 2 pos 22,10 tgt 26,12 want EAST verdict moved mcd 1 acd 0
+RC POS 93 id 29 seat 4 role defend fs 0 body 1 pos 5,13 stuck 0
+RC WALK 93 id 29 role defend fs 0 body 1 pos 5,14 tgt 4,14 want SOUTH verdict moved mcd 1 acd 0
+RC POS 94 id 5 seat 1 role expand fs 0 body 1 pos 22,19 stuck 0
+RC POS 94 id 7 seat 2 role expand fs 0 body 1 pos 5,11 stuck 0
+RC WALK 94 id 7 role expand fs 0 body 1 pos 5,10 tgt 4,14 want NORTH verdict moved mcd 1 acd 0
+RC POS 94 id 9 seat 3 role raid fs 1 body 2 pos 22,10 stuck 0
+RC WALK 94 id 9 role raid fs 1 body 2 pos 21,10 tgt 24,14 want WEST verdict moved mcd 1 acd 0
+RC POS 94 id 29 seat 4 role defend fs 0 body 1 pos 5,14 stuck 0
+RC WALK 94 id 29 role defend fs 0 body 1 pos 4,14 tgt 4,14 want WEST verdict moved mcd 1 acd 0
+RC POS 95 id 5 seat 1 role expand fs 0 body 1 pos 22,19 stuck 1
+RC POS 95 id 7 seat 2 role expand fs 0 body 1 pos 5,10 stuck 0
+RC WALK 95 id 7 role expand fs 0 body 1 pos 5,11 tgt 2,14 want SOUTH verdict moved mcd 1 acd 0
+RC POS 95 id 9 seat 3 role raid fs 1 body 2 pos 21,10 stuck 0
+RC WALK 95 id 9 role raid fs 1 body 2 pos 22,10 tgt 26,12 want EAST verdict moved mcd 1 acd 0
+RC POS 96 id 5 seat 1 role expand fs 0 body 1 pos 22,19 stuck 2
+RC POS 96 id 7 seat 2 role expand fs 0 body 1 pos 5,11 stuck 0
+RC WALK 96 id 7 role expand fs 0 body 1 pos 5,10 tgt 4,15 want NORTH verdict moved mcd 1 acd 0
+RC POS 96 id 9 seat 3 role raid fs 1 body 2 pos 22,10 stuck 0
+RC WALK 96 id 9 role raid fs 1 body 2 pos 21,10 tgt 24,14 want WEST verdict moved mcd 1 acd 0
+RC POS 97 id 5 seat 1 role expand fs 0 body 1 pos 22,19 stuck 3
+RC WALK 97 id 5 role expand fs 0 body 1 pos 21,19 tgt 20,19 want WEST verdict moved mcd 1 acd 0
+RC POS 97 id 7 seat 2 role expand fs 0 body 1 pos 5,10 stuck 0
+RC WALK 97 id 7 role expand fs 0 body 1 pos 5,11 tgt 2,14 want SOUTH verdict moved mcd 1 acd 0
+RC POS 97 id 9 seat 3 role raid fs 1 body 2 pos 21,10 stuck 0
+RC WALK 97 id 9 role raid fs 1 body 2 pos 22,10 tgt 26,12 want EAST verdict moved mcd 1 acd 0
+RC POS 98 id 5 seat 1 role expand fs 0 body 1 pos 21,19 stuck 0
+RC POS 98 id 7 seat 2 role expand fs 0 body 1 pos 5,11 stuck 0
+RC WALK 98 id 7 role expand fs 0 body 1 pos 5,10 tgt 4,15 want NORTH verdict moved mcd 1 acd 0
+RC POS 98 id 9 seat 3 role raid fs 1 body 2 pos 22,10 stuck 0
+RC WALK 98 id 9 role raid fs 1 body 2 pos 21,10 tgt 24,14 want WEST verdict moved mcd 1 acd 0
+RC POS 99 id 5 seat 1 role expand fs 0 body 1 pos 21,19 stuck 1
+RC POS 99 id 7 seat 2 role expand fs 0 body 1 pos 5,10 stuck 0
+RC WALK 99 id 7 role expand fs 0 body 1 pos 5,11 tgt 2,14 want SOUTH verdict moved mcd 1 acd 0
+RC POS 99 id 9 seat 3 role raid fs 1 body 2 pos 21,10 stuck 0
+RC WALK 99 id 9 role raid fs 1 body 2 pos 22,10 tgt 26,12 want EAST verdict moved mcd 1 acd 0
+RC POS 100 id 5 seat 1 role expand fs 0 body 1 pos 21,19 stuck 2
+RC POS 100 id 7 seat 2 role expand fs 0 body 1 pos 5,11 stuck 0
+RC WALK 100 id 7 role expand fs 0 body 1 pos 5,10 tgt 4,15 want NORTH verdict moved mcd 1 acd 0
+RC POS 100 id 9 seat 3 role raid fs 1 body 2 pos 22,10 stuck 0
+RC WALK 100 id 9 role raid fs 1 body 2 pos 21,10 tgt 24,14 want WEST verdict moved mcd 1 acd 0
+RC POS 101 id 5 seat 1 role expand fs 0 body 1 pos 21,19 stuck 3
+RC WALK 101 id 5 role expand fs 0 body 1 pos 20,19 tgt 19,19 want WEST verdict moved mcd 1 acd 0
+RC POS 101 id 7 seat 2 role expand fs 0 body 1 pos 5,10 stuck 0
+RC WALK 101 id 7 role expand fs 0 body 1 pos 5,11 tgt 2,14 want SOUTH verdict moved mcd 1 acd 0
+RC POS 101 id 9 seat 3 role raid fs 1 body 2 pos 21,10 stuck 0
+RC WALK 101 id 9 role raid fs 1 body 2 pos 22,10 tgt 26,12 want EAST verdict moved mcd 1 acd 0
+RC POS 102 id 5 seat 1 role expand fs 0 body 1 pos 20,19 stuck 0
+RC POS 102 id 7 seat 2 role expand fs 0 body 1 pos 5,11 stuck 0
+RC WALK 102 id 7 role expand fs 0 body 1 pos 5,10 tgt 4,15 want NORTH verdict moved mcd 1 acd 0
+RC POS 102 id 9 seat 3 role raid fs 1 body 2 pos 22,10 stuck 0
+RC WALK 102 id 9 role raid fs 1 body 2 pos 21,10 tgt 24,14 want WEST verdict moved mcd 1 acd 0
+RC POS 103 id 5 seat 1 role expand fs 0 body 1 pos 20,19 stuck 1
+RC POS 103 id 7 seat 2 role expand fs 0 body 1 pos 5,10 stuck 0
+RC WALK 103 id 7 role expand fs 0 body 1 pos 5,11 tgt 2,14 want SOUTH verdict moved mcd 1 acd 0
+RC POS 103 id 9 seat 3 role raid fs 1 body 2 pos 21,10 stuck 0
+RC WALK 103 id 9 role raid fs 1 body 2 pos 22,10 tgt 26,12 want EAST verdict moved mcd 1 acd 0
+RC POS 104 id 5 seat 1 role expand fs 0 body 1 pos 20,19 stuck 2
+RC POS 104 id 7 seat 2 role expand fs 0 body 1 pos 5,11 stuck 0
+RC WALK 104 id 7 role expand fs 0 body 1 pos 5,10 tgt 4,15 want NORTH verdict moved mcd 1 acd 0
+RC POS 104 id 9 seat 3 role raid fs 1 body 2 pos 22,10 stuck 0
+RC WALK 104 id 9 role raid fs 1 body 2 pos 21,10 tgt 24,14 want WEST verdict moved mcd 1 acd 0
+RC POS 105 id 5 seat 1 role expand fs 0 body 1 pos 20,19 stuck 3
+RC WALK 105 id 5 role expand fs 0 body 1 pos 19,19 tgt 18,19 want WEST verdict moved mcd 1 acd 0
+RC POS 105 id 7 seat 2 role expand fs 0 body 1 pos 5,10 stuck 0
+RC WALK 105 id 7 role expand fs 0 body 1 pos 5,11 tgt 2,14 want SOUTH verdict moved mcd 1 acd 0
+RC POS 105 id 9 seat 3 role raid fs 1 body 2 pos 21,10 stuck 0
+RC WALK 105 id 9 role raid fs 1 body 2 pos 22,10 tgt 26,12 want EAST verdict moved mcd 1 acd 0
+RC POS 106 id 5 seat 1 role expand fs 0 body 1 pos 19,19 stuck 0
+RC POS 106 id 7 seat 2 role expand fs 0 body 1 pos 5,11 stuck 0
+RC WALK 106 id 7 role expand fs 0 body 1 pos 5,10 tgt 4,15 want NORTH verdict moved mcd 1 acd 0
+RC POS 106 id 9 seat 3 role raid fs 1 body 2 pos 22,10 stuck 0
+RC WALK 106 id 9 role raid fs 1 body 2 pos 21,10 tgt 24,14 want WEST verdict moved mcd 1 acd 0
+RC POS 106 id 29 seat 4 role defend fs 0 body 1 pos 4,14 stuck 11
+RC POS 107 id 5 seat 1 role expand fs 0 body 1 pos 19,19 stuck 1
+RC POS 107 id 7 seat 2 role expand fs 0 body 1 pos 5,10 stuck 0
+RC WALK 107 id 7 role expand fs 0 body 1 pos 5,11 tgt 2,14 want SOUTH verdict moved mcd 1 acd 0
+RC POS 107 id 9 seat 3 role raid fs 1 body 2 pos 21,10 stuck 0
+RC WALK 107 id 9 role raid fs 1 body 2 pos 22,10 tgt 26,12 want EAST verdict moved mcd 1 acd 0
+RC POS 107 id 29 seat 4 role defend fs 0 body 1 pos 4,14 stuck 12
+RC POS 108 id 5 seat 1 role expand fs 0 body 1 pos 19,19 stuck 2
+RC POS 108 id 7 seat 2 role expand fs 0 body 1 pos 5,11 stuck 0
+RC WALK 108 id 7 role expand fs 0 body 1 pos 5,10 tgt 4,15 want NORTH verdict moved mcd 1 acd 0
+RC POS 108 id 9 seat 3 role raid fs 1 body 2 pos 22,10 stuck 0
+RC WALK 108 id 9 role raid fs 1 body 2 pos 21,10 tgt 24,14 want WEST verdict moved mcd 1 acd 0
+RC POS 109 id 5 seat 1 role expand fs 0 body 1 pos 19,19 stuck 3
+RC WALK 109 id 5 role expand fs 0 body 1 pos 18,19 tgt 17,19 want WEST verdict moved mcd 1 acd 0
+RC POS 109 id 7 seat 2 role expand fs 0 body 1 pos 5,10 stuck 0
+RC WALK 109 id 7 role expand fs 0 body 1 pos 5,11 tgt 2,14 want SOUTH verdict moved mcd 1 acd 0
+RC POS 109 id 9 seat 3 role raid fs 1 body 2 pos 21,10 stuck 0
+RC WALK 109 id 9 role raid fs 1 body 2 pos 22,10 tgt 26,12 want EAST verdict moved mcd 1 acd 0
+RC POS 110 id 5 seat 1 role expand fs 0 body 1 pos 18,19 stuck 0
+RC POS 110 id 7 seat 2 role expand fs 0 body 1 pos 5,11 stuck 0
+RC WALK 110 id 7 role expand fs 0 body 1 pos 5,10 tgt 4,15 want NORTH verdict moved mcd 1 acd 0
+RC POS 110 id 9 seat 3 role raid fs 1 body 2 pos 22,10 stuck 0
+RC WALK 110 id 9 role raid fs 1 body 2 pos 21,10 tgt 24,14 want WEST verdict moved mcd 1 acd 0
+RC POS 110 id 29 seat 4 role defend fs 0 body 1 pos 4,14 stuck 15
+RC POS 111 id 5 seat 1 role expand fs 0 body 1 pos 18,19 stuck 1
+RC POS 111 id 7 seat 2 role expand fs 0 body 1 pos 5,10 stuck 0
+RC WALK 111 id 7 role expand fs 0 body 1 pos 5,11 tgt 2,14 want SOUTH verdict moved mcd 1 acd 0
+RC POS 111 id 9 seat 3 role raid fs 1 body 2 pos 21,10 stuck 0
+RC WALK 111 id 9 role raid fs 1 body 2 pos 22,10 tgt 26,12 want EAST verdict moved mcd 1 acd 0
+RC POS 111 id 29 seat 4 role defend fs 0 body 1 pos 4,14 stuck 16
+RC POS 112 id 5 seat 1 role expand fs 0 body 1 pos 18,19 stuck 2
+RC POS 112 id 7 seat 2 role expand fs 0 body 1 pos 5,11 stuck 0
+RC WALK 112 id 7 role expand fs 0 body 1 pos 5,10 tgt 4,15 want NORTH verdict moved mcd 1 acd 0
+RC POS 112 id 9 seat 3 role raid fs 1 body 2 pos 22,10 stuck 0
+RC WALK 112 id 9 role raid fs 1 body 2 pos 21,10 tgt 24,14 want WEST verdict moved mcd 1 acd 0
+RC POS 113 id 5 seat 1 role expand fs 0 body 1 pos 18,19 stuck 3
+RC WALK 113 id 5 role expand fs 0 body 1 pos 17,19 tgt 16,19 want WEST verdict moved mcd 1 acd 0
+RC POS 113 id 7 seat 2 role expand fs 0 body 1 pos 5,10 stuck 0
+RC WALK 113 id 7 role expand fs 0 body 1 pos 5,11 tgt 2,14 want SOUTH verdict moved mcd 1 acd 0
+RC POS 113 id 9 seat 3 role raid fs 1 body 2 pos 21,10 stuck 0
+RC WALK 113 id 9 role raid fs 1 body 2 pos 22,10 tgt 26,12 want EAST verdict moved mcd 1 acd 0
+RC POS 114 id 5 seat 1 role expand fs 0 body 1 pos 17,19 stuck 0
+RC POS 114 id 7 seat 2 role expand fs 0 body 1 pos 5,11 stuck 0
+RC WALK 114 id 7 role expand fs 0 body 1 pos 5,10 tgt 4,15 want NORTH verdict moved mcd 1 acd 0
+RC POS 114 id 9 seat 3 role raid fs 1 body 2 pos 22,10 stuck 0
+RC WALK 114 id 9 role raid fs 1 body 2 pos 21,10 tgt 24,14 want WEST verdict moved mcd 1 acd 0
+RC POS 114 id 29 seat 4 role defend fs 0 body 1 pos 4,14 stuck 19
+RC POS 115 id 5 seat 1 role expand fs 0 body 1 pos 17,19 stuck 1
+RC POS 115 id 7 seat 2 role expand fs 0 body 1 pos 5,10 stuck 0
+RC WALK 115 id 7 role expand fs 0 body 1 pos 5,11 tgt 2,14 want SOUTH verdict moved mcd 1 acd 0
+RC POS 115 id 9 seat 3 role raid fs 1 body 2 pos 21,10 stuck 0
+RC WALK 115 id 9 role raid fs 1 body 2 pos 22,10 tgt 26,12 want EAST verdict moved mcd 1 acd 0
+RC POS 115 id 29 seat 4 role defend fs 0 body 1 pos 4,14 stuck 20
+RC POS 116 id 5 seat 1 role expand fs 0 body 1 pos 17,19 stuck 2
+RC POS 116 id 7 seat 2 role expand fs 0 body 1 pos 5,11 stuck 0
+RC WALK 116 id 7 role expand fs 0 body 1 pos 5,10 tgt 4,15 want NORTH verdict moved mcd 1 acd 0
+RC POS 116 id 9 seat 3 role raid fs 1 body 2 pos 22,10 stuck 0
+RC WALK 116 id 9 role raid fs 1 body 2 pos 21,10 tgt 24,14 want WEST verdict moved mcd 1 acd 0
+RC POS 117 id 5 seat 1 role expand fs 0 body 1 pos 17,19 stuck 3
+RC WALK 117 id 5 role expand fs 0 body 1 pos 16,19 tgt 15,19 want WEST verdict moved mcd 1 acd 0
+RC POS 117 id 7 seat 2 role expand fs 0 body 1 pos 5,10 stuck 0
+RC WALK 117 id 7 role expand fs 0 body 1 pos 5,11 tgt 2,14 want SOUTH verdict moved mcd 1 acd 0
+RC POS 117 id 9 seat 3 role raid fs 1 body 2 pos 21,10 stuck 0
+RC WALK 117 id 9 role raid fs 1 body 2 pos 22,10 tgt 26,12 want EAST verdict moved mcd 1 acd 0
+RC POS 118 id 5 seat 1 role expand fs 0 body 1 pos 16,19 stuck 0
+RC POS 118 id 7 seat 2 role expand fs 0 body 1 pos 5,11 stuck 0
+RC WALK 118 id 7 role expand fs 0 body 1 pos 5,10 tgt 4,15 want NORTH verdict moved mcd 1 acd 0
+RC POS 118 id 9 seat 3 role raid fs 1 body 2 pos 22,10 stuck 0
+RC WALK 118 id 9 role raid fs 1 body 2 pos 21,10 tgt 24,14 want WEST verdict moved mcd 1 acd 0
+RC POS 118 id 29 seat 4 role defend fs 0 body 1 pos 4,14 stuck 23
+RC POS 119 id 5 seat 1 role expand fs 0 body 1 pos 16,19 stuck 1
+RC POS 119 id 7 seat 2 role expand fs 0 body 1 pos 5,10 stuck 0
+RC WALK 119 id 7 role expand fs 0 body 1 pos 5,11 tgt 2,14 want SOUTH verdict moved mcd 1 acd 0
+RC POS 119 id 9 seat 3 role raid fs 1 body 2 pos 21,10 stuck 0
+RC WALK 119 id 9 role raid fs 1 body 2 pos 22,10 tgt 26,12 want EAST verdict moved mcd 1 acd 0
+RC POS 119 id 29 seat 4 role defend fs 0 body 1 pos 4,14 stuck 24
+RC POS 120 id 5 seat 1 role expand fs 0 body 1 pos 16,19 stuck 2
+RC POS 120 id 7 seat 2 role expand fs 0 body 1 pos 5,11 stuck 0
+RC WALK 120 id 7 role expand fs 0 body 1 pos 5,10 tgt 4,15 want NORTH verdict moved mcd 1 acd 0
+RC POS 120 id 9 seat 3 role raid fs 1 body 2 pos 22,10 stuck 0
+RC WALK 120 id 9 role raid fs 1 body 2 pos 21,10 tgt 24,14 want WEST verdict moved mcd 1 acd 0
+RC POS 121 id 5 seat 1 role expand fs 0 body 1 pos 16,19 stuck 3
+RC POS 121 id 7 seat 2 role expand fs 0 body 1 pos 5,10 stuck 0
+RC WALK 121 id 7 role expand fs 0 body 1 pos 5,11 tgt 2,14 want SOUTH verdict moved mcd 1 acd 0
+RC POS 121 id 9 seat 3 role raid fs 1 body 2 pos 21,10 stuck 0
+RC WALK 121 id 9 role raid fs 1 body 2 pos 22,10 tgt 26,12 want EAST verdict moved mcd 1 acd 0
+RC POS 122 id 5 seat 1 role expand fs 0 body 1 pos 16,19 stuck 4
+RC POS 122 id 7 seat 2 role expand fs 0 body 1 pos 5,11 stuck 0
+RC WALK 122 id 7 role expand fs 0 body 1 pos 5,10 tgt 4,15 want NORTH verdict moved mcd 1 acd 0
+RC POS 122 id 9 seat 3 role raid fs 1 body 2 pos 22,10 stuck 0
+RC WALK 122 id 9 role raid fs 1 body 2 pos 21,10 tgt 24,14 want WEST verdict moved mcd 1 acd 0
+RC POS 123 id 5 seat 1 role expand fs 0 body 1 pos 16,19 stuck 5
+RC POS 123 id 7 seat 2 role expand fs 0 body 1 pos 5,10 stuck 0
+RC WALK 123 id 7 role expand fs 0 body 1 pos 5,11 tgt 2,14 want SOUTH verdict moved mcd 1 acd 0
+RC POS 123 id 9 seat 3 role raid fs 1 body 2 pos 21,10 stuck 0
+RC WALK 123 id 9 role raid fs 1 body 2 pos 22,10 tgt 26,12 want EAST verdict moved mcd 1 acd 0
+RC POS 124 id 5 seat 1 role expand fs 0 body 1 pos 16,19 stuck 6
+RC POS 124 id 7 seat 2 role expand fs 0 body 1 pos 5,11 stuck 0
+RC WALK 124 id 7 role expand fs 0 body 1 pos 5,10 tgt 4,15 want NORTH verdict moved mcd 1 acd 0
+RC POS 124 id 9 seat 3 role raid fs 1 body 2 pos 22,10 stuck 0
+RC WALK 124 id 9 role raid fs 1 body 2 pos 21,10 tgt 24,14 want WEST verdict moved mcd 1 acd 0
+RC POS 125 id 5 seat 1 role expand fs 0 body 1 pos 16,19 stuck 7
+RC POS 125 id 7 seat 2 role expand fs 0 body 1 pos 5,10 stuck 0
+RC WALK 125 id 7 role expand fs 0 body 1 pos 5,11 tgt 2,14 want SOUTH verdict moved mcd 1 acd 0
+RC POS 125 id 9 seat 3 role raid fs 1 body 2 pos 21,10 stuck 0
+RC WALK 125 id 9 role raid fs 1 body 2 pos 22,10 tgt 26,12 want EAST verdict moved mcd 1 acd 0
+RC POS 126 id 5 seat 1 role expand fs 0 body 1 pos 16,19 stuck 8
+RC POS 126 id 7 seat 2 role expand fs 0 body 1 pos 5,11 stuck 0
+RC WALK 126 id 7 role expand fs 0 body 1 pos 5,10 tgt 4,15 want NORTH verdict moved mcd 1 acd 0
+RC POS 126 id 9 seat 3 role raid fs 1 body 2 pos 22,10 stuck 0
+RC WALK 126 id 9 role raid fs 1 body 2 pos 21,10 tgt 24,14 want WEST verdict moved mcd 1 acd 0
+RC POS 127 id 5 seat 1 role expand fs 0 body 1 pos 16,19 stuck 9
+RC POS 127 id 7 seat 2 role expand fs 0 body 1 pos 5,10 stuck 0
+RC WALK 127 id 7 role expand fs 0 body 1 pos 5,11 tgt 2,14 want SOUTH verdict moved mcd 1 acd 0
+RC POS 127 id 9 seat 3 role raid fs 1 body 2 pos 21,10 stuck 0
+RC WALK 127 id 9 role raid fs 1 body 2 pos 22,10 tgt 26,12 want EAST verdict moved mcd 1 acd 0
+RC POS 128 id 5 seat 1 role expand fs 0 body 1 pos 16,19 stuck 10
+RC POS 128 id 7 seat 2 role expand fs 0 body 1 pos 5,11 stuck 0
+RC WALK 128 id 7 role expand fs 0 body 1 pos 5,10 tgt 4,15 want NORTH verdict moved mcd 1 acd 0
+RC POS 128 id 9 seat 3 role raid fs 1 body 2 pos 22,10 stuck 0
+RC WALK 128 id 9 role raid fs 1 body 2 pos 21,10 tgt 24,14 want WEST verdict moved mcd 1 acd 0
+RC POS 129 id 5 seat 1 role expand fs 0 body 1 pos 16,19 stuck 11
+RC POS 129 id 7 seat 2 role expand fs 0 body 1 pos 5,10 stuck 0
+RC WALK 129 id 7 role expand fs 0 body 1 pos 5,11 tgt 2,14 want SOUTH verdict moved mcd 1 acd 0
+RC POS 129 id 9 seat 3 role raid fs 1 body 2 pos 21,10 stuck 0
+RC WALK 129 id 9 role raid fs 1 body 2 pos 22,10 tgt 26,12 want EAST verdict moved mcd 1 acd 0
+RC POS 130 id 5 seat 1 role expand fs 0 body 1 pos 16,19 stuck 12
+RC POS 130 id 7 seat 2 role expand fs 0 body 1 pos 5,11 stuck 0
+RC WALK 130 id 7 role expand fs 0 body 1 pos 5,10 tgt 4,15 want NORTH verdict moved mcd 1 acd 0
+RC POS 130 id 9 seat 3 role raid fs 1 body 2 pos 22,10 stuck 0
+RC WALK 130 id 9 role raid fs 1 body 2 pos 21,10 tgt 24,14 want WEST verdict moved mcd 1 acd 0
+RC POS 131 id 5 seat 1 role expand fs 0 body 1 pos 16,19 stuck 13
+RC POS 131 id 7 seat 2 role expand fs 0 body 1 pos 5,10 stuck 0
+RC WALK 131 id 7 role expand fs 0 body 1 pos 5,11 tgt 2,14 want SOUTH verdict moved mcd 1 acd 0
+RC POS 131 id 9 seat 3 role raid fs 1 body 2 pos 21,10 stuck 0
+RC WALK 131 id 9 role raid fs 1 body 2 pos 22,10 tgt 26,12 want EAST verdict moved mcd 1 acd 0
+RC POS 132 id 5 seat 1 role expand fs 0 body 1 pos 16,19 stuck 14
+RC WALK 132 id 5 role expand fs 0 body 1 pos 15,19 tgt 14,19 want WEST verdict moved mcd 1 acd 0
+RC POS 132 id 7 seat 2 role expand fs 0 body 1 pos 5,11 stuck 0
+RC WALK 132 id 7 role expand fs 0 body 1 pos 5,10 tgt 4,15 want NORTH verdict moved mcd 1 acd 0
+RC POS 132 id 9 seat 3 role raid fs 1 body 2 pos 22,10 stuck 0
+RC WALK 132 id 9 role raid fs 1 body 2 pos 21,10 tgt 24,14 want WEST verdict moved mcd 1 acd 0
+RC POS 133 id 5 seat 1 role expand fs 0 body 1 pos 15,19 stuck 0
+RC WALK 133 id 5 role expand fs 0 body 1 pos 14,19 tgt 13,19 want WEST verdict moved mcd 1 acd 0
+RC POS 133 id 7 seat 2 role expand fs 0 body 1 pos 5,10 stuck 0
+RC WALK 133 id 7 role expand fs 0 body 1 pos 5,11 tgt 2,14 want SOUTH verdict moved mcd 1 acd 0
+RC POS 133 id 9 seat 3 role raid fs 1 body 2 pos 21,10 stuck 0
+RC WALK 133 id 9 role raid fs 1 body 2 pos 22,10 tgt 26,12 want EAST verdict moved mcd 1 acd 0
+RC POS 134 id 5 seat 1 role expand fs 0 body 1 pos 14,19 stuck 0
+RC WALK 134 id 5 role expand fs 0 body 1 pos 13,19 tgt 12,19 want WEST verdict moved mcd 1 acd 0
+RC POS 134 id 7 seat 2 role expand fs 0 body 1 pos 5,11 stuck 0
+RC WALK 134 id 7 role expand fs 0 body 1 pos 5,10 tgt 4,15 want NORTH verdict moved mcd 1 acd 0
+RC POS 134 id 9 seat 3 role raid fs 1 body 2 pos 22,10 stuck 0
+RC WALK 134 id 9 role raid fs 1 body 2 pos 21,10 tgt 24,14 want WEST verdict moved mcd 1 acd 0
+RC POS 135 id 5 seat 1 role expand fs 0 body 1 pos 13,19 stuck 0
+RC WALK 135 id 5 role expand fs 0 body 1 pos 12,19 tgt 11,19 want WEST verdict moved mcd 1 acd 0
+RC POS 135 id 7 seat 2 role expand fs 0 body 1 pos 5,10 stuck 0
+RC WALK 135 id 7 role expand fs 0 body 1 pos 5,11 tgt 2,14 want SOUTH verdict moved mcd 1 acd 0
+RC POS 135 id 9 seat 3 role raid fs 1 body 2 pos 21,10 stuck 0
+RC WALK 135 id 9 role raid fs 1 body 2 pos 22,10 tgt 26,12 want EAST verdict moved mcd 1 acd 0
+RC POS 136 id 5 seat 1 role expand fs 0 body 1 pos 12,19 stuck 0
+RC WALK 136 id 5 role expand fs 0 body 1 pos 11,19 tgt 10,19 want WEST verdict moved mcd 1 acd 0
+RC POS 136 id 7 seat 2 role expand fs 0 body 1 pos 5,11 stuck 0
+RC WALK 136 id 7 role expand fs 0 body 1 pos 5,10 tgt 4,15 want NORTH verdict moved mcd 1 acd 0
+RC POS 136 id 9 seat 3 role raid fs 1 body 2 pos 22,10 stuck 0
+RC WALK 136 id 9 role raid fs 1 body 2 pos 21,10 tgt 24,14 want WEST verdict moved mcd 1 acd 0
+RC POS 137 id 5 seat 1 role expand fs 0 body 1 pos 11,19 stuck 0
+RC WALK 137 id 5 role expand fs 0 body 1 pos 10,19 tgt 9,19 want WEST verdict moved mcd 1 acd 0
+RC POS 137 id 7 seat 2 role expand fs 0 body 1 pos 5,10 stuck 0
+RC WALK 137 id 7 role expand fs 0 body 1 pos 5,11 tgt 2,14 want SOUTH verdict moved mcd 1 acd 0
+RC POS 137 id 9 seat 3 role raid fs 1 body 2 pos 21,10 stuck 0
+RC WALK 137 id 9 role raid fs 1 body 2 pos 22,10 tgt 26,12 want EAST verdict moved mcd 1 acd 0
+RC POS 138 id 5 seat 1 role expand fs 0 body 1 pos 10,19 stuck 0
+RC WALK 138 id 5 role expand fs 0 body 1 pos 9,19 tgt 8,19 want WEST verdict moved mcd 1 acd 0
+RC POS 138 id 7 seat 2 role expand fs 0 body 1 pos 5,11 stuck 0
+RC WALK 138 id 7 role expand fs 0 body 1 pos 5,10 tgt 4,15 want NORTH verdict moved mcd 1 acd 0
+RC POS 138 id 9 seat 3 role raid fs 1 body 2 pos 22,10 stuck 0
+RC WALK 138 id 9 role raid fs 1 body 2 pos 21,10 tgt 24,14 want WEST verdict moved mcd 1 acd 0
+RC POS 139 id 5 seat 1 role expand fs 0 body 1 pos 9,19 stuck 0
+RC WALK 139 id 5 role expand fs 0 body 1 pos 8,19 tgt 7,19 want WEST verdict moved mcd 1 acd 0
+RC POS 139 id 7 seat 2 role expand fs 0 body 1 pos 5,10 stuck 0
+RC WALK 139 id 7 role expand fs 0 body 1 pos 5,11 tgt 2,14 want SOUTH verdict moved mcd 1 acd 0
+RC POS 139 id 9 seat 3 role raid fs 1 body 2 pos 21,10 stuck 0
+RC WALK 139 id 9 role raid fs 1 body 2 pos 22,10 tgt 26,12 want EAST verdict moved mcd 1 acd 0
+RC POS 140 id 5 seat 1 role expand fs 0 body 1 pos 8,19 stuck 0
+RC WALK 140 id 5 role expand fs 0 body 1 pos 7,19 tgt 2,14 want WEST verdict moved mcd 1 acd 0
+RC POS 140 id 7 seat 2 role expand fs 0 body 1 pos 5,11 stuck 0
+RC WALK 140 id 7 role expand fs 0 body 1 pos 5,10 tgt 4,15 want NORTH verdict moved mcd 1 acd 0
+RC POS 140 id 9 seat 3 role raid fs 1 body 2 pos 22,10 stuck 0
+RC WALK 140 id 9 role raid fs 1 body 2 pos 21,10 tgt 24,14 want WEST verdict moved mcd 1 acd 0
+RC POS 141 id 5 seat 1 role expand fs 0 body 1 pos 7,19 stuck 0
+RC POS 141 id 7 seat 2 role expand fs 0 body 1 pos 5,10 stuck 0
+RC WALK 141 id 7 role expand fs 0 body 1 pos 5,11 tgt 2,14 want SOUTH verdict moved mcd 1 acd 0
+RC POS 141 id 9 seat 3 role raid fs 1 body 2 pos 21,10 stuck 0
+RC WALK 141 id 9 role raid fs 1 body 2 pos 22,10 tgt 26,12 want EAST verdict moved mcd 1 acd 0
+RC POS 142 id 5 seat 1 role expand fs 0 body 1 pos 7,19 stuck 1
+RC WALK 142 id 5 role expand fs 0 body 1 pos 6,19 tgt 2,14 want WEST verdict moved mcd 1 acd 0
+RC POS 142 id 7 seat 2 role expand fs 0 body 1 pos 5,11 stuck 0
+RC WALK 142 id 7 role expand fs 0 body 1 pos 5,10 tgt 4,15 want NORTH verdict moved mcd 1 acd 0
+RC POS 142 id 9 seat 3 role raid fs 1 body 2 pos 22,10 stuck 0
+RC WALK 142 id 9 role raid fs 1 body 2 pos 21,10 tgt 24,14 want WEST verdict moved mcd 1 acd 0
+RC POS 143 id 5 seat 1 role expand fs 0 body 1 pos 6,19 stuck 0
+RC POS 143 id 7 seat 2 role expand fs 0 body 1 pos 5,10 stuck 0
+RC WALK 143 id 7 role expand fs 0 body 1 pos 5,11 tgt 2,14 want SOUTH verdict moved mcd 1 acd 0
+RC POS 143 id 9 seat 3 role raid fs 1 body 2 pos 21,10 stuck 0
+RC WALK 143 id 9 role raid fs 1 body 2 pos 22,10 tgt 26,12 want EAST verdict moved mcd 1 acd 0
+RC POS 144 id 5 seat 1 role expand fs 0 body 1 pos 6,19 stuck 1
+RC WALK 144 id 5 role expand fs 0 body 1 pos 7,19 tgt 4,15 want EAST verdict moved mcd 1 acd 0
+RC POS 144 id 7 seat 2 role expand fs 0 body 1 pos 5,11 stuck 0
+RC WALK 144 id 7 role expand fs 0 body 1 pos 5,10 tgt 4,15 want NORTH verdict moved mcd 1 acd 0
+RC POS 144 id 9 seat 3 role raid fs 1 body 2 pos 22,10 stuck 0
+RC WALK 144 id 9 role raid fs 1 body 2 pos 21,10 tgt 24,14 want WEST verdict moved mcd 1 acd 0
+RC POS 145 id 5 seat 1 role expand fs 0 body 1 pos 7,19 stuck 0
+RC WALK 145 id 5 role expand fs 0 body 1 pos 6,19 tgt 2,14 want WEST verdict moved mcd 1 acd 0
+RC POS 145 id 7 seat 2 role expand fs 0 body 1 pos 5,10 stuck 0
+RC WALK 145 id 7 role expand fs 0 body 1 pos 5,11 tgt 2,14 want SOUTH verdict moved mcd 1 acd 0
+RC POS 145 id 9 seat 3 role raid fs 1 body 2 pos 21,10 stuck 0
+RC WALK 145 id 9 role raid fs 1 body 2 pos 22,10 tgt 26,12 want EAST verdict moved mcd 1 acd 0
+RC POS 146 id 5 seat 1 role expand fs 0 body 1 pos 6,19 stuck 0
+RC WALK 146 id 5 role expand fs 0 body 1 pos 7,19 tgt 4,15 want EAST verdict moved mcd 1 acd 0
+RC POS 146 id 7 seat 2 role expand fs 0 body 1 pos 5,11 stuck 0
+RC WALK 146 id 7 role expand fs 0 body 1 pos 5,10 tgt 4,15 want NORTH verdict moved mcd 1 acd 0
+RC POS 146 id 9 seat 3 role raid fs 1 body 2 pos 22,10 stuck 0
+RC WALK 146 id 9 role raid fs 1 body 2 pos 21,10 tgt 24,14 want WEST verdict moved mcd 1 acd 0
+RC POS 147 id 5 seat 1 role expand fs 0 body 1 pos 7,19 stuck 0
+RC WALK 147 id 5 role expand fs 0 body 1 pos 6,19 tgt 2,14 want WEST verdict moved mcd 1 acd 0
+RC POS 147 id 7 seat 2 role expand fs 0 body 1 pos 5,10 stuck 0
+RC WALK 147 id 7 role expand fs 0 body 1 pos 5,11 tgt 2,14 want SOUTH verdict moved mcd 1 acd 0
+RC POS 147 id 9 seat 3 role raid fs 1 body 2 pos 21,10 stuck 0
+RC WALK 147 id 9 role raid fs 1 body 2 pos 22,10 tgt 26,12 want EAST verdict moved mcd 1 acd 0
+RC POS 148 id 5 seat 1 role expand fs 0 body 1 pos 6,19 stuck 0
+RC WALK 148 id 5 role expand fs 0 body 1 pos 7,19 tgt 4,15 want EAST verdict moved mcd 1 acd 0
+RC POS 148 id 7 seat 2 role expand fs 0 body 1 pos 5,11 stuck 0
+RC WALK 148 id 7 role expand fs 0 body 1 pos 5,10 tgt 4,15 want NORTH verdict moved mcd 1 acd 0
+RC POS 148 id 9 seat 3 role raid fs 1 body 2 pos 22,10 stuck 0
+RC WALK 148 id 9 role raid fs 1 body 2 pos 21,10 tgt 24,14 want WEST verdict moved mcd 1 acd 0
+RC POS 149 id 5 seat 1 role expand fs 0 body 1 pos 7,19 stuck 0
+RC WALK 149 id 5 role expand fs 0 body 1 pos 6,19 tgt 2,14 want WEST verdict moved mcd 1 acd 0
+RC POS 149 id 7 seat 2 role expand fs 0 body 1 pos 5,10 stuck 0
+RC WALK 149 id 7 role expand fs 0 body 1 pos 5,11 tgt 2,14 want SOUTH verdict moved mcd 1 acd 0
+RC POS 149 id 9 seat 3 role raid fs 1 body 2 pos 21,10 stuck 0
+RC WALK 149 id 9 role raid fs 1 body 2 pos 22,10 tgt 26,12 want EAST verdict moved mcd 1 acd 0
+RC POS 150 id 5 seat 1 role expand fs 0 body 1 pos 6,19 stuck 0
+RC WALK 150 id 5 role expand fs 0 body 1 pos 7,19 tgt 4,15 want EAST verdict moved mcd 1 acd 0
+RC POS 150 id 7 seat 2 role expand fs 0 body 1 pos 5,11 stuck 0
+RC WALK 150 id 7 role expand fs 0 body 1 pos 5,10 tgt 4,15 want NORTH verdict moved mcd 1 acd 0
+RC POS 150 id 9 seat 3 role raid fs 1 body 2 pos 22,10 stuck 0
+RC WALK 150 id 9 role raid fs 1 body 2 pos 21,10 tgt 24,14 want WEST verdict moved mcd 1 acd 0
+RC POS 151 id 5 seat 1 role expand fs 0 body 1 pos 7,19 stuck 0
+RC WALK 151 id 5 role expand fs 0 body 1 pos 6,19 tgt 2,14 want WEST verdict moved mcd 1 acd 0
+RC POS 151 id 7 seat 2 role expand fs 0 body 1 pos 5,10 stuck 0
+RC WALK 151 id 7 role expand fs 0 body 1 pos 5,11 tgt 2,14 want SOUTH verdict moved mcd 1 acd 0
+RC POS 151 id 9 seat 3 role raid fs 1 body 2 pos 21,10 stuck 0
+RC WALK 151 id 9 role raid fs 1 body 2 pos 22,10 tgt 26,12 want EAST verdict moved mcd 1 acd 0
+RC POS 152 id 5 seat 1 role expand fs 0 body 1 pos 6,19 stuck 0
+RC WALK 152 id 5 role expand fs 0 body 1 pos 7,19 tgt 4,15 want EAST verdict moved mcd 1 acd 0
+RC POS 152 id 7 seat 2 role expand fs 0 body 1 pos 5,11 stuck 0
+RC WALK 152 id 7 role expand fs 0 body 1 pos 5,10 tgt 4,15 want NORTH verdict moved mcd 1 acd 0
+RC POS 152 id 9 seat 3 role raid fs 1 body 2 pos 22,10 stuck 0
+RC WALK 152 id 9 role raid fs 1 body 2 pos 21,10 tgt 24,14 want WEST verdict moved mcd 1 acd 0
+RC POS 153 id 5 seat 1 role expand fs 0 body 1 pos 7,19 stuck 0
+RC WALK 153 id 5 role expand fs 0 body 1 pos 6,19 tgt 2,14 want WEST verdict moved mcd 1 acd 0
+RC POS 153 id 7 seat 2 role expand fs 0 body 1 pos 5,10 stuck 0
+RC WALK 153 id 7 role expand fs 0 body 1 pos 5,11 tgt 2,14 want SOUTH verdict moved mcd 1 acd 0
+RC POS 153 id 9 seat 3 role raid fs 1 body 2 pos 21,10 stuck 0
+RC WALK 153 id 9 role raid fs 1 body 2 pos 22,10 tgt 26,12 want EAST verdict moved mcd 1 acd 0
+RC POS 154 id 5 seat 1 role expand fs 0 body 1 pos 6,19 stuck 0
+RC WALK 154 id 5 role expand fs 0 body 1 pos 7,19 tgt 4,15 want EAST verdict moved mcd 1 acd 0
+RC POS 154 id 7 seat 2 role expand fs 0 body 1 pos 5,11 stuck 0
+RC WALK 154 id 7 role expand fs 0 body 1 pos 5,10 tgt 4,15 want NORTH verdict moved mcd 1 acd 0
+RC POS 154 id 9 seat 3 role raid fs 1 body 2 pos 22,10 stuck 0
+RC WALK 154 id 9 role raid fs 1 body 2 pos 21,10 tgt 24,14 want WEST verdict moved mcd 1 acd 0
+RC POS 155 id 5 seat 1 role expand fs 0 body 1 pos 7,19 stuck 0
+RC WALK 155 id 5 role expand fs 0 body 1 pos 6,19 tgt 2,14 want WEST verdict moved mcd 1 acd 0
+RC POS 155 id 7 seat 2 role expand fs 0 body 1 pos 5,10 stuck 0
+RC WALK 155 id 7 role expand fs 0 body 1 pos 5,11 tgt 2,14 want SOUTH verdict moved mcd 1 acd 0
+RC POS 155 id 9 seat 3 role raid fs 1 body 2 pos 21,10 stuck 0
+RC WALK 155 id 9 role raid fs 1 body 2 pos 22,10 tgt 26,12 want EAST verdict moved mcd 1 acd 0
+RC POS 156 id 5 seat 1 role expand fs 0 body 1 pos 6,19 stuck 0
+RC WALK 156 id 5 role expand fs 0 body 1 pos 7,19 tgt 4,15 want EAST verdict moved mcd 1 acd 0
+RC POS 156 id 7 seat 2 role expand fs 0 body 1 pos 5,11 stuck 0
+RC WALK 156 id 7 role expand fs 0 body 1 pos 5,10 tgt 4,15 want NORTH verdict moved mcd 1 acd 0
+RC POS 156 id 9 seat 3 role raid fs 1 body 2 pos 22,10 stuck 0
+RC WALK 156 id 9 role raid fs 1 body 2 pos 21,10 tgt 24,14 want WEST verdict moved mcd 1 acd 0

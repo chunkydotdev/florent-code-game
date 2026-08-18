@@ -1,0 +1,4 @@
+=== POOLED (8-map mechanism panel) ===
+parent    n=192  firstlink med 5      arr1 med 9.0   arr2 med 11.0   harv30 med 2.0   links 580  comply 403/580 (69.5%)  MUSTERLINK 145/149 (97.3%)  restlinks 258/431 (59.9%)  b2chain 12/192 (6.2%)  split_both 119/158  alarms dup=69 col=99 appt=0  scale30 med 238
+v526      n=192  firstlink med 3      arr1 med 7.0   arr2 med 8.0    harv30 med 2.0   links 563  comply 412/563 (73.2%)  MUSTERLINK 144/149 (96.6%)  restlinks 268/414 (64.7%)  b2chain 9/192 (4.7%)  split_both 132/159  alarms dup=6 col=96 appt=0  scale30 med 237
+

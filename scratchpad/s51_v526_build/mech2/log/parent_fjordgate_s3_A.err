@@ -1,0 +1,806 @@
+Update available: 2.3.6 -> 2.3.8. Run: pip install --upgrade fcode
+RC MAP w 10 h 10 ours 2,2 theirs 6,6
+RC ECO 0 harvstore 0 harvseen -1 ti 500 units 1 scale 100.0
+RC ECO 1 harvstore 0 harvseen -1 ti 470 units 2 scale 120.0
+RC SEAT 1 id 3 seat 0
+RC POS 1 id 3 seat 0 role raid fs 1 body 1 pos 4,4 stuck 0
+RC ARRIVE 1 id 3 body 1 dsq 8
+ARC520 CLAIM 1 id 3 body 1 arc 1 at (4, 4)
+RC ECO 2 harvstore 0 harvseen -1 ti 434 units 3 scale 140.0
+RC POS 2 id 3 seat 0 role raid fs 1 body 1 pos 5,4 stuck 0
+RC SEAT 2 id 5 seat 1
+RC POS 2 id 5 seat 1 role expand fs 0 body 1 pos 4,2 stuck 0
+RC ECO 3 harvstore 0 harvseen -1 ti 388 units 4 scale 161.0
+RC POS 3 id 3 seat 0 role raid fs 1 body 1 pos 5,4 stuck 1
+RC POS 3 id 5 seat 1 role expand fs 0 body 1 pos 5,2 stuck 0
+RC SEAT 3 id 7 seat 2
+RC POS 3 id 7 seat 2 role expand fs 0 body 1 pos 4,3 stuck 0
+RC ECO 4 harvstore 1 harvseen -1 ti 314 units 5 scale 186.0
+RC POS 4 id 3 seat 0 role raid fs 1 body 1 pos 6,4 stuck 0
+RC POS 4 id 5 seat 1 role expand fs 0 body 1 pos 5,2 stuck 1
+RC POS 4 id 7 seat 2 role expand fs 0 body 1 pos 4,2 stuck 0
+RC SEAT 4 id 10 seat 3
+APPT520 CLAIM 4 id 10
+RC POS 4 id 10 seat 3 role raid fs 1 body 2 pos 4,4 stuck 0
+RC ARRIVE 4 id 10 body 2 dsq 8
+ARC520 COLLIDE 4 id 10 body 2 peer 1 took 2 n 1
+ARC520 CLAIM 4 id 10 body 2 arc 2 at (4, 4)
+RC ECO 5 harvstore 1 harvseen -1 ti 225 units 6 scale 209.0
+RC POS 5 id 3 seat 0 role raid fs 1 body 1 pos 6,4 stuck 1
+RC POS 5 id 5 seat 1 role expand fs 0 body 1 pos 5,2 stuck 2
+RC POS 5 id 7 seat 2 role expand fs 0 body 1 pos 4,2 stuck 1
+RC POS 5 id 10 seat 3 role raid fs 1 body 2 pos 3,4 stuck 0
+RC SEAT 5 id 13 seat 4
+RC POS 5 id 13 seat 4 role defend fs 0 body 1 pos 1,4 stuck 0
+RC ECO 6 harvstore 1 harvseen -1 ti 111 units 8 scale 239.0
+RC POS 6 id 3 seat 0 role raid fs 1 body 1 pos 6,4 stuck 2
+RC POS 6 id 5 seat 1 role expand fs 0 body 1 pos 5,1 stuck 0
+RC POS 6 id 7 seat 2 role expand fs 0 body 1 pos 4,1 stuck 0
+RC POS 6 id 10 seat 3 role raid fs 1 body 2 pos 3,5 stuck 0
+RC POS 6 id 13 seat 4 role defend fs 0 body 1 pos 1,4 stuck 1
+RC ECO 7 harvstore 1 harvseen -1 ti 121 units 8 scale 239.0
+RC POS 7 id 3 seat 0 role raid fs 1 body 1 pos 5,4 stuck 0
+RC POS 7 id 5 seat 1 role expand fs 0 body 1 pos 5,0 stuck 0
+RC POS 7 id 7 seat 2 role expand fs 0 body 1 pos 5,1 stuck 0
+RC POS 7 id 10 seat 3 role raid fs 1 body 2 pos 4,5 stuck 0
+RC POS 7 id 13 seat 4 role defend fs 0 body 1 pos 2,4 stuck 0
+RC ECO 8 harvstore 1 harvseen -1 ti 101 units 8 scale 239.0
+RC POS 8 id 3 seat 0 role raid fs 1 body 1 pos 6,4 stuck 0
+RC POS 8 id 5 seat 1 role expand fs 0 body 1 pos 6,0 stuck 0
+RC POS 8 id 7 seat 2 role expand fs 0 body 1 pos 5,0 stuck 0
+RC POS 8 id 10 seat 3 role raid fs 1 body 2 pos 4,6 stuck 0
+RC POS 8 id 13 seat 4 role defend fs 0 body 1 pos 2,5 stuck 0
+RC SPLIT 8 lid 19 body 3 arc 2 n 1
+SPLIT520 8 lch (7, 4) body 3 arc 2 to (8, 7) dsq 1 walk 1 n 1
+RC ECO 9 harvstore 2 harvseen -1 ti 17 units 8 scale 244.0
+RC POS 9 id 3 seat 0 role raid fs 1 body 1 pos 8,7 stuck 0
+RC POS 9 id 5 seat 1 role expand fs 0 body 1 pos 6,1 stuck 0
+RC POS 9 id 7 seat 2 role expand fs 0 body 1 pos 5,0 stuck 1
+RC POS 9 id 10 seat 3 role raid fs 1 body 2 pos 4,6 stuck 1
+RC POS 9 id 13 seat 4 role defend fs 0 body 1 pos 3,5 stuck 0
+RC ECO 10 harvstore 2 harvseen -1 ti 7 units 8 scale 245.0
+RC POS 10 id 3 seat 0 role raid fs 1 body 1 pos 8,8 stuck 0
+RC POS 10 id 5 seat 1 role expand fs 0 body 1 pos 7,1 stuck 0
+RC POS 10 id 7 seat 2 role expand fs 0 body 1 pos 5,0 stuck 2
+RC POS 10 id 10 seat 3 role raid fs 1 body 2 pos 3,6 stuck 0
+RC POS 10 id 13 seat 4 role defend fs 0 body 1 pos 4,5 stuck 0
+RC ECO 11 harvstore 2 harvseen -1 ti 10 units 8 scale 246.0
+RC POS 11 id 3 seat 0 role raid fs 1 body 1 pos 8,8 stuck 1
+RC POS 11 id 5 seat 1 role expand fs 0 body 1 pos 8,1 stuck 0
+RC POS 11 id 7 seat 2 role expand fs 0 body 1 pos 4,0 stuck 0
+RC POS 11 id 10 seat 3 role raid fs 1 body 2 pos 4,6 stuck 0
+RC POS 11 id 13 seat 4 role defend fs 0 body 1 pos 4,4 stuck 0
+RC ECO 12 harvstore 2 harvseen -1 ti 13 units 8 scale 247.0
+RC POS 12 id 3 seat 0 role raid fs 1 body 1 pos 8,8 stuck 2
+RC POS 12 id 5 seat 1 role expand fs 0 body 1 pos 8,2 stuck 0
+RC POS 12 id 7 seat 2 role expand fs 0 body 1 pos 4,0 stuck 1
+RC POS 12 id 10 seat 3 role raid fs 1 body 2 pos 3,6 stuck 0
+RC POS 12 id 13 seat 4 role defend fs 0 body 1 pos 5,4 stuck 0
+RC ECO 13 harvstore 2 harvseen -1 ti 6 units 8 scale 248.0
+RC POS 13 id 3 seat 0 role raid fs 1 body 1 pos 9,8 stuck 0
+RC POS 13 id 5 seat 1 role expand fs 0 body 1 pos 8,1 stuck 0
+RC POS 13 id 7 seat 2 role expand fs 0 body 1 pos 4,0 stuck 2
+RC POS 13 id 10 seat 3 role raid fs 1 body 2 pos 4,6 stuck 0
+RC POS 13 id 13 seat 4 role defend fs 0 body 1 pos 5,4 stuck 1
+RC ECO 14 harvstore 2 harvseen -1 ti 6 units 8 scale 248.0
+RC POS 14 id 3 seat 0 role raid fs 1 body 1 pos 9,7 stuck 0
+RC POS 14 id 5 seat 1 role expand fs 0 body 1 pos 7,1 stuck 0
+RC POS 14 id 7 seat 2 role expand fs 0 body 1 pos 3,0 stuck 0
+RC POS 14 id 10 seat 3 role raid fs 1 body 2 pos 3,6 stuck 0
+RC POS 14 id 13 seat 4 role defend fs 0 body 1 pos 6,4 stuck 0
+RC ECO 15 harvstore 2 harvseen -1 ti 16 units 8 scale 248.0
+RC POS 15 id 3 seat 0 role raid fs 1 body 1 pos 9,6 stuck 0
+RC POS 15 id 5 seat 1 role expand fs 0 body 1 pos 8,1 stuck 0
+RC POS 15 id 7 seat 2 role expand fs 0 body 1 pos 3,0 stuck 1
+RC POS 15 id 10 seat 3 role raid fs 1 body 2 pos 4,6 stuck 0
+RC POS 15 id 13 seat 4 role defend fs 0 body 1 pos 6,4 stuck 1
+RC ECO 16 harvstore 2 harvseen -1 ti 17 units 8 scale 249.0
+RC POS 16 id 3 seat 0 role raid fs 1 body 1 pos 9,6 stuck 1
+RC POS 16 id 5 seat 1 role expand fs 0 body 1 pos 8,2 stuck 0
+RC POS 16 id 7 seat 2 role expand fs 0 body 1 pos 3,1 stuck 0
+RC POS 16 id 10 seat 3 role raid fs 1 body 2 pos 4,7 stuck 0
+RC POS 16 id 13 seat 4 role defend fs 0 body 1 pos 6,4 stuck 2
+RC ECO 17 harvstore 2 harvseen -1 ti 0 units 8 scale 251.0
+RC POS 17 id 3 seat 0 role raid fs 1 body 1 pos 9,5 stuck 0
+RC POS 17 id 5 seat 1 role expand fs 0 body 1 pos 8,1 stuck 0
+RC POS 17 id 7 seat 2 role expand fs 0 body 1 pos 3,1 stuck 1
+RC POS 17 id 10 seat 3 role raid fs 1 body 2 pos 4,7 stuck 1
+RC POS 17 id 13 seat 4 role defend fs 0 body 1 pos 5,4 stuck 0
+RC ECO 18 harvstore 2 harvseen -1 ti 0 units 8 scale 251.0
+RC POS 18 id 3 seat 0 role raid fs 1 body 1 pos 8,5 stuck 0
+RC POS 18 id 5 seat 1 role expand fs 0 body 1 pos 7,1 stuck 0
+RC POS 18 id 7 seat 2 role expand fs 0 body 1 pos 3,0 stuck 0
+RC POS 18 id 10 seat 3 role raid fs 1 body 2 pos 4,8 stuck 0
+RC POS 18 id 13 seat 4 role defend fs 0 body 1 pos 4,4 stuck 0
+RC ECO 19 harvstore 2 harvseen -1 ti 10 units 8 scale 251.0
+RC POS 19 id 3 seat 0 role raid fs 1 body 1 pos 8,5 stuck 1
+RC POS 19 id 5 seat 1 role expand fs 0 body 1 pos 8,1 stuck 0
+RC POS 19 id 7 seat 2 role expand fs 0 body 1 pos 3,0 stuck 1
+RC POS 19 id 10 seat 3 role raid fs 1 body 2 pos 5,8 stuck 0
+RC POS 19 id 13 seat 4 role defend fs 0 body 1 pos 5,4 stuck 0
+RC ECO 20 harvstore 2 harvseen -1 ti 13 units 8 scale 252.0
+RC POS 20 id 3 seat 0 role raid fs 1 body 1 pos 8,5 stuck 2
+RC POS 20 id 5 seat 1 role expand fs 0 body 1 pos 7,1 stuck 0
+RC POS 20 id 7 seat 2 role expand fs 0 body 1 pos 3,0 stuck 2
+RC POS 20 id 10 seat 3 role raid fs 1 body 2 pos 5,8 stuck 1
+RC POS 20 id 13 seat 4 role defend fs 0 body 1 pos 4,4 stuck 0
+RC ECO 21 harvstore 2 harvseen -1 ti 6 units 8 scale 253.0
+RC POS 21 id 3 seat 0 role raid fs 1 body 1 pos 8,4 stuck 0
+RC POS 21 id 5 seat 1 role expand fs 0 body 1 pos 6,1 stuck 0
+RC POS 21 id 7 seat 2 role expand fs 0 body 1 pos 3,0 stuck 3
+RC POS 21 id 10 seat 3 role raid fs 1 body 2 pos 5,8 stuck 2
+RC POS 21 id 13 seat 4 role defend fs 0 body 1 pos 4,5 stuck 0
+RC ECO 22 harvstore 2 harvseen -1 ti 16 units 8 scale 253.0
+RC POS 22 id 3 seat 0 role raid fs 1 body 1 pos 8,3 stuck 0
+RC POS 22 id 5 seat 1 role expand fs 0 body 1 pos 5,1 stuck 0
+RC POS 22 id 7 seat 2 role expand fs 0 body 1 pos 4,0 stuck 0
+RC POS 22 id 10 seat 3 role raid fs 1 body 2 pos 5,8 stuck 3
+RC POS 22 id 13 seat 4 role defend fs 0 body 1 pos 3,5 stuck 0
+RC ECO 23 harvstore 2 harvseen -1 ti 27 units 8 scale 254.0
+RC POS 23 id 3 seat 0 role raid fs 1 body 1 pos 8,4 stuck 0
+RC POS 23 id 5 seat 1 role expand fs 0 body 1 pos 5,2 stuck 0
+RC POS 23 id 7 seat 2 role expand fs 0 body 1 pos 5,0 stuck 0
+RC POS 23 id 10 seat 3 role raid fs 1 body 2 pos 5,8 stuck 4
+RC POS 23 id 13 seat 4 role defend fs 0 body 1 pos 2,5 stuck 0
+RC ECO 24 harvstore 2 harvseen -1 ti 24 units 8 scale 254.0
+RC POS 24 id 3 seat 0 role raid fs 1 body 1 pos 8,3 stuck 0
+RC POS 24 id 5 seat 1 role expand fs 0 body 1 pos 5,3 stuck 0
+RC POS 24 id 7 seat 2 role expand fs 0 body 1 pos 4,0 stuck 0
+RC POS 24 id 10 seat 3 role raid fs 1 body 2 pos 4,8 stuck 0
+RC POS 24 id 13 seat 4 role defend fs 0 body 1 pos 2,4 stuck 0
+RC ECO 25 harvstore 2 harvseen -1 ti 24 units 8 scale 253.0
+RC POS 25 id 3 seat 0 role raid fs 1 body 1 pos 8,4 stuck 0
+RC POS 25 id 5 seat 1 role expand fs 0 body 1 pos 5,4 stuck 0
+RC POS 25 id 7 seat 2 role expand fs 0 body 1 pos 3,0 stuck 0
+RC POS 25 id 10 seat 3 role raid fs 1 body 2 pos 3,8 stuck 0
+RC POS 25 id 13 seat 4 role defend fs 0 body 1 pos 1,4 stuck 0
+RC ECO 26 harvstore 2 harvseen -1 ti 14 units 8 scale 253.0
+RC POS 26 id 3 seat 0 role raid fs 1 body 1 pos 9,4 stuck 0
+RC POS 26 id 5 seat 1 role expand fs 0 body 1 pos 4,4 stuck 0
+RC POS 26 id 7 seat 2 role expand fs 0 body 1 pos 4,0 stuck 0
+RC POS 26 id 10 seat 3 role raid fs 1 body 2 pos 3,9 stuck 0
+RC POS 26 id 13 seat 4 role defend fs 0 body 1 pos 1,3 stuck 0
+RC ECO 27 harvstore 2 harvseen -1 ti 24 units 8 scale 253.0
+RC POS 27 id 3 seat 0 role raid fs 1 body 1 pos 8,4 stuck 0
+RC POS 27 id 5 seat 1 role expand fs 0 body 1 pos 4,5 stuck 0
+RC POS 27 id 7 seat 2 role expand fs 0 body 1 pos 4,1 stuck 0
+RC POS 27 id 10 seat 3 role raid fs 1 body 2 pos 3,8 stuck 0
+RC POS 27 id 13 seat 4 role defend fs 0 body 1 pos 1,2 stuck 0
+RC ECO 28 harvstore 2 harvseen -1 ti 24 units 8 scale 253.0
+RC POS 28 id 3 seat 0 role raid fs 1 body 1 pos 8,3 stuck 0
+RC POS 28 id 5 seat 1 role expand fs 0 body 1 pos 3,5 stuck 0
+RC POS 28 id 7 seat 2 role expand fs 0 body 1 pos 4,2 stuck 0
+RC POS 28 id 10 seat 3 role raid fs 1 body 2 pos 4,8 stuck 0
+RC POS 28 id 13 seat 4 role defend fs 0 body 1 pos 1,3 stuck 0
+RC ECO 29 harvstore 2 harvseen -1 ti 24 units 8 scale 253.0
+RC POS 29 id 3 seat 0 role raid fs 1 body 1 pos 8,4 stuck 0
+RC POS 29 id 5 seat 1 role expand fs 0 body 1 pos 2,5 stuck 0
+RC POS 29 id 7 seat 2 role expand fs 0 body 1 pos 5,2 stuck 0
+RC POS 29 id 10 seat 3 role raid fs 1 body 2 pos 5,8 stuck 0
+RC POS 29 id 13 seat 4 role defend fs 0 body 1 pos 1,4 stuck 0
+RC ECO 30 harvstore 2 harvseen -1 ti 7 units 8 scale 254.0
+RC POS 30 id 3 seat 0 role raid fs 1 body 1 pos 8,3 stuck 0
+RC POS 30 id 5 seat 1 role expand fs 0 body 1 pos 2,6 stuck 0
+RC POS 30 id 7 seat 2 role expand fs 0 body 1 pos 5,3 stuck 0
+RC POS 30 id 10 seat 3 role raid fs 1 body 2 pos 5,8 stuck 1
+RC POS 30 id 13 seat 4 role defend fs 0 body 1 pos 2,4 stuck 0
+RC ECO 31 harvstore 2 harvseen -1 ti 17 units 8 scale 254.0
+RC POS 31 id 3 seat 0 role raid fs 1 body 1 pos 8,4 stuck 0
+RC POS 31 id 5 seat 1 role expand fs 0 body 1 pos 1,6 stuck 0
+RC POS 31 id 7 seat 2 role expand fs 0 body 1 pos 5,4 stuck 0
+RC POS 31 id 10 seat 3 role raid fs 1 body 2 pos 5,9 stuck 0
+RC POS 31 id 13 seat 4 role defend fs 0 body 1 pos 2,5 stuck 0
+RC ECO 32 harvstore 2 harvseen -1 ti 24 units 8 scale 253.0
+RC POS 32 id 3 seat 0 role raid fs 1 body 1 pos 8,3 stuck 0
+RC POS 32 id 5 seat 1 role expand fs 0 body 1 pos 1,7 stuck 0
+RC POS 32 id 7 seat 2 role expand fs 0 body 1 pos 4,4 stuck 0
+RC POS 32 id 10 seat 3 role raid fs 1 body 2 pos 5,8 stuck 0
+RC POS 32 id 13 seat 4 role defend fs 0 body 1 pos 3,5 stuck 0
+RC ECO 33 harvstore 2 harvseen -1 ti 17 units 8 scale 254.0
+RC POS 33 id 3 seat 0 role raid fs 1 body 1 pos 8,4 stuck 0
+RC POS 33 id 5 seat 1 role expand fs 0 body 1 pos 1,8 stuck 0
+RC POS 33 id 7 seat 2 role expand fs 0 body 1 pos 4,5 stuck 0
+RC POS 33 id 10 seat 3 role raid fs 1 body 2 pos 5,8 stuck 1
+RC POS 33 id 13 seat 4 role defend fs 0 body 1 pos 3,6 stuck 0
+RC ECO 34 harvstore 2 harvseen -1 ti 14 units 8 scale 254.0
+RC POS 34 id 3 seat 0 role raid fs 1 body 1 pos 8,3 stuck 0
+RC POS 34 id 5 seat 1 role expand fs 0 body 1 pos 1,7 stuck 0
+RC POS 34 id 7 seat 2 role expand fs 0 body 1 pos 4,6 stuck 0
+RC POS 34 id 10 seat 3 role raid fs 1 body 2 pos 5,9 stuck 0
+RC POS 34 id 13 seat 4 role defend fs 0 body 1 pos 3,5 stuck 0
+RC ECO 35 harvstore 2 harvseen -1 ti 24 units 8 scale 254.0
+RC POS 35 id 3 seat 0 role raid fs 1 body 1 pos 8,4 stuck 0
+RC POS 35 id 5 seat 1 role expand fs 0 body 1 pos 1,8 stuck 0
+RC POS 35 id 7 seat 2 role expand fs 0 body 1 pos 4,7 stuck 0
+RC POS 35 id 10 seat 3 role raid fs 1 body 2 pos 5,8 stuck 0
+RC POS 35 id 13 seat 4 role defend fs 0 body 1 pos 4,5 stuck 0
+RC ECO 36 harvstore 2 harvseen -1 ti 24 units 8 scale 254.0
+RC POS 36 id 3 seat 0 role raid fs 1 body 1 pos 8,3 stuck 0
+RC POS 36 id 5 seat 1 role expand fs 0 body 1 pos 1,7 stuck 0
+RC POS 36 id 7 seat 2 role expand fs 0 body 1 pos 4,6 stuck 0
+RC POS 36 id 10 seat 3 role raid fs 1 body 2 pos 4,8 stuck 0
+RC POS 36 id 13 seat 4 role defend fs 0 body 1 pos 4,4 stuck 0
+RC ECO 37 harvstore 2 harvseen -1 ti 34 units 8 scale 254.0
+RC POS 37 id 3 seat 0 role raid fs 1 body 1 pos 8,4 stuck 0
+RC POS 37 id 5 seat 1 role expand fs 0 body 1 pos 1,8 stuck 0
+RC POS 37 id 7 seat 2 role expand fs 0 body 1 pos 4,7 stuck 0
+RC POS 37 id 10 seat 3 role raid fs 1 body 2 pos 3,8 stuck 0
+RC POS 37 id 13 seat 4 role defend fs 0 body 1 pos 5,4 stuck 0
+RC ECO 38 harvstore 2 harvseen -1 ti 34 units 8 scale 254.0
+RC POS 38 id 3 seat 0 role raid fs 1 body 1 pos 8,3 stuck 0
+RC POS 38 id 5 seat 1 role expand fs 0 body 1 pos 1,7 stuck 0
+RC POS 38 id 7 seat 2 role expand fs 0 body 1 pos 4,6 stuck 0
+RC POS 38 id 10 seat 3 role raid fs 1 body 2 pos 2,8 stuck 0
+RC POS 38 id 13 seat 4 role defend fs 0 body 1 pos 6,4 stuck 0
+RC ECO 39 harvstore 2 harvseen -1 ti 44 units 8 scale 253.0
+RC POS 39 id 3 seat 0 role raid fs 1 body 1 pos 8,4 stuck 0
+RC POS 39 id 5 seat 1 role expand fs 0 body 1 pos 1,8 stuck 0
+RC POS 39 id 7 seat 2 role expand fs 0 body 1 pos 3,6 stuck 0
+RC POS 39 id 10 seat 3 role raid fs 1 body 2 pos 3,8 stuck 0
+RC POS 39 id 13 seat 4 role defend fs 0 body 1 pos 6,3 stuck 0
+RC ECO 40 harvstore 2 harvseen -1 ti 54 units 8 scale 253.0
+RC POS 40 id 3 seat 0 role raid fs 1 body 1 pos 8,3 stuck 0
+RC POS 40 id 5 seat 1 role expand fs 0 body 1 pos 1,7 stuck 0
+RC POS 40 id 7 seat 2 role expand fs 0 body 1 pos 3,5 stuck 0
+RC POS 40 id 10 seat 3 role raid fs 1 body 2 pos 4,8 stuck 0
+RC POS 40 id 13 seat 4 role defend fs 0 body 1 pos 6,3 stuck 1
+RC ECO 41 harvstore 3 harvseen -1 ti 14 units 8 scale 258.0
+RC POS 41 id 3 seat 0 role raid fs 1 body 1 pos 8,4 stuck 0
+RC POS 41 id 5 seat 1 role expand fs 0 body 1 pos 1,7 stuck 1
+RC POS 41 id 7 seat 2 role expand fs 0 body 1 pos 4,5 stuck 0
+RC POS 41 id 10 seat 3 role raid fs 1 body 2 pos 4,7 stuck 0
+RC POS 41 id 13 seat 4 role defend fs 0 body 1 pos 5,3 stuck 0
+RC ECO 42 harvstore 3 harvseen -1 ti 7 units 8 scale 259.0
+RC POS 42 id 3 seat 0 role raid fs 1 body 1 pos 9,4 stuck 0
+RC POS 42 id 5 seat 1 role expand fs 0 body 1 pos 1,7 stuck 2
+RC POS 42 id 7 seat 2 role expand fs 0 body 1 pos 4,4 stuck 0
+RC POS 42 id 10 seat 3 role raid fs 1 body 2 pos 4,6 stuck 0
+RC POS 42 id 13 seat 4 role defend fs 0 body 1 pos 5,2 stuck 0
+RC ECO 43 harvstore 3 harvseen -1 ti 7 units 8 scale 259.0
+RC POS 43 id 3 seat 0 role raid fs 1 body 1 pos 8,4 stuck 0
+RC POS 43 id 5 seat 1 role expand fs 0 body 1 pos 1,6 stuck 0
+RC POS 43 id 7 seat 2 role expand fs 0 body 1 pos 5,4 stuck 0
+RC POS 43 id 10 seat 3 role raid fs 1 body 2 pos 3,6 stuck 0
+RC POS 43 id 13 seat 4 role defend fs 0 body 1 pos 5,2 stuck 1
+RC ECO 44 harvstore 3 harvseen -1 ti 10 units 8 scale 260.0
+RC POS 44 id 3 seat 0 role raid fs 1 body 1 pos 8,3 stuck 0
+RC POS 44 id 5 seat 1 role expand fs 0 body 1 pos 1,6 stuck 1
+RC POS 44 id 7 seat 2 role expand fs 0 body 1 pos 5,3 stuck 0
+RC POS 44 id 10 seat 3 role raid fs 1 body 2 pos 3,5 stuck 0
+RC POS 44 id 13 seat 4 role defend fs 0 body 1 pos 5,2 stuck 2
+RC ECO 45 harvstore 3 harvseen -1 ti 13 units 8 scale 260.0
+RC POS 45 id 3 seat 0 role raid fs 1 body 1 pos 8,4 stuck 0
+RC POS 45 id 5 seat 1 role expand fs 0 body 1 pos 1,6 stuck 2
+RC POS 45 id 7 seat 2 role expand fs 0 body 1 pos 6,3 stuck 0
+RC POS 45 id 10 seat 3 role raid fs 1 body 2 pos 4,5 stuck 0
+RC POS 45 id 13 seat 4 role defend fs 0 body 1 pos 5,2 stuck 3
+RC ECO 46 harvstore 3 harvseen -1 ti 13 units 8 scale 260.0
+RC POS 46 id 3 seat 0 role raid fs 1 body 1 pos 9,4 stuck 0
+RC POS 46 id 5 seat 1 role expand fs 0 body 1 pos 2,6 stuck 0
+RC POS 46 id 7 seat 2 role expand fs 0 body 1 pos 5,3 stuck 0
+RC POS 46 id 10 seat 3 role raid fs 1 body 2 pos 4,6 stuck 0
+RC POS 46 id 13 seat 4 role defend fs 0 body 1 pos 5,2 stuck 4
+RC ECO 47 harvstore 3 harvseen -1 ti 6 units 8 scale 261.0
+RC POS 47 id 3 seat 0 role raid fs 1 body 1 pos 8,4 stuck 0
+RC POS 47 id 5 seat 1 role expand fs 0 body 1 pos 2,6 stuck 1
+RC POS 47 id 7 seat 2 role expand fs 0 body 1 pos 6,3 stuck 0
+RC POS 47 id 10 seat 3 role raid fs 1 body 2 pos 4,7 stuck 0
+RC POS 47 id 13 seat 4 role defend fs 0 body 1 pos 5,2 stuck 5
+RC ECO 48 harvstore 3 harvseen -1 ti 16 units 8 scale 261.0
+RC POS 48 id 3 seat 0 role raid fs 1 body 1 pos 9,4 stuck 0
+RC POS 48 id 5 seat 1 role expand fs 0 body 1 pos 2,5 stuck 0
+RC POS 48 id 7 seat 2 role expand fs 0 body 1 pos 5,3 stuck 0
+RC POS 48 id 10 seat 3 role raid fs 1 body 2 pos 4,8 stuck 0
+RC POS 48 id 13 seat 4 role defend fs 0 body 1 pos 5,1 stuck 0
+RC ECO 49 harvstore 3 harvseen -1 ti 10 units 8 scale 263.0
+RC POS 49 id 3 seat 0 role raid fs 1 body 1 pos 8,4 stuck 0
+RC POS 49 id 5 seat 1 role expand fs 0 body 1 pos 2,5 stuck 1
+RC POS 49 id 7 seat 2 role expand fs 0 body 1 pos 5,3 stuck 1
+RC POS 49 id 10 seat 3 role raid fs 1 body 2 pos 5,8 stuck 0
+RC POS 49 id 13 seat 4 role defend fs 0 body 1 pos 5,0 stuck 0
+RC ECO 50 harvstore 3 harvseen -1 ti 13 units 8 scale 264.0
+RC POS 50 id 3 seat 0 role raid fs 1 body 1 pos 9,4 stuck 0
+RC POS 50 id 5 seat 1 role expand fs 0 body 1 pos 2,4 stuck 0
+RC POS 50 id 7 seat 2 role expand fs 0 body 1 pos 6,3 stuck 0
+RC POS 50 id 10 seat 3 role raid fs 1 body 2 pos 5,8 stuck 1
+RC POS 50 id 13 seat 4 role defend fs 0 body 1 pos 5,1 stuck 0
+RC ECO 51 harvstore 3 harvseen -1 ti 23 units 8 scale 264.0
+RC POS 51 id 3 seat 0 role raid fs 1 body 1 pos 8,4 stuck 0
+RC POS 51 id 5 seat 1 role expand fs 0 body 1 pos 2,5 stuck 0
+RC POS 51 id 7 seat 2 role expand fs 0 body 1 pos 6,4 stuck 0
+RC POS 51 id 10 seat 3 role raid fs 1 body 2 pos 5,8 stuck 2
+RC POS 51 id 13 seat 4 role defend fs 0 body 1 pos 6,1 stuck 0
+RC ECO 52 harvstore 3 harvseen -1 ti 24 units 8 scale 264.0
+RC POS 52 id 3 seat 0 role raid fs 1 body 1 pos 8,4 stuck 1
+RC POS 52 id 5 seat 1 role expand fs 0 body 1 pos 3,5 stuck 0
+RC POS 52 id 7 seat 2 role expand fs 0 body 1 pos 5,4 stuck 0
+RC POS 52 id 10 seat 3 role raid fs 1 body 2 pos 4,8 stuck 0
+RC POS 52 id 13 seat 4 role defend fs 0 body 1 pos 7,1 stuck 0
+RC ECO 53 harvstore 3 harvseen -1 ti 34 units 8 scale 264.0
+RC POS 53 id 3 seat 0 role raid fs 1 body 1 pos 9,4 stuck 0
+RC POS 53 id 5 seat 1 role expand fs 0 body 1 pos 4,5 stuck 0
+RC POS 53 id 7 seat 2 role expand fs 0 body 1 pos 4,4 stuck 0
+RC POS 53 id 10 seat 3 role raid fs 1 body 2 pos 4,7 stuck 0
+RC POS 53 id 13 seat 4 role defend fs 0 body 1 pos 6,1 stuck 0
+RC ECO 54 harvstore 3 harvseen -1 ti 14 units 8 scale 264.0
+RC POS 54 id 3 seat 0 role raid fs 1 body 1 pos 9,5 stuck 0
+RC POS 54 id 5 seat 1 role expand fs 0 body 1 pos 3,5 stuck 0
+RC POS 54 id 7 seat 2 role expand fs 0 body 1 pos 4,5 stuck 0
+RC POS 54 id 10 seat 3 role raid fs 1 body 2 pos 4,6 stuck 0
+RC POS 54 id 13 seat 4 role defend fs 0 body 1 pos 7,1 stuck 0
+RC ECO 55 harvstore 3 harvseen -1 ti 24 units 8 scale 264.0
+RC POS 55 id 3 seat 0 role raid fs 1 body 1 pos 8,5 stuck 0
+RC POS 55 id 5 seat 1 role expand fs 0 body 1 pos 3,6 stuck 0
+RC POS 55 id 7 seat 2 role expand fs 0 body 1 pos 3,5 stuck 0
+RC POS 55 id 10 seat 3 role raid fs 1 body 2 pos 4,5 stuck 0
+RC POS 55 id 13 seat 4 role defend fs 0 body 1 pos 6,1 stuck 0
+RC ECO 56 harvstore 3 harvseen -1 ti 34 units 8 scale 264.0
+RC POS 56 id 3 seat 0 role raid fs 1 body 1 pos 9,5 stuck 0
+RC POS 56 id 5 seat 1 role expand fs 0 body 1 pos 2,6 stuck 0
+RC POS 56 id 7 seat 2 role expand fs 0 body 1 pos 3,6 stuck 0
+RC POS 56 id 10 seat 3 role raid fs 1 body 2 pos 4,4 stuck 0
+RC POS 56 id 13 seat 4 role defend fs 0 body 1 pos 7,1 stuck 0
+RC ECO 57 harvstore 3 harvseen -1 ti 54 units 8 scale 264.0
+RC POS 57 id 3 seat 0 role raid fs 1 body 1 pos 8,5 stuck 0
+RC POS 57 id 5 seat 1 role expand fs 0 body 1 pos 2,5 stuck 0
+RC POS 57 id 7 seat 2 role expand fs 0 body 1 pos 4,6 stuck 0
+RC POS 57 id 10 seat 3 role raid fs 1 body 2 pos 4,5 stuck 0
+RC POS 57 id 13 seat 4 role defend fs 0 body 1 pos 6,1 stuck 0
+RC ECO 58 harvstore 3 harvseen -1 ti 2 units 9 scale 284.0
+RC POS 58 id 3 seat 0 role raid fs 1 body 1 pos 9,5 stuck 0
+RC POS 58 id 5 seat 1 role expand fs 0 body 1 pos 3,5 stuck 0
+RC POS 58 id 7 seat 2 role expand fs 0 body 1 pos 4,7 stuck 0
+RC POS 58 id 10 seat 3 role raid fs 1 body 2 pos 4,4 stuck 0
+RC POS 58 id 13 seat 4 role defend fs 0 body 1 pos 6,1 stuck 1
+RC ECO 59 harvstore 3 harvseen -1 ti 12 units 9 scale 283.0
+RC POS 59 id 3 seat 0 role raid fs 1 body 1 pos 8,5 stuck 0
+RC POS 59 id 5 seat 1 role expand fs 0 body 1 pos 4,5 stuck 0
+RC POS 59 id 7 seat 2 role expand fs 0 body 1 pos 4,8 stuck 0
+RC POS 59 id 10 seat 3 role raid fs 1 body 2 pos 5,4 stuck 0
+RC POS 59 id 13 seat 4 role defend fs 0 body 1 pos 7,1 stuck 0
+RC ECO 60 harvstore 3 harvseen -1 ti 22 units 9 scale 283.0
+RC POS 60 id 3 seat 0 role raid fs 1 body 1 pos 8,4 stuck 0
+RC POS 60 id 5 seat 1 role expand fs 0 body 1 pos 4,4 stuck 0
+RC POS 60 id 7 seat 2 role expand fs 0 body 1 pos 3,8 stuck 0
+RC POS 60 id 10 seat 3 role raid fs 1 body 2 pos 6,4 stuck 0
+RC POS 60 id 13 seat 4 role defend fs 0 body 1 pos 6,1 stuck 0
+RC SPLIT 60 lid 19 body 10 arc 1 n 2
+SPLIT520 60 lch (7, 4) body 10 arc 1 to (6, 5) dsq 1 walk 0 n 2
+RC POS 61 id 3 seat 0 role raid fs 1 body 1 pos 8,4 stuck 1
+RC POS 61 id 5 seat 1 role expand fs 0 body 1 pos 5,4 stuck 0
+RC POS 61 id 7 seat 2 role expand fs 0 body 1 pos 3,8 stuck 1
+RC POS 61 id 10 seat 3 role raid fs 1 body 2 pos 6,5 stuck 0
+RC POS 61 id 13 seat 4 role defend fs 0 body 1 pos 7,1 stuck 0
+RC POS 62 id 3 seat 0 role raid fs 1 body 1 pos 8,4 stuck 2
+RC POS 62 id 5 seat 1 role expand fs 0 body 1 pos 5,3 stuck 0
+RC POS 62 id 7 seat 2 role expand fs 0 body 1 pos 3,8 stuck 2
+RC POS 62 id 10 seat 3 role raid fs 1 body 2 pos 6,4 stuck 0
+RC POS 62 id 13 seat 4 role defend fs 0 body 1 pos 6,1 stuck 0
+RC POS 63 id 3 seat 0 role raid fs 1 body 1 pos 8,4 stuck 3
+RC POS 63 id 5 seat 1 role expand fs 0 body 1 pos 5,3 stuck 1
+RC POS 63 id 7 seat 2 role expand fs 0 body 1 pos 3,8 stuck 3
+RC POS 63 id 10 seat 3 role raid fs 1 body 2 pos 5,4 stuck 0
+RC POS 63 id 13 seat 4 role defend fs 0 body 1 pos 7,1 stuck 0
+RC POS 64 id 3 seat 0 role raid fs 1 body 1 pos 8,3 stuck 0
+RC POS 64 id 5 seat 1 role expand fs 0 body 1 pos 5,2 stuck 0
+RC POS 64 id 7 seat 2 role expand fs 0 body 1 pos 3,8 stuck 4
+RC POS 64 id 10 seat 3 role raid fs 1 body 2 pos 6,4 stuck 0
+RC POS 64 id 13 seat 4 role defend fs 0 body 1 pos 6,1 stuck 0
+RC POS 65 id 3 seat 0 role raid fs 1 body 1 pos 8,4 stuck 0
+RC POS 65 id 5 seat 1 role expand fs 0 body 1 pos 4,2 stuck 0
+RC POS 65 id 7 seat 2 role expand fs 0 body 1 pos 3,8 stuck 5
+RC POS 65 id 10 seat 3 role raid fs 1 body 2 pos 5,4 stuck 0
+RC POS 65 id 13 seat 4 role defend fs 0 body 1 pos 7,1 stuck 0
+RC POS 66 id 3 seat 0 role raid fs 1 body 1 pos 8,3 stuck 0
+RC POS 66 id 5 seat 1 role expand fs 0 body 1 pos 4,1 stuck 0
+RC POS 66 id 7 seat 2 role expand fs 0 body 1 pos 4,8 stuck 0
+RC POS 66 id 10 seat 3 role raid fs 1 body 2 pos 4,4 stuck 0
+RC POS 66 id 13 seat 4 role defend fs 0 body 1 pos 6,1 stuck 0
+RC POS 67 id 3 seat 0 role raid fs 1 body 1 pos 8,4 stuck 0
+RC POS 67 id 5 seat 1 role expand fs 0 body 1 pos 4,1 stuck 1
+RC POS 67 id 7 seat 2 role expand fs 0 body 1 pos 4,7 stuck 0
+RC POS 67 id 10 seat 3 role raid fs 1 body 2 pos 4,5 stuck 0
+RC POS 67 id 13 seat 4 role defend fs 0 body 1 pos 7,1 stuck 0
+RC POS 68 id 3 seat 0 role raid fs 1 body 1 pos 8,3 stuck 0
+RC POS 68 id 5 seat 1 role expand fs 0 body 1 pos 3,1 stuck 0
+RC POS 68 id 7 seat 2 role expand fs 0 body 1 pos 4,6 stuck 0
+RC POS 68 id 10 seat 3 role raid fs 1 body 2 pos 3,5 stuck 0
+RC POS 68 id 13 seat 4 role defend fs 0 body 1 pos 6,1 stuck 0
+RC POS 69 id 3 seat 0 role raid fs 1 body 1 pos 8,4 stuck 0
+RC POS 69 id 5 seat 1 role expand fs 0 body 1 pos 3,0 stuck 0
+RC POS 69 id 7 seat 2 role expand fs 0 body 1 pos 4,5 stuck 0
+RC POS 69 id 10 seat 3 role raid fs 1 body 2 pos 3,6 stuck 0
+RC POS 69 id 13 seat 4 role defend fs 0 body 1 pos 7,1 stuck 0
+RC POS 70 id 3 seat 0 role raid fs 1 body 1 pos 8,3 stuck 0
+RC POS 70 id 5 seat 1 role expand fs 0 body 1 pos 2,0 stuck 0
+RC POS 70 id 7 seat 2 role expand fs 0 body 1 pos 4,4 stuck 0
+RC POS 70 id 10 seat 3 role raid fs 1 body 2 pos 4,6 stuck 0
+RC POS 70 id 13 seat 4 role defend fs 0 body 1 pos 6,1 stuck 0
+RC POS 71 id 3 seat 0 role raid fs 1 body 1 pos 8,4 stuck 0
+RC POS 71 id 5 seat 1 role expand fs 0 body 1 pos 3,0 stuck 0
+RC POS 71 id 7 seat 2 role expand fs 0 body 1 pos 5,4 stuck 0
+RC POS 71 id 10 seat 3 role raid fs 1 body 2 pos 4,7 stuck 0
+RC POS 71 id 13 seat 4 role defend fs 0 body 1 pos 7,1 stuck 0
+RC POS 72 id 3 seat 0 role raid fs 1 body 1 pos 8,3 stuck 0
+RC POS 72 id 5 seat 1 role expand fs 0 body 1 pos 3,1 stuck 0
+RC POS 72 id 7 seat 2 role expand fs 0 body 1 pos 5,3 stuck 0
+RC POS 72 id 10 seat 3 role raid fs 1 body 2 pos 4,8 stuck 0
+RC POS 72 id 13 seat 4 role defend fs 0 body 1 pos 6,1 stuck 0
+RC POS 73 id 3 seat 0 role raid fs 1 body 1 pos 8,4 stuck 0
+RC POS 73 id 5 seat 1 role expand fs 0 body 1 pos 4,1 stuck 0
+RC POS 73 id 7 seat 2 role expand fs 0 body 1 pos 5,2 stuck 0
+RC POS 73 id 10 seat 3 role raid fs 1 body 2 pos 4,8 stuck 1
+RC POS 73 id 13 seat 4 role defend fs 0 body 1 pos 7,1 stuck 0
+RC POS 74 id 3 seat 0 role raid fs 1 body 1 pos 8,3 stuck 0
+RC POS 74 id 5 seat 1 role expand fs 0 body 1 pos 4,2 stuck 0
+RC POS 74 id 7 seat 2 role expand fs 0 body 1 pos 5,3 stuck 0
+RC POS 74 id 10 seat 3 role raid fs 1 body 2 pos 4,7 stuck 0
+RC POS 74 id 13 seat 4 role defend fs 0 body 1 pos 6,1 stuck 0
+RC ECO 75 harvstore 3 harvseen -1 ti 63 units 10 scale 294.0
+RC POS 75 id 3 seat 0 role raid fs 1 body 1 pos 8,4 stuck 0
+RC POS 75 id 5 seat 1 role expand fs 0 body 1 pos 5,2 stuck 0
+RC POS 75 id 7 seat 2 role expand fs 0 body 1 pos 6,3 stuck 0
+RC POS 75 id 10 seat 3 role raid fs 1 body 2 pos 4,7 stuck 1
+RC POS 75 id 13 seat 4 role defend fs 0 body 1 pos 7,1 stuck 0
+RC POS 76 id 3 seat 0 role raid fs 1 body 1 pos 8,3 stuck 0
+RC POS 76 id 5 seat 1 role expand fs 0 body 1 pos 5,3 stuck 0
+RC POS 76 id 7 seat 2 role expand fs 0 body 1 pos 6,4 stuck 0
+RC POS 76 id 10 seat 3 role raid fs 1 body 2 pos 4,7 stuck 2
+RC POS 76 id 13 seat 4 role defend fs 0 body 1 pos 6,1 stuck 0
+RC POS 77 id 3 seat 0 role raid fs 1 body 1 pos 8,4 stuck 0
+RC POS 77 id 5 seat 1 role expand fs 0 body 1 pos 6,3 stuck 0
+RC POS 77 id 7 seat 2 role expand fs 0 body 1 pos 5,4 stuck 0
+RC POS 77 id 10 seat 3 role raid fs 1 body 2 pos 4,6 stuck 0
+RC POS 77 id 13 seat 4 role defend fs 0 body 1 pos 7,1 stuck 0
+RC POS 78 id 3 seat 0 role raid fs 1 body 1 pos 8,3 stuck 0
+RC POS 78 id 5 seat 1 role expand fs 0 body 1 pos 6,4 stuck 0
+RC POS 78 id 7 seat 2 role expand fs 0 body 1 pos 5,3 stuck 0
+RC POS 78 id 10 seat 3 role raid fs 1 body 2 pos 4,6 stuck 1
+RC POS 78 id 13 seat 4 role defend fs 0 body 1 pos 6,1 stuck 0
+RC POS 79 id 3 seat 0 role raid fs 1 body 1 pos 8,4 stuck 0
+RC POS 79 id 5 seat 1 role expand fs 0 body 1 pos 5,4 stuck 0
+RC POS 79 id 7 seat 2 role expand fs 0 body 1 pos 5,2 stuck 0
+RC POS 79 id 10 seat 3 role raid fs 1 body 2 pos 4,5 stuck 0
+RC POS 79 id 13 seat 4 role defend fs 0 body 1 pos 6,1 stuck 1
+RC POS 80 id 3 seat 0 role raid fs 1 body 1 pos 8,3 stuck 0
+RC POS 80 id 5 seat 1 role expand fs 0 body 1 pos 4,4 stuck 0
+RC POS 80 id 7 seat 2 role expand fs 0 body 1 pos 4,2 stuck 0
+RC POS 80 id 10 seat 3 role raid fs 1 body 2 pos 3,5 stuck 0
+RC POS 80 id 13 seat 4 role defend fs 0 body 1 pos 6,1 stuck 3
+RC POS 81 id 3 seat 0 role raid fs 1 body 1 pos 8,4 stuck 0
+RC POS 81 id 5 seat 1 role expand fs 0 body 1 pos 4,5 stuck 0
+RC POS 81 id 7 seat 2 role expand fs 0 body 1 pos 4,1 stuck 0
+RC POS 81 id 10 seat 3 role raid fs 1 body 2 pos 3,6 stuck 0
+RC POS 81 id 13 seat 4 role defend fs 0 body 1 pos 6,1 stuck 5
+RC POS 82 id 3 seat 0 role raid fs 1 body 1 pos 8,3 stuck 0
+RC POS 82 id 5 seat 1 role expand fs 0 body 1 pos 3,5 stuck 0
+RC POS 82 id 7 seat 2 role expand fs 0 body 1 pos 4,0 stuck 0
+RC POS 82 id 10 seat 3 role raid fs 1 body 2 pos 4,6 stuck 0
+RC POS 82 id 13 seat 4 role defend fs 0 body 1 pos 6,1 stuck 2
+RC POS 83 id 3 seat 0 role raid fs 1 body 1 pos 8,4 stuck 0
+RC POS 83 id 5 seat 1 role expand fs 0 body 1 pos 3,6 stuck 0
+RC POS 83 id 7 seat 2 role expand fs 0 body 1 pos 5,0 stuck 0
+RC POS 83 id 10 seat 3 role raid fs 1 body 2 pos 4,6 stuck 1
+RC POS 83 id 13 seat 4 role defend fs 0 body 1 pos 6,1 stuck 4
+RC POS 84 id 3 seat 0 role raid fs 1 body 1 pos 8,3 stuck 0
+RC POS 84 id 5 seat 1 role expand fs 0 body 1 pos 3,5 stuck 0
+RC POS 84 id 7 seat 2 role expand fs 0 body 1 pos 4,0 stuck 0
+RC POS 84 id 10 seat 3 role raid fs 1 body 2 pos 4,5 stuck 0
+RC POS 84 id 13 seat 4 role defend fs 0 body 1 pos 6,1 stuck 6
+RC POS 85 id 3 seat 0 role raid fs 1 body 1 pos 8,4 stuck 0
+RC POS 85 id 5 seat 1 role expand fs 0 body 1 pos 3,6 stuck 0
+RC POS 85 id 7 seat 2 role expand fs 0 body 1 pos 4,1 stuck 0
+RC POS 85 id 10 seat 3 role raid fs 1 body 2 pos 4,4 stuck 0
+RC POS 85 id 13 seat 4 role defend fs 0 body 1 pos 6,1 stuck 2
+RC POS 86 id 3 seat 0 role raid fs 1 body 1 pos 8,3 stuck 0
+RC POS 86 id 5 seat 1 role expand fs 0 body 1 pos 3,5 stuck 0
+RC POS 86 id 7 seat 2 role expand fs 0 body 1 pos 4,2 stuck 0
+RC POS 86 id 10 seat 3 role raid fs 1 body 2 pos 4,5 stuck 0
+RC POS 86 id 13 seat 4 role defend fs 0 body 1 pos 6,1 stuck 4
+RC POS 87 id 3 seat 0 role raid fs 1 body 1 pos 8,4 stuck 0
+RC POS 87 id 5 seat 1 role expand fs 0 body 1 pos 3,6 stuck 0
+RC POS 87 id 7 seat 2 role expand fs 0 body 1 pos 5,2 stuck 0
+RC POS 87 id 10 seat 3 role raid fs 1 body 2 pos 4,4 stuck 0
+RC POS 87 id 13 seat 4 role defend fs 0 body 1 pos 6,1 stuck 6
+RC POS 88 id 3 seat 0 role raid fs 1 body 1 pos 8,3 stuck 0
+RC POS 88 id 5 seat 1 role expand fs 0 body 1 pos 3,5 stuck 0
+RC POS 88 id 7 seat 2 role expand fs 0 body 1 pos 5,3 stuck 0
+RC POS 88 id 10 seat 3 role raid fs 1 body 2 pos 4,5 stuck 0
+RC POS 88 id 13 seat 4 role defend fs 0 body 1 pos 6,1 stuck 2
+RC POS 89 id 3 seat 0 role raid fs 1 body 1 pos 8,4 stuck 0
+RC POS 89 id 5 seat 1 role expand fs 0 body 1 pos 3,6 stuck 0
+RC POS 89 id 7 seat 2 role expand fs 0 body 1 pos 5,4 stuck 0
+RC POS 89 id 10 seat 3 role raid fs 1 body 2 pos 4,4 stuck 0
+RC POS 89 id 13 seat 4 role defend fs 0 body 1 pos 6,1 stuck 4
+RC POS 90 id 3 seat 0 role raid fs 1 body 1 pos 8,3 stuck 0
+RC POS 90 id 5 seat 1 role expand fs 0 body 1 pos 3,5 stuck 0
+RC POS 90 id 7 seat 2 role expand fs 0 body 1 pos 5,3 stuck 0
+RC POS 90 id 10 seat 3 role raid fs 1 body 2 pos 4,5 stuck 0
+RC POS 90 id 13 seat 4 role defend fs 0 body 1 pos 6,1 stuck 6
+RC POS 91 id 3 seat 0 role raid fs 1 body 1 pos 8,4 stuck 0
+RC POS 91 id 5 seat 1 role expand fs 0 body 1 pos 3,6 stuck 0
+RC POS 91 id 7 seat 2 role expand fs 0 body 1 pos 5,4 stuck 0
+RC POS 91 id 10 seat 3 role raid fs 1 body 2 pos 4,4 stuck 0
+RC POS 91 id 13 seat 4 role defend fs 0 body 1 pos 6,1 stuck 2
+RC POS 92 id 3 seat 0 role raid fs 1 body 1 pos 8,3 stuck 0
+RC POS 92 id 5 seat 1 role expand fs 0 body 1 pos 3,5 stuck 0
+RC POS 92 id 7 seat 2 role expand fs 0 body 1 pos 5,3 stuck 0
+RC POS 92 id 10 seat 3 role raid fs 1 body 2 pos 4,5 stuck 0
+RC POS 92 id 13 seat 4 role defend fs 0 body 1 pos 6,1 stuck 4
+RC POS 93 id 3 seat 0 role raid fs 1 body 1 pos 8,4 stuck 0
+RC POS 93 id 5 seat 1 role expand fs 0 body 1 pos 3,6 stuck 0
+RC POS 93 id 7 seat 2 role expand fs 0 body 1 pos 5,4 stuck 0
+RC POS 93 id 10 seat 3 role raid fs 1 body 2 pos 4,4 stuck 0
+RC POS 93 id 13 seat 4 role defend fs 0 body 1 pos 6,1 stuck 6
+RC POS 94 id 3 seat 0 role raid fs 1 body 1 pos 8,3 stuck 0
+RC POS 94 id 5 seat 1 role expand fs 0 body 1 pos 3,5 stuck 0
+RC POS 94 id 7 seat 2 role expand fs 0 body 1 pos 5,3 stuck 0
+RC POS 94 id 10 seat 3 role raid fs 1 body 2 pos 4,5 stuck 0
+RC POS 94 id 13 seat 4 role defend fs 0 body 1 pos 6,1 stuck 8
+RC POS 95 id 3 seat 0 role raid fs 1 body 1 pos 8,4 stuck 0
+RC POS 95 id 5 seat 1 role expand fs 0 body 1 pos 3,6 stuck 0
+RC POS 95 id 7 seat 2 role expand fs 0 body 1 pos 5,4 stuck 0
+RC POS 95 id 10 seat 3 role raid fs 1 body 2 pos 4,4 stuck 0
+RC POS 95 id 13 seat 4 role defend fs 0 body 1 pos 6,1 stuck 10
+RC POS 96 id 3 seat 0 role raid fs 1 body 1 pos 8,3 stuck 0
+RC POS 96 id 5 seat 1 role expand fs 0 body 1 pos 3,5 stuck 0
+RC POS 96 id 7 seat 2 role expand fs 0 body 1 pos 5,3 stuck 0
+RC POS 96 id 10 seat 3 role raid fs 1 body 2 pos 4,5 stuck 0
+RC POS 96 id 13 seat 4 role defend fs 0 body 1 pos 6,1 stuck 12
+RC POS 97 id 3 seat 0 role raid fs 1 body 1 pos 8,4 stuck 0
+RC POS 97 id 5 seat 1 role expand fs 0 body 1 pos 3,6 stuck 0
+RC POS 97 id 7 seat 2 role expand fs 0 body 1 pos 5,4 stuck 0
+RC POS 97 id 10 seat 3 role raid fs 1 body 2 pos 4,4 stuck 0
+RC POS 97 id 13 seat 4 role defend fs 0 body 1 pos 6,1 stuck 2
+RC POS 98 id 3 seat 0 role raid fs 1 body 1 pos 8,3 stuck 0
+RC POS 98 id 5 seat 1 role expand fs 0 body 1 pos 3,5 stuck 0
+RC POS 98 id 7 seat 2 role expand fs 0 body 1 pos 5,3 stuck 0
+RC POS 98 id 10 seat 3 role raid fs 1 body 2 pos 4,5 stuck 0
+RC POS 98 id 13 seat 4 role defend fs 0 body 1 pos 6,1 stuck 4
+RC POS 99 id 3 seat 0 role raid fs 1 body 1 pos 8,4 stuck 0
+RC POS 99 id 5 seat 1 role expand fs 0 body 1 pos 3,6 stuck 0
+RC POS 99 id 7 seat 2 role expand fs 0 body 1 pos 5,4 stuck 0
+RC POS 99 id 10 seat 3 role raid fs 1 body 2 pos 4,4 stuck 0
+RC POS 99 id 13 seat 4 role defend fs 0 body 1 pos 6,1 stuck 6
+RC ECO 100 harvstore 3 harvseen -1 ti 108 units 11 scale 314.0
+RC POS 100 id 3 seat 0 role raid fs 1 body 1 pos 8,3 stuck 0
+RC POS 100 id 5 seat 1 role expand fs 0 body 1 pos 3,5 stuck 0
+RC POS 100 id 7 seat 2 role expand fs 0 body 1 pos 5,3 stuck 0
+RC POS 100 id 10 seat 3 role raid fs 1 body 2 pos 4,5 stuck 0
+RC POS 100 id 13 seat 4 role defend fs 0 body 1 pos 6,1 stuck 2
+RC POS 101 id 3 seat 0 role raid fs 1 body 1 pos 8,4 stuck 0
+RC POS 101 id 5 seat 1 role expand fs 0 body 1 pos 3,6 stuck 0
+RC POS 101 id 7 seat 2 role expand fs 0 body 1 pos 5,4 stuck 0
+RC POS 101 id 10 seat 3 role raid fs 1 body 2 pos 4,4 stuck 0
+RC POS 101 id 13 seat 4 role defend fs 0 body 1 pos 6,1 stuck 4
+RC POS 102 id 3 seat 0 role raid fs 1 body 1 pos 8,4 stuck 1
+RC POS 102 id 5 seat 1 role expand fs 0 body 1 pos 3,5 stuck 0
+RC POS 102 id 7 seat 2 role expand fs 0 body 1 pos 5,3 stuck 0
+RC POS 102 id 10 seat 3 role raid fs 1 body 2 pos 4,5 stuck 0
+RC POS 102 id 13 seat 4 role defend fs 0 body 1 pos 6,1 stuck 6
+RC POS 103 id 3 seat 0 role raid fs 1 body 1 pos 8,4 stuck 3
+RC POS 103 id 5 seat 1 role expand fs 0 body 1 pos 3,6 stuck 0
+RC POS 103 id 7 seat 2 role expand fs 0 body 1 pos 5,4 stuck 0
+RC POS 103 id 10 seat 3 role raid fs 1 body 2 pos 4,5 stuck 1
+RC POS 103 id 13 seat 4 role defend fs 0 body 1 pos 6,1 stuck 2
+RC POS 104 id 3 seat 0 role raid fs 1 body 1 pos 8,3 stuck 0
+RC POS 104 id 5 seat 1 role expand fs 0 body 1 pos 3,5 stuck 0
+RC POS 104 id 7 seat 2 role expand fs 0 body 1 pos 4,4 stuck 0
+RC POS 104 id 10 seat 3 role raid fs 1 body 2 pos 4,5 stuck 2
+RC POS 104 id 13 seat 4 role defend fs 0 body 1 pos 6,1 stuck 4
+RC POS 105 id 3 seat 0 role raid fs 1 body 1 pos 8,2 stuck 0
+RC POS 105 id 5 seat 1 role expand fs 0 body 1 pos 3,6 stuck 0
+RC POS 105 id 7 seat 2 role expand fs 0 body 1 pos 5,4 stuck 0
+RC POS 105 id 10 seat 3 role raid fs 1 body 2 pos 4,5 stuck 3
+RC POS 105 id 13 seat 4 role defend fs 0 body 1 pos 6,1 stuck 6
+RC POS 106 id 3 seat 0 role raid fs 1 body 1 pos 8,3 stuck 0
+RC POS 106 id 5 seat 1 role expand fs 0 body 1 pos 3,5 stuck 0
+RC POS 106 id 7 seat 2 role expand fs 0 body 1 pos 6,4 stuck 0
+RC POS 106 id 10 seat 3 role raid fs 1 body 2 pos 4,5 stuck 4
+RC POS 106 id 13 seat 4 role defend fs 0 body 1 pos 6,1 stuck 8
+RC POS 107 id 3 seat 0 role raid fs 1 body 1 pos 7,3 stuck 0
+RC POS 107 id 5 seat 1 role expand fs 0 body 1 pos 3,6 stuck 0
+RC POS 107 id 7 seat 2 role expand fs 0 body 1 pos 5,4 stuck 0
+RC POS 107 id 10 seat 3 role raid fs 1 body 2 pos 4,5 stuck 5
+RC POS 107 id 13 seat 4 role defend fs 0 body 1 pos 6,1 stuck 10
+RC POS 108 id 3 seat 0 role raid fs 1 body 1 pos 6,3 stuck 0
+RC POS 108 id 5 seat 1 role expand fs 0 body 1 pos 3,5 stuck 0
+RC POS 108 id 7 seat 2 role expand fs 0 body 1 pos 4,4 stuck 0
+RC POS 108 id 10 seat 3 role raid fs 1 body 2 pos 4,5 stuck 6
+RC POS 108 id 13 seat 4 role defend fs 0 body 1 pos 6,1 stuck 12
+RC POS 109 id 3 seat 0 role raid fs 1 body 1 pos 5,3 stuck 0
+RC POS 109 id 5 seat 1 role expand fs 0 body 1 pos 3,6 stuck 0
+RC POS 109 id 7 seat 2 role expand fs 0 body 1 pos 5,4 stuck 0
+RC POS 109 id 10 seat 3 role raid fs 1 body 2 pos 4,5 stuck 7
+RC POS 109 id 13 seat 4 role defend fs 0 body 1 pos 6,1 stuck 14
+RC POS 110 id 3 seat 0 role raid fs 1 body 1 pos 5,2 stuck 0
+RC POS 110 id 5 seat 1 role expand fs 0 body 1 pos 3,5 stuck 0
+RC POS 110 id 7 seat 2 role expand fs 0 body 1 pos 4,4 stuck 0
+RC POS 110 id 10 seat 3 role raid fs 1 body 2 pos 4,6 stuck 0
+RC POS 110 id 13 seat 4 role defend fs 0 body 1 pos 6,1 stuck 16
+RC POS 111 id 3 seat 0 role raid fs 1 body 1 pos 4,2 stuck 0
+RC POS 111 id 5 seat 1 role expand fs 0 body 1 pos 4,5 stuck 0
+RC POS 111 id 7 seat 2 role expand fs 0 body 1 pos 5,4 stuck 0
+RC POS 111 id 10 seat 3 role raid fs 1 body 2 pos 3,6 stuck 0
+RC POS 111 id 13 seat 4 role defend fs 0 body 1 pos 6,1 stuck 18
+RC POS 112 id 3 seat 0 role raid fs 1 body 1 pos 5,2 stuck 0
+RC POS 112 id 5 seat 1 role expand fs 0 body 1 pos 4,4 stuck 0
+RC POS 112 id 7 seat 2 role expand fs 0 body 1 pos 5,3 stuck 0
+RC POS 112 id 10 seat 3 role raid fs 1 body 2 pos 3,5 stuck 0
+RC POS 112 id 13 seat 4 role defend fs 0 body 1 pos 6,1 stuck 20
+RC POS 113 id 3 seat 0 role raid fs 1 body 1 pos 4,2 stuck 0
+RC POS 113 id 5 seat 1 role expand fs 0 body 1 pos 4,5 stuck 0
+RC POS 113 id 7 seat 2 role expand fs 0 body 1 pos 5,4 stuck 0
+RC POS 113 id 10 seat 3 role raid fs 1 body 2 pos 3,6 stuck 0
+RC POS 113 id 13 seat 4 role defend fs 0 body 1 pos 6,1 stuck 22
+RC POS 114 id 3 seat 0 role raid fs 1 body 1 pos 5,2 stuck 0
+RC POS 114 id 5 seat 1 role expand fs 0 body 1 pos 4,4 stuck 0
+RC POS 114 id 7 seat 2 role expand fs 0 body 1 pos 5,3 stuck 0
+RC POS 114 id 10 seat 3 role raid fs 1 body 2 pos 3,5 stuck 0
+RC POS 114 id 13 seat 4 role defend fs 0 body 1 pos 6,1 stuck 24
+RC POS 115 id 3 seat 0 role raid fs 1 body 1 pos 4,2 stuck 0
+RC POS 115 id 5 seat 1 role expand fs 0 body 1 pos 4,5 stuck 0
+RC POS 115 id 7 seat 2 role expand fs 0 body 1 pos 5,2 stuck 0
+RC POS 115 id 10 seat 3 role raid fs 1 body 2 pos 3,6 stuck 0
+RC POS 115 id 13 seat 4 role defend fs 0 body 1 pos 6,1 stuck 26
+RC POS 116 id 3 seat 0 role raid fs 1 body 1 pos 4,1 stuck 0
+RC POS 116 id 5 seat 1 role expand fs 0 body 1 pos 3,5 stuck 0
+RC POS 116 id 10 seat 3 role raid fs 1 body 2 pos 2,6 stuck 0
+RC POS 116 id 13 seat 4 role defend fs 0 body 1 pos 6,1 stuck 28
+RC POS 117 id 3 seat 0 role raid fs 1 body 1 pos 3,1 stuck 0
+RC POS 117 id 5 seat 1 role expand fs 0 body 1 pos 3,6 stuck 0
+RC POS 117 id 10 seat 3 role raid fs 1 body 2 pos 2,5 stuck 0
+RC POS 117 id 13 seat 4 role defend fs 0 body 1 pos 6,1 stuck 30
+RC POS 118 id 3 seat 0 role raid fs 1 body 1 pos 4,1 stuck 0
+RC POS 118 id 5 seat 1 role expand fs 0 body 1 pos 4,6 stuck 0
+RC POS 118 id 10 seat 3 role raid fs 1 body 2 pos 3,5 stuck 0
+RC POS 118 id 13 seat 4 role defend fs 0 body 1 pos 6,1 stuck 32
+RC POS 119 id 3 seat 0 role raid fs 1 body 1 pos 3,1 stuck 0
+RC POS 119 id 5 seat 1 role expand fs 0 body 1 pos 4,5 stuck 0
+RC POS 119 id 10 seat 3 role raid fs 1 body 2 pos 3,6 stuck 0
+RC POS 119 id 13 seat 4 role defend fs 0 body 1 pos 6,1 stuck 34
+RC POS 120 id 3 seat 0 role raid fs 1 body 1 pos 4,1 stuck 0
+RC POS 120 id 5 seat 1 role expand fs 0 body 1 pos 4,4 stuck 0
+RC POS 120 id 10 seat 3 role raid fs 1 body 2 pos 3,5 stuck 0
+RC POS 120 id 13 seat 4 role defend fs 0 body 1 pos 6,1 stuck 36
+RC POS 121 id 3 seat 0 role raid fs 1 body 1 pos 3,1 stuck 0
+RC POS 121 id 5 seat 1 role expand fs 0 body 1 pos 5,4 stuck 0
+RC POS 121 id 10 seat 3 role raid fs 1 body 2 pos 4,5 stuck 0
+RC POS 121 id 13 seat 4 role defend fs 0 body 1 pos 6,1 stuck 38
+RC POS 122 id 3 seat 0 role raid fs 1 body 1 pos 4,1 stuck 0
+RC POS 122 id 5 seat 1 role expand fs 0 body 1 pos 6,4 stuck 0
+RC POS 122 id 10 seat 3 role raid fs 1 body 2 pos 4,5 stuck 1
+RC POS 122 id 13 seat 4 role defend fs 0 body 1 pos 6,1 stuck 40
+RC POS 123 id 3 seat 0 role raid fs 1 body 1 pos 3,1 stuck 0
+RC POS 123 id 5 seat 1 role expand fs 0 body 1 pos 5,4 stuck 0
+RC POS 123 id 10 seat 3 role raid fs 1 body 2 pos 4,4 stuck 0
+RC POS 123 id 13 seat 4 role defend fs 0 body 1 pos 6,1 stuck 42
+RC POS 124 id 3 seat 0 role raid fs 1 body 1 pos 4,1 stuck 0
+RC POS 124 id 5 seat 1 role expand fs 0 body 1 pos 5,3 stuck 0
+RC POS 124 id 10 seat 3 role raid fs 1 body 2 pos 4,5 stuck 0
+RC POS 124 id 13 seat 4 role defend fs 0 body 1 pos 6,1 stuck 44
+RC ECO 125 harvstore 3 harvseen -1 ti 133 units 12 scale 334.0
+RC POS 125 id 3 seat 0 role raid fs 1 body 1 pos 3,1 stuck 0
+RC POS 125 id 5 seat 1 role expand fs 0 body 1 pos 5,4 stuck 0
+RC POS 125 id 7 seat 2 role expand fs 0 body 1 pos 4,2 stuck 9
+RC POS 125 id 10 seat 3 role raid fs 1 body 2 pos 4,4 stuck 0
+RC POS 125 id 13 seat 4 role defend fs 0 body 1 pos 6,1 stuck 2
+RC POS 126 id 3 seat 0 role raid fs 1 body 1 pos 4,1 stuck 0
+RC POS 126 id 5 seat 1 role expand fs 0 body 1 pos 5,3 stuck 0
+RC POS 126 id 7 seat 2 role expand fs 0 body 1 pos 5,2 stuck 0
+RC POS 126 id 10 seat 3 role raid fs 1 body 2 pos 4,5 stuck 0
+RC POS 126 id 13 seat 4 role defend fs 0 body 1 pos 6,1 stuck 4
+RC POS 127 id 3 seat 0 role raid fs 1 body 1 pos 4,2 stuck 0
+RC POS 127 id 5 seat 1 role expand fs 0 body 1 pos 5,4 stuck 0
+RC POS 127 id 7 seat 2 role expand fs 0 body 1 pos 5,3 stuck 0
+RC POS 127 id 10 seat 3 role raid fs 1 body 2 pos 4,4 stuck 0
+RC POS 127 id 13 seat 4 role defend fs 0 body 1 pos 6,1 stuck 6
+RC POS 128 id 3 seat 0 role raid fs 1 body 1 pos 5,2 stuck 0
+RC POS 128 id 7 seat 2 role expand fs 0 body 1 pos 5,4 stuck 0
+RC POS 128 id 10 seat 3 role raid fs 1 body 2 pos 4,5 stuck 0
+RC POS 128 id 13 seat 4 role defend fs 0 body 1 pos 6,1 stuck 8
+RC POS 129 id 3 seat 0 role raid fs 1 body 1 pos 5,3 stuck 0
+RC POS 129 id 7 seat 2 role expand fs 0 body 1 pos 4,4 stuck 0
+RC POS 129 id 10 seat 3 role raid fs 1 body 2 pos 3,5 stuck 0
+RC POS 129 id 13 seat 4 role defend fs 0 body 1 pos 6,1 stuck 2
+RC POS 130 id 3 seat 0 role raid fs 1 body 1 pos 5,4 stuck 0
+RC POS 130 id 7 seat 2 role expand fs 0 body 1 pos 4,5 stuck 0
+RC POS 130 id 10 seat 3 role raid fs 1 body 2 pos 3,6 stuck 0
+RC POS 130 id 13 seat 4 role defend fs 0 body 1 pos 6,1 stuck 4
+RC POS 131 id 3 seat 0 role raid fs 1 body 1 pos 4,4 stuck 0
+RC POS 131 id 7 seat 2 role expand fs 0 body 1 pos 4,6 stuck 0
+RC POS 131 id 10 seat 3 role raid fs 1 body 2 pos 3,5 stuck 0
+RC POS 131 id 13 seat 4 role defend fs 0 body 1 pos 6,1 stuck 6
+RC POS 132 id 3 seat 0 role raid fs 1 body 1 pos 5,4 stuck 0
+RC POS 132 id 7 seat 2 role expand fs 0 body 1 pos 4,7 stuck 0
+RC POS 132 id 10 seat 3 role raid fs 1 body 2 pos 4,5 stuck 0
+RC POS 132 id 13 seat 4 role defend fs 0 body 1 pos 6,1 stuck 2
+RC POS 133 id 3 seat 0 role raid fs 1 body 1 pos 4,4 stuck 0
+RC POS 133 id 7 seat 2 role expand fs 0 body 1 pos 4,8 stuck 0
+RC POS 133 id 10 seat 3 role raid fs 1 body 2 pos 3,5 stuck 0
+RC POS 133 id 13 seat 4 role defend fs 0 body 1 pos 6,1 stuck 4
+RC POS 134 id 3 seat 0 role raid fs 1 body 1 pos 5,4 stuck 0
+RC POS 134 id 7 seat 2 role expand fs 0 body 1 pos 3,8 stuck 0
+RC POS 134 id 10 seat 3 role raid fs 1 body 2 pos 4,5 stuck 0
+RC POS 134 id 13 seat 4 role defend fs 0 body 1 pos 6,1 stuck 6
+RC POS 135 id 3 seat 0 role raid fs 1 body 1 pos 4,4 stuck 0
+RC POS 135 id 7 seat 2 role expand fs 0 body 1 pos 3,8 stuck 1
+RC POS 135 id 10 seat 3 role raid fs 1 body 2 pos 3,5 stuck 0
+RC POS 135 id 13 seat 4 role defend fs 0 body 1 pos 6,1 stuck 2
+RC POS 136 id 3 seat 0 role raid fs 1 body 1 pos 4,5 stuck 0
+RC POS 136 id 7 seat 2 role expand fs 0 body 1 pos 3,8 stuck 2
+RC POS 136 id 10 seat 3 role raid fs 1 body 2 pos 3,6 stuck 0
+RC POS 136 id 13 seat 4 role defend fs 0 body 1 pos 6,1 stuck 4
+RC POS 137 id 3 seat 0 role raid fs 1 body 1 pos 4,4 stuck 0
+RC POS 137 id 7 seat 2 role expand fs 0 body 1 pos 3,8 stuck 3
+RC POS 137 id 10 seat 3 role raid fs 1 body 2 pos 3,5 stuck 0
+RC POS 137 id 13 seat 4 role defend fs 0 body 1 pos 6,1 stuck 6
+RC POS 138 id 3 seat 0 role raid fs 1 body 1 pos 4,5 stuck 0
+RC POS 138 id 7 seat 2 role expand fs 0 body 1 pos 3,8 stuck 4
+RC POS 138 id 10 seat 3 role raid fs 1 body 2 pos 3,6 stuck 0
+RC POS 138 id 13 seat 4 role defend fs 0 body 1 pos 6,1 stuck 2
+RC POS 139 id 3 seat 0 role raid fs 1 body 1 pos 4,4 stuck 0
+RC POS 139 id 7 seat 2 role expand fs 0 body 1 pos 3,8 stuck 5
+RC POS 139 id 10 seat 3 role raid fs 1 body 2 pos 3,5 stuck 0
+RC POS 139 id 13 seat 4 role defend fs 0 body 1 pos 6,1 stuck 4
+RC POS 140 id 3 seat 0 role raid fs 1 body 1 pos 4,5 stuck 0
+RC POS 140 id 7 seat 2 role expand fs 0 body 1 pos 4,8 stuck 0
+RC POS 140 id 10 seat 3 role raid fs 1 body 2 pos 3,6 stuck 0
+RC POS 140 id 13 seat 4 role defend fs 0 body 1 pos 6,1 stuck 6
+RC POS 141 id 3 seat 0 role raid fs 1 body 1 pos 4,4 stuck 0
+RC POS 141 id 7 seat 2 role expand fs 0 body 1 pos 4,7 stuck 0
+RC POS 141 id 10 seat 3 role raid fs 1 body 2 pos 3,5 stuck 0
+RC POS 141 id 13 seat 4 role defend fs 0 body 1 pos 6,1 stuck 2
+RC POS 142 id 3 seat 0 role raid fs 1 body 1 pos 5,4 stuck 0
+RC POS 142 id 7 seat 2 role expand fs 0 body 1 pos 4,6 stuck 0
+RC POS 142 id 10 seat 3 role raid fs 1 body 2 pos 4,5 stuck 0
+RC POS 142 id 13 seat 4 role defend fs 0 body 1 pos 6,1 stuck 4
+RC POS 143 id 3 seat 0 role raid fs 1 body 1 pos 4,4 stuck 0
+RC POS 143 id 7 seat 2 role expand fs 0 body 1 pos 3,6 stuck 0
+RC POS 143 id 10 seat 3 role raid fs 1 body 2 pos 3,5 stuck 0
+RC POS 143 id 13 seat 4 role defend fs 0 body 1 pos 6,1 stuck 6
+RC POS 144 id 3 seat 0 role raid fs 1 body 1 pos 4,5 stuck 0
+RC POS 144 id 7 seat 2 role expand fs 0 body 1 pos 2,6 stuck 0
+RC POS 144 id 10 seat 3 role raid fs 1 body 2 pos 3,6 stuck 0
+RC POS 144 id 13 seat 4 role defend fs 0 body 1 pos 6,1 stuck 2
+RC POS 145 id 3 seat 0 role raid fs 1 body 1 pos 4,4 stuck 0
+RC POS 145 id 7 seat 2 role expand fs 0 body 1 pos 2,5 stuck 0
+RC POS 145 id 10 seat 3 role raid fs 1 body 2 pos 4,6 stuck 0
+RC POS 145 id 13 seat 4 role defend fs 0 body 1 pos 6,1 stuck 4
+RC POS 146 id 3 seat 0 role raid fs 1 body 1 pos 5,4 stuck 0
+RC POS 146 id 7 seat 2 role expand fs 0 body 1 pos 3,5 stuck 0
+RC POS 146 id 10 seat 3 role raid fs 1 body 2 pos 3,6 stuck 0
+RC POS 146 id 13 seat 4 role defend fs 0 body 1 pos 6,1 stuck 6
+RC POS 147 id 3 seat 0 role raid fs 1 body 1 pos 4,4 stuck 0
+RC POS 147 id 7 seat 2 role expand fs 0 body 1 pos 4,5 stuck 0
+RC POS 147 id 10 seat 3 role raid fs 1 body 2 pos 3,5 stuck 0
+RC POS 147 id 13 seat 4 role defend fs 0 body 1 pos 6,1 stuck 2
+RC POS 148 id 3 seat 0 role raid fs 1 body 1 pos 5,4 stuck 0
+RC POS 148 id 7 seat 2 role expand fs 0 body 1 pos 4,4 stuck 0
+RC POS 148 id 10 seat 3 role raid fs 1 body 2 pos 4,5 stuck 0
+RC POS 148 id 13 seat 4 role defend fs 0 body 1 pos 6,1 stuck 4
+RC POS 149 id 3 seat 0 role raid fs 1 body 1 pos 5,3 stuck 0
+RC POS 149 id 7 seat 2 role expand fs 0 body 1 pos 5,4 stuck 0
+RC POS 149 id 10 seat 3 role raid fs 1 body 2 pos 4,4 stuck 0
+RC POS 149 id 13 seat 4 role defend fs 0 body 1 pos 6,1 stuck 6
+RC ECO 150 harvstore 3 harvseen -1 ti 136 units 11 scale 314.0
+RC POS 150 id 3 seat 0 role raid fs 1 body 1 pos 6,3 stuck 0
+RC POS 150 id 7 seat 2 role expand fs 0 body 1 pos 5,3 stuck 0
+RC POS 150 id 10 seat 3 role raid fs 1 body 2 pos 4,5 stuck 0
+RC POS 150 id 13 seat 4 role defend fs 0 body 1 pos 6,1 stuck 2
+RC POS 151 id 3 seat 0 role raid fs 1 body 1 pos 6,4 stuck 0
+RC POS 151 id 7 seat 2 role expand fs 0 body 1 pos 5,2 stuck 0
+RC POS 151 id 10 seat 3 role raid fs 1 body 2 pos 4,5 stuck 1
+RC POS 151 id 13 seat 4 role defend fs 0 body 1 pos 6,1 stuck 4
+RC POS 152 id 3 seat 0 role raid fs 1 body 1 pos 6,4 stuck 1
+RC POS 152 id 7 seat 2 role expand fs 0 body 1 pos 4,2 stuck 0
+RC POS 152 id 10 seat 3 role raid fs 1 body 2 pos 4,5 stuck 2
+RC POS 152 id 13 seat 4 role defend fs 0 body 1 pos 6,1 stuck 6
+RC POS 153 id 3 seat 0 role raid fs 1 body 1 pos 5,4 stuck 0
+RC POS 153 id 7 seat 2 role expand fs 0 body 1 pos 4,1 stuck 0
+RC POS 153 id 10 seat 3 role raid fs 1 body 2 pos 4,5 stuck 3
+RC POS 153 id 13 seat 4 role defend fs 0 body 1 pos 6,1 stuck 2
+RC POS 154 id 3 seat 0 role raid fs 1 body 1 pos 4,4 stuck 0
+RC POS 154 id 7 seat 2 role expand fs 0 body 1 pos 4,1 stuck 1
+RC POS 154 id 10 seat 3 role raid fs 1 body 2 pos 4,5 stuck 4
+RC POS 154 id 13 seat 4 role defend fs 0 body 1 pos 6,1 stuck 4

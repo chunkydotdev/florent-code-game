@@ -1,0 +1,20 @@
+  parent  n=24   firstlink med 5.0    arr1 med 9.0   arr2 med 10.0   harv30 med 2.0   links 120  comply 53/120 (44.2%)  MUSTERLINK 24/24 (100.0%)  restlinks 29/96 (30.2%)  b2chain 3/24 (12.5%)  split_both 6/19  alarms dup=4 col=19 appt=0  scale30 med 243
+  v526    n=24   firstlink med 3.0    arr1 med 7.0   arr2 med 8.0    harv30 med 3.0   links 129  comply 54/129 (41.9%)  MUSTERLINK 24/24 (100.0%)  restlinks 30/105 (28.6%)  b2chain 4/24 (16.7%)  split_both 9/19  alarms dup=6 col=23 appt=0  scale30 med 247
+-- drakkarfjord
+  parent  n=24   firstlink med 5.0    arr1 med 15.0  arr2 med 16.0   harv30 med 2.0   links 150  comply 120/150 (80.0%)  MUSTERLINK 24/24 (100.0%)  restlinks 96/126 (76.2%)  b2chain 1/24 (4.2%)  split_both 24/24  alarms dup=0 col=25 appt=0  scale30 med 208
+  v526    n=24   firstlink med 3.0    arr1 med 13.0  arr2 med 14.0   harv30 med 1.0   links 146  comply 120/146 (82.2%)  MUSTERLINK 24/24 (100.0%)  restlinks 96/122 (78.7%)  b2chain 0/24 (0.0%)  split_both 24/24  alarms dup=0 col=24 appt=0  scale30 med 222
+-- fjordgate
+  parent  n=24   firstlink med 119    arr1 med 1.0   arr2 med 4.0    harv30 med 2.0   links 5    comply 1/5 (20.0%)  MUSTERLINK 1/5 (20.0%)  restlinks 0/0 (0.0%)  b2chain 1/24 (4.2%)  split_both 4/19  alarms dup=0 col=26 appt=0  scale30 med 232
+  v526    n=24   firstlink med 150    arr1 med 1.0   arr2 med 3.0    harv30 med 2.0   links 5    comply 0/5 (0.0%)  MUSTERLINK 0/5 (0.0%)  restlinks 0/0 (0.0%)  b2chain 0/24 (0.0%)  split_both 5/20  alarms dup=0 col=24 appt=0  scale30 med 236
+-- glacierkeep
+  parent  n=24   firstlink med 5.0    arr1 med 13.0  arr2 med 14.0   harv30 med 2.0   links 101  comply 96/101 (95.0%)  MUSTERLINK 24/24 (100.0%)  restlinks 72/77 (93.5%)  b2chain 0/24 (0.0%)  split_both 24/24  alarms dup=0 col=0 appt=0  scale30 med 228
+  v526    n=24   firstlink med 3.0    arr1 med 11.0  arr2 med 12.0   harv30 med 1.0   links 96   comply 96/96 (100.0%)  MUSTERLINK 24/24 (100.0%)  restlinks 72/72 (100.0%)  b2chain 0/24 (0.0%)  split_both 24/24  alarms dup=0 col=0 appt=0  scale30 med 224
+-- midgard
+  parent  n=24   firstlink med -1     arr1 med -1    arr2 med -1     harv30 med 4.0   links 0    comply 0/0 (0.0%)  MUSTERLINK 0/0 (0.0%)  restlinks 0/0 (0.0%)  b2chain 0/24 (0.0%)  split_both 0/0  alarms dup=0 col=0 appt=0  scale30 med 253
+  v526    n=24   firstlink med -1     arr1 med -1    arr2 med -1     harv30 med 4.0   links 0    comply 0/0 (0.0%)  MUSTERLINK 0/0 (0.0%)  restlinks 0/0 (0.0%)  b2chain 0/24 (0.0%)  split_both 0/0  alarms dup=0 col=0 appt=0  scale30 med 253
+-- nordkap
+  parent  n=24   firstlink med 5.0    arr1 med 9.0   arr2 med 10.0   harv30 med 1.0   links 68   comply 41/68 (60.3%)  MUSTERLINK 24/24 (100.0%)  restlinks 17/44 (38.6%)  b2chain 3/24 (12.5%)  split_both 18/24  alarms dup=65 col=3 appt=0  scale30 med 242
+  v526    n=24   firstlink med 3.0    arr1 med 7.0   arr2 med 8.0    harv30 med 1.0   links 64   comply 48/64 (75.0%)  MUSTERLINK 24/24 (100.0%)  restlinks 24/40 (60.0%)  b2chain 2/24 (8.3%)  split_both 24/24  alarms dup=0 col=0 appt=0  scale30 med 245
+-- yulerune
+  parent  n=24   firstlink med 5.0    arr1 med 13.0  arr2 med 14.0   harv30 med 2.0   links 72   comply 67/72 (93.1%)  MUSTERLINK 24/24 (100.0%)  restlinks 43/48 (89.6%)  b2chain 0/24 (0.0%)  split_both 19/24  alarms dup=0 col=0 appt=0  scale30 med 238
+  v526    n=24   firstlink med 3.0    arr1 med 11.0  arr2 med 12.0   harv30 med 2.0   links 90   comply 70/90 (77.8%)  MUSTERLINK 24/24 (100.0%)  restlinks 46/66 (69.7%)  b2chain 1/24 (4.2%)  split_both 22/24  alarms dup=0 col=1 appt=0  scale30 med 236

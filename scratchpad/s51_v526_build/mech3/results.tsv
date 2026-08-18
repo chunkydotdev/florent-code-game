@@ -1,0 +1,193 @@
+tag	map	seed	seat	arm	ours	winner	cond	turn	tracebacks	ours_mined	opp_mined
+v526_atoll_s7_A	atoll	7	A	v526	US	inst_v526	Titanium collected (tiebreak)	1000	0	2320	190
+parent_atoll_s7_A	atoll	7	A	parent	OPP	_v488beltbreak2	Titanium collected (tiebreak)	1000	0	4970	9720
+v526_atoll_s7_B	atoll	7	B	v526	OPP	_v488beltbreak2	Core destroyed	230	0	1030	1080
+parent_atoll_s7_B	atoll	7	B	parent	OPP	_v488beltbreak2	Core destroyed	325	0	2120	1650
+v526_atoll_s8_A	atoll	8	A	v526	US	inst_v526	Core destroyed	157	0	1030	40
+parent_atoll_s8_A	atoll	8	A	parent	OPP	_v488beltbreak2	Core destroyed	253	0	1340	1230
+v526_atoll_s8_B	atoll	8	B	v526	OPP	_v488beltbreak2	Core destroyed	241	0	800	970
+parent_atoll_s8_B	atoll	8	B	parent	OPP	_v488beltbreak2	Core destroyed	386	0	1090	1170
+v526_atoll_s9_A	atoll	9	A	v526	OPP	_v488beltbreak2	Core destroyed	625	0	3080	1610
+parent_atoll_s9_A	atoll	9	A	parent	US	inst_parent	Core destroyed	139	0	660	250
+v526_atoll_s9_B	atoll	9	B	v526	OPP	_v488beltbreak2	Harvesters (tiebreak)	1000	0	4960	4960
+parent_atoll_s9_B	atoll	9	B	parent	US	inst_parent	Core destroyed	114	0	430	160
+v526_atoll_s10_A	atoll	10	A	v526	US	inst_v526	Core destroyed	228	0	1110	100
+parent_atoll_s10_A	atoll	10	A	parent	OPP	_v488beltbreak2	Core destroyed	461	0	1260	2250
+v526_atoll_s10_B	atoll	10	B	v526	OPP	_v488beltbreak2	Core destroyed	273	0	1320	2680
+parent_atoll_s10_B	atoll	10	B	parent	US	inst_parent	Core destroyed	278	0	1410	880
+v526_atoll_s11_A	atoll	11	A	v526	US	inst_v526	Core destroyed	260	0	1270	200
+parent_atoll_s11_A	atoll	11	A	parent	US	inst_parent	Core destroyed	886	0	4400	4390
+v526_atoll_s11_B	atoll	11	B	v526	OPP	_v488beltbreak2	Core destroyed	313	0	370	480
+parent_atoll_s11_B	atoll	11	B	parent	US	inst_parent	Core destroyed	238	0	1100	2100
+v526_atoll_s12_A	atoll	12	A	v526	OPP	_v488beltbreak2	Core destroyed	656	0	3500	3240
+parent_atoll_s12_A	atoll	12	A	parent	OPP	_v488beltbreak2	Titanium collected (tiebreak)	1000	0	2610	2790
+v526_atoll_s12_B	atoll	12	B	v526	OPP	_v488beltbreak2	Core destroyed	581	0	550	260
+parent_atoll_s12_B	atoll	12	B	parent	US	inst_parent	Core destroyed	245	0	950	230
+v526_drakkarfjord_s7_A	drakkarfjord	7	A	v526	US	inst_v526	Core destroyed	259	0	670	160
+parent_drakkarfjord_s7_A	drakkarfjord	7	A	parent	US	inst_parent	Core destroyed	106	0	410	0
+v526_drakkarfjord_s7_B	drakkarfjord	7	B	v526	US	inst_v526	Core destroyed	481	0	2990	0
+parent_drakkarfjord_s7_B	drakkarfjord	7	B	parent	US	inst_parent	Core destroyed	98	0	300	0
+v526_drakkarfjord_s8_A	drakkarfjord	8	A	v526	US	inst_v526	Core destroyed	736	0	200	170
+parent_drakkarfjord_s8_A	drakkarfjord	8	A	parent	US	inst_parent	Core destroyed	89	0	340	0
+v526_drakkarfjord_s8_B	drakkarfjord	8	B	v526	US	inst_v526	Core destroyed	238	0	870	0
+parent_drakkarfjord_s8_B	drakkarfjord	8	B	parent	OPP	_v488beltbreak2	Titanium collected (tiebreak)	1000	0	350	850
+v526_drakkarfjord_s9_A	drakkarfjord	9	A	v526	US	inst_v526	Core destroyed	216	0	480	100
+parent_drakkarfjord_s9_A	drakkarfjord	9	A	parent	US	inst_parent	Core destroyed	186	0	1110	530
+v526_drakkarfjord_s9_B	drakkarfjord	9	B	v526	US	inst_v526	Titanium collected (tiebreak)	1000	0	60	0
+parent_drakkarfjord_s9_B	drakkarfjord	9	B	parent	US	inst_parent	Core destroyed	101	0	280	0
+v526_drakkarfjord_s10_A	drakkarfjord	10	A	v526	US	inst_v526	Core destroyed	127	0	260	0
+parent_drakkarfjord_s10_A	drakkarfjord	10	A	parent	US	inst_parent	Core destroyed	153	0	370	0
+v526_drakkarfjord_s10_B	drakkarfjord	10	B	v526	US	inst_v526	Core destroyed	238	0	870	0
+parent_drakkarfjord_s10_B	drakkarfjord	10	B	parent	US	inst_parent	Core destroyed	114	0	340	0
+v526_drakkarfjord_s11_A	drakkarfjord	11	A	v526	US	inst_v526	Core destroyed	179	0	390	100
+parent_drakkarfjord_s11_A	drakkarfjord	11	A	parent	US	inst_parent	Core destroyed	100	0	430	0
+v526_drakkarfjord_s11_B	drakkarfjord	11	B	v526	US	inst_v526	Core destroyed	205	0	1160	0
+parent_drakkarfjord_s11_B	drakkarfjord	11	B	parent	US	inst_parent	Core destroyed	96	0	320	0
+v526_drakkarfjord_s12_A	drakkarfjord	12	A	v526	OPP	_v488beltbreak2	Core destroyed	477	0	200	740
+parent_drakkarfjord_s12_A	drakkarfjord	12	A	parent	US	inst_parent	Core destroyed	99	0	290	0
+v526_drakkarfjord_s12_B	drakkarfjord	12	B	v526	US	inst_v526	Titanium collected (tiebreak)	1000	0	260	0
+parent_drakkarfjord_s12_B	drakkarfjord	12	B	parent	US	inst_parent	Core destroyed	600	0	1550	0
+v526_glacierkeep_s7_A	glacierkeep	7	A	v526	US	inst_v526	Core destroyed	97	0	150	0
+parent_glacierkeep_s7_A	glacierkeep	7	A	parent	US	inst_parent	Core destroyed	124	0	260	0
+v526_glacierkeep_s7_B	glacierkeep	7	B	v526	US	inst_v526	Core destroyed	397	0	0	0
+parent_glacierkeep_s7_B	glacierkeep	7	B	parent	US	inst_parent	Core destroyed	397	0	0	0
+v526_glacierkeep_s8_A	glacierkeep	8	A	v526	US	inst_v526	Titanium collected (tiebreak)	1000	0	10	0
+parent_glacierkeep_s8_A	glacierkeep	8	A	parent	OPP	_v488beltbreak2	Core destroyed	429	0	200	0
+v526_glacierkeep_s8_B	glacierkeep	8	B	v526	OPP	_v488beltbreak2	Harvesters (tiebreak)	1000	0	0	0
+parent_glacierkeep_s8_B	glacierkeep	8	B	parent	US	inst_parent	Titanium stored (tiebreak)	1000	0	0	0
+v526_glacierkeep_s9_A	glacierkeep	9	A	v526	US	inst_v526	Core destroyed	153	0	10	0
+parent_glacierkeep_s9_A	glacierkeep	9	A	parent	US	inst_parent	Core destroyed	162	0	350	130
+v526_glacierkeep_s9_B	glacierkeep	9	B	v526	US	inst_v526	Titanium collected (tiebreak)	1000	0	670	0
+parent_glacierkeep_s9_B	glacierkeep	9	B	parent	US	inst_parent	Core destroyed	245	0	0	0
+v526_glacierkeep_s10_A	glacierkeep	10	A	v526	US	inst_v526	Core destroyed	559	0	1590	0
+parent_glacierkeep_s10_A	glacierkeep	10	A	parent	US	inst_parent	Core destroyed	137	0	280	0
+v526_glacierkeep_s10_B	glacierkeep	10	B	v526	US	inst_v526	Core destroyed	461	0	0	0
+parent_glacierkeep_s10_B	glacierkeep	10	B	parent	US	inst_parent	Core destroyed	337	0	0	0
+v526_glacierkeep_s11_A	glacierkeep	11	A	v526	US	inst_v526	Core destroyed	193	0	10	0
+parent_glacierkeep_s11_A	glacierkeep	11	A	parent	US	inst_parent	Core destroyed	173	0	490	0
+v526_glacierkeep_s11_B	glacierkeep	11	B	v526	US	inst_v526	Core destroyed	345	0	0	0
+parent_glacierkeep_s11_B	glacierkeep	11	B	parent	US	inst_parent	Core destroyed	281	0	0	0
+v526_glacierkeep_s12_A	glacierkeep	12	A	v526	US	inst_v526	Titanium collected (tiebreak)	1000	0	10	0
+parent_glacierkeep_s12_A	glacierkeep	12	A	parent	US	inst_parent	Core destroyed	130	0	280	0
+v526_glacierkeep_s12_B	glacierkeep	12	B	v526	US	inst_v526	Core destroyed	205	0	0	0
+parent_glacierkeep_s12_B	glacierkeep	12	B	parent	OPP	_v488beltbreak2	Harvesters (tiebreak)	1000	0	0	0
+v526_nordkap_s7_A	nordkap	7	A	v526	US	inst_v526	Core destroyed	229	0	750	390
+parent_nordkap_s7_A	nordkap	7	A	parent	US	inst_parent	Core destroyed	130	0	300	80
+v526_nordkap_s7_B	nordkap	7	B	v526	US	inst_v526	Core destroyed	257	0	10	170
+parent_nordkap_s7_B	nordkap	7	B	parent	OPP	_v488beltbreak2	Core destroyed	456	0	660	3700
+v526_nordkap_s8_A	nordkap	8	A	v526	OPP	_v488beltbreak2	Titanium collected (tiebreak)	1000	0	0	50
+parent_nordkap_s8_A	nordkap	8	A	parent	US	inst_parent	Core destroyed	324	0	1890	140
+v526_nordkap_s8_B	nordkap	8	B	v526	US	inst_v526	Titanium collected (tiebreak)	1000	0	2230	70
+parent_nordkap_s8_B	nordkap	8	B	parent	OPP	_v488beltbreak2	Core destroyed	248	0	90	2730
+v526_nordkap_s9_A	nordkap	9	A	v526	US	inst_v526	Core destroyed	131	0	470	80
+parent_nordkap_s9_A	nordkap	9	A	parent	US	inst_parent	Core destroyed	205	0	140	70
+v526_nordkap_s9_B	nordkap	9	B	v526	US	inst_v526	Core destroyed	230	0	410	0
+parent_nordkap_s9_B	nordkap	9	B	parent	US	inst_parent	Core destroyed	290	0	160	50
+v526_nordkap_s10_A	nordkap	10	A	v526	OPP	_v488beltbreak2	Core destroyed	184	0	0	1260
+parent_nordkap_s10_A	nordkap	10	A	parent	US	inst_parent	Core destroyed	183	0	260	120
+v526_nordkap_s10_B	nordkap	10	B	v526	OPP	_v488beltbreak2	Core destroyed	673	0	7470	4480
+parent_nordkap_s10_B	nordkap	10	B	parent	OPP	_v488beltbreak2	Core destroyed	390	0	2840	3540
+v526_nordkap_s11_A	nordkap	11	A	v526	OPP	_v488beltbreak2	Titanium collected (tiebreak)	1000	0	0	2420
+parent_nordkap_s11_A	nordkap	11	A	parent	US	inst_parent	Core destroyed	97	0	300	0
+v526_nordkap_s11_B	nordkap	11	B	v526	OPP	_v488beltbreak2	Core destroyed	353	0	120	1570
+parent_nordkap_s11_B	nordkap	11	B	parent	OPP	_v488beltbreak2	Core destroyed	433	0	130	10
+v526_nordkap_s12_A	nordkap	12	A	v526	US	inst_v526	Core destroyed	113	0	480	50
+parent_nordkap_s12_A	nordkap	12	A	parent	US	inst_parent	Core destroyed	433	0	1070	90
+v526_nordkap_s12_B	nordkap	12	B	v526	US	inst_v526	Core destroyed	168	0	520	180
+parent_nordkap_s12_B	nordkap	12	B	parent	OPP	_v488beltbreak2	Core destroyed	217	0	760	2940
+v526_yulerune_s7_A	yulerune	7	A	v526	OPP	_v488beltbreak2	Core destroyed	692	0	430	1560
+parent_yulerune_s7_A	yulerune	7	A	parent	US	inst_parent	Core destroyed	109	0	190	0
+v526_yulerune_s7_B	yulerune	7	B	v526	US	inst_v526	Titanium collected (tiebreak)	1000	0	3580	0
+parent_yulerune_s7_B	yulerune	7	B	parent	US	inst_parent	Core destroyed	90	0	400	0
+v526_yulerune_s8_A	yulerune	8	A	v526	US	inst_v526	Core destroyed	98	0	380	180
+parent_yulerune_s8_A	yulerune	8	A	parent	US	inst_parent	Core destroyed	97	0	230	0
+v526_yulerune_s8_B	yulerune	8	B	v526	US	inst_v526	Core destroyed	97	0	190	0
+parent_yulerune_s8_B	yulerune	8	B	parent	US	inst_parent	Core destroyed	215	0	610	0
+v526_yulerune_s9_A	yulerune	9	A	v526	US	inst_v526	Core destroyed	98	0	190	0
+parent_yulerune_s9_A	yulerune	9	A	parent	US	inst_parent	Core destroyed	88	0	220	0
+v526_yulerune_s9_B	yulerune	9	B	v526	US	inst_v526	Core destroyed	155	0	370	0
+parent_yulerune_s9_B	yulerune	9	B	parent	US	inst_parent	Core destroyed	141	0	130	0
+v526_yulerune_s10_A	yulerune	10	A	v526	US	inst_v526	Core destroyed	96	0	260	0
+parent_yulerune_s10_A	yulerune	10	A	parent	US	inst_parent	Core destroyed	88	0	250	0
+v526_yulerune_s10_B	yulerune	10	B	v526	US	inst_v526	Core destroyed	410	0	2480	0
+parent_yulerune_s10_B	yulerune	10	B	parent	US	inst_parent	Core destroyed	245	0	280	0
+v526_yulerune_s11_A	yulerune	11	A	v526	US	inst_v526	Titanium collected (tiebreak)	1000	0	770	270
+parent_yulerune_s11_A	yulerune	11	A	parent	US	inst_parent	Core destroyed	89	0	210	0
+v526_yulerune_s11_B	yulerune	11	B	v526	US	inst_v526	Core destroyed	294	0	2610	0
+parent_yulerune_s11_B	yulerune	11	B	parent	US	inst_parent	Core destroyed	462	0	2850	0
+v526_yulerune_s12_A	yulerune	12	A	v526	US	inst_v526	Core destroyed	164	0	940	0
+parent_yulerune_s12_A	yulerune	12	A	parent	US	inst_parent	Core destroyed	93	0	220	0
+v526_yulerune_s12_B	yulerune	12	B	v526	US	inst_v526	Core destroyed	83	0	290	0
+parent_yulerune_s12_B	yulerune	12	B	parent	US	inst_parent	Core destroyed	141	0	410	100
+v526_antler_s7_A	antler	7	A	v526	OPP	_v488beltbreak2	Core destroyed	202	0	660	1490
+parent_antler_s7_A	antler	7	A	parent	US	inst_parent	Core destroyed	225	0	1330	1500
+v526_antler_s7_B	antler	7	B	v526	US	inst_v526	Core destroyed	172	0	700	520
+parent_antler_s7_B	antler	7	B	parent	US	inst_parent	Core destroyed	150	0	390	70
+v526_antler_s8_A	antler	8	A	v526	US	inst_v526	Core destroyed	178	0	850	160
+parent_antler_s8_A	antler	8	A	parent	OPP	_v488beltbreak2	Core destroyed	153	0	630	1050
+v526_antler_s8_B	antler	8	B	v526	OPP	_v488beltbreak2	Core destroyed	397	0	1120	1060
+parent_antler_s8_B	antler	8	B	parent	US	inst_parent	Core destroyed	417	0	3420	2110
+v526_antler_s9_A	antler	9	A	v526	OPP	_v488beltbreak2	Core destroyed	214	0	1020	1700
+parent_antler_s9_A	antler	9	A	parent	OPP	_v488beltbreak2	Core destroyed	404	0	2050	2920
+v526_antler_s9_B	antler	9	B	v526	US	inst_v526	Core destroyed	239	0	1500	820
+parent_antler_s9_B	antler	9	B	parent	US	inst_parent	Core destroyed	213	0	1040	150
+v526_antler_s10_A	antler	10	A	v526	US	inst_v526	Core destroyed	188	0	710	460
+parent_antler_s10_A	antler	10	A	parent	US	inst_parent	Core destroyed	226	0	1630	1880
+v526_antler_s10_B	antler	10	B	v526	US	inst_v526	Core destroyed	351	0	1420	1150
+parent_antler_s10_B	antler	10	B	parent	US	inst_parent	Core destroyed	308	0	1440	370
+v526_antler_s11_A	antler	11	A	v526	US	inst_v526	Core destroyed	234	0	1320	1120
+parent_antler_s11_A	antler	11	A	parent	OPP	_v488beltbreak2	Core destroyed	204	0	600	1300
+v526_antler_s11_B	antler	11	B	v526	OPP	_v488beltbreak2	Core destroyed	242	0	730	3080
+parent_antler_s11_B	antler	11	B	parent	US	inst_parent	Core destroyed	194	0	940	140
+v526_antler_s12_A	antler	12	A	v526	US	inst_v526	Core destroyed	264	0	920	540
+parent_antler_s12_A	antler	12	A	parent	US	inst_parent	Core destroyed	157	0	760	270
+v526_antler_s12_B	antler	12	B	v526	OPP	_v488beltbreak2	Core destroyed	189	0	540	1200
+parent_antler_s12_B	antler	12	B	parent	US	inst_parent	Core destroyed	214	0	730	210
+v526_fjordgate_s7_A	fjordgate	7	A	v526	OPP	_v488beltbreak2	Core destroyed	106	0	0	890
+parent_fjordgate_s7_A	fjordgate	7	A	parent	US	inst_parent	Core destroyed	200	0	600	270
+v526_fjordgate_s7_B	fjordgate	7	B	v526	OPP	_v488beltbreak2	Core destroyed	394	0	1670	2340
+parent_fjordgate_s7_B	fjordgate	7	B	parent	US	inst_parent	Core destroyed	163	0	510	60
+v526_fjordgate_s8_A	fjordgate	8	A	v526	OPP	_v488beltbreak2	Titanium collected (tiebreak)	1000	0	30	2450
+parent_fjordgate_s8_A	fjordgate	8	A	parent	US	inst_parent	Core destroyed	179	0	840	150
+v526_fjordgate_s8_B	fjordgate	8	B	v526	OPP	_v488beltbreak2	Titanium collected (tiebreak)	1000	0	2480	7240
+parent_fjordgate_s8_B	fjordgate	8	B	parent	US	inst_parent	Core destroyed	214	0	510	0
+v526_fjordgate_s9_A	fjordgate	9	A	v526	OPP	_v488beltbreak2	Core destroyed	212	0	160	1340
+parent_fjordgate_s9_A	fjordgate	9	A	parent	OPP	_v488beltbreak2	Core destroyed	185	0	200	470
+v526_fjordgate_s9_B	fjordgate	9	B	v526	US	inst_v526	Core destroyed	449	0	80	0
+parent_fjordgate_s9_B	fjordgate	9	B	parent	US	inst_parent	Core destroyed	188	0	900	350
+v526_fjordgate_s10_A	fjordgate	10	A	v526	US	inst_v526	Core destroyed	155	0	530	80
+parent_fjordgate_s10_A	fjordgate	10	A	parent	OPP	_v488beltbreak2	Core destroyed	187	0	180	1410
+v526_fjordgate_s10_B	fjordgate	10	B	v526	OPP	_v488beltbreak2	Core destroyed	183	0	550	1480
+parent_fjordgate_s10_B	fjordgate	10	B	parent	US	inst_parent	Core destroyed	133	0	620	0
+v526_fjordgate_s11_A	fjordgate	11	A	v526	OPP	_v488beltbreak2	Core destroyed	106	0	0	890
+parent_fjordgate_s11_A	fjordgate	11	A	parent	US	inst_parent	Core destroyed	448	0	2200	230
+v526_fjordgate_s11_B	fjordgate	11	B	v526	OPP	_v488beltbreak2	Core destroyed	204	0	490	980
+parent_fjordgate_s11_B	fjordgate	11	B	parent	US	inst_parent	Core destroyed	176	0	260	0
+v526_fjordgate_s12_A	fjordgate	12	A	v526	OPP	_v488beltbreak2	Core destroyed	186	0	0	1690
+parent_fjordgate_s12_A	fjordgate	12	A	parent	OPP	_v488beltbreak2	Core destroyed	125	0	360	660
+v526_fjordgate_s12_B	fjordgate	12	B	v526	OPP	_v488beltbreak2	Core destroyed	192	0	450	1240
+parent_fjordgate_s12_B	fjordgate	12	B	parent	US	inst_parent	Core destroyed	178	0	1160	0
+v526_midgard_s7_A	midgard	7	A	v526	OPP	_v488beltbreak2	Core destroyed	220	0	660	1850
+parent_midgard_s7_A	midgard	7	A	parent	US	inst_parent	Core destroyed	849	0	3590	680
+v526_midgard_s7_B	midgard	7	B	v526	OPP	_v488beltbreak2	Core destroyed	271	0	1150	2240
+parent_midgard_s7_B	midgard	7	B	parent	OPP	_v488beltbreak2	Core destroyed	451	0	600	1640
+v526_midgard_s8_A	midgard	8	A	v526	OPP	_v488beltbreak2	Core destroyed	301	0	960	1400
+parent_midgard_s8_A	midgard	8	A	parent	OPP	_v488beltbreak2	Core destroyed	465	0	800	1620
+v526_midgard_s8_B	midgard	8	B	v526	US	inst_v526	Core destroyed	832	0	1890	500
+parent_midgard_s8_B	midgard	8	B	parent	US	inst_parent	Core destroyed	516	0	4370	2810
+v526_midgard_s9_A	midgard	9	A	v526	OPP	_v488beltbreak2	Core destroyed	202	0	650	1770
+parent_midgard_s9_A	midgard	9	A	parent	US	inst_parent	Core destroyed	341	0	680	730
+v526_midgard_s9_B	midgard	9	B	v526	US	inst_v526	Core destroyed	165	0	1650	880
+parent_midgard_s9_B	midgard	9	B	parent	US	inst_parent	Core destroyed	161	0	1480	750
+v526_midgard_s10_A	midgard	10	A	v526	OPP	_v488beltbreak2	Core destroyed	296	0	710	1660
+parent_midgard_s10_A	midgard	10	A	parent	US	inst_parent	Core destroyed	397	0	580	710
+v526_midgard_s10_B	midgard	10	B	v526	OPP	_v488beltbreak2	Core destroyed	388	0	710	3050
+parent_midgard_s10_B	midgard	10	B	parent	US	inst_parent	Core destroyed	308	0	2560	760
+v526_midgard_s11_A	midgard	11	A	v526	OPP	_v488beltbreak2	Core destroyed	453	0	710	1210
+parent_midgard_s11_A	midgard	11	A	parent	US	inst_parent	Core destroyed	505	0	790	890
+v526_midgard_s11_B	midgard	11	B	v526	OPP	_v488beltbreak2	Core destroyed	258	0	630	3080
+parent_midgard_s11_B	midgard	11	B	parent	OPP	_v488beltbreak2	Core destroyed	157	0	610	1290
+v526_midgard_s12_A	midgard	12	A	v526	US	inst_v526	Core destroyed	913	0	1040	890
+parent_midgard_s12_A	midgard	12	A	parent	OPP	_v488beltbreak2	Core destroyed	285	0	660	630
+v526_midgard_s12_B	midgard	12	B	v526	OPP	_v488beltbreak2	Titanium collected (tiebreak)	1000	0	780	2830
+parent_midgard_s12_B	midgard	12	B	parent	OPP	_v488beltbreak2	Core destroyed	309	0	750	700

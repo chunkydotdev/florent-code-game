@@ -1,0 +1,16 @@
+Running match: probe_rc vs _v488beltbreak2
+  Map: ragnarok.map26  Seed: 3  Replay: 
+scratchpad/s51_v526_build/rc3/ragnarok_s3_A.replay26  TLE: 10ms
+Completed turn 0
+Completed turn 100
+Completed turn 200
+Completed turn 300
+Replay written to scratchpad/s51_v526_build/rc3/ragnarok_s3_A.replay26
+
+  Winner: _v488beltbreak2  (Core destroyed, turn 302)
+
+                       probe_rc     _v488beltbreak2  
+  Titanium     151 (1120 mined)    203 (2660 mined)  
+  Units                      10                  17  
+  Buildings                  25                  72  
+
