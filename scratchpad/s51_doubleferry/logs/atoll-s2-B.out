@@ -1,0 +1,14 @@
+Running match: base vs v513_dblferry
+  Map: atoll.map26  Seed: 2  Replay: 
+scratchpad/s51_doubleferry/logs/atoll-s2-B.replay26  TLE: 10ms
+Completed turn 0
+Completed turn 100
+Replay written to scratchpad/s51_doubleferry/logs/atoll-s2-B.replay26
+
+  Winner: v513_dblferry  (Core destroyed, turn 157)
+
+                         base     v513_dblferry  
+  Titanium     12 (440 mined)    12 (350 mined)  
+  Units                     9                 6  
+  Buildings                11                17  
+

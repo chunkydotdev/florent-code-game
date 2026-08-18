@@ -1,0 +1,110 @@
+--- bots/_v513siegecrew/doctrine.py	2026-08-17 23:17:01
++++ scratchpad/s51_doubleferry/v513_dblferry/doctrine.py	2026-08-18 05:50:16
+@@ -1471,7 +1471,14 @@
+ # and if its walk happens to take it through the pickup ring the launcher
+ # flings it forward.  A throw is only made when it strictly shortens the
+ # raider's distance to the enemy Core.
+-LOKI_FERRY_ON = True
++# PROBE (s51 double-ferry timing probe): OFF.  This plank is the CHASSIS's home
++# -launcher ferry and it is off-plank for the arrival question; turning it off
++# frees SLOT_FERRY_ID / SLOT_FERRY_RND (10, 11), and slot 10 is what the second
++# ferry-siege body's own publish channel needs (see DF_SUPP_SLOT below).  Every
++# use of both slots is gated on this flag (raid.py:1189, :1299), so False makes
++# them genuinely unowned.  NOT a ship change: it removes a behaviour the
++# incumbent has.
++LOKI_FERRY_ON = False       # PROBE: was True
+ LOKI_FERRY_STALE_RNDS = 3
+ 
+ # --- exile hardening -------------------------------------------------------
+@@ -2738,8 +2745,13 @@
+ # ⚠ 13.3pp at n=60/arm is INSIDE the 95% interval (half-width ~17.9pp at this
+ # base rate), so this is a DIRECTION on every column, not a significance claim.
+ # The code stays, behind the flag, for a fixture that could reverse it.
+-FS_CREW_ON = False
+-FS_CREW_SEAT = 3            # the roster seat that becomes the support raider
++# PROBE (s51): the crew is the thing being timed, so it is ON.
++FS_CREW_ON = True           # PROBE: was False (ships off -- it LOST on wins)
++# PROBE: seat 1, not seat 3.  The core spawns at most one body a turn, so seat
++# 3 cannot exist before r3 and cannot act before r4; seat 1 spawns at r1 and
++# acts at r2.  SACRIFICE: this takes the FIRST eco seat, so the economy opens
++# with one harvester hand instead of two.  Arrival is the question here.
++FS_CREW_SEAT = 1            # PROBE: was 3
+ FS_CREW_OPEN_BUILDERS = 4   # the opening: 2 eco + sealer + support
+ # ⛔ THE FLAGGED VARIANT, DEFAULT OFF: keep the 3-builder opening and convert
+ # the seat-3 body to support only once the sealer reports AT THE RING.  Cheaper
+@@ -2808,6 +2820,75 @@
+ FS_CREW_SEAL_SHIFT = 8      # bits 8-18:  SEALER beat, round + 1
+ FS_CREW_SUPP_SHIFT = 19     # bits 19-29: SUPPORT beat, round + 1
+ FS_CREW_BEAT_MASK = 0x7FF
++# =============================================================================
++# s51 DOUBLE-FERRY TIMING PROBE.  Not a ship candidate.
++# =============================================================================
++# ⛔ THE DEFECT THIS BLOCK EXISTS FOR -- A LOST UPDATE ON A BUFFERED STORE.
++# Store writes are buffered a round, so two units writing the SAME slot in the
++# same round both read LAST round's word and the later writer's word is the one
++# that lands.  With FS_CREW_ON both ferry-siege bodies run `_fs_publish`
++# (SLOT_FS: beat + phase + RAIDER ID) and `_fs_crew_publish` (FS_CREW_SLOT:
++# both seats' beats) every round.  Turn order is entity-id ascending, so the
++# SUPPORT (spawned later, higher id) writes last and wins BOTH slots every
++# round.  Two consequences, both measured in the as-built crew logs:
++#   1. the SEALER's crew beat never advances once the support exists, so
++#      `_fs_crew_age(seat 0)` crosses FS_CREW_STALE ~6 rounds after the support
++#      spawns and the support PROMOTES itself to sealer (drakkarfjord s1:
++#      `FS PROMOTE 10` at r10, with the sealer id 3 still ferrying at r10).
++#      After that there is no support body at all, and every later spawn also
++#      reads the sealer seat as stale.
++#   2. SLOT_FS carries ONE raider id, and `_fs_ferry_launcher` throws that id
++#      and nothing else.  The body that loses the write has a paid-for launcher
++#      standing beside it that refuses to pick it up.
++# THE PROBE FIX: give the support its own slot.  Nothing then has two writers.
++DF_SUPP_SLOT = SLOT_FERRY_ID    # slot 10, freed by LOKI_FERRY_ON = False
++# same field layout as SLOT_FS, so `_fs_state` reads either slot unchanged:
++#   bits 0-10 beat (round+1), 11-13 phase, 14-29 raider id + 1
++DF_LOG = True               # PROBE instrument: stderr DF lines, always on
++DF_POS_EVERY = 1            # a POS line every N rounds while a body is alive
++
++# --- THE RELAY (Magnus, s51 mid-build) --------------------------------------
++# "Both builders are launched before the launcher can be destroyed and a new
++# launcher can be built."  The as-built ferry throws ONE body and calls
++# self_destruct() in the same turn, so a crew of two builds TWO parallel chains
++# -- twice the launchers, twice the titanium, and (measured, drakkarfjord s1)
++# the two chains run three rounds apart down the same tiles.
++# THE MECHANICS, read off CLAUDE.md's engine table and confirmed in the logs:
++#   * a throw costs the launcher `cooldown += 1` and cooldowns decrement at END
++#     of round, so a launcher that throws in round R has cooldown 0 again in
++#     R+1: ONE throw per round, consecutive rounds legal, never two in one.
++#   * pickup is d^2 <= 2 from the launcher, throw 1 <= d^2 <= 26 from the
++#     launcher, 0 ammo, position-only mutation (the thrown body keeps its own
++#     action and move cooldowns).
++#   * self_destruct() is the launcher's OWN action and needs nobody adjacent;
++#     destroy() would need an allied builder orthogonally adjacent, and after a
++#     relay hop both bodies are five tiles away.  So teardown is self_destruct.
++#   * destroying the launcher removes its +10% cost-scale contribution, which
++#     is what keeps a long chain from pricing the sentinel out.  DF SCALE lines
++#     instrument that refund.
++# THE CYCLE: body 1 builds launcher L at R; L throws body 1 at R+1 and body 2
++# at R+2, then self-destructs; body 1 (landed R+1) builds the next launcher at
++# R+2 in the new zone.  Body 1 hops on even rounds, body 2 one round behind it,
++# and ONE launcher is paid for per hop instead of two.
++DF_RELAY_ON = True
++DF_RELAY_TTL = 3            # rounds a relay launcher waits for its second
++                            # rider before tearing down anyway
++# ⛔ THE MUSTER, AND IT IS THE ONLY THING THE FIRST LINK NEEDS.  Measured on the
++# first relay smoke run (drakkarfjord s1): the steady state is self-sustaining
++# -- link L throws the lead at R+1 and body 2 at R+2, body 2 lands beside the
++# lead's next link and rides it at R+4 -- but the FIRST link cannot reach that
++# state, because the lead spawns a round before body 2 and the chain then
++# leaves at 2.5 tiles a round against a walk of 1.  In that run body 2 was
++# never once inside a pickup envelope and walked the whole map.  So the lead
++# WAITS for the first link only, and never again.
++DF_MUSTER_DSQ = 4           # body 2 this close to the lead == mustered
++DF_MUSTER_WAIT = 8          # ...and the lead goes alone after this many rounds,
++                            # so a body 2 that never spawns cannot stall a siege
++DF_RELAY_PATIENCE = 6       # rounds body 2 will ride the relay with no throw
++                            # and no launcher in sight before it gives up and
++                            # builds its own chain (the safe degrade -- without
++                            # it a body 2 that loses the relay strands forever)
++
+ FS_CREW_STALE = 6           # rounds without a crew beat before that seat is
+                             # scored dead.  The cap Magnus set is ~15 rounds
+                             # from death to a body engaging; 6 to notice plus

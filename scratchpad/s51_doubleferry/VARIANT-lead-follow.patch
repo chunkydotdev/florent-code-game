@@ -1,0 +1,38 @@
+--- /tmp/siege_bak.py	2026-08-18 05:55:40
++++ scratchpad/s51_doubleferry/v513_dblferry/siege.py	2026-08-18 05:56:28
+@@ -905,7 +905,34 @@
+         except Exception:
+             return None
+         if best is None:
+-            return None
++            # ⛔ NO LINK IN SIGHT: WALK TO THE LEAD, NOT TO THE ENEMY.  Measured
++            # on midgard seed 1 seat B -- body 2 spawned d^2 = 2 from the lead,
++            # then spent the two muster rounds walking toward the enemy target
++            # and was two tiles outside the first link's envelope when it threw.
++            # It never got inside another: the chain leaves at ~3 tiles a round
++            # and a builder walks 1, so ONE lost envelope is lost forever
++            # (link2 = 0 of 9 links, body 2 at the ring on r33 instead of r16).
++            # The lead is where the next link will be built, so standing beside
++            # it is the only stable place to be.
++            _b, _ph, lead = self._fs_state_at(ct, SLOT_FS)
++            if not lead:
++                return None
++            want = lead - 1
++            try:
++                for eid in ct.get_nearby_units():
++                    if eid != want or ct.get_team(eid) != self.team:
++                        continue
++                    lp = ct.get_position(eid)
++                    if lp.distance_squared(p) <= 2:
++                        return p             # already beside it: HOLD STATION
++                                             # (tgt == own tile -> _bfs_direction
++                                             # returns CENTRE and _nav no-ops)
++                    best = (lp.distance_squared(p), lp)
++                    break
++            except Exception:
++                return None
++            if best is None:
++                return None
+         lp = best[1]
+         want, want_d = None, None
+         for dx, dy in ((1, 0), (-1, 0), (0, 1), (0, -1),

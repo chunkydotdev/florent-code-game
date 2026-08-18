@@ -1,0 +1,437 @@
+Update available: 2.3.6 -> 2.3.8. Run: pip install --upgrade fcode
+DF SPAWN 1 id 3 body 1 seat 0 at 4,23 scale 140
+DF POS 1 id 3 body 1 at 4,23 d 808 hp 40
+DF MUSTER 1 id 3 wait 1 at 4,23
+DF POS 2 id 3 body 1 at 4,23 d 808 hp 40
+DF MUSTER 2 id 3 wait 1 at 4,23
+DF SPAWN 2 id 5 body 2 seat 1 at 4,24 scale 160
+DF POS 2 id 5 body 2 at 4,24 d 845 hp 40
+DF POS 3 id 3 body 1 at 4,23 d 808 hp 40
+DF HOPBUILD 3 id 3 body 1 at 4,23 lch 5,23 cost 36 scale 190
+DF POS 3 id 5 body 2 at 5,24 d 802 hp 40
+DF POS 4 id 3 body 1 at 4,23 d 808 hp 40
+DF POS 4 id 5 body 2 at 6,24 d 761 hp 40
+DF THROW 4 launcher 11 body 5 from 6,23 to 9,20 n 1 scale 190
+DF POS 5 id 3 body 1 at 4,22 d 773 hp 40
+DF POS 5 id 5 body 2 at 9,20 d 514 hp 40
+DF THROW 5 launcher 11 body 3 from 5,22 to 9,20 n 2 scale 190
+DF TEARDOWN 5 launcher 11 born 4 throws 2 scale 190
+DF POS 6 id 3 body 1 at 9,20 d 514 hp 40
+DF HOPBUILD 6 id 3 body 1 at 9,20 lch 9,19 cost 36 scale 190
+DF POS 6 id 5 body 2 at 10,20 d 481 hp 40
+DF POS 7 id 3 body 1 at 9,20 d 514 hp 40
+DF POS 7 id 5 body 2 at 10,19 d 452 hp 40
+DF THROW 7 launcher 13 body 5 from 10,18 to 13,16 n 1 scale 190
+DF POS 8 id 3 body 1 at 10,20 d 481 hp 40
+DF POS 8 id 5 body 2 at 13,16 d 290 hp 40
+DF THROW 8 launcher 13 body 3 from 10,19 to 13,16 n 2 scale 190
+DF TEARDOWN 8 launcher 13 born 7 throws 2 scale 190
+DF POS 9 id 3 body 1 at 13,16 d 290 hp 40
+DF HOPBUILD 9 id 3 body 1 at 13,16 lch 13,15 cost 36 scale 190
+DF POS 9 id 5 body 2 at 14,16 d 265 hp 40
+DF POS 10 id 3 body 1 at 13,16 d 290 hp 40
+DF POS 10 id 5 body 2 at 14,15 d 244 hp 40
+DF THROW 10 launcher 14 body 5 from 14,14 to 16,11 n 1 scale 190
+DF POS 11 id 3 body 1 at 14,16 d 265 hp 40
+DF POS 11 id 5 body 2 at 16,11 d 136 hp 40
+DF THROW 11 launcher 14 body 3 from 14,15 to 16,11 n 2 scale 190
+DF TEARDOWN 11 launcher 14 born 10 throws 2 scale 190
+DF POS 12 id 3 body 1 at 16,11 d 136 hp 40
+DF POS 12 id 5 body 2 at 17,11 d 117 hp 40
+DF POS 13 id 3 body 1 at 15,11 d 157 hp 40
+DF HOPBUILD 13 id 3 body 1 at 15,11 lch 16,11 cost 37 scale 195
+DF POS 13 id 5 body 2 at 18,11 d 100 hp 40
+DF POS 14 id 3 body 1 at 15,11 d 157 hp 40
+DF POS 14 id 5 body 2 at 17,11 d 117 hp 40
+DF THROW 14 launcher 19 body 5 from 17,10 to 20,8 n 1 scale 196
+DF POS 15 id 3 body 1 at 15,10 d 146 hp 40
+DF POS 15 id 5 body 2 at 20,8 d 45 hp 40
+DF THROW 15 launcher 19 body 3 from 15,10 to 20,8 n 2 scale 202
+DF TEARDOWN 15 launcher 19 born 14 throws 2 scale 202
+DF POS 16 id 3 body 1 at 20,8 d 45 hp 40
+DF HOPBUILD 16 id 3 body 1 at 20,8 lch 20,7 cost 38 scale 202
+DF POS 16 id 5 body 2 at 21,8 d 34 hp 40
+DF POS 17 id 3 body 1 at 20,8 d 45 hp 40
+DF POS 17 id 5 body 2 at 21,7 d 29 hp 40
+DF THROW 17 launcher 31 body 5 from 21,7 to 24,4 n 1 scale 204
+DF POS 18 id 3 body 1 at 21,8 d 34 hp 40
+DF POS 18 id 5 body 2 at 24,4 d 4 hp 40
+DF ARRIVE 18 id 5 body 2 ring
+DF THROW 18 launcher 31 body 3 from 21,7 to 24,4 n 2 scale 206
+DF TEARDOWN 18 launcher 31 born 17 throws 2 scale 206
+DF POS 19 id 3 body 1 at 24,4 d 4 hp 40
+DF ARRIVE 19 id 3 body 1 ring
+DF POS 19 id 5 body 2 at 25,4 d 1 hp 40
+DF ARRIVE 19 id 5 body 2 adj
+DF POS 20 id 3 body 1 at 24,5 d 4 hp 40
+DF POS 20 id 5 body 2 at 25,3 d 2 hp 40
+DF POS 21 id 3 body 1 at 24,5 d 4 hp 40
+DF POS 21 id 5 body 2 at 26,3 d 1 hp 40
+DF POS 22 id 3 body 1 at 24,4 d 4 hp 40
+DF POS 22 id 5 body 2 at 25,3 d 2 hp 40
+DF POS 23 id 3 body 1 at 24,4 d 4 hp 40
+DF POS 23 id 5 body 2 at 26,3 d 1 hp 40
+DF POS 24 id 3 body 1 at 24,3 d 5 hp 40
+DF POS 24 id 5 body 2 at 25,3 d 2 hp 40
+DF POS 25 id 3 body 1 at 24,2 d 8 hp 40
+DF POS 25 id 5 body 2 at 26,3 d 1 hp 40
+DF POS 26 id 3 body 1 at 24,3 d 5 hp 40
+DF POS 26 id 5 body 2 at 25,3 d 2 hp 40
+DF POS 27 id 3 body 1 at 24,2 d 8 hp 40
+DF POS 27 id 5 body 2 at 26,3 d 1 hp 40
+DF POS 28 id 3 body 1 at 24,3 d 5 hp 40
+DF POS 28 id 5 body 2 at 25,3 d 2 hp 40
+DF POS 29 id 3 body 1 at 23,3 d 10 hp 40
+DF POS 29 id 5 body 2 at 26,3 d 1 hp 40
+DF POS 30 id 3 body 1 at 24,3 d 5 hp 40
+DF POS 30 id 5 body 2 at 25,3 d 2 hp 40
+DF POS 31 id 3 body 1 at 24,2 d 8 hp 40
+DF POS 31 id 5 body 2 at 26,3 d 1 hp 40
+DF POS 32 id 3 body 1 at 25,2 d 5 hp 40
+DF POS 32 id 5 body 2 at 25,3 d 2 hp 40
+DF POS 33 id 3 body 1 at 26,2 d 4 hp 40
+DF POS 33 id 5 body 2 at 26,3 d 1 hp 40
+DF POS 34 id 3 body 1 at 27,2 d 4 hp 40
+DF POS 34 id 5 body 2 at 25,3 d 2 hp 40
+DF POS 35 id 3 body 1 at 27,2 d 4 hp 40
+DF POS 35 id 5 body 2 at 26,3 d 1 hp 40
+DF POS 36 id 3 body 1 at 27,2 d 4 hp 40
+DF POS 36 id 5 body 2 at 25,3 d 2 hp 40
+DF POS 37 id 3 body 1 at 27,2 d 4 hp 40
+DF POS 37 id 5 body 2 at 26,3 d 1 hp 40
+DF POS 38 id 3 body 1 at 28,2 d 5 hp 40
+DF POS 38 id 5 body 2 at 25,3 d 2 hp 40
+DF POS 39 id 3 body 1 at 28,3 d 2 hp 40
+DF POS 39 id 5 body 2 at 26,3 d 1 hp 40
+DF POS 40 id 3 body 1 at 28,3 d 2 hp 40
+DF POS 40 id 5 body 2 at 25,3 d 2 hp 40
+DF POS 41 id 3 body 1 at 28,2 d 5 hp 40
+DF POS 41 id 5 body 2 at 26,3 d 1 hp 40
+DF POS 42 id 3 body 1 at 27,2 d 4 hp 40
+DF POS 42 id 5 body 2 at 25,3 d 2 hp 40
+DF POS 43 id 3 body 1 at 26,2 d 4 hp 40
+DF POS 43 id 5 body 2 at 25,2 d 5 hp 40
+DF POS 44 id 3 body 1 at 26,2 d 4 hp 40
+DF POS 44 id 5 body 2 at 25,3 d 2 hp 40
+DF POS 45 id 3 body 1 at 25,2 d 5 hp 40
+DF POS 45 id 5 body 2 at 24,3 d 5 hp 40
+DF POS 46 id 3 body 1 at 25,2 d 5 hp 40
+DF POS 46 id 5 body 2 at 24,4 d 4 hp 40
+DF POS 47 id 3 body 1 at 24,2 d 8 hp 40
+DF POS 47 id 5 body 2 at 24,5 d 4 hp 40
+DF POS 48 id 3 body 1 at 24,3 d 5 hp 40
+DF POS 48 id 5 body 2 at 24,6 d 5 hp 40
+DF POS 49 id 3 body 1 at 24,4 d 4 hp 40
+DF POS 49 id 5 body 2 at 25,6 d 2 hp 40
+DF POS 50 id 3 body 1 at 24,5 d 4 hp 40
+DF POS 50 id 5 body 2 at 26,6 d 1 hp 40
+DF POS 51 id 3 body 1 at 23,5 d 9 hp 40
+DF POS 51 id 5 body 2 at 27,6 d 1 hp 40
+DF POS 52 id 3 body 1 at 24,5 d 4 hp 40
+DF POS 52 id 5 body 2 at 28,6 d 2 hp 40
+DF POS 53 id 3 body 1 at 23,5 d 9 hp 40
+DF POS 53 id 5 body 2 at 28,5 d 1 hp 40
+DF POS 54 id 3 body 1 at 24,5 d 4 hp 40
+DF POS 54 id 5 body 2 at 28,6 d 2 hp 40
+DF POS 55 id 3 body 1 at 23,5 d 9 hp 40
+DF POS 55 id 5 body 2 at 28,5 d 1 hp 40
+DF POS 56 id 3 body 1 at 24,5 d 4 hp 40
+DF POS 56 id 5 body 2 at 28,6 d 2 hp 40
+DF POS 57 id 3 body 1 at 24,6 d 5 hp 40
+DF POS 57 id 5 body 2 at 28,5 d 1 hp 40
+DF POS 58 id 3 body 1 at 25,6 d 2 hp 40
+DF POS 58 id 5 body 2 at 28,6 d 2 hp 40
+DF POS 59 id 3 body 1 at 25,6 d 2 hp 40
+DF POS 59 id 5 body 2 at 28,5 d 1 hp 40
+DF POS 60 id 3 body 1 at 25,6 d 2 hp 40
+DF POS 60 id 5 body 2 at 28,6 d 2 hp 40
+DF POS 61 id 3 body 1 at 25,6 d 2 hp 40
+DF POS 61 id 5 body 2 at 28,5 d 1 hp 40
+DF POS 62 id 3 body 1 at 25,6 d 2 hp 40
+DF POS 62 id 5 body 2 at 28,6 d 2 hp 40
+DF POS 63 id 3 body 1 at 25,6 d 2 hp 40
+DF POS 63 id 5 body 2 at 28,5 d 1 hp 40
+DF POS 64 id 3 body 1 at 25,6 d 2 hp 40
+DF POS 64 id 5 body 2 at 28,6 d 2 hp 40
+DF POS 65 id 3 body 1 at 25,6 d 2 hp 40
+DF POS 65 id 5 body 2 at 28,5 d 1 hp 40
+DF POS 66 id 3 body 1 at 25,6 d 2 hp 40
+DF POS 66 id 5 body 2 at 28,6 d 2 hp 40
+DF POS 67 id 3 body 1 at 25,6 d 2 hp 40
+DF POS 67 id 5 body 2 at 28,5 d 1 hp 40
+DF POS 68 id 3 body 1 at 25,6 d 2 hp 40
+DF POS 68 id 5 body 2 at 28,6 d 2 hp 40
+DF POS 69 id 3 body 1 at 25,6 d 2 hp 40
+DF POS 69 id 5 body 2 at 28,5 d 1 hp 40
+DF POS 70 id 3 body 1 at 25,6 d 2 hp 40
+DF POS 70 id 5 body 2 at 28,6 d 2 hp 40
+DF POS 71 id 3 body 1 at 25,6 d 2 hp 40
+DF POS 71 id 5 body 2 at 28,5 d 1 hp 40
+DF POS 72 id 3 body 1 at 25,6 d 2 hp 40
+DF POS 72 id 5 body 2 at 28,6 d 2 hp 40
+DF POS 73 id 3 body 1 at 25,6 d 2 hp 40
+DF POS 73 id 5 body 2 at 28,5 d 1 hp 40
+DF POS 74 id 3 body 1 at 25,7 d 5 hp 40
+DF POS 74 id 5 body 2 at 28,6 d 2 hp 40
+DF POS 75 id 3 body 1 at 26,7 d 4 hp 40
+DF POS 75 id 5 body 2 at 28,5 d 1 hp 40
+DF POS 76 id 3 body 1 at 26,7 d 4 hp 40
+DF POS 76 id 5 body 2 at 28,6 d 2 hp 40
+DF POS 77 id 3 body 1 at 26,7 d 4 hp 40
+DF POS 77 id 5 body 2 at 28,5 d 1 hp 40
+DF POS 78 id 3 body 1 at 26,6 d 1 hp 40
+DF ARRIVE 78 id 3 body 1 adj
+DF POS 78 id 5 body 2 at 28,6 d 2 hp 40
+DF POS 79 id 3 body 1 at 26,6 d 1 hp 40
+DF POS 79 id 5 body 2 at 27,6 d 1 hp 22
+DF POS 80 id 3 body 1 at 26,6 d 1 hp 40
+DF POS 80 id 5 body 2 at 27,7 d 4 hp 22
+DF POS 81 id 3 body 1 at 25,6 d 2 hp 40
+DF POS 81 id 5 body 2 at 28,7 d 5 hp 22
+DF POS 82 id 3 body 1 at 25,6 d 2 hp 40
+DF POS 82 id 5 body 2 at 29,7 d 8 hp 22
+DF POS 83 id 3 body 1 at 25,6 d 2 hp 40
+DF POS 83 id 5 body 2 at 28,7 d 5 hp 22
+DF POS 84 id 3 body 1 at 25,6 d 2 hp 40
+DF POS 84 id 5 body 2 at 29,7 d 8 hp 22
+DF POS 85 id 3 body 1 at 25,6 d 2 hp 40
+DF POS 85 id 5 body 2 at 28,7 d 5 hp 22
+DF POS 86 id 3 body 1 at 25,6 d 2 hp 40
+DF POS 86 id 5 body 2 at 29,7 d 8 hp 22
+DF POS 87 id 3 body 1 at 25,6 d 2 hp 40
+DF POS 87 id 5 body 2 at 29,6 d 5 hp 22
+DF POS 88 id 3 body 1 at 25,6 d 2 hp 40
+DF POS 88 id 5 body 2 at 29,5 d 4 hp 22
+DF POS 89 id 3 body 1 at 25,6 d 2 hp 40
+DF POS 89 id 5 body 2 at 28,5 d 1 hp 4
+DF POS 90 id 3 body 1 at 25,6 d 2 hp 40
+DF POS 90 id 5 body 2 at 29,5 d 4 hp 4
+DF POS 91 id 3 body 1 at 25,6 d 2 hp 40
+DF DEAD 92 id 5 body 2
+DF POS 92 id 3 body 1 at 25,6 d 2 hp 40
+DF POS 93 id 3 body 1 at 25,6 d 2 hp 40
+DF POS 94 id 3 body 1 at 25,7 d 5 hp 40
+DF POS 95 id 3 body 1 at 26,7 d 4 hp 22
+DF POS 96 id 3 body 1 at 25,7 d 5 hp 22
+DF POS 97 id 3 body 1 at 26,7 d 4 hp 4
+DF POS 98 id 3 body 1 at 25,7 d 5 hp 4
+DF DEAD 107 id 3 body 1
+DF SPAWN 159 id 398 body 1 seat 5 at 4,26 scale 290
+DF POS 159 id 398 body 1 at 4,26 d 925 hp 40
+DF MUSTER 159 id 398 wait 1 at 4,26
+DF POS 160 id 398 body 1 at 4,26 d 925 hp 40
+DF MUSTER 160 id 398 wait 1 at 4,26
+DF POS 161 id 398 body 1 at 4,26 d 925 hp 40
+DF MUSTER 161 id 398 wait 1 at 4,26
+DF POS 162 id 398 body 1 at 4,26 d 925 hp 40
+DF MUSTER 162 id 398 wait 1 at 4,26
+DF POS 163 id 398 body 1 at 4,26 d 925 hp 40
+DF MUSTER 163 id 398 wait 1 at 4,26
+DF POS 164 id 398 body 1 at 4,26 d 925 hp 40
+DF MUSTER 164 id 398 wait 1 at 4,26
+DF POS 165 id 398 body 1 at 4,26 d 925 hp 40
+DF MUSTER 165 id 398 wait 1 at 4,26
+DF POS 166 id 398 body 1 at 4,26 d 925 hp 40
+DF MUSTER 166 id 398 wait 1 at 4,26
+DF POS 167 id 398 body 1 at 4,26 d 925 hp 40
+DF POS 168 id 398 body 1 at 5,26 d 882 hp 40
+DF HOPBUILD 168 id 398 body 1 at 5,26 lch 5,25 cost 58 scale 300
+DF POS 169 id 398 body 1 at 5,26 d 882 hp 40
+DF THROW 169 launcher 430 body 398 from 5,26 to 9,22 n 1 scale 300
+DF POS 170 id 398 body 1 at 9,22 d 578 hp 40
+DF HOPBUILD 170 id 398 body 1 at 9,22 lch 9,21 cost 60 scale 310
+DF POS 171 id 398 body 1 at 9,22 d 578 hp 40
+DF THROW 171 launcher 435 body 398 from 10,22 to 13,18 n 1 scale 310
+DF POS 172 id 398 body 1 at 13,18 d 338 hp 40
+DF TEARDOWN 172 launcher 430 born 169 throws 1 scale 310 ttl 1
+DF POS 173 id 398 body 1 at 14,18 d 313 hp 40
+DF POS 174 id 398 body 1 at 14,17 d 288 hp 40
+DF HOPBUILD 174 id 398 body 1 at 14,17 lch 14,16 cost 60 scale 310
+DF TEARDOWN 174 launcher 435 born 171 throws 1 scale 310 ttl 1
+DF POS 175 id 398 body 1 at 14,17 d 288 hp 40
+DF THROW 175 launcher 447 body 398 from 15,17 to 18,13 n 1 scale 300
+DF POS 176 id 398 body 1 at 18,13 d 128 hp 40
+DF POS 177 id 398 body 1 at 19,13 d 113 hp 40
+DF POS 178 id 398 body 1 at 19,12 d 98 hp 40
+DF TEARDOWN 178 launcher 447 born 175 throws 1 scale 300 ttl 1
+DF POS 179 id 398 body 1 at 20,12 d 85 hp 40
+DF POS 180 id 398 body 1 at 20,11 d 72 hp 40
+DF POS 181 id 398 body 1 at 21,11 d 61 hp 40
+DF POS 182 id 398 body 1 at 21,10 d 50 hp 40
+DF HOPBUILD 182 id 398 body 1 at 21,10 lch 21,9 cost 58 scale 300
+DF POS 183 id 398 body 1 at 21,10 d 50 hp 40
+DF THROW 183 launcher 468 body 398 from 22,10 to 25,6 n 1 scale 300
+DF POS 184 id 398 body 1 at 25,6 d 2 hp 40
+DF ARRIVE 184 id 398 body 1 ring
+DF POS 185 id 398 body 1 at 25,7 d 5 hp 40
+DF POS 186 id 398 body 1 at 26,7 d 4 hp 22
+DF TEARDOWN 186 launcher 468 born 183 throws 1 scale 300 ttl 1
+DF POS 187 id 398 body 1 at 27,7 d 4 hp 22
+DF POS 188 id 398 body 1 at 27,7 d 4 hp 22
+DF POS 189 id 398 body 1 at 27,7 d 4 hp 22
+DF POS 190 id 398 body 1 at 27,7 d 4 hp 22
+DF POS 191 id 398 body 1 at 27,7 d 4 hp 22
+DF POS 192 id 398 body 1 at 27,7 d 4 hp 22
+DF POS 193 id 398 body 1 at 27,7 d 4 hp 22
+DF POS 194 id 398 body 1 at 27,7 d 4 hp 22
+DF POS 195 id 398 body 1 at 27,7 d 4 hp 22
+DF POS 196 id 398 body 1 at 28,7 d 5 hp 22
+DF POS 197 id 398 body 1 at 27,7 d 4 hp 22
+DF POS 198 id 398 body 1 at 28,7 d 5 hp 15
+DF POS 199 id 398 body 1 at 27,7 d 4 hp 15
+DF POS 200 id 398 body 1 at 27,7 d 4 hp 15
+DF POS 201 id 398 body 1 at 27,7 d 4 hp 15
+DF POS 202 id 398 body 1 at 27,7 d 4 hp 15
+DF POS 203 id 398 body 1 at 28,7 d 5 hp 8
+DF POS 204 id 398 body 1 at 27,7 d 4 hp 8
+DF POS 205 id 398 body 1 at 27,8 d 9 hp 8
+DF POS 206 id 398 body 1 at 27,7 d 4 hp 8
+DF POS 207 id 398 body 1 at 27,8 d 9 hp 8
+DF POS 208 id 398 body 1 at 27,7 d 4 hp 1
+DF POS 209 id 398 body 1 at 27,8 d 9 hp 1
+DF POS 210 id 398 body 1 at 27,7 d 4 hp 1
+DF POS 211 id 398 body 1 at 28,7 d 5 hp 1
+DF POS 212 id 398 body 1 at 29,7 d 8 hp 1
+DF POS 213 id 398 body 1 at 29,6 d 5 hp 1
+DF POS 214 id 398 body 1 at 29,5 d 4 hp 1
+DF POS 215 id 398 body 1 at 29,5 d 4 hp 1
+DF POS 216 id 398 body 1 at 29,6 d 5 hp 1
+DF POS 217 id 398 body 1 at 29,7 d 8 hp 1
+DF POS 218 id 398 body 1 at 29,6 d 5 hp 1
+DF POS 219 id 398 body 1 at 29,7 d 8 hp 1
+DF POS 220 id 398 body 1 at 29,6 d 5 hp 1
+DF POS 221 id 398 body 1 at 29,7 d 8 hp 1
+DF POS 222 id 398 body 1 at 29,6 d 5 hp 1
+DF POS 223 id 398 body 1 at 29,7 d 8 hp 1
+DF POS 224 id 398 body 1 at 29,6 d 5 hp 1
+DF POS 225 id 398 body 1 at 29,7 d 8 hp 1
+DF POS 226 id 398 body 1 at 28,7 d 5 hp 1
+DF POS 227 id 398 body 1 at 27,7 d 4 hp 1
+DF POS 228 id 398 body 1 at 27,7 d 4 hp 1
+DF POS 229 id 398 body 1 at 28,7 d 5 hp 1
+DF POS 230 id 398 body 1 at 29,7 d 8 hp 1
+DF POS 231 id 398 body 1 at 29,6 d 5 hp 1
+DF POS 232 id 398 body 1 at 29,5 d 4 hp 1
+DF POS 233 id 398 body 1 at 29,5 d 4 hp 1
+DF POS 234 id 398 body 1 at 29,6 d 5 hp 1
+DF POS 235 id 398 body 1 at 29,7 d 8 hp 1
+DF SPAWN 235 id 561 body 2 seat 6 at 3,26 scale 327
+DF POS 235 id 561 body 2 at 3,26 d 970 hp 40
+DF POS 236 id 398 body 1 at 28,7 d 5 hp 1
+DF POS 236 id 561 body 2 at 4,26 d 925 hp 40
+DF POS 237 id 398 body 1 at 27,7 d 4 hp 1
+DF POS 237 id 561 body 2 at 5,26 d 882 hp 40
+DF POS 238 id 398 body 1 at 26,7 d 4 hp 1
+DF POS 238 id 561 body 2 at 5,25 d 841 hp 40
+DF POS 239 id 398 body 1 at 27,7 d 4 hp 1
+DF POS 239 id 561 body 2 at 6,25 d 800 hp 40
+DF POS 240 id 561 body 2 at 7,25 d 761 hp 40
+DF DEAD 241 id 398 body 1
+DF POS 241 id 561 body 2 at 7,24 d 722 hp 40
+DF HOPBUILD 241 id 561 body 2 at 7,24 lch 8,24 cost 61 scale 317
+DF POS 242 id 561 body 2 at 7,24 d 722 hp 40
+DF THROW 242 launcher 568 body 561 from 7,23 to 11,20 n 1 scale 317
+DF POS 243 id 561 body 2 at 11,20 d 450 hp 40
+DF POS 244 id 561 body 2 at 12,20 d 421 hp 40
+DF POS 245 id 561 body 2 at 12,19 d 392 hp 40
+DF TEARDOWN 245 launcher 568 born 242 throws 1 scale 316 ttl 1
+DF POS 246 id 561 body 2 at 12,18 d 365 hp 40
+DF POS 247 id 561 body 2 at 13,18 d 338 hp 40
+DF POS 248 id 561 body 2 at 14,18 d 313 hp 40
+DF HOPBUILD 248 id 561 body 2 at 14,18 lch 14,17 cost 61 scale 316
+DF POS 249 id 561 body 2 at 14,18 d 313 hp 40
+DF THROW 249 launcher 572 body 561 from 15,18 to 17,13 n 1 scale 316
+DF POS 250 id 561 body 2 at 17,13 d 145 hp 40
+DF POS 251 id 561 body 2 at 18,13 d 128 hp 40
+DF POS 252 id 561 body 2 at 19,13 d 113 hp 40
+DF TEARDOWN 252 launcher 572 born 249 throws 1 scale 315 ttl 1
+DF POS 253 id 561 body 2 at 19,12 d 98 hp 40
+DF POS 254 id 561 body 2 at 20,12 d 85 hp 40
+DF POS 255 id 561 body 2 at 20,11 d 72 hp 40
+DF HOPBUILD 255 id 561 body 2 at 20,11 lch 20,10 cost 65 scale 335
+DF POS 256 id 561 body 2 at 20,11 d 72 hp 40
+DF THROW 256 launcher 578 body 561 from 21,11 to 24,7 n 1 scale 335
+DF POS 257 id 561 body 2 at 24,7 d 8 hp 40
+DF ARRIVE 257 id 561 body 2 ring
+DF POS 258 id 561 body 2 at 25,7 d 5 hp 40
+DF POS 259 id 561 body 2 at 26,7 d 4 hp 40
+DF TEARDOWN 259 launcher 578 born 256 throws 1 scale 335 ttl 1
+DF POS 260 id 561 body 2 at 27,7 d 4 hp 40
+DF POS 261 id 561 body 2 at 27,7 d 4 hp 40
+DF POS 262 id 561 body 2 at 28,7 d 5 hp 40
+DF POS 263 id 561 body 2 at 29,7 d 8 hp 40
+DF POS 264 id 561 body 2 at 29,6 d 5 hp 40
+DF POS 265 id 561 body 2 at 29,5 d 4 hp 40
+DF POS 266 id 561 body 2 at 29,5 d 4 hp 40
+DF POS 267 id 561 body 2 at 29,6 d 5 hp 40
+DF POS 268 id 561 body 2 at 29,5 d 4 hp 40
+DF POS 269 id 561 body 2 at 29,6 d 5 hp 40
+DF POS 270 id 561 body 2 at 29,5 d 4 hp 40
+DF POS 271 id 561 body 2 at 29,6 d 5 hp 40
+DF POS 272 id 561 body 2 at 29,5 d 4 hp 40
+DF POS 273 id 561 body 2 at 29,6 d 5 hp 40
+DF POS 274 id 561 body 2 at 29,5 d 4 hp 40
+DF POS 275 id 561 body 2 at 29,6 d 5 hp 40
+DF POS 276 id 561 body 2 at 29,5 d 4 hp 40
+DF POS 277 id 561 body 2 at 29,6 d 5 hp 40
+DF POS 278 id 561 body 2 at 29,7 d 8 hp 40
+DF POS 279 id 561 body 2 at 28,7 d 5 hp 40
+DF POS 280 id 561 body 2 at 27,7 d 4 hp 40
+DF POS 281 id 561 body 2 at 28,7 d 5 hp 40
+DF POS 282 id 561 body 2 at 29,7 d 8 hp 40
+DF POS 283 id 561 body 2 at 29,6 d 5 hp 40
+DF POS 284 id 561 body 2 at 29,5 d 4 hp 40
+DF POS 285 id 561 body 2 at 29,5 d 4 hp 40
+DF POS 286 id 561 body 2 at 29,6 d 5 hp 40
+DF POS 287 id 561 body 2 at 29,7 d 8 hp 40
+DF POS 288 id 561 body 2 at 28,7 d 5 hp 40
+DF POS 289 id 561 body 2 at 27,7 d 4 hp 40
+DF POS 290 id 561 body 2 at 28,7 d 5 hp 40
+DF POS 291 id 561 body 2 at 27,7 d 4 hp 40
+DF POS 292 id 561 body 2 at 28,7 d 5 hp 40
+DF POS 293 id 561 body 2 at 27,7 d 4 hp 40
+DF POS 294 id 561 body 2 at 27,7 d 4 hp 40
+DF POS 295 id 561 body 2 at 26,7 d 4 hp 40
+DF POS 296 id 561 body 2 at 27,7 d 4 hp 40
+DF POS 297 id 561 body 2 at 28,7 d 5 hp 40
+DF POS 298 id 561 body 2 at 29,7 d 8 hp 40
+DF POS 299 id 561 body 2 at 29,6 d 5 hp 40
+DF POS 300 id 561 body 2 at 29,5 d 4 hp 40
+DF POS 301 id 561 body 2 at 29,5 d 4 hp 40
+DF POS 302 id 561 body 2 at 29,6 d 5 hp 40
+DF POS 303 id 561 body 2 at 29,7 d 8 hp 40
+DF POS 304 id 561 body 2 at 28,7 d 5 hp 40
+DF POS 305 id 561 body 2 at 27,7 d 4 hp 40
+DF POS 306 id 561 body 2 at 26,7 d 4 hp 40
+DF POS 307 id 561 body 2 at 27,7 d 4 hp 40
+DF POS 308 id 561 body 2 at 26,7 d 4 hp 40
+DF POS 309 id 561 body 2 at 27,7 d 4 hp 40
+DF POS 310 id 561 body 2 at 26,7 d 4 hp 40
+DF POS 311 id 561 body 2 at 27,7 d 4 hp 40
+DF POS 312 id 561 body 2 at 27,7 d 4 hp 40
+DF POS 313 id 561 body 2 at 28,7 d 5 hp 40
+DF POS 314 id 561 body 2 at 28,7 d 5 hp 40
+DF POS 315 id 561 body 2 at 28,7 d 5 hp 40
+DF POS 316 id 561 body 2 at 28,7 d 5 hp 40
+DF POS 317 id 561 body 2 at 28,7 d 5 hp 40
+DF POS 318 id 561 body 2 at 28,7 d 5 hp 40
+DF POS 319 id 561 body 2 at 28,7 d 5 hp 40
+DF POS 320 id 561 body 2 at 28,7 d 5 hp 40
+DF POS 321 id 561 body 2 at 28,7 d 5 hp 40
+DF POS 322 id 561 body 2 at 27,7 d 4 hp 40
+DF POS 323 id 561 body 2 at 28,7 d 5 hp 40
+DF POS 324 id 561 body 2 at 27,7 d 4 hp 40
+DF POS 325 id 561 body 2 at 28,7 d 5 hp 40
+DF POS 326 id 561 body 2 at 27,7 d 4 hp 40
+DF POS 327 id 561 body 2 at 28,7 d 5 hp 40
+DF POS 328 id 561 body 2 at 27,7 d 4 hp 40
+DF POS 329 id 561 body 2 at 28,7 d 5 hp 40
+DF POS 330 id 561 body 2 at 27,7 d 4 hp 40
+DF POS 331 id 561 body 2 at 28,7 d 5 hp 40
+DF POS 332 id 561 body 2 at 27,7 d 4 hp 33
+DF POS 333 id 561 body 2 at 28,7 d 5 hp 33
+DF POS 334 id 561 body 2 at 27,7 d 4 hp 33
+DF POS 335 id 561 body 2 at 27,8 d 9 hp 33
+DF POS 336 id 561 body 2 at 27,7 d 4 hp 33
+DF POS 337 id 561 body 2 at 27,8 d 9 hp 33
+DF POS 338 id 561 body 2 at 27,7 d 4 hp 33

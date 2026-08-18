@@ -1,0 +1,61 @@
+--- bots/_v513siegecrew/main.py	2026-08-17 23:24:22
++++ scratchpad/s51_doubleferry/v513_dblferry/main.py	2026-08-18 05:47:16
+@@ -210,6 +210,16 @@
+         self.fs_sentinels = 0       # sentinels this body has bought
+         # LOKI-FS-CREW (v513).  Per body; nothing here is read with
+         # LOKI_FS_CREW = False.
++        # s51 DOUBLE-FERRY PROBE state.  Per entity; instrument + relay only.
++        self.df_seen = {}           # core side: body -> [beat_rnd, id, dead?]
++        self.df_body = 1            # 1 = sealer/lead, 2 = support.  Fixed at
++                                    # appointment; survives a PROMOTE, because
++                                    # it selects this body's PUBLISH SLOT.
++        self.df_born = None         # first round this entity ran
++        self.df_thrown = None       # launcher side: ids this link has thrown
++        self.df_ride_rnd = None     # body side: last round a link picked us up
++        self.df_ring_rnd = None     # first round at dsq_core <= FS_RING_DSQ
++        self.df_adj_rnd = None      # first round orthogonally adj to the core
+         self.fs_role = "seal"       # "seal" | "supp" -- the crew's verb split
+         self.fs_sealed_rnd = None   # last round the orthogonal-8 read closed
+         self.fs_door_tgt = None     # (x, y) of the door turret being answered
+@@ -308,6 +318,28 @@
+             ct.write_store(SLOT_ENEMY_CORE, pack_pos(enemy_core_for(w, h, p)))
+ 
+         rnd = ct.get_current_round()
++
++        # --- s51 PROBE: the DEATH observer, and it is a SECOND instrument on
++        # purpose.  The parser can read a body's last round off its own POS
++        # lines, but a body that DEGRADES also stops emitting them, so the two
++        # readings have to be separable.  The Core watches both crew channels'
++        # beats: a channel that was fresh last round and is two rounds stale
++        # now lost its writer.  Print-only.
++        if DF_LOG:
++            for _sl, _bn in ((SLOT_FS, 1), (DF_SUPP_SLOT, 2)):
++                _b, _ph, _r = self._fs_state_at(ct, _sl)
++                if not (_b and _r):
++                    continue
++                _br, _rid = _b - 1, _r - 1
++                _prev = self.df_seen.get(_bn)
++                if _prev is None or _prev[1] != _rid or _br > _prev[0]:
++                    self.df_seen[_bn] = [_br, _rid, False]
++                elif not _prev[2] and rnd - _br >= 2:
++                    # Writes are buffered one round, so a LIVE body's beat is
++                    # always exactly rnd-1 here.  Two rounds stale and not
++                    # advancing means nobody wrote it: that entity is gone.
++                    _prev[2] = True
++                    self._df("DEAD", rnd, "id", _rid, "body", _bn)
+ 
+         # --- threat latch -------------------------------------------------
+         under = False
+@@ -1000,6 +1032,12 @@
+                 if take is not None:
+                     self.fs_raider = True
+                     self.fs_role = take
++                    # PROBE: the body identity the arrival table is keyed on.
++                    self.df_body = 2 if take == "supp" else 1
++                    self._df("SPAWN", rnd, "id", ct.get_id(),
++                             "body", self.df_body, "seat", self.role_n,
++                             "at", "%d,%d" % (p.x, p.y),
++                             "scale", self._df_scale(ct))
+                     if self.role != "raid":
+                         self.role = "raid"
+                         self.raid_slot = self._raid_seat_take(ct)

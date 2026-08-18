@@ -1,0 +1,405 @@
+--- bots/_v513siegecrew/siege.py	2026-08-17 23:14:10
++++ scratchpad/s51_doubleferry/v513_dblferry/siege.py	2026-08-18 05:57:07
+@@ -52,7 +52,8 @@
+ 
+ from doctrine import *  # noqa: F401,F403
+ from eco import (
+-    core_corners, core_tiles, dsq_core, enemy_core_for, heal_seats, unpack_pos,
++    adjacent_to_core, core_corners, core_tiles, dsq_core, enemy_core_for,
++    heal_seats, unpack_pos,
+ )
+ 
+ # A building of one of these types on a ring tile denies the core's spawn AND
+@@ -86,13 +87,45 @@
+             return
+ 
+     # ------------------------------------------------------------------
++    # s51 PROBE instrument.  stderr only, same reason as _fs_log.
++    # ------------------------------------------------------------------
++
++    def _df(self, *a):
++        if not DF_LOG:
++            return
++        try:
++            print("DF", *a, file=sys.stderr)
++        except Exception:
++            return
++
++    def _df_scale(self, ct):
++        """get_scale_percent() as an int, for the relay's refund trace."""
++        try:
++            return int(ct.get_scale_percent())
++        except Exception:
++            return -1
++
++    def _df_slot(self):
++        """The publish slot THIS body owns.  PROBE: one writer per slot.
++
++        Routed on `df_body` (fixed at appointment) rather than on `fs_role`,
++        so a support that PROMOTES to sealer keeps its own channel instead of
++        starting to clobber the sealer's.
++        """
++        return DF_SUPP_SLOT if getattr(self, "df_body", 1) == 2 else SLOT_FS
++
++    # ------------------------------------------------------------------
+     # the shared store slot (see doctrine.py, SLOT_FS)
+     # ------------------------------------------------------------------
+ 
+     def _fs_state(self, ct):
+         """(beat_round_plus_1, phase, raider_id_plus_1) off SLOT_FS."""
++        return self._fs_state_at(ct, SLOT_FS)
++
++    def _fs_state_at(self, ct, slot):
++        """The same triple off ANY slot carrying the SLOT_FS field layout."""
+         try:
+-            v = ct.read_store(SLOT_FS)
++            v = ct.read_store(slot)
+         except Exception:
+             return 0, FS_PH_NONE, 0
+         return (v & FS_BEAT_MASK,
+@@ -100,9 +133,13 @@
+                 v >> FS_RID_SHIFT)
+ 
+     def _fs_publish(self, ct, rnd, phase, rid):
++        # PROBE: body 2 publishes into DF_SUPP_SLOT.  See the DOUBLE-FERRY
++        # block in doctrine.py -- with both bodies on SLOT_FS the later writer
++        # (higher entity id, i.e. the support) wins every round and the other
++        # body's paid-for ferry launcher cannot identify its own rider.
+         try:
+             ct.write_store(
+-                SLOT_FS,
++                self._df_slot(),
+                 ((rnd + 1) & FS_BEAT_MASK)
+                 | ((phase & FS_PHASE_MASK) << FS_PHASE_SHIFT)
+                 | (((rid + 1) & 0xFFFF) << FS_RID_SHIFT),
+@@ -196,6 +233,14 @@
+         so unlike a modular beat there is no window in which a long-dead body
+         reads as fresh again.
+         """
++        if seat:
++            # PROBE: the SUPPORT's beat is the beat field of its own publish
++            # slot -- one writer, so no lost update.  FS_CREW_SLOT's bits
++            # 19-29 are dead in this tree.
++            v = self._fs_state_at(ct, DF_SUPP_SLOT)[0]
++            if not v:
++                return 10 ** 6
++            return rnd - (v - 1)
+         shift = FS_CREW_SUPP_SHIFT if seat else FS_CREW_SEAL_SHIFT
+         v = (self._fs_crew_word(ct) >> shift) & FS_CREW_BEAT_MASK
+         if not v:
+@@ -211,6 +256,8 @@
+         match.  Every field written here is masked to its width first, so the
+         word is 30 bits by construction and cannot go negative.
+         """
++        if seat:
++            return          # PROBE: written by _fs_publish into DF_SUPP_SLOT
+         shift = FS_CREW_SUPP_SHIFT if seat else FS_CREW_SEAL_SHIFT
+         try:
+             cur = ct.read_store(FS_CREW_SLOT)
+@@ -639,6 +686,22 @@
+         p = ct.get_position()
+         d = dsq_core(p, E)
+ 
++        # --- s51 PROBE INSTRUMENT.  Print-only, stderr, no behaviour. -------
++        if self.df_born is None:
++            self.df_born = rnd
++        _b = getattr(self, "df_body", 1)
++        _me = ct.get_id()
++        if DF_LOG and rnd % DF_POS_EVERY == 0:
++            self._df("POS", rnd, "id", _me, "body", _b,
++                     "at", "%d,%d" % (p.x, p.y), "d", d,
++                     "hp", ct.get_hp())
++        if d <= FS_RING_DSQ and self.df_ring_rnd is None:
++            self.df_ring_rnd = rnd
++            self._df("ARRIVE", rnd, "id", _me, "body", _b, "ring")
++        if self.df_adj_rnd is None and adjacent_to_core(p, E):
++            self.df_adj_rnd = rnd
++            self._df("ARRIVE", rnd, "id", _me, "body", _b, "adj")
++
+         # NO-ROUTE DEGRADE.  jackpot: the probe's ferry never arrived there on
+         # any hop budget, and a plank that cannot reach the ring must not keep
+         # spending launchers trying.  Measured as progress, not as a map name.
+@@ -722,6 +785,10 @@
+         """Hand this body back to the incumbent raid doctrine, for good."""
+         self.fs_off = True
+         self._fs_log("DEGRADE", rnd, "id", ct.get_id())
++        # PROBE: a degraded body stops emitting POS, which a parser reading
++        # "last POS round" would otherwise score as a death.  Separable.
++        self._df("DEGRADE", rnd, "id", ct.get_id(),
++                 "body", getattr(self, "df_body", 1))
+         try:
+             _beat, ph, _rid = self._fs_state(ct)
+             if ph != FS_PH_DEGRADE:
+@@ -736,22 +803,126 @@
+         T = self._fs_target(ct, E)
+         lp = self._fs_pickup_launcher(ct, p)
+ 
+-        if lp is None:
+-            if ct.get_action_cooldown() == 0 and self._fs_build_ferry(ct, p, T):
++        if lp is not None:
++            # A ferry launcher is already standing beside us and it acts LATER
++            # this round (turn order is entity-id ascending and it is younger
++            # than us).  The only thing worth doing with our own turn is a free
++            # tile of progress that keeps us inside its d^2<=2 pickup envelope.
++            self.df_ride_rnd = rnd
++            if FS_HOP_STEP_ON and ct.get_move_cooldown() == 0:
++                self._fs_hop_step(ct, p, lp, T)
++            return
++
++        # PROBE RELAY (Magnus): ONE chain, two riders.  Body 1 buys every link
++        # and body 2 rides it, so a hop costs one launcher instead of two and
++        # the two bodies travel one round apart instead of three.  Body 2 keeps
++        # a SAFE DEGRADE -- if the relay has not thrown it for DF_RELAY_PATIENCE
++        # rounds and no link is in sight, it buys its own chain rather than
++        # stranding.
++        may_build = True
++        if DF_RELAY_ON and getattr(self, "df_body", 1) == 1 \
++                and self.df_ride_rnd is None:
++            # THE MUSTER -- first link only.  See DF_MUSTER_DSQ in doctrine.py.
++            if not self._df_mustered(ct, p, rnd):
++                self._df("MUSTER", rnd, "id", ct.get_id(), "wait", 1,
++                         "at", "%d,%d" % (p.x, p.y))
+                 return
+-            # No launcher and none affordable: walk.  The ferry is a speed-up,
+-            # never a prerequisite.
+-            if ct.get_move_cooldown() == 0:
+-                self.tgt = T
+-                self._nav(ct, pave=False)
++        if DF_RELAY_ON and getattr(self, "df_body", 1) == 2:
++            since = rnd - (self.df_ride_rnd if self.df_ride_rnd is not None
++                           else (self.df_born if self.df_born is not None else rnd))
++            may_build = since >= DF_RELAY_PATIENCE
++            if not may_build:
++                lv = self._df_relay_point(ct, p, E)
++                if lv is not None:
++                    if ct.get_move_cooldown() == 0:
++                        self.tgt = lv
++                        self._nav(ct, pave=False)
++                    return
++        if may_build and ct.get_action_cooldown() == 0 \
++                and self._fs_build_ferry(ct, p, T):
+             return
++        # No launcher and none affordable: walk.  The ferry is a speed-up,
++        # never a prerequisite.
++        if ct.get_move_cooldown() == 0:
++            self.tgt = T
++            self._nav(ct, pave=False)
+ 
+-        # A ferry launcher is already standing beside us and it acts LATER this
+-        # round (turn order is entity-id ascending and it is younger than us).
+-        # The only thing worth doing with our own turn is a free tile of
+-        # progress that keeps us inside its d^2<=2 pickup envelope.
+-        if FS_HOP_STEP_ON and ct.get_move_cooldown() == 0:
+-            self._fs_hop_step(ct, p, lp, T)
++    def _df_mustered(self, ct, p, rnd):
++        """May the LEAD buy its first link yet?
++
++        True once body 2 is within DF_MUSTER_DSQ (so the link it is about to
++        build has body 2 inside the d^2 <= 2 pickup envelope, or one step from
++        it), or once DF_MUSTER_WAIT rounds have passed -- the patience clause
++        is what stops a body 2 that was never appointed, or died in the
++        opening, from stalling the siege outright.
++        """
++        born = self.df_born if self.df_born is not None else rnd
++        if rnd - born >= DF_MUSTER_WAIT:
++            return True
++        _b, _ph, rid = self._fs_state_at(ct, DF_SUPP_SLOT)
++        if not rid:
++            return False                     # body 2 has not reported at all
++        if _b and rnd - (_b - 1) > FS_CREW_STALE:
++            # Body 2 reported once and has stopped: it is dead, and there is
++            # nothing to muster for.  Without this a REPLACEMENT lead waits out
++            # the whole patience for a crew mate that no longer exists
++            # (measured: 8 idle rounds at r159, drakkarfjord s1).
++            return True
++        want = rid - 1
++        try:
++            for eid in ct.get_nearby_units():
++                if eid != want:
++                    continue
++                if ct.get_team(eid) != self.team:
++                    continue
++                return ct.get_position(eid).distance_squared(p) <= DF_MUSTER_DSQ
++        except Exception:
++            return True                      # blind: do not stall on a getter
++        return False
++
++    def _df_relay_point(self, ct, p, E):
++        """The tile body 2 should walk to in order to catch the relay.
++
++        A passable neighbour of the nearest friendly ferry launcher in vision.
++        A launcher inside FS_RING_DSQ of the ENEMY core is an EVICTOR and is
++        never a ferry -- the same role-by-site rule `_fs_launcher_turn` opens
++        with.  Bounds are checked explicitly: `is_in_vision` is a pure radius
++        test and the next get_tile_* on an off-map tile raises.
++        """
++        best = None
++        try:
++            for bid in ct.get_nearby_buildings():
++                if ct.get_entity_type(bid) != EntityType.LAUNCHER:
++                    continue
++                if ct.get_team(bid) != self.team:
++                    continue
++                bp = ct.get_position(bid)
++                if dsq_core(bp, E) <= FS_RING_DSQ:
++                    continue
++                d = bp.distance_squared(p)
++                if best is None or d < best[0]:
++                    best = (d, bp)
++        except Exception:
++            return None
++        if best is None:
++            return None
++        lp = best[1]
++        want, want_d = None, None
++        for dx, dy in ((1, 0), (-1, 0), (0, 1), (0, -1),
++                       (1, 1), (1, -1), (-1, 1), (-1, -1)):
++            tx, ty = lp.x + dx, lp.y + dy
++            if not (0 <= tx < self.mw and 0 <= ty < self.mh):
++                continue
++            t = Position(tx, ty)
++            try:
++                if not ct.is_tile_passable(t):
++                    continue
++            except Exception:
++                continue
++            d = t.distance_squared(p)
++            if want_d is None or d < want_d:
++                want, want_d = t, d
++        return want
+ 
+     def _fs_pickup_launcher(self, ct, p):
+         """Position of a friendly launcher that could pick us up, or None."""
+@@ -807,6 +978,11 @@
+         self._fs_draw_line(ct, best, T, 0, 120, 255)
+         self._fs_log("HOPBUILD", ct.get_current_round(), "at", (p.x, p.y),
+                      "lch", (best.x, best.y), "T", (T.x, T.y))
++        self._df("HOPBUILD", ct.get_current_round(), "id", ct.get_id(),
++                 "body", getattr(self, "df_body", 1),
++                 "at", "%d,%d" % (p.x, p.y),
++                 "lch", "%d,%d" % (best.x, best.y),
++                 "cost", cost, "scale", self._df_scale(ct))
+         return True
+ 
+     def _fs_hop_step(self, ct, p, lp, T):
+@@ -2220,14 +2396,39 @@
+         beside our own core in exactly the rounds the first hop is built -- out
+         of the air.
+         """
+-        _beat, _ph, rid = self._fs_state(ct)
++        # PROBE: TWO published ids, one per crew channel.  A ferry launcher is
++        # built by whichever body is riding it, so it must be able to identify
++        # EITHER of them; with one shared rid field the loser of the write is a
++        # body standing beside a launcher that will not pick it up.  The
++        # positive-identification property is unchanged -- an id has to have
++        # been published by a ferry-siege body to be thrown.
++        want_ids = []
++        for _s in (SLOT_FS, DF_SUPP_SLOT):
++            _b, _p, _r = self._fs_state_at(ct, _s)
++            if _r and (_r - 1) not in want_ids:
++                want_ids.append(_r - 1)
+         target = self._fs_target(ct, E)
+-        me = None
+-        if rid:
+-            want = rid - 1
++        if self.df_thrown is None:
++            self.df_thrown = []
++        # PROBE RELAY: every published body inside the pickup envelope that this
++        # launcher has NOT already thrown.  A throw sets cooldown += 1 and
++        # cooldowns decrement at end of round, so this launcher may throw again
++        # NEXT round but never twice in this one -- the whole relay is that one
++        # fact.  Throw the LEAD (nearest the target) first: it is the body that
++        # builds the next link on landing, and every round it waits is a round
++        # the chain does not advance.
++        # ⭐ THE LEAD GOES FIRST, and it is worth a round per hop: the body that
++        # rides SLOT_FS is the one that BUYS THE NEXT LINK, so throwing it first
++        # lets it land at R+1 and build at R+2 while this link still has R+2 to
++        # throw body 2.  Two-round cycle.  Throwing the other body first
++        # measured a THREE-round cycle on the same map (drakkarfjord s1: links
++        # at r3, r6, r9, r13, r16 instead of r3, r5, r7).
++        lead_id = want_ids[0] if want_ids else None
++        riders = []
++        if want_ids:
+             try:
+                 for eid in ct.get_nearby_units():
+-                    if eid != want:
++                    if eid not in want_ids or eid in self.df_thrown:
+                         continue
+                     if ct.get_entity_type(eid) != EntityType.BUILDER_BOT:
+                         continue
+@@ -2235,10 +2436,15 @@
+                         continue
+                     bp = ct.get_position(eid)
+                     if bp.distance_squared(lp) <= 2:
+-                        me = bp
+-                    break
++                        riders.append((0 if eid == lead_id else 1,
++                                       bp.distance_squared(target), eid, bp))
+             except Exception:
+-                me = None
++                riders = []
++        me = None
++        me_id = None
++        if riders:
++            riders.sort()
++            me_id, me = riders[0][2], riders[0][3]
+         if me is not None:
+             self.fs_ferry_seen = True
+             here = me.distance_squared(target)
+@@ -2276,8 +2482,29 @@
+                         except Exception:
+                             continue
+                 if thrown:
++                    self.df_thrown.append(me_id)
+                     self._fs_log("THROW", rnd, "from", (me.x, me.y),
+                                  "to", (site.x, site.y), "T", (target.x, target.y))
++                    self._df("THROW", rnd, "launcher", ct.get_id(),
++                             "body", me_id,
++                             "from", "%d,%d" % (me.x, me.y),
++                             "to", "%d,%d" % (site.x, site.y),
++                             "n", len(self.df_thrown),
++                             "scale", self._df_scale(ct))
++                    # PROBE RELAY: hold the link open until every PUBLISHED body
++                    # has ridden it, or until DF_RELAY_TTL rounds have passed.
++                    # Tearing down after one throw is what strands the second
++                    # body -- it is five tiles behind and has to buy its own
++                    # launcher, which is the parallel-chain behaviour this
++                    # probe exists to remove.
++                    hold = (DF_RELAY_ON
++                            and any(i not in self.df_thrown for i in want_ids)
++                            and rnd - self.fs_born < DF_RELAY_TTL)
++                    if not hold:
++                        self._df("TEARDOWN", rnd, "launcher", ct.get_id(),
++                                 "born", self.fs_born, "throws",
++                                 len(self.df_thrown),
++                                 "scale", self._df_scale(ct))
+                     # ⛔ NOTHING MAY FOLLOW THIS CALL.  self_destruct() does not
+                     # return and raises nothing catchable; `finally:`,
+                     # `except BaseException` and `except SystemExit` are all
+@@ -2286,11 +2513,24 @@
+                     # reading, which is what keeps a six-hop chain costing +10%
+                     # instead of +60% on the price of the sentinel that has to
+                     # finish the game.
+-                    ct.self_destruct()
++                    if not hold:
++                        ct.self_destruct()
++                    return True
+ 
+         if not self.fs_ferry_seen:
+             return False                     # not ours: the home launcher path
+-        if rnd - self.fs_born >= FS_LAUNCHER_TTL:
++        # PROBE: a link that has ALREADY thrown is holding open only for the
++        # second rider, and the chain cannot advance past it -- so its patience
++        # is DF_RELAY_TTL, not the full FS_LAUNCHER_TTL.  A link that has
++        # thrown nobody keeps the incumbent's TTL.
++        ttl = FS_LAUNCHER_TTL
++        if DF_RELAY_ON and self.df_thrown:
++            ttl = DF_RELAY_TTL
++        if rnd - self.fs_born >= ttl:
++            self._df("TEARDOWN", rnd, "launcher", ct.get_id(),
++                     "born", self.fs_born,
++                     "throws", len(self.df_thrown or ()),
++                     "scale", self._df_scale(ct), "ttl", 1)
+             ct.self_destruct()
+         return True
+ 

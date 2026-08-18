@@ -1,0 +1,16 @@
+Running match: v513_dblferry vs base
+  Map: nordkap.map26  Seed: 3  Replay: 
+scratchpad/s51_doubleferry/logs/nordkap-s3-A.replay26  TLE: 10ms
+Completed turn 0
+Completed turn 100
+Completed turn 200
+Completed turn 300
+Replay written to scratchpad/s51_doubleferry/logs/nordkap-s3-A.replay26
+
+  Winner: base  (Core destroyed, turn 391)
+
+               v513_dblferry               base  
+  Titanium       1 (0 mined)    78 (3390 mined)  
+  Units                    4                 14  
+  Buildings                5                 67  
+

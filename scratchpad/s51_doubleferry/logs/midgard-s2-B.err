@@ -1,0 +1,122 @@
+Update available: 2.3.6 -> 2.3.8. Run: pip install --upgrade fcode
+DF SPAWN 1 id 4 body 1 seat 0 at 26,25 scale 140
+DF POS 1 id 4 body 1 at 26,25 d 1013 hp 40
+DF MUSTER 1 id 4 wait 1 at 26,25
+DF POS 2 id 4 body 1 at 26,25 d 1013 hp 40
+DF MUSTER 2 id 4 wait 1 at 26,25
+DF SPAWN 2 id 6 body 2 seat 1 at 25,26 scale 160
+DF POS 2 id 6 body 2 at 25,26 d 1013 hp 40
+DF POS 3 id 4 body 1 at 26,25 d 1013 hp 40
+DF MUSTER 3 id 4 wait 1 at 26,25
+DF POS 3 id 6 body 2 at 24,26 d 970 hp 40
+DF POS 4 id 4 body 1 at 26,25 d 1013 hp 40
+DF HOPBUILD 4 id 4 body 1 at 26,25 lch 26,24 cost 36 scale 190
+DF POS 4 id 6 body 2 at 24,25 d 925 hp 40
+DF POS 5 id 4 body 1 at 26,25 d 1013 hp 40
+DF POS 5 id 6 body 2 at 24,24 d 882 hp 40
+DF THROW 5 launcher 12 body 4 from 26,25 to 22,21 n 1 scale 197
+DF POS 6 id 4 body 1 at 22,21 d 685 hp 40
+DF HOPBUILD 6 id 4 body 1 at 22,21 lch 21,21 cost 39 scale 207
+DF POS 6 id 6 body 2 at 24,23 d 841 hp 40
+DF POS 7 id 4 body 1 at 22,21 d 685 hp 40
+DF POS 7 id 6 body 2 at 23,23 d 800 hp 40
+DF THROW 7 launcher 19 body 4 from 22,20 to 17,18 n 1 scale 207
+DF POS 8 id 4 body 1 at 17,18 d 421 hp 40
+DF HOPBUILD 8 id 4 body 1 at 17,18 lch 17,17 cost 41 scale 217
+DF POS 8 id 6 body 2 at 22,23 d 761 hp 40
+DF HOPBUILD 8 id 6 body 2 at 22,23 lch 21,23 cost 43 scale 227
+DF TEARDOWN 8 launcher 12 born 5 throws 1 scale 227 ttl 1
+DF POS 9 id 4 body 1 at 17,18 d 421 hp 40
+DF POS 9 id 6 body 2 at 22,23 d 761 hp 40
+DF THROW 9 launcher 23 body 4 from 16,18 to 13,14 n 1 scale 217
+DF THROW 9 launcher 24 body 6 from 22,23 to 17,20 n 1 scale 217
+DF POS 10 id 4 body 1 at 13,14 d 221 hp 40
+DF HOPBUILD 10 id 4 body 1 at 13,14 lch 13,13 cost 43 scale 227
+DF POS 10 id 6 body 2 at 17,20 d 485 hp 40
+DF TEARDOWN 10 launcher 19 born 7 throws 1 scale 227 ttl 1
+DF POS 11 id 4 body 1 at 13,14 d 221 hp 40
+DF POS 11 id 6 body 2 at 16,20 d 458 hp 40
+DF THROW 11 launcher 26 body 4 from 12,14 to 9,10 n 1 scale 222
+DF POS 12 id 4 body 1 at 9,10 d 85 hp 40
+DF HOPBUILD 12 id 4 body 1 at 9,10 lch 9,9 cost 44 scale 232
+DF POS 12 id 6 body 2 at 15,20 d 433 hp 40
+DF TEARDOWN 12 launcher 23 born 9 throws 1 scale 232 ttl 1
+DF TEARDOWN 12 launcher 24 born 9 throws 1 scale 222 ttl 1
+DF POS 13 id 4 body 1 at 9,10 d 85 hp 40
+DF POS 13 id 6 body 2 at 15,19 d 400 hp 40
+DF THROW 13 launcher 31 body 4 from 8,10 to 5,6 n 1 scale 213
+DF POS 14 id 4 body 1 at 5,6 d 13 hp 40
+DF POS 14 id 6 body 2 at 15,18 d 369 hp 40
+DF TEARDOWN 14 launcher 26 born 11 throws 1 scale 213 ttl 1
+DF POS 15 id 4 body 1 at 5,5 d 8 hp 40
+DF ARRIVE 15 id 4 body 1 ring
+DF POS 15 id 6 body 2 at 15,17 d 340 hp 40
+DF POS 16 id 4 body 1 at 5,4 d 5 hp 40
+DF POS 16 id 6 body 2 at 15,16 d 313 hp 40
+DF HOPBUILD 16 id 6 body 2 at 15,16 lch 15,15 cost 40 scale 214
+DF TEARDOWN 16 launcher 31 born 13 throws 1 scale 214 ttl 1
+DF POS 17 id 4 body 1 at 5,3 d 4 hp 40
+DF POS 17 id 6 body 2 at 15,16 d 313 hp 40
+DF THROW 17 launcher 41 body 6 from 14,16 to 11,12 n 1 scale 205
+DF POS 18 id 4 body 1 at 4,3 d 1 hp 40
+DF ARRIVE 18 id 4 body 1 adj
+DF POS 18 id 6 body 2 at 11,12 d 145 hp 40
+DF POS 19 id 4 body 1 at 4,3 d 1 hp 40
+DF POS 19 id 6 body 2 at 11,13 d 164 hp 40
+DF POS 20 id 4 body 1 at 5,3 d 4 hp 22
+DF POS 20 id 6 body 2 at 12,13 d 181 hp 40
+DF TEARDOWN 20 launcher 41 born 17 throws 1 scale 206 ttl 1
+DF POS 21 id 4 body 1 at 4,3 d 1 hp 22
+DF POS 21 id 6 body 2 at 13,13 d 200 hp 40
+DF POS 22 id 4 body 1 at 5,3 d 4 hp 4
+DF POS 22 id 6 body 2 at 12,13 d 181 hp 40
+DF POS 23 id 4 body 1 at 4,3 d 1 hp 4
+DF POS 23 id 6 body 2 at 11,13 d 164 hp 40
+DF POS 24 id 6 body 2 at 11,14 d 185 hp 40
+DF HOPBUILD 24 id 6 body 2 at 11,14 lch 11,13 cost 35 scale 187
+DF DEAD 25 id 4 body 1
+DF POS 25 id 6 body 2 at 11,14 d 185 hp 40
+DF THROW 25 launcher 58 body 6 from 10,14 to 8,9 n 1 scale 187
+DF POS 26 id 6 body 2 at 8,9 d 61 hp 40
+DF POS 27 id 6 body 2 at 8,8 d 50 hp 40
+DF POS 28 id 6 body 2 at 7,8 d 41 hp 40
+DF TEARDOWN 28 launcher 58 born 25 throws 1 scale 187 ttl 1
+DF POS 29 id 6 body 2 at 8,8 d 50 hp 40
+DF POS 30 id 6 body 2 at 7,8 d 41 hp 40
+DF POS 31 id 6 body 2 at 6,8 d 34 hp 40
+DF HOPBUILD 31 id 6 body 2 at 6,8 lch 5,8 cost 35 scale 187
+DF POS 32 id 6 body 2 at 6,8 d 34 hp 40
+DF THROW 32 launcher 72 body 6 from 6,8 to 2,4 n 1 scale 187
+DF POS 33 id 6 body 2 at 2,4 d 1 hp 40
+DF ARRIVE 33 id 6 body 2 ring
+DF ARRIVE 33 id 6 body 2 adj
+DF POS 34 id 6 body 2 at 2,4 d 1 hp 40
+DF POS 35 id 6 body 2 at 2,4 d 1 hp 40
+DF TEARDOWN 35 launcher 72 born 32 throws 1 scale 187 ttl 1
+DF POS 36 id 6 body 2 at 2,4 d 1 hp 40
+DF POS 37 id 6 body 2 at 2,4 d 1 hp 40
+DF POS 38 id 6 body 2 at 3,4 d 1 hp 40
+DF POS 39 id 6 body 2 at 3,4 d 1 hp 40
+DF POS 40 id 6 body 2 at 3,4 d 1 hp 40
+DF POS 41 id 6 body 2 at 3,4 d 1 hp 40
+DF POS 42 id 6 body 2 at 3,4 d 1 hp 40
+DF POS 43 id 6 body 2 at 3,4 d 1 hp 40
+DF POS 44 id 6 body 2 at 3,4 d 1 hp 40
+DF POS 45 id 6 body 2 at 3,4 d 1 hp 40
+DF POS 46 id 6 body 2 at 3,4 d 1 hp 40
+DF POS 47 id 6 body 2 at 3,4 d 1 hp 40
+DF POS 48 id 6 body 2 at 2,4 d 1 hp 22
+DF POS 49 id 6 body 2 at 1,4 d 2 hp 22
+DF POS 50 id 6 body 2 at 1,4 d 2 hp 22
+DF POS 51 id 6 body 2 at 1,4 d 2 hp 22
+DF POS 52 id 6 body 2 at 1,4 d 2 hp 22
+DF POS 53 id 6 body 2 at 1,4 d 2 hp 22
+DF POS 54 id 6 body 2 at 1,4 d 2 hp 22
+DF POS 55 id 6 body 2 at 1,4 d 2 hp 22
+DF POS 56 id 6 body 2 at 1,4 d 2 hp 22
+DF POS 57 id 6 body 2 at 1,4 d 2 hp 22
+DF POS 58 id 6 body 2 at 1,4 d 2 hp 22
+DF POS 59 id 6 body 2 at 1,4 d 2 hp 22
+DF POS 60 id 6 body 2 at 2,4 d 1 hp 4
+DF DEAD 62 id 6 body 2
+DF DEAD 77 id 4 body 1

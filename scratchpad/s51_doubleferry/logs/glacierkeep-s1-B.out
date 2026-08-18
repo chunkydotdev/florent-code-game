@@ -1,0 +1,15 @@
+Running match: base vs v513_dblferry
+  Map: glacierkeep.map26  Seed: 1  Replay: 
+scratchpad/s51_doubleferry/logs/glacierkeep-s1-B.replay26  TLE: 10ms
+Completed turn 0
+Completed turn 100
+Completed turn 200
+Replay written to scratchpad/s51_doubleferry/logs/glacierkeep-s1-B.replay26
+
+  Winner: v513_dblferry  (Core destroyed, turn 221)
+
+                         base    v513_dblferry  
+  Titanium     26 (160 mined)     14 (0 mined)  
+  Units                     6                6  
+  Buildings                64               31  
+

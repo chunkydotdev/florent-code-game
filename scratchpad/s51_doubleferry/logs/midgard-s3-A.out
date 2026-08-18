@@ -1,0 +1,14 @@
+Running match: v513_dblferry vs base
+  Map: midgard.map26  Seed: 3  Replay: 
+scratchpad/s51_doubleferry/logs/midgard-s3-A.replay26  TLE: 10ms
+Completed turn 0
+Completed turn 100
+Replay written to scratchpad/s51_doubleferry/logs/midgard-s3-A.replay26
+
+  Winner: base  (Core destroyed, turn 197)
+
+                v513_dblferry               base  
+  Titanium     32 (380 mined)    95 (1760 mined)  
+  Units                     4                 12  
+  Buildings                15                 52  
+
