@@ -10,7 +10,9 @@ call, not ours; v160 tenure 18:56-20:56Z ≈ 6 matches, tree imported at `bots/_
 version_trees row present). **CONTROL = `bots/_v488beltbreak2` (holder and control coincide
 again). ⛔ LOCK-IN (Magnus, verbatim: "we don't touch the slot unless I approve it"): NO
 submits, NO activations, NO prototype legs, NO unranked testing until he reopens.** v159's own
-record closed at k=9, 29-16, +38.57. Rollback target if ever needed: v155 = `_v468kladturbo`.
+record closed at k=9, **28-17, net +32.14** (corrected s51 from per-match ladder_games rows +
+exact 32×(S−E); the s50 figure 29-16/+38.57 miscounted the 21:12:59Z gsxWins pairing as 3/5 —
+side-lane flag, builder-verified on the primary). Rollback target if ever needed: v155 = `_v468kladturbo`.
 
 ## THE PLANK — FERRY-SIEGE, MAGNUS'S LINE, FOUR ITERATIONS IN ONE EVENING
 **`bots/_v513siegecrew` = the live head: 49/90 (54.4%) vs the incumbent — the plank's FIRST
