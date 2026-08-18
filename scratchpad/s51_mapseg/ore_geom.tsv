@@ -1,0 +1,16 @@
+map	w	h	n_ore	core0_x	core0_y	core1_x	core1_y	dist_core0	dist_core1	dist_mean
+antler	14	18	12	6	4	6	12	2	2	2.0
+archipelago	26	26	38	5	5	19	19	3	3	3.0
+auroraveil	20	20	16	9	1	9	17	5	5	5.0
+drakkarfjord	30	30	16	2	24	26	4	8	8	8.0
+drumlin	25	25	30	5	5	18	18	3	3	3.0
+fjordgate	10	10	6	2	2	6	6	3	3	3.0
+frostgate	20	20	20	2	9	16	9	3	3	3.0
+glacierkeep	30	30	24	14	2	14	26	8	8	8.0
+icefloe	20	20	20	1	16	17	2	5	5	5.0
+midgard	30	30	16	2	2	26	26	3	3	3.0
+nordkap	20	26	22	9	6	9	18	4	4	4.0
+ragnarok	30	30	26	2	2	26	26	2	2	2.0
+royale	20	20	16	9	16	9	2	6	6	6.0
+valkyrie	30	30	16	2	14	26	14	5	5	5.0
+yulerune	20	20	14	2	9	16	9	3	3	3.0

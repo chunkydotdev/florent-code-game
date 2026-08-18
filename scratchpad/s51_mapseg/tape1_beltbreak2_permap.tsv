@@ -1,0 +1,17 @@
+# BELTBREAK2 (v488beltbreak2 T vs v468kladturbo C) -- GUNNER-CRIPPLE local, n=5400 full: pooled share 0.5309 (53.09%) n=5400 DEFF=1.0
+map	n	wins	share	delta_pp	half_width_pp	verdict
+antler	360	172	47.78	-5.31	5.16	BAD
+archipelago	360	240	66.67	+13.57	5.16	GOOD
+auroraveil	360	190	52.78	-0.31	5.16	NEUTRAL
+drakkarfjord	360	208	57.78	+4.69	5.16	NEUTRAL
+drumlin	360	197	54.72	+1.63	5.16	NEUTRAL
+fjordgate	360	186	51.67	-1.43	5.16	NEUTRAL
+frostgate	360	205	56.94	+3.85	5.16	NEUTRAL
+glacierkeep	360	88	24.44	-28.65	5.16	BAD
+icefloe	360	189	52.50	-0.59	5.16	NEUTRAL
+midgard	360	264	73.33	+20.24	5.16	GOOD
+nordkap	360	180	50.00	-3.09	5.16	NEUTRAL
+ragnarok	360	159	44.17	-8.93	5.16	BAD
+royale	360	181	50.28	-2.81	5.16	NEUTRAL
+valkyrie	360	190	52.78	-0.31	5.16	NEUTRAL
+yulerune	360	218	60.56	+7.46	5.16	GOOD

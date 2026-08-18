@@ -1,0 +1,17 @@
+# LADDER ourver=155 (kladturbo lineage, SECONDARY cripple-mode reference) vs whole field, n=265 DEFF=1.07: pooled share 0.5208 (52.08%) n=265 DEFF=1.07
+map	n	wins	share	delta_pp	half_width_pp	verdict
+antler	9	6	66.67	+14.59	33.76	NEUTRAL
+archipelago	16	11	68.75	+16.67	25.32	NEUTRAL
+auroraveil	12	5	41.67	-10.41	29.24	NEUTRAL
+drakkarfjord	21	9	42.86	-9.22	22.10	NEUTRAL
+drumlin	14	7	50.00	-2.08	27.07	NEUTRAL
+fjordgate	21	12	57.14	+5.07	22.10	NEUTRAL
+frostgate	15	5	33.33	-18.74	26.15	NEUTRAL
+glacierkeep	22	12	54.55	+2.47	21.59	NEUTRAL
+icefloe	14	10	71.43	+19.35	27.07	NEUTRAL
+midgard	19	9	47.37	-4.71	23.24	NEUTRAL
+nordkap	22	9	40.91	-11.17	21.59	NEUTRAL
+ragnarok	18	11	61.11	+9.04	23.87	NEUTRAL
+royale	22	11	50.00	-2.08	21.59	NEUTRAL
+valkyrie	21	12	57.14	+5.07	22.10	NEUTRAL
+yulerune	19	9	47.37	-4.71	23.24	NEUTRAL

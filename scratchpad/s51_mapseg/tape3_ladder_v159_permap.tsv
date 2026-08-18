@@ -1,0 +1,17 @@
+# LADDER ourver=159 (gunner-cripple chassis) vs whole field, n=155 DEFF=1.07: pooled share 0.5355 (53.55%) n=155 DEFF=1.07
+map	n	wins	share	delta_pp	half_width_pp	verdict
+antler	11	6	54.55	+1.00	30.49	NEUTRAL
+archipelago	12	9	75.00	+21.45	29.19	NEUTRAL
+auroraveil	7	3	42.86	-10.69	38.22	NEUTRAL
+drakkarfjord	9	3	33.33	-20.22	33.71	NEUTRAL
+drumlin	10	4	40.00	-13.55	31.98	NEUTRAL
+fjordgate	13	7	53.85	+0.30	28.04	NEUTRAL
+frostgate	15	5	33.33	-20.22	26.11	NEUTRAL
+glacierkeep	9	5	55.56	+2.01	33.71	NEUTRAL
+icefloe	8	1	12.50	-41.05	35.75	BAD
+midgard	12	6	50.00	-3.55	29.19	NEUTRAL
+nordkap	14	10	71.43	+17.88	27.02	NEUTRAL
+ragnarok	7	5	71.43	+17.88	38.22	NEUTRAL
+royale	10	5	50.00	-3.55	31.98	NEUTRAL
+valkyrie	9	6	66.67	+13.12	33.71	NEUTRAL
+yulerune	9	8	88.89	+35.34	33.71	GOOD

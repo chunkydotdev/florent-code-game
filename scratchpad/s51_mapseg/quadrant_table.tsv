@@ -1,0 +1,16 @@
+map	gated	ore_dist	gunner_verdict(local)	gunner_delta_local_pp	gunner_verdict(ladder)	gunner_delta_ladder_pp	local_ladder_disagree	rush_verdict(local)	rush_delta_local_pp
+antler	True	2.0	BAD	-5.31	NEUTRAL	+1.00	False	CONFOUNDED	-1.86
+archipelago	True	3.0	GOOD	+13.57	NEUTRAL	+21.45	False	CONFOUNDED	-31.63
+auroraveil	False	5.0	NEUTRAL	-0.31	NEUTRAL	-10.69	False	NEUTRAL	+4.09
+drakkarfjord	False	8.0	NEUTRAL	+4.69	NEUTRAL	-20.22	False	GOOD	+21.95
+drumlin	False	3.0	NEUTRAL	+1.63	NEUTRAL	-13.55	False	GOOD	+18.37
+fjordgate	True	3.0	NEUTRAL	-1.43	NEUTRAL	+0.30	False	CONFOUNDED	-5.44
+frostgate	False	3.0	NEUTRAL	+3.85	NEUTRAL	-20.22	False	NEUTRAL	-9.01
+glacierkeep	False	8.0	BAD	-28.65	NEUTRAL	+2.01	False	GOOD	+38.61
+icefloe	False	5.0	NEUTRAL	-0.59	BAD	-41.05	False	NEUTRAL	+10.04
+midgard	False	3.0	GOOD	+20.24	NEUTRAL	-3.55	False	BAD	-29.24
+nordkap	False	4.0	NEUTRAL	-3.09	NEUTRAL	+17.88	False	NEUTRAL	+1.71
+ragnarok	False	2.0	BAD	-8.93	NEUTRAL	+17.88	False	GOOD	+11.23
+royale	False	6.0	NEUTRAL	-2.81	NEUTRAL	-3.55	False	NEUTRAL	+0.52
+valkyrie	False	5.0	NEUTRAL	-0.31	NEUTRAL	+13.12	False	NEUTRAL	+5.94
+yulerune	False	3.0	GOOD	+7.46	GOOD	+35.34	False	BAD	-36.07
