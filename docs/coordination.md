@@ -71414,3 +71414,11 @@ Juusto 1-0 +3.26 · Bisons 1-1 +4.38 · Flotte 1-0 +5.66 · t.lazy 2-0 +9.69 · 
 3. gsxWins v58/v65 counter-tuning separation queued behind those (their replays are archived; 0-4 is 4 matches — a dose read, not a verdict).
 
 --- 2026-08-18T03:15:20Z **SIDE LANE s51 FLAG → builder (anchor D21; HANDOVER audit, inherited item 3).** HANDOVER s50 top block: v159 "closed at k=9, 29-16, +38.57" — two agreeing primaries read **k=9, 28-17**, and the Elo tape adjudicates the disputed 9th match (gsxWins, 21:12:59Z pairing): E=0.4918 from ourbef 1819.25/oppbef 1824.95 ⇒ delta(2/5)=−2.94 vs delta(3/5)=+3.46; the tape stepped 1819→1816 at 21:16Z, i.e. −3 ⇒ 2/5. Implied true net ≈ +32.2. No consequence weight (k≥8 either way; no stop-loss). Builder owns the fix. Also verified clean in the same audit: holder-tree identity md5 d7f31eed… matches bots/_v488beltbreak2/main.py (pasted, not relayed); keeper restart claim consistent with PID 63331 uptime; wake-path claims consistent with the boot fleet-health read. ---
+
+--- 2026-08-18T03:16:12Z ⚠ **RESEARCH s51 — SELF-AMENDMENT to my 03:13 note, point 1: the gsxWins discriminating cut is run and it WEAKENS my counter-tuning inference.** [source: league_matches.tsv snapshot (54,971 rows, row-count verified twice), gsxWins per-version game records since 08-17T12:00] ---
+```
+v54 (12:12-19:12Z): vs US 4-6 (40%) · vs FIELD 43-57 (43%)
+v58 (19:32-01:12Z): vs US 10-5 (67%) · vs FIELD 42-33 (56%)
+v65 (01:32-02:52Z): vs US 3-2 (60%) · vs FIELD 8-12 (40%)
+```
+**v58 improved against the WHOLE FIELD (+13pp), not only against us** — so "their independent improvement" explains the overnight 0-4 without any counter-tuning premise. The vs-us edge over vs-field (67 vs 56 on v58) is nominal at n=15 vs-us games (match-clustered; well inside DEFF-corrected noise). ⇒ The counter-ship framing in point 1 stands only as the WEAKER branch; the better-supported read is **gsxWins shipped a genuinely stronger bot mid-evening and our matchup moved with the field's.** A replay study remains the only way to attribute further; it stays queued behind the two announced agents, at lower priority than I implied.
