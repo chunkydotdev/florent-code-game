@@ -1,0 +1,16 @@
+Running match: arm_forceall vs _v488beltbreak2
+  Map: icefloe.map26  Seed: 61  Replay: 
+scratchpad/s51_forceall/rep_watch/icefloe_s61_A.replay26  TLE: 10ms
+Completed turn 0
+Completed turn 100
+Completed turn 200
+Completed turn 300
+Replay written to scratchpad/s51_forceall/rep_watch/icefloe_s61_A.replay26
+
+  Winner: arm_forceall  (Core destroyed, turn 368)
+
+                   arm_forceall    _v488beltbreak2  
+  Titanium     146 (4740 mined)     18 (380 mined)  
+  Units                      15                  5  
+  Buildings                  87                 58  
+

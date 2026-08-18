@@ -1,0 +1,16 @@
+Running match: arm_forceall vs _v488beltbreak2
+  Map: fjordgate.map26  Seed: 26  Replay: 
+scratchpad/s51_forceall/replays/fjordgate_s26_A.replay26  TLE: 10ms
+Completed turn 0
+Completed turn 100
+Completed turn 200
+Completed turn 300
+Replay written to scratchpad/s51_forceall/replays/fjordgate_s26_A.replay26
+
+  Winner: arm_forceall  (Core destroyed, turn 310)
+
+                  arm_forceall    _v488beltbreak2  
+  Titanium     71 (1570 mined)    72 (1080 mined)  
+  Units                      8                  2  
+  Buildings                 22                 13  
+

@@ -1,0 +1,14 @@
+Running match: arm_forceall vs _v488beltbreak2
+  Map: midgard.map26  Seed: 42  Replay: 
+scratchpad/s51_forceall/replays/midgard_s42_A.replay26  TLE: 10ms
+Completed turn 0
+Completed turn 100
+Replay written to scratchpad/s51_forceall/replays/midgard_s42_A.replay26
+
+  Winner: arm_forceall  (Core destroyed, turn 177)
+
+                  arm_forceall    _v488beltbreak2  
+  Titanium     26 (1190 mined)      9 (490 mined)  
+  Units                      8                  8  
+  Buildings                 22                 21  
+

@@ -1,0 +1,22 @@
+Running match: arm_forceall vs _v488beltbreak2
+  Map: midgard.map26  Seed: 9  Replay: 
+scratchpad/s51_forceall/replays/midgard_s9_A.replay26  TLE: 10ms
+Completed turn 0
+Completed turn 100
+Completed turn 200
+Completed turn 300
+Completed turn 400
+Completed turn 500
+Completed turn 600
+Completed turn 700
+Completed turn 800
+Completed turn 900
+Replay written to scratchpad/s51_forceall/replays/midgard_s9_A.replay26
+
+  Winner: arm_forceall  (Titanium collected (tiebreak), turn 1000)
+
+                   arm_forceall    _v488beltbreak2  
+  Titanium     166 (3870 mined)     56 (460 mined)  
+  Units                      26                 17  
+  Buildings                  78                 42  
+

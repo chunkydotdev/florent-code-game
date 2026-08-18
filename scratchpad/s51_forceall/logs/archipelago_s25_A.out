@@ -1,0 +1,18 @@
+Running match: arm_forceall vs _v488beltbreak2
+  Map: archipelago.map26  Seed: 25  Replay: 
+scratchpad/s51_forceall/replays/archipelago_s25_A.replay26  TLE: 10ms
+Completed turn 0
+Completed turn 100
+Completed turn 200
+Completed turn 300
+Completed turn 400
+Completed turn 500
+Replay written to scratchpad/s51_forceall/replays/archipelago_s25_A.replay26
+
+  Winner: arm_forceall  (Core destroyed, turn 585)
+
+                  arm_forceall      _v488beltbreak2  
+  Titanium     32 (2880 mined)    5335 (8720 mined)  
+  Units                     17                   12  
+  Buildings                 56                   81  
+

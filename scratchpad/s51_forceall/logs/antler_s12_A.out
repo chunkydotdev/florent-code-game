@@ -1,0 +1,17 @@
+Running match: arm_forceall vs _v488beltbreak2
+  Map: antler.map26  Seed: 12  Replay: 
+scratchpad/s51_forceall/replays/antler_s12_A.replay26  TLE: 10ms
+Completed turn 0
+Completed turn 100
+Completed turn 200
+Completed turn 300
+Completed turn 400
+Replay written to scratchpad/s51_forceall/replays/antler_s12_A.replay26
+
+  Winner: arm_forceall  (Core destroyed, turn 415)
+
+                  arm_forceall    _v488beltbreak2  
+  Titanium     25 (2030 mined)    68 (1240 mined)  
+  Units                     10                  5  
+  Buildings                 28                 18  
+
