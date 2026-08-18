@@ -1,0 +1,88 @@
+Update available: 2.3.6 -> 2.3.8. Run: pip install --upgrade fcode
+FS GATE 0 sig (30, 30, (14, 2), (14, 26)) ok 1
+FS GATE 1 sig (30, 30, (14, 2), (14, 26)) ok 1
+FS PHASE 1 id 3 ph 1 d 484 at (14, 4)
+FS HOPBUILD 1 at (14, 4) lch (14, 5) T (16, 28)
+FS GATE 2 sig (30, 30, (14, 2), (14, 26)) ok 1
+FS GATE 2 sig (30, 30, (14, 2), (14, 26)) ok 1
+FS THROW 2 from (15, 4) to (15, 10) T (16, 28) body 3 n 1 dsq 256
+FS HOPBUILD 3 at (15, 10) lch (15, 11) T (16, 28)
+FS GATE 3 sig (30, 30, (14, 2), (14, 26)) ok 1
+FS GATE 4 sig (30, 30, (14, 2), (14, 26)) ok 1
+FS THROW 4 from (16, 10) to (16, 16) T (16, 28) body 3 n 1 dsq 101
+FS HOPBUILD 5 at (16, 16) lch (16, 17) T (16, 28)
+FS GATE 6 sig (30, 30, (14, 2), (14, 26)) ok 1
+FS THROW 6 from (16, 16) to (16, 22) T (16, 28) body 3 n 1 dsq 17
+FS HOPBUILD 7 at (16, 22) lch (16, 23) T (16, 28)
+FS GATE 8 sig (30, 30, (14, 2), (14, 26)) ok 1
+FS THROW 8 from (16, 22) to (16, 28) T (16, 28) body 3 n 1 dsq 2
+FS ARRIVE 9 id 3 body 1 at (16, 28) dsq 2
+FS PHASE 9 id 3 ph 2 d 2 at (16, 28)
+FS SEAL 9 tile (16, 27) n 1
+FS SEAL 10 tile (15, 28) n 2
+SREACH516 11 tile (9, 26) score 25
+FS GATE 11 sig (30, 30, (14, 2), (14, 26)) ok 1
+FS GATE 12 sig (30, 30, (14, 2), (14, 26)) ok 1
+FS GATE 13 sig (30, 30, (14, 2), (14, 26)) ok 1
+FS SEAL 14 tile (16, 26) n 3
+FS SEAL 19 tile (15, 25) n 4
+FS STAT 20 id 3 at (16, 25) need 5 orth 4 ti 64 ammo 0 sen 0 hp 40 covden 0 eco 0 lost 0
+FS SEAL 23 tile (14, 25) n 5
+FS CLEAR 34 tile (13, 25) peck 1
+FS RUNG 34 id 3 r 3 hi -
+FS CLEAR 35 tile (13, 25) peck 2
+FS RUNG 35 id 3 r 3 hi -
+FS STAT 40 id 3 at (13, 24) need 4 orth 3 ti 18 ammo 24 sen 0 hp 40 covden 0 eco 0 lost 0
+FS CLEAR 44 tile (13, 25) peck 1
+FS RUNG 44 id 3 r 3 hi -
+FS CLEAR 47 tile (13, 25) peck 2
+FS RUNG 47 id 3 r 3 hi -
+FS PHASE 48 id 3 ph 3 d 5 at (13, 24)
+FS CLEAR 52 tile (13, 25) peck 1
+FS RUNG 52 id 3 r 3 hi -
+FS CLEAR 53 tile (13, 25) peck 2
+FS RUNG 53 id 3 r 3 hi -
+FS CLEAR 54 tile (13, 25) peck 3
+FS RUNG 54 id 3 r 3 hi -
+FS CLEAR 55 tile (13, 25) peck 4
+FS RUNG 55 id 3 r 3 hi -
+FS CLEAR 56 tile (13, 25) peck 5
+FS RUNG 56 id 3 r 3 hi -
+FS CLEAR 57 tile (13, 25) peck 6
+FS RUNG 57 id 3 r 3 hi -
+FS CLEAR 59 tile (13, 25) peck 7
+FS RUNG 59 id 3 r 3 hi -
+FS STAT 60 id 3 at (13, 24) need 2 orth 0 ti 33 ammo 24 sen 0 hp 40 covden 0 eco 0 lost 0
+FS CLEAR 60 tile (13, 25) peck 8
+FS RUNG 60 id 3 r 3 hi -
+FS SEAL 64 tile (16, 25) n 6
+FS PHASE 67 id 3 ph 2 d 9 at (15, 23)
+FS PHASE 70 id 3 ph 3 d 5 at (13, 24)
+FS CLEAR 70 tile (13, 25) peck 1
+FS RUNG 70 id 3 r 3 hi -
+FS CLEAR 71 tile (13, 25) peck 2
+FS RUNG 71 id 3 r 3 hi -
+FS CLEAR 72 tile (13, 25) peck 3
+FS RUNG 72 id 3 r 3 hi -
+FS CLEAR 73 tile (13, 25) peck 4
+FS RUNG 73 id 3 r 3 hi -
+FS CLEAR 74 tile (13, 25) peck 5
+FS RUNG 74 id 3 r 3 hi -
+FS CLEAR 75 tile (13, 25) peck 6
+FS RUNG 75 id 3 r 3 hi -
+FS CLEAR 76 tile (13, 25) peck 7
+FS RUNG 76 id 3 r 3 hi -
+FS CLEAR 77 tile (13, 25) peck 8
+FS RUNG 77 id 3 r 3 hi -
+FS CLEARED 78 tile (13, 25) n 1
+FS SEAL 78 tile (13, 25) n 7
+FS SEALCLR 78 tile (13, 25) lag 0
+FS STAT 80 id 3 at (14, 24) need 0 orth 0 ti 89 ammo 24 sen 0 hp 40 covden 0 eco 0 lost 0
+FS SENTINEL 80 at (15, 24) face SOUTH tgt (15, 27) score 9 n 1 onring 0 lost 0 gate (0, 1, -1) onsray 0 olddsq -1
+FS RUNG 80 id 3 r 4 hi -
+FS PHASE 81 id 3 ph 4 d 4 at (14, 24)
+FS STAT 100 id 3 at (14, 23) need 2 orth 2 ti 16 ammo 18 sen 1 hp 40 covden 0 eco 0 lost 0
+FS STAT 120 id 3 at (14, 23) need 2 orth 2 ti 16 ammo 18 sen 1 hp 40 covden 0 eco 0 lost 0
+FS STAT 140 id 3 at (14, 23) need 2 orth 2 ti 16 ammo 18 sen 1 hp 40 covden 0 eco 0 lost 0
+FS STAT 160 id 3 at (13, 24) need 0 orth 0 ti 16 ammo 18 sen 1 hp 40 covden 0 eco 0 lost 0
+FS STAT 180 id 3 at (14, 23) need 2 orth 2 ti 16 ammo 18 sen 1 hp 40 covden 0 eco 0 lost 0

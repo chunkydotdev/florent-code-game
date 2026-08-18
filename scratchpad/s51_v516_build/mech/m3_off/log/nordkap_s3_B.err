@@ -1,0 +1,77 @@
+Update available: 2.3.6 -> 2.3.8. Run: pip install --upgrade fcode
+FS GATE 0 sig (20, 26, (9, 6), (9, 18)) ok 1
+FS GATE 1 sig (20, 26, (9, 6), (9, 18)) ok 1
+FS PHASE 1 id 4 ph 1 d 100 at (9, 17)
+FS HOPBUILD 1 at (9, 17) lch (9, 16) T (11, 5)
+FS GATE 2 sig (20, 26, (9, 6), (9, 18)) ok 1
+FS GATE 2 sig (20, 26, (9, 6), (9, 18)) ok 1
+FS THROW 2 from (9, 17) to (10, 11) T (11, 5) body 4 n 1 dsq 16
+FS HOPBUILD 3 at (10, 11) lch (10, 10) T (11, 5)
+FS GATE 3 sig (20, 26, (9, 6), (9, 18)) ok 1
+FS GATE 4 sig (20, 26, (9, 6), (9, 18)) ok 1
+FS THROW 4 from (11, 11) to (11, 5) T (11, 5) body 4 n 1 dsq 2
+FS ARRIVE 5 id 4 body 1 at (11, 5) dsq 2
+FS PHASE 5 id 4 ph 2 d 2 at (11, 5)
+FS SEAL 5 tile (10, 5) n 1
+FS SEAL 6 tile (11, 6) n 2
+FS GATE 7 sig (20, 26, (9, 6), (9, 18)) ok 1
+FS GATE 8 sig (20, 26, (9, 6), (9, 18)) ok 1
+FS GATE 9 sig (20, 26, (9, 6), (9, 18)) ok 1
+FS SEAL 10 tile (9, 5) n 3
+FS SEAL 12 tile (8, 5) n 4
+FS SEAL 16 tile (8, 6) n 5
+FS SEAL 18 tile (8, 7) n 6
+FS STAT 20 id 4 at (7, 6) need 3 orth 3 ti 45 ammo 24 sen 0 hp 40 covden 0 eco 0 lost 0
+FS STAT 40 id 4 at (12, 7) need 1 orth 1 ti 37 ammo 24 sen 0 hp 40 covden 0 eco 0 lost 0
+FS CLEAR 42 tile (10, 8) peck 1
+FS RUNG 42 id 4 r 3 hi -
+FS CLEAR 44 tile (10, 8) peck 2
+FS RUNG 44 id 4 r 3 hi -
+FS CLEAR 52 tile (10, 8) peck 1
+FS RUNG 52 id 4 r 3 hi -
+FS STAT 60 id 4 at (11, 8) need 1 orth 1 ti 12 ammo 15 sen 0 hp 40 covden 0 eco 0 lost 0
+FS STAT 80 id 4 at (11, 8) need 1 orth 1 ti 14 ammo 24 sen 0 hp 40 covden 0 eco 0 lost 0
+FS CLEAR 84 tile (10, 8) peck 1
+FS RUNG 84 id 4 r 3 hi -
+FS CLEAR 88 tile (10, 8) peck 1
+FS RUNG 88 id 4 r 3 hi -
+FS SEAL 96 tile (8, 8) n 7
+FS STAT 100 id 4 at (10, 9) need 1 orth 1 ti 12 ammo 21 sen 0 hp 40 covden 0 eco 0 lost 0
+FS SEAL 116 tile (8, 8) n 8
+FS STAT 120 id 4 at (10, 9) need 1 orth 1 ti 12 ammo 15 sen 0 hp 40 covden 0 eco 0 lost 0
+FS SEAL 124 tile (8, 8) n 9
+FS SEAL 139 tile (8, 8) n 10
+FS STAT 140 id 4 at (8, 9) need 1 orth 1 ti 24 ammo 22 sen 0 hp 40 covden 0 eco 0 lost 0
+FS SEAL 150 tile (8, 8) n 11
+FS STAT 160 id 4 at (8, 9) need 1 orth 1 ti 28 ammo 24 sen 0 hp 40 covden 0 eco 0 lost 0
+FS SEAL 177 tile (8, 8) n 12
+FS STAT 180 id 4 at (8, 9) need 1 orth 1 ti 40 ammo 24 sen 0 hp 40 covden 0 eco 0 lost 0
+FS SEAL 197 tile (8, 8) n 13
+FS STAT 200 id 4 at (8, 9) need 1 orth 1 ti 52 ammo 24 sen 0 hp 40 covden 0 eco 0 lost 0
+FS STAT 220 id 4 at (8, 9) need 1 orth 1 ti 72 ammo 24 sen 0 hp 40 covden 0 eco 0 lost 0
+FS SEAL 221 tile (8, 8) n 14
+FS STAT 240 id 4 at (8, 9) need 1 orth 1 ti 84 ammo 24 sen 0 hp 40 covden 0 eco 0 lost 0
+FS SEAL 249 tile (8, 8) n 15
+FS STAT 260 id 4 at (8, 9) need 1 orth 1 ti 96 ammo 24 sen 0 hp 40 covden 0 eco 0 lost 0
+FS SEAL 269 tile (8, 8) n 16
+FS STAT 280 id 4 at (8, 9) need 1 orth 1 ti 108 ammo 24 sen 0 hp 40 covden 0 eco 0 lost 0
+FS SEAL 293 tile (8, 8) n 17
+FS STAT 300 id 4 at (8, 9) need 1 orth 1 ti 120 ammo 24 sen 0 hp 40 covden 0 eco 0 lost 0
+FS STAT 320 id 4 at (8, 9) need 1 orth 1 ti 140 ammo 24 sen 0 hp 40 covden 0 eco 0 lost 0
+FS SEAL 321 tile (8, 8) n 18
+FS STAT 340 id 4 at (8, 9) need 1 orth 1 ti 81 ammo 24 sen 0 hp 40 covden 0 eco 1 lost 0
+FS SEAL 341 tile (8, 8) n 19
+FS STAT 360 id 4 at (8, 9) need 1 orth 1 ti 92 ammo 24 sen 0 hp 40 covden 0 eco 1 lost 0
+FS SEAL 365 tile (8, 8) n 20
+FS STAT 380 id 4 at (8, 9) need 1 orth 1 ti 33 ammo 24 sen 0 hp 40 covden 0 eco 1 lost 0
+FS SEAL 389 tile (8, 8) n 21
+FS SEAL 397 tile (8, 8) n 22
+FS STAT 400 id 4 at (8, 9) need 1 orth 1 ti 139 ammo 24 sen 0 hp 40 covden 0 eco 1 lost 0
+FS PHASE 402 id 4 ph 5 d 5 at (8, 9)
+FS SEAL 417 tile (8, 8) n 23
+FS STAT 420 id 4 at (8, 9) need 1 orth 1 ti 18 ammo 142 sen 1 hp 40 covden 0 eco 1 lost 0
+FS SEAL 425 tile (8, 8) n 24
+FS SEAL 433 tile (8, 8) n 25
+FS STAT 440 id 4 at (8, 9) need 1 orth 1 ti 70 ammo 172 sen 1 hp 40 covden 0 eco 1 lost 0
+FS SEAL 441 tile (8, 8) n 26
+FS SEAL 449 tile (8, 8) n 27

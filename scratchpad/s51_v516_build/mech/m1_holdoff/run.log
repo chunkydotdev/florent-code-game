@@ -1,0 +1,30 @@
+atoll_s1_A	atoll	1	A	US	m1_holdoff	Core destroyed	463	0	1230	380
+atoll_s1_B	atoll	1	B	OPP	_v488beltbreak2	Core destroyed	437	0	2840	3000
+atoll_s2_A	atoll	2	A	US	m1_holdoff	Titanium collected (tiebreak)	1000	0	4970	4960
+atoll_s2_B	atoll	2	B	OPP	_v488beltbreak2	Core destroyed	589	0	2900	2690
+atoll_s3_A	atoll	3	A	US	m1_holdoff	Core destroyed	654	0	4740	3130
+atoll_s3_B	atoll	3	B	US	m1_holdoff	Core destroyed	159	0	600	310
+drakkarfjord_s1_A	drakkarfjord	1	A	US	m1_holdoff	Core destroyed	766	0	13410	8320
+drakkarfjord_s1_B	drakkarfjord	1	B	US	m1_holdoff	Core destroyed	142	0	440	0
+drakkarfjord_s2_A	drakkarfjord	2	A	OPP	_v488beltbreak2	Core destroyed	486	0	970	5340
+drakkarfjord_s2_B	drakkarfjord	2	B	US	m1_holdoff	Core destroyed	236	0	670	0
+drakkarfjord_s3_A	drakkarfjord	3	A	US	m1_holdoff	Titanium collected (tiebreak)	1000	0	13060	12830
+drakkarfjord_s3_B	drakkarfjord	3	B	US	m1_holdoff	Titanium collected (tiebreak)	1000	0	2480	670
+glacierkeep_s1_A	glacierkeep	1	A	US	m1_holdoff	Core destroyed	210	0	460	0
+glacierkeep_s1_B	glacierkeep	1	B	US	m1_holdoff	Titanium collected (tiebreak)	1000	0	50	0
+glacierkeep_s2_A	glacierkeep	2	A	US	m1_holdoff	Core destroyed	173	0	140	0
+glacierkeep_s2_B	glacierkeep	2	B	US	m1_holdoff	Titanium collected (tiebreak)	1000	0	40	0
+glacierkeep_s3_A	glacierkeep	3	A	US	m1_holdoff	Titanium collected (tiebreak)	1000	0	150	0
+glacierkeep_s3_B	glacierkeep	3	B	US	m1_holdoff	Titanium collected (tiebreak)	1000	0	160	0
+midgard_s1_A	midgard	1	A	OPP	_v488beltbreak2	Core destroyed	259	0	460	2220
+midgard_s1_B	midgard	1	B	OPP	_v488beltbreak2	Core destroyed	249	0	670	1250
+midgard_s2_A	midgard	2	A	US	m1_holdoff	Core destroyed	277	0	1610	1930
+midgard_s2_B	midgard	2	B	OPP	_v488beltbreak2	Core destroyed	120	0	660	1510
+midgard_s3_A	midgard	3	A	OPP	_v488beltbreak2	Core destroyed	168	0	640	1590
+midgard_s3_B	midgard	3	B	OPP	_v488beltbreak2	Core destroyed	249	0	670	1250
+nordkap_s1_A	nordkap	1	A	OPP	_v488beltbreak2	Core destroyed	295	0	110	3080
+nordkap_s1_B	nordkap	1	B	US	m1_holdoff	Core destroyed	500	0	2330	1360
+nordkap_s2_A	nordkap	2	A	OPP	_v488beltbreak2	Core destroyed	321	0	140	1720
+nordkap_s2_B	nordkap	2	B	OPP	_v488beltbreak2	Core destroyed	553	0	4280	5600
+nordkap_s3_A	nordkap	3	A	OPP	_v488beltbreak2	Core destroyed	343	0	110	1230
+nordkap_s3_B	nordkap	3	B	US	m1_holdoff	Core destroyed	141	0	650	0

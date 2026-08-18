@@ -1,0 +1,37 @@
+tag	map	seed	seat	ours	winner	cond	turn	tracebacks	ours_mined	opp_mined
+archipelago_s1_A	archipelago	1	A	OPP	_v468kladturbo	Core destroyed	137	0	590	1190
+archipelago_s1_B	archipelago	1	B	US	_v516teardown	Core destroyed	174	0	1520	880
+archipelago_s2_A	archipelago	2	A	US	_v516teardown	Core destroyed	193	0	1770	780
+archipelago_s2_B	archipelago	2	B	OPP	_v468kladturbo	Core destroyed	98	0	610	1020
+archipelago_s3_A	archipelago	3	A	US	_v516teardown	Core destroyed	263	0	1880	1330
+archipelago_s3_B	archipelago	3	B	US	_v516teardown	Core destroyed	238	0	2160	1370
+archipelago_s4_A	archipelago	4	A	OPP	_v468kladturbo	Core destroyed	237	0	1700	1690
+archipelago_s4_B	archipelago	4	B	US	_v516teardown	Core destroyed	142	0	960	980
+archipelago_s5_A	archipelago	5	A	OPP	_v468kladturbo	Core destroyed	603	0	4430	4410
+archipelago_s5_B	archipelago	5	B	US	_v516teardown	Core destroyed	194	0	1340	570
+archipelago_s6_A	archipelago	6	A	US	_v516teardown	Core destroyed	220	0	2570	730
+archipelago_s6_B	archipelago	6	B	OPP	_v468kladturbo	Core destroyed	106	0	860	940
+archipelago_s7_A	archipelago	7	A	US	_v516teardown	Core destroyed	139	0	1170	580
+archipelago_s7_B	archipelago	7	B	OPP	_v468kladturbo	Core destroyed	328	0	2910	2000
+archipelago_s8_A	archipelago	8	A	OPP	_v468kladturbo	Core destroyed	89	0	500	740
+archipelago_s8_B	archipelago	8	B	US	_v516teardown	Core destroyed	180	0	1070	880
+archipelago_s9_A	archipelago	9	A	US	_v516teardown	Core destroyed	216	0	2010	1540
+archipelago_s9_B	archipelago	9	B	US	_v516teardown	Titanium collected (tiebreak)	1000	0	5050	4940
+archipelago_s10_A	archipelago	10	A	US	_v516teardown	Titanium collected (tiebreak)	1000	0	6820	5230
+archipelago_s10_B	archipelago	10	B	US	_v516teardown	Core destroyed	124	0	1080	820
+archipelago_s11_A	archipelago	11	A	US	_v516teardown	Core destroyed	145	0	1870	980
+archipelago_s11_B	archipelago	11	B	OPP	_v468kladturbo	Core destroyed	135	0	1160	930
+archipelago_s12_A	archipelago	12	A	US	_v516teardown	Core destroyed	224	0	2090	1600
+archipelago_s12_B	archipelago	12	B	US	_v516teardown	Core destroyed	116	0	920	820
+archipelago_s13_A	archipelago	13	A	OPP	_v468kladturbo	Core destroyed	410	0	5940	2090
+archipelago_s13_B	archipelago	13	B	US	_v516teardown	Core destroyed	137	0	1140	750
+archipelago_s14_A	archipelago	14	A	US	_v516teardown	Core destroyed	341	0	1740	1070
+archipelago_s14_B	archipelago	14	B	OPP	_v468kladturbo	Core destroyed	218	0	1590	2160
+archipelago_s15_A	archipelago	15	A	OPP	_v468kladturbo	Core destroyed	127	0	650	1110
+archipelago_s15_B	archipelago	15	B	OPP	_v468kladturbo	Core destroyed	613	0	3150	3150
+archipelago_s16_A	archipelago	16	A	OPP	_v468kladturbo	Core destroyed	222	0	1640	1760
+archipelago_s16_B	archipelago	16	B	US	_v516teardown	Core destroyed	279	0	1480	970
+archipelago_s17_A	archipelago	17	A	US	_v516teardown	Core destroyed	294	0	2180	1540
+archipelago_s17_B	archipelago	17	B	US	_v516teardown	Core destroyed	195	0	1340	1180
+archipelago_s18_A	archipelago	18	A	US	_v516teardown	Core destroyed	268	0	2930	260
+archipelago_s18_B	archipelago	18	B	OPP	_v468kladturbo	Core destroyed	401	0	2020	2930

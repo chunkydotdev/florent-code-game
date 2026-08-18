@@ -1,0 +1,30 @@
+atoll_s43_A	atoll	43	A	OPP	_v488beltbreak2	Core destroyed	124	0	590	780
+atoll_s43_B	atoll	43	B	US	_v516teardown	Core destroyed	212	0	1020	500
+atoll_s44_A	atoll	44	A	OPP	_v488beltbreak2	Core destroyed	532	0	2000	3040
+atoll_s44_B	atoll	44	B	US	_v516teardown	Core destroyed	212	0	1020	500
+atoll_s45_A	atoll	45	A	US	_v516teardown	Core destroyed	267	0	2300	1180
+atoll_s45_B	atoll	45	B	US	_v516teardown	Core destroyed	150	0	720	700
+drakkarfjord_s43_A	drakkarfjord	43	A	US	_v516teardown	Core destroyed	158	0	680	0
+drakkarfjord_s43_B	drakkarfjord	43	B	OPP	_v488beltbreak2	Harvesters (tiebreak)	1000	0	400	400
+drakkarfjord_s44_A	drakkarfjord	44	A	US	_v516teardown	Core destroyed	178	0	780	130
+drakkarfjord_s44_B	drakkarfjord	44	B	US	_v516teardown	Core destroyed	219	0	990	0
+drakkarfjord_s45_A	drakkarfjord	45	A	US	_v516teardown	Core destroyed	680	0	6080	7460
+drakkarfjord_s45_B	drakkarfjord	45	B	US	_v516teardown	Core destroyed	269	0	1670	0
+glacierkeep_s43_A	glacierkeep	43	A	US	_v516teardown	Core destroyed	414	0	140	60
+glacierkeep_s43_B	glacierkeep	43	B	US	_v516teardown	Titanium collected (tiebreak)	1000	0	170	0
+glacierkeep_s44_A	glacierkeep	44	A	US	_v516teardown	Core destroyed	414	0	140	60
+glacierkeep_s44_B	glacierkeep	44	B	US	_v516teardown	Titanium collected (tiebreak)	1000	0	20	0
+glacierkeep_s45_A	glacierkeep	45	A	US	_v516teardown	Core destroyed	205	0	160	0
+glacierkeep_s45_B	glacierkeep	45	B	OPP	_v488beltbreak2	Core destroyed	617	0	180	0
+midgard_s43_A	midgard	43	A	US	_v516teardown	Core destroyed	193	0	590	1720
+midgard_s43_B	midgard	43	B	OPP	_v488beltbreak2	Core destroyed	120	0	800	1310
+midgard_s44_A	midgard	44	A	OPP	_v488beltbreak2	Core destroyed	243	0	410	2260
+midgard_s44_B	midgard	44	B	OPP	_v488beltbreak2	Core destroyed	278	0	550	4010
+midgard_s45_A	midgard	45	A	OPP	_v488beltbreak2	Core destroyed	259	0	610	3540
+midgard_s45_B	midgard	45	B	US	_v516teardown	Core destroyed	381	0	3430	1920
+nordkap_s43_A	nordkap	43	A	US	_v516teardown	Core destroyed	474	0	1640	370
+nordkap_s43_B	nordkap	43	B	US	_v516teardown	Core destroyed	197	0	630	0
+nordkap_s44_A	nordkap	44	A	US	_v516teardown	Core destroyed	416	0	2000	380
+nordkap_s44_B	nordkap	44	B	US	_v516teardown	Core destroyed	214	0	1010	0
+nordkap_s45_A	nordkap	45	A	US	_v516teardown	Core destroyed	403	0	2620	120
+nordkap_s45_B	nordkap	45	B	US	_v516teardown	Titanium collected (tiebreak)	1000	0	180	0

@@ -1,0 +1,172 @@
+Update available: 2.3.6 -> 2.3.8. Run: pip install --upgrade fcode
+FS GATE 0 sig (30, 30, (14, 2), (14, 26)) ok 1
+FS GATE 1 sig (30, 30, (14, 2), (14, 26)) ok 1
+FS PHASE 1 id 3 ph 1 d 484 at (14, 4)
+FS HOPBUILD 1 at (14, 4) lch (14, 5) T (16, 28)
+FS GATE 2 sig (30, 30, (14, 2), (14, 26)) ok 1
+FS GATE 2 sig (30, 30, (14, 2), (14, 26)) ok 1
+FS THROW 2 from (15, 4) to (15, 10) T (16, 28) body 3 n 1 dsq 256
+FS HOPBUILD 3 at (15, 10) lch (15, 11) T (16, 28)
+FS GATE 3 sig (30, 30, (14, 2), (14, 26)) ok 1
+FS GATE 4 sig (30, 30, (14, 2), (14, 26)) ok 1
+FS THROW 4 from (16, 10) to (16, 16) T (16, 28) body 3 n 1 dsq 101
+FS HOPBUILD 5 at (16, 16) lch (16, 17) T (16, 28)
+FS GATE 6 sig (30, 30, (14, 2), (14, 26)) ok 1
+FS THROW 6 from (16, 16) to (15, 22) T (16, 28) body 3 n 1 dsq 16
+FS HOPBUILD 7 at (15, 22) lch (15, 23) T (16, 28)
+FS GATE 8 sig (30, 30, (14, 2), (14, 26)) ok 1
+FS THROW 8 from (16, 22) to (16, 28) T (16, 28) body 3 n 1 dsq 2
+FS ARRIVE 9 id 3 body 1 at (16, 28) dsq 2
+FS PHASE 9 id 3 ph 2 d 2 at (16, 28)
+FS SEAL 9 tile (16, 27) n 1
+FS SEAL 10 tile (15, 28) n 2
+FS GATE 11 sig (30, 30, (14, 2), (14, 26)) ok 1
+FS GATE 12 sig (30, 30, (14, 2), (14, 26)) ok 1
+FS GATE 13 sig (30, 30, (14, 2), (14, 26)) ok 1
+FS SEAL 14 tile (16, 26) n 3
+FS SEAL 17 tile (15, 25) n 4
+FS STAT 20 id 3 at (15, 24) need 5 orth 4 ti 64 ammo 0 sen 0 hp 40 covden 0 eco 0 lost 0
+FS SEAL 21 tile (14, 25) n 5
+FS DODGE 22 id 3 from (14, 24) to (15, 24) cov 1 -> 0 hit 0 hp 40
+FS DODGE 24 id 3 from (14, 24) to (15, 24) cov 1 -> 0 hit 0 hp 40
+FS DODGE 26 id 3 from (14, 24) to (15, 24) cov 1 -> 0 hit 0 hp 40
+FS DODGE 28 id 3 from (14, 24) to (13, 24) cov 1 -> 0 hit 0 hp 40
+FS SEAL 29 tile (13, 25) n 6
+FS SEAL 37 tile (13, 26) n 7
+FS SEAL 39 tile (13, 27) n 8
+FS STAT 40 id 3 at (12, 27) need 2 orth 2 ti 13 ammo 16 sen 0 hp 40 covden 0 eco 0 lost 0
+FS SEAL 42 tile (14, 28) n 9
+FS PHASE 48 id 3 ph 3 d 5 at (12, 25)
+FS SEAL 51 tile (13, 28) n 10
+FS PHASE 53 id 3 ph 2 d 8 at (12, 29)
+FS PHASE 54 id 3 ph 3 d 5 at (12, 28)
+FS PHASE 55 id 3 ph 2 d 8 at (12, 29)
+FS PHASE 56 id 3 ph 3 d 5 at (12, 28)
+FS PHASE 57 id 3 ph 2 d 8 at (12, 29)
+FS PHASE 58 id 3 ph 3 d 5 at (12, 28)
+FS PHASE 59 id 3 ph 2 d 8 at (12, 29)
+FS PHASE 60 id 3 ph 3 d 5 at (12, 28)
+FS STAT 60 id 3 at (12, 28) need 1 orth 0 ti 46 ammo 24 sen 0 hp 40 covden 0 eco 0 lost 0
+FS PHASE 61 id 3 ph 2 d 8 at (12, 29)
+FS PHASE 62 id 3 ph 3 d 5 at (12, 28)
+FS SEAL 65 tile (13, 25) n 11
+FS PHASE 70 id 3 ph 2 d 8 at (12, 29)
+FS PHASE 71 id 3 ph 3 d 5 at (12, 28)
+FS PHASE 72 id 3 ph 2 d 8 at (12, 29)
+FS SENTINEL 72 at (11, 29) face NORTHEAST tgt (14, 26) score 18 n 1 onring 0 lost 0 gate (0, 1, -1) onsray 0 olddsq -1
+FS RUNG 72 id 3 r 4 hi -
+FS PHASE 73 id 3 ph 4 d 8 at (12, 29)
+FS STAT 80 id 3 at (12, 28) need 1 orth 0 ti 16 ammo 28 sen 1 hp 40 covden 0 eco 0 lost 0
+FS SEAL 98 tile (13, 25) n 12
+FS STAT 100 id 3 at (12, 26) need 0 orth 0 ti 16 ammo 10 sen 1 hp 40 covden 0 eco 0 lost 0
+FS STAT 120 id 3 at (11, 25) need 5 orth 4 ti 16 ammo 10 sen 1 hp 40 covden 0 eco 0 lost 0
+FS STAT 140 id 3 at (11, 25) need 5 orth 4 ti 16 ammo 10 sen 1 hp 40 covden 0 eco 0 lost 0
+FS STAT 160 id 3 at (11, 25) need 5 orth 4 ti 16 ammo 10 sen 1 hp 40 covden 0 eco 0 lost 0
+FS STAT 180 id 3 at (11, 25) need 5 orth 4 ti 16 ammo 10 sen 1 hp 40 covden 0 eco 0 lost 0
+FS STAT 200 id 3 at (11, 25) need 5 orth 4 ti 16 ammo 10 sen 1 hp 40 covden 0 eco 0 lost 0
+FS STAT 220 id 3 at (11, 23) need 6 orth 5 ti 16 ammo 10 sen 1 hp 40 covden 0 eco 0 lost 0
+FS SEAL 229 tile (13, 25) n 13
+FS DODGE 231 id 3 from (14, 24) to (15, 24) cov 1 -> 0 hit 0 hp 22
+FS DODGE 233 id 3 from (14, 24) to (15, 24) cov 1 -> 0 hit 0 hp 22
+FS DODGE 235 id 3 from (14, 24) to (15, 24) cov 1 -> 0 hit 0 hp 22
+FS DODGE 237 id 3 from (14, 24) to (15, 24) cov 1 -> 0 hit 0 hp 22
+FS DODGE 239 id 3 from (14, 24) to (13, 24) cov 1 -> 0 hit 0 hp 22
+FS STAT 240 id 3 at (13, 24) need 1 orth 1 ti 16 ammo 12 sen 1 hp 22 covden 0 eco 0 lost 0
+FS DODGE 242 id 3 from (14, 24) to (15, 24) cov 1 -> 0 hit 0 hp 22
+FS DODGE 244 id 3 from (14, 24) to (15, 24) cov 1 -> 0 hit 0 hp 22
+FS DODGE 246 id 3 from (14, 24) to (15, 24) cov 1 -> 0 hit 0 hp 22
+FS DODGE 248 id 3 from (14, 24) to (15, 24) cov 1 -> 0 hit 0 hp 22
+FS DODGE 250 id 3 from (14, 24) to (15, 24) cov 1 -> 0 hit 0 hp 22
+FS DODGE 252 id 3 from (14, 24) to (15, 24) cov 1 -> 0 hit 0 hp 22
+FS DODGE 254 id 3 from (14, 24) to (15, 24) cov 1 -> 0 hit 0 hp 22
+FS DODGE 256 id 3 from (14, 24) to (15, 24) cov 1 -> 0 hit 0 hp 22
+FS DODGE 258 id 3 from (14, 24) to (15, 24) cov 1 -> 0 hit 0 hp 22
+FS STAT 260 id 3 at (14, 24) need 2 orth 2 ti 16 ammo 12 sen 1 hp 22 covden 0 eco 0 lost 0
+FS DODGE 260 id 3 from (14, 24) to (15, 24) cov 1 -> 0 hit 0 hp 22
+FS DODGE 262 id 3 from (14, 24) to (15, 24) cov 1 -> 0 hit 0 hp 22
+FS DODGE 264 id 3 from (14, 24) to (13, 24) cov 1 -> 0 hit 0 hp 22
+FS SEAL 265 tile (13, 25) n 14
+FS DODGE 267 id 3 from (14, 24) to (15, 24) cov 1 -> 0 hit 0 hp 22
+FS SEAL 271 tile (16, 25) n 15
+FS DODGE 276 id 3 from (14, 24) to (15, 24) cov 1 -> 0 hit 0 hp 26
+FS DODGE 278 id 3 from (14, 24) to (15, 24) cov 1 -> 0 hit 0 hp 26
+FS STAT 280 id 3 at (14, 24) need 2 orth 2 ti 16 ammo 15 sen 1 hp 26 covden 0 eco 0 lost 0
+FS DODGE 280 id 3 from (14, 24) to (15, 24) cov 1 -> 0 hit 0 hp 26
+FS DODGE 282 id 3 from (14, 24) to (15, 24) cov 1 -> 0 hit 0 hp 26
+FS DODGE 284 id 3 from (14, 24) to (15, 24) cov 1 -> 0 hit 0 hp 26
+FS DODGE 286 id 3 from (14, 24) to (13, 24) cov 1 -> 0 hit 0 hp 26
+FS STAT 300 id 3 at (11, 23) need 6 orth 6 ti 16 ammo 15 sen 1 hp 26 covden 0 eco 0 lost 0
+FS STAT 320 id 3 at (12, 22) need 7 orth 7 ti 14 ammo 17 sen 1 hp 26 covden 0 eco 0 lost 0
+FS STAT 340 id 3 at (11, 23) need 6 orth 6 ti 14 ammo 17 sen 1 hp 26 covden 0 eco 0 lost 0
+FS SEAL 352 tile (13, 25) n 16
+FS STAT 360 id 3 at (13, 24) need 3 orth 2 ti 14 ammo 10 sen 1 hp 26 covden 0 eco 0 lost 0
+FS SEAL 360 tile (13, 25) n 17
+FS STAT 380 id 3 at (13, 24) need 3 orth 2 ti 14 ammo 13 sen 1 hp 26 covden 0 eco 0 lost 0
+FS SEAL 380 tile (13, 25) n 18
+FS SEAL 387 tile (13, 25) n 19
+FS SEAL 396 tile (13, 25) n 20
+FS DODGE 398 id 3 from (14, 24) to (13, 24) cov 1 -> 0 hit 0 hp 26
+FS STAT 400 id 3 at (13, 24) need 2 orth 2 ti 14 ammo 12 sen 1 hp 26 covden 0 eco 0 lost 0
+FS SEAL 405 tile (13, 25) n 21
+FS STAT 420 id 3 at (12, 23) need 7 orth 6 ti 14 ammo 15 sen 1 hp 26 covden 0 eco 0 lost 0
+FS DODGE 429 id 3 from (11, 25) to (12, 25) cov 1 -> 0 hit 0 hp 26
+FS SEAL 430 tile (13, 25) n 22
+FS DODGE 432 id 3 from (12, 26) to (12, 27) cov 1 -> 0 hit 0 hp 26
+FS STAT 440 id 3 at (12, 28) need 3 orth 2 ti 14 ammo 18 sen 1 hp 26 covden 0 eco 0 lost 0
+FS DODGE 445 id 3 from (12, 27) to (12, 26) cov 1 -> 0 hit 0 hp 26
+FS DODGE 447 id 3 from (12, 27) to (12, 26) cov 1 -> 0 hit 0 hp 19
+FS SEAL 449 tile (13, 25) n 23
+FS DODGE 453 id 3 from (12, 26) to (12, 25) cov 1 -> 0 hit 0 hp 19
+FS DODGE 455 id 3 from (12, 26) to (12, 25) cov 1 -> 0 hit 0 hp 19
+FS DODGE 457 id 3 from (12, 26) to (12, 25) cov 1 -> 0 hit 0 hp 19
+FS DODGE 459 id 3 from (12, 26) to (12, 27) cov 1 -> 0 hit 0 hp 19
+FS STAT 460 id 3 at (12, 27) need 2 orth 2 ti 14 ammo 11 sen 1 hp 19 covden 0 eco 0 lost 0
+FS DODGE 461 id 3 from (12, 27) to (12, 28) cov 1 -> 0 hit 0 hp 19
+FS STAT 480 id 3 at (12, 29) need 4 orth 4 ti 14 ammo 11 sen 1 hp 19 covden 0 eco 0 lost 0
+FS DODGE 482 id 3 from (12, 27) to (12, 26) cov 1 -> 0 hit 0 hp 19
+FS DODGE 485 id 3 from (12, 27) to (12, 28) cov 1 -> 0 hit 0 hp 19
+FS STAT 500 id 3 at (12, 28) need 5 orth 2 ti 14 ammo 11 sen 1 hp 19 covden 0 eco 0 lost 0
+FS SEAL 500 tile (13, 28) n 24
+FS DODGE 507 id 3 from (11, 27) to (10, 27) cov 1 -> 0 hit 0 hp 19
+FS DODGE 509 id 3 from (11, 27) to (10, 27) cov 1 -> 0 hit 0 hp 19
+FS DODGE 511 id 3 from (11, 27) to (10, 27) cov 1 -> 0 hit 0 hp 19
+FS SEAL 517 tile (13, 25) n 25
+FS STAT 520 id 3 at (12, 26) need 2 orth 2 ti 14 ammo 7 sen 1 hp 19 covden 0 eco 0 lost 0
+FS DODGE 521 id 3 from (12, 26) to (12, 27) cov 1 -> 0 hit 0 hp 19
+FS DODGE 523 id 3 from (11, 27) to (10, 27) cov 1 -> 0 hit 0 hp 19
+FS DODGE 529 id 3 from (12, 26) to (12, 27) cov 1 -> 0 hit 0 hp 12
+FS DODGE 531 id 3 from (12, 26) to (12, 27) cov 1 -> 0 hit 0 hp 12
+FS DODGE 533 id 3 from (12, 27) to (12, 28) cov 1 -> 0 hit 0 hp 12
+FS STAT 540 id 3 at (12, 28) need 3 orth 2 ti 14 ammo 17 sen 1 hp 12 covden 0 eco 0 lost 0
+FS SEAL 550 tile (13, 28) n 26
+FS STAT 560 id 3 at (16, 28) need 2 orth 2 ti 14 ammo 10 sen 1 hp 12 covden 0 eco 0 lost 0
+FS RETREAT 560 id 3 hp 12 from (16, 28) to (17, 28)
+FS RETREAT 562 id 3 hp 12 from (16, 28) to (17, 28)
+FS RETREAT 564 id 3 hp 12 from (16, 28) to (17, 28)
+FS RETREAT 566 id 3 hp 12 from (16, 28) to (16, 29)
+FS SEAL 570 tile (13, 28) n 27
+FS DODGE 574 id 3 from (12, 27) to (12, 26) cov 1 -> 0 hit 0 hp 12
+FS DODGE 575 id 3 from (12, 26) to (12, 25) cov 1 -> 0 hit 0 hp 12
+FS SEAL 576 tile (13, 25) n 28
+FS STAT 580 id 3 at (11, 23) need 6 orth 6 ti 14 ammo 6 sen 1 hp 12 covden 0 eco 0 lost 0
+FS DODGE 598 id 3 from (11, 25) to (12, 25) cov 1 -> 0 hit 0 hp 12
+FS STAT 600 id 3 at (12, 25) need 3 orth 2 ti 14 ammo 16 sen 1 hp 12 covden 0 eco 0 lost 0
+FS SEAL 600 tile (13, 25) n 29
+FS DODGE 602 id 3 from (12, 26) to (12, 27) cov 2 -> 0 hit 0 hp 12
+FS DODGE 606 id 3 from (12, 25) to (12, 26) cov 1 -> 0 hit 0 hp 12
+FS SEAL 607 tile (13, 26) n 30
+FS DODGE 609 id 3 from (12, 25) to (12, 26) cov 1 -> 0 hit 0 hp 12
+FS DODGE 611 id 3 from (12, 25) to (12, 26) cov 1 -> 0 hit 0 hp 12
+FS DODGE 613 id 3 from (12, 25) to (12, 26) cov 1 -> 0 hit 0 hp 12
+FS DODGE 614 id 3 from (12, 26) to (12, 27) cov 1 -> 0 hit 0 hp 12
+FS DODGE 616 id 3 from (12, 26) to (12, 27) cov 1 -> 0 hit 0 hp 12
+FS DODGE 618 id 3 from (12, 26) to (12, 27) cov 1 -> 0 hit 0 hp 12
+FS STAT 620 id 3 at (12, 26) need 2 orth 1 ti 14 ammo 12 sen 1 hp 12 covden 0 eco 0 lost 0
+FS DODGE 620 id 3 from (12, 26) to (12, 27) cov 1 -> 0 hit 0 hp 12
+FS DODGE 622 id 3 from (12, 26) to (12, 27) cov 1 -> 0 hit 0 hp 12
+FS DODGE 624 id 3 from (12, 26) to (12, 27) cov 1 -> 0 hit 0 hp 12
+FS DODGE 625 id 3 from (12, 27) to (12, 28) cov 1 -> 0 hit 0 hp 12
+FS STAT 640 id 3 at (12, 28) need 3 orth 1 ti 14 ammo 12 sen 1 hp 12 covden 0 eco 0 lost 0
+FS STAT 660 id 3 at (11, 27) need 5 orth 4 ti 14 ammo 12 sen 1 hp 12 covden 0 eco 0 lost 0
+FS DODGE 661 id 3 from (10, 27) to (11, 27) cov 1 -> 0 hit 0 hp 12
+FS DODGE 663 id 3 from (10, 27) to (11, 27) cov 1 -> 0 hit 0 hp 5

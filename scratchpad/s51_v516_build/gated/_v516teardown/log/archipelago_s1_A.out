@@ -1,0 +1,16 @@
+Running match: _v516teardown vs _v468kladturbo
+  Map: archipelago.map26  Seed: 1  Replay: 
+scratchpad/s51_v516_build/gated/_v516teardown/rep/archipelago_s1_A.replay26  
+TLE: 10ms
+Completed turn 0
+Completed turn 100
+Replay written to 
+scratchpad/s51_v516_build/gated/_v516teardown/rep/archipelago_s1_A.replay26
+
+  Winner: _v468kladturbo  (Core destroyed, turn 137)
+
+                _v516teardown     _v468kladturbo  
+  Titanium     10 (590 mined)    53 (1190 mined)  
+  Units                     6                  9  
+  Buildings                10                 28  
+

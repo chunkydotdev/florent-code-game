@@ -1,0 +1,16 @@
+Running match: _v516teardown vs _v488beltbreak2
+  Map: atoll.map26  Seed: 26  Replay: 
+scratchpad/s51_v516_build/grid/b9/rep516/atoll_s26_A.replay26  TLE: 10ms
+Completed turn 0
+Completed turn 100
+Completed turn 200
+Completed turn 300
+Replay written to scratchpad/s51_v516_build/grid/b9/rep516/atoll_s26_A.replay26
+
+  Winner: _v488beltbreak2  (Core destroyed, turn 386)
+
+                  _v516teardown    _v488beltbreak2  
+  Titanium     338 (1890 mined)    66 (3570 mined)  
+  Units                      15                 22  
+  Buildings                  12                 26  
+

@@ -1,0 +1,20 @@
+Running match: m1_holdoff vs _v488beltbreak2
+  Map: atoll.map26  Seed: 3  Replay: 
+scratchpad/s51_v516_build/mech/m1_holdoff/rep/atoll_s3_A.replay26  TLE: 10ms
+Completed turn 0
+Completed turn 100
+Completed turn 200
+Completed turn 300
+Completed turn 400
+Completed turn 500
+Completed turn 600
+Replay written to 
+scratchpad/s51_v516_build/mech/m1_holdoff/rep/atoll_s3_A.replay26
+
+  Winner: m1_holdoff  (Core destroyed, turn 654)
+
+                     m1_holdoff     _v488beltbreak2  
+  Titanium     699 (4740 mined)    648 (3130 mined)  
+  Units                      19                  18  
+  Buildings                  26                  14  
+

@@ -86,3 +86,15 @@ unattributed regressions are DEATH-RATE rises (glacierkeep deaths 7.1→15.9%, n
 3. **Sentinel-purchase reach** (same fix class as v515's evictor reach, purchase-side).
 Deferred to v517+: fire-discipline (hold-until-net-positive), second-sentinel economics,
 GUNNER-FIRST + MODESWITCH stacking. Each with mutants; n≥450 concurrent-block headline.
+
+---
+*⛔ DATED CORRECTION (s51, v516 build, same session): the SHARED-ROOT section's sizing is
+WRONG. Re-measured against the same replays with a tile+round join: 219/224 hop links tear
+down within 20 rounds (median life 1) — the fired config's single-rider throw IS the teardown
+trigger (relay=False ⇒ hold=False). The long-lived launchers are ring evictors (standing is
+their job) + the chassis home-launcher line; the real defect was a small one (fs_ferry_seen
+gate above the TTL, fixed in v516) worth ~7pp of scale share, and the sentinel priced at ~86
+(not 124) at purchase time, with LIVE BUILDER BOTS (~100pp of the 188pp scale excess) the
+dominant term, launchers ~4%. The #1 magazine finding STANDS (v516 mutant reproduces its
+digits exactly); the launcher-budget framing does not. See
+BUILD-REPORT-v516teardown-2026-08-18.md finding 1.*

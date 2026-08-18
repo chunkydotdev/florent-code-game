@@ -1,0 +1,80 @@
+Update available: 2.3.6 -> 2.3.8. Run: pip install --upgrade fcode
+FS GATE 0 sig (18, 18, (2, 14), (14, 2)) ok 1
+FS GATE 1 sig (18, 18, (2, 14), (14, 2)) ok 1
+FS PHASE 1 id 3 ph 1 d 200 at (4, 13)
+FS HOPBUILD 1 at (4, 13) lch (4, 12) T (16, 1)
+FS GATE 2 sig (18, 18, (2, 14), (14, 2)) ok 1
+FS GATE 2 sig (18, 18, (2, 14), (14, 2)) ok 1
+FS THROW 2 from (5, 13) to (8, 9) T (16, 1) body 3 n 1 dsq 72
+FS HOPBUILD 3 at (8, 9) lch (8, 8) T (16, 1)
+FS GATE 3 sig (18, 18, (2, 14), (14, 2)) ok 1
+FS GATE 4 sig (18, 18, (2, 14), (14, 2)) ok 1
+FS THROW 4 from (9, 9) to (12, 5) T (16, 1) body 3 n 1 dsq 8
+FS ARRIVE 5 id 3 body 1 at (12, 5) dsq 8
+FS PHASE 5 id 3 ph 2 d 8 at (12, 5)
+FS SEAL 7 tile (13, 3) n 1
+FS GATE 7 sig (18, 18, (2, 14), (14, 2)) ok 1
+FS EVICTOR 8 at (13, 5) ucov 0 cov 1 unseal 1 obs 6
+FS RUNG 8 id 3 r 2 hi -
+FS GATE 8 sig (18, 18, (2, 14), (14, 2)) ok 1
+FS GATE 9 sig (18, 18, (2, 14), (14, 2)) ok 1
+FS EVICT 9 from (13, 4) to (12, 10)
+FS SEAL 11 tile (14, 4) n 2
+FS EVICTOR 12 at (13, 5) ucov 0 cov 2 unseal 1 obs 9
+FS RUNG 12 id 3 r 2 hi -
+FS GATE 13 sig (18, 18, (2, 14), (14, 2)) ok 1
+FS EVICT 13 from (12, 6) to (12, 0)
+FS EVICT 15 from (13, 6) to (12, 0)
+FS SEAL 16 tile (13, 2) n 3
+FS STAT 20 id 3 at (12, 3) need 6 orth 5 ti 78 ammo 24 sen 0 hp 22 covden 0 eco 1 lost 0
+FS GATE 63 sig (18, 18, (2, 14), (14, 2)) ok 1
+FS PHASE 63 id 137 ph 1 d 290 at (3, 16)
+FS HOPBUILD 65 at (4, 17) lch (5, 17) T (16, 1)
+FS GATE 66 sig (18, 18, (2, 14), (14, 2)) ok 1
+FS THROW 66 from (4, 16) to (8, 13) T (16, 1) body 137 n 1 dsq 136
+FS HOPBUILD 68 at (8, 12) lch (9, 12) T (16, 1)
+FS GATE 69 sig (18, 18, (2, 14), (14, 2)) ok 1
+FS THROW 69 from (8, 12) to (10, 7) T (16, 1) body 137 n 1 dsq 32
+FS GATE 161 sig (18, 18, (2, 14), (14, 2)) ok 1
+FS GATE 264 sig (18, 18, (2, 14), (14, 2)) ok 1
+FS PHASE 264 id 314 ph 1 d 290 at (3, 16)
+FS GATE 265 sig (18, 18, (2, 14), (14, 2)) ok 1
+FS HOPBUILD 266 at (4, 17) lch (5, 17) T (16, 1)
+FS GATE 266 sig (18, 18, (2, 14), (14, 2)) ok 1
+FS GATE 267 sig (18, 18, (2, 14), (14, 2)) ok 1
+FS GATE 267 sig (18, 18, (2, 14), (14, 2)) ok 1
+FS THROW 267 from (4, 17) to (8, 13) T (16, 1) body 314 n 1 dsq 136
+FS HOPBUILD 268 at (8, 13) lch (9, 13) T (16, 1)
+FS GATE 268 sig (18, 18, (2, 14), (14, 2)) ok 1
+FS GATE 269 sig (18, 18, (2, 14), (14, 2)) ok 1
+FS GATE 269 sig (18, 18, (2, 14), (14, 2)) ok 1
+FS THROW 269 from (8, 12) to (10, 8) T (16, 1) body 314 n 1 dsq 41
+FS ARRIVE 280 id 314 body 1 at (17, 5) dsq 8
+FS PHASE 280 id 314 ph 2 d 8 at (17, 5)
+FS STAT 280 id 314 at (17, 5) need 8 orth 7 ti 11 ammo 8 sen 0 hp 4 covden 0 eco 1 lost 0
+FS STAT 300 id 314 at (17, 5) need 8 orth 7 ti 34 ammo 24 sen 0 hp 4 covden 0 eco 1 lost 0
+FS SEAL 312 tile (15, 4) n 1
+FS SEAL 313 tile (16, 3) n 2
+FS SEAL 317 tile (16, 2) n 3
+FS STAT 320 id 314 at (17, 4) need 4 orth 3 ti 15 ammo 20 sen 0 hp 4 covden 0 eco 1 lost 0
+FS STAT 340 id 314 at (16, 4) need 4 orth 3 ti 59 ammo 16 sen 0 hp 4 covden 0 eco 1 lost 0
+FS EVICTOR 357 at (17, 4) ucov 0 cov 1 unseal 1 obs 11
+FS RUNG 357 id 314 r 2 hi -
+FS GATE 358 sig (18, 18, (2, 14), (14, 2)) ok 1
+FS STAT 360 id 314 at (16, 6) need 5 orth 4 ti 92 ammo 16 sen 0 hp 4 covden 0 eco 1 lost 0
+FS GATE 377 sig (18, 18, (2, 14), (14, 2)) ok 1
+FS PHASE 377 id 421 ph 1 d 269 at (4, 16)
+FS HOPBUILD 380 at (4, 17) lch (5, 17) T (16, 1)
+FS GATE 381 sig (18, 18, (2, 14), (14, 2)) ok 1
+FS THROW 381 from (4, 16) to (8, 13) T (16, 1) body 421 n 1 dsq 136
+FS HOPBUILD 392 at (13, 8) lch (13, 7) T (16, 1)
+FS GATE 393 sig (18, 18, (2, 14), (14, 2)) ok 1
+FS THROW 393 from (14, 8) to (16, 4) T (16, 1) body 421 n 1 dsq 2
+FS ARRIVE 394 id 421 body 1 at (16, 4) dsq 2
+FS PHASE 394 id 421 ph 2 d 2 at (16, 4)
+FS STAT 400 id 421 at (16, 4) need 4 orth 3 ti 57 ammo 16 sen 0 hp 40 covden 0 eco 1 lost 0
+FS STAT 420 id 421 at (16, 4) need 4 orth 3 ti 69 ammo 20 sen 0 hp 40 covden 0 eco 1 lost 0
+FS STAT 440 id 421 at (16, 4) need 4 orth 3 ti 69 ammo 20 sen 0 hp 40 covden 0 eco 1 lost 0
+FS STAT 460 id 421 at (16, 4) need 4 orth 3 ti 69 ammo 20 sen 0 hp 40 covden 0 eco 1 lost 0
+FS STAT 480 id 421 at (16, 4) need 4 orth 3 ti 69 ammo 20 sen 0 hp 40 covden 0 eco 1 lost 0
+FS STAT 500 id 421 at (16, 4) need 4 orth 3 ti 69 ammo 20 sen 0 hp 40 covden 0 eco 1 lost 0

@@ -1,0 +1,65 @@
+Update available: 2.3.6 -> 2.3.8. Run: pip install --upgrade fcode
+FS GATE 0 sig (20, 26, (9, 6), (9, 18)) ok 1
+FS GATE 1 sig (20, 26, (9, 6), (9, 18)) ok 1
+FS PHASE 1 id 3 ph 1 d 100 at (9, 8)
+FS HOPBUILD 1 at (9, 8) lch (9, 9) T (11, 20)
+FS GATE 2 sig (20, 26, (9, 6), (9, 18)) ok 1
+FS GATE 2 sig (20, 26, (9, 6), (9, 18)) ok 1
+FS THROW 2 from (10, 8) to (10, 14) T (11, 20) body 3 n 1 dsq 16
+FS HOPBUILD 3 at (10, 14) lch (10, 15) T (11, 20)
+FS GATE 3 sig (20, 26, (9, 6), (9, 18)) ok 1
+FS GATE 4 sig (20, 26, (9, 6), (9, 18)) ok 1
+FS THROW 4 from (11, 14) to (10, 20) T (11, 20) body 3 n 1 dsq 1
+FS ARRIVE 5 id 3 body 1 at (10, 20) dsq 1
+FS PHASE 5 id 3 ph 2 d 1 at (10, 20)
+SREACH516 5 tile (4, 18) score 25
+FS SEAL 6 tile (10, 20) n 1
+FS DODGE 7 id 3 from (10, 21) to (11, 21) cov 1 -> 0 hit 0 hp 40
+FS GATE 7 sig (20, 26, (9, 6), (9, 18)) ok 1
+FS GATE 8 sig (20, 26, (9, 6), (9, 18)) ok 1
+FS DODGE 9 id 3 from (11, 20) to (11, 19) cov 1 -> 0 hit 0 hp 22
+FS GATE 9 sig (20, 26, (9, 6), (9, 18)) ok 1
+FS EVICTOR 10 at (12, 19) ucov 1 cov 2 unseal 1 obs 3
+FS RUNG 10 id 3 r 2 hi -
+FS CLEAR 11 tile (11, 18) peck 1
+FS RUNG 11 id 3 r 3 hi -
+FS GATE 11 sig (20, 26, (9, 6), (9, 18)) ok 1
+FS EVICT 11 from (11, 20) to (17, 18)
+FS CLEAR 12 tile (11, 18) peck 2
+FS RUNG 12 id 3 r 3 hi -
+FS SEAL 14 tile (11, 19) n 2
+FS SEAL 16 tile (10, 17) n 3
+FS STAT 20 id 3 at (11, 17) need 6 orth 5 ti 32 ammo 21 sen 0 hp 22 covden 2 eco 0 lost 0
+FS CLEAR 28 tile (11, 18) peck 1
+FS RUNG 28 id 3 r 3 hi -
+FS STAT 40 id 3 at (11, 17) need 6 orth 5 ti 47 ammo 21 sen 0 hp 34 covden 2 eco 0 lost 0
+FS CLEAR 43 tile (11, 18) peck 1
+FS RUNG 43 id 3 r 3 hi -
+FS CLEAR 44 tile (11, 18) peck 2
+FS RUNG 44 id 3 r 3 hi -
+FS CLEAR 45 tile (11, 18) peck 3
+FS RUNG 45 id 3 r 3 hi -
+FS CLEAR 46 tile (11, 18) peck 4
+FS RUNG 46 id 3 r 3 hi -
+FS CLEAR 47 tile (11, 18) peck 5
+FS RUNG 47 id 3 r 3 hi -
+FS CLEAR 48 tile (11, 18) peck 6
+FS RUNG 48 id 3 r 3 hi -
+FS CLEAR 49 tile (11, 18) peck 7
+FS RUNG 49 id 3 r 3 hi -
+FS SEAL 53 tile (9, 17) n 4
+FS CLEARED 55 tile (11, 18) n 1
+FS SEAL 55 tile (8, 17) n 5
+FS SEAL 59 tile (8, 18) n 6
+FS STAT 60 id 3 at (7, 18) need 2 orth 2 ti 12 ammo 10 sen 0 hp 34 covden 2 eco 0 lost 0
+FS SEAL 61 tile (8, 19) n 7
+FS SEAL 64 tile (9, 20) n 8
+FS PHASE 65 id 3 ph 3 d 2 at (8, 20)
+FS SEAL 67 tile (8, 20) n 9
+FS DODGE 70 id 3 from (10, 21) to (9, 21) cov 1 -> 0 hit 0 hp 34
+FS DODGE 72 id 3 from (10, 21) to (9, 21) cov 1 -> 0 hit 0 hp 34
+FS DODGE 74 id 3 from (10, 21) to (9, 21) cov 1 -> 0 hit 0 hp 34
+FS DODGE 76 id 3 from (10, 21) to (9, 21) cov 1 -> 0 hit 0 hp 34
+FS DODGE 78 id 3 from (10, 21) to (9, 21) cov 1 -> 0 hit 0 hp 16
+FS STAT 80 id 3 at (10, 21) need 0 orth 0 ti 12 ammo 10 sen 0 hp 16 covden 2 eco 0 lost 0
+FS DODGE 80 id 3 from (10, 21) to (9, 21) cov 1 -> 0 hit 0 hp 16

@@ -1,0 +1,122 @@
+Update available: 2.3.6 -> 2.3.8. Run: pip install --upgrade fcode
+FS GATE 0 sig (30, 30, (14, 2), (14, 26)) ok 1
+FS GATE 1 sig (30, 30, (14, 2), (14, 26)) ok 1
+FS PHASE 1 id 4 ph 1 d 484 at (14, 25)
+FS HOPBUILD 1 at (14, 25) lch (14, 24) T (16, 1)
+FS GATE 2 sig (30, 30, (14, 2), (14, 26)) ok 1
+FS GATE 2 sig (30, 30, (14, 2), (14, 26)) ok 1
+FS THROW 2 from (15, 25) to (15, 19) T (16, 1) body 4 n 1 dsq 256
+FS HOPBUILD 3 at (15, 19) lch (15, 18) T (16, 1)
+FS GATE 3 sig (30, 30, (14, 2), (14, 26)) ok 1
+FS GATE 4 sig (30, 30, (14, 2), (14, 26)) ok 1
+FS THROW 4 from (16, 19) to (16, 13) T (16, 1) body 4 n 1 dsq 101
+FS HOPBUILD 5 at (16, 13) lch (16, 12) T (16, 1)
+FS GATE 6 sig (30, 30, (14, 2), (14, 26)) ok 1
+FS THROW 6 from (16, 13) to (16, 7) T (16, 1) body 4 n 1 dsq 17
+FS HOPBUILD 7 at (16, 7) lch (16, 6) T (16, 1)
+FS GATE 8 sig (30, 30, (14, 2), (14, 26)) ok 1
+FS THROW 8 from (16, 7) to (16, 1) T (16, 1) body 4 n 1 dsq 2
+FS ARRIVE 9 id 4 body 1 at (16, 1) dsq 2
+FS PHASE 9 id 4 ph 2 d 2 at (16, 1)
+FS SEAL 9 tile (15, 1) n 1
+FS SEAL 10 tile (16, 2) n 2
+FS DODGE 11 id 4 from (16, 1) to (16, 0) cov 1 -> 0 hit 0 hp 40
+FS GATE 11 sig (30, 30, (14, 2), (14, 26)) ok 1
+FS GATE 12 sig (30, 30, (14, 2), (14, 26)) ok 1
+FS DODGE 13 id 4 from (16, 1) to (16, 0) cov 1 -> 0 hit 0 hp 40
+FS GATE 13 sig (30, 30, (14, 2), (14, 26)) ok 1
+FS SEAL 15 tile (15, 1) n 3
+FS SEAL 18 tile (15, 1) n 4
+FS STAT 20 id 4 at (14, 0) need 7 orth 6 ti 64 ammo 0 sen 0 hp 40 covden 0 eco 0 lost 0
+FS SEAL 20 tile (14, 1) n 5
+FS CLEAR 22 tile (13, 1) peck 1
+FS RUNG 22 id 4 r 3 hi -
+FS CLEAR 24 tile (13, 1) peck 2
+FS RUNG 24 id 4 r 3 hi -
+FS STAT 40 id 4 at (13, 0) need 6 orth 5 ti 54 ammo 24 sen 0 hp 40 covden 0 eco 0 lost 0
+FS CLEAR 40 tile (13, 1) peck 1
+FS RUNG 40 id 4 r 3 hi -
+FS CLEAR 41 tile (13, 1) peck 2
+FS RUNG 41 id 4 r 3 hi -
+FS CLEAR 44 tile (13, 1) peck 3
+FS RUNG 44 id 4 r 3 hi -
+FS CLEAR 45 tile (13, 1) peck 4
+FS RUNG 45 id 4 r 3 hi -
+FS CLEAR 46 tile (13, 1) peck 5
+FS RUNG 46 id 4 r 3 hi -
+FS CLEAR 47 tile (13, 1) peck 6
+FS RUNG 47 id 4 r 3 hi -
+FS CLEAR 48 tile (13, 1) peck 7
+FS RUNG 48 id 4 r 3 hi -
+FS CLEAR 49 tile (13, 1) peck 8
+FS RUNG 49 id 4 r 3 hi -
+FS SEAL 53 tile (13, 2) n 6
+FS PHASE 54 id 4 ph 3 d 4 at (12, 2)
+FS CLEAR 55 tile (13, 1) peck 1
+FS RUNG 55 id 4 r 3 hi -
+FS CLEAR 56 tile (13, 1) peck 2
+FS RUNG 56 id 4 r 3 hi -
+FS CLEAR 57 tile (13, 1) peck 3
+FS RUNG 57 id 4 r 3 hi -
+FS CLEAR 58 tile (13, 1) peck 4
+FS RUNG 58 id 4 r 3 hi -
+FS CLEAR 59 tile (13, 1) peck 5
+FS RUNG 59 id 4 r 3 hi -
+FS STAT 60 id 4 at (12, 1) need 2 orth 0 ti 44 ammo 24 sen 0 hp 40 covden 0 eco 0 lost 0
+FS CLEAR 60 tile (13, 1) peck 6
+FS RUNG 60 id 4 r 3 hi -
+FS CLEAR 61 tile (13, 1) peck 7
+FS RUNG 61 id 4 r 3 hi -
+FS CLEAR 62 tile (13, 1) peck 8
+FS RUNG 62 id 4 r 3 hi -
+FS PHASE 64 id 4 ph 2 d 8 at (12, 0)
+FS PHASE 65 id 4 ph 3 d 5 at (13, 0)
+FS CLEAR 67 tile (13, 1) peck 1
+FS RUNG 67 id 4 r 3 hi -
+FS CLEAR 68 tile (13, 1) peck 2
+FS RUNG 68 id 4 r 3 hi -
+FS CLEARED 69 tile (13, 1) n 1
+FS SEAL 69 tile (13, 1) n 7
+FS SEALCLR 69 tile (13, 1) lag 0
+FS SEAL 78 tile (16, 4) n 8
+FS STAT 80 id 4 at (17, 3) need 0 orth 0 ti 70 ammo 24 sen 0 hp 40 covden 0 eco 0 lost 0
+FS EVICTOR 80 at (17, 2) ucov 0 cov 1 unseal 0 obs 13
+FS RUNG 80 id 4 r 2 hi -
+FS GATE 81 sig (30, 30, (14, 2), (14, 26)) ok 1
+FS PHASE 82 id 4 ph 2 d 9 at (18, 3)
+FS PHASE 83 id 4 ph 3 d 4 at (17, 3)
+FS PHASE 84 id 4 ph 2 d 9 at (18, 3)
+FS PHASE 85 id 4 ph 3 d 4 at (17, 3)
+FS PHASE 86 id 4 ph 2 d 9 at (18, 3)
+FS PHASE 87 id 4 ph 3 d 4 at (17, 3)
+FS PHASE 88 id 4 ph 2 d 9 at (18, 3)
+FS PHASE 89 id 4 ph 3 d 4 at (17, 3)
+FS PHASE 90 id 4 ph 2 d 9 at (18, 3)
+FS PHASE 91 id 4 ph 3 d 4 at (17, 3)
+FS PHASE 92 id 4 ph 2 d 9 at (18, 3)
+FS PHASE 93 id 4 ph 3 d 4 at (17, 3)
+FS PHASE 94 id 4 ph 2 d 9 at (18, 3)
+FS PHASE 95 id 4 ph 3 d 4 at (17, 3)
+FS PHASE 96 id 4 ph 2 d 9 at (18, 3)
+FS PHASE 97 id 4 ph 3 d 4 at (17, 3)
+FS PHASE 98 id 4 ph 2 d 9 at (18, 3)
+FS PHASE 99 id 4 ph 3 d 4 at (17, 3)
+FS PHASE 100 id 4 ph 2 d 9 at (18, 3)
+FS STAT 100 id 4 at (18, 3) need 3 orth 2 ti 65 ammo 24 sen 0 hp 40 covden 0 eco 0 lost 0
+FS PHASE 101 id 4 ph 3 d 4 at (17, 3)
+FS PHASE 102 id 4 ph 2 d 9 at (18, 3)
+FS PHASE 103 id 4 ph 3 d 4 at (17, 3)
+FS PHASE 104 id 4 ph 2 d 9 at (18, 3)
+FS PHASE 105 id 4 ph 3 d 4 at (17, 3)
+FS PHASE 106 id 4 ph 2 d 9 at (18, 3)
+FS PHASE 107 id 4 ph 3 d 4 at (17, 3)
+FS PHASE 108 id 4 ph 2 d 9 at (18, 3)
+FS PHASE 109 id 4 ph 3 d 4 at (17, 3)
+FS SENTINEL 109 at (18, 3) face WEST tgt (14, 3) score 16 n 1 onring 0 lost 0 gate (0, 1, -1) onsray 0 olddsq -1
+FS RUNG 109 id 4 r 4 hi -
+FS PHASE 110 id 4 ph 4 d 4 at (17, 3)
+FS STAT 120 id 4 at (18, 4) need 4 orth 3 ti 16 ammo 18 sen 1 hp 40 covden 0 eco 0 lost 0
+FS STAT 140 id 4 at (18, 4) need 4 orth 3 ti 16 ammo 18 sen 1 hp 40 covden 0 eco 0 lost 0
+FS STAT 160 id 4 at (18, 4) need 4 orth 3 ti 16 ammo 18 sen 1 hp 40 covden 0 eco 0 lost 0
+FS STAT 180 id 4 at (18, 4) need 4 orth 3 ti 16 ammo 18 sen 1 hp 40 covden 0 eco 0 lost 0
+FS STAT 200 id 4 at (18, 4) need 4 orth 3 ti 16 ammo 18 sen 1 hp 40 covden 0 eco 0 lost 0

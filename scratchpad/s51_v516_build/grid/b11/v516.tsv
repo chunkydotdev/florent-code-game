@@ -1,0 +1,31 @@
+tag	map	seed	seat	ours	winner	cond	turn	tracebacks	ours_mined	opp_mined
+atoll_s31_A	atoll	31	A	OPP	_v488beltbreak2	Core destroyed	231	0	1120	1110
+atoll_s31_B	atoll	31	B	OPP	_v488beltbreak2	Core destroyed	185	0	290	1520
+atoll_s32_A	atoll	32	A	OPP	_v488beltbreak2	Core destroyed	332	0	1620	2790
+atoll_s32_B	atoll	32	B	US	_v516teardown	Core destroyed	395	0	2320	1030
+atoll_s33_A	atoll	33	A	OPP	_v488beltbreak2	Core destroyed	569	0	2810	3590
+atoll_s33_B	atoll	33	B	OPP	_v488beltbreak2	Core destroyed	451	0	2220	3110
+drakkarfjord_s31_A	drakkarfjord	31	A	OPP	_v488beltbreak2	Core destroyed	788	0	8540	5600
+drakkarfjord_s31_B	drakkarfjord	31	B	US	_v516teardown	Core destroyed	331	0	1660	0
+drakkarfjord_s32_A	drakkarfjord	32	A	OPP	_v488beltbreak2	Core destroyed	541	0	3100	5820
+drakkarfjord_s32_B	drakkarfjord	32	B	US	_v516teardown	Core destroyed	326	0	2220	0
+drakkarfjord_s33_A	drakkarfjord	33	A	OPP	_v488beltbreak2	Titanium collected (tiebreak)	1000	0	8120	14120
+drakkarfjord_s33_B	drakkarfjord	33	B	US	_v516teardown	Core destroyed	197	0	1150	0
+glacierkeep_s31_A	glacierkeep	31	A	US	_v516teardown	Titanium collected (tiebreak)	1000	0	2440	0
+glacierkeep_s31_B	glacierkeep	31	B	OPP	_v488beltbreak2	Core destroyed	465	0	0	0
+glacierkeep_s32_A	glacierkeep	32	A	US	_v516teardown	Core destroyed	189	0	160	0
+glacierkeep_s32_B	glacierkeep	32	B	US	_v516teardown	Core destroyed	169	0	80	0
+glacierkeep_s33_A	glacierkeep	33	A	US	_v516teardown	Core destroyed	177	0	160	0
+glacierkeep_s33_B	glacierkeep	33	B	US	_v516teardown	Titanium collected (tiebreak)	1000	0	20	0
+midgard_s31_A	midgard	31	A	OPP	_v488beltbreak2	Core destroyed	168	0	640	1590
+midgard_s31_B	midgard	31	B	OPP	_v488beltbreak2	Core destroyed	278	0	550	4010
+midgard_s32_A	midgard	32	A	OPP	_v488beltbreak2	Core destroyed	279	0	620	3900
+midgard_s32_B	midgard	32	B	OPP	_v488beltbreak2	Core destroyed	155	0	520	1780
+midgard_s33_A	midgard	33	A	US	_v516teardown	Titanium collected (tiebreak)	1000	0	4970	3990
+midgard_s33_B	midgard	33	B	OPP	_v488beltbreak2	Core destroyed	278	0	550	4010
+nordkap_s31_A	nordkap	31	A	US	_v516teardown	Core destroyed	506	0	3310	160
+nordkap_s31_B	nordkap	31	B	US	_v516teardown	Core destroyed	425	0	520	110
+nordkap_s32_A	nordkap	32	A	US	_v516teardown	Core destroyed	312	0	1670	740
+nordkap_s32_B	nordkap	32	B	US	_v516teardown	Core destroyed	252	0	610	0
+nordkap_s33_A	nordkap	33	A	US	_v516teardown	Core destroyed	476	0	1170	0
+nordkap_s33_B	nordkap	33	B	US	_v516teardown	Core destroyed	152	0	530	30

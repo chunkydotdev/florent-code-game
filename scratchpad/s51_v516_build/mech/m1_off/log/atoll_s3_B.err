@@ -1,0 +1,103 @@
+Update available: 2.3.6 -> 2.3.8. Run: pip install --upgrade fcode
+FS GATE 0 sig (18, 18, (2, 14), (14, 2)) ok 1
+FS GATE 1 sig (18, 18, (2, 14), (14, 2)) ok 1
+FS PHASE 1 id 4 ph 1 d 200 at (13, 4)
+FS HOPBUILD 1 at (13, 4) lch (13, 5) T (1, 16)
+FS GATE 2 sig (18, 18, (2, 14), (14, 2)) ok 1
+FS GATE 2 sig (18, 18, (2, 14), (14, 2)) ok 1
+FS THROW 2 from (12, 4) to (9, 8) T (1, 16) body 4 n 1 dsq 72
+FS HOPBUILD 3 at (9, 8) lch (9, 9) T (1, 16)
+FS GATE 3 sig (18, 18, (2, 14), (14, 2)) ok 1
+FS GATE 4 sig (18, 18, (2, 14), (14, 2)) ok 1
+FS THROW 4 from (8, 8) to (5, 12) T (1, 16) body 4 n 1 dsq 8
+FS ARRIVE 5 id 4 body 1 at (5, 12) dsq 8
+FS PHASE 5 id 4 ph 2 d 8 at (5, 12)
+FS EVICTOR 6 at (5, 14) ucov 0 cov 1 unseal 1 obs 1
+FS RUNG 6 id 4 r 2 hi -
+FS DODGE 7 id 4 from (5, 13) to (5, 12) cov 1 -> 0 hit 0 hp 40
+FS GATE 7 sig (18, 18, (2, 14), (14, 2)) ok 1
+FS GATE 7 sig (18, 18, (2, 14), (14, 2)) ok 1
+FS EVICT 7 from (4, 13) to (10, 13)
+FS GATE 8 sig (18, 18, (2, 14), (14, 2)) ok 1
+FS DODGE 9 id 4 from (5, 13) to (5, 12) cov 1 -> 0 hit 0 hp 22
+FS DODGE 11 id 4 from (5, 13) to (5, 12) cov 1 -> 0 hit 0 hp 4
+FS EVICT 13 from (5, 13) to (10, 13)
+FS EVICT 14 from (4, 15) to (10, 13)
+FS EVICT 17 from (6, 13) to (0, 13)
+FS EVICT 24 from (5, 13) to (10, 13)
+FS EVICT 30 from (6, 14) to (0, 13)
+FS EVICT 43 from (6, 14) to (0, 13)
+FS GATE 47 sig (18, 18, (2, 14), (14, 2)) ok 1
+FS PHASE 47 id 76 ph 1 d 313 at (16, 2)
+FS HOPBUILD 48 at (16, 3) lch (16, 4) T (1, 16)
+FS EVICT 49 from (4, 13) to (10, 14)
+FS GATE 49 sig (18, 18, (2, 14), (14, 2)) ok 1
+FS THROW 49 from (16, 3) to (13, 8) T (1, 16) body 76 n 1 dsq 136
+FS EVICT 53 from (6, 14) to (0, 13)
+FS HOPBUILD 54 at (12, 11) lch (12, 12) T (1, 16)
+FS GATE 55 sig (18, 18, (2, 14), (14, 2)) ok 1
+FS THROW 55 from (12, 11) to (7, 13) T (1, 16) body 76 n 1 dsq 17
+FS EVICT 59 from (4, 15) to (10, 14)
+FS ARRIVE 60 id 76 body 1 at (5, 15) dsq 4
+FS PHASE 60 id 76 ph 2 d 4 at (5, 15)
+FS STAT 60 id 76 at (5, 15) need 9 orth 8 ti 61 ammo 24 sen 0 hp 22 covden 0 eco 1 lost 0
+FS EVICT 61 from (4, 13) to (10, 14)
+FS SEAL 62 tile (4, 15) n 1
+FS CLEAR 69 tile (3, 16) peck 1
+FS RUNG 69 id 76 r 3 hi -
+FS CLEAR 70 tile (3, 16) peck 2
+FS RUNG 70 id 76 r 3 hi -
+FS CLEAR 71 tile (3, 16) peck 3
+FS RUNG 71 id 76 r 3 hi -
+FS CLEAR 72 tile (3, 16) peck 4
+FS RUNG 72 id 76 r 3 hi -
+FS STAT 80 id 76 at (4, 16) need 8 orth 7 ti 12 ammo 24 sen 0 hp 22 covden 0 eco 1 lost 0
+FS CLEAR 92 tile (3, 16) peck 1
+FS RUNG 92 id 76 r 3 hi -
+FS CLEAR 93 tile (3, 16) peck 2
+FS RUNG 93 id 76 r 3 hi -
+FS CLEAR 94 tile (3, 16) peck 3
+FS RUNG 94 id 76 r 3 hi -
+FS CLEAR 95 tile (3, 16) peck 4
+FS RUNG 95 id 76 r 3 hi -
+FS CLEAR 96 tile (3, 16) peck 5
+FS RUNG 96 id 76 r 3 hi -
+FS CLEAR 97 tile (3, 16) peck 6
+FS RUNG 97 id 76 r 3 hi -
+FS CLEAR 98 tile (3, 16) peck 7
+FS RUNG 98 id 76 r 3 hi -
+FS CLEAR 99 tile (3, 16) peck 8
+FS RUNG 99 id 76 r 3 hi -
+FS CLEARED 100 tile (3, 16) n 1
+FS STAT 100 id 76 at (4, 16) need 8 orth 7 ti 115 ammo 24 sen 0 hp 22 covden 0 eco 1 lost 0
+FS SEAL 100 tile (3, 16) n 2
+FS SEALCLR 100 tile (3, 16) lag 0
+FS SEAL 104 tile (2, 16) n 3
+FS SENTINEL 110 at (6, 17) face NORTHWEST tgt (3, 14) score 18 n 1 onring 0 lost 0 gate (1, 1, 9) onsray 0 olddsq -1
+FS RUNG 110 id 76 r 4 hi -
+FS PHASE 111 id 76 ph 5 d 8 at (5, 17)
+FS EVICT 117 from (4, 13) to (10, 14)
+FS EVICT 119 from (5, 13) to (10, 14)
+FS STAT 120 id 76 at (2, 17) need 7 orth 6 ti 16 ammo 73 sen 1 hp 22 covden 0 eco 1 lost 0
+FS SEAL 121 tile (3, 16) n 4
+FS EVICT 125 from (5, 13) to (10, 14)
+FS EVICT 129 from (5, 13) to (10, 14)
+FS EVICT 133 from (5, 13) to (10, 14)
+FS EVICT 137 from (5, 13) to (10, 14)
+FS EVICT 141 from (5, 13) to (10, 14)
+FS EVICT 145 from (5, 13) to (10, 14)
+FS EVICT 149 from (5, 13) to (10, 14)
+FS EVICT 153 from (5, 13) to (10, 14)
+FS EVICT 157 from (5, 13) to (10, 14)
+FS EVICT 161 from (5, 13) to (10, 14)
+FS EVICT 165 from (5, 13) to (10, 14)
+FS EVICT 169 from (5, 13) to (10, 14)
+FS EVICT 173 from (5, 13) to (10, 14)
+FS EVICT 177 from (5, 13) to (10, 14)
+FS EVICT 181 from (5, 13) to (10, 14)
+FS EVICT 185 from (5, 13) to (10, 14)
+FS EVICT 189 from (5, 13) to (10, 14)
+FS EVICT 193 from (5, 13) to (10, 14)
+FS EVICT 197 from (5, 13) to (10, 14)
+FS EVICT 201 from (5, 13) to (10, 14)
+FS EVICT 205 from (5, 13) to (10, 14)

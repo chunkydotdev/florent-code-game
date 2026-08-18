@@ -1,0 +1,913 @@
+Update available: 2.3.6 -> 2.3.8. Run: pip install --upgrade fcode
+PROBEHP 2 rid 3 dsq 4 invision 1 hp 40 exc 
+PROBEHP 3 rid 3 dsq -1 invision -1 hp None exc POS:GameError|HP:GameError
+PROBEHP 4 rid 3 dsq -1 invision -1 hp None exc POS:GameError|HP:GameError
+PROBEHP 5 rid 3 dsq -1 invision -1 hp None exc POS:GameError|HP:GameError
+PROBEHP 6 rid 3 dsq -1 invision -1 hp None exc POS:GameError|HP:GameError
+PROBEHP 7 rid 3 dsq -1 invision -1 hp None exc POS:GameError|HP:GameError
+PROBEHP 8 rid 3 dsq -1 invision -1 hp None exc POS:GameError|HP:GameError
+PROBEHP 9 rid 3 dsq -1 invision -1 hp None exc POS:GameError|HP:GameError
+PROBEHP 10 rid 3 dsq -1 invision -1 hp None exc POS:GameError|HP:GameError
+PROBEHP 11 rid 3 dsq -1 invision -1 hp None exc POS:GameError|HP:GameError
+PROBEHP 12 rid 3 dsq -1 invision -1 hp None exc POS:GameError|HP:GameError
+PROBEHP 13 rid 3 dsq -1 invision -1 hp None exc POS:GameError|HP:GameError
+PROBEHP 14 rid 3 dsq -1 invision -1 hp None exc POS:GameError|HP:GameError
+PROBEHP 15 rid 3 dsq -1 invision -1 hp None exc POS:GameError|HP:GameError
+PROBEHP 16 rid 3 dsq -1 invision -1 hp None exc POS:GameError|HP:GameError
+PROBEHP 17 rid 3 dsq -1 invision -1 hp None exc POS:GameError|HP:GameError
+PROBEHP 18 rid 3 dsq -1 invision -1 hp None exc POS:GameError|HP:GameError
+PROBEHP 19 rid 3 dsq -1 invision -1 hp None exc POS:GameError|HP:GameError
+PROBEHP 20 rid 3 dsq -1 invision -1 hp None exc POS:GameError|HP:GameError
+PROBEHP 21 rid 3 dsq -1 invision -1 hp None exc POS:GameError|HP:GameError
+PROBEHP 22 rid 3 dsq -1 invision -1 hp None exc POS:GameError|HP:GameError
+PROBEHP 23 rid 3 dsq -1 invision -1 hp None exc POS:GameError|HP:GameError
+PROBEHP 24 rid 3 dsq -1 invision -1 hp None exc POS:GameError|HP:GameError
+PROBEHP 25 rid 3 dsq -1 invision -1 hp None exc POS:GameError|HP:GameError
+PROBEHP 26 rid 3 dsq -1 invision -1 hp None exc POS:GameError|HP:GameError
+PROBEHP 27 rid 3 dsq -1 invision -1 hp None exc POS:GameError|HP:GameError
+PROBEHP 28 rid 3 dsq -1 invision -1 hp None exc POS:GameError|HP:GameError
+PROBEHP 29 rid 3 dsq -1 invision -1 hp None exc POS:GameError|HP:GameError
+PROBEHP 30 rid 3 dsq -1 invision -1 hp None exc POS:GameError|HP:GameError
+PROBEHP 31 rid 3 dsq -1 invision -1 hp None exc POS:GameError|HP:GameError
+PROBEHP 32 rid 3 dsq -1 invision -1 hp None exc POS:GameError|HP:GameError
+PROBEHP 33 rid 3 dsq -1 invision -1 hp None exc POS:GameError|HP:GameError
+PROBEHP 34 rid 3 dsq -1 invision -1 hp None exc POS:GameError|HP:GameError
+PROBEHP 35 rid 3 dsq -1 invision -1 hp None exc POS:GameError|HP:GameError
+PROBEHP 36 rid 3 dsq -1 invision -1 hp None exc POS:GameError|HP:GameError
+PROBEHP 37 rid 3 dsq -1 invision -1 hp None exc POS:GameError|HP:GameError
+PROBEHP 38 rid 3 dsq -1 invision -1 hp None exc POS:GameError|HP:GameError
+PROBEHP 39 rid 3 dsq -1 invision -1 hp None exc POS:GameError|HP:GameError
+PROBEHP 40 rid 3 dsq -1 invision -1 hp None exc POS:GameError|HP:GameError
+PROBEHP 41 rid 3 dsq -1 invision -1 hp None exc POS:GameError|HP:GameError
+PROBEHP 42 rid 3 dsq -1 invision -1 hp None exc POS:GameError|HP:GameError
+PROBEHP 43 rid 3 dsq -1 invision -1 hp None exc POS:GameError|HP:GameError
+PROBEHP 44 rid 3 dsq -1 invision -1 hp None exc POS:GameError|HP:GameError
+PROBEHP 45 rid 3 dsq -1 invision -1 hp None exc POS:GameError|HP:GameError
+PROBEHP 46 rid 3 dsq -1 invision -1 hp None exc POS:GameError|HP:GameError
+PROBEHP 47 rid 3 dsq -1 invision -1 hp None exc POS:GameError|HP:GameError
+PROBEHP 48 rid 3 dsq -1 invision -1 hp None exc POS:GameError|HP:GameError
+PROBEHP 49 rid 3 dsq -1 invision -1 hp None exc POS:GameError|HP:GameError
+PROBEHP 50 rid 3 dsq -1 invision -1 hp None exc POS:GameError|HP:GameError
+PROBEHP 51 rid 3 dsq -1 invision -1 hp None exc POS:GameError|HP:GameError
+PROBEHP 52 rid 3 dsq -1 invision -1 hp None exc POS:GameError|HP:GameError
+PROBEHP 53 rid 3 dsq -1 invision -1 hp None exc POS:GameError|HP:GameError
+PROBEHP 54 rid 3 dsq -1 invision -1 hp None exc POS:GameError|HP:GameError
+PROBEHP 55 rid 3 dsq -1 invision -1 hp None exc POS:GameError|HP:GameError
+PROBEHP 56 rid 3 dsq -1 invision -1 hp None exc POS:GameError|HP:GameError
+PROBEHP 57 rid 3 dsq -1 invision -1 hp None exc POS:GameError|HP:GameError
+PROBEHP 58 rid 3 dsq -1 invision -1 hp None exc POS:GameError|HP:GameError
+PROBEHP 59 rid 3 dsq -1 invision -1 hp None exc POS:GameError|HP:GameError
+PROBEHP 60 rid 3 dsq -1 invision -1 hp None exc POS:GameError|HP:GameError
+PROBEHP 61 rid 3 dsq -1 invision -1 hp None exc POS:GameError|HP:GameError
+PROBEHP 62 rid 3 dsq -1 invision -1 hp None exc POS:GameError|HP:GameError
+PROBEHP 63 rid 3 dsq -1 invision -1 hp None exc POS:GameError|HP:GameError
+PROBEHP 64 rid 3 dsq -1 invision -1 hp None exc POS:GameError|HP:GameError
+PROBEHP 65 rid 3 dsq -1 invision -1 hp None exc POS:GameError|HP:GameError
+PROBEHP 66 rid 3 dsq -1 invision -1 hp None exc POS:GameError|HP:GameError
+PROBEHP 67 rid 3 dsq -1 invision -1 hp None exc POS:GameError|HP:GameError
+PROBEHP 68 rid 3 dsq -1 invision -1 hp None exc POS:GameError|HP:GameError
+PROBEHP 69 rid 3 dsq -1 invision -1 hp None exc POS:GameError|HP:GameError
+PROBEHP 70 rid 3 dsq -1 invision -1 hp None exc POS:GameError|HP:GameError
+PROBEHP 71 rid 3 dsq -1 invision -1 hp None exc POS:GameError|HP:GameError
+PROBEHP 72 rid 3 dsq -1 invision -1 hp None exc POS:GameError|HP:GameError
+PROBEHP 73 rid 3 dsq -1 invision -1 hp None exc POS:GameError|HP:GameError
+PROBEHP 74 rid 3 dsq -1 invision -1 hp None exc POS:GameError|HP:GameError
+PROBEHP 75 rid 3 dsq -1 invision -1 hp None exc POS:GameError|HP:GameError
+PROBEHP 76 rid 3 dsq -1 invision -1 hp None exc POS:GameError|HP:GameError
+PROBEHP 77 rid 3 dsq -1 invision -1 hp None exc POS:GameError|HP:GameError
+PROBEHP 78 rid 3 dsq -1 invision -1 hp None exc POS:GameError|HP:GameError
+PROBEHP 79 rid 3 dsq -1 invision -1 hp None exc POS:GameError|HP:GameError
+PROBEHP 80 rid 3 dsq -1 invision -1 hp None exc POS:GameError|HP:GameError
+PROBEHP 81 rid 3 dsq -1 invision -1 hp None exc POS:GameError|HP:GameError
+PROBEHP 82 rid 3 dsq -1 invision -1 hp None exc POS:GameError|HP:GameError
+PROBEHP 83 rid 3 dsq -1 invision -1 hp None exc POS:GameError|HP:GameError
+PROBEHP 84 rid 3 dsq -1 invision -1 hp None exc POS:GameError|HP:GameError
+PROBEHP 85 rid 3 dsq -1 invision -1 hp None exc POS:GameError|HP:GameError
+PROBEHP 86 rid 3 dsq -1 invision -1 hp None exc POS:GameError|HP:GameError
+PROBEHP 87 rid 3 dsq -1 invision -1 hp None exc POS:GameError|HP:GameError
+PROBEHP 88 rid 3 dsq -1 invision -1 hp None exc POS:GameError|HP:GameError
+PROBEHP 89 rid 3 dsq -1 invision -1 hp None exc POS:GameError|HP:GameError
+PROBEHP 90 rid 3 dsq -1 invision -1 hp None exc POS:GameError|HP:GameError
+PROBEHP 91 rid 3 dsq -1 invision -1 hp None exc POS:GameError|HP:GameError
+PROBEHP 92 rid 3 dsq -1 invision -1 hp None exc POS:GameError|HP:GameError
+PROBEHP 93 rid 3 dsq -1 invision -1 hp None exc POS:GameError|HP:GameError
+PROBEHP 94 rid 3 dsq -1 invision -1 hp None exc POS:GameError|HP:GameError
+PROBEHP 95 rid 3 dsq -1 invision -1 hp None exc POS:GameError|HP:GameError
+PROBEHP 96 rid 3 dsq -1 invision -1 hp None exc POS:GameError|HP:GameError
+PROBEHP 97 rid 3 dsq -1 invision -1 hp None exc POS:GameError|HP:GameError
+PROBEHP 98 rid 3 dsq -1 invision -1 hp None exc POS:GameError|HP:GameError
+PROBEHP 99 rid 3 dsq -1 invision -1 hp None exc POS:GameError|HP:GameError
+PROBEHP 100 rid 3 dsq -1 invision -1 hp None exc POS:GameError|HP:GameError
+PROBEHP 101 rid 3 dsq -1 invision -1 hp None exc POS:GameError|HP:GameError
+PROBEHP 102 rid 3 dsq -1 invision -1 hp None exc POS:GameError|HP:GameError
+PROBEHP 103 rid 3 dsq -1 invision -1 hp None exc POS:GameError|HP:GameError
+PROBEHP 104 rid 3 dsq -1 invision -1 hp None exc POS:GameError|HP:GameError
+PROBEHP 105 rid 3 dsq -1 invision -1 hp None exc POS:GameError|HP:GameError
+PROBEHP 106 rid 3 dsq -1 invision -1 hp None exc POS:GameError|HP:GameError
+PROBEHP 107 rid 3 dsq -1 invision -1 hp None exc POS:GameError|HP:GameError
+PROBEHP 108 rid 3 dsq -1 invision -1 hp None exc POS:GameError|HP:GameError
+PROBEHP 109 rid 3 dsq -1 invision -1 hp None exc POS:GameError|HP:GameError
+PROBEHP 110 rid 3 dsq -1 invision -1 hp None exc POS:GameError|HP:GameError
+PROBEHP 111 rid 3 dsq -1 invision -1 hp None exc POS:GameError|HP:GameError
+PROBEHP 112 rid 3 dsq -1 invision -1 hp None exc POS:GameError|HP:GameError
+PROBEHP 113 rid 3 dsq -1 invision -1 hp None exc POS:GameError|HP:GameError
+PROBEHP 114 rid 3 dsq -1 invision -1 hp None exc POS:GameError|HP:GameError
+PROBEHP 115 rid 3 dsq -1 invision -1 hp None exc POS:GameError|HP:GameError
+PROBEHP 116 rid 3 dsq -1 invision -1 hp None exc POS:GameError|HP:GameError
+PROBEHP 117 rid 3 dsq -1 invision -1 hp None exc POS:GameError|HP:GameError
+PROBEHP 118 rid 3 dsq -1 invision -1 hp None exc POS:GameError|HP:GameError
+PROBEHP 119 rid 3 dsq -1 invision -1 hp None exc POS:GameError|HP:GameError
+PROBEHP 120 rid 3 dsq -1 invision -1 hp None exc POS:GameError|HP:GameError
+PROBEHP 121 rid 3 dsq -1 invision -1 hp None exc POS:GameError|HP:GameError
+PROBEHP 122 rid 3 dsq -1 invision -1 hp None exc POS:GameError|HP:GameError
+PROBEHP 123 rid 3 dsq -1 invision -1 hp None exc POS:GameError|HP:GameError
+PROBEHP 124 rid 3 dsq -1 invision -1 hp None exc POS:GameError|HP:GameError
+PROBEHP 125 rid 3 dsq -1 invision -1 hp None exc POS:GameError|HP:GameError
+PROBEHP 126 rid 3 dsq -1 invision -1 hp None exc POS:GameError|HP:GameError
+PROBEHP 127 rid 3 dsq -1 invision -1 hp None exc POS:GameError|HP:GameError
+PROBEHP 128 rid 3 dsq -1 invision -1 hp None exc POS:GameError|HP:GameError
+PROBEHP 129 rid 3 dsq -1 invision -1 hp None exc POS:GameError|HP:GameError
+PROBEHP 130 rid 3 dsq -1 invision -1 hp None exc POS:GameError|HP:GameError
+PROBEHP 131 rid 3 dsq -1 invision -1 hp None exc POS:GameError|HP:GameError
+PROBEHP 132 rid 3 dsq -1 invision -1 hp None exc POS:GameError|HP:GameError
+PROBEHP 133 rid 3 dsq -1 invision -1 hp None exc POS:GameError|HP:GameError
+PROBEHP 134 rid 3 dsq -1 invision -1 hp None exc POS:GameError|HP:GameError
+PROBEHP 135 rid 3 dsq -1 invision -1 hp None exc POS:GameError|HP:GameError
+PROBEHP 136 rid 3 dsq -1 invision -1 hp None exc POS:GameError|HP:GameError
+PROBEHP 137 rid 3 dsq -1 invision -1 hp None exc POS:GameError|HP:GameError
+PROBEHP 138 rid 3 dsq -1 invision -1 hp None exc POS:GameError|HP:GameError
+PROBEHP 139 rid 3 dsq -1 invision -1 hp None exc POS:GameError|HP:GameError
+PROBEHP 140 rid 3 dsq -1 invision -1 hp None exc POS:GameError|HP:GameError
+PROBEHP 141 rid 3 dsq -1 invision -1 hp None exc POS:GameError|HP:GameError
+PROBEHP 142 rid 3 dsq -1 invision -1 hp None exc POS:GameError|HP:GameError
+PROBEHP 143 rid 3 dsq -1 invision -1 hp None exc POS:GameError|HP:GameError
+PROBEHP 144 rid 3 dsq -1 invision -1 hp None exc POS:GameError|HP:GameError
+PROBEHP 145 rid 3 dsq -1 invision -1 hp None exc POS:GameError|HP:GameError
+PROBEHP 146 rid 3 dsq -1 invision -1 hp None exc POS:GameError|HP:GameError
+PROBEHP 147 rid 3 dsq -1 invision -1 hp None exc POS:GameError|HP:GameError
+PROBEHP 148 rid 3 dsq -1 invision -1 hp None exc POS:GameError|HP:GameError
+PROBEHP 149 rid 3 dsq -1 invision -1 hp None exc POS:GameError|HP:GameError
+PROBEHP 150 rid 3 dsq -1 invision -1 hp None exc POS:GameError|HP:GameError
+PROBEHP 151 rid 3 dsq -1 invision -1 hp None exc POS:GameError|HP:GameError
+PROBEHP 152 rid 3 dsq -1 invision -1 hp None exc POS:GameError|HP:GameError
+PROBEHP 153 rid 3 dsq -1 invision -1 hp None exc POS:GameError|HP:GameError
+PROBEHP 154 rid 3 dsq -1 invision -1 hp None exc POS:GameError|HP:GameError
+PROBEHP 155 rid 3 dsq -1 invision -1 hp None exc POS:GameError|HP:GameError
+PROBEHP 156 rid 3 dsq -1 invision -1 hp None exc POS:GameError|HP:GameError
+PROBEHP 157 rid 3 dsq -1 invision -1 hp None exc POS:GameError|HP:GameError
+PROBEHP 158 rid 3 dsq -1 invision -1 hp None exc POS:GameError|HP:GameError
+PROBEHP 159 rid 3 dsq -1 invision -1 hp None exc POS:GameError|HP:GameError
+PROBEHP 160 rid 3 dsq -1 invision -1 hp None exc POS:GameError|HP:GameError
+PROBEHP 161 rid 3 dsq -1 invision -1 hp None exc POS:GameError|HP:GameError
+PROBEHP 162 rid 3 dsq -1 invision -1 hp None exc POS:GameError|HP:GameError
+PROBEHP 163 rid 3 dsq -1 invision -1 hp None exc POS:GameError|HP:GameError
+PROBEHP 164 rid 3 dsq -1 invision -1 hp None exc POS:GameError|HP:GameError
+PROBEHP 165 rid 3 dsq -1 invision -1 hp None exc POS:GameError|HP:GameError
+PROBEHP 166 rid 3 dsq -1 invision -1 hp None exc POS:GameError|HP:GameError
+PROBEHP 167 rid 3 dsq -1 invision -1 hp None exc POS:GameError|HP:GameError
+PROBEHP 168 rid 3 dsq -1 invision -1 hp None exc POS:GameError|HP:GameError
+PROBEHP 169 rid 3 dsq -1 invision -1 hp None exc POS:GameError|HP:GameError
+PROBEHP 170 rid 3 dsq -1 invision -1 hp None exc POS:GameError|HP:GameError
+PROBEHP 171 rid 3 dsq -1 invision -1 hp None exc POS:GameError|HP:GameError
+PROBEHP 172 rid 3 dsq -1 invision -1 hp None exc POS:GameError|HP:GameError
+PROBEHP 173 rid 3 dsq -1 invision -1 hp None exc POS:GameError|HP:GameError
+PROBEHP 174 rid 3 dsq -1 invision -1 hp None exc POS:GameError|HP:GameError
+PROBEHP 175 rid 3 dsq -1 invision -1 hp None exc POS:GameError|HP:GameError
+PROBEHP 176 rid 3 dsq -1 invision -1 hp None exc POS:GameError|HP:GameError
+PROBEHP 177 rid 3 dsq -1 invision -1 hp None exc POS:GameError|HP:GameError
+PROBEHP 178 rid 3 dsq -1 invision -1 hp None exc POS:GameError|HP:GameError
+PROBEHP 179 rid 3 dsq -1 invision -1 hp None exc POS:GameError|HP:GameError
+PROBEHP 180 rid 3 dsq -1 invision -1 hp None exc POS:GameError|HP:GameError
+PROBEHP 181 rid 3 dsq -1 invision -1 hp None exc POS:GameError|HP:GameError
+PROBEHP 182 rid 3 dsq -1 invision -1 hp None exc POS:GameError|HP:GameError
+PROBEHP 183 rid 3 dsq -1 invision -1 hp None exc POS:GameError|HP:GameError
+PROBEHP 184 rid 3 dsq -1 invision -1 hp None exc POS:GameError|HP:GameError
+PROBEHP 185 rid 3 dsq -1 invision -1 hp None exc POS:GameError|HP:GameError
+PROBEHP 186 rid 3 dsq -1 invision -1 hp None exc POS:GameError|HP:GameError
+PROBEHP 187 rid 3 dsq -1 invision -1 hp None exc POS:GameError|HP:GameError
+PROBEHP 188 rid 3 dsq -1 invision -1 hp None exc POS:GameError|HP:GameError
+PROBEHP 189 rid 3 dsq -1 invision -1 hp None exc POS:GameError|HP:GameError
+PROBEHP 190 rid 3 dsq -1 invision -1 hp None exc POS:GameError|HP:GameError
+PROBEHP 191 rid 3 dsq -1 invision -1 hp None exc POS:GameError|HP:GameError
+PROBEHP 192 rid 3 dsq -1 invision -1 hp None exc POS:GameError|HP:GameError
+PROBEHP 193 rid 3 dsq -1 invision -1 hp None exc POS:GameError|HP:GameError
+PROBEHP 194 rid 3 dsq -1 invision -1 hp None exc POS:GameError|HP:GameError
+PROBEHP 195 rid 3 dsq -1 invision -1 hp None exc POS:GameError|HP:GameError
+PROBEHP 196 rid 3 dsq -1 invision -1 hp None exc POS:GameError|HP:GameError
+PROBEHP 197 rid 3 dsq -1 invision -1 hp None exc POS:GameError|HP:GameError
+PROBEHP 198 rid 3 dsq -1 invision -1 hp None exc POS:GameError|HP:GameError
+PROBEHP 199 rid 3 dsq -1 invision -1 hp None exc POS:GameError|HP:GameError
+PROBEHP 200 rid 3 dsq -1 invision -1 hp None exc POS:GameError|HP:GameError
+PROBEHP 201 rid 3 dsq -1 invision -1 hp None exc POS:GameError|HP:GameError
+PROBEHP 202 rid 3 dsq -1 invision -1 hp None exc POS:GameError|HP:GameError
+PROBEHP 203 rid 3 dsq -1 invision -1 hp None exc POS:GameError|HP:GameError
+PROBEHP 204 rid 3 dsq -1 invision -1 hp None exc POS:GameError|HP:GameError
+PROBEHP 205 rid 3 dsq -1 invision -1 hp None exc POS:GameError|HP:GameError
+PROBEHP 206 rid 382 dsq 1 invision 1 hp 40 exc 
+PROBEDEAD 206 rid 3 hp None exc GameError
+PROBEHP 207 rid 382 dsq 4 invision 1 hp 40 exc 
+PROBEDEAD 207 rid 3 hp None exc GameError
+PROBEHP 208 rid 382 dsq 4 invision 1 hp 40 exc 
+PROBEDEAD 208 rid 3 hp None exc GameError
+PROBEHP 209 rid 382 dsq 13 invision 1 hp 40 exc 
+PROBEDEAD 209 rid 3 hp None exc GameError
+PROBEHP 210 rid 382 dsq 13 invision 1 hp 40 exc 
+PROBEDEAD 210 rid 3 hp None exc GameError
+PROBEHP 211 rid 382 dsq -1 invision -1 hp None exc POS:GameError|HP:GameError
+PROBEDEAD 211 rid 3 hp None exc GameError
+PROBEHP 212 rid 382 dsq -1 invision -1 hp None exc POS:GameError|HP:GameError
+PROBEDEAD 212 rid 3 hp None exc GameError
+PROBEHP 213 rid 382 dsq -1 invision -1 hp None exc POS:GameError|HP:GameError
+PROBEDEAD 213 rid 3 hp None exc GameError
+PROBEHP 214 rid 382 dsq -1 invision -1 hp None exc POS:GameError|HP:GameError
+PROBEDEAD 214 rid 3 hp None exc GameError
+PROBEHP 215 rid 382 dsq -1 invision -1 hp None exc POS:GameError|HP:GameError
+PROBEDEAD 215 rid 3 hp None exc GameError
+PROBEHP 216 rid 382 dsq -1 invision -1 hp None exc POS:GameError|HP:GameError
+PROBEDEAD 216 rid 3 hp None exc GameError
+PROBEHP 217 rid 382 dsq -1 invision -1 hp None exc POS:GameError|HP:GameError
+PROBEDEAD 217 rid 3 hp None exc GameError
+PROBEHP 218 rid 382 dsq -1 invision -1 hp None exc POS:GameError|HP:GameError
+PROBEDEAD 218 rid 3 hp None exc GameError
+PROBEHP 219 rid 382 dsq -1 invision -1 hp None exc POS:GameError|HP:GameError
+PROBEDEAD 219 rid 3 hp None exc GameError
+PROBEHP 220 rid 382 dsq -1 invision -1 hp None exc POS:GameError|HP:GameError
+PROBEDEAD 220 rid 3 hp None exc GameError
+PROBEHP 221 rid 382 dsq -1 invision -1 hp None exc POS:GameError|HP:GameError
+PROBEDEAD 221 rid 3 hp None exc GameError
+PROBEHP 222 rid 382 dsq -1 invision -1 hp None exc POS:GameError|HP:GameError
+PROBEDEAD 222 rid 3 hp None exc GameError
+PROBEHP 223 rid 382 dsq -1 invision -1 hp None exc POS:GameError|HP:GameError
+PROBEDEAD 223 rid 3 hp None exc GameError
+PROBEHP 224 rid 382 dsq -1 invision -1 hp None exc POS:GameError|HP:GameError
+PROBEDEAD 224 rid 3 hp None exc GameError
+PROBEHP 225 rid 382 dsq -1 invision -1 hp None exc POS:GameError|HP:GameError
+PROBEDEAD 225 rid 3 hp None exc GameError
+PROBEHP 226 rid 382 dsq -1 invision -1 hp None exc POS:GameError|HP:GameError
+PROBEDEAD 226 rid 3 hp None exc GameError
+PROBEHP 227 rid 382 dsq -1 invision -1 hp None exc POS:GameError|HP:GameError
+PROBEDEAD 227 rid 3 hp None exc GameError
+PROBEHP 228 rid 382 dsq -1 invision -1 hp None exc POS:GameError|HP:GameError
+PROBEDEAD 228 rid 3 hp None exc GameError
+PROBEHP 229 rid 382 dsq -1 invision -1 hp None exc POS:GameError|HP:GameError
+PROBEDEAD 229 rid 3 hp None exc GameError
+PROBEHP 230 rid 382 dsq -1 invision -1 hp None exc POS:GameError|HP:GameError
+PROBEDEAD 230 rid 3 hp None exc GameError
+PROBEHP 231 rid 382 dsq -1 invision -1 hp None exc POS:GameError|HP:GameError
+PROBEDEAD 231 rid 3 hp None exc GameError
+PROBEHP 232 rid 382 dsq -1 invision -1 hp None exc POS:GameError|HP:GameError
+PROBEDEAD 232 rid 3 hp None exc GameError
+PROBEHP 233 rid 382 dsq -1 invision -1 hp None exc POS:GameError|HP:GameError
+PROBEDEAD 233 rid 3 hp None exc GameError
+PROBEHP 234 rid 382 dsq -1 invision -1 hp None exc POS:GameError|HP:GameError
+PROBEDEAD 234 rid 3 hp None exc GameError
+PROBEHP 235 rid 382 dsq -1 invision -1 hp None exc POS:GameError|HP:GameError
+PROBEDEAD 235 rid 3 hp None exc GameError
+PROBEHP 236 rid 382 dsq -1 invision -1 hp None exc POS:GameError|HP:GameError
+PROBEDEAD 236 rid 3 hp None exc GameError
+PROBEHP 237 rid 382 dsq -1 invision -1 hp None exc POS:GameError|HP:GameError
+PROBEDEAD 237 rid 3 hp None exc GameError
+PROBEHP 238 rid 382 dsq -1 invision -1 hp None exc POS:GameError|HP:GameError
+PROBEDEAD 238 rid 3 hp None exc GameError
+PROBEHP 239 rid 382 dsq -1 invision -1 hp None exc POS:GameError|HP:GameError
+PROBEDEAD 239 rid 3 hp None exc GameError
+PROBEHP 240 rid 382 dsq -1 invision -1 hp None exc POS:GameError|HP:GameError
+PROBEDEAD 240 rid 3 hp None exc GameError
+PROBEHP 241 rid 382 dsq -1 invision -1 hp None exc POS:GameError|HP:GameError
+PROBEDEAD 241 rid 3 hp None exc GameError
+PROBEHP 242 rid 382 dsq -1 invision -1 hp None exc POS:GameError|HP:GameError
+PROBEDEAD 242 rid 3 hp None exc GameError
+PROBEHP 243 rid 382 dsq -1 invision -1 hp None exc POS:GameError|HP:GameError
+PROBEDEAD 243 rid 3 hp None exc GameError
+PROBEHP 244 rid 382 dsq -1 invision -1 hp None exc POS:GameError|HP:GameError
+PROBEDEAD 244 rid 3 hp None exc GameError
+PROBEHP 245 rid 382 dsq -1 invision -1 hp None exc POS:GameError|HP:GameError
+PROBEDEAD 245 rid 3 hp None exc GameError
+PROBEHP 246 rid 382 dsq -1 invision -1 hp None exc POS:GameError|HP:GameError
+PROBEDEAD 246 rid 3 hp None exc GameError
+PROBEHP 247 rid 382 dsq -1 invision -1 hp None exc POS:GameError|HP:GameError
+PROBEDEAD 247 rid 3 hp None exc GameError
+PROBEHP 248 rid 382 dsq -1 invision -1 hp None exc POS:GameError|HP:GameError
+PROBEDEAD 248 rid 3 hp None exc GameError
+PROBEHP 249 rid 382 dsq -1 invision -1 hp None exc POS:GameError|HP:GameError
+PROBEDEAD 249 rid 3 hp None exc GameError
+PROBEHP 250 rid 382 dsq -1 invision -1 hp None exc POS:GameError|HP:GameError
+PROBEDEAD 250 rid 3 hp None exc GameError
+PROBEHP 251 rid 382 dsq -1 invision -1 hp None exc POS:GameError|HP:GameError
+PROBEDEAD 251 rid 3 hp None exc GameError
+PROBEHP 252 rid 382 dsq -1 invision -1 hp None exc POS:GameError|HP:GameError
+PROBEDEAD 252 rid 3 hp None exc GameError
+PROBEHP 253 rid 382 dsq -1 invision -1 hp None exc POS:GameError|HP:GameError
+PROBEDEAD 253 rid 3 hp None exc GameError
+PROBEHP 254 rid 382 dsq -1 invision -1 hp None exc POS:GameError|HP:GameError
+PROBEDEAD 254 rid 3 hp None exc GameError
+PROBEHP 255 rid 382 dsq -1 invision -1 hp None exc POS:GameError|HP:GameError
+PROBEDEAD 255 rid 3 hp None exc GameError
+PROBEHP 256 rid 382 dsq -1 invision -1 hp None exc POS:GameError|HP:GameError
+PROBEDEAD 256 rid 3 hp None exc GameError
+PROBEHP 257 rid 382 dsq -1 invision -1 hp None exc POS:GameError|HP:GameError
+PROBEDEAD 257 rid 3 hp None exc GameError
+PROBEHP 258 rid 382 dsq -1 invision -1 hp None exc POS:GameError|HP:GameError
+PROBEDEAD 258 rid 3 hp None exc GameError
+PROBEHP 259 rid 382 dsq -1 invision -1 hp None exc POS:GameError|HP:GameError
+PROBEDEAD 259 rid 3 hp None exc GameError
+PROBEHP 260 rid 382 dsq -1 invision -1 hp None exc POS:GameError|HP:GameError
+PROBEDEAD 260 rid 3 hp None exc GameError
+PROBEHP 261 rid 382 dsq -1 invision -1 hp None exc POS:GameError|HP:GameError
+PROBEDEAD 261 rid 3 hp None exc GameError
+PROBEHP 262 rid 382 dsq -1 invision -1 hp None exc POS:GameError|HP:GameError
+PROBEDEAD 262 rid 3 hp None exc GameError
+PROBEHP 263 rid 382 dsq -1 invision -1 hp None exc POS:GameError|HP:GameError
+PROBEDEAD 263 rid 3 hp None exc GameError
+PROBEHP 264 rid 382 dsq -1 invision -1 hp None exc POS:GameError|HP:GameError
+PROBEDEAD 264 rid 3 hp None exc GameError
+PROBEHP 265 rid 382 dsq -1 invision -1 hp None exc POS:GameError|HP:GameError
+PROBEDEAD 265 rid 3 hp None exc GameError
+PROBEHP 266 rid 382 dsq -1 invision -1 hp None exc POS:GameError|HP:GameError
+PROBEDEAD 266 rid 3 hp None exc GameError
+PROBEHP 267 rid 382 dsq -1 invision -1 hp None exc POS:GameError|HP:GameError
+PROBEDEAD 267 rid 3 hp None exc GameError
+PROBEHP 268 rid 382 dsq -1 invision -1 hp None exc POS:GameError|HP:GameError
+PROBEDEAD 268 rid 3 hp None exc GameError
+PROBEHP 269 rid 382 dsq -1 invision -1 hp None exc POS:GameError|HP:GameError
+PROBEDEAD 269 rid 3 hp None exc GameError
+PROBEHP 270 rid 382 dsq -1 invision -1 hp None exc POS:GameError|HP:GameError
+PROBEDEAD 270 rid 3 hp None exc GameError
+PROBEHP 271 rid 382 dsq -1 invision -1 hp None exc POS:GameError|HP:GameError
+PROBEDEAD 271 rid 3 hp None exc GameError
+PROBEHP 272 rid 382 dsq -1 invision -1 hp None exc POS:GameError|HP:GameError
+PROBEDEAD 272 rid 3 hp None exc GameError
+PROBEHP 273 rid 382 dsq -1 invision -1 hp None exc POS:GameError|HP:GameError
+PROBEDEAD 273 rid 3 hp None exc GameError
+PROBEHP 274 rid 382 dsq -1 invision -1 hp None exc POS:GameError|HP:GameError
+PROBEDEAD 274 rid 3 hp None exc GameError
+PROBEHP 275 rid 382 dsq -1 invision -1 hp None exc POS:GameError|HP:GameError
+PROBEDEAD 275 rid 3 hp None exc GameError
+PROBEHP 276 rid 382 dsq -1 invision -1 hp None exc POS:GameError|HP:GameError
+PROBEDEAD 276 rid 3 hp None exc GameError
+PROBEHP 277 rid 382 dsq -1 invision -1 hp None exc POS:GameError|HP:GameError
+PROBEDEAD 277 rid 3 hp None exc GameError
+PROBEHP 278 rid 382 dsq -1 invision -1 hp None exc POS:GameError|HP:GameError
+PROBEDEAD 278 rid 3 hp None exc GameError
+PROBEHP 279 rid 382 dsq -1 invision -1 hp None exc POS:GameError|HP:GameError
+PROBEDEAD 279 rid 3 hp None exc GameError
+PROBEHP 280 rid 382 dsq -1 invision -1 hp None exc POS:GameError|HP:GameError
+PROBEDEAD 280 rid 3 hp None exc GameError
+PROBEHP 281 rid 382 dsq -1 invision -1 hp None exc POS:GameError|HP:GameError
+PROBEDEAD 281 rid 3 hp None exc GameError
+PROBEHP 282 rid 382 dsq -1 invision -1 hp None exc POS:GameError|HP:GameError
+PROBEDEAD 282 rid 3 hp None exc GameError
+PROBEHP 283 rid 382 dsq -1 invision -1 hp None exc POS:GameError|HP:GameError
+PROBEDEAD 283 rid 3 hp None exc GameError
+PROBEHP 284 rid 382 dsq -1 invision -1 hp None exc POS:GameError|HP:GameError
+PROBEDEAD 284 rid 3 hp None exc GameError
+PROBEHP 285 rid 382 dsq -1 invision -1 hp None exc POS:GameError|HP:GameError
+PROBEDEAD 285 rid 3 hp None exc GameError
+PROBEHP 286 rid 382 dsq -1 invision -1 hp None exc POS:GameError|HP:GameError
+PROBEDEAD 286 rid 3 hp None exc GameError
+PROBEHP 287 rid 382 dsq -1 invision -1 hp None exc POS:GameError|HP:GameError
+PROBEDEAD 287 rid 3 hp None exc GameError
+PROBEHP 288 rid 382 dsq -1 invision -1 hp None exc POS:GameError|HP:GameError
+PROBEDEAD 288 rid 3 hp None exc GameError
+PROBEHP 289 rid 382 dsq -1 invision -1 hp None exc POS:GameError|HP:GameError
+PROBEDEAD 289 rid 3 hp None exc GameError
+PROBEHP 290 rid 382 dsq -1 invision -1 hp None exc POS:GameError|HP:GameError
+PROBEDEAD 290 rid 3 hp None exc GameError
+PROBEHP 291 rid 382 dsq -1 invision -1 hp None exc POS:GameError|HP:GameError
+PROBEDEAD 291 rid 3 hp None exc GameError
+PROBEHP 292 rid 382 dsq -1 invision -1 hp None exc POS:GameError|HP:GameError
+PROBEDEAD 292 rid 3 hp None exc GameError
+PROBEHP 293 rid 382 dsq -1 invision -1 hp None exc POS:GameError|HP:GameError
+PROBEDEAD 293 rid 3 hp None exc GameError
+PROBEHP 294 rid 382 dsq -1 invision -1 hp None exc POS:GameError|HP:GameError
+PROBEDEAD 294 rid 3 hp None exc GameError
+PROBEHP 295 rid 382 dsq -1 invision -1 hp None exc POS:GameError|HP:GameError
+PROBEDEAD 295 rid 3 hp None exc GameError
+PROBEHP 296 rid 382 dsq -1 invision -1 hp None exc POS:GameError|HP:GameError
+PROBEDEAD 296 rid 3 hp None exc GameError
+PROBEHP 297 rid 382 dsq -1 invision -1 hp None exc POS:GameError|HP:GameError
+PROBEDEAD 297 rid 3 hp None exc GameError
+PROBEHP 298 rid 382 dsq -1 invision -1 hp None exc POS:GameError|HP:GameError
+PROBEDEAD 298 rid 3 hp None exc GameError
+PROBEHP 299 rid 382 dsq -1 invision -1 hp None exc POS:GameError|HP:GameError
+PROBEDEAD 299 rid 3 hp None exc GameError
+PROBEHP 300 rid 382 dsq -1 invision -1 hp None exc POS:GameError|HP:GameError
+PROBEDEAD 300 rid 3 hp None exc GameError
+PROBEHP 301 rid 382 dsq -1 invision -1 hp None exc POS:GameError|HP:GameError
+PROBEDEAD 301 rid 3 hp None exc GameError
+PROBEHP 302 rid 382 dsq -1 invision -1 hp None exc POS:GameError|HP:GameError
+PROBEDEAD 302 rid 3 hp None exc GameError
+PROBEHP 303 rid 382 dsq -1 invision -1 hp None exc POS:GameError|HP:GameError
+PROBEDEAD 303 rid 3 hp None exc GameError
+PROBEHP 304 rid 382 dsq -1 invision -1 hp None exc POS:GameError|HP:GameError
+PROBEDEAD 304 rid 3 hp None exc GameError
+PROBEHP 305 rid 382 dsq -1 invision -1 hp None exc POS:GameError|HP:GameError
+PROBEDEAD 305 rid 3 hp None exc GameError
+PROBEHP 306 rid 382 dsq -1 invision -1 hp None exc POS:GameError|HP:GameError
+PROBEDEAD 306 rid 3 hp None exc GameError
+PROBEHP 307 rid 382 dsq -1 invision -1 hp None exc POS:GameError|HP:GameError
+PROBEDEAD 307 rid 3 hp None exc GameError
+PROBEHP 308 rid 382 dsq -1 invision -1 hp None exc POS:GameError|HP:GameError
+PROBEDEAD 308 rid 3 hp None exc GameError
+PROBEHP 309 rid 382 dsq -1 invision -1 hp None exc POS:GameError|HP:GameError
+PROBEDEAD 309 rid 3 hp None exc GameError
+PROBEHP 310 rid 382 dsq -1 invision -1 hp None exc POS:GameError|HP:GameError
+PROBEDEAD 310 rid 3 hp None exc GameError
+PROBEHP 311 rid 382 dsq -1 invision -1 hp None exc POS:GameError|HP:GameError
+PROBEDEAD 311 rid 3 hp None exc GameError
+PROBEHP 312 rid 382 dsq -1 invision -1 hp None exc POS:GameError|HP:GameError
+PROBEDEAD 312 rid 3 hp None exc GameError
+PROBEHP 313 rid 382 dsq -1 invision -1 hp None exc POS:GameError|HP:GameError
+PROBEDEAD 313 rid 3 hp None exc GameError
+PROBEHP 314 rid 382 dsq -1 invision -1 hp None exc POS:GameError|HP:GameError
+PROBEDEAD 314 rid 3 hp None exc GameError
+PROBEHP 315 rid 382 dsq -1 invision -1 hp None exc POS:GameError|HP:GameError
+PROBEDEAD 315 rid 3 hp None exc GameError
+PROBEHP 316 rid 382 dsq -1 invision -1 hp None exc POS:GameError|HP:GameError
+PROBEDEAD 316 rid 3 hp None exc GameError
+PROBEHP 317 rid 382 dsq -1 invision -1 hp None exc POS:GameError|HP:GameError
+PROBEDEAD 317 rid 3 hp None exc GameError
+PROBEHP 318 rid 382 dsq -1 invision -1 hp None exc POS:GameError|HP:GameError
+PROBEDEAD 318 rid 3 hp None exc GameError
+PROBEHP 319 rid 382 dsq -1 invision -1 hp None exc POS:GameError|HP:GameError
+PROBEDEAD 319 rid 3 hp None exc GameError
+PROBEHP 320 rid 553 dsq 5 invision 1 hp 40 exc 
+PROBEDEAD 320 rid 3 hp None exc GameError
+PROBEDEAD 320 rid 382 hp None exc GameError
+PROBEHP 321 rid 553 dsq -1 invision -1 hp None exc POS:GameError|HP:GameError
+PROBEDEAD 321 rid 3 hp None exc GameError
+PROBEDEAD 321 rid 382 hp None exc GameError
+PROBEHP 322 rid 553 dsq -1 invision -1 hp None exc POS:GameError|HP:GameError
+PROBEDEAD 322 rid 3 hp None exc GameError
+PROBEDEAD 322 rid 382 hp None exc GameError
+PROBEHP 323 rid 553 dsq -1 invision -1 hp None exc POS:GameError|HP:GameError
+PROBEDEAD 323 rid 3 hp None exc GameError
+PROBEDEAD 323 rid 382 hp None exc GameError
+PROBEHP 324 rid 553 dsq -1 invision -1 hp None exc POS:GameError|HP:GameError
+PROBEDEAD 324 rid 3 hp None exc GameError
+PROBEDEAD 324 rid 382 hp None exc GameError
+PROBEHP 325 rid 553 dsq -1 invision -1 hp None exc POS:GameError|HP:GameError
+PROBEDEAD 325 rid 3 hp None exc GameError
+PROBEDEAD 325 rid 382 hp None exc GameError
+PROBEHP 326 rid 553 dsq -1 invision -1 hp None exc POS:GameError|HP:GameError
+PROBEDEAD 326 rid 3 hp None exc GameError
+PROBEDEAD 326 rid 382 hp None exc GameError
+PROBEHP 327 rid 553 dsq -1 invision -1 hp None exc POS:GameError|HP:GameError
+PROBEDEAD 327 rid 3 hp None exc GameError
+PROBEDEAD 327 rid 382 hp None exc GameError
+PROBEHP 328 rid 553 dsq -1 invision -1 hp None exc POS:GameError|HP:GameError
+PROBEDEAD 328 rid 3 hp None exc GameError
+PROBEDEAD 328 rid 382 hp None exc GameError
+PROBEHP 329 rid 553 dsq -1 invision -1 hp None exc POS:GameError|HP:GameError
+PROBEDEAD 329 rid 3 hp None exc GameError
+PROBEDEAD 329 rid 382 hp None exc GameError
+PROBEHP 330 rid 553 dsq -1 invision -1 hp None exc POS:GameError|HP:GameError
+PROBEDEAD 330 rid 3 hp None exc GameError
+PROBEDEAD 330 rid 382 hp None exc GameError
+PROBEHP 331 rid 553 dsq -1 invision -1 hp None exc POS:GameError|HP:GameError
+PROBEDEAD 331 rid 3 hp None exc GameError
+PROBEDEAD 331 rid 382 hp None exc GameError
+PROBEHP 332 rid 553 dsq -1 invision -1 hp None exc POS:GameError|HP:GameError
+PROBEDEAD 332 rid 3 hp None exc GameError
+PROBEDEAD 332 rid 382 hp None exc GameError
+PROBEHP 333 rid 553 dsq -1 invision -1 hp None exc POS:GameError|HP:GameError
+PROBEDEAD 333 rid 3 hp None exc GameError
+PROBEDEAD 333 rid 382 hp None exc GameError
+PROBEHP 334 rid 553 dsq -1 invision -1 hp None exc POS:GameError|HP:GameError
+PROBEDEAD 334 rid 3 hp None exc GameError
+PROBEDEAD 334 rid 382 hp None exc GameError
+PROBEHP 335 rid 553 dsq -1 invision -1 hp None exc POS:GameError|HP:GameError
+PROBEDEAD 335 rid 3 hp None exc GameError
+PROBEDEAD 335 rid 382 hp None exc GameError
+PROBEHP 336 rid 553 dsq -1 invision -1 hp None exc POS:GameError|HP:GameError
+PROBEDEAD 336 rid 3 hp None exc GameError
+PROBEDEAD 336 rid 382 hp None exc GameError
+PROBEHP 337 rid 553 dsq -1 invision -1 hp None exc POS:GameError|HP:GameError
+PROBEDEAD 337 rid 3 hp None exc GameError
+PROBEDEAD 337 rid 382 hp None exc GameError
+PROBEHP 338 rid 553 dsq -1 invision -1 hp None exc POS:GameError|HP:GameError
+PROBEDEAD 338 rid 3 hp None exc GameError
+PROBEDEAD 338 rid 382 hp None exc GameError
+PROBEHP 339 rid 553 dsq -1 invision -1 hp None exc POS:GameError|HP:GameError
+PROBEDEAD 339 rid 3 hp None exc GameError
+PROBEDEAD 339 rid 382 hp None exc GameError
+PROBEHP 340 rid 553 dsq -1 invision -1 hp None exc POS:GameError|HP:GameError
+PROBEDEAD 340 rid 3 hp None exc GameError
+PROBEDEAD 340 rid 382 hp None exc GameError
+PROBEHP 341 rid 553 dsq -1 invision -1 hp None exc POS:GameError|HP:GameError
+PROBEDEAD 341 rid 3 hp None exc GameError
+PROBEDEAD 341 rid 382 hp None exc GameError
+PROBEHP 342 rid 553 dsq -1 invision -1 hp None exc POS:GameError|HP:GameError
+PROBEDEAD 342 rid 3 hp None exc GameError
+PROBEDEAD 342 rid 382 hp None exc GameError
+PROBEHP 343 rid 553 dsq -1 invision -1 hp None exc POS:GameError|HP:GameError
+PROBEDEAD 343 rid 3 hp None exc GameError
+PROBEDEAD 343 rid 382 hp None exc GameError
+PROBEHP 344 rid 553 dsq -1 invision -1 hp None exc POS:GameError|HP:GameError
+PROBEDEAD 344 rid 3 hp None exc GameError
+PROBEDEAD 344 rid 382 hp None exc GameError
+PROBEHP 345 rid 553 dsq -1 invision -1 hp None exc POS:GameError|HP:GameError
+PROBEDEAD 345 rid 3 hp None exc GameError
+PROBEDEAD 345 rid 382 hp None exc GameError
+PROBEHP 346 rid 553 dsq -1 invision -1 hp None exc POS:GameError|HP:GameError
+PROBEDEAD 346 rid 3 hp None exc GameError
+PROBEDEAD 346 rid 382 hp None exc GameError
+PROBEHP 347 rid 553 dsq -1 invision -1 hp None exc POS:GameError|HP:GameError
+PROBEDEAD 347 rid 3 hp None exc GameError
+PROBEDEAD 347 rid 382 hp None exc GameError
+PROBEHP 348 rid 553 dsq -1 invision -1 hp None exc POS:GameError|HP:GameError
+PROBEDEAD 348 rid 3 hp None exc GameError
+PROBEDEAD 348 rid 382 hp None exc GameError
+PROBEHP 349 rid 553 dsq -1 invision -1 hp None exc POS:GameError|HP:GameError
+PROBEDEAD 349 rid 3 hp None exc GameError
+PROBEDEAD 349 rid 382 hp None exc GameError
+PROBEHP 350 rid 553 dsq -1 invision -1 hp None exc POS:GameError|HP:GameError
+PROBEDEAD 350 rid 3 hp None exc GameError
+PROBEDEAD 350 rid 382 hp None exc GameError
+PROBEHP 351 rid 553 dsq -1 invision -1 hp None exc POS:GameError|HP:GameError
+PROBEDEAD 351 rid 3 hp None exc GameError
+PROBEDEAD 351 rid 382 hp None exc GameError
+PROBEHP 352 rid 553 dsq -1 invision -1 hp None exc POS:GameError|HP:GameError
+PROBEDEAD 352 rid 3 hp None exc GameError
+PROBEDEAD 352 rid 382 hp None exc GameError
+PROBEHP 353 rid 553 dsq -1 invision -1 hp None exc POS:GameError|HP:GameError
+PROBEDEAD 353 rid 3 hp None exc GameError
+PROBEDEAD 353 rid 382 hp None exc GameError
+PROBEHP 354 rid 553 dsq -1 invision -1 hp None exc POS:GameError|HP:GameError
+PROBEDEAD 354 rid 3 hp None exc GameError
+PROBEDEAD 354 rid 382 hp None exc GameError
+PROBEHP 355 rid 553 dsq -1 invision -1 hp None exc POS:GameError|HP:GameError
+PROBEDEAD 355 rid 3 hp None exc GameError
+PROBEDEAD 355 rid 382 hp None exc GameError
+PROBEHP 356 rid 553 dsq -1 invision -1 hp None exc POS:GameError|HP:GameError
+PROBEDEAD 356 rid 3 hp None exc GameError
+PROBEDEAD 356 rid 382 hp None exc GameError
+PROBEHP 357 rid 553 dsq -1 invision -1 hp None exc POS:GameError|HP:GameError
+PROBEDEAD 357 rid 3 hp None exc GameError
+PROBEDEAD 357 rid 382 hp None exc GameError
+PROBEHP 358 rid 553 dsq -1 invision -1 hp None exc POS:GameError|HP:GameError
+PROBEDEAD 358 rid 3 hp None exc GameError
+PROBEDEAD 358 rid 382 hp None exc GameError
+PROBEHP 359 rid 553 dsq -1 invision -1 hp None exc POS:GameError|HP:GameError
+PROBEDEAD 359 rid 3 hp None exc GameError
+PROBEDEAD 359 rid 382 hp None exc GameError
+PROBEHP 360 rid 553 dsq -1 invision -1 hp None exc POS:GameError|HP:GameError
+PROBEDEAD 360 rid 3 hp None exc GameError
+PROBEDEAD 360 rid 382 hp None exc GameError
+PROBEHP 361 rid 553 dsq -1 invision -1 hp None exc POS:GameError|HP:GameError
+PROBEDEAD 361 rid 3 hp None exc GameError
+PROBEDEAD 361 rid 382 hp None exc GameError
+PROBEHP 362 rid 553 dsq -1 invision -1 hp None exc POS:GameError|HP:GameError
+PROBEDEAD 362 rid 3 hp None exc GameError
+PROBEDEAD 362 rid 382 hp None exc GameError
+PROBEHP 363 rid 553 dsq -1 invision -1 hp None exc POS:GameError|HP:GameError
+PROBEDEAD 363 rid 3 hp None exc GameError
+PROBEDEAD 363 rid 382 hp None exc GameError
+PROBEHP 364 rid 553 dsq -1 invision -1 hp None exc POS:GameError|HP:GameError
+PROBEDEAD 364 rid 3 hp None exc GameError
+PROBEDEAD 364 rid 382 hp None exc GameError
+PROBEHP 365 rid 553 dsq -1 invision -1 hp None exc POS:GameError|HP:GameError
+PROBEDEAD 365 rid 3 hp None exc GameError
+PROBEDEAD 365 rid 382 hp None exc GameError
+PROBEHP 366 rid 553 dsq -1 invision -1 hp None exc POS:GameError|HP:GameError
+PROBEDEAD 366 rid 3 hp None exc GameError
+PROBEDEAD 366 rid 382 hp None exc GameError
+PROBEHP 367 rid 553 dsq -1 invision -1 hp None exc POS:GameError|HP:GameError
+PROBEDEAD 367 rid 3 hp None exc GameError
+PROBEDEAD 367 rid 382 hp None exc GameError
+PROBEHP 368 rid 553 dsq -1 invision -1 hp None exc POS:GameError|HP:GameError
+PROBEDEAD 368 rid 3 hp None exc GameError
+PROBEDEAD 368 rid 382 hp None exc GameError
+PROBEHP 369 rid 553 dsq -1 invision -1 hp None exc POS:GameError|HP:GameError
+PROBEDEAD 369 rid 3 hp None exc GameError
+PROBEDEAD 369 rid 382 hp None exc GameError
+PROBEHP 370 rid 553 dsq -1 invision -1 hp None exc POS:GameError|HP:GameError
+PROBEDEAD 370 rid 3 hp None exc GameError
+PROBEDEAD 370 rid 382 hp None exc GameError
+PROBEHP 371 rid 553 dsq -1 invision -1 hp None exc POS:GameError|HP:GameError
+PROBEDEAD 371 rid 3 hp None exc GameError
+PROBEDEAD 371 rid 382 hp None exc GameError
+PROBEHP 372 rid 553 dsq -1 invision -1 hp None exc POS:GameError|HP:GameError
+PROBEDEAD 372 rid 3 hp None exc GameError
+PROBEDEAD 372 rid 382 hp None exc GameError
+PROBEHP 373 rid 553 dsq -1 invision -1 hp None exc POS:GameError|HP:GameError
+PROBEDEAD 373 rid 3 hp None exc GameError
+PROBEDEAD 373 rid 382 hp None exc GameError
+PROBEHP 374 rid 553 dsq -1 invision -1 hp None exc POS:GameError|HP:GameError
+PROBEDEAD 374 rid 3 hp None exc GameError
+PROBEDEAD 374 rid 382 hp None exc GameError
+PROBEHP 375 rid 553 dsq -1 invision -1 hp None exc POS:GameError|HP:GameError
+PROBEDEAD 375 rid 3 hp None exc GameError
+PROBEDEAD 375 rid 382 hp None exc GameError
+PROBEHP 376 rid 553 dsq -1 invision -1 hp None exc POS:GameError|HP:GameError
+PROBEDEAD 376 rid 3 hp None exc GameError
+PROBEDEAD 376 rid 382 hp None exc GameError
+PROBEHP 377 rid 553 dsq -1 invision -1 hp None exc POS:GameError|HP:GameError
+PROBEDEAD 377 rid 3 hp None exc GameError
+PROBEDEAD 377 rid 382 hp None exc GameError
+PROBEHP 378 rid 553 dsq -1 invision -1 hp None exc POS:GameError|HP:GameError
+PROBEDEAD 378 rid 3 hp None exc GameError
+PROBEDEAD 378 rid 382 hp None exc GameError
+PROBEHP 379 rid 553 dsq -1 invision -1 hp None exc POS:GameError|HP:GameError
+PROBEDEAD 379 rid 3 hp None exc GameError
+PROBEDEAD 379 rid 382 hp None exc GameError
+PROBEHP 380 rid 553 dsq -1 invision -1 hp None exc POS:GameError|HP:GameError
+PROBEDEAD 380 rid 3 hp None exc GameError
+PROBEDEAD 380 rid 382 hp None exc GameError
+PROBEHP 381 rid 553 dsq -1 invision -1 hp None exc POS:GameError|HP:GameError
+PROBEDEAD 381 rid 3 hp None exc GameError
+PROBEDEAD 381 rid 382 hp None exc GameError
+PROBEHP 382 rid 553 dsq -1 invision -1 hp None exc POS:GameError|HP:GameError
+PROBEDEAD 382 rid 3 hp None exc GameError
+PROBEDEAD 382 rid 382 hp None exc GameError
+PROBEHP 383 rid 553 dsq -1 invision -1 hp None exc POS:GameError|HP:GameError
+PROBEDEAD 383 rid 3 hp None exc GameError
+PROBEDEAD 383 rid 382 hp None exc GameError
+PROBEHP 384 rid 553 dsq -1 invision -1 hp None exc POS:GameError|HP:GameError
+PROBEDEAD 384 rid 3 hp None exc GameError
+PROBEDEAD 384 rid 382 hp None exc GameError
+PROBEHP 385 rid 553 dsq -1 invision -1 hp None exc POS:GameError|HP:GameError
+PROBEDEAD 385 rid 3 hp None exc GameError
+PROBEDEAD 385 rid 382 hp None exc GameError
+PROBEHP 386 rid 553 dsq -1 invision -1 hp None exc POS:GameError|HP:GameError
+PROBEDEAD 386 rid 3 hp None exc GameError
+PROBEDEAD 386 rid 382 hp None exc GameError
+PROBEHP 387 rid 553 dsq -1 invision -1 hp None exc POS:GameError|HP:GameError
+PROBEDEAD 387 rid 3 hp None exc GameError
+PROBEDEAD 387 rid 382 hp None exc GameError
+PROBEHP 388 rid 553 dsq -1 invision -1 hp None exc POS:GameError|HP:GameError
+PROBEDEAD 388 rid 3 hp None exc GameError
+PROBEDEAD 388 rid 382 hp None exc GameError
+PROBEHP 389 rid 553 dsq -1 invision -1 hp None exc POS:GameError|HP:GameError
+PROBEDEAD 389 rid 3 hp None exc GameError
+PROBEDEAD 389 rid 382 hp None exc GameError
+PROBEHP 390 rid 553 dsq -1 invision -1 hp None exc POS:GameError|HP:GameError
+PROBEDEAD 390 rid 3 hp None exc GameError
+PROBEDEAD 390 rid 382 hp None exc GameError
+PROBEHP 391 rid 553 dsq -1 invision -1 hp None exc POS:GameError|HP:GameError
+PROBEDEAD 391 rid 3 hp None exc GameError
+PROBEDEAD 391 rid 382 hp None exc GameError
+PROBEHP 392 rid 553 dsq -1 invision -1 hp None exc POS:GameError|HP:GameError
+PROBEDEAD 392 rid 3 hp None exc GameError
+PROBEDEAD 392 rid 382 hp None exc GameError
+PROBEHP 393 rid 553 dsq -1 invision -1 hp None exc POS:GameError|HP:GameError
+PROBEDEAD 393 rid 3 hp None exc GameError
+PROBEDEAD 393 rid 382 hp None exc GameError
+PROBEHP 394 rid 553 dsq -1 invision -1 hp None exc POS:GameError|HP:GameError
+PROBEDEAD 394 rid 3 hp None exc GameError
+PROBEDEAD 394 rid 382 hp None exc GameError
+PROBEHP 395 rid 553 dsq -1 invision -1 hp None exc POS:GameError|HP:GameError
+PROBEDEAD 395 rid 3 hp None exc GameError
+PROBEDEAD 395 rid 382 hp None exc GameError
+PROBEHP 396 rid 553 dsq -1 invision -1 hp None exc POS:GameError|HP:GameError
+PROBEDEAD 396 rid 3 hp None exc GameError
+PROBEDEAD 396 rid 382 hp None exc GameError
+PROBEHP 397 rid 553 dsq -1 invision -1 hp None exc POS:GameError|HP:GameError
+PROBEDEAD 397 rid 3 hp None exc GameError
+PROBEDEAD 397 rid 382 hp None exc GameError
+PROBEHP 398 rid 553 dsq -1 invision -1 hp None exc POS:GameError|HP:GameError
+PROBEDEAD 398 rid 3 hp None exc GameError
+PROBEDEAD 398 rid 382 hp None exc GameError
+PROBEHP 399 rid 553 dsq -1 invision -1 hp None exc POS:GameError|HP:GameError
+PROBEDEAD 399 rid 3 hp None exc GameError
+PROBEDEAD 399 rid 382 hp None exc GameError
+PROBEHP 400 rid 553 dsq -1 invision -1 hp None exc POS:GameError|HP:GameError
+PROBEDEAD 400 rid 3 hp None exc GameError
+PROBEDEAD 400 rid 382 hp None exc GameError
+PROBEHP 401 rid 553 dsq -1 invision -1 hp None exc POS:GameError|HP:GameError
+PROBEDEAD 401 rid 3 hp None exc GameError
+PROBEDEAD 401 rid 382 hp None exc GameError
+PROBEHP 402 rid 553 dsq -1 invision -1 hp None exc POS:GameError|HP:GameError
+PROBEDEAD 402 rid 3 hp None exc GameError
+PROBEDEAD 402 rid 382 hp None exc GameError
+PROBEHP 403 rid 553 dsq -1 invision -1 hp None exc POS:GameError|HP:GameError
+PROBEDEAD 403 rid 3 hp None exc GameError
+PROBEDEAD 403 rid 382 hp None exc GameError
+PROBEHP 404 rid 553 dsq -1 invision -1 hp None exc POS:GameError|HP:GameError
+PROBEDEAD 404 rid 3 hp None exc GameError
+PROBEDEAD 404 rid 382 hp None exc GameError
+PROBEHP 405 rid 553 dsq -1 invision -1 hp None exc POS:GameError|HP:GameError
+PROBEDEAD 405 rid 3 hp None exc GameError
+PROBEDEAD 405 rid 382 hp None exc GameError
+PROBEHP 406 rid 553 dsq -1 invision -1 hp None exc POS:GameError|HP:GameError
+PROBEDEAD 406 rid 3 hp None exc GameError
+PROBEDEAD 406 rid 382 hp None exc GameError
+PROBEHP 407 rid 553 dsq -1 invision -1 hp None exc POS:GameError|HP:GameError
+PROBEDEAD 407 rid 3 hp None exc GameError
+PROBEDEAD 407 rid 382 hp None exc GameError
+PROBEHP 408 rid 553 dsq -1 invision -1 hp None exc POS:GameError|HP:GameError
+PROBEDEAD 408 rid 3 hp None exc GameError
+PROBEDEAD 408 rid 382 hp None exc GameError
+PROBEHP 409 rid 553 dsq -1 invision -1 hp None exc POS:GameError|HP:GameError
+PROBEDEAD 409 rid 3 hp None exc GameError
+PROBEDEAD 409 rid 382 hp None exc GameError
+PROBEHP 410 rid 553 dsq -1 invision -1 hp None exc POS:GameError|HP:GameError
+PROBEDEAD 410 rid 3 hp None exc GameError
+PROBEDEAD 410 rid 382 hp None exc GameError
+PROBEHP 411 rid 553 dsq -1 invision -1 hp None exc POS:GameError|HP:GameError
+PROBEDEAD 411 rid 3 hp None exc GameError
+PROBEDEAD 411 rid 382 hp None exc GameError
+PROBEHP 412 rid 553 dsq -1 invision -1 hp None exc POS:GameError|HP:GameError
+PROBEDEAD 412 rid 3 hp None exc GameError
+PROBEDEAD 412 rid 382 hp None exc GameError
+PROBEHP 413 rid 553 dsq -1 invision -1 hp None exc POS:GameError|HP:GameError
+PROBEDEAD 413 rid 3 hp None exc GameError
+PROBEDEAD 413 rid 382 hp None exc GameError
+PROBEHP 414 rid 553 dsq -1 invision -1 hp None exc POS:GameError|HP:GameError
+PROBEDEAD 414 rid 3 hp None exc GameError
+PROBEDEAD 414 rid 382 hp None exc GameError
+PROBEHP 415 rid 553 dsq -1 invision -1 hp None exc POS:GameError|HP:GameError
+PROBEDEAD 415 rid 3 hp None exc GameError
+PROBEDEAD 415 rid 382 hp None exc GameError
+PROBEHP 416 rid 553 dsq -1 invision -1 hp None exc POS:GameError|HP:GameError
+PROBEDEAD 416 rid 3 hp None exc GameError
+PROBEDEAD 416 rid 382 hp None exc GameError
+PROBEHP 417 rid 553 dsq -1 invision -1 hp None exc POS:GameError|HP:GameError
+PROBEDEAD 417 rid 3 hp None exc GameError
+PROBEDEAD 417 rid 382 hp None exc GameError
+PROBEHP 418 rid 553 dsq -1 invision -1 hp None exc POS:GameError|HP:GameError
+PROBEDEAD 418 rid 3 hp None exc GameError
+PROBEDEAD 418 rid 382 hp None exc GameError
+PROBEHP 419 rid 553 dsq -1 invision -1 hp None exc POS:GameError|HP:GameError
+PROBEDEAD 419 rid 3 hp None exc GameError
+PROBEDEAD 419 rid 382 hp None exc GameError
+PROBEHP 420 rid 553 dsq -1 invision -1 hp None exc POS:GameError|HP:GameError
+PROBEDEAD 420 rid 3 hp None exc GameError
+PROBEDEAD 420 rid 382 hp None exc GameError
+PROBEHP 421 rid 553 dsq -1 invision -1 hp None exc POS:GameError|HP:GameError
+PROBEDEAD 421 rid 3 hp None exc GameError
+PROBEDEAD 421 rid 382 hp None exc GameError
+PROBEHP 422 rid 553 dsq -1 invision -1 hp None exc POS:GameError|HP:GameError
+PROBEDEAD 422 rid 3 hp None exc GameError
+PROBEDEAD 422 rid 382 hp None exc GameError
+PROBEHP 423 rid 553 dsq -1 invision -1 hp None exc POS:GameError|HP:GameError
+PROBEDEAD 423 rid 3 hp None exc GameError
+PROBEDEAD 423 rid 382 hp None exc GameError
+PROBEHP 424 rid 553 dsq -1 invision -1 hp None exc POS:GameError|HP:GameError
+PROBEDEAD 424 rid 3 hp None exc GameError
+PROBEDEAD 424 rid 382 hp None exc GameError
+PROBEHP 425 rid 553 dsq -1 invision -1 hp None exc POS:GameError|HP:GameError
+PROBEDEAD 425 rid 3 hp None exc GameError
+PROBEDEAD 425 rid 382 hp None exc GameError
+PROBEHP 426 rid 553 dsq -1 invision -1 hp None exc POS:GameError|HP:GameError
+PROBEDEAD 426 rid 3 hp None exc GameError
+PROBEDEAD 426 rid 382 hp None exc GameError
+PROBEHP 427 rid 553 dsq -1 invision -1 hp None exc POS:GameError|HP:GameError
+PROBEDEAD 427 rid 3 hp None exc GameError
+PROBEDEAD 427 rid 382 hp None exc GameError
+PROBEHP 428 rid 553 dsq -1 invision -1 hp None exc POS:GameError|HP:GameError
+PROBEDEAD 428 rid 3 hp None exc GameError
+PROBEDEAD 428 rid 382 hp None exc GameError
+PROBEHP 429 rid 553 dsq -1 invision -1 hp None exc POS:GameError|HP:GameError
+PROBEDEAD 429 rid 3 hp None exc GameError
+PROBEDEAD 429 rid 382 hp None exc GameError
+PROBEHP 430 rid 553 dsq -1 invision -1 hp None exc POS:GameError|HP:GameError
+PROBEDEAD 430 rid 3 hp None exc GameError
+PROBEDEAD 430 rid 382 hp None exc GameError
+PROBEHP 431 rid 553 dsq -1 invision -1 hp None exc POS:GameError|HP:GameError
+PROBEDEAD 431 rid 3 hp None exc GameError
+PROBEDEAD 431 rid 382 hp None exc GameError
+PROBEHP 432 rid 553 dsq -1 invision -1 hp None exc POS:GameError|HP:GameError
+PROBEDEAD 432 rid 3 hp None exc GameError
+PROBEDEAD 432 rid 382 hp None exc GameError
+PROBEHP 433 rid 553 dsq -1 invision -1 hp None exc POS:GameError|HP:GameError
+PROBEDEAD 433 rid 3 hp None exc GameError
+PROBEDEAD 433 rid 382 hp None exc GameError
+PROBEHP 434 rid 553 dsq -1 invision -1 hp None exc POS:GameError|HP:GameError
+PROBEDEAD 434 rid 3 hp None exc GameError
+PROBEDEAD 434 rid 382 hp None exc GameError
+PROBEHP 435 rid 553 dsq -1 invision -1 hp None exc POS:GameError|HP:GameError
+PROBEDEAD 435 rid 3 hp None exc GameError
+PROBEDEAD 435 rid 382 hp None exc GameError
+PROBEHP 436 rid 553 dsq -1 invision -1 hp None exc POS:GameError|HP:GameError
+PROBEDEAD 436 rid 3 hp None exc GameError
+PROBEDEAD 436 rid 382 hp None exc GameError
+PROBEHP 437 rid 553 dsq -1 invision -1 hp None exc POS:GameError|HP:GameError
+PROBEDEAD 437 rid 3 hp None exc GameError
+PROBEDEAD 437 rid 382 hp None exc GameError
+PROBEHP 438 rid 553 dsq -1 invision -1 hp None exc POS:GameError|HP:GameError
+PROBEDEAD 438 rid 3 hp None exc GameError
+PROBEDEAD 438 rid 382 hp None exc GameError
+PROBEHP 439 rid 553 dsq -1 invision -1 hp None exc POS:GameError|HP:GameError
+PROBEDEAD 439 rid 3 hp None exc GameError
+PROBEDEAD 439 rid 382 hp None exc GameError
+PROBEHP 440 rid 553 dsq -1 invision -1 hp None exc POS:GameError|HP:GameError
+PROBEDEAD 440 rid 3 hp None exc GameError
+PROBEDEAD 440 rid 382 hp None exc GameError
+PROBEHP 441 rid 553 dsq -1 invision -1 hp None exc POS:GameError|HP:GameError
+PROBEDEAD 441 rid 3 hp None exc GameError
+PROBEDEAD 441 rid 382 hp None exc GameError
+PROBEHP 442 rid 553 dsq -1 invision -1 hp None exc POS:GameError|HP:GameError
+PROBEDEAD 442 rid 3 hp None exc GameError
+PROBEDEAD 442 rid 382 hp None exc GameError
+PROBEHP 443 rid 553 dsq -1 invision -1 hp None exc POS:GameError|HP:GameError
+PROBEDEAD 443 rid 3 hp None exc GameError
+PROBEDEAD 443 rid 382 hp None exc GameError
+PROBEHP 444 rid 553 dsq -1 invision -1 hp None exc POS:GameError|HP:GameError
+PROBEDEAD 444 rid 3 hp None exc GameError
+PROBEDEAD 444 rid 382 hp None exc GameError
+PROBEHP 445 rid 553 dsq -1 invision -1 hp None exc POS:GameError|HP:GameError
+PROBEDEAD 445 rid 3 hp None exc GameError
+PROBEDEAD 445 rid 382 hp None exc GameError
+PROBEHP 446 rid 553 dsq -1 invision -1 hp None exc POS:GameError|HP:GameError
+PROBEDEAD 446 rid 3 hp None exc GameError
+PROBEDEAD 446 rid 382 hp None exc GameError
+PROBEHP 447 rid 553 dsq -1 invision -1 hp None exc POS:GameError|HP:GameError
+PROBEDEAD 447 rid 3 hp None exc GameError
+PROBEDEAD 447 rid 382 hp None exc GameError
+PROBEHP 448 rid 553 dsq -1 invision -1 hp None exc POS:GameError|HP:GameError
+PROBEDEAD 448 rid 3 hp None exc GameError
+PROBEDEAD 448 rid 382 hp None exc GameError
+PROBEHP 449 rid 553 dsq -1 invision -1 hp None exc POS:GameError|HP:GameError
+PROBEDEAD 449 rid 3 hp None exc GameError
+PROBEDEAD 449 rid 382 hp None exc GameError
+PROBEHP 450 rid 553 dsq -1 invision -1 hp None exc POS:GameError|HP:GameError
+PROBEDEAD 450 rid 3 hp None exc GameError
+PROBEDEAD 450 rid 382 hp None exc GameError
+PROBEHP 451 rid 553 dsq -1 invision -1 hp None exc POS:GameError|HP:GameError
+PROBEDEAD 451 rid 3 hp None exc GameError
+PROBEDEAD 451 rid 382 hp None exc GameError
+PROBEHP 452 rid 553 dsq -1 invision -1 hp None exc POS:GameError|HP:GameError
+PROBEDEAD 452 rid 3 hp None exc GameError
+PROBEDEAD 452 rid 382 hp None exc GameError
+PROBEHP 453 rid 553 dsq -1 invision -1 hp None exc POS:GameError|HP:GameError
+PROBEDEAD 453 rid 3 hp None exc GameError
+PROBEDEAD 453 rid 382 hp None exc GameError
+PROBEHP 454 rid 553 dsq -1 invision -1 hp None exc POS:GameError|HP:GameError
+PROBEDEAD 454 rid 3 hp None exc GameError
+PROBEDEAD 454 rid 382 hp None exc GameError
+PROBEHP 455 rid 553 dsq -1 invision -1 hp None exc POS:GameError|HP:GameError
+PROBEDEAD 455 rid 3 hp None exc GameError
+PROBEDEAD 455 rid 382 hp None exc GameError
+PROBEHP 456 rid 553 dsq -1 invision -1 hp None exc POS:GameError|HP:GameError
+PROBEDEAD 456 rid 3 hp None exc GameError
+PROBEDEAD 456 rid 382 hp None exc GameError
+PROBEHP 457 rid 553 dsq -1 invision -1 hp None exc POS:GameError|HP:GameError
+PROBEDEAD 457 rid 3 hp None exc GameError
+PROBEDEAD 457 rid 382 hp None exc GameError
+PROBEHP 458 rid 553 dsq -1 invision -1 hp None exc POS:GameError|HP:GameError
+PROBEDEAD 458 rid 3 hp None exc GameError
+PROBEDEAD 458 rid 382 hp None exc GameError
+PROBEHP 459 rid 553 dsq -1 invision -1 hp None exc POS:GameError|HP:GameError
+PROBEDEAD 459 rid 3 hp None exc GameError
+PROBEDEAD 459 rid 382 hp None exc GameError
+PROBEHP 460 rid 553 dsq -1 invision -1 hp None exc POS:GameError|HP:GameError
+PROBEDEAD 460 rid 3 hp None exc GameError
+PROBEDEAD 460 rid 382 hp None exc GameError
+PROBEHP 461 rid 553 dsq -1 invision -1 hp None exc POS:GameError|HP:GameError
+PROBEDEAD 461 rid 3 hp None exc GameError
+PROBEDEAD 461 rid 382 hp None exc GameError
+PROBEHP 462 rid 553 dsq -1 invision -1 hp None exc POS:GameError|HP:GameError
+PROBEDEAD 462 rid 3 hp None exc GameError
+PROBEDEAD 462 rid 382 hp None exc GameError
+PROBEHP 463 rid 553 dsq -1 invision -1 hp None exc POS:GameError|HP:GameError
+PROBEDEAD 463 rid 3 hp None exc GameError
+PROBEDEAD 463 rid 382 hp None exc GameError
+PROBEHP 464 rid 553 dsq -1 invision -1 hp None exc POS:GameError|HP:GameError
+PROBEDEAD 464 rid 3 hp None exc GameError
+PROBEDEAD 464 rid 382 hp None exc GameError
+PROBEHP 465 rid 553 dsq -1 invision -1 hp None exc POS:GameError|HP:GameError
+PROBEDEAD 465 rid 3 hp None exc GameError
+PROBEDEAD 465 rid 382 hp None exc GameError
+PROBEHP 466 rid 553 dsq -1 invision -1 hp None exc POS:GameError|HP:GameError
+PROBEDEAD 466 rid 3 hp None exc GameError
+PROBEDEAD 466 rid 382 hp None exc GameError
+PROBEHP 467 rid 553 dsq -1 invision -1 hp None exc POS:GameError|HP:GameError
+PROBEDEAD 467 rid 3 hp None exc GameError
+PROBEDEAD 467 rid 382 hp None exc GameError
+PROBEHP 468 rid 553 dsq -1 invision -1 hp None exc POS:GameError|HP:GameError
+PROBEDEAD 468 rid 3 hp None exc GameError
+PROBEDEAD 468 rid 382 hp None exc GameError
+PROBEHP 469 rid 553 dsq -1 invision -1 hp None exc POS:GameError|HP:GameError
+PROBEDEAD 469 rid 3 hp None exc GameError
+PROBEDEAD 469 rid 382 hp None exc GameError
+PROBEHP 470 rid 553 dsq -1 invision -1 hp None exc POS:GameError|HP:GameError
+PROBEDEAD 470 rid 3 hp None exc GameError
+PROBEDEAD 470 rid 382 hp None exc GameError
+PROBEHP 471 rid 553 dsq -1 invision -1 hp None exc POS:GameError|HP:GameError
+PROBEDEAD 471 rid 3 hp None exc GameError
+PROBEDEAD 471 rid 382 hp None exc GameError
+PROBEHP 472 rid 553 dsq -1 invision -1 hp None exc POS:GameError|HP:GameError
+PROBEDEAD 472 rid 3 hp None exc GameError
+PROBEDEAD 472 rid 382 hp None exc GameError
+PROBEHP 473 rid 553 dsq -1 invision -1 hp None exc POS:GameError|HP:GameError
+PROBEDEAD 473 rid 3 hp None exc GameError
+PROBEDEAD 473 rid 382 hp None exc GameError
+PROBEHP 474 rid 553 dsq -1 invision -1 hp None exc POS:GameError|HP:GameError
+PROBEDEAD 474 rid 3 hp None exc GameError
+PROBEDEAD 474 rid 382 hp None exc GameError
+PROBEHP 475 rid 553 dsq -1 invision -1 hp None exc POS:GameError|HP:GameError
+PROBEDEAD 475 rid 3 hp None exc GameError
+PROBEDEAD 475 rid 382 hp None exc GameError
+PROBEHP 476 rid 553 dsq -1 invision -1 hp None exc POS:GameError|HP:GameError
+PROBEDEAD 476 rid 3 hp None exc GameError
+PROBEDEAD 476 rid 382 hp None exc GameError
+PROBEHP 477 rid 553 dsq -1 invision -1 hp None exc POS:GameError|HP:GameError
+PROBEDEAD 477 rid 3 hp None exc GameError
+PROBEDEAD 477 rid 382 hp None exc GameError
+PROBEHP 478 rid 553 dsq -1 invision -1 hp None exc POS:GameError|HP:GameError
+PROBEDEAD 478 rid 3 hp None exc GameError
+PROBEDEAD 478 rid 382 hp None exc GameError
+PROBEHP 479 rid 553 dsq -1 invision -1 hp None exc POS:GameError|HP:GameError
+PROBEDEAD 479 rid 3 hp None exc GameError
+PROBEDEAD 479 rid 382 hp None exc GameError

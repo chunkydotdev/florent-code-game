@@ -1,0 +1,89 @@
+Update available: 2.3.6 -> 2.3.8. Run: pip install --upgrade fcode
+FS GATE 0 sig (30, 30, (2, 2), (26, 26)) ok 1
+FS GATE 1 sig (30, 30, (2, 2), (26, 26)) ok 1
+FS PHASE 1 id 3 ph 1 d 1013 at (4, 3)
+FS HOPBUILD 1 at (4, 3) lch (5, 3) T (28, 28)
+FS GATE 2 sig (30, 30, (2, 2), (26, 26)) ok 1
+FS GATE 2 sig (30, 30, (2, 2), (26, 26)) ok 1
+FS THROW 2 from (4, 3) to (8, 7) T (28, 28) body 3 n 1 dsq 685
+FS HOPBUILD 3 at (8, 7) lch (8, 8) T (28, 28)
+FS GATE 3 sig (30, 30, (2, 2), (26, 26)) ok 1
+FS GATE 4 sig (30, 30, (2, 2), (26, 26)) ok 1
+FS THROW 4 from (9, 7) to (11, 12) T (28, 28) body 3 n 1 dsq 421
+FS HOPBUILD 5 at (11, 12) lch (12, 12) T (28, 28)
+FS GATE 6 sig (30, 30, (2, 2), (26, 26)) ok 1
+FS THROW 6 from (11, 13) to (15, 16) T (28, 28) body 3 n 1 dsq 221
+FS HOPBUILD 7 at (15, 16) lch (16, 16) T (28, 28)
+FS GATE 8 sig (30, 30, (2, 2), (26, 26)) ok 1
+FS THROW 8 from (15, 17) to (19, 20) T (28, 28) body 3 n 1 dsq 85
+FS HOPBUILD 9 at (19, 20) lch (20, 20) T (28, 28)
+FS GATE 10 sig (30, 30, (2, 2), (26, 26)) ok 1
+FS THROW 10 from (19, 21) to (23, 24) T (28, 28) body 3 n 1 dsq 13
+FS HOPBUILD 11 at (23, 24) lch (23, 25) T (28, 28)
+FS GATE 12 sig (30, 30, (2, 2), (26, 26)) ok 1
+FS THROW 12 from (24, 24) to (27, 28) T (28, 28) body 3 n 1 dsq 1
+FS ARRIVE 13 id 3 body 1 at (27, 28) dsq 1
+FS PHASE 13 id 3 ph 2 d 1 at (27, 28)
+FS SEAL 13 tile (26, 28) n 1
+FS EVICTOR 14 at (28, 28) ucov 0 cov 1 unseal 1 obs 3
+FS RUNG 14 id 3 r 2 hi -
+FS GATE 15 sig (30, 30, (2, 2), (26, 26)) ok 1
+FS GATE 15 sig (30, 30, (2, 2), (26, 26)) ok 1
+FS EVICT 15 from (29, 27) to (23, 29)
+FS SEAL 16 tile (27, 28) n 2
+FS GATE 16 sig (30, 30, (2, 2), (26, 26)) ok 1
+FS DODGE 18 id 3 from (26, 29) to (27, 29) cov 2 -> 1 hit 0 hp 22
+FS SEAL 19 tile (27, 28) n 3
+FS STAT 20 id 3 at (27, 29) need 6 orth 6 ti 80 ammo 0 sen 0 hp 4 covden 0 eco 0 lost 0
+FS EVICT 22 from (27, 29) to (29, 23)
+FS EVICT 27 from (28, 27) to (23, 29)
+FS EVICT 33 from (27, 29) to (29, 23)
+FS EVICT 39 from (27, 29) to (29, 23)
+FS EVICT 44 from (28, 27) to (23, 29)
+FS EVICT 50 from (27, 29) to (29, 23)
+FS EVICT 55 from (28, 27) to (23, 29)
+FS EVICT 61 from (27, 29) to (29, 23)
+FS EVICT 66 from (28, 27) to (23, 29)
+FS EVICT 72 from (27, 29) to (29, 23)
+FS EVICT 77 from (28, 27) to (23, 29)
+FS EVICT 151 from (27, 29) to (29, 23)
+FS EVICT 156 from (28, 27) to (23, 29)
+FS EVICT 168 from (27, 29) to (29, 23)
+FS EVICT 173 from (28, 27) to (23, 29)
+FS EVICT 186 from (27, 29) to (29, 23)
+FS GATE 189 sig (30, 30, (2, 2), (26, 26)) ok 1
+FS PHASE 189 id 475 ph 1 d 1060 at (2, 4)
+FS EVICT 191 from (28, 27) to (23, 29)
+FS HOPBUILD 195 at (4, 8) lch (5, 8) T (28, 28)
+FS GATE 196 sig (30, 30, (2, 2), (26, 26)) ok 1
+FS THROW 196 from (4, 9) to (9, 11) T (28, 28) body 475 n 1 dsq 514
+FS HOPBUILD 200 at (9, 14) lch (9, 15) T (28, 28)
+FS GATE 201 sig (30, 30, (2, 2), (26, 26)) ok 1
+FS THROW 201 from (10, 14) to (13, 18) T (28, 28) body 475 n 1 dsq 233
+FS EVICT 203 from (27, 29) to (29, 23)
+FS EVICT 208 from (28, 27) to (23, 29)
+FS HOPBUILD 210 at (19, 20) lch (20, 20) T (28, 28)
+FS GATE 211 sig (30, 30, (2, 2), (26, 26)) ok 1
+FS THROW 211 from (19, 21) to (23, 24) T (28, 28) body 475 n 1 dsq 13
+FS EVICT 229 from (27, 29) to (29, 23)
+FS GATE 233 sig (30, 30, (2, 2), (26, 26)) ok 1
+FS PHASE 233 id 584 ph 1 d 1250 at (1, 1)
+FS EVICT 236 from (28, 27) to (23, 29)
+FS HOPBUILD 236 at (3, 0) lch (4, 0) T (28, 28)
+FS GATE 237 sig (30, 30, (2, 2), (26, 26)) ok 1
+FS THROW 237 from (3, 0) to (7, 4) T (28, 28) body 584 n 1 dsq 845
+FS EVICT 249 from (27, 29) to (29, 23)
+FS HOPBUILD 250 at (14, 9) lch (15, 9) T (28, 28)
+FS GATE 251 sig (30, 30, (2, 2), (26, 26)) ok 1
+FS THROW 251 from (14, 10) to (18, 13) T (28, 28) body 584 n 1 dsq 233
+FS EVICT 255 from (28, 27) to (23, 29)
+FS HOPBUILD 256 at (20, 15) lch (20, 16) T (28, 28)
+FS GATE 257 sig (30, 30, (2, 2), (26, 26)) ok 1
+FS THROW 257 from (21, 15) to (23, 20) T (28, 28) body 584 n 1 dsq 45
+FS EVICT 268 from (27, 29) to (29, 23)
+FS EVICT 279 from (28, 27) to (23, 29)
+FS GATE 279 sig (30, 30, (2, 2), (26, 26)) ok 1
+FS PHASE 279 id 695 ph 1 d 1250 at (1, 1)
+FS HOPBUILD 280 at (1, 0) lch (1, 1) T (28, 28)
+FS GATE 281 sig (30, 30, (2, 2), (26, 26)) ok 1
+FS THROW 281 from (2, 0) to (5, 4) T (28, 28) body 695 n 1 dsq 925

@@ -1,0 +1,28 @@
+Update available: 2.3.6 -> 2.3.8. Run: pip install --upgrade fcode
+FS GATE 0 sig (30, 30, (2, 2), (26, 26)) ok 1
+FS GATE 1 sig (30, 30, (2, 2), (26, 26)) ok 1
+FS PHASE 1 id 4 ph 1 d 1013 at (26, 25)
+FS HOPBUILD 1 at (26, 25) lch (26, 24) T (1, 1)
+FS GATE 2 sig (30, 30, (2, 2), (26, 26)) ok 1
+FS GATE 2 sig (30, 30, (2, 2), (26, 26)) ok 1
+FS THROW 2 from (26, 25) to (22, 21) T (1, 1) body 4 n 1 dsq 685
+FS HOPBUILD 3 at (22, 21) lch (21, 21) T (1, 1)
+FS GATE 3 sig (30, 30, (2, 2), (26, 26)) ok 1
+FS GATE 4 sig (30, 30, (2, 2), (26, 26)) ok 1
+FS THROW 4 from (22, 20) to (17, 18) T (1, 1) body 4 n 1 dsq 421
+FS HOPBUILD 5 at (17, 18) lch (17, 17) T (1, 1)
+FS GATE 6 sig (30, 30, (2, 2), (26, 26)) ok 1
+FS THROW 6 from (16, 18) to (13, 14) T (1, 1) body 4 n 1 dsq 221
+FS HOPBUILD 7 at (13, 14) lch (13, 13) T (1, 1)
+FS GATE 8 sig (30, 30, (2, 2), (26, 26)) ok 1
+FS THROW 8 from (12, 14) to (9, 10) T (1, 1) body 4 n 1 dsq 85
+FS HOPBUILD 9 at (9, 10) lch (9, 9) T (1, 1)
+FS GATE 10 sig (30, 30, (2, 2), (26, 26)) ok 1
+FS THROW 10 from (8, 10) to (5, 6) T (1, 1) body 4 n 1 dsq 13
+FS HOPBUILD 11 at (5, 6) lch (5, 5) T (1, 1)
+FS GATE 12 sig (30, 30, (2, 2), (26, 26)) ok 1
+FS EVICT 24 from (5, 4) to (8, 9)
+FS EVICT 25 from (6, 4) to (2, 9)
+FS EVICT 39 from (5, 4) to (8, 9)
+FS DEGRADE 42 id 4
+FS EVICT 197 from (5, 4) to (8, 9)

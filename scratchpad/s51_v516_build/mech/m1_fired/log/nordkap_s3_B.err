@@ -1,0 +1,365 @@
+Update available: 2.3.6 -> 2.3.8. Run: pip install --upgrade fcode
+FS GATE 0 sig (20, 26, (9, 6), (9, 18)) ok 1
+FS GATE 1 sig (20, 26, (9, 6), (9, 18)) ok 1
+FS PHASE 1 id 4 ph 1 d 100 at (9, 17)
+FS HOPBUILD 1 at (9, 17) lch (9, 16) T (11, 5)
+FS GATE 2 sig (20, 26, (9, 6), (9, 18)) ok 1
+FS GATE 2 sig (20, 26, (9, 6), (9, 18)) ok 1
+FS THROW 2 from (9, 17) to (10, 11) T (11, 5) body 4 n 1 dsq 16
+FS HOPBUILD 3 at (10, 11) lch (10, 10) T (11, 5)
+FS GATE 3 sig (20, 26, (9, 6), (9, 18)) ok 1
+FS GATE 4 sig (20, 26, (9, 6), (9, 18)) ok 1
+FS THROW 4 from (11, 11) to (11, 5) T (11, 5) body 4 n 1 dsq 2
+FS ARRIVE 5 id 4 body 1 at (11, 5) dsq 2
+FS PHASE 5 id 4 ph 2 d 2 at (11, 5)
+FS SEAL 5 tile (10, 5) n 1
+FS SEAL 6 tile (11, 6) n 2
+FS GATE 7 sig (20, 26, (9, 6), (9, 18)) ok 1
+FS GATE 8 sig (20, 26, (9, 6), (9, 18)) ok 1
+FS EVICTOR 10 at (10, 4) ucov 1 cov 0 unseal 1 obs 5
+FS RUNG 10 id 4 r 2 hi -
+FS GATE 11 sig (20, 26, (9, 6), (9, 18)) ok 1
+FS EVICT 11 from (10, 3) to (13, 0)
+FS EVICT 14 from (11, 5) to (7, 0)
+FS EVICT 19 from (9, 3) to (15, 3)
+FS STAT 20 id 4 at (9, 4) need 7 orth 5 ti 18 ammo 24 sen 0 hp 40 covden 10 eco 1 lost 0
+FS EVICT 23 from (11, 3) to (5, 3)
+FS EVICT 27 from (9, 3) to (15, 3)
+FS EVICT 31 from (11, 3) to (5, 3)
+FS EVICT 35 from (9, 3) to (15, 3)
+FS EVICT 39 from (11, 3) to (5, 3)
+FS STAT 40 id 4 at (9, 4) need 7 orth 5 ti 59 ammo 24 sen 0 hp 40 covden 30 eco 1 lost 0
+FS CLEAR 40 tile (9, 5) peck 1
+FS RUNG 40 id 4 r 3 hi -
+FS EVICT 43 from (9, 3) to (15, 3)
+FS CLEAR 44 tile (9, 5) peck 1
+FS RUNG 44 id 4 r 3 hi -
+FS CLEAR 45 tile (9, 5) peck 2
+FS RUNG 45 id 4 r 3 hi -
+FS EVICT 47 from (11, 3) to (5, 3)
+FS CLEAR 48 tile (9, 5) peck 3
+FS RUNG 48 id 4 r 3 hi -
+FS CLEAR 49 tile (9, 5) peck 4
+FS RUNG 49 id 4 r 3 hi -
+FS EVICT 51 from (9, 3) to (15, 3)
+FS CLEAR 52 tile (9, 5) peck 5
+FS RUNG 52 id 4 r 3 hi -
+FS CLEAR 53 tile (9, 5) peck 6
+FS RUNG 53 id 4 r 3 hi -
+FS CLEAR 54 tile (9, 5) peck 7
+FS RUNG 54 id 4 r 3 hi -
+FS EVICT 55 from (11, 3) to (5, 3)
+FS CLEAR 56 tile (9, 5) peck 8
+FS RUNG 56 id 4 r 3 hi -
+FS SEAL 58 tile (8, 5) n 3
+FS STAT 60 id 4 at (7, 4) need 6 orth 5 ti 62 ammo 24 sen 0 hp 40 covden 50 eco 1 lost 0
+FS SEAL 62 tile (8, 6) n 4
+FS SEAL 64 tile (8, 7) n 5
+FS CLEAR 69 tile (9, 8) peck 1
+FS RUNG 69 id 4 r 3 hi -
+FS CLEAR 70 tile (9, 8) peck 2
+FS RUNG 70 id 4 r 3 hi -
+FS SEAL 72 tile (10, 8) n 6
+FS SEAL 75 tile (11, 7) n 7
+FS STAT 80 id 4 at (11, 8) need 2 orth 1 ti 40 ammo 24 sen 0 hp 40 covden 61 eco 1 lost 0
+FS CLEAR 85 tile (9, 8) peck 1
+FS RUNG 85 id 4 r 3 hi -
+FS CLEAR 86 tile (9, 8) peck 2
+FS RUNG 86 id 4 r 3 hi -
+FS CLEAR 89 tile (9, 8) peck 3
+FS RUNG 89 id 4 r 3 hi -
+FS CLEAR 90 tile (9, 8) peck 4
+FS RUNG 90 id 4 r 3 hi -
+FS CLEAR 93 tile (9, 8) peck 5
+FS RUNG 93 id 4 r 3 hi -
+FS CLEAR 94 tile (9, 8) peck 6
+FS RUNG 94 id 4 r 3 hi -
+FS CLEAR 97 tile (9, 8) peck 7
+FS RUNG 97 id 4 r 3 hi -
+FS STAT 100 id 4 at (9, 9) need 2 orth 2 ti 36 ammo 24 sen 0 hp 40 covden 62 eco 1 lost 0
+FS CLEAR 100 tile (9, 8) peck 8
+FS RUNG 100 id 4 r 3 hi -
+FS CLEARED 101 tile (9, 8) n 1
+FS SEAL 101 tile (9, 8) n 8
+FS SEALCLR 101 tile (9, 8) lag 0
+FS PHASE 106 id 4 ph 3 d 4 at (7, 7)
+FS PHASE 109 id 4 ph 2 d 8 at (7, 4)
+FS PHASE 110 id 4 ph 3 d 5 at (8, 4)
+FS CLEAR 111 tile (9, 5) peck 1
+FS RUNG 111 id 4 r 3 hi -
+FS CLEARED 112 tile (9, 5) n 2
+FS PHASE 112 id 4 ph 2 d 4 at (9, 4)
+FS SEAL 112 tile (9, 5) n 9
+FS SEALCLR 112 tile (9, 5) lag 0
+FS PHASE 113 id 4 ph 3 d 4 at (9, 4)
+FS PHASE 115 id 4 ph 2 d 10 at (8, 3)
+FS STAT 120 id 4 at (7, 3) need 4 orth 4 ti 28 ammo 24 sen 0 hp 40 covden 68 eco 1 lost 0
+FS PHASE 124 id 4 ph 3 d 5 at (7, 5)
+FS CLEAR 127 tile (8, 8) peck 1
+FS RUNG 127 id 4 r 3 hi -
+FS CLEAR 128 tile (8, 8) peck 2
+FS RUNG 128 id 4 r 3 hi -
+FS CLEAR 129 tile (8, 8) peck 3
+FS RUNG 129 id 4 r 3 hi -
+FS CLEAR 130 tile (8, 8) peck 4
+FS RUNG 130 id 4 r 3 hi -
+FS CLEAR 131 tile (8, 8) peck 5
+FS RUNG 131 id 4 r 3 hi -
+FS CLEAR 132 tile (8, 8) peck 6
+FS RUNG 132 id 4 r 3 hi -
+FS CLEAR 133 tile (8, 8) peck 7
+FS RUNG 133 id 4 r 3 hi -
+FS CLEAR 134 tile (8, 8) peck 8
+FS RUNG 134 id 4 r 3 hi -
+FS PHASE 136 id 4 ph 2 d 8 at (7, 9)
+FS PHASE 137 id 4 ph 3 d 5 at (7, 8)
+FS PHASE 138 id 4 ph 2 d 8 at (7, 9)
+FS PHASE 139 id 4 ph 3 d 5 at (7, 8)
+FS CLEAR 139 tile (8, 8) peck 1
+FS RUNG 139 id 4 r 3 hi -
+FS STAT 140 id 4 at (7, 8) need 2 orth 0 ti 80 ammo 32 sen 0 hp 40 covden 68 eco 1 lost 0
+FS CLEAR 140 tile (8, 8) peck 2
+FS RUNG 140 id 4 r 3 hi -
+FS CLEAR 141 tile (8, 8) peck 3
+FS RUNG 141 id 4 r 3 hi -
+FS CLEAR 142 tile (8, 8) peck 4
+FS RUNG 142 id 4 r 3 hi -
+FS CLEAR 143 tile (8, 8) peck 5
+FS RUNG 143 id 4 r 3 hi -
+FS CLEAR 144 tile (8, 8) peck 6
+FS RUNG 144 id 4 r 3 hi -
+FS CLEAR 145 tile (8, 8) peck 7
+FS RUNG 145 id 4 r 3 hi -
+FS CLEAR 146 tile (8, 8) peck 8
+FS RUNG 146 id 4 r 3 hi -
+FS PHASE 148 id 4 ph 2 d 8 at (7, 9)
+FS EVICTOR 154 at (8, 9) ucov 0 cov 11 unseal 0 obs 23
+FS RUNG 154 id 4 r 2 hi -
+FS GATE 155 sig (20, 26, (9, 6), (9, 18)) ok 1
+FS PHASE 156 id 4 ph 3 d 5 at (7, 8)
+FS CLEAR 156 tile (8, 8) peck 1
+FS RUNG 156 id 4 r 3 hi -
+FS CLEAR 157 tile (8, 8) peck 2
+FS RUNG 157 id 4 r 3 hi -
+FS CLEAR 158 tile (8, 8) peck 3
+FS RUNG 158 id 4 r 3 hi -
+FS CLEAR 159 tile (8, 8) peck 4
+FS RUNG 159 id 4 r 3 hi -
+FS CLEARED 160 tile (8, 8) n 3
+FS STAT 160 id 4 at (7, 8) need 2 orth 0 ti 56 ammo 4 sen 0 hp 40 covden 68 eco 1 lost 0
+FS SEAL 160 tile (8, 8) n 10
+FS SEALCLR 160 tile (8, 8) lag 0
+FS PHASE 165 id 4 ph 2 d 8 at (7, 4)
+FS PHASE 166 id 4 ph 3 d 5 at (7, 5)
+FS PHASE 167 id 4 ph 2 d 8 at (7, 4)
+FS PHASE 168 id 4 ph 3 d 5 at (7, 5)
+FS PHASE 169 id 4 ph 2 d 8 at (7, 4)
+FS PHASE 170 id 4 ph 3 d 5 at (7, 5)
+FS PHASE 171 id 4 ph 2 d 8 at (7, 4)
+FS PHASE 172 id 4 ph 3 d 5 at (7, 5)
+FS PHASE 173 id 4 ph 2 d 8 at (7, 4)
+FS PHASE 174 id 4 ph 3 d 5 at (7, 5)
+FS PHASE 175 id 4 ph 2 d 8 at (7, 4)
+FS PHASE 176 id 4 ph 3 d 5 at (7, 5)
+FS PHASE 177 id 4 ph 2 d 8 at (7, 4)
+FS PHASE 178 id 4 ph 3 d 5 at (7, 5)
+FS PHASE 179 id 4 ph 2 d 8 at (7, 4)
+FS PHASE 180 id 4 ph 3 d 5 at (7, 5)
+FS STAT 180 id 4 at (7, 5) need 1 orth 0 ti 12 ammo 23 sen 0 hp 40 covden 68 eco 1 lost 0
+FS PHASE 181 id 4 ph 2 d 8 at (7, 4)
+FS PHASE 182 id 4 ph 3 d 5 at (7, 5)
+FS PHASE 183 id 4 ph 2 d 8 at (7, 4)
+FS PHASE 184 id 4 ph 3 d 5 at (7, 5)
+FS PHASE 185 id 4 ph 2 d 8 at (7, 4)
+FS PHASE 186 id 4 ph 3 d 5 at (7, 5)
+FS PHASE 187 id 4 ph 2 d 8 at (7, 4)
+FS PHASE 188 id 4 ph 3 d 5 at (7, 5)
+FS PHASE 189 id 4 ph 2 d 8 at (7, 4)
+FS PHASE 190 id 4 ph 3 d 5 at (7, 5)
+FS PHASE 191 id 4 ph 2 d 8 at (7, 4)
+FS PHASE 192 id 4 ph 3 d 5 at (7, 5)
+FS PHASE 193 id 4 ph 2 d 8 at (7, 4)
+FS PHASE 194 id 4 ph 3 d 5 at (7, 5)
+FS PHASE 195 id 4 ph 2 d 8 at (7, 4)
+FS PHASE 196 id 4 ph 3 d 5 at (7, 5)
+FS PHASE 197 id 4 ph 2 d 8 at (7, 4)
+FS PHASE 198 id 4 ph 3 d 5 at (7, 5)
+FS PHASE 199 id 4 ph 2 d 8 at (7, 4)
+FS PHASE 200 id 4 ph 3 d 5 at (7, 5)
+FS STAT 200 id 4 at (7, 5) need 1 orth 0 ti 34 ammo 24 sen 0 hp 40 covden 68 eco 1 lost 0
+FS PHASE 201 id 4 ph 2 d 8 at (7, 4)
+FS PHASE 202 id 4 ph 3 d 5 at (7, 5)
+FS PHASE 203 id 4 ph 2 d 8 at (7, 4)
+FS PHASE 204 id 4 ph 3 d 5 at (7, 5)
+FS PHASE 205 id 4 ph 2 d 8 at (7, 4)
+FS PHASE 206 id 4 ph 3 d 5 at (7, 5)
+FS PHASE 207 id 4 ph 2 d 8 at (7, 4)
+FS PHASE 208 id 4 ph 3 d 5 at (7, 5)
+FS PHASE 209 id 4 ph 2 d 8 at (7, 4)
+FS PHASE 210 id 4 ph 3 d 5 at (7, 5)
+FS PHASE 211 id 4 ph 2 d 8 at (7, 4)
+FS PHASE 212 id 4 ph 3 d 5 at (7, 5)
+FS PHASE 213 id 4 ph 2 d 8 at (7, 4)
+FS PHASE 214 id 4 ph 3 d 5 at (7, 5)
+FS PHASE 215 id 4 ph 2 d 8 at (7, 4)
+FS PHASE 216 id 4 ph 3 d 5 at (7, 5)
+FS PHASE 217 id 4 ph 2 d 8 at (7, 4)
+FS PHASE 218 id 4 ph 3 d 5 at (7, 5)
+FS PHASE 219 id 4 ph 2 d 8 at (7, 4)
+FS PHASE 220 id 4 ph 3 d 5 at (7, 5)
+FS STAT 220 id 4 at (7, 5) need 1 orth 0 ti 60 ammo 24 sen 0 hp 40 covden 68 eco 1 lost 0
+FS PHASE 221 id 4 ph 2 d 8 at (7, 4)
+FS PHASE 222 id 4 ph 3 d 5 at (7, 5)
+FS PHASE 223 id 4 ph 2 d 8 at (7, 4)
+FS PHASE 224 id 4 ph 3 d 5 at (7, 5)
+FS PHASE 225 id 4 ph 2 d 8 at (7, 4)
+FS PHASE 226 id 4 ph 3 d 5 at (7, 5)
+FS PHASE 227 id 4 ph 2 d 8 at (7, 4)
+FS PHASE 228 id 4 ph 3 d 5 at (7, 5)
+FS PHASE 229 id 4 ph 2 d 8 at (7, 4)
+FS PHASE 230 id 4 ph 3 d 5 at (7, 5)
+FS PHASE 231 id 4 ph 2 d 8 at (7, 4)
+FS PHASE 232 id 4 ph 3 d 5 at (7, 5)
+FS PHASE 233 id 4 ph 2 d 8 at (7, 4)
+FS PHASE 234 id 4 ph 3 d 5 at (7, 5)
+FS PHASE 235 id 4 ph 2 d 8 at (7, 4)
+FS PHASE 236 id 4 ph 3 d 5 at (7, 5)
+FS PHASE 237 id 4 ph 2 d 8 at (7, 4)
+FS PHASE 238 id 4 ph 3 d 5 at (7, 5)
+FS PHASE 239 id 4 ph 2 d 8 at (7, 4)
+FS PHASE 240 id 4 ph 3 d 5 at (7, 5)
+FS STAT 240 id 4 at (7, 5) need 1 orth 0 ti 12 ammo 16 sen 0 hp 40 covden 68 eco 1 lost 0
+FS PHASE 241 id 4 ph 2 d 8 at (7, 4)
+FS PHASE 242 id 4 ph 3 d 5 at (7, 5)
+FS PHASE 243 id 4 ph 2 d 8 at (7, 4)
+FS PHASE 244 id 4 ph 3 d 5 at (7, 5)
+FS PHASE 245 id 4 ph 2 d 8 at (7, 4)
+FS PHASE 246 id 4 ph 3 d 5 at (7, 5)
+FS PHASE 247 id 4 ph 2 d 8 at (7, 4)
+FS PHASE 248 id 4 ph 3 d 5 at (7, 5)
+FS PHASE 249 id 4 ph 2 d 8 at (7, 4)
+FS PHASE 250 id 4 ph 3 d 5 at (7, 5)
+FS PHASE 251 id 4 ph 2 d 8 at (7, 4)
+FS PHASE 252 id 4 ph 3 d 5 at (7, 5)
+FS PHASE 253 id 4 ph 2 d 8 at (7, 4)
+FS PHASE 254 id 4 ph 3 d 5 at (7, 5)
+FS PHASE 255 id 4 ph 2 d 8 at (7, 4)
+FS PHASE 256 id 4 ph 3 d 5 at (7, 5)
+FS PHASE 257 id 4 ph 2 d 8 at (7, 4)
+FS PHASE 258 id 4 ph 3 d 5 at (7, 5)
+FS PHASE 259 id 4 ph 2 d 8 at (7, 4)
+FS PHASE 260 id 4 ph 3 d 5 at (7, 5)
+FS STAT 260 id 4 at (7, 5) need 1 orth 0 ti 14 ammo 16 sen 0 hp 40 covden 68 eco 1 lost 0
+FS PHASE 261 id 4 ph 2 d 8 at (7, 4)
+FS PHASE 262 id 4 ph 3 d 5 at (7, 5)
+FS PHASE 263 id 4 ph 2 d 8 at (7, 4)
+FS PHASE 264 id 4 ph 3 d 5 at (7, 5)
+FS PHASE 265 id 4 ph 2 d 8 at (7, 4)
+FS PHASE 266 id 4 ph 3 d 5 at (7, 5)
+FS PHASE 267 id 4 ph 2 d 8 at (7, 4)
+FS PHASE 268 id 4 ph 3 d 5 at (7, 5)
+FS PHASE 269 id 4 ph 2 d 8 at (7, 4)
+FS PHASE 270 id 4 ph 3 d 5 at (7, 5)
+FS PHASE 271 id 4 ph 2 d 8 at (7, 4)
+FS PHASE 272 id 4 ph 3 d 5 at (7, 5)
+FS PHASE 273 id 4 ph 2 d 8 at (7, 4)
+FS PHASE 274 id 4 ph 3 d 5 at (7, 5)
+FS PHASE 275 id 4 ph 2 d 8 at (7, 4)
+FS PHASE 276 id 4 ph 3 d 5 at (7, 5)
+FS PHASE 277 id 4 ph 2 d 8 at (7, 4)
+FS PHASE 278 id 4 ph 3 d 5 at (7, 5)
+FS PHASE 279 id 4 ph 2 d 8 at (7, 4)
+FS PHASE 280 id 4 ph 3 d 5 at (7, 5)
+FS STAT 280 id 4 at (7, 5) need 1 orth 0 ti 42 ammo 24 sen 0 hp 40 covden 68 eco 1 lost 0
+FS PHASE 281 id 4 ph 2 d 8 at (7, 4)
+FS PHASE 282 id 4 ph 3 d 5 at (7, 5)
+FS PHASE 283 id 4 ph 2 d 8 at (7, 4)
+FS PHASE 284 id 4 ph 3 d 5 at (7, 5)
+FS PHASE 285 id 4 ph 2 d 8 at (7, 4)
+FS PHASE 286 id 4 ph 3 d 5 at (7, 5)
+FS PHASE 287 id 4 ph 2 d 8 at (7, 4)
+FS PHASE 288 id 4 ph 3 d 5 at (7, 5)
+FS PHASE 289 id 4 ph 2 d 8 at (7, 4)
+FS PHASE 290 id 4 ph 3 d 5 at (7, 5)
+FS PHASE 291 id 4 ph 2 d 8 at (7, 4)
+FS PHASE 292 id 4 ph 3 d 5 at (7, 5)
+FS PHASE 293 id 4 ph 2 d 8 at (7, 4)
+FS PHASE 294 id 4 ph 3 d 5 at (7, 5)
+FS PHASE 295 id 4 ph 2 d 8 at (7, 4)
+FS PHASE 296 id 4 ph 3 d 5 at (7, 5)
+FS PHASE 297 id 4 ph 2 d 8 at (7, 4)
+FS PHASE 298 id 4 ph 3 d 5 at (7, 5)
+FS PHASE 299 id 4 ph 2 d 8 at (7, 4)
+FS PHASE 300 id 4 ph 3 d 5 at (7, 5)
+FS STAT 300 id 4 at (7, 5) need 1 orth 0 ti 17 ammo 24 sen 0 hp 40 covden 68 eco 1 lost 0
+FS PHASE 301 id 4 ph 2 d 8 at (7, 4)
+FS PHASE 302 id 4 ph 3 d 5 at (7, 5)
+FS PHASE 303 id 4 ph 2 d 8 at (7, 4)
+FS PHASE 304 id 4 ph 3 d 5 at (7, 5)
+FS PHASE 305 id 4 ph 2 d 8 at (7, 4)
+FS PHASE 306 id 4 ph 3 d 5 at (7, 5)
+FS PHASE 307 id 4 ph 2 d 8 at (7, 4)
+FS PHASE 308 id 4 ph 3 d 5 at (7, 5)
+FS PHASE 309 id 4 ph 2 d 8 at (7, 4)
+FS PHASE 310 id 4 ph 3 d 5 at (7, 5)
+FS PHASE 311 id 4 ph 2 d 8 at (7, 4)
+FS PHASE 312 id 4 ph 3 d 5 at (7, 5)
+FS PHASE 313 id 4 ph 2 d 8 at (7, 4)
+FS PHASE 314 id 4 ph 3 d 5 at (7, 5)
+FS PHASE 315 id 4 ph 2 d 8 at (7, 4)
+FS PHASE 316 id 4 ph 3 d 5 at (7, 5)
+FS PHASE 317 id 4 ph 2 d 8 at (7, 4)
+FS PHASE 318 id 4 ph 3 d 5 at (7, 5)
+FS PHASE 319 id 4 ph 2 d 8 at (7, 4)
+FS PHASE 320 id 4 ph 3 d 5 at (7, 5)
+FS STAT 320 id 4 at (7, 5) need 1 orth 0 ti 51 ammo 24 sen 0 hp 40 covden 68 eco 1 lost 0
+FS PHASE 321 id 4 ph 2 d 8 at (7, 4)
+FS PHASE 322 id 4 ph 3 d 5 at (7, 5)
+FS PHASE 323 id 4 ph 2 d 8 at (7, 4)
+FS PHASE 324 id 4 ph 3 d 5 at (7, 5)
+FS PHASE 325 id 4 ph 2 d 8 at (7, 4)
+FS PHASE 326 id 4 ph 3 d 5 at (7, 5)
+FS PHASE 327 id 4 ph 2 d 8 at (7, 4)
+FS PHASE 328 id 4 ph 3 d 5 at (7, 5)
+FS PHASE 329 id 4 ph 2 d 8 at (7, 4)
+FS PHASE 330 id 4 ph 3 d 5 at (7, 5)
+FS PHASE 331 id 4 ph 2 d 8 at (7, 4)
+FS PHASE 332 id 4 ph 3 d 5 at (7, 5)
+FS PHASE 333 id 4 ph 2 d 8 at (7, 4)
+FS PHASE 334 id 4 ph 3 d 5 at (7, 5)
+FS PHASE 335 id 4 ph 2 d 8 at (7, 4)
+FS PHASE 336 id 4 ph 3 d 5 at (7, 5)
+FS SENTINEL 336 at (7, 4) face SOUTHEAST tgt (10, 7) score 18 n 1 onring 0 lost 0 gate (1, 1, 10) onsray 0 olddsq -1
+FS RUNG 336 id 4 r 4 hi -
+FS PHASE 337 id 4 ph 4 d 5 at (7, 5)
+FS EVICT 338 from (7, 10) to (13, 8)
+FS STAT 340 id 4 at (7, 8) need 1 orth 0 ti 20 ammo 12 sen 1 hp 40 covden 68 eco 1 lost 0
+FS EVICT 341 from (7, 9) to (13, 8)
+FS EVICT 346 from (9, 9) to (3, 9)
+FS EVICT 347 from (11, 5) to (7, 0)
+FS EVICT 351 from (7, 9) to (13, 8)
+FS EVICT 352 from (9, 3) to (15, 3)
+FS EVICT 356 from (9, 9) to (3, 9)
+FS EVICT 358 from (11, 5) to (7, 0)
+FS STAT 360 id 4 at (7, 8) need 1 orth 0 ti 20 ammo 18 sen 1 hp 40 covden 68 eco 1 lost 0
+FS EVICT 361 from (7, 9) to (13, 8)
+FS EVICT 363 from (9, 3) to (15, 3)
+FS EVICT 366 from (9, 9) to (3, 9)
+FS EVICT 369 from (11, 5) to (7, 0)
+FS EVICT 371 from (7, 9) to (13, 8)
+FS EVICT 374 from (9, 3) to (15, 3)
+FS EVICT 376 from (9, 9) to (3, 9)
+FS STAT 380 id 4 at (7, 8) need 1 orth 0 ti 20 ammo 22 sen 1 hp 40 covden 68 eco 1 lost 0
+FS EVICT 380 from (11, 5) to (7, 0)
+FS EVICT 381 from (7, 9) to (13, 8)
+FS EVICT 385 from (9, 3) to (15, 3)
+FS EVICT 386 from (9, 9) to (3, 9)
+FS EVICT 391 from (11, 5) to (7, 0)
+FS EVICT 391 from (7, 9) to (13, 8)
+FS EVICT 396 from (9, 3) to (15, 3)
+FS EVICT 396 from (9, 9) to (3, 9)
+FS STAT 400 id 4 at (7, 8) need 1 orth 0 ti 20 ammo 18 sen 1 hp 40 covden 68 eco 1 lost 0
+FS EVICT 401 from (7, 9) to (13, 8)
+FS EVICT 402 from (11, 5) to (7, 0)
+FS EVICT 406 from (9, 9) to (3, 9)
+FS EVICT 407 from (9, 3) to (15, 3)

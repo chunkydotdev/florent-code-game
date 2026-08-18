@@ -1,0 +1,30 @@
+atoll_s31_A	atoll	31	A	US	parent515	Core destroyed	245	0	1190	320
+atoll_s31_B	atoll	31	B	OPP	_v488beltbreak2	Core destroyed	173	0	530	1600
+atoll_s32_A	atoll	32	A	OPP	_v488beltbreak2	Titanium collected (tiebreak)	1000	0	2640	3700
+atoll_s32_B	atoll	32	B	OPP	_v488beltbreak2	Core destroyed	431	0	2140	3660
+atoll_s33_A	atoll	33	A	US	parent515	Core destroyed	492	0	4130	4250
+atoll_s33_B	atoll	33	B	OPP	_v488beltbreak2	Core destroyed	440	0	2040	2160
+drakkarfjord_s31_A	drakkarfjord	31	A	OPP	_v488beltbreak2	Core destroyed	572	0	4880	6590
+drakkarfjord_s31_B	drakkarfjord	31	B	OPP	_v488beltbreak2	Titanium collected (tiebreak)	1000	0	1040	1330
+drakkarfjord_s32_A	drakkarfjord	32	A	US	parent515	Core destroyed	201	0	880	300
+drakkarfjord_s32_B	drakkarfjord	32	B	US	parent515	Titanium collected (tiebreak)	1000	0	7760	0
+drakkarfjord_s33_A	drakkarfjord	33	A	OPP	_v488beltbreak2	Titanium collected (tiebreak)	1000	0	9120	10450
+drakkarfjord_s33_B	drakkarfjord	33	B	US	parent515	Core destroyed	129	0	360	0
+glacierkeep_s31_A	glacierkeep	31	A	US	parent515	Titanium collected (tiebreak)	1000	0	290	0
+glacierkeep_s31_B	glacierkeep	31	B	US	parent515	Core destroyed	141	0	140	0
+glacierkeep_s32_A	glacierkeep	32	A	US	parent515	Core destroyed	286	0	140	0
+glacierkeep_s32_B	glacierkeep	32	B	US	parent515	Titanium collected (tiebreak)	1000	0	20	0
+glacierkeep_s33_A	glacierkeep	33	A	US	parent515	Titanium collected (tiebreak)	1000	0	250	0
+glacierkeep_s33_B	glacierkeep	33	B	OPP	_v488beltbreak2	Titanium stored (tiebreak)	1000	0	0	0
+midgard_s31_A	midgard	31	A	OPP	_v488beltbreak2	Core destroyed	169	0	550	1090
+midgard_s31_B	midgard	31	B	OPP	_v488beltbreak2	Core destroyed	465	0	450	2440
+midgard_s32_A	midgard	32	A	OPP	_v488beltbreak2	Core destroyed	185	0	590	2270
+midgard_s32_B	midgard	32	B	OPP	_v488beltbreak2	Core destroyed	197	0	600	2470
+midgard_s33_A	midgard	33	A	OPP	_v488beltbreak2	Core destroyed	199	0	490	1580
+midgard_s33_B	midgard	33	B	OPP	_v488beltbreak2	Core destroyed	167	0	610	1860
+nordkap_s31_A	nordkap	31	A	OPP	_v488beltbreak2	Core destroyed	196	0	140	2740
+nordkap_s31_B	nordkap	31	B	OPP	_v488beltbreak2	Core destroyed	310	0	750	4760
+nordkap_s32_A	nordkap	32	A	US	parent515	Core destroyed	237	0	990	0
+nordkap_s32_B	nordkap	32	B	US	parent515	Core destroyed	173	0	560	190
+nordkap_s33_A	nordkap	33	A	OPP	_v488beltbreak2	Core destroyed	214	0	260	1710
+nordkap_s33_B	nordkap	33	B	US	parent515	Core destroyed	653	0	240	90

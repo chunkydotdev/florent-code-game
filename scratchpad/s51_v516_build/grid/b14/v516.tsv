@@ -1,0 +1,31 @@
+tag	map	seed	seat	ours	winner	cond	turn	tracebacks	ours_mined	opp_mined
+atoll_s40_A	atoll	40	A	OPP	_v488beltbreak2	Core destroyed	553	0	2730	3690
+atoll_s40_B	atoll	40	B	OPP	_v488beltbreak2	Core destroyed	407	0	230	1010
+atoll_s41_A	atoll	41	A	OPP	_v488beltbreak2	Core destroyed	237	0	1400	2110
+atoll_s41_B	atoll	41	B	US	_v516teardown	Core destroyed	226	0	1100	1110
+atoll_s42_A	atoll	42	A	OPP	_v488beltbreak2	Core destroyed	469	0	2400	2300
+atoll_s42_B	atoll	42	B	US	_v516teardown	Core destroyed	193	0	930	560
+drakkarfjord_s40_A	drakkarfjord	40	A	OPP	_v488beltbreak2	Titanium collected (tiebreak)	1000	0	4260	5670
+drakkarfjord_s40_B	drakkarfjord	40	B	US	_v516teardown	Titanium collected (tiebreak)	1000	0	610	0
+drakkarfjord_s41_A	drakkarfjord	41	A	OPP	_v488beltbreak2	Titanium collected (tiebreak)	1000	0	6260	9200
+drakkarfjord_s41_B	drakkarfjord	41	B	OPP	_v488beltbreak2	Core destroyed	325	0	350	2450
+drakkarfjord_s42_A	drakkarfjord	42	A	US	_v516teardown	Core destroyed	492	0	3770	6450
+drakkarfjord_s42_B	drakkarfjord	42	B	US	_v516teardown	Titanium collected (tiebreak)	1000	0	5460	2020
+glacierkeep_s40_A	glacierkeep	40	A	US	_v516teardown	Titanium collected (tiebreak)	1000	0	170	0
+glacierkeep_s40_B	glacierkeep	40	B	US	_v516teardown	Titanium collected (tiebreak)	1000	0	30	0
+glacierkeep_s41_A	glacierkeep	41	A	US	_v516teardown	Core destroyed	146	0	300	0
+glacierkeep_s41_B	glacierkeep	41	B	US	_v516teardown	Core destroyed	280	0	0	0
+glacierkeep_s42_A	glacierkeep	42	A	US	_v516teardown	Core destroyed	112	0	220	0
+glacierkeep_s42_B	glacierkeep	42	B	US	_v516teardown	Core destroyed	185	0	30	0
+midgard_s40_A	midgard	40	A	OPP	_v488beltbreak2	Titanium collected (tiebreak)	1000	0	1990	2420
+midgard_s40_B	midgard	40	B	OPP	_v488beltbreak2	Core destroyed	153	0	590	990
+midgard_s41_A	midgard	41	A	US	_v516teardown	Core destroyed	259	0	1900	470
+midgard_s41_B	midgard	41	B	OPP	_v488beltbreak2	Core destroyed	121	0	570	1480
+midgard_s42_A	midgard	42	A	US	_v516teardown	Titanium collected (tiebreak)	1000	0	1840	760
+midgard_s42_B	midgard	42	B	US	_v516teardown	Core destroyed	298	0	430	1650
+nordkap_s40_A	nordkap	40	A	OPP	_v488beltbreak2	Core destroyed	414	0	830	3070
+nordkap_s40_B	nordkap	40	B	US	_v516teardown	Core destroyed	548	0	430	210
+nordkap_s41_A	nordkap	41	A	OPP	_v488beltbreak2	Core destroyed	176	0	150	2420
+nordkap_s41_B	nordkap	41	B	US	_v516teardown	Titanium collected (tiebreak)	1000	0	2710	130
+nordkap_s42_A	nordkap	42	A	OPP	_v488beltbreak2	Core destroyed	187	0	690	2080
+nordkap_s42_B	nordkap	42	B	OPP	_v488beltbreak2	Core destroyed	243	0	110	4280

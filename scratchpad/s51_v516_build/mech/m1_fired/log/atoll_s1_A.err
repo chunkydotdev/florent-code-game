@@ -1,0 +1,31 @@
+Update available: 2.3.6 -> 2.3.8. Run: pip install --upgrade fcode
+FS GATE 0 sig (18, 18, (2, 14), (14, 2)) ok 1
+FS GATE 1 sig (18, 18, (2, 14), (14, 2)) ok 1
+FS PHASE 1 id 3 ph 1 d 200 at (4, 13)
+FS HOPBUILD 1 at (4, 13) lch (4, 12) T (16, 1)
+FS GATE 2 sig (18, 18, (2, 14), (14, 2)) ok 1
+FS GATE 2 sig (18, 18, (2, 14), (14, 2)) ok 1
+FS THROW 2 from (5, 13) to (8, 9) T (16, 1) body 3 n 1 dsq 72
+FS HOPBUILD 3 at (8, 9) lch (8, 8) T (16, 1)
+FS GATE 3 sig (18, 18, (2, 14), (14, 2)) ok 1
+FS GATE 4 sig (18, 18, (2, 14), (14, 2)) ok 1
+FS THROW 4 from (9, 9) to (12, 5) T (16, 1) body 3 n 1 dsq 8
+FS ARRIVE 5 id 3 body 1 at (12, 5) dsq 8
+FS PHASE 5 id 3 ph 2 d 8 at (12, 5)
+FS SEAL 7 tile (14, 4) n 1
+FS GATE 7 sig (18, 18, (2, 14), (14, 2)) ok 1
+FS GATE 8 sig (18, 18, (2, 14), (14, 2)) ok 1
+FS SEAL 9 tile (15, 4) n 2
+FS SEAL 12 tile (16, 3) n 3
+FS DODGE 13 id 3 from (16, 4) to (17, 4) cov 1 -> 0 hit 0 hp 40
+FS SEAL 16 tile (16, 2) n 4
+FS GATE 17 sig (18, 18, (2, 14), (14, 2)) ok 1
+FS EVICTOR 18 at (16, 1) ucov 1 cov 3 unseal 3 obs 8
+FS RUNG 18 id 3 r 2 hi -
+FS GATE 19 sig (18, 18, (2, 14), (14, 2)) ok 1
+FS EVICT 19 from (17, 1) to (11, 0)
+FS STAT 20 id 3 at (17, 0) need 6 orth 4 ti 13 ammo 24 sen 0 hp 40 covden 2 eco 1 lost 0
+FS DODGE 25 id 3 from (16, 4) to (17, 4) cov 1 -> 0 hit 0 hp 22
+FS DODGE 27 id 3 from (16, 4) to (17, 4) cov 1 -> 0 hit 0 hp 4
+FS EVICT 52 from (15, 0) to (17, 6)
+FS EVICT 84 from (17, 2) to (11, 0)

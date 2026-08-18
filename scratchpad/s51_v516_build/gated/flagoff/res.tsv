@@ -1,0 +1,37 @@
+tag	map	seed	seat	ours	winner	cond	turn	tracebacks	ours_mined	opp_mined
+archipelago_s1_A	archipelago	1	A	US	flagoff	Core destroyed	235	0	1670	1150
+archipelago_s1_B	archipelago	1	B	US	flagoff	Core destroyed	148	0	1270	1010
+archipelago_s2_A	archipelago	2	A	OPP	_v468kladturbo	Core destroyed	784	0	4390	3910
+archipelago_s2_B	archipelago	2	B	OPP	_v468kladturbo	Titanium collected (tiebreak)	1000	0	9970	11690
+archipelago_s3_A	archipelago	3	A	OPP	_v468kladturbo	Core destroyed	127	0	770	1110
+archipelago_s3_B	archipelago	3	B	US	flagoff	Core destroyed	126	0	1110	680
+archipelago_s4_A	archipelago	4	A	US	flagoff	Core destroyed	310	0	1690	1300
+archipelago_s4_B	archipelago	4	B	OPP	_v468kladturbo	Core destroyed	222	0	1420	2070
+archipelago_s5_A	archipelago	5	A	OPP	_v468kladturbo	Core destroyed	354	0	1800	2590
+archipelago_s5_B	archipelago	5	B	OPP	_v468kladturbo	Core destroyed	279	0	670	3250
+archipelago_s6_A	archipelago	6	A	US	flagoff	Core destroyed	513	0	3770	3750
+archipelago_s6_B	archipelago	6	B	OPP	_v468kladturbo	Core destroyed	160	0	910	1610
+archipelago_s7_A	archipelago	7	A	OPP	_v468kladturbo	Core destroyed	236	0	1670	1680
+archipelago_s7_B	archipelago	7	B	US	flagoff	Core destroyed	121	0	1000	830
+archipelago_s8_A	archipelago	8	A	OPP	_v468kladturbo	Core destroyed	221	0	1580	1140
+archipelago_s8_B	archipelago	8	B	US	flagoff	Core destroyed	159	0	1430	1150
+archipelago_s9_A	archipelago	9	A	OPP	_v468kladturbo	Core destroyed	546	0	4000	2800
+archipelago_s9_B	archipelago	9	B	US	flagoff	Core destroyed	142	0	1240	610
+archipelago_s10_A	archipelago	10	A	OPP	_v468kladturbo	Core destroyed	220	0	1800	1780
+archipelago_s10_B	archipelago	10	B	US	flagoff	Core destroyed	204	0	1850	1100
+archipelago_s11_A	archipelago	11	A	US	flagoff	Core destroyed	341	0	1880	1070
+archipelago_s11_B	archipelago	11	B	OPP	_v468kladturbo	Core destroyed	173	0	970	1240
+archipelago_s12_A	archipelago	12	A	US	flagoff	Core destroyed	236	0	2210	1370
+archipelago_s12_B	archipelago	12	B	OPP	_v468kladturbo	Core destroyed	291	0	1580	2140
+archipelago_s13_A	archipelago	13	A	OPP	_v468kladturbo	Core destroyed	124	0	870	1070
+archipelago_s13_B	archipelago	13	B	US	flagoff	Core destroyed	116	0	920	820
+archipelago_s14_A	archipelago	14	A	US	flagoff	Core destroyed	514	0	6670	4460
+archipelago_s14_B	archipelago	14	B	US	flagoff	Core destroyed	339	0	2420	1740
+archipelago_s15_A	archipelago	15	A	OPP	_v468kladturbo	Core destroyed	213	0	1560	1540
+archipelago_s15_B	archipelago	15	B	OPP	_v468kladturbo	Core destroyed	228	0	1280	2470
+archipelago_s16_A	archipelago	16	A	OPP	_v468kladturbo	Core destroyed	100	0	540	930
+archipelago_s16_B	archipelago	16	B	US	flagoff	Titanium collected (tiebreak)	1000	0	5210	5090
+archipelago_s17_A	archipelago	17	A	US	flagoff	Core destroyed	168	0	1740	480
+archipelago_s17_B	archipelago	17	B	OPP	_v468kladturbo	Core destroyed	396	0	2970	5760
+archipelago_s18_A	archipelago	18	A	US	flagoff	Core destroyed	153	0	1400	790
+archipelago_s18_B	archipelago	18	B	OPP	_v468kladturbo	Core destroyed	263	0	1840	1000

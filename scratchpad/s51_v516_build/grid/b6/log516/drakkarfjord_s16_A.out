@@ -1,0 +1,22 @@
+Running match: _v516teardown vs _v488beltbreak2
+  Map: drakkarfjord.map26  Seed: 16  Replay: 
+scratchpad/s51_v516_build/grid/b6/rep516/drakkarfjord_s16_A.replay26  TLE: 10ms
+Completed turn 0
+Completed turn 100
+Completed turn 200
+Completed turn 300
+Completed turn 400
+Completed turn 500
+Completed turn 600
+Completed turn 700
+Completed turn 800
+Replay written to 
+scratchpad/s51_v516_build/grid/b6/rep516/drakkarfjord_s16_A.replay26
+
+  Winner: _v516teardown  (Core destroyed, turn 820)
+
+                   _v516teardown     _v488beltbreak2  
+  Titanium     193 (10760 mined)    912 (6170 mined)  
+  Units                       18                  31  
+  Buildings                  120                 106  
+

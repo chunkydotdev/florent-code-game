@@ -1,0 +1,71 @@
+Update available: 2.3.6 -> 2.3.8. Run: pip install --upgrade fcode
+FS GATE 0 sig (20, 26, (9, 6), (9, 18)) ok 1
+FS GATE 1 sig (20, 26, (9, 6), (9, 18)) ok 1
+FS PHASE 1 id 3 ph 1 d 100 at (9, 8)
+FS HOPBUILD 1 at (9, 8) lch (9, 9) T (11, 20)
+FS GATE 2 sig (20, 26, (9, 6), (9, 18)) ok 1
+FS GATE 2 sig (20, 26, (9, 6), (9, 18)) ok 1
+FS THROW 2 from (10, 8) to (10, 14) T (11, 20) body 3 n 1 dsq 16
+FS HOPBUILD 3 at (10, 14) lch (10, 15) T (11, 20)
+FS GATE 3 sig (20, 26, (9, 6), (9, 18)) ok 1
+FS GATE 4 sig (20, 26, (9, 6), (9, 18)) ok 1
+FS THROW 4 from (11, 14) to (11, 20) T (11, 20) body 3 n 1 dsq 2
+FS ARRIVE 5 id 3 body 1 at (11, 20) dsq 2
+FS PHASE 5 id 3 ph 2 d 2 at (11, 20)
+FS EVICTOR 6 at (11, 20) ucov 0 cov 2 unseal 0 obs 5
+FS RUNG 6 id 3 r 2 hi -
+FS DODGE 7 id 3 from (12, 20) to (12, 19) cov 1 -> 0 hit 0 hp 40
+FS GATE 7 sig (20, 26, (9, 6), (9, 18)) ok 1
+FS GATE 7 sig (20, 26, (9, 6), (9, 18)) ok 1
+FS SEAL 8 tile (11, 19) n 1
+FS GATE 8 sig (20, 26, (9, 6), (9, 18)) ok 1
+FS DODGE 10 id 3 from (12, 20) to (12, 19) cov 1 -> 0 hit 0 hp 22
+FS EVICT 10 from (12, 21) to (6, 21)
+FS DODGE 12 id 3 from (12, 20) to (12, 19) cov 1 -> 0 hit 0 hp 4
+FS EVICT 14 from (10, 21) to (16, 21)
+FS STAT 20 id 3 at (12, 18) need 8 orth 7 ti 30 ammo 24 sen 0 hp 4 covden 0 eco 1 lost 0
+FS EVICT 22 from (12, 19) to (12, 25)
+FS EVICT 26 from (12, 21) to (6, 21)
+FS EVICT 30 from (10, 21) to (16, 21)
+FS CLEAR 32 tile (11, 18) peck 1
+FS RUNG 32 id 3 r 3 hi -
+FS CLEAR 33 tile (11, 18) peck 2
+FS RUNG 33 id 3 r 3 hi -
+FS CLEAR 35 tile (11, 18) peck 3
+FS RUNG 35 id 3 r 3 hi -
+FS CLEAR 36 tile (11, 18) peck 4
+FS RUNG 36 id 3 r 3 hi -
+FS CLEAR 37 tile (11, 18) peck 5
+FS RUNG 37 id 3 r 3 hi -
+FS CLEAR 38 tile (11, 18) peck 6
+FS RUNG 38 id 3 r 3 hi -
+FS EVICT 38 from (12, 19) to (12, 25)
+FS CLEAR 39 tile (11, 18) peck 7
+FS RUNG 39 id 3 r 3 hi -
+FS STAT 40 id 3 at (12, 18) need 8 orth 7 ti 94 ammo 24 sen 0 hp 4 covden 0 eco 1 lost 0
+FS CLEAR 40 tile (11, 18) peck 8
+FS RUNG 40 id 3 r 3 hi -
+FS EVICT 42 from (12, 21) to (6, 21)
+FS CLEAR 43 tile (10, 17) peck 1
+FS RUNG 43 id 3 r 3 hi -
+FS CLEAR 44 tile (10, 17) peck 2
+FS RUNG 44 id 3 r 3 hi -
+FS CLEAR 45 tile (10, 17) peck 3
+FS RUNG 45 id 3 r 3 hi -
+FS CLEAR 46 tile (10, 17) peck 4
+FS RUNG 46 id 3 r 3 hi -
+FS CLEAR 47 tile (10, 17) peck 5
+FS RUNG 47 id 3 r 3 hi -
+FS CLEAR 48 tile (10, 17) peck 6
+FS RUNG 48 id 3 r 3 hi -
+FS STAT 60 id 3 at (11, 17) need 8 orth 7 ti 12 ammo 5 sen 0 hp 20 covden 0 eco 1 lost 0
+FS STAT 80 id 3 at (11, 17) need 7 orth 6 ti 12 ammo 5 sen 0 hp 36 covden 0 eco 1 lost 0
+FS DODGE 88 id 3 from (11, 17) to (11, 18) cov 1 -> 0 hit 0 hp 36
+FS DODGE 90 id 3 from (12, 18) to (11, 18) cov 1 -> 0 hit 0 hp 36
+FS DODGE 92 id 3 from (12, 18) to (11, 18) cov 1 -> 0 hit 0 hp 36
+FS DODGE 97 id 3 from (12, 18) to (11, 18) cov 1 -> 0 hit 0 hp 36
+FS DODGE 99 id 3 from (12, 18) to (11, 18) cov 1 -> 0 hit 0 hp 29
+FS STAT 100 id 3 at (11, 18) need 7 orth 6 ti 12 ammo 13 sen 0 hp 29 covden 0 eco 1 lost 0
+FS DODGE 101 id 3 from (12, 18) to (11, 18) cov 1 -> 0 hit 0 hp 22
+FS DODGE 103 id 3 from (12, 18) to (11, 18) cov 1 -> 0 hit 0 hp 15
+FS DODGE 105 id 3 from (12, 18) to (11, 18) cov 2 -> 0 hit 0 hp 8

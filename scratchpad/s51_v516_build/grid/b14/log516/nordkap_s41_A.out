@@ -1,0 +1,15 @@
+Running match: _v516teardown vs _v488beltbreak2
+  Map: nordkap.map26  Seed: 41  Replay: 
+scratchpad/s51_v516_build/grid/b14/rep516/nordkap_s41_A.replay26  TLE: 10ms
+Completed turn 0
+Completed turn 100
+Replay written to 
+scratchpad/s51_v516_build/grid/b14/rep516/nordkap_s41_A.replay26
+
+  Winner: _v488beltbreak2  (Core destroyed, turn 176)
+
+                _v516teardown     _v488beltbreak2  
+  Titanium     10 (150 mined)    224 (2420 mined)  
+  Units                     7                  13  
+  Buildings                 5                  59  
+
