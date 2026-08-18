@@ -1,0 +1,15 @@
+Running match: base vs v513_log
+  Map: midgard.map26  Seed: 2  Replay: 
+scratchpad/s51_evict_autopsy/logs/v513_log-midgard-s2-B.replay26  TLE: 10ms
+Completed turn 0
+Completed turn 100
+Replay written to 
+scratchpad/s51_evict_autopsy/logs/v513_log-midgard-s2-B.replay26
+
+  Winner: base  (Core destroyed, turn 116)
+
+                           base          v513_log  
+  Titanium     128 (1430 mined)    16 (510 mined)  
+  Units                       9                 7  
+  Buildings                  64                10  
+

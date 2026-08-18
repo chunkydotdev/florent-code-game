@@ -1,0 +1,17 @@
+Running match: v513_log vs base
+  Map: nordkap.map26  Seed: 1  Replay: 
+scratchpad/s51_evict_autopsy/logs/v513_log-nordkap-s1-A.replay26  TLE: 10ms
+Completed turn 0
+Completed turn 100
+Completed turn 200
+Completed turn 300
+Replay written to 
+scratchpad/s51_evict_autopsy/logs/v513_log-nordkap-s1-A.replay26
+
+  Winner: v513_log  (Core destroyed, turn 306)
+
+                       v513_log               base  
+  Titanium     148 (3280 mined)    10 (2890 mined)  
+  Units                      12                 11  
+  Buildings                  45                 62  
+

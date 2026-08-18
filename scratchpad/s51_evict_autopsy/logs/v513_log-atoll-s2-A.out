@@ -1,0 +1,15 @@
+Running match: v513_log vs base
+  Map: atoll.map26  Seed: 2  Replay: 
+scratchpad/s51_evict_autopsy/logs/v513_log-atoll-s2-A.replay26  TLE: 10ms
+Completed turn 0
+Completed turn 100
+Completed turn 200
+Replay written to scratchpad/s51_evict_autopsy/logs/v513_log-atoll-s2-A.replay26
+
+  Winner: v513_log  (Core destroyed, turn 228)
+
+                       v513_log              base  
+  Titanium     117 (1320 mined)    22 (420 mined)  
+  Units                      14                 5  
+  Buildings                  21                15  
+

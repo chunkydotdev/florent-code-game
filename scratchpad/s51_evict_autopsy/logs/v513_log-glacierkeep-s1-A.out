@@ -1,0 +1,18 @@
+Running match: v513_log vs base
+  Map: glacierkeep.map26  Seed: 1  Replay: 
+scratchpad/s51_evict_autopsy/logs/v513_log-glacierkeep-s1-A.replay26  TLE: 10ms
+Completed turn 0
+Completed turn 100
+Completed turn 200
+Completed turn 300
+Completed turn 400
+Replay written to 
+scratchpad/s51_evict_autopsy/logs/v513_log-glacierkeep-s1-A.replay26
+
+  Winner: v513_log  (Core destroyed, turn 469)
+
+                     v513_log             base  
+  Titanium     12 (290 mined)    113 (0 mined)  
+  Units                     8                6  
+  Buildings                30               63  
+

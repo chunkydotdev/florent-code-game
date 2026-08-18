@@ -1,0 +1,17 @@
+Running match: v513_log vs base
+  Map: drakkarfjord.map26  Seed: 1  Replay: 
+scratchpad/s51_evict_autopsy/logs/v513_log-drakkarfjord-s1-A.replay26  TLE: 10ms
+Completed turn 0
+Completed turn 100
+Completed turn 200
+Completed turn 300
+Replay written to 
+scratchpad/s51_evict_autopsy/logs/v513_log-drakkarfjord-s1-A.replay26
+
+  Winner: v513_log  (Core destroyed, turn 381)
+
+                       v513_log                base  
+  Titanium     160 (4520 mined)    112 (3360 mined)  
+  Units                      15                  17  
+  Buildings                  99                 114  
+

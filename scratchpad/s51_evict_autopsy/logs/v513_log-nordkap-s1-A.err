@@ -1,0 +1,321 @@
+Update available: 2.3.6 -> 2.3.8. Run: pip install --upgrade fcode
+FS GATE 0 sig (20, 26, (9, 6), (9, 18)) ok 1
+FS GATE 1 sig (20, 26, (9, 6), (9, 18)) ok 1
+FS PHASE 1 id 3 ph 1 d 100 at (9, 8)
+FS HOPBUILD 1 at (9, 8) lch (9, 9) T (11, 20)
+FS GATE 2 sig (20, 26, (9, 6), (9, 18)) ok 1
+FS GATE 2 sig (20, 26, (9, 6), (9, 18)) ok 1
+FS THROW 2 from (10, 8) to (10, 14) T (11, 20)
+FS HOPBUILD 3 at (10, 14) lch (10, 15) T (11, 20)
+FS GATE 3 sig (20, 26, (9, 6), (9, 18)) ok 1
+FS GATE 4 sig (20, 26, (9, 6), (9, 18)) ok 1
+FS THROW 4 from (11, 14) to (10, 20) T (11, 20)
+FS PHASE 5 id 3 ph 2 d 1 at (10, 20)
+FS DL 5 id 3 role seal orth 7 need 8 ebody 1 lau 0 ti 305 lcost 33 bar 4 obs 1 hist 1 pend 0
+FS SEAL 6 tile (10, 20) n 1
+FS DL 6 id 3 role seal orth 8 need 9 ebody 1 lau 0 ti 247 lcost 37 bar 5 obs 2 hist 2 pend 0
+FS DODGE 7 id 3 from (10, 21) to (11, 21) cov 1 -> 0 hit 0 hp 40
+FS DL 7 id 3 role seal orth 7 need 8 ebody 1 lau 0 ti 191 lcost 41 bar 6 obs 2 hist 2 pend 0
+FS GATE 7 sig (20, 26, (9, 6), (9, 18)) ok 1
+FS DL 8 id 3 role seal orth 7 need 8 ebody 1 lau 0 ti 133 lcost 45 bar 6 obs 3 hist 3 pend 0
+FS GATE 8 sig (20, 26, (9, 6), (9, 18)) ok 1
+FS DL 9 id 3 role seal orth 7 need 8 ebody 0 lau 0 ti 127 lcost 45 bar 6 obs 3 hist 3 pend 0
+FS GATE 9 sig (20, 26, (9, 6), (9, 18)) ok 1
+FS DL 10 id 3 role seal orth 7 need 8 ebody 1 lau 0 ti 127 lcost 45 bar 6 obs 4 hist 3 pend 0
+FS DL 11 id 3 role seal orth 7 need 8 ebody 0 lau 0 ti 76 lcost 46 bar 7 obs 4 hist 3 pend 0
+FS DOORSEEN 11 id 8 at (7, 11) rank 2
+FS DOORSEEN 11 id 16 at (7, 11) rank 2
+FS DOORSEEN 11 id 23 at (7, 11) rank 2
+FS DL 12 id 3 role seal orth 7 need 8 ebody 0 lau 0 ti 71 lcost 47 bar 7 obs 4 hist 3 pend 0
+FS DL 13 id 3 role seal orth 7 need 8 ebody 0 lau 0 ti 17 lcost 51 bar 7 obs 4 hist 3 pend 0
+FS DL 14 id 3 role seal orth 7 need 8 ebody 0 lau 0 ti 10 lcost 51 bar 7 obs 4 hist 3 pend 0
+FS DL 15 id 3 role seal orth 7 need 8 ebody 0 lau 0 ti 12 lcost 51 bar 7 obs 4 hist 3 pend 0
+FS DL 16 id 3 role seal orth 7 need 8 ebody 0 lau 0 ti 18 lcost 51 bar 7 obs 4 hist 3 pend 0
+FS DL 17 id 3 role seal orth 7 need 8 ebody 0 lau 0 ti 24 lcost 51 bar 7 obs 4 hist 3 pend 0
+FS DL 18 id 3 role seal orth 7 need 8 ebody 0 lau 0 ti 24 lcost 51 bar 7 obs 4 hist 3 pend 0
+FS DL 19 id 3 role seal orth 7 need 8 ebody 0 lau 0 ti 27 lcost 51 bar 7 obs 4 hist 3 pend 0
+FS STAT 20 id 3 at (12, 20) need 7 orth 6 ti 37 ammo 24 sen 0 hp 40
+FS DL 20 id 3 role seal orth 6 need 7 ebody 0 lau 0 ti 37 lcost 51 bar 7 obs 4 hist 3 pend 0
+FS DODGE 21 id 3 from (12, 19) to (11, 19) cov 1 -> 0 hit 0 hp 22
+FS DL 21 id 3 role seal orth 6 need 6 ebody 0 lau 0 ti 47 lcost 51 bar 7 obs 4 hist 3 pend 0
+FS CLEAR 22 tile (11, 18) peck 1
+FS RUNG 22 id 3 r 3 hi -
+FS DL 22 id 3 role seal orth 4 need 4 ebody 1 lau 0 ti 38 lcost 51 bar 7 obs 5 hist 4 pend 0
+FS CLEAR 23 tile (11, 18) peck 2
+FS RUNG 23 id 3 r 3 hi -
+FS DL 23 id 3 role seal orth 4 need 5 ebody 0 lau 0 ti 46 lcost 51 bar 7 obs 5 hist 4 pend 0
+FS CLEAR 24 tile (11, 18) peck 3
+FS RUNG 24 id 3 r 3 hi -
+FS DL 24 id 3 role seal orth 4 need 5 ebody 0 lau 0 ti 54 lcost 51 bar 7 obs 5 hist 4 pend 0
+FS DL 25 id 3 role seal orth 4 need 5 ebody 0 lau 0 ti 13 lcost 55 bar 8 obs 5 hist 4 pend 0
+FS DL 26 id 3 role seal orth 3 need 4 ebody 0 lau 0 ti 5 lcost 56 bar 8 obs 5 hist 4 pend 0
+FS DL 27 id 3 role seal orth 3 need 4 ebody 0 lau 0 ti 15 lcost 56 bar 8 obs 5 hist 4 pend 0
+FS DL 28 id 3 role seal orth 3 need 4 ebody 0 lau 0 ti 15 lcost 56 bar 8 obs 5 hist 4 pend 0
+FS DL 29 id 3 role seal orth 2 need 3 ebody 0 lau 0 ti 13 lcost 56 bar 8 obs 5 hist 4 pend 0
+FS DL 30 id 3 role seal orth 2 need 3 ebody 0 lau 0 ti 13 lcost 56 bar 8 obs 5 hist 4 pend 0
+FS DL 31 id 3 role seal orth 2 need 3 ebody 0 lau 0 ti 15 lcost 56 bar 8 obs 5 hist 4 pend 0
+FS DL 32 id 3 role seal orth 2 need 3 ebody 0 lau 0 ti 21 lcost 56 bar 8 obs 5 hist 4 pend 0
+FS DL 33 id 3 role seal orth 2 need 3 ebody 1 lau 0 ti 27 lcost 56 bar 8 obs 6 hist 4 pend 0
+FS DL 34 id 3 role seal orth 2 need 3 ebody 0 lau 0 ti 23 lcost 56 bar 8 obs 6 hist 4 pend 0
+FS DL 35 id 3 role seal orth 2 need 3 ebody 0 lau 0 ti 29 lcost 52 bar 7 obs 6 hist 4 pend 0
+FS CLEAR 36 tile (11, 18) peck 1
+FS RUNG 36 id 3 r 3 hi -
+FS DL 36 id 3 role seal orth 2 need 3 ebody 0 lau 0 ti 33 lcost 52 bar 7 obs 6 hist 4 pend 0
+FS CLEAR 37 tile (11, 18) peck 2
+FS RUNG 37 id 3 r 3 hi -
+FS DL 37 id 3 role seal orth 2 need 3 ebody 0 lau 0 ti 37 lcost 52 bar 7 obs 6 hist 4 pend 0
+FS CLEAR 38 tile (11, 18) peck 3
+FS RUNG 38 id 3 r 3 hi -
+FS DL 38 id 3 role seal orth 2 need 3 ebody 0 lau 0 ti 31 lcost 52 bar 7 obs 6 hist 4 pend 0
+FS CLEAR 39 tile (11, 18) peck 4
+FS RUNG 39 id 3 r 3 hi -
+FS DL 39 id 3 role seal orth 2 need 3 ebody 0 lau 0 ti 39 lcost 52 bar 7 obs 6 hist 4 pend 0
+FS STAT 40 id 3 at (11, 19) need 3 orth 2 ti 45 ammo 24 sen 0 hp 22
+FS CLEAR 40 tile (11, 18) peck 5
+FS RUNG 40 id 3 r 3 hi -
+FS DL 40 id 3 role seal orth 2 need 3 ebody 0 lau 0 ti 43 lcost 52 bar 7 obs 6 hist 4 pend 0
+FS CLEAR 41 tile (11, 18) peck 6
+FS RUNG 41 id 3 r 3 hi -
+FS DL 41 id 3 role seal orth 2 need 3 ebody 0 lau 0 ti 51 lcost 52 bar 7 obs 6 hist 4 pend 0
+FS CLEAR 42 tile (11, 18) peck 7
+FS RUNG 42 id 3 r 3 hi -
+FS DL 42 id 3 role seal orth 2 need 3 ebody 0 lau 0 ti 45 lcost 52 bar 7 obs 6 hist 4 pend 0
+FS CLEARED 43 tile (11, 18) n 1
+FS SEAL 43 tile (11, 18) n 2
+FS SEALCLR 43 tile (11, 18) lag 0
+FS DL 43 id 3 role seal orth 2 need 3 ebody 0 lau 0 ti 37 lcost 52 bar 7 obs 6 hist 4 pend 0
+FS DL 44 id 3 role seal orth 1 need 2 ebody 0 lau 0 ti 41 lcost 52 bar 7 obs 6 hist 4 pend 0
+FS DOORSEEN 79 id 8 at (7, 11) rank 2
+FS GATE 193 sig (20, 26, (9, 6), (9, 18)) ok 1
+FS PHASE 193 id 524 ph 1 d 101 at (8, 8)
+FS HOPBUILD 194 at (8, 9) lch (9, 9) T (11, 20)
+FS GATE 195 sig (20, 26, (9, 6), (9, 18)) ok 1
+FS THROW 195 from (8, 9) to (9, 14) T (11, 20)
+FS PHASE 198 id 524 ph 2 d 4 at (9, 16)
+FS SEAL 198 tile (9, 17) n 1
+FS DL 198 id 524 role seal orth 7 need 8 ebody 0 lau 0 ti 114 lcost 62 bar 9 obs 0 hist 0 pend 0
+FS SEAL 199 tile (9, 17) n 2
+FS DL 199 id 524 role seal orth 7 need 8 ebody 0 lau 0 ti 111 lcost 62 bar 9 obs 0 hist 0 pend 0
+FS STAT 200 id 524 at (9, 16) need 7 orth 6 ti 147 ammo 20 sen 0 hp 40
+FS DL 200 id 524 role seal orth 6 need 7 ebody 0 lau 0 ti 147 lcost 62 bar 9 obs 0 hist 0 pend 0
+FS CLEAR 201 tile (10, 17) peck 1
+FS RUNG 201 id 524 r 3 hi -
+FS DL 201 id 524 role seal orth 7 need 8 ebody 0 lau 0 ti 151 lcost 61 bar 9 obs 0 hist 0 pend 0
+FS CLEAR 202 tile (10, 17) peck 2
+FS RUNG 202 id 524 r 3 hi -
+FS DL 202 id 524 role seal orth 7 need 8 ebody 0 lau 0 ti 175 lcost 61 bar 9 obs 0 hist 0 pend 0
+FS CLEAR 203 tile (10, 17) peck 3
+FS RUNG 203 id 524 r 3 hi -
+FS DL 203 id 524 role seal orth 7 need 8 ebody 0 lau 0 ti 179 lcost 61 bar 9 obs 0 hist 0 pend 0
+FS CLEAR 204 tile (10, 17) peck 4
+FS RUNG 204 id 524 r 3 hi -
+FS DL 204 id 524 role seal orth 7 need 8 ebody 0 lau 0 ti 213 lcost 61 bar 9 obs 0 hist 0 pend 0
+FS DOORSEEN 205 id 8 at (7, 5) rank 0
+FS CLEAR 205 tile (10, 17) peck 5
+FS RUNG 205 id 524 r 3 hi -
+FS DL 205 id 524 role seal orth 7 need 8 ebody 0 lau 0 ti 217 lcost 61 bar 9 obs 0 hist 0 pend 0
+FS CLEAR 206 tile (10, 17) peck 6
+FS RUNG 206 id 524 r 3 hi -
+FS DL 206 id 524 role seal orth 7 need 8 ebody 0 lau 0 ti 149 lcost 65 bar 9 obs 0 hist 0 pend 0
+FS CLEAR 207 tile (10, 17) peck 7
+FS RUNG 207 id 524 r 3 hi -
+FS DL 207 id 524 role seal orth 7 need 8 ebody 0 lau 0 ti 153 lcost 65 bar 9 obs 0 hist 0 pend 0
+FS GATE 207 sig (20, 26, (9, 6), (9, 18)) ok 1
+FS CLEAR 208 tile (10, 17) peck 8
+FS RUNG 208 id 524 r 3 hi -
+FS DL 208 id 524 role seal orth 7 need 8 ebody 0 lau 0 ti 187 lcost 65 bar 9 obs 0 hist 0 pend 0
+FS DL 209 id 524 role seal orth 7 need 8 ebody 0 lau 0 ti 128 lcost 69 bar 10 obs 0 hist 0 pend 0
+FS DOORSEEN 210 id 5 at (7, 5) rank 0
+FS SEAL 210 tile (9, 17) n 3
+FS DL 210 id 524 role seal orth 7 need 8 ebody 0 lau 0 ti 140 lcost 70 bar 10 obs 0 hist 0 pend 0
+FS SEAL 211 tile (9, 17) n 4
+FS DL 211 id 524 role seal orth 7 need 8 ebody 0 lau 0 ti 132 lcost 70 bar 10 obs 0 hist 0 pend 0
+FS DOOR 212 id 8 at (7, 5) n 1
+FS DL 212 id 524 role seal orth 6 need 7 ebody 0 lau 0 ti 162 lcost 70 bar 10 obs 0 hist 0 pend 0
+FS DOOR 213 id 8 at (7, 5) n 2
+FS CLEAR 213 tile (10, 17) peck 1
+FS RUNG 213 id 524 r 3 hi -
+FS DL 213 id 524 role seal orth 7 need 8 ebody 0 lau 0 ti 160 lcost 69 bar 10 obs 0 hist 0 pend 0
+FS DOOR 214 id 8 at (7, 5) n 3
+FS CLEAR 214 tile (10, 17) peck 2
+FS RUNG 214 id 524 r 3 hi -
+FS DL 214 id 524 role seal orth 7 need 8 ebody 0 lau 0 ti 178 lcost 69 bar 10 obs 0 hist 0 pend 0
+FS DOOR 215 id 8 at (7, 5) n 4
+FS CLEARED 215 tile (10, 17) n 1
+FS SEAL 215 tile (10, 17) n 5
+FS SEALCLR 215 tile (10, 17) lag 0
+FS DL 215 id 524 role seal orth 7 need 8 ebody 0 lau 0 ti 162 lcost 70 bar 10 obs 0 hist 0 pend 0
+FS DOOR 216 id 8 at (7, 5) n 5
+FS SEAL 216 tile (10, 17) n 6
+FS DL 216 id 524 role seal orth 7 need 8 ebody 0 lau 0 ti 182 lcost 70 bar 10 obs 0 hist 0 pend 0
+FS DOOR 217 id 8 at (7, 5) n 6
+FS SEAL 217 tile (10, 17) n 7
+FS DL 217 id 524 role seal orth 7 need 8 ebody 0 lau 0 ti 172 lcost 70 bar 10 obs 0 hist 0 pend 0
+FS DOOR 218 id 8 at (7, 5) n 7
+FS SEAL 218 tile (10, 17) n 8
+FS DL 218 id 524 role seal orth 7 need 8 ebody 0 lau 0 ti 182 lcost 70 bar 10 obs 0 hist 0 pend 0
+FS DOOR 219 id 8 at (7, 5) n 8
+FS PHASE 219 id 524 ph 4 d 4 at (10, 16)
+FS SEAL 219 tile (10, 17) n 9
+FS DL 219 id 524 role seal orth 7 need 8 ebody 0 lau 0 ti 58 lcost 74 bar 11 obs 0 hist 0 pend 0
+FS DOOR 220 id 8 at (7, 5) n 9
+FS STAT 220 id 524 at (10, 16) need 8 orth 7 ti 80 ammo 26 sen 1 hp 40
+FS SEAL 220 tile (10, 17) n 10
+FS DL 220 id 524 role seal orth 7 need 8 ebody 0 lau 0 ti 69 lcost 74 bar 11 obs 0 hist 0 pend 0
+FS DOOR 221 id 8 at (7, 5) n 10
+FS SEAL 221 tile (10, 17) n 11
+FS DL 221 id 524 role seal orth 7 need 8 ebody 0 lau 0 ti 50 lcost 74 bar 11 obs 0 hist 0 pend 0
+FS DOOR 222 id 8 at (7, 5) n 11
+FS DOORSEEN 222 id 23 at (7, 5) rank 0
+FS DL 222 id 524 role seal orth 6 need 7 ebody 0 lau 0 ti 62 lcost 74 bar 11 obs 0 hist 0 pend 0
+FS DOOR 223 id 5 at (7, 5) n 1
+FS DOOR 223 id 8 at (7, 5) n 12
+FS DL 223 id 524 role seal orth 6 need 7 ebody 0 lau 0 ti 41 lcost 74 bar 11 obs 0 hist 0 pend 0
+FS DOOR 224 id 5 at (7, 5) n 2
+FS DOOR 224 id 8 at (7, 5) n 13
+FS DL 224 id 524 role seal orth 6 need 7 ebody 1 lau 0 ti 59 lcost 74 bar 11 obs 1 hist 1 pend 0
+FS DOOR 225 id 5 at (7, 5) n 3
+FS DOOR 225 id 8 at (7, 5) n 14
+FS DL 225 id 524 role seal orth 6 need 7 ebody 1 lau 0 ti 47 lcost 74 bar 11 obs 2 hist 1 pend 0
+FS DOOR 226 id 5 at (7, 5) n 4
+FS DOOR 226 id 8 at (7, 5) n 15
+FS DL 226 id 524 role seal orth 6 need 7 ebody 2 lau 0 ti 55 lcost 74 bar 11 obs 4 hist 2 pend 0
+FS DOOR 227 id 5 at (7, 5) n 5
+FS DOOR 227 id 8 at (7, 5) n 16
+FS DL 227 id 524 role seal orth 6 need 7 ebody 2 lau 0 ti 48 lcost 74 bar 11 obs 6 hist 2 pend 0
+FS DOOR 228 id 5 at (7, 5) n 6
+FS DOOR 228 id 8 at (7, 5) n 17
+FS DL 228 id 524 role seal orth 6 need 7 ebody 2 lau 0 ti 69 lcost 74 bar 11 obs 8 hist 2 pend 0
+FS DOOR 229 id 5 at (7, 5) n 7
+FS DOOR 229 id 8 at (7, 5) n 18
+FS DL 229 id 524 role seal orth 6 need 7 ebody 2 lau 0 ti 70 lcost 74 bar 11 obs 10 hist 2 pend 0
+FS DOOR 230 id 5 at (7, 5) n 8
+FS DOOR 230 id 8 at (7, 5) n 19
+FS DL 230 id 524 role seal orth 6 need 7 ebody 2 lau 0 ti 71 lcost 74 bar 11 obs 12 hist 2 pend 0
+FS DOOR 231 id 5 at (7, 5) n 9
+FS DOOR 231 id 8 at (7, 5) n 20
+FS DL 231 id 524 role seal orth 6 need 7 ebody 2 lau 0 ti 68 lcost 74 bar 11 obs 14 hist 2 pend 0
+FS DOOR 232 id 5 at (7, 5) n 10
+FS DOOR 232 id 8 at (7, 5) n 21
+FS CLEAR 232 tile (8, 17) peck 1
+FS RUNG 232 id 524 r 3 hi -
+FS DL 232 id 524 role seal orth 6 need 7 ebody 2 lau 0 ti 86 lcost 74 bar 11 obs 16 hist 2 pend 0
+FS DOOR 233 id 5 at (7, 5) n 11
+FS DOOR 233 id 8 at (7, 5) n 22
+FS DL 233 id 524 role seal orth 6 need 7 ebody 2 lau 0 ti 76 lcost 74 bar 11 obs 18 hist 2 pend 0
+FS DOOR 234 id 5 at (7, 5) n 12
+FS DOOR 234 id 8 at (7, 5) n 23
+FS DL 234 id 524 role seal orth 6 need 7 ebody 2 lau 0 ti 86 lcost 74 bar 11 obs 20 hist 2 pend 0
+FS DOOR 235 id 5 at (7, 5) n 13
+FS DOOR 235 id 8 at (7, 5) n 24
+FS DL 235 id 524 role seal orth 6 need 7 ebody 2 lau 0 ti 76 lcost 74 bar 11 obs 22 hist 2 pend 0
+FS DOOR 236 id 5 at (7, 5) n 14
+FS DOOR 236 id 8 at (7, 5) n 25
+FS CLEAR 236 tile (8, 17) peck 1
+FS RUNG 236 id 524 r 3 hi -
+FS DL 236 id 524 role seal orth 6 need 7 ebody 2 lau 0 ti 94 lcost 74 bar 11 obs 24 hist 2 pend 0
+FS DOOR 237 id 5 at (7, 5) n 15
+FS DOOR 237 id 8 at (7, 5) n 26
+FS DL 237 id 524 role seal orth 7 need 8 ebody 2 lau 0 ti 83 lcost 73 bar 11 obs 26 hist 2 pend 0
+FS DOOR 238 id 5 at (7, 5) n 16
+FS DOOR 238 id 8 at (7, 5) n 27
+FS CLEAR 238 tile (8, 17) peck 2
+FS RUNG 238 id 524 r 3 hi -
+FS DL 238 id 524 role seal orth 7 need 8 ebody 2 lau 0 ti 96 lcost 73 bar 11 obs 28 hist 2 pend 0
+FS DOOR 239 id 5 at (7, 5) n 17
+FS DOOR 239 id 8 at (7, 5) n 28
+FS CLEAR 239 tile (8, 17) peck 3
+FS RUNG 239 id 524 r 3 hi -
+FS DL 239 id 524 role seal orth 7 need 8 ebody 2 lau 0 ti 99 lcost 73 bar 11 obs 30 hist 2 pend 0
+FS DOOR 240 id 5 at (7, 5) n 18
+FS DOOR 240 id 8 at (7, 5) n 29
+FS STAT 240 id 524 at (8, 16) need 7 orth 6 ti 113 ammo 60 sen 1 hp 40
+FS CLEAR 240 tile (8, 17) peck 4
+FS RUNG 240 id 524 r 3 hi -
+FS DL 240 id 524 role seal orth 6 need 7 ebody 2 lau 0 ti 111 lcost 74 bar 11 obs 32 hist 2 pend 0
+FS DOOR 241 id 5 at (7, 5) n 19
+FS DOOR 241 id 8 at (7, 5) n 30
+FS CLEAR 241 tile (8, 17) peck 5
+FS RUNG 241 id 524 r 3 hi -
+FS DL 241 id 524 role seal orth 7 need 8 ebody 2 lau 0 ti 113 lcost 73 bar 11 obs 34 hist 2 pend 0
+FS DOOR 242 id 5 at (7, 5) n 20
+FS DOOR 242 id 8 at (7, 5) n 31
+FS CLEAR 242 tile (8, 17) peck 6
+FS RUNG 242 id 524 r 3 hi -
+FS DL 242 id 524 role seal orth 6 need 7 ebody 2 lau 0 ti 115 lcost 74 bar 11 obs 36 hist 2 pend 0
+FS DOOR 243 id 5 at (7, 5) n 21
+FS DOOR 243 id 8 at (7, 5) n 32
+FS CLEAR 243 tile (8, 17) peck 7
+FS RUNG 243 id 524 r 3 hi -
+FS DL 243 id 524 role seal orth 6 need 7 ebody 2 lau 0 ti 118 lcost 74 bar 11 obs 38 hist 2 pend 0
+FS DOOR 244 id 5 at (7, 5) n 22
+FS DOOR 244 id 8 at (7, 5) n 33
+FS CLEAR 244 tile (8, 17) peck 8
+FS RUNG 244 id 524 r 3 hi -
+FS DL 244 id 524 role seal orth 6 need 7 ebody 2 lau 0 ti 141 lcost 74 bar 11 obs 40 hist 2 pend 0
+FS DOOR 245 id 5 at (7, 5) n 23
+FS DOOR 245 id 8 at (7, 5) n 34
+FS DL 245 id 524 role seal orth 7 need 8 ebody 2 lau 0 ti 145 lcost 73 bar 11 obs 42 hist 2 pend 0
+FS DOOR 246 id 5 at (7, 5) n 24
+FS DODGE 246 id 524 from (8, 17) to (8, 16) cov 1 -> 0 hit 0 hp 40
+FS DL 246 id 524 role seal orth 6 need 7 ebody 2 lau 0 ti 151 lcost 74 bar 11 obs 42 hist 2 pend 0
+FS DOOR 247 id 5 at (7, 5) n 25
+FS DL 247 id 524 role seal orth 6 need 7 ebody 2 lau 0 ti 158 lcost 74 bar 11 obs 44 hist 2 pend 0
+FS DOOR 248 id 5 at (7, 5) n 26
+FS DODGE 248 id 524 from (8, 17) to (8, 16) cov 1 -> 0 hit 0 hp 40
+FS DL 248 id 524 role seal orth 5 need 6 ebody 2 lau 0 ti 174 lcost 74 bar 11 obs 44 hist 2 pend 0
+FS DOOR 249 id 5 at (7, 5) n 27
+FS CLEAR 249 tile (8, 17) peck 1
+FS RUNG 249 id 524 r 3 hi -
+FS DL 249 id 524 role seal orth 5 need 6 ebody 2 lau 0 ti 178 lcost 74 bar 11 obs 46 hist 2 pend 0
+FS DOOR 250 id 5 at (7, 5) n 28
+FS CLEARED 250 tile (8, 17) n 2
+FS SEAL 250 tile (8, 17) n 12
+FS SEALCLR 250 tile (8, 17) lag 0
+FS DL 250 id 524 role seal orth 5 need 6 ebody 2 lau 0 ti 183 lcost 74 bar 11 obs 48 hist 2 pend 0
+FS DL 251 id 524 role seal orth 5 need 5 ebody 2 lau 0 ti 191 lcost 74 bar 11 obs 50 hist 2 pend 0
+FS DL 252 id 524 role seal orth 6 need 6 ebody 2 lau 0 ti 219 lcost 74 bar 11 obs 52 hist 2 pend 0
+FS DODGE 253 id 524 from (7, 17) to (7, 18) cov 1 -> 0 hit 0 hp 40
+FS DL 253 id 524 role seal orth 5 need 5 ebody 2 lau 0 ti 216 lcost 74 bar 11 obs 52 hist 2 pend 0
+FS DL 254 id 524 role seal orth 5 need 5 ebody 2 lau 0 ti 224 lcost 74 bar 11 obs 54 hist 2 pend 0
+FS SEAL 255 tile (8, 19) n 13
+FS DL 255 id 524 role seal orth 5 need 5 ebody 2 lau 0 ti 217 lcost 74 bar 11 obs 56 hist 2 pend 0
+FS DL 256 id 524 role seal orth 4 need 4 ebody 2 lau 0 ti 241 lcost 70 bar 10 obs 58 hist 2 pend 0
+FS PHASE 257 id 524 ph 2 d 5 at (7, 20)
+FS DODGE 257 id 524 from (7, 20) to (7, 19) cov 1 -> 0 hit 0 hp 22
+FS DL 257 id 524 role seal orth 4 need 4 ebody 2 lau 0 ti 219 lcost 70 bar 10 obs 58 hist 2 pend 0
+FS PHASE 258 id 524 ph 4 d 4 at (7, 19)
+FS DL 258 id 524 role seal orth 4 need 4 ebody 2 lau 0 ti 246 lcost 70 bar 10 obs 60 hist 2 pend 0
+FS PHASE 259 id 524 ph 2 d 5 at (7, 20)
+FS DODGE 259 id 524 from (7, 20) to (7, 19) cov 1 -> 0 hit 0 hp 22
+FS DL 259 id 524 role seal orth 4 need 4 ebody 2 lau 0 ti 223 lcost 70 bar 10 obs 60 hist 2 pend 0
+FS PHASE 260 id 524 ph 4 d 4 at (7, 19)
+FS STAT 260 id 524 at (7, 19) need 4 orth 4 ti 155 ammo 96 sen 1 hp 22
+FS DL 260 id 524 role seal orth 4 need 4 ebody 2 lau 0 ti 155 lcost 74 bar 11 obs 62 hist 2 pend 0
+FS PHASE 261 id 524 ph 2 d 5 at (7, 20)
+FS RETREAT 261 id 524 hp 4 from (7, 20) to (6, 20)
+FS DL 261 id 524 role seal orth 4 need 4 ebody 1 lau 0 ti 132 lcost 74 bar 11 obs 62 hist 2 pend 0
+FS GATE 261 sig (20, 26, (9, 6), (9, 18)) ok 1
+FS DL 262 id 524 role seal orth 5 need 5 ebody 2 lau 0 ti 149 lcost 74 bar 11 obs 63 hist 2 pend 0
+FS RETREAT 263 id 524 hp 4 from (7, 20) to (6, 20)
+FS DL 263 id 524 role seal orth 4 need 4 ebody 1 lau 0 ti 156 lcost 74 bar 11 obs 63 hist 2 pend 0
+FS DL 264 id 524 role seal orth 5 need 5 ebody 2 lau 0 ti 84 lcost 78 bar 11 obs 64 hist 2 pend 0
+FS RETREAT 265 id 524 hp 4 from (7, 20) to (6, 20)
+FS DL 265 id 524 role seal orth 5 need 5 ebody 1 lau 0 ti 93 lcost 78 bar 11 obs 64 hist 2 pend 0
+FS DL 266 id 524 role seal orth 5 need 5 ebody 2 lau 0 ti 122 lcost 78 bar 11 obs 65 hist 2 pend 0
+FS RETREAT 267 id 524 hp 4 from (7, 20) to (6, 20)
+FS DL 267 id 524 role seal orth 5 need 5 ebody 1 lau 0 ti 131 lcost 78 bar 11 obs 65 hist 2 pend 0
+FS DL 268 id 524 role seal orth 5 need 5 ebody 2 lau 0 ti 170 lcost 78 bar 11 obs 66 hist 2 pend 0
+FS RETREAT 269 id 524 hp 4 from (7, 20) to (6, 20)
+FS DL 269 id 524 role seal orth 5 need 6 ebody 1 lau 0 ti 179 lcost 78 bar 11 obs 66 hist 2 pend 0
+FS DL 270 id 524 role seal orth 5 need 6 ebody 2 lau 0 ti 208 lcost 78 bar 11 obs 67 hist 2 pend 0
+FS PHASE 271 id 524 ph 4 d 5 at (7, 20)
+FS RETREAT 271 id 524 hp 4 from (7, 20) to (6, 20)
+FS DL 271 id 524 role seal orth 5 need 6 ebody 1 lau 0 ti 85 lcost 82 bar 12 obs 67 hist 2 pend 0
+FS DL 272 id 524 role seal orth 6 need 7 ebody 2 lau 0 ti 109 lcost 82 bar 12 obs 68 hist 2 pend 0
+FS RETREAT 273 id 524 hp 4 from (7, 20) to (6, 20)
+FS DL 273 id 524 role seal orth 6 need 7 ebody 1 lau 0 ti 31 lcost 86 bar 12 obs 68 hist 2 pend 0
+FS DL 274 id 524 role seal orth 6 need 7 ebody 2 lau 0 ti 45 lcost 86 bar 12 obs 69 hist 2 pend 0
+FS RETREAT 275 id 524 hp 4 from (7, 20) to (6, 20)
+FS DL 275 id 524 role seal orth 6 need 7 ebody 1 lau 0 ti 42 lcost 86 bar 12 obs 69 hist 2 pend 0
+FS DL 276 id 524 role seal orth 6 need 7 ebody 2 lau 0 ti 65 lcost 86 bar 12 obs 70 hist 2 pend 0

@@ -1,0 +1,7 @@
+game	outcome	cond	end_r	evicts	evictor_r	first_lau_r	ring_rounds	dead_rounds	dead_first	close_r	g_obs	g_pend	g_fund	g_open
+crewon-drakkarfjord-s1-A	v513_crewon	Core_destroyed	205	0	46	46	120	13	18	54	4	6	3	0
+crewon-drakkarfjord-s3-A	v513_crewon	Core_destroyed	872	0	109	109	308	14	13	65	4	8	2	0
+crewon-glacierkeep-s1-A	base	Core_destroyed	394	0	-1	-1	188	30	29	-1	11	6	13	0
+crewon-glacierkeep-s2-A	v513_crewon	Core_destroyed	849	0	-1	-1	423	1	62	366	1	0	0	0
+crewon-nordkap-s1-A	v513_crewon	Core_destroyed	346	40	92	92	341	73	5	219	6	0	65	2
+crewon-nordkap-s2-A	v513_crewon	Core_destroyed	168	0	-1	-1	163	2	5	39	2	0	0	0
