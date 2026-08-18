@@ -30,8 +30,10 @@ lock-in.
 ## MORNING DECISIONS FOR MAGNUS (parked, evidence in BUILD-REPORT-v513siegecrew)
 1. Second body measured HARMFUL (−15.6pp, 3/3 blocks) — ships OFF; the v511/v512
    action-splitting theory is wrong as built.
-2. Sentinel-after-salt ships STRICT per his rule; consequence: turret bought in 27% of games,
-   kill comes from collar+eco+home-defence. Latch fallback built, no gain, OFF.
+2. ⛔ SUPERSEDED s51 (Magnus ruling 2, coordination tail): sentinel gate moves to **2 harvesters
+   built AND connected** (sustainability), with resite-on-death off observed enemy turret lines —
+   replaces sentinel-after-salt STRICT for v514+. v513-as-measured keeps the strict gate
+   (turret in 27% of games; SIEGECREW shard reads that config).
 3. Replacement misses his ~15-round cap (median 90; binding constraint = FUNDING the body).
 4. CPU platform `match test` still owed before ANY ship talk (local CPU is a stub; blocked by
    lock-in). 5. A live unrated leg (the honest fixture) whenever he reopens — leg decode plan
