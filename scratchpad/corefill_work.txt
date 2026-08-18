@@ -1246,3 +1246,4 @@ KLADLADDER3 bots/_v485kladladder3 bots/_v468kladturbo 5400 830000
 SEALPIERCE bots/_v484sealpierce bots/_v468kladturbo 5400 832000
 SALTRAY	bots/_v509saltray	bots/_v488beltbreak2	5400	870000
 RINGLADDER	bots/_v512ringladder	bots/_v488beltbreak2	5400	872000
+SIEGECREW	bots/_v513siegecrew	bots/_v488beltbreak2	5400	874000
