@@ -23,3 +23,9 @@ Non-tool notes for the wrap retro: my channel message transposed the two gsxWins
    level is invisible to arm overrides. One instance found+fixed (v515 door, moved to read
    site); every other derived default in doctrine files is unaudited. Fix shape: mkarm
    prepends? or a lint that refuses derived defaults; plus audit pass.
+5. **(s51 crewconv pre-flight) SECOND live derived-default instance: doctrine.py FERRY_HOME_ON
+   (v515 tree :3011)** — bakes stale FS_CREW_ON at import; any crew-ON config via append gets
+   the slot-10 two-writer collision (r197 class). Screen unblocked via definition-site edits;
+   the READ-SITE fix is a v516 build change (like the door flag), NOT a tool fix — listed here
+   so the mkarm audit (item 4) knows there were exactly two found instances, one fixed, one
+   pending in v516.
