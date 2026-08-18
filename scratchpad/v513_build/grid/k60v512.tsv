@@ -1,0 +1,21 @@
+tag	arm	map	g	seed	ord	ours	winner	cond	turn	tracebacks	ours_mined	opp_mined
+k60v512_glacierkeep_g0	k60v512	glacierkeep	0	7400	A	OPP	_v488beltbreak2	Core destroyed	481	0	100	3810
+k60v512_glacierkeep_g1	k60v512	glacierkeep	1	7401	B	OPP	_v488beltbreak2	Core destroyed	253	0	0	0
+k60v512_glacierkeep_g2	k60v512	glacierkeep	2	7402	A	OPP	_v488beltbreak2	Core destroyed	593	0	0	0
+k60v512_glacierkeep_g3	k60v512	glacierkeep	3	7403	B	OPP	_v488beltbreak2	Core destroyed	242	0	0	1390
+k60v512_nordkap_g0	k60v512	nordkap	0	7400	A	OPP	_v488beltbreak2	Core destroyed	369	0	220	3520
+k60v512_nordkap_g1	k60v512	nordkap	1	7401	B	OPP	_v488beltbreak2	Core destroyed	176	0	0	2140
+k60v512_nordkap_g2	k60v512	nordkap	2	7402	A	OPP	_v488beltbreak2	Core destroyed	174	0	150	2240
+k60v512_nordkap_g3	k60v512	nordkap	3	7403	B	OPP	_v488beltbreak2	Core destroyed	172	0	220	1710
+k60v512_atoll_g0	k60v512	atoll	0	7400	A	OPP	_v488beltbreak2	Titanium collected (tiebreak)	1000	0	290	310
+k60v512_atoll_g1	k60v512	atoll	1	7401	B	OPP	_v488beltbreak2	Core destroyed	208	0	120	1630
+k60v512_atoll_g2	k60v512	atoll	2	7402	A	US	kill60_v512	Core destroyed	108	0	290	80
+k60v512_atoll_g3	k60v512	atoll	3	7403	B	OPP	_v488beltbreak2	Core destroyed	206	0	260	1140
+k60v512_midgard_g0	k60v512	midgard	0	7400	A	OPP	_v488beltbreak2	Core destroyed	170	0	360	1490
+k60v512_midgard_g1	k60v512	midgard	1	7401	B	OPP	_v488beltbreak2	Core destroyed	132	0	930	1040
+k60v512_midgard_g2	k60v512	midgard	2	7402	A	OPP	_v488beltbreak2	Core destroyed	185	0	550	540
+k60v512_midgard_g3	k60v512	midgard	3	7403	B	OPP	_v488beltbreak2	Core destroyed	298	0	300	3370
+k60v512_drakkarfjord_g0	k60v512	drakkarfjord	0	7400	A	US	kill60_v512	Core destroyed	205	0	740	0
+k60v512_drakkarfjord_g1	k60v512	drakkarfjord	1	7401	B	OPP	_v488beltbreak2	Core destroyed	313	0	0	2250
+k60v512_drakkarfjord_g2	k60v512	drakkarfjord	2	7402	A	OPP	_v488beltbreak2	Core destroyed	334	0	0	1790
+k60v512_drakkarfjord_g3	k60v512	drakkarfjord	3	7403	B	US	kill60_v512	Titanium collected (tiebreak)	1000	0	200	0

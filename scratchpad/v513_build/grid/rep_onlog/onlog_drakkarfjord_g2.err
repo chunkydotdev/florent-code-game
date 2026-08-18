@@ -1,0 +1,548 @@
+Update available: 2.3.6 -> 2.3.8. Run: pip install --upgrade fcode
+FS GATE 0 sig (30, 30, (2, 24), (26, 4)) ok 1
+FS GATE 1 sig (30, 30, (2, 24), (26, 4)) ok 1
+FS PHASE 1 id 3 ph 1 d 808 at (4, 23)
+FS HOPBUILD 1 at (4, 23) lch (5, 23) T (28, 3)
+FS GATE 2 sig (30, 30, (2, 24), (26, 4)) ok 1
+FS GATE 2 sig (30, 30, (2, 24), (26, 4)) ok 1
+FS THROW 2 from (4, 22) to (9, 20) T (28, 3)
+FS HOPBUILD 3 at (9, 20) lch (10, 20) T (28, 3)
+FS GATE 3 sig (30, 30, (2, 24), (26, 4)) ok 1
+FS GATE 4 sig (30, 30, (2, 24), (26, 4)) ok 1
+FS PHASE 4 id 10 ph 1 d 808 at (4, 23)
+FS HOPBUILD 4 at (4, 23) lch (5, 23) T (28, 3)
+FS GATE 4 sig (30, 30, (2, 24), (26, 4)) ok 1
+FS THROW 4 from (9, 19) to (14, 17) T (28, 3)
+FS HOPBUILD 5 at (14, 17) lch (14, 16) T (28, 3)
+FS GATE 5 sig (30, 30, (2, 24), (26, 4)) ok 1
+FS THROW 5 from (4, 22) to (9, 20) T (28, 3)
+FS HOPBUILD 6 at (9, 20) lch (10, 20) T (28, 3)
+FS GATE 6 sig (30, 30, (2, 24), (26, 4)) ok 1
+FS GATE 7 sig (30, 30, (2, 24), (26, 4)) ok 1
+FS THROW 7 from (9, 19) to (14, 17) T (28, 3)
+FS THROW 8 from (14, 17) to (18, 13) T (28, 3)
+FS HOPBUILD 9 at (18, 13) lch (18, 12) T (28, 3)
+FS HOPBUILD 10 at (14, 17) lch (14, 16) T (28, 3)
+FS PROMOTE 10 id 10
+FS GATE 10 sig (30, 30, (2, 24), (26, 4)) ok 1
+FS THROW 10 from (19, 13) to (22, 9) T (28, 3)
+FS HOPBUILD 11 at (22, 9) lch (22, 8) T (28, 3)
+FS GATE 11 sig (30, 30, (2, 24), (26, 4)) ok 1
+FS GATE 12 sig (30, 30, (2, 24), (26, 4)) ok 1
+FS THROW 12 from (23, 9) to (25, 4) T (28, 3)
+FS PHASE 13 id 10 ph 2 d 1 at (25, 4)
+FS DODGE 16 id 10 from (25, 4) to (25, 5) cov 1 -> 0 hit 0 hp 40
+FS STAT 20 id 10 at (25, 5) need 8 orth 7 ti 29 ammo 0 sen 0 hp 40
+FS SEAL 29 tile (25, 5) n 1
+FS SEAL 30 tile (26, 6) n 2
+FS SEAL 34 tile (25, 4) n 3
+FS SEAL 36 tile (25, 3) n 4
+FS DEGRADE 38 id 3
+FS STAT 40 id 10 at (26, 2) need 5 orth 5 ti 69 ammo 24 sen 0 hp 22
+FS SEAL 40 tile (26, 3) n 5
+FS DODGE 42 id 10 from (27, 2) to (27, 3) cov 1 -> 0 hit 0 hp 22
+FS SEAL 44 tile (27, 3) n 6
+FS SEAL 45 tile (28, 4) n 7
+FS EVICTOR 46 at (28, 2) cov 2
+FS RUNG 46 id 10 r 2 hi -
+FS GATE 47 sig (30, 30, (2, 24), (26, 4)) ok 1
+FS SEAL 50 tile (28, 5) n 8
+FS SEAL 53 tile (27, 6) n 9
+FS PHASE 54 id 10 ph 3 d 2 at (28, 6)
+FS SEAL 55 tile (28, 6) n 10
+FS SEAL 59 tile (25, 6) n 11
+FS STAT 60 id 10 at (25, 7) need 0 orth 0 ti 29 ammo 12 sen 0 hp 26
+FS PHASE 65 id 10 ph 2 d 5 at (28, 7)
+FS PHASE 73 id 10 ph 3 d 5 at (28, 7)
+FS EVICTOR 73 at (27, 7) cov 3
+FS RUNG 73 id 10 r 2 hi -
+FS GATE 74 sig (30, 30, (2, 24), (26, 4)) ok 1
+FS PHASE 75 id 10 ph 2 d 8 at (29, 7)
+FS PHASE 76 id 10 ph 3 d 5 at (29, 6)
+FS EVICT 76 from (27, 2) to (24, 0)
+FS STAT 80 id 10 at (29, 4) need 0 orth 0 ti 57 ammo 24 sen 0 hp 26
+FS EVICT 82 from (29, 1) to (23, 1)
+FS SENTINEL 86 at (29, 5) face WEST tgt (26, 5) score 9 n 1 onring 0
+FS RUNG 86 id 10 r 4 hi -
+FS EVICT 86 from (27, 1) to (29, 7)
+FS PHASE 87 id 10 ph 4 d 4 at (29, 4)
+FS EVICT 87 from (28, 7) to (22, 8)
+FS PHASE 91 id 10 ph 2 d 20 at (29, 0)
+FS PHASE 92 id 10 ph 4 d 13 at (29, 1)
+FS EVICT 92 from (26, 7) to (28, 12)
+FS PHASE 93 id 10 ph 2 d 20 at (29, 0)
+FS PHASE 94 id 10 ph 4 d 13 at (29, 1)
+FS PHASE 95 id 10 ph 2 d 20 at (29, 0)
+FS PHASE 96 id 10 ph 4 d 13 at (29, 1)
+FS PHASE 97 id 10 ph 2 d 20 at (29, 0)
+FS PHASE 98 id 10 ph 4 d 13 at (29, 1)
+FS EVICT 98 from (26, 8) to (26, 2)
+FS PHASE 99 id 10 ph 2 d 20 at (29, 0)
+FS PHASE 100 id 10 ph 4 d 13 at (29, 1)
+FS STAT 100 id 10 at (29, 1) need 4 orth 4 ti 12 ammo 13 sen 1 hp 26
+FS PHASE 101 id 10 ph 2 d 20 at (29, 0)
+FS PHASE 102 id 10 ph 4 d 13 at (29, 1)
+FS PHASE 103 id 10 ph 2 d 20 at (29, 0)
+FS PHASE 104 id 10 ph 4 d 13 at (29, 1)
+FS PHASE 105 id 10 ph 2 d 20 at (29, 0)
+FS PHASE 106 id 10 ph 4 d 13 at (29, 1)
+FS PHASE 107 id 10 ph 2 d 20 at (29, 0)
+FS PHASE 108 id 10 ph 4 d 13 at (29, 1)
+FS PHASE 109 id 10 ph 2 d 20 at (29, 0)
+FS PHASE 112 id 10 ph 4 d 9 at (27, 1)
+FS EVICT 112 from (26, 8) to (26, 2)
+FS PHASE 113 id 10 ph 2 d 9 at (26, 1)
+FS EVICT 114 from (27, 2) to (24, 0)
+FS PHASE 116 id 10 ph 4 d 4 at (26, 2)
+FS PHASE 118 id 10 ph 2 d 5 at (25, 2)
+FS PHASE 120 id 10 ph 4 d 4 at (26, 2)
+FS STAT 120 id 10 at (26, 2) need 2 orth 2 ti 12 ammo 13 sen 1 hp 26
+FS STAT 140 id 10 at (26, 2) need 2 orth 2 ti 16 ammo 17 sen 1 hp 34
+FS STAT 160 id 10 at (26, 2) need 2 orth 2 ti 16 ammo 17 sen 1 hp 34
+FS STAT 180 id 10 at (26, 2) need 2 orth 2 ti 14 ammo 19 sen 1 hp 34
+FS STAT 200 id 10 at (26, 2) need 2 orth 2 ti 14 ammo 19 sen 1 hp 34
+FS STAT 220 id 10 at (26, 2) need 2 orth 2 ti 14 ammo 19 sen 1 hp 34
+FS DODGE 230 id 10 from (26, 2) to (26, 1) cov 1 -> 0 hit 0 hp 34
+FS PHASE 231 id 10 ph 2 d 9 at (26, 1)
+FS STAT 240 id 10 at (25, 1) need 6 orth 5 ti 12 ammo 11 sen 0 hp 34
+FS SEAL 241 tile (25, 3) n 12
+FS PHASE 243 id 10 ph 4 d 4 at (26, 2)
+FS PHASE 244 id 10 ph 2 d 5 at (25, 2)
+FS PHASE 245 id 10 ph 4 d 4 at (26, 2)
+FS PHASE 246 id 10 ph 2 d 5 at (25, 2)
+FS PHASE 247 id 10 ph 4 d 4 at (26, 2)
+FS DODGE 247 id 10 from (26, 2) to (26, 1) cov 1 -> 0 hit 0 hp 27
+FS PHASE 248 id 10 ph 2 d 9 at (26, 1)
+FS PHASE 249 id 10 ph 4 d 9 at (27, 1)
+FS PHASE 250 id 10 ph 2 d 16 at (27, 0)
+FS PHASE 253 id 10 ph 4 d 13 at (29, 1)
+FS PHASE 254 id 10 ph 2 d 20 at (29, 0)
+FS PHASE 255 id 10 ph 4 d 13 at (29, 1)
+FS PHASE 256 id 10 ph 2 d 20 at (29, 0)
+FS PHASE 257 id 10 ph 4 d 13 at (29, 1)
+FS PHASE 258 id 10 ph 2 d 20 at (29, 0)
+FS PHASE 259 id 10 ph 4 d 13 at (29, 1)
+FS PHASE 260 id 10 ph 2 d 20 at (29, 0)
+FS STAT 260 id 10 at (29, 0) need 7 orth 6 ti 14 ammo 12 sen 0 hp 27
+FS PHASE 261 id 10 ph 4 d 13 at (29, 1)
+FS PHASE 262 id 10 ph 2 d 20 at (29, 0)
+FS PHASE 263 id 10 ph 4 d 13 at (29, 1)
+FS PHASE 264 id 10 ph 2 d 20 at (29, 0)
+FS PHASE 265 id 10 ph 4 d 13 at (29, 1)
+FS PHASE 266 id 10 ph 2 d 20 at (29, 0)
+FS PHASE 267 id 10 ph 4 d 13 at (29, 1)
+FS PHASE 268 id 10 ph 2 d 20 at (29, 0)
+FS PHASE 269 id 10 ph 4 d 13 at (29, 1)
+FS PHASE 270 id 10 ph 2 d 20 at (29, 0)
+FS PHASE 271 id 10 ph 4 d 13 at (29, 1)
+FS PHASE 272 id 10 ph 2 d 20 at (29, 0)
+FS PHASE 273 id 10 ph 4 d 13 at (29, 1)
+FS PHASE 274 id 10 ph 2 d 20 at (29, 0)
+FS PHASE 275 id 10 ph 4 d 13 at (29, 1)
+FS PHASE 276 id 10 ph 2 d 20 at (29, 0)
+FS PHASE 277 id 10 ph 4 d 13 at (29, 1)
+FS PHASE 278 id 10 ph 2 d 20 at (29, 0)
+FS PHASE 279 id 10 ph 4 d 13 at (29, 1)
+FS PHASE 280 id 10 ph 2 d 20 at (29, 0)
+FS STAT 280 id 10 at (29, 0) need 7 orth 6 ti 14 ammo 12 sen 0 hp 27
+FS PHASE 281 id 10 ph 4 d 13 at (29, 1)
+FS PHASE 282 id 10 ph 2 d 20 at (29, 0)
+FS PHASE 283 id 10 ph 4 d 13 at (29, 1)
+FS PHASE 284 id 10 ph 2 d 20 at (29, 0)
+FS PHASE 285 id 10 ph 4 d 13 at (29, 1)
+FS PHASE 286 id 10 ph 2 d 20 at (29, 0)
+FS PHASE 287 id 10 ph 4 d 13 at (29, 1)
+FS PHASE 288 id 10 ph 2 d 20 at (29, 0)
+FS EVICT 288 from (27, 2) to (24, 0)
+FS PHASE 289 id 10 ph 4 d 13 at (29, 1)
+FS PHASE 290 id 10 ph 2 d 20 at (29, 0)
+FS PHASE 291 id 10 ph 4 d 13 at (29, 1)
+FS PHASE 292 id 10 ph 2 d 20 at (29, 0)
+FS PHASE 293 id 10 ph 4 d 13 at (29, 1)
+FS PHASE 294 id 10 ph 2 d 20 at (29, 0)
+FS EVICT 294 from (27, 1) to (29, 7)
+FS PHASE 295 id 10 ph 4 d 13 at (29, 1)
+FS EVICT 295 from (28, 7) to (22, 8)
+FS PHASE 296 id 10 ph 2 d 20 at (29, 0)
+FS PHASE 297 id 10 ph 4 d 13 at (29, 1)
+FS PHASE 298 id 10 ph 2 d 20 at (29, 0)
+FS PHASE 299 id 10 ph 4 d 13 at (29, 1)
+FS PHASE 300 id 10 ph 2 d 20 at (29, 0)
+FS STAT 300 id 10 at (29, 0) need 7 orth 6 ti 14 ammo 12 sen 0 hp 27
+FS PHASE 301 id 10 ph 4 d 13 at (29, 1)
+FS PHASE 302 id 10 ph 2 d 20 at (29, 0)
+FS PHASE 303 id 10 ph 4 d 13 at (29, 1)
+FS PHASE 304 id 10 ph 2 d 20 at (29, 0)
+FS PHASE 305 id 10 ph 4 d 13 at (29, 1)
+FS PHASE 306 id 10 ph 2 d 20 at (29, 0)
+FS PHASE 307 id 10 ph 4 d 13 at (29, 1)
+FS PHASE 308 id 10 ph 2 d 20 at (29, 0)
+FS PHASE 309 id 10 ph 4 d 13 at (29, 1)
+FS PHASE 310 id 10 ph 2 d 20 at (29, 0)
+FS PHASE 311 id 10 ph 4 d 13 at (29, 1)
+FS PHASE 312 id 10 ph 2 d 20 at (29, 0)
+FS PHASE 313 id 10 ph 4 d 13 at (29, 1)
+FS PHASE 314 id 10 ph 2 d 20 at (29, 0)
+FS PHASE 315 id 10 ph 4 d 13 at (29, 1)
+FS PHASE 316 id 10 ph 2 d 20 at (29, 0)
+FS PHASE 317 id 10 ph 4 d 13 at (29, 1)
+FS PHASE 318 id 10 ph 2 d 20 at (29, 0)
+FS PHASE 319 id 10 ph 4 d 13 at (29, 1)
+FS PHASE 320 id 10 ph 2 d 20 at (29, 0)
+FS STAT 320 id 10 at (29, 0) need 7 orth 6 ti 14 ammo 12 sen 0 hp 27
+FS PHASE 321 id 10 ph 4 d 13 at (29, 1)
+FS PHASE 322 id 10 ph 2 d 20 at (29, 0)
+FS PHASE 323 id 10 ph 4 d 13 at (29, 1)
+FS PHASE 324 id 10 ph 2 d 20 at (29, 0)
+FS PHASE 325 id 10 ph 4 d 13 at (29, 1)
+FS PHASE 326 id 10 ph 2 d 20 at (29, 0)
+FS PHASE 327 id 10 ph 4 d 13 at (29, 1)
+FS PHASE 328 id 10 ph 2 d 20 at (29, 0)
+FS PHASE 329 id 10 ph 4 d 13 at (29, 1)
+FS PHASE 330 id 10 ph 2 d 20 at (29, 0)
+FS PHASE 331 id 10 ph 4 d 13 at (29, 1)
+FS PHASE 332 id 10 ph 2 d 20 at (29, 0)
+FS PHASE 333 id 10 ph 4 d 13 at (29, 1)
+FS PHASE 334 id 10 ph 2 d 20 at (29, 0)
+FS PHASE 335 id 10 ph 4 d 13 at (29, 1)
+FS PHASE 336 id 10 ph 2 d 20 at (29, 0)
+FS EVICT 336 from (27, 2) to (24, 0)
+FS PHASE 337 id 10 ph 4 d 13 at (29, 1)
+FS PHASE 338 id 10 ph 2 d 20 at (29, 0)
+FS PHASE 339 id 10 ph 4 d 13 at (29, 1)
+FS PHASE 340 id 10 ph 2 d 20 at (29, 0)
+FS STAT 340 id 10 at (29, 0) need 7 orth 6 ti 14 ammo 12 sen 0 hp 27
+FS PHASE 341 id 10 ph 4 d 13 at (29, 1)
+FS PHASE 342 id 10 ph 2 d 20 at (29, 0)
+FS EVICT 342 from (27, 1) to (29, 7)
+FS PHASE 343 id 10 ph 4 d 13 at (29, 1)
+FS EVICT 343 from (28, 7) to (22, 8)
+FS PHASE 344 id 10 ph 2 d 20 at (29, 0)
+FS PHASE 345 id 10 ph 4 d 13 at (29, 1)
+FS PHASE 346 id 10 ph 2 d 20 at (29, 0)
+FS PHASE 347 id 10 ph 4 d 13 at (29, 1)
+FS PHASE 348 id 10 ph 2 d 20 at (29, 0)
+FS PHASE 349 id 10 ph 4 d 13 at (29, 1)
+FS PHASE 350 id 10 ph 2 d 20 at (29, 0)
+FS PHASE 351 id 10 ph 4 d 13 at (29, 1)
+FS PHASE 352 id 10 ph 2 d 20 at (29, 0)
+FS PHASE 353 id 10 ph 4 d 13 at (29, 1)
+FS PHASE 354 id 10 ph 2 d 20 at (29, 0)
+FS PHASE 355 id 10 ph 4 d 13 at (29, 1)
+FS PHASE 356 id 10 ph 2 d 20 at (29, 0)
+FS PHASE 357 id 10 ph 4 d 13 at (29, 1)
+FS PHASE 358 id 10 ph 2 d 20 at (29, 0)
+FS PHASE 359 id 10 ph 4 d 13 at (29, 1)
+FS PHASE 360 id 10 ph 2 d 20 at (29, 0)
+FS STAT 360 id 10 at (29, 0) need 7 orth 6 ti 14 ammo 12 sen 0 hp 27
+FS PHASE 361 id 10 ph 4 d 13 at (29, 1)
+FS PHASE 362 id 10 ph 2 d 20 at (29, 0)
+FS PHASE 363 id 10 ph 4 d 13 at (29, 1)
+FS PHASE 364 id 10 ph 2 d 20 at (29, 0)
+FS PHASE 365 id 10 ph 4 d 13 at (29, 1)
+FS PHASE 366 id 10 ph 2 d 20 at (29, 0)
+FS PHASE 367 id 10 ph 4 d 13 at (29, 1)
+FS PHASE 368 id 10 ph 2 d 20 at (29, 0)
+FS PHASE 369 id 10 ph 4 d 13 at (29, 1)
+FS PHASE 370 id 10 ph 2 d 20 at (29, 0)
+FS PHASE 371 id 10 ph 4 d 13 at (29, 1)
+FS PHASE 372 id 10 ph 2 d 20 at (29, 0)
+FS PHASE 373 id 10 ph 4 d 13 at (29, 1)
+FS PHASE 374 id 10 ph 2 d 20 at (29, 0)
+FS PHASE 375 id 10 ph 4 d 13 at (29, 1)
+FS PHASE 376 id 10 ph 2 d 20 at (29, 0)
+FS PHASE 377 id 10 ph 4 d 13 at (29, 1)
+FS PHASE 378 id 10 ph 2 d 20 at (29, 0)
+FS PHASE 379 id 10 ph 4 d 13 at (29, 1)
+FS PHASE 380 id 10 ph 2 d 20 at (29, 0)
+FS STAT 380 id 10 at (29, 0) need 7 orth 6 ti 14 ammo 12 sen 0 hp 27
+FS PHASE 381 id 10 ph 4 d 13 at (29, 1)
+FS PHASE 382 id 10 ph 2 d 20 at (29, 0)
+FS PHASE 383 id 10 ph 4 d 13 at (29, 1)
+FS PHASE 384 id 10 ph 2 d 20 at (29, 0)
+FS PHASE 385 id 10 ph 4 d 13 at (29, 1)
+FS PHASE 386 id 10 ph 2 d 20 at (29, 0)
+FS EVICT 386 from (27, 2) to (24, 0)
+FS PHASE 387 id 10 ph 4 d 13 at (29, 1)
+FS PHASE 388 id 10 ph 2 d 20 at (29, 0)
+FS PHASE 389 id 10 ph 4 d 13 at (29, 1)
+FS PHASE 390 id 10 ph 2 d 20 at (29, 0)
+FS PHASE 391 id 10 ph 4 d 13 at (29, 1)
+FS PHASE 392 id 10 ph 2 d 20 at (29, 0)
+FS EVICT 394 from (27, 1) to (29, 7)
+FS PHASE 395 id 10 ph 4 d 13 at (29, 1)
+FS EVICT 395 from (28, 7) to (22, 8)
+FS PHASE 396 id 10 ph 2 d 20 at (29, 0)
+FS PHASE 397 id 10 ph 4 d 13 at (29, 1)
+FS PHASE 398 id 10 ph 2 d 20 at (29, 0)
+FS PHASE 399 id 10 ph 4 d 13 at (29, 1)
+FS PHASE 400 id 10 ph 2 d 20 at (29, 0)
+FS STAT 400 id 10 at (29, 0) need 7 orth 6 ti 14 ammo 12 sen 0 hp 27
+FS PHASE 403 id 10 ph 4 d 13 at (29, 1)
+FS PHASE 404 id 10 ph 2 d 20 at (29, 0)
+FS PHASE 405 id 10 ph 4 d 13 at (29, 1)
+FS EVICT 405 from (27, 8) to (26, 2)
+FS PHASE 406 id 10 ph 2 d 20 at (29, 0)
+FS PHASE 407 id 10 ph 4 d 13 at (29, 1)
+FS PHASE 408 id 10 ph 2 d 20 at (29, 0)
+FS PHASE 411 id 10 ph 4 d 13 at (29, 1)
+FS PHASE 412 id 10 ph 2 d 20 at (29, 0)
+FS PHASE 413 id 10 ph 4 d 13 at (29, 1)
+FS PHASE 414 id 10 ph 2 d 20 at (29, 0)
+FS EVICT 414 from (26, 7) to (28, 12)
+FS PHASE 415 id 10 ph 4 d 13 at (29, 1)
+FS PHASE 416 id 10 ph 2 d 20 at (29, 0)
+FS PHASE 419 id 10 ph 4 d 13 at (29, 1)
+FS PHASE 420 id 10 ph 2 d 20 at (29, 0)
+FS STAT 420 id 10 at (29, 0) need 7 orth 6 ti 14 ammo 12 sen 0 hp 27
+FS PHASE 421 id 10 ph 4 d 13 at (29, 1)
+FS EVICT 421 from (27, 8) to (26, 2)
+FS PHASE 422 id 10 ph 2 d 20 at (29, 0)
+FS PHASE 423 id 10 ph 4 d 13 at (29, 1)
+FS PHASE 424 id 10 ph 2 d 20 at (29, 0)
+FS PHASE 427 id 10 ph 4 d 13 at (29, 1)
+FS PHASE 428 id 10 ph 2 d 20 at (29, 0)
+FS PHASE 429 id 10 ph 4 d 13 at (29, 1)
+FS PHASE 430 id 10 ph 2 d 20 at (29, 0)
+FS PHASE 431 id 10 ph 4 d 13 at (29, 1)
+FS PHASE 432 id 10 ph 2 d 20 at (29, 0)
+FS EVICT 432 from (26, 7) to (28, 12)
+FS PHASE 435 id 10 ph 4 d 13 at (29, 1)
+FS PHASE 436 id 10 ph 2 d 20 at (29, 0)
+FS EVICT 436 from (27, 2) to (24, 0)
+FS EVICT 436 from (28, 8) to (22, 8)
+FS PHASE 437 id 10 ph 4 d 13 at (29, 1)
+FS PHASE 438 id 10 ph 2 d 20 at (29, 0)
+FS PHASE 439 id 10 ph 4 d 13 at (29, 1)
+FS PHASE 440 id 10 ph 2 d 20 at (29, 0)
+FS STAT 440 id 10 at (29, 0) need 7 orth 6 ti 14 ammo 12 sen 0 hp 27
+FS EVICT 440 from (26, 8) to (26, 2)
+FS PHASE 441 id 10 ph 4 d 13 at (29, 1)
+FS PHASE 442 id 10 ph 2 d 20 at (29, 0)
+FS EVICT 442 from (27, 1) to (29, 7)
+FS PHASE 443 id 10 ph 4 d 13 at (29, 1)
+FS EVICT 443 from (28, 7) to (22, 8)
+FS PHASE 444 id 10 ph 2 d 20 at (29, 0)
+FS PHASE 447 id 10 ph 4 d 13 at (29, 1)
+FS PHASE 448 id 10 ph 2 d 20 at (29, 0)
+FS EVICT 449 from (26, 7) to (28, 12)
+FS PHASE 451 id 10 ph 4 d 13 at (29, 1)
+FS PHASE 452 id 10 ph 2 d 20 at (29, 0)
+FS PHASE 453 id 10 ph 4 d 13 at (29, 1)
+FS EVICT 453 from (28, 8) to (22, 8)
+FS PHASE 454 id 10 ph 2 d 20 at (29, 0)
+FS PHASE 455 id 10 ph 4 d 13 at (29, 1)
+FS PHASE 456 id 10 ph 2 d 20 at (29, 0)
+FS EVICT 457 from (26, 8) to (26, 2)
+FS PHASE 459 id 10 ph 4 d 13 at (29, 1)
+FS PHASE 460 id 10 ph 2 d 20 at (29, 0)
+FS STAT 460 id 10 at (29, 0) need 7 orth 6 ti 14 ammo 12 sen 0 hp 27
+FS PHASE 461 id 10 ph 4 d 13 at (29, 1)
+FS PHASE 462 id 10 ph 2 d 20 at (29, 0)
+FS PHASE 463 id 10 ph 4 d 13 at (29, 1)
+FS PHASE 464 id 10 ph 2 d 20 at (29, 0)
+FS EVICT 466 from (26, 7) to (28, 12)
+FS PHASE 467 id 10 ph 4 d 13 at (29, 1)
+FS PHASE 468 id 10 ph 2 d 20 at (29, 0)
+FS PHASE 469 id 10 ph 4 d 13 at (29, 1)
+FS PHASE 470 id 10 ph 2 d 20 at (29, 0)
+FS EVICT 470 from (28, 8) to (22, 8)
+FS PHASE 471 id 10 ph 4 d 13 at (29, 1)
+FS PHASE 472 id 10 ph 2 d 20 at (29, 0)
+FS EVICT 474 from (26, 8) to (26, 2)
+FS PHASE 475 id 10 ph 4 d 13 at (29, 1)
+FS PHASE 476 id 10 ph 2 d 20 at (29, 0)
+FS PHASE 477 id 10 ph 4 d 13 at (29, 1)
+FS PHASE 478 id 10 ph 2 d 20 at (29, 0)
+FS PHASE 479 id 10 ph 4 d 13 at (29, 1)
+FS PHASE 480 id 10 ph 2 d 20 at (29, 0)
+FS STAT 480 id 10 at (29, 0) need 7 orth 6 ti 14 ammo 12 sen 0 hp 27
+FS PHASE 483 id 10 ph 4 d 13 at (29, 1)
+FS PHASE 484 id 10 ph 2 d 20 at (29, 0)
+FS PHASE 485 id 10 ph 4 d 13 at (29, 1)
+FS PHASE 486 id 10 ph 2 d 20 at (29, 0)
+FS PHASE 487 id 10 ph 4 d 13 at (29, 1)
+FS EVICT 487 from (27, 2) to (24, 0)
+FS EVICT 487 from (26, 7) to (28, 12)
+FS PHASE 488 id 10 ph 2 d 20 at (29, 0)
+FS PHASE 491 id 10 ph 4 d 13 at (29, 1)
+FS EVICT 491 from (28, 8) to (22, 8)
+FS PHASE 492 id 10 ph 2 d 20 at (29, 0)
+FS PHASE 493 id 10 ph 4 d 13 at (29, 1)
+FS EVICT 493 from (29, 1) to (23, 1)
+FS EVICT 495 from (26, 8) to (26, 2)
+FS PHASE 496 id 10 ph 2 d 20 at (29, 0)
+FS PHASE 499 id 10 ph 4 d 13 at (29, 1)
+FS PHASE 500 id 10 ph 2 d 20 at (29, 0)
+FS STAT 500 id 10 at (29, 0) need 7 orth 6 ti 14 ammo 12 sen 0 hp 27
+FS EVICT 506 from (26, 7) to (28, 12)
+FS EVICT 510 from (28, 8) to (22, 8)
+FS SEAL 514 tile (27, 3) n 13
+FS EVICT 515 from (26, 7) to (28, 12)
+FS EVICT 519 from (28, 8) to (22, 8)
+FS STAT 520 id 10 at (29, 1) need 6 orth 5 ti 36 ammo 24 sen 0 hp 27
+FS SEAL 523 tile (27, 3) n 14
+FS EVICT 523 from (26, 8) to (26, 2)
+FS SEAL 532 tile (27, 3) n 15
+FS EVICT 532 from (26, 7) to (28, 12)
+FS EVICT 536 from (28, 8) to (22, 8)
+FS SEAL 539 tile (27, 3) n 16
+FS STAT 540 id 10 at (28, 3) need 3 orth 2 ti 68 ammo 24 sen 0 hp 27
+FS EVICT 540 from (26, 8) to (26, 2)
+FS SEAL 548 tile (27, 3) n 17
+FS EVICT 549 from (26, 7) to (28, 12)
+FS EVICT 553 from (28, 8) to (22, 8)
+FS SEAL 555 tile (27, 3) n 18
+FS EVICT 557 from (26, 8) to (26, 2)
+FS STAT 560 id 10 at (29, 2) need 5 orth 4 ti 106 ammo 24 sen 0 hp 27
+FS SEAL 564 tile (27, 3) n 19
+FS EVICT 566 from (26, 7) to (28, 12)
+FS EVICT 570 from (28, 8) to (22, 8)
+FS SEAL 571 tile (27, 3) n 20
+FS EVICT 574 from (26, 8) to (26, 2)
+FS SEAL 578 tile (27, 3) n 21
+FS STAT 580 id 10 at (29, 3) need 3 orth 2 ti 27 ammo 24 sen 0 hp 27
+FS EVICT 583 from (26, 7) to (28, 12)
+FS SEAL 587 tile (27, 3) n 22
+FS EVICT 587 from (28, 8) to (22, 8)
+FS EVICT 591 from (26, 8) to (26, 2)
+FS EVICT 593 from (27, 3) to (24, 0)
+FS SEAL 596 tile (27, 3) n 23
+FS STAT 600 id 10 at (29, 1) need 6 orth 5 ti 49 ammo 24 sen 0 hp 27
+FS SEAL 603 tile (27, 3) n 24
+FS EVICT 604 from (26, 7) to (28, 12)
+FS EVICT 608 from (28, 8) to (22, 8)
+FS SEAL 612 tile (27, 3) n 25
+FS EVICT 612 from (26, 8) to (26, 2)
+FS SEAL 619 tile (27, 3) n 26
+FS STAT 620 id 10 at (28, 3) need 3 orth 2 ti 78 ammo 24 sen 0 hp 27
+FS EVICT 621 from (26, 7) to (28, 12)
+FS EVICT 625 from (28, 8) to (22, 8)
+FS SEAL 628 tile (27, 3) n 27
+FS EVICT 629 from (26, 8) to (26, 2)
+FS SEAL 635 tile (27, 3) n 28
+FS EVICT 638 from (26, 7) to (28, 12)
+FS STAT 640 id 10 at (29, 2) need 5 orth 4 ti 114 ammo 24 sen 0 hp 27
+FS EVICT 642 from (28, 8) to (22, 8)
+FS SEAL 644 tile (27, 3) n 29
+FS EVICT 646 from (26, 8) to (26, 2)
+FS SEAL 651 tile (27, 3) n 30
+FS EVICT 655 from (26, 7) to (28, 12)
+FS EVICT 659 from (28, 8) to (22, 8)
+FS STAT 660 id 10 at (28, 3) need 4 orth 3 ti 87 ammo 24 sen 0 hp 27
+FS SEAL 660 tile (27, 3) n 31
+FS EVICT 663 from (26, 8) to (26, 2)
+FS EVICT 665 from (27, 3) to (24, 0)
+FS SEAL 669 tile (28, 4) n 32
+FS SEAL 670 tile (27, 3) n 33
+FS EVICT 676 from (26, 7) to (28, 12)
+FS SEAL 679 tile (27, 3) n 34
+FS STAT 680 id 10 at (28, 3) need 3 orth 2 ti 109 ammo 24 sen 0 hp 27
+FS EVICT 680 from (28, 8) to (22, 8)
+FS EVICT 684 from (26, 8) to (26, 2)
+FS EVICT 686 from (27, 3) to (24, 0)
+FS SEAL 690 tile (27, 3) n 35
+FS EVICT 697 from (26, 7) to (28, 12)
+FS SEAL 699 tile (27, 3) n 36
+FS STAT 700 id 10 at (28, 3) need 3 orth 2 ti 46 ammo 24 sen 0 hp 27
+FS EVICT 701 from (28, 8) to (22, 8)
+FS EVICT 705 from (26, 8) to (26, 2)
+FS SEAL 708 tile (27, 3) n 37
+FS EVICT 714 from (26, 7) to (28, 12)
+FS SEAL 715 tile (27, 3) n 38
+FS EVICT 718 from (28, 8) to (22, 8)
+FS STAT 720 id 10 at (29, 2) need 5 orth 4 ti 59 ammo 24 sen 0 hp 27
+FS EVICT 722 from (26, 8) to (26, 2)
+FS SEAL 724 tile (27, 3) n 39
+FS SEAL 731 tile (27, 3) n 40
+FS EVICT 731 from (26, 7) to (28, 12)
+FS EVICT 735 from (28, 8) to (22, 8)
+FS EVICT 739 from (26, 8) to (26, 2)
+FS STAT 740 id 10 at (28, 3) need 4 orth 3 ti 93 ammo 24 sen 0 hp 27
+FS SEAL 740 tile (27, 3) n 41
+FS SEAL 747 tile (27, 3) n 42
+FS EVICT 748 from (26, 7) to (28, 12)
+FS EVICT 752 from (28, 8) to (22, 8)
+FS SEAL 756 tile (27, 3) n 43
+FS EVICT 756 from (26, 8) to (26, 2)
+FS STAT 760 id 10 at (29, 1) need 6 orth 5 ti 119 ammo 24 sen 0 hp 27
+FS SEAL 763 tile (27, 3) n 44
+FS EVICT 765 from (26, 7) to (28, 12)
+FS EVICT 769 from (28, 8) to (22, 8)
+FS SEAL 772 tile (27, 3) n 45
+FS EVICT 773 from (26, 8) to (26, 2)
+FS SEAL 779 tile (27, 3) n 46
+FS STAT 780 id 10 at (28, 3) need 3 orth 2 ti 76 ammo 24 sen 0 hp 27
+FS EVICT 782 from (26, 7) to (28, 12)
+FS EVICT 786 from (28, 8) to (22, 8)
+FS SEAL 788 tile (27, 3) n 47
+FS EVICT 790 from (26, 8) to (26, 2)
+FS SEAL 795 tile (27, 3) n 48
+FS EVICT 799 from (26, 7) to (28, 12)
+FS STAT 800 id 10 at (29, 2) need 5 orth 4 ti 70 ammo 24 sen 0 hp 27
+FS EVICT 803 from (28, 8) to (22, 8)
+FS SEAL 804 tile (27, 3) n 49
+FS EVICT 807 from (26, 8) to (26, 2)
+FS EVICT 809 from (27, 3) to (24, 0)
+FS SEAL 813 tile (28, 4) n 50
+FS SEAL 814 tile (27, 3) n 51
+FS STAT 820 id 10 at (29, 1) need 6 orth 5 ti 96 ammo 24 sen 0 hp 27
+FS EVICT 820 from (26, 7) to (28, 12)
+FS SEAL 823 tile (27, 3) n 52
+FS EVICT 824 from (28, 8) to (22, 8)
+FS EVICT 828 from (26, 8) to (26, 2)
+FS EVICT 830 from (27, 3) to (24, 0)
+FS SEAL 834 tile (27, 3) n 53
+FS STAT 840 id 10 at (29, 1) need 6 orth 5 ti 130 ammo 24 sen 0 hp 27
+FS EVICT 841 from (26, 7) to (28, 12)
+FS SEAL 843 tile (27, 3) n 54
+FS EVICT 845 from (28, 8) to (22, 8)
+FS EVICT 849 from (26, 8) to (26, 2)
+FS SEAL 852 tile (27, 3) n 55
+FS EVICT 858 from (26, 7) to (28, 12)
+FS SEAL 859 tile (27, 3) n 56
+FS STAT 860 id 10 at (28, 3) need 3 orth 2 ti 44 ammo 24 sen 0 hp 27
+FS EVICT 862 from (28, 8) to (22, 8)
+FS EVICT 866 from (26, 8) to (26, 2)
+FS SEAL 868 tile (27, 3) n 57
+FS SEAL 875 tile (27, 3) n 58
+FS EVICT 875 from (26, 7) to (28, 12)
+FS EVICT 879 from (28, 8) to (22, 8)
+FS STAT 880 id 10 at (29, 2) need 5 orth 4 ti 22 ammo 24 sen 0 hp 27
+FS EVICT 883 from (26, 8) to (26, 2)
+FS SEAL 884 tile (27, 3) n 59
+FS SEAL 891 tile (27, 3) n 60
+FS EVICT 892 from (26, 7) to (28, 12)
+FS EVICT 896 from (28, 8) to (22, 8)
+FS STAT 900 id 10 at (28, 3) need 4 orth 3 ti 56 ammo 24 sen 0 hp 27
+FS SEAL 900 tile (27, 3) n 61
+FS EVICT 900 from (26, 8) to (26, 2)
+FS SEAL 907 tile (27, 3) n 62
+FS EVICT 909 from (26, 7) to (28, 12)
+FS EVICT 913 from (28, 8) to (22, 8)
+FS SEAL 916 tile (27, 3) n 63
+FS EVICT 917 from (26, 8) to (26, 2)
+FS STAT 920 id 10 at (29, 3) need 3 orth 2 ti 82 ammo 24 sen 0 hp 27
+FS SEAL 923 tile (27, 3) n 64
+FS EVICT 926 from (26, 7) to (28, 12)
+FS EVICT 930 from (28, 8) to (22, 8)
+FS SEAL 932 tile (27, 3) n 65
+FS EVICT 934 from (26, 8) to (26, 2)
+FS SEAL 939 tile (27, 3) n 66
+FS STAT 940 id 10 at (28, 3) need 3 orth 2 ti 108 ammo 24 sen 0 hp 27
+FS EVICT 943 from (26, 7) to (28, 12)
+FS EVICT 947 from (28, 8) to (22, 8)
+FS SEAL 948 tile (27, 3) n 67
+FS EVICT 951 from (26, 8) to (26, 2)
+FS EVICT 953 from (27, 3) to (24, 0)
+FS SEAL 957 tile (27, 3) n 68
+FS SEAL 958 tile (28, 4) n 69
+FS STAT 960 id 10 at (29, 3) need 3 orth 2 ti 59 ammo 40 sen 0 hp 27
+FS EVICT 964 from (26, 7) to (28, 12)
+FS EVICT 968 from (28, 8) to (22, 8)
+FS EVICT 972 from (26, 8) to (26, 2)
+FS STAT 980 id 10 at (29, 1) need 6 orth 5 ti 100 ammo 40 sen 0 hp 27
+FS EVICT 981 from (26, 7) to (28, 12)
+FS EVICT 985 from (28, 8) to (22, 8)
+FS EVICT 989 from (26, 8) to (26, 2)
+FS EVICT 998 from (26, 7) to (28, 12)

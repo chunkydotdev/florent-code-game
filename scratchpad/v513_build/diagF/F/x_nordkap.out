@@ -1,0 +1,25 @@
+Running match: _v488beltbreak2 vs inst
+  Map: nordkap.map26  Seed: 7301  Replay: 
+/private/tmp/claude-501/-Users-junghard-Projects-Work-florent-code-game/82720aae
+-f502-4b10-9dd5-ad5f55d16b94/scratchpad/v513_build/diagF/F/x_nordkap.replay26  
+TLE: 10ms
+Completed turn 0
+Completed turn 100
+Completed turn 200
+Completed turn 300
+Completed turn 400
+Completed turn 500
+Completed turn 600
+Completed turn 700
+Completed turn 800
+Replay written to 
+/private/tmp/claude-501/-Users-junghard-Projects-Work-florent-code-game/82720aae
+-f502-4b10-9dd5-ad5f55d16b94/scratchpad/v513_build/diagF/F/x_nordkap.replay26
+
+  Winner: _v488beltbreak2  (Core destroyed, turn 816)
+
+                _v488beltbreak2            inst  
+  Titanium     143 (1450 mined)    50 (0 mined)  
+  Units                      11               4  
+  Buildings                  90               6  
+

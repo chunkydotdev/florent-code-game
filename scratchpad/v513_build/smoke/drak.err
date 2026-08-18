@@ -1,0 +1,361 @@
+Update available: 2.3.6 -> 2.3.8. Run: pip install --upgrade fcode
+FS GATE 0 sig (30, 30, (2, 24), (26, 4)) ok 1
+FS GATE 1 sig (30, 30, (2, 24), (26, 4)) ok 1
+FS PHASE 1 id 3 ph 1 d 808 at (4, 23)
+FS HOPBUILD 1 at (4, 23) lch (5, 23) T (28, 3)
+FS GATE 2 sig (30, 30, (2, 24), (26, 4)) ok 1
+FS GATE 2 sig (30, 30, (2, 24), (26, 4)) ok 1
+FS THROW 2 from (4, 22) to (9, 20) T (28, 3)
+FS HOPBUILD 3 at (9, 20) lch (10, 20) T (28, 3)
+FS GATE 3 sig (30, 30, (2, 24), (26, 4)) ok 1
+FS GATE 4 sig (30, 30, (2, 24), (26, 4)) ok 1
+FS PHASE 4 id 10 ph 1 d 808 at (4, 23)
+FS HOPBUILD 4 at (4, 23) lch (5, 23) T (28, 3)
+FS GATE 4 sig (30, 30, (2, 24), (26, 4)) ok 1
+FS THROW 4 from (9, 19) to (14, 17) T (28, 3)
+FS HOPBUILD 5 at (14, 17) lch (14, 16) T (28, 3)
+FS GATE 5 sig (30, 30, (2, 24), (26, 4)) ok 1
+FS THROW 5 from (4, 22) to (9, 20) T (28, 3)
+FS HOPBUILD 6 at (9, 20) lch (10, 20) T (28, 3)
+FS GATE 6 sig (30, 30, (2, 24), (26, 4)) ok 1
+FS GATE 7 sig (30, 30, (2, 24), (26, 4)) ok 1
+FS THROW 7 from (9, 19) to (14, 17) T (28, 3)
+FS THROW 8 from (14, 17) to (18, 13) T (28, 3)
+FS HOPBUILD 9 at (18, 13) lch (18, 12) T (28, 3)
+FS HOPBUILD 10 at (14, 17) lch (14, 16) T (28, 3)
+FS PROMOTE 10 id 10
+FS GATE 10 sig (30, 30, (2, 24), (26, 4)) ok 1
+FS THROW 10 from (19, 13) to (22, 9) T (28, 3)
+FS HOPBUILD 11 at (22, 9) lch (22, 8) T (28, 3)
+FS GATE 11 sig (30, 30, (2, 24), (26, 4)) ok 1
+FS GATE 12 sig (30, 30, (2, 24), (26, 4)) ok 1
+FS THROW 12 from (23, 9) to (25, 4) T (28, 3)
+FS PHASE 13 id 10 ph 2 d 1 at (25, 4)
+FS DODGE 16 id 10 from (25, 4) to (25, 5) cov 1 -> 0 hit 0 hp 40
+FS DODGE 18 id 10 from (25, 5) to (25, 6) cov 1 -> 0 hit 0 hp 40
+FS STAT 20 id 10 at (25, 6) need 9 orth 8 ti 29 ammo 0 sen 0 hp 40
+FS SEAL 29 tile (25, 5) n 1
+FS SEAL 30 tile (26, 6) n 2
+FS SEAL 34 tile (25, 4) n 3
+FS SEAL 36 tile (25, 3) n 4
+FS DEGRADE 38 id 3
+FS STAT 40 id 10 at (26, 2) need 5 orth 5 ti 69 ammo 24 sen 0 hp 22
+FS SEAL 40 tile (26, 3) n 5
+FS DODGE 42 id 10 from (27, 2) to (26, 2) cov 1 -> 0 hit 0 hp 22
+FS DODGE 44 id 10 from (27, 2) to (26, 2) cov 1 -> 0 hit 0 hp 22
+FS EVICTOR 45 at (27, 2) cov 4
+FS RUNG 45 id 10 r 2 hi -
+FS GATE 46 sig (30, 30, (2, 24), (26, 4)) ok 1
+FS SEAL 55 tile (27, 3) n 6
+FS SEAL 56 tile (28, 4) n 7
+FS STAT 60 id 10 at (29, 5) need 2 orth 2 ti 35 ammo 24 sen 0 hp 22
+FS SEAL 60 tile (28, 5) n 8
+FS PHASE 63 id 10 ph 3 d 2 at (28, 6)
+FS SEAL 64 tile (28, 6) n 9
+FS PHASE 66 id 10 ph 2 d 10 at (28, 8)
+FS PHASE 69 id 10 ph 3 d 5 at (28, 7)
+FS PHASE 70 id 10 ph 2 d 8 at (29, 7)
+FS PHASE 71 id 10 ph 3 d 5 at (29, 6)
+FS EVICTOR 73 at (29, 5) cov 1
+FS RUNG 73 id 10 r 2 hi -
+FS GATE 74 sig (30, 30, (2, 24), (26, 4)) ok 1
+FS PHASE 76 id 10 ph 2 d 8 at (29, 2)
+FS STAT 80 id 10 at (29, 0) need 6 orth 5 ti 47 ammo 31 sen 0 hp 30
+FS STAT 100 id 10 at (29, 0) need 6 orth 5 ti 78 ammo 27 sen 0 hp 30
+FS STAT 120 id 10 at (29, 0) need 6 orth 5 ti 112 ammo 27 sen 0 hp 30
+FS GATE 129 sig (30, 30, (2, 24), (26, 4)) ok 1
+FS PHASE 129 id 155 ph 1 d 925 at (4, 26)
+FS SEAL 135 tile (26, 3) n 10
+FS PROMOTE 135 id 155
+FS PHASE 136 id 10 ph 3 d 4 at (26, 2)
+FS HOPBUILD 136 at (8, 23) lch (8, 22) T (28, 3)
+FS GATE 137 sig (30, 30, (2, 24), (26, 4)) ok 1
+FS THROW 137 from (9, 23) to (12, 19) T (28, 3)
+FS PHASE 138 id 10 ph 2 d 8 at (24, 2)
+FS PHASE 139 id 10 ph 3 d 5 at (24, 3)
+FS PHASE 140 id 10 ph 2 d 8 at (24, 2)
+FS STAT 140 id 10 at (24, 2) need 2 orth 2 ti 42 ammo 27 sen 0 hp 30
+FS PHASE 141 id 10 ph 3 d 5 at (24, 3)
+FS PHASE 142 id 10 ph 2 d 8 at (24, 2)
+FS PHASE 143 id 10 ph 3 d 5 at (24, 3)
+FS PHASE 144 id 10 ph 2 d 8 at (24, 2)
+FS HOPBUILD 144 at (17, 18) lch (17, 17) T (28, 3)
+FS PHASE 145 id 10 ph 3 d 5 at (24, 3)
+FS GATE 145 sig (30, 30, (2, 24), (26, 4)) ok 1
+FS THROW 145 from (18, 18) to (20, 13) T (28, 3)
+FS PHASE 146 id 10 ph 2 d 8 at (24, 2)
+FS PHASE 147 id 10 ph 3 d 5 at (24, 3)
+FS PHASE 148 id 10 ph 2 d 8 at (24, 2)
+FS PHASE 149 id 10 ph 3 d 5 at (24, 3)
+FS PHASE 150 id 10 ph 2 d 8 at (24, 2)
+FS PHASE 151 id 10 ph 3 d 5 at (24, 3)
+FS PHASE 152 id 10 ph 2 d 8 at (24, 2)
+FS SEAL 156 tile (26, 3) n 11
+FS PHASE 157 id 10 ph 3 d 4 at (26, 2)
+FS PHASE 159 id 10 ph 2 d 8 at (24, 2)
+FS PHASE 160 id 10 ph 3 d 5 at (24, 3)
+FS STAT 160 id 10 at (24, 3) need 2 orth 0 ti 47 ammo 23 sen 0 hp 30
+FS PHASE 161 id 10 ph 2 d 8 at (24, 2)
+FS PHASE 162 id 155 ph 2 d 4 at (24, 5)
+FS SEAL 163 tile (26, 3) n 12
+FS PHASE 163 id 155 ph 3 d 4 at (24, 5)
+FS PHASE 164 id 10 ph 3 d 4 at (26, 2)
+FS PHASE 166 id 10 ph 2 d 8 at (24, 2)
+FS PHASE 167 id 10 ph 3 d 5 at (25, 2)
+FS PHASE 168 id 10 ph 2 d 8 at (24, 2)
+FS PHASE 169 id 10 ph 3 d 5 at (25, 2)
+FS PHASE 170 id 10 ph 2 d 8 at (24, 2)
+FS PHASE 171 id 10 ph 3 d 5 at (24, 3)
+FS PHASE 172 id 10 ph 2 d 8 at (24, 2)
+FS PHASE 173 id 10 ph 3 d 5 at (24, 3)
+FS PHASE 174 id 10 ph 2 d 8 at (24, 2)
+FS PHASE 175 id 10 ph 3 d 5 at (24, 3)
+FS PHASE 176 id 10 ph 2 d 8 at (24, 2)
+FS PHASE 177 id 10 ph 3 d 5 at (24, 3)
+FS PHASE 178 id 10 ph 2 d 8 at (24, 2)
+FS PHASE 179 id 10 ph 3 d 5 at (24, 3)
+FS PHASE 180 id 10 ph 2 d 8 at (24, 2)
+FS STAT 180 id 10 at (24, 2) need 2 orth 2 ti 84 ammo 28 sen 0 hp 30
+FS EVICTOR 181 at (24, 4) cov 8
+FS RUNG 181 id 10 r 2 hi -
+FS GATE 182 sig (30, 30, (2, 24), (26, 4)) ok 1
+FS SEAL 185 tile (26, 3) n 13
+FS SEAL 193 tile (26, 3) n 14
+FS STAT 200 id 10 at (26, 2) need 1 orth 1 ti 65 ammo 28 sen 0 hp 30
+FS SEAL 201 tile (26, 3) n 15
+FS SEAL 209 tile (26, 3) n 16
+FS SEAL 217 tile (26, 3) n 17
+FS STAT 220 id 10 at (26, 2) need 1 orth 1 ti 91 ammo 28 sen 0 hp 30
+FS SEAL 225 tile (26, 3) n 18
+FS SEAL 233 tile (26, 3) n 19
+FS STAT 240 id 10 at (26, 2) need 1 orth 1 ti 125 ammo 28 sen 0 hp 30
+FS SEAL 241 tile (26, 3) n 20
+FS SEAL 249 tile (26, 3) n 21
+FS EVICT 253 from (24, 3) to (23, 9)
+FS SEAL 257 tile (26, 3) n 22
+FS STAT 260 id 10 at (26, 2) need 1 orth 1 ti 80 ammo 28 sen 0 hp 30
+FS SEAL 265 tile (26, 3) n 23
+FS SEAL 273 tile (26, 3) n 24
+FS STAT 280 id 10 at (26, 2) need 1 orth 1 ti 92 ammo 28 sen 0 hp 30
+FS SEAL 281 tile (26, 3) n 25
+FS SEAL 289 tile (26, 3) n 26
+FS SEAL 297 tile (26, 3) n 27
+FS STAT 300 id 10 at (26, 2) need 1 orth 1 ti 192 ammo 28 sen 0 hp 30
+FS SEAL 305 tile (26, 3) n 28
+FS SEAL 313 tile (26, 3) n 29
+FS STAT 320 id 10 at (26, 2) need 1 orth 1 ti 133 ammo 28 sen 0 hp 30
+FS SEAL 321 tile (26, 3) n 30
+FS SEAL 329 tile (26, 3) n 31
+FS SEAL 337 tile (26, 3) n 32
+FS STAT 340 id 10 at (26, 2) need 1 orth 1 ti 173 ammo 28 sen 0 hp 30
+FS SEAL 345 tile (26, 3) n 33
+FS GATE 352 sig (30, 30, (2, 24), (26, 4)) ok 1
+FS PHASE 352 id 344 ph 1 d 925 at (4, 26)
+FS SEAL 353 tile (26, 3) n 34
+FS HOPBUILD 353 at (5, 26) lch (5, 25) T (28, 3)
+FS GATE 354 sig (30, 30, (2, 24), (26, 4)) ok 1
+FS THROW 354 from (6, 26) to (9, 22) T (28, 3)
+FS HOPBUILD 355 at (9, 22) lch (9, 21) T (28, 3)
+FS GATE 356 sig (30, 30, (2, 24), (26, 4)) ok 1
+FS THROW 356 from (10, 22) to (13, 18) T (28, 3)
+FS PROMOTE 358 id 344
+FS STAT 360 id 10 at (26, 2) need 1 orth 1 ti 97 ammo 28 sen 0 hp 30
+FS HOPBUILD 360 at (16, 18) lch (17, 18) T (28, 3)
+FS SEAL 361 tile (26, 3) n 35
+FS GATE 361 sig (30, 30, (2, 24), (26, 4)) ok 1
+FS THROW 361 from (16, 18) to (20, 14) T (28, 3)
+FS HOPBUILD 368 at (22, 10) lch (22, 9) T (28, 3)
+FS SEAL 369 tile (26, 3) n 36
+FS GATE 369 sig (30, 30, (2, 24), (26, 4)) ok 1
+FS THROW 369 from (23, 10) to (24, 5) T (28, 3)
+FS PHASE 370 id 344 ph 2 d 4 at (24, 5)
+FS STAT 380 id 10 at (26, 2) need 1 orth 1 ti 131 ammo 28 sen 0 hp 30
+FS SEAL 389 tile (26, 3) n 37
+FS GATE 394 sig (30, 30, (2, 24), (26, 4)) ok 1
+FS PHASE 394 id 390 ph 1 d 1066 at (1, 26)
+FS HOPBUILD 395 at (1, 27) lch (2, 27) T (28, 3)
+FS GATE 396 sig (30, 30, (2, 24), (26, 4)) ok 1
+FS THROW 396 from (1, 26) to (6, 24) T (28, 3)
+FS SEAL 397 tile (26, 3) n 38
+FS STAT 400 id 10 at (26, 2) need 1 orth 1 ti 53 ammo 28 sen 0 hp 30
+FS PROMOTE 400 id 390
+FS HOPBUILD 404 at (10, 21) lch (10, 20) T (28, 3)
+FS SEAL 405 tile (26, 3) n 39
+FS GATE 405 sig (30, 30, (2, 24), (26, 4)) ok 1
+FS THROW 405 from (11, 21) to (14, 17) T (28, 3)
+FS THROW 406 from (14, 17) to (18, 13) T (28, 3)
+FS HOPBUILD 412 at (21, 10) lch (21, 9) T (28, 3)
+FS SEAL 413 tile (26, 3) n 40
+FS GATE 413 sig (30, 30, (2, 24), (26, 4)) ok 1
+FS THROW 413 from (22, 10) to (24, 5) T (28, 3)
+FS PHASE 414 id 390 ph 2 d 4 at (24, 5)
+FS STAT 420 id 10 at (26, 2) need 1 orth 1 ti 88 ammo 28 sen 0 hp 30
+FS STAT 420 id 390 at (24, 5) need 1 orth 1 ti 88 ammo 28 sen 0 hp 4
+FS SEAL 433 tile (26, 3) n 41
+FS STAT 440 id 10 at (26, 2) need 1 orth 1 ti 110 ammo 28 sen 0 hp 30
+FS SEAL 441 tile (26, 3) n 42
+FS SEAL 449 tile (26, 3) n 43
+FS SEAL 457 tile (26, 3) n 44
+FS STAT 460 id 10 at (26, 2) need 1 orth 1 ti 119 ammo 28 sen 0 hp 30
+FS SEAL 465 tile (26, 3) n 45
+FS SEAL 473 tile (26, 3) n 46
+FS STAT 480 id 10 at (26, 2) need 1 orth 1 ti 263 ammo 28 sen 0 hp 30
+FS SEAL 481 tile (26, 3) n 47
+FS GATE 482 sig (30, 30, (2, 24), (26, 4)) ok 1
+FS PHASE 482 id 529 ph 1 d 1066 at (1, 26)
+FS HOPBUILD 483 at (0, 26) lch (1, 26) T (28, 3)
+FS GATE 484 sig (30, 30, (2, 24), (26, 4)) ok 1
+FS THROW 484 from (0, 25) to (5, 23) T (28, 3)
+FS HOPBUILD 485 at (5, 23) lch (6, 23) T (28, 3)
+FS GATE 486 sig (30, 30, (2, 24), (26, 4)) ok 1
+FS THROW 486 from (5, 22) to (10, 20) T (28, 3)
+FS PROMOTE 488 id 529
+FS HOPBUILD 488 at (11, 20) lch (12, 20) T (28, 3)
+FS SEAL 489 tile (26, 3) n 48
+FS GATE 489 sig (30, 30, (2, 24), (26, 4)) ok 1
+FS THROW 489 from (11, 20) to (14, 16) T (28, 3)
+FS HOPBUILD 496 at (18, 14) lch (19, 14) T (28, 3)
+FS SEAL 497 tile (26, 3) n 49
+FS GATE 497 sig (30, 30, (2, 24), (26, 4)) ok 1
+FS THROW 497 from (18, 13) to (22, 10) T (28, 3)
+FS STAT 500 id 10 at (26, 2) need 1 orth 1 ti 55 ammo 28 sen 0 hp 30
+FS HOPBUILD 504 at (26, 8) lch (27, 8) T (28, 3)
+FS SEAL 505 tile (26, 3) n 50
+FS GATE 505 sig (30, 30, (2, 24), (26, 4)) ok 1
+FS THROW 505 from (26, 7) to (28, 3) T (28, 3)
+FS PHASE 506 id 529 ph 2 d 2 at (28, 3)
+FS SEAL 513 tile (26, 3) n 51
+FS STAT 520 id 10 at (26, 2) need 1 orth 1 ti 204 ammo 28 sen 0 hp 30
+FS STAT 520 id 529 at (28, 3) need 2 orth 2 ti 204 ammo 28 sen 0 hp 40
+FS SEAL 521 tile (26, 3) n 52
+FS SEAL 529 tile (26, 3) n 53
+FS SEAL 537 tile (26, 3) n 54
+FS STAT 540 id 10 at (26, 2) need 1 orth 1 ti 249 ammo 28 sen 0 hp 30
+FS STAT 540 id 529 at (28, 3) need 1 orth 1 ti 249 ammo 28 sen 0 hp 40
+FS SEAL 545 tile (26, 3) n 55
+FS GATE 545 sig (30, 30, (2, 24), (26, 4)) ok 1
+FS PHASE 545 id 619 ph 1 d 1066 at (1, 26)
+FS HOPBUILD 546 at (1, 27) lch (2, 27) T (28, 3)
+FS GATE 547 sig (30, 30, (2, 24), (26, 4)) ok 1
+FS THROW 547 from (1, 26) to (6, 24) T (28, 3)
+FS PROMOTE 551 id 619
+FS SEAL 553 tile (26, 3) n 56
+FS STAT 560 id 10 at (26, 2) need 1 orth 1 ti 82 ammo 28 sen 0 hp 30
+FS STAT 560 id 529 at (28, 3) need 2 orth 2 ti 82 ammo 28 sen 0 hp 40
+FS SEAL 561 tile (26, 3) n 57
+FS HOPBUILD 565 at (14, 15) lch (15, 15) T (28, 3)
+FS GATE 566 sig (30, 30, (2, 24), (26, 4)) ok 1
+FS THROW 566 from (14, 14) to (19, 12) T (28, 3)
+FS SEAL 569 tile (26, 3) n 58
+FS SEAL 577 tile (26, 3) n 59
+FS STAT 580 id 10 at (26, 2) need 1 orth 1 ti 88 ammo 28 sen 0 hp 30
+FS STAT 580 id 529 at (28, 3) need 1 orth 1 ti 88 ammo 28 sen 0 hp 40
+FS HOPBUILD 582 at (26, 8) lch (27, 8) T (28, 3)
+FS GATE 583 sig (30, 30, (2, 24), (26, 4)) ok 1
+FS THROW 583 from (26, 7) to (29, 4) T (28, 3)
+FS PHASE 584 id 619 ph 2 d 4 at (29, 4)
+FS SEAL 585 tile (26, 3) n 60
+FS SEAL 593 tile (26, 3) n 61
+FS STAT 600 id 10 at (26, 2) need 1 orth 1 ti 223 ammo 28 sen 0 hp 30
+FS STAT 600 id 529 at (28, 3) need 2 orth 2 ti 223 ammo 28 sen 0 hp 40
+FS STAT 600 id 619 at (29, 0) need 7 orth 6 ti 223 ammo 28 sen 0 hp 40
+FS SEAL 601 tile (26, 3) n 62
+FS SEAL 609 tile (26, 3) n 63
+FS GATE 609 sig (30, 30, (2, 24), (26, 4)) ok 1
+FS PHASE 609 id 731 ph 1 d 808 at (4, 23)
+FS HOPBUILD 609 at (4, 23) lch (5, 23) T (28, 3)
+FS GATE 610 sig (30, 30, (2, 24), (26, 4)) ok 1
+FS THROW 610 from (4, 22) to (9, 20) T (28, 3)
+FS HOPBUILD 611 at (9, 20) lch (10, 20) T (28, 3)
+FS GATE 612 sig (30, 30, (2, 24), (26, 4)) ok 1
+FS THROW 612 from (9, 19) to (14, 17) T (28, 3)
+FS PROMOTE 615 id 731
+FS SEAL 617 tile (26, 3) n 64
+FS STAT 620 id 10 at (26, 2) need 1 orth 1 ti 114 ammo 28 sen 0 hp 30
+FS STAT 620 id 529 at (28, 3) need 1 orth 1 ti 114 ammo 28 sen 0 hp 40
+FS STAT 620 id 619 at (29, 0) need 6 orth 5 ti 114 ammo 28 sen 0 hp 40
+FS HOPBUILD 620 at (18, 14) lch (19, 14) T (28, 3)
+FS GATE 621 sig (30, 30, (2, 24), (26, 4)) ok 1
+FS THROW 621 from (18, 13) to (22, 10) T (28, 3)
+FS SEAL 625 tile (26, 3) n 65
+FS HOPBUILD 628 at (26, 8) lch (27, 8) T (28, 3)
+FS GATE 629 sig (30, 30, (2, 24), (26, 4)) ok 1
+FS THROW 629 from (26, 7) to (29, 4) T (28, 3)
+FS PHASE 630 id 731 ph 2 d 4 at (29, 4)
+FS SEAL 633 tile (26, 3) n 66
+FS STAT 640 id 10 at (26, 2) need 1 orth 1 ti 152 ammo 28 sen 0 hp 30
+FS STAT 640 id 529 at (28, 3) need 2 orth 2 ti 152 ammo 28 sen 0 hp 40
+FS STAT 640 id 619 at (25, 2) need 2 orth 2 ti 152 ammo 28 sen 0 hp 40
+FS STAT 640 id 731 at (29, 0) need 7 orth 6 ti 152 ammo 28 sen 0 hp 40
+FS SEAL 641 tile (26, 3) n 67
+FS SEAL 649 tile (26, 3) n 68
+FS SEAL 657 tile (26, 3) n 69
+FS GATE 657 sig (30, 30, (2, 24), (26, 4)) ok 1
+FS PHASE 657 id 802 ph 1 d 925 at (4, 26)
+FS HOPBUILD 658 at (5, 26) lch (5, 25) T (28, 3)
+FS GATE 659 sig (30, 30, (2, 24), (26, 4)) ok 1
+FS THROW 659 from (6, 26) to (9, 22) T (28, 3)
+FS STAT 660 id 10 at (26, 2) need 1 orth 1 ti 125 ammo 28 sen 0 hp 30
+FS STAT 660 id 529 at (28, 3) need 1 orth 1 ti 125 ammo 28 sen 0 hp 40
+FS STAT 660 id 619 at (25, 2) need 1 orth 1 ti 125 ammo 28 sen 0 hp 40
+FS STAT 660 id 731 at (29, 0) need 6 orth 5 ti 125 ammo 28 sen 0 hp 40
+FS HOPBUILD 660 at (9, 22) lch (9, 21) T (28, 3)
+FS GATE 661 sig (30, 30, (2, 24), (26, 4)) ok 1
+FS THROW 661 from (10, 22) to (13, 18) T (28, 3)
+FS PROMOTE 663 id 802
+FS SEAL 665 tile (26, 3) n 70
+FS HOPBUILD 668 at (16, 15) lch (16, 14) T (28, 3)
+FS GATE 669 sig (30, 30, (2, 24), (26, 4)) ok 1
+FS THROW 669 from (17, 15) to (20, 11) T (28, 3)
+FS SEAL 673 tile (26, 3) n 71
+FS HOPBUILD 676 at (23, 8) lch (23, 7) T (28, 3)
+FS GATE 677 sig (30, 30, (2, 24), (26, 4)) ok 1
+FS THROW 677 from (24, 8) to (25, 4) T (28, 3)
+FS PHASE 678 id 10 ph 3 d 4 at (26, 2)
+FS PHASE 678 id 529 ph 3 d 2 at (28, 3)
+FS PHASE 678 id 619 ph 3 d 5 at (25, 2)
+FS PHASE 678 id 802 ph 3 d 1 at (25, 4)
+FS PHASE 679 id 10 ph 2 d 9 at (26, 1)
+FS PHASE 679 id 619 ph 2 d 8 at (24, 2)
+FS STAT 680 id 10 at (25, 1) need 3 orth 3 ti 56 ammo 28 sen 0 hp 30
+FS PHASE 680 id 529 ph 2 d 8 at (29, 2)
+FS STAT 680 id 529 at (29, 2) need 2 orth 2 ti 56 ammo 28 sen 0 hp 40
+FS PHASE 680 id 619 ph 3 d 5 at (24, 3)
+FS STAT 680 id 619 at (24, 3) need 2 orth 0 ti 56 ammo 28 sen 0 hp 40
+FS STAT 680 id 731 at (27, 0) need 4 orth 4 ti 56 ammo 28 sen 0 hp 40
+FS STAT 680 id 802 at (25, 4) need 1 orth 0 ti 56 ammo 28 sen 0 hp 22
+FS PHASE 681 id 10 ph 3 d 5 at (25, 2)
+FS PHASE 681 id 619 ph 2 d 10 at (23, 3)
+FS PHASE 682 id 10 ph 2 d 8 at (24, 2)
+FS PHASE 683 id 10 ph 3 d 5 at (24, 3)
+FS PHASE 684 id 10 ph 2 d 10 at (23, 3)
+FS PHASE 684 id 619 ph 3 d 5 at (25, 2)
+FS PHASE 685 id 619 ph 2 d 8 at (24, 2)
+FS PHASE 686 id 619 ph 3 d 5 at (24, 3)
+FS PHASE 687 id 619 ph 2 d 8 at (24, 2)
+FS SENTINEL 690 at (24, 2) face SOUTHEAST tgt (27, 5) score 18 n 1 onring 0
+FS RUNG 690 id 619 r 4 hi -
+FS PHASE 690 id 731 ph 4 d 13 at (23, 2)
+FS PHASE 691 id 10 ph 4 d 25 at (22, 1)
+FS PHASE 691 id 619 ph 4 d 5 at (24, 3)
+FS PHASE 693 id 529 ph 4 d 17 at (28, 0)
+FS SEAL 697 tile (26, 3) n 1
+FS PHASE 698 id 619 ph 2 d 20 at (22, 7)
+FS STAT 700 id 10 at (23, 1) need 5 orth 5 ti 28 ammo 102 sen 1 hp 30
+FS STAT 700 id 529 at (26, 2) need 1 orth 1 ti 28 ammo 102 sen 1 hp 40
+FS STAT 700 id 619 at (23, 8) need 6 orth 5 ti 28 ammo 102 sen 0 hp 40
+FS STAT 700 id 731 at (25, 2) need 1 orth 1 ti 28 ammo 102 sen 1 hp 40
+FS SEAL 704 tile (26, 3) n 2
+FS SEAL 712 tile (26, 3) n 3
+FS STAT 720 id 10 at (23, 1) need 5 orth 5 ti 84 ammo 168 sen 1 hp 30
+FS STAT 720 id 529 at (26, 2) need 2 orth 2 ti 84 ammo 168 sen 1 hp 40
+FS SEAL 720 tile (26, 3) n 4
+FS STAT 720 id 619 at (23, 8) need 6 orth 5 ti 70 ammo 168 sen 0 hp 40
+FS STAT 720 id 731 at (25, 2) need 1 orth 1 ti 70 ammo 168 sen 1 hp 40
+FS SEAL 728 tile (26, 3) n 5
+FS SEAL 736 tile (26, 3) n 6
+FS STAT 740 id 10 at (23, 1) need 5 orth 5 ti 150 ammo 210 sen 1 hp 30
+FS STAT 740 id 529 at (26, 2) need 1 orth 1 ti 150 ammo 210 sen 1 hp 40
+FS STAT 740 id 619 at (23, 8) need 6 orth 5 ti 150 ammo 210 sen 0 hp 40
+FS STAT 740 id 731 at (25, 2) need 1 orth 1 ti 150 ammo 210 sen 1 hp 40
+FS SEAL 744 tile (26, 3) n 7

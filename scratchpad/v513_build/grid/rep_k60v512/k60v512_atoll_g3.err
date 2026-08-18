@@ -1,0 +1,65 @@
+Update available: 2.3.6 -> 2.3.8. Run: pip install --upgrade fcode
+FS GATE 0 sig (18, 18, (2, 14), (14, 2)) ok 1
+FS GATE 1 sig (18, 18, (2, 14), (14, 2)) ok 1
+FS PHASE 1 id 4 ph 1 d 313 at (16, 2)
+FS GATE 2 sig (18, 18, (2, 14), (14, 2)) ok 1
+FS HOPBUILD 3 at (17, 3) lch (17, 4) T (1, 16)
+FS GATE 3 sig (18, 18, (2, 14), (14, 2)) ok 1
+FS GATE 4 sig (18, 18, (2, 14), (14, 2)) ok 1
+FS THROW 4 from (17, 3) to (13, 7) T (1, 16)
+FS HOPBUILD 5 at (13, 7) lch (12, 7) T (1, 16)
+FS GATE 6 sig (18, 18, (2, 14), (14, 2)) ok 1
+FS THROW 6 from (13, 8) to (8, 10) T (1, 16)
+FS HOPBUILD 7 at (8, 10) lch (7, 10) T (1, 16)
+FS GATE 8 sig (18, 18, (2, 14), (14, 2)) ok 1
+FS THROW 8 from (8, 10) to (3, 13) T (1, 16)
+FS PHASE 9 id 4 ph 2 d 1 at (3, 13)
+FS SENTINEL 9 at (3, 12) face SOUTH tgt (3, 15) score 9 n 1 onring 0
+FS RUNG 9 id 4 r 4 hi -
+FS PHASE 10 id 4 ph 4 d 1 at (3, 13)
+FS SEAL 10 tile (2, 13) n 1
+FS GATE 11 sig (18, 18, (2, 14), (14, 2)) ok 1
+FS DODGE 12 id 4 from (4, 13) to (4, 14) cov 1 -> 0 hit 0 hp 40
+FS SEAL 14 tile (4, 14) n 2
+FS PHASE 18 id 4 ph 2 d 10 at (6, 16)
+FS STAT 20 id 4 at (5, 17) need 8 orth 7 ti 68 ammo 75 sen 0 hp 40
+FS PHASE 22 id 4 ph 4 d 2 at (4, 16)
+FS CLEAR 22 tile (3, 16) peck 1
+FS RUNG 22 id 4 r 3 hi -
+FS STAT 40 id 4 at (4, 16) need 8 orth 7 ti 48 ammo 143 sen 1 hp 40
+FS SEAL 43 tile (4, 15) n 3
+FS PHASE 51 id 4 ph 2 d 5 at (4, 17)
+FS FORCEDEATH 60 id 4
+FS GATE 73 sig (18, 18, (2, 14), (14, 2)) ok 1
+FS PHASE 73 id 85 ph 1 d 269 at (16, 4)
+FS PHASE 92 id 85 ph 4 d 8 at (5, 12)
+FS STAT 100 id 85 at (1, 12) need 6 orth 5 ti 20 ammo 7 sen 1 hp 40
+FS STAT 120 id 85 at (1, 12) need 7 orth 6 ti 48 ammo 9 sen 1 hp 40
+FS STAT 140 id 85 at (1, 12) need 7 orth 6 ti 48 ammo 9 sen 1 hp 40
+FS PHASE 150 id 85 ph 2 d 5 at (1, 12)
+FS CLEAR 152 tile (1, 13) peck 1
+FS RUNG 152 id 85 r 3 hi -
+FS CLEAR 153 tile (1, 13) peck 2
+FS RUNG 153 id 85 r 3 hi -
+FS CLEAR 154 tile (1, 13) peck 3
+FS RUNG 154 id 85 r 3 hi -
+FS CLEAR 156 tile (1, 13) peck 4
+FS RUNG 156 id 85 r 3 hi -
+FS CLEAR 157 tile (1, 13) peck 5
+FS RUNG 157 id 85 r 3 hi -
+FS CLEAR 158 tile (1, 13) peck 6
+FS RUNG 158 id 85 r 3 hi -
+FS CLEAR 159 tile (1, 13) peck 7
+FS RUNG 159 id 85 r 3 hi -
+FS STAT 160 id 85 at (1, 12) need 7 orth 6 ti 56 ammo 17 sen 0 hp 40
+FS CLEAR 160 tile (1, 13) peck 8
+FS RUNG 160 id 85 r 3 hi -
+FS SEAL 162 tile (2, 13) n 1
+FS CLEAR 164 tile (3, 13) peck 1
+FS RUNG 164 id 85 r 3 hi -
+FS CLEAR 165 tile (3, 13) peck 2
+FS RUNG 165 id 85 r 3 hi -
+FS CLEAR 166 tile (3, 13) peck 3
+FS RUNG 166 id 85 r 3 hi -
+FS CLEAR 167 tile (3, 13) peck 4
+FS RUNG 167 id 85 r 3 hi -

@@ -1,0 +1,31 @@
+tag	arm	map	g	seed	ord	ours	winner	cond	turn	tracebacks	ours_mined	opp_mined
+shipA_glacierkeep_g0	shipA	glacierkeep	0	7400	A	US	_v513siegecrew	Core destroyed	181	0	390	0
+shipA_glacierkeep_g1	shipA	glacierkeep	1	7401	B	US	_v513siegecrew	Titanium collected (tiebreak)	1000	0	30	0
+shipA_glacierkeep_g2	shipA	glacierkeep	2	7402	A	US	_v513siegecrew	Core destroyed	177	0	170	0
+shipA_glacierkeep_g3	shipA	glacierkeep	3	7403	B	US	_v513siegecrew	Core destroyed	280	0	0	0
+shipA_glacierkeep_g4	shipA	glacierkeep	4	7404	A	US	_v513siegecrew	Core destroyed	166	0	350	0
+shipA_glacierkeep_g5	shipA	glacierkeep	5	7405	B	US	_v513siegecrew	Titanium collected (tiebreak)	1000	0	170	0
+shipA_nordkap_g0	shipA	nordkap	0	7400	A	OPP	_v488beltbreak2	Core destroyed	174	0	560	1560
+shipA_nordkap_g1	shipA	nordkap	1	7401	B	US	_v513siegecrew	Core destroyed	459	0	3940	5980
+shipA_nordkap_g2	shipA	nordkap	2	7402	A	OPP	_v488beltbreak2	Core destroyed	308	0	990	1600
+shipA_nordkap_g3	shipA	nordkap	3	7403	B	US	_v513siegecrew	Core destroyed	237	0	120	0
+shipA_nordkap_g4	shipA	nordkap	4	7404	A	US	_v513siegecrew	Core destroyed	281	0	2220	1060
+shipA_nordkap_g5	shipA	nordkap	5	7405	B	US	_v513siegecrew	Core destroyed	268	0	2190	1680
+shipA_atoll_g0	shipA	atoll	0	7400	A	US	_v513siegecrew	Titanium collected (tiebreak)	1000	0	3670	2760
+shipA_atoll_g1	shipA	atoll	1	7401	B	OPP	_v488beltbreak2	Core destroyed	329	0	1700	1590
+shipA_atoll_g2	shipA	atoll	2	7402	A	OPP	_v488beltbreak2	Core destroyed	343	0	260	1990
+shipA_atoll_g3	shipA	atoll	3	7403	B	OPP	_v488beltbreak2	Core destroyed	174	0	350	660
+shipA_atoll_g4	shipA	atoll	4	7404	A	OPP	_v488beltbreak2	Core destroyed	506	0	2510	2500
+shipA_atoll_g5	shipA	atoll	5	7405	B	US	_v513siegecrew	Core destroyed	552	0	4370	1110
+shipA_midgard_g0	shipA	midgard	0	7400	A	US	_v513siegecrew	Core destroyed	310	0	2900	250
+shipA_midgard_g1	shipA	midgard	1	7401	B	OPP	_v488beltbreak2	Core destroyed	224	0	1200	2330
+shipA_midgard_g2	shipA	midgard	2	7402	A	OPP	_v488beltbreak2	Core destroyed	386	0	470	1610
+shipA_midgard_g3	shipA	midgard	3	7403	B	OPP	_v488beltbreak2	Core destroyed	122	0	730	1430
+shipA_midgard_g4	shipA	midgard	4	7404	A	US	_v513siegecrew	Core destroyed	223	0	1530	390
+shipA_midgard_g5	shipA	midgard	5	7405	B	OPP	_v488beltbreak2	Core destroyed	197	0	690	2270
+shipA_drakkarfjord_g0	shipA	drakkarfjord	0	7400	A	US	_v513siegecrew	Titanium collected (tiebreak)	1000	0	13470	1080
+shipA_drakkarfjord_g1	shipA	drakkarfjord	1	7401	B	US	_v513siegecrew	Core destroyed	173	0	760	0
+shipA_drakkarfjord_g2	shipA	drakkarfjord	2	7402	A	OPP	_v488beltbreak2	Core destroyed	696	0	650	1310
+shipA_drakkarfjord_g3	shipA	drakkarfjord	3	7403	B	OPP	_v488beltbreak2	Titanium collected (tiebreak)	1000	0	590	630
+shipA_drakkarfjord_g4	shipA	drakkarfjord	4	7404	A	US	_v513siegecrew	Core destroyed	171	0	1040	0
+shipA_drakkarfjord_g5	shipA	drakkarfjord	5	7405	B	US	_v513siegecrew	Core destroyed	119	0	690	0

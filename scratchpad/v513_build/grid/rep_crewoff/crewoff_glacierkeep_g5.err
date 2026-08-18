@@ -1,0 +1,429 @@
+Update available: 2.3.6 -> 2.3.8. Run: pip install --upgrade fcode
+FS GATE 0 sig (30, 30, (14, 2), (14, 26)) ok 1
+FS GATE 1 sig (30, 30, (14, 2), (14, 26)) ok 1
+FS PHASE 1 id 4 ph 1 d 484 at (14, 25)
+FS HOPBUILD 1 at (14, 25) lch (14, 24) T (16, 1)
+FS GATE 2 sig (30, 30, (14, 2), (14, 26)) ok 1
+FS GATE 2 sig (30, 30, (14, 2), (14, 26)) ok 1
+FS THROW 2 from (15, 25) to (15, 19) T (16, 1)
+FS HOPBUILD 3 at (15, 19) lch (15, 18) T (16, 1)
+FS GATE 3 sig (30, 30, (14, 2), (14, 26)) ok 1
+FS GATE 4 sig (30, 30, (14, 2), (14, 26)) ok 1
+FS THROW 4 from (16, 19) to (16, 13) T (16, 1)
+FS HOPBUILD 5 at (16, 13) lch (16, 12) T (16, 1)
+FS GATE 6 sig (30, 30, (14, 2), (14, 26)) ok 1
+FS THROW 6 from (16, 13) to (16, 7) T (16, 1)
+FS HOPBUILD 7 at (16, 7) lch (16, 6) T (16, 1)
+FS GATE 8 sig (30, 30, (14, 2), (14, 26)) ok 1
+FS THROW 8 from (16, 7) to (16, 1) T (16, 1)
+FS PHASE 9 id 4 ph 2 d 2 at (16, 1)
+FS SEAL 9 tile (15, 1) n 1
+FS SEAL 10 tile (16, 2) n 2
+FS DODGE 11 id 4 from (16, 1) to (16, 0) cov 1 -> 0 hit 0 hp 40
+FS GATE 11 sig (30, 30, (14, 2), (14, 26)) ok 1
+FS GATE 12 sig (30, 30, (14, 2), (14, 26)) ok 1
+FS GATE 13 sig (30, 30, (14, 2), (14, 26)) ok 1
+FS SEAL 14 tile (14, 1) n 3
+FS SEAL 16 tile (15, 1) n 4
+FS STAT 20 id 4 at (17, 1) need 7 orth 6 ti 64 ammo 0 sen 0 hp 22
+FS DODGE 20 id 4 from (17, 1) to (17, 2) cov 1 -> 0 hit 0 hp 22
+FS SEAL 22 tile (16, 3) n 5
+FS SEAL 25 tile (15, 4) n 6
+FS SEAL 29 tile (14, 4) n 7
+FS SEAL 32 tile (13, 3) n 8
+FS SEAL 36 tile (13, 2) n 9
+FS CLEAR 38 tile (13, 1) peck 1
+FS RUNG 38 id 4 r 3 hi -
+FS CLEAR 39 tile (13, 1) peck 2
+FS RUNG 39 id 4 r 3 hi -
+FS STAT 40 id 4 at (12, 1) need 2 orth 1 ti 37 ammo 24 sen 0 hp 22
+FS CLEAR 40 tile (13, 1) peck 3
+FS RUNG 40 id 4 r 3 hi -
+FS CLEAR 41 tile (13, 1) peck 4
+FS RUNG 41 id 4 r 3 hi -
+FS CLEAR 42 tile (13, 1) peck 5
+FS RUNG 42 id 4 r 3 hi -
+FS CLEAR 43 tile (13, 1) peck 6
+FS RUNG 43 id 4 r 3 hi -
+FS CLEAR 44 tile (13, 1) peck 7
+FS RUNG 44 id 4 r 3 hi -
+FS CLEAR 45 tile (13, 1) peck 8
+FS RUNG 45 id 4 r 3 hi -
+FS SEAL 49 tile (14, 1) n 10
+FS PHASE 50 id 4 ph 3 d 4 at (14, 0)
+FS CLEAR 53 tile (13, 1) peck 1
+FS RUNG 53 id 4 r 3 hi -
+FS CLEAR 54 tile (13, 1) peck 2
+FS RUNG 54 id 4 r 3 hi -
+FS CLEAR 55 tile (13, 1) peck 3
+FS RUNG 55 id 4 r 3 hi -
+FS CLEAR 56 tile (13, 1) peck 4
+FS RUNG 56 id 4 r 3 hi -
+FS CLEAR 57 tile (13, 1) peck 5
+FS RUNG 57 id 4 r 3 hi -
+FS CLEAR 58 tile (13, 1) peck 6
+FS RUNG 58 id 4 r 3 hi -
+FS CLEAR 59 tile (13, 1) peck 7
+FS RUNG 59 id 4 r 3 hi -
+FS STAT 60 id 4 at (13, 0) need 2 orth 0 ti 54 ammo 24 sen 0 hp 22
+FS CLEAR 60 tile (13, 1) peck 8
+FS RUNG 60 id 4 r 3 hi -
+FS CLEAR 67 tile (13, 1) peck 1
+FS RUNG 67 id 4 r 3 hi -
+FS CLEAR 68 tile (13, 1) peck 2
+FS RUNG 68 id 4 r 3 hi -
+FS CLEAR 69 tile (13, 1) peck 3
+FS RUNG 69 id 4 r 3 hi -
+FS CLEAR 70 tile (13, 1) peck 4
+FS RUNG 70 id 4 r 3 hi -
+FS CLEARED 71 tile (13, 1) n 1
+FS SEAL 71 tile (13, 1) n 11
+FS SEALCLR 71 tile (13, 1) lag 0
+FS STAT 80 id 4 at (17, 4) need 2 orth 0 ti 80 ammo 24 sen 0 hp 22
+FS SEAL 80 tile (16, 4) n 12
+FS SENTINEL 84 at (17, 0) face SOUTHWEST tgt (14, 3) score 18 n 1 onring 0
+FS RUNG 84 id 4 r 4 hi -
+FS PHASE 85 id 4 ph 4 d 5 at (17, 1)
+FS STAT 100 id 4 at (17, 2) need 0 orth 0 ti 12 ammo 13 sen 1 hp 22
+FS STAT 120 id 4 at (17, 2) need 0 orth 0 ti 12 ammo 13 sen 1 hp 22
+FS PHASE 139 id 4 ph 2 d 8 at (17, 5)
+FS PHASE 140 id 4 ph 4 d 5 at (17, 4)
+FS STAT 140 id 4 at (17, 4) need 2 orth 0 ti 12 ammo 13 sen 1 hp 22
+FS PHASE 141 id 4 ph 2 d 8 at (17, 5)
+FS PHASE 142 id 4 ph 3 d 5 at (16, 5)
+FS PHASE 143 id 4 ph 2 d 8 at (17, 5)
+FS PHASE 144 id 4 ph 3 d 5 at (16, 5)
+FS PHASE 145 id 4 ph 2 d 8 at (17, 5)
+FS SEAL 153 tile (13, 4) n 13
+FS STAT 160 id 4 at (12, 4) need 1 orth 1 ti 12 ammo 14 sen 0 hp 30
+FS DODGE 162 id 4 from (11, 4) to (12, 4) cov 1 -> 0 hit 0 hp 34
+FS DODGE 166 id 4 from (11, 4) to (12, 4) cov 1 -> 0 hit 0 hp 34
+FS DODGE 168 id 4 from (11, 4) to (12, 4) cov 1 -> 0 hit 0 hp 34
+FS DODGE 171 id 4 from (11, 4) to (12, 4) cov 1 -> 0 hit 0 hp 34
+FS DODGE 173 id 4 from (11, 4) to (12, 4) cov 1 -> 0 hit 0 hp 34
+FS STAT 180 id 4 at (12, 4) need 2 orth 2 ti 12 ammo 13 sen 0 hp 34
+FS STAT 200 id 4 at (12, 4) need 2 orth 2 ti 12 ammo 13 sen 0 hp 34
+FS SEAL 210 tile (13, 4) n 14
+FS DODGE 213 id 4 from (12, 4) to (11, 4) cov 1 -> 0 hit 0 hp 34
+FS DODGE 215 id 4 from (12, 4) to (11, 4) cov 1 -> 0 hit 0 hp 34
+FS DODGE 217 id 4 from (12, 4) to (11, 4) cov 1 -> 0 hit 0 hp 34
+FS DODGE 219 id 4 from (12, 4) to (11, 4) cov 1 -> 0 hit 0 hp 34
+FS STAT 220 id 4 at (11, 4) need 5 orth 5 ti 12 ammo 16 sen 0 hp 34
+FS DODGE 221 id 4 from (12, 4) to (11, 4) cov 1 -> 0 hit 0 hp 34
+FS DODGE 223 id 4 from (12, 4) to (11, 4) cov 1 -> 0 hit 0 hp 34
+FS DODGE 225 id 4 from (12, 4) to (11, 4) cov 1 -> 0 hit 0 hp 34
+FS DODGE 226 id 4 from (11, 4) to (11, 3) cov 1 -> 0 hit 0 hp 34
+FS DODGE 237 id 4 from (12, 2) to (11, 2) cov 1 -> 0 hit 0 hp 34
+FS DODGE 239 id 4 from (12, 2) to (11, 2) cov 1 -> 0 hit 0 hp 34
+FS STAT 240 id 4 at (11, 2) need 4 orth 4 ti 12 ammo 16 sen 0 hp 34
+FS DODGE 241 id 4 from (12, 2) to (11, 2) cov 1 -> 0 hit 0 hp 34
+FS DODGE 243 id 4 from (12, 2) to (11, 2) cov 1 -> 0 hit 0 hp 34
+FS DODGE 245 id 4 from (12, 2) to (11, 2) cov 1 -> 0 hit 0 hp 34
+FS DODGE 247 id 4 from (12, 2) to (11, 2) cov 1 -> 0 hit 0 hp 34
+FS DODGE 249 id 4 from (12, 2) to (11, 2) cov 1 -> 0 hit 0 hp 34
+FS DODGE 250 id 4 from (11, 2) to (11, 3) cov 1 -> 0 hit 0 hp 34
+FS DODGE 252 id 4 from (11, 2) to (11, 3) cov 1 -> 0 hit 0 hp 34
+FS DODGE 254 id 4 from (11, 2) to (11, 3) cov 1 -> 0 hit 0 hp 34
+FS DODGE 256 id 4 from (11, 2) to (12, 2) cov 1 -> 0 hit 0 hp 34
+FS STAT 260 id 4 at (12, 2) need 2 orth 2 ti 12 ammo 16 sen 0 hp 34
+FS DODGE 266 id 4 from (12, 2) to (11, 2) cov 1 -> 0 hit 0 hp 34
+FS DODGE 268 id 4 from (12, 2) to (11, 2) cov 1 -> 0 hit 0 hp 34
+FS DODGE 269 id 4 from (11, 2) to (11, 3) cov 1 -> 0 hit 0 hp 34
+FS DODGE 271 id 4 from (11, 2) to (11, 3) cov 1 -> 0 hit 0 hp 34
+FS DODGE 273 id 4 from (11, 2) to (11, 3) cov 1 -> 0 hit 0 hp 34
+FS DODGE 275 id 4 from (11, 2) to (12, 2) cov 1 -> 0 hit 0 hp 34
+FS STAT 280 id 4 at (12, 2) need 2 orth 2 ti 12 ammo 16 sen 0 hp 34
+FS DODGE 282 id 4 from (12, 2) to (11, 2) cov 1 -> 0 hit 0 hp 34
+FS DODGE 284 id 4 from (12, 2) to (11, 2) cov 1 -> 0 hit 0 hp 34
+FS DODGE 285 id 4 from (11, 2) to (11, 3) cov 1 -> 0 hit 0 hp 34
+FS DODGE 287 id 4 from (11, 2) to (11, 3) cov 1 -> 0 hit 0 hp 34
+FS DODGE 289 id 4 from (11, 2) to (11, 3) cov 1 -> 0 hit 0 hp 34
+FS DODGE 291 id 4 from (11, 2) to (12, 2) cov 1 -> 0 hit 0 hp 34
+FS DODGE 298 id 4 from (12, 2) to (11, 2) cov 1 -> 0 hit 0 hp 34
+FS STAT 300 id 4 at (12, 2) need 2 orth 2 ti 12 ammo 16 sen 0 hp 34
+FS DODGE 300 id 4 from (12, 2) to (11, 2) cov 1 -> 0 hit 0 hp 34
+FS DODGE 301 id 4 from (11, 2) to (11, 3) cov 1 -> 0 hit 0 hp 34
+FS DODGE 303 id 4 from (11, 2) to (11, 3) cov 1 -> 0 hit 0 hp 34
+FS DODGE 305 id 4 from (11, 2) to (11, 3) cov 1 -> 0 hit 0 hp 34
+FS DODGE 307 id 4 from (11, 2) to (12, 2) cov 1 -> 0 hit 0 hp 34
+FS DODGE 314 id 4 from (12, 2) to (11, 2) cov 1 -> 0 hit 0 hp 34
+FS DODGE 316 id 4 from (12, 2) to (11, 2) cov 1 -> 0 hit 0 hp 34
+FS DODGE 317 id 4 from (11, 2) to (11, 3) cov 1 -> 0 hit 0 hp 34
+FS DODGE 319 id 4 from (11, 2) to (11, 3) cov 1 -> 0 hit 0 hp 34
+FS STAT 320 id 4 at (11, 3) need 4 orth 4 ti 12 ammo 16 sen 0 hp 34
+FS DODGE 321 id 4 from (11, 2) to (11, 3) cov 1 -> 0 hit 0 hp 34
+FS DODGE 323 id 4 from (11, 2) to (12, 2) cov 1 -> 0 hit 0 hp 34
+FS DODGE 330 id 4 from (12, 2) to (11, 2) cov 1 -> 0 hit 0 hp 34
+FS DODGE 332 id 4 from (12, 2) to (11, 2) cov 1 -> 0 hit 0 hp 34
+FS DODGE 333 id 4 from (11, 2) to (11, 3) cov 1 -> 0 hit 0 hp 34
+FS DODGE 335 id 4 from (11, 2) to (11, 3) cov 1 -> 0 hit 0 hp 34
+FS DODGE 337 id 4 from (11, 2) to (11, 3) cov 1 -> 0 hit 0 hp 34
+FS DODGE 339 id 4 from (11, 2) to (12, 2) cov 1 -> 0 hit 0 hp 34
+FS STAT 340 id 4 at (12, 2) need 2 orth 2 ti 12 ammo 16 sen 0 hp 34
+FS DODGE 346 id 4 from (12, 2) to (11, 2) cov 1 -> 0 hit 0 hp 34
+FS DODGE 348 id 4 from (12, 2) to (11, 2) cov 1 -> 0 hit 0 hp 34
+FS DODGE 349 id 4 from (11, 2) to (11, 3) cov 1 -> 0 hit 0 hp 34
+FS DODGE 351 id 4 from (11, 2) to (11, 3) cov 1 -> 0 hit 0 hp 34
+FS DODGE 353 id 4 from (11, 2) to (11, 3) cov 1 -> 0 hit 0 hp 34
+FS DODGE 355 id 4 from (11, 2) to (12, 2) cov 1 -> 0 hit 0 hp 34
+FS STAT 360 id 4 at (12, 2) need 2 orth 2 ti 12 ammo 16 sen 0 hp 34
+FS DODGE 362 id 4 from (12, 2) to (11, 2) cov 1 -> 0 hit 0 hp 34
+FS DODGE 364 id 4 from (12, 2) to (11, 2) cov 1 -> 0 hit 0 hp 34
+FS DODGE 365 id 4 from (11, 2) to (11, 3) cov 1 -> 0 hit 0 hp 34
+FS DODGE 367 id 4 from (11, 2) to (11, 3) cov 1 -> 0 hit 0 hp 34
+FS DODGE 369 id 4 from (11, 2) to (11, 3) cov 1 -> 0 hit 0 hp 34
+FS DODGE 371 id 4 from (11, 2) to (12, 2) cov 1 -> 0 hit 0 hp 34
+FS DODGE 378 id 4 from (12, 2) to (11, 2) cov 1 -> 0 hit 0 hp 34
+FS STAT 380 id 4 at (12, 2) need 2 orth 2 ti 12 ammo 16 sen 0 hp 34
+FS DODGE 380 id 4 from (12, 2) to (11, 2) cov 1 -> 0 hit 0 hp 34
+FS DODGE 381 id 4 from (11, 2) to (11, 3) cov 1 -> 0 hit 0 hp 34
+FS DODGE 383 id 4 from (11, 2) to (11, 3) cov 1 -> 0 hit 0 hp 34
+FS DODGE 385 id 4 from (11, 2) to (11, 3) cov 1 -> 0 hit 0 hp 34
+FS DODGE 387 id 4 from (11, 2) to (12, 2) cov 1 -> 0 hit 0 hp 34
+FS DODGE 394 id 4 from (12, 2) to (11, 2) cov 1 -> 0 hit 0 hp 34
+FS DODGE 396 id 4 from (12, 2) to (11, 2) cov 1 -> 0 hit 0 hp 34
+FS DODGE 397 id 4 from (11, 2) to (11, 3) cov 1 -> 0 hit 0 hp 34
+FS DODGE 399 id 4 from (11, 2) to (11, 3) cov 1 -> 0 hit 0 hp 34
+FS STAT 400 id 4 at (11, 3) need 4 orth 4 ti 12 ammo 16 sen 0 hp 34
+FS DODGE 401 id 4 from (11, 2) to (11, 3) cov 1 -> 0 hit 0 hp 34
+FS DODGE 403 id 4 from (11, 2) to (12, 2) cov 1 -> 0 hit 0 hp 34
+FS DODGE 410 id 4 from (12, 2) to (11, 2) cov 1 -> 0 hit 0 hp 34
+FS DODGE 412 id 4 from (12, 2) to (11, 2) cov 1 -> 0 hit 0 hp 34
+FS DODGE 413 id 4 from (11, 2) to (11, 3) cov 1 -> 0 hit 0 hp 34
+FS DODGE 415 id 4 from (11, 2) to (11, 3) cov 1 -> 0 hit 0 hp 34
+FS DODGE 417 id 4 from (11, 2) to (11, 3) cov 1 -> 0 hit 0 hp 34
+FS DODGE 419 id 4 from (11, 2) to (12, 2) cov 1 -> 0 hit 0 hp 34
+FS STAT 420 id 4 at (12, 2) need 2 orth 2 ti 12 ammo 16 sen 0 hp 34
+FS DODGE 426 id 4 from (12, 2) to (11, 2) cov 1 -> 0 hit 0 hp 34
+FS DODGE 428 id 4 from (12, 2) to (11, 2) cov 1 -> 0 hit 0 hp 34
+FS DODGE 429 id 4 from (11, 2) to (11, 3) cov 1 -> 0 hit 0 hp 34
+FS DODGE 431 id 4 from (11, 2) to (11, 3) cov 1 -> 0 hit 0 hp 34
+FS DODGE 433 id 4 from (11, 2) to (11, 3) cov 1 -> 0 hit 0 hp 34
+FS DODGE 435 id 4 from (11, 2) to (12, 2) cov 1 -> 0 hit 0 hp 34
+FS STAT 440 id 4 at (12, 2) need 2 orth 2 ti 12 ammo 16 sen 0 hp 34
+FS DODGE 442 id 4 from (12, 2) to (11, 2) cov 1 -> 0 hit 0 hp 34
+FS DODGE 444 id 4 from (12, 2) to (11, 2) cov 1 -> 0 hit 0 hp 34
+FS DODGE 445 id 4 from (11, 2) to (11, 3) cov 1 -> 0 hit 0 hp 34
+FS DODGE 447 id 4 from (11, 2) to (11, 3) cov 1 -> 0 hit 0 hp 34
+FS DODGE 449 id 4 from (11, 2) to (11, 3) cov 1 -> 0 hit 0 hp 34
+FS DODGE 451 id 4 from (11, 2) to (12, 2) cov 1 -> 0 hit 0 hp 34
+FS DODGE 458 id 4 from (12, 2) to (11, 2) cov 1 -> 0 hit 0 hp 34
+FS STAT 460 id 4 at (12, 2) need 2 orth 2 ti 12 ammo 16 sen 0 hp 34
+FS DODGE 460 id 4 from (12, 2) to (11, 2) cov 1 -> 0 hit 0 hp 34
+FS DODGE 461 id 4 from (11, 2) to (11, 3) cov 1 -> 0 hit 0 hp 34
+FS DODGE 463 id 4 from (11, 2) to (11, 3) cov 1 -> 0 hit 0 hp 34
+FS DODGE 465 id 4 from (11, 2) to (11, 3) cov 1 -> 0 hit 0 hp 34
+FS DODGE 467 id 4 from (11, 2) to (12, 2) cov 1 -> 0 hit 0 hp 34
+FS DODGE 474 id 4 from (12, 2) to (11, 2) cov 1 -> 0 hit 0 hp 34
+FS DODGE 476 id 4 from (12, 2) to (11, 2) cov 1 -> 0 hit 0 hp 34
+FS DODGE 477 id 4 from (11, 2) to (11, 3) cov 1 -> 0 hit 0 hp 34
+FS DODGE 479 id 4 from (11, 2) to (11, 3) cov 1 -> 0 hit 0 hp 34
+FS STAT 480 id 4 at (11, 3) need 4 orth 4 ti 12 ammo 16 sen 0 hp 34
+FS DODGE 481 id 4 from (11, 2) to (11, 3) cov 1 -> 0 hit 0 hp 34
+FS DODGE 483 id 4 from (11, 2) to (12, 2) cov 1 -> 0 hit 0 hp 34
+FS DODGE 490 id 4 from (12, 2) to (11, 2) cov 1 -> 0 hit 0 hp 34
+FS DODGE 492 id 4 from (12, 2) to (11, 2) cov 1 -> 0 hit 0 hp 34
+FS DODGE 493 id 4 from (11, 2) to (11, 3) cov 1 -> 0 hit 0 hp 34
+FS DODGE 495 id 4 from (11, 2) to (11, 3) cov 1 -> 0 hit 0 hp 34
+FS DODGE 497 id 4 from (11, 2) to (11, 3) cov 1 -> 0 hit 0 hp 34
+FS DODGE 499 id 4 from (11, 2) to (12, 2) cov 1 -> 0 hit 0 hp 34
+FS STAT 500 id 4 at (12, 2) need 2 orth 2 ti 12 ammo 16 sen 0 hp 34
+FS DODGE 506 id 4 from (12, 2) to (11, 2) cov 1 -> 0 hit 0 hp 34
+FS DODGE 508 id 4 from (12, 2) to (11, 2) cov 1 -> 0 hit 0 hp 34
+FS DODGE 509 id 4 from (11, 2) to (11, 3) cov 1 -> 0 hit 0 hp 34
+FS DODGE 511 id 4 from (11, 2) to (11, 3) cov 1 -> 0 hit 0 hp 34
+FS DODGE 513 id 4 from (11, 2) to (11, 3) cov 1 -> 0 hit 0 hp 34
+FS DODGE 515 id 4 from (11, 2) to (12, 2) cov 1 -> 0 hit 0 hp 34
+FS STAT 520 id 4 at (12, 2) need 2 orth 2 ti 12 ammo 16 sen 0 hp 34
+FS DODGE 522 id 4 from (12, 2) to (11, 2) cov 1 -> 0 hit 0 hp 34
+FS DODGE 524 id 4 from (12, 2) to (11, 2) cov 1 -> 0 hit 0 hp 34
+FS DODGE 525 id 4 from (11, 2) to (11, 3) cov 1 -> 0 hit 0 hp 34
+FS DODGE 527 id 4 from (11, 2) to (11, 3) cov 1 -> 0 hit 0 hp 34
+FS DODGE 529 id 4 from (11, 2) to (11, 3) cov 1 -> 0 hit 0 hp 34
+FS DODGE 531 id 4 from (11, 2) to (12, 2) cov 1 -> 0 hit 0 hp 34
+FS DODGE 538 id 4 from (12, 2) to (11, 2) cov 1 -> 0 hit 0 hp 34
+FS STAT 540 id 4 at (12, 2) need 2 orth 2 ti 12 ammo 16 sen 0 hp 34
+FS DODGE 540 id 4 from (12, 2) to (11, 2) cov 1 -> 0 hit 0 hp 34
+FS DODGE 541 id 4 from (11, 2) to (11, 3) cov 1 -> 0 hit 0 hp 34
+FS DODGE 543 id 4 from (11, 2) to (11, 3) cov 1 -> 0 hit 0 hp 34
+FS DODGE 545 id 4 from (11, 2) to (11, 3) cov 1 -> 0 hit 0 hp 34
+FS DODGE 547 id 4 from (11, 2) to (12, 2) cov 1 -> 0 hit 0 hp 34
+FS DODGE 554 id 4 from (12, 2) to (11, 2) cov 1 -> 0 hit 0 hp 34
+FS DODGE 556 id 4 from (12, 2) to (11, 2) cov 1 -> 0 hit 0 hp 34
+FS DODGE 557 id 4 from (11, 2) to (11, 3) cov 1 -> 0 hit 0 hp 34
+FS DODGE 559 id 4 from (11, 2) to (11, 3) cov 1 -> 0 hit 0 hp 34
+FS STAT 560 id 4 at (11, 3) need 4 orth 4 ti 12 ammo 16 sen 0 hp 34
+FS DODGE 561 id 4 from (11, 2) to (11, 3) cov 1 -> 0 hit 0 hp 34
+FS DODGE 563 id 4 from (11, 2) to (12, 2) cov 1 -> 0 hit 0 hp 34
+FS DODGE 570 id 4 from (12, 2) to (11, 2) cov 1 -> 0 hit 0 hp 34
+FS DODGE 572 id 4 from (12, 2) to (11, 2) cov 1 -> 0 hit 0 hp 34
+FS DODGE 573 id 4 from (11, 2) to (11, 3) cov 1 -> 0 hit 0 hp 34
+FS DODGE 575 id 4 from (11, 2) to (11, 3) cov 1 -> 0 hit 0 hp 34
+FS DODGE 577 id 4 from (11, 2) to (11, 3) cov 1 -> 0 hit 0 hp 34
+FS DODGE 579 id 4 from (11, 2) to (12, 2) cov 1 -> 0 hit 0 hp 34
+FS STAT 580 id 4 at (12, 2) need 2 orth 2 ti 12 ammo 16 sen 0 hp 34
+FS DODGE 586 id 4 from (12, 2) to (11, 2) cov 1 -> 0 hit 0 hp 34
+FS DODGE 588 id 4 from (12, 2) to (11, 2) cov 1 -> 0 hit 0 hp 34
+FS DODGE 589 id 4 from (11, 2) to (11, 3) cov 1 -> 0 hit 0 hp 34
+FS DODGE 591 id 4 from (11, 2) to (11, 3) cov 1 -> 0 hit 0 hp 34
+FS DODGE 593 id 4 from (11, 2) to (11, 3) cov 1 -> 0 hit 0 hp 34
+FS DODGE 595 id 4 from (11, 2) to (12, 2) cov 1 -> 0 hit 0 hp 34
+FS STAT 600 id 4 at (12, 2) need 2 orth 2 ti 12 ammo 16 sen 0 hp 34
+FS DODGE 602 id 4 from (12, 2) to (11, 2) cov 1 -> 0 hit 0 hp 34
+FS DODGE 604 id 4 from (12, 2) to (11, 2) cov 1 -> 0 hit 0 hp 34
+FS DODGE 605 id 4 from (11, 2) to (11, 3) cov 1 -> 0 hit 0 hp 34
+FS DODGE 607 id 4 from (11, 2) to (11, 3) cov 1 -> 0 hit 0 hp 34
+FS DODGE 609 id 4 from (11, 2) to (11, 3) cov 1 -> 0 hit 0 hp 34
+FS DODGE 611 id 4 from (11, 2) to (12, 2) cov 1 -> 0 hit 0 hp 34
+FS DODGE 618 id 4 from (12, 2) to (11, 2) cov 1 -> 0 hit 0 hp 34
+FS STAT 620 id 4 at (12, 2) need 2 orth 2 ti 12 ammo 16 sen 0 hp 34
+FS DODGE 620 id 4 from (12, 2) to (11, 2) cov 1 -> 0 hit 0 hp 34
+FS DODGE 621 id 4 from (11, 2) to (11, 3) cov 1 -> 0 hit 0 hp 34
+FS DODGE 623 id 4 from (11, 2) to (11, 3) cov 1 -> 0 hit 0 hp 34
+FS DODGE 625 id 4 from (11, 2) to (11, 3) cov 1 -> 0 hit 0 hp 34
+FS DODGE 627 id 4 from (11, 2) to (12, 2) cov 1 -> 0 hit 0 hp 34
+FS DODGE 634 id 4 from (12, 2) to (11, 2) cov 1 -> 0 hit 0 hp 34
+FS DODGE 636 id 4 from (12, 2) to (11, 2) cov 1 -> 0 hit 0 hp 34
+FS DODGE 637 id 4 from (11, 2) to (11, 3) cov 1 -> 0 hit 0 hp 34
+FS DODGE 639 id 4 from (11, 2) to (11, 3) cov 1 -> 0 hit 0 hp 34
+FS STAT 640 id 4 at (11, 3) need 4 orth 4 ti 12 ammo 16 sen 0 hp 34
+FS DODGE 641 id 4 from (11, 2) to (11, 3) cov 1 -> 0 hit 0 hp 34
+FS DODGE 643 id 4 from (11, 2) to (12, 2) cov 1 -> 0 hit 0 hp 34
+FS DODGE 650 id 4 from (12, 2) to (11, 2) cov 1 -> 0 hit 0 hp 34
+FS DODGE 652 id 4 from (12, 2) to (11, 2) cov 1 -> 0 hit 0 hp 34
+FS DODGE 653 id 4 from (11, 2) to (11, 3) cov 1 -> 0 hit 0 hp 34
+FS DODGE 655 id 4 from (11, 2) to (11, 3) cov 1 -> 0 hit 0 hp 34
+FS DODGE 657 id 4 from (11, 2) to (11, 3) cov 1 -> 0 hit 0 hp 34
+FS DODGE 659 id 4 from (11, 2) to (12, 2) cov 1 -> 0 hit 0 hp 34
+FS STAT 660 id 4 at (12, 2) need 2 orth 2 ti 12 ammo 16 sen 0 hp 34
+FS DODGE 666 id 4 from (12, 2) to (11, 2) cov 1 -> 0 hit 0 hp 34
+FS DODGE 668 id 4 from (12, 2) to (11, 2) cov 1 -> 0 hit 0 hp 34
+FS DODGE 669 id 4 from (11, 2) to (11, 3) cov 1 -> 0 hit 0 hp 34
+FS DODGE 671 id 4 from (11, 2) to (11, 3) cov 1 -> 0 hit 0 hp 34
+FS DODGE 673 id 4 from (11, 2) to (11, 3) cov 1 -> 0 hit 0 hp 34
+FS DODGE 675 id 4 from (11, 2) to (12, 2) cov 1 -> 0 hit 0 hp 34
+FS STAT 680 id 4 at (12, 2) need 2 orth 2 ti 12 ammo 16 sen 0 hp 34
+FS DODGE 682 id 4 from (12, 2) to (11, 2) cov 1 -> 0 hit 0 hp 34
+FS DODGE 684 id 4 from (12, 2) to (11, 2) cov 1 -> 0 hit 0 hp 34
+FS DODGE 685 id 4 from (11, 2) to (11, 3) cov 1 -> 0 hit 0 hp 34
+FS DODGE 687 id 4 from (11, 2) to (11, 3) cov 1 -> 0 hit 0 hp 34
+FS DODGE 689 id 4 from (11, 2) to (11, 3) cov 1 -> 0 hit 0 hp 34
+FS DODGE 691 id 4 from (11, 2) to (12, 2) cov 1 -> 0 hit 0 hp 34
+FS DODGE 698 id 4 from (12, 2) to (11, 2) cov 1 -> 0 hit 0 hp 34
+FS STAT 700 id 4 at (12, 2) need 2 orth 2 ti 12 ammo 16 sen 0 hp 34
+FS DODGE 700 id 4 from (12, 2) to (11, 2) cov 1 -> 0 hit 0 hp 34
+FS DODGE 701 id 4 from (11, 2) to (11, 3) cov 1 -> 0 hit 0 hp 34
+FS DODGE 703 id 4 from (11, 2) to (11, 3) cov 1 -> 0 hit 0 hp 34
+FS DODGE 705 id 4 from (11, 2) to (11, 3) cov 1 -> 0 hit 0 hp 34
+FS DODGE 707 id 4 from (11, 2) to (12, 2) cov 1 -> 0 hit 0 hp 34
+FS DODGE 714 id 4 from (12, 2) to (11, 2) cov 1 -> 0 hit 0 hp 34
+FS DODGE 716 id 4 from (12, 2) to (11, 2) cov 1 -> 0 hit 0 hp 34
+FS DODGE 717 id 4 from (11, 2) to (11, 3) cov 1 -> 0 hit 0 hp 34
+FS DODGE 719 id 4 from (11, 2) to (11, 3) cov 1 -> 0 hit 0 hp 34
+FS STAT 720 id 4 at (11, 3) need 4 orth 4 ti 12 ammo 16 sen 0 hp 34
+FS DODGE 721 id 4 from (11, 2) to (11, 3) cov 1 -> 0 hit 0 hp 34
+FS DODGE 723 id 4 from (11, 2) to (12, 2) cov 1 -> 0 hit 0 hp 34
+FS DODGE 730 id 4 from (12, 2) to (11, 2) cov 1 -> 0 hit 0 hp 34
+FS DODGE 732 id 4 from (12, 2) to (11, 2) cov 1 -> 0 hit 0 hp 34
+FS DODGE 733 id 4 from (11, 2) to (11, 3) cov 1 -> 0 hit 0 hp 34
+FS DODGE 735 id 4 from (11, 2) to (11, 3) cov 1 -> 0 hit 0 hp 34
+FS DODGE 737 id 4 from (11, 2) to (11, 3) cov 1 -> 0 hit 0 hp 34
+FS DODGE 739 id 4 from (11, 2) to (12, 2) cov 1 -> 0 hit 0 hp 34
+FS STAT 740 id 4 at (12, 2) need 2 orth 2 ti 12 ammo 16 sen 0 hp 34
+FS DODGE 746 id 4 from (12, 2) to (11, 2) cov 1 -> 0 hit 0 hp 34
+FS DODGE 748 id 4 from (12, 2) to (11, 2) cov 1 -> 0 hit 0 hp 34
+FS DODGE 749 id 4 from (11, 2) to (11, 3) cov 1 -> 0 hit 0 hp 34
+FS DODGE 751 id 4 from (11, 2) to (11, 3) cov 1 -> 0 hit 0 hp 34
+FS DODGE 753 id 4 from (11, 2) to (11, 3) cov 1 -> 0 hit 0 hp 34
+FS DODGE 755 id 4 from (11, 2) to (12, 2) cov 1 -> 0 hit 0 hp 34
+FS STAT 760 id 4 at (12, 2) need 2 orth 2 ti 12 ammo 16 sen 0 hp 34
+FS DODGE 762 id 4 from (12, 2) to (11, 2) cov 1 -> 0 hit 0 hp 34
+FS DODGE 764 id 4 from (12, 2) to (11, 2) cov 1 -> 0 hit 0 hp 34
+FS DODGE 765 id 4 from (11, 2) to (11, 3) cov 1 -> 0 hit 0 hp 34
+FS DODGE 767 id 4 from (11, 2) to (11, 3) cov 1 -> 0 hit 0 hp 34
+FS DODGE 769 id 4 from (11, 2) to (11, 3) cov 1 -> 0 hit 0 hp 34
+FS DODGE 771 id 4 from (11, 2) to (12, 2) cov 1 -> 0 hit 0 hp 34
+FS DODGE 778 id 4 from (12, 2) to (11, 2) cov 1 -> 0 hit 0 hp 34
+FS STAT 780 id 4 at (12, 2) need 2 orth 2 ti 12 ammo 16 sen 0 hp 34
+FS DODGE 780 id 4 from (12, 2) to (11, 2) cov 1 -> 0 hit 0 hp 34
+FS DODGE 781 id 4 from (11, 2) to (11, 3) cov 1 -> 0 hit 0 hp 34
+FS DODGE 783 id 4 from (11, 2) to (11, 3) cov 1 -> 0 hit 0 hp 34
+FS DODGE 785 id 4 from (11, 2) to (11, 3) cov 1 -> 0 hit 0 hp 34
+FS DODGE 787 id 4 from (11, 2) to (12, 2) cov 1 -> 0 hit 0 hp 34
+FS DODGE 794 id 4 from (12, 2) to (11, 2) cov 1 -> 0 hit 0 hp 34
+FS DODGE 796 id 4 from (12, 2) to (11, 2) cov 1 -> 0 hit 0 hp 34
+FS DODGE 797 id 4 from (11, 2) to (11, 3) cov 1 -> 0 hit 0 hp 34
+FS DODGE 799 id 4 from (11, 2) to (11, 3) cov 1 -> 0 hit 0 hp 34
+FS STAT 800 id 4 at (11, 3) need 4 orth 4 ti 12 ammo 16 sen 0 hp 34
+FS DODGE 801 id 4 from (11, 2) to (11, 3) cov 1 -> 0 hit 0 hp 34
+FS DODGE 803 id 4 from (11, 2) to (12, 2) cov 1 -> 0 hit 0 hp 34
+FS DODGE 810 id 4 from (12, 2) to (11, 2) cov 1 -> 0 hit 0 hp 34
+FS DODGE 812 id 4 from (12, 2) to (11, 2) cov 1 -> 0 hit 0 hp 34
+FS DODGE 813 id 4 from (11, 2) to (11, 3) cov 1 -> 0 hit 0 hp 34
+FS DODGE 815 id 4 from (11, 2) to (11, 3) cov 1 -> 0 hit 0 hp 34
+FS DODGE 817 id 4 from (11, 2) to (11, 3) cov 1 -> 0 hit 0 hp 34
+FS DODGE 819 id 4 from (11, 2) to (12, 2) cov 1 -> 0 hit 0 hp 34
+FS STAT 820 id 4 at (12, 2) need 2 orth 2 ti 12 ammo 16 sen 0 hp 34
+FS DODGE 826 id 4 from (12, 2) to (11, 2) cov 1 -> 0 hit 0 hp 34
+FS DODGE 828 id 4 from (12, 2) to (11, 2) cov 1 -> 0 hit 0 hp 34
+FS DODGE 829 id 4 from (11, 2) to (11, 3) cov 1 -> 0 hit 0 hp 34
+FS DODGE 831 id 4 from (11, 2) to (11, 3) cov 1 -> 0 hit 0 hp 34
+FS DODGE 833 id 4 from (11, 2) to (11, 3) cov 1 -> 0 hit 0 hp 34
+FS DODGE 835 id 4 from (11, 2) to (12, 2) cov 1 -> 0 hit 0 hp 34
+FS STAT 840 id 4 at (12, 2) need 2 orth 2 ti 12 ammo 16 sen 0 hp 34
+FS DODGE 842 id 4 from (12, 2) to (11, 2) cov 1 -> 0 hit 0 hp 34
+FS DODGE 844 id 4 from (12, 2) to (11, 2) cov 1 -> 0 hit 0 hp 34
+FS DODGE 845 id 4 from (11, 2) to (11, 3) cov 1 -> 0 hit 0 hp 34
+FS DODGE 847 id 4 from (11, 2) to (11, 3) cov 1 -> 0 hit 0 hp 34
+FS DODGE 849 id 4 from (11, 2) to (11, 3) cov 1 -> 0 hit 0 hp 34
+FS DODGE 851 id 4 from (11, 2) to (12, 2) cov 1 -> 0 hit 0 hp 34
+FS DODGE 858 id 4 from (12, 2) to (11, 2) cov 1 -> 0 hit 0 hp 34
+FS STAT 860 id 4 at (12, 2) need 2 orth 2 ti 12 ammo 16 sen 0 hp 34
+FS DODGE 860 id 4 from (12, 2) to (11, 2) cov 1 -> 0 hit 0 hp 34
+FS DODGE 861 id 4 from (11, 2) to (11, 3) cov 1 -> 0 hit 0 hp 34
+FS DODGE 863 id 4 from (11, 2) to (11, 3) cov 1 -> 0 hit 0 hp 34
+FS DODGE 865 id 4 from (11, 2) to (11, 3) cov 1 -> 0 hit 0 hp 34
+FS DODGE 867 id 4 from (11, 2) to (12, 2) cov 1 -> 0 hit 0 hp 34
+FS DODGE 874 id 4 from (12, 2) to (11, 2) cov 1 -> 0 hit 0 hp 34
+FS DODGE 876 id 4 from (12, 2) to (11, 2) cov 1 -> 0 hit 0 hp 34
+FS DODGE 877 id 4 from (11, 2) to (11, 3) cov 1 -> 0 hit 0 hp 34
+FS DODGE 879 id 4 from (11, 2) to (11, 3) cov 1 -> 0 hit 0 hp 34
+FS STAT 880 id 4 at (11, 3) need 4 orth 4 ti 12 ammo 16 sen 0 hp 34
+FS DODGE 881 id 4 from (11, 2) to (11, 3) cov 1 -> 0 hit 0 hp 34
+FS DODGE 883 id 4 from (11, 2) to (12, 2) cov 1 -> 0 hit 0 hp 34
+FS DODGE 890 id 4 from (12, 2) to (11, 2) cov 1 -> 0 hit 0 hp 34
+FS DODGE 892 id 4 from (12, 2) to (11, 2) cov 1 -> 0 hit 0 hp 34
+FS DODGE 893 id 4 from (11, 2) to (11, 3) cov 1 -> 0 hit 0 hp 34
+FS DODGE 895 id 4 from (11, 2) to (11, 3) cov 1 -> 0 hit 0 hp 34
+FS DODGE 897 id 4 from (11, 2) to (11, 3) cov 1 -> 0 hit 0 hp 34
+FS DODGE 899 id 4 from (11, 2) to (12, 2) cov 1 -> 0 hit 0 hp 34
+FS STAT 900 id 4 at (12, 2) need 2 orth 2 ti 12 ammo 16 sen 0 hp 34
+FS DODGE 906 id 4 from (12, 2) to (11, 2) cov 1 -> 0 hit 0 hp 34
+FS DODGE 908 id 4 from (12, 2) to (11, 2) cov 1 -> 0 hit 0 hp 34
+FS DODGE 909 id 4 from (11, 2) to (11, 3) cov 1 -> 0 hit 0 hp 34
+FS DODGE 911 id 4 from (11, 2) to (11, 3) cov 1 -> 0 hit 0 hp 34
+FS DODGE 913 id 4 from (11, 2) to (11, 3) cov 1 -> 0 hit 0 hp 34
+FS DODGE 915 id 4 from (11, 2) to (12, 2) cov 1 -> 0 hit 0 hp 34
+FS STAT 920 id 4 at (12, 2) need 2 orth 2 ti 12 ammo 16 sen 0 hp 34
+FS DODGE 922 id 4 from (12, 2) to (11, 2) cov 1 -> 0 hit 0 hp 34
+FS DODGE 924 id 4 from (12, 2) to (11, 2) cov 1 -> 0 hit 0 hp 34
+FS DODGE 925 id 4 from (11, 2) to (11, 3) cov 1 -> 0 hit 0 hp 34
+FS DODGE 927 id 4 from (11, 2) to (11, 3) cov 1 -> 0 hit 0 hp 34
+FS DODGE 929 id 4 from (11, 2) to (11, 3) cov 1 -> 0 hit 0 hp 34
+FS DODGE 931 id 4 from (11, 2) to (12, 2) cov 1 -> 0 hit 0 hp 34
+FS DODGE 938 id 4 from (12, 2) to (11, 2) cov 1 -> 0 hit 0 hp 34
+FS STAT 940 id 4 at (12, 2) need 2 orth 2 ti 12 ammo 16 sen 0 hp 34
+FS DODGE 940 id 4 from (12, 2) to (11, 2) cov 1 -> 0 hit 0 hp 34
+FS DODGE 941 id 4 from (11, 2) to (11, 3) cov 1 -> 0 hit 0 hp 34
+FS DODGE 943 id 4 from (11, 2) to (11, 3) cov 1 -> 0 hit 0 hp 34
+FS DODGE 945 id 4 from (11, 2) to (11, 3) cov 1 -> 0 hit 0 hp 34
+FS DODGE 947 id 4 from (11, 2) to (12, 2) cov 1 -> 0 hit 0 hp 34
+FS DODGE 954 id 4 from (12, 2) to (11, 2) cov 1 -> 0 hit 0 hp 34
+FS DODGE 956 id 4 from (12, 2) to (11, 2) cov 1 -> 0 hit 0 hp 34
+FS DODGE 957 id 4 from (11, 2) to (11, 3) cov 1 -> 0 hit 0 hp 34
+FS DODGE 959 id 4 from (11, 2) to (11, 3) cov 1 -> 0 hit 0 hp 34
+FS STAT 960 id 4 at (11, 3) need 4 orth 4 ti 22 ammo 6 sen 0 hp 34
+FS DODGE 961 id 4 from (11, 2) to (11, 3) cov 1 -> 0 hit 0 hp 34
+FS DODGE 963 id 4 from (11, 2) to (11, 3) cov 1 -> 0 hit 0 hp 34
+FS SEAL 972 tile (13, 2) n 15
+FS STAT 980 id 4 at (12, 2) need 1 orth 1 ti 18 ammo 6 sen 0 hp 34

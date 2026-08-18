@@ -1,0 +1,226 @@
+Update available: 2.3.6 -> 2.3.8. Run: pip install --upgrade fcode
+FS GATE 0 sig (18, 18, (2, 14), (14, 2)) ok 1
+FS GATE 1 sig (18, 18, (2, 14), (14, 2)) ok 1
+FS PHASE 1 id 3 ph 1 d 221 at (4, 14)
+FS HOPBUILD 1 at (4, 14) lch (4, 13) T (16, 1)
+FS GATE 2 sig (18, 18, (2, 14), (14, 2)) ok 1
+FS GATE 2 sig (18, 18, (2, 14), (14, 2)) ok 1
+FS THROW 2 from (5, 14) to (7, 9) T (16, 1)
+FS HOPBUILD 3 at (7, 9) lch (8, 9) T (16, 1)
+FS GATE 3 sig (18, 18, (2, 14), (14, 2)) ok 1
+FS GATE 4 sig (18, 18, (2, 14), (14, 2)) ok 1
+FS THROW 4 from (7, 8) to (11, 5) T (16, 1)
+FS HOPBUILD 5 at (11, 5) lch (12, 5) T (16, 1)
+FS GATE 6 sig (18, 18, (2, 14), (14, 2)) ok 1
+FS EVICT 6 from (13, 5) to (7, 5)
+FS EVICT 7 from (13, 4) to (7, 5)
+FS PHASE 8 id 3 ph 2 d 5 at (12, 4)
+FS SENTINEL 8 at (12, 3) face EAST tgt (15, 3) score 9 n 1 onring 0
+FS RUNG 8 id 3 r 4 hi -
+FS PHASE 9 id 3 ph 4 d 5 at (12, 4)
+FS SEAL 10 tile (13, 3) n 1
+FS EVICT 10 from (13, 5) to (7, 5)
+FS GATE 10 sig (18, 18, (2, 14), (14, 2)) ok 1
+FS SEAL 11 tile (14, 4) n 2
+FS DODGE 12 id 3 from (13, 4) to (13, 5) cov 1 -> 0 hit 0 hp 40
+FS SEAL 15 tile (15, 4) n 3
+FS PHASE 19 id 3 ph 2 d 5 at (17, 4)
+FS STAT 20 id 3 at (17, 3) need 6 orth 5 ti 58 ammo 64 sen 0 hp 40
+FS SEAL 21 tile (16, 2) n 4
+FS PHASE 27 id 3 ph 4 d 2 at (16, 4)
+FS PHASE 31 id 3 ph 2 d 8 at (17, 5)
+FS PHASE 33 id 3 ph 4 d 2 at (16, 4)
+FS PHASE 35 id 3 ph 2 d 8 at (17, 5)
+FS PHASE 37 id 3 ph 4 d 2 at (16, 4)
+FS PHASE 39 id 3 ph 2 d 8 at (17, 5)
+FS STAT 40 id 3 at (17, 4) need 5 orth 4 ti 58 ammo 108 sen 0 hp 40
+FS PHASE 41 id 3 ph 4 d 2 at (16, 4)
+FS PHASE 43 id 3 ph 2 d 8 at (17, 5)
+FS PHASE 45 id 3 ph 4 d 2 at (16, 4)
+FS SEAL 59 tile (13, 4) n 5
+FS FORCEDEATH 60 id 3
+FS GATE 73 sig (18, 18, (2, 14), (14, 2)) ok 1
+FS PHASE 73 id 75 ph 1 d 269 at (4, 16)
+FS PHASE 94 id 75 ph 4 d 8 at (12, 5)
+FS STAT 100 id 75 at (11, 0) need 8 orth 7 ti 29 ammo 10 sen 1 hp 22
+FS CLEAR 108 tile (13, 1) peck 1
+FS RUNG 108 id 75 r 3 hi -
+FS CLEAR 109 tile (13, 1) peck 2
+FS RUNG 109 id 75 r 3 hi -
+FS CLEAR 110 tile (13, 1) peck 3
+FS RUNG 110 id 75 r 3 hi -
+FS CLEAR 111 tile (13, 1) peck 4
+FS RUNG 111 id 75 r 3 hi -
+FS CLEAR 112 tile (13, 1) peck 5
+FS RUNG 112 id 75 r 3 hi -
+FS CLEAR 113 tile (13, 1) peck 6
+FS RUNG 113 id 75 r 3 hi -
+FS CLEAR 114 tile (13, 1) peck 7
+FS RUNG 114 id 75 r 3 hi -
+FS CLEAR 115 tile (13, 1) peck 8
+FS RUNG 115 id 75 r 3 hi -
+FS SEAL 117 tile (13, 2) n 1
+FS CLEAR 118 tile (14, 1) peck 1
+FS RUNG 118 id 75 r 3 hi -
+FS CLEAR 119 tile (14, 1) peck 2
+FS RUNG 119 id 75 r 3 hi -
+FS STAT 120 id 75 at (13, 1) need 3 orth 2 ti 42 ammo 5 sen 1 hp 22
+FS CLEAR 120 tile (14, 1) peck 3
+FS RUNG 120 id 75 r 3 hi -
+FS CLEAR 121 tile (14, 1) peck 4
+FS RUNG 121 id 75 r 3 hi -
+FS CLEAR 122 tile (14, 1) peck 5
+FS RUNG 122 id 75 r 3 hi -
+FS CLEAR 123 tile (14, 1) peck 6
+FS RUNG 123 id 75 r 3 hi -
+FS CLEAR 124 tile (14, 1) peck 7
+FS RUNG 124 id 75 r 3 hi -
+FS CLEAR 125 tile (14, 1) peck 8
+FS RUNG 125 id 75 r 3 hi -
+FS CLEAR 127 tile (15, 1) peck 1
+FS RUNG 127 id 75 r 3 hi -
+FS CLEAR 128 tile (15, 1) peck 2
+FS RUNG 128 id 75 r 3 hi -
+FS CLEAR 129 tile (15, 1) peck 3
+FS RUNG 129 id 75 r 3 hi -
+FS CLEAR 130 tile (15, 1) peck 4
+FS RUNG 130 id 75 r 3 hi -
+FS CLEAR 131 tile (15, 1) peck 5
+FS RUNG 131 id 75 r 3 hi -
+FS CLEAR 132 tile (15, 1) peck 6
+FS RUNG 132 id 75 r 3 hi -
+FS CLEAR 133 tile (15, 1) peck 7
+FS RUNG 133 id 75 r 3 hi -
+FS CLEAR 134 tile (15, 1) peck 8
+FS RUNG 134 id 75 r 3 hi -
+FS CLEAR 135 tile (13, 1) peck 1
+FS RUNG 135 id 75 r 3 hi -
+FS CLEAR 136 tile (13, 1) peck 2
+FS RUNG 136 id 75 r 3 hi -
+FS CLEARED 137 tile (13, 1) n 1
+FS SEAL 137 tile (13, 1) n 2
+FS SEALCLR 137 tile (13, 1) lag 0
+FS CLEAR 138 tile (15, 1) peck 1
+FS RUNG 138 id 75 r 3 hi -
+FS CLEAR 139 tile (15, 1) peck 2
+FS RUNG 139 id 75 r 3 hi -
+FS CLEARED 140 tile (15, 1) n 2
+FS STAT 140 id 75 at (14, 1) need 4 orth 4 ti 46 ammo 9 sen 1 hp 22
+FS SEAL 140 tile (15, 1) n 3
+FS SEALCLR 140 tile (15, 1) lag 0
+FS CLEAR 142 tile (14, 1) peck 1
+FS RUNG 142 id 75 r 3 hi -
+FS CLEAR 143 tile (14, 1) peck 2
+FS RUNG 143 id 75 r 3 hi -
+FS CLEARED 144 tile (14, 1) n 3
+FS SEAL 144 tile (14, 1) n 4
+FS SEALCLR 144 tile (14, 1) lag 0
+FS SEAL 146 tile (15, 1) n 5
+FS SEAL 155 tile (15, 1) n 6
+FS STAT 160 id 75 at (11, 0) need 5 orth 5 ti 48 ammo 9 sen 1 hp 22
+FS SEAL 164 tile (15, 1) n 7
+FS SEAL 173 tile (15, 1) n 8
+FS STAT 180 id 75 at (13, 0) need 3 orth 3 ti 48 ammo 7 sen 1 hp 22
+FS SEAL 182 tile (15, 1) n 9
+FS SEAL 191 tile (15, 1) n 10
+FS STAT 200 id 75 at (15, 0) need 3 orth 3 ti 48 ammo 5 sen 1 hp 22
+FS SEAL 200 tile (15, 1) n 11
+FS SEAL 209 tile (15, 1) n 12
+FS SEAL 218 tile (15, 1) n 13
+FS STAT 220 id 75 at (14, 0) need 2 orth 2 ti 48 ammo 7 sen 1 hp 22
+FS SEAL 227 tile (15, 1) n 14
+FS SEAL 236 tile (15, 1) n 15
+FS STAT 240 id 75 at (12, 0) need 3 orth 3 ti 48 ammo 5 sen 1 hp 22
+FS SEAL 245 tile (15, 1) n 16
+FS SEAL 256 tile (15, 1) n 17
+FS STAT 260 id 75 at (12, 0) need 3 orth 3 ti 48 ammo 3 sen 1 hp 22
+FS SEAL 269 tile (15, 1) n 18
+FS STAT 280 id 75 at (11, 0) need 4 orth 4 ti 48 ammo 7 sen 1 hp 22
+FS SEAL 284 tile (15, 1) n 19
+FS SEAL 297 tile (15, 1) n 20
+FS STAT 300 id 75 at (13, 0) need 2 orth 2 ti 48 ammo 5 sen 1 hp 22
+FS SEAL 310 tile (15, 1) n 21
+FS STAT 320 id 75 at (12, 0) need 3 orth 3 ti 48 ammo 9 sen 1 hp 22
+FS SEAL 325 tile (15, 1) n 22
+FS SEAL 336 tile (15, 1) n 23
+FS STAT 340 id 75 at (12, 0) need 3 orth 3 ti 48 ammo 7 sen 1 hp 22
+FS SEAL 349 tile (15, 1) n 24
+FS STAT 360 id 75 at (11, 0) need 4 orth 4 ti 48 ammo 1 sen 1 hp 22
+FS SEAL 364 tile (15, 1) n 25
+FS SEAL 377 tile (15, 1) n 26
+FS STAT 380 id 75 at (13, 0) need 2 orth 2 ti 48 ammo 9 sen 1 hp 22
+FS SEAL 390 tile (15, 1) n 27
+FS STAT 400 id 75 at (14, 0) need 3 orth 3 ti 48 ammo 3 sen 1 hp 22
+FS SEAL 401 tile (15, 1) n 28
+FS SEAL 416 tile (15, 1) n 29
+FS STAT 420 id 75 at (12, 0) need 3 orth 3 ti 48 ammo 1 sen 1 hp 22
+FS SEAL 429 tile (15, 1) n 30
+FS STAT 440 id 75 at (13, 0) need 3 orth 3 ti 48 ammo 5 sen 1 hp 22
+FS SEAL 442 tile (15, 1) n 31
+FS SEAL 453 tile (15, 1) n 32
+FS STAT 460 id 75 at (11, 0) need 4 orth 4 ti 48 ammo 3 sen 1 hp 22
+FS SEAL 464 tile (15, 1) n 33
+FS SEAL 477 tile (15, 1) n 34
+FS STAT 480 id 75 at (13, 0) need 2 orth 2 ti 48 ammo 1 sen 1 hp 22
+FS SEAL 492 tile (15, 1) n 35
+FS STAT 500 id 75 at (12, 0) need 3 orth 3 ti 48 ammo 5 sen 1 hp 22
+FS SEAL 505 tile (15, 1) n 36
+FS SEAL 518 tile (15, 1) n 37
+FS STAT 520 id 75 at (14, 0) need 2 orth 2 ti 48 ammo 3 sen 1 hp 22
+FS SEAL 529 tile (15, 1) n 38
+FS STAT 540 id 75 at (15, 0) need 3 orth 3 ti 48 ammo 7 sen 1 hp 22
+FS SEAL 540 tile (15, 1) n 39
+FS SEAL 553 tile (15, 1) n 40
+FS STAT 560 id 75 at (11, 0) need 4 orth 4 ti 48 ammo 5 sen 1 hp 22
+FS SEAL 568 tile (15, 1) n 41
+FS STAT 580 id 75 at (14, 0) need 3 orth 3 ti 48 ammo 9 sen 1 hp 22
+FS SEAL 581 tile (15, 1) n 42
+FS SEAL 592 tile (15, 1) n 43
+FS STAT 600 id 75 at (12, 0) need 3 orth 3 ti 48 ammo 7 sen 1 hp 22
+FS STAT 620 id 75 at (14, 0) need 3 orth 3 ti 48 ammo 7 sen 1 hp 22
+FS SEAL 621 tile (15, 1) n 44
+FS SEAL 630 tile (15, 1) n 45
+FS SEAL 639 tile (15, 1) n 46
+FS STAT 640 id 75 at (15, 0) need 2 orth 2 ti 48 ammo 9 sen 1 hp 22
+FS SEAL 648 tile (15, 1) n 47
+FS SEAL 657 tile (15, 1) n 48
+FS STAT 660 id 75 at (13, 0) need 2 orth 2 ti 48 ammo 7 sen 1 hp 22
+FS SEAL 670 tile (15, 1) n 49
+FS STAT 680 id 75 at (14, 0) need 3 orth 3 ti 48 ammo 1 sen 1 hp 22
+FS SEAL 681 tile (15, 1) n 50
+FS SEAL 696 tile (15, 1) n 51
+FS STAT 700 id 75 at (12, 0) need 3 orth 3 ti 48 ammo 9 sen 1 hp 22
+FS SEAL 709 tile (15, 1) n 52
+FS STAT 720 id 75 at (15, 0) need 3 orth 3 ti 48 ammo 3 sen 1 hp 22
+FS SEAL 720 tile (15, 1) n 53
+FS SEAL 733 tile (15, 1) n 54
+FS STAT 740 id 75 at (11, 0) need 4 orth 4 ti 48 ammo 1 sen 1 hp 22
+FS SEAL 746 tile (15, 1) n 55
+FS STAT 760 id 75 at (14, 0) need 3 orth 3 ti 48 ammo 5 sen 1 hp 22
+FS SEAL 761 tile (15, 1) n 56
+FS SEAL 772 tile (15, 1) n 57
+FS STAT 780 id 75 at (12, 0) need 3 orth 3 ti 48 ammo 3 sen 1 hp 22
+FS SEAL 785 tile (15, 1) n 58
+FS SEAL 796 tile (15, 1) n 59
+FS STAT 800 id 75 at (12, 0) need 3 orth 3 ti 48 ammo 1 sen 1 hp 22
+FS SEAL 809 tile (15, 1) n 60
+FS STAT 820 id 75 at (11, 0) need 4 orth 4 ti 48 ammo 5 sen 1 hp 22
+FS SEAL 824 tile (15, 1) n 61
+FS STAT 840 id 75 at (12, 0) need 3 orth 3 ti 48 ammo 9 sen 1 hp 22
+FS SEAL 847 tile (15, 1) n 62
+FS STAT 860 id 75 at (11, 0) need 5 orth 5 ti 48 ammo 3 sen 1 hp 22
+FS SEAL 864 tile (15, 1) n 63
+FS SEAL 873 tile (15, 1) n 64
+FS STAT 880 id 75 at (13, 0) need 3 orth 3 ti 48 ammo 1 sen 1 hp 22
+FS SEAL 882 tile (15, 1) n 65
+FS SEAL 891 tile (15, 1) n 66
+FS STAT 900 id 75 at (13, 0) need 3 orth 3 ti 48 ammo 9 sen 1 hp 22
+FS SEAL 902 tile (15, 1) n 67
+FS SEAL 913 tile (15, 1) n 68
+FS STAT 920 id 75 at (11, 0) need 4 orth 4 ti 48 ammo 7 sen 1 hp 22
+FS SEAL 926 tile (15, 1) n 69
+FS STAT 940 id 75 at (14, 0) need 3 orth 3 ti 48 ammo 1 sen 1 hp 22
+FS SEAL 941 tile (15, 1) n 70
+FS SEAL 952 tile (15, 1) n 71
+FS STAT 960 id 75 at (12, 0) need 3 orth 3 ti 18 ammo 9 sen 1 hp 22
+FS STAT 980 id 75 at (12, 0) need 3 orth 3 ti 27 ammo 9 sen 1 hp 22

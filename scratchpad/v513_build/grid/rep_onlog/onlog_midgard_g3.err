@@ -1,0 +1,118 @@
+Update available: 2.3.6 -> 2.3.8. Run: pip install --upgrade fcode
+FS GATE 0 sig (30, 30, (2, 2), (26, 26)) ok 1
+FS GATE 1 sig (30, 30, (2, 2), (26, 26)) ok 1
+FS PHASE 1 id 4 ph 1 d 1013 at (26, 25)
+FS HOPBUILD 1 at (26, 25) lch (26, 24) T (1, 1)
+FS GATE 2 sig (30, 30, (2, 2), (26, 26)) ok 1
+FS GATE 2 sig (30, 30, (2, 2), (26, 26)) ok 1
+FS THROW 2 from (26, 25) to (22, 21) T (1, 1)
+FS HOPBUILD 3 at (22, 21) lch (21, 21) T (1, 1)
+FS GATE 3 sig (30, 30, (2, 2), (26, 26)) ok 1
+FS GATE 4 sig (30, 30, (2, 2), (26, 26)) ok 1
+FS PHASE 4 id 11 ph 1 d 1013 at (26, 25)
+FS HOPBUILD 4 at (26, 25) lch (26, 24) T (1, 1)
+FS GATE 4 sig (30, 30, (2, 2), (26, 26)) ok 1
+FS THROW 4 from (22, 20) to (17, 18) T (1, 1)
+FS HOPBUILD 5 at (17, 18) lch (17, 17) T (1, 1)
+FS GATE 5 sig (30, 30, (2, 2), (26, 26)) ok 1
+FS THROW 5 from (26, 25) to (22, 21) T (1, 1)
+FS HOPBUILD 6 at (22, 21) lch (21, 21) T (1, 1)
+FS GATE 6 sig (30, 30, (2, 2), (26, 26)) ok 1
+FS GATE 7 sig (30, 30, (2, 2), (26, 26)) ok 1
+FS THROW 7 from (22, 20) to (17, 18) T (1, 1)
+FS THROW 8 from (16, 18) to (13, 14) T (1, 1)
+FS HOPBUILD 9 at (16, 16) lch (16, 15) T (1, 1)
+FS HOPBUILD 9 at (13, 14) lch (13, 13) T (1, 1)
+FS PROMOTE 10 id 11
+FS GATE 10 sig (30, 30, (2, 2), (26, 26)) ok 1
+FS GATE 10 sig (30, 30, (2, 2), (26, 26)) ok 1
+FS THROW 10 from (12, 14) to (9, 10) T (1, 1)
+FS PHASE 24 id 11 ph 2 d 8 at (5, 5)
+FS SEAL 27 tile (4, 3) n 1
+FS CLEAR 29 tile (4, 2) peck 1
+FS RUNG 29 id 11 r 3 hi -
+FS CLEAR 30 tile (4, 2) peck 2
+FS RUNG 30 id 11 r 3 hi -
+FS CLEAR 31 tile (4, 2) peck 3
+FS RUNG 31 id 11 r 3 hi -
+FS CLEAR 32 tile (4, 2) peck 4
+FS RUNG 32 id 11 r 3 hi -
+FS DODGE 33 id 11 from (5, 2) to (4, 2) cov 1 -> 0 hit 0 hp 40
+FS SEAL 35 tile (3, 1) n 2
+FS CLEAR 36 tile (4, 2) peck 1
+FS RUNG 36 id 11 r 3 hi -
+FS CLEAR 37 tile (4, 2) peck 2
+FS RUNG 37 id 11 r 3 hi -
+FS CLEAR 38 tile (4, 2) peck 3
+FS RUNG 38 id 11 r 3 hi -
+FS CLEAR 39 tile (4, 2) peck 4
+FS RUNG 39 id 11 r 3 hi -
+FS STAT 40 id 11 at (4, 1) need 7 orth 7 ti 94 ammo 16 sen 0 hp 40
+FS CLEAR 40 tile (4, 2) peck 5
+FS RUNG 40 id 11 r 3 hi -
+FS DODGE 41 id 11 from (4, 1) to (4, 2) cov 1 -> 0 hit 0 hp 40
+FS DODGE 42 id 11 from (4, 2) to (5, 2) cov 1 -> 0 hit 0 hp 40
+FS CLEAR 43 tile (4, 2) peck 6
+FS RUNG 43 id 11 r 3 hi -
+FS DEGRADE 44 id 4
+FS CLEARED 44 tile (4, 2) n 1
+FS SEAL 44 tile (4, 2) n 3
+FS SEALCLR 44 tile (4, 2) lag 0
+FS GATE 45 sig (30, 30, (2, 2), (26, 26)) ok 1
+FS PHASE 45 id 120 ph 1 d 1060 at (25, 27)
+FS HOPBUILD 46 at (25, 26) lch (24, 26) T (1, 1)
+FS GATE 47 sig (30, 30, (2, 2), (26, 26)) ok 1
+FS THROW 47 from (25, 26) to (21, 22) T (1, 1)
+FS DODGE 48 id 11 from (5, 1) to (6, 1) cov 1 -> 0 hit 0 hp 40
+FS HOPBUILD 48 at (21, 22) lch (21, 21) T (1, 1)
+FS GATE 49 sig (30, 30, (2, 2), (26, 26)) ok 1
+FS THROW 49 from (20, 22) to (17, 18) T (1, 1)
+FS DODGE 50 id 11 from (5, 1) to (4, 1) cov 2 -> 1 hit 0 hp 33
+FS DODGE 51 id 11 from (4, 1) to (4, 0) cov 1 -> 0 hit 0 hp 26
+FS PROMOTE 51 id 120
+FS SEAL 53 tile (3, 1) n 4
+FS THROW 53 from (16, 16) to (12, 12) T (1, 1)
+FS SEAL 55 tile (2, 1) n 5
+FS SEAL 58 tile (1, 2) n 6
+FS STAT 60 id 11 at (1, 0) need 6 orth 6 ti 62 ammo 24 sen 0 hp 26
+FS HOPBUILD 60 at (14, 9) lch (13, 9) T (1, 1)
+FS GATE 61 sig (30, 30, (2, 2), (26, 26)) ok 1
+FS THROW 61 from (14, 8) to (10, 5) T (1, 1)
+FS SEAL 62 tile (3, 1) n 7
+FS DODGE 64 id 11 from (4, 0) to (4, 1) cov 1 -> 0 hit 0 hp 26
+FS DODGE 66 id 11 from (4, 2) to (4, 3) cov 1 -> 0 hit 0 hp 19
+FS SEAL 67 tile (4, 2) n 8
+FS STAT 80 id 11 at (4, 3) need 3 orth 3 ti 21 ammo 24 sen 0 hp 19
+FS GATE 101 sig (30, 30, (2, 2), (26, 26)) ok 1
+FS PHASE 101 id 280 ph 1 d 1250 at (28, 28)
+FS HOPBUILD 104 at (26, 29) lch (25, 29) T (1, 1)
+FS GATE 105 sig (30, 30, (2, 2), (26, 26)) ok 1
+FS THROW 105 from (26, 29) to (22, 25) T (1, 1)
+FS DOORSEEN 217 id 9 at (27, 21) rank 2
+FS DOOR 220 id 9 at (27, 21) n 1
+FS DOOR 221 id 9 at (27, 21) n 2
+FS DOOR 222 id 9 at (27, 21) n 3
+FS DOOR 223 id 9 at (27, 21) n 4
+FS DOOR 224 id 9 at (27, 21) n 5
+FS DOOR 225 id 9 at (27, 21) n 6
+FS DOOR 226 id 9 at (27, 21) n 7
+FS DOOR 227 id 9 at (27, 21) n 8
+FS DOOR 228 id 9 at (27, 21) n 9
+FS DOOR 229 id 9 at (27, 21) n 10
+FS DOOR 230 id 9 at (27, 21) n 11
+FS DOOR 231 id 9 at (27, 21) n 12
+FS DOOR 232 id 9 at (27, 21) n 13
+FS DOORSEEN 240 id 9 at (29, 28) rank 0
+FS DOOR 244 id 9 at (29, 28) n 14
+FS DOOR 245 id 9 at (29, 28) n 15
+FS DOOR 246 id 9 at (29, 28) n 16
+FS DOOR 247 id 9 at (29, 28) n 17
+FS DOOR 248 id 9 at (29, 28) n 18
+FS DOOR 249 id 9 at (29, 28) n 19
+FS DOOR 250 id 9 at (29, 28) n 20
+FS DOOR 251 id 9 at (29, 28) n 21
+FS DOOR 252 id 9 at (29, 28) n 22
+FS DOOR 253 id 9 at (29, 28) n 23
+FS DOOR 254 id 9 at (29, 28) n 24
+FS DOOR 255 id 9 at (29, 28) n 25
+FS DOOR 256 id 9 at (29, 28) n 26

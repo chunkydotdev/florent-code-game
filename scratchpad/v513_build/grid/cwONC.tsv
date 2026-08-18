@@ -1,0 +1,31 @@
+tag	arm	map	g	seed	ord	ours	winner	cond	turn	tracebacks	ours_mined	opp_mined
+cwONC_glacierkeep_g0	cwONC	glacierkeep	0	7600	A	US	crewON	Core destroyed	318	0	2650	350
+cwONC_glacierkeep_g1	cwONC	glacierkeep	1	7601	B	OPP	_v488beltbreak2	Core destroyed	589	0	0	0
+cwONC_glacierkeep_g2	cwONC	glacierkeep	2	7602	A	OPP	_v488beltbreak2	Core destroyed	441	0	0	0
+cwONC_glacierkeep_g3	cwONC	glacierkeep	3	7603	B	OPP	_v488beltbreak2	Harvesters (tiebreak)	1000	0	0	0
+cwONC_glacierkeep_g4	cwONC	glacierkeep	4	7604	A	OPP	_v488beltbreak2	Core destroyed	856	0	0	1730
+cwONC_glacierkeep_g5	cwONC	glacierkeep	5	7605	B	OPP	_v488beltbreak2	Core destroyed	569	0	5250	9410
+cwONC_nordkap_g0	cwONC	nordkap	0	7600	A	OPP	_v488beltbreak2	Core destroyed	286	0	1090	3820
+cwONC_nordkap_g1	cwONC	nordkap	1	7601	B	OPP	_v488beltbreak2	Core destroyed	157	0	120	2610
+cwONC_nordkap_g2	cwONC	nordkap	2	7602	A	US	crewON	Core destroyed	348	0	220	190
+cwONC_nordkap_g3	cwONC	nordkap	3	7603	B	OPP	_v488beltbreak2	Core destroyed	313	0	0	110
+cwONC_nordkap_g4	cwONC	nordkap	4	7604	A	US	crewON	Titanium collected (tiebreak)	1000	0	150	90
+cwONC_nordkap_g5	cwONC	nordkap	5	7605	B	US	crewON	Core destroyed	238	0	890	410
+cwONC_atoll_g0	cwONC	atoll	0	7600	A	OPP	_v488beltbreak2	Core destroyed	604	0	310	3040
+cwONC_atoll_g1	cwONC	atoll	1	7601	B	OPP	_v488beltbreak2	Titanium collected (tiebreak)	1000	0	360	2310
+cwONC_atoll_g2	cwONC	atoll	2	7602	A	US	crewON	Core destroyed	396	0	1950	750
+cwONC_atoll_g3	cwONC	atoll	3	7603	B	US	crewON	Core destroyed	317	0	1540	340
+cwONC_atoll_g4	cwONC	atoll	4	7604	A	OPP	_v488beltbreak2	Core destroyed	604	0	310	3040
+cwONC_atoll_g5	cwONC	atoll	5	7605	B	OPP	_v488beltbreak2	Core destroyed	210	0	630	1680
+cwONC_midgard_g0	cwONC	midgard	0	7600	A	US	crewON	Core destroyed	741	0	460	1620
+cwONC_midgard_g1	cwONC	midgard	1	7601	B	OPP	_v488beltbreak2	Core destroyed	196	0	820	1920
+cwONC_midgard_g2	cwONC	midgard	2	7602	A	OPP	_v488beltbreak2	Core destroyed	196	0	910	2040
+cwONC_midgard_g3	cwONC	midgard	3	7603	B	OPP	_v488beltbreak2	Core destroyed	414	0	3270	1960
+cwONC_midgard_g4	cwONC	midgard	4	7604	A	US	crewON	Core destroyed	241	0	510	900
+cwONC_midgard_g5	cwONC	midgard	5	7605	B	OPP	_v488beltbreak2	Core destroyed	214	0	940	1250
+cwONC_drakkarfjord_g0	cwONC	drakkarfjord	0	7600	A	US	crewON	Titanium collected (tiebreak)	1000	0	210	170
+cwONC_drakkarfjord_g1	cwONC	drakkarfjord	1	7601	B	OPP	_v488beltbreak2	Core destroyed	530	0	260	3680
+cwONC_drakkarfjord_g2	cwONC	drakkarfjord	2	7602	A	US	crewON	Core destroyed	261	0	230	170
+cwONC_drakkarfjord_g3	cwONC	drakkarfjord	3	7603	B	OPP	_v488beltbreak2	Core destroyed	836	0	440	4040
+cwONC_drakkarfjord_g4	cwONC	drakkarfjord	4	7604	A	OPP	_v488beltbreak2	Core destroyed	302	0	330	1380
+cwONC_drakkarfjord_g5	cwONC	drakkarfjord	5	7605	B	US	crewON	Core destroyed	380	0	1140	1460

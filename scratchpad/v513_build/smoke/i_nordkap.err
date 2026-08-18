@@ -1,0 +1,264 @@
+Update available: 2.3.6 -> 2.3.8. Run: pip install --upgrade fcode
+FS GATE 0 sig (20, 26, (9, 6), (9, 18)) ok 1
+FS GATE 1 sig (20, 26, (9, 6), (9, 18)) ok 1
+FS PHASE 1 id 3 ph 1 d 100 at (9, 8)
+FS HOPBUILD 1 at (9, 8) lch (9, 9) T (11, 20)
+FS GATE 2 sig (20, 26, (9, 6), (9, 18)) ok 1
+FS GATE 2 sig (20, 26, (9, 6), (9, 18)) ok 1
+FS THROW 2 from (10, 8) to (10, 14) T (11, 20)
+FS HOPBUILD 3 at (10, 14) lch (10, 15) T (11, 20)
+FS GATE 3 sig (20, 26, (9, 6), (9, 18)) ok 1
+FS GATE 4 sig (20, 26, (9, 6), (9, 18)) ok 1
+FS PHASE 4 id 10 ph 1 d 100 at (9, 8)
+FS HOPBUILD 4 at (9, 8) lch (9, 9) T (11, 20)
+FS GATE 4 sig (20, 26, (9, 6), (9, 18)) ok 1
+FS THROW 4 from (11, 14) to (11, 20) T (11, 20)
+FS PHASE 5 id 3 ph 2 d 2 at (11, 20)
+FS SEAL 5 tile (11, 19) n 1
+FS GATE 5 sig (20, 26, (9, 6), (9, 18)) ok 1
+FS THROW 5 from (10, 8) to (10, 14) T (11, 20)
+FS SEAL 6 tile (10, 20) n 2
+FS HOPBUILD 6 at (10, 14) lch (11, 14) T (11, 20)
+FS DODGE 7 id 3 from (11, 20) to (12, 20) cov 1 -> 0 hit 0 hp 40
+FS GATE 7 sig (20, 26, (9, 6), (9, 18)) ok 1
+FS THROW 7 from (10, 15) to (12, 19) T (11, 20)
+FS PHASE 8 id 10 ph 2 d 4 at (12, 19)
+FS PROMOTE 10 id 10
+FS DODGE 10 id 10 from (11, 18) to (12, 18) cov 1 -> 0 hit 0 hp 22
+FS SEAL 11 tile (11, 18) n 1
+FS DODGE 14 id 10 from (11, 17) to (10, 17) cov 1 -> 0 hit 0 hp 4
+FS SEAL 15 tile (9, 17) n 2
+FS SEAL 17 tile (10, 17) n 3
+FS SEAL 18 tile (9, 20) n 3
+FS STAT 20 id 3 at (8, 21) need 3 orth 2 ti 74 ammo 24 sen 0 hp 40
+FS STAT 20 id 10 at (9, 15) need 5 orth 4 ti 71 ammo 24 sen 0 hp 4
+FS SEAL 21 tile (8, 19) n 4
+FS SEAL 24 tile (8, 17) n 4
+FS SEAL 25 tile (8, 18) n 5
+FS RETREAT 28 id 10 hp 4 from (11, 16) to (11, 15)
+FS RETREAT 30 id 10 hp 4 from (11, 16) to (11, 15)
+FS RETREAT 32 id 10 hp 4 from (11, 16) to (11, 15)
+FS DODGE 35 id 3 from (11, 17) to (12, 17) cov 1 -> 0 hit 0 hp 40
+FS SEAL 37 tile (11, 18) n 6
+FS SEAL 39 tile (11, 19) n 7
+FS PHASE 39 id 10 ph 3 d 4 at (12, 18)
+FS PHASE 40 id 3 ph 3 d 4 at (12, 19)
+FS STAT 40 id 3 at (12, 19) need 2 orth 0 ti 44 ammo 24 sen 0 hp 40
+FS PHASE 40 id 10 ph 2 d 9 at (13, 18)
+FS STAT 40 id 10 at (13, 18) need 3 orth 2 ti 40 ammo 24 sen 0 hp 4
+FS PHASE 43 id 3 ph 2 d 9 at (13, 19)
+FS PHASE 43 id 10 ph 3 d 5 at (12, 20)
+FS PHASE 44 id 3 ph 3 d 4 at (12, 19)
+FS PHASE 44 id 10 ph 2 d 8 at (12, 21)
+FS PHASE 45 id 3 ph 2 d 9 at (13, 19)
+FS PHASE 46 id 3 ph 3 d 4 at (12, 19)
+FS PHASE 47 id 3 ph 2 d 9 at (13, 19)
+FS PHASE 48 id 3 ph 3 d 4 at (12, 19)
+FS PHASE 48 id 10 ph 3 d 4 at (10, 21)
+FS PHASE 49 id 3 ph 2 d 4 at (12, 18)
+FS SEAL 49 tile (11, 18) n 8
+FS PHASE 50 id 3 ph 3 d 4 at (12, 18)
+FS SEAL 50 tile (8, 20) n 5
+FS GATE 50 sig (20, 26, (9, 6), (9, 18)) ok 1
+FS PHASE 50 id 27 ph 1 d 65 at (11, 10)
+FS SEAL 51 tile (11, 17) n 9
+FS PHASE 54 id 10 ph 2 d 9 at (10, 22)
+FS PHASE 55 id 10 ph 3 d 4 at (10, 21)
+FS PHASE 56 id 10 ph 2 d 9 at (10, 22)
+FS PROMOTE 56 id 27
+FS PHASE 57 id 10 ph 3 d 4 at (10, 21)
+FS PHASE 57 id 27 ph 3 d 4 at (10, 16)
+FS PHASE 58 id 10 ph 2 d 9 at (10, 22)
+FS PHASE 59 id 10 ph 3 d 4 at (10, 21)
+FS STAT 60 id 3 at (12, 19) need 0 orth 0 ti 66 ammo 24 sen 0 hp 40
+FS PHASE 60 id 10 ph 2 d 9 at (10, 22)
+FS STAT 60 id 10 at (10, 22) need 3 orth 2 ti 66 ammo 24 sen 0 hp 4
+FS STAT 60 id 27 at (11, 16) need 1 orth 0 ti 66 ammo 24 sen 0 hp 22
+FS PHASE 61 id 10 ph 3 d 4 at (10, 21)
+FS PHASE 62 id 10 ph 2 d 9 at (10, 22)
+FS PHASE 63 id 10 ph 3 d 4 at (10, 21)
+FS SENTINEL 63 at (10, 22) face NORTH tgt (10, 18) score 16 n 1 onring 0
+FS RUNG 63 id 10 r 4 hi -
+FS PHASE 64 id 3 ph 4 d 4 at (12, 19)
+FS PHASE 64 id 10 ph 4 d 4 at (10, 21)
+FS PHASE 69 id 27 ph 2 d 8 at (12, 16)
+FS PHASE 70 id 27 ph 3 d 5 at (12, 17)
+FS PHASE 71 id 27 ph 4 d 4 at (12, 18)
+Traceback (most recent call last):
+  File "/private/tmp/claude-501/-Users-junghard-Projects-Work-florent-code-game/82720aae-f502-4b10-9dd5-ad5f55d16b94/scratchpad/v513_build/inst/main.py", line 273, in run
+    self._dispatch(ct)
+    ~~~~~~~~~~~~~~^^^^
+  File "/private/tmp/claude-501/-Users-junghard-Projects-Work-florent-code-game/82720aae-f502-4b10-9dd5-ad5f55d16b94/scratchpad/v513_build/inst/main.py", line 284, in _dispatch
+    self._core(ct)
+    ~~~~~~~~~~^^^^
+  File "/private/tmp/claude-501/-Users-junghard-Projects-Work-florent-code-game/82720aae-f502-4b10-9dd5-ad5f55d16b94/scratchpad/v513_build/inst/main.py", line 557, in _core
+    file=sys.stderr)
+         ^^^
+NameError: name 'sys' is not defined. Did you forget to import 'sys'?
+FS PHASE 72 id 27 ph 2 d 9 at (13, 18)
+FS PHASE 73 id 27 ph 4 d 4 at (12, 18)
+FS STAT 80 id 3 at (12, 21) need 3 orth 2 ti 57 ammo 3 sen 1 hp 40
+FS STAT 80 id 10 at (8, 21) need 1 orth 0 ti 57 ammo 3 sen 1 hp 4
+FS STAT 80 id 27 at (13, 20) need 4 orth 3 ti 57 ammo 3 sen 1 hp 4
+FS SENTINEL 87 at (9, 22) face NORTH tgt (9, 18) score 16 n 2 onring 0
+FS RUNG 87 id 10 r 4 hi -
+FS PHASE 88 id 27 ph 3 d 5 at (12, 17)
+FS SEAL 88 tile (11, 17) n 1
+FS PHASE 90 id 27 ph 4 d 4 at (12, 18)
+FS PHASE 91 id 27 ph 2 d 9 at (13, 18)
+FS PHASE 92 id 27 ph 4 d 4 at (12, 18)
+FS PHASE 93 id 27 ph 2 d 9 at (13, 18)
+FS PHASE 94 id 10 ph 2 d 34 at (4, 22)
+FS PHASE 94 id 27 ph 4 d 4 at (12, 18)
+FS PHASE 95 id 27 ph 2 d 9 at (13, 18)
+FS PHASE 96 id 27 ph 4 d 4 at (12, 18)
+FS PHASE 97 id 27 ph 3 d 5 at (12, 17)
+FS SEAL 97 tile (11, 17) n 2
+FS PHASE 99 id 27 ph 4 d 4 at (12, 18)
+FS STAT 100 id 3 at (12, 20) need 1 orth 0 ti 15 ammo 0 sen 2 hp 40
+FS STAT 100 id 10 at (4, 22) need 9 orth 8 ti 15 ammo 0 sen 0 hp 4
+FS STAT 100 id 27 at (12, 19) need 0 orth 0 ti 15 ammo 0 sen 2 hp 4
+FS PHASE 106 id 27 ph 3 d 5 at (12, 17)
+FS SEAL 106 tile (11, 17) n 3
+FS PHASE 108 id 27 ph 4 d 4 at (12, 18)
+FS PHASE 109 id 10 ph 4 d 25 at (5, 22)
+FS PHASE 109 id 27 ph 2 d 9 at (13, 18)
+FS PHASE 113 id 27 ph 3 d 5 at (11, 16)
+FS DODGE 113 id 27 from (11, 16) to (10, 16) cov 2 -> 0 hit 0 hp 4
+FS PHASE 115 id 27 ph 2 d 9 at (10, 15)
+FS PHASE 116 id 10 ph 3 d 5 at (7, 17)
+FS PHASE 117 id 3 ph 3 d 5 at (12, 17)
+FS SEAL 117 tile (11, 17) n 10
+FS PHASE 117 id 10 ph 2 d 8 at (7, 16)
+FS PHASE 118 id 10 ph 3 d 5 at (8, 16)
+FS PHASE 119 id 3 ph 4 d 4 at (12, 18)
+FS PHASE 119 id 10 ph 2 d 8 at (7, 16)
+FS STAT 120 id 3 at (12, 19) need 0 orth 0 ti 15 ammo 6 sen 2 hp 40
+FS PHASE 120 id 10 ph 3 d 5 at (8, 16)
+FS STAT 120 id 10 at (8, 16) need 0 orth 0 ti 15 ammo 6 sen 0 hp 4
+FS STAT 120 id 27 at (11, 15) need 3 orth 3 ti 15 ammo 6 sen 0 hp 4
+FS PHASE 123 id 27 ph 3 d 5 at (11, 16)
+FS RETREAT 123 id 27 hp 4 from (11, 16) to (11, 15)
+FS PHASE 124 id 27 ph 2 d 10 at (11, 15)
+FS PHASE 125 id 27 ph 3 d 5 at (11, 16)
+FS RETREAT 125 id 27 hp 4 from (11, 16) to (11, 15)
+FS PHASE 126 id 27 ph 2 d 10 at (11, 15)
+FS PHASE 128 id 3 ph 3 d 5 at (12, 17)
+FS SEAL 128 tile (11, 17) n 11
+FS PHASE 130 id 3 ph 4 d 4 at (12, 18)
+FS PHASE 131 id 27 ph 3 d 5 at (11, 16)
+FS RETREAT 131 id 27 hp 4 from (11, 16) to (11, 15)
+FS PHASE 132 id 27 ph 2 d 10 at (11, 15)
+FS PHASE 133 id 27 ph 3 d 5 at (11, 16)
+FS RETREAT 133 id 27 hp 4 from (11, 16) to (11, 15)
+FS PHASE 134 id 27 ph 2 d 10 at (11, 15)
+FS PHASE 135 id 27 ph 3 d 5 at (11, 16)
+FS RETREAT 135 id 27 hp 4 from (11, 16) to (11, 15)
+FS PHASE 136 id 27 ph 2 d 10 at (11, 15)
+FS PHASE 137 id 27 ph 3 d 5 at (11, 16)
+FS RETREAT 137 id 27 hp 4 from (11, 16) to (11, 15)
+FS PHASE 138 id 27 ph 2 d 10 at (11, 15)
+FS PHASE 139 id 3 ph 3 d 5 at (12, 17)
+FS SEAL 139 tile (11, 17) n 12
+FS PHASE 139 id 27 ph 3 d 5 at (11, 16)
+FS RETREAT 139 id 27 hp 4 from (11, 16) to (11, 15)
+FS STAT 140 id 3 at (12, 17) need 1 orth 0 ti 15 ammo 2 sen 0 hp 40
+FS PHASE 140 id 27 ph 2 d 10 at (11, 15)
+FS STAT 140 id 27 at (11, 15) need 3 orth 3 ti 15 ammo 2 sen 0 hp 4
+FS PHASE 141 id 3 ph 4 d 4 at (12, 18)
+FS PHASE 141 id 27 ph 3 d 5 at (11, 16)
+FS RETREAT 141 id 27 hp 4 from (11, 16) to (11, 15)
+FS PHASE 142 id 27 ph 2 d 10 at (11, 15)
+FS PHASE 143 id 27 ph 3 d 5 at (11, 16)
+FS RETREAT 143 id 27 hp 4 from (11, 16) to (11, 15)
+FS PHASE 144 id 27 ph 2 d 10 at (11, 15)
+FS PHASE 148 id 3 ph 3 d 5 at (12, 17)
+FS SEAL 148 tile (11, 17) n 13
+FS PHASE 150 id 3 ph 4 d 4 at (12, 18)
+FS PHASE 153 id 27 ph 3 d 5 at (11, 16)
+FS RETREAT 153 id 27 hp 4 from (11, 16) to (11, 15)
+FS PHASE 154 id 27 ph 2 d 10 at (11, 15)
+FS PHASE 155 id 3 ph 3 d 5 at (12, 17)
+FS SEAL 155 tile (11, 17) n 14
+FS PHASE 155 id 27 ph 3 d 5 at (11, 16)
+FS RETREAT 155 id 27 hp 4 from (11, 16) to (11, 15)
+FS PHASE 156 id 27 ph 2 d 10 at (11, 15)
+FS PHASE 157 id 3 ph 4 d 4 at (12, 18)
+FS PHASE 157 id 27 ph 3 d 5 at (11, 16)
+FS RETREAT 157 id 27 hp 4 from (11, 16) to (11, 15)
+FS PHASE 158 id 27 ph 2 d 10 at (11, 15)
+FS PHASE 159 id 27 ph 3 d 5 at (11, 16)
+FS RETREAT 159 id 27 hp 4 from (11, 16) to (11, 15)
+FS STAT 160 id 3 at (12, 19) need 0 orth 0 ti 22 ammo 1 sen 2 hp 40
+FS PHASE 160 id 27 ph 2 d 10 at (11, 15)
+FS STAT 160 id 27 at (11, 15) need 3 orth 3 ti 22 ammo 1 sen 0 hp 4
+FS PHASE 161 id 27 ph 3 d 5 at (11, 16)
+FS RETREAT 161 id 27 hp 4 from (11, 16) to (11, 15)
+FS PHASE 162 id 27 ph 2 d 10 at (11, 15)
+FS PHASE 163 id 27 ph 3 d 5 at (11, 16)
+FS RETREAT 163 id 27 hp 4 from (11, 16) to (11, 15)
+FS PHASE 164 id 3 ph 3 d 5 at (12, 17)
+FS SEAL 164 tile (11, 17) n 15
+FS PHASE 164 id 27 ph 2 d 10 at (11, 15)
+FS PHASE 165 id 27 ph 3 d 5 at (11, 16)
+FS RETREAT 165 id 27 hp 4 from (11, 16) to (11, 15)
+FS PHASE 166 id 3 ph 4 d 4 at (12, 18)
+FS PHASE 166 id 27 ph 2 d 10 at (11, 15)
+FS PHASE 167 id 27 ph 3 d 5 at (11, 16)
+FS RETREAT 167 id 27 hp 4 from (11, 16) to (11, 15)
+FS PHASE 168 id 27 ph 2 d 10 at (11, 15)
+FS PHASE 169 id 27 ph 3 d 5 at (11, 16)
+FS RETREAT 169 id 27 hp 4 from (11, 16) to (11, 15)
+FS PHASE 170 id 27 ph 2 d 10 at (11, 15)
+FS PHASE 171 id 3 ph 3 d 5 at (12, 17)
+FS SEAL 171 tile (11, 17) n 16
+FS PHASE 171 id 27 ph 3 d 5 at (11, 16)
+FS RETREAT 171 id 27 hp 4 from (11, 16) to (11, 15)
+FS PHASE 172 id 27 ph 2 d 10 at (11, 15)
+FS PHASE 173 id 3 ph 4 d 4 at (12, 18)
+FS PHASE 180 id 3 ph 3 d 5 at (12, 17)
+FS STAT 180 id 3 at (12, 17) need 2 orth 0 ti 12 ammo 17 sen 0 hp 40
+FS SEAL 180 tile (11, 17) n 17
+FS STAT 180 id 27 at (11, 15) need 3 orth 3 ti 5 ammo 17 sen 0 hp 4
+FS PHASE 181 id 27 ph 3 d 5 at (11, 16)
+FS RETREAT 181 id 27 hp 4 from (11, 16) to (11, 15)
+FS PHASE 182 id 3 ph 4 d 4 at (12, 18)
+FS PHASE 182 id 27 ph 2 d 10 at (11, 15)
+FS PHASE 183 id 27 ph 3 d 5 at (11, 16)
+FS RETREAT 183 id 27 hp 4 from (11, 16) to (11, 15)
+FS PHASE 184 id 27 ph 2 d 10 at (11, 15)
+FS PHASE 185 id 27 ph 3 d 5 at (11, 16)
+FS RETREAT 185 id 27 hp 4 from (11, 16) to (11, 15)
+FS PHASE 186 id 27 ph 2 d 10 at (11, 15)
+FS PHASE 187 id 3 ph 3 d 5 at (12, 17)
+FS SEAL 187 tile (11, 17) n 18
+FS PHASE 187 id 27 ph 3 d 5 at (11, 16)
+FS RETREAT 187 id 27 hp 4 from (11, 16) to (11, 15)
+FS PHASE 188 id 27 ph 2 d 10 at (11, 15)
+FS PHASE 189 id 3 ph 4 d 4 at (12, 18)
+FS PHASE 189 id 27 ph 3 d 5 at (11, 16)
+FS RETREAT 189 id 27 hp 4 from (11, 16) to (11, 15)
+FS PHASE 190 id 27 ph 2 d 10 at (11, 15)
+FS PHASE 191 id 27 ph 3 d 5 at (11, 16)
+FS RETREAT 191 id 27 hp 4 from (11, 16) to (11, 15)
+FS PHASE 192 id 27 ph 2 d 10 at (11, 15)
+FS PHASE 193 id 27 ph 3 d 5 at (11, 16)
+FS RETREAT 193 id 27 hp 4 from (11, 16) to (11, 15)
+FS PHASE 194 id 27 ph 2 d 10 at (11, 15)
+FS PHASE 195 id 27 ph 3 d 5 at (11, 16)
+FS RETREAT 195 id 27 hp 4 from (11, 16) to (11, 15)
+FS PHASE 196 id 3 ph 3 d 5 at (12, 17)
+FS SEAL 196 tile (11, 17) n 19
+FS PHASE 196 id 27 ph 2 d 10 at (11, 15)
+FS PHASE 197 id 27 ph 3 d 5 at (11, 16)
+FS RETREAT 197 id 27 hp 4 from (11, 16) to (11, 15)
+FS PHASE 198 id 3 ph 4 d 4 at (12, 18)
+FS PHASE 198 id 27 ph 2 d 10 at (11, 15)
+FS PHASE 199 id 27 ph 3 d 5 at (11, 16)
+FS RETREAT 199 id 27 hp 4 from (11, 16) to (11, 15)
+FS STAT 200 id 3 at (12, 20) need 1 orth 0 ti 25 ammo 3 sen 2 hp 40
+FS PHASE 200 id 27 ph 2 d 10 at (11, 15)
+FS STAT 200 id 27 at (11, 15) need 3 orth 3 ti 25 ammo 3 sen 0 hp 4
+FS PHASE 203 id 3 ph 3 d 5 at (12, 17)
+FS SEAL 203 tile (11, 17) n 20
+FS PHASE 205 id 3 ph 4 d 4 at (12, 18)

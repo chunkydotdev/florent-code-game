@@ -1,0 +1,231 @@
+Update available: 2.3.6 -> 2.3.8. Run: pip install --upgrade fcode
+FS GATE 0 sig (30, 30, (14, 2), (14, 26)) ok 1
+FS GATE 1 sig (30, 30, (14, 2), (14, 26)) ok 1
+FS PHASE 1 id 3 ph 1 d 484 at (14, 4)
+FS HOPBUILD 1 at (14, 4) lch (14, 5) T (16, 28)
+FS GATE 2 sig (30, 30, (14, 2), (14, 26)) ok 1
+FS GATE 2 sig (30, 30, (14, 2), (14, 26)) ok 1
+FS THROW 2 from (15, 4) to (15, 10) T (16, 28)
+FS HOPBUILD 3 at (15, 10) lch (15, 11) T (16, 28)
+FS GATE 3 sig (30, 30, (14, 2), (14, 26)) ok 1
+FS GATE 4 sig (30, 30, (14, 2), (14, 26)) ok 1
+FS THROW 4 from (16, 10) to (16, 16) T (16, 28)
+FS HOPBUILD 5 at (16, 16) lch (16, 17) T (16, 28)
+FS GATE 6 sig (30, 30, (14, 2), (14, 26)) ok 1
+FS THROW 6 from (16, 16) to (16, 22) T (16, 28)
+FS HOPBUILD 7 at (16, 22) lch (16, 23) T (16, 28)
+FS GATE 8 sig (30, 30, (14, 2), (14, 26)) ok 1
+FS THROW 8 from (16, 22) to (16, 28) T (16, 28)
+FS PHASE 9 id 3 ph 2 d 2 at (16, 28)
+FS SEAL 9 tile (16, 27) n 1
+FS SEAL 10 tile (15, 28) n 2
+FS GATE 11 sig (30, 30, (14, 2), (14, 26)) ok 1
+FS GATE 12 sig (30, 30, (14, 2), (14, 26)) ok 1
+FS GATE 13 sig (30, 30, (14, 2), (14, 26)) ok 1
+FS SEAL 14 tile (16, 26) n 3
+FS SEAL 17 tile (15, 25) n 4
+FS STAT 20 id 3 at (15, 24) need 5 orth 4 ti 64 ammo 0 sen 0 hp 40
+FS SEAL 21 tile (14, 25) n 5
+FS SEAL 23 tile (13, 25) n 6
+FS SEAL 26 tile (13, 25) n 7
+FS DOORSEEN 27 id 5 at (15, 5) rank 0
+FS DOORSEEN 28 id 16 at (15, 5) rank 0
+FS DOORSEEN 28 id 19 at (15, 5) rank 0
+FS DOORSEEN 29 id 8 at (15, 5) rank 0
+FS DOOR 32 id 8 at (15, 5) n 1
+FS DOOR 33 id 8 at (15, 5) n 2
+FS DOOR 33 id 16 at (15, 5) n 1
+FS DOOR 34 id 8 at (15, 5) n 3
+FS DOOR 34 id 16 at (15, 5) n 2
+FS DOOR 35 id 8 at (15, 5) n 4
+FS DOOR 35 id 16 at (15, 5) n 3
+FS SEAL 36 tile (13, 26) n 8
+FS DOOR 36 id 8 at (15, 5) n 5
+FS DOOR 36 id 16 at (15, 5) n 4
+FS DOOR 37 id 8 at (15, 5) n 6
+FS DOOR 37 id 16 at (15, 5) n 5
+FS DOOR 38 id 8 at (15, 5) n 7
+FS STAT 40 id 3 at (12, 27) need 2 orth 2 ti 14 ammo 24 sen 0 hp 40
+FS SEAL 40 tile (13, 27) n 9
+FS DOOR 41 id 8 at (15, 5) n 8
+FS SEAL 44 tile (14, 28) n 10
+FS DOOR 44 id 8 at (15, 5) n 9
+FS DOOR 44 id 16 at (15, 5) n 6
+FS PHASE 45 id 3 ph 3 d 2 at (13, 28)
+FS SEAL 48 tile (13, 28) n 11
+FS DOOR 49 id 16 at (15, 5) n 7
+FS DOOR 52 id 8 at (15, 5) n 10
+FS DOOR 52 id 16 at (15, 5) n 8
+FS PHASE 53 id 3 ph 2 d 10 at (11, 25)
+FS DOORSEEN 56 id 19 at (15, 5) rank 1
+FS DOOR 57 id 8 at (15, 5) n 11
+FS FORCEDEATH 60 id 3
+FS DOORSEEN 60 id 5 at (15, 5) rank 1
+FS DOOR 60 id 8 at (15, 5) n 12
+FS DOORSEEN 792 id 19 at (16, 0) rank 1
+FS DOOR 795 id 19 at (16, 0) n 1
+FS DOOR 796 id 19 at (16, 0) n 2
+FS DOOR 797 id 19 at (16, 0) n 3
+FS DOOR 798 id 19 at (16, 0) n 4
+FS DOOR 799 id 19 at (16, 0) n 5
+FS DOOR 800 id 19 at (16, 0) n 6
+FS DOOR 801 id 19 at (16, 0) n 7
+FS DOOR 802 id 19 at (16, 0) n 8
+FS DOOR 803 id 19 at (16, 0) n 9
+FS DOOR 804 id 19 at (16, 0) n 10
+FS DOOR 805 id 19 at (16, 0) n 11
+FS DOOR 806 id 19 at (16, 0) n 12
+FS DOOR 807 id 19 at (16, 0) n 13
+FS DOOR 808 id 19 at (16, 0) n 14
+FS DOORSEEN 809 id 8 at (16, 0) rank 0
+FS DOOR 809 id 19 at (16, 0) n 15
+FS DOOR 810 id 19 at (16, 0) n 16
+FS DOORSEEN 811 id 8 at (16, 0) rank 0
+FS DOOR 811 id 19 at (16, 0) n 17
+FS DOOR 812 id 19 at (16, 0) n 18
+FS DOORSEEN 813 id 8 at (16, 0) rank 0
+FS DOOR 813 id 19 at (16, 0) n 19
+FS DOOR 814 id 19 at (16, 0) n 20
+FS DOORSEEN 815 id 8 at (16, 0) rank 0
+FS DOOR 815 id 19 at (16, 0) n 21
+FS DOOR 816 id 19 at (16, 0) n 22
+FS DOORSEEN 817 id 8 at (16, 0) rank 0
+FS DOOR 817 id 19 at (16, 0) n 23
+FS DOOR 818 id 19 at (16, 0) n 24
+FS DOORSEEN 819 id 8 at (16, 0) rank 0
+FS DOOR 819 id 19 at (16, 0) n 25
+FS DOOR 820 id 19 at (16, 0) n 26
+FS DOORSEEN 821 id 8 at (16, 0) rank 0
+FS DOOR 821 id 19 at (16, 0) n 27
+FS DOOR 822 id 19 at (16, 0) n 28
+FS DOORSEEN 823 id 8 at (16, 0) rank 0
+FS DOOR 823 id 19 at (16, 0) n 29
+FS DOOR 824 id 19 at (16, 0) n 30
+FS DOORSEEN 825 id 8 at (16, 0) rank 0
+FS DOOR 825 id 19 at (16, 0) n 31
+FS DOOR 826 id 19 at (16, 0) n 32
+FS DOORSEEN 827 id 8 at (16, 0) rank 0
+FS DOOR 827 id 19 at (16, 0) n 33
+FS DOOR 828 id 19 at (16, 0) n 34
+FS DOORSEEN 829 id 8 at (16, 0) rank 0
+FS DOOR 829 id 19 at (16, 0) n 35
+FS DOOR 830 id 19 at (16, 0) n 36
+FS DOORSEEN 831 id 8 at (16, 0) rank 0
+FS DOOR 831 id 19 at (16, 0) n 37
+FS DOOR 832 id 19 at (16, 0) n 38
+FS DOORSEEN 833 id 8 at (16, 0) rank 0
+FS DOORSEEN 835 id 8 at (16, 0) rank 0
+FS DOOR 842 id 8 at (16, 0) n 13
+FS DOOR 843 id 8 at (16, 0) n 14
+FS DOOR 844 id 8 at (16, 0) n 15
+FS DOOR 845 id 8 at (16, 0) n 16
+FS DOOR 846 id 8 at (16, 0) n 17
+FS DOORSEEN 846 id 19 at (16, 0) rank 0
+FS DOOR 847 id 8 at (16, 0) n 18
+FS DOOR 848 id 8 at (16, 0) n 19
+FS DOOR 849 id 8 at (16, 0) n 20
+FS DOOR 850 id 8 at (16, 0) n 21
+FS DOORSEEN 850 id 19 at (16, 0) rank 0
+FS DOOR 851 id 8 at (16, 0) n 22
+FS DOOR 852 id 8 at (16, 0) n 23
+FS DOORSEEN 852 id 19 at (16, 0) rank 0
+FS DOOR 853 id 8 at (16, 0) n 24
+FS DOOR 854 id 8 at (16, 0) n 25
+FS DOORSEEN 854 id 19 at (16, 0) rank 0
+FS DOOR 855 id 8 at (16, 0) n 26
+FS DOOR 856 id 8 at (16, 0) n 27
+FS DOOR 857 id 8 at (16, 0) n 28
+FS DOOR 858 id 8 at (16, 0) n 29
+FS DOORSEEN 858 id 19 at (16, 0) rank 0
+FS DOOR 859 id 8 at (16, 0) n 30
+FS DOOR 860 id 8 at (16, 0) n 31
+FS DOORSEEN 860 id 19 at (16, 0) rank 0
+FS DOOR 861 id 8 at (16, 0) n 32
+FS DOOR 862 id 8 at (16, 0) n 33
+FS DOORSEEN 862 id 19 at (16, 0) rank 0
+FS DOOR 863 id 8 at (16, 0) n 34
+FS DOOR 864 id 8 at (16, 0) n 35
+FS DOOR 865 id 8 at (16, 0) n 36
+FS DOOR 866 id 8 at (16, 0) n 37
+FS DOORSEEN 866 id 19 at (16, 0) rank 0
+FS DOOR 867 id 8 at (16, 0) n 38
+FS DOOR 868 id 8 at (16, 0) n 39
+FS DOORSEEN 868 id 19 at (16, 0) rank 0
+FS DOOR 869 id 8 at (16, 0) n 40
+FS DOOR 870 id 8 at (16, 0) n 41
+FS DOORSEEN 870 id 19 at (16, 0) rank 0
+FS DOOR 871 id 8 at (16, 0) n 42
+FS DOOR 872 id 8 at (16, 0) n 43
+FS DOOR 873 id 8 at (16, 0) n 44
+FS DOOR 874 id 8 at (16, 0) n 45
+FS DOORSEEN 874 id 19 at (16, 0) rank 0
+FS DOOR 875 id 8 at (16, 0) n 46
+FS DOORSEEN 876 id 19 at (16, 0) rank 0
+FS DOORSEEN 927 id 8 at (16, 0) rank 0
+FS DOORSEEN 929 id 8 at (16, 0) rank 0
+FS DOORSEEN 931 id 8 at (16, 0) rank 0
+FS DOORSEEN 933 id 8 at (16, 0) rank 0
+FS DOORSEEN 935 id 8 at (16, 0) rank 0
+FS DOORSEEN 937 id 8 at (16, 0) rank 0
+FS DOORSEEN 939 id 8 at (16, 0) rank 0
+FS DOORSEEN 941 id 8 at (16, 0) rank 0
+FS DOORSEEN 943 id 8 at (16, 0) rank 0
+FS DOORSEEN 945 id 8 at (16, 0) rank 0
+FS DOOR 950 id 8 at (16, 0) n 47
+FS DOOR 951 id 8 at (16, 0) n 48
+FS DOOR 952 id 8 at (16, 0) n 49
+FS DOOR 953 id 8 at (16, 0) n 50
+FS DOOR 954 id 8 at (16, 0) n 51
+FS DOOR 955 id 8 at (16, 0) n 52
+FS DOOR 956 id 8 at (16, 0) n 53
+FS DOOR 957 id 8 at (16, 0) n 54
+FS DOORSEEN 957 id 19 at (16, 0) rank 0
+FS DOOR 958 id 8 at (16, 0) n 55
+FS DOOR 959 id 8 at (16, 0) n 56
+FS DOORSEEN 959 id 19 at (16, 0) rank 0
+FS DOOR 960 id 8 at (16, 0) n 57
+FS DOOR 961 id 8 at (16, 0) n 58
+FS DOORSEEN 961 id 19 at (16, 0) rank 0
+FS DOOR 962 id 8 at (16, 0) n 59
+FS DOOR 963 id 8 at (16, 0) n 60
+FS DOORSEEN 963 id 19 at (16, 0) rank 0
+FS DOOR 964 id 8 at (16, 0) n 61
+FS DOOR 965 id 8 at (16, 0) n 62
+FS DOORSEEN 965 id 19 at (16, 0) rank 0
+FS DOOR 966 id 8 at (16, 0) n 63
+FS DOOR 967 id 8 at (16, 0) n 64
+FS DOORSEEN 967 id 19 at (16, 0) rank 0
+FS DOOR 968 id 8 at (16, 0) n 65
+FS DOOR 969 id 8 at (16, 0) n 66
+FS DOORSEEN 969 id 19 at (16, 0) rank 0
+FS DOOR 970 id 8 at (16, 0) n 67
+FS DOOR 971 id 8 at (16, 0) n 68
+FS DOORSEEN 971 id 19 at (16, 0) rank 0
+FS DOOR 972 id 8 at (16, 0) n 69
+FS DOOR 973 id 8 at (16, 0) n 70
+FS DOORSEEN 973 id 19 at (16, 0) rank 0
+FS DOOR 974 id 8 at (16, 0) n 71
+FS DOOR 975 id 8 at (16, 0) n 72
+FS DOORSEEN 975 id 19 at (16, 0) rank 0
+FS DOOR 976 id 8 at (16, 0) n 73
+FS DOOR 977 id 8 at (16, 0) n 74
+FS DOORSEEN 977 id 19 at (16, 0) rank 0
+FS DOOR 978 id 8 at (16, 0) n 75
+FS DOOR 979 id 8 at (16, 0) n 76
+FS DOORSEEN 979 id 19 at (16, 0) rank 0
+FS DOOR 980 id 8 at (16, 0) n 77
+FS DOOR 981 id 8 at (16, 0) n 78
+FS DOORSEEN 981 id 19 at (16, 0) rank 0
+FS DOOR 982 id 8 at (16, 0) n 79
+FS DOOR 983 id 8 at (16, 0) n 80
+FS DOORSEEN 983 id 19 at (16, 0) rank 0
+FS DOOR 984 id 8 at (16, 0) n 81
+FS DOOR 985 id 8 at (16, 0) n 82
+FS DOORSEEN 985 id 19 at (16, 0) rank 0
+FS DOORSEEN 987 id 19 at (16, 0) rank 0
+FS DOORSEEN 989 id 19 at (16, 0) rank 0
+FS DOORSEEN 991 id 19 at (16, 0) rank 0
+FS DOORSEEN 993 id 19 at (16, 0) rank 0
+FS DOORSEEN 995 id 19 at (16, 0) rank 0
+FS DOORSEEN 997 id 19 at (16, 0) rank 0
+FS DOORSEEN 999 id 19 at (16, 0) rank 0

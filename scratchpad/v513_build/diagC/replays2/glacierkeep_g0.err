@@ -1,0 +1,1185 @@
+Update available: 2.3.6 -> 2.3.8. Run: pip install --upgrade fcode
+DIAGC CORE rnd=0 ph=0 budget=3 n=0 ti=500 ammo=0 floor=52 acd=0
+DIAGC CORE rnd=1 ph=0 budget=3 n=1 ti=470 ammo=0 floor=52 acd=0
+DIAGC CORE rnd=2 ph=1 budget=3 n=2 ti=406 ammo=0 floor=52 acd=0
+DIAGC EXP rnd=2 id=5 seat=1 role=expand pos=16,4 ti=361 acd=0 mcd=0 qlen=0 harv=0
+DIAGC CORE rnd=3 ph=1 budget=3 n=3 ti=361 ammo=0 floor=52 acd=0
+DIAGC EXP rnd=3 id=5 seat=1 role=expand pos=15,4 ti=329 acd=0 mcd=0 qlen=0 harv=0
+DIAGC EXP rnd=3 id=8 seat=2 role=expand pos=13,2 ti=329 acd=0 mcd=0 qlen=0 harv=0
+DIAGC CORE rnd=4 ph=1 budget=3 n=3 ti=339 ammo=0 floor=52 acd=0
+DIAGC EXP rnd=4 id=5 seat=1 role=expand pos=14,4 ti=339 acd=0 mcd=0 qlen=0 harv=0
+DIAGC EXP rnd=4 id=8 seat=2 role=expand pos=13,3 ti=339 acd=0 mcd=0 qlen=0 harv=0
+DIAGC CORE rnd=5 ph=1 budget=3 n=3 ti=339 ammo=0 floor=52 acd=0
+DIAGC EXP rnd=5 id=5 seat=1 role=expand pos=13,4 ti=307 acd=0 mcd=0 qlen=0 harv=0
+DIAGC EXP rnd=5 id=8 seat=2 role=expand pos=12,3 ti=307 acd=0 mcd=0 qlen=0 harv=0
+DIAGC CORE rnd=6 ph=1 budget=3 n=3 ti=307 ammo=0 floor=52 acd=0
+DIAGC EXP rnd=6 id=5 seat=1 role=expand pos=12,4 ti=307 acd=0 mcd=0 qlen=0 harv=0
+DIAGC EXP rnd=6 id=8 seat=2 role=expand pos=13,3 ti=307 acd=0 mcd=0 qlen=0 harv=0
+DIAGC CORE rnd=7 ph=1 budget=3 n=3 ti=307 ammo=0 floor=52 acd=0
+DIAGC EXP rnd=7 id=5 seat=1 role=expand pos=11,4 ti=307 acd=0 mcd=0 qlen=0 harv=0
+DIAGC EXP rnd=7 id=8 seat=2 role=expand pos=13,4 ti=307 acd=0 mcd=0 qlen=0 harv=0
+DIAGC CORE rnd=8 ph=1 budget=3 n=3 ti=317 ammo=0 floor=52 acd=0
+DIAGC EXP rnd=8 id=5 seat=1 role=expand pos=10,4 ti=285 acd=0 mcd=0 qlen=0 harv=0
+DIAGC EXP rnd=8 id=8 seat=2 role=expand pos=13,5 ti=285 acd=0 mcd=0 qlen=0 harv=0
+DIAGC CORE rnd=9 ph=1 budget=3 n=3 ti=285 ammo=0 floor=52 acd=0
+DIAGC EXP rnd=9 id=5 seat=1 role=expand pos=9,4 ti=285 acd=0 mcd=0 qlen=0 harv=0
+DIAGC EXP rnd=9 id=8 seat=2 role=expand pos=13,6 ti=285 acd=0 mcd=0 qlen=0 harv=0
+DIAGC CORE rnd=10 ph=1 budget=3 n=3 ti=285 ammo=0 floor=52 acd=0
+DIAGC EXP rnd=10 id=5 seat=1 role=expand pos=8,4 ti=281 acd=0 mcd=0 qlen=0 harv=0
+DIAGC EXP rnd=10 id=8 seat=2 role=expand pos=13,7 ti=281 acd=0 mcd=0 qlen=0 harv=0
+DIAGC CORE rnd=11 ph=2 budget=8 n=3 ti=251 ammo=30 floor=60 acd=0
+DIAGC EXP rnd=11 id=5 seat=1 role=expand pos=7,4 ti=149 acd=0 mcd=0 qlen=0 harv=0
+DIAGC EXP rnd=11 id=8 seat=2 role=expand pos=13,8 ti=149 acd=0 mcd=0 qlen=0 harv=0
+DIAGC CORE rnd=12 ph=2 budget=8 n=4 ti=129 ammo=60 floor=84 acd=0
+DIAGC EXP rnd=12 id=5 seat=1 role=expand pos=6,4 ti=69 acd=0 mcd=0 qlen=0 harv=0
+DIAGC EXP rnd=12 id=8 seat=2 role=expand pos=13,9 ti=69 acd=0 mcd=0 qlen=0 harv=0
+DIAGC EXP rnd=12 id=16 seat=3 role=expand pos=15,4 ti=69 acd=0 mcd=0 qlen=0 harv=0
+DIAGC CORE rnd=13 ph=4 budget=8 n=5 ti=48 ammo=71 floor=48 acd=0
+DIAGC EXP rnd=13 id=5 seat=1 role=expand pos=5,4 ti=42 acd=0 mcd=0 qlen=0 harv=0
+DIAGC EXP rnd=13 id=8 seat=2 role=expand pos=13,10 ti=42 acd=0 mcd=0 qlen=0 harv=0
+DIAGC EXP rnd=13 id=16 seat=3 role=expand pos=16,4 ti=42 acd=0 mcd=0 qlen=0 harv=0
+DIAGC EXP rnd=13 id=19 seat=4 role=defend pos=14,4 ti=42 acd=0 mcd=0 qlen=0 harv=0
+DIAGC CORE rnd=14 ph=4 budget=8 n=5 ti=42 ammo=71 floor=48 acd=0
+DIAGC EXP rnd=14 id=5 seat=1 role=expand pos=5,3 ti=36 acd=0 mcd=0 qlen=0 harv=0
+DIAGC EXP rnd=14 id=8 seat=2 role=expand pos=14,10 ti=36 acd=0 mcd=0 qlen=0 harv=0
+DIAGC EXP rnd=14 id=16 seat=3 role=expand pos=17,4 ti=36 acd=0 mcd=0 qlen=0 harv=0
+DIAGC EXP rnd=14 id=19 seat=4 role=defend pos=13,4 ti=36 acd=0 mcd=0 qlen=0 harv=0
+DIAGC CORE rnd=15 ph=4 budget=8 n=5 ti=36 ammo=61 floor=48 acd=0
+DIAGC EXP rnd=15 id=5 seat=1 role=expand pos=5,2 ti=36 acd=0 mcd=0 qlen=0 harv=0
+DIAGC EXP rnd=15 id=8 seat=2 role=expand pos=14,11 ti=36 acd=0 mcd=0 qlen=0 harv=0
+DIAGC EXP rnd=15 id=16 seat=3 role=expand pos=18,4 ti=36 acd=0 mcd=0 qlen=0 harv=0
+DIAGC EXP rnd=15 id=19 seat=4 role=defend pos=12,4 ti=36 acd=0 mcd=0 qlen=0 harv=0
+DIAGC CORE rnd=16 ph=4 budget=8 n=5 ti=46 ammo=61 floor=48 acd=0
+DIAGC EXP rnd=16 id=5 seat=1 role=expand pos=4,2 ti=46 acd=0 mcd=0 qlen=0 harv=0
+DIAGC HARV rnd=16 id=5 seat=1 tile=3,2
+DIAGC PLAN rnd=16 id=5 seat=1 src=3,2 len=10
+DIAGC EXP rnd=16 id=8 seat=2 role=expand pos=14,12 ti=2 acd=0 mcd=0 qlen=0 harv=0
+DIAGC EXP rnd=16 id=16 seat=3 role=expand pos=19,4 ti=2 acd=0 mcd=0 qlen=0 harv=0
+DIAGC EXP rnd=16 id=19 seat=4 role=defend pos=11,4 ti=2 acd=0 mcd=0 qlen=0 harv=0
+DIAGC CORE rnd=17 ph=4 budget=8 n=5 ti=2 ammo=51 floor=48 acd=0
+DIAGC EXP rnd=17 id=5 seat=1 role=expand pos=4,2 ti=2 acd=0 mcd=0 qlen=10 harv=1
+DIAGC BNL_POOR rnd=17 id=5 seat=1 ti=2 res=0 cost=6 qlen=10 head=4,2 dcore=10
+DIAGC EXP rnd=17 id=8 seat=2 role=expand pos=14,13 ti=2 acd=0 mcd=0 qlen=0 harv=1
+DIAGC EXP rnd=17 id=16 seat=3 role=expand pos=20,4 ti=2 acd=0 mcd=0 qlen=0 harv=1
+DIAGC EXP rnd=17 id=19 seat=4 role=defend pos=10,4 ti=2 acd=0 mcd=0 qlen=0 harv=1
+DIAGC CORE rnd=18 ph=4 budget=8 n=5 ti=2 ammo=51 floor=48 acd=0
+DIAGC EXP rnd=18 id=5 seat=1 role=expand pos=5,2 ti=2 acd=0 mcd=0 qlen=10 harv=1
+DIAGC BNL_POOR rnd=18 id=5 seat=1 ti=2 res=0 cost=6 qlen=10 head=4,2 dcore=10
+DIAGC EXP rnd=18 id=8 seat=2 role=expand pos=15,13 ti=2 acd=0 mcd=0 qlen=0 harv=1
+DIAGC EXP rnd=18 id=16 seat=3 role=expand pos=21,4 ti=2 acd=0 mcd=0 qlen=0 harv=1
+DIAGC EXP rnd=18 id=19 seat=4 role=defend pos=9,4 ti=2 acd=0 mcd=0 qlen=0 harv=1
+DIAGC CORE rnd=19 ph=4 budget=8 n=5 ti=2 ammo=41 floor=48 acd=0
+DIAGC EXP rnd=19 id=5 seat=1 role=expand pos=5,2 ti=2 acd=0 mcd=0 qlen=10 harv=1
+DIAGC BNL_POOR rnd=19 id=5 seat=1 ti=2 res=0 cost=6 qlen=10 head=4,2 dcore=10
+DIAGC EXP rnd=19 id=8 seat=2 role=expand pos=15,14 ti=2 acd=0 mcd=0 qlen=0 harv=1
+DIAGC EXP rnd=19 id=16 seat=3 role=expand pos=22,4 ti=2 acd=0 mcd=0 qlen=0 harv=1
+DIAGC EXP rnd=19 id=19 seat=4 role=defend pos=9,3 ti=2 acd=0 mcd=0 qlen=0 harv=1
+DIAGC CORE rnd=20 ph=4 budget=8 n=5 ti=12 ammo=41 floor=48 acd=0
+DIAGC EXP rnd=20 id=5 seat=1 role=expand pos=5,2 ti=6 acd=0 mcd=0 qlen=10 harv=1
+DIAGC BNL_OK rnd=20 id=5 seat=1 tile=4,2 dcore=10 left=9
+DIAGC EXP rnd=20 id=8 seat=2 role=expand pos=14,14 ti=0 acd=0 mcd=0 qlen=0 harv=1
+DIAGC EXP rnd=20 id=16 seat=3 role=expand pos=23,4 ti=0 acd=0 mcd=0 qlen=0 harv=1
+DIAGC EXP rnd=20 id=19 seat=4 role=defend pos=8,3 ti=0 acd=0 mcd=0 qlen=0 harv=1
+DIAGC CORE rnd=21 ph=4 budget=8 n=5 ti=0 ammo=31 floor=48 acd=0
+DIAGC EXP rnd=21 id=5 seat=1 role=expand pos=5,2 ti=0 acd=0 mcd=0 qlen=9 harv=1
+DIAGC BNL_POOR rnd=21 id=5 seat=1 ti=0 res=0 cost=6 qlen=9 head=5,2 dcore=9
+DIAGC EXP rnd=21 id=8 seat=2 role=expand pos=15,14 ti=0 acd=0 mcd=0 qlen=0 harv=1
+DIAGC EXP rnd=21 id=16 seat=3 role=expand pos=24,4 ti=0 acd=0 mcd=0 qlen=0 harv=1
+DIAGC EXP rnd=21 id=19 seat=4 role=defend pos=8,2 ti=0 acd=0 mcd=0 qlen=0 harv=1
+DIAGC CORE rnd=22 ph=4 budget=8 n=5 ti=0 ammo=31 floor=48 acd=0
+DIAGC EXP rnd=22 id=5 seat=1 role=expand pos=6,2 ti=0 acd=0 mcd=0 qlen=9 harv=1
+DIAGC BNL_POOR rnd=22 id=5 seat=1 ti=0 res=0 cost=6 qlen=9 head=5,2 dcore=9
+DIAGC EXP rnd=22 id=8 seat=2 role=expand pos=14,14 ti=0 acd=0 mcd=0 qlen=0 harv=1
+DIAGC EXP rnd=22 id=16 seat=3 role=expand pos=24,3 ti=0 acd=0 mcd=0 qlen=0 harv=1
+DIAGC EXP rnd=22 id=19 seat=4 role=defend pos=8,1 ti=0 acd=0 mcd=0 qlen=0 harv=1
+DIAGC CORE rnd=23 ph=4 budget=8 n=5 ti=0 ammo=21 floor=48 acd=0
+DIAGC EXP rnd=23 id=5 seat=1 role=expand pos=6,2 ti=0 acd=0 mcd=0 qlen=9 harv=1
+DIAGC BNL_POOR rnd=23 id=5 seat=1 ti=0 res=0 cost=6 qlen=9 head=5,2 dcore=9
+DIAGC EXP rnd=23 id=8 seat=2 role=expand pos=15,14 ti=0 acd=0 mcd=0 qlen=0 harv=1
+DIAGC EXP rnd=23 id=16 seat=3 role=expand pos=24,2 ti=0 acd=0 mcd=0 qlen=0 harv=1
+DIAGC EXP rnd=23 id=19 seat=4 role=defend pos=8,0 ti=0 acd=0 mcd=0 qlen=0 harv=1
+DIAGC CORE rnd=24 ph=4 budget=8 n=5 ti=10 ammo=21 floor=48 acd=0
+DIAGC EXP rnd=24 id=5 seat=1 role=expand pos=6,2 ti=10 acd=0 mcd=0 qlen=9 harv=1
+DIAGC BNL_OK rnd=24 id=5 seat=1 tile=5,2 dcore=9 left=8
+DIAGC EXP rnd=24 id=8 seat=2 role=expand pos=14,14 ti=4 acd=0 mcd=0 qlen=0 harv=1
+DIAGC EXP rnd=24 id=16 seat=3 role=expand pos=25,2 ti=4 acd=0 mcd=0 qlen=0 harv=1
+DIAGC EXP rnd=24 id=19 seat=4 role=defend pos=9,0 ti=4 acd=0 mcd=0 qlen=0 harv=1
+DIAGC CORE rnd=25 ph=4 budget=8 n=5 ti=4 ammo=11 floor=48 acd=0
+DIAGC EXP rnd=25 id=5 seat=1 role=expand pos=6,2 ti=4 acd=0 mcd=0 qlen=8 harv=1
+DIAGC BNL_POOR rnd=25 id=5 seat=1 ti=4 res=0 cost=6 qlen=8 head=6,2 dcore=8
+DIAGC EXP rnd=25 id=8 seat=2 role=expand pos=15,14 ti=4 acd=0 mcd=0 qlen=0 harv=1
+DIAGC EXP rnd=25 id=16 seat=3 role=expand pos=26,2 ti=4 acd=0 mcd=0 qlen=0 harv=1
+DIAGC EXP rnd=25 id=19 seat=4 role=defend pos=10,0 ti=4 acd=0 mcd=0 qlen=0 harv=1
+DIAGC CORE rnd=26 ph=4 budget=8 n=5 ti=4 ammo=11 floor=48 acd=0
+DIAGC EXP rnd=26 id=5 seat=1 role=expand pos=7,2 ti=4 acd=0 mcd=0 qlen=8 harv=1
+DIAGC BNL_POOR rnd=26 id=5 seat=1 ti=4 res=0 cost=6 qlen=8 head=6,2 dcore=8
+DIAGC EXP rnd=26 id=8 seat=2 role=expand pos=14,14 ti=4 acd=0 mcd=0 qlen=0 harv=1
+DIAGC EXP rnd=26 id=16 seat=3 role=expand pos=27,2 ti=4 acd=0 mcd=0 qlen=0 harv=1
+DIAGC EXP rnd=26 id=19 seat=4 role=defend pos=11,0 ti=4 acd=0 mcd=0 qlen=0 harv=1
+DIAGC CORE rnd=27 ph=4 budget=8 n=5 ti=4 ammo=1 floor=48 acd=0
+DIAGC EXP rnd=27 id=5 seat=1 role=expand pos=7,2 ti=4 acd=0 mcd=0 qlen=8 harv=1
+DIAGC BNL_POOR rnd=27 id=5 seat=1 ti=4 res=0 cost=6 qlen=8 head=6,2 dcore=8
+DIAGC EXP rnd=27 id=8 seat=2 role=expand pos=15,14 ti=4 acd=0 mcd=0 qlen=0 harv=1
+DIAGC EXP rnd=27 id=16 seat=3 role=expand pos=27,3 ti=4 acd=0 mcd=0 qlen=0 harv=1
+DIAGC EXP rnd=27 id=19 seat=4 role=defend pos=12,0 ti=4 acd=0 mcd=0 qlen=0 harv=1
+DIAGC CORE rnd=28 ph=4 budget=8 n=5 ti=14 ammo=1 floor=48 acd=0
+DIAGC EXP rnd=28 id=5 seat=1 role=expand pos=7,2 ti=8 acd=0 mcd=0 qlen=8 harv=1
+DIAGC BNL_OK rnd=28 id=5 seat=1 tile=6,2 dcore=8 left=7
+DIAGC EXP rnd=28 id=8 seat=2 role=expand pos=14,14 ti=2 acd=0 mcd=0 qlen=0 harv=1
+DIAGC EXP rnd=28 id=16 seat=3 role=expand pos=27,2 ti=2 acd=0 mcd=0 qlen=0 harv=1
+DIAGC EXP rnd=28 id=19 seat=4 role=defend pos=13,0 ti=2 acd=0 mcd=0 qlen=0 harv=1
+DIAGC CORE rnd=29 ph=4 budget=8 n=5 ti=2 ammo=1 floor=48 acd=0
+DIAGC EXP rnd=29 id=5 seat=1 role=expand pos=7,2 ti=2 acd=0 mcd=0 qlen=7 harv=1
+DIAGC BNL_POOR rnd=29 id=5 seat=1 ti=2 res=0 cost=6 qlen=7 head=7,2 dcore=7
+DIAGC EXP rnd=29 id=8 seat=2 role=expand pos=15,14 ti=2 acd=0 mcd=0 qlen=0 harv=1
+DIAGC EXP rnd=29 id=16 seat=3 role=expand pos=27,3 ti=2 acd=0 mcd=0 qlen=0 harv=1
+DIAGC EXP rnd=29 id=19 seat=4 role=defend pos=14,0 ti=2 acd=0 mcd=0 qlen=0 harv=1
+DIAGC CORE rnd=30 ph=4 budget=8 n=5 ti=2 ammo=1 floor=48 acd=0
+DIAGC EXP rnd=30 id=5 seat=1 role=expand pos=8,2 ti=2 acd=0 mcd=0 qlen=7 harv=1
+DIAGC BNL_POOR rnd=30 id=5 seat=1 ti=2 res=0 cost=6 qlen=7 head=7,2 dcore=7
+DIAGC EXP rnd=30 id=8 seat=2 role=expand pos=14,14 ti=2 acd=0 mcd=0 qlen=0 harv=1
+DIAGC EXP rnd=30 id=16 seat=3 role=expand pos=27,2 ti=2 acd=0 mcd=0 qlen=0 harv=1
+DIAGC EXP rnd=30 id=19 seat=4 role=defend pos=15,0 ti=2 acd=0 mcd=0 qlen=0 harv=1
+DIAGC CORE rnd=31 ph=4 budget=8 n=5 ti=2 ammo=1 floor=48 acd=0
+DIAGC EXP rnd=31 id=5 seat=1 role=expand pos=8,2 ti=2 acd=0 mcd=0 qlen=7 harv=1
+DIAGC BNL_POOR rnd=31 id=5 seat=1 ti=2 res=0 cost=6 qlen=7 head=7,2 dcore=7
+DIAGC EXP rnd=31 id=8 seat=2 role=expand pos=15,14 ti=2 acd=0 mcd=0 qlen=0 harv=1
+DIAGC EXP rnd=31 id=16 seat=3 role=expand pos=27,3 ti=2 acd=0 mcd=0 qlen=0 harv=1
+DIAGC EXP rnd=31 id=19 seat=4 role=defend pos=16,0 ti=2 acd=0 mcd=0 qlen=0 harv=1
+DIAGC CORE rnd=32 ph=4 budget=8 n=5 ti=12 ammo=1 floor=48 acd=0
+DIAGC EXP rnd=32 id=5 seat=1 role=expand pos=8,2 ti=12 acd=0 mcd=0 qlen=7 harv=1
+DIAGC BNL_OK rnd=32 id=5 seat=1 tile=7,2 dcore=7 left=6
+DIAGC EXP rnd=32 id=8 seat=2 role=expand pos=14,14 ti=6 acd=0 mcd=0 qlen=0 harv=1
+DIAGC EXP rnd=32 id=16 seat=3 role=expand pos=27,2 ti=6 acd=0 mcd=0 qlen=0 harv=1
+DIAGC EXP rnd=32 id=19 seat=4 role=defend pos=17,0 ti=6 acd=0 mcd=0 qlen=0 harv=1
+DIAGC CORE rnd=33 ph=4 budget=8 n=5 ti=6 ammo=1 floor=48 acd=0
+DIAGC EXP rnd=33 id=5 seat=1 role=expand pos=8,2 ti=6 acd=0 mcd=0 qlen=6 harv=1
+DIAGC EXP rnd=33 id=8 seat=2 role=expand pos=15,14 ti=6 acd=0 mcd=0 qlen=0 harv=1
+DIAGC EXP rnd=33 id=16 seat=3 role=expand pos=27,3 ti=6 acd=0 mcd=0 qlen=0 harv=1
+DIAGC EXP rnd=33 id=19 seat=4 role=defend pos=18,0 ti=6 acd=0 mcd=0 qlen=0 harv=1
+DIAGC CORE rnd=34 ph=4 budget=8 n=5 ti=6 ammo=1 floor=48 acd=0
+DIAGC EXP rnd=34 id=5 seat=1 role=expand pos=9,2 ti=6 acd=0 mcd=0 qlen=6 harv=1
+DIAGC BNL_OK rnd=34 id=5 seat=1 tile=8,2 dcore=6 left=5
+DIAGC EXP rnd=34 id=8 seat=2 role=expand pos=14,14 ti=0 acd=0 mcd=0 qlen=0 harv=1
+DIAGC EXP rnd=34 id=16 seat=3 role=expand pos=27,2 ti=0 acd=0 mcd=0 qlen=0 harv=1
+DIAGC EXP rnd=34 id=19 seat=4 role=defend pos=19,0 ti=0 acd=0 mcd=0 qlen=0 harv=1
+DIAGC CORE rnd=35 ph=4 budget=8 n=5 ti=0 ammo=1 floor=56 acd=0
+DIAGC EXP rnd=35 id=5 seat=1 role=expand pos=9,2 ti=0 acd=0 mcd=0 qlen=5 harv=1
+DIAGC BNL_POOR rnd=35 id=5 seat=1 ti=0 res=0 cost=7 qlen=5 head=9,2 dcore=5
+DIAGC EXP rnd=35 id=8 seat=2 role=expand pos=15,14 ti=0 acd=0 mcd=0 qlen=0 harv=1
+DIAGC EXP rnd=35 id=16 seat=3 role=expand pos=27,3 ti=0 acd=0 mcd=0 qlen=0 harv=1
+DIAGC EXP rnd=35 id=19 seat=4 role=defend pos=20,0 ti=0 acd=0 mcd=0 qlen=0 harv=1
+DIAGC CORE rnd=36 ph=4 budget=8 n=5 ti=10 ammo=1 floor=56 acd=0
+DIAGC EXP rnd=36 id=5 seat=1 role=expand pos=10,2 ti=10 acd=0 mcd=0 qlen=5 harv=1
+DIAGC BNL_OK rnd=36 id=5 seat=1 tile=9,2 dcore=5 left=4
+DIAGC EXP rnd=36 id=8 seat=2 role=expand pos=14,14 ti=3 acd=0 mcd=0 qlen=0 harv=1
+DIAGC EXP rnd=36 id=16 seat=3 role=expand pos=27,2 ti=3 acd=0 mcd=0 qlen=0 harv=1
+DIAGC EXP rnd=36 id=19 seat=4 role=defend pos=20,1 ti=3 acd=0 mcd=0 qlen=0 harv=1
+DIAGC CORE rnd=37 ph=4 budget=8 n=5 ti=3 ammo=1 floor=56 acd=0
+DIAGC EXP rnd=37 id=5 seat=1 role=expand pos=10,2 ti=3 acd=0 mcd=0 qlen=4 harv=1
+DIAGC BNL_POOR rnd=37 id=5 seat=1 ti=3 res=0 cost=7 qlen=4 head=10,2 dcore=4
+DIAGC EXP rnd=37 id=8 seat=2 role=expand pos=15,14 ti=3 acd=0 mcd=0 qlen=0 harv=1
+DIAGC EXP rnd=37 id=16 seat=3 role=expand pos=27,3 ti=3 acd=0 mcd=0 qlen=0 harv=1
+DIAGC EXP rnd=37 id=19 seat=4 role=defend pos=21,1 ti=3 acd=0 mcd=0 qlen=0 harv=1
+DIAGC CORE rnd=38 ph=4 budget=8 n=5 ti=3 ammo=1 floor=56 acd=0
+DIAGC EXP rnd=38 id=5 seat=1 role=expand pos=11,2 ti=3 acd=0 mcd=0 qlen=4 harv=1
+DIAGC BNL_POOR rnd=38 id=5 seat=1 ti=3 res=0 cost=7 qlen=4 head=10,2 dcore=4
+DIAGC EXP rnd=38 id=8 seat=2 role=expand pos=14,14 ti=3 acd=0 mcd=0 qlen=0 harv=1
+DIAGC EXP rnd=38 id=16 seat=3 role=expand pos=27,2 ti=3 acd=0 mcd=0 qlen=0 harv=1
+DIAGC EXP rnd=38 id=19 seat=4 role=defend pos=21,2 ti=3 acd=0 mcd=0 qlen=0 harv=1
+DIAGC CORE rnd=39 ph=4 budget=8 n=5 ti=3 ammo=1 floor=56 acd=0
+DIAGC EXP rnd=39 id=5 seat=1 role=expand pos=11,2 ti=3 acd=0 mcd=0 qlen=4 harv=1
+DIAGC BNL_POOR rnd=39 id=5 seat=1 ti=3 res=0 cost=7 qlen=4 head=10,2 dcore=4
+DIAGC EXP rnd=39 id=8 seat=2 role=expand pos=15,14 ti=3 acd=0 mcd=0 qlen=0 harv=1
+DIAGC EXP rnd=39 id=16 seat=3 role=expand pos=27,3 ti=3 acd=0 mcd=0 qlen=0 harv=1
+DIAGC EXP rnd=39 id=19 seat=4 role=defend pos=21,3 ti=3 acd=0 mcd=0 qlen=0 harv=1
+DIAGC CORE rnd=40 ph=4 budget=8 n=5 ti=13 ammo=1 floor=56 acd=0
+DIAGC EXP rnd=40 id=5 seat=1 role=expand pos=11,2 ti=13 acd=0 mcd=0 qlen=4 harv=1
+DIAGC BNL_OK rnd=40 id=5 seat=1 tile=10,2 dcore=4 left=3
+DIAGC EXP rnd=40 id=8 seat=2 role=expand pos=14,14 ti=6 acd=0 mcd=0 qlen=0 harv=1
+DIAGC EXP rnd=40 id=16 seat=3 role=expand pos=27,2 ti=6 acd=0 mcd=0 qlen=0 harv=1
+DIAGC EXP rnd=40 id=19 seat=4 role=defend pos=21,4 ti=6 acd=0 mcd=0 qlen=0 harv=1
+DIAGC CORE rnd=41 ph=4 budget=8 n=5 ti=6 ammo=1 floor=56 acd=0
+DIAGC EXP rnd=41 id=5 seat=1 role=expand pos=11,2 ti=6 acd=0 mcd=0 qlen=3 harv=1
+DIAGC BNL_POOR rnd=41 id=5 seat=1 ti=6 res=0 cost=7 qlen=3 head=11,2 dcore=3
+DIAGC EXP rnd=41 id=8 seat=2 role=expand pos=15,14 ti=6 acd=0 mcd=0 qlen=0 harv=1
+DIAGC EXP rnd=41 id=16 seat=3 role=expand pos=27,3 ti=6 acd=0 mcd=0 qlen=0 harv=1
+DIAGC EXP rnd=41 id=19 seat=4 role=defend pos=21,5 ti=6 acd=0 mcd=0 qlen=0 harv=1
+DIAGC CORE rnd=42 ph=4 budget=8 n=5 ti=6 ammo=1 floor=56 acd=0
+DIAGC EXP rnd=42 id=5 seat=1 role=expand pos=12,2 ti=6 acd=0 mcd=0 qlen=3 harv=1
+DIAGC BNL_POOR rnd=42 id=5 seat=1 ti=6 res=0 cost=7 qlen=3 head=11,2 dcore=3
+DIAGC EXP rnd=42 id=8 seat=2 role=expand pos=14,14 ti=6 acd=0 mcd=0 qlen=0 harv=1
+DIAGC EXP rnd=42 id=16 seat=3 role=expand pos=27,2 ti=6 acd=0 mcd=0 qlen=0 harv=1
+DIAGC EXP rnd=42 id=19 seat=4 role=defend pos=20,5 ti=6 acd=0 mcd=0 qlen=0 harv=1
+DIAGC CORE rnd=43 ph=4 budget=8 n=5 ti=6 ammo=1 floor=56 acd=0
+DIAGC EXP rnd=43 id=5 seat=1 role=expand pos=12,2 ti=6 acd=0 mcd=0 qlen=3 harv=1
+DIAGC BNL_POOR rnd=43 id=5 seat=1 ti=6 res=0 cost=7 qlen=3 head=11,2 dcore=3
+DIAGC EXP rnd=43 id=8 seat=2 role=expand pos=15,14 ti=6 acd=0 mcd=0 qlen=0 harv=1
+DIAGC EXP rnd=43 id=16 seat=3 role=expand pos=27,3 ti=6 acd=0 mcd=0 qlen=0 harv=1
+DIAGC CORE rnd=44 ph=4 budget=8 n=5 ti=16 ammo=1 floor=56 acd=0
+DIAGC EXP rnd=44 id=5 seat=1 role=expand pos=12,2 ti=9 acd=0 mcd=0 qlen=3 harv=1
+DIAGC BNL_OK rnd=44 id=5 seat=1 tile=11,2 dcore=3 left=2
+DIAGC EXP rnd=44 id=8 seat=2 role=expand pos=14,14 ti=2 acd=0 mcd=0 qlen=0 harv=1
+DIAGC EXP rnd=44 id=16 seat=3 role=expand pos=27,2 ti=2 acd=0 mcd=0 qlen=0 harv=1
+DIAGC CORE rnd=45 ph=4 budget=8 n=5 ti=2 ammo=1 floor=56 acd=0
+DIAGC EXP rnd=45 id=5 seat=1 role=expand pos=12,2 ti=2 acd=0 mcd=0 qlen=2 harv=1
+DIAGC BNL_POOR rnd=45 id=5 seat=1 ti=2 res=0 cost=7 qlen=2 head=12,2 dcore=2
+DIAGC EXP rnd=45 id=8 seat=2 role=expand pos=15,14 ti=2 acd=0 mcd=0 qlen=0 harv=1
+DIAGC EXP rnd=45 id=16 seat=3 role=expand pos=27,3 ti=2 acd=0 mcd=0 qlen=0 harv=1
+DIAGC CORE rnd=46 ph=4 budget=8 n=5 ti=2 ammo=1 floor=56 acd=0
+DIAGC EXP rnd=46 id=5 seat=1 role=expand pos=13,2 ti=2 acd=0 mcd=0 qlen=2 harv=1
+DIAGC BNL_POOR rnd=46 id=5 seat=1 ti=2 res=0 cost=7 qlen=2 head=12,2 dcore=2
+DIAGC EXP rnd=46 id=8 seat=2 role=expand pos=14,14 ti=2 acd=0 mcd=0 qlen=0 harv=1
+DIAGC EXP rnd=46 id=16 seat=3 role=expand pos=27,2 ti=2 acd=0 mcd=0 qlen=0 harv=1
+DIAGC CORE rnd=47 ph=4 budget=8 n=5 ti=2 ammo=1 floor=56 acd=0
+DIAGC EXP rnd=47 id=5 seat=1 role=expand pos=13,2 ti=2 acd=0 mcd=0 qlen=2 harv=1
+DIAGC BNL_POOR rnd=47 id=5 seat=1 ti=2 res=0 cost=7 qlen=2 head=12,2 dcore=2
+DIAGC EXP rnd=47 id=8 seat=2 role=expand pos=15,14 ti=2 acd=0 mcd=0 qlen=0 harv=1
+DIAGC EXP rnd=47 id=16 seat=3 role=expand pos=27,3 ti=2 acd=0 mcd=0 qlen=0 harv=1
+DIAGC CORE rnd=48 ph=4 budget=8 n=5 ti=12 ammo=1 floor=56 acd=0
+DIAGC EXP rnd=48 id=5 seat=1 role=expand pos=13,2 ti=12 acd=0 mcd=0 qlen=2 harv=1
+DIAGC BNL_OK rnd=48 id=5 seat=1 tile=12,2 dcore=2 left=1
+DIAGC EXP rnd=48 id=8 seat=2 role=expand pos=14,14 ti=5 acd=0 mcd=0 qlen=0 harv=1
+DIAGC EXP rnd=48 id=16 seat=3 role=expand pos=27,2 ti=5 acd=0 mcd=0 qlen=0 harv=1
+DIAGC CORE rnd=49 ph=4 budget=8 n=5 ti=5 ammo=1 floor=56 acd=0
+DIAGC EXP rnd=49 id=5 seat=1 role=expand pos=13,2 ti=5 acd=0 mcd=0 qlen=1 harv=1
+DIAGC BNL_POOR rnd=49 id=5 seat=1 ti=5 res=0 cost=7 qlen=1 head=13,2 dcore=1
+DIAGC EXP rnd=49 id=8 seat=2 role=expand pos=15,14 ti=5 acd=0 mcd=0 qlen=0 harv=1
+DIAGC EXP rnd=49 id=16 seat=3 role=expand pos=27,3 ti=5 acd=0 mcd=0 qlen=0 harv=1
+DIAGC CORE rnd=50 ph=4 budget=8 n=5 ti=5 ammo=1 floor=56 acd=0
+DIAGC EXP rnd=50 id=5 seat=1 role=expand pos=13,1 ti=5 acd=0 mcd=0 qlen=1 harv=1
+DIAGC BNL_POOR rnd=50 id=5 seat=1 ti=5 res=0 cost=7 qlen=1 head=13,2 dcore=1
+DIAGC EXP rnd=50 id=8 seat=2 role=expand pos=14,14 ti=5 acd=0 mcd=0 qlen=0 harv=1
+DIAGC EXP rnd=50 id=16 seat=3 role=expand pos=27,2 ti=5 acd=0 mcd=0 qlen=0 harv=1
+DIAGC CORE rnd=51 ph=4 budget=8 n=5 ti=5 ammo=1 floor=56 acd=0
+DIAGC EXP rnd=51 id=5 seat=1 role=expand pos=13,1 ti=5 acd=0 mcd=0 qlen=1 harv=1
+DIAGC BNL_POOR rnd=51 id=5 seat=1 ti=5 res=0 cost=7 qlen=1 head=13,2 dcore=1
+DIAGC EXP rnd=51 id=8 seat=2 role=expand pos=15,14 ti=5 acd=0 mcd=0 qlen=0 harv=1
+DIAGC EXP rnd=51 id=16 seat=3 role=expand pos=27,3 ti=5 acd=0 mcd=0 qlen=0 harv=1
+DIAGC CORE rnd=52 ph=4 budget=8 n=5 ti=15 ammo=1 floor=56 acd=0
+DIAGC EXP rnd=52 id=5 seat=1 role=expand pos=13,1 ti=15 acd=0 mcd=0 qlen=1 harv=1
+DIAGC BNL_OK rnd=52 id=5 seat=1 tile=13,2 dcore=1 left=0
+DIAGC EXP rnd=52 id=8 seat=2 role=expand pos=14,14 ti=8 acd=0 mcd=0 qlen=0 harv=1
+DIAGC EXP rnd=52 id=16 seat=3 role=expand pos=27,2 ti=8 acd=0 mcd=0 qlen=0 harv=1
+DIAGC EXP rnd=52 id=19 seat=4 role=defend pos=16,5 ti=8 acd=0 mcd=0 qlen=0 harv=1
+DIAGC CORE rnd=53 ph=4 budget=8 n=5 ti=8 ammo=1 floor=56 acd=0
+DIAGC EXP rnd=53 id=5 seat=1 role=expand pos=13,1 ti=8 acd=0 mcd=0 qlen=0 harv=1
+DIAGC EXP rnd=53 id=8 seat=2 role=expand pos=15,14 ti=8 acd=0 mcd=0 qlen=0 harv=1
+DIAGC EXP rnd=53 id=16 seat=3 role=expand pos=27,3 ti=8 acd=0 mcd=0 qlen=0 harv=1
+DIAGC EXP rnd=53 id=19 seat=4 role=defend pos=16,5 ti=8 acd=0 mcd=0 qlen=0 harv=1
+DIAGC CORE rnd=54 ph=4 budget=8 n=5 ti=18 ammo=1 floor=56 acd=0
+DIAGC EXP rnd=54 id=5 seat=1 role=expand pos=12,1 ti=18 acd=0 mcd=0 qlen=0 harv=1
+DIAGC EXP rnd=54 id=8 seat=2 role=expand pos=14,14 ti=18 acd=0 mcd=0 qlen=0 harv=1
+DIAGC EXP rnd=54 id=16 seat=3 role=expand pos=27,2 ti=18 acd=0 mcd=0 qlen=0 harv=1
+DIAGC EXP rnd=54 id=19 seat=4 role=defend pos=16,6 ti=18 acd=0 mcd=0 qlen=0 harv=1
+DIAGC CORE rnd=55 ph=2 budget=8 n=5 ti=28 ammo=1 floor=96 acd=0
+DIAGC EXP rnd=55 id=5 seat=1 role=expand pos=11,1 ti=28 acd=0 mcd=0 qlen=0 harv=1
+DIAGC EXP rnd=55 id=8 seat=2 role=expand pos=15,14 ti=28 acd=0 mcd=0 qlen=0 harv=1
+DIAGC EXP rnd=55 id=16 seat=3 role=expand pos=27,3 ti=28 acd=0 mcd=0 qlen=0 harv=1
+DIAGC EXP rnd=55 id=19 seat=4 role=defend pos=16,7 ti=28 acd=0 mcd=0 qlen=0 harv=1
+DIAGC CORE rnd=56 ph=2 budget=8 n=5 ti=48 ammo=1 floor=96 acd=0
+DIAGC EXP rnd=56 id=5 seat=1 role=expand pos=10,1 ti=48 acd=0 mcd=0 qlen=0 harv=1
+DIAGC EXP rnd=56 id=8 seat=2 role=expand pos=14,14 ti=48 acd=0 mcd=0 qlen=0 harv=1
+DIAGC HARV rnd=56 id=8 seat=2 tile=15,14
+DIAGC PLAN rnd=56 id=8 seat=2 src=15,14 len=10
+DIAGC EXP rnd=56 id=16 seat=3 role=expand pos=27,2 ti=0 acd=0 mcd=0 qlen=0 harv=1
+DIAGC EXP rnd=56 id=19 seat=4 role=defend pos=16,8 ti=0 acd=0 mcd=0 qlen=0 harv=1
+DIAGC CORE rnd=57 ph=2 budget=8 n=5 ti=10 ammo=1 floor=96 acd=0
+DIAGC EXP rnd=57 id=5 seat=1 role=expand pos=9,1 ti=10 acd=0 mcd=0 qlen=0 harv=2
+DIAGC EXP rnd=57 id=8 seat=2 role=expand pos=14,14 ti=10 acd=0 mcd=0 qlen=10 harv=2
+DIAGC EXP rnd=57 id=16 seat=3 role=expand pos=27,3 ti=10 acd=0 mcd=0 qlen=0 harv=2
+DIAGC EXP rnd=57 id=19 seat=4 role=defend pos=16,9 ti=10 acd=0 mcd=0 qlen=0 harv=2
+DIAGC CORE rnd=58 ph=2 budget=8 n=5 ti=20 ammo=1 floor=96 acd=0
+DIAGC EXP rnd=58 id=5 seat=1 role=expand pos=8,1 ti=20 acd=0 mcd=0 qlen=0 harv=2
+DIAGC EXP rnd=58 id=8 seat=2 role=expand pos=14,13 ti=20 acd=0 mcd=0 qlen=10 harv=2
+DIAGC BNL_OK rnd=58 id=8 seat=2 tile=15,13 dcore=10 left=9
+DIAGC EXP rnd=58 id=16 seat=3 role=expand pos=27,2 ti=13 acd=0 mcd=0 qlen=0 harv=2
+DIAGC EXP rnd=58 id=19 seat=4 role=defend pos=15,9 ti=13 acd=0 mcd=0 qlen=0 harv=2
+DIAGC CORE rnd=59 ph=2 budget=8 n=5 ti=23 ammo=1 floor=96 acd=0
+DIAGC EXP rnd=59 id=5 seat=1 role=expand pos=7,1 ti=23 acd=0 mcd=0 qlen=0 harv=2
+DIAGC EXP rnd=59 id=8 seat=2 role=expand pos=14,13 ti=23 acd=0 mcd=0 qlen=9 harv=2
+DIAGC EXP rnd=59 id=16 seat=3 role=expand pos=27,3 ti=23 acd=0 mcd=0 qlen=0 harv=2
+DIAGC EXP rnd=59 id=19 seat=4 role=defend pos=14,9 ti=23 acd=0 mcd=0 qlen=0 harv=2
+DIAGC CORE rnd=60 ph=2 budget=8 n=5 ti=43 ammo=1 floor=96 acd=0
+DIAGC EXP rnd=60 id=5 seat=1 role=expand pos=6,1 ti=43 acd=0 mcd=0 qlen=0 harv=2
+DIAGC EXP rnd=60 id=8 seat=2 role=expand pos=15,13 ti=43 acd=0 mcd=0 qlen=9 harv=2
+DIAGC BNL_OK rnd=60 id=8 seat=2 tile=15,12 dcore=9 left=8
+DIAGC EXP rnd=60 id=16 seat=3 role=expand pos=27,2 ti=36 acd=0 mcd=0 qlen=0 harv=2
+DIAGC EXP rnd=60 id=19 seat=4 role=defend pos=13,9 ti=36 acd=0 mcd=0 qlen=0 harv=2
+DIAGC CORE rnd=61 ph=2 budget=8 n=5 ti=46 ammo=1 floor=96 acd=0
+DIAGC EXP rnd=61 id=5 seat=1 role=expand pos=5,1 ti=46 acd=0 mcd=0 qlen=0 harv=2
+DIAGC EXP rnd=61 id=8 seat=2 role=expand pos=15,13 ti=46 acd=0 mcd=0 qlen=8 harv=2
+DIAGC EXP rnd=61 id=16 seat=3 role=expand pos=27,3 ti=46 acd=0 mcd=0 qlen=0 harv=2
+DIAGC EXP rnd=61 id=19 seat=4 role=defend pos=12,9 ti=46 acd=0 mcd=0 qlen=0 harv=2
+DIAGC CORE rnd=62 ph=2 budget=8 n=5 ti=46 ammo=1 floor=96 acd=0
+DIAGC EXP rnd=62 id=5 seat=1 role=expand pos=5,2 ti=46 acd=0 mcd=0 qlen=0 harv=2
+DIAGC EXP rnd=62 id=8 seat=2 role=expand pos=15,12 ti=46 acd=0 mcd=0 qlen=8 harv=2
+DIAGC BNL_OK rnd=62 id=8 seat=2 tile=15,11 dcore=8 left=7
+DIAGC EXP rnd=62 id=16 seat=3 role=expand pos=27,2 ti=39 acd=0 mcd=0 qlen=0 harv=2
+DIAGC EXP rnd=62 id=19 seat=4 role=defend pos=11,9 ti=39 acd=0 mcd=0 qlen=0 harv=2
+DIAGC CORE rnd=63 ph=2 budget=8 n=5 ti=49 ammo=1 floor=96 acd=0
+DIAGC EXP rnd=63 id=5 seat=1 role=expand pos=4,2 ti=49 acd=0 mcd=0 qlen=0 harv=2
+DIAGC EXP rnd=63 id=8 seat=2 role=expand pos=15,12 ti=49 acd=0 mcd=0 qlen=7 harv=2
+DIAGC EXP rnd=63 id=16 seat=3 role=expand pos=27,3 ti=49 acd=0 mcd=0 qlen=0 harv=2
+DIAGC EXP rnd=63 id=19 seat=4 role=defend pos=10,9 ti=49 acd=0 mcd=0 qlen=0 harv=2
+DIAGC CORE rnd=64 ph=2 budget=8 n=5 ti=59 ammo=1 floor=96 acd=0
+DIAGC EXP rnd=64 id=5 seat=1 role=expand pos=5,2 ti=52 acd=0 mcd=0 qlen=0 harv=2
+DIAGC EXP rnd=64 id=8 seat=2 role=expand pos=15,11 ti=52 acd=0 mcd=0 qlen=7 harv=2
+DIAGC BNL_OK rnd=64 id=8 seat=2 tile=15,10 dcore=7 left=6
+DIAGC EXP rnd=64 id=16 seat=3 role=expand pos=27,2 ti=45 acd=0 mcd=0 qlen=0 harv=2
+DIAGC EXP rnd=64 id=19 seat=4 role=defend pos=9,9 ti=45 acd=0 mcd=0 qlen=0 harv=2
+DIAGC CORE rnd=65 ph=2 budget=8 n=5 ti=45 ammo=1 floor=96 acd=0
+DIAGC EXP rnd=65 id=5 seat=1 role=expand pos=5,3 ti=45 acd=0 mcd=0 qlen=0 harv=2
+DIAGC EXP rnd=65 id=8 seat=2 role=expand pos=15,11 ti=45 acd=0 mcd=0 qlen=6 harv=2
+DIAGC EXP rnd=65 id=16 seat=3 role=expand pos=27,3 ti=45 acd=0 mcd=0 qlen=0 harv=2
+DIAGC EXP rnd=65 id=19 seat=4 role=defend pos=9,8 ti=45 acd=0 mcd=0 qlen=0 harv=2
+DIAGC CORE rnd=66 ph=2 budget=8 n=5 ti=45 ammo=1 floor=96 acd=0
+DIAGC EXP rnd=66 id=5 seat=1 role=expand pos=5,4 ti=38 acd=0 mcd=0 qlen=0 harv=2
+DIAGC EXP rnd=66 id=8 seat=2 role=expand pos=15,10 ti=38 acd=0 mcd=0 qlen=6 harv=2
+DIAGC BNL_OK rnd=66 id=8 seat=2 tile=15,9 dcore=6 left=5
+DIAGC EXP rnd=66 id=16 seat=3 role=expand pos=27,2 ti=31 acd=0 mcd=0 qlen=0 harv=2
+DIAGC EXP rnd=66 id=19 seat=4 role=defend pos=8,8 ti=31 acd=0 mcd=0 qlen=0 harv=2
+DIAGC CORE rnd=67 ph=2 budget=8 n=5 ti=41 ammo=1 floor=96 acd=0
+DIAGC EXP rnd=67 id=5 seat=1 role=expand pos=5,5 ti=41 acd=0 mcd=0 qlen=0 harv=2
+DIAGC EXP rnd=67 id=8 seat=2 role=expand pos=15,10 ti=41 acd=0 mcd=0 qlen=5 harv=2
+DIAGC EXP rnd=67 id=16 seat=3 role=expand pos=27,3 ti=41 acd=0 mcd=0 qlen=0 harv=2
+DIAGC EXP rnd=67 id=19 seat=4 role=defend pos=8,7 ti=41 acd=0 mcd=0 qlen=0 harv=2
+DIAGC CORE rnd=68 ph=2 budget=8 n=5 ti=51 ammo=1 floor=96 acd=0
+DIAGC EXP rnd=68 id=5 seat=1 role=expand pos=5,6 ti=44 acd=0 mcd=0 qlen=0 harv=2
+DIAGC EXP rnd=68 id=8 seat=2 role=expand pos=15,9 ti=44 acd=0 mcd=0 qlen=5 harv=2
+DIAGC BNL_OK rnd=68 id=8 seat=2 tile=15,8 dcore=5 left=4
+DIAGC EXP rnd=68 id=16 seat=3 role=expand pos=27,2 ti=37 acd=0 mcd=0 qlen=0 harv=2
+DIAGC EXP rnd=68 id=19 seat=4 role=defend pos=7,7 ti=37 acd=0 mcd=0 qlen=0 harv=2
+DIAGC CORE rnd=69 ph=2 budget=8 n=5 ti=37 ammo=1 floor=96 acd=0
+DIAGC EXP rnd=69 id=5 seat=1 role=expand pos=6,6 ti=37 acd=0 mcd=0 qlen=0 harv=2
+DIAGC EXP rnd=69 id=8 seat=2 role=expand pos=15,9 ti=37 acd=0 mcd=0 qlen=4 harv=2
+DIAGC EXP rnd=69 id=16 seat=3 role=expand pos=27,3 ti=37 acd=0 mcd=0 qlen=0 harv=2
+DIAGC EXP rnd=69 id=19 seat=4 role=defend pos=7,8 ti=37 acd=0 mcd=0 qlen=0 harv=2
+DIAGC CORE rnd=70 ph=2 budget=8 n=5 ti=37 ammo=1 floor=96 acd=0
+DIAGC EXP rnd=70 id=5 seat=1 role=expand pos=6,7 ti=37 acd=0 mcd=0 qlen=0 harv=2
+DIAGC EXP rnd=70 id=8 seat=2 role=expand pos=15,8 ti=37 acd=0 mcd=0 qlen=4 harv=2
+DIAGC BNL_OK rnd=70 id=8 seat=2 tile=15,7 dcore=4 left=3
+DIAGC EXP rnd=70 id=16 seat=3 role=expand pos=27,2 ti=30 acd=0 mcd=0 qlen=0 harv=2
+DIAGC EXP rnd=70 id=19 seat=4 role=defend pos=6,8 ti=30 acd=0 mcd=0 qlen=0 harv=2
+DIAGC CORE rnd=71 ph=2 budget=8 n=5 ti=40 ammo=1 floor=96 acd=0
+DIAGC EXP rnd=71 id=5 seat=1 role=expand pos=7,7 ti=33 acd=0 mcd=0 qlen=0 harv=2
+DIAGC EXP rnd=71 id=8 seat=2 role=expand pos=15,8 ti=33 acd=0 mcd=0 qlen=3 harv=2
+DIAGC EXP rnd=71 id=16 seat=3 role=expand pos=27,3 ti=33 acd=0 mcd=0 qlen=0 harv=2
+DIAGC EXP rnd=71 id=19 seat=4 role=defend pos=7,8 ti=33 acd=0 mcd=0 qlen=0 harv=2
+DIAGC CORE rnd=72 ph=4 budget=8 n=5 ti=43 ammo=1 floor=56 acd=0
+DIAGC EXP rnd=72 id=5 seat=1 role=expand pos=6,7 ti=43 acd=0 mcd=0 qlen=0 harv=2
+DIAGC EXP rnd=72 id=8 seat=2 role=expand pos=15,7 ti=43 acd=0 mcd=0 qlen=3 harv=2
+DIAGC BNL_OK rnd=72 id=8 seat=2 tile=15,6 dcore=3 left=2
+DIAGC EXP rnd=72 id=16 seat=3 role=expand pos=27,2 ti=36 acd=0 mcd=0 qlen=0 harv=2
+DIAGC EXP rnd=72 id=19 seat=4 role=defend pos=6,8 ti=36 acd=0 mcd=0 qlen=0 harv=2
+DIAGC CORE rnd=73 ph=4 budget=8 n=5 ti=36 ammo=1 floor=56 acd=0
+DIAGC EXP rnd=73 id=5 seat=1 role=expand pos=7,7 ti=36 acd=0 mcd=0 qlen=0 harv=2
+DIAGC EXP rnd=73 id=8 seat=2 role=expand pos=15,7 ti=36 acd=0 mcd=0 qlen=2 harv=2
+DIAGC EXP rnd=73 id=16 seat=3 role=expand pos=27,3 ti=36 acd=0 mcd=0 qlen=0 harv=2
+DIAGC EXP rnd=73 id=19 seat=4 role=defend pos=7,8 ti=36 acd=0 mcd=0 qlen=0 harv=2
+DIAGC CORE rnd=74 ph=4 budget=8 n=5 ti=36 ammo=1 floor=56 acd=0
+DIAGC EXP rnd=74 id=5 seat=1 role=expand pos=6,7 ti=36 acd=0 mcd=0 qlen=0 harv=2
+DIAGC EXP rnd=74 id=8 seat=2 role=expand pos=15,6 ti=36 acd=0 mcd=0 qlen=2 harv=2
+DIAGC BNL_OK rnd=74 id=8 seat=2 tile=15,5 dcore=2 left=1
+DIAGC EXP rnd=74 id=16 seat=3 role=expand pos=27,2 ti=29 acd=0 mcd=0 qlen=0 harv=2
+DIAGC EXP rnd=74 id=19 seat=4 role=defend pos=6,8 ti=29 acd=0 mcd=0 qlen=0 harv=2
+DIAGC CORE rnd=75 ph=2 budget=8 n=5 ti=39 ammo=1 floor=96 acd=0
+DIAGC EXP rnd=75 id=5 seat=1 role=expand pos=7,7 ti=39 acd=0 mcd=0 qlen=0 harv=2
+DIAGC EXP rnd=75 id=8 seat=2 role=expand pos=15,6 ti=39 acd=0 mcd=0 qlen=1 harv=2
+DIAGC EXP rnd=75 id=16 seat=3 role=expand pos=27,3 ti=39 acd=0 mcd=0 qlen=0 harv=2
+DIAGC EXP rnd=75 id=19 seat=4 role=defend pos=7,8 ti=39 acd=0 mcd=0 qlen=0 harv=2
+DIAGC CORE rnd=76 ph=2 budget=8 n=5 ti=49 ammo=1 floor=96 acd=0
+DIAGC EXP rnd=76 id=5 seat=1 role=expand pos=6,7 ti=49 acd=0 mcd=0 qlen=0 harv=2
+DIAGC EXP rnd=76 id=8 seat=2 role=expand pos=15,5 ti=49 acd=0 mcd=0 qlen=1 harv=2
+DIAGC EXP rnd=76 id=16 seat=3 role=expand pos=27,2 ti=49 acd=0 mcd=0 qlen=0 harv=2
+DIAGC EXP rnd=76 id=19 seat=4 role=defend pos=6,8 ti=49 acd=0 mcd=0 qlen=0 harv=2
+DIAGC CORE rnd=77 ph=2 budget=8 n=5 ti=49 ammo=1 floor=96 acd=0
+DIAGC EXP rnd=77 id=5 seat=1 role=expand pos=7,7 ti=49 acd=0 mcd=0 qlen=0 harv=2
+DIAGC EXP rnd=77 id=8 seat=2 role=expand pos=15,5 ti=49 acd=0 mcd=0 qlen=0 harv=2
+DIAGC EXP rnd=77 id=16 seat=3 role=expand pos=27,3 ti=49 acd=0 mcd=0 qlen=0 harv=2
+DIAGC EXP rnd=77 id=19 seat=4 role=defend pos=7,8 ti=49 acd=0 mcd=0 qlen=0 harv=2
+DIAGC CORE rnd=78 ph=2 budget=8 n=5 ti=49 ammo=1 floor=96 acd=0
+DIAGC EXP rnd=78 id=5 seat=1 role=expand pos=6,7 ti=49 acd=0 mcd=0 qlen=0 harv=2
+DIAGC EXP rnd=78 id=8 seat=2 role=expand pos=15,5 ti=49 acd=0 mcd=0 qlen=0 harv=2
+DIAGC EXP rnd=78 id=16 seat=3 role=expand pos=27,2 ti=49 acd=0 mcd=0 qlen=0 harv=2
+DIAGC EXP rnd=78 id=19 seat=4 role=defend pos=6,8 ti=49 acd=0 mcd=0 qlen=0 harv=2
+DIAGC CORE rnd=79 ph=2 budget=8 n=5 ti=59 ammo=1 floor=96 acd=0
+DIAGC EXP rnd=79 id=5 seat=1 role=expand pos=7,7 ti=59 acd=0 mcd=0 qlen=0 harv=2
+DIAGC EXP rnd=79 id=8 seat=2 role=expand pos=15,5 ti=59 acd=0 mcd=0 qlen=0 harv=2
+DIAGC EXP rnd=79 id=16 seat=3 role=expand pos=27,3 ti=59 acd=0 mcd=0 qlen=0 harv=2
+DIAGC EXP rnd=79 id=19 seat=4 role=defend pos=7,8 ti=59 acd=0 mcd=0 qlen=0 harv=2
+DIAGC HARV rnd=79 id=19 seat=4 tile=6,8
+DIAGC PLAN rnd=79 id=19 seat=4 src=6,8 len=12
+DIAGC CORE rnd=80 ph=2 budget=8 n=5 ti=18 ammo=1 floor=96 acd=0
+DIAGC EXP rnd=80 id=5 seat=1 role=expand pos=6,7 ti=18 acd=0 mcd=0 qlen=0 harv=3
+DIAGC EXP rnd=80 id=8 seat=2 role=expand pos=15,5 ti=18 acd=0 mcd=0 qlen=0 harv=3
+DIAGC EXP rnd=80 id=19 seat=4 role=defend pos=7,8 ti=18 acd=0 mcd=0 qlen=12 harv=3
+DIAGC CORE rnd=81 ph=2 budget=8 n=5 ti=11 ammo=1 floor=96 acd=0
+DIAGC EXP rnd=81 id=5 seat=1 role=expand pos=6,7 ti=11 acd=0 mcd=0 qlen=0 harv=3
+DIAGC EXP rnd=81 id=8 seat=2 role=expand pos=15,5 ti=11 acd=0 mcd=0 qlen=0 harv=3
+DIAGC EXP rnd=81 id=19 seat=4 role=defend pos=7,8 ti=11 acd=0 mcd=0 qlen=12 harv=3
+DIAGC CORE rnd=82 ph=2 budget=8 n=5 ti=11 ammo=1 floor=96 acd=0
+DIAGC EXP rnd=82 id=5 seat=1 role=expand pos=6,7 ti=11 acd=0 mcd=0 qlen=0 harv=3
+DIAGC EXP rnd=82 id=8 seat=2 role=expand pos=16,5 ti=11 acd=0 mcd=0 qlen=0 harv=3
+DIAGC EXP rnd=82 id=19 seat=4 role=defend pos=8,8 ti=11 acd=0 mcd=0 qlen=12 harv=3
+DIAGC BNL_OK rnd=82 id=19 seat=4 tile=7,8 dcore=7 left=11
+DIAGC CORE rnd=83 ph=2 budget=8 n=5 ti=14 ammo=1 floor=96 acd=0
+DIAGC EXP rnd=83 id=5 seat=1 role=expand pos=7,7 ti=14 acd=0 mcd=0 qlen=0 harv=3
+DIAGC EXP rnd=83 id=8 seat=2 role=expand pos=17,5 ti=14 acd=0 mcd=0 qlen=0 harv=3
+DIAGC EXP rnd=83 id=19 seat=4 role=defend pos=8,8 ti=14 acd=0 mcd=0 qlen=11 harv=3
+DIAGC BNL_OK rnd=83 id=19 seat=4 tile=9,8 dcore=5 left=9
+DIAGC CORE rnd=84 ph=2 budget=8 n=5 ti=17 ammo=1 floor=96 acd=0
+DIAGC EXP rnd=84 id=5 seat=1 role=expand pos=7,8 ti=17 acd=0 mcd=0 qlen=0 harv=3
+DIAGC EXP rnd=84 id=8 seat=2 role=expand pos=18,5 ti=17 acd=0 mcd=0 qlen=0 harv=3
+DIAGC EXP rnd=84 id=19 seat=4 role=defend pos=8,8 ti=17 acd=0 mcd=0 qlen=9 harv=3
+DIAGC CORE rnd=85 ph=2 budget=8 n=5 ti=17 ammo=1 floor=96 acd=0
+DIAGC EXP rnd=85 id=5 seat=1 role=expand pos=7,7 ti=17 acd=0 mcd=0 qlen=0 harv=3
+DIAGC EXP rnd=85 id=8 seat=2 role=expand pos=18,6 ti=17 acd=0 mcd=0 qlen=0 harv=3
+DIAGC EXP rnd=85 id=19 seat=4 role=defend pos=9,8 ti=17 acd=0 mcd=0 qlen=9 harv=3
+DIAGC BNL_OK rnd=85 id=19 seat=4 tile=10,8 dcore=5 left=8
+DIAGC CORE rnd=86 ph=2 budget=8 n=5 ti=10 ammo=1 floor=108 acd=0
+DIAGC EXP rnd=86 id=5 seat=1 role=expand pos=8,7 ti=10 acd=0 mcd=0 qlen=0 harv=3
+DIAGC EXP rnd=86 id=8 seat=2 role=expand pos=19,6 ti=10 acd=0 mcd=0 qlen=0 harv=3
+DIAGC EXP rnd=86 id=19 seat=4 role=defend pos=9,8 ti=10 acd=0 mcd=0 qlen=8 harv=3
+DIAGC CORE rnd=87 ph=2 budget=8 n=5 ti=20 ammo=1 floor=108 acd=0
+DIAGC EXP rnd=87 id=5 seat=1 role=expand pos=9,7 ti=20 acd=0 mcd=0 qlen=0 harv=3
+DIAGC EXP rnd=87 id=8 seat=2 role=expand pos=19,7 ti=20 acd=0 mcd=0 qlen=0 harv=3
+DIAGC EXP rnd=87 id=19 seat=4 role=defend pos=10,8 ti=20 acd=0 mcd=0 qlen=8 harv=3
+DIAGC BNL_OK rnd=87 id=19 seat=4 tile=11,8 dcore=5 left=7
+DIAGC CORE rnd=88 ph=2 budget=8 n=5 ti=22 ammo=1 floor=108 acd=0
+DIAGC EXP rnd=88 id=5 seat=1 role=expand pos=10,7 ti=22 acd=0 mcd=0 qlen=0 harv=3
+DIAGC EXP rnd=88 id=8 seat=2 role=expand pos=20,7 ti=22 acd=0 mcd=0 qlen=0 harv=3
+DIAGC EXP rnd=88 id=19 seat=4 role=defend pos=10,8 ti=22 acd=0 mcd=0 qlen=7 harv=3
+DIAGC CORE rnd=89 ph=2 budget=8 n=5 ti=22 ammo=1 floor=108 acd=0
+DIAGC EXP rnd=89 id=5 seat=1 role=expand pos=11,7 ti=22 acd=0 mcd=0 qlen=0 harv=3
+DIAGC EXP rnd=89 id=8 seat=2 role=expand pos=20,8 ti=22 acd=0 mcd=0 qlen=0 harv=3
+DIAGC EXP rnd=89 id=19 seat=4 role=defend pos=11,8 ti=22 acd=0 mcd=0 qlen=7 harv=3
+DIAGC BNL_OK rnd=89 id=19 seat=4 tile=12,8 dcore=5 left=6
+DIAGC CORE rnd=90 ph=2 budget=8 n=5 ti=14 ammo=1 floor=108 acd=0
+DIAGC EXP rnd=90 id=5 seat=1 role=expand pos=12,7 ti=14 acd=0 mcd=0 qlen=0 harv=3
+DIAGC EXP rnd=90 id=8 seat=2 role=expand pos=21,8 ti=14 acd=0 mcd=0 qlen=0 harv=3
+DIAGC EXP rnd=90 id=19 seat=4 role=defend pos=11,8 ti=14 acd=0 mcd=0 qlen=6 harv=3
+DIAGC CORE rnd=91 ph=2 budget=8 n=5 ti=24 ammo=1 floor=108 acd=0
+DIAGC EXP rnd=91 id=5 seat=1 role=expand pos=13,7 ti=24 acd=0 mcd=0 qlen=0 harv=3
+DIAGC EXP rnd=91 id=8 seat=2 role=expand pos=21,9 ti=24 acd=0 mcd=0 qlen=0 harv=3
+DIAGC EXP rnd=91 id=19 seat=4 role=defend pos=12,8 ti=24 acd=0 mcd=0 qlen=6 harv=3
+DIAGC BNL_OK rnd=91 id=19 seat=4 tile=13,8 dcore=5 left=5
+DIAGC CORE rnd=92 ph=2 budget=8 n=5 ti=26 ammo=1 floor=108 acd=0
+DIAGC EXP rnd=92 id=5 seat=1 role=expand pos=14,7 ti=26 acd=0 mcd=0 qlen=0 harv=3
+DIAGC L4_OK rnd=92 id=5 seat=1 tile=14,8 dcore=5 feed=belt
+DIAGC EXP rnd=92 id=8 seat=2 role=expand pos=22,9 ti=18 acd=0 mcd=0 qlen=0 harv=3
+DIAGC EXP rnd=92 id=19 seat=4 role=defend pos=12,8 ti=18 acd=0 mcd=0 qlen=5 harv=3
+DIAGC CORE rnd=93 ph=2 budget=8 n=5 ti=18 ammo=1 floor=108 acd=0
+DIAGC EXP rnd=93 id=5 seat=1 role=expand pos=14,7 ti=18 acd=0 mcd=0 qlen=0 harv=3
+DIAGC EXP rnd=93 id=8 seat=2 role=expand pos=22,8 ti=18 acd=0 mcd=0 qlen=0 harv=3
+DIAGC EXP rnd=93 id=19 seat=4 role=defend pos=13,8 ti=18 acd=0 mcd=0 qlen=5 harv=3
+DIAGC CORE rnd=94 ph=2 budget=8 n=5 ti=18 ammo=1 floor=108 acd=0
+DIAGC EXP rnd=94 id=5 seat=1 role=expand pos=15,7 ti=18 acd=0 mcd=0 qlen=0 harv=3
+DIAGC EXP rnd=94 id=8 seat=2 role=expand pos=23,8 ti=18 acd=0 mcd=0 qlen=0 harv=3
+DIAGC EXP rnd=94 id=19 seat=4 role=defend pos=14,8 ti=18 acd=0 mcd=0 qlen=4 harv=3
+DIAGC BNL_OK rnd=94 id=19 seat=4 tile=14,7 dcore=4 left=3
+DIAGC CORE rnd=95 ph=2 budget=8 n=5 ti=20 ammo=1 floor=108 acd=0
+DIAGC EXP rnd=95 id=5 seat=1 role=expand pos=16,7 ti=20 acd=0 mcd=0 qlen=0 harv=3
+DIAGC EXP rnd=95 id=8 seat=2 role=expand pos=23,7 ti=20 acd=0 mcd=0 qlen=0 harv=3
+DIAGC EXP rnd=95 id=19 seat=4 role=defend pos=14,8 ti=20 acd=0 mcd=0 qlen=3 harv=3
+DIAGC CORE rnd=96 ph=2 budget=8 n=5 ti=30 ammo=1 floor=108 acd=0
+DIAGC EXP rnd=96 id=5 seat=1 role=expand pos=17,7 ti=30 acd=0 mcd=0 qlen=0 harv=3
+DIAGC EXP rnd=96 id=8 seat=2 role=expand pos=23,8 ti=30 acd=0 mcd=0 qlen=0 harv=3
+DIAGC EXP rnd=96 id=19 seat=4 role=defend pos=14,7 ti=30 acd=0 mcd=0 qlen=3 harv=3
+DIAGC BNL_OK rnd=96 id=19 seat=4 tile=14,6 dcore=3 left=2
+DIAGC CORE rnd=97 ph=2 budget=8 n=5 ti=22 ammo=1 floor=108 acd=0
+DIAGC EXP rnd=97 id=5 seat=1 role=expand pos=18,7 ti=14 acd=0 mcd=0 qlen=0 harv=3
+DIAGC EXP rnd=97 id=8 seat=2 role=expand pos=22,8 ti=14 acd=0 mcd=0 qlen=0 harv=3
+DIAGC EXP rnd=97 id=19 seat=4 role=defend pos=14,7 ti=14 acd=0 mcd=0 qlen=2 harv=3
+DIAGC CORE rnd=98 ph=2 budget=8 n=5 ti=14 ammo=1 floor=108 acd=0
+DIAGC EXP rnd=98 id=5 seat=1 role=expand pos=19,7 ti=14 acd=0 mcd=0 qlen=0 harv=3
+DIAGC EXP rnd=98 id=8 seat=2 role=expand pos=23,8 ti=14 acd=0 mcd=0 qlen=0 harv=3
+DIAGC CORE rnd=99 ph=2 budget=8 n=5 ti=24 ammo=1 floor=108 acd=0
+DIAGC EXP rnd=99 id=5 seat=1 role=expand pos=20,7 ti=24 acd=0 mcd=0 qlen=0 harv=3
+DIAGC EXP rnd=99 id=8 seat=2 role=expand pos=23,7 ti=24 acd=0 mcd=0 qlen=0 harv=3
+DIAGC CORE rnd=100 ph=2 budget=8 n=5 ti=34 ammo=1 floor=108 acd=0
+DIAGC EXP rnd=100 id=5 seat=1 role=expand pos=21,7 ti=34 acd=0 mcd=0 qlen=0 harv=3
+DIAGC EXP rnd=100 id=8 seat=2 role=expand pos=23,8 ti=34 acd=0 mcd=0 qlen=0 harv=3
+DIAGC CORE rnd=101 ph=2 budget=8 n=5 ti=34 ammo=1 floor=108 acd=0
+DIAGC EXP rnd=101 id=5 seat=1 role=expand pos=22,7 ti=34 acd=0 mcd=0 qlen=0 harv=3
+DIAGC EXP rnd=101 id=8 seat=2 role=expand pos=23,7 ti=34 acd=0 mcd=0 qlen=0 harv=3
+DIAGC CORE rnd=102 ph=2 budget=8 n=5 ti=34 ammo=1 floor=108 acd=0
+DIAGC EXP rnd=102 id=5 seat=1 role=expand pos=22,8 ti=34 acd=0 mcd=0 qlen=0 harv=3
+DIAGC EXP rnd=102 id=8 seat=2 role=expand pos=23,8 ti=34 acd=0 mcd=0 qlen=0 harv=3
+DIAGC CORE rnd=103 ph=2 budget=8 n=5 ti=44 ammo=1 floor=108 acd=0
+DIAGC EXP rnd=103 id=5 seat=1 role=expand pos=22,7 ti=44 acd=0 mcd=0 qlen=0 harv=3
+DIAGC EXP rnd=103 id=8 seat=2 role=expand pos=23,9 ti=44 acd=0 mcd=0 qlen=0 harv=3
+DIAGC CORE rnd=104 ph=2 budget=8 n=5 ti=54 ammo=1 floor=108 acd=0
+DIAGC EXP rnd=104 id=5 seat=1 role=expand pos=23,7 ti=54 acd=0 mcd=0 qlen=0 harv=3
+DIAGC EXP rnd=104 id=8 seat=2 role=expand pos=23,8 ti=54 acd=0 mcd=0 qlen=0 harv=3
+DIAGC CORE rnd=105 ph=2 budget=8 n=5 ti=0 ammo=1 floor=108 acd=0
+DIAGC EXP rnd=105 id=5 seat=1 role=expand pos=23,7 ti=0 acd=0 mcd=0 qlen=0 harv=3
+DIAGC EXP rnd=105 id=8 seat=2 role=expand pos=22,8 ti=0 acd=0 mcd=0 qlen=0 harv=3
+DIAGC CORE rnd=106 ph=2 budget=8 n=5 ti=0 ammo=1 floor=108 acd=0
+DIAGC EXP rnd=106 id=5 seat=1 role=expand pos=23,8 ti=0 acd=0 mcd=0 qlen=0 harv=3
+DIAGC EXP rnd=106 id=8 seat=2 role=expand pos=22,7 ti=0 acd=0 mcd=0 qlen=0 harv=3
+DIAGC CORE rnd=107 ph=2 budget=8 n=5 ti=0 ammo=1 floor=108 acd=0
+DIAGC EXP rnd=107 id=5 seat=1 role=expand pos=23,9 ti=0 acd=0 mcd=0 qlen=0 harv=3
+DIAGC EXP rnd=107 id=8 seat=2 role=expand pos=23,7 ti=0 acd=0 mcd=0 qlen=0 harv=3
+DIAGC CORE rnd=108 ph=2 budget=8 n=5 ti=10 ammo=1 floor=108 acd=0
+DIAGC EXP rnd=108 id=5 seat=1 role=expand pos=23,8 ti=10 acd=0 mcd=0 qlen=0 harv=3
+DIAGC EXP rnd=108 id=8 seat=2 role=expand pos=23,7 ti=10 acd=0 mcd=0 qlen=0 harv=3
+DIAGC CORE rnd=109 ph=2 budget=9 n=5 ti=10 ammo=1 floor=108 acd=0
+DIAGC EXP rnd=109 id=5 seat=1 role=expand pos=22,8 ti=10 acd=0 mcd=0 qlen=0 harv=3
+DIAGC EXP rnd=109 id=8 seat=2 role=expand pos=23,8 ti=10 acd=0 mcd=0 qlen=0 harv=3
+DIAGC CORE rnd=110 ph=2 budget=9 n=5 ti=10 ammo=1 floor=108 acd=0
+DIAGC EXP rnd=110 id=5 seat=1 role=expand pos=22,7 ti=10 acd=0 mcd=0 qlen=0 harv=3
+DIAGC EXP rnd=110 id=8 seat=2 role=expand pos=22,8 ti=10 acd=0 mcd=0 qlen=0 harv=3
+DIAGC EXP rnd=110 id=19 seat=4 role=defend pos=12,2 ti=10 acd=0 mcd=0 qlen=2 harv=3
+DIAGC CORE rnd=111 ph=2 budget=9 n=5 ti=10 ammo=1 floor=108 acd=0
+DIAGC EXP rnd=111 id=5 seat=1 role=expand pos=23,7 ti=10 acd=0 mcd=0 qlen=0 harv=3
+DIAGC EXP rnd=111 id=8 seat=2 role=expand pos=23,8 ti=10 acd=0 mcd=0 qlen=0 harv=3
+DIAGC EXP rnd=111 id=19 seat=4 role=defend pos=12,3 ti=10 acd=0 mcd=0 qlen=2 harv=3
+DIAGC L4_OK rnd=111 id=19 seat=4 tile=12,2 dcore=2 feed=belt
+DIAGC CORE rnd=112 ph=2 budget=9 n=5 ti=12 ammo=1 floor=108 acd=0
+DIAGC EXP rnd=112 id=5 seat=1 role=expand pos=23,7 ti=12 acd=0 mcd=0 qlen=0 harv=3
+DIAGC EXP rnd=112 id=8 seat=2 role=expand pos=23,8 ti=12 acd=0 mcd=0 qlen=0 harv=3
+DIAGC EXP rnd=112 id=19 seat=4 role=defend pos=12,3 ti=12 acd=0 mcd=0 qlen=2 harv=3
+DIAGC CORE rnd=113 ph=2 budget=9 n=5 ti=12 ammo=1 floor=108 acd=0
+DIAGC EXP rnd=113 id=5 seat=1 role=expand pos=23,7 ti=12 acd=0 mcd=0 qlen=0 harv=3
+DIAGC EXP rnd=113 id=8 seat=2 role=expand pos=23,9 ti=12 acd=0 mcd=0 qlen=0 harv=3
+DIAGC EXP rnd=113 id=19 seat=4 role=defend pos=12,4 ti=12 acd=0 mcd=0 qlen=2 harv=3
+DIAGC CORE rnd=114 ph=2 budget=9 n=5 ti=22 ammo=1 floor=108 acd=0
+DIAGC EXP rnd=114 id=5 seat=1 role=expand pos=23,8 ti=14 acd=0 mcd=0 qlen=0 harv=3
+DIAGC EXP rnd=114 id=8 seat=2 role=expand pos=22,9 ti=14 acd=0 mcd=0 qlen=0 harv=3
+DIAGC EXP rnd=114 id=19 seat=4 role=defend pos=13,4 ti=14 acd=0 mcd=0 qlen=2 harv=3
+DIAGC CORE rnd=115 ph=2 budget=9 n=5 ti=24 ammo=1 floor=108 acd=0
+DIAGC EXP rnd=115 id=5 seat=1 role=expand pos=22,8 ti=24 acd=0 mcd=0 qlen=0 harv=3
+DIAGC EXP rnd=115 id=8 seat=2 role=expand pos=23,9 ti=24 acd=0 mcd=0 qlen=0 harv=3
+DIAGC EXP rnd=115 id=19 seat=4 role=defend pos=13,5 ti=24 acd=0 mcd=0 qlen=2 harv=3
+DIAGC BNL_OK rnd=115 id=19 seat=4 tile=14,5 dcore=2 left=1
+DIAGC CORE rnd=116 ph=2 budget=9 n=5 ti=36 ammo=1 floor=108 acd=0
+DIAGC EXP rnd=116 id=5 seat=1 role=expand pos=23,8 ti=36 acd=0 mcd=0 qlen=0 harv=3
+DIAGC EXP rnd=116 id=8 seat=2 role=expand pos=22,9 ti=36 acd=0 mcd=0 qlen=0 harv=3
+DIAGC EXP rnd=116 id=19 seat=4 role=defend pos=13,5 ti=35 acd=0 mcd=0 qlen=1 harv=3
+DIAGC CORE rnd=117 ph=2 budget=9 n=5 ti=35 ammo=1 floor=108 acd=0
+DIAGC EXP rnd=117 id=5 seat=1 role=expand pos=23,7 ti=35 acd=0 mcd=0 qlen=0 harv=3
+DIAGC EXP rnd=117 id=8 seat=2 role=expand pos=23,9 ti=35 acd=0 mcd=0 qlen=0 harv=3
+DIAGC EXP rnd=117 id=19 seat=4 role=defend pos=14,5 ti=34 acd=0 mcd=0 qlen=1 harv=3
+DIAGC CORE rnd=118 ph=2 budget=9 n=5 ti=34 ammo=1 floor=108 acd=0
+DIAGC EXP rnd=118 id=5 seat=1 role=expand pos=23,8 ti=34 acd=0 mcd=0 qlen=0 harv=3
+DIAGC EXP rnd=118 id=8 seat=2 role=expand pos=22,9 ti=34 acd=0 mcd=0 qlen=0 harv=3
+DIAGC EXP rnd=118 id=19 seat=4 role=defend pos=14,5 ti=33 acd=0 mcd=0 qlen=0 harv=3
+DIAGC CORE rnd=119 ph=2 budget=9 n=5 ti=43 ammo=1 floor=108 acd=0
+DIAGC EXP rnd=119 id=5 seat=1 role=expand pos=23,9 ti=43 acd=0 mcd=0 qlen=0 harv=3
+DIAGC EXP rnd=119 id=8 seat=2 role=expand pos=22,8 ti=43 acd=0 mcd=0 qlen=0 harv=3
+DIAGC EXP rnd=119 id=19 seat=4 role=defend pos=14,5 ti=42 acd=0 mcd=0 qlen=0 harv=3
+DIAGC CORE rnd=120 ph=2 budget=9 n=5 ti=52 ammo=1 floor=108 acd=0
+DIAGC EXP rnd=120 id=5 seat=1 role=expand pos=23,8 ti=52 acd=0 mcd=0 qlen=0 harv=3
+DIAGC EXP rnd=120 id=8 seat=2 role=expand pos=22,7 ti=52 acd=0 mcd=0 qlen=0 harv=3
+DIAGC EXP rnd=120 id=19 seat=4 role=defend pos=14,5 ti=51 acd=0 mcd=0 qlen=0 harv=3
+DIAGC CORE rnd=121 ph=2 budget=9 n=5 ti=51 ammo=1 floor=108 acd=0
+DIAGC EXP rnd=121 id=5 seat=1 role=expand pos=23,7 ti=51 acd=0 mcd=0 qlen=0 harv=3
+DIAGC EXP rnd=121 id=8 seat=2 role=expand pos=22,8 ti=51 acd=0 mcd=0 qlen=0 harv=3
+DIAGC EXP rnd=121 id=19 seat=4 role=defend pos=14,5 ti=49 acd=0 mcd=0 qlen=0 harv=3
+DIAGC CORE rnd=122 ph=2 budget=9 n=5 ti=49 ammo=1 floor=108 acd=0
+DIAGC EXP rnd=122 id=5 seat=1 role=expand pos=23,8 ti=49 acd=0 mcd=0 qlen=0 harv=3
+DIAGC EXP rnd=122 id=8 seat=2 role=expand pos=22,7 ti=49 acd=0 mcd=0 qlen=0 harv=3
+DIAGC EXP rnd=122 id=19 seat=4 role=defend pos=14,5 ti=47 acd=0 mcd=0 qlen=0 harv=3
+DIAGC CORE rnd=123 ph=2 budget=9 n=5 ti=57 ammo=1 floor=108 acd=0
+DIAGC EXP rnd=123 id=5 seat=1 role=expand pos=22,8 ti=57 acd=0 mcd=0 qlen=0 harv=3
+DIAGC EXP rnd=123 id=8 seat=2 role=expand pos=23,7 ti=57 acd=0 mcd=0 qlen=0 harv=3
+DIAGC EXP rnd=123 id=19 seat=4 role=defend pos=13,5 ti=55 acd=0 mcd=0 qlen=0 harv=3
+DIAGC CORE rnd=124 ph=2 budget=9 n=5 ti=65 ammo=1 floor=108 acd=0
+DIAGC EXP rnd=124 id=5 seat=1 role=expand pos=23,8 ti=65 acd=0 mcd=0 qlen=0 harv=3
+DIAGC EXP rnd=124 id=8 seat=2 role=expand pos=23,7 ti=65 acd=0 mcd=0 qlen=0 harv=3
+DIAGC EXP rnd=124 id=19 seat=4 role=defend pos=12,5 ti=63 acd=0 mcd=0 qlen=0 harv=3
+DIAGC CORE rnd=125 ph=2 budget=9 n=5 ti=63 ammo=1 floor=108 acd=0
+DIAGC EXP rnd=125 id=5 seat=1 role=expand pos=22,8 ti=63 acd=0 mcd=0 qlen=0 harv=3
+DIAGC EXP rnd=125 id=8 seat=2 role=expand pos=23,8 ti=63 acd=0 mcd=0 qlen=0 harv=3
+DIAGC CORE rnd=126 ph=2 budget=9 n=5 ti=7 ammo=1 floor=108 acd=0
+DIAGC EXP rnd=126 id=5 seat=1 role=expand pos=22,7 ti=7 acd=0 mcd=0 qlen=0 harv=3
+DIAGC EXP rnd=126 id=8 seat=2 role=expand pos=22,8 ti=7 acd=0 mcd=0 qlen=0 harv=3
+DIAGC EXP rnd=126 id=19 seat=4 role=defend pos=11,5 ti=5 acd=0 mcd=0 qlen=0 harv=3
+DIAGC CORE rnd=127 ph=2 budget=9 n=5 ti=5 ammo=1 floor=108 acd=0
+DIAGC EXP rnd=127 id=5 seat=1 role=expand pos=23,7 ti=5 acd=0 mcd=0 qlen=0 harv=3
+DIAGC EXP rnd=127 id=8 seat=2 role=expand pos=23,8 ti=5 acd=0 mcd=0 qlen=0 harv=3
+DIAGC EXP rnd=127 id=19 seat=4 role=defend pos=10,5 ti=3 acd=0 mcd=0 qlen=0 harv=3
+DIAGC CORE rnd=128 ph=2 budget=10 n=5 ti=13 ammo=1 floor=108 acd=0
+DIAGC EXP rnd=128 id=5 seat=1 role=expand pos=23,7 ti=13 acd=0 mcd=0 qlen=0 harv=3
+DIAGC EXP rnd=128 id=8 seat=2 role=expand pos=22,8 ti=13 acd=0 mcd=0 qlen=0 harv=3
+DIAGC EXP rnd=128 id=19 seat=4 role=defend pos=9,5 ti=13 acd=0 mcd=0 qlen=0 harv=3
+DIAGC CORE rnd=129 ph=2 budget=10 n=5 ti=13 ammo=1 floor=108 acd=0
+DIAGC EXP rnd=129 id=5 seat=1 role=expand pos=23,8 ti=13 acd=0 mcd=0 qlen=0 harv=3
+DIAGC EXP rnd=129 id=8 seat=2 role=expand pos=22,7 ti=13 acd=0 mcd=0 qlen=0 harv=3
+DIAGC EXP rnd=129 id=19 seat=4 role=defend pos=8,5 ti=13 acd=0 mcd=0 qlen=0 harv=3
+DIAGC CORE rnd=130 ph=2 budget=10 n=5 ti=13 ammo=1 floor=108 acd=0
+DIAGC EXP rnd=130 id=5 seat=1 role=expand pos=23,7 ti=13 acd=0 mcd=0 qlen=0 harv=3
+DIAGC EXP rnd=130 id=8 seat=2 role=expand pos=22,8 ti=13 acd=0 mcd=0 qlen=0 harv=3
+DIAGC EXP rnd=130 id=19 seat=4 role=defend pos=7,5 ti=13 acd=0 mcd=0 qlen=0 harv=3
+DIAGC CORE rnd=131 ph=2 budget=10 n=5 ti=13 ammo=1 floor=108 acd=0
+DIAGC EXP rnd=131 id=5 seat=1 role=expand pos=23,8 ti=13 acd=0 mcd=0 qlen=0 harv=3
+DIAGC EXP rnd=131 id=8 seat=2 role=expand pos=22,7 ti=13 acd=0 mcd=0 qlen=0 harv=3
+DIAGC EXP rnd=131 id=19 seat=4 role=defend pos=6,5 ti=13 acd=0 mcd=0 qlen=0 harv=3
+DIAGC CORE rnd=132 ph=2 budget=10 n=5 ti=23 ammo=1 floor=108 acd=0
+DIAGC EXP rnd=132 id=5 seat=1 role=expand pos=23,9 ti=23 acd=0 mcd=0 qlen=0 harv=3
+DIAGC EXP rnd=132 id=8 seat=2 role=expand pos=23,7 ti=23 acd=0 mcd=0 qlen=0 harv=3
+DIAGC EXP rnd=132 id=19 seat=4 role=defend pos=6,4 ti=23 acd=0 mcd=0 qlen=0 harv=3
+DIAGC CORE rnd=133 ph=2 budget=10 n=5 ti=23 ammo=1 floor=108 acd=0
+DIAGC EXP rnd=133 id=5 seat=1 role=expand pos=23,8 ti=15 acd=0 mcd=0 qlen=0 harv=3
+DIAGC EXP rnd=133 id=8 seat=2 role=expand pos=23,7 ti=15 acd=0 mcd=0 qlen=0 harv=3
+DIAGC EXP rnd=133 id=19 seat=4 role=defend pos=5,4 ti=15 acd=0 mcd=0 qlen=0 harv=3
+DIAGC CORE rnd=134 ph=2 budget=10 n=5 ti=15 ammo=1 floor=108 acd=0
+DIAGC EXP rnd=134 id=5 seat=1 role=expand pos=23,9 ti=15 acd=0 mcd=0 qlen=0 harv=3
+DIAGC EXP rnd=134 id=8 seat=2 role=expand pos=23,8 ti=15 acd=0 mcd=0 qlen=0 harv=3
+DIAGC EXP rnd=134 id=19 seat=4 role=defend pos=5,3 ti=15 acd=0 mcd=0 qlen=0 harv=3
+DIAGC CORE rnd=135 ph=2 budget=10 n=5 ti=15 ammo=1 floor=108 acd=0
+DIAGC EXP rnd=135 id=5 seat=1 role=expand pos=24,9 ti=15 acd=0 mcd=0 qlen=0 harv=3
+DIAGC EXP rnd=135 id=8 seat=2 role=expand pos=23,7 ti=15 acd=0 mcd=0 qlen=0 harv=3
+DIAGC EXP rnd=135 id=19 seat=4 role=defend pos=5,2 ti=15 acd=0 mcd=0 qlen=0 harv=3
+DIAGC CORE rnd=136 ph=2 budget=10 n=5 ti=25 ammo=1 floor=108 acd=0
+DIAGC EXP rnd=136 id=5 seat=1 role=expand pos=23,9 ti=25 acd=0 mcd=0 qlen=0 harv=3
+DIAGC EXP rnd=136 id=8 seat=2 role=expand pos=23,8 ti=25 acd=0 mcd=0 qlen=0 harv=3
+DIAGC EXP rnd=136 id=19 seat=4 role=defend pos=4,2 ti=25 acd=0 mcd=0 qlen=0 harv=3
+DIAGC CORE rnd=137 ph=2 budget=10 n=5 ti=25 ammo=1 floor=108 acd=0
+DIAGC EXP rnd=137 id=5 seat=1 role=expand pos=24,9 ti=25 acd=0 mcd=0 qlen=0 harv=3
+DIAGC EXP rnd=137 id=8 seat=2 role=expand pos=23,9 ti=25 acd=0 mcd=0 qlen=0 harv=3
+DIAGC EXP rnd=137 id=19 seat=4 role=defend pos=5,2 ti=25 acd=0 mcd=0 qlen=0 harv=3
+DIAGC CORE rnd=138 ph=2 budget=10 n=5 ti=25 ammo=1 floor=108 acd=0
+DIAGC EXP rnd=138 id=5 seat=1 role=expand pos=24,8 ti=25 acd=0 mcd=0 qlen=0 harv=3
+DIAGC EXP rnd=138 id=8 seat=2 role=expand pos=23,8 ti=25 acd=0 mcd=0 qlen=0 harv=3
+DIAGC EXP rnd=138 id=19 seat=4 role=defend pos=5,3 ti=25 acd=0 mcd=0 qlen=0 harv=3
+DIAGC CORE rnd=139 ph=2 budget=10 n=5 ti=25 ammo=1 floor=108 acd=0
+DIAGC EXP rnd=139 id=5 seat=1 role=expand pos=24,7 ti=25 acd=0 mcd=0 qlen=0 harv=3
+DIAGC EXP rnd=139 id=8 seat=2 role=expand pos=23,7 ti=25 acd=0 mcd=0 qlen=0 harv=3
+DIAGC EXP rnd=139 id=19 seat=4 role=defend pos=5,4 ti=25 acd=0 mcd=0 qlen=0 harv=3
+DIAGC CORE rnd=140 ph=2 budget=10 n=5 ti=35 ammo=1 floor=108 acd=0
+DIAGC EXP rnd=140 id=5 seat=1 role=expand pos=24,8 ti=35 acd=0 mcd=0 qlen=0 harv=3
+DIAGC EXP rnd=140 id=8 seat=2 role=expand pos=23,8 ti=35 acd=0 mcd=0 qlen=0 harv=3
+DIAGC EXP rnd=140 id=19 seat=4 role=defend pos=4,4 ti=35 acd=0 mcd=0 qlen=0 harv=3
+DIAGC CORE rnd=141 ph=2 budget=10 n=5 ti=35 ammo=1 floor=108 acd=0
+DIAGC EXP rnd=141 id=5 seat=1 role=expand pos=24,7 ti=35 acd=0 mcd=0 qlen=0 harv=3
+DIAGC EXP rnd=141 id=8 seat=2 role=expand pos=22,8 ti=35 acd=0 mcd=0 qlen=0 harv=3
+DIAGC EXP rnd=141 id=19 seat=4 role=defend pos=4,5 ti=35 acd=0 mcd=0 qlen=0 harv=3
+DIAGC CORE rnd=142 ph=2 budget=10 n=5 ti=35 ammo=1 floor=108 acd=0
+DIAGC EXP rnd=142 id=5 seat=1 role=expand pos=23,7 ti=35 acd=0 mcd=0 qlen=0 harv=3
+DIAGC EXP rnd=142 id=8 seat=2 role=expand pos=23,8 ti=35 acd=0 mcd=0 qlen=0 harv=3
+DIAGC EXP rnd=142 id=19 seat=4 role=defend pos=3,5 ti=35 acd=0 mcd=0 qlen=0 harv=3
+DIAGC CORE rnd=143 ph=2 budget=10 n=5 ti=35 ammo=1 floor=108 acd=0
+DIAGC EXP rnd=143 id=5 seat=1 role=expand pos=23,7 ti=35 acd=0 mcd=0 qlen=0 harv=3
+DIAGC EXP rnd=143 id=8 seat=2 role=expand pos=22,8 ti=35 acd=0 mcd=0 qlen=0 harv=3
+DIAGC EXP rnd=143 id=19 seat=4 role=defend pos=2,5 ti=35 acd=0 mcd=0 qlen=0 harv=3
+DIAGC CORE rnd=144 ph=2 budget=10 n=5 ti=45 ammo=1 floor=108 acd=0
+DIAGC EXP rnd=144 id=5 seat=1 role=expand pos=23,8 ti=45 acd=0 mcd=0 qlen=0 harv=3
+DIAGC EXP rnd=144 id=8 seat=2 role=expand pos=22,7 ti=45 acd=0 mcd=0 qlen=0 harv=3
+DIAGC EXP rnd=144 id=19 seat=4 role=defend pos=2,4 ti=45 acd=0 mcd=0 qlen=0 harv=3
+DIAGC CORE rnd=145 ph=2 budget=10 n=5 ti=45 ammo=1 floor=108 acd=0
+DIAGC EXP rnd=145 id=5 seat=1 role=expand pos=22,8 ti=37 acd=0 mcd=0 qlen=0 harv=3
+DIAGC EXP rnd=145 id=8 seat=2 role=expand pos=23,7 ti=37 acd=0 mcd=0 qlen=0 harv=3
+DIAGC EXP rnd=145 id=19 seat=4 role=defend pos=2,3 ti=37 acd=0 mcd=0 qlen=0 harv=3
+DIAGC CORE rnd=146 ph=2 budget=10 n=5 ti=37 ammo=1 floor=108 acd=0
+DIAGC EXP rnd=146 id=5 seat=1 role=expand pos=23,8 ti=37 acd=0 mcd=0 qlen=0 harv=3
+DIAGC EXP rnd=146 id=8 seat=2 role=expand pos=23,7 ti=37 acd=0 mcd=0 qlen=0 harv=3
+DIAGC EXP rnd=146 id=19 seat=4 role=defend pos=2,4 ti=37 acd=0 mcd=0 qlen=0 harv=3
+DIAGC CORE rnd=147 ph=2 budget=10 n=5 ti=37 ammo=1 floor=108 acd=0
+DIAGC EXP rnd=147 id=5 seat=1 role=expand pos=22,8 ti=37 acd=0 mcd=0 qlen=0 harv=3
+DIAGC EXP rnd=147 id=8 seat=2 role=expand pos=23,8 ti=37 acd=0 mcd=0 qlen=0 harv=3
+DIAGC EXP rnd=147 id=19 seat=4 role=defend pos=2,3 ti=37 acd=0 mcd=0 qlen=0 harv=3
+DIAGC CORE rnd=148 ph=2 budget=10 n=5 ti=47 ammo=1 floor=108 acd=0
+DIAGC EXP rnd=148 id=5 seat=1 role=expand pos=22,7 ti=47 acd=0 mcd=0 qlen=0 harv=3
+DIAGC EXP rnd=148 id=8 seat=2 role=expand pos=23,9 ti=47 acd=0 mcd=0 qlen=0 harv=3
+DIAGC EXP rnd=148 id=19 seat=4 role=defend pos=2,4 ti=47 acd=0 mcd=0 qlen=0 harv=3
+DIAGC CORE rnd=149 ph=2 budget=10 n=5 ti=47 ammo=1 floor=108 acd=0
+DIAGC EXP rnd=149 id=5 seat=1 role=expand pos=23,7 ti=47 acd=0 mcd=0 qlen=0 harv=3
+DIAGC EXP rnd=149 id=8 seat=2 role=expand pos=23,8 ti=47 acd=0 mcd=0 qlen=0 harv=3
+DIAGC EXP rnd=149 id=19 seat=4 role=defend pos=2,3 ti=47 acd=0 mcd=0 qlen=0 harv=3
+DIAGC CORE rnd=150 ph=2 budget=10 n=5 ti=47 ammo=1 floor=108 acd=0
+DIAGC EXP rnd=150 id=5 seat=1 role=expand pos=23,7 ti=47 acd=0 mcd=0 qlen=0 harv=3
+DIAGC EXP rnd=150 id=8 seat=2 role=expand pos=23,9 ti=47 acd=0 mcd=0 qlen=0 harv=3
+DIAGC EXP rnd=150 id=19 seat=4 role=defend pos=2,4 ti=47 acd=0 mcd=0 qlen=0 harv=3
+DIAGC CORE rnd=151 ph=2 budget=10 n=5 ti=47 ammo=1 floor=108 acd=0
+DIAGC EXP rnd=151 id=5 seat=1 role=expand pos=23,8 ti=39 acd=0 mcd=0 qlen=0 harv=3
+DIAGC EXP rnd=151 id=8 seat=2 role=expand pos=22,9 ti=39 acd=0 mcd=0 qlen=0 harv=3
+DIAGC EXP rnd=151 id=19 seat=4 role=defend pos=2,3 ti=39 acd=0 mcd=0 qlen=0 harv=3
+DIAGC CORE rnd=152 ph=2 budget=10 n=5 ti=49 ammo=1 floor=108 acd=0
+DIAGC EXP rnd=152 id=5 seat=1 role=expand pos=23,9 ti=49 acd=0 mcd=0 qlen=0 harv=3
+DIAGC EXP rnd=152 id=8 seat=2 role=expand pos=22,8 ti=49 acd=0 mcd=0 qlen=0 harv=3
+DIAGC EXP rnd=152 id=19 seat=4 role=defend pos=2,4 ti=49 acd=0 mcd=0 qlen=0 harv=3
+DIAGC CORE rnd=153 ph=2 budget=10 n=5 ti=49 ammo=1 floor=108 acd=0
+DIAGC EXP rnd=153 id=5 seat=1 role=expand pos=23,8 ti=49 acd=0 mcd=0 qlen=0 harv=3
+DIAGC EXP rnd=153 id=8 seat=2 role=expand pos=22,7 ti=49 acd=0 mcd=0 qlen=0 harv=3
+DIAGC EXP rnd=153 id=19 seat=4 role=defend pos=2,3 ti=49 acd=0 mcd=0 qlen=0 harv=3
+DIAGC CORE rnd=154 ph=2 budget=10 n=5 ti=49 ammo=1 floor=108 acd=0
+DIAGC EXP rnd=154 id=5 seat=1 role=expand pos=23,7 ti=49 acd=0 mcd=0 qlen=0 harv=3
+DIAGC EXP rnd=154 id=8 seat=2 role=expand pos=22,8 ti=49 acd=0 mcd=0 qlen=0 harv=3
+DIAGC EXP rnd=154 id=19 seat=4 role=defend pos=2,4 ti=49 acd=0 mcd=0 qlen=0 harv=3
+DIAGC CORE rnd=155 ph=2 budget=10 n=5 ti=49 ammo=1 floor=108 acd=0
+DIAGC EXP rnd=155 id=5 seat=1 role=expand pos=23,8 ti=49 acd=0 mcd=0 qlen=0 harv=3
+DIAGC EXP rnd=155 id=8 seat=2 role=expand pos=22,7 ti=49 acd=0 mcd=0 qlen=0 harv=3
+DIAGC EXP rnd=155 id=19 seat=4 role=defend pos=2,3 ti=49 acd=0 mcd=0 qlen=0 harv=3
+DIAGC CORE rnd=156 ph=2 budget=10 n=5 ti=59 ammo=1 floor=108 acd=0
+DIAGC EXP rnd=156 id=5 seat=1 role=expand pos=22,8 ti=51 acd=0 mcd=0 qlen=0 harv=3
+DIAGC EXP rnd=156 id=8 seat=2 role=expand pos=23,7 ti=51 acd=0 mcd=0 qlen=0 harv=3
+DIAGC EXP rnd=156 id=19 seat=4 role=defend pos=2,4 ti=51 acd=0 mcd=0 qlen=0 harv=3
+DIAGC CORE rnd=157 ph=2 budget=10 n=5 ti=51 ammo=1 floor=108 acd=0
+DIAGC EXP rnd=157 id=5 seat=1 role=expand pos=23,8 ti=51 acd=0 mcd=0 qlen=0 harv=3
+DIAGC EXP rnd=157 id=8 seat=2 role=expand pos=23,7 ti=51 acd=0 mcd=0 qlen=0 harv=3
+DIAGC EXP rnd=157 id=19 seat=4 role=defend pos=2,3 ti=51 acd=0 mcd=0 qlen=0 harv=3
+DIAGC CORE rnd=158 ph=2 budget=11 n=5 ti=51 ammo=1 floor=96 acd=0
+DIAGC EXP rnd=158 id=5 seat=1 role=expand pos=22,8 ti=51 acd=0 mcd=0 qlen=0 harv=3
+DIAGC EXP rnd=158 id=8 seat=2 role=expand pos=23,8 ti=51 acd=0 mcd=0 qlen=0 harv=3
+DIAGC EXP rnd=158 id=19 seat=4 role=defend pos=2,4 ti=51 acd=0 mcd=0 qlen=0 harv=3
+DIAGC CORE rnd=159 ph=2 budget=11 n=5 ti=51 ammo=1 floor=96 acd=0
+DIAGC EXP rnd=159 id=5 seat=1 role=expand pos=22,7 ti=51 acd=0 mcd=0 qlen=0 harv=3
+DIAGC EXP rnd=159 id=8 seat=2 role=expand pos=22,8 ti=51 acd=0 mcd=0 qlen=0 harv=3
+DIAGC EXP rnd=159 id=19 seat=4 role=defend pos=2,3 ti=51 acd=0 mcd=0 qlen=0 harv=3
+DIAGC CORE rnd=160 ph=2 budget=11 n=5 ti=61 ammo=1 floor=96 acd=0
+DIAGC EXP rnd=160 id=5 seat=1 role=expand pos=23,7 ti=61 acd=0 mcd=0 qlen=0 harv=3
+DIAGC EXP rnd=160 id=8 seat=2 role=expand pos=23,8 ti=61 acd=0 mcd=0 qlen=0 harv=3
+DIAGC EXP rnd=160 id=19 seat=4 role=defend pos=2,4 ti=61 acd=0 mcd=0 qlen=0 harv=3
+DIAGC CORE rnd=161 ph=2 budget=11 n=5 ti=61 ammo=1 floor=96 acd=0
+DIAGC EXP rnd=161 id=5 seat=1 role=expand pos=23,7 ti=61 acd=0 mcd=0 qlen=0 harv=3
+DIAGC EXP rnd=161 id=8 seat=2 role=expand pos=22,8 ti=61 acd=0 mcd=0 qlen=0 harv=3
+DIAGC EXP rnd=161 id=19 seat=4 role=defend pos=2,3 ti=61 acd=0 mcd=0 qlen=0 harv=3
+DIAGC CORE rnd=162 ph=2 budget=11 n=5 ti=61 ammo=1 floor=96 acd=0
+DIAGC EXP rnd=162 id=5 seat=1 role=expand pos=23,8 ti=61 acd=0 mcd=0 qlen=0 harv=3
+DIAGC EXP rnd=162 id=8 seat=2 role=expand pos=22,7 ti=61 acd=0 mcd=0 qlen=0 harv=3
+DIAGC EXP rnd=162 id=19 seat=4 role=defend pos=2,4 ti=61 acd=0 mcd=0 qlen=0 harv=3
+DIAGC CORE rnd=163 ph=2 budget=11 n=5 ti=61 ammo=1 floor=96 acd=0
+DIAGC EXP rnd=163 id=5 seat=1 role=expand pos=23,7 ti=61 acd=0 mcd=0 qlen=0 harv=3
+DIAGC EXP rnd=163 id=8 seat=2 role=expand pos=22,8 ti=61 acd=0 mcd=0 qlen=0 harv=3
+DIAGC EXP rnd=163 id=19 seat=4 role=defend pos=2,3 ti=61 acd=0 mcd=0 qlen=0 harv=3
+DIAGC CORE rnd=164 ph=2 budget=11 n=5 ti=71 ammo=1 floor=96 acd=0
+DIAGC EXP rnd=164 id=5 seat=1 role=expand pos=23,8 ti=71 acd=0 mcd=0 qlen=0 harv=3
+DIAGC EXP rnd=164 id=8 seat=2 role=expand pos=22,7 ti=71 acd=0 mcd=0 qlen=0 harv=3
+DIAGC EXP rnd=164 id=19 seat=4 role=defend pos=2,4 ti=71 acd=0 mcd=0 qlen=0 harv=3
+DIAGC HARV rnd=164 id=19 seat=4 tile=2,3
+DIAGC PLAN rnd=164 id=19 seat=4 src=2,3 len=15
+DIAGC CORE rnd=165 ph=2 budget=11 n=5 ti=21 ammo=1 floor=96 acd=0
+DIAGC EXP rnd=165 id=5 seat=1 role=expand pos=23,9 ti=21 acd=0 mcd=0 qlen=0 harv=4
+DIAGC EXP rnd=165 id=8 seat=2 role=expand pos=23,7 ti=21 acd=0 mcd=0 qlen=0 harv=4
+DIAGC EXP rnd=165 id=19 seat=4 role=defend pos=2,4 ti=21 acd=0 mcd=0 qlen=15 harv=4
+DIAGC CORE rnd=166 ph=2 budget=11 n=5 ti=14 ammo=1 floor=96 acd=0
+DIAGC EXP rnd=166 id=5 seat=1 role=expand pos=23,8 ti=14 acd=0 mcd=0 qlen=0 harv=4
+DIAGC EXP rnd=166 id=8 seat=2 role=expand pos=23,7 ti=14 acd=0 mcd=0 qlen=0 harv=4
+DIAGC EXP rnd=166 id=19 seat=4 role=defend pos=2,4 ti=14 acd=0 mcd=0 qlen=15 harv=4
+DIAGC BNL_POOR rnd=166 id=19 seat=4 ti=14 res=0 cost=7 qlen=15 head=2,4 dcore=12
+DIAGC CORE rnd=167 ph=2 budget=11 n=5 ti=14 ammo=1 floor=96 acd=0
+DIAGC EXP rnd=167 id=5 seat=1 role=expand pos=23,9 ti=14 acd=0 mcd=0 qlen=0 harv=4
+DIAGC EXP rnd=167 id=8 seat=2 role=expand pos=23,8 ti=14 acd=0 mcd=0 qlen=0 harv=4
+DIAGC EXP rnd=167 id=19 seat=4 role=defend pos=2,5 ti=14 acd=0 mcd=0 qlen=15 harv=4
+DIAGC BNL_POOR rnd=167 id=19 seat=4 ti=14 res=0 cost=7 qlen=15 head=2,4 dcore=12
+DIAGC CORE rnd=168 ph=2 budget=11 n=5 ti=24 ammo=1 floor=96 acd=0
+DIAGC EXP rnd=168 id=5 seat=1 role=expand pos=24,9 ti=24 acd=0 mcd=0 qlen=0 harv=4
+DIAGC EXP rnd=168 id=8 seat=2 role=expand pos=23,9 ti=24 acd=0 mcd=0 qlen=0 harv=4
+DIAGC EXP rnd=168 id=19 seat=4 role=defend pos=2,5 ti=24 acd=0 mcd=0 qlen=15 harv=4
+DIAGC BNL_OK rnd=168 id=19 seat=4 tile=2,4 dcore=12 left=14
+DIAGC CORE rnd=169 ph=2 budget=11 n=5 ti=17 ammo=1 floor=96 acd=0
+DIAGC EXP rnd=169 id=5 seat=1 role=expand pos=24,8 ti=17 acd=0 mcd=0 qlen=0 harv=4
+DIAGC EXP rnd=169 id=8 seat=2 role=expand pos=23,8 ti=17 acd=0 mcd=0 qlen=0 harv=4
+DIAGC EXP rnd=169 id=19 seat=4 role=defend pos=2,5 ti=17 acd=0 mcd=0 qlen=14 harv=4
+DIAGC BNL_POOR rnd=169 id=19 seat=4 ti=17 res=0 cost=7 qlen=14 head=2,5 dcore=12
+DIAGC CORE rnd=170 ph=2 budget=11 n=5 ti=17 ammo=1 floor=96 acd=0
+DIAGC EXP rnd=170 id=5 seat=1 role=expand pos=24,7 ti=17 acd=0 mcd=0 qlen=0 harv=4
+DIAGC EXP rnd=170 id=8 seat=2 role=expand pos=23,7 ti=17 acd=0 mcd=0 qlen=0 harv=4
+DIAGC EXP rnd=170 id=19 seat=4 role=defend pos=3,5 ti=17 acd=0 mcd=0 qlen=14 harv=4
+DIAGC BNL_POOR rnd=170 id=19 seat=4 ti=17 res=0 cost=7 qlen=14 head=2,5 dcore=12
+DIAGC CORE rnd=171 ph=2 budget=11 n=5 ti=17 ammo=1 floor=96 acd=0
+DIAGC EXP rnd=171 id=5 seat=1 role=expand pos=24,8 ti=17 acd=0 mcd=0 qlen=0 harv=4
+DIAGC EXP rnd=171 id=8 seat=2 role=expand pos=23,8 ti=17 acd=0 mcd=0 qlen=0 harv=4
+DIAGC EXP rnd=171 id=19 seat=4 role=defend pos=3,5 ti=17 acd=0 mcd=0 qlen=14 harv=4
+DIAGC BNL_POOR rnd=171 id=19 seat=4 ti=17 res=0 cost=7 qlen=14 head=2,5 dcore=12
+DIAGC CORE rnd=172 ph=2 budget=11 n=5 ti=27 ammo=1 floor=96 acd=0
+DIAGC EXP rnd=172 id=5 seat=1 role=expand pos=24,7 ti=27 acd=0 mcd=0 qlen=0 harv=4
+DIAGC EXP rnd=172 id=8 seat=2 role=expand pos=22,8 ti=27 acd=0 mcd=0 qlen=0 harv=4
+DIAGC EXP rnd=172 id=19 seat=4 role=defend pos=3,5 ti=27 acd=0 mcd=0 qlen=14 harv=4
+DIAGC CORE rnd=173 ph=2 budget=11 n=5 ti=27 ammo=1 floor=96 acd=0
+DIAGC EXP rnd=173 id=5 seat=1 role=expand pos=23,7 ti=27 acd=0 mcd=0 qlen=0 harv=4
+DIAGC EXP rnd=173 id=8 seat=2 role=expand pos=23,8 ti=27 acd=0 mcd=0 qlen=0 harv=4
+DIAGC EXP rnd=173 id=19 seat=4 role=defend pos=4,5 ti=27 acd=0 mcd=0 qlen=13 harv=4
+DIAGC BNL_OK rnd=173 id=19 seat=4 tile=3,5 dcore=11 left=12
+DIAGC CORE rnd=174 ph=2 budget=11 n=5 ti=20 ammo=1 floor=96 acd=0
+DIAGC EXP rnd=174 id=5 seat=1 role=expand pos=23,7 ti=20 acd=0 mcd=0 qlen=0 harv=4
+DIAGC EXP rnd=174 id=8 seat=2 role=expand pos=22,8 ti=20 acd=0 mcd=0 qlen=0 harv=4
+DIAGC EXP rnd=174 id=19 seat=4 role=defend pos=4,5 ti=20 acd=0 mcd=0 qlen=12 harv=4
+DIAGC BNL_POOR rnd=174 id=19 seat=4 ti=20 res=0 cost=7 qlen=12 head=4,5 dcore=10
+DIAGC CORE rnd=175 ph=2 budget=11 n=5 ti=20 ammo=1 floor=96 acd=0
+DIAGC EXP rnd=175 id=5 seat=1 role=expand pos=23,8 ti=20 acd=0 mcd=0 qlen=0 harv=4
+DIAGC EXP rnd=175 id=8 seat=2 role=expand pos=22,7 ti=20 acd=0 mcd=0 qlen=0 harv=4
+DIAGC EXP rnd=175 id=19 seat=4 role=defend pos=5,5 ti=20 acd=0 mcd=0 qlen=12 harv=4
+DIAGC BNL_POOR rnd=175 id=19 seat=4 ti=20 res=0 cost=7 qlen=12 head=4,5 dcore=10
+DIAGC CORE rnd=176 ph=2 budget=11 n=5 ti=30 ammo=1 floor=96 acd=0
+DIAGC EXP rnd=176 id=5 seat=1 role=expand pos=22,8 ti=30 acd=0 mcd=0 qlen=0 harv=4
+DIAGC EXP rnd=176 id=8 seat=2 role=expand pos=23,7 ti=30 acd=0 mcd=0 qlen=0 harv=4
+DIAGC EXP rnd=176 id=19 seat=4 role=defend pos=5,5 ti=30 acd=0 mcd=0 qlen=12 harv=4
+DIAGC BNL_OK rnd=176 id=19 seat=4 tile=4,5 dcore=10 left=11
+DIAGC CORE rnd=177 ph=2 budget=11 n=5 ti=23 ammo=1 floor=96 acd=0
+DIAGC EXP rnd=177 id=5 seat=1 role=expand pos=23,8 ti=23 acd=0 mcd=0 qlen=0 harv=4
+DIAGC EXP rnd=177 id=8 seat=2 role=expand pos=23,7 ti=23 acd=0 mcd=0 qlen=0 harv=4
+DIAGC EXP rnd=177 id=19 seat=4 role=defend pos=5,5 ti=23 acd=0 mcd=0 qlen=11 harv=4
+DIAGC CORE rnd=178 ph=2 budget=11 n=5 ti=23 ammo=1 floor=96 acd=0
+DIAGC EXP rnd=178 id=5 seat=1 role=expand pos=22,8 ti=23 acd=0 mcd=0 qlen=0 harv=4
+DIAGC EXP rnd=178 id=8 seat=2 role=expand pos=23,8 ti=23 acd=0 mcd=0 qlen=0 harv=4
+DIAGC EXP rnd=178 id=19 seat=4 role=defend pos=6,5 ti=23 acd=0 mcd=0 qlen=11 harv=4
+DIAGC BNL_OK rnd=178 id=19 seat=4 tile=5,5 dcore=9 left=10
+DIAGC CORE rnd=179 ph=2 budget=11 n=5 ti=16 ammo=1 floor=96 acd=0
+DIAGC EXP rnd=179 id=5 seat=1 role=expand pos=22,7 ti=16 acd=0 mcd=0 qlen=0 harv=4
+DIAGC EXP rnd=179 id=8 seat=2 role=expand pos=23,7 ti=16 acd=0 mcd=0 qlen=0 harv=4
+DIAGC EXP rnd=179 id=19 seat=4 role=defend pos=6,5 ti=16 acd=0 mcd=0 qlen=10 harv=4
+DIAGC BNL_POOR rnd=179 id=19 seat=4 ti=16 res=0 cost=7 qlen=10 head=6,5 dcore=8
+DIAGC CORE rnd=180 ph=2 budget=11 n=5 ti=26 ammo=1 floor=96 acd=0
+DIAGC EXP rnd=180 id=5 seat=1 role=expand pos=22,8 ti=26 acd=0 mcd=0 qlen=0 harv=4
+DIAGC EXP rnd=180 id=8 seat=2 role=expand pos=23,8 ti=26 acd=0 mcd=0 qlen=0 harv=4
+DIAGC EXP rnd=180 id=19 seat=4 role=defend pos=7,5 ti=26 acd=0 mcd=0 qlen=10 harv=4
+DIAGC BNL_OK rnd=180 id=19 seat=4 tile=6,5 dcore=8 left=9
+DIAGC CORE rnd=181 ph=2 budget=11 n=5 ti=19 ammo=1 floor=96 acd=0
+DIAGC EXP rnd=181 id=5 seat=1 role=expand pos=22,7 ti=19 acd=0 mcd=0 qlen=0 harv=4
+DIAGC EXP rnd=181 id=8 seat=2 role=expand pos=23,9 ti=19 acd=0 mcd=0 qlen=0 harv=4
+DIAGC EXP rnd=181 id=19 seat=4 role=defend pos=7,5 ti=19 acd=0 mcd=0 qlen=9 harv=4
+DIAGC BNL_POOR rnd=181 id=19 seat=4 ti=19 res=0 cost=7 qlen=9 head=7,5 dcore=7
+DIAGC CORE rnd=182 ph=2 budget=11 n=5 ti=19 ammo=1 floor=96 acd=0
+DIAGC EXP rnd=182 id=5 seat=1 role=expand pos=23,7 ti=19 acd=0 mcd=0 qlen=0 harv=4
+DIAGC EXP rnd=182 id=8 seat=2 role=expand pos=23,8 ti=19 acd=0 mcd=0 qlen=0 harv=4
+DIAGC EXP rnd=182 id=19 seat=4 role=defend pos=8,5 ti=19 acd=0 mcd=0 qlen=9 harv=4
+DIAGC BNL_POOR rnd=182 id=19 seat=4 ti=19 res=0 cost=7 qlen=9 head=7,5 dcore=7
+DIAGC CORE rnd=183 ph=2 budget=11 n=5 ti=19 ammo=1 floor=96 acd=0
+DIAGC EXP rnd=183 id=5 seat=1 role=expand pos=23,7 ti=19 acd=0 mcd=0 qlen=0 harv=4
+DIAGC EXP rnd=183 id=8 seat=2 role=expand pos=22,8 ti=19 acd=0 mcd=0 qlen=0 harv=4
+DIAGC EXP rnd=183 id=19 seat=4 role=defend pos=8,5 ti=19 acd=0 mcd=0 qlen=9 harv=4
+DIAGC BNL_POOR rnd=183 id=19 seat=4 ti=19 res=0 cost=7 qlen=9 head=7,5 dcore=7
+DIAGC CORE rnd=184 ph=2 budget=11 n=5 ti=29 ammo=1 floor=96 acd=0
+DIAGC EXP rnd=184 id=5 seat=1 role=expand pos=23,8 ti=29 acd=0 mcd=0 qlen=0 harv=4
+DIAGC EXP rnd=184 id=8 seat=2 role=expand pos=22,7 ti=29 acd=0 mcd=0 qlen=0 harv=4
+DIAGC EXP rnd=184 id=19 seat=4 role=defend pos=8,5 ti=29 acd=0 mcd=0 qlen=9 harv=4
+DIAGC BNL_OK rnd=184 id=19 seat=4 tile=7,5 dcore=7 left=8
+DIAGC CORE rnd=185 ph=2 budget=11 n=5 ti=22 ammo=1 floor=96 acd=0
+DIAGC EXP rnd=185 id=5 seat=1 role=expand pos=23,9 ti=22 acd=0 mcd=0 qlen=0 harv=4
+DIAGC EXP rnd=185 id=8 seat=2 role=expand pos=23,7 ti=22 acd=0 mcd=0 qlen=0 harv=4
+DIAGC EXP rnd=185 id=19 seat=4 role=defend pos=8,5 ti=22 acd=0 mcd=0 qlen=8 harv=4
+DIAGC BNL_POOR rnd=185 id=19 seat=4 ti=22 res=0 cost=7 qlen=8 head=8,5 dcore=6
+DIAGC CORE rnd=186 ph=2 budget=11 n=5 ti=22 ammo=1 floor=96 acd=0
+DIAGC EXP rnd=186 id=5 seat=1 role=expand pos=23,8 ti=22 acd=0 mcd=0 qlen=0 harv=4
+DIAGC EXP rnd=186 id=8 seat=2 role=expand pos=23,7 ti=22 acd=0 mcd=0 qlen=0 harv=4
+DIAGC EXP rnd=186 id=19 seat=4 role=defend pos=9,5 ti=22 acd=0 mcd=0 qlen=8 harv=4
+DIAGC BNL_POOR rnd=186 id=19 seat=4 ti=22 res=0 cost=7 qlen=8 head=8,5 dcore=6
+DIAGC CORE rnd=187 ph=2 budget=11 n=5 ti=22 ammo=1 floor=96 acd=0
+DIAGC EXP rnd=187 id=5 seat=1 role=expand pos=23,9 ti=22 acd=0 mcd=0 qlen=0 harv=4
+DIAGC EXP rnd=187 id=8 seat=2 role=expand pos=23,8 ti=22 acd=0 mcd=0 qlen=0 harv=4
+DIAGC EXP rnd=187 id=19 seat=4 role=defend pos=9,5 ti=22 acd=0 mcd=0 qlen=8 harv=4
+DIAGC BNL_POOR rnd=187 id=19 seat=4 ti=22 res=0 cost=7 qlen=8 head=8,5 dcore=6
+DIAGC CORE rnd=188 ph=2 budget=11 n=5 ti=32 ammo=1 floor=96 acd=0
+DIAGC EXP rnd=188 id=5 seat=1 role=expand pos=24,9 ti=32 acd=0 mcd=0 qlen=0 harv=4
+DIAGC EXP rnd=188 id=8 seat=2 role=expand pos=22,8 ti=32 acd=0 mcd=0 qlen=0 harv=4
+DIAGC EXP rnd=188 id=19 seat=4 role=defend pos=9,5 ti=32 acd=0 mcd=0 qlen=8 harv=4
+DIAGC BNL_OK rnd=188 id=19 seat=4 tile=8,5 dcore=6 left=7
+DIAGC CORE rnd=189 ph=2 budget=11 n=5 ti=25 ammo=1 floor=96 acd=0
+DIAGC EXP rnd=189 id=5 seat=1 role=expand pos=24,8 ti=25 acd=0 mcd=0 qlen=0 harv=4
+DIAGC EXP rnd=189 id=8 seat=2 role=expand pos=23,8 ti=25 acd=0 mcd=0 qlen=0 harv=4
+DIAGC EXP rnd=189 id=19 seat=4 role=defend pos=9,5 ti=25 acd=0 mcd=0 qlen=7 harv=4
+DIAGC CORE rnd=190 ph=2 budget=11 n=5 ti=25 ammo=1 floor=96 acd=0
+DIAGC EXP rnd=190 id=5 seat=1 role=expand pos=24,7 ti=25 acd=0 mcd=0 qlen=0 harv=4
+DIAGC EXP rnd=190 id=8 seat=2 role=expand pos=23,7 ti=25 acd=0 mcd=0 qlen=0 harv=4
+DIAGC CORE rnd=191 ph=2 budget=11 n=5 ti=25 ammo=1 floor=96 acd=0
+DIAGC EXP rnd=191 id=5 seat=1 role=expand pos=24,8 ti=25 acd=0 mcd=0 qlen=0 harv=4
+DIAGC EXP rnd=191 id=8 seat=2 role=expand pos=23,8 ti=25 acd=0 mcd=0 qlen=0 harv=4
+DIAGC CORE rnd=192 ph=2 budget=11 n=5 ti=35 ammo=1 floor=96 acd=0
+DIAGC EXP rnd=192 id=5 seat=1 role=expand pos=24,7 ti=35 acd=0 mcd=0 qlen=0 harv=4
+DIAGC EXP rnd=192 id=8 seat=2 role=expand pos=23,9 ti=35 acd=0 mcd=0 qlen=0 harv=4
+DIAGC CORE rnd=193 ph=2 budget=11 n=5 ti=35 ammo=1 floor=96 acd=0
+DIAGC EXP rnd=193 id=5 seat=1 role=expand pos=23,7 ti=35 acd=0 mcd=0 qlen=0 harv=4
+DIAGC EXP rnd=193 id=8 seat=2 role=expand pos=23,8 ti=35 acd=0 mcd=0 qlen=0 harv=4
+DIAGC CORE rnd=194 ph=2 budget=11 n=5 ti=35 ammo=1 floor=96 acd=0
+DIAGC EXP rnd=194 id=5 seat=1 role=expand pos=23,7 ti=35 acd=0 mcd=0 qlen=0 harv=4
+DIAGC EXP rnd=194 id=8 seat=2 role=expand pos=23,9 ti=35 acd=0 mcd=0 qlen=0 harv=4
+DIAGC CORE rnd=195 ph=2 budget=11 n=5 ti=35 ammo=1 floor=96 acd=0
+DIAGC EXP rnd=195 id=5 seat=1 role=expand pos=23,8 ti=35 acd=0 mcd=0 qlen=0 harv=4
+DIAGC EXP rnd=195 id=8 seat=2 role=expand pos=22,9 ti=35 acd=0 mcd=0 qlen=0 harv=4
+DIAGC CORE rnd=196 ph=2 budget=11 n=5 ti=45 ammo=1 floor=96 acd=0
+DIAGC EXP rnd=196 id=5 seat=1 role=expand pos=22,8 ti=45 acd=0 mcd=0 qlen=0 harv=4
+DIAGC EXP rnd=196 id=8 seat=2 role=expand pos=23,9 ti=45 acd=0 mcd=0 qlen=0 harv=4
+DIAGC CORE rnd=197 ph=2 budget=11 n=5 ti=45 ammo=1 floor=96 acd=0
+DIAGC EXP rnd=197 id=5 seat=1 role=expand pos=23,8 ti=45 acd=0 mcd=0 qlen=0 harv=4
+DIAGC EXP rnd=197 id=8 seat=2 role=expand pos=22,9 ti=45 acd=0 mcd=0 qlen=0 harv=4
+DIAGC CORE rnd=198 ph=2 budget=11 n=5 ti=45 ammo=1 floor=96 acd=0
+DIAGC EXP rnd=198 id=5 seat=1 role=expand pos=23,7 ti=45 acd=0 mcd=0 qlen=0 harv=4
+DIAGC EXP rnd=198 id=8 seat=2 role=expand pos=23,9 ti=45 acd=0 mcd=0 qlen=0 harv=4
+DIAGC CORE rnd=199 ph=2 budget=11 n=5 ti=45 ammo=1 floor=96 acd=0
+DIAGC EXP rnd=199 id=5 seat=1 role=expand pos=23,8 ti=45 acd=0 mcd=0 qlen=0 harv=4
+DIAGC EXP rnd=199 id=8 seat=2 role=expand pos=22,9 ti=45 acd=0 mcd=0 qlen=0 harv=4
+DIAGC CORE rnd=200 ph=2 budget=11 n=5 ti=55 ammo=1 floor=96 acd=0
+DIAGC EXP rnd=200 id=5 seat=1 role=expand pos=23,7 ti=55 acd=0 mcd=0 qlen=0 harv=4
+DIAGC EXP rnd=200 id=8 seat=2 role=expand pos=23,9 ti=55 acd=0 mcd=0 qlen=0 harv=4
+DIAGC CORE rnd=201 ph=2 budget=11 n=5 ti=3 ammo=1 floor=108 acd=0
+DIAGC EXP rnd=201 id=5 seat=1 role=expand pos=23,8 ti=3 acd=0 mcd=0 qlen=0 harv=4
+DIAGC EXP rnd=201 id=8 seat=2 role=expand pos=22,9 ti=3 acd=0 mcd=0 qlen=0 harv=4
+DIAGC CORE rnd=202 ph=2 budget=11 n=5 ti=3 ammo=1 floor=108 acd=0
+DIAGC EXP rnd=202 id=5 seat=1 role=expand pos=23,9 ti=3 acd=0 mcd=0 qlen=0 harv=4
+DIAGC EXP rnd=202 id=8 seat=2 role=expand pos=22,8 ti=3 acd=0 mcd=0 qlen=0 harv=4
+DIAGC CORE rnd=203 ph=2 budget=11 n=5 ti=3 ammo=1 floor=108 acd=0
+DIAGC EXP rnd=203 id=5 seat=1 role=expand pos=23,8 ti=3 acd=0 mcd=0 qlen=0 harv=4
+DIAGC EXP rnd=203 id=8 seat=2 role=expand pos=22,7 ti=3 acd=0 mcd=0 qlen=0 harv=4
+DIAGC CORE rnd=204 ph=2 budget=11 n=5 ti=13 ammo=1 floor=108 acd=0
+DIAGC EXP rnd=204 id=5 seat=1 role=expand pos=23,7 ti=13 acd=0 mcd=0 qlen=0 harv=4
+DIAGC EXP rnd=204 id=8 seat=2 role=expand pos=22,8 ti=13 acd=0 mcd=0 qlen=0 harv=4
+DIAGC CORE rnd=205 ph=2 budget=11 n=5 ti=13 ammo=1 floor=108 acd=0
+DIAGC EXP rnd=205 id=5 seat=1 role=expand pos=23,8 ti=13 acd=0 mcd=0 qlen=0 harv=4
+DIAGC EXP rnd=205 id=8 seat=2 role=expand pos=22,7 ti=13 acd=0 mcd=0 qlen=0 harv=4
+DIAGC CORE rnd=206 ph=2 budget=11 n=5 ti=13 ammo=1 floor=108 acd=0
+DIAGC EXP rnd=206 id=5 seat=1 role=expand pos=22,8 ti=13 acd=0 mcd=0 qlen=0 harv=4
+DIAGC EXP rnd=206 id=8 seat=2 role=expand pos=23,7 ti=13 acd=0 mcd=0 qlen=0 harv=4
+DIAGC CORE rnd=207 ph=2 budget=11 n=5 ti=13 ammo=1 floor=108 acd=0
+DIAGC EXP rnd=207 id=5 seat=1 role=expand pos=23,8 ti=13 acd=0 mcd=0 qlen=0 harv=4
+DIAGC EXP rnd=207 id=8 seat=2 role=expand pos=23,7 ti=13 acd=0 mcd=0 qlen=0 harv=4
+DIAGC CORE rnd=208 ph=2 budget=11 n=5 ti=23 ammo=1 floor=108 acd=0
+DIAGC EXP rnd=208 id=5 seat=1 role=expand pos=22,8 ti=23 acd=0 mcd=0 qlen=0 harv=4
+DIAGC EXP rnd=208 id=8 seat=2 role=expand pos=23,8 ti=23 acd=0 mcd=0 qlen=0 harv=4
+DIAGC CORE rnd=209 ph=2 budget=11 n=5 ti=23 ammo=1 floor=108 acd=0
+DIAGC EXP rnd=209 id=5 seat=1 role=expand pos=22,7 ti=23 acd=0 mcd=0 qlen=0 harv=4
+DIAGC EXP rnd=209 id=8 seat=2 role=expand pos=22,8 ti=23 acd=0 mcd=0 qlen=0 harv=4
+DIAGC CORE rnd=210 ph=2 budget=11 n=5 ti=23 ammo=1 floor=108 acd=0
+DIAGC EXP rnd=210 id=5 seat=1 role=expand pos=23,7 ti=23 acd=0 mcd=0 qlen=0 harv=4
+DIAGC EXP rnd=210 id=8 seat=2 role=expand pos=23,8 ti=23 acd=0 mcd=0 qlen=0 harv=4
+DIAGC CORE rnd=211 ph=2 budget=11 n=5 ti=23 ammo=1 floor=108 acd=0
+DIAGC EXP rnd=211 id=5 seat=1 role=expand pos=23,7 ti=23 acd=0 mcd=0 qlen=0 harv=4
+DIAGC EXP rnd=211 id=8 seat=2 role=expand pos=22,8 ti=23 acd=0 mcd=0 qlen=0 harv=4
+DIAGC CORE rnd=212 ph=2 budget=11 n=5 ti=33 ammo=1 floor=108 acd=0
+DIAGC EXP rnd=212 id=5 seat=1 role=expand pos=23,8 ti=33 acd=0 mcd=0 qlen=0 harv=4
+DIAGC EXP rnd=212 id=8 seat=2 role=expand pos=22,7 ti=33 acd=0 mcd=0 qlen=0 harv=4
+DIAGC EXP rnd=212 id=19 seat=4 role=defend pos=17,1 ti=33 acd=0 mcd=0 qlen=7 harv=4
+DIAGC CORE rnd=213 ph=2 budget=11 n=5 ti=33 ammo=1 floor=108 acd=0
+DIAGC EXP rnd=213 id=5 seat=1 role=expand pos=23,7 ti=33 acd=0 mcd=0 qlen=0 harv=4
+DIAGC EXP rnd=213 id=8 seat=2 role=expand pos=22,8 ti=33 acd=0 mcd=0 qlen=0 harv=4
+DIAGC EXP rnd=213 id=19 seat=4 role=defend pos=17,2 ti=33 acd=0 mcd=0 qlen=7 harv=4
+DIAGC CORE rnd=214 ph=2 budget=11 n=5 ti=33 ammo=1 floor=108 acd=0
+DIAGC EXP rnd=214 id=5 seat=1 role=expand pos=23,8 ti=33 acd=0 mcd=0 qlen=0 harv=4
+DIAGC EXP rnd=214 id=8 seat=2 role=expand pos=22,7 ti=33 acd=0 mcd=0 qlen=0 harv=4
+DIAGC EXP rnd=214 id=19 seat=4 role=defend pos=17,3 ti=33 acd=0 mcd=0 qlen=7 harv=4
+DIAGC CORE rnd=215 ph=2 budget=11 n=5 ti=33 ammo=1 floor=108 acd=0
+DIAGC EXP rnd=215 id=5 seat=1 role=expand pos=23,9 ti=33 acd=0 mcd=0 qlen=0 harv=4
+DIAGC EXP rnd=215 id=8 seat=2 role=expand pos=23,7 ti=33 acd=0 mcd=0 qlen=0 harv=4
+DIAGC EXP rnd=215 id=19 seat=4 role=defend pos=17,4 ti=33 acd=0 mcd=0 qlen=7 harv=4
+DIAGC CORE rnd=216 ph=2 budget=11 n=5 ti=43 ammo=1 floor=108 acd=0
+DIAGC EXP rnd=216 id=5 seat=1 role=expand pos=23,8 ti=43 acd=0 mcd=0 qlen=0 harv=4
+DIAGC EXP rnd=216 id=8 seat=2 role=expand pos=23,7 ti=43 acd=0 mcd=0 qlen=0 harv=4
+DIAGC EXP rnd=216 id=19 seat=4 role=defend pos=16,4 ti=43 acd=0 mcd=0 qlen=7 harv=4
+DIAGC CORE rnd=217 ph=2 budget=11 n=5 ti=43 ammo=1 floor=108 acd=0
+DIAGC EXP rnd=217 id=5 seat=1 role=expand pos=23,9 ti=43 acd=0 mcd=0 qlen=0 harv=4
+DIAGC EXP rnd=217 id=8 seat=2 role=expand pos=23,8 ti=43 acd=0 mcd=0 qlen=0 harv=4
+DIAGC EXP rnd=217 id=19 seat=4 role=defend pos=16,5 ti=43 acd=0 mcd=0 qlen=7 harv=4
+DIAGC CORE rnd=218 ph=2 budget=11 n=5 ti=43 ammo=1 floor=108 acd=0
+DIAGC EXP rnd=218 id=5 seat=1 role=expand pos=24,9 ti=43 acd=0 mcd=0 qlen=0 harv=4
+DIAGC EXP rnd=218 id=8 seat=2 role=expand pos=23,9 ti=43 acd=0 mcd=0 qlen=0 harv=4
+DIAGC EXP rnd=218 id=19 seat=4 role=defend pos=15,5 ti=43 acd=0 mcd=0 qlen=7 harv=4
+DIAGC CORE rnd=219 ph=2 budget=11 n=5 ti=43 ammo=1 floor=108 acd=0
+DIAGC EXP rnd=219 id=5 seat=1 role=expand pos=24,8 ti=43 acd=0 mcd=0 qlen=0 harv=4
+DIAGC EXP rnd=219 id=8 seat=2 role=expand pos=23,8 ti=43 acd=0 mcd=0 qlen=0 harv=4
+DIAGC EXP rnd=219 id=19 seat=4 role=defend pos=16,5 ti=43 acd=0 mcd=0 qlen=7 harv=4
+DIAGC CORE rnd=220 ph=2 budget=11 n=5 ti=53 ammo=1 floor=108 acd=0
+DIAGC EXP rnd=220 id=5 seat=1 role=expand pos=24,7 ti=53 acd=0 mcd=0 qlen=0 harv=4
+DIAGC EXP rnd=220 id=8 seat=2 role=expand pos=23,7 ti=53 acd=0 mcd=0 qlen=0 harv=4
+DIAGC EXP rnd=220 id=19 seat=4 role=defend pos=15,5 ti=53 acd=0 mcd=0 qlen=7 harv=4
+DIAGC CORE rnd=221 ph=2 budget=11 n=5 ti=53 ammo=1 floor=108 acd=0
+DIAGC EXP rnd=221 id=5 seat=1 role=expand pos=24,8 ti=53 acd=0 mcd=0 qlen=0 harv=4
+DIAGC EXP rnd=221 id=8 seat=2 role=expand pos=23,8 ti=53 acd=0 mcd=0 qlen=0 harv=4
+DIAGC EXP rnd=221 id=19 seat=4 role=defend pos=16,5 ti=53 acd=0 mcd=0 qlen=7 harv=4
+DIAGC CORE rnd=222 ph=2 budget=11 n=5 ti=53 ammo=1 floor=108 acd=0
+DIAGC EXP rnd=222 id=5 seat=1 role=expand pos=24,7 ti=53 acd=0 mcd=0 qlen=0 harv=4
+DIAGC EXP rnd=222 id=8 seat=2 role=expand pos=22,8 ti=53 acd=0 mcd=0 qlen=0 harv=4
+DIAGC EXP rnd=222 id=19 seat=4 role=defend pos=15,5 ti=53 acd=0 mcd=0 qlen=7 harv=4
+DIAGC CORE rnd=223 ph=2 budget=11 n=5 ti=53 ammo=1 floor=108 acd=0
+DIAGC EXP rnd=223 id=5 seat=1 role=expand pos=23,7 ti=53 acd=0 mcd=0 qlen=0 harv=4
+DIAGC EXP rnd=223 id=8 seat=2 role=expand pos=23,8 ti=53 acd=0 mcd=0 qlen=0 harv=4
+DIAGC EXP rnd=223 id=19 seat=4 role=defend pos=16,5 ti=53 acd=0 mcd=0 qlen=7 harv=4
+DIAGC CORE rnd=224 ph=2 budget=11 n=5 ti=63 ammo=1 floor=108 acd=0
+DIAGC EXP rnd=224 id=5 seat=1 role=expand pos=23,7 ti=63 acd=0 mcd=0 qlen=0 harv=4
+DIAGC EXP rnd=224 id=8 seat=2 role=expand pos=22,8 ti=63 acd=0 mcd=0 qlen=0 harv=4
+DIAGC EXP rnd=224 id=19 seat=4 role=defend pos=15,5 ti=63 acd=0 mcd=0 qlen=7 harv=4
+DIAGC CORE rnd=225 ph=2 budget=11 n=5 ti=63 ammo=1 floor=108 acd=0
+DIAGC EXP rnd=225 id=5 seat=1 role=expand pos=23,8 ti=63 acd=0 mcd=0 qlen=0 harv=4
+DIAGC EXP rnd=225 id=8 seat=2 role=expand pos=22,7 ti=63 acd=0 mcd=0 qlen=0 harv=4
+DIAGC EXP rnd=225 id=19 seat=4 role=defend pos=16,5 ti=63 acd=0 mcd=0 qlen=7 harv=4
+DIAGC CORE rnd=226 ph=2 budget=11 n=5 ti=63 ammo=1 floor=108 acd=0
+DIAGC EXP rnd=226 id=5 seat=1 role=expand pos=22,8 ti=63 acd=0 mcd=0 qlen=0 harv=4
+DIAGC EXP rnd=226 id=8 seat=2 role=expand pos=23,7 ti=63 acd=0 mcd=0 qlen=0 harv=4
+DIAGC EXP rnd=226 id=19 seat=4 role=defend pos=15,5 ti=63 acd=0 mcd=0 qlen=7 harv=4
+DIAGC CORE rnd=227 ph=2 budget=11 n=5 ti=63 ammo=1 floor=108 acd=0
+DIAGC EXP rnd=227 id=5 seat=1 role=expand pos=23,8 ti=63 acd=0 mcd=0 qlen=0 harv=4
+DIAGC EXP rnd=227 id=8 seat=2 role=expand pos=23,7 ti=63 acd=0 mcd=0 qlen=0 harv=4
+DIAGC EXP rnd=227 id=19 seat=4 role=defend pos=16,5 ti=63 acd=0 mcd=0 qlen=7 harv=4
+DIAGC CORE rnd=228 ph=2 budget=11 n=5 ti=73 ammo=1 floor=108 acd=0
+DIAGC EXP rnd=228 id=5 seat=1 role=expand pos=22,8 ti=73 acd=0 mcd=0 qlen=0 harv=4
+DIAGC EXP rnd=228 id=8 seat=2 role=expand pos=23,8 ti=73 acd=0 mcd=0 qlen=0 harv=4
+DIAGC EXP rnd=228 id=19 seat=4 role=defend pos=15,5 ti=73 acd=0 mcd=0 qlen=7 harv=4
+DIAGC CORE rnd=229 ph=2 budget=11 n=5 ti=73 ammo=1 floor=108 acd=0
+DIAGC EXP rnd=229 id=5 seat=1 role=expand pos=22,7 ti=73 acd=0 mcd=0 qlen=0 harv=4
+DIAGC EXP rnd=229 id=8 seat=2 role=expand pos=23,7 ti=73 acd=0 mcd=0 qlen=0 harv=4
+DIAGC HARV rnd=229 id=8 seat=2 tile=23,8
+DIAGC PLAN rnd=229 id=8 seat=2 src=23,8 len=12
+DIAGC EXP rnd=229 id=19 seat=4 role=defend pos=16,5 ti=17 acd=0 mcd=0 qlen=7 harv=4
+DIAGC BNL_POOR rnd=229 id=19 seat=4 ti=17 res=0 cost=8 qlen=7 head=9,5 dcore=5
+DIAGC CORE rnd=230 ph=2 budget=11 n=5 ti=17 ammo=1 floor=108 acd=0
+DIAGC EXP rnd=230 id=5 seat=1 role=expand pos=22,8 ti=17 acd=0 mcd=0 qlen=0 harv=5
+DIAGC EXP rnd=230 id=8 seat=2 role=expand pos=23,7 ti=17 acd=0 mcd=0 qlen=12 harv=5
+DIAGC EXP rnd=230 id=19 seat=4 role=defend pos=15,5 ti=9 acd=0 mcd=0 qlen=7 harv=5
+DIAGC BNL_POOR rnd=230 id=19 seat=4 ti=9 res=0 cost=8 qlen=7 head=9,5 dcore=5
+DIAGC CORE rnd=231 ph=2 budget=11 n=5 ti=9 ammo=1 floor=108 acd=0
+DIAGC EXP rnd=231 id=5 seat=1 role=expand pos=22,8 ti=9 acd=0 mcd=0 qlen=0 harv=5
+DIAGC EXP rnd=231 id=8 seat=2 role=expand pos=23,7 ti=9 acd=0 mcd=0 qlen=12 harv=5
+DIAGC BNL_POOR rnd=231 id=8 seat=2 ti=9 res=0 cost=8 qlen=12 head=23,7 dcore=8
+DIAGC EXP rnd=231 id=19 seat=4 role=defend pos=16,5 ti=9 acd=0 mcd=0 qlen=7 harv=5
+DIAGC BNL_POOR rnd=231 id=19 seat=4 ti=9 res=0 cost=8 qlen=7 head=9,5 dcore=5
+DIAGC CORE rnd=232 ph=2 budget=11 n=5 ti=19 ammo=1 floor=108 acd=0
+DIAGC EXP rnd=232 id=5 seat=1 role=expand pos=22,8 ti=19 acd=0 mcd=0 qlen=0 harv=5
+DIAGC EXP rnd=232 id=8 seat=2 role=expand pos=23,6 ti=19 acd=0 mcd=0 qlen=12 harv=5
+DIAGC BNL_POOR rnd=232 id=8 seat=2 ti=19 res=0 cost=8 qlen=12 head=23,7 dcore=8
+DIAGC CORE rnd=233 ph=2 budget=11 n=5 ti=19 ammo=1 floor=108 acd=0
+DIAGC EXP rnd=233 id=5 seat=1 role=expand pos=22,7 ti=19 acd=0 mcd=0 qlen=0 harv=5
+DIAGC EXP rnd=233 id=8 seat=2 role=expand pos=23,6 ti=19 acd=0 mcd=0 qlen=12 harv=5
+DIAGC BNL_POOR rnd=233 id=8 seat=2 ti=19 res=0 cost=8 qlen=12 head=23,7 dcore=8
+DIAGC CORE rnd=234 ph=2 budget=11 n=5 ti=19 ammo=1 floor=108 acd=0
+DIAGC EXP rnd=234 id=5 seat=1 role=expand pos=23,7 ti=19 acd=0 mcd=0 qlen=0 harv=5
+DIAGC EXP rnd=234 id=8 seat=2 role=expand pos=23,6 ti=19 acd=0 mcd=0 qlen=12 harv=5
+DIAGC BNL_POOR rnd=234 id=8 seat=2 ti=19 res=0 cost=8 qlen=12 head=23,7 dcore=8
+DIAGC CORE rnd=235 ph=2 budget=11 n=5 ti=19 ammo=1 floor=108 acd=0
+DIAGC EXP rnd=235 id=5 seat=1 role=expand pos=24,7 ti=19 acd=0 mcd=0 qlen=0 harv=5
+DIAGC EXP rnd=235 id=8 seat=2 role=expand pos=23,6 ti=19 acd=0 mcd=0 qlen=12 harv=5
+DIAGC BNL_POOR rnd=235 id=8 seat=2 ti=19 res=0 cost=8 qlen=12 head=23,7 dcore=8
+DIAGC CORE rnd=236 ph=2 budget=11 n=5 ti=29 ammo=1 floor=108 acd=0
+DIAGC EXP rnd=236 id=5 seat=1 role=expand pos=24,6 ti=29 acd=0 mcd=0 qlen=0 harv=5
+DIAGC EXP rnd=236 id=8 seat=2 role=expand pos=23,6 ti=29 acd=0 mcd=0 qlen=12 harv=5
+DIAGC BNL_OK rnd=236 id=8 seat=2 tile=23,7 dcore=8 left=11
+DIAGC CORE rnd=237 ph=2 budget=11 n=5 ti=21 ammo=1 floor=108 acd=0
+DIAGC EXP rnd=237 id=5 seat=1 role=expand pos=25,6 ti=21 acd=0 mcd=0 qlen=0 harv=5
+DIAGC EXP rnd=237 id=8 seat=2 role=expand pos=23,6 ti=21 acd=0 mcd=0 qlen=11 harv=5
+DIAGC BNL_POOR rnd=237 id=8 seat=2 ti=21 res=0 cost=8 qlen=11 head=23,6 dcore=8
+DIAGC CORE rnd=238 ph=2 budget=11 n=5 ti=21 ammo=1 floor=108 acd=0
+DIAGC EXP rnd=238 id=5 seat=1 role=expand pos=26,6 ti=21 acd=0 mcd=0 qlen=0 harv=5
+DIAGC EXP rnd=238 id=8 seat=2 role=expand pos=23,5 ti=21 acd=0 mcd=0 qlen=11 harv=5
+DIAGC BNL_POOR rnd=238 id=8 seat=2 ti=21 res=0 cost=8 qlen=11 head=23,6 dcore=8
+DIAGC CORE rnd=239 ph=2 budget=11 n=5 ti=21 ammo=1 floor=108 acd=0
+DIAGC EXP rnd=239 id=5 seat=1 role=expand pos=26,5 ti=21 acd=0 mcd=0 qlen=0 harv=5
+DIAGC EXP rnd=239 id=8 seat=2 role=expand pos=23,5 ti=21 acd=0 mcd=0 qlen=11 harv=5
+DIAGC BNL_POOR rnd=239 id=8 seat=2 ti=21 res=0 cost=8 qlen=11 head=23,6 dcore=8
+DIAGC CORE rnd=240 ph=2 budget=11 n=5 ti=31 ammo=1 floor=108 acd=0
+DIAGC EXP rnd=240 id=5 seat=1 role=expand pos=27,5 ti=31 acd=0 mcd=0 qlen=0 harv=5
+DIAGC EXP rnd=240 id=8 seat=2 role=expand pos=23,5 ti=31 acd=0 mcd=0 qlen=11 harv=5
+DIAGC CORE rnd=241 ph=2 budget=11 n=5 ti=31 ammo=1 floor=108 acd=0
+DIAGC EXP rnd=241 id=5 seat=1 role=expand pos=27,4 ti=31 acd=0 mcd=0 qlen=0 harv=5
+DIAGC EXP rnd=241 id=8 seat=2 role=expand pos=23,4 ti=31 acd=0 mcd=0 qlen=10 harv=5
+DIAGC BNL_OK rnd=241 id=8 seat=2 tile=23,5 dcore=8 left=9
+DIAGC CORE rnd=242 ph=2 budget=11 n=5 ti=23 ammo=1 floor=108 acd=0
+DIAGC EXP rnd=242 id=5 seat=1 role=expand pos=27,3 ti=23 acd=0 mcd=0 qlen=0 harv=5
+DIAGC EXP rnd=242 id=8 seat=2 role=expand pos=23,4 ti=23 acd=0 mcd=0 qlen=9 harv=5
+DIAGC BNL_POOR rnd=242 id=8 seat=2 ti=23 res=0 cost=8 qlen=9 head=23,4 dcore=8
+DIAGC EXP rnd=242 id=19 seat=4 role=defend pos=17,1 ti=23 acd=0 mcd=0 qlen=7 harv=5
+DIAGC BNL_POOR rnd=242 id=19 seat=4 ti=23 res=0 cost=8 qlen=7 head=9,5 dcore=5
+DIAGC CORE rnd=243 ph=2 budget=11 n=5 ti=23 ammo=1 floor=108 acd=0
+DIAGC EXP rnd=243 id=5 seat=1 role=expand pos=27,2 ti=23 acd=0 mcd=0 qlen=0 harv=5
+DIAGC EXP rnd=243 id=8 seat=2 role=expand pos=22,4 ti=23 acd=0 mcd=0 qlen=9 harv=5
+DIAGC BNL_POOR rnd=243 id=8 seat=2 ti=23 res=0 cost=8 qlen=9 head=23,4 dcore=8
+DIAGC EXP rnd=243 id=19 seat=4 role=defend pos=17,2 ti=23 acd=0 mcd=0 qlen=7 harv=5
+DIAGC BNL_POOR rnd=243 id=19 seat=4 ti=23 res=0 cost=8 qlen=7 head=9,5 dcore=5
+DIAGC CORE rnd=244 ph=2 budget=11 n=5 ti=33 ammo=1 floor=108 acd=0
+DIAGC EXP rnd=244 id=5 seat=1 role=expand pos=27,3 ti=33 acd=0 mcd=0 qlen=0 harv=5
+DIAGC EXP rnd=244 id=8 seat=2 role=expand pos=22,4 ti=33 acd=0 mcd=0 qlen=9 harv=5
+DIAGC BNL_OK rnd=244 id=8 seat=2 tile=23,4 dcore=8 left=8
+DIAGC EXP rnd=244 id=19 seat=4 role=defend pos=17,3 ti=25 acd=0 mcd=0 qlen=7 harv=5
+DIAGC CORE rnd=245 ph=2 budget=11 n=5 ti=25 ammo=1 floor=108 acd=0
+DIAGC EXP rnd=245 id=5 seat=1 role=expand pos=27,2 ti=25 acd=0 mcd=0 qlen=0 harv=5
+DIAGC EXP rnd=245 id=8 seat=2 role=expand pos=22,4 ti=25 acd=0 mcd=0 qlen=8 harv=5
+DIAGC EXP rnd=245 id=19 seat=4 role=defend pos=17,4 ti=25 acd=0 mcd=0 qlen=7 harv=5
+DIAGC CORE rnd=246 ph=2 budget=11 n=5 ti=25 ammo=1 floor=108 acd=0
+DIAGC EXP rnd=246 id=5 seat=1 role=expand pos=27,3 ti=25 acd=0 mcd=0 qlen=0 harv=5
+DIAGC EXP rnd=246 id=8 seat=2 role=expand pos=21,4 ti=25 acd=0 mcd=0 qlen=8 harv=5
+DIAGC BNL_OK rnd=246 id=8 seat=2 tile=22,4 dcore=7 left=7
+DIAGC EXP rnd=246 id=19 seat=4 role=defend pos=16,4 ti=17 acd=0 mcd=0 qlen=7 harv=5
+DIAGC BNL_POOR rnd=246 id=19 seat=4 ti=17 res=0 cost=8 qlen=7 head=9,5 dcore=5
+DIAGC CORE rnd=247 ph=2 budget=11 n=5 ti=17 ammo=1 floor=108 acd=0
+DIAGC EXP rnd=247 id=5 seat=1 role=expand pos=27,2 ti=17 acd=0 mcd=0 qlen=0 harv=5
+DIAGC EXP rnd=247 id=8 seat=2 role=expand pos=21,4 ti=17 acd=0 mcd=0 qlen=7 harv=5
+DIAGC BNL_POOR rnd=247 id=8 seat=2 ti=17 res=0 cost=8 qlen=7 head=21,4 dcore=6
+DIAGC EXP rnd=247 id=19 seat=4 role=defend pos=16,5 ti=17 acd=0 mcd=0 qlen=7 harv=5
+DIAGC BNL_POOR rnd=247 id=19 seat=4 ti=17 res=0 cost=8 qlen=7 head=9,5 dcore=5
+DIAGC CORE rnd=248 ph=2 budget=11 n=5 ti=27 ammo=1 floor=108 acd=0
+DIAGC EXP rnd=248 id=5 seat=1 role=expand pos=27,3 ti=27 acd=0 mcd=0 qlen=0 harv=5
+DIAGC EXP rnd=248 id=8 seat=2 role=expand pos=20,4 ti=27 acd=0 mcd=0 qlen=7 harv=5
+DIAGC BNL_OK rnd=248 id=8 seat=2 tile=21,4 dcore=6 left=6
+DIAGC EXP rnd=248 id=19 seat=4 role=defend pos=15,5 ti=19 acd=0 mcd=0 qlen=7 harv=5
+DIAGC BNL_POOR rnd=248 id=19 seat=4 ti=19 res=0 cost=8 qlen=7 head=9,5 dcore=5
+DIAGC CORE rnd=249 ph=2 budget=11 n=5 ti=19 ammo=1 floor=108 acd=0
+DIAGC EXP rnd=249 id=5 seat=1 role=expand pos=27,2 ti=19 acd=0 mcd=0 qlen=0 harv=5
+DIAGC EXP rnd=249 id=8 seat=2 role=expand pos=20,4 ti=19 acd=0 mcd=0 qlen=6 harv=5
+DIAGC BNL_POOR rnd=249 id=8 seat=2 ti=19 res=0 cost=8 qlen=6 head=20,4 dcore=5
+DIAGC EXP rnd=249 id=19 seat=4 role=defend pos=16,5 ti=19 acd=0 mcd=0 qlen=7 harv=5
+DIAGC BNL_POOR rnd=249 id=19 seat=4 ti=19 res=0 cost=8 qlen=7 head=9,5 dcore=5
+DIAGC CORE rnd=250 ph=2 budget=11 n=5 ti=19 ammo=1 floor=108 acd=0
+DIAGC EXP rnd=250 id=5 seat=1 role=expand pos=27,3 ti=19 acd=0 mcd=0 qlen=0 harv=5
+DIAGC EXP rnd=250 id=8 seat=2 role=expand pos=19,4 ti=19 acd=0 mcd=0 qlen=6 harv=5
+DIAGC BNL_POOR rnd=250 id=8 seat=2 ti=19 res=0 cost=8 qlen=6 head=20,4 dcore=5
+DIAGC EXP rnd=250 id=19 seat=4 role=defend pos=15,5 ti=19 acd=0 mcd=0 qlen=7 harv=5
+DIAGC BNL_POOR rnd=250 id=19 seat=4 ti=19 res=0 cost=8 qlen=7 head=9,5 dcore=5
+DIAGC CORE rnd=251 ph=2 budget=11 n=5 ti=19 ammo=1 floor=108 acd=0
+DIAGC EXP rnd=251 id=5 seat=1 role=expand pos=27,2 ti=19 acd=0 mcd=0 qlen=0 harv=5
+DIAGC EXP rnd=251 id=8 seat=2 role=expand pos=18,4 ti=19 acd=0 mcd=0 qlen=6 harv=5
+DIAGC BNL_POOR rnd=251 id=8 seat=2 ti=19 res=0 cost=8 qlen=6 head=20,4 dcore=5
+DIAGC EXP rnd=251 id=19 seat=4 role=defend pos=16,5 ti=19 acd=0 mcd=0 qlen=7 harv=5
+DIAGC BNL_POOR rnd=251 id=19 seat=4 ti=19 res=0 cost=8 qlen=7 head=9,5 dcore=5
+DIAGC CORE rnd=252 ph=2 budget=11 n=5 ti=29 ammo=1 floor=108 acd=0
+DIAGC EXP rnd=252 id=5 seat=1 role=expand pos=27,3 ti=29 acd=0 mcd=0 qlen=0 harv=5
+DIAGC EXP rnd=252 id=8 seat=2 role=expand pos=18,5 ti=29 acd=0 mcd=0 qlen=6 harv=5
+DIAGC EXP rnd=252 id=19 seat=4 role=defend pos=15,5 ti=29 acd=0 mcd=0 qlen=7 harv=5
+DIAGC CORE rnd=253 ph=2 budget=11 n=5 ti=29 ammo=1 floor=108 acd=0
+DIAGC EXP rnd=253 id=5 seat=1 role=expand pos=27,2 ti=29 acd=0 mcd=0 qlen=0 harv=5
+DIAGC EXP rnd=253 id=8 seat=2 role=expand pos=18,6 ti=29 acd=0 mcd=0 qlen=6 harv=5
+DIAGC EXP rnd=253 id=19 seat=4 role=defend pos=16,5 ti=29 acd=0 mcd=0 qlen=7 harv=5
+DIAGC CORE rnd=254 ph=2 budget=11 n=5 ti=29 ammo=1 floor=108 acd=0
+DIAGC EXP rnd=254 id=5 seat=1 role=expand pos=27,3 ti=29 acd=0 mcd=0 qlen=0 harv=5
+DIAGC EXP rnd=254 id=8 seat=2 role=expand pos=17,6 ti=29 acd=0 mcd=0 qlen=6 harv=5
+DIAGC EXP rnd=254 id=19 seat=4 role=defend pos=15,5 ti=29 acd=0 mcd=0 qlen=7 harv=5
+DIAGC CORE rnd=255 ph=2 budget=11 n=5 ti=29 ammo=1 floor=108 acd=0
+DIAGC EXP rnd=255 id=5 seat=1 role=expand pos=27,2 ti=29 acd=0 mcd=0 qlen=0 harv=5
+DIAGC EXP rnd=255 id=8 seat=2 role=expand pos=16,6 ti=29 acd=0 mcd=0 qlen=6 harv=5
+DIAGC EXP rnd=255 id=19 seat=4 role=defend pos=16,5 ti=29 acd=0 mcd=0 qlen=7 harv=5
+DIAGC CORE rnd=256 ph=2 budget=11 n=5 ti=39 ammo=1 floor=108 acd=0
+DIAGC EXP rnd=256 id=5 seat=1 role=expand pos=27,3 ti=39 acd=0 mcd=0 qlen=0 harv=5
+DIAGC EXP rnd=256 id=8 seat=2 role=expand pos=15,6 ti=39 acd=0 mcd=0 qlen=6 harv=5
+DIAGC EXP rnd=256 id=19 seat=4 role=defend pos=15,5 ti=39 acd=0 mcd=0 qlen=7 harv=5
+DIAGC CORE rnd=257 ph=2 budget=11 n=5 ti=39 ammo=1 floor=108 acd=0
+DIAGC EXP rnd=257 id=5 seat=1 role=expand pos=27,2 ti=39 acd=0 mcd=0 qlen=0 harv=5
+DIAGC EXP rnd=257 id=8 seat=2 role=expand pos=16,6 ti=39 acd=0 mcd=0 qlen=6 harv=5
+DIAGC EXP rnd=257 id=19 seat=4 role=defend pos=16,5 ti=39 acd=0 mcd=0 qlen=7 harv=5
+DIAGC CORE rnd=258 ph=2 budget=11 n=5 ti=39 ammo=1 floor=108 acd=0
+DIAGC EXP rnd=258 id=5 seat=1 role=expand pos=27,3 ti=39 acd=0 mcd=0 qlen=0 harv=5
+DIAGC EXP rnd=258 id=8 seat=2 role=expand pos=15,6 ti=39 acd=0 mcd=0 qlen=6 harv=5
+DIAGC EXP rnd=258 id=19 seat=4 role=defend pos=15,5 ti=39 acd=0 mcd=0 qlen=7 harv=5
+DIAGC CORE rnd=259 ph=2 budget=11 n=5 ti=39 ammo=1 floor=108 acd=0
+DIAGC EXP rnd=259 id=5 seat=1 role=expand pos=27,2 ti=39 acd=0 mcd=0 qlen=0 harv=5
+DIAGC EXP rnd=259 id=8 seat=2 role=expand pos=16,6 ti=39 acd=0 mcd=0 qlen=6 harv=5
+DIAGC EXP rnd=259 id=19 seat=4 role=defend pos=16,5 ti=39 acd=0 mcd=0 qlen=7 harv=5
+DIAGC CORE rnd=260 ph=2 budget=11 n=5 ti=49 ammo=1 floor=108 acd=0
+DIAGC EXP rnd=260 id=5 seat=1 role=expand pos=27,3 ti=49 acd=0 mcd=0 qlen=0 harv=5
+DIAGC EXP rnd=260 id=8 seat=2 role=expand pos=15,6 ti=49 acd=0 mcd=0 qlen=6 harv=5
+DIAGC EXP rnd=260 id=19 seat=4 role=defend pos=15,5 ti=49 acd=0 mcd=0 qlen=7 harv=5
+DIAGC CORE rnd=261 ph=2 budget=11 n=5 ti=49 ammo=1 floor=108 acd=0
+DIAGC EXP rnd=261 id=5 seat=1 role=expand pos=27,2 ti=49 acd=0 mcd=0 qlen=0 harv=5
+DIAGC EXP rnd=261 id=8 seat=2 role=expand pos=16,6 ti=49 acd=0 mcd=0 qlen=6 harv=5
+DIAGC EXP rnd=261 id=19 seat=4 role=defend pos=16,5 ti=49 acd=0 mcd=0 qlen=7 harv=5
+DIAGC CORE rnd=262 ph=2 budget=11 n=5 ti=49 ammo=1 floor=108 acd=0
+DIAGC EXP rnd=262 id=5 seat=1 role=expand pos=27,3 ti=49 acd=0 mcd=0 qlen=0 harv=5
+DIAGC EXP rnd=262 id=8 seat=2 role=expand pos=15,6 ti=49 acd=0 mcd=0 qlen=6 harv=5
+DIAGC CORE rnd=263 ph=2 budget=11 n=5 ti=49 ammo=1 floor=108 acd=0
+DIAGC EXP rnd=263 id=5 seat=1 role=expand pos=27,2 ti=49 acd=0 mcd=0 qlen=0 harv=5
+DIAGC EXP rnd=263 id=8 seat=2 role=expand pos=16,6 ti=49 acd=0 mcd=0 qlen=6 harv=5
+DIAGC CORE rnd=264 ph=2 budget=11 n=5 ti=59 ammo=1 floor=108 acd=0
+DIAGC EXP rnd=264 id=5 seat=1 role=expand pos=27,3 ti=59 acd=0 mcd=0 qlen=0 harv=5
+DIAGC EXP rnd=264 id=8 seat=2 role=expand pos=15,6 ti=59 acd=0 mcd=0 qlen=6 harv=5
+DIAGC CORE rnd=265 ph=2 budget=11 n=5 ti=59 ammo=1 floor=108 acd=0
+DIAGC EXP rnd=265 id=5 seat=1 role=expand pos=27,2 ti=59 acd=0 mcd=0 qlen=0 harv=5
+DIAGC EXP rnd=265 id=8 seat=2 role=expand pos=15,5 ti=59 acd=0 mcd=0 qlen=6 harv=5
+DIAGC CORE rnd=266 ph=2 budget=11 n=5 ti=59 ammo=1 floor=108 acd=0
+DIAGC EXP rnd=266 id=5 seat=1 role=expand pos=27,3 ti=59 acd=0 mcd=0 qlen=0 harv=5
+DIAGC EXP rnd=266 id=8 seat=2 role=expand pos=16,5 ti=59 acd=0 mcd=0 qlen=6 harv=5
+DIAGC CORE rnd=267 ph=2 budget=11 n=5 ti=59 ammo=1 floor=108 acd=0
+DIAGC EXP rnd=267 id=5 seat=1 role=expand pos=27,2 ti=59 acd=0 mcd=0 qlen=0 harv=5
+DIAGC EXP rnd=267 id=8 seat=2 role=expand pos=15,5 ti=59 acd=0 mcd=0 qlen=6 harv=5
+DIAGC CORE rnd=268 ph=2 budget=11 n=5 ti=69 ammo=1 floor=108 acd=0
+DIAGC EXP rnd=268 id=5 seat=1 role=expand pos=27,3 ti=69 acd=0 mcd=0 qlen=0 harv=5
+DIAGC EXP rnd=268 id=8 seat=2 role=expand pos=16,5 ti=69 acd=0 mcd=0 qlen=6 harv=5
+DIAGC CORE rnd=269 ph=2 budget=11 n=5 ti=69 ammo=1 floor=108 acd=0
+DIAGC EXP rnd=269 id=5 seat=1 role=expand pos=27,2 ti=69 acd=0 mcd=0 qlen=0 harv=5
+DIAGC EXP rnd=269 id=8 seat=2 role=expand pos=15,5 ti=69 acd=0 mcd=0 qlen=6 harv=5

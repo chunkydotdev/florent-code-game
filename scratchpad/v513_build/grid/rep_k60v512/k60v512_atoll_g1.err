@@ -1,0 +1,45 @@
+Update available: 2.3.6 -> 2.3.8. Run: pip install --upgrade fcode
+FS GATE 0 sig (18, 18, (2, 14), (14, 2)) ok 1
+FS GATE 1 sig (18, 18, (2, 14), (14, 2)) ok 1
+FS PHASE 1 id 4 ph 1 d 290 at (16, 3)
+FS HOPBUILD 1 at (16, 3) lch (16, 4) T (1, 16)
+FS GATE 2 sig (18, 18, (2, 14), (14, 2)) ok 1
+FS GATE 2 sig (18, 18, (2, 14), (14, 2)) ok 1
+FS THROW 2 from (16, 3) to (12, 7) T (1, 16)
+FS HOPBUILD 3 at (12, 7) lch (12, 8) T (1, 16)
+FS GATE 3 sig (18, 18, (2, 14), (14, 2)) ok 1
+FS GATE 4 sig (18, 18, (2, 14), (14, 2)) ok 1
+FS THROW 4 from (12, 7) to (9, 12) T (1, 16)
+FS HOPBUILD 5 at (9, 12) lch (8, 12) T (1, 16)
+FS GATE 6 sig (18, 18, (2, 14), (14, 2)) ok 1
+FS THROW 6 from (9, 13) to (4, 15) T (1, 16)
+FS PHASE 7 id 4 ph 2 d 1 at (4, 15)
+FS SEAL 7 tile (4, 14) n 1
+FS SENTINEL 8 at (5, 15) face WEST tgt (2, 15) score 9 n 1 onring 0
+FS RUNG 8 id 4 r 4 hi -
+FS PHASE 9 id 4 ph 4 d 1 at (4, 15)
+FS GATE 9 sig (18, 18, (2, 14), (14, 2)) ok 1
+FS DODGE 10 id 4 from (4, 15) to (4, 16) cov 1 -> 0 hit 0 hp 22
+FS SEAL 11 tile (4, 15) n 2
+FS SEAL 14 tile (4, 15) n 3
+FS SEAL 18 tile (4, 15) n 4
+FS STAT 20 id 4 at (4, 16) need 7 orth 6 ti 48 ammo 97 sen 1 hp 22
+FS SEAL 22 tile (4, 15) n 5
+FS SEAL 26 tile (4, 15) n 6
+FS SEAL 30 tile (4, 15) n 7
+FS SEAL 34 tile (4, 15) n 8
+FS SEAL 38 tile (4, 15) n 9
+FS STAT 40 id 4 at (4, 16) need 7 orth 6 ti 48 ammo 67 sen 1 hp 22
+FS SEAL 42 tile (4, 15) n 10
+FS SEAL 46 tile (4, 15) n 11
+FS SEAL 50 tile (4, 15) n 12
+FS SEAL 54 tile (4, 15) n 13
+FS SEAL 58 tile (4, 15) n 14
+FS FORCEDEATH 60 id 4
+FS GATE 189 sig (18, 18, (2, 14), (14, 2)) ok 1
+FS PHASE 189 id 251 ph 1 d 269 at (16, 4)
+FS HOPBUILD 204 at (10, 13) lch (9, 13) T (1, 16)
+FS GATE 205 sig (18, 18, (2, 14), (14, 2)) ok 1
+FS THROW 205 from (10, 14) to (4, 14) T (1, 16)
+FS PHASE 206 id 251 ph 2 d 1 at (4, 14)
+FS DODGE 207 id 251 from (5, 14) to (6, 14) cov 1 -> 0 hit 0 hp 22

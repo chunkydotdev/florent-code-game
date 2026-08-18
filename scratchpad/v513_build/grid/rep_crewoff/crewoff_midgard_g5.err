@@ -1,0 +1,41 @@
+Update available: 2.3.6 -> 2.3.8. Run: pip install --upgrade fcode
+FS GATE 0 sig (30, 30, (2, 2), (26, 26)) ok 1
+FS GATE 1 sig (30, 30, (2, 2), (26, 26)) ok 1
+FS PHASE 1 id 4 ph 1 d 1013 at (26, 25)
+FS HOPBUILD 1 at (26, 25) lch (26, 24) T (1, 1)
+FS GATE 2 sig (30, 30, (2, 2), (26, 26)) ok 1
+FS GATE 2 sig (30, 30, (2, 2), (26, 26)) ok 1
+FS THROW 2 from (26, 25) to (22, 21) T (1, 1)
+FS HOPBUILD 3 at (22, 21) lch (21, 21) T (1, 1)
+FS GATE 3 sig (30, 30, (2, 2), (26, 26)) ok 1
+FS GATE 4 sig (30, 30, (2, 2), (26, 26)) ok 1
+FS THROW 4 from (22, 20) to (17, 18) T (1, 1)
+FS HOPBUILD 5 at (17, 18) lch (17, 17) T (1, 1)
+FS GATE 6 sig (30, 30, (2, 2), (26, 26)) ok 1
+FS THROW 6 from (16, 18) to (13, 14) T (1, 1)
+FS HOPBUILD 7 at (13, 14) lch (13, 13) T (1, 1)
+FS GATE 8 sig (30, 30, (2, 2), (26, 26)) ok 1
+FS THROW 8 from (12, 14) to (9, 10) T (1, 1)
+FS HOPBUILD 9 at (9, 10) lch (9, 9) T (1, 1)
+FS GATE 10 sig (30, 30, (2, 2), (26, 26)) ok 1
+FS THROW 10 from (8, 10) to (5, 6) T (1, 1)
+FS HOPBUILD 11 at (5, 6) lch (5, 5) T (1, 1)
+FS GATE 12 sig (30, 30, (2, 2), (26, 26)) ok 1
+FS EVICT 12 from (6, 5) to (0, 6)
+FS EVICT 35 from (5, 4) to (8, 9)
+FS DEGRADE 42 id 4
+FS DOORSEEN 47 id 9 at (27, 20) rank 2
+FS DOORSEEN 65 id 9 at (27, 20) rank 2
+FS DOORSEEN 78 id 6 at (27, 20) rank 2
+FS GATE 101 sig (30, 30, (2, 2), (26, 26)) ok 1
+FS PHASE 101 id 309 ph 1 d 1250 at (28, 28)
+FS HOPBUILD 116 at (21, 22) lch (20, 22) T (1, 1)
+FS GATE 117 sig (30, 30, (2, 2), (26, 26)) ok 1
+FS THROW 117 from (21, 21) to (17, 18) T (1, 1)
+FS HOPBUILD 128 at (11, 14) lch (11, 13) T (1, 1)
+FS GATE 129 sig (30, 30, (2, 2), (26, 26)) ok 1
+FS THROW 129 from (10, 14) to (8, 9) T (1, 1)
+FS GATE 145 sig (30, 30, (2, 2), (26, 26)) ok 1
+FS DOORSEEN 150 id 416 at (27, 20) rank 2
+FS GATE 257 sig (30, 30, (2, 2), (26, 26)) ok 1
+FS PHASE 257 id 691 ph 1 d 1060 at (27, 25)

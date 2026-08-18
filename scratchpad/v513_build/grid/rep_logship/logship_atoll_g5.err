@@ -1,0 +1,642 @@
+Update available: 2.3.6 -> 2.3.8. Run: pip install --upgrade fcode
+FS GATE 0 sig (18, 18, (2, 14), (14, 2)) ok 1
+FS GATE 1 sig (18, 18, (2, 14), (14, 2)) ok 1
+FS PHASE 1 id 4 ph 1 d 200 at (13, 4)
+FS HOPBUILD 1 at (13, 4) lch (13, 5) T (1, 16)
+FS GATE 2 sig (18, 18, (2, 14), (14, 2)) ok 1
+FS GATE 2 sig (18, 18, (2, 14), (14, 2)) ok 1
+FS THROW 2 from (12, 4) to (9, 8) T (1, 16)
+FS HOPBUILD 3 at (9, 8) lch (9, 9) T (1, 16)
+FS GATE 3 sig (18, 18, (2, 14), (14, 2)) ok 1
+FS GATE 4 sig (18, 18, (2, 14), (14, 2)) ok 1
+FS THROW 4 from (8, 8) to (5, 12) T (1, 16)
+FS PHASE 5 id 4 ph 2 d 8 at (5, 12)
+FS DODGE 7 id 4 from (3, 12) to (3, 13) cov 1 -> 0 hit 0 hp 40
+FS GATE 7 sig (18, 18, (2, 14), (14, 2)) ok 1
+FS EVICTOR 8 at (3, 12) cov 2
+FS RUNG 8 id 4 r 2 hi -
+FS GATE 8 sig (18, 18, (2, 14), (14, 2)) ok 1
+FS GATE 9 sig (18, 18, (2, 14), (14, 2)) ok 1
+FS GATE 9 sig (18, 18, (2, 14), (14, 2)) ok 1
+FS EVICT 9 from (2, 13) to (4, 7)
+FS SEAL 10 tile (2, 13) n 1
+FS SEAL 12 tile (3, 13) n 2
+FS SEAL 13 tile (4, 14) n 3
+FS DODGE 15 id 4 from (4, 12) to (4, 13) cov 1 -> 0 hit 0 hp 22
+FS DOORSEEN 15 id 6 at (10, 7) rank 1
+FS DOORSEEN 15 id 23 at (10, 7) rank 1
+FS DODGE 17 id 4 from (4, 12) to (4, 13) cov 1 -> 0 hit 0 hp 4
+FS STAT 20 id 4 at (5, 14) need 6 orth 5 ti 74 ammo 24 sen 0 hp 4
+FS SEAL 21 tile (4, 15) n 4
+FS DOOR 23 id 23 at (10, 7) n 1
+FS DOOR 24 id 23 at (10, 7) n 2
+FS DOOR 25 id 23 at (10, 7) n 3
+FS DOOR 26 id 23 at (10, 7) n 4
+FS DOOR 27 id 23 at (10, 7) n 5
+FS DOOR 28 id 23 at (10, 7) n 6
+FS DOOR 29 id 23 at (10, 7) n 7
+FS DOOR 30 id 23 at (10, 7) n 8
+FS DOOR 31 id 23 at (10, 7) n 9
+FS DOOR 32 id 23 at (10, 7) n 10
+FS DOOR 33 id 23 at (10, 7) n 11
+FS DOOR 34 id 23 at (10, 7) n 12
+FS DOOR 35 id 23 at (10, 7) n 13
+FS CLEAR 36 tile (3, 16) peck 1
+FS RUNG 36 id 4 r 3 hi -
+FS DOOR 36 id 23 at (10, 7) n 14
+FS CLEAR 37 tile (3, 16) peck 2
+FS RUNG 37 id 4 r 3 hi -
+FS DOOR 37 id 23 at (10, 7) n 15
+FS DOOR 38 id 23 at (10, 7) n 16
+FS CLEAR 39 tile (3, 16) peck 3
+FS RUNG 39 id 4 r 3 hi -
+FS DOOR 39 id 23 at (10, 7) n 17
+FS STAT 40 id 4 at (4, 16) need 4 orth 3 ti 46 ammo 24 sen 0 hp 4
+FS CLEAR 40 tile (3, 16) peck 4
+FS RUNG 40 id 4 r 3 hi -
+FS DOOR 40 id 23 at (10, 7) n 18
+FS CLEAR 41 tile (3, 16) peck 5
+FS RUNG 41 id 4 r 3 hi -
+FS DOOR 41 id 23 at (10, 7) n 19
+FS CLEAR 42 tile (3, 16) peck 6
+FS RUNG 42 id 4 r 3 hi -
+FS DOOR 42 id 23 at (10, 7) n 20
+FS CLEAR 43 tile (3, 16) peck 7
+FS RUNG 43 id 4 r 3 hi -
+FS CLEAR 44 tile (3, 16) peck 8
+FS RUNG 44 id 4 r 3 hi -
+FS SEAL 46 tile (2, 16) n 5
+FS CLEAR 48 tile (3, 16) peck 1
+FS RUNG 48 id 4 r 3 hi -
+FS STAT 60 id 4 at (3, 17) need 3 orth 2 ti 12 ammo 14 sen 0 hp 4
+FS CLEAR 72 tile (3, 16) peck 1
+FS RUNG 72 id 4 r 3 hi -
+FS CLEARED 73 tile (3, 16) n 1
+FS SEAL 73 tile (3, 16) n 6
+FS SEALCLR 73 tile (3, 16) lag 0
+FS STAT 80 id 4 at (6, 16) need 4 orth 3 ti 74 ammo 24 sen 0 hp 4
+FS STAT 100 id 4 at (6, 16) need 4 orth 3 ti 16 ammo 18 sen 0 hp 4
+FS STAT 120 id 4 at (6, 16) need 4 orth 3 ti 16 ammo 16 sen 0 hp 4
+FS STAT 140 id 4 at (6, 16) need 4 orth 3 ti 28 ammo 24 sen 0 hp 4
+FS STAT 160 id 4 at (6, 16) need 4 orth 3 ti 48 ammo 24 sen 0 hp 4
+FS STAT 180 id 4 at (6, 16) need 4 orth 3 ti 68 ammo 24 sen 0 hp 4
+FS DOORSEEN 194 id 9 at (16, 1) rank 0
+FS STAT 200 id 4 at (6, 16) need 4 orth 3 ti 83 ammo 24 sen 0 hp 4
+FS DOORSEEN 200 id 23 at (16, 1) rank 0
+FS DOORSEEN 209 id 6 at (16, 1) rank 0
+FS DOOR 216 id 6 at (16, 1) n 1
+FS DOOR 217 id 6 at (16, 1) n 2
+FS DOOR 218 id 6 at (16, 1) n 3
+FS DOOR 219 id 6 at (16, 1) n 4
+FS STAT 220 id 4 at (6, 16) need 4 orth 3 ti 64 ammo 24 sen 0 hp 4
+FS DOOR 220 id 6 at (16, 1) n 5
+FS DOOR 221 id 6 at (16, 1) n 6
+FS DOOR 222 id 6 at (16, 1) n 7
+FS DOOR 223 id 6 at (16, 1) n 8
+FS DOOR 224 id 6 at (16, 1) n 9
+FS DOOR 225 id 6 at (16, 1) n 10
+FS DOOR 226 id 6 at (16, 1) n 11
+FS DOOR 227 id 6 at (16, 1) n 12
+FS DOOR 228 id 6 at (16, 1) n 13
+FS DOOR 229 id 6 at (16, 1) n 14
+FS DOOR 230 id 6 at (16, 1) n 15
+FS DOOR 231 id 6 at (16, 1) n 16
+FS DOOR 232 id 6 at (16, 1) n 17
+FS DOOR 233 id 6 at (16, 1) n 18
+FS DOOR 234 id 6 at (16, 1) n 19
+FS DOOR 235 id 6 at (16, 1) n 20
+FS DOOR 236 id 6 at (16, 1) n 21
+FS DOOR 237 id 6 at (16, 1) n 22
+FS DOOR 238 id 6 at (16, 1) n 23
+FS DOOR 239 id 6 at (16, 1) n 24
+FS STAT 240 id 4 at (6, 16) need 4 orth 3 ti 44 ammo 24 sen 0 hp 4
+FS DOOR 240 id 6 at (16, 1) n 25
+FS DOOR 241 id 6 at (16, 1) n 26
+FS DOOR 242 id 6 at (16, 1) n 27
+FS DOOR 243 id 6 at (16, 1) n 28
+FS DOOR 244 id 6 at (16, 1) n 29
+FS DOOR 245 id 6 at (16, 1) n 30
+FS DOOR 246 id 6 at (16, 1) n 31
+FS DOOR 247 id 6 at (16, 1) n 32
+FS DOOR 248 id 6 at (16, 1) n 33
+FS DOOR 249 id 6 at (16, 1) n 34
+FS DOORSEEN 249 id 25 at (16, 1) rank 0
+FS DOORSEEN 251 id 25 at (16, 1) rank 0
+FS DOORSEEN 255 id 23 at (16, 1) rank 1
+FS STAT 260 id 4 at (6, 16) need 4 orth 3 ti 39 ammo 24 sen 0 hp 4
+FS DOOR 262 id 23 at (16, 1) n 21
+FS DOOR 263 id 23 at (16, 1) n 22
+FS DOOR 264 id 23 at (16, 1) n 23
+FS DOOR 265 id 23 at (16, 1) n 24
+FS DOOR 266 id 23 at (16, 1) n 25
+FS DOOR 267 id 23 at (16, 1) n 26
+FS DOOR 268 id 23 at (16, 1) n 27
+FS DOOR 269 id 23 at (16, 1) n 28
+FS DOOR 270 id 23 at (16, 1) n 29
+FS DOOR 271 id 23 at (16, 1) n 30
+FS DOORSEEN 271 id 25 at (16, 1) rank 0
+FS DOOR 272 id 23 at (16, 1) n 31
+FS DOORSEEN 273 id 9 at (16, 1) rank 0
+FS DOOR 273 id 23 at (16, 1) n 32
+FS DOOR 274 id 23 at (16, 1) n 33
+FS DOOR 275 id 23 at (16, 1) n 34
+FS DOOR 276 id 23 at (16, 1) n 35
+FS DOOR 277 id 23 at (16, 1) n 36
+FS DOOR 278 id 23 at (16, 1) n 37
+FS DOOR 279 id 23 at (16, 1) n 38
+FS STAT 280 id 4 at (6, 16) need 4 orth 3 ti 18 ammo 24 sen 0 hp 4
+FS DOOR 280 id 23 at (16, 1) n 39
+FS DOOR 281 id 23 at (16, 1) n 40
+FS DOOR 282 id 23 at (16, 1) n 41
+FS DOORSEEN 283 id 9 at (16, 1) rank 0
+FS DOOR 283 id 23 at (16, 1) n 42
+FS DOOR 284 id 23 at (16, 1) n 43
+FS DOOR 285 id 23 at (16, 1) n 44
+FS DOOR 286 id 23 at (16, 1) n 45
+FS DOOR 289 id 23 at (16, 1) n 46
+FS DOOR 290 id 23 at (16, 1) n 47
+FS DOOR 291 id 23 at (16, 1) n 48
+FS DOOR 292 id 23 at (16, 1) n 49
+FS DOOR 293 id 23 at (16, 1) n 50
+FS DOOR 294 id 23 at (16, 1) n 51
+FS DOOR 295 id 23 at (16, 1) n 52
+FS STAT 300 id 4 at (6, 16) need 4 orth 3 ti 16 ammo 17 sen 0 hp 4
+FS DOORSEEN 304 id 9 at (16, 1) rank 1
+FS DOOR 304 id 25 at (16, 1) n 1
+FS DOOR 305 id 25 at (16, 1) n 2
+FS DOOR 306 id 25 at (16, 1) n 3
+FS DOORSEEN 307 id 23 at (16, 1) rank 0
+FS DOOR 307 id 25 at (16, 1) n 4
+FS DOOR 308 id 25 at (16, 1) n 5
+FS DOOR 309 id 25 at (16, 1) n 6
+FS DOOR 310 id 25 at (16, 1) n 7
+FS DOOR 318 id 9 at (16, 1) n 1
+FS DOOR 319 id 9 at (16, 1) n 2
+FS STAT 320 id 4 at (6, 16) need 4 orth 3 ti 12 ammo 22 sen 0 hp 4
+FS DOOR 320 id 9 at (16, 1) n 3
+FS DOOR 321 id 9 at (16, 1) n 4
+FS DOOR 322 id 9 at (16, 1) n 5
+FS DOOR 323 id 9 at (16, 1) n 6
+FS DOOR 324 id 9 at (16, 1) n 7
+FS DOOR 325 id 9 at (16, 1) n 8
+FS DOOR 326 id 9 at (16, 1) n 9
+FS DOOR 327 id 9 at (16, 1) n 10
+FS DOOR 328 id 9 at (16, 1) n 11
+FS DOOR 329 id 9 at (16, 1) n 12
+FS DOOR 330 id 9 at (16, 1) n 13
+FS DOOR 331 id 9 at (16, 1) n 14
+FS DOOR 332 id 9 at (16, 1) n 15
+FS DOOR 333 id 9 at (16, 1) n 16
+FS DOORSEEN 333 id 23 at (16, 1) rank 0
+FS DOOR 334 id 9 at (16, 1) n 17
+FS STAT 340 id 4 at (6, 16) need 4 orth 3 ti 12 ammo 18 sen 0 hp 4
+FS DOORSEEN 350 id 9 at (16, 1) rank 0
+FS DOOR 353 id 23 at (16, 1) n 53
+FS DOOR 354 id 23 at (16, 1) n 54
+FS DOORSEEN 354 id 25 at (16, 1) rank 0
+FS DOOR 355 id 23 at (16, 1) n 55
+FS DOOR 356 id 23 at (16, 1) n 56
+FS DOOR 357 id 23 at (16, 1) n 57
+FS DOOR 358 id 23 at (16, 1) n 58
+FS DOOR 359 id 23 at (16, 1) n 59
+FS STAT 360 id 4 at (6, 16) need 4 orth 3 ti 12 ammo 16 sen 0 hp 4
+FS DOOR 360 id 23 at (16, 1) n 60
+FS DOOR 361 id 23 at (16, 1) n 61
+FS DOORSEEN 361 id 25 at (16, 1) rank 1
+FS DOOR 362 id 23 at (16, 1) n 62
+FS DOOR 363 id 23 at (16, 1) n 63
+FS DOOR 364 id 23 at (16, 1) n 64
+FS DOOR 365 id 23 at (16, 1) n 65
+FS DOOR 366 id 23 at (16, 1) n 66
+FS DOOR 367 id 23 at (16, 1) n 67
+FS DOOR 368 id 23 at (16, 1) n 68
+FS DOOR 369 id 23 at (16, 1) n 69
+FS DOOR 370 id 23 at (16, 1) n 70
+FS DOOR 371 id 23 at (16, 1) n 71
+FS DOOR 372 id 23 at (16, 1) n 72
+FS DOOR 373 id 23 at (16, 1) n 73
+FS DOOR 376 id 9 at (16, 1) n 18
+FS DOOR 377 id 9 at (16, 1) n 19
+FS DOOR 378 id 9 at (16, 1) n 20
+FS DOOR 379 id 9 at (16, 1) n 21
+FS STAT 380 id 4 at (6, 16) need 4 orth 3 ti 12 ammo 12 sen 0 hp 4
+FS DOOR 380 id 9 at (16, 1) n 22
+FS DOOR 381 id 9 at (16, 1) n 23
+FS DOOR 382 id 9 at (16, 1) n 24
+FS DOOR 383 id 9 at (16, 1) n 25
+FS DOOR 384 id 9 at (16, 1) n 26
+FS DOOR 385 id 9 at (16, 1) n 27
+FS DOOR 386 id 9 at (16, 1) n 28
+FS DOOR 387 id 9 at (16, 1) n 29
+FS DOOR 388 id 9 at (16, 1) n 30
+FS DOOR 389 id 9 at (16, 1) n 31
+FS DOOR 390 id 9 at (16, 1) n 32
+FS STAT 400 id 4 at (6, 16) need 4 orth 3 ti 13 ammo 22 sen 0 hp 4
+FS DOORSEEN 414 id 23 at (16, 1) rank 0
+FS DOORSEEN 415 id 25 at (16, 1) rank 0
+FS STAT 420 id 4 at (6, 16) need 4 orth 3 ti 17 ammo 22 sen 0 hp 4
+FS DOOR 421 id 23 at (16, 1) n 74
+FS DOOR 422 id 23 at (16, 1) n 75
+FS DOORSEEN 424 id 25 at (16, 1) rank 0
+FS DOOR 425 id 23 at (16, 1) n 76
+FS DOOR 426 id 23 at (16, 1) n 77
+FS DOOR 427 id 23 at (16, 1) n 78
+FS DOOR 428 id 23 at (16, 1) n 79
+FS DOOR 429 id 23 at (16, 1) n 80
+FS DOOR 430 id 23 at (16, 1) n 81
+FS DOOR 431 id 23 at (16, 1) n 82
+FS DOOR 432 id 23 at (16, 1) n 83
+FS DOOR 433 id 23 at (16, 1) n 84
+FS DOOR 434 id 23 at (16, 1) n 85
+FS DOOR 435 id 23 at (16, 1) n 86
+FS DOOR 436 id 23 at (16, 1) n 87
+FS DOOR 437 id 23 at (16, 1) n 88
+FS DOOR 438 id 23 at (16, 1) n 89
+FS DOOR 439 id 23 at (16, 1) n 90
+FS STAT 440 id 4 at (6, 16) need 4 orth 3 ti 12 ammo 12 sen 0 hp 4
+FS DOOR 440 id 23 at (16, 1) n 91
+FS DOOR 441 id 23 at (16, 1) n 92
+FS DOOR 442 id 23 at (16, 1) n 93
+FS DOOR 443 id 23 at (16, 1) n 94
+FS DOOR 444 id 23 at (16, 1) n 95
+FS DOOR 445 id 23 at (16, 1) n 96
+FS DOOR 446 id 23 at (16, 1) n 97
+FS DOOR 447 id 23 at (16, 1) n 98
+FS DOOR 448 id 23 at (16, 1) n 99
+FS DOOR 449 id 23 at (16, 1) n 100
+FS DOOR 450 id 23 at (16, 1) n 101
+FS DOOR 451 id 23 at (16, 1) n 102
+FS DOOR 452 id 23 at (16, 1) n 103
+FS DOOR 453 id 23 at (16, 1) n 104
+FS DOOR 454 id 23 at (16, 1) n 105
+FS DOOR 456 id 25 at (16, 1) n 8
+FS DOORSEEN 457 id 9 at (16, 1) rank 0
+FS DOOR 457 id 25 at (16, 1) n 9
+FS DOOR 458 id 25 at (16, 1) n 10
+FS STAT 460 id 4 at (6, 16) need 4 orth 3 ti 12 ammo 14 sen 0 hp 4
+FS DOORSEEN 468 id 25 at (16, 1) rank 0
+FS DOOR 469 id 9 at (16, 1) n 33
+FS DOOR 470 id 9 at (16, 1) n 34
+FS DOOR 471 id 9 at (16, 1) n 35
+FS DOOR 472 id 9 at (16, 1) n 36
+FS DOOR 473 id 9 at (16, 1) n 37
+FS DOOR 474 id 9 at (16, 1) n 38
+FS DOOR 477 id 9 at (16, 1) n 39
+FS DOOR 478 id 9 at (16, 1) n 40
+FS DOOR 479 id 9 at (16, 1) n 41
+FS STAT 480 id 4 at (6, 16) need 4 orth 3 ti 12 ammo 16 sen 0 hp 4
+FS DOOR 480 id 9 at (16, 1) n 42
+FS DOOR 481 id 9 at (16, 1) n 43
+FS DOOR 482 id 9 at (16, 1) n 44
+FS DOOR 483 id 9 at (16, 1) n 45
+FS DOOR 484 id 9 at (16, 1) n 46
+FS DOOR 485 id 9 at (16, 1) n 47
+FS DOOR 486 id 9 at (16, 1) n 48
+FS DOOR 487 id 9 at (16, 1) n 49
+FS DOOR 488 id 9 at (16, 1) n 50
+FS DOOR 489 id 9 at (16, 1) n 51
+FS DOOR 490 id 9 at (16, 1) n 52
+FS DOOR 491 id 9 at (16, 1) n 53
+FS DOOR 492 id 9 at (16, 1) n 54
+FS DOOR 493 id 9 at (16, 1) n 55
+FS DOOR 494 id 9 at (16, 1) n 56
+FS DOOR 495 id 9 at (16, 1) n 57
+FS DOOR 496 id 9 at (16, 1) n 58
+FS DOOR 497 id 9 at (16, 1) n 59
+FS DOOR 499 id 25 at (16, 1) n 11
+FS STAT 500 id 4 at (6, 16) need 4 orth 3 ti 12 ammo 14 sen 0 hp 4
+FS DOOR 500 id 25 at (16, 1) n 12
+FS DOORSEEN 501 id 23 at (16, 1) rank 0
+FS DOOR 501 id 25 at (16, 1) n 13
+FS DOOR 502 id 25 at (16, 1) n 14
+FS DOORSEEN 512 id 25 at (16, 1) rank 0
+FS DOOR 513 id 23 at (16, 1) n 106
+FS DOOR 514 id 23 at (16, 1) n 107
+FS DOOR 517 id 23 at (16, 1) n 108
+FS DOOR 518 id 23 at (16, 1) n 109
+FS STAT 520 id 4 at (6, 16) need 4 orth 3 ti 12 ammo 15 sen 0 hp 4
+FS DOOR 521 id 23 at (16, 1) n 110
+FS DOOR 522 id 23 at (16, 1) n 111
+FS DOOR 523 id 23 at (16, 1) n 112
+FS DOOR 524 id 23 at (16, 1) n 113
+FS DOOR 525 id 23 at (16, 1) n 114
+FS DOOR 526 id 23 at (16, 1) n 115
+FS DOOR 527 id 23 at (16, 1) n 116
+FS DOOR 528 id 23 at (16, 1) n 117
+FS DOOR 529 id 23 at (16, 1) n 118
+FS DOOR 530 id 23 at (16, 1) n 119
+FS DOOR 531 id 23 at (16, 1) n 120
+FS DOOR 532 id 23 at (16, 1) n 121
+FS DOOR 533 id 23 at (16, 1) n 122
+FS DOOR 534 id 23 at (16, 1) n 123
+FS DOOR 535 id 23 at (16, 1) n 124
+FS DOOR 536 id 23 at (16, 1) n 125
+FS DOOR 537 id 23 at (16, 1) n 126
+FS DOOR 538 id 23 at (16, 1) n 127
+FS DOOR 539 id 23 at (16, 1) n 128
+FS STAT 540 id 4 at (6, 16) need 4 orth 3 ti 12 ammo 12 sen 0 hp 4
+FS DOOR 540 id 23 at (16, 1) n 129
+FS DOOR 541 id 23 at (16, 1) n 130
+FS DOOR 543 id 25 at (16, 1) n 15
+FS DOOR 544 id 25 at (16, 1) n 16
+FS DOOR 545 id 25 at (16, 1) n 17
+FS DOORSEEN 546 id 9 at (16, 1) rank 0
+FS DOOR 546 id 25 at (16, 1) n 18
+FS DOORSEEN 557 id 9 at (16, 1) rank 1
+FS DOORSEEN 558 id 23 at (16, 1) rank 0
+FS STAT 560 id 4 at (6, 16) need 4 orth 3 ti 15 ammo 23 sen 0 hp 4
+FS DOORSEEN 560 id 23 at (16, 1) rank 0
+FS DOORSEEN 563 id 25 at (16, 1) rank 0
+FS DOOR 567 id 23 at (16, 1) n 131
+FS DOOR 568 id 23 at (16, 1) n 132
+FS DOOR 569 id 23 at (16, 1) n 133
+FS DOOR 570 id 23 at (16, 1) n 134
+FS DOOR 571 id 23 at (16, 1) n 135
+FS DOOR 572 id 23 at (16, 1) n 136
+FS DOORSEEN 572 id 25 at (16, 1) rank 0
+FS DOOR 573 id 23 at (16, 1) n 137
+FS DOOR 574 id 23 at (16, 1) n 138
+FS DOOR 577 id 23 at (16, 1) n 139
+FS DOOR 578 id 23 at (16, 1) n 140
+FS DOOR 579 id 23 at (16, 1) n 141
+FS STAT 580 id 4 at (6, 16) need 4 orth 3 ti 12 ammo 15 sen 0 hp 4
+FS DOOR 580 id 23 at (16, 1) n 142
+FS DOOR 581 id 23 at (16, 1) n 143
+FS DOOR 582 id 23 at (16, 1) n 144
+FS DOOR 583 id 23 at (16, 1) n 145
+FS DOOR 584 id 23 at (16, 1) n 146
+FS DOOR 585 id 23 at (16, 1) n 147
+FS DOOR 586 id 23 at (16, 1) n 148
+FS DOOR 587 id 23 at (16, 1) n 149
+FS DOOR 588 id 23 at (16, 1) n 150
+FS DOOR 589 id 23 at (16, 1) n 151
+FS DOOR 590 id 23 at (16, 1) n 152
+FS DOOR 591 id 23 at (16, 1) n 153
+FS DOOR 592 id 23 at (16, 1) n 154
+FS DOOR 593 id 23 at (16, 1) n 155
+FS DOOR 594 id 23 at (16, 1) n 156
+FS DOOR 595 id 23 at (16, 1) n 157
+FS DOOR 596 id 23 at (16, 1) n 158
+FS DOOR 597 id 23 at (16, 1) n 159
+FS DOOR 598 id 23 at (16, 1) n 160
+FS DOOR 599 id 23 at (16, 1) n 161
+FS STAT 600 id 4 at (6, 16) need 4 orth 3 ti 12 ammo 15 sen 0 hp 4
+FS DOOR 600 id 23 at (16, 1) n 162
+FS DOORSEEN 605 id 25 at (16, 1) rank 0
+FS DOORSEEN 609 id 23 at (16, 1) rank 0
+FS DOOR 612 id 25 at (16, 1) n 19
+FS DOOR 613 id 25 at (16, 1) n 20
+FS DOOR 614 id 25 at (16, 1) n 21
+FS DOOR 615 id 25 at (16, 1) n 22
+FS DOOR 616 id 25 at (16, 1) n 23
+FS DOOR 617 id 25 at (16, 1) n 24
+FS DOOR 618 id 25 at (16, 1) n 25
+FS DOOR 619 id 25 at (16, 1) n 26
+FS STAT 620 id 4 at (6, 16) need 4 orth 3 ti 12 ammo 12 sen 0 hp 4
+FS DOOR 620 id 25 at (16, 1) n 27
+FS DOOR 621 id 25 at (16, 1) n 28
+FS DOOR 622 id 25 at (16, 1) n 29
+FS DOOR 623 id 25 at (16, 1) n 30
+FS DOOR 624 id 25 at (16, 1) n 31
+FS DOOR 625 id 25 at (16, 1) n 32
+FS DOOR 626 id 25 at (16, 1) n 33
+FS DOOR 627 id 25 at (16, 1) n 34
+FS DOOR 628 id 25 at (16, 1) n 35
+FS DOOR 629 id 25 at (16, 1) n 36
+FS DOOR 630 id 25 at (16, 1) n 37
+FS DOOR 631 id 25 at (16, 1) n 38
+FS DOOR 632 id 25 at (16, 1) n 39
+FS DOOR 633 id 25 at (16, 1) n 40
+FS DOOR 634 id 25 at (16, 1) n 41
+FS DOOR 635 id 25 at (16, 1) n 42
+FS DOOR 636 id 25 at (16, 1) n 43
+FS DOOR 637 id 25 at (16, 1) n 44
+FS DOOR 638 id 25 at (16, 1) n 45
+FS DOOR 639 id 25 at (16, 1) n 46
+FS STAT 640 id 4 at (6, 16) need 4 orth 3 ti 12 ammo 12 sen 0 hp 4
+FS DOOR 640 id 25 at (16, 1) n 47
+FS DOOR 641 id 25 at (16, 1) n 48
+FS DOOR 642 id 25 at (16, 1) n 49
+FS DOOR 643 id 25 at (16, 1) n 50
+FS DOOR 644 id 25 at (16, 1) n 51
+FS DOOR 645 id 25 at (16, 1) n 52
+FS DOORSEEN 650 id 9 at (16, 1) rank 0
+FS DOORSEEN 652 id 9 at (16, 1) rank 0
+FS STAT 660 id 4 at (6, 16) need 4 orth 3 ti 16 ammo 16 sen 0 hp 4
+FS DOORSEEN 664 id 9 at (16, 1) rank 0
+FS DOORSEEN 667 id 9 at (16, 1) rank 0
+FS DOOR 673 id 9 at (16, 1) n 60
+FS DOOR 674 id 9 at (16, 1) n 61
+FS DOOR 675 id 9 at (16, 1) n 62
+FS DOOR 676 id 9 at (16, 1) n 63
+FS DOORSEEN 676 id 23 at (16, 1) rank 0
+FS DOOR 677 id 9 at (16, 1) n 64
+FS DOORSEEN 677 id 25 at (16, 1) rank 0
+FS DOOR 678 id 9 at (16, 1) n 65
+FS STAT 680 id 4 at (6, 16) need 4 orth 3 ti 12 ammo 15 sen 0 hp 4
+FS DOOR 681 id 9 at (16, 1) n 66
+FS DOORSEEN 681 id 25 at (16, 1) rank 0
+FS DOOR 682 id 9 at (16, 1) n 67
+FS DOOR 683 id 9 at (16, 1) n 68
+FS DOOR 684 id 9 at (16, 1) n 69
+FS DOOR 685 id 9 at (16, 1) n 70
+FS DOOR 686 id 9 at (16, 1) n 71
+FS DOOR 687 id 9 at (16, 1) n 72
+FS DOOR 688 id 9 at (16, 1) n 73
+FS DOOR 689 id 9 at (16, 1) n 74
+FS DOORSEEN 689 id 23 at (16, 1) rank 1
+FS DOOR 690 id 9 at (16, 1) n 75
+FS DOOR 691 id 9 at (16, 1) n 76
+FS DOOR 692 id 9 at (16, 1) n 77
+FS DOOR 693 id 9 at (16, 1) n 78
+FS DOOR 694 id 9 at (16, 1) n 79
+FS DOOR 695 id 9 at (16, 1) n 80
+FS DOOR 696 id 9 at (16, 1) n 81
+FS DOOR 697 id 9 at (16, 1) n 82
+FS DOOR 698 id 9 at (16, 1) n 83
+FS DOOR 699 id 9 at (16, 1) n 84
+FS STAT 700 id 4 at (6, 16) need 4 orth 3 ti 12 ammo 15 sen 0 hp 4
+FS DOOR 700 id 9 at (16, 1) n 85
+FS DOOR 701 id 9 at (16, 1) n 86
+FS DOOR 702 id 9 at (16, 1) n 87
+FS DOOR 703 id 9 at (16, 1) n 88
+FS DOOR 704 id 9 at (16, 1) n 89
+FS DOOR 705 id 9 at (16, 1) n 90
+FS DOOR 706 id 9 at (16, 1) n 91
+FS DOOR 707 id 9 at (16, 1) n 92
+FS DOORSEEN 713 id 23 at (16, 1) rank 0
+FS DOOR 716 id 25 at (16, 1) n 53
+FS DOORSEEN 717 id 23 at (16, 1) rank 0
+FS DOOR 717 id 25 at (16, 1) n 54
+FS DOOR 718 id 25 at (16, 1) n 55
+FS STAT 720 id 4 at (6, 16) need 4 orth 3 ti 12 ammo 18 sen 0 hp 4
+FS DOOR 721 id 25 at (16, 1) n 56
+FS DOORSEEN 726 id 23 at (16, 1) rank 1
+FS DOOR 733 id 23 at (16, 1) n 163
+FS DOOR 734 id 23 at (16, 1) n 164
+FS DOOR 735 id 23 at (16, 1) n 165
+FS DOOR 736 id 23 at (16, 1) n 166
+FS DOOR 737 id 23 at (16, 1) n 167
+FS DOOR 738 id 23 at (16, 1) n 168
+FS DOOR 739 id 23 at (16, 1) n 169
+FS STAT 740 id 4 at (6, 16) need 4 orth 3 ti 12 ammo 19 sen 0 hp 4
+FS DOOR 740 id 23 at (16, 1) n 170
+FS DOORSEEN 741 id 9 at (16, 1) rank 0
+FS DOOR 741 id 23 at (16, 1) n 171
+FS DOOR 742 id 23 at (16, 1) n 172
+FS DOORSEEN 758 id 23 at (16, 1) rank 0
+FS DOOR 759 id 9 at (16, 1) n 93
+FS STAT 760 id 4 at (6, 16) need 4 orth 3 ti 13 ammo 24 sen 0 hp 4
+FS DOOR 760 id 9 at (16, 1) n 94
+FS DOOR 761 id 9 at (16, 1) n 95
+FS DOOR 762 id 9 at (16, 1) n 96
+FS DOOR 765 id 9 at (16, 1) n 97
+FS DOOR 766 id 9 at (16, 1) n 98
+FS DOOR 767 id 9 at (16, 1) n 99
+FS DOOR 768 id 9 at (16, 1) n 100
+FS DOOR 769 id 9 at (16, 1) n 101
+FS DOOR 770 id 9 at (16, 1) n 102
+FS DOOR 771 id 9 at (16, 1) n 103
+FS DOOR 772 id 9 at (16, 1) n 104
+FS DOOR 773 id 9 at (16, 1) n 105
+FS DOOR 774 id 9 at (16, 1) n 106
+FS DOOR 775 id 9 at (16, 1) n 107
+FS DOOR 776 id 9 at (16, 1) n 108
+FS DOOR 777 id 9 at (16, 1) n 109
+FS DOOR 778 id 9 at (16, 1) n 110
+FS DOOR 779 id 9 at (16, 1) n 111
+FS STAT 780 id 4 at (6, 16) need 4 orth 3 ti 12 ammo 12 sen 0 hp 4
+FS DOOR 780 id 9 at (16, 1) n 112
+FS DOOR 781 id 9 at (16, 1) n 113
+FS DOOR 790 id 23 at (16, 1) n 173
+FS DOOR 791 id 23 at (16, 1) n 174
+FS DOOR 792 id 23 at (16, 1) n 175
+FS DOOR 793 id 23 at (16, 1) n 176
+FS DOOR 794 id 23 at (16, 1) n 177
+FS DOOR 795 id 23 at (16, 1) n 178
+FS DOOR 796 id 23 at (16, 1) n 179
+FS DOOR 797 id 23 at (16, 1) n 180
+FS DOOR 798 id 23 at (16, 1) n 181
+FS STAT 800 id 4 at (6, 16) need 4 orth 3 ti 12 ammo 17 sen 0 hp 4
+FS DOORSEEN 800 id 9 at (16, 1) rank 0
+FS DOORSEEN 806 id 25 at (16, 1) rank 0
+FS DOOR 814 id 9 at (16, 1) n 114
+FS DOORSEEN 814 id 25 at (16, 1) rank 1
+FS DOOR 815 id 9 at (16, 1) n 115
+FS DOOR 816 id 9 at (16, 1) n 116
+FS DOOR 817 id 9 at (16, 1) n 117
+FS DOOR 818 id 9 at (16, 1) n 118
+FS DOOR 819 id 9 at (16, 1) n 119
+FS STAT 820 id 4 at (6, 16) need 4 orth 3 ti 12 ammo 19 sen 0 hp 4
+FS DOOR 820 id 9 at (16, 1) n 120
+FS DOOR 821 id 9 at (16, 1) n 121
+FS DOOR 822 id 9 at (16, 1) n 122
+FS DOOR 823 id 9 at (16, 1) n 123
+FS DOOR 824 id 9 at (16, 1) n 124
+FS DOOR 825 id 9 at (16, 1) n 125
+FS DOOR 826 id 9 at (16, 1) n 126
+FS DOOR 829 id 9 at (16, 1) n 127
+FS DOORSEEN 829 id 23 at (16, 1) rank 0
+FS DOOR 830 id 9 at (16, 1) n 128
+FS DOOR 831 id 9 at (16, 1) n 129
+FS DOOR 832 id 9 at (16, 1) n 130
+FS DOOR 833 id 9 at (16, 1) n 131
+FS DOOR 834 id 9 at (16, 1) n 132
+FS DOOR 835 id 9 at (16, 1) n 133
+FS DOOR 836 id 9 at (16, 1) n 134
+FS DOOR 837 id 9 at (16, 1) n 135
+FS DOOR 838 id 9 at (16, 1) n 136
+FS DOOR 839 id 9 at (16, 1) n 137
+FS STAT 840 id 4 at (6, 16) need 4 orth 3 ti 12 ammo 14 sen 0 hp 4
+FS DOOR 840 id 9 at (16, 1) n 138
+FS DOOR 842 id 25 at (16, 1) n 57
+FS DOOR 843 id 25 at (16, 1) n 58
+FS DOOR 844 id 25 at (16, 1) n 59
+FS DOOR 845 id 25 at (16, 1) n 60
+FS DOOR 846 id 25 at (16, 1) n 61
+FS DOOR 847 id 25 at (16, 1) n 62
+FS DOOR 848 id 25 at (16, 1) n 63
+FS DOOR 849 id 25 at (16, 1) n 64
+FS DOOR 850 id 25 at (16, 1) n 65
+FS DOOR 851 id 25 at (16, 1) n 66
+FS DOOR 852 id 25 at (16, 1) n 67
+FS DOOR 853 id 25 at (16, 1) n 68
+FS DOOR 854 id 25 at (16, 1) n 69
+FS STAT 860 id 4 at (6, 16) need 4 orth 3 ti 16 ammo 18 sen 0 hp 4
+FS STAT 880 id 4 at (6, 16) need 4 orth 3 ti 18 ammo 22 sen 0 hp 4
+FS DOORSEEN 883 id 9 at (16, 1) rank 0
+FS DOORSEEN 889 id 23 at (16, 1) rank 1
+FS DOOR 890 id 9 at (16, 1) n 139
+FS DOOR 891 id 9 at (16, 1) n 140
+FS DOORSEEN 891 id 25 at (16, 1) rank 0
+FS DOOR 892 id 9 at (16, 1) n 141
+FS DOOR 893 id 9 at (16, 1) n 142
+FS DOOR 894 id 9 at (16, 1) n 143
+FS DOOR 895 id 9 at (16, 1) n 144
+FS DOOR 896 id 9 at (16, 1) n 145
+FS DOOR 897 id 9 at (16, 1) n 146
+FS DOOR 898 id 9 at (16, 1) n 147
+FS DOOR 899 id 9 at (16, 1) n 148
+FS STAT 900 id 4 at (6, 16) need 4 orth 3 ti 12 ammo 18 sen 0 hp 4
+FS DOOR 900 id 9 at (16, 1) n 149
+FS DOOR 901 id 9 at (16, 1) n 150
+FS DOOR 902 id 9 at (16, 1) n 151
+FS DOOR 903 id 9 at (16, 1) n 152
+FS DOOR 904 id 9 at (16, 1) n 153
+FS DOOR 905 id 9 at (16, 1) n 154
+FS DOOR 906 id 9 at (16, 1) n 155
+FS DOOR 907 id 9 at (16, 1) n 156
+FS DOOR 908 id 9 at (16, 1) n 157
+FS DOOR 909 id 9 at (16, 1) n 158
+FS DOOR 910 id 9 at (16, 1) n 159
+FS DOOR 911 id 9 at (16, 1) n 160
+FS DOOR 912 id 9 at (16, 1) n 161
+FS DOOR 913 id 9 at (16, 1) n 162
+FS DOOR 914 id 9 at (16, 1) n 163
+FS DOOR 915 id 9 at (16, 1) n 164
+FS DOOR 916 id 9 at (16, 1) n 165
+FS DOOR 917 id 9 at (16, 1) n 166
+FS DOOR 918 id 9 at (16, 1) n 167
+FS DOOR 919 id 9 at (16, 1) n 168
+FS STAT 920 id 4 at (6, 16) need 4 orth 3 ti 12 ammo 14 sen 0 hp 4
+FS DOOR 920 id 9 at (16, 1) n 169
+FS DOOR 921 id 9 at (16, 1) n 170
+FS DOOR 922 id 9 at (16, 1) n 171
+FS DOOR 923 id 9 at (16, 1) n 172
+FS DOOR 927 id 23 at (16, 1) n 182
+FS DOOR 928 id 23 at (16, 1) n 183
+FS DOOR 929 id 23 at (16, 1) n 184
+FS STAT 940 id 4 at (6, 16) need 4 orth 3 ti 13 ammo 22 sen 0 hp 4
+FS STAT 960 id 4 at (6, 16) need 4 orth 3 ti 34 ammo 12 sen 0 hp 4
+FS DOORSEEN 964 id 9 at (16, 1) rank 0
+FS DOORSEEN 965 id 23 at (16, 1) rank 0
+FS DOORSEEN 967 id 25 at (16, 1) rank 0
+FS DOOR 973 id 23 at (16, 1) n 185
+FS DOOR 974 id 23 at (16, 1) n 186
+FS DOORSEEN 974 id 25 at (16, 1) rank 1
+FS DOOR 975 id 23 at (16, 1) n 187
+FS DOOR 976 id 23 at (16, 1) n 188
+FS DOOR 977 id 23 at (16, 1) n 189
+FS DOOR 978 id 23 at (16, 1) n 190
+FS DOOR 979 id 23 at (16, 1) n 191
+FS STAT 980 id 4 at (6, 16) need 4 orth 3 ti 85 ammo 0 sen 0 hp 4
+FS DOOR 980 id 23 at (16, 1) n 192
+FS DOOR 981 id 23 at (16, 1) n 193
+FS DOOR 982 id 23 at (16, 1) n 194
+FS DOOR 983 id 23 at (16, 1) n 195
+FS DOOR 984 id 23 at (16, 1) n 196
+FS DOOR 985 id 23 at (16, 1) n 197
+FS DOOR 986 id 23 at (16, 1) n 198
+FS DOOR 987 id 23 at (16, 1) n 199
+FS DOOR 988 id 23 at (16, 1) n 200
+FS DOOR 989 id 23 at (16, 1) n 201
+FS DOOR 990 id 23 at (16, 1) n 202
+FS DOOR 991 id 23 at (16, 1) n 203
+FS DOOR 992 id 23 at (16, 1) n 204
+FS DOOR 993 id 23 at (16, 1) n 205
+FS DOOR 994 id 23 at (16, 1) n 206
+FS DOOR 995 id 23 at (16, 1) n 207
+FS DOOR 996 id 23 at (16, 1) n 208
+FS DOOR 997 id 23 at (16, 1) n 209
+FS DOOR 998 id 23 at (16, 1) n 210
+FS DOOR 999 id 23 at (16, 1) n 211

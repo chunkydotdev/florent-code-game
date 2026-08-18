@@ -1,0 +1,90 @@
+Update available: 2.3.6 -> 2.3.8. Run: pip install --upgrade fcode
+FS GATE 0 sig (30, 30, (14, 2), (14, 26)) ok 1
+FS GATE 1 sig (30, 30, (14, 2), (14, 26)) ok 1
+FS PHASE 1 id 3 ph 1 d 484 at (14, 4)
+FS HOPBUILD 1 at (14, 4) lch (14, 5) T (16, 28)
+FS GATE 2 sig (30, 30, (14, 2), (14, 26)) ok 1
+FS GATE 2 sig (30, 30, (14, 2), (14, 26)) ok 1
+FS THROW 2 from (15, 4) to (15, 10) T (16, 28)
+FS HOPBUILD 3 at (15, 10) lch (15, 11) T (16, 28)
+FS GATE 3 sig (30, 30, (14, 2), (14, 26)) ok 1
+FS GATE 4 sig (30, 30, (14, 2), (14, 26)) ok 1
+FS THROW 4 from (16, 10) to (16, 16) T (16, 28)
+FS HOPBUILD 5 at (16, 16) lch (16, 17) T (16, 28)
+FS GATE 6 sig (30, 30, (14, 2), (14, 26)) ok 1
+FS THROW 6 from (16, 16) to (16, 22) T (16, 28)
+FS HOPBUILD 7 at (16, 22) lch (16, 23) T (16, 28)
+FS GATE 8 sig (30, 30, (14, 2), (14, 26)) ok 1
+FS THROW 8 from (16, 22) to (16, 28) T (16, 28)
+FS PHASE 9 id 3 ph 2 d 2 at (16, 28)
+FS SEAL 9 tile (16, 27) n 1
+FS SEAL 10 tile (15, 28) n 2
+FS GATE 11 sig (30, 30, (14, 2), (14, 26)) ok 1
+FS GATE 12 sig (30, 30, (14, 2), (14, 26)) ok 1
+FS GATE 13 sig (30, 30, (14, 2), (14, 26)) ok 1
+FS SEAL 14 tile (16, 26) n 3
+FS SEAL 17 tile (15, 25) n 4
+FS STAT 20 id 3 at (15, 24) need 5 orth 4 ti 48 ammo 16 sen 0 hp 40
+FS SEAL 21 tile (14, 25) n 5
+FS SEAL 23 tile (13, 25) n 6
+FS DOORSEEN 25 id 8 at (15, 8) rank 0
+FS SEAL 26 tile (13, 25) n 7
+FS DOORSEEN 27 id 8 at (15, 8) rank 0
+FS DOORSEEN 29 id 16 at (15, 8) rank 0
+FS DOOR 31 id 8 at (15, 8) n 1
+FS DOOR 32 id 8 at (15, 8) n 2
+FS DOOR 33 id 8 at (15, 8) n 3
+FS DOOR 34 id 8 at (15, 8) n 4
+FS DOOR 34 id 16 at (15, 8) n 1
+FS DOOR 35 id 8 at (15, 8) n 5
+FS DOOR 35 id 16 at (15, 8) n 2
+FS SEAL 36 tile (13, 26) n 8
+FS DOORSEEN 36 id 5 at (15, 8) rank 0
+FS DOOR 36 id 8 at (15, 8) n 6
+FS DOOR 36 id 16 at (15, 8) n 3
+FS DOORSEEN 36 id 19 at (15, 8) rank 0
+FS DOOR 37 id 8 at (15, 8) n 7
+FS DOOR 37 id 16 at (15, 8) n 4
+FS SEAL 38 tile (13, 27) n 9
+FS DOOR 38 id 8 at (15, 8) n 8
+FS DOOR 38 id 16 at (15, 8) n 5
+FS DOOR 39 id 8 at (15, 8) n 9
+FS DOOR 39 id 16 at (15, 8) n 6
+FS STAT 40 id 3 at (12, 28) need 1 orth 1 ti 19 ammo 24 sen 0 hp 40
+FS DOOR 40 id 8 at (15, 8) n 10
+FS DOOR 40 id 16 at (15, 8) n 7
+FS SEAL 41 tile (14, 28) n 10
+FS DOOR 41 id 5 at (15, 8) n 1
+FS DOOR 41 id 8 at (15, 8) n 11
+FS PHASE 42 id 3 ph 3 d 2 at (13, 28)
+FS SEAL 44 tile (13, 28) n 11
+FS DOOR 44 id 8 at (15, 8) n 12
+FS STAT 60 id 3 at (16, 28) need 0 orth 0 ti 45 ammo 24 sen 0 hp 40
+FS STAT 80 id 3 at (16, 28) need 0 orth 0 ti 12 ammo 8 sen 0 hp 22
+FS RETREAT 81 id 3 hp 4 from (16, 28) to (17, 28)
+FS PHASE 92 id 3 ph 2 d 8 at (17, 24)
+FS PHASE 93 id 3 ph 3 d 5 at (16, 24)
+FS SEAL 96 tile (13, 25) n 12
+FS STAT 100 id 3 at (14, 24) need 1 orth 0 ti 10 ammo 6 sen 0 hp 12
+FS SEAL 104 tile (13, 25) n 13
+FS SEAL 112 tile (13, 25) n 14
+FS SEAL 117 tile (13, 25) n 15
+FS STAT 120 id 3 at (15, 24) need 0 orth 0 ti 40 ammo 24 sen 0 hp 12
+FS SEAL 124 tile (13, 25) n 16
+FS SENTINEL 128 at (17, 24) face SOUTHWEST tgt (14, 27) score 18 n 1 onring 0
+FS RUNG 128 id 3 r 4 hi -
+FS PHASE 129 id 3 ph 4 d 5 at (16, 24)
+FS SEAL 132 tile (13, 25) n 17
+FS SEAL 139 tile (13, 25) n 18
+FS STAT 140 id 3 at (13, 24) need 0 orth 0 ti 35 ammo 3 sen 1 hp 28
+FS SEAL 148 tile (13, 25) n 19
+FS SEAL 155 tile (13, 25) n 20
+FS STAT 160 id 3 at (15, 24) need 0 orth 0 ti 46 ammo 14 sen 1 hp 36
+FS SEAL 164 tile (13, 25) n 21
+FS SEAL 171 tile (13, 25) n 22
+FS STAT 180 id 3 at (13, 24) need 1 orth 0 ti 46 ammo 18 sen 1 hp 36
+FS SEAL 180 tile (13, 25) n 23
+FS SEAL 187 tile (13, 25) n 24
+FS SEAL 196 tile (13, 25) n 25
+FS STAT 200 id 3 at (16, 24) need 1 orth 0 ti 46 ammo 14 sen 1 hp 36
+FS SEAL 203 tile (13, 25) n 26

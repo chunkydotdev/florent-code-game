@@ -1,0 +1,97 @@
+Update available: 2.3.6 -> 2.3.8. Run: pip install --upgrade fcode
+FS GATE 0 sig (30, 30, (2, 2), (26, 26)) ok 1
+FS GATE 1 sig (30, 30, (2, 2), (26, 26)) ok 1
+FS PHASE 1 id 3 ph 1 d 1013 at (4, 3)
+FS HOPBUILD 1 at (4, 3) lch (5, 3) T (28, 28)
+FS GATE 2 sig (30, 30, (2, 2), (26, 26)) ok 1
+FS GATE 2 sig (30, 30, (2, 2), (26, 26)) ok 1
+FS THROW 2 from (4, 3) to (8, 7) T (28, 28)
+FS HOPBUILD 3 at (8, 7) lch (8, 8) T (28, 28)
+FS GATE 3 sig (30, 30, (2, 2), (26, 26)) ok 1
+FS GATE 4 sig (30, 30, (2, 2), (26, 26)) ok 1
+FS THROW 4 from (9, 7) to (11, 12) T (28, 28)
+FS HOPBUILD 5 at (11, 12) lch (12, 12) T (28, 28)
+FS GATE 6 sig (30, 30, (2, 2), (26, 26)) ok 1
+FS THROW 6 from (11, 13) to (15, 16) T (28, 28)
+FS HOPBUILD 7 at (15, 16) lch (16, 16) T (28, 28)
+FS GATE 8 sig (30, 30, (2, 2), (26, 26)) ok 1
+FS THROW 8 from (15, 17) to (19, 20) T (28, 28)
+FS HOPBUILD 9 at (19, 20) lch (20, 20) T (28, 28)
+FS GATE 10 sig (30, 30, (2, 2), (26, 26)) ok 1
+FS THROW 10 from (19, 21) to (23, 24) T (28, 28)
+FS HOPBUILD 11 at (23, 24) lch (24, 24) T (28, 28)
+FS GATE 12 sig (30, 30, (2, 2), (26, 26)) ok 1
+FS PHASE 14 id 3 ph 2 d 5 at (24, 25)
+FS EVICT 14 from (23, 25) to (27, 20)
+FS SEAL 15 tile (25, 26) n 1
+FS GATE 16 sig (30, 30, (2, 2), (26, 26)) ok 1
+FS CLEAR 17 tile (25, 27) peck 1
+FS RUNG 17 id 3 r 3 hi -
+FS CLEAR 18 tile (25, 27) peck 2
+FS RUNG 18 id 3 r 3 hi -
+FS CLEAR 19 tile (25, 27) peck 3
+FS RUNG 19 id 3 r 3 hi -
+FS STAT 20 id 3 at (24, 27) need 7 orth 7 ti 60 ammo 16 sen 0 hp 40
+FS CLEAR 20 tile (25, 27) peck 4
+FS RUNG 20 id 3 r 3 hi -
+FS CLEAR 21 tile (25, 27) peck 5
+FS RUNG 21 id 3 r 3 hi -
+FS CLEAR 22 tile (25, 27) peck 6
+FS RUNG 22 id 3 r 3 hi -
+FS CLEAR 23 tile (25, 27) peck 7
+FS RUNG 23 id 3 r 3 hi -
+FS CLEAR 24 tile (25, 27) peck 8
+FS RUNG 24 id 3 r 3 hi -
+FS DODGE 25 id 3 from (24, 27) to (25, 27) cov 1 -> 0 hit 0 hp 40
+FS DODGE 28 id 3 from (24, 26) to (23, 26) cov 1 -> 0 hit 0 hp 33
+FS DODGE 33 id 3 from (23, 28) to (23, 29) cov 1 -> 0 hit 0 hp 33
+FS EVICTOR 36 at (25, 28) cov 2
+FS RUNG 36 id 3 r 2 hi -
+FS GATE 37 sig (30, 30, (2, 2), (26, 26)) ok 1
+FS EVICT 37 from (25, 29) to (24, 23)
+FS SEAL 38 tile (26, 28) n 2
+FS EVICT 38 from (23, 23) to (23, 29)
+FS EVICT 39 from (24, 29) to (24, 23)
+FS STAT 40 id 3 at (27, 29) need 6 orth 6 ti 104 ammo 16 sen 0 hp 33
+FS SEAL 40 tile (27, 28) n 3
+FS EVICT 40 from (23, 23) to (23, 29)
+FS EVICT 41 from (24, 29) to (24, 23)
+FS EVICT 42 from (23, 23) to (23, 29)
+FS SEAL 43 tile (28, 27) n 4
+FS EVICT 43 from (24, 29) to (24, 23)
+FS EVICT 44 from (23, 23) to (23, 29)
+FS GATE 44 sig (30, 30, (2, 2), (26, 26)) ok 1
+FS EVICTOR 46 at (29, 26) cov 2
+FS RUNG 46 id 3 r 2 hi -
+FS GATE 47 sig (30, 30, (2, 2), (26, 26)) ok 1
+FS SEAL 57 tile (27, 28) n 5
+FS STAT 60 id 3 at (27, 29) need 5 orth 5 ti 35 ammo 24 sen 0 hp 33
+FS SEAL 61 tile (26, 28) n 6
+FS DODGE 64 id 3 from (25, 28) to (25, 27) cov 1 -> 0 hit 0 hp 26
+FS EVICT 64 from (23, 23) to (23, 29)
+FS CLEAR 66 tile (25, 27) peck 1
+FS RUNG 66 id 3 r 3 hi -
+FS CLEAR 67 tile (25, 27) peck 2
+FS RUNG 67 id 3 r 3 hi -
+FS CLEARED 68 tile (25, 27) n 1
+FS SEAL 68 tile (25, 27) n 7
+FS SEALCLR 68 tile (25, 27) lag 0
+FS DODGE 70 id 3 from (24, 26) to (23, 26) cov 1 -> 0 hit 0 hp 26
+FS DODGE 73 id 3 from (23, 24) to (23, 25) cov 1 -> 0 hit 0 hp 12
+FS EVICT 82 from (23, 23) to (23, 29)
+FS EVICT 95 from (23, 25) to (27, 20)
+FS GATE 102 sig (30, 30, (2, 2), (26, 26)) ok 1
+FS PHASE 102 id 235 ph 1 d 1250 at (1, 1)
+FS HOPBUILD 103 at (1, 0) lch (1, 1) T (28, 28)
+FS GATE 104 sig (30, 30, (2, 2), (26, 26)) ok 1
+FS THROW 104 from (2, 0) to (5, 4) T (28, 28)
+FS EVICT 110 from (23, 23) to (23, 29)
+FS EVICT 116 from (23, 25) to (27, 20)
+FS HOPBUILD 116 at (11, 9) lch (12, 9) T (28, 28)
+FS GATE 117 sig (30, 30, (2, 2), (26, 26)) ok 1
+FS THROW 117 from (11, 9) to (15, 13) T (28, 28)
+FS GATE 181 sig (30, 30, (2, 2), (26, 26)) ok 1
+FS PHASE 181 id 349 ph 1 d 1250 at (1, 1)
+FS HOPBUILD 182 at (1, 0) lch (1, 1) T (28, 28)
+FS GATE 183 sig (30, 30, (2, 2), (26, 26)) ok 1
+FS THROW 183 from (2, 0) to (5, 4) T (28, 28)

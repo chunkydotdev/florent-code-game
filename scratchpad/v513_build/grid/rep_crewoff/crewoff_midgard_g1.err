@@ -1,0 +1,123 @@
+Update available: 2.3.6 -> 2.3.8. Run: pip install --upgrade fcode
+FS GATE 0 sig (30, 30, (2, 2), (26, 26)) ok 1
+FS GATE 1 sig (30, 30, (2, 2), (26, 26)) ok 1
+FS PHASE 1 id 4 ph 1 d 1013 at (26, 25)
+FS HOPBUILD 1 at (26, 25) lch (26, 24) T (1, 1)
+FS GATE 2 sig (30, 30, (2, 2), (26, 26)) ok 1
+FS GATE 2 sig (30, 30, (2, 2), (26, 26)) ok 1
+FS THROW 2 from (26, 25) to (22, 21) T (1, 1)
+FS HOPBUILD 3 at (22, 21) lch (21, 21) T (1, 1)
+FS GATE 3 sig (30, 30, (2, 2), (26, 26)) ok 1
+FS GATE 4 sig (30, 30, (2, 2), (26, 26)) ok 1
+FS THROW 4 from (22, 20) to (17, 18) T (1, 1)
+FS HOPBUILD 5 at (17, 18) lch (17, 17) T (1, 1)
+FS GATE 6 sig (30, 30, (2, 2), (26, 26)) ok 1
+FS THROW 6 from (16, 18) to (13, 14) T (1, 1)
+FS HOPBUILD 7 at (13, 14) lch (13, 13) T (1, 1)
+FS GATE 8 sig (30, 30, (2, 2), (26, 26)) ok 1
+FS THROW 8 from (12, 14) to (9, 10) T (1, 1)
+FS HOPBUILD 9 at (9, 10) lch (9, 9) T (1, 1)
+FS GATE 10 sig (30, 30, (2, 2), (26, 26)) ok 1
+FS THROW 10 from (8, 10) to (5, 6) T (1, 1)
+FS HOPBUILD 11 at (5, 6) lch (5, 5) T (1, 1)
+FS GATE 12 sig (30, 30, (2, 2), (26, 26)) ok 1
+FS EVICT 18 from (5, 4) to (8, 9)
+FS EVICT 40 from (6, 6) to (0, 6)
+FS DEGRADE 42 id 4
+FS DOORSEEN 43 id 9 at (23, 21) rank 2
+FS EVICT 43 from (5, 4) to (8, 9)
+FS DOOR 47 id 9 at (23, 21) n 1
+FS DOORSEEN 48 id 9 at (23, 23) rank 1
+FS GATE 53 sig (30, 30, (2, 2), (26, 26)) ok 1
+FS PHASE 53 id 147 ph 1 d 1060 at (27, 25)
+FS DOOR 56 id 9 at (23, 23) n 2
+FS GATE 56 sig (30, 30, (2, 2), (26, 26)) ok 1
+FS DOOR 57 id 9 at (23, 23) n 3
+FS DOOR 58 id 9 at (23, 23) n 4
+FS DOOR 59 id 9 at (23, 23) n 5
+FS DOOR 60 id 9 at (23, 23) n 6
+FS DOOR 61 id 9 at (23, 23) n 7
+FS DOORSEEN 62 id 6 at (23, 23) rank 0
+FS DOOR 62 id 9 at (23, 23) n 8
+FS DOOR 63 id 9 at (23, 23) n 9
+FS DOOR 64 id 9 at (23, 23) n 10
+FS DOOR 65 id 9 at (23, 23) n 11
+FS DOOR 66 id 9 at (23, 23) n 12
+FS DOOR 67 id 9 at (23, 23) n 13
+FS DOOR 68 id 9 at (23, 23) n 14
+FS DOOR 69 id 9 at (23, 23) n 15
+FS DOOR 70 id 6 at (23, 23) n 1
+FS DOOR 70 id 9 at (23, 23) n 16
+FS DOOR 71 id 6 at (23, 23) n 2
+FS DOOR 71 id 9 at (23, 23) n 17
+FS DOOR 72 id 6 at (23, 23) n 3
+FS DOOR 72 id 9 at (23, 23) n 18
+FS DOORSEEN 73 id 6 at (23, 21) rank 2
+FS DOORSEEN 73 id 9 at (23, 21) rank 2
+FS DOORSEEN 77 id 148 at (21, 27) rank 0
+FS DOORSEEN 78 id 6 at (21, 27) rank 0
+FS DOORSEEN 78 id 9 at (21, 27) rank 0
+FS DOOR 79 id 9 at (21, 27) n 19
+FS DOOR 80 id 9 at (21, 27) n 20
+FS DOOR 81 id 6 at (21, 27) n 4
+FS DOOR 81 id 9 at (21, 27) n 21
+FS DOOR 82 id 6 at (21, 27) n 5
+FS DOOR 82 id 9 at (21, 27) n 22
+FS DOOR 83 id 6 at (21, 27) n 6
+FS DOOR 83 id 9 at (21, 27) n 23
+FS DOOR 84 id 6 at (21, 27) n 7
+FS DOOR 84 id 9 at (21, 27) n 24
+FS DOOR 84 id 148 at (21, 27) n 1
+FS DOOR 85 id 6 at (21, 27) n 8
+FS DOOR 85 id 9 at (21, 27) n 25
+FS DOOR 85 id 148 at (21, 27) n 2
+FS DOOR 86 id 6 at (21, 27) n 9
+FS DOOR 86 id 9 at (21, 27) n 26
+FS DOOR 86 id 148 at (21, 27) n 3
+FS DOOR 87 id 6 at (21, 27) n 10
+FS DOOR 88 id 6 at (21, 27) n 11
+FS DOOR 89 id 6 at (21, 27) n 12
+FS DOORSEEN 93 id 9 at (23, 21) rank 2
+FS PHASE 97 id 147 ph 4 d 4 at (3, 5)
+FS STAT 100 id 147 at (3, 5) need 8 orth 8 ti 16 ammo 14 sen 1 hp 26
+FS DOORSEEN 107 id 6 at (23, 21) rank 2
+FS DOORSEEN 114 id 9 at (23, 21) rank 2
+FS DOORSEEN 115 id 6 at (23, 21) rank 2
+FS DOORSEEN 119 id 6 at (24, 27) rank 0
+FS DOORSEEN 119 id 9 at (24, 27) rank 0
+FS DOORSEEN 119 id 148 at (24, 27) rank 0
+FS DOOR 120 id 6 at (24, 27) n 13
+FS STAT 120 id 147 at (3, 5) need 8 orth 8 ti 14 ammo 26 sen 1 hp 26
+FS DOOR 120 id 148 at (24, 27) n 4
+FS DOOR 121 id 6 at (24, 27) n 14
+FS DOOR 121 id 148 at (24, 27) n 5
+FS DOOR 122 id 6 at (24, 27) n 15
+FS DOOR 122 id 148 at (24, 27) n 6
+FS DOORSEEN 128 id 6 at (24, 27) rank 0
+FS DOORSEEN 128 id 9 at (24, 27) rank 0
+FS DOOR 128 id 9 at (24, 27) n 27
+FS DOORSEEN 128 id 148 at (24, 27) rank 0
+FS DOOR 129 id 9 at (24, 27) n 28
+FS DOOR 130 id 9 at (24, 27) n 29
+FS DOOR 131 id 9 at (24, 27) n 30
+FS DOOR 132 id 9 at (24, 27) n 31
+FS DOOR 133 id 6 at (24, 27) n 16
+FS DOOR 133 id 9 at (24, 27) n 32
+FS DOOR 134 id 6 at (24, 27) n 17
+FS DOOR 134 id 9 at (24, 27) n 33
+FS DOOR 135 id 6 at (24, 27) n 18
+FS DOOR 136 id 6 at (24, 27) n 19
+FS DOOR 137 id 6 at (24, 27) n 20
+FS DOOR 137 id 9 at (24, 27) n 34
+FS DOOR 138 id 6 at (24, 27) n 21
+FS DOOR 138 id 9 at (24, 27) n 35
+FS EVICT 140 from (5, 4) to (8, 9)
+FS STAT 140 id 147 at (3, 5) need 8 orth 8 ti 14 ammo 6 sen 1 hp 26
+FS DOOR 141 id 6 at (24, 27) n 22
+FS DOOR 141 id 9 at (24, 27) n 36
+FS DOOR 142 id 6 at (24, 27) n 23
+FS DOOR 142 id 9 at (24, 27) n 37
+FS DOOR 143 id 6 at (24, 27) n 24
+FS DOOR 144 id 6 at (24, 27) n 25
+FS DOOR 145 id 6 at (24, 27) n 26
+FS DOOR 145 id 9 at (24, 27) n 38

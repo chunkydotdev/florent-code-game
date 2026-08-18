@@ -1,0 +1,31 @@
+tag	arm	map	g	seed	ord	ours	winner	cond	turn	tracebacks	ours_mined	opp_mined
+logship_glacierkeep_g0	logship	glacierkeep	0	7400	A	US	logship	Titanium collected (tiebreak)	1000	0	250	0
+logship_glacierkeep_g1	logship	glacierkeep	1	7401	B	US	logship	Core destroyed	141	0	140	0
+logship_glacierkeep_g2	logship	glacierkeep	2	7402	A	US	logship	Core destroyed	149	0	110	0
+logship_glacierkeep_g3	logship	glacierkeep	3	7403	B	US	logship	Core destroyed	209	0	10	0
+logship_glacierkeep_g4	logship	glacierkeep	4	7404	A	OPP	_v488beltbreak2	Core destroyed	873	0	170	0
+logship_glacierkeep_g5	logship	glacierkeep	5	7405	B	US	logship	Core destroyed	169	0	180	0
+logship_nordkap_g0	logship	nordkap	0	7400	A	OPP	_v488beltbreak2	Core destroyed	232	0	560	1120
+logship_nordkap_g1	logship	nordkap	1	7401	B	OPP	_v488beltbreak2	Core destroyed	598	0	3510	3830
+logship_nordkap_g2	logship	nordkap	2	7402	A	OPP	_v488beltbreak2	Core destroyed	392	0	390	1470
+logship_nordkap_g3	logship	nordkap	3	7403	B	US	logship	Titanium collected (tiebreak)	1000	0	180	0
+logship_nordkap_g4	logship	nordkap	4	7404	A	OPP	_v488beltbreak2	Core destroyed	212	0	120	1710
+logship_nordkap_g5	logship	nordkap	5	7405	B	OPP	_v488beltbreak2	Core destroyed	449	0	120	480
+logship_atoll_g0	logship	atoll	0	7400	A	US	logship	Titanium collected (tiebreak)	1000	0	10680	3620
+logship_atoll_g1	logship	atoll	1	7401	B	OPP	_v488beltbreak2	Core destroyed	375	0	880	1180
+logship_atoll_g2	logship	atoll	2	7402	A	US	logship	Titanium collected (tiebreak)	1000	0	4970	2010
+logship_atoll_g3	logship	atoll	3	7403	B	US	logship	Titanium collected (tiebreak)	1000	0	2600	2460
+logship_atoll_g4	logship	atoll	4	7404	A	OPP	_v488beltbreak2	Core destroyed	63	0	280	280
+logship_atoll_g5	logship	atoll	5	7405	B	US	logship	Titanium collected (tiebreak)	1000	0	2560	310
+logship_midgard_g0	logship	midgard	0	7400	A	US	logship	Core destroyed	351	0	4050	1350
+logship_midgard_g1	logship	midgard	1	7401	B	OPP	_v488beltbreak2	Core destroyed	136	0	530	1590
+logship_midgard_g2	logship	midgard	2	7402	A	OPP	_v488beltbreak2	Titanium collected (tiebreak)	1000	0	540	2990
+logship_midgard_g3	logship	midgard	3	7403	B	OPP	_v488beltbreak2	Core destroyed	197	0	690	2270
+logship_midgard_g4	logship	midgard	4	7404	A	OPP	_v488beltbreak2	Core destroyed	188	0	580	1620
+logship_midgard_g5	logship	midgard	5	7405	B	OPP	_v488beltbreak2	Core destroyed	200	0	680	1910
+logship_drakkarfjord_g0	logship	drakkarfjord	0	7400	A	US	logship	Core destroyed	186	0	1150	510
+logship_drakkarfjord_g1	logship	drakkarfjord	1	7401	B	US	logship	Core destroyed	187	0	1060	0
+logship_drakkarfjord_g2	logship	drakkarfjord	2	7402	A	OPP	_v488beltbreak2	Core destroyed	720	0	340	6000
+logship_drakkarfjord_g3	logship	drakkarfjord	3	7403	B	US	logship	Core destroyed	125	0	720	0
+logship_drakkarfjord_g4	logship	drakkarfjord	4	7404	A	US	logship	Core destroyed	163	0	760	380
+logship_drakkarfjord_g5	logship	drakkarfjord	5	7405	B	US	logship	Core destroyed	135	0	600	0

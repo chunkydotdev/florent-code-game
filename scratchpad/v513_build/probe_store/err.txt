@@ -1,0 +1,25 @@
+Update available: 2.3.6 -> 2.3.8. Run: pip install --upgrade fcode
+PROBE write ok 0 1073754169
+PROBE write ok 0 1073754169
+PROBE read 0 want 1073754169 got 1073754169 match True
+PROBE read 0 want 1073754169 got 1073754169 match True
+PROBE write ok 1 2147484647
+PROBE write ok 1 2147484647
+PROBE read 1 want 2147484647 got 2147484647 match True
+PROBE read 1 want 2147484647 got 2147484647 match True
+PROBE write FAIL 2 1099511627783 OverflowError out of range integral type conversion attempted
+PROBE write FAIL 2 1099511627783 OverflowError out of range integral type conversion attempted
+PROBE read 2 want 1099511627783 got 2147484647 match False
+PROBE read 2 want 1099511627783 got 2147484647 match False
+PROBE write FAIL 3 4611686018427387907 OverflowError out of range integral type conversion attempted
+PROBE write FAIL 3 4611686018427387907 OverflowError out of range integral type conversion attempted
+PROBE read 3 want 4611686018427387907 got 2147484647 match False
+PROBE read 3 want 4611686018427387907 got 2147484647 match False
+PROBE write FAIL 4 -5 OverflowError out of range integral type conversion attempted
+PROBE write FAIL 4 -5 OverflowError out of range integral type conversion attempted
+PROBE read 4 want -5 got 2147484647 match False
+PROBE read 4 want -5 got 2147484647 match False
+PROBE write FAIL 5 9223372036854775807 OverflowError out of range integral type conversion attempted
+PROBE write FAIL 5 9223372036854775807 OverflowError out of range integral type conversion attempted
+PROBE read 5 want 9223372036854775807 got 2147484647 match False
+PROBE read 5 want 9223372036854775807 got 2147484647 match False

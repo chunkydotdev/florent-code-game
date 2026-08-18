@@ -1,0 +1,30 @@
+v512c_glacierkeep_g0	v512c	glacierkeep	0	7600	A	OPP	_v488beltbreak2	Titanium stored (tiebreak)	1000	0	0	0
+v512c_glacierkeep_g1	v512c	glacierkeep	1	7601	B	OPP	_v488beltbreak2	Harvesters (tiebreak)	1000	0	0	0
+v512c_glacierkeep_g2	v512c	glacierkeep	2	7602	A	US	_v512ringladder	Core destroyed	757	0	90	0
+v512c_glacierkeep_g3	v512c	glacierkeep	3	7603	B	OPP	_v488beltbreak2	Core destroyed	167	0	0	360
+v512c_glacierkeep_g4	v512c	glacierkeep	4	7604	A	OPP	_v488beltbreak2	Core destroyed	257	0	0	1070
+v512c_glacierkeep_g5	v512c	glacierkeep	5	7605	B	OPP	_v488beltbreak2	Core destroyed	521	0	0	0
+v512c_nordkap_g0	v512c	nordkap	0	7600	A	OPP	_v488beltbreak2	Core destroyed	215	0	0	2180
+v512c_nordkap_g1	v512c	nordkap	1	7601	B	OPP	_v488beltbreak2	Core destroyed	127	0	0	1390
+v512c_nordkap_g2	v512c	nordkap	2	7602	A	US	_v512ringladder	Core destroyed	564	0	5310	2520
+v512c_nordkap_g3	v512c	nordkap	3	7603	B	OPP	_v488beltbreak2	Core destroyed	166	0	0	1700
+v512c_nordkap_g4	v512c	nordkap	4	7604	A	OPP	_v488beltbreak2	Core destroyed	248	0	0	2550
+v512c_nordkap_g5	v512c	nordkap	5	7605	B	OPP	_v488beltbreak2	Titanium collected (tiebreak)	1000	0	0	4760
+v512c_atoll_g0	v512c	atoll	0	7600	A	OPP	_v488beltbreak2	Core destroyed	317	0	480	820
+v512c_atoll_g1	v512c	atoll	1	7601	B	US	_v512ringladder	Core destroyed	836	0	2230	1670
+v512c_atoll_g2	v512c	atoll	2	7602	A	OPP	_v488beltbreak2	Core destroyed	175	0	210	820
+v512c_atoll_g3	v512c	atoll	3	7603	B	OPP	_v488beltbreak2	Core destroyed	212	0	350	1030
+v512c_atoll_g4	v512c	atoll	4	7604	A	OPP	_v488beltbreak2	Core destroyed	284	0	710	1500
+v512c_atoll_g5	v512c	atoll	5	7605	B	OPP	_v488beltbreak2	Core destroyed	192	0	290	1230
+v512c_midgard_g0	v512c	midgard	0	7600	A	OPP	_v488beltbreak2	Core destroyed	492	0	2710	4700
+v512c_midgard_g1	v512c	midgard	1	7601	B	OPP	_v488beltbreak2	Core destroyed	174	0	340	1980
+v512c_midgard_g2	v512c	midgard	2	7602	A	OPP	_v488beltbreak2	Core destroyed	124	0	310	990
+v512c_midgard_g3	v512c	midgard	3	7603	B	OPP	_v488beltbreak2	Core destroyed	159	0	280	1240
+v512c_midgard_g4	v512c	midgard	4	7604	A	OPP	_v488beltbreak2	Titanium collected (tiebreak)	1000	0	290	2620
+v512c_midgard_g5	v512c	midgard	5	7605	B	OPP	_v488beltbreak2	Core destroyed	715	0	7920	6700
+v512c_drakkarfjord_g0	v512c	drakkarfjord	0	7600	A	OPP	_v488beltbreak2	Core destroyed	309	0	0	2070
+v512c_drakkarfjord_g1	v512c	drakkarfjord	1	7601	B	OPP	_v488beltbreak2	Core destroyed	495	0	0	2560
+v512c_drakkarfjord_g2	v512c	drakkarfjord	2	7602	A	US	_v512ringladder	Core destroyed	273	0	0	0
+v512c_drakkarfjord_g3	v512c	drakkarfjord	3	7603	B	OPP	_v488beltbreak2	Core destroyed	318	0	0	2920
+v512c_drakkarfjord_g4	v512c	drakkarfjord	4	7604	A	OPP	_v488beltbreak2	Core destroyed	319	0	0	840
+v512c_drakkarfjord_g5	v512c	drakkarfjord	5	7605	B	OPP	_v488beltbreak2	Core destroyed	630	0	0	790

@@ -1,0 +1,31 @@
+tag	arm	map	g	seed	ord	ours	winner	cond	turn	tracebacks	ours_mined	opp_mined
+spoffB_glacierkeep_g0	spoffB	glacierkeep	0	7500	A	US	spawn_off	Titanium collected (tiebreak)	1000	0	260	0
+spoffB_glacierkeep_g1	spoffB	glacierkeep	1	7501	B	US	spawn_off	Core destroyed	293	0	110	0
+spoffB_glacierkeep_g2	spoffB	glacierkeep	2	7502	A	US	spawn_off	Core destroyed	205	0	330	0
+spoffB_glacierkeep_g3	spoffB	glacierkeep	3	7503	B	US	spawn_off	Core destroyed	189	0	410	0
+spoffB_glacierkeep_g4	spoffB	glacierkeep	4	7504	A	US	spawn_off	Core destroyed	237	0	10	0
+spoffB_glacierkeep_g5	spoffB	glacierkeep	5	7505	B	US	spawn_off	Titanium collected (tiebreak)	1000	0	70	0
+spoffB_nordkap_g0	spoffB	nordkap	0	7500	A	US	spawn_off	Core destroyed	672	0	3680	10
+spoffB_nordkap_g1	spoffB	nordkap	1	7501	B	US	spawn_off	Core destroyed	829	0	190	580
+spoffB_nordkap_g2	spoffB	nordkap	2	7502	A	OPP	_v488beltbreak2	Core destroyed	406	0	810	3270
+spoffB_nordkap_g3	spoffB	nordkap	3	7503	B	OPP	_v488beltbreak2	Titanium collected (tiebreak)	1000	0	0	2600
+spoffB_nordkap_g4	spoffB	nordkap	4	7504	A	OPP	_v488beltbreak2	Core destroyed	334	0	210	2730
+spoffB_nordkap_g5	spoffB	nordkap	5	7505	B	US	spawn_off	Core destroyed	155	0	960	0
+spoffB_atoll_g0	spoffB	atoll	0	7500	A	US	spawn_off	Titanium collected (tiebreak)	1000	0	4340	2450
+spoffB_atoll_g1	spoffB	atoll	1	7501	B	OPP	_v488beltbreak2	Core destroyed	182	0	340	1420
+spoffB_atoll_g2	spoffB	atoll	2	7502	A	US	spawn_off	Core destroyed	396	0	2640	1200
+spoffB_atoll_g3	spoffB	atoll	3	7503	B	OPP	_v488beltbreak2	Core destroyed	269	0	520	1630
+spoffB_atoll_g4	spoffB	atoll	4	7504	A	OPP	_v488beltbreak2	Core destroyed	218	0	630	1440
+spoffB_atoll_g5	spoffB	atoll	5	7505	B	OPP	_v488beltbreak2	Core destroyed	524	0	250	4620
+spoffB_midgard_g0	spoffB	midgard	0	7500	A	US	spawn_off	Core destroyed	158	0	1300	400
+spoffB_midgard_g1	spoffB	midgard	1	7501	B	US	spawn_off	Core destroyed	695	0	7480	4360
+spoffB_midgard_g2	spoffB	midgard	2	7502	A	US	spawn_off	Core destroyed	406	0	2760	1300
+spoffB_midgard_g3	spoffB	midgard	3	7503	B	US	spawn_off	Core destroyed	224	0	2000	1000
+spoffB_midgard_g4	spoffB	midgard	4	7504	A	US	spawn_off	Core destroyed	658	0	5100	4610
+spoffB_midgard_g5	spoffB	midgard	5	7505	B	OPP	_v488beltbreak2	Core destroyed	287	0	380	3320
+spoffB_drakkarfjord_g0	spoffB	drakkarfjord	0	7500	A	US	spawn_off	Titanium collected (tiebreak)	1000	0	310	0
+spoffB_drakkarfjord_g1	spoffB	drakkarfjord	1	7501	B	US	spawn_off	Core destroyed	258	0	1960	0
+spoffB_drakkarfjord_g2	spoffB	drakkarfjord	2	7502	A	US	spawn_off	Titanium collected (tiebreak)	1000	0	1170	0
+spoffB_drakkarfjord_g3	spoffB	drakkarfjord	3	7503	B	US	spawn_off	Core destroyed	148	0	630	0
+spoffB_drakkarfjord_g4	spoffB	drakkarfjord	4	7504	A	US	spawn_off	Core destroyed	633	0	560	150
+spoffB_drakkarfjord_g5	spoffB	drakkarfjord	5	7505	B	OPP	_v488beltbreak2	Core destroyed	708	0	2800	6700

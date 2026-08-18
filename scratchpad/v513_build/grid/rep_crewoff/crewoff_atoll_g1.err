@@ -1,0 +1,111 @@
+Update available: 2.3.6 -> 2.3.8. Run: pip install --upgrade fcode
+FS GATE 0 sig (18, 18, (2, 14), (14, 2)) ok 1
+FS GATE 1 sig (18, 18, (2, 14), (14, 2)) ok 1
+FS PHASE 1 id 4 ph 1 d 200 at (13, 4)
+FS HOPBUILD 1 at (13, 4) lch (13, 5) T (1, 16)
+FS GATE 2 sig (18, 18, (2, 14), (14, 2)) ok 1
+FS GATE 2 sig (18, 18, (2, 14), (14, 2)) ok 1
+FS THROW 2 from (12, 4) to (9, 8) T (1, 16)
+FS HOPBUILD 3 at (9, 8) lch (9, 9) T (1, 16)
+FS GATE 3 sig (18, 18, (2, 14), (14, 2)) ok 1
+FS GATE 4 sig (18, 18, (2, 14), (14, 2)) ok 1
+FS THROW 4 from (8, 8) to (5, 12) T (1, 16)
+FS PHASE 5 id 4 ph 2 d 8 at (5, 12)
+FS SEAL 7 tile (3, 13) n 1
+FS GATE 7 sig (18, 18, (2, 14), (14, 2)) ok 1
+FS GATE 8 sig (18, 18, (2, 14), (14, 2)) ok 1
+FS DODGE 9 id 4 from (2, 12) to (2, 13) cov 1 -> 0 hit 0 hp 40
+FS GATE 9 sig (18, 18, (2, 14), (14, 2)) ok 1
+FS DODGE 11 id 4 from (2, 12) to (2, 11) cov 1 -> 0 hit 0 hp 22
+FS DOORSEEN 12 id 6 at (10, 7) rank 1
+FS DOORSEEN 12 id 22 at (10, 7) rank 1
+FS SEAL 16 tile (1, 13) n 2
+FS SEAL 18 tile (1, 14) n 3
+FS DOORSEEN 18 id 23 at (10, 7) rank 0
+FS EVICTOR 19 at (0, 15) cov 3
+FS RUNG 19 id 4 r 2 hi -
+FS STAT 20 id 4 at (0, 14) need 6 orth 6 ti 22 ammo 24 sen 0 hp 22
+FS GATE 20 sig (18, 18, (2, 14), (14, 2)) ok 1
+FS DOOR 29 id 23 at (10, 7) n 1
+FS DOOR 30 id 23 at (10, 7) n 2
+FS DOOR 31 id 23 at (10, 7) n 3
+FS DODGE 34 id 4 from (2, 12) to (2, 13) cov 1 -> 0 hit 0 hp 4
+FS DOORSEEN 91 id 22 at (17, 4) rank 0
+FS DOORSEEN 93 id 23 at (17, 4) rank 0
+FS DOOR 95 id 22 at (17, 4) n 1
+FS DOOR 96 id 22 at (17, 4) n 2
+FS DOOR 97 id 22 at (17, 4) n 3
+FS DOORSEEN 98 id 9 at (17, 4) rank 0
+FS DOOR 98 id 22 at (17, 4) n 4
+FS DOOR 99 id 22 at (17, 4) n 5
+FS DOOR 100 id 22 at (17, 4) n 6
+FS DOOR 101 id 22 at (17, 4) n 7
+FS DOOR 102 id 22 at (17, 4) n 8
+FS DOOR 103 id 22 at (17, 4) n 9
+FS DOOR 104 id 22 at (17, 4) n 10
+FS DOORSEEN 105 id 6 at (17, 4) rank 0
+FS DOOR 105 id 22 at (17, 4) n 11
+FS DOOR 106 id 22 at (17, 4) n 12
+FS DOORSEEN 107 id 6 at (17, 4) rank 0
+FS DOOR 107 id 22 at (17, 4) n 13
+FS DOOR 108 id 22 at (17, 4) n 14
+FS DOOR 109 id 22 at (17, 4) n 15
+FS DOORSEEN 109 id 23 at (17, 4) rank 0
+FS DOORSEEN 110 id 6 at (17, 4) rank 0
+FS DOORSEEN 110 id 9 at (17, 4) rank 0
+FS DOOR 110 id 22 at (17, 4) n 16
+FS DOOR 111 id 22 at (17, 4) n 17
+FS DOORSEEN 111 id 23 at (17, 4) rank 0
+FS DOORSEEN 112 id 6 at (17, 4) rank 0
+FS DOORSEEN 112 id 9 at (17, 4) rank 0
+FS DOOR 112 id 22 at (17, 4) n 18
+FS DOOR 113 id 22 at (17, 4) n 19
+FS DOORSEEN 113 id 23 at (17, 4) rank 0
+FS DOORSEEN 114 id 6 at (17, 4) rank 0
+FS DOORSEEN 114 id 9 at (17, 4) rank 0
+FS DOOR 114 id 22 at (17, 4) n 20
+FS DOOR 115 id 22 at (17, 4) n 21
+FS DOORSEEN 116 id 6 at (17, 4) rank 0
+FS DOORSEEN 116 id 9 at (17, 4) rank 0
+FS DOOR 116 id 22 at (17, 4) n 22
+FS DOOR 117 id 22 at (17, 4) n 23
+FS DOORSEEN 117 id 23 at (17, 4) rank 0
+FS DOORSEEN 118 id 6 at (17, 4) rank 0
+FS DOORSEEN 118 id 9 at (17, 4) rank 0
+FS DOOR 118 id 22 at (17, 4) n 24
+FS DOOR 119 id 22 at (17, 4) n 25
+FS DOORSEEN 119 id 23 at (17, 4) rank 0
+FS DOORSEEN 120 id 6 at (17, 4) rank 0
+FS DOORSEEN 120 id 9 at (17, 4) rank 0
+FS DOOR 120 id 22 at (17, 4) n 26
+FS DOOR 121 id 22 at (17, 4) n 27
+FS DOORSEEN 121 id 23 at (17, 4) rank 0
+FS DOORSEEN 122 id 6 at (17, 4) rank 0
+FS DOORSEEN 122 id 9 at (17, 4) rank 0
+FS DOOR 122 id 22 at (17, 4) n 28
+FS DOOR 123 id 22 at (17, 4) n 29
+FS DOORSEEN 124 id 6 at (17, 4) rank 0
+FS DOORSEEN 124 id 9 at (17, 4) rank 0
+FS DOOR 124 id 22 at (17, 4) n 30
+FS DOOR 125 id 22 at (17, 4) n 31
+FS DOORSEEN 125 id 23 at (17, 4) rank 0
+FS DOORSEEN 126 id 6 at (17, 4) rank 0
+FS DOORSEEN 126 id 9 at (17, 4) rank 0
+FS DOOR 126 id 22 at (17, 4) n 32
+FS DOOR 127 id 22 at (17, 4) n 33
+FS DOORSEEN 127 id 23 at (17, 4) rank 0
+FS DOORSEEN 128 id 6 at (17, 4) rank 0
+FS DOORSEEN 128 id 9 at (17, 4) rank 0
+FS DOOR 128 id 22 at (17, 4) n 34
+FS DOOR 129 id 22 at (17, 4) n 35
+FS DOORSEEN 129 id 23 at (17, 4) rank 0
+FS DOORSEEN 130 id 6 at (17, 4) rank 0
+FS DOORSEEN 130 id 9 at (17, 4) rank 0
+FS DOOR 130 id 22 at (17, 4) n 36
+FS DOOR 131 id 22 at (17, 4) n 37
+FS DOORSEEN 132 id 6 at (17, 4) rank 0
+FS DOORSEEN 132 id 9 at (17, 4) rank 0
+FS DOORSEEN 133 id 23 at (17, 4) rank 0
+FS DOORSEEN 134 id 6 at (17, 4) rank 0
+FS DOORSEEN 134 id 9 at (17, 4) rank 0
+FS DOORSEEN 135 id 23 at (17, 4) rank 0

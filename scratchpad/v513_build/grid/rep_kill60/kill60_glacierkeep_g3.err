@@ -1,0 +1,155 @@
+Update available: 2.3.6 -> 2.3.8. Run: pip install --upgrade fcode
+FS GATE 0 sig (30, 30, (14, 2), (14, 26)) ok 1
+FS GATE 1 sig (30, 30, (14, 2), (14, 26)) ok 1
+FS PHASE 1 id 4 ph 1 d 484 at (14, 25)
+FS HOPBUILD 1 at (14, 25) lch (14, 24) T (16, 1)
+FS GATE 2 sig (30, 30, (14, 2), (14, 26)) ok 1
+FS GATE 2 sig (30, 30, (14, 2), (14, 26)) ok 1
+FS THROW 2 from (15, 25) to (15, 19) T (16, 1)
+FS HOPBUILD 3 at (15, 19) lch (15, 18) T (16, 1)
+FS GATE 3 sig (30, 30, (14, 2), (14, 26)) ok 1
+FS GATE 4 sig (30, 30, (14, 2), (14, 26)) ok 1
+FS THROW 4 from (16, 19) to (16, 13) T (16, 1)
+FS HOPBUILD 5 at (16, 13) lch (16, 12) T (16, 1)
+FS GATE 6 sig (30, 30, (14, 2), (14, 26)) ok 1
+FS THROW 6 from (16, 13) to (16, 7) T (16, 1)
+FS HOPBUILD 7 at (16, 7) lch (16, 6) T (16, 1)
+FS GATE 8 sig (30, 30, (14, 2), (14, 26)) ok 1
+FS THROW 8 from (16, 7) to (16, 1) T (16, 1)
+FS PHASE 9 id 4 ph 2 d 2 at (16, 1)
+FS SEAL 9 tile (15, 1) n 1
+FS SEAL 10 tile (16, 2) n 2
+FS DODGE 11 id 4 from (16, 1) to (16, 0) cov 1 -> 0 hit 0 hp 40
+FS GATE 11 sig (30, 30, (14, 2), (14, 26)) ok 1
+FS GATE 12 sig (30, 30, (14, 2), (14, 26)) ok 1
+FS GATE 13 sig (30, 30, (14, 2), (14, 26)) ok 1
+FS SEAL 14 tile (14, 1) n 3
+FS SEAL 16 tile (15, 1) n 4
+FS STAT 20 id 4 at (17, 1) need 7 orth 6 ti 64 ammo 0 sen 0 hp 22
+FS DODGE 20 id 4 from (17, 1) to (17, 2) cov 1 -> 0 hit 0 hp 22
+FS SEAL 22 tile (16, 3) n 5
+FS SEAL 25 tile (15, 4) n 6
+FS SEAL 29 tile (14, 4) n 7
+FS SEAL 32 tile (13, 3) n 8
+FS SEAL 36 tile (13, 2) n 9
+FS CLEAR 38 tile (13, 1) peck 1
+FS RUNG 38 id 4 r 3 hi -
+FS CLEAR 39 tile (13, 1) peck 2
+FS RUNG 39 id 4 r 3 hi -
+FS STAT 40 id 4 at (12, 1) need 2 orth 1 ti 62 ammo 24 sen 0 hp 22
+FS CLEAR 40 tile (13, 1) peck 3
+FS RUNG 40 id 4 r 3 hi -
+FS CLEAR 41 tile (13, 1) peck 4
+FS RUNG 41 id 4 r 3 hi -
+FS CLEAR 42 tile (13, 1) peck 5
+FS RUNG 42 id 4 r 3 hi -
+FS CLEAR 43 tile (13, 1) peck 6
+FS RUNG 43 id 4 r 3 hi -
+FS CLEAR 44 tile (13, 1) peck 7
+FS RUNG 44 id 4 r 3 hi -
+FS CLEAR 45 tile (13, 1) peck 8
+FS RUNG 45 id 4 r 3 hi -
+FS SEAL 49 tile (14, 1) n 10
+FS SEAL 51 tile (15, 1) n 11
+FS PHASE 52 id 4 ph 3 d 4 at (15, 0)
+FS CLEAR 54 tile (13, 1) peck 1
+FS RUNG 54 id 4 r 3 hi -
+FS CLEAR 55 tile (13, 1) peck 2
+FS RUNG 55 id 4 r 3 hi -
+FS CLEAR 56 tile (13, 1) peck 3
+FS RUNG 56 id 4 r 3 hi -
+FS CLEAR 57 tile (13, 1) peck 4
+FS RUNG 57 id 4 r 3 hi -
+FS CLEAR 58 tile (13, 1) peck 5
+FS RUNG 58 id 4 r 3 hi -
+FS CLEAR 59 tile (13, 1) peck 6
+FS RUNG 59 id 4 r 3 hi -
+FS FORCEDEATH 60 id 4
+FS GATE 248 sig (30, 30, (14, 2), (14, 26)) ok 1
+FS PHASE 248 id 293 ph 1 d 626 at (13, 28)
+FS GATE 261 sig (30, 30, (14, 2), (14, 26)) ok 1
+FS HOPBUILD 264 at (13, 16) lch (13, 15) T (16, 1)
+FS GATE 265 sig (30, 30, (14, 2), (14, 26)) ok 1
+FS THROW 265 from (14, 16) to (14, 10) T (16, 1)
+FS HOPBUILD 266 at (14, 10) lch (15, 10) T (16, 1)
+FS GATE 267 sig (30, 30, (14, 2), (14, 26)) ok 1
+FS THROW 267 from (14, 9) to (16, 5) T (16, 1)
+FS PHASE 268 id 293 ph 2 d 5 at (16, 5)
+FS DODGE 273 id 293 from (17, 1) to (17, 2) cov 1 -> 0 hit 0 hp 22
+FS DODGE 275 id 293 from (17, 1) to (17, 2) cov 1 -> 0 hit 0 hp 4
+FS GATE 288 sig (30, 30, (14, 2), (14, 26)) ok 1
+FS GATE 290 sig (30, 30, (14, 2), (14, 26)) ok 1
+FS PHASE 290 id 359 ph 1 d 626 at (13, 28)
+FS HOPBUILD 296 at (11, 24) lch (11, 23) T (16, 1)
+FS GATE 297 sig (30, 30, (14, 2), (14, 26)) ok 1
+FS THROW 297 from (12, 24) to (11, 18) T (16, 1)
+FS HOPBUILD 302 at (10, 15) lch (11, 15) T (16, 1)
+FS GATE 303 sig (30, 30, (14, 2), (14, 26)) ok 1
+FS THROW 303 from (10, 14) to (12, 10) T (16, 1)
+FS HOPBUILD 307 at (12, 7) lch (12, 6) T (16, 1)
+FS GATE 308 sig (30, 30, (14, 2), (14, 26)) ok 1
+FS THROW 308 from (13, 7) to (16, 4) T (16, 1)
+FS PHASE 309 id 359 ph 2 d 2 at (16, 4)
+FS DODGE 313 id 359 from (17, 1) to (17, 2) cov 1 -> 0 hit 0 hp 22
+FS DODGE 315 id 359 from (17, 1) to (17, 2) cov 1 -> 0 hit 0 hp 4
+FS GATE 330 sig (30, 30, (14, 2), (14, 26)) ok 1
+FS PHASE 330 id 422 ph 1 d 626 at (16, 28)
+FS HOPBUILD 332 at (17, 27) lch (17, 26) T (16, 1)
+FS GATE 333 sig (30, 30, (14, 2), (14, 26)) ok 1
+FS THROW 333 from (16, 27) to (16, 21) T (16, 1)
+FS PHASE 355 id 422 ph 2 d 4 at (15, 5)
+FS STAT 360 id 422 at (17, 2) need 3 orth 2 ti 119 ammo 24 sen 0 hp 40
+FS DODGE 361 id 422 from (17, 1) to (17, 2) cov 1 -> 0 hit 0 hp 22
+FS DODGE 363 id 422 from (17, 1) to (17, 2) cov 1 -> 0 hit 0 hp 4
+FS GATE 378 sig (30, 30, (14, 2), (14, 26)) ok 1
+FS PHASE 378 id 528 ph 1 d 626 at (16, 28)
+FS HOPBUILD 380 at (17, 27) lch (17, 26) T (16, 1)
+FS GATE 381 sig (30, 30, (14, 2), (14, 26)) ok 1
+FS GATE 381 sig (30, 30, (14, 2), (14, 26)) ok 1
+FS THROW 381 from (16, 27) to (16, 21) T (16, 1)
+FS HOPBUILD 387 at (15, 17) lch (16, 17) T (16, 1)
+FS GATE 388 sig (30, 30, (14, 2), (14, 26)) ok 1
+FS THROW 388 from (15, 16) to (16, 12) T (16, 1)
+FS THROW 389 from (16, 12) to (16, 8) T (16, 1)
+FS PHASE 392 id 528 ph 2 d 5 at (16, 5)
+FS DODGE 397 id 528 from (17, 1) to (17, 2) cov 1 -> 0 hit 0 hp 40
+FS DODGE 399 id 528 from (17, 1) to (17, 2) cov 1 -> 0 hit 0 hp 40
+FS STAT 400 id 528 at (17, 2) need 3 orth 2 ti 57 ammo 24 sen 0 hp 40
+FS DODGE 401 id 528 from (17, 1) to (17, 2) cov 1 -> 0 hit 0 hp 40
+FS DODGE 403 id 528 from (17, 1) to (17, 2) cov 1 -> 0 hit 0 hp 40
+FS DODGE 405 id 528 from (17, 1) to (17, 2) cov 1 -> 0 hit 0 hp 40
+FS DODGE 407 id 528 from (17, 1) to (17, 2) cov 1 -> 0 hit 0 hp 40
+FS DODGE 409 id 528 from (17, 1) to (17, 2) cov 1 -> 0 hit 0 hp 22
+FS DODGE 411 id 528 from (17, 1) to (17, 2) cov 1 -> 0 hit 0 hp 22
+FS DODGE 413 id 528 from (17, 1) to (17, 2) cov 1 -> 0 hit 0 hp 4
+FS DODGE 415 id 528 from (17, 1) to (17, 2) cov 1 -> 0 hit 0 hp 4
+FS GATE 443 sig (30, 30, (14, 2), (14, 26)) ok 1
+FS PHASE 443 id 622 ph 1 d 577 at (16, 27)
+FS THROW 444 from (16, 26) to (16, 20) T (16, 1)
+FS HOPBUILD 447 at (15, 18) lch (15, 17) T (16, 1)
+FS GATE 448 sig (30, 30, (14, 2), (14, 26)) ok 1
+FS THROW 448 from (15, 18) to (16, 12) T (16, 1)
+FS HOPBUILD 450 at (15, 12) lch (15, 11) T (16, 1)
+FS GATE 451 sig (30, 30, (14, 2), (14, 26)) ok 1
+FS THROW 451 from (16, 12) to (16, 6) T (16, 1)
+FS PHASE 453 id 622 ph 2 d 5 at (16, 5)
+FS DODGE 458 id 622 from (17, 1) to (17, 2) cov 1 -> 0 hit 0 hp 40
+FS STAT 460 id 622 at (17, 1) need 3 orth 2 ti 255 ammo 24 sen 0 hp 22
+FS DODGE 460 id 622 from (17, 1) to (17, 2) cov 1 -> 0 hit 0 hp 22
+FS DODGE 462 id 622 from (17, 1) to (17, 2) cov 1 -> 0 hit 0 hp 22
+FS GATE 463 sig (30, 30, (14, 2), (14, 26)) ok 1
+FS DODGE 464 id 622 from (17, 1) to (17, 2) cov 1 -> 0 hit 0 hp 4
+FS DODGE 466 id 622 from (17, 1) to (17, 2) cov 1 -> 0 hit 0 hp 4
+FS GATE 468 sig (30, 30, (14, 2), (14, 26)) ok 1
+FS GATE 474 sig (30, 30, (14, 2), (14, 26)) ok 1
+FS PHASE 474 id 687 ph 1 d 626 at (13, 28)
+FS THROW 479 from (13, 23) to (12, 17) T (16, 1)
+FS HOPBUILD 479 at (12, 17) lch (12, 16) T (16, 1)
+FS GATE 480 sig (30, 30, (14, 2), (14, 26)) ok 1
+FS THROW 480 from (12, 17) to (15, 12) T (16, 1)
+FS HOPBUILD 481 at (15, 12) lch (15, 11) T (16, 1)
+FS GATE 482 sig (30, 30, (14, 2), (14, 26)) ok 1
+FS THROW 482 from (16, 12) to (16, 6) T (16, 1)
+FS HOPBUILD 483 at (16, 6) lch (16, 5) T (16, 1)
+FS GATE 484 sig (30, 30, (14, 2), (14, 26)) ok 1
+FS DEGRADE 514 id 687

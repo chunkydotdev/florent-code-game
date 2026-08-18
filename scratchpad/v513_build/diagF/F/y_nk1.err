@@ -1,0 +1,319 @@
+Update available: 2.3.6 -> 2.3.8. Run: pip install --upgrade fcode
+COREAMMO r=0 ti=500 ammo=0 fs_ph=0 fs_live=0 under=0 wtop=0 bb=0 harv=0 ammo_target=16 ti_floor=52 chunk=16 bar=3 scale=100 arm=0 gate_ti=1 amt=16
+FS GATE 0 sig (20, 26, (9, 6), (9, 18)) ok 1
+COREAMMO r=1 ti=470 ammo=0 fs_ph=0 fs_live=0 under=0 wtop=0 bb=0 harv=0 ammo_target=16 ti_floor=52 chunk=16 bar=3 scale=120 arm=0 gate_ti=1 amt=16
+FS GATE 1 sig (20, 26, (9, 6), (9, 18)) ok 1
+FS PHASE 1 id 4 ph 1 d 170 at (8, 20)
+COREAMMO r=2 ti=434 ammo=0 fs_ph=1 fs_live=0 under=0 wtop=0 bb=0 harv=0 ammo_target=16 ti_floor=52 chunk=16 bar=4 scale=140 arm=0 gate_ti=1 amt=16
+FS GATE 2 sig (20, 26, (9, 6), (9, 18)) ok 1
+COREAMMO r=3 ti=392 ammo=0 fs_ph=1 fs_live=0 under=0 wtop=0 bb=0 harv=0 ammo_target=16 ti_floor=52 chunk=16 bar=4 scale=160 arm=0 gate_ti=1 amt=16
+FS HOPBUILD 3 at (8, 18) lch (8, 17) T (11, 5)
+FS GATE 3 sig (20, 26, (9, 6), (9, 18)) ok 1
+COREAMMO r=4 ti=370 ammo=0 fs_ph=1 fs_live=0 under=0 wtop=0 bb=0 harv=0 ammo_target=16 ti_floor=52 chunk=16 bar=5 scale=170 arm=0 gate_ti=1 amt=16
+FS GATE 4 sig (20, 26, (9, 6), (9, 18)) ok 1
+FS THROW 4 from (8, 18) to (9, 12) T (11, 5)
+COREAMMO r=5 ti=336 ammo=0 fs_ph=1 fs_live=0 under=0 wtop=0 bb=0 harv=1 ammo_target=16 ti_floor=52 chunk=16 bar=4 scale=165 arm=0 gate_ti=1 amt=16
+FS HOPBUILD 5 at (9, 12) lch (9, 11) T (11, 5)
+COREAMMO r=6 ti=298 ammo=0 fs_ph=1 fs_live=0 under=0 wtop=0 bb=0 harv=1 ammo_target=16 ti_floor=52 chunk=16 bar=5 scale=176 arm=0 gate_ti=1 amt=16
+FS GATE 6 sig (20, 26, (9, 6), (9, 18)) ok 1
+FS THROW 6 from (10, 12) to (11, 7) T (11, 5)
+COREAMMO r=7 ti=298 ammo=0 fs_ph=1 fs_live=0 under=0 wtop=0 bb=0 harv=1 ammo_target=16 ti_floor=52 chunk=16 bar=4 scale=166 arm=0 gate_ti=1 amt=16
+FS PHASE 7 id 4 ph 2 d 1 at (11, 7)
+FS SEAL 7 tile (11, 6) n 1
+COREAMMO r=8 ti=299 ammo=0 fs_ph=2 fs_live=1 under=0 wtop=0 bb=0 harv=1 ammo_target=300 ti_floor=72 chunk=30 bar=5 scale=168 arm=1 gate_ti=1 amt=30
+FS SENTINEL 8 at (12, 7) face WEST tgt (9, 7) score 9 n 1 onring 0
+FS RUNG 8 id 4 r 4 hi -
+COREAMMO r=9 ti=157 ammo=30 fs_ph=2 fs_live=1 under=0 wtop=1 bb=0 harv=1 ammo_target=300 ti_floor=84 chunk=30 bar=6 scale=209 arm=1 gate_ti=1 amt=30
+FS PHASE 9 id 4 ph 4 d 1 at (11, 7)
+FS GATE 9 sig (20, 26, (9, 6), (9, 18)) ok 1
+COREAMMO r=10 ti=65 ammo=50 fs_ph=4 fs_live=1 under=1 wtop=1 bb=0 harv=1 ammo_target=300 ti_floor=54 chunk=30 bar=6 scale=229 arm=1 gate_ti=1 amt=11
+FS GATE 10 sig (20, 26, (9, 6), (9, 18)) ok 1
+COREAMMO r=11 ti=19 ammo=61 fs_ph=4 fs_live=1 under=1 wtop=2 bb=0 harv=1 ammo_target=300 ti_floor=61 chunk=30 bar=7 scale=249 arm=1 gate_ti=0 amt=-42
+FS DODGE 11 id 4 from (11, 7) to (11, 8) cov 1 -> 0 hit 0 hp 22
+COREAMMO r=12 ti=19 ammo=51 fs_ph=4 fs_live=1 under=1 wtop=2 bb=0 harv=1 ammo_target=300 ti_floor=61 chunk=30 bar=7 scale=249 arm=1 gate_ti=0 amt=-42
+FS SEAL 12 tile (11, 7) n 2
+COREAMMO r=13 ti=11 ammo=47 fs_ph=4 fs_live=1 under=1 wtop=2 bb=0 harv=1 ammo_target=300 ti_floor=68 chunk=30 bar=7 scale=250 arm=1 gate_ti=0 amt=-57
+COREAMMO r=14 ti=9 ammo=37 fs_ph=4 fs_live=1 under=1 wtop=2 bb=0 harv=1 ammo_target=300 ti_floor=61 chunk=30 bar=7 scale=250 arm=1 gate_ti=0 amt=-52
+COREAMMO r=15 ti=17 ammo=37 fs_ph=4 fs_live=1 under=1 wtop=2 bb=0 harv=1 ammo_target=300 ti_floor=61 chunk=30 bar=7 scale=249 arm=1 gate_ti=0 amt=-44
+COREAMMO r=16 ti=24 ammo=27 fs_ph=4 fs_live=1 under=1 wtop=2 bb=0 harv=1 ammo_target=300 ti_floor=68 chunk=30 bar=7 scale=249 arm=1 gate_ti=0 amt=-44
+COREAMMO r=17 ti=21 ammo=27 fs_ph=4 fs_live=1 under=1 wtop=2 bb=0 harv=1 ammo_target=300 ti_floor=68 chunk=30 bar=7 scale=249 arm=1 gate_ti=0 amt=-47
+FS SEAL 17 tile (11, 7) n 3
+COREAMMO r=18 ti=11 ammo=17 fs_ph=4 fs_live=1 under=1 wtop=2 bb=0 harv=1 ammo_target=300 ti_floor=68 chunk=30 bar=7 scale=250 arm=1 gate_ti=0 amt=-57
+COREAMMO r=19 ti=21 ammo=17 fs_ph=4 fs_live=1 under=1 wtop=2 bb=0 harv=1 ammo_target=300 ti_floor=61 chunk=30 bar=7 scale=250 arm=1 gate_ti=0 amt=-40
+COREAMMO r=20 ti=21 ammo=7 fs_ph=4 fs_live=1 under=1 wtop=2 bb=0 harv=1 ammo_target=300 ti_floor=61 chunk=30 bar=7 scale=250 arm=1 gate_ti=0 amt=-40
+FS STAT 20 id 4 at (10, 9) need 7 orth 6 ti 21 ammo 7 sen 1 hp 22
+COREAMMO r=21 ti=21 ammo=3 fs_ph=4 fs_live=1 under=1 wtop=2 bb=0 harv=1 ammo_target=300 ti_floor=61 chunk=30 bar=7 scale=250 arm=1 gate_ti=0 amt=-40
+COREAMMO r=22 ti=21 ammo=3 fs_ph=4 fs_live=1 under=1 wtop=2 bb=0 harv=1 ammo_target=300 ti_floor=61 chunk=30 bar=7 scale=250 arm=1 gate_ti=0 amt=-40
+COREAMMO r=23 ti=31 ammo=3 fs_ph=4 fs_live=1 under=1 wtop=2 bb=0 harv=1 ammo_target=300 ti_floor=61 chunk=30 bar=7 scale=250 arm=1 gate_ti=0 amt=-30
+FS SEAL 23 tile (9, 8) n 4
+COREAMMO r=24 ti=34 ammo=3 fs_ph=4 fs_live=1 under=1 wtop=2 bb=0 harv=1 ammo_target=300 ti_floor=61 chunk=30 bar=7 scale=251 arm=1 gate_ti=0 amt=-27
+COREAMMO r=25 ti=34 ammo=3 fs_ph=4 fs_live=1 under=1 wtop=2 bb=0 harv=1 ammo_target=300 ti_floor=54 chunk=30 bar=7 scale=251 arm=1 gate_ti=0 amt=-20
+FS PHASE 25 id 4 ph 2 d 5 at (7, 8)
+COREAMMO r=26 ti=34 ammo=3 fs_ph=2 fs_live=1 under=1 wtop=2 bb=0 harv=1 ammo_target=300 ti_floor=96 chunk=30 bar=7 scale=251 arm=1 gate_ti=0 amt=-62
+FS PHASE 26 id 4 ph 4 d 2 at (8, 8)
+COREAMMO r=27 ti=44 ammo=3 fs_ph=4 fs_live=1 under=1 wtop=2 bb=0 harv=1 ammo_target=300 ti_floor=54 chunk=30 bar=7 scale=250 arm=1 gate_ti=0 amt=-10
+FS PHASE 27 id 4 ph 2 d 5 at (7, 8)
+COREAMMO r=28 ti=54 ammo=3 fs_ph=2 fs_live=1 under=1 wtop=2 bb=0 harv=1 ammo_target=300 ti_floor=96 chunk=30 bar=7 scale=250 arm=1 gate_ti=0 amt=-42
+FS PHASE 28 id 4 ph 4 d 2 at (8, 8)
+FS SEAL 28 tile (8, 7) n 5
+COREAMMO r=29 ti=47 ammo=3 fs_ph=4 fs_live=1 under=1 wtop=2 bb=0 harv=1 ammo_target=300 ti_floor=61 chunk=30 bar=7 scale=251 arm=1 gate_ti=0 amt=-14
+COREAMMO r=30 ti=47 ammo=3 fs_ph=4 fs_live=1 under=1 wtop=2 bb=0 harv=1 ammo_target=300 ti_floor=54 chunk=30 bar=7 scale=251 arm=1 gate_ti=0 amt=-7
+FS PHASE 30 id 4 ph 2 d 5 at (7, 8)
+COREAMMO r=31 ti=56 ammo=3 fs_ph=2 fs_live=1 under=1 wtop=2 bb=0 harv=1 ammo_target=300 ti_floor=96 chunk=30 bar=7 scale=251 arm=1 gate_ti=0 amt=-40
+COREAMMO r=32 ti=65 ammo=3 fs_ph=2 fs_live=1 under=1 wtop=2 bb=0 harv=1 ammo_target=300 ti_floor=96 chunk=30 bar=7 scale=251 arm=1 gate_ti=0 amt=-31
+FS SEAL 32 tile (8, 6) n 6
+COREAMMO r=33 ti=56 ammo=3 fs_ph=2 fs_live=1 under=1 wtop=2 bb=0 harv=1 ammo_target=300 ti_floor=96 chunk=30 bar=7 scale=252 arm=1 gate_ti=0 amt=-40
+COREAMMO r=34 ti=4 ammo=3 fs_ph=2 fs_live=1 under=1 wtop=3 bb=0 harv=1 ammo_target=300 ti_floor=108 chunk=30 bar=8 scale=272 arm=1 gate_ti=0 amt=-104
+COREAMMO r=35 ti=12 ammo=3 fs_ph=2 fs_live=1 under=1 wtop=3 bb=0 harv=1 ammo_target=300 ti_floor=108 chunk=30 bar=8 scale=272 arm=1 gate_ti=0 amt=-96
+FS SEAL 35 tile (8, 5) n 7
+COREAMMO r=36 ti=12 ammo=3 fs_ph=2 fs_live=1 under=1 wtop=3 bb=0 harv=1 ammo_target=300 ti_floor=108 chunk=30 bar=8 scale=273 arm=1 gate_ti=0 amt=-96
+COREAMMO r=37 ti=10 ammo=3 fs_ph=2 fs_live=1 under=1 wtop=3 bb=0 harv=1 ammo_target=300 ti_floor=108 chunk=30 bar=8 scale=273 arm=1 gate_ti=0 amt=-98
+COREAMMO r=38 ti=8 ammo=3 fs_ph=2 fs_live=1 under=1 wtop=3 bb=0 harv=1 ammo_target=300 ti_floor=108 chunk=30 bar=8 scale=273 arm=1 gate_ti=0 amt=-100
+COREAMMO r=39 ti=16 ammo=3 fs_ph=2 fs_live=1 under=1 wtop=3 bb=0 harv=1 ammo_target=300 ti_floor=108 chunk=30 bar=8 scale=273 arm=1 gate_ti=0 amt=-92
+FS PHASE 39 id 4 ph 4 d 4 at (9, 4)
+COREAMMO r=40 ti=24 ammo=3 fs_ph=4 fs_live=1 under=1 wtop=3 bb=0 harv=1 ammo_target=300 ti_floor=44 chunk=30 bar=8 scale=273 arm=1 gate_ti=0 amt=-20
+FS STAT 40 id 4 at (9, 4) need 4 orth 4 ti 24 ammo 3 sen 1 hp 4
+COREAMMO r=41 ti=21 ammo=3 fs_ph=4 fs_live=1 under=1 wtop=3 bb=0 harv=1 ammo_target=300 ti_floor=44 chunk=30 bar=8 scale=273 arm=1 gate_ti=0 amt=-23
+COREAMMO r=42 ti=18 ammo=3 fs_ph=4 fs_live=1 under=1 wtop=3 bb=0 harv=1 ammo_target=300 ti_floor=44 chunk=30 bar=8 scale=273 arm=1 gate_ti=0 amt=-26
+COREAMMO r=43 ti=24 ammo=3 fs_ph=4 fs_live=1 under=1 wtop=3 bb=0 harv=1 ammo_target=300 ti_floor=44 chunk=30 bar=8 scale=273 arm=1 gate_ti=0 amt=-20
+COREAMMO r=44 ti=30 ammo=3 fs_ph=4 fs_live=1 under=1 wtop=3 bb=0 harv=1 ammo_target=300 ti_floor=44 chunk=30 bar=8 scale=273 arm=1 gate_ti=0 amt=-14
+COREAMMO r=45 ti=26 ammo=3 fs_ph=4 fs_live=1 under=1 wtop=3 bb=0 harv=1 ammo_target=300 ti_floor=44 chunk=30 bar=8 scale=273 arm=1 gate_ti=0 amt=-18
+COREAMMO r=46 ti=22 ammo=3 fs_ph=4 fs_live=1 under=1 wtop=3 bb=0 harv=1 ammo_target=300 ti_floor=44 chunk=30 bar=8 scale=273 arm=1 gate_ti=0 amt=-22
+COREAMMO r=47 ti=28 ammo=3 fs_ph=4 fs_live=1 under=1 wtop=3 bb=0 harv=1 ammo_target=300 ti_floor=44 chunk=30 bar=8 scale=273 arm=1 gate_ti=0 amt=-16
+COREAMMO r=48 ti=37 ammo=3 fs_ph=4 fs_live=1 under=1 wtop=3 bb=0 harv=1 ammo_target=300 ti_floor=44 chunk=30 bar=8 scale=273 arm=1 gate_ti=0 amt=-7
+COREAMMO r=49 ti=36 ammo=3 fs_ph=4 fs_live=1 under=1 wtop=3 bb=0 harv=1 ammo_target=300 ti_floor=44 chunk=30 bar=8 scale=273 arm=1 gate_ti=0 amt=-8
+COREAMMO r=50 ti=33 ammo=3 fs_ph=4 fs_live=1 under=1 wtop=3 bb=0 harv=1 ammo_target=300 ti_floor=44 chunk=30 bar=8 scale=273 arm=1 gate_ti=0 amt=-11
+COREAMMO r=51 ti=39 ammo=3 fs_ph=4 fs_live=1 under=1 wtop=3 bb=0 harv=1 ammo_target=300 ti_floor=44 chunk=30 bar=8 scale=273 arm=1 gate_ti=0 amt=-5
+COREAMMO r=52 ti=48 ammo=3 fs_ph=4 fs_live=1 under=1 wtop=3 bb=0 harv=1 ammo_target=300 ti_floor=44 chunk=30 bar=8 scale=273 arm=1 gate_ti=1 amt=4
+FS CLEAR 52 tile (9, 5) peck 1
+FS RUNG 52 id 4 r 3 hi -
+COREAMMO r=53 ti=41 ammo=3 fs_ph=4 fs_live=1 under=1 wtop=3 bb=0 harv=1 ammo_target=300 ti_floor=44 chunk=30 bar=8 scale=273 arm=1 gate_ti=0 amt=-3
+COREAMMO r=54 ti=39 ammo=3 fs_ph=4 fs_live=1 under=1 wtop=3 bb=0 harv=1 ammo_target=300 ti_floor=44 chunk=30 bar=8 scale=273 arm=1 gate_ti=0 amt=-5
+COREAMMO r=55 ti=47 ammo=3 fs_ph=4 fs_live=1 under=1 wtop=3 bb=0 harv=1 ammo_target=300 ti_floor=44 chunk=30 bar=8 scale=273 arm=1 gate_ti=1 amt=3
+FS CLEAR 55 tile (9, 5) peck 2
+FS RUNG 55 id 4 r 3 hi -
+COREAMMO r=56 ti=53 ammo=3 fs_ph=4 fs_live=1 under=1 wtop=3 bb=0 harv=1 ammo_target=300 ti_floor=44 chunk=30 bar=8 scale=273 arm=1 gate_ti=1 amt=9
+FS CLEAR 56 tile (9, 5) peck 3
+FS RUNG 56 id 4 r 3 hi -
+COREAMMO r=57 ti=40 ammo=2 fs_ph=4 fs_live=1 under=1 wtop=3 bb=0 harv=1 ammo_target=300 ti_floor=44 chunk=30 bar=8 scale=273 arm=1 gate_ti=0 amt=-4
+COREAMMO r=58 ti=38 ammo=2 fs_ph=4 fs_live=1 under=1 wtop=3 bb=0 harv=1 ammo_target=300 ti_floor=44 chunk=30 bar=8 scale=273 arm=1 gate_ti=0 amt=-6
+COREAMMO r=59 ti=46 ammo=2 fs_ph=4 fs_live=1 under=1 wtop=3 bb=0 harv=1 ammo_target=300 ti_floor=44 chunk=30 bar=8 scale=273 arm=1 gate_ti=1 amt=2
+FS CLEAR 59 tile (9, 5) peck 4
+FS RUNG 59 id 4 r 3 hi -
+COREAMMO r=60 ti=52 ammo=2 fs_ph=4 fs_live=1 under=1 wtop=3 bb=0 harv=1 ammo_target=300 ti_floor=44 chunk=30 bar=8 scale=273 arm=1 gate_ti=1 amt=8
+FS STAT 60 id 4 at (9, 4) need 4 orth 4 ti 44 ammo 10 sen 1 hp 4
+FS CLEAR 60 tile (9, 5) peck 5
+FS RUNG 60 id 4 r 3 hi -
+COREAMMO r=61 ti=40 ammo=0 fs_ph=4 fs_live=1 under=1 wtop=3 bb=0 harv=1 ammo_target=300 ti_floor=44 chunk=30 bar=8 scale=273 arm=1 gate_ti=0 amt=-4
+COREAMMO r=62 ti=38 ammo=0 fs_ph=4 fs_live=1 under=1 wtop=3 bb=0 harv=1 ammo_target=300 ti_floor=44 chunk=30 bar=8 scale=273 arm=1 gate_ti=0 amt=-6
+COREAMMO r=63 ti=46 ammo=0 fs_ph=4 fs_live=1 under=1 wtop=3 bb=0 harv=1 ammo_target=300 ti_floor=44 chunk=30 bar=8 scale=273 arm=1 gate_ti=1 amt=2
+FS CLEAR 63 tile (9, 5) peck 6
+FS RUNG 63 id 4 r 3 hi -
+COREAMMO r=64 ti=52 ammo=0 fs_ph=4 fs_live=1 under=1 wtop=3 bb=0 harv=1 ammo_target=300 ti_floor=44 chunk=30 bar=8 scale=273 arm=1 gate_ti=1 amt=8
+FS CLEAR 64 tile (9, 5) peck 7
+FS RUNG 64 id 4 r 3 hi -
+COREAMMO r=65 ti=40 ammo=4 fs_ph=4 fs_live=1 under=1 wtop=3 bb=0 harv=1 ammo_target=300 ti_floor=44 chunk=30 bar=8 scale=273 arm=1 gate_ti=0 amt=-4
+COREAMMO r=66 ti=38 ammo=0 fs_ph=4 fs_live=1 under=1 wtop=3 bb=0 harv=1 ammo_target=300 ti_floor=44 chunk=30 bar=8 scale=273 arm=1 gate_ti=0 amt=-6
+COREAMMO r=67 ti=46 ammo=0 fs_ph=4 fs_live=1 under=1 wtop=3 bb=0 harv=1 ammo_target=300 ti_floor=44 chunk=30 bar=8 scale=273 arm=1 gate_ti=1 amt=2
+FS CLEAR 67 tile (9, 5) peck 8
+FS RUNG 67 id 4 r 3 hi -
+COREAMMO r=68 ti=52 ammo=0 fs_ph=4 fs_live=1 under=1 wtop=3 bb=0 harv=1 ammo_target=300 ti_floor=44 chunk=30 bar=8 scale=273 arm=1 gate_ti=1 amt=8
+COREAMMO r=69 ti=42 ammo=4 fs_ph=4 fs_live=1 under=1 wtop=3 bb=0 harv=1 ammo_target=300 ti_floor=44 chunk=30 bar=8 scale=273 arm=1 gate_ti=0 amt=-2
+FS SEAL 69 tile (10, 5) n 8
+COREAMMO r=70 ti=32 ammo=0 fs_ph=4 fs_live=1 under=1 wtop=3 bb=0 harv=1 ammo_target=300 ti_floor=44 chunk=30 bar=8 scale=274 arm=1 gate_ti=0 amt=-12
+COREAMMO r=71 ti=40 ammo=0 fs_ph=4 fs_live=1 under=1 wtop=3 bb=0 harv=1 ammo_target=300 ti_floor=36 chunk=30 bar=8 scale=274 arm=1 gate_ti=1 amt=4
+COREAMMO r=72 ti=44 ammo=0 fs_ph=4 fs_live=1 under=1 wtop=3 bb=0 harv=1 ammo_target=300 ti_floor=36 chunk=30 bar=8 scale=274 arm=1 gate_ti=1 amt=8
+COREAMMO r=73 ti=34 ammo=8 fs_ph=4 fs_live=1 under=1 wtop=3 bb=0 harv=1 ammo_target=300 ti_floor=36 chunk=30 bar=8 scale=274 arm=1 gate_ti=0 amt=-2
+FS CLEAR 73 tile (9, 5) peck 1
+FS RUNG 73 id 4 r 3 hi -
+COREAMMO r=74 ti=30 ammo=8 fs_ph=4 fs_live=1 under=1 wtop=3 bb=0 harv=1 ammo_target=300 ti_floor=36 chunk=30 bar=8 scale=274 arm=1 gate_ti=0 amt=-6
+COREAMMO r=75 ti=38 ammo=8 fs_ph=4 fs_live=1 under=1 wtop=3 bb=0 harv=1 ammo_target=300 ti_floor=36 chunk=30 bar=8 scale=274 arm=1 gate_ti=1 amt=2
+FS CLEAR 75 tile (9, 5) peck 2
+FS RUNG 75 id 4 r 3 hi -
+COREAMMO r=76 ti=43 ammo=8 fs_ph=4 fs_live=1 under=1 wtop=3 bb=0 harv=1 ammo_target=300 ti_floor=36 chunk=30 bar=8 scale=274 arm=1 gate_ti=1 amt=7
+FS CLEARED 76 tile (9, 5) n 1
+FS SEAL 76 tile (9, 5) n 9
+FS SEALCLR 76 tile (9, 5) lag 0
+COREAMMO r=77 ti=25 ammo=5 fs_ph=4 fs_live=1 under=1 wtop=3 bb=0 harv=1 ammo_target=300 ti_floor=36 chunk=30 bar=8 scale=275 arm=1 gate_ti=0 amt=-11
+COREAMMO r=78 ti=24 ammo=5 fs_ph=4 fs_live=1 under=1 wtop=3 bb=0 harv=1 ammo_target=300 ti_floor=28 chunk=30 bar=8 scale=275 arm=1 gate_ti=0 amt=-4
+COREAMMO r=79 ti=34 ammo=5 fs_ph=4 fs_live=1 under=1 wtop=3 bb=0 harv=1 ammo_target=300 ti_floor=28 chunk=30 bar=8 scale=274 arm=1 gate_ti=1 amt=6
+COREAMMO r=80 ti=38 ammo=1 fs_ph=4 fs_live=1 under=1 wtop=3 bb=0 harv=1 ammo_target=300 ti_floor=36 chunk=30 bar=8 scale=274 arm=1 gate_ti=1 amt=2
+FS STAT 80 id 4 at (10, 4) need 3 orth 3 ti 38 ammo 1 sen 1 hp 4
+COREAMMO r=81 ti=38 ammo=1 fs_ph=4 fs_live=1 under=1 wtop=3 bb=0 harv=1 ammo_target=300 ti_floor=36 chunk=30 bar=8 scale=274 arm=1 gate_ti=1 amt=2
+FS SEAL 81 tile (9, 5) n 10
+COREAMMO r=82 ti=30 ammo=1 fs_ph=4 fs_live=1 under=1 wtop=3 bb=0 harv=1 ammo_target=300 ti_floor=36 chunk=30 bar=8 scale=275 arm=1 gate_ti=0 amt=-6
+COREAMMO r=83 ti=40 ammo=1 fs_ph=4 fs_live=1 under=1 wtop=3 bb=0 harv=1 ammo_target=300 ti_floor=28 chunk=30 bar=8 scale=275 arm=1 gate_ti=1 amt=12
+COREAMMO r=84 ti=38 ammo=3 fs_ph=4 fs_live=1 under=1 wtop=3 bb=0 harv=1 ammo_target=300 ti_floor=28 chunk=30 bar=8 scale=274 arm=1 gate_ti=1 amt=10
+COREAMMO r=85 ti=28 ammo=13 fs_ph=4 fs_live=1 under=1 wtop=3 bb=0 harv=1 ammo_target=300 ti_floor=36 chunk=30 bar=8 scale=274 arm=1 gate_ti=0 amt=-8
+FS SEAL 85 tile (9, 5) n 11
+COREAMMO r=86 ti=0 ammo=3 fs_ph=4 fs_live=1 under=1 wtop=3 bb=0 harv=1 ammo_target=300 ti_floor=36 chunk=30 bar=8 scale=275 arm=1 gate_ti=0 amt=-36
+COREAMMO r=87 ti=10 ammo=3 fs_ph=4 fs_live=1 under=1 wtop=3 bb=0 harv=1 ammo_target=300 ti_floor=44 chunk=30 bar=8 scale=275 arm=1 gate_ti=0 amt=-34
+FS PHASE 87 id 4 ph 2 d 5 at (8, 4)
+FS DODGE 87 id 4 from (8, 4) to (9, 4) cov 1 -> 0 hit 0 hp 4
+COREAMMO r=88 ti=20 ammo=3 fs_ph=2 fs_live=1 under=1 wtop=3 bb=0 harv=1 ammo_target=300 ti_floor=108 chunk=30 bar=8 scale=274 arm=1 gate_ti=0 amt=-88
+FS PHASE 88 id 4 ph 4 d 4 at (9, 4)
+FS SEAL 88 tile (9, 5) n 12
+COREAMMO r=89 ti=12 ammo=3 fs_ph=4 fs_live=1 under=1 wtop=3 bb=0 harv=1 ammo_target=300 ti_floor=36 chunk=30 bar=8 scale=275 arm=1 gate_ti=0 amt=-24
+COREAMMO r=90 ti=12 ammo=3 fs_ph=4 fs_live=1 under=1 wtop=3 bb=0 harv=1 ammo_target=300 ti_floor=40 chunk=30 bar=7 scale=255 arm=1 gate_ti=0 amt=-28
+COREAMMO r=91 ti=22 ammo=3 fs_ph=4 fs_live=1 under=1 wtop=3 bb=0 harv=1 ammo_target=300 ti_floor=40 chunk=30 bar=7 scale=255 arm=1 gate_ti=0 amt=-18
+COREAMMO r=92 ti=32 ammo=3 fs_ph=4 fs_live=1 under=1 wtop=3 bb=0 harv=1 ammo_target=300 ti_floor=40 chunk=30 bar=7 scale=255 arm=1 gate_ti=0 amt=-8
+COREAMMO r=93 ti=32 ammo=3 fs_ph=4 fs_live=1 under=1 wtop=3 bb=0 harv=1 ammo_target=300 ti_floor=40 chunk=30 bar=7 scale=255 arm=1 gate_ti=0 amt=-8
+COREAMMO r=94 ti=32 ammo=3 fs_ph=4 fs_live=1 under=1 wtop=3 bb=0 harv=1 ammo_target=300 ti_floor=40 chunk=30 bar=7 scale=254 arm=1 gate_ti=0 amt=-8
+COREAMMO r=95 ti=42 ammo=3 fs_ph=4 fs_live=1 under=1 wtop=3 bb=0 harv=1 ammo_target=300 ti_floor=40 chunk=30 bar=7 scale=254 arm=1 gate_ti=1 amt=2
+COREAMMO r=96 ti=52 ammo=3 fs_ph=4 fs_live=1 under=1 wtop=3 bb=0 harv=1 ammo_target=300 ti_floor=40 chunk=30 bar=7 scale=254 arm=1 gate_ti=1 amt=12
+COREAMMO r=97 ti=40 ammo=1 fs_ph=4 fs_live=1 under=1 wtop=3 bb=0 harv=1 ammo_target=300 ti_floor=40 chunk=30 bar=7 scale=254 arm=1 gate_ti=0 amt=0
+COREAMMO r=98 ti=40 ammo=1 fs_ph=4 fs_live=1 under=1 wtop=3 bb=0 harv=1 ammo_target=300 ti_floor=40 chunk=30 bar=7 scale=254 arm=1 gate_ti=0 amt=0
+COREAMMO r=99 ti=50 ammo=1 fs_ph=4 fs_live=1 under=1 wtop=3 bb=0 harv=1 ammo_target=300 ti_floor=40 chunk=30 bar=7 scale=254 arm=1 gate_ti=1 amt=10
+COREAMMO r=100 ti=50 ammo=1 fs_ph=4 fs_live=1 under=1 wtop=3 bb=0 harv=1 ammo_target=300 ti_floor=40 chunk=30 bar=7 scale=254 arm=1 gate_ti=1 amt=10
+COREAMMO r=101 ti=40 ammo=3 fs_ph=4 fs_live=1 under=1 wtop=3 bb=0 harv=1 ammo_target=300 ti_floor=40 chunk=30 bar=7 scale=254 arm=1 gate_ti=0 amt=0
+COREAMMO r=102 ti=40 ammo=3 fs_ph=4 fs_live=1 under=1 wtop=3 bb=0 harv=1 ammo_target=300 ti_floor=40 chunk=30 bar=7 scale=254 arm=1 gate_ti=0 amt=0
+COREAMMO r=103 ti=50 ammo=3 fs_ph=4 fs_live=1 under=1 wtop=3 bb=0 harv=1 ammo_target=300 ti_floor=40 chunk=30 bar=7 scale=254 arm=1 gate_ti=1 amt=10
+COREAMMO r=104 ti=50 ammo=3 fs_ph=4 fs_live=1 under=1 wtop=3 bb=0 harv=1 ammo_target=300 ti_floor=40 chunk=30 bar=7 scale=254 arm=1 gate_ti=1 amt=10
+COREAMMO r=105 ti=40 ammo=5 fs_ph=4 fs_live=1 under=1 wtop=3 bb=0 harv=1 ammo_target=300 ti_floor=40 chunk=30 bar=7 scale=254 arm=1 gate_ti=0 amt=0
+COREAMMO r=106 ti=30 ammo=1 fs_ph=4 fs_live=1 under=1 wtop=3 bb=0 harv=1 ammo_target=300 ti_floor=40 chunk=30 bar=7 scale=254 arm=1 gate_ti=0 amt=-10
+COREAMMO r=107 ti=30 ammo=1 fs_ph=4 fs_live=1 under=1 wtop=3 bb=0 harv=1 ammo_target=300 ti_floor=40 chunk=30 bar=7 scale=234 arm=1 gate_ti=0 amt=-10
+COREAMMO r=108 ti=40 ammo=1 fs_ph=4 fs_live=1 under=1 wtop=3 bb=0 harv=1 ammo_target=300 ti_floor=40 chunk=30 bar=7 scale=234 arm=1 gate_ti=0 amt=0
+COREAMMO r=109 ti=40 ammo=1 fs_ph=4 fs_live=1 under=1 wtop=3 bb=0 harv=1 ammo_target=300 ti_floor=40 chunk=30 bar=7 scale=234 arm=1 gate_ti=0 amt=0
+COREAMMO r=110 ti=40 ammo=1 fs_ph=4 fs_live=1 under=1 wtop=3 bb=0 harv=1 ammo_target=300 ti_floor=40 chunk=30 bar=7 scale=234 arm=1 gate_ti=0 amt=0
+COREAMMO r=111 ti=50 ammo=1 fs_ph=4 fs_live=1 under=1 wtop=3 bb=0 harv=1 ammo_target=300 ti_floor=40 chunk=30 bar=7 scale=234 arm=1 gate_ti=1 amt=10
+COREAMMO r=112 ti=50 ammo=7 fs_ph=4 fs_live=1 under=1 wtop=3 bb=0 harv=1 ammo_target=300 ti_floor=40 chunk=30 bar=7 scale=234 arm=1 gate_ti=1 amt=10
+COREAMMO r=113 ti=40 ammo=13 fs_ph=4 fs_live=1 under=1 wtop=3 bb=0 harv=1 ammo_target=300 ti_floor=40 chunk=30 bar=7 scale=234 arm=1 gate_ti=0 amt=0
+COREAMMO r=114 ti=40 ammo=5 fs_ph=4 fs_live=1 under=1 wtop=3 bb=0 harv=1 ammo_target=300 ti_floor=36 chunk=30 bar=6 scale=233 arm=1 gate_ti=1 amt=4
+COREAMMO r=115 ti=26 ammo=9 fs_ph=4 fs_live=1 under=1 wtop=3 bb=0 harv=1 ammo_target=300 ti_floor=36 chunk=30 bar=6 scale=233 arm=1 gate_ti=0 amt=-10
+COREAMMO r=116 ti=36 ammo=1 fs_ph=4 fs_live=1 under=1 wtop=3 bb=0 harv=1 ammo_target=300 ti_floor=36 chunk=30 bar=6 scale=233 arm=1 gate_ti=0 amt=0
+COREAMMO r=117 ti=36 ammo=1 fs_ph=4 fs_live=1 under=1 wtop=3 bb=0 harv=1 ammo_target=300 ti_floor=36 chunk=30 bar=6 scale=233 arm=1 gate_ti=0 amt=0
+COREAMMO r=118 ti=36 ammo=1 fs_ph=4 fs_live=1 under=1 wtop=3 bb=0 harv=1 ammo_target=300 ti_floor=36 chunk=30 bar=6 scale=233 arm=1 gate_ti=0 amt=0
+COREAMMO r=119 ti=46 ammo=1 fs_ph=4 fs_live=1 under=1 wtop=3 bb=0 harv=1 ammo_target=300 ti_floor=36 chunk=30 bar=6 scale=233 arm=1 gate_ti=1 amt=10
+COREAMMO r=120 ti=46 ammo=3 fs_ph=4 fs_live=1 under=1 wtop=3 bb=0 harv=1 ammo_target=300 ti_floor=36 chunk=30 bar=6 scale=233 arm=1 gate_ti=1 amt=10
+COREAMMO r=121 ti=36 ammo=5 fs_ph=4 fs_live=1 under=1 wtop=3 bb=0 harv=1 ammo_target=300 ti_floor=36 chunk=30 bar=6 scale=233 arm=1 gate_ti=0 amt=0
+COREAMMO r=122 ti=36 ammo=1 fs_ph=4 fs_live=1 under=1 wtop=3 bb=0 harv=1 ammo_target=300 ti_floor=36 chunk=30 bar=6 scale=232 arm=1 gate_ti=0 amt=0
+COREAMMO r=123 ti=36 ammo=1 fs_ph=4 fs_live=1 under=1 wtop=3 bb=0 harv=1 ammo_target=300 ti_floor=36 chunk=30 bar=6 scale=232 arm=1 gate_ti=0 amt=0
+COREAMMO r=124 ti=46 ammo=1 fs_ph=4 fs_live=1 under=1 wtop=3 bb=0 harv=1 ammo_target=300 ti_floor=36 chunk=30 bar=6 scale=232 arm=1 gate_ti=1 amt=10
+COREAMMO r=125 ti=36 ammo=3 fs_ph=4 fs_live=1 under=1 wtop=3 bb=0 harv=1 ammo_target=300 ti_floor=36 chunk=30 bar=6 scale=232 arm=1 gate_ti=0 amt=0
+COREAMMO r=126 ti=26 ammo=3 fs_ph=4 fs_live=1 under=1 wtop=3 bb=0 harv=1 ammo_target=300 ti_floor=36 chunk=30 bar=6 scale=232 arm=1 gate_ti=0 amt=-10
+COREAMMO r=127 ti=26 ammo=3 fs_ph=4 fs_live=1 under=1 wtop=3 bb=0 harv=1 ammo_target=300 ti_floor=36 chunk=30 bar=6 scale=232 arm=1 gate_ti=0 amt=-10
+COREAMMO r=128 ti=36 ammo=3 fs_ph=4 fs_live=1 under=1 wtop=3 bb=0 harv=1 ammo_target=300 ti_floor=36 chunk=30 bar=6 scale=232 arm=1 gate_ti=0 amt=0
+COREAMMO r=129 ti=36 ammo=3 fs_ph=4 fs_live=1 under=1 wtop=3 bb=0 harv=1 ammo_target=300 ti_floor=36 chunk=30 bar=6 scale=232 arm=1 gate_ti=0 amt=0
+COREAMMO r=130 ti=36 ammo=3 fs_ph=4 fs_live=1 under=1 wtop=3 bb=0 harv=1 ammo_target=300 ti_floor=36 chunk=30 bar=6 scale=232 arm=1 gate_ti=0 amt=0
+COREAMMO r=131 ti=36 ammo=3 fs_ph=4 fs_live=1 under=1 wtop=3 bb=0 harv=1 ammo_target=300 ti_floor=36 chunk=30 bar=6 scale=232 arm=1 gate_ti=0 amt=0
+COREAMMO r=132 ti=46 ammo=3 fs_ph=4 fs_live=1 under=1 wtop=3 bb=0 harv=1 ammo_target=300 ti_floor=36 chunk=30 bar=6 scale=232 arm=1 gate_ti=1 amt=10
+COREAMMO r=133 ti=36 ammo=9 fs_ph=4 fs_live=1 under=1 wtop=3 bb=0 harv=1 ammo_target=300 ti_floor=36 chunk=30 bar=6 scale=232 arm=1 gate_ti=0 amt=0
+COREAMMO r=134 ti=36 ammo=5 fs_ph=4 fs_live=1 under=1 wtop=3 bb=0 harv=1 ammo_target=300 ti_floor=36 chunk=30 bar=6 scale=232 arm=1 gate_ti=0 amt=0
+COREAMMO r=135 ti=36 ammo=1 fs_ph=4 fs_live=1 under=1 wtop=3 bb=0 harv=1 ammo_target=300 ti_floor=36 chunk=30 bar=6 scale=232 arm=1 gate_ti=0 amt=0
+COREAMMO r=136 ti=36 ammo=1 fs_ph=4 fs_live=1 under=1 wtop=3 bb=0 harv=1 ammo_target=300 ti_floor=36 chunk=30 bar=6 scale=232 arm=1 gate_ti=0 amt=0
+COREAMMO r=137 ti=36 ammo=1 fs_ph=4 fs_live=1 under=1 wtop=3 bb=0 harv=1 ammo_target=300 ti_floor=36 chunk=30 bar=6 scale=232 arm=1 gate_ti=0 amt=0
+COREAMMO r=138 ti=36 ammo=1 fs_ph=4 fs_live=1 under=1 wtop=3 bb=0 harv=1 ammo_target=300 ti_floor=36 chunk=30 bar=6 scale=232 arm=1 gate_ti=0 amt=0
+COREAMMO r=139 ti=36 ammo=1 fs_ph=4 fs_live=1 under=1 wtop=3 bb=0 harv=1 ammo_target=300 ti_floor=36 chunk=30 bar=6 scale=232 arm=1 gate_ti=0 amt=0
+COREAMMO r=140 ti=46 ammo=1 fs_ph=4 fs_live=1 under=1 wtop=3 bb=0 harv=1 ammo_target=300 ti_floor=36 chunk=30 bar=6 scale=232 arm=1 gate_ti=1 amt=10
+COREAMMO r=141 ti=36 ammo=7 fs_ph=4 fs_live=1 under=1 wtop=3 bb=0 harv=1 ammo_target=300 ti_floor=36 chunk=30 bar=6 scale=232 arm=1 gate_ti=0 amt=0
+COREAMMO r=142 ti=36 ammo=3 fs_ph=4 fs_live=1 under=1 wtop=3 bb=0 harv=1 ammo_target=300 ti_floor=36 chunk=30 bar=6 scale=232 arm=1 gate_ti=0 amt=0
+COREAMMO r=143 ti=36 ammo=3 fs_ph=4 fs_live=1 under=1 wtop=3 bb=0 harv=1 ammo_target=300 ti_floor=36 chunk=30 bar=6 scale=232 arm=1 gate_ti=0 amt=0
+COREAMMO r=144 ti=46 ammo=3 fs_ph=4 fs_live=1 under=1 wtop=3 bb=0 harv=1 ammo_target=300 ti_floor=36 chunk=30 bar=6 scale=232 arm=1 gate_ti=1 amt=10
+COREAMMO r=145 ti=36 ammo=9 fs_ph=4 fs_live=1 under=1 wtop=3 bb=0 harv=1 ammo_target=300 ti_floor=36 chunk=30 bar=6 scale=232 arm=1 gate_ti=0 amt=0
+COREAMMO r=146 ti=36 ammo=5 fs_ph=4 fs_live=1 under=1 wtop=3 bb=0 harv=1 ammo_target=300 ti_floor=36 chunk=30 bar=6 scale=232 arm=1 gate_ti=0 amt=0
+COREAMMO r=147 ti=36 ammo=1 fs_ph=4 fs_live=1 under=1 wtop=3 bb=0 harv=1 ammo_target=300 ti_floor=36 chunk=30 bar=6 scale=232 arm=1 gate_ti=0 amt=0
+COREAMMO r=148 ti=46 ammo=1 fs_ph=4 fs_live=1 under=1 wtop=3 bb=0 harv=1 ammo_target=300 ti_floor=36 chunk=30 bar=6 scale=232 arm=1 gate_ti=1 amt=10
+COREAMMO r=149 ti=36 ammo=7 fs_ph=4 fs_live=1 under=1 wtop=3 bb=0 harv=1 ammo_target=300 ti_floor=36 chunk=30 bar=6 scale=232 arm=1 gate_ti=0 amt=0
+COREAMMO r=150 ti=36 ammo=3 fs_ph=4 fs_live=1 under=1 wtop=3 bb=0 harv=1 ammo_target=300 ti_floor=36 chunk=30 bar=6 scale=232 arm=1 gate_ti=0 amt=0
+COREAMMO r=151 ti=36 ammo=3 fs_ph=4 fs_live=1 under=1 wtop=3 bb=0 harv=1 ammo_target=300 ti_floor=36 chunk=30 bar=6 scale=232 arm=1 gate_ti=0 amt=0
+COREAMMO r=152 ti=46 ammo=3 fs_ph=4 fs_live=1 under=1 wtop=3 bb=0 harv=1 ammo_target=300 ti_floor=36 chunk=30 bar=6 scale=232 arm=1 gate_ti=1 amt=10
+COREAMMO r=153 ti=36 ammo=9 fs_ph=4 fs_live=1 under=1 wtop=3 bb=0 harv=1 ammo_target=300 ti_floor=36 chunk=30 bar=6 scale=232 arm=1 gate_ti=0 amt=0
+COREAMMO r=154 ti=36 ammo=5 fs_ph=4 fs_live=1 under=1 wtop=3 bb=0 harv=1 ammo_target=300 ti_floor=36 chunk=30 bar=6 scale=232 arm=1 gate_ti=0 amt=0
+COREAMMO r=155 ti=36 ammo=1 fs_ph=4 fs_live=1 under=1 wtop=3 bb=0 harv=1 ammo_target=300 ti_floor=36 chunk=30 bar=6 scale=232 arm=1 gate_ti=0 amt=0
+COREAMMO r=156 ti=46 ammo=1 fs_ph=4 fs_live=1 under=1 wtop=3 bb=0 harv=1 ammo_target=300 ti_floor=36 chunk=30 bar=6 scale=232 arm=1 gate_ti=1 amt=10
+COREAMMO r=157 ti=36 ammo=7 fs_ph=4 fs_live=1 under=1 wtop=3 bb=0 harv=1 ammo_target=300 ti_floor=36 chunk=30 bar=6 scale=232 arm=1 gate_ti=0 amt=0
+COREAMMO r=158 ti=36 ammo=3 fs_ph=4 fs_live=1 under=1 wtop=3 bb=0 harv=1 ammo_target=300 ti_floor=36 chunk=30 bar=6 scale=232 arm=1 gate_ti=0 amt=0
+COREAMMO r=159 ti=36 ammo=3 fs_ph=4 fs_live=1 under=1 wtop=3 bb=0 harv=1 ammo_target=300 ti_floor=36 chunk=30 bar=6 scale=232 arm=1 gate_ti=0 amt=0
+COREAMMO r=160 ti=46 ammo=3 fs_ph=4 fs_live=1 under=1 wtop=3 bb=0 harv=1 ammo_target=300 ti_floor=36 chunk=30 bar=6 scale=232 arm=1 gate_ti=1 amt=10
+COREAMMO r=161 ti=36 ammo=9 fs_ph=4 fs_live=1 under=1 wtop=3 bb=0 harv=1 ammo_target=300 ti_floor=36 chunk=30 bar=6 scale=232 arm=1 gate_ti=0 amt=0
+COREAMMO r=162 ti=36 ammo=5 fs_ph=4 fs_live=1 under=1 wtop=3 bb=0 harv=1 ammo_target=300 ti_floor=36 chunk=30 bar=6 scale=232 arm=1 gate_ti=0 amt=0
+COREAMMO r=163 ti=36 ammo=1 fs_ph=4 fs_live=1 under=1 wtop=3 bb=0 harv=1 ammo_target=300 ti_floor=36 chunk=30 bar=6 scale=232 arm=1 gate_ti=0 amt=0
+COREAMMO r=164 ti=46 ammo=1 fs_ph=4 fs_live=1 under=1 wtop=3 bb=0 harv=1 ammo_target=300 ti_floor=36 chunk=30 bar=6 scale=232 arm=1 gate_ti=1 amt=10
+COREAMMO r=165 ti=36 ammo=7 fs_ph=4 fs_live=1 under=1 wtop=3 bb=0 harv=1 ammo_target=300 ti_floor=36 chunk=30 bar=6 scale=232 arm=1 gate_ti=0 amt=0
+COREAMMO r=166 ti=36 ammo=3 fs_ph=4 fs_live=1 under=1 wtop=3 bb=0 harv=1 ammo_target=300 ti_floor=36 chunk=30 bar=6 scale=232 arm=1 gate_ti=0 amt=0
+COREAMMO r=167 ti=36 ammo=3 fs_ph=4 fs_live=1 under=1 wtop=3 bb=0 harv=1 ammo_target=300 ti_floor=36 chunk=30 bar=6 scale=232 arm=1 gate_ti=0 amt=0
+COREAMMO r=168 ti=46 ammo=3 fs_ph=4 fs_live=1 under=1 wtop=3 bb=0 harv=1 ammo_target=300 ti_floor=36 chunk=30 bar=6 scale=232 arm=1 gate_ti=1 amt=10
+COREAMMO r=169 ti=36 ammo=9 fs_ph=4 fs_live=1 under=1 wtop=3 bb=0 harv=1 ammo_target=300 ti_floor=36 chunk=30 bar=6 scale=232 arm=1 gate_ti=0 amt=0
+COREAMMO r=170 ti=36 ammo=5 fs_ph=4 fs_live=1 under=1 wtop=3 bb=0 harv=1 ammo_target=300 ti_floor=36 chunk=30 bar=6 scale=232 arm=1 gate_ti=0 amt=0
+COREAMMO r=171 ti=36 ammo=1 fs_ph=4 fs_live=1 under=1 wtop=3 bb=0 harv=1 ammo_target=300 ti_floor=36 chunk=30 bar=6 scale=232 arm=1 gate_ti=0 amt=0
+COREAMMO r=172 ti=45 ammo=1 fs_ph=4 fs_live=1 under=1 wtop=3 bb=0 harv=1 ammo_target=300 ti_floor=36 chunk=30 bar=6 scale=232 arm=1 gate_ti=1 amt=9
+COREAMMO r=173 ti=25 ammo=6 fs_ph=4 fs_live=1 under=1 wtop=3 bb=0 harv=1 ammo_target=300 ti_floor=36 chunk=30 bar=6 scale=232 arm=1 gate_ti=0 amt=-11
+COREAMMO r=174 ti=24 ammo=2 fs_ph=4 fs_live=1 under=1 wtop=3 bb=0 harv=1 ammo_target=300 ti_floor=36 chunk=30 bar=6 scale=232 arm=1 gate_ti=0 amt=-12
+COREAMMO r=175 ti=22 ammo=2 fs_ph=4 fs_live=1 under=1 wtop=3 bb=0 harv=1 ammo_target=300 ti_floor=36 chunk=30 bar=6 scale=227 arm=1 gate_ti=0 amt=-14
+COREAMMO r=176 ti=31 ammo=2 fs_ph=4 fs_live=1 under=1 wtop=3 bb=0 harv=1 ammo_target=300 ti_floor=36 chunk=30 bar=6 scale=227 arm=1 gate_ti=0 amt=-5
+COREAMMO r=177 ti=30 ammo=2 fs_ph=4 fs_live=1 under=1 wtop=3 bb=0 harv=1 ammo_target=300 ti_floor=36 chunk=30 bar=6 scale=227 arm=1 gate_ti=0 amt=-6
+COREAMMO r=178 ti=29 ammo=2 fs_ph=4 fs_live=1 under=1 wtop=3 bb=0 harv=1 ammo_target=300 ti_floor=36 chunk=30 bar=6 scale=227 arm=1 gate_ti=0 amt=-7
+COREAMMO r=179 ti=28 ammo=2 fs_ph=4 fs_live=1 under=1 wtop=3 bb=0 harv=1 ammo_target=300 ti_floor=36 chunk=30 bar=6 scale=227 arm=1 gate_ti=0 amt=-8
+COREAMMO r=180 ti=37 ammo=2 fs_ph=4 fs_live=1 under=1 wtop=3 bb=0 harv=1 ammo_target=300 ti_floor=36 chunk=30 bar=6 scale=227 arm=1 gate_ti=1 amt=1
+COREAMMO r=181 ti=26 ammo=2 fs_ph=4 fs_live=1 under=1 wtop=3 bb=0 harv=1 ammo_target=300 ti_floor=36 chunk=30 bar=6 scale=227 arm=1 gate_ti=0 amt=-10
+COREAMMO r=182 ti=25 ammo=2 fs_ph=4 fs_live=1 under=1 wtop=3 bb=0 harv=1 ammo_target=300 ti_floor=36 chunk=30 bar=6 scale=227 arm=1 gate_ti=0 amt=-11
+COREAMMO r=183 ti=24 ammo=2 fs_ph=4 fs_live=1 under=1 wtop=3 bb=0 harv=1 ammo_target=300 ti_floor=36 chunk=30 bar=6 scale=227 arm=1 gate_ti=0 amt=-12
+COREAMMO r=184 ti=33 ammo=2 fs_ph=4 fs_live=1 under=1 wtop=3 bb=0 harv=1 ammo_target=300 ti_floor=36 chunk=30 bar=6 scale=227 arm=1 gate_ti=0 amt=-3
+COREAMMO r=185 ti=32 ammo=2 fs_ph=4 fs_live=1 under=1 wtop=3 bb=0 harv=1 ammo_target=300 ti_floor=36 chunk=30 bar=6 scale=227 arm=1 gate_ti=0 amt=-4
+COREAMMO r=186 ti=31 ammo=2 fs_ph=4 fs_live=1 under=1 wtop=3 bb=0 harv=1 ammo_target=300 ti_floor=36 chunk=30 bar=6 scale=227 arm=1 gate_ti=0 amt=-5
+COREAMMO r=187 ti=30 ammo=2 fs_ph=4 fs_live=1 under=1 wtop=3 bb=0 harv=1 ammo_target=300 ti_floor=36 chunk=30 bar=6 scale=227 arm=1 gate_ti=0 amt=-6
+COREAMMO r=188 ti=39 ammo=2 fs_ph=4 fs_live=1 under=1 wtop=3 bb=0 harv=1 ammo_target=300 ti_floor=36 chunk=30 bar=6 scale=227 arm=1 gate_ti=1 amt=3
+COREAMMO r=189 ti=28 ammo=2 fs_ph=4 fs_live=1 under=1 wtop=3 bb=0 harv=1 ammo_target=300 ti_floor=36 chunk=30 bar=6 scale=227 arm=1 gate_ti=0 amt=-8
+COREAMMO r=190 ti=27 ammo=2 fs_ph=4 fs_live=1 under=1 wtop=3 bb=0 harv=1 ammo_target=300 ti_floor=36 chunk=30 bar=6 scale=227 arm=1 gate_ti=0 amt=-9
+COREAMMO r=191 ti=26 ammo=2 fs_ph=4 fs_live=1 under=1 wtop=3 bb=0 harv=1 ammo_target=300 ti_floor=36 chunk=30 bar=6 scale=227 arm=1 gate_ti=0 amt=-10
+COREAMMO r=192 ti=35 ammo=2 fs_ph=4 fs_live=1 under=1 wtop=3 bb=0 harv=1 ammo_target=300 ti_floor=36 chunk=30 bar=6 scale=227 arm=1 gate_ti=0 amt=-1
+COREAMMO r=193 ti=34 ammo=2 fs_ph=4 fs_live=1 under=1 wtop=3 bb=0 harv=1 ammo_target=300 ti_floor=36 chunk=30 bar=6 scale=227 arm=1 gate_ti=0 amt=-2
+COREAMMO r=194 ti=33 ammo=2 fs_ph=4 fs_live=1 under=1 wtop=3 bb=0 harv=1 ammo_target=300 ti_floor=36 chunk=30 bar=6 scale=227 arm=1 gate_ti=0 amt=-3
+COREAMMO r=195 ti=32 ammo=2 fs_ph=4 fs_live=1 under=1 wtop=3 bb=0 harv=1 ammo_target=300 ti_floor=36 chunk=30 bar=6 scale=227 arm=1 gate_ti=0 amt=-4
+COREAMMO r=196 ti=41 ammo=2 fs_ph=4 fs_live=1 under=1 wtop=3 bb=0 harv=1 ammo_target=300 ti_floor=36 chunk=30 bar=6 scale=227 arm=1 gate_ti=1 amt=5
+COREAMMO r=197 ti=25 ammo=3 fs_ph=4 fs_live=1 under=1 wtop=3 bb=0 harv=1 ammo_target=300 ti_floor=36 chunk=30 bar=6 scale=227 arm=1 gate_ti=0 amt=-11
+COREAMMO r=198 ti=24 ammo=3 fs_ph=4 fs_live=1 under=1 wtop=3 bb=0 harv=1 ammo_target=300 ti_floor=36 chunk=30 bar=6 scale=227 arm=1 gate_ti=0 amt=-12
+COREAMMO r=199 ti=23 ammo=3 fs_ph=4 fs_live=1 under=1 wtop=3 bb=0 harv=1 ammo_target=300 ti_floor=36 chunk=30 bar=6 scale=227 arm=1 gate_ti=0 amt=-13
+COREAMMO r=200 ti=32 ammo=3 fs_ph=4 fs_live=1 under=1 wtop=3 bb=0 harv=1 ammo_target=300 ti_floor=36 chunk=30 bar=6 scale=227 arm=1 gate_ti=0 amt=-4
+COREAMMO r=201 ti=31 ammo=3 fs_ph=4 fs_live=1 under=1 wtop=3 bb=0 harv=1 ammo_target=300 ti_floor=36 chunk=30 bar=6 scale=227 arm=1 gate_ti=0 amt=-5
+COREAMMO r=202 ti=30 ammo=3 fs_ph=4 fs_live=1 under=1 wtop=3 bb=0 harv=1 ammo_target=300 ti_floor=36 chunk=30 bar=6 scale=227 arm=1 gate_ti=0 amt=-6
+COREAMMO r=203 ti=29 ammo=3 fs_ph=4 fs_live=1 under=1 wtop=3 bb=0 harv=1 ammo_target=300 ti_floor=36 chunk=30 bar=6 scale=227 arm=1 gate_ti=0 amt=-7
+COREAMMO r=204 ti=38 ammo=3 fs_ph=4 fs_live=1 under=1 wtop=3 bb=0 harv=1 ammo_target=300 ti_floor=36 chunk=30 bar=6 scale=227 arm=1 gate_ti=1 amt=2
+COREAMMO r=205 ti=37 ammo=3 fs_ph=4 fs_live=1 under=1 wtop=3 bb=0 harv=1 ammo_target=300 ti_floor=36 chunk=30 bar=6 scale=227 arm=1 gate_ti=1 amt=1
+COREAMMO r=206 ti=36 ammo=3 fs_ph=4 fs_live=1 under=1 wtop=3 bb=0 harv=1 ammo_target=300 ti_floor=36 chunk=30 bar=6 scale=227 arm=1 gate_ti=0 amt=0
+COREAMMO r=207 ti=35 ammo=3 fs_ph=4 fs_live=1 under=1 wtop=3 bb=0 harv=1 ammo_target=300 ti_floor=36 chunk=30 bar=6 scale=227 arm=1 gate_ti=0 amt=-1
+COREAMMO r=208 ti=44 ammo=3 fs_ph=4 fs_live=1 under=1 wtop=3 bb=0 harv=1 ammo_target=300 ti_floor=36 chunk=30 bar=6 scale=227 arm=1 gate_ti=1 amt=8
+COREAMMO r=209 ti=35 ammo=3 fs_ph=4 fs_live=1 under=1 wtop=3 bb=0 harv=1 ammo_target=300 ti_floor=36 chunk=30 bar=6 scale=227 arm=1 gate_ti=0 amt=-1
+COREAMMO r=210 ti=34 ammo=3 fs_ph=4 fs_live=1 under=1 wtop=3 bb=0 harv=1 ammo_target=300 ti_floor=36 chunk=30 bar=6 scale=227 arm=1 gate_ti=0 amt=-2
+COREAMMO r=211 ti=33 ammo=3 fs_ph=4 fs_live=1 under=1 wtop=3 bb=0 harv=1 ammo_target=300 ti_floor=36 chunk=30 bar=6 scale=227 arm=1 gate_ti=0 amt=-3
+COREAMMO r=212 ti=42 ammo=3 fs_ph=4 fs_live=1 under=1 wtop=3 bb=0 harv=1 ammo_target=300 ti_floor=36 chunk=30 bar=6 scale=227 arm=1 gate_ti=1 amt=6
+COREAMMO r=213 ti=35 ammo=1 fs_ph=4 fs_live=1 under=1 wtop=3 bb=0 harv=1 ammo_target=300 ti_floor=36 chunk=30 bar=6 scale=227 arm=1 gate_ti=0 amt=-1
+COREAMMO r=214 ti=34 ammo=1 fs_ph=4 fs_live=1 under=1 wtop=3 bb=0 harv=1 ammo_target=300 ti_floor=36 chunk=30 bar=6 scale=227 arm=1 gate_ti=0 amt=-2
+COREAMMO r=215 ti=33 ammo=1 fs_ph=4 fs_live=1 under=1 wtop=3 bb=0 harv=1 ammo_target=300 ti_floor=36 chunk=30 bar=6 scale=227 arm=1 gate_ti=0 amt=-3
+COREAMMO r=216 ti=42 ammo=1 fs_ph=4 fs_live=1 under=1 wtop=3 bb=0 harv=1 ammo_target=300 ti_floor=36 chunk=30 bar=6 scale=227 arm=1 gate_ti=1 amt=6
+COREAMMO r=217 ti=35 ammo=3 fs_ph=4 fs_live=1 under=1 wtop=3 bb=0 harv=1 ammo_target=300 ti_floor=36 chunk=30 bar=6 scale=227 arm=1 gate_ti=0 amt=-1
+COREAMMO r=218 ti=34 ammo=3 fs_ph=4 fs_live=1 under=1 wtop=3 bb=0 harv=1 ammo_target=300 ti_floor=36 chunk=30 bar=6 scale=227 arm=1 gate_ti=0 amt=-2
+COREAMMO r=219 ti=33 ammo=3 fs_ph=4 fs_live=1 under=1 wtop=3 bb=0 harv=1 ammo_target=300 ti_floor=36 chunk=30 bar=6 scale=227 arm=1 gate_ti=0 amt=-3
+COREAMMO r=220 ti=42 ammo=3 fs_ph=4 fs_live=1 under=1 wtop=3 bb=0 harv=1 ammo_target=300 ti_floor=36 chunk=30 bar=6 scale=227 arm=1 gate_ti=1 amt=6
+COREAMMO r=221 ti=35 ammo=1 fs_ph=4 fs_live=1 under=1 wtop=3 bb=0 harv=1 ammo_target=300 ti_floor=36 chunk=30 bar=6 scale=227 arm=1 gate_ti=0 amt=-1
+COREAMMO r=222 ti=34 ammo=1 fs_ph=4 fs_live=1 under=1 wtop=3 bb=0 harv=1 ammo_target=300 ti_floor=36 chunk=30 bar=6 scale=227 arm=1 gate_ti=0 amt=-2
+COREAMMO r=223 ti=33 ammo=1 fs_ph=4 fs_live=1 under=1 wtop=3 bb=0 harv=1 ammo_target=300 ti_floor=36 chunk=30 bar=6 scale=227 arm=1 gate_ti=0 amt=-3
+COREAMMO r=224 ti=42 ammo=1 fs_ph=4 fs_live=1 under=1 wtop=3 bb=0 harv=1 ammo_target=300 ti_floor=36 chunk=30 bar=6 scale=227 arm=1 gate_ti=1 amt=6
+COREAMMO r=225 ti=35 ammo=3 fs_ph=4 fs_live=1 under=1 wtop=3 bb=0 harv=1 ammo_target=300 ti_floor=36 chunk=30 bar=6 scale=227 arm=1 gate_ti=0 amt=-1
+COREAMMO r=226 ti=34 ammo=3 fs_ph=4 fs_live=1 under=1 wtop=3 bb=0 harv=1 ammo_target=300 ti_floor=36 chunk=30 bar=6 scale=227 arm=1 gate_ti=0 amt=-2
+COREAMMO r=227 ti=33 ammo=3 fs_ph=4 fs_live=1 under=1 wtop=3 bb=0 harv=1 ammo_target=300 ti_floor=36 chunk=30 bar=6 scale=227 arm=1 gate_ti=0 amt=-3
+COREAMMO r=228 ti=42 ammo=3 fs_ph=4 fs_live=1 under=1 wtop=3 bb=0 harv=1 ammo_target=300 ti_floor=36 chunk=30 bar=6 scale=227 arm=1 gate_ti=1 amt=6
+COREAMMO r=229 ti=35 ammo=1 fs_ph=4 fs_live=1 under=1 wtop=3 bb=0 harv=1 ammo_target=300 ti_floor=36 chunk=30 bar=6 scale=227 arm=1 gate_ti=0 amt=-1
+COREAMMO r=230 ti=34 ammo=1 fs_ph=4 fs_live=1 under=1 wtop=3 bb=0 harv=1 ammo_target=300 ti_floor=36 chunk=30 bar=6 scale=227 arm=1 gate_ti=0 amt=-2
+COREAMMO r=231 ti=33 ammo=1 fs_ph=4 fs_live=1 under=1 wtop=3 bb=0 harv=1 ammo_target=300 ti_floor=36 chunk=30 bar=6 scale=227 arm=1 gate_ti=0 amt=-3
+COREAMMO r=232 ti=42 ammo=1 fs_ph=4 fs_live=1 under=1 wtop=3 bb=0 harv=1 ammo_target=300 ti_floor=36 chunk=30 bar=6 scale=227 arm=1 gate_ti=1 amt=6
+COREAMMO r=233 ti=35 ammo=3 fs_ph=4 fs_live=1 under=1 wtop=3 bb=0 harv=1 ammo_target=300 ti_floor=36 chunk=30 bar=6 scale=227 arm=1 gate_ti=0 amt=-1
+COREAMMO r=234 ti=34 ammo=3 fs_ph=4 fs_live=1 under=1 wtop=3 bb=0 harv=1 ammo_target=300 ti_floor=36 chunk=30 bar=6 scale=227 arm=1 gate_ti=0 amt=-2
+COREAMMO r=235 ti=33 ammo=3 fs_ph=4 fs_live=1 under=1 wtop=3 bb=0 harv=1 ammo_target=300 ti_floor=36 chunk=30 bar=6 scale=227 arm=1 gate_ti=0 amt=-3
+COREAMMO r=236 ti=42 ammo=3 fs_ph=4 fs_live=1 under=1 wtop=3 bb=0 harv=1 ammo_target=300 ti_floor=36 chunk=30 bar=6 scale=227 arm=1 gate_ti=1 amt=6
+COREAMMO r=237 ti=35 ammo=1 fs_ph=4 fs_live=1 under=1 wtop=3 bb=0 harv=1 ammo_target=300 ti_floor=36 chunk=30 bar=6 scale=227 arm=1 gate_ti=0 amt=-1
+COREAMMO r=238 ti=24 ammo=1 fs_ph=4 fs_live=1 under=1 wtop=3 bb=0 harv=1 ammo_target=300 ti_floor=36 chunk=30 bar=6 scale=227 arm=1 gate_ti=0 amt=-12
+COREAMMO r=239 ti=23 ammo=1 fs_ph=4 fs_live=1 under=1 wtop=3 bb=0 harv=1 ammo_target=300 ti_floor=36 chunk=30 bar=6 scale=227 arm=1 gate_ti=0 amt=-13
+COREAMMO r=240 ti=32 ammo=1 fs_ph=4 fs_live=1 under=1 wtop=3 bb=0 harv=1 ammo_target=300 ti_floor=36 chunk=30 bar=6 scale=227 arm=1 gate_ti=0 amt=-4
+COREAMMO r=241 ti=31 ammo=1 fs_ph=4 fs_live=1 under=1 wtop=3 bb=0 harv=1 ammo_target=300 ti_floor=36 chunk=30 bar=6 scale=227 arm=1 gate_ti=0 amt=-5
+COREAMMO r=242 ti=30 ammo=1 fs_ph=4 fs_live=1 under=1 wtop=3 bb=0 harv=1 ammo_target=300 ti_floor=36 chunk=30 bar=6 scale=227 arm=1 gate_ti=0 amt=-6
+COREAMMO r=243 ti=29 ammo=1 fs_ph=4 fs_live=1 under=1 wtop=3 bb=0 harv=1 ammo_target=300 ti_floor=36 chunk=30 bar=6 scale=227 arm=1 gate_ti=0 amt=-7
+COREAMMO r=244 ti=38 ammo=1 fs_ph=4 fs_live=1 under=1 wtop=3 bb=0 harv=1 ammo_target=300 ti_floor=36 chunk=30 bar=6 scale=227 arm=1 gate_ti=1 amt=2
+COREAMMO r=245 ti=37 ammo=1 fs_ph=4 fs_live=1 under=1 wtop=3 bb=0 harv=1 ammo_target=300 ti_floor=36 chunk=30 bar=6 scale=227 arm=1 gate_ti=1 amt=1
+COREAMMO r=246 ti=36 ammo=1 fs_ph=4 fs_live=1 under=1 wtop=3 bb=0 harv=1 ammo_target=300 ti_floor=36 chunk=30 bar=6 scale=227 arm=1 gate_ti=0 amt=0
+COREAMMO r=247 ti=35 ammo=1 fs_ph=4 fs_live=1 under=1 wtop=3 bb=0 harv=1 ammo_target=300 ti_floor=36 chunk=30 bar=6 scale=227 arm=1 gate_ti=0 amt=-1
+COREAMMO r=248 ti=44 ammo=1 fs_ph=4 fs_live=1 under=1 wtop=3 bb=0 harv=1 ammo_target=300 ti_floor=36 chunk=30 bar=6 scale=227 arm=1 gate_ti=1 amt=8
+COREAMMO r=249 ti=35 ammo=1 fs_ph=4 fs_live=1 under=1 wtop=3 bb=0 harv=1 ammo_target=300 ti_floor=36 chunk=30 bar=6 scale=227 arm=1 gate_ti=0 amt=-1
+COREAMMO r=250 ti=34 ammo=1 fs_ph=4 fs_live=1 under=1 wtop=3 bb=0 harv=1 ammo_target=300 ti_floor=36 chunk=30 bar=6 scale=227 arm=1 gate_ti=0 amt=-2
+COREAMMO r=251 ti=33 ammo=1 fs_ph=4 fs_live=1 under=1 wtop=3 bb=0 harv=1 ammo_target=300 ti_floor=36 chunk=30 bar=6 scale=227 arm=1 gate_ti=0 amt=-3
+COREAMMO r=252 ti=42 ammo=1 fs_ph=4 fs_live=1 under=1 wtop=3 bb=0 harv=1 ammo_target=300 ti_floor=36 chunk=30 bar=6 scale=227 arm=1 gate_ti=1 amt=6

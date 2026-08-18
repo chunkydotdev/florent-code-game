@@ -1,0 +1,79 @@
+Update available: 2.3.6 -> 2.3.8. Run: pip install --upgrade fcode
+FS GATE 0 sig (30, 30, (2, 2), (26, 26)) ok 1
+FS GATE 1 sig (30, 30, (2, 2), (26, 26)) ok 1
+FS PHASE 1 id 4 ph 1 d 1013 at (25, 26)
+FS HOPBUILD 1 at (25, 26) lch (24, 26) T (1, 1)
+FS GATE 2 sig (30, 30, (2, 2), (26, 26)) ok 1
+FS GATE 2 sig (30, 30, (2, 2), (26, 26)) ok 1
+FS THROW 2 from (25, 26) to (21, 22) T (1, 1)
+FS HOPBUILD 3 at (21, 22) lch (21, 21) T (1, 1)
+FS GATE 3 sig (30, 30, (2, 2), (26, 26)) ok 1
+FS GATE 4 sig (30, 30, (2, 2), (26, 26)) ok 1
+FS THROW 4 from (20, 22) to (17, 18) T (1, 1)
+FS HOPBUILD 5 at (17, 18) lch (17, 17) T (1, 1)
+FS GATE 6 sig (30, 30, (2, 2), (26, 26)) ok 1
+FS THROW 6 from (16, 18) to (13, 14) T (1, 1)
+FS HOPBUILD 7 at (13, 14) lch (13, 13) T (1, 1)
+FS GATE 8 sig (30, 30, (2, 2), (26, 26)) ok 1
+FS THROW 8 from (12, 14) to (9, 10) T (1, 1)
+FS HOPBUILD 9 at (9, 10) lch (9, 9) T (1, 1)
+FS GATE 10 sig (30, 30, (2, 2), (26, 26)) ok 1
+FS THROW 10 from (8, 10) to (5, 6) T (1, 1)
+FS HOPBUILD 11 at (5, 6) lch (5, 5) T (1, 1)
+FS GATE 12 sig (30, 30, (2, 2), (26, 26)) ok 1
+FS EVICT 12 from (6, 4) to (2, 9)
+FS EVICT 38 from (5, 4) to (8, 9)
+FS DEGRADE 42 id 4
+FS DOORSEEN 47 id 6 at (27, 20) rank 2
+FS DOORSEEN 65 id 6 at (27, 20) rank 2
+FS DOORSEEN 74 id 6 at (27, 20) rank 2
+FS DOORSEEN 85 id 6 at (27, 20) rank 2
+FS GATE 96 sig (30, 30, (2, 2), (26, 26)) ok 1
+FS PHASE 96 id 283 ph 1 d 1013 at (26, 25)
+FS PHASE 138 id 283 ph 2 d 5 at (5, 4)
+FS STAT 140 id 283 at (5, 3) need 7 orth 7 ti 37 ammo 40 sen 0 hp 8
+FS CLEAR 144 tile (4, 3) peck 1
+FS RUNG 144 id 283 r 3 hi -
+FS CLEAR 145 tile (4, 3) peck 2
+FS RUNG 145 id 283 r 3 hi -
+FS CLEAR 146 tile (4, 3) peck 3
+FS RUNG 146 id 283 r 3 hi -
+FS CLEARED 147 tile (4, 3) n 1
+FS SEAL 147 tile (4, 3) n 1
+FS SEALCLR 147 tile (4, 3) lag 0
+FS CLEAR 149 tile (4, 2) peck 1
+FS RUNG 149 id 283 r 3 hi -
+FS CLEAR 150 tile (4, 2) peck 2
+FS RUNG 150 id 283 r 3 hi -
+FS CLEAR 151 tile (4, 2) peck 3
+FS RUNG 151 id 283 r 3 hi -
+FS CLEAR 152 tile (4, 2) peck 4
+FS RUNG 152 id 283 r 3 hi -
+FS CLEAR 153 tile (4, 2) peck 5
+FS RUNG 153 id 283 r 3 hi -
+FS CLEAR 154 tile (4, 2) peck 6
+FS RUNG 154 id 283 r 3 hi -
+FS CLEAR 155 tile (4, 2) peck 7
+FS RUNG 155 id 283 r 3 hi -
+FS CLEAR 156 tile (4, 2) peck 8
+FS RUNG 156 id 283 r 3 hi -
+FS CLEARED 157 tile (4, 2) n 2
+FS SEAL 157 tile (4, 2) n 2
+FS SEALCLR 157 tile (4, 2) lag 0
+FS EVICT 158 from (5, 4) to (8, 9)
+FS GATE 172 sig (30, 30, (2, 2), (26, 26)) ok 1
+FS PHASE 172 id 455 ph 1 d 1250 at (28, 28)
+FS HOPBUILD 173 at (28, 29) lch (28, 28) T (1, 1)
+FS GATE 174 sig (30, 30, (2, 2), (26, 26)) ok 1
+FS THROW 174 from (27, 29) to (24, 25) T (1, 1)
+FS HOPBUILD 184 at (18, 22) lch (17, 22) T (1, 1)
+FS GATE 185 sig (30, 30, (2, 2), (26, 26)) ok 1
+FS THROW 185 from (18, 22) to (14, 18) T (1, 1)
+FS HOPBUILD 199 at (9, 10) lch (8, 10) T (1, 1)
+FS GATE 200 sig (30, 30, (2, 2), (26, 26)) ok 1
+FS THROW 200 from (9, 9) to (5, 6) T (1, 1)
+FS EVICT 211 from (6, 6) to (0, 6)
+FS DEGRADE 232 id 455
+FS EVICT 244 from (5, 4) to (8, 9)
+FS EVICT 263 from (6, 4) to (2, 9)
+FS EVICT 282 from (6, 4) to (2, 9)
