@@ -1,0 +1,13 @@
+arm	n	wins	win%	k<=300	k300%	ourcore_dead	med_kill	tb
+v515_FIRED_all	540	289	53.5	158	29.3	220	219	0
+v515_FIRED_RA-RC	90	46	51.1	24	26.7	36	241	0
+p514nd_baseline_all	540	262	48.5	124	23.0	257	239.0	0
+p514nd_baseline_RA-RC	90	44	48.9	19	21.1	43	272.5	0
+parent514_v514delivered_A-I+M-R	450	195	43.3	86	19.1	232	245	0
+only1_dooroff_A-I+M-R	450	227	50.4	120	26.7	200	249.0	0
+only2_gateor_A-I+M-R	450	229	50.9	125	27.8	191	229	0
+only3_reach_A-I+M-R	450	199	44.2	93	20.7	229	265	0
+flagoff_CORRECTED_M-R_only	180	76	42.2	35	19.4	97	267.5	0
+flagoff_DEFECTIVE_A-I	270	146	54.1	65	24.1	116	254.0	0
+gk_archipelago_v515	36	26	72.2	22	61.1	9	162.5	0
+gk_archipelago_p514nd	36	24	66.7	18	50.0	12	208.5	0

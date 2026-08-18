@@ -1,0 +1,12 @@
+Update available: 2.3.6 -> 2.3.8. Run: pip install --upgrade fcode
+REACH515 14 tile (25, 26) ucov 1 unseal 2 want 1
+STAND515 14 cand 6 chose (25, 27) inrstat 1 here (24, 25)
+STAND515 16 cand 6 chose (24, 26) inrstat 1 here (24, 25)
+STAND515 18 cand 2 chose (24, 27) inrstat 0 here (24, 26)
+STAND515 19 cand 2 chose (25, 28) inrstat 0 here (24, 27)
+STAND515 20 cand 2 chose (25, 28) inrstat 0 here (25, 27)
+EVICT515 28 at (24, 28) ucov 1 cov 0 ceil 1 ceiltile (25, 26) n 1
+REACH515 31 tile (26, 25) ucov 2 unseal 2 want 0
+REACH515 39 tile (26, 25) ucov 2 unseal 2 want 1
+STAND515 39 cand 4 chose (26, 24) inrstat 1 here (24, 26)
+STAND515 40 cand 4 chose (26, 24) inrstat 1 here (24, 25)

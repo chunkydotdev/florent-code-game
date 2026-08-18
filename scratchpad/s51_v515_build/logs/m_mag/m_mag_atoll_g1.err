@@ -1,0 +1,64 @@
+Update available: 2.3.6 -> 2.3.8. Run: pip install --upgrade fcode
+FS GATE 0 sig (18, 18, (2, 14), (14, 2)) ok 1
+FS GATE 1 sig (18, 18, (2, 14), (14, 2)) ok 1
+FS PHASE 1 id 4 ph 1 d 200 at (13, 4)
+FS HOPBUILD 1 at (13, 4) lch (13, 5) T (1, 16)
+FS GATE 2 sig (18, 18, (2, 14), (14, 2)) ok 1
+FS GATE 2 sig (18, 18, (2, 14), (14, 2)) ok 1
+FS THROW 2 from (12, 4) to (9, 8) T (1, 16) body 4 n 1 dsq 72
+FS HOPBUILD 3 at (9, 8) lch (9, 9) T (1, 16)
+FS GATE 3 sig (18, 18, (2, 14), (14, 2)) ok 1
+FS GATE 4 sig (18, 18, (2, 14), (14, 2)) ok 1
+FS THROW 4 from (8, 8) to (5, 12) T (1, 16) body 4 n 1 dsq 8
+FS ARRIVE 5 id 4 body 1 at (5, 12) dsq 8
+FS PHASE 5 id 4 ph 2 d 8 at (5, 12)
+GATE515 5 salt 0 eco 0 orth 8 floor 60
+GATE515 6 salt 0 eco 0 orth 8 floor 60
+FS SEAL 7 tile (3, 13) n 1
+FS GATE 7 sig (18, 18, (2, 14), (14, 2)) ok 1
+FS DODGE 8 id 4 from (4, 13) to (4, 14) cov 1 -> 0 hit 0 hp 40
+FS GATE 8 sig (18, 18, (2, 14), (14, 2)) ok 1
+FS SEAL 9 tile (4, 15) n 2
+FS GATE 9 sig (18, 18, (2, 14), (14, 2)) ok 1
+GATE515 10 salt 0 eco 0 orth 5 floor 60
+FS SEAL 11 tile (4, 14) n 3
+GATE515 12 salt 0 eco 0 orth 6 floor 60
+FS DODGE 13 id 4 from (5, 13) to (5, 14) cov 1 -> 0 hit 0 hp 22
+GATE515 14 salt 0 eco 0 orth 6 floor 60
+GATE515 15 salt 0 eco 0 orth 6 floor 60
+GATE515 16 salt 0 eco 0 orth 6 floor 60
+GATE515 17 salt 0 eco 0 orth 6 floor 60
+GATE515 18 salt 0 eco 0 orth 6 floor 60
+GATE515 19 salt 0 eco 0 orth 6 floor 60
+FS STAT 20 id 4 at (4, 17) need 7 orth 6 ti 78 ammo 16 sen 0 hp 22 covden 0 eco 1 lost 0
+GATE515 20 salt 0 eco 0 orth 6 floor 60
+GATE515 21 salt 0 eco 0 orth 6 floor 60
+FS SEAL 22 tile (2, 16) n 4
+GATE515 23 salt 0 eco 0 orth 5 floor 60
+GATE515 24 salt 0 eco 0 orth 5 floor 60
+GATE515 25 salt 0 eco 0 orth 5 floor 60
+GATE515 26 salt 0 eco 0 orth 5 floor 60
+GATE515 27 salt 0 eco 0 orth 5 floor 60
+GATE515 28 salt 0 eco 0 orth 5 floor 60
+GATE515 29 salt 0 eco 0 orth 5 floor 60
+GATE515 30 salt 0 eco 0 orth 5 floor 60
+FS DODGE 31 id 4 from (3, 16) to (4, 16) cov 1 -> 0 hit 0 hp 15
+GATE515 32 salt 0 eco 0 orth 5 floor 60
+GATE515 33 salt 0 eco 0 orth 5 floor 60
+GATE515 34 salt 0 eco 0 orth 5 floor 60
+GATE515 35 salt 0 eco 0 orth 5 floor 60
+GATE515 36 salt 0 eco 0 orth 4 floor 60
+GATE515 37 salt 0 eco 0 orth 4 floor 60
+FS DODGE 38 id 4 from (4, 16) to (3, 16) cov 1 -> 0 hit 0 hp 1
+GATE515 39 salt 0 eco 0 orth 4 floor 60
+FS STAT 40 id 4 at (3, 17) need 5 orth 4 ti 56 ammo 24 sen 0 hp 1 covden 0 eco 1 lost 0
+FS DODGE 40 id 4 from (3, 17) to (3, 16) cov 1 -> 0 hit 0 hp 1
+GATE515 41 salt 0 eco 0 orth 4 floor 60
+FS DODGE 42 id 4 from (4, 16) to (3, 16) cov 2 -> 0 hit 0 hp 1
+GATE515 43 salt 0 eco 0 orth 4 floor 60
+FS DODGE 44 id 4 from (4, 16) to (3, 16) cov 2 -> 0 hit 0 hp 1
+GATE515 45 salt 0 eco 0 orth 5 floor 60
+GATE515 46 salt 0 eco 0 orth 5 floor 60
+GATE515 47 salt 0 eco 0 orth 5 floor 60
+FS DODGE 48 id 4 from (4, 16) to (3, 16) cov 1 -> 0 hit 0 hp 1
+GATE515 49 salt 0 eco 0 orth 5 floor 60

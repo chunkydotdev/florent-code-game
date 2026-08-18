@@ -1,0 +1,226 @@
+Update available: 2.3.6 -> 2.3.8. Run: pip install --upgrade fcode
+FS GATE 0 sig (30, 30, (2, 24), (26, 4)) ok 1
+FS GATE 1 sig (30, 30, (2, 24), (26, 4)) ok 1
+FS PHASE 1 id 3 ph 1 d 808 at (4, 23)
+FS HOPBUILD 1 at (4, 23) lch (5, 23) T (28, 3)
+FS GATE 2 sig (30, 30, (2, 24), (26, 4)) ok 1
+FS GATE 2 sig (30, 30, (2, 24), (26, 4)) ok 1
+FS THROW 2 from (4, 22) to (9, 20) T (28, 3) body 3 n 1 dsq 514
+FS HOPBUILD 3 at (9, 20) lch (10, 20) T (28, 3)
+FS GATE 3 sig (30, 30, (2, 24), (26, 4)) ok 1
+FS GATE 4 sig (30, 30, (2, 24), (26, 4)) ok 1
+FS THROW 4 from (9, 19) to (14, 17) T (28, 3) body 3 n 1 dsq 288
+FS HOPBUILD 5 at (14, 17) lch (14, 16) T (28, 3)
+FS GATE 6 sig (30, 30, (2, 24), (26, 4)) ok 1
+FS THROW 6 from (15, 17) to (18, 13) T (28, 3) body 3 n 1 dsq 128
+FS HOPBUILD 7 at (18, 13) lch (18, 12) T (28, 3)
+FS GATE 8 sig (30, 30, (2, 24), (26, 4)) ok 1
+FS THROW 8 from (19, 13) to (22, 9) T (28, 3) body 3 n 1 dsq 32
+FS HOPBUILD 9 at (22, 9) lch (22, 8) T (28, 3)
+FS GATE 10 sig (30, 30, (2, 24), (26, 4)) ok 1
+FS THROW 10 from (23, 9) to (25, 4) T (28, 3) body 3 n 1 dsq 1
+FS ARRIVE 11 id 3 body 1 at (25, 4) dsq 1
+FS PHASE 11 id 3 ph 2 d 1 at (25, 4)
+FS SEAL 11 tile (25, 5) n 1
+FS SEAL 12 tile (25, 3) n 2
+FS DODGE 13 id 3 from (25, 4) to (24, 4) cov 1 -> 0 hit 0 hp 40
+FS GATE 13 sig (30, 30, (2, 24), (26, 4)) ok 1
+FS SEAL 14 tile (25, 4) n 3
+FS GATE 14 sig (30, 30, (2, 24), (26, 4)) ok 1
+GATE515 15 salt 0 eco 0 orth 6 floor 60
+FS SEAL 16 tile (25, 3) n 4
+FS DODGE 17 id 3 from (24, 3) to (24, 4) cov 1 -> 0 hit 0 hp 40
+GATE515 18 salt 0 eco 0 orth 6 floor 60
+GATE515 19 salt 0 eco 0 orth 6 floor 60
+FS STAT 20 id 3 at (24, 6) need 7 orth 6 ti 30 ammo 4 sen 0 hp 40 covden 0 eco 0 lost 0
+GATE515 20 salt 0 eco 0 orth 6 floor 60
+FS DODGE 21 id 3 from (25, 6) to (26, 6) cov 1 -> 0 hit 0 hp 40
+FS SEAL 22 tile (27, 6) n 5
+GATE515 23 salt 0 eco 0 orth 4 floor 60
+GATE515 24 salt 0 eco 0 orth 5 floor 60
+GATE515 25 salt 0 eco 0 orth 5 floor 60
+GATE515 26 salt 0 eco 0 orth 5 floor 60
+FS SEAL 27 tile (28, 5) n 6
+GATE515 28 salt 0 eco 0 orth 4 floor 60
+GATE515 29 salt 0 eco 0 orth 4 floor 60
+GATE515 30 salt 0 eco 0 orth 4 floor 60
+FS SEAL 31 tile (28, 4) n 7
+GATE515 32 salt 0 eco 0 orth 3 floor 60
+GATE515 33 salt 0 eco 0 orth 3 floor 60
+FS SEAL 34 tile (27, 3) n 8
+GATE515 35 salt 0 eco 0 orth 2 floor 60
+GATE515 36 salt 0 eco 0 orth 2 floor 60
+GATE515 37 salt 0 eco 0 orth 2 floor 60
+FS SEAL 38 tile (26, 3) n 9
+GATE515 39 salt 0 eco 0 orth 1 floor 60
+FS STAT 40 id 3 at (26, 1) need 3 orth 2 ti 108 ammo 24 sen 0 hp 40 covden 0 eco 1 lost 0
+GATE515 40 salt 0 eco 0 orth 2 floor 60
+GATE515 41 salt 0 eco 0 orth 2 floor 60
+GATE515 42 salt 0 eco 0 orth 3 floor 60
+GATE515 43 salt 0 eco 0 orth 4 floor 60
+GATE515 44 salt 0 eco 0 orth 4 floor 60
+GATE515 45 salt 0 eco 0 orth 4 floor 60
+GATE515 46 salt 0 eco 0 orth 4 floor 60
+GATE515 47 salt 0 eco 0 orth 4 floor 60
+GATE515 48 salt 0 eco 0 orth 4 floor 60
+GATE515 49 salt 0 eco 0 orth 3 floor 60
+GATE515 50 salt 0 eco 0 orth 3 floor 60
+GATE515 51 salt 0 eco 0 orth 3 floor 60
+GATE515 52 salt 0 eco 0 orth 5 floor 60
+FS SEAL 53 tile (26, 3) n 10
+GATE515 54 salt 0 eco 0 orth 3 floor 60
+GATE515 55 salt 0 eco 0 orth 4 floor 60
+GATE515 56 salt 0 eco 0 orth 5 floor 60
+GATE515 57 salt 0 eco 0 orth 6 floor 60
+GATE515 58 salt 0 eco 0 orth 6 floor 60
+GATE515 59 salt 0 eco 0 orth 6 floor 60
+FS STAT 60 id 3 at (24, 2) need 6 orth 5 ti 12 ammo 17 sen 0 hp 40 covden 0 eco 1 lost 0
+GATE515 60 salt 0 eco 1 orth 5 floor 60
+GATE515 61 salt 0 eco 1 orth 3 floor 60
+GATE515 62 salt 0 eco 1 orth 3 floor 60
+FS SEAL 63 tile (25, 3) n 11
+GATE515 64 salt 0 eco 1 orth 3 floor 60
+FS SEAL 65 tile (25, 4) n 12
+GATE515 66 salt 0 eco 1 orth 2 floor 60
+GATE515 67 salt 0 eco 1 orth 3 floor 60
+GATE515 68 salt 0 eco 1 orth 3 floor 60
+GATE515 69 salt 0 eco 1 orth 3 floor 60
+GATE515 70 salt 0 eco 1 orth 4 floor 60
+GATE515 71 salt 0 eco 1 orth 4 floor 60
+GATE515 72 salt 0 eco 1 orth 4 floor 60
+GATE515 73 salt 0 eco 1 orth 3 floor 60
+GATE515 74 salt 0 eco 1 orth 3 floor 60
+FS CLEAR 75 tile (25, 5) peck 1
+FS RUNG 75 id 3 r 3 hi -
+FS CLEAR 76 tile (25, 5) peck 2
+FS RUNG 76 id 3 r 3 hi -
+FS CLEAR 77 tile (25, 5) peck 3
+FS RUNG 77 id 3 r 3 hi -
+FS CLEAR 78 tile (25, 5) peck 4
+FS RUNG 78 id 3 r 3 hi -
+FS CLEAR 79 tile (25, 5) peck 5
+FS RUNG 79 id 3 r 3 hi -
+FS STAT 80 id 3 at (24, 5) need 5 orth 4 ti 43 ammo 24 sen 0 hp 40 covden 0 eco 1 lost 0
+GATE515 80 salt 0 eco 1 orth 4 floor 60
+FS CLEAR 81 tile (25, 5) peck 6
+FS RUNG 81 id 3 r 3 hi -
+GATE515 82 salt 0 eco 1 orth 3 floor 60
+FS CLEAR 83 tile (25, 5) peck 7
+FS RUNG 83 id 3 r 3 hi -
+GATE515 84 salt 0 eco 1 orth 4 floor 60
+FS CLEAR 85 tile (25, 5) peck 8
+FS RUNG 85 id 3 r 3 hi -
+GATE515 86 salt 0 eco 1 orth 3 floor 60
+GATE515 87 salt 0 eco 1 orth 5 floor 60
+GATE515 88 salt 0 eco 1 orth 5 floor 60
+GATE515 89 salt 0 eco 1 orth 7 floor 60
+FS SEAL 90 tile (25, 3) n 13
+GATE515 91 salt 0 eco 1 orth 3 floor 60
+GATE515 92 salt 0 eco 1 orth 6 floor 60
+GATE515 93 salt 0 eco 1 orth 5 floor 60
+GATE515 94 salt 0 eco 1 orth 5 floor 60
+GATE515 95 salt 0 eco 1 orth 3 floor 60
+GATE515 96 salt 0 eco 1 orth 4 floor 60
+GATE515 97 salt 0 eco 1 orth 3 floor 60
+GATE515 98 salt 0 eco 1 orth 3 floor 60
+GATE515 99 salt 0 eco 1 orth 4 floor 60
+FS STAT 100 id 3 at (24, 5) need 4 orth 3 ti 14 ammo 12 sen 0 hp 40 covden 0 eco 1 lost 0
+GATE515 100 salt 0 eco 1 orth 3 floor 60
+GATE515 101 salt 0 eco 1 orth 4 floor 60
+GATE515 102 salt 0 eco 1 orth 3 floor 60
+GATE515 103 salt 0 eco 1 orth 3 floor 60
+GATE515 104 salt 0 eco 1 orth 3 floor 60
+GATE515 105 salt 0 eco 1 orth 3 floor 60
+GATE515 106 salt 0 eco 1 orth 3 floor 60
+GATE515 107 salt 0 eco 1 orth 3 floor 60
+GATE515 108 salt 0 eco 1 orth 3 floor 60
+GATE515 109 salt 0 eco 1 orth 3 floor 60
+GATE515 110 salt 0 eco 1 orth 3 floor 60
+GATE515 111 salt 0 eco 1 orth 3 floor 60
+GATE515 112 salt 0 eco 1 orth 3 floor 60
+GATE515 113 salt 0 eco 1 orth 3 floor 60
+GATE515 114 salt 0 eco 1 orth 3 floor 60
+GATE515 115 salt 0 eco 1 orth 3 floor 60
+GATE515 116 salt 0 eco 1 orth 3 floor 60
+GATE515 117 salt 0 eco 1 orth 3 floor 60
+GATE515 118 salt 0 eco 1 orth 3 floor 60
+GATE515 119 salt 0 eco 1 orth 3 floor 60
+FS STAT 120 id 3 at (24, 5) need 4 orth 3 ti 12 ammo 12 sen 0 hp 40 covden 0 eco 1 lost 0
+GATE515 120 salt 0 eco 1 orth 3 floor 60
+GATE515 121 salt 0 eco 1 orth 3 floor 60
+GATE515 122 salt 0 eco 1 orth 3 floor 60
+GATE515 123 salt 0 eco 1 orth 3 floor 60
+GATE515 124 salt 0 eco 1 orth 3 floor 60
+GATE515 125 salt 0 eco 1 orth 3 floor 60
+GATE515 126 salt 0 eco 1 orth 3 floor 60
+GATE515 127 salt 0 eco 1 orth 3 floor 60
+GATE515 128 salt 0 eco 1 orth 3 floor 60
+GATE515 129 salt 0 eco 1 orth 3 floor 60
+GATE515 130 salt 0 eco 1 orth 3 floor 60
+GATE515 131 salt 0 eco 1 orth 3 floor 60
+GATE515 132 salt 0 eco 1 orth 3 floor 60
+GATE515 133 salt 0 eco 1 orth 3 floor 60
+GATE515 134 salt 0 eco 1 orth 3 floor 60
+GATE515 135 salt 0 eco 1 orth 3 floor 60
+GATE515 136 salt 0 eco 1 orth 3 floor 60
+GATE515 137 salt 0 eco 1 orth 3 floor 60
+GATE515 138 salt 0 eco 1 orth 3 floor 60
+GATE515 139 salt 0 eco 1 orth 3 floor 60
+FS STAT 140 id 3 at (24, 5) need 4 orth 3 ti 12 ammo 12 sen 0 hp 40 covden 0 eco 1 lost 0
+GATE515 140 salt 0 eco 1 orth 3 floor 60
+GATE515 141 salt 0 eco 1 orth 3 floor 60
+GATE515 142 salt 0 eco 1 orth 3 floor 60
+GATE515 143 salt 0 eco 1 orth 3 floor 60
+GATE515 144 salt 0 eco 1 orth 3 floor 60
+GATE515 145 salt 0 eco 1 orth 3 floor 60
+GATE515 146 salt 0 eco 1 orth 3 floor 60
+GATE515 147 salt 0 eco 1 orth 3 floor 60
+GATE515 148 salt 0 eco 1 orth 3 floor 60
+GATE515 149 salt 0 eco 1 orth 3 floor 60
+GATE515 150 salt 0 eco 1 orth 3 floor 60
+GATE515 151 salt 0 eco 1 orth 3 floor 60
+GATE515 152 salt 0 eco 1 orth 3 floor 60
+GATE515 153 salt 0 eco 1 orth 3 floor 60
+GATE515 154 salt 0 eco 1 orth 3 floor 60
+GATE515 155 salt 0 eco 1 orth 3 floor 60
+GATE515 156 salt 0 eco 1 orth 3 floor 60
+GATE515 157 salt 0 eco 1 orth 3 floor 60
+GATE515 158 salt 0 eco 1 orth 3 floor 60
+GATE515 159 salt 0 eco 1 orth 3 floor 60
+FS STAT 160 id 3 at (24, 5) need 4 orth 3 ti 14 ammo 2 sen 0 hp 40 covden 0 eco 1 lost 0
+GATE515 160 salt 0 eco 1 orth 3 floor 60
+GATE515 161 salt 0 eco 1 orth 3 floor 60
+GATE515 162 salt 0 eco 1 orth 3 floor 60
+GATE515 163 salt 0 eco 1 orth 3 floor 60
+GATE515 164 salt 0 eco 1 orth 3 floor 60
+GATE515 165 salt 0 eco 1 orth 3 floor 60
+GATE515 166 salt 0 eco 1 orth 3 floor 60
+GATE515 167 salt 0 eco 1 orth 3 floor 60
+GATE515 168 salt 0 eco 1 orth 3 floor 60
+GATE515 169 salt 0 eco 1 orth 3 floor 60
+GATE515 170 salt 0 eco 1 orth 3 floor 60
+GATE515 171 salt 0 eco 1 orth 3 floor 60
+GATE515 172 salt 0 eco 1 orth 3 floor 60
+GATE515 173 salt 0 eco 1 orth 3 floor 60
+GATE515 174 salt 0 eco 1 orth 3 floor 60
+GATE515 175 salt 0 eco 1 orth 3 floor 60
+GATE515 176 salt 0 eco 1 orth 3 floor 60
+GATE515 177 salt 0 eco 1 orth 3 floor 60
+GATE515 178 salt 0 eco 1 orth 3 floor 60
+GATE515 179 salt 0 eco 1 orth 3 floor 60
+FS STAT 180 id 3 at (24, 5) need 4 orth 3 ti 12 ammo 6 sen 0 hp 40 covden 0 eco 1 lost 0
+GATE515 180 salt 0 eco 1 orth 3 floor 60
+GATE515 181 salt 0 eco 1 orth 3 floor 60
+GATE515 182 salt 0 eco 1 orth 3 floor 60
+GATE515 183 salt 0 eco 1 orth 3 floor 60
+GATE515 184 salt 0 eco 1 orth 3 floor 60
+GATE515 185 salt 0 eco 1 orth 3 floor 60
+GATE515 186 salt 0 eco 1 orth 7 floor 60
+GATE515 187 salt 0 eco 1 orth 4 floor 60
+FS DODGE 188 id 3 from (24, 4) to (24, 5) cov 1 -> 0 hit 0 hp 22
+GATE515 189 salt 0 eco 1 orth 4 floor 60
+GATE515 190 salt 0 eco 1 orth 4 floor 60
+GATE515 191 salt 0 eco 1 orth 4 floor 60
+GATE515 192 salt 0 eco 1 orth 4 floor 60
+FS DODGE 193 id 3 from (24, 4) to (24, 5) cov 1 -> 0 hit 0 hp 4
+GATE515 194 salt 0 eco 1 orth 4 floor 60

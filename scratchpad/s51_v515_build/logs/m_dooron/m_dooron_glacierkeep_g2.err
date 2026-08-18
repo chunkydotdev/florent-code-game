@@ -1,0 +1,137 @@
+Update available: 2.3.6 -> 2.3.8. Run: pip install --upgrade fcode
+FS GATE 0 sig (30, 30, (14, 2), (14, 26)) ok 1
+FS GATE 1 sig (30, 30, (14, 2), (14, 26)) ok 1
+FS PHASE 1 id 3 ph 1 d 484 at (14, 4)
+FS HOPBUILD 1 at (14, 4) lch (14, 5) T (16, 28)
+FS GATE 2 sig (30, 30, (14, 2), (14, 26)) ok 1
+FS GATE 2 sig (30, 30, (14, 2), (14, 26)) ok 1
+FS THROW 2 from (15, 4) to (15, 10) T (16, 28) body 3 n 1 dsq 256
+FS HOPBUILD 3 at (15, 10) lch (15, 11) T (16, 28)
+FS GATE 3 sig (30, 30, (14, 2), (14, 26)) ok 1
+FS GATE 4 sig (30, 30, (14, 2), (14, 26)) ok 1
+FS THROW 4 from (16, 10) to (16, 16) T (16, 28) body 3 n 1 dsq 101
+FS HOPBUILD 5 at (16, 16) lch (16, 17) T (16, 28)
+FS GATE 6 sig (30, 30, (14, 2), (14, 26)) ok 1
+FS THROW 6 from (16, 16) to (16, 22) T (16, 28) body 3 n 1 dsq 17
+FS HOPBUILD 8 at (17, 22) lch (17, 23) T (16, 28)
+FS GATE 9 sig (30, 30, (14, 2), (14, 26)) ok 1
+FS THROW 9 from (16, 22) to (16, 28) T (16, 28) body 3 n 1 dsq 2
+FS ARRIVE 10 id 3 body 1 at (16, 28) dsq 2
+FS PHASE 10 id 3 ph 2 d 2 at (16, 28)
+FS SEAL 10 tile (16, 27) n 1
+FS SEAL 11 tile (15, 28) n 2
+FS GATE 12 sig (30, 30, (14, 2), (14, 26)) ok 1
+FS GATE 13 sig (30, 30, (14, 2), (14, 26)) ok 1
+FS GATE 14 sig (30, 30, (14, 2), (14, 26)) ok 1
+FS SEAL 15 tile (16, 26) n 3
+FS SEAL 18 tile (15, 25) n 4
+FS STAT 20 id 3 at (16, 24) need 5 orth 4 ti 64 ammo 0 sen 0 hp 40 covden 0 eco 0 lost 0
+FS SEAL 22 tile (14, 25) n 5
+FS SEAL 24 tile (13, 25) n 6
+FS SEAL 27 tile (13, 25) n 7
+FS SEAL 39 tile (13, 26) n 8
+FS STAT 40 id 3 at (12, 26) need 2 orth 2 ti 13 ammo 20 sen 0 hp 40 covden 0 eco 0 lost 0
+FS SEAL 41 tile (13, 27) n 9
+FS SEAL 44 tile (14, 28) n 10
+FS PHASE 45 id 3 ph 3 d 2 at (13, 28)
+FS SEAL 47 tile (13, 28) n 11
+FS PHASE 50 id 3 ph 2 d 9 at (11, 27)
+FS PHASE 51 id 3 ph 3 d 4 at (12, 27)
+FS PHASE 52 id 3 ph 2 d 9 at (11, 27)
+FS PHASE 53 id 3 ph 3 d 4 at (12, 27)
+FS PHASE 54 id 3 ph 2 d 9 at (11, 27)
+FS PHASE 55 id 3 ph 3 d 4 at (12, 27)
+FS PHASE 57 id 3 ph 2 d 8 at (12, 29)
+FS PHASE 58 id 3 ph 3 d 5 at (12, 28)
+FS PHASE 59 id 3 ph 2 d 8 at (12, 29)
+FS PHASE 60 id 3 ph 3 d 5 at (12, 28)
+FS STAT 60 id 3 at (12, 28) need 1 orth 0 ti 16 ammo 24 sen 0 hp 40 covden 0 eco 0 lost 0
+FS PHASE 61 id 3 ph 2 d 8 at (12, 29)
+FS PHASE 62 id 3 ph 3 d 5 at (12, 28)
+FS SEAL 65 tile (13, 25) n 12
+FS PHASE 70 id 3 ph 2 d 8 at (12, 29)
+FS PHASE 71 id 3 ph 3 d 5 at (12, 28)
+FS PHASE 72 id 3 ph 2 d 8 at (12, 29)
+FS PHASE 73 id 3 ph 3 d 5 at (12, 28)
+FS PHASE 74 id 3 ph 2 d 8 at (12, 29)
+FS PHASE 75 id 3 ph 3 d 5 at (12, 28)
+FS PHASE 76 id 3 ph 2 d 8 at (12, 29)
+FS PHASE 77 id 3 ph 3 d 5 at (12, 28)
+FS PHASE 78 id 3 ph 2 d 8 at (12, 29)
+FS PHASE 79 id 3 ph 3 d 5 at (12, 28)
+FS PHASE 80 id 3 ph 2 d 8 at (12, 29)
+FS STAT 80 id 3 at (12, 29) need 2 orth 2 ti 36 ammo 24 sen 0 hp 40 covden 0 eco 0 lost 0
+FS PHASE 81 id 3 ph 3 d 5 at (12, 28)
+FS PHASE 82 id 3 ph 2 d 8 at (12, 29)
+FS PHASE 83 id 3 ph 3 d 5 at (12, 28)
+FS PHASE 84 id 3 ph 2 d 8 at (12, 29)
+FS PHASE 85 id 3 ph 3 d 5 at (12, 28)
+FS PHASE 86 id 3 ph 2 d 8 at (12, 29)
+FS PHASE 87 id 3 ph 3 d 5 at (12, 28)
+FS PHASE 88 id 3 ph 2 d 8 at (12, 29)
+FS PHASE 89 id 3 ph 3 d 5 at (12, 28)
+FS PHASE 90 id 3 ph 2 d 8 at (12, 29)
+FS PHASE 91 id 3 ph 3 d 5 at (12, 28)
+FS PHASE 92 id 3 ph 2 d 8 at (12, 29)
+FS PHASE 93 id 3 ph 3 d 5 at (12, 28)
+FS SENTINEL 93 at (12, 29) face NORTHEAST tgt (15, 26) score 18 n 1 onring 0 lost 0 gate (0, 1, -1) onsray 0 olddsq -1
+FS RUNG 93 id 3 r 4 hi -
+FS PHASE 94 id 3 ph 4 d 5 at (12, 28)
+FS PHASE 99 id 3 ph 2 d 13 at (11, 24)
+FS STAT 100 id 3 at (11, 23) need 4 orth 4 ti 12 ammo 29 sen 0 hp 40 covden 0 eco 0 lost 0
+FS PHASE 107 id 3 ph 3 d 5 at (13, 24)
+FS SEAL 107 tile (13, 25) n 13
+FS SEAL 114 tile (13, 25) n 14
+FS STAT 120 id 3 at (14, 24) need 0 orth 0 ti 12 ammo 13 sen 0 hp 40 covden 0 eco 0 lost 0
+FS SEAL 123 tile (13, 25) n 15
+FS PHASE 127 id 3 ph 2 d 9 at (15, 23)
+FS STAT 140 id 3 at (16, 23) need 4 orth 3 ti 12 ammo 15 sen 0 hp 40 covden 0 eco 0 lost 0
+FS STAT 160 id 3 at (11, 24) need 5 orth 4 ti 12 ammo 15 sen 0 hp 40 covden 0 eco 0 lost 0
+FS PHASE 180 id 3 ph 3 d 5 at (13, 24)
+FS STAT 180 id 3 at (13, 24) need 1 orth 0 ti 12 ammo 15 sen 0 hp 40 covden 0 eco 0 lost 0
+FS SEAL 185 tile (13, 25) n 16
+FS SEAL 190 tile (13, 25) n 17
+FS SEAL 195 tile (13, 25) n 18
+FS STAT 200 id 3 at (13, 24) need 1 orth 0 ti 12 ammo 13 sen 0 hp 40 covden 0 eco 0 lost 0
+FS SEAL 200 tile (13, 25) n 19
+FS PHASE 204 id 3 ph 2 d 9 at (15, 23)
+FS PHASE 212 id 3 ph 4 d 10 at (11, 25)
+FS SEAL 213 tile (13, 25) n 20
+FS STAT 220 id 3 at (11, 26) need 3 orth 2 ti 14 ammo 1 sen 1 hp 40 covden 0 eco 0 lost 0
+FS SEAL 227 tile (13, 25) n 21
+FS PHASE 230 id 3 ph 2 d 13 at (11, 24)
+FS PHASE 231 id 3 ph 4 d 10 at (11, 25)
+FS SEAL 233 tile (13, 25) n 22
+FS PHASE 236 id 3 ph 2 d 13 at (11, 24)
+FS STAT 240 id 3 at (11, 24) need 5 orth 4 ti 14 ammo 1 sen 0 hp 40 covden 0 eco 0 lost 0
+FS PHASE 248 id 3 ph 3 d 5 at (13, 24)
+FS SEAL 253 tile (13, 25) n 23
+FS SEAL 258 tile (13, 25) n 24
+FS STAT 260 id 3 at (14, 24) need 0 orth 0 ti 12 ammo 7 sen 0 hp 40 covden 0 eco 0 lost 0
+FS SEAL 263 tile (13, 25) n 25
+FS PHASE 267 id 3 ph 2 d 9 at (15, 23)
+FS PHASE 274 id 3 ph 3 d 5 at (13, 24)
+FS SEAL 274 tile (13, 25) n 26
+FS SEAL 279 tile (13, 25) n 27
+FS STAT 280 id 3 at (13, 24) need 0 orth 0 ti 12 ammo 7 sen 0 hp 40 covden 0 eco 0 lost 0
+FS SEAL 286 tile (13, 25) n 28
+FS SEAL 297 tile (13, 25) n 29
+FS STAT 300 id 3 at (15, 24) need 0 orth 0 ti 14 ammo 1 sen 0 hp 40 covden 0 eco 0 lost 0
+FS PHASE 301 id 3 ph 2 d 9 at (15, 23)
+FS PHASE 304 id 3 ph 3 d 5 at (13, 24)
+FS SEAL 304 tile (13, 25) n 30
+FS PHASE 308 id 3 ph 2 d 9 at (15, 23)
+FS PHASE 313 id 3 ph 3 d 5 at (13, 24)
+FS SEAL 313 tile (13, 25) n 31
+FS PHASE 317 id 3 ph 2 d 9 at (15, 23)
+FS PHASE 320 id 3 ph 3 d 5 at (13, 24)
+FS STAT 320 id 3 at (13, 24) need 1 orth 0 ti 14 ammo 1 sen 0 hp 40 covden 0 eco 0 lost 0
+FS SEAL 320 tile (13, 25) n 32
+FS PHASE 324 id 3 ph 2 d 9 at (15, 23)
+FS PHASE 331 id 3 ph 3 d 5 at (13, 24)
+FS SEAL 331 tile (13, 25) n 33
+FS PHASE 335 id 3 ph 2 d 9 at (15, 23)
+FS STAT 340 id 3 at (12, 23) need 4 orth 4 ti 12 ammo 11 sen 0 hp 40 covden 0 eco 0 lost 0
+FS PHASE 344 id 3 ph 3 d 5 at (13, 24)
+FS SEAL 344 tile (13, 25) n 34
+FS PHASE 348 id 3 ph 2 d 9 at (15, 23)

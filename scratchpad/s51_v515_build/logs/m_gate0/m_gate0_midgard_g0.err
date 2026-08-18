@@ -1,0 +1,25 @@
+Update available: 2.3.6 -> 2.3.8. Run: pip install --upgrade fcode
+GATE515 15 salt 0 eco 0 orth 7 floor 0
+GATE515 17 salt 0 eco 1 orth 7 floor 0
+GATE515 18 salt 0 eco 1 orth 7 floor 0
+GATE515 19 salt 0 eco 1 orth 7 floor 0
+GATE515 20 salt 0 eco 1 orth 7 floor 0
+GATE515 21 salt 0 eco 1 orth 7 floor 0
+GATE515 22 salt 0 eco 1 orth 7 floor 0
+GATE515 23 salt 0 eco 1 orth 7 floor 0
+GATE515 24 salt 0 eco 1 orth 7 floor 0
+GATE515 25 salt 0 eco 1 orth 7 floor 0
+GATE515 26 salt 0 eco 1 orth 7 floor 0
+GATE515 27 salt 0 eco 1 orth 7 floor 0
+GATE515 28 salt 0 eco 1 orth 7 floor 0
+GATE515 29 salt 0 eco 1 orth 7 floor 0
+GATE515 30 salt 0 eco 1 orth 7 floor 0
+GATE515 32 salt 0 eco 1 orth 6 floor 0
+GATE515 33 salt 0 eco 1 orth 6 floor 0
+GATE515 35 salt 0 eco 1 orth 6 floor 0
+GATE515 43 salt 0 eco 1 orth 6 floor 0
+GATE515 45 salt 0 eco 1 orth 5 floor 0
+GATE515 49 salt 0 eco 1 orth 5 floor 0
+SENT515 49 at (24, 28) n 1 gate (49, 0, 1, 5) latch (1, 1, 16)
+GATE515 50 salt 0 eco 1 orth 5 floor 0
+GATE515 52 salt 0 eco 1 orth 5 floor 0

@@ -1,0 +1,26 @@
+Update available: 2.3.6 -> 2.3.8. Run: pip install --upgrade fcode
+REACH515 5 tile None ucov 0 unseal 0 want 1
+EVICT515 6 at (3, 12) ucov 0 cov 2 ceil 0 ceiltile None n 1
+REACH515 13 tile (1, 14) ucov 1 unseal 1 want 0
+REACH515 21 tile (1, 14) ucov 1 unseal 1 want 0
+REACH515 33 tile (2, 16) ucov 2 unseal 2 want 0
+REACH515 42 tile (2, 16) ucov 1 unseal 1 want 0
+REACH515 50 tile (2, 16) ucov 1 unseal 1 want 0
+REACH515 58 tile (2, 16) ucov 1 unseal 1 want 0
+REACH515 66 tile (2, 16) ucov 1 unseal 1 want 0
+REACH515 74 tile (2, 16) ucov 1 unseal 1 want 0
+REACH515 82 tile (2, 16) ucov 1 unseal 1 want 0
+REACH515 90 tile (2, 16) ucov 1 unseal 1 want 0
+REACH515 98 tile (2, 16) ucov 1 unseal 1 want 0
+REACH515 106 tile (2, 16) ucov 1 unseal 1 want 0
+REACH515 114 tile (2, 16) ucov 1 unseal 1 want 0
+REACH515 122 tile (2, 16) ucov 1 unseal 1 want 0
+REACH515 130 tile (2, 16) ucov 1 unseal 1 want 0
+REACH515 138 tile (2, 16) ucov 1 unseal 1 want 0
+REACH515 146 tile (2, 16) ucov 1 unseal 1 want 0
+REACH515 154 tile (2, 16) ucov 1 unseal 1 want 0
+REACH515 162 tile (2, 16) ucov 1 unseal 1 want 0
+REACH515 170 tile (2, 16) ucov 1 unseal 1 want 0
+REACH515 178 tile (2, 16) ucov 1 unseal 1 want 0
+REACH515 186 tile (2, 16) ucov 1 unseal 1 want 0
+REACH515 194 tile (2, 16) ucov 1 unseal 1 want 0

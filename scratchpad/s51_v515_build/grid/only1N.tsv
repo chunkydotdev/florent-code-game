@@ -1,0 +1,31 @@
+tag	arm	map	g	seed	ord	ours	winner	cond	turn	tracebacks	ours_mined	opp_mined
+only1N_glacierkeep_g0	only1N	glacierkeep	0	8900	A	OPP	_v488beltbreak2	Core destroyed	901	0	140	1280
+only1N_glacierkeep_g1	only1N	glacierkeep	1	8901	B	US	only1	Core destroyed	397	0	0	0
+only1N_glacierkeep_g2	only1N	glacierkeep	2	8902	A	US	only1	Core destroyed	337	0	780	0
+only1N_glacierkeep_g3	only1N	glacierkeep	3	8903	B	US	only1	Titanium collected (tiebreak)	1000	0	20	0
+only1N_glacierkeep_g4	only1N	glacierkeep	4	8904	A	US	only1	Core destroyed	381	0	200	0
+only1N_glacierkeep_g5	only1N	glacierkeep	5	8905	B	US	only1	Core destroyed	632	0	510	0
+only1N_nordkap_g0	only1N	nordkap	0	8900	A	US	only1	Core destroyed	195	0	1480	470
+only1N_nordkap_g1	only1N	nordkap	1	8901	B	OPP	_v488beltbreak2	Core destroyed	206	0	1270	1800
+only1N_nordkap_g2	only1N	nordkap	2	8902	A	OPP	_v488beltbreak2	Core destroyed	493	0	110	180
+only1N_nordkap_g3	only1N	nordkap	3	8903	B	US	only1	Core destroyed	371	0	1850	130
+only1N_nordkap_g4	only1N	nordkap	4	8904	A	OPP	_v488beltbreak2	Core destroyed	293	0	140	300
+only1N_nordkap_g5	only1N	nordkap	5	8905	B	OPP	_v488beltbreak2	Core destroyed	887	0	1220	2090
+only1N_atoll_g0	only1N	atoll	0	8900	A	US	only1	Core destroyed	163	0	1620	0
+only1N_atoll_g1	only1N	atoll	1	8901	B	US	only1	Core destroyed	143	0	680	330
+only1N_atoll_g2	only1N	atoll	2	8902	A	OPP	_v488beltbreak2	Titanium collected (tiebreak)	1000	0	4970	8580
+only1N_atoll_g3	only1N	atoll	3	8903	B	US	only1	Core destroyed	139	0	660	120
+only1N_atoll_g4	only1N	atoll	4	8904	A	US	only1	Core destroyed	163	0	1620	0
+only1N_atoll_g5	only1N	atoll	5	8905	B	OPP	_v488beltbreak2	Core destroyed	104	0	290	640
+only1N_midgard_g0	only1N	midgard	0	8900	A	OPP	_v488beltbreak2	Core destroyed	296	0	510	2910
+only1N_midgard_g1	only1N	midgard	1	8901	B	OPP	_v488beltbreak2	Core destroyed	156	0	550	1860
+only1N_midgard_g2	only1N	midgard	2	8902	A	OPP	_v488beltbreak2	Core destroyed	520	0	2700	4220
+only1N_midgard_g3	only1N	midgard	3	8903	B	US	only1	Core destroyed	108	0	700	850
+only1N_midgard_g4	only1N	midgard	4	8904	A	OPP	_v488beltbreak2	Core destroyed	164	0	410	1340
+only1N_midgard_g5	only1N	midgard	5	8905	B	OPP	_v488beltbreak2	Core destroyed	506	0	550	3140
+only1N_drakkarfjord_g0	only1N	drakkarfjord	0	8900	A	US	only1	Titanium collected (tiebreak)	1000	0	540	0
+only1N_drakkarfjord_g1	only1N	drakkarfjord	1	8901	B	US	only1	Core destroyed	161	0	700	0
+only1N_drakkarfjord_g2	only1N	drakkarfjord	2	8902	A	OPP	_v488beltbreak2	Core destroyed	211	0	680	1740
+only1N_drakkarfjord_g3	only1N	drakkarfjord	3	8903	B	US	only1	Core destroyed	450	0	1390	240
+only1N_drakkarfjord_g4	only1N	drakkarfjord	4	8904	A	OPP	_v488beltbreak2	Core destroyed	235	0	310	2330
+only1N_drakkarfjord_g5	only1N	drakkarfjord	5	8905	B	US	only1	Core destroyed	123	0	400	0

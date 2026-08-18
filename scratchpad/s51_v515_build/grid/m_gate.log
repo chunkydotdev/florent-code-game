@@ -1,0 +1,15 @@
+m_gate_glacierkeep_g0	m_gate	glacierkeep	0	7400	A	US	m_gate	Core destroyed	321	0	180	0
+m_gate_glacierkeep_g1	m_gate	glacierkeep	1	7401	B	OPP	_v488beltbreak2	Core destroyed	685	0	100	0
+m_gate_glacierkeep_g2	m_gate	glacierkeep	2	7402	A	US	m_gate	Core destroyed	169	0	230	0
+m_gate_nordkap_g0	m_gate	nordkap	0	7400	A	OPP	_v488beltbreak2	Core destroyed	298	0	950	2890
+m_gate_nordkap_g1	m_gate	nordkap	1	7401	B	US	m_gate	Core destroyed	141	0	620	0
+m_gate_nordkap_g2	m_gate	nordkap	2	7402	A	US	m_gate	Core destroyed	461	0	1090	1370
+m_gate_atoll_g0	m_gate	atoll	0	7400	A	US	m_gate	Core destroyed	338	0	3030	2320
+m_gate_atoll_g1	m_gate	atoll	1	7401	B	OPP	_v488beltbreak2	Core destroyed	369	0	380	2360
+m_gate_atoll_g2	m_gate	atoll	2	7402	A	US	m_gate	Core destroyed	215	0	1050	670
+m_gate_midgard_g0	m_gate	midgard	0	7400	A	OPP	_v488beltbreak2	Core destroyed	279	0	810	3320
+m_gate_midgard_g1	m_gate	midgard	1	7401	B	OPP	_v488beltbreak2	Core destroyed	207	0	660	2870
+m_gate_midgard_g2	m_gate	midgard	2	7402	A	OPP	_v488beltbreak2	Core destroyed	279	0	620	3900
+m_gate_drakkarfjord_g0	m_gate	drakkarfjord	0	7400	A	US	m_gate	Titanium collected (tiebreak)	1000	0	10680	2240
+m_gate_drakkarfjord_g1	m_gate	drakkarfjord	1	7401	B	US	m_gate	Core destroyed	143	0	610	0
+m_gate_drakkarfjord_g2	m_gate	drakkarfjord	2	7402	A	OPP	_v488beltbreak2	Core destroyed	243	0	430	1790

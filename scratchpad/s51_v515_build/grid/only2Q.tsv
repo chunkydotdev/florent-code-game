@@ -1,0 +1,31 @@
+tag	arm	map	g	seed	ord	ours	winner	cond	turn	tracebacks	ours_mined	opp_mined
+only2Q_glacierkeep_g0	only2Q	glacierkeep	0	9200	A	US	only2	Core destroyed	329	0	0	0
+only2Q_glacierkeep_g1	only2Q	glacierkeep	1	9201	B	US	only2	Core destroyed	280	0	0	0
+only2Q_glacierkeep_g2	only2Q	glacierkeep	2	9202	A	US	only2	Core destroyed	214	0	470	0
+only2Q_glacierkeep_g3	only2Q	glacierkeep	3	9203	B	US	only2	Core destroyed	173	0	160	0
+only2Q_glacierkeep_g4	only2Q	glacierkeep	4	9204	A	US	only2	Titanium collected (tiebreak)	1000	0	300	0
+only2Q_glacierkeep_g5	only2Q	glacierkeep	5	9205	B	OPP	_v488beltbreak2	Titanium stored (tiebreak)	1000	0	0	0
+only2Q_nordkap_g0	only2Q	nordkap	0	9200	A	OPP	_v488beltbreak2	Core destroyed	372	0	2190	2250
+only2Q_nordkap_g1	only2Q	nordkap	1	9201	B	OPP	_v488beltbreak2	Core destroyed	252	0	0	620
+only2Q_nordkap_g2	only2Q	nordkap	2	9202	A	US	only2	Core destroyed	535	0	1040	600
+only2Q_nordkap_g3	only2Q	nordkap	3	9203	B	OPP	_v488beltbreak2	Core destroyed	217	0	350	2230
+only2Q_nordkap_g4	only2Q	nordkap	4	9204	A	US	only2	Core destroyed	201	0	850	480
+only2Q_nordkap_g5	only2Q	nordkap	5	9205	B	OPP	_v488beltbreak2	Core destroyed	429	0	1900	6950
+only2Q_atoll_g0	only2Q	atoll	0	9200	A	US	only2	Core destroyed	158	0	1090	150
+only2Q_atoll_g1	only2Q	atoll	1	9201	B	OPP	_v488beltbreak2	Core destroyed	156	0	370	760
+only2Q_atoll_g2	only2Q	atoll	2	9202	A	US	only2	Titanium collected (tiebreak)	1000	0	9530	4960
+only2Q_atoll_g3	only2Q	atoll	3	9203	B	US	only2	Core destroyed	824	0	4490	4080
+only2Q_atoll_g4	only2Q	atoll	4	9204	A	US	only2	Core destroyed	213	0	1470	610
+only2Q_atoll_g5	only2Q	atoll	5	9205	B	OPP	_v488beltbreak2	Core destroyed	692	0	1470	1790
+only2Q_midgard_g0	only2Q	midgard	0	9200	A	US	only2	Core destroyed	222	0	1730	720
+only2Q_midgard_g1	only2Q	midgard	1	9201	B	US	only2	Core destroyed	113	0	700	990
+only2Q_midgard_g2	only2Q	midgard	2	9202	A	US	only2	Core destroyed	222	0	1430	430
+only2Q_midgard_g3	only2Q	midgard	3	9203	B	OPP	_v488beltbreak2	Core destroyed	123	0	640	1280
+only2Q_midgard_g4	only2Q	midgard	4	9204	A	OPP	_v488beltbreak2	Core destroyed	259	0	450	2620
+only2Q_midgard_g5	only2Q	midgard	5	9205	B	OPP	_v488beltbreak2	Core destroyed	185	0	560	1710
+only2Q_drakkarfjord_g0	only2Q	drakkarfjord	0	9200	A	US	only2	Core destroyed	676	0	5250	8930
+only2Q_drakkarfjord_g1	only2Q	drakkarfjord	1	9201	B	US	only2	Core destroyed	152	0	530	0
+only2Q_drakkarfjord_g2	only2Q	drakkarfjord	2	9202	A	US	only2	Core destroyed	380	0	3790	430
+only2Q_drakkarfjord_g3	only2Q	drakkarfjord	3	9203	B	US	only2	Core destroyed	213	0	1150	0
+only2Q_drakkarfjord_g4	only2Q	drakkarfjord	4	9204	A	US	only2	Core destroyed	153	0	460	380
+only2Q_drakkarfjord_g5	only2Q	drakkarfjord	5	9205	B	OPP	_v488beltbreak2	Core destroyed	462	0	500	5460

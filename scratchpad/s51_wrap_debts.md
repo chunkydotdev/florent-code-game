@@ -18,3 +18,8 @@ guidance strings still Loki-only while its regex accepts Sleipnir — fix both h
 Non-tool notes for the wrap retro: my channel message transposed the two gsxWins δ labels
 (record unaffected, side-lane caught); D2 atlas correction applied in-session as a record fix
 (commit refs in log).
+4. **(s51 v515 build) mkarm.sh derived-default order hazard** — arm overrides append AFTER
+   doctrine-level derived defaults have evaluated, so any `if FLAG: X = ...` at doctrine top
+   level is invisible to arm overrides. One instance found+fixed (v515 door, moved to read
+   site); every other derived default in doctrine files is unaudited. Fix shape: mkarm
+   prepends? or a lint that refuses derived defaults; plus audit pass.

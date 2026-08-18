@@ -1,0 +1,41 @@
+Update available: 2.3.6 -> 2.3.8. Run: pip install --upgrade fcode
+REACH515 5 tile (2, 16) ucov 1 unseal 1 want 1
+STAND515 5 cand 6 chose (1, 16) inrstat 1 here (5, 12)
+STAND515 6 cand 0 chose (3, 12) inrstat 0 here (4, 12)
+STAND515 8 cand 4 chose (2, 17) inrstat 1 here (3, 12)
+STAND515 9 cand 6 chose (3, 16) inrstat 1 here (4, 12)
+STAND515 12 cand 6 chose (1, 16) inrstat 1 here (4, 13)
+REACH515 13 tile (2, 16) ucov 2 unseal 2 want 1
+STAND515 13 cand 6 chose (1, 16) inrstat 1 here (4, 12)
+STAND515 14 cand 6 chose (1, 16) inrstat 1 here (4, 11)
+STAND515 15 cand 6 chose (1, 16) inrstat 1 here (4, 12)
+STAND515 17 cand 6 chose (1, 16) inrstat 1 here (4, 13)
+STAND515 18 cand 6 chose (1, 16) inrstat 1 here (5, 13)
+STAND515 19 cand 6 chose (1, 16) inrstat 1 here (5, 14)
+REACH515 21 tile (2, 16) ucov 2 unseal 2 want 1
+STAND515 21 cand 6 chose (1, 16) inrstat 1 here (5, 15)
+STAND515 22 cand 6 chose (1, 16) inrstat 1 here (6, 15)
+STAND515 23 cand 6 chose (1, 16) inrstat 1 here (6, 16)
+STAND515 24 cand 6 chose (2, 17) inrstat 1 here (6, 17)
+STAND515 25 cand 6 chose (2, 17) inrstat 1 here (5, 17)
+STAND515 26 cand 6 chose (2, 17) inrstat 1 here (4, 17)
+STAND515 27 cand 6 chose (1, 16) inrstat 1 here (4, 16)
+REACH515 29 tile (2, 16) ucov 2 unseal 2 want 1
+STAND515 29 cand 2 chose (1, 16) inrstat 1 here (2, 16)
+REACH515 39 tile (2, 16) ucov 2 unseal 2 want 1
+REACH515 51 tile (2, 16) ucov 2 unseal 2 want 1
+REACH515 59 tile (2, 16) ucov 2 unseal 2 want 1
+REACH515 67 tile (2, 16) ucov 2 unseal 2 want 1
+REACH515 75 tile (2, 16) ucov 2 unseal 2 want 1
+REACH515 84 tile (2, 16) ucov 2 unseal 2 want 1
+EVICT515 86 at (0, 15) ucov 1 cov 5 ceil 2 ceiltile (2, 16) n 1
+STAND515 87 cand 0 chose (0, 13) inrstat 0 here (0, 14)
+REACH515 156 tile (2, 13) ucov 1 unseal 2 want 0
+REACH515 535 tile (2, 13) ucov 1 unseal 2 want 0
+REACH515 543 tile (2, 13) ucov 1 unseal 2 want 0
+REACH515 551 tile (2, 13) ucov 1 unseal 2 want 0
+REACH515 559 tile (2, 13) ucov 1 unseal 2 want 1
+STAND515 559 cand 6 chose (2, 12) inrstat 1 here (6, 16)
+STAND515 561 cand 6 chose (2, 12) inrstat 1 here (5, 17)
+STAND515 562 cand 6 chose (2, 12) inrstat 1 here (4, 17)
+REACH515 604 tile (2, 13) ucov 1 unseal 2 want 0

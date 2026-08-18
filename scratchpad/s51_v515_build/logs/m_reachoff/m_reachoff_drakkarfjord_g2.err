@@ -1,0 +1,22 @@
+Update available: 2.3.6 -> 2.3.8. Run: pip install --upgrade fcode
+REACH515 13 tile None ucov 0 unseal 0 want 1
+REACH515 22 tile None ucov 0 unseal 0 want 1
+REACH515 30 tile None ucov 0 unseal 0 want 1
+REACH515 38 tile (25, 5) ucov 1 unseal 1 want 1
+REACH515 46 tile (25, 5) ucov 1 unseal 1 want 1
+REACH515 55 tile (25, 5) ucov 1 unseal 1 want 1
+REACH515 63 tile (25, 5) ucov 1 unseal 1 want 1
+REACH515 74 tile (25, 5) ucov 1 unseal 1 want 1
+REACH515 83 tile None ucov 0 unseal 0 want 1
+REACH515 91 tile None ucov 0 unseal 0 want 1
+REACH515 100 tile None ucov 0 unseal 0 want 1
+REACH515 108 tile None ucov 0 unseal 0 want 1
+REACH515 116 tile None ucov 0 unseal 0 want 1
+REACH515 124 tile None ucov 0 unseal 0 want 1
+REACH515 133 tile None ucov 0 unseal 0 want 1
+REACH515 141 tile None ucov 0 unseal 0 want 1
+REACH515 149 tile None ucov 0 unseal 0 want 1
+REACH515 157 tile None ucov 0 unseal 0 want 1
+REACH515 165 tile None ucov 0 unseal 0 want 1
+REACH515 173 tile None ucov 0 unseal 0 want 1
+REACH515 181 tile None ucov 0 unseal 0 want 1

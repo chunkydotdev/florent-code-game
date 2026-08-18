@@ -1,0 +1,271 @@
+Update available: 2.3.6 -> 2.3.8. Run: pip install --upgrade fcode
+FS GATE 0 sig (30, 30, (14, 2), (14, 26)) ok 1
+FS GATE 1 sig (30, 30, (14, 2), (14, 26)) ok 1
+FS PHASE 1 id 3 ph 1 d 484 at (14, 4)
+FS HOPBUILD 1 at (14, 4) lch (14, 5) T (16, 28)
+FS GATE 2 sig (30, 30, (14, 2), (14, 26)) ok 1
+FS GATE 2 sig (30, 30, (14, 2), (14, 26)) ok 1
+FS THROW 2 from (15, 4) to (15, 10) T (16, 28) body 3 n 1 dsq 256
+FS HOPBUILD 3 at (15, 10) lch (15, 11) T (16, 28)
+FS GATE 3 sig (30, 30, (14, 2), (14, 26)) ok 1
+FS GATE 4 sig (30, 30, (14, 2), (14, 26)) ok 1
+FS THROW 4 from (16, 10) to (16, 16) T (16, 28) body 3 n 1 dsq 101
+FS HOPBUILD 5 at (16, 16) lch (16, 17) T (16, 28)
+FS GATE 6 sig (30, 30, (14, 2), (14, 26)) ok 1
+FS THROW 6 from (16, 16) to (16, 22) T (16, 28) body 3 n 1 dsq 17
+FS HOPBUILD 7 at (16, 22) lch (16, 23) T (16, 28)
+FS GATE 8 sig (30, 30, (14, 2), (14, 26)) ok 1
+FS THROW 8 from (16, 22) to (16, 28) T (16, 28) body 3 n 1 dsq 2
+FS ARRIVE 9 id 3 body 1 at (16, 28) dsq 2
+FS PHASE 9 id 3 ph 2 d 2 at (16, 28)
+FS SEAL 9 tile (16, 27) n 1
+FS SEAL 10 tile (15, 28) n 2
+FS DODGE 11 id 3 from (16, 28) to (17, 28) cov 1 -> 0 hit 0 hp 40
+FS GATE 11 sig (30, 30, (14, 2), (14, 26)) ok 1
+FS GATE 12 sig (30, 30, (14, 2), (14, 26)) ok 1
+FS GATE 13 sig (30, 30, (14, 2), (14, 26)) ok 1
+FS SEAL 14 tile (16, 26) n 3
+FS SEAL 17 tile (15, 25) n 4
+FS DODGE 18 id 3 from (16, 25) to (17, 25) cov 1 -> 0 hit 0 hp 40
+FS STAT 20 id 3 at (16, 25) need 5 orth 4 ti 64 ammo 0 sen 0 hp 40 covden 0 eco 0 lost 0
+FS DODGE 20 id 3 from (16, 25) to (17, 25) cov 1 -> 0 hit 0 hp 40
+FS SEAL 22 tile (16, 26) n 5
+FS DODGE 26 id 3 from (16, 24) to (15, 24) cov 1 -> 0 hit 0 hp 40
+FS SEAL 28 tile (14, 25) n 6
+FS CLEAR 35 tile (13, 25) peck 1
+FS RUNG 35 id 3 r 3 hi -
+FS CLEAR 36 tile (13, 25) peck 2
+FS RUNG 36 id 3 r 3 hi -
+FS STAT 40 id 3 at (13, 24) need 4 orth 3 ti 12 ammo 24 sen 0 hp 40 covden 0 eco 0 lost 0
+FS CLEAR 51 tile (13, 25) peck 1
+FS RUNG 51 id 3 r 3 hi -
+FS CLEAR 52 tile (13, 25) peck 2
+FS RUNG 52 id 3 r 3 hi -
+FS CLEAR 53 tile (13, 25) peck 3
+FS RUNG 53 id 3 r 3 hi -
+FS CLEAR 54 tile (13, 25) peck 4
+FS RUNG 54 id 3 r 3 hi -
+FS CLEAR 55 tile (13, 25) peck 5
+FS RUNG 55 id 3 r 3 hi -
+FS CLEAR 56 tile (13, 25) peck 6
+FS RUNG 56 id 3 r 3 hi -
+FS PHASE 57 id 3 ph 3 d 5 at (13, 24)
+FS STAT 60 id 3 at (13, 24) need 3 orth 0 ti 29 ammo 24 sen 0 hp 40 covden 0 eco 0 lost 0
+FS CLEAR 63 tile (13, 25) peck 1
+FS RUNG 63 id 3 r 3 hi -
+FS CLEAR 64 tile (13, 25) peck 2
+FS RUNG 64 id 3 r 3 hi -
+FS CLEAR 65 tile (13, 25) peck 3
+FS RUNG 65 id 3 r 3 hi -
+FS CLEAR 67 tile (13, 25) peck 4
+FS RUNG 67 id 3 r 3 hi -
+FS CLEAR 68 tile (13, 25) peck 5
+FS RUNG 68 id 3 r 3 hi -
+FS CLEAR 69 tile (13, 25) peck 6
+FS RUNG 69 id 3 r 3 hi -
+FS CLEAR 70 tile (13, 25) peck 7
+FS RUNG 70 id 3 r 3 hi -
+FS CLEAR 71 tile (13, 25) peck 8
+FS RUNG 71 id 3 r 3 hi -
+FS DODGE 75 id 3 from (16, 24) to (15, 24) cov 1 -> 0 hit 0 hp 40
+FS CLEAR 78 tile (13, 25) peck 1
+FS RUNG 78 id 3 r 3 hi -
+FS CLEAR 79 tile (13, 25) peck 2
+FS RUNG 79 id 3 r 3 hi -
+FS STAT 80 id 3 at (13, 24) need 2 orth 0 ti 73 ammo 24 sen 0 hp 40 covden 0 eco 0 lost 0
+FS CLEAR 80 tile (13, 25) peck 3
+FS RUNG 80 id 3 r 3 hi -
+FS CLEAR 81 tile (13, 25) peck 4
+FS RUNG 81 id 3 r 3 hi -
+FS CLEARED 82 tile (13, 25) n 1
+FS SEAL 82 tile (13, 25) n 7
+FS SEALCLR 82 tile (13, 25) lag 0
+FS DODGE 86 id 3 from (16, 24) to (15, 24) cov 1 -> 0 hit 0 hp 40
+FS SENTINEL 87 at (14, 24) face SOUTH tgt (14, 27) score 9 n 1 onring 0 lost 0 gate (0, 1, -1) onsray 0 olddsq -1
+FS RUNG 87 id 3 r 4 hi -
+FS PHASE 88 id 3 ph 4 d 4 at (15, 24)
+FS DODGE 89 id 3 from (16, 24) to (15, 24) cov 1 -> 0 hit 0 hp 40
+FS DODGE 91 id 3 from (16, 24) to (15, 24) cov 1 -> 0 hit 0 hp 40
+FS DODGE 93 id 3 from (16, 24) to (15, 24) cov 1 -> 0 hit 0 hp 40
+FS DODGE 95 id 3 from (16, 24) to (15, 24) cov 1 -> 0 hit 0 hp 40
+FS DODGE 97 id 3 from (16, 24) to (15, 24) cov 1 -> 0 hit 0 hp 22
+FS DODGE 99 id 3 from (16, 24) to (15, 24) cov 1 -> 0 hit 0 hp 22
+FS STAT 100 id 3 at (15, 24) need 1 orth 0 ti 12 ammo 15 sen 1 hp 22 covden 0 eco 0 lost 0
+FS DODGE 101 id 3 from (16, 24) to (15, 24) cov 1 -> 0 hit 0 hp 4
+FS DODGE 103 id 3 from (16, 24) to (15, 24) cov 1 -> 0 hit 0 hp 4
+FS DOORSEEN 683 id 19 at (17, 4) rank 0
+FS DOORSEEN 685 id 16 at (17, 4) rank 0
+FS DOORSEEN 686 id 8 at (17, 4) rank 0
+FS DOOR 688 id 19 at (17, 4) n 1
+FS DOORSEEN 689 id 5 at (17, 4) rank 0
+FS DOOR 689 id 19 at (17, 4) n 2
+FS DOOR 690 id 16 at (17, 4) n 1
+FS DOOR 690 id 19 at (17, 4) n 3
+FS DOOR 693 id 8 at (17, 4) n 1
+FS DOOR 693 id 16 at (17, 4) n 2
+FS DOOR 694 id 8 at (17, 4) n 2
+FS DOOR 694 id 16 at (17, 4) n 3
+FS DOOR 695 id 8 at (17, 4) n 3
+FS DOOR 696 id 5 at (17, 4) n 1
+FS DOOR 696 id 8 at (17, 4) n 4
+FS DOOR 697 id 5 at (17, 4) n 2
+FS DOOR 697 id 8 at (17, 4) n 5
+FS DOOR 697 id 16 at (17, 4) n 4
+FS DOOR 701 id 19 at (17, 4) n 4
+FS DOOR 702 id 5 at (17, 4) n 3
+FS DOOR 702 id 19 at (17, 4) n 5
+FS DOOR 703 id 5 at (17, 4) n 4
+FS DOOR 703 id 19 at (17, 4) n 6
+FS DOOR 704 id 5 at (17, 4) n 5
+FS DOOR 704 id 16 at (17, 4) n 5
+FS DOOR 704 id 19 at (17, 4) n 7
+FS DOOR 705 id 5 at (17, 4) n 6
+FS DOOR 705 id 16 at (17, 4) n 6
+FS DOOR 709 id 19 at (17, 4) n 8
+FS DOOR 710 id 5 at (17, 4) n 7
+FS DOOR 710 id 16 at (17, 4) n 7
+FS DOOR 710 id 19 at (17, 4) n 9
+FS DOOR 711 id 5 at (17, 4) n 8
+FS DOOR 712 id 5 at (17, 4) n 9
+FS DOOR 713 id 5 at (17, 4) n 10
+FS DOOR 713 id 16 at (17, 4) n 8
+FS DOOR 713 id 19 at (17, 4) n 10
+FS DOOR 714 id 5 at (17, 4) n 11
+FS DOOR 717 id 5 at (17, 4) n 12
+FS DOOR 717 id 19 at (17, 4) n 11
+FS DOOR 718 id 5 at (17, 4) n 13
+FS DOOR 718 id 16 at (17, 4) n 9
+FS DOOR 718 id 19 at (17, 4) n 12
+FS DOOR 721 id 5 at (17, 4) n 14
+FS DOOR 721 id 16 at (17, 4) n 10
+FS DOOR 721 id 19 at (17, 4) n 13
+FS DOOR 722 id 5 at (17, 4) n 15
+FS DOOR 722 id 16 at (17, 4) n 11
+FS DOOR 724 id 8 at (17, 4) n 6
+FS DOOR 725 id 5 at (17, 4) n 16
+FS DOOR 725 id 8 at (17, 4) n 7
+FS DOOR 725 id 16 at (17, 4) n 12
+FS DOOR 726 id 5 at (17, 4) n 17
+FS DOOR 729 id 5 at (17, 4) n 18
+FS DOORSEEN 737 id 5 at (17, 4) rank 0
+FS DOOR 742 id 5 at (17, 4) n 19
+FS DOOR 743 id 5 at (17, 4) n 20
+FS DOORSEEN 743 id 16 at (17, 4) rank 0
+FS DOOR 744 id 5 at (17, 4) n 21
+FS DOOR 745 id 5 at (17, 4) n 22
+FS DOOR 746 id 5 at (17, 4) n 23
+FS DOOR 747 id 5 at (17, 4) n 24
+FS DOOR 748 id 5 at (17, 4) n 25
+FS DOOR 749 id 5 at (17, 4) n 26
+FS DOOR 750 id 5 at (17, 4) n 27
+FS DOOR 751 id 5 at (17, 4) n 28
+FS DOOR 752 id 5 at (17, 4) n 29
+FS DOOR 752 id 16 at (17, 4) n 13
+FS DOOR 753 id 5 at (17, 4) n 30
+FS DOOR 753 id 16 at (17, 4) n 14
+FS DOOR 758 id 5 at (17, 4) n 31
+FS DOOR 758 id 16 at (17, 4) n 15
+FS DOOR 759 id 5 at (17, 4) n 32
+FS DOOR 759 id 16 at (17, 4) n 16
+FS DOOR 760 id 5 at (17, 4) n 33
+FS DOOR 760 id 16 at (17, 4) n 17
+FS DOOR 761 id 5 at (17, 4) n 34
+FS DOOR 761 id 16 at (17, 4) n 18
+FS DOOR 766 id 5 at (17, 4) n 35
+FS DOOR 766 id 16 at (17, 4) n 19
+FS DOOR 767 id 5 at (17, 4) n 36
+FS DOOR 767 id 16 at (17, 4) n 20
+FS DOOR 768 id 5 at (17, 4) n 37
+FS DOOR 768 id 16 at (17, 4) n 21
+FS DOOR 769 id 5 at (17, 4) n 38
+FS DOOR 769 id 16 at (17, 4) n 22
+FS DOOR 774 id 5 at (17, 4) n 39
+FS DOOR 774 id 16 at (17, 4) n 23
+FS DOOR 775 id 5 at (17, 4) n 40
+FS DOOR 775 id 16 at (17, 4) n 24
+FS DOOR 776 id 5 at (17, 4) n 41
+FS DOOR 776 id 16 at (17, 4) n 25
+FS DOOR 777 id 5 at (17, 4) n 42
+FS DOOR 777 id 16 at (17, 4) n 26
+FS DOOR 782 id 16 at (17, 4) n 27
+FS DOOR 783 id 16 at (17, 4) n 28
+FS DOORSEEN 785 id 5 at (17, 4) rank 0
+FS DOOR 790 id 5 at (17, 4) n 43
+FS DOOR 791 id 5 at (17, 4) n 44
+FS DOORSEEN 791 id 16 at (17, 4) rank 0
+FS DOOR 792 id 5 at (17, 4) n 45
+FS DOOR 793 id 5 at (17, 4) n 46
+FS DOOR 794 id 5 at (17, 4) n 47
+FS DOOR 795 id 5 at (17, 4) n 48
+FS DOOR 796 id 5 at (17, 4) n 49
+FS DOOR 797 id 5 at (17, 4) n 50
+FS DOOR 798 id 5 at (17, 4) n 51
+FS DOOR 799 id 5 at (17, 4) n 52
+FS DOOR 800 id 5 at (17, 4) n 53
+FS DOOR 800 id 16 at (17, 4) n 29
+FS DOOR 801 id 5 at (17, 4) n 54
+FS DOOR 801 id 16 at (17, 4) n 30
+FS DOOR 806 id 5 at (17, 4) n 55
+FS DOOR 806 id 16 at (17, 4) n 31
+FS DOOR 807 id 5 at (17, 4) n 56
+FS DOOR 807 id 16 at (17, 4) n 32
+FS DOOR 808 id 5 at (17, 4) n 57
+FS DOOR 808 id 16 at (17, 4) n 33
+FS DOOR 809 id 5 at (17, 4) n 58
+FS DOOR 809 id 16 at (17, 4) n 34
+FS DOOR 814 id 5 at (17, 4) n 59
+FS DOOR 814 id 16 at (17, 4) n 35
+FS DOOR 815 id 5 at (17, 4) n 60
+FS DOOR 815 id 16 at (17, 4) n 36
+FS DOOR 816 id 5 at (17, 4) n 61
+FS DOOR 816 id 16 at (17, 4) n 37
+FS DOOR 817 id 5 at (17, 4) n 62
+FS DOOR 817 id 16 at (17, 4) n 38
+FS DOOR 822 id 5 at (17, 4) n 63
+FS DOOR 822 id 16 at (17, 4) n 39
+FS DOOR 823 id 5 at (17, 4) n 64
+FS DOOR 823 id 16 at (17, 4) n 40
+FS DOOR 824 id 5 at (17, 4) n 65
+FS DOOR 824 id 16 at (17, 4) n 41
+FS DOOR 825 id 5 at (17, 4) n 66
+FS DOOR 825 id 16 at (17, 4) n 42
+FS DOOR 830 id 16 at (17, 4) n 43
+FS DOOR 831 id 16 at (17, 4) n 44
+FS DOORSEEN 833 id 5 at (17, 4) rank 0
+FS DOOR 838 id 5 at (17, 4) n 67
+FS DOOR 839 id 5 at (17, 4) n 68
+FS DOORSEEN 839 id 16 at (17, 4) rank 0
+FS DOOR 840 id 5 at (17, 4) n 69
+FS DOOR 841 id 5 at (17, 4) n 70
+FS DOOR 842 id 5 at (17, 4) n 71
+FS DOOR 843 id 5 at (17, 4) n 72
+FS DOOR 844 id 5 at (17, 4) n 73
+FS DOOR 845 id 5 at (17, 4) n 74
+FS DOOR 846 id 5 at (17, 4) n 75
+FS DOOR 847 id 5 at (17, 4) n 76
+FS DOOR 848 id 5 at (17, 4) n 77
+FS DOOR 848 id 16 at (17, 4) n 45
+FS DOOR 849 id 5 at (17, 4) n 78
+FS DOOR 849 id 16 at (17, 4) n 46
+FS DOOR 854 id 5 at (17, 4) n 79
+FS DOOR 854 id 16 at (17, 4) n 47
+FS DOOR 855 id 5 at (17, 4) n 80
+FS DOOR 855 id 16 at (17, 4) n 48
+FS DOOR 856 id 5 at (17, 4) n 81
+FS DOOR 856 id 16 at (17, 4) n 49
+FS DOOR 857 id 5 at (17, 4) n 82
+FS DOOR 857 id 16 at (17, 4) n 50
+FS DOOR 862 id 5 at (17, 4) n 83
+FS DOOR 862 id 16 at (17, 4) n 51
+FS DOOR 863 id 5 at (17, 4) n 84
+FS DOOR 863 id 16 at (17, 4) n 52
+FS DOOR 864 id 5 at (17, 4) n 85
+FS DOOR 864 id 16 at (17, 4) n 53
+FS DOOR 865 id 5 at (17, 4) n 86
+FS DOOR 865 id 16 at (17, 4) n 54
+FS DOOR 870 id 5 at (17, 4) n 87
+FS DOOR 870 id 16 at (17, 4) n 55
+FS DOOR 871 id 5 at (17, 4) n 88
+FS DOOR 871 id 16 at (17, 4) n 56
+FS DOOR 872 id 5 at (17, 4) n 89
+FS DOOR 872 id 16 at (17, 4) n 57

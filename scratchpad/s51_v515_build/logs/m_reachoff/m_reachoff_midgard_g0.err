@@ -1,0 +1,7 @@
+Update available: 2.3.6 -> 2.3.8. Run: pip install --upgrade fcode
+REACH515 14 tile (25, 26) ucov 1 unseal 2 want 1
+REACH515 22 tile (25, 26) ucov 1 unseal 2 want 1
+EVICT515 26 at (25, 28) ucov 1 cov 0 ceil 1 ceiltile (25, 26) n 1
+REACH515 31 tile (26, 25) ucov 2 unseal 2 want 0
+REACH515 39 tile (25, 26) ucov 2 unseal 3 want 1
+REACH515 49 tile (25, 26) ucov 2 unseal 3 want 1

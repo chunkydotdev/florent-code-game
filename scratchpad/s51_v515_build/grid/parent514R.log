@@ -1,0 +1,30 @@
+parent514R_glacierkeep_g0	parent514R	glacierkeep	0	9300	A	OPP	_v488beltbreak2	Core destroyed	769	0	170	0
+parent514R_glacierkeep_g1	parent514R	glacierkeep	1	9301	B	US	parent514	Titanium collected (tiebreak)	1000	0	280	0
+parent514R_glacierkeep_g2	parent514R	glacierkeep	2	9302	A	OPP	_v488beltbreak2	Core destroyed	757	0	410	0
+parent514R_glacierkeep_g3	parent514R	glacierkeep	3	9303	B	US	parent514	Core destroyed	249	0	0	0
+parent514R_glacierkeep_g4	parent514R	glacierkeep	4	9304	A	US	parent514	Core destroyed	473	0	1120	0
+parent514R_glacierkeep_g5	parent514R	glacierkeep	5	9305	B	US	parent514	Core destroyed	249	0	0	0
+parent514R_nordkap_g0	parent514R	nordkap	0	9300	A	OPP	_v488beltbreak2	Core destroyed	355	0	220	1670
+parent514R_nordkap_g1	parent514R	nordkap	1	9301	B	OPP	_v488beltbreak2	Core destroyed	530	0	1530	4930
+parent514R_nordkap_g2	parent514R	nordkap	2	9302	A	US	parent514	Core destroyed	403	0	980	110
+parent514R_nordkap_g3	parent514R	nordkap	3	9303	B	US	parent514	Core destroyed	355	0	2670	560
+parent514R_nordkap_g4	parent514R	nordkap	4	9304	A	OPP	_v488beltbreak2	Core destroyed	343	0	110	1230
+parent514R_nordkap_g5	parent514R	nordkap	5	9305	B	OPP	_v488beltbreak2	Core destroyed	427	0	70	1890
+parent514R_atoll_g0	parent514R	atoll	0	9300	A	US	parent514	Core destroyed	879	0	5080	2310
+parent514R_atoll_g1	parent514R	atoll	1	9301	B	OPP	_v488beltbreak2	Core destroyed	181	0	350	870
+parent514R_atoll_g2	parent514R	atoll	2	9302	A	OPP	_v488beltbreak2	Core destroyed	452	0	2220	1940
+parent514R_atoll_g3	parent514R	atoll	3	9303	B	OPP	_v488beltbreak2	Core destroyed	462	0	2290	2290
+parent514R_atoll_g4	parent514R	atoll	4	9304	A	OPP	_v488beltbreak2	Titanium collected (tiebreak)	1000	0	1450	2480
+parent514R_atoll_g5	parent514R	atoll	5	9305	B	OPP	_v488beltbreak2	Core destroyed	643	0	3180	3910
+parent514R_midgard_g0	parent514R	midgard	0	9300	A	OPP	_v488beltbreak2	Core destroyed	207	0	460	1770
+parent514R_midgard_g1	parent514R	midgard	1	9301	B	OPP	_v488beltbreak2	Core destroyed	114	0	560	1390
+parent514R_midgard_g2	parent514R	midgard	2	9302	A	OPP	_v488beltbreak2	Titanium collected (tiebreak)	1000	0	9440	12100
+parent514R_midgard_g3	parent514R	midgard	3	9303	B	OPP	_v488beltbreak2	Core destroyed	260	0	500	3890
+parent514R_midgard_g4	parent514R	midgard	4	9304	A	OPP	_v488beltbreak2	Core destroyed	349	0	580	2900
+parent514R_midgard_g5	parent514R	midgard	5	9305	B	OPP	_v488beltbreak2	Core destroyed	299	0	600	3560
+parent514R_drakkarfjord_g0	parent514R	drakkarfjord	0	9300	A	US	parent514	Core destroyed	393	0	4430	310
+parent514R_drakkarfjord_g1	parent514R	drakkarfjord	1	9301	B	US	parent514	Titanium collected (tiebreak)	1000	0	530	0
+parent514R_drakkarfjord_g2	parent514R	drakkarfjord	2	9302	A	OPP	_v488beltbreak2	Core destroyed	206	0	280	1490
+parent514R_drakkarfjord_g3	parent514R	drakkarfjord	3	9303	B	US	parent514	Core destroyed	123	0	400	0
+parent514R_drakkarfjord_g4	parent514R	drakkarfjord	4	9304	A	US	parent514	Titanium collected (tiebreak)	1000	0	4740	2430
+parent514R_drakkarfjord_g5	parent514R	drakkarfjord	5	9305	B	US	parent514	Core destroyed	143	0	610	0

@@ -1,0 +1,275 @@
+--- bots/_v514ferrycrew/siege.py	2026-08-18 06:45:58
++++ bots/_v515ecosalt/siege.py	2026-08-18 07:19:12
+@@ -2066,6 +2066,52 @@
+         veto = ()
+         if LOKI_FS_CREW and FS_PRESTAND_AVOID:
+             veto = set(self.fs_hit_tiles.keys()) | set(self.fs_sray.keys())
++        # ⭐⭐ v515 CHANGE 3 -- THE EVICTOR'S REACH, AS A WALKER PREFERENCE.
++        # `_fs_try_evict_launcher` can only score the <=4 tiles orthogonally
++        # adjacent to where we are standing, so the max-coverage launcher tile
++        # is unreachable unless the WALKER goes and stands beside it (v514
++        # report surprise 4: 1 of a 4-seat ceiling, never 2+).  `rstat` is the
++        # set of stations from which that tile is buildable.
++        # ⛔ PREFERENCE, NOT VETO, and the reason is written six lines above
++        # this one: v513 change G's blacklist had to fall back to the incumbent
++        # preference because an absolute veto leaves the body with nowhere to
++        # stand, and the v510 "contested near face keeps `needed` non-empty for
++        # ever" stall is the same shape.  This term only REORDERS a candidate
++        # set it does not change, and it sits BELOW the turret-ray avoidance
++        # (dying is worse than siting badly) and ABOVE raw distance.
++        # ⛔ THE PROBE ARM COMPUTES THE CEILING AND DOES NOT USE IT.  A
++        # reach-OFF mutant has to report the same ceiling number as the fired
++        # arm or the two ucov distributions are not comparable, so the scan
++        # runs under FS_V515_REACH_PROBE too and only `rstat` is withheld.
++        rstat = ()
++        if LOKI_FS_V515 and (FS_V515_REACH or FS_V515_REACH_PROBE):
++            try:
++                rt, _ruc, _rwant = self._fs_reach_tile(ct, E,
++                                                       ct.get_current_round())
++            except Exception:
++                rt, _rwant = None, False
++            # ⛔ `_rwant` IS WHAT KEEPS THE PROBE INERT.  The scan runs in the
++            # probe arm so the two arms report the same ceiling, but the
++            # PREFERENCE is applied only when an evictor is genuinely wanted --
++            # otherwise the probe arm would walk differently from the fired
++            # config it exists to be compared against.
++            if rt is not None and FS_V515_REACH and _rwant:
++                # ⛔ AND IT EXPIRES.  The one stall this preference can cause
++                # that the parent's key cannot is a station the BFS never
++                # reaches (barriered off, squatted, on the far side of the
++                # collar): the walker would keep re-selecting it for ever
++                # because nothing about the tile changes.  After
++                # FS_REACH_PATIENCE rounds on the SAME tile with no evictor
++                # bought, the term drops and the body reverts to the parent's
++                # nearest-first sweep.  The clock restarts if the tile moves.
++                key = (rt.x, rt.y, getattr(self, "fs_evictors", 0))
++                if getattr(self, "fs515_reach_key", None) != key:
++                    self.fs515_reach_key = key
++                    self.fs515_reach_since = ct.get_current_round()
++                if ct.get_current_round() - self.fs515_reach_since \
++                        <= FS_REACH_PATIENCE:
++                    rstat = set((rt.x + dx, rt.y + dy)
++                                for dx, dy in CARD_DELTAS)
+         best, best_k = None, None
+         fb, fb_k = None, None
+         for rank, t in enumerate(open_first):
+@@ -2077,7 +2123,14 @@
+                 if dsq_core(st, E) == 0:
+                     continue                 # core footprint: unstandable
+                 if sx == p.x and sy == p.y and (sx, sy) not in axis \
+-                        and (sx, sy) not in veto:
++                        and (sx, sy) not in veto \
++                        and not (rstat and (sx, sy) not in rstat):
++                    # ⛔ THE EARLY RETURN IS WHAT MADE THIS A REACH BUG.  "You
++                    # are already in place" fires the moment the body is beside
++                    # ANY needed tile, which is why the launcher tile was never
++                    # under its hand; while a reach station exists and we are
++                    # not on one, fall through and let the sort decide (`p`
++                    # still scores here, at distance 0).
+                     return p                 # already in place
+                 try:
+                     if ct.is_in_vision(st) and not ct.is_tile_passable(st):
+@@ -2085,6 +2138,7 @@
+                 except Exception:
+                     pass
+                 k = (1 if (sx, sy) in axis else 0,
++                     0 if (sx, sy) in rstat else 1,
+                      abs(sx - p.x) + abs(sy - p.y), rank)
+                 if (sx, sy) in veto:
+                     if fb_k is None or k < fb_k:
+@@ -2274,6 +2328,20 @@
+         except Exception:
+             return False
+         self.fs_evictors += 1
++        if FS_REACH_LOG:
++            # v515 change 3's instrument: the ucov the evictor was ACTUALLY
++            # built at, beside the ceiling the ring scan says was available.
++            try:
++                _rt = getattr(self, "fs515_reach", (None, 0, -1, False))
++                print("EVICT515", ct.get_current_round(),
++                      "at", (best.x, best.y), "ucov", best_k[0],
++                      "cov", best_k[1] if LOKI_FS_V514 and FS_V514_DENYSITE
++                      else -1,
++                      "ceil", _rt[1], "ceiltile",
++                      (_rt[0].x, _rt[0].y) if _rt[0] else None,
++                      "n", self.fs_evictors, file=sys.stderr)
++            except Exception:
++                pass
+         if LOKI_FS_V514 and FS_V514_DENYSITE:
+             self._fs_log("EVICTOR", ct.get_current_round(),
+                          "at", (best.x, best.y),
+@@ -2380,6 +2448,104 @@
+             except Exception:
+                 continue
+             out.add((s.x, s.y))
++        return out
++
++    def _fs_reach_tile(self, ct, E, rnd):
++        """⭐⭐ v515 CHANGE 3 -- THE TILE THE EVICTOR *SHOULD* BE ON.
++
++        The parent's siting objective (`ucov`, change C) is correct and was
++        being maximised over the wrong SET: `_fs_try_evict_launcher` only ever
++        scores the <=4 tiles orthogonally adjacent to wherever the raider is
++        standing, and the raider stands wherever the barrier sweep put it.
++        Measured consequence (v514 report surprise 4): evictors at ucov 1 in 3
++        of 9 and never 2 or more, against a ceiling of 4 that the closure
++        autopsy measured as reachable on all five grid maps.
++
++        This is the same objective evaluated over EVERY legal in-ring tile, so
++        the walker can be told where to stand.  Returns (Position, ucov) or
++        (None, 0).
++
++        ⛔ LEGALITY IS APPROXIMATE HERE AND THAT IS DELIBERATE.
++        `can_build_launcher` requires orthogonal adjacency to the asking body,
++        so it is False for every tile this scan is about and cannot be used.
++        The scan uses the parts of the predicate that are position-only
++        (in-bounds, not a wall, no building standing there, not the core
++        footprint) and lets `_fs_try_evict_launcher` make the real call once we
++        are beside the tile.  A tile that turns out to be unbuildable costs a
++        preference, not a build.
++
++        ⛔ AND IT IS ONLY COMPUTED WHEN AN EVICTOR IS ACTUALLY WANTED -- slot
++        free AND something unbarrierable left to cover.  Otherwise the term is
++        identically zero and the walker is the parent's, byte for byte.
++        """
++        cached = getattr(self, "fs515_reach", None)
++        if cached is not None and rnd - cached[2] < FS_REACH_RECHECK:
++            return cached[0], cached[1], cached[3]
++        ladder = LOKI_FS_SEAL_ONLY and LOKI_FS_RING_LADDER
++        want = True
++        try:
++            if self._fs_live_evictors(ct, E) >= (FS_LADDER_EVICT_MAX if ladder
++                                                 else FS_EVICT_MAX):
++                want = False
++        except Exception:
++            want = False
++        unseal = ()
++        if want or FS_V515_REACH_PROBE:
++            try:
++                unseal = self._fs_unsealable(ct, E) - self._fs_evict_cover(ct, E)
++            except Exception:
++                unseal = ()
++        if not unseal or not (want or FS_V515_REACH_PROBE):
++            self.fs515_reach = (None, 0, rnd, want)
++            return None, 0, want
++        best, best_k = None, None
++        for t in self._fs_ring_tiles(E):
++            bx, by = t
++            cov = sum(1 for (sx, sy) in unseal
++                      if (bx - sx) ** 2 + (by - sy) ** 2 <= 2)
++            if cov <= 0:
++                continue
++            # ties broken OUTWARD, matching `_fs_try_evict_launcher`'s own
++            # `-dsq_core` term, so the two agree on which of two equal-coverage
++            # tiles is "the" tile.
++            k = (cov, -dsq_core(Position(bx, by), E))
++            if best_k is None or k > best_k:
++                best, best_k = Position(bx, by), k
++        ucov = best_k[0] if best_k else 0
++        self.fs515_reach = (best, ucov, rnd, want)
++        if FS_REACH_LOG:
++            try:
++                print("REACH515", rnd, "tile",
++                      (best.x, best.y) if best else None,
++                      "ucov", ucov, "unseal", len(unseal),
++                      "want", 1 if want else 0, file=sys.stderr)
++            except Exception:
++                pass
++        return best, ucov, want
++
++    def _fs_ring_tiles(self, E):
++        """Every in-bounds non-wall tile inside FS_RING_DSQ of the enemy core,
++        excluding the footprint.  Cached for the match: the map and the enemy
++        anchor are both constants, so this is a per-match scan of ~20 tiles."""
++        cached = getattr(self, "fs515_ringtiles", None)
++        if cached is not None:
++            return cached
++        out = []
++        r = 4                                # FS_RING_DSQ = 8 -> |dx|,|dy| <= 2
++        for dx in range(-r, r + 1):
++            for dy in range(-r, r + 1):
++                bx, by = E.x + dx, E.y + dy
++                if not (0 <= bx < self.mw and 0 <= by < self.mh):
++                    continue
++                bp = Position(bx, by)
++                d = dsq_core(bp, E)
++                if d == 0 or d > FS_RING_DSQ:
++                    continue
++                if self._fs_wall(bp):
++                    continue
++                out.append((bx, by))
++        out = tuple(out)
++        self.fs515_ringtiles = out
+         return out
+ 
+     # --- F. the kill --------------------------------------------------------
+@@ -2513,7 +2679,50 @@
+         live = self._fs_live_sentinels(ct, self.enemy) if self.enemy else 0
+         if live >= FS_SENTINEL_MAX:
+             return False
+-        if LOKI_FS_V514 and FS_V514_ECOGATE:
++        if LOKI_FS_V515 and FS_V515_GATE_OR:
++            # ⭐⭐ v515 CHANGE 2 -- THE GATE IS A DISJUNCTION.
++            #   salt-complete  OR  (conn2 AND round >= FS_SENT_RND_FLOOR)
++            # WHY, and both halves come out of the parent's build report rather
++            # than out of a preference:
++            #   * v514's gate (conn2 alone) was measured SATISFIED AT r7-24 on
++            #     4 of 5 maps -- "in practice change A REMOVES the turret gate
++            #     rather than re-timing it" (report finding 1) -- and the
++            #     configuration scored 23/60 against a 37/60 control.
++            #   * v513's gate (salt alone) never fires at all on atoll and
++            #     midgard: the collar closed 0 of 12 there because their
++            #     delivery belt sits on the heal seats and a barrier can never
++            #     take an occupied tile (closure autopsy).  Zero sentinels on
++            #     exactly the two maps we lose.
++            # The disjunction keeps v513's timing wherever the collar closes
++            # (the salt disjunct fires first, and it is the timing the
++            # parent-with-door-off config scored 53/90 on) and gives the belted
++            # maps a turret at the floor instead of never.
++            # ⛔ THE FLOOR IS ON THE ECO DISJUNCT ONLY.  A closed collar is
++            # already the expensive fact; making it wait would re-introduce the
++            # v510 lock the salt grace exists to avoid.
++            try:
++                rnd = ct.get_current_round()
++            except Exception:
++                return False
++            salt = self._fs_salt_ok(ct, rnd, orth_open)
++            eco = (self._fs_eco_gate_ok(ct) and rnd >= FS_SENT_RND_FLOOR)
++            # WHICH DISJUNCT WAS OPEN, carried to the purchase site so the
++            # purchase-vs-latch table is read off ONE instrument in both arms.
++            self.fs515_gate = (rnd, 1 if salt else 0, 1 if eco else 0,
++                               orth_open)
++            if FS_GATE_LOG:
++                # ⛔ NOT `_fs_log`: that is gated on FS_LOG, which turns on the
++                # whole siege trace.  A mechanism arm must be able to read ONE
++                # instrument without changing the volume of everything else.
++                try:
++                    print("GATE515", rnd, "salt", 1 if salt else 0,
++                          "eco", 1 if eco else 0, "orth", orth_open,
++                          "floor", FS_SENT_RND_FLOOR, file=sys.stderr)
++                except Exception:
++                    pass
++            if not (salt or eco):
++                return False
++        elif LOKI_FS_V514 and FS_V514_ECOGATE:
+             # ⭐⭐ v514 CHANGE A -- MAGNUS RULING 2, SUPERSEDING v513's CHANGE A.
+             # "We can allow the first sentry as soon as 2 harvestors are built
+             # and connected, otherwise we cannot sustain them."  The v513 gate
+@@ -2714,6 +2923,17 @@
+             self.fs_my_sents.append([bp.x, bp.y, 0])
+         self._fs_draw_dot(ct, bp, 255, 255, 0)
+         self._fs_draw_line(ct, bp, best_ray, 255, 255, 0)
++        if FS_GATE_LOG:
++            # v515 change 2's purchase instrument.  Independent of FS_LOG so a
++            # gate arm reads the purchase table without the whole siege trace.
++            try:
++                _g = getattr(self, "fs515_gate", None)
++                print("SENT515", ct.get_current_round(),
++                      "at", (bp.x, bp.y), "n", self.fs_sentinels,
++                      "gate", _g, "latch", self._fs_eco_latch(ct),
++                      file=sys.stderr)
++            except Exception:
++                pass
+         self._fs_log("SENTINEL", ct.get_current_round(), "at", (bp.x, bp.y),
+                      "face", facing.name, "tgt", (best_ray.x, best_ray.y),
+                      "score", best_k, "n", self.fs_sentinels,

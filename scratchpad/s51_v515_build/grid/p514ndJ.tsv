@@ -1,0 +1,31 @@
+tag	arm	map	g	seed	ord	ours	winner	cond	turn	tracebacks	ours_mined	opp_mined
+p514ndJ_glacierkeep_g0	p514ndJ	glacierkeep	0	8500	A	US	p514nd	Core destroyed	617	0	1480	0
+p514ndJ_glacierkeep_g1	p514ndJ	glacierkeep	1	8501	B	US	p514nd	Core destroyed	864	0	1910	0
+p514ndJ_glacierkeep_g2	p514ndJ	glacierkeep	2	8502	A	US	p514nd	Titanium collected (tiebreak)	1000	0	160	0
+p514ndJ_glacierkeep_g3	p514ndJ	glacierkeep	3	8503	B	US	p514nd	Titanium collected (tiebreak)	1000	0	20	0
+p514ndJ_glacierkeep_g4	p514ndJ	glacierkeep	4	8504	A	US	p514nd	Core destroyed	217	0	140	0
+p514ndJ_glacierkeep_g5	p514ndJ	glacierkeep	5	8505	B	US	p514nd	Core destroyed	397	0	0	0
+p514ndJ_nordkap_g0	p514ndJ	nordkap	0	8500	A	US	p514nd	Core destroyed	353	0	2540	1620
+p514ndJ_nordkap_g1	p514ndJ	nordkap	1	8501	B	US	p514nd	Core destroyed	221	0	520	70
+p514ndJ_nordkap_g2	p514ndJ	nordkap	2	8502	A	US	p514nd	Core destroyed	372	0	2080	110
+p514ndJ_nordkap_g3	p514ndJ	nordkap	3	8503	B	US	p514nd	Core destroyed	563	0	1380	260
+p514ndJ_nordkap_g4	p514ndJ	nordkap	4	8504	A	US	p514nd	Core destroyed	328	0	2280	310
+p514ndJ_nordkap_g5	p514ndJ	nordkap	5	8505	B	US	p514nd	Core destroyed	622	0	2650	670
+p514ndJ_atoll_g0	p514ndJ	atoll	0	8500	A	US	p514nd	Titanium collected (tiebreak)	1000	0	6980	2120
+p514ndJ_atoll_g1	p514ndJ	atoll	1	8501	B	OPP	_v488beltbreak2	Core destroyed	390	0	530	1910
+p514ndJ_atoll_g2	p514ndJ	atoll	2	8502	A	OPP	_v488beltbreak2	Core destroyed	152	0	540	1200
+p514ndJ_atoll_g3	p514ndJ	atoll	3	8503	B	US	p514nd	Core destroyed	622	0	3300	820
+p514ndJ_atoll_g4	p514ndJ	atoll	4	8504	A	OPP	_v488beltbreak2	Core destroyed	554	0	340	1570
+p514ndJ_atoll_g5	p514ndJ	atoll	5	8505	B	OPP	_v488beltbreak2	Core destroyed	278	0	430	1360
+p514ndJ_midgard_g0	p514ndJ	midgard	0	8500	A	OPP	_v488beltbreak2	Core destroyed	243	0	570	1700
+p514ndJ_midgard_g1	p514ndJ	midgard	1	8501	B	OPP	_v488beltbreak2	Core destroyed	207	0	660	2810
+p514ndJ_midgard_g2	p514ndJ	midgard	2	8502	A	OPP	_v488beltbreak2	Core destroyed	386	0	710	3860
+p514ndJ_midgard_g3	p514ndJ	midgard	3	8503	B	OPP	_v488beltbreak2	Core destroyed	144	0	820	1490
+p514ndJ_midgard_g4	p514ndJ	midgard	4	8504	A	OPP	_v488beltbreak2	Core destroyed	115	0	540	1100
+p514ndJ_midgard_g5	p514ndJ	midgard	5	8505	B	OPP	_v488beltbreak2	Core destroyed	170	0	510	1810
+p514ndJ_drakkarfjord_g0	p514ndJ	drakkarfjord	0	8500	A	OPP	_v488beltbreak2	Core destroyed	318	0	300	2180
+p514ndJ_drakkarfjord_g1	p514ndJ	drakkarfjord	1	8501	B	US	p514nd	Titanium collected (tiebreak)	1000	0	13710	13660
+p514ndJ_drakkarfjord_g2	p514ndJ	drakkarfjord	2	8502	A	US	p514nd	Core destroyed	152	0	650	0
+p514ndJ_drakkarfjord_g3	p514ndJ	drakkarfjord	3	8503	B	OPP	_v488beltbreak2	Core destroyed	263	0	340	1760
+p514ndJ_drakkarfjord_g4	p514ndJ	drakkarfjord	4	8504	A	US	p514nd	Titanium collected (tiebreak)	1000	0	13620	13510
+p514ndJ_drakkarfjord_g5	p514ndJ	drakkarfjord	5	8505	B	OPP	_v488beltbreak2	Core destroyed	714	0	360	1380

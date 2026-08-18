@@ -1,0 +1,15 @@
+m_reach_glacierkeep_g0	m_reach	glacierkeep	0	7400	A	US	m_reach	Core destroyed	158	0	330	0
+m_reach_glacierkeep_g1	m_reach	glacierkeep	1	7401	B	US	m_reach	Core destroyed	193	0	0	0
+m_reach_glacierkeep_g2	m_reach	glacierkeep	2	7402	A	US	m_reach	Core destroyed	125	0	160	0
+m_reach_nordkap_g0	m_reach	nordkap	0	7400	A	US	m_reach	Core destroyed	235	0	640	20
+m_reach_nordkap_g1	m_reach	nordkap	1	7401	B	US	m_reach	Core destroyed	149	0	450	0
+m_reach_nordkap_g2	m_reach	nordkap	2	7402	A	US	m_reach	Core destroyed	476	0	1170	0
+m_reach_atoll_g0	m_reach	atoll	0	7400	A	OPP	_v488beltbreak2	Core destroyed	439	0	1730	3880
+m_reach_atoll_g1	m_reach	atoll	1	7401	B	US	m_reach	Titanium collected (tiebreak)	1000	0	6010	4980
+m_reach_atoll_g2	m_reach	atoll	2	7402	A	OPP	_v488beltbreak2	Core destroyed	129	0	600	600
+m_reach_midgard_g0	m_reach	midgard	0	7400	A	OPP	_v488beltbreak2	Core destroyed	237	0	620	2430
+m_reach_midgard_g1	m_reach	midgard	1	7401	B	OPP	_v488beltbreak2	Core destroyed	193	0	580	1260
+m_reach_midgard_g2	m_reach	midgard	2	7402	A	OPP	_v488beltbreak2	Core destroyed	266	0	940	2580
+m_reach_drakkarfjord_g0	m_reach	drakkarfjord	0	7400	A	OPP	_v488beltbreak2	Core destroyed	503	0	600	1620
+m_reach_drakkarfjord_g1	m_reach	drakkarfjord	1	7401	B	US	m_reach	Core destroyed	670	0	8770	8620
+m_reach_drakkarfjord_g2	m_reach	drakkarfjord	2	7402	A	US	m_reach	Core destroyed	242	0	1060	450

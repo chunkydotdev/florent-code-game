@@ -1,0 +1,15 @@
+m_door_glacierkeep_g0	m_door	glacierkeep	0	7400	A	US	m_door	Core destroyed	213	0	150	0
+m_door_glacierkeep_g1	m_door	glacierkeep	1	7401	B	US	m_door	Titanium collected (tiebreak)	1000	0	170	0
+m_door_glacierkeep_g2	m_door	glacierkeep	2	7402	A	US	m_door	Core destroyed	165	0	170	0
+m_door_nordkap_g0	m_door	nordkap	0	7400	A	OPP	_v488beltbreak2	Core destroyed	304	0	190	2820
+m_door_nordkap_g1	m_door	nordkap	1	7401	B	OPP	_v488beltbreak2	Core destroyed	331	0	290	3510
+m_door_nordkap_g2	m_door	nordkap	2	7402	A	US	m_door	Core destroyed	228	0	810	210
+m_door_atoll_g0	m_door	atoll	0	7400	A	OPP	_v488beltbreak2	Core destroyed	196	0	950	2030
+m_door_atoll_g1	m_door	atoll	1	7401	B	OPP	_v488beltbreak2	Harvesters (tiebreak)	1000	0	4960	4960
+m_door_atoll_g2	m_door	atoll	2	7402	A	OPP	_v488beltbreak2	Core destroyed	596	0	2670	2940
+m_door_midgard_g0	m_door	midgard	0	7400	A	OPP	_v488beltbreak2	Titanium collected (tiebreak)	1000	0	5070	9320
+m_door_midgard_g1	m_door	midgard	1	7401	B	OPP	_v488beltbreak2	Core destroyed	197	0	690	2270
+m_door_midgard_g2	m_door	midgard	2	7402	A	US	m_door	Core destroyed	178	0	940	580
+m_door_drakkarfjord_g0	m_door	drakkarfjord	0	7400	A	US	m_door	Core destroyed	419	0	4010	280
+m_door_drakkarfjord_g1	m_door	drakkarfjord	1	7401	B	US	m_door	Core destroyed	298	0	2230	0
+m_door_drakkarfjord_g2	m_door	drakkarfjord	2	7402	A	US	m_door	Core destroyed	242	0	1060	450

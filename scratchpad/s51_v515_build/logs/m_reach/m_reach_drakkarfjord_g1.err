@@ -1,0 +1,26 @@
+Update available: 2.3.6 -> 2.3.8. Run: pip install --upgrade fcode
+REACH515 12 tile None ucov 0 unseal 0 want 1
+REACH515 22 tile None ucov 0 unseal 0 want 1
+REACH515 30 tile None ucov 0 unseal 0 want 1
+REACH515 39 tile (2, 23) ucov 1 unseal 1 want 1
+STAND515 39 cand 6 chose (3, 23) inrstat 1 here (5, 26)
+STAND515 41 cand 6 chose (3, 23) inrstat 1 here (5, 25)
+REACH515 125 tile (2, 23) ucov 2 unseal 2 want 1
+REACH515 134 tile (2, 23) ucov 2 unseal 2 want 1
+STAND515 134 cand 6 chose (1, 24) inrstat 0 here (2, 23)
+STAND515 137 cand 6 chose (2, 22) inrstat 1 here (2, 23)
+REACH515 146 tile (2, 23) ucov 2 unseal 2 want 1
+STAND515 146 cand 2 chose (3, 22) inrstat 0 here (2, 22)
+STAND515 148 cand 2 chose (2, 23) inrstat 0 here (3, 21)
+REACH515 163 tile (2, 23) ucov 1 unseal 1 want 1
+REACH515 217 tile (3, 23) ucov 3 unseal 3 want 1
+STAND515 217 cand 0 chose (2, 22) inrstat 0 here (5, 23)
+STAND515 219 cand 0 chose (2, 22) inrstat 0 here (5, 23)
+STAND515 222 cand 0 chose (5, 26) inrstat 0 here (5, 23)
+REACH515 225 tile (3, 23) ucov 3 unseal 3 want 1
+STAND515 225 cand 0 chose (5, 26) inrstat 0 here (5, 25)
+EVICT515 232 at (5, 25) ucov 1 cov 26 ceil 3 ceiltile (3, 23) n 1
+REACH515 234 tile (2, 23) ucov 2 unseal 2 want 0
+REACH515 262 tile (2, 23) ucov 2 unseal 2 want 0
+REACH515 270 tile (2, 23) ucov 2 unseal 2 want 0
+REACH515 374 tile (2, 23) ucov 2 unseal 2 want 0

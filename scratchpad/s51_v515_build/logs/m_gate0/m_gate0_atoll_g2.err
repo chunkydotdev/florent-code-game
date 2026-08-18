@@ -1,0 +1,5 @@
+Update available: 2.3.6 -> 2.3.8. Run: pip install --upgrade fcode
+GATE515 5 salt 0 eco 0 orth 8 floor 0
+GATE515 6 salt 0 eco 0 orth 8 floor 0
+GATE515 9 salt 0 eco 1 orth 7 floor 0
+GATE515 13 salt 0 eco 1 orth 6 floor 0

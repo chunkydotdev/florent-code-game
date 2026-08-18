@@ -1,0 +1,453 @@
+Update available: 2.3.6 -> 2.3.8. Run: pip install --upgrade fcode
+FS GATE 0 sig (20, 26, (9, 6), (9, 18)) ok 1
+FS GATE 1 sig (20, 26, (9, 6), (9, 18)) ok 1
+FS PHASE 1 id 4 ph 1 d 100 at (9, 17)
+FS HOPBUILD 1 at (9, 17) lch (9, 16) T (11, 5)
+FS GATE 2 sig (20, 26, (9, 6), (9, 18)) ok 1
+FS GATE 2 sig (20, 26, (9, 6), (9, 18)) ok 1
+FS THROW 2 from (9, 17) to (10, 11) T (11, 5) body 4 n 1 dsq 16
+FS HOPBUILD 3 at (10, 11) lch (10, 10) T (11, 5)
+FS GATE 3 sig (20, 26, (9, 6), (9, 18)) ok 1
+FS GATE 4 sig (20, 26, (9, 6), (9, 18)) ok 1
+FS THROW 4 from (11, 11) to (11, 5) T (11, 5) body 4 n 1 dsq 2
+FS ARRIVE 5 id 4 body 1 at (11, 5) dsq 2
+FS PHASE 5 id 4 ph 2 d 2 at (11, 5)
+FS SEAL 5 tile (10, 5) n 1
+FS SEAL 6 tile (11, 6) n 2
+GATE515 7 salt 0 eco 0 orth 6 floor 60
+FS GATE 7 sig (20, 26, (9, 6), (9, 18)) ok 1
+FS DODGE 8 id 4 from (11, 4) to (10, 4) cov 1 -> 0 hit 0 hp 22
+FS GATE 8 sig (20, 26, (9, 6), (9, 18)) ok 1
+GATE515 9 salt 0 eco 0 orth 6 floor 60
+FS GATE 9 sig (20, 26, (9, 6), (9, 18)) ok 1
+FS SEAL 10 tile (9, 5) n 3
+GATE515 11 salt 0 eco 0 orth 5 floor 60
+FS SEAL 12 tile (8, 5) n 4
+GATE515 13 salt 0 eco 0 orth 6 floor 60
+GATE515 14 salt 0 eco 0 orth 6 floor 60
+GATE515 15 salt 0 eco 0 orth 6 floor 60
+FS SEAL 16 tile (8, 6) n 5
+GATE515 17 salt 0 eco 0 orth 5 floor 60
+FS SEAL 18 tile (8, 7) n 6
+GATE515 19 salt 0 eco 0 orth 4 floor 60
+FS STAT 20 id 4 at (7, 8) need 4 orth 4 ti 33 ammo 24 sen 0 hp 22 covden 0 eco 1 lost 0
+GATE515 20 salt 0 eco 0 orth 4 floor 60
+FS SEAL 21 tile (9, 8) n 7
+GATE515 22 salt 0 eco 0 orth 2 floor 60
+GATE515 23 salt 0 eco 0 orth 2 floor 60
+GATE515 24 salt 0 eco 0 orth 1 floor 60
+FS SEAL 25 tile (10, 8) n 8
+FS PHASE 26 id 4 ph 3 d 4 at (10, 9)
+GATE515 26 salt 1 eco 0 orth 0 floor 60
+GATE515 27 salt 1 eco 0 orth 0 floor 60
+FS CLEAR 28 tile (11, 8) peck 1
+FS RUNG 28 id 4 r 3 hi -
+FS CLEAR 29 tile (11, 8) peck 2
+FS RUNG 29 id 4 r 3 hi -
+FS CLEAR 30 tile (11, 8) peck 3
+FS RUNG 30 id 4 r 3 hi -
+FS CLEAR 31 tile (11, 8) peck 4
+FS RUNG 31 id 4 r 3 hi -
+FS CLEAR 32 tile (11, 8) peck 5
+FS RUNG 32 id 4 r 3 hi -
+GATE515 33 salt 1 eco 0 orth 0 floor 60
+GATE515 34 salt 1 eco 0 orth 0 floor 60
+GATE515 35 salt 1 eco 0 orth 0 floor 60
+GATE515 36 salt 1 eco 0 orth 0 floor 60
+GATE515 37 salt 1 eco 0 orth 0 floor 60
+GATE515 38 salt 1 eco 0 orth 0 floor 60
+GATE515 39 salt 1 eco 0 orth 0 floor 60
+FS STAT 40 id 4 at (11, 9) need 3 orth 0 ti 16 ammo 20 sen 0 hp 34 covden 0 eco 1 lost 0
+GATE515 40 salt 1 eco 0 orth 0 floor 60
+GATE515 41 salt 1 eco 0 orth 0 floor 60
+GATE515 42 salt 1 eco 0 orth 0 floor 60
+GATE515 43 salt 1 eco 0 orth 0 floor 60
+GATE515 44 salt 1 eco 0 orth 0 floor 60
+GATE515 45 salt 1 eco 0 orth 0 floor 60
+GATE515 46 salt 1 eco 0 orth 0 floor 60
+GATE515 47 salt 1 eco 0 orth 0 floor 60
+GATE515 48 salt 1 eco 0 orth 0 floor 60
+GATE515 49 salt 1 eco 0 orth 0 floor 60
+GATE515 50 salt 1 eco 0 orth 0 floor 60
+GATE515 51 salt 1 eco 0 orth 0 floor 60
+FS CLEAR 52 tile (11, 8) peck 1
+FS RUNG 52 id 4 r 3 hi -
+GATE515 53 salt 1 eco 0 orth 0 floor 60
+GATE515 54 salt 1 eco 0 orth 0 floor 60
+GATE515 55 salt 1 eco 0 orth 0 floor 60
+FS CLEAR 56 tile (11, 8) peck 1
+FS RUNG 56 id 4 r 3 hi -
+GATE515 57 salt 1 eco 0 orth 0 floor 60
+GATE515 58 salt 1 eco 0 orth 0 floor 60
+GATE515 59 salt 1 eco 0 orth 0 floor 60
+FS STAT 60 id 4 at (11, 9) need 2 orth 0 ti 28 ammo 24 sen 0 hp 34 covden 0 eco 1 lost 0
+FS CLEAR 60 tile (11, 8) peck 1
+FS RUNG 60 id 4 r 3 hi -
+GATE515 61 salt 1 eco 1 orth 0 floor 60
+GATE515 62 salt 1 eco 1 orth 0 floor 60
+GATE515 63 salt 1 eco 1 orth 0 floor 60
+GATE515 64 salt 1 eco 1 orth 0 floor 60
+FS PHASE 65 id 4 ph 2 d 8 at (12, 9)
+GATE515 65 salt 1 eco 1 orth 2 floor 60
+FS PHASE 66 id 4 ph 3 d 5 at (12, 8)
+GATE515 66 salt 1 eco 1 orth 0 floor 60
+GATE515 67 salt 1 eco 1 orth 0 floor 60
+GATE515 68 salt 1 eco 1 orth 0 floor 60
+GATE515 69 salt 1 eco 1 orth 0 floor 60
+GATE515 70 salt 1 eco 1 orth 0 floor 60
+GATE515 71 salt 1 eco 1 orth 0 floor 60
+GATE515 72 salt 1 eco 1 orth 0 floor 60
+FS PHASE 73 id 4 ph 2 d 4 at (12, 7)
+GATE515 73 salt 1 eco 1 orth 1 floor 60
+FS SEAL 74 tile (11, 6) n 9
+FS PHASE 75 id 4 ph 3 d 4 at (12, 6)
+GATE515 75 salt 1 eco 1 orth 0 floor 60
+GATE515 76 salt 1 eco 1 orth 0 floor 60
+GATE515 77 salt 1 eco 1 orth 0 floor 60
+FS PHASE 78 id 4 ph 2 d 8 at (12, 9)
+GATE515 78 salt 1 eco 1 orth 2 floor 60
+FS PHASE 79 id 4 ph 3 d 5 at (12, 8)
+GATE515 79 salt 1 eco 1 orth 0 floor 60
+FS PHASE 80 id 4 ph 2 d 8 at (12, 9)
+FS STAT 80 id 4 at (12, 9) need 3 orth 2 ti 38 ammo 24 sen 0 hp 34 covden 0 eco 1 lost 0
+GATE515 80 salt 1 eco 1 orth 2 floor 60
+FS PHASE 81 id 4 ph 3 d 5 at (12, 8)
+GATE515 81 salt 1 eco 1 orth 0 floor 60
+FS PHASE 82 id 4 ph 2 d 8 at (12, 9)
+GATE515 82 salt 1 eco 1 orth 2 floor 60
+GATE515 83 salt 1 eco 1 orth 4 floor 60
+GATE515 84 salt 1 eco 1 orth 2 floor 60
+GATE515 85 salt 1 eco 1 orth 4 floor 60
+GATE515 86 salt 1 eco 1 orth 2 floor 60
+FS PHASE 87 id 4 ph 3 d 5 at (12, 8)
+GATE515 87 salt 1 eco 1 orth 0 floor 60
+FS PHASE 88 id 4 ph 2 d 8 at (12, 9)
+GATE515 88 salt 1 eco 1 orth 2 floor 60
+FS PHASE 89 id 4 ph 3 d 5 at (12, 8)
+GATE515 89 salt 1 eco 1 orth 0 floor 60
+FS PHASE 90 id 4 ph 2 d 8 at (12, 9)
+GATE515 90 salt 1 eco 1 orth 2 floor 60
+FS PHASE 91 id 4 ph 3 d 5 at (12, 8)
+GATE515 91 salt 1 eco 1 orth 0 floor 60
+FS PHASE 92 id 4 ph 2 d 8 at (12, 9)
+GATE515 92 salt 1 eco 1 orth 2 floor 60
+FS PHASE 93 id 4 ph 3 d 5 at (12, 8)
+GATE515 93 salt 1 eco 1 orth 0 floor 60
+FS PHASE 94 id 4 ph 2 d 8 at (12, 9)
+GATE515 94 salt 1 eco 1 orth 2 floor 60
+FS PHASE 95 id 4 ph 3 d 5 at (12, 8)
+GATE515 95 salt 1 eco 1 orth 0 floor 60
+FS PHASE 96 id 4 ph 2 d 8 at (12, 9)
+GATE515 96 salt 1 eco 1 orth 2 floor 60
+FS PHASE 97 id 4 ph 3 d 5 at (12, 8)
+GATE515 97 salt 1 eco 1 orth 0 floor 60
+FS PHASE 98 id 4 ph 2 d 8 at (12, 9)
+GATE515 98 salt 1 eco 1 orth 2 floor 60
+FS PHASE 99 id 4 ph 3 d 5 at (12, 8)
+GATE515 99 salt 1 eco 1 orth 0 floor 60
+FS PHASE 100 id 4 ph 2 d 8 at (12, 9)
+FS STAT 100 id 4 at (12, 9) need 3 orth 2 ti 25 ammo 24 sen 0 hp 34 covden 0 eco 1 lost 0
+GATE515 100 salt 1 eco 1 orth 2 floor 60
+FS PHASE 101 id 4 ph 3 d 5 at (12, 8)
+GATE515 101 salt 1 eco 1 orth 0 floor 60
+FS PHASE 102 id 4 ph 2 d 8 at (12, 9)
+GATE515 102 salt 1 eco 1 orth 2 floor 60
+FS PHASE 103 id 4 ph 3 d 5 at (12, 8)
+GATE515 103 salt 1 eco 1 orth 0 floor 60
+FS PHASE 104 id 4 ph 2 d 8 at (12, 9)
+GATE515 104 salt 1 eco 1 orth 2 floor 60
+FS PHASE 105 id 4 ph 3 d 5 at (12, 8)
+GATE515 105 salt 1 eco 1 orth 0 floor 60
+FS PHASE 106 id 4 ph 2 d 8 at (12, 9)
+GATE515 106 salt 1 eco 1 orth 2 floor 60
+FS PHASE 107 id 4 ph 3 d 5 at (12, 8)
+GATE515 107 salt 1 eco 1 orth 0 floor 60
+FS PHASE 108 id 4 ph 2 d 8 at (12, 9)
+GATE515 108 salt 1 eco 1 orth 2 floor 60
+GATE515 109 salt 1 eco 1 orth 4 floor 60
+GATE515 110 salt 1 eco 1 orth 2 floor 60
+GATE515 111 salt 1 eco 1 orth 4 floor 60
+GATE515 112 salt 1 eco 1 orth 2 floor 60
+GATE515 113 salt 1 eco 1 orth 4 floor 60
+GATE515 114 salt 1 eco 1 orth 2 floor 60
+FS PHASE 115 id 4 ph 3 d 5 at (12, 8)
+GATE515 115 salt 1 eco 1 orth 0 floor 60
+FS PHASE 116 id 4 ph 2 d 8 at (12, 9)
+GATE515 116 salt 1 eco 1 orth 2 floor 60
+FS PHASE 117 id 4 ph 3 d 5 at (12, 8)
+GATE515 117 salt 1 eco 1 orth 0 floor 60
+FS PHASE 118 id 4 ph 2 d 8 at (12, 9)
+GATE515 118 salt 1 eco 1 orth 2 floor 60
+FS PHASE 119 id 4 ph 3 d 5 at (12, 8)
+GATE515 119 salt 1 eco 1 orth 0 floor 60
+FS PHASE 120 id 4 ph 2 d 8 at (12, 9)
+FS STAT 120 id 4 at (12, 9) need 3 orth 2 ti 41 ammo 20 sen 0 hp 34 covden 0 eco 1 lost 0
+GATE515 120 salt 1 eco 1 orth 2 floor 60
+FS PHASE 121 id 4 ph 3 d 5 at (12, 8)
+GATE515 121 salt 1 eco 1 orth 0 floor 60
+FS PHASE 122 id 4 ph 2 d 8 at (12, 9)
+GATE515 122 salt 1 eco 1 orth 2 floor 60
+FS PHASE 123 id 4 ph 3 d 5 at (12, 8)
+GATE515 123 salt 1 eco 1 orth 0 floor 60
+FS PHASE 124 id 4 ph 2 d 8 at (12, 9)
+GATE515 124 salt 1 eco 1 orth 2 floor 60
+FS PHASE 125 id 4 ph 3 d 5 at (12, 8)
+GATE515 125 salt 1 eco 1 orth 0 floor 60
+FS PHASE 126 id 4 ph 2 d 8 at (12, 9)
+GATE515 126 salt 1 eco 1 orth 2 floor 60
+FS PHASE 127 id 4 ph 3 d 5 at (12, 8)
+GATE515 127 salt 1 eco 1 orth 0 floor 60
+FS PHASE 128 id 4 ph 2 d 8 at (12, 9)
+GATE515 128 salt 1 eco 1 orth 2 floor 60
+FS PHASE 129 id 4 ph 3 d 5 at (12, 8)
+GATE515 129 salt 1 eco 1 orth 0 floor 60
+FS PHASE 130 id 4 ph 2 d 8 at (12, 9)
+GATE515 130 salt 1 eco 1 orth 2 floor 60
+FS PHASE 131 id 4 ph 3 d 5 at (12, 8)
+GATE515 131 salt 1 eco 1 orth 0 floor 60
+FS PHASE 132 id 4 ph 2 d 8 at (12, 9)
+GATE515 132 salt 1 eco 1 orth 2 floor 60
+FS PHASE 133 id 4 ph 3 d 5 at (12, 8)
+GATE515 133 salt 1 eco 1 orth 0 floor 60
+FS PHASE 134 id 4 ph 2 d 8 at (12, 9)
+GATE515 134 salt 1 eco 1 orth 2 floor 60
+FS PHASE 135 id 4 ph 3 d 5 at (12, 8)
+GATE515 135 salt 1 eco 1 orth 0 floor 60
+FS PHASE 136 id 4 ph 2 d 8 at (12, 9)
+GATE515 136 salt 1 eco 1 orth 2 floor 60
+GATE515 137 salt 1 eco 1 orth 4 floor 60
+GATE515 138 salt 1 eco 1 orth 2 floor 60
+GATE515 139 salt 1 eco 1 orth 4 floor 60
+FS STAT 140 id 4 at (12, 9) need 3 orth 2 ti 57 ammo 24 sen 0 hp 34 covden 0 eco 1 lost 0
+GATE515 140 salt 1 eco 1 orth 2 floor 60
+GATE515 141 salt 1 eco 1 orth 4 floor 60
+GATE515 142 salt 1 eco 1 orth 2 floor 60
+FS PHASE 143 id 4 ph 3 d 5 at (12, 8)
+GATE515 143 salt 1 eco 1 orth 0 floor 60
+FS PHASE 144 id 4 ph 2 d 8 at (12, 9)
+GATE515 144 salt 1 eco 1 orth 2 floor 60
+FS PHASE 145 id 4 ph 3 d 5 at (12, 8)
+GATE515 145 salt 1 eco 1 orth 0 floor 60
+FS PHASE 146 id 4 ph 2 d 8 at (12, 9)
+GATE515 146 salt 1 eco 1 orth 2 floor 60
+FS PHASE 147 id 4 ph 3 d 5 at (12, 8)
+GATE515 147 salt 1 eco 1 orth 0 floor 60
+FS PHASE 148 id 4 ph 2 d 8 at (12, 9)
+GATE515 148 salt 1 eco 1 orth 2 floor 60
+FS PHASE 149 id 4 ph 3 d 5 at (12, 8)
+GATE515 149 salt 1 eco 1 orth 0 floor 60
+FS PHASE 150 id 4 ph 2 d 8 at (12, 9)
+GATE515 150 salt 1 eco 1 orth 2 floor 60
+FS PHASE 151 id 4 ph 3 d 5 at (12, 8)
+GATE515 151 salt 1 eco 1 orth 0 floor 60
+FS PHASE 152 id 4 ph 2 d 8 at (12, 9)
+GATE515 152 salt 1 eco 1 orth 2 floor 60
+FS PHASE 153 id 4 ph 3 d 5 at (12, 8)
+GATE515 153 salt 1 eco 1 orth 0 floor 60
+FS PHASE 154 id 4 ph 2 d 8 at (12, 9)
+GATE515 154 salt 1 eco 1 orth 2 floor 60
+FS PHASE 155 id 4 ph 3 d 5 at (12, 8)
+GATE515 155 salt 1 eco 1 orth 0 floor 60
+FS PHASE 156 id 4 ph 2 d 8 at (12, 9)
+GATE515 156 salt 1 eco 1 orth 2 floor 60
+FS PHASE 157 id 4 ph 3 d 5 at (12, 8)
+GATE515 157 salt 1 eco 1 orth 0 floor 60
+FS PHASE 158 id 4 ph 2 d 8 at (12, 9)
+GATE515 158 salt 1 eco 1 orth 2 floor 60
+FS PHASE 159 id 4 ph 3 d 5 at (12, 8)
+GATE515 159 salt 1 eco 1 orth 0 floor 60
+FS PHASE 160 id 4 ph 2 d 8 at (12, 9)
+FS STAT 160 id 4 at (12, 9) need 3 orth 2 ti 81 ammo 20 sen 0 hp 34 covden 0 eco 1 lost 0
+GATE515 160 salt 1 eco 1 orth 2 floor 60
+FS PHASE 161 id 4 ph 3 d 5 at (12, 8)
+GATE515 161 salt 1 eco 1 orth 0 floor 60
+FS PHASE 162 id 4 ph 2 d 8 at (12, 9)
+GATE515 162 salt 1 eco 1 orth 2 floor 60
+FS PHASE 163 id 4 ph 3 d 5 at (12, 8)
+GATE515 163 salt 1 eco 1 orth 0 floor 60
+FS PHASE 164 id 4 ph 2 d 8 at (12, 9)
+GATE515 164 salt 1 eco 1 orth 2 floor 60
+GATE515 165 salt 1 eco 1 orth 4 floor 60
+GATE515 166 salt 1 eco 1 orth 2 floor 60
+GATE515 167 salt 1 eco 1 orth 4 floor 60
+GATE515 168 salt 1 eco 1 orth 2 floor 60
+GATE515 169 salt 1 eco 1 orth 5 floor 60
+GATE515 170 salt 1 eco 1 orth 4 floor 60
+GATE515 171 salt 1 eco 1 orth 3 floor 60
+GATE515 172 salt 1 eco 1 orth 1 floor 60
+SENT515 172 at (13, 7) n 1 gate (172, 1, 1, 1) latch (1, 1, 10)
+FS SENTINEL 172 at (13, 7) face WEST tgt (9, 7) score 16 n 1 onring 0 lost 0 gate (1, 1, 10) onsray 0 olddsq -1
+FS RUNG 172 id 4 r 4 hi -
+FS PHASE 173 id 4 ph 4 d 4 at (12, 7)
+GATE515 173 salt 0 eco 1 orth 1 floor 60
+FS SEAL 174 tile (11, 6) n 10
+GATE515 175 salt 1 eco 1 orth 0 floor 60
+GATE515 176 salt 1 eco 1 orth 0 floor 60
+GATE515 177 salt 1 eco 1 orth 0 floor 60
+GATE515 178 salt 1 eco 1 orth 0 floor 60
+GATE515 179 salt 1 eco 1 orth 0 floor 60
+FS STAT 180 id 4 at (12, 7) need 2 orth 0 ti 16 ammo 21 sen 1 hp 34 covden 0 eco 1 lost 0
+GATE515 180 salt 1 eco 1 orth 0 floor 60
+GATE515 181 salt 1 eco 1 orth 0 floor 60
+GATE515 182 salt 1 eco 1 orth 0 floor 60
+GATE515 183 salt 1 eco 1 orth 0 floor 60
+GATE515 184 salt 1 eco 1 orth 0 floor 60
+GATE515 185 salt 1 eco 1 orth 1 floor 60
+GATE515 186 salt 1 eco 1 orth 1 floor 60
+FS SEAL 187 tile (11, 6) n 11
+GATE515 188 salt 1 eco 1 orth 0 floor 60
+GATE515 189 salt 1 eco 1 orth 2 floor 60
+GATE515 190 salt 1 eco 1 orth 3 floor 60
+GATE515 191 salt 1 eco 1 orth 4 floor 60
+GATE515 192 salt 1 eco 1 orth 2 floor 60
+FS DODGE 193 id 4 from (11, 4) to (10, 4) cov 1 -> 0 hit 0 hp 16
+GATE515 194 salt 1 eco 1 orth 0 floor 60
+FS PHASE 195 id 4 ph 3 d 4 at (9, 4)
+GATE515 195 salt 1 eco 1 orth 0 floor 60
+GATE515 196 salt 1 eco 1 orth 0 floor 60
+FS PHASE 197 id 4 ph 2 d 8 at (7, 4)
+GATE515 197 salt 1 eco 1 orth 2 floor 60
+FS PHASE 198 id 4 ph 3 d 5 at (8, 4)
+GATE515 198 salt 1 eco 1 orth 0 floor 60
+FS PHASE 199 id 4 ph 2 d 8 at (7, 4)
+GATE515 199 salt 1 eco 1 orth 2 floor 60
+FS PHASE 200 id 4 ph 3 d 5 at (8, 4)
+FS STAT 200 id 4 at (8, 4) need 2 orth 0 ti 24 ammo 17 sen 0 hp 16 covden 0 eco 1 lost 0
+GATE515 200 salt 1 eco 1 orth 0 floor 60
+FS PHASE 201 id 4 ph 2 d 8 at (7, 4)
+GATE515 201 salt 1 eco 1 orth 2 floor 60
+FS PHASE 202 id 4 ph 3 d 5 at (8, 4)
+GATE515 202 salt 1 eco 1 orth 0 floor 60
+FS PHASE 203 id 4 ph 2 d 8 at (7, 4)
+GATE515 203 salt 1 eco 1 orth 2 floor 60
+FS PHASE 204 id 4 ph 3 d 5 at (8, 4)
+GATE515 204 salt 1 eco 1 orth 0 floor 60
+FS PHASE 205 id 4 ph 2 d 8 at (7, 4)
+GATE515 205 salt 1 eco 1 orth 3 floor 60
+GATE515 206 salt 1 eco 1 orth 1 floor 60
+GATE515 207 salt 1 eco 1 orth 1 floor 60
+GATE515 208 salt 1 eco 1 orth 1 floor 60
+GATE515 209 salt 1 eco 1 orth 3 floor 60
+GATE515 210 salt 1 eco 1 orth 1 floor 60
+GATE515 211 salt 1 eco 1 orth 4 floor 60
+GATE515 212 salt 1 eco 1 orth 4 floor 60
+GATE515 213 salt 1 eco 1 orth 3 floor 60
+GATE515 214 salt 0 eco 1 orth 1 floor 60
+GATE515 215 salt 0 eco 1 orth 1 floor 60
+GATE515 216 salt 0 eco 1 orth 1 floor 60
+FS SEAL 217 tile (8, 8) n 12
+GATE515 218 salt 0 eco 1 orth 1 floor 60
+GATE515 219 salt 0 eco 1 orth 2 floor 60
+FS STAT 220 id 4 at (7, 8) need 2 orth 1 ti 12 ammo 13 sen 0 hp 16 covden 0 eco 1 lost 0
+GATE515 220 salt 0 eco 1 orth 1 floor 60
+GATE515 221 salt 0 eco 1 orth 2 floor 60
+GATE515 222 salt 0 eco 1 orth 1 floor 60
+GATE515 223 salt 0 eco 1 orth 2 floor 60
+GATE515 224 salt 0 eco 1 orth 1 floor 60
+GATE515 225 salt 0 eco 1 orth 2 floor 60
+GATE515 226 salt 0 eco 1 orth 1 floor 60
+GATE515 227 salt 0 eco 1 orth 2 floor 60
+GATE515 228 salt 0 eco 1 orth 1 floor 60
+GATE515 229 salt 0 eco 1 orth 2 floor 60
+GATE515 230 salt 0 eco 1 orth 1 floor 60
+GATE515 231 salt 0 eco 1 orth 2 floor 60
+GATE515 232 salt 0 eco 1 orth 1 floor 60
+GATE515 233 salt 0 eco 1 orth 2 floor 60
+GATE515 234 salt 0 eco 1 orth 1 floor 60
+GATE515 235 salt 0 eco 1 orth 2 floor 60
+GATE515 236 salt 0 eco 1 orth 1 floor 60
+GATE515 237 salt 0 eco 1 orth 2 floor 60
+GATE515 238 salt 0 eco 1 orth 1 floor 60
+GATE515 239 salt 0 eco 1 orth 2 floor 60
+FS STAT 240 id 4 at (7, 8) need 2 orth 1 ti 16 ammo 17 sen 0 hp 16 covden 0 eco 1 lost 0
+GATE515 240 salt 0 eco 1 orth 1 floor 60
+GATE515 241 salt 0 eco 1 orth 2 floor 60
+GATE515 242 salt 0 eco 1 orth 1 floor 60
+GATE515 243 salt 0 eco 1 orth 2 floor 60
+GATE515 244 salt 0 eco 1 orth 1 floor 60
+GATE515 245 salt 0 eco 1 orth 2 floor 60
+GATE515 246 salt 0 eco 1 orth 1 floor 60
+GATE515 247 salt 0 eco 1 orth 2 floor 60
+GATE515 248 salt 0 eco 1 orth 1 floor 60
+GATE515 249 salt 0 eco 1 orth 3 floor 60
+GATE515 250 salt 0 eco 1 orth 4 floor 60
+GATE515 251 salt 0 eco 1 orth 3 floor 60
+GATE515 252 salt 0 eco 1 orth 2 floor 60
+GATE515 253 salt 0 eco 1 orth 3 floor 60
+GATE515 254 salt 0 eco 1 orth 2 floor 60
+GATE515 255 salt 0 eco 1 orth 3 floor 60
+GATE515 256 salt 0 eco 1 orth 2 floor 60
+GATE515 257 salt 0 eco 1 orth 3 floor 60
+GATE515 258 salt 0 eco 1 orth 2 floor 60
+GATE515 259 salt 0 eco 1 orth 3 floor 60
+FS STAT 260 id 4 at (7, 8) need 3 orth 2 ti 16 ammo 19 sen 0 hp 16 covden 0 eco 1 lost 0
+GATE515 260 salt 0 eco 1 orth 2 floor 60
+GATE515 261 salt 0 eco 1 orth 3 floor 60
+GATE515 262 salt 0 eco 1 orth 2 floor 60
+GATE515 263 salt 0 eco 1 orth 3 floor 60
+GATE515 264 salt 0 eco 1 orth 2 floor 60
+GATE515 265 salt 0 eco 1 orth 3 floor 60
+GATE515 266 salt 0 eco 1 orth 2 floor 60
+GATE515 267 salt 0 eco 1 orth 3 floor 60
+GATE515 268 salt 0 eco 1 orth 2 floor 60
+GATE515 269 salt 0 eco 1 orth 3 floor 60
+GATE515 270 salt 0 eco 1 orth 2 floor 60
+GATE515 271 salt 0 eco 1 orth 3 floor 60
+GATE515 272 salt 0 eco 1 orth 2 floor 60
+GATE515 273 salt 0 eco 1 orth 3 floor 60
+GATE515 274 salt 0 eco 1 orth 2 floor 60
+GATE515 275 salt 0 eco 1 orth 3 floor 60
+GATE515 276 salt 0 eco 1 orth 2 floor 60
+GATE515 277 salt 0 eco 1 orth 3 floor 60
+GATE515 278 salt 0 eco 1 orth 2 floor 60
+GATE515 279 salt 0 eco 1 orth 3 floor 60
+FS STAT 280 id 4 at (7, 8) need 3 orth 2 ti 12 ammo 11 sen 0 hp 16 covden 0 eco 1 lost 0
+GATE515 280 salt 0 eco 1 orth 2 floor 60
+GATE515 281 salt 0 eco 1 orth 3 floor 60
+GATE515 282 salt 0 eco 1 orth 2 floor 60
+GATE515 283 salt 0 eco 1 orth 3 floor 60
+GATE515 284 salt 0 eco 1 orth 2 floor 60
+GATE515 285 salt 0 eco 1 orth 3 floor 60
+GATE515 286 salt 0 eco 1 orth 2 floor 60
+GATE515 287 salt 0 eco 1 orth 3 floor 60
+GATE515 288 salt 0 eco 1 orth 2 floor 60
+GATE515 289 salt 0 eco 1 orth 3 floor 60
+GATE515 290 salt 0 eco 1 orth 2 floor 60
+GATE515 291 salt 0 eco 1 orth 3 floor 60
+GATE515 292 salt 0 eco 1 orth 2 floor 60
+GATE515 293 salt 0 eco 1 orth 3 floor 60
+GATE515 294 salt 0 eco 1 orth 2 floor 60
+GATE515 295 salt 0 eco 1 orth 3 floor 60
+GATE515 296 salt 0 eco 1 orth 2 floor 60
+GATE515 297 salt 0 eco 1 orth 3 floor 60
+GATE515 298 salt 0 eco 1 orth 2 floor 60
+GATE515 299 salt 0 eco 1 orth 3 floor 60
+FS STAT 300 id 4 at (7, 8) need 3 orth 2 ti 12 ammo 13 sen 0 hp 16 covden 0 eco 1 lost 0
+GATE515 300 salt 0 eco 1 orth 2 floor 60
+GATE515 301 salt 0 eco 1 orth 3 floor 60
+GATE515 302 salt 0 eco 1 orth 2 floor 60
+GATE515 303 salt 0 eco 1 orth 3 floor 60
+GATE515 304 salt 0 eco 1 orth 2 floor 60
+GATE515 305 salt 0 eco 1 orth 3 floor 60
+GATE515 306 salt 0 eco 1 orth 2 floor 60
+GATE515 307 salt 0 eco 1 orth 3 floor 60
+GATE515 308 salt 0 eco 1 orth 2 floor 60
+GATE515 309 salt 0 eco 1 orth 3 floor 60
+GATE515 310 salt 0 eco 1 orth 2 floor 60
+GATE515 311 salt 0 eco 1 orth 3 floor 60
+GATE515 312 salt 0 eco 1 orth 2 floor 60
+GATE515 313 salt 0 eco 1 orth 3 floor 60
+GATE515 314 salt 0 eco 1 orth 2 floor 60
+GATE515 315 salt 0 eco 1 orth 3 floor 60
+GATE515 316 salt 0 eco 1 orth 2 floor 60
+GATE515 317 salt 0 eco 1 orth 3 floor 60
+GATE515 318 salt 0 eco 1 orth 2 floor 60
+GATE515 319 salt 0 eco 1 orth 2 floor 60
+FS STAT 320 id 4 at (7, 6) need 2 orth 2 ti 16 ammo 17 sen 0 hp 16 covden 0 eco 1 lost 0
+GATE515 320 salt 0 eco 1 orth 2 floor 60
+GATE515 321 salt 0 eco 1 orth 2 floor 60
+GATE515 322 salt 0 eco 1 orth 3 floor 60
+GATE515 323 salt 0 eco 1 orth 2 floor 60
+GATE515 324 salt 0 eco 1 orth 2 floor 60
+FS PHASE 325 id 4 ph 4 d 4 at (10, 4)
+GATE515 325 salt 0 eco 1 orth 2 floor 60

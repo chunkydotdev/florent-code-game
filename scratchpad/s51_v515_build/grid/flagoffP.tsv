@@ -1,0 +1,31 @@
+tag	arm	map	g	seed	ord	ours	winner	cond	turn	tracebacks	ours_mined	opp_mined
+flagoffP_glacierkeep_g0	flagoffP	glacierkeep	0	9100	A	US	flagoff	Core destroyed	241	0	170	0
+flagoffP_glacierkeep_g1	flagoffP	glacierkeep	1	9101	B	US	flagoff	Titanium collected (tiebreak)	1000	0	70	0
+flagoffP_glacierkeep_g2	flagoffP	glacierkeep	2	9102	A	US	flagoff	Core destroyed	257	0	540	0
+flagoffP_glacierkeep_g3	flagoffP	glacierkeep	3	9103	B	US	flagoff	Core destroyed	397	0	0	0
+flagoffP_glacierkeep_g4	flagoffP	glacierkeep	4	9104	A	US	flagoff	Core destroyed	317	0	230	0
+flagoffP_glacierkeep_g5	flagoffP	glacierkeep	5	9105	B	US	flagoff	Titanium collected (tiebreak)	1000	0	90	0
+flagoffP_nordkap_g0	flagoffP	nordkap	0	9100	A	OPP	_v488beltbreak2	Core destroyed	246	0	590	1470
+flagoffP_nordkap_g1	flagoffP	nordkap	1	9101	B	OPP	_v488beltbreak2	Core destroyed	262	0	100	3590
+flagoffP_nordkap_g2	flagoffP	nordkap	2	9102	A	OPP	_v488beltbreak2	Core destroyed	165	0	220	340
+flagoffP_nordkap_g3	flagoffP	nordkap	3	9103	B	OPP	_v488beltbreak2	Core destroyed	203	0	170	2240
+flagoffP_nordkap_g4	flagoffP	nordkap	4	9104	A	US	flagoff	Core destroyed	162	0	470	100
+flagoffP_nordkap_g5	flagoffP	nordkap	5	9105	B	US	flagoff	Core destroyed	279	0	810	0
+flagoffP_atoll_g0	flagoffP	atoll	0	9100	A	OPP	_v488beltbreak2	Core destroyed	618	0	1750	3050
+flagoffP_atoll_g1	flagoffP	atoll	1	9101	B	OPP	_v488beltbreak2	Core destroyed	166	0	290	690
+flagoffP_atoll_g2	flagoffP	atoll	2	9102	A	OPP	_v488beltbreak2	Core destroyed	582	0	500	3620
+flagoffP_atoll_g3	flagoffP	atoll	3	9103	B	US	flagoff	Core destroyed	439	0	2150	140
+flagoffP_atoll_g4	flagoffP	atoll	4	9104	A	US	flagoff	Core destroyed	351	0	1720	330
+flagoffP_atoll_g5	flagoffP	atoll	5	9105	B	OPP	_v488beltbreak2	Titanium collected (tiebreak)	1000	0	310	1450
+flagoffP_midgard_g0	flagoffP	midgard	0	9100	A	OPP	_v488beltbreak2	Core destroyed	299	0	510	2950
+flagoffP_midgard_g1	flagoffP	midgard	1	9101	B	OPP	_v488beltbreak2	Core destroyed	116	0	620	1330
+flagoffP_midgard_g2	flagoffP	midgard	2	9102	A	OPP	_v488beltbreak2	Core destroyed	133	0	610	980
+flagoffP_midgard_g3	flagoffP	midgard	3	9103	B	OPP	_v488beltbreak2	Core destroyed	195	0	580	1260
+flagoffP_midgard_g4	flagoffP	midgard	4	9104	A	OPP	_v488beltbreak2	Core destroyed	232	0	1100	1600
+flagoffP_midgard_g5	flagoffP	midgard	5	9105	B	OPP	_v488beltbreak2	Core destroyed	260	0	500	3890
+flagoffP_drakkarfjord_g0	flagoffP	drakkarfjord	0	9100	A	US	flagoff	Core destroyed	211	0	1300	470
+flagoffP_drakkarfjord_g1	flagoffP	drakkarfjord	1	9101	B	US	flagoff	Titanium collected (tiebreak)	1000	0	530	0
+flagoffP_drakkarfjord_g2	flagoffP	drakkarfjord	2	9102	A	OPP	_v488beltbreak2	Core destroyed	372	0	450	750
+flagoffP_drakkarfjord_g3	flagoffP	drakkarfjord	3	9103	B	US	flagoff	Core destroyed	161	0	700	0
+flagoffP_drakkarfjord_g4	flagoffP	drakkarfjord	4	9104	A	US	flagoff	Core destroyed	738	0	6420	4640
+flagoffP_drakkarfjord_g5	flagoffP	drakkarfjord	5	9105	B	US	flagoff	Core destroyed	176	0	840	0

@@ -1,0 +1,41 @@
+Update available: 2.3.6 -> 2.3.8. Run: pip install --upgrade fcode
+REACH515 15 tile None ucov 0 unseal 0 want 1
+REACH515 23 tile None ucov 0 unseal 0 want 1
+REACH515 31 tile None ucov 0 unseal 0 want 1
+REACH515 39 tile (25, 5) ucov 1 unseal 1 want 1
+STAND515 39 cand 2 chose (29, 5) inrstat 0 here (29, 3)
+STAND515 40 cand 2 chose (29, 5) inrstat 0 here (29, 4)
+STAND515 42 cand 2 chose (28, 6) inrstat 0 here (29, 5)
+STAND515 43 cand 3 chose (28, 6) inrstat 0 here (29, 6)
+STAND515 45 cand 3 chose (26, 7) inrstat 0 here (28, 6)
+STAND515 46 cand 3 chose (26, 7) inrstat 0 here (29, 6)
+REACH515 47 tile (25, 5) ucov 1 unseal 1 want 1
+STAND515 47 cand 3 chose (26, 7) inrstat 0 here (28, 6)
+STAND515 48 cand 3 chose (26, 7) inrstat 0 here (29, 6)
+STAND515 49 cand 3 chose (26, 7) inrstat 0 here (28, 6)
+EVICT515 50 at (27, 7) ucov 1 cov 1 ceil 1 ceiltile (25, 5) n 1
+STAND515 51 cand 7 chose (24, 5) inrstat 1 here (28, 7)
+STAND515 52 cand 7 chose (24, 5) inrstat 1 here (28, 8)
+STAND515 53 cand 7 chose (24, 5) inrstat 1 here (27, 8)
+STAND515 54 cand 7 chose (24, 5) inrstat 1 here (26, 8)
+REACH515 60 tile (25, 4) ucov 1 unseal 1 want 0
+REACH515 68 tile (25, 4) ucov 1 unseal 1 want 0
+REACH515 79 tile (25, 4) ucov 1 unseal 1 want 0
+REACH515 89 tile (25, 4) ucov 1 unseal 1 want 0
+REACH515 97 tile (25, 4) ucov 1 unseal 1 want 0
+REACH515 105 tile (25, 4) ucov 1 unseal 1 want 0
+REACH515 113 tile (25, 4) ucov 1 unseal 1 want 0
+REACH515 121 tile None ucov 0 unseal 0 want 0
+REACH515 136 tile None ucov 0 unseal 0 want 1
+REACH515 144 tile None ucov 0 unseal 0 want 1
+REACH515 157 tile None ucov 0 unseal 0 want 0
+REACH515 165 tile None ucov 0 unseal 0 want 0
+REACH515 173 tile None ucov 0 unseal 0 want 1
+REACH515 182 tile None ucov 0 unseal 0 want 1
+REACH515 190 tile None ucov 0 unseal 0 want 0
+REACH515 198 tile None ucov 0 unseal 0 want 1
+REACH515 206 tile None ucov 0 unseal 0 want 0
+REACH515 214 tile None ucov 0 unseal 0 want 0
+REACH515 222 tile None ucov 0 unseal 0 want 1
+REACH515 231 tile None ucov 0 unseal 0 want 0
+REACH515 239 tile None ucov 0 unseal 0 want 0

@@ -112,3 +112,10 @@ writer.
   candidate config**, pending Magnus on the door flag and on change A's re-timing.
 * The door-turret isolation REFUTES the chassis-drift (C/H) suspicion registered in
   siegecrew-final — correction row appended to results.tsv.
+
+---
+*DATED NOTE (s51, later the same session): the door-off magnitude in finding 2 (+18.9pp at
+n=90) re-measured at +7.1pp (n=450) / +5.3pp (n=630) in the v515 build's interleaved arms —
+SIGN CONFIRMED, MAGNITUDE ~40% of banked. Same session also quantified the fixture's one-draw
+spread (±9/90 same-config): this report's naive intervals were the right ones; treat its point
+estimates as regressing. See BUILD-REPORT-v515ecosalt-2026-08-18.md findings 1-2.*

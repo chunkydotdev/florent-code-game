@@ -1,0 +1,31 @@
+tag	arm	map	g	seed	ord	ours	winner	cond	turn	tracebacks	ours_mined	opp_mined
+v515Q_glacierkeep_g0	v515Q	glacierkeep	0	9200	A	US	v515	Core destroyed	258	0	150	0
+v515Q_glacierkeep_g1	v515Q	glacierkeep	1	9201	B	US	v515	Core destroyed	141	0	140	0
+v515Q_glacierkeep_g2	v515Q	glacierkeep	2	9202	A	US	v515	Core destroyed	193	0	160	0
+v515Q_glacierkeep_g3	v515Q	glacierkeep	3	9203	B	US	v515	Core destroyed	181	0	40	0
+v515Q_glacierkeep_g4	v515Q	glacierkeep	4	9204	A	US	v515	Core destroyed	177	0	160	0
+v515Q_glacierkeep_g5	v515Q	glacierkeep	5	9205	B	US	v515	Core destroyed	280	0	0	0
+v515Q_nordkap_g0	v515Q	nordkap	0	9200	A	US	v515	Core destroyed	441	0	3030	250
+v515Q_nordkap_g1	v515Q	nordkap	1	9201	B	US	v515	Core destroyed	205	0	330	50
+v515Q_nordkap_g2	v515Q	nordkap	2	9202	A	OPP	_v488beltbreak2	Core destroyed	148	0	350	1090
+v515Q_nordkap_g3	v515Q	nordkap	3	9203	B	OPP	_v488beltbreak2	Core destroyed	522	0	150	2410
+v515Q_nordkap_g4	v515Q	nordkap	4	9204	A	US	v515	Core destroyed	405	0	210	200
+v515Q_nordkap_g5	v515Q	nordkap	5	9205	B	US	v515	Core destroyed	209	0	320	0
+v515Q_atoll_g0	v515Q	atoll	0	9200	A	OPP	_v488beltbreak2	Core destroyed	333	0	1850	1630
+v515Q_atoll_g1	v515Q	atoll	1	9201	B	US	v515	Core destroyed	427	0	2060	1120
+v515Q_atoll_g2	v515Q	atoll	2	9202	A	US	v515	Core destroyed	269	0	1940	1960
+v515Q_atoll_g3	v515Q	atoll	3	9203	B	OPP	_v488beltbreak2	Titanium collected (tiebreak)	1000	0	2200	4980
+v515Q_atoll_g4	v515Q	atoll	4	9204	A	US	v515	Titanium stored (tiebreak)	1000	0	4970	4970
+v515Q_atoll_g5	v515Q	atoll	5	9205	B	OPP	_v488beltbreak2	Core destroyed	234	0	870	2090
+v515Q_midgard_g0	v515Q	midgard	0	9200	A	OPP	_v488beltbreak2	Core destroyed	168	0	640	1590
+v515Q_midgard_g1	v515Q	midgard	1	9201	B	OPP	_v488beltbreak2	Core destroyed	527	0	550	3400
+v515Q_midgard_g2	v515Q	midgard	2	9202	A	OPP	_v488beltbreak2	Core destroyed	154	0	610	1500
+v515Q_midgard_g3	v515Q	midgard	3	9203	B	OPP	_v488beltbreak2	Titanium collected (tiebreak)	1000	0	2920	3420
+v515Q_midgard_g4	v515Q	midgard	4	9204	A	US	v515	Core destroyed	435	0	4580	4380
+v515Q_midgard_g5	v515Q	midgard	5	9205	B	OPP	_v488beltbreak2	Core destroyed	130	0	590	1340
+v515Q_drakkarfjord_g0	v515Q	drakkarfjord	0	9200	A	US	v515	Core destroyed	205	0	920	290
+v515Q_drakkarfjord_g1	v515Q	drakkarfjord	1	9201	B	OPP	_v488beltbreak2	Titanium collected (tiebreak)	1000	0	420	630
+v515Q_drakkarfjord_g2	v515Q	drakkarfjord	2	9202	A	OPP	_v488beltbreak2	Core destroyed	607	0	740	1330
+v515Q_drakkarfjord_g3	v515Q	drakkarfjord	3	9203	B	OPP	_v488beltbreak2	Core destroyed	850	0	380	1740
+v515Q_drakkarfjord_g4	v515Q	drakkarfjord	4	9204	A	OPP	_v488beltbreak2	Core destroyed	868	0	1360	720
+v515Q_drakkarfjord_g5	v515Q	drakkarfjord	5	9205	B	OPP	_v488beltbreak2	Titanium collected (tiebreak)	1000	0	390	2070
