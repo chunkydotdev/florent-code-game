@@ -1,0 +1,6 @@
+tag	map	seat	ours	cond	turn	offence	defence	siege_n	sent_n	dud_sent_n	siege_first	siege_shots	siege_life	siege_funded	funded_share	oppcore_heal	heal_share	their_first	their_shots
+midgard_s1_B	midgard	B	OPP	Core destroyed	114	HEAL_OUTRUN	CORE_KILLED	1	1	0	43	26	72	72	1.0	464	0.991	81	28
+atoll_s2_B	atoll	B	OPP	Core destroyed	128	NO_TURRET	CORE_KILLED	0	3	3		0	0	0	0.0	0	0.0	13	32
+nordkap_s36_B	nordkap	B	OPP	Core destroyed	172	NO_TURRET	CORE_KILLED	0	1	1		0	0	0	0.0	0	0.0	13	31
+drakkarfjord_s28_A	drakkarfjord	A	OPP	Core destroyed	180	TURRET_LOST	CORE_KILLED	1	3	2	85	48	96	96	1.0	576	0.667	125	28
+glacierkeep_s38_A	glacierkeep	A	OPP	Core destroyed	376	NO_TURRET	CORE_KILLED	0	0	0		0	0	0	0.0	0	0.0	321	28

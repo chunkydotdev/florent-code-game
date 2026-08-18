@@ -1,0 +1,526 @@
+Update available: 2.3.6 -> 2.3.8. Run: pip install --upgrade fcode
+TIWATCH518 0 ti 500 ammo 0 scale 100 units 1 sen 30 bar 3 beat 0 hold 0
+TIWATCH518 1 ti 470 ammo 0 scale 120 units 2 sen 36 bar 3 beat 0 hold 0
+TIWATCH518 2 ti 406 ammo 0 scale 150 units 4 sen 45 bar 4 beat 0 hold 0
+TIWATCH518 3 ti 361 ammo 0 scale 160 units 4 sen 48 bar 4 beat 0 hold 0
+TIWATCH518 4 ti 305 ammo 0 scale 175 units 5 sen 52 bar 5 beat 0 hold 0
+TIWATCH518 5 ti 295 ammo 0 scale 167 units 4 sen 50 bar 5 beat 0 hold 0
+TIWATCH518 6 ti 262 ammo 0 scale 177 units 5 sen 53 bar 5 beat 0 hold 0
+TIWATCH518 7 ti 272 ammo 0 scale 167 units 4 sen 50 bar 5 beat 0 hold 0
+TIWATCH518 8 ti 249 ammo 0 scale 177 units 5 sen 53 bar 5 beat 0 hold 0
+TIWATCH518 9 ti 249 ammo 0 scale 167 units 4 sen 50 bar 5 beat 0 hold 0
+TIWATCH518 10 ti 216 ammo 0 scale 177 units 5 sen 53 bar 5 beat 0 hold 0
+TIWATCH518 11 ti 226 ammo 0 scale 167 units 4 sen 50 bar 5 beat 0 hold 0
+TIWATCH518 12 ti 203 ammo 0 scale 177 units 5 sen 53 bar 5 beat 0 hold 0
+TIWATCH518 13 ti 203 ammo 0 scale 177 units 5 sen 53 bar 5 beat 0 hold 0
+TIWATCH518 14 ti 203 ammo 0 scale 177 units 5 sen 53 bar 5 beat 0 hold 0
+TIWATCH518 15 ti 213 ammo 0 scale 177 units 5 sen 53 bar 5 beat 0 hold 0
+GATE515 15 salt 0 eco 0 orth 8 floor 0
+GAP518 15 id 3 code GATE live 0 salt 0 eco 0 ti 213 sen 53 bar 5 need 8 orth 8 floor 0
+GATE515 15 salt 0 eco 0 orth 8 floor 0
+TIWATCH518 16 ti 151 ammo 0 scale 182 units 5 sen 54 bar 5 beat 0 hold 0
+TICONV518 16 amt 16 floor 52
+GATE515 16 salt 0 eco 0 orth 7 floor 0
+GAP518 16 id 3 code GATE live 0 salt 0 eco 0 ti 81 sen 60 bar 6 need 8 orth 7 floor 0
+GATE515 16 salt 0 eco 0 orth 7 floor 0
+GATE515 16 salt 0 eco 0 orth 7 floor 0
+TIWATCH518 17 ti 75 ammo 16 scale 203 units 6 sen 60 bar 6 beat 0 hold 0
+GATE515 17 salt 0 eco 1 orth 7 floor 0
+GAP518 17 id 3 code FUND live 0 salt 0 eco 1 ti 75 sen 60 bar 6 need 8 orth 7 floor 0
+GATE515 17 salt 0 eco 1 orth 7 floor 0
+GATE515 17 salt 0 eco 1 orth 7 floor 0
+TIWATCH518 18 ti 75 ammo 16 scale 203 units 6 sen 60 bar 6 beat 0 hold 0
+GATE515 18 salt 0 eco 1 orth 7 floor 0
+GAP518 18 id 3 code FUND live 0 salt 0 eco 1 ti 75 sen 60 bar 6 need 8 orth 7 floor 0
+GATE515 18 salt 0 eco 1 orth 7 floor 0
+GATE515 18 salt 0 eco 1 orth 7 floor 0
+TIWATCH518 19 ti 79 ammo 16 scale 204 units 6 sen 61 bar 6 beat 0 hold 0
+GATE515 19 salt 0 eco 1 orth 7 floor 0
+GAP518 19 id 3 code FUND live 0 salt 0 eco 1 ti 79 sen 61 bar 6 need 8 orth 7 floor 0
+GATE515 19 salt 0 eco 1 orth 7 floor 0
+GATE515 19 salt 0 eco 1 orth 7 floor 0
+TIWATCH518 20 ti 89 ammo 16 scale 204 units 6 sen 61 bar 6 beat 0 hold 0
+GATE515 20 salt 0 eco 1 orth 7 floor 0
+GAP518 20 id 3 code FUND live 0 salt 0 eco 1 ti 89 sen 61 bar 6 need 8 orth 7 floor 0
+GATE515 20 salt 0 eco 1 orth 7 floor 0
+GATE515 20 salt 0 eco 1 orth 7 floor 0
+TIWATCH518 21 ti 99 ammo 16 scale 204 units 6 sen 61 bar 6 beat 0 hold 0
+GATE515 21 salt 0 eco 1 orth 7 floor 0
+GAP518 21 id 3 code FUND live 0 salt 0 eco 1 ti 99 sen 61 bar 6 need 8 orth 7 floor 0
+GATE515 21 salt 0 eco 1 orth 7 floor 0
+GATE515 21 salt 0 eco 1 orth 7 floor 0
+TIWATCH518 22 ti 99 ammo 16 scale 204 units 6 sen 61 bar 6 beat 0 hold 0
+GATE515 22 salt 0 eco 1 orth 7 floor 0
+GAP518 22 id 3 code FUND live 0 salt 0 eco 1 ti 99 sen 61 bar 6 need 8 orth 7 floor 0
+GATE515 22 salt 0 eco 1 orth 7 floor 0
+GATE515 22 salt 0 eco 1 orth 7 floor 0
+TIWATCH518 23 ti 69 ammo 16 scale 209 units 6 sen 62 bar 6 beat 0 hold 0
+GATE515 23 salt 0 eco 1 orth 7 floor 0
+GAP518 23 id 3 code FUND live 0 salt 0 eco 1 ti 69 sen 62 bar 6 need 8 orth 7 floor 0
+GATE515 23 salt 0 eco 1 orth 7 floor 0
+GATE515 23 salt 0 eco 1 orth 7 floor 0
+TIWATCH518 24 ti 73 ammo 16 scale 210 units 6 sen 63 bar 6 beat 0 hold 0
+GATE515 24 salt 0 eco 1 orth 7 floor 0
+GAP518 24 id 3 code FUND live 0 salt 0 eco 1 ti 73 sen 63 bar 6 need 8 orth 7 floor 0
+GATE515 24 salt 0 eco 1 orth 7 floor 0
+TIWATCH518 25 ti 77 ammo 16 scale 211 units 6 sen 63 bar 6 beat 0 hold 0
+GATE515 25 salt 0 eco 1 orth 6 floor 0
+GAP518 25 id 3 code FUND live 0 salt 0 eco 1 ti 77 sen 63 bar 6 need 7 orth 6 floor 0
+GATE515 25 salt 0 eco 1 orth 6 floor 0
+TIWATCH518 26 ti 69 ammo 16 scale 212 units 6 sen 63 bar 6 beat 0 hold 0
+GATE515 26 salt 0 eco 1 orth 6 floor 0
+GAP518 26 id 3 code FUND live 0 salt 0 eco 1 ti 69 sen 63 bar 6 need 7 orth 6 floor 0
+GATE515 26 salt 0 eco 1 orth 6 floor 0
+TIWATCH518 27 ti 71 ammo 16 scale 213 units 6 sen 63 bar 6 beat 0 hold 0
+GATE515 27 salt 0 eco 1 orth 6 floor 0
+GAP518 27 id 3 code FUND live 0 salt 0 eco 1 ti 71 sen 63 bar 6 need 7 orth 6 floor 0
+GATE515 27 salt 0 eco 1 orth 6 floor 0
+TIWATCH518 28 ti 79 ammo 16 scale 213 units 6 sen 63 bar 6 beat 0 hold 0
+GATE515 28 salt 0 eco 1 orth 6 floor 0
+GAP518 28 id 3 code FUND live 0 salt 0 eco 1 ti 79 sen 63 bar 6 need 7 orth 6 floor 0
+GATE515 28 salt 0 eco 1 orth 6 floor 0
+TIWATCH518 29 ti 81 ammo 16 scale 214 units 6 sen 64 bar 6 beat 0 hold 0
+GATE515 29 salt 0 eco 1 orth 6 floor 0
+GAP518 29 id 3 code FUND live 0 salt 0 eco 1 ti 81 sen 64 bar 6 need 7 orth 6 floor 0
+GATE515 29 salt 0 eco 1 orth 6 floor 0
+TIWATCH518 30 ti 79 ammo 16 scale 214 units 6 sen 64 bar 6 beat 0 hold 0
+GATE515 30 salt 0 eco 1 orth 6 floor 0
+GAP518 30 id 3 code FUND live 0 salt 0 eco 1 ti 79 sen 64 bar 6 need 7 orth 6 floor 0
+GATE515 30 salt 0 eco 1 orth 6 floor 0
+TIWATCH518 31 ti 81 ammo 16 scale 215 units 6 sen 64 bar 6 beat 0 hold 0
+GATE515 31 salt 0 eco 1 orth 6 floor 0
+GAP518 31 id 3 code FUND live 0 salt 0 eco 1 ti 81 sen 64 bar 6 need 7 orth 6 floor 0
+GATE515 31 salt 0 eco 1 orth 6 floor 0
+TIWATCH518 32 ti 89 ammo 16 scale 215 units 6 sen 64 bar 6 beat 0 hold 0
+GATE515 32 salt 0 eco 1 orth 6 floor 0
+GAP518 32 id 3 code FUND live 0 salt 0 eco 1 ti 89 sen 64 bar 6 need 7 orth 6 floor 0
+GATE515 32 salt 0 eco 1 orth 6 floor 0
+TIWATCH518 33 ti 91 ammo 16 scale 216 units 6 sen 64 bar 6 beat 0 hold 0
+GATE515 33 salt 0 eco 1 orth 6 floor 0
+GAP518 33 id 3 code FUND live 0 salt 0 eco 1 ti 91 sen 64 bar 6 need 7 orth 6 floor 0
+GATE515 33 salt 0 eco 1 orth 6 floor 0
+GATE515 33 salt 0 eco 1 orth 6 floor 0
+TIWATCH518 34 ti 91 ammo 16 scale 216 units 6 sen 64 bar 6 beat 0 hold 0
+GATE515 34 salt 0 eco 1 orth 6 floor 0
+GAP518 34 id 3 code FUND live 0 salt 0 eco 1 ti 91 sen 64 bar 6 need 7 orth 6 floor 0
+GATE515 34 salt 0 eco 1 orth 6 floor 0
+TIWATCH518 35 ti 89 ammo 16 scale 218 units 6 sen 65 bar 6 beat 0 hold 0
+GATE515 35 salt 0 eco 1 orth 5 floor 0
+GAP518 35 id 3 code FUND live 0 salt 0 eco 1 ti 89 sen 65 bar 6 need 6 orth 5 floor 0
+GATE515 35 salt 0 eco 1 orth 5 floor 0
+GATE515 35 salt 0 eco 1 orth 5 floor 0
+TIWATCH518 36 ti 99 ammo 16 scale 218 units 6 sen 65 bar 6 beat 0 hold 0
+GATE515 36 salt 0 eco 1 orth 5 floor 0
+GAP518 36 id 3 code FUND live 0 salt 0 eco 1 ti 99 sen 65 bar 6 need 6 orth 5 floor 0
+GATE515 36 salt 0 eco 1 orth 5 floor 0
+TIWATCH518 37 ti 48 ammo 16 scale 224 units 6 sen 67 bar 6 beat 0 hold 0
+GATE515 37 salt 0 eco 1 orth 5 floor 0
+GAP518 37 id 3 code FUND live 0 salt 0 eco 1 ti 48 sen 67 bar 6 need 6 orth 5 floor 0
+GATE515 37 salt 0 eco 1 orth 5 floor 0
+TIWATCH518 38 ti 46 ammo 16 scale 224 units 6 sen 67 bar 6 beat 0 hold 0
+GATE515 38 salt 0 eco 1 orth 6 floor 0
+GAP518 38 id 3 code FUND live 0 salt 0 eco 1 ti 46 sen 67 bar 6 need 6 orth 6 floor 0
+GATE515 38 salt 0 eco 1 orth 6 floor 0
+TIWATCH518 39 ti 44 ammo 16 scale 226 units 6 sen 67 bar 6 beat 0 hold 0
+GATE515 39 salt 0 eco 1 orth 5 floor 0
+GAP518 39 id 3 code FUND live 0 salt 0 eco 1 ti 44 sen 67 bar 6 need 5 orth 5 floor 0
+GATE515 39 salt 0 eco 1 orth 5 floor 0
+GATE515 39 salt 0 eco 1 orth 5 floor 0
+TIWATCH518 40 ti 64 ammo 16 scale 226 units 6 sen 67 bar 6 beat 0 hold 0
+GATE515 40 salt 0 eco 1 orth 5 floor 0
+GAP518 40 id 3 code FUND live 0 salt 0 eco 1 ti 64 sen 67 bar 6 need 5 orth 5 floor 0
+GATE515 40 salt 0 eco 1 orth 5 floor 0
+GATE515 40 salt 0 eco 1 orth 5 floor 0
+TIWATCH518 41 ti 84 ammo 16 scale 225 units 6 sen 67 bar 6 beat 0 hold 0
+GATE515 41 salt 0 eco 1 orth 5 floor 0
+GAP518 41 id 3 code FUND live 0 salt 0 eco 1 ti 84 sen 67 bar 6 need 5 orth 5 floor 0
+GATE515 41 salt 0 eco 1 orth 5 floor 0
+GATE515 41 salt 0 eco 1 orth 5 floor 0
+TIWATCH518 42 ti 94 ammo 16 scale 225 units 6 sen 67 bar 6 beat 0 hold 0
+GATE515 42 salt 0 eco 1 orth 5 floor 0
+GAP518 42 id 3 code FUND live 0 salt 0 eco 1 ti 94 sen 67 bar 6 need 5 orth 5 floor 0
+GATE515 42 salt 0 eco 1 orth 5 floor 0
+TIWATCH518 43 ti 108 ammo 16 scale 226 units 6 sen 67 bar 6 beat 0 hold 0
+GATE515 43 salt 0 eco 1 orth 4 floor 0
+GAP518 43 id 3 code OPEN live 0 salt 0 eco 1 ti 108 sen 67 bar 6 need 4 orth 4 floor 0
+GATE515 43 salt 0 eco 1 orth 4 floor 0
+TWIN517 43 at (26, 29) hold 0 live 1 floor 4 rebuy 24 ti 41 cost 67 n 1
+SENT515 43 at (26, 29) n 1 gate (43, 0, 1, 4) latch (1, 1, 16)
+EARLY518 43 id 3 ti 108 need 4 orth 4 rung1 0 pend 0 n 1
+TIWATCH518 44 ti 61 ammo 16 scale 246 units 7 sen 73 bar 7 beat 0 hold 0
+GAP518 44 id 3 code HAVE live 1 salt -1 eco -1 ti 61 sen 73 bar 7 need 4 orth 4 floor 0
+GATE515 44 salt 0 eco 1 orth 4 floor 0
+TIWATCH518 45 ti 61 ammo 6 scale 246 units 7 sen 73 bar 7 beat 1 hold 0
+TICONV518 45 amt 30 floor 14
+GAP518 45 id 3 code HAVE live 1 salt -1 eco -1 ti 31 sen 73 bar 7 need 4 orth 4 floor 0
+GATE515 45 salt 0 eco 1 orth 4 floor 0
+TIWATCH518 46 ti 41 ammo 36 scale 246 units 7 sen 73 bar 7 beat 1 hold 0
+TICONV518 46 amt 27 floor 14
+GAP518 46 id 3 code HAVE live 1 salt -1 eco -1 ti 14 sen 73 bar 7 need 4 orth 4 floor 0
+TIWATCH518 47 ti 27 ammo 53 scale 247 units 7 sen 74 bar 7 beat 1 hold 0
+TICONV518 47 amt 13 floor 14
+GAP518 47 id 3 code HAVE live 1 salt -1 eco -1 ti 14 sen 74 bar 7 need 3 orth 3 floor 0
+GATE515 47 salt 0 eco 1 orth 3 floor 0
+TIWATCH518 48 ti 34 ammo 66 scale 247 units 7 sen 74 bar 7 beat 1 hold 0
+TICONV518 48 amt 20 floor 14
+GAP518 48 id 3 code HAVE live 1 salt -1 eco -1 ti 14 sen 74 bar 7 need 3 orth 3 floor 0
+GATE515 48 salt 0 eco 1 orth 3 floor 0
+TIWATCH518 49 ti 24 ammo 76 scale 247 units 7 sen 74 bar 7 beat 1 hold 0
+TICONV518 49 amt 10 floor 14
+GAP518 49 id 3 code HAVE live 1 salt -1 eco -1 ti 14 sen 74 bar 7 need 3 orth 3 floor 0
+GATE515 49 salt 0 eco 1 orth 3 floor 0
+TIWATCH518 50 ti 24 ammo 86 scale 247 units 7 sen 74 bar 7 beat 1 hold 0
+TICONV518 50 amt 10 floor 14
+GAP518 50 id 3 code HAVE live 1 salt -1 eco -1 ti 14 sen 74 bar 7 need 3 orth 3 floor 0
+GATE515 50 salt 0 eco 1 orth 3 floor 0
+TIWATCH518 51 ti 24 ammo 86 scale 247 units 7 sen 74 bar 7 beat 1 hold 0
+TICONV518 51 amt 10 floor 14
+GAP518 51 id 3 code HAVE live 1 salt -1 eco -1 ti 14 sen 74 bar 7 need 3 orth 3 floor 0
+GATE515 51 salt 0 eco 1 orth 3 floor 0
+TIWATCH518 52 ti 17 ammo 96 scale 248 units 7 sen 74 bar 7 beat 1 hold 0
+TICONV518 52 amt 3 floor 14
+GAP518 52 id 3 code HAVE live 1 salt -1 eco -1 ti 14 sen 74 bar 7 need 3 orth 3 floor 0
+GATE515 52 salt 0 eco 1 orth 3 floor 0
+TIWATCH518 53 ti 14 ammo 89 scale 248 units 7 sen 74 bar 7 beat 1 hold 0
+GAP518 53 id 3 code HAVE live 1 salt -1 eco -1 ti 14 sen 74 bar 7 need 3 orth 3 floor 0
+GATE515 53 salt 0 eco 1 orth 3 floor 0
+TIWATCH518 54 ti 24 ammo 89 scale 248 units 7 sen 74 bar 7 beat 1 hold 0
+TICONV518 54 amt 10 floor 14
+GAP518 54 id 3 code HAVE live 1 salt -1 eco -1 ti 14 sen 74 bar 7 need 3 orth 3 floor 0
+GATE515 54 salt 0 eco 1 orth 3 floor 0
+TIWATCH518 55 ti 34 ammo 89 scale 247 units 7 sen 74 bar 7 beat 1 hold 0
+TICONV518 55 amt 20 floor 14
+GAP518 55 id 3 code HAVE live 1 salt -1 eco -1 ti 14 sen 74 bar 7 need 3 orth 3 floor 0
+GATE515 55 salt 0 eco 1 orth 3 floor 0
+TIWATCH518 56 ti 24 ammo 109 scale 247 units 7 sen 74 bar 7 beat 1 hold 0
+TICONV518 56 amt 10 floor 14
+GAP518 56 id 3 code HAVE live 1 salt -1 eco -1 ti 14 sen 74 bar 7 need 3 orth 3 floor 0
+GATE515 56 salt 0 eco 1 orth 3 floor 0
+TIWATCH518 57 ti 24 ammo 109 scale 247 units 7 sen 74 bar 7 beat 1 hold 0
+TICONV518 57 amt 10 floor 14
+GAP518 57 id 3 code HAVE live 1 salt -1 eco -1 ti 14 sen 74 bar 7 need 3 orth 3 floor 0
+GATE515 57 salt 0 eco 1 orth 3 floor 0
+TIWATCH518 58 ti 24 ammo 119 scale 247 units 7 sen 74 bar 7 beat 1 hold 0
+TICONV518 58 amt 10 floor 14
+GAP518 58 id 3 code HAVE live 1 salt -1 eco -1 ti 14 sen 74 bar 7 need 3 orth 3 floor 0
+GATE515 58 salt 0 eco 1 orth 3 floor 0
+TIWATCH518 59 ti 24 ammo 119 scale 247 units 7 sen 74 bar 7 beat 1 hold 0
+TICONV518 59 amt 10 floor 14
+GAP518 59 id 3 code HAVE live 1 salt -1 eco -1 ti 14 sen 74 bar 7 need 3 orth 3 floor 0
+GATE515 59 salt 0 eco 1 orth 3 floor 0
+TIWATCH518 60 ti 24 ammo 129 scale 247 units 7 sen 74 bar 7 beat 1 hold 0
+TICONV518 60 amt 10 floor 14
+GAP518 60 id 3 code HAVE live 1 salt -1 eco -1 ti 14 sen 74 bar 7 need 3 orth 3 floor 0
+GATE515 60 salt 0 eco 1 orth 3 floor 0
+TIWATCH518 61 ti 24 ammo 129 scale 247 units 7 sen 74 bar 7 beat 1 hold 0
+TICONV518 61 amt 10 floor 14
+GAP518 61 id 3 code HAVE live 1 salt -1 eco -1 ti 14 sen 74 bar 7 need 3 orth 3 floor 0
+GATE515 61 salt 0 eco 1 orth 3 floor 0
+TIWATCH518 62 ti 24 ammo 139 scale 247 units 7 sen 74 bar 7 beat 1 hold 0
+TICONV518 62 amt 10 floor 14
+GAP518 62 id 3 code HAVE live 1 salt -1 eco -1 ti 14 sen 74 bar 7 need 3 orth 3 floor 0
+GATE515 62 salt 0 eco 1 orth 3 floor 0
+TIWATCH518 63 ti 34 ammo 139 scale 247 units 7 sen 74 bar 7 beat 1 hold 0
+TICONV518 63 amt 20 floor 14
+GAP518 63 id 3 code HAVE live 1 salt -1 eco -1 ti 14 sen 74 bar 7 need 3 orth 3 floor 0
+GATE515 63 salt 0 eco 1 orth 3 floor 0
+TIWATCH518 64 ti 24 ammo 159 scale 247 units 7 sen 74 bar 7 beat 1 hold 0
+GAP518 64 id 3 code HAVE live 1 salt -1 eco -1 ti 24 sen 74 bar 7 need 3 orth 3 floor 0
+GATE515 64 salt 0 eco 1 orth 3 floor 0
+TIWATCH518 65 ti 34 ammo 149 scale 247 units 7 sen 74 bar 7 beat 1 hold 0
+TICONV518 65 amt 20 floor 14
+GAP518 65 id 3 code HAVE live 1 salt -1 eco -1 ti 14 sen 74 bar 7 need 3 orth 3 floor 0
+GATE515 65 salt 0 eco 1 orth 3 floor 0
+TIWATCH518 66 ti 24 ammo 169 scale 247 units 7 sen 74 bar 7 beat 1 hold 0
+GAP518 66 id 3 code HAVE live 1 salt -1 eco -1 ti 24 sen 74 bar 7 need 3 orth 3 floor 0
+GATE515 66 salt 0 eco 1 orth 3 floor 0
+TIWATCH518 67 ti 34 ammo 159 scale 247 units 7 sen 74 bar 7 beat 1 hold 0
+GAP518 67 id 3 code HAVE live 1 salt -1 eco -1 ti 34 sen 74 bar 7 need 3 orth 3 floor 0
+TIWATCH518 68 ti 42 ammo 159 scale 247 units 7 sen 74 bar 7 beat 1 hold 0
+GAP518 68 id 3 code HAVE live 1 salt -1 eco -1 ti 42 sen 74 bar 7 need 3 orth 3 floor 0
+TIWATCH518 69 ti 40 ammo 149 scale 247 units 7 sen 74 bar 7 beat 1 hold 0
+TICONV518 69 amt 26 floor 14
+GAP518 69 id 3 code HAVE live 1 salt -1 eco -1 ti 14 sen 74 bar 7 need 3 orth 3 floor 0
+GATE515 69 salt 0 eco 1 orth 3 floor 0
+TIWATCH518 70 ti 24 ammo 175 scale 247 units 7 sen 74 bar 7 beat 1 hold 0
+GAP518 70 id 3 code HAVE live 1 salt -1 eco -1 ti 24 sen 74 bar 7 need 3 orth 3 floor 0
+GATE515 70 salt 0 eco 1 orth 3 floor 0
+TIWATCH518 71 ti 44 ammo 165 scale 247 units 7 sen 74 bar 7 beat 1 hold 0
+GAP518 71 id 3 code HAVE live 1 salt -1 eco -1 ti 44 sen 74 bar 7 need 3 orth 3 floor 0
+TIWATCH518 72 ti 52 ammo 165 scale 247 units 7 sen 74 bar 7 beat 1 hold 0
+GAP518 72 id 3 code HAVE live 1 salt -1 eco -1 ti 52 sen 74 bar 7 need 3 orth 3 floor 0
+TIWATCH518 73 ti 11 ammo 155 scale 252 units 7 sen 75 bar 7 beat 1 hold 0
+GAP518 73 id 3 code HAVE live 1 salt -1 eco -1 ti 11 sen 75 bar 7 need 3 orth 3 floor 0
+GATE515 73 salt 0 eco 1 orth 3 floor 0
+TIWATCH518 74 ti 21 ammo 155 scale 252 units 7 sen 75 bar 7 beat 1 hold 0
+GAP518 74 id 3 code HAVE live 1 salt -1 eco -1 ti 21 sen 75 bar 7 need 3 orth 3 floor 0
+GATE515 74 salt 0 eco 1 orth 3 floor 0
+TIWATCH518 75 ti 24 ammo 145 scale 253 units 7 sen 75 bar 7 beat 1 hold 0
+TICONV518 75 amt 10 floor 14
+GAP518 75 id 3 code HAVE live 1 salt -1 eco -1 ti 14 sen 75 bar 7 need 3 orth 3 floor 0
+GATE515 75 salt 0 eco 1 orth 3 floor 0
+TIWATCH518 76 ti 24 ammo 155 scale 252 units 7 sen 75 bar 7 beat 1 hold 0
+GAP518 76 id 3 code HAVE live 1 salt -1 eco -1 ti 24 sen 75 bar 7 need 3 orth 3 floor 0
+GATE515 76 salt 0 eco 1 orth 3 floor 0
+TIWATCH518 77 ti 17 ammo 145 scale 253 units 7 sen 75 bar 7 beat 1 hold 0
+TICONV518 77 amt 3 floor 14
+GAP518 77 id 3 code HAVE live 1 salt -1 eco -1 ti 14 sen 75 bar 7 need 3 orth 3 floor 0
+GATE515 77 salt 0 eco 1 orth 3 floor 0
+TIWATCH518 78 ti 24 ammo 148 scale 253 units 7 sen 75 bar 7 beat 1 hold 0
+TICONV518 78 amt 10 floor 14
+GAP518 78 id 3 code HAVE live 1 salt -1 eco -1 ti 14 sen 75 bar 7 need 3 orth 3 floor 0
+GATE515 78 salt 0 eco 1 orth 3 floor 0
+TIWATCH518 79 ti 17 ammo 148 scale 254 units 7 sen 76 bar 7 beat 1 hold 0
+TICONV518 79 amt 3 floor 14
+GAP518 79 id 3 code HAVE live 1 salt -1 eco -1 ti 14 sen 76 bar 7 need 3 orth 3 floor 0
+GATE515 79 salt 0 eco 1 orth 3 floor 0
+TIWATCH518 80 ti 24 ammo 151 scale 254 units 7 sen 76 bar 7 beat 1 hold 0
+GAP518 80 id 3 code HAVE live 1 salt -1 eco -1 ti 24 sen 76 bar 7 need 3 orth 3 floor 0
+GATE515 80 salt 0 eco 1 orth 3 floor 0
+TIWATCH518 81 ti 27 ammo 141 scale 255 units 7 sen 76 bar 7 beat 1 hold 0
+TICONV518 81 amt 13 floor 14
+GAP518 81 id 3 code HAVE live 1 salt -1 eco -1 ti 14 sen 76 bar 7 need 3 orth 3 floor 0
+GATE515 81 salt 0 eco 1 orth 3 floor 0
+TIWATCH518 82 ti 24 ammo 154 scale 255 units 7 sen 76 bar 7 beat 1 hold 0
+GAP518 82 id 3 code HAVE live 1 salt -1 eco -1 ti 24 sen 76 bar 7 need 3 orth 3 floor 0
+GATE515 82 salt 0 eco 1 orth 3 floor 0
+TIWATCH518 83 ti 17 ammo 144 scale 255 units 7 sen 76 bar 7 beat 1 hold 0
+TICONV518 83 amt 3 floor 14
+GAP518 83 id 3 code HAVE live 1 salt -1 eco -1 ti 14 sen 76 bar 7 need 3 orth 3 floor 0
+GATE515 83 salt 0 eco 1 orth 3 floor 0
+TIWATCH518 84 ti 24 ammo 147 scale 255 units 7 sen 76 bar 7 beat 1 hold 0
+TICONV518 84 amt 10 floor 14
+GAP518 84 id 3 code HAVE live 1 salt -1 eco -1 ti 14 sen 76 bar 7 need 3 orth 3 floor 0
+GATE515 84 salt 0 eco 1 orth 3 floor 0
+TIWATCH518 85 ti 7 ammo 147 scale 256 units 7 sen 76 bar 7 beat 1 hold 0
+GAP518 85 id 3 code HAVE live 1 salt -1 eco -1 ti 7 sen 76 bar 7 need 3 orth 3 floor 0
+GATE515 85 salt 0 eco 1 orth 3 floor 0
+TIWATCH518 86 ti 7 ammo 147 scale 256 units 7 sen 76 bar 7 beat 1 hold 0
+GAP518 86 id 3 code HAVE live 1 salt -1 eco -1 ti 7 sen 76 bar 7 need 3 orth 3 floor 0
+GATE515 86 salt 0 eco 1 orth 3 floor 0
+TIWATCH518 87 ti 0 ammo 137 scale 257 units 7 sen 77 bar 7 beat 1 hold 0
+GAP518 87 id 3 code HAVE live 1 salt -1 eco -1 ti 0 sen 77 bar 7 need 3 orth 3 floor 0
+GATE515 87 salt 0 eco 1 orth 3 floor 0
+TIWATCH518 88 ti 10 ammo 137 scale 257 units 7 sen 77 bar 7 beat 1 hold 0
+GAP518 88 id 3 code HAVE live 1 salt -1 eco -1 ti 10 sen 77 bar 7 need 3 orth 3 floor 0
+GATE515 88 salt 0 eco 1 orth 3 floor 0
+TIWATCH518 89 ti 13 ammo 127 scale 258 units 7 sen 77 bar 7 beat 1 hold 0
+GAP518 89 id 3 code HAVE live 1 salt -1 eco -1 ti 13 sen 77 bar 7 need 3 orth 3 floor 0
+GATE515 89 salt 0 eco 1 orth 3 floor 0
+TIWATCH518 90 ti 13 ammo 127 scale 258 units 7 sen 77 bar 7 beat 1 hold 0
+GAP518 90 id 3 code HAVE live 1 salt -1 eco -1 ti 13 sen 77 bar 7 need 3 orth 3 floor 0
+GATE515 90 salt 0 eco 1 orth 3 floor 0
+TIWATCH518 91 ti 6 ammo 117 scale 259 units 7 sen 77 bar 7 beat 1 hold 0
+GAP518 91 id 3 code HAVE live 1 salt -1 eco -1 ti 6 sen 77 bar 7 need 3 orth 3 floor 0
+GATE515 91 salt 0 eco 1 orth 3 floor 0
+TIWATCH518 92 ti 16 ammo 117 scale 259 units 7 sen 77 bar 7 beat 1 hold 0
+TICONV518 92 amt 2 floor 14
+GAP518 92 id 3 code HAVE live 1 salt -1 eco -1 ti 14 sen 77 bar 7 need 3 orth 3 floor 0
+GATE515 92 salt 0 eco 1 orth 3 floor 0
+TIWATCH518 93 ti 17 ammo 109 scale 260 units 7 sen 78 bar 7 beat 1 hold 0
+TICONV518 93 amt 3 floor 14
+GAP518 93 id 3 code HAVE live 1 salt -1 eco -1 ti 14 sen 78 bar 7 need 3 orth 3 floor 0
+GATE515 93 salt 0 eco 1 orth 3 floor 0
+TIWATCH518 94 ti 14 ammo 112 scale 259 units 7 sen 77 bar 7 beat 1 hold 0
+GAP518 94 id 3 code HAVE live 1 salt -1 eco -1 ti 14 sen 77 bar 7 need 3 orth 3 floor 0
+GATE515 94 salt 0 eco 1 orth 3 floor 0
+TIWATCH518 95 ti 7 ammo 102 scale 260 units 7 sen 78 bar 7 beat 1 hold 0
+GAP518 95 id 3 code HAVE live 1 salt -1 eco -1 ti 7 sen 78 bar 7 need 3 orth 3 floor 0
+GATE515 95 salt 0 eco 1 orth 3 floor 0
+TIWATCH518 96 ti 17 ammo 102 scale 260 units 7 sen 78 bar 7 beat 1 hold 0
+TICONV518 96 amt 3 floor 14
+GAP518 96 id 3 code HAVE live 1 salt -1 eco -1 ti 14 sen 78 bar 7 need 3 orth 3 floor 0
+GATE515 96 salt 0 eco 1 orth 3 floor 0
+TIWATCH518 97 ti 7 ammo 95 scale 261 units 7 sen 78 bar 7 beat 1 hold 0
+GAP518 97 id 3 code HAVE live 1 salt -1 eco -1 ti 7 sen 78 bar 7 need 3 orth 3 floor 0
+GATE515 97 salt 0 eco 1 orth 3 floor 0
+TIWATCH518 98 ti 7 ammo 95 scale 261 units 7 sen 78 bar 7 beat 1 hold 0
+GAP518 98 id 3 code HAVE live 1 salt -1 eco -1 ti 7 sen 78 bar 7 need 4 orth 3 floor 0
+GATE515 98 salt 0 eco 1 orth 3 floor 0
+TIWATCH518 99 ti 0 ammo 85 scale 262 units 7 sen 78 bar 7 beat 1 hold 0
+GAP518 99 id 3 code HAVE live 1 salt -1 eco -1 ti 0 sen 78 bar 7 need 5 orth 3 floor 0
+GATE515 99 salt 0 eco 1 orth 3 floor 0
+TIWATCH518 100 ti 10 ammo 85 scale 261 units 7 sen 78 bar 7 beat 1 hold 0
+GAP518 100 id 3 code HAVE live 1 salt -1 eco -1 ti 10 sen 78 bar 7 need 5 orth 3 floor 0
+TIWATCH518 101 ti 3 ammo 75 scale 262 units 7 sen 78 bar 7 beat 1 hold 1
+TWINRES518 101 ti 3 ammo 75 sen 78 bar 7 res 98 floor 98 bind 1 rounds 1 until 131
+TWINGATE517 101 atring 1 live 1 ti 3 ammo 75 cost 78 bought 1 orth 3
+GAP518 101 id 3 code HAVE live 1 salt -1 eco -1 ti 3 sen 78 bar 7 need 4 orth 3 floor 0
+GATE515 101 salt 0 eco 1 orth 3 floor 0
+TIWATCH518 102 ti 3 ammo 75 scale 262 units 7 sen 78 bar 7 beat 1 hold 1
+TWINRES518 102 ti 3 ammo 75 sen 78 bar 7 res 98 floor 98 bind 2 rounds 2 until 132
+TWINGATE517 102 atring 1 live 1 ti 3 ammo 75 cost 78 bought 1 orth 3
+GAP518 102 id 3 code HAVE live 1 salt -1 eco -1 ti 3 sen 78 bar 7 need 4 orth 3 floor 0
+GATE515 102 salt 0 eco 1 orth 3 floor 0
+TIWATCH518 103 ti 3 ammo 65 scale 262 units 7 sen 78 bar 7 beat 1 hold 1
+TWINRES518 103 ti 3 ammo 65 sen 78 bar 7 res 98 floor 98 bind 3 rounds 3 until 133
+TWINGATE517 103 atring 1 live 1 ti 3 ammo 65 cost 78 bought 1 orth 3
+GAP518 103 id 3 code HAVE live 1 salt -1 eco -1 ti 3 sen 78 bar 7 need 4 orth 3 floor 0
+GATE515 103 salt 0 eco 1 orth 3 floor 0
+TIWATCH518 104 ti 13 ammo 65 scale 262 units 7 sen 78 bar 7 beat 1 hold 1
+TWINRES518 104 ti 13 ammo 65 sen 78 bar 7 res 98 floor 98 bind 4 rounds 4 until 134
+TWINGATE517 104 atring 1 live 1 ti 13 ammo 65 cost 78 bought 1 orth 3
+GAP518 104 id 3 code HAVE live 1 salt -1 eco -1 ti 13 sen 78 bar 7 need 4 orth 3 floor 0
+GATE515 104 salt 0 eco 1 orth 3 floor 0
+TIWATCH518 105 ti 6 ammo 55 scale 263 units 7 sen 78 bar 7 beat 1 hold 1
+TWINRES518 105 ti 6 ammo 55 sen 78 bar 7 res 98 floor 98 bind 5 rounds 5 until 135
+TWINGATE517 105 atring 1 live 1 ti 6 ammo 55 cost 78 bought 1 orth 3
+GAP518 105 id 3 code HAVE live 1 salt -1 eco -1 ti 6 sen 78 bar 7 need 4 orth 3 floor 0
+GATE515 105 salt 0 eco 1 orth 3 floor 0
+TIWATCH518 106 ti 6 ammo 55 scale 263 units 7 sen 78 bar 7 beat 1 hold 1
+TWINRES518 106 ti 6 ammo 55 sen 78 bar 7 res 98 floor 98 bind 6 rounds 6 until 136
+TWINGATE517 106 atring 1 live 1 ti 6 ammo 55 cost 78 bought 1 orth 3
+GAP518 106 id 3 code HAVE live 1 salt -1 eco -1 ti 6 sen 78 bar 7 need 4 orth 3 floor 0
+GATE515 106 salt 0 eco 1 orth 3 floor 0
+TIWATCH518 107 ti 6 ammo 45 scale 263 units 7 sen 78 bar 7 beat 1 hold 1
+TWINRES518 107 ti 6 ammo 45 sen 78 bar 7 res 98 floor 98 bind 7 rounds 7 until 137
+TWINGATE517 107 atring 1 live 1 ti 6 ammo 45 cost 78 bought 1 orth 3
+GAP518 107 id 3 code HAVE live 1 salt -1 eco -1 ti 6 sen 78 bar 7 need 4 orth 3 floor 0
+GATE515 107 salt 0 eco 1 orth 3 floor 0
+TIWATCH518 108 ti 16 ammo 45 scale 263 units 7 sen 78 bar 7 beat 1 hold 1
+TWINRES518 108 ti 16 ammo 45 sen 78 bar 7 res 98 floor 98 bind 8 rounds 8 until 138
+TWINGATE517 108 atring 1 live 1 ti 16 ammo 45 cost 78 bought 1 orth 3
+GAP518 108 id 3 code HAVE live 1 salt -1 eco -1 ti 16 sen 78 bar 7 need 4 orth 3 floor 0
+GATE515 108 salt 0 eco 1 orth 3 floor 0
+TIWATCH518 109 ti 16 ammo 35 scale 263 units 7 sen 78 bar 7 beat 1 hold 1
+TWINRES518 109 ti 16 ammo 35 sen 78 bar 7 res 98 floor 98 bind 9 rounds 9 until 139
+TWINGATE517 109 atring 1 live 1 ti 16 ammo 35 cost 78 bought 1 orth 3
+GAP518 109 id 3 code HAVE live 1 salt -1 eco -1 ti 16 sen 78 bar 7 need 3 orth 3 floor 0
+GATE515 109 salt 0 eco 1 orth 3 floor 0
+TIWATCH518 110 ti 16 ammo 35 scale 263 units 7 sen 78 bar 7 beat 1 hold 1
+TWINRES518 110 ti 16 ammo 35 sen 78 bar 7 res 98 floor 98 bind 10 rounds 10 until 140
+TWINGATE517 110 atring 1 live 1 ti 16 ammo 35 cost 78 bought 1 orth 5
+GAP518 110 id 3 code HAVE live 1 salt -1 eco -1 ti 16 sen 78 bar 7 need 5 orth 5 floor 0
+GATE515 110 salt 0 eco 1 orth 5 floor 0
+TIWATCH518 111 ti 16 ammo 25 scale 263 units 7 sen 78 bar 7 beat 1 hold 1
+TWINRES518 111 ti 16 ammo 25 sen 78 bar 7 res 98 floor 98 bind 11 rounds 11 until 141
+TWINGATE517 111 atring 1 live 1 ti 16 ammo 25 cost 78 bought 1 orth 7
+GAP518 111 id 3 code HAVE live 1 salt -1 eco -1 ti 16 sen 78 bar 7 need 7 orth 7 floor 0
+GATE515 111 salt 0 eco 1 orth 7 floor 0
+TIWATCH518 112 ti 26 ammo 25 scale 263 units 7 sen 78 bar 7 beat 1 hold 1
+TWINRES518 112 ti 26 ammo 25 sen 78 bar 7 res 98 floor 98 bind 12 rounds 12 until 142
+TWINGATE517 112 atring 1 live 1 ti 26 ammo 25 cost 78 bought 1 orth 6
+GAP518 112 id 3 code HAVE live 1 salt -1 eco -1 ti 26 sen 78 bar 7 need 6 orth 6 floor 0
+GATE515 112 salt 0 eco 1 orth 6 floor 0
+TIWATCH518 113 ti 26 ammo 15 scale 263 units 7 sen 78 bar 7 beat 1 hold 1
+TWINRES518 113 ti 26 ammo 15 sen 78 bar 7 res 98 floor 98 bind 13 rounds 13 until 143
+TWINGATE517 113 atring 1 live 1 ti 26 ammo 15 cost 78 bought 1 orth 8
+GAP518 113 id 3 code HAVE live 1 salt -1 eco -1 ti 26 sen 78 bar 7 need 8 orth 8 floor 0
+GATE515 113 salt 0 eco 1 orth 8 floor 0
+TIWATCH518 114 ti 26 ammo 15 scale 263 units 7 sen 78 bar 7 beat 1 hold 1
+TWINRES518 114 ti 26 ammo 15 sen 78 bar 7 res 98 floor 98 bind 14 rounds 14 until 144
+TWINGATE517 114 atring 1 live 1 ti 26 ammo 15 cost 78 bought 1 orth 7
+GAP518 114 id 3 code HAVE live 1 salt -1 eco -1 ti 26 sen 78 bar 7 need 7 orth 7 floor 0
+GATE515 114 salt 0 eco 1 orth 7 floor 0
+TIWATCH518 115 ti 26 ammo 5 scale 263 units 7 sen 78 bar 7 beat 1 hold 1
+TWINRES518 115 ti 26 ammo 5 sen 78 bar 7 res 98 floor 98 bind 15 rounds 15 until 145
+TWINGATE517 115 atring 1 live 1 ti 26 ammo 5 cost 78 bought 1 orth 7
+GAP518 115 id 3 code HAVE live 1 salt -1 eco -1 ti 26 sen 78 bar 7 need 7 orth 7 floor 0
+GATE515 115 salt 0 eco 1 orth 7 floor 0
+TIWATCH518 116 ti 36 ammo 5 scale 263 units 7 sen 78 bar 7 beat 1 hold 1
+TWINRES518 116 ti 36 ammo 5 sen 78 bar 7 res 98 floor 98 bind 16 rounds 16 until 146
+TWINGATE517 116 atring 1 live 1 ti 36 ammo 5 cost 78 bought 1 orth 5
+GAP518 116 id 3 code HAVE live 1 salt -1 eco -1 ti 36 sen 78 bar 7 need 5 orth 5 floor 0
+GATE515 116 salt 0 eco 1 orth 5 floor 0
+TIWATCH518 117 ti 36 ammo 5 scale 263 units 7 sen 78 bar 7 beat 1 hold 1
+TWINRES518 117 ti 36 ammo 5 sen 78 bar 7 res 98 floor 98 bind 17 rounds 17 until 147
+TWINGATE517 117 atring 1 live 1 ti 36 ammo 5 cost 78 bought 1 orth 3
+GAP518 117 id 3 code DODGE live -1 salt -1 eco -1 ti -1 sen -1 bar -1 need -1 orth -1 floor 0
+TIWATCH518 118 ti 36 ammo 5 scale 263 units 7 sen 78 bar 7 beat 1 hold 1
+TWINRES518 118 ti 36 ammo 5 sen 78 bar 7 res 98 floor 98 bind 18 rounds 18 until 148
+TWINGATE517 118 atring 1 live 1 ti 36 ammo 5 cost 78 bought 1 orth 3
+GAP518 118 id 3 code HAVE live 1 salt -1 eco -1 ti 36 sen 78 bar 7 need 3 orth 3 floor 0
+TIWATCH518 119 ti 34 ammo 5 scale 263 units 7 sen 78 bar 7 beat 1 hold 1
+TWINRES518 119 ti 34 ammo 5 sen 78 bar 7 res 98 floor 98 bind 19 rounds 19 until 149
+TWINGATE517 119 atring 1 live 1 ti 34 ammo 5 cost 78 bought 1 orth 3
+GAP518 119 id 3 code HAVE live 1 salt -1 eco -1 ti 34 sen 78 bar 7 need 3 orth 3 floor 0
+TIWATCH518 120 ti 42 ammo 5 scale 263 units 7 sen 78 bar 7 beat 1 hold 1
+TWINRES518 120 ti 42 ammo 5 sen 78 bar 7 res 98 floor 98 bind 20 rounds 20 until 150
+TWINGATE517 120 atring 1 live 1 ti 42 ammo 5 cost 78 bought 1 orth 3
+GAP518 120 id 3 code HAVE live 1 salt -1 eco -1 ti 42 sen 78 bar 7 need 3 orth 3 floor 0
+TIWATCH518 121 ti 40 ammo 5 scale 263 units 7 sen 78 bar 7 beat 1 hold 1
+TWINRES518 121 ti 40 ammo 5 sen 78 bar 7 res 98 floor 98 bind 21 rounds 21 until 151
+TWINGATE517 121 atring 1 live 1 ti 40 ammo 5 cost 78 bought 1 orth 3
+GAP518 121 id 3 code HAVE live 1 salt -1 eco -1 ti 40 sen 78 bar 7 need 3 orth 3 floor 0
+TIWATCH518 122 ti 38 ammo 5 scale 263 units 7 sen 78 bar 7 beat 1 hold 1
+TWINRES518 122 ti 38 ammo 5 sen 78 bar 7 res 98 floor 98 bind 22 rounds 22 until 152
+TWINGATE517 122 atring 1 live 1 ti 38 ammo 5 cost 78 bought 1 orth 3
+GAP518 122 id 3 code HAVE live 1 salt -1 eco -1 ti 38 sen 78 bar 7 need 3 orth 3 floor 0
+TIWATCH518 123 ti 36 ammo 5 scale 263 units 7 sen 78 bar 7 beat 1 hold 1
+TWINRES518 123 ti 36 ammo 5 sen 78 bar 7 res 98 floor 98 bind 23 rounds 23 until 153
+TWINGATE517 123 atring 1 live 1 ti 36 ammo 5 cost 78 bought 1 orth 3
+GAP518 123 id 3 code HAVE live 1 salt -1 eco -1 ti 36 sen 78 bar 7 need 3 orth 3 floor 0
+TIWATCH518 124 ti 44 ammo 5 scale 263 units 7 sen 78 bar 7 beat 1 hold 1
+TWINRES518 124 ti 44 ammo 5 sen 78 bar 7 res 98 floor 98 bind 24 rounds 24 until 154
+TWINGATE517 124 atring 1 live 1 ti 44 ammo 5 cost 78 bought 1 orth 3
+GAP518 124 id 3 code HAVE live 1 salt -1 eco -1 ti 44 sen 78 bar 7 need 3 orth 3 floor 0
+TIWATCH518 125 ti 42 ammo 5 scale 263 units 7 sen 78 bar 7 beat 1 hold 1
+TWINRES518 125 ti 42 ammo 5 sen 78 bar 7 res 98 floor 98 bind 25 rounds 25 until 155
+TWINGATE517 125 atring 1 live 1 ti 42 ammo 5 cost 78 bought 1 orth 3
+GAP518 125 id 3 code HAVE live 1 salt -1 eco -1 ti 42 sen 78 bar 7 need 3 orth 3 floor 0
+TIWATCH518 126 ti 40 ammo 5 scale 263 units 7 sen 78 bar 7 beat 1 hold 0
+TWINRES518 126 ti 40 ammo 5 sen 78 bar 7 res 98 floor 98 bind 26 rounds 26 until 155
+GAP518 126 id 3 code HAVE live 1 salt -1 eco -1 ti 40 sen 78 bar 7 need 3 orth 3 floor 0
+TIWATCH518 127 ti 33 ammo 5 scale 264 units 7 sen 79 bar 7 beat 1 hold 0
+TWINRES518 127 ti 33 ammo 5 sen 79 bar 7 res 99 floor 99 bind 27 rounds 27 until 155
+GAP518 127 id 3 code HAVE live 1 salt -1 eco -1 ti 33 sen 79 bar 7 need 2 orth 2 floor 0
+GATE515 127 salt 0 eco 1 orth 2 floor 0
+TIWATCH518 128 ti 43 ammo 5 scale 264 units 7 sen 79 bar 7 beat 1 hold 0
+TWINRES518 128 ti 43 ammo 5 sen 79 bar 7 res 99 floor 99 bind 28 rounds 28 until 155
+GAP518 128 id 3 code DODGE live -1 salt -1 eco -1 ti -1 sen -1 bar -1 need -1 orth -1 floor 0
+TIWATCH518 129 ti 43 ammo 5 scale 264 units 7 sen 79 bar 7 beat 1 hold 0
+TWINRES518 129 ti 43 ammo 5 sen 79 bar 7 res 99 floor 99 bind 29 rounds 29 until 155
+GAP518 129 id 3 code HAVE live 1 salt -1 eco -1 ti 43 sen 79 bar 7 need 2 orth 2 floor 0
+GATE515 129 salt 0 eco 1 orth 2 floor 0
+TIWATCH518 130 ti 43 ammo 5 scale 244 units 6 sen 73 bar 7 beat 1 hold 0
+TWINRES518 130 ti 43 ammo 5 sen 73 bar 7 res 93 floor 93 bind 30 rounds 30 until 155
+TIWATCH518 131 ti 43 ammo 5 scale 244 units 6 sen 73 bar 7 beat 1 hold 0
+TWINRES518 131 ti 43 ammo 5 sen 73 bar 7 res 93 floor 93 bind 31 rounds 31 until 155
+TIWATCH518 132 ti 53 ammo 5 scale 244 units 6 sen 73 bar 7 beat 1 hold 0
+TWINRES518 132 ti 53 ammo 5 sen 73 bar 7 res 93 floor 93 bind 32 rounds 32 until 155
+TIWATCH518 133 ti 53 ammo 5 scale 244 units 6 sen 73 bar 7 beat 1 hold 0
+TWINRES518 133 ti 53 ammo 5 sen 73 bar 7 res 93 floor 93 bind 33 rounds 33 until 155
+TIWATCH518 134 ti 53 ammo 5 scale 244 units 6 sen 73 bar 7 beat 1 hold 0
+TWINRES518 134 ti 53 ammo 5 sen 73 bar 7 res 93 floor 93 bind 34 rounds 34 until 155
+TIWATCH518 135 ti 53 ammo 5 scale 244 units 6 sen 73 bar 7 beat 1 hold 0
+TWINRES518 135 ti 53 ammo 5 sen 73 bar 7 res 93 floor 93 bind 35 rounds 35 until 155
+TIWATCH518 136 ti 63 ammo 5 scale 244 units 6 sen 73 bar 7 beat 1 hold 0
+TWINRES518 136 ti 63 ammo 5 sen 73 bar 7 res 93 floor 93 bind 36 rounds 36 until 155
+TIWATCH518 137 ti 63 ammo 5 scale 244 units 6 sen 73 bar 7 beat 1 hold 0
+TWINRES518 137 ti 63 ammo 5 sen 73 bar 7 res 93 floor 93 bind 37 rounds 37 until 155
+TIWATCH518 138 ti 63 ammo 5 scale 244 units 6 sen 73 bar 7 beat 1 hold 0
+TWINRES518 138 ti 63 ammo 5 sen 73 bar 7 res 93 floor 93 bind 38 rounds 38 until 155
+TIWATCH518 139 ti 63 ammo 5 scale 244 units 6 sen 73 bar 7 beat 1 hold 0
+TWINRES518 139 ti 63 ammo 5 sen 73 bar 7 res 93 floor 93 bind 39 rounds 39 until 155
+TIWATCH518 140 ti 73 ammo 5 scale 244 units 6 sen 73 bar 7 beat 1 hold 0
+TWINRES518 140 ti 73 ammo 5 sen 73 bar 7 res 93 floor 93 bind 40 rounds 40 until 155
+TIWATCH518 141 ti 0 ammo 5 scale 264 units 7 sen 79 bar 7 beat 1 hold 0
+TWINRES518 141 ti 0 ammo 5 sen 79 bar 7 res 99 floor 99 bind 41 rounds 41 until 155
+TIWATCH518 142 ti 0 ammo 5 scale 264 units 7 sen 79 bar 7 beat 1 hold 0
+TWINRES518 142 ti 0 ammo 5 sen 79 bar 7 res 99 floor 99 bind 42 rounds 42 until 155
+TIWATCH518 143 ti 0 ammo 5 scale 264 units 7 sen 79 bar 7 beat 1 hold 0
+TWINRES518 143 ti 0 ammo 5 sen 79 bar 7 res 99 floor 99 bind 43 rounds 43 until 155
+TIWATCH518 144 ti 10 ammo 5 scale 264 units 7 sen 79 bar 7 beat 1 hold 0
+TWINRES518 144 ti 10 ammo 5 sen 79 bar 7 res 99 floor 99 bind 44 rounds 44 until 155
+TIWATCH518 145 ti 10 ammo 5 scale 264 units 7 sen 79 bar 7 beat 1 hold 0
+TWINRES518 145 ti 10 ammo 5 sen 79 bar 7 res 99 floor 99 bind 45 rounds 45 until 155
+TIWATCH518 146 ti 10 ammo 5 scale 264 units 7 sen 79 bar 7 beat 1 hold 0
+TWINRES518 146 ti 10 ammo 5 sen 79 bar 7 res 99 floor 99 bind 46 rounds 46 until 155
+TIWATCH518 147 ti 10 ammo 5 scale 264 units 7 sen 79 bar 7 beat 1 hold 0
+TWINRES518 147 ti 10 ammo 5 sen 79 bar 7 res 99 floor 99 bind 47 rounds 47 until 155
+TIWATCH518 148 ti 20 ammo 5 scale 264 units 7 sen 79 bar 7 beat 1 hold 0
+TWINRES518 148 ti 20 ammo 5 sen 79 bar 7 res 99 floor 99 bind 48 rounds 48 until 155
+TIWATCH518 149 ti 20 ammo 5 scale 264 units 7 sen 79 bar 7 beat 1 hold 0
+TWINRES518 149 ti 20 ammo 5 sen 79 bar 7 res 99 floor 99 bind 49 rounds 49 until 155
+TIWATCH518 150 ti 20 ammo 5 scale 264 units 7 sen 79 bar 7 beat 1 hold 0
+TWINRES518 150 ti 20 ammo 5 sen 79 bar 7 res 99 floor 99 bind 50 rounds 50 until 155
+TIWATCH518 151 ti 20 ammo 5 scale 264 units 7 sen 79 bar 7 beat 1 hold 0
+TWINRES518 151 ti 20 ammo 5 sen 79 bar 7 res 99 floor 99 bind 51 rounds 51 until 155
+TIWATCH518 152 ti 30 ammo 5 scale 264 units 7 sen 79 bar 7 beat 1 hold 0
+TWINRES518 152 ti 30 ammo 5 sen 79 bar 7 res 99 floor 99 bind 52 rounds 52 until 155
+TIWATCH518 153 ti 30 ammo 5 scale 264 units 7 sen 79 bar 7 beat 1 hold 0
+TWINRES518 153 ti 30 ammo 5 sen 79 bar 7 res 99 floor 99 bind 53 rounds 53 until 155
+TIWATCH518 154 ti 30 ammo 5 scale 264 units 7 sen 79 bar 7 beat 1 hold 0
+TWINRES518 154 ti 30 ammo 5 sen 79 bar 7 res 99 floor 99 bind 54 rounds 54 until 155
+TIWATCH518 155 ti 30 ammo 5 scale 264 units 7 sen 79 bar 7 beat 1 hold 0
+TICONV518 155 amt 16 floor 14

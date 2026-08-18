@@ -1,0 +1,1525 @@
+Update available: 2.3.6 -> 2.3.8. Run: pip install --upgrade fcode
+TIWATCH518 0 ti 500 ammo 0 scale 100 units 1 sen 30 bar 3 beat 0 hold 0
+TIWATCH518 1 ti 470 ammo 0 scale 120 units 2 sen 36 bar 3 beat 0 hold 0
+TIWATCH518 2 ti 406 ammo 0 scale 150 units 4 sen 45 bar 4 beat 0 hold 0
+TIWATCH518 3 ti 361 ammo 0 scale 160 units 4 sen 48 bar 4 beat 0 hold 0
+TIWATCH518 4 ti 339 ammo 0 scale 170 units 5 sen 51 bar 5 beat 0 hold 0
+TIWATCH518 5 ti 339 ammo 0 scale 160 units 4 sen 48 bar 4 beat 0 hold 0
+TIWATCH518 6 ti 307 ammo 0 scale 170 units 5 sen 51 bar 5 beat 0 hold 0
+TIWATCH518 7 ti 307 ammo 0 scale 160 units 4 sen 48 bar 4 beat 0 hold 0
+TIWATCH518 8 ti 285 ammo 0 scale 170 units 5 sen 51 bar 5 beat 0 hold 0
+TIWATCH518 9 ti 285 ammo 0 scale 160 units 4 sen 48 bar 4 beat 0 hold 0
+TIWATCH518 10 ti 219 ammo 0 scale 175 units 5 sen 52 bar 5 beat 0 hold 0
+TIWATCH518 11 ti 214 ammo 0 scale 166 units 4 sen 49 bar 4 beat 0 hold 0
+GATE515 11 salt 0 eco 0 orth 7 floor 60
+GAP518 11 id 3 code GATE live 0 salt 0 eco 0 ti 214 sen 49 bar 4 need 8 orth 7 floor 60
+GATE515 11 salt 0 eco 0 orth 7 floor 60
+TIWATCH518 12 ti 220 ammo 0 scale 167 units 4 sen 50 bar 5 beat 0 hold 0
+GATE515 12 salt 0 eco 0 orth 6 floor 60
+GAP518 12 id 3 code GATE live 0 salt 0 eco 0 ti 170 sen 56 bar 5 need 7 orth 6 floor 60
+GATE515 12 salt 0 eco 0 orth 6 floor 60
+TIWATCH518 13 ti 160 ammo 0 scale 189 units 5 sen 56 bar 5 beat 0 hold 0
+GAP518 13 id 3 code DODGE live -1 salt -1 eco -1 ti -1 sen -1 bar -1 need -1 orth -1 floor 60
+TIWATCH518 14 ti 56 ammo 0 scale 215 units 6 sen 64 bar 6 beat 0 hold 0
+TICONV518 14 amt 4 floor 52
+GATE515 14 salt 0 eco 0 orth 7 floor 60
+GAP518 14 id 3 code GATE live 0 salt 0 eco 0 ti 52 sen 64 bar 6 need 7 orth 7 floor 60
+GATE515 14 salt 0 eco 0 orth 7 floor 60
+TIWATCH518 15 ti 40 ammo 4 scale 217 units 6 sen 65 bar 6 beat 0 hold 0
+GATE515 15 salt 0 eco 0 orth 6 floor 60
+GAP518 15 id 3 code GATE live 0 salt 0 eco 0 ti 40 sen 65 bar 6 need 6 orth 6 floor 60
+GATE515 15 salt 0 eco 0 orth 6 floor 60
+GATE515 15 salt 0 eco 0 orth 6 floor 60
+TIWATCH518 16 ti 44 ammo 4 scale 217 units 6 sen 65 bar 6 beat 0 hold 0
+GATE515 16 salt 0 eco 0 orth 6 floor 60
+GAP518 16 id 3 code GATE live 0 salt 0 eco 0 ti 44 sen 65 bar 6 need 7 orth 6 floor 60
+GATE515 16 salt 0 eco 0 orth 6 floor 60
+GATE515 16 salt 0 eco 0 orth 6 floor 60
+TIWATCH518 17 ti 38 ammo 4 scale 218 units 6 sen 65 bar 6 beat 0 hold 0
+GATE515 17 salt 0 eco 0 orth 6 floor 60
+GAP518 17 id 3 code GATE live 0 salt 0 eco 0 ti 38 sen 65 bar 6 need 7 orth 6 floor 60
+GATE515 17 salt 0 eco 0 orth 6 floor 60
+GATE515 17 salt 0 eco 0 orth 6 floor 60
+TIWATCH518 18 ti 32 ammo 4 scale 219 units 6 sen 65 bar 6 beat 0 hold 0
+GATE515 18 salt 0 eco 0 orth 6 floor 60
+GAP518 18 id 3 code GATE live 0 salt 0 eco 0 ti 32 sen 65 bar 6 need 7 orth 6 floor 60
+GATE515 18 salt 0 eco 0 orth 6 floor 60
+GATE515 18 salt 0 eco 0 orth 6 floor 60
+TIWATCH518 19 ti 32 ammo 4 scale 219 units 6 sen 65 bar 6 beat 0 hold 0
+GATE515 19 salt 0 eco 0 orth 6 floor 60
+GAP518 19 id 3 code GATE live 0 salt 0 eco 0 ti 32 sen 65 bar 6 need 7 orth 6 floor 60
+GATE515 19 salt 0 eco 0 orth 6 floor 60
+GATE515 19 salt 0 eco 0 orth 6 floor 60
+TIWATCH518 20 ti 36 ammo 4 scale 219 units 6 sen 65 bar 6 beat 0 hold 0
+GATE515 20 salt 0 eco 0 orth 7 floor 60
+GAP518 20 id 3 code GATE live 0 salt 0 eco 0 ti 36 sen 65 bar 6 need 8 orth 7 floor 60
+GATE515 20 salt 0 eco 0 orth 7 floor 60
+GATE515 20 salt 0 eco 0 orth 7 floor 60
+TIWATCH518 21 ti 36 ammo 4 scale 219 units 6 sen 65 bar 6 beat 0 hold 0
+GATE515 21 salt 0 eco 0 orth 7 floor 60
+GAP518 21 id 3 code GATE live 0 salt 0 eco 0 ti 36 sen 65 bar 6 need 8 orth 7 floor 60
+GATE515 21 salt 0 eco 0 orth 7 floor 60
+GATE515 21 salt 0 eco 0 orth 7 floor 60
+TIWATCH518 22 ti 30 ammo 4 scale 220 units 6 sen 66 bar 6 beat 0 hold 0
+GATE515 22 salt 0 eco 0 orth 7 floor 60
+GAP518 22 id 3 code GATE live 0 salt 0 eco 0 ti 30 sen 66 bar 6 need 8 orth 7 floor 60
+GATE515 22 salt 0 eco 0 orth 7 floor 60
+GATE515 22 salt 0 eco 0 orth 7 floor 60
+TIWATCH518 23 ti 30 ammo 4 scale 220 units 6 sen 66 bar 6 beat 0 hold 0
+GATE515 23 salt 0 eco 0 orth 7 floor 60
+GAP518 23 id 3 code GATE live 0 salt 0 eco 0 ti 30 sen 66 bar 6 need 8 orth 7 floor 60
+GATE515 23 salt 0 eco 0 orth 7 floor 60
+TIWATCH518 24 ti 28 ammo 4 scale 222 units 6 sen 66 bar 6 beat 0 hold 0
+GATE515 24 salt 0 eco 0 orth 6 floor 60
+GAP518 24 id 3 code GATE live 0 salt 0 eco 0 ti 28 sen 66 bar 6 need 7 orth 6 floor 60
+GATE515 24 salt 0 eco 0 orth 6 floor 60
+GATE515 24 salt 0 eco 0 orth 6 floor 60
+TIWATCH518 25 ti 38 ammo 4 scale 222 units 6 sen 66 bar 6 beat 0 hold 0
+GATE515 25 salt 0 eco 0 orth 6 floor 60
+GAP518 25 id 3 code GATE live 0 salt 0 eco 0 ti 38 sen 66 bar 6 need 7 orth 6 floor 60
+GATE515 25 salt 0 eco 0 orth 6 floor 60
+TIWATCH518 26 ti 42 ammo 4 scale 223 units 6 sen 66 bar 6 beat 0 hold 0
+GATE515 26 salt 0 eco 0 orth 6 floor 60
+GAP518 26 id 3 code GATE live 0 salt 0 eco 0 ti 42 sen 66 bar 6 need 6 orth 6 floor 60
+GATE515 26 salt 0 eco 0 orth 6 floor 60
+GATE515 26 salt 0 eco 0 orth 6 floor 60
+TIWATCH518 27 ti 52 ammo 4 scale 223 units 6 sen 66 bar 6 beat 0 hold 0
+GATE515 27 salt 0 eco 0 orth 6 floor 60
+GAP518 27 id 3 code GATE live 0 salt 0 eco 0 ti 52 sen 66 bar 6 need 6 orth 6 floor 60
+GATE515 27 salt 0 eco 0 orth 6 floor 60
+GATE515 27 salt 0 eco 0 orth 6 floor 60
+TIWATCH518 28 ti 62 ammo 4 scale 223 units 6 sen 66 bar 6 beat 0 hold 0
+TICONV518 28 amt 10 floor 52
+GATE515 28 salt 0 eco 0 orth 6 floor 60
+GAP518 28 id 3 code GATE live 0 salt 0 eco 0 ti 52 sen 66 bar 6 need 6 orth 6 floor 60
+GATE515 28 salt 0 eco 0 orth 6 floor 60
+GATE515 28 salt 0 eco 0 orth 6 floor 60
+TIWATCH518 29 ti 62 ammo 14 scale 223 units 6 sen 66 bar 6 beat 0 hold 0
+GATE515 29 salt 0 eco 0 orth 6 floor 60
+GAP518 29 id 3 code GATE live 0 salt 0 eco 0 ti 62 sen 66 bar 6 need 6 orth 6 floor 60
+GATE515 29 salt 0 eco 0 orth 6 floor 60
+GATE515 29 salt 0 eco 0 orth 6 floor 60
+TIWATCH518 30 ti 62 ammo 14 scale 223 units 6 sen 66 bar 6 beat 0 hold 0
+GATE515 30 salt 0 eco 0 orth 6 floor 60
+GAP518 30 id 3 code GATE live 0 salt 0 eco 0 ti 62 sen 66 bar 6 need 6 orth 6 floor 60
+GATE515 30 salt 0 eco 0 orth 6 floor 60
+GATE515 30 salt 0 eco 0 orth 6 floor 60
+TIWATCH518 31 ti 72 ammo 14 scale 223 units 6 sen 66 bar 6 beat 0 hold 0
+GATE515 31 salt 0 eco 0 orth 6 floor 60
+GAP518 31 id 3 code GATE live 0 salt 0 eco 0 ti 72 sen 66 bar 6 need 6 orth 6 floor 60
+GATE515 31 salt 0 eco 0 orth 6 floor 60
+TIWATCH518 32 ti 76 ammo 14 scale 224 units 6 sen 67 bar 6 beat 0 hold 0
+GATE515 32 salt 0 eco 0 orth 5 floor 60
+GAP518 32 id 3 code GATE live 0 salt 0 eco 0 ti 76 sen 67 bar 6 need 5 orth 5 floor 60
+GATE515 32 salt 0 eco 0 orth 5 floor 60
+GATE515 32 salt 0 eco 0 orth 5 floor 60
+TIWATCH518 33 ti 86 ammo 14 scale 224 units 6 sen 67 bar 6 beat 0 hold 0
+GATE515 33 salt 0 eco 0 orth 5 floor 60
+GAP518 33 id 3 code GATE live 0 salt 0 eco 0 ti 86 sen 67 bar 6 need 5 orth 5 floor 60
+GATE515 33 salt 0 eco 0 orth 5 floor 60
+TIWATCH518 34 ti 80 ammo 14 scale 225 units 6 sen 67 bar 6 beat 0 hold 0
+GATE515 34 salt 0 eco 0 orth 4 floor 60
+GAP518 34 id 3 code GATE live 0 salt 0 eco 0 ti 80 sen 67 bar 6 need 4 orth 4 floor 60
+GATE515 34 salt 0 eco 0 orth 4 floor 60
+GATE515 34 salt 0 eco 0 orth 4 floor 60
+TIWATCH518 35 ti 90 ammo 14 scale 225 units 6 sen 67 bar 6 beat 0 hold 0
+GATE515 35 salt 0 eco 0 orth 4 floor 60
+GAP518 35 id 3 code GATE live 0 salt 0 eco 0 ti 90 sen 67 bar 6 need 4 orth 4 floor 60
+GATE515 35 salt 0 eco 0 orth 4 floor 60
+GATE515 35 salt 0 eco 0 orth 4 floor 60
+TIWATCH518 36 ti 100 ammo 14 scale 225 units 6 sen 67 bar 6 beat 0 hold 0
+GATE515 36 salt 0 eco 0 orth 4 floor 60
+GAP518 36 id 3 code GATE live 0 salt 0 eco 0 ti 100 sen 67 bar 6 need 4 orth 4 floor 60
+GATE515 36 salt 0 eco 0 orth 4 floor 60
+TIWATCH518 37 ti 104 ammo 14 scale 226 units 6 sen 67 bar 6 beat 0 hold 0
+GATE515 37 salt 0 eco 0 orth 3 floor 60
+GAP518 37 id 3 code GATE live 0 salt 0 eco 0 ti 104 sen 67 bar 6 need 3 orth 3 floor 60
+GATE515 37 salt 0 eco 0 orth 3 floor 60
+GATE515 37 salt 0 eco 0 orth 3 floor 60
+TIWATCH518 38 ti 104 ammo 14 scale 226 units 6 sen 67 bar 6 beat 0 hold 0
+GATE515 38 salt 0 eco 0 orth 3 floor 60
+GAP518 38 id 3 code GATE live 0 salt 0 eco 0 ti 104 sen 67 bar 6 need 3 orth 3 floor 60
+GATE515 38 salt 0 eco 0 orth 3 floor 60
+GATE515 38 salt 0 eco 0 orth 3 floor 60
+TIWATCH518 39 ti 69 ammo 14 scale 230 units 6 sen 69 bar 6 beat 0 hold 0
+GATE515 39 salt 0 eco 0 orth 3 floor 60
+GAP518 39 id 3 code GATE live 0 salt 0 eco 0 ti 69 sen 69 bar 6 need 4 orth 3 floor 60
+GATE515 39 salt 0 eco 0 orth 3 floor 60
+GATE515 39 salt 0 eco 0 orth 3 floor 60
+TIWATCH518 40 ti 73 ammo 14 scale 231 units 6 sen 69 bar 6 beat 0 hold 0
+GATE515 40 salt 0 eco 0 orth 3 floor 60
+GAP518 40 id 3 code GATE live 0 salt 0 eco 0 ti 73 sen 69 bar 6 need 4 orth 3 floor 60
+GATE515 40 salt 0 eco 0 orth 3 floor 60
+TIWATCH518 41 ti 77 ammo 14 scale 231 units 6 sen 69 bar 6 beat 0 hold 0
+GATE515 41 salt 0 eco 0 orth 3 floor 60
+GAP518 41 id 3 code GATE live 0 salt 0 eco 0 ti 77 sen 69 bar 6 need 4 orth 3 floor 60
+GATE515 41 salt 0 eco 0 orth 3 floor 60
+GATE515 41 salt 0 eco 0 orth 3 floor 60
+TIWATCH518 42 ti 71 ammo 14 scale 232 units 6 sen 69 bar 6 beat 0 hold 0
+GATE515 42 salt 0 eco 0 orth 3 floor 60
+GAP518 42 id 3 code GATE live 0 salt 0 eco 0 ti 71 sen 69 bar 6 need 4 orth 3 floor 60
+GATE515 42 salt 0 eco 0 orth 3 floor 60
+GATE515 42 salt 0 eco 0 orth 3 floor 60
+TIWATCH518 43 ti 75 ammo 14 scale 232 units 6 sen 69 bar 6 beat 0 hold 0
+TICONV518 43 amt 10 floor 12
+GATE515 43 salt 0 eco 0 orth 4 floor 60
+GAP518 43 id 3 code GATE live 0 salt 0 eco 0 ti 65 sen 69 bar 6 need 5 orth 4 floor 60
+GATE515 43 salt 0 eco 0 orth 4 floor 60
+TIWATCH518 44 ti 69 ammo 24 scale 233 units 6 sen 69 bar 6 beat 0 hold 0
+GATE515 44 salt 0 eco 0 orth 3 floor 60
+GAP518 44 id 3 code GATE live 0 salt 0 eco 0 ti 69 sen 69 bar 6 need 4 orth 3 floor 60
+GATE515 44 salt 0 eco 0 orth 3 floor 60
+GATE515 44 salt 0 eco 0 orth 3 floor 60
+TIWATCH518 45 ti 73 ammo 24 scale 234 units 6 sen 70 bar 7 beat 0 hold 0
+GATE515 45 salt 0 eco 0 orth 3 floor 60
+GAP518 45 id 3 code GATE live 0 salt 0 eco 0 ti 73 sen 70 bar 7 need 4 orth 3 floor 60
+GATE515 45 salt 0 eco 0 orth 3 floor 60
+GATE515 45 salt 0 eco 0 orth 3 floor 60
+TIWATCH518 46 ti 73 ammo 24 scale 234 units 6 sen 70 bar 7 beat 0 hold 0
+GATE515 46 salt 0 eco 0 orth 3 floor 60
+GAP518 46 id 3 code GATE live 0 salt 0 eco 0 ti 73 sen 70 bar 7 need 4 orth 3 floor 60
+GATE515 46 salt 0 eco 0 orth 3 floor 60
+GATE515 46 salt 0 eco 0 orth 3 floor 60
+TIWATCH518 47 ti 76 ammo 24 scale 235 units 6 sen 70 bar 7 beat 0 hold 0
+GATE515 47 salt 0 eco 0 orth 3 floor 60
+GAP518 47 id 3 code GATE live 0 salt 0 eco 0 ti 76 sen 70 bar 7 need 4 orth 3 floor 60
+GATE515 47 salt 0 eco 0 orth 3 floor 60
+GATE515 47 salt 0 eco 0 orth 3 floor 60
+TIWATCH518 48 ti 16 ammo 24 scale 255 units 7 sen 76 bar 7 beat 0 hold 0
+GATE515 48 salt 0 eco 0 orth 4 floor 60
+GAP518 48 id 3 code GATE live 0 salt 0 eco 0 ti 16 sen 76 bar 7 need 5 orth 4 floor 60
+GATE515 48 salt 0 eco 0 orth 4 floor 60
+GATE515 48 salt 0 eco 0 orth 4 floor 60
+TIWATCH518 49 ti 19 ammo 24 scale 256 units 7 sen 76 bar 7 beat 0 hold 0
+GATE515 49 salt 0 eco 0 orth 5 floor 60
+GAP518 49 id 3 code GATE live 0 salt 0 eco 0 ti 19 sen 76 bar 7 need 6 orth 5 floor 60
+GATE515 49 salt 0 eco 0 orth 5 floor 60
+GATE515 49 salt 0 eco 0 orth 5 floor 60
+TIWATCH518 50 ti 19 ammo 24 scale 256 units 7 sen 76 bar 7 beat 0 hold 0
+GATE515 50 salt 0 eco 0 orth 5 floor 60
+GAP518 50 id 3 code GATE live 0 salt 0 eco 0 ti 19 sen 76 bar 7 need 6 orth 5 floor 60
+GATE515 50 salt 0 eco 0 orth 5 floor 60
+GATE515 50 salt 0 eco 0 orth 5 floor 60
+TIWATCH518 51 ti 22 ammo 24 scale 257 units 7 sen 77 bar 7 beat 0 hold 0
+GATE515 51 salt 0 eco 0 orth 5 floor 60
+GAP518 51 id 3 code GATE live 0 salt 0 eco 0 ti 22 sen 77 bar 7 need 6 orth 5 floor 60
+GATE515 51 salt 0 eco 0 orth 5 floor 60
+GATE515 51 salt 0 eco 0 orth 5 floor 60
+TIWATCH518 52 ti 32 ammo 24 scale 257 units 7 sen 77 bar 7 beat 0 hold 0
+GATE515 52 salt 0 eco 0 orth 5 floor 60
+GAP518 52 id 3 code GATE live 0 salt 0 eco 0 ti 32 sen 77 bar 7 need 6 orth 5 floor 60
+GATE515 52 salt 0 eco 0 orth 5 floor 60
+GATE515 52 salt 0 eco 0 orth 5 floor 60
+TIWATCH518 53 ti 35 ammo 24 scale 258 units 7 sen 77 bar 7 beat 0 hold 0
+GATE515 53 salt 0 eco 0 orth 3 floor 60
+GAP518 53 id 3 code GATE live 0 salt 0 eco 0 ti 35 sen 77 bar 7 need 4 orth 3 floor 60
+GATE515 53 salt 0 eco 0 orth 3 floor 60
+GATE515 53 salt 0 eco 0 orth 3 floor 60
+TIWATCH518 54 ti 35 ammo 24 scale 258 units 7 sen 77 bar 7 beat 0 hold 0
+GATE515 54 salt 0 eco 0 orth 3 floor 60
+GAP518 54 id 3 code GATE live 0 salt 0 eco 0 ti 35 sen 77 bar 7 need 4 orth 3 floor 60
+GATE515 54 salt 0 eco 0 orth 3 floor 60
+GATE515 54 salt 0 eco 0 orth 3 floor 60
+TIWATCH518 55 ti 38 ammo 24 scale 259 units 7 sen 77 bar 7 beat 0 hold 0
+GAP518 55 id 3 code DODGE live -1 salt -1 eco -1 ti -1 sen -1 bar -1 need -1 orth -1 floor 60
+TIWATCH518 56 ti 48 ammo 24 scale 259 units 7 sen 77 bar 7 beat 0 hold 0
+GATE515 56 salt 0 eco 0 orth 3 floor 60
+GAP518 56 id 3 code GATE live 0 salt 0 eco 0 ti 48 sen 77 bar 7 need 4 orth 3 floor 60
+GATE515 56 salt 0 eco 0 orth 3 floor 60
+GATE515 56 salt 0 eco 0 orth 3 floor 60
+TIWATCH518 57 ti 41 ammo 24 scale 260 units 7 sen 78 bar 7 beat 0 hold 0
+GAP518 57 id 3 code DODGE live -1 salt -1 eco -1 ti -1 sen -1 bar -1 need -1 orth -1 floor 60
+TIWATCH518 58 ti 41 ammo 24 scale 260 units 7 sen 78 bar 7 beat 0 hold 0
+GATE515 58 salt 0 eco 0 orth 3 floor 60
+GAP518 58 id 3 code GATE live 0 salt 0 eco 0 ti 41 sen 78 bar 7 need 4 orth 3 floor 60
+GATE515 58 salt 0 eco 0 orth 3 floor 60
+GATE515 58 salt 0 eco 0 orth 3 floor 60
+TIWATCH518 59 ti 44 ammo 24 scale 241 units 6 sen 72 bar 7 beat 0 hold 0
+TIWATCH518 60 ti 54 ammo 24 scale 241 units 6 sen 72 bar 7 beat 0 hold 0
+TIWATCH518 61 ti 57 ammo 24 scale 242 units 6 sen 72 bar 7 beat 0 hold 0
+TIWATCH518 62 ti 9 ammo 24 scale 262 units 7 sen 78 bar 7 beat 0 hold 0
+TIWATCH518 63 ti 12 ammo 20 scale 263 units 7 sen 78 bar 7 beat 0 hold 0
+TIWATCH518 64 ti 32 ammo 16 scale 263 units 7 sen 78 bar 7 beat 0 hold 0
+TICONV518 64 amt 8 floor 12
+TIWATCH518 65 ti 34 ammo 20 scale 263 units 7 sen 78 bar 7 beat 0 hold 0
+TICONV518 65 amt 4 floor 12
+TIWATCH518 66 ti 40 ammo 20 scale 263 units 7 sen 78 bar 7 beat 0 hold 0
+TICONV518 66 amt 4 floor 12
+TIWATCH518 67 ti 56 ammo 20 scale 263 units 7 sen 78 bar 7 beat 0 hold 0
+TICONV518 67 amt 4 floor 12
+TIWATCH518 68 ti 72 ammo 20 scale 263 units 7 sen 78 bar 7 beat 0 hold 0
+TICONV518 68 amt 4 floor 12
+TIWATCH518 69 ti 78 ammo 24 scale 263 units 7 sen 78 bar 7 beat 0 hold 0
+TIWATCH518 70 ti 71 ammo 20 scale 264 units 7 sen 79 bar 7 beat 0 hold 0
+TICONV518 70 amt 4 floor 12
+TIWATCH518 71 ti 87 ammo 20 scale 264 units 7 sen 79 bar 7 beat 0 hold 0
+TICONV518 71 amt 4 floor 12
+TIWATCH518 72 ti 14 ammo 20 scale 284 units 8 sen 85 bar 8 beat 0 hold 0
+TIWATCH518 73 ti 13 ammo 10 scale 283 units 8 sen 84 bar 8 beat 0 hold 0
+TIWATCH518 74 ti 15 ammo 10 scale 284 units 8 sen 85 bar 8 beat 0 hold 0
+TIWATCH518 75 ti 35 ammo 0 scale 284 units 8 sen 85 bar 8 beat 0 hold 0
+TICONV518 75 amt 16 floor 12
+TIWATCH518 76 ti 29 ammo 16 scale 284 units 8 sen 85 bar 8 beat 0 hold 0
+TICONV518 76 amt 8 floor 12
+TIWATCH518 77 ti 30 ammo 14 scale 264 units 7 sen 79 bar 7 beat 0 hold 0
+TICONV518 77 amt 10 floor 12
+TIWATCH518 78 ti 20 ammo 24 scale 264 units 7 sen 79 bar 7 beat 0 hold 0
+TIWATCH518 79 ti 40 ammo 24 scale 263 units 7 sen 78 bar 7 beat 0 hold 0
+TIWATCH518 80 ti 50 ammo 24 scale 263 units 7 sen 78 bar 7 beat 0 hold 0
+TIWATCH518 81 ti 50 ammo 24 scale 263 units 7 sen 78 bar 7 beat 0 hold 0
+TIWATCH518 82 ti 60 ammo 24 scale 263 units 7 sen 78 bar 7 beat 0 hold 0
+TIWATCH518 83 ti 28 ammo 24 scale 283 units 8 sen 84 bar 8 beat 0 hold 0
+TIWATCH518 84 ti 28 ammo 24 scale 283 units 8 sen 84 bar 8 beat 0 hold 0
+TIWATCH518 85 ti 38 ammo 20 scale 283 units 8 sen 84 bar 8 beat 0 hold 0
+TICONV518 85 amt 4 floor 12
+TIWATCH518 86 ti 34 ammo 20 scale 278 units 8 sen 83 bar 8 beat 0 hold 0
+TICONV518 86 amt 4 floor 12
+TIWATCH518 87 ti 50 ammo 20 scale 278 units 8 sen 83 bar 8 beat 0 hold 0
+TICONV518 87 amt 4 floor 12
+TIWATCH518 88 ti 56 ammo 20 scale 278 units 8 sen 83 bar 8 beat 0 hold 0
+TICONV518 88 amt 4 floor 12
+TIWATCH518 89 ti 52 ammo 20 scale 278 units 8 sen 83 bar 8 beat 0 hold 0
+TICONV518 89 amt 4 floor 12
+TIWATCH518 90 ti 58 ammo 14 scale 278 units 8 sen 83 bar 8 beat 0 hold 0
+TICONV518 90 amt 10 floor 12
+TIWATCH518 91 ti 68 ammo 24 scale 278 units 8 sen 83 bar 8 beat 0 hold 0
+TIWATCH518 92 ti 13 ammo 14 scale 283 units 8 sen 84 bar 8 beat 0 hold 0
+TIWATCH518 93 ti 15 ammo 10 scale 284 units 8 sen 85 bar 8 beat 0 hold 0
+TIWATCH518 94 ti 15 ammo 0 scale 284 units 8 sen 85 bar 8 beat 0 hold 0
+TIWATCH518 95 ti 27 ammo 0 scale 285 units 8 sen 85 bar 8 beat 0 hold 0
+TICONV518 95 amt 15 floor 12
+TIWATCH518 96 ti 14 ammo 11 scale 286 units 8 sen 85 bar 8 beat 0 hold 0
+TIWATCH518 97 ti 14 ammo 7 scale 286 units 8 sen 85 bar 8 beat 0 hold 0
+TIWATCH518 98 ti 16 ammo 3 scale 287 units 8 sen 86 bar 8 beat 0 hold 0
+TICONV518 98 amt 4 floor 12
+TIWATCH518 99 ti 22 ammo 3 scale 287 units 8 sen 86 bar 8 beat 0 hold 0
+TICONV518 99 amt 10 floor 12
+TIWATCH518 100 ti 14 ammo 13 scale 288 units 8 sen 86 bar 8 beat 0 hold 0
+TIWATCH518 101 ti 24 ammo 13 scale 288 units 8 sen 86 bar 8 beat 0 hold 0
+TICONV518 101 amt 11 floor 12
+TIWATCH518 102 ti 5 ammo 24 scale 289 units 8 sen 86 bar 8 beat 0 hold 0
+TIWATCH518 103 ti 15 ammo 24 scale 289 units 8 sen 86 bar 8 beat 0 hold 0
+TIWATCH518 104 ti 17 ammo 24 scale 290 units 8 sen 87 bar 8 beat 0 hold 0
+TIWATCH518 105 ti 17 ammo 24 scale 290 units 8 sen 87 bar 8 beat 0 hold 0
+TIWATCH518 106 ti 19 ammo 24 scale 291 units 8 sen 87 bar 8 beat 0 hold 0
+TIWATCH518 107 ti 29 ammo 24 scale 291 units 8 sen 87 bar 8 beat 0 hold 0
+TIWATCH518 108 ti 31 ammo 24 scale 292 units 8 sen 87 bar 8 beat 0 hold 0
+TIWATCH518 109 ti 41 ammo 24 scale 292 units 8 sen 87 bar 8 beat 0 hold 0
+TIWATCH518 110 ti 33 ammo 24 scale 293 units 8 sen 87 bar 8 beat 0 hold 0
+TIWATCH518 111 ti 43 ammo 24 scale 273 units 7 sen 81 bar 8 beat 0 hold 0
+TIWATCH518 112 ti 63 ammo 24 scale 273 units 7 sen 81 bar 8 beat 0 hold 0
+TIWATCH518 113 ti 19 ammo 24 scale 278 units 7 sen 83 bar 8 beat 0 hold 0
+TIWATCH518 114 ti 31 ammo 24 scale 279 units 7 sen 83 bar 8 beat 0 hold 0
+TIWATCH518 115 ti 41 ammo 24 scale 279 units 7 sen 83 bar 8 beat 0 hold 0
+TIWATCH518 116 ti 43 ammo 24 scale 280 units 7 sen 84 bar 8 beat 0 hold 0
+TIWATCH518 117 ti 45 ammo 24 scale 281 units 7 sen 84 bar 8 beat 0 hold 0
+TIWATCH518 118 ti 55 ammo 24 scale 281 units 7 sen 84 bar 8 beat 0 hold 0
+TIWATCH518 119 ti 57 ammo 24 scale 281 units 7 sen 84 bar 8 beat 0 hold 0
+TIWATCH518 120 ti 59 ammo 24 scale 282 units 7 sen 84 bar 8 beat 0 hold 0
+TIWATCH518 121 ti 59 ammo 24 scale 282 units 7 sen 84 bar 8 beat 0 hold 0
+TIWATCH518 122 ti 71 ammo 24 scale 282 units 7 sen 84 bar 8 beat 0 hold 0
+TIWATCH518 123 ti 81 ammo 24 scale 282 units 7 sen 84 bar 8 beat 0 hold 0
+TIWATCH518 124 ti 83 ammo 24 scale 283 units 7 sen 84 bar 8 beat 0 hold 0
+TIWATCH518 125 ti 93 ammo 24 scale 283 units 7 sen 84 bar 8 beat 0 hold 0
+TIWATCH518 126 ti 10 ammo 24 scale 304 units 8 sen 91 bar 9 beat 0 hold 0
+TIWATCH518 127 ti 20 ammo 14 scale 304 units 8 sen 91 bar 9 beat 0 hold 0
+TICONV518 127 amt 8 floor 12
+TIWATCH518 128 ti 22 ammo 22 scale 304 units 8 sen 91 bar 9 beat 0 hold 0
+TIWATCH518 129 ti 22 ammo 12 scale 304 units 8 sen 91 bar 9 beat 0 hold 0
+TICONV518 129 amt 10 floor 12
+TIWATCH518 130 ti 32 ammo 22 scale 304 units 8 sen 91 bar 9 beat 0 hold 0
+TIWATCH518 131 ti 42 ammo 22 scale 304 units 8 sen 91 bar 9 beat 0 hold 0
+TIWATCH518 132 ti 62 ammo 22 scale 304 units 8 sen 91 bar 9 beat 0 hold 0
+TIWATCH518 133 ti 72 ammo 22 scale 304 units 8 sen 91 bar 9 beat 0 hold 0
+TIWATCH518 134 ti 82 ammo 22 scale 304 units 8 sen 91 bar 9 beat 0 hold 0
+TIWATCH518 135 ti 92 ammo 22 scale 304 units 8 sen 91 bar 9 beat 0 hold 0
+TIWATCH518 136 ti 102 ammo 22 scale 304 units 8 sen 91 bar 9 beat 0 hold 0
+TIWATCH518 137 ti 42 ammo 22 scale 309 units 8 sen 92 bar 9 beat 0 hold 0
+TIWATCH518 138 ti 53 ammo 22 scale 310 units 8 sen 93 bar 9 beat 0 hold 0
+TIWATCH518 139 ti 63 ammo 22 scale 310 units 8 sen 93 bar 9 beat 0 hold 0
+TIWATCH518 140 ti 64 ammo 22 scale 311 units 8 sen 93 bar 9 beat 0 hold 0
+TIWATCH518 141 ti 65 ammo 22 scale 312 units 8 sen 93 bar 9 beat 0 hold 0
+TIWATCH518 142 ti 75 ammo 22 scale 312 units 8 sen 93 bar 9 beat 0 hold 0
+TIWATCH518 143 ti 76 ammo 22 scale 313 units 8 sen 93 bar 9 beat 0 hold 0
+TIWATCH518 144 ti 86 ammo 22 scale 313 units 8 sen 93 bar 9 beat 0 hold 0
+TIWATCH518 145 ti 15 ammo 22 scale 319 units 8 sen 95 bar 9 beat 0 hold 0
+TIWATCH518 146 ti 35 ammo 22 scale 319 units 8 sen 95 bar 9 beat 0 hold 0
+TIWATCH518 147 ti 36 ammo 22 scale 320 units 8 sen 96 bar 9 beat 0 hold 0
+TIWATCH518 148 ti 46 ammo 22 scale 320 units 8 sen 96 bar 9 beat 0 hold 0
+TIWATCH518 149 ti 47 ammo 22 scale 321 units 8 sen 96 bar 9 beat 0 hold 0
+TIWATCH518 150 ti 57 ammo 22 scale 321 units 8 sen 96 bar 9 beat 0 hold 0
+TIWATCH518 151 ti 58 ammo 22 scale 322 units 8 sen 96 bar 9 beat 0 hold 0
+TIWATCH518 152 ti 68 ammo 22 scale 322 units 8 sen 96 bar 9 beat 0 hold 0
+TIWATCH518 153 ti 59 ammo 22 scale 323 units 8 sen 96 bar 9 beat 0 hold 0
+TIWATCH518 154 ti 79 ammo 22 scale 323 units 8 sen 96 bar 9 beat 0 hold 0
+TIWATCH518 155 ti 26 ammo 22 scale 329 units 8 sen 98 bar 9 beat 0 hold 0
+TIWATCH518 156 ti 27 ammo 22 scale 330 units 8 sen 99 bar 9 beat 0 hold 0
+TIWATCH518 157 ti 28 ammo 22 scale 331 units 8 sen 99 bar 9 beat 0 hold 0
+TIWATCH518 158 ti 29 ammo 22 scale 332 units 8 sen 99 bar 9 beat 0 hold 0
+TIWATCH518 159 ti 31 ammo 22 scale 334 units 8 sen 100 bar 10 beat 0 hold 0
+TIWATCH518 160 ti 41 ammo 22 scale 334 units 8 sen 100 bar 10 beat 0 hold 0
+TIWATCH518 161 ti 21 ammo 22 scale 336 units 8 sen 100 bar 10 beat 0 hold 0
+TIWATCH518 162 ti 41 ammo 22 scale 336 units 8 sen 100 bar 10 beat 0 hold 0
+TIWATCH518 163 ti 41 ammo 22 scale 338 units 8 sen 101 bar 10 beat 0 hold 0
+TIWATCH518 164 ti 51 ammo 22 scale 338 units 8 sen 101 bar 10 beat 0 hold 0
+TIWATCH518 165 ti 41 ammo 22 scale 340 units 8 sen 102 bar 10 beat 0 hold 0
+TIWATCH518 166 ti 51 ammo 22 scale 340 units 8 sen 102 bar 10 beat 0 hold 0
+TIWATCH518 167 ti 51 ammo 22 scale 342 units 8 sen 102 bar 10 beat 0 hold 0
+TIWATCH518 168 ti 51 ammo 22 scale 343 units 8 sen 102 bar 10 beat 0 hold 0
+TIWATCH518 169 ti 30 ammo 22 scale 345 units 8 sen 103 bar 10 beat 0 hold 0
+TIWATCH518 170 ti 39 ammo 22 scale 345 units 8 sen 103 bar 10 beat 0 hold 0
+TIWATCH518 171 ti 39 ammo 22 scale 347 units 8 sen 104 bar 10 beat 0 hold 0
+TIWATCH518 172 ti 49 ammo 22 scale 346 units 8 sen 103 bar 10 beat 0 hold 0
+TIWATCH518 173 ti 29 ammo 22 scale 349 units 8 sen 104 bar 10 beat 0 hold 0
+TIWATCH518 174 ti 28 ammo 22 scale 349 units 8 sen 104 bar 10 beat 0 hold 0
+TIWATCH518 175 ti 28 ammo 22 scale 351 units 8 sen 105 bar 10 beat 0 hold 0
+TIWATCH518 176 ti 38 ammo 22 scale 351 units 8 sen 105 bar 10 beat 0 hold 0
+TIWATCH518 177 ti 18 ammo 22 scale 353 units 8 sen 105 bar 10 beat 0 hold 0
+TIWATCH518 178 ti 38 ammo 22 scale 353 units 8 sen 105 bar 10 beat 0 hold 0
+TIWATCH518 179 ti 38 ammo 22 scale 355 units 8 sen 106 bar 10 beat 0 hold 0
+TIWATCH518 180 ti 58 ammo 22 scale 355 units 8 sen 106 bar 10 beat 0 hold 0
+TIWATCH518 181 ti 48 ammo 22 scale 357 units 8 sen 107 bar 10 beat 0 hold 0
+TIWATCH518 182 ti 68 ammo 22 scale 357 units 8 sen 107 bar 10 beat 0 hold 0
+TIWATCH518 183 ti 98 ammo 22 scale 356 units 8 sen 106 bar 10 beat 0 hold 0
+TIWATCH518 184 ti 128 ammo 22 scale 356 units 8 sen 106 bar 10 beat 0 hold 0
+TIWATCH518 185 ti 138 ammo 22 scale 356 units 8 sen 106 bar 10 beat 0 hold 0
+TIWATCH518 186 ti 168 ammo 22 scale 356 units 8 sen 106 bar 10 beat 0 hold 0
+TIWATCH518 187 ti 92 ammo 22 scale 376 units 9 sen 112 bar 11 beat 0 hold 0
+TIWATCH518 188 ti 122 ammo 22 scale 376 units 9 sen 112 bar 11 beat 0 hold 0
+TIWATCH518 189 ti 142 ammo 22 scale 376 units 9 sen 112 bar 11 beat 0 hold 0
+TIWATCH518 190 ti 77 ammo 22 scale 386 units 10 sen 115 bar 11 beat 0 hold 0
+TIWATCH518 191 ti 107 ammo 22 scale 376 units 9 sen 112 bar 11 beat 0 hold 0
+TIWATCH518 192 ti 62 ammo 22 scale 386 units 10 sen 115 bar 11 beat 0 hold 0
+TIWATCH518 193 ti 72 ammo 22 scale 376 units 9 sen 112 bar 11 beat 0 hold 0
+TIWATCH518 194 ti 82 ammo 22 scale 376 units 9 sen 112 bar 11 beat 0 hold 0
+TIWATCH518 195 ti 37 ammo 22 scale 386 units 10 sen 115 bar 11 beat 0 hold 0
+TIWATCH518 196 ti 57 ammo 22 scale 376 units 9 sen 112 bar 11 beat 0 hold 0
+TIWATCH518 197 ti 67 ammo 22 scale 376 units 9 sen 112 bar 11 beat 0 hold 0
+TIWATCH518 198 ti 77 ammo 22 scale 376 units 9 sen 112 bar 11 beat 0 hold 0
+TIWATCH518 199 ti 107 ammo 22 scale 376 units 9 sen 112 bar 11 beat 0 hold 0
+TIWATCH518 200 ti 42 ammo 22 scale 386 units 10 sen 115 bar 11 beat 0 hold 0
+TIWATCH518 201 ti 42 ammo 22 scale 376 units 9 sen 112 bar 11 beat 0 hold 0
+GAP518 201 id 584 code DODGE live -1 salt -1 eco -1 ti -1 sen -1 bar -1 need -1 orth -1 floor 60
+TIWATCH518 202 ti 62 ammo 22 scale 376 units 9 sen 112 bar 11 beat 0 hold 0
+GATE515 202 salt 0 eco 1 orth 3 floor 60
+GAP518 202 id 584 code FUND live 0 salt 0 eco 1 ti 62 sen 112 bar 11 need 4 orth 3 floor 60
+GATE515 202 salt 0 eco 1 orth 3 floor 60
+GATE515 202 salt 0 eco 1 orth 3 floor 60
+TIWATCH518 203 ti 92 ammo 22 scale 376 units 9 sen 112 bar 11 beat 0 hold 0
+GATE515 203 salt 0 eco 1 orth 3 floor 60
+GAP518 203 id 584 code FUND live 0 salt 0 eco 1 ti 92 sen 112 bar 11 need 4 orth 3 floor 60
+GATE515 203 salt 0 eco 1 orth 3 floor 60
+TIWATCH518 204 ti 100 ammo 22 scale 376 units 9 sen 112 bar 11 beat 0 hold 0
+GATE515 204 salt 0 eco 1 orth 3 floor 60
+GAP518 204 id 584 code FUND live 0 salt 0 eco 1 ti 100 sen 112 bar 11 need 4 orth 3 floor 60
+GATE515 204 salt 0 eco 1 orth 3 floor 60
+TIWATCH518 205 ti 108 ammo 22 scale 376 units 9 sen 112 bar 11 beat 0 hold 0
+GATE515 205 salt 0 eco 1 orth 3 floor 60
+GAP518 205 id 584 code FUND live 0 salt 0 eco 1 ti 108 sen 112 bar 11 need 4 orth 3 floor 60
+GATE515 205 salt 0 eco 1 orth 3 floor 60
+TIWATCH518 206 ti 106 ammo 22 scale 376 units 9 sen 112 bar 11 beat 0 hold 0
+GATE515 206 salt 0 eco 1 orth 3 floor 60
+GAP518 206 id 584 code FUND live 0 salt 0 eco 1 ti 105 sen 112 bar 11 need 4 orth 3 floor 60
+GATE515 206 salt 0 eco 1 orth 3 floor 60
+TIWATCH518 207 ti 133 ammo 22 scale 376 units 9 sen 112 bar 11 beat 0 hold 0
+GATE515 207 salt 0 eco 1 orth 3 floor 60
+GAP518 207 id 584 code FUND live 0 salt 0 eco 1 ti 132 sen 112 bar 11 need 4 orth 3 floor 60
+GATE515 207 salt 0 eco 1 orth 3 floor 60
+TIWATCH518 208 ti 150 ammo 22 scale 376 units 9 sen 112 bar 11 beat 0 hold 0
+GATE515 208 salt 0 eco 1 orth 3 floor 60
+GAP518 208 id 584 code FUND live 0 salt 0 eco 1 ti 150 sen 112 bar 11 need 4 orth 3 floor 60
+GATE515 208 salt 0 eco 1 orth 3 floor 60
+TIWATCH518 209 ti 75 ammo 22 scale 386 units 10 sen 115 bar 11 beat 0 hold 0
+GATE515 209 salt 0 eco 1 orth 2 floor 60
+GAP518 209 id 584 code FUND live 0 salt 0 eco 1 ti 75 sen 115 bar 11 need 4 orth 2 floor 60
+GATE515 209 salt 0 eco 1 orth 2 floor 60
+TIWATCH518 210 ti 93 ammo 22 scale 386 units 10 sen 115 bar 11 beat 0 hold 0
+GATE515 210 salt 0 eco 1 orth 2 floor 60
+GAP518 210 id 584 code FUND live 0 salt 0 eco 1 ti 93 sen 115 bar 11 need 4 orth 2 floor 60
+GATE515 210 salt 0 eco 1 orth 2 floor 60
+TIWATCH518 211 ti 121 ammo 22 scale 386 units 10 sen 115 bar 11 beat 0 hold 0
+GATE515 211 salt 0 eco 1 orth 2 floor 60
+GAP518 211 id 584 code FUND live 0 salt 0 eco 1 ti 121 sen 115 bar 11 need 4 orth 2 floor 60
+GATE515 211 salt 0 eco 1 orth 2 floor 60
+TIWATCH518 212 ti 129 ammo 22 scale 386 units 10 sen 115 bar 11 beat 0 hold 0
+GATE515 212 salt 0 eco 1 orth 2 floor 60
+GAP518 212 id 584 code FUND live 0 salt 0 eco 1 ti 129 sen 115 bar 11 need 4 orth 2 floor 60
+GATE515 212 salt 0 eco 1 orth 2 floor 60
+GATE515 212 salt 0 eco 1 orth 2 floor 60
+TIWATCH518 213 ti 139 ammo 22 scale 386 units 10 sen 115 bar 11 beat 0 hold 0
+GATE515 213 salt 0 eco 1 orth 4 floor 60
+GAP518 213 id 584 code FUND live 0 salt 0 eco 1 ti 139 sen 115 bar 11 need 6 orth 4 floor 60
+GATE515 213 salt 0 eco 1 orth 4 floor 60
+GATE515 213 salt 0 eco 1 orth 4 floor 60
+TIWATCH518 214 ti 149 ammo 22 scale 366 units 9 sen 109 bar 10 beat 0 hold 0
+TIWATCH518 215 ti 179 ammo 22 scale 366 units 9 sen 109 bar 10 beat 0 hold 0
+TIWATCH518 216 ti 189 ammo 22 scale 366 units 9 sen 109 bar 10 beat 0 hold 0
+TIWATCH518 217 ti 189 ammo 22 scale 366 units 9 sen 109 bar 10 beat 0 hold 0
+TIWATCH518 218 ti 199 ammo 22 scale 366 units 9 sen 109 bar 10 beat 0 hold 0
+TIWATCH518 219 ti 229 ammo 22 scale 366 units 9 sen 109 bar 10 beat 0 hold 0
+TIWATCH518 220 ti 249 ammo 22 scale 366 units 9 sen 109 bar 10 beat 0 hold 0
+TIWATCH518 221 ti 186 ammo 22 scale 376 units 10 sen 112 bar 11 beat 0 hold 0
+TIWATCH518 222 ti 196 ammo 22 scale 376 units 10 sen 112 bar 11 beat 0 hold 0
+TIWATCH518 223 ti 226 ammo 22 scale 376 units 10 sen 112 bar 11 beat 0 hold 0
+TIWATCH518 224 ti 236 ammo 22 scale 376 units 10 sen 112 bar 11 beat 0 hold 0
+TIWATCH518 225 ti 236 ammo 22 scale 376 units 10 sen 112 bar 11 beat 0 hold 0
+TIWATCH518 226 ti 256 ammo 22 scale 376 units 10 sen 112 bar 11 beat 0 hold 0
+TIWATCH518 227 ti 174 ammo 22 scale 396 units 11 sen 118 bar 11 beat 0 hold 0
+TIWATCH518 228 ti 184 ammo 22 scale 396 units 11 sen 118 bar 11 beat 0 hold 0
+TIWATCH518 229 ti 194 ammo 22 scale 396 units 11 sen 118 bar 11 beat 0 hold 0
+TIWATCH518 230 ti 115 ammo 22 scale 406 units 12 sen 121 bar 12 beat 0 hold 0
+TIWATCH518 231 ti 64 ammo 22 scale 401 units 11 sen 120 bar 12 beat 0 hold 0
+TIWATCH518 232 ti 72 ammo 22 scale 402 units 11 sen 120 bar 12 beat 0 hold 0
+TIWATCH518 233 ti 72 ammo 22 scale 402 units 11 sen 120 bar 12 beat 0 hold 0
+TIWATCH518 234 ti 80 ammo 22 scale 403 units 11 sen 120 bar 12 beat 0 hold 0
+TIWATCH518 235 ti 98 ammo 22 scale 404 units 11 sen 121 bar 12 beat 0 hold 0
+TIWATCH518 236 ti 28 ammo 22 scale 414 units 12 sen 124 bar 12 beat 0 hold 0
+TIWATCH518 237 ti 14 ammo 22 scale 406 units 11 sen 121 bar 12 beat 0 hold 0
+TIWATCH518 238 ti 24 ammo 22 scale 406 units 11 sen 121 bar 12 beat 0 hold 0
+TIWATCH518 239 ti 42 ammo 22 scale 407 units 11 sen 122 bar 12 beat 0 hold 0
+TIWATCH518 240 ti 51 ammo 22 scale 407 units 11 sen 122 bar 12 beat 0 hold 0
+TIWATCH518 241 ti 38 ammo 22 scale 407 units 11 sen 122 bar 12 beat 0 hold 0
+TIWATCH518 242 ti 36 ammo 22 scale 408 units 11 sen 122 bar 12 beat 0 hold 0
+TIWATCH518 243 ti 53 ammo 22 scale 409 units 11 sen 122 bar 12 beat 0 hold 0
+TIWATCH518 244 ti 72 ammo 22 scale 409 units 11 sen 122 bar 12 beat 0 hold 0
+TIWATCH518 245 ti 69 ammo 22 scale 410 units 11 sen 123 bar 12 beat 0 hold 0
+TIWATCH518 246 ti 78 ammo 22 scale 410 units 11 sen 123 bar 12 beat 0 hold 0
+TIWATCH518 247 ti 95 ammo 22 scale 410 units 11 sen 123 bar 12 beat 0 hold 0
+TIWATCH518 248 ti 103 ammo 22 scale 411 units 11 sen 123 bar 12 beat 0 hold 0
+TIWATCH518 249 ti 18 ammo 22 scale 422 units 12 sen 126 bar 12 beat 0 hold 0
+TIWATCH518 250 ti 38 ammo 22 scale 412 units 11 sen 123 bar 12 beat 0 hold 0
+TIWATCH518 251 ti 68 ammo 22 scale 411 units 11 sen 123 bar 12 beat 0 hold 0
+GAP518 251 id 704 code DODGE live -1 salt -1 eco -1 ti -1 sen -1 bar -1 need -1 orth -1 floor 60
+TIWATCH518 252 ti 78 ammo 22 scale 411 units 11 sen 123 bar 12 beat 0 hold 0
+GATE515 252 salt 0 eco 1 orth 2 floor 60
+GAP518 252 id 704 code FUND live 0 salt 0 eco 1 ti 78 sen 123 bar 12 need 4 orth 2 floor 60
+GATE515 252 salt 0 eco 1 orth 2 floor 60
+GATE515 252 salt 0 eco 1 orth 2 floor 60
+TIWATCH518 253 ti 88 ammo 22 scale 411 units 11 sen 123 bar 12 beat 0 hold 0
+GATE515 253 salt 0 eco 1 orth 2 floor 60
+GAP518 253 id 704 code FUND live 0 salt 0 eco 1 ti 88 sen 123 bar 12 need 4 orth 2 floor 60
+GATE515 253 salt 0 eco 1 orth 2 floor 60
+TIWATCH518 254 ti 96 ammo 22 scale 411 units 11 sen 123 bar 12 beat 0 hold 0
+GATE515 254 salt 0 eco 1 orth 2 floor 60
+GAP518 254 id 704 code FUND live 0 salt 0 eco 1 ti 96 sen 123 bar 12 need 4 orth 2 floor 60
+GATE515 254 salt 0 eco 1 orth 2 floor 60
+TIWATCH518 255 ti 124 ammo 22 scale 411 units 11 sen 123 bar 12 beat 0 hold 0
+GATE515 255 salt 0 eco 1 orth 2 floor 60
+GAP518 255 id 704 code FUND live 0 salt 0 eco 1 ti 124 sen 123 bar 12 need 4 orth 2 floor 60
+GATE515 255 salt 0 eco 1 orth 2 floor 60
+TIWATCH518 256 ti 142 ammo 22 scale 411 units 11 sen 123 bar 12 beat 0 hold 0
+GATE515 256 salt 0 eco 1 orth 2 floor 60
+GAP518 256 id 704 code FUND live 0 salt 0 eco 1 ti 142 sen 123 bar 12 need 4 orth 2 floor 60
+GATE515 256 salt 0 eco 1 orth 2 floor 60
+TIWATCH518 257 ti 140 ammo 22 scale 411 units 11 sen 123 bar 12 beat 0 hold 0
+TIWATCH518 258 ti 160 ammo 22 scale 391 units 10 sen 117 bar 11 beat 0 hold 0
+TIWATCH518 259 ti 190 ammo 22 scale 391 units 10 sen 117 bar 11 beat 0 hold 0
+TIWATCH518 260 ti 200 ammo 22 scale 391 units 10 sen 117 bar 11 beat 0 hold 0
+TIWATCH518 261 ti 210 ammo 22 scale 391 units 10 sen 117 bar 11 beat 0 hold 0
+TIWATCH518 262 ti 220 ammo 22 scale 391 units 10 sen 117 bar 11 beat 0 hold 0
+TIWATCH518 263 ti 250 ammo 22 scale 391 units 10 sen 117 bar 11 beat 0 hold 0
+TIWATCH518 264 ti 260 ammo 22 scale 391 units 10 sen 117 bar 11 beat 0 hold 0
+TIWATCH518 265 ti 182 ammo 22 scale 401 units 11 sen 120 bar 12 beat 0 hold 0
+TIWATCH518 266 ti 192 ammo 22 scale 401 units 11 sen 120 bar 12 beat 0 hold 0
+TIWATCH518 267 ti 222 ammo 22 scale 401 units 11 sen 120 bar 12 beat 0 hold 0
+TIWATCH518 268 ti 242 ammo 22 scale 401 units 11 sen 120 bar 12 beat 0 hold 0
+TIWATCH518 269 ti 252 ammo 22 scale 401 units 11 sen 120 bar 12 beat 0 hold 0
+TIWATCH518 270 ti 142 ammo 22 scale 421 units 12 sen 126 bar 12 beat 0 hold 0
+TIWATCH518 271 ti 172 ammo 22 scale 421 units 12 sen 126 bar 12 beat 0 hold 0
+TIWATCH518 272 ti 98 ammo 22 scale 431 units 13 sen 129 bar 12 beat 0 hold 0
+TIWATCH518 273 ti 98 ammo 22 scale 431 units 13 sen 129 bar 12 beat 0 hold 0
+TIWATCH518 274 ti 118 ammo 22 scale 431 units 13 sen 129 bar 12 beat 0 hold 0
+TIWATCH518 275 ti 148 ammo 22 scale 431 units 13 sen 129 bar 12 beat 0 hold 0
+TIWATCH518 276 ti 72 ammo 22 scale 441 units 14 sen 132 bar 13 beat 0 hold 0
+TIWATCH518 277 ti 82 ammo 22 scale 431 units 13 sen 129 bar 12 beat 0 hold 0
+TIWATCH518 278 ti 82 ammo 22 scale 431 units 13 sen 129 bar 12 beat 0 hold 0
+TIWATCH518 279 ti 112 ammo 22 scale 431 units 13 sen 129 bar 12 beat 0 hold 0
+TIWATCH518 280 ti 46 ammo 22 scale 441 units 14 sen 132 bar 13 beat 0 hold 0
+TIWATCH518 281 ti 46 ammo 22 scale 431 units 13 sen 129 bar 12 beat 0 hold 0
+TIWATCH518 282 ti 66 ammo 22 scale 431 units 13 sen 129 bar 12 beat 0 hold 0
+TIWATCH518 283 ti 96 ammo 22 scale 431 units 13 sen 129 bar 12 beat 0 hold 0
+TIWATCH518 284 ti 20 ammo 22 scale 441 units 14 sen 132 bar 13 beat 0 hold 0
+TIWATCH518 285 ti 30 ammo 22 scale 431 units 13 sen 129 bar 12 beat 0 hold 0
+TIWATCH518 286 ti 40 ammo 22 scale 431 units 13 sen 129 bar 12 beat 0 hold 0
+TIWATCH518 287 ti 70 ammo 22 scale 431 units 13 sen 129 bar 12 beat 0 hold 0
+TIWATCH518 288 ti 80 ammo 22 scale 431 units 13 sen 129 bar 12 beat 0 hold 0
+TIWATCH518 289 ti 80 ammo 22 scale 431 units 13 sen 129 bar 12 beat 0 hold 0
+GATE515 289 salt 0 eco 1 orth 4 floor 60
+GAP518 289 id 839 code FUND live 0 salt 0 eco 1 ti 80 sen 129 bar 12 need 6 orth 4 floor 60
+GATE515 289 salt 0 eco 1 orth 4 floor 60
+GATE515 289 salt 0 eco 1 orth 4 floor 60
+TIWATCH518 290 ti 90 ammo 22 scale 431 units 13 sen 129 bar 12 beat 0 hold 0
+GATE515 290 salt 0 eco 1 orth 2 floor 60
+GAP518 290 id 839 code FUND live 0 salt 0 eco 1 ti 90 sen 129 bar 12 need 4 orth 2 floor 60
+GATE515 290 salt 0 eco 1 orth 2 floor 60
+GATE515 290 salt 0 eco 1 orth 2 floor 60
+TIWATCH518 291 ti 120 ammo 22 scale 431 units 13 sen 129 bar 12 beat 0 hold 0
+GAP518 291 id 839 code DODGE live -1 salt -1 eco -1 ti -1 sen -1 bar -1 need -1 orth -1 floor 60
+TIWATCH518 292 ti 140 ammo 22 scale 431 units 13 sen 129 bar 12 beat 0 hold 0
+GATE515 292 salt 0 eco 1 orth 2 floor 60
+GAP518 292 id 839 code FUND live 0 salt 0 eco 1 ti 140 sen 129 bar 12 need 4 orth 2 floor 60
+GATE515 292 salt 0 eco 1 orth 2 floor 60
+GATE515 292 salt 0 eco 1 orth 2 floor 60
+TIWATCH518 293 ti 150 ammo 22 scale 431 units 13 sen 129 bar 12 beat 0 hold 0
+GATE515 293 salt 0 eco 1 orth 2 floor 60
+GAP518 293 id 839 code FUND live 0 salt 0 eco 1 ti 150 sen 129 bar 12 need 4 orth 2 floor 60
+GATE515 293 salt 0 eco 1 orth 2 floor 60
+TIWATCH518 294 ti 158 ammo 22 scale 431 units 13 sen 129 bar 12 beat 0 hold 0
+GATE515 294 salt 0 eco 1 orth 2 floor 60
+GAP518 294 id 839 code FUND live 0 salt 0 eco 1 ti 158 sen 129 bar 12 need 4 orth 2 floor 60
+GATE515 294 salt 0 eco 1 orth 2 floor 60
+TIWATCH518 295 ti 186 ammo 22 scale 431 units 13 sen 129 bar 12 beat 0 hold 0
+GATE515 295 salt 0 eco 1 orth 2 floor 60
+GAP518 295 id 839 code SITE live 0 salt 0 eco 1 ti 186 sen 129 bar 12 need 4 orth 2 floor 60
+GATE515 295 salt 0 eco 1 orth 2 floor 60
+TIWATCH518 296 ti 194 ammo 22 scale 431 units 13 sen 129 bar 12 beat 0 hold 0
+GATE515 296 salt 0 eco 1 orth 2 floor 60
+GAP518 296 id 839 code SITE live 0 salt 0 eco 1 ti 194 sen 129 bar 12 need 4 orth 2 floor 60
+GATE515 296 salt 0 eco 1 orth 2 floor 60
+TIWATCH518 297 ti 192 ammo 22 scale 431 units 13 sen 129 bar 12 beat 0 hold 0
+GATE515 297 salt 0 eco 1 orth 2 floor 60
+GAP518 297 id 839 code SITE live 0 salt 0 eco 1 ti 192 sen 129 bar 12 need 4 orth 2 floor 60
+GATE515 297 salt 0 eco 1 orth 2 floor 60
+TIWATCH518 298 ti 210 ammo 22 scale 431 units 13 sen 129 bar 12 beat 0 hold 0
+GATE515 298 salt 0 eco 1 orth 2 floor 60
+GAP518 298 id 839 code SITE live 0 salt 0 eco 1 ti 210 sen 129 bar 12 need 4 orth 2 floor 60
+GATE515 298 salt 0 eco 1 orth 2 floor 60
+TIWATCH518 299 ti 238 ammo 22 scale 431 units 13 sen 129 bar 12 beat 0 hold 0
+GATE515 299 salt 0 eco 1 orth 2 floor 60
+GAP518 299 id 839 code SITE live 0 salt 0 eco 1 ti 238 sen 129 bar 12 need 4 orth 2 floor 60
+GATE515 299 salt 0 eco 1 orth 2 floor 60
+TIWATCH518 300 ti 246 ammo 22 scale 431 units 13 sen 129 bar 12 beat 0 hold 0
+GATE515 300 salt 0 eco 1 orth 2 floor 60
+GAP518 300 id 839 code SITE live 0 salt 0 eco 1 ti 246 sen 129 bar 12 need 4 orth 2 floor 60
+GATE515 300 salt 0 eco 1 orth 2 floor 60
+TIWATCH518 301 ti 254 ammo 22 scale 431 units 13 sen 129 bar 12 beat 0 hold 0
+GATE515 301 salt 0 eco 1 orth 2 floor 60
+GAP518 301 id 839 code SITE live 0 salt 0 eco 1 ti 254 sen 129 bar 12 need 4 orth 2 floor 60
+GATE515 301 salt 0 eco 1 orth 2 floor 60
+GATE515 301 salt 0 eco 1 orth 2 floor 60
+TIWATCH518 302 ti 254 ammo 22 scale 431 units 13 sen 129 bar 12 beat 0 hold 0
+GAP518 302 id 839 code RETREAT live -1 salt -1 eco -1 ti -1 sen -1 bar -1 need -1 orth -1 floor 60
+TIWATCH518 303 ti 284 ammo 22 scale 431 units 13 sen 129 bar 12 beat 0 hold 0
+GATE515 303 salt 0 eco 1 orth 5 floor 60
+GAP518 303 id 839 code OPEN live 0 salt 0 eco 1 ti 284 sen 129 bar 12 need 7 orth 5 floor 60
+GATE515 303 salt 0 eco 1 orth 5 floor 60
+TWIN517 303 at (24, 8) hold 0 live 1 floor 4 rebuy 24 ti 155 cost 129 n 1
+SENT515 303 at (24, 8) n 1 gate (303, 0, 1, 5) latch (1, 1, 24)
+EARLY518 303 id 839 ti 284 need 7 orth 5 rung1 0 pend 0 n 1
+TIWATCH518 304 ti 175 ammo 22 scale 451 units 14 sen 135 bar 13 beat 0 hold 0
+GAP518 304 id 839 code HAVE live 1 salt -1 eco -1 ti 175 sen 135 bar 13 need 7 orth 5 floor 60
+GATE515 304 salt 0 eco 1 orth 5 floor 60
+TIWATCH518 305 ti 175 ammo 12 scale 451 units 14 sen 135 bar 13 beat 1 hold 0
+TICONV518 305 amt 30 floor 26
+GAP518 305 id 839 code HAVE live 1 salt -1 eco -1 ti 145 sen 132 bar 13 need 6 orth 4 floor 60
+GATE515 305 salt 0 eco 1 orth 4 floor 60
+TIWATCH518 306 ti 165 ammo 42 scale 441 units 13 sen 132 bar 13 beat 1 hold 0
+TICONV518 306 amt 30 floor 26
+GAP518 306 id 839 code HAVE live 1 salt -1 eco -1 ti 135 sen 132 bar 13 need 4 orth 2 floor 60
+TIWATCH518 307 ti 163 ammo 62 scale 441 units 13 sen 132 bar 13 beat 1 hold 0
+TICONV518 307 amt 30 floor 26
+GAP518 307 id 839 code HAVE live 1 salt -1 eco -1 ti 133 sen 132 bar 13 need 4 orth 2 floor 60
+TIWATCH518 308 ti 141 ammo 92 scale 441 units 13 sen 132 bar 13 beat 1 hold 0
+TICONV518 308 amt 30 floor 26
+GAP518 308 id 839 code HAVE live 1 salt -1 eco -1 ti 111 sen 132 bar 13 need 4 orth 2 floor 60
+TIWATCH518 309 ti 108 ammo 112 scale 442 units 13 sen 132 bar 13 beat 1 hold 0
+TICONV518 309 amt 30 floor 26
+GAP518 309 id 839 code HAVE live 1 salt -1 eco -1 ti 78 sen 132 bar 13 need 3 orth 1 floor 60
+GATE515 309 salt 0 eco 1 orth 1 floor 60
+TIWATCH518 310 ti 88 ammo 142 scale 442 units 13 sen 132 bar 13 beat 1 hold 0
+TICONV518 310 amt 30 floor 26
+TIWATCH518 311 ti 88 ammo 162 scale 422 units 12 sen 126 bar 12 beat 1 hold 0
+TIWATCH518 312 ti 98 ammo 162 scale 402 units 11 sen 120 bar 12 beat 1 hold 0
+TIWATCH518 313 ti 98 ammo 162 scale 402 units 11 sen 120 bar 12 beat 1 hold 0
+TIWATCH518 314 ti 108 ammo 162 scale 402 units 11 sen 120 bar 12 beat 0 hold 0
+TIWATCH518 315 ti 138 ammo 162 scale 402 units 11 sen 120 bar 12 beat 0 hold 0
+TIWATCH518 316 ti 158 ammo 162 scale 402 units 11 sen 120 bar 12 beat 0 hold 0
+TIWATCH518 317 ti 168 ammo 162 scale 402 units 11 sen 120 bar 12 beat 0 hold 0
+TIWATCH518 318 ti 98 ammo 162 scale 412 units 12 sen 123 bar 12 beat 0 hold 0
+TIWATCH518 319 ti 128 ammo 162 scale 412 units 12 sen 123 bar 12 beat 0 hold 0
+TIWATCH518 320 ti 138 ammo 162 scale 412 units 12 sen 123 bar 12 beat 0 hold 0
+TIWATCH518 321 ti 138 ammo 162 scale 412 units 12 sen 123 bar 12 beat 0 hold 0
+TIWATCH518 322 ti 158 ammo 162 scale 412 units 12 sen 123 bar 12 beat 0 hold 0
+TIWATCH518 323 ti 188 ammo 162 scale 412 units 12 sen 123 bar 12 beat 0 hold 0
+TIWATCH518 324 ti 75 ammo 162 scale 432 units 13 sen 129 bar 12 beat 0 hold 0
+TIWATCH518 325 ti 85 ammo 162 scale 432 units 13 sen 129 bar 12 beat 0 hold 0
+TIWATCH518 326 ti 85 ammo 162 scale 432 units 13 sen 129 bar 12 beat 0 hold 0
+TIWATCH518 327 ti 115 ammo 162 scale 432 units 13 sen 129 bar 12 beat 0 hold 0
+TIWATCH518 328 ti 135 ammo 162 scale 432 units 13 sen 129 bar 12 beat 0 hold 0
+TIWATCH518 329 ti 135 ammo 162 scale 432 units 13 sen 129 bar 12 beat 0 hold 0
+TIWATCH518 330 ti 69 ammo 162 scale 442 units 14 sen 132 bar 13 beat 0 hold 0
+TIWATCH518 331 ti 99 ammo 162 scale 432 units 13 sen 129 bar 12 beat 0 hold 0
+TIWATCH518 332 ti 23 ammo 162 scale 442 units 14 sen 132 bar 13 beat 0 hold 0
+TIWATCH518 333 ti 33 ammo 162 scale 432 units 13 sen 129 bar 12 beat 0 hold 0
+TIWATCH518 334 ti 43 ammo 162 scale 432 units 13 sen 129 bar 12 beat 0 hold 0
+TIWATCH518 335 ti 73 ammo 162 scale 432 units 13 sen 129 bar 12 beat 0 hold 0
+TIWATCH518 336 ti 83 ammo 162 scale 432 units 13 sen 129 bar 12 beat 0 hold 0
+TIWATCH518 337 ti 83 ammo 162 scale 432 units 13 sen 129 bar 12 beat 0 hold 0
+TIWATCH518 338 ti 93 ammo 162 scale 432 units 13 sen 129 bar 12 beat 0 hold 0
+TIWATCH518 339 ti 37 ammo 162 scale 442 units 14 sen 132 bar 13 beat 0 hold 0
+TIWATCH518 340 ti 57 ammo 162 scale 432 units 13 sen 129 bar 12 beat 0 hold 0
+TIWATCH518 341 ti 67 ammo 162 scale 432 units 13 sen 129 bar 12 beat 0 hold 0
+TIWATCH518 342 ti 77 ammo 162 scale 432 units 13 sen 129 bar 12 beat 0 hold 0
+TIWATCH518 343 ti 107 ammo 162 scale 432 units 13 sen 129 bar 12 beat 0 hold 0
+TIWATCH518 344 ti 117 ammo 162 scale 432 units 13 sen 129 bar 12 beat 0 hold 0
+TIWATCH518 345 ti 117 ammo 162 scale 432 units 13 sen 129 bar 12 beat 0 hold 0
+GATE515 345 salt 0 eco 1 orth 1 floor 60
+GAP518 345 id 969 code FUND live 0 salt 0 eco 1 ti 117 sen 129 bar 12 need 3 orth 1 floor 60
+GATE515 345 salt 0 eco 1 orth 1 floor 60
+TIWATCH518 346 ti 135 ammo 162 scale 432 units 13 sen 129 bar 12 beat 0 hold 0
+GATE515 346 salt 0 eco 1 orth 1 floor 60
+GAP518 346 id 969 code FUND live 0 salt 0 eco 1 ti 135 sen 129 bar 12 need 3 orth 1 floor 60
+GATE515 346 salt 0 eco 1 orth 1 floor 60
+TIWATCH518 347 ti 163 ammo 162 scale 432 units 13 sen 129 bar 12 beat 0 hold 0
+GATE515 347 salt 0 eco 1 orth 1 floor 60
+GAP518 347 id 969 code FUND live 0 salt 0 eco 1 ti 163 sen 129 bar 12 need 3 orth 1 floor 60
+GATE515 347 salt 0 eco 1 orth 1 floor 60
+TIWATCH518 348 ti 171 ammo 162 scale 432 units 13 sen 129 bar 12 beat 0 hold 0
+GATE515 348 salt 0 eco 1 orth 1 floor 60
+GAP518 348 id 969 code SITE live 0 salt 0 eco 1 ti 171 sen 129 bar 12 need 3 orth 1 floor 60
+GATE515 348 salt 0 eco 1 orth 1 floor 60
+TIWATCH518 349 ti 179 ammo 162 scale 432 units 13 sen 129 bar 12 beat 0 hold 0
+TIWATCH518 350 ti 179 ammo 162 scale 412 units 12 sen 123 bar 12 beat 0 hold 0
+TIWATCH518 351 ti 209 ammo 162 scale 412 units 12 sen 123 bar 12 beat 0 hold 0
+TIWATCH518 352 ti 229 ammo 162 scale 412 units 12 sen 123 bar 12 beat 0 hold 0
+TIWATCH518 353 ti 229 ammo 152 scale 412 units 12 sen 123 bar 12 beat 0 hold 0
+TIWATCH518 354 ti 249 ammo 142 scale 412 units 12 sen 123 bar 12 beat 0 hold 0
+TIWATCH518 355 ti 279 ammo 132 scale 412 units 12 sen 123 bar 12 beat 0 hold 0
+TIWATCH518 356 ti 289 ammo 132 scale 412 units 12 sen 123 bar 12 beat 0 hold 0
+TIWATCH518 357 ti 176 ammo 132 scale 432 units 13 sen 129 bar 12 beat 0 hold 0
+TIWATCH518 358 ti 57 ammo 132 scale 442 units 13 sen 132 bar 13 beat 0 hold 0
+TIWATCH518 359 ti 87 ammo 122 scale 432 units 12 sen 129 bar 12 beat 0 hold 0
+TIWATCH518 360 ti 97 ammo 122 scale 432 units 12 sen 129 bar 12 beat 0 hold 0
+TIWATCH518 361 ti 97 ammo 112 scale 432 units 12 sen 129 bar 12 beat 0 hold 0
+TIWATCH518 362 ti 107 ammo 112 scale 432 units 12 sen 129 bar 12 beat 0 hold 0
+TIWATCH518 363 ti 51 ammo 112 scale 442 units 13 sen 132 bar 13 beat 0 hold 0
+TIWATCH518 364 ti 71 ammo 112 scale 432 units 12 sen 129 bar 12 beat 0 hold 0
+TIWATCH518 365 ti 81 ammo 112 scale 432 units 12 sen 129 bar 12 beat 0 hold 0
+TIWATCH518 366 ti 91 ammo 112 scale 432 units 12 sen 129 bar 12 beat 0 hold 0
+TIWATCH518 367 ti 35 ammo 112 scale 452 units 13 sen 135 bar 13 beat 0 hold 0
+TIWATCH518 368 ti 35 ammo 112 scale 452 units 13 sen 135 bar 13 beat 0 hold 0
+TIWATCH518 369 ti 35 ammo 112 scale 452 units 13 sen 135 bar 13 beat 0 hold 0
+TIWATCH518 370 ti 55 ammo 112 scale 452 units 13 sen 135 bar 13 beat 0 hold 0
+TIWATCH518 371 ti 85 ammo 112 scale 452 units 13 sen 135 bar 13 beat 0 hold 0
+TIWATCH518 372 ti 95 ammo 112 scale 452 units 13 sen 135 bar 13 beat 0 hold 0
+TIWATCH518 373 ti 105 ammo 112 scale 452 units 13 sen 135 bar 13 beat 0 hold 0
+TIWATCH518 374 ti 105 ammo 112 scale 452 units 13 sen 135 bar 13 beat 0 hold 0
+TIWATCH518 375 ti 45 ammo 112 scale 462 units 14 sen 138 bar 13 beat 0 hold 0
+TIWATCH518 376 ti 65 ammo 112 scale 452 units 13 sen 135 bar 13 beat 0 hold 0
+TIWATCH518 377 ti 65 ammo 112 scale 452 units 13 sen 135 bar 13 beat 0 hold 0
+TIWATCH518 378 ti 85 ammo 112 scale 452 units 13 sen 135 bar 13 beat 0 hold 0
+TIWATCH518 379 ti 115 ammo 112 scale 452 units 13 sen 135 bar 13 beat 0 hold 0
+TIWATCH518 380 ti 35 ammo 112 scale 462 units 14 sen 138 bar 13 beat 0 hold 0
+TIWATCH518 381 ti 45 ammo 112 scale 452 units 13 sen 135 bar 13 beat 0 hold 0
+TIWATCH518 382 ti 55 ammo 112 scale 452 units 13 sen 135 bar 13 beat 0 hold 0
+TIWATCH518 383 ti 85 ammo 112 scale 452 units 13 sen 135 bar 13 beat 0 hold 0
+GAP518 383 id 1033 code DODGE live -1 salt -1 eco -1 ti -1 sen -1 bar -1 need -1 orth -1 floor 60
+TIWATCH518 384 ti 95 ammo 112 scale 452 units 13 sen 135 bar 13 beat 0 hold 0
+GATE515 384 salt 0 eco 1 orth 5 floor 60
+GAP518 384 id 1033 code FUND live 0 salt 0 eco 1 ti 95 sen 135 bar 13 need 6 orth 5 floor 60
+GATE515 384 salt 0 eco 1 orth 5 floor 60
+GATE515 384 salt 0 eco 1 orth 5 floor 60
+TIWATCH518 385 ti 95 ammo 112 scale 452 units 13 sen 135 bar 13 beat 0 hold 0
+GAP518 385 id 1033 code DODGE live -1 salt -1 eco -1 ti -1 sen -1 bar -1 need -1 orth -1 floor 60
+TIWATCH518 386 ti 105 ammo 112 scale 452 units 13 sen 135 bar 13 beat 0 hold 0
+GATE515 386 salt 0 eco 1 orth 6 floor 60
+GAP518 386 id 1033 code FUND live 0 salt 0 eco 1 ti 105 sen 135 bar 13 need 7 orth 6 floor 60
+GATE515 386 salt 0 eco 1 orth 6 floor 60
+GATE515 386 salt 0 eco 1 orth 6 floor 60
+TIWATCH518 387 ti 135 ammo 112 scale 452 units 13 sen 135 bar 13 beat 0 hold 0
+GATE515 387 salt 0 eco 1 orth 6 floor 60
+GAP518 387 id 1033 code FUND live 0 salt 0 eco 1 ti 135 sen 135 bar 13 need 7 orth 6 floor 60
+GATE515 387 salt 0 eco 1 orth 6 floor 60
+GATE515 387 salt 0 eco 1 orth 6 floor 60
+TIWATCH518 388 ti 155 ammo 112 scale 452 units 13 sen 135 bar 13 beat 0 hold 0
+GAP518 388 id 1033 code DODGE live -1 salt -1 eco -1 ti -1 sen -1 bar -1 need -1 orth -1 floor 60
+TIWATCH518 389 ti 165 ammo 112 scale 452 units 13 sen 135 bar 13 beat 0 hold 0
+GATE515 389 salt 0 eco 1 orth 5 floor 60
+GAP518 389 id 1033 code FUND live 0 salt 0 eco 1 ti 165 sen 135 bar 13 need 6 orth 5 floor 60
+GATE515 389 salt 0 eco 1 orth 5 floor 60
+GATE515 389 salt 0 eco 1 orth 5 floor 60
+TIWATCH518 390 ti 175 ammo 112 scale 452 units 13 sen 135 bar 13 beat 0 hold 0
+GAP518 390 id 1033 code DODGE live -1 salt -1 eco -1 ti -1 sen -1 bar -1 need -1 orth -1 floor 60
+TIWATCH518 391 ti 205 ammo 112 scale 452 units 13 sen 135 bar 13 beat 0 hold 0
+GATE515 391 salt 0 eco 1 orth 5 floor 60
+GAP518 391 id 1033 code FUND live 0 salt 0 eco 1 ti 205 sen 135 bar 13 need 6 orth 5 floor 60
+GATE515 391 salt 0 eco 1 orth 5 floor 60
+GATE515 391 salt 0 eco 1 orth 5 floor 60
+TIWATCH518 392 ti 215 ammo 112 scale 452 units 13 sen 135 bar 13 beat 0 hold 0
+GAP518 392 id 1033 code DODGE live -1 salt -1 eco -1 ti -1 sen -1 bar -1 need -1 orth -1 floor 60
+TIWATCH518 393 ti 215 ammo 112 scale 452 units 13 sen 135 bar 13 beat 0 hold 0
+GATE515 393 salt 0 eco 1 orth 5 floor 60
+GAP518 393 id 1033 code FUND live 0 salt 0 eco 1 ti 215 sen 135 bar 13 need 6 orth 5 floor 60
+GATE515 393 salt 0 eco 1 orth 5 floor 60
+GATE515 393 salt 0 eco 1 orth 5 floor 60
+TIWATCH518 394 ti 235 ammo 112 scale 452 units 13 sen 135 bar 13 beat 0 hold 0
+GATE515 394 salt 0 eco 1 orth 2 floor 60
+GAP518 394 id 1033 code SITE live 0 salt 0 eco 1 ti 235 sen 135 bar 13 need 3 orth 2 floor 60
+GATE515 394 salt 0 eco 1 orth 2 floor 60
+TIWATCH518 395 ti 263 ammo 112 scale 432 units 12 sen 129 bar 12 beat 0 hold 0
+TIWATCH518 396 ti 273 ammo 112 scale 432 units 12 sen 129 bar 12 beat 0 hold 0
+TIWATCH518 397 ti 283 ammo 112 scale 432 units 12 sen 129 bar 12 beat 0 hold 0
+TIWATCH518 398 ti 283 ammo 112 scale 432 units 12 sen 129 bar 12 beat 0 hold 0
+TIWATCH518 399 ti 313 ammo 112 scale 432 units 12 sen 129 bar 12 beat 0 hold 0
+TIWATCH518 400 ti 204 ammo 112 scale 452 units 13 sen 135 bar 13 beat 0 hold 0
+TIWATCH518 401 ti 204 ammo 112 scale 452 units 13 sen 135 bar 13 beat 0 hold 0
+TIWATCH518 402 ti 224 ammo 112 scale 452 units 13 sen 135 bar 13 beat 0 hold 0
+TIWATCH518 403 ti 254 ammo 112 scale 452 units 13 sen 135 bar 13 beat 0 hold 0
+TIWATCH518 404 ti 264 ammo 112 scale 452 units 13 sen 135 bar 13 beat 0 hold 0
+TIWATCH518 405 ti 274 ammo 112 scale 452 units 13 sen 135 bar 13 beat 0 hold 0
+TIWATCH518 406 ti 284 ammo 112 scale 452 units 13 sen 135 bar 13 beat 0 hold 0
+TIWATCH518 407 ti 224 ammo 112 scale 462 units 14 sen 138 bar 13 beat 0 hold 0
+TIWATCH518 408 ti 96 ammo 112 scale 482 units 15 sen 144 bar 14 beat 0 hold 0
+TIWATCH518 409 ti 96 ammo 112 scale 482 units 15 sen 144 bar 14 beat 0 hold 0
+TIWATCH518 410 ti 106 ammo 112 scale 482 units 15 sen 144 bar 14 beat 0 hold 0
+TIWATCH518 411 ti 136 ammo 112 scale 482 units 15 sen 144 bar 14 beat 0 hold 0
+TIWATCH518 412 ti 156 ammo 112 scale 482 units 15 sen 144 bar 14 beat 0 hold 0
+TIWATCH518 413 ti 70 ammo 112 scale 492 units 16 sen 147 bar 14 beat 0 hold 0
+TIWATCH518 414 ti 80 ammo 112 scale 482 units 15 sen 144 bar 14 beat 0 hold 0
+TIWATCH518 415 ti 110 ammo 112 scale 482 units 15 sen 144 bar 14 beat 0 hold 0
+TIWATCH518 416 ti 24 ammo 112 scale 492 units 16 sen 147 bar 14 beat 0 hold 0
+TIWATCH518 417 ti 24 ammo 112 scale 482 units 15 sen 144 bar 14 beat 0 hold 0
+TIWATCH518 418 ti 44 ammo 112 scale 482 units 15 sen 144 bar 14 beat 0 hold 0
+TIWATCH518 419 ti 74 ammo 112 scale 482 units 15 sen 144 bar 14 beat 0 hold 0
+TIWATCH518 420 ti 84 ammo 112 scale 472 units 14 sen 141 bar 14 beat 0 hold 0
+TIWATCH518 421 ti 94 ammo 112 scale 472 units 14 sen 141 bar 14 beat 0 hold 0
+TIWATCH518 422 ti 94 ammo 112 scale 472 units 14 sen 141 bar 14 beat 0 hold 0
+TIWATCH518 423 ti 124 ammo 112 scale 472 units 14 sen 141 bar 14 beat 0 hold 0
+TIWATCH518 424 ti 50 ammo 112 scale 482 units 15 sen 144 bar 14 beat 0 hold 0
+TIWATCH518 425 ti 50 ammo 112 scale 472 units 14 sen 141 bar 14 beat 0 hold 0
+GAP518 425 id 1131 code DODGE live -1 salt -1 eco -1 ti -1 sen -1 bar -1 need -1 orth -1 floor 60
+TIWATCH518 426 ti 70 ammo 112 scale 472 units 14 sen 141 bar 14 beat 0 hold 0
+GAP518 426 id 1131 code DODGE live -1 salt -1 eco -1 ti -1 sen -1 bar -1 need -1 orth -1 floor 60
+TIWATCH518 427 ti 100 ammo 112 scale 472 units 14 sen 141 bar 14 beat 0 hold 0
+TIWATCH518 428 ti 110 ammo 112 scale 452 units 13 sen 135 bar 13 beat 0 hold 0
+TIWATCH518 429 ti 30 ammo 112 scale 472 units 14 sen 141 bar 14 beat 0 hold 0
+TIWATCH518 430 ti 40 ammo 108 scale 472 units 14 sen 141 bar 14 beat 0 hold 0
+TIWATCH518 431 ti 70 ammo 104 scale 472 units 14 sen 141 bar 14 beat 0 hold 0
+TIWATCH518 432 ti 80 ammo 100 scale 472 units 14 sen 141 bar 14 beat 0 hold 0
+TIWATCH518 433 ti 80 ammo 96 scale 472 units 14 sen 141 bar 14 beat 0 hold 0
+TIWATCH518 434 ti 90 ammo 92 scale 472 units 14 sen 141 bar 14 beat 0 hold 0
+TIWATCH518 435 ti 110 ammo 92 scale 472 units 14 sen 141 bar 14 beat 0 hold 0
+TIWATCH518 436 ti 130 ammo 88 scale 472 units 14 sen 141 bar 14 beat 0 hold 0
+TIWATCH518 437 ti 140 ammo 84 scale 472 units 14 sen 141 bar 14 beat 0 hold 0
+TIWATCH518 438 ti 56 ammo 80 scale 492 units 15 sen 147 bar 14 beat 0 hold 0
+TIWATCH518 439 ti 85 ammo 76 scale 492 units 15 sen 147 bar 14 beat 0 hold 0
+TIWATCH518 440 ti 94 ammo 68 scale 492 units 15 sen 147 bar 14 beat 0 hold 0
+TIWATCH518 441 ti 0 ammo 64 scale 492 units 15 sen 147 bar 14 beat 0 hold 0
+TIWATCH518 442 ti 20 ammo 56 scale 492 units 15 sen 147 bar 14 beat 0 hold 0
+TIWATCH518 443 ti 50 ammo 48 scale 492 units 15 sen 147 bar 14 beat 0 hold 0
+TICONV518 443 amt 4 floor 46
+TIWATCH518 444 ti 56 ammo 44 scale 492 units 15 sen 147 bar 14 beat 0 hold 0
+TICONV518 444 amt 10 floor 46
+TIWATCH518 445 ti 56 ammo 50 scale 472 units 14 sen 141 bar 14 beat 0 hold 0
+TICONV518 445 amt 10 floor 46
+TIWATCH518 446 ti 46 ammo 56 scale 472 units 14 sen 141 bar 14 beat 0 hold 0
+TIWATCH518 447 ti 76 ammo 52 scale 472 units 14 sen 141 bar 14 beat 0 hold 0
+TICONV518 447 amt 8 floor 46
+TIWATCH518 448 ti 88 ammo 56 scale 472 units 14 sen 141 bar 14 beat 0 hold 0
+TICONV518 448 amt 4 floor 46
+TIWATCH518 449 ti 84 ammo 56 scale 452 units 13 sen 135 bar 13 beat 0 hold 0
+TICONV518 449 amt 4 floor 46
+TIWATCH518 450 ti 100 ammo 56 scale 452 units 13 sen 135 bar 13 beat 0 hold 0
+TICONV518 450 amt 4 floor 46
+TIWATCH518 451 ti 126 ammo 56 scale 452 units 13 sen 135 bar 13 beat 0 hold 0
+TICONV518 451 amt 4 floor 46
+TIWATCH518 452 ti 132 ammo 60 scale 452 units 13 sen 135 bar 13 beat 0 hold 0
+TIWATCH518 453 ti 142 ammo 60 scale 452 units 13 sen 135 bar 13 beat 0 hold 0
+TIWATCH518 454 ti 152 ammo 60 scale 452 units 13 sen 135 bar 13 beat 0 hold 0
+TIWATCH518 455 ti 182 ammo 60 scale 452 units 13 sen 135 bar 13 beat 0 hold 0
+TIWATCH518 456 ti 192 ammo 60 scale 452 units 13 sen 135 bar 13 beat 0 hold 0
+TIWATCH518 457 ti 192 ammo 60 scale 452 units 13 sen 135 bar 13 beat 0 hold 0
+TIWATCH518 458 ti 202 ammo 60 scale 452 units 13 sen 135 bar 13 beat 0 hold 0
+TIWATCH518 459 ti 232 ammo 60 scale 452 units 13 sen 135 bar 13 beat 0 hold 0
+TIWATCH518 460 ti 252 ammo 60 scale 452 units 13 sen 135 bar 13 beat 0 hold 0
+TIWATCH518 461 ti 33 ammo 60 scale 477 units 14 sen 143 bar 14 beat 0 hold 0
+TIWATCH518 462 ti 43 ammo 60 scale 477 units 14 sen 143 bar 14 beat 0 hold 0
+TIWATCH518 463 ti 73 ammo 60 scale 477 units 14 sen 143 bar 14 beat 0 hold 0
+TIWATCH518 464 ti 83 ammo 60 scale 477 units 14 sen 143 bar 14 beat 0 hold 0
+TIWATCH518 465 ti 83 ammo 60 scale 477 units 14 sen 143 bar 14 beat 0 hold 0
+TIWATCH518 466 ti 103 ammo 60 scale 477 units 14 sen 143 bar 14 beat 0 hold 0
+TIWATCH518 467 ti 133 ammo 60 scale 477 units 14 sen 143 bar 14 beat 0 hold 0
+TIWATCH518 468 ti 143 ammo 60 scale 477 units 14 sen 143 bar 14 beat 0 hold 0
+TIWATCH518 469 ti 58 ammo 60 scale 487 units 15 sen 146 bar 14 beat 0 hold 0
+TIWATCH518 470 ti 58 ammo 60 scale 477 units 14 sen 143 bar 14 beat 0 hold 0
+TIWATCH518 471 ti 88 ammo 60 scale 477 units 14 sen 143 bar 14 beat 0 hold 0
+TIWATCH518 472 ti 108 ammo 60 scale 477 units 14 sen 143 bar 14 beat 0 hold 0
+TIWATCH518 473 ti 13 ammo 60 scale 487 units 15 sen 146 bar 14 beat 0 hold 0
+TIWATCH518 474 ti 33 ammo 60 scale 477 units 14 sen 143 bar 14 beat 0 hold 0
+TIWATCH518 475 ti 63 ammo 60 scale 477 units 14 sen 143 bar 14 beat 0 hold 0
+TIWATCH518 476 ti 73 ammo 60 scale 477 units 14 sen 143 bar 14 beat 0 hold 0
+TIWATCH518 477 ti 83 ammo 60 scale 477 units 14 sen 143 bar 14 beat 0 hold 0
+TIWATCH518 478 ti 93 ammo 60 scale 477 units 14 sen 143 bar 14 beat 0 hold 0
+TIWATCH518 479 ti 123 ammo 60 scale 477 units 14 sen 143 bar 14 beat 0 hold 0
+TIWATCH518 480 ti 38 ammo 60 scale 487 units 15 sen 146 bar 14 beat 0 hold 0
+TIWATCH518 481 ti 38 ammo 60 scale 477 units 14 sen 143 bar 14 beat 0 hold 0
+TIWATCH518 482 ti 48 ammo 60 scale 477 units 14 sen 143 bar 14 beat 0 hold 0
+TIWATCH518 483 ti 78 ammo 60 scale 477 units 14 sen 143 bar 14 beat 0 hold 0
+TIWATCH518 484 ti 98 ammo 60 scale 477 units 14 sen 143 bar 14 beat 0 hold 0
+TIWATCH518 485 ti 108 ammo 60 scale 477 units 14 sen 143 bar 14 beat 0 hold 0
+TIWATCH518 486 ti 118 ammo 56 scale 457 units 13 sen 137 bar 13 beat 0 hold 0
+TICONV518 486 amt 4 floor 46
+TIWATCH518 487 ti 131 ammo 60 scale 458 units 13 sen 137 bar 13 beat 0 hold 0
+TIWATCH518 488 ti 141 ammo 60 scale 458 units 13 sen 137 bar 13 beat 0 hold 0
+TIWATCH518 489 ti 128 ammo 60 scale 459 units 13 sen 137 bar 13 beat 0 hold 0
+TIWATCH518 490 ti 148 ammo 60 scale 459 units 13 sen 137 bar 13 beat 0 hold 0
+TIWATCH518 491 ti 165 ammo 60 scale 460 units 13 sen 138 bar 13 beat 0 hold 0
+TIWATCH518 492 ti 175 ammo 60 scale 460 units 13 sen 138 bar 13 beat 0 hold 0
+TIWATCH518 493 ti 172 ammo 60 scale 461 units 13 sen 138 bar 13 beat 0 hold 0
+TIWATCH518 494 ti 80 ammo 60 scale 471 units 14 sen 141 bar 14 beat 0 hold 0
+TIWATCH518 495 ti 96 ammo 60 scale 472 units 14 sen 141 bar 14 beat 0 hold 0
+TIWATCH518 496 ti 116 ammo 60 scale 472 units 14 sen 141 bar 14 beat 0 hold 0
+TIWATCH518 497 ti 102 ammo 60 scale 473 units 14 sen 141 bar 14 beat 0 hold 0
+TIWATCH518 498 ti 122 ammo 60 scale 473 units 14 sen 141 bar 14 beat 0 hold 0
+TIWATCH518 499 ti 138 ammo 60 scale 474 units 14 sen 142 bar 14 beat 0 hold 0
+TIWATCH518 500 ti 148 ammo 60 scale 474 units 14 sen 142 bar 14 beat 0 hold 0
+TIWATCH518 501 ti 144 ammo 60 scale 475 units 14 sen 142 bar 14 beat 0 hold 0
+TIWATCH518 502 ti 154 ammo 60 scale 475 units 14 sen 142 bar 14 beat 0 hold 0
+TIWATCH518 503 ti 170 ammo 60 scale 476 units 14 sen 142 bar 14 beat 0 hold 0
+TIWATCH518 504 ti 180 ammo 60 scale 476 units 14 sen 142 bar 14 beat 0 hold 0
+TIWATCH518 505 ti 166 ammo 60 scale 477 units 14 sen 143 bar 14 beat 0 hold 0
+TIWATCH518 506 ti 176 ammo 60 scale 477 units 14 sen 143 bar 14 beat 0 hold 0
+TIWATCH518 507 ti 192 ammo 60 scale 478 units 14 sen 143 bar 14 beat 0 hold 0
+TIWATCH518 508 ti 117 ammo 60 scale 488 units 15 sen 146 bar 14 beat 0 hold 0
+TIWATCH518 509 ti 113 ammo 60 scale 489 units 15 sen 146 bar 14 beat 0 hold 0
+TIWATCH518 510 ti 123 ammo 60 scale 489 units 15 sen 146 bar 14 beat 0 hold 0
+TIWATCH518 511 ti 139 ammo 60 scale 490 units 15 sen 147 bar 14 beat 0 hold 0
+TIWATCH518 512 ti 149 ammo 60 scale 490 units 15 sen 147 bar 14 beat 0 hold 0
+TIWATCH518 513 ti 135 ammo 60 scale 491 units 15 sen 147 bar 14 beat 0 hold 0
+TIWATCH518 514 ti 155 ammo 60 scale 491 units 15 sen 147 bar 14 beat 0 hold 0
+TIWATCH518 515 ti 171 ammo 60 scale 492 units 15 sen 147 bar 14 beat 0 hold 0
+TIWATCH518 516 ti 181 ammo 60 scale 492 units 15 sen 147 bar 14 beat 0 hold 0
+TIWATCH518 517 ti 177 ammo 60 scale 493 units 15 sen 147 bar 14 beat 0 hold 0
+TIWATCH518 518 ti 177 ammo 60 scale 493 units 15 sen 147 bar 14 beat 0 hold 0
+TIWATCH518 519 ti 193 ammo 60 scale 494 units 15 sen 148 bar 14 beat 0 hold 0
+TIWATCH518 520 ti 115 ammo 60 scale 504 units 16 sen 151 bar 15 beat 0 hold 0
+TIWATCH518 521 ti 100 ammo 60 scale 505 units 16 sen 151 bar 15 beat 0 hold 0
+TIWATCH518 522 ti 120 ammo 60 scale 505 units 16 sen 151 bar 15 beat 0 hold 0
+TIWATCH518 523 ti 135 ammo 60 scale 506 units 16 sen 151 bar 15 beat 0 hold 0
+TIWATCH518 524 ti 145 ammo 60 scale 506 units 16 sen 151 bar 15 beat 0 hold 0
+TIWATCH518 525 ti 140 ammo 60 scale 507 units 16 sen 152 bar 15 beat 0 hold 0
+TIWATCH518 526 ti 150 ammo 60 scale 507 units 16 sen 152 bar 15 beat 0 hold 0
+TIWATCH518 527 ti 165 ammo 60 scale 508 units 16 sen 152 bar 15 beat 0 hold 0
+TIWATCH518 528 ti 175 ammo 60 scale 508 units 16 sen 152 bar 15 beat 0 hold 0
+TIWATCH518 529 ti 175 ammo 60 scale 508 units 16 sen 152 bar 15 beat 0 hold 0
+TIWATCH518 530 ti 185 ammo 60 scale 508 units 16 sen 152 bar 15 beat 0 hold 0
+TIWATCH518 531 ti 215 ammo 60 scale 508 units 16 sen 152 bar 15 beat 0 hold 0
+TIWATCH518 532 ti 235 ammo 60 scale 508 units 16 sen 152 bar 15 beat 0 hold 0
+TIWATCH518 533 ti 144 ammo 60 scale 518 units 17 sen 155 bar 15 beat 0 hold 0
+TIWATCH518 534 ti 154 ammo 60 scale 518 units 17 sen 155 bar 15 beat 0 hold 0
+TIWATCH518 535 ti 174 ammo 60 scale 518 units 17 sen 155 bar 15 beat 0 hold 0
+TIWATCH518 536 ti 184 ammo 60 scale 518 units 17 sen 155 bar 15 beat 0 hold 0
+TIWATCH518 537 ti 194 ammo 60 scale 518 units 17 sen 155 bar 15 beat 0 hold 0
+TIWATCH518 538 ti 224 ammo 60 scale 518 units 17 sen 155 bar 15 beat 0 hold 0
+TIWATCH518 539 ti 254 ammo 60 scale 518 units 17 sen 155 bar 15 beat 0 hold 0
+TIWATCH518 540 ti 171 ammo 60 scale 528 units 18 sen 158 bar 15 beat 0 hold 0
+TIWATCH518 541 ti 181 ammo 60 scale 528 units 18 sen 158 bar 15 beat 0 hold 0
+TIWATCH518 542 ti 201 ammo 60 scale 528 units 18 sen 158 bar 15 beat 0 hold 0
+TIWATCH518 543 ti 231 ammo 60 scale 518 units 17 sen 155 bar 15 beat 0 hold 0
+TIWATCH518 544 ti 261 ammo 60 scale 518 units 17 sen 155 bar 15 beat 0 hold 0
+TIWATCH518 545 ti 271 ammo 60 scale 518 units 17 sen 155 bar 15 beat 0 hold 0
+TIWATCH518 546 ti 291 ammo 60 scale 518 units 17 sen 155 bar 15 beat 0 hold 0
+TIWATCH518 547 ti 321 ammo 60 scale 518 units 17 sen 155 bar 15 beat 0 hold 0
+TIWATCH518 548 ti 341 ammo 60 scale 518 units 17 sen 155 bar 15 beat 0 hold 0
+TIWATCH518 549 ti 351 ammo 56 scale 508 units 16 sen 152 bar 15 beat 0 hold 0
+TICONV518 549 amt 4 floor 46
+TIWATCH518 550 ti 367 ammo 60 scale 508 units 16 sen 152 bar 15 beat 0 hold 0
+TIWATCH518 551 ti 397 ammo 60 scale 508 units 16 sen 152 bar 15 beat 0 hold 0
+TIWATCH518 552 ti 417 ammo 60 scale 508 units 16 sen 152 bar 15 beat 0 hold 0
+TIWATCH518 553 ti 427 ammo 60 scale 508 units 16 sen 152 bar 15 beat 0 hold 0
+TIWATCH518 554 ti 427 ammo 60 scale 508 units 16 sen 152 bar 15 beat 0 hold 0
+TIWATCH518 555 ti 356 ammo 60 scale 518 units 17 sen 155 bar 15 beat 0 hold 0
+TIWATCH518 556 ti 376 ammo 60 scale 518 units 17 sen 155 bar 15 beat 0 hold 0
+TIWATCH518 557 ti 386 ammo 60 scale 518 units 17 sen 155 bar 15 beat 0 hold 0
+TIWATCH518 558 ti 406 ammo 60 scale 518 units 17 sen 155 bar 15 beat 0 hold 0
+TIWATCH518 559 ti 436 ammo 60 scale 518 units 17 sen 155 bar 15 beat 0 hold 0
+TIWATCH518 560 ti 456 ammo 60 scale 518 units 17 sen 155 bar 15 beat 0 hold 0
+TIWATCH518 561 ti 363 ammo 60 scale 528 units 18 sen 158 bar 15 beat 0 hold 0
+TIWATCH518 562 ti 383 ammo 60 scale 528 units 18 sen 158 bar 15 beat 0 hold 0
+TIWATCH518 563 ti 403 ammo 60 scale 528 units 18 sen 158 bar 15 beat 0 hold 0
+TIWATCH518 564 ti 413 ammo 60 scale 528 units 18 sen 158 bar 15 beat 0 hold 0
+TIWATCH518 565 ti 423 ammo 60 scale 528 units 18 sen 158 bar 15 beat 0 hold 0
+TIWATCH518 566 ti 443 ammo 60 scale 528 units 18 sen 158 bar 15 beat 0 hold 0
+TIWATCH518 567 ti 473 ammo 60 scale 528 units 18 sen 158 bar 15 beat 0 hold 0
+TIWATCH518 568 ti 388 ammo 60 scale 538 units 19 sen 161 bar 16 beat 0 hold 0
+TIWATCH518 569 ti 398 ammo 60 scale 538 units 19 sen 161 bar 16 beat 0 hold 0
+TIWATCH518 570 ti 408 ammo 60 scale 538 units 19 sen 161 bar 16 beat 0 hold 0
+TIWATCH518 571 ti 438 ammo 60 scale 538 units 19 sen 161 bar 16 beat 0 hold 0
+TIWATCH518 572 ti 448 ammo 60 scale 538 units 19 sen 161 bar 16 beat 0 hold 0
+TIWATCH518 573 ti 458 ammo 60 scale 528 units 18 sen 158 bar 15 beat 0 hold 0
+TIWATCH518 574 ti 478 ammo 60 scale 528 units 18 sen 158 bar 15 beat 0 hold 0
+TIWATCH518 575 ti 508 ammo 60 scale 528 units 18 sen 158 bar 15 beat 0 hold 0
+TIWATCH518 576 ti 528 ammo 60 scale 528 units 18 sen 158 bar 15 beat 0 hold 0
+TIWATCH518 577 ti 538 ammo 60 scale 528 units 18 sen 158 bar 15 beat 0 hold 0
+TIWATCH518 578 ti 548 ammo 60 scale 528 units 18 sen 158 bar 15 beat 0 hold 0
+TIWATCH518 579 ti 568 ammo 60 scale 528 units 18 sen 158 bar 15 beat 0 hold 0
+TIWATCH518 580 ti 588 ammo 60 scale 528 units 18 sen 158 bar 15 beat 0 hold 0
+TIWATCH518 581 ti 598 ammo 60 scale 518 units 17 sen 155 bar 15 beat 0 hold 0
+TIWATCH518 582 ti 608 ammo 60 scale 518 units 17 sen 155 bar 15 beat 0 hold 0
+TIWATCH518 583 ti 638 ammo 56 scale 518 units 17 sen 155 bar 15 beat 0 hold 0
+TICONV518 583 amt 4 floor 46
+TIWATCH518 584 ti 654 ammo 56 scale 518 units 17 sen 155 bar 15 beat 0 hold 0
+TICONV518 584 amt 4 floor 46
+TIWATCH518 585 ti 660 ammo 56 scale 518 units 17 sen 155 bar 15 beat 0 hold 0
+TICONV518 585 amt 4 floor 46
+TIWATCH518 586 ti 676 ammo 56 scale 518 units 17 sen 155 bar 15 beat 0 hold 0
+TICONV518 586 amt 4 floor 46
+TIWATCH518 587 ti 702 ammo 56 scale 518 units 17 sen 155 bar 15 beat 0 hold 0
+TICONV518 587 amt 4 floor 46
+TIWATCH518 588 ti 708 ammo 60 scale 518 units 17 sen 155 bar 15 beat 0 hold 0
+TIWATCH518 589 ti 718 ammo 60 scale 518 units 17 sen 155 bar 15 beat 0 hold 0
+TIWATCH518 590 ti 635 ammo 60 scale 528 units 18 sen 158 bar 15 beat 0 hold 0
+TIWATCH518 591 ti 665 ammo 60 scale 528 units 18 sen 158 bar 15 beat 0 hold 0
+TIWATCH518 592 ti 685 ammo 60 scale 528 units 18 sen 158 bar 15 beat 0 hold 0
+TIWATCH518 593 ti 695 ammo 60 scale 528 units 18 sen 158 bar 15 beat 0 hold 0
+TIWATCH518 594 ti 705 ammo 60 scale 528 units 18 sen 158 bar 15 beat 0 hold 0
+TIWATCH518 595 ti 735 ammo 60 scale 528 units 18 sen 158 bar 15 beat 0 hold 0
+TIWATCH518 596 ti 745 ammo 60 scale 518 units 17 sen 155 bar 15 beat 0 hold 0
+TIWATCH518 597 ti 755 ammo 60 scale 518 units 17 sen 155 bar 15 beat 0 hold 0
+TIWATCH518 598 ti 785 ammo 60 scale 518 units 17 sen 155 bar 15 beat 0 hold 0
+TIWATCH518 599 ti 815 ammo 60 scale 518 units 17 sen 155 bar 15 beat 0 hold 0
+TIWATCH518 600 ti 825 ammo 60 scale 518 units 17 sen 155 bar 15 beat 0 hold 0
+TIWATCH518 601 ti 835 ammo 60 scale 518 units 17 sen 155 bar 15 beat 0 hold 0
+TIWATCH518 602 ti 835 ammo 60 scale 508 units 16 sen 152 bar 15 beat 0 hold 0
+TIWATCH518 603 ti 865 ammo 60 scale 508 units 16 sen 152 bar 15 beat 0 hold 0
+TIWATCH518 604 ti 885 ammo 60 scale 508 units 16 sen 152 bar 15 beat 0 hold 0
+TIWATCH518 605 ti 895 ammo 60 scale 508 units 16 sen 152 bar 15 beat 0 hold 0
+TIWATCH518 606 ti 905 ammo 60 scale 508 units 16 sen 152 bar 15 beat 0 hold 0
+TIWATCH518 607 ti 834 ammo 60 scale 518 units 17 sen 155 bar 15 beat 0 hold 0
+TIWATCH518 608 ti 854 ammo 60 scale 518 units 17 sen 155 bar 15 beat 0 hold 0
+TIWATCH518 609 ti 864 ammo 60 scale 508 units 16 sen 152 bar 15 beat 0 hold 0
+TIWATCH518 610 ti 894 ammo 60 scale 508 units 16 sen 152 bar 15 beat 0 hold 0
+TIWATCH518 611 ti 914 ammo 60 scale 508 units 16 sen 152 bar 15 beat 0 hold 0
+TIWATCH518 612 ti 924 ammo 60 scale 508 units 16 sen 152 bar 15 beat 0 hold 0
+TIWATCH518 613 ti 934 ammo 60 scale 508 units 16 sen 152 bar 15 beat 0 hold 0
+TIWATCH518 614 ti 944 ammo 60 scale 508 units 16 sen 152 bar 15 beat 0 hold 0
+TIWATCH518 615 ti 873 ammo 60 scale 518 units 17 sen 155 bar 15 beat 0 hold 0
+TIWATCH518 616 ti 903 ammo 60 scale 518 units 17 sen 155 bar 15 beat 0 hold 0
+TIWATCH518 617 ti 913 ammo 60 scale 518 units 17 sen 155 bar 15 beat 0 hold 0
+TIWATCH518 618 ti 923 ammo 60 scale 518 units 17 sen 155 bar 15 beat 0 hold 0
+TIWATCH518 619 ti 953 ammo 60 scale 518 units 17 sen 155 bar 15 beat 0 hold 0
+TIWATCH518 620 ti 963 ammo 60 scale 518 units 17 sen 155 bar 15 beat 0 hold 0
+TIWATCH518 621 ti 973 ammo 60 scale 518 units 17 sen 155 bar 15 beat 0 hold 0
+TIWATCH518 622 ti 1003 ammo 60 scale 518 units 17 sen 155 bar 15 beat 0 hold 0
+TIWATCH518 623 ti 1033 ammo 60 scale 518 units 17 sen 155 bar 15 beat 0 hold 0
+TIWATCH518 624 ti 1043 ammo 60 scale 518 units 17 sen 155 bar 15 beat 0 hold 0
+TIWATCH518 625 ti 1053 ammo 60 scale 518 units 17 sen 155 bar 15 beat 0 hold 0
+TIWATCH518 626 ti 1063 ammo 60 scale 518 units 17 sen 155 bar 15 beat 0 hold 0
+TIWATCH518 627 ti 1083 ammo 60 scale 518 units 17 sen 155 bar 15 beat 0 hold 0
+TIWATCH518 628 ti 1000 ammo 60 scale 528 units 18 sen 158 bar 15 beat 0 hold 0
+TIWATCH518 629 ti 1010 ammo 60 scale 528 units 18 sen 158 bar 15 beat 0 hold 0
+TIWATCH518 630 ti 1030 ammo 60 scale 528 units 18 sen 158 bar 15 beat 0 hold 0
+TIWATCH518 631 ti 1060 ammo 60 scale 528 units 18 sen 158 bar 15 beat 0 hold 0
+TIWATCH518 632 ti 1080 ammo 60 scale 528 units 18 sen 158 bar 15 beat 0 hold 0
+TIWATCH518 633 ti 1090 ammo 60 scale 528 units 18 sen 158 bar 15 beat 0 hold 0
+TIWATCH518 634 ti 995 ammo 60 scale 538 units 19 sen 161 bar 16 beat 0 hold 0
+TIWATCH518 635 ti 1025 ammo 56 scale 538 units 19 sen 161 bar 16 beat 0 hold 0
+TICONV518 635 amt 4 floor 46
+TIWATCH518 636 ti 1031 ammo 56 scale 538 units 19 sen 161 bar 16 beat 0 hold 0
+TICONV518 636 amt 4 floor 46
+TIWATCH518 637 ti 1037 ammo 56 scale 538 units 19 sen 161 bar 16 beat 0 hold 0
+TICONV518 637 amt 4 floor 46
+TIWATCH518 638 ti 1043 ammo 56 scale 538 units 19 sen 161 bar 16 beat 0 hold 0
+TICONV518 638 amt 4 floor 46
+TIWATCH518 639 ti 1069 ammo 56 scale 538 units 19 sen 161 bar 16 beat 0 hold 0
+TICONV518 639 amt 4 floor 46
+TIWATCH518 640 ti 1095 ammo 60 scale 538 units 19 sen 161 bar 16 beat 0 hold 0
+TIWATCH518 641 ti 998 ammo 60 scale 548 units 20 sen 164 bar 16 beat 0 hold 0
+TIWATCH518 642 ti 1018 ammo 60 scale 548 units 20 sen 164 bar 16 beat 0 hold 0
+TIWATCH518 643 ti 1038 ammo 60 scale 548 units 20 sen 164 bar 16 beat 0 hold 0
+TIWATCH518 644 ti 1048 ammo 60 scale 548 units 20 sen 164 bar 16 beat 0 hold 0
+TIWATCH518 645 ti 1058 ammo 60 scale 548 units 20 sen 164 bar 16 beat 0 hold 0
+TIWATCH518 646 ti 1078 ammo 60 scale 548 units 20 sen 164 bar 16 beat 0 hold 0
+TIWATCH518 647 ti 1108 ammo 60 scale 548 units 20 sen 164 bar 16 beat 0 hold 0
+TIWATCH518 648 ti 1128 ammo 60 scale 538 units 19 sen 161 bar 16 beat 0 hold 0
+TIWATCH518 649 ti 1138 ammo 60 scale 538 units 19 sen 161 bar 16 beat 0 hold 0
+TIWATCH518 650 ti 1031 ammo 56 scale 548 units 20 sen 164 bar 16 beat 0 hold 0
+TICONV518 650 amt 4 floor 46
+TIWATCH518 651 ti 1057 ammo 56 scale 548 units 20 sen 164 bar 16 beat 0 hold 0
+TICONV518 651 amt 4 floor 46
+TIWATCH518 652 ti 1073 ammo 60 scale 548 units 20 sen 164 bar 16 beat 0 hold 0
+TIWATCH518 653 ti 1083 ammo 56 scale 548 units 20 sen 164 bar 16 beat 0 hold 0
+TICONV518 653 amt 4 floor 46
+TIWATCH518 654 ti 1099 ammo 56 scale 548 units 20 sen 164 bar 16 beat 0 hold 0
+TICONV518 654 amt 4 floor 46
+TIWATCH518 655 ti 1125 ammo 56 scale 548 units 20 sen 164 bar 16 beat 0 hold 0
+TICONV518 655 amt 4 floor 46
+TIWATCH518 656 ti 1141 ammo 56 scale 538 units 19 sen 161 bar 16 beat 0 hold 0
+TICONV518 656 amt 4 floor 46
+TIWATCH518 657 ti 1040 ammo 60 scale 548 units 20 sen 164 bar 16 beat 0 hold 0
+TIWATCH518 658 ti 1060 ammo 60 scale 548 units 20 sen 164 bar 16 beat 0 hold 0
+TIWATCH518 659 ti 1080 ammo 60 scale 548 units 20 sen 164 bar 16 beat 0 hold 0
+TIWATCH518 660 ti 1090 ammo 60 scale 548 units 20 sen 164 bar 16 beat 0 hold 0
+TIWATCH518 661 ti 1100 ammo 60 scale 538 units 19 sen 161 bar 16 beat 0 hold 0
+TIWATCH518 662 ti 1013 ammo 60 scale 548 units 20 sen 164 bar 16 beat 0 hold 0
+TIWATCH518 663 ti 1043 ammo 60 scale 548 units 20 sen 164 bar 16 beat 0 hold 0
+TIWATCH518 664 ti 1063 ammo 60 scale 548 units 20 sen 164 bar 16 beat 0 hold 0
+TIWATCH518 665 ti 1073 ammo 60 scale 548 units 20 sen 164 bar 16 beat 0 hold 0
+TIWATCH518 666 ti 1083 ammo 60 scale 548 units 20 sen 164 bar 16 beat 0 hold 0
+TIWATCH518 667 ti 1113 ammo 60 scale 548 units 20 sen 164 bar 16 beat 0 hold 0
+TIWATCH518 668 ti 1123 ammo 60 scale 548 units 20 sen 164 bar 16 beat 0 hold 0
+TIWATCH518 669 ti 1133 ammo 60 scale 538 units 19 sen 161 bar 16 beat 0 hold 0
+TIWATCH518 670 ti 1153 ammo 60 scale 538 units 19 sen 161 bar 16 beat 0 hold 0
+TIWATCH518 671 ti 1183 ammo 60 scale 538 units 19 sen 161 bar 16 beat 0 hold 0
+TIWATCH518 672 ti 1203 ammo 60 scale 538 units 19 sen 161 bar 16 beat 0 hold 0
+TIWATCH518 673 ti 1213 ammo 60 scale 538 units 19 sen 161 bar 16 beat 0 hold 0
+TIWATCH518 674 ti 1223 ammo 60 scale 538 units 19 sen 161 bar 16 beat 0 hold 0
+TIWATCH518 675 ti 1243 ammo 60 scale 528 units 18 sen 158 bar 15 beat 0 hold 0
+TIWATCH518 676 ti 1263 ammo 60 scale 528 units 18 sen 158 bar 15 beat 0 hold 0
+TIWATCH518 677 ti 1273 ammo 60 scale 528 units 18 sen 158 bar 15 beat 0 hold 0
+TIWATCH518 678 ti 1283 ammo 60 scale 528 units 18 sen 158 bar 15 beat 0 hold 0
+TIWATCH518 679 ti 1313 ammo 60 scale 528 units 18 sen 158 bar 15 beat 0 hold 0
+TIWATCH518 680 ti 1333 ammo 60 scale 528 units 18 sen 158 bar 15 beat 0 hold 0
+TIWATCH518 681 ti 1343 ammo 60 scale 528 units 18 sen 158 bar 15 beat 0 hold 0
+TIWATCH518 682 ti 1258 ammo 60 scale 528 units 18 sen 158 bar 15 beat 0 hold 0
+TIWATCH518 683 ti 1288 ammo 60 scale 528 units 18 sen 158 bar 15 beat 0 hold 0
+TIWATCH518 684 ti 1298 ammo 60 scale 528 units 18 sen 158 bar 15 beat 0 hold 0
+TIWATCH518 685 ti 1308 ammo 60 scale 528 units 18 sen 158 bar 15 beat 0 hold 0
+TIWATCH518 686 ti 1328 ammo 60 scale 528 units 18 sen 158 bar 15 beat 0 hold 0
+TIWATCH518 687 ti 1358 ammo 60 scale 528 units 18 sen 158 bar 15 beat 0 hold 0
+TIWATCH518 688 ti 1378 ammo 60 scale 528 units 18 sen 158 bar 15 beat 0 hold 0
+TIWATCH518 689 ti 1388 ammo 60 scale 528 units 18 sen 158 bar 15 beat 0 hold 0
+TIWATCH518 690 ti 1398 ammo 60 scale 528 units 18 sen 158 bar 15 beat 0 hold 0
+TIWATCH518 691 ti 1428 ammo 60 scale 528 units 18 sen 158 bar 15 beat 0 hold 0
+TIWATCH518 692 ti 1333 ammo 60 scale 538 units 19 sen 161 bar 16 beat 0 hold 0
+TIWATCH518 693 ti 1343 ammo 60 scale 538 units 19 sen 161 bar 16 beat 0 hold 0
+TIWATCH518 694 ti 1373 ammo 60 scale 538 units 19 sen 161 bar 16 beat 0 hold 0
+TIWATCH518 695 ti 1403 ammo 60 scale 538 units 19 sen 161 bar 16 beat 0 hold 0
+TIWATCH518 696 ti 1413 ammo 60 scale 538 units 19 sen 161 bar 16 beat 0 hold 0
+TIWATCH518 697 ti 1423 ammo 60 scale 538 units 19 sen 161 bar 16 beat 0 hold 0
+TIWATCH518 698 ti 1316 ammo 60 scale 548 units 20 sen 164 bar 16 beat 0 hold 0
+TIWATCH518 699 ti 1346 ammo 60 scale 548 units 20 sen 164 bar 16 beat 0 hold 0
+TIWATCH518 700 ti 1366 ammo 60 scale 548 units 20 sen 164 bar 16 beat 0 hold 0
+TIWATCH518 701 ti 1376 ammo 60 scale 548 units 20 sen 164 bar 16 beat 0 hold 0
+TIWATCH518 702 ti 1386 ammo 60 scale 548 units 20 sen 164 bar 16 beat 0 hold 0
+TIWATCH518 703 ti 1307 ammo 60 scale 558 units 21 sen 167 bar 16 beat 0 hold 0
+TIWATCH518 704 ti 1327 ammo 56 scale 558 units 21 sen 167 bar 16 beat 0 hold 0
+TICONV518 704 amt 4 floor 46
+TIWATCH518 705 ti 1333 ammo 56 scale 558 units 21 sen 167 bar 16 beat 0 hold 0
+TICONV518 705 amt 4 floor 46
+TIWATCH518 706 ti 1359 ammo 56 scale 558 units 21 sen 167 bar 16 beat 0 hold 0
+TICONV518 706 amt 4 floor 46
+TIWATCH518 707 ti 1375 ammo 56 scale 558 units 21 sen 167 bar 16 beat 0 hold 0
+TICONV518 707 amt 4 floor 46
+TIWATCH518 708 ti 1381 ammo 56 scale 558 units 21 sen 167 bar 16 beat 0 hold 0
+TICONV518 708 amt 4 floor 46
+TIWATCH518 709 ti 1387 ammo 60 scale 558 units 21 sen 167 bar 16 beat 0 hold 0
+TIWATCH518 710 ti 1397 ammo 60 scale 558 units 21 sen 167 bar 16 beat 0 hold 0
+TIWATCH518 711 ti 1427 ammo 60 scale 558 units 21 sen 167 bar 16 beat 0 hold 0
+TIWATCH518 712 ti 1457 ammo 60 scale 558 units 21 sen 167 bar 16 beat 0 hold 0
+TIWATCH518 713 ti 1467 ammo 60 scale 558 units 21 sen 167 bar 16 beat 0 hold 0
+TIWATCH518 714 ti 1477 ammo 60 scale 558 units 21 sen 167 bar 16 beat 0 hold 0
+TIWATCH518 715 ti 1507 ammo 60 scale 558 units 21 sen 167 bar 16 beat 0 hold 0
+TIWATCH518 716 ti 1517 ammo 60 scale 558 units 21 sen 167 bar 16 beat 0 hold 0
+TIWATCH518 717 ti 1527 ammo 60 scale 558 units 21 sen 167 bar 16 beat 0 hold 0
+TIWATCH518 718 ti 1557 ammo 60 scale 558 units 21 sen 167 bar 16 beat 0 hold 0
+TIWATCH518 719 ti 1587 ammo 60 scale 558 units 21 sen 167 bar 16 beat 0 hold 0
+TIWATCH518 720 ti 1597 ammo 60 scale 558 units 21 sen 167 bar 16 beat 0 hold 0
+TIWATCH518 721 ti 1607 ammo 60 scale 558 units 21 sen 167 bar 16 beat 0 hold 0
+TIWATCH518 722 ti 1617 ammo 60 scale 558 units 21 sen 167 bar 16 beat 0 hold 0
+TIWATCH518 723 ti 1637 ammo 60 scale 548 units 20 sen 164 bar 16 beat 0 hold 0
+TIWATCH518 724 ti 1657 ammo 60 scale 548 units 20 sen 164 bar 16 beat 0 hold 0
+TIWATCH518 725 ti 1667 ammo 60 scale 548 units 20 sen 164 bar 16 beat 0 hold 0
+TIWATCH518 726 ti 1687 ammo 60 scale 548 units 20 sen 164 bar 16 beat 0 hold 0
+TIWATCH518 727 ti 1717 ammo 60 scale 548 units 20 sen 164 bar 16 beat 0 hold 0
+TIWATCH518 728 ti 1737 ammo 60 scale 548 units 20 sen 164 bar 16 beat 0 hold 0
+TIWATCH518 729 ti 1747 ammo 60 scale 548 units 20 sen 164 bar 16 beat 0 hold 0
+TIWATCH518 730 ti 1757 ammo 60 scale 548 units 20 sen 164 bar 16 beat 0 hold 0
+TIWATCH518 731 ti 1787 ammo 60 scale 548 units 20 sen 164 bar 16 beat 0 hold 0
+TIWATCH518 732 ti 1797 ammo 60 scale 548 units 20 sen 164 bar 16 beat 0 hold 0
+TIWATCH518 733 ti 1807 ammo 60 scale 538 units 19 sen 161 bar 16 beat 0 hold 0
+TIWATCH518 734 ti 1817 ammo 60 scale 538 units 19 sen 161 bar 16 beat 0 hold 0
+TIWATCH518 735 ti 1847 ammo 60 scale 538 units 19 sen 161 bar 16 beat 0 hold 0
+TIWATCH518 736 ti 1877 ammo 60 scale 538 units 19 sen 161 bar 16 beat 0 hold 0
+TIWATCH518 737 ti 1887 ammo 60 scale 538 units 19 sen 161 bar 16 beat 0 hold 0
+TIWATCH518 738 ti 1800 ammo 60 scale 548 units 20 sen 164 bar 16 beat 0 hold 0
+TIWATCH518 739 ti 1820 ammo 60 scale 538 units 19 sen 161 bar 16 beat 0 hold 0
+TIWATCH518 740 ti 1830 ammo 60 scale 538 units 19 sen 161 bar 16 beat 0 hold 0
+TIWATCH518 741 ti 1840 ammo 60 scale 538 units 19 sen 161 bar 16 beat 0 hold 0
+TIWATCH518 742 ti 1860 ammo 60 scale 538 units 19 sen 161 bar 16 beat 0 hold 0
+TIWATCH518 743 ti 1890 ammo 60 scale 538 units 19 sen 161 bar 16 beat 0 hold 0
+TIWATCH518 744 ti 1910 ammo 60 scale 508 units 17 sen 152 bar 15 beat 0 hold 0
+TIWATCH518 745 ti 1920 ammo 60 scale 508 units 17 sen 152 bar 15 beat 0 hold 0
+TIWATCH518 746 ti 1920 ammo 60 scale 508 units 17 sen 152 bar 15 beat 0 hold 0
+TIWATCH518 747 ti 1849 ammo 60 scale 518 units 18 sen 155 bar 15 beat 0 hold 0
+TIWATCH518 748 ti 1869 ammo 60 scale 518 units 18 sen 155 bar 15 beat 0 hold 0
+TIWATCH518 749 ti 1879 ammo 60 scale 518 units 18 sen 155 bar 15 beat 0 hold 0
+TIWATCH518 750 ti 1899 ammo 60 scale 518 units 18 sen 155 bar 15 beat 0 hold 0
+TIWATCH518 751 ti 1929 ammo 60 scale 518 units 18 sen 155 bar 15 beat 0 hold 0
+TIWATCH518 752 ti 1949 ammo 60 scale 518 units 18 sen 155 bar 15 beat 0 hold 0
+TIWATCH518 753 ti 1959 ammo 60 scale 518 units 18 sen 155 bar 15 beat 0 hold 0
+TIWATCH518 754 ti 1979 ammo 60 scale 518 units 18 sen 155 bar 15 beat 0 hold 0
+TIWATCH518 755 ti 1999 ammo 60 scale 518 units 18 sen 155 bar 15 beat 0 hold 0
+TIWATCH518 756 ti 2009 ammo 60 scale 518 units 18 sen 155 bar 15 beat 0 hold 0
+TIWATCH518 757 ti 2019 ammo 60 scale 518 units 18 sen 155 bar 15 beat 0 hold 0
+TIWATCH518 758 ti 1936 ammo 60 scale 528 units 19 sen 158 bar 15 beat 0 hold 0
+TIWATCH518 759 ti 1966 ammo 60 scale 528 units 19 sen 158 bar 15 beat 0 hold 0
+TIWATCH518 760 ti 1986 ammo 60 scale 528 units 19 sen 158 bar 15 beat 0 hold 0
+TIWATCH518 761 ti 1996 ammo 60 scale 528 units 19 sen 158 bar 15 beat 0 hold 0
+TIWATCH518 762 ti 2006 ammo 60 scale 528 units 19 sen 158 bar 15 beat 0 hold 0
+TIWATCH518 763 ti 2036 ammo 60 scale 528 units 19 sen 158 bar 15 beat 0 hold 0
+TIWATCH518 764 ti 2046 ammo 60 scale 528 units 19 sen 158 bar 15 beat 0 hold 0
+TIWATCH518 765 ti 2056 ammo 60 scale 528 units 19 sen 158 bar 15 beat 0 hold 0
+TIWATCH518 766 ti 2076 ammo 60 scale 528 units 19 sen 158 bar 15 beat 0 hold 0
+TIWATCH518 767 ti 2001 ammo 60 scale 538 units 20 sen 161 bar 16 beat 0 hold 0
+TIWATCH518 768 ti 2021 ammo 60 scale 538 units 20 sen 161 bar 16 beat 0 hold 0
+TIWATCH518 769 ti 2031 ammo 60 scale 538 units 20 sen 161 bar 16 beat 0 hold 0
+TIWATCH518 770 ti 2041 ammo 60 scale 538 units 20 sen 161 bar 16 beat 0 hold 0
+TIWATCH518 771 ti 2061 ammo 60 scale 538 units 20 sen 161 bar 16 beat 0 hold 0
+TIWATCH518 772 ti 2081 ammo 60 scale 538 units 20 sen 161 bar 16 beat 0 hold 0
+TIWATCH518 773 ti 1984 ammo 60 scale 548 units 21 sen 164 bar 16 beat 0 hold 0
+TIWATCH518 774 ti 1994 ammo 60 scale 548 units 21 sen 164 bar 16 beat 0 hold 0
+TIWATCH518 775 ti 2024 ammo 60 scale 548 units 21 sen 164 bar 16 beat 0 hold 0
+TIWATCH518 776 ti 2044 ammo 60 scale 548 units 21 sen 164 bar 16 beat 0 hold 0
+TIWATCH518 777 ti 2054 ammo 60 scale 548 units 21 sen 164 bar 16 beat 0 hold 0
+TIWATCH518 778 ti 2074 ammo 60 scale 548 units 21 sen 164 bar 16 beat 0 hold 0
+TIWATCH518 779 ti 2104 ammo 60 scale 538 units 20 sen 161 bar 16 beat 0 hold 0
+TIWATCH518 780 ti 2114 ammo 60 scale 538 units 20 sen 161 bar 16 beat 0 hold 0
+TIWATCH518 781 ti 2124 ammo 60 scale 538 units 20 sen 161 bar 16 beat 0 hold 0
+TIWATCH518 782 ti 2144 ammo 60 scale 538 units 20 sen 161 bar 16 beat 0 hold 0
+TIWATCH518 783 ti 2174 ammo 60 scale 538 units 20 sen 161 bar 16 beat 0 hold 0
+TIWATCH518 784 ti 2194 ammo 60 scale 538 units 20 sen 161 bar 16 beat 0 hold 0
+TIWATCH518 785 ti 2204 ammo 60 scale 538 units 20 sen 161 bar 16 beat 0 hold 0
+TIWATCH518 786 ti 2214 ammo 60 scale 538 units 20 sen 161 bar 16 beat 0 hold 0
+TIWATCH518 787 ti 2244 ammo 60 scale 538 units 20 sen 161 bar 16 beat 0 hold 0
+TIWATCH518 788 ti 2254 ammo 60 scale 528 units 19 sen 158 bar 15 beat 0 hold 0
+TIWATCH518 789 ti 2264 ammo 60 scale 528 units 19 sen 158 bar 15 beat 0 hold 0
+TIWATCH518 790 ti 2294 ammo 60 scale 528 units 19 sen 158 bar 15 beat 0 hold 0
+TIWATCH518 791 ti 2324 ammo 60 scale 528 units 19 sen 158 bar 15 beat 0 hold 0
+TIWATCH518 792 ti 2334 ammo 60 scale 528 units 19 sen 158 bar 15 beat 0 hold 0
+TIWATCH518 793 ti 2344 ammo 60 scale 528 units 19 sen 158 bar 15 beat 0 hold 0
+TIWATCH518 794 ti 2344 ammo 60 scale 528 units 19 sen 158 bar 15 beat 0 hold 0
+TIWATCH518 795 ti 2374 ammo 60 scale 508 units 18 sen 152 bar 15 beat 0 hold 0
+TIWATCH518 796 ti 2394 ammo 60 scale 508 units 18 sen 152 bar 15 beat 0 hold 0
+TIWATCH518 797 ti 2404 ammo 60 scale 508 units 18 sen 152 bar 15 beat 0 hold 0
+TIWATCH518 798 ti 2414 ammo 60 scale 508 units 18 sen 152 bar 15 beat 0 hold 0
+TIWATCH518 799 ti 2444 ammo 60 scale 498 units 17 sen 149 bar 14 beat 0 hold 0
+TIWATCH518 800 ti 2464 ammo 60 scale 498 units 17 sen 149 bar 14 beat 0 hold 0
+TIWATCH518 801 ti 2474 ammo 60 scale 498 units 17 sen 149 bar 14 beat 0 hold 0
+TIWATCH518 802 ti 2504 ammo 60 scale 498 units 17 sen 149 bar 14 beat 0 hold 0
+TIWATCH518 803 ti 2524 ammo 60 scale 498 units 17 sen 149 bar 14 beat 0 hold 0
+TIWATCH518 804 ti 2534 ammo 60 scale 498 units 17 sen 149 bar 14 beat 0 hold 0
+TIWATCH518 805 ti 2544 ammo 60 scale 498 units 17 sen 149 bar 14 beat 0 hold 0
+TIWATCH518 806 ti 2554 ammo 60 scale 498 units 17 sen 149 bar 14 beat 0 hold 0
+TIWATCH518 807 ti 2584 ammo 60 scale 498 units 17 sen 149 bar 14 beat 0 hold 0
+TIWATCH518 808 ti 2614 ammo 60 scale 488 units 16 sen 146 bar 14 beat 0 hold 0
+TIWATCH518 809 ti 2624 ammo 60 scale 488 units 16 sen 146 bar 14 beat 0 hold 0
+TIWATCH518 810 ti 2634 ammo 60 scale 488 units 16 sen 146 bar 14 beat 0 hold 0
+TIWATCH518 811 ti 2664 ammo 60 scale 488 units 16 sen 146 bar 14 beat 0 hold 0
+TIWATCH518 812 ti 2674 ammo 60 scale 488 units 16 sen 146 bar 14 beat 0 hold 0
+TIWATCH518 813 ti 2684 ammo 56 scale 488 units 16 sen 146 bar 14 beat 0 hold 0
+TICONV518 813 amt 4 floor 46
+TIWATCH518 814 ti 2710 ammo 56 scale 478 units 15 sen 143 bar 14 beat 0 hold 0
+TICONV518 814 amt 4 floor 46
+TIWATCH518 815 ti 2736 ammo 56 scale 478 units 15 sen 143 bar 14 beat 0 hold 0
+TICONV518 815 amt 4 floor 46
+TIWATCH518 816 ti 2742 ammo 56 scale 478 units 15 sen 143 bar 14 beat 0 hold 0
+TICONV518 816 amt 4 floor 46
+TIWATCH518 817 ti 2748 ammo 56 scale 478 units 15 sen 143 bar 14 beat 0 hold 0
+TICONV518 817 amt 4 floor 46
+TIWATCH518 818 ti 2754 ammo 60 scale 478 units 15 sen 143 bar 14 beat 0 hold 0
+TIWATCH518 819 ti 2774 ammo 60 scale 478 units 15 sen 143 bar 14 beat 0 hold 0
+TIWATCH518 820 ti 2794 ammo 60 scale 478 units 15 sen 143 bar 14 beat 0 hold 0
+TIWATCH518 821 ti 2804 ammo 60 scale 478 units 15 sen 143 bar 14 beat 0 hold 0
+TIWATCH518 822 ti 2824 ammo 60 scale 478 units 15 sen 143 bar 14 beat 0 hold 0
+TIWATCH518 823 ti 2854 ammo 60 scale 478 units 15 sen 143 bar 14 beat 0 hold 0
+TIWATCH518 824 ti 2874 ammo 60 scale 478 units 15 sen 143 bar 14 beat 0 hold 0
+TIWATCH518 825 ti 2884 ammo 60 scale 478 units 15 sen 143 bar 14 beat 0 hold 0
+TIWATCH518 826 ti 2894 ammo 56 scale 478 units 15 sen 143 bar 14 beat 0 hold 0
+TICONV518 826 amt 4 floor 46
+TIWATCH518 827 ti 2920 ammo 56 scale 478 units 15 sen 143 bar 14 beat 0 hold 0
+TICONV518 827 amt 4 floor 46
+TIWATCH518 828 ti 2926 ammo 56 scale 478 units 15 sen 143 bar 14 beat 0 hold 0
+TICONV518 828 amt 4 floor 46
+TIWATCH518 829 ti 2932 ammo 56 scale 478 units 15 sen 143 bar 14 beat 0 hold 0
+TICONV518 829 amt 4 floor 46
+TIWATCH518 830 ti 2938 ammo 56 scale 478 units 15 sen 143 bar 14 beat 0 hold 0
+TICONV518 830 amt 4 floor 46
+TIWATCH518 831 ti 2964 ammo 60 scale 478 units 15 sen 143 bar 14 beat 0 hold 0
+TIWATCH518 832 ti 2994 ammo 60 scale 478 units 15 sen 143 bar 14 beat 0 hold 0
+TIWATCH518 833 ti 3004 ammo 60 scale 478 units 15 sen 143 bar 14 beat 0 hold 0
+TIWATCH518 834 ti 3024 ammo 60 scale 478 units 15 sen 143 bar 14 beat 0 hold 0
+TIWATCH518 835 ti 3044 ammo 60 scale 478 units 15 sen 143 bar 14 beat 0 hold 0
+TIWATCH518 836 ti 3054 ammo 60 scale 478 units 15 sen 143 bar 14 beat 0 hold 0
+TIWATCH518 837 ti 3064 ammo 60 scale 478 units 15 sen 143 bar 14 beat 0 hold 0
+TIWATCH518 838 ti 3084 ammo 60 scale 478 units 15 sen 143 bar 14 beat 0 hold 0
+TIWATCH518 839 ti 3114 ammo 60 scale 478 units 15 sen 143 bar 14 beat 0 hold 0
+TIWATCH518 840 ti 3134 ammo 60 scale 478 units 15 sen 143 bar 14 beat 0 hold 0
+TIWATCH518 841 ti 3144 ammo 56 scale 478 units 15 sen 143 bar 14 beat 0 hold 0
+TICONV518 841 amt 4 floor 46
+TIWATCH518 842 ti 3140 ammo 56 scale 478 units 15 sen 143 bar 14 beat 0 hold 0
+TICONV518 842 amt 4 floor 46
+TIWATCH518 843 ti 3166 ammo 56 scale 478 units 15 sen 143 bar 14 beat 0 hold 0
+TICONV518 843 amt 4 floor 46
+TIWATCH518 844 ti 3182 ammo 56 scale 478 units 15 sen 143 bar 14 beat 0 hold 0
+TICONV518 844 amt 4 floor 46
+TIWATCH518 845 ti 3188 ammo 56 scale 478 units 15 sen 143 bar 14 beat 0 hold 0
+TICONV518 845 amt 4 floor 46
+TIWATCH518 846 ti 3204 ammo 56 scale 478 units 15 sen 143 bar 14 beat 0 hold 0
+TICONV518 846 amt 4 floor 46
+TIWATCH518 847 ti 3230 ammo 56 scale 478 units 15 sen 143 bar 14 beat 0 hold 0
+TICONV518 847 amt 4 floor 46
+TIWATCH518 848 ti 3246 ammo 56 scale 478 units 15 sen 143 bar 14 beat 0 hold 0
+TICONV518 848 amt 4 floor 46
+TIWATCH518 849 ti 3252 ammo 56 scale 478 units 15 sen 143 bar 14 beat 0 hold 0
+TICONV518 849 amt 4 floor 46
+TIWATCH518 850 ti 3268 ammo 56 scale 478 units 15 sen 143 bar 14 beat 0 hold 0
+TICONV518 850 amt 4 floor 46
+TIWATCH518 851 ti 3284 ammo 56 scale 478 units 15 sen 143 bar 14 beat 0 hold 0
+TICONV518 851 amt 4 floor 46
+TIWATCH518 852 ti 3290 ammo 56 scale 478 units 15 sen 143 bar 14 beat 0 hold 0
+TICONV518 852 amt 4 floor 46
+TIWATCH518 853 ti 3296 ammo 56 scale 478 units 15 sen 143 bar 14 beat 0 hold 0
+TIWATCH518 854 ti 3316 ammo 52 scale 478 units 15 sen 143 bar 14 beat 0 hold 0
+TICONV518 854 amt 8 floor 46
+TIWATCH518 855 ti 3338 ammo 56 scale 478 units 15 sen 143 bar 14 beat 0 hold 0
+TICONV518 855 amt 4 floor 46
+TIWATCH518 856 ti 3354 ammo 56 scale 478 units 15 sen 143 bar 14 beat 0 hold 0
+TICONV518 856 amt 4 floor 46
+TIWATCH518 857 ti 3360 ammo 56 scale 478 units 15 sen 143 bar 14 beat 0 hold 0
+TICONV518 857 amt 4 floor 46
+TIWATCH518 858 ti 3366 ammo 56 scale 478 units 15 sen 143 bar 14 beat 0 hold 0
+TICONV518 858 amt 4 floor 46
+TIWATCH518 859 ti 3392 ammo 56 scale 478 units 15 sen 143 bar 14 beat 0 hold 0
+TICONV518 859 amt 4 floor 46
+TIWATCH518 860 ti 3398 ammo 56 scale 478 units 15 sen 143 bar 14 beat 0 hold 0
+TICONV518 860 amt 4 floor 46
+TIWATCH518 861 ti 3404 ammo 56 scale 478 units 15 sen 143 bar 14 beat 0 hold 0
+TICONV518 861 amt 4 floor 46
+TIWATCH518 862 ti 3420 ammo 56 scale 478 units 15 sen 143 bar 14 beat 0 hold 0
+TICONV518 862 amt 4 floor 46
+TIWATCH518 863 ti 3446 ammo 56 scale 478 units 15 sen 143 bar 14 beat 0 hold 0
+TICONV518 863 amt 4 floor 46
+TIWATCH518 864 ti 3462 ammo 56 scale 478 units 15 sen 143 bar 14 beat 0 hold 0
+TICONV518 864 amt 4 floor 46
+TIWATCH518 865 ti 3468 ammo 56 scale 478 units 15 sen 143 bar 14 beat 0 hold 0
+TICONV518 865 amt 4 floor 46
+TIWATCH518 866 ti 3474 ammo 56 scale 478 units 15 sen 143 bar 14 beat 0 hold 0
+TIWATCH518 867 ti 3494 ammo 52 scale 478 units 15 sen 143 bar 14 beat 0 hold 0
+TICONV518 867 amt 8 floor 46
+TIWATCH518 868 ti 3506 ammo 56 scale 478 units 15 sen 143 bar 14 beat 0 hold 0
+TICONV518 868 amt 4 floor 46
+TIWATCH518 869 ti 3512 ammo 56 scale 478 units 15 sen 143 bar 14 beat 0 hold 0
+TICONV518 869 amt 4 floor 46
+TIWATCH518 870 ti 3518 ammo 56 scale 478 units 15 sen 143 bar 14 beat 0 hold 0
+TICONV518 870 amt 4 floor 46
+TIWATCH518 871 ti 3544 ammo 56 scale 478 units 15 sen 143 bar 14 beat 0 hold 0
+TICONV518 871 amt 4 floor 46
+TIWATCH518 872 ti 3560 ammo 56 scale 478 units 15 sen 143 bar 14 beat 0 hold 0
+TICONV518 872 amt 4 floor 46
+TIWATCH518 873 ti 3566 ammo 56 scale 478 units 15 sen 143 bar 14 beat 0 hold 0
+TICONV518 873 amt 4 floor 46
+TIWATCH518 874 ti 3582 ammo 56 scale 478 units 15 sen 143 bar 14 beat 0 hold 0
+TICONV518 874 amt 4 floor 46
+TIWATCH518 875 ti 3608 ammo 56 scale 478 units 15 sen 143 bar 14 beat 0 hold 0
+TICONV518 875 amt 4 floor 46
+TIWATCH518 876 ti 3614 ammo 56 scale 478 units 15 sen 143 bar 14 beat 0 hold 0
+TICONV518 876 amt 4 floor 46
+TIWATCH518 877 ti 3620 ammo 56 scale 478 units 15 sen 143 bar 14 beat 0 hold 0
+TICONV518 877 amt 4 floor 46
+TIWATCH518 878 ti 3636 ammo 56 scale 478 units 15 sen 143 bar 14 beat 0 hold 0
+TICONV518 878 amt 4 floor 46
+TIWATCH518 879 ti 3662 ammo 56 scale 478 units 15 sen 143 bar 14 beat 0 hold 0
+TIWATCH518 880 ti 3682 ammo 52 scale 478 units 15 sen 143 bar 14 beat 0 hold 0
+TICONV518 880 amt 8 floor 46
+TIWATCH518 881 ti 3684 ammo 56 scale 478 units 15 sen 143 bar 14 beat 0 hold 0
+TICONV518 881 amt 4 floor 46
+TIWATCH518 882 ti 3690 ammo 56 scale 478 units 15 sen 143 bar 14 beat 0 hold 0
+TICONV518 882 amt 4 floor 46
+TIWATCH518 883 ti 3716 ammo 56 scale 478 units 15 sen 143 bar 14 beat 0 hold 0
+TICONV518 883 amt 4 floor 46
+TIWATCH518 884 ti 3722 ammo 56 scale 478 units 15 sen 143 bar 14 beat 0 hold 0
+TICONV518 884 amt 4 floor 46
+TIWATCH518 885 ti 3728 ammo 56 scale 478 units 15 sen 143 bar 14 beat 0 hold 0
+TICONV518 885 amt 4 floor 46
+TIWATCH518 886 ti 3754 ammo 56 scale 478 units 15 sen 143 bar 14 beat 0 hold 0
+TICONV518 886 amt 4 floor 46
+TIWATCH518 887 ti 3780 ammo 56 scale 478 units 15 sen 143 bar 14 beat 0 hold 0
+TICONV518 887 amt 4 floor 46
+TIWATCH518 888 ti 3786 ammo 56 scale 478 units 15 sen 143 bar 14 beat 0 hold 0
+TICONV518 888 amt 4 floor 46
+TIWATCH518 889 ti 3792 ammo 56 scale 478 units 15 sen 143 bar 14 beat 0 hold 0
+TICONV518 889 amt 4 floor 46
+TIWATCH518 890 ti 3788 ammo 56 scale 478 units 15 sen 143 bar 14 beat 0 hold 0
+TICONV518 890 amt 4 floor 46
+TIWATCH518 891 ti 3814 ammo 56 scale 478 units 15 sen 143 bar 14 beat 0 hold 0
+TICONV518 891 amt 4 floor 46
+TIWATCH518 892 ti 3830 ammo 56 scale 478 units 15 sen 143 bar 14 beat 0 hold 0
+TIWATCH518 893 ti 3840 ammo 52 scale 478 units 15 sen 143 bar 14 beat 0 hold 0
+TICONV518 893 amt 8 floor 46
+TIWATCH518 894 ti 3842 ammo 56 scale 478 units 15 sen 143 bar 14 beat 0 hold 0
+TICONV518 894 amt 4 floor 46
+TIWATCH518 895 ti 3868 ammo 56 scale 478 units 15 sen 143 bar 14 beat 0 hold 0
+TICONV518 895 amt 4 floor 46
+TIWATCH518 896 ti 3884 ammo 60 scale 478 units 15 sen 143 bar 14 beat 0 hold 0
+TIWATCH518 897 ti 3894 ammo 60 scale 478 units 15 sen 143 bar 14 beat 0 hold 0
+TIWATCH518 898 ti 3924 ammo 60 scale 478 units 15 sen 143 bar 14 beat 0 hold 0
+TIWATCH518 899 ti 3944 ammo 60 scale 478 units 15 sen 143 bar 14 beat 0 hold 0
+TIWATCH518 900 ti 3954 ammo 60 scale 478 units 15 sen 143 bar 14 beat 0 hold 0
+TIWATCH518 901 ti 3964 ammo 60 scale 478 units 15 sen 143 bar 14 beat 0 hold 0
+TIWATCH518 902 ti 3974 ammo 60 scale 478 units 15 sen 143 bar 14 beat 0 hold 0
+TIWATCH518 903 ti 4004 ammo 60 scale 478 units 15 sen 143 bar 14 beat 0 hold 0
+TIWATCH518 904 ti 4034 ammo 60 scale 478 units 15 sen 143 bar 14 beat 0 hold 0
+TIWATCH518 905 ti 4044 ammo 60 scale 478 units 15 sen 143 bar 14 beat 0 hold 0
+TIWATCH518 906 ti 4054 ammo 60 scale 478 units 15 sen 143 bar 14 beat 0 hold 0
+TIWATCH518 907 ti 4084 ammo 60 scale 478 units 15 sen 143 bar 14 beat 0 hold 0
+TIWATCH518 908 ti 4094 ammo 60 scale 478 units 15 sen 143 bar 14 beat 0 hold 0
+TIWATCH518 909 ti 4104 ammo 60 scale 478 units 15 sen 143 bar 14 beat 0 hold 0
+TIWATCH518 910 ti 4134 ammo 60 scale 478 units 15 sen 143 bar 14 beat 0 hold 0
+TIWATCH518 911 ti 4164 ammo 60 scale 478 units 15 sen 143 bar 14 beat 0 hold 0
+TIWATCH518 912 ti 4174 ammo 60 scale 478 units 15 sen 143 bar 14 beat 0 hold 0
+TIWATCH518 913 ti 4184 ammo 60 scale 478 units 15 sen 143 bar 14 beat 0 hold 0
+TIWATCH518 914 ti 4194 ammo 60 scale 478 units 15 sen 143 bar 14 beat 0 hold 0
+TIWATCH518 915 ti 4214 ammo 60 scale 478 units 15 sen 143 bar 14 beat 0 hold 0
+TIWATCH518 916 ti 4234 ammo 60 scale 478 units 15 sen 143 bar 14 beat 0 hold 0
+TIWATCH518 917 ti 4244 ammo 60 scale 478 units 15 sen 143 bar 14 beat 0 hold 0
+TIWATCH518 918 ti 4264 ammo 60 scale 478 units 15 sen 143 bar 14 beat 0 hold 0
+TIWATCH518 919 ti 4294 ammo 60 scale 478 units 15 sen 143 bar 14 beat 0 hold 0
+TIWATCH518 920 ti 4314 ammo 60 scale 478 units 15 sen 143 bar 14 beat 0 hold 0
+TIWATCH518 921 ti 4324 ammo 60 scale 478 units 15 sen 143 bar 14 beat 0 hold 0
+TIWATCH518 922 ti 4334 ammo 60 scale 478 units 15 sen 143 bar 14 beat 0 hold 0
+TIWATCH518 923 ti 4364 ammo 60 scale 478 units 15 sen 143 bar 14 beat 0 hold 0
+TIWATCH518 924 ti 4374 ammo 60 scale 478 units 15 sen 143 bar 14 beat 0 hold 0
+TIWATCH518 925 ti 4384 ammo 60 scale 478 units 15 sen 143 bar 14 beat 0 hold 0
+TIWATCH518 926 ti 4394 ammo 60 scale 478 units 15 sen 143 bar 14 beat 0 hold 0
+TIWATCH518 927 ti 4424 ammo 60 scale 478 units 15 sen 143 bar 14 beat 0 hold 0
+TIWATCH518 928 ti 4454 ammo 60 scale 478 units 15 sen 143 bar 14 beat 0 hold 0
+TIWATCH518 929 ti 4464 ammo 60 scale 478 units 15 sen 143 bar 14 beat 0 hold 0
+TIWATCH518 930 ti 4484 ammo 60 scale 478 units 15 sen 143 bar 14 beat 0 hold 0
+TIWATCH518 931 ti 4504 ammo 60 scale 478 units 15 sen 143 bar 14 beat 0 hold 0
+TIWATCH518 932 ti 4514 ammo 60 scale 478 units 15 sen 143 bar 14 beat 0 hold 0
+TIWATCH518 933 ti 4524 ammo 60 scale 478 units 15 sen 143 bar 14 beat 0 hold 0
+TIWATCH518 934 ti 4544 ammo 60 scale 478 units 15 sen 143 bar 14 beat 0 hold 0
+TIWATCH518 935 ti 4574 ammo 60 scale 478 units 15 sen 143 bar 14 beat 0 hold 0
+TIWATCH518 936 ti 4594 ammo 60 scale 478 units 15 sen 143 bar 14 beat 0 hold 0
+TIWATCH518 937 ti 4604 ammo 60 scale 478 units 15 sen 143 bar 14 beat 0 hold 0
+TIWATCH518 938 ti 4604 ammo 60 scale 478 units 15 sen 143 bar 14 beat 0 hold 0
+TIWATCH518 939 ti 4634 ammo 60 scale 478 units 15 sen 143 bar 14 beat 0 hold 0
+TIWATCH518 940 ti 4654 ammo 60 scale 478 units 15 sen 143 bar 14 beat 0 hold 0
+TIWATCH518 941 ti 4664 ammo 60 scale 478 units 15 sen 143 bar 14 beat 0 hold 0
+TIWATCH518 942 ti 4684 ammo 60 scale 478 units 15 sen 143 bar 14 beat 0 hold 0
+TIWATCH518 943 ti 4714 ammo 60 scale 478 units 15 sen 143 bar 14 beat 0 hold 0
+TIWATCH518 944 ti 4734 ammo 60 scale 477 units 15 sen 143 bar 14 beat 0 hold 0
+TIWATCH518 945 ti 4744 ammo 60 scale 477 units 15 sen 143 bar 14 beat 0 hold 0
+TIWATCH518 946 ti 4764 ammo 60 scale 477 units 15 sen 143 bar 14 beat 0 hold 0
+TIWATCH518 947 ti 4641 ammo 56 scale 496 units 16 sen 148 bar 14 beat 0 hold 0
+TICONV518 947 amt 4 floor 12
+TIWATCH518 948 ti 4499 ammo 60 scale 516 units 17 sen 154 bar 15 beat 0 hold 0
+TIWATCH518 949 ti 4250 ammo 60 scale 536 units 18 sen 160 bar 16 beat 0 hold 0
+TIWATCH518 950 ti 4110 ammo 50 scale 545 units 18 sen 163 bar 16 beat 0 hold 0
+TICONV518 950 amt 10 floor 12
+TIWATCH518 951 ti 3855 ammo 56 scale 573 units 20 sen 171 bar 17 beat 0 hold 0
+TICONV518 951 amt 4 floor 12
+TIWATCH518 952 ti 3700 ammo 50 scale 583 units 20 sen 174 bar 17 beat 0 hold 0
+TICONV518 952 amt 10 floor 12
+TIWATCH518 953 ti 3584 ammo 60 scale 593 units 21 sen 177 bar 17 beat 0 hold 0
+TIWATCH518 954 ti 3584 ammo 60 scale 583 units 20 sen 174 bar 17 beat 0 hold 0
+TIWATCH518 955 ti 3488 ammo 60 scale 592 units 21 sen 177 bar 17 beat 0 hold 0
+TIWATCH518 956 ti 3498 ammo 60 scale 581 units 20 sen 174 bar 17 beat 0 hold 0
+TIWATCH518 957 ti 3508 ammo 60 scale 581 units 20 sen 174 bar 17 beat 0 hold 0
+GATE515 957 salt 0 eco 1 orth 2 floor 60
+GAP518 957 id 2298 code SITE live 0 salt 0 eco 1 ti 3508 sen 174 bar 17 need 3 orth 2 floor 60
+GATE515 957 salt 0 eco 1 orth 2 floor 60
+GATE515 957 salt 0 eco 1 orth 2 floor 60
+TIWATCH518 958 ti 3518 ammo 56 scale 581 units 20 sen 174 bar 17 beat 0 hold 0
+TICONV518 958 amt 4 floor 12
+GAP518 958 id 2298 code DODGE live -1 salt -1 eco -1 ti -1 sen -1 bar -1 need -1 orth -1 floor 60
+TIWATCH518 959 ti 3534 ammo 56 scale 581 units 20 sen 174 bar 17 beat 0 hold 0
+TICONV518 959 amt 4 floor 12
+GATE515 959 salt 0 eco 1 orth 4 floor 60
+GAP518 959 id 2298 code SITE live 0 salt 0 eco 1 ti 3530 sen 174 bar 17 need 5 orth 4 floor 60
+GATE515 959 salt 0 eco 1 orth 4 floor 60
+GATE515 959 salt 0 eco 1 orth 4 floor 60
+TIWATCH518 960 ti 3550 ammo 60 scale 581 units 20 sen 174 bar 17 beat 0 hold 0
+GAP518 960 id 2298 code DODGE live -1 salt -1 eco -1 ti -1 sen -1 bar -1 need -1 orth -1 floor 60
+TIWATCH518 961 ti 2220 ammo 1380 scale 581 units 20 sen 174 bar 17 beat 0 hold 0
+GATE515 961 salt 0 eco 1 orth 4 floor 60
+GAP518 961 id 2298 code SITE live 0 salt 0 eco 1 ti 2220 sen 174 bar 17 need 5 orth 4 floor 60
+GATE515 961 salt 0 eco 1 orth 4 floor 60
+GATE515 961 salt 0 eco 1 orth 4 floor 60
+TIWATCH518 962 ti 2230 ammo 1380 scale 581 units 20 sen 174 bar 17 beat 0 hold 0
+GAP518 962 id 2298 code DODGE live -1 salt -1 eco -1 ti -1 sen -1 bar -1 need -1 orth -1 floor 60
+TIWATCH518 963 ti 2240 ammo 1370 scale 581 units 20 sen 174 bar 17 beat 0 hold 0
+GATE515 963 salt 0 eco 1 orth 4 floor 60
+GAP518 963 id 2298 code SITE live 0 salt 0 eco 1 ti 2240 sen 174 bar 17 need 5 orth 4 floor 60
+GATE515 963 salt 0 eco 1 orth 4 floor 60
+GATE515 963 salt 0 eco 1 orth 4 floor 60
+TIWATCH518 964 ti 2250 ammo 1360 scale 581 units 20 sen 174 bar 17 beat 0 hold 0
+GAP518 964 id 2298 code DODGE live -1 salt -1 eco -1 ti -1 sen -1 bar -1 need -1 orth -1 floor 60
+TIWATCH518 965 ti 2260 ammo 1360 scale 581 units 20 sen 174 bar 17 beat 0 hold 0
+GATE515 965 salt 0 eco 1 orth 4 floor 60
+GAP518 965 id 2298 code SITE live 0 salt 0 eco 1 ti 2260 sen 174 bar 17 need 5 orth 4 floor 60
+GATE515 965 salt 0 eco 1 orth 4 floor 60
+GATE515 965 salt 0 eco 1 orth 4 floor 60
+TIWATCH518 966 ti 2260 ammo 1340 scale 581 units 20 sen 174 bar 17 beat 0 hold 0
+GAP518 966 id 2298 code DODGE live -1 salt -1 eco -1 ti -1 sen -1 bar -1 need -1 orth -1 floor 60
+TIWATCH518 967 ti 2280 ammo 1340 scale 581 units 20 sen 174 bar 17 beat 0 hold 0
+GAP518 967 id 2298 code DODGE live -1 salt -1 eco -1 ti -1 sen -1 bar -1 need -1 orth -1 floor 60
+TIWATCH518 968 ti 2300 ammo 1330 scale 581 units 20 sen 174 bar 17 beat 0 hold 0
+GATE515 968 salt 0 eco 1 orth 6 floor 60
+GAP518 968 id 2298 code OPEN live 0 salt 0 eco 1 ti 2300 sen 174 bar 17 need 7 orth 6 floor 60
+GATE515 968 salt 0 eco 1 orth 6 floor 60
+TWIN517 968 at (22, 4) hold 0 live 1 floor 4 rebuy 24 ti 2126 cost 174 n 1
+SENT515 968 at (22, 4) n 1 gate (968, 0, 1, 6) latch (1, 1, 24)
+EARLY518 968 id 2298 ti 2300 need 7 orth 6 rung1 0 pend 0 n 1
+TIWATCH518 969 ti 2136 ammo 1330 scale 601 units 21 sen 180 bar 18 beat 0 hold 0
+GAP518 969 id 2298 code HAVE live 1 salt -1 eco -1 ti 2136 sen 180 bar 18 need 7 orth 6 floor 60
+GATE515 969 salt 0 eco 1 orth 6 floor 60
+TIWATCH518 970 ti 2136 ammo 1320 scale 601 units 21 sen 180 bar 18 beat 1 hold 0
+GAP518 970 id 2298 code DODGE live -1 salt -1 eco -1 ti -1 sen -1 bar -1 need -1 orth -1 floor 60
+TIWATCH518 971 ti 2146 ammo 1320 scale 601 units 21 sen 180 bar 18 beat 1 hold 0
+GAP518 971 id 2298 code HAVE live 1 salt -1 eco -1 ti 2146 sen 180 bar 18 need 7 orth 6 floor 60
+GATE515 971 salt 0 eco 1 orth 6 floor 60
+TIWATCH518 972 ti 2156 ammo 1310 scale 601 units 21 sen 180 bar 18 beat 1 hold 0
+GAP518 972 id 2298 code DODGE live -1 salt -1 eco -1 ti -1 sen -1 bar -1 need -1 orth -1 floor 60
+TIWATCH518 973 ti 2166 ammo 1310 scale 601 units 21 sen 180 bar 18 beat 1 hold 0
+GAP518 973 id 2298 code HAVE live 1 salt -1 eco -1 ti 2165 sen 180 bar 18 need 7 orth 6 floor 60
+GATE515 973 salt 0 eco 1 orth 6 floor 60
+TIWATCH518 974 ti 2175 ammo 1290 scale 601 units 21 sen 180 bar 18 beat 1 hold 0
+GAP518 974 id 2298 code DODGE live -1 salt -1 eco -1 ti -1 sen -1 bar -1 need -1 orth -1 floor 60
+TIWATCH518 975 ti 2194 ammo 1290 scale 601 units 21 sen 180 bar 18 beat 1 hold 0
+GAP518 975 id 2298 code HAVE live 1 salt -1 eco -1 ti 2193 sen 180 bar 18 need 7 orth 6 floor 60
+GATE515 975 salt 0 eco 1 orth 6 floor 60
+TIWATCH518 976 ti 2203 ammo 1280 scale 601 units 21 sen 180 bar 18 beat 1 hold 0
+GAP518 976 id 2298 code DODGE live -1 salt -1 eco -1 ti -1 sen -1 bar -1 need -1 orth -1 floor 60
+TIWATCH518 977 ti 2202 ammo 1270 scale 601 units 21 sen 180 bar 18 beat 1 hold 0
+GAP518 977 id 2298 code HAVE live 1 salt -1 eco -1 ti 2201 sen 180 bar 18 need 7 orth 6 floor 60
+GATE515 977 salt 0 eco 1 orth 6 floor 60
+TIWATCH518 978 ti 2081 ammo 1260 scale 621 units 22 sen 186 bar 18 beat 1 hold 0
+GAP518 978 id 2298 code DODGE live -1 salt -1 eco -1 ti -1 sen -1 bar -1 need -1 orth -1 floor 60
+TIWATCH518 979 ti 2100 ammo 1256 scale 621 units 22 sen 186 bar 18 beat 1 hold 0
+GAP518 979 id 2298 code HAVE live 1 salt -1 eco -1 ti 2099 sen 186 bar 18 need 7 orth 6 floor 60
+GATE515 979 salt 0 eco 1 orth 6 floor 60
+TIWATCH518 980 ti 2109 ammo 1242 scale 621 units 22 sen 186 bar 18 beat 1 hold 0
+GAP518 980 id 2298 code DODGE live -1 salt -1 eco -1 ti -1 sen -1 bar -1 need -1 orth -1 floor 60
+TIWATCH518 981 ti 2118 ammo 1238 scale 621 units 22 sen 186 bar 18 beat 1 hold 0
+GAP518 981 id 2298 code HAVE live 1 salt -1 eco -1 ti 2117 sen 186 bar 18 need 6 orth 5 floor 60
+GATE515 981 salt 0 eco 1 orth 5 floor 60
+TWIN517 981 at (23, 7) hold 0 live 2 floor 4 rebuy 24 ti 1931 cost 186 n 2
+SENT515 981 at (23, 7) n 2 gate (981, 0, 1, 5) latch (1, 1, 24)
+TIWATCH518 982 ti 1941 ammo 1204 scale 641 units 23 sen 192 bar 19 beat 1 hold 0
+GAP518 982 id 2298 code HAVE live 2 salt -1 eco -1 ti 1940 sen 192 bar 19 need 6 orth 5 floor 60
+TIWATCH518 983 ti 1768 ammo 1190 scale 661 units 24 sen 198 bar 19 beat 1 hold 0
+GAP518 983 id 2298 code DODGE live -1 salt -1 eco -1 ti -1 sen -1 bar -1 need -1 orth -1 floor 60
+TIWATCH518 984 ti 1645 ammo 1166 scale 681 units 25 sen 204 bar 20 beat 1 hold 0
+GAP518 984 id 2298 code HAVE live 3 salt -1 eco -1 ti 1644 sen 204 bar 20 need 6 orth 5 floor 60
+TIWATCH518 985 ti 1440 ammo 1152 scale 701 units 26 sen 210 bar 21 beat 1 hold 0
+GAP518 985 id 2298 code DODGE live -1 salt -1 eco -1 ti -1 sen -1 bar -1 need -1 orth -1 floor 60
+TIWATCH518 986 ti 1447 ammo 1118 scale 701 units 26 sen 210 bar 21 beat 1 hold 0
+GAP518 986 id 2298 code HAVE live 4 salt -1 eco -1 ti 1446 sen 210 bar 21 need 3 orth 2 floor 60
+TIWATCH518 987 ti 1453 ammo 1104 scale 701 units 26 sen 210 bar 21 beat 1 hold 0
+GAP518 987 id 2298 code HAVE live 4 salt -1 eco -1 ti 1452 sen 210 bar 21 need 3 orth 2 floor 60
+TIWATCH518 988 ti 1460 ammo 1070 scale 701 units 26 sen 210 bar 21 beat 1 hold 0
+GAP518 988 id 2298 code HAVE live 4 salt -1 eco -1 ti 1459 sen 210 bar 21 need 3 orth 2 floor 60
+TIWATCH518 989 ti 1327 ammo 1056 scale 721 units 27 sen 216 bar 21 beat 1 hold 0
+GAP518 989 id 2298 code HAVE live 4 salt -1 eco -1 ti 1326 sen 216 bar 21 need 3 orth 2 floor 60
+TIWATCH518 990 ti 1314 ammo 1022 scale 721 units 27 sen 216 bar 21 beat 1 hold 0
+GAP518 990 id 2298 code HAVE live 4 salt -1 eco -1 ti 1313 sen 216 bar 21 need 3 orth 2 floor 60
+TIWATCH518 991 ti 1331 ammo 1004 scale 721 units 27 sen 216 bar 21 beat 1 hold 0
+GAP518 991 id 2298 code DODGE live -1 salt -1 eco -1 ti -1 sen -1 bar -1 need -1 orth -1 floor 60
+TIWATCH518 992 ti 1350 ammo 966 scale 721 units 27 sen 216 bar 21 beat 1 hold 0
+GAP518 992 id 2298 code HAVE live 4 salt -1 eco -1 ti 1349 sen 216 bar 21 need 5 orth 4 floor 60
+TIWATCH518 993 ti 1349 ammo 952 scale 721 units 27 sen 216 bar 21 beat 1 hold 0
+GAP518 993 id 2298 code HAVE live 4 salt -1 eco -1 ti 1348 sen 216 bar 21 need 7 orth 6 floor 60
+TIWATCH518 994 ti 1204 ammo 918 scale 741 units 28 sen 222 bar 22 beat 1 hold 0
+GAP518 994 id 2298 code HAVE live 4 salt -1 eco -1 ti 1203 sen 222 bar 22 need 9 orth 8 floor 60

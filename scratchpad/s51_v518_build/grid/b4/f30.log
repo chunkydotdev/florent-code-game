@@ -1,0 +1,30 @@
+atoll_s10_A	atoll	10	A	US	f30	Core destroyed	215	0	1050	670
+atoll_s10_B	atoll	10	B	OPP	_v488beltbreak2	Core destroyed	130	0	390	1010
+atoll_s11_A	atoll	11	A	OPP	_v488beltbreak2	Core destroyed	278	0	1640	1940
+atoll_s11_B	atoll	11	B	OPP	_v488beltbreak2	Core destroyed	127	0	270	930
+atoll_s12_A	atoll	12	A	US	f30	Core destroyed	149	0	540	350
+atoll_s12_B	atoll	12	B	OPP	_v488beltbreak2	Core destroyed	538	0	3080	2660
+drakkarfjord_s10_A	drakkarfjord	10	A	OPP	_v488beltbreak2	Core destroyed	243	0	470	760
+drakkarfjord_s10_B	drakkarfjord	10	B	OPP	_v488beltbreak2	Core destroyed	308	0	560	2420
+drakkarfjord_s11_A	drakkarfjord	11	A	OPP	_v488beltbreak2	Core destroyed	318	0	540	2160
+drakkarfjord_s11_B	drakkarfjord	11	B	US	f30	Titanium collected (tiebreak)	1000	0	420	0
+drakkarfjord_s12_A	drakkarfjord	12	A	OPP	_v488beltbreak2	Core destroyed	278	0	560	1420
+drakkarfjord_s12_B	drakkarfjord	12	B	OPP	_v488beltbreak2	Titanium collected (tiebreak)	1000	0	5400	16170
+glacierkeep_s10_A	glacierkeep	10	A	US	f30	Core destroyed	128	0	260	0
+glacierkeep_s10_B	glacierkeep	10	B	OPP	_v488beltbreak2	Titanium collected (tiebreak)	1000	0	30	2230
+glacierkeep_s11_A	glacierkeep	11	A	US	f30	Titanium collected (tiebreak)	1000	0	210	0
+glacierkeep_s11_B	glacierkeep	11	B	US	f30	Titanium collected (tiebreak)	1000	0	190	0
+glacierkeep_s12_A	glacierkeep	12	A	US	f30	Core destroyed	213	0	140	0
+glacierkeep_s12_B	glacierkeep	12	B	US	f30	Titanium collected (tiebreak)	1000	0	180	0
+midgard_s10_A	midgard	10	A	US	f30	Core destroyed	321	0	2390	240
+midgard_s10_B	midgard	10	B	OPP	_v488beltbreak2	Core destroyed	123	0	500	1560
+midgard_s11_A	midgard	11	A	OPP	_v488beltbreak2	Core destroyed	256	0	440	2600
+midgard_s11_B	midgard	11	B	OPP	_v488beltbreak2	Core destroyed	122	0	740	1200
+midgard_s12_A	midgard	12	A	OPP	_v488beltbreak2	Core destroyed	185	0	590	2270
+midgard_s12_B	midgard	12	B	OPP	_v488beltbreak2	Core destroyed	114	0	630	1390
+nordkap_s10_A	nordkap	10	A	OPP	_v488beltbreak2	Core destroyed	249	0	1120	2590
+nordkap_s10_B	nordkap	10	B	US	f30	Core destroyed	252	0	1260	30
+nordkap_s11_A	nordkap	11	A	US	f30	Core destroyed	302	0	1880	1720
+nordkap_s11_B	nordkap	11	B	US	f30	Core destroyed	203	0	490	700
+nordkap_s12_A	nordkap	12	A	OPP	_v488beltbreak2	Core destroyed	445	0	150	80
+nordkap_s12_B	nordkap	12	B	US	f30	Core destroyed	185	0	440	220

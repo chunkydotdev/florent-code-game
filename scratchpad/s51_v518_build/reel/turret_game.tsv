@@ -1,0 +1,6 @@
+tag	map	seed	seat	ours	cond	turn	sent_n	siege_n	siege_first	siege_shots	siege_life	siege_funded	dud_sent_n	dud_funded_r	their_siege_n	their_siege_first	their_siege_shots	their_siege_life	tile_reuse
+midgard_s1_B	midgard	1	B	OPP	Core destroyed	114	1	1	43	26	72	72	0	0	2	81	28	56	0
+atoll_s2_B	atoll	2	B	OPP	Core destroyed	128	3	0		0	0	0	3	153	2	13	32	63	0
+nordkap_s36_B	nordkap	36	B	OPP	Core destroyed	172	1	0		0	0	0	1	47	2	13	31	62	0
+drakkarfjord_s28_A	drakkarfjord	28	A	OPP	Core destroyed	180	3	1	85	48	96	96	2	274	1	125	28	56	0
+glacierkeep_s38_A	glacierkeep	38	A	OPP	Core destroyed	376	0	0		0	0	0	0	0	1	321	28	56	0

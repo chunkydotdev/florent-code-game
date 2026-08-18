@@ -1,0 +1,30 @@
+atoll_s1_A	atoll	1	A	OPP	_v488beltbreak2	Core destroyed	549	0	430	300
+atoll_s1_B	atoll	1	B	OPP	_v488beltbreak2	Core destroyed	382	0	2100	3210
+atoll_s2_A	atoll	2	A	OPP	_v488beltbreak2	Core destroyed	405	0	1090	1980
+atoll_s2_B	atoll	2	B	OPP	_v488beltbreak2	Core destroyed	375	0	1030	1840
+atoll_s3_A	atoll	3	A	OPP	_v488beltbreak2	Core destroyed	256	0	860	1240
+atoll_s3_B	atoll	3	B	OPP	_v488beltbreak2	Core destroyed	219	0	240	1410
+drakkarfjord_s1_A	drakkarfjord	1	A	OPP	_v488beltbreak2	Core destroyed	582	0	950	7370
+drakkarfjord_s1_B	drakkarfjord	1	B	US	f45	Core destroyed	153	0	320	0
+drakkarfjord_s2_A	drakkarfjord	2	A	US	f45	Core destroyed	494	0	3970	3740
+drakkarfjord_s2_B	drakkarfjord	2	B	OPP	_v488beltbreak2	Core destroyed	457	0	350	4430
+drakkarfjord_s3_A	drakkarfjord	3	A	OPP	_v488beltbreak2	Titanium collected (tiebreak)	1000	0	8120	14120
+drakkarfjord_s3_B	drakkarfjord	3	B	US	f45	Core destroyed	300	0	3720	0
+glacierkeep_s1_A	glacierkeep	1	A	US	f45	Core destroyed	157	0	330	0
+glacierkeep_s1_B	glacierkeep	1	B	US	f45	Titanium collected (tiebreak)	1000	0	30	0
+glacierkeep_s2_A	glacierkeep	2	A	US	f45	Core destroyed	133	0	140	0
+glacierkeep_s2_B	glacierkeep	2	B	US	f45	Core destroyed	157	0	170	0
+glacierkeep_s3_A	glacierkeep	3	A	US	f45	Core destroyed	172	0	370	0
+glacierkeep_s3_B	glacierkeep	3	B	US	f45	Core destroyed	209	0	70	0
+midgard_s1_A	midgard	1	A	OPP	_v488beltbreak2	Titanium collected (tiebreak)	1000	0	630	3080
+midgard_s1_B	midgard	1	B	OPP	_v488beltbreak2	Core destroyed	260	0	560	2700
+midgard_s2_A	midgard	2	A	OPP	_v488beltbreak2	Core destroyed	216	0	650	2340
+midgard_s2_B	midgard	2	B	OPP	_v488beltbreak2	Core destroyed	121	0	580	1420
+midgard_s3_A	midgard	3	A	US	f45	Core destroyed	203	0	1490	1310
+midgard_s3_B	midgard	3	B	OPP	_v488beltbreak2	Core destroyed	275	0	550	4100
+nordkap_s1_A	nordkap	1	A	US	f45	Core destroyed	295	0	1460	70
+nordkap_s1_B	nordkap	1	B	US	f45	Core destroyed	279	0	2000	2780
+nordkap_s2_A	nordkap	2	A	US	f45	Core destroyed	762	0	1900	50
+nordkap_s2_B	nordkap	2	B	US	f45	Core destroyed	171	0	540	120
+nordkap_s3_A	nordkap	3	A	US	f45	Core destroyed	671	0	2670	800
+nordkap_s3_B	nordkap	3	B	OPP	_v488beltbreak2	Core destroyed	484	0	3120	4450

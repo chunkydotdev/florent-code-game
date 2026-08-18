@@ -1,0 +1,200 @@
+=== BEFORE (parent behaviour + instruments): gapbase
+
+=== GAP DECOMPOSITION  gapbase   games=29 (dropped, never arrived: 1)
+  -- ALL GAMES  [arrive, sent) or [arrive, end]: 29 games, 7740 rounds in window
+     NOBODY     5016   64.8%
+     FUND       1387   17.9%
+     GATE       1149   14.8%
+     DODGE       156    2.0%
+     SITE         20    0.3%
+     RETREAT       5    0.1%
+     BUSY23        4    0.1%
+     BUSY1         3    0.0%
+     window length: median 162  mean 266.9
+     NOBODY cross-check: 180 of 5016 NOBODY rounds (3.6%) had a builder bot of ours inside d^2<=8 (replay-side) = residual.  <=5%% is the known seam (the bot logs at ITS turn, the replay row is end-of-round state, so the round a body first steps inside d^2<=8 has no line); above that, do not read
+
+  -- BOUGHT A FORWARD SENTINEL  [arrive, sent): 18 games, 2435 rounds in window
+     NOBODY     1228   50.4%
+     GATE        627   25.7%
+     FUND        460   18.9%
+     DODGE        90    3.7%
+     SITE         20    0.8%
+     BUSY23        4    0.2%
+     RETREAT       3    0.1%
+     BUSY1         3    0.1%
+     window length: median 74.5  mean 135.3
+     NOBODY cross-check: 103 of 1228 NOBODY rounds (8.4%) had a builder bot of ours inside d^2<=8 (replay-side) = residual.  <=5%% is the known seam (the bot logs at ITS turn, the replay row is end-of-round state, so the round a body first steps inside d^2<=8 has no line); above that, do not read
+
+  -- NEVER BOUGHT ONE  [arrive, end]: 11 games, 5305 rounds in window
+     NOBODY     3788   71.4%
+     FUND        927   17.5%
+     GATE        522    9.8%
+     DODGE        66    1.2%
+     RETREAT       2    0.0%
+     window length: median 412  mean 482.3
+     NOBODY cross-check: 77 of 3788 NOBODY rounds (2.0%) had a builder bot of ours inside d^2<=8 (replay-side) = residual.  <=5%% is the known seam (the bot logs at ITS turn, the replay row is end-of-round state, so the round a body first steps inside d^2<=8 has no line); above that, do not read
+
+    per-game (tag arrive sent kill | top codes):
+      atoll_s1_A             a=6    s=-1    k=-1    NOBODY=898 GATE=54 FUND=32 DODGE=10
+      atoll_s1_B             a=6    s=628   k=683   NOBODY=466 FUND=96 GATE=53 DODGE=6
+      atoll_s2_A             a=6    s=-1    k=-1    NOBODY=170 GATE=12 DODGE=2
+
+
+=== GAP DECOMPOSITION  mF   games=29 (dropped, never arrived: 1)
+  -- ALL GAMES  [arrive, sent) or [arrive, end]: 29 games, 6386 rounds in window
+     NOBODY     4072   63.8%
+     GATE       1493   23.4%
+     FUND        693   10.9%
+     DODGE        95    1.5%
+     SITE         29    0.5%
+     RETREAT       4    0.1%
+     window length: median 195  mean 220.2
+     NOBODY cross-check: 268 of 4072 NOBODY rounds (6.6%) had a builder bot of ours inside d^2<=8 (replay-side) = residual.  <=5%% is the known seam (the bot logs at ITS turn, the replay row is end-of-round state, so the round a body first steps inside d^2<=8 has no line); above that, do not read
+
+  -- BOUGHT A FORWARD SENTINEL  [arrive, sent): 20 games, 2837 rounds in window
+     NOBODY     1276   45.0%
+     GATE       1000   35.2%
+     FUND        467   16.5%
+     DODGE        63    2.2%
+     SITE         29    1.0%
+     RETREAT       2    0.1%
+     window length: median 76.0  mean 141.8
+     NOBODY cross-check: 74 of 1276 NOBODY rounds (5.8%) had a builder bot of ours inside d^2<=8 (replay-side) = residual.  <=5%% is the known seam (the bot logs at ITS turn, the replay row is end-of-round state, so the round a body first steps inside d^2<=8 has no line); above that, do not read
+
+  -- NEVER BOUGHT ONE  [arrive, end]: 9 games, 3549 rounds in window
+     NOBODY     2796   78.8%
+     GATE        493   13.9%
+     FUND        226    6.4%
+     DODGE        32    0.9%
+     RETREAT       2    0.1%
+     window length: median 349  mean 394.3
+     NOBODY cross-check: 194 of 2796 NOBODY rounds (6.9%) had a builder bot of ours inside d^2<=8 (replay-side) = residual.  <=5%% is the known seam (the bot logs at ITS turn, the replay row is end-of-round state, so the round a body first steps inside d^2<=8 has no line); above that, do not read
+
+    per-game (tag arrive sent kill | top codes):
+      atoll_s1_A             a=7    s=559   k=668   NOBODY=446 GATE=53 FUND=53
+      atoll_s1_B             a=58   s=-1    k=-1    NOBODY=184 DODGE=1 FUND=1
+      atoll_s2_A             a=6    s=70    k=523   GATE=53 FUND=10 DODGE=1
+      atoll_s2_B             a=6    s=-1    k=-1    NOBODY=516 GATE=53 FUND=6 DODGE=5
+      atoll_s3_A             a=7    s=-1    k=-1    NOBODY=549 GATE=44 DODGE=3
+      atoll_s3_B             a=6    s=-1    k=-1    NOBODY=201 FUND=117 GATE=50 DODGE=6
+      drakkarfjord_s1_A      a=10   s=303   k=994   NOBODY=212 GATE=45 FUND=22 SITE=7
+
+
+=== GAP DECOMPOSITION  mE   games=30 (dropped, never arrived: 0)
+  -- ALL GAMES  [arrive, sent) or [arrive, end]: 30 games, 5288 rounds in window
+     NOBODY     2686   50.8%
+     GATE       1435   27.1%
+     FUND        991   18.7%
+     DODGE       140    2.6%
+     SITE         30    0.6%
+     BUSY23        5    0.1%
+     RETREAT       1    0.0%
+     window length: median 82.5  mean 176.3
+     NOBODY cross-check: 93 of 2686 NOBODY rounds (3.5%) had a builder bot of ours inside d^2<=8 (replay-side) = residual.  <=5%% is the known seam (the bot logs at ITS turn, the replay row is end-of-round state, so the round a body first steps inside d^2<=8 has no line); above that, do not read
+
+  -- BOUGHT A FORWARD SENTINEL  [arrive, sent): 25 games, 2624 rounds in window
+     GATE       1214   46.3%
+     NOBODY      652   24.8%
+     FUND        638   24.3%
+     DODGE       102    3.9%
+     SITE         12    0.5%
+     BUSY23        5    0.2%
+     RETREAT       1    0.0%
+     window length: median 75  mean 105.0
+     NOBODY cross-check: 67 of 652 NOBODY rounds (10.3%) had a builder bot of ours inside d^2<=8 (replay-side) = residual.  <=5%% is the known seam (the bot logs at ITS turn, the replay row is end-of-round state, so the round a body first steps inside d^2<=8 has no line); above that, do not read
+
+  -- NEVER BOUGHT ONE  [arrive, end]: 5 games, 2664 rounds in window
+     NOBODY     2034   76.4%
+     FUND        353   13.3%
+     GATE        221    8.3%
+     DODGE        38    1.4%
+     SITE         18    0.7%
+     window length: median 279  mean 532.8
+     NOBODY cross-check: 26 of 2034 NOBODY rounds (1.3%) had a builder bot of ours inside d^2<=8 (replay-side) = residual.  <=5%% is the known seam (the bot logs at ITS turn, the replay row is end-of-round state, so the round a body first steps inside d^2<=8 has no line); above that, do not read
+
+    per-game (tag arrive sent kill | top codes):
+      atoll_s1_A             a=9    s=82    k=229   GATE=47 FUND=12 SITE=10 DODGE=4
+      atoll_s1_B             a=6    s=120   k=211   GATE=52 NOBODY=46 FUND=10 DODGE=6
+      atoll_s2_A             a=7    s=31    k=222   NOBODY=16 GATE=5 DODGE=3
+      atoll_s2_B             a=6    s=162   k=341   NOBODY=115 GATE=22 DODGE=11 FUND=8
+      atoll_s3_A             a=9    s=81    k=509   GATE=50 FUND=19 DODGE=3
+
+
+=== GAP DECOMPOSITION  mFloor30   games=30 (dropped, never arrived: 0)
+  -- ALL GAMES  [arrive, sent) or [arrive, end]: 30 games, 3877 rounds in window
+     NOBODY     2015   52.0%
+     FUND       1161   29.9%
+     GATE        571   14.7%
+     DODGE       123    3.2%
+     SITE          7    0.2%
+     window length: median 67.0  mean 129.2
+     NOBODY cross-check: 193 of 2015 NOBODY rounds (9.6%) had a builder bot of ours inside d^2<=8 (replay-side) = residual.  <=5%% is the known seam (the bot logs at ITS turn, the replay row is end-of-round state, so the round a body first steps inside d^2<=8 has no line); above that, do not read
+
+  -- BOUGHT A FORWARD SENTINEL  [arrive, sent): 23 games, 1892 rounds in window
+     FUND        740   39.1%
+     NOBODY      624   33.0%
+     GATE        477   25.2%
+     DODGE        50    2.6%
+     SITE          1    0.1%
+     window length: median 60  mean 82.3
+     NOBODY cross-check: 148 of 624 NOBODY rounds (23.7%) had a builder bot of ours inside d^2<=8 (replay-side) = residual.  <=5%% is the known seam (the bot logs at ITS turn, the replay row is end-of-round state, so the round a body first steps inside d^2<=8 has no line); above that, do not read
+
+  -- NEVER BOUGHT ONE  [arrive, end]: 7 games, 1985 rounds in window
+     NOBODY     1391   70.1%
+     FUND        421   21.2%
+     GATE         94    4.7%
+     DODGE        73    3.7%
+     SITE          6    0.3%
+     window length: median 226  mean 283.6
+     NOBODY cross-check: 45 of 1391 NOBODY rounds (3.2%) had a builder bot of ours inside d^2<=8 (replay-side) = residual.  <=5%% is the known seam (the bot logs at ITS turn, the replay row is end-of-round state, so the round a body first steps inside d^2<=8 has no line); above that, do not read
+
+    per-game (tag arrive sent kill | top codes):
+      atoll_s1_A             a=7    s=-1    k=-1    NOBODY=205 GATE=9 DODGE=7 FUND=5
+      atoll_s1_B             a=7    s=-1    k=-1    FUND=98 NOBODY=85 GATE=21 DODGE=8
+      atoll_s2_A             a=6    s=-1    k=-1    NOBODY=163 FUND=111 GATE=23 DODGE=16
+      atoll_s2_B             a=6    s=71    k=-1    FUND=40 GATE=24 DODGE=1
+      atoll_s3_A             a=6    s=164   k=889   NOBODY=129 GATE=20 FUND=5 DODGE=4
+      atoll_s3_B             a=38   s=-1    k=-1    NOBODY=68
+      drakkarfjord_s1_A      a=10   s=37    k=-1    GATE=19 FUND=7 NOBODY=1
+      drakkarfjord_s1_B      a=10   s=308   k=-1    FUND=278 GATE=19 NOBODY=1
+      drakkarfjord_s2_A      a=10   s=36    k=-1    GATE=18 FUND=6 NOBODY=1 DODGE=1
+
+
+=== GAP DECOMPOSITION  mFloor0   games=29 (dropped, never arrived: 1)
+  -- ALL GAMES  [arrive, sent) or [arrive, end]: 29 games, 2480 rounds in window
+     NOBODY     1141   46.0%
+     FUND        718   29.0%
+     GATE        560   22.6%
+     DODGE        53    2.1%
+     SITE          8    0.3%
+     window length: median 68  mean 85.5
+     NOBODY cross-check: 392 of 1141 NOBODY rounds (34.4%) had a builder bot of ours inside d^2<=8 (replay-side) = residual.  <=5%% is the known seam (the bot logs at ITS turn, the replay row is end-of-round state, so the round a body first steps inside d^2<=8 has no line); above that, do not read
+
+  -- BOUGHT A FORWARD SENTINEL  [arrive, sent): 26 games, 1829 rounds in window
+     NOBODY      740   40.5%
+     FUND        640   35.0%
+     GATE        398   21.8%
+     DODGE        43    2.4%
+     SITE          8    0.4%
+     window length: median 54.5  mean 70.3
+     NOBODY cross-check: 383 of 740 NOBODY rounds (51.8%) had a builder bot of ours inside d^2<=8 (replay-side) = residual.  <=5%% is the known seam (the bot logs at ITS turn, the replay row is end-of-round state, so the round a body first steps inside d^2<=8 has no line); above that, do not read
+
+  -- NEVER BOUGHT ONE  [arrive, end]: 3 games, 651 rounds in window
+     NOBODY      401   61.6%
+     GATE        162   24.9%
+     FUND         78   12.0%
+     DODGE        10    1.5%
+     window length: median 169  mean 217.0
+     NOBODY cross-check: 9 of 401 NOBODY rounds (2.2%) had a builder bot of ours inside d^2<=8 (replay-side) = residual.  <=5%% is the known seam (the bot logs at ITS turn, the replay row is end-of-round state, so the round a body first steps inside d^2<=8 has no line); above that, do not read
+
+    per-game (tag arrive sent kill | top codes):
+      atoll_s1_A             a=11   s=12    k=-1    FUND=1
+      atoll_s1_B             a=6    s=-1    k=-1    NOBODY=265 FUND=48 GATE=4
+      atoll_s2_A             a=6    s=8     k=608   GATE=2
+      atoll_s2_B             a=12   s=13    k=331   FUND=1
+      atoll_s3_A             a=7    s=13    k=481   DODGE=3 FUND=3
+      atoll_s3_B             a=6    s=116   k=207   FUND=96 NOBODY=6 DODGE=5 GATE=3
+      drakkarfjord_s1_A      a=10   s=236   k=603   NOBODY=184 FUND=27 SITE=8 GATE=7
+      drakkarfjord_s1_B      a=10   s=145   k=684   NOBODY=83 FUND=35 GATE=11 DODGE=6
+      drakkarfjord_s2_A      a=10   s=37    k=-1    GATE=13 FUND=11 DODGE=2 NOBODY=1
+      drakkarfjord_s2_B      a=10   s=87    k=142   FUND=60 GATE=15 NOBODY=1 DODGE=1

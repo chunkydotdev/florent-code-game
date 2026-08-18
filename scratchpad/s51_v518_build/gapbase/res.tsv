@@ -1,0 +1,31 @@
+tag	map	seed	seat	ours	winner	cond	turn	tracebacks	ours_mined	opp_mined
+atoll_s1_A	atoll	1	A	OPP	_v488beltbreak2	Titanium collected (tiebreak)	1000	0	4970	8650
+atoll_s1_B	atoll	1	B	US	gapbase	Core destroyed	684	0	3380	3010
+atoll_s2_A	atoll	2	A	OPP	_v488beltbreak2	Core destroyed	190	0	910	1530
+atoll_s2_B	atoll	2	B	US	gapbase	Titanium collected (tiebreak)	1000	0	5000	3830
+atoll_s3_A	atoll	3	A	US	gapbase	Core destroyed	338	0	3330	1650
+atoll_s3_B	atoll	3	B	US	gapbase	Core destroyed	157	0	500	430
+drakkarfjord_s1_A	drakkarfjord	1	A	US	gapbase	Core destroyed	528	0	5290	280
+drakkarfjord_s1_B	drakkarfjord	1	B	US	gapbase	Core destroyed	136	0	570	0
+drakkarfjord_s2_A	drakkarfjord	2	A	US	gapbase	Core destroyed	512	0	3200	390
+drakkarfjord_s2_B	drakkarfjord	2	B	OPP	_v488beltbreak2	Core destroyed	281	0	550	2440
+drakkarfjord_s3_A	drakkarfjord	3	A	US	gapbase	Core destroyed	271	0	2660	390
+drakkarfjord_s3_B	drakkarfjord	3	B	US	gapbase	Titanium collected (tiebreak)	1000	0	2570	2010
+glacierkeep_s1_A	glacierkeep	1	A	US	gapbase	Core destroyed	181	0	150	0
+glacierkeep_s1_B	glacierkeep	1	B	US	gapbase	Titanium collected (tiebreak)	1000	0	150	0
+glacierkeep_s2_A	glacierkeep	2	A	US	gapbase	Core destroyed	189	0	140	0
+glacierkeep_s2_B	glacierkeep	2	B	US	gapbase	Core destroyed	185	0	170	0
+glacierkeep_s3_A	glacierkeep	3	A	US	gapbase	Core destroyed	185	0	170	0
+glacierkeep_s3_B	glacierkeep	3	B	US	gapbase	Titanium collected (tiebreak)	1000	0	190	0
+midgard_s1_A	midgard	1	A	OPP	_v488beltbreak2	Core destroyed	491	0	2740	5970
+midgard_s1_B	midgard	1	B	OPP	_v488beltbreak2	Core destroyed	164	0	650	1520
+midgard_s2_A	midgard	2	A	US	gapbase	Core destroyed	269	0	1900	2000
+midgard_s2_B	midgard	2	B	OPP	_v488beltbreak2	Core destroyed	136	0	730	1790
+midgard_s3_A	midgard	3	A	OPP	_v488beltbreak2	Core destroyed	689	0	550	1460
+midgard_s3_B	midgard	3	B	OPP	_v488beltbreak2	Core destroyed	144	0	500	1930
+nordkap_s1_A	nordkap	1	A	OPP	_v488beltbreak2	Core destroyed	199	0	160	1230
+nordkap_s1_B	nordkap	1	B	OPP	_v488beltbreak2	Core destroyed	283	0	120	1530
+nordkap_s2_A	nordkap	2	A	OPP	_v488beltbreak2	Core destroyed	512	0	2730	8010
+nordkap_s2_B	nordkap	2	B	US	gapbase	Core destroyed	734	0	4540	4530
+nordkap_s3_A	nordkap	3	A	OPP	_v488beltbreak2	Core destroyed	328	0	420	3240
+nordkap_s3_B	nordkap	3	B	OPP	_v488beltbreak2	Core destroyed	416	0	1050	4270

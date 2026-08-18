@@ -1,0 +1,17 @@
+Running match: eq_flagoff vs eq_opp
+  Map: nordkap.map26  Seed: 2  Replay: 
+scratchpad/s51_v518_build/eq2/fo/rep/nordkap_s2_A.replay26  TLE: 10ms
+Completed turn 0
+Completed turn 100
+Completed turn 200
+Completed turn 300
+Completed turn 400
+Replay written to scratchpad/s51_v518_build/eq2/fo/rep/nordkap_s2_A.replay26
+
+  Winner: eq_opp  (Core destroyed, turn 407)
+
+                   eq_flagoff             eq_opp  
+  Titanium     9 (2060 mined)    74 (5460 mined)  
+  Units                     8                 18  
+  Buildings                27                 52  
+

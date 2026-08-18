@@ -1,0 +1,30 @@
+atoll_s1_A	atoll	1	A	US	eq_parent	Core destroyed	313	0	930	270
+atoll_s1_B	atoll	1	B	OPP	eq_opp	Core destroyed	288	0	410	3290
+atoll_s2_A	atoll	2	A	US	eq_parent	Core destroyed	313	0	930	270
+atoll_s2_B	atoll	2	B	OPP	eq_opp	Core destroyed	288	0	410	3290
+atoll_s3_A	atoll	3	A	US	eq_parent	Core destroyed	313	0	930	270
+atoll_s3_B	atoll	3	B	OPP	eq_opp	Core destroyed	242	0	410	2590
+drakkarfjord_s1_A	drakkarfjord	1	A	OPP	eq_opp	Titanium collected (tiebreak)	1000	0	4910	7180
+drakkarfjord_s1_B	drakkarfjord	1	B	US	eq_parent	Core destroyed	638	0	1440	170
+drakkarfjord_s2_A	drakkarfjord	2	A	OPP	eq_opp	Titanium collected (tiebreak)	1000	0	4910	7180
+drakkarfjord_s2_B	drakkarfjord	2	B	US	eq_parent	Core destroyed	638	0	1440	170
+drakkarfjord_s3_A	drakkarfjord	3	A	OPP	eq_opp	Core destroyed	955	0	4700	7380
+drakkarfjord_s3_B	drakkarfjord	3	B	US	eq_parent	Core destroyed	638	0	1440	170
+glacierkeep_s1_A	glacierkeep	1	A	US	eq_parent	Core destroyed	185	0	170	0
+glacierkeep_s1_B	glacierkeep	1	B	OPP	eq_opp	Core destroyed	801	0	40	520
+glacierkeep_s2_A	glacierkeep	2	A	US	eq_parent	Core destroyed	185	0	170	0
+glacierkeep_s2_B	glacierkeep	2	B	OPP	eq_opp	Core destroyed	801	0	40	520
+glacierkeep_s3_A	glacierkeep	3	A	US	eq_parent	Core destroyed	185	0	170	0
+glacierkeep_s3_B	glacierkeep	3	B	OPP	eq_opp	Core destroyed	801	0	40	520
+midgard_s1_A	midgard	1	A	OPP	eq_opp	Core destroyed	390	0	450	3200
+midgard_s1_B	midgard	1	B	OPP	eq_opp	Core destroyed	121	0	570	1480
+midgard_s2_A	midgard	2	A	OPP	eq_opp	Core destroyed	390	0	450	3200
+midgard_s2_B	midgard	2	B	OPP	eq_opp	Core destroyed	121	0	570	1480
+midgard_s3_A	midgard	3	A	OPP	eq_opp	Core destroyed	390	0	450	3200
+midgard_s3_B	midgard	3	B	OPP	eq_opp	Core destroyed	121	0	570	1480
+nordkap_s1_A	nordkap	1	A	OPP	eq_opp	Core destroyed	407	0	2060	5460
+nordkap_s1_B	nordkap	1	B	US	eq_parent	Core destroyed	254	0	1280	90
+nordkap_s2_A	nordkap	2	A	OPP	eq_opp	Core destroyed	407	0	2060	5460
+nordkap_s2_B	nordkap	2	B	US	eq_parent	Core destroyed	254	0	1280	90
+nordkap_s3_A	nordkap	3	A	OPP	eq_opp	Core destroyed	360	0	1950	3330
+nordkap_s3_B	nordkap	3	B	US	eq_parent	Core destroyed	254	0	1280	90

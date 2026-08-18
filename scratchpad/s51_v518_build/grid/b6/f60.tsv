@@ -1,0 +1,31 @@
+tag	map	seed	seat	ours	winner	cond	turn	tracebacks	ours_mined	opp_mined
+atoll_s16_A	atoll	16	A	US	_v518fastsent	Core destroyed	396	0	2840	1070
+atoll_s16_B	atoll	16	B	US	_v518fastsent	Core destroyed	156	0	740	740
+atoll_s17_A	atoll	17	A	US	_v518fastsent	Core destroyed	236	0	1150	870
+atoll_s17_B	atoll	17	B	OPP	_v488beltbreak2	Core destroyed	194	0	360	950
+atoll_s18_A	atoll	18	A	US	_v518fastsent	Core destroyed	201	0	1360	120
+atoll_s18_B	atoll	18	B	US	_v518fastsent	Core destroyed	254	0	1240	610
+drakkarfjord_s16_A	drakkarfjord	16	A	OPP	_v488beltbreak2	Core destroyed	486	0	5590	5250
+drakkarfjord_s16_B	drakkarfjord	16	B	US	_v518fastsent	Core destroyed	141	0	490	0
+drakkarfjord_s17_A	drakkarfjord	17	A	OPP	_v488beltbreak2	Core destroyed	722	0	6440	7600
+drakkarfjord_s17_B	drakkarfjord	17	B	US	_v518fastsent	Core destroyed	325	0	2210	0
+drakkarfjord_s18_A	drakkarfjord	18	A	US	_v518fastsent	Core destroyed	329	0	420	450
+drakkarfjord_s18_B	drakkarfjord	18	B	US	_v518fastsent	Core destroyed	127	0	380	0
+glacierkeep_s16_A	glacierkeep	16	A	US	_v518fastsent	Titanium collected (tiebreak)	1000	0	330	0
+glacierkeep_s16_B	glacierkeep	16	B	US	_v518fastsent	Titanium collected (tiebreak)	1000	0	20	0
+glacierkeep_s17_A	glacierkeep	17	A	US	_v518fastsent	Core destroyed	369	0	640	0
+glacierkeep_s17_B	glacierkeep	17	B	US	_v518fastsent	Core destroyed	173	0	180	0
+glacierkeep_s18_A	glacierkeep	18	A	US	_v518fastsent	Core destroyed	604	0	2600	0
+glacierkeep_s18_B	glacierkeep	18	B	US	_v518fastsent	Core destroyed	185	0	180	0
+midgard_s16_A	midgard	16	A	OPP	_v488beltbreak2	Core destroyed	117	0	540	1070
+midgard_s16_B	midgard	16	B	OPP	_v488beltbreak2	Core destroyed	129	0	890	1460
+midgard_s17_A	midgard	17	A	OPP	_v488beltbreak2	Core destroyed	269	0	640	3300
+midgard_s17_B	midgard	17	B	OPP	_v488beltbreak2	Core destroyed	480	0	670	1820
+midgard_s18_A	midgard	18	A	OPP	_v488beltbreak2	Core destroyed	199	0	570	1610
+midgard_s18_B	midgard	18	B	OPP	_v488beltbreak2	Core destroyed	156	0	470	1760
+nordkap_s16_A	nordkap	16	A	US	_v518fastsent	Core destroyed	380	0	1940	360
+nordkap_s16_B	nordkap	16	B	US	_v518fastsent	Core destroyed	190	0	1290	190
+nordkap_s17_A	nordkap	17	A	OPP	_v488beltbreak2	Core destroyed	548	0	2590	4260
+nordkap_s17_B	nordkap	17	B	US	_v518fastsent	Core destroyed	165	0	390	0
+nordkap_s18_A	nordkap	18	A	US	_v518fastsent	Core destroyed	158	0	400	30
+nordkap_s18_B	nordkap	18	B	US	_v518fastsent	Core destroyed	124	0	570	50

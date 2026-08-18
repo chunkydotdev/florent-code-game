@@ -1,0 +1,30 @@
+atoll_s16_A	atoll	16	A	OPP	_v488beltbreak2	Core destroyed	504	0	1380	3070
+atoll_s16_B	atoll	16	B	OPP	_v488beltbreak2	Core destroyed	588	0	2890	2900
+atoll_s17_A	atoll	17	A	OPP	_v488beltbreak2	Core destroyed	297	0	1450	1360
+atoll_s17_B	atoll	17	B	OPP	_v488beltbreak2	Core destroyed	201	0	390	1510
+atoll_s18_A	atoll	18	A	OPP	_v488beltbreak2	Core destroyed	330	0	1000	3390
+atoll_s18_B	atoll	18	B	OPP	_v488beltbreak2	Core destroyed	663	0	3330	4350
+drakkarfjord_s16_A	drakkarfjord	16	A	US	parent	Titanium collected (tiebreak)	1000	0	490	0
+drakkarfjord_s16_B	drakkarfjord	16	B	US	parent	Core destroyed	341	0	2620	0
+drakkarfjord_s17_A	drakkarfjord	17	A	US	parent	Core destroyed	388	0	4290	4020
+drakkarfjord_s17_B	drakkarfjord	17	B	OPP	_v488beltbreak2	Core destroyed	359	0	420	3020
+drakkarfjord_s18_A	drakkarfjord	18	A	US	parent	Core destroyed	160	0	650	0
+drakkarfjord_s18_B	drakkarfjord	18	B	OPP	_v488beltbreak2	Core destroyed	309	0	540	3090
+glacierkeep_s16_A	glacierkeep	16	A	US	parent	Core destroyed	201	0	180	0
+glacierkeep_s16_B	glacierkeep	16	B	US	parent	Core destroyed	301	0	170	0
+glacierkeep_s17_A	glacierkeep	17	A	US	parent	Core destroyed	897	0	580	850
+glacierkeep_s17_B	glacierkeep	17	B	OPP	_v488beltbreak2	Titanium collected (tiebreak)	1000	0	80	1260
+glacierkeep_s18_A	glacierkeep	18	A	US	parent	Core destroyed	168	0	360	0
+glacierkeep_s18_B	glacierkeep	18	B	US	parent	Core destroyed	353	0	170	0
+midgard_s16_A	midgard	16	A	OPP	_v488beltbreak2	Core destroyed	612	0	3990	9580
+midgard_s16_B	midgard	16	B	OPP	_v488beltbreak2	Core destroyed	164	0	650	1520
+midgard_s17_A	midgard	17	A	OPP	_v488beltbreak2	Core destroyed	284	0	2350	2910
+midgard_s17_B	midgard	17	B	OPP	_v488beltbreak2	Core destroyed	153	0	590	990
+midgard_s18_A	midgard	18	A	OPP	_v488beltbreak2	Core destroyed	689	0	550	1460
+midgard_s18_B	midgard	18	B	OPP	_v488beltbreak2	Core destroyed	260	0	560	2700
+nordkap_s16_A	nordkap	16	A	US	parent	Core destroyed	237	0	250	160
+nordkap_s16_B	nordkap	16	B	US	parent	Core destroyed	169	0	400	0
+nordkap_s17_A	nordkap	17	A	US	parent	Harvesters (tiebreak)	1000	0	450	450
+nordkap_s17_B	nordkap	17	B	US	parent	Core destroyed	368	0	3960	4180
+nordkap_s18_A	nordkap	18	A	OPP	_v488beltbreak2	Core destroyed	633	0	1780	1230
+nordkap_s18_B	nordkap	18	B	US	parent	Core destroyed	231	0	690	80

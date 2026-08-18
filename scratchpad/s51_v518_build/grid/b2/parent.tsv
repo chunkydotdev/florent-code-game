@@ -1,0 +1,31 @@
+tag	map	seed	seat	ours	winner	cond	turn	tracebacks	ours_mined	opp_mined
+atoll_s4_A	atoll	4	A	OPP	_v488beltbreak2	Core destroyed	390	0	2080	3060
+atoll_s4_B	atoll	4	B	OPP	_v488beltbreak2	Core destroyed	206	0	1000	1800
+atoll_s5_A	atoll	5	A	OPP	_v488beltbreak2	Titanium collected (tiebreak)	1000	0	2640	4860
+atoll_s5_B	atoll	5	B	US	parent	Core destroyed	252	0	1220	1620
+atoll_s6_A	atoll	6	A	OPP	_v488beltbreak2	Core destroyed	793	0	3740	6730
+atoll_s6_B	atoll	6	B	OPP	_v488beltbreak2	Core destroyed	207	0	390	1760
+drakkarfjord_s4_A	drakkarfjord	4	A	OPP	_v488beltbreak2	Titanium collected (tiebreak)	1000	0	8120	14120
+drakkarfjord_s4_B	drakkarfjord	4	B	US	parent	Core destroyed	142	0	440	0
+drakkarfjord_s5_A	drakkarfjord	5	A	US	parent	Core destroyed	452	0	2420	200
+drakkarfjord_s5_B	drakkarfjord	5	B	US	parent	Core destroyed	148	0	670	0
+drakkarfjord_s6_A	drakkarfjord	6	A	OPP	_v488beltbreak2	Core destroyed	523	0	4250	5780
+drakkarfjord_s6_B	drakkarfjord	6	B	US	parent	Core destroyed	333	0	2310	0
+glacierkeep_s4_A	glacierkeep	4	A	US	parent	Core destroyed	266	0	220	0
+glacierkeep_s4_B	glacierkeep	4	B	OPP	_v488beltbreak2	Core destroyed	465	0	0	0
+glacierkeep_s5_A	glacierkeep	5	A	US	parent	Core destroyed	157	0	160	0
+glacierkeep_s5_B	glacierkeep	5	B	US	parent	Core destroyed	337	0	30	0
+glacierkeep_s6_A	glacierkeep	6	A	US	parent	Core destroyed	189	0	160	0
+glacierkeep_s6_B	glacierkeep	6	B	US	parent	Core destroyed	373	0	170	0
+midgard_s4_A	midgard	4	A	OPP	_v488beltbreak2	Core destroyed	154	0	610	1500
+midgard_s4_B	midgard	4	B	OPP	_v488beltbreak2	Core destroyed	121	0	580	1420
+midgard_s5_A	midgard	5	A	US	parent	Core destroyed	379	0	2530	1300
+midgard_s5_B	midgard	5	B	OPP	_v488beltbreak2	Core destroyed	121	0	570	1480
+midgard_s6_A	midgard	6	A	US	parent	Core destroyed	244	0	1240	1680
+midgard_s6_B	midgard	6	B	OPP	_v488beltbreak2	Core destroyed	368	0	540	3320
+nordkap_s4_A	nordkap	4	A	US	parent	Core destroyed	285	0	1620	180
+nordkap_s4_B	nordkap	4	B	US	parent	Core destroyed	238	0	1960	390
+nordkap_s5_A	nordkap	5	A	OPP	_v488beltbreak2	Core destroyed	338	0	140	3300
+nordkap_s5_B	nordkap	5	B	US	parent	Core destroyed	180	0	450	130
+nordkap_s6_A	nordkap	6	A	US	parent	Core destroyed	232	0	560	260
+nordkap_s6_B	nordkap	6	B	US	parent	Core destroyed	385	0	130	240

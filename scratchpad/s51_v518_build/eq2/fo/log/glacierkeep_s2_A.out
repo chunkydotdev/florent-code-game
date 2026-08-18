@@ -1,0 +1,14 @@
+Running match: eq_flagoff vs eq_opp
+  Map: glacierkeep.map26  Seed: 2  Replay: 
+scratchpad/s51_v518_build/eq2/fo/rep/glacierkeep_s2_A.replay26  TLE: 10ms
+Completed turn 0
+Completed turn 100
+Replay written to scratchpad/s51_v518_build/eq2/fo/rep/glacierkeep_s2_A.replay26
+
+  Winner: eq_flagoff  (Core destroyed, turn 185)
+
+                   eq_flagoff         eq_opp  
+  Titanium     16 (170 mined)    4 (0 mined)  
+  Units                     8              7  
+  Buildings                21             32  
+

@@ -1,0 +1,43 @@
+==============================================================================
+midgard_s1_B  map=midgard seat=B  OUR CORE DIED r114   offence=HEAL_OUTRUN
+  raider: first inside d^2<=8 of their core rNone ; rounds with a body there 0 of 114 ; longest absence 0
+    FORWARD  launcher  (5, 5)   built r11   life 103  shots 0    core-shots 0    first-core r-     funded 103
+    FORWARD  sentinel  (6, 6)   built r42   life 72   shots 26   core-shots 26   first-core r43    funded 72
+        funded rounds 72, of which NO SHOT 46 (64% -- UPPER BOUND on FIREDISC holds, includes every reload)
+  damage on OUR core: sentinel 504 gunner 0 peck 0 ; heals we put back 0 ; their first core-hitting turret r81, 28 shots
+  their core: we landed 26 shots = 468 dmg, they healed 464 (0.991 of it) ; enemy core min HP 254 at r91
+==============================================================================
+atoll_s2_B  map=atoll seat=B  OUR CORE DIED r128   offence=NO_TURRET
+  raider: first inside d^2<=8 of their core r47 ; rounds with a body there 3 of 128 ; longest absence 0
+    FORWARD  launcher  (5, 14)  built r6    life 122  shots 0    core-shots 0    first-core r-     funded 70
+    home     sentinel  (12, 5)  built r14   life 114  shots 18   core-shots 0    first-core r-     funded 65
+    home     sentinel  (10, 4)  built r18   life 110  shots 5    core-shots 0    first-core r-     funded 61
+    home     sentinel  (11, 3)  built r54   life 74   shots 3    core-shots 0    first-core r-     funded 27
+  damage on OUR core: sentinel 576 gunner 0 peck 0 ; heals we put back 72 ; their first core-hitting turret r13, 32 shots
+  their core: we landed 0 shots = 0 dmg, they healed 0 (0.0 of it) ; enemy core min HP 500 at r0
+==============================================================================
+nordkap_s36_B  map=nordkap seat=B  OUR CORE DIED r172   offence=NO_TURRET
+  raider: first inside d^2<=8 of their core r4 ; rounds with a body there 65 of 172 ; longest absence 5
+    FORWARD  launcher  (10, 10) built r3    life 1    shots 0    core-shots 0    first-core r-     funded 0
+    FORWARD  launcher  (11, 5)  built r8    life 2    shots 0    core-shots 0    first-core r-     funded 0
+    home     sentinel  (9, 21)  built r13   life 159  shots 43   core-shots 0    first-core r-     funded 47
+  damage on OUR core: sentinel 558 gunner 0 peck 0 ; heals we put back 54 ; their first core-hitting turret r13, 31 shots
+  their core: we landed 0 shots = 0 dmg, they healed 0 (0.0 of it) ; enemy core min HP 500 at r0
+==============================================================================
+drakkarfjord_s28_A  map=drakkarfjord seat=A  OUR CORE DIED r180   offence=TURRET_LOST
+  raider: first inside d^2<=8 of their core r10 ; rounds with a body there 58 of 180 ; longest absence 15
+    FORWARD  launcher  (22, 8)  built r9    life 1    shots 0    core-shots 0    first-core r-     funded 0
+    home     sentinel  (0, 22)  built r39   life 141  shots 0    core-shots 0    first-core r-     funded 141
+    home     sentinel  (4, 23)  built r47   life 133  shots 17   core-shots 0    first-core r-     funded 133
+    FORWARD  launcher  (24, 4)  built r72   life 108  shots 0    core-shots 0    first-core r-     funded 108
+    FORWARD  sentinel  (27, 7)  built r84   life 96   shots 48   core-shots 48   first-core r85    funded 96
+        funded rounds 96, of which NO SHOT 48 (50% -- UPPER BOUND on FIREDISC holds, includes every reload)
+  damage on OUR core: sentinel 504 gunner 0 peck 0 ; heals we put back 0 ; their first core-hitting turret r125, 28 shots
+  their core: we landed 48 shots = 864 dmg, they healed 576 (0.667 of it) ; enemy core min HP 212 at r179
+==============================================================================
+glacierkeep_s38_A  map=glacierkeep seat=A  OUR CORE DIED r376   offence=NO_TURRET
+  raider: first inside d^2<=8 of their core r8 ; rounds with a body there 28 of 376 ; longest absence 18
+    FORWARD  launcher  (16, 23) built r7    life 1    shots 0    core-shots 0    first-core r-     funded 0
+    home     gunner    (13, 17) built r28   life 348  shots 42   core-shots 0    first-core r-     funded 326
+  damage on OUR core: sentinel 504 gunner 0 peck 0 ; heals we put back 0 ; their first core-hitting turret r321, 28 shots
+  their core: we landed 0 shots = 0 dmg, they healed 0 (0.0 of it) ; enemy core min HP 500 at r0

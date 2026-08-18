@@ -1,0 +1,31 @@
+tag	map	seed	seat	ours	winner	cond	turn	tracebacks	ours_mined	opp_mined
+atoll_s34_A	atoll	34	A	US	f30	Core destroyed	251	0	1880	300
+atoll_s34_B	atoll	34	B	OPP	_v488beltbreak2	Core destroyed	556	0	860	2750
+atoll_s35_A	atoll	35	A	US	f30	Core destroyed	162	0	780	330
+atoll_s35_B	atoll	35	B	OPP	_v488beltbreak2	Core destroyed	608	0	3890	4010
+atoll_s36_A	atoll	36	A	OPP	_v488beltbreak2	Core destroyed	513	0	1400	3110
+atoll_s36_B	atoll	36	B	OPP	_v488beltbreak2	Core destroyed	200	0	210	960
+drakkarfjord_s34_A	drakkarfjord	34	A	OPP	_v488beltbreak2	Core destroyed	220	0	380	1740
+drakkarfjord_s34_B	drakkarfjord	34	B	OPP	_v488beltbreak2	Core destroyed	676	0	290	1080
+drakkarfjord_s35_A	drakkarfjord	35	A	OPP	_v488beltbreak2	Core destroyed	318	0	540	2160
+drakkarfjord_s35_B	drakkarfjord	35	B	OPP	_v488beltbreak2	Core destroyed	560	0	350	5880
+drakkarfjord_s36_A	drakkarfjord	36	A	US	f30	Core destroyed	102	0	400	0
+drakkarfjord_s36_B	drakkarfjord	36	B	US	f30	Core destroyed	102	0	390	0
+glacierkeep_s34_A	glacierkeep	34	A	US	f30	Core destroyed	313	0	160	0
+glacierkeep_s34_B	glacierkeep	34	B	US	f30	Core destroyed	369	0	30	0
+glacierkeep_s35_A	glacierkeep	35	A	US	f30	Core destroyed	153	0	170	0
+glacierkeep_s35_B	glacierkeep	35	B	US	f30	Core destroyed	173	0	170	0
+glacierkeep_s36_A	glacierkeep	36	A	US	f30	Titanium collected (tiebreak)	1000	0	180	0
+glacierkeep_s36_B	glacierkeep	36	B	US	f30	Core destroyed	245	0	150	0
+midgard_s34_A	midgard	34	A	OPP	_v488beltbreak2	Core destroyed	131	0	620	1330
+midgard_s34_B	midgard	34	B	OPP	_v488beltbreak2	Core destroyed	181	0	580	1390
+midgard_s35_A	midgard	35	A	OPP	_v488beltbreak2	Core destroyed	189	0	440	1650
+midgard_s35_B	midgard	35	B	OPP	_v488beltbreak2	Core destroyed	446	0	670	2130
+midgard_s36_A	midgard	36	A	OPP	_v488beltbreak2	Core destroyed	370	0	460	3680
+midgard_s36_B	midgard	36	B	OPP	_v488beltbreak2	Core destroyed	260	0	560	2700
+nordkap_s34_A	nordkap	34	A	US	f30	Core destroyed	535	0	3410	10
+nordkap_s34_B	nordkap	34	B	US	f30	Core destroyed	421	0	250	0
+nordkap_s35_A	nordkap	35	A	OPP	_v488beltbreak2	Core destroyed	430	0	160	1980
+nordkap_s35_B	nordkap	35	B	US	f30	Core destroyed	396	0	4050	380
+nordkap_s36_A	nordkap	36	A	US	f30	Core destroyed	373	0	160	50
+nordkap_s36_B	nordkap	36	B	US	f30	Titanium collected (tiebreak)	1000	0	120	30

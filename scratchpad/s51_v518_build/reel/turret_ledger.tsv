@@ -1,0 +1,32 @@
+tag	id	kind	pos	dir	built	died	life	dsq_opp	dsq_own	shots	core_shots	first_core	funded_r
+midgard_s1_B	7	launcher	(24, 26)		1	2	1	1014.5	6.5	0	0		0
+midgard_s1_B	11	launcher	(21, 21)		3	4	1	684.5	60.5	0	0		0
+midgard_s1_B	17	launcher	(17, 17)		5	6	1	420.5	180.5	0	0		0
+midgard_s1_B	23	launcher	(13, 13)		7	8	1	220.5	364.5	0	0		0
+midgard_s1_B	25	launcher	(9, 9)		9	10	1	84.5	612.5	0	0		0
+midgard_s1_B	29	launcher	(5, 5)		11		103	12.5	924.5	0	0		103
+midgard_s1_B	128	sentinel	(6, 6)	NW	42		72	24.5	840.5	26	26	43	72
+atoll_s2_B	7	launcher	(13, 5)		1	2	1	200.5	8.5	0	0		0
+atoll_s2_B	13	launcher	(9, 9)		3	4	1	72.5	72.5	0	0		0
+atoll_s2_B	23	launcher	(5, 14)		6		122	6.5	222.5	0	0		70
+atoll_s2_B	39	sentinel	(12, 5)	SW	14		114	180.5	12.5	18	0		65
+atoll_s2_B	44	sentinel	(10, 4)	S	18		110	166.5	22.5	5	0		61
+atoll_s2_B	109	sentinel	(11, 3)	NE	54		74	204.5	12.5	3	0		27
+nordkap_s36_B	7	launcher	(9, 16)		1	2	1	90.5	6.5	0	0		0
+nordkap_s36_B	11	launcher	(10, 10)		3	4	1	12.5	72.5	0	0		0
+nordkap_s36_B	23	launcher	(11, 5)		8	10	2	4.5	184.5	0	0		0
+nordkap_s36_B	34	sentinel	(9, 21)	N	13		159	210.5	6.5	43	0		47
+drakkarfjord_s28_A	7	launcher	(5, 23)		1	2	1	804.5	8.5	0	0		0
+drakkarfjord_s28_A	11	launcher	(10, 20)		3	4	1	512.5	76.5	0	0		0
+drakkarfjord_s28_A	13	launcher	(14, 16)		5	6	1	288.5	204.5	0	0		0
+drakkarfjord_s28_A	14	launcher	(18, 12)		7	8	1	128.5	396.5	0	0		0
+drakkarfjord_s28_A	15	launcher	(22, 8)		9	10	1	32.5	652.5	0	0		0
+drakkarfjord_s28_A	87	sentinel	(0, 22)	E	39		141	1008.5	12.5	0	0		141
+drakkarfjord_s28_A	97	sentinel	(4, 23)	S	47		133	848.5	4.5	17	0		133
+drakkarfjord_s28_A	141	launcher	(24, 4)		72		108	6.5	882.5	0	0		108
+drakkarfjord_s28_A	167	sentinel	(27, 7)	N	84		96	6.5	906.5	48	48	85	96
+glacierkeep_s38_A	7	launcher	(14, 5)		1	2	1	462.5	6.5	0	0		0
+glacierkeep_s38_A	11	launcher	(15, 11)		3	4	1	240.5	72.5	0	0		0
+glacierkeep_s38_A	13	launcher	(16, 17)		5	6	1	92.5	212.5	0	0		0
+glacierkeep_s38_A	14	launcher	(16, 23)		7	8	1	14.5	422.5	0	0		0
+glacierkeep_s38_A	57	gunner	(13, 17)	E	28		348	92.5	212.5	42	0		326

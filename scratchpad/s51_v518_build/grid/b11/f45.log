@@ -1,0 +1,30 @@
+atoll_s31_A	atoll	31	A	OPP	_v488beltbreak2	Core destroyed	532	0	2620	2620
+atoll_s31_B	atoll	31	B	OPP	_v488beltbreak2	Core destroyed	211	0	630	1620
+atoll_s32_A	atoll	32	A	US	f45	Core destroyed	256	0	2510	1240
+atoll_s32_B	atoll	32	B	US	f45	Core destroyed	566	0	2800	690
+atoll_s33_A	atoll	33	A	US	f45	Core destroyed	878	0	6030	2660
+atoll_s33_B	atoll	33	B	US	f45	Core destroyed	628	0	3090	140
+drakkarfjord_s31_A	drakkarfjord	31	A	OPP	_v488beltbreak2	Core destroyed	684	0	4860	8120
+drakkarfjord_s31_B	drakkarfjord	31	B	US	f45	Core destroyed	469	0	610	0
+drakkarfjord_s32_A	drakkarfjord	32	A	OPP	_v488beltbreak2	Core destroyed	743	0	5790	8120
+drakkarfjord_s32_B	drakkarfjord	32	B	US	f45	Core destroyed	610	0	3680	1520
+drakkarfjord_s33_A	drakkarfjord	33	A	OPP	_v488beltbreak2	Core destroyed	210	0	280	1650
+drakkarfjord_s33_B	drakkarfjord	33	B	OPP	_v488beltbreak2	Core destroyed	310	0	560	2440
+glacierkeep_s31_A	glacierkeep	31	A	US	f45	Core destroyed	209	0	210	0
+glacierkeep_s31_B	glacierkeep	31	B	OPP	_v488beltbreak2	Titanium stored (tiebreak)	1000	0	0	0
+glacierkeep_s32_A	glacierkeep	32	A	US	f45	Core destroyed	281	0	230	0
+glacierkeep_s32_B	glacierkeep	32	B	US	f45	Core destroyed	280	0	0	0
+glacierkeep_s33_A	glacierkeep	33	A	OPP	_v488beltbreak2	Core destroyed	756	0	1630	3720
+glacierkeep_s33_B	glacierkeep	33	B	US	f45	Core destroyed	280	0	0	0
+midgard_s31_A	midgard	31	A	US	f45	Core destroyed	461	0	2390	750
+midgard_s31_B	midgard	31	B	OPP	_v488beltbreak2	Core destroyed	174	0	500	1400
+midgard_s32_A	midgard	32	A	OPP	_v488beltbreak2	Core destroyed	202	0	530	1620
+midgard_s32_B	midgard	32	B	OPP	_v488beltbreak2	Core destroyed	165	0	560	1370
+midgard_s33_A	midgard	33	A	OPP	_v488beltbreak2	Core destroyed	196	0	440	1840
+midgard_s33_B	midgard	33	B	OPP	_v488beltbreak2	Core destroyed	165	0	590	1360
+nordkap_s31_A	nordkap	31	A	US	f45	Core destroyed	153	0	180	100
+nordkap_s31_B	nordkap	31	B	US	f45	Core destroyed	129	0	790	200
+nordkap_s32_A	nordkap	32	A	OPP	_v488beltbreak2	Core destroyed	213	0	170	2020
+nordkap_s32_B	nordkap	32	B	OPP	_v488beltbreak2	Core destroyed	188	0	140	3210
+nordkap_s33_A	nordkap	33	A	US	f45	Core destroyed	192	0	460	190
+nordkap_s33_B	nordkap	33	B	OPP	_v488beltbreak2	Titanium collected (tiebreak)	1000	0	140	180

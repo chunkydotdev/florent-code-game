@@ -1,0 +1,30 @@
+atoll_s22_A	atoll	22	A	OPP	_v488beltbreak2	Core destroyed	168	0	590	700
+atoll_s22_B	atoll	22	B	US	f45	Core destroyed	857	0	4240	2230
+atoll_s23_A	atoll	23	A	US	f45	Core destroyed	251	0	1880	300
+atoll_s23_B	atoll	23	B	OPP	_v488beltbreak2	Titanium collected (tiebreak)	1000	0	4990	6250
+atoll_s24_A	atoll	24	A	US	f45	Core destroyed	187	0	570	610
+atoll_s24_B	atoll	24	B	US	f45	Core destroyed	772	0	3820	1460
+drakkarfjord_s22_A	drakkarfjord	22	A	OPP	_v488beltbreak2	Core destroyed	589	0	3480	7230
+drakkarfjord_s22_B	drakkarfjord	22	B	US	f45	Core destroyed	171	0	750	0
+drakkarfjord_s23_A	drakkarfjord	23	A	OPP	_v488beltbreak2	Core destroyed	521	0	4680	5830
+drakkarfjord_s23_B	drakkarfjord	23	B	OPP	_v488beltbreak2	Core destroyed	358	0	340	4120
+drakkarfjord_s24_A	drakkarfjord	24	A	US	f45	Core destroyed	173	0	760	280
+drakkarfjord_s24_B	drakkarfjord	24	B	US	f45	Titanium collected (tiebreak)	1000	0	420	0
+glacierkeep_s22_A	glacierkeep	22	A	US	f45	Titanium collected (tiebreak)	1000	0	170	0
+glacierkeep_s22_B	glacierkeep	22	B	US	f45	Core destroyed	205	0	180	0
+glacierkeep_s23_A	glacierkeep	23	A	US	f45	Core destroyed	293	0	160	0
+glacierkeep_s23_B	glacierkeep	23	B	US	f45	Core destroyed	305	0	40	0
+glacierkeep_s24_A	glacierkeep	24	A	OPP	_v488beltbreak2	Core destroyed	638	0	160	970
+glacierkeep_s24_B	glacierkeep	24	B	US	f45	Core destroyed	193	0	0	0
+midgard_s22_A	midgard	22	A	OPP	_v488beltbreak2	Core destroyed	363	0	550	3140
+midgard_s22_B	midgard	22	B	OPP	_v488beltbreak2	Core destroyed	188	0	500	2450
+midgard_s23_A	midgard	23	A	OPP	_v488beltbreak2	Core destroyed	190	0	510	2070
+midgard_s23_B	midgard	23	B	OPP	_v488beltbreak2	Core destroyed	165	0	560	1370
+midgard_s24_A	midgard	24	A	OPP	_v488beltbreak2	Titanium collected (tiebreak)	1000	0	6880	8200
+midgard_s24_B	midgard	24	B	OPP	_v488beltbreak2	Core destroyed	165	0	660	1780
+nordkap_s22_A	nordkap	22	A	US	f45	Core destroyed	264	0	430	150
+nordkap_s22_B	nordkap	22	B	US	f45	Core destroyed	213	0	320	0
+nordkap_s23_A	nordkap	23	A	OPP	_v488beltbreak2	Core destroyed	456	0	770	4950
+nordkap_s23_B	nordkap	23	B	OPP	_v488beltbreak2	Core destroyed	216	0	970	2900
+nordkap_s24_A	nordkap	24	A	US	f45	Core destroyed	318	0	1380	870
+nordkap_s24_B	nordkap	24	B	US	f45	Core destroyed	128	0	590	0

@@ -1,0 +1,30 @@
+atoll_s34_A	atoll	34	A	US	parent	Core destroyed	942	0	4760	4930
+atoll_s34_B	atoll	34	B	US	parent	Core destroyed	166	0	800	480
+atoll_s35_A	atoll	35	A	US	parent	Core destroyed	416	0	2050	870
+atoll_s35_B	atoll	35	B	OPP	_v488beltbreak2	Core destroyed	189	0	170	520
+atoll_s36_A	atoll	36	A	US	parent	Core destroyed	460	0	3720	2260
+atoll_s36_B	atoll	36	B	OPP	_v488beltbreak2	Core destroyed	166	0	350	790
+drakkarfjord_s34_A	drakkarfjord	34	A	OPP	_v488beltbreak2	Titanium collected (tiebreak)	1000	0	5330	7660
+drakkarfjord_s34_B	drakkarfjord	34	B	US	parent	Core destroyed	142	0	960	0
+drakkarfjord_s35_A	drakkarfjord	35	A	OPP	_v488beltbreak2	Core destroyed	610	0	3690	7820
+drakkarfjord_s35_B	drakkarfjord	35	B	OPP	_v488beltbreak2	Core destroyed	309	0	540	3090
+drakkarfjord_s36_A	drakkarfjord	36	A	US	parent	Core destroyed	268	0	2240	940
+drakkarfjord_s36_B	drakkarfjord	36	B	US	parent	Core destroyed	129	0	540	0
+glacierkeep_s34_A	glacierkeep	34	A	US	parent	Core destroyed	189	0	140	0
+glacierkeep_s34_B	glacierkeep	34	B	US	parent	Core destroyed	389	0	30	0
+glacierkeep_s35_A	glacierkeep	35	A	US	parent	Titanium collected (tiebreak)	1000	0	150	0
+glacierkeep_s35_B	glacierkeep	35	B	OPP	_v488beltbreak2	Core destroyed	449	0	70	0
+glacierkeep_s36_A	glacierkeep	36	A	US	parent	Core destroyed	133	0	140	0
+glacierkeep_s36_B	glacierkeep	36	B	US	parent	Core destroyed	193	0	0	0
+midgard_s34_A	midgard	34	A	OPP	_v488beltbreak2	Core destroyed	169	0	550	1090
+midgard_s34_B	midgard	34	B	OPP	_v488beltbreak2	Core destroyed	134	0	910	1540
+midgard_s35_A	midgard	35	A	OPP	_v488beltbreak2	Core destroyed	284	0	2350	2910
+midgard_s35_B	midgard	35	B	OPP	_v488beltbreak2	Core destroyed	121	0	580	1420
+midgard_s36_A	midgard	36	A	OPP	_v488beltbreak2	Core destroyed	279	0	620	3900
+midgard_s36_B	midgard	36	B	OPP	_v488beltbreak2	Core destroyed	120	0	660	1510
+nordkap_s34_A	nordkap	34	A	US	parent	Core destroyed	393	0	1730	1780
+nordkap_s34_B	nordkap	34	B	US	parent	Core destroyed	847	0	1090	590
+nordkap_s35_A	nordkap	35	A	OPP	_v488beltbreak2	Titanium collected (tiebreak)	1000	0	3540	4080
+nordkap_s35_B	nordkap	35	B	US	parent	Core destroyed	302	0	2900	2800
+nordkap_s36_A	nordkap	36	A	US	parent	Core destroyed	440	0	2210	1400
+nordkap_s36_B	nordkap	36	B	US	parent	Core destroyed	469	0	40	400

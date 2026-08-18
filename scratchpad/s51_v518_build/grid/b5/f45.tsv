@@ -1,0 +1,31 @@
+tag	map	seed	seat	ours	winner	cond	turn	tracebacks	ours_mined	opp_mined
+atoll_s13_A	atoll	13	A	US	f45	Core destroyed	260	0	750	300
+atoll_s13_B	atoll	13	B	US	f45	Core destroyed	360	0	1330	320
+atoll_s14_A	atoll	14	A	OPP	_v488beltbreak2	Titanium collected (tiebreak)	1000	0	4970	7800
+atoll_s14_B	atoll	14	B	OPP	_v488beltbreak2	Core destroyed	158	0	260	1510
+atoll_s15_A	atoll	15	A	US	f45	Core destroyed	197	0	960	680
+atoll_s15_B	atoll	15	B	OPP	_v488beltbreak2	Core destroyed	349	0	270	3600
+drakkarfjord_s13_A	drakkarfjord	13	A	OPP	_v488beltbreak2	Core destroyed	391	0	3490	4500
+drakkarfjord_s13_B	drakkarfjord	13	B	US	f45	Core destroyed	198	0	1140	0
+drakkarfjord_s14_A	drakkarfjord	14	A	US	f45	Core destroyed	445	0	2180	0
+drakkarfjord_s14_B	drakkarfjord	14	B	US	f45	Titanium collected (tiebreak)	1000	0	2040	0
+drakkarfjord_s15_A	drakkarfjord	15	A	US	f45	Core destroyed	208	0	930	240
+drakkarfjord_s15_B	drakkarfjord	15	B	US	f45	Core destroyed	143	0	610	0
+glacierkeep_s13_A	glacierkeep	13	A	US	f45	Core destroyed	146	0	300	0
+glacierkeep_s13_B	glacierkeep	13	B	US	f45	Core destroyed	237	0	70	0
+glacierkeep_s14_A	glacierkeep	14	A	US	f45	Core destroyed	190	0	390	0
+glacierkeep_s14_B	glacierkeep	14	B	US	f45	Core destroyed	301	0	0	0
+glacierkeep_s15_A	glacierkeep	15	A	US	f45	Core destroyed	217	0	480	0
+glacierkeep_s15_B	glacierkeep	15	B	OPP	_v488beltbreak2	Core destroyed	517	0	190	0
+midgard_s13_A	midgard	13	A	US	f45	Core destroyed	326	0	2560	3360
+midgard_s13_B	midgard	13	B	OPP	_v488beltbreak2	Core destroyed	128	0	500	1640
+midgard_s14_A	midgard	14	A	US	f45	Core destroyed	170	0	1160	1300
+midgard_s14_B	midgard	14	B	OPP	_v488beltbreak2	Core destroyed	120	0	660	1510
+midgard_s15_A	midgard	15	A	US	f45	Core destroyed	293	0	1830	2930
+midgard_s15_B	midgard	15	B	OPP	_v488beltbreak2	Core destroyed	121	0	580	1420
+nordkap_s13_A	nordkap	13	A	US	f45	Core destroyed	474	0	1640	370
+nordkap_s13_B	nordkap	13	B	US	f45	Core destroyed	156	0	730	60
+nordkap_s14_A	nordkap	14	A	OPP	_v488beltbreak2	Core destroyed	321	0	140	1720
+nordkap_s14_B	nordkap	14	B	US	f45	Core destroyed	313	0	2370	100
+nordkap_s15_A	nordkap	15	A	OPP	_v488beltbreak2	Titanium collected (tiebreak)	1000	0	140	170
+nordkap_s15_B	nordkap	15	B	OPP	_v488beltbreak2	Core destroyed	218	0	530	1520

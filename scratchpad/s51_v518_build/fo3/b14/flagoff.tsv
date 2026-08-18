@@ -1,0 +1,31 @@
+tag	map	seed	seat	ours	winner	cond	turn	tracebacks	ours_mined	opp_mined
+atoll_s40_A	atoll	40	A	US	flagoff	Core destroyed	335	0	1010	890
+atoll_s40_B	atoll	40	B	US	flagoff	Core destroyed	338	0	1660	2440
+atoll_s41_A	atoll	41	A	US	flagoff	Core destroyed	191	0	930	390
+atoll_s41_B	atoll	41	B	US	flagoff	Core destroyed	600	0	2960	2040
+atoll_s42_A	atoll	42	A	OPP	_v488beltbreak2	Core destroyed	657	0	2410	3160
+atoll_s42_B	atoll	42	B	OPP	_v488beltbreak2	Core destroyed	363	0	700	1000
+drakkarfjord_s40_A	drakkarfjord	40	A	US	flagoff	Core destroyed	198	0	880	0
+drakkarfjord_s40_B	drakkarfjord	40	B	US	flagoff	Core destroyed	332	0	2300	0
+drakkarfjord_s41_A	drakkarfjord	41	A	OPP	_v488beltbreak2	Core destroyed	584	0	2480	8400
+drakkarfjord_s41_B	drakkarfjord	41	B	US	flagoff	Core destroyed	152	0	650	0
+drakkarfjord_s42_A	drakkarfjord	42	A	US	flagoff	Titanium collected (tiebreak)	1000	0	8940	2810
+drakkarfjord_s42_B	drakkarfjord	42	B	US	flagoff	Core destroyed	328	0	2210	0
+glacierkeep_s40_A	glacierkeep	40	A	US	flagoff	Core destroyed	289	0	160	0
+glacierkeep_s40_B	glacierkeep	40	B	US	flagoff	Core destroyed	693	0	190	0
+glacierkeep_s41_A	glacierkeep	41	A	US	flagoff	Core destroyed	205	0	450	0
+glacierkeep_s41_B	glacierkeep	41	B	US	flagoff	Core destroyed	341	0	190	0
+glacierkeep_s42_A	glacierkeep	42	A	US	flagoff	Core destroyed	217	0	230	0
+glacierkeep_s42_B	glacierkeep	42	B	US	flagoff	Core destroyed	217	0	10	0
+midgard_s40_A	midgard	40	A	OPP	_v488beltbreak2	Core destroyed	244	0	570	2460
+midgard_s40_B	midgard	40	B	OPP	_v488beltbreak2	Core destroyed	136	0	730	1790
+midgard_s41_A	midgard	41	A	OPP	_v488beltbreak2	Core destroyed	227	0	1710	2800
+midgard_s41_B	midgard	41	B	OPP	_v488beltbreak2	Core destroyed	278	0	550	4010
+midgard_s42_A	midgard	42	A	US	flagoff	Core destroyed	238	0	1270	1640
+midgard_s42_B	midgard	42	B	OPP	_v488beltbreak2	Core destroyed	121	0	580	1420
+nordkap_s40_A	nordkap	40	A	OPP	_v488beltbreak2	Harvesters (tiebreak)	1000	0	110	110
+nordkap_s40_B	nordkap	40	B	US	flagoff	Core destroyed	148	0	690	70
+nordkap_s41_A	nordkap	41	A	US	flagoff	Core destroyed	349	0	180	40
+nordkap_s41_B	nordkap	41	B	US	flagoff	Core destroyed	169	0	530	140
+nordkap_s42_A	nordkap	42	A	US	flagoff	Core destroyed	235	0	490	50
+nordkap_s42_B	nordkap	42	B	US	flagoff	Core destroyed	301	0	3300	2340

@@ -1,0 +1,30 @@
+atoll_s218_A	atoll	218	A	OPP	_v488beltbreak2	Core destroyed	301	0	1510	3310
+atoll_s218_B	atoll	218	B	US	flagoff	Core destroyed	571	0	2820	2610
+atoll_s219_A	atoll	219	A	US	flagoff	Core destroyed	241	0	1980	1460
+atoll_s219_B	atoll	219	B	US	flagoff	Core destroyed	329	0	1010	650
+atoll_s220_A	atoll	220	A	US	flagoff	Core destroyed	306	0	900	870
+atoll_s220_B	atoll	220	B	US	flagoff	Core destroyed	196	0	960	560
+drakkarfjord_s218_A	drakkarfjord	218	A	US	flagoff	Core destroyed	239	0	1310	0
+drakkarfjord_s218_B	drakkarfjord	218	B	US	flagoff	Core destroyed	502	0	6910	5650
+drakkarfjord_s219_A	drakkarfjord	219	A	US	flagoff	Core destroyed	158	0	680	0
+drakkarfjord_s219_B	drakkarfjord	219	B	US	flagoff	Core destroyed	638	0	1440	170
+drakkarfjord_s220_A	drakkarfjord	220	A	OPP	_v488beltbreak2	Core destroyed	357	0	390	2800
+drakkarfjord_s220_B	drakkarfjord	220	B	US	flagoff	Core destroyed	582	0	2160	150
+glacierkeep_s218_A	glacierkeep	218	A	US	flagoff	Core destroyed	177	0	160	0
+glacierkeep_s218_B	glacierkeep	218	B	US	flagoff	Titanium collected (tiebreak)	1000	0	20	0
+glacierkeep_s219_A	glacierkeep	219	A	US	flagoff	Core destroyed	897	0	580	850
+glacierkeep_s219_B	glacierkeep	219	B	US	flagoff	Titanium collected (tiebreak)	1000	0	190	0
+glacierkeep_s220_A	glacierkeep	220	A	US	flagoff	Core destroyed	821	0	4280	230
+glacierkeep_s220_B	glacierkeep	220	B	US	flagoff	Core destroyed	280	0	0	0
+midgard_s218_A	midgard	218	A	US	flagoff	Core destroyed	273	0	2090	2760
+midgard_s218_B	midgard	218	B	US	flagoff	Core destroyed	258	0	1860	2370
+midgard_s219_A	midgard	219	A	OPP	_v488beltbreak2	Core destroyed	143	0	390	1190
+midgard_s219_B	midgard	219	B	OPP	_v488beltbreak2	Core destroyed	180	0	660	1670
+midgard_s220_A	midgard	220	A	OPP	_v488beltbreak2	Core destroyed	169	0	550	1090
+midgard_s220_B	midgard	220	B	OPP	_v488beltbreak2	Core destroyed	524	0	670	1920
+nordkap_s218_A	nordkap	218	A	US	flagoff	Core destroyed	174	0	820	280
+nordkap_s218_B	nordkap	218	B	OPP	_v488beltbreak2	Core destroyed	410	0	60	3130
+nordkap_s219_A	nordkap	219	A	US	flagoff	Core destroyed	598	0	5910	1530
+nordkap_s219_B	nordkap	219	B	US	flagoff	Core destroyed	213	0	320	0
+nordkap_s220_A	nordkap	220	A	US	flagoff	Core destroyed	226	0	660	100
+nordkap_s220_B	nordkap	220	B	US	flagoff	Core destroyed	183	0	430	120

@@ -1,0 +1,16 @@
+Running match: eq_flagoff vs eq_opp
+  Map: atoll.map26  Seed: 2  Replay: 
+scratchpad/s51_v518_build/eq2/fo/rep/atoll_s2_A.replay26  TLE: 10ms
+Completed turn 0
+Completed turn 100
+Completed turn 200
+Completed turn 300
+Replay written to scratchpad/s51_v518_build/eq2/fo/rep/atoll_s2_A.replay26
+
+  Winner: eq_flagoff  (Core destroyed, turn 313)
+
+                   eq_flagoff            eq_opp  
+  Titanium     18 (930 mined)    69 (270 mined)  
+  Units                    11                 5  
+  Buildings                21                20  
+

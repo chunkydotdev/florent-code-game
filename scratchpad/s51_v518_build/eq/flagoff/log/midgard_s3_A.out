@@ -1,0 +1,16 @@
+Running match: eq_flagoff vs _v488beltbreak2
+  Map: midgard.map26  Seed: 3  Replay: 
+scratchpad/s51_v518_build/eq/flagoff/rep/midgard_s3_A.replay26  TLE: 10ms
+Completed turn 0
+Completed turn 100
+Completed turn 200
+Completed turn 300
+Replay written to scratchpad/s51_v518_build/eq/flagoff/rep/midgard_s3_A.replay26
+
+  Winner: _v488beltbreak2  (Core destroyed, turn 363)
+
+                  eq_flagoff     _v488beltbreak2  
+  Titanium     0 (550 mined)    121 (3140 mined)  
+  Units                    6                  19  
+  Buildings               17                  51  
+

@@ -1,0 +1,13 @@
+Running match: probe_tle vs _v488beltbreak2
+  Map: glacierkeep.map26  Seed: 1  Replay: replay.replay26  TLE: 10ms
+Completed turn 0
+Completed turn 100
+Replay written to replay.replay26
+
+  Winner: _v488beltbreak2  (Core destroyed, turn 127)
+
+                   probe_tle    _v488beltbreak2  
+  Titanium     810 (0 mined)    69 (1160 mined)  
+  Units                    0                  8  
+  Buildings                0                 89  
+

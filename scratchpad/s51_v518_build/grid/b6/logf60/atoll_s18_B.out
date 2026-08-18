@@ -1,0 +1,15 @@
+Running match: _v488beltbreak2 vs _v518fastsent
+  Map: atoll.map26  Seed: 18  Replay: 
+scratchpad/s51_v518_build/grid/b6/repf60/atoll_s18_B.replay26  TLE: 10ms
+Completed turn 0
+Completed turn 100
+Completed turn 200
+Replay written to scratchpad/s51_v518_build/grid/b6/repf60/atoll_s18_B.replay26
+
+  Winner: _v518fastsent  (Core destroyed, turn 254)
+
+               _v488beltbreak2      _v518fastsent  
+  Titanium      11 (610 mined)    40 (1240 mined)  
+  Units                      5                  9  
+  Buildings                 10                 22  
+

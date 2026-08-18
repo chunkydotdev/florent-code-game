@@ -1,0 +1,20 @@
+Running match: eq_flagoff vs _v488beltbreak2
+  Map: drakkarfjord.map26  Seed: 2  Replay: 
+scratchpad/s51_v518_build/eq/flagoff/rep/drakkarfjord_s2_A.replay26  TLE: 10ms
+Completed turn 0
+Completed turn 100
+Completed turn 200
+Completed turn 300
+Completed turn 400
+Completed turn 500
+Completed turn 600
+Replay written to 
+scratchpad/s51_v518_build/eq/flagoff/rep/drakkarfjord_s2_A.replay26
+
+  Winner: eq_flagoff  (Core destroyed, turn 616)
+
+                     eq_flagoff    _v488beltbreak2  
+  Titanium     202 (7650 mined)    16 (2580 mined)  
+  Units                      15                 14  
+  Buildings                 101                110  
+

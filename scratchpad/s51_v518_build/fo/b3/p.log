@@ -1,0 +1,30 @@
+atoll_s209_A	atoll	209	A	OPP	_v488beltbreak2	Core destroyed	216	0	640	1570
+atoll_s209_B	atoll	209	B	OPP	_v488beltbreak2	Core destroyed	186	0	900	820
+atoll_s210_A	atoll	210	A	US	parent	Core destroyed	191	0	630	420
+atoll_s210_B	atoll	210	B	OPP	_v488beltbreak2	Core destroyed	196	0	620	940
+atoll_s211_A	atoll	211	A	OPP	_v488beltbreak2	Core destroyed	881	0	1650	290
+atoll_s211_B	atoll	211	B	US	parent	Core destroyed	651	0	3720	2450
+drakkarfjord_s209_A	drakkarfjord	209	A	US	parent	Core destroyed	407	0	4310	710
+drakkarfjord_s209_B	drakkarfjord	209	B	US	parent	Core destroyed	165	0	510	200
+drakkarfjord_s210_A	drakkarfjord	210	A	US	parent	Core destroyed	271	0	2660	390
+drakkarfjord_s210_B	drakkarfjord	210	B	OPP	_v488beltbreak2	Titanium collected (tiebreak)	1000	0	8260	12860
+drakkarfjord_s211_A	drakkarfjord	211	A	OPP	_v488beltbreak2	Core destroyed	548	0	4660	7190
+drakkarfjord_s211_B	drakkarfjord	211	B	US	parent	Titanium collected (tiebreak)	1000	0	3960	2780
+glacierkeep_s209_A	glacierkeep	209	A	US	parent	Titanium collected (tiebreak)	1000	0	340	0
+glacierkeep_s209_B	glacierkeep	209	B	OPP	_v488beltbreak2	Core destroyed	533	0	20	0
+glacierkeep_s210_A	glacierkeep	210	A	US	parent	Core destroyed	125	0	160	0
+glacierkeep_s210_B	glacierkeep	210	B	US	parent	Core destroyed	313	0	180	0
+glacierkeep_s211_A	glacierkeep	211	A	OPP	_v488beltbreak2	Core destroyed	456	0	170	220
+glacierkeep_s211_B	glacierkeep	211	B	US	parent	Core destroyed	141	0	140	0
+midgard_s209_A	midgard	209	A	US	parent	Core destroyed	118	0	720	110
+midgard_s209_B	midgard	209	B	OPP	_v488beltbreak2	Core destroyed	164	0	650	1520
+midgard_s210_A	midgard	210	A	OPP	_v488beltbreak2	Titanium collected (tiebreak)	1000	0	460	590
+midgard_s210_B	midgard	210	B	OPP	_v488beltbreak2	Core destroyed	164	0	660	1730
+midgard_s211_A	midgard	211	A	OPP	_v488beltbreak2	Core destroyed	369	0	1300	4460
+midgard_s211_B	midgard	211	B	OPP	_v488beltbreak2	Core destroyed	164	0	650	1520
+nordkap_s209_A	nordkap	209	A	US	parent	Core destroyed	348	0	850	90
+nordkap_s209_B	nordkap	209	B	US	parent	Core destroyed	215	0	960	130
+nordkap_s210_A	nordkap	210	A	OPP	_v488beltbreak2	Core destroyed	877	0	240	340
+nordkap_s210_B	nordkap	210	B	OPP	_v488beltbreak2	Core destroyed	311	0	510	2670
+nordkap_s211_A	nordkap	211	A	US	parent	Core destroyed	583	0	1440	70
+nordkap_s211_B	nordkap	211	B	US	parent	Core destroyed	462	0	2420	170

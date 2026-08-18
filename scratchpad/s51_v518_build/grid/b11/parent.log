@@ -1,0 +1,30 @@
+atoll_s31_A	atoll	31	A	US	parent	Core destroyed	401	0	3710	970
+atoll_s31_B	atoll	31	B	US	parent	Core destroyed	200	0	1220	470
+atoll_s32_A	atoll	32	A	OPP	_v488beltbreak2	Titanium collected (tiebreak)	1000	0	4970	7760
+atoll_s32_B	atoll	32	B	OPP	_v488beltbreak2	Core destroyed	271	0	1310	1320
+atoll_s33_A	atoll	33	A	OPP	_v488beltbreak2	Core destroyed	166	0	580	600
+atoll_s33_B	atoll	33	B	OPP	_v488beltbreak2	Core destroyed	172	0	510	1620
+drakkarfjord_s31_A	drakkarfjord	31	A	OPP	_v488beltbreak2	Titanium collected (tiebreak)	1000	0	10150	12530
+drakkarfjord_s31_B	drakkarfjord	31	B	US	parent	Core destroyed	331	0	1660	0
+drakkarfjord_s32_A	drakkarfjord	32	A	US	parent	Core destroyed	318	0	2770	140
+drakkarfjord_s32_B	drakkarfjord	32	B	US	parent	Core destroyed	126	0	360	0
+drakkarfjord_s33_A	drakkarfjord	33	A	US	parent	Core destroyed	528	0	5290	280
+drakkarfjord_s33_B	drakkarfjord	33	B	US	parent	Core destroyed	161	0	700	0
+glacierkeep_s31_A	glacierkeep	31	A	US	parent	Core destroyed	273	0	220	0
+glacierkeep_s31_B	glacierkeep	31	B	US	parent	Core destroyed	280	0	0	0
+glacierkeep_s32_A	glacierkeep	32	A	US	parent	Core destroyed	312	0	720	0
+glacierkeep_s32_B	glacierkeep	32	B	OPP	_v488beltbreak2	Core destroyed	533	0	20	0
+glacierkeep_s33_A	glacierkeep	33	A	US	parent	Core destroyed	221	0	290	0
+glacierkeep_s33_B	glacierkeep	33	B	OPP	_v488beltbreak2	Core destroyed	937	0	0	0
+midgard_s31_A	midgard	31	A	OPP	_v488beltbreak2	Core destroyed	579	0	3580	7290
+midgard_s31_B	midgard	31	B	OPP	_v488beltbreak2	Core destroyed	524	0	670	1920
+midgard_s32_A	midgard	32	A	OPP	_v488beltbreak2	Core destroyed	366	0	580	4340
+midgard_s32_B	midgard	32	B	OPP	_v488beltbreak2	Core destroyed	395	0	560	1490
+midgard_s33_A	midgard	33	A	OPP	_v488beltbreak2	Core destroyed	260	0	400	2810
+midgard_s33_B	midgard	33	B	OPP	_v488beltbreak2	Core destroyed	121	0	580	1420
+nordkap_s31_A	nordkap	31	A	OPP	_v488beltbreak2	Core destroyed	295	0	110	3080
+nordkap_s31_B	nordkap	31	B	OPP	_v488beltbreak2	Titanium collected (tiebreak)	1000	0	90	2560
+nordkap_s32_A	nordkap	32	A	US	parent	Core destroyed	609	0	2280	1880
+nordkap_s32_B	nordkap	32	B	US	parent	Core destroyed	337	0	1300	450
+nordkap_s33_A	nordkap	33	A	US	parent	Core destroyed	223	0	340	40
+nordkap_s33_B	nordkap	33	B	US	parent	Core destroyed	302	0	1150	380

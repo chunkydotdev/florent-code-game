@@ -1,0 +1,460 @@
+Update available: 2.3.6 -> 2.3.8. Run: pip install --upgrade fcode
+TIWATCH518 0 ti 500 ammo 0 scale 100 units 1 sen 30 bar 3 beat 0 hold 0
+TIWATCH518 1 ti 470 ammo 0 scale 120 units 2 sen 36 bar 3 beat 0 hold 0
+TIWATCH518 2 ti 406 ammo 0 scale 150 units 4 sen 45 bar 4 beat 0 hold 0
+TIWATCH518 3 ti 327 ammo 0 scale 165 units 4 sen 49 bar 4 beat 0 hold 0
+TIWATCH518 4 ti 294 ammo 0 scale 177 units 5 sen 53 bar 5 beat 0 hold 0
+TIWATCH518 5 ti 294 ammo 0 scale 167 units 4 sen 50 bar 5 beat 0 hold 0
+GATE515 5 salt 0 eco 0 orth 8 floor 60
+GAP518 5 id 3 code GATE live 0 salt 0 eco 0 ti 294 sen 50 bar 5 need 9 orth 8 floor 60
+GATE515 5 salt 0 eco 0 orth 8 floor 60
+TIWATCH518 6 ti 304 ammo 0 scale 167 units 4 sen 50 bar 5 beat 0 hold 0
+GATE515 6 salt 0 eco 0 orth 8 floor 60
+GAP518 6 id 3 code GATE live 0 salt 0 eco 0 ti 254 sen 56 bar 5 need 9 orth 8 floor 60
+TIWATCH518 7 ti 178 ammo 0 scale 202 units 6 sen 60 bar 6 beat 0 hold 0
+TICONV518 7 amt 16 floor 52
+GAP518 7 id 3 code DODGE live -1 salt -1 eco -1 ti -1 sen -1 bar -1 need -1 orth -1 floor 60
+TIWATCH518 8 ti 106 ammo 16 scale 223 units 7 sen 66 bar 6 beat 0 hold 0
+GATE515 8 salt 0 eco 0 orth 8 floor 60
+GAP518 8 id 3 code GATE live 0 salt 0 eco 0 ti 106 sen 66 bar 6 need 9 orth 8 floor 60
+TIWATCH518 9 ti 94 ammo 16 scale 225 units 7 sen 67 bar 6 beat 0 hold 0
+GATE515 9 salt 0 eco 0 orth 7 floor 60
+GAP518 9 id 3 code GATE live 0 salt 0 eco 0 ti 94 sen 67 bar 6 need 8 orth 7 floor 60
+TIWATCH518 10 ti 98 ammo 16 scale 216 units 6 sen 64 bar 6 beat 0 hold 0
+GATE515 10 salt 0 eco 0 orth 6 floor 60
+GAP518 10 id 3 code GATE live 0 salt 0 eco 0 ti 98 sen 64 bar 6 need 7 orth 6 floor 60
+GATE515 10 salt 0 eco 0 orth 6 floor 60
+TIWATCH518 11 ti 108 ammo 16 scale 216 units 6 sen 64 bar 6 beat 0 hold 0
+GAP518 11 id 3 code DODGE live -1 salt -1 eco -1 ti -1 sen -1 bar -1 need -1 orth -1 floor 60
+TIWATCH518 12 ti 118 ammo 16 scale 216 units 6 sen 64 bar 6 beat 0 hold 0
+GAP518 12 id 3 code DODGE live -1 salt -1 eco -1 ti -1 sen -1 bar -1 need -1 orth -1 floor 60
+TIWATCH518 13 ti 118 ammo 16 scale 216 units 6 sen 64 bar 6 beat 0 hold 0
+GATE515 13 salt 0 eco 0 orth 6 floor 60
+GAP518 13 id 3 code GATE live 0 salt 0 eco 0 ti 118 sen 64 bar 6 need 7 orth 6 floor 60
+TIWATCH518 14 ti 85 ammo 16 scale 226 units 7 sen 67 bar 6 beat 0 hold 0
+GATE515 14 salt 0 eco 0 orth 6 floor 60
+GAP518 14 id 3 code GATE live 0 salt 0 eco 0 ti 85 sen 67 bar 6 need 7 orth 6 floor 60
+GATE515 14 salt 0 eco 0 orth 6 floor 60
+TIWATCH518 15 ti 95 ammo 16 scale 206 units 6 sen 61 bar 6 beat 0 hold 0
+TIWATCH518 16 ti 105 ammo 16 scale 206 units 6 sen 61 bar 6 beat 0 hold 0
+TIWATCH518 17 ti 105 ammo 16 scale 206 units 6 sen 61 bar 6 beat 0 hold 0
+TIWATCH518 18 ti 74 ammo 16 scale 211 units 6 sen 63 bar 6 beat 0 hold 0
+TIWATCH518 19 ti 78 ammo 16 scale 212 units 6 sen 63 bar 6 beat 0 hold 0
+TIWATCH518 20 ti 88 ammo 16 scale 212 units 6 sen 63 bar 6 beat 0 hold 0
+TIWATCH518 21 ti 82 ammo 16 scale 213 units 6 sen 63 bar 6 beat 0 hold 0
+TIWATCH518 22 ti 86 ammo 16 scale 214 units 6 sen 64 bar 6 beat 0 hold 0
+TIWATCH518 23 ti 96 ammo 16 scale 214 units 6 sen 64 bar 6 beat 0 hold 0
+TIWATCH518 24 ti 100 ammo 16 scale 215 units 6 sen 64 bar 6 beat 0 hold 0
+TIWATCH518 25 ti 100 ammo 16 scale 215 units 6 sen 64 bar 6 beat 0 hold 0
+TIWATCH518 26 ti 104 ammo 16 scale 216 units 6 sen 64 bar 6 beat 0 hold 0
+TIWATCH518 27 ti 114 ammo 16 scale 216 units 6 sen 64 bar 6 beat 0 hold 0
+TICONV518 27 amt 8 floor 12
+TIWATCH518 28 ti 110 ammo 24 scale 217 units 6 sen 65 bar 6 beat 0 hold 0
+TIWATCH518 29 ti 110 ammo 24 scale 217 units 6 sen 65 bar 6 beat 0 hold 0
+TIWATCH518 30 ti 114 ammo 24 scale 218 units 6 sen 65 bar 6 beat 0 hold 0
+TIWATCH518 31 ti 124 ammo 24 scale 218 units 6 sen 65 bar 6 beat 0 hold 0
+TIWATCH518 32 ti 63 ammo 24 scale 234 units 7 sen 70 bar 7 beat 0 hold 0
+TIWATCH518 33 ti 63 ammo 14 scale 234 units 7 sen 70 bar 7 beat 1 hold 0
+TICONV518 33 amt 30 floor 14
+TIWATCH518 34 ti 36 ammo 44 scale 215 units 6 sen 64 bar 6 beat 1 hold 0
+TICONV518 34 amt 24 floor 12
+TIWATCH518 35 ti 32 ammo 58 scale 215 units 6 sen 64 bar 6 beat 1 hold 0
+TICONV518 35 amt 20 floor 12
+TIWATCH518 36 ti 32 ammo 78 scale 215 units 6 sen 64 bar 6 beat 1 hold 0
+TICONV518 36 amt 20 floor 12
+TIWATCH518 37 ti 12 ammo 88 scale 215 units 6 sen 64 bar 6 beat 1 hold 0
+TIWATCH518 38 ti 32 ammo 88 scale 215 units 6 sen 64 bar 6 beat 1 hold 0
+TICONV518 38 amt 20 floor 12
+TIWATCH518 39 ti 22 ammo 98 scale 215 units 6 sen 64 bar 6 beat 1 hold 0
+TICONV518 39 amt 10 floor 12
+TIWATCH518 40 ti 22 ammo 108 scale 215 units 6 sen 64 bar 6 beat 1 hold 0
+TICONV518 40 amt 10 floor 12
+TIWATCH518 41 ti 12 ammo 108 scale 215 units 6 sen 64 bar 6 beat 1 hold 0
+TIWATCH518 42 ti 22 ammo 108 scale 214 units 6 sen 64 bar 6 beat 1 hold 0
+TICONV518 42 amt 10 floor 12
+TIWATCH518 43 ti 22 ammo 108 scale 214 units 6 sen 64 bar 6 beat 1 hold 0
+TICONV518 43 amt 10 floor 12
+TIWATCH518 44 ti 22 ammo 118 scale 214 units 6 sen 64 bar 6 beat 1 hold 0
+TICONV518 44 amt 10 floor 12
+TIWATCH518 45 ti 12 ammo 118 scale 214 units 6 sen 64 bar 6 beat 1 hold 0
+TIWATCH518 46 ti 22 ammo 118 scale 214 units 6 sen 64 bar 6 beat 1 hold 0
+TICONV518 46 amt 10 floor 12
+TIWATCH518 47 ti 22 ammo 118 scale 214 units 6 sen 64 bar 6 beat 1 hold 0
+TICONV518 47 amt 10 floor 12
+TIWATCH518 48 ti 22 ammo 128 scale 214 units 6 sen 64 bar 6 beat 1 hold 0
+TICONV518 48 amt 10 floor 12
+TIWATCH518 49 ti 12 ammo 128 scale 214 units 6 sen 64 bar 6 beat 1 hold 0
+TIWATCH518 50 ti 22 ammo 128 scale 214 units 6 sen 64 bar 6 beat 1 hold 0
+TICONV518 50 amt 10 floor 12
+TIWATCH518 51 ti 22 ammo 128 scale 214 units 6 sen 64 bar 6 beat 1 hold 0
+TICONV518 51 amt 10 floor 12
+TIWATCH518 52 ti 22 ammo 138 scale 214 units 6 sen 64 bar 6 beat 1 hold 0
+TICONV518 52 amt 10 floor 12
+TIWATCH518 53 ti 12 ammo 138 scale 214 units 6 sen 64 bar 6 beat 1 hold 0
+TIWATCH518 54 ti 22 ammo 138 scale 214 units 6 sen 64 bar 6 beat 1 hold 0
+TICONV518 54 amt 10 floor 12
+TIWATCH518 55 ti 22 ammo 138 scale 214 units 6 sen 64 bar 6 beat 1 hold 0
+TICONV518 55 amt 10 floor 12
+TIWATCH518 56 ti 22 ammo 148 scale 214 units 6 sen 64 bar 6 beat 1 hold 0
+TICONV518 56 amt 10 floor 12
+TIWATCH518 57 ti 12 ammo 148 scale 214 units 6 sen 64 bar 6 beat 1 hold 1
+TWINRES518 57 ti 12 ammo 148 sen 64 bar 6 res 82 floor 82 bind 1 rounds 1 until 87
+TIWATCH518 58 ti 22 ammo 148 scale 214 units 6 sen 64 bar 6 beat 1 hold 1
+TWINRES518 58 ti 22 ammo 148 sen 64 bar 6 res 82 floor 82 bind 2 rounds 2 until 88
+TIWATCH518 59 ti 32 ammo 138 scale 214 units 6 sen 64 bar 6 beat 1 hold 1
+TWINRES518 59 ti 32 ammo 138 sen 64 bar 6 res 82 floor 82 bind 3 rounds 3 until 89
+TIWATCH518 60 ti 42 ammo 138 scale 214 units 6 sen 64 bar 6 beat 1 hold 1
+TWINRES518 60 ti 42 ammo 138 sen 64 bar 6 res 82 floor 82 bind 4 rounds 4 until 90
+TIWATCH518 61 ti 0 ammo 128 scale 219 units 6 sen 65 bar 6 beat 1 hold 1
+TWINRES518 61 ti 0 ammo 128 sen 65 bar 6 res 83 floor 83 bind 5 rounds 5 until 91
+TIWATCH518 62 ti 10 ammo 128 scale 219 units 6 sen 65 bar 6 beat 1 hold 1
+TWINRES518 62 ti 10 ammo 128 sen 65 bar 6 res 83 floor 83 bind 6 rounds 6 until 92
+TIWATCH518 63 ti 14 ammo 128 scale 220 units 6 sen 66 bar 6 beat 1 hold 1
+TWINRES518 63 ti 14 ammo 128 sen 66 bar 6 res 84 floor 84 bind 7 rounds 7 until 93
+TIWATCH518 64 ti 24 ammo 118 scale 220 units 6 sen 66 bar 6 beat 1 hold 1
+TWINRES518 64 ti 24 ammo 118 sen 66 bar 6 res 84 floor 84 bind 8 rounds 8 until 94
+TIWATCH518 65 ti 18 ammo 118 scale 221 units 6 sen 66 bar 6 beat 1 hold 1
+TWINRES518 65 ti 18 ammo 118 sen 66 bar 6 res 84 floor 84 bind 9 rounds 9 until 95
+TIWATCH518 66 ti 28 ammo 118 scale 221 units 6 sen 66 bar 6 beat 1 hold 1
+TWINRES518 66 ti 28 ammo 118 sen 66 bar 6 res 84 floor 84 bind 10 rounds 10 until 96
+TIWATCH518 67 ti 32 ammo 118 scale 222 units 6 sen 66 bar 6 beat 1 hold 1
+TWINRES518 67 ti 32 ammo 118 sen 66 bar 6 res 84 floor 84 bind 11 rounds 11 until 97
+TIWATCH518 68 ti 42 ammo 118 scale 222 units 6 sen 66 bar 6 beat 1 hold 1
+TWINRES518 68 ti 42 ammo 118 sen 66 bar 6 res 84 floor 84 bind 12 rounds 12 until 98
+TIWATCH518 69 ti 36 ammo 118 scale 223 units 6 sen 66 bar 6 beat 1 hold 1
+TWINRES518 69 ti 36 ammo 118 sen 66 bar 6 res 84 floor 84 bind 13 rounds 13 until 99
+TIWATCH518 70 ti 46 ammo 118 scale 223 units 6 sen 66 bar 6 beat 1 hold 1
+TWINRES518 70 ti 46 ammo 118 sen 66 bar 6 res 84 floor 84 bind 14 rounds 14 until 100
+TIWATCH518 71 ti 12 ammo 118 scale 228 units 6 sen 68 bar 6 beat 1 hold 1
+TWINRES518 71 ti 12 ammo 118 sen 68 bar 6 res 86 floor 86 bind 15 rounds 15 until 101
+TIWATCH518 72 ti 16 ammo 118 scale 229 units 6 sen 68 bar 6 beat 1 hold 1
+TWINRES518 72 ti 16 ammo 118 sen 68 bar 6 res 86 floor 86 bind 16 rounds 16 until 102
+TIWATCH518 73 ti 16 ammo 118 scale 229 units 6 sen 68 bar 6 beat 1 hold 1
+TWINRES518 73 ti 16 ammo 118 sen 68 bar 6 res 86 floor 86 bind 17 rounds 17 until 103
+TIWATCH518 74 ti 20 ammo 118 scale 230 units 6 sen 69 bar 6 beat 1 hold 1
+TWINRES518 74 ti 20 ammo 118 sen 69 bar 6 res 87 floor 87 bind 18 rounds 18 until 104
+TIWATCH518 75 ti 30 ammo 118 scale 230 units 6 sen 69 bar 6 beat 1 hold 1
+TWINRES518 75 ti 30 ammo 118 sen 69 bar 6 res 87 floor 87 bind 19 rounds 19 until 105
+TIWATCH518 76 ti 34 ammo 118 scale 231 units 6 sen 69 bar 6 beat 1 hold 1
+TWINRES518 76 ti 34 ammo 118 sen 69 bar 6 res 87 floor 87 bind 20 rounds 20 until 106
+TIWATCH518 77 ti 34 ammo 118 scale 231 units 6 sen 69 bar 6 beat 1 hold 1
+TWINRES518 77 ti 34 ammo 118 sen 69 bar 6 res 87 floor 87 bind 21 rounds 21 until 107
+TIWATCH518 78 ti 44 ammo 118 scale 230 units 6 sen 69 bar 6 beat 1 hold 1
+TWINRES518 78 ti 44 ammo 118 sen 69 bar 6 res 87 floor 87 bind 22 rounds 22 until 108
+TIWATCH518 79 ti 52 ammo 118 scale 230 units 6 sen 69 bar 6 beat 1 hold 1
+TWINRES518 79 ti 52 ammo 118 sen 69 bar 6 res 87 floor 87 bind 23 rounds 23 until 109
+TIWATCH518 80 ti 59 ammo 118 scale 230 units 6 sen 69 bar 6 beat 1 hold 1
+TWINRES518 80 ti 59 ammo 118 sen 69 bar 6 res 87 floor 87 bind 24 rounds 24 until 110
+TIWATCH518 81 ti 56 ammo 108 scale 230 units 6 sen 69 bar 6 beat 1 hold 1
+TWINRES518 81 ti 56 ammo 108 sen 69 bar 6 res 87 floor 87 bind 25 rounds 25 until 111
+TIWATCH518 82 ti 64 ammo 108 scale 230 units 6 sen 69 bar 6 beat 1 hold 0
+TWINRES518 82 ti 64 ammo 108 sen 69 bar 6 res 87 floor 87 bind 26 rounds 26 until 111
+TIWATCH518 83 ti 26 ammo 98 scale 235 units 6 sen 70 bar 7 beat 1 hold 0
+TWINRES518 83 ti 26 ammo 98 sen 70 bar 7 res 90 floor 90 bind 27 rounds 27 until 111
+TIWATCH518 84 ti 34 ammo 98 scale 234 units 6 sen 70 bar 7 beat 1 hold 0
+TWINRES518 84 ti 34 ammo 98 sen 70 bar 7 res 90 floor 90 bind 28 rounds 28 until 111
+TIWATCH518 85 ti 26 ammo 88 scale 235 units 6 sen 70 bar 7 beat 1 hold 0
+TWINRES518 85 ti 26 ammo 88 sen 70 bar 7 res 90 floor 90 bind 29 rounds 29 until 111
+TIWATCH518 86 ti 35 ammo 88 scale 235 units 6 sen 70 bar 7 beat 1 hold 0
+TWINRES518 86 ti 35 ammo 88 sen 70 bar 7 res 90 floor 90 bind 30 rounds 30 until 111
+TIWATCH518 87 ti 44 ammo 78 scale 235 units 6 sen 70 bar 7 beat 1 hold 0
+TWINRES518 87 ti 44 ammo 78 sen 70 bar 7 res 90 floor 90 bind 31 rounds 31 until 111
+TIWATCH518 88 ti 53 ammo 78 scale 234 units 6 sen 70 bar 7 beat 1 hold 0
+TWINRES518 88 ti 53 ammo 78 sen 70 bar 7 res 90 floor 90 bind 32 rounds 32 until 111
+TIWATCH518 89 ti 52 ammo 68 scale 234 units 6 sen 70 bar 7 beat 1 hold 0
+TWINRES518 89 ti 52 ammo 68 sen 70 bar 7 res 90 floor 90 bind 33 rounds 33 until 111
+TIWATCH518 90 ti 61 ammo 68 scale 233 units 6 sen 69 bar 6 beat 1 hold 0
+TWINRES518 90 ti 61 ammo 68 sen 69 bar 6 res 87 floor 87 bind 34 rounds 34 until 111
+TIWATCH518 91 ti 64 ammo 58 scale 234 units 6 sen 70 bar 7 beat 1 hold 0
+TWINRES518 91 ti 64 ammo 58 sen 70 bar 7 res 90 floor 90 bind 35 rounds 35 until 111
+TIWATCH518 92 ti 73 ammo 58 scale 234 units 6 sen 70 bar 7 beat 1 hold 0
+TWINRES518 92 ti 73 ammo 58 sen 70 bar 7 res 90 floor 90 bind 36 rounds 36 until 111
+TIWATCH518 93 ti 82 ammo 48 scale 234 units 6 sen 70 bar 7 beat 1 hold 0
+TWINRES518 93 ti 82 ammo 48 sen 70 bar 7 res 90 floor 90 bind 37 rounds 37 until 111
+TIWATCH518 94 ti 101 ammo 48 scale 234 units 6 sen 70 bar 7 beat 1 hold 0
+TWINRES518 94 ti 101 ammo 48 sen 70 bar 7 res 90 floor 90 bind 38 rounds 38 until 111
+TICONV518 94 amt 11 floor 90
+TIWATCH518 95 ti 40 ammo 49 scale 254 units 7 sen 76 bar 7 beat 1 hold 0
+TWINRES518 95 ti 40 ammo 49 sen 76 bar 7 res 96 floor 96 bind 39 rounds 39 until 111
+TIWATCH518 96 ti 59 ammo 39 scale 254 units 7 sen 76 bar 7 beat 1 hold 0
+TWINRES518 96 ti 59 ammo 39 sen 76 bar 7 res 96 floor 96 bind 40 rounds 40 until 111
+TIWATCH518 97 ti 68 ammo 29 scale 254 units 7 sen 76 bar 7 beat 1 hold 0
+TWINRES518 97 ti 68 ammo 29 sen 76 bar 7 res 96 floor 96 bind 41 rounds 41 until 111
+TIWATCH518 98 ti 87 ammo 19 scale 254 units 7 sen 76 bar 7 beat 1 hold 0
+TWINRES518 98 ti 87 ammo 19 sen 76 bar 7 res 96 floor 96 bind 42 rounds 42 until 111
+TIWATCH518 99 ti 96 ammo 9 scale 254 units 7 sen 76 bar 7 beat 1 hold 0
+TWINRES518 99 ti 96 ammo 9 sen 76 bar 7 res 96 floor 96 bind 43 rounds 43 until 111
+TIWATCH518 100 ti 105 ammo 9 scale 254 units 7 sen 76 bar 7 beat 1 hold 0
+TWINRES518 100 ti 105 ammo 9 sen 76 bar 7 res 96 floor 96 bind 44 rounds 44 until 111
+TICONV518 100 amt 9 floor 96
+TIWATCH518 101 ti 94 ammo 8 scale 253 units 7 sen 75 bar 7 beat 1 hold 0
+TWINRES518 101 ti 94 ammo 8 sen 75 bar 7 res 95 floor 95 bind 45 rounds 45 until 111
+TIWATCH518 102 ti 102 ammo 8 scale 253 units 7 sen 75 bar 7 beat 1 hold 0
+TWINRES518 102 ti 102 ammo 8 sen 75 bar 7 res 95 floor 95 bind 46 rounds 46 until 111
+TICONV518 102 amt 7 floor 95
+TIWATCH518 103 ti 103 ammo 5 scale 253 units 7 sen 75 bar 7 beat 1 hold 0
+TWINRES518 103 ti 103 ammo 5 sen 75 bar 7 res 95 floor 95 bind 47 rounds 47 until 111
+TICONV518 103 amt 8 floor 95
+TIWATCH518 104 ti 103 ammo 3 scale 253 units 7 sen 75 bar 7 beat 1 hold 0
+TWINRES518 104 ti 103 ammo 3 sen 75 bar 7 res 95 floor 95 bind 48 rounds 48 until 111
+TICONV518 104 amt 8 floor 95
+TIWATCH518 105 ti 93 ammo 1 scale 253 units 7 sen 75 bar 7 beat 1 hold 0
+TWINRES518 105 ti 93 ammo 1 sen 75 bar 7 res 95 floor 95 bind 49 rounds 49 until 111
+TIWATCH518 106 ti 100 ammo 1 scale 253 units 7 sen 75 bar 7 beat 1 hold 0
+TWINRES518 106 ti 100 ammo 1 sen 75 bar 7 res 95 floor 95 bind 50 rounds 50 until 111
+TICONV518 106 amt 5 floor 95
+TIWATCH518 107 ti 102 ammo 6 scale 253 units 7 sen 75 bar 7 beat 1 hold 0
+TWINRES518 107 ti 102 ammo 6 sen 75 bar 7 res 95 floor 95 bind 51 rounds 51 until 111
+TICONV518 107 amt 7 floor 95
+TIWATCH518 108 ti 102 ammo 3 scale 253 units 7 sen 75 bar 7 beat 1 hold 0
+TWINRES518 108 ti 102 ammo 3 sen 75 bar 7 res 95 floor 95 bind 52 rounds 52 until 111
+TICONV518 108 amt 7 floor 95
+TIWATCH518 109 ti 92 ammo 0 scale 253 units 7 sen 75 bar 7 beat 1 hold 0
+TWINRES518 109 ti 92 ammo 0 sen 75 bar 7 res 95 floor 95 bind 53 rounds 53 until 111
+TIWATCH518 110 ti 99 ammo 0 scale 253 units 7 sen 75 bar 7 beat 1 hold 0
+TWINRES518 110 ti 99 ammo 0 sen 75 bar 7 res 95 floor 95 bind 54 rounds 54 until 111
+TICONV518 110 amt 4 floor 95
+TIWATCH518 111 ti 102 ammo 4 scale 253 units 7 sen 75 bar 7 beat 1 hold 0
+TICONV518 111 amt 30 floor 14
+TIWATCH518 112 ti 79 ammo 14 scale 253 units 7 sen 75 bar 7 beat 1 hold 0
+TICONV518 112 amt 30 floor 14
+TIWATCH518 113 ti 46 ammo 44 scale 253 units 7 sen 75 bar 7 beat 1 hold 1
+TWINRES518 113 ti 46 ammo 44 sen 75 bar 7 res 95 floor 95 bind 55 rounds 55 until 143
+TIWATCH518 114 ti 53 ammo 34 scale 253 units 7 sen 75 bar 7 beat 1 hold 1
+TWINRES518 114 ti 53 ammo 34 sen 75 bar 7 res 95 floor 95 bind 56 rounds 56 until 144
+TIWATCH518 115 ti 60 ammo 34 scale 253 units 7 sen 75 bar 7 beat 1 hold 1
+TWINRES518 115 ti 60 ammo 34 sen 75 bar 7 res 95 floor 95 bind 57 rounds 57 until 145
+TIWATCH518 116 ti 67 ammo 24 scale 253 units 7 sen 75 bar 7 beat 1 hold 1
+TWINRES518 116 ti 67 ammo 24 sen 75 bar 7 res 95 floor 95 bind 58 rounds 58 until 146
+TIWATCH518 117 ti 64 ammo 24 scale 253 units 7 sen 75 bar 7 beat 1 hold 1
+TWINRES518 117 ti 64 ammo 24 sen 75 bar 7 res 95 floor 95 bind 59 rounds 59 until 147
+TIWATCH518 118 ti 71 ammo 14 scale 253 units 7 sen 75 bar 7 beat 1 hold 1
+TWINRES518 118 ti 71 ammo 14 sen 75 bar 7 res 95 floor 95 bind 60 rounds 60 until 148
+TIWATCH518 119 ti 78 ammo 14 scale 253 units 7 sen 75 bar 7 beat 1 hold 1
+TWINRES518 119 ti 78 ammo 14 sen 75 bar 7 res 95 floor 95 bind 61 rounds 61 until 149
+TIWATCH518 120 ti 85 ammo 14 scale 253 units 7 sen 75 bar 7 beat 1 hold 1
+TWINRES518 120 ti 85 ammo 14 sen 75 bar 7 res 95 floor 95 bind 62 rounds 62 until 150
+TIWATCH518 121 ti 82 ammo 14 scale 253 units 7 sen 75 bar 7 beat 1 hold 1
+TWINRES518 121 ti 82 ammo 14 sen 75 bar 7 res 95 floor 95 bind 63 rounds 63 until 151
+TIWATCH518 122 ti 89 ammo 14 scale 253 units 7 sen 75 bar 7 beat 1 hold 1
+TWINRES518 122 ti 89 ammo 14 sen 75 bar 7 res 95 floor 95 bind 64 rounds 64 until 152
+TIWATCH518 123 ti 96 ammo 14 scale 253 units 7 sen 75 bar 7 beat 1 hold 1
+TWINRES518 123 ti 96 ammo 14 sen 75 bar 7 res 95 floor 95 bind 65 rounds 65 until 153
+TICONV518 123 amt 1 floor 95
+TIWATCH518 124 ti 102 ammo 15 scale 253 units 7 sen 75 bar 7 beat 1 hold 1
+TWINRES518 124 ti 102 ammo 15 sen 75 bar 7 res 95 floor 95 bind 66 rounds 66 until 154
+TICONV518 124 amt 7 floor 95
+TIWATCH518 125 ti 92 ammo 22 scale 253 units 7 sen 75 bar 7 beat 1 hold 1
+TWINRES518 125 ti 92 ammo 22 sen 75 bar 7 res 95 floor 95 bind 67 rounds 67 until 155
+TIWATCH518 126 ti 99 ammo 22 scale 253 units 7 sen 75 bar 7 beat 1 hold 1
+TWINRES518 126 ti 99 ammo 22 sen 75 bar 7 res 95 floor 95 bind 68 rounds 68 until 156
+TICONV518 126 amt 4 floor 95
+TIWATCH518 127 ti 102 ammo 26 scale 253 units 7 sen 75 bar 7 beat 1 hold 1
+TWINRES518 127 ti 102 ammo 26 sen 75 bar 7 res 95 floor 95 bind 69 rounds 69 until 157
+TICONV518 127 amt 7 floor 95
+TIWATCH518 128 ti 102 ammo 33 scale 253 units 7 sen 75 bar 7 beat 1 hold 1
+TWINRES518 128 ti 102 ammo 33 sen 75 bar 7 res 95 floor 95 bind 70 rounds 70 until 158
+TICONV518 128 amt 7 floor 95
+TIWATCH518 129 ti 92 ammo 40 scale 253 units 7 sen 75 bar 7 beat 1 hold 1
+TWINRES518 129 ti 92 ammo 40 sen 75 bar 7 res 95 floor 95 bind 71 rounds 71 until 159
+TIWATCH518 130 ti 99 ammo 40 scale 253 units 7 sen 75 bar 7 beat 1 hold 1
+TWINRES518 130 ti 99 ammo 40 sen 75 bar 7 res 95 floor 95 bind 72 rounds 72 until 160
+TICONV518 130 amt 4 floor 95
+TIWATCH518 131 ti 102 ammo 44 scale 253 units 7 sen 75 bar 7 beat 1 hold 1
+TWINRES518 131 ti 102 ammo 44 sen 75 bar 7 res 95 floor 95 bind 73 rounds 73 until 161
+TICONV518 131 amt 7 floor 95
+TIWATCH518 132 ti 102 ammo 41 scale 253 units 7 sen 75 bar 7 beat 1 hold 1
+TWINRES518 132 ti 102 ammo 41 sen 75 bar 7 res 95 floor 95 bind 74 rounds 74 until 162
+TICONV518 132 amt 7 floor 95
+TIWATCH518 133 ti 92 ammo 48 scale 253 units 7 sen 75 bar 7 beat 1 hold 1
+TWINRES518 133 ti 92 ammo 48 sen 75 bar 7 res 95 floor 95 bind 75 rounds 75 until 163
+TIWATCH518 134 ti 99 ammo 48 scale 253 units 7 sen 75 bar 7 beat 1 hold 1
+TWINRES518 134 ti 99 ammo 48 sen 75 bar 7 res 95 floor 95 bind 76 rounds 76 until 164
+TICONV518 134 amt 4 floor 95
+TIWATCH518 135 ti 102 ammo 52 scale 253 units 7 sen 75 bar 7 beat 1 hold 1
+TWINRES518 135 ti 102 ammo 52 sen 75 bar 7 res 95 floor 95 bind 77 rounds 77 until 165
+TICONV518 135 amt 7 floor 95
+TIWATCH518 136 ti 102 ammo 59 scale 253 units 7 sen 75 bar 7 beat 1 hold 1
+TWINRES518 136 ti 102 ammo 59 sen 75 bar 7 res 95 floor 95 bind 78 rounds 78 until 166
+TICONV518 136 amt 7 floor 95
+TIWATCH518 137 ti 92 ammo 56 scale 253 units 7 sen 75 bar 7 beat 1 hold 1
+TWINRES518 137 ti 92 ammo 56 sen 75 bar 7 res 95 floor 95 bind 79 rounds 79 until 167
+TIWATCH518 138 ti 99 ammo 56 scale 253 units 7 sen 75 bar 7 beat 1 hold 0
+TWINRES518 138 ti 99 ammo 56 sen 75 bar 7 res 95 floor 95 bind 80 rounds 80 until 167
+TICONV518 138 amt 4 floor 95
+TIWATCH518 139 ti 102 ammo 50 scale 253 units 7 sen 75 bar 7 beat 1 hold 0
+TWINRES518 139 ti 102 ammo 50 sen 75 bar 7 res 95 floor 95 bind 81 rounds 81 until 167
+TICONV518 139 amt 7 floor 95
+TIWATCH518 140 ti 102 ammo 57 scale 253 units 7 sen 75 bar 7 beat 1 hold 0
+TWINRES518 140 ti 102 ammo 57 sen 75 bar 7 res 95 floor 95 bind 82 rounds 82 until 167
+TICONV518 140 amt 7 floor 95
+TIWATCH518 141 ti 92 ammo 54 scale 253 units 7 sen 75 bar 7 beat 1 hold 0
+TWINRES518 141 ti 92 ammo 54 sen 75 bar 7 res 95 floor 95 bind 83 rounds 83 until 167
+TIWATCH518 142 ti 99 ammo 54 scale 253 units 7 sen 75 bar 7 beat 1 hold 0
+TWINRES518 142 ti 99 ammo 54 sen 75 bar 7 res 95 floor 95 bind 84 rounds 84 until 167
+TICONV518 142 amt 4 floor 95
+TIWATCH518 143 ti 102 ammo 48 scale 253 units 7 sen 75 bar 7 beat 1 hold 0
+TWINRES518 143 ti 102 ammo 48 sen 75 bar 7 res 95 floor 95 bind 85 rounds 85 until 167
+TICONV518 143 amt 7 floor 95
+TIWATCH518 144 ti 102 ammo 55 scale 253 units 7 sen 75 bar 7 beat 1 hold 0
+TWINRES518 144 ti 102 ammo 55 sen 75 bar 7 res 95 floor 95 bind 86 rounds 86 until 167
+TICONV518 144 amt 7 floor 95
+TIWATCH518 145 ti 92 ammo 52 scale 253 units 7 sen 75 bar 7 beat 1 hold 0
+TWINRES518 145 ti 92 ammo 52 sen 75 bar 7 res 95 floor 95 bind 87 rounds 87 until 167
+TIWATCH518 146 ti 99 ammo 52 scale 253 units 7 sen 75 bar 7 beat 1 hold 0
+TWINRES518 146 ti 99 ammo 52 sen 75 bar 7 res 95 floor 95 bind 88 rounds 88 until 167
+TICONV518 146 amt 4 floor 95
+TIWATCH518 147 ti 102 ammo 46 scale 253 units 7 sen 75 bar 7 beat 1 hold 0
+TWINRES518 147 ti 102 ammo 46 sen 75 bar 7 res 95 floor 95 bind 89 rounds 89 until 167
+TICONV518 147 amt 7 floor 95
+TIWATCH518 148 ti 102 ammo 53 scale 253 units 7 sen 75 bar 7 beat 1 hold 0
+TWINRES518 148 ti 102 ammo 53 sen 75 bar 7 res 95 floor 95 bind 90 rounds 90 until 167
+TICONV518 148 amt 7 floor 95
+TIWATCH518 149 ti 92 ammo 50 scale 253 units 7 sen 75 bar 7 beat 1 hold 0
+TWINRES518 149 ti 92 ammo 50 sen 75 bar 7 res 95 floor 95 bind 91 rounds 91 until 167
+TIWATCH518 150 ti 99 ammo 50 scale 253 units 7 sen 75 bar 7 beat 1 hold 0
+TWINRES518 150 ti 99 ammo 50 sen 75 bar 7 res 95 floor 95 bind 92 rounds 92 until 167
+TICONV518 150 amt 4 floor 95
+TIWATCH518 151 ti 102 ammo 44 scale 253 units 7 sen 75 bar 7 beat 1 hold 0
+TWINRES518 151 ti 102 ammo 44 sen 75 bar 7 res 95 floor 95 bind 93 rounds 93 until 167
+TICONV518 151 amt 7 floor 95
+TIWATCH518 152 ti 102 ammo 51 scale 253 units 7 sen 75 bar 7 beat 1 hold 0
+TWINRES518 152 ti 102 ammo 51 sen 75 bar 7 res 95 floor 95 bind 94 rounds 94 until 167
+TICONV518 152 amt 7 floor 95
+TIWATCH518 153 ti 92 ammo 48 scale 253 units 7 sen 75 bar 7 beat 1 hold 0
+TWINRES518 153 ti 92 ammo 48 sen 75 bar 7 res 95 floor 95 bind 95 rounds 95 until 167
+TIWATCH518 154 ti 99 ammo 48 scale 253 units 7 sen 75 bar 7 beat 1 hold 0
+TWINRES518 154 ti 99 ammo 48 sen 75 bar 7 res 95 floor 95 bind 96 rounds 96 until 167
+TICONV518 154 amt 4 floor 95
+TIWATCH518 155 ti 102 ammo 42 scale 253 units 7 sen 75 bar 7 beat 1 hold 0
+TWINRES518 155 ti 102 ammo 42 sen 75 bar 7 res 95 floor 95 bind 97 rounds 97 until 167
+TICONV518 155 amt 7 floor 95
+TIWATCH518 156 ti 102 ammo 49 scale 253 units 7 sen 75 bar 7 beat 1 hold 0
+TWINRES518 156 ti 102 ammo 49 sen 75 bar 7 res 95 floor 95 bind 98 rounds 98 until 167
+TICONV518 156 amt 7 floor 95
+TIWATCH518 157 ti 92 ammo 46 scale 253 units 7 sen 75 bar 7 beat 1 hold 0
+TWINRES518 157 ti 92 ammo 46 sen 75 bar 7 res 95 floor 95 bind 99 rounds 99 until 167
+TIWATCH518 158 ti 99 ammo 46 scale 253 units 7 sen 75 bar 7 beat 1 hold 0
+TWINRES518 158 ti 99 ammo 46 sen 75 bar 7 res 95 floor 95 bind 100 rounds 100 until 167
+TICONV518 158 amt 4 floor 95
+TIWATCH518 159 ti 102 ammo 40 scale 253 units 7 sen 75 bar 7 beat 1 hold 0
+TWINRES518 159 ti 102 ammo 40 sen 75 bar 7 res 95 floor 95 bind 101 rounds 101 until 167
+TICONV518 159 amt 7 floor 95
+TIWATCH518 160 ti 102 ammo 47 scale 253 units 7 sen 75 bar 7 beat 1 hold 0
+TWINRES518 160 ti 102 ammo 47 sen 75 bar 7 res 95 floor 95 bind 102 rounds 102 until 167
+TICONV518 160 amt 7 floor 95
+TIWATCH518 161 ti 92 ammo 44 scale 253 units 7 sen 75 bar 7 beat 1 hold 0
+TWINRES518 161 ti 92 ammo 44 sen 75 bar 7 res 95 floor 95 bind 103 rounds 103 until 167
+TIWATCH518 162 ti 99 ammo 44 scale 253 units 7 sen 75 bar 7 beat 1 hold 0
+TWINRES518 162 ti 99 ammo 44 sen 75 bar 7 res 95 floor 95 bind 104 rounds 104 until 167
+TICONV518 162 amt 4 floor 95
+TIWATCH518 163 ti 102 ammo 38 scale 253 units 7 sen 75 bar 7 beat 1 hold 0
+TWINRES518 163 ti 102 ammo 38 sen 75 bar 7 res 95 floor 95 bind 105 rounds 105 until 167
+TICONV518 163 amt 7 floor 95
+TIWATCH518 164 ti 102 ammo 45 scale 253 units 7 sen 75 bar 7 beat 1 hold 0
+TWINRES518 164 ti 102 ammo 45 sen 75 bar 7 res 95 floor 95 bind 106 rounds 106 until 167
+TICONV518 164 amt 7 floor 95
+TIWATCH518 165 ti 92 ammo 42 scale 253 units 7 sen 75 bar 7 beat 1 hold 0
+TWINRES518 165 ti 92 ammo 42 sen 75 bar 7 res 95 floor 95 bind 107 rounds 107 until 167
+TIWATCH518 166 ti 99 ammo 42 scale 253 units 7 sen 75 bar 7 beat 1 hold 0
+TWINRES518 166 ti 99 ammo 42 sen 75 bar 7 res 95 floor 95 bind 108 rounds 108 until 167
+TICONV518 166 amt 4 floor 95
+TIWATCH518 167 ti 102 ammo 36 scale 253 units 7 sen 75 bar 7 beat 1 hold 0
+TICONV518 167 amt 30 floor 14
+TIWATCH518 168 ti 79 ammo 66 scale 253 units 7 sen 75 bar 7 beat 1 hold 0
+TICONV518 168 amt 30 floor 14
+TIWATCH518 169 ti 46 ammo 86 scale 253 units 7 sen 75 bar 7 beat 1 hold 0
+TICONV518 169 amt 30 floor 14
+TIWATCH518 170 ti 23 ammo 116 scale 253 units 7 sen 75 bar 7 beat 1 hold 0
+TICONV518 170 amt 9 floor 14
+TIWATCH518 171 ti 21 ammo 115 scale 253 units 7 sen 75 bar 7 beat 1 hold 0
+TICONV518 171 amt 7 floor 14
+TIWATCH518 172 ti 21 ammo 122 scale 253 units 7 sen 75 bar 7 beat 1 hold 0
+TICONV518 172 amt 7 floor 14
+TIWATCH518 173 ti 11 ammo 119 scale 253 units 7 sen 75 bar 7 beat 1 hold 0
+TIWATCH518 174 ti 18 ammo 119 scale 253 units 7 sen 75 bar 7 beat 1 hold 0
+TICONV518 174 amt 4 floor 14
+TIWATCH518 175 ti 21 ammo 113 scale 253 units 7 sen 75 bar 7 beat 1 hold 0
+TICONV518 175 amt 7 floor 14
+TIWATCH518 176 ti 21 ammo 120 scale 253 units 7 sen 75 bar 7 beat 1 hold 0
+TICONV518 176 amt 7 floor 14
+TIWATCH518 177 ti 11 ammo 117 scale 253 units 7 sen 75 bar 7 beat 1 hold 0
+TIWATCH518 178 ti 19 ammo 117 scale 253 units 7 sen 75 bar 7 beat 1 hold 0
+TICONV518 178 amt 5 floor 14
+TIWATCH518 179 ti 21 ammo 112 scale 253 units 7 sen 75 bar 7 beat 1 hold 0
+TICONV518 179 amt 7 floor 14
+TIWATCH518 180 ti 22 ammo 119 scale 253 units 7 sen 75 bar 7 beat 1 hold 0
+TICONV518 180 amt 8 floor 14
+TIWATCH518 181 ti 12 ammo 117 scale 253 units 7 sen 75 bar 7 beat 1 hold 0
+TIWATCH518 182 ti 19 ammo 117 scale 253 units 7 sen 75 bar 7 beat 1 hold 0
+TICONV518 182 amt 5 floor 14
+TIWATCH518 183 ti 21 ammo 112 scale 253 units 7 sen 75 bar 7 beat 1 hold 0
+TICONV518 183 amt 7 floor 14
+TIWATCH518 184 ti 22 ammo 119 scale 253 units 7 sen 75 bar 7 beat 1 hold 0
+TICONV518 184 amt 8 floor 14
+TIWATCH518 185 ti 11 ammo 117 scale 253 units 7 sen 75 bar 7 beat 1 hold 0
+TIWATCH518 186 ti 19 ammo 117 scale 253 units 7 sen 75 bar 7 beat 1 hold 0
+TICONV518 186 amt 5 floor 14
+TIWATCH518 187 ti 21 ammo 112 scale 253 units 7 sen 75 bar 7 beat 1 hold 0
+TICONV518 187 amt 7 floor 14
+TIWATCH518 188 ti 22 ammo 119 scale 253 units 7 sen 75 bar 7 beat 1 hold 0
+TICONV518 188 amt 8 floor 14
+TIWATCH518 189 ti 12 ammo 117 scale 253 units 7 sen 75 bar 7 beat 1 hold 0
+TIWATCH518 190 ti 19 ammo 117 scale 253 units 7 sen 75 bar 7 beat 1 hold 0
+TICONV518 190 amt 5 floor 14
+TIWATCH518 191 ti 21 ammo 112 scale 253 units 7 sen 75 bar 7 beat 1 hold 0
+TICONV518 191 amt 7 floor 14
+TIWATCH518 192 ti 22 ammo 119 scale 253 units 7 sen 75 bar 7 beat 1 hold 0
+TICONV518 192 amt 8 floor 14
+TIWATCH518 193 ti 11 ammo 117 scale 253 units 7 sen 75 bar 7 beat 1 hold 0
+TIWATCH518 194 ti 19 ammo 117 scale 253 units 7 sen 75 bar 7 beat 1 hold 0
+TICONV518 194 amt 5 floor 14
+TIWATCH518 195 ti 21 ammo 112 scale 253 units 7 sen 75 bar 7 beat 1 hold 0
+TICONV518 195 amt 7 floor 14
+TIWATCH518 196 ti 22 ammo 119 scale 253 units 7 sen 75 bar 7 beat 1 hold 0
+TICONV518 196 amt 8 floor 14
+TIWATCH518 197 ti 12 ammo 117 scale 253 units 7 sen 75 bar 7 beat 1 hold 0
+TIWATCH518 198 ti 19 ammo 117 scale 253 units 7 sen 75 bar 7 beat 1 hold 0
+TICONV518 198 amt 5 floor 14
+TIWATCH518 199 ti 21 ammo 112 scale 253 units 7 sen 75 bar 7 beat 1 hold 0
+TICONV518 199 amt 7 floor 14
+TIWATCH518 200 ti 22 ammo 119 scale 253 units 7 sen 75 bar 7 beat 1 hold 0
+TICONV518 200 amt 8 floor 14
+TIWATCH518 201 ti 11 ammo 117 scale 253 units 7 sen 75 bar 7 beat 1 hold 0
+TIWATCH518 202 ti 19 ammo 117 scale 253 units 7 sen 75 bar 7 beat 1 hold 0
+TICONV518 202 amt 5 floor 14
+TIWATCH518 203 ti 22 ammo 112 scale 253 units 7 sen 75 bar 7 beat 1 hold 0
+TICONV518 203 amt 8 floor 14
+TIWATCH518 204 ti 21 ammo 120 scale 253 units 7 sen 75 bar 7 beat 1 hold 0
+TICONV518 204 amt 7 floor 14
+TIWATCH518 205 ti 11 ammo 117 scale 253 units 7 sen 75 bar 7 beat 1 hold 0
+TIWATCH518 206 ti 19 ammo 117 scale 253 units 7 sen 75 bar 7 beat 1 hold 0
+TICONV518 206 amt 5 floor 14
+TIWATCH518 207 ti 22 ammo 112 scale 253 units 7 sen 75 bar 7 beat 1 hold 0
+TICONV518 207 amt 8 floor 14
+TIWATCH518 208 ti 21 ammo 120 scale 253 units 7 sen 75 bar 7 beat 1 hold 0
+TICONV518 208 amt 7 floor 14
+TIWATCH518 209 ti 11 ammo 117 scale 253 units 7 sen 75 bar 7 beat 1 hold 0
+TIWATCH518 210 ti 19 ammo 117 scale 253 units 7 sen 75 bar 7 beat 1 hold 0
+TICONV518 210 amt 5 floor 14
+TIWATCH518 211 ti 21 ammo 112 scale 253 units 7 sen 75 bar 7 beat 1 hold 0
+TICONV518 211 amt 7 floor 14
+TIWATCH518 212 ti 22 ammo 119 scale 253 units 7 sen 75 bar 7 beat 1 hold 0
+TICONV518 212 amt 8 floor 14
+TIWATCH518 213 ti 12 ammo 117 scale 253 units 7 sen 75 bar 7 beat 1 hold 0
+TIWATCH518 214 ti 19 ammo 117 scale 253 units 7 sen 75 bar 7 beat 1 hold 0
+TICONV518 214 amt 5 floor 14
+TIWATCH518 215 ti 21 ammo 112 scale 253 units 7 sen 75 bar 7 beat 1 hold 0
+TICONV518 215 amt 7 floor 14
+TIWATCH518 216 ti 22 ammo 119 scale 253 units 7 sen 75 bar 7 beat 1 hold 0
+TICONV518 216 amt 8 floor 14
+TIWATCH518 217 ti 11 ammo 117 scale 253 units 7 sen 75 bar 7 beat 1 hold 0
+TIWATCH518 218 ti 19 ammo 117 scale 253 units 7 sen 75 bar 7 beat 1 hold 0
+TICONV518 218 amt 5 floor 14
+TIWATCH518 219 ti 21 ammo 112 scale 253 units 7 sen 75 bar 7 beat 1 hold 0
+TICONV518 219 amt 7 floor 14
+TIWATCH518 220 ti 22 ammo 119 scale 253 units 7 sen 75 bar 7 beat 1 hold 0
+TICONV518 220 amt 8 floor 14
+TIWATCH518 221 ti 12 ammo 117 scale 253 units 7 sen 75 bar 7 beat 1 hold 0
+TIWATCH518 222 ti 19 ammo 117 scale 253 units 7 sen 75 bar 7 beat 1 hold 0
+TICONV518 222 amt 5 floor 14

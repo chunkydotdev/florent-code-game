@@ -1,0 +1,31 @@
+tag	map	seed	seat	ours	winner	cond	turn	tracebacks	ours_mined	opp_mined
+atoll_s28_A	atoll	28	A	US	_v518fastsent	Titanium collected (tiebreak)	1000	0	4970	4940
+atoll_s28_B	atoll	28	B	US	_v518fastsent	Titanium collected (tiebreak)	1000	0	4960	4750
+atoll_s29_A	atoll	29	A	OPP	_v488beltbreak2	Titanium collected (tiebreak)	1000	0	4970	6180
+atoll_s29_B	atoll	29	B	US	_v518fastsent	Core destroyed	471	0	2320	2630
+atoll_s30_A	atoll	30	A	OPP	_v488beltbreak2	Core destroyed	597	0	2950	5660
+atoll_s30_B	atoll	30	B	OPP	_v488beltbreak2	Core destroyed	461	0	420	200
+drakkarfjord_s28_A	drakkarfjord	28	A	OPP	_v488beltbreak2	Core destroyed	180	0	790	1020
+drakkarfjord_s28_B	drakkarfjord	28	B	US	_v518fastsent	Core destroyed	421	0	390	0
+drakkarfjord_s29_A	drakkarfjord	29	A	OPP	_v488beltbreak2	Core destroyed	495	0	4730	5520
+drakkarfjord_s29_B	drakkarfjord	29	B	OPP	_v488beltbreak2	Core destroyed	281	0	550	2440
+drakkarfjord_s30_A	drakkarfjord	30	A	OPP	_v488beltbreak2	Core destroyed	357	0	390	2800
+drakkarfjord_s30_B	drakkarfjord	30	B	OPP	_v488beltbreak2	Core destroyed	964	0	490	2490
+glacierkeep_s28_A	glacierkeep	28	A	US	_v518fastsent	Core destroyed	193	0	150	0
+glacierkeep_s28_B	glacierkeep	28	B	US	_v518fastsent	Core destroyed	257	0	170	0
+glacierkeep_s29_A	glacierkeep	29	A	US	_v518fastsent	Core destroyed	206	0	170	0
+glacierkeep_s29_B	glacierkeep	29	B	US	_v518fastsent	Core destroyed	280	0	0	0
+glacierkeep_s30_A	glacierkeep	30	A	US	_v518fastsent	Core destroyed	593	0	200	0
+glacierkeep_s30_B	glacierkeep	30	B	US	_v518fastsent	Core destroyed	201	0	10	0
+midgard_s28_A	midgard	28	A	US	_v518fastsent	Core destroyed	161	0	880	700
+midgard_s28_B	midgard	28	B	OPP	_v488beltbreak2	Core destroyed	278	0	550	4010
+midgard_s29_A	midgard	29	A	OPP	_v488beltbreak2	Core destroyed	212	0	700	1790
+midgard_s29_B	midgard	29	B	OPP	_v488beltbreak2	Core destroyed	268	0	560	1250
+midgard_s30_A	midgard	30	A	OPP	_v488beltbreak2	Core destroyed	140	0	390	1170
+midgard_s30_B	midgard	30	B	OPP	_v488beltbreak2	Core destroyed	144	0	500	1930
+nordkap_s28_A	nordkap	28	A	OPP	_v488beltbreak2	Core destroyed	212	0	1010	2260
+nordkap_s28_B	nordkap	28	B	US	_v518fastsent	Core destroyed	165	0	510	0
+nordkap_s29_A	nordkap	29	A	US	_v518fastsent	Core destroyed	236	0	570	580
+nordkap_s29_B	nordkap	29	B	US	_v518fastsent	Titanium collected (tiebreak)	1000	0	210	0
+nordkap_s30_A	nordkap	30	A	US	_v518fastsent	Core destroyed	202	0	920	0
+nordkap_s30_B	nordkap	30	B	US	_v518fastsent	Core destroyed	636	0	2750	3070

@@ -1,0 +1,31 @@
+tag	map	seed	seat	ours	winner	cond	turn	tracebacks	ours_mined	opp_mined
+atoll_s1_A	atoll	1	A	US	mE	Core destroyed	230	0	1110	820
+atoll_s1_B	atoll	1	B	US	mE	Core destroyed	212	0	1020	500
+atoll_s2_A	atoll	2	A	US	mE	Core destroyed	223	0	1180	1080
+atoll_s2_B	atoll	2	B	US	mE	Core destroyed	342	0	2830	1080
+atoll_s3_A	atoll	3	A	US	mE	Core destroyed	510	0	2520	340
+atoll_s3_B	atoll	3	B	OPP	_v488beltbreak2	Core destroyed	271	0	820	780
+drakkarfjord_s1_A	drakkarfjord	1	A	OPP	_v488beltbreak2	Core destroyed	413	0	490	410
+drakkarfjord_s1_B	drakkarfjord	1	B	US	mE	Core destroyed	129	0	360	0
+drakkarfjord_s2_A	drakkarfjord	2	A	OPP	_v488beltbreak2	Titanium collected (tiebreak)	1000	0	8120	14030
+drakkarfjord_s2_B	drakkarfjord	2	B	US	mE	Core destroyed	123	0	400	0
+drakkarfjord_s3_A	drakkarfjord	3	A	US	mE	Core destroyed	323	0	2840	140
+drakkarfjord_s3_B	drakkarfjord	3	B	US	mE	Titanium collected (tiebreak)	1000	0	15630	11360
+glacierkeep_s1_A	glacierkeep	1	A	US	mE	Titanium collected (tiebreak)	1000	0	250	0
+glacierkeep_s1_B	glacierkeep	1	B	US	mE	Core destroyed	473	0	170	0
+glacierkeep_s2_A	glacierkeep	2	A	US	mE	Core destroyed	221	0	400	0
+glacierkeep_s2_B	glacierkeep	2	B	US	mE	Core destroyed	209	0	0	0
+glacierkeep_s3_A	glacierkeep	3	A	US	mE	Titanium collected (tiebreak)	1000	0	180	0
+glacierkeep_s3_B	glacierkeep	3	B	US	mE	Titanium collected (tiebreak)	1000	0	20	0
+midgard_s1_A	midgard	1	A	OPP	_v488beltbreak2	Core destroyed	153	0	500	1460
+midgard_s1_B	midgard	1	B	OPP	_v488beltbreak2	Core destroyed	480	0	670	1820
+midgard_s2_A	midgard	2	A	US	mE	Core destroyed	672	0	3370	2010
+midgard_s2_B	midgard	2	B	OPP	_v488beltbreak2	Core destroyed	171	0	560	1310
+midgard_s3_A	midgard	3	A	US	mE	Core destroyed	177	0	960	690
+midgard_s3_B	midgard	3	B	OPP	_v488beltbreak2	Core destroyed	123	0	500	1560
+nordkap_s1_A	nordkap	1	A	OPP	_v488beltbreak2	Titanium collected (tiebreak)	1000	0	1560	3920
+nordkap_s1_B	nordkap	1	B	OPP	_v488beltbreak2	Core destroyed	283	0	120	1530
+nordkap_s2_A	nordkap	2	A	US	mE	Core destroyed	197	0	210	100
+nordkap_s2_B	nordkap	2	B	US	mE	Core destroyed	165	0	510	0
+nordkap_s3_A	nordkap	3	A	US	mE	Core destroyed	523	0	2720	1130
+nordkap_s3_B	nordkap	3	B	OPP	_v488beltbreak2	Core destroyed	206	0	110	460

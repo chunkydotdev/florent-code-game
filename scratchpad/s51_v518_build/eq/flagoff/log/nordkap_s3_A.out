@@ -1,0 +1,15 @@
+Running match: eq_flagoff vs _v488beltbreak2
+  Map: nordkap.map26  Seed: 3  Replay: 
+scratchpad/s51_v518_build/eq/flagoff/rep/nordkap_s3_A.replay26  TLE: 10ms
+Completed turn 0
+Completed turn 100
+Completed turn 200
+Replay written to scratchpad/s51_v518_build/eq/flagoff/rep/nordkap_s3_A.replay26
+
+  Winner: eq_flagoff  (Core destroyed, turn 275)
+
+                     eq_flagoff    _v488beltbreak2  
+  Titanium     140 (2380 mined)     60 (580 mined)  
+  Units                      14                 10  
+  Buildings                  41                 13  
+

@@ -1,0 +1,31 @@
+tag	map	seed	seat	ours	winner	cond	turn	tracebacks	ours_mined	opp_mined
+atoll_s206_A	atoll	206	A	OPP	_v488beltbreak2	Titanium collected (tiebreak)	1000	0	2640	4930
+atoll_s206_B	atoll	206	B	OPP	_v488beltbreak2	Core destroyed	219	0	240	1410
+atoll_s207_A	atoll	207	A	OPP	_v488beltbreak2	Core destroyed	383	0	1880	4680
+atoll_s207_B	atoll	207	B	OPP	_v488beltbreak2	Core destroyed	320	0	270	3290
+atoll_s208_A	atoll	208	A	US	parent	Core destroyed	216	0	1590	280
+atoll_s208_B	atoll	208	B	OPP	_v488beltbreak2	Titanium collected (tiebreak)	1000	0	270	2770
+drakkarfjord_s206_A	drakkarfjord	206	A	OPP	_v488beltbreak2	Core destroyed	414	0	330	3780
+drakkarfjord_s206_B	drakkarfjord	206	B	OPP	_v488beltbreak2	Core destroyed	242	0	340	2020
+drakkarfjord_s207_A	drakkarfjord	207	A	US	parent	Core destroyed	445	0	2180	0
+drakkarfjord_s207_B	drakkarfjord	207	B	US	parent	Titanium collected (tiebreak)	1000	0	960	0
+drakkarfjord_s208_A	drakkarfjord	208	A	US	parent	Titanium collected (tiebreak)	1000	0	8080	7190
+drakkarfjord_s208_B	drakkarfjord	208	B	US	parent	Core destroyed	165	0	510	200
+glacierkeep_s206_A	glacierkeep	206	A	US	parent	Core destroyed	717	0	200	0
+glacierkeep_s206_B	glacierkeep	206	B	US	parent	Titanium collected (tiebreak)	1000	0	1190	0
+glacierkeep_s207_A	glacierkeep	207	A	US	parent	Core destroyed	185	0	170	0
+glacierkeep_s207_B	glacierkeep	207	B	US	parent	Core destroyed	409	0	0	0
+glacierkeep_s208_A	glacierkeep	208	A	OPP	_v488beltbreak2	Core destroyed	694	0	170	240
+glacierkeep_s208_B	glacierkeep	208	B	US	parent	Titanium collected (tiebreak)	1000	0	130	0
+midgard_s206_A	midgard	206	A	OPP	_v488beltbreak2	Core destroyed	259	0	610	3540
+midgard_s206_B	midgard	206	B	US	parent	Core destroyed	629	0	790	1140
+midgard_s207_A	midgard	207	A	OPP	_v488beltbreak2	Core destroyed	398	0	2310	4720
+midgard_s207_B	midgard	207	B	OPP	_v488beltbreak2	Core destroyed	129	0	540	1640
+midgard_s208_A	midgard	208	A	US	parent	Core destroyed	335	0	1830	810
+midgard_s208_B	midgard	208	B	OPP	_v488beltbreak2	Core destroyed	124	0	500	1580
+nordkap_s206_A	nordkap	206	A	US	parent	Core destroyed	193	0	470	20
+nordkap_s206_B	nordkap	206	B	US	parent	Core destroyed	209	0	620	180
+nordkap_s207_A	nordkap	207	A	US	parent	Core destroyed	373	0	910	450
+nordkap_s207_B	nordkap	207	B	US	parent	Core destroyed	252	0	610	0
+nordkap_s208_A	nordkap	208	A	US	parent	Core destroyed	365	0	3330	140
+nordkap_s208_B	nordkap	208	B	US	parent	Core destroyed	169	0	400	0

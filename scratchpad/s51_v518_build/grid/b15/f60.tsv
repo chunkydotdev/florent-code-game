@@ -1,0 +1,31 @@
+tag	map	seed	seat	ours	winner	cond	turn	tracebacks	ours_mined	opp_mined
+atoll_s43_A	atoll	43	A	OPP	_v488beltbreak2	Core destroyed	168	0	590	700
+atoll_s43_B	atoll	43	B	OPP	_v488beltbreak2	Core destroyed	288	0	410	3290
+atoll_s44_A	atoll	44	A	US	_v518fastsent	Core destroyed	191	0	630	420
+atoll_s44_B	atoll	44	B	OPP	_v488beltbreak2	Core destroyed	130	0	390	1010
+atoll_s45_A	atoll	45	A	US	_v518fastsent	Core destroyed	342	0	2470	1650
+atoll_s45_B	atoll	45	B	US	_v518fastsent	Core destroyed	156	0	740	740
+drakkarfjord_s43_A	drakkarfjord	43	A	US	_v518fastsent	Core destroyed	400	0	4270	620
+drakkarfjord_s43_B	drakkarfjord	43	B	OPP	_v488beltbreak2	Core destroyed	879	0	8110	10610
+drakkarfjord_s44_A	drakkarfjord	44	A	OPP	_v488beltbreak2	Core destroyed	413	0	490	410
+drakkarfjord_s44_B	drakkarfjord	44	B	OPP	_v488beltbreak2	Core destroyed	281	0	550	2440
+drakkarfjord_s45_A	drakkarfjord	45	A	US	_v518fastsent	Core destroyed	240	0	1560	0
+drakkarfjord_s45_B	drakkarfjord	45	B	US	_v518fastsent	Core destroyed	201	0	820	0
+glacierkeep_s43_A	glacierkeep	43	A	OPP	_v488beltbreak2	Titanium collected (tiebreak)	1000	0	140	1710
+glacierkeep_s43_B	glacierkeep	43	B	US	_v518fastsent	Core destroyed	185	0	170	0
+glacierkeep_s44_A	glacierkeep	44	A	US	_v518fastsent	Core destroyed	633	0	150	0
+glacierkeep_s44_B	glacierkeep	44	B	US	_v518fastsent	Core destroyed	337	0	20	0
+glacierkeep_s45_A	glacierkeep	45	A	US	_v518fastsent	Core destroyed	172	0	370	0
+glacierkeep_s45_B	glacierkeep	45	B	US	_v518fastsent	Core destroyed	181	0	40	0
+midgard_s43_A	midgard	43	A	OPP	_v488beltbreak2	Core destroyed	180	0	860	1870
+midgard_s43_B	midgard	43	B	OPP	_v488beltbreak2	Core destroyed	164	0	650	1520
+midgard_s44_A	midgard	44	A	US	_v518fastsent	Core destroyed	329	0	480	550
+midgard_s44_B	midgard	44	B	OPP	_v488beltbreak2	Core destroyed	260	0	560	2700
+midgard_s45_A	midgard	45	A	OPP	_v488beltbreak2	Core destroyed	380	0	1190	4350
+midgard_s45_B	midgard	45	B	OPP	_v488beltbreak2	Core destroyed	124	0	630	1230
+nordkap_s43_A	nordkap	43	A	US	_v518fastsent	Core destroyed	347	0	1460	1180
+nordkap_s43_B	nordkap	43	B	US	_v518fastsent	Core destroyed	401	0	980	340
+nordkap_s44_A	nordkap	44	A	OPP	_v488beltbreak2	Core destroyed	606	0	3010	2620
+nordkap_s44_B	nordkap	44	B	US	_v518fastsent	Core destroyed	386	0	2770	1080
+nordkap_s45_A	nordkap	45	A	US	_v518fastsent	Core destroyed	418	0	3760	2820
+nordkap_s45_B	nordkap	45	B	US	_v518fastsent	Core destroyed	200	0	900	110

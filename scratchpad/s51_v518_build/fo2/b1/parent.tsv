@@ -1,0 +1,31 @@
+tag	map	seed	seat	ours	winner	cond	turn	tracebacks	ours_mined	opp_mined
+atoll_s403_A	atoll	403	A	OPP	_v488beltbreak2	Core destroyed	433	0	1390	3320
+atoll_s403_B	atoll	403	B	US	parent	Core destroyed	178	0	860	420
+atoll_s404_A	atoll	404	A	US	parent	Core destroyed	306	0	900	870
+atoll_s404_B	atoll	404	B	US	parent	Core destroyed	196	0	960	560
+atoll_s405_A	atoll	405	A	OPP	_v488beltbreak2	Titanium collected (tiebreak)	1000	0	4540	4960
+atoll_s405_B	atoll	405	B	US	parent	Titanium collected (tiebreak)	1000	0	6010	4980
+drakkarfjord_s403_A	drakkarfjord	403	A	US	parent	Core destroyed	772	0	8620	6270
+drakkarfjord_s403_B	drakkarfjord	403	B	OPP	_v488beltbreak2	Core destroyed	308	0	560	2420
+drakkarfjord_s404_A	drakkarfjord	404	A	OPP	_v488beltbreak2	Core destroyed	504	0	440	2250
+drakkarfjord_s404_B	drakkarfjord	404	B	OPP	_v488beltbreak2	Core destroyed	580	0	3600	6510
+drakkarfjord_s405_A	drakkarfjord	405	A	US	parent	Core destroyed	257	0	430	330
+drakkarfjord_s405_B	drakkarfjord	405	B	OPP	_v488beltbreak2	Core destroyed	746	0	490	2610
+glacierkeep_s403_A	glacierkeep	403	A	OPP	_v488beltbreak2	Core destroyed	830	0	170	1730
+glacierkeep_s403_B	glacierkeep	403	B	US	parent	Core destroyed	185	0	30	0
+glacierkeep_s404_A	glacierkeep	404	A	US	parent	Core destroyed	312	0	720	0
+glacierkeep_s404_B	glacierkeep	404	B	US	parent	Core destroyed	373	0	170	0
+glacierkeep_s405_A	glacierkeep	405	A	US	parent	Core destroyed	128	0	260	0
+glacierkeep_s405_B	glacierkeep	405	B	US	parent	Core destroyed	365	0	30	0
+midgard_s403_A	midgard	403	A	OPP	_v488beltbreak2	Core destroyed	321	0	810	3900
+midgard_s403_B	midgard	403	B	OPP	_v488beltbreak2	Core destroyed	136	0	730	1790
+midgard_s404_A	midgard	404	A	OPP	_v488beltbreak2	Core destroyed	169	0	550	1090
+midgard_s404_B	midgard	404	B	US	parent	Core destroyed	629	0	790	1140
+midgard_s405_A	midgard	405	A	OPP	_v488beltbreak2	Core destroyed	376	0	2590	4080
+midgard_s405_B	midgard	405	B	OPP	_v488beltbreak2	Core destroyed	278	0	550	4010
+nordkap_s403_A	nordkap	403	A	OPP	_v488beltbreak2	Core destroyed	112	0	110	930
+nordkap_s403_B	nordkap	403	B	OPP	_v488beltbreak2	Core destroyed	747	0	60	3640
+nordkap_s404_A	nordkap	404	A	OPP	_v488beltbreak2	Core destroyed	218	0	210	1900
+nordkap_s404_B	nordkap	404	B	US	parent	Core destroyed	144	0	660	0
+nordkap_s405_A	nordkap	405	A	US	parent	Core destroyed	408	0	1890	210
+nordkap_s405_B	nordkap	405	B	US	parent	Core destroyed	200	0	960	220

@@ -1,0 +1,16 @@
+Running match: eq_parent vs eq_opp
+  Map: midgard.map26  Seed: 3  Replay: 
+scratchpad/s51_v518_build/eq2/p1/rep/midgard_s3_A.replay26  TLE: 10ms
+Completed turn 0
+Completed turn 100
+Completed turn 200
+Completed turn 300
+Replay written to scratchpad/s51_v518_build/eq2/p1/rep/midgard_s3_A.replay26
+
+  Winner: eq_opp  (Core destroyed, turn 390)
+
+                    eq_parent              eq_opp  
+  Titanium     46 (450 mined)    114 (3200 mined)  
+  Units                     3                  20  
+  Buildings                34                  84  
+

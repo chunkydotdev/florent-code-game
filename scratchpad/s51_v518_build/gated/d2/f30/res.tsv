@@ -1,0 +1,37 @@
+tag	map	seed	seat	ours	winner	cond	turn	tracebacks	ours_mined	opp_mined
+archipelago_s19_A	archipelago	19	A	US	f30	Core destroyed	294	0	2180	1540
+archipelago_s19_B	archipelago	19	B	US	f30	Core destroyed	284	0	2420	990
+archipelago_s20_A	archipelago	20	A	US	f30	Core destroyed	395	0	2970	2170
+archipelago_s20_B	archipelago	20	B	US	f30	Core destroyed	226	0	2420	1060
+archipelago_s21_A	archipelago	21	A	US	f30	Core destroyed	489	0	3580	3570
+archipelago_s21_B	archipelago	21	B	US	f30	Core destroyed	193	0	1100	1060
+archipelago_s22_A	archipelago	22	A	US	f30	Core destroyed	422	0	4050	1110
+archipelago_s22_B	archipelago	22	B	US	f30	Core destroyed	171	0	1560	830
+archipelago_s23_A	archipelago	23	A	OPP	_v468kladturbo	Core destroyed	154	0	1370	1050
+archipelago_s23_B	archipelago	23	B	OPP	_v468kladturbo	Core destroyed	167	0	1260	1630
+archipelago_s24_A	archipelago	24	A	US	f30	Core destroyed	106	0	900	890
+archipelago_s24_B	archipelago	24	B	US	f30	Core destroyed	359	0	2580	2620
+archipelago_s25_A	archipelago	25	A	US	f30	Core destroyed	133	0	920	270
+archipelago_s25_B	archipelago	25	B	US	f30	Core destroyed	114	0	700	530
+archipelago_s26_A	archipelago	26	A	OPP	_v468kladturbo	Core destroyed	351	0	1670	1780
+archipelago_s26_B	archipelago	26	B	US	f30	Core destroyed	140	0	1260	620
+archipelago_s27_A	archipelago	27	A	US	f30	Core destroyed	153	0	1400	790
+archipelago_s27_B	archipelago	27	B	US	f30	Core destroyed	154	0	1390	700
+archipelago_s28_A	archipelago	28	A	US	f30	Core destroyed	141	0	1250	690
+archipelago_s28_B	archipelago	28	B	US	f30	Core destroyed	162	0	960	670
+archipelago_s29_A	archipelago	29	A	US	f30	Core destroyed	106	0	900	890
+archipelago_s29_B	archipelago	29	B	US	f30	Core destroyed	114	0	700	530
+archipelago_s30_A	archipelago	30	A	US	f30	Titanium collected (tiebreak)	1000	0	6820	5230
+archipelago_s30_B	archipelago	30	B	OPP	_v468kladturbo	Core destroyed	613	0	3150	3150
+archipelago_s31_A	archipelago	31	A	OPP	_v468kladturbo	Core destroyed	580	0	5610	2930
+archipelago_s31_B	archipelago	31	B	OPP	_v468kladturbo	Core destroyed	79	0	590	510
+archipelago_s32_A	archipelago	32	A	US	f30	Core destroyed	186	0	1730	1330
+archipelago_s32_B	archipelago	32	B	US	f30	Core destroyed	125	0	1070	640
+archipelago_s33_A	archipelago	33	A	US	f30	Core destroyed	513	0	3770	3750
+archipelago_s33_B	archipelago	33	B	US	f30	Core destroyed	124	0	1080	820
+archipelago_s34_A	archipelago	34	A	OPP	_v468kladturbo	Core destroyed	213	0	1560	1540
+archipelago_s34_B	archipelago	34	B	US	f30	Core destroyed	121	0	990	430
+archipelago_s35_A	archipelago	35	A	US	f30	Core destroyed	106	0	930	700
+archipelago_s35_B	archipelago	35	B	US	f30	Core destroyed	116	0	600	560
+archipelago_s36_A	archipelago	36	A	US	f30	Core destroyed	202	0	1850	990
+archipelago_s36_B	archipelago	36	B	US	f30	Core destroyed	310	0	1700	1590

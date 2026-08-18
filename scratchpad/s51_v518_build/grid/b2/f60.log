@@ -1,0 +1,30 @@
+atoll_s4_A	atoll	4	A	OPP	_v488beltbreak2	Core destroyed	293	0	910	2530
+atoll_s4_B	atoll	4	B	OPP	_v488beltbreak2	Core destroyed	522	0	1490	3580
+atoll_s5_A	atoll	5	A	US	_v518fastsent	Core destroyed	646	0	3200	3160
+atoll_s5_B	atoll	5	B	OPP	_v488beltbreak2	Titanium collected (tiebreak)	1000	0	4960	4970
+atoll_s6_A	atoll	6	A	OPP	_v488beltbreak2	Core destroyed	302	0	430	1840
+atoll_s6_B	atoll	6	B	OPP	_v488beltbreak2	Core destroyed	262	0	390	2260
+drakkarfjord_s4_A	drakkarfjord	4	A	OPP	_v488beltbreak2	Core destroyed	637	0	4770	7310
+drakkarfjord_s4_B	drakkarfjord	4	B	US	_v518fastsent	Core destroyed	127	0	370	0
+drakkarfjord_s5_A	drakkarfjord	5	A	OPP	_v488beltbreak2	Titanium collected (tiebreak)	1000	0	4900	5920
+drakkarfjord_s5_B	drakkarfjord	5	B	US	_v518fastsent	Core destroyed	144	0	490	0
+drakkarfjord_s6_A	drakkarfjord	6	A	US	_v518fastsent	Core destroyed	209	0	1010	540
+drakkarfjord_s6_B	drakkarfjord	6	B	US	_v518fastsent	Core destroyed	148	0	670	0
+glacierkeep_s4_A	glacierkeep	4	A	US	_v518fastsent	Titanium collected (tiebreak)	1000	0	300	0
+glacierkeep_s4_B	glacierkeep	4	B	US	_v518fastsent	Core destroyed	173	0	170	0
+glacierkeep_s5_A	glacierkeep	5	A	US	_v518fastsent	Core destroyed	210	0	460	0
+glacierkeep_s5_B	glacierkeep	5	B	US	_v518fastsent	Core destroyed	173	0	180	0
+glacierkeep_s6_A	glacierkeep	6	A	US	_v518fastsent	Titanium collected (tiebreak)	1000	0	170	0
+glacierkeep_s6_B	glacierkeep	6	B	US	_v518fastsent	Core destroyed	193	0	0	0
+midgard_s4_A	midgard	4	A	OPP	_v488beltbreak2	Core destroyed	368	0	2470	4540
+midgard_s4_B	midgard	4	B	OPP	_v488beltbreak2	Core destroyed	156	0	470	1760
+midgard_s5_A	midgard	5	A	US	_v518fastsent	Core destroyed	135	0	780	780
+midgard_s5_B	midgard	5	B	OPP	_v488beltbreak2	Core destroyed	164	0	660	1730
+midgard_s6_A	midgard	6	A	US	_v518fastsent	Core destroyed	352	0	3240	1340
+midgard_s6_B	midgard	6	B	OPP	_v488beltbreak2	Core destroyed	253	0	690	1700
+nordkap_s4_A	nordkap	4	A	US	_v518fastsent	Core destroyed	229	0	160	30
+nordkap_s4_B	nordkap	4	B	US	_v518fastsent	Core destroyed	417	0	50	260
+nordkap_s5_A	nordkap	5	A	US	_v518fastsent	Core destroyed	284	0	690	280
+nordkap_s5_B	nordkap	5	B	OPP	_v488beltbreak2	Core destroyed	325	0	2170	3030
+nordkap_s6_A	nordkap	6	A	OPP	_v488beltbreak2	Core destroyed	196	0	140	2740
+nordkap_s6_B	nordkap	6	B	US	_v518fastsent	Core destroyed	199	0	470	240

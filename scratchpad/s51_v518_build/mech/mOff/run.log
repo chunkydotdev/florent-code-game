@@ -1,0 +1,30 @@
+atoll_s1_A	atoll	1	A	OPP	_v488beltbreak2	Core destroyed	528	0	2600	4550
+atoll_s1_B	atoll	1	B	OPP	_v488beltbreak2	Core destroyed	181	0	270	890
+atoll_s2_A	atoll	2	A	OPP	_v488beltbreak2	Titanium collected (tiebreak)	1000	0	4970	4980
+atoll_s2_B	atoll	2	B	OPP	_v488beltbreak2	Core destroyed	174	0	270	830
+atoll_s3_A	atoll	3	A	OPP	_v488beltbreak2	Core destroyed	881	0	1650	290
+atoll_s3_B	atoll	3	B	US	mOff	Core destroyed	143	0	680	480
+drakkarfjord_s1_A	drakkarfjord	1	A	OPP	_v488beltbreak2	Titanium collected (tiebreak)	1000	0	9390	11350
+drakkarfjord_s1_B	drakkarfjord	1	B	OPP	_v488beltbreak2	Core destroyed	431	0	1210	4150
+drakkarfjord_s2_A	drakkarfjord	2	A	US	mOff	Core destroyed	262	0	1720	0
+drakkarfjord_s2_B	drakkarfjord	2	B	US	mOff	Core destroyed	260	0	2160	0
+drakkarfjord_s3_A	drakkarfjord	3	A	US	mOff	Core destroyed	201	0	520	330
+drakkarfjord_s3_B	drakkarfjord	3	B	OPP	_v488beltbreak2	Core destroyed	440	0	2390	4980
+glacierkeep_s1_A	glacierkeep	1	A	US	mOff	Core destroyed	129	0	170	0
+glacierkeep_s1_B	glacierkeep	1	B	US	mOff	Core destroyed	205	0	0	0
+glacierkeep_s2_A	glacierkeep	2	A	OPP	_v488beltbreak2	Core destroyed	423	0	150	550
+glacierkeep_s2_B	glacierkeep	2	B	US	mOff	Core destroyed	169	0	80	0
+glacierkeep_s3_A	glacierkeep	3	A	US	mOff	Core destroyed	273	0	380	0
+glacierkeep_s3_B	glacierkeep	3	B	US	mOff	Core destroyed	313	0	180	0
+midgard_s1_A	midgard	1	A	US	mOff	Core destroyed	193	0	590	1720
+midgard_s1_B	midgard	1	B	OPP	_v488beltbreak2	Core destroyed	168	0	500	1360
+midgard_s2_A	midgard	2	A	US	mOff	Core destroyed	234	0	1630	1170
+midgard_s2_B	midgard	2	B	OPP	_v488beltbreak2	Core destroyed	524	0	670	1920
+midgard_s3_A	midgard	3	A	OPP	_v488beltbreak2	Core destroyed	369	0	570	2300
+midgard_s3_B	midgard	3	B	OPP	_v488beltbreak2	Core destroyed	188	0	500	2450
+nordkap_s1_A	nordkap	1	A	US	mOff	Titanium collected (tiebreak)	1000	0	230	110
+nordkap_s1_B	nordkap	1	B	OPP	_v488beltbreak2	Core destroyed	243	0	110	4280
+nordkap_s2_A	nordkap	2	A	OPP	_v488beltbreak2	Core destroyed	362	0	470	3180
+nordkap_s2_B	nordkap	2	B	OPP	_v488beltbreak2	Titanium collected (tiebreak)	1000	0	90	110
+nordkap_s3_A	nordkap	3	A	US	mOff	Core destroyed	307	0	2400	40
+nordkap_s3_B	nordkap	3	B	US	mOff	Core destroyed	136	0	630	50

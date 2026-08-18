@@ -1,0 +1,31 @@
+tag	map	seed	seat	ours	winner	cond	turn	tracebacks	ours_mined	opp_mined
+atoll_s19_A	atoll	19	A	OPP	_v488beltbreak2	Core destroyed	357	0	410	2190
+atoll_s19_B	atoll	19	B	US	f30	Core destroyed	259	0	1180	1100
+atoll_s20_A	atoll	20	A	US	f30	Core destroyed	727	0	3470	2700
+atoll_s20_B	atoll	20	B	OPP	_v488beltbreak2	Core destroyed	154	0	310	550
+atoll_s21_A	atoll	21	A	OPP	_v488beltbreak2	Core destroyed	741	0	4240	3500
+atoll_s21_B	atoll	21	B	US	f30	Core destroyed	178	0	860	420
+drakkarfjord_s19_A	drakkarfjord	19	A	OPP	_v488beltbreak2	Core destroyed	242	0	330	1330
+drakkarfjord_s19_B	drakkarfjord	19	B	US	f30	Titanium collected (tiebreak)	1000	0	2110	2080
+drakkarfjord_s20_A	drakkarfjord	20	A	OPP	_v488beltbreak2	Core destroyed	328	0	450	2410
+drakkarfjord_s20_B	drakkarfjord	20	B	US	f30	Core destroyed	155	0	670	0
+drakkarfjord_s21_A	drakkarfjord	21	A	US	f30	Titanium collected (tiebreak)	1000	0	18090	13620
+drakkarfjord_s21_B	drakkarfjord	21	B	US	f30	Titanium collected (tiebreak)	1000	0	530	0
+glacierkeep_s19_A	glacierkeep	19	A	US	f30	Core destroyed	189	0	140	0
+glacierkeep_s19_B	glacierkeep	19	B	US	f30	Core destroyed	697	0	0	0
+glacierkeep_s20_A	glacierkeep	20	A	OPP	_v488beltbreak2	Core destroyed	577	0	160	0
+glacierkeep_s20_B	glacierkeep	20	B	US	f30	Titanium collected (tiebreak)	1000	0	50	0
+glacierkeep_s21_A	glacierkeep	21	A	US	f30	Core destroyed	725	0	170	0
+glacierkeep_s21_B	glacierkeep	21	B	US	f30	Core destroyed	257	0	180	0
+midgard_s19_A	midgard	19	A	OPP	_v488beltbreak2	Core destroyed	289	0	490	2480
+midgard_s19_B	midgard	19	B	OPP	_v488beltbreak2	Core destroyed	165	0	590	1360
+midgard_s20_A	midgard	20	A	OPP	_v488beltbreak2	Core destroyed	314	0	2990	3190
+midgard_s20_B	midgard	20	B	OPP	_v488beltbreak2	Core destroyed	122	0	740	1200
+midgard_s21_A	midgard	21	A	OPP	_v488beltbreak2	Core destroyed	466	0	630	4210
+midgard_s21_B	midgard	21	B	OPP	_v488beltbreak2	Core destroyed	120	0	660	1510
+nordkap_s19_A	nordkap	19	A	OPP	_v488beltbreak2	Core destroyed	345	0	230	2120
+nordkap_s19_B	nordkap	19	B	OPP	_v488beltbreak2	Core destroyed	168	0	140	1160
+nordkap_s20_A	nordkap	20	A	OPP	_v488beltbreak2	Core destroyed	187	0	690	2080
+nordkap_s20_B	nordkap	20	B	OPP	_v488beltbreak2	Core destroyed	149	0	200	1500
+nordkap_s21_A	nordkap	21	A	OPP	_v488beltbreak2	Core destroyed	433	0	160	180
+nordkap_s21_B	nordkap	21	B	US	f30	Core destroyed	231	0	690	80

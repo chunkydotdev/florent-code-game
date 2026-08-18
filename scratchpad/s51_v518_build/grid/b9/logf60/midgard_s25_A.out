@@ -1,0 +1,16 @@
+Running match: _v518fastsent vs _v488beltbreak2
+  Map: midgard.map26  Seed: 25  Replay: 
+scratchpad/s51_v518_build/grid/b9/repf60/midgard_s25_A.replay26  TLE: 10ms
+Completed turn 0
+Completed turn 100
+Completed turn 200
+Replay written to 
+scratchpad/s51_v518_build/grid/b9/repf60/midgard_s25_A.replay26
+
+  Winner: _v488beltbreak2  (Core destroyed, turn 243)
+
+                _v518fastsent     _v488beltbreak2  
+  Titanium     12 (410 mined)    106 (2260 mined)  
+  Units                     7                  11  
+  Buildings                18                  93  
+
