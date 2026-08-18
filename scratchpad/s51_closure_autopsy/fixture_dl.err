@@ -1,0 +1,12 @@
+noise line, not ours
+FS GATE 0 sig (18, 18, (2, 14), (14, 2)) ok 1
+FS DL 5 id 3 role seal orth 8 need 9 ebody 1 lau 0 ti 294 lcost 33 bar 5 obs 1 hist 1 pend 0
+FS DL 6 id 3 role seal orth 7 need 8 ebody 0 lau 0 ti 200 lcost 33 bar 5 obs 2 hist 1 pend 0
+FS DL 7 id 3 role seal orth 0 need 0 ebody 0 lau 1 ti 100 lcost 33 bar 5 obs 6 hist 3 pend 1
+FS SEAL 6 tile (13, 3) n 1
+FS SEAL 7 tile (14, 1) n 2
+FS CLEAR 8 tile (15, 1) peck 1
+FS EVICT 15 from (12, 5) to (12, 10)
+FS EVICT 16 from (13, 3) to (2, 9)
+FS EVICTOR 14 at (13, 5) cov 1
+FS THROW 2 from (5, 13) to (8, 9) T (16, 1)

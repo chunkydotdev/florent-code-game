@@ -1,0 +1,31 @@
+game	map	seat	seed	won	end_r	cond	arrive_r	ring_rounds	gap_rounds	longest_gap	min_orth	close_r	seals	clears	seat_bldg_lost	evicts	evictors	nd_seats	nd_belt_pre	nd_belt_post	nd_body	nd_empty	osr	osr_notbuildable	osr_noadj	osr_adj_funded	osr_nofund	residual_tiles
+v513_log-atoll-s1-A	atoll	A	1	1	277	Core_destroyed	5	142	0	0	1	-1	8	50	1	8	3	1	0	0	0	1	674	232	435	7	0	16,2:.
+v513_log-atoll-s1-B	atoll	B	1	0	524	Core_destroyed	5	99	94	94	4	-1	5	4	0	49	1	4	1	2	0	1	465	302	158	5	0	4,14:E;3,16:E;1,15:E;2,16:.;2,16:b
+v513_log-atoll-s2-A	atoll	A	2	1	228	Core_destroyed	5	223	0	0	1	-1	10	42	9	51	2	0	0	0	0	0	649	191	440	17	1	14,4:.;16,2:.
+v513_log-atoll-s2-B	atoll	B	2	0	765	Core_destroyed	5	270	272	61	2	-1	17	30	14	104	1	1	0	1	0	0	812	481	306	25	0	3,16:E;2,16:.;4,14:E
+v513_log-atoll-s3-A	atoll	A	3	0	244	Core_destroyed	5	195	0	0	2	-1	28	8	33	6	3	1	0	1	0	0	827	484	303	34	6	15,1:E;14,4:E;14,1:E
+v513_log-atoll-s3-B	atoll	B	3	0	357	Core_destroyed	5	80	113	67	3	-1	9	29	2	10	4	2	0	2	0	0	417	234	177	6	0	4,14:E;1,15:E;1,14:.
+v513_log-drakkarfjord-s1-A	drakkarfjord	A	1	1	381	Core_destroyed	11	215	155	93	2	-1	63	43	33	0	0	1	0	1	0	0	742	383	324	35	0	26,6:E;25,5:E
+v513_log-drakkarfjord-s1-B	drakkarfjord	B	1	1	119	Core_destroyed	11	108	0	0	0	93	10	0	2	0	0	0	0	0	0	0	231	4	199	27	1	
+v513_log-drakkarfjord-s2-A	drakkarfjord	A	2	0	588	Core_destroyed	11	158	0	0	0	91	20	12	7	0	0	0	0	0	0	0	256	58	185	13	0	
+v513_log-drakkarfjord-s2-B	drakkarfjord	B	2	1	129	Core_destroyed	11	118	0	0	0	47	18	8	10	0	0	0	0	0	0	0	219	0	200	17	2	
+v513_log-drakkarfjord-s3-A	drakkarfjord	A	3	1	215	Core_destroyed	11	204	0	0	0	95	29	20	8	0	0	0	0	0	0	0	290	58	216	16	0	
+v513_log-drakkarfjord-s3-B	drakkarfjord	B	3	1	173	Core_destroyed	11	162	0	0	0	47	24	10	16	0	0	0	0	0	0	0	245	46	175	22	2	
+v513_log-glacierkeep-s1-A	glacierkeep	A	1	1	469	Core_destroyed	9	49	0	0	3	-1	6	0	0	0	0	3	0	0	0	3	178	0	172	6	0	14,28:.;13,27:.;13,26:.
+v513_log-glacierkeep-s1-B	glacierkeep	B	1	1	241	Core_destroyed	9	180	0	0	0	45	21	0	7	0	0	0	0	0	0	0	189	0	175	14	0	
+v513_log-glacierkeep-s2-A	glacierkeep	A	2	1	259	Core_destroyed	9	250	0	0	0	45	33	0	0	0	0	0	0	0	0	0	127	2	113	8	4	
+v513_log-glacierkeep-s2-B	glacierkeep	B	2	0	571	Core_destroyed	9	112	0	0	0	55	13	0	6	0	0	0	0	0	0	0	208	9	188	9	2	
+v513_log-glacierkeep-s3-A	glacierkeep	A	3	1	173	Core_destroyed	9	164	0	0	0	56	5	19	0	0	0	0	0	0	0	0	159	4	146	9	0	
+v513_log-glacierkeep-s3-B	glacierkeep	B	3	1	1000	Titanium_collected_(tiebreak)	9	991	0	0	0	49	14	0	4	0	0	0	0	0	0	0	1921	321	1585	10	5	
+v513_log-midgard-s1-A	midgard	A	1	0	238	Core_destroyed	14	120	50	50	6	-1	1	8	2	3	0	6	2	1	0	3	874	353	519	2	0	26,25:E;27,25:E;28,26:.;28,27:.;27,28:.;25,27:E
+v513_log-midgard-s1-B	midgard	B	1	0	136	Core_destroyed	123	12	0	0	2	-1	1	8	0	2	0	2	2	0	0	0	35	34	0	1	0	3,4:E;2,4:E
+v513_log-midgard-s2-A	midgard	A	2	1	312	Core_destroyed	13	217	82	82	1	-1	6	14	0	0	0	1	1	0	0	0	343	217	118	8	0	27,25:E
+v513_log-midgard-s2-B	midgard	B	2	0	116	Core_destroyed	78	38	0	0	8	-1	0	0	0	2	0	8	4	0	0	4	304	165	139	0	0	2,1:.;3,1:.;4,2:E;4,3:E;3,4:E;2,4:E;1,2:.;1,3:.;1,3:b
+v513_log-midgard-s3-A	midgard	A	3	1	466	Core_destroyed	14	265	187	112	4	-1	6	8	5	14	2	4	2	1	0	1	1574	1044	522	7	1	26,25:E;27,25:E;28,26:.;25,27:E
+v513_log-midgard-s3-B	midgard	B	3	0	306	Core_destroyed	187	23	0	0	6	-1	0	16	0	2	0	6	3	0	0	3	138	69	69	0	0	2,1:.;4,2:E;3,4:E;2,4:E;1,3:.;1,2:.
+v513_log-nordkap-s1-A	nordkap	A	1	1	306	Core_destroyed	5	119	153	153	1	-1	15	30	12	0	0	0	0	0	0	0	626	294	318	14	0	10,17:E
+v513_log-nordkap-s1-B	nordkap	B	1	1	609	Core_destroyed	5	604	0	0	0	69	7	20	2	9	1	0	0	0	0	0	177	90	78	8	1	
+v513_log-nordkap-s2-A	nordkap	A	2	0	312	Core_destroyed	5	307	0	0	2	-1	3	34	0	0	0	1	0	1	0	0	801	328	465	8	0	10,17:E;11,19:.
+v513_log-nordkap-s2-B	nordkap	B	2	1	240	Core_destroyed	5	136	0	0	0	27	8	0	1	11	2	0	0	0	0	0	100	7	82	11	0	
+v513_log-nordkap-s3-A	nordkap	A	3	0	348	Core_destroyed	5	343	0	0	3	-1	5	38	1	0	0	1	0	1	0	0	1227	843	377	5	2	11,18:E;10,20:.;9,17:E;10,17:E;10,20:b
+v513_log-nordkap-s3-B	nordkap	B	3	0	484	Core_destroyed	5	337	0	0	0	100	9	14	7	0	0	0	0	0	0	0	650	270	365	15	0	

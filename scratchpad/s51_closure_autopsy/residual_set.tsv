@@ -1,0 +1,31 @@
+game	map	seat	arrive_r	ring_rounds	min_orth	rounds_at_min	residual_E	residual_b	residual_o	residual_empty	residual_tiles
+v513_log-atoll-s1-A	atoll	A	5	142	1	2	0	0	0	2	16,2:.
+v513_log-atoll-s1-B	atoll	B	5	99	4	69	207	6	0	63	4,14:E;3,16:E;1,15:E;2,16:.;2,16:b
+v513_log-atoll-s2-A	atoll	A	5	223	1	87	0	0	0	87	14,4:.;16,2:.
+v513_log-atoll-s2-B	atoll	B	5	270	2	102	138	0	0	66	3,16:E;2,16:.;4,14:E
+v513_log-atoll-s3-A	atoll	A	5	195	2	20	40	0	0	0	15,1:E;14,4:E;14,1:E
+v513_log-atoll-s3-B	atoll	B	5	80	3	1	2	0	0	1	4,14:E;1,15:E;1,14:.
+v513_log-drakkarfjord-s1-A	drakkarfjord	A	11	215	2	18	36	0	0	0	26,6:E;25,5:E
+v513_log-drakkarfjord-s1-B	drakkarfjord	B	11	108	0	24	0	0	0	0	
+v513_log-drakkarfjord-s2-A	drakkarfjord	A	11	158	0	59	0	0	0	0	
+v513_log-drakkarfjord-s2-B	drakkarfjord	B	11	118	0	14	0	0	0	0	
+v513_log-drakkarfjord-s3-A	drakkarfjord	A	11	204	0	116	0	0	0	0	
+v513_log-drakkarfjord-s3-B	drakkarfjord	B	11	162	0	44	0	0	0	0	
+v513_log-glacierkeep-s1-A	glacierkeep	A	9	49	3	36	0	0	0	108	14,28:.;13,27:.;13,26:.
+v513_log-glacierkeep-s1-B	glacierkeep	B	9	180	0	109	0	0	0	0	
+v513_log-glacierkeep-s2-A	glacierkeep	A	9	250	0	214	0	0	0	0	
+v513_log-glacierkeep-s2-B	glacierkeep	B	9	112	0	66	0	0	0	0	
+v513_log-glacierkeep-s3-A	glacierkeep	A	9	164	0	117	0	0	0	0	
+v513_log-glacierkeep-s3-B	glacierkeep	B	9	991	0	64	0	0	0	0	
+v513_log-midgard-s1-A	midgard	A	14	120	6	25	75	0	0	75	26,25:E;27,25:E;28,26:.;28,27:.;27,28:.;25,27:E
+v513_log-midgard-s1-B	midgard	B	123	12	2	1	2	0	0	0	3,4:E;2,4:E
+v513_log-midgard-s2-A	midgard	A	13	217	1	161	161	0	0	0	27,25:E
+v513_log-midgard-s2-B	midgard	B	78	38	8	38	152	13	0	139	2,1:.;3,1:.;4,2:E;4,3:E;3,4:E;2,4:E;1,2:.;1,3:.;1,3:b
+v513_log-midgard-s3-A	midgard	A	14	265	4	12	36	0	0	12	26,25:E;27,25:E;28,26:.;25,27:E
+v513_log-midgard-s3-B	midgard	B	187	23	6	23	69	0	0	69	2,1:.;4,2:E;3,4:E;2,4:E;1,3:.;1,2:.
+v513_log-nordkap-s1-A	nordkap	A	5	119	1	1	1	0	0	0	10,17:E
+v513_log-nordkap-s1-B	nordkap	B	5	604	0	532	0	0	0	0	
+v513_log-nordkap-s2-A	nordkap	A	5	307	2	256	256	0	0	256	10,17:E;11,19:.
+v513_log-nordkap-s2-B	nordkap	B	5	136	0	107	0	0	0	0	
+v513_log-nordkap-s3-A	nordkap	A	5	343	3	168	336	1	0	167	11,18:E;10,20:.;9,17:E;10,17:E;10,20:b
+v513_log-nordkap-s3-B	nordkap	B	5	337	0	64	0	0	0	0	
