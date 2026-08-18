@@ -1,0 +1,30 @@
+CREWCONVN_glacierkeep_g0	CREWCONVN	glacierkeep	0	10700	A	US	CREWCONV	Core destroyed	349	0	1020	0
+CREWCONVN_glacierkeep_g1	CREWCONVN	glacierkeep	1	10701	B	US	CREWCONV	Core destroyed	209	0	0	0
+CREWCONVN_glacierkeep_g2	CREWCONVN	glacierkeep	2	10702	A	US	CREWCONV	Core destroyed	229	0	540	0
+CREWCONVN_glacierkeep_g3	CREWCONVN	glacierkeep	3	10703	B	US	CREWCONV	Titanium collected (tiebreak)	1000	0	10	0
+CREWCONVN_glacierkeep_g4	CREWCONVN	glacierkeep	4	10704	A	US	CREWCONV	Core destroyed	160	0	570	0
+CREWCONVN_glacierkeep_g5	CREWCONVN	glacierkeep	5	10705	B	US	CREWCONV	Core destroyed	100	0	200	0
+CREWCONVN_nordkap_g0	CREWCONVN	nordkap	0	10700	A	US	CREWCONV	Core destroyed	389	0	3930	4200
+CREWCONVN_nordkap_g1	CREWCONVN	nordkap	1	10701	B	OPP	_v488beltbreak2	Core destroyed	152	0	150	2180
+CREWCONVN_nordkap_g2	CREWCONVN	nordkap	2	10702	A	US	CREWCONV	Core destroyed	161	0	370	360
+CREWCONVN_nordkap_g3	CREWCONVN	nordkap	3	10703	B	US	CREWCONV	Core destroyed	257	0	2470	390
+CREWCONVN_nordkap_g4	CREWCONVN	nordkap	4	10704	A	OPP	_v488beltbreak2	Core destroyed	298	0	1790	4560
+CREWCONVN_nordkap_g5	CREWCONVN	nordkap	5	10705	B	OPP	_v488beltbreak2	Core destroyed	686	0	5610	9240
+CREWCONVN_atoll_g0	CREWCONVN	atoll	0	10700	A	US	CREWCONV	Core destroyed	461	0	2330	630
+CREWCONVN_atoll_g1	CREWCONVN	atoll	1	10701	B	OPP	_v488beltbreak2	Core destroyed	129	0	300	1040
+CREWCONVN_atoll_g2	CREWCONVN	atoll	2	10702	A	US	CREWCONV	Core destroyed	175	0	840	260
+CREWCONVN_atoll_g3	CREWCONVN	atoll	3	10703	B	US	CREWCONV	Core destroyed	261	0	730	400
+CREWCONVN_atoll_g4	CREWCONVN	atoll	4	10704	A	OPP	_v488beltbreak2	Core destroyed	214	0	290	1890
+CREWCONVN_atoll_g5	CREWCONVN	atoll	5	10705	B	OPP	_v488beltbreak2	Core destroyed	204	0	410	1800
+CREWCONVN_midgard_g0	CREWCONVN	midgard	0	10700	A	OPP	_v488beltbreak2	Core destroyed	594	0	4570	6450
+CREWCONVN_midgard_g1	CREWCONVN	midgard	1	10701	B	OPP	_v488beltbreak2	Core destroyed	281	0	870	3620
+CREWCONVN_midgard_g2	CREWCONVN	midgard	2	10702	A	OPP	_v488beltbreak2	Core destroyed	404	0	1370	3080
+CREWCONVN_midgard_g3	CREWCONVN	midgard	3	10703	B	OPP	_v488beltbreak2	Core destroyed	597	0	4480	4880
+CREWCONVN_midgard_g4	CREWCONVN	midgard	4	10704	A	OPP	_v488beltbreak2	Core destroyed	150	0	550	1330
+CREWCONVN_midgard_g5	CREWCONVN	midgard	5	10705	B	OPP	_v488beltbreak2	Core destroyed	198	0	520	2320
+CREWCONVN_drakkarfjord_g0	CREWCONVN	drakkarfjord	0	10700	A	OPP	_v488beltbreak2	Core destroyed	278	0	100	850
+CREWCONVN_drakkarfjord_g1	CREWCONVN	drakkarfjord	1	10701	B	OPP	_v488beltbreak2	Core destroyed	808	0	350	2910
+CREWCONVN_drakkarfjord_g2	CREWCONVN	drakkarfjord	2	10702	A	US	CREWCONV	Core destroyed	258	0	160	120
+CREWCONVN_drakkarfjord_g3	CREWCONVN	drakkarfjord	3	10703	B	OPP	_v488beltbreak2	Titanium collected (tiebreak)	1000	0	190	660
+CREWCONVN_drakkarfjord_g4	CREWCONVN	drakkarfjord	4	10704	A	US	CREWCONV	Core destroyed	209	0	920	190
+CREWCONVN_drakkarfjord_g5	CREWCONVN	drakkarfjord	5	10705	B	OPP	_v488beltbreak2	Core destroyed	317	0	310	3100

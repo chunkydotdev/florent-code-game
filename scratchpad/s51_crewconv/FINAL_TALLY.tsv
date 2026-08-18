@@ -1,0 +1,21 @@
+=== OVERALL ===
+arm	n	wins	win%	hw	k<=300	k300%	hw	ourcore_dead	r1000	med_kill	tb
+CARRIER	450	235	52.2	4.6	126	28.0	4.1	192	60	219.0	0
+CREWCONV	450	208	46.2	4.6	121	26.9	4.1	219	52	232	0
+
+DELTA (CREWCONV - CARRIER):
+  wins    -6.0pp  half-width 6.5
+  k<=300  -1.1pp  half-width 5.8
+
+=== PER-MAP ===
+map	arm	n	wins	win%	k<=300	k300%	ourcore_dead	med_kill
+atoll	CARRIER	90	38	42.2	14	15.6	47	332.0
+atoll	CREWCONV	90	31	34.4	16	17.8	53	294.0
+drakkarfjord	CARRIER	90	63	70.0	43	47.8	20	187
+drakkarfjord	CREWCONV	90	60	66.7	33	36.7	27	241
+glacierkeep	CARRIER	90	71	78.9	41	45.6	16	193.0
+glacierkeep	CREWCONV	90	69	76.7	38	42.2	10	227.0
+midgard	CARRIER	90	15	16.7	6	6.7	70	379
+midgard	CREWCONV	90	6	6.7	1	1.1	82	427.0
+nordkap	CARRIER	90	48	53.3	22	24.4	39	303.0
+nordkap	CREWCONV	90	42	46.7	33	36.7	47	193.5

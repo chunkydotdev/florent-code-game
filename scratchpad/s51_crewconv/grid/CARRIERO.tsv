@@ -1,0 +1,31 @@
+tag	arm	map	g	seed	ord	ours	winner	cond	turn	tracebacks	ours_mined	opp_mined
+CARRIERO_glacierkeep_g0	CARRIERO	glacierkeep	0	10800	A	US	CARRIER	Core destroyed	269	0	230	0
+CARRIERO_glacierkeep_g1	CARRIERO	glacierkeep	1	10801	B	US	CARRIER	Core destroyed	440	0	10	210
+CARRIERO_glacierkeep_g2	CARRIERO	glacierkeep	2	10802	A	US	CARRIER	Titanium collected (tiebreak)	1000	0	310	0
+CARRIERO_glacierkeep_g3	CARRIERO	glacierkeep	3	10803	B	US	CARRIER	Core destroyed	165	0	190	0
+CARRIERO_glacierkeep_g4	CARRIERO	glacierkeep	4	10804	A	US	CARRIER	Core destroyed	155	0	330	0
+CARRIERO_glacierkeep_g5	CARRIERO	glacierkeep	5	10805	B	US	CARRIER	Core destroyed	209	0	70	0
+CARRIERO_nordkap_g0	CARRIERO	nordkap	0	10800	A	US	CARRIER	Core destroyed	265	0	800	120
+CARRIERO_nordkap_g1	CARRIERO	nordkap	1	10801	B	US	CARRIER	Titanium collected (tiebreak)	1000	0	180	0
+CARRIERO_nordkap_g2	CARRIERO	nordkap	2	10802	A	US	CARRIER	Core destroyed	420	0	1780	2060
+CARRIERO_nordkap_g3	CARRIERO	nordkap	3	10803	B	OPP	_v488beltbreak2	Core destroyed	398	0	2690	7120
+CARRIERO_nordkap_g4	CARRIERO	nordkap	4	10804	A	OPP	_v488beltbreak2	Core destroyed	221	0	140	2240
+CARRIERO_nordkap_g5	CARRIERO	nordkap	5	10805	B	US	CARRIER	Core destroyed	653	0	240	90
+CARRIERO_atoll_g0	CARRIERO	atoll	0	10800	A	US	CARRIER	Titanium collected (tiebreak)	1000	0	5030	3700
+CARRIERO_atoll_g1	CARRIERO	atoll	1	10801	B	US	CARRIER	Core destroyed	186	0	900	590
+CARRIERO_atoll_g2	CARRIERO	atoll	2	10802	A	US	CARRIER	Titanium collected (tiebreak)	1000	0	4970	2420
+CARRIERO_atoll_g3	CARRIERO	atoll	3	10803	B	US	CARRIER	Core destroyed	185	0	880	650
+CARRIERO_atoll_g4	CARRIERO	atoll	4	10804	A	US	CARRIER	Core destroyed	644	0	3190	3000
+CARRIERO_atoll_g5	CARRIERO	atoll	5	10805	B	OPP	_v488beltbreak2	Core destroyed	186	0	900	840
+CARRIERO_midgard_g0	CARRIERO	midgard	0	10800	A	OPP	_v488beltbreak2	Core destroyed	199	0	440	1770
+CARRIERO_midgard_g1	CARRIERO	midgard	1	10801	B	OPP	_v488beltbreak2	Core destroyed	173	0	550	1810
+CARRIERO_midgard_g2	CARRIERO	midgard	2	10802	A	US	CARRIER	Core destroyed	376	0	3570	1470
+CARRIERO_midgard_g3	CARRIERO	midgard	3	10803	B	OPP	_v488beltbreak2	Core destroyed	184	0	550	1670
+CARRIERO_midgard_g4	CARRIERO	midgard	4	10804	A	US	CARRIER	Core destroyed	379	0	2530	1300
+CARRIERO_midgard_g5	CARRIERO	midgard	5	10805	B	US	CARRIER	Core destroyed	113	0	700	990
+CARRIERO_drakkarfjord_g0	CARRIERO	drakkarfjord	0	10800	A	US	CARRIER	Core destroyed	187	0	1160	0
+CARRIERO_drakkarfjord_g1	CARRIERO	drakkarfjord	1	10801	B	US	CARRIER	Titanium collected (tiebreak)	1000	0	610	0
+CARRIERO_drakkarfjord_g2	CARRIERO	drakkarfjord	2	10802	A	US	CARRIER	Core destroyed	209	0	1010	540
+CARRIERO_drakkarfjord_g3	CARRIERO	drakkarfjord	3	10803	B	OPP	_v488beltbreak2	Core destroyed	553	0	350	5780
+CARRIERO_drakkarfjord_g4	CARRIERO	drakkarfjord	4	10804	A	US	CARRIER	Core destroyed	153	0	460	380
+CARRIERO_drakkarfjord_g5	CARRIERO	drakkarfjord	5	10805	B	US	CARRIER	Titanium collected (tiebreak)	1000	0	440	150

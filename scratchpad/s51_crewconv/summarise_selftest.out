@@ -1,0 +1,4 @@
+arm	n	wins	win%	k<=300	k300%	ourcore_dead	med_kill	tb
+allloss	5	0	0.0	0	0.0	5	-1	0
+allwin	5	5	100.0	5	100.0	0	100	0
+latewin	3	3	100.0	0	0.0	0	700	0

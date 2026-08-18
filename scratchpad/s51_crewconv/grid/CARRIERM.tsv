@@ -1,0 +1,31 @@
+tag	arm	map	g	seed	ord	ours	winner	cond	turn	tracebacks	ours_mined	opp_mined
+CARRIERM_glacierkeep_g0	CARRIERM	glacierkeep	0	10600	A	US	CARRIER	Core destroyed	336	0	3290	0
+CARRIERM_glacierkeep_g1	CARRIERM	glacierkeep	1	10601	B	US	CARRIER	Core destroyed	157	0	170	0
+CARRIERM_glacierkeep_g2	CARRIERM	glacierkeep	2	10602	A	US	CARRIER	Core destroyed	171	0	540	0
+CARRIERM_glacierkeep_g3	CARRIERM	glacierkeep	3	10603	B	US	CARRIER	Core destroyed	173	0	190	0
+CARRIERM_glacierkeep_g4	CARRIERM	glacierkeep	4	10604	A	US	CARRIER	Core destroyed	237	0	150	0
+CARRIERM_glacierkeep_g5	CARRIERM	glacierkeep	5	10605	B	US	CARRIER	Titanium collected (tiebreak)	1000	0	170	0
+CARRIERM_nordkap_g0	CARRIERM	nordkap	0	10600	A	US	CARRIER	Core destroyed	190	0	460	0
+CARRIERM_nordkap_g1	CARRIERM	nordkap	1	10601	B	OPP	_v488beltbreak2	Titanium collected (tiebreak)	1000	0	140	320
+CARRIERM_nordkap_g2	CARRIERM	nordkap	2	10602	A	US	CARRIER	Core destroyed	745	0	300	900
+CARRIERM_nordkap_g3	CARRIERM	nordkap	3	10603	B	US	CARRIER	Core destroyed	269	0	650	0
+CARRIERM_nordkap_g4	CARRIERM	nordkap	4	10604	A	OPP	_v488beltbreak2	Core destroyed	176	0	160	1770
+CARRIERM_nordkap_g5	CARRIERM	nordkap	5	10605	B	US	CARRIER	Core destroyed	208	0	990	150
+CARRIERM_atoll_g0	CARRIERM	atoll	0	10600	A	OPP	_v488beltbreak2	Titanium collected (tiebreak)	1000	0	2680	5050
+CARRIERM_atoll_g1	CARRIERM	atoll	1	10601	B	OPP	_v488beltbreak2	Core destroyed	437	0	2840	3000
+CARRIERM_atoll_g2	CARRIERM	atoll	2	10602	A	OPP	_v488beltbreak2	Core destroyed	241	0	660	1730
+CARRIERM_atoll_g3	CARRIERM	atoll	3	10603	B	OPP	_v488beltbreak2	Core destroyed	347	0	990	1700
+CARRIERM_atoll_g4	CARRIERM	atoll	4	10604	A	OPP	_v488beltbreak2	Core destroyed	321	0	1570	2680
+CARRIERM_atoll_g5	CARRIERM	atoll	5	10605	B	US	CARRIER	Core destroyed	588	0	2930	1330
+CARRIERM_midgard_g0	CARRIERM	midgard	0	10600	A	OPP	_v488beltbreak2	Core destroyed	199	0	570	1610
+CARRIERM_midgard_g1	CARRIERM	midgard	1	10601	B	OPP	_v488beltbreak2	Core destroyed	159	0	500	1810
+CARRIERM_midgard_g2	CARRIERM	midgard	2	10602	A	US	CARRIER	Core destroyed	466	0	3850	5390
+CARRIERM_midgard_g3	CARRIERM	midgard	3	10603	B	OPP	_v488beltbreak2	Core destroyed	530	0	550	3440
+CARRIERM_midgard_g4	CARRIERM	midgard	4	10604	A	OPP	_v488beltbreak2	Core destroyed	222	0	1020	1520
+CARRIERM_midgard_g5	CARRIERM	midgard	5	10605	B	OPP	_v488beltbreak2	Core destroyed	130	0	590	1340
+CARRIERM_drakkarfjord_g0	CARRIERM	drakkarfjord	0	10600	A	OPP	_v488beltbreak2	Core destroyed	588	0	440	2490
+CARRIERM_drakkarfjord_g1	CARRIERM	drakkarfjord	1	10601	B	US	CARRIER	Core destroyed	161	0	700	0
+CARRIERM_drakkarfjord_g2	CARRIERM	drakkarfjord	2	10602	A	US	CARRIER	Core destroyed	389	0	4040	750
+CARRIERM_drakkarfjord_g3	CARRIERM	drakkarfjord	3	10603	B	US	CARRIER	Core destroyed	123	0	440	0
+CARRIERM_drakkarfjord_g4	CARRIERM	drakkarfjord	4	10604	A	US	CARRIER	Core destroyed	205	0	920	290
+CARRIERM_drakkarfjord_g5	CARRIERM	drakkarfjord	5	10605	B	OPP	_v488beltbreak2	Core destroyed	359	0	420	3020

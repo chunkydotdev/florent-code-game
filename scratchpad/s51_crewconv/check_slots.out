@@ -1,0 +1,16 @@
+=== CARRIER (scratchpad/s51_v515_build/arms/CARRIER) ===
+  FS_CREW_ON       = False
+  FS_CREW_CONVERT  = False
+  LOKI_FERRY_ON    = True
+  FERRY_HOME_ON    = True  <-- should be False when FS_CREW_ON True + FS_V514_RELAY True
+  FS_SUPP_SLOT     = 10
+  SLOT_FERRY_ID    = 10
+  TWO-WRITER COLLISION ON SLOT 10: False
+=== CREWCONV (scratchpad/s51_v515_build/arms/CREWCONV) ===
+  FS_CREW_ON       = True
+  FS_CREW_CONVERT  = True
+  LOKI_FERRY_ON    = True
+  FERRY_HOME_ON    = True  <-- should be False when FS_CREW_ON True + FS_V514_RELAY True
+  FS_SUPP_SLOT     = 10
+  SLOT_FERRY_ID    = 10
+  TWO-WRITER COLLISION ON SLOT 10: True
