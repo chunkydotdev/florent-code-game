@@ -1,0 +1,14 @@
+total games: 180 (PAR=2)
+  30/180 done
+  60/180 done
+  90/180 done
+  120/180 done
+  150/180 done
+  180/180 done
+
+=== SUMMARY (v525 vs bots/_v488beltbreak2) ===
+yulerune   n= 60 wins= 58 ( 96.7%)  forceall-basis  91.1%  delta +5.6pp  fails=0
+antler     n= 60 wins= 38 ( 63.3%)  forceall-basis  64.4%  delta -1.1pp  fails=0
+fjordgate  n= 60 wins= 45 ( 75.0%)  forceall-basis  63.3%  delta +11.7pp  fails=0
+
+parse-fails=0  tracebacks-in-stderr=0  total=180

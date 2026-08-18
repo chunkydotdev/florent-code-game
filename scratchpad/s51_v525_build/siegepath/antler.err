@@ -1,0 +1,173 @@
+Update available: 2.3.6 -> 2.3.8. Run: pip install --upgrade fcode
+FS GATE 0 sig (14, 18, (6, 4), (6, 12)) ok 1
+FS GATE 1 sig (14, 18, (6, 4), (6, 12)) ok 1
+FS PHASE 1 id 3 ph 1 d 36 at (6, 6)
+FS GATE 2 sig (14, 18, (6, 4), (6, 12)) ok 1
+FS GATE 3 sig (14, 18, (6, 4), (6, 12)) ok 1
+FS GATE 4 sig (14, 18, (6, 4), (6, 12)) ok 1
+FS PHASE 4 id 10 ph 1 d 37 at (5, 6)
+FS HOPBUILD 5 at (6, 6) lch (6, 7) T (8, 14)
+FS GATE 6 sig (14, 18, (6, 4), (6, 12)) ok 1
+FS SPLIT 6 arc 2 to (5, 12) body 3 walk 1
+FS ARRIVE 7 id 3 body 1 at (5, 12) dsq 1
+FS PHASE 7 id 3 ph 2 d 1 at (5, 12)
+FS SEAL 7 tile (5, 13) n 1
+FS SPLIT 7 arc 1 to (6, 11) body 10 walk 0
+FS SEAL 8 tile (5, 11) n 2
+FS ARRIVE 8 id 10 body 2 at (6, 11) dsq 1
+FS PHASE 8 id 10 ph 2 d 1 at (6, 11)
+FS SEAL 8 tile (7, 11) n 1
+FS GATE 9 sig (14, 18, (6, 4), (6, 12)) ok 1
+FS SEAL 10 tile (6, 11) n 2
+FS EVICTOR 15 at (8, 11) ucov 0 cov 1 unseal 2 obs 6
+FS RUNG 15 id 10 r 2 hi -
+FS GATE 16 sig (14, 18, (6, 4), (6, 12)) ok 1
+FS STAT 20 id 3 at (5, 12) need 4 orth 4 ti 98 ammo 24 sen 0 hp 40 covden 0 eco 1 lost 0
+FS STAT 20 id 10 at (8, 10) need 4 orth 4 ti 96 ammo 24 sen 0 hp 40 covden 0 eco 1 lost 0
+FS EVICT 23 from (9, 10) to (9, 16)
+FS EVICT 31 from (9, 10) to (8, 16)
+FS GATE 34 sig (14, 18, (6, 4), (6, 12)) ok 1
+FS EVICTOR 36 at (5, 14) ucov 1 cov 3 unseal 2 obs 8
+FS RUNG 36 id 10 r 2 hi -
+FS GATE 37 sig (14, 18, (6, 4), (6, 12)) ok 1
+FS EVICT 37 from (5, 15) to (1, 17)
+FS STAT 40 id 3 at (5, 12) need 4 orth 3 ti 128 ammo 24 sen 0 hp 40 covden 4 eco 1 lost 0
+FS STAT 40 id 10 at (6, 15) need 4 orth 3 ti 127 ammo 24 sen 0 hp 40 covden 4 eco 1 lost 0
+FS CLEAR 40 tile (6, 14) peck 1
+FS RUNG 40 id 10 r 3 hi -
+FS CLEAR 41 tile (6, 14) peck 2
+FS RUNG 41 id 10 r 3 hi -
+FS CLEAR 42 tile (6, 14) peck 3
+FS RUNG 42 id 10 r 3 hi -
+FS EVICT 42 from (4, 15) to (10, 14)
+FS CLEAR 43 tile (6, 14) peck 4
+FS RUNG 43 id 10 r 3 hi -
+FS CLEAR 44 tile (6, 14) peck 5
+FS RUNG 44 id 10 r 3 hi -
+FS CLEAR 45 tile (6, 14) peck 6
+FS RUNG 45 id 10 r 3 hi -
+FS CLEAR 46 tile (6, 14) peck 7
+FS RUNG 46 id 10 r 3 hi -
+FS CLEAR 47 tile (6, 14) peck 8
+FS RUNG 47 id 10 r 3 hi -
+FS EVICT 47 from (9, 11) to (13, 12)
+FS EVICT 48 from (6, 15) to (0, 15)
+FS CLEAR 49 tile (7, 14) peck 1
+FS RUNG 49 id 10 r 3 hi -
+FS CLEAR 50 tile (7, 14) peck 2
+FS RUNG 50 id 10 r 3 hi -
+FS CLEAR 51 tile (7, 14) peck 3
+FS RUNG 51 id 10 r 3 hi -
+FS CLEAR 52 tile (7, 14) peck 4
+FS RUNG 52 id 10 r 3 hi -
+FS EVICT 52 from (9, 11) to (13, 12)
+FS EVICT 52 from (4, 15) to (10, 14)
+FS CLEAR 53 tile (7, 14) peck 5
+FS RUNG 53 id 10 r 3 hi -
+FS CLEAR 54 tile (7, 14) peck 6
+FS RUNG 54 id 10 r 3 hi -
+FS CLEAR 55 tile (7, 14) peck 7
+FS RUNG 55 id 10 r 3 hi -
+FS CLEAR 56 tile (7, 14) peck 8
+FS RUNG 56 id 10 r 3 hi -
+FS EVICT 56 from (9, 11) to (13, 12)
+FS CLEAR 58 tile (6, 14) peck 1
+FS RUNG 58 id 10 r 3 hi -
+FS CLEAR 59 tile (6, 14) peck 2
+FS RUNG 59 id 10 r 3 hi -
+FS EVICT 59 from (9, 10) to (9, 16)
+FS STAT 60 id 3 at (5, 12) need 4 orth 4 ti 181 ammo 24 sen 0 hp 40 covden 23 eco 1 lost 0
+FS CLEARED 60 tile (6, 14) n 1
+FS STAT 60 id 10 at (7, 14) need 4 orth 4 ti 180 ammo 24 sen 0 hp 40 covden 23 eco 1 lost 0
+FS SEAL 60 tile (6, 14) n 3
+FS SEALCLR 60 tile (6, 14) lag 0
+FS EVICT 61 from (9, 11) to (13, 12)
+FS SENTINEL 62 at (8, 15) face NORTHWEST tgt (6, 13) score 8 n 1 onring 0 lost 0 gate (1, 1, 7) onsray 0 olddsq -1
+FS PHASE 63 id 3 ph 5 d 1 at (5, 12)
+FS PHASE 63 id 10 ph 5 d 2 at (8, 14)
+FS SEAL 63 tile (8, 13) n 4
+FS GATE 63 sig (14, 18, (6, 4), (6, 12)) ok 1
+FS CLEAR 64 tile (7, 14) peck 1
+FS RUNG 64 id 10 r 3 hi -
+FS GATE 64 sig (14, 18, (6, 4), (6, 12)) ok 1
+FS CLEAR 65 tile (7, 14) peck 2
+FS RUNG 65 id 10 r 3 hi -
+FS EVICT 65 from (6, 15) to (0, 15)
+FS GATE 65 sig (14, 18, (6, 4), (6, 12)) ok 1
+FS CLEARED 66 tile (7, 14) n 2
+FS SEAL 66 tile (7, 14) n 5
+FS SEALCLR 66 tile (7, 14) lag 0
+FS EVICT 66 from (9, 11) to (13, 12)
+FS GATE 66 sig (14, 18, (6, 4), (6, 12)) ok 1
+FS GATE 67 sig (14, 18, (6, 4), (6, 12)) ok 1
+FS GATE 68 sig (14, 18, (6, 4), (6, 12)) ok 1
+FS EVICT 69 from (4, 15) to (10, 14)
+FS GATE 69 sig (14, 18, (6, 4), (6, 12)) ok 1
+FS GATE 70 sig (14, 18, (6, 4), (6, 12)) ok 1
+FS EVICT 71 from (9, 11) to (13, 12)
+FS GATE 71 sig (14, 18, (6, 4), (6, 12)) ok 1
+FS GATE 72 sig (14, 18, (6, 4), (6, 12)) ok 1
+FS EVICT 73 from (9, 11) to (13, 12)
+FS GATE 73 sig (14, 18, (6, 4), (6, 12)) ok 1
+FS GATE 74 sig (14, 18, (6, 4), (6, 12)) ok 1
+FS GATE 75 sig (14, 18, (6, 4), (6, 12)) ok 1
+FS EVICT 76 from (9, 11) to (13, 12)
+FS GATE 76 sig (14, 18, (6, 4), (6, 12)) ok 1
+FS GATE 77 sig (14, 18, (6, 4), (6, 12)) ok 1
+FS EVICT 78 from (9, 11) to (13, 12)
+FS GATE 78 sig (14, 18, (6, 4), (6, 12)) ok 1
+FS GATE 79 sig (14, 18, (6, 4), (6, 12)) ok 1
+FS STAT 80 id 3 at (5, 12) need 1 orth 1 ti 16 ammo 139 sen 1 hp 40 covden 23 eco 1 lost 0
+FS STAT 80 id 10 at (8, 14) need 1 orth 1 ti 15 ammo 139 sen 1 hp 40 covden 23 eco 1 lost 0
+FS GATE 80 sig (14, 18, (6, 4), (6, 12)) ok 1
+FS GATE 81 sig (14, 18, (6, 4), (6, 12)) ok 1
+FS GATE 82 sig (14, 18, (6, 4), (6, 12)) ok 1
+FS EVICT 83 from (9, 11) to (13, 12)
+FS GATE 83 sig (14, 18, (6, 4), (6, 12)) ok 1
+FS GATE 84 sig (14, 18, (6, 4), (6, 12)) ok 1
+FS GATE 85 sig (14, 18, (6, 4), (6, 12)) ok 1
+FS GATE 86 sig (14, 18, (6, 4), (6, 12)) ok 1
+FS GATE 87 sig (14, 18, (6, 4), (6, 12)) ok 1
+FS GATE 88 sig (14, 18, (6, 4), (6, 12)) ok 1
+FS EVICT 89 from (9, 10) to (9, 16)
+FS GATE 89 sig (14, 18, (6, 4), (6, 12)) ok 1
+FS GATE 90 sig (14, 18, (6, 4), (6, 12)) ok 1
+FS GATE 91 sig (14, 18, (6, 4), (6, 12)) ok 1
+FS GATE 92 sig (14, 18, (6, 4), (6, 12)) ok 1
+FS EVICT 93 from (9, 11) to (13, 12)
+FS EVICT 93 from (6, 15) to (0, 15)
+FS GATE 93 sig (14, 18, (6, 4), (6, 12)) ok 1
+FS GATE 94 sig (14, 18, (6, 4), (6, 12)) ok 1
+FS GATE 95 sig (14, 18, (6, 4), (6, 12)) ok 1
+FS GATE 96 sig (14, 18, (6, 4), (6, 12)) ok 1
+FS EVICT 97 from (4, 15) to (10, 14)
+FS GATE 97 sig (14, 18, (6, 4), (6, 12)) ok 1
+FS EVICT 98 from (9, 11) to (13, 12)
+FS GATE 98 sig (14, 18, (6, 4), (6, 12)) ok 1
+FS GATE 99 sig (14, 18, (6, 4), (6, 12)) ok 1
+FS STAT 100 id 3 at (5, 12) need 1 orth 1 ti 61 ammo 163 sen 1 hp 40 covden 23 eco 1 lost 0
+FS STAT 100 id 10 at (8, 14) need 1 orth 1 ti 61 ammo 163 sen 1 hp 40 covden 23 eco 1 lost 0
+FS GATE 100 sig (14, 18, (6, 4), (6, 12)) ok 1
+FS EVICT 101 from (9, 11) to (13, 12)
+FS GATE 101 sig (14, 18, (6, 4), (6, 12)) ok 1
+FS GATE 102 sig (14, 18, (6, 4), (6, 12)) ok 1
+FS EVICT 103 from (9, 11) to (13, 12)
+FS GATE 103 sig (14, 18, (6, 4), (6, 12)) ok 1
+FS GATE 104 sig (14, 18, (6, 4), (6, 12)) ok 1
+FS GATE 105 sig (14, 18, (6, 4), (6, 12)) ok 1
+FS EVICT 106 from (9, 11) to (13, 12)
+FS GATE 106 sig (14, 18, (6, 4), (6, 12)) ok 1
+FS GATE 107 sig (14, 18, (6, 4), (6, 12)) ok 1
+FS EVICT 108 from (9, 11) to (13, 12)
+FS GATE 108 sig (14, 18, (6, 4), (6, 12)) ok 1
+FS GATE 109 sig (14, 18, (6, 4), (6, 12)) ok 1
+FS GATE 110 sig (14, 18, (6, 4), (6, 12)) ok 1
+FS EVICT 111 from (9, 11) to (13, 12)
+FS GATE 111 sig (14, 18, (6, 4), (6, 12)) ok 1
+FS GATE 112 sig (14, 18, (6, 4), (6, 12)) ok 1
+FS GATE 113 sig (14, 18, (6, 4), (6, 12)) ok 1
+FS GATE 114 sig (14, 18, (6, 4), (6, 12)) ok 1
+FS GATE 115 sig (14, 18, (6, 4), (6, 12)) ok 1
+FS GATE 116 sig (14, 18, (6, 4), (6, 12)) ok 1
+FS EVICT 117 from (9, 10) to (9, 16)
+FS GATE 117 sig (14, 18, (6, 4), (6, 12)) ok 1
