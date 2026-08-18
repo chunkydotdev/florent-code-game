@@ -27,6 +27,22 @@ successor session inherit it. The fields below are parsed; the prose is not.
     SHIP_SIT_MIN_K: 8
     X3R0_SLOT_RULE: on_60pct_pm2pp_screen_vs_holder_switch_if_beats
     SLOT_STOP_LOSS: off
+    SHIP_BAR: 70pct_vs_incumbent_full_pool_powered_n
+
+## SHIP_BAR ADDED 2026-08-18 (Magnus, direct, in-session — s51)
+
+**Verbatim: "We're looking for a 70+ build before we ship this time."**
+Operational form (builder s51, on the record in the coordination tail
+~06:2xZ): **no ship conversation until a candidate reads ≥70% game share vs
+the PROGRAMME INCUMBENT (`bots/_v488beltbreak2`) on the standard full-pool
+local fixture at powered n.** Non-arming reads: a 5-map grid, any sub-2700
+partial, any read vs a non-incumbent control. The 55.0 COMBO floor is a
+shard-survival constant, not a ship signal under this bar.
+**WHICH BAR GOVERNS WHICH QUESTION** (they are different questions):
+`SHIP_BAR` (70+) governs SHIPPING A NEW BUILD of ours; `X3R0_SLOT_RULE`'s
+60±2 governs RECLAIMING THE SLOT from a teammate's holder with an EXISTING
+measured build. Neither authorizes an activation by itself — the slot changes
+only on Magnus's explicit word (SLOT_STOP_LOSS block above).
 
 ## SLOT_STOP_LOSS RETIRED 2026-08-16 (Magnus, direct, in-session)
 
