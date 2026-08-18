@@ -1,0 +1,37 @@
+tag	arm	map	g	seed	ord	ours	winner	cond	turn	tracebacks	ours_mined	opp_mined
+g2_v512_archipelago_g0	g2_v512	archipelago	0	8200	A	US	_v512ringladder	Core destroyed	178	0	1630	430
+g2_v512_archipelago_g1	g2_v512	archipelago	1	8201	B	US	_v512ringladder	Core destroyed	140	0	1220	760
+g2_v512_archipelago_g2	g2_v512	archipelago	2	8202	A	OPP	_v468kladturbo	Core destroyed	209	0	1480	1480
+g2_v512_archipelago_g3	g2_v512	archipelago	3	8203	B	OPP	_v468kladturbo	Core destroyed	604	0	3130	3020
+g2_v512_archipelago_g4	g2_v512	archipelago	4	8204	A	US	_v512ringladder	Core destroyed	116	0	960	640
+g2_v512_archipelago_g5	g2_v512	archipelago	5	8205	B	US	_v512ringladder	Core destroyed	209	0	2210	490
+g2_v512_archipelago_g6	g2_v512	archipelago	6	8206	A	US	_v512ringladder	Core destroyed	489	0	2500	1430
+g2_v512_archipelago_g7	g2_v512	archipelago	7	8207	B	OPP	_v468kladturbo	Titanium collected (tiebreak)	1000	0	4980	4990
+g2_v512_archipelago_g8	g2_v512	archipelago	8	8208	A	US	_v512ringladder	Core destroyed	91	0	600	750
+g2_v512_archipelago_g9	g2_v512	archipelago	9	8209	B	US	_v512ringladder	Core destroyed	171	0	1700	600
+g2_v512_archipelago_g10	g2_v512	archipelago	10	8210	A	US	_v512ringladder	Core destroyed	248	0	2660	830
+g2_v512_archipelago_g11	g2_v512	archipelago	11	8211	B	US	_v512ringladder	Core destroyed	249	0	1780	1260
+g2_v512_archipelago_g12	g2_v512	archipelago	12	8212	A	US	_v512ringladder	Core destroyed	581	0	2970	2880
+g2_v512_archipelago_g13	g2_v512	archipelago	13	8213	B	OPP	_v468kladturbo	Core destroyed	183	0	1250	2090
+g2_v512_archipelago_g14	g2_v512	archipelago	14	8214	A	US	_v512ringladder	Core destroyed	174	0	1200	810
+g2_v512_archipelago_g15	g2_v512	archipelago	15	8215	B	US	_v512ringladder	Core destroyed	101	0	1160	550
+g2_v512_archipelago_g16	g2_v512	archipelago	16	8216	A	US	_v512ringladder	Core destroyed	206	0	1900	830
+g2_v512_archipelago_g17	g2_v512	archipelago	17	8217	B	OPP	_v468kladturbo	Core destroyed	127	0	1170	940
+g2_v512_archipelago_g18	g2_v512	archipelago	18	8218	A	OPP	_v468kladturbo	Core destroyed	201	0	1020	1460
+g2_v512_archipelago_g19	g2_v512	archipelago	19	8219	B	US	_v512ringladder	Core destroyed	105	0	890	570
+g2_v512_archipelago_g20	g2_v512	archipelago	20	8220	A	US	_v512ringladder	Core destroyed	128	0	1110	320
+g2_v512_archipelago_g21	g2_v512	archipelago	21	8221	B	US	_v512ringladder	Core destroyed	260	0	2560	1310
+g2_v512_archipelago_g22	g2_v512	archipelago	22	8222	A	US	_v512ringladder	Core destroyed	352	0	2020	480
+g2_v512_archipelago_g23	g2_v512	archipelago	23	8223	B	US	_v512ringladder	Core destroyed	202	0	1430	1420
+g2_v512_archipelago_g24	g2_v512	archipelago	24	8224	A	OPP	_v468kladturbo	Core destroyed	385	0	2470	2250
+g2_v512_archipelago_g25	g2_v512	archipelago	25	8225	B	US	_v512ringladder	Core destroyed	233	0	2150	1180
+g2_v512_archipelago_g26	g2_v512	archipelago	26	8226	A	US	_v512ringladder	Core destroyed	280	0	2010	340
+g2_v512_archipelago_g27	g2_v512	archipelago	27	8227	B	US	_v512ringladder	Core destroyed	112	0	990	560
+g2_v512_archipelago_g28	g2_v512	archipelago	28	8228	A	OPP	_v468kladturbo	Core destroyed	215	0	690	2210
+g2_v512_archipelago_g29	g2_v512	archipelago	29	8229	B	US	_v512ringladder	Core destroyed	197	0	1310	1040
+g2_v512_archipelago_g30	g2_v512	archipelago	30	8230	A	US	_v512ringladder	Core destroyed	297	0	2140	1480
+g2_v512_archipelago_g31	g2_v512	archipelago	31	8231	B	OPP	_v468kladturbo	Core destroyed	196	0	1310	3020
+g2_v512_archipelago_g32	g2_v512	archipelago	32	8232	A	US	_v512ringladder	Core destroyed	333	0	5310	1940
+g2_v512_archipelago_g33	g2_v512	archipelago	33	8233	B	OPP	_v468kladturbo	Core destroyed	461	0	4480	2410
+g2_v512_archipelago_g34	g2_v512	archipelago	34	8234	A	US	_v512ringladder	Core destroyed	286	0	2050	1410
+g2_v512_archipelago_g35	g2_v512	archipelago	35	8235	B	US	_v512ringladder	Core destroyed	170	0	1550	1190

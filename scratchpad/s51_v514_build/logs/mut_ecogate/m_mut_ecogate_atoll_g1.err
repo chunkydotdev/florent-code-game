@@ -1,0 +1,163 @@
+Update available: 2.3.6 -> 2.3.8. Run: pip install --upgrade fcode
+FS GATE 0 sig (18, 18, (2, 14), (14, 2)) ok 1
+FS GATE 1 sig (18, 18, (2, 14), (14, 2)) ok 1
+FS PHASE 1 id 4 ph 1 d 200 at (13, 4)
+FS HOPBUILD 1 at (13, 4) lch (13, 5) T (1, 16)
+FS GATE 2 sig (18, 18, (2, 14), (14, 2)) ok 1
+FS GATE 2 sig (18, 18, (2, 14), (14, 2)) ok 1
+FS THROW 2 from (12, 4) to (9, 8) T (1, 16) body 4 n 1 dsq 72
+FS HOPBUILD 3 at (9, 8) lch (9, 9) T (1, 16)
+FS GATE 3 sig (18, 18, (2, 14), (14, 2)) ok 1
+FS GATE 4 sig (18, 18, (2, 14), (14, 2)) ok 1
+FS THROW 4 from (8, 8) to (5, 12) T (1, 16) body 4 n 1 dsq 8
+ECO514 5 harv 1 mouth 1 held 1 conn 0 deliv 1
+FS ARRIVE 5 id 4 body 1 at (5, 12) dsq 8
+FS PHASE 5 id 4 ph 2 d 8 at (5, 12)
+FS SENTINEL 5 at (5, 11) face SOUTHWEST tgt (2, 14) score 18 n 1 onring 0 lost 0 gate (0, 0, -1) onsray 0 olddsq -1
+FS RUNG 5 id 4 r 4 hi -
+FS PHASE 6 id 4 ph 5 d 8 at (5, 12)
+FS SENTINEL 6 at (6, 12) face SOUTHWEST tgt (3, 15) score -6 n 2 onring 0 lost 0 gate (0, 1, -1) onsray 0 olddsq -1
+FS RUNG 6 id 4 r 4 hi -
+FS DODGE 7 id 4 from (5, 12) to (4, 12) cov 1 -> 0 hit 0 hp 40
+FS GATE 7 sig (18, 18, (2, 14), (14, 2)) ok 1
+FS GATE 8 sig (18, 18, (2, 14), (14, 2)) ok 1
+FS SEAL 9 tile (3, 13) n 1
+ECO514 11 harv 2 mouth 1 held 0 conn 1 deliv 1
+FS SENTDEAD 12 at (5, 11) lost 1
+FS SEAL 12 tile (2, 13) n 2
+FS PHASE 15 id 4 ph 2 d 10 at (1, 11)
+FS SEAL 16 tile (1, 13) n 3
+FS DOORSEEN 18 id 20 at (12, 6) rank 1
+FS DOOR 18 id 20 at (12, 6) n 1
+FS PHASE 19 id 4 ph 5 d 9 at (2, 11)
+FS DOOR 19 id 20 at (12, 6) n 2
+FS STAT 20 id 4 at (2, 10) need 6 orth 6 ti 14 ammo 3 sen 1 hp 40 covden 0 eco 1 lost 1
+FS DOOR 20 id 20 at (12, 6) n 3
+FS PHASE 21 id 4 ph 2 d 17 at (1, 10)
+FS DOOR 21 id 20 at (12, 6) n 4
+FS PHASE 22 id 4 ph 5 d 16 at (2, 10)
+FS DOOR 22 id 20 at (12, 6) n 5
+FS DOORSEEN 23 id 6 at (12, 6) rank 0
+FS DOOR 23 id 20 at (12, 6) n 6
+FS DOOR 24 id 20 at (12, 6) n 7
+FS PHASE 25 id 4 ph 2 d 5 at (1, 12)
+FS DOOR 25 id 20 at (12, 6) n 8
+FS DOOR 26 id 20 at (12, 6) n 9
+FS DOOR 27 id 20 at (12, 6) n 10
+FS DOOR 28 id 20 at (12, 6) n 11
+FS DOOR 29 id 20 at (12, 6) n 12
+FS DOOR 30 id 20 at (12, 6) n 13
+FS DOOR 31 id 20 at (12, 6) n 14
+FS DOOR 32 id 20 at (12, 6) n 15
+FS DOOR 33 id 20 at (12, 6) n 16
+FS DOOR 34 id 20 at (12, 6) n 17
+FS DOOR 35 id 6 at (12, 6) n 1
+FS DOOR 36 id 6 at (12, 6) n 2
+FS DOOR 37 id 6 at (12, 6) n 3
+FS DOOR 37 id 20 at (12, 6) n 18
+FS DOOR 38 id 6 at (12, 6) n 4
+FS DOOR 38 id 20 at (12, 6) n 19
+FS DOOR 39 id 6 at (12, 6) n 5
+FS STAT 40 id 4 at (0, 15) need 6 orth 6 ti 12 ammo 1 sen 0 hp 40 covden 0 eco 1 lost 1
+FS DOOR 40 id 6 at (12, 6) n 6
+FS DOOR 41 id 6 at (12, 6) n 7
+FS DOOR 41 id 20 at (12, 6) n 20
+FS DOOR 42 id 6 at (12, 6) n 8
+FS DOOR 42 id 20 at (12, 6) n 21
+FS DOOR 43 id 6 at (12, 6) n 9
+FS DOOR 44 id 6 at (12, 6) n 10
+FS DOOR 45 id 6 at (12, 6) n 11
+FS DOOR 45 id 20 at (12, 6) n 22
+FS DOOR 46 id 6 at (12, 6) n 12
+FS DOOR 46 id 20 at (12, 6) n 23
+FS DOOR 47 id 6 at (12, 6) n 13
+FS DOOR 48 id 6 at (12, 6) n 14
+FS DOOR 49 id 6 at (12, 6) n 15
+FS DOOR 49 id 20 at (12, 6) n 24
+FS DOOR 50 id 6 at (12, 6) n 16
+FS DOOR 50 id 20 at (12, 6) n 25
+FS DOOR 51 id 6 at (12, 6) n 17
+FS DOOR 52 id 6 at (12, 6) n 18
+FS DOOR 53 id 6 at (12, 6) n 19
+FS DOOR 53 id 20 at (12, 6) n 26
+FS DOOR 54 id 6 at (12, 6) n 20
+FS DOOR 54 id 20 at (12, 6) n 27
+FS DOOR 55 id 6 at (12, 6) n 21
+FS DOOR 56 id 6 at (12, 6) n 22
+FS DOOR 57 id 6 at (12, 6) n 23
+FS DOOR 57 id 20 at (12, 6) n 28
+FS DOOR 58 id 6 at (12, 6) n 24
+FS DOOR 58 id 20 at (12, 6) n 29
+FS DOOR 59 id 6 at (12, 6) n 25
+FS STAT 60 id 4 at (0, 15) need 6 orth 6 ti 12 ammo 1 sen 0 hp 40 covden 0 eco 1 lost 1
+FS DOOR 60 id 6 at (12, 6) n 26
+FS DOOR 61 id 6 at (12, 6) n 27
+FS DOOR 62 id 6 at (12, 6) n 28
+FS DOOR 63 id 6 at (12, 6) n 29
+FS DOORSEEN 77 id 27 at (12, 6) rank 0
+FS STAT 80 id 4 at (0, 15) need 6 orth 6 ti 12 ammo 8 sen 0 hp 40 covden 0 eco 1 lost 1
+FS DOOR 81 id 27 at (12, 6) n 1
+FS DOOR 82 id 27 at (12, 6) n 2
+FS DOOR 83 id 27 at (12, 6) n 3
+FS DOOR 84 id 27 at (12, 6) n 4
+FS DOOR 85 id 27 at (12, 6) n 5
+FS DOOR 86 id 27 at (12, 6) n 6
+FS DOOR 87 id 27 at (12, 6) n 7
+FS DOOR 88 id 27 at (12, 6) n 8
+FS DOOR 89 id 27 at (12, 6) n 9
+FS DOOR 90 id 27 at (12, 6) n 10
+FS DOOR 91 id 27 at (12, 6) n 11
+FS DOOR 92 id 27 at (12, 6) n 12
+FS DOOR 93 id 27 at (12, 6) n 13
+FS DOOR 94 id 27 at (12, 6) n 14
+FS DOOR 95 id 27 at (12, 6) n 15
+FS DOOR 96 id 27 at (12, 6) n 16
+FS DOOR 97 id 27 at (12, 6) n 17
+FS DOOR 98 id 27 at (12, 6) n 18
+FS DOOR 99 id 27 at (12, 6) n 19
+FS STAT 100 id 4 at (0, 15) need 6 orth 6 ti 14 ammo 8 sen 0 hp 40 covden 0 eco 1 lost 1
+FS DOOR 100 id 27 at (12, 6) n 20
+FS STAT 120 id 4 at (0, 15) need 6 orth 6 ti 12 ammo 48 sen 0 hp 40 covden 0 eco 1 lost 1
+FS STAT 140 id 4 at (0, 15) need 6 orth 6 ti 30 ammo 80 sen 0 hp 40 covden 0 eco 1 lost 1
+FS DODGE 146 id 4 from (0, 15) to (1, 15) cov 1 -> 0 hit 0 hp 40
+FS SEAL 148 tile (2, 16) n 4
+FS CLEAR 149 tile (1, 15) peck 1
+FS RUNG 149 id 4 r 3 hi -
+FS CLEAR 150 tile (1, 15) peck 2
+FS RUNG 150 id 4 r 3 hi -
+FS CLEAR 151 tile (1, 15) peck 3
+FS RUNG 151 id 4 r 3 hi -
+FS CLEAR 152 tile (1, 15) peck 4
+FS RUNG 152 id 4 r 3 hi -
+FS CLEAR 153 tile (1, 15) peck 5
+FS RUNG 153 id 4 r 3 hi -
+FS DODGE 155 id 4 from (0, 16) to (1, 16) cov 1 -> 0 hit 0 hp 22
+FS DODGE 157 id 4 from (0, 16) to (1, 16) cov 1 -> 0 hit 0 hp 4
+FS DOORSEEN 212 id 27 at (17, 1) rank 0
+FS DOOR 217 id 27 at (17, 1) n 21
+FS DOOR 218 id 27 at (17, 1) n 22
+FS DOOR 219 id 27 at (17, 1) n 23
+FS DOOR 220 id 27 at (17, 1) n 24
+FS DOOR 221 id 27 at (17, 1) n 25
+FS DOOR 222 id 27 at (17, 1) n 26
+FS DOOR 223 id 27 at (17, 1) n 27
+FS DOOR 224 id 27 at (17, 1) n 28
+FS DOOR 225 id 27 at (17, 1) n 29
+FS DOOR 226 id 27 at (17, 1) n 30
+FS DOOR 227 id 27 at (17, 1) n 31
+FS DOOR 228 id 27 at (17, 1) n 32
+FS DOOR 229 id 27 at (17, 1) n 33
+FS DOOR 230 id 27 at (17, 1) n 34
+FS DOOR 231 id 27 at (17, 1) n 35
+FS DOOR 232 id 27 at (17, 1) n 36
+FS DOOR 233 id 27 at (17, 1) n 37
+FS DOOR 234 id 27 at (17, 1) n 38
+FS DOOR 235 id 27 at (17, 1) n 39
+FS DOOR 236 id 27 at (17, 1) n 40
+FS DOOR 237 id 27 at (17, 1) n 41
+FS DOOR 238 id 27 at (17, 1) n 42
+FS DOOR 239 id 27 at (17, 1) n 43
+FS DOOR 240 id 27 at (17, 1) n 44
+FS DOOR 241 id 27 at (17, 1) n 45
+FS DOOR 242 id 27 at (17, 1) n 46
+FS DOOR 243 id 27 at (17, 1) n 47

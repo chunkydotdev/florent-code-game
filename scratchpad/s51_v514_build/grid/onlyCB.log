@@ -1,0 +1,30 @@
+onlyCB_glacierkeep_g0	onlyCB	glacierkeep	0	7500	A	US	onlyC	Core destroyed	281	0	640	0
+onlyCB_glacierkeep_g1	onlyCB	glacierkeep	1	7501	B	US	onlyC	Titanium collected (tiebreak)	1000	0	50	0
+onlyCB_glacierkeep_g2	onlyCB	glacierkeep	2	7502	A	US	onlyC	Core destroyed	237	0	170	0
+onlyCB_glacierkeep_g3	onlyCB	glacierkeep	3	7503	B	US	onlyC	Core destroyed	847	0	990	0
+onlyCB_glacierkeep_g4	onlyCB	glacierkeep	4	7504	A	US	onlyC	Core destroyed	190	0	390	0
+onlyCB_glacierkeep_g5	onlyCB	glacierkeep	5	7505	B	OPP	_v488beltbreak2	Core destroyed	601	0	190	0
+onlyCB_nordkap_g0	onlyCB	nordkap	0	7500	A	OPP	_v488beltbreak2	Core destroyed	155	0	550	2080
+onlyCB_nordkap_g1	onlyCB	nordkap	1	7501	B	US	onlyC	Core destroyed	187	0	490	0
+onlyCB_nordkap_g2	onlyCB	nordkap	2	7502	A	US	onlyC	Core destroyed	417	0	2180	180
+onlyCB_nordkap_g3	onlyCB	nordkap	3	7503	B	OPP	_v488beltbreak2	Core destroyed	445	0	2920	8080
+onlyCB_nordkap_g4	onlyCB	nordkap	4	7504	A	OPP	_v488beltbreak2	Core destroyed	325	0	740	6380
+onlyCB_nordkap_g5	onlyCB	nordkap	5	7505	B	OPP	_v488beltbreak2	Titanium collected (tiebreak)	1000	0	0	550
+onlyCB_atoll_g0	onlyCB	atoll	0	7500	A	US	onlyC	Core destroyed	276	0	2380	1230
+onlyCB_atoll_g1	onlyCB	atoll	1	7501	B	OPP	_v488beltbreak2	Core destroyed	289	0	510	700
+onlyCB_atoll_g2	onlyCB	atoll	2	7502	A	US	onlyC	Core destroyed	576	0	3250	3000
+onlyCB_atoll_g3	onlyCB	atoll	3	7503	B	OPP	_v488beltbreak2	Core destroyed	173	0	730	830
+onlyCB_atoll_g4	onlyCB	atoll	4	7504	A	OPP	_v488beltbreak2	Core destroyed	149	0	490	290
+onlyCB_atoll_g5	onlyCB	atoll	5	7505	B	US	onlyC	Titanium collected (tiebreak)	1000	0	4960	4570
+onlyCB_midgard_g0	onlyCB	midgard	0	7500	A	OPP	_v488beltbreak2	Core destroyed	282	0	580	2640
+onlyCB_midgard_g1	onlyCB	midgard	1	7501	B	OPP	_v488beltbreak2	Core destroyed	200	0	680	1900
+onlyCB_midgard_g2	onlyCB	midgard	2	7502	A	US	onlyC	Core destroyed	157	0	1060	750
+onlyCB_midgard_g3	onlyCB	midgard	3	7503	B	OPP	_v488beltbreak2	Core destroyed	530	0	550	3440
+onlyCB_midgard_g4	onlyCB	midgard	4	7504	A	OPP	_v488beltbreak2	Core destroyed	216	0	390	1280
+onlyCB_midgard_g5	onlyCB	midgard	5	7505	B	OPP	_v488beltbreak2	Core destroyed	124	0	670	1560
+onlyCB_drakkarfjord_g0	onlyCB	drakkarfjord	0	7500	A	US	onlyC	Core destroyed	362	0	3960	310
+onlyCB_drakkarfjord_g1	onlyCB	drakkarfjord	1	7501	B	OPP	_v488beltbreak2	Core destroyed	963	0	360	4640
+onlyCB_drakkarfjord_g2	onlyCB	drakkarfjord	2	7502	A	US	onlyC	Core destroyed	152	0	460	0
+onlyCB_drakkarfjord_g3	onlyCB	drakkarfjord	3	7503	B	US	onlyC	Core destroyed	404	0	2720	0
+onlyCB_drakkarfjord_g4	onlyCB	drakkarfjord	4	7504	A	OPP	_v488beltbreak2	Titanium collected (tiebreak)	1000	0	490	3210
+onlyCB_drakkarfjord_g5	onlyCB	drakkarfjord	5	7505	B	US	onlyC	Core destroyed	173	0	760	0

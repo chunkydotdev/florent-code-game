@@ -1,0 +1,553 @@
+Update available: 2.3.6 -> 2.3.8. Run: pip install --upgrade fcode
+FS GATE 0 sig (18, 18, (2, 14), (14, 2)) ok 1
+FS GATE 1 sig (18, 18, (2, 14), (14, 2)) ok 1
+FS PHASE 1 id 3 ph 1 d 200 at (4, 13)
+FS HOPBUILD 1 at (4, 13) lch (4, 12) T (16, 1)
+FS GATE 2 sig (18, 18, (2, 14), (14, 2)) ok 1
+FS GATE 2 sig (18, 18, (2, 14), (14, 2)) ok 1
+FS THROW 2 from (5, 13) to (8, 9) T (16, 1) body 3 n 1 dsq 72
+FS HOPBUILD 3 at (8, 9) lch (8, 8) T (16, 1)
+FS GATE 3 sig (18, 18, (2, 14), (14, 2)) ok 1
+FS GATE 4 sig (18, 18, (2, 14), (14, 2)) ok 1
+FS THROW 4 from (9, 9) to (12, 5) T (16, 1) body 3 n 1 dsq 8
+FS ARRIVE 5 id 3 body 1 at (12, 5) dsq 8
+FS PHASE 5 id 3 ph 2 d 8 at (12, 5)
+FS SEAL 7 tile (13, 3) n 1
+FS GATE 7 sig (18, 18, (2, 14), (14, 2)) ok 1
+FS DODGE 8 id 3 from (13, 4) to (13, 5) cov 1 -> 0 hit 0 hp 40
+FS GATE 8 sig (18, 18, (2, 14), (14, 2)) ok 1
+FS EVICTOR 9 at (14, 5) ucov 0 cov 1 unseal 2 obs 6
+FS RUNG 9 id 3 r 2 hi -
+FS GATE 10 sig (18, 18, (2, 14), (14, 2)) ok 1
+FS EVICT 10 from (13, 4) to (13, 10)
+FS SENTINEL 12 at (14, 7) face NORTH tgt (14, 2) score 25 n 1 onring 0 lost 0 onsray 0 olddsq -1
+FS RUNG 12 id 3 r 4 hi -
+FS PHASE 13 id 3 ph 5 d 9 at (14, 6)
+FS EVICT 13 from (15, 4) to (13, 10)
+PROBE SENTSUICIDE 13 at (14, 7)
+FS PHASE 14 id 3 ph 2 d 9 at (15, 6)
+FS SENTDEAD 14 at (14, 7) lost 1
+FS SEAL 15 tile (15, 4) n 2
+FS DODGE 18 id 3 from (16, 4) to (16, 3) cov 1 -> 0 hit 0 hp 22
+FS EVICT 18 from (14, 6) to (13, 0)
+FS SEAL 19 tile (16, 2) n 3
+FS STAT 20 id 3 at (16, 3) need 6 orth 5 ti 97 ammo 24 sen 0 hp 22 covden 0 eco 1 lost 1
+FS SEAL 21 tile (16, 3) n 4
+FS EVICT 23 from (13, 4) to (13, 10)
+FS SEAL 26 tile (16, 3) n 5
+FS SEAL 30 tile (16, 3) n 6
+FS SEAL 34 tile (16, 3) n 7
+FS STAT 40 id 3 at (16, 1) need 7 orth 6 ti 28 ammo 45 sen 0 hp 22 covden 0 eco 1 lost 1
+FS EVICT 40 from (13, 4) to (13, 10)
+FS EVICT 46 from (15, 6) to (9, 5)
+FS EVICT 50 from (13, 5) to (13, 10)
+FS CLEAR 54 tile (15, 1) peck 1
+FS RUNG 54 id 3 r 3 hi -
+FS CLEAR 55 tile (15, 1) peck 2
+FS RUNG 55 id 3 r 3 hi -
+FS CLEAR 56 tile (15, 1) peck 3
+FS RUNG 56 id 3 r 3 hi -
+FS EVICT 56 from (15, 6) to (9, 5)
+FS EVICT 57 from (14, 6) to (14, 0)
+FS STAT 60 id 3 at (16, 1) need 7 orth 6 ti 20 ammo 60 sen 0 hp 22 covden 0 eco 1 lost 1
+FS EVICT 60 from (13, 5) to (13, 10)
+FS EVICT 64 from (13, 4) to (13, 10)
+FS EVICT 66 from (15, 6) to (9, 5)
+FS CLEAR 68 tile (15, 1) peck 1
+FS RUNG 68 id 3 r 3 hi -
+FS EVICT 70 from (13, 5) to (13, 10)
+FS EVICT 71 from (14, 6) to (14, 0)
+FS CLEAR 72 tile (15, 1) peck 1
+FS RUNG 72 id 3 r 3 hi -
+FS CLEAR 73 tile (15, 1) peck 2
+FS RUNG 73 id 3 r 3 hi -
+FS CLEAR 74 tile (15, 1) peck 3
+FS RUNG 74 id 3 r 3 hi -
+FS CLEAR 75 tile (15, 1) peck 4
+FS RUNG 75 id 3 r 3 hi -
+FS CLEAR 76 tile (15, 1) peck 5
+FS RUNG 76 id 3 r 3 hi -
+FS EVICT 76 from (15, 6) to (9, 5)
+FS STAT 80 id 3 at (16, 1) need 7 orth 6 ti 13 ammo 56 sen 0 hp 22 covden 0 eco 1 lost 1
+FS EVICT 80 from (13, 5) to (13, 10)
+FS EVICT 81 from (13, 4) to (13, 10)
+FS EVICT 82 from (15, 6) to (9, 5)
+FS EVICT 86 from (13, 5) to (13, 10)
+FS EVICT 87 from (15, 6) to (9, 5)
+FS EVICT 88 from (14, 6) to (14, 0)
+FS EVICT 91 from (13, 5) to (13, 10)
+FS EVICT 92 from (15, 6) to (9, 5)
+FS EVICT 95 from (13, 4) to (13, 10)
+FS EVICT 96 from (13, 5) to (13, 10)
+FS EVICT 97 from (15, 6) to (9, 5)
+FS STAT 100 id 3 at (15, 0) need 8 orth 7 ti 79 ammo 60 sen 0 hp 4 covden 0 eco 1 lost 1
+FS CLEAR 100 tile (15, 1) peck 1
+FS RUNG 100 id 3 r 3 hi -
+FS CLEAR 101 tile (15, 1) peck 2
+FS RUNG 101 id 3 r 3 hi -
+FS EVICT 101 from (14, 6) to (14, 0)
+FS EVICT 102 from (13, 5) to (13, 10)
+FS EVICT 103 from (13, 6) to (17, 1)
+FS EVICT 108 from (15, 4) to (13, 10)
+FS EVICT 109 from (13, 4) to (13, 10)
+FS EVICT 110 from (14, 6) to (14, 0)
+FS EVICT 113 from (14, 6) to (14, 0)
+FS EVICT 114 from (14, 6) to (14, 0)
+FS EVICT 120 from (15, 4) to (13, 10)
+FS EVICT 123 from (13, 4) to (13, 10)
+FS EVICT 125 from (14, 6) to (14, 0)
+FS GATE 125 sig (18, 18, (2, 14), (14, 2)) ok 1
+FS PHASE 125 id 204 ph 1 d 338 at (1, 16)
+FS EVICT 128 from (14, 6) to (14, 0)
+FS HOPBUILD 128 at (0, 14) lch (0, 13) T (16, 1)
+FS GATE 129 sig (18, 18, (2, 14), (14, 2)) ok 1
+FS THROW 129 from (1, 14) to (4, 10) T (16, 1) body 204 n 1 dsq 149
+FS EVICT 133 from (15, 4) to (13, 10)
+FS EVICT 134 from (15, 4) to (13, 10)
+FS EVICT 135 from (13, 4) to (13, 10)
+FS HOPBUILD 136 at (5, 5) lch (6, 5) T (16, 1)
+FS GATE 137 sig (18, 18, (2, 14), (14, 2)) ok 1
+FS THROW 137 from (5, 4) to (10, 2) T (16, 1) body 204 n 1 dsq 16
+FS EVICT 139 from (14, 6) to (14, 0)
+FS EVICT 140 from (14, 6) to (14, 0)
+FS ARRIVE 140 id 204 body 1 at (12, 2) dsq 4
+FS PHASE 140 id 204 ph 2 d 4 at (12, 2)
+FS STAT 140 id 204 at (12, 2) need 8 orth 7 ti 30 ammo 60 sen 0 hp 40 covden 0 eco 1 lost 0
+FS DODGE 145 id 204 from (13, 2) to (13, 1) cov 2 -> 0 hit 0 hp 22
+FS EVICT 146 from (15, 4) to (13, 10)
+FS EVICT 147 from (15, 4) to (13, 10)
+FS EVICT 151 from (14, 6) to (14, 0)
+FS EVICT 152 from (14, 6) to (14, 0)
+FS SEAL 154 tile (13, 2) n 1
+FS SEAL 157 tile (13, 2) n 2
+FS EVICT 159 from (15, 4) to (13, 10)
+FS STAT 160 id 204 at (13, 1) need 8 orth 7 ti 25 ammo 60 sen 0 hp 22 covden 0 eco 1 lost 0
+FS SEAL 160 tile (13, 2) n 3
+FS EVICT 162 from (15, 4) to (13, 10)
+FS SEAL 162 tile (13, 2) n 4
+FS EVICT 164 from (14, 6) to (14, 0)
+FS SEAL 164 tile (13, 2) n 5
+FS SEAL 166 tile (13, 2) n 6
+FS EVICT 168 from (13, 6) to (17, 1)
+FS SEAL 168 tile (13, 2) n 7
+FS SEAL 170 tile (13, 2) n 8
+FS EVICT 171 from (15, 4) to (13, 10)
+FS SEAL 172 tile (13, 2) n 9
+FS EVICT 173 from (15, 4) to (13, 10)
+FS SEAL 175 tile (13, 2) n 10
+FS EVICT 176 from (14, 6) to (14, 0)
+FS SEAL 177 tile (13, 2) n 11
+FS EVICT 179 from (13, 6) to (17, 1)
+FS SEAL 179 tile (13, 2) n 12
+FS STAT 180 id 204 at (13, 1) need 7 orth 6 ti 35 ammo 60 sen 0 hp 22 covden 0 eco 1 lost 0
+FS SEAL 181 tile (13, 2) n 13
+FS EVICT 183 from (15, 4) to (13, 10)
+FS SEAL 183 tile (13, 2) n 14
+FS SEAL 185 tile (13, 2) n 15
+FS EVICT 186 from (15, 4) to (13, 10)
+FS SEAL 187 tile (13, 2) n 16
+FS EVICT 188 from (14, 6) to (14, 0)
+FS SEAL 189 tile (13, 2) n 17
+FS SEAL 191 tile (13, 2) n 18
+FS EVICT 192 from (13, 6) to (17, 1)
+FS SEAL 193 tile (13, 2) n 19
+FS EVICT 195 from (15, 4) to (13, 10)
+FS SEAL 195 tile (13, 2) n 20
+FS EVICT 197 from (15, 4) to (13, 10)
+FS SEAL 197 tile (13, 2) n 21
+FS SEAL 199 tile (13, 2) n 22
+FS EVICT 200 from (14, 6) to (14, 0)
+FS STAT 200 id 204 at (13, 1) need 7 orth 6 ti 45 ammo 60 sen 0 hp 22 covden 0 eco 1 lost 0
+FS SEAL 201 tile (13, 2) n 23
+FS EVICT 203 from (13, 6) to (17, 1)
+FS SEAL 203 tile (13, 2) n 24
+FS SEAL 205 tile (13, 2) n 25
+FS EVICT 207 from (15, 4) to (13, 10)
+FS SEAL 207 tile (13, 2) n 26
+FS SEAL 209 tile (13, 2) n 27
+FS EVICT 210 from (15, 4) to (13, 10)
+FS SEAL 211 tile (13, 2) n 28
+FS EVICT 212 from (14, 6) to (14, 0)
+FS SEAL 213 tile (13, 2) n 29
+FS SEAL 215 tile (13, 2) n 30
+FS EVICT 216 from (13, 6) to (17, 1)
+FS SEAL 218 tile (13, 2) n 31
+FS EVICT 219 from (15, 4) to (13, 10)
+FS STAT 220 id 204 at (13, 1) need 7 orth 6 ti 64 ammo 60 sen 0 hp 22 covden 0 eco 1 lost 0
+FS EVICT 221 from (15, 4) to (13, 10)
+FS SEAL 221 tile (13, 2) n 32
+FS SEAL 223 tile (13, 2) n 33
+FS EVICT 224 from (14, 6) to (14, 0)
+FS SEAL 225 tile (13, 2) n 34
+FS EVICT 227 from (13, 6) to (17, 1)
+FS SEAL 227 tile (13, 2) n 35
+FS SEAL 230 tile (13, 2) n 36
+FS EVICT 231 from (15, 4) to (13, 10)
+FS CLEAR 232 tile (14, 1) peck 1
+FS RUNG 232 id 204 r 3 hi -
+FS SEAL 233 tile (13, 2) n 37
+FS EVICT 234 from (15, 4) to (13, 10)
+FS SEAL 235 tile (13, 2) n 38
+FS EVICT 236 from (14, 6) to (14, 0)
+FS CLEAR 236 tile (14, 1) peck 1
+FS RUNG 236 id 204 r 3 hi -
+FS SEAL 237 tile (13, 2) n 39
+FS SEAL 239 tile (13, 2) n 40
+FS EVICT 240 from (13, 6) to (17, 1)
+FS STAT 240 id 204 at (13, 1) need 7 orth 6 ti 79 ammo 60 sen 0 hp 22 covden 0 eco 1 lost 0
+FS CLEAR 240 tile (14, 1) peck 1
+FS RUNG 240 id 204 r 3 hi -
+FS CLEAR 241 tile (14, 1) peck 2
+FS RUNG 241 id 204 r 3 hi -
+FS SEAL 242 tile (13, 2) n 41
+FS EVICT 243 from (15, 4) to (13, 10)
+FS CLEAR 244 tile (14, 1) peck 3
+FS RUNG 244 id 204 r 3 hi -
+FS EVICT 245 from (15, 4) to (13, 10)
+FS SEAL 245 tile (13, 2) n 42
+FS CLEAR 246 tile (14, 1) peck 4
+FS RUNG 246 id 204 r 3 hi -
+FS SEAL 247 tile (13, 2) n 43
+FS EVICT 248 from (14, 6) to (14, 0)
+FS CLEAR 248 tile (14, 1) peck 5
+FS RUNG 248 id 204 r 3 hi -
+FS SEAL 249 tile (13, 2) n 44
+FS CLEAR 250 tile (14, 1) peck 6
+FS RUNG 250 id 204 r 3 hi -
+FS EVICT 251 from (13, 6) to (17, 1)
+FS SEAL 251 tile (13, 2) n 45
+FS CLEAR 252 tile (14, 1) peck 7
+FS RUNG 252 id 204 r 3 hi -
+FS CLEAR 253 tile (14, 1) peck 8
+FS RUNG 253 id 204 r 3 hi -
+FS CLEARED 254 tile (14, 1) n 1
+FS SEAL 254 tile (14, 1) n 46
+FS SEALCLR 254 tile (14, 1) lag 0
+FS EVICT 255 from (15, 4) to (13, 10)
+FS SEAL 255 tile (13, 2) n 47
+FS SEAL 257 tile (14, 1) n 48
+FS EVICT 258 from (15, 4) to (13, 10)
+FS EVICT 260 from (14, 6) to (14, 0)
+FS STAT 260 id 204 at (13, 1) need 6 orth 5 ti 91 ammo 60 sen 0 hp 22 covden 0 eco 1 lost 0
+FS SEAL 261 tile (14, 1) n 49
+FS EVICT 264 from (13, 6) to (17, 1)
+FS SEAL 265 tile (14, 1) n 50
+FS EVICT 267 from (15, 4) to (13, 10)
+FS EVICT 269 from (15, 4) to (13, 10)
+FS SEAL 269 tile (14, 1) n 51
+FS EVICT 272 from (14, 6) to (14, 0)
+FS SEAL 273 tile (14, 1) n 52
+FS EVICT 275 from (13, 6) to (17, 1)
+FS SEAL 277 tile (14, 1) n 53
+FS EVICT 279 from (15, 4) to (13, 10)
+FS STAT 280 id 204 at (13, 1) need 6 orth 5 ti 146 ammo 60 sen 0 hp 22 covden 0 eco 1 lost 0
+FS SEAL 281 tile (14, 1) n 54
+FS EVICT 282 from (15, 4) to (13, 10)
+FS EVICT 284 from (14, 6) to (14, 0)
+FS SEAL 285 tile (14, 1) n 55
+FS EVICT 288 from (13, 6) to (17, 1)
+FS SEAL 289 tile (14, 1) n 56
+FS EVICT 291 from (15, 4) to (13, 10)
+FS EVICT 293 from (15, 4) to (13, 10)
+FS SEAL 293 tile (14, 1) n 57
+FS EVICT 296 from (14, 6) to (14, 0)
+FS SEAL 297 tile (14, 1) n 58
+FS EVICT 299 from (13, 6) to (17, 1)
+FS STAT 300 id 204 at (13, 1) need 6 orth 5 ti 201 ammo 60 sen 0 hp 22 covden 0 eco 1 lost 0
+FS SEAL 301 tile (14, 1) n 59
+FS EVICT 303 from (15, 4) to (13, 10)
+FS SEAL 305 tile (14, 1) n 60
+FS EVICT 306 from (15, 4) to (13, 10)
+FS EVICT 308 from (14, 6) to (14, 0)
+FS SEAL 309 tile (14, 1) n 61
+FS GATE 309 sig (18, 18, (2, 14), (14, 2)) ok 1
+FS EVICT 312 from (13, 6) to (17, 1)
+FS SEAL 313 tile (14, 1) n 62
+FS EVICT 315 from (15, 4) to (13, 10)
+FS EVICT 317 from (15, 4) to (13, 10)
+FS SEAL 317 tile (14, 1) n 63
+FS EVICT 320 from (14, 6) to (14, 0)
+FS STAT 320 id 204 at (13, 1) need 6 orth 5 ti 195 ammo 60 sen 0 hp 22 covden 0 eco 1 lost 0
+FS SEAL 321 tile (14, 1) n 64
+FS EVICT 323 from (13, 6) to (17, 1)
+FS SEAL 325 tile (14, 1) n 65
+FS EVICT 327 from (15, 4) to (13, 10)
+FS SEAL 329 tile (14, 1) n 66
+FS EVICT 330 from (15, 4) to (13, 10)
+FS EVICT 332 from (14, 6) to (14, 0)
+FS SEAL 333 tile (14, 1) n 67
+FS EVICT 336 from (13, 6) to (17, 1)
+FS SEAL 337 tile (14, 1) n 68
+FS GATE 337 sig (18, 18, (2, 14), (14, 2)) ok 1
+FS EVICT 339 from (15, 4) to (13, 10)
+FS STAT 340 id 204 at (13, 1) need 6 orth 5 ti 154 ammo 60 sen 0 hp 22 covden 0 eco 1 lost 0
+FS EVICT 341 from (15, 4) to (13, 10)
+FS SEAL 341 tile (14, 1) n 69
+FS EVICT 344 from (14, 6) to (14, 0)
+FS SEAL 345 tile (14, 1) n 70
+FS EVICT 347 from (13, 6) to (17, 1)
+FS SEAL 349 tile (14, 1) n 71
+FS EVICT 351 from (15, 4) to (13, 10)
+FS SEAL 353 tile (14, 1) n 72
+FS EVICT 354 from (15, 4) to (13, 10)
+FS EVICT 356 from (14, 6) to (14, 0)
+FS SEAL 357 tile (14, 1) n 73
+FS EVICT 360 from (13, 6) to (17, 1)
+FS PHASE 360 id 204 ph 5 d 2 at (13, 1)
+FS STAT 360 id 204 at (13, 1) need 6 orth 5 ti 103 ammo 60 sen 1 hp 22 covden 0 eco 1 lost 0
+PROBE SENTSUICIDE 360 at (11, 5)
+FS PHASE 361 id 204 ph 2 d 2 at (13, 1)
+FS SEAL 361 tile (14, 1) n 74
+FS EVICT 363 from (15, 4) to (13, 10)
+FS EVICT 365 from (15, 4) to (13, 10)
+FS EVICT 371 from (13, 6) to (17, 1)
+FS SEAL 373 tile (14, 1) n 75
+FS EVICT 375 from (15, 4) to (13, 10)
+FS EVICT 378 from (15, 4) to (13, 10)
+FS EVICT 380 from (14, 6) to (14, 0)
+FS STAT 380 id 204 at (13, 1) need 7 orth 6 ti 174 ammo 60 sen 0 hp 22 covden 0 eco 1 lost 0
+FS SEAL 380 tile (14, 1) n 76
+FS EVICT 384 from (13, 6) to (17, 1)
+FS SEAL 384 tile (14, 1) n 77
+FS EVICT 387 from (15, 4) to (13, 10)
+FS SEAL 388 tile (14, 1) n 78
+FS EVICT 389 from (15, 4) to (13, 10)
+FS EVICT 392 from (14, 6) to (14, 0)
+FS SEAL 392 tile (14, 1) n 79
+FS EVICT 395 from (13, 6) to (17, 1)
+FS SEAL 396 tile (14, 1) n 80
+FS EVICT 399 from (15, 4) to (13, 10)
+FS STAT 400 id 204 at (13, 1) need 7 orth 6 ti 229 ammo 60 sen 0 hp 22 covden 0 eco 1 lost 0
+FS SEAL 400 tile (14, 1) n 81
+FS EVICT 402 from (15, 4) to (13, 10)
+FS EVICT 404 from (14, 6) to (14, 0)
+FS SEAL 404 tile (14, 1) n 82
+FS GATE 405 sig (18, 18, (2, 14), (14, 2)) ok 1
+FS EVICT 408 from (13, 6) to (17, 1)
+FS SEAL 408 tile (14, 1) n 83
+FS EVICT 411 from (15, 4) to (13, 10)
+FS SEAL 412 tile (14, 1) n 84
+FS EVICT 413 from (15, 4) to (13, 10)
+FS EVICT 416 from (14, 6) to (14, 0)
+FS SEAL 416 tile (14, 1) n 85
+FS EVICT 419 from (13, 6) to (17, 1)
+FS STAT 420 id 204 at (13, 1) need 7 orth 6 ti 185 ammo 60 sen 0 hp 22 covden 0 eco 1 lost 0
+FS SEAL 420 tile (14, 1) n 86
+FS EVICT 423 from (15, 4) to (13, 10)
+FS SEAL 424 tile (14, 1) n 87
+FS EVICT 426 from (15, 4) to (13, 10)
+FS PHASE 427 id 204 ph 5 d 2 at (13, 1)
+PROBE SENTSUICIDE 427 at (11, 5)
+FS EVICT 428 from (14, 6) to (14, 0)
+FS PHASE 428 id 204 ph 2 d 2 at (13, 1)
+FS SEAL 428 tile (14, 1) n 88
+FS EVICT 432 from (13, 6) to (17, 1)
+FS EVICT 435 from (15, 4) to (13, 10)
+FS EVICT 437 from (15, 4) to (13, 10)
+FS SEAL 437 tile (14, 1) n 89
+FS EVICT 440 from (14, 6) to (14, 0)
+FS STAT 440 id 204 at (13, 1) need 5 orth 4 ti 135 ammo 60 sen 0 hp 22 covden 0 eco 1 lost 0
+FS EVICT 443 from (13, 6) to (17, 1)
+FS SEAL 445 tile (14, 1) n 90
+FS EVICT 447 from (15, 4) to (13, 10)
+FS SEAL 449 tile (14, 1) n 91
+FS EVICT 450 from (15, 4) to (13, 10)
+FS EVICT 452 from (14, 6) to (14, 0)
+FS SEAL 453 tile (14, 1) n 92
+FS EVICT 456 from (13, 6) to (17, 1)
+FS SEAL 457 tile (14, 1) n 93
+FS EVICT 459 from (15, 4) to (13, 10)
+FS STAT 460 id 204 at (13, 1) need 6 orth 5 ti 199 ammo 60 sen 0 hp 22 covden 0 eco 1 lost 0
+FS EVICT 461 from (15, 4) to (13, 10)
+FS SEAL 461 tile (14, 1) n 94
+FS EVICT 464 from (14, 6) to (14, 0)
+FS SEAL 465 tile (14, 1) n 95
+FS EVICT 467 from (13, 6) to (17, 1)
+FS SEAL 469 tile (14, 1) n 96
+FS EVICT 471 from (15, 4) to (13, 10)
+FS SEAL 473 tile (14, 1) n 97
+FS EVICT 474 from (15, 4) to (13, 10)
+FS EVICT 476 from (14, 6) to (14, 0)
+FS SEAL 477 tile (14, 1) n 98
+FS GATE 477 sig (18, 18, (2, 14), (14, 2)) ok 1
+FS EVICT 480 from (13, 6) to (17, 1)
+FS STAT 480 id 204 at (13, 1) need 6 orth 5 ti 158 ammo 60 sen 0 hp 22 covden 0 eco 1 lost 0
+FS SEAL 481 tile (14, 1) n 99
+FS EVICT 483 from (15, 4) to (13, 10)
+FS EVICT 485 from (15, 4) to (13, 10)
+FS SEAL 485 tile (14, 1) n 100
+FS EVICT 488 from (14, 6) to (14, 0)
+FS SEAL 489 tile (14, 1) n 101
+FS EVICT 491 from (13, 6) to (17, 1)
+FS SEAL 493 tile (14, 1) n 102
+FS EVICT 495 from (15, 4) to (13, 10)
+FS SEAL 497 tile (14, 1) n 103
+FS EVICT 498 from (15, 4) to (13, 10)
+FS EVICT 500 from (14, 6) to (14, 0)
+FS STAT 500 id 204 at (13, 1) need 6 orth 5 ti 56 ammo 60 sen 0 hp 22 covden 0 eco 1 lost 0
+FS EVICT 506 from (15, 6) to (9, 5)
+FS EVICT 507 from (15, 4) to (13, 10)
+FS SEAL 509 tile (14, 1) n 104
+FS EVICT 510 from (13, 5) to (13, 10)
+FS EVICT 512 from (14, 6) to (14, 0)
+FS EVICT 516 from (13, 6) to (17, 1)
+FS SEAL 516 tile (14, 1) n 105
+FS EVICT 519 from (15, 4) to (14, 10)
+FS STAT 520 id 204 at (13, 1) need 7 orth 6 ti 125 ammo 60 sen 0 hp 22 covden 0 eco 1 lost 0
+FS SEAL 520 tile (14, 1) n 106
+FS EVICT 521 from (15, 4) to (13, 10)
+FS SEAL 524 tile (14, 1) n 107
+FS SEAL 528 tile (14, 1) n 108
+FS SEAL 532 tile (14, 1) n 109
+FS SEAL 536 tile (14, 1) n 110
+FS STAT 540 id 204 at (13, 1) need 7 orth 6 ti 205 ammo 60 sen 0 hp 22 covden 0 eco 1 lost 0
+FS SEAL 540 tile (14, 1) n 111
+FS SEAL 544 tile (14, 1) n 112
+FS SEAL 548 tile (14, 1) n 113
+FS GATE 549 sig (18, 18, (2, 14), (14, 2)) ok 1
+FS SEAL 553 tile (14, 1) n 114
+FS SEAL 557 tile (14, 1) n 115
+FS STAT 560 id 204 at (13, 1) need 5 orth 4 ti 231 ammo 60 sen 0 hp 22 covden 0 eco 1 lost 0
+FS SEAL 564 tile (14, 1) n 116
+FS GATE 568 sig (18, 18, (2, 14), (14, 2)) ok 1
+FS SEAL 569 tile (14, 1) n 117
+FS SEAL 573 tile (14, 1) n 118
+FS SEAL 577 tile (14, 1) n 119
+FS STAT 580 id 204 at (13, 1) need 6 orth 5 ti 264 ammo 60 sen 0 hp 22 covden 0 eco 1 lost 0
+FS SEAL 581 tile (14, 1) n 120
+FS GATE 583 sig (18, 18, (2, 14), (14, 2)) ok 1
+FS SEAL 585 tile (14, 1) n 121
+FS SEAL 589 tile (14, 1) n 122
+FS SEAL 593 tile (14, 1) n 123
+FS SEAL 597 tile (14, 1) n 124
+FS GATE 597 sig (18, 18, (2, 14), (14, 2)) ok 1
+FS STAT 600 id 204 at (13, 1) need 6 orth 5 ti 207 ammo 60 sen 0 hp 22 covden 0 eco 1 lost 0
+FS SEAL 601 tile (14, 1) n 125
+FS SEAL 605 tile (14, 1) n 126
+FS SEAL 609 tile (14, 1) n 127
+FS SEAL 613 tile (14, 1) n 128
+FS SEAL 617 tile (14, 1) n 129
+FS GATE 617 sig (18, 18, (2, 14), (14, 2)) ok 1
+FS STAT 620 id 204 at (13, 1) need 6 orth 5 ti 182 ammo 60 sen 0 hp 22 covden 0 eco 1 lost 0
+FS SEAL 621 tile (14, 1) n 130
+FS SEAL 625 tile (14, 1) n 131
+FS SEAL 629 tile (14, 1) n 132
+FS SEAL 633 tile (14, 1) n 133
+PROBE SENTSUICIDE 636 at (15, 8)
+FS SEAL 637 tile (14, 1) n 134
+FS STAT 640 id 204 at (13, 1) need 6 orth 5 ti 147 ammo 60 sen 0 hp 22 covden 0 eco 1 lost 0
+FS SEAL 649 tile (14, 1) n 135
+FS SEAL 656 tile (14, 1) n 136
+FS STAT 660 id 204 at (13, 1) need 7 orth 6 ti 263 ammo 60 sen 0 hp 22 covden 0 eco 1 lost 0
+FS SEAL 660 tile (14, 1) n 137
+FS SEAL 664 tile (14, 1) n 138
+FS GATE 665 sig (18, 18, (2, 14), (14, 2)) ok 1
+FS SEAL 668 tile (14, 1) n 139
+FS SEAL 672 tile (14, 1) n 140
+FS SEAL 676 tile (14, 1) n 141
+FS STAT 680 id 204 at (13, 1) need 7 orth 6 ti 235 ammo 60 sen 0 hp 22 covden 0 eco 1 lost 0
+FS SEAL 680 tile (14, 1) n 142
+FS SEAL 684 tile (14, 1) n 143
+PROBE SENTSUICIDE 685 at (15, 8)
+FS SEAL 689 tile (14, 1) n 144
+FS STAT 700 id 204 at (13, 1) need 6 orth 5 ti 212 ammo 60 sen 0 hp 22 covden 0 eco 1 lost 0
+FS SEAL 701 tile (14, 1) n 145
+FS SEAL 705 tile (14, 1) n 146
+FS SEAL 709 tile (14, 1) n 147
+FS SEAL 713 tile (14, 1) n 148
+FS SEAL 717 tile (14, 1) n 149
+FS GATE 717 sig (18, 18, (2, 14), (14, 2)) ok 1
+FS STAT 720 id 204 at (13, 1) need 6 orth 5 ti 187 ammo 60 sen 0 hp 22 covden 0 eco 1 lost 0
+FS SEAL 721 tile (14, 1) n 150
+FS SEAL 725 tile (14, 1) n 151
+FS SEAL 729 tile (14, 1) n 152
+FS SEAL 733 tile (14, 1) n 153
+FS PHASE 738 id 204 ph 5 d 2 at (13, 1)
+PROBE SENTSUICIDE 738 at (13, 5)
+FS PHASE 739 id 204 ph 2 d 2 at (13, 1)
+FS STAT 740 id 204 at (13, 1) need 6 orth 5 ti 164 ammo 60 sen 0 hp 22 covden 0 eco 1 lost 0
+FS SEAL 741 tile (14, 1) n 154
+FS SEAL 749 tile (14, 1) n 155
+FS SEAL 756 tile (14, 1) n 156
+FS STAT 760 id 204 at (13, 1) need 7 orth 6 ti 268 ammo 60 sen 0 hp 22 covden 0 eco 1 lost 0
+FS SEAL 760 tile (14, 1) n 157
+FS SEAL 764 tile (14, 1) n 158
+FS GATE 765 sig (18, 18, (2, 14), (14, 2)) ok 1
+FS SEAL 768 tile (14, 1) n 159
+FS SEAL 772 tile (14, 1) n 160
+FS SEAL 776 tile (14, 1) n 161
+FS STAT 780 id 204 at (13, 1) need 7 orth 6 ti 240 ammo 60 sen 0 hp 22 covden 0 eco 1 lost 0
+FS SEAL 780 tile (14, 1) n 162
+FS SEAL 784 tile (14, 1) n 163
+FS SEAL 788 tile (14, 1) n 164
+FS PHASE 790 id 204 ph 5 d 2 at (13, 1)
+PROBE SENTSUICIDE 790 at (11, 5)
+FS PHASE 791 id 204 ph 2 d 2 at (13, 1)
+FS SEAL 792 tile (14, 1) n 165
+FS PHASE 795 id 204 ph 5 d 2 at (13, 1)
+PROBE SENTSUICIDE 795 at (13, 5)
+FS PHASE 796 id 204 ph 2 d 2 at (13, 1)
+FS SEAL 796 tile (14, 1) n 166
+FS STAT 800 id 204 at (13, 1) need 5 orth 4 ti 68 ammo 60 sen 0 hp 22 covden 0 eco 1 lost 0
+FS EVICT 805 from (13, 5) to (13, 10)
+FS SEAL 805 tile (14, 1) n 167
+FS SEAL 813 tile (14, 1) n 168
+FS EVICT 813 from (16, 1) to (12, 0)
+FS SEAL 817 tile (14, 1) n 169
+FS STAT 820 id 204 at (13, 1) need 6 orth 5 ti 171 ammo 60 sen 0 hp 22 covden 0 eco 1 lost 0
+FS SEAL 821 tile (14, 1) n 170
+FS SEAL 825 tile (14, 1) n 171
+FS SEAL 829 tile (14, 1) n 172
+FS SEAL 833 tile (14, 1) n 173
+FS SEAL 837 tile (14, 1) n 174
+FS STAT 840 id 204 at (13, 1) need 6 orth 5 ti 266 ammo 60 sen 0 hp 22 covden 0 eco 1 lost 0
+FS SEAL 841 tile (14, 1) n 175
+FS SEAL 845 tile (14, 1) n 176
+FS GATE 845 sig (18, 18, (2, 14), (14, 2)) ok 1
+FS SEAL 849 tile (14, 1) n 177
+FS SEAL 853 tile (14, 1) n 178
+FS SEAL 857 tile (14, 1) n 179
+FS STAT 860 id 204 at (13, 1) need 6 orth 5 ti 238 ammo 60 sen 0 hp 22 covden 0 eco 1 lost 0
+FS SEAL 861 tile (14, 1) n 180
+FS SEAL 865 tile (14, 1) n 181
+FS PHASE 868 id 204 ph 5 d 2 at (13, 1)
+PROBE SENTSUICIDE 868 at (11, 5)
+FS PHASE 869 id 204 ph 2 d 2 at (13, 1)
+FS SEAL 869 tile (14, 1) n 182
+FS PHASE 873 id 204 ph 5 d 2 at (13, 1)
+PROBE SENTSUICIDE 873 at (13, 5)
+FS PHASE 874 id 204 ph 2 d 2 at (13, 1)
+FS STAT 880 id 204 at (13, 1) need 5 orth 4 ti 89 ammo 60 sen 0 hp 22 covden 0 eco 1 lost 0
+FS SEAL 881 tile (14, 1) n 183
+FS SEAL 889 tile (14, 1) n 184
+FS SEAL 893 tile (14, 1) n 185
+FS SEAL 897 tile (14, 1) n 186
+FS STAT 900 id 204 at (13, 1) need 6 orth 5 ti 195 ammo 60 sen 0 hp 22 covden 0 eco 1 lost 0
+FS SEAL 901 tile (14, 1) n 187
+FS SEAL 905 tile (14, 1) n 188
+FS SEAL 909 tile (14, 1) n 189
+FS SEAL 913 tile (14, 1) n 190
+FS SEAL 917 tile (14, 1) n 191
+FS STAT 920 id 204 at (13, 1) need 6 orth 5 ti 171 ammo 60 sen 0 hp 22 covden 0 eco 1 lost 0
+FS SEAL 921 tile (14, 1) n 192
+FS GATE 921 sig (18, 18, (2, 14), (14, 2)) ok 1
+FS SEAL 925 tile (14, 1) n 193
+FS SEAL 929 tile (14, 1) n 194
+FS SEAL 933 tile (14, 1) n 195
+FS SEAL 937 tile (14, 1) n 196
+FS STAT 940 id 204 at (13, 1) need 6 orth 5 ti 261 ammo 60 sen 0 hp 22 covden 0 eco 1 lost 0
+FS SEAL 941 tile (14, 1) n 197
+FS SEAL 945 tile (14, 1) n 198
+FS PHASE 948 id 204 ph 5 d 2 at (13, 1)
+PROBE SENTSUICIDE 948 at (11, 5)
+FS PHASE 949 id 204 ph 2 d 2 at (13, 1)
+FS SEAL 949 tile (14, 1) n 199
+FS PHASE 951 id 204 ph 5 d 2 at (13, 1)
+PROBE SENTSUICIDE 951 at (11, 5)
+FS PHASE 952 id 204 ph 2 d 2 at (13, 1)
+FS SEAL 953 tile (14, 1) n 200
+FS STAT 960 id 204 at (13, 1) need 5 orth 4 ti 101 ammo 60 sen 0 hp 22 covden 0 eco 1 lost 0
+FS PHASE 971 id 204 ph 5 d 2 at (13, 1)
+PROBE SENTSUICIDE 971 at (16, 4)
+FS PHASE 972 id 204 ph 2 d 2 at (13, 1)
+FS STAT 980 id 204 at (13, 1) need 4 orth 3 ti 121 ammo 65 sen 0 hp 22 covden 0 eco 1 lost 0

@@ -1,0 +1,31 @@
+tag	arm	map	g	seed	ord	ours	winner	cond	turn	tracebacks	ours_mined	opp_mined
+onlyA_magoffA_glacierkeep_g0	onlyA_magoffA	glacierkeep	0	7400	A	US	onlyA_magoff	Core destroyed	632	0	1520	0
+onlyA_magoffA_glacierkeep_g1	onlyA_magoffA	glacierkeep	1	7401	B	US	onlyA_magoff	Titanium collected (tiebreak)	1000	0	190	0
+onlyA_magoffA_glacierkeep_g2	onlyA_magoffA	glacierkeep	2	7402	A	US	onlyA_magoff	Core destroyed	421	0	0	0
+onlyA_magoffA_glacierkeep_g3	onlyA_magoffA	glacierkeep	3	7403	B	US	onlyA_magoff	Core destroyed	137	0	280	0
+onlyA_magoffA_glacierkeep_g4	onlyA_magoffA	glacierkeep	4	7404	A	US	onlyA_magoff	Core destroyed	265	0	170	0
+onlyA_magoffA_glacierkeep_g5	onlyA_magoffA	glacierkeep	5	7405	B	US	onlyA_magoff	Core destroyed	377	0	130	0
+onlyA_magoffA_nordkap_g0	onlyA_magoffA	nordkap	0	7400	A	US	onlyA_magoff	Core destroyed	178	0	480	240
+onlyA_magoffA_nordkap_g1	onlyA_magoffA	nordkap	1	7401	B	OPP	_v488beltbreak2	Core destroyed	262	0	700	1010
+onlyA_magoffA_nordkap_g2	onlyA_magoffA	nordkap	2	7402	A	OPP	_v488beltbreak2	Core destroyed	266	0	220	1840
+onlyA_magoffA_nordkap_g3	onlyA_magoffA	nordkap	3	7403	B	US	onlyA_magoff	Core destroyed	385	0	660	130
+onlyA_magoffA_nordkap_g4	onlyA_magoffA	nordkap	4	7404	A	OPP	_v488beltbreak2	Core destroyed	365	0	240	3800
+onlyA_magoffA_nordkap_g5	onlyA_magoffA	nordkap	5	7405	B	US	onlyA_magoff	Titanium collected (tiebreak)	1000	0	180	0
+onlyA_magoffA_atoll_g0	onlyA_magoffA	atoll	0	7400	A	US	onlyA_magoff	Core destroyed	215	0	1050	670
+onlyA_magoffA_atoll_g1	onlyA_magoffA	atoll	1	7401	B	US	onlyA_magoff	Core destroyed	121	0	330	350
+onlyA_magoffA_atoll_g2	onlyA_magoffA	atoll	2	7402	A	OPP	_v488beltbreak2	Core destroyed	243	0	1180	2400
+onlyA_magoffA_atoll_g3	onlyA_magoffA	atoll	3	7403	B	OPP	_v488beltbreak2	Core destroyed	182	0	420	490
+onlyA_magoffA_atoll_g4	onlyA_magoffA	atoll	4	7404	A	US	onlyA_magoff	Core destroyed	317	0	1590	1440
+onlyA_magoffA_atoll_g5	onlyA_magoffA	atoll	5	7405	B	OPP	_v488beltbreak2	Titanium collected (tiebreak)	1000	0	3530	9080
+onlyA_magoffA_midgard_g0	onlyA_magoffA	midgard	0	7400	A	US	onlyA_magoff	Core destroyed	323	0	3740	3240
+onlyA_magoffA_midgard_g1	onlyA_magoffA	midgard	1	7401	B	OPP	_v488beltbreak2	Core destroyed	156	0	580	1350
+onlyA_magoffA_midgard_g2	onlyA_magoffA	midgard	2	7402	A	OPP	_v488beltbreak2	Core destroyed	173	0	590	1050
+onlyA_magoffA_midgard_g3	onlyA_magoffA	midgard	3	7403	B	OPP	_v488beltbreak2	Core destroyed	136	0	530	1600
+onlyA_magoffA_midgard_g4	onlyA_magoffA	midgard	4	7404	A	OPP	_v488beltbreak2	Core destroyed	180	0	580	1630
+onlyA_magoffA_midgard_g5	onlyA_magoffA	midgard	5	7405	B	OPP	_v488beltbreak2	Core destroyed	119	0	590	1290
+onlyA_magoffA_drakkarfjord_g0	onlyA_magoffA	drakkarfjord	0	7400	A	US	onlyA_magoff	Core destroyed	148	0	630	0
+onlyA_magoffA_drakkarfjord_g1	onlyA_magoffA	drakkarfjord	1	7401	B	US	onlyA_magoff	Core destroyed	129	0	540	0
+onlyA_magoffA_drakkarfjord_g2	onlyA_magoffA	drakkarfjord	2	7402	A	OPP	_v488beltbreak2	Titanium collected (tiebreak)	1000	0	450	2210
+onlyA_magoffA_drakkarfjord_g3	onlyA_magoffA	drakkarfjord	3	7403	B	US	onlyA_magoff	Core destroyed	131	0	400	0
+onlyA_magoffA_drakkarfjord_g4	onlyA_magoffA	drakkarfjord	4	7404	A	OPP	_v488beltbreak2	Core destroyed	205	0	540	1560
+onlyA_magoffA_drakkarfjord_g5	onlyA_magoffA	drakkarfjord	5	7405	B	US	onlyA_magoff	Titanium collected (tiebreak)	1000	0	7760	0

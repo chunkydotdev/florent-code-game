@@ -1,0 +1,109 @@
+Update available: 2.3.6 -> 2.3.8. Run: pip install --upgrade fcode
+FS GATE 0 sig (30, 30, (2, 24), (26, 4)) ok 1
+FS GATE 1 sig (30, 30, (2, 24), (26, 4)) ok 1
+FS PHASE 1 id 3 ph 1 d 808 at (4, 23)
+FS HOPBUILD 1 at (4, 23) lch (5, 23) T (28, 3)
+FS GATE 2 sig (30, 30, (2, 24), (26, 4)) ok 1
+FS GATE 2 sig (30, 30, (2, 24), (26, 4)) ok 1
+FS THROW 2 from (4, 22) to (9, 20) T (28, 3) body 3 n 1 dsq 514
+FS HOPBUILD 3 at (9, 20) lch (10, 20) T (28, 3)
+FS GATE 3 sig (30, 30, (2, 24), (26, 4)) ok 1
+FS GATE 4 sig (30, 30, (2, 24), (26, 4)) ok 1
+FS THROW 4 from (9, 19) to (14, 17) T (28, 3) body 3 n 1 dsq 288
+FS HOPBUILD 5 at (14, 17) lch (14, 16) T (28, 3)
+FS GATE 6 sig (30, 30, (2, 24), (26, 4)) ok 1
+FS THROW 6 from (15, 17) to (18, 13) T (28, 3) body 3 n 1 dsq 128
+FS HOPBUILD 7 at (18, 13) lch (18, 12) T (28, 3)
+FS GATE 8 sig (30, 30, (2, 24), (26, 4)) ok 1
+FS THROW 8 from (19, 13) to (22, 9) T (28, 3) body 3 n 1 dsq 32
+FS HOPBUILD 9 at (22, 9) lch (22, 8) T (28, 3)
+FS GATE 10 sig (30, 30, (2, 24), (26, 4)) ok 1
+FS THROW 10 from (23, 9) to (25, 4) T (28, 3) body 3 n 1 dsq 1
+FS ARRIVE 11 id 3 body 1 at (25, 4) dsq 1
+FS PHASE 11 id 3 ph 2 d 1 at (25, 4)
+FS SEAL 11 tile (25, 5) n 1
+FS SEAL 12 tile (25, 3) n 2
+FS DODGE 13 id 3 from (25, 4) to (24, 4) cov 1 -> 0 hit 0 hp 40
+FS GATE 13 sig (30, 30, (2, 24), (26, 4)) ok 1
+FS SEAL 14 tile (25, 4) n 3
+FS GATE 14 sig (30, 30, (2, 24), (26, 4)) ok 1
+FS STAT 20 id 3 at (23, 4) need 8 orth 7 ti 36 ammo 4 sen 0 hp 40 covden 0 eco 0 lost 0
+FS SEAL 23 tile (25, 4) n 4
+ECO514 24 harv 2 mouth 1 held 1 conn 1 deliv 1
+FS SEAL 25 tile (25, 3) n 5
+FS SEAL 31 tile (26, 3) n 6
+FS SEAL 33 tile (27, 3) n 7
+FS SEAL 36 tile (28, 4) n 8
+FS SENTINEL 37 at (28, 2) face SOUTHWEST tgt (26, 4) score 8 n 1 onring 0 lost 0 gate (1, 1, 24) onsray 0 olddsq -1
+FS RUNG 37 id 3 r 4 hi -
+FS PHASE 38 id 3 ph 5 d 2 at (28, 3)
+FS STAT 40 id 3 at (29, 4) need 4 orth 3 ti 46 ammo 15 sen 1 hp 40 covden 0 eco 1 lost 0
+FS SEAL 41 tile (28, 5) n 9
+FS PHASE 45 id 3 ph 2 d 5 at (28, 7)
+FS CLEAR 56 tile (25, 5) peck 1
+FS RUNG 56 id 3 r 3 hi -
+FS CLEAR 57 tile (25, 5) peck 2
+FS RUNG 57 id 3 r 3 hi -
+FS STAT 60 id 3 at (24, 5) need 5 orth 4 ti 12 ammo 26 sen 0 hp 22 covden 0 eco 1 lost 0
+FS STAT 80 id 3 at (24, 5) need 5 orth 4 ti 12 ammo 10 sen 0 hp 22 covden 0 eco 1 lost 0
+FS PHASE 85 id 3 ph 5 d 4 at (24, 4)
+FS SEAL 85 tile (25, 4) n 10
+FS SEAL 88 tile (25, 3) n 11
+FS SEAL 90 tile (25, 4) n 12
+FS PHASE 92 id 3 ph 2 d 4 at (24, 5)
+FS STAT 100 id 3 at (24, 5) need 5 orth 4 ti 12 ammo 11 sen 0 hp 22 covden 0 eco 1 lost 0
+FS DOORSEEN 114 id 8 at (5, 26) rank 0
+FS DOORSEEN 114 id 20 at (5, 26) rank 0
+FS DOOR 119 id 8 at (5, 26) n 1
+FS STAT 120 id 3 at (24, 5) need 5 orth 4 ti 12 ammo 9 sen 0 hp 22 covden 0 eco 1 lost 0
+FS DOOR 120 id 8 at (5, 26) n 2
+FS DOORSEEN 121 id 5 at (5, 26) rank 0
+FS DOOR 121 id 8 at (5, 26) n 3
+FS DOOR 121 id 20 at (5, 26) n 1
+FS DOOR 122 id 8 at (5, 26) n 4
+FS DOOR 124 id 20 at (5, 26) n 2
+FS DOOR 125 id 8 at (5, 26) n 5
+FS DOOR 125 id 20 at (5, 26) n 3
+FS DOOR 126 id 8 at (5, 26) n 6
+FS DOOR 126 id 20 at (5, 26) n 4
+FS DOOR 129 id 5 at (5, 26) n 1
+FS DOOR 129 id 8 at (5, 26) n 7
+FS DOOR 129 id 20 at (5, 26) n 5
+FS DOOR 130 id 5 at (5, 26) n 2
+FS DOOR 130 id 8 at (5, 26) n 8
+FS DOOR 133 id 5 at (5, 26) n 3
+FS DOOR 133 id 8 at (5, 26) n 9
+FS DOOR 134 id 5 at (5, 26) n 4
+FS DOOR 134 id 8 at (5, 26) n 10
+FS DOOR 134 id 20 at (5, 26) n 6
+FS DOOR 137 id 5 at (5, 26) n 5
+FS DOOR 137 id 8 at (5, 26) n 11
+FS DOOR 137 id 20 at (5, 26) n 7
+FS DOOR 138 id 5 at (5, 26) n 6
+FS DOOR 138 id 8 at (5, 26) n 12
+FS STAT 140 id 3 at (24, 5) need 5 orth 4 ti 14 ammo 1 sen 0 hp 22 covden 0 eco 1 lost 0
+FS DOOR 141 id 5 at (5, 26) n 7
+FS DOOR 141 id 8 at (5, 26) n 13
+FS DOOR 142 id 5 at (5, 26) n 8
+FS DOOR 142 id 8 at (5, 26) n 14
+FS DOOR 142 id 20 at (5, 26) n 8
+FS DOOR 145 id 5 at (5, 26) n 9
+FS DOOR 145 id 8 at (5, 26) n 15
+FS DOOR 145 id 20 at (5, 26) n 9
+FS DOOR 146 id 5 at (5, 26) n 10
+FS DOOR 146 id 8 at (5, 26) n 16
+FS DOOR 149 id 5 at (5, 26) n 11
+FS DOOR 149 id 8 at (5, 26) n 17
+FS DOOR 150 id 5 at (5, 26) n 12
+FS DOOR 150 id 8 at (5, 26) n 18
+FS DOOR 150 id 20 at (5, 26) n 10
+FS DOOR 153 id 5 at (5, 26) n 13
+FS DOOR 153 id 8 at (5, 26) n 19
+FS DOOR 153 id 20 at (5, 26) n 11
+FS DOOR 154 id 5 at (5, 26) n 14
+FS DOOR 154 id 8 at (5, 26) n 20
+FS DOOR 157 id 5 at (5, 26) n 15
+FS DOOR 158 id 5 at (5, 26) n 16
+FS DOOR 159 id 5 at (5, 26) n 17
+FS STAT 160 id 3 at (24, 5) need 5 orth 4 ti 12 ammo 7 sen 0 hp 22 covden 0 eco 1 lost 0
+FS DOOR 160 id 5 at (5, 26) n 18

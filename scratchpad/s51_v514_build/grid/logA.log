@@ -1,0 +1,15 @@
+logA_glacierkeep_g0	logA	glacierkeep	0	7400	A	US	log	Core destroyed	218	0	480	0
+logA_glacierkeep_g1	logA	glacierkeep	1	7401	B	US	log	Core destroyed	285	0	240	0
+logA_glacierkeep_g2	logA	glacierkeep	2	7402	A	US	log	Core destroyed	573	0	460	0
+logA_nordkap_g0	logA	nordkap	0	7400	A	OPP	_v488beltbreak2	Core destroyed	549	0	130	720
+logA_nordkap_g1	logA	nordkap	1	7401	B	OPP	_v488beltbreak2	Core destroyed	436	0	150	290
+logA_nordkap_g2	logA	nordkap	2	7402	A	US	log	Core destroyed	449	0	140	220
+logA_atoll_g0	logA	atoll	0	7400	A	OPP	_v488beltbreak2	Core destroyed	336	0	340	2740
+logA_atoll_g1	logA	atoll	1	7401	B	OPP	_v488beltbreak2	Core destroyed	263	0	350	2330
+logA_atoll_g2	logA	atoll	2	7402	A	OPP	_v488beltbreak2	Core destroyed	246	0	590	1190
+logA_midgard_g0	logA	midgard	0	7400	A	OPP	_v488beltbreak2	Core destroyed	114	0	260	920
+logA_midgard_g1	logA	midgard	1	7401	B	OPP	_v488beltbreak2	Core destroyed	178	0	640	1990
+logA_midgard_g2	logA	midgard	2	7402	A	OPP	_v488beltbreak2	Core destroyed	189	0	1090	2240
+logA_drakkarfjord_g0	logA	drakkarfjord	0	7400	A	OPP	_v488beltbreak2	Core destroyed	288	0	470	880
+logA_drakkarfjord_g1	logA	drakkarfjord	1	7401	B	OPP	_v488beltbreak2	Core destroyed	505	0	250	0
+logA_drakkarfjord_g2	logA	drakkarfjord	2	7402	A	OPP	_v488beltbreak2	Core destroyed	569	0	460	1660

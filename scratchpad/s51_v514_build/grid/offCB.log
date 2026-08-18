@@ -1,0 +1,30 @@
+offCB_glacierkeep_g0	offCB	glacierkeep	0	7500	A	US	offC	Titanium collected (tiebreak)	1000	0	230	0
+offCB_glacierkeep_g1	offCB	glacierkeep	1	7501	B	US	offC	Titanium collected (tiebreak)	1000	0	180	0
+offCB_glacierkeep_g2	offCB	glacierkeep	2	7502	A	US	offC	Core destroyed	176	0	720	0
+offCB_glacierkeep_g3	offCB	glacierkeep	3	7503	B	US	offC	Core destroyed	249	0	0	0
+offCB_glacierkeep_g4	offCB	glacierkeep	4	7504	A	US	offC	Core destroyed	153	0	270	0
+offCB_glacierkeep_g5	offCB	glacierkeep	5	7505	B	US	offC	Titanium collected (tiebreak)	1000	0	100	0
+offCB_nordkap_g0	offCB	nordkap	0	7500	A	OPP	_v488beltbreak2	Core destroyed	320	0	140	2800
+offCB_nordkap_g1	offCB	nordkap	1	7501	B	OPP	_v488beltbreak2	Titanium collected (tiebreak)	1000	0	0	2500
+offCB_nordkap_g2	offCB	nordkap	2	7502	A	OPP	_v488beltbreak2	Titanium collected (tiebreak)	1000	0	90	380
+offCB_nordkap_g3	offCB	nordkap	3	7503	B	OPP	_v488beltbreak2	Core destroyed	285	0	100	2300
+offCB_nordkap_g4	offCB	nordkap	4	7504	A	OPP	_v488beltbreak2	Core destroyed	257	0	900	1570
+offCB_nordkap_g5	offCB	nordkap	5	7505	B	OPP	_v488beltbreak2	Core destroyed	277	0	800	4760
+offCB_atoll_g0	offCB	atoll	0	7500	A	OPP	_v488beltbreak2	Core destroyed	744	0	2020	950
+offCB_atoll_g1	offCB	atoll	1	7501	B	OPP	_v488beltbreak2	Core destroyed	144	0	230	1140
+offCB_atoll_g2	offCB	atoll	2	7502	A	US	offC	Core destroyed	429	0	2100	320
+offCB_atoll_g3	offCB	atoll	3	7503	B	OPP	_v488beltbreak2	Core destroyed	212	0	250	1300
+offCB_atoll_g4	offCB	atoll	4	7504	A	OPP	_v488beltbreak2	Core destroyed	464	0	2660	2280
+offCB_atoll_g5	offCB	atoll	5	7505	B	OPP	_v488beltbreak2	Core destroyed	370	0	710	1040
+offCB_midgard_g0	offCB	midgard	0	7500	A	OPP	_v488beltbreak2	Titanium collected (tiebreak)	1000	0	520	930
+offCB_midgard_g1	offCB	midgard	1	7501	B	OPP	_v488beltbreak2	Core destroyed	156	0	580	1350
+offCB_midgard_g2	offCB	midgard	2	7502	A	OPP	_v488beltbreak2	Core destroyed	160	0	260	1330
+offCB_midgard_g3	offCB	midgard	3	7503	B	OPP	_v488beltbreak2	Core destroyed	133	0	540	1380
+offCB_midgard_g4	offCB	midgard	4	7504	A	OPP	_v488beltbreak2	Core destroyed	344	0	550	2350
+offCB_midgard_g5	offCB	midgard	5	7505	B	OPP	_v488beltbreak2	Core destroyed	122	0	670	1550
+offCB_drakkarfjord_g0	offCB	drakkarfjord	0	7500	A	OPP	_v488beltbreak2	Core destroyed	236	0	290	1510
+offCB_drakkarfjord_g1	offCB	drakkarfjord	1	7501	B	OPP	_v488beltbreak2	Core destroyed	398	0	1240	4660
+offCB_drakkarfjord_g2	offCB	drakkarfjord	2	7502	A	US	offC	Core destroyed	248	0	1870	610
+offCB_drakkarfjord_g3	offCB	drakkarfjord	3	7503	B	US	offC	Titanium collected (tiebreak)	1000	0	410	0
+offCB_drakkarfjord_g4	offCB	drakkarfjord	4	7504	A	US	offC	Core destroyed	379	0	1030	0
+offCB_drakkarfjord_g5	offCB	drakkarfjord	5	7505	B	US	offC	Core destroyed	235	0	1040	0

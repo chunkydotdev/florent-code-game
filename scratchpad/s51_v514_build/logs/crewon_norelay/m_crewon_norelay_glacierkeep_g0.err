@@ -1,0 +1,122 @@
+Update available: 2.3.6 -> 2.3.8. Run: pip install --upgrade fcode
+FS GATE 0 sig (30, 30, (14, 2), (14, 26)) ok 1
+FS GATE 1 sig (30, 30, (14, 2), (14, 26)) ok 1
+FS PHASE 1 id 3 ph 1 d 484 at (14, 4)
+FS HOPBUILD 1 at (14, 4) lch (14, 5) T (16, 28)
+FS GATE 2 sig (30, 30, (14, 2), (14, 26)) ok 1
+FS GATE 2 sig (30, 30, (14, 2), (14, 26)) ok 1
+FS THROW 2 from (15, 4) to (15, 10) T (16, 28) body 3 n 1 dsq 256
+FS HOPBUILD 3 at (15, 10) lch (15, 11) T (16, 28)
+FS GATE 3 sig (30, 30, (14, 2), (14, 26)) ok 1
+FS GATE 4 sig (30, 30, (14, 2), (14, 26)) ok 1
+FS PHASE 4 id 10 ph 1 d 484 at (14, 4)
+FS HOPBUILD 4 at (14, 4) lch (14, 5) T (16, 28)
+FS GATE 4 sig (30, 30, (14, 2), (14, 26)) ok 1
+FS THROW 4 from (16, 10) to (16, 16) T (16, 28) body 3 n 1 dsq 101
+FS HOPBUILD 5 at (16, 16) lch (16, 17) T (16, 28)
+FS GATE 5 sig (30, 30, (14, 2), (14, 26)) ok 1
+FS THROW 5 from (15, 4) to (15, 10) T (16, 28) body 10 n 1 dsq 256
+FS HOPBUILD 6 at (15, 10) lch (15, 11) T (16, 28)
+FS GATE 6 sig (30, 30, (14, 2), (14, 26)) ok 1
+FS GATE 7 sig (30, 30, (14, 2), (14, 26)) ok 1
+FS THROW 7 from (16, 10) to (15, 16) T (16, 28) body 10 n 1 dsq 100
+FS THROW 8 from (15, 17) to (15, 22) T (16, 28) body 10 n 1 dsq 16
+FS HOPBUILD 9 at (16, 16) lch (16, 17) T (16, 28)
+FS HOPBUILD 9 at (15, 22) lch (15, 23) T (16, 28)
+FS PROMOTE 10 id 10
+FS GATE 10 sig (30, 30, (14, 2), (14, 26)) ok 1
+FS GATE 10 sig (30, 30, (14, 2), (14, 26)) ok 1
+FS THROW 10 from (16, 22) to (16, 28) T (16, 28) body 10 n 1 dsq 2
+FS ARRIVE 11 id 10 body 2 at (16, 28) dsq 2
+FS PHASE 11 id 10 ph 2 d 2 at (16, 28)
+FS SEAL 11 tile (16, 27) n 1
+FS SEAL 12 tile (15, 28) n 2
+FS GATE 13 sig (30, 30, (14, 2), (14, 26)) ok 1
+FS SEAL 16 tile (16, 26) n 3
+FS DODGE 17 id 10 from (17, 26) to (18, 26) cov 1 -> 0 hit 0 hp 40
+FS DODGE 19 id 10 from (17, 26) to (18, 26) cov 1 -> 0 hit 0 hp 22
+FS STAT 20 id 10 at (18, 26) need 6 orth 5 ti 65 ammo 0 sen 0 hp 22 covden 0 eco 0 lost 0
+FS DODGE 21 id 10 from (17, 26) to (18, 26) cov 1 -> 0 hit 0 hp 4
+FS THROW 24 from (16, 16) to (16, 22) T (16, 28) body 3 n 1 dsq 17
+FS ARRIVE 27 id 3 body 1 at (16, 24) dsq 5
+FS PHASE 27 id 3 ph 2 d 5 at (16, 24)
+FS STAT 40 id 3 at (15, 23) need 7 orth 6 ti 10 ammo 0 sen 0 hp 40 covden 0 eco 0 lost 0
+FS STAT 60 id 3 at (14, 24) need 6 orth 5 ti 15 ammo 0 sen 0 hp 40 covden 0 eco 0 lost 0
+FS STAT 80 id 3 at (14, 24) need 6 orth 5 ti 12 ammo 11 sen 0 hp 40 covden 0 eco 0 lost 0
+FS STAT 100 id 3 at (14, 24) need 6 orth 5 ti 52 ammo 21 sen 0 hp 40 covden 0 eco 0 lost 0
+FS CLEAR 100 tile (14, 25) peck 1
+FS RUNG 100 id 3 r 3 hi -
+FS CLEAR 101 tile (14, 25) peck 2
+FS RUNG 101 id 3 r 3 hi -
+FS DODGE 105 id 3 from (14, 24) to (14, 25) cov 1 -> 0 hit 0 hp 40
+FS SEAL 106 tile (15, 25) n 1
+FS DODGE 109 id 3 from (14, 24) to (14, 25) cov 1 -> 0 hit 0 hp 22
+FS DODGE 117 id 3 from (14, 25) to (13, 25) cov 1 -> 0 hit 0 hp 22
+FS STAT 120 id 3 at (13, 25) need 5 orth 4 ti 12 ammo 13 sen 0 hp 22 covden 0 eco 0 lost 0
+FS DOORSEEN 128 id 20 at (16, 0) rank 1
+FS DOOR 130 id 20 at (16, 0) n 1
+FS DOOR 131 id 20 at (16, 0) n 2
+FS DOOR 132 id 20 at (16, 0) n 3
+FS DOOR 133 id 20 at (16, 0) n 4
+FS DOOR 134 id 20 at (16, 0) n 5
+FS DOOR 135 id 20 at (16, 0) n 6
+FS DOOR 136 id 20 at (16, 0) n 7
+FS DOOR 137 id 20 at (16, 0) n 8
+FS DOOR 138 id 20 at (16, 0) n 9
+FS DOORSEEN 139 id 8 at (16, 0) rank 0
+FS DOOR 139 id 20 at (16, 0) n 10
+FS STAT 140 id 3 at (13, 25) need 6 orth 5 ti 12 ammo 7 sen 0 hp 22 covden 0 eco 0 lost 0
+FS DOOR 140 id 20 at (16, 0) n 11
+FS DOOR 141 id 20 at (16, 0) n 12
+FS DOOR 142 id 20 at (16, 0) n 13
+FS DOORSEEN 143 id 5 at (16, 0) rank 0
+FS DOOR 143 id 20 at (16, 0) n 14
+FS DOOR 144 id 8 at (16, 0) n 1
+FS DOOR 144 id 20 at (16, 0) n 15
+FS DOOR 145 id 8 at (16, 0) n 2
+FS DOOR 145 id 20 at (16, 0) n 16
+FS DOOR 146 id 8 at (16, 0) n 3
+FS DOOR 149 id 8 at (16, 0) n 4
+FS DOOR 150 id 8 at (16, 0) n 5
+FS DOOR 150 id 20 at (16, 0) n 17
+FS DOOR 151 id 8 at (16, 0) n 6
+FS DOOR 151 id 20 at (16, 0) n 18
+FS DOOR 152 id 8 at (16, 0) n 7
+FS DOOR 152 id 20 at (16, 0) n 19
+FS DOOR 153 id 8 at (16, 0) n 8
+FS DOOR 153 id 20 at (16, 0) n 20
+FS DOOR 154 id 8 at (16, 0) n 9
+FS DOOR 157 id 8 at (16, 0) n 10
+FS DOOR 158 id 8 at (16, 0) n 11
+FS DOOR 158 id 20 at (16, 0) n 21
+FS DOOR 159 id 8 at (16, 0) n 12
+FS DOOR 159 id 20 at (16, 0) n 22
+FS STAT 160 id 3 at (13, 25) need 6 orth 5 ti 14 ammo 3 sen 0 hp 22 covden 0 eco 0 lost 0
+FS DOOR 160 id 8 at (16, 0) n 13
+FS DOOR 160 id 20 at (16, 0) n 23
+FS DOOR 161 id 8 at (16, 0) n 14
+FS DOOR 161 id 20 at (16, 0) n 24
+FS DOOR 162 id 8 at (16, 0) n 15
+FS DOOR 165 id 8 at (16, 0) n 16
+FS DOOR 166 id 8 at (16, 0) n 17
+FS DOOR 166 id 20 at (16, 0) n 25
+FS DOOR 167 id 8 at (16, 0) n 18
+FS DOOR 167 id 20 at (16, 0) n 26
+FS DOOR 168 id 8 at (16, 0) n 19
+FS DOOR 168 id 20 at (16, 0) n 27
+FS DOOR 169 id 8 at (16, 0) n 20
+FS DOOR 170 id 8 at (16, 0) n 21
+FS DOOR 171 id 8 at (16, 0) n 22
+FS DOOR 172 id 8 at (16, 0) n 23
+FS DOOR 173 id 8 at (16, 0) n 24
+FS DOOR 174 id 8 at (16, 0) n 25
+FS DOOR 175 id 8 at (16, 0) n 26
+FS DOOR 176 id 8 at (16, 0) n 27
+FS DOOR 177 id 8 at (16, 0) n 28
+FS DOOR 178 id 8 at (16, 0) n 29
+FS DOORSEEN 178 id 20 at (16, 0) rank 0
+FS DOOR 179 id 8 at (16, 0) n 30
+FS STAT 180 id 3 at (13, 25) need 6 orth 5 ti 14 ammo 3 sen 0 hp 22 covden 0 eco 0 lost 0
+FS DOORSEEN 180 id 5 at (16, 0) rank 0
+FS DOORSEEN 182 id 5 at (16, 0) rank 0
+FS DOOR 183 id 20 at (16, 0) n 28

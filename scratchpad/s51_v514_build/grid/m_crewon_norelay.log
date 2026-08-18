@@ -1,0 +1,15 @@
+m_crewon_norelay_glacierkeep_g0	m_crewon_norelay	glacierkeep	0	7400	A	OPP	_v488beltbreak2	Core destroyed	184	0	0	1750
+m_crewon_norelay_glacierkeep_g1	m_crewon_norelay	glacierkeep	1	7401	B	US	crewon_norelay	Core destroyed	428	0	1520	0
+m_crewon_norelay_glacierkeep_g2	m_crewon_norelay	glacierkeep	2	7402	A	OPP	_v488beltbreak2	Harvesters (tiebreak)	1000	0	0	0
+m_crewon_norelay_nordkap_g0	m_crewon_norelay	nordkap	0	7400	A	US	crewon_norelay	Core destroyed	405	0	1510	350
+m_crewon_norelay_nordkap_g1	m_crewon_norelay	nordkap	1	7401	B	OPP	_v488beltbreak2	Core destroyed	828	0	140	1500
+m_crewon_norelay_nordkap_g2	m_crewon_norelay	nordkap	2	7402	A	OPP	_v488beltbreak2	Titanium collected (tiebreak)	1000	0	120	170
+m_crewon_norelay_atoll_g0	m_crewon_norelay	atoll	0	7400	A	US	crewon_norelay	Titanium collected (tiebreak)	1000	0	320	230
+m_crewon_norelay_atoll_g1	m_crewon_norelay	atoll	1	7401	B	OPP	_v488beltbreak2	Core destroyed	260	0	1340	2000
+m_crewon_norelay_atoll_g2	m_crewon_norelay	atoll	2	7402	A	US	crewon_norelay	Titanium collected (tiebreak)	1000	0	320	230
+m_crewon_norelay_midgard_g0	m_crewon_norelay	midgard	0	7400	A	US	crewon_norelay	Core destroyed	215	0	610	540
+m_crewon_norelay_midgard_g1	m_crewon_norelay	midgard	1	7401	B	OPP	_v488beltbreak2	Core destroyed	130	0	720	1290
+m_crewon_norelay_midgard_g2	m_crewon_norelay	midgard	2	7402	A	OPP	_v488beltbreak2	Core destroyed	398	0	560	4270
+m_crewon_norelay_drakkarfjord_g0	m_crewon_norelay	drakkarfjord	0	7400	A	OPP	_v488beltbreak2	Titanium collected (tiebreak)	1000	0	200	370
+m_crewon_norelay_drakkarfjord_g1	m_crewon_norelay	drakkarfjord	1	7401	B	OPP	_v488beltbreak2	Core destroyed	715	0	440	3430
+m_crewon_norelay_drakkarfjord_g2	m_crewon_norelay	drakkarfjord	2	7402	A	OPP	_v488beltbreak2	Titanium collected (tiebreak)	1000	0	140	700

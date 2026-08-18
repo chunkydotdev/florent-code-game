@@ -1,0 +1,31 @@
+tag	arm	map	g	seed	ord	ours	winner	cond	turn	tracebacks	ours_mined	opp_mined
+shipB_glacierkeep_g0	shipB	glacierkeep	0	7500	A	US	_v514ferrycrew	Titanium collected (tiebreak)	1000	0	150	0
+shipB_glacierkeep_g1	shipB	glacierkeep	1	7501	B	US	_v514ferrycrew	Core destroyed	316	0	250	0
+shipB_glacierkeep_g2	shipB	glacierkeep	2	7502	A	US	_v514ferrycrew	Core destroyed	216	0	480	0
+shipB_glacierkeep_g3	shipB	glacierkeep	3	7503	B	US	_v514ferrycrew	Core destroyed	303	0	140	0
+shipB_glacierkeep_g4	shipB	glacierkeep	4	7504	A	US	_v514ferrycrew	Titanium collected (tiebreak)	1000	0	230	0
+shipB_glacierkeep_g5	shipB	glacierkeep	5	7505	B	US	_v514ferrycrew	Core destroyed	345	0	170	0
+shipB_nordkap_g0	shipB	nordkap	0	7500	A	US	_v514ferrycrew	Core destroyed	444	0	1110	70
+shipB_nordkap_g1	shipB	nordkap	1	7501	B	OPP	_v488beltbreak2	Core destroyed	171	0	150	2200
+shipB_nordkap_g2	shipB	nordkap	2	7502	A	US	_v514ferrycrew	Titanium collected (tiebreak)	1000	0	160	130
+shipB_nordkap_g3	shipB	nordkap	3	7503	B	OPP	_v488beltbreak2	Core destroyed	805	0	0	20
+shipB_nordkap_g4	shipB	nordkap	4	7504	A	OPP	_v488beltbreak2	Core destroyed	282	0	150	2310
+shipB_nordkap_g5	shipB	nordkap	5	7505	B	OPP	_v488beltbreak2	Harvesters (tiebreak)	1000	0	120	120
+shipB_atoll_g0	shipB	atoll	0	7500	A	OPP	_v488beltbreak2	Core destroyed	425	0	1120	2080
+shipB_atoll_g1	shipB	atoll	1	7501	B	OPP	_v488beltbreak2	Core destroyed	223	0	1080	1720
+shipB_atoll_g2	shipB	atoll	2	7502	A	US	_v514ferrycrew	Core destroyed	116	0	500	220
+shipB_atoll_g3	shipB	atoll	3	7503	B	OPP	_v488beltbreak2	Core destroyed	318	0	310	1160
+shipB_atoll_g4	shipB	atoll	4	7504	A	OPP	_v488beltbreak2	Core destroyed	529	0	380	2540
+shipB_atoll_g5	shipB	atoll	5	7505	B	OPP	_v488beltbreak2	Core destroyed	179	0	250	810
+shipB_midgard_g0	shipB	midgard	0	7500	A	OPP	_v488beltbreak2	Core destroyed	94	0	400	890
+shipB_midgard_g1	shipB	midgard	1	7501	B	OPP	_v488beltbreak2	Core destroyed	159	0	500	1810
+shipB_midgard_g2	shipB	midgard	2	7502	A	OPP	_v488beltbreak2	Core destroyed	202	0	250	1920
+shipB_midgard_g3	shipB	midgard	3	7503	B	OPP	_v488beltbreak2	Core destroyed	344	0	670	2730
+shipB_midgard_g4	shipB	midgard	4	7504	A	US	_v514ferrycrew	Core destroyed	412	0	2350	1390
+shipB_midgard_g5	shipB	midgard	5	7505	B	OPP	_v488beltbreak2	Core destroyed	124	0	670	1560
+shipB_drakkarfjord_g0	shipB	drakkarfjord	0	7500	A	OPP	_v488beltbreak2	Core destroyed	412	0	500	1540
+shipB_drakkarfjord_g1	shipB	drakkarfjord	1	7501	B	OPP	_v488beltbreak2	Core destroyed	505	0	250	0
+shipB_drakkarfjord_g2	shipB	drakkarfjord	2	7502	A	US	_v514ferrycrew	Core destroyed	942	0	3580	920
+shipB_drakkarfjord_g3	shipB	drakkarfjord	3	7503	B	US	_v514ferrycrew	Core destroyed	113	0	390	0
+shipB_drakkarfjord_g4	shipB	drakkarfjord	4	7504	A	OPP	_v488beltbreak2	Core destroyed	778	0	500	2110
+shipB_drakkarfjord_g5	shipB	drakkarfjord	5	7505	B	US	_v514ferrycrew	Core destroyed	147	0	630	0

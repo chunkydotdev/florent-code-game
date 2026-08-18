@@ -1,0 +1,114 @@
+Update available: 2.3.6 -> 2.3.8. Run: pip install --upgrade fcode
+FS GATE 0 sig (20, 26, (9, 6), (9, 18)) ok 1
+FS GATE 1 sig (20, 26, (9, 6), (9, 18)) ok 1
+FS PHASE 1 id 3 ph 1 d 100 at (9, 8)
+FS HOPBUILD 1 at (9, 8) lch (9, 9) T (11, 20)
+FS GATE 2 sig (20, 26, (9, 6), (9, 18)) ok 1
+FS GATE 2 sig (20, 26, (9, 6), (9, 18)) ok 1
+FS THROW 2 from (10, 8) to (10, 14) T (11, 20) body 3 n 1 dsq 16
+FS HOPBUILD 3 at (10, 14) lch (10, 15) T (11, 20)
+FS GATE 3 sig (20, 26, (9, 6), (9, 18)) ok 1
+FS GATE 4 sig (20, 26, (9, 6), (9, 18)) ok 1
+FS THROW 4 from (11, 14) to (11, 20) T (11, 20) body 3 n 1 dsq 2
+FS ARRIVE 5 id 3 body 1 at (11, 20) dsq 2
+FS PHASE 5 id 3 ph 2 d 2 at (11, 20)
+FS SENTINEL 5 at (12, 20) face NORTHWEST tgt (10, 18) score 8 n 1 onring 0 lost 0 gate (0, 0, -1) onsray 0 olddsq -1
+FS RUNG 5 id 3 r 4 hi -
+FS PHASE 6 id 3 ph 5 d 2 at (11, 20)
+FS SEAL 6 tile (11, 19) n 1
+FS SEAL 7 tile (10, 20) n 2
+FS GATE 7 sig (20, 26, (9, 6), (9, 18)) ok 1
+FS GATE 8 sig (20, 26, (9, 6), (9, 18)) ok 1
+ECO514 10 harv 1 mouth 1 held 1 conn 0 deliv 1
+FS PHASE 10 id 3 ph 2 d 2 at (11, 20)
+FS SENTDEAD 10 at (12, 20) lost 1
+ECO514 11 harv 2 mouth 1 held 0 conn 1 deliv 1
+FS DODGE 11 id 3 from (12, 20) to (11, 20) cov 2 -> 0 hit 0 hp 22
+FS DOORSEEN 61 id 5 at (7, 13) rank 2
+FS DOOR 62 id 5 at (7, 13) n 1
+FS DOOR 63 id 5 at (7, 13) n 2
+FS DOOR 64 id 5 at (7, 13) n 3
+FS DOOR 65 id 5 at (7, 13) n 4
+FS DOOR 66 id 5 at (7, 13) n 5
+FS DOOR 67 id 5 at (7, 13) n 6
+FS DOOR 68 id 5 at (7, 13) n 7
+FS DOOR 69 id 5 at (7, 13) n 8
+FS DOOR 70 id 5 at (7, 13) n 9
+FS DOOR 71 id 5 at (7, 13) n 10
+FS DOOR 72 id 5 at (7, 13) n 11
+FS DOOR 73 id 5 at (7, 13) n 12
+FS DOOR 74 id 5 at (7, 13) n 13
+FS DOOR 75 id 5 at (7, 13) n 14
+FS DOOR 76 id 5 at (7, 13) n 15
+FS DOOR 77 id 5 at (7, 13) n 16
+FS DOOR 78 id 5 at (7, 13) n 17
+FS DOOR 79 id 5 at (7, 13) n 18
+FS DOOR 80 id 5 at (7, 13) n 19
+FS DOOR 81 id 5 at (7, 13) n 20
+FS DOORSEEN 167 id 8 at (5, 11) rank 2
+FS DOORSEEN 167 id 21 at (5, 11) rank 2
+FS DOORSEEN 169 id 8 at (5, 11) rank 2
+FS DOORSEEN 171 id 8 at (5, 11) rank 2
+FS DOORSEEN 176 id 8 at (5, 11) rank 2
+FS DOOR 176 id 21 at (5, 11) n 1
+FS DOOR 177 id 21 at (5, 11) n 2
+FS DOORSEEN 178 id 5 at (12, 11) rank 2
+FS DOOR 178 id 21 at (5, 11) n 3
+FS DOORSEEN 179 id 5 at (5, 11) rank 2
+FS DOORSEEN 190 id 5 at (12, 11) rank 2
+FS DOORSEEN 192 id 5 at (12, 11) rank 2
+FS DOORSEEN 200 id 5 at (12, 11) rank 2
+FS DOORSEEN 203 id 5 at (12, 11) rank 2
+FS DOOR 216 id 5 at (12, 11) n 21
+FS DOOR 217 id 5 at (12, 11) n 22
+FS DOOR 218 id 5 at (12, 11) n 23
+FS DOOR 219 id 5 at (12, 11) n 24
+FS DOOR 220 id 5 at (12, 11) n 25
+FS DOOR 221 id 5 at (12, 11) n 26
+FS DOOR 222 id 5 at (12, 11) n 27
+FS DOOR 223 id 5 at (12, 11) n 28
+FS DOOR 224 id 5 at (12, 11) n 29
+FS DOOR 225 id 5 at (12, 11) n 30
+FS DOOR 226 id 5 at (12, 11) n 31
+FS DOOR 227 id 5 at (12, 11) n 32
+FS DOOR 228 id 5 at (12, 11) n 33
+FS DOORSEEN 229 id 8 at (7, 11) rank 2
+FS DOORSEEN 230 id 5 at (7, 11) rank 2
+FS DOOR 230 id 8 at (7, 11) n 1
+FS DOOR 231 id 8 at (7, 11) n 2
+FS DOOR 232 id 8 at (7, 11) n 3
+FS DOOR 233 id 8 at (7, 11) n 4
+FS DOOR 234 id 8 at (7, 11) n 5
+FS DOOR 235 id 8 at (7, 11) n 6
+FS DOOR 236 id 8 at (7, 11) n 7
+FS DOOR 237 id 8 at (7, 11) n 8
+FS DOOR 238 id 8 at (7, 11) n 9
+FS DOOR 239 id 8 at (7, 11) n 10
+FS DOORSEEN 241 id 5 at (8, 12) rank 2
+FS DOORSEEN 260 id 5 at (7, 7) rank 0
+FS DOORSEEN 266 id 5 at (7, 7) rank 0
+FS DOOR 269 id 5 at (7, 7) n 34
+FS DOOR 270 id 5 at (7, 7) n 35
+FS DOOR 271 id 5 at (7, 7) n 36
+FS DOOR 272 id 5 at (7, 7) n 37
+FS DOOR 273 id 5 at (7, 7) n 38
+FS DOOR 274 id 5 at (7, 7) n 39
+FS DOOR 275 id 5 at (7, 7) n 40
+FS DOOR 276 id 5 at (7, 7) n 41
+FS DOOR 277 id 5 at (7, 7) n 42
+FS DOOR 278 id 5 at (7, 7) n 43
+FS DOOR 279 id 5 at (7, 7) n 44
+FS DOOR 280 id 5 at (7, 7) n 45
+FS DOOR 281 id 5 at (7, 7) n 46
+FS DOOR 282 id 5 at (7, 7) n 47
+FS DOOR 283 id 5 at (7, 7) n 48
+FS DOOR 284 id 5 at (7, 7) n 49
+FS DOOR 285 id 5 at (7, 7) n 50
+FS DOOR 286 id 5 at (7, 7) n 51
+FS DOOR 287 id 5 at (7, 7) n 52
+FS DOOR 288 id 5 at (7, 7) n 53
+FS DOOR 289 id 5 at (7, 7) n 54
+FS DOOR 290 id 5 at (7, 7) n 55
+FS DOOR 291 id 5 at (7, 7) n 56
+FS DOOR 292 id 5 at (7, 7) n 57
+FS DOOR 293 id 5 at (7, 7) n 58

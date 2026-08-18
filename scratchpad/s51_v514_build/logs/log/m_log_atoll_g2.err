@@ -1,0 +1,211 @@
+Update available: 2.3.6 -> 2.3.8. Run: pip install --upgrade fcode
+FS GATE 0 sig (18, 18, (2, 14), (14, 2)) ok 1
+FS GATE 1 sig (18, 18, (2, 14), (14, 2)) ok 1
+FS PHASE 1 id 3 ph 1 d 200 at (4, 13)
+FS HOPBUILD 1 at (4, 13) lch (4, 12) T (16, 1)
+FS GATE 2 sig (18, 18, (2, 14), (14, 2)) ok 1
+FS GATE 2 sig (18, 18, (2, 14), (14, 2)) ok 1
+FS THROW 2 from (5, 13) to (8, 9) T (16, 1) body 3 n 1 dsq 72
+FS HOPBUILD 3 at (8, 9) lch (8, 8) T (16, 1)
+FS GATE 3 sig (18, 18, (2, 14), (14, 2)) ok 1
+FS GATE 4 sig (18, 18, (2, 14), (14, 2)) ok 1
+FS THROW 4 from (9, 9) to (12, 5) T (16, 1) body 3 n 1 dsq 8
+ECO514 5 harv 1 mouth 1 held 1 conn 0 deliv 1
+FS ARRIVE 5 id 3 body 1 at (12, 5) dsq 8
+FS PHASE 5 id 3 ph 2 d 8 at (12, 5)
+ECO514 7 harv 2 mouth 1 held 0 conn 1 deliv 1
+FS GATE 7 sig (18, 18, (2, 14), (14, 2)) ok 1
+FS EVICTOR 8 at (13, 4) ucov 0 cov 1 unseal 1 obs 6
+FS RUNG 8 id 3 r 2 hi -
+FS GATE 8 sig (18, 18, (2, 14), (14, 2)) ok 1
+FS GATE 9 sig (18, 18, (2, 14), (14, 2)) ok 1
+FS SEAL 10 tile (14, 4) n 1
+FS EVICT 10 from (13, 3) to (12, 9)
+FS SEAL 12 tile (15, 4) n 2
+FS SENTINEL 13 at (15, 6) face NORTH tgt (15, 2) score 16 n 1 onring 0 lost 0 gate (1, 1, 7) onsray 0 olddsq -1
+FS RUNG 13 id 3 r 4 hi -
+FS EVICT 13 from (12, 5) to (17, 1)
+FS PHASE 14 id 3 ph 5 d 4 at (15, 5)
+FS EVICT 14 from (13, 3) to (12, 9)
+FS SEAL 16 tile (15, 4) n 3
+FS DODGE 18 id 3 from (14, 5) to (15, 5) cov 1 -> 0 hit 0 hp 40
+FS SEAL 19 tile (15, 4) n 4
+FS EVICT 19 from (13, 3) to (12, 9)
+FS STAT 20 id 3 at (15, 5) need 7 orth 6 ti 43 ammo 40 sen 1 hp 40 covden 0 eco 1 lost 0
+FS DODGE 21 id 3 from (14, 5) to (15, 5) cov 1 -> 0 hit 0 hp 22
+FS DODGE 23 id 3 from (14, 5) to (15, 5) cov 1 -> 0 hit 0 hp 4
+FS EVICT 23 from (12, 5) to (17, 1)
+FS EVICT 47 from (14, 5) to (8, 5)
+FS EVICT 51 from (14, 5) to (8, 5)
+FS EVICT 53 from (12, 3) to (12, 9)
+FS EVICT 55 from (12, 5) to (17, 1)
+FS EVICT 57 from (12, 5) to (17, 1)
+FS EVICT 62 from (14, 5) to (8, 5)
+FS EVICT 66 from (12, 5) to (17, 1)
+FS EVICT 68 from (12, 5) to (17, 1)
+FS EVICT 75 from (14, 5) to (8, 5)
+FS EVICT 78 from (13, 3) to (12, 9)
+FS EVICT 79 from (12, 5) to (17, 1)
+FS EVICT 81 from (12, 5) to (17, 1)
+FS EVICT 86 from (14, 5) to (8, 5)
+FS EVICT 90 from (12, 5) to (17, 1)
+FS EVICT 97 from (14, 5) to (8, 5)
+FS EVICT 98 from (12, 5) to (17, 1)
+FS EVICT 101 from (12, 5) to (17, 1)
+FS EVICT 106 from (13, 3) to (12, 9)
+FS EVICT 108 from (14, 5) to (8, 5)
+FS EVICT 112 from (12, 5) to (17, 1)
+FS EVICT 118 from (13, 3) to (12, 9)
+FS EVICT 119 from (14, 5) to (8, 5)
+FS EVICT 123 from (12, 5) to (17, 1)
+FS EVICT 126 from (12, 5) to (17, 1)
+FS EVICT 134 from (13, 3) to (13, 9)
+FS EVICT 137 from (14, 4) to (8, 5)
+FS EVICT 141 from (12, 5) to (17, 1)
+FS EVICT 147 from (14, 4) to (8, 5)
+FS DOORSEEN 148 id 5 at (5, 14) rank 1
+FS DOORSEEN 148 id 22 at (5, 14) rank 1
+FS EVICT 148 from (12, 5) to (17, 1)
+FS DOOR 150 id 5 at (5, 14) n 1
+FS DOOR 151 id 5 at (5, 14) n 2
+FS DOOR 151 id 22 at (5, 14) n 1
+FS EVICT 151 from (12, 5) to (17, 1)
+FS DOOR 152 id 5 at (5, 14) n 3
+FS DOOR 152 id 22 at (5, 14) n 2
+FS EVICT 157 from (14, 4) to (8, 5)
+FS EVICT 158 from (12, 4) to (10, 8)
+FS EVICT 161 from (12, 5) to (17, 1)
+FS EVICT 163 from (12, 5) to (17, 1)
+FS EVICT 167 from (14, 4) to (8, 5)
+FS EVICT 171 from (13, 3) to (12, 9)
+FS EVICT 172 from (13, 5) to (10, 8)
+FS EVICT 186 from (13, 3) to (12, 9)
+FS EVICT 188 from (14, 4) to (8, 5)
+FS EVICT 191 from (12, 5) to (17, 1)
+FS EVICT 192 from (12, 5) to (17, 1)
+FS EVICT 199 from (13, 3) to (13, 9)
+FS EVICT 200 from (14, 4) to (8, 5)
+FS EVICT 204 from (12, 5) to (17, 1)
+FS EVICT 210 from (14, 4) to (8, 5)
+FS EVICT 214 from (12, 5) to (17, 1)
+FS EVICT 220 from (14, 4) to (8, 5)
+FS EVICT 221 from (12, 4) to (10, 8)
+FS EVICT 224 from (12, 5) to (17, 1)
+FS EVICT 226 from (12, 5) to (17, 1)
+FS EVICT 230 from (14, 4) to (8, 5)
+FS DOORSEEN 231 id 22 at (6, 12) rank 0
+FS DOOR 232 id 22 at (6, 12) n 3
+FS DOOR 233 id 22 at (6, 12) n 4
+FS DOOR 234 id 22 at (6, 12) n 5
+FS EVICT 234 from (13, 3) to (13, 9)
+FS DOORSEEN 235 id 5 at (6, 12) rank 0
+FS DOOR 235 id 22 at (6, 12) n 6
+FS EVICT 235 from (13, 5) to (10, 8)
+FS DOORSEEN 236 id 8 at (6, 12) rank 0
+FS DOOR 236 id 22 at (6, 12) n 7
+FS DOOR 237 id 22 at (6, 12) n 8
+FS DOOR 238 id 22 at (6, 12) n 9
+FS DOOR 239 id 22 at (6, 12) n 10
+FS EVICT 239 from (12, 5) to (17, 1)
+FS DOOR 240 id 22 at (6, 12) n 11
+FS DOOR 241 id 22 at (6, 12) n 12
+FS DOOR 242 id 22 at (6, 12) n 13
+FS DOOR 243 id 22 at (6, 12) n 14
+FS DOOR 244 id 5 at (6, 12) n 4
+FS DOOR 244 id 22 at (6, 12) n 15
+FS DOOR 245 id 5 at (6, 12) n 5
+FS DOOR 245 id 22 at (6, 12) n 16
+FS EVICT 245 from (13, 3) to (13, 9)
+FS DOOR 246 id 5 at (6, 12) n 6
+FS DOOR 246 id 22 at (6, 12) n 17
+FS DOOR 247 id 5 at (6, 12) n 7
+FS EVICT 247 from (14, 4) to (8, 5)
+FS DOOR 248 id 5 at (6, 12) n 8
+FS EVICT 251 from (12, 5) to (17, 1)
+FS EVICT 257 from (14, 4) to (8, 5)
+FS EVICT 261 from (12, 4) to (8, 5)
+FS EVICT 262 from (13, 5) to (10, 8)
+FS EVICT 266 from (12, 5) to (17, 1)
+FS EVICT 274 from (13, 3) to (13, 9)
+FS EVICT 276 from (14, 4) to (8, 5)
+FS EVICT 280 from (12, 5) to (17, 1)
+FS EVICT 286 from (14, 4) to (8, 5)
+FS EVICT 290 from (12, 5) to (17, 1)
+FS EVICT 295 from (12, 5) to (17, 1)
+FS EVICT 296 from (14, 4) to (8, 5)
+FS EVICT 300 from (12, 5) to (17, 1)
+FS EVICT 303 from (13, 3) to (13, 9)
+FS EVICT 306 from (14, 4) to (8, 5)
+FS EVICT 310 from (12, 5) to (17, 1)
+FS EVICT 316 from (14, 4) to (8, 5)
+FS DOORSEEN 320 id 5 at (5, 14) rank 0
+FS DOORSEEN 320 id 22 at (5, 14) rank 0
+FS EVICT 320 from (12, 5) to (17, 1)
+FS DOORSEEN 323 id 8 at (5, 14) rank 0
+FS DOOR 324 id 5 at (5, 14) n 9
+FS DOOR 325 id 5 at (5, 14) n 10
+FS EVICT 326 from (14, 4) to (8, 5)
+FS EVICT 330 from (12, 5) to (17, 1)
+FS EVICT 336 from (14, 4) to (8, 5)
+FS EVICT 340 from (12, 5) to (17, 1)
+FS EVICT 346 from (14, 4) to (8, 5)
+FS EVICT 350 from (12, 5) to (17, 1)
+FS DOORSEEN 354 id 5 at (5, 14) rank 0
+FS DOOR 354 id 5 at (5, 14) n 11
+FS DOORSEEN 354 id 8 at (5, 14) rank 0
+FS DOORSEEN 354 id 22 at (5, 14) rank 0
+FS DOOR 355 id 5 at (5, 14) n 12
+FS DOOR 355 id 8 at (5, 14) n 1
+FS DOOR 356 id 5 at (5, 14) n 13
+FS DOOR 356 id 8 at (5, 14) n 2
+FS EVICT 356 from (14, 4) to (8, 5)
+FS DOOR 357 id 5 at (5, 14) n 14
+FS DOOR 357 id 8 at (5, 14) n 3
+FS EVICT 360 from (12, 5) to (17, 1)
+FS EVICT 366 from (14, 4) to (8, 5)
+FS EVICT 370 from (12, 5) to (17, 1)
+FS DOORSEEN 373 id 8 at (7, 15) rank 0
+FS DOORSEEN 373 id 22 at (7, 15) rank 0
+FS DOOR 374 id 22 at (7, 15) n 18
+FS DOOR 375 id 22 at (7, 15) n 19
+FS DOOR 376 id 22 at (7, 15) n 20
+FS EVICT 376 from (14, 4) to (8, 5)
+FS DOORSEEN 377 id 5 at (7, 15) rank 0
+FS DOOR 377 id 22 at (7, 15) n 21
+FS DOOR 378 id 22 at (7, 15) n 22
+FS DOOR 379 id 8 at (7, 15) n 4
+FS DOOR 380 id 8 at (7, 15) n 5
+FS EVICT 380 from (12, 5) to (17, 1)
+FS DOOR 381 id 8 at (7, 15) n 6
+FS DOOR 381 id 22 at (7, 15) n 23
+FS DOOR 382 id 8 at (7, 15) n 7
+FS DOOR 382 id 22 at (7, 15) n 24
+FS DOOR 385 id 8 at (7, 15) n 8
+FS DOOR 385 id 22 at (7, 15) n 25
+FS DOOR 386 id 5 at (7, 15) n 15
+FS DOOR 386 id 8 at (7, 15) n 9
+FS DOOR 386 id 22 at (7, 15) n 26
+FS EVICT 386 from (14, 4) to (8, 5)
+FS DOOR 389 id 5 at (7, 15) n 16
+FS DOOR 389 id 22 at (7, 15) n 27
+FS DOOR 390 id 5 at (7, 15) n 17
+FS DOOR 390 id 22 at (7, 15) n 28
+FS EVICT 390 from (12, 5) to (17, 1)
+FS EVICT 396 from (14, 4) to (8, 5)
+FS EVICT 400 from (12, 5) to (17, 1)
+FS EVICT 406 from (14, 4) to (8, 5)
+FS EVICT 407 from (14, 4) to (8, 4)
+FS EVICT 412 from (12, 5) to (17, 1)
+FS EVICT 418 from (14, 4) to (8, 4)
+FS EVICT 423 from (12, 5) to (17, 1)
+FS EVICT 425 from (13, 3) to (13, 9)
+FS EVICT 429 from (14, 4) to (8, 4)
+FS EVICT 434 from (12, 5) to (17, 1)
+FS DOORSEEN 439 id 5 at (6, 12) rank 0
+FS DOORSEEN 439 id 8 at (6, 12) rank 0
+FS DOOR 439 id 8 at (6, 12) n 10
+FS DOOR 440 id 8 at (6, 12) n 11
+FS EVICT 440 from (14, 4) to (8, 4)
+FS DOOR 441 id 8 at (6, 12) n 12
+FS DOOR 442 id 8 at (6, 12) n 13
+FS DOOR 443 id 8 at (6, 12) n 14

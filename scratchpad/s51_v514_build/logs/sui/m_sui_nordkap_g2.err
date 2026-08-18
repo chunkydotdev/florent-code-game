@@ -1,0 +1,463 @@
+Update available: 2.3.6 -> 2.3.8. Run: pip install --upgrade fcode
+FS GATE 0 sig (20, 26, (9, 6), (9, 18)) ok 1
+FS GATE 1 sig (20, 26, (9, 6), (9, 18)) ok 1
+FS PHASE 1 id 3 ph 1 d 100 at (9, 8)
+FS HOPBUILD 1 at (9, 8) lch (9, 9) T (11, 20)
+FS GATE 2 sig (20, 26, (9, 6), (9, 18)) ok 1
+FS GATE 2 sig (20, 26, (9, 6), (9, 18)) ok 1
+FS THROW 2 from (10, 8) to (10, 14) T (11, 20) body 3 n 1 dsq 16
+FS HOPBUILD 3 at (10, 14) lch (10, 15) T (11, 20)
+FS GATE 3 sig (20, 26, (9, 6), (9, 18)) ok 1
+FS GATE 4 sig (20, 26, (9, 6), (9, 18)) ok 1
+FS THROW 4 from (11, 14) to (11, 20) T (11, 20) body 3 n 1 dsq 2
+FS ARRIVE 5 id 3 body 1 at (11, 20) dsq 2
+FS PHASE 5 id 3 ph 2 d 2 at (11, 20)
+FS SEAL 5 tile (10, 20) n 1
+FS SEAL 6 tile (11, 19) n 2
+FS DODGE 7 id 3 from (11, 20) to (12, 20) cov 1 -> 0 hit 0 hp 40
+FS GATE 7 sig (20, 26, (9, 6), (9, 18)) ok 1
+FS EVICTOR 8 at (12, 19) ucov 0 cov 2 unseal 0 obs 6
+FS RUNG 8 id 3 r 2 hi -
+FS GATE 8 sig (20, 26, (9, 6), (9, 18)) ok 1
+FS GATE 9 sig (20, 26, (9, 6), (9, 18)) ok 1
+FS GATE 9 sig (20, 26, (9, 6), (9, 18)) ok 1
+FS EVICT 9 from (11, 18) to (17, 18)
+FS EVICT 10 from (13, 18) to (13, 24)
+FS DODGE 13 id 3 from (13, 19) to (13, 18) cov 1 -> 0 hit 0 hp 40
+FS EVICT 14 from (13, 18) to (13, 24)
+FS SEAL 15 tile (11, 18) n 3
+FS EVICT 15 from (13, 19) to (7, 20)
+FS DODGE 18 id 3 from (11, 17) to (10, 17) cov 1 -> 0 hit 0 hp 22
+FS EVICT 18 from (13, 20) to (7, 20)
+FS STAT 20 id 3 at (10, 16) need 6 orth 6 ti 28 ammo 23 sen 0 hp 22 covden 0 eco 0 lost 0
+FS EVICT 21 from (11, 20) to (17, 18)
+FS EVICT 24 from (11, 20) to (17, 18)
+FS EVICT 27 from (13, 18) to (13, 24)
+FS EVICT 30 from (13, 18) to (13, 24)
+FS EVICT 31 from (13, 20) to (7, 20)
+FS SEAL 32 tile (8, 17) n 4
+FS EVICT 34 from (13, 20) to (7, 20)
+FS CLEAR 35 tile (10, 17) peck 1
+FS RUNG 35 id 3 r 3 hi -
+FS CLEAR 36 tile (10, 17) peck 2
+FS RUNG 36 id 3 r 3 hi -
+FS CLEAR 37 tile (10, 17) peck 3
+FS RUNG 37 id 3 r 3 hi -
+FS EVICT 37 from (11, 20) to (17, 18)
+FS CLEAR 38 tile (10, 17) peck 4
+FS RUNG 38 id 3 r 3 hi -
+FS CLEAR 39 tile (10, 17) peck 5
+FS RUNG 39 id 3 r 3 hi -
+FS STAT 40 id 3 at (10, 16) need 4 orth 4 ti 51 ammo 24 sen 0 hp 26 covden 0 eco 0 lost 0
+FS CLEAR 40 tile (10, 17) peck 6
+FS RUNG 40 id 3 r 3 hi -
+FS EVICT 40 from (11, 20) to (17, 18)
+FS CLEAR 41 tile (10, 17) peck 7
+FS RUNG 41 id 3 r 3 hi -
+FS CLEAR 43 tile (10, 17) peck 8
+FS RUNG 43 id 3 r 3 hi -
+FS EVICT 45 from (13, 18) to (13, 24)
+FS EVICT 48 from (13, 18) to (13, 24)
+FS EVICT 49 from (13, 20) to (7, 20)
+FS SEAL 50 tile (8, 19) n 5
+FS EVICT 52 from (13, 20) to (7, 20)
+FS EVICT 55 from (11, 20) to (17, 18)
+FS SEAL 57 tile (9, 20) n 6
+FS DODGE 58 id 3 from (8, 20) to (8, 21) cov 1 -> 0 hit 0 hp 26
+FS EVICT 58 from (11, 20) to (17, 18)
+FS STAT 60 id 3 at (9, 21) need 3 orth 3 ti 37 ammo 24 sen 0 hp 26 covden 0 eco 0 lost 0
+FS DODGE 60 id 3 from (9, 21) to (10, 21) cov 1 -> 0 hit 0 hp 26
+FS EVICT 61 from (13, 18) to (13, 24)
+FS RETREAT 62 id 3 hp 8 from (11, 21) to (11, 22)
+FS EVICT 64 from (13, 18) to (13, 24)
+FS EVICT 65 from (13, 20) to (7, 20)
+FS EVICT 68 from (13, 20) to (7, 20)
+FS DODGE 69 id 3 from (9, 22) to (9, 21) cov 1 -> 0 hit 0 hp 8
+FS SEAL 72 tile (8, 19) n 7
+FS SEAL 78 tile (8, 18) n 8
+FS STAT 80 id 3 at (7, 17) need 5 orth 5 ti 33 ammo 24 sen 0 hp 1 covden 0 eco 0 lost 0
+FS DODGE 80 id 3 from (7, 17) to (6, 17) cov 1 -> 0 hit 0 hp 1
+FS DODGE 82 id 3 from (7, 17) to (6, 17) cov 1 -> 0 hit 0 hp 1
+FS EVICT 99 from (11, 20) to (17, 18)
+FS EVICT 111 from (11, 18) to (17, 18)
+FS EVICT 119 from (11, 18) to (17, 18)
+FS DOORSEEN 124 id 19 at (7, 13) rank 2
+FS DOORSEEN 125 id 8 at (7, 13) rank 2
+FS EVICT 127 from (11, 18) to (17, 18)
+FS DOORSEEN 130 id 5 at (7, 13) rank 2
+FS EVICT 135 from (11, 18) to (17, 18)
+FS DOORSEEN 136 id 5 at (7, 13) rank 2
+FS EVICT 143 from (11, 18) to (17, 18)
+FS DOORSEEN 146 id 19 at (9, 13) rank 2
+FS DOORSEEN 147 id 5 at (9, 13) rank 2
+FS DOORSEEN 147 id 8 at (9, 13) rank 2
+FS EVICT 151 from (11, 18) to (17, 18)
+FS DOORSEEN 153 id 19 at (9, 13) rank 2
+FS DOORSEEN 154 id 5 at (9, 13) rank 2
+FS DOORSEEN 154 id 8 at (9, 13) rank 2
+FS EVICT 159 from (11, 18) to (17, 18)
+FS DOORSEEN 164 id 19 at (11, 13) rank 2
+FS DOORSEEN 165 id 5 at (11, 13) rank 2
+FS DOORSEEN 165 id 8 at (11, 13) rank 2
+FS EVICT 167 from (11, 18) to (17, 18)
+FS DOORSEEN 172 id 19 at (9, 13) rank 2
+FS DOORSEEN 173 id 5 at (9, 13) rank 2
+FS DOORSEEN 173 id 8 at (9, 13) rank 2
+FS DOOR 173 id 19 at (9, 13) n 1
+FS DOOR 174 id 19 at (9, 13) n 2
+FS DOOR 175 id 19 at (9, 13) n 3
+FS EVICT 175 from (11, 18) to (17, 18)
+FS DOORSEEN 177 id 19 at (8, 11) rank 2
+FS DOORSEEN 178 id 5 at (8, 11) rank 2
+FS DOORSEEN 178 id 8 at (8, 11) rank 2
+FS EVICT 183 from (11, 18) to (17, 18)
+FS EVICT 190 from (11, 19) to (17, 18)
+FS EVICT 191 from (11, 18) to (17, 19)
+FS EVICT 200 from (11, 18) to (17, 19)
+FS EVICT 201 from (11, 19) to (17, 19)
+FS EVICT 209 from (11, 18) to (16, 22)
+FS EVICT 212 from (11, 18) to (16, 22)
+FS EVICT 214 from (13, 20) to (7, 20)
+FS EVICT 220 from (11, 20) to (15, 15)
+FS GATE 221 sig (20, 26, (9, 6), (9, 18)) ok 1
+FS PHASE 221 id 466 ph 1 d 170 at (8, 5)
+FS HOPBUILD 222 at (7, 5) lch (7, 6) T (11, 20)
+FS GATE 223 sig (20, 26, (9, 6), (9, 18)) ok 1
+FS THROW 223 from (8, 5) to (8, 11) T (11, 20) body 466 n 1 dsq 50
+FS HOPBUILD 224 at (8, 11) lch (8, 12) T (11, 20)
+FS GATE 225 sig (20, 26, (9, 6), (9, 18)) ok 1
+FS THROW 225 from (8, 11) to (9, 17) T (11, 20) body 466 n 1 dsq 1
+FS ARRIVE 226 id 466 body 1 at (9, 17) dsq 1
+FS PHASE 226 id 466 ph 2 d 1 at (9, 17)
+FS DODGE 226 id 466 from (9, 17) to (10, 17) cov 1 -> 0 hit 0 hp 33
+FS CLEAR 227 tile (9, 17) peck 1
+FS RUNG 227 id 466 r 3 hi -
+FS CLEAR 228 tile (9, 17) peck 2
+FS RUNG 228 id 466 r 3 hi -
+FS CLEAR 229 tile (9, 17) peck 3
+FS RUNG 229 id 466 r 3 hi -
+FS CLEAR 230 tile (9, 17) peck 4
+FS RUNG 230 id 466 r 3 hi -
+FS CLEAR 231 tile (9, 17) peck 5
+FS RUNG 231 id 466 r 3 hi -
+FS CLEAR 232 tile (9, 17) peck 6
+FS RUNG 232 id 466 r 3 hi -
+FS CLEAR 233 tile (9, 17) peck 7
+FS RUNG 233 id 466 r 3 hi -
+FS CLEAR 234 tile (9, 17) peck 8
+FS RUNG 234 id 466 r 3 hi -
+FS CLEAR 236 tile (10, 17) peck 1
+FS RUNG 236 id 466 r 3 hi -
+FS CLEAR 237 tile (10, 17) peck 2
+FS RUNG 237 id 466 r 3 hi -
+FS CLEAR 238 tile (10, 17) peck 3
+FS RUNG 238 id 466 r 3 hi -
+FS CLEAR 239 tile (10, 17) peck 4
+FS RUNG 239 id 466 r 3 hi -
+FS STAT 240 id 466 at (10, 16) need 7 orth 6 ti 140 ammo 20 sen 0 hp 33 covden 15 eco 1 lost 0
+FS CLEAR 240 tile (10, 17) peck 5
+FS RUNG 240 id 466 r 3 hi -
+FS CLEAR 241 tile (10, 17) peck 6
+FS RUNG 241 id 466 r 3 hi -
+FS CLEAR 242 tile (10, 17) peck 7
+FS RUNG 242 id 466 r 3 hi -
+FS CLEAR 243 tile (10, 17) peck 8
+FS RUNG 243 id 466 r 3 hi -
+FS EVICT 244 from (11, 18) to (15, 23)
+FS SENTINEL 244 at (10, 15) face SOUTH tgt (10, 19) score 16 n 1 onring 0 lost 0 onsray 0 olddsq -1
+FS RUNG 244 id 466 r 4 hi -
+FS PHASE 245 id 466 ph 5 d 4 at (10, 16)
+PROBE SENTSUICIDE 245 at (10, 15)
+FS PHASE 246 id 466 ph 2 d 4 at (9, 16)
+FS SENTDEAD 246 at (10, 15) lost 1
+FS CLEAR 249 tile (9, 17) peck 1
+FS RUNG 249 id 466 r 3 hi -
+FS CLEAR 250 tile (9, 17) peck 2
+FS RUNG 250 id 466 r 3 hi -
+FS CLEARED 251 tile (9, 17) n 1
+FS SEAL 251 tile (9, 17) n 1
+FS SEALCLR 251 tile (9, 17) lag 0
+FS CLEAR 253 tile (10, 17) peck 1
+FS RUNG 253 id 466 r 3 hi -
+FS CLEAR 254 tile (10, 17) peck 2
+FS RUNG 254 id 466 r 3 hi -
+FS CLEARED 255 tile (10, 17) n 2
+FS SEAL 255 tile (10, 17) n 2
+FS SEALCLR 255 tile (10, 17) lag 0
+FS SEAL 257 tile (9, 17) n 3
+FS STAT 260 id 466 at (7, 16) need 5 orth 5 ti 109 ammo 56 sen 0 hp 15 covden 33 eco 1 lost 1
+FS DODGE 260 id 466 from (7, 16) to (8, 16) cov 1 -> 0 hit 0 hp 15
+FS GATE 273 sig (20, 26, (9, 6), (9, 18)) ok 1
+FS PHASE 273 id 629 ph 1 d 101 at (8, 8)
+FS HOPBUILD 277 at (7, 11) lch (7, 12) T (11, 20)
+FS GATE 278 sig (20, 26, (9, 6), (9, 18)) ok 1
+FS THROW 278 from (8, 11) to (10, 16) T (11, 20) body 629 n 1 dsq 4
+FS ARRIVE 279 id 629 body 1 at (10, 16) dsq 4
+FS PHASE 279 id 629 ph 2 d 4 at (10, 16)
+FS SENTINEL 279 at (10, 15) face SOUTH tgt (10, 19) score 16 n 1 onring 0 lost 0 onsray 0 olddsq -1
+FS RUNG 279 id 629 r 4 hi -
+FS PHASE 280 id 629 ph 5 d 4 at (10, 16)
+FS STAT 280 id 629 at (10, 16) need 6 orth 5 ti 96 ammo 68 sen 1 hp 40 covden 2 eco 1 lost 0
+PROBE SENTSUICIDE 280 at (10, 15)
+FS PHASE 281 id 629 ph 2 d 4 at (9, 16)
+FS SENTDEAD 281 at (10, 15) lost 1
+FS SEAL 281 tile (9, 17) n 1
+FS EVICT 283 from (11, 20) to (16, 21)
+FS DODGE 284 id 629 from (7, 16) to (8, 16) cov 1 -> 0 hit 0 hp 22
+FS DODGE 286 id 629 from (7, 16) to (8, 16) cov 1 -> 0 hit 0 hp 4
+FS SEAL 288 tile (9, 17) n 2
+FS GATE 308 sig (20, 26, (9, 6), (9, 18)) ok 1
+FS PHASE 308 id 756 ph 1 d 170 at (8, 5)
+FS HOPBUILD 309 at (7, 5) lch (7, 6) T (11, 20)
+FS GATE 310 sig (20, 26, (9, 6), (9, 18)) ok 1
+FS THROW 310 from (8, 5) to (8, 11) T (11, 20) body 756 n 1 dsq 50
+FS HOPBUILD 314 at (8, 14) lch (9, 14) T (11, 20)
+FS GATE 315 sig (20, 26, (9, 6), (9, 18)) ok 1
+FS THROW 315 from (8, 14) to (11, 18) T (11, 20) body 756 n 1 dsq 1
+FS ARRIVE 316 id 756 body 1 at (11, 18) dsq 1
+FS PHASE 316 id 756 ph 2 d 1 at (11, 18)
+FS DODGE 316 id 756 from (11, 18) to (12, 18) cov 1 -> 0 hit 0 hp 22
+FS CLEAR 317 tile (11, 18) peck 1
+FS RUNG 317 id 756 r 3 hi -
+FS CLEAR 318 tile (11, 18) peck 2
+FS RUNG 318 id 756 r 3 hi -
+FS CLEAR 319 tile (11, 18) peck 3
+FS RUNG 319 id 756 r 3 hi -
+FS STAT 320 id 756 at (12, 18) need 6 orth 5 ti 173 ammo 80 sen 0 hp 22 covden 5 eco 1 lost 0
+FS CLEAR 320 tile (11, 18) peck 4
+FS RUNG 320 id 756 r 3 hi -
+FS CLEAR 321 tile (11, 18) peck 5
+FS RUNG 321 id 756 r 3 hi -
+FS CLEAR 322 tile (11, 18) peck 6
+FS RUNG 322 id 756 r 3 hi -
+FS CLEAR 323 tile (11, 18) peck 7
+FS RUNG 323 id 756 r 3 hi -
+FS CLEAR 324 tile (11, 18) peck 8
+FS RUNG 324 id 756 r 3 hi -
+FS DODGE 326 id 756 from (11, 18) to (12, 18) cov 1 -> 0 hit 0 hp 4
+FS GATE 326 sig (20, 26, (9, 6), (9, 18)) ok 1
+FS SENTINEL 327 at (12, 17) face SOUTHWEST tgt (10, 19) score 8 n 1 onring 0 lost 0 onsray 0 olddsq -1
+FS RUNG 327 id 756 r 4 hi -
+FS EVICT 328 from (13, 19) to (7, 20)
+FS PHASE 328 id 756 ph 5 d 4 at (12, 18)
+FS CLEAR 328 tile (11, 18) peck 1
+FS RUNG 328 id 756 r 3 hi -
+PROBE SENTSUICIDE 328 at (12, 17)
+FS PHASE 329 id 756 ph 2 d 4 at (12, 18)
+FS SENTDEAD 329 at (12, 17) lost 1
+FS CLEAR 329 tile (11, 18) peck 2
+FS RUNG 329 id 756 r 3 hi -
+FS CLEARED 330 tile (11, 18) n 1
+FS SEAL 330 tile (11, 18) n 1
+FS SEALCLR 330 tile (11, 18) lag 0
+FS SEAL 335 tile (11, 18) n 2
+PROBE SENTSUICIDE 335 at (9, 14)
+FS EVICT 336 from (13, 20) to (7, 20)
+FS PHASE 339 id 756 ph 5 d 5 at (12, 17)
+PROBE SENTSUICIDE 339 at (10, 14)
+FS PHASE 340 id 756 ph 2 d 4 at (12, 18)
+FS STAT 340 id 756 at (12, 18) need 6 orth 6 ti 103 ammo 80 sen 0 hp 4 covden 14 eco 1 lost 1
+FS SEAL 340 tile (11, 18) n 3
+FS EVICT 344 from (13, 20) to (7, 20)
+PROBE SENTSUICIDE 345 at (12, 15)
+FS EVICT 352 from (13, 20) to (7, 20)
+FS GATE 356 sig (20, 26, (9, 6), (9, 18)) ok 1
+FS PHASE 356 id 892 ph 1 d 101 at (11, 8)
+FS EVICT 360 from (13, 20) to (7, 20)
+FS HOPBUILD 362 at (12, 13) lch (12, 14) T (11, 20)
+FS GATE 363 sig (20, 26, (9, 6), (9, 18)) ok 1
+FS THROW 363 from (12, 13) to (11, 19) T (11, 20) body 892 n 1 dsq 1
+FS ARRIVE 364 id 892 body 1 at (11, 19) dsq 1
+FS PHASE 364 id 892 ph 2 d 1 at (11, 19)
+FS SEAL 364 tile (11, 18) n 1
+FS DODGE 366 id 892 from (11, 20) to (12, 20) cov 1 -> 0 hit 0 hp 4
+FS GATE 366 sig (20, 26, (9, 6), (9, 18)) ok 1
+FS EVICT 368 from (13, 20) to (7, 20)
+FS GATE 369 sig (20, 26, (9, 6), (9, 18)) ok 1
+FS GATE 375 sig (20, 26, (9, 6), (9, 18)) ok 1
+FS PHASE 375 id 934 ph 1 d 100 at (9, 8)
+PROBE SENTSUICIDE 375 at (13, 14)
+FS EVICT 376 from (13, 20) to (7, 20)
+FS HOPBUILD 376 at (9, 9) lch (9, 10) T (11, 20)
+FS GATE 377 sig (20, 26, (9, 6), (9, 18)) ok 1
+FS THROW 377 from (10, 9) to (10, 15) T (11, 20) body 934 n 1 dsq 9
+FS ARRIVE 379 id 934 body 1 at (10, 16) dsq 4
+FS PHASE 379 id 934 ph 2 d 4 at (10, 16)
+FS STAT 380 id 934 at (9, 16) need 6 orth 6 ti 113 ammo 80 sen 0 hp 40 covden 0 eco 1 lost 0
+FS CLEAR 380 tile (9, 17) peck 1
+FS RUNG 380 id 934 r 3 hi -
+FS CLEAR 381 tile (9, 17) peck 2
+FS RUNG 381 id 934 r 3 hi -
+FS CLEAR 382 tile (9, 17) peck 3
+FS RUNG 382 id 934 r 3 hi -
+FS CLEAR 383 tile (9, 17) peck 4
+FS RUNG 383 id 934 r 3 hi -
+FS EVICT 384 from (13, 20) to (7, 20)
+FS PHASE 384 id 934 ph 5 d 4 at (9, 16)
+FS CLEAR 385 tile (9, 17) peck 5
+FS RUNG 385 id 934 r 3 hi -
+PROBE SENTSUICIDE 385 at (5, 15)
+FS PHASE 386 id 934 ph 2 d 4 at (9, 16)
+FS CLEAR 386 tile (9, 17) peck 6
+FS RUNG 386 id 934 r 3 hi -
+FS CLEAR 391 tile (9, 17) peck 1
+FS RUNG 391 id 934 r 3 hi -
+FS EVICT 392 from (13, 20) to (7, 20)
+FS CLEAR 392 tile (9, 17) peck 2
+FS RUNG 392 id 934 r 3 hi -
+FS CLEAR 393 tile (9, 17) peck 3
+FS RUNG 393 id 934 r 3 hi -
+FS CLEAR 394 tile (9, 17) peck 4
+FS RUNG 394 id 934 r 3 hi -
+FS CLEARED 395 tile (9, 17) n 1
+FS SEAL 395 tile (9, 17) n 1
+FS SEALCLR 395 tile (9, 17) lag 0
+FS SENTINEL 397 at (7, 16) face SOUTHEAST tgt (10, 19) score -4206 n 1 onring 0 lost 0 onsray 1 olddsq -1
+FS RUNG 397 id 934 r 4 hi -
+FS PHASE 398 id 934 ph 5 d 5 at (8, 16)
+PROBE SENTSUICIDE 398 at (7, 16)
+FS PHASE 399 id 934 ph 2 d 4 at (9, 16)
+FS SENTDEAD 399 at (7, 16) lost 1
+FS STAT 400 id 934 at (10, 16) need 3 orth 3 ti 64 ammo 76 sen 0 hp 33 covden 0 eco 1 lost 1
+FS EVICT 404 from (13, 20) to (7, 20)
+FS PHASE 407 id 934 ph 5 d 9 at (13, 18)
+FS SEAL 408 tile (11, 18) n 2
+PROBE SENTSUICIDE 408 at (11, 20)
+FS PHASE 409 id 934 ph 2 d 4 at (12, 18)
+FS DODGE 411 id 934 from (13, 19) to (13, 18) cov 1 -> 0 hit 0 hp 33
+FS EVICT 412 from (13, 20) to (7, 20)
+FS PHASE 412 id 934 ph 5 d 9 at (13, 18)
+FS DODGE 413 id 934 from (13, 19) to (13, 18) cov 1 -> 0 hit 0 hp 33
+PROBE SENTSUICIDE 413 at (11, 20)
+FS PHASE 414 id 934 ph 2 d 9 at (13, 18)
+FS DODGE 415 id 934 from (13, 19) to (13, 18) cov 1 -> 0 hit 0 hp 33
+FS SEAL 417 tile (11, 18) n 3
+FS EVICT 420 from (13, 20) to (7, 20)
+FS PHASE 420 id 934 ph 5 d 10 at (13, 17)
+FS STAT 420 id 934 at (13, 17) need 5 orth 4 ti 48 ammo 80 sen 1 hp 33 covden 0 eco 1 lost 1
+PROBE SENTSUICIDE 421 at (12, 20)
+FS PHASE 422 id 934 ph 2 d 8 at (12, 16)
+FS SENTINEL 426 at (10, 15) face SOUTH tgt (10, 19) score 16 n 2 onring 0 lost 1 onsray 0 olddsq 10
+FS RUNG 426 id 934 r 4 hi -
+FS PHASE 427 id 934 ph 5 d 4 at (10, 16)
+PROBE SENTSUICIDE 427 at (10, 15)
+FS PHASE 428 id 934 ph 2 d 4 at (9, 16)
+FS SENTDEAD 428 at (10, 15) lost 2
+FS DODGE 430 id 934 from (7, 16) to (8, 16) cov 1 -> 0 hit 0 hp 33
+FS DODGE 432 id 934 from (7, 16) to (8, 16) cov 1 -> 0 hit 0 hp 33
+FS EVICT 434 from (13, 20) to (7, 20)
+FS SENTINEL 438 at (12, 16) face SOUTHWEST tgt (9, 19) score 18 n 3 onring 0 lost 2 onsray 0 olddsq 5
+FS RUNG 438 id 934 r 4 hi -
+FS GATE 438 sig (20, 26, (9, 6), (9, 18)) ok 1
+FS PHASE 439 id 934 ph 5 d 13 at (12, 15)
+PROBE SENTSUICIDE 439 at (12, 16)
+FS PHASE 440 id 934 ph 2 d 18 at (13, 15)
+FS STAT 440 id 934 at (13, 15) need 7 orth 6 ti 123 ammo 80 sen 0 hp 33 covden 0 eco 1 lost 2
+FS SENTDEAD 440 at (12, 16) lost 3
+FS SEAL 444 tile (11, 18) n 4
+PROBE SENTSUICIDE 446 at (6, 14)
+FS EVICT 448 from (13, 20) to (7, 20)
+PROBE SENTSUICIDE 449 at (6, 14)
+FS PHASE 456 id 934 ph 5 d 9 at (10, 15)
+PROBE SENTSUICIDE 456 at (6, 16)
+FS PHASE 457 id 934 ph 2 d 4 at (10, 16)
+FS STAT 460 id 934 at (7, 16) need 4 orth 4 ti 168 ammo 80 sen 0 hp 33 covden 0 eco 1 lost 3
+FS DODGE 460 id 934 from (7, 16) to (8, 16) cov 1 -> 0 hit 0 hp 33
+FS PHASE 461 id 934 ph 5 d 5 at (8, 16)
+PROBE SENTSUICIDE 461 at (7, 18)
+FS EVICT 462 from (13, 20) to (7, 20)
+FS PHASE 462 id 934 ph 2 d 4 at (9, 16)
+PROBE SENTSUICIDE 468 at (8, 20)
+FS EVICT 476 from (13, 20) to (7, 20)
+PROBE SENTSUICIDE 477 at (8, 21)
+FS STAT 480 id 934 at (10, 15) need 5 orth 5 ti 136 ammo 60 sen 0 hp 33 covden 0 eco 1 lost 3
+PROBE SENTSUICIDE 484 at (10, 21)
+FS EVICT 486 from (13, 20) to (7, 20)
+FS PHASE 489 id 934 ph 5 d 4 at (10, 16)
+PROBE SENTSUICIDE 489 at (11, 20)
+FS PHASE 490 id 934 ph 2 d 9 at (10, 15)
+FS EVICT 496 from (13, 20) to (7, 20)
+PROBE SENTSUICIDE 496 at (14, 19)
+FS STAT 500 id 934 at (9, 16) need 2 orth 2 ti 141 ammo 60 sen 0 hp 33 covden 0 eco 1 lost 3
+FS DODGE 502 id 934 from (7, 16) to (8, 16) cov 1 -> 0 hit 0 hp 33
+PROBE SENTSUICIDE 503 at (13, 19)
+FS DODGE 504 id 934 from (7, 16) to (8, 16) cov 1 -> 0 hit 0 hp 33
+FS GATE 514 sig (20, 26, (9, 6), (9, 18)) ok 1
+FS STAT 520 id 934 at (10, 15) need 5 orth 5 ti 310 ammo 60 sen 0 hp 33 covden 0 eco 1 lost 3
+FS PHASE 522 id 934 ph 5 d 9 at (10, 15)
+PROBE SENTSUICIDE 522 at (6, 14)
+FS PHASE 523 id 934 ph 2 d 4 at (10, 16)
+FS PHASE 524 id 934 ph 5 d 9 at (10, 15)
+PROBE SENTSUICIDE 524 at (9, 14)
+FS PHASE 525 id 934 ph 2 d 4 at (10, 16)
+FS PHASE 526 id 934 ph 5 d 9 at (10, 15)
+PROBE SENTSUICIDE 526 at (6, 14)
+FS PHASE 527 id 934 ph 2 d 4 at (10, 16)
+FS DODGE 530 id 934 from (7, 16) to (8, 16) cov 1 -> 0 hit 0 hp 15
+PROBE SENTSUICIDE 532 at (6, 15)
+PROBE SENTSUICIDE 537 at (7, 18)
+PROBE SENTSUICIDE 544 at (6, 19)
+PROBE SENTSUICIDE 549 at (8, 20)
+PROBE SENTSUICIDE 556 at (12, 21)
+PROBE SENTSUICIDE 563 at (13, 19)
+PROBE SENTSUICIDE 568 at (13, 19)
+FS GATE 601 sig (20, 26, (9, 6), (9, 18)) ok 1
+FS PHASE 601 id 1398 ph 1 d 101 at (8, 8)
+FS HOPBUILD 603 at (9, 9) lch (9, 10) T (11, 20)
+FS GATE 604 sig (20, 26, (9, 6), (9, 18)) ok 1
+FS THROW 604 from (10, 9) to (10, 15) T (11, 20) body 1398 n 1 dsq 9
+FS HOPBUILD 605 at (10, 15) lch (10, 16) T (11, 20)
+FS GATE 606 sig (20, 26, (9, 6), (9, 18)) ok 1
+FS EVICT 626 from (13, 20) to (7, 20)
+FS EVICT 636 from (12, 20) to (16, 21)
+FS DEGRADE 636 id 1398
+PROBE SENTSUICIDE 637 at (12, 15)
+PROBE SENTSUICIDE 638 at (10, 15)
+PROBE SENTSUICIDE 639 at (12, 15)
+PROBE SENTSUICIDE 640 at (10, 15)
+PROBE SENTSUICIDE 641 at (12, 15)
+PROBE SENTSUICIDE 642 at (10, 15)
+PROBE SENTSUICIDE 643 at (12, 15)
+PROBE SENTSUICIDE 644 at (10, 15)
+PROBE SENTSUICIDE 645 at (12, 15)
+PROBE SENTSUICIDE 646 at (10, 15)
+PROBE SENTSUICIDE 647 at (12, 15)
+FS EVICT 648 from (13, 20) to (7, 20)
+PROBE SENTSUICIDE 653 at (12, 16)
+FS EVICT 663 from (12, 20) to (16, 21)
+PROBE SENTSUICIDE 664 at (13, 19)
+PROBE SENTSUICIDE 669 at (13, 19)
+PROBE SENTSUICIDE 674 at (13, 19)
+PROBE SENTSUICIDE 681 at (12, 20)
+PROBE SENTSUICIDE 686 at (8, 20)
+PROBE SENTSUICIDE 693 at (7, 20)
+PROBE SENTSUICIDE 700 at (7, 20)
+PROBE SENTSUICIDE 705 at (7, 20)
+PROBE SENTSUICIDE 712 at (10, 22)
+FS EVICT 734 from (13, 19) to (7, 20)
+FS EVICT 778 from (11, 20) to (16, 21)
+FS EVICT 828 from (11, 20) to (16, 17)
+FS EVICT 836 from (11, 15) to (5, 16)
+FS EVICT 884 from (9, 16) to (15, 16)
+FS EVICT 895 from (11, 20) to (16, 17)
+FS EVICT 915 from (11, 20) to (16, 17)
+FS EVICT 941 from (11, 19) to (16, 17)
+FS EVICT 964 from (9, 16) to (15, 16)
+FS GATE 977 sig (20, 26, (9, 6), (9, 18)) ok 1
+FS PHASE 977 id 2286 ph 1 d 170 at (11, 5)
+FS HOPBUILD 978 at (12, 5) lch (12, 6) T (11, 20)
+FS GATE 978 sig (20, 26, (9, 6), (9, 18)) ok 1
+FS GATE 979 sig (20, 26, (9, 6), (9, 18)) ok 1
+FS THROW 979 from (11, 5) to (11, 11) T (11, 20) body 2286 n 1 dsq 50
+FS HOPBUILD 981 at (12, 11) lch (12, 12) T (11, 20)
+FS GATE 982 sig (20, 26, (9, 6), (9, 18)) ok 1
+FS THROW 982 from (11, 11) to (11, 17) T (11, 20) body 2286 n 1 dsq 2
+FS ARRIVE 983 id 2286 body 1 at (11, 17) dsq 2
+FS PHASE 983 id 2286 ph 2 d 2 at (11, 17)
+FS SEAL 983 tile (11, 18) n 1
+PROBE SENTSUICIDE 988 at (13, 14)
+PROBE SENTSUICIDE 990 at (14, 14)
+PROBE SENTSUICIDE 992 at (14, 14)
+PROBE SENTSUICIDE 994 at (14, 14)
+PROBE SENTSUICIDE 996 at (14, 14)
+PROBE SENTSUICIDE 998 at (14, 14)

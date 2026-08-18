@@ -1,0 +1,76 @@
+Update available: 2.3.6 -> 2.3.8. Run: pip install --upgrade fcode
+FS GATE 0 sig (30, 30, (2, 2), (26, 26)) ok 1
+FS GATE 1 sig (30, 30, (2, 2), (26, 26)) ok 1
+FS PHASE 1 id 3 ph 1 d 1013 at (4, 3)
+FS HOPBUILD 1 at (4, 3) lch (5, 3) T (28, 28)
+FS GATE 2 sig (30, 30, (2, 2), (26, 26)) ok 1
+FS GATE 2 sig (30, 30, (2, 2), (26, 26)) ok 1
+FS THROW 2 from (4, 3) to (8, 7) T (28, 28) body 3 n 1 dsq 685
+FS HOPBUILD 3 at (8, 7) lch (8, 8) T (28, 28)
+FS GATE 3 sig (30, 30, (2, 2), (26, 26)) ok 1
+FS GATE 4 sig (30, 30, (2, 2), (26, 26)) ok 1
+FS THROW 4 from (9, 7) to (11, 12) T (28, 28) body 3 n 1 dsq 421
+FS HOPBUILD 5 at (11, 12) lch (12, 12) T (28, 28)
+ECO514 6 harv 1 mouth 1 held 1 conn 0 deliv 1
+FS GATE 6 sig (30, 30, (2, 2), (26, 26)) ok 1
+FS THROW 6 from (11, 13) to (15, 16) T (28, 28) body 3 n 1 dsq 221
+FS HOPBUILD 7 at (15, 16) lch (16, 16) T (28, 28)
+FS GATE 8 sig (30, 30, (2, 2), (26, 26)) ok 1
+FS THROW 8 from (15, 17) to (19, 20) T (28, 28) body 3 n 1 dsq 85
+FS HOPBUILD 9 at (19, 20) lch (20, 20) T (28, 28)
+FS GATE 10 sig (30, 30, (2, 2), (26, 26)) ok 1
+FS THROW 10 from (19, 21) to (23, 24) T (28, 28) body 3 n 1 dsq 13
+FS HOPBUILD 11 at (23, 24) lch (24, 24) T (28, 28)
+FS GATE 12 sig (30, 30, (2, 2), (26, 26)) ok 1
+FS EVICT 13 from (23, 25) to (27, 20)
+FS ARRIVE 14 id 3 body 1 at (24, 25) dsq 5
+FS PHASE 14 id 3 ph 2 d 5 at (24, 25)
+FS EVICTOR 14 at (24, 26) ucov 1 cov 0 unseal 2 obs 0
+FS RUNG 14 id 3 r 2 hi -
+FS GATE 15 sig (30, 30, (2, 2), (26, 26)) ok 1
+ECO514 16 harv 2 mouth 1 held 0 conn 1 deliv 1
+FS GATE 16 sig (30, 30, (2, 2), (26, 26)) ok 1
+FS STAT 20 id 3 at (21, 27) need 8 orth 7 ti 83 ammo 16 sen 0 hp 40 covden 6 eco 1 lost 0
+FS SENTINEL 24 at (24, 29) face NORTHEAST tgt (27, 26) score 18 n 1 onring 0 lost 0 gate (1, 1, 16) onsray 0 olddsq -1
+FS RUNG 24 id 3 r 4 hi -
+FS PHASE 25 id 3 ph 5 d 5 at (24, 28)
+FS DODGE 25 id 3 from (24, 28) to (24, 27) cov 1 -> 0 hit 0 hp 40
+FS EVICT 27 from (25, 27) to (19, 25)
+FS PHASE 33 id 3 ph 2 d 4 at (24, 27)
+FS SENTDEAD 33 at (24, 29) lost 1
+FS STAT 40 id 3 at (24, 27) need 8 orth 7 ti 48 ammo 36 sen 0 hp 40 covden 26 eco 1 lost 1
+FS DODGE 41 id 3 from (24, 27) to (25, 27) cov 1 -> 0 hit 0 hp 40
+FS SEAL 42 tile (25, 26) n 1
+FS DODGE 43 id 3 from (25, 27) to (25, 28) cov 2 -> 1 hit 0 hp 33
+FS CLEAR 44 tile (25, 27) peck 1
+FS RUNG 44 id 3 r 3 hi -
+FS CLEAR 45 tile (25, 27) peck 2
+FS RUNG 45 id 3 r 3 hi -
+FS CLEAR 46 tile (25, 27) peck 3
+FS RUNG 46 id 3 r 3 hi -
+FS CLEAR 47 tile (25, 27) peck 4
+FS RUNG 47 id 3 r 3 hi -
+FS GATE 56 sig (30, 30, (2, 2), (26, 26)) ok 1
+FS PHASE 56 id 122 ph 1 d 1109 at (4, 1)
+FS HOPBUILD 56 at (4, 1) lch (5, 1) T (28, 28)
+FS GATE 57 sig (30, 30, (2, 2), (26, 26)) ok 1
+FS THROW 57 from (4, 1) to (8, 5) T (28, 28) body 122 n 1 dsq 765
+FS HOPBUILD 64 at (10, 9) lch (11, 9) T (28, 28)
+FS GATE 65 sig (30, 30, (2, 2), (26, 26)) ok 1
+FS THROW 65 from (10, 9) to (14, 13) T (28, 28) body 122 n 1 dsq 313
+FS HOPBUILD 69 at (15, 15) lch (16, 15) T (28, 28)
+FS GATE 70 sig (30, 30, (2, 2), (26, 26)) ok 1
+FS THROW 70 from (15, 16) to (17, 20) T (28, 28) body 122 n 1 dsq 117
+FS DOORSEEN 107 id 5 at (1, 5) rank 0
+FS DOORSEEN 118 id 5 at (1, 5) rank 0
+FS DOORSEEN 124 id 8 at (1, 5) rank 0
+FS DOORSEEN 126 id 8 at (0, 4) rank 0
+FS DOOR 131 id 8 at (0, 4) n 1
+FS DOOR 132 id 8 at (0, 4) n 2
+FS DOOR 133 id 8 at (0, 4) n 3
+FS DOOR 134 id 8 at (0, 4) n 4
+FS DOOR 135 id 8 at (0, 4) n 5
+FS DOOR 136 id 8 at (0, 4) n 6
+FS DOORSEEN 137 id 5 at (1, 5) rank 0
+FS DOOR 137 id 8 at (0, 4) n 7
+FS DOOR 138 id 8 at (0, 4) n 8

@@ -1,0 +1,16 @@
+tag	arm	map	g	seed	ord	ours	winner	cond	turn	tracebacks	ours_mined	opp_mined
+m_mut_deny_glacierkeep_g0	m_mut_deny	glacierkeep	0	7400	A	US	mut_deny	Titanium collected (tiebreak)	1000	0	350	0
+m_mut_deny_glacierkeep_g1	m_mut_deny	glacierkeep	1	7401	B	US	mut_deny	Core destroyed	326	0	10	0
+m_mut_deny_glacierkeep_g2	m_mut_deny	glacierkeep	2	7402	A	US	mut_deny	Core destroyed	209	0	180	0
+m_mut_deny_nordkap_g0	m_mut_deny	nordkap	0	7400	A	OPP	_v488beltbreak2	Core destroyed	662	0	160	820
+m_mut_deny_nordkap_g1	m_mut_deny	nordkap	1	7401	B	US	mut_deny	Titanium collected (tiebreak)	1000	0	2480	670
+m_mut_deny_nordkap_g2	m_mut_deny	nordkap	2	7402	A	OPP	_v488beltbreak2	Core destroyed	235	0	370	2770
+m_mut_deny_atoll_g0	m_mut_deny	atoll	0	7400	A	OPP	_v488beltbreak2	Core destroyed	250	0	750	1210
+m_mut_deny_atoll_g1	m_mut_deny	atoll	1	7401	B	OPP	_v488beltbreak2	Core destroyed	151	0	470	1300
+m_mut_deny_atoll_g2	m_mut_deny	atoll	2	7402	A	US	mut_deny	Core destroyed	160	0	1590	0
+m_mut_deny_midgard_g0	m_mut_deny	midgard	0	7400	A	OPP	_v488beltbreak2	Core destroyed	144	0	390	1170
+m_mut_deny_midgard_g1	m_mut_deny	midgard	1	7401	B	OPP	_v488beltbreak2	Core destroyed	131	0	730	1480
+m_mut_deny_midgard_g2	m_mut_deny	midgard	2	7402	A	OPP	_v488beltbreak2	Core destroyed	206	0	560	1670
+m_mut_deny_drakkarfjord_g0	m_mut_deny	drakkarfjord	0	7400	A	OPP	_v488beltbreak2	Core destroyed	151	0	270	1090
+m_mut_deny_drakkarfjord_g1	m_mut_deny	drakkarfjord	1	7401	B	US	mut_deny	Core destroyed	163	0	710	0
+m_mut_deny_drakkarfjord_g2	m_mut_deny	drakkarfjord	2	7402	A	OPP	_v488beltbreak2	Core destroyed	205	0	540	1560

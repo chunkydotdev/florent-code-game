@@ -1,0 +1,15 @@
+m_mut_ecogate_glacierkeep_g0	m_mut_ecogate	glacierkeep	0	7400	A	OPP	_v488beltbreak2	Core destroyed	621	0	170	2930
+m_mut_ecogate_glacierkeep_g1	m_mut_ecogate	glacierkeep	1	7401	B	OPP	_v488beltbreak2	Harvesters (tiebreak)	1000	0	0	0
+m_mut_ecogate_glacierkeep_g2	m_mut_ecogate	glacierkeep	2	7402	A	US	mut_ecogate	Core destroyed	421	0	0	980
+m_mut_ecogate_nordkap_g0	m_mut_ecogate	nordkap	0	7400	A	US	mut_ecogate	Core destroyed	181	0	170	20
+m_mut_ecogate_nordkap_g1	m_mut_ecogate	nordkap	1	7401	B	OPP	_v488beltbreak2	Core destroyed	238	0	0	1430
+m_mut_ecogate_nordkap_g2	m_mut_ecogate	nordkap	2	7402	A	OPP	_v488beltbreak2	Core destroyed	294	0	1790	2790
+m_mut_ecogate_atoll_g0	m_mut_ecogate	atoll	0	7400	A	US	mut_ecogate	Titanium collected (tiebreak)	1000	0	2360	470
+m_mut_ecogate_atoll_g1	m_mut_ecogate	atoll	1	7401	B	OPP	_v488beltbreak2	Core destroyed	244	0	730	1170
+m_mut_ecogate_atoll_g2	m_mut_ecogate	atoll	2	7402	A	OPP	_v488beltbreak2	Core destroyed	466	0	470	1150
+m_mut_ecogate_midgard_g0	m_mut_ecogate	midgard	0	7400	A	OPP	_v488beltbreak2	Core destroyed	236	0	1630	2050
+m_mut_ecogate_midgard_g1	m_mut_ecogate	midgard	1	7401	B	OPP	_v488beltbreak2	Core destroyed	185	0	560	1710
+m_mut_ecogate_midgard_g2	m_mut_ecogate	midgard	2	7402	A	OPP	_v488beltbreak2	Core destroyed	249	0	630	3380
+m_mut_ecogate_drakkarfjord_g0	m_mut_ecogate	drakkarfjord	0	7400	A	US	mut_ecogate	Core destroyed	217	0	960	0
+m_mut_ecogate_drakkarfjord_g1	m_mut_ecogate	drakkarfjord	1	7401	B	OPP	_v488beltbreak2	Core destroyed	177	0	140	1310
+m_mut_ecogate_drakkarfjord_g2	m_mut_ecogate	drakkarfjord	2	7402	A	OPP	_v488beltbreak2	Core destroyed	181	0	490	1310

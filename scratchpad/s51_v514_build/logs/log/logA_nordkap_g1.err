@@ -1,0 +1,443 @@
+Update available: 2.3.6 -> 2.3.8. Run: pip install --upgrade fcode
+FS GATE 0 sig (20, 26, (9, 6), (9, 18)) ok 1
+FS GATE 1 sig (20, 26, (9, 6), (9, 18)) ok 1
+FS PHASE 1 id 4 ph 1 d 100 at (9, 17)
+FS HOPBUILD 1 at (9, 17) lch (9, 16) T (11, 5)
+FS GATE 2 sig (20, 26, (9, 6), (9, 18)) ok 1
+FS GATE 2 sig (20, 26, (9, 6), (9, 18)) ok 1
+FS THROW 2 from (9, 17) to (10, 11) T (11, 5) body 4 n 1 dsq 16
+FS HOPBUILD 3 at (10, 11) lch (10, 10) T (11, 5)
+FS GATE 3 sig (20, 26, (9, 6), (9, 18)) ok 1
+FS GATE 4 sig (20, 26, (9, 6), (9, 18)) ok 1
+FS THROW 4 from (11, 11) to (11, 5) T (11, 5) body 4 n 1 dsq 2
+FS ARRIVE 5 id 4 body 1 at (11, 5) dsq 2
+FS PHASE 5 id 4 ph 2 d 2 at (11, 5)
+FS SEAL 5 tile (10, 5) n 1
+FS SEAL 6 tile (11, 6) n 2
+FS GATE 7 sig (20, 26, (9, 6), (9, 18)) ok 1
+FS GATE 8 sig (20, 26, (9, 6), (9, 18)) ok 1
+FS GATE 9 sig (20, 26, (9, 6), (9, 18)) ok 1
+FS SEAL 10 tile (9, 5) n 3
+ECO514 11 harv 1 mouth 1 held 1 conn 0 deliv 1
+FS SEAL 12 tile (8, 5) n 4
+FS DOORSEEN 12 id 6 at (11, 16) rank 1
+FS DOORSEEN 12 id 9 at (11, 16) rank 1
+FS DOORSEEN 12 id 14 at (11, 16) rank 1
+FS DOORSEEN 12 id 18 at (11, 16) rank 1
+FS DOOR 12 id 18 at (11, 16) n 1
+FS DOOR 13 id 6 at (11, 16) n 1
+FS DOOR 13 id 18 at (11, 16) n 2
+FS DOOR 14 id 6 at (11, 16) n 2
+FS DOOR 14 id 14 at (11, 16) n 1
+FS DOOR 14 id 18 at (11, 16) n 3
+FS DOOR 15 id 6 at (11, 16) n 3
+FS DOOR 15 id 14 at (11, 16) n 2
+FS DOOR 15 id 18 at (11, 16) n 4
+FS SEAL 16 tile (8, 6) n 5
+FS DOOR 16 id 6 at (11, 16) n 4
+FS DOOR 16 id 14 at (11, 16) n 3
+FS DOOR 16 id 18 at (11, 16) n 5
+FS DOOR 17 id 6 at (11, 16) n 5
+FS DOOR 17 id 14 at (11, 16) n 4
+FS DOOR 17 id 18 at (11, 16) n 6
+FS SEAL 18 tile (8, 7) n 6
+FS DOOR 18 id 6 at (11, 16) n 6
+FS DOOR 18 id 14 at (11, 16) n 5
+FS STAT 20 id 4 at (7, 8) need 3 orth 3 ti 25 ammo 24 sen 0 hp 40 covden 0 eco 0 lost 0
+FS DODGE 21 id 4 from (8, 8) to (9, 8) cov 1 -> 0 hit 0 hp 40
+FS DOOR 21 id 6 at (11, 16) n 7
+FS DOOR 21 id 14 at (11, 16) n 6
+FS DOOR 22 id 6 at (11, 16) n 8
+FS DOOR 22 id 9 at (11, 16) n 1
+FS DOOR 22 id 14 at (11, 16) n 7
+FS DOOR 23 id 6 at (11, 16) n 9
+FS DOOR 23 id 9 at (11, 16) n 2
+FS DOOR 23 id 14 at (11, 16) n 8
+FS CLEAR 24 tile (10, 8) peck 1
+FS RUNG 24 id 4 r 3 hi -
+FS DOOR 24 id 6 at (11, 16) n 10
+FS DOOR 24 id 9 at (11, 16) n 3
+FS DOOR 24 id 14 at (11, 16) n 9
+FS DOOR 25 id 6 at (11, 16) n 11
+FS DOOR 25 id 9 at (11, 16) n 4
+FS DOOR 25 id 14 at (11, 16) n 10
+FS DOOR 26 id 6 at (11, 16) n 12
+FS DOOR 26 id 9 at (11, 16) n 5
+FS DOOR 26 id 14 at (11, 16) n 11
+FS DOOR 27 id 6 at (11, 16) n 13
+FS DOOR 27 id 9 at (11, 16) n 6
+FS DOOR 28 id 6 at (11, 16) n 14
+FS DOOR 28 id 9 at (11, 16) n 7
+FS DOOR 29 id 6 at (11, 16) n 15
+FS DOOR 29 id 9 at (11, 16) n 8
+FS DOOR 29 id 14 at (11, 16) n 12
+FS DOOR 34 id 6 at (11, 16) n 16
+FS DOOR 34 id 9 at (11, 16) n 9
+FS DOOR 34 id 14 at (11, 16) n 13
+FS DOOR 35 id 6 at (11, 16) n 17
+FS DOOR 35 id 9 at (11, 16) n 10
+FS DOOR 35 id 14 at (11, 16) n 14
+FS CLEAR 36 tile (10, 8) peck 1
+FS RUNG 36 id 4 r 3 hi -
+FS DOOR 36 id 6 at (11, 16) n 18
+FS DOOR 36 id 9 at (11, 16) n 11
+FS DOOR 36 id 14 at (11, 16) n 15
+FS DOOR 37 id 6 at (11, 16) n 19
+FS DOOR 37 id 9 at (11, 16) n 12
+FS DOOR 37 id 14 at (11, 16) n 16
+FS DOOR 38 id 6 at (11, 16) n 20
+FS DOOR 38 id 9 at (11, 16) n 13
+FS DOOR 38 id 14 at (11, 16) n 17
+FS DOOR 39 id 6 at (11, 16) n 21
+FS DOOR 39 id 9 at (11, 16) n 14
+FS DOOR 39 id 14 at (11, 16) n 18
+FS STAT 40 id 4 at (9, 8) need 3 orth 3 ti 25 ammo 24 sen 0 hp 40 covden 0 eco 0 lost 0
+FS DOOR 40 id 6 at (11, 16) n 22
+FS DOOR 40 id 9 at (11, 16) n 15
+FS CLEAR 44 tile (10, 8) peck 1
+FS RUNG 44 id 4 r 3 hi -
+FS CLEAR 45 tile (10, 8) peck 2
+FS RUNG 45 id 4 r 3 hi -
+FS CLEAR 46 tile (10, 8) peck 3
+FS RUNG 46 id 4 r 3 hi -
+FS CLEAR 47 tile (10, 8) peck 4
+FS RUNG 47 id 4 r 3 hi -
+FS CLEAR 48 tile (10, 8) peck 5
+FS RUNG 48 id 4 r 3 hi -
+FS DODGE 50 id 4 from (8, 8) to (9, 8) cov 1 -> 0 hit 0 hp 22
+FS DODGE 52 id 4 from (8, 8) to (9, 8) cov 1 -> 0 hit 0 hp 4
+FS DOORSEEN 152 id 6 at (6, 18) rank 0
+FS DOORSEEN 152 id 14 at (6, 18) rank 0
+FS DOORSEEN 152 id 18 at (6, 18) rank 0
+FS DOORSEEN 153 id 9 at (6, 18) rank 0
+FS DOOR 153 id 14 at (6, 18) n 19
+FS DOOR 154 id 14 at (6, 18) n 20
+FS DOOR 155 id 14 at (6, 18) n 21
+FS DOOR 155 id 18 at (6, 18) n 7
+FS DOOR 156 id 14 at (6, 18) n 22
+FS DOOR 156 id 18 at (6, 18) n 8
+FS DOOR 157 id 14 at (6, 18) n 23
+FS DOOR 157 id 18 at (6, 18) n 9
+FS DOOR 158 id 6 at (6, 18) n 23
+FS DOOR 158 id 14 at (6, 18) n 24
+FS DOOR 158 id 18 at (6, 18) n 10
+FS DOOR 159 id 6 at (6, 18) n 24
+FS DOOR 159 id 14 at (6, 18) n 25
+FS DOOR 159 id 18 at (6, 18) n 11
+FS DOOR 160 id 6 at (6, 18) n 25
+FS DOOR 160 id 14 at (6, 18) n 26
+FS DOOR 160 id 18 at (6, 18) n 12
+FS DOOR 161 id 6 at (6, 18) n 26
+FS DOOR 161 id 14 at (6, 18) n 27
+FS DOOR 161 id 18 at (6, 18) n 13
+FS DOORSEEN 192 id 6 at (12, 20) rank 0
+FS DOOR 192 id 6 at (12, 20) n 27
+FS DOORSEEN 192 id 9 at (12, 20) rank 0
+FS DOOR 192 id 9 at (12, 20) n 16
+FS DOORSEEN 192 id 14 at (12, 20) rank 0
+FS DOOR 192 id 14 at (12, 20) n 28
+FS DOORSEEN 192 id 18 at (12, 20) rank 0
+FS DOOR 193 id 6 at (12, 20) n 28
+FS DOOR 193 id 9 at (12, 20) n 17
+FS DOOR 193 id 14 at (12, 20) n 29
+FS DOOR 194 id 6 at (12, 20) n 29
+FS DOOR 194 id 9 at (12, 20) n 18
+FS DOOR 194 id 14 at (12, 20) n 30
+FS DOOR 195 id 6 at (12, 20) n 30
+FS DOOR 195 id 9 at (12, 20) n 19
+FS DOOR 195 id 14 at (12, 20) n 31
+FS DOOR 196 id 6 at (12, 20) n 31
+FS DOOR 196 id 9 at (12, 20) n 20
+FS DOOR 196 id 14 at (12, 20) n 32
+FS DOOR 197 id 6 at (12, 20) n 32
+FS DOOR 197 id 9 at (12, 20) n 21
+FS DOOR 197 id 14 at (12, 20) n 33
+FS DOOR 198 id 6 at (12, 20) n 33
+FS DOOR 198 id 9 at (12, 20) n 22
+FS DOOR 198 id 14 at (12, 20) n 34
+FS DOOR 199 id 6 at (12, 20) n 34
+FS DOOR 199 id 9 at (12, 20) n 23
+FS DOOR 199 id 14 at (12, 20) n 35
+FS DOOR 200 id 6 at (12, 20) n 35
+FS DOOR 200 id 9 at (12, 20) n 24
+FS DOOR 200 id 14 at (12, 20) n 36
+FS DOOR 201 id 6 at (12, 20) n 36
+FS DOOR 201 id 9 at (12, 20) n 25
+FS DOOR 201 id 14 at (12, 20) n 37
+FS DOOR 202 id 6 at (12, 20) n 37
+FS DOOR 202 id 9 at (12, 20) n 26
+FS DOOR 202 id 14 at (12, 20) n 38
+FS DOOR 203 id 6 at (12, 20) n 38
+FS DOOR 203 id 9 at (12, 20) n 27
+FS DOOR 203 id 14 at (12, 20) n 39
+FS DOOR 204 id 6 at (12, 20) n 39
+FS DOOR 204 id 9 at (12, 20) n 28
+FS DOOR 204 id 14 at (12, 20) n 40
+FS DOOR 205 id 6 at (12, 20) n 40
+FS DOOR 205 id 9 at (12, 20) n 29
+FS DOOR 205 id 14 at (12, 20) n 41
+FS DOOR 206 id 6 at (12, 20) n 41
+FS DOOR 206 id 9 at (12, 20) n 30
+FS DOOR 206 id 14 at (12, 20) n 42
+FS DOOR 207 id 6 at (12, 20) n 42
+FS DOOR 207 id 9 at (12, 20) n 31
+FS DOOR 207 id 14 at (12, 20) n 43
+FS DOOR 208 id 6 at (12, 20) n 43
+FS DOOR 208 id 9 at (12, 20) n 32
+FS DOOR 208 id 14 at (12, 20) n 44
+FS DOOR 209 id 6 at (12, 20) n 44
+FS DOOR 209 id 9 at (12, 20) n 33
+FS DOOR 209 id 14 at (12, 20) n 45
+FS DOORSEEN 271 id 9 at (14, 15) rank 2
+FS DOORSEEN 271 id 14 at (14, 15) rank 2
+FS DOORSEEN 271 id 18 at (14, 15) rank 2
+FS DOORSEEN 272 id 6 at (14, 15) rank 2
+FS DOORSEEN 274 id 6 at (14, 15) rank 2
+FS DOORSEEN 274 id 14 at (14, 15) rank 2
+FS DOORSEEN 275 id 9 at (14, 15) rank 2
+FS DOORSEEN 276 id 6 at (14, 15) rank 2
+FS DOORSEEN 276 id 14 at (14, 15) rank 2
+FS DOORSEEN 277 id 9 at (14, 15) rank 2
+FS DOORSEEN 278 id 6 at (14, 15) rank 2
+FS DOORSEEN 278 id 14 at (14, 15) rank 2
+FS DOORSEEN 279 id 9 at (14, 15) rank 2
+FS DOORSEEN 280 id 6 at (14, 15) rank 2
+FS DOORSEEN 280 id 14 at (14, 15) rank 2
+FS DOORSEEN 281 id 9 at (14, 15) rank 2
+FS DOORSEEN 282 id 6 at (14, 15) rank 2
+FS DOORSEEN 282 id 14 at (14, 15) rank 2
+FS DOORSEEN 283 id 9 at (14, 15) rank 2
+FS DOORSEEN 284 id 6 at (14, 15) rank 2
+FS DOORSEEN 284 id 14 at (14, 15) rank 2
+FS DOORSEEN 285 id 9 at (14, 15) rank 2
+FS DOORSEEN 286 id 6 at (14, 15) rank 2
+FS DOORSEEN 286 id 14 at (14, 15) rank 2
+FS DOORSEEN 287 id 9 at (14, 15) rank 2
+FS DOORSEEN 288 id 6 at (14, 15) rank 2
+FS DOORSEEN 288 id 14 at (14, 15) rank 2
+FS DOORSEEN 289 id 9 at (14, 15) rank 2
+FS DOORSEEN 289 id 18 at (14, 15) rank 2
+FS DOORSEEN 290 id 14 at (14, 15) rank 2
+FS DOORSEEN 291 id 6 at (14, 15) rank 2
+FS DOORSEEN 291 id 9 at (14, 15) rank 2
+FS DOORSEEN 291 id 18 at (14, 15) rank 2
+FS DOORSEEN 292 id 14 at (14, 15) rank 2
+FS DOORSEEN 293 id 6 at (14, 15) rank 2
+FS DOORSEEN 293 id 9 at (14, 15) rank 2
+FS DOORSEEN 293 id 18 at (14, 15) rank 2
+FS DOORSEEN 294 id 14 at (14, 15) rank 2
+FS DOORSEEN 295 id 6 at (14, 15) rank 2
+FS DOORSEEN 295 id 9 at (14, 15) rank 2
+FS DOORSEEN 295 id 18 at (14, 15) rank 2
+FS DOORSEEN 296 id 14 at (14, 15) rank 2
+FS DOORSEEN 297 id 6 at (14, 15) rank 2
+FS DOORSEEN 297 id 9 at (14, 15) rank 2
+FS DOORSEEN 297 id 18 at (14, 15) rank 2
+FS DOORSEEN 298 id 14 at (14, 15) rank 2
+FS DOORSEEN 299 id 6 at (14, 15) rank 2
+FS DOORSEEN 299 id 9 at (14, 15) rank 2
+FS DOORSEEN 299 id 18 at (14, 15) rank 2
+FS DOORSEEN 300 id 14 at (14, 15) rank 2
+FS DOORSEEN 301 id 6 at (14, 15) rank 2
+FS DOORSEEN 301 id 9 at (14, 15) rank 2
+FS DOORSEEN 301 id 18 at (14, 15) rank 2
+FS DOORSEEN 302 id 14 at (14, 15) rank 2
+FS DOORSEEN 303 id 6 at (14, 15) rank 2
+FS DOORSEEN 303 id 9 at (14, 15) rank 2
+FS DOORSEEN 303 id 18 at (14, 15) rank 2
+FS DOORSEEN 304 id 14 at (14, 15) rank 2
+FS DOORSEEN 305 id 6 at (14, 15) rank 2
+FS DOORSEEN 305 id 9 at (14, 15) rank 2
+FS DOORSEEN 305 id 18 at (14, 15) rank 2
+FS DOORSEEN 306 id 14 at (14, 15) rank 2
+FS DOORSEEN 307 id 6 at (14, 15) rank 2
+FS DOORSEEN 307 id 9 at (14, 15) rank 2
+FS DOORSEEN 307 id 18 at (14, 15) rank 2
+FS DOORSEEN 308 id 14 at (14, 15) rank 2
+FS DOORSEEN 309 id 6 at (14, 15) rank 2
+FS DOORSEEN 309 id 9 at (14, 15) rank 2
+FS DOORSEEN 309 id 18 at (14, 15) rank 2
+FS DOORSEEN 310 id 14 at (14, 15) rank 2
+FS DOORSEEN 311 id 6 at (14, 15) rank 2
+FS DOORSEEN 311 id 9 at (14, 15) rank 2
+FS DOORSEEN 311 id 18 at (14, 15) rank 2
+FS DOORSEEN 312 id 14 at (14, 15) rank 2
+FS DOORSEEN 313 id 6 at (14, 15) rank 2
+FS DOORSEEN 313 id 9 at (14, 15) rank 2
+FS DOORSEEN 313 id 18 at (14, 15) rank 2
+FS DOORSEEN 314 id 14 at (14, 15) rank 2
+FS DOORSEEN 315 id 6 at (14, 15) rank 2
+FS DOORSEEN 315 id 9 at (14, 15) rank 2
+FS DOORSEEN 315 id 18 at (14, 15) rank 2
+FS DOORSEEN 316 id 14 at (14, 15) rank 2
+FS DOORSEEN 317 id 6 at (14, 15) rank 2
+FS DOORSEEN 317 id 9 at (14, 15) rank 2
+FS DOORSEEN 317 id 18 at (14, 15) rank 2
+FS DOORSEEN 318 id 14 at (14, 15) rank 2
+FS DOORSEEN 319 id 6 at (14, 15) rank 2
+FS DOORSEEN 319 id 9 at (14, 15) rank 2
+FS DOORSEEN 319 id 18 at (14, 15) rank 2
+FS DOORSEEN 320 id 14 at (14, 15) rank 2
+FS DOORSEEN 321 id 6 at (14, 15) rank 2
+FS DOORSEEN 321 id 9 at (14, 15) rank 2
+FS DOORSEEN 321 id 18 at (14, 15) rank 2
+FS DOORSEEN 322 id 14 at (14, 15) rank 2
+FS DOORSEEN 323 id 6 at (14, 15) rank 2
+FS DOORSEEN 323 id 9 at (14, 15) rank 2
+FS DOORSEEN 323 id 18 at (14, 15) rank 2
+FS DOORSEEN 324 id 14 at (14, 15) rank 2
+FS DOORSEEN 325 id 6 at (14, 15) rank 2
+FS DOORSEEN 325 id 9 at (14, 15) rank 2
+FS DOORSEEN 325 id 18 at (14, 15) rank 2
+FS DOORSEEN 326 id 14 at (14, 15) rank 2
+FS DOORSEEN 327 id 6 at (14, 15) rank 2
+FS DOORSEEN 327 id 9 at (14, 15) rank 2
+FS DOORSEEN 327 id 18 at (14, 15) rank 2
+FS DOORSEEN 328 id 14 at (14, 15) rank 2
+FS DOORSEEN 329 id 6 at (14, 15) rank 2
+FS DOORSEEN 329 id 9 at (14, 15) rank 2
+FS DOORSEEN 329 id 18 at (14, 15) rank 2
+FS DOORSEEN 330 id 14 at (14, 15) rank 2
+FS DOORSEEN 331 id 6 at (14, 15) rank 2
+FS DOORSEEN 331 id 9 at (14, 15) rank 2
+FS DOORSEEN 331 id 18 at (14, 15) rank 2
+FS DOORSEEN 332 id 14 at (14, 15) rank 2
+FS DOORSEEN 333 id 6 at (14, 15) rank 2
+FS DOORSEEN 333 id 9 at (14, 15) rank 2
+FS DOORSEEN 333 id 18 at (14, 15) rank 2
+FS DOORSEEN 334 id 14 at (14, 15) rank 2
+FS DOORSEEN 335 id 6 at (14, 15) rank 2
+FS DOORSEEN 335 id 9 at (14, 15) rank 2
+FS DOORSEEN 335 id 18 at (14, 15) rank 2
+FS DOORSEEN 336 id 14 at (14, 15) rank 2
+ECO514 337 harv 2 mouth 1 held 0 conn 1 deliv 1
+FS DOORSEEN 337 id 6 at (14, 15) rank 2
+FS DOORSEEN 337 id 9 at (14, 15) rank 2
+FS DOORSEEN 337 id 18 at (14, 15) rank 2
+FS DOORSEEN 339 id 6 at (14, 15) rank 2
+FS DOORSEEN 339 id 18 at (14, 15) rank 2
+FS DOORSEEN 340 id 9 at (14, 15) rank 2
+FS DOORSEEN 340 id 14 at (14, 15) rank 2
+FS DOORSEEN 341 id 6 at (14, 15) rank 2
+FS DOORSEEN 341 id 18 at (8, 21) rank 0
+FS DOORSEEN 343 id 14 at (8, 21) rank 0
+FS DOORSEEN 345 id 6 at (8, 21) rank 0
+FS DOOR 346 id 18 at (8, 21) n 14
+FS DOORSEEN 347 id 9 at (8, 21) rank 0
+FS DOOR 347 id 18 at (8, 21) n 15
+FS DOOR 348 id 18 at (8, 21) n 16
+FS DOOR 349 id 6 at (8, 21) n 45
+FS DOOR 349 id 18 at (8, 21) n 17
+FS DOOR 350 id 6 at (8, 21) n 46
+FS DOOR 350 id 18 at (8, 21) n 18
+FS DOOR 351 id 6 at (8, 21) n 47
+FS DOOR 351 id 18 at (8, 21) n 19
+FS DOOR 352 id 6 at (8, 21) n 48
+FS DOOR 352 id 18 at (8, 21) n 20
+FS DOOR 353 id 6 at (8, 21) n 49
+FS DOOR 353 id 18 at (8, 21) n 21
+FS DOOR 354 id 6 at (8, 21) n 50
+FS DOOR 354 id 14 at (8, 21) n 46
+FS DOOR 354 id 18 at (8, 21) n 22
+FS DOOR 355 id 6 at (8, 21) n 51
+FS DOOR 355 id 14 at (8, 21) n 47
+FS DOOR 355 id 18 at (8, 21) n 23
+FS DOOR 356 id 6 at (8, 21) n 52
+FS DOOR 356 id 14 at (8, 21) n 48
+FS DOOR 356 id 18 at (8, 21) n 24
+FS DOOR 357 id 6 at (8, 21) n 53
+FS DOOR 357 id 14 at (8, 21) n 49
+FS DOORSEEN 362 id 18 at (14, 15) rank 2
+FS DOORSEEN 364 id 18 at (14, 15) rank 2
+FS DOORSEEN 366 id 9 at (14, 15) rank 2
+FS DOORSEEN 368 id 6 at (14, 15) rank 2
+FS DOORSEEN 368 id 9 at (14, 15) rank 2
+FS DOORSEEN 369 id 14 at (14, 15) rank 2
+FS DOORSEEN 371 id 6 at (14, 15) rank 2
+FS DOORSEEN 372 id 9 at (14, 15) rank 2
+FS DOORSEEN 373 id 14 at (14, 15) rank 2
+FS DOORSEEN 375 id 6 at (14, 15) rank 2
+FS DOORSEEN 376 id 14 at (14, 15) rank 2
+FS DOORSEEN 377 id 6 at (14, 15) rank 2
+FS DOORSEEN 378 id 14 at (14, 15) rank 2
+FS DOORSEEN 378 id 18 at (14, 15) rank 2
+FS DOORSEEN 379 id 6 at (14, 15) rank 2
+FS DOORSEEN 380 id 14 at (14, 15) rank 2
+FS DOORSEEN 380 id 18 at (14, 15) rank 2
+FS DOORSEEN 381 id 6 at (14, 15) rank 2
+FS DOORSEEN 382 id 14 at (14, 15) rank 2
+FS DOORSEEN 382 id 18 at (14, 15) rank 2
+FS DOORSEEN 383 id 6 at (14, 15) rank 2
+FS DOORSEEN 384 id 14 at (14, 15) rank 2
+FS DOORSEEN 384 id 18 at (14, 15) rank 2
+FS DOORSEEN 385 id 6 at (14, 15) rank 2
+FS DOORSEEN 386 id 14 at (14, 15) rank 2
+FS DOORSEEN 386 id 18 at (14, 15) rank 2
+FS DOORSEEN 387 id 6 at (14, 15) rank 2
+FS DOORSEEN 388 id 14 at (14, 15) rank 2
+FS DOORSEEN 388 id 18 at (14, 15) rank 2
+FS DOORSEEN 389 id 6 at (14, 15) rank 2
+FS DOORSEEN 390 id 14 at (14, 15) rank 2
+FS DOORSEEN 390 id 18 at (14, 15) rank 2
+FS DOORSEEN 391 id 6 at (14, 15) rank 2
+FS DOORSEEN 392 id 14 at (14, 15) rank 2
+FS DOORSEEN 392 id 18 at (14, 15) rank 2
+FS DOORSEEN 393 id 6 at (14, 15) rank 2
+FS DOORSEEN 394 id 14 at (14, 15) rank 2
+FS DOORSEEN 394 id 18 at (14, 15) rank 2
+FS DOORSEEN 395 id 6 at (14, 15) rank 2
+FS DOORSEEN 396 id 14 at (14, 15) rank 2
+FS DOORSEEN 396 id 18 at (14, 15) rank 2
+FS DOORSEEN 397 id 6 at (14, 15) rank 2
+FS DOORSEEN 398 id 14 at (14, 15) rank 2
+FS DOORSEEN 399 id 6 at (14, 15) rank 2
+FS DOORSEEN 399 id 18 at (14, 15) rank 2
+FS DOORSEEN 400 id 14 at (14, 15) rank 2
+FS DOORSEEN 401 id 6 at (14, 15) rank 2
+FS DOORSEEN 401 id 18 at (14, 15) rank 2
+FS DOORSEEN 402 id 14 at (14, 15) rank 2
+FS DOORSEEN 403 id 6 at (14, 15) rank 2
+FS DOORSEEN 403 id 18 at (14, 15) rank 2
+FS DOORSEEN 404 id 14 at (14, 15) rank 2
+FS DOORSEEN 405 id 6 at (14, 15) rank 2
+FS DOORSEEN 405 id 18 at (14, 15) rank 2
+FS DOORSEEN 406 id 14 at (14, 15) rank 2
+FS DOORSEEN 407 id 6 at (14, 15) rank 2
+FS DOORSEEN 407 id 18 at (14, 15) rank 2
+FS DOORSEEN 408 id 14 at (14, 15) rank 2
+FS DOORSEEN 409 id 6 at (14, 15) rank 2
+FS DOORSEEN 409 id 18 at (14, 15) rank 2
+FS DOORSEEN 410 id 14 at (14, 15) rank 2
+FS DOORSEEN 411 id 6 at (14, 15) rank 2
+FS DOORSEEN 411 id 18 at (14, 15) rank 2
+FS DOORSEEN 412 id 14 at (14, 15) rank 2
+FS DOORSEEN 413 id 6 at (14, 15) rank 2
+FS DOORSEEN 413 id 18 at (14, 15) rank 2
+FS DOORSEEN 414 id 14 at (14, 15) rank 2
+FS DOORSEEN 415 id 6 at (14, 15) rank 2
+FS DOORSEEN 415 id 18 at (14, 15) rank 2
+FS DOORSEEN 416 id 14 at (14, 15) rank 2
+FS DOORSEEN 417 id 6 at (14, 15) rank 2
+FS DOORSEEN 417 id 18 at (14, 15) rank 2
+FS DOORSEEN 418 id 14 at (14, 15) rank 2
+FS DOORSEEN 419 id 6 at (14, 15) rank 2
+FS DOORSEEN 419 id 18 at (14, 15) rank 2
+FS DOORSEEN 420 id 14 at (14, 15) rank 2
+FS DOORSEEN 421 id 6 at (14, 15) rank 2
+FS DOORSEEN 421 id 18 at (14, 15) rank 2
+FS DOORSEEN 422 id 14 at (14, 15) rank 2
+FS DOORSEEN 423 id 6 at (14, 15) rank 2
+FS DOORSEEN 423 id 18 at (14, 15) rank 2
+FS DOORSEEN 424 id 14 at (14, 15) rank 2
+FS DOORSEEN 425 id 6 at (14, 15) rank 2
+FS DOORSEEN 425 id 18 at (14, 15) rank 2
+FS DOORSEEN 426 id 14 at (14, 15) rank 2
+FS DOORSEEN 427 id 6 at (14, 15) rank 2
+FS DOORSEEN 427 id 18 at (14, 15) rank 2
+FS DOORSEEN 428 id 14 at (14, 15) rank 2
+FS DOORSEEN 429 id 6 at (14, 15) rank 2
+FS DOORSEEN 429 id 18 at (14, 15) rank 2
+FS DOORSEEN 430 id 14 at (14, 15) rank 2
+FS DOORSEEN 431 id 6 at (14, 15) rank 2
+FS DOORSEEN 431 id 9 at (14, 15) rank 2
+FS DOORSEEN 432 id 14 at (14, 15) rank 2

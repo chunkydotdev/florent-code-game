@@ -1,0 +1,125 @@
+Update available: 2.3.6 -> 2.3.8. Run: pip install --upgrade fcode
+FS GATE 0 sig (30, 30, (2, 2), (26, 26)) ok 1
+FS GATE 1 sig (30, 30, (2, 2), (26, 26)) ok 1
+FS PHASE 1 id 3 ph 1 d 1013 at (3, 4)
+FS HOPBUILD 1 at (3, 4) lch (3, 5) T (28, 28)
+FS GATE 2 sig (30, 30, (2, 2), (26, 26)) ok 1
+FS GATE 2 sig (30, 30, (2, 2), (26, 26)) ok 1
+FS THROW 2 from (3, 4) to (7, 8) T (28, 28) body 3 n 1 dsq 685
+FS HOPBUILD 3 at (7, 8) lch (8, 8) T (28, 28)
+FS GATE 3 sig (30, 30, (2, 2), (26, 26)) ok 1
+FS GATE 4 sig (30, 30, (2, 2), (26, 26)) ok 1
+FS THROW 4 from (7, 9) to (11, 12) T (28, 28) body 3 n 1 dsq 421
+FS HOPBUILD 5 at (11, 12) lch (12, 12) T (28, 28)
+FS GATE 6 sig (30, 30, (2, 2), (26, 26)) ok 1
+FS THROW 6 from (11, 13) to (15, 16) T (28, 28) body 3 n 1 dsq 221
+FS HOPBUILD 7 at (15, 16) lch (16, 16) T (28, 28)
+FS GATE 8 sig (30, 30, (2, 2), (26, 26)) ok 1
+FS THROW 8 from (15, 17) to (19, 20) T (28, 28) body 3 n 1 dsq 85
+FS HOPBUILD 9 at (19, 20) lch (20, 20) T (28, 28)
+FS GATE 10 sig (30, 30, (2, 2), (26, 26)) ok 1
+FS THROW 10 from (19, 21) to (23, 24) T (28, 28) body 3 n 1 dsq 13
+FS HOPBUILD 11 at (23, 24) lch (24, 24) T (28, 28)
+FS GATE 12 sig (30, 30, (2, 2), (26, 26)) ok 1
+FS ARRIVE 14 id 3 body 1 at (24, 25) dsq 5
+FS PHASE 14 id 3 ph 2 d 5 at (24, 25)
+FS SENTINEL 14 at (24, 26) face EAST tgt (27, 26) score 9 n 1 onring 0 lost 0 onsray 0 olddsq -1
+FS RUNG 14 id 3 r 4 hi -
+FS EVICT 14 from (23, 25) to (27, 20)
+FS PHASE 15 id 3 ph 5 d 5 at (24, 25)
+FS GATE 17 sig (30, 30, (2, 2), (26, 26)) ok 1
+FS STAT 20 id 3 at (22, 28) need 8 orth 8 ti 46 ammo 10 sen 1 hp 40 covden 0 eco 1 lost 0
+FS PHASE 22 id 3 ph 2 d 5 at (24, 28)
+FS SENTDEAD 22 at (24, 26) lost 1
+FS SEAL 23 tile (26, 28) n 1
+FS SEAL 27 tile (25, 26) n 2
+FS CLEAR 31 tile (25, 27) peck 1
+FS RUNG 31 id 3 r 3 hi -
+FS CLEAR 32 tile (25, 27) peck 2
+FS RUNG 32 id 3 r 3 hi -
+FS CLEAR 33 tile (25, 27) peck 3
+FS RUNG 33 id 3 r 3 hi -
+FS CLEAR 34 tile (25, 27) peck 4
+FS RUNG 34 id 3 r 3 hi -
+FS CLEAR 35 tile (25, 27) peck 5
+FS RUNG 35 id 3 r 3 hi -
+FS CLEAR 36 tile (25, 27) peck 6
+FS RUNG 36 id 3 r 3 hi -
+FS CLEAR 37 tile (25, 27) peck 7
+FS RUNG 37 id 3 r 3 hi -
+FS CLEAR 38 tile (25, 27) peck 8
+FS RUNG 38 id 3 r 3 hi -
+FS STAT 40 id 3 at (25, 29) need 6 orth 6 ti 96 ammo 30 sen 0 hp 22 covden 0 eco 1 lost 1
+FS EVICTOR 40 at (25, 28) cov 15
+FS RUNG 40 id 3 r 2 hi -
+FS DOORSEEN 40 id 5 at (8, 4) rank 2
+FS DOORSEEN 41 id 8 at (8, 4) rank 2
+FS GATE 41 sig (30, 30, (2, 2), (26, 26)) ok 1
+FS SEAL 43 tile (27, 28) n 3
+FS SENTINEL 45 at (29, 29) face NORTHWEST tgt (26, 26) score 18 n 2 onring 0 lost 1 onsray 0 olddsq 34
+FS RUNG 45 id 3 r 4 hi -
+FS DOORSEEN 45 id 5 at (8, 4) rank 2
+FS DOORSEEN 45 id 8 at (8, 4) rank 2
+FS PHASE 46 id 3 ph 5 d 5 at (28, 29)
+FS SEAL 47 tile (28, 27) n 4
+FS DOORSEEN 47 id 5 at (8, 4) rank 2
+FS DOORSEEN 50 id 8 at (8, 4) rank 2
+FS DOORSEEN 54 id 5 at (8, 4) rank 2
+FS DODGE 57 id 3 from (29, 26) to (28, 26) cov 1 -> 0 hit 0 hp 22
+FS DOORSEEN 57 id 8 at (8, 4) rank 2
+FS EVICT 57 from (24, 27) to (20, 29)
+FS STAT 60 id 3 at (28, 25) need 4 orth 4 ti 28 ammo 80 sen 1 hp 22 covden 0 eco 1 lost 1
+FS DOORSEEN 61 id 5 at (8, 4) rank 2
+FS DOORSEEN 61 id 8 at (8, 4) rank 2
+FS EVICT 61 from (24, 29) to (24, 23)
+FS CLEAR 62 tile (28, 26) peck 1
+FS RUNG 62 id 3 r 3 hi -
+FS DOORSEEN 63 id 5 at (8, 4) rank 2
+FS DODGE 64 id 3 from (28, 25) to (28, 26) cov 1 -> 0 hit 0 hp 22
+FS EVICT 65 from (24, 27) to (20, 29)
+FS DODGE 66 id 3 from (29, 26) to (28, 26) cov 2 -> 0 hit 0 hp 4
+FS DOORSEEN 69 id 8 at (8, 4) rank 2
+FS DOOR 69 id 8 at (8, 4) n 1
+FS EVICT 69 from (24, 29) to (24, 23)
+FS DOOR 70 id 8 at (8, 4) n 2
+FS DOOR 73 id 8 at (8, 4) n 3
+FS EVICT 73 from (24, 27) to (20, 29)
+FS EVICT 77 from (24, 29) to (24, 23)
+FS EVICT 86 from (24, 27) to (20, 29)
+FS DOORSEEN 89 id 5 at (8, 4) rank 2
+FS DOORSEEN 89 id 8 at (4, 1) rank 1
+FS DOOR 90 id 8 at (4, 1) n 4
+FS EVICT 90 from (24, 29) to (24, 23)
+FS DOOR 93 id 8 at (4, 1) n 5
+FS DOOR 94 id 8 at (4, 1) n 6
+FS EVICT 95 from (24, 27) to (20, 29)
+FS DOOR 97 id 8 at (4, 1) n 7
+FS DOOR 98 id 8 at (4, 1) n 8
+FS EVICT 99 from (24, 29) to (24, 23)
+FS DOOR 101 id 8 at (4, 1) n 9
+FS DOOR 102 id 8 at (4, 1) n 10
+FS DOOR 105 id 8 at (4, 1) n 11
+FS DOOR 106 id 8 at (4, 1) n 12
+FS EVICT 107 from (24, 27) to (20, 29)
+FS DOOR 109 id 8 at (4, 1) n 13
+FS DOOR 110 id 8 at (4, 1) n 14
+FS EVICT 111 from (24, 29) to (24, 23)
+FS DOOR 113 id 8 at (4, 1) n 15
+FS DOOR 114 id 8 at (4, 1) n 16
+FS DOOR 117 id 8 at (4, 1) n 17
+FS DOOR 118 id 8 at (4, 1) n 18
+FS EVICT 120 from (24, 27) to (20, 29)
+FS DOOR 121 id 8 at (4, 1) n 19
+FS DOOR 122 id 8 at (4, 1) n 20
+FS DOOR 123 id 8 at (4, 1) n 21
+FS DOOR 124 id 8 at (4, 1) n 22
+FS EVICT 124 from (24, 29) to (24, 23)
+FS DOOR 125 id 8 at (4, 1) n 23
+FS DOOR 126 id 8 at (4, 1) n 24
+FS DOOR 127 id 8 at (4, 1) n 25
+FS DOOR 128 id 8 at (4, 1) n 26
+FS EVICT 128 from (24, 27) to (20, 29)
+FS DOOR 129 id 8 at (4, 1) n 27
+FS EVICT 132 from (24, 29) to (24, 23)
+FS EVICT 136 from (24, 27) to (20, 29)
+FS EVICT 140 from (24, 29) to (24, 23)

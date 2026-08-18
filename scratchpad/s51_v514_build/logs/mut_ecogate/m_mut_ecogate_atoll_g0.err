@@ -1,0 +1,180 @@
+Update available: 2.3.6 -> 2.3.8. Run: pip install --upgrade fcode
+FS GATE 0 sig (18, 18, (2, 14), (14, 2)) ok 1
+FS GATE 1 sig (18, 18, (2, 14), (14, 2)) ok 1
+FS PHASE 1 id 3 ph 1 d 200 at (4, 13)
+FS HOPBUILD 1 at (4, 13) lch (4, 12) T (16, 1)
+FS GATE 2 sig (18, 18, (2, 14), (14, 2)) ok 1
+FS GATE 2 sig (18, 18, (2, 14), (14, 2)) ok 1
+FS THROW 2 from (5, 13) to (8, 9) T (16, 1) body 3 n 1 dsq 72
+FS HOPBUILD 3 at (8, 9) lch (8, 8) T (16, 1)
+FS GATE 3 sig (18, 18, (2, 14), (14, 2)) ok 1
+FS GATE 4 sig (18, 18, (2, 14), (14, 2)) ok 1
+FS THROW 4 from (9, 9) to (12, 5) T (16, 1) body 3 n 1 dsq 8
+ECO514 5 harv 1 mouth 1 held 1 conn 0 deliv 1
+FS ARRIVE 5 id 3 body 1 at (12, 5) dsq 8
+FS PHASE 5 id 3 ph 2 d 8 at (12, 5)
+FS SENTINEL 5 at (12, 6) face NORTHEAST tgt (15, 3) score 18 n 1 onring 0 lost 0 gate (0, 0, -1) onsray 0 olddsq -1
+FS RUNG 5 id 3 r 4 hi -
+FS PHASE 6 id 3 ph 5 d 8 at (12, 5)
+FS SENTINEL 6 at (11, 5) face NORTHEAST tgt (14, 2) score -6 n 2 onring 0 lost 0 gate (0, 1, -1) onsray 0 olddsq -1
+FS RUNG 6 id 3 r 4 hi -
+ECO514 7 harv 2 mouth 1 held 0 conn 1 deliv 1
+FS GATE 7 sig (18, 18, (2, 14), (14, 2)) ok 1
+FS DODGE 9 id 3 from (13, 4) to (14, 4) cov 1 -> 0 hit 0 hp 40
+FS SEAL 10 tile (15, 4) n 1
+FS SEAL 12 tile (14, 4) n 2
+FS DOORSEEN 15 id 5 at (7, 10) rank 1
+FS DOORSEEN 15 id 8 at (7, 10) rank 1
+FS DOORSEEN 15 id 20 at (7, 10) rank 1
+FS SEAL 16 tile (16, 3) n 3
+FS PHASE 18 id 3 ph 2 d 5 at (17, 4)
+FS STAT 20 id 3 at (17, 2) need 6 orth 5 ti 16 ammo 42 sen 0 hp 40 covden 0 eco 1 lost 0
+FS SEAL 20 tile (16, 2) n 4
+FS SEAL 23 tile (16, 4) n 5
+FS DOOR 27 id 5 at (7, 10) n 1
+FS DOOR 28 id 5 at (7, 10) n 2
+FS DOOR 29 id 5 at (7, 10) n 3
+FS DOOR 30 id 5 at (7, 10) n 4
+FS DOOR 31 id 5 at (7, 10) n 5
+FS DOOR 32 id 5 at (7, 10) n 6
+FS DOOR 33 id 5 at (7, 10) n 7
+FS DOOR 34 id 5 at (7, 10) n 8
+FS DOOR 35 id 5 at (7, 10) n 9
+FS DOOR 36 id 5 at (7, 10) n 10
+FS DOOR 37 id 5 at (7, 10) n 11
+FS DOOR 38 id 5 at (7, 10) n 12
+FS DOOR 39 id 5 at (7, 10) n 13
+FS STAT 40 id 3 at (17, 4) need 6 orth 4 ti 12 ammo 16 sen 0 hp 40 covden 0 eco 1 lost 0
+FS DOOR 40 id 5 at (7, 10) n 14
+FS DOOR 41 id 5 at (7, 10) n 15
+FS DOOR 42 id 5 at (7, 10) n 16
+FS DOOR 43 id 5 at (7, 10) n 17
+FS DOOR 44 id 5 at (7, 10) n 18
+FS DOOR 45 id 5 at (7, 10) n 19
+FS DOOR 46 id 5 at (7, 10) n 20
+FS STAT 60 id 3 at (17, 4) need 6 orth 4 ti 16 ammo 18 sen 0 hp 40 covden 0 eco 1 lost 0
+FS STAT 80 id 3 at (17, 4) need 6 orth 4 ti 16 ammo 18 sen 0 hp 40 covden 0 eco 1 lost 0
+FS STAT 100 id 3 at (17, 4) need 6 orth 4 ti 16 ammo 18 sen 0 hp 40 covden 0 eco 1 lost 0
+FS STAT 120 id 3 at (17, 4) need 6 orth 4 ti 16 ammo 18 sen 0 hp 40 covden 0 eco 1 lost 0
+FS STAT 140 id 3 at (17, 4) need 6 orth 4 ti 16 ammo 18 sen 0 hp 40 covden 0 eco 1 lost 0
+FS STAT 160 id 3 at (17, 4) need 6 orth 4 ti 16 ammo 18 sen 0 hp 40 covden 0 eco 1 lost 0
+FS STAT 180 id 3 at (17, 4) need 6 orth 4 ti 16 ammo 18 sen 0 hp 40 covden 0 eco 1 lost 0
+FS STAT 200 id 3 at (17, 4) need 6 orth 4 ti 16 ammo 18 sen 0 hp 40 covden 0 eco 1 lost 0
+FS STAT 220 id 3 at (17, 4) need 6 orth 4 ti 16 ammo 18 sen 0 hp 40 covden 0 eco 1 lost 0
+FS STAT 240 id 3 at (17, 4) need 6 orth 4 ti 16 ammo 18 sen 0 hp 40 covden 0 eco 1 lost 0
+FS STAT 260 id 3 at (17, 4) need 6 orth 4 ti 16 ammo 18 sen 0 hp 40 covden 0 eco 1 lost 0
+FS STAT 280 id 3 at (17, 4) need 6 orth 4 ti 16 ammo 18 sen 0 hp 40 covden 0 eco 1 lost 0
+FS STAT 300 id 3 at (17, 4) need 6 orth 4 ti 16 ammo 18 sen 0 hp 40 covden 0 eco 1 lost 0
+FS STAT 320 id 3 at (17, 4) need 6 orth 4 ti 16 ammo 18 sen 0 hp 40 covden 0 eco 1 lost 0
+FS STAT 340 id 3 at (17, 4) need 6 orth 4 ti 16 ammo 18 sen 0 hp 40 covden 0 eco 1 lost 0
+FS STAT 360 id 3 at (17, 4) need 6 orth 4 ti 16 ammo 18 sen 0 hp 40 covden 0 eco 1 lost 0
+FS STAT 380 id 3 at (17, 4) need 6 orth 4 ti 16 ammo 18 sen 0 hp 40 covden 0 eco 1 lost 0
+FS STAT 400 id 3 at (17, 4) need 6 orth 4 ti 16 ammo 18 sen 0 hp 40 covden 0 eco 1 lost 0
+FS STAT 420 id 3 at (17, 4) need 6 orth 4 ti 16 ammo 18 sen 0 hp 40 covden 0 eco 1 lost 0
+FS STAT 440 id 3 at (17, 4) need 6 orth 4 ti 16 ammo 18 sen 0 hp 40 covden 0 eco 1 lost 0
+FS STAT 460 id 3 at (17, 4) need 6 orth 4 ti 16 ammo 18 sen 0 hp 40 covden 0 eco 1 lost 0
+FS STAT 480 id 3 at (17, 4) need 5 orth 4 ti 16 ammo 18 sen 0 hp 40 covden 0 eco 1 lost 0
+FS PHASE 482 id 3 ph 5 d 5 at (16, 5)
+FS DODGE 485 id 3 from (13, 5) to (14, 5) cov 1 -> 0 hit 0 hp 40
+FS DODGE 487 id 3 from (13, 5) to (14, 5) cov 1 -> 0 hit 0 hp 40
+FS DODGE 489 id 3 from (13, 5) to (14, 5) cov 1 -> 0 hit 0 hp 40
+FS DODGE 491 id 3 from (13, 5) to (14, 5) cov 1 -> 0 hit 0 hp 40
+FS DODGE 493 id 3 from (13, 5) to (14, 5) cov 1 -> 0 hit 0 hp 40
+FS DODGE 495 id 3 from (13, 5) to (14, 5) cov 1 -> 0 hit 0 hp 40
+FS DODGE 497 id 3 from (13, 5) to (14, 5) cov 1 -> 0 hit 0 hp 40
+FS DODGE 499 id 3 from (13, 5) to (14, 5) cov 1 -> 0 hit 0 hp 40
+FS STAT 500 id 3 at (14, 5) need 5 orth 4 ti 16 ammo 18 sen 2 hp 40 covden 0 eco 1 lost 0
+FS DODGE 501 id 3 from (13, 5) to (14, 5) cov 1 -> 0 hit 0 hp 40
+FS DODGE 503 id 3 from (13, 5) to (14, 5) cov 1 -> 0 hit 0 hp 40
+FS DODGE 505 id 3 from (13, 5) to (14, 5) cov 1 -> 0 hit 0 hp 40
+FS DODGE 507 id 3 from (13, 5) to (14, 5) cov 1 -> 0 hit 0 hp 40
+FS DODGE 509 id 3 from (13, 5) to (14, 5) cov 1 -> 0 hit 0 hp 40
+FS DODGE 511 id 3 from (13, 5) to (14, 5) cov 1 -> 0 hit 0 hp 40
+FS DODGE 513 id 3 from (13, 5) to (14, 5) cov 1 -> 0 hit 0 hp 40
+FS DODGE 515 id 3 from (13, 5) to (14, 5) cov 1 -> 0 hit 0 hp 40
+FS DODGE 517 id 3 from (13, 5) to (14, 5) cov 1 -> 0 hit 0 hp 40
+FS DODGE 519 id 3 from (13, 5) to (14, 5) cov 1 -> 0 hit 0 hp 40
+FS STAT 520 id 3 at (14, 5) need 5 orth 4 ti 16 ammo 18 sen 2 hp 40 covden 0 eco 1 lost 0
+FS DODGE 521 id 3 from (13, 5) to (14, 5) cov 1 -> 0 hit 0 hp 40
+FS DODGE 523 id 3 from (13, 5) to (14, 5) cov 1 -> 0 hit 0 hp 40
+FS DODGE 525 id 3 from (13, 5) to (14, 5) cov 1 -> 0 hit 0 hp 40
+FS DODGE 527 id 3 from (13, 5) to (14, 5) cov 1 -> 0 hit 0 hp 40
+FS DODGE 529 id 3 from (13, 5) to (14, 5) cov 1 -> 0 hit 0 hp 40
+FS DODGE 531 id 3 from (13, 5) to (14, 5) cov 1 -> 0 hit 0 hp 40
+FS DODGE 533 id 3 from (13, 5) to (14, 5) cov 1 -> 0 hit 0 hp 40
+FS DODGE 535 id 3 from (13, 5) to (14, 5) cov 1 -> 0 hit 0 hp 40
+FS DODGE 537 id 3 from (13, 5) to (14, 5) cov 1 -> 0 hit 0 hp 40
+FS DODGE 539 id 3 from (13, 5) to (14, 5) cov 1 -> 0 hit 0 hp 40
+FS STAT 540 id 3 at (14, 5) need 5 orth 4 ti 16 ammo 18 sen 2 hp 40 covden 0 eco 1 lost 0
+FS DODGE 541 id 3 from (13, 5) to (14, 5) cov 1 -> 0 hit 0 hp 40
+FS DODGE 543 id 3 from (13, 5) to (14, 5) cov 1 -> 0 hit 0 hp 40
+FS DODGE 545 id 3 from (13, 5) to (14, 5) cov 1 -> 0 hit 0 hp 40
+FS DODGE 547 id 3 from (13, 5) to (14, 5) cov 1 -> 0 hit 0 hp 40
+FS DODGE 549 id 3 from (13, 5) to (14, 5) cov 1 -> 0 hit 0 hp 22
+FS DODGE 551 id 3 from (13, 5) to (14, 5) cov 1 -> 0 hit 0 hp 22
+FS DODGE 553 id 3 from (13, 5) to (14, 5) cov 1 -> 0 hit 0 hp 22
+FS DODGE 555 id 3 from (13, 5) to (14, 5) cov 1 -> 0 hit 0 hp 22
+FS DODGE 557 id 3 from (13, 5) to (14, 5) cov 1 -> 0 hit 0 hp 22
+FS DODGE 559 id 3 from (13, 5) to (14, 5) cov 1 -> 0 hit 0 hp 22
+FS STAT 560 id 3 at (14, 5) need 5 orth 4 ti 16 ammo 18 sen 2 hp 22 covden 0 eco 1 lost 0
+FS DODGE 561 id 3 from (13, 5) to (14, 5) cov 1 -> 0 hit 0 hp 22
+FS DODGE 563 id 3 from (13, 5) to (14, 5) cov 1 -> 0 hit 0 hp 22
+FS DODGE 565 id 3 from (13, 5) to (14, 5) cov 1 -> 0 hit 0 hp 22
+FS DODGE 567 id 3 from (13, 5) to (14, 5) cov 1 -> 0 hit 0 hp 22
+FS DODGE 569 id 3 from (13, 5) to (14, 5) cov 1 -> 0 hit 0 hp 22
+FS DODGE 571 id 3 from (13, 5) to (14, 5) cov 1 -> 0 hit 0 hp 22
+FS DODGE 573 id 3 from (13, 5) to (14, 5) cov 1 -> 0 hit 0 hp 22
+FS DODGE 575 id 3 from (13, 5) to (14, 5) cov 1 -> 0 hit 0 hp 22
+FS DODGE 577 id 3 from (13, 5) to (14, 5) cov 1 -> 0 hit 0 hp 22
+FS DODGE 579 id 3 from (13, 5) to (14, 5) cov 1 -> 0 hit 0 hp 22
+FS STAT 580 id 3 at (14, 5) need 5 orth 4 ti 16 ammo 18 sen 2 hp 22 covden 0 eco 1 lost 0
+FS DODGE 581 id 3 from (13, 5) to (14, 5) cov 1 -> 0 hit 0 hp 4
+FS DODGE 583 id 3 from (13, 5) to (14, 5) cov 1 -> 0 hit 0 hp 4
+FS DODGE 585 id 3 from (13, 5) to (14, 5) cov 1 -> 0 hit 0 hp 4
+FS DODGE 587 id 3 from (13, 5) to (14, 5) cov 1 -> 0 hit 0 hp 4
+FS DODGE 589 id 3 from (13, 5) to (14, 5) cov 1 -> 0 hit 0 hp 4
+FS DODGE 591 id 3 from (13, 5) to (14, 5) cov 1 -> 0 hit 0 hp 4
+FS DODGE 593 id 3 from (13, 5) to (14, 5) cov 1 -> 0 hit 0 hp 4
+FS DODGE 595 id 3 from (13, 5) to (14, 5) cov 1 -> 0 hit 0 hp 4
+FS DODGE 597 id 3 from (13, 5) to (14, 5) cov 1 -> 0 hit 0 hp 4
+FS DODGE 599 id 3 from (13, 5) to (14, 5) cov 1 -> 0 hit 0 hp 4
+FS STAT 600 id 3 at (14, 5) need 5 orth 4 ti 16 ammo 18 sen 2 hp 4 covden 0 eco 1 lost 0
+FS DODGE 601 id 3 from (13, 5) to (14, 5) cov 1 -> 0 hit 0 hp 4
+FS DODGE 603 id 3 from (13, 5) to (14, 5) cov 1 -> 0 hit 0 hp 4
+FS DODGE 605 id 3 from (13, 5) to (14, 5) cov 1 -> 0 hit 0 hp 4
+FS DODGE 607 id 3 from (13, 5) to (14, 5) cov 1 -> 0 hit 0 hp 4
+FS DODGE 609 id 3 from (13, 5) to (14, 5) cov 1 -> 0 hit 0 hp 4
+FS DODGE 611 id 3 from (13, 5) to (14, 5) cov 1 -> 0 hit 0 hp 4
+FS DODGE 613 id 3 from (13, 5) to (14, 5) cov 1 -> 0 hit 0 hp 4
+FS DODGE 615 id 3 from (13, 5) to (14, 5) cov 1 -> 0 hit 0 hp 4
+FS DODGE 617 id 3 from (13, 5) to (14, 5) cov 1 -> 0 hit 0 hp 4
+FS DODGE 619 id 3 from (13, 5) to (14, 5) cov 1 -> 0 hit 0 hp 4
+FS STAT 620 id 3 at (14, 5) need 5 orth 4 ti 16 ammo 18 sen 2 hp 4 covden 0 eco 1 lost 0
+FS DODGE 621 id 3 from (13, 5) to (14, 5) cov 1 -> 0 hit 0 hp 4
+FS DODGE 623 id 3 from (13, 5) to (14, 5) cov 1 -> 0 hit 0 hp 4
+FS DODGE 625 id 3 from (13, 5) to (14, 5) cov 1 -> 0 hit 0 hp 4
+FS DODGE 627 id 3 from (13, 5) to (14, 5) cov 1 -> 0 hit 0 hp 4
+FS DOORSEEN 957 id 5 at (5, 11) rank 0
+FS DOORSEEN 957 id 20 at (5, 11) rank 0
+FS DOOR 959 id 20 at (5, 11) n 1
+FS DOOR 960 id 20 at (5, 11) n 2
+FS DOOR 961 id 20 at (5, 11) n 3
+FS DOOR 962 id 20 at (5, 11) n 4
+FS DOOR 963 id 20 at (5, 11) n 5
+FS DOOR 964 id 20 at (5, 11) n 6
+FS DOOR 965 id 20 at (5, 11) n 7
+FS DOOR 966 id 20 at (5, 11) n 8
+FS DOOR 967 id 20 at (5, 11) n 9
+FS DOOR 968 id 20 at (5, 11) n 10
+FS DOOR 969 id 20 at (5, 11) n 11
+FS DOOR 970 id 20 at (5, 11) n 12
+FS DOOR 971 id 20 at (5, 11) n 13
+FS DOOR 972 id 20 at (5, 11) n 14
+FS DOOR 973 id 20 at (5, 11) n 15
+FS DOOR 974 id 20 at (5, 11) n 16
+FS DOOR 975 id 20 at (5, 11) n 17
+FS DOOR 976 id 20 at (5, 11) n 18
+FS DOOR 977 id 20 at (5, 11) n 19
+FS DOOR 978 id 20 at (5, 11) n 20
+FS GATE 997 sig (18, 18, (2, 14), (14, 2)) ok 1
+FS PHASE 997 id 359 ph 1 d 269 at (1, 13)

@@ -1,0 +1,31 @@
+tag	arm	map	g	seed	ord	ours	winner	cond	turn	tracebacks	ours_mined	opp_mined
+nocensusA_glacierkeep_g0	nocensusA	glacierkeep	0	7400	A	US	nocensus	Core destroyed	345	0	0	0
+nocensusA_glacierkeep_g1	nocensusA	glacierkeep	1	7401	B	US	nocensus	Core destroyed	225	0	240	0
+nocensusA_glacierkeep_g2	nocensusA	glacierkeep	2	7402	A	US	nocensus	Core destroyed	197	0	160	0
+nocensusA_glacierkeep_g3	nocensusA	glacierkeep	3	7403	B	US	nocensus	Core destroyed	217	0	110	0
+nocensusA_glacierkeep_g4	nocensusA	glacierkeep	4	7404	A	US	nocensus	Core destroyed	373	0	160	0
+nocensusA_glacierkeep_g5	nocensusA	glacierkeep	5	7405	B	US	nocensus	Titanium collected (tiebreak)	1000	0	220	0
+nocensusA_nordkap_g0	nocensusA	nordkap	0	7400	A	OPP	_v488beltbreak2	Core destroyed	263	0	130	860
+nocensusA_nordkap_g1	nocensusA	nordkap	1	7401	B	US	nocensus	Core destroyed	625	0	4860	440
+nocensusA_nordkap_g2	nocensusA	nordkap	2	7402	A	US	nocensus	Core destroyed	400	0	980	510
+nocensusA_nordkap_g3	nocensusA	nordkap	3	7403	B	US	nocensus	Core destroyed	526	0	510	740
+nocensusA_nordkap_g4	nocensusA	nordkap	4	7404	A	OPP	_v488beltbreak2	Core destroyed	692	0	110	300
+nocensusA_nordkap_g5	nocensusA	nordkap	5	7405	B	US	nocensus	Core destroyed	340	0	830	480
+nocensusA_atoll_g0	nocensusA	atoll	0	7400	A	OPP	_v488beltbreak2	Core destroyed	334	0	960	2220
+nocensusA_atoll_g1	nocensusA	atoll	1	7401	B	OPP	_v488beltbreak2	Core destroyed	268	0	370	1000
+nocensusA_atoll_g2	nocensusA	atoll	2	7402	A	OPP	_v488beltbreak2	Core destroyed	188	0	910	1530
+nocensusA_atoll_g3	nocensusA	atoll	3	7403	B	US	nocensus	Titanium collected (tiebreak)	1000	0	2600	2480
+nocensusA_atoll_g4	nocensusA	atoll	4	7404	A	US	nocensus	Core destroyed	243	0	750	210
+nocensusA_atoll_g5	nocensusA	atoll	5	7405	B	OPP	_v488beltbreak2	Titanium collected (tiebreak)	1000	0	2290	4630
+nocensusA_midgard_g0	nocensusA	midgard	0	7400	A	OPP	_v488beltbreak2	Core destroyed	147	0	250	1360
+nocensusA_midgard_g1	nocensusA	midgard	1	7401	B	OPP	_v488beltbreak2	Core destroyed	146	0	600	1610
+nocensusA_midgard_g2	nocensusA	midgard	2	7402	A	OPP	_v488beltbreak2	Core destroyed	210	0	350	1440
+nocensusA_midgard_g3	nocensusA	midgard	3	7403	B	OPP	_v488beltbreak2	Core destroyed	122	0	490	1550
+nocensusA_midgard_g4	nocensusA	midgard	4	7404	A	OPP	_v488beltbreak2	Core destroyed	179	0	380	1950
+nocensusA_midgard_g5	nocensusA	midgard	5	7405	B	OPP	_v488beltbreak2	Core destroyed	118	0	570	1460
+nocensusA_drakkarfjord_g0	nocensusA	drakkarfjord	0	7400	A	US	nocensus	Core destroyed	479	0	3600	3870
+nocensusA_drakkarfjord_g1	nocensusA	drakkarfjord	1	7401	B	US	nocensus	Core destroyed	145	0	450	0
+nocensusA_drakkarfjord_g2	nocensusA	drakkarfjord	2	7402	A	OPP	_v488beltbreak2	Core destroyed	227	0	680	2550
+nocensusA_drakkarfjord_g3	nocensusA	drakkarfjord	3	7403	B	US	nocensus	Core destroyed	213	0	700	0
+nocensusA_drakkarfjord_g4	nocensusA	drakkarfjord	4	7404	A	OPP	_v488beltbreak2	Core destroyed	395	0	450	1040
+nocensusA_drakkarfjord_g5	nocensusA	drakkarfjord	5	7405	B	US	nocensus	Titanium collected (tiebreak)	1000	0	410	0

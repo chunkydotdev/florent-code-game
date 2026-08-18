@@ -1,0 +1,129 @@
+Update available: 2.3.6 -> 2.3.8. Run: pip install --upgrade fcode
+FS GATE 0 sig (18, 18, (2, 14), (14, 2)) ok 1
+FS GATE 1 sig (18, 18, (2, 14), (14, 2)) ok 1
+FS PHASE 1 id 3 ph 1 d 200 at (4, 13)
+FS HOPBUILD 1 at (4, 13) lch (4, 12) T (16, 1)
+FS GATE 2 sig (18, 18, (2, 14), (14, 2)) ok 1
+FS GATE 2 sig (18, 18, (2, 14), (14, 2)) ok 1
+FS THROW 2 from (5, 13) to (8, 9) T (16, 1) body 3 n 1 dsq 72
+FS HOPBUILD 3 at (8, 9) lch (8, 8) T (16, 1)
+FS GATE 3 sig (18, 18, (2, 14), (14, 2)) ok 1
+FS GATE 4 sig (18, 18, (2, 14), (14, 2)) ok 1
+FS THROW 4 from (9, 9) to (12, 5) T (16, 1) body 3 n 1 dsq 8
+FS ARRIVE 5 id 3 body 1 at (12, 5) dsq 8
+FS PHASE 5 id 3 ph 2 d 8 at (12, 5)
+FS EVICTOR 6 at (12, 3) ucov 0 cov 2 unseal 1 obs 4
+FS RUNG 6 id 3 r 2 hi -
+FS DODGE 7 id 3 from (12, 4) to (13, 4) cov 1 -> 0 hit 0 hp 40
+FS GATE 7 sig (18, 18, (2, 14), (14, 2)) ok 1
+FS GATE 7 sig (18, 18, (2, 14), (14, 2)) ok 1
+FS EVICT 7 from (12, 2) to (11, 8)
+FS SEAL 8 tile (14, 4) n 1
+FS GATE 8 sig (18, 18, (2, 14), (14, 2)) ok 1
+FS CLEAR 9 tile (13, 3) peck 1
+FS RUNG 9 id 3 r 3 hi -
+FS CLEAR 10 tile (13, 3) peck 2
+FS RUNG 10 id 3 r 3 hi -
+FS EVICT 10 from (11, 2) to (11, 8)
+FS CLEAR 11 tile (13, 3) peck 3
+FS RUNG 11 id 3 r 3 hi -
+FS CLEAR 12 tile (13, 3) peck 4
+FS RUNG 12 id 3 r 3 hi -
+FS CLEAR 13 tile (13, 3) peck 5
+FS RUNG 13 id 3 r 3 hi -
+FS CLEAR 14 tile (13, 3) peck 6
+FS RUNG 14 id 3 r 3 hi -
+FS CLEAR 15 tile (13, 3) peck 7
+FS RUNG 15 id 3 r 3 hi -
+FS EVICT 15 from (13, 2) to (7, 4)
+FS CLEAR 16 tile (13, 3) peck 8
+FS RUNG 16 id 3 r 3 hi -
+FS DODGE 17 id 3 from (13, 4) to (12, 4) cov 2 -> 1 hit 0 hp 4
+FS EVICT 17 from (13, 4) to (7, 4)
+FS EVICT 21 from (11, 4) to (17, 4)
+FS GATE 121 sig (18, 18, (2, 14), (14, 2)) ok 1
+FS PHASE 121 id 200 ph 1 d 244 at (4, 15)
+FS HOPBUILD 121 at (4, 15) lch (5, 15) T (16, 1)
+FS GATE 122 sig (18, 18, (2, 14), (14, 2)) ok 1
+FS THROW 122 from (4, 15) to (9, 12) T (16, 1) body 200 n 1 dsq 106
+FS HOPBUILD 128 at (13, 11) lch (13, 10) T (16, 1)
+FS GATE 129 sig (18, 18, (2, 14), (14, 2)) ok 1
+FS THROW 129 from (14, 11) to (13, 5) T (16, 1) body 200 n 1 dsq 5
+FS ARRIVE 130 id 200 body 1 at (13, 5) dsq 5
+FS PHASE 130 id 200 ph 2 d 5 at (13, 5)
+FS DODGE 131 id 200 from (13, 4) to (13, 5) cov 2 -> 0 hit 0 hp 15
+FS DODGE 132 id 200 from (13, 5) to (13, 6) cov 1 -> 0 hit 0 hp 15
+FS DODGE 136 id 200 from (15, 5) to (16, 5) cov 1 -> 0 hit 0 hp 15
+FS STAT 140 id 200 at (17, 3) need 5 orth 4 ti 105 ammo 20 sen 0 hp 15 covden 0 eco 1 lost 0
+FS SEAL 141 tile (16, 2) n 1
+FS SEAL 144 tile (15, 1) n 2
+FS SEAL 150 tile (15, 1) n 3
+FS SENTINEL 153 at (17, 1) face SOUTHWEST tgt (15, 3) score 8 n 1 onring 0 lost 0 onsray 0 olddsq -1
+FS RUNG 153 id 200 r 4 hi -
+FS PHASE 154 id 200 ph 5 d 2 at (16, 1)
+PROBE SENTSUICIDE 154 at (17, 1)
+FS PHASE 155 id 200 ph 2 d 2 at (16, 1)
+FS SENTDEAD 155 at (17, 1) lost 1
+FS SEAL 156 tile (15, 1) n 4
+FS STAT 160 id 200 at (17, 3) need 4 orth 3 ti 134 ammo 20 sen 0 hp 15 covden 0 eco 1 lost 1
+FS SENTINEL 160 at (17, 4) face NORTHWEST tgt (15, 2) score 8 n 2 onring 0 lost 1 onsray 0 olddsq 9
+FS RUNG 160 id 200 r 4 hi -
+FS PHASE 161 id 200 ph 5 d 4 at (17, 3)
+PROBE SENTSUICIDE 161 at (17, 4)
+FS PHASE 162 id 200 ph 2 d 4 at (17, 2)
+FS SENTDEAD 162 at (17, 4) lost 2
+FS SEAL 164 tile (16, 2) n 5
+FS SEAL 165 tile (15, 1) n 6
+FS SEAL 174 tile (16, 2) n 7
+FS SEAL 175 tile (15, 1) n 8
+FS STAT 180 id 200 at (17, 4) need 5 orth 4 ti 147 ammo 24 sen 0 hp 15 covden 0 eco 1 lost 2
+FS SEAL 184 tile (15, 1) n 9
+FS SEAL 185 tile (16, 2) n 10
+FS SEAL 192 tile (15, 1) n 11
+FS SEAL 199 tile (16, 2) n 12
+FS STAT 200 id 200 at (17, 2) need 5 orth 4 ti 201 ammo 78 sen 0 hp 15 covden 0 eco 1 lost 2
+FS SEAL 202 tile (15, 1) n 13
+FS GATE 205 sig (18, 18, (2, 14), (14, 2)) ok 1
+FS SEAL 209 tile (16, 2) n 14
+FS SEAL 212 tile (15, 1) n 15
+FS SEAL 219 tile (16, 2) n 16
+FS STAT 220 id 200 at (17, 2) need 5 orth 4 ti 229 ammo 78 sen 0 hp 15 covden 0 eco 1 lost 2
+FS EVICTOR 221 at (16, 1) ucov 0 cov 1 unseal 2 obs 6
+FS RUNG 221 id 200 r 2 hi -
+FS GATE 222 sig (18, 18, (2, 14), (14, 2)) ok 1
+FS GATE 222 sig (18, 18, (2, 14), (14, 2)) ok 1
+FS SEAL 227 tile (16, 2) n 17
+FS SENTINEL 232 at (15, 5) face NORTH tgt (15, 2) score -119 n 3 onring 0 lost 2 onsray 0 olddsq 5
+FS RUNG 232 id 200 r 4 hi -
+FS PHASE 233 id 200 ph 5 d 5 at (16, 5)
+PROBE SENTSUICIDE 233 at (15, 5)
+FS PHASE 234 id 200 ph 2 d 2 at (16, 4)
+FS SENTDEAD 234 at (15, 5) lost 3
+FS SEAL 237 tile (16, 2) n 18
+FS STAT 240 id 200 at (17, 4) need 5 orth 4 ti 136 ammo 78 sen 0 hp 15 covden 0 eco 1 lost 3
+FS DODGE 257 id 200 from (15, 5) to (16, 5) cov 2 -> 0 hit 0 hp 15
+FS GATE 257 sig (18, 18, (2, 14), (14, 2)) ok 1
+FS GATE 269 sig (18, 18, (2, 14), (14, 2)) ok 1
+FS PHASE 269 id 342 ph 1 d 338 at (1, 16)
+FS DEGRADE 302 id 342
+FS GATE 304 sig (18, 18, (2, 14), (14, 2)) ok 1
+FS GATE 305 sig (18, 18, (2, 14), (14, 2)) ok 1
+FS GATE 306 sig (18, 18, (2, 14), (14, 2)) ok 1
+FS GATE 349 sig (18, 18, (2, 14), (14, 2)) ok 1
+FS GATE 375 sig (18, 18, (2, 14), (14, 2)) ok 1
+FS GATE 391 sig (18, 18, (2, 14), (14, 2)) ok 1
+FS GATE 409 sig (18, 18, (2, 14), (14, 2)) ok 1
+PROBE SENTSUICIDE 427 at (15, 8)
+FS GATE 501 sig (18, 18, (2, 14), (14, 2)) ok 1
+FS GATE 517 sig (18, 18, (2, 14), (14, 2)) ok 1
+FS EVICT 536 from (16, 2) to (11, 0)
+PROBE SENTSUICIDE 544 at (9, 3)
+PROBE SENTSUICIDE 547 at (9, 3)
+PROBE SENTSUICIDE 549 at (9, 2)
+PROBE SENTSUICIDE 586 at (11, 0)
+FS EVICT 640 from (16, 2) to (11, 0)
+FS GATE 643 sig (18, 18, (2, 14), (14, 2)) ok 1
+FS EVICT 663 from (16, 2) to (11, 0)
+FS EVICT 780 from (15, 1) to (11, 0)
+FS EVICT 837 from (15, 1) to (11, 0)
+FS EVICT 966 from (15, 1) to (17, 6)

@@ -1,0 +1,1184 @@
+Update available: 2.3.6 -> 2.3.8. Run: pip install --upgrade fcode
+FS GATE 0 sig (20, 26, (9, 6), (9, 18)) ok 1
+FS GATE 1 sig (20, 26, (9, 6), (9, 18)) ok 1
+FS PHASE 1 id 4 ph 1 d 100 at (9, 17)
+FS HOPBUILD 1 at (9, 17) lch (9, 16) T (11, 5)
+FS GATE 2 sig (20, 26, (9, 6), (9, 18)) ok 1
+FS GATE 2 sig (20, 26, (9, 6), (9, 18)) ok 1
+FS THROW 2 from (9, 17) to (10, 11) T (11, 5) body 4 n 1 dsq 16
+FS HOPBUILD 3 at (10, 11) lch (10, 10) T (11, 5)
+FS GATE 3 sig (20, 26, (9, 6), (9, 18)) ok 1
+FS GATE 4 sig (20, 26, (9, 6), (9, 18)) ok 1
+FS THROW 4 from (11, 11) to (10, 5) T (11, 5) body 4 n 1 dsq 1
+FS ARRIVE 5 id 4 body 1 at (10, 5) dsq 1
+FS PHASE 5 id 4 ph 2 d 1 at (10, 5)
+FS SEAL 5 tile (9, 5) n 1
+FS DODGE 7 id 4 from (10, 4) to (9, 4) cov 1 -> 0 hit 0 hp 40
+FS GATE 7 sig (20, 26, (9, 6), (9, 18)) ok 1
+FS GATE 8 sig (20, 26, (9, 6), (9, 18)) ok 1
+FS SEAL 9 tile (8, 5) n 2
+FS GATE 9 sig (20, 26, (9, 6), (9, 18)) ok 1
+FS DOORSEEN 10 id 6 at (13, 14) rank 1
+FS DOORSEEN 10 id 9 at (13, 14) rank 1
+FS DOORSEEN 10 id 14 at (13, 14) rank 1
+FS SEAL 13 tile (8, 6) n 3
+FS DOOR 13 id 6 at (13, 14) n 1
+FS DOOR 13 id 14 at (13, 14) n 1
+FS DOOR 14 id 6 at (13, 14) n 2
+FS DOOR 14 id 14 at (13, 14) n 2
+FS SEAL 15 tile (8, 7) n 4
+FS DOOR 15 id 6 at (13, 14) n 3
+FS DOOR 15 id 14 at (13, 14) n 3
+FS DOOR 16 id 6 at (13, 14) n 4
+FS DOOR 16 id 9 at (13, 14) n 1
+FS DOOR 16 id 14 at (13, 14) n 4
+FS DOOR 17 id 6 at (13, 14) n 5
+FS DOOR 17 id 9 at (13, 14) n 2
+FS STAT 20 id 4 at (8, 8) need 5 orth 5 ti 14 ammo 24 sen 0 hp 40 covden 0 eco 1 lost 0
+FS SEAL 20 tile (9, 8) n 5
+FS DOOR 20 id 9 at (13, 14) n 3
+FS DOOR 27 id 9 at (13, 14) n 4
+FS DOOR 28 id 6 at (13, 14) n 6
+FS DOOR 28 id 9 at (13, 14) n 5
+FS DOOR 29 id 6 at (13, 14) n 7
+FS STAT 40 id 4 at (10, 9) need 3 orth 3 ti 12 ammo 20 sen 0 hp 40 covden 0 eco 1 lost 0
+FS STAT 60 id 4 at (10, 9) need 2 orth 2 ti 20 ammo 24 sen 0 hp 40 covden 0 eco 1 lost 0
+FS CLEAR 76 tile (10, 8) peck 1
+FS RUNG 76 id 4 r 3 hi -
+FS STAT 80 id 4 at (10, 9) need 2 orth 2 ti 32 ammo 24 sen 0 hp 40 covden 0 eco 1 lost 0
+FS CLEAR 80 tile (10, 8) peck 1
+FS RUNG 80 id 4 r 3 hi -
+FS CLEAR 81 tile (10, 8) peck 2
+FS RUNG 81 id 4 r 3 hi -
+FS CLEAR 84 tile (10, 8) peck 3
+FS RUNG 84 id 4 r 3 hi -
+FS CLEAR 85 tile (10, 8) peck 4
+FS RUNG 85 id 4 r 3 hi -
+FS CLEAR 86 tile (10, 8) peck 5
+FS RUNG 86 id 4 r 3 hi -
+FS CLEAR 87 tile (10, 8) peck 6
+FS RUNG 87 id 4 r 3 hi -
+FS CLEAR 88 tile (10, 8) peck 7
+FS RUNG 88 id 4 r 3 hi -
+FS CLEAR 89 tile (10, 8) peck 8
+FS RUNG 89 id 4 r 3 hi -
+FS CLEAR 94 tile (10, 8) peck 1
+FS RUNG 94 id 4 r 3 hi -
+FS CLEAR 95 tile (10, 8) peck 2
+FS RUNG 95 id 4 r 3 hi -
+FS CLEAR 96 tile (10, 8) peck 3
+FS RUNG 96 id 4 r 3 hi -
+FS CLEAR 97 tile (10, 8) peck 4
+FS RUNG 97 id 4 r 3 hi -
+FS CLEAR 98 tile (10, 8) peck 5
+FS RUNG 98 id 4 r 3 hi -
+FS CLEAR 99 tile (10, 8) peck 6
+FS RUNG 99 id 4 r 3 hi -
+FS STAT 100 id 4 at (11, 8) need 2 orth 2 ti 53 ammo 24 sen 0 hp 40 covden 0 eco 1 lost 0
+FS CLEAR 100 tile (10, 8) peck 7
+FS RUNG 100 id 4 r 3 hi -
+FS STAT 120 id 4 at (11, 8) need 2 orth 2 ti 12 ammo 12 sen 0 hp 40 covden 0 eco 1 lost 0
+FS DOORSEEN 124 id 6 at (13, 14) rank 0
+FS DOOR 129 id 6 at (13, 14) n 8
+FS DOOR 130 id 6 at (13, 14) n 9
+FS DOOR 132 id 6 at (13, 14) n 10
+FS DOOR 133 id 6 at (13, 14) n 11
+FS STAT 140 id 4 at (11, 8) need 2 orth 2 ti 36 ammo 24 sen 0 hp 40 covden 0 eco 1 lost 0
+FS CLEAR 140 tile (10, 8) peck 1
+FS RUNG 140 id 4 r 3 hi -
+FS CLEAR 141 tile (10, 8) peck 2
+FS RUNG 141 id 4 r 3 hi -
+FS CLEAR 142 tile (10, 8) peck 3
+FS RUNG 142 id 4 r 3 hi -
+FS CLEAR 143 tile (10, 8) peck 4
+FS RUNG 143 id 4 r 3 hi -
+FS CLEARED 144 tile (10, 8) n 1
+FS SEAL 144 tile (10, 8) n 6
+FS SEALCLR 144 tile (10, 8) lag 0
+FS CLEAR 150 tile (10, 5) peck 1
+FS RUNG 150 id 4 r 3 hi -
+FS CLEAR 151 tile (10, 5) peck 2
+FS RUNG 151 id 4 r 3 hi -
+FS CLEAR 152 tile (10, 5) peck 3
+FS RUNG 152 id 4 r 3 hi -
+FS CLEAR 153 tile (10, 5) peck 4
+FS RUNG 153 id 4 r 3 hi -
+FS CLEAR 154 tile (10, 5) peck 5
+FS RUNG 154 id 4 r 3 hi -
+FS CLEAR 155 tile (10, 5) peck 6
+FS RUNG 155 id 4 r 3 hi -
+FS CLEAR 156 tile (10, 5) peck 7
+FS RUNG 156 id 4 r 3 hi -
+FS CLEAR 157 tile (10, 5) peck 8
+FS RUNG 157 id 4 r 3 hi -
+FS STAT 160 id 4 at (12, 6) need 3 orth 1 ti 47 ammo 24 sen 0 hp 40 covden 0 eco 1 lost 0
+FS CLEAR 164 tile (10, 5) peck 1
+FS RUNG 164 id 4 r 3 hi -
+FS CLEAR 165 tile (10, 5) peck 2
+FS RUNG 165 id 4 r 3 hi -
+FS CLEAR 166 tile (10, 5) peck 3
+FS RUNG 166 id 4 r 3 hi -
+FS CLEAR 167 tile (10, 5) peck 4
+FS RUNG 167 id 4 r 3 hi -
+FS DOORSEEN 167 id 9 at (12, 20) rank 0
+FS CLEAR 168 tile (10, 5) peck 5
+FS RUNG 168 id 4 r 3 hi -
+FS DOORSEEN 168 id 14 at (12, 20) rank 0
+FS CLEAR 169 tile (10, 5) peck 6
+FS RUNG 169 id 4 r 3 hi -
+FS CLEAR 170 tile (10, 5) peck 7
+FS RUNG 170 id 4 r 3 hi -
+FS DOOR 170 id 9 at (12, 20) n 6
+FS CLEAR 171 tile (10, 5) peck 8
+FS RUNG 171 id 4 r 3 hi -
+FS DOORSEEN 171 id 6 at (12, 20) rank 0
+FS DOOR 171 id 9 at (12, 20) n 7
+FS DOOR 172 id 9 at (12, 20) n 8
+FS DOOR 173 id 9 at (12, 20) n 9
+FS DOOR 174 id 9 at (12, 20) n 10
+FS DOOR 175 id 9 at (12, 20) n 11
+FS DOORSEEN 175 id 18 at (12, 20) rank 0
+FS DOOR 176 id 6 at (12, 20) n 12
+FS DOOR 176 id 9 at (12, 20) n 12
+FS STAT 180 id 4 at (11, 5) need 1 orth 1 ti 12 ammo 14 sen 0 hp 40 covden 0 eco 1 lost 0
+FS DOOR 181 id 6 at (12, 20) n 13
+FS DOORSEEN 181 id 18 at (12, 20) rank 0
+FS DOOR 182 id 6 at (12, 20) n 14
+FS DOOR 184 id 18 at (12, 20) n 1
+FS DOOR 185 id 6 at (12, 20) n 15
+FS DOOR 185 id 9 at (12, 20) n 13
+FS DOOR 188 id 9 at (12, 20) n 14
+FS DOOR 189 id 9 at (12, 20) n 15
+FS DOOR 189 id 18 at (12, 20) n 2
+FS DOOR 192 id 18 at (12, 20) n 3
+FS DOOR 193 id 18 at (12, 20) n 4
+FS DOOR 196 id 9 at (12, 20) n 16
+FS DOOR 197 id 9 at (12, 20) n 17
+FS DOOR 198 id 9 at (12, 20) n 18
+FS STAT 200 id 4 at (11, 5) need 1 orth 1 ti 12 ammo 12 sen 0 hp 40 covden 0 eco 1 lost 0
+FS DOOR 200 id 6 at (12, 20) n 16
+FS DOOR 200 id 9 at (12, 20) n 19
+FS DOOR 201 id 6 at (12, 20) n 17
+FS DOOR 204 id 6 at (12, 20) n 18
+FS DOOR 205 id 6 at (12, 20) n 19
+FS DOOR 208 id 6 at (12, 20) n 20
+FS DOOR 209 id 6 at (12, 20) n 21
+FS CLEAR 212 tile (10, 5) peck 1
+FS RUNG 212 id 4 r 3 hi -
+FS CLEAR 216 tile (10, 5) peck 1
+FS RUNG 216 id 4 r 3 hi -
+FS DOORSEEN 216 id 6 at (7, 20) rank 0
+FS DOORSEEN 216 id 18 at (7, 20) rank 0
+FS CLEARED 217 tile (10, 5) n 2
+FS STAT 220 id 4 at (11, 5) need 1 orth 1 ti 12 ammo 17 sen 0 hp 40 covden 0 eco 1 lost 0
+FS SEAL 220 tile (10, 5) n 7
+FS SEALCLR 220 tile (10, 5) lag 3
+FS PHASE 221 id 4 ph 3 d 2 at (11, 5)
+FS SEAL 225 tile (11, 8) n 8
+FS DOOR 225 id 18 at (7, 20) n 5
+FS PHASE 227 id 4 ph 2 d 8 at (12, 9)
+FS PHASE 228 id 4 ph 3 d 5 at (12, 8)
+FS DOOR 228 id 18 at (7, 20) n 6
+FS PHASE 229 id 4 ph 2 d 8 at (12, 9)
+FS DOOR 229 id 18 at (7, 20) n 7
+FS PHASE 230 id 4 ph 3 d 5 at (12, 8)
+FS PHASE 231 id 4 ph 2 d 8 at (12, 9)
+FS PHASE 232 id 4 ph 3 d 5 at (12, 8)
+FS DOOR 232 id 18 at (7, 20) n 8
+FS PHASE 233 id 4 ph 2 d 8 at (12, 9)
+FS DOOR 233 id 18 at (7, 20) n 9
+FS PHASE 234 id 4 ph 3 d 5 at (12, 8)
+FS PHASE 235 id 4 ph 2 d 8 at (12, 9)
+FS PHASE 236 id 4 ph 3 d 5 at (12, 8)
+FS PHASE 237 id 4 ph 2 d 8 at (12, 9)
+FS DOOR 237 id 6 at (7, 20) n 22
+FS PHASE 238 id 4 ph 3 d 5 at (12, 8)
+FS DOOR 238 id 6 at (7, 20) n 23
+FS PHASE 239 id 4 ph 2 d 8 at (12, 9)
+FS PHASE 240 id 4 ph 3 d 5 at (12, 8)
+FS STAT 240 id 4 at (12, 8) need 2 orth 0 ti 12 ammo 8 sen 0 hp 40 covden 0 eco 1 lost 0
+FS PHASE 241 id 4 ph 2 d 8 at (12, 9)
+FS DOOR 241 id 6 at (7, 20) n 24
+FS PHASE 242 id 4 ph 3 d 5 at (12, 8)
+FS DOOR 242 id 6 at (7, 20) n 25
+FS PHASE 243 id 4 ph 2 d 8 at (12, 9)
+FS PHASE 244 id 4 ph 3 d 5 at (12, 8)
+FS DOOR 244 id 18 at (7, 20) n 10
+FS PHASE 245 id 4 ph 2 d 8 at (12, 9)
+FS DOOR 245 id 6 at (7, 20) n 26
+FS PHASE 246 id 4 ph 3 d 5 at (12, 8)
+FS PHASE 247 id 4 ph 2 d 8 at (12, 9)
+FS PHASE 248 id 4 ph 3 d 5 at (12, 8)
+FS PHASE 249 id 4 ph 2 d 8 at (12, 9)
+FS DOOR 249 id 18 at (7, 20) n 11
+FS PHASE 250 id 4 ph 3 d 5 at (12, 8)
+FS PHASE 251 id 4 ph 2 d 8 at (12, 9)
+FS PHASE 252 id 4 ph 3 d 5 at (12, 8)
+FS DOOR 252 id 6 at (7, 20) n 27
+FS PHASE 253 id 4 ph 2 d 8 at (12, 9)
+FS DOOR 253 id 6 at (7, 20) n 28
+FS PHASE 254 id 4 ph 3 d 5 at (12, 8)
+FS PHASE 255 id 4 ph 2 d 8 at (12, 9)
+FS PHASE 256 id 4 ph 3 d 5 at (12, 8)
+FS DOOR 256 id 6 at (7, 20) n 29
+FS PHASE 257 id 4 ph 2 d 8 at (12, 9)
+FS PHASE 258 id 4 ph 3 d 5 at (12, 8)
+FS PHASE 259 id 4 ph 2 d 8 at (12, 9)
+FS PHASE 260 id 4 ph 3 d 5 at (12, 8)
+FS STAT 260 id 4 at (12, 8) need 2 orth 0 ti 12 ammo 12 sen 0 hp 40 covden 0 eco 1 lost 0
+FS PHASE 261 id 4 ph 2 d 8 at (12, 9)
+FS PHASE 262 id 4 ph 3 d 5 at (12, 8)
+FS PHASE 263 id 4 ph 2 d 8 at (12, 9)
+FS DOORSEEN 263 id 6 at (12, 20) rank 0
+FS PHASE 264 id 4 ph 3 d 5 at (12, 8)
+FS PHASE 265 id 4 ph 2 d 8 at (12, 9)
+FS PHASE 266 id 4 ph 3 d 5 at (12, 8)
+FS PHASE 267 id 4 ph 2 d 8 at (12, 9)
+FS PHASE 268 id 4 ph 3 d 5 at (12, 8)
+FS DOOR 268 id 6 at (12, 20) n 30
+FS PHASE 269 id 4 ph 2 d 8 at (12, 9)
+FS DOOR 269 id 6 at (12, 20) n 31
+FS PHASE 270 id 4 ph 3 d 5 at (12, 8)
+FS PHASE 271 id 4 ph 2 d 8 at (12, 9)
+FS PHASE 272 id 4 ph 3 d 5 at (12, 8)
+FS PHASE 273 id 4 ph 2 d 8 at (12, 9)
+FS PHASE 274 id 4 ph 3 d 5 at (12, 8)
+FS DOOR 274 id 6 at (12, 20) n 32
+FS PHASE 275 id 4 ph 2 d 8 at (12, 9)
+FS PHASE 276 id 4 ph 3 d 5 at (12, 8)
+FS PHASE 277 id 4 ph 2 d 8 at (12, 9)
+FS DOOR 277 id 6 at (12, 20) n 33
+FS PHASE 278 id 4 ph 3 d 5 at (12, 8)
+FS DOOR 278 id 6 at (12, 20) n 34
+FS PHASE 279 id 4 ph 2 d 8 at (12, 9)
+FS PHASE 280 id 4 ph 3 d 5 at (12, 8)
+FS STAT 280 id 4 at (12, 8) need 2 orth 0 ti 12 ammo 10 sen 0 hp 40 covden 0 eco 1 lost 0
+FS PHASE 281 id 4 ph 2 d 8 at (12, 9)
+FS DOOR 281 id 6 at (12, 20) n 35
+FS PHASE 282 id 4 ph 3 d 5 at (12, 8)
+FS DOOR 282 id 6 at (12, 20) n 36
+FS PHASE 283 id 4 ph 2 d 8 at (12, 9)
+FS PHASE 284 id 4 ph 3 d 5 at (12, 8)
+FS PHASE 285 id 4 ph 2 d 8 at (12, 9)
+FS DOOR 285 id 6 at (12, 20) n 37
+FS PHASE 286 id 4 ph 3 d 5 at (12, 8)
+FS PHASE 287 id 4 ph 2 d 8 at (12, 9)
+FS PHASE 288 id 4 ph 3 d 5 at (12, 8)
+FS DOORSEEN 288 id 6 at (7, 20) rank 0
+FS PHASE 289 id 4 ph 2 d 8 at (12, 9)
+FS PHASE 290 id 4 ph 3 d 5 at (12, 8)
+FS PHASE 291 id 4 ph 2 d 8 at (12, 9)
+FS PHASE 292 id 4 ph 3 d 5 at (12, 8)
+FS PHASE 293 id 4 ph 2 d 8 at (12, 9)
+FS PHASE 294 id 4 ph 3 d 5 at (12, 8)
+FS DOORSEEN 294 id 14 at (7, 20) rank 0
+FS PHASE 295 id 4 ph 2 d 8 at (12, 9)
+FS DOORSEEN 295 id 9 at (7, 20) rank 0
+FS PHASE 296 id 4 ph 3 d 5 at (12, 8)
+FS PHASE 297 id 4 ph 2 d 8 at (12, 9)
+FS DOOR 297 id 6 at (7, 20) n 38
+FS PHASE 298 id 4 ph 3 d 5 at (12, 8)
+FS DOOR 298 id 6 at (7, 20) n 39
+FS PHASE 299 id 4 ph 2 d 8 at (12, 9)
+FS DOOR 299 id 6 at (7, 20) n 40
+FS PHASE 300 id 4 ph 3 d 5 at (12, 8)
+FS STAT 300 id 4 at (12, 8) need 2 orth 0 ti 12 ammo 17 sen 0 hp 40 covden 0 eco 1 lost 0
+FS DOOR 300 id 6 at (7, 20) n 41
+FS DOORSEEN 300 id 14 at (7, 20) rank 0
+FS PHASE 301 id 4 ph 2 d 8 at (12, 9)
+FS DOOR 301 id 6 at (7, 20) n 42
+FS PHASE 302 id 4 ph 3 d 5 at (12, 8)
+FS DOOR 302 id 6 at (7, 20) n 43
+FS PHASE 303 id 4 ph 2 d 8 at (12, 9)
+FS PHASE 304 id 4 ph 3 d 5 at (12, 8)
+FS PHASE 305 id 4 ph 2 d 8 at (12, 9)
+FS DOOR 305 id 6 at (7, 20) n 44
+FS PHASE 306 id 4 ph 3 d 5 at (12, 8)
+FS PHASE 307 id 4 ph 2 d 8 at (12, 9)
+FS PHASE 308 id 4 ph 3 d 5 at (12, 8)
+FS PHASE 309 id 4 ph 2 d 8 at (12, 9)
+FS PHASE 310 id 4 ph 3 d 5 at (12, 8)
+FS PHASE 311 id 4 ph 2 d 8 at (12, 9)
+FS PHASE 312 id 4 ph 3 d 5 at (12, 8)
+FS PHASE 313 id 4 ph 2 d 8 at (12, 9)
+FS PHASE 314 id 4 ph 3 d 5 at (12, 8)
+FS PHASE 315 id 4 ph 2 d 8 at (12, 9)
+FS PHASE 316 id 4 ph 3 d 5 at (12, 8)
+FS PHASE 317 id 4 ph 2 d 8 at (12, 9)
+FS PHASE 318 id 4 ph 3 d 5 at (12, 8)
+FS PHASE 319 id 4 ph 2 d 8 at (12, 9)
+FS PHASE 320 id 4 ph 3 d 5 at (12, 8)
+FS STAT 320 id 4 at (12, 8) need 2 orth 0 ti 16 ammo 23 sen 0 hp 40 covden 0 eco 1 lost 0
+FS PHASE 321 id 4 ph 2 d 8 at (12, 9)
+FS PHASE 322 id 4 ph 3 d 5 at (12, 8)
+FS PHASE 323 id 4 ph 2 d 8 at (12, 9)
+FS PHASE 324 id 4 ph 3 d 5 at (12, 8)
+FS PHASE 325 id 4 ph 2 d 8 at (12, 9)
+FS PHASE 326 id 4 ph 3 d 5 at (12, 8)
+FS PHASE 327 id 4 ph 2 d 8 at (12, 9)
+FS PHASE 328 id 4 ph 3 d 5 at (12, 8)
+FS PHASE 329 id 4 ph 2 d 8 at (12, 9)
+FS PHASE 330 id 4 ph 3 d 5 at (12, 8)
+FS PHASE 331 id 4 ph 2 d 8 at (12, 9)
+FS PHASE 332 id 4 ph 3 d 5 at (12, 8)
+FS PHASE 333 id 4 ph 2 d 8 at (12, 9)
+FS PHASE 334 id 4 ph 3 d 5 at (12, 8)
+FS PHASE 335 id 4 ph 2 d 8 at (12, 9)
+FS PHASE 336 id 4 ph 3 d 5 at (12, 8)
+FS PHASE 337 id 4 ph 2 d 8 at (12, 9)
+FS PHASE 338 id 4 ph 3 d 5 at (12, 8)
+FS PHASE 339 id 4 ph 2 d 8 at (12, 9)
+FS PHASE 340 id 4 ph 3 d 5 at (12, 8)
+FS STAT 340 id 4 at (12, 8) need 2 orth 0 ti 35 ammo 24 sen 0 hp 40 covden 0 eco 1 lost 0
+FS PHASE 341 id 4 ph 2 d 8 at (12, 9)
+FS PHASE 342 id 4 ph 3 d 5 at (12, 8)
+FS PHASE 343 id 4 ph 2 d 8 at (12, 9)
+FS PHASE 344 id 4 ph 3 d 5 at (12, 8)
+FS PHASE 345 id 4 ph 2 d 8 at (12, 9)
+FS PHASE 346 id 4 ph 3 d 5 at (12, 8)
+FS PHASE 347 id 4 ph 2 d 8 at (12, 9)
+FS PHASE 348 id 4 ph 3 d 5 at (12, 8)
+FS PHASE 349 id 4 ph 2 d 8 at (12, 9)
+FS PHASE 350 id 4 ph 3 d 5 at (12, 8)
+FS PHASE 351 id 4 ph 2 d 8 at (12, 9)
+FS PHASE 352 id 4 ph 3 d 5 at (12, 8)
+FS PHASE 353 id 4 ph 2 d 8 at (12, 9)
+FS PHASE 354 id 4 ph 3 d 5 at (12, 8)
+FS PHASE 355 id 4 ph 2 d 8 at (12, 9)
+FS PHASE 356 id 4 ph 3 d 5 at (12, 8)
+FS PHASE 357 id 4 ph 2 d 8 at (12, 9)
+FS PHASE 358 id 4 ph 3 d 5 at (12, 8)
+FS PHASE 359 id 4 ph 2 d 8 at (12, 9)
+FS PHASE 360 id 4 ph 3 d 5 at (12, 8)
+FS STAT 360 id 4 at (12, 8) need 2 orth 0 ti 55 ammo 24 sen 0 hp 40 covden 0 eco 1 lost 0
+FS PHASE 361 id 4 ph 2 d 8 at (12, 9)
+FS PHASE 362 id 4 ph 3 d 5 at (12, 8)
+FS PHASE 363 id 4 ph 2 d 8 at (12, 9)
+FS PHASE 364 id 4 ph 3 d 5 at (12, 8)
+FS PHASE 365 id 4 ph 2 d 8 at (12, 9)
+FS PHASE 366 id 4 ph 3 d 5 at (12, 8)
+FS PHASE 367 id 4 ph 2 d 8 at (12, 9)
+FS PHASE 368 id 4 ph 3 d 5 at (12, 8)
+FS PHASE 369 id 4 ph 2 d 8 at (12, 9)
+FS PHASE 370 id 4 ph 3 d 5 at (12, 8)
+FS PHASE 371 id 4 ph 2 d 8 at (12, 9)
+FS PHASE 372 id 4 ph 3 d 5 at (12, 8)
+FS PHASE 373 id 4 ph 2 d 8 at (12, 9)
+FS PHASE 374 id 4 ph 3 d 5 at (12, 8)
+FS PHASE 375 id 4 ph 2 d 8 at (12, 9)
+FS PHASE 376 id 4 ph 3 d 5 at (12, 8)
+FS PHASE 377 id 4 ph 2 d 8 at (12, 9)
+FS PHASE 378 id 4 ph 3 d 5 at (12, 8)
+FS PHASE 379 id 4 ph 2 d 8 at (12, 9)
+FS PHASE 380 id 4 ph 3 d 5 at (12, 8)
+FS STAT 380 id 4 at (12, 8) need 2 orth 0 ti 75 ammo 24 sen 0 hp 40 covden 0 eco 1 lost 0
+FS PHASE 381 id 4 ph 2 d 8 at (12, 9)
+FS PHASE 382 id 4 ph 3 d 5 at (12, 8)
+FS PHASE 383 id 4 ph 2 d 8 at (12, 9)
+FS PHASE 384 id 4 ph 3 d 5 at (12, 8)
+FS DOORSEEN 384 id 9 at (8, 21) rank 1
+FS DOORSEEN 384 id 18 at (8, 21) rank 1
+FS PHASE 385 id 4 ph 2 d 8 at (12, 9)
+FS DOOR 385 id 9 at (8, 21) n 20
+FS PHASE 386 id 4 ph 3 d 5 at (12, 8)
+FS DOOR 386 id 9 at (8, 21) n 21
+FS PHASE 387 id 4 ph 2 d 8 at (12, 9)
+FS DOOR 387 id 9 at (8, 21) n 22
+FS PHASE 388 id 4 ph 3 d 5 at (12, 8)
+FS DOOR 388 id 9 at (8, 21) n 23
+FS DOOR 388 id 18 at (8, 21) n 12
+FS PHASE 389 id 4 ph 2 d 8 at (12, 9)
+FS DOOR 389 id 9 at (8, 21) n 24
+FS DOOR 389 id 18 at (8, 21) n 13
+FS PHASE 390 id 4 ph 3 d 5 at (12, 8)
+FS DOOR 390 id 9 at (8, 21) n 25
+FS DOOR 390 id 18 at (8, 21) n 14
+FS PHASE 391 id 4 ph 2 d 8 at (12, 9)
+FS DOOR 391 id 9 at (8, 21) n 26
+FS DOOR 391 id 18 at (8, 21) n 15
+FS PHASE 392 id 4 ph 3 d 5 at (12, 8)
+FS DOOR 392 id 9 at (8, 21) n 27
+FS DOOR 392 id 18 at (8, 21) n 16
+FS PHASE 393 id 4 ph 2 d 8 at (12, 9)
+FS DOOR 393 id 9 at (8, 21) n 28
+FS DOOR 393 id 18 at (8, 21) n 17
+FS PHASE 394 id 4 ph 3 d 5 at (12, 8)
+FS DOOR 394 id 9 at (8, 21) n 29
+FS DOOR 394 id 18 at (8, 21) n 18
+FS PHASE 395 id 4 ph 2 d 8 at (12, 9)
+FS DOOR 395 id 9 at (8, 21) n 30
+FS DOOR 395 id 18 at (8, 21) n 19
+FS PHASE 396 id 4 ph 3 d 5 at (12, 8)
+FS DOOR 396 id 9 at (8, 21) n 31
+FS PHASE 397 id 4 ph 2 d 8 at (12, 9)
+FS PHASE 398 id 4 ph 3 d 5 at (12, 8)
+FS PHASE 399 id 4 ph 2 d 8 at (12, 9)
+FS PHASE 400 id 4 ph 3 d 5 at (12, 8)
+FS STAT 400 id 4 at (12, 8) need 2 orth 0 ti 47 ammo 24 sen 0 hp 40 covden 0 eco 1 lost 0
+FS PHASE 401 id 4 ph 2 d 8 at (12, 9)
+FS PHASE 402 id 4 ph 3 d 5 at (12, 8)
+FS PHASE 403 id 4 ph 2 d 8 at (12, 9)
+FS PHASE 404 id 4 ph 3 d 5 at (12, 8)
+FS PHASE 405 id 4 ph 2 d 8 at (12, 9)
+FS PHASE 406 id 4 ph 3 d 5 at (12, 8)
+FS PHASE 407 id 4 ph 2 d 8 at (12, 9)
+FS PHASE 408 id 4 ph 3 d 5 at (12, 8)
+FS PHASE 409 id 4 ph 2 d 8 at (12, 9)
+FS PHASE 410 id 4 ph 3 d 5 at (12, 8)
+FS PHASE 411 id 4 ph 2 d 8 at (12, 9)
+FS PHASE 412 id 4 ph 3 d 5 at (12, 8)
+FS PHASE 413 id 4 ph 2 d 8 at (12, 9)
+FS PHASE 414 id 4 ph 3 d 5 at (12, 8)
+FS PHASE 415 id 4 ph 2 d 8 at (12, 9)
+FS PHASE 416 id 4 ph 3 d 5 at (12, 8)
+FS PHASE 417 id 4 ph 2 d 8 at (12, 9)
+FS PHASE 418 id 4 ph 3 d 5 at (12, 8)
+FS PHASE 419 id 4 ph 2 d 8 at (12, 9)
+FS PHASE 420 id 4 ph 3 d 5 at (12, 8)
+FS STAT 420 id 4 at (12, 8) need 2 orth 0 ti 48 ammo 24 sen 0 hp 40 covden 0 eco 1 lost 0
+FS PHASE 421 id 4 ph 2 d 8 at (12, 9)
+FS PHASE 422 id 4 ph 3 d 5 at (12, 8)
+FS PHASE 423 id 4 ph 2 d 8 at (12, 9)
+FS PHASE 424 id 4 ph 3 d 5 at (12, 8)
+FS PHASE 425 id 4 ph 2 d 8 at (12, 9)
+FS PHASE 426 id 4 ph 3 d 5 at (12, 8)
+FS PHASE 427 id 4 ph 2 d 8 at (12, 9)
+FS PHASE 428 id 4 ph 3 d 5 at (12, 8)
+FS PHASE 429 id 4 ph 2 d 8 at (12, 9)
+FS PHASE 430 id 4 ph 3 d 5 at (12, 8)
+FS PHASE 431 id 4 ph 2 d 8 at (12, 9)
+FS PHASE 432 id 4 ph 3 d 5 at (12, 8)
+FS PHASE 433 id 4 ph 2 d 8 at (12, 9)
+FS PHASE 434 id 4 ph 3 d 5 at (12, 8)
+FS PHASE 435 id 4 ph 2 d 8 at (12, 9)
+FS PHASE 436 id 4 ph 3 d 5 at (12, 8)
+FS PHASE 437 id 4 ph 2 d 8 at (12, 9)
+FS PHASE 438 id 4 ph 3 d 5 at (12, 8)
+FS PHASE 439 id 4 ph 2 d 8 at (12, 9)
+FS PHASE 440 id 4 ph 3 d 5 at (12, 8)
+FS STAT 440 id 4 at (12, 8) need 2 orth 0 ti 68 ammo 24 sen 0 hp 40 covden 0 eco 1 lost 0
+FS PHASE 441 id 4 ph 2 d 8 at (12, 9)
+FS PHASE 442 id 4 ph 3 d 5 at (12, 8)
+FS PHASE 443 id 4 ph 2 d 8 at (12, 9)
+FS PHASE 444 id 4 ph 3 d 5 at (12, 8)
+FS PHASE 445 id 4 ph 2 d 8 at (12, 9)
+FS PHASE 446 id 4 ph 3 d 5 at (12, 8)
+FS PHASE 447 id 4 ph 2 d 8 at (12, 9)
+FS PHASE 448 id 4 ph 3 d 5 at (12, 8)
+FS PHASE 449 id 4 ph 2 d 8 at (12, 9)
+FS PHASE 450 id 4 ph 3 d 5 at (12, 8)
+FS PHASE 451 id 4 ph 2 d 8 at (12, 9)
+FS PHASE 452 id 4 ph 3 d 5 at (12, 8)
+FS PHASE 453 id 4 ph 2 d 8 at (12, 9)
+FS PHASE 454 id 4 ph 3 d 5 at (12, 8)
+FS PHASE 455 id 4 ph 2 d 8 at (12, 9)
+FS PHASE 456 id 4 ph 3 d 5 at (12, 8)
+FS PHASE 457 id 4 ph 2 d 8 at (12, 9)
+FS PHASE 458 id 4 ph 3 d 5 at (12, 8)
+FS PHASE 459 id 4 ph 2 d 8 at (12, 9)
+FS PHASE 460 id 4 ph 3 d 5 at (12, 8)
+FS STAT 460 id 4 at (12, 8) need 2 orth 0 ti 88 ammo 24 sen 0 hp 40 covden 0 eco 1 lost 0
+FS EVICTOR 460 at (12, 7) cov 3
+FS RUNG 460 id 4 r 2 hi -
+FS GATE 461 sig (20, 26, (9, 6), (9, 18)) ok 1
+FS PHASE 462 id 4 ph 2 d 8 at (12, 9)
+FS PHASE 463 id 4 ph 3 d 5 at (12, 8)
+FS PHASE 464 id 4 ph 2 d 8 at (12, 9)
+FS PHASE 465 id 4 ph 3 d 5 at (12, 8)
+FS PHASE 466 id 4 ph 2 d 8 at (12, 9)
+FS PHASE 467 id 4 ph 3 d 5 at (12, 8)
+FS PHASE 468 id 4 ph 2 d 8 at (12, 9)
+FS PHASE 469 id 4 ph 3 d 5 at (12, 8)
+FS PHASE 470 id 4 ph 2 d 8 at (12, 9)
+FS PHASE 471 id 4 ph 3 d 5 at (12, 8)
+FS PHASE 472 id 4 ph 2 d 8 at (12, 9)
+FS DOORSEEN 472 id 18 at (8, 21) rank 1
+FS PHASE 473 id 4 ph 3 d 5 at (12, 8)
+FS PHASE 474 id 4 ph 2 d 8 at (12, 9)
+FS DOOR 474 id 18 at (8, 21) n 20
+FS PHASE 475 id 4 ph 3 d 5 at (12, 8)
+FS DOOR 475 id 18 at (8, 21) n 21
+FS PHASE 476 id 4 ph 2 d 8 at (12, 9)
+FS DOOR 476 id 18 at (8, 21) n 22
+FS PHASE 477 id 4 ph 3 d 5 at (12, 8)
+FS DOOR 477 id 18 at (8, 21) n 23
+FS PHASE 478 id 4 ph 2 d 8 at (12, 9)
+FS DOORSEEN 478 id 14 at (8, 21) rank 0
+FS DOOR 478 id 18 at (8, 21) n 24
+FS PHASE 479 id 4 ph 3 d 5 at (12, 8)
+FS DOOR 479 id 18 at (8, 21) n 25
+FS PHASE 480 id 4 ph 2 d 8 at (12, 9)
+FS STAT 480 id 4 at (12, 9) need 3 orth 2 ti 46 ammo 20 sen 0 hp 40 covden 0 eco 1 lost 0
+FS DOOR 480 id 18 at (8, 21) n 26
+FS PHASE 481 id 4 ph 3 d 5 at (12, 8)
+FS DOOR 481 id 18 at (8, 21) n 27
+FS PHASE 482 id 4 ph 2 d 8 at (12, 9)
+FS DOORSEEN 482 id 9 at (8, 21) rank 0
+FS DOOR 482 id 18 at (8, 21) n 28
+FS PHASE 483 id 4 ph 3 d 5 at (12, 8)
+FS DOOR 483 id 14 at (8, 21) n 5
+FS DOOR 483 id 18 at (8, 21) n 29
+FS PHASE 484 id 4 ph 2 d 8 at (12, 9)
+FS DOOR 484 id 14 at (8, 21) n 6
+FS DOOR 484 id 18 at (8, 21) n 30
+FS PHASE 485 id 4 ph 3 d 5 at (12, 8)
+FS DOOR 485 id 14 at (8, 21) n 7
+FS DOOR 485 id 18 at (8, 21) n 31
+FS PHASE 486 id 4 ph 2 d 8 at (12, 9)
+FS DOOR 486 id 14 at (8, 21) n 8
+FS DOOR 486 id 18 at (8, 21) n 32
+FS PHASE 487 id 4 ph 3 d 5 at (12, 8)
+FS DOOR 487 id 14 at (8, 21) n 9
+FS DOOR 487 id 18 at (8, 21) n 33
+FS PHASE 488 id 4 ph 2 d 8 at (12, 9)
+FS DOOR 488 id 14 at (8, 21) n 10
+FS PHASE 489 id 4 ph 3 d 5 at (12, 8)
+FS PHASE 490 id 4 ph 2 d 8 at (12, 9)
+FS PHASE 491 id 4 ph 3 d 5 at (12, 8)
+FS PHASE 492 id 4 ph 2 d 8 at (12, 9)
+FS PHASE 493 id 4 ph 3 d 5 at (12, 8)
+FS PHASE 494 id 4 ph 2 d 8 at (12, 9)
+FS PHASE 495 id 4 ph 3 d 5 at (12, 8)
+FS PHASE 496 id 4 ph 2 d 8 at (12, 9)
+FS PHASE 497 id 4 ph 3 d 5 at (12, 8)
+FS PHASE 498 id 4 ph 2 d 8 at (12, 9)
+FS PHASE 499 id 4 ph 3 d 5 at (12, 8)
+FS PHASE 500 id 4 ph 2 d 8 at (12, 9)
+FS STAT 500 id 4 at (12, 9) need 3 orth 2 ti 32 ammo 4 sen 0 hp 40 covden 0 eco 1 lost 0
+FS PHASE 501 id 4 ph 3 d 5 at (12, 8)
+FS PHASE 502 id 4 ph 2 d 8 at (12, 9)
+FS PHASE 503 id 4 ph 3 d 5 at (12, 8)
+FS PHASE 504 id 4 ph 2 d 8 at (12, 9)
+FS PHASE 505 id 4 ph 3 d 5 at (12, 8)
+FS PHASE 506 id 4 ph 2 d 8 at (12, 9)
+FS PHASE 507 id 4 ph 3 d 5 at (12, 8)
+FS PHASE 508 id 4 ph 2 d 8 at (12, 9)
+FS PHASE 509 id 4 ph 3 d 5 at (12, 8)
+FS PHASE 510 id 4 ph 2 d 8 at (12, 9)
+FS PHASE 511 id 4 ph 3 d 5 at (12, 8)
+FS PHASE 512 id 4 ph 2 d 8 at (12, 9)
+FS PHASE 513 id 4 ph 3 d 5 at (12, 8)
+FS PHASE 514 id 4 ph 2 d 8 at (12, 9)
+FS PHASE 515 id 4 ph 3 d 5 at (12, 8)
+FS PHASE 516 id 4 ph 2 d 8 at (12, 9)
+FS PHASE 517 id 4 ph 3 d 5 at (12, 8)
+FS PHASE 518 id 4 ph 2 d 8 at (12, 9)
+FS PHASE 519 id 4 ph 3 d 5 at (12, 8)
+FS PHASE 520 id 4 ph 2 d 8 at (12, 9)
+FS STAT 520 id 4 at (12, 9) need 3 orth 2 ti 36 ammo 20 sen 0 hp 40 covden 0 eco 1 lost 0
+FS PHASE 521 id 4 ph 3 d 5 at (12, 8)
+FS PHASE 522 id 4 ph 2 d 8 at (12, 9)
+FS PHASE 523 id 4 ph 3 d 5 at (12, 8)
+FS PHASE 524 id 4 ph 2 d 8 at (12, 9)
+FS PHASE 525 id 4 ph 3 d 5 at (12, 8)
+FS PHASE 526 id 4 ph 2 d 8 at (12, 9)
+FS PHASE 527 id 4 ph 3 d 5 at (12, 8)
+FS PHASE 528 id 4 ph 2 d 8 at (12, 9)
+FS PHASE 529 id 4 ph 3 d 5 at (12, 8)
+FS PHASE 530 id 4 ph 2 d 8 at (12, 9)
+FS PHASE 531 id 4 ph 3 d 5 at (12, 8)
+FS PHASE 532 id 4 ph 2 d 8 at (12, 9)
+FS PHASE 533 id 4 ph 3 d 5 at (12, 8)
+FS PHASE 534 id 4 ph 2 d 8 at (12, 9)
+FS PHASE 535 id 4 ph 3 d 5 at (12, 8)
+FS PHASE 536 id 4 ph 2 d 8 at (12, 9)
+FS PHASE 537 id 4 ph 3 d 5 at (12, 8)
+FS PHASE 538 id 4 ph 2 d 8 at (12, 9)
+FS PHASE 539 id 4 ph 3 d 5 at (12, 8)
+FS PHASE 540 id 4 ph 2 d 8 at (12, 9)
+FS STAT 540 id 4 at (12, 9) need 3 orth 2 ti 56 ammo 20 sen 0 hp 40 covden 0 eco 1 lost 0
+FS PHASE 541 id 4 ph 3 d 5 at (12, 8)
+FS PHASE 542 id 4 ph 2 d 8 at (12, 9)
+FS PHASE 543 id 4 ph 3 d 5 at (12, 8)
+FS PHASE 544 id 4 ph 2 d 8 at (12, 9)
+FS PHASE 545 id 4 ph 3 d 5 at (12, 8)
+FS PHASE 546 id 4 ph 2 d 8 at (12, 9)
+FS PHASE 547 id 4 ph 3 d 5 at (12, 8)
+FS PHASE 548 id 4 ph 2 d 8 at (12, 9)
+FS PHASE 549 id 4 ph 3 d 5 at (12, 8)
+FS PHASE 550 id 4 ph 2 d 8 at (12, 9)
+FS PHASE 551 id 4 ph 3 d 5 at (12, 8)
+FS PHASE 552 id 4 ph 2 d 8 at (12, 9)
+FS PHASE 553 id 4 ph 3 d 5 at (12, 8)
+FS PHASE 554 id 4 ph 2 d 8 at (12, 9)
+FS PHASE 555 id 4 ph 3 d 5 at (12, 8)
+FS PHASE 556 id 4 ph 2 d 8 at (12, 9)
+FS PHASE 557 id 4 ph 3 d 5 at (12, 8)
+FS PHASE 558 id 4 ph 2 d 8 at (12, 9)
+FS PHASE 559 id 4 ph 3 d 5 at (12, 8)
+FS PHASE 560 id 4 ph 2 d 8 at (12, 9)
+FS STAT 560 id 4 at (12, 9) need 3 orth 2 ti 76 ammo 20 sen 0 hp 40 covden 0 eco 1 lost 0
+FS DOORSEEN 560 id 9 at (8, 21) rank 1
+FS DOORSEEN 560 id 18 at (8, 21) rank 1
+FS PHASE 561 id 4 ph 3 d 5 at (12, 8)
+FS DOOR 561 id 9 at (8, 21) n 32
+FS PHASE 562 id 4 ph 2 d 8 at (12, 9)
+FS DOOR 562 id 9 at (8, 21) n 33
+FS PHASE 563 id 4 ph 3 d 5 at (12, 8)
+FS DOOR 563 id 9 at (8, 21) n 34
+FS PHASE 564 id 4 ph 2 d 8 at (12, 9)
+FS DOOR 564 id 9 at (8, 21) n 35
+FS DOOR 564 id 18 at (8, 21) n 34
+FS PHASE 565 id 4 ph 3 d 5 at (12, 8)
+FS DOOR 565 id 9 at (8, 21) n 36
+FS DOOR 565 id 18 at (8, 21) n 35
+FS PHASE 566 id 4 ph 2 d 8 at (12, 9)
+FS DOORSEEN 566 id 6 at (8, 21) rank 0
+FS DOOR 566 id 9 at (8, 21) n 37
+FS DOOR 566 id 18 at (8, 21) n 36
+FS PHASE 567 id 4 ph 3 d 5 at (12, 8)
+FS DOOR 567 id 9 at (8, 21) n 38
+FS DOORSEEN 567 id 14 at (8, 21) rank 0
+FS DOOR 567 id 18 at (8, 21) n 37
+FS PHASE 568 id 4 ph 2 d 8 at (12, 9)
+FS DOOR 568 id 9 at (8, 21) n 39
+FS DOOR 568 id 18 at (8, 21) n 38
+FS PHASE 569 id 4 ph 3 d 5 at (12, 8)
+FS DOOR 569 id 9 at (8, 21) n 40
+FS DOOR 569 id 18 at (8, 21) n 39
+FS PHASE 570 id 4 ph 2 d 8 at (12, 9)
+FS DOOR 570 id 9 at (8, 21) n 41
+FS DOOR 570 id 18 at (8, 21) n 40
+FS PHASE 571 id 4 ph 3 d 5 at (12, 8)
+FS DOOR 571 id 9 at (8, 21) n 42
+FS DOOR 571 id 18 at (8, 21) n 41
+FS PHASE 572 id 4 ph 2 d 8 at (12, 9)
+FS DOOR 572 id 9 at (8, 21) n 43
+FS PHASE 573 id 4 ph 3 d 5 at (12, 8)
+FS PHASE 574 id 4 ph 2 d 8 at (12, 9)
+FS PHASE 575 id 4 ph 3 d 5 at (12, 8)
+FS PHASE 576 id 4 ph 2 d 8 at (12, 9)
+FS PHASE 577 id 4 ph 3 d 5 at (12, 8)
+FS PHASE 578 id 4 ph 2 d 8 at (12, 9)
+FS PHASE 579 id 4 ph 3 d 5 at (12, 8)
+FS PHASE 580 id 4 ph 2 d 8 at (12, 9)
+FS STAT 580 id 4 at (12, 9) need 3 orth 2 ti 56 ammo 20 sen 0 hp 40 covden 0 eco 1 lost 0
+FS PHASE 581 id 4 ph 3 d 5 at (12, 8)
+FS PHASE 582 id 4 ph 2 d 8 at (12, 9)
+FS PHASE 583 id 4 ph 3 d 5 at (12, 8)
+FS PHASE 584 id 4 ph 2 d 8 at (12, 9)
+FS PHASE 585 id 4 ph 3 d 5 at (12, 8)
+FS PHASE 586 id 4 ph 2 d 8 at (12, 9)
+FS PHASE 587 id 4 ph 3 d 5 at (12, 8)
+FS PHASE 588 id 4 ph 2 d 8 at (12, 9)
+FS PHASE 589 id 4 ph 3 d 5 at (12, 8)
+FS PHASE 590 id 4 ph 2 d 8 at (12, 9)
+FS PHASE 591 id 4 ph 3 d 5 at (12, 8)
+FS PHASE 592 id 4 ph 2 d 8 at (12, 9)
+FS PHASE 593 id 4 ph 3 d 5 at (12, 8)
+FS PHASE 594 id 4 ph 2 d 8 at (12, 9)
+FS PHASE 595 id 4 ph 3 d 5 at (12, 8)
+FS PHASE 596 id 4 ph 2 d 8 at (12, 9)
+FS PHASE 597 id 4 ph 3 d 5 at (12, 8)
+FS PHASE 598 id 4 ph 2 d 8 at (12, 9)
+FS PHASE 599 id 4 ph 3 d 5 at (12, 8)
+FS PHASE 600 id 4 ph 2 d 8 at (12, 9)
+FS STAT 600 id 4 at (12, 9) need 3 orth 2 ti 29 ammo 8 sen 0 hp 40 covden 0 eco 1 lost 0
+FS PHASE 601 id 4 ph 3 d 5 at (12, 8)
+FS PHASE 602 id 4 ph 2 d 8 at (12, 9)
+FS PHASE 603 id 4 ph 3 d 5 at (12, 8)
+FS PHASE 604 id 4 ph 2 d 8 at (12, 9)
+FS PHASE 605 id 4 ph 3 d 5 at (12, 8)
+FS PHASE 606 id 4 ph 2 d 8 at (12, 9)
+FS PHASE 607 id 4 ph 3 d 5 at (12, 8)
+FS PHASE 608 id 4 ph 2 d 8 at (12, 9)
+FS PHASE 609 id 4 ph 3 d 5 at (12, 8)
+FS PHASE 610 id 4 ph 2 d 8 at (12, 9)
+FS PHASE 611 id 4 ph 3 d 5 at (12, 8)
+FS PHASE 612 id 4 ph 2 d 8 at (12, 9)
+FS PHASE 613 id 4 ph 3 d 5 at (12, 8)
+FS PHASE 614 id 4 ph 2 d 8 at (12, 9)
+FS PHASE 615 id 4 ph 3 d 5 at (12, 8)
+FS PHASE 616 id 4 ph 2 d 8 at (12, 9)
+FS PHASE 617 id 4 ph 3 d 5 at (12, 8)
+FS PHASE 618 id 4 ph 2 d 8 at (12, 9)
+FS PHASE 619 id 4 ph 3 d 5 at (12, 8)
+FS PHASE 620 id 4 ph 2 d 8 at (12, 9)
+FS STAT 620 id 4 at (12, 9) need 3 orth 2 ti 92 ammo 25 sen 0 hp 40 covden 0 eco 1 lost 0
+FS PHASE 621 id 4 ph 3 d 5 at (12, 8)
+FS PHASE 622 id 4 ph 2 d 8 at (12, 9)
+FS PHASE 623 id 4 ph 3 d 5 at (12, 8)
+FS PHASE 624 id 4 ph 2 d 8 at (12, 9)
+FS PHASE 625 id 4 ph 3 d 5 at (12, 8)
+FS PHASE 626 id 4 ph 2 d 8 at (12, 9)
+FS PHASE 627 id 4 ph 3 d 5 at (12, 8)
+FS PHASE 628 id 4 ph 2 d 8 at (12, 9)
+FS PHASE 629 id 4 ph 3 d 5 at (12, 8)
+FS PHASE 630 id 4 ph 2 d 8 at (12, 9)
+FS PHASE 631 id 4 ph 3 d 5 at (12, 8)
+FS EVICT 631 from (12, 6) to (17, 8)
+FS PHASE 632 id 4 ph 2 d 8 at (12, 9)
+FS PHASE 633 id 4 ph 3 d 5 at (12, 8)
+FS PHASE 634 id 4 ph 2 d 8 at (12, 9)
+FS PHASE 635 id 4 ph 3 d 5 at (12, 8)
+FS PHASE 636 id 4 ph 2 d 8 at (12, 9)
+FS PHASE 637 id 4 ph 3 d 5 at (12, 8)
+FS PHASE 638 id 4 ph 2 d 8 at (12, 9)
+FS PHASE 639 id 4 ph 3 d 5 at (12, 8)
+FS PHASE 640 id 4 ph 2 d 8 at (12, 9)
+FS STAT 640 id 4 at (12, 9) need 3 orth 2 ti 32 ammo 10 sen 0 hp 40 covden 0 eco 1 lost 0
+FS PHASE 641 id 4 ph 3 d 5 at (12, 8)
+FS PHASE 642 id 4 ph 2 d 8 at (12, 9)
+FS PHASE 643 id 4 ph 3 d 5 at (12, 8)
+FS PHASE 644 id 4 ph 2 d 8 at (12, 9)
+FS PHASE 645 id 4 ph 3 d 5 at (12, 8)
+FS PHASE 646 id 4 ph 2 d 8 at (12, 9)
+FS PHASE 647 id 4 ph 3 d 5 at (12, 8)
+FS PHASE 648 id 4 ph 2 d 8 at (12, 9)
+FS PHASE 649 id 4 ph 3 d 5 at (12, 8)
+FS PHASE 650 id 4 ph 2 d 8 at (12, 9)
+FS PHASE 651 id 4 ph 3 d 5 at (12, 8)
+FS PHASE 652 id 4 ph 2 d 8 at (12, 9)
+FS PHASE 653 id 4 ph 3 d 5 at (12, 8)
+FS PHASE 654 id 4 ph 2 d 8 at (12, 9)
+FS PHASE 655 id 4 ph 3 d 5 at (12, 8)
+FS PHASE 656 id 4 ph 2 d 8 at (12, 9)
+FS PHASE 657 id 4 ph 3 d 5 at (12, 8)
+FS PHASE 658 id 4 ph 2 d 8 at (12, 9)
+FS PHASE 659 id 4 ph 3 d 5 at (12, 8)
+FS PHASE 660 id 4 ph 2 d 8 at (12, 9)
+FS STAT 660 id 4 at (12, 9) need 3 orth 2 ti 68 ammo 12 sen 0 hp 40 covden 0 eco 1 lost 0
+FS PHASE 661 id 4 ph 3 d 5 at (12, 8)
+FS PHASE 662 id 4 ph 2 d 8 at (12, 9)
+FS PHASE 663 id 4 ph 3 d 5 at (12, 8)
+FS PHASE 664 id 4 ph 2 d 8 at (12, 9)
+FS PHASE 665 id 4 ph 3 d 5 at (12, 8)
+FS PHASE 666 id 4 ph 2 d 8 at (12, 9)
+FS PHASE 667 id 4 ph 3 d 5 at (12, 8)
+FS PHASE 668 id 4 ph 2 d 8 at (12, 9)
+FS PHASE 669 id 4 ph 3 d 5 at (12, 8)
+FS PHASE 670 id 4 ph 2 d 8 at (12, 9)
+FS PHASE 671 id 4 ph 3 d 5 at (12, 8)
+FS PHASE 672 id 4 ph 2 d 8 at (12, 9)
+FS PHASE 673 id 4 ph 3 d 5 at (12, 8)
+FS PHASE 674 id 4 ph 2 d 8 at (12, 9)
+FS PHASE 675 id 4 ph 3 d 5 at (12, 8)
+FS DOORSEEN 675 id 6 at (11, 13) rank 2
+FS DOOR 675 id 6 at (11, 13) n 45
+FS DOORSEEN 675 id 9 at (11, 13) rank 2
+FS DOOR 675 id 9 at (11, 13) n 44
+FS DOORSEEN 675 id 14 at (11, 13) rank 2
+FS PHASE 676 id 4 ph 2 d 8 at (12, 9)
+FS DOOR 676 id 6 at (11, 13) n 46
+FS DOOR 676 id 9 at (11, 13) n 45
+FS PHASE 677 id 4 ph 3 d 5 at (12, 8)
+FS DOOR 677 id 6 at (11, 13) n 47
+FS DOOR 677 id 9 at (11, 13) n 46
+FS PHASE 678 id 4 ph 2 d 8 at (12, 9)
+FS DOOR 678 id 6 at (11, 13) n 48
+FS DOOR 678 id 9 at (11, 13) n 47
+FS PHASE 679 id 4 ph 3 d 5 at (12, 8)
+FS PHASE 680 id 4 ph 2 d 8 at (12, 9)
+FS STAT 680 id 4 at (12, 9) need 3 orth 2 ti 63 ammo 24 sen 0 hp 40 covden 0 eco 1 lost 0
+FS PHASE 681 id 4 ph 3 d 5 at (12, 8)
+FS PHASE 682 id 4 ph 2 d 8 at (12, 9)
+FS PHASE 683 id 4 ph 3 d 5 at (12, 8)
+FS PHASE 684 id 4 ph 2 d 8 at (12, 9)
+FS PHASE 685 id 4 ph 3 d 5 at (12, 8)
+FS PHASE 686 id 4 ph 2 d 8 at (12, 9)
+FS PHASE 687 id 4 ph 3 d 5 at (12, 8)
+FS PHASE 688 id 4 ph 2 d 8 at (12, 9)
+FS PHASE 689 id 4 ph 3 d 5 at (12, 8)
+FS PHASE 690 id 4 ph 2 d 8 at (12, 9)
+FS PHASE 691 id 4 ph 3 d 5 at (12, 8)
+FS PHASE 692 id 4 ph 2 d 8 at (12, 9)
+FS PHASE 693 id 4 ph 3 d 5 at (12, 8)
+FS PHASE 694 id 4 ph 2 d 8 at (12, 9)
+FS PHASE 695 id 4 ph 3 d 5 at (12, 8)
+FS PHASE 696 id 4 ph 2 d 8 at (12, 9)
+FS PHASE 697 id 4 ph 3 d 5 at (12, 8)
+FS PHASE 698 id 4 ph 2 d 8 at (12, 9)
+FS PHASE 699 id 4 ph 3 d 5 at (12, 8)
+FS PHASE 700 id 4 ph 2 d 8 at (12, 9)
+FS STAT 700 id 4 at (12, 9) need 3 orth 2 ti 90 ammo 20 sen 0 hp 40 covden 0 eco 1 lost 0
+FS PHASE 701 id 4 ph 3 d 5 at (12, 8)
+FS PHASE 702 id 4 ph 2 d 8 at (12, 9)
+FS PHASE 703 id 4 ph 3 d 5 at (12, 8)
+FS PHASE 704 id 4 ph 2 d 8 at (12, 9)
+FS PHASE 705 id 4 ph 3 d 5 at (12, 8)
+FS PHASE 706 id 4 ph 2 d 8 at (12, 9)
+FS PHASE 707 id 4 ph 3 d 5 at (12, 8)
+FS PHASE 708 id 4 ph 2 d 8 at (12, 9)
+FS PHASE 709 id 4 ph 3 d 5 at (12, 8)
+FS PHASE 710 id 4 ph 2 d 8 at (12, 9)
+FS PHASE 711 id 4 ph 3 d 5 at (12, 8)
+FS PHASE 712 id 4 ph 2 d 8 at (12, 9)
+FS PHASE 713 id 4 ph 3 d 5 at (12, 8)
+FS PHASE 714 id 4 ph 2 d 8 at (12, 9)
+FS PHASE 715 id 4 ph 3 d 5 at (12, 8)
+FS PHASE 716 id 4 ph 2 d 8 at (12, 9)
+FS PHASE 717 id 4 ph 3 d 5 at (12, 8)
+FS PHASE 718 id 4 ph 2 d 8 at (12, 9)
+FS PHASE 719 id 4 ph 3 d 5 at (12, 8)
+FS PHASE 720 id 4 ph 2 d 8 at (12, 9)
+FS STAT 720 id 4 at (12, 9) need 3 orth 2 ti 98 ammo 32 sen 0 hp 40 covden 0 eco 1 lost 0
+FS PHASE 721 id 4 ph 3 d 5 at (12, 8)
+FS PHASE 722 id 4 ph 2 d 8 at (12, 9)
+FS PHASE 723 id 4 ph 3 d 5 at (12, 8)
+FS PHASE 724 id 4 ph 2 d 8 at (12, 9)
+FS PHASE 725 id 4 ph 3 d 5 at (12, 8)
+FS PHASE 726 id 4 ph 2 d 8 at (12, 9)
+FS PHASE 727 id 4 ph 3 d 5 at (12, 8)
+FS PHASE 728 id 4 ph 2 d 8 at (12, 9)
+FS PHASE 729 id 4 ph 3 d 5 at (12, 8)
+FS PHASE 730 id 4 ph 2 d 8 at (12, 9)
+FS PHASE 731 id 4 ph 3 d 5 at (12, 8)
+FS PHASE 732 id 4 ph 2 d 8 at (12, 9)
+FS PHASE 733 id 4 ph 3 d 5 at (12, 8)
+FS PHASE 734 id 4 ph 2 d 8 at (12, 9)
+FS PHASE 735 id 4 ph 3 d 5 at (12, 8)
+FS PHASE 736 id 4 ph 2 d 8 at (12, 9)
+FS PHASE 737 id 4 ph 3 d 5 at (12, 8)
+FS PHASE 738 id 4 ph 2 d 8 at (12, 9)
+FS PHASE 739 id 4 ph 3 d 5 at (12, 8)
+FS PHASE 740 id 4 ph 2 d 8 at (12, 9)
+FS STAT 740 id 4 at (12, 9) need 3 orth 2 ti 98 ammo 52 sen 0 hp 40 covden 0 eco 1 lost 0
+FS PHASE 741 id 4 ph 3 d 5 at (12, 8)
+FS PHASE 742 id 4 ph 2 d 8 at (12, 9)
+FS PHASE 743 id 4 ph 3 d 5 at (12, 8)
+FS PHASE 744 id 4 ph 2 d 8 at (12, 9)
+FS PHASE 745 id 4 ph 3 d 5 at (12, 8)
+FS PHASE 746 id 4 ph 2 d 8 at (12, 9)
+FS PHASE 747 id 4 ph 3 d 5 at (12, 8)
+FS PHASE 748 id 4 ph 2 d 8 at (12, 9)
+FS PHASE 749 id 4 ph 3 d 5 at (12, 8)
+FS PHASE 750 id 4 ph 2 d 8 at (12, 9)
+FS PHASE 751 id 4 ph 3 d 5 at (12, 8)
+FS PHASE 752 id 4 ph 2 d 8 at (12, 9)
+FS PHASE 753 id 4 ph 3 d 5 at (12, 8)
+FS DOORSEEN 753 id 18 at (12, 20) rank 1
+FS PHASE 754 id 4 ph 2 d 8 at (12, 9)
+FS PHASE 755 id 4 ph 3 d 5 at (12, 8)
+FS PHASE 756 id 4 ph 2 d 8 at (12, 9)
+FS PHASE 757 id 4 ph 3 d 5 at (12, 8)
+FS DOORSEEN 757 id 6 at (12, 20) rank 0
+FS PHASE 758 id 4 ph 2 d 8 at (12, 9)
+FS DOORSEEN 758 id 9 at (12, 20) rank 0
+FS DOOR 758 id 18 at (12, 20) n 42
+FS PHASE 759 id 4 ph 3 d 5 at (12, 8)
+FS DOOR 759 id 18 at (12, 20) n 43
+FS PHASE 760 id 4 ph 2 d 8 at (12, 9)
+FS STAT 760 id 4 at (12, 9) need 3 orth 2 ti 98 ammo 67 sen 0 hp 40 covden 0 eco 1 lost 0
+FS DOOR 760 id 18 at (12, 20) n 44
+FS PHASE 761 id 4 ph 3 d 5 at (12, 8)
+FS DOOR 761 id 9 at (12, 20) n 48
+FS DOOR 761 id 18 at (12, 20) n 45
+FS PHASE 762 id 4 ph 2 d 8 at (12, 9)
+FS DOOR 762 id 9 at (12, 20) n 49
+FS DOORSEEN 762 id 14 at (12, 20) rank 0
+FS DOOR 762 id 18 at (12, 20) n 46
+FS PHASE 763 id 4 ph 3 d 5 at (12, 8)
+FS DOOR 763 id 9 at (12, 20) n 50
+FS DOOR 763 id 18 at (12, 20) n 47
+FS PHASE 764 id 4 ph 2 d 8 at (12, 9)
+FS DOOR 764 id 9 at (12, 20) n 51
+FS DOOR 764 id 18 at (12, 20) n 48
+FS PHASE 765 id 4 ph 3 d 5 at (12, 8)
+FS DOOR 765 id 9 at (12, 20) n 52
+FS DOOR 765 id 18 at (12, 20) n 49
+FS PHASE 766 id 4 ph 2 d 8 at (12, 9)
+FS DOOR 766 id 9 at (12, 20) n 53
+FS DOOR 766 id 18 at (12, 20) n 50
+FS PHASE 767 id 4 ph 3 d 5 at (12, 8)
+FS DOOR 767 id 9 at (12, 20) n 54
+FS DOOR 767 id 18 at (12, 20) n 51
+FS PHASE 768 id 4 ph 2 d 8 at (12, 9)
+FS DOOR 768 id 9 at (12, 20) n 55
+FS DOOR 768 id 18 at (12, 20) n 52
+FS PHASE 769 id 4 ph 3 d 5 at (12, 8)
+FS DOOR 769 id 9 at (12, 20) n 56
+FS DOOR 769 id 14 at (12, 20) n 11
+FS DOOR 769 id 18 at (12, 20) n 53
+FS PHASE 770 id 4 ph 2 d 8 at (12, 9)
+FS DOOR 770 id 9 at (12, 20) n 57
+FS DOOR 770 id 14 at (12, 20) n 12
+FS DOOR 770 id 18 at (12, 20) n 54
+FS PHASE 771 id 4 ph 3 d 5 at (12, 8)
+FS DOOR 771 id 9 at (12, 20) n 58
+FS DOOR 771 id 14 at (12, 20) n 13
+FS DOOR 771 id 18 at (12, 20) n 55
+FS PHASE 772 id 4 ph 2 d 8 at (12, 9)
+FS DOOR 772 id 9 at (12, 20) n 59
+FS DOOR 772 id 14 at (12, 20) n 14
+FS DOOR 772 id 18 at (12, 20) n 56
+FS PHASE 773 id 4 ph 3 d 5 at (12, 8)
+FS DOOR 773 id 9 at (12, 20) n 60
+FS DOOR 773 id 14 at (12, 20) n 15
+FS DOOR 773 id 18 at (12, 20) n 57
+FS PHASE 774 id 4 ph 2 d 8 at (12, 9)
+FS DOOR 774 id 9 at (12, 20) n 61
+FS DOOR 774 id 14 at (12, 20) n 16
+FS DOOR 774 id 18 at (12, 20) n 58
+FS PHASE 775 id 4 ph 3 d 5 at (12, 8)
+FS DOOR 775 id 9 at (12, 20) n 62
+FS DOOR 775 id 14 at (12, 20) n 17
+FS DOOR 775 id 18 at (12, 20) n 59
+FS PHASE 776 id 4 ph 2 d 8 at (12, 9)
+FS DOOR 776 id 9 at (12, 20) n 63
+FS DOOR 776 id 14 at (12, 20) n 18
+FS DOOR 776 id 18 at (12, 20) n 60
+FS PHASE 777 id 4 ph 3 d 5 at (12, 8)
+FS DOOR 777 id 9 at (12, 20) n 64
+FS DOOR 777 id 14 at (12, 20) n 19
+FS DOOR 777 id 18 at (12, 20) n 61
+FS PHASE 778 id 4 ph 2 d 8 at (12, 9)
+FS DOOR 778 id 9 at (12, 20) n 65
+FS DOOR 778 id 14 at (12, 20) n 20
+FS DOOR 778 id 18 at (12, 20) n 62
+FS PHASE 779 id 4 ph 3 d 5 at (12, 8)
+FS PHASE 780 id 4 ph 2 d 8 at (12, 9)
+FS STAT 780 id 4 at (12, 9) need 3 orth 2 ti 51 ammo 20 sen 0 hp 40 covden 0 eco 1 lost 0
+FS PHASE 781 id 4 ph 3 d 5 at (12, 8)
+FS PHASE 782 id 4 ph 2 d 8 at (12, 9)
+FS PHASE 783 id 4 ph 3 d 5 at (12, 8)
+FS PHASE 784 id 4 ph 2 d 8 at (12, 9)
+FS PHASE 785 id 4 ph 3 d 5 at (12, 8)
+FS PHASE 786 id 4 ph 2 d 8 at (12, 9)
+FS PHASE 787 id 4 ph 3 d 5 at (12, 8)
+FS PHASE 788 id 4 ph 2 d 8 at (12, 9)
+FS PHASE 789 id 4 ph 3 d 5 at (12, 8)
+FS PHASE 790 id 4 ph 2 d 8 at (12, 9)
+FS PHASE 791 id 4 ph 3 d 5 at (12, 8)
+FS PHASE 792 id 4 ph 2 d 8 at (12, 9)
+FS PHASE 793 id 4 ph 3 d 5 at (12, 8)
+FS PHASE 794 id 4 ph 2 d 8 at (12, 9)
+FS PHASE 795 id 4 ph 3 d 5 at (12, 8)
+FS PHASE 796 id 4 ph 2 d 8 at (12, 9)
+FS PHASE 797 id 4 ph 3 d 5 at (12, 8)
+FS PHASE 798 id 4 ph 2 d 8 at (12, 9)
+FS PHASE 799 id 4 ph 3 d 5 at (12, 8)
+FS PHASE 800 id 4 ph 2 d 8 at (12, 9)
+FS STAT 800 id 4 at (12, 9) need 3 orth 2 ti 51 ammo 20 sen 0 hp 40 covden 0 eco 1 lost 0
+FS PHASE 801 id 4 ph 3 d 5 at (12, 8)
+FS PHASE 802 id 4 ph 2 d 8 at (12, 9)
+FS PHASE 803 id 4 ph 3 d 5 at (12, 8)
+FS PHASE 804 id 4 ph 2 d 8 at (12, 9)
+FS PHASE 805 id 4 ph 3 d 5 at (12, 8)
+FS PHASE 806 id 4 ph 2 d 8 at (12, 9)
+FS PHASE 807 id 4 ph 3 d 5 at (12, 8)
+FS PHASE 808 id 4 ph 2 d 8 at (12, 9)
+FS PHASE 809 id 4 ph 3 d 5 at (12, 8)
+FS PHASE 810 id 4 ph 2 d 8 at (12, 9)
+FS PHASE 811 id 4 ph 3 d 5 at (12, 8)
+FS PHASE 812 id 4 ph 2 d 8 at (12, 9)
+FS PHASE 813 id 4 ph 3 d 5 at (12, 8)
+FS PHASE 814 id 4 ph 2 d 8 at (12, 9)
+FS PHASE 815 id 4 ph 3 d 5 at (12, 8)
+FS PHASE 816 id 4 ph 2 d 8 at (12, 9)
+FS PHASE 817 id 4 ph 3 d 5 at (12, 8)
+FS PHASE 818 id 4 ph 2 d 8 at (12, 9)
+FS PHASE 819 id 4 ph 3 d 5 at (11, 9)
+FS STAT 820 id 4 at (10, 9) need 1 orth 0 ti 67 ammo 20 sen 0 hp 40 covden 0 eco 1 lost 0
+FS SEAL 822 tile (8, 8) n 9
+FS PHASE 824 id 4 ph 2 d 8 at (7, 9)
+FS PHASE 825 id 4 ph 3 d 5 at (8, 9)
+FS PHASE 826 id 4 ph 2 d 8 at (7, 9)
+FS PHASE 827 id 4 ph 3 d 5 at (8, 9)
+FS PHASE 828 id 4 ph 2 d 8 at (7, 9)
+FS PHASE 829 id 4 ph 3 d 5 at (8, 9)
+FS PHASE 830 id 4 ph 2 d 8 at (7, 9)
+FS PHASE 831 id 4 ph 3 d 5 at (8, 9)
+FS PHASE 832 id 4 ph 2 d 8 at (7, 9)
+FS PHASE 833 id 4 ph 3 d 5 at (8, 9)
+FS PHASE 834 id 4 ph 2 d 8 at (7, 9)
+FS PHASE 835 id 4 ph 3 d 5 at (8, 9)
+FS PHASE 836 id 4 ph 2 d 8 at (7, 9)
+FS PHASE 837 id 4 ph 3 d 5 at (8, 9)
+FS PHASE 838 id 4 ph 2 d 8 at (7, 9)
+FS PHASE 839 id 4 ph 3 d 5 at (8, 9)
+FS PHASE 840 id 4 ph 2 d 8 at (7, 9)
+FS STAT 840 id 4 at (7, 9) need 2 orth 2 ti 78 ammo 20 sen 0 hp 40 covden 0 eco 1 lost 0
+FS PHASE 841 id 4 ph 3 d 5 at (8, 9)
+FS PHASE 842 id 4 ph 2 d 8 at (7, 9)
+FS PHASE 843 id 4 ph 3 d 5 at (8, 9)
+FS PHASE 844 id 4 ph 2 d 8 at (7, 9)
+FS PHASE 845 id 4 ph 3 d 5 at (8, 9)
+FS PHASE 846 id 4 ph 2 d 8 at (7, 9)
+FS PHASE 847 id 4 ph 3 d 5 at (8, 9)
+FS PHASE 848 id 4 ph 2 d 8 at (7, 9)
+FS PHASE 849 id 4 ph 3 d 5 at (8, 9)
+FS PHASE 850 id 4 ph 2 d 8 at (7, 9)
+FS PHASE 851 id 4 ph 3 d 5 at (8, 9)
+FS PHASE 852 id 4 ph 2 d 8 at (7, 9)
+FS PHASE 853 id 4 ph 3 d 5 at (8, 9)
+FS PHASE 854 id 4 ph 2 d 8 at (7, 9)
+FS PHASE 855 id 4 ph 3 d 5 at (8, 9)
+FS PHASE 856 id 4 ph 2 d 8 at (7, 9)
+FS PHASE 857 id 4 ph 3 d 5 at (8, 9)
+FS PHASE 858 id 4 ph 2 d 8 at (7, 9)
+FS PHASE 859 id 4 ph 3 d 5 at (8, 9)
+FS PHASE 860 id 4 ph 2 d 8 at (7, 9)
+FS STAT 860 id 4 at (7, 9) need 2 orth 2 ti 98 ammo 20 sen 0 hp 40 covden 0 eco 1 lost 0
+FS PHASE 861 id 4 ph 3 d 5 at (8, 9)
+FS PHASE 862 id 4 ph 2 d 8 at (7, 9)
+FS PHASE 863 id 4 ph 3 d 5 at (8, 9)
+FS PHASE 864 id 4 ph 2 d 8 at (7, 9)
+FS PHASE 865 id 4 ph 3 d 5 at (8, 9)
+FS DOORSEEN 865 id 18 at (12, 20) rank 1
+FS PHASE 866 id 4 ph 2 d 8 at (7, 9)
+FS PHASE 867 id 4 ph 3 d 5 at (8, 9)
+FS PHASE 868 id 4 ph 2 d 8 at (7, 9)
+FS DOOR 868 id 18 at (12, 20) n 63
+FS PHASE 869 id 4 ph 3 d 5 at (8, 9)
+FS DOORSEEN 869 id 6 at (12, 20) rank 0
+FS DOOR 869 id 18 at (12, 20) n 64
+FS PHASE 870 id 4 ph 2 d 8 at (7, 9)
+FS DOORSEEN 870 id 9 at (12, 20) rank 0
+FS DOOR 870 id 18 at (12, 20) n 65
+FS PHASE 871 id 4 ph 3 d 5 at (8, 9)
+FS DOORSEEN 871 id 14 at (12, 20) rank 0
+FS DOOR 871 id 18 at (12, 20) n 66
+FS PHASE 872 id 4 ph 2 d 8 at (7, 9)
+FS DOOR 872 id 18 at (12, 20) n 67
+FS PHASE 873 id 4 ph 3 d 5 at (8, 9)
+FS DOOR 873 id 18 at (12, 20) n 68
+FS PHASE 874 id 4 ph 2 d 8 at (7, 9)
+FS DOOR 874 id 9 at (12, 20) n 66
+FS DOOR 874 id 18 at (12, 20) n 69
+FS PHASE 875 id 4 ph 3 d 5 at (8, 9)
+FS DOOR 875 id 9 at (12, 20) n 67
+FS DOOR 875 id 18 at (12, 20) n 70
+FS PHASE 876 id 4 ph 2 d 8 at (7, 9)
+FS DOOR 876 id 9 at (12, 20) n 68
+FS DOOR 876 id 18 at (12, 20) n 71
+FS PHASE 877 id 4 ph 3 d 5 at (8, 9)
+FS DOOR 877 id 9 at (12, 20) n 69
+FS DOOR 877 id 14 at (12, 20) n 21
+FS DOOR 877 id 18 at (12, 20) n 72
+FS PHASE 878 id 4 ph 2 d 8 at (7, 9)
+FS DOOR 878 id 9 at (12, 20) n 70
+FS DOOR 878 id 14 at (12, 20) n 22
+FS DOOR 878 id 18 at (12, 20) n 73
+FS PHASE 879 id 4 ph 3 d 5 at (8, 9)
+FS DOOR 879 id 9 at (12, 20) n 71
+FS DOOR 879 id 14 at (12, 20) n 23
+FS DOOR 879 id 18 at (12, 20) n 74
+FS PHASE 880 id 4 ph 2 d 8 at (7, 9)
+FS STAT 880 id 4 at (7, 9) need 2 orth 2 ti 67 ammo 20 sen 0 hp 40 covden 0 eco 1 lost 0
+FS DOOR 880 id 9 at (12, 20) n 72
+FS DOOR 880 id 14 at (12, 20) n 24
+FS DOOR 880 id 18 at (12, 20) n 75
+FS PHASE 881 id 4 ph 3 d 5 at (8, 9)
+FS DOOR 881 id 9 at (12, 20) n 73
+FS DOOR 881 id 14 at (12, 20) n 25
+FS DOOR 881 id 18 at (12, 20) n 76
+FS PHASE 882 id 4 ph 2 d 8 at (7, 9)
+FS DOOR 882 id 9 at (12, 20) n 74
+FS DOOR 882 id 14 at (12, 20) n 26
+FS DOOR 882 id 18 at (12, 20) n 77
+FS PHASE 883 id 4 ph 3 d 5 at (8, 9)
+FS DOOR 883 id 9 at (12, 20) n 75
+FS DOOR 883 id 14 at (12, 20) n 27
+FS DOOR 883 id 18 at (12, 20) n 78
+FS PHASE 884 id 4 ph 2 d 8 at (7, 9)
+FS DOOR 884 id 9 at (12, 20) n 76
+FS DOOR 884 id 14 at (12, 20) n 28
+FS DOOR 884 id 18 at (12, 20) n 79
+FS PHASE 885 id 4 ph 3 d 5 at (8, 9)
+FS DOOR 885 id 9 at (12, 20) n 77
+FS DOOR 885 id 14 at (12, 20) n 29
+FS DOOR 885 id 18 at (12, 20) n 80
+FS PHASE 886 id 4 ph 2 d 8 at (7, 9)
+FS DOOR 886 id 9 at (12, 20) n 78
+FS DOOR 886 id 14 at (12, 20) n 30
+FS DOOR 886 id 18 at (12, 20) n 81
+FS PHASE 887 id 4 ph 3 d 5 at (8, 9)
+FS DOOR 887 id 9 at (12, 20) n 79
+FS DOOR 887 id 14 at (12, 20) n 31
+FS DOOR 887 id 18 at (12, 20) n 82
+FS PHASE 888 id 4 ph 2 d 8 at (7, 9)
+FS DOOR 888 id 9 at (12, 20) n 80
+FS DOOR 888 id 14 at (12, 20) n 32
+FS DOOR 888 id 18 at (12, 20) n 83
+FS PHASE 889 id 4 ph 3 d 5 at (8, 9)
+FS PHASE 890 id 4 ph 2 d 8 at (7, 9)
+FS PHASE 891 id 4 ph 3 d 5 at (8, 9)
+FS PHASE 892 id 4 ph 2 d 8 at (7, 9)
+FS PHASE 893 id 4 ph 3 d 5 at (8, 9)
+FS PHASE 894 id 4 ph 2 d 8 at (7, 9)
+FS PHASE 895 id 4 ph 3 d 5 at (8, 9)
+FS PHASE 896 id 4 ph 2 d 8 at (7, 9)
+FS PHASE 897 id 4 ph 3 d 5 at (8, 9)
+FS PHASE 898 id 4 ph 2 d 8 at (7, 9)
+FS PHASE 899 id 4 ph 3 d 5 at (8, 9)
+FS PHASE 900 id 4 ph 2 d 8 at (7, 9)
+FS STAT 900 id 4 at (7, 9) need 2 orth 2 ti 29 ammo 4 sen 0 hp 40 covden 0 eco 1 lost 0
+FS PHASE 901 id 4 ph 3 d 5 at (8, 9)
+FS PHASE 902 id 4 ph 2 d 8 at (7, 9)
+FS PHASE 903 id 4 ph 3 d 5 at (8, 9)
+FS PHASE 904 id 4 ph 2 d 8 at (7, 9)
+FS PHASE 905 id 4 ph 3 d 5 at (8, 9)
+FS PHASE 906 id 4 ph 2 d 8 at (7, 9)
+FS PHASE 907 id 4 ph 3 d 5 at (8, 9)
+FS PHASE 908 id 4 ph 2 d 8 at (7, 9)
+FS PHASE 909 id 4 ph 3 d 5 at (8, 9)
+FS PHASE 910 id 4 ph 2 d 8 at (7, 9)
+FS PHASE 911 id 4 ph 3 d 5 at (8, 9)
+FS PHASE 912 id 4 ph 2 d 8 at (7, 9)
+FS PHASE 913 id 4 ph 3 d 5 at (8, 9)
+FS PHASE 914 id 4 ph 2 d 8 at (7, 9)
+FS PHASE 915 id 4 ph 3 d 5 at (8, 9)
+FS PHASE 916 id 4 ph 2 d 8 at (7, 9)
+FS PHASE 917 id 4 ph 3 d 5 at (8, 9)
+FS PHASE 918 id 4 ph 2 d 8 at (7, 9)
+FS PHASE 919 id 4 ph 3 d 5 at (8, 9)
+FS PHASE 920 id 4 ph 2 d 8 at (7, 9)
+FS STAT 920 id 4 at (7, 9) need 2 orth 2 ti 32 ammo 18 sen 0 hp 40 covden 0 eco 1 lost 0
+FS PHASE 921 id 4 ph 3 d 5 at (8, 9)
+FS PHASE 922 id 4 ph 2 d 8 at (7, 9)
+FS PHASE 923 id 4 ph 3 d 5 at (8, 9)
+FS PHASE 924 id 4 ph 2 d 8 at (7, 9)
+FS PHASE 925 id 4 ph 3 d 5 at (8, 9)
+FS PHASE 926 id 4 ph 2 d 8 at (7, 9)
+FS PHASE 927 id 4 ph 3 d 5 at (8, 9)
+FS PHASE 928 id 4 ph 2 d 8 at (7, 9)
+FS PHASE 929 id 4 ph 3 d 5 at (8, 9)
+FS PHASE 930 id 4 ph 2 d 8 at (7, 9)
+FS PHASE 931 id 4 ph 3 d 5 at (8, 9)
+FS PHASE 932 id 4 ph 2 d 8 at (7, 9)
+FS PHASE 933 id 4 ph 3 d 5 at (8, 9)
+FS PHASE 934 id 4 ph 2 d 8 at (7, 9)
+FS PHASE 935 id 4 ph 3 d 5 at (8, 9)
+FS PHASE 936 id 4 ph 2 d 8 at (7, 9)
+FS PHASE 937 id 4 ph 3 d 5 at (8, 9)
+FS PHASE 938 id 4 ph 2 d 8 at (7, 9)
+FS PHASE 939 id 4 ph 3 d 5 at (8, 9)
+FS PHASE 940 id 4 ph 2 d 8 at (7, 9)
+FS STAT 940 id 4 at (7, 9) need 2 orth 2 ti 50 ammo 20 sen 0 hp 40 covden 0 eco 1 lost 0
+FS PHASE 941 id 4 ph 3 d 5 at (8, 9)
+FS PHASE 942 id 4 ph 2 d 8 at (7, 9)
+FS PHASE 943 id 4 ph 3 d 5 at (8, 9)
+FS PHASE 944 id 4 ph 2 d 8 at (7, 9)
+FS PHASE 945 id 4 ph 3 d 5 at (8, 9)
+FS PHASE 946 id 4 ph 2 d 8 at (7, 9)
+FS PHASE 947 id 4 ph 3 d 5 at (8, 9)
+FS PHASE 948 id 4 ph 2 d 8 at (7, 9)
+FS PHASE 949 id 4 ph 3 d 5 at (8, 9)
+FS PHASE 950 id 4 ph 2 d 8 at (7, 9)
+FS PHASE 951 id 4 ph 3 d 5 at (8, 9)
+FS PHASE 952 id 4 ph 2 d 8 at (7, 9)
+FS PHASE 953 id 4 ph 3 d 5 at (8, 9)
+FS PHASE 954 id 4 ph 2 d 8 at (7, 9)
+FS PHASE 955 id 4 ph 3 d 5 at (8, 9)
+FS PHASE 956 id 4 ph 2 d 8 at (7, 9)
+FS PHASE 957 id 4 ph 3 d 5 at (8, 9)
+FS PHASE 958 id 4 ph 2 d 8 at (7, 9)
+FS PHASE 959 id 4 ph 3 d 5 at (8, 9)
+FS PHASE 960 id 4 ph 2 d 8 at (7, 9)
+FS STAT 960 id 4 at (7, 9) need 2 orth 2 ti 70 ammo 20 sen 0 hp 40 covden 0 eco 1 lost 0
+FS PHASE 961 id 4 ph 3 d 5 at (8, 9)
+FS PHASE 962 id 4 ph 2 d 8 at (7, 9)
+FS PHASE 963 id 4 ph 3 d 5 at (8, 9)
+FS PHASE 964 id 4 ph 2 d 8 at (7, 9)
+FS PHASE 965 id 4 ph 3 d 5 at (8, 9)
+FS PHASE 966 id 4 ph 2 d 8 at (7, 9)
+FS PHASE 967 id 4 ph 3 d 5 at (8, 9)
+FS PHASE 968 id 4 ph 2 d 8 at (7, 9)
+FS PHASE 969 id 4 ph 3 d 5 at (8, 9)
+FS PHASE 970 id 4 ph 2 d 8 at (7, 9)
+FS PHASE 971 id 4 ph 3 d 5 at (8, 9)
+FS PHASE 972 id 4 ph 2 d 8 at (7, 9)
+FS PHASE 973 id 4 ph 3 d 5 at (7, 8)
+FS PHASE 977 id 4 ph 2 d 8 at (7, 4)
+FS PHASE 978 id 4 ph 3 d 5 at (8, 4)
+FS STAT 980 id 4 at (10, 4) need 0 orth 0 ti 43 ammo 0 sen 0 hp 40 covden 0 eco 1 lost 0

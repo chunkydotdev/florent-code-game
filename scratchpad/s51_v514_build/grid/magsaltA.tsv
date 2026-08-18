@@ -1,0 +1,31 @@
+tag	arm	map	g	seed	ord	ours	winner	cond	turn	tracebacks	ours_mined	opp_mined
+magsaltA_glacierkeep_g0	magsaltA	glacierkeep	0	7400	A	US	magsalt	Core destroyed	385	0	900	0
+magsaltA_glacierkeep_g1	magsaltA	glacierkeep	1	7401	B	US	magsalt	Core destroyed	474	0	10	310
+magsaltA_glacierkeep_g2	magsaltA	glacierkeep	2	7402	A	US	magsalt	Core destroyed	217	0	260	0
+magsaltA_glacierkeep_g3	magsaltA	glacierkeep	3	7403	B	US	magsalt	Titanium collected (tiebreak)	1000	0	60	0
+magsaltA_glacierkeep_g4	magsaltA	glacierkeep	4	7404	A	US	magsalt	Core destroyed	381	0	0	0
+magsaltA_glacierkeep_g5	magsaltA	glacierkeep	5	7405	B	US	magsalt	Titanium collected (tiebreak)	1000	0	90	0
+magsaltA_nordkap_g0	magsaltA	nordkap	0	7400	A	OPP	_v488beltbreak2	Core destroyed	533	0	110	180
+magsaltA_nordkap_g1	magsaltA	nordkap	1	7401	B	US	magsalt	Core destroyed	556	0	3710	300
+magsaltA_nordkap_g2	magsaltA	nordkap	2	7402	A	OPP	_v488beltbreak2	Core destroyed	147	0	120	1400
+magsaltA_nordkap_g3	magsaltA	nordkap	3	7403	B	US	magsalt	Core destroyed	348	0	1590	210
+magsaltA_nordkap_g4	magsaltA	nordkap	4	7404	A	OPP	_v488beltbreak2	Core destroyed	311	0	490	850
+magsaltA_nordkap_g5	magsaltA	nordkap	5	7405	B	US	magsalt	Harvesters (tiebreak)	1000	0	0	0
+magsaltA_atoll_g0	magsaltA	atoll	0	7400	A	OPP	_v488beltbreak2	Core destroyed	460	0	1040	1320
+magsaltA_atoll_g1	magsaltA	atoll	1	7401	B	OPP	_v488beltbreak2	Core destroyed	216	0	480	1040
+magsaltA_atoll_g2	magsaltA	atoll	2	7402	A	OPP	_v488beltbreak2	Core destroyed	129	0	610	990
+magsaltA_atoll_g3	magsaltA	atoll	3	7403	B	OPP	_v488beltbreak2	Core destroyed	157	0	330	750
+magsaltA_atoll_g4	magsaltA	atoll	4	7404	A	US	magsalt	Core destroyed	405	0	3330	1170
+magsaltA_atoll_g5	magsaltA	atoll	5	7405	B	US	magsalt	Core destroyed	749	0	2010	2160
+magsaltA_midgard_g0	magsaltA	midgard	0	7400	A	OPP	_v488beltbreak2	Core destroyed	170	0	720	1520
+magsaltA_midgard_g1	magsaltA	midgard	1	7401	B	OPP	_v488beltbreak2	Core destroyed	168	0	490	2010
+magsaltA_midgard_g2	magsaltA	midgard	2	7402	A	OPP	_v488beltbreak2	Core destroyed	116	0	300	910
+magsaltA_midgard_g3	magsaltA	midgard	3	7403	B	US	magsalt	Core destroyed	264	0	2010	2240
+magsaltA_midgard_g4	magsaltA	midgard	4	7404	A	OPP	_v488beltbreak2	Core destroyed	144	0	530	1280
+magsaltA_midgard_g5	magsaltA	midgard	5	7405	B	OPP	_v488beltbreak2	Core destroyed	203	0	490	2150
+magsaltA_drakkarfjord_g0	magsaltA	drakkarfjord	0	7400	A	OPP	_v488beltbreak2	Core destroyed	476	0	420	3640
+magsaltA_drakkarfjord_g1	magsaltA	drakkarfjord	1	7401	B	OPP	_v488beltbreak2	Titanium collected (tiebreak)	1000	0	990	1970
+magsaltA_drakkarfjord_g2	magsaltA	drakkarfjord	2	7402	A	US	magsalt	Core destroyed	363	0	2930	1990
+magsaltA_drakkarfjord_g3	magsaltA	drakkarfjord	3	7403	B	US	magsalt	Core destroyed	145	0	600	0
+magsaltA_drakkarfjord_g4	magsaltA	drakkarfjord	4	7404	A	US	magsalt	Titanium collected (tiebreak)	1000	0	9030	2100
+magsaltA_drakkarfjord_g5	magsaltA	drakkarfjord	5	7405	B	US	magsalt	Core destroyed	129	0	390	0

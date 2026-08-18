@@ -1,0 +1,30 @@
+ndB_glacierkeep_g0	ndB	glacierkeep	0	7500	A	US	nodoor	Titanium collected (tiebreak)	1000	0	160	0
+ndB_glacierkeep_g1	ndB	glacierkeep	1	7501	B	US	nodoor	Titanium collected (tiebreak)	1000	0	250	0
+ndB_glacierkeep_g2	ndB	glacierkeep	2	7502	A	US	nodoor	Core destroyed	285	0	140	0
+ndB_glacierkeep_g3	ndB	glacierkeep	3	7503	B	US	nodoor	Titanium collected (tiebreak)	1000	0	60	0
+ndB_glacierkeep_g4	ndB	glacierkeep	4	7504	A	US	nodoor	Core destroyed	425	0	150	0
+ndB_glacierkeep_g5	ndB	glacierkeep	5	7505	B	US	nodoor	Titanium collected (tiebreak)	1000	0	50	0
+ndB_nordkap_g0	ndB	nordkap	0	7500	A	US	nodoor	Core destroyed	199	0	600	70
+ndB_nordkap_g1	ndB	nordkap	1	7501	B	OPP	_v488beltbreak2	Core destroyed	260	0	660	3950
+ndB_nordkap_g2	ndB	nordkap	2	7502	A	US	nodoor	Core destroyed	252	0	950	590
+ndB_nordkap_g3	ndB	nordkap	3	7503	B	OPP	_v488beltbreak2	Core destroyed	295	0	1810	3630
+ndB_nordkap_g4	ndB	nordkap	4	7504	A	US	nodoor	Titanium collected (tiebreak)	1000	0	1350	20
+ndB_nordkap_g5	ndB	nordkap	5	7505	B	US	nodoor	Core destroyed	231	0	680	0
+ndB_atoll_g0	ndB	atoll	0	7500	A	OPP	_v488beltbreak2	Core destroyed	914	0	3640	3360
+ndB_atoll_g1	ndB	atoll	1	7501	B	US	nodoor	Core destroyed	197	0	950	320
+ndB_atoll_g2	ndB	atoll	2	7502	A	US	nodoor	Core destroyed	181	0	870	360
+ndB_atoll_g3	ndB	atoll	3	7503	B	OPP	_v488beltbreak2	Core destroyed	677	0	320	230
+ndB_atoll_g4	ndB	atoll	4	7504	A	US	nodoor	Core destroyed	336	0	1650	670
+ndB_atoll_g5	ndB	atoll	5	7505	B	US	nodoor	Core destroyed	559	0	2760	5980
+ndB_midgard_g0	ndB	midgard	0	7500	A	OPP	_v488beltbreak2	Core destroyed	168	0	480	1760
+ndB_midgard_g1	ndB	midgard	1	7501	B	OPP	_v488beltbreak2	Core destroyed	120	0	840	1310
+ndB_midgard_g2	ndB	midgard	2	7502	A	OPP	_v488beltbreak2	Core destroyed	213	0	460	1920
+ndB_midgard_g3	ndB	midgard	3	7503	B	OPP	_v488beltbreak2	Core destroyed	260	0	500	3890
+ndB_midgard_g4	ndB	midgard	4	7504	A	OPP	_v488beltbreak2	Core destroyed	296	0	510	2910
+ndB_midgard_g5	ndB	midgard	5	7505	B	OPP	_v488beltbreak2	Core destroyed	147	0	750	1080
+ndB_drakkarfjord_g0	ndB	drakkarfjord	0	7500	A	OPP	_v488beltbreak2	Core destroyed	758	0	3550	10520
+ndB_drakkarfjord_g1	ndB	drakkarfjord	1	7501	B	US	nodoor	Titanium collected (tiebreak)	1000	0	11630	2370
+ndB_drakkarfjord_g2	ndB	drakkarfjord	2	7502	A	US	nodoor	Titanium collected (tiebreak)	1000	0	10030	8560
+ndB_drakkarfjord_g3	ndB	drakkarfjord	3	7503	B	US	nodoor	Core destroyed	151	0	630	0
+ndB_drakkarfjord_g4	ndB	drakkarfjord	4	7504	A	OPP	_v488beltbreak2	Core destroyed	192	0	330	1370
+ndB_drakkarfjord_g5	ndB	drakkarfjord	5	7505	B	US	nodoor	Core destroyed	152	0	650	0

@@ -1,0 +1,30 @@
+magsaltB_glacierkeep_g0	magsaltB	glacierkeep	0	7500	A	US	magsalt	Core destroyed	313	0	230	0
+magsaltB_glacierkeep_g1	magsaltB	glacierkeep	1	7501	B	US	magsalt	Core destroyed	265	0	10	0
+magsaltB_glacierkeep_g2	magsaltB	glacierkeep	2	7502	A	US	magsalt	Titanium collected (tiebreak)	1000	0	150	0
+magsaltB_glacierkeep_g3	magsaltB	glacierkeep	3	7503	B	US	magsalt	Titanium collected (tiebreak)	1000	0	220	0
+magsaltB_glacierkeep_g4	magsaltB	glacierkeep	4	7504	A	US	magsalt	Core destroyed	161	0	130	0
+magsaltB_glacierkeep_g5	magsaltB	glacierkeep	5	7505	B	US	magsalt	Titanium collected (tiebreak)	1000	0	60	0
+magsaltB_nordkap_g0	magsaltB	nordkap	0	7500	A	OPP	_v488beltbreak2	Core destroyed	137	0	130	1460
+magsaltB_nordkap_g1	magsaltB	nordkap	1	7501	B	US	magsalt	Titanium collected (tiebreak)	1000	0	140	0
+magsaltB_nordkap_g2	magsaltB	nordkap	2	7502	A	OPP	_v488beltbreak2	Core destroyed	213	0	320	590
+magsaltB_nordkap_g3	magsaltB	nordkap	3	7503	B	OPP	_v488beltbreak2	Core destroyed	371	0	900	2290
+magsaltB_nordkap_g4	magsaltB	nordkap	4	7504	A	OPP	_v488beltbreak2	Core destroyed	158	0	140	760
+magsaltB_nordkap_g5	magsaltB	nordkap	5	7505	B	OPP	_v488beltbreak2	Core destroyed	283	0	0	1830
+magsaltB_atoll_g0	magsaltB	atoll	0	7500	A	OPP	_v488beltbreak2	Core destroyed	317	0	620	3090
+magsaltB_atoll_g1	magsaltB	atoll	1	7501	B	OPP	_v488beltbreak2	Core destroyed	677	0	1500	270
+magsaltB_atoll_g2	magsaltB	atoll	2	7502	A	OPP	_v488beltbreak2	Core destroyed	763	0	2140	1990
+magsaltB_atoll_g3	magsaltB	atoll	3	7503	B	OPP	_v488beltbreak2	Core destroyed	245	0	510	1720
+magsaltB_atoll_g4	magsaltB	atoll	4	7504	A	OPP	_v488beltbreak2	Core destroyed	222	0	680	1010
+magsaltB_atoll_g5	magsaltB	atoll	5	7505	B	OPP	_v488beltbreak2	Core destroyed	165	0	350	800
+magsaltB_midgard_g0	magsaltB	midgard	0	7500	A	OPP	_v488beltbreak2	Core destroyed	170	0	510	1790
+magsaltB_midgard_g1	magsaltB	midgard	1	7501	B	OPP	_v488beltbreak2	Core destroyed	153	0	640	1460
+magsaltB_midgard_g2	magsaltB	midgard	2	7502	A	OPP	_v488beltbreak2	Core destroyed	268	0	410	1600
+magsaltB_midgard_g3	magsaltB	midgard	3	7503	B	OPP	_v488beltbreak2	Core destroyed	147	0	660	2020
+magsaltB_midgard_g4	magsaltB	midgard	4	7504	A	OPP	_v488beltbreak2	Core destroyed	671	0	550	3480
+magsaltB_midgard_g5	magsaltB	midgard	5	7505	B	OPP	_v488beltbreak2	Core destroyed	136	0	530	1600
+magsaltB_drakkarfjord_g0	magsaltB	drakkarfjord	0	7500	A	OPP	_v488beltbreak2	Core destroyed	279	0	480	1860
+magsaltB_drakkarfjord_g1	magsaltB	drakkarfjord	1	7501	B	US	magsalt	Core destroyed	208	0	930	0
+magsaltB_drakkarfjord_g2	magsaltB	drakkarfjord	2	7502	A	OPP	_v488beltbreak2	Core destroyed	196	0	350	850
+magsaltB_drakkarfjord_g3	magsaltB	drakkarfjord	3	7503	B	US	magsalt	Core destroyed	152	0	650	0
+magsaltB_drakkarfjord_g4	magsaltB	drakkarfjord	4	7504	A	OPP	_v488beltbreak2	Core destroyed	261	0	410	1940
+magsaltB_drakkarfjord_g5	magsaltB	drakkarfjord	5	7505	B	OPP	_v488beltbreak2	Core destroyed	359	0	300	2680

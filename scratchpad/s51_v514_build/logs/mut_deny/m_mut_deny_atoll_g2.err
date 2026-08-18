@@ -1,0 +1,24 @@
+Update available: 2.3.6 -> 2.3.8. Run: pip install --upgrade fcode
+FS GATE 0 sig (18, 18, (2, 14), (14, 2)) ok 1
+FS GATE 1 sig (18, 18, (2, 14), (14, 2)) ok 1
+FS PHASE 1 id 3 ph 1 d 200 at (4, 13)
+FS HOPBUILD 1 at (4, 13) lch (4, 12) T (16, 1)
+FS GATE 2 sig (18, 18, (2, 14), (14, 2)) ok 1
+FS GATE 2 sig (18, 18, (2, 14), (14, 2)) ok 1
+FS THROW 2 from (5, 13) to (8, 9) T (16, 1) body 3 n 1 dsq 72
+FS HOPBUILD 3 at (8, 9) lch (8, 8) T (16, 1)
+FS GATE 3 sig (18, 18, (2, 14), (14, 2)) ok 1
+FS GATE 4 sig (18, 18, (2, 14), (14, 2)) ok 1
+FS THROW 4 from (9, 9) to (12, 5) T (16, 1) body 3 n 1 dsq 8
+FS ARRIVE 5 id 3 body 1 at (12, 5) dsq 8
+FS PHASE 5 id 3 ph 2 d 8 at (12, 5)
+FS GATE 7 sig (18, 18, (2, 14), (14, 2)) ok 1
+FS SENTINEL 8 at (14, 7) face NORTH tgt (14, 2) score 25 n 1 onring 0 lost 0 onsray 0 olddsq -1
+FS RUNG 8 id 3 r 4 hi -
+FS GATE 8 sig (18, 18, (2, 14), (14, 2)) ok 1
+FS PHASE 9 id 3 ph 5 d 9 at (14, 6)
+FS SEAL 10 tile (14, 4) n 1
+FS SEAL 13 tile (13, 3) n 2
+FS DODGE 14 id 3 from (13, 4) to (13, 5) cov 1 -> 0 hit 0 hp 40
+FS DODGE 16 id 3 from (13, 4) to (13, 5) cov 1 -> 0 hit 0 hp 22
+FS DODGE 18 id 3 from (13, 4) to (13, 5) cov 1 -> 0 hit 0 hp 4

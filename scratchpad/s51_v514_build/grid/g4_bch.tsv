@@ -1,0 +1,25 @@
+tag	arm	map	g	seed	ord	ours	winner	cond	turn	tracebacks	ours_mined	opp_mined
+g4_bch_saga_g0	g4_bch	saga	0	8300	A	OPP	_v468kladturbo	Core destroyed	405	0	420	330
+g4_bch_saga_g1	g4_bch	saga	1	8301	B	OPP	_v468kladturbo	Core destroyed	193	0	890	630
+g4_bch_saga_g2	g4_bch	saga	2	8302	A	US	nodoor_noch	Core destroyed	183	0	2140	370
+g4_bch_saga_g3	g4_bch	saga	3	8303	B	OPP	_v468kladturbo	Core destroyed	545	0	340	670
+g4_bch_saga_g4	g4_bch	saga	4	8304	A	US	nodoor_noch	Core destroyed	369	0	420	220
+g4_bch_saga_g5	g4_bch	saga	5	8305	B	OPP	_v468kladturbo	Core destroyed	264	0	640	860
+g4_bch_saga_g6	g4_bch	saga	6	8306	A	US	nodoor_noch	Core destroyed	149	0	1800	260
+g4_bch_saga_g7	g4_bch	saga	7	8307	B	US	nodoor_noch	Core destroyed	201	0	930	500
+g4_bch_saga_g8	g4_bch	saga	8	8308	A	US	nodoor_noch	Core destroyed	355	0	2130	230
+g4_bch_saga_g9	g4_bch	saga	9	8309	B	OPP	_v468kladturbo	Core destroyed	202	0	260	1470
+g4_bch_saga_g10	g4_bch	saga	10	8310	A	US	nodoor_noch	Core destroyed	169	0	840	270
+g4_bch_saga_g11	g4_bch	saga	11	8311	B	OPP	_v468kladturbo	Titanium collected (tiebreak)	1000	0	2460	2550
+g4_bch_saga_g12	g4_bch	saga	12	8312	A	US	nodoor_noch	Core destroyed	151	0	1000	340
+g4_bch_saga_g13	g4_bch	saga	13	8313	B	US	nodoor_noch	Core destroyed	393	0	320	280
+g4_bch_saga_g14	g4_bch	saga	14	8314	A	US	nodoor_noch	Core destroyed	133	0	1070	280
+g4_bch_saga_g15	g4_bch	saga	15	8315	B	US	nodoor_noch	Core destroyed	804	0	1090	310
+g4_bch_saga_g16	g4_bch	saga	16	8316	A	OPP	_v468kladturbo	Core destroyed	184	0	870	1870
+g4_bch_saga_g17	g4_bch	saga	17	8317	B	OPP	_v468kladturbo	Core destroyed	233	0	340	1170
+g4_bch_saga_g18	g4_bch	saga	18	8318	A	US	nodoor_noch	Core destroyed	281	0	1110	240
+g4_bch_saga_g19	g4_bch	saga	19	8319	B	US	nodoor_noch	Core destroyed	417	0	990	480
+g4_bch_saga_g20	g4_bch	saga	20	8320	A	US	nodoor_noch	Core destroyed	152	0	1330	330
+g4_bch_saga_g21	g4_bch	saga	21	8321	B	OPP	_v468kladturbo	Core destroyed	297	0	240	310
+g4_bch_saga_g22	g4_bch	saga	22	8322	A	US	nodoor_noch	Titanium collected (tiebreak)	1000	0	2710	770
+g4_bch_saga_g23	g4_bch	saga	23	8323	B	OPP	_v468kladturbo	Titanium collected (tiebreak)	1000	0	130	2790

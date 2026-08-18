@@ -1,0 +1,30 @@
+ndA_glacierkeep_g0	ndA	glacierkeep	0	7400	A	US	nodoor	Core destroyed	210	0	460	0
+ndA_glacierkeep_g1	ndA	glacierkeep	1	7401	B	US	nodoor	Titanium collected (tiebreak)	1000	0	210	0
+ndA_glacierkeep_g2	ndA	glacierkeep	2	7402	A	US	nodoor	Core destroyed	281	0	230	0
+ndA_glacierkeep_g3	ndA	glacierkeep	3	7403	B	US	nodoor	Core destroyed	205	0	180	0
+ndA_glacierkeep_g4	ndA	glacierkeep	4	7404	A	US	nodoor	Core destroyed	277	0	170	0
+ndA_glacierkeep_g5	ndA	glacierkeep	5	7405	B	US	nodoor	Core destroyed	249	0	0	0
+ndA_nordkap_g0	ndA	nordkap	0	7400	A	US	nodoor	Core destroyed	882	0	2200	20
+ndA_nordkap_g1	ndA	nordkap	1	7401	B	US	nodoor	Core destroyed	311	0	770	830
+ndA_nordkap_g2	ndA	nordkap	2	7402	A	OPP	_v488beltbreak2	Core destroyed	325	0	150	330
+ndA_nordkap_g3	ndA	nordkap	3	7403	B	US	nodoor	Core destroyed	329	0	200	310
+ndA_nordkap_g4	ndA	nordkap	4	7404	A	US	nodoor	Core destroyed	437	0	1070	300
+ndA_nordkap_g5	ndA	nordkap	5	7405	B	US	nodoor	Core destroyed	226	0	540	0
+ndA_atoll_g0	ndA	atoll	0	7400	A	OPP	_v488beltbreak2	Core destroyed	313	0	370	370
+ndA_atoll_g1	ndA	atoll	1	7401	B	OPP	_v488beltbreak2	Core destroyed	197	0	370	1350
+ndA_atoll_g2	ndA	atoll	2	7402	A	US	nodoor	Titanium collected (tiebreak)	1000	0	6510	4950
+ndA_atoll_g3	ndA	atoll	3	7403	B	OPP	_v488beltbreak2	Core destroyed	632	0	4120	3250
+ndA_atoll_g4	ndA	atoll	4	7404	A	US	nodoor	Core destroyed	907	0	2440	4190
+ndA_atoll_g5	ndA	atoll	5	7405	B	US	nodoor	Core destroyed	373	0	350	240
+ndA_midgard_g0	ndA	midgard	0	7400	A	OPP	_v488beltbreak2	Titanium collected (tiebreak)	1000	0	490	800
+ndA_midgard_g1	ndA	midgard	1	7401	B	OPP	_v488beltbreak2	Core destroyed	197	0	690	2270
+ndA_midgard_g2	ndA	midgard	2	7402	A	OPP	_v488beltbreak2	Core destroyed	170	0	510	1450
+ndA_midgard_g3	ndA	midgard	3	7403	B	OPP	_v488beltbreak2	Core destroyed	159	0	500	1810
+ndA_midgard_g4	ndA	midgard	4	7404	A	OPP	_v488beltbreak2	Core destroyed	236	0	470	1960
+ndA_midgard_g5	ndA	midgard	5	7405	B	OPP	_v488beltbreak2	Core destroyed	138	0	630	1780
+ndA_drakkarfjord_g0	ndA	drakkarfjord	0	7400	A	US	nodoor	Core destroyed	432	0	2310	3580
+ndA_drakkarfjord_g1	ndA	drakkarfjord	1	7401	B	US	nodoor	Core destroyed	145	0	600	0
+ndA_drakkarfjord_g2	ndA	drakkarfjord	2	7402	A	US	nodoor	Core destroyed	417	0	650	510
+ndA_drakkarfjord_g3	ndA	drakkarfjord	3	7403	B	US	nodoor	Core destroyed	173	0	760	0
+ndA_drakkarfjord_g4	ndA	drakkarfjord	4	7404	A	OPP	_v488beltbreak2	Core destroyed	205	0	540	1560
+ndA_drakkarfjord_g5	ndA	drakkarfjord	5	7405	B	OPP	_v488beltbreak2	Core destroyed	732	0	360	1440

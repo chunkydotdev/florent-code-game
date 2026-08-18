@@ -1,0 +1,30 @@
+parA_glacierkeep_g0	parA	glacierkeep	0	7400	A	US	_v513siegecrew	Titanium collected (tiebreak)	1000	0	330	0
+parA_glacierkeep_g1	parA	glacierkeep	1	7401	B	US	_v513siegecrew	Core destroyed	205	0	70	0
+parA_glacierkeep_g2	parA	glacierkeep	2	7402	A	US	_v513siegecrew	Core destroyed	285	0	110	0
+parA_glacierkeep_g3	parA	glacierkeep	3	7403	B	US	_v513siegecrew	Titanium collected (tiebreak)	1000	0	20	0
+parA_glacierkeep_g4	parA	glacierkeep	4	7404	A	US	_v513siegecrew	Core destroyed	317	0	160	0
+parA_glacierkeep_g5	parA	glacierkeep	5	7405	B	US	_v513siegecrew	Core destroyed	177	0	180	0
+parA_nordkap_g0	parA	nordkap	0	7400	A	US	_v513siegecrew	Core destroyed	728	0	1460	1260
+parA_nordkap_g1	parA	nordkap	1	7401	B	US	_v513siegecrew	Core destroyed	253	0	1970	490
+parA_nordkap_g2	parA	nordkap	2	7402	A	US	_v513siegecrew	Core destroyed	359	0	1320	30
+parA_nordkap_g3	parA	nordkap	3	7403	B	OPP	_v488beltbreak2	Core destroyed	441	0	0	140
+parA_nordkap_g4	parA	nordkap	4	7404	A	US	_v513siegecrew	Core destroyed	171	0	410	0
+parA_nordkap_g5	parA	nordkap	5	7405	B	US	_v513siegecrew	Core destroyed	211	0	990	1270
+parA_atoll_g0	parA	atoll	0	7400	A	OPP	_v488beltbreak2	Core destroyed	344	0	1400	3260
+parA_atoll_g1	parA	atoll	1	7401	B	OPP	_v488beltbreak2	Core destroyed	187	0	360	1350
+parA_atoll_g2	parA	atoll	2	7402	A	US	_v513siegecrew	Core destroyed	703	0	1890	300
+parA_atoll_g3	parA	atoll	3	7403	B	US	_v513siegecrew	Titanium collected (tiebreak)	1000	0	4960	2660
+parA_atoll_g4	parA	atoll	4	7404	A	OPP	_v488beltbreak2	Core destroyed	331	0	2060	3040
+parA_atoll_g5	parA	atoll	5	7405	B	OPP	_v488beltbreak2	Core destroyed	216	0	220	1720
+parA_midgard_g0	parA	midgard	0	7400	A	US	_v513siegecrew	Core destroyed	351	0	1750	1300
+parA_midgard_g1	parA	midgard	1	7401	B	US	_v513siegecrew	Core destroyed	113	0	700	990
+parA_midgard_g2	parA	midgard	2	7402	A	US	_v513siegecrew	Core destroyed	809	0	2290	1110
+parA_midgard_g3	parA	midgard	3	7403	B	OPP	_v488beltbreak2	Core destroyed	165	0	600	2030
+parA_midgard_g4	parA	midgard	4	7404	A	US	_v513siegecrew	Core destroyed	329	0	3090	250
+parA_midgard_g5	parA	midgard	5	7405	B	OPP	_v488beltbreak2	Core destroyed	259	0	570	3970
+parA_drakkarfjord_g0	parA	drakkarfjord	0	7400	A	US	_v513siegecrew	Titanium collected (tiebreak)	1000	0	11340	4850
+parA_drakkarfjord_g1	parA	drakkarfjord	1	7401	B	US	_v513siegecrew	Core destroyed	123	0	400	0
+parA_drakkarfjord_g2	parA	drakkarfjord	2	7402	A	US	_v513siegecrew	Core destroyed	417	0	2950	2490
+parA_drakkarfjord_g3	parA	drakkarfjord	3	7403	B	US	_v513siegecrew	Core destroyed	160	0	690	0
+parA_drakkarfjord_g4	parA	drakkarfjord	4	7404	A	US	_v513siegecrew	Core destroyed	210	0	1320	380
+parA_drakkarfjord_g5	parA	drakkarfjord	5	7405	B	US	_v513siegecrew	Titanium collected (tiebreak)	1000	0	490	0

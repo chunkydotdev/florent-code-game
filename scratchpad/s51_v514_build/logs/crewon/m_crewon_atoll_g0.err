@@ -1,0 +1,133 @@
+Update available: 2.3.6 -> 2.3.8. Run: pip install --upgrade fcode
+FS GATE 0 sig (18, 18, (2, 14), (14, 2)) ok 1
+FS GATE 1 sig (18, 18, (2, 14), (14, 2)) ok 1
+FS PHASE 1 id 3 ph 1 d 200 at (4, 13)
+FS GATE 2 sig (18, 18, (2, 14), (14, 2)) ok 1
+FS GATE 3 sig (18, 18, (2, 14), (14, 2)) ok 1
+FS GATE 4 sig (18, 18, (2, 14), (14, 2)) ok 1
+FS PHASE 4 id 10 ph 1 d 221 at (3, 13)
+FS HOPBUILD 5 at (4, 13) lch (4, 12) T (16, 1)
+FS GATE 6 sig (18, 18, (2, 14), (14, 2)) ok 1
+FS THROW 6 from (5, 13) to (8, 9) T (16, 1) body 3 n 1 dsq 72
+FS HOPBUILD 7 at (8, 9) lch (8, 8) T (16, 1)
+FS THROW 7 from (5, 11) to (7, 8) T (16, 1) body 10 n 2 dsq 74
+FS GATE 8 sig (18, 18, (2, 14), (14, 2)) ok 1
+FS THROW 8 from (9, 9) to (12, 5) T (16, 1) body 3 n 1 dsq 8
+FS ARRIVE 9 id 3 body 1 at (12, 5) dsq 8
+FS PHASE 9 id 3 ph 2 d 8 at (12, 5)
+FS SENTINEL 9 at (12, 6) face NORTHEAST tgt (15, 3) score 18 n 1 onring 0 lost 0 onsray 0 olddsq -1
+FS RUNG 9 id 3 r 4 hi -
+FS THROW 9 from (8, 7) to (11, 4) T (16, 1) body 10 n 2 dsq 10
+FS PHASE 10 id 3 ph 5 d 8 at (12, 5)
+FS GATE 11 sig (18, 18, (2, 14), (14, 2)) ok 1
+FS SEAL 12 tile (13, 3) n 1
+FS SEAL 13 tile (14, 4) n 2
+FS DODGE 15 id 3 from (13, 5) to (13, 4) cov 1 -> 0 hit 0 hp 22
+FS ARRIVE 15 id 10 body 2 at (12, 0) dsq 8
+FS PHASE 15 id 10 ph 2 d 8 at (12, 0)
+FS DODGE 17 id 3 from (13, 5) to (13, 4) cov 1 -> 0 hit 0 hp 4
+FS STAT 20 id 3 at (13, 4) need 7 orth 6 ti 22 ammo 29 sen 1 hp 4 covden 0 eco 1 lost 0
+FS DOORSEEN 20 id 5 at (5, 9) rank 2
+FS DOORSEEN 20 id 7 at (5, 9) rank 2
+FS STAT 20 id 10 at (13, 1) need 7 orth 6 ti 22 ammo 29 sen 0 hp 40 covden 0 eco 1 lost 0
+FS DOORSEEN 20 id 30 at (5, 9) rank 2
+FS DOOR 24 id 5 at (5, 9) n 1
+FS DOOR 25 id 5 at (5, 9) n 2
+FS DOOR 26 id 5 at (5, 9) n 3
+FS DOOR 27 id 5 at (5, 9) n 4
+FS DOORSEEN 35 id 7 at (5, 9) rank 2
+FS DOORSEEN 35 id 30 at (5, 9) rank 2
+FS DOORSEEN 37 id 7 at (5, 9) rank 2
+FS DOORSEEN 39 id 7 at (5, 9) rank 2
+FS STAT 40 id 3 at (12, 3) need 7 orth 6 ti 39 ammo 40 sen 1 hp 4 covden 0 eco 1 lost 0
+FS STAT 40 id 10 at (13, 1) need 7 orth 6 ti 39 ammo 40 sen 0 hp 40 covden 0 eco 1 lost 0
+FS DOORSEEN 41 id 7 at (5, 9) rank 2
+FS PHASE 43 id 3 ph 2 d 10 at (11, 1)
+FS DOORSEEN 43 id 7 at (5, 9) rank 2
+FS DOORSEEN 45 id 7 at (5, 9) rank 2
+FS DOORSEEN 47 id 7 at (5, 9) rank 2
+FS CLEAR 48 tile (13, 1) peck 1
+FS RUNG 48 id 3 r 3 hi -
+FS DOORSEEN 49 id 7 at (5, 9) rank 2
+FS DOORSEEN 53 id 7 at (5, 9) rank 2
+FS DOORSEEN 55 id 7 at (5, 9) rank 2
+FS DOORSEEN 57 id 7 at (5, 9) rank 2
+FS DOORSEEN 59 id 7 at (5, 9) rank 2
+FS STAT 60 id 3 at (13, 0) need 7 orth 6 ti 16 ammo 21 sen 0 hp 4 covden 0 eco 1 lost 0
+FS STAT 60 id 10 at (13, 1) need 7 orth 6 ti 16 ammo 21 sen 0 hp 40 covden 0 eco 1 lost 0
+FS DOORSEEN 61 id 7 at (5, 9) rank 2
+FS DOORSEEN 66 id 7 at (5, 9) rank 2
+FS DOORSEEN 68 id 30 at (5, 9) rank 2
+FS DOORSEEN 73 id 7 at (5, 9) rank 2
+FS STAT 80 id 3 at (13, 0) need 7 orth 6 ti 16 ammo 19 sen 0 hp 4 covden 0 eco 1 lost 0
+FS DOORSEEN 80 id 7 at (5, 9) rank 2
+FS STAT 80 id 10 at (13, 1) need 7 orth 6 ti 16 ammo 19 sen 0 hp 40 covden 0 eco 1 lost 0
+FS DOORSEEN 87 id 7 at (5, 9) rank 2
+FS DOORSEEN 92 id 30 at (5, 9) rank 2
+FS DOORSEEN 93 id 7 at (5, 9) rank 2
+FS DOOR 97 id 30 at (5, 9) n 1
+FS DOOR 98 id 30 at (5, 9) n 2
+FS DOOR 99 id 30 at (5, 9) n 3
+FS STAT 100 id 3 at (13, 0) need 7 orth 6 ti 12 ammo 17 sen 0 hp 4 covden 0 eco 1 lost 0
+FS STAT 100 id 10 at (13, 1) need 7 orth 6 ti 12 ammo 17 sen 0 hp 40 covden 0 eco 1 lost 0
+FS DOOR 100 id 30 at (5, 9) n 4
+FS DOOR 101 id 30 at (5, 9) n 5
+FS DOOR 102 id 30 at (5, 9) n 6
+FS DOOR 103 id 30 at (5, 9) n 7
+FS DOOR 104 id 30 at (5, 9) n 8
+FS DOOR 105 id 30 at (5, 9) n 9
+FS DOOR 106 id 30 at (5, 9) n 10
+FS DOOR 107 id 30 at (5, 9) n 11
+FS DOOR 108 id 30 at (5, 9) n 12
+FS DOOR 109 id 30 at (5, 9) n 13
+FS DOOR 110 id 30 at (5, 9) n 14
+FS DOOR 111 id 30 at (5, 9) n 15
+FS DOOR 112 id 30 at (5, 9) n 16
+FS DOOR 113 id 30 at (5, 9) n 17
+FS DOOR 114 id 30 at (5, 9) n 18
+FS DOOR 115 id 30 at (5, 9) n 19
+FS DOOR 116 id 30 at (5, 9) n 20
+FS DOOR 117 id 30 at (5, 9) n 21
+FS DOOR 118 id 30 at (5, 9) n 22
+FS DOOR 119 id 30 at (5, 9) n 23
+FS STAT 120 id 3 at (13, 0) need 7 orth 6 ti 12 ammo 15 sen 0 hp 4 covden 0 eco 1 lost 0
+FS STAT 120 id 10 at (13, 1) need 7 orth 6 ti 12 ammo 15 sen 0 hp 40 covden 0 eco 1 lost 0
+FS DOOR 120 id 30 at (5, 9) n 24
+FS DOOR 121 id 30 at (5, 9) n 25
+FS STAT 140 id 3 at (13, 0) need 7 orth 6 ti 16 ammo 17 sen 0 hp 4 covden 0 eco 1 lost 0
+FS STAT 140 id 10 at (13, 1) need 7 orth 6 ti 16 ammo 17 sen 0 hp 40 covden 0 eco 1 lost 0
+FS STAT 160 id 3 at (13, 0) need 8 orth 7 ti 16 ammo 29 sen 0 hp 4 covden 0 eco 1 lost 0
+FS STAT 160 id 10 at (13, 1) need 8 orth 7 ti 16 ammo 29 sen 0 hp 40 covden 0 eco 1 lost 0
+FS DODGE 168 id 3 from (13, 1) to (14, 1) cov 2 -> 0 hit 0 hp 4
+FS DODGE 175 id 3 from (14, 1) to (15, 1) cov 1 -> 0 hit 0 hp 4
+FS STAT 180 id 3 at (15, 1) need 9 orth 8 ti 29 ammo 60 sen 0 hp 4 covden 0 eco 1 lost 0
+FS DODGE 183 id 3 from (15, 1) to (16, 1) cov 1 -> 0 hit 0 hp 4
+FS SEAL 184 tile (16, 2) n 3
+FS STAT 200 id 3 at (16, 1) need 8 orth 7 ti 41 ammo 60 sen 0 hp 4 covden 0 eco 1 lost 0
+FS CLEAR 204 tile (15, 1) peck 1
+FS RUNG 204 id 3 r 3 hi -
+FS CLEAR 205 tile (15, 1) peck 2
+FS RUNG 205 id 3 r 3 hi -
+FS CLEAR 208 tile (15, 1) peck 3
+FS RUNG 208 id 3 r 3 hi -
+FS CLEAR 212 tile (15, 1) peck 1
+FS RUNG 212 id 3 r 3 hi -
+FS CLEAR 216 tile (15, 1) peck 1
+FS RUNG 216 id 3 r 3 hi -
+FS CLEAR 217 tile (15, 1) peck 2
+FS RUNG 217 id 3 r 3 hi -
+FS CLEAR 218 tile (15, 1) peck 3
+FS RUNG 218 id 3 r 3 hi -
+FS CLEAR 219 tile (15, 1) peck 4
+FS RUNG 219 id 3 r 3 hi -
+FS STAT 220 id 3 at (16, 1) need 8 orth 7 ti 65 ammo 60 sen 0 hp 4 covden 0 eco 1 lost 0
+FS CLEAR 220 tile (15, 1) peck 5
+FS RUNG 220 id 3 r 3 hi -
+FS CLEAR 221 tile (15, 1) peck 6
+FS RUNG 221 id 3 r 3 hi -
+FS CLEARED 222 tile (15, 1) n 1
+FS SEAL 222 tile (15, 1) n 4
+FS SEALCLR 222 tile (15, 1) lag 0
+FS SEAL 226 tile (16, 3) n 5
+FS SENTDEAD 229 at (12, 6) lost 1
+FS SEAL 229 tile (15, 4) n 6

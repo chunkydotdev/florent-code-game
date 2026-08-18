@@ -1,0 +1,111 @@
+Update available: 2.3.6 -> 2.3.8. Run: pip install --upgrade fcode
+FS GATE 0 sig (20, 26, (9, 6), (9, 18)) ok 1
+FS GATE 1 sig (20, 26, (9, 6), (9, 18)) ok 1
+FS PHASE 1 id 4 ph 1 d 100 at (9, 17)
+FS HOPBUILD 1 at (9, 17) lch (9, 16) T (11, 5)
+FS GATE 2 sig (20, 26, (9, 6), (9, 18)) ok 1
+FS GATE 2 sig (20, 26, (9, 6), (9, 18)) ok 1
+FS THROW 2 from (9, 17) to (10, 11) T (11, 5) body 4 n 1 dsq 16
+FS HOPBUILD 3 at (10, 11) lch (10, 10) T (11, 5)
+FS GATE 3 sig (20, 26, (9, 6), (9, 18)) ok 1
+FS GATE 4 sig (20, 26, (9, 6), (9, 18)) ok 1
+FS THROW 4 from (10, 11) to (11, 5) T (11, 5) body 4 n 1 dsq 2
+FS ARRIVE 5 id 4 body 1 at (11, 5) dsq 2
+FS PHASE 5 id 4 ph 2 d 2 at (11, 5)
+FS SENTINEL 5 at (11, 4) face SOUTHWEST tgt (9, 6) score 8 n 1 onring 0 lost 0 gate (0, 0, -1) onsray 0 olddsq -1
+FS RUNG 5 id 4 r 4 hi -
+FS PHASE 6 id 4 ph 5 d 2 at (11, 5)
+FS SEAL 6 tile (10, 5) n 1
+FS DODGE 7 id 4 from (11, 5) to (11, 6) cov 1 -> 0 hit 0 hp 40
+FS GATE 7 sig (20, 26, (9, 6), (9, 18)) ok 1
+FS SEAL 8 tile (11, 7) n 2
+FS DOORSEEN 8 id 6 at (10, 14) rank 1
+FS DOORSEEN 8 id 14 at (10, 14) rank 1
+FS GATE 8 sig (20, 26, (9, 6), (9, 18)) ok 1
+FS DOORSEEN 9 id 9 at (10, 14) rank 1
+FS DOOR 9 id 14 at (10, 14) n 1
+FS SEAL 10 tile (11, 6) n 3
+FS DOOR 10 id 14 at (10, 14) n 2
+FS DOOR 11 id 14 at (10, 14) n 3
+FS DOOR 12 id 14 at (10, 14) n 4
+FS DOOR 13 id 6 at (10, 14) n 1
+FS DOOR 13 id 14 at (10, 14) n 5
+FS DOOR 14 id 6 at (10, 14) n 2
+FS DOOR 14 id 14 at (10, 14) n 6
+FS PHASE 15 id 4 ph 2 d 5 at (11, 9)
+FS DOOR 15 id 6 at (10, 14) n 3
+FS DOOR 15 id 14 at (10, 14) n 7
+FS DOOR 16 id 6 at (10, 14) n 4
+FS DOOR 16 id 9 at (10, 14) n 1
+FS DOOR 16 id 14 at (10, 14) n 8
+FS SEAL 17 tile (9, 8) n 4
+FS DOOR 17 id 6 at (10, 14) n 5
+FS STAT 20 id 4 at (8, 8) need 6 orth 5 ti 14 ammo 29 sen 0 hp 40 covden 0 eco 1 lost 0
+FS DOOR 21 id 6 at (10, 14) n 6
+FS DOOR 21 id 9 at (10, 14) n 2
+FS DOOR 22 id 6 at (10, 14) n 7
+FS DOOR 22 id 9 at (10, 14) n 3
+FS PHASE 23 id 4 ph 5 d 4 at (7, 6)
+FS SEAL 23 tile (8, 6) n 5
+FS SEAL 25 tile (8, 5) n 6
+FS DOORSEEN 28 id 19 at (10, 14) rank 1
+FS DOOR 29 id 6 at (10, 14) n 8
+FS SEAL 30 tile (10, 5) n 7
+FS DOOR 30 id 6 at (10, 14) n 9
+FS DOOR 33 id 6 at (10, 14) n 10
+FS DOOR 33 id 14 at (10, 14) n 9
+FS DOOR 33 id 19 at (10, 14) n 1
+FS DOOR 34 id 6 at (10, 14) n 11
+FS STAT 40 id 4 at (10, 4) need 5 orth 3 ti 12 ammo 7 sen 1 hp 40 covden 0 eco 1 lost 0
+FS STAT 60 id 4 at (10, 4) need 5 orth 3 ti 12 ammo 17 sen 1 hp 40 covden 0 eco 1 lost 0
+FS DODGE 68 id 4 from (7, 5) to (7, 6) cov 1 -> 0 hit 0 hp 40
+FS PHASE 70 id 4 ph 2 d 4 at (7, 7)
+FS PHASE 72 id 4 ph 5 d 4 at (7, 6)
+FS STAT 80 id 4 at (9, 4) need 4 orth 3 ti 12 ammo 17 sen 1 hp 22 covden 0 eco 1 lost 0
+FS STAT 100 id 4 at (9, 4) need 5 orth 4 ti 12 ammo 17 sen 1 hp 22 covden 0 eco 1 lost 0
+FS SEAL 119 tile (10, 5) n 8
+FS STAT 120 id 4 at (10, 4) need 4 orth 3 ti 12 ammo 11 sen 1 hp 22 covden 0 eco 1 lost 0
+FS SEAL 122 tile (8, 5) n 9
+FS SEAL 130 tile (8, 5) n 10
+FS PHASE 132 id 4 ph 2 d 8 at (7, 4)
+FS SENTDEAD 132 at (11, 4) lost 1
+FS DODGE 133 id 4 from (7, 5) to (7, 6) cov 1 -> 0 hit 0 hp 4
+FS SEAL 135 tile (8, 7) n 11
+FS STAT 140 id 4 at (6, 6) need 6 orth 5 ti 12 ammo 23 sen 0 hp 4 covden 0 eco 1 lost 1
+FS DOORSEEN 210 id 19 at (8, 21) rank 0
+FS DOORSEEN 211 id 14 at (8, 21) rank 0
+FS DOORSEEN 213 id 9 at (8, 21) rank 0
+FS DOORSEEN 215 id 9 at (7, 20) rank 0
+FS DOORSEEN 215 id 14 at (7, 20) rank 0
+FS DOORSEEN 215 id 19 at (7, 20) rank 0
+FS DOOR 215 id 19 at (7, 20) n 2
+FS DOOR 216 id 9 at (7, 20) n 4
+FS DOOR 216 id 19 at (7, 20) n 3
+FS DOORSEEN 217 id 6 at (8, 21) rank 0
+FS DOOR 217 id 9 at (7, 20) n 5
+FS DOOR 217 id 19 at (7, 20) n 4
+FS DOORSEEN 220 id 6 at (7, 20) rank 0
+FS DOOR 220 id 9 at (7, 20) n 6
+FS DOOR 220 id 19 at (7, 20) n 5
+FS DOOR 221 id 9 at (7, 20) n 7
+FS DOOR 221 id 19 at (7, 20) n 6
+FS DOOR 222 id 9 at (7, 20) n 8
+FS DOOR 224 id 19 at (7, 20) n 7
+FS DOOR 225 id 9 at (7, 20) n 9
+FS DOOR 225 id 19 at (7, 20) n 8
+FS DOOR 226 id 9 at (7, 20) n 10
+FS DOOR 226 id 19 at (7, 20) n 9
+FS DOOR 228 id 14 at (7, 20) n 10
+FS DOOR 229 id 9 at (7, 20) n 11
+FS DOOR 229 id 14 at (7, 20) n 11
+FS DOOR 229 id 19 at (7, 20) n 10
+FS DOOR 230 id 9 at (7, 20) n 12
+FS DOOR 232 id 19 at (7, 20) n 11
+FS DOOR 233 id 9 at (7, 20) n 13
+FS DOOR 233 id 19 at (7, 20) n 12
+FS DOOR 234 id 9 at (7, 20) n 14
+FS DOOR 234 id 14 at (7, 20) n 12
+FS DOOR 236 id 19 at (7, 20) n 13
+FS DOOR 237 id 9 at (7, 20) n 15
+FS DOOR 237 id 14 at (7, 20) n 13
+FS DOOR 237 id 19 at (7, 20) n 14

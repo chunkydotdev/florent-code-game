@@ -1,0 +1,31 @@
+tag	arm	map	g	seed	ord	ours	winner	cond	turn	tracebacks	ours_mined	opp_mined
+parC_glacierkeep_g0	parC	glacierkeep	0	7600	A	OPP	_v488beltbreak2	Core destroyed	673	0	170	2100
+parC_glacierkeep_g1	parC	glacierkeep	1	7601	B	OPP	_v488beltbreak2	Titanium stored (tiebreak)	1000	0	0	0
+parC_glacierkeep_g2	parC	glacierkeep	2	7602	A	US	_v513siegecrew	Core destroyed	220	0	170	0
+parC_glacierkeep_g3	parC	glacierkeep	3	7603	B	OPP	_v488beltbreak2	Core destroyed	613	0	170	730
+parC_glacierkeep_g4	parC	glacierkeep	4	7604	A	US	_v513siegecrew	Core destroyed	361	0	0	0
+parC_glacierkeep_g5	parC	glacierkeep	5	7605	B	US	_v513siegecrew	Titanium collected (tiebreak)	1000	0	40	0
+parC_nordkap_g0	parC	nordkap	0	7600	A	US	_v513siegecrew	Titanium collected (tiebreak)	1000	0	5010	3040
+parC_nordkap_g1	parC	nordkap	1	7601	B	US	_v513siegecrew	Core destroyed	146	0	890	270
+parC_nordkap_g2	parC	nordkap	2	7602	A	US	_v513siegecrew	Titanium collected (tiebreak)	1000	0	6400	1440
+parC_nordkap_g3	parC	nordkap	3	7603	B	OPP	_v488beltbreak2	Core destroyed	334	0	970	3240
+parC_nordkap_g4	parC	nordkap	4	7604	A	OPP	_v488beltbreak2	Core destroyed	304	0	1190	2750
+parC_nordkap_g5	parC	nordkap	5	7605	B	OPP	_v488beltbreak2	Core destroyed	335	0	220	3260
+parC_atoll_g0	parC	atoll	0	7600	A	OPP	_v488beltbreak2	Core destroyed	327	0	2350	1600
+parC_atoll_g1	parC	atoll	1	7601	B	OPP	_v488beltbreak2	Core destroyed	166	0	710	1260
+parC_atoll_g2	parC	atoll	2	7602	A	OPP	_v488beltbreak2	Core destroyed	212	0	650	1300
+parC_atoll_g3	parC	atoll	3	7603	B	US	_v513siegecrew	Titanium collected (tiebreak)	1000	0	5240	4960
+parC_atoll_g4	parC	atoll	4	7604	A	US	_v513siegecrew	Core destroyed	276	0	2380	1230
+parC_atoll_g5	parC	atoll	5	7605	B	OPP	_v488beltbreak2	Core destroyed	237	0	360	1100
+parC_midgard_g0	parC	midgard	0	7600	A	OPP	_v488beltbreak2	Titanium collected (tiebreak)	1000	0	8910	9650
+parC_midgard_g1	parC	midgard	1	7601	B	OPP	_v488beltbreak2	Core destroyed	103	0	560	1030
+parC_midgard_g2	parC	midgard	2	7602	A	OPP	_v488beltbreak2	Core destroyed	152	0	510	1300
+parC_midgard_g3	parC	midgard	3	7603	B	OPP	_v488beltbreak2	Core destroyed	165	0	610	2050
+parC_midgard_g4	parC	midgard	4	7604	A	OPP	_v488beltbreak2	Core destroyed	487	0	3410	6200
+parC_midgard_g5	parC	midgard	5	7605	B	OPP	_v488beltbreak2	Core destroyed	224	0	1190	2330
+parC_drakkarfjord_g0	parC	drakkarfjord	0	7600	A	OPP	_v488beltbreak2	Core destroyed	509	0	2930	5930
+parC_drakkarfjord_g1	parC	drakkarfjord	1	7601	B	US	_v513siegecrew	Core destroyed	151	0	880	240
+parC_drakkarfjord_g2	parC	drakkarfjord	2	7602	A	US	_v513siegecrew	Titanium collected (tiebreak)	1000	0	11530	4430
+parC_drakkarfjord_g3	parC	drakkarfjord	3	7603	B	US	_v513siegecrew	Core destroyed	218	0	1180	0
+parC_drakkarfjord_g4	parC	drakkarfjord	4	7604	A	US	_v513siegecrew	Core destroyed	437	0	4900	4380
+parC_drakkarfjord_g5	parC	drakkarfjord	5	7605	B	US	_v513siegecrew	Core destroyed	123	0	430	0

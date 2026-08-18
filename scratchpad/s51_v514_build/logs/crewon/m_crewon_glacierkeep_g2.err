@@ -1,0 +1,205 @@
+Update available: 2.3.6 -> 2.3.8. Run: pip install --upgrade fcode
+FS GATE 0 sig (30, 30, (14, 2), (14, 26)) ok 1
+FS GATE 1 sig (30, 30, (14, 2), (14, 26)) ok 1
+FS PHASE 1 id 3 ph 1 d 484 at (14, 4)
+FS GATE 2 sig (30, 30, (14, 2), (14, 26)) ok 1
+FS GATE 3 sig (30, 30, (14, 2), (14, 26)) ok 1
+FS GATE 4 sig (30, 30, (14, 2), (14, 26)) ok 1
+FS PHASE 4 id 9 ph 1 d 484 at (15, 4)
+FS HOPBUILD 5 at (14, 4) lch (14, 5) T (16, 28)
+FS GATE 6 sig (30, 30, (14, 2), (14, 26)) ok 1
+FS THROW 6 from (15, 4) to (15, 10) T (16, 28) body 3 n 1 dsq 256
+FS HOPBUILD 7 at (15, 10) lch (15, 11) T (16, 28)
+FS THROW 7 from (15, 6) to (14, 10) T (16, 28) body 9 n 2 dsq 256
+FS GATE 8 sig (30, 30, (14, 2), (14, 26)) ok 1
+FS THROW 8 from (16, 10) to (16, 16) T (16, 28) body 3 n 1 dsq 101
+FS HOPBUILD 9 at (16, 16) lch (16, 17) T (16, 28)
+FS THROW 9 from (14, 12) to (15, 16) T (16, 28) body 9 n 2 dsq 100
+FS GATE 10 sig (30, 30, (14, 2), (14, 26)) ok 1
+FS THROW 10 from (16, 16) to (16, 22) T (16, 28) body 3 n 1 dsq 17
+FS HOPBUILD 11 at (16, 22) lch (16, 23) T (16, 28)
+FS THROW 11 from (15, 18) to (15, 22) T (16, 28) body 9 n 2 dsq 16
+FS GATE 12 sig (30, 30, (14, 2), (14, 26)) ok 1
+FS THROW 12 from (16, 22) to (16, 28) T (16, 28) body 3 n 1 dsq 2
+FS ARRIVE 13 id 3 body 1 at (16, 28) dsq 2
+FS PHASE 13 id 3 ph 2 d 2 at (16, 28)
+FS SEAL 13 tile (16, 27) n 1
+FS THROW 13 from (15, 24) to (15, 28) T (16, 28) body 9 n 2 dsq 1
+FS ARRIVE 14 id 9 body 2 at (15, 28) dsq 1
+FS PHASE 14 id 9 ph 2 d 1 at (15, 28)
+FS GATE 15 sig (30, 30, (14, 2), (14, 26)) ok 1
+FS SEAL 16 tile (15, 28) n 2
+FS DODGE 19 id 9 from (13, 25) to (14, 25) cov 1 -> 0 hit 0 hp 22
+FS STAT 20 id 3 at (17, 26) need 6 orth 5 ti 41 ammo 16 sen 0 hp 40 covden 0 eco 0 lost 0
+FS SEAL 20 tile (16, 26) n 3
+FS STAT 20 id 9 at (14, 25) need 5 orth 4 ti 35 ammo 16 sen 0 hp 22 covden 0 eco 0 lost 0
+FS DODGE 21 id 9 from (14, 24) to (15, 24) cov 1 -> 0 hit 0 hp 4
+FS DODGE 23 id 9 from (14, 24) to (14, 25) cov 1 -> 0 hit 0 hp 4
+FS DODGE 25 id 9 from (13, 25) to (14, 25) cov 1 -> 0 hit 0 hp 4
+FS DODGE 26 id 3 from (14, 24) to (15, 24) cov 1 -> 0 hit 0 hp 40
+FS SEAL 27 tile (15, 25) n 4
+FS DODGE 27 id 9 from (13, 25) to (13, 26) cov 1 -> 0 hit 0 hp 4
+FS DODGE 29 id 3 from (14, 24) to (14, 25) cov 1 -> 0 hit 0 hp 40
+FS DODGE 31 id 9 from (13, 25) to (14, 25) cov 1 -> 0 hit 0 hp 4
+FS DODGE 32 id 3 from (14, 24) to (15, 24) cov 1 -> 0 hit 0 hp 40
+FS DODGE 33 id 9 from (13, 25) to (14, 25) cov 1 -> 0 hit 0 hp 4
+FS DODGE 34 id 3 from (14, 24) to (15, 24) cov 1 -> 0 hit 0 hp 40
+FS DODGE 35 id 9 from (13, 25) to (14, 25) cov 1 -> 0 hit 0 hp 4
+FS DODGE 36 id 3 from (14, 24) to (15, 24) cov 1 -> 0 hit 0 hp 40
+FS DODGE 37 id 9 from (13, 25) to (14, 25) cov 1 -> 0 hit 0 hp 4
+FS DODGE 38 id 3 from (14, 24) to (15, 24) cov 1 -> 0 hit 0 hp 40
+FS DODGE 39 id 9 from (13, 25) to (14, 25) cov 1 -> 0 hit 0 hp 4
+FS STAT 40 id 3 at (14, 24) need 4 orth 3 ti 32 ammo 21 sen 0 hp 40 covden 0 eco 1 lost 0
+FS DODGE 40 id 3 from (14, 24) to (15, 24) cov 1 -> 0 hit 0 hp 40
+FS STAT 40 id 9 at (14, 25) need 4 orth 3 ti 26 ammo 21 sen 0 hp 4 covden 0 eco 1 lost 0
+FS DODGE 41 id 9 from (13, 25) to (14, 25) cov 1 -> 0 hit 0 hp 4
+FS DODGE 42 id 3 from (14, 24) to (15, 24) cov 1 -> 0 hit 0 hp 40
+FS DODGE 43 id 9 from (13, 25) to (14, 25) cov 1 -> 0 hit 0 hp 4
+FS DODGE 44 id 3 from (14, 24) to (15, 24) cov 1 -> 0 hit 0 hp 40
+FS DODGE 45 id 9 from (13, 25) to (14, 25) cov 1 -> 0 hit 0 hp 4
+FS DODGE 46 id 3 from (14, 24) to (15, 24) cov 1 -> 0 hit 0 hp 40
+FS DODGE 47 id 9 from (13, 25) to (14, 25) cov 1 -> 0 hit 0 hp 4
+FS DODGE 48 id 3 from (14, 24) to (15, 24) cov 1 -> 0 hit 0 hp 40
+FS DODGE 49 id 9 from (13, 25) to (14, 25) cov 1 -> 0 hit 0 hp 4
+FS DODGE 50 id 3 from (14, 24) to (15, 24) cov 1 -> 0 hit 0 hp 40
+FS DODGE 51 id 9 from (13, 25) to (14, 25) cov 1 -> 0 hit 0 hp 4
+FS DODGE 52 id 3 from (14, 24) to (15, 24) cov 1 -> 0 hit 0 hp 40
+FS DODGE 53 id 9 from (13, 25) to (14, 25) cov 1 -> 0 hit 0 hp 4
+FS DODGE 54 id 3 from (14, 24) to (13, 24) cov 1 -> 0 hit 0 hp 40
+FS DODGE 55 id 9 from (13, 25) to (14, 25) cov 1 -> 0 hit 0 hp 4
+FS DODGE 57 id 9 from (13, 25) to (14, 25) cov 1 -> 0 hit 0 hp 4
+FS DODGE 59 id 9 from (13, 25) to (14, 25) cov 1 -> 0 hit 0 hp 4
+FS STAT 60 id 3 at (12, 24) need 6 orth 5 ti 64 ammo 24 sen 0 hp 40 covden 0 eco 1 lost 0
+FS STAT 60 id 9 at (14, 25) need 4 orth 3 ti 64 ammo 24 sen 0 hp 4 covden 0 eco 1 lost 0
+FS DODGE 61 id 9 from (13, 25) to (14, 25) cov 1 -> 0 hit 0 hp 4
+FS DODGE 63 id 9 from (13, 25) to (14, 25) cov 1 -> 0 hit 0 hp 4
+FS EVICTOR 64 at (13, 25) ucov 1 cov 0 unseal 1 obs 4
+FS RUNG 64 id 9 r 2 hi -
+FS SEAL 65 tile (13, 27) n 5
+FS GATE 65 sig (30, 30, (14, 2), (14, 26)) ok 1
+FS EVICT 65 from (14, 24) to (8, 24)
+FS DODGE 67 id 9 from (14, 24) to (14, 25) cov 1 -> 0 hit 0 hp 4
+FS SEAL 68 tile (14, 28) n 6
+FS EVICT 69 from (12, 24) to (18, 24)
+FS SEAL 77 tile (13, 25) n 7
+FS STAT 80 id 3 at (13, 24) need 3 orth 2 ti 43 ammo 24 sen 0 hp 40 covden 8 eco 1 lost 0
+FS SEAL 80 tile (13, 25) n 8
+FS DODGE 82 id 3 from (14, 24) to (14, 25) cov 1 -> 0 hit 0 hp 40
+FS DODGE 84 id 3 from (14, 24) to (14, 25) cov 1 -> 0 hit 0 hp 40
+FS SEAL 88 tile (13, 25) n 9
+FS DODGE 92 id 3 from (14, 24) to (14, 25) cov 1 -> 0 hit 0 hp 40
+FS DODGE 94 id 3 from (14, 24) to (14, 25) cov 1 -> 0 hit 0 hp 40
+FS DODGE 96 id 3 from (14, 24) to (14, 25) cov 1 -> 0 hit 0 hp 22
+FS DODGE 98 id 3 from (14, 24) to (14, 25) cov 1 -> 0 hit 0 hp 4
+FS GATE 241 sig (30, 30, (14, 2), (14, 26)) ok 1
+FS PHASE 241 id 322 ph 1 d 530 at (16, 3)
+FS HOPBUILD 242 at (16, 4) lch (16, 5) T (16, 28)
+FS GATE 243 sig (30, 30, (14, 2), (14, 26)) ok 1
+FS THROW 243 from (16, 4) to (16, 10) T (16, 28) body 322 n 1 dsq 257
+FS HOPBUILD 248 at (15, 13) lch (16, 13) T (16, 28)
+FS GATE 249 sig (30, 30, (14, 2), (14, 26)) ok 1
+FS THROW 249 from (15, 13) to (15, 18) T (16, 28) body 322 n 1 dsq 64
+FS ARRIVE 256 id 322 body 1 at (15, 24) dsq 4
+FS PHASE 256 id 322 ph 2 d 4 at (15, 24)
+FS GATE 282 sig (30, 30, (14, 2), (14, 26)) ok 1
+FS GATE 294 sig (30, 30, (14, 2), (14, 26)) ok 1
+FS PHASE 294 id 415 ph 1 d 485 at (13, 4)
+FS HOPBUILD 295 at (12, 4) lch (13, 4) T (16, 28)
+FS GATE 296 sig (30, 30, (14, 2), (14, 26)) ok 1
+FS THROW 296 from (12, 5) to (14, 9) T (16, 28) body 415 n 1 dsq 289
+FS HOPBUILD 301 at (17, 10) lch (16, 10) T (16, 28)
+FS GATE 302 sig (30, 30, (14, 2), (14, 26)) ok 1
+FS THROW 302 from (17, 10) to (17, 15) T (16, 28) body 415 n 1 dsq 125
+FS ARRIVE 314 id 415 body 1 at (15, 24) dsq 4
+FS PHASE 314 id 415 ph 2 d 4 at (15, 24)
+FS DODGE 315 id 415 from (14, 24) to (14, 25) cov 1 -> 0 hit 0 hp 22
+FS SEAL 316 tile (13, 25) n 1
+FS STAT 320 id 415 at (14, 25) need 2 orth 2 ti 138 ammo 24 sen 0 hp 22 covden 0 eco 1 lost 0
+FS DODGE 323 id 415 from (14, 24) to (14, 25) cov 1 -> 0 hit 0 hp 4
+FS DODGE 325 id 415 from (14, 24) to (14, 25) cov 1 -> 0 hit 0 hp 4
+FS GATE 329 sig (30, 30, (14, 2), (14, 26)) ok 1
+FS GATE 337 sig (30, 30, (14, 2), (14, 26)) ok 1
+FS PHASE 337 id 478 ph 1 d 485 at (13, 4)
+FS HOPBUILD 337 at (13, 4) lch (13, 5) T (16, 28)
+FS GATE 338 sig (30, 30, (14, 2), (14, 26)) ok 1
+FS THROW 338 from (13, 4) to (14, 10) T (16, 28) body 478 n 1 dsq 256
+FS HOPBUILD 340 at (15, 10) lch (15, 11) T (16, 28)
+FS GATE 341 sig (30, 30, (14, 2), (14, 26)) ok 1
+FS THROW 341 from (16, 10) to (16, 16) T (16, 28) body 478 n 1 dsq 101
+FS HOPBUILD 347 at (15, 20) lch (15, 21) T (16, 28)
+FS GATE 348 sig (30, 30, (14, 2), (14, 26)) ok 1
+FS THROW 348 from (16, 20) to (16, 25) T (16, 28) body 478 n 1 dsq 2
+FS ARRIVE 349 id 478 body 1 at (16, 25) dsq 2
+FS PHASE 349 id 478 ph 2 d 2 at (16, 25)
+FS DODGE 352 id 478 from (15, 23) to (14, 23) cov 1 -> 0 hit 0 hp 22
+FS STAT 360 id 478 at (14, 24) need 3 orth 2 ti 82 ammo 24 sen 0 hp 4 covden 0 eco 1 lost 0
+FS DODGE 360 id 478 from (14, 24) to (14, 25) cov 1 -> 0 hit 0 hp 4
+FS GATE 376 sig (30, 30, (14, 2), (14, 26)) ok 1
+FS PHASE 376 id 515 ph 1 d 485 at (13, 4)
+FS HOPBUILD 376 at (13, 4) lch (13, 5) T (16, 28)
+FS GATE 377 sig (30, 30, (14, 2), (14, 26)) ok 1
+FS THROW 377 from (13, 4) to (14, 10) T (16, 28) body 515 n 1 dsq 256
+FS HOPBUILD 388 at (17, 17) lch (16, 17) T (16, 28)
+FS GATE 389 sig (30, 30, (14, 2), (14, 26)) ok 1
+FS THROW 389 from (17, 17) to (16, 22) T (16, 28) body 515 n 1 dsq 17
+FS ARRIVE 392 id 515 body 1 at (16, 24) dsq 5
+FS PHASE 392 id 515 ph 2 d 5 at (16, 24)
+FS DODGE 392 id 515 from (16, 24) to (16, 25) cov 1 -> 0 hit 0 hp 1
+FS DODGE 394 id 515 from (16, 24) to (16, 25) cov 1 -> 0 hit 0 hp 1
+FS DODGE 396 id 515 from (16, 24) to (16, 25) cov 1 -> 0 hit 0 hp 1
+FS DODGE 398 id 515 from (16, 24) to (16, 25) cov 1 -> 0 hit 0 hp 1
+FS STAT 400 id 515 at (16, 24) need 3 orth 2 ti 71 ammo 24 sen 0 hp 1 covden 0 eco 1 lost 0
+FS DODGE 400 id 515 from (16, 24) to (16, 25) cov 1 -> 0 hit 0 hp 1
+FS DODGE 402 id 515 from (16, 24) to (16, 25) cov 1 -> 0 hit 0 hp 1
+FS DODGE 404 id 515 from (16, 24) to (16, 25) cov 1 -> 0 hit 0 hp 1
+FS DODGE 406 id 515 from (16, 24) to (16, 25) cov 1 -> 0 hit 0 hp 1
+FS DODGE 408 id 515 from (16, 24) to (16, 25) cov 1 -> 0 hit 0 hp 1
+FS DODGE 410 id 515 from (16, 24) to (16, 25) cov 1 -> 0 hit 0 hp 1
+FS DODGE 412 id 515 from (16, 24) to (16, 25) cov 1 -> 0 hit 0 hp 1
+FS SENTINEL 413 at (17, 25) face SOUTHWEST tgt (15, 27) score 8 n 1 onring 0 lost 0 onsray 0 olddsq -1
+FS RUNG 413 id 515 r 4 hi -
+FS PHASE 414 id 515 ph 5 d 2 at (16, 25)
+FS DODGE 415 id 515 from (16, 24) to (16, 25) cov 1 -> 0 hit 0 hp 1
+FS DODGE 417 id 515 from (16, 24) to (16, 25) cov 1 -> 0 hit 0 hp 1
+FS DODGE 419 id 515 from (16, 24) to (16, 25) cov 1 -> 0 hit 0 hp 1
+FS STAT 420 id 515 at (16, 25) need 3 orth 2 ti 46 ammo 26 sen 1 hp 1 covden 0 eco 1 lost 0
+FS DODGE 421 id 515 from (16, 24) to (16, 25) cov 1 -> 0 hit 0 hp 1
+FS DODGE 423 id 515 from (16, 24) to (16, 25) cov 1 -> 0 hit 0 hp 1
+FS DODGE 425 id 515 from (16, 24) to (16, 25) cov 1 -> 0 hit 0 hp 1
+FS DODGE 427 id 515 from (16, 24) to (16, 25) cov 1 -> 0 hit 0 hp 1
+FS DODGE 429 id 515 from (16, 24) to (16, 25) cov 1 -> 0 hit 0 hp 1
+FS DODGE 431 id 515 from (16, 24) to (16, 25) cov 1 -> 0 hit 0 hp 1
+FS DODGE 433 id 515 from (16, 24) to (16, 25) cov 1 -> 0 hit 0 hp 1
+FS DODGE 435 id 515 from (16, 24) to (16, 25) cov 1 -> 0 hit 0 hp 1
+FS DODGE 437 id 515 from (16, 24) to (16, 25) cov 1 -> 0 hit 0 hp 1
+FS DODGE 439 id 515 from (16, 24) to (16, 25) cov 1 -> 0 hit 0 hp 1
+FS STAT 440 id 515 at (16, 25) need 3 orth 2 ti 46 ammo 26 sen 1 hp 1 covden 0 eco 1 lost 0
+FS DODGE 441 id 515 from (16, 24) to (16, 25) cov 1 -> 0 hit 0 hp 1
+FS DODGE 443 id 515 from (16, 24) to (16, 25) cov 1 -> 0 hit 0 hp 1
+FS DODGE 445 id 515 from (16, 24) to (16, 25) cov 1 -> 0 hit 0 hp 1
+FS DODGE 447 id 515 from (16, 24) to (16, 25) cov 1 -> 0 hit 0 hp 1
+FS DODGE 449 id 515 from (16, 24) to (16, 25) cov 1 -> 0 hit 0 hp 1
+FS DODGE 451 id 515 from (16, 24) to (16, 25) cov 1 -> 0 hit 0 hp 1
+FS DODGE 453 id 515 from (16, 24) to (16, 25) cov 1 -> 0 hit 0 hp 1
+FS DODGE 455 id 515 from (16, 24) to (16, 25) cov 1 -> 0 hit 0 hp 1
+FS DODGE 458 id 515 from (16, 24) to (16, 25) cov 1 -> 0 hit 0 hp 1
+FS STAT 460 id 515 at (16, 24) need 5 orth 2 ti 46 ammo 26 sen 1 hp 1 covden 0 eco 1 lost 0
+FS DODGE 460 id 515 from (16, 24) to (16, 25) cov 1 -> 0 hit 0 hp 1
+FS DODGE 462 id 515 from (16, 24) to (16, 25) cov 1 -> 0 hit 0 hp 1
+FS DODGE 464 id 515 from (16, 24) to (16, 25) cov 1 -> 0 hit 0 hp 1
+FS DODGE 466 id 515 from (16, 24) to (16, 25) cov 1 -> 0 hit 0 hp 1
+FS DODGE 468 id 515 from (16, 24) to (16, 25) cov 1 -> 0 hit 0 hp 1
+FS DODGE 470 id 515 from (16, 24) to (16, 25) cov 1 -> 0 hit 0 hp 1
+FS DODGE 472 id 515 from (16, 24) to (16, 25) cov 1 -> 0 hit 0 hp 1
+FS DODGE 474 id 515 from (16, 24) to (16, 25) cov 1 -> 0 hit 0 hp 1
+FS DODGE 476 id 515 from (16, 24) to (16, 25) cov 1 -> 0 hit 0 hp 1
+FS DODGE 478 id 515 from (16, 24) to (16, 25) cov 1 -> 0 hit 0 hp 1
+FS STAT 480 id 515 at (16, 24) need 5 orth 2 ti 46 ammo 26 sen 1 hp 1 covden 0 eco 1 lost 0
+FS DODGE 480 id 515 from (16, 24) to (16, 25) cov 1 -> 0 hit 0 hp 1
+FS DODGE 482 id 515 from (16, 24) to (16, 25) cov 1 -> 0 hit 0 hp 1
+FS DODGE 484 id 515 from (16, 24) to (16, 25) cov 1 -> 0 hit 0 hp 1
+FS DODGE 486 id 515 from (16, 24) to (16, 25) cov 1 -> 0 hit 0 hp 1
+FS DODGE 488 id 515 from (16, 24) to (16, 25) cov 1 -> 0 hit 0 hp 1
+FS DODGE 490 id 515 from (16, 24) to (16, 25) cov 1 -> 0 hit 0 hp 1
+FS DODGE 492 id 515 from (16, 24) to (16, 25) cov 1 -> 0 hit 0 hp 1
+FS DODGE 494 id 515 from (16, 24) to (16, 25) cov 1 -> 0 hit 0 hp 1

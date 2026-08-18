@@ -1,0 +1,25 @@
+tag	arm	map	g	seed	ord	ours	winner	cond	turn	tracebacks	ours_mined	opp_mined
+g4_v512_saga_g0	g4_v512	saga	0	8300	A	US	_v512ringladder	Core destroyed	509	0	1350	230
+g4_v512_saga_g1	g4_v512	saga	1	8301	B	OPP	_v468kladturbo	Titanium collected (tiebreak)	1000	0	280	340
+g4_v512_saga_g2	g4_v512	saga	2	8302	A	US	_v512ringladder	Core destroyed	149	0	550	400
+g4_v512_saga_g3	g4_v512	saga	3	8303	B	US	_v512ringladder	Core destroyed	929	0	490	230
+g4_v512_saga_g4	g4_v512	saga	4	8304	A	US	_v512ringladder	Core destroyed	127	0	1270	450
+g4_v512_saga_g5	g4_v512	saga	5	8305	B	OPP	_v468kladturbo	Core destroyed	132	0	560	1000
+g4_v512_saga_g6	g4_v512	saga	6	8306	A	OPP	_v468kladturbo	Core destroyed	481	0	1260	810
+g4_v512_saga_g7	g4_v512	saga	7	8307	B	US	_v512ringladder	Core destroyed	329	0	1690	930
+g4_v512_saga_g8	g4_v512	saga	8	8308	A	US	_v512ringladder	Core destroyed	117	0	790	270
+g4_v512_saga_g9	g4_v512	saga	9	8309	B	OPP	_v468kladturbo	Titanium collected (tiebreak)	1000	0	230	390
+g4_v512_saga_g10	g4_v512	saga	10	8310	A	US	_v512ringladder	Core destroyed	204	0	1530	680
+g4_v512_saga_g11	g4_v512	saga	11	8311	B	OPP	_v468kladturbo	Core destroyed	163	0	410	1160
+g4_v512_saga_g12	g4_v512	saga	12	8312	A	US	_v512ringladder	Core destroyed	165	0	1250	300
+g4_v512_saga_g13	g4_v512	saga	13	8313	B	OPP	_v468kladturbo	Core destroyed	144	0	230	1310
+g4_v512_saga_g14	g4_v512	saga	14	8314	A	US	_v512ringladder	Core destroyed	181	0	1360	300
+g4_v512_saga_g15	g4_v512	saga	15	8315	B	OPP	_v468kladturbo	Core destroyed	188	0	340	1660
+g4_v512_saga_g16	g4_v512	saga	16	8316	A	OPP	_v468kladturbo	Core destroyed	493	0	1760	260
+g4_v512_saga_g17	g4_v512	saga	17	8317	B	OPP	_v468kladturbo	Core destroyed	132	0	310	930
+g4_v512_saga_g18	g4_v512	saga	18	8318	A	US	_v512ringladder	Core destroyed	162	0	1410	1000
+g4_v512_saga_g19	g4_v512	saga	19	8319	B	OPP	_v468kladturbo	Core destroyed	161	0	360	1210
+g4_v512_saga_g20	g4_v512	saga	20	8320	A	US	_v512ringladder	Core destroyed	264	0	3950	990
+g4_v512_saga_g21	g4_v512	saga	21	8321	B	OPP	_v468kladturbo	Core destroyed	148	0	0	1150
+g4_v512_saga_g22	g4_v512	saga	22	8322	A	US	_v512ringladder	Core destroyed	198	0	2660	380
+g4_v512_saga_g23	g4_v512	saga	23	8323	B	US	_v512ringladder	Core destroyed	701	0	240	380

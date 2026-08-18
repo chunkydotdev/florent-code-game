@@ -1,0 +1,37 @@
+tag	arm	map	g	seed	ord	ours	winner	cond	turn	tracebacks	ours_mined	opp_mined
+g6_pnd_archipelago_g0	g6_pnd	archipelago	0	8200	A	US	par_nodoor	Core destroyed	509	0	3740	3720
+g6_pnd_archipelago_g1	g6_pnd	archipelago	1	8201	B	OPP	_v468kladturbo	Core destroyed	110	0	930	970
+g6_pnd_archipelago_g2	g6_pnd	archipelago	2	8202	A	US	par_nodoor	Core destroyed	173	0	1950	1000
+g6_pnd_archipelago_g3	g6_pnd	archipelago	3	8203	B	US	par_nodoor	Core destroyed	175	0	1670	1050
+g6_pnd_archipelago_g4	g6_pnd	archipelago	4	8204	A	OPP	_v468kladturbo	Core destroyed	220	0	1800	1780
+g6_pnd_archipelago_g5	g6_pnd	archipelago	5	8205	B	US	par_nodoor	Core destroyed	149	0	1250	1020
+g6_pnd_archipelago_g6	g6_pnd	archipelago	6	8206	A	US	par_nodoor	Core destroyed	175	0	1570	1310
+g6_pnd_archipelago_g7	g6_pnd	archipelago	7	8207	B	OPP	_v468kladturbo	Core destroyed	173	0	970	1240
+g6_pnd_archipelago_g8	g6_pnd	archipelago	8	8208	A	OPP	_v468kladturbo	Core destroyed	560	0	4260	4120
+g6_pnd_archipelago_g9	g6_pnd	archipelago	9	8209	B	US	par_nodoor	Core destroyed	597	0	3160	3400
+g6_pnd_archipelago_g10	g6_pnd	archipelago	10	8210	A	US	par_nodoor	Core destroyed	221	0	2070	760
+g6_pnd_archipelago_g11	g6_pnd	archipelago	11	8211	B	US	par_nodoor	Core destroyed	126	0	1110	680
+g6_pnd_archipelago_g12	g6_pnd	archipelago	12	8212	A	OPP	_v468kladturbo	Core destroyed	530	0	2850	2740
+g6_pnd_archipelago_g13	g6_pnd	archipelago	13	8213	B	OPP	_v468kladturbo	Core destroyed	339	0	1800	2460
+g6_pnd_archipelago_g14	g6_pnd	archipelago	14	8214	A	US	par_nodoor	Core destroyed	219	0	2010	1530
+g6_pnd_archipelago_g15	g6_pnd	archipelago	15	8215	B	US	par_nodoor	Core destroyed	203	0	2340	1000
+g6_pnd_archipelago_g16	g6_pnd	archipelago	16	8216	A	US	par_nodoor	Core destroyed	228	0	2150	690
+g6_pnd_archipelago_g17	g6_pnd	archipelago	17	8217	B	US	par_nodoor	Core destroyed	134	0	1200	920
+g6_pnd_archipelago_g18	g6_pnd	archipelago	18	8218	A	OPP	_v468kladturbo	Core destroyed	369	0	2450	2060
+g6_pnd_archipelago_g19	g6_pnd	archipelago	19	8219	B	US	par_nodoor	Core destroyed	397	0	2160	930
+g6_pnd_archipelago_g20	g6_pnd	archipelago	20	8220	A	US	par_nodoor	Titanium collected (tiebreak)	1000	0	5730	4990
+g6_pnd_archipelago_g21	g6_pnd	archipelago	21	8221	B	US	par_nodoor	Core destroyed	311	0	2430	1640
+g6_pnd_archipelago_g22	g6_pnd	archipelago	22	8222	A	US	par_nodoor	Core destroyed	453	0	4660	2140
+g6_pnd_archipelago_g23	g6_pnd	archipelago	23	8223	B	US	par_nodoor	Core destroyed	163	0	1470	830
+g6_pnd_archipelago_g24	g6_pnd	archipelago	24	8224	A	OPP	_v468kladturbo	Core destroyed	138	0	950	1230
+g6_pnd_archipelago_g25	g6_pnd	archipelago	25	8225	B	US	par_nodoor	Core destroyed	132	0	1220	880
+g6_pnd_archipelago_g26	g6_pnd	archipelago	26	8226	A	US	par_nodoor	Core destroyed	289	0	2340	250
+g6_pnd_archipelago_g27	g6_pnd	archipelago	27	8227	B	US	par_nodoor	Core destroyed	142	0	1800	760
+g6_pnd_archipelago_g28	g6_pnd	archipelago	28	8228	A	US	par_nodoor	Core destroyed	204	0	2040	560
+g6_pnd_archipelago_g29	g6_pnd	archipelago	29	8229	B	US	par_nodoor	Core destroyed	284	0	2420	990
+g6_pnd_archipelago_g30	g6_pnd	archipelago	30	8230	A	US	par_nodoor	Core destroyed	368	0	3530	1880
+g6_pnd_archipelago_g31	g6_pnd	archipelago	31	8231	B	US	par_nodoor	Core destroyed	256	0	2330	900
+g6_pnd_archipelago_g32	g6_pnd	archipelago	32	8232	A	US	par_nodoor	Core destroyed	376	0	3590	940
+g6_pnd_archipelago_g33	g6_pnd	archipelago	33	8233	B	US	par_nodoor	Core destroyed	126	0	1300	740
+g6_pnd_archipelago_g34	g6_pnd	archipelago	34	8234	A	OPP	_v468kladturbo	Core destroyed	560	0	4260	4120
+g6_pnd_archipelago_g35	g6_pnd	archipelago	35	8235	B	OPP	_v468kladturbo	Core destroyed	328	0	2910	2000

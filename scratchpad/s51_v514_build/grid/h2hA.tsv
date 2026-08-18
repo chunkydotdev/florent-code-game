@@ -1,0 +1,31 @@
+tag	arm	map	g	seed	ord	ours	winner	cond	turn	tracebacks	ours_mined	opp_mined
+h2hA_glacierkeep_g0	h2hA	glacierkeep	0	7400	A	OPP	_v513siegecrew	Titanium collected (tiebreak)	1000	0	0	1260
+h2hA_glacierkeep_g1	h2hA	glacierkeep	1	7401	B	US	_v514ferrycrew	Core destroyed	668	0	0	0
+h2hA_glacierkeep_g2	h2hA	glacierkeep	2	7402	A	OPP	_v513siegecrew	Core destroyed	325	0	0	590
+h2hA_glacierkeep_g3	h2hA	glacierkeep	3	7403	B	US	_v514ferrycrew	Titanium collected (tiebreak)	1000	0	970	0
+h2hA_glacierkeep_g4	h2hA	glacierkeep	4	7404	A	US	_v514ferrycrew	Harvesters (tiebreak)	1000	0	0	0
+h2hA_glacierkeep_g5	h2hA	glacierkeep	5	7405	B	OPP	_v513siegecrew	Core destroyed	653	0	0	0
+h2hA_nordkap_g0	h2hA	nordkap	0	7400	A	OPP	_v513siegecrew	Core destroyed	339	0	740	1700
+h2hA_nordkap_g1	h2hA	nordkap	1	7401	B	US	_v514ferrycrew	Core destroyed	106	0	270	70
+h2hA_nordkap_g2	h2hA	nordkap	2	7402	A	US	_v514ferrycrew	Core destroyed	326	0	4240	1010
+h2hA_nordkap_g3	h2hA	nordkap	3	7403	B	OPP	_v513siegecrew	Core destroyed	333	0	100	70
+h2hA_nordkap_g4	h2hA	nordkap	4	7404	A	US	_v514ferrycrew	Core destroyed	185	0	80	160
+h2hA_nordkap_g5	h2hA	nordkap	5	7405	B	OPP	_v513siegecrew	Core destroyed	249	0	90	70
+h2hA_atoll_g0	h2hA	atoll	0	7400	A	US	_v514ferrycrew	Core destroyed	125	0	400	160
+h2hA_atoll_g1	h2hA	atoll	1	7401	B	OPP	_v513siegecrew	Core destroyed	719	0	3400	1830
+h2hA_atoll_g2	h2hA	atoll	2	7402	A	OPP	_v513siegecrew	Titanium collected (tiebreak)	1000	0	2550	4820
+h2hA_atoll_g3	h2hA	atoll	3	7403	B	US	_v514ferrycrew	Core destroyed	176	0	720	410
+h2hA_atoll_g4	h2hA	atoll	4	7404	A	OPP	_v513siegecrew	Core destroyed	412	0	1070	1910
+h2hA_atoll_g5	h2hA	atoll	5	7405	B	US	_v514ferrycrew	Core destroyed	133	0	320	370
+h2hA_midgard_g0	h2hA	midgard	0	7400	A	US	_v514ferrycrew	Core destroyed	200	0	490	240
+h2hA_midgard_g1	h2hA	midgard	1	7401	B	OPP	_v513siegecrew	Core destroyed	142	0	100	340
+h2hA_midgard_g2	h2hA	midgard	2	7402	A	US	_v514ferrycrew	Core destroyed	145	0	200	120
+h2hA_midgard_g3	h2hA	midgard	3	7403	B	OPP	_v513siegecrew	Core destroyed	129	0	100	310
+h2hA_midgard_g4	h2hA	midgard	4	7404	A	US	_v514ferrycrew	Core destroyed	145	0	200	120
+h2hA_midgard_g5	h2hA	midgard	5	7405	B	OPP	_v513siegecrew	Core destroyed	129	0	100	310
+h2hA_drakkarfjord_g0	h2hA	drakkarfjord	0	7400	A	US	_v514ferrycrew	Core destroyed	406	0	2480	200
+h2hA_drakkarfjord_g1	h2hA	drakkarfjord	1	7401	B	OPP	_v513siegecrew	Core destroyed	873	0	2240	2580
+h2hA_drakkarfjord_g2	h2hA	drakkarfjord	2	7402	A	US	_v514ferrycrew	Core destroyed	395	0	2510	0
+h2hA_drakkarfjord_g3	h2hA	drakkarfjord	3	7403	B	US	_v514ferrycrew	Core destroyed	374	0	1560	330
+h2hA_drakkarfjord_g4	h2hA	drakkarfjord	4	7404	A	US	_v514ferrycrew	Core destroyed	569	0	950	170
+h2hA_drakkarfjord_g5	h2hA	drakkarfjord	5	7405	B	US	_v514ferrycrew	Core destroyed	857	0	190	0

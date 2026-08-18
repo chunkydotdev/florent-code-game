@@ -1,0 +1,94 @@
+Update available: 2.3.6 -> 2.3.8. Run: pip install --upgrade fcode
+FS GATE 0 sig (30, 30, (2, 2), (26, 26)) ok 1
+FS GATE 1 sig (30, 30, (2, 2), (26, 26)) ok 1
+FS PHASE 1 id 4 ph 1 d 1013 at (26, 25)
+FS HOPBUILD 1 at (26, 25) lch (26, 24) T (1, 1)
+FS GATE 2 sig (30, 30, (2, 2), (26, 26)) ok 1
+FS GATE 2 sig (30, 30, (2, 2), (26, 26)) ok 1
+FS THROW 2 from (26, 25) to (22, 21) T (1, 1) body 4 n 1 dsq 685
+FS HOPBUILD 3 at (22, 21) lch (21, 21) T (1, 1)
+FS GATE 3 sig (30, 30, (2, 2), (26, 26)) ok 1
+FS GATE 4 sig (30, 30, (2, 2), (26, 26)) ok 1
+FS THROW 4 from (22, 20) to (17, 18) T (1, 1) body 4 n 1 dsq 421
+FS HOPBUILD 5 at (17, 18) lch (17, 17) T (1, 1)
+FS GATE 6 sig (30, 30, (2, 2), (26, 26)) ok 1
+FS THROW 6 from (16, 18) to (13, 14) T (1, 1) body 4 n 1 dsq 221
+FS HOPBUILD 7 at (13, 14) lch (13, 13) T (1, 1)
+FS GATE 8 sig (30, 30, (2, 2), (26, 26)) ok 1
+FS THROW 8 from (12, 14) to (9, 10) T (1, 1) body 4 n 1 dsq 85
+FS HOPBUILD 9 at (9, 10) lch (9, 9) T (1, 1)
+FS GATE 10 sig (30, 30, (2, 2), (26, 26)) ok 1
+FS THROW 10 from (8, 10) to (5, 6) T (1, 1) body 4 n 1 dsq 13
+FS HOPBUILD 11 at (5, 6) lch (5, 5) T (1, 1)
+FS GATE 12 sig (30, 30, (2, 2), (26, 26)) ok 1
+FS EVICT 24 from (5, 4) to (8, 9)
+FS EVICT 25 from (6, 4) to (2, 9)
+FS EVICT 39 from (5, 4) to (8, 9)
+FS DEGRADE 42 id 4
+PROBE SENTSUICIDE 43 at (6, 6)
+PROBE SENTSUICIDE 45 at (6, 6)
+PROBE SENTSUICIDE 47 at (6, 6)
+PROBE SENTSUICIDE 49 at (6, 6)
+FS DOORSEEN 52 id 9 at (27, 21) rank 2
+FS DOOR 53 id 9 at (27, 21) n 1
+FS DOOR 54 id 9 at (27, 21) n 2
+FS DOOR 55 id 9 at (27, 21) n 3
+FS EVICT 55 from (6, 5) to (0, 6)
+FS DOOR 56 id 9 at (27, 21) n 4
+FS DOOR 57 id 9 at (27, 21) n 5
+FS DOOR 58 id 9 at (27, 21) n 6
+FS DOOR 59 id 9 at (27, 21) n 7
+FS DOOR 60 id 9 at (27, 21) n 8
+FS DOOR 61 id 9 at (27, 21) n 9
+FS DOOR 62 id 9 at (27, 21) n 10
+FS DOOR 63 id 9 at (27, 21) n 11
+FS DOOR 64 id 9 at (27, 21) n 12
+FS DOOR 65 id 9 at (27, 21) n 13
+FS EVICT 70 from (6, 5) to (0, 6)
+FS EVICT 87 from (5, 4) to (8, 9)
+FS GATE 97 sig (30, 30, (2, 2), (26, 26)) ok 1
+FS PHASE 97 id 278 ph 1 d 1013 at (26, 25)
+FS HOPBUILD 107 at (27, 21) lch (27, 20) T (1, 1)
+FS GATE 108 sig (30, 30, (2, 2), (26, 26)) ok 1
+FS THROW 108 from (26, 21) to (23, 17) T (1, 1) body 278 n 1 dsq 596
+FS HOPBUILD 111 at (22, 16) lch (22, 15) T (1, 1)
+FS GATE 112 sig (30, 30, (2, 2), (26, 26)) ok 1
+FS THROW 112 from (22, 16) to (18, 12) T (1, 1) body 278 n 1 dsq 306
+FS HOPBUILD 116 at (15, 12) lch (14, 12) T (1, 1)
+FS GATE 117 sig (30, 30, (2, 2), (26, 26)) ok 1
+FS THROW 117 from (15, 11) to (9, 11) T (1, 1) body 278 n 1 dsq 100
+FS HOPBUILD 120 at (8, 10) lch (8, 9) T (1, 1)
+FS GATE 121 sig (30, 30, (2, 2), (26, 26)) ok 1
+FS THROW 121 from (7, 10) to (5, 6) T (1, 1) body 278 n 1 dsq 13
+FS EVICT 149 from (5, 4) to (8, 9)
+FS DEGRADE 153 id 278
+FS EVICT 157 from (5, 4) to (8, 9)
+FS DOORSEEN 186 id 6 at (28, 21) rank 2
+FS DOORSEEN 186 id 9 at (28, 21) rank 2
+FS DOOR 189 id 6 at (28, 21) n 1
+FS DOORSEEN 247 id 9 at (29, 28) rank 0
+FS DOOR 251 id 9 at (29, 28) n 14
+FS DOOR 252 id 9 at (29, 28) n 15
+FS DOOR 253 id 9 at (29, 28) n 16
+FS DOOR 254 id 9 at (29, 28) n 17
+FS DOOR 255 id 9 at (29, 28) n 18
+FS DOOR 256 id 9 at (29, 28) n 19
+FS DOOR 257 id 9 at (29, 28) n 20
+FS DOOR 258 id 9 at (29, 28) n 21
+FS DOOR 259 id 9 at (29, 28) n 22
+FS DOOR 260 id 9 at (29, 28) n 23
+FS DOOR 261 id 9 at (29, 28) n 24
+FS DOOR 262 id 9 at (29, 28) n 25
+FS DOOR 263 id 9 at (29, 28) n 26
+FS DOOR 264 id 9 at (29, 28) n 27
+FS DOOR 265 id 9 at (29, 28) n 28
+FS DOOR 266 id 9 at (29, 28) n 29
+FS DOOR 267 id 9 at (29, 28) n 30
+FS DOOR 268 id 9 at (29, 28) n 31
+FS DOOR 269 id 9 at (29, 28) n 32
+FS DOOR 270 id 9 at (29, 28) n 33
+FS DOOR 271 id 9 at (29, 28) n 34
+FS DOOR 272 id 9 at (29, 28) n 35
+FS DOOR 273 id 9 at (29, 28) n 36
+FS DOOR 274 id 9 at (29, 28) n 37
+FS DOOR 275 id 9 at (29, 28) n 38

@@ -1,0 +1,16 @@
+tag	arm	map	g	seed	ord	ours	winner	cond	turn	tracebacks	ours_mined	opp_mined
+m_mut_resite_glacierkeep_g0	m_mut_resite	glacierkeep	0	7400	A	US	mut_resite	Titanium collected (tiebreak)	1000	0	270	60
+m_mut_resite_glacierkeep_g1	m_mut_resite	glacierkeep	1	7401	B	US	mut_resite	Harvesters (tiebreak)	1000	0	0	0
+m_mut_resite_glacierkeep_g2	m_mut_resite	glacierkeep	2	7402	A	US	mut_resite	Titanium collected (tiebreak)	1000	0	4490	0
+m_mut_resite_nordkap_g0	m_mut_resite	nordkap	0	7400	A	OPP	_v488beltbreak2	Core destroyed	171	0	210	1040
+m_mut_resite_nordkap_g1	m_mut_resite	nordkap	1	7401	B	OPP	_v488beltbreak2	Core destroyed	412	0	3400	6540
+m_mut_resite_nordkap_g2	m_mut_resite	nordkap	2	7402	A	OPP	_v488beltbreak2	Core destroyed	137	0	150	1410
+m_mut_resite_atoll_g0	m_mut_resite	atoll	0	7400	A	US	mut_resite	Titanium collected (tiebreak)	1000	0	4970	2590
+m_mut_resite_atoll_g1	m_mut_resite	atoll	1	7401	B	OPP	_v488beltbreak2	Core destroyed	296	0	350	860
+m_mut_resite_atoll_g2	m_mut_resite	atoll	2	7402	A	US	mut_resite	Titanium collected (tiebreak)	1000	0	2630	270
+m_mut_resite_midgard_g0	m_mut_resite	midgard	0	7400	A	OPP	_v488beltbreak2	Core destroyed	490	0	2190	3950
+m_mut_resite_midgard_g1	m_mut_resite	midgard	1	7401	B	OPP	_v488beltbreak2	Core destroyed	276	0	770	3260
+m_mut_resite_midgard_g2	m_mut_resite	midgard	2	7402	A	US	mut_resite	Titanium collected (tiebreak)	1000	0	11510	5190
+m_mut_resite_drakkarfjord_g0	m_mut_resite	drakkarfjord	0	7400	A	OPP	_v488beltbreak2	Titanium collected (tiebreak)	1000	0	500	3730
+m_mut_resite_drakkarfjord_g1	m_mut_resite	drakkarfjord	1	7401	B	US	mut_resite	Titanium collected (tiebreak)	1000	0	520	0
+m_mut_resite_drakkarfjord_g2	m_mut_resite	drakkarfjord	2	7402	A	US	mut_resite	Titanium collected (tiebreak)	1000	0	11600	1840

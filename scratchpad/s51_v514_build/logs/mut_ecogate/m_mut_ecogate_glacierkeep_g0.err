@@ -1,0 +1,62 @@
+Update available: 2.3.6 -> 2.3.8. Run: pip install --upgrade fcode
+FS GATE 0 sig (30, 30, (14, 2), (14, 26)) ok 1
+FS GATE 1 sig (30, 30, (14, 2), (14, 26)) ok 1
+FS PHASE 1 id 3 ph 1 d 484 at (14, 4)
+FS HOPBUILD 1 at (14, 4) lch (14, 5) T (16, 28)
+FS GATE 2 sig (30, 30, (14, 2), (14, 26)) ok 1
+FS GATE 2 sig (30, 30, (14, 2), (14, 26)) ok 1
+FS THROW 2 from (15, 4) to (15, 10) T (16, 28) body 3 n 1 dsq 256
+FS HOPBUILD 3 at (15, 10) lch (15, 11) T (16, 28)
+FS GATE 3 sig (30, 30, (14, 2), (14, 26)) ok 1
+FS GATE 4 sig (30, 30, (14, 2), (14, 26)) ok 1
+FS THROW 4 from (16, 10) to (16, 16) T (16, 28) body 3 n 1 dsq 101
+FS HOPBUILD 5 at (16, 16) lch (16, 17) T (16, 28)
+FS GATE 6 sig (30, 30, (14, 2), (14, 26)) ok 1
+FS THROW 6 from (16, 16) to (16, 22) T (16, 28) body 3 n 1 dsq 17
+FS HOPBUILD 7 at (16, 22) lch (16, 23) T (16, 28)
+FS GATE 8 sig (30, 30, (14, 2), (14, 26)) ok 1
+FS THROW 8 from (16, 22) to (16, 28) T (16, 28) body 3 n 1 dsq 2
+FS ARRIVE 9 id 3 body 1 at (16, 28) dsq 2
+FS PHASE 9 id 3 ph 2 d 2 at (16, 28)
+FS SEAL 9 tile (16, 27) n 1
+FS SEAL 10 tile (15, 28) n 2
+FS SENTINEL 11 at (17, 28) face NORTHWEST tgt (15, 26) score 8 n 1 onring 0 lost 0 gate (0, 0, -1) onsray 0 olddsq -1
+FS RUNG 11 id 3 r 4 hi -
+FS GATE 11 sig (30, 30, (14, 2), (14, 26)) ok 1
+FS PHASE 12 id 3 ph 5 d 2 at (16, 28)
+FS GATE 12 sig (30, 30, (14, 2), (14, 26)) ok 1
+FS SEAL 15 tile (14, 28) n 3
+FS SEAL 18 tile (13, 27) n 4
+FS PHASE 20 id 3 ph 2 d 5 at (12, 28)
+FS STAT 20 id 3 at (12, 28) need 5 orth 4 ti 32 ammo 2 sen 0 hp 22 covden 0 eco 1 lost 0
+FS SEAL 22 tile (13, 26) n 5
+FS SEAL 24 tile (13, 25) n 6
+ECO514 35 harv 1 mouth 1 held 1 conn 0 deliv 1
+FS SENTDEAD 37 at (17, 28) lost 1
+FS SEAL 37 tile (15, 25) n 7
+FS SEAL 39 tile (14, 25) n 8
+FS STAT 40 id 3 at (14, 24) need 2 orth 2 ti 40 ammo 24 sen 0 hp 22 covden 0 eco 1 lost 1
+FS SEAL 43 tile (16, 26) n 9
+FS SEAL 47 tile (16, 27) n 10
+FS PHASE 48 id 3 ph 3 d 4 at (17, 27)
+FS SEAL 50 tile (16, 25) n 11
+FS DODGE 54 id 3 from (17, 28) to (16, 28) cov 1 -> 0 hit 0 hp 22
+FS SEAL 59 tile (13, 28) n 12
+FS STAT 60 id 3 at (13, 29) need 1 orth 0 ti 61 ammo 20 sen 0 hp 22 covden 0 eco 1 lost 1
+FS RETREAT 69 id 3 hp 4 from (16, 28) to (16, 29)
+FS RETREAT 71 id 3 hp 4 from (16, 28) to (16, 29)
+FS RETREAT 73 id 3 hp 4 from (16, 28) to (16, 29)
+FS RETREAT 75 id 3 hp 4 from (16, 28) to (16, 29)
+FS RETREAT 77 id 3 hp 4 from (16, 28) to (16, 29)
+FS RETREAT 79 id 3 hp 4 from (16, 28) to (16, 29)
+FS STAT 80 id 3 at (16, 29) need 1 orth 0 ti 83 ammo 41 sen 0 hp 4 covden 0 eco 1 lost 1
+FS RETREAT 81 id 3 hp 4 from (16, 28) to (16, 29)
+FS RETREAT 83 id 3 hp 4 from (16, 28) to (16, 29)
+FS RETREAT 85 id 3 hp 4 from (16, 28) to (16, 29)
+FS RETREAT 87 id 3 hp 4 from (16, 28) to (16, 29)
+FS RETREAT 89 id 3 hp 4 from (16, 28) to (16, 29)
+FS RETREAT 91 id 3 hp 4 from (16, 28) to (16, 29)
+FS RETREAT 93 id 3 hp 4 from (16, 28) to (16, 29)
+FS RETREAT 95 id 3 hp 4 from (16, 28) to (16, 29)
+ECO514 110 harv 2 mouth 1 held 0 conn 1 deliv 1
+FS DOORSEEN 571 id 8 at (12, 7) rank 2

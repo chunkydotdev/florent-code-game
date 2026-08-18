@@ -1,0 +1,31 @@
+tag	arm	map	g	seed	ord	ours	winner	cond	turn	tracebacks	ours_mined	opp_mined
+onlyC2B_glacierkeep_g0	onlyC2B	glacierkeep	0	7500	A	US	onlyC2	Titanium collected (tiebreak)	1000	0	150	0
+onlyC2B_glacierkeep_g1	onlyC2B	glacierkeep	1	7501	B	US	onlyC2	Core destroyed	141	0	140	0
+onlyC2B_glacierkeep_g2	onlyC2B	glacierkeep	2	7502	A	OPP	_v488beltbreak2	Core destroyed	379	0	160	270
+onlyC2B_glacierkeep_g3	onlyC2B	glacierkeep	3	7503	B	US	onlyC2	Titanium collected (tiebreak)	1000	0	20	0
+onlyC2B_glacierkeep_g4	onlyC2B	glacierkeep	4	7504	A	US	onlyC2	Titanium collected (tiebreak)	1000	0	4190	2130
+onlyC2B_glacierkeep_g5	onlyC2B	glacierkeep	5	7505	B	US	onlyC2	Titanium collected (tiebreak)	1000	0	30	0
+onlyC2B_nordkap_g0	onlyC2B	nordkap	0	7500	A	OPP	_v488beltbreak2	Core destroyed	165	0	220	340
+onlyC2B_nordkap_g1	onlyC2B	nordkap	1	7501	B	OPP	_v488beltbreak2	Core destroyed	504	0	1340	2200
+onlyC2B_nordkap_g2	onlyC2B	nordkap	2	7502	A	OPP	_v488beltbreak2	Core destroyed	209	0	1090	1690
+onlyC2B_nordkap_g3	onlyC2B	nordkap	3	7503	B	OPP	_v488beltbreak2	Core destroyed	351	0	0	870
+onlyC2B_nordkap_g4	onlyC2B	nordkap	4	7504	A	OPP	_v488beltbreak2	Core destroyed	328	0	470	2840
+onlyC2B_nordkap_g5	onlyC2B	nordkap	5	7505	B	US	onlyC2	Titanium collected (tiebreak)	1000	0	170	0
+onlyC2B_atoll_g0	onlyC2B	atoll	0	7500	A	OPP	_v488beltbreak2	Core destroyed	124	0	450	450
+onlyC2B_atoll_g1	onlyC2B	atoll	1	7501	B	OPP	_v488beltbreak2	Core destroyed	187	0	360	1350
+onlyC2B_atoll_g2	onlyC2B	atoll	2	7502	A	OPP	_v488beltbreak2	Core destroyed	608	0	1800	2970
+onlyC2B_atoll_g3	onlyC2B	atoll	3	7503	B	US	onlyC2	Core destroyed	420	0	2060	880
+onlyC2B_atoll_g4	onlyC2B	atoll	4	7504	A	US	onlyC2	Titanium collected (tiebreak)	1000	0	5600	5080
+onlyC2B_atoll_g5	onlyC2B	atoll	5	7505	B	OPP	_v488beltbreak2	Core destroyed	248	0	210	1200
+onlyC2B_midgard_g0	onlyC2B	midgard	0	7500	A	US	onlyC2	Core destroyed	269	0	540	520
+onlyC2B_midgard_g1	onlyC2B	midgard	1	7501	B	OPP	_v488beltbreak2	Core destroyed	344	0	670	2730
+onlyC2B_midgard_g2	onlyC2B	midgard	2	7502	A	OPP	_v488beltbreak2	Core destroyed	762	0	3820	7810
+onlyC2B_midgard_g3	onlyC2B	midgard	3	7503	B	OPP	_v488beltbreak2	Core destroyed	260	0	500	3890
+onlyC2B_midgard_g4	onlyC2B	midgard	4	7504	A	US	onlyC2	Titanium collected (tiebreak)	1000	0	690	630
+onlyC2B_midgard_g5	onlyC2B	midgard	5	7505	B	OPP	_v488beltbreak2	Core destroyed	108	0	690	1190
+onlyC2B_drakkarfjord_g0	onlyC2B	drakkarfjord	0	7500	A	OPP	_v488beltbreak2	Core destroyed	255	0	350	2420
+onlyC2B_drakkarfjord_g1	onlyC2B	drakkarfjord	1	7501	B	US	onlyC2	Core destroyed	208	0	930	0
+onlyC2B_drakkarfjord_g2	onlyC2B	drakkarfjord	2	7502	A	US	onlyC2	Core destroyed	187	0	890	140
+onlyC2B_drakkarfjord_g3	onlyC2B	drakkarfjord	3	7503	B	US	onlyC2	Core destroyed	126	0	720	0
+onlyC2B_drakkarfjord_g4	onlyC2B	drakkarfjord	4	7504	A	US	onlyC2	Core destroyed	286	0	2560	320
+onlyC2B_drakkarfjord_g5	onlyC2B	drakkarfjord	5	7505	B	US	onlyC2	Core destroyed	126	0	720	0

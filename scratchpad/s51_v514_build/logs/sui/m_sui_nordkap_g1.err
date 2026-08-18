@@ -1,0 +1,641 @@
+Update available: 2.3.6 -> 2.3.8. Run: pip install --upgrade fcode
+FS GATE 0 sig (20, 26, (9, 6), (9, 18)) ok 1
+FS GATE 1 sig (20, 26, (9, 6), (9, 18)) ok 1
+FS PHASE 1 id 4 ph 1 d 100 at (9, 17)
+FS HOPBUILD 1 at (9, 17) lch (9, 16) T (11, 5)
+FS GATE 2 sig (20, 26, (9, 6), (9, 18)) ok 1
+FS GATE 2 sig (20, 26, (9, 6), (9, 18)) ok 1
+FS THROW 2 from (9, 17) to (10, 11) T (11, 5) body 4 n 1 dsq 16
+FS HOPBUILD 3 at (10, 11) lch (10, 10) T (11, 5)
+FS GATE 3 sig (20, 26, (9, 6), (9, 18)) ok 1
+FS GATE 4 sig (20, 26, (9, 6), (9, 18)) ok 1
+FS THROW 4 from (10, 11) to (11, 5) T (11, 5) body 4 n 1 dsq 2
+FS ARRIVE 5 id 4 body 1 at (11, 5) dsq 2
+FS PHASE 5 id 4 ph 2 d 2 at (11, 5)
+FS SEAL 5 tile (10, 5) n 1
+FS EVICTOR 7 at (11, 5) ucov 0 cov 1 unseal 0 obs 5
+FS RUNG 7 id 4 r 2 hi -
+FS GATE 7 sig (20, 26, (9, 6), (9, 18)) ok 1
+FS GATE 8 sig (20, 26, (9, 6), (9, 18)) ok 1
+FS GATE 8 sig (20, 26, (9, 6), (9, 18)) ok 1
+FS EVICT 8 from (12, 4) to (6, 4)
+FS SEAL 10 tile (9, 5) n 2
+FS DOORSEEN 12 id 6 at (11, 16) rank 1
+FS DOORSEEN 12 id 9 at (11, 16) rank 1
+FS DOORSEEN 12 id 14 at (11, 16) rank 1
+FS DOOR 12 id 14 at (11, 16) n 1
+FS DOORSEEN 12 id 17 at (11, 16) rank 1
+FS DOOR 13 id 6 at (11, 16) n 1
+FS DOOR 13 id 14 at (11, 16) n 2
+FS SEAL 14 tile (8, 5) n 3
+FS DOOR 16 id 6 at (11, 16) n 2
+FS DOOR 17 id 6 at (11, 16) n 3
+FS STAT 20 id 4 at (7, 6) need 6 orth 6 ti 20 ammo 22 sen 0 hp 40 covden 0 eco 1 lost 0
+FS SEAL 20 tile (8, 6) n 4
+FS DOOR 22 id 6 at (11, 16) n 4
+FS DOOR 24 id 6 at (11, 16) n 5
+FS DOOR 25 id 6 at (11, 16) n 6
+FS DOOR 26 id 6 at (11, 16) n 7
+FS DOOR 27 id 6 at (11, 16) n 8
+FS DOOR 28 id 6 at (11, 16) n 9
+FS DOOR 29 id 6 at (11, 16) n 10
+FS SEAL 30 tile (8, 7) n 5
+FS DOOR 32 id 9 at (11, 16) n 1
+FS DOOR 33 id 9 at (11, 16) n 2
+FS DOOR 33 id 14 at (11, 16) n 3
+FS DOOR 34 id 6 at (11, 16) n 11
+FS DOOR 34 id 9 at (11, 16) n 3
+FS DOOR 34 id 14 at (11, 16) n 4
+FS DOOR 35 id 6 at (11, 16) n 12
+FS DOOR 35 id 9 at (11, 16) n 4
+FS DOOR 35 id 14 at (11, 16) n 5
+FS DOOR 36 id 6 at (11, 16) n 13
+FS DOOR 36 id 9 at (11, 16) n 5
+FS SEAL 39 tile (9, 8) n 6
+FS STAT 40 id 4 at (9, 9) need 3 orth 3 ti 27 ammo 22 sen 0 hp 40 covden 0 eco 1 lost 0
+FS CLEAR 44 tile (10, 8) peck 1
+FS RUNG 44 id 4 r 3 hi -
+FS CLEAR 45 tile (10, 8) peck 2
+FS RUNG 45 id 4 r 3 hi -
+FS CLEAR 46 tile (10, 8) peck 3
+FS RUNG 46 id 4 r 3 hi -
+FS CLEAR 47 tile (10, 8) peck 4
+FS RUNG 47 id 4 r 3 hi -
+FS CLEAR 48 tile (10, 8) peck 5
+FS RUNG 48 id 4 r 3 hi -
+FS CLEAR 49 tile (10, 8) peck 6
+FS RUNG 49 id 4 r 3 hi -
+FS STAT 60 id 4 at (10, 9) need 3 orth 3 ti 33 ammo 24 sen 0 hp 40 covden 0 eco 1 lost 0
+FS CLEAR 60 tile (10, 8) peck 1
+FS RUNG 60 id 4 r 3 hi -
+FS CLEAR 61 tile (10, 8) peck 2
+FS RUNG 61 id 4 r 3 hi -
+FS CLEAR 64 tile (10, 8) peck 3
+FS RUNG 64 id 4 r 3 hi -
+FS CLEAR 68 tile (10, 8) peck 1
+FS RUNG 68 id 4 r 3 hi -
+FS CLEARED 69 tile (10, 8) n 1
+FS SEAL 69 tile (10, 8) n 7
+FS SEALCLR 69 tile (10, 8) lag 0
+FS SEAL 72 tile (11, 7) n 8
+FS SEAL 76 tile (11, 6) n 9
+FS PHASE 77 id 4 ph 3 d 4 at (12, 6)
+FS SEAL 79 tile (11, 8) n 10
+FS STAT 80 id 4 at (12, 8) need 2 orth 0 ti 72 ammo 24 sen 0 hp 40 covden 0 eco 1 lost 0
+FS PHASE 81 id 4 ph 2 d 8 at (12, 9)
+FS PHASE 82 id 4 ph 3 d 5 at (12, 8)
+FS PHASE 83 id 4 ph 2 d 8 at (12, 9)
+FS PHASE 84 id 4 ph 3 d 5 at (12, 8)
+FS EVICTOR 84 at (12, 7) ucov 0 cov 3 unseal 0 obs 6
+FS RUNG 84 id 4 r 2 hi -
+FS GATE 85 sig (20, 26, (9, 6), (9, 18)) ok 1
+FS PHASE 86 id 4 ph 2 d 8 at (12, 9)
+FS PHASE 87 id 4 ph 3 d 5 at (12, 8)
+FS PHASE 88 id 4 ph 2 d 8 at (12, 9)
+FS PHASE 89 id 4 ph 3 d 5 at (12, 8)
+FS PHASE 90 id 4 ph 2 d 8 at (12, 9)
+FS PHASE 91 id 4 ph 3 d 5 at (12, 8)
+FS PHASE 92 id 4 ph 2 d 8 at (12, 9)
+FS PHASE 93 id 4 ph 3 d 5 at (12, 8)
+FS PHASE 94 id 4 ph 2 d 8 at (12, 9)
+FS PHASE 95 id 4 ph 3 d 5 at (12, 8)
+FS PHASE 96 id 4 ph 2 d 8 at (12, 9)
+FS PHASE 97 id 4 ph 3 d 5 at (12, 8)
+FS PHASE 98 id 4 ph 2 d 8 at (12, 9)
+FS PHASE 99 id 4 ph 3 d 5 at (12, 8)
+FS PHASE 100 id 4 ph 2 d 8 at (12, 9)
+FS STAT 100 id 4 at (12, 9) need 3 orth 2 ti 86 ammo 47 sen 0 hp 40 covden 0 eco 1 lost 0
+FS PHASE 101 id 4 ph 3 d 5 at (12, 8)
+FS PHASE 102 id 4 ph 2 d 8 at (12, 9)
+FS PHASE 103 id 4 ph 3 d 5 at (12, 8)
+FS PHASE 104 id 4 ph 2 d 8 at (12, 9)
+FS PHASE 105 id 4 ph 3 d 5 at (12, 8)
+FS PHASE 106 id 4 ph 2 d 8 at (12, 9)
+FS PHASE 107 id 4 ph 3 d 5 at (12, 8)
+FS PHASE 108 id 4 ph 2 d 8 at (12, 9)
+FS PHASE 109 id 4 ph 3 d 5 at (12, 8)
+FS PHASE 110 id 4 ph 2 d 8 at (12, 9)
+FS PHASE 111 id 4 ph 3 d 5 at (12, 8)
+FS PHASE 112 id 4 ph 2 d 8 at (12, 9)
+FS PHASE 113 id 4 ph 3 d 5 at (12, 8)
+FS PHASE 114 id 4 ph 2 d 8 at (12, 9)
+FS PHASE 115 id 4 ph 3 d 5 at (12, 8)
+FS PHASE 116 id 4 ph 2 d 8 at (12, 9)
+FS PHASE 117 id 4 ph 3 d 5 at (12, 8)
+FS PHASE 118 id 4 ph 2 d 8 at (12, 9)
+FS PHASE 119 id 4 ph 3 d 5 at (12, 8)
+FS PHASE 120 id 4 ph 2 d 8 at (12, 9)
+FS STAT 120 id 4 at (12, 9) need 3 orth 2 ti 86 ammo 143 sen 0 hp 40 covden 0 eco 1 lost 0
+FS PHASE 121 id 4 ph 3 d 5 at (12, 8)
+FS PHASE 122 id 4 ph 2 d 8 at (12, 9)
+FS PHASE 123 id 4 ph 3 d 5 at (12, 8)
+FS PHASE 124 id 4 ph 2 d 8 at (12, 9)
+FS PHASE 125 id 4 ph 3 d 5 at (12, 8)
+FS PHASE 126 id 4 ph 2 d 8 at (12, 9)
+FS PHASE 127 id 4 ph 3 d 5 at (12, 8)
+FS PHASE 128 id 4 ph 2 d 8 at (12, 9)
+FS PHASE 129 id 4 ph 3 d 5 at (12, 8)
+FS PHASE 130 id 4 ph 2 d 8 at (12, 9)
+FS PHASE 131 id 4 ph 3 d 5 at (12, 8)
+FS PHASE 132 id 4 ph 2 d 8 at (12, 9)
+FS PHASE 133 id 4 ph 3 d 5 at (12, 8)
+FS PHASE 134 id 4 ph 2 d 8 at (12, 9)
+FS PHASE 135 id 4 ph 3 d 5 at (12, 8)
+FS PHASE 136 id 4 ph 2 d 8 at (12, 9)
+FS PHASE 137 id 4 ph 3 d 5 at (12, 8)
+FS PHASE 138 id 4 ph 2 d 8 at (12, 9)
+FS PHASE 139 id 4 ph 3 d 5 at (12, 8)
+FS PHASE 140 id 4 ph 2 d 8 at (12, 9)
+FS STAT 140 id 4 at (12, 9) need 3 orth 2 ti 92 ammo 152 sen 0 hp 40 covden 0 eco 1 lost 0
+FS PHASE 141 id 4 ph 3 d 5 at (12, 8)
+FS PHASE 142 id 4 ph 2 d 8 at (12, 9)
+FS PHASE 143 id 4 ph 3 d 5 at (12, 8)
+FS PHASE 144 id 4 ph 2 d 8 at (12, 9)
+FS PHASE 145 id 4 ph 3 d 5 at (12, 8)
+FS PHASE 146 id 4 ph 2 d 8 at (12, 9)
+FS PHASE 147 id 4 ph 3 d 5 at (12, 8)
+FS PHASE 148 id 4 ph 2 d 8 at (12, 9)
+FS PHASE 149 id 4 ph 3 d 5 at (12, 8)
+FS PHASE 150 id 4 ph 2 d 8 at (12, 9)
+FS PHASE 151 id 4 ph 3 d 5 at (12, 8)
+FS PHASE 152 id 4 ph 2 d 8 at (12, 9)
+FS PHASE 153 id 4 ph 3 d 5 at (12, 8)
+FS PHASE 154 id 4 ph 2 d 8 at (12, 9)
+FS PHASE 155 id 4 ph 3 d 5 at (12, 8)
+FS PHASE 156 id 4 ph 2 d 8 at (12, 9)
+FS PHASE 157 id 4 ph 3 d 5 at (12, 8)
+FS PHASE 158 id 4 ph 2 d 8 at (12, 9)
+FS PHASE 159 id 4 ph 3 d 5 at (12, 8)
+FS PHASE 160 id 4 ph 2 d 8 at (12, 9)
+FS STAT 160 id 4 at (12, 9) need 3 orth 2 ti 98 ammo 108 sen 0 hp 40 covden 0 eco 1 lost 0
+FS PHASE 161 id 4 ph 3 d 5 at (12, 8)
+FS PHASE 162 id 4 ph 2 d 8 at (12, 9)
+FS PHASE 163 id 4 ph 3 d 5 at (12, 8)
+FS PHASE 164 id 4 ph 2 d 8 at (12, 9)
+FS PHASE 165 id 4 ph 3 d 5 at (12, 8)
+FS PHASE 166 id 4 ph 2 d 8 at (12, 9)
+FS PHASE 167 id 4 ph 3 d 5 at (12, 8)
+FS PHASE 168 id 4 ph 2 d 8 at (12, 9)
+FS PHASE 169 id 4 ph 3 d 5 at (12, 8)
+FS PHASE 170 id 4 ph 2 d 8 at (12, 9)
+FS PHASE 171 id 4 ph 3 d 5 at (12, 8)
+FS PHASE 172 id 4 ph 2 d 8 at (12, 9)
+FS PHASE 173 id 4 ph 3 d 5 at (12, 8)
+FS PHASE 174 id 4 ph 2 d 8 at (12, 9)
+FS PHASE 175 id 4 ph 3 d 5 at (12, 8)
+FS PHASE 176 id 4 ph 2 d 8 at (12, 9)
+FS PHASE 177 id 4 ph 3 d 5 at (12, 8)
+FS PHASE 178 id 4 ph 2 d 8 at (12, 9)
+FS PHASE 179 id 4 ph 3 d 5 at (12, 8)
+FS PHASE 180 id 4 ph 2 d 8 at (12, 9)
+FS STAT 180 id 4 at (12, 9) need 3 orth 2 ti 98 ammo 254 sen 0 hp 40 covden 0 eco 1 lost 0
+FS PHASE 181 id 4 ph 3 d 5 at (12, 8)
+FS PHASE 182 id 4 ph 2 d 8 at (12, 9)
+FS PHASE 183 id 4 ph 3 d 5 at (12, 8)
+FS PHASE 184 id 4 ph 2 d 8 at (12, 9)
+FS PHASE 185 id 4 ph 3 d 5 at (12, 8)
+FS PHASE 186 id 4 ph 2 d 8 at (12, 9)
+FS PHASE 187 id 4 ph 3 d 5 at (12, 8)
+FS PHASE 188 id 4 ph 2 d 8 at (12, 9)
+FS PHASE 189 id 4 ph 3 d 5 at (12, 8)
+FS PHASE 190 id 4 ph 2 d 8 at (12, 9)
+FS PHASE 191 id 4 ph 3 d 5 at (12, 8)
+FS PHASE 192 id 4 ph 2 d 8 at (12, 9)
+FS SENTINEL 192 at (13, 9) face NORTHWEST tgt (10, 6) score 18 n 1 onring 0 lost 0 onsray 0 olddsq -1
+FS RUNG 192 id 4 r 4 hi -
+FS PHASE 193 id 4 ph 4 d 8 at (12, 9)
+PROBE SENTSUICIDE 193 at (13, 9)
+FS PHASE 194 id 4 ph 3 d 5 at (12, 8)
+FS SENTDEAD 194 at (13, 9) lost 1
+FS PHASE 195 id 4 ph 2 d 8 at (12, 9)
+FS PHASE 196 id 4 ph 3 d 5 at (12, 8)
+FS PHASE 197 id 4 ph 2 d 8 at (12, 9)
+FS PHASE 198 id 4 ph 3 d 5 at (12, 8)
+FS PHASE 199 id 4 ph 2 d 10 at (13, 8)
+FS EVICT 199 from (13, 8) to (13, 2)
+FS PHASE 200 id 4 ph 3 d 5 at (12, 8)
+FS STAT 200 id 4 at (12, 8) need 2 orth 0 ti 108 ammo 300 sen 0 hp 40 covden 0 eco 1 lost 1
+FS PHASE 201 id 4 ph 2 d 8 at (12, 9)
+FS PHASE 202 id 4 ph 3 d 5 at (12, 8)
+FS PHASE 203 id 4 ph 2 d 8 at (12, 9)
+FS EVICT 203 from (13, 6) to (7, 8)
+FS PHASE 204 id 4 ph 3 d 5 at (12, 8)
+FS PHASE 205 id 4 ph 2 d 8 at (12, 9)
+FS SENTINEL 205 at (11, 9) face NORTHWEST tgt (9, 7) score 8 n 2 onring 0 lost 1 onsray 0 olddsq 4
+FS RUNG 205 id 4 r 4 hi -
+FS PHASE 206 id 4 ph 4 d 8 at (12, 9)
+PROBE SENTSUICIDE 206 at (11, 9)
+FS PHASE 207 id 4 ph 3 d 5 at (12, 8)
+FS SENTDEAD 207 at (11, 9) lost 2
+FS PHASE 208 id 4 ph 2 d 8 at (12, 9)
+FS PHASE 209 id 4 ph 3 d 5 at (12, 8)
+FS PHASE 210 id 4 ph 2 d 8 at (12, 9)
+FS PHASE 211 id 4 ph 3 d 5 at (12, 8)
+FS PHASE 212 id 4 ph 2 d 8 at (12, 9)
+FS PHASE 213 id 4 ph 3 d 5 at (12, 8)
+FS EVICT 213 from (13, 8) to (13, 2)
+FS PHASE 214 id 4 ph 2 d 8 at (12, 9)
+FS PHASE 215 id 4 ph 3 d 5 at (12, 8)
+FS PHASE 216 id 4 ph 2 d 8 at (12, 9)
+FS PHASE 217 id 4 ph 3 d 5 at (12, 8)
+FS EVICT 217 from (13, 6) to (7, 8)
+FS PHASE 218 id 4 ph 2 d 8 at (12, 9)
+FS PHASE 219 id 4 ph 3 d 5 at (12, 8)
+FS PHASE 220 id 4 ph 2 d 8 at (12, 9)
+FS STAT 220 id 4 at (12, 9) need 3 orth 2 ti 164 ammo 300 sen 0 hp 40 covden 0 eco 1 lost 2
+FS PHASE 221 id 4 ph 3 d 5 at (12, 8)
+FS PHASE 222 id 4 ph 2 d 8 at (12, 9)
+FS PHASE 223 id 4 ph 3 d 5 at (12, 8)
+FS PHASE 224 id 4 ph 2 d 8 at (12, 9)
+FS PHASE 225 id 4 ph 3 d 5 at (12, 8)
+FS PHASE 226 id 4 ph 2 d 8 at (12, 9)
+FS PHASE 227 id 4 ph 3 d 5 at (12, 8)
+FS EVICT 227 from (13, 8) to (13, 2)
+FS PHASE 228 id 4 ph 2 d 8 at (12, 9)
+FS PHASE 229 id 4 ph 3 d 5 at (12, 8)
+FS PHASE 230 id 4 ph 2 d 8 at (12, 9)
+FS PHASE 231 id 4 ph 3 d 5 at (12, 8)
+FS EVICT 231 from (13, 6) to (7, 8)
+FS PHASE 232 id 4 ph 2 d 8 at (12, 9)
+FS PHASE 233 id 4 ph 3 d 5 at (12, 8)
+FS PHASE 234 id 4 ph 2 d 8 at (12, 9)
+FS PHASE 235 id 4 ph 3 d 5 at (12, 8)
+FS PHASE 236 id 4 ph 2 d 8 at (12, 9)
+FS PHASE 237 id 4 ph 3 d 5 at (12, 8)
+FS PHASE 238 id 4 ph 2 d 8 at (12, 9)
+FS PHASE 239 id 4 ph 3 d 5 at (12, 8)
+FS PHASE 240 id 4 ph 2 d 8 at (12, 9)
+FS STAT 240 id 4 at (12, 9) need 3 orth 2 ti 34 ammo 259 sen 0 hp 40 covden 0 eco 1 lost 2
+FS PHASE 241 id 4 ph 3 d 5 at (11, 9)
+FS EVICT 241 from (13, 8) to (13, 2)
+FS CLEAR 244 tile (8, 8) peck 1
+FS RUNG 244 id 4 r 3 hi -
+FS CLEAR 245 tile (8, 8) peck 2
+FS RUNG 245 id 4 r 3 hi -
+FS EVICT 245 from (13, 6) to (7, 8)
+FS CLEAR 246 tile (8, 8) peck 3
+FS RUNG 246 id 4 r 3 hi -
+FS CLEAR 247 tile (8, 8) peck 4
+FS RUNG 247 id 4 r 3 hi -
+FS CLEAR 248 tile (8, 8) peck 5
+FS RUNG 248 id 4 r 3 hi -
+FS CLEAR 249 tile (8, 8) peck 6
+FS RUNG 249 id 4 r 3 hi -
+FS CLEAR 250 tile (8, 8) peck 7
+FS RUNG 250 id 4 r 3 hi -
+FS CLEAR 251 tile (8, 8) peck 8
+FS RUNG 251 id 4 r 3 hi -
+FS CLEAR 252 tile (8, 8) peck 9
+FS RUNG 252 id 4 r 3 hi -
+FS CLEAR 253 tile (8, 8) peck 10
+FS RUNG 253 id 4 r 3 hi -
+FS CLEAR 254 tile (8, 8) peck 11
+FS RUNG 254 id 4 r 3 hi -
+FS CLEAR 255 tile (8, 8) peck 12
+FS RUNG 255 id 4 r 3 hi -
+FS CLEAR 256 tile (8, 8) peck 13
+FS RUNG 256 id 4 r 3 hi -
+FS CLEAR 257 tile (8, 8) peck 14
+FS RUNG 257 id 4 r 3 hi -
+FS CLEAR 258 tile (8, 8) peck 15
+FS RUNG 258 id 4 r 3 hi -
+FS CLEAR 259 tile (8, 8) peck 16
+FS RUNG 259 id 4 r 3 hi -
+FS STAT 260 id 4 at (8, 9) need 1 orth 0 ti 106 ammo 281 sen 0 hp 40 covden 0 eco 1 lost 2
+FS CLEAR 260 tile (8, 8) peck 17
+FS RUNG 260 id 4 r 3 hi -
+FS CLEAR 261 tile (8, 8) peck 18
+FS RUNG 261 id 4 r 3 hi -
+FS CLEAR 262 tile (8, 8) peck 19
+FS RUNG 262 id 4 r 3 hi -
+FS CLEAR 263 tile (8, 8) peck 20
+FS RUNG 263 id 4 r 3 hi -
+FS CLEARED 264 tile (8, 8) n 2
+FS SEAL 264 tile (8, 8) n 11
+FS SEALCLR 264 tile (8, 8) lag 0
+FS PHASE 266 id 4 ph 2 d 8 at (7, 9)
+FS PHASE 267 id 4 ph 3 d 5 at (7, 8)
+FS PHASE 271 id 4 ph 2 d 8 at (7, 4)
+FS PHASE 272 id 4 ph 3 d 5 at (8, 4)
+FS SENTINEL 272 at (9, 4) face SOUTH tgt (9, 7) score 9 n 3 onring 0 lost 2 onsray 0 olddsq 29
+FS RUNG 272 id 4 r 4 hi -
+FS PHASE 273 id 4 ph 4 d 5 at (8, 4)
+PROBE SENTSUICIDE 273 at (9, 4)
+FS PHASE 274 id 4 ph 2 d 10 at (8, 3)
+FS SENTDEAD 274 at (9, 4) lost 3
+FS PHASE 275 id 4 ph 3 d 5 at (8, 4)
+FS STAT 280 id 4 at (11, 5) need 0 orth 0 ti 116 ammo 300 sen 0 hp 40 covden 0 eco 1 lost 3
+FS SENTINEL 284 at (12, 5) face SOUTHWEST tgt (10, 7) score 8 n 4 onring 0 lost 3 onsray 0 olddsq 10
+FS RUNG 284 id 4 r 4 hi -
+FS PHASE 285 id 4 ph 4 d 2 at (11, 5)
+PROBE SENTSUICIDE 285 at (12, 5)
+FS PHASE 286 id 4 ph 3 d 2 at (11, 5)
+FS DODGE 286 id 4 from (11, 5) to (11, 4) cov 1 -> 0 hit 0 hp 33
+FS SENTDEAD 287 at (12, 5) lost 4
+FS DODGE 289 id 4 from (11, 4) to (11, 3) cov 1 -> 0 hit 0 hp 33
+FS PHASE 290 id 4 ph 2 d 10 at (11, 3)
+FS EVICT 290 from (13, 6) to (7, 8)
+FS PHASE 291 id 4 ph 3 d 5 at (11, 4)
+FS DODGE 291 id 4 from (11, 4) to (11, 3) cov 1 -> 0 hit 0 hp 26
+FS PHASE 292 id 4 ph 2 d 10 at (11, 3)
+FS PHASE 293 id 4 ph 3 d 5 at (11, 4)
+FS DODGE 293 id 4 from (11, 4) to (11, 3) cov 1 -> 0 hit 0 hp 19
+FS PHASE 294 id 4 ph 2 d 10 at (11, 3)
+FS PHASE 295 id 4 ph 3 d 5 at (11, 4)
+FS DODGE 295 id 4 from (11, 4) to (11, 5) cov 1 -> 0 hit 0 hp 12
+FS RETREAT 296 id 4 hp 12 from (11, 5) to (12, 5)
+FS DODGE 297 id 4 from (12, 5) to (11, 5) cov 1 -> 0 hit 0 hp 12
+FS EVICT 298 from (13, 8) to (13, 2)
+FS STAT 300 id 4 at (11, 5) need 0 orth 0 ti 135 ammo 300 sen 0 hp 12 covden 0 eco 1 lost 4
+FS RETREAT 302 id 4 hp 12 from (11, 5) to (11, 4)
+FS EVICTOR 303 at (11, 5) ucov 0 cov 1 unseal 0 obs 6
+FS RUNG 303 id 4 r 2 hi -
+FS GATE 304 sig (20, 26, (9, 6), (9, 18)) ok 1
+FS EVICTOR 310 at (11, 5) ucov 0 cov 1 unseal 0 obs 6
+FS RUNG 310 id 4 r 2 hi -
+FS GATE 311 sig (20, 26, (9, 6), (9, 18)) ok 1
+FS EVICT 313 from (11, 4) to (14, 1)
+FS DODGE 316 id 4 from (11, 5) to (11, 4) cov 1 -> 0 hit 0 hp 5
+FS DODGE 317 id 4 from (11, 4) to (11, 3) cov 1 -> 0 hit 0 hp 5
+FS PHASE 318 id 4 ph 2 d 10 at (11, 3)
+FS GATE 377 sig (20, 26, (9, 6), (9, 18)) ok 1
+FS PHASE 377 id 420 ph 1 d 122 at (11, 18)
+FS HOPBUILD 385 at (12, 11) lch (11, 11) T (11, 5)
+FS GATE 385 sig (20, 26, (9, 6), (9, 18)) ok 1
+FS GATE 386 sig (20, 26, (9, 6), (9, 18)) ok 1
+FS THROW 386 from (12, 10) to (12, 6) T (11, 5) body 420 n 1 dsq 4
+FS ARRIVE 387 id 420 body 1 at (12, 6) dsq 4
+FS PHASE 387 id 420 ph 3 d 4 at (12, 6)
+FS DODGE 392 id 420 from (12, 5) to (11, 5) cov 1 -> 0 hit 0 hp 40
+FS STAT 400 id 420 at (11, 5) need 0 orth 0 ti 186 ammo 300 sen 0 hp 40 covden 0 eco 1 lost 0
+FS DODGE 400 id 420 from (11, 5) to (11, 4) cov 1 -> 0 hit 0 hp 40
+FS GATE 401 sig (20, 26, (9, 6), (9, 18)) ok 1
+FS DODGE 402 id 420 from (11, 5) to (11, 4) cov 1 -> 0 hit 0 hp 33
+FS DODGE 404 id 420 from (11, 5) to (11, 4) cov 1 -> 0 hit 0 hp 33
+FS DODGE 406 id 420 from (11, 5) to (11, 4) cov 1 -> 0 hit 0 hp 33
+FS DODGE 408 id 420 from (11, 5) to (11, 4) cov 1 -> 0 hit 0 hp 26
+FS DODGE 409 id 420 from (11, 4) to (11, 3) cov 1 -> 0 hit 0 hp 26
+FS PHASE 410 id 420 ph 2 d 10 at (11, 3)
+FS PHASE 415 id 420 ph 3 d 5 at (12, 5)
+FS STAT 420 id 420 at (12, 6) need 0 orth 0 ti 126 ammo 300 sen 0 hp 26 covden 0 eco 1 lost 0
+FS GATE 434 sig (20, 26, (9, 6), (9, 18)) ok 1
+FS DODGE 435 id 420 from (12, 5) to (11, 5) cov 1 -> 0 hit 0 hp 26
+FS STAT 440 id 420 at (11, 5) need 0 orth 0 ti 275 ammo 300 sen 0 hp 26 covden 0 eco 1 lost 0
+PROBE SENTSUICIDE 443 at (13, 11)
+FS SENTINEL 452 at (11, 4) face SOUTHWEST tgt (9, 6) score -56 n 1 onring 0 lost 0 onsray 0 olddsq -1
+FS RUNG 452 id 420 r 4 hi -
+FS PHASE 453 id 420 ph 4 d 2 at (11, 5)
+PROBE SENTSUICIDE 453 at (11, 4)
+FS PHASE 454 id 420 ph 3 d 2 at (11, 5)
+FS SENTDEAD 454 at (11, 4) lost 1
+FS STAT 460 id 420 at (11, 5) need 0 orth 0 ti 165 ammo 300 sen 0 hp 26 covden 0 eco 1 lost 1
+FS PHASE 464 id 420 ph 4 d 2 at (11, 5)
+PROBE SENTSUICIDE 464 at (13, 4)
+FS PHASE 465 id 420 ph 3 d 2 at (11, 5)
+FS PHASE 473 id 420 ph 4 d 2 at (11, 5)
+PROBE SENTSUICIDE 473 at (13, 4)
+FS PHASE 474 id 420 ph 3 d 2 at (11, 5)
+FS DODGE 479 id 420 from (11, 5) to (11, 4) cov 1 -> 0 hit 0 hp 34
+FS STAT 480 id 420 at (11, 4) need 1 orth 0 ti 166 ammo 300 sen 0 hp 34 covden 0 eco 1 lost 1
+FS DODGE 481 id 420 from (11, 5) to (11, 4) cov 1 -> 0 hit 0 hp 34
+FS PHASE 482 id 420 ph 4 d 5 at (11, 4)
+PROBE SENTSUICIDE 482 at (13, 3)
+FS PHASE 483 id 420 ph 3 d 2 at (11, 5)
+FS DODGE 483 id 420 from (11, 5) to (11, 4) cov 1 -> 0 hit 0 hp 34
+FS DODGE 485 id 420 from (11, 5) to (11, 4) cov 1 -> 0 hit 0 hp 34
+FS DODGE 487 id 420 from (11, 5) to (11, 4) cov 1 -> 0 hit 0 hp 34
+FS DODGE 489 id 420 from (11, 5) to (11, 4) cov 1 -> 0 hit 0 hp 34
+FS DODGE 491 id 420 from (11, 5) to (11, 4) cov 1 -> 0 hit 0 hp 34
+FS STAT 500 id 420 at (11, 5) need 0 orth 0 ti 34 ammo 295 sen 0 hp 34 covden 0 eco 1 lost 1
+PROBE SENTSUICIDE 510 at (9, 13)
+FS STAT 520 id 420 at (11, 5) need 0 orth 0 ti 188 ammo 300 sen 0 hp 34 covden 0 eco 1 lost 1
+FS PHASE 521 id 420 ph 4 d 2 at (11, 5)
+PROBE SENTSUICIDE 521 at (12, 5)
+FS PHASE 522 id 420 ph 3 d 2 at (11, 5)
+FS PHASE 537 id 420 ph 4 d 2 at (11, 5)
+PROBE SENTSUICIDE 537 at (8, 4)
+FS PHASE 538 id 420 ph 3 d 2 at (11, 5)
+FS STAT 540 id 420 at (11, 5) need 0 orth 0 ti 104 ammo 300 sen 0 hp 34 covden 0 eco 1 lost 1
+PROBE SENTSUICIDE 547 at (6, 6)
+FS PHASE 556 id 420 ph 4 d 2 at (11, 5)
+PROBE SENTSUICIDE 556 at (12, 4)
+FS PHASE 557 id 420 ph 3 d 2 at (11, 5)
+FS STAT 560 id 420 at (11, 5) need 0 orth 0 ti 132 ammo 300 sen 0 hp 34 covden 0 eco 1 lost 1
+PROBE SENTSUICIDE 566 at (9, 10)
+FS STAT 580 id 420 at (11, 5) need 0 orth 0 ti 178 ammo 300 sen 0 hp 34 covden 0 eco 1 lost 1
+FS PHASE 581 id 420 ph 4 d 2 at (11, 5)
+PROBE SENTSUICIDE 581 at (12, 3)
+FS PHASE 582 id 420 ph 3 d 2 at (11, 5)
+PROBE SENTSUICIDE 592 at (9, 10)
+FS PHASE 600 id 420 ph 4 d 2 at (11, 5)
+FS STAT 600 id 420 at (11, 5) need 0 orth 0 ti 85 ammo 300 sen 1 hp 34 covden 0 eco 1 lost 1
+PROBE SENTSUICIDE 600 at (8, 4)
+FS PHASE 601 id 420 ph 3 d 2 at (11, 5)
+FS STAT 620 id 420 at (11, 5) need 0 orth 0 ti 214 ammo 300 sen 0 hp 34 covden 0 eco 1 lost 1
+FS GATE 627 sig (20, 26, (9, 6), (9, 18)) ok 1
+FS STAT 640 id 420 at (11, 5) need 0 orth 0 ti 193 ammo 300 sen 0 hp 34 covden 0 eco 1 lost 1
+PROBE SENTSUICIDE 644 at (9, 10)
+PROBE SENTSUICIDE 649 at (9, 10)
+PROBE SENTSUICIDE 658 at (6, 9)
+FS STAT 660 id 420 at (11, 5) need 0 orth 0 ti 100 ammo 300 sen 0 hp 34 covden 0 eco 1 lost 1
+FS PHASE 667 id 420 ph 4 d 2 at (11, 5)
+PROBE SENTSUICIDE 667 at (12, 5)
+FS PHASE 668 id 420 ph 3 d 2 at (11, 5)
+FS STAT 680 id 420 at (11, 5) need 0 orth 0 ti 148 ammo 300 sen 0 hp 34 covden 0 eco 1 lost 1
+PROBE SENTSUICIDE 680 at (9, 10)
+PROBE SENTSUICIDE 686 at (6, 6)
+FS PHASE 690 id 420 ph 4 d 2 at (11, 5)
+PROBE SENTSUICIDE 690 at (9, 4)
+FS PHASE 691 id 420 ph 3 d 2 at (11, 5)
+FS PHASE 698 id 420 ph 4 d 2 at (11, 5)
+PROBE SENTSUICIDE 698 at (12, 4)
+FS PHASE 699 id 420 ph 3 d 2 at (11, 5)
+FS STAT 700 id 420 at (11, 5) need 0 orth 0 ti 95 ammo 300 sen 0 hp 34 covden 0 eco 1 lost 1
+FS PHASE 705 id 420 ph 4 d 2 at (11, 5)
+PROBE SENTSUICIDE 705 at (8, 4)
+FS PHASE 706 id 420 ph 3 d 2 at (11, 5)
+FS DODGE 708 id 420 from (11, 5) to (11, 4) cov 1 -> 0 hit 0 hp 34
+FS PHASE 710 id 420 ph 2 d 8 at (12, 4)
+FS PHASE 711 id 420 ph 3 d 5 at (11, 4)
+FS PHASE 712 id 420 ph 2 d 8 at (12, 4)
+FS SENTINEL 712 at (13, 4) face SOUTHWEST tgt (10, 7) score 18 n 2 onring 0 lost 1 onsray 0 olddsq 4
+FS RUNG 712 id 420 r 4 hi -
+FS PHASE 713 id 420 ph 4 d 8 at (12, 4)
+PROBE SENTSUICIDE 713 at (13, 4)
+FS PHASE 714 id 420 ph 2 d 5 at (11, 4)
+FS SENTDEAD 714 at (13, 4) lost 2
+FS PHASE 715 id 420 ph 3 d 2 at (11, 5)
+FS DODGE 715 id 420 from (11, 5) to (11, 4) cov 1 -> 0 hit 0 hp 27
+FS PHASE 717 id 420 ph 2 d 8 at (12, 4)
+FS PHASE 718 id 420 ph 3 d 5 at (11, 4)
+FS PHASE 719 id 420 ph 2 d 8 at (12, 4)
+FS PHASE 720 id 420 ph 3 d 5 at (11, 4)
+FS STAT 720 id 420 at (11, 4) need 1 orth 0 ti 175 ammo 300 sen 0 hp 35 covden 0 eco 1 lost 2
+FS PHASE 721 id 420 ph 4 d 8 at (12, 4)
+PROBE SENTSUICIDE 721 at (10, 3)
+FS PHASE 722 id 420 ph 2 d 13 at (13, 4)
+FS PHASE 724 id 420 ph 3 d 5 at (11, 4)
+FS PHASE 725 id 420 ph 2 d 8 at (12, 4)
+FS PHASE 726 id 420 ph 3 d 5 at (11, 4)
+FS PHASE 727 id 420 ph 2 d 8 at (12, 4)
+FS PHASE 728 id 420 ph 3 d 5 at (11, 4)
+FS PHASE 729 id 420 ph 4 d 10 at (11, 3)
+PROBE SENTSUICIDE 729 at (10, 3)
+FS PHASE 730 id 420 ph 2 d 17 at (11, 2)
+FS PHASE 732 id 420 ph 3 d 5 at (11, 4)
+FS PHASE 733 id 420 ph 2 d 8 at (12, 4)
+FS PHASE 736 id 420 ph 3 d 5 at (11, 4)
+FS PHASE 737 id 420 ph 4 d 4 at (10, 4)
+PROBE SENTSUICIDE 737 at (11, 4)
+FS PHASE 738 id 420 ph 2 d 9 at (10, 3)
+FS PHASE 739 id 420 ph 3 d 4 at (10, 4)
+FS STAT 740 id 420 at (11, 4) need 1 orth 0 ti 102 ammo 300 sen 0 hp 35 covden 0 eco 1 lost 2
+FS PHASE 745 id 420 ph 4 d 4 at (10, 4)
+PROBE SENTSUICIDE 745 at (11, 4)
+FS PHASE 746 id 420 ph 2 d 9 at (10, 3)
+FS PHASE 747 id 420 ph 3 d 4 at (10, 4)
+FS SENTINEL 751 at (9, 4) face SOUTH tgt (9, 7) score 9 n 3 onring 0 lost 2 onsray 0 olddsq 4
+FS RUNG 751 id 420 r 4 hi -
+FS PHASE 752 id 420 ph 4 d 4 at (10, 4)
+PROBE SENTSUICIDE 752 at (9, 4)
+FS PHASE 753 id 420 ph 3 d 5 at (11, 4)
+FS SENTDEAD 753 at (9, 4) lost 3
+FS STAT 760 id 420 at (10, 4) need 0 orth 0 ti 218 ammo 300 sen 0 hp 35 covden 0 eco 1 lost 3
+FS PHASE 763 id 420 ph 2 d 5 at (11, 4)
+FS DODGE 764 id 420 from (11, 5) to (11, 4) cov 1 -> 0 hit 0 hp 35
+FS GATE 765 sig (20, 26, (9, 6), (9, 18)) ok 1
+FS DODGE 766 id 420 from (11, 5) to (11, 4) cov 1 -> 0 hit 0 hp 35
+FS DODGE 768 id 420 from (11, 5) to (11, 4) cov 1 -> 0 hit 0 hp 35
+FS DODGE 770 id 420 from (11, 5) to (11, 6) cov 1 -> 0 hit 0 hp 28
+FS PHASE 771 id 420 ph 3 d 1 at (11, 6)
+FS SENTINEL 771 at (12, 6) face WEST tgt (9, 6) score -55 n 4 onring 0 lost 3 onsray 0 olddsq 5
+FS RUNG 771 id 420 r 4 hi -
+FS PHASE 772 id 420 ph 4 d 1 at (11, 6)
+PROBE SENTSUICIDE 772 at (12, 6)
+FS PHASE 773 id 420 ph 2 d 2 at (11, 5)
+FS DODGE 773 id 420 from (11, 5) to (11, 4) cov 1 -> 0 hit 0 hp 28
+FS SENTDEAD 774 at (12, 6) lost 4
+FS DODGE 775 id 420 from (11, 5) to (11, 4) cov 1 -> 0 hit 0 hp 28
+FS SEAL 777 tile (11, 6) n 1
+FS PHASE 778 id 420 ph 3 d 2 at (11, 5)
+FS STAT 780 id 420 at (11, 5) need 0 orth 0 ti 69 ammo 300 sen 0 hp 28 covden 0 eco 1 lost 4
+PROBE SENTSUICIDE 780 at (10, 11)
+FS PHASE 782 id 420 ph 2 d 2 at (11, 5)
+FS SEAL 782 tile (11, 6) n 2
+FS PHASE 783 id 420 ph 3 d 2 at (11, 5)
+FS DODGE 783 id 420 from (11, 5) to (11, 4) cov 1 -> 0 hit 0 hp 28
+FS PHASE 788 id 420 ph 4 d 5 at (11, 4)
+PROBE SENTSUICIDE 788 at (12, 6)
+FS PHASE 789 id 420 ph 3 d 4 at (10, 4)
+PROBE SENTSUICIDE 796 at (9, 10)
+FS STAT 800 id 420 at (11, 4) need 1 orth 0 ti 154 ammo 300 sen 0 hp 28 covden 0 eco 1 lost 4
+FS PHASE 802 id 420 ph 4 d 5 at (11, 4)
+PROBE SENTSUICIDE 802 at (12, 6)
+FS PHASE 803 id 420 ph 2 d 4 at (10, 4)
+FS DODGE 804 id 420 from (11, 4) to (11, 5) cov 1 -> 0 hit 0 hp 28
+FS SEAL 805 tile (11, 6) n 3
+FS PHASE 806 id 420 ph 3 d 2 at (11, 5)
+FS PHASE 811 id 420 ph 4 d 2 at (11, 5)
+PROBE SENTSUICIDE 811 at (12, 4)
+FS PHASE 812 id 420 ph 3 d 2 at (11, 5)
+FS PHASE 818 id 420 ph 4 d 2 at (11, 5)
+PROBE SENTSUICIDE 818 at (10, 3)
+FS PHASE 819 id 420 ph 3 d 2 at (11, 5)
+FS STAT 820 id 420 at (11, 5) need 0 orth 0 ti 81 ammo 300 sen 0 hp 29 covden 0 eco 1 lost 4
+FS DODGE 820 id 420 from (11, 5) to (11, 4) cov 1 -> 0 hit 0 hp 29
+FS PHASE 822 id 420 ph 2 d 8 at (12, 4)
+FS PHASE 823 id 420 ph 3 d 5 at (11, 4)
+FS DODGE 823 id 420 from (11, 4) to (12, 4) cov 1 -> 0 hit 0 hp 33
+FS PHASE 824 id 420 ph 2 d 8 at (12, 4)
+FS PHASE 825 id 420 ph 3 d 5 at (11, 4)
+FS DODGE 825 id 420 from (11, 4) to (12, 4) cov 1 -> 0 hit 0 hp 33
+FS PHASE 826 id 420 ph 4 d 8 at (12, 4)
+PROBE SENTSUICIDE 826 at (10, 3)
+FS PHASE 827 id 420 ph 2 d 13 at (13, 4)
+FS PHASE 829 id 420 ph 3 d 5 at (11, 4)
+FS DODGE 829 id 420 from (11, 4) to (11, 5) cov 1 -> 0 hit 0 hp 30
+FS PHASE 834 id 420 ph 4 d 2 at (11, 5)
+PROBE SENTSUICIDE 834 at (9, 4)
+FS PHASE 835 id 420 ph 3 d 2 at (11, 5)
+FS DODGE 836 id 420 from (11, 5) to (11, 4) cov 1 -> 0 hit 0 hp 16
+FS PHASE 838 id 420 ph 2 d 8 at (12, 4)
+FS PHASE 839 id 420 ph 3 d 5 at (11, 4)
+FS DODGE 839 id 420 from (11, 4) to (10, 4) cov 1 -> 0 hit 0 hp 16
+FS STAT 840 id 420 at (10, 4) need 0 orth 0 ti 171 ammo 300 sen 0 hp 16 covden 0 eco 1 lost 4
+FS DODGE 841 id 420 from (11, 4) to (10, 4) cov 1 -> 0 hit 0 hp 16
+FS PHASE 842 id 420 ph 4 d 4 at (10, 4)
+PROBE SENTSUICIDE 842 at (6, 6)
+FS PHASE 843 id 420 ph 3 d 5 at (11, 4)
+FS DODGE 843 id 420 from (11, 4) to (10, 4) cov 1 -> 0 hit 0 hp 16
+FS DODGE 845 id 420 from (11, 4) to (11, 5) cov 1 -> 0 hit 0 hp 16
+FS PHASE 849 id 420 ph 4 d 2 at (11, 5)
+PROBE SENTSUICIDE 849 at (9, 3)
+FS PHASE 850 id 420 ph 3 d 2 at (11, 5)
+FS PHASE 857 id 420 ph 4 d 2 at (11, 5)
+PROBE SENTSUICIDE 857 at (9, 4)
+FS PHASE 858 id 420 ph 2 d 2 at (11, 5)
+FS SEAL 858 tile (11, 6) n 4
+FS PHASE 859 id 420 ph 3 d 2 at (11, 5)
+FS STAT 860 id 420 at (11, 5) need 0 orth 0 ti 105 ammo 300 sen 0 hp 16 covden 0 eco 1 lost 4
+FS PHASE 865 id 420 ph 4 d 2 at (11, 5)
+PROBE SENTSUICIDE 865 at (10, 3)
+FS PHASE 866 id 420 ph 2 d 2 at (11, 5)
+FS SEAL 866 tile (11, 6) n 5
+FS PHASE 867 id 420 ph 3 d 2 at (11, 5)
+FS PHASE 873 id 420 ph 4 d 2 at (11, 5)
+PROBE SENTSUICIDE 873 at (9, 4)
+FS PHASE 874 id 420 ph 2 d 2 at (11, 5)
+FS SEAL 874 tile (11, 6) n 6
+FS PHASE 875 id 420 ph 3 d 2 at (11, 5)
+FS STAT 880 id 420 at (11, 5) need 0 orth 0 ti 173 ammo 300 sen 0 hp 16 covden 0 eco 1 lost 4
+FS PHASE 881 id 420 ph 4 d 2 at (11, 5)
+PROBE SENTSUICIDE 881 at (8, 4)
+FS PHASE 882 id 420 ph 2 d 2 at (11, 5)
+FS SEAL 882 tile (11, 6) n 7
+FS PHASE 883 id 420 ph 3 d 2 at (11, 5)
+FS PHASE 893 id 420 ph 2 d 2 at (11, 5)
+FS SEAL 893 tile (11, 6) n 8
+FS PHASE 894 id 420 ph 4 d 2 at (11, 5)
+PROBE SENTSUICIDE 894 at (12, 6)
+FS PHASE 895 id 420 ph 3 d 2 at (11, 5)
+FS PHASE 898 id 420 ph 4 d 2 at (11, 5)
+PROBE SENTSUICIDE 898 at (13, 6)
+FS PHASE 899 id 420 ph 3 d 2 at (11, 5)
+FS STAT 900 id 420 at (11, 5) need 0 orth 0 ti 92 ammo 300 sen 0 hp 16 covden 0 eco 1 lost 4
+FS PHASE 906 id 420 ph 4 d 2 at (11, 5)
+PROBE SENTSUICIDE 906 at (13, 6)
+FS PHASE 907 id 420 ph 3 d 2 at (11, 5)
+FS PHASE 914 id 420 ph 4 d 2 at (11, 5)
+PROBE SENTSUICIDE 914 at (13, 6)
+FS PHASE 915 id 420 ph 3 d 2 at (11, 5)
+FS STAT 920 id 420 at (11, 5) need 0 orth 0 ti 160 ammo 300 sen 0 hp 16 covden 0 eco 1 lost 4
+FS PHASE 922 id 420 ph 4 d 2 at (11, 5)
+PROBE SENTSUICIDE 922 at (13, 6)
+FS PHASE 923 id 420 ph 3 d 2 at (11, 5)
+FS PHASE 931 id 420 ph 4 d 2 at (11, 5)
+PROBE SENTSUICIDE 931 at (13, 6)
+FS PHASE 932 id 420 ph 3 d 2 at (11, 5)
+FS PHASE 938 id 420 ph 4 d 2 at (11, 5)
+PROBE SENTSUICIDE 938 at (13, 6)
+FS PHASE 939 id 420 ph 3 d 2 at (11, 5)
+FS STAT 940 id 420 at (11, 5) need 0 orth 0 ti 80 ammo 300 sen 0 hp 16 covden 0 eco 1 lost 4
+FS PHASE 946 id 420 ph 4 d 2 at (11, 5)
+PROBE SENTSUICIDE 946 at (13, 6)
+FS PHASE 947 id 420 ph 3 d 2 at (11, 5)
+FS PHASE 955 id 420 ph 4 d 2 at (11, 5)
+PROBE SENTSUICIDE 955 at (13, 6)
+FS PHASE 956 id 420 ph 3 d 2 at (11, 5)
+FS STAT 960 id 420 at (11, 5) need 0 orth 0 ti 150 ammo 300 sen 0 hp 16 covden 0 eco 1 lost 4
+FS PHASE 963 id 420 ph 4 d 2 at (11, 5)
+PROBE SENTSUICIDE 963 at (13, 6)
+FS PHASE 964 id 420 ph 3 d 2 at (11, 5)
+FS PHASE 970 id 420 ph 4 d 2 at (11, 5)
+PROBE SENTSUICIDE 970 at (12, 6)
+FS PHASE 971 id 420 ph 3 d 2 at (11, 5)
+FS PHASE 978 id 420 ph 4 d 2 at (11, 5)
+PROBE SENTSUICIDE 978 at (12, 3)
+FS PHASE 979 id 420 ph 3 d 2 at (11, 5)
+FS STAT 980 id 420 at (11, 5) need 0 orth 0 ti 82 ammo 311 sen 0 hp 20 covden 0 eco 1 lost 4
+FS PHASE 986 id 420 ph 4 d 2 at (11, 5)
+PROBE SENTSUICIDE 986 at (10, 3)
+FS PHASE 987 id 420 ph 3 d 2 at (11, 5)

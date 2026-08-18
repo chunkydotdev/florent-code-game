@@ -1,0 +1,759 @@
+Update available: 2.3.6 -> 2.3.8. Run: pip install --upgrade fcode
+FS GATE 0 sig (18, 18, (2, 14), (14, 2)) ok 1
+FS GATE 1 sig (18, 18, (2, 14), (14, 2)) ok 1
+FS PHASE 1 id 4 ph 1 d 200 at (13, 4)
+FS HOPBUILD 1 at (13, 4) lch (13, 5) T (1, 16)
+FS GATE 2 sig (18, 18, (2, 14), (14, 2)) ok 1
+FS GATE 2 sig (18, 18, (2, 14), (14, 2)) ok 1
+FS THROW 2 from (12, 4) to (9, 8) T (1, 16) body 4 n 1 dsq 72
+FS HOPBUILD 3 at (9, 8) lch (9, 9) T (1, 16)
+FS GATE 3 sig (18, 18, (2, 14), (14, 2)) ok 1
+FS GATE 4 sig (18, 18, (2, 14), (14, 2)) ok 1
+FS THROW 4 from (8, 8) to (5, 12) T (1, 16) body 4 n 1 dsq 8
+FS ARRIVE 5 id 4 body 1 at (5, 12) dsq 8
+FS PHASE 5 id 4 ph 2 d 8 at (5, 12)
+FS EVICTOR 6 at (4, 13) ucov 0 cov 1 unseal 2 obs 2
+FS RUNG 6 id 4 r 2 hi -
+FS GATE 7 sig (18, 18, (2, 14), (14, 2)) ok 1
+FS GATE 7 sig (18, 18, (2, 14), (14, 2)) ok 1
+FS EVICT 7 from (5, 14) to (5, 8)
+FS SEAL 8 tile (3, 13) n 1
+FS GATE 8 sig (18, 18, (2, 14), (14, 2)) ok 1
+FS EVICT 9 from (3, 12) to (9, 12)
+FS DODGE 10 id 4 from (3, 11) to (3, 12) cov 1 -> 0 hit 0 hp 22
+FS EVICT 10 from (4, 14) to (5, 8)
+FS SEAL 12 tile (2, 13) n 2
+FS SENTINEL 14 at (2, 10) face SOUTH tgt (2, 15) score -4135 n 1 onring 0 lost 0 onsray 1 olddsq -1
+FS RUNG 14 id 4 r 4 hi -
+FS EVICT 14 from (3, 12) to (9, 12)
+FS PHASE 15 id 4 ph 5 d 9 at (2, 11)
+PROBE SENTSUICIDE 15 at (2, 10)
+FS PHASE 16 id 4 ph 2 d 10 at (1, 11)
+FS SENTDEAD 16 at (2, 10) lost 1
+FS SEAL 17 tile (1, 13) n 3
+FS STAT 20 id 4 at (0, 13) need 6 orth 6 ti 92 ammo 16 sen 0 hp 22 covden 0 eco 1 lost 1
+FS DODGE 21 id 4 from (0, 14) to (1, 14) cov 1 -> 0 hit 0 hp 4
+FS EVICT 21 from (5, 12) to (0, 16)
+FS CLEAR 22 tile (1, 15) peck 1
+FS RUNG 22 id 4 r 3 hi -
+FS CLEAR 23 tile (1, 15) peck 2
+FS RUNG 23 id 4 r 3 hi -
+FS CLEAR 24 tile (1, 15) peck 3
+FS RUNG 24 id 4 r 3 hi -
+FS CLEAR 25 tile (1, 15) peck 4
+FS RUNG 25 id 4 r 3 hi -
+FS CLEAR 26 tile (1, 15) peck 5
+FS RUNG 26 id 4 r 3 hi -
+FS CLEAR 27 tile (1, 15) peck 6
+FS RUNG 27 id 4 r 3 hi -
+FS EVICT 27 from (4, 14) to (5, 8)
+FS CLEAR 28 tile (1, 15) peck 7
+FS RUNG 28 id 4 r 3 hi -
+FS CLEAR 29 tile (1, 15) peck 8
+FS RUNG 29 id 4 r 3 hi -
+FS DODGE 30 id 4 from (1, 14) to (1, 15) cov 1 -> 0 hit 0 hp 4
+FS SEAL 31 tile (1, 14) n 4
+FS SEAL 33 tile (2, 16) n 5
+FS STAT 40 id 4 at (0, 16) need 5 orth 5 ti 22 ammo 60 sen 0 hp 4 covden 0 eco 1 lost 1
+FS CLEAR 47 tile (1, 15) peck 1
+FS RUNG 47 id 4 r 3 hi -
+FS CLEAR 48 tile (1, 15) peck 2
+FS RUNG 48 id 4 r 3 hi -
+FS CLEARED 50 tile (1, 15) n 1
+FS CLEAR 53 tile (1, 15) peck 1
+FS RUNG 53 id 4 r 3 hi -
+FS CLEAR 54 tile (1, 15) peck 2
+FS RUNG 54 id 4 r 3 hi -
+FS CLEAR 55 tile (1, 15) peck 3
+FS RUNG 55 id 4 r 3 hi -
+FS EVICT 55 from (3, 12) to (9, 12)
+FS CLEAR 58 tile (1, 15) peck 4
+FS RUNG 58 id 4 r 3 hi -
+FS EVICT 59 from (5, 12) to (0, 16)
+FS STAT 60 id 4 at (1, 16) need 5 orth 5 ti 48 ammo 60 sen 0 hp 4 covden 0 eco 1 lost 1
+FS EVICT 81 from (3, 12) to (9, 12)
+FS EVICT 85 from (5, 12) to (0, 16)
+FS DOORSEEN 95 id 25 at (17, 4) rank 1
+FS EVICT 123 from (4, 14) to (5, 8)
+FS EVICT 133 from (4, 14) to (5, 8)
+FS DOORSEEN 143 id 6 at (13, 5) rank 1
+FS DOORSEEN 143 id 9 at (13, 5) rank 1
+FS DOORSEEN 143 id 25 at (13, 5) rank 1
+FS DOOR 144 id 6 at (13, 5) n 1
+FS DOOR 144 id 9 at (13, 5) n 1
+FS DOOR 145 id 6 at (13, 5) n 2
+FS DOOR 145 id 9 at (13, 5) n 2
+FS DOOR 146 id 6 at (13, 5) n 3
+FS DOOR 146 id 9 at (13, 5) n 3
+FS DOOR 147 id 6 at (13, 5) n 4
+FS DOOR 147 id 9 at (13, 5) n 4
+FS DOOR 148 id 6 at (13, 5) n 5
+FS DOOR 148 id 9 at (13, 5) n 5
+FS DOOR 149 id 6 at (13, 5) n 6
+FS DOOR 149 id 9 at (13, 5) n 6
+FS EVICT 178 from (4, 14) to (5, 8)
+FS DOORSEEN 180 id 6 at (13, 9) rank 2
+FS DOORSEEN 180 id 9 at (13, 9) rank 2
+FS GATE 183 sig (18, 18, (2, 14), (14, 2)) ok 1
+FS PHASE 183 id 280 ph 1 d 313 at (16, 2)
+FS HOPBUILD 186 at (16, 5) lch (16, 6) T (1, 16)
+FS GATE 187 sig (18, 18, (2, 14), (14, 2)) ok 1
+FS THROW 187 from (15, 5) to (12, 9) T (1, 16) body 280 n 1 dsq 106
+FS ARRIVE 198 id 280 body 1 at (5, 12) dsq 8
+FS PHASE 198 id 280 ph 2 d 8 at (5, 12)
+FS STAT 200 id 280 at (6, 13) need 7 orth 6 ti 75 ammo 60 sen 0 hp 40 covden 0 eco 1 lost 0
+FS DOORSEEN 202 id 6 at (13, 9) rank 2
+FS EVICT 202 from (4, 14) to (5, 8)
+FS SEAL 202 tile (4, 14) n 1
+FS SEAL 204 tile (4, 15) n 2
+FS CLEAR 211 tile (3, 16) peck 1
+FS RUNG 211 id 280 r 3 hi -
+FS DOORSEEN 212 id 6 at (13, 9) rank 2
+FS CLEAR 212 tile (3, 16) peck 2
+FS RUNG 212 id 280 r 3 hi -
+FS CLEAR 213 tile (3, 16) peck 3
+FS RUNG 213 id 280 r 3 hi -
+FS DOORSEEN 214 id 6 at (13, 9) rank 2
+FS CLEAR 214 tile (3, 16) peck 4
+FS RUNG 214 id 280 r 3 hi -
+FS CLEAR 215 tile (3, 16) peck 5
+FS RUNG 215 id 280 r 3 hi -
+FS DOORSEEN 216 id 6 at (13, 9) rank 2
+FS CLEAR 216 tile (3, 16) peck 6
+FS RUNG 216 id 280 r 3 hi -
+FS CLEAR 217 tile (3, 16) peck 7
+FS RUNG 217 id 280 r 3 hi -
+FS DOORSEEN 218 id 6 at (13, 9) rank 2
+FS CLEAR 218 tile (3, 16) peck 8
+FS RUNG 218 id 280 r 3 hi -
+FS SENTINEL 219 at (4, 17) face NORTHWEST tgt (2, 15) score 8 n 1 onring 0 lost 0 onsray 0 olddsq -1
+FS RUNG 219 id 280 r 4 hi -
+FS DOORSEEN 220 id 6 at (13, 9) rank 2
+FS PHASE 220 id 280 ph 5 d 2 at (4, 16)
+FS STAT 220 id 280 at (4, 16) need 4 orth 4 ti 94 ammo 60 sen 1 hp 22 covden 0 eco 1 lost 0
+PROBE SENTSUICIDE 220 at (4, 17)
+FS PHASE 221 id 280 ph 2 d 1 at (3, 16)
+FS SENTDEAD 221 at (4, 17) lost 1
+FS DOORSEEN 222 id 6 at (13, 9) rank 2
+FS CLEAR 222 tile (3, 16) peck 1
+FS RUNG 222 id 280 r 3 hi -
+FS CLEAR 223 tile (3, 16) peck 2
+FS RUNG 223 id 280 r 3 hi -
+FS DOORSEEN 224 id 6 at (13, 9) rank 2
+FS CLEARED 224 tile (3, 16) n 1
+FS SEAL 224 tile (3, 16) n 3
+FS SEALCLR 224 tile (3, 16) lag 0
+FS DOORSEEN 226 id 6 at (13, 9) rank 2
+FS DOORSEEN 228 id 6 at (13, 9) rank 2
+FS DOORSEEN 230 id 6 at (13, 9) rank 2
+FS SENTINEL 231 at (6, 17) face NORTHWEST tgt (3, 14) score 18 n 2 onring 0 lost 1 onsray 0 olddsq 4
+FS RUNG 231 id 280 r 4 hi -
+FS DOORSEEN 232 id 6 at (13, 9) rank 2
+FS PHASE 232 id 280 ph 5 d 10 at (6, 16)
+PROBE SENTSUICIDE 232 at (6, 17)
+FS PHASE 233 id 280 ph 2 d 9 at (6, 15)
+FS SENTDEAD 233 at (6, 17) lost 2
+FS DOORSEEN 234 id 6 at (13, 9) rank 2
+FS DOORSEEN 236 id 6 at (13, 9) rank 2
+FS DOORSEEN 238 id 6 at (13, 9) rank 2
+FS DOORSEEN 240 id 6 at (13, 9) rank 2
+FS STAT 240 id 280 at (6, 14) need 4 orth 3 ti 133 ammo 60 sen 0 hp 22 covden 0 eco 1 lost 2
+FS DOORSEEN 242 id 6 at (13, 9) rank 2
+FS SENTINEL 243 at (5, 11) face SOUTHWEST tgt (2, 14) score 18 n 3 onring 0 lost 2 onsray 0 olddsq 37
+FS RUNG 243 id 280 r 4 hi -
+FS DOORSEEN 244 id 6 at (13, 9) rank 2
+FS PHASE 244 id 280 ph 5 d 8 at (5, 12)
+PROBE SENTSUICIDE 244 at (5, 11)
+FS PHASE 245 id 280 ph 2 d 5 at (4, 12)
+FS DODGE 245 id 280 from (4, 12) to (3, 12) cov 1 -> 0 hit 0 hp 4
+FS DOORSEEN 246 id 6 at (13, 9) rank 2
+FS SENTDEAD 246 at (5, 11) lost 3
+FS EVICT 247 from (5, 12) to (0, 16)
+FS DOORSEEN 248 id 6 at (13, 9) rank 2
+FS DOORSEEN 250 id 6 at (13, 9) rank 2
+FS DOORSEEN 252 id 6 at (13, 9) rank 2
+FS DOORSEEN 254 id 6 at (13, 9) rank 2
+FS DOORSEEN 256 id 6 at (13, 9) rank 2
+FS DOORSEEN 258 id 6 at (13, 9) rank 2
+FS DOORSEEN 260 id 6 at (13, 9) rank 2
+FS GATE 260 sig (18, 18, (2, 14), (14, 2)) ok 1
+FS PHASE 260 id 359 ph 1 d 313 at (16, 2)
+FS DOORSEEN 261 id 9 at (13, 9) rank 2
+FS HOPBUILD 261 at (16, 3) lch (16, 4) T (1, 16)
+FS DOORSEEN 262 id 6 at (13, 9) rank 2
+FS GATE 262 sig (18, 18, (2, 14), (14, 2)) ok 1
+FS THROW 262 from (16, 3) to (12, 7) T (1, 16) body 359 n 1 dsq 130
+FS DOORSEEN 266 id 6 at (13, 9) rank 2
+FS HOPBUILD 266 at (12, 10) lch (12, 11) T (1, 16)
+FS GATE 267 sig (18, 18, (2, 14), (14, 2)) ok 1
+FS THROW 267 from (12, 10) to (7, 12) T (1, 16) body 359 n 1 dsq 20
+FS DOORSEEN 268 id 6 at (13, 9) rank 2
+FS DOORSEEN 270 id 6 at (13, 9) rank 2
+FS ARRIVE 270 id 359 body 1 at (5, 12) dsq 8
+FS PHASE 270 id 359 ph 2 d 8 at (5, 12)
+FS DOORSEEN 272 id 6 at (13, 9) rank 2
+FS DOORSEEN 274 id 6 at (13, 9) rank 2
+FS EVICT 274 from (5, 12) to (8, 10)
+FS SEAL 274 tile (4, 14) n 1
+FS DOORSEEN 276 id 6 at (13, 9) rank 2
+FS DOORSEEN 278 id 6 at (13, 9) rank 2
+FS DOORSEEN 280 id 6 at (13, 9) rank 2
+FS STAT 280 id 359 at (5, 17) need 5 orth 4 ti 104 ammo 60 sen 0 hp 15 covden 0 eco 1 lost 0
+FS DOORSEEN 282 id 6 at (13, 9) rank 2
+FS DOORSEEN 284 id 6 at (12, 8) rank 2
+FS STAT 300 id 359 at (5, 17) need 5 orth 4 ti 174 ammo 120 sen 0 hp 15 covden 0 eco 1 lost 0
+FS DOORSEEN 309 id 9 at (12, 8) rank 2
+FS GATE 309 sig (18, 18, (2, 14), (14, 2)) ok 1
+FS STAT 320 id 359 at (5, 17) need 5 orth 4 ti 229 ammo 120 sen 0 hp 15 covden 0 eco 1 lost 0
+FS DOORSEEN 323 id 9 at (12, 8) rank 2
+FS GATE 323 sig (18, 18, (2, 14), (14, 2)) ok 1
+FS STAT 340 id 359 at (5, 17) need 5 orth 4 ti 64 ammo 120 sen 0 hp 15 covden 0 eco 1 lost 0
+FS STAT 360 id 359 at (5, 17) need 5 orth 4 ti 195 ammo 120 sen 0 hp 15 covden 0 eco 1 lost 0
+FS GATE 369 sig (18, 18, (2, 14), (14, 2)) ok 1
+FS EVICT 378 from (5, 12) to (5, 8)
+FS DOORSEEN 385 id 9 at (12, 8) rank 2
+FS GATE 385 sig (18, 18, (2, 14), (14, 2)) ok 1
+FS PHASE 385 id 468 ph 1 d 290 at (16, 3)
+FS HOPBUILD 385 at (16, 3) lch (16, 4) T (1, 16)
+FS GATE 386 sig (18, 18, (2, 14), (14, 2)) ok 1
+FS THROW 386 from (16, 3) to (12, 7) T (1, 16) body 468 n 1 dsq 130
+FS HOPBUILD 388 at (12, 6) lch (12, 7) T (1, 16)
+FS GATE 389 sig (18, 18, (2, 14), (14, 2)) ok 1
+FS THROW 389 from (12, 6) to (7, 8) T (1, 16) body 468 n 1 dsq 52
+FS ARRIVE 397 id 468 body 1 at (4, 12) dsq 5
+FS PHASE 397 id 468 ph 2 d 5 at (4, 12)
+FS DODGE 397 id 468 from (4, 12) to (3, 12) cov 1 -> 0 hit 0 hp 22
+FS DODGE 399 id 468 from (4, 12) to (3, 12) cov 1 -> 0 hit 0 hp 4
+FS STAT 400 id 468 at (3, 12) need 3 orth 3 ti 107 ammo 120 sen 0 hp 4 covden 0 eco 1 lost 0
+FS EVICT 406 from (5, 12) to (5, 8)
+FS GATE 414 sig (18, 18, (2, 14), (14, 2)) ok 1
+FS PHASE 414 id 494 ph 1 d 290 at (16, 3)
+FS HOPBUILD 414 at (16, 3) lch (16, 4) T (1, 16)
+FS DOORSEEN 415 id 9 at (12, 8) rank 2
+FS GATE 415 sig (18, 18, (2, 14), (14, 2)) ok 1
+FS THROW 415 from (16, 3) to (12, 7) T (1, 16) body 494 n 1 dsq 130
+FS HOPBUILD 422 at (8, 5) lch (7, 5) T (1, 16)
+FS GATE 423 sig (18, 18, (2, 14), (14, 2)) ok 1
+FS THROW 423 from (8, 5) to (4, 9) T (1, 16) body 494 n 1 dsq 26
+FS ARRIVE 427 id 494 body 1 at (4, 12) dsq 5
+FS PHASE 427 id 494 ph 2 d 5 at (4, 12)
+FS DODGE 427 id 494 from (4, 12) to (3, 12) cov 1 -> 0 hit 0 hp 22
+FS DODGE 429 id 494 from (4, 12) to (3, 12) cov 1 -> 0 hit 0 hp 4
+FS EVICT 437 from (5, 12) to (8, 10)
+FS DOORSEEN 445 id 6 at (11, 5) rank 1
+FS DOORSEEN 445 id 9 at (11, 5) rank 1
+FS DOORSEEN 445 id 25 at (11, 5) rank 1
+FS GATE 445 sig (18, 18, (2, 14), (14, 2)) ok 1
+FS PHASE 445 id 521 ph 1 d 313 at (16, 2)
+FS DOOR 446 id 6 at (11, 5) n 7
+FS HOPBUILD 446 at (16, 3) lch (16, 4) T (1, 16)
+FS DOOR 447 id 6 at (11, 5) n 8
+FS GATE 447 sig (18, 18, (2, 14), (14, 2)) ok 1
+FS THROW 447 from (16, 3) to (12, 7) T (1, 16) body 521 n 1 dsq 130
+FS DOOR 448 id 6 at (11, 5) n 9
+FS DOOR 449 id 6 at (11, 5) n 10
+FS DOOR 450 id 6 at (11, 5) n 11
+FS DOOR 451 id 6 at (11, 5) n 12
+FS DOOR 452 id 6 at (11, 5) n 13
+FS DOOR 453 id 6 at (11, 5) n 14
+FS DOOR 454 id 6 at (11, 5) n 15
+FS DOOR 454 id 9 at (11, 5) n 7
+FS DOOR 455 id 6 at (11, 5) n 16
+FS DOOR 455 id 9 at (11, 5) n 8
+FS DOOR 456 id 6 at (11, 5) n 17
+FS DOOR 456 id 9 at (11, 5) n 9
+FS DOOR 457 id 6 at (11, 5) n 18
+FS DOOR 457 id 9 at (11, 5) n 10
+FS DOOR 458 id 6 at (11, 5) n 19
+FS DOOR 458 id 9 at (11, 5) n 11
+FS DOOR 459 id 6 at (11, 5) n 20
+FS DOOR 459 id 9 at (11, 5) n 12
+FS DOOR 460 id 6 at (11, 5) n 21
+FS DOOR 460 id 9 at (11, 5) n 13
+FS DOOR 461 id 6 at (11, 5) n 22
+FS DOOR 461 id 9 at (11, 5) n 14
+FS DOOR 462 id 6 at (11, 5) n 23
+FS DOOR 462 id 9 at (11, 5) n 15
+FS DOOR 463 id 6 at (11, 5) n 24
+FS DOOR 463 id 9 at (11, 5) n 16
+FS DOOR 464 id 6 at (11, 5) n 25
+FS DOOR 464 id 9 at (11, 5) n 17
+FS ARRIVE 464 id 521 body 1 at (5, 12) dsq 8
+FS PHASE 464 id 521 ph 2 d 8 at (5, 12)
+FS DOOR 465 id 6 at (11, 5) n 26
+FS DOOR 465 id 9 at (11, 5) n 18
+FS DOOR 466 id 6 at (11, 5) n 27
+FS DOOR 466 id 9 at (11, 5) n 19
+FS DOOR 467 id 6 at (11, 5) n 28
+FS DOOR 467 id 9 at (11, 5) n 20
+FS DOOR 468 id 6 at (11, 5) n 29
+FS DOOR 468 id 9 at (11, 5) n 21
+FS SEAL 468 tile (4, 14) n 1
+FS DOOR 469 id 6 at (11, 5) n 30
+FS DOOR 469 id 9 at (11, 5) n 22
+FS DOOR 470 id 6 at (11, 5) n 31
+FS DOOR 470 id 9 at (11, 5) n 23
+FS DOOR 471 id 6 at (11, 5) n 32
+FS DOOR 471 id 9 at (11, 5) n 24
+FS DOOR 472 id 6 at (11, 5) n 33
+FS DOOR 472 id 9 at (11, 5) n 25
+FS DOOR 473 id 6 at (11, 5) n 34
+FS DOOR 473 id 9 at (11, 5) n 26
+FS DOOR 474 id 6 at (11, 5) n 35
+FS DOOR 474 id 9 at (11, 5) n 27
+FS DOOR 475 id 6 at (11, 5) n 36
+FS DOOR 475 id 9 at (11, 5) n 28
+FS DOOR 476 id 6 at (11, 5) n 37
+FS DOOR 476 id 9 at (11, 5) n 29
+FS DOOR 477 id 6 at (11, 5) n 38
+FS DOOR 477 id 9 at (11, 5) n 30
+FS DOOR 478 id 6 at (11, 5) n 39
+FS DOOR 478 id 9 at (11, 5) n 31
+FS DOOR 479 id 6 at (11, 5) n 40
+FS DOOR 479 id 9 at (11, 5) n 32
+FS DOOR 480 id 6 at (11, 5) n 41
+FS DOOR 480 id 9 at (11, 5) n 33
+FS STAT 480 id 521 at (5, 17) need 5 orth 4 ti 90 ammo 120 sen 0 hp 8 covden 0 eco 1 lost 0
+FS DOOR 481 id 6 at (11, 5) n 42
+FS DOOR 481 id 9 at (11, 5) n 34
+FS DOOR 482 id 6 at (11, 5) n 43
+FS DOOR 482 id 9 at (11, 5) n 35
+FS DOOR 483 id 6 at (11, 5) n 44
+FS DOOR 483 id 9 at (11, 5) n 36
+FS DOOR 484 id 6 at (11, 5) n 45
+FS DOOR 484 id 9 at (11, 5) n 37
+FS DOOR 485 id 6 at (11, 5) n 46
+FS DOOR 485 id 9 at (11, 5) n 38
+FS DOORSEEN 491 id 6 at (11, 5) rank 0
+FS DOORSEEN 495 id 9 at (12, 8) rank 2
+FS DOOR 496 id 6 at (11, 5) n 47
+FS DOOR 497 id 6 at (11, 5) n 48
+FS DOOR 498 id 6 at (11, 5) n 49
+FS DOOR 499 id 6 at (11, 5) n 50
+FS DOOR 500 id 6 at (11, 5) n 51
+FS STAT 500 id 521 at (5, 17) need 5 orth 4 ti 180 ammo 120 sen 0 hp 8 covden 0 eco 1 lost 0
+FS DOOR 501 id 6 at (11, 5) n 52
+FS DOOR 502 id 6 at (11, 5) n 53
+FS DOOR 503 id 6 at (11, 5) n 54
+FS DOOR 504 id 6 at (11, 5) n 55
+FS DOOR 505 id 6 at (11, 5) n 56
+FS DOOR 506 id 6 at (11, 5) n 57
+FS DOOR 507 id 6 at (11, 5) n 58
+FS DOOR 508 id 6 at (11, 5) n 59
+FS DOOR 509 id 6 at (11, 5) n 60
+FS DOOR 510 id 6 at (11, 5) n 61
+FS DOOR 511 id 6 at (11, 5) n 62
+FS DOOR 512 id 6 at (11, 5) n 63
+FS DOOR 513 id 6 at (11, 5) n 64
+FS DOOR 514 id 6 at (11, 5) n 65
+FS DOOR 515 id 6 at (11, 5) n 66
+FS DOORSEEN 516 id 6 at (12, 8) rank 2
+FS GATE 519 sig (18, 18, (2, 14), (14, 2)) ok 1
+FS STAT 520 id 521 at (5, 17) need 5 orth 4 ti 167 ammo 120 sen 0 hp 8 covden 0 eco 1 lost 0
+FS DOORSEEN 521 id 9 at (12, 8) rank 2
+FS DOORSEEN 525 id 9 at (12, 8) rank 2
+FS DOORSEEN 527 id 9 at (12, 8) rank 2
+FS DOORSEEN 529 id 9 at (12, 8) rank 2
+FS DOORSEEN 531 id 6 at (12, 8) rank 2
+FS DOORSEEN 531 id 9 at (13, 9) rank 2
+FS DOORSEEN 533 id 6 at (12, 8) rank 2
+FS DOORSEEN 533 id 9 at (13, 9) rank 2
+FS DOORSEEN 535 id 6 at (12, 8) rank 2
+FS DOORSEEN 535 id 9 at (13, 9) rank 2
+FS DOORSEEN 537 id 6 at (12, 8) rank 2
+FS DOORSEEN 537 id 9 at (13, 9) rank 2
+FS DOORSEEN 539 id 6 at (12, 8) rank 2
+FS DOORSEEN 539 id 9 at (13, 9) rank 2
+FS GATE 539 sig (18, 18, (2, 14), (14, 2)) ok 1
+FS STAT 540 id 521 at (5, 17) need 5 orth 4 ti 168 ammo 120 sen 0 hp 8 covden 0 eco 1 lost 0
+FS DOORSEEN 541 id 6 at (12, 8) rank 2
+FS DOORSEEN 541 id 9 at (13, 9) rank 2
+PROBE SENTSUICIDE 541 at (6, 12)
+FS DOORSEEN 543 id 6 at (12, 8) rank 2
+FS DOORSEEN 543 id 9 at (13, 9) rank 2
+FS DOORSEEN 545 id 6 at (12, 8) rank 2
+FS DOORSEEN 545 id 9 at (13, 9) rank 2
+FS DOORSEEN 547 id 6 at (12, 8) rank 2
+FS DOORSEEN 547 id 9 at (13, 9) rank 2
+FS DOORSEEN 549 id 6 at (12, 8) rank 2
+FS DOORSEEN 549 id 9 at (13, 9) rank 2
+FS DOORSEEN 551 id 6 at (12, 8) rank 2
+FS DOORSEEN 551 id 9 at (13, 9) rank 2
+FS DOORSEEN 553 id 6 at (12, 8) rank 2
+FS DOORSEEN 553 id 9 at (13, 9) rank 2
+FS DOORSEEN 555 id 6 at (12, 8) rank 2
+FS DOORSEEN 555 id 9 at (13, 9) rank 2
+FS DOORSEEN 557 id 6 at (12, 8) rank 2
+FS DOORSEEN 557 id 9 at (13, 9) rank 2
+FS DOORSEEN 559 id 6 at (12, 8) rank 2
+FS DOORSEEN 559 id 9 at (13, 9) rank 2
+FS STAT 560 id 521 at (5, 17) need 5 orth 4 ti 173 ammo 120 sen 0 hp 8 covden 0 eco 1 lost 0
+FS DOORSEEN 561 id 6 at (12, 8) rank 2
+FS DOORSEEN 561 id 9 at (13, 9) rank 2
+FS SENTINEL 562 at (6, 17) face NORTHWEST tgt (3, 14) score 18 n 1 onring 0 lost 0 onsray 0 olddsq -1
+FS RUNG 562 id 521 r 4 hi -
+FS DOORSEEN 563 id 6 at (12, 8) rank 2
+FS DOORSEEN 563 id 9 at (13, 9) rank 2
+FS PHASE 563 id 521 ph 5 d 8 at (5, 17)
+PROBE SENTSUICIDE 563 at (6, 17)
+FS PHASE 564 id 521 ph 2 d 5 at (4, 17)
+FS SENTDEAD 564 at (6, 17) lost 1
+FS DOORSEEN 565 id 6 at (12, 8) rank 2
+FS DOORSEEN 565 id 9 at (13, 9) rank 2
+FS DOORSEEN 567 id 6 at (12, 8) rank 2
+FS DOORSEEN 567 id 9 at (13, 9) rank 2
+FS DOORSEEN 569 id 6 at (12, 8) rank 2
+FS DOORSEEN 569 id 9 at (13, 9) rank 2
+FS DOORSEEN 571 id 6 at (12, 8) rank 2
+FS DOORSEEN 571 id 9 at (13, 9) rank 2
+FS DOORSEEN 573 id 6 at (12, 8) rank 2
+FS DOORSEEN 573 id 9 at (13, 9) rank 2
+FS DOORSEEN 575 id 6 at (12, 8) rank 2
+FS DOORSEEN 575 id 9 at (13, 9) rank 2
+FS DOORSEEN 577 id 6 at (12, 8) rank 2
+FS DOORSEEN 577 id 9 at (13, 9) rank 2
+FS DOORSEEN 579 id 6 at (12, 8) rank 2
+FS DOORSEEN 579 id 9 at (13, 9) rank 2
+FS STAT 580 id 521 at (6, 17) need 6 orth 5 ti 184 ammo 120 sen 0 hp 8 covden 0 eco 1 lost 1
+FS DOORSEEN 581 id 6 at (12, 8) rank 2
+FS DOORSEEN 581 id 9 at (13, 9) rank 2
+FS SENTINEL 581 at (4, 17) face NORTHWEST tgt (2, 15) score 8 n 2 onring 0 lost 1 onsray 0 olddsq 4
+FS RUNG 581 id 521 r 4 hi -
+FS PHASE 582 id 521 ph 5 d 8 at (5, 17)
+PROBE SENTSUICIDE 582 at (4, 17)
+FS DOORSEEN 583 id 6 at (12, 8) rank 2
+FS DOORSEEN 583 id 9 at (13, 9) rank 2
+FS PHASE 583 id 521 ph 2 d 13 at (6, 17)
+FS SENTDEAD 583 at (4, 17) lost 2
+FS DOORSEEN 585 id 6 at (12, 8) rank 2
+FS DOORSEEN 585 id 9 at (13, 9) rank 2
+FS DOORSEEN 587 id 6 at (12, 8) rank 2
+FS DOORSEEN 587 id 9 at (13, 9) rank 2
+FS DOORSEEN 589 id 6 at (12, 8) rank 2
+FS DOORSEEN 589 id 9 at (13, 9) rank 2
+FS DOORSEEN 591 id 6 at (12, 8) rank 2
+FS DOORSEEN 591 id 9 at (13, 9) rank 2
+FS DOORSEEN 593 id 6 at (12, 8) rank 2
+FS DOORSEEN 593 id 9 at (13, 9) rank 2
+FS DOORSEEN 595 id 6 at (12, 8) rank 2
+FS DOORSEEN 595 id 9 at (13, 9) rank 2
+FS DOORSEEN 597 id 9 at (12, 8) rank 2
+FS DOORSEEN 599 id 9 at (12, 8) rank 2
+FS STAT 600 id 521 at (5, 17) need 5 orth 4 ti 195 ammo 120 sen 0 hp 8 covden 0 eco 1 lost 2
+FS DOORSEEN 601 id 9 at (12, 8) rank 2
+FS DOORSEEN 603 id 9 at (12, 8) rank 2
+FS DOORSEEN 605 id 6 at (12, 8) rank 2
+FS DOORSEEN 605 id 9 at (12, 8) rank 2
+FS DOOR 610 id 6 at (12, 8) n 67
+FS DOOR 611 id 6 at (12, 8) n 68
+FS DOOR 612 id 6 at (12, 8) n 69
+FS DOOR 613 id 6 at (12, 8) n 70
+FS GATE 613 sig (18, 18, (2, 14), (14, 2)) ok 1
+FS DOOR 614 id 6 at (12, 8) n 71
+FS DOOR 615 id 6 at (12, 8) n 72
+PROBE SENTSUICIDE 615 at (6, 12)
+FS DOOR 616 id 6 at (12, 8) n 73
+FS DOOR 617 id 6 at (12, 8) n 74
+FS DOOR 618 id 6 at (12, 8) n 75
+FS DOOR 619 id 6 at (12, 8) n 76
+FS DOOR 620 id 6 at (12, 8) n 77
+FS STAT 620 id 521 at (5, 17) need 5 orth 4 ti 76 ammo 120 sen 0 hp 8 covden 0 eco 1 lost 2
+FS DOOR 621 id 6 at (12, 8) n 78
+FS DOOR 622 id 6 at (12, 8) n 79
+FS DOORSEEN 623 id 6 at (13, 9) rank 2
+FS DOORSEEN 628 id 6 at (13, 9) rank 2
+FS DOORSEEN 630 id 6 at (13, 9) rank 2
+FS DOORSEEN 632 id 6 at (13, 9) rank 2
+PROBE SENTSUICIDE 633 at (5, 11)
+FS DOORSEEN 634 id 6 at (13, 9) rank 2
+FS DOORSEEN 636 id 6 at (13, 9) rank 2
+FS DOORSEEN 638 id 6 at (13, 9) rank 2
+FS DOORSEEN 640 id 6 at (13, 9) rank 2
+FS STAT 640 id 521 at (5, 17) need 5 orth 4 ti 103 ammo 80 sen 0 hp 8 covden 0 eco 1 lost 2
+FS DOORSEEN 642 id 6 at (13, 9) rank 2
+FS DOORSEEN 644 id 6 at (13, 9) rank 2
+FS DOORSEEN 646 id 6 at (13, 9) rank 2
+FS DOORSEEN 648 id 6 at (13, 9) rank 2
+FS DOORSEEN 650 id 6 at (13, 9) rank 2
+FS DOORSEEN 652 id 6 at (13, 9) rank 2
+FS DOORSEEN 653 id 9 at (13, 9) rank 2
+FS DOORSEEN 654 id 6 at (13, 9) rank 2
+FS DOORSEEN 656 id 6 at (13, 9) rank 2
+FS DOORSEEN 658 id 6 at (13, 9) rank 2
+FS DOORSEEN 660 id 6 at (13, 9) rank 2
+FS STAT 660 id 521 at (5, 17) need 5 orth 4 ti 234 ammo 60 sen 0 hp 8 covden 0 eco 1 lost 2
+FS DOORSEEN 662 id 6 at (13, 9) rank 2
+FS DOORSEEN 664 id 6 at (13, 9) rank 2
+FS DOORSEEN 668 id 6 at (13, 9) rank 2
+FS DOORSEEN 670 id 6 at (13, 9) rank 2
+FS DOORSEEN 672 id 6 at (13, 9) rank 2
+FS DOORSEEN 674 id 6 at (13, 9) rank 2
+FS DOORSEEN 676 id 6 at (13, 9) rank 2
+FS DOORSEEN 678 id 6 at (13, 9) rank 2
+FS DOORSEEN 680 id 6 at (13, 9) rank 2
+FS STAT 680 id 521 at (5, 17) need 5 orth 4 ti 384 ammo 60 sen 0 hp 8 covden 0 eco 1 lost 2
+FS DOORSEEN 682 id 6 at (13, 9) rank 2
+FS DOORSEEN 684 id 6 at (13, 9) rank 2
+FS DOORSEEN 686 id 6 at (13, 9) rank 2
+FS DOORSEEN 688 id 6 at (13, 9) rank 2
+FS DOORSEEN 690 id 6 at (13, 9) rank 2
+FS DOORSEEN 692 id 6 at (13, 9) rank 2
+FS DOORSEEN 694 id 6 at (13, 9) rank 2
+FS DOORSEEN 696 id 6 at (13, 9) rank 2
+FS DOORSEEN 698 id 6 at (13, 9) rank 2
+FS DOORSEEN 700 id 6 at (13, 9) rank 2
+FS STAT 700 id 521 at (5, 17) need 5 orth 4 ti 534 ammo 60 sen 0 hp 8 covden 0 eco 1 lost 2
+FS DOORSEEN 702 id 6 at (13, 9) rank 2
+FS DOORSEEN 704 id 6 at (13, 9) rank 2
+FS DOORSEEN 706 id 6 at (13, 9) rank 2
+FS DOORSEEN 708 id 6 at (13, 9) rank 2
+FS EVICT 708 from (4, 14) to (5, 8)
+FS DOORSEEN 710 id 6 at (13, 9) rank 2
+FS DOORSEEN 712 id 6 at (13, 9) rank 2
+FS DOORSEEN 714 id 6 at (13, 9) rank 2
+FS DOORSEEN 716 id 6 at (13, 9) rank 2
+FS DOORSEEN 718 id 6 at (13, 9) rank 2
+FS DOORSEEN 720 id 6 at (13, 9) rank 2
+FS STAT 720 id 521 at (5, 17) need 5 orth 4 ti 660 ammo 60 sen 0 hp 8 covden 0 eco 1 lost 2
+FS DOORSEEN 722 id 6 at (13, 9) rank 2
+FS DOORSEEN 724 id 6 at (13, 9) rank 2
+FS DOORSEEN 726 id 6 at (13, 9) rank 2
+FS GATE 727 sig (18, 18, (2, 14), (14, 2)) ok 1
+FS DOORSEEN 728 id 6 at (13, 9) rank 2
+FS EVICT 728 from (4, 14) to (5, 8)
+FS DOORSEEN 730 id 6 at (13, 9) rank 2
+FS DOORSEEN 732 id 6 at (13, 9) rank 2
+FS DOORSEEN 734 id 6 at (13, 9) rank 2
+FS DOORSEEN 736 id 6 at (13, 9) rank 2
+FS DOORSEEN 738 id 6 at (13, 9) rank 2
+FS DOORSEEN 740 id 6 at (13, 9) rank 2
+FS STAT 740 id 521 at (5, 17) need 5 orth 4 ti 673 ammo 60 sen 0 hp 8 covden 0 eco 1 lost 2
+FS DOORSEEN 742 id 6 at (13, 9) rank 2
+FS DOORSEEN 744 id 6 at (13, 9) rank 2
+FS DOORSEEN 745 id 9 at (13, 9) rank 2
+FS GATE 745 sig (18, 18, (2, 14), (14, 2)) ok 1
+FS DOORSEEN 746 id 6 at (13, 9) rank 2
+FS DOORSEEN 750 id 6 at (13, 9) rank 2
+FS EVICT 751 from (4, 14) to (5, 8)
+FS DOORSEEN 752 id 6 at (13, 9) rank 2
+FS DOORSEEN 754 id 6 at (13, 9) rank 2
+FS DOORSEEN 756 id 6 at (13, 9) rank 2
+FS DOORSEEN 758 id 6 at (13, 9) rank 2
+FS DOORSEEN 760 id 6 at (13, 9) rank 2
+FS STAT 760 id 521 at (5, 17) need 5 orth 4 ti 573 ammo 60 sen 0 hp 8 covden 0 eco 1 lost 2
+FS DOORSEEN 762 id 6 at (13, 9) rank 2
+FS DOORSEEN 764 id 6 at (13, 9) rank 2
+PROBE SENTSUICIDE 764 at (6, 12)
+FS DOORSEEN 766 id 6 at (13, 9) rank 2
+FS PHASE 766 id 521 ph 5 d 8 at (5, 17)
+PROBE SENTSUICIDE 766 at (7, 14)
+FS PHASE 767 id 521 ph 2 d 13 at (6, 17)
+FS DOORSEEN 768 id 6 at (13, 9) rank 2
+PROBE SENTSUICIDE 768 at (6, 12)
+FS PHASE 769 id 521 ph 5 d 13 at (6, 17)
+PROBE SENTSUICIDE 769 at (6, 14)
+FS DOORSEEN 770 id 6 at (13, 9) rank 2
+FS PHASE 770 id 521 ph 2 d 8 at (5, 17)
+FS DOORSEEN 772 id 6 at (13, 9) rank 2
+FS DOORSEEN 774 id 6 at (13, 9) rank 2
+FS DOORSEEN 776 id 6 at (13, 9) rank 2
+FS DOORSEEN 778 id 6 at (13, 9) rank 2
+FS DOORSEEN 780 id 6 at (13, 9) rank 2
+FS STAT 780 id 521 at (5, 17) need 5 orth 4 ti 123 ammo 80 sen 0 hp 8 covden 0 eco 1 lost 2
+FS DOORSEEN 782 id 6 at (13, 9) rank 2
+FS DOORSEEN 784 id 6 at (13, 9) rank 2
+FS DOORSEEN 786 id 6 at (13, 9) rank 2
+FS DOORSEEN 788 id 6 at (13, 9) rank 2
+FS DOORSEEN 790 id 6 at (13, 9) rank 2
+FS DOORSEEN 792 id 6 at (13, 9) rank 2
+FS DOORSEEN 794 id 6 at (13, 9) rank 2
+FS DOORSEEN 796 id 6 at (13, 9) rank 2
+FS DOORSEEN 798 id 6 at (13, 9) rank 2
+FS DOORSEEN 800 id 6 at (13, 9) rank 2
+FS STAT 800 id 521 at (5, 17) need 5 orth 4 ti 273 ammo 80 sen 0 hp 8 covden 0 eco 1 lost 2
+FS DOORSEEN 802 id 6 at (13, 9) rank 2
+FS DOORSEEN 804 id 6 at (13, 9) rank 2
+FS DOORSEEN 806 id 6 at (13, 9) rank 2
+FS DOORSEEN 808 id 6 at (13, 9) rank 2
+FS DOORSEEN 810 id 6 at (13, 9) rank 2
+FS DOORSEEN 812 id 6 at (13, 9) rank 2
+FS DOORSEEN 814 id 6 at (13, 9) rank 2
+FS DOORSEEN 816 id 6 at (13, 9) rank 2
+FS DOORSEEN 818 id 6 at (13, 9) rank 2
+FS DOORSEEN 820 id 6 at (13, 9) rank 2
+FS STAT 820 id 521 at (5, 17) need 5 orth 4 ti 423 ammo 80 sen 0 hp 8 covden 0 eco 1 lost 2
+FS DOORSEEN 822 id 6 at (13, 9) rank 2
+FS DOORSEEN 824 id 6 at (13, 9) rank 2
+FS DOORSEEN 826 id 6 at (13, 9) rank 2
+FS DOORSEEN 828 id 6 at (13, 9) rank 2
+FS DOORSEEN 830 id 6 at (13, 9) rank 2
+FS DOORSEEN 832 id 6 at (13, 9) rank 2
+FS DOORSEEN 834 id 6 at (13, 9) rank 2
+FS DOORSEEN 836 id 6 at (13, 9) rank 2
+FS DOORSEEN 838 id 6 at (13, 9) rank 2
+FS DOORSEEN 840 id 6 at (13, 9) rank 2
+FS STAT 840 id 521 at (5, 17) need 5 orth 4 ti 573 ammo 80 sen 0 hp 8 covden 0 eco 1 lost 2
+FS DOORSEEN 842 id 6 at (13, 9) rank 2
+FS DOORSEEN 844 id 6 at (13, 9) rank 2
+FS DOORSEEN 846 id 6 at (13, 9) rank 2
+FS DOORSEEN 848 id 6 at (13, 9) rank 2
+FS DOORSEEN 850 id 6 at (13, 9) rank 2
+FS DOORSEEN 852 id 6 at (13, 9) rank 2
+FS DOORSEEN 854 id 6 at (13, 9) rank 2
+FS DOORSEEN 856 id 6 at (13, 9) rank 2
+FS DOORSEEN 858 id 6 at (13, 9) rank 2
+FS DOORSEEN 859 id 9 at (13, 9) rank 2
+FS GATE 859 sig (18, 18, (2, 14), (14, 2)) ok 1
+FS DOORSEEN 860 id 6 at (13, 9) rank 2
+FS STAT 860 id 521 at (5, 17) need 5 orth 4 ti 598 ammo 80 sen 0 hp 8 covden 0 eco 1 lost 2
+FS DOORSEEN 864 id 6 at (13, 9) rank 2
+FS DOORSEEN 864 id 9 at (13, 9) rank 2
+FS DOORSEEN 866 id 6 at (13, 9) rank 2
+FS DOORSEEN 866 id 9 at (13, 9) rank 2
+FS DOORSEEN 868 id 6 at (13, 9) rank 2
+FS DOORSEEN 868 id 9 at (13, 9) rank 2
+FS DOORSEEN 870 id 6 at (13, 9) rank 2
+FS DOORSEEN 870 id 9 at (13, 9) rank 2
+FS DOORSEEN 872 id 6 at (13, 9) rank 2
+FS DOORSEEN 872 id 9 at (13, 9) rank 2
+FS DOORSEEN 874 id 6 at (13, 9) rank 2
+FS DOORSEEN 874 id 9 at (13, 9) rank 2
+FS DOORSEEN 876 id 6 at (13, 9) rank 2
+FS DOORSEEN 876 id 9 at (13, 9) rank 2
+FS DOORSEEN 878 id 6 at (13, 9) rank 2
+FS DOORSEEN 878 id 9 at (13, 9) rank 2
+PROBE SENTSUICIDE 878 at (6, 12)
+FS DOORSEEN 880 id 6 at (13, 9) rank 2
+FS DOORSEEN 880 id 9 at (13, 9) rank 2
+FS PHASE 880 id 521 ph 5 d 8 at (5, 17)
+FS STAT 880 id 521 at (5, 17) need 5 orth 4 ti 486 ammo 80 sen 1 hp 8 covden 0 eco 1 lost 2
+PROBE SENTSUICIDE 880 at (7, 14)
+FS PHASE 881 id 521 ph 2 d 13 at (6, 17)
+FS DOORSEEN 882 id 6 at (13, 9) rank 2
+FS DOORSEEN 882 id 9 at (13, 9) rank 2
+PROBE SENTSUICIDE 882 at (6, 12)
+FS PHASE 883 id 521 ph 5 d 13 at (6, 17)
+PROBE SENTSUICIDE 883 at (6, 14)
+FS DOORSEEN 884 id 6 at (13, 9) rank 2
+FS DOORSEEN 884 id 9 at (13, 9) rank 2
+FS PHASE 884 id 521 ph 2 d 8 at (5, 17)
+PROBE SENTSUICIDE 884 at (6, 12)
+FS DOORSEEN 886 id 6 at (13, 9) rank 2
+FS DOORSEEN 886 id 9 at (13, 9) rank 2
+FS DOORSEEN 888 id 6 at (13, 9) rank 2
+FS DOORSEEN 888 id 9 at (13, 9) rank 2
+FS DOORSEEN 890 id 6 at (13, 9) rank 2
+FS DOORSEEN 890 id 9 at (13, 9) rank 2
+FS DOORSEEN 892 id 6 at (13, 9) rank 2
+FS DOORSEEN 892 id 9 at (13, 9) rank 2
+FS DOORSEEN 894 id 6 at (13, 9) rank 2
+FS DOORSEEN 894 id 9 at (13, 9) rank 2
+FS DOORSEEN 896 id 6 at (13, 9) rank 2
+FS DOORSEEN 896 id 9 at (13, 9) rank 2
+FS DOORSEEN 898 id 6 at (13, 9) rank 2
+FS DOORSEEN 898 id 9 at (13, 9) rank 2
+FS DOORSEEN 900 id 6 at (13, 9) rank 2
+FS DOORSEEN 900 id 9 at (13, 9) rank 2
+FS STAT 900 id 521 at (5, 17) need 5 orth 4 ti 231 ammo 80 sen 0 hp 8 covden 0 eco 1 lost 2
+FS DOORSEEN 902 id 6 at (13, 9) rank 2
+FS DOORSEEN 902 id 9 at (13, 9) rank 2
+FS DOORSEEN 904 id 6 at (13, 9) rank 2
+FS DOORSEEN 904 id 9 at (13, 9) rank 2
+FS DOORSEEN 906 id 6 at (13, 9) rank 2
+FS DOORSEEN 906 id 9 at (13, 9) rank 2
+FS DOORSEEN 908 id 6 at (13, 9) rank 2
+FS DOORSEEN 908 id 9 at (13, 9) rank 2
+FS DOORSEEN 910 id 6 at (13, 9) rank 2
+FS DOORSEEN 910 id 9 at (13, 9) rank 2
+FS DOORSEEN 912 id 6 at (13, 9) rank 2
+FS DOORSEEN 912 id 9 at (13, 9) rank 2
+FS DOORSEEN 914 id 6 at (13, 9) rank 2
+FS DOORSEEN 914 id 9 at (13, 9) rank 2
+FS DOORSEEN 916 id 6 at (13, 9) rank 2
+FS DOORSEEN 916 id 9 at (13, 9) rank 2
+FS DOORSEEN 918 id 6 at (13, 9) rank 2
+FS DOORSEEN 918 id 9 at (13, 9) rank 2
+FS DOORSEEN 920 id 6 at (13, 9) rank 2
+FS DOORSEEN 920 id 9 at (13, 9) rank 2
+FS STAT 920 id 521 at (5, 17) need 5 orth 4 ti 381 ammo 80 sen 0 hp 8 covden 0 eco 1 lost 2
+FS DOORSEEN 922 id 6 at (13, 9) rank 2
+FS DOORSEEN 922 id 9 at (13, 9) rank 2
+FS DOORSEEN 924 id 6 at (13, 9) rank 2
+FS DOORSEEN 924 id 9 at (13, 9) rank 2
+FS DOORSEEN 926 id 6 at (13, 9) rank 2
+FS DOORSEEN 926 id 9 at (13, 9) rank 2
+FS DOORSEEN 928 id 6 at (13, 9) rank 2
+FS DOORSEEN 928 id 9 at (13, 9) rank 2
+FS DOORSEEN 930 id 6 at (13, 9) rank 2
+FS DOORSEEN 930 id 9 at (13, 9) rank 2
+FS DOORSEEN 932 id 6 at (13, 9) rank 2
+FS DOORSEEN 932 id 9 at (13, 9) rank 2
+FS DOORSEEN 934 id 6 at (13, 9) rank 2
+FS DOORSEEN 934 id 9 at (13, 9) rank 2
+FS DOORSEEN 936 id 6 at (13, 9) rank 2
+FS DOORSEEN 936 id 9 at (13, 9) rank 2
+FS DOORSEEN 938 id 6 at (13, 9) rank 2
+FS DOORSEEN 938 id 9 at (13, 9) rank 2
+FS DOORSEEN 940 id 6 at (13, 9) rank 2
+FS DOORSEEN 940 id 9 at (13, 9) rank 2
+FS STAT 940 id 521 at (5, 17) need 5 orth 4 ti 531 ammo 80 sen 0 hp 8 covden 0 eco 1 lost 2
+FS DOORSEEN 942 id 6 at (13, 9) rank 2
+FS DOORSEEN 942 id 9 at (13, 9) rank 2
+FS DOORSEEN 944 id 6 at (13, 9) rank 2
+FS DOORSEEN 944 id 9 at (13, 9) rank 2
+FS DOORSEEN 946 id 6 at (13, 9) rank 2
+FS DOORSEEN 946 id 9 at (13, 9) rank 2
+FS DOORSEEN 948 id 6 at (13, 9) rank 2
+FS DOORSEEN 948 id 9 at (13, 9) rank 2
+FS DOORSEEN 950 id 6 at (13, 9) rank 2
+FS DOORSEEN 950 id 9 at (13, 9) rank 2
+FS DOORSEEN 952 id 6 at (13, 9) rank 2
+FS DOORSEEN 952 id 9 at (13, 9) rank 2
+FS DOORSEEN 954 id 6 at (13, 9) rank 2
+FS DOORSEEN 954 id 9 at (13, 9) rank 2
+FS DOORSEEN 956 id 6 at (13, 9) rank 2
+FS DOORSEEN 956 id 9 at (13, 9) rank 2
+FS DOORSEEN 958 id 6 at (13, 9) rank 2
+FS DOORSEEN 958 id 9 at (13, 9) rank 2
+FS DOORSEEN 960 id 6 at (13, 9) rank 2
+FS DOORSEEN 960 id 9 at (13, 9) rank 2
+FS STAT 960 id 521 at (5, 17) need 5 orth 4 ti 166 ammo 595 sen 0 hp 8 covden 0 eco 1 lost 2
+FS DOORSEEN 962 id 6 at (13, 9) rank 2
+FS DOORSEEN 962 id 9 at (13, 9) rank 2
+FS DOORSEEN 964 id 6 at (13, 9) rank 2
+FS DOORSEEN 964 id 9 at (13, 9) rank 2
+FS DOORSEEN 966 id 6 at (13, 9) rank 2
+FS DOORSEEN 966 id 9 at (13, 9) rank 2
+FS DOORSEEN 968 id 6 at (13, 9) rank 2
+FS DOORSEEN 968 id 9 at (13, 9) rank 2
+FS DOORSEEN 970 id 6 at (13, 9) rank 2
+FS DOORSEEN 970 id 9 at (13, 9) rank 2
+FS DOORSEEN 972 id 6 at (13, 9) rank 2
+FS DOORSEEN 972 id 9 at (13, 9) rank 2
+FS DOORSEEN 974 id 6 at (13, 9) rank 2
+FS DOORSEEN 974 id 9 at (13, 9) rank 2
+FS DOORSEEN 976 id 6 at (13, 9) rank 2
+FS DOORSEEN 976 id 9 at (13, 9) rank 2
+FS DOORSEEN 978 id 6 at (13, 9) rank 2
+FS DOORSEEN 978 id 9 at (13, 9) rank 2
+FS DOORSEEN 980 id 6 at (13, 9) rank 2
+FS DOORSEEN 980 id 9 at (13, 9) rank 2
+FS STAT 980 id 521 at (5, 17) need 5 orth 4 ti 176 ammo 735 sen 0 hp 8 covden 0 eco 1 lost 2
+FS DOORSEEN 982 id 6 at (13, 9) rank 2
+FS DOORSEEN 982 id 9 at (13, 9) rank 2
+FS DOORSEEN 984 id 6 at (13, 9) rank 2
+FS DOORSEEN 984 id 9 at (13, 9) rank 2
+FS DOORSEEN 986 id 6 at (13, 9) rank 2
+FS DOORSEEN 986 id 9 at (13, 9) rank 2
+FS DOORSEEN 988 id 6 at (13, 9) rank 2
+FS DOORSEEN 988 id 9 at (13, 9) rank 2
+FS DOORSEEN 990 id 6 at (13, 9) rank 2
+FS DOORSEEN 990 id 9 at (13, 9) rank 2
+FS DOORSEEN 992 id 6 at (13, 9) rank 2
+FS DOORSEEN 992 id 9 at (13, 9) rank 2
+FS DOORSEEN 994 id 6 at (13, 9) rank 2
+FS DOORSEEN 994 id 9 at (13, 9) rank 2
+FS DOORSEEN 996 id 6 at (13, 9) rank 2
+FS DOORSEEN 996 id 9 at (13, 9) rank 2
+FS DOORSEEN 998 id 6 at (13, 9) rank 2
+FS DOORSEEN 998 id 9 at (13, 9) rank 2

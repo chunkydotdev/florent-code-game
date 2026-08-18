@@ -1,0 +1,152 @@
+Update available: 2.3.6 -> 2.3.8. Run: pip install --upgrade fcode
+FS GATE 0 sig (30, 30, (2, 24), (26, 4)) ok 1
+FS GATE 1 sig (30, 30, (2, 24), (26, 4)) ok 1
+FS PHASE 1 id 3 ph 1 d 808 at (4, 23)
+FS HOPBUILD 1 at (4, 23) lch (5, 23) T (28, 3)
+FS GATE 2 sig (30, 30, (2, 24), (26, 4)) ok 1
+FS GATE 2 sig (30, 30, (2, 24), (26, 4)) ok 1
+FS THROW 2 from (4, 22) to (9, 20) T (28, 3) body 3 n 1 dsq 514
+FS HOPBUILD 3 at (9, 20) lch (10, 20) T (28, 3)
+FS GATE 3 sig (30, 30, (2, 24), (26, 4)) ok 1
+FS GATE 4 sig (30, 30, (2, 24), (26, 4)) ok 1
+FS THROW 4 from (9, 19) to (14, 17) T (28, 3) body 3 n 1 dsq 288
+FS HOPBUILD 5 at (14, 17) lch (14, 16) T (28, 3)
+FS GATE 6 sig (30, 30, (2, 24), (26, 4)) ok 1
+FS THROW 6 from (15, 17) to (18, 13) T (28, 3) body 3 n 1 dsq 128
+FS HOPBUILD 7 at (18, 13) lch (18, 12) T (28, 3)
+FS GATE 8 sig (30, 30, (2, 24), (26, 4)) ok 1
+FS THROW 8 from (19, 13) to (22, 9) T (28, 3) body 3 n 1 dsq 32
+FS HOPBUILD 9 at (22, 9) lch (22, 8) T (28, 3)
+FS GATE 10 sig (30, 30, (2, 24), (26, 4)) ok 1
+FS THROW 10 from (23, 9) to (25, 4) T (28, 3) body 3 n 1 dsq 1
+FS ARRIVE 11 id 3 body 1 at (25, 4) dsq 1
+FS PHASE 11 id 3 ph 2 d 1 at (25, 4)
+FS SEAL 11 tile (25, 5) n 1
+FS SEAL 12 tile (25, 3) n 2
+FS DODGE 13 id 3 from (25, 4) to (24, 4) cov 1 -> 0 hit 0 hp 40
+FS GATE 13 sig (30, 30, (2, 24), (26, 4)) ok 1
+FS SEAL 14 tile (25, 4) n 3
+FS GATE 14 sig (30, 30, (2, 24), (26, 4)) ok 1
+FS STAT 20 id 3 at (23, 4) need 8 orth 7 ti 36 ammo 4 sen 0 hp 40 covden 0 eco 0 lost 0
+FS SEAL 23 tile (25, 4) n 4
+ECO514 24 harv 2 mouth 1 held 1 conn 1 deliv 1
+FS SEAL 25 tile (25, 3) n 5
+FS SEAL 31 tile (26, 3) n 6
+FS SEAL 33 tile (27, 3) n 7
+FS SEAL 36 tile (28, 4) n 8
+FS STAT 40 id 3 at (29, 5) need 4 orth 3 ti 84 ammo 54 sen 0 hp 40 covden 0 eco 1 lost 0
+FS SEAL 40 tile (28, 5) n 9
+FS SEAL 43 tile (27, 6) n 10
+FS CLEAR 53 tile (26, 6) peck 1
+FS RUNG 53 id 3 r 3 hi -
+FS CLEAR 59 tile (26, 6) peck 1
+FS RUNG 59 id 3 r 3 hi -
+FS STAT 60 id 3 at (26, 7) need 4 orth 3 ti 50 ammo 82 sen 0 hp 40 covden 0 eco 1 lost 0
+FS CLEAR 60 tile (26, 6) peck 2
+FS RUNG 60 id 3 r 3 hi -
+FS CLEAR 61 tile (26, 6) peck 3
+FS RUNG 61 id 3 r 3 hi -
+FS CLEAR 62 tile (26, 6) peck 4
+FS RUNG 62 id 3 r 3 hi -
+FS CLEAR 63 tile (26, 6) peck 5
+FS RUNG 63 id 3 r 3 hi -
+FS CLEAR 64 tile (26, 6) peck 6
+FS RUNG 64 id 3 r 3 hi -
+FS CLEAR 65 tile (26, 6) peck 7
+FS RUNG 65 id 3 r 3 hi -
+FS CLEAR 66 tile (26, 6) peck 8
+FS RUNG 66 id 3 r 3 hi -
+FS DODGE 69 id 3 from (25, 6) to (26, 6) cov 1 -> 0 hit 0 hp 22
+FS CLEAR 71 tile (26, 6) peck 1
+FS RUNG 71 id 3 r 3 hi -
+FS CLEARED 72 tile (26, 6) n 1
+FS SEAL 72 tile (26, 6) n 11
+FS SEALCLR 72 tile (26, 6) lag 0
+FS EVICTOR 73 at (27, 7) ucov 0 cov 1 unseal 1 obs 1
+FS RUNG 73 id 3 r 2 hi -
+FS GATE 74 sig (30, 30, (2, 24), (26, 4)) ok 1
+FS EVICT 74 from (27, 8) to (28, 2)
+FS DODGE 75 id 3 from (25, 7) to (26, 7) cov 1 -> 0 hit 0 hp 4
+FS EVICT 80 from (28, 6) to (28, 12)
+FS EVICT 84 from (28, 8) to (22, 8)
+FS EVICT 88 from (26, 8) to (28, 2)
+FS EVICT 94 from (28, 6) to (28, 12)
+FS EVICT 98 from (28, 8) to (22, 8)
+FS EVICT 102 from (26, 8) to (28, 2)
+FS EVICT 108 from (28, 6) to (28, 12)
+FS EVICT 112 from (28, 8) to (22, 8)
+FS EVICT 116 from (26, 8) to (28, 2)
+FS EVICT 122 from (28, 6) to (28, 12)
+FS EVICT 126 from (28, 8) to (22, 8)
+FS EVICT 130 from (26, 8) to (28, 2)
+FS EVICT 136 from (28, 6) to (28, 12)
+FS EVICT 140 from (28, 8) to (22, 8)
+FS EVICT 144 from (26, 8) to (28, 2)
+FS EVICT 150 from (28, 6) to (28, 12)
+FS EVICT 154 from (28, 8) to (22, 8)
+FS EVICT 158 from (26, 8) to (28, 2)
+FS EVICT 164 from (28, 6) to (28, 12)
+FS EVICT 168 from (28, 8) to (22, 8)
+FS EVICT 172 from (26, 8) to (28, 2)
+FS EVICT 178 from (28, 6) to (28, 12)
+FS EVICT 182 from (28, 8) to (22, 8)
+FS EVICT 186 from (26, 8) to (28, 2)
+FS EVICT 192 from (28, 6) to (28, 12)
+FS EVICT 196 from (28, 8) to (22, 8)
+FS EVICT 200 from (26, 8) to (28, 2)
+FS EVICT 206 from (28, 6) to (28, 12)
+FS EVICT 210 from (28, 8) to (22, 8)
+FS EVICT 214 from (26, 8) to (28, 2)
+FS EVICT 220 from (28, 6) to (28, 12)
+FS EVICT 224 from (28, 8) to (22, 8)
+FS EVICT 228 from (26, 8) to (28, 2)
+FS EVICT 234 from (28, 6) to (28, 12)
+FS EVICT 238 from (28, 8) to (22, 8)
+FS EVICT 242 from (26, 8) to (28, 2)
+FS DOORSEEN 243 id 8 at (5, 27) rank 0
+FS DOOR 247 id 8 at (5, 27) n 1
+FS DOOR 248 id 8 at (5, 27) n 2
+FS EVICT 248 from (28, 6) to (28, 12)
+FS DOOR 249 id 8 at (5, 27) n 3
+FS DOOR 250 id 8 at (5, 27) n 4
+FS DOOR 251 id 8 at (5, 27) n 5
+FS DOOR 252 id 8 at (5, 27) n 6
+FS EVICT 252 from (28, 8) to (22, 8)
+FS DOOR 253 id 8 at (5, 27) n 7
+FS DOOR 254 id 8 at (5, 27) n 8
+FS DOOR 255 id 8 at (5, 27) n 9
+FS DOOR 256 id 8 at (5, 27) n 10
+FS EVICT 256 from (26, 8) to (28, 2)
+FS DOOR 257 id 8 at (5, 27) n 11
+FS DOOR 258 id 8 at (5, 27) n 12
+FS DOOR 259 id 8 at (5, 27) n 13
+FS DOOR 260 id 8 at (5, 27) n 14
+FS DOOR 261 id 8 at (5, 27) n 15
+FS DOOR 262 id 8 at (5, 27) n 16
+FS EVICT 262 from (28, 6) to (28, 12)
+FS DOOR 263 id 8 at (5, 27) n 17
+FS DOOR 264 id 8 at (5, 27) n 18
+FS DOOR 265 id 8 at (5, 27) n 19
+FS DOOR 266 id 8 at (5, 27) n 20
+FS EVICT 266 from (28, 8) to (22, 8)
+FS DOOR 267 id 8 at (5, 27) n 21
+FS DOOR 268 id 8 at (5, 27) n 22
+FS DOOR 269 id 8 at (5, 27) n 23
+FS DOOR 270 id 8 at (5, 27) n 24
+FS EVICT 270 from (26, 8) to (28, 2)
+FS DOOR 271 id 8 at (5, 27) n 25
+FS DOOR 272 id 8 at (5, 27) n 26
+FS DOOR 273 id 8 at (5, 27) n 27
+FS DOOR 274 id 8 at (5, 27) n 28
+FS DOOR 275 id 8 at (5, 27) n 29
+FS DOOR 276 id 8 at (5, 27) n 30
+FS EVICT 276 from (28, 6) to (28, 12)
+FS DOOR 277 id 8 at (5, 27) n 31
+FS DOOR 278 id 8 at (5, 27) n 32
+FS DOOR 279 id 8 at (5, 27) n 33
+FS DOOR 280 id 8 at (5, 27) n 34
+FS EVICT 280 from (28, 8) to (22, 8)
+FS DOOR 281 id 8 at (5, 27) n 35
+FS DOOR 282 id 8 at (5, 27) n 36
+FS DOOR 283 id 8 at (5, 27) n 37
+FS EVICT 284 from (26, 8) to (28, 2)

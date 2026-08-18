@@ -1,0 +1,85 @@
+Update available: 2.3.6 -> 2.3.8. Run: pip install --upgrade fcode
+FS GATE 0 sig (18, 18, (2, 14), (14, 2)) ok 1
+FS GATE 1 sig (18, 18, (2, 14), (14, 2)) ok 1
+FS PHASE 1 id 4 ph 1 d 200 at (13, 4)
+FS HOPBUILD 1 at (13, 4) lch (13, 5) T (1, 16)
+FS GATE 2 sig (18, 18, (2, 14), (14, 2)) ok 1
+FS GATE 2 sig (18, 18, (2, 14), (14, 2)) ok 1
+FS THROW 2 from (12, 4) to (9, 8) T (1, 16) body 4 n 1 dsq 72
+FS HOPBUILD 3 at (9, 8) lch (9, 9) T (1, 16)
+FS GATE 3 sig (18, 18, (2, 14), (14, 2)) ok 1
+FS GATE 4 sig (18, 18, (2, 14), (14, 2)) ok 1
+FS THROW 4 from (8, 8) to (5, 12) T (1, 16) body 4 n 1 dsq 8
+ECO514 5 harv 1 mouth 1 held 1 conn 0 deliv 1
+FS ARRIVE 5 id 4 body 1 at (5, 12) dsq 8
+FS PHASE 5 id 4 ph 2 d 8 at (5, 12)
+FS EVICTOR 7 at (5, 15) ucov 0 cov 1 unseal 1 obs 6
+FS RUNG 7 id 4 r 2 hi -
+FS GATE 7 sig (18, 18, (2, 14), (14, 2)) ok 1
+FS SEAL 8 tile (4, 14) n 1
+FS GATE 8 sig (18, 18, (2, 14), (14, 2)) ok 1
+FS GATE 8 sig (18, 18, (2, 14), (14, 2)) ok 1
+FS EVICT 8 from (4, 15) to (10, 16)
+ECO514 9 harv 2 mouth 1 held 1 conn 1 deliv 1
+FS DODGE 10 id 4 from (5, 13) to (5, 14) cov 1 -> 0 hit 0 hp 22
+FS EVICT 11 from (4, 16) to (10, 16)
+FS EVICT 12 from (6, 16) to (5, 10)
+FS DODGE 14 id 4 from (6, 14) to (5, 14) cov 1 -> 0 hit 0 hp 22
+FS DODGE 16 id 4 from (5, 13) to (5, 14) cov 1 -> 0 hit 0 hp 4
+FS EVICT 16 from (6, 16) to (4, 10)
+FS DOORSEEN 157 id 23 at (13, 9) rank 2
+FS DOORSEEN 167 id 23 at (12, 7) rank 2
+FS DOOR 169 id 23 at (12, 7) n 1
+FS DOOR 170 id 23 at (12, 7) n 2
+FS DOOR 171 id 23 at (12, 7) n 3
+FS DOOR 172 id 23 at (12, 7) n 4
+FS DOOR 173 id 23 at (12, 7) n 5
+FS DOOR 174 id 23 at (12, 7) n 6
+FS DOOR 175 id 23 at (12, 7) n 7
+FS DOOR 176 id 23 at (12, 7) n 8
+FS DOOR 177 id 23 at (12, 7) n 9
+FS DOOR 178 id 23 at (12, 7) n 10
+FS DOOR 179 id 23 at (12, 7) n 11
+FS DOOR 180 id 23 at (12, 7) n 12
+FS DOOR 181 id 23 at (12, 7) n 13
+FS DOORSEEN 186 id 23 at (11, 2) rank 1
+FS DOOR 187 id 23 at (11, 2) n 14
+FS DOOR 188 id 23 at (11, 2) n 15
+FS DOOR 189 id 23 at (11, 2) n 16
+FS DOOR 190 id 23 at (11, 2) n 17
+FS DOOR 191 id 23 at (11, 2) n 18
+FS DOOR 192 id 23 at (11, 2) n 19
+FS DOOR 193 id 23 at (11, 2) n 20
+FS DOOR 194 id 23 at (11, 2) n 21
+FS DOOR 195 id 23 at (11, 2) n 22
+FS DOOR 196 id 23 at (11, 2) n 23
+FS DOOR 197 id 23 at (11, 2) n 24
+FS DOOR 198 id 23 at (11, 2) n 25
+FS DOOR 199 id 23 at (11, 2) n 26
+FS DOOR 200 id 23 at (11, 2) n 27
+FS DOOR 201 id 23 at (11, 2) n 28
+FS DOOR 202 id 23 at (11, 2) n 29
+FS DOOR 203 id 23 at (11, 2) n 30
+FS DOOR 204 id 23 at (11, 2) n 31
+FS DOOR 205 id 23 at (11, 2) n 32
+FS DOOR 206 id 23 at (11, 2) n 33
+FS DOOR 207 id 23 at (11, 2) n 34
+FS DOOR 208 id 23 at (11, 2) n 35
+FS DOOR 209 id 23 at (11, 2) n 36
+FS DOOR 210 id 23 at (11, 2) n 37
+FS DOOR 211 id 23 at (11, 2) n 38
+FS DOOR 212 id 23 at (11, 2) n 39
+FS DOOR 213 id 23 at (11, 2) n 40
+FS DOOR 214 id 23 at (11, 2) n 41
+FS DOOR 215 id 23 at (11, 2) n 42
+FS DOOR 216 id 23 at (11, 2) n 43
+FS DOOR 217 id 23 at (11, 2) n 44
+FS DOOR 218 id 23 at (11, 2) n 45
+FS DOOR 219 id 23 at (11, 2) n 46
+FS DOOR 220 id 23 at (11, 2) n 47
+FS DOOR 221 id 23 at (11, 2) n 48
+FS DOOR 222 id 23 at (11, 2) n 49
+FS DOOR 223 id 23 at (11, 2) n 50
+FS DOOR 224 id 23 at (11, 2) n 51
+FS DOOR 225 id 23 at (11, 2) n 52
+FS DOOR 226 id 23 at (11, 2) n 53

@@ -1,0 +1,30 @@
+cand1C_glacierkeep_g0	cand1C	glacierkeep	0	7600	A	US	cand1	Core destroyed	168	0	360	0
+cand1C_glacierkeep_g1	cand1C	glacierkeep	1	7601	B	US	cand1	Core destroyed	285	0	170	0
+cand1C_glacierkeep_g2	cand1C	glacierkeep	2	7602	A	US	cand1	Core destroyed	285	0	170	0
+cand1C_glacierkeep_g3	cand1C	glacierkeep	3	7603	B	OPP	_v488beltbreak2	Core destroyed	389	0	180	0
+cand1C_glacierkeep_g4	cand1C	glacierkeep	4	7604	A	US	cand1	Core destroyed	233	0	180	0
+cand1C_glacierkeep_g5	cand1C	glacierkeep	5	7605	B	OPP	_v488beltbreak2	Core destroyed	957	0	170	0
+cand1C_nordkap_g0	cand1C	nordkap	0	7600	A	US	cand1	Core destroyed	403	0	980	110
+cand1C_nordkap_g1	cand1C	nordkap	1	7601	B	OPP	_v488beltbreak2	Core destroyed	615	0	120	880
+cand1C_nordkap_g2	cand1C	nordkap	2	7602	A	OPP	_v488beltbreak2	Titanium collected (tiebreak)	1000	0	160	4210
+cand1C_nordkap_g3	cand1C	nordkap	3	7603	B	OPP	_v488beltbreak2	Core destroyed	279	0	0	600
+cand1C_nordkap_g4	cand1C	nordkap	4	7604	A	US	cand1	Core destroyed	201	0	850	480
+cand1C_nordkap_g5	cand1C	nordkap	5	7605	B	OPP	_v488beltbreak2	Core destroyed	339	0	170	870
+cand1C_atoll_g0	cand1C	atoll	0	7600	A	OPP	_v488beltbreak2	Core destroyed	197	0	630	2030
+cand1C_atoll_g1	cand1C	atoll	1	7601	B	OPP	_v488beltbreak2	Core destroyed	142	0	280	680
+cand1C_atoll_g2	cand1C	atoll	2	7602	A	US	cand1	Core destroyed	573	0	1580	310
+cand1C_atoll_g3	cand1C	atoll	3	7603	B	US	cand1	Core destroyed	805	0	420	2130
+cand1C_atoll_g4	cand1C	atoll	4	7604	A	OPP	_v488beltbreak2	Core destroyed	424	0	2480	3680
+cand1C_atoll_g5	cand1C	atoll	5	7605	B	OPP	_v488beltbreak2	Titanium collected (tiebreak)	1000	0	4960	11950
+cand1C_midgard_g0	cand1C	midgard	0	7600	A	OPP	_v488beltbreak2	Core destroyed	308	0	850	1470
+cand1C_midgard_g1	cand1C	midgard	1	7601	B	OPP	_v488beltbreak2	Core destroyed	306	0	530	3350
+cand1C_midgard_g2	cand1C	midgard	2	7602	A	OPP	_v488beltbreak2	Core destroyed	177	0	640	1470
+cand1C_midgard_g3	cand1C	midgard	3	7603	B	OPP	_v488beltbreak2	Core destroyed	130	0	590	1340
+cand1C_midgard_g4	cand1C	midgard	4	7604	A	US	cand1	Core destroyed	658	0	4820	5020
+cand1C_midgard_g5	cand1C	midgard	5	7605	B	OPP	_v488beltbreak2	Core destroyed	153	0	640	1460
+cand1C_drakkarfjord_g0	cand1C	drakkarfjord	0	7600	A	US	cand1	Core destroyed	417	0	650	510
+cand1C_drakkarfjord_g1	cand1C	drakkarfjord	1	7601	B	US	cand1	Titanium collected (tiebreak)	1000	0	530	0
+cand1C_drakkarfjord_g2	cand1C	drakkarfjord	2	7602	A	OPP	_v488beltbreak2	Core destroyed	332	0	570	3300
+cand1C_drakkarfjord_g3	cand1C	drakkarfjord	3	7603	B	US	cand1	Core destroyed	152	0	650	0
+cand1C_drakkarfjord_g4	cand1C	drakkarfjord	4	7604	A	OPP	_v488beltbreak2	Core destroyed	335	0	1290	1930
+cand1C_drakkarfjord_g5	cand1C	drakkarfjord	5	7605	B	OPP	_v488beltbreak2	Core destroyed	644	0	6370	7180

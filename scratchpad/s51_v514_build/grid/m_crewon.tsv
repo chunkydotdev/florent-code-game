@@ -1,0 +1,16 @@
+tag	arm	map	g	seed	ord	ours	winner	cond	turn	tracebacks	ours_mined	opp_mined
+m_crewon_glacierkeep_g0	m_crewon	glacierkeep	0	7400	A	OPP	_v488beltbreak2	Titanium collected (tiebreak)	1000	0	7500	8070
+m_crewon_glacierkeep_g1	m_crewon	glacierkeep	1	7401	B	OPP	_v488beltbreak2	Core destroyed	648	0	0	1970
+m_crewon_glacierkeep_g2	m_crewon	glacierkeep	2	7402	A	US	crewon	Core destroyed	495	0	1730	1140
+m_crewon_nordkap_g0	m_crewon	nordkap	0	7400	A	OPP	_v488beltbreak2	Core destroyed	223	0	530	2780
+m_crewon_nordkap_g1	m_crewon	nordkap	1	7401	B	US	crewon	Core destroyed	371	0	2340	970
+m_crewon_nordkap_g2	m_crewon	nordkap	2	7402	A	US	crewon	Core destroyed	184	0	320	190
+m_crewon_atoll_g0	m_crewon	atoll	0	7400	A	OPP	_v488beltbreak2	Core destroyed	254	0	800	1670
+m_crewon_atoll_g1	m_crewon	atoll	1	7401	B	US	crewon	Core destroyed	72	0	320	330
+m_crewon_atoll_g2	m_crewon	atoll	2	7402	A	US	crewon	Core destroyed	496	0	1370	600
+m_crewon_midgard_g0	m_crewon	midgard	0	7400	A	OPP	_v488beltbreak2	Core destroyed	214	0	540	1720
+m_crewon_midgard_g1	m_crewon	midgard	1	7401	B	OPP	_v488beltbreak2	Core destroyed	364	0	320	4190
+m_crewon_midgard_g2	m_crewon	midgard	2	7402	A	OPP	_v488beltbreak2	Core destroyed	161	0	460	1620
+m_crewon_drakkarfjord_g0	m_crewon	drakkarfjord	0	7400	A	US	crewon	Core destroyed	106	0	560	0
+m_crewon_drakkarfjord_g1	m_crewon	drakkarfjord	1	7401	B	OPP	_v488beltbreak2	Core destroyed	196	0	140	1490
+m_crewon_drakkarfjord_g2	m_crewon	drakkarfjord	2	7402	A	US	crewon	Core destroyed	169	0	920	0
