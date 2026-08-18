@@ -17,6 +17,16 @@ LEDGER IT READS: docs/research/move-mining-ledger.tsv
     at study time. A version bump by the opponent resets coverage to zero —
     a new version is a new bot, and its moves are unstudied by definition.
 
+    ⛔⛔ `games_covered` IS CUMULATIVE FOR THE CELL, NEVER THE INCREMENT. This is
+    load-bearing because `_parse_ledger` below takes the **max** over rows on the
+    same (opp, oppver), which is correct under cumulative semantics and silently
+    wrong under incremental ones. MEASURED FAILURE, 2026-08-18: the s50 study of
+    0033 v57 covered games 61-90 and wrote `30` (the increment) where the cell had
+    reached `90`. max(60, 30) = 60, so the tool reported "25 unstudied MODERN
+    games" on ground that was fully covered and fired a whole opus study at it.
+    0033 was the only multi-row cell in the ledger, and it was the only cell that
+    mis-fired. Full autopsy: docs/research/REPLAY-STUDY-0033-incremental2-2026-08-18.md §0.
+
 ⛔⛔ RANKING REBUILT 2026-08-17 (s48 WRAP-FIX, debt 15) AFTER RESEARCH MEASURED IT
 INVERTED RELATIVE TO STUDY VALUE (docs/coordination.md 05:21:54Z + 05:30:55Z).
 Two compounding defects, and both got worse for exactly the same candidates:
