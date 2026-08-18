@@ -1,0 +1,60 @@
+Update available: 2.3.6 -> 2.3.8. Run: pip install --upgrade fcode
+FS GATE 0 sig (18, 18, (2, 14), (14, 2)) ok 1
+FS GATE 1 sig (18, 18, (2, 14), (14, 2)) ok 1
+FS PHASE 1 id 4 ph 1 d 200 at (13, 4)
+FS HOPBUILD 1 at (13, 4) lch (13, 5) T (1, 16)
+FS GATE 2 sig (18, 18, (2, 14), (14, 2)) ok 1
+FS GATE 2 sig (18, 18, (2, 14), (14, 2)) ok 1
+FS THROW 2 from (12, 4) to (9, 8) T (1, 16) body 4 n 1 dsq 72
+FS HOPBUILD 3 at (9, 8) lch (9, 9) T (1, 16)
+FS GATE 3 sig (18, 18, (2, 14), (14, 2)) ok 1
+FS GATE 4 sig (18, 18, (2, 14), (14, 2)) ok 1
+FS THROW 4 from (8, 8) to (5, 12) T (1, 16) body 4 n 1 dsq 8
+FS ARRIVE 5 id 4 body 1 at (5, 12) dsq 8
+FS PHASE 5 id 4 ph 2 d 8 at (5, 12)
+FS SEAL 7 tile (3, 13) n 1
+FS GATE 7 sig (18, 18, (2, 14), (14, 2)) ok 1
+FS GATE 8 sig (18, 18, (2, 14), (14, 2)) ok 1
+FS SEAL 9 tile (2, 13) n 2
+FS GATE 9 sig (18, 18, (2, 14), (14, 2)) ok 1
+FS SEAL 13 tile (1, 13) n 3
+FS SEAL 18 tile (3, 13) n 4
+FS STAT 20 id 4 at (4, 12) need 6 orth 6 ti 12 ammo 21 sen 0 hp 22 covden 0 eco 1 lost 0
+FS SEAL 21 tile (4, 14) n 5
+FS SEAL 22 tile (3, 13) n 6
+FS SEAL 26 tile (4, 15) n 7
+FS CLEAR 33 tile (3, 16) peck 1
+FS RUNG 33 id 4 r 3 hi -
+FS CLEAR 34 tile (3, 16) peck 2
+FS RUNG 34 id 4 r 3 hi -
+FS DODGE 36 id 4 from (3, 16) to (2, 16) cov 1 -> 0 hit 0 hp 4
+FS STAT 40 id 4 at (1, 16) need 4 orth 4 ti 12 ammo 12 sen 0 hp 4 covden 0 eco 1 lost 0
+FS SEAL 44 tile (2, 16) n 8
+FS CLEAR 50 tile (1, 15) peck 1
+FS RUNG 50 id 4 r 3 hi -
+FS CLEAR 52 tile (1, 15) peck 2
+FS RUNG 52 id 4 r 3 hi -
+FS CLEAR 53 tile (1, 15) peck 3
+FS RUNG 53 id 4 r 3 hi -
+FS CLEAR 54 tile (1, 15) peck 4
+FS RUNG 54 id 4 r 3 hi -
+FS CLEAR 55 tile (1, 15) peck 5
+FS RUNG 55 id 4 r 3 hi -
+FS CLEAR 56 tile (1, 15) peck 6
+FS RUNG 56 id 4 r 3 hi -
+FS CLEAR 57 tile (1, 15) peck 7
+FS RUNG 57 id 4 r 3 hi -
+FS CLEAR 58 tile (1, 15) peck 8
+FS RUNG 58 id 4 r 3 hi -
+FS STAT 60 id 4 at (1, 15) need 4 orth 4 ti 76 ammo 24 sen 0 hp 4 covden 0 eco 1 lost 0
+FS SEAL 60 tile (1, 14) n 9
+FS CLEAR 62 tile (1, 15) peck 1
+FS RUNG 62 id 4 r 3 hi -
+FS CLEAR 63 tile (1, 15) peck 2
+FS RUNG 63 id 4 r 3 hi -
+FS CLEARED 64 tile (1, 15) n 1
+FS SEAL 64 tile (1, 15) n 10
+FS SEALCLR 64 tile (1, 15) lag 0
+FS EVICTOR 66 at (0, 15) ucov 0 cov 6 unseal 1 obs 23
+FS RUNG 66 id 4 r 2 hi -
+FS GATE 67 sig (18, 18, (2, 14), (14, 2)) ok 1

@@ -1,0 +1,31 @@
+tag	map	seed	seat	ours	winner	cond	turn	tracebacks	ours_mined	opp_mined
+atoll_s1_A	atoll	1	A	OPP	_v488beltbreak2	Titanium collected (tiebreak)	1000	0	5130	5140
+atoll_s1_B	atoll	1	B	US	v515mag	Titanium collected (tiebreak)	1000	0	590	210
+atoll_s2_A	atoll	2	A	OPP	_v488beltbreak2	Core destroyed	162	0	680	1220
+atoll_s2_B	atoll	2	B	US	v515mag	Titanium collected (tiebreak)	1000	0	4950	2480
+atoll_s3_A	atoll	3	A	US	v515mag	Core destroyed	190	0	1400	280
+atoll_s3_B	atoll	3	B	OPP	_v488beltbreak2	Core destroyed	219	0	240	1410
+drakkarfjord_s1_A	drakkarfjord	1	A	US	v515mag	Core destroyed	599	0	4890	840
+drakkarfjord_s1_B	drakkarfjord	1	B	US	v515mag	Core destroyed	179	0	1000	0
+drakkarfjord_s2_A	drakkarfjord	2	A	US	v515mag	Core destroyed	452	0	2410	200
+drakkarfjord_s2_B	drakkarfjord	2	B	OPP	_v488beltbreak2	Core destroyed	308	0	560	2420
+drakkarfjord_s3_A	drakkarfjord	3	A	US	v515mag	Titanium collected (tiebreak)	1000	0	17080	14400
+drakkarfjord_s3_B	drakkarfjord	3	B	US	v515mag	Core destroyed	129	0	360	0
+glacierkeep_s1_A	glacierkeep	1	A	US	v515mag	Titanium collected (tiebreak)	1000	0	150	0
+glacierkeep_s1_B	glacierkeep	1	B	US	v515mag	Titanium collected (tiebreak)	1000	0	170	0
+glacierkeep_s2_A	glacierkeep	2	A	US	v515mag	Core destroyed	337	0	150	0
+glacierkeep_s2_B	glacierkeep	2	B	US	v515mag	Titanium collected (tiebreak)	1000	0	130	0
+glacierkeep_s3_A	glacierkeep	3	A	US	v515mag	Core destroyed	309	0	140	0
+glacierkeep_s3_B	glacierkeep	3	B	US	v515mag	Titanium collected (tiebreak)	1000	0	20	0
+midgard_s1_A	midgard	1	A	OPP	_v488beltbreak2	Core destroyed	203	0	620	1140
+midgard_s1_B	midgard	1	B	OPP	_v488beltbreak2	Core destroyed	156	0	650	1480
+midgard_s2_A	midgard	2	A	OPP	_v488beltbreak2	Core destroyed	336	0	550	2870
+midgard_s2_B	midgard	2	B	OPP	_v488beltbreak2	Core destroyed	260	0	500	3890
+midgard_s3_A	midgard	3	A	OPP	_v488beltbreak2	Core destroyed	239	0	410	1270
+midgard_s3_B	midgard	3	B	OPP	_v488beltbreak2	Core destroyed	142	0	590	1430
+nordkap_s1_A	nordkap	1	A	US	v515mag	Core destroyed	389	0	690	220
+nordkap_s1_B	nordkap	1	B	US	v515mag	Core destroyed	233	0	870	240
+nordkap_s2_A	nordkap	2	A	US	v515mag	Core destroyed	305	0	260	80
+nordkap_s2_B	nordkap	2	B	US	v515mag	Core destroyed	213	0	370	20
+nordkap_s3_A	nordkap	3	A	OPP	_v488beltbreak2	Core destroyed	302	0	730	3400
+nordkap_s3_B	nordkap	3	B	US	v515mag	Core destroyed	172	0	810	30

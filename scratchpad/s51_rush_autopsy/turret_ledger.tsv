@@ -1,0 +1,420 @@
+tag	id	kind	pos	dir	built	died	life	dsq_opp	dsq_own	shots	core_shots	first_core	funded_r
+atoll_s1_A	7	launcher	(4, 12)		1	2	1	200.5	8.5	0	0		0
+atoll_s1_A	13	launcher	(8, 8)		3	4	1	72.5	72.5	0	0		0
+atoll_s1_A	25	launcher	(12, 4)		7		993	8.5	200.5	0	0		978
+atoll_s1_A	64	sentinel	(4, 17)	N	23		977	320.5	8.5	15	0		962
+atoll_s1_A	73	gunner	(5, 14)	NW	26		974	222.5	6.5	18	0		959
+atoll_s1_A	126	sentinel	(2, 11)	SW	51		949	228.5	12.5	4	0		942
+atoll_s1_A	141	sentinel	(1, 11)	S	60		940	254.5	14.5	3	0		933
+atoll_s1_A	189	sentinel	(0, 10)	NE	84		916	266.5	26.5	4	0		915
+atoll_s1_A	230	sentinel	(4, 9)	SW	104	258	154	152.5	32.5	3	0		153
+atoll_s1_A	301	sentinel	(5, 10)	S	139		861	146.5	26.5	3	0		860
+atoll_s1_A	340	launcher	(5, 15)		159	160	1	246.5	6.5	0	0		1
+atoll_s1_A	357	launcher	(12, 7)		168	169	1	26.5	146.5	0	0		1
+atoll_s1_A	424	launcher	(4, 12)		202	300	98	200.5	8.5	0	0		97
+atoll_s1_A	430	launcher	(5, 15)		205	206	1	246.5	6.5	0	0		1
+atoll_s1_A	449	launcher	(12, 7)		214	215	1	26.5	146.5	0	0		1
+atoll_s1_A	517	sentinel	(6, 14)	SW	250		750	204.5	12.5	0	0		749
+atoll_s1_A	624	launcher	(8, 10)		301	302	1	98.5	50.5	0	0		1
+atoll_s1_A	674	launcher	(1, 13)		327	328	1	292.5	4.5	0	0		1
+atoll_s1_A	688	launcher	(6, 5)		334	335	1	78.5	102.5	0	0		1
+atoll_s1_A	724	launcher	(4, 12)		354		646	200.5	8.5	0	0		646
+atoll_s1_B	7	launcher	(13, 5)		1	2	1	200.5	8.5	0	0		0
+atoll_s1_B	13	launcher	(9, 9)		3	4	1	72.5	72.5	0	0		0
+atoll_s1_B	21	launcher	(5, 13)		5	19	14	8.5	200.5	0	0		10
+atoll_s1_B	50	launcher	(5, 13)		20	44	24	8.5	200.5	0	0		24
+atoll_s1_B	62	sentinel	(11, 5)	E	27		973	162.5	18.5	50	0		968
+atoll_s1_B	93	gunner	(12, 3)	SE	42		958	222.5	6.5	728	0		953
+atoll_s1_B	145	sentinel	(6, 15)	W	81	90	9	12.5	228.5	5	5	82	9
+atoll_s1_B	173	launcher	(12, 2)		109	110	1	246.5	6.5	0	0		1
+atoll_s1_B	175	launcher	(7, 5)		111	112	1	110.5	62.5	0	0		1
+atoll_s1_B	204	launcher	(16, 5)		131	132	1	272.5	8.5	0	0		1
+atoll_s1_B	212	launcher	(10, 12)		138	139	1	62.5	110.5	0	0		1
+atoll_s1_B	236	launcher	(12, 2)		157	158	1	246.5	6.5	0	0		1
+atoll_s1_B	241	launcher	(5, 6)		162	163	1	78.5	102.5	0	0		1
+atoll_s1_B	336	launcher	(16, 4)		245	246	1	292.5	4.5	0	0		1
+atoll_s1_B	344	launcher	(10, 9)		250	251	1	86.5	62.5	0	0		1
+atoll_s1_B	363	gunner	(5, 10)	N	266	270	4	26.5	146.5	3	0		4
+atoll_s1_B	490	launcher	(16, 5)		375	376	1	272.5	8.5	0	0		1
+atoll_s1_B	494	launcher	(11, 8)		377	378	1	114.5	42.5	0	0		1
+atoll_s1_B	496	launcher	(7, 12)		379	380	1	26.5	146.5	0	0		1
+atoll_s1_B	583	launcher	(12, 2)		451	452	1	246.5	6.5	0	0		1
+atoll_s1_B	588	launcher	(7, 5)		453	454	1	110.5	62.5	0	0		1
+atoll_s1_B	593	launcher	(2, 9)		456	457	1	30.5	198.5	0	0		1
+atoll_s1_B	596	launcher	(0, 14)		459		541	6.5	342.5	0	0		541
+atoll_s1_B	667	launcher	(12, 2)		517	518	1	246.5	6.5	0	0		1
+atoll_s1_B	669	launcher	(7, 5)		519	520	1	110.5	62.5	0	0		1
+atoll_s1_B	673	launcher	(2, 9)		522	523	1	30.5	198.5	0	0		1
+atoll_s1_B	908	launcher	(16, 4)		725	726	1	292.5	4.5	0	0		1
+atoll_s1_B	913	launcher	(11, 8)		728	729	1	114.5	42.5	0	0		1
+atoll_s1_B	915	launcher	(7, 12)		730	731	1	26.5	146.5	0	0		1
+atoll_s1_B	952	launcher	(13, 5)		763	764	1	200.5	8.5	0	0		1
+atoll_s1_B	956	launcher	(10, 10)		765	766	1	76.5	76.5	0	0		1
+atoll_s1_B	958	launcher	(5, 13)		767	768	1	8.5	200.5	0	0		1
+atoll_s1_B	962	launcher	(5, 13)		768	772	4	8.5	200.5	0	0		4
+atoll_s1_B	989	launcher	(16, 4)		794	795	1	292.5	4.5	0	0		1
+atoll_s1_B	995	launcher	(13, 9)		798	799	1	140.5	44.5	0	0		1
+atoll_s1_B	1000	launcher	(7, 10)		800	801	1	40.5	112.5	0	0		1
+atoll_s1_B	1012	sentinel	(2, 12)	S	811		189	6.5	246.5	94	94	812	189
+atoll_s1_B	1016	sentinel	(4, 12)	SW	812	813	1	8.5	200.5	0	0		1
+atoll_s2_A	7	launcher	(4, 12)		1	2	1	200.5	8.5	0	0		0
+atoll_s2_A	12	launcher	(8, 8)		3	4	1	72.5	72.5	0	0		0
+atoll_s2_A	53	launcher	(16, 1)		18		548	4.5	364.5	0	0		547
+atoll_s2_A	58	sentinel	(1, 12)	NE	20		546	272.5	8.5	14	0		545
+atoll_s2_A	90	gunner	(8, 9)	E	37		529	84.5	60.5	20	0		528
+atoll_s2_A	156	sentinel	(3, 17)	NW	84		482	342.5	6.5	3	0		481
+atoll_s2_A	162	gunner	(6, 13)	W	101		465	182.5	14.5	9	0		465
+atoll_s2_A	197	launcher	(4, 12)		149	150	1	200.5	8.5	0	0		1
+atoll_s2_A	206	launcher	(10, 9)		156	157	1	62.5	86.5	0	0		1
+atoll_s2_A	215	sentinel	(15, 6)	N	164	184	20	12.5	228.5	10	10	165	20
+atoll_s2_A	241	launcher	(5, 15)		186	187	1	246.5	6.5	0	0		1
+atoll_s2_A	246	launcher	(12, 12)		190	191	1	96.5	96.5	0	0		1
+atoll_s2_A	252	launcher	(13, 6)		196	197	1	14.5	182.5	0	0		1
+atoll_s2_A	273	launcher	(2, 17)		214	470	256	366.5	6.5	0	0		256
+atoll_s2_A	275	launcher	(5, 15)		215	216	1	246.5	6.5	0	0		1
+atoll_s2_A	279	launcher	(11, 12)		218	219	1	102.5	78.5	0	0		1
+atoll_s2_A	285	launcher	(13, 7)		224	225	1	22.5	166.5	0	0		1
+atoll_s2_A	374	sentinel	(4, 17)	N	307		259	320.5	8.5	12	0		259
+atoll_s2_A	376	sentinel	(5, 15)	NW	309		257	246.5	6.5	3	0		257
+atoll_s2_A	380	sentinel	(4, 14)	NW	312		254	242.5	2.5	0	0		254
+atoll_s2_A	472	launcher	(5, 12)		470	471	1	180.5	12.5	0	0		1
+atoll_s2_A	480	launcher	(10, 7)		475	476	1	40.5	112.5	0	0		1
+atoll_s2_A	487	gunner	(12, 11)	N	487		79	78.5	102.5	8	0		79
+atoll_s2_A	500	sentinel	(11, 5)	NE	524		42	18.5	162.5	21	21	525	42
+atoll_s2_B	7	launcher	(13, 5)		1	2	1	200.5	8.5	0	0		0
+atoll_s2_B	12	launcher	(9, 9)		3	4	1	72.5	72.5	0	0		0
+atoll_s2_B	43	sentinel	(13, 4)	SW	14		147	220.5	4.5	9	0		101
+atoll_s2_B	73	gunner	(5, 10)	N	29	131	102	26.5	146.5	18	0		87
+atoll_s2_B	105	launcher	(0, 13)		46		115	8.5	320.5	0	0		70
+atoll_s2_B	149	sentinel	(0, 14)	E	84		77	6.5	342.5	28	28	85	32
+atoll_s3_A	7	launcher	(4, 12)		1	2	1	200.5	8.5	0	0		0
+atoll_s3_A	12	launcher	(8, 8)		3	4	1	72.5	72.5	0	0		0
+atoll_s3_A	23	launcher	(12, 2)		7		238	6.5	246.5	0	0		169
+atoll_s3_A	42	sentinel	(7, 9)	W	19		226	98.5	50.5	2	0		157
+atoll_s3_A	56	gunner	(12, 7)	SW	28		217	26.5	146.5	15	0		148
+atoll_s3_A	80	gunner	(0, 15)	SE	42		203	366.5	6.5	186	0		134
+atoll_s3_A	210	sentinel	(11, 0)	SE	172		73	18.5	282.5	28	28	173	8
+atoll_s3_B	7	launcher	(13, 5)		1	2	1	200.5	8.5	0	0		0
+atoll_s3_B	12	launcher	(9, 9)		3	4	1	72.5	72.5	0	0		0
+atoll_s3_B	42	sentinel	(13, 4)	SW	14		129	220.5	4.5	10	0		110
+atoll_s3_B	84	sentinel	(16, 1)	W	34		109	364.5	4.5	5	0		90
+atoll_s3_B	128	launcher	(0, 15)		66		77	6.5	366.5	0	0		63
+atoll_s3_B	148	sentinel	(5, 14)	W	86		57	6.5	222.5	28	28	87	43
+drakkarfjord_s1_A	7	launcher	(5, 23)		1	2	1	804.5	8.5	0	0		0
+drakkarfjord_s1_A	11	launcher	(10, 20)		3	4	1	512.5	76.5	0	0		0
+drakkarfjord_s1_A	13	launcher	(14, 16)		5	6	1	288.5	204.5	0	0		0
+drakkarfjord_s1_A	14	launcher	(18, 12)		7	8	1	128.5	396.5	0	0		0
+drakkarfjord_s1_A	15	launcher	(22, 8)		9	10	1	32.5	652.5	0	0		0
+drakkarfjord_s1_A	92	launcher	(27, 7)		39		169	6.5	906.5	0	0		168
+drakkarfjord_s1_A	102	sentinel	(5, 23)	S	43		165	804.5	8.5	0	0		164
+drakkarfjord_s1_A	124	sentinel	(2, 27)	S	55		153	1106.5	6.5	0	0		152
+drakkarfjord_s1_A	152	sentinel	(0, 23)	E	72		136	1044.5	8.5	13	0		135
+drakkarfjord_s1_A	204	launcher	(24, 4)		100		108	6.5	882.5	0	0		107
+drakkarfjord_s1_A	238	sentinel	(24, 2)	SE	152		56	12.5	968.5	28	28	153	56
+drakkarfjord_s1_B	7	launcher	(24, 6)		1	2	1	804.5	8.5	0	0		0
+drakkarfjord_s1_B	11	launcher	(19, 9)		3	4	1	512.5	76.5	0	0		0
+drakkarfjord_s1_B	13	launcher	(15, 13)		5	6	1	288.5	204.5	0	0		0
+drakkarfjord_s1_B	14	launcher	(11, 17)		7	8	1	128.5	396.5	0	0		0
+drakkarfjord_s1_B	15	launcher	(7, 21)		9	10	1	32.5	652.5	0	0		0
+drakkarfjord_s1_B	102	gunner	(26, 2)	SW	43		957	1058.5	6.5	83	0		32
+drakkarfjord_s1_B	117	gunner	(29, 7)	NW	55		945	1008.5	12.5	2	0		20
+drakkarfjord_s1_B	136	sentinel	(5, 22)	SW	81		919	12.5	768.5	172	172	82	3
+drakkarfjord_s2_A	7	launcher	(5, 23)		1	2	1	804.5	8.5	0	0		0
+drakkarfjord_s2_A	11	launcher	(10, 20)		3	4	1	512.5	76.5	0	0		0
+drakkarfjord_s2_A	13	launcher	(14, 16)		5	6	1	288.5	204.5	0	0		0
+drakkarfjord_s2_A	14	launcher	(18, 12)		7	8	1	128.5	396.5	0	0		0
+drakkarfjord_s2_A	15	launcher	(22, 8)		9	10	1	32.5	652.5	0	0		0
+drakkarfjord_s2_A	207	sentinel	(1, 19)	S	68		241	860.5	32.5	5	0		218
+drakkarfjord_s2_A	216	gunner	(1, 23)	E	71		238	992.5	4.5	10	0		215
+drakkarfjord_s2_A	245	gunner	(4, 22)	W	81		228	812.5	8.5	0	0		205
+drakkarfjord_s2_A	270	gunner	(22, 11)	SE	91		218	62.5	562.5	6	0		195
+drakkarfjord_s2_A	309	sentinel	(29, 6)	NW	108	113	5	8.5	1044.5	2	2	109	5
+drakkarfjord_s2_A	509	launcher	(5, 22)		195	196	1	768.5	12.5	0	0		1
+drakkarfjord_s2_A	519	launcher	(12, 18)		200	201	1	392.5	132.5	0	0		1
+drakkarfjord_s2_A	528	launcher	(19, 11)		208	209	1	98.5	454.5	0	0		1
+drakkarfjord_s2_A	535	launcher	(28, 8)		214	215	1	14.5	922.5	0	0		1
+drakkarfjord_s2_A	548	launcher	(25, 2)		229		80	8.5	1012.5	0	0		57
+drakkarfjord_s2_A	557	sentinel	(26, 1)	S	240		69	12.5	1104.5	28	28	241	46
+drakkarfjord_s2_B	7	launcher	(24, 6)		1	2	1	804.5	8.5	0	0		0
+drakkarfjord_s2_B	11	launcher	(19, 9)		3	4	1	512.5	76.5	0	0		0
+drakkarfjord_s2_B	13	launcher	(15, 13)		5	6	1	288.5	204.5	0	0		0
+drakkarfjord_s2_B	14	launcher	(11, 17)		7	8	1	128.5	396.5	0	0		0
+drakkarfjord_s2_B	15	launcher	(7, 21)		9	10	1	32.5	652.5	0	0		0
+drakkarfjord_s2_B	106	sentinel	(25, 0)	S	46		954	1106.5	22.5	18	0		946
+drakkarfjord_s2_B	215	gunner	(24, 7)	E	90		910	768.5	12.5	1	0		910
+drakkarfjord_s2_B	262	gunner	(25, 2)	S	104		896	1012.5	8.5	5	0		896
+drakkarfjord_s2_B	318	launcher	(10, 18)		120	121	1	98.5	454.5	0	0		1
+drakkarfjord_s2_B	371	sentinel	(29, 7)	NW	136		864	1008.5	12.5	0	0		864
+drakkarfjord_s2_B	526	launcher	(22, 0)		173		827	980.5	40.5	0	0		827
+drakkarfjord_s2_B	568	launcher	(29, 1)		184		816	1254.5	18.5	0	0		816
+drakkarfjord_s2_B	607	launcher	(29, 5)		193	263	70	1082.5	6.5	0	0		70
+drakkarfjord_s2_B	613	launcher	(21, 7)		195	196	1	648.5	36.5	0	0		1
+drakkarfjord_s2_B	643	launcher	(16, 15)		202	203	1	272.5	220.5	0	0		1
+drakkarfjord_s2_B	668	launcher	(7, 18)		208	209	1	62.5	562.5	0	0		1
+drakkarfjord_s2_B	699	gunner	(7, 18)	S	216		784	62.5	562.5	747	0		784
+drakkarfjord_s2_B	776	launcher	(16, 7)		236		764	488.5	116.5	0	0		764
+drakkarfjord_s2_B	805	launcher	(14, 0)		244		756	732.5	176.5	0	0		756
+drakkarfjord_s2_B	883	launcher	(24, 8)		263	264	1	734.5	18.5	0	0		1
+drakkarfjord_s2_B	892	launcher	(19, 11)		265	266	1	454.5	98.5	0	0		1
+drakkarfjord_s2_B	924	launcher	(11, 17)		273	274	1	128.5	396.5	0	0		1
+drakkarfjord_s2_B	1034	launcher	(23, 7)		301	302	1	726.5	18.5	0	0		1
+drakkarfjord_s2_B	1043	launcher	(18, 11)		304	305	1	422.5	114.5	0	0		1
+drakkarfjord_s2_B	1062	launcher	(12, 16)		309	310	1	162.5	342.5	0	0		1
+drakkarfjord_s2_B	1100	launcher	(8, 9)		320		680	270.5	362.5	0	0		680
+drakkarfjord_s2_B	1131	launcher	(5, 4)		329		671	426.5	462.5	0	0		671
+drakkarfjord_s2_B	1279	launcher	(29, 6)		376		624	1044.5	8.5	0	0		624
+drakkarfjord_s2_B	1302	launcher	(29, 10)		383		617	912.5	36.5	0	0		617
+drakkarfjord_s2_B	1318	launcher	(29, 14)		388		612	812.5	96.5	0	0		612
+drakkarfjord_s2_B	1336	launcher	(29, 18)		393		607	744.5	188.5	0	0		607
+drakkarfjord_s2_B	1357	launcher	(26, 21)		400		600	564.5	272.5	0	0		600
+drakkarfjord_s2_B	1380	launcher	(22, 23)		407		593	382.5	362.5	0	0		593
+drakkarfjord_s2_B	1401	launcher	(19, 18)		414		586	314.5	238.5	0	0		586
+drakkarfjord_s2_B	1428	launcher	(14, 16)		422		578	204.5	288.5	0	0		578
+drakkarfjord_s2_B	1574	launcher	(8, 1)		464		536	582.5	354.5	0	0		536
+drakkarfjord_s2_B	1858	launcher	(29, 24)		546		454	702.5	386.5	0	0		454
+drakkarfjord_s2_B	1905	launcher	(19, 26)		559		441	274.5	518.5	0	0		441
+drakkarfjord_s2_B	1929	launcher	(14, 25)		566		434	132.5	576.5	0	0		434
+drakkarfjord_s2_B	1961	launcher	(10, 21)		575		425	68.5	544.5	0	0		425
+drakkarfjord_s2_B	1993	launcher	(8, 15)		584		416	120.5	452.5	0	0		416
+drakkarfjord_s2_B	2326	launcher	(29, 28)		681		319	714.5	558.5	0	0		319
+drakkarfjord_s2_B	2347	launcher	(24, 28)		687		313	474.5	558.5	0	0		313
+drakkarfjord_s2_B	2465	launcher	(5, 20)		721	726	5	26.5	702.5	0	0		5
+drakkarfjord_s3_A	7	launcher	(5, 23)		1	2	1	804.5	8.5	0	0		0
+drakkarfjord_s3_A	11	launcher	(10, 20)		3	4	1	512.5	76.5	0	0		0
+drakkarfjord_s3_A	13	launcher	(14, 16)		5	6	1	288.5	204.5	0	0		0
+drakkarfjord_s3_A	14	launcher	(18, 12)		7	8	1	128.5	396.5	0	0		0
+drakkarfjord_s3_A	15	launcher	(22, 8)		9	10	1	32.5	652.5	0	0		0
+drakkarfjord_s3_A	89	sentinel	(0, 18)	SE	38		465	884.5	48.5	16	0		104
+drakkarfjord_s3_A	116	launcher	(27, 7)		51		452	6.5	906.5	0	0		91
+drakkarfjord_s3_A	196	gunner	(22, 14)	NE	80		423	110.5	490.5	9	0		62
+drakkarfjord_s3_A	262	sentinel	(24, 5)	E	112	327	215	6.5	842.5	60	60	113	30
+drakkarfjord_s3_A	282	gunner	(3, 22)	SE	134		369	858.5	6.5	78	0		8
+drakkarfjord_s3_B	7	launcher	(24, 6)		1	2	1	804.5	8.5	0	0		0
+drakkarfjord_s3_B	11	launcher	(19, 9)		3	4	1	512.5	76.5	0	0		0
+drakkarfjord_s3_B	13	launcher	(15, 13)		5	6	1	288.5	204.5	0	0		0
+drakkarfjord_s3_B	14	launcher	(11, 17)		7	8	1	128.5	396.5	0	0		0
+drakkarfjord_s3_B	15	launcher	(7, 21)		9	10	1	32.5	652.5	0	0		0
+drakkarfjord_s3_B	103	sentinel	(24, 4)	NE	44		108	882.5	6.5	2	0		108
+drakkarfjord_s3_B	118	gunner	(29, 4)	S	56		96	1122.5	6.5	11	0		96
+drakkarfjord_s3_B	133	sentinel	(5, 22)	SW	80		72	12.5	768.5	36	36	81	72
+glacierkeep_s1_A	7	launcher	(14, 5)		1	2	1	462.5	6.5	0	0		0
+glacierkeep_s1_A	11	launcher	(15, 11)		3	4	1	240.5	72.5	0	0		0
+glacierkeep_s1_A	13	launcher	(16, 17)		5	6	1	92.5	212.5	0	0		0
+glacierkeep_s1_A	14	launcher	(16, 23)		7	8	1	14.5	422.5	0	0		0
+glacierkeep_s1_A	62	gunner	(15, 20)	W	35		646	42.5	306.5	18	0		502
+glacierkeep_s1_A	78	gunner	(17, 0)	SW	56		625	708.5	12.5	0	0		481
+glacierkeep_s1_A	105	sentinel	(16, 24)	SW	92	240	148	8.5	464.5	40	40	93	8
+glacierkeep_s1_B	7	launcher	(14, 24)		1	2	1	462.5	6.5	0	0		0
+glacierkeep_s1_B	11	launcher	(15, 18)		3	4	1	240.5	72.5	0	0		0
+glacierkeep_s1_B	13	launcher	(16, 12)		5	6	1	92.5	212.5	0	0		0
+glacierkeep_s1_B	14	launcher	(16, 6)		7	8	1	14.5	422.5	0	0		0
+glacierkeep_s1_B	79	gunner	(13, 9)	E	36	461	425	44.5	308.5	13	0		54
+glacierkeep_s1_B	112	sentinel	(14, 6)	N	72	396	324	12.5	420.5	14	14	73	19
+glacierkeep_s1_B	141	gunner	(14, 24)	S	160		407	462.5	6.5	2	0		0
+glacierkeep_s2_A	7	launcher	(14, 5)		1	2	1	462.5	6.5	0	0		0
+glacierkeep_s2_A	11	launcher	(15, 11)		3	4	1	240.5	72.5	0	0		0
+glacierkeep_s2_A	13	launcher	(16, 17)		5	6	1	92.5	212.5	0	0		0
+glacierkeep_s2_A	14	launcher	(16, 23)		7	8	1	14.5	422.5	0	0		0
+glacierkeep_s2_A	69	gunner	(17, 22)	NW	39		961	26.5	386.5	25	0		54
+glacierkeep_s2_A	93	sentinel	(12, 29)	NE	76		924	12.5	708.5	177	177	77	17
+glacierkeep_s2_B	7	launcher	(14, 24)		1	2	1	462.5	6.5	0	0		0
+glacierkeep_s2_B	11	launcher	(15, 18)		3	4	1	240.5	72.5	0	0		0
+glacierkeep_s2_B	13	launcher	(16, 12)		5	6	1	92.5	212.5	0	0		0
+glacierkeep_s2_B	14	launcher	(16, 6)		7	8	1	14.5	422.5	0	0		0
+glacierkeep_s2_B	90	launcher	(15, 5)		89		128	6.5	462.5	0	0		27
+glacierkeep_s2_B	93	sentinel	(17, 5)	NW	112		105	12.5	468.5	28	28	113	4
+glacierkeep_s3_A	7	launcher	(14, 5)		1	2	1	462.5	6.5	0	0		0
+glacierkeep_s3_A	11	launcher	(15, 11)		3	4	1	240.5	72.5	0	0		0
+glacierkeep_s3_A	13	launcher	(16, 17)		5	6	1	92.5	212.5	0	0		0
+glacierkeep_s3_A	14	launcher	(16, 23)		7	8	1	14.5	422.5	0	0		0
+glacierkeep_s3_A	69	gunner	(13, 19)	E	34		966	58.5	274.5	102	0		966
+glacierkeep_s3_A	92	gunner	(17, 0)	SW	56		944	708.5	12.5	0	0		944
+glacierkeep_s3_A	144	sentinel	(15, 24)	S	180	188	8	6.5	462.5	4	4	181	8
+glacierkeep_s3_A	150	sentinel	(15, 24)	S	240	246	6	6.5	462.5	3	3	241	6
+glacierkeep_s3_A	385	launcher	(16, 8)		668	669	1	344.5	32.5	0	0		1
+glacierkeep_s3_A	395	launcher	(16, 10)		740	741	1	274.5	58.5	0	0		1
+glacierkeep_s3_A	439	launcher	(16, 10)		880	881	1	274.5	58.5	0	0		1
+glacierkeep_s3_B	7	launcher	(14, 24)		1	2	1	462.5	6.5	0	0		0
+glacierkeep_s3_B	11	launcher	(15, 18)		3	4	1	240.5	72.5	0	0		0
+glacierkeep_s3_B	13	launcher	(16, 12)		5	6	1	92.5	212.5	0	0		0
+glacierkeep_s3_B	14	launcher	(16, 6)		7	8	1	14.5	422.5	0	0		0
+glacierkeep_s3_B	64	gunner	(15, 10)	SW	34		487	56.5	272.5	11	0		56
+glacierkeep_s3_B	99	sentinel	(15, 6)	N	104		417	12.5	420.5	100	100	105	4
+midgard_s1_A	7	launcher	(5, 3)		1	2	1	1014.5	6.5	0	0		0
+midgard_s1_A	11	launcher	(8, 8)		3	4	1	684.5	60.5	0	0		0
+midgard_s1_A	19	launcher	(12, 12)		5	6	1	420.5	180.5	0	0		0
+midgard_s1_A	21	launcher	(16, 16)		7	8	1	220.5	364.5	0	0		0
+midgard_s1_A	26	launcher	(20, 20)		9	10	1	84.5	612.5	0	0		0
+midgard_s1_A	30	launcher	(24, 24)		11		510	12.5	924.5	0	0		419
+midgard_s1_A	35	launcher	(24, 26)		14	16	2	6.5	1014.5	0	0		0
+midgard_s1_A	57	launcher	(24, 26)		24	26	2	6.5	1014.5	0	0		2
+midgard_s1_A	121	launcher	(28, 25)		47		474	4.5	1156.5	0	0		388
+midgard_s1_A	230	gunner	(20, 18)	SE	87		434	114.5	546.5	11	0		348
+midgard_s1_A	260	sentinel	(29, 28)	NW	112	202	90	8.5	1352.5	19	19	113	5
+midgard_s1_A	274	launcher	(11, 7)		308	309	1	620.5	92.5	0	0		1
+midgard_s1_A	283	launcher	(22, 18)		324	325	1	92.5	620.5	0	0		1
+midgard_s1_A	289	gunner	(22, 23)	S	359		162	32.5	800.5	15	0		162
+midgard_s1_A	292	launcher	(1, 1)		402	403	1	1300.5	4.5	0	0		1
+midgard_s1_A	293	launcher	(8, 4)		408	409	1	848.5	32.5	0	0		1
+midgard_s1_A	294	launcher	(18, 16)		424	425	1	182.5	422.5	0	0		1
+midgard_s1_B	7	launcher	(26, 24)		1	2	1	1014.5	6.5	0	0		0
+midgard_s1_B	11	launcher	(21, 21)		3	4	1	684.5	60.5	0	0		0
+midgard_s1_B	17	launcher	(17, 17)		5	6	1	420.5	180.5	0	0		0
+midgard_s1_B	25	launcher	(13, 13)		7	8	1	220.5	364.5	0	0		0
+midgard_s1_B	28	launcher	(9, 9)		9	10	1	84.5	612.5	0	0		0
+midgard_s1_B	31	launcher	(5, 5)		11	65	54	12.5	924.5	0	0		52
+midgard_s1_B	128	sentinel	(6, 6)	NW	42	51	9	24.5	840.5	5	5	43	8
+midgard_s1_B	160	sentinel	(6, 6)	NW	52	59	7	24.5	840.5	3	3	53	7
+midgard_s1_B	196	gunner	(7, 6)	N	61	107	46	32.5	800.5	6	0		46
+midgard_s1_B	407	launcher	(28, 28)		191	192	1	1300.5	4.5	0	0		1
+midgard_s1_B	409	launcher	(24, 24)		193	194	1	924.5	12.5	0	0		1
+midgard_s1_B	411	launcher	(20, 20)		195	196	1	612.5	84.5	0	0		1
+midgard_s1_B	413	launcher	(16, 16)		197	198	1	364.5	220.5	0	0		1
+midgard_s1_B	415	launcher	(12, 12)		199	200	1	180.5	420.5	0	0		1
+midgard_s1_B	418	launcher	(9, 8)		202	203	1	72.5	648.5	0	0		1
+midgard_s1_B	421	sentinel	(5, 5)	NW	205	211	6	12.5	924.5	3	3	206	6
+midgard_s1_B	423	sentinel	(29, 27)	W	207		793	1302.5	6.5	23	0		472
+midgard_s1_B	440	sentinel	(24, 28)	NE	240		760	1112.5	8.5	342	0		439
+midgard_s1_B	944	sentinel	(24, 27)	NE	976		24	1062.5	6.5	1	0		0
+midgard_s2_A	7	launcher	(5, 3)		1	2	1	1014.5	6.5	0	0		0
+midgard_s2_A	11	launcher	(8, 8)		3	4	1	684.5	60.5	0	0		0
+midgard_s2_A	19	launcher	(12, 12)		5	6	1	420.5	180.5	0	0		0
+midgard_s2_A	24	launcher	(16, 16)		7	8	1	220.5	364.5	0	0		0
+midgard_s2_A	28	launcher	(20, 20)		9	10	1	84.5	612.5	0	0		0
+midgard_s2_A	30	launcher	(24, 24)		11	15	4	12.5	924.5	0	0		0
+midgard_s2_A	36	launcher	(24, 26)		14		314	6.5	1014.5	0	0		305
+midgard_s2_A	137	sentinel	(1, 0)	SE	49		279	1352.5	8.5	124	0		272
+midgard_s2_A	161	gunner	(22, 19)	S	58		270	76.5	652.5	70	0		263
+midgard_s2_A	197	gunner	(6, 4)	NW	76		252	926.5	14.5	6	0		245
+midgard_s2_A	266	launcher	(5, 1)		103	104	1	1112.5	8.5	0	0		1
+midgard_s2_A	285	launcher	(11, 9)		111	112	1	546.5	114.5	0	0		1
+midgard_s2_A	325	launcher	(20, 20)		125	126	1	84.5	612.5	0	0		1
+midgard_s2_A	406	launcher	(4, 9)		153	154	1	812.5	44.5	0	0		1
+midgard_s2_A	414	launcher	(7, 15)		156	157	1	512.5	176.5	0	0		1
+midgard_s2_A	439	launcher	(15, 21)		164	165	1	162.5	498.5	0	0		1
+midgard_s2_A	453	launcher	(21, 27)		170	171	1	30.5	942.5	0	0		1
+midgard_s2_A	520	sentinel	(29, 26)	W	195	200	5	6.5	1254.5	2	2	196	2
+midgard_s2_A	627	launcher	(4, 9)		246	247	1	812.5	44.5	0	0		1
+midgard_s2_A	635	launcher	(7, 15)		249	250	1	512.5	176.5	0	0		1
+midgard_s2_A	639	launcher	(12, 18)		251	252	1	282.5	330.5	0	0		1
+midgard_s2_A	653	launcher	(21, 23)		259	260	1	42.5	762.5	0	0		1
+midgard_s2_A	770	gunner	(20, 21)	N	326		2	72.5	648.5	1	0		2
+midgard_s2_B	7	launcher	(26, 24)		1	2	1	1014.5	6.5	0	0		0
+midgard_s2_B	11	launcher	(21, 21)		3	4	1	684.5	60.5	0	0		0
+midgard_s2_B	15	launcher	(17, 17)		5	6	1	420.5	180.5	0	0		0
+midgard_s2_B	24	launcher	(13, 13)		7	8	1	220.5	364.5	0	0		0
+midgard_s2_B	27	launcher	(9, 9)		9	10	1	84.5	612.5	0	0		0
+midgard_s2_B	30	launcher	(5, 5)		11		162	12.5	924.5	0	0		155
+midgard_s2_B	128	sentinel	(6, 6)	NW	42	50	8	24.5	840.5	4	4	43	7
+midgard_s2_B	158	sentinel	(6, 6)	NW	51	58	7	24.5	840.5	3	3	52	7
+midgard_s2_B	193	gunner	(7, 6)	N	60		113	32.5	800.5	30	0		108
+midgard_s3_A	7	launcher	(5, 3)		1	2	1	1014.5	6.5	0	0		0
+midgard_s3_A	11	launcher	(8, 8)		3	4	1	684.5	60.5	0	0		0
+midgard_s3_A	19	launcher	(12, 12)		5	6	1	420.5	180.5	0	0		0
+midgard_s3_A	23	launcher	(16, 16)		7	8	1	220.5	364.5	0	0		0
+midgard_s3_A	25	launcher	(20, 20)		9	10	1	84.5	612.5	0	0		0
+midgard_s3_A	29	launcher	(24, 24)		11		249	12.5	924.5	0	0		196
+midgard_s3_A	34	launcher	(24, 26)		14		246	6.5	1014.5	0	0		196
+midgard_s3_A	106	launcher	(8, 6)		41	42	1	762.5	42.5	0	0		1
+midgard_s3_A	116	launcher	(14, 9)		44	45	1	462.5	174.5	0	0		1
+midgard_s3_A	124	launcher	(17, 15)		47	48	1	222.5	366.5	0	0		1
+midgard_s3_A	133	launcher	(21, 21)		51	52	1	60.5	684.5	0	0		1
+midgard_s3_A	148	gunner	(20, 18)	SE	57		203	114.5	546.5	89	0		155
+midgard_s3_B	7	launcher	(26, 24)		1	2	1	1014.5	6.5	0	0		0
+midgard_s3_B	11	launcher	(21, 21)		3	4	1	684.5	60.5	0	0		0
+midgard_s3_B	15	launcher	(17, 17)		5	6	1	420.5	180.5	0	0		0
+midgard_s3_B	24	launcher	(13, 13)		7	8	1	220.5	364.5	0	0		0
+midgard_s3_B	27	launcher	(9, 9)		9	10	1	84.5	612.5	0	0		0
+midgard_s3_B	30	launcher	(5, 5)		11		162	12.5	924.5	0	0		155
+midgard_s3_B	128	sentinel	(6, 6)	NW	42	50	8	24.5	840.5	4	4	43	7
+midgard_s3_B	158	sentinel	(6, 6)	NW	51	58	7	24.5	840.5	3	3	52	7
+midgard_s3_B	193	gunner	(7, 6)	N	60		113	32.5	800.5	30	0		108
+nordkap_s1_A	7	launcher	(9, 9)		1	2	1	90.5	6.5	0	0		0
+nordkap_s1_A	11	launcher	(10, 15)		3	4	1	12.5	72.5	0	0		0
+nordkap_s1_A	32	sentinel	(14, 8)	SW	10		594	130.5	22.5	13	0		529
+nordkap_s1_A	91	sentinel	(6, 5)	E	64		540	194.5	14.5	25	0		475
+nordkap_s1_A	344	launcher	(11, 9)		257	258	1	92.5	8.5	0	0		1
+nordkap_s1_A	429	launcher	(11, 9)		298	299	1	92.5	8.5	0	0		1
+nordkap_s1_A	524	launcher	(6, 9)		347	348	1	102.5	18.5	0	0		1
+nordkap_s1_A	608	launcher	(11, 9)		395	396	1	92.5	8.5	0	0		1
+nordkap_s1_A	706	launcher	(6, 9)		451	452	1	102.5	18.5	0	0		1
+nordkap_s1_A	766	launcher	(12, 7)		488	489	1	138.5	6.5	0	0		1
+nordkap_s1_A	843	launcher	(11, 9)		526	527	1	92.5	8.5	0	0		1
+nordkap_s1_B	7	launcher	(9, 16)		1	2	1	90.5	6.5	0	0		0
+nordkap_s1_B	11	launcher	(10, 10)		3	4	1	12.5	72.5	0	0		0
+nordkap_s1_B	58	gunner	(12, 13)	NW	20	130	110	48.5	36.5	20	0		110
+nordkap_s1_B	111	gunner	(12, 17)	SW	56		944	116.5	8.5	12	0		928
+nordkap_s1_B	137	sentinel	(10, 12)	S	104		896	30.5	42.5	3	0		880
+nordkap_s1_B	159	sentinel	(10, 14)	NE	136		864	56.5	20.5	3	0		848
+nordkap_s1_B	168	sentinel	(9, 15)	NE	152		848	72.5	12.5	1	0		832
+nordkap_s1_B	175	sentinel	(8, 12)	E	164		836	32.5	44.5	2	0		820
+nordkap_s1_B	184	gunner	(12, 11)	S	177		823	26.5	62.5	705	0		808
+nordkap_s1_B	325	launcher	(11, 17)		301	302	1	112.5	4.5	0	0		1
+nordkap_s1_B	349	launcher	(7, 12)		321		679	36.5	48.5	0	0		665
+nordkap_s1_B	358	launcher	(3, 8)		328		672	44.5	152.5	0	0		658
+nordkap_s1_B	460	launcher	(5, 0)		401		599	62.5	362.5	0	0		596
+nordkap_s1_B	474	launcher	(15, 0)		412		588	72.5	372.5	0	0		585
+nordkap_s1_B	490	launcher	(16, 8)		424		576	44.5	152.5	0	0		573
+nordkap_s1_B	561	launcher	(13, 4)		469		531	18.5	222.5	0	0		528
+nordkap_s1_B	590	launcher	(14, 12)		488		512	50.5	62.5	0	0		509
+nordkap_s1_B	602	launcher	(11, 16)		496		504	92.5	8.5	0	0		501
+nordkap_s1_B	616	launcher	(16, 16)		506		494	132.5	48.5	0	0		491
+nordkap_s1_B	639	launcher	(14, 20)		523		477	202.5	22.5	0	0		474
+nordkap_s1_B	778	launcher	(11, 23)		604		396	274.5	22.5	0	0		396
+nordkap_s1_B	786	launcher	(6, 23)		610		390	284.5	32.5	0	0		390
+nordkap_s1_B	800	launcher	(1, 23)		620		380	344.5	92.5	0	0		380
+nordkap_s1_B	824	launcher	(3, 17)		638		362	152.5	44.5	0	0		362
+nordkap_s1_B	948	launcher	(1, 1)		728		272	102.5	378.5	0	0		272
+nordkap_s1_B	993	launcher	(19, 2)		763		237	110.5	362.5	0	0		237
+nordkap_s2_A	7	launcher	(9, 9)		1	2	1	90.5	6.5	0	0		0
+nordkap_s2_A	11	launcher	(10, 15)		3	4	1	12.5	72.5	0	0		0
+nordkap_s2_A	17	launcher	(11, 20)		6		591	4.5	184.5	0	0		572
+nordkap_s2_A	33	sentinel	(13, 8)	W	12		585	122.5	14.5	16	0		571
+nordkap_s2_A	160	gunner	(7, 14)	S	55	305	250	26.5	62.5	22	0		250
+nordkap_s2_A	266	sentinel	(13, 9)	NW	88		509	102.5	18.5	4	0		509
+nordkap_s2_A	300	launcher	(11, 9)		106	107	1	92.5	8.5	0	0		1
+nordkap_s2_A	305	launcher	(11, 16)		109	112	3	8.5	92.5	0	0		3
+nordkap_s2_A	316	sentinel	(7, 12)	NE	115	494	379	48.5	36.5	3	0		379
+nordkap_s2_A	349	gunner	(5, 13)	N	132		465	50.5	62.5	7	0		465
+nordkap_s2_A	380	sentinel	(5, 14)	N	148		449	40.5	76.5	1	0		449
+nordkap_s2_A	452	sentinel	(5, 15)	N	180		417	32.5	92.5	1	0		417
+nordkap_s2_A	480	launcher	(6, 19)		194	195	1	12.5	168.5	0	0		1
+nordkap_s2_A	505	sentinel	(7, 21)	NE	204	237	33	12.5	216.5	17	17	205	33
+nordkap_s2_A	556	launcher	(3, 1)		235		362	348.5	72.5	0	0		362
+nordkap_s2_A	578	launcher	(13, 0)		251		346	354.5	54.5	0	0		346
+nordkap_s2_A	606	launcher	(8, 14)		267	268	1	22.5	58.5	0	0		1
+nordkap_s2_A	649	launcher	(12, 4)		289		308	216.5	12.5	0	0		308
+nordkap_s2_A	660	launcher	(13, 11)		296	486	190	68.5	32.5	0	0		190
+nordkap_s2_A	670	launcher	(18, 8)		303		294	182.5	74.5	0	0		294
+nordkap_s2_A	693	launcher	(8, 14)		319	320	1	22.5	58.5	0	0		1
+nordkap_s2_A	731	launcher	(8, 14)		344	345	1	22.5	58.5	0	0		1
+nordkap_s2_A	748	gunner	(11, 10)	S	355		242	74.5	14.5	138	0		242
+nordkap_s2_A	763	sentinel	(10, 16)	S	365	375	10	6.5	90.5	5	5	366	10
+nordkap_s2_A	790	launcher	(12, 10)		385	386	1	78.5	18.5	0	0		1
+nordkap_s2_A	826	launcher	(11, 9)		406	407	1	92.5	8.5	0	0		1
+nordkap_s2_A	831	launcher	(11, 16)		409	411	2	8.5	92.5	0	0		2
+nordkap_s2_A	868	launcher	(11, 9)		431	432	1	92.5	8.5	0	0		1
+nordkap_s2_A	874	launcher	(11, 16)		434	436	2	8.5	92.5	0	0		2
+nordkap_s2_A	942	launcher	(7, 14)		467	468	1	26.5	62.5	0	0		1
+nordkap_s2_A	993	launcher	(11, 9)		487	488	1	92.5	8.5	0	0		1
+nordkap_s2_A	999	launcher	(12, 15)		489	490	1	18.5	78.5	0	0		1
+nordkap_s2_A	1037	gunner	(7, 14)	S	506	509	3	26.5	62.5	2	0		3
+nordkap_s2_B	7	launcher	(9, 16)		1	2	1	90.5	6.5	0	0		0
+nordkap_s2_B	11	launcher	(10, 10)		3	4	1	12.5	72.5	0	0		0
+nordkap_s2_B	48	gunner	(7, 13)	NE	16	92	76	48.5	36.5	29	0		65
+nordkap_s2_B	112	gunner	(11, 15)	S	70		256	74.5	14.5	119	0		48
+nordkap_s3_A	7	launcher	(9, 9)		1	2	1	90.5	6.5	0	0		0
+nordkap_s3_A	11	launcher	(10, 15)		3	4	1	12.5	72.5	0	0		0
+nordkap_s3_A	19	launcher	(10, 21)		6		199	6.5	210.5	0	0		101
+nordkap_s3_A	42	gunner	(11, 11)	S	15	168	153	58.5	22.5	38	0		97
+nordkap_s3_A	75	sentinel	(10, 11)	W	35		170	56.5	20.5	10	0		77
+nordkap_s3_B	7	launcher	(9, 16)		1	2	1	90.5	6.5	0	0		0
+nordkap_s3_B	11	launcher	(10, 10)		3	4	1	12.5	72.5	0	0		0
+nordkap_s3_B	44	sentinel	(7, 18)	NE	12		215	138.5	6.5	8	0		215
+nordkap_s3_B	72	launcher	(8, 8)		28	56	28	4.5	112.5	0	0		28
+nordkap_s3_B	85	sentinel	(8, 12)	SE	34	123	89	32.5	44.5	6	0		89
+nordkap_s3_B	304	launcher	(11, 20)		111	112	1	184.5	4.5	0	0		1
+nordkap_s3_B	329	launcher	(12, 11)		117	118	1	26.5	62.5	0	0		1
+nordkap_s3_B	404	sentinel	(12, 9)	NW	135		92	12.5	96.5	46	46	136	92
+nordkap_s3_B	469	gunner	(11, 16)	SE	153		74	92.5	8.5	3	0		74
+nordkap_s3_B	545	launcher	(13, 20)		176		51	194.5	14.5	0	0		51

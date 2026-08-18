@@ -1,0 +1,31 @@
+tag	map	ours	turn	our_alive	our_funded	our_shots	our_cap	our_capf	our_use_cap	our_use_funded	oppcore_heal	opp_alive	opp_funded	opp_shots	opp_cap	opp_use_cap	opp_use_funded	ourcore_heal	our_net	opp_net
+atoll_s1_A	atoll	OPP	1000	0	0	0	0.0	0.0			0	15	15	7	7.5	0.933	0.933	126	0	0
+atoll_s1_B	atoll	US	1000	198	198	99	99.5	99.5	0.995	0.995	1574	60	60	24	30.0	0.8	0.8	144	208	288
+atoll_s2_A	atoll	US	566	62	62	31	31.0	31.0	1.0	1.0	56	7	6	3	3.5	0.857	1.0	54	502	0
+atoll_s2_B	atoll	US	161	77	32	28	38.5	16.0	0.727	1.75	0	0	0	3	0.0			54	504	0
+atoll_s3_A	atoll	US	245	73	8	28	36.5	4.0	0.767	7.0	0	0	0	0	0.0			0	504	0
+atoll_s3_B	atoll	US	143	57	43	28	28.5	21.5	0.982	1.302	0	75	26	28	37.5	0.747	2.154	494	504	10
+drakkarfjord_s1_A	drakkarfjord	US	208	56	56	28	28.0	28.0	1.0	1.0	0	0	0	0	0.0			0	504	0
+drakkarfjord_s1_B	drakkarfjord	US	1000	919	3	172	459.5	1.5	0.374	114.667	3096	0	0	0	0.0			0	0	0
+drakkarfjord_s2_A	drakkarfjord	US	309	74	51	30	37.0	25.5	0.811	1.176	36	0	0	0	0.0			0	504	0
+drakkarfjord_s2_B	drakkarfjord	US	1000	0	0	0	0.0	0.0			0	0	0	0	0.0			0	0	0
+drakkarfjord_s3_A	drakkarfjord	OPP	503	215	30	60	107.5	15.0	0.558	4.0	1080	56	56	28	28.0	1.0	1.0	0	0	504
+drakkarfjord_s3_B	drakkarfjord	US	152	72	72	36	36.0	36.0	1.0	1.0	148	0	0	0	0.0			0	500	0
+glacierkeep_s1_A	glacierkeep	OPP	681	148	8	40	74.0	4.0	0.541	10.0	720	93	16	28	46.5	0.602	3.5	0	0	504
+glacierkeep_s1_B	glacierkeep	OPP	567	324	19	14	162.0	9.5	0.086	1.474	252	74	41	28	37.0	0.757	1.366	0	0	504
+glacierkeep_s2_A	glacierkeep	US	1000	924	17	177	462.0	8.5	0.383	20.824	3186	0	0	0	0.0			0	0	0
+glacierkeep_s2_B	glacierkeep	US	217	105	4	28	52.5	2.0	0.533	14.0	0	0	0	0	0.0			0	504	0
+glacierkeep_s3_A	glacierkeep	OPP	1000	14	14	7	7.0	7.0	1.0	1.0	126	3	3	1	1.5	0.667	0.667	0	0	18
+glacierkeep_s3_B	glacierkeep	US	521	417	4	100	208.5	2.0	0.48	50.0	1300	129	12	24	64.5	0.372	4.0	0	500	432
+midgard_s1_A	midgard	OPP	521	90	5	19	45.0	2.5	0.422	7.6	0	125	16	28	62.5	0.448	3.5	0	342	504
+midgard_s1_B	midgard	OPP	1000	22	21	11	11.0	10.5	1.0	1.048	198	179	25	32	89.5	0.358	2.56	576	0	0
+midgard_s2_A	midgard	OPP	328	5	2	2	2.5	1.0	0.8	2.0	36	56	56	28	28.0	1.0	1.0	0	0	504
+midgard_s2_B	midgard	OPP	173	15	14	7	7.5	7.0	0.933	1.0	126	96	96	48	48.0	1.0	1.0	356	0	508
+midgard_s3_A	midgard	OPP	260	0	0	0	0.0	0.0			0	36	36	28	28.0	1.0	1.0	0	0	504
+midgard_s3_B	midgard	OPP	173	15	14	7	7.5	7.0	0.933	1.0	126	96	96	48	48.0	1.0	1.0	356	0	508
+nordkap_s1_A	nordkap	OPP	604	0	0	0	0.0	0.0			0	418	417	209	209.0	1.0	1.002	3262	0	500
+nordkap_s1_B	nordkap	US	1000	896	880	0	866.0	850.0	0.0	0.0	0	0	0	0	0.0			0	0	0
+nordkap_s2_A	nordkap	OPP	597	417	417	22	230.0	230.0	0.096	0.096	396	38	38	28	29.0	0.966	0.966	0	0	504
+nordkap_s2_B	nordkap	OPP	326	0	0	0	0.0	0.0			0	50	50	28	28.0	1.0	1.0	0	0	504
+nordkap_s3_A	nordkap	OPP	205	0	0	0	0.0	0.0			0	96	96	48	48.0	1.0	1.0	364	0	500
+nordkap_s3_B	nordkap	US	227	181	181	46	90.5	90.5	0.508	0.508	320	0	0	0	0.0			0	508	0

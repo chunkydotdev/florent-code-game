@@ -1,0 +1,31 @@
+tag	map	seed	seat	ours	cond	turn	our_hp_end	opp_hp_end	our_hp_min	opp_hp_min	opp_hp_min_r	hp_first_hit	hp250	opp_press	opp_press_start	our_arrive	raider_gap	raider_deaths	sent_n	sent_first	sent_deaths	sent_alive_r	sent_dry_r	gun_n	lau_n	harv_n	ammo_max	ammo_end	our_coll	opp_coll	coll_stop	opp_sent_n	opp_sent_first	opp_gun_n	log_arrive	log_degrade	log_sent	log_sentdead	log_cleared	log_throw	log_evict	log_seal	log_clear	arrive_rounds	degrade_rounds
+atoll_s1_A	atoll	1	A	OPP	Titanium collected (tiebreak)	1000	500	500	438	500	0	223		55	21	11	887	6	7	23	1	977	15	1	12	4	1600	1600	4970	12080	999	12	6	4	4	0	0	0	0	10	32	4	38	5,170,216,305	
+atoll_s1_B	atoll	1	B	US	Titanium collected (tiebreak)	1000	212	292	212	284	998	241	928	736	28	7	930	16	4	27	2	973	5	2	32	5	176	64	4960	4730	997	24	7	3	8	0	2	1	0	27	96	10	18	5,116,140,381,458,524	
+atoll_s2_A	atoll	2	A	US	Core destroyed	566	500	0	458	0	565	465		72	20	6	461	9	7	20	1	546	1	3	14	5	60	50	2860	840	563	8	6	3	4	0	1	0	0	13	5	4	8	5,158,198,477	
+atoll_s2_B	atoll	2	B	US	Core destroyed	161	500	0	478	0	160	14		130	20	6	13	2	2	14	0	147	46	1	3	2	49	3	400	280	99	4	6	0	1	0	1	0	1	2	23	6	16	5	
+atoll_s3_A	atoll	3	A	US	Core destroyed	245	500	0	500	0	244			218	22	6	27	0	2	19	0	226	69	2	3	3	24	6	1190	320	243	2	6	1	1	0	1	0	3	2	36	13	40	5	
+atoll_s3_B	atoll	3	B	US	Core destroyed	143	490	0	370	0	142	14		33	21	6	22	1	3	14	0	129	19	0	3	2	49	15	680	480	141	3	8	0	1	0	0	0	1	2	0	10	12	5	
+drakkarfjord_s1_A	drakkarfjord	1	A	US	Core destroyed	208	500	0	500	0	207			39	38	10	139	0	4	43	0	165	1	0	7	2	238	227	930	240	206	1	12	0	1	0	1	0	2	5	41	28	28	11	
+drakkarfjord_s1_B	drakkarfjord	1	B	US	Titanium collected (tiebreak)	1000	500	500	500	184	141			957	39	10	687	0	1	81	0	919	916	2	5	3	24	5	610	0	168	1	12	0	1	0	1	0	1	5	0	79	10	11	
+drakkarfjord_s2_A	drakkarfjord	2	A	US	Core destroyed	309	500	0	500	0	308			30	39	10	85	1	3	68	1	241	23	3	10	9	80	27	2170	620	308	3	12	1	2	0	1	0	1	9	0	17	10	11,216	
+drakkarfjord_s2_B	drakkarfjord	2	B	US	Titanium collected (tiebreak)	1000	500	500	500	500	0			24	43	10	879	7	2	46	0	954	8	3	39	8	796	784	15630	12640	999	3	15	4	4	0	0	0	1	16	0	10	41	11,128,211,281	
+drakkarfjord_s3_A	drakkarfjord	3	A	OPP	Core destroyed	503	0	500	0	80	188	357	474	458	38	10	390	2	2	38	1	465	361	2	6	4	60	1	600	1620	131	4	13	0	1	0	0	0	1	5	46	11	10	11	
+drakkarfjord_s3_B	drakkarfjord	3	B	US	Core destroyed	152	500	0	500	0	151			14	39	10	86	0	2	44	0	108	0	1	5	2	157	147	650	0	150	1	12	0	1	0	1	0	0	5	0	21	0	11	
+glacierkeep_s1_A	glacierkeep	1	A	OPP	Core destroyed	681	0	500	0	316	240	589	624	647	27	8	379	2	1	92	1	148	140	2	4	8	60	60	180	0	94	3	10	1	1	0	1	0	0	4	0	6	13	9	
+glacierkeep_s1_B	glacierkeep	1	B	OPP	Core destroyed	567	0	500	0	260	132	494	520	526	31	8	474	2	1	72	1	324	305	2	4	8	24	1	180	650	91	2	10	2	1	0	1	0	0	4	0	13	0	9	
+glacierkeep_s2_A	glacierkeep	2	A	US	Titanium collected (tiebreak)	1000	500	500	500	162	148			968	24	8	879	1	1	76	0	924	907	1	4	3	24	6	170	0	90	2	10	0	1	0	1	0	0	4	0	75	0	9	
+glacierkeep_s2_B	glacierkeep	2	B	US	Core destroyed	217	500	0	500	0	216			183	25	8	30	0	1	112	0	105	101	0	5	1	24	7	10	0	31	1	10	1	1	0	1	0	1	4	1	9	20	9	
+glacierkeep_s3_A	glacierkeep	3	A	OPP	Titanium collected (tiebreak)	1000	482	500	482	374	245	998		965	28	8	695	6	2	180	2	14	0	2	7	8	80	80	150	180	82	2	16	1	4	0	0	0	0	7	0	5	0	9,682,752,892	
+glacierkeep_s3_B	glacierkeep	3	B	US	Core destroyed	521	68	0	68	0	520	393	452	475	37	8	343	2	1	104	0	417	413	1	4	1	24	3	30	0	33	2	10	1	1	0	1	0	0	4	0	15	0	9	
+midgard_s1_A	midgard	1	A	OPP	Core destroyed	521	0	158	0	158	200	397	432	473	48	17	253	4	1	112	1	90	85	2	14	7	300	300	540	520	116	2	13	3	2	1	1	1	3	10	76	9	30	14,435	358
+midgard_s1_B	midgard	1	B	OPP	Titanium collected (tiebreak)	1000	500	500	400	388	57	822		948	51	65	825	2	6	42	3	811	322	1	12	14	80	3	2920	3420	998	5	44	6	1	1	1	1	0	11	3	0	1	204	42
+midgard_s2_A	midgard	2	A	OPP	Core destroyed	328	0	500	0	464	198	273	299	247	49	22	180	4	2	49	1	279	7	3	18	4	60	46	2340	2660	326	8	12	2	4	0	1	1	1	16	11	6	10	14,129,172,261	
+midgard_s2_B	midgard	2	B	OPP	Core destroyed	173	0	500	0	426	56	78	122	115	54	64	0	0	2	42	2	15	1	1	6	10	40	4	550	1810	85	2	43	3	1	1	0	0	0	5	2	0	0	165	42
+midgard_s3_A	midgard	3	A	OPP	Core destroyed	260	0	500	0	500	0	225	245	209	51			3	0		0	0	0	1	11	6	24	24	400	2810	74	5	13	3	2	0	0	0	0	9	5	0	0	14,53	
+midgard_s3_B	midgard	3	B	OPP	Core destroyed	173	0	500	0	426	56	78	122	115	54	64	0	0	2	42	2	15	1	1	6	10	40	4	550	1810	85	2	43	3	1	1	0	0	0	5	2	0	0	165	42
+nordkap_s1_A	nordkap	1	A	OPP	Core destroyed	604	0	500	0	500	0	10	353	406	14	4	479	9	2	10	0	594	65	0	9	4	24	24	1240	6110	600	11	6	7	8	0	0	0	0	9	0	8	27	5,261,302,355,399,459	
+nordkap_s1_B	nordkap	1	B	US	Titanium collected (tiebreak)	1000	500	500	500	500	0			49	16	4	6	4	4	104	0	896	16	3	19	15	1196	1180	7680	170	999	1	6	3	1	1	0	0	1	3	0	8	16	5	334
+nordkap_s2_A	nordkap	2	A	OPP	Core destroyed	597	0	500	0	194	237	560	582	107	12	4	417	15	7	12	3	585	14	4	22	12	80	76	5440	3820	595	6	6	7	10	0	1	1	2	13	15	20	27	5,113,269,321,346,388	
+nordkap_s2_B	nordkap	2	B	OPP	Core destroyed	326	0	500	0	500	0	277	303	308	11	4	180	3	0		0	0	0	2	2	2	24	20	150	2070	67	4	7	3	1	0	0	0	0	2	0	16	8	5	
+nordkap_s3_A	nordkap	3	A	OPP	Core destroyed	205	0	500	0	500	0	110	156	188	15	4	186	2	1	35	0	170	93	1	3	6	24	7	260	2750	111	2	6	4	1	0	0	0	0	2	46	1	0	5	
+nordkap_s3_B	nordkap	3	B	US	Core destroyed	227	500	0	500	0	226			12	8	4	65	2	3	12	1	215	0	1	6	13	60	50	2140	2590	226	5	6	3	2	0	1	0	1	4	10	70	21	5,119	

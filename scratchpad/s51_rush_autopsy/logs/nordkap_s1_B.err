@@ -1,0 +1,159 @@
+Update available: 2.3.6 -> 2.3.8. Run: pip install --upgrade fcode
+FS GATE 0 sig (20, 26, (9, 6), (9, 18)) ok 1
+FS GATE 1 sig (20, 26, (9, 6), (9, 18)) ok 1
+FS PHASE 1 id 4 ph 1 d 100 at (9, 17)
+FS HOPBUILD 1 at (9, 17) lch (9, 16) T (11, 5)
+FS GATE 2 sig (20, 26, (9, 6), (9, 18)) ok 1
+FS GATE 2 sig (20, 26, (9, 6), (9, 18)) ok 1
+FS THROW 2 from (9, 17) to (10, 11) T (11, 5) body 4 n 1 dsq 16
+FS HOPBUILD 3 at (10, 11) lch (10, 10) T (11, 5)
+FS GATE 3 sig (20, 26, (9, 6), (9, 18)) ok 1
+FS GATE 4 sig (20, 26, (9, 6), (9, 18)) ok 1
+FS THROW 4 from (11, 11) to (11, 5) T (11, 5) body 4 n 1 dsq 2
+FS ARRIVE 5 id 4 body 1 at (11, 5) dsq 2
+FS PHASE 5 id 4 ph 2 d 2 at (11, 5)
+FS SEAL 5 tile (10, 5) n 1
+FS SEAL 6 tile (11, 6) n 2
+FS DODGE 7 id 4 from (11, 5) to (11, 4) cov 1 -> 0 hit 0 hp 40
+FS GATE 7 sig (20, 26, (9, 6), (9, 18)) ok 1
+FS GATE 8 sig (20, 26, (9, 6), (9, 18)) ok 1
+FS DODGE 9 id 4 from (10, 4) to (9, 4) cov 1 -> 0 hit 0 hp 22
+FS GATE 9 sig (20, 26, (9, 6), (9, 18)) ok 1
+FS SEAL 10 tile (9, 5) n 3
+FS SEAL 12 tile (8, 5) n 4
+FS SEAL 16 tile (8, 6) n 5
+FS SEAL 18 tile (8, 7) n 6
+FS STAT 20 id 4 at (7, 8) need 3 orth 3 ti 81 ammo 24 sen 0 hp 22 covden 0 eco 1 lost 0
+FS CLEAR 21 tile (9, 8) peck 1
+FS RUNG 21 id 4 r 3 hi -
+FS CLEAR 24 tile (9, 8) peck 2
+FS RUNG 24 id 4 r 3 hi -
+FS CLEAR 28 tile (9, 8) peck 1
+FS RUNG 28 id 4 r 3 hi -
+FS CLEAR 29 tile (9, 8) peck 2
+FS RUNG 29 id 4 r 3 hi -
+FS CLEAR 30 tile (9, 8) peck 3
+FS RUNG 30 id 4 r 3 hi -
+FS CLEAR 32 tile (9, 8) peck 4
+FS RUNG 32 id 4 r 3 hi -
+FS CLEAR 33 tile (9, 8) peck 5
+FS RUNG 33 id 4 r 3 hi -
+FS CLEAR 34 tile (9, 8) peck 6
+FS RUNG 34 id 4 r 3 hi -
+FS CLEARED 36 tile (9, 8) n 1
+FS SEAL 36 tile (9, 8) n 7
+FS SEALCLR 36 tile (9, 8) lag 0
+FS STAT 40 id 4 at (10, 9) need 1 orth 1 ti 41 ammo 24 sen 0 hp 26 covden 0 eco 1 lost 0
+FS CLEAR 40 tile (10, 8) peck 1
+FS RUNG 40 id 4 r 3 hi -
+FS CLEAR 41 tile (10, 8) peck 2
+FS RUNG 41 id 4 r 3 hi -
+FS CLEAR 42 tile (10, 8) peck 3
+FS RUNG 42 id 4 r 3 hi -
+FS CLEAR 43 tile (10, 8) peck 4
+FS RUNG 43 id 4 r 3 hi -
+FS CLEAR 44 tile (10, 8) peck 5
+FS RUNG 44 id 4 r 3 hi -
+FS CLEAR 45 tile (10, 8) peck 6
+FS RUNG 45 id 4 r 3 hi -
+FS CLEAR 46 tile (10, 8) peck 7
+FS RUNG 46 id 4 r 3 hi -
+FS CLEAR 47 tile (10, 8) peck 8
+FS RUNG 47 id 4 r 3 hi -
+FS PHASE 48 id 4 ph 3 d 4 at (10, 9)
+FS SEAL 49 tile (11, 8) n 8
+FS PHASE 51 id 4 ph 2 d 8 at (12, 9)
+FS PHASE 54 id 4 ph 3 d 5 at (12, 8)
+FS PHASE 55 id 4 ph 2 d 8 at (12, 9)
+FS PHASE 56 id 4 ph 3 d 5 at (12, 8)
+FS PHASE 57 id 4 ph 2 d 8 at (12, 9)
+FS PHASE 58 id 4 ph 3 d 5 at (12, 8)
+FS PHASE 59 id 4 ph 2 d 10 at (13, 8)
+FS PHASE 60 id 4 ph 3 d 5 at (12, 8)
+FS STAT 60 id 4 at (12, 8) need 2 orth 0 ti 19 ammo 24 sen 0 hp 34 covden 0 eco 1 lost 0
+FS PHASE 61 id 4 ph 2 d 10 at (13, 8)
+FS PHASE 62 id 4 ph 3 d 5 at (12, 8)
+FS PHASE 63 id 4 ph 2 d 10 at (13, 8)
+FS PHASE 64 id 4 ph 3 d 5 at (12, 8)
+FS PHASE 65 id 4 ph 2 d 8 at (12, 9)
+FS PHASE 66 id 4 ph 3 d 5 at (12, 8)
+FS PHASE 67 id 4 ph 2 d 10 at (13, 8)
+FS PHASE 68 id 4 ph 3 d 5 at (12, 8)
+FS PHASE 69 id 4 ph 2 d 8 at (12, 9)
+FS PHASE 70 id 4 ph 3 d 5 at (12, 8)
+FS PHASE 71 id 4 ph 2 d 8 at (12, 9)
+FS PHASE 72 id 4 ph 3 d 5 at (12, 8)
+FS PHASE 73 id 4 ph 2 d 8 at (12, 9)
+FS PHASE 74 id 4 ph 3 d 5 at (12, 8)
+FS PHASE 75 id 4 ph 2 d 8 at (12, 9)
+FS PHASE 76 id 4 ph 3 d 5 at (12, 8)
+FS PHASE 77 id 4 ph 2 d 8 at (12, 9)
+FS PHASE 78 id 4 ph 3 d 5 at (12, 8)
+FS PHASE 79 id 4 ph 2 d 8 at (12, 9)
+FS PHASE 80 id 4 ph 3 d 5 at (12, 8)
+FS STAT 80 id 4 at (12, 8) need 2 orth 0 ti 55 ammo 24 sen 0 hp 34 covden 0 eco 1 lost 0
+FS PHASE 81 id 4 ph 2 d 8 at (12, 9)
+FS PHASE 82 id 4 ph 3 d 5 at (12, 8)
+FS PHASE 83 id 4 ph 2 d 8 at (12, 9)
+FS PHASE 84 id 4 ph 3 d 5 at (12, 8)
+FS PHASE 85 id 4 ph 2 d 8 at (12, 9)
+FS PHASE 86 id 4 ph 3 d 5 at (12, 8)
+FS PHASE 87 id 4 ph 2 d 8 at (12, 9)
+FS PHASE 88 id 4 ph 3 d 5 at (12, 8)
+FS PHASE 89 id 4 ph 2 d 8 at (12, 9)
+FS PHASE 90 id 4 ph 3 d 5 at (12, 8)
+FS PHASE 91 id 4 ph 2 d 8 at (12, 9)
+FS PHASE 92 id 4 ph 3 d 5 at (12, 8)
+FS PHASE 93 id 4 ph 2 d 8 at (12, 9)
+FS PHASE 94 id 4 ph 3 d 5 at (12, 8)
+FS PHASE 95 id 4 ph 2 d 8 at (12, 9)
+FS PHASE 96 id 4 ph 3 d 5 at (12, 8)
+FS PHASE 97 id 4 ph 2 d 10 at (13, 8)
+FS PHASE 98 id 4 ph 3 d 5 at (12, 8)
+FS PHASE 99 id 4 ph 2 d 10 at (13, 8)
+FS PHASE 100 id 4 ph 3 d 5 at (12, 8)
+FS STAT 100 id 4 at (12, 8) need 2 orth 0 ti 131 ammo 24 sen 0 hp 34 covden 0 eco 1 lost 0
+FS PHASE 104 id 4 ph 2 d 8 at (12, 9)
+FS PHASE 105 id 4 ph 4 d 5 at (11, 9)
+FS STAT 120 id 4 at (12, 11) need 6 orth 5 ti 34 ammo 24 sen 1 hp 34 covden 0 eco 1 lost 0
+FS PHASE 134 id 4 ph 3 d 4 at (12, 7)
+FS PHASE 135 id 4 ph 4 d 5 at (12, 8)
+FS PHASE 136 id 4 ph 2 d 10 at (13, 8)
+FS PHASE 137 id 4 ph 4 d 5 at (12, 8)
+FS PHASE 138 id 4 ph 2 d 10 at (13, 8)
+FS PHASE 139 id 4 ph 4 d 5 at (12, 8)
+FS PHASE 140 id 4 ph 2 d 10 at (13, 8)
+FS STAT 140 id 4 at (13, 8) need 4 orth 3 ti 32 ammo 21 sen 0 hp 34 covden 0 eco 1 lost 0
+FS PHASE 141 id 4 ph 4 d 5 at (12, 8)
+FS PHASE 144 id 4 ph 2 d 10 at (13, 8)
+FS PHASE 145 id 4 ph 4 d 13 at (13, 9)
+FS STAT 160 id 4 at (12, 11) need 6 orth 5 ti 76 ammo 24 sen 1 hp 34 covden 0 eco 1 lost 0
+FS PHASE 174 id 4 ph 3 d 4 at (12, 7)
+FS PHASE 175 id 4 ph 4 d 5 at (12, 8)
+FS PHASE 180 id 4 ph 3 d 4 at (12, 7)
+FS STAT 180 id 4 at (12, 7) need 1 orth 0 ti 34 ammo 24 sen 0 hp 34 covden 0 eco 1 lost 0
+FS PHASE 181 id 4 ph 2 d 9 at (13, 7)
+FS PHASE 184 id 4 ph 3 d 5 at (12, 5)
+FS DODGE 185 id 4 from (11, 5) to (11, 4) cov 1 -> 0 hit 0 hp 16
+FS GATE 301 sig (20, 26, (9, 6), (9, 18)) ok 1
+FS PHASE 301 id 319 ph 1 d 100 at (10, 17)
+FS HOPBUILD 301 at (10, 17) lch (11, 17) T (11, 5)
+FS GATE 302 sig (20, 26, (9, 6), (9, 18)) ok 1
+FS THROW 302 from (10, 16) to (10, 13) T (11, 5) body 319 n 1 dsq 36
+FS GATE 322 sig (20, 26, (9, 6), (9, 18)) ok 1
+FS GATE 329 sig (20, 26, (9, 6), (9, 18)) ok 1
+FS DEGRADE 334 id 319
+FS GATE 402 sig (20, 26, (9, 6), (9, 18)) ok 1
+FS GATE 413 sig (20, 26, (9, 6), (9, 18)) ok 1
+FS GATE 425 sig (20, 26, (9, 6), (9, 18)) ok 1
+FS GATE 470 sig (20, 26, (9, 6), (9, 18)) ok 1
+FS GATE 489 sig (20, 26, (9, 6), (9, 18)) ok 1
+FS GATE 497 sig (20, 26, (9, 6), (9, 18)) ok 1
+FS GATE 507 sig (20, 26, (9, 6), (9, 18)) ok 1
+FS GATE 524 sig (20, 26, (9, 6), (9, 18)) ok 1
+FS GATE 605 sig (20, 26, (9, 6), (9, 18)) ok 1
+FS GATE 611 sig (20, 26, (9, 6), (9, 18)) ok 1
+FS GATE 621 sig (20, 26, (9, 6), (9, 18)) ok 1
+FS GATE 639 sig (20, 26, (9, 6), (9, 18)) ok 1
+FS GATE 729 sig (20, 26, (9, 6), (9, 18)) ok 1
+FS GATE 764 sig (20, 26, (9, 6), (9, 18)) ok 1

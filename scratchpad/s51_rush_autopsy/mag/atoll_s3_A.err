@@ -1,0 +1,383 @@
+Update available: 2.3.6 -> 2.3.8. Run: pip install --upgrade fcode
+MAGTRACE 0 ti 500 ammo 0 floor 52 target 16 chunk 16 ph 0 fslive 0 under 0 wtop 0 fwd 0 harv 0
+FS GATE 0 sig (18, 18, (2, 14), (14, 2)) ok 1
+MAGTRACE 1 ti 470 ammo 0 floor 52 target 16 chunk 16 ph 0 fslive 0 under 0 wtop 0 fwd 0 harv 0
+FS GATE 1 sig (18, 18, (2, 14), (14, 2)) ok 1
+FS PHASE 1 id 3 ph 1 d 200 at (4, 13)
+FS HOPBUILD 1 at (4, 13) lch (4, 12) T (16, 1)
+MAGTRACE 2 ti 406 ammo 0 floor 52 target 16 chunk 16 ph 1 fslive 0 under 0 wtop 0 fwd 0 harv 0
+FS GATE 2 sig (18, 18, (2, 14), (14, 2)) ok 1
+FS GATE 2 sig (18, 18, (2, 14), (14, 2)) ok 1
+FS THROW 2 from (5, 13) to (8, 9) T (16, 1) body 3 n 1 dsq 72
+MAGTRACE 3 ti 327 ammo 0 floor 52 target 16 chunk 16 ph 1 fslive 0 under 0 wtop 0 fwd 0 harv 1
+FS HOPBUILD 3 at (8, 9) lch (8, 8) T (16, 1)
+FS GATE 3 sig (18, 18, (2, 14), (14, 2)) ok 1
+MAGTRACE 4 ti 294 ammo 0 floor 52 target 16 chunk 16 ph 1 fslive 0 under 0 wtop 0 fwd 0 harv 1
+FS GATE 4 sig (18, 18, (2, 14), (14, 2)) ok 1
+FS THROW 4 from (9, 9) to (12, 5) T (16, 1) body 3 n 1 dsq 8
+MAGTRACE 5 ti 294 ammo 0 floor 52 target 16 chunk 16 ph 1 fslive 0 under 0 wtop 0 fwd 0 harv 1
+FS ARRIVE 5 id 3 body 1 at (12, 5) dsq 8
+FS PHASE 5 id 3 ph 2 d 8 at (12, 5)
+MAGTRACE 6 ti 304 ammo 0 floor 52 target 16 chunk 16 ph 2 fslive 0 under 0 wtop 0 fwd 0 harv 1
+MAGTRACE 7 ti 217 ammo 0 floor 52 target 16 chunk 16 ph 2 fslive 0 under 0 wtop 0 fwd 0 harv 2
+FS EVICTOR 7 at (12, 2) ucov 0 cov 1 unseal 1 obs 3
+FS RUNG 7 id 3 r 2 hi -
+FS GATE 7 sig (18, 18, (2, 14), (14, 2)) ok 1
+MAGTRACE 8 ti 106 ammo 16 floor 52 target 16 chunk 16 ph 2 fslive 0 under 0 wtop 0 fwd 0 harv 2
+FS SEAL 8 tile (13, 3) n 1
+FS GATE 8 sig (18, 18, (2, 14), (14, 2)) ok 1
+FS GATE 8 sig (18, 18, (2, 14), (14, 2)) ok 1
+FS EVICT 8 from (13, 1) to (7, 1)
+MAGTRACE 9 ti 100 ammo 16 floor 52 target 16 chunk 16 ph 2 fslive 0 under 0 wtop 0 fwd 0 harv 2
+MAGTRACE 10 ti 104 ammo 16 floor 52 target 16 chunk 16 ph 2 fslive 0 under 0 wtop 0 fwd 0 harv 2
+MAGTRACE 11 ti 104 ammo 16 floor 52 target 16 chunk 16 ph 2 fslive 0 under 0 wtop 0 fwd 0 harv 2
+FS SEAL 11 tile (13, 3) n 2
+MAGTRACE 12 ti 118 ammo 16 floor 52 target 16 chunk 16 ph 2 fslive 0 under 0 wtop 0 fwd 0 harv 2
+FS EVICT 12 from (13, 1) to (7, 1)
+MAGTRACE 13 ti 118 ammo 16 floor 52 target 16 chunk 16 ph 2 fslive 0 under 0 wtop 0 fwd 0 harv 2
+MAGTRACE 14 ti 128 ammo 16 floor 52 target 16 chunk 16 ph 2 fslive 0 under 0 wtop 0 fwd 0 harv 2
+FS CLEAR 14 tile (14, 4) peck 1
+FS RUNG 14 id 3 r 3 hi -
+MAGTRACE 15 ti 126 ammo 16 floor 52 target 16 chunk 16 ph 2 fslive 0 under 0 wtop 0 fwd 0 harv 2
+FS CLEAR 15 tile (14, 4) peck 2
+FS RUNG 15 id 3 r 3 hi -
+MAGTRACE 16 ti 144 ammo 16 floor 52 target 16 chunk 16 ph 2 fslive 0 under 0 wtop 0 fwd 0 harv 2
+FS CLEAR 16 tile (14, 4) peck 3
+FS RUNG 16 id 3 r 3 hi -
+FS EVICT 16 from (11, 1) to (12, 7)
+MAGTRACE 17 ti 142 ammo 16 floor 52 target 16 chunk 16 ph 2 fslive 0 under 0 wtop 0 fwd 0 harv 2
+FS CLEAR 17 tile (14, 4) peck 4
+FS RUNG 17 id 3 r 3 hi -
+MAGTRACE 18 ti 106 ammo 16 floor 52 target 16 chunk 16 ph 2 fslive 0 under 0 wtop 0 fwd 0 harv 3
+FS CLEAR 18 tile (14, 4) peck 5
+FS RUNG 18 id 3 r 3 hi -
+MAGTRACE 19 ti 98 ammo 16 floor 52 target 16 chunk 16 ph 2 fslive 0 under 0 wtop 0 fwd 0 harv 3
+FS CLEAR 19 tile (14, 4) peck 6
+FS RUNG 19 id 3 r 3 hi -
+MAGTRACE 20 ti 116 ammo 16 floor 12 target 24 chunk 16 ph 2 fslive 0 under 1 wtop 0 fwd 0 harv 3
+FS STAT 20 id 3 at (14, 5) need 9 orth 8 ti 108 ammo 24 sen 0 hp 40 covden 0 eco 1 lost 0
+FS CLEAR 20 tile (14, 4) peck 7
+FS RUNG 20 id 3 r 3 hi -
+FS EVICT 20 from (13, 1) to (7, 1)
+MAGTRACE 21 ti 31 ammo 24 floor 12 target 24 chunk 16 ph 2 fslive 0 under 1 wtop 0 fwd 0 harv 3
+FS EVICT 21 from (13, 3) to (7, 1)
+MAGTRACE 22 ti 34 ammo 14 floor 12 target 24 chunk 16 ph 2 fslive 0 under 1 wtop 1 fwd 0 harv 3
+MAGTRACE 23 ti 24 ammo 24 floor 12 target 24 chunk 16 ph 2 fslive 0 under 1 wtop 1 fwd 0 harv 3
+MAGTRACE 24 ti 37 ammo 14 floor 12 target 24 chunk 16 ph 2 fslive 0 under 1 wtop 1 fwd 0 harv 3
+MAGTRACE 25 ti 27 ammo 24 floor 12 target 24 chunk 16 ph 2 fslive 0 under 1 wtop 1 fwd 0 harv 3
+FS EVICT 25 from (11, 1) to (12, 7)
+MAGTRACE 26 ti 30 ammo 24 floor 12 target 24 chunk 16 ph 2 fslive 0 under 1 wtop 1 fwd 0 harv 3
+MAGTRACE 27 ti 30 ammo 24 floor 12 target 24 chunk 16 ph 2 fslive 0 under 1 wtop 1 fwd 0 harv 3
+MAGTRACE 28 ti 43 ammo 24 floor 12 target 24 chunk 16 ph 2 fslive 0 under 1 wtop 1 fwd 0 harv 3
+MAGTRACE 29 ti 43 ammo 14 floor 12 target 24 chunk 16 ph 2 fslive 0 under 1 wtop 1 fwd 0 harv 3
+FS EVICT 29 from (12, 3) to (7, 1)
+MAGTRACE 30 ti 36 ammo 24 floor 12 target 24 chunk 16 ph 2 fslive 0 under 1 wtop 1 fwd 0 harv 3
+MAGTRACE 31 ti 36 ammo 14 floor 12 target 24 chunk 16 ph 2 fslive 0 under 1 wtop 1 fwd 0 harv 3
+MAGTRACE 32 ti 39 ammo 24 floor 12 target 24 chunk 16 ph 2 fslive 0 under 1 wtop 1 fwd 0 harv 3
+MAGTRACE 33 ti 39 ammo 24 floor 12 target 24 chunk 16 ph 2 fslive 0 under 1 wtop 1 fwd 0 harv 3
+FS EVICT 33 from (11, 1) to (12, 7)
+MAGTRACE 34 ti 35 ammo 24 floor 12 target 24 chunk 16 ph 2 fslive 0 under 1 wtop 1 fwd 0 harv 3
+MAGTRACE 35 ti 44 ammo 24 floor 12 target 24 chunk 16 ph 2 fslive 0 under 1 wtop 1 fwd 0 harv 3
+MAGTRACE 36 ti 73 ammo 24 floor 12 target 24 chunk 16 ph 2 fslive 0 under 1 wtop 1 fwd 0 harv 3
+FS CLEAR 36 tile (14, 4) peck 1
+FS RUNG 36 id 3 r 3 hi -
+MAGTRACE 37 ti 70 ammo 24 floor 12 target 24 chunk 16 ph 2 fslive 0 under 1 wtop 1 fwd 0 harv 3
+FS CLEAR 37 tile (14, 4) peck 2
+FS RUNG 37 id 3 r 3 hi -
+MAGTRACE 38 ti 36 ammo 24 floor 12 target 24 chunk 16 ph 2 fslive 0 under 1 wtop 2 fwd 0 harv 3
+MAGTRACE 39 ti 28 ammo 20 floor 12 target 24 chunk 16 ph 2 fslive 0 under 1 wtop 2 fwd 0 harv 3
+FS EVICT 39 from (12, 3) to (7, 1)
+MAGTRACE 40 ti 34 ammo 24 floor 12 target 24 chunk 16 ph 2 fslive 0 under 1 wtop 2 fwd 0 harv 3
+FS STAT 40 id 3 at (14, 5) need 8 orth 7 ti 34 ammo 24 sen 0 hp 40 covden 0 eco 1 lost 0
+MAGTRACE 41 ti 34 ammo 24 floor 12 target 24 chunk 16 ph 2 fslive 0 under 1 wtop 2 fwd 0 harv 3
+MAGTRACE 42 ti 53 ammo 24 floor 12 target 24 chunk 16 ph 2 fslive 0 under 1 wtop 2 fwd 0 harv 3
+MAGTRACE 43 ti 52 ammo 24 floor 12 target 24 chunk 16 ph 2 fslive 0 under 1 wtop 2 fwd 0 harv 3
+FS EVICT 43 from (11, 1) to (12, 7)
+MAGTRACE 44 ti 72 ammo 24 floor 12 target 24 chunk 16 ph 2 fslive 0 under 1 wtop 2 fwd 0 harv 3
+MAGTRACE 45 ti 17 ammo 24 floor 12 target 24 chunk 16 ph 2 fslive 0 under 1 wtop 2 fwd 0 harv 3
+MAGTRACE 46 ti 37 ammo 20 floor 12 target 24 chunk 16 ph 2 fslive 0 under 1 wtop 2 fwd 0 harv 3
+MAGTRACE 47 ti 33 ammo 16 floor 12 target 24 chunk 16 ph 2 fslive 0 under 1 wtop 2 fwd 0 harv 3
+FS EVICT 47 from (12, 3) to (7, 1)
+MAGTRACE 48 ti 45 ammo 16 floor 12 target 24 chunk 16 ph 2 fslive 0 under 1 wtop 2 fwd 0 harv 3
+MAGTRACE 49 ti 27 ammo 20 floor 12 target 24 chunk 16 ph 2 fslive 0 under 1 wtop 2 fwd 0 harv 3
+MAGTRACE 50 ti 35 ammo 16 floor 12 target 24 chunk 16 ph 2 fslive 0 under 1 wtop 2 fwd 0 harv 3
+FS EVICT 50 from (11, 3) to (17, 1)
+MAGTRACE 51 ti 27 ammo 16 floor 12 target 24 chunk 16 ph 2 fslive 0 under 1 wtop 2 fwd 0 harv 3
+FS EVICT 51 from (11, 1) to (12, 7)
+MAGTRACE 52 ti 31 ammo 16 floor 12 target 24 chunk 16 ph 2 fslive 0 under 1 wtop 2 fwd 0 harv 3
+MAGTRACE 53 ti 23 ammo 16 floor 12 target 24 chunk 16 ph 2 fslive 0 under 1 wtop 2 fwd 0 harv 3
+MAGTRACE 54 ti 35 ammo 16 floor 12 target 24 chunk 16 ph 2 fslive 0 under 1 wtop 2 fwd 0 harv 3
+FS EVICT 54 from (13, 1) to (7, 1)
+MAGTRACE 55 ti 27 ammo 20 floor 12 target 24 chunk 16 ph 2 fslive 0 under 1 wtop 2 fwd 0 harv 3
+FS EVICT 55 from (12, 3) to (7, 1)
+MAGTRACE 56 ti 34 ammo 24 floor 12 target 24 chunk 16 ph 2 fslive 0 under 1 wtop 2 fwd 0 harv 3
+MAGTRACE 57 ti 34 ammo 16 floor 12 target 24 chunk 16 ph 2 fslive 0 under 1 wtop 2 fwd 0 harv 3
+MAGTRACE 58 ti 46 ammo 16 floor 12 target 24 chunk 16 ph 2 fslive 0 under 1 wtop 2 fwd 0 harv 3
+MAGTRACE 59 ti 29 ammo 20 floor 12 target 24 chunk 16 ph 2 fslive 0 under 1 wtop 2 fwd 0 harv 3
+MAGTRACE 60 ti 44 ammo 20 floor 12 target 24 chunk 16 ph 2 fslive 0 under 1 wtop 2 fwd 0 harv 3
+FS STAT 60 id 3 at (14, 5) need 5 orth 4 ti 40 ammo 24 sen 0 hp 40 covden 0 eco 1 lost 0
+FS EVICT 60 from (11, 1) to (12, 7)
+MAGTRACE 61 ti 29 ammo 20 floor 12 target 24 chunk 16 ph 2 fslive 0 under 1 wtop 2 fwd 0 harv 3
+MAGTRACE 62 ti 44 ammo 16 floor 12 target 24 chunk 16 ph 2 fslive 0 under 1 wtop 2 fwd 0 harv 3
+MAGTRACE 63 ti 35 ammo 16 floor 12 target 24 chunk 16 ph 2 fslive 0 under 1 wtop 2 fwd 0 harv 3
+FS EVICT 63 from (13, 1) to (7, 1)
+MAGTRACE 64 ti 38 ammo 16 floor 12 target 24 chunk 16 ph 2 fslive 0 under 1 wtop 2 fwd 0 harv 3
+FS EVICT 64 from (12, 3) to (7, 1)
+MAGTRACE 65 ti 30 ammo 20 floor 12 target 24 chunk 16 ph 2 fslive 0 under 1 wtop 2 fwd 0 harv 3
+MAGTRACE 66 ti 46 ammo 20 floor 12 target 24 chunk 16 ph 2 fslive 0 under 1 wtop 2 fwd 0 harv 3
+MAGTRACE 67 ti 42 ammo 20 floor 12 target 24 chunk 16 ph 2 fslive 0 under 1 wtop 2 fwd 0 harv 3
+FS EVICT 67 from (11, 1) to (12, 7)
+MAGTRACE 68 ti 58 ammo 20 floor 12 target 24 chunk 16 ph 2 fslive 0 under 1 wtop 2 fwd 0 harv 3
+FS EVICT 68 from (11, 1) to (12, 7)
+MAGTRACE 69 ti 54 ammo 20 floor 12 target 24 chunk 16 ph 2 fslive 0 under 1 wtop 2 fwd 0 harv 3
+MAGTRACE 70 ti 70 ammo 20 floor 12 target 24 chunk 16 ph 2 fslive 0 under 1 wtop 2 fwd 0 harv 3
+FS CLEAR 70 tile (14, 4) peck 1
+FS RUNG 70 id 3 r 3 hi -
+MAGTRACE 71 ti 55 ammo 16 floor 12 target 24 chunk 16 ph 2 fslive 0 under 1 wtop 2 fwd 0 harv 3
+FS EVICT 71 from (12, 3) to (7, 1)
+MAGTRACE 72 ti 66 ammo 20 floor 12 target 24 chunk 16 ph 2 fslive 0 under 1 wtop 2 fwd 0 harv 3
+FS CLEAR 72 tile (14, 4) peck 2
+FS RUNG 72 id 3 r 3 hi -
+MAGTRACE 73 ti 59 ammo 20 floor 12 target 24 chunk 16 ph 2 fslive 0 under 1 wtop 2 fwd 0 harv 3
+FS CLEAR 73 tile (14, 4) peck 3
+FS RUNG 73 id 3 r 3 hi -
+MAGTRACE 74 ti 72 ammo 20 floor 12 target 24 chunk 16 ph 2 fslive 0 under 1 wtop 2 fwd 0 harv 3
+FS CLEAR 74 tile (14, 4) peck 4
+FS RUNG 74 id 3 r 3 hi -
+MAGTRACE 75 ti 65 ammo 20 floor 12 target 24 chunk 16 ph 2 fslive 0 under 1 wtop 2 fwd 0 harv 3
+FS EVICT 75 from (11, 1) to (12, 7)
+MAGTRACE 76 ti 72 ammo 20 floor 12 target 24 chunk 16 ph 2 fslive 0 under 1 wtop 2 fwd 0 harv 3
+FS CLEAR 76 tile (14, 4) peck 5
+FS RUNG 76 id 3 r 3 hi -
+MAGTRACE 77 ti 66 ammo 20 floor 12 target 24 chunk 16 ph 2 fslive 0 under 1 wtop 2 fwd 0 harv 3
+FS CLEAR 77 tile (14, 4) peck 6
+FS RUNG 77 id 3 r 3 hi -
+MAGTRACE 78 ti 80 ammo 16 floor 12 target 24 chunk 16 ph 2 fslive 0 under 1 wtop 2 fwd 0 harv 3
+FS CLEAR 78 tile (14, 4) peck 7
+FS RUNG 78 id 3 r 3 hi -
+MAGTRACE 79 ti 70 ammo 20 floor 12 target 24 chunk 16 ph 2 fslive 0 under 1 wtop 2 fwd 0 harv 3
+FS CLEAR 79 tile (14, 4) peck 8
+FS RUNG 79 id 3 r 3 hi -
+FS EVICT 79 from (12, 3) to (7, 1)
+MAGTRACE 80 ti 84 ammo 20 floor 12 target 24 chunk 16 ph 2 fslive 0 under 1 wtop 2 fwd 0 harv 3
+FS STAT 80 id 3 at (14, 5) need 6 orth 5 ti 80 ammo 24 sen 0 hp 40 covden 0 eco 1 lost 0
+FS EVICT 80 from (13, 3) to (7, 1)
+MAGTRACE 81 ti 80 ammo 20 floor 12 target 24 chunk 16 ph 2 fslive 0 under 1 wtop 2 fwd 0 harv 3
+FS DODGE 81 id 3 from (13, 5) to (13, 4) cov 1 -> 0 hit 0 hp 22
+MAGTRACE 82 ti 96 ammo 20 floor 12 target 24 chunk 16 ph 2 fslive 0 under 1 wtop 2 fwd 0 harv 3
+FS SEAL 82 tile (13, 3) n 3
+MAGTRACE 83 ti 74 ammo 20 floor 12 target 24 chunk 16 ph 2 fslive 0 under 1 wtop 2 fwd 0 harv 3
+FS CLEAR 83 tile (14, 4) peck 1
+FS RUNG 83 id 3 r 3 hi -
+FS EVICT 83 from (11, 1) to (12, 7)
+MAGTRACE 84 ti 87 ammo 20 floor 12 target 24 chunk 16 ph 2 fslive 0 under 1 wtop 2 fwd 0 harv 3
+FS CLEAR 84 tile (14, 4) peck 2
+FS RUNG 84 id 3 r 3 hi -
+FS EVICT 84 from (11, 1) to (12, 7)
+MAGTRACE 85 ti 80 ammo 20 floor 12 target 24 chunk 16 ph 2 fslive 0 under 1 wtop 2 fwd 0 harv 3
+FS CLEAR 85 tile (14, 4) peck 3
+FS RUNG 85 id 3 r 3 hi -
+MAGTRACE 86 ti 93 ammo 20 floor 12 target 24 chunk 16 ph 2 fslive 0 under 1 wtop 2 fwd 0 harv 3
+FS CLEARED 86 tile (14, 4) n 1
+FS SEAL 86 tile (14, 4) n 4
+FS SEALCLR 86 tile (14, 4) lag 0
+MAGTRACE 87 ti 79 ammo 20 floor 12 target 24 chunk 16 ph 2 fslive 0 under 1 wtop 2 fwd 0 harv 3
+FS EVICT 87 from (12, 3) to (7, 1)
+MAGTRACE 88 ti 86 ammo 20 floor 12 target 24 chunk 16 ph 2 fslive 0 under 1 wtop 2 fwd 0 harv 3
+FS DODGE 88 id 3 from (13, 5) to (13, 4) cov 1 -> 0 hit 0 hp 22
+FS EVICT 88 from (12, 3) to (7, 1)
+MAGTRACE 89 ti 82 ammo 20 floor 12 target 24 chunk 16 ph 2 fslive 0 under 1 wtop 2 fwd 0 harv 3
+MAGTRACE 90 ti 98 ammo 20 floor 12 target 24 chunk 16 ph 2 fslive 0 under 1 wtop 0 fwd 0 harv 3
+MAGTRACE 91 ti 4 ammo 20 floor 12 target 24 chunk 16 ph 2 fslive 0 under 1 wtop 0 fwd 0 harv 3
+FS EVICT 91 from (11, 1) to (12, 7)
+MAGTRACE 92 ti 24 ammo 6 floor 12 target 24 chunk 16 ph 2 fslive 0 under 1 wtop 3 fwd 0 harv 3
+FS EVICT 92 from (11, 1) to (12, 7)
+MAGTRACE 93 ti 12 ammo 14 floor 12 target 24 chunk 16 ph 2 fslive 0 under 1 wtop 3 fwd 0 harv 3
+MAGTRACE 94 ti 32 ammo 0 floor 12 target 24 chunk 16 ph 2 fslive 0 under 1 wtop 3 fwd 0 harv 3
+MAGTRACE 95 ti 7 ammo 12 floor 12 target 24 chunk 16 ph 2 fslive 0 under 1 wtop 3 fwd 0 harv 3
+MAGTRACE 96 ti 26 ammo 8 floor 12 target 24 chunk 16 ph 2 fslive 0 under 1 wtop 3 fwd 0 harv 3
+FS EVICT 96 from (12, 3) to (7, 1)
+MAGTRACE 97 ti 11 ammo 12 floor 12 target 24 chunk 16 ph 2 fslive 0 under 1 wtop 3 fwd 0 harv 3
+MAGTRACE 98 ti 30 ammo 12 floor 12 target 24 chunk 16 ph 2 fslive 0 under 1 wtop 3 fwd 0 harv 3
+MAGTRACE 99 ti 17 ammo 14 floor 12 target 24 chunk 16 ph 2 fslive 0 under 1 wtop 3 fwd 0 harv 3
+MAGTRACE 100 ti 23 ammo 19 floor 12 target 24 chunk 16 ph 2 fslive 0 under 1 wtop 3 fwd 0 harv 3
+FS STAT 100 id 3 at (13, 0) need 3 orth 2 ti 18 ammo 24 sen 0 hp 22 covden 0 eco 1 lost 0
+FS EVICT 100 from (11, 1) to (12, 7)
+MAGTRACE 101 ti 18 ammo 24 floor 12 target 24 chunk 16 ph 2 fslive 0 under 1 wtop 3 fwd 0 harv 3
+MAGTRACE 102 ti 38 ammo 24 floor 12 target 24 chunk 16 ph 2 fslive 0 under 1 wtop 3 fwd 0 harv 3
+FS CLEAR 102 tile (13, 1) peck 1
+FS RUNG 102 id 3 r 3 hi -
+MAGTRACE 103 ti 36 ammo 24 floor 12 target 24 chunk 16 ph 2 fslive 0 under 1 wtop 3 fwd 0 harv 3
+MAGTRACE 104 ti 56 ammo 24 floor 12 target 24 chunk 16 ph 2 fslive 0 under 1 wtop 3 fwd 0 harv 3
+FS CLEAR 104 tile (13, 1) peck 2
+FS RUNG 104 id 3 r 3 hi -
+FS EVICT 104 from (12, 3) to (7, 1)
+MAGTRACE 105 ti 54 ammo 24 floor 12 target 24 chunk 16 ph 2 fslive 0 under 1 wtop 3 fwd 0 harv 3
+MAGTRACE 106 ti 74 ammo 24 floor 12 target 24 chunk 16 ph 2 fslive 0 under 1 wtop 3 fwd 0 harv 3
+FS CLEAR 106 tile (13, 1) peck 3
+FS RUNG 106 id 3 r 3 hi -
+FS EVICT 106 from (13, 3) to (7, 1)
+MAGTRACE 107 ti 63 ammo 24 floor 12 target 24 chunk 16 ph 2 fslive 0 under 1 wtop 3 fwd 0 harv 3
+FS CLEAR 107 tile (13, 1) peck 4
+FS RUNG 107 id 3 r 3 hi -
+MAGTRACE 108 ti 80 ammo 24 floor 12 target 24 chunk 16 ph 2 fslive 0 under 1 wtop 0 fwd 0 harv 3
+FS CLEAR 108 tile (13, 1) peck 5
+FS RUNG 108 id 3 r 3 hi -
+FS EVICT 108 from (11, 1) to (12, 7)
+MAGTRACE 109 ti 13 ammo 24 floor 12 target 24 chunk 16 ph 2 fslive 0 under 1 wtop 0 fwd 0 harv 3
+MAGTRACE 110 ti 32 ammo 24 floor 12 target 24 chunk 16 ph 2 fslive 0 under 1 wtop 0 fwd 0 harv 3
+FS EVICT 110 from (11, 1) to (12, 7)
+MAGTRACE 111 ti 31 ammo 24 floor 12 target 24 chunk 16 ph 2 fslive 0 under 1 wtop 0 fwd 0 harv 3
+MAGTRACE 112 ti 41 ammo 24 floor 12 target 24 chunk 16 ph 2 fslive 0 under 1 wtop 0 fwd 0 harv 3
+FS EVICT 112 from (12, 3) to (7, 1)
+MAGTRACE 113 ti 41 ammo 24 floor 12 target 24 chunk 16 ph 2 fslive 0 under 1 wtop 0 fwd 0 harv 3
+MAGTRACE 114 ti 61 ammo 24 floor 12 target 24 chunk 16 ph 2 fslive 0 under 1 wtop 0 fwd 0 harv 3
+FS CLEAR 114 tile (13, 1) peck 1
+FS RUNG 114 id 3 r 3 hi -
+FS EVICT 114 from (12, 3) to (7, 1)
+MAGTRACE 115 ti 59 ammo 24 floor 12 target 24 chunk 16 ph 2 fslive 0 under 1 wtop 0 fwd 0 harv 3
+MAGTRACE 116 ti 79 ammo 24 floor 12 target 24 chunk 16 ph 2 fslive 0 under 1 wtop 0 fwd 0 harv 3
+FS CLEAR 116 tile (13, 1) peck 2
+FS RUNG 116 id 3 r 3 hi -
+FS EVICT 116 from (11, 1) to (12, 7)
+MAGTRACE 117 ti 77 ammo 24 floor 12 target 24 chunk 16 ph 2 fslive 0 under 1 wtop 0 fwd 0 harv 3
+FS CLEAR 117 tile (13, 1) peck 3
+FS RUNG 117 id 3 r 3 hi -
+MAGTRACE 118 ti 95 ammo 24 floor 12 target 24 chunk 16 ph 2 fslive 0 under 1 wtop 0 fwd 0 harv 3
+FS CLEAR 118 tile (13, 1) peck 4
+FS RUNG 118 id 3 r 3 hi -
+FS EVICT 118 from (11, 1) to (12, 7)
+MAGTRACE 119 ti 83 ammo 24 floor 12 target 24 chunk 16 ph 2 fslive 0 under 1 wtop 0 fwd 0 harv 3
+FS CLEAR 119 tile (13, 1) peck 5
+FS RUNG 119 id 3 r 3 hi -
+MAGTRACE 120 ti 100 ammo 24 floor 12 target 24 chunk 16 ph 2 fslive 0 under 1 wtop 0 fwd 0 harv 3
+FS CLEARED 120 tile (13, 1) n 2
+FS STAT 120 id 3 at (13, 0) need 4 orth 3 ti 100 ammo 24 sen 0 hp 22 covden 0 eco 1 lost 0
+FS SEAL 120 tile (13, 1) n 5
+FS SEALCLR 120 tile (13, 1) lag 0
+FS EVICT 120 from (12, 3) to (7, 1)
+MAGTRACE 121 ti 89 ammo 24 floor 12 target 24 chunk 16 ph 2 fslive 0 under 1 wtop 0 fwd 0 harv 3
+MAGTRACE 122 ti 108 ammo 24 floor 12 target 24 chunk 16 ph 2 fslive 0 under 1 wtop 0 fwd 0 harv 3
+FS CLEAR 122 tile (14, 1) peck 1
+FS RUNG 122 id 3 r 3 hi -
+FS EVICT 122 from (12, 3) to (7, 1)
+MAGTRACE 123 ti 105 ammo 24 floor 12 target 24 chunk 16 ph 2 fslive 0 under 1 wtop 0 fwd 0 harv 3
+FS CLEAR 123 tile (14, 1) peck 2
+FS RUNG 123 id 3 r 3 hi -
+MAGTRACE 124 ti 113 ammo 24 floor 12 target 24 chunk 16 ph 2 fslive 0 under 1 wtop 0 fwd 0 harv 3
+FS CLEAR 124 tile (14, 1) peck 3
+FS RUNG 124 id 3 r 3 hi -
+FS EVICT 124 from (11, 1) to (12, 7)
+MAGTRACE 125 ti 111 ammo 24 floor 12 target 24 chunk 16 ph 2 fslive 0 under 1 wtop 0 fwd 0 harv 3
+FS CLEAR 125 tile (14, 1) peck 4
+FS RUNG 125 id 3 r 3 hi -
+MAGTRACE 126 ti 129 ammo 24 floor 12 target 24 chunk 16 ph 2 fslive 0 under 1 wtop 0 fwd 0 harv 3
+FS CLEAR 126 tile (14, 1) peck 5
+FS RUNG 126 id 3 r 3 hi -
+FS EVICT 126 from (11, 1) to (12, 7)
+MAGTRACE 127 ti 127 ammo 24 floor 12 target 24 chunk 16 ph 2 fslive 0 under 1 wtop 0 fwd 0 harv 3
+FS CLEAR 127 tile (14, 1) peck 6
+FS RUNG 127 id 3 r 3 hi -
+MAGTRACE 128 ti 145 ammo 24 floor 12 target 24 chunk 16 ph 2 fslive 0 under 1 wtop 0 fwd 0 harv 3
+FS CLEAR 128 tile (14, 1) peck 7
+FS RUNG 128 id 3 r 3 hi -
+FS EVICT 128 from (12, 3) to (7, 1)
+MAGTRACE 129 ti 40 ammo 24 floor 12 target 24 chunk 16 ph 2 fslive 0 under 1 wtop 0 fwd 0 harv 3
+FS PHASE 129 id 3 ph 5 d 4 at (14, 0)
+MAGTRACE 130 ti 60 ammo 14 floor 12 target 60 chunk 16 ph 2 fslive 0 under 1 wtop 5 fwd 1 harv 3
+FS EVICT 130 from (12, 3) to (7, 1)
+MAGTRACE 131 ti 44 ammo 30 floor 12 target 60 chunk 16 ph 2 fslive 0 under 1 wtop 5 fwd 1 harv 3
+MAGTRACE 132 ti 48 ammo 36 floor 12 target 60 chunk 16 ph 2 fslive 0 under 1 wtop 5 fwd 1 harv 3
+FS EVICT 132 from (11, 1) to (12, 7)
+MAGTRACE 133 ti 32 ammo 52 floor 12 target 60 chunk 16 ph 2 fslive 0 under 1 wtop 5 fwd 1 harv 3
+MAGTRACE 134 ti 44 ammo 50 floor 12 target 60 chunk 16 ph 2 fslive 0 under 1 wtop 5 fwd 1 harv 3
+FS EVICT 134 from (11, 1) to (12, 7)
+MAGTRACE 135 ti 34 ammo 60 floor 12 target 60 chunk 16 ph 2 fslive 0 under 1 wtop 5 fwd 1 harv 3
+MAGTRACE 136 ti 44 ammo 50 floor 12 target 60 chunk 16 ph 2 fslive 0 under 1 wtop 5 fwd 1 harv 3
+FS EVICT 136 from (12, 3) to (7, 1)
+MAGTRACE 137 ti 33 ammo 60 floor 12 target 60 chunk 16 ph 2 fslive 0 under 1 wtop 5 fwd 1 harv 3
+MAGTRACE 138 ti 52 ammo 50 floor 12 target 60 chunk 16 ph 2 fslive 0 under 1 wtop 5 fwd 1 harv 3
+FS CLEAR 138 tile (14, 1) peck 1
+FS RUNG 138 id 3 r 3 hi -
+FS EVICT 138 from (12, 3) to (7, 1)
+MAGTRACE 139 ti 39 ammo 60 floor 12 target 60 chunk 16 ph 2 fslive 0 under 1 wtop 5 fwd 1 harv 3
+MAGTRACE 140 ti 58 ammo 50 floor 12 target 60 chunk 16 ph 2 fslive 0 under 1 wtop 5 fwd 1 harv 3
+FS STAT 140 id 3 at (14, 0) need 3 orth 3 ti 48 ammo 60 sen 1 hp 22 covden 0 eco 1 lost 0
+FS CLEAR 140 tile (14, 1) peck 2
+FS RUNG 140 id 3 r 3 hi -
+FS EVICT 140 from (12, 3) to (7, 1)
+MAGTRACE 141 ti 45 ammo 60 floor 12 target 60 chunk 16 ph 2 fslive 0 under 1 wtop 5 fwd 1 harv 3
+FS EVICT 141 from (11, 2) to (17, 1)
+MAGTRACE 142 ti 55 ammo 50 floor 12 target 60 chunk 16 ph 2 fslive 0 under 1 wtop 5 fwd 1 harv 3
+FS CLEAR 142 tile (14, 1) peck 3
+FS RUNG 142 id 3 r 3 hi -
+FS EVICT 142 from (11, 1) to (12, 7)
+MAGTRACE 143 ti 43 ammo 60 floor 46 target 60 chunk 16 ph 2 fslive 0 under 0 wtop 5 fwd 1 harv 3
+FS CLEARED 143 tile (14, 1) n 3
+FS SEAL 143 tile (14, 1) n 6
+FS SEALCLR 143 tile (14, 1) lag 0
+MAGTRACE 144 ti 53 ammo 50 floor 46 target 60 chunk 16 ph 2 fslive 0 under 0 wtop 5 fwd 1 harv 3
+FS EVICT 144 from (11, 1) to (12, 7)
+MAGTRACE 145 ti 46 ammo 57 floor 46 target 60 chunk 16 ph 2 fslive 0 under 0 wtop 5 fwd 1 harv 3
+MAGTRACE 146 ti 66 ammo 47 floor 46 target 60 chunk 16 ph 5 fslive 0 under 0 wtop 5 fwd 1 harv 3
+FS EVICT 146 from (12, 3) to (7, 1)
+MAGTRACE 147 ti 53 ammo 60 floor 46 target 60 chunk 16 ph 5 fslive 0 under 0 wtop 5 fwd 1 harv 3
+MAGTRACE 148 ti 73 ammo 50 floor 46 target 60 chunk 16 ph 5 fslive 0 under 0 wtop 5 fwd 1 harv 3
+FS EVICT 148 from (12, 3) to (7, 1)
+MAGTRACE 149 ti 63 ammo 60 floor 46 target 60 chunk 16 ph 5 fslive 0 under 0 wtop 5 fwd 1 harv 3
+MAGTRACE 150 ti 83 ammo 50 floor 46 target 60 chunk 16 ph 5 fslive 0 under 0 wtop 5 fwd 1 harv 3
+FS EVICT 150 from (11, 1) to (12, 7)
+MAGTRACE 151 ti 4 ammo 60 floor 46 target 60 chunk 16 ph 5 fslive 0 under 0 wtop 5 fwd 1 harv 4
+MAGTRACE 152 ti 24 ammo 50 floor 46 target 60 chunk 16 ph 5 fslive 0 under 0 wtop 5 fwd 1 harv 4
+FS EVICT 152 from (11, 1) to (12, 7)
+MAGTRACE 153 ti 14 ammo 50 floor 46 target 60 chunk 16 ph 5 fslive 0 under 0 wtop 5 fwd 1 harv 4
+MAGTRACE 154 ti 34 ammo 40 floor 46 target 60 chunk 16 ph 5 fslive 0 under 0 wtop 5 fwd 1 harv 4
+FS EVICT 154 from (12, 3) to (7, 1)
+MAGTRACE 155 ti 34 ammo 40 floor 46 target 60 chunk 16 ph 5 fslive 0 under 0 wtop 5 fwd 1 harv 4
+MAGTRACE 156 ti 53 ammo 30 floor 46 target 60 chunk 16 ph 5 fslive 0 under 0 wtop 5 fwd 1 harv 4
+FS EVICT 156 from (12, 3) to (7, 1)
+MAGTRACE 157 ti 45 ammo 37 floor 46 target 60 chunk 16 ph 5 fslive 0 under 0 wtop 5 fwd 1 harv 4
+MAGTRACE 158 ti 65 ammo 27 floor 46 target 60 chunk 16 ph 5 fslive 0 under 0 wtop 5 fwd 1 harv 4
+FS PHASE 158 id 3 ph 2 d 5 at (13, 0)
+FS EVICT 158 from (11, 1) to (12, 7)
+MAGTRACE 159 ti 49 ammo 43 floor 46 target 60 chunk 16 ph 2 fslive 0 under 0 wtop 5 fwd 1 harv 4
+MAGTRACE 160 ti 69 ammo 33 floor 46 target 60 chunk 16 ph 2 fslive 0 under 0 wtop 5 fwd 1 harv 4
+FS STAT 160 id 3 at (11, 0) need 7 orth 7 ti 53 ammo 49 sen 0 hp 22 covden 0 eco 1 lost 0
+MAGTRACE 161 ti 53 ammo 49 floor 46 target 60 chunk 16 ph 2 fslive 0 under 0 wtop 5 fwd 1 harv 4
+MAGTRACE 162 ti 66 ammo 46 floor 46 target 60 chunk 16 ph 2 fslive 0 under 0 wtop 5 fwd 1 harv 4
+MAGTRACE 163 ti 62 ammo 60 floor 46 target 60 chunk 16 ph 2 fslive 0 under 0 wtop 5 fwd 1 harv 4
+FS EVICT 163 from (13, 3) to (7, 1)
+MAGTRACE 164 ti 82 ammo 50 floor 46 target 60 chunk 16 ph 2 fslive 0 under 0 wtop 5 fwd 1 harv 4
+FS SEAL 164 tile (13, 3) n 7
+MAGTRACE 165 ti 62 ammo 60 floor 46 target 60 chunk 16 ph 2 fslive 0 under 0 wtop 5 fwd 1 harv 4
+MAGTRACE 166 ti 82 ammo 50 floor 46 target 60 chunk 16 ph 2 fslive 0 under 0 wtop 5 fwd 1 harv 4
+MAGTRACE 167 ti 82 ammo 60 floor 46 target 60 chunk 16 ph 2 fslive 0 under 0 wtop 5 fwd 1 harv 4
+FS EVICT 167 from (11, 1) to (12, 7)
+MAGTRACE 168 ti 102 ammo 50 floor 46 target 60 chunk 16 ph 2 fslive 0 under 0 wtop 5 fwd 1 harv 4
+MAGTRACE 169 ti 92 ammo 60 floor 46 target 60 chunk 16 ph 2 fslive 0 under 0 wtop 5 fwd 1 harv 4
+FS SEAL 169 tile (13, 3) n 8
+MAGTRACE 170 ti 102 ammo 50 floor 46 target 60 chunk 16 ph 2 fslive 0 under 0 wtop 5 fwd 1 harv 4
+MAGTRACE 171 ti 102 ammo 60 floor 46 target 60 chunk 16 ph 2 fslive 0 under 0 wtop 5 fwd 1 harv 4
+MAGTRACE 172 ti 122 ammo 50 floor 46 target 60 chunk 16 ph 2 fslive 0 under 0 wtop 5 fwd 1 harv 4
+MAGTRACE 173 ti 112 ammo 60 floor 46 target 60 chunk 16 ph 2 fslive 0 under 0 wtop 5 fwd 1 harv 4
+MAGTRACE 174 ti 132 ammo 50 floor 46 target 60 chunk 16 ph 2 fslive 0 under 0 wtop 5 fwd 1 harv 4
+MAGTRACE 175 ti 132 ammo 60 floor 46 target 60 chunk 16 ph 2 fslive 0 under 0 wtop 5 fwd 1 harv 4
+MAGTRACE 176 ti 152 ammo 50 floor 46 target 60 chunk 16 ph 2 fslive 0 under 0 wtop 5 fwd 1 harv 4
+FS SENTINEL 176 at (11, 3) face EAST tgt (15, 3) score 16 n 1 onring 0 lost 0 gate (1, 1, 7) onsray 0 olddsq -1
+FS RUNG 176 id 3 r 4 hi -
+MAGTRACE 177 ti 37 ammo 60 floor 46 target 80 chunk 16 ph 2 fslive 0 under 0 wtop 6 fwd 2 harv 4
+FS PHASE 177 id 3 ph 5 d 4 at (12, 3)
+MAGTRACE 178 ti 57 ammo 40 floor 46 target 80 chunk 16 ph 5 fslive 0 under 0 wtop 6 fwd 2 harv 4
+MAGTRACE 179 ti 56 ammo 51 floor 46 target 80 chunk 16 ph 5 fslive 0 under 0 wtop 6 fwd 2 harv 4
+MAGTRACE 180 ti 66 ammo 41 floor 46 target 80 chunk 16 ph 5 fslive 0 under 0 wtop 6 fwd 2 harv 4
+FS STAT 180 id 3 at (12, 3) need 2 orth 2 ti 50 ammo 57 sen 1 hp 22 covden 0 eco 1 lost 0
+MAGTRACE 181 ti 50 ammo 57 floor 46 target 80 chunk 16 ph 5 fslive 0 under 0 wtop 6 fwd 2 harv 4
+FS SEAL 181 tile (13, 3) n 9
+MAGTRACE 182 ti 55 ammo 41 floor 46 target 80 chunk 16 ph 5 fslive 0 under 0 wtop 6 fwd 2 harv 4
+MAGTRACE 183 ti 56 ammo 50 floor 46 target 80 chunk 16 ph 5 fslive 0 under 0 wtop 6 fwd 2 harv 4
+MAGTRACE 184 ti 66 ammo 40 floor 46 target 80 chunk 16 ph 5 fslive 0 under 0 wtop 6 fwd 2 harv 4
+MAGTRACE 185 ti 50 ammo 56 floor 46 target 80 chunk 16 ph 5 fslive 0 under 0 wtop 6 fwd 2 harv 4
+MAGTRACE 186 ti 66 ammo 40 floor 46 target 80 chunk 16 ph 5 fslive 0 under 0 wtop 6 fwd 2 harv 4
+MAGTRACE 187 ti 60 ammo 56 floor 46 target 80 chunk 16 ph 5 fslive 0 under 0 wtop 6 fwd 2 harv 4
+MAGTRACE 188 ti 66 ammo 50 floor 46 target 80 chunk 16 ph 5 fslive 0 under 0 wtop 6 fwd 2 harv 4
+MAGTRACE 189 ti 50 ammo 66 floor 46 target 80 chunk 16 ph 5 fslive 0 under 0 wtop 6 fwd 2 harv 4

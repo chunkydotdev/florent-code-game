@@ -1,0 +1,57 @@
+Update available: 2.3.6 -> 2.3.8. Run: pip install --upgrade fcode
+FS GATE 0 sig (30, 30, (14, 2), (14, 26)) ok 1
+FS GATE 1 sig (30, 30, (14, 2), (14, 26)) ok 1
+FS PHASE 1 id 3 ph 1 d 484 at (14, 4)
+FS HOPBUILD 1 at (14, 4) lch (14, 5) T (16, 28)
+FS GATE 2 sig (30, 30, (14, 2), (14, 26)) ok 1
+FS GATE 2 sig (30, 30, (14, 2), (14, 26)) ok 1
+FS THROW 2 from (15, 4) to (15, 10) T (16, 28) body 3 n 1 dsq 256
+FS HOPBUILD 3 at (15, 10) lch (15, 11) T (16, 28)
+FS GATE 3 sig (30, 30, (14, 2), (14, 26)) ok 1
+FS GATE 4 sig (30, 30, (14, 2), (14, 26)) ok 1
+FS THROW 4 from (16, 10) to (16, 16) T (16, 28) body 3 n 1 dsq 101
+FS HOPBUILD 5 at (16, 16) lch (16, 17) T (16, 28)
+FS GATE 6 sig (30, 30, (14, 2), (14, 26)) ok 1
+FS THROW 6 from (16, 16) to (16, 22) T (16, 28) body 3 n 1 dsq 17
+FS HOPBUILD 7 at (16, 22) lch (16, 23) T (16, 28)
+FS GATE 8 sig (30, 30, (14, 2), (14, 26)) ok 1
+FS THROW 8 from (16, 22) to (16, 28) T (16, 28) body 3 n 1 dsq 2
+FS ARRIVE 9 id 3 body 1 at (16, 28) dsq 2
+FS PHASE 9 id 3 ph 2 d 2 at (16, 28)
+FS SEAL 9 tile (16, 27) n 1
+FS SEAL 10 tile (15, 28) n 2
+FS GATE 11 sig (30, 30, (14, 2), (14, 26)) ok 1
+FS GATE 12 sig (30, 30, (14, 2), (14, 26)) ok 1
+FS GATE 13 sig (30, 30, (14, 2), (14, 26)) ok 1
+FS SEAL 14 tile (16, 26) n 3
+FS DODGE 17 id 3 from (16, 25) to (15, 25) cov 1 -> 0 hit 0 hp 40
+FS SEAL 18 tile (14, 25) n 4
+FS STAT 20 id 3 at (15, 24) need 5 orth 4 ti 64 ammo 0 sen 0 hp 22 covden 0 eco 0 lost 0
+FS DODGE 20 id 3 from (15, 24) to (15, 25) cov 1 -> 0 hit 0 hp 22
+FS DODGE 22 id 3 from (16, 25) to (15, 25) cov 1 -> 0 hit 0 hp 4
+FS GATE 665 sig (30, 30, (14, 2), (14, 26)) ok 1
+FS PHASE 665 id 382 ph 1 d 485 at (16, 4)
+FS HOPBUILD 668 at (16, 7) lch (16, 8) T (16, 28)
+FS GATE 669 sig (30, 30, (14, 2), (14, 26)) ok 1
+FS THROW 669 from (16, 7) to (16, 13) T (16, 28) body 382 n 1 dsq 170
+FS ARRIVE 682 id 382 body 1 at (15, 24) dsq 4
+FS PHASE 682 id 382 ph 2 d 4 at (15, 24)
+FS DODGE 682 id 382 from (15, 24) to (15, 25) cov 2 -> 0 hit 0 hp 22
+FS DODGE 684 id 382 from (16, 25) to (16, 26) cov 1 -> 0 hit 0 hp 4
+FS SEAL 685 tile (16, 27) n 1
+FS GATE 733 sig (30, 30, (14, 2), (14, 26)) ok 1
+FS PHASE 733 id 392 ph 1 d 485 at (16, 4)
+FS HOPBUILD 740 at (15, 10) lch (16, 10) T (16, 28)
+FS GATE 741 sig (30, 30, (14, 2), (14, 26)) ok 1
+FS THROW 741 from (15, 11) to (16, 15) T (16, 28) body 392 n 1 dsq 122
+FS ARRIVE 752 id 392 body 1 at (15, 24) dsq 4
+FS PHASE 752 id 392 ph 2 d 4 at (15, 24)
+FS DODGE 752 id 392 from (15, 24) to (15, 25) cov 2 -> 0 hit 0 hp 15
+FS GATE 873 sig (30, 30, (14, 2), (14, 26)) ok 1
+FS PHASE 873 id 433 ph 1 d 485 at (16, 4)
+FS HOPBUILD 880 at (15, 10) lch (16, 10) T (16, 28)
+FS GATE 881 sig (30, 30, (14, 2), (14, 26)) ok 1
+FS THROW 881 from (15, 11) to (16, 15) T (16, 28) body 433 n 1 dsq 122
+FS ARRIVE 892 id 433 body 1 at (15, 24) dsq 4
+FS PHASE 892 id 433 ph 2 d 4 at (15, 24)
+FS DODGE 892 id 433 from (15, 24) to (15, 25) cov 2 -> 0 hit 0 hp 15

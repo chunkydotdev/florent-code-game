@@ -1,0 +1,54 @@
+Update available: 2.3.6 -> 2.3.8. Run: pip install --upgrade fcode
+FS GATE 0 sig (30, 30, (2, 2), (26, 26)) ok 1
+FS GATE 1 sig (30, 30, (2, 2), (26, 26)) ok 1
+FS PHASE 1 id 3 ph 1 d 1013 at (4, 3)
+FS HOPBUILD 1 at (4, 3) lch (5, 3) T (28, 28)
+FS GATE 2 sig (30, 30, (2, 2), (26, 26)) ok 1
+FS GATE 2 sig (30, 30, (2, 2), (26, 26)) ok 1
+FS THROW 2 from (4, 3) to (8, 7) T (28, 28) body 3 n 1 dsq 685
+FS HOPBUILD 3 at (8, 7) lch (8, 8) T (28, 28)
+FS GATE 3 sig (30, 30, (2, 2), (26, 26)) ok 1
+FS GATE 4 sig (30, 30, (2, 2), (26, 26)) ok 1
+FS THROW 4 from (9, 7) to (11, 12) T (28, 28) body 3 n 1 dsq 421
+FS HOPBUILD 5 at (11, 12) lch (12, 12) T (28, 28)
+FS GATE 6 sig (30, 30, (2, 2), (26, 26)) ok 1
+FS THROW 6 from (11, 13) to (15, 16) T (28, 28) body 3 n 1 dsq 221
+FS HOPBUILD 7 at (15, 16) lch (16, 16) T (28, 28)
+FS GATE 8 sig (30, 30, (2, 2), (26, 26)) ok 1
+FS THROW 8 from (15, 17) to (19, 20) T (28, 28) body 3 n 1 dsq 85
+FS HOPBUILD 9 at (19, 20) lch (20, 20) T (28, 28)
+FS GATE 10 sig (30, 30, (2, 2), (26, 26)) ok 1
+FS THROW 10 from (19, 21) to (23, 24) T (28, 28) body 3 n 1 dsq 13
+FS HOPBUILD 11 at (23, 24) lch (24, 24) T (28, 28)
+FS GATE 12 sig (30, 30, (2, 2), (26, 26)) ok 1
+FS ARRIVE 14 id 3 body 1 at (24, 25) dsq 5
+FS PHASE 14 id 3 ph 2 d 5 at (24, 25)
+FS EVICTOR 14 at (24, 26) ucov 1 cov 0 unseal 2 obs 0
+FS RUNG 14 id 3 r 2 hi -
+FS EVICT 14 from (23, 25) to (27, 20)
+FS GATE 15 sig (30, 30, (2, 2), (26, 26)) ok 1
+FS DODGE 16 id 3 from (23, 25) to (24, 25) cov 1 -> 0 hit 0 hp 22
+FS GATE 16 sig (30, 30, (2, 2), (26, 26)) ok 1
+FS DODGE 18 id 3 from (23, 25) to (24, 25) cov 1 -> 0 hit 0 hp 4
+FS EVICT 20 from (23, 26) to (29, 25)
+FS GATE 33 sig (30, 30, (2, 2), (26, 26)) ok 1
+FS PHASE 33 id 80 ph 1 d 1109 at (4, 1)
+FS EVICT 35 from (23, 26) to (29, 25)
+FS HOPBUILD 41 at (7, 6) lch (8, 6) T (28, 28)
+FS GATE 42 sig (30, 30, (2, 2), (26, 26)) ok 1
+FS THROW 42 from (7, 6) to (12, 9) T (28, 28) body 80 n 1 dsq 485
+FS HOPBUILD 44 at (13, 9) lch (14, 9) T (28, 28)
+FS GATE 45 sig (30, 30, (2, 2), (26, 26)) ok 1
+FS THROW 45 from (13, 9) to (17, 13) T (28, 28) body 80 n 1 dsq 250
+FS HOPBUILD 47 at (17, 14) lch (17, 15) T (28, 28)
+FS GATE 48 sig (30, 30, (2, 2), (26, 26)) ok 1
+FS THROW 48 from (18, 14) to (20, 19) T (28, 28) body 80 n 1 dsq 85
+FS EVICT 50 from (23, 26) to (29, 25)
+FS HOPBUILD 51 at (21, 20) lch (21, 21) T (28, 28)
+FS GATE 52 sig (30, 30, (2, 2), (26, 26)) ok 1
+FS THROW 52 from (21, 20) to (24, 25) T (28, 28) body 80 n 1 dsq 5
+FS ARRIVE 53 id 80 body 1 at (24, 25) dsq 5
+FS PHASE 53 id 80 ph 2 d 5 at (24, 25)
+FS DODGE 54 id 80 from (23, 25) to (24, 25) cov 1 -> 0 hit 0 hp 22
+FS DODGE 56 id 80 from (23, 25) to (24, 25) cov 1 -> 0 hit 0 hp 4
+FS EVICT 65 from (23, 26) to (29, 25)
