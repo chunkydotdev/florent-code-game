@@ -1,0 +1,4 @@
+Completed turn 0
+Completed turn 100
+Completed turn 200
+{"replay": "scratchpad/s51_v524_build/dbg/ragnarok_inst.replay26", "winner": "B", "turns": 221, "win_condition": "core_destroyed", "resign_message": null, "a_titanium": 12, "a_titanium_collected": 420, "b_titanium": 147, "b_titanium_collected": 1940, "a_units": 4, "a_buildings": 28, "b_units": 16, "b_buildings": 62}

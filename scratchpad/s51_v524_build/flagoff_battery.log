@@ -1,0 +1,13 @@
+total games: 180 (PAR=4)
+  30/180 done
+  60/180 done
+  90/180 done
+  120/180 done
+  150/180 done
+  180/180 done
+
+=== SUMMARY ===
+flagoff  n=90  wins=61  (67.8%)
+v522(parent)  n=90  wins=65  (72.2%)
+DELTA -4.4pp
+parse-fails=0  tracebacks-in-stderr=0  total=180

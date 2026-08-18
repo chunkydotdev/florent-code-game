@@ -1,0 +1,5 @@
+Completed turn 0
+Completed turn 100
+Completed turn 200
+Completed turn 300
+{"replay": "scratchpad/s51_v524_build/byte_check/frostgate_seatB_v524.replay26", "winner": "A", "turns": 329, "win_condition": "core_destroyed", "resign_message": null, "a_titanium": 84, "a_titanium_collected": 3300, "b_titanium": 49, "b_titanium_collected": 70, "a_units": 16, "a_buildings": 55, "b_units": 3, "b_buildings": 10}

@@ -1,0 +1,4 @@
+Completed turn 0
+Completed turn 100
+Completed turn 200
+{"replay": "scratchpad/s51_v524_build/byte_check_final/ragnarok_seatA_v522.replay26", "winner": "A", "turns": 214, "win_condition": "core_destroyed", "resign_message": null, "a_titanium": 72, "a_titanium_collected": 1450, "b_titanium": 90, "b_titanium_collected": 730, "a_units": 10, "a_buildings": 51, "b_units": 7, "b_buildings": 42}

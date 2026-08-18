@@ -1,0 +1,24 @@
+total games: 240 (PAR=4)
+  20/240 done
+  40/240 done
+  60/240 done
+  80/240 done
+  100/240 done
+  120/240 done
+  140/240 done
+  160/240 done
+  180/240 done
+  200/240 done
+  220/240 done
+  240/240 done
+
+=== SUMMARY ===
+v524  ragnarok   n= 60 wins= 39 (65.0%)  fails=0
+v524  frostgate  n= 60 wins= 37 (61.7%)  fails=0
+v522  ragnarok   n= 60 wins= 41 (68.3%)  fails=0
+v522  frostgate  n= 60 wins= 31 (51.7%)  fails=0
+
+ragnarok    v524 39/60 (65.0%)  v522(parent) 41/60 (68.3%)  DELTA -3.3pp
+frostgate   v524 37/60 (61.7%)  v522(parent) 31/60 (51.7%)  DELTA +10.0pp
+
+parse-fails=0  tracebacks-in-stderr=0  total=240

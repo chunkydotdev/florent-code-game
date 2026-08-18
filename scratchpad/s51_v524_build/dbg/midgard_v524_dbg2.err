@@ -1,0 +1,17 @@
+Update available: 2.3.6 -> 2.3.8. Run: pip install --upgrade fcode
+GATEOK 0 id 1 ok False
+GATEOK 1 id 3 ok False
+GATEOK 2 id 5 ok False
+GATEOK 3 id 7 ok False
+GATEOK 4 id 9 ok False
+GATEOK 5 id 12 ok False
+GATEOK 8 id 20 ok False
+GATEOK 241 id 267 ok False
+GATEOK 565 id 325 ok False
+GATEOK 597 id 327 ok False
+GATEOK 657 id 331 ok False
+GATEOK 701 id 333 ok False
+GATEOK 821 id 372 ok False
+GATEOK 845 id 379 ok False
+GATEOK 893 id 396 ok False
+GATEOK 933 id 409 ok False

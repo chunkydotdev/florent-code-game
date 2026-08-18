@@ -1,0 +1,469 @@
+Update available: 2.3.6 -> 2.3.8. Run: pip install --upgrade fcode
+FS GATE 0 sig (20, 20, (2, 9), (16, 9)) ok 1
+V524 0 sig (20, 20, (2, 9), (16, 9)) grid_known True confirmed False
+FS GATE 1 sig (20, 20, (2, 9), (16, 9)) ok 1
+V524 1 sig (20, 20, (2, 9), (16, 9)) grid_known True confirmed False
+FS PHASE 1 id 3 ph 1 d 144 at (4, 9)
+FS GATE 2 sig (20, 20, (2, 9), (16, 9)) ok 1
+V524 2 sig (20, 20, (2, 9), (16, 9)) grid_known True confirmed False
+FS GATE 3 sig (20, 20, (2, 9), (16, 9)) ok 1
+V524 3 sig (20, 20, (2, 9), (16, 9)) grid_known True confirmed False
+FS GATE 4 sig (20, 20, (2, 9), (16, 9)) ok 1
+V524 4 sig (20, 20, (2, 9), (16, 9)) grid_known True confirmed False
+FS PHASE 4 id 9 ph 1 d 145 at (4, 8)
+FS HOPBUILD 9 at (4, 10) lch (4, 11) T (18, 11)
+FS GATE 10 sig (20, 20, (2, 9), (16, 9)) ok 1
+V524 10 sig (20, 20, (2, 9), (16, 9)) grid_known True confirmed False
+FS THROW 10 from (5, 10) to (9, 11) T (18, 11) body 3 n 1 dsq 50
+FS HOPBUILD 11 at (9, 11) lch (10, 11) T (18, 11)
+FS HOPBUILD 11 at (9, 9) lch (9, 10) T (18, 11)
+FS GATE 12 sig (20, 20, (2, 9), (16, 9)) ok 1
+V524 12 sig (20, 20, (2, 9), (16, 9)) grid_known True confirmed False
+FS SPLIT 12 arc 2 to (15, 10) body 3 walk 8
+FS GATE 12 sig (20, 20, (2, 9), (16, 9)) ok 1
+V524 12 sig (20, 20, (2, 9), (16, 9)) grid_known True confirmed False
+FS SPLIT 12 arc 2 to (14, 9) body 9 walk 10
+FS ARRIVE 13 id 3 body 1 at (15, 10) dsq 1
+FS PHASE 13 id 3 ph 2 d 1 at (15, 10)
+FS ARRIVE 13 id 9 body 2 at (14, 9) dsq 4
+FS PHASE 13 id 9 ph 2 d 4 at (14, 9)
+FS STAT 20 id 3 at (15, 10) need 9 orth 8 ti 14 ammo 24 sen 0 hp 40 covden 0 eco 1 lost 0
+FS STAT 20 id 9 at (14, 9) need 9 orth 8 ti 8 ammo 24 sen 0 hp 40 covden 0 eco 1 lost 0
+FS EVICTOR 27 at (14, 8) ucov 1 cov 0 unseal 2 obs 6
+FS RUNG 27 id 9 r 2 hi -
+FS GATE 28 sig (20, 20, (2, 9), (16, 9)) ok 1
+V524 28 sig (20, 20, (2, 9), (16, 9)) grid_known True confirmed False
+FS CLEAR 36 tile (15, 9) peck 1
+FS RUNG 36 id 3 r 3 hi -
+FS CLEAR 36 tile (15, 9) peck 1
+FS RUNG 36 id 9 r 3 hi -
+FS CLEAR 37 tile (15, 9) peck 2
+FS RUNG 37 id 3 r 3 hi -
+FS CLEAR 37 tile (15, 9) peck 2
+FS RUNG 37 id 9 r 3 hi -
+FS CLEAR 38 tile (15, 9) peck 3
+FS RUNG 38 id 3 r 3 hi -
+FS CLEAR 38 tile (15, 9) peck 3
+FS RUNG 38 id 9 r 3 hi -
+FS CLEAR 39 tile (15, 9) peck 4
+FS RUNG 39 id 3 r 3 hi -
+FS CLEAR 39 tile (15, 9) peck 4
+FS RUNG 39 id 9 r 3 hi -
+FS EVICT 39 from (13, 9) to (13, 3)
+FS STAT 40 id 3 at (15, 10) need 9 orth 7 ti 99 ammo 24 sen 0 hp 40 covden 13 eco 1 lost 0
+FS CLEAR 40 tile (15, 9) peck 5
+FS RUNG 40 id 3 r 3 hi -
+FS STAT 40 id 9 at (14, 9) need 9 orth 7 ti 97 ammo 24 sen 0 hp 40 covden 13 eco 1 lost 0
+FS CLEAR 40 tile (15, 9) peck 5
+FS RUNG 40 id 9 r 3 hi -
+FS EVICT 40 from (13, 9) to (13, 3)
+FS CLEARED 41 tile (15, 9) n 1
+FS SEAL 41 tile (15, 9) n 1
+FS SEALCLR 41 tile (15, 9) lag 0
+FS CLEAR 42 tile (15, 10) peck 1
+FS RUNG 42 id 9 r 3 hi -
+FS CLEAR 43 tile (15, 10) peck 1
+FS RUNG 43 id 3 r 3 hi -
+FS CLEAR 43 tile (15, 10) peck 2
+FS RUNG 43 id 9 r 3 hi -
+FS EVICT 43 from (13, 7) to (13, 13)
+FS CLEAR 44 tile (15, 10) peck 2
+FS RUNG 44 id 3 r 3 hi -
+FS CLEAR 44 tile (15, 10) peck 3
+FS RUNG 44 id 9 r 3 hi -
+FS EVICT 44 from (13, 7) to (13, 13)
+FS CLEAR 45 tile (15, 10) peck 3
+FS RUNG 45 id 3 r 3 hi -
+FS CLEAR 45 tile (15, 10) peck 4
+FS RUNG 45 id 9 r 3 hi -
+FS CLEAR 46 tile (15, 10) peck 4
+FS RUNG 46 id 3 r 3 hi -
+FS CLEAR 46 tile (15, 10) peck 5
+FS RUNG 46 id 9 r 3 hi -
+FS EVICT 46 from (15, 8) to (11, 4)
+FS CLEAR 48 tile (15, 10) peck 5
+FS RUNG 48 id 3 r 3 hi -
+FS CLEARED 48 tile (15, 10) n 1
+FS SEAL 48 tile (15, 10) n 1
+FS SEALCLR 48 tile (15, 10) lag 0
+FS CLEAR 49 tile (16, 11) peck 1
+FS RUNG 49 id 3 r 3 hi -
+FS EVICT 49 from (13, 9) to (13, 3)
+FS CLEAR 50 tile (16, 11) peck 2
+FS RUNG 50 id 3 r 3 hi -
+FS CLEAR 51 tile (16, 11) peck 3
+FS RUNG 51 id 3 r 3 hi -
+FS CLEAR 52 tile (16, 11) peck 4
+FS RUNG 52 id 3 r 3 hi -
+FS CLEAR 53 tile (16, 11) peck 5
+FS RUNG 53 id 3 r 3 hi -
+FS EVICT 53 from (15, 7) to (13, 13)
+FS CLEAR 54 tile (16, 11) peck 6
+FS RUNG 54 id 3 r 3 hi -
+FS EVICT 54 from (13, 8) to (19, 7)
+FS CLEAR 55 tile (16, 11) peck 7
+FS RUNG 55 id 3 r 3 hi -
+FS CLEAR 55 tile (16, 11) peck 1
+FS RUNG 55 id 9 r 3 hi -
+FS CLEAR 56 tile (16, 11) peck 8
+FS RUNG 56 id 3 r 3 hi -
+FS CLEAR 56 tile (16, 11) peck 2
+FS RUNG 56 id 9 r 3 hi -
+FS EVICT 56 from (14, 9) to (13, 3)
+FS CLEARED 57 tile (16, 11) n 2
+FS SEAL 57 tile (16, 11) n 2
+FS SEALCLR 57 tile (16, 11) lag 0
+FS SEAL 58 tile (17, 11) n 2
+FS EVICT 58 from (15, 7) to (13, 13)
+FS EVICT 59 from (14, 9) to (13, 3)
+FS STAT 60 id 3 at (15, 11) need 5 orth 4 ti 92 ammo 24 sen 0 hp 40 covden 13 eco 1 lost 0
+FS STAT 60 id 9 at (18, 12) need 5 orth 4 ti 91 ammo 24 sen 0 hp 40 covden 13 eco 1 lost 0
+FS EVICTOR 60 at (17, 12) ucov 0 cov 9 unseal 0 obs 11
+FS RUNG 60 id 9 r 2 hi -
+FS EVICT 60 from (13, 7) to (13, 13)
+FS GATE 61 sig (20, 20, (2, 9), (16, 9)) ok 1
+V524 61 sig (20, 20, (2, 9), (16, 9)) grid_known True confirmed False
+FS SEAL 62 tile (18, 10) n 3
+FS EVICT 64 from (13, 9) to (13, 3)
+FS EVICT 65 from (14, 9) to (13, 3)
+FS SEAL 66 tile (18, 9) n 4
+FS SENTINEL 67 at (19, 10) face WEST tgt (16, 10) score 9 n 1 onring 0 lost 0 gate (1, 1, 6) onsray 0 olddsq -1
+FS SEAL 68 tile (15, 8) n 3
+FS PHASE 68 id 9 ph 5 d 4 at (19, 9)
+FS EVICT 68 from (13, 7) to (13, 13)
+FS GATE 68 sig (20, 20, (2, 9), (16, 9)) ok 1
+V524 68 sig (20, 20, (2, 9), (16, 9)) grid_known True confirmed False
+FS PHASE 69 id 3 ph 5 d 5 at (15, 7)
+FS GATE 69 sig (20, 20, (2, 9), (16, 9)) ok 1
+V524 69 sig (20, 20, (2, 9), (16, 9)) grid_known True confirmed False
+FS SEAL 70 tile (17, 8) n 5
+FS EVICT 70 from (14, 7) to (13, 13)
+FS GATE 70 sig (20, 20, (2, 9), (16, 9)) ok 1
+V524 70 sig (20, 20, (2, 9), (16, 9)) grid_known True confirmed False
+FS GATE 71 sig (20, 20, (2, 9), (16, 9)) ok 1
+V524 71 sig (20, 20, (2, 9), (16, 9)) grid_known True confirmed False
+FS SEAL 72 tile (18, 8) n 6
+FS GATE 72 sig (20, 20, (2, 9), (16, 9)) ok 1
+V524 72 sig (20, 20, (2, 9), (16, 9)) grid_known True confirmed False
+FS GATE 73 sig (20, 20, (2, 9), (16, 9)) ok 1
+V524 73 sig (20, 20, (2, 9), (16, 9)) grid_known True confirmed False
+FS GATE 74 sig (20, 20, (2, 9), (16, 9)) ok 1
+V524 74 sig (20, 20, (2, 9), (16, 9)) grid_known True confirmed False
+FS EVICT 75 from (14, 9) to (13, 3)
+FS GATE 75 sig (20, 20, (2, 9), (16, 9)) ok 1
+V524 75 sig (20, 20, (2, 9), (16, 9)) grid_known True confirmed False
+FS GATE 76 sig (20, 20, (2, 9), (16, 9)) ok 1
+V524 76 sig (20, 20, (2, 9), (16, 9)) grid_known True confirmed False
+FS GATE 77 sig (20, 20, (2, 9), (16, 9)) ok 1
+V524 77 sig (20, 20, (2, 9), (16, 9)) grid_known True confirmed False
+FS GATE 78 sig (20, 20, (2, 9), (16, 9)) ok 1
+V524 78 sig (20, 20, (2, 9), (16, 9)) grid_known True confirmed False
+FS EVICT 79 from (13, 7) to (13, 13)
+FS GATE 79 sig (20, 20, (2, 9), (16, 9)) ok 1
+V524 79 sig (20, 20, (2, 9), (16, 9)) grid_known True confirmed False
+FS STAT 80 id 3 at (13, 8) need 4 orth 4 ti 16 ammo 44 sen 1 hp 40 covden 13 eco 1 lost 0
+FS STAT 80 id 9 at (15, 7) need 2 orth 1 ti 16 ammo 44 sen 1 hp 40 covden 13 eco 1 lost 0
+FS GATE 80 sig (20, 20, (2, 9), (16, 9)) ok 1
+V524 80 sig (20, 20, (2, 9), (16, 9)) grid_known True confirmed False
+FS GATE 81 sig (20, 20, (2, 9), (16, 9)) ok 1
+V524 81 sig (20, 20, (2, 9), (16, 9)) grid_known True confirmed False
+FS GATE 82 sig (20, 20, (2, 9), (16, 9)) ok 1
+V524 82 sig (20, 20, (2, 9), (16, 9)) grid_known True confirmed False
+FS GATE 83 sig (20, 20, (2, 9), (16, 9)) ok 1
+V524 83 sig (20, 20, (2, 9), (16, 9)) grid_known True confirmed False
+FS EVICT 84 from (14, 9) to (13, 3)
+FS GATE 84 sig (20, 20, (2, 9), (16, 9)) ok 1
+V524 84 sig (20, 20, (2, 9), (16, 9)) grid_known True confirmed False
+FS GATE 85 sig (20, 20, (2, 9), (16, 9)) ok 1
+V524 85 sig (20, 20, (2, 9), (16, 9)) grid_known True confirmed False
+FS GATE 86 sig (20, 20, (2, 9), (16, 9)) ok 1
+V524 86 sig (20, 20, (2, 9), (16, 9)) grid_known True confirmed False
+FS GATE 87 sig (20, 20, (2, 9), (16, 9)) ok 1
+V524 87 sig (20, 20, (2, 9), (16, 9)) grid_known True confirmed False
+FS GATE 88 sig (20, 20, (2, 9), (16, 9)) ok 1
+V524 88 sig (20, 20, (2, 9), (16, 9)) grid_known True confirmed False
+FS GATE 89 sig (20, 20, (2, 9), (16, 9)) ok 1
+V524 89 sig (20, 20, (2, 9), (16, 9)) grid_known True confirmed False
+FS GATE 90 sig (20, 20, (2, 9), (16, 9)) ok 1
+V524 90 sig (20, 20, (2, 9), (16, 9)) grid_known True confirmed False
+FS GATE 91 sig (20, 20, (2, 9), (16, 9)) ok 1
+V524 91 sig (20, 20, (2, 9), (16, 9)) grid_known True confirmed False
+FS GATE 92 sig (20, 20, (2, 9), (16, 9)) ok 1
+V524 92 sig (20, 20, (2, 9), (16, 9)) grid_known True confirmed False
+FS GATE 93 sig (20, 20, (2, 9), (16, 9)) ok 1
+V524 93 sig (20, 20, (2, 9), (16, 9)) grid_known True confirmed False
+FS EVICT 94 from (15, 7) to (13, 13)
+FS GATE 94 sig (20, 20, (2, 9), (16, 9)) ok 1
+V524 94 sig (20, 20, (2, 9), (16, 9)) grid_known True confirmed False
+FS GATE 95 sig (20, 20, (2, 9), (16, 9)) ok 1
+V524 95 sig (20, 20, (2, 9), (16, 9)) grid_known True confirmed False
+FS GATE 96 sig (20, 20, (2, 9), (16, 9)) ok 1
+V524 96 sig (20, 20, (2, 9), (16, 9)) grid_known True confirmed False
+FS GATE 97 sig (20, 20, (2, 9), (16, 9)) ok 1
+V524 97 sig (20, 20, (2, 9), (16, 9)) grid_known True confirmed False
+FS GATE 98 sig (20, 20, (2, 9), (16, 9)) ok 1
+V524 98 sig (20, 20, (2, 9), (16, 9)) grid_known True confirmed False
+FS GATE 99 sig (20, 20, (2, 9), (16, 9)) ok 1
+V524 99 sig (20, 20, (2, 9), (16, 9)) grid_known True confirmed False
+FS STAT 100 id 3 at (13, 6) need 5 orth 5 ti 16 ammo 14 sen 1 hp 40 covden 13 eco 1 lost 0
+FS STAT 100 id 9 at (15, 7) need 2 orth 1 ti 16 ammo 14 sen 1 hp 40 covden 13 eco 1 lost 0
+FS GATE 100 sig (20, 20, (2, 9), (16, 9)) ok 1
+V524 100 sig (20, 20, (2, 9), (16, 9)) grid_known True confirmed False
+FS EVICT 101 from (14, 9) to (13, 3)
+FS GATE 101 sig (20, 20, (2, 9), (16, 9)) ok 1
+V524 101 sig (20, 20, (2, 9), (16, 9)) grid_known True confirmed False
+FS GATE 102 sig (20, 20, (2, 9), (16, 9)) ok 1
+V524 102 sig (20, 20, (2, 9), (16, 9)) grid_known True confirmed False
+FS GATE 103 sig (20, 20, (2, 9), (16, 9)) ok 1
+V524 103 sig (20, 20, (2, 9), (16, 9)) grid_known True confirmed False
+FS GATE 104 sig (20, 20, (2, 9), (16, 9)) ok 1
+V524 104 sig (20, 20, (2, 9), (16, 9)) grid_known True confirmed False
+FS GATE 105 sig (20, 20, (2, 9), (16, 9)) ok 1
+V524 105 sig (20, 20, (2, 9), (16, 9)) grid_known True confirmed False
+FS GATE 106 sig (20, 20, (2, 9), (16, 9)) ok 1
+V524 106 sig (20, 20, (2, 9), (16, 9)) grid_known True confirmed False
+FS GATE 107 sig (20, 20, (2, 9), (16, 9)) ok 1
+V524 107 sig (20, 20, (2, 9), (16, 9)) grid_known True confirmed False
+FS GATE 108 sig (20, 20, (2, 9), (16, 9)) ok 1
+V524 108 sig (20, 20, (2, 9), (16, 9)) grid_known True confirmed False
+FS GATE 109 sig (20, 20, (2, 9), (16, 9)) ok 1
+V524 109 sig (20, 20, (2, 9), (16, 9)) grid_known True confirmed False
+FS EVICT 110 from (15, 7) to (13, 13)
+FS GATE 110 sig (20, 20, (2, 9), (16, 9)) ok 1
+V524 110 sig (20, 20, (2, 9), (16, 9)) grid_known True confirmed False
+FS GATE 111 sig (20, 20, (2, 9), (16, 9)) ok 1
+V524 111 sig (20, 20, (2, 9), (16, 9)) grid_known True confirmed False
+FS GATE 112 sig (20, 20, (2, 9), (16, 9)) ok 1
+V524 112 sig (20, 20, (2, 9), (16, 9)) grid_known True confirmed False
+FS GATE 113 sig (20, 20, (2, 9), (16, 9)) ok 1
+V524 113 sig (20, 20, (2, 9), (16, 9)) grid_known True confirmed False
+FS GATE 114 sig (20, 20, (2, 9), (16, 9)) ok 1
+V524 114 sig (20, 20, (2, 9), (16, 9)) grid_known True confirmed False
+FS GATE 115 sig (20, 20, (2, 9), (16, 9)) ok 1
+V524 115 sig (20, 20, (2, 9), (16, 9)) grid_known True confirmed False
+FS GATE 116 sig (20, 20, (2, 9), (16, 9)) ok 1
+V524 116 sig (20, 20, (2, 9), (16, 9)) grid_known True confirmed False
+FS EVICT 117 from (14, 9) to (13, 3)
+FS GATE 117 sig (20, 20, (2, 9), (16, 9)) ok 1
+V524 117 sig (20, 20, (2, 9), (16, 9)) grid_known True confirmed False
+FS GATE 118 sig (20, 20, (2, 9), (16, 9)) ok 1
+V524 118 sig (20, 20, (2, 9), (16, 9)) grid_known True confirmed False
+FS GATE 119 sig (20, 20, (2, 9), (16, 9)) ok 1
+V524 119 sig (20, 20, (2, 9), (16, 9)) grid_known True confirmed False
+FS STAT 120 id 3 at (13, 8) need 4 orth 4 ti 16 ammo 14 sen 1 hp 40 covden 13 eco 1 lost 0
+FS STAT 120 id 9 at (15, 7) need 2 orth 1 ti 16 ammo 14 sen 1 hp 40 covden 13 eco 1 lost 0
+FS GATE 120 sig (20, 20, (2, 9), (16, 9)) ok 1
+V524 120 sig (20, 20, (2, 9), (16, 9)) grid_known True confirmed False
+FS DODGE 121 id 3 from (13, 7) to (12, 7) cov 1 -> 0 hit 0 hp 40
+FS GATE 121 sig (20, 20, (2, 9), (16, 9)) ok 1
+V524 121 sig (20, 20, (2, 9), (16, 9)) grid_known True confirmed False
+FS GATE 122 sig (20, 20, (2, 9), (16, 9)) ok 1
+V524 122 sig (20, 20, (2, 9), (16, 9)) grid_known True confirmed False
+FS DODGE 123 id 3 from (13, 7) to (14, 7) cov 1 -> 0 hit 0 hp 22
+FS GATE 123 sig (20, 20, (2, 9), (16, 9)) ok 1
+V524 123 sig (20, 20, (2, 9), (16, 9)) grid_known True confirmed False
+FS GATE 124 sig (20, 20, (2, 9), (16, 9)) ok 1
+V524 124 sig (20, 20, (2, 9), (16, 9)) grid_known True confirmed False
+FS DODGE 125 id 3 from (13, 7) to (14, 7) cov 1 -> 0 hit 0 hp 4
+FS GATE 125 sig (20, 20, (2, 9), (16, 9)) ok 1
+V524 125 sig (20, 20, (2, 9), (16, 9)) grid_known True confirmed False
+FS GATE 126 sig (20, 20, (2, 9), (16, 9)) ok 1
+V524 126 sig (20, 20, (2, 9), (16, 9)) grid_known True confirmed False
+FS GATE 127 sig (20, 20, (2, 9), (16, 9)) ok 1
+V524 127 sig (20, 20, (2, 9), (16, 9)) grid_known True confirmed False
+FS GATE 128 sig (20, 20, (2, 9), (16, 9)) ok 1
+V524 128 sig (20, 20, (2, 9), (16, 9)) grid_known True confirmed False
+FS GATE 129 sig (20, 20, (2, 9), (16, 9)) ok 1
+V524 129 sig (20, 20, (2, 9), (16, 9)) grid_known True confirmed False
+FS GATE 130 sig (20, 20, (2, 9), (16, 9)) ok 1
+V524 130 sig (20, 20, (2, 9), (16, 9)) grid_known True confirmed False
+FS GATE 131 sig (20, 20, (2, 9), (16, 9)) ok 1
+V524 131 sig (20, 20, (2, 9), (16, 9)) grid_known True confirmed False
+FS GATE 132 sig (20, 20, (2, 9), (16, 9)) ok 1
+V524 132 sig (20, 20, (2, 9), (16, 9)) grid_known True confirmed False
+FS PROMOTE 133 id 9
+FS GATE 133 sig (20, 20, (2, 9), (16, 9)) ok 1
+V524 133 sig (20, 20, (2, 9), (16, 9)) grid_known True confirmed False
+FS GATE 134 sig (20, 20, (2, 9), (16, 9)) ok 1
+V524 134 sig (20, 20, (2, 9), (16, 9)) grid_known True confirmed False
+FS GATE 135 sig (20, 20, (2, 9), (16, 9)) ok 1
+V524 135 sig (20, 20, (2, 9), (16, 9)) grid_known True confirmed False
+FS GATE 136 sig (20, 20, (2, 9), (16, 9)) ok 1
+V524 136 sig (20, 20, (2, 9), (16, 9)) grid_known True confirmed False
+FS GATE 137 sig (20, 20, (2, 9), (16, 9)) ok 1
+V524 137 sig (20, 20, (2, 9), (16, 9)) grid_known True confirmed False
+FS GATE 138 sig (20, 20, (2, 9), (16, 9)) ok 1
+V524 138 sig (20, 20, (2, 9), (16, 9)) grid_known True confirmed False
+FS GATE 139 sig (20, 20, (2, 9), (16, 9)) ok 1
+V524 139 sig (20, 20, (2, 9), (16, 9)) grid_known True confirmed False
+FS STAT 140 id 9 at (15, 7) need 2 orth 1 ti 14 ammo 16 sen 1 hp 40 covden 13 eco 1 lost 0
+FS EVICT 140 from (13, 7) to (13, 13)
+FS GATE 140 sig (20, 20, (2, 9), (16, 9)) ok 1
+V524 140 sig (20, 20, (2, 9), (16, 9)) grid_known True confirmed False
+FS DODGE 141 id 9 from (14, 7) to (15, 7) cov 1 -> 0 hit 0 hp 22
+FS GATE 141 sig (20, 20, (2, 9), (16, 9)) ok 1
+V524 141 sig (20, 20, (2, 9), (16, 9)) grid_known True confirmed False
+FS GATE 142 sig (20, 20, (2, 9), (16, 9)) ok 1
+V524 142 sig (20, 20, (2, 9), (16, 9)) grid_known True confirmed False
+FS DODGE 143 id 9 from (14, 7) to (15, 7) cov 1 -> 0 hit 0 hp 4
+FS GATE 143 sig (20, 20, (2, 9), (16, 9)) ok 1
+V524 143 sig (20, 20, (2, 9), (16, 9)) grid_known True confirmed False
+FS GATE 144 sig (20, 20, (2, 9), (16, 9)) ok 1
+V524 144 sig (20, 20, (2, 9), (16, 9)) grid_known True confirmed False
+FS EVICT 145 from (14, 9) to (13, 3)
+FS GATE 145 sig (20, 20, (2, 9), (16, 9)) ok 1
+V524 145 sig (20, 20, (2, 9), (16, 9)) grid_known True confirmed False
+FS GATE 146 sig (20, 20, (2, 9), (16, 9)) ok 1
+V524 146 sig (20, 20, (2, 9), (16, 9)) grid_known True confirmed False
+FS GATE 147 sig (20, 20, (2, 9), (16, 9)) ok 1
+V524 147 sig (20, 20, (2, 9), (16, 9)) grid_known True confirmed False
+FS GATE 148 sig (20, 20, (2, 9), (16, 9)) ok 1
+V524 148 sig (20, 20, (2, 9), (16, 9)) grid_known True confirmed False
+FS GATE 149 sig (20, 20, (2, 9), (16, 9)) ok 1
+V524 149 sig (20, 20, (2, 9), (16, 9)) grid_known True confirmed False
+FS GATE 150 sig (20, 20, (2, 9), (16, 9)) ok 1
+V524 150 sig (20, 20, (2, 9), (16, 9)) grid_known True confirmed False
+FS GATE 151 sig (20, 20, (2, 9), (16, 9)) ok 1
+V524 151 sig (20, 20, (2, 9), (16, 9)) grid_known True confirmed False
+FS GATE 152 sig (20, 20, (2, 9), (16, 9)) ok 1
+V524 152 sig (20, 20, (2, 9), (16, 9)) grid_known True confirmed False
+FS GATE 153 sig (20, 20, (2, 9), (16, 9)) ok 1
+V524 153 sig (20, 20, (2, 9), (16, 9)) grid_known True confirmed False
+FS GATE 154 sig (20, 20, (2, 9), (16, 9)) ok 1
+V524 154 sig (20, 20, (2, 9), (16, 9)) grid_known True confirmed False
+FS GATE 155 sig (20, 20, (2, 9), (16, 9)) ok 1
+V524 155 sig (20, 20, (2, 9), (16, 9)) grid_known True confirmed False
+FS GATE 156 sig (20, 20, (2, 9), (16, 9)) ok 1
+V524 156 sig (20, 20, (2, 9), (16, 9)) grid_known True confirmed False
+FS GATE 157 sig (20, 20, (2, 9), (16, 9)) ok 1
+V524 157 sig (20, 20, (2, 9), (16, 9)) grid_known True confirmed False
+FS GATE 158 sig (20, 20, (2, 9), (16, 9)) ok 1
+V524 158 sig (20, 20, (2, 9), (16, 9)) grid_known True confirmed False
+FS GATE 159 sig (20, 20, (2, 9), (16, 9)) ok 1
+V524 159 sig (20, 20, (2, 9), (16, 9)) grid_known True confirmed False
+FS GATE 160 sig (20, 20, (2, 9), (16, 9)) ok 1
+V524 160 sig (20, 20, (2, 9), (16, 9)) grid_known True confirmed False
+FS GATE 161 sig (20, 20, (2, 9), (16, 9)) ok 1
+V524 161 sig (20, 20, (2, 9), (16, 9)) grid_known True confirmed False
+FS GATE 162 sig (20, 20, (2, 9), (16, 9)) ok 1
+V524 162 sig (20, 20, (2, 9), (16, 9)) grid_known True confirmed False
+FS GATE 163 sig (20, 20, (2, 9), (16, 9)) ok 1
+V524 163 sig (20, 20, (2, 9), (16, 9)) grid_known True confirmed False
+FS GATE 164 sig (20, 20, (2, 9), (16, 9)) ok 1
+V524 164 sig (20, 20, (2, 9), (16, 9)) grid_known True confirmed False
+FS GATE 165 sig (20, 20, (2, 9), (16, 9)) ok 1
+V524 165 sig (20, 20, (2, 9), (16, 9)) grid_known True confirmed False
+FS GATE 166 sig (20, 20, (2, 9), (16, 9)) ok 1
+V524 166 sig (20, 20, (2, 9), (16, 9)) grid_known True confirmed False
+FS GATE 167 sig (20, 20, (2, 9), (16, 9)) ok 1
+V524 167 sig (20, 20, (2, 9), (16, 9)) grid_known True confirmed False
+FS GATE 168 sig (20, 20, (2, 9), (16, 9)) ok 1
+V524 168 sig (20, 20, (2, 9), (16, 9)) grid_known True confirmed False
+FS GATE 169 sig (20, 20, (2, 9), (16, 9)) ok 1
+V524 169 sig (20, 20, (2, 9), (16, 9)) grid_known True confirmed False
+FS GATE 170 sig (20, 20, (2, 9), (16, 9)) ok 1
+V524 170 sig (20, 20, (2, 9), (16, 9)) grid_known True confirmed False
+FS GATE 171 sig (20, 20, (2, 9), (16, 9)) ok 1
+V524 171 sig (20, 20, (2, 9), (16, 9)) grid_known True confirmed False
+FS GATE 172 sig (20, 20, (2, 9), (16, 9)) ok 1
+V524 172 sig (20, 20, (2, 9), (16, 9)) grid_known True confirmed False
+FS GATE 173 sig (20, 20, (2, 9), (16, 9)) ok 1
+V524 173 sig (20, 20, (2, 9), (16, 9)) grid_known True confirmed False
+FS GATE 174 sig (20, 20, (2, 9), (16, 9)) ok 1
+V524 174 sig (20, 20, (2, 9), (16, 9)) grid_known True confirmed False
+FS GATE 175 sig (20, 20, (2, 9), (16, 9)) ok 1
+V524 175 sig (20, 20, (2, 9), (16, 9)) grid_known True confirmed False
+FS GATE 176 sig (20, 20, (2, 9), (16, 9)) ok 1
+V524 176 sig (20, 20, (2, 9), (16, 9)) grid_known True confirmed False
+FS GATE 177 sig (20, 20, (2, 9), (16, 9)) ok 1
+V524 177 sig (20, 20, (2, 9), (16, 9)) grid_known True confirmed False
+FS GATE 178 sig (20, 20, (2, 9), (16, 9)) ok 1
+V524 178 sig (20, 20, (2, 9), (16, 9)) grid_known True confirmed False
+FS GATE 179 sig (20, 20, (2, 9), (16, 9)) ok 1
+V524 179 sig (20, 20, (2, 9), (16, 9)) grid_known True confirmed False
+FS GATE 180 sig (20, 20, (2, 9), (16, 9)) ok 1
+V524 180 sig (20, 20, (2, 9), (16, 9)) grid_known True confirmed False
+FS GATE 181 sig (20, 20, (2, 9), (16, 9)) ok 1
+V524 181 sig (20, 20, (2, 9), (16, 9)) grid_known True confirmed False
+FS GATE 182 sig (20, 20, (2, 9), (16, 9)) ok 1
+V524 182 sig (20, 20, (2, 9), (16, 9)) grid_known True confirmed False
+FS GATE 183 sig (20, 20, (2, 9), (16, 9)) ok 1
+V524 183 sig (20, 20, (2, 9), (16, 9)) grid_known True confirmed False
+FS GATE 184 sig (20, 20, (2, 9), (16, 9)) ok 1
+V524 184 sig (20, 20, (2, 9), (16, 9)) grid_known True confirmed False
+FS GATE 185 sig (20, 20, (2, 9), (16, 9)) ok 1
+V524 185 sig (20, 20, (2, 9), (16, 9)) grid_known True confirmed False
+FS GATE 186 sig (20, 20, (2, 9), (16, 9)) ok 1
+V524 186 sig (20, 20, (2, 9), (16, 9)) grid_known True confirmed False
+FS GATE 187 sig (20, 20, (2, 9), (16, 9)) ok 1
+V524 187 sig (20, 20, (2, 9), (16, 9)) grid_known True confirmed False
+FS GATE 188 sig (20, 20, (2, 9), (16, 9)) ok 1
+V524 188 sig (20, 20, (2, 9), (16, 9)) grid_known True confirmed False
+FS GATE 189 sig (20, 20, (2, 9), (16, 9)) ok 1
+V524 189 sig (20, 20, (2, 9), (16, 9)) grid_known True confirmed False
+FS GATE 190 sig (20, 20, (2, 9), (16, 9)) ok 1
+V524 190 sig (20, 20, (2, 9), (16, 9)) grid_known True confirmed False
+FS GATE 191 sig (20, 20, (2, 9), (16, 9)) ok 1
+V524 191 sig (20, 20, (2, 9), (16, 9)) grid_known True confirmed False
+FS GATE 192 sig (20, 20, (2, 9), (16, 9)) ok 1
+V524 192 sig (20, 20, (2, 9), (16, 9)) grid_known True confirmed False
+FS GATE 193 sig (20, 20, (2, 9), (16, 9)) ok 1
+V524 193 sig (20, 20, (2, 9), (16, 9)) grid_known True confirmed False
+FS GATE 194 sig (20, 20, (2, 9), (16, 9)) ok 1
+V524 194 sig (20, 20, (2, 9), (16, 9)) grid_known True confirmed False
+FS GATE 195 sig (20, 20, (2, 9), (16, 9)) ok 1
+V524 195 sig (20, 20, (2, 9), (16, 9)) grid_known True confirmed False
+FS GATE 196 sig (20, 20, (2, 9), (16, 9)) ok 1
+V524 196 sig (20, 20, (2, 9), (16, 9)) grid_known True confirmed False
+FS GATE 197 sig (20, 20, (2, 9), (16, 9)) ok 1
+V524 197 sig (20, 20, (2, 9), (16, 9)) grid_known True confirmed False
+FS GATE 198 sig (20, 20, (2, 9), (16, 9)) ok 1
+V524 198 sig (20, 20, (2, 9), (16, 9)) grid_known True confirmed False
+FS GATE 199 sig (20, 20, (2, 9), (16, 9)) ok 1
+V524 199 sig (20, 20, (2, 9), (16, 9)) grid_known True confirmed False
+FS GATE 200 sig (20, 20, (2, 9), (16, 9)) ok 1
+V524 200 sig (20, 20, (2, 9), (16, 9)) grid_known True confirmed False
+FS GATE 201 sig (20, 20, (2, 9), (16, 9)) ok 1
+V524 201 sig (20, 20, (2, 9), (16, 9)) grid_known True confirmed False
+FS GATE 202 sig (20, 20, (2, 9), (16, 9)) ok 1
+V524 202 sig (20, 20, (2, 9), (16, 9)) grid_known True confirmed False
+FS GATE 203 sig (20, 20, (2, 9), (16, 9)) ok 1
+V524 203 sig (20, 20, (2, 9), (16, 9)) grid_known True confirmed False
+FS GATE 204 sig (20, 20, (2, 9), (16, 9)) ok 1
+V524 204 sig (20, 20, (2, 9), (16, 9)) grid_known True confirmed False
+FS GATE 205 sig (20, 20, (2, 9), (16, 9)) ok 1
+V524 205 sig (20, 20, (2, 9), (16, 9)) grid_known True confirmed False
+FS GATE 206 sig (20, 20, (2, 9), (16, 9)) ok 1
+V524 206 sig (20, 20, (2, 9), (16, 9)) grid_known True confirmed False
+FS GATE 207 sig (20, 20, (2, 9), (16, 9)) ok 1
+V524 207 sig (20, 20, (2, 9), (16, 9)) grid_known True confirmed False
+FS GATE 208 sig (20, 20, (2, 9), (16, 9)) ok 1
+V524 208 sig (20, 20, (2, 9), (16, 9)) grid_known True confirmed False
+FS GATE 209 sig (20, 20, (2, 9), (16, 9)) ok 1
+V524 209 sig (20, 20, (2, 9), (16, 9)) grid_known True confirmed False
+FS GATE 210 sig (20, 20, (2, 9), (16, 9)) ok 1
+V524 210 sig (20, 20, (2, 9), (16, 9)) grid_known True confirmed False
+FS GATE 211 sig (20, 20, (2, 9), (16, 9)) ok 1
+V524 211 sig (20, 20, (2, 9), (16, 9)) grid_known True confirmed False
+FS GATE 212 sig (20, 20, (2, 9), (16, 9)) ok 1
+V524 212 sig (20, 20, (2, 9), (16, 9)) grid_known True confirmed False
+FS GATE 213 sig (20, 20, (2, 9), (16, 9)) ok 1
+V524 213 sig (20, 20, (2, 9), (16, 9)) grid_known True confirmed False
+FS GATE 214 sig (20, 20, (2, 9), (16, 9)) ok 1
+V524 214 sig (20, 20, (2, 9), (16, 9)) grid_known True confirmed False
+FS GATE 215 sig (20, 20, (2, 9), (16, 9)) ok 1
+V524 215 sig (20, 20, (2, 9), (16, 9)) grid_known True confirmed False
+FS GATE 216 sig (20, 20, (2, 9), (16, 9)) ok 1
+V524 216 sig (20, 20, (2, 9), (16, 9)) grid_known True confirmed False
+FS GATE 217 sig (20, 20, (2, 9), (16, 9)) ok 1
+V524 217 sig (20, 20, (2, 9), (16, 9)) grid_known True confirmed False
+FS GATE 218 sig (20, 20, (2, 9), (16, 9)) ok 1
+V524 218 sig (20, 20, (2, 9), (16, 9)) grid_known True confirmed False
+FS GATE 219 sig (20, 20, (2, 9), (16, 9)) ok 1
+V524 219 sig (20, 20, (2, 9), (16, 9)) grid_known True confirmed False
+FS GATE 220 sig (20, 20, (2, 9), (16, 9)) ok 1
+V524 220 sig (20, 20, (2, 9), (16, 9)) grid_known True confirmed False
+FS GATE 221 sig (20, 20, (2, 9), (16, 9)) ok 1
+V524 221 sig (20, 20, (2, 9), (16, 9)) grid_known True confirmed False
+FS GATE 222 sig (20, 20, (2, 9), (16, 9)) ok 1
+V524 222 sig (20, 20, (2, 9), (16, 9)) grid_known True confirmed False
