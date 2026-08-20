@@ -25,7 +25,7 @@ successor session inherit it. The fields below are parsed; the prose is not.
     QUEUE_OWNER: research
     TARGET_MIN_PAYOUT: 10
     SHIP_SIT_MIN_K: 8
-    X3R0_SLOT_RULE: on_60pct_pm2pp_screen_vs_holder_switch_if_beats
+    X3R0_SLOT_RULE: superseded_2026-08-20_by_ship_bar_joint_amendment_no_residual_scope
     SLOT_STOP_LOSS: off
     SHIP_BAR: beat_live_holder_screen_ci_excl_50_AND_70_point_vs_sleipnirv2_full_pool
     STEALTH_UNTIL_DROP: yes
@@ -38,8 +38,14 @@ Sleipnir v2, x3r0 was okay with us going for the slot after that."** Supersedes 
 block below (kept for provenance). Operational form, builder s52 encoding (Magnus may veto
 either reading): **RELEASE = both of (1) BEAT THE SLOT — a head-vs-holder screen vs the LIVE
 holder's imported tree (freshest available import; the anchor's version is named on every
-number) whose CI EXCLUDES 50** — the plain-beat reading of "just have to beat"; the
-`X3R0_SLOT_RULE` 60±2 bar is SUPERSEDED for the release decision by this joint agreement —
+number), **at the established screen class (n≥900/arm, full 15-map pool)**, whose CI
+EXCLUDES 50** — the plain-beat reading of "just have to beat" (the powered-n clause is a
+third builder encoding choice, vetoable like the other two: without it a lucky small-n
+interval would satisfy the bar); the `X3R0_SLOT_RULE` 60±2 bar is **SUPERSEDED ENTIRELY —
+no residual scope**: it existed to govern reclaiming the slot from a teammate mid-campaign,
+and with the release jointly agreed there is no non-release slot-reclaim scenario left; the
+parsed field above says so, so a successor reading either surface alone gets the same
+answer —
 **and (2) ≥70 vs Sleipnir v2 — the full-pool powered fixture (n=5400 class), POINT ESTIMATE
 ≥ 70.0 with CI-lower above 69.28** (FLIPPOOL's lower bound; "stay above 70" needs the number
 to hold, not merely touch). STEALTH_UNTIL_DROP unchanged: no exposure until the release
