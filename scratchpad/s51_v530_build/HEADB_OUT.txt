@@ -1,0 +1,42 @@
+=== THE KILL_TARGET PANEL ===
+arm             n   wins%    <=r150    <=r180    <=r200    <=r250    <=r300  medkill  ourcore   tb
+parent        480   48.3%  41(0.085)  77(0.160) 110(0.229) 143(0.298) 162(0.338)      208      208    0
+flagoff       480   48.5%  42(0.087)  72(0.150) 101(0.210) 139(0.290) 168(0.350)      218      213    0
+nomouth       480   46.9%  69(0.144)  78(0.163)  88(0.183) 118(0.246) 134(0.279)      237      226    0
+ring          480   52.7%  30(0.062)  42(0.087)  47(0.098)  72(0.150) 100(0.208)      329      189    0
+v530          480   44.6%   0(0.000)  14(0.029)  26(0.054)  41(0.085)  75(0.156)      337      234    0
+
+flagoff    vs parent   wins      +0.21 pp (hw 6.32)  inside
+flagoff    vs parent   k<=200    -1.87 pp (hw 5.24)  inside
+flagoff    vs parent   k<=300    +1.25 pp (hw 6.01)  inside
+flagoff    vs parent   ourcore   +1.04 pp (hw 6.28)  inside
+flagoff    vs parent   medkill 218 vs 208   (kill-conditioned, diagnostic only -- carries the collider)
+
+nomouth    vs parent   wins      -1.46 pp (hw 6.32)  inside   [known-zero on this metric: +0.21 pp]
+nomouth    vs parent   k<=200    -4.58 pp (hw 5.12)  inside   [known-zero on this metric: -1.87 pp]
+nomouth    vs parent   k<=300    -5.83 pp (hw 5.84)  inside   [known-zero on this metric: +1.25 pp]
+nomouth    vs parent   ourcore   +3.75 pp (hw 6.30)  inside   [known-zero on this metric: +1.04 pp]
+nomouth    vs parent   medkill 237.0 vs 208   (kill-conditioned, diagnostic only -- carries the collider)
+
+ring       vs parent   wins      +4.38 pp (hw 6.33)  inside   [known-zero on this metric: +0.21 pp]
+ring       vs parent   k<=200   -13.12 pp (hw 4.68)  OUTSIDE   [known-zero on this metric: -1.87 pp]
+ring       vs parent   k<=300   -12.92 pp (hw 5.64)  OUTSIDE   [known-zero on this metric: +1.25 pp]
+ring       vs parent   ourcore   -3.96 pp (hw 6.23)  inside   [known-zero on this metric: +1.04 pp]
+ring       vs parent   medkill 328.0 vs 208   (kill-conditioned, diagnostic only -- carries the collider)
+
+v530       vs parent   wins      -3.75 pp (hw 6.31)  inside   [known-zero on this metric: +0.21 pp]
+v530       vs parent   k<=200   -17.50 pp (hw 4.41)  OUTSIDE   [known-zero on this metric: -1.87 pp]
+v530       vs parent   k<=300   -18.13 pp (hw 5.46)  OUTSIDE   [known-zero on this metric: +1.25 pp]
+v530       vs parent   ourcore   +5.42 pp (hw 6.31)  inside   [known-zero on this metric: +1.04 pp]
+v530       vs parent   medkill 337 vs 208   (kill-conditioned, diagnostic only -- carries the collider)
+
+=== PER MAP: wins/n  [k<=300]  {k<=200} ===
+map            parent                  flagoff                 nomouth                 ring                    v530                  
+auroraveil     17/60  [15] { 6}       17/60  [10] { 5}       26/60  [18] {12}       19/60  [ 2] { 0}        4/60  [ 1] { 1}     
+drakkarfjord   38/60  [25] {16}       36/60  [24] {13}       20/60  [ 9] { 0}       23/60  [ 5] { 0}       30/60  [ 4] { 0}     
+glacierkeep    11/60  [ 2] { 0}       14/60  [ 5] { 0}       15/60  [ 5] { 0}       12/60  [ 0] { 0}       14/60  [ 0] { 0}     
+icefloe         4/60  [ 0] { 0}        4/60  [ 0] { 0}       10/60  [ 5] { 5}       32/60  [12] { 0}       31/60  [12] { 0}     
+nordkap        39/60  [16] { 5}       42/60  [21] { 7}       34/60  [14] { 3}       43/60  [12] { 3}       44/60  [22] {11}     
+ragnarok       60/60  [54] {53}       60/60  [58] {53}       60/60  [60] {60}       60/60  [49] {42}       36/60  [20] {11}     
+royale         57/60  [48] {30}       57/60  [48] {23}       48/60  [17] { 8}       42/60  [13] { 0}       44/60  [14] { 3}     
+yulerune        6/60  [ 2] { 0}        3/60  [ 2] { 0}       12/60  [ 6] { 0}       22/60  [ 7] { 2}       11/60  [ 2] { 0}     

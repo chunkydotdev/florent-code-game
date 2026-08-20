@@ -1,0 +1,19 @@
+Running match: _v488beltbreak2 vs inst_nodoor
+  Map: glacierkeep.map26  Seed: 5303  Replay: replay.replay26  TLE: 10ms
+Completed turn 0
+Completed turn 100
+Completed turn 200
+Completed turn 300
+Completed turn 400
+Completed turn 500
+Completed turn 600
+Completed turn 700
+Replay written to replay.replay26
+
+  Winner: inst_nodoor  (Core destroyed, turn 724)
+
+               _v488beltbreak2         inst_nodoor  
+  Titanium       112 (0 mined)    151 (3070 mined)  
+  Units                      6                  10  
+  Buildings                 55                  99  
+

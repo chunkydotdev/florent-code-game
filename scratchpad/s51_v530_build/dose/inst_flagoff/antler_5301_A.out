@@ -1,0 +1,21 @@
+Running match: inst_flagoff vs _v488beltbreak2
+  Map: antler.map26  Seed: 5301  Replay: replay.replay26  TLE: 10ms
+Completed turn 0
+Completed turn 100
+Completed turn 200
+Completed turn 300
+Completed turn 400
+Completed turn 500
+Completed turn 600
+Completed turn 700
+Completed turn 800
+Completed turn 900
+Replay written to replay.replay26
+
+  Winner: inst_flagoff  (Harvesters (tiebreak), turn 1000)
+
+                   inst_flagoff     _v488beltbreak2  
+  Titanium     141 (7390 mined)    170 (7390 mined)  
+  Units                       9                  14  
+  Buildings                  22                  18  
+

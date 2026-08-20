@@ -1,0 +1,15 @@
+Running match: inst_flagoff vs _v488beltbreak2
+  Map: auroraveil.map26  Seed: 5302  Replay: replay.replay26  TLE: 10ms
+Completed turn 0
+Completed turn 100
+Completed turn 200
+Completed turn 300
+Replay written to replay.replay26
+
+  Winner: inst_flagoff  (Core destroyed, turn 311)
+
+                 inst_flagoff    _v488beltbreak2  
+  Titanium     18 (730 mined)        9 (0 mined)  
+  Units                     9                  2  
+  Buildings                27                 15  
+

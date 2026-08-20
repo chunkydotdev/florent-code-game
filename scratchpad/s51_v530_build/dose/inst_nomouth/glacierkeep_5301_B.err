@@ -1,0 +1,4 @@
+Update available: 2.3.6 -> 2.3.8. Run: pip install --upgrade fcode
+V530 CORNER rnd=15 seat=4 tile=16,25 held=1
+V530 CORNER rnd=60 seat=4 tile=16,28 held=2
+V530 CORNER rnd=64 seat=4 tile=13,28 held=2

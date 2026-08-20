@@ -1,0 +1,14 @@
+Running match: _v488beltbreak2 vs inst_flagoff
+  Map: glacierkeep.map26  Seed: 5303  Replay: replay.replay26  TLE: 10ms
+Completed turn 0
+Completed turn 100
+Completed turn 200
+Replay written to replay.replay26
+
+  Winner: inst_flagoff  (Core destroyed, turn 245)
+
+               _v488beltbreak2    inst_flagoff  
+  Titanium        12 (0 mined)    14 (0 mined)  
+  Units                      7               5  
+  Buildings                 32              31  
+

@@ -1,0 +1,6 @@
+arm             games  Marm  Mlink  Mharv  Mttl  CORNER  DOORKILL | sock_med harv_med chain_md |  tb
+inst_v530          48   117    453     22    61     132         5 |        7       13        4 |   0
+inst_nomouth       48     0      0      0     0     115         0 |       -1       -1       -1 |   0
+inst_nocorner      48   131    589     31    69       0         0 |        6       13        5 |   0
+inst_nodoor        48   117    467     19    65     127         0 |        7       13        4 |   0
+inst_flagoff       48     0      0      0     0       0         0 |       -1       -1       -1 |   0

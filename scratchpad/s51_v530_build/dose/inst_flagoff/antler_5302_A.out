@@ -1,0 +1,15 @@
+Running match: inst_flagoff vs _v488beltbreak2
+  Map: antler.map26  Seed: 5302  Replay: replay.replay26  TLE: 10ms
+Completed turn 0
+Completed turn 100
+Completed turn 200
+Completed turn 300
+Replay written to replay.replay26
+
+  Winner: inst_flagoff  (Core destroyed, turn 316)
+
+                  inst_flagoff    _v488beltbreak2  
+  Titanium     54 (3760 mined)    21 (1650 mined)  
+  Units                     14                  8  
+  Buildings                 34                 17  
+

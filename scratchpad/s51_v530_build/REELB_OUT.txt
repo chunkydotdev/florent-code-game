@@ -1,0 +1,13 @@
+=== FAILURE REEL (v530): earliest our-core-death per map ===
+map            turn   seed seat   replay
+nordkap        105    21   B      scratchpad/s51_v530_build/headB/rep/v530_nordkap_s21_B.replay26
+auroraveil     125    6    A      scratchpad/s51_v530_build/headB/rep/v530_auroraveil_s6_A.replay26
+ragnarok       145    1    A      scratchpad/s51_v530_build/headB/rep/v530_ragnarok_s1_A.replay26
+drakkarfjord   160    4    A      scratchpad/s51_v530_build/headB/rep/v530_drakkarfjord_s4_A.replay26
+yulerune       168    7    B      scratchpad/s51_v530_build/headB/rep/v530_yulerune_s7_B.replay26
+
+=== EXTENSION (labelled, NOT part of the reel): 2 latest-kill wins ===
+glacierkeep    946    9    A      scratchpad/s51_v530_build/headB/rep/v530_glacierkeep_s9_A.replay26
+royale         923    5    B      scratchpad/s51_v530_build/headB/rep/v530_royale_s5_B.replay26
+
+deaths=234 of n=480 (48.8%)  ·  r1000 games=41

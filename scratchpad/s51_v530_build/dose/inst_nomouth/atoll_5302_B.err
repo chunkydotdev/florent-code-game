@@ -1,0 +1,9 @@
+Update available: 2.3.6 -> 2.3.8. Run: pip install --upgrade fcode
+V530 CORNER rnd=7 seat=2 tile=16,1 held=2
+V530 CORNER rnd=10 seat=1 tile=13,4 held=3
+V530 CORNER rnd=46 seat=4 tile=16,4 held=3
+V530 DOORKILL gunner rnd=393 at=11,0
+V530 DOORKILL gunner rnd=394 at=11,0
+V530 DOORKILL gunner rnd=395 at=11,0
+V530 DOORKILL gunner rnd=396 at=11,0
+V530 DOORKILL gunner rnd=397 at=11,0

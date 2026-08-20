@@ -1,0 +1,56 @@
+=== THE KILL_TARGET PANEL ===
+arm             n   wins%    <=r150    <=r180    <=r200    <=r250    <=r300  medkill  ourcore   tb
+parent        480   76.5% 129(0.269) 164(0.342) 186(0.388) 229(0.477) 258(0.537)      190      103    0
+flagoff       480   75.6% 116(0.242) 159(0.331) 185(0.385) 224(0.467) 254(0.529)      185      111    0
+nocorner      480   68.3%  41(0.085)  67(0.140)  89(0.185) 137(0.285) 186(0.388)      272      130    0
+nodoor        480   63.5%  43(0.090)  66(0.138)  91(0.190) 137(0.285) 166(0.346)      254      141    0
+nomouth       480   68.1% 114(0.237) 140(0.292) 163(0.340) 198(0.412) 224(0.467)      193      143    0
+ring          480   67.7%  39(0.081)  71(0.148)  96(0.200) 156(0.325) 195(0.406)      245      118    0
+v530          480   66.7%  46(0.096)  66(0.138)  90(0.188) 138(0.287) 172(0.358)      264      126    0
+
+flagoff    vs parent   wins      -0.83 pp (hw 5.40)  inside
+flagoff    vs parent   k<=200    -0.21 pp (hw 6.16)  inside
+flagoff    vs parent   k<=300    -0.83 pp (hw 6.31)  inside
+flagoff    vs parent   ourcore   +1.67 pp (hw 5.27)  inside
+flagoff    vs parent   medkill 185 vs 190   (kill-conditioned, diagnostic only -- carries the collider)
+
+nocorner   vs parent   wins      -8.12 pp (hw 5.66)  OUTSIDE   [known-zero on this metric: -0.83 pp]
+nocorner   vs parent   k<=200   -20.21 pp (hw 5.72)  OUTSIDE   [known-zero on this metric: -0.21 pp]
+nocorner   vs parent   k<=300   -15.00 pp (hw 6.31)  OUTSIDE   [known-zero on this metric: -0.83 pp]
+nocorner   vs parent   ourcore   +5.62 pp (hw 5.42)  OUTSIDE   [known-zero on this metric: +1.67 pp]
+nocorner   vs parent   medkill 272 vs 190   (kill-conditioned, diagnostic only -- carries the collider)
+
+nodoor     vs parent   wins     -12.92 pp (hw 5.80)  OUTSIDE   [known-zero on this metric: -0.83 pp]
+nodoor     vs parent   k<=200   -19.79 pp (hw 5.73)  OUTSIDE   [known-zero on this metric: -0.21 pp]
+nodoor     vs parent   k<=300   -19.17 pp (hw 6.28)  OUTSIDE   [known-zero on this metric: -0.83 pp]
+nodoor     vs parent   ourcore   +7.92 pp (hw 5.51)  OUTSIDE   [known-zero on this metric: +1.67 pp]
+nodoor     vs parent   medkill 254 vs 190   (kill-conditioned, diagnostic only -- carries the collider)
+
+nomouth    vs parent   wins      -8.33 pp (hw 5.66)  OUTSIDE   [known-zero on this metric: -0.83 pp]
+nomouth    vs parent   k<=200    -4.79 pp (hw 6.09)  inside   [known-zero on this metric: -0.21 pp]
+nomouth    vs parent   k<=300    -7.08 pp (hw 6.33)  OUTSIDE   [known-zero on this metric: -0.83 pp]
+nomouth    vs parent   ourcore   +8.33 pp (hw 5.52)  OUTSIDE   [known-zero on this metric: +1.67 pp]
+nomouth    vs parent   medkill 193 vs 190   (kill-conditioned, diagnostic only -- carries the collider)
+
+ring       vs parent   wins      -8.75 pp (hw 5.68)  OUTSIDE   [known-zero on this metric: -0.83 pp]
+ring       vs parent   k<=200   -18.75 pp (hw 5.76)  OUTSIDE   [known-zero on this metric: -0.21 pp]
+ring       vs parent   k<=300   -13.12 pp (hw 6.32)  OUTSIDE   [known-zero on this metric: -0.83 pp]
+ring       vs parent   ourcore   +3.12 pp (hw 5.33)  inside   [known-zero on this metric: +1.67 pp]
+ring       vs parent   medkill 245 vs 190   (kill-conditioned, diagnostic only -- carries the collider)
+
+v530       vs parent   wins      -9.79 pp (hw 5.71)  OUTSIDE   [known-zero on this metric: -0.83 pp]
+v530       vs parent   k<=200   -20.00 pp (hw 5.73)  OUTSIDE   [known-zero on this metric: -0.21 pp]
+v530       vs parent   k<=300   -17.92 pp (hw 6.29)  OUTSIDE   [known-zero on this metric: -0.83 pp]
+v530       vs parent   ourcore   +4.79 pp (hw 5.39)  inside   [known-zero on this metric: +1.67 pp]
+v530       vs parent   medkill 263.5 vs 190   (kill-conditioned, diagnostic only -- carries the collider)
+
+=== PER MAP: wins/n  [k<=300]  {k<=200} ===
+map            parent                  flagoff                 nocorner                nodoor                  nomouth                 ring                    v530                  
+antler         45/60  [31] {17}       41/60  [33] {24}       44/60  [29] {11}       38/60  [28] {19}       37/60  [28] {20}       39/60  [31] {23}       37/60  [21] {12}     
+atoll          39/60  [16] {10}       32/60  [18] {12}       35/60  [23] {14}       19/60  [12] { 5}       35/60  [22] {17}       24/60  [12] { 5}       23/60  [ 9] { 5}     
+drakkarfjord   57/60  [41] {39}       55/60  [42] {38}       38/60  [14] { 1}       44/60  [15] { 1}       60/60  [53] {51}       40/60  [23] { 6}       46/60  [10] { 2}     
+fjordgate      37/60  [29] {15}       36/60  [23] {13}       41/60  [29] {16}       44/60  [31] {18}       29/60  [15] { 6}       37/60  [17] { 7}       42/60  [32] {16}     
+glacierkeep    53/60  [38] {24}       58/60  [39] {28}       51/60  [25] { 6}       49/60  [21] { 9}       54/60  [31] {18}       52/60  [32] {15}       49/60  [25] { 8}     
+midgard        38/60  [21] {10}       39/60  [25] {11}       27/60  [15] { 4}       22/60  [ 8] { 5}       19/60  [ 5] { 3}       29/60  [18] { 6}       34/60  [19] { 6}     
+nordkap        40/60  [29] {22}       43/60  [24] {17}       43/60  [30] {19}       41/60  [22] {11}       44/60  [28] {13}       52/60  [37] {20}       42/60  [27] {15}     
+yulerune       58/60  [53] {49}       59/60  [50] {42}       49/60  [21] {18}       48/60  [29] {23}       49/60  [42] {35}       52/60  [25] {14}       47/60  [29] {26}     

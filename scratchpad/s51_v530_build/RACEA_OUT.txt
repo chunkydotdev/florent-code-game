@@ -1,0 +1,42 @@
+arm           n |   head1   head2  esealF  margin wonrace beltfail |  coll100 zero100 | oconv30 oconv60 oseal30  ebar30
+flagoff     480 |    14.3    11.4    27.3    13.2  0.821    0.027 |    379.9   0.031 |    1.85    2.12    0.01    1.69
+nocorner    480 |     4.9     4.9    27.9    22.9  0.998    0.000 |    288.6   0.248 |    2.54    2.49    0.03    1.51
+nodoor      480 |     5.2     5.2    28.9    23.6  0.983    0.000 |    238.7   0.279 |    2.38    2.49    0.02    1.39
+nomouth     480 |    14.0    11.3    29.2    15.2  0.819    0.019 |    346.0   0.027 |    1.78    2.15    0.01    1.49
+parent      480 |    13.2    11.5    27.5    14.3  0.821    0.025 |    379.2   0.033 |    1.85    2.15    0.01    1.59
+ring        480 |     2.0     2.0    40.0    38.0  1.000    0.000 |    252.5   0.194 |    5.22    5.01    0.01    1.05
+v530        480 |     5.2     5.2    29.2    24.0  0.990    0.000 |    248.8   0.281 |    2.37    2.52    0.01    1.45
+
+=== OPENING COST PANEL (the price side of P1 / P1b / P2) ===
+⛔ spawn_n / spawn_n30 are the SELF-SPAWN-DENIAL column: our own 12
+   ring tiles are also our 12 spawn tiles, and P2 barriers 3 of the
+   4 corners while P1/P1b pave sockets.  A fall here is a real cost.
+arm           n | spawn_n  spwn30   spawn1 |   harv1   conv1 harv_n30 conv_n30 | ti_bnk30 turrets
+flagoff     480 |    6.03    4.91     0.00 |    5.72    6.72     2.40     8.77 |     47.7    7.94
+nocorner    480 |    6.37    5.08     0.00 |   53.80    4.95     1.65     9.90 |     44.2    8.88
+nodoor      480 |    6.31    5.11     0.00 |   46.63    5.24     1.47     8.60 |     44.4    7.42
+nomouth     480 |    5.92    4.88     0.00 |    5.90    6.99     2.10     7.70 |     55.8    7.23
+parent      480 |    5.93    4.90     0.00 |    5.79    6.79     2.40     8.73 |     47.5    7.65
+ring        480 |    6.67    5.06     0.00 |   42.23    2.00     1.39    11.59 |     43.5    8.14
+v530        480 |    6.34    5.09     0.00 |   42.74    5.24     1.46     8.82 |     44.4    7.89
+
+=== ECO CONNECTIVITY (harvesters WITH a route home) ===
+arm           n |  hlive30  hwire30 | hlive100 hwire100 | convhome30 convhome100
+flagoff     480 |     2.34     1.76 |     2.42     1.13 |      1.56      1.49
+nocorner    480 |     1.63     1.44 |     1.86     0.92 |      2.16      1.89
+nodoor      480 |     1.45     1.16 |     1.66     0.75 |      1.94      1.83
+nomouth     480 |     2.03     1.71 |     2.29     1.05 |      1.43      1.52
+parent      480 |     2.32     1.78 |     2.38     1.09 |      1.59      1.55
+ring        480 |     1.37     1.21 |     1.69     0.90 |      5.00      4.13
+v530        480 |     1.46     1.15 |     1.74     0.82 |      2.03      1.88
+
+PER MAP head1 mean (games where the belt EVER reached a socket) | beltfail share
+map            flagoff           nocorner          nodoor            nomouth           parent            ring              v530            
+antler            3.0  0.00       3.0  0.00       3.7  0.00       3.6  0.00       3.0  0.00       2.0  0.00       3.7  0.00  
+atoll             3.0  0.00       2.0  0.00       2.0  0.00       3.0  0.00       3.0  0.00       2.0  0.00       2.0  0.00  
+drakkarfjord     23.1  0.00       9.0  0.00       9.0  0.00      23.3  0.00      23.2  0.00       2.0  0.00       9.0  0.00  
+fjordgate         4.9  0.03       3.1  0.00       3.4  0.00       5.2  0.00       5.2  0.00       2.0  0.00       3.2  0.00  
+glacierkeep      58.4  0.13      14.5  0.00      15.5  0.00      50.2  0.12      49.4  0.15       2.0  0.00      15.5  0.00  
+midgard           4.6  0.00       3.0  0.00       3.2  0.00       4.6  0.00       4.5  0.00       2.0  0.00       3.4  0.00  
+nordkap           9.2  0.05       3.0  0.00       3.2  0.00      12.6  0.03       9.3  0.05       2.0  0.00       3.1  0.00  
+yulerune         13.5  0.00       2.0  0.00       2.0  0.00      13.9  0.00      13.5  0.00       2.0  0.00       2.0  0.00  

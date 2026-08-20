@@ -1,0 +1,78 @@
+[nordkap] HEALSEAT PHASE_A_bare_seat      at=9,5 standing_on=bare adj_core=True heal_call=RAISED:GameError
+[nordkap] HEALSEAT PHASE_A_bare_seat      at=9,17 standing_on=bare adj_core=True heal_call=RAISED:GameError
+[nordkap] HEALSEAT PHASE_A_bare_seat      at=10,5 standing_on=bare adj_core=True heal_call=RAISED:GameError
+[nordkap] HEALSEAT PHASE_A_bare_seat      at=10,17 standing_on=bare adj_core=True heal_call=RAISED:GameError
+[nordkap] HEALSEAT PHASE_A_bare_seat      at=8,7 standing_on=bare adj_core=True heal_call=RAISED:GameError
+[nordkap] HEALSEAT PHASE_A_bare_seat      at=8,19 standing_on=bare adj_core=True heal_call=RAISED:GameError
+[nordkap] HEALSEAT MOVEROW at=9,4 seat=9,5  NORTH[empty]can_move=True passable=True | EAST[empty]can_move=False passable=False | SOUTH[CONVEYOR]can_move=False passable=False | WEST[empty]can_move=True passable=True
+[nordkap] HEALSEAT PHASE_B_conveyor_seat CANNOT STEP ON (can_move=False) -- a paved seat WOULD deny the healer
+[nordkap] HEALSEAT MOVEROW at=9,16 seat=9,17  NORTH[empty]can_move=True passable=True | EAST[empty]can_move=False passable=False | SOUTH[CONVEYOR]can_move=False passable=False | WEST[empty]can_move=True passable=True
+[nordkap] HEALSEAT PHASE_B_conveyor_seat CANNOT STEP ON (can_move=False) -- a paved seat WOULD deny the healer
+[nordkap] HEALSEAT PHASE_A_bare_seat      at=9,5 standing_on=CONVEYOR adj_core=True heal_call=RAISED:GameError
+[nordkap] HEALSEAT PHASE_A_bare_seat      at=9,17 standing_on=CONVEYOR adj_core=True heal_call=RAISED:GameError
+[nordkap] HEALSEAT MOVEROW at=10,4 seat=10,5  NORTH[empty]can_move=True passable=True | EAST[empty]can_move=True passable=True | SOUTH[CONVEYOR]can_move=False passable=False | WEST[empty]can_move=False passable=False
+[nordkap] HEALSEAT PHASE_B_conveyor_seat CANNOT STEP ON (can_move=False) -- a paved seat WOULD deny the healer
+[nordkap] HEALSEAT MOVEROW at=10,16 seat=10,17  NORTH[empty]can_move=True passable=True | EAST[empty]can_move=True passable=True | SOUTH[CONVEYOR]can_move=False passable=False | WEST[empty]can_move=False passable=False
+[nordkap] HEALSEAT PHASE_B_conveyor_seat CANNOT STEP ON (can_move=False) -- a paved seat WOULD deny the healer
+[nordkap] HEALSEAT PHASE_A_bare_seat      at=10,5 standing_on=CONVEYOR adj_core=True heal_call=RAISED:GameError
+[nordkap] HEALSEAT PHASE_A_bare_seat      at=10,17 standing_on=CONVEYOR adj_core=True heal_call=RAISED:GameError
+[nordkap] HEALSEAT MOVEROW at=8,6 seat=8,7  NORTH[empty]can_move=False passable=False | EAST[CORE]can_move=False passable=False | SOUTH[CONVEYOR]can_move=False passable=False | WEST[empty]can_move=True passable=True
+[nordkap] HEALSEAT PHASE_B_conveyor_seat CANNOT STEP ON (can_move=False) -- a paved seat WOULD deny the healer
+[nordkap] HEALSEAT MOVEROW at=8,18 seat=8,19  NORTH[empty]can_move=False passable=False | EAST[CORE]can_move=False passable=False | SOUTH[CONVEYOR]can_move=False passable=False | WEST[empty]can_move=True passable=True
+[nordkap] HEALSEAT PHASE_B_conveyor_seat CANNOT STEP ON (can_move=False) -- a paved seat WOULD deny the healer
+[nordkap] HEALSEAT PHASE_A_bare_seat      at=8,7 standing_on=CONVEYOR adj_core=True heal_call=RAISED:GameError
+[nordkap] HEALSEAT PHASE_A_bare_seat      at=8,19 standing_on=CONVEYOR adj_core=True heal_call=RAISED:GameError
+[nordkap] HEALSEAT PHASE_A_bare_seat      at=8,7 standing_on=CONVEYOR adj_core=True heal_call=RAISED:GameError
+[nordkap] HEALSEAT PHASE_A_bare_seat      at=8,19 standing_on=CONVEYOR adj_core=True heal_call=RAISED:GameError
+[atoll] HEALSEAT PHASE_A_bare_seat      at=2,13 standing_on=bare adj_core=True heal_call=RAISED:GameError
+[atoll] HEALSEAT PHASE_A_bare_seat      at=14,1 standing_on=bare adj_core=True heal_call=RAISED:GameError
+[atoll] HEALSEAT PHASE_A_bare_seat      at=3,13 standing_on=bare adj_core=True heal_call=RAISED:GameError
+[atoll] HEALSEAT PHASE_A_bare_seat      at=15,1 standing_on=bare adj_core=True heal_call=RAISED:GameError
+[atoll] HEALSEAT PHASE_A_bare_seat      at=1,15 standing_on=bare adj_core=True heal_call=RAISED:GameError
+[atoll] HEALSEAT PHASE_A_bare_seat      at=13,3 standing_on=bare adj_core=True heal_call=RAISED:GameError
+[atoll] HEALSEAT MOVEROW at=2,12 seat=2,13  NORTH[empty]can_move=True passable=True | EAST[empty]can_move=False passable=False | SOUTH[CONVEYOR]can_move=False passable=False | WEST[empty]can_move=True passable=True
+[atoll] HEALSEAT PHASE_B_conveyor_seat CANNOT STEP ON (can_move=False) -- a paved seat WOULD deny the healer
+[atoll] HEALSEAT MOVEROW at=14,0 seat=14,1  NORTH[oob]can_move=False passable=False | EAST[empty]can_move=False passable=False | SOUTH[CONVEYOR]can_move=False passable=False | WEST[empty]can_move=True passable=True
+[atoll] HEALSEAT PHASE_B_conveyor_seat CANNOT STEP ON (can_move=False) -- a paved seat WOULD deny the healer
+[atoll] HEALSEAT PHASE_A_bare_seat      at=2,13 standing_on=CONVEYOR adj_core=True heal_call=RAISED:GameError
+[atoll] HEALSEAT PHASE_A_bare_seat      at=14,1 standing_on=CONVEYOR adj_core=True heal_call=RAISED:GameError
+[atoll] HEALSEAT MOVEROW at=3,12 seat=3,13  NORTH[empty]can_move=True passable=True | EAST[empty]can_move=True passable=True | SOUTH[CONVEYOR]can_move=False passable=False | WEST[empty]can_move=False passable=False
+[atoll] HEALSEAT PHASE_B_conveyor_seat CANNOT STEP ON (can_move=False) -- a paved seat WOULD deny the healer
+[atoll] HEALSEAT MOVEROW at=15,0 seat=15,1  NORTH[oob]can_move=False passable=False | EAST[empty]can_move=True passable=True | SOUTH[CONVEYOR]can_move=False passable=False | WEST[empty]can_move=False passable=False
+[atoll] HEALSEAT PHASE_B_conveyor_seat CANNOT STEP ON (can_move=False) -- a paved seat WOULD deny the healer
+[atoll] HEALSEAT PHASE_A_bare_seat      at=3,13 standing_on=CONVEYOR adj_core=True heal_call=RAISED:GameError
+[atoll] HEALSEAT PHASE_A_bare_seat      at=15,1 standing_on=CONVEYOR adj_core=True heal_call=RAISED:GameError
+[atoll] HEALSEAT MOVEROW at=1,14 seat=1,15  NORTH[empty]can_move=False passable=False | EAST[CORE]can_move=False passable=False | SOUTH[CONVEYOR]can_move=False passable=False | WEST[empty]can_move=True passable=True
+[atoll] HEALSEAT PHASE_B_conveyor_seat CANNOT STEP ON (can_move=False) -- a paved seat WOULD deny the healer
+[atoll] HEALSEAT MOVEROW at=13,2 seat=13,3  NORTH[empty]can_move=False passable=False | EAST[CORE]can_move=False passable=False | SOUTH[CONVEYOR]can_move=False passable=False | WEST[empty]can_move=True passable=True
+[atoll] HEALSEAT PHASE_B_conveyor_seat CANNOT STEP ON (can_move=False) -- a paved seat WOULD deny the healer
+[atoll] HEALSEAT PHASE_A_bare_seat      at=1,15 standing_on=CONVEYOR adj_core=True heal_call=RAISED:GameError
+[atoll] HEALSEAT PHASE_A_bare_seat      at=13,3 standing_on=CONVEYOR adj_core=True heal_call=RAISED:GameError
+[atoll] HEALSEAT PHASE_A_bare_seat      at=1,15 standing_on=CONVEYOR adj_core=True heal_call=RAISED:GameError
+[atoll] HEALSEAT PHASE_A_bare_seat      at=13,3 standing_on=CONVEYOR adj_core=True heal_call=RAISED:GameError
+[drakkarfjord] HEALSEAT PHASE_A_bare_seat      at=2,23 standing_on=bare adj_core=True heal_call=RAISED:GameError
+[drakkarfjord] HEALSEAT PHASE_A_bare_seat      at=26,3 standing_on=bare adj_core=True heal_call=RAISED:GameError
+[drakkarfjord] HEALSEAT PHASE_A_bare_seat      at=3,23 standing_on=bare adj_core=True heal_call=RAISED:GameError
+[drakkarfjord] HEALSEAT PHASE_A_bare_seat      at=27,3 standing_on=bare adj_core=True heal_call=RAISED:GameError
+[drakkarfjord] HEALSEAT PHASE_A_bare_seat      at=1,25 standing_on=bare adj_core=True heal_call=RAISED:GameError
+[drakkarfjord] HEALSEAT PHASE_A_bare_seat      at=25,5 standing_on=bare adj_core=True heal_call=RAISED:GameError
+[drakkarfjord] HEALSEAT MOVEROW at=2,22 seat=2,23  NORTH[empty]can_move=True passable=True | EAST[empty]can_move=False passable=False | SOUTH[CONVEYOR]can_move=False passable=False | WEST[empty]can_move=True passable=True
+[drakkarfjord] HEALSEAT PHASE_B_conveyor_seat CANNOT STEP ON (can_move=False) -- a paved seat WOULD deny the healer
+[drakkarfjord] HEALSEAT MOVEROW at=26,2 seat=26,3  NORTH[empty]can_move=True passable=True | EAST[empty]can_move=False passable=False | SOUTH[CONVEYOR]can_move=False passable=False | WEST[empty]can_move=True passable=True
+[drakkarfjord] HEALSEAT PHASE_B_conveyor_seat CANNOT STEP ON (can_move=False) -- a paved seat WOULD deny the healer
+[drakkarfjord] HEALSEAT PHASE_A_bare_seat      at=2,23 standing_on=CONVEYOR adj_core=True heal_call=RAISED:GameError
+[drakkarfjord] HEALSEAT PHASE_A_bare_seat      at=26,3 standing_on=CONVEYOR adj_core=True heal_call=RAISED:GameError
+[drakkarfjord] HEALSEAT MOVEROW at=3,22 seat=3,23  NORTH[empty]can_move=True passable=True | EAST[empty]can_move=True passable=True | SOUTH[CONVEYOR]can_move=False passable=False | WEST[empty]can_move=False passable=False
+[drakkarfjord] HEALSEAT PHASE_B_conveyor_seat CANNOT STEP ON (can_move=False) -- a paved seat WOULD deny the healer
+[drakkarfjord] HEALSEAT MOVEROW at=27,2 seat=27,3  NORTH[empty]can_move=True passable=True | EAST[empty]can_move=True passable=True | SOUTH[CONVEYOR]can_move=False passable=False | WEST[empty]can_move=False passable=False
+[drakkarfjord] HEALSEAT PHASE_B_conveyor_seat CANNOT STEP ON (can_move=False) -- a paved seat WOULD deny the healer
+[drakkarfjord] HEALSEAT PHASE_A_bare_seat      at=3,23 standing_on=CONVEYOR adj_core=True heal_call=RAISED:GameError
+[drakkarfjord] HEALSEAT PHASE_A_bare_seat      at=27,3 standing_on=CONVEYOR adj_core=True heal_call=RAISED:GameError
+[drakkarfjord] HEALSEAT MOVEROW at=1,24 seat=1,25  NORTH[empty]can_move=False passable=False | EAST[CORE]can_move=False passable=False | SOUTH[CONVEYOR]can_move=False passable=False | WEST[empty]can_move=True passable=True
+[drakkarfjord] HEALSEAT PHASE_B_conveyor_seat CANNOT STEP ON (can_move=False) -- a paved seat WOULD deny the healer
+[drakkarfjord] HEALSEAT MOVEROW at=25,4 seat=25,5  NORTH[empty]can_move=False passable=False | EAST[CORE]can_move=False passable=False | SOUTH[CONVEYOR]can_move=False passable=False | WEST[empty]can_move=True passable=True
+[drakkarfjord] HEALSEAT PHASE_B_conveyor_seat CANNOT STEP ON (can_move=False) -- a paved seat WOULD deny the healer
+[drakkarfjord] HEALSEAT PHASE_A_bare_seat      at=1,25 standing_on=CONVEYOR adj_core=True heal_call=RAISED:GameError
+[drakkarfjord] HEALSEAT PHASE_A_bare_seat      at=25,5 standing_on=CONVEYOR adj_core=True heal_call=RAISED:GameError
+[drakkarfjord] HEALSEAT PHASE_A_bare_seat      at=1,25 standing_on=CONVEYOR adj_core=True heal_call=RAISED:GameError
+[drakkarfjord] HEALSEAT PHASE_A_bare_seat      at=25,5 standing_on=CONVEYOR adj_core=True heal_call=RAISED:GameError

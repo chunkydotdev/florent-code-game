@@ -1,0 +1,8 @@
+arm         games unread |  doorN   dead life_med  life_mn  <=6rnd |   farN   dead life_med  life_mn  <=6rnd
+flagoff       480      0 |      7      0       -1     -1.0       0 |    120      2     39.0     39.0       1
+nocorner      480      0 |     19      3        4      5.3       2 |    130      0       -1     -1.0       0
+nodoor        480      0 |     24      6      4.5     27.5       4 |    134      0       -1     -1.0       0
+nomouth       480      0 |     14      1        2      2.0       1 |     99      5        4     67.2       3
+parent        480      0 |      5      3        2      5.0       2 |     76      0       -1     -1.0       0
+ring          480      0 |     20      1        5      5.0       1 |    169      1       25     25.0       0
+v530          480      0 |     18      3        6      8.3       2 |    105      5        7     19.4       2

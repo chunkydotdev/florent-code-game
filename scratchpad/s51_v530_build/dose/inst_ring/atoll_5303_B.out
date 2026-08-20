@@ -1,0 +1,15 @@
+Running match: _v488beltbreak2 vs inst_ring
+  Map: atoll.map26  Seed: 5303  Replay: replay.replay26  TLE: 10ms
+Completed turn 0
+Completed turn 100
+Completed turn 200
+Completed turn 300
+Replay written to replay.replay26
+
+  Winner: inst_ring  (Core destroyed, turn 329)
+
+                _v488beltbreak2           inst_ring  
+  Titanium     122 (1210 mined)    271 (2910 mined)  
+  Units                       4                  14  
+  Buildings                  19                  29  
+

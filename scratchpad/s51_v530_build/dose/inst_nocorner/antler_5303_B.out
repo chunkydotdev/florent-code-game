@@ -1,0 +1,16 @@
+Running match: _v488beltbreak2 vs inst_nocorner
+  Map: antler.map26  Seed: 5303  Replay: replay.replay26  TLE: 10ms
+Completed turn 0
+Completed turn 100
+Completed turn 200
+Completed turn 300
+Completed turn 400
+Replay written to replay.replay26
+
+  Winner: inst_nocorner  (Core destroyed, turn 434)
+
+               _v488beltbreak2       inst_nocorner  
+  Titanium     54 (1070 mined)    107 (2570 mined)  
+  Units                      6                  13  
+  Buildings                 19                  30  
+

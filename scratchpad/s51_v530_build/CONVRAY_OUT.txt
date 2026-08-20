@@ -1,0 +1,102 @@
+CONVRAY ABORT cannot build far target
+CONVRAY ABORT cannot build far target
+CONVRAY PHASE0_clear_line        stand=2,11 far=4,11 d1=empty can_fire_from=True
+CONVRAY PHASE1_conveyor_in_line  stand=2,11 far=4,11 d1=CONVEYOR can_fire_from=False
+CONVRAY PHASE0_clear_line        stand=3,12 far=5,12 d1=empty can_fire_from=True
+CONVRAY PHASE0_clear_line        stand=0,10 far=2,10 d1=empty can_fire_from=True
+CONVRAY ABORT cannot build mid conveyor
+CONVRAY ABORT cannot build far target
+CONVRAY ABORT cannot build mid barrier
+CONVRAY ABORT cannot build mid conveyor
+CONVRAY ABORT cannot build far target
+CONVRAY ABORT cannot build far target
+CONVRAY ABORT cannot build far target
+CONVRAY PHASE0_clear_line        stand=0,13 far=2,13 d1=empty can_fire_from=True
+CONVRAY PHASE1_conveyor_in_line  stand=0,13 far=2,13 d1=CONVEYOR can_fire_from=False
+CONVRAY PHASE2_barrier_in_line   stand=0,13 far=2,13 d1=BARRIER can_fire_from=False
+CONVRAY DONE
+CONVRAY ABORT cannot build far target
+CONVRAY PHASE0_clear_line        stand=10,0 far=12,0 d1=empty can_fire_from=True
+CONVRAY PHASE1_conveyor_in_line  stand=10,0 far=12,0 d1=CONVEYOR can_fire_from=False
+CONVRAY PHASE2_barrier_in_line   stand=10,0 far=12,0 d1=BARRIER can_fire_from=False
+CONVRAY DONE
+CONVRAY ABORT cannot build far target
+CONVRAY PHASE0_clear_line        stand=9,4 far=11,4 d1=empty can_fire_from=True
+CONVRAY PHASE1_conveyor_in_line  stand=9,4 far=11,4 d1=CONVEYOR can_fire_from=False
+CONVRAY PHASE2_barrier_in_line   stand=9,4 far=11,4 d1=BARRIER can_fire_from=False
+CONVRAY DONE
+CONVRAY ABORT cannot build far target
+CONVRAY PHASE0_clear_line        stand=8,3 far=10,3 d1=empty can_fire_from=True
+CONVRAY PHASE1_conveyor_in_line  stand=8,3 far=10,3 d1=CONVEYOR can_fire_from=False
+CONVRAY PHASE2_barrier_in_line   stand=8,3 far=10,3 d1=BARRIER can_fire_from=False
+CONVRAY DONE
+CONVRAY ABORT cannot build far target
+CONVRAY ABORT cannot build far target
+CONVRAY PHASE0_clear_line        stand=6,2 far=8,2 d1=empty can_fire_from=True
+CONVRAY PHASE1_conveyor_in_line  stand=6,2 far=8,2 d1=CONVEYOR can_fire_from=False
+CONVRAY PHASE2_barrier_in_line   stand=6,2 far=8,2 d1=BARRIER can_fire_from=False
+CONVRAY DONE
+CONVRAY ABORT cannot build far target
+CONVRAY PHASE0_clear_line        stand=6,0 far=8,0 d1=empty can_fire_from=True
+CONVRAY PHASE1_conveyor_in_line  stand=6,0 far=8,0 d1=CONVEYOR can_fire_from=False
+CONVRAY ABORT cannot build mid barrier
+CONVRAY PHASE0_clear_line        stand=11,5 far=13,5 d1=empty can_fire_from=True
+CONVRAY PHASE1_conveyor_in_line  stand=11,5 far=13,5 d1=CONVEYOR can_fire_from=False
+CONVRAY PHASE2_barrier_in_line   stand=11,5 far=13,5 d1=BARRIER can_fire_from=False
+CONVRAY DONE
+CONVRAY ABORT cannot build far target
+CONVRAY ABORT cannot build far target
+CONVRAY PHASE0_clear_line        stand=9,3 far=11,3 d1=empty can_fire_from=True
+CONVRAY PHASE0_clear_line        stand=9,15 far=11,15 d1=empty can_fire_from=True
+CONVRAY ABORT cannot back up
+CONVRAY PHASE1_conveyor_in_line  stand=9,3 far=11,3 d1=CONVEYOR can_fire_from=False
+CONVRAY PHASE1_conveyor_in_line  stand=9,15 far=11,15 d1=CONVEYOR can_fire_from=False
+CONVRAY PHASE0_clear_line        stand=10,4 far=12,4 d1=empty can_fire_from=True
+CONVRAY PHASE0_clear_line        stand=10,16 far=12,16 d1=empty can_fire_from=True
+CONVRAY PHASE0_clear_line        stand=7,2 far=9,2 d1=empty can_fire_from=True
+CONVRAY ABORT cannot build mid conveyor
+CONVRAY ABORT cannot build mid conveyor
+CONVRAY ABORT cannot build far target
+CONVRAY ABORT cannot build mid barrier
+CONVRAY ABORT cannot build mid barrier
+CONVRAY ABORT cannot build mid conveyor
+CONVRAY ABORT cannot build far target
+CONVRAY ABORT cannot build far target
+CONVRAY ABORT cannot build far target
+CONVRAY PHASE0_clear_line        stand=7,5 far=9,5 d1=empty can_fire_from=True
+CONVRAY PHASE1_conveyor_in_line  stand=7,5 far=9,5 d1=CONVEYOR can_fire_from=False
+CONVRAY PHASE0_clear_line        stand=5,13 far=7,13 d1=empty can_fire_from=True
+CONVRAY PHASE1_conveyor_in_line  stand=5,13 far=7,13 d1=CONVEYOR can_fire_from=False
+CONVRAY PHASE2_barrier_in_line   stand=7,5 far=9,5 d1=BARRIER can_fire_from=False
+CONVRAY DONE
+CONVRAY PHASE2_barrier_in_line   stand=5,13 far=7,13 d1=BARRIER can_fire_from=False
+CONVRAY DONE
+CONVRAY ABORT cannot build far target
+CONVRAY PHASE0_clear_line        stand=3,14 far=5,14 d1=empty can_fire_from=True
+CONVRAY PHASE1_conveyor_in_line  stand=3,14 far=5,14 d1=CONVEYOR can_fire_from=False
+CONVRAY PHASE2_barrier_in_line   stand=3,14 far=5,14 d1=BARRIER can_fire_from=False
+CONVRAY DONE
+CONVRAY PHASE0_clear_line        stand=6,8 far=8,8 d1=empty can_fire_from=True
+CONVRAY ABORT cannot build mid conveyor
+CONVRAY PHASE0_clear_line        stand=6,9 far=8,9 d1=empty can_fire_from=True
+CONVRAY ABORT cannot build mid conveyor
+CONVRAY ABORT cannot build far target
+CONVRAY PHASE0_clear_line        stand=7,20 far=9,20 d1=empty can_fire_from=True
+CONVRAY PHASE1_conveyor_in_line  stand=7,20 far=9,20 d1=CONVEYOR can_fire_from=False
+CONVRAY PHASE2_barrier_in_line   stand=7,20 far=9,20 d1=BARRIER can_fire_from=False
+CONVRAY DONE
+CONVRAY PHASE0_clear_line        stand=6,11 far=8,11 d1=empty can_fire_from=True
+CONVRAY PHASE1_conveyor_in_line  stand=6,11 far=8,11 d1=CONVEYOR can_fire_from=False
+CONVRAY ABORT cannot build mid barrier
+CONVRAY ABORT cannot build far target
+CONVRAY ABORT cannot build far target
+CONVRAY ABORT cannot build far target
+CONVRAY ABORT cannot build far target
+CONVRAY ABORT cannot build far target
+CONVRAY ABORT cannot build far target
+CONVRAY ABORT cannot build far target
+CONVRAY ABORT cannot build far target
+CONVRAY ABORT cannot build far target
+CONVRAY PHASE0_clear_line        stand=0,17 far=2,17 d1=empty can_fire_from=False
+CONVRAY PHASE1_conveyor_in_line  stand=0,17 far=2,17 d1=CONVEYOR can_fire_from=False
+CONVRAY ABORT cannot build mid barrier

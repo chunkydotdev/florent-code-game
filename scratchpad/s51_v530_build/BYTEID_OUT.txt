@@ -1,0 +1,74 @@
+=== A1   eq_off vs eq_parent -- must be IDENTICAL ===
+  atoll          seatA  IDENTICAL
+  atoll          seatB  IDENTICAL
+  drakkarfjord   seatA  IDENTICAL
+  drakkarfjord   seatB  IDENTICAL
+  glacierkeep    seatA  IDENTICAL
+  glacierkeep    seatB  IDENTICAL
+  nordkap        seatA  IDENTICAL
+  nordkap        seatB  IDENTICAL
+  yulerune       seatA  IDENTICAL
+  yulerune       seatB  IDENTICAL
+  valkyrie       seatA  IDENTICAL
+  valkyrie       seatB  IDENTICAL
+  ragnarok       seatA  IDENTICAL
+  ragnarok       seatB  IDENTICAL
+  midgard        seatA  IDENTICAL
+  midgard        seatB  IDENTICAL
+  icefloe        seatA  IDENTICAL
+  icefloe        seatB  IDENTICAL
+  auroraveil     seatA  IDENTICAL
+  auroraveil     seatB  IDENTICAL
+  -> 20/20 IDENTICAL   PASS
+
+=== A2   eq_v530 vs eq_parent -- must be DIFFER ===
+  atoll          seatA  DIFFERS
+  atoll          seatB  DIFFERS
+  drakkarfjord   seatA  DIFFERS
+  drakkarfjord   seatB  DIFFERS
+  glacierkeep    seatA  DIFFERS
+  glacierkeep    seatB  DIFFERS
+  nordkap        seatA  DIFFERS
+  nordkap        seatB  DIFFERS
+  yulerune       seatA  DIFFERS
+  yulerune       seatB  DIFFERS
+  -> 10/10 differ       PASS
+
+=== A3   eq_sub vs eq_parent -- must be IDENTICAL ===
+  atoll          seatA  IDENTICAL
+  atoll          seatB  IDENTICAL
+  drakkarfjord   seatA  IDENTICAL
+  drakkarfjord   seatB  IDENTICAL
+  glacierkeep    seatA  IDENTICAL
+  glacierkeep    seatB  IDENTICAL
+  nordkap        seatA  IDENTICAL
+  nordkap        seatB  IDENTICAL
+  yulerune       seatA  IDENTICAL
+  yulerune       seatB  IDENTICAL
+  valkyrie       seatA  IDENTICAL
+  valkyrie       seatB  IDENTICAL
+  ragnarok       seatA  IDENTICAL
+  ragnarok       seatB  IDENTICAL
+  midgard        seatA  IDENTICAL
+  midgard        seatB  IDENTICAL
+  icefloe        seatA  IDENTICAL
+  icefloe        seatB  IDENTICAL
+  auroraveil     seatA  IDENTICAL
+  auroraveil     seatB  IDENTICAL
+  -> 20/20 IDENTICAL   PASS
+
+=== A4   eq_sub vs eq_v530 -- must be DIFFER ===
+  atoll          seatA  DIFFERS
+  atoll          seatB  DIFFERS
+  drakkarfjord   seatA  DIFFERS
+  drakkarfjord   seatB  DIFFERS
+  glacierkeep    seatA  DIFFERS
+  glacierkeep    seatB  DIFFERS
+  nordkap        seatA  DIFFERS
+  nordkap        seatB  DIFFERS
+  yulerune       seatA  DIFFERS
+  yulerune       seatB  DIFFERS
+  -> 10/10 differ       PASS
+
+TRACEBACKS: 0
+RESULT: PASS

@@ -1,0 +1,70 @@
+GUARD: pos=True neg=False if=True
+
+=== bots/_v530home/doctrine.py ===
+v530 derived defaults: 0 []
+v528 derived defaults (inherited, must also be 0): 0 []
+v527 derived defaults (inherited, must also be 0): 0 []
+v526 derived defaults (inherited, must also be 0): 0 []
+v525 derived defaults (inherited, must also be 0): 0 []
+v524 derived defaults (inherited, must also be 0): 0 []
+v522 derived defaults (inherited, must also be 0): 0 []
+v521 derived defaults (inherited, must also be 0): 0 []
+v520 derived defaults (inherited, must also be 0): 0 []
+v519 derived defaults (inherited, must also be 0): 0 []
+v518 derived defaults (inherited, must also be 0): 0 []
+REAL-CASE CONTROL (FS_CREW_ON readers, the known v515 hazard): 2 [(3011, 'FERRY_HOME_ON', 'LOKI_FS_CREW'), (3011, 'FERRY_HOME_ON', 'FS_CREW_ON')]
+
+=== bots/_v530home/eco.py ===
+v530 derived defaults: 0 []
+v528 derived defaults (inherited, must also be 0): 0 []
+v527 derived defaults (inherited, must also be 0): 0 []
+v526 derived defaults (inherited, must also be 0): 0 []
+v525 derived defaults (inherited, must also be 0): 0 []
+v524 derived defaults (inherited, must also be 0): 0 []
+v522 derived defaults (inherited, must also be 0): 0 []
+v521 derived defaults (inherited, must also be 0): 0 []
+v520 derived defaults (inherited, must also be 0): 0 []
+v519 derived defaults (inherited, must also be 0): 0 []
+v518 derived defaults (inherited, must also be 0): 0 []
+
+=== bots/_v530home/main.py ===
+v530 derived defaults: 0 []
+v528 derived defaults (inherited, must also be 0): 0 []
+v527 derived defaults (inherited, must also be 0): 0 []
+v526 derived defaults (inherited, must also be 0): 0 []
+v525 derived defaults (inherited, must also be 0): 0 []
+v524 derived defaults (inherited, must also be 0): 0 []
+v522 derived defaults (inherited, must also be 0): 0 []
+v521 derived defaults (inherited, must also be 0): 0 []
+v520 derived defaults (inherited, must also be 0): 0 []
+v519 derived defaults (inherited, must also be 0): 0 []
+v518 derived defaults (inherited, must also be 0): 0 []
+
+=== bots/_v530home/siege.py ===
+v530 derived defaults: 0 []
+v528 derived defaults (inherited, must also be 0): 0 []
+v527 derived defaults (inherited, must also be 0): 0 []
+v526 derived defaults (inherited, must also be 0): 0 []
+v525 derived defaults (inherited, must also be 0): 0 []
+v524 derived defaults (inherited, must also be 0): 0 []
+v522 derived defaults (inherited, must also be 0): 0 []
+v521 derived defaults (inherited, must also be 0): 0 []
+v520 derived defaults (inherited, must also be 0): 0 []
+v519 derived defaults (inherited, must also be 0): 0 []
+v518 derived defaults (inherited, must also be 0): 0 []
+
+=== bots/_v530home/raid.py ===
+v530 derived defaults: 0 []
+v528 derived defaults (inherited, must also be 0): 0 []
+v527 derived defaults (inherited, must also be 0): 0 []
+v526 derived defaults (inherited, must also be 0): 0 []
+v525 derived defaults (inherited, must also be 0): 0 []
+v524 derived defaults (inherited, must also be 0): 0 []
+v522 derived defaults (inherited, must also be 0): 0 []
+v521 derived defaults (inherited, must also be 0): 0 []
+v520 derived defaults (inherited, must also be 0): 0 []
+v519 derived defaults (inherited, must also be 0): 0 []
+v518 derived defaults (inherited, must also be 0): 0 []
+
+TOTAL derived-default hits across all scanned files: 0
+RESULT: PASS

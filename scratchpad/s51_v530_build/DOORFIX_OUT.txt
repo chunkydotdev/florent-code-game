@@ -1,0 +1,3 @@
+arm         games unread |  doorN   dead life_med  life_mn  <=6rnd |   farN   dead life_med  life_mn  <=6rnd
+nodoor         64      0 |    201     27       28     52.0       6 |     22      0       -1     -1.0       0
+v530           64      0 |    223     39        7     24.4      19 |     21      0       -1     -1.0       0

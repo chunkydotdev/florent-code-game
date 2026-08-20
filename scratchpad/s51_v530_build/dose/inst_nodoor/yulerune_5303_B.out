@@ -1,0 +1,14 @@
+Running match: _v488beltbreak2 vs inst_nodoor
+  Map: yulerune.map26  Seed: 5303  Replay: replay.replay26  TLE: 10ms
+Completed turn 0
+Completed turn 100
+Completed turn 200
+Replay written to replay.replay26
+
+  Winner: inst_nodoor  (Core destroyed, turn 278)
+
+               _v488beltbreak2         inst_nodoor  
+  Titanium         8 (0 mined)    153 (3640 mined)  
+  Units                      7                  17  
+  Buildings                 13                  84  
+
