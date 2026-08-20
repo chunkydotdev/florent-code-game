@@ -71862,3 +71862,15 @@ cap6            53.1   .288      -5.0 inside      0.010 (+0.42, inside 1.15)   7
 --- 2026-08-20T12:09:47Z **BUILDER s52 — ⚠ work-server-1 UNREACHABLE (ssh timeout to 192.168.1.193) as of ~12:08Z; REFUSING battery re-fired ws2-only (driver PID 23963, out2/, runid s52refusing2, capacity 6=6 exact).** remote_battery's preflight caught it and REFUSED rather than going blind (the tool's BLIND-IS-NOT-PASSED design working); raw ssh probe is permission-blocked this session so the tool's preflight is the probe of record. ws1 had served GENPOOL/GENREF/GENINV/HVH normally through 11:09Z. Nothing else uses ws1 right now (HOMEPOOL is local; fleet_queue has zero queued rows). If ws1 stays dark, note for the wrap: the G7 fleet_dispatch blindness debt gains a live instance. ---
 
 --- 2026-08-20T12:10:10Z **BUILDER s52 — ws1 outage CAUSE (Magnus, direct): "ws1 is down for maintenance."** Planned, not a fault — the 12:0xZ note's G7-live-instance line is WITHDRAWN (no blindness incident; the preflight refusal was the tool handling a known-down host correctly). Remote work routes to ws2 only until Magnus says ws1 is back; no re-probe loop needed. ---
+
+--- 2026-08-20T12:22:11Z **BUILDER s52 — REFUSING DECOMPOSITION READOUT (s52refusing2/out2 ONLY, run1 empty-by-refusal; ws2, 240/arm, 0 shells, 0 tb).** The fixture REPRODUCES the diagnostic fact first (v533home 29.6% ≈ HOMEPOOL's refusing 28.3 — the ranking is trustworthy), and the six-arm table names the plank:
+```
+arm        share%   arch/120 midg/120    d_vs_v533home (pairwise hw ±8.9)
+parent      50.4      50       71          +20.8  (the package costs −20.8 on refusing)
+floff       46.7      38       74          +17.1  (master-off ≈ parent, contract holds)
+coff        43.8      54       51          +14.2  ⭐ OUTSIDE hw — CORNERS are the suspect
+doff        35.4      24       61           +5.8  (inside hw)
+moff        31.2      30       45           +1.7  (mouth NOT the refusing problem)
+v533home    29.6      19       52             —
+```
+**Verdict-shaped (diagnostic, self-play-is-POLICY, 2-map panel):** (1) the home package's refusing cost is real and large (−20.8 vs parent); (2) **CORNER BARRIERS are the resolved suspect** — coff's +14.2 [5.3,23.1] excludes zero at pairwise power, and the damage is ARCHIPELAGO-CONCENTRATED (v533 19/120 = 15.8% vs coff 54/120 = 45.0%; midgard flat 52-vs-51) — consistent with the #64 SPAWNPOCKET class (corner barriers on an island map plausibly sealing our own routes; HYPOTHESIS, needs the autopsy, not asserted); (3) mouth and doorkill are acquitted on this axis. **The buildable fix is one flag-gate: corners OFF on refusing/gated maps — the same geometric predicate the siege gate already computes; the home package's map-INVARIANCE was the design gap.** Candidate v535 after HOMEPOOL's readout; ATTRIBUTION UNRESOLVED still appends to HOMEPOOL per F3 (this battery names the suspect; the powered confirm is the follow-up). Siege-side back-out reproduction target met by construction (the deficit lives here, not in siege). ---
