@@ -1,0 +1,31 @@
+tag	map	seed	seat	ours	winner	cond	turn	tracebacks	ours_mined	opp_mined
+atoll_s4_A	atoll	4	A	US	_v530home	Core destroyed	224	0	690	190
+atoll_s4_B	atoll	4	B	OPP	_v488beltbreak2	Core destroyed	174	0	290	840
+atoll_s5_A	atoll	5	A	US	_v530home	Titanium collected (tiebreak)	1000	0	2590	850
+atoll_s5_B	atoll	5	B	US	_v530home	Core destroyed	411	0	760	120
+atoll_s6_A	atoll	6	A	OPP	_v488beltbreak2	Core destroyed	165	0	1390	1400
+atoll_s6_B	atoll	6	B	OPP	_v488beltbreak2	Titanium collected (tiebreak)	1000	0	0	2700
+drakkarfjord_s4_A	drakkarfjord	4	A	US	_v530home	Core destroyed	682	0	1240	0
+drakkarfjord_s4_B	drakkarfjord	4	B	US	_v530home	Core destroyed	536	0	1970	0
+drakkarfjord_s5_A	drakkarfjord	5	A	US	_v530home	Titanium collected (tiebreak)	1000	0	60	0
+drakkarfjord_s5_B	drakkarfjord	5	B	US	_v530home	Core destroyed	307	0	170	0
+drakkarfjord_s6_A	drakkarfjord	6	A	US	_v530home	Core destroyed	275	0	280	0
+drakkarfjord_s6_B	drakkarfjord	6	B	US	_v530home	Core destroyed	325	0	0	0
+glacierkeep_s4_A	glacierkeep	4	A	US	_v530home	Core destroyed	237	0	0	0
+glacierkeep_s4_B	glacierkeep	4	B	US	_v530home	Core destroyed	470	0	0	0
+glacierkeep_s5_A	glacierkeep	5	A	US	_v530home	Core destroyed	208	0	10	0
+glacierkeep_s5_B	glacierkeep	5	B	US	_v530home	Core destroyed	369	0	0	270
+glacierkeep_s6_A	glacierkeep	6	A	US	_v530home	Core destroyed	165	0	0	0
+glacierkeep_s6_B	glacierkeep	6	B	US	_v530home	Core destroyed	305	0	0	0
+midgard_s4_A	midgard	4	A	US	_v530home	Core destroyed	281	0	510	760
+midgard_s4_B	midgard	4	B	US	_v530home	Core destroyed	342	0	2510	1180
+midgard_s5_A	midgard	5	A	US	_v530home	Core destroyed	527	0	1210	720
+midgard_s5_B	midgard	5	B	US	_v530home	Core destroyed	212	0	1600	680
+midgard_s6_A	midgard	6	A	OPP	_v488beltbreak2	Core destroyed	177	0	720	1390
+midgard_s6_B	midgard	6	B	US	_v530home	Core destroyed	276	0	1160	720
+nordkap_s4_A	nordkap	4	A	OPP	_v488beltbreak2	Titanium collected (tiebreak)	1000	0	7980	9030
+nordkap_s4_B	nordkap	4	B	US	_v530home	Core destroyed	194	0	460	260
+nordkap_s5_A	nordkap	5	A	US	_v530home	Core destroyed	131	0	300	80
+nordkap_s5_B	nordkap	5	B	US	_v530home	Core destroyed	463	0	3050	230
+nordkap_s6_A	nordkap	6	A	US	_v530home	Core destroyed	469	0	60	190
+nordkap_s6_B	nordkap	6	B	US	_v530home	Core destroyed	169	0	130	130

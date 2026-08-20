@@ -1,0 +1,13 @@
+tag	map	seed	seat	ours	winner	cond	turn	tracebacks	ours_mined	opp_mined
+atoll_s1_A	atoll	1	A	OPP	det_opp	Core destroyed	597	0	1740	2990
+atoll_s1_B	atoll	1	B	US	det_merge	Core destroyed	160	0	760	450
+atoll_s2_A	atoll	2	A	OPP	det_opp	Core destroyed	597	0	1740	2990
+atoll_s2_B	atoll	2	B	US	det_merge	Core destroyed	160	0	760	450
+atoll_s3_A	atoll	3	A	OPP	det_opp	Core destroyed	597	0	1740	2990
+atoll_s3_B	atoll	3	B	US	det_merge	Core destroyed	160	0	760	450
+drakkarfjord_s1_A	drakkarfjord	1	A	US	det_merge	Core destroyed	88	0	330	0
+drakkarfjord_s1_B	drakkarfjord	1	B	US	det_merge	Core destroyed	149	0	340	0
+drakkarfjord_s2_A	drakkarfjord	2	A	US	det_merge	Core destroyed	88	0	330	0
+drakkarfjord_s2_B	drakkarfjord	2	B	US	det_merge	Core destroyed	425	0	380	0
+drakkarfjord_s3_A	drakkarfjord	3	A	US	det_merge	Core destroyed	88	0	330	0
+drakkarfjord_s3_B	drakkarfjord	3	B	US	det_merge	Core destroyed	149	0	340	0

@@ -1,0 +1,10 @@
+runid	bb_20260820T071123Z_80702
+generated	2026-08-20T07:12:15Z
+hosts	work-server-2
+opp	_v488beltbreak2
+maps	atoll,drakkarfjord
+seeds	1-3
+par	2
+planned_rows_per_arm	12
+arm	_v530home	delivered	12	planned	12	COMPLETE
+arm	_v529merge	delivered	12	planned	12	COMPLETE

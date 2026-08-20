@@ -1,0 +1,31 @@
+tag	map	seed	seat	ours	winner	cond	turn	tracebacks	ours_mined	opp_mined
+atoll_s1_A	atoll	1	A	OPP	_v488beltbreak2	Core destroyed	351	0	1720	1700
+atoll_s1_B	atoll	1	B	US	_v529merge	Core destroyed	660	0	3260	190
+atoll_s2_A	atoll	2	A	OPP	_v488beltbreak2	Core destroyed	836	0	4010	4130
+atoll_s2_B	atoll	2	B	US	_v529merge	Core destroyed	142	0	680	220
+atoll_s3_A	atoll	3	A	OPP	_v488beltbreak2	Core destroyed	836	0	4010	4130
+atoll_s3_B	atoll	3	B	US	_v529merge	Core destroyed	574	0	3800	1840
+drakkarfjord_s1_A	drakkarfjord	1	A	US	_v529merge	Core destroyed	90	0	280	0
+drakkarfjord_s1_B	drakkarfjord	1	B	OPP	_v488beltbreak2	Core destroyed	717	0	240	0
+drakkarfjord_s2_A	drakkarfjord	2	A	US	_v529merge	Core destroyed	106	0	410	0
+drakkarfjord_s2_B	drakkarfjord	2	B	US	_v529merge	Core destroyed	114	0	340	0
+drakkarfjord_s3_A	drakkarfjord	3	A	US	_v529merge	Core destroyed	106	0	410	0
+drakkarfjord_s3_B	drakkarfjord	3	B	US	_v529merge	Core destroyed	96	0	320	0
+glacierkeep_s1_A	glacierkeep	1	A	OPP	_v488beltbreak2	Titanium collected (tiebreak)	1000	0	160	340
+glacierkeep_s1_B	glacierkeep	1	B	US	_v529merge	Core destroyed	216	0	470	0
+glacierkeep_s2_A	glacierkeep	2	A	US	_v529merge	Core destroyed	165	0	150	0
+glacierkeep_s2_B	glacierkeep	2	B	US	_v529merge	Core destroyed	277	0	0	0
+glacierkeep_s3_A	glacierkeep	3	A	US	_v529merge	Core destroyed	169	0	690	0
+glacierkeep_s3_B	glacierkeep	3	B	US	_v529merge	Core destroyed	269	0	0	0
+midgard_s1_A	midgard	1	A	US	_v529merge	Core destroyed	213	0	620	770
+midgard_s1_B	midgard	1	B	OPP	_v488beltbreak2	Core destroyed	240	0	790	1410
+midgard_s2_A	midgard	2	A	US	_v529merge	Core destroyed	585	0	610	1130
+midgard_s2_B	midgard	2	B	US	_v529merge	Core destroyed	320	0	1510	500
+midgard_s3_A	midgard	3	A	US	_v529merge	Titanium collected (tiebreak)	1000	0	750	650
+midgard_s3_B	midgard	3	B	US	_v529merge	Core destroyed	821	0	870	760
+nordkap_s1_A	nordkap	1	A	US	_v529merge	Core destroyed	112	0	260	0
+nordkap_s1_B	nordkap	1	B	US	_v529merge	Core destroyed	185	0	130	220
+nordkap_s2_A	nordkap	2	A	US	_v529merge	Core destroyed	152	0	550	30
+nordkap_s2_B	nordkap	2	B	US	_v529merge	Core destroyed	193	0	460	150
+nordkap_s3_A	nordkap	3	A	US	_v529merge	Core destroyed	253	0	110	100
+nordkap_s3_B	nordkap	3	B	OPP	_v488beltbreak2	Core destroyed	200	0	80	1920

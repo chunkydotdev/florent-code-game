@@ -1,0 +1,10 @@
+runid	bb_20260820T072506Z_31794
+generated	2026-08-20T07:25:56Z
+hosts	work-server-1,work-server-2
+opp	_v488beltbreak2
+maps	atoll,drakkarfjord,glacierkeep,midgard,nordkap
+seeds	1-6
+par	3
+planned_rows_per_arm	60
+arm	_v530home	delivered	60	planned	60	COMPLETE
+arm	_v529merge	delivered	60	planned	60	COMPLETE

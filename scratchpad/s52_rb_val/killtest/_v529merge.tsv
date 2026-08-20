@@ -1,0 +1,37 @@
+tag	map	seed	seat	ours	winner	cond	turn	tracebacks	ours_mined	opp_mined
+atoll_s1_A	atoll	1	A	OPP	_v488beltbreak2	Core destroyed	434	0	370	1050
+atoll_s1_B	atoll	1	B	US	_v529merge	Core destroyed	826	0	5440	7830
+atoll_s2_A	atoll	2	A	OPP	_v488beltbreak2	Core destroyed	799	0	3740	6960
+atoll_s2_B	atoll	2	B	US	_v529merge	Core destroyed	117	0	540	370
+atoll_s3_A	atoll	3	A	US	_v529merge	Core destroyed	293	0	1500	1710
+atoll_s3_B	atoll	3	B	US	_v529merge	Core destroyed	154	0	630	470
+drakkarfjord_s1_A	drakkarfjord	1	A	US	_v529merge	Core destroyed	106	0	410	0
+drakkarfjord_s1_B	drakkarfjord	1	B	US	_v529merge	Core destroyed	116	0	340	0
+drakkarfjord_s2_A	drakkarfjord	2	A	US	_v529merge	Core destroyed	92	0	330	0
+drakkarfjord_s2_B	drakkarfjord	2	B	OPP	_v488beltbreak2	Core destroyed	837	0	430	0
+drakkarfjord_s3_A	drakkarfjord	3	A	US	_v529merge	Core destroyed	105	0	380	0
+drakkarfjord_s3_B	drakkarfjord	3	B	US	_v529merge	Core destroyed	101	0	280	0
+atoll_s4_A	atoll	4	A	US	_v529merge	Core destroyed	573	0	4660	2810
+atoll_s4_B	atoll	4	B	OPP	_v488beltbreak2	Core destroyed	344	0	980	3250
+atoll_s5_A	atoll	5	A	US	_v529merge	Core destroyed	124	0	560	220
+atoll_s5_B	atoll	5	B	US	_v529merge	Core destroyed	353	0	870	940
+atoll_s6_A	atoll	6	A	OPP	_v488beltbreak2	Core destroyed	755	0	3740	3720
+atoll_s6_B	atoll	6	B	US	_v529merge	Core destroyed	301	0	2500	610
+drakkarfjord_s4_A	drakkarfjord	4	A	OPP	_v488beltbreak2	Core destroyed	500	0	300	410
+drakkarfjord_s4_B	drakkarfjord	4	B	US	_v529merge	Core destroyed	122	0	350	0
+drakkarfjord_s5_A	drakkarfjord	5	A	US	_v529merge	Core destroyed	91	0	260	0
+drakkarfjord_s5_B	drakkarfjord	5	B	US	_v529merge	Core destroyed	463	0	710	0
+drakkarfjord_s6_A	drakkarfjord	6	A	US	_v529merge	Core destroyed	92	0	330	0
+drakkarfjord_s6_B	drakkarfjord	6	B	OPP	_v488beltbreak2	Core destroyed	813	0	430	0
+atoll_s7_A	atoll	7	A	US	_v529merge	Titanium collected (tiebreak)	1000	0	2760	230
+atoll_s7_B	atoll	7	B	OPP	_v488beltbreak2	Core destroyed	294	0	330	1420
+atoll_s8_A	atoll	8	A	OPP	_v488beltbreak2	Core destroyed	157	0	220	980
+atoll_s8_B	atoll	8	B	OPP	_v488beltbreak2	Core destroyed	208	0	360	1010
+atoll_s9_A	atoll	9	A	US	_v529merge	Core destroyed	516	0	2750	2540
+atoll_s9_B	atoll	9	B	US	_v529merge	Core destroyed	117	0	540	370
+drakkarfjord_s7_A	drakkarfjord	7	A	US	_v529merge	Core destroyed	88	0	320	0
+drakkarfjord_s7_B	drakkarfjord	7	B	US	_v529merge	Core destroyed	98	0	300	0
+drakkarfjord_s8_A	drakkarfjord	8	A	US	_v529merge	Core destroyed	117	0	470	0
+drakkarfjord_s8_B	drakkarfjord	8	B	US	_v529merge	Core destroyed	125	0	360	0
+drakkarfjord_s9_A	drakkarfjord	9	A	US	_v529merge	Core destroyed	102	0	290	0
+drakkarfjord_s9_B	drakkarfjord	9	B	US	_v529merge	Core destroyed	125	0	360	0

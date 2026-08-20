@@ -38,3 +38,8 @@ Non-tool notes for the wrap retro: my channel message transposed the two gsxWins
    parsed field is present — a manifest of expected fields, diffed at selftest, catches an
    orphaned/dropped field at edit time instead of a session later. (The orphaning survived a
    side-lane audit whose filter read +lines only — D21c instance, their disclosure.)
+8. **(s52-era, remote_battery validation) fleet_dispatch G7 blindness**: counts worker.sh
+   only, cannot see fcode-build/ battery children, ignores scratchpad/fleet_hold — could
+   dispatch corefill onto a host mid-battery and oversubscribe. Fix shape: teach
+   fleet_dispatch about fcode-build/ (or honour fleet_hold). Interim: briefs instruct
+   checking fleet_queue.tsv drained before remote batteries.

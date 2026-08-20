@@ -1,0 +1,26 @@
+2026-08-20T07:18:10Z capacity: work-server-2  arms=2 x par=2 = 4 <= our_cores 6  OK
+2026-08-20T07:18:10Z PLAN runid=bb_20260820T071810Z_6464
+2026-08-20T07:18:10Z   arms=_v530home,_v529merge opp=_v488beltbreak2
+2026-08-20T07:18:10Z   maps=2 seeds=9 blocks=3 par=2 -> 36 rows/arm, 72 total
+2026-08-20T07:18:10Z   work-server-2    blocks=[0, 1, 2] rows=72
+2026-08-20T07:18:10Z   out=/Users/junghard/Projects/Work/florent-code-game/scratchpad/s52_rb_val/killtest
+2026-08-20T07:18:10Z host work-server-2: nproc=6 load=0.46 corefill_workers=0 fcode=2.3.6(pin ok)
+2026-08-20T07:18:16Z shipped to work-server-2:fcode-build/bb_20260820T071810Z_6464 — 2 arms, opp _v488beltbreak2, 2 maps, 3 blocks
+2026-08-20T07:19:16Z LAUNCHED work-server-2 pid=203235 root=fcode-build/bb_20260820T071810Z_6464
+2026-08-20T07:19:16Z PIDS: work-server-2=203235
+2026-08-20T07:19:25Z   work-server-2    rows=48/72 state=RUNNING driver=DEAD
+2026-08-20T07:19:25Z ⛔ work-server-2: driver pid 203235 is GONE with state=RUNNING at 48/72 rows — this run is PARTIAL.
+2026-08-20T07:19:27Z   runid  bb_20260820T071810Z_6464
+2026-08-20T07:19:27Z   generated  2026-08-20T07:19:27Z
+2026-08-20T07:19:27Z   hosts  work-server-2
+2026-08-20T07:19:27Z   opp  _v488beltbreak2
+2026-08-20T07:19:27Z   maps  atoll,drakkarfjord
+2026-08-20T07:19:27Z   seeds  1-9
+2026-08-20T07:19:27Z   par  2
+2026-08-20T07:19:27Z   planned_rows_per_arm  36
+2026-08-20T07:19:27Z   arm  _v530home  delivered  24  planned  36  SHORT
+2026-08-20T07:19:27Z   arm  _v529merge  delivered  36  planned  36  COMPLETE
+2026-08-20T07:19:27Z   missing_cell  _v530home b2 (work-server-2)
+2026-08-20T07:19:28Z cleanup work-server-2: CLEANED
+2026-08-20T07:19:28Z ⛔⛔ PARTIAL RUN — /Users/junghard/Projects/Work/florent-code-game/scratchpad/s52_rb_val/killtest/PARTIAL written. Row counts above are the truth; the tapes are SHORT and must not be read as a complete battery.
+EXIT=2

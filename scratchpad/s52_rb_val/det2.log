@@ -1,0 +1,77 @@
+2026-08-20T07:27:10Z PLAN runid=bb_20260820T072710Z_39898
+2026-08-20T07:27:10Z   arms=det_home,det_merge opp=det_opp
+2026-08-20T07:27:10Z   maps=2 seeds=3 blocks=1 par=1 -> 12 rows/arm, 24 total
+2026-08-20T07:27:10Z   local            blocks=[0] rows=24
+2026-08-20T07:27:10Z   out=/Users/junghard/Projects/Work/florent-code-game/scratchpad/s52_rb_val/det2_local
+2026-08-20T07:27:10Z shipped to local:/Users/junghard/Projects/Work/florent-code-game/scratchpad/build_batteries/_localrun/bb_20260820T072710Z_39898 — 2 arms, opp det_opp, 2 maps, 1 blocks
+2026-08-20T07:27:10Z LAUNCHED local pid=39920 root=/Users/junghard/Projects/Work/florent-code-game/scratchpad/build_batteries/_localrun/bb_20260820T072710Z_39898
+2026-08-20T07:27:10Z PIDS: local=39920
+2026-08-20T07:27:18Z   local            rows=0/24 state=? driver=DEAD
+2026-08-20T07:27:18Z ⛔ local: driver pid 39920 is GONE with state=? at 0/24 rows — this run is PARTIAL.
+2026-08-20T07:27:18Z   runid  bb_20260820T072710Z_39898
+2026-08-20T07:27:18Z   generated  2026-08-20T07:27:18Z
+2026-08-20T07:27:18Z   hosts  local
+2026-08-20T07:27:18Z   opp  det_opp
+2026-08-20T07:27:18Z   maps  atoll,drakkarfjord
+2026-08-20T07:27:18Z   seeds  1-3
+2026-08-20T07:27:18Z   par  1
+2026-08-20T07:27:18Z   planned_rows_per_arm  12
+2026-08-20T07:27:18Z   arm  det_home  delivered  0  planned  12  SHORT
+2026-08-20T07:27:18Z   arm  det_merge  delivered  0  planned  12  SHORT
+2026-08-20T07:27:18Z   missing_cell  det_home b0 (local)
+2026-08-20T07:27:18Z   missing_cell  det_merge b0 (local)
+2026-08-20T07:27:18Z   driver_log  local: bash: line 1: setsid: command not found
+2026-08-20T07:27:18Z cleanup local: CLEANED
+2026-08-20T07:27:18Z ⛔⛔ PARTIAL RUN — /Users/junghard/Projects/Work/florent-code-game/scratchpad/s52_rb_val/det2_local/PARTIAL written. Row counts above are the truth; the tapes are SHORT and must not be read as a complete battery.
+2026-08-20T07:27:18Z capacity: work-server-1  arms=2 x par=1 = 2 <= our_cores 10  OK
+2026-08-20T07:27:18Z PLAN runid=bb_20260820T072718Z_40122
+2026-08-20T07:27:18Z   arms=det_home,det_merge opp=det_opp
+2026-08-20T07:27:18Z   maps=2 seeds=3 blocks=1 par=1 -> 12 rows/arm, 24 total
+2026-08-20T07:27:18Z   work-server-1    blocks=[0] rows=24
+2026-08-20T07:27:18Z   out=/Users/junghard/Projects/Work/florent-code-game/scratchpad/s52_rb_val/det2_work-server-1
+2026-08-20T07:27:18Z host work-server-1: nproc=16 load=1.03 corefill_workers=0 fcode=2.3.6(pin ok)
+2026-08-20T07:27:19Z shipped to work-server-1:fcode-build/bb_20260820T072718Z_40122 — 2 arms, opp det_opp, 2 maps, 1 blocks
+2026-08-20T07:27:20Z LAUNCHED work-server-1 pid=369758 root=fcode-build/bb_20260820T072718Z_40122
+2026-08-20T07:27:20Z PIDS: work-server-1=369758
+2026-08-20T07:27:28Z   work-server-1    rows=0/24 state=STARTING driver=ALIVE
+2026-08-20T07:27:36Z   work-server-1    rows=0/24 state=STARTING driver=ALIVE
+2026-08-20T07:27:44Z   work-server-1    rows=0/24 state=STARTING driver=ALIVE
+2026-08-20T07:27:52Z   work-server-1    rows=24/24 state=COMPLETE driver=DEAD
+2026-08-20T07:27:53Z   runid  bb_20260820T072718Z_40122
+2026-08-20T07:27:53Z   generated  2026-08-20T07:27:53Z
+2026-08-20T07:27:53Z   hosts  work-server-1
+2026-08-20T07:27:53Z   opp  det_opp
+2026-08-20T07:27:53Z   maps  atoll,drakkarfjord
+2026-08-20T07:27:53Z   seeds  1-3
+2026-08-20T07:27:53Z   par  1
+2026-08-20T07:27:53Z   planned_rows_per_arm  12
+2026-08-20T07:27:53Z   arm  det_home  delivered  12  planned  12  COMPLETE
+2026-08-20T07:27:53Z   arm  det_merge  delivered  12  planned  12  COMPLETE
+2026-08-20T07:27:53Z cleanup work-server-1: CLEANED
+2026-08-20T07:27:53Z COMPLETE — 12 rows/arm on each of 2 arms. Read it: .venv/bin/python <build>/summarise.py <name> /Users/junghard/Projects/Work/florent-code-game/scratchpad/s52_rb_val/det2_work-server-1/<arm>.tsv
+2026-08-20T07:27:53Z capacity: work-server-2  arms=2 x par=1 = 2 <= our_cores 6  OK
+2026-08-20T07:27:53Z PLAN runid=bb_20260820T072753Z_42546
+2026-08-20T07:27:53Z   arms=det_home,det_merge opp=det_opp
+2026-08-20T07:27:53Z   maps=2 seeds=3 blocks=1 par=1 -> 12 rows/arm, 24 total
+2026-08-20T07:27:53Z   work-server-2    blocks=[0] rows=24
+2026-08-20T07:27:53Z   out=/Users/junghard/Projects/Work/florent-code-game/scratchpad/s52_rb_val/det2_work-server-2
+2026-08-20T07:27:54Z host work-server-2: nproc=6 load=0.85 corefill_workers=0 fcode=2.3.6(pin ok)
+2026-08-20T07:27:56Z shipped to work-server-2:fcode-build/bb_20260820T072753Z_42546 — 2 arms, opp det_opp, 2 maps, 1 blocks
+2026-08-20T07:27:57Z LAUNCHED work-server-2 pid=235558 root=fcode-build/bb_20260820T072753Z_42546
+2026-08-20T07:27:57Z PIDS: work-server-2=235558
+2026-08-20T07:28:05Z   work-server-2    rows=0/24 state=STARTING driver=ALIVE
+2026-08-20T07:28:14Z   work-server-2    rows=0/24 state=STARTING driver=ALIVE
+2026-08-20T07:28:23Z   work-server-2    rows=0/24 state=STARTING driver=ALIVE
+2026-08-20T07:28:31Z   work-server-2    rows=24/24 state=COMPLETE driver=DEAD
+2026-08-20T07:28:33Z   runid  bb_20260820T072753Z_42546
+2026-08-20T07:28:33Z   generated  2026-08-20T07:28:33Z
+2026-08-20T07:28:33Z   hosts  work-server-2
+2026-08-20T07:28:33Z   opp  det_opp
+2026-08-20T07:28:33Z   maps  atoll,drakkarfjord
+2026-08-20T07:28:33Z   seeds  1-3
+2026-08-20T07:28:33Z   par  1
+2026-08-20T07:28:33Z   planned_rows_per_arm  12
+2026-08-20T07:28:33Z   arm  det_home  delivered  12  planned  12  COMPLETE
+2026-08-20T07:28:33Z   arm  det_merge  delivered  12  planned  12  COMPLETE
+2026-08-20T07:28:34Z cleanup work-server-2: CLEANED
+2026-08-20T07:28:34Z COMPLETE — 12 rows/arm on each of 2 arms. Read it: .venv/bin/python <build>/summarise.py <name> /Users/junghard/Projects/Work/florent-code-game/scratchpad/s52_rb_val/det2_work-server-2/<arm>.tsv

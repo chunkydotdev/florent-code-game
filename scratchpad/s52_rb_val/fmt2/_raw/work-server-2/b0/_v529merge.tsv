@@ -1,0 +1,13 @@
+tag	map	seed	seat	ours	winner	cond	turn	tracebacks	ours_mined	opp_mined
+atoll_s1_A	atoll	1	A	US	_v529merge	Core destroyed	178	0	860	220
+atoll_s1_B	atoll	1	B	US	_v529merge	Core destroyed	453	0	2230	2230
+atoll_s2_A	atoll	2	A	US	_v529merge	Core destroyed	429	0	240	290
+atoll_s2_B	atoll	2	B	US	_v529merge	Core destroyed	812	0	3910	2050
+atoll_s3_A	atoll	3	A	US	_v529merge	Core destroyed	641	0	3970	170
+atoll_s3_B	atoll	3	B	OPP	_v488beltbreak2	Core destroyed	609	0	1690	170
+drakkarfjord_s1_A	drakkarfjord	1	A	OPP	_v488beltbreak2	Titanium collected (tiebreak)	1000	0	320	1670
+drakkarfjord_s1_B	drakkarfjord	1	B	US	_v529merge	Core destroyed	98	0	300	0
+drakkarfjord_s2_A	drakkarfjord	2	A	US	_v529merge	Core destroyed	88	0	270	0
+drakkarfjord_s2_B	drakkarfjord	2	B	US	_v529merge	Core destroyed	425	0	380	0
+drakkarfjord_s3_A	drakkarfjord	3	A	US	_v529merge	Core destroyed	92	0	340	0
+drakkarfjord_s3_B	drakkarfjord	3	B	US	_v529merge	Core destroyed	100	0	280	0

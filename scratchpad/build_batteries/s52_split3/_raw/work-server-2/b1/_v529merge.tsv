@@ -1,0 +1,31 @@
+tag	map	seed	seat	ours	winner	cond	turn	tracebacks	ours_mined	opp_mined
+atoll_s4_A	atoll	4	A	OPP	_v488beltbreak2	Titanium collected (tiebreak)	1000	0	6430	8970
+atoll_s4_B	atoll	4	B	OPP	_v488beltbreak2	Core destroyed	421	0	1190	1290
+atoll_s5_A	atoll	5	A	US	_v529merge	Core destroyed	393	0	3070	3150
+atoll_s5_B	atoll	5	B	OPP	_v488beltbreak2	Core destroyed	282	0	840	1380
+atoll_s6_A	atoll	6	A	OPP	_v488beltbreak2	Core destroyed	234	0	700	1720
+atoll_s6_B	atoll	6	B	US	_v529merge	Core destroyed	134	0	640	400
+drakkarfjord_s4_A	drakkarfjord	4	A	US	_v529merge	Core destroyed	189	0	290	0
+drakkarfjord_s4_B	drakkarfjord	4	B	US	_v529merge	Core destroyed	120	0	380	0
+drakkarfjord_s5_A	drakkarfjord	5	A	US	_v529merge	Titanium collected (tiebreak)	1000	0	320	0
+drakkarfjord_s5_B	drakkarfjord	5	B	US	_v529merge	Core destroyed	456	0	950	0
+drakkarfjord_s6_A	drakkarfjord	6	A	OPP	_v488beltbreak2	Core destroyed	434	0	270	920
+drakkarfjord_s6_B	drakkarfjord	6	B	US	_v529merge	Core destroyed	114	0	340	0
+glacierkeep_s4_A	glacierkeep	4	A	US	_v529merge	Core destroyed	281	0	270	0
+glacierkeep_s4_B	glacierkeep	4	B	US	_v529merge	Core destroyed	305	0	10	0
+glacierkeep_s5_A	glacierkeep	5	A	US	_v529merge	Core destroyed	111	0	240	0
+glacierkeep_s5_B	glacierkeep	5	B	OPP	_v488beltbreak2	Core destroyed	609	0	120	0
+glacierkeep_s6_A	glacierkeep	6	A	US	_v529merge	Titanium collected (tiebreak)	1000	0	1170	0
+glacierkeep_s6_B	glacierkeep	6	B	OPP	_v488beltbreak2	Core destroyed	537	0	100	0
+midgard_s4_A	midgard	4	A	OPP	_v488beltbreak2	Core destroyed	403	0	950	1490
+midgard_s4_B	midgard	4	B	OPP	_v488beltbreak2	Core destroyed	501	0	780	790
+midgard_s5_A	midgard	5	A	US	_v529merge	Core destroyed	231	0	2110	1100
+midgard_s5_B	midgard	5	B	US	_v529merge	Core destroyed	293	0	660	570
+midgard_s6_A	midgard	6	A	OPP	_v488beltbreak2	Core destroyed	197	0	620	1200
+midgard_s6_B	midgard	6	B	US	_v529merge	Core destroyed	437	0	570	1000
+nordkap_s4_A	nordkap	4	A	US	_v529merge	Core destroyed	112	0	500	70
+nordkap_s4_B	nordkap	4	B	US	_v529merge	Core destroyed	128	0	570	140
+nordkap_s5_A	nordkap	5	A	US	_v529merge	Core destroyed	258	0	2030	100
+nordkap_s5_B	nordkap	5	B	US	_v529merge	Core destroyed	254	0	610	150
+nordkap_s6_A	nordkap	6	A	US	_v529merge	Core destroyed	313	0	210	80
+nordkap_s6_B	nordkap	6	B	US	_v529merge	Core destroyed	525	0	5640	4910
