@@ -1,0 +1,13 @@
+Running match: inst_mut2 vs _v488beltbreak2
+  Map: drakkarfjord.map26  Seed: 1  Replay: replay.replay26  TLE: 10ms
+Completed turn 0
+Completed turn 100
+Replay written to replay.replay26
+
+  Winner: inst_mut2  (Core destroyed, turn 121)
+
+                    inst_mut2    _v488beltbreak2  
+  Titanium     12 (300 mined)       11 (0 mined)  
+  Units                     5                  7  
+  Buildings                21                 25  
+

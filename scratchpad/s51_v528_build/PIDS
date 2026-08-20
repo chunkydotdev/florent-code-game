@@ -1,0 +1,6 @@
+PID 86985
+BYTEID PID 6403
+HEADLINE PID 9136
+RESTART 2026-08-20T04:39:17Z byte_identity=28052 drive_headline=28053 (tree frozen at TREE_FROZEN.md5)
+RC PID 51817 at 04:45:14Z PAR=2 (headline at PAR=3; box 10 cores, corefill DRAINED, sibling v527 battery DONE 04:19:20Z)
+RESTART2 2026-08-20T04:53:08Z byteid=81755 headline=81780(PAR=3) rc=81814(PAR=2) tree md5 eco=91cd121abc63923477a3132843d7a3cf

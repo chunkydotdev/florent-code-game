@@ -1,0 +1,51 @@
+=== ARM 1  LOKI_FS_V528=False vs PARENT -- must be IDENTICAL ===
+  atoll          seatA  IDENTICAL  traceback=False
+  atoll          seatB  IDENTICAL  traceback=False
+  drakkarfjord   seatA  IDENTICAL  traceback=False
+  drakkarfjord   seatB  IDENTICAL  traceback=False
+  glacierkeep    seatA  IDENTICAL  traceback=False
+  glacierkeep    seatB  IDENTICAL  traceback=False
+  nordkap        seatA  IDENTICAL  traceback=False
+  nordkap        seatB  IDENTICAL  traceback=False
+  yulerune       seatA  IDENTICAL  traceback=False
+  yulerune       seatB  IDENTICAL  traceback=False
+  flag-off identical: 10/10
+
+=== ARM 3  STANDDOWN: master ON, all sub-flags OFF -- IDENTICAL ===
+  atoll          seatA  IDENTICAL
+  atoll          seatB  IDENTICAL
+  drakkarfjord   seatA  IDENTICAL
+  drakkarfjord   seatB  IDENTICAL
+  glacierkeep    seatA  IDENTICAL
+  glacierkeep    seatB  IDENTICAL
+  nordkap        seatA  IDENTICAL
+  nordkap        seatB  IDENTICAL
+  yulerune       seatA  IDENTICAL
+  yulerune       seatB  IDENTICAL
+  standdown identical: 10/10
+
+=== ARM 2  NEGATIVE CONTROL: v528 as fired vs PARENT -- must DIFFER ===
+  atoll          seatA  DIFFERS  traceback=False
+  atoll          seatB  IDENTICAL(!)  traceback=False
+  drakkarfjord   seatA  DIFFERS  traceback=False
+  drakkarfjord   seatB  DIFFERS  traceback=False
+  glacierkeep    seatA  DIFFERS  traceback=False
+  glacierkeep    seatB  DIFFERS  traceback=False
+  nordkap        seatA  DIFFERS  traceback=False
+  nordkap        seatB  DIFFERS  traceback=False
+  yulerune       seatA  DIFFERS  traceback=False
+  yulerune       seatB  DIFFERS  traceback=False
+  valkyrie       seatA  DIFFERS  traceback=False
+  valkyrie       seatB  DIFFERS  traceback=False
+  ragnarok       seatA  DIFFERS  traceback=False
+  ragnarok       seatB  DIFFERS  traceback=False
+  midgard        seatA  DIFFERS  traceback=False
+  midgard        seatB  DIFFERS  traceback=False
+  as-fired differs: 15/16
+
+=== ARM 4  PER-PLANK: each must DIFFER on at least one cell ===
+  eq_conn   differs on 15/16 cells  
+  eq_walk   differs on 6/16 cells  
+  eq_wire   differs on 0/16 cells  << PLANK NEVER FIRED (FAIL)
+
+RESULT: FAIL

@@ -1,0 +1,12 @@
+Running match: _v488beltbreak2 vs inst_mut
+  Map: glacierkeep.map26  Seed: 2  Replay: replay.replay26  TLE: 10ms
+Completed turn 0
+Replay written to replay.replay26
+
+  Winner: inst_mut  (Core destroyed, turn 100)
+
+               _v488beltbreak2          inst_mut  
+  Titanium        22 (0 mined)    24 (180 mined)  
+  Units                      7                 6  
+  Buildings                 24                20  
+

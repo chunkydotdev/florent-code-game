@@ -1,0 +1,17 @@
+Running match: inst_mut2 vs _v488beltbreak2
+  Map: valkyrie.map26  Seed: 3  Replay: replay.replay26  TLE: 10ms
+Completed turn 0
+Completed turn 100
+Completed turn 200
+Completed turn 300
+Completed turn 400
+Completed turn 500
+Replay written to replay.replay26
+
+  Winner: inst_mut2  (Core destroyed, turn 535)
+
+                     inst_mut2    _v488beltbreak2  
+  Titanium     70 (4380 mined)    116 (160 mined)  
+  Units                     24                  5  
+  Buildings                 58                 45  
+

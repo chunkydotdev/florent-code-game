@@ -1,0 +1,13 @@
+Running match: _v488beltbreak2 vs inst_mut
+  Map: ragnarok.map26  Seed: 2  Replay: replay.replay26  TLE: 10ms
+Completed turn 0
+Completed turn 100
+Replay written to replay.replay26
+
+  Winner: inst_mut  (Core destroyed, turn 126)
+
+               _v488beltbreak2          inst_mut  
+  Titanium      15 (580 mined)    12 (390 mined)  
+  Units                      9                 6  
+  Buildings                 44                15  
+

@@ -1,0 +1,15 @@
+Running match: inst_walk vs _v488beltbreak2
+  Map: valkyrie.map26  Seed: 3  Replay: replay.replay26  TLE: 10ms
+Completed turn 0
+Completed turn 100
+Completed turn 200
+Completed turn 300
+Replay written to replay.replay26
+
+  Winner: _v488beltbreak2  (Core destroyed, turn 303)
+
+                      inst_walk     _v488beltbreak2  
+  Titanium     109 (1400 mined)    137 (2910 mined)  
+  Units                       9                  16  
+  Buildings                  71                  88  
+
