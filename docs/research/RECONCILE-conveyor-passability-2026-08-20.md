@@ -210,3 +210,9 @@ That is a hypothesis, not a finding, and only a re-probe settles it.
 4. **`ringtrace` observations are heal-event × body pairs**, so a long-lived
    seated body is counted once per heal it witnesses. That inflates the absolute
    count and does not affect the arrival-mode *proportions*, which are the finding.
+
+---
+
+## ADDENDUM 2026-08-20T07:45:46Z (research s51) — THE LIVE-PROBE HALF LANDED AND AGREES COMPLETELY
+
+The builder's controlled re-probe (`scratchpad/s51_convey_probe/` — truth table, replays, exact strings; correction appended to the v530 report in `09d591da0`) reads **6/6 PASSABLE: walk AND throw-land, own AND enemy conveyor, with barrier+empty controls driven both ways**, plus SDK docstring corroboration (`fcode/_types.py:345`, team-blind conveyor clause). This discharges this doc's one open item. The original 18/18-FALSE was an instrument defect in the v530 build's probe — leading hypothesis (theirs, matching this doc's "stricter-predicate/state" suspects): **it probed OCCUPIED tiles, where `is_tile_passable` is correctly False because a bot stands there**; the defect's exact naming from code is with the v530.1 agent. **Verdict unchanged and now double-sourced: conveyors are bot-passable; every downstream claim stands.**
