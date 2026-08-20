@@ -1,0 +1,399 @@
+Update available: 2.3.6 -> 2.3.8. Run: pip install --upgrade fcode
+V527 PICKASK 9 adj 0 pick - cutall 0
+V527 BUNKER HOLD 9 why notarmed blk armed orth 8
+V527 PICKASK 10 adj 0 pick - cutall 0
+V527 BUNKER HOLD 10 why notarmed blk armed orth 8
+V527 PICKASK 11 adj 2 pick (14, 4) cutall 0
+V527 PICKASK 11 adj 0 pick - cutall 0
+V527 BUNKER HOLD 11 why notarmed blk armed orth 7
+V527 PICKASK 12 adj 1 pick (13, 3) cutall 0
+V527 PICKASK 12 adj 0 pick - cutall 0
+V527 BUNKER HOLD 12 why notarmed blk armed orth 6
+V527 PICKASK 13 adj 0 pick - cutall 0
+V527 BUNKER HOLD 13 why notarmed blk armed orth 6
+V527 PICKASK 13 adj 0 pick - cutall 0
+V527 BUNKER HOLD 13 why notarmed blk armed orth 6
+V527 PICKASK 14 adj 0 pick - cutall 0
+V527 BUNKER HOLD 14 why notarmed blk armed orth 6
+V527 PICKASK 15 adj 0 pick - cutall 0
+V527 BUNKER HOLD 15 why notarmed blk armed orth 6
+V527 PICKASK 15 adj 1 pick (13, 2) cutall 0
+V527 PICKASK 16 adj 0 pick - cutall 0
+V527 BUNKER HOLD 16 why trapped blk gate
+V527 PICKASK 16 adj 0 pick - cutall 0
+V527 BUNKER HOLD 16 why notarmed blk armed orth 5
+V527 PICKASK 17 adj 0 pick - cutall 0
+V527 BUNKER HOLD 17 why notarmed blk armed orth 5
+V527 PICKASK 18 adj 0 pick - cutall 0
+V527 BUNKER HOLD 18 why notarmed blk armed orth 5
+V527 PICKASK 19 adj 0 pick - cutall 0
+V527 BUNKER HOLD 19 why notarmed blk armed orth 5
+V527 PICKASK 20 adj 0 pick - cutall 0
+V527 BUNKER HOLD 20 why notarmed blk armed orth 5
+V527 PICKASK 20 adj 0 pick - cutall 0
+V527 BUNKER HOLD 20 why notarmed blk armed orth 5
+V527 PICKASK 21 adj 0 pick - cutall 0
+V527 BUNKER HOLD 21 why notarmed blk armed orth 5
+V527 PICKASK 22 adj 0 pick - cutall 0
+V527 BUNKER HOLD 22 why notarmed blk armed orth 5
+V527 PICKASK 150 adj 1 pick (16, 3) cutall 0
+V527 BUNKER HOLD 150 why notarmed blk armed orth 4
+V527 PICKASK 151 adj 1 pick (16, 3) cutall 0
+V527 BUNKER HOLD 151 why notarmed blk armed orth 4
+V527 PICKASK 152 adj 1 pick (16, 3) cutall 0
+V527 BUNKER HOLD 152 why notarmed blk armed orth 4
+V527 PICKASK 153 adj 1 pick (16, 3) cutall 0
+V527 BUNKER HOLD 153 why notarmed blk armed orth 4
+V527 PICKASK 154 adj 1 pick (16, 3) cutall 0
+V527 BUNKER HOLD 154 why notarmed blk armed orth 4
+V527 PICKASK 155 adj 1 pick (16, 3) cutall 0
+V527 BUNKER HOLD 155 why notarmed blk armed orth 4
+V527 PICKASK 156 adj 1 pick (16, 3) cutall 0
+V527 PICKASK 157 adj 0 pick - cutall 0
+V527 BUNKER HOLD 157 why notarmed blk armed orth 3
+V527 PICKASK 158 adj 2 pick (16, 2) cutall 0
+V527 REORDER 158 was (15, 1) now (16, 2) n 1
+V527 PICKASK 159 adj 1 pick - cutall 1
+V527 SELFCUT 159 n 1
+V527 BUNKER HOLD 159 why notarmed blk armed orth 3
+V527 PICKASK 160 adj 1 pick (14, 1) cutall 0
+V527 BUNKER HOLD 160 why notarmed blk armed orth 3
+V527 PICKASK 161 adj 1 pick (14, 1) cutall 0
+V527 BUNKER HOLD 161 why notarmed blk armed orth 3
+V527 PICKASK 162 adj 1 pick (14, 1) cutall 0
+V527 BUNKER HOLD 162 why notarmed blk armed orth 3
+V527 PICKASK 163 adj 1 pick - cutall 1
+V527 SELFCUT 163 n 2
+V527 BUNKER HOLD 163 why notarmed blk armed orth 3
+V527 PICKASK 165 adj 2 pick (13, 1) cutall 0
+V527 REORDER 165 was (15, 1) now (13, 1) n 2
+V527 BUNKER HOLD 165 why notarmed blk armed orth 3
+V527 PICKASK 166 adj 2 pick (13, 1) cutall 0
+V527 REORDER 166 was (15, 1) now (13, 1) n 3
+V527 BUNKER HOLD 166 why notarmed blk armed orth 3
+V527 PICKASK 167 adj 2 pick (13, 1) cutall 0
+V527 REORDER 167 was (15, 1) now (13, 1) n 4
+V527 BUNKER HOLD 167 why notarmed blk armed orth 3
+V527 PICKASK 168 adj 2 pick (13, 1) cutall 0
+V527 REORDER 168 was (15, 1) now (13, 1) n 5
+V527 BUNKER HOLD 168 why notarmed blk armed orth 3
+V527 PICKASK 169 adj 2 pick (13, 1) cutall 0
+V527 REORDER 169 was (15, 1) now (13, 1) n 6
+V527 BUNKER HOLD 169 why notarmed blk armed orth 3
+V527 PICKASK 171 adj 1 pick - cutall 1
+V527 SELFCUT 171 n 3
+V527 BUNKER HOLD 171 why notarmed blk armed orth 3
+V527 PICKASK 172 adj 1 pick - cutall 1
+V527 SELFCUT 172 n 4
+V527 BUNKER HOLD 172 why notarmed blk armed orth 3
+V527 PICKASK 173 adj 1 pick - cutall 1
+V527 SELFCUT 173 n 5
+V527 BUNKER HOLD 173 why notarmed blk armed orth 3
+V527 PICKASK 175 adj 1 pick - cutall 1
+V527 SELFCUT 175 n 6
+V527 BUNKER HOLD 175 why notarmed blk armed orth 3
+V527 PICKASK 176 adj 1 pick - cutall 1
+V527 SELFCUT 176 n 7
+V527 BUNKER HOLD 176 why notarmed blk armed orth 3
+V527 PICKASK 177 adj 1 pick - cutall 1
+V527 SELFCUT 177 n 8
+V527 BUNKER HOLD 177 why notarmed blk armed orth 3
+V527 PICKASK 178 adj 1 pick - cutall 1
+V527 SELFCUT 178 n 9
+V527 BUNKER HOLD 178 why notarmed blk armed orth 3
+V527 PICKASK 179 adj 1 pick - cutall 1
+V527 SELFCUT 179 n 10
+V527 BUNKER HOLD 179 why notarmed blk armed orth 3
+V527 PICKASK 180 adj 1 pick - cutall 1
+V527 SELFCUT 180 n 11
+V527 PICKASK 181 adj 0 pick - cutall 0
+V527 BUNKER HOLD 181 why trapped blk gate
+V527 PICKASK 182 adj 0 pick - cutall 0
+V527 BUNKER HOLD 182 why trapped blk mag
+V527 PICKASK 183 adj 0 pick - cutall 0
+V527 BUNKER HOLD 183 why trapped blk gate
+V527 PICKASK 184 adj 0 pick - cutall 0
+V527 BUNKER HOLD 184 why trapped blk mag
+V527 PICKASK 185 adj 1 pick - cutall 1
+V527 SELFCUT 185 n 12
+V527 PICKASK 187 adj 0 pick - cutall 0
+V527 BUNKER HOLD 187 why trapped blk gate
+V527 PICKASK 188 adj 0 pick - cutall 0
+V527 BUNKER HOLD 188 why trapped blk gate
+V527 PICKASK 189 adj 0 pick - cutall 0
+V527 BUNKER HOLD 189 why trapped blk gate
+V527 PICKASK 190 adj 1 pick - cutall 1
+V527 SELFCUT 190 n 13
+V527 PICKASK 191 adj 0 pick - cutall 0
+V527 BUNKER HOLD 191 why trapped blk gate
+V527 PICKASK 192 adj 0 pick - cutall 0
+V527 BUNKER HOLD 192 why trapped blk gate
+V527 PICKASK 193 adj 0 pick - cutall 0
+V527 BUNKER HOLD 193 why trapped blk gate
+V527 PICKASK 194 adj 0 pick - cutall 0
+V527 BUNKER HOLD 194 why trapped blk gate
+V527 PICKASK 195 adj 1 pick (15, 1) cutall 0
+V527 PICKASK 196 adj 0 pick - cutall 0
+V527 BUNKER HOLD 196 why trapped blk gate
+V527 PICKASK 197 adj 0 pick - cutall 0
+V527 BUNKER HOLD 197 why trapped blk gate
+V527 PICKASK 198 adj 0 pick - cutall 0
+V527 BUNKER HOLD 198 why trapped blk gate
+V527 PICKASK 199 adj 0 pick - cutall 0
+V527 BUNKER HOLD 199 why trapped blk gate
+V527 PICKASK 200 adj 0 pick - cutall 0
+V527 BUNKER HOLD 200 why trapped blk gate
+V527 PICKASK 201 adj 1 pick (15, 1) cutall 0
+V527 PICKASK 202 adj 0 pick - cutall 0
+V527 BUNKER HOLD 202 why trapped blk gate
+V527 PICKASK 203 adj 0 pick - cutall 0
+V527 BUNKER HOLD 203 why trapped blk gate
+V527 PICKASK 204 adj 0 pick - cutall 0
+V527 BUNKER HOLD 204 why trapped blk gate
+V527 PICKASK 205 adj 0 pick - cutall 0
+V527 BUNKER HOLD 205 why trapped blk gate
+V527 PICKASK 206 adj 0 pick - cutall 0
+V527 BUNKER HOLD 206 why trapped blk gate
+V527 PICKASK 207 adj 1 pick (15, 1) cutall 0
+V527 PICKASK 208 adj 0 pick - cutall 0
+V527 BUNKER HOLD 208 why trapped blk gate
+V527 PICKASK 209 adj 0 pick - cutall 0
+V527 BUNKER HOLD 209 why trapped blk gate
+V527 PICKASK 210 adj 0 pick - cutall 0
+V527 BUNKER HOLD 210 why trapped blk gate
+V527 PICKASK 211 adj 0 pick - cutall 0
+V527 BUNKER HOLD 211 why trapped blk gate
+V527 PICKASK 212 adj 0 pick - cutall 0
+V527 BUNKER HOLD 212 why trapped blk gate
+V527 PICKASK 213 adj 0 pick - cutall 0
+V527 BUNKER HOLD 213 why trapped blk gate
+V527 PICKASK 214 adj 1 pick - cutall 1
+V527 SELFCUT 214 n 14
+V527 PICKASK 215 adj 0 pick - cutall 0
+V527 BUNKER HOLD 215 why trapped blk gate
+V527 PICKASK 216 adj 0 pick - cutall 0
+V527 BUNKER HOLD 216 why trapped blk gate
+V527 PICKASK 217 adj 0 pick - cutall 0
+V527 BUNKER HOLD 217 why trapped blk gate
+V527 PICKASK 218 adj 0 pick - cutall 0
+V527 BUNKER HOLD 218 why trapped blk gate
+V527 PICKASK 219 adj 0 pick - cutall 0
+V527 BUNKER HOLD 219 why trapped blk gate
+V527 PICKASK 220 adj 0 pick - cutall 0
+V527 BUNKER HOLD 220 why trapped blk gate
+V527 PICKASK 221 adj 0 pick - cutall 0
+V527 BUNKER HOLD 221 why trapped blk gate
+V527 PICKASK 222 adj 0 pick - cutall 0
+V527 BUNKER HOLD 222 why trapped blk gate
+V527 PICKASK 223 adj 0 pick - cutall 0
+V527 BUNKER HOLD 223 why trapped blk gate
+V527 PICKASK 224 adj 0 pick - cutall 0
+V527 BUNKER HOLD 224 why trapped blk gate
+V527 PICKASK 225 adj 0 pick - cutall 0
+V527 BUNKER HOLD 225 why trapped blk gate
+V527 PICKASK 226 adj 0 pick - cutall 0
+V527 BUNKER HOLD 226 why trapped blk gate
+V527 PICKASK 227 adj 0 pick - cutall 0
+V527 BUNKER HOLD 227 why trapped blk gate
+V527 PICKASK 228 adj 0 pick - cutall 0
+V527 BUNKER HOLD 228 why trapped blk mag
+V527 PICKASK 229 adj 0 pick - cutall 0
+V527 BUNKER HOLD 229 why trapped blk mag
+V527 PICKASK 230 adj 0 pick - cutall 0
+V527 BUNKER HOLD 230 why trapped blk gate
+V527 PICKASK 231 adj 0 pick - cutall 0
+V527 BUNKER HOLD 231 why trapped blk gate
+V527 PICKASK 232 adj 0 pick - cutall 0
+V527 BUNKER HOLD 232 why trapped blk gate
+V527 PICKASK 233 adj 0 pick - cutall 0
+V527 BUNKER HOLD 233 why trapped blk gate
+V527 PICKASK 234 adj 0 pick - cutall 0
+V527 BUNKER HOLD 234 why trapped blk gate
+V527 PICKASK 235 adj 0 pick - cutall 0
+V527 BUNKER HOLD 235 why trapped blk gate
+V527 PICKASK 236 adj 0 pick - cutall 0
+V527 BUNKER HOLD 236 why trapped blk gate
+V527 PICKASK 237 adj 0 pick - cutall 0
+V527 BUNKER HOLD 237 why trapped blk gate
+V527 PICKASK 238 adj 0 pick - cutall 0
+V527 BUNKER HOLD 238 why trapped blk gate
+V527 PICKASK 239 adj 1 pick - cutall 1
+V527 SELFCUT 239 n 15
+V527 PICKASK 240 adj 0 pick - cutall 0
+V527 BUNKER HOLD 240 why trapped blk gate
+V527 PICKASK 241 adj 0 pick - cutall 0
+V527 BUNKER HOLD 241 why trapped blk gate
+V527 PICKASK 242 adj 0 pick - cutall 0
+V527 BUNKER HOLD 242 why trapped blk gate
+V527 PICKASK 243 adj 0 pick - cutall 0
+V527 BUNKER HOLD 243 why trapped blk gate
+V527 PICKASK 244 adj 1 pick - cutall 1
+V527 SELFCUT 244 n 16
+V527 PICKASK 245 adj 0 pick - cutall 0
+V527 BUNKER HOLD 245 why trapped blk gate
+V527 PICKASK 246 adj 0 pick - cutall 0
+V527 BUNKER HOLD 246 why trapped blk gate
+V527 PICKASK 247 adj 0 pick - cutall 0
+V527 BUNKER HOLD 247 why trapped blk gate
+V527 PICKASK 248 adj 0 pick - cutall 0
+V527 BUNKER HOLD 248 why trapped blk gate
+V527 PICKASK 249 adj 1 pick - cutall 1
+V527 SELFCUT 249 n 17
+V527 PICKASK 250 adj 0 pick - cutall 0
+V527 BUNKER HOLD 250 why trapped blk gate
+V527 PICKASK 251 adj 0 pick - cutall 0
+V527 BUNKER HOLD 251 why trapped blk gate
+V527 PICKASK 252 adj 0 pick - cutall 0
+V527 BUNKER HOLD 252 why trapped blk gate
+V527 PICKASK 253 adj 0 pick - cutall 0
+V527 BUNKER HOLD 253 why trapped blk gate
+V527 PICKASK 254 adj 1 pick - cutall 1
+V527 SELFCUT 254 n 18
+V527 PICKASK 255 adj 0 pick - cutall 0
+V527 BUNKER HOLD 255 why trapped blk gate
+V527 PICKASK 256 adj 0 pick - cutall 0
+V527 BUNKER HOLD 256 why trapped blk gate
+V527 PICKASK 257 adj 0 pick - cutall 0
+V527 BUNKER HOLD 257 why trapped blk gate
+V527 PICKASK 258 adj 0 pick - cutall 0
+V527 BUNKER HOLD 258 why trapped blk gate
+V527 PICKASK 259 adj 1 pick - cutall 1
+V527 SELFCUT 259 n 19
+V527 PICKASK 260 adj 0 pick - cutall 0
+V527 BUNKER HOLD 260 why trapped blk gate
+V527 PICKASK 261 adj 0 pick - cutall 0
+V527 BUNKER HOLD 261 why trapped blk gate
+V527 PICKASK 262 adj 0 pick - cutall 0
+V527 BUNKER HOLD 262 why trapped blk gate
+V527 PICKASK 263 adj 0 pick - cutall 0
+V527 BUNKER HOLD 263 why trapped blk gate
+V527 PICKASK 264 adj 1 pick - cutall 1
+V527 SELFCUT 264 n 20
+V527 PICKASK 265 adj 0 pick - cutall 0
+V527 BUNKER HOLD 265 why trapped blk gate
+V527 PICKASK 266 adj 0 pick - cutall 0
+V527 BUNKER HOLD 266 why trapped blk gate
+V527 PICKASK 267 adj 0 pick - cutall 0
+V527 BUNKER HOLD 267 why trapped blk gate
+V527 PICKASK 268 adj 0 pick - cutall 0
+V527 BUNKER HOLD 268 why trapped blk gate
+V527 PICKASK 269 adj 1 pick - cutall 1
+V527 SELFCUT 269 n 21
+V527 PICKASK 270 adj 0 pick - cutall 0
+V527 BUNKER HOLD 270 why trapped blk gate
+V527 PICKASK 271 adj 0 pick - cutall 0
+V527 BUNKER HOLD 271 why trapped blk gate
+V527 PICKASK 272 adj 0 pick - cutall 0
+V527 BUNKER HOLD 272 why trapped blk gate
+V527 PICKASK 273 adj 0 pick - cutall 0
+V527 BUNKER HOLD 273 why trapped blk gate
+V527 PICKASK 274 adj 1 pick - cutall 1
+V527 SELFCUT 274 n 22
+V527 PICKASK 275 adj 0 pick - cutall 0
+V527 BUNKER HOLD 275 why trapped blk gate
+V527 PICKASK 276 adj 0 pick - cutall 0
+V527 BUNKER HOLD 276 why trapped blk gate
+V527 PICKASK 277 adj 0 pick - cutall 0
+V527 BUNKER HOLD 277 why trapped blk gate
+V527 PICKASK 278 adj 0 pick - cutall 0
+V527 BUNKER HOLD 278 why trapped blk gate
+V527 PICKASK 279 adj 1 pick - cutall 1
+V527 SELFCUT 279 n 23
+V527 PICKASK 280 adj 0 pick - cutall 0
+V527 BUNKER HOLD 280 why trapped blk gate
+V527 PICKASK 281 adj 0 pick - cutall 0
+V527 BUNKER HOLD 281 why trapped blk gate
+V527 PICKASK 282 adj 0 pick - cutall 0
+V527 BUNKER HOLD 282 why trapped blk gate
+V527 PICKASK 283 adj 0 pick - cutall 0
+V527 BUNKER HOLD 283 why trapped blk gate
+V527 PICKASK 284 adj 1 pick - cutall 1
+V527 SELFCUT 284 n 24
+V527 PICKASK 285 adj 0 pick - cutall 0
+V527 BUNKER HOLD 285 why trapped blk gate
+V527 PICKASK 286 adj 0 pick - cutall 0
+V527 BUNKER HOLD 286 why trapped blk gate
+V527 PICKASK 287 adj 0 pick - cutall 0
+V527 BUNKER HOLD 287 why trapped blk gate
+V527 PICKASK 288 adj 0 pick - cutall 0
+V527 BUNKER HOLD 288 why trapped blk gate
+V527 PICKASK 289 adj 1 pick - cutall 1
+V527 SELFCUT 289 n 25
+V527 PICKASK 290 adj 0 pick - cutall 0
+V527 BUNKER HOLD 290 why trapped blk gate
+V527 PICKASK 291 adj 0 pick - cutall 0
+V527 BUNKER HOLD 291 why trapped blk gate
+V527 PICKASK 292 adj 0 pick - cutall 0
+V527 BUNKER HOLD 292 why trapped blk gate
+V527 PICKASK 293 adj 0 pick - cutall 0
+V527 BUNKER HOLD 293 why trapped blk gate
+V527 PICKASK 294 adj 1 pick - cutall 1
+V527 SELFCUT 294 n 26
+V527 PICKASK 295 adj 0 pick - cutall 0
+V527 BUNKER HOLD 295 why trapped blk gate
+V527 PICKASK 296 adj 0 pick - cutall 0
+V527 BUNKER HOLD 296 why trapped blk gate
+V527 PICKASK 297 adj 0 pick - cutall 0
+V527 BUNKER HOLD 297 why trapped blk gate
+V527 PICKASK 298 adj 0 pick - cutall 0
+V527 BUNKER HOLD 298 why trapped blk gate
+V527 PICKASK 299 adj 1 pick - cutall 1
+V527 SELFCUT 299 n 27
+V527 PICKASK 300 adj 0 pick - cutall 0
+V527 BUNKER HOLD 300 why trapped blk gate
+V527 PICKASK 301 adj 0 pick - cutall 0
+V527 BUNKER HOLD 301 why trapped blk gate
+V527 PICKASK 302 adj 0 pick - cutall 0
+V527 BUNKER HOLD 302 why trapped blk gate
+V527 PICKASK 303 adj 0 pick - cutall 0
+V527 BUNKER HOLD 303 why trapped blk gate
+V527 PICKASK 304 adj 1 pick - cutall 1
+V527 SELFCUT 304 n 28
+V527 PICKASK 305 adj 0 pick - cutall 0
+V527 BUNKER HOLD 305 why trapped blk gate
+V527 PICKASK 306 adj 0 pick - cutall 0
+V527 BUNKER HOLD 306 why trapped blk gate
+V527 PICKASK 307 adj 0 pick - cutall 0
+V527 BUNKER HOLD 307 why trapped blk gate
+V527 PICKASK 308 adj 0 pick - cutall 0
+V527 BUNKER HOLD 308 why trapped blk gate
+V527 PICKASK 309 adj 1 pick - cutall 1
+V527 SELFCUT 309 n 29
+V527 PICKASK 310 adj 0 pick - cutall 0
+V527 BUNKER HOLD 310 why trapped blk gate
+V527 PICKASK 311 adj 0 pick - cutall 0
+V527 BUNKER HOLD 311 why trapped blk gate
+V527 PICKASK 312 adj 0 pick - cutall 0
+V527 BUNKER HOLD 312 why trapped blk gate
+V527 PICKASK 313 adj 0 pick - cutall 0
+V527 BUNKER HOLD 313 why trapped blk gate
+V527 PICKASK 314 adj 1 pick - cutall 1
+V527 SELFCUT 314 n 30
+V527 PICKASK 315 adj 0 pick - cutall 0
+V527 BUNKER HOLD 315 why trapped blk gate
+V527 PICKASK 316 adj 0 pick - cutall 0
+V527 BUNKER HOLD 316 why trapped blk gate
+V527 PICKASK 317 adj 0 pick - cutall 0
+V527 BUNKER HOLD 317 why trapped blk gate
+V527 PICKASK 318 adj 0 pick - cutall 0
+V527 BUNKER HOLD 318 why trapped blk gate
+V527 PICKASK 319 adj 1 pick - cutall 1
+V527 SELFCUT 319 n 31
+V527 PICKASK 320 adj 0 pick - cutall 0
+V527 BUNKER HOLD 320 why trapped blk gate
+V527 PICKASK 321 adj 0 pick - cutall 0
+V527 BUNKER HOLD 321 why trapped blk gate
+V527 PICKASK 322 adj 0 pick - cutall 0
+V527 BUNKER HOLD 322 why trapped blk gate
+V527 PICKASK 323 adj 0 pick - cutall 0
+V527 BUNKER HOLD 323 why trapped blk gate
+V527 PICKASK 324 adj 1 pick - cutall 1
+V527 SELFCUT 324 n 32
+V527 PICKASK 325 adj 0 pick - cutall 0
+V527 BUNKER HOLD 325 why trapped blk gate
+V527 PICKASK 326 adj 0 pick - cutall 0
+V527 BUNKER HOLD 326 why trapped blk gate
+V527 PICKASK 327 adj 0 pick - cutall 0
+V527 BUNKER HOLD 327 why trapped blk gate
+V527 PICKASK 328 adj 0 pick - cutall 0
+V527 BUNKER HOLD 328 why trapped blk gate

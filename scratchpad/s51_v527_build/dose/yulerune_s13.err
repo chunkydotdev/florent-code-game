@@ -1,0 +1,1964 @@
+Update available: 2.3.6 -> 2.3.8. Run: pip install --upgrade fcode
+V527 PICKASK 13 adj 1 pick (16, 8) cutall 0
+V527 REORDER 13 was (18, 9) now (16, 8) n 1
+V527 PICKASK 14 adj 0 pick - cutall 0
+V527 BUNKER HOLD 14 why notarmed blk armed orth 6
+V527 PICKASK 14 adj 0 pick - cutall 0
+V527 BUNKER HOLD 14 why notarmed blk armed orth 7
+V527 PICKASK 15 adj 2 pick (17, 8) cutall 0
+V527 PICKASK 15 adj 0 pick - cutall 0
+V527 BUNKER HOLD 15 why notarmed blk armed orth 6
+V527 PICKASK 16 adj 1 pick (18, 9) cutall 0
+V527 PICKASK 16 adj 2 pick (15, 10) cutall 0
+V527 REORDER 16 was (15, 9) now (15, 10) n 1
+V527 PICKASK 17 adj 0 pick - cutall 0
+V527 BUNKER HOLD 17 why notarmed blk armed orth 4
+V527 PICKASK 17 adj 1 pick (16, 11) cutall 0
+V527 REORDER 17 was (15, 9) now (16, 11) n 2
+V527 PICKASK 18 adj 0 pick - cutall 0
+V527 BUNKER HOLD 18 why notarmed blk armed orth 3
+V527 PICKASK 18 adj 0 pick - cutall 0
+V527 BUNKER HOLD 18 why notarmed blk armed orth 3
+V527 PICKASK 19 adj 0 pick - cutall 0
+V527 BUNKER HOLD 19 why notarmed blk armed orth 3
+V527 PICKASK 19 adj 0 pick - cutall 0
+V527 BUNKER HOLD 19 why notarmed blk armed orth 3
+V527 PICKASK 20 adj 1 pick (18, 10) cutall 0
+V527 PICKASK 20 adj 0 pick - cutall 0
+V527 BUNKER HOLD 20 why notarmed blk armed orth 2
+V527 PICKASK 21 adj 0 pick - cutall 0
+V527 BUNKER HOLD 21 why notarmed blk armed orth 2
+V527 PICKASK 21 adj 1 pick (17, 11) cutall 0
+V527 REORDER 21 was (15, 9) now (17, 11) n 3
+V527 PICKASK 22 adj 0 pick - cutall 0
+V527 BUNKER HOLD 22 why collar blk gate
+V527 PICKASK 23 adj 0 pick - cutall 0
+V527 BUNKER HOLD 23 why collar blk gate
+V527 PICKASK 24 adj 0 pick - cutall 0
+V527 BUNKER HOLD 24 why collar blk gate
+V527 PICKASK 24 adj 0 pick - cutall 0
+V527 BUNKER HOLD 24 why collar blk gate
+V527 PICKASK 25 adj 0 pick - cutall 0
+V527 BUNKER HOLD 25 why notarmed blk armed orth 3
+V527 PICKASK 26 adj 0 pick - cutall 0
+V527 BUNKER HOLD 26 why collar blk gate
+V527 PICKASK 26 adj 1 pick (15, 9) cutall 0
+V527 PICKASK 27 adj 0 pick - cutall 0
+V527 BUNKER HOLD 27 why collar blk gate
+V527 PSURV ARM 28 ph 3 repl 0 cap 4
+V527 PICKASK 28 adj 0 pick - cutall 0
+V527 BUNKER HOLD 28 why collar blk gate
+V527 PICKASK 28 adj 1 pick (15, 8) cutall 0
+V527 PICKASK 29 adj 0 pick - cutall 0
+V527 BUNKER HOLD 29 why collar blk gate
+V527 PICKASK 30 adj 0 pick - cutall 0
+V527 BUNKER HOLD 30 why collar blk gate
+V527 PICKASK 30 adj 0 pick - cutall 0
+V527 BUNKER HOLD 30 why collar blk gate
+V527 PICKASK 31 adj 0 pick - cutall 0
+V527 BUNKER HOLD 31 why collar blk gate
+V527 PICKASK 32 adj 0 pick - cutall 0
+V527 BUNKER HOLD 32 why collar blk gate
+V527 PICKASK 32 adj 0 pick - cutall 0
+V527 BUNKER HOLD 32 why notarmed blk armed orth 2
+V527 PICKASK 33 adj 0 pick - cutall 0
+V527 BUNKER HOLD 33 why notarmed blk armed orth 3
+V527 PICKASK 34 adj 0 pick - cutall 0
+V527 BUNKER HOLD 34 why notarmed blk armed orth 4
+V527 PICKASK 35 adj 0 pick - cutall 0
+V527 BUNKER HOLD 35 why notarmed blk armed orth 2
+V527 PICKASK 36 adj 0 pick - cutall 0
+V527 BUNKER HOLD 36 why notarmed blk armed orth 4
+V527 PICKASK 37 adj 0 pick - cutall 0
+V527 BUNKER HOLD 37 why notarmed blk armed orth 2
+V527 PICKASK 38 adj 0 pick - cutall 0
+V527 BUNKER HOLD 38 why notarmed blk armed orth 4
+V527 PICKASK 39 adj 0 pick - cutall 0
+V527 BUNKER HOLD 39 why notarmed blk armed orth 2
+V527 PICKASK 40 adj 0 pick - cutall 0
+V527 BUNKER HOLD 40 why notarmed blk armed orth 4
+V527 PICKASK 41 adj 0 pick - cutall 0
+V527 BUNKER HOLD 41 why notarmed blk armed orth 2
+V527 PICKASK 42 adj 0 pick - cutall 0
+V527 BUNKER HOLD 42 why notarmed blk armed orth 4
+V527 PICKASK 43 adj 0 pick - cutall 0
+V527 BUNKER HOLD 43 why notarmed blk armed orth 2
+V527 PICKASK 44 adj 0 pick - cutall 0
+V527 BUNKER HOLD 44 why notarmed blk armed orth 4
+V527 PICKASK 45 adj 0 pick - cutall 0
+V527 BUNKER HOLD 45 why notarmed blk armed orth 2
+V527 PICKASK 46 adj 0 pick - cutall 0
+V527 BUNKER HOLD 46 why notarmed blk armed orth 4
+V527 PICKASK 47 adj 0 pick - cutall 0
+V527 BUNKER HOLD 47 why notarmed blk armed orth 2
+V527 PICKASK 48 adj 0 pick - cutall 0
+V527 BUNKER HOLD 48 why notarmed blk armed orth 4
+V527 PICKASK 49 adj 0 pick - cutall 0
+V527 BUNKER HOLD 49 why notarmed blk armed orth 2
+V527 PICKASK 50 adj 0 pick - cutall 0
+V527 BUNKER HOLD 50 why notarmed blk armed orth 4
+V527 PICKASK 51 adj 0 pick - cutall 0
+V527 BUNKER HOLD 51 why notarmed blk armed orth 3
+V527 PICKASK 52 adj 0 pick - cutall 0
+V527 BUNKER HOLD 52 why collar blk gate
+V527 PICKASK 53 adj 0 pick - cutall 0
+V527 BUNKER HOLD 53 why collar blk gate
+V527 PICKASK 54 adj 0 pick - cutall 0
+V527 BUNKER HOLD 54 why collar blk gate
+V527 PICKASK 55 adj 0 pick - cutall 0
+V527 BUNKER HOLD 55 why collar blk gate
+V527 PICKASK 56 adj 1 pick (18, 10) cutall 0
+V527 PICKASK 57 adj 0 pick - cutall 0
+V527 BUNKER HOLD 57 why collar blk gate
+V527 PICKASK 58 adj 0 pick - cutall 0
+V527 BUNKER HOLD 58 why collar blk gate
+V527 PICKASK 59 adj 0 pick - cutall 0
+V527 BUNKER HOLD 59 why collar blk gate
+V527 PICKASK 60 adj 0 pick - cutall 0
+V527 BUNKER HOLD 60 why collar blk gate
+V527 PICKASK 61 adj 1 pick (15, 11) cutall 0
+V527 BUNKER HOLD 61 why collar blk gate
+V527 PICKASK 62 adj 1 pick (15, 11) cutall 0
+V527 BUNKER HOLD 62 why collar blk gate
+V527 PICKASK 63 adj 1 pick (15, 11) cutall 0
+V527 BUNKER HOLD 63 why collar blk gate
+V527 PICKASK 64 adj 1 pick (15, 11) cutall 0
+V527 PICKASK 65 adj 0 pick - cutall 0
+V527 BUNKER HOLD 65 why collar blk gate
+V527 PICKASK 66 adj 0 pick - cutall 0
+V527 BUNKER HOLD 66 why notarmed blk armed orth 2
+V527 PICKASK 67 adj 0 pick - cutall 0
+V527 BUNKER HOLD 67 why notarmed blk armed orth 4
+V527 PICKASK 68 adj 0 pick - cutall 0
+V527 BUNKER HOLD 68 why notarmed blk armed orth 2
+V527 PICKASK 69 adj 0 pick - cutall 0
+V527 BUNKER HOLD 69 why notarmed blk armed orth 4
+V527 PICKASK 70 adj 0 pick - cutall 0
+V527 BUNKER HOLD 70 why notarmed blk armed orth 2
+V527 PSURV DISPATCH 71 repl 3 n 1
+V527 PICKASK 71 adj 0 pick - cutall 0
+V527 BUNKER HOLD 71 why notarmed blk armed orth 4
+V527 PICKASK 72 adj 0 pick - cutall 0
+V527 BUNKER HOLD 72 why notarmed blk armed orth 2
+V527 PICKASK 73 adj 0 pick - cutall 0
+V527 BUNKER HOLD 73 why notarmed blk armed orth 4
+V527 PICKASK 74 adj 0 pick - cutall 0
+V527 BUNKER HOLD 74 why notarmed blk armed orth 2
+V527 PICKASK 75 adj 0 pick - cutall 0
+V527 BUNKER HOLD 75 why notarmed blk armed orth 4
+V527 PICKASK 76 adj 0 pick - cutall 0
+V527 BUNKER HOLD 76 why notarmed blk armed orth 2
+V527 PICKASK 77 adj 0 pick - cutall 0
+V527 BUNKER HOLD 77 why notarmed blk armed orth 4
+V527 PICKASK 78 adj 0 pick - cutall 0
+V527 BUNKER HOLD 78 why notarmed blk armed orth 2
+V527 PICKASK 79 adj 0 pick - cutall 0
+V527 BUNKER HOLD 79 why notarmed blk armed orth 4
+V527 PICKASK 80 adj 0 pick - cutall 0
+V527 BUNKER HOLD 80 why notarmed blk armed orth 2
+V527 PICKASK 81 adj 0 pick - cutall 0
+V527 BUNKER HOLD 81 why notarmed blk armed orth 4
+V527 PICKASK 82 adj 0 pick - cutall 0
+V527 BUNKER HOLD 82 why notarmed blk armed orth 2
+V527 PICKASK 83 adj 0 pick - cutall 0
+V527 BUNKER HOLD 83 why notarmed blk armed orth 4
+V527 PSURV DISPATCH 84 repl 4 n 2
+V527 PICKASK 84 adj 0 pick - cutall 0
+V527 BUNKER HOLD 84 why notarmed blk armed orth 2
+V527 PICKASK 85 adj 0 pick - cutall 0
+V527 BUNKER HOLD 85 why notarmed blk armed orth 4
+V527 PICKASK 86 adj 0 pick - cutall 0
+V527 BUNKER HOLD 86 why notarmed blk armed orth 2
+V527 PICKASK 87 adj 0 pick - cutall 0
+V527 BUNKER HOLD 87 why notarmed blk armed orth 4
+V527 PICKASK 88 adj 0 pick - cutall 0
+V527 BUNKER HOLD 88 why notarmed blk armed orth 2
+V527 PICKASK 89 adj 0 pick - cutall 0
+V527 BUNKER HOLD 89 why notarmed blk armed orth 4
+V527 PICKASK 90 adj 0 pick - cutall 0
+V527 BUNKER HOLD 90 why notarmed blk armed orth 2
+V527 PICKASK 91 adj 0 pick - cutall 0
+V527 BUNKER HOLD 91 why notarmed blk armed orth 4
+V527 PICKASK 92 adj 0 pick - cutall 0
+V527 BUNKER HOLD 92 why notarmed blk armed orth 2
+V527 PICKASK 93 adj 0 pick - cutall 0
+V527 BUNKER HOLD 93 why notarmed blk armed orth 4
+V527 PICKASK 94 adj 0 pick - cutall 0
+V527 BUNKER HOLD 94 why notarmed blk armed orth 2
+V527 PICKASK 95 adj 0 pick - cutall 0
+V527 BUNKER HOLD 95 why notarmed blk armed orth 4
+V527 PICKASK 96 adj 0 pick - cutall 0
+V527 BUNKER HOLD 96 why notarmed blk armed orth 2
+V527 PICKASK 97 adj 0 pick - cutall 0
+V527 BUNKER HOLD 97 why notarmed blk armed orth 4
+V527 PICKASK 98 adj 0 pick - cutall 0
+V527 BUNKER HOLD 98 why notarmed blk armed orth 2
+V527 PICKASK 99 adj 0 pick - cutall 0
+V527 BUNKER HOLD 99 why notarmed blk armed orth 4
+V527 PICKASK 100 adj 0 pick - cutall 0
+V527 BUNKER HOLD 100 why notarmed blk armed orth 2
+V527 PICKASK 101 adj 0 pick - cutall 0
+V527 BUNKER HOLD 101 why notarmed blk armed orth 4
+V527 PICKASK 102 adj 0 pick - cutall 0
+V527 BUNKER HOLD 102 why notarmed blk armed orth 2
+V527 PICKASK 103 adj 0 pick - cutall 0
+V527 BUNKER HOLD 103 why notarmed blk armed orth 4
+V527 PICKASK 104 adj 0 pick - cutall 0
+V527 BUNKER HOLD 104 why notarmed blk armed orth 2
+V527 PICKASK 105 adj 0 pick - cutall 0
+V527 BUNKER HOLD 105 why notarmed blk armed orth 4
+V527 PICKASK 106 adj 0 pick - cutall 0
+V527 BUNKER HOLD 106 why notarmed blk armed orth 2
+V527 PICKASK 107 adj 0 pick - cutall 0
+V527 BUNKER HOLD 107 why notarmed blk armed orth 4
+V527 PICKASK 108 adj 0 pick - cutall 0
+V527 BUNKER HOLD 108 why notarmed blk armed orth 2
+V527 PICKASK 109 adj 0 pick - cutall 0
+V527 BUNKER HOLD 109 why notarmed blk armed orth 4
+V527 PICKASK 110 adj 0 pick - cutall 0
+V527 BUNKER HOLD 110 why notarmed blk armed orth 2
+V527 PICKASK 111 adj 0 pick - cutall 0
+V527 BUNKER HOLD 111 why notarmed blk armed orth 4
+V527 PICKASK 112 adj 0 pick - cutall 0
+V527 BUNKER HOLD 112 why notarmed blk armed orth 2
+V527 PICKASK 113 adj 0 pick - cutall 0
+V527 BUNKER HOLD 113 why notarmed blk armed orth 4
+V527 PICKASK 114 adj 0 pick - cutall 0
+V527 BUNKER HOLD 114 why notarmed blk armed orth 2
+V527 PICKASK 115 adj 0 pick - cutall 0
+V527 BUNKER HOLD 115 why notarmed blk armed orth 4
+V527 PICKASK 116 adj 0 pick - cutall 0
+V527 BUNKER HOLD 116 why notarmed blk armed orth 2
+V527 PICKASK 117 adj 0 pick - cutall 0
+V527 BUNKER HOLD 117 why notarmed blk armed orth 4
+V527 PICKASK 118 adj 0 pick - cutall 0
+V527 BUNKER HOLD 118 why notarmed blk armed orth 2
+V527 PICKASK 119 adj 0 pick - cutall 0
+V527 BUNKER HOLD 119 why notarmed blk armed orth 4
+V527 PICKASK 120 adj 0 pick - cutall 0
+V527 BUNKER HOLD 120 why notarmed blk armed orth 2
+V527 PICKASK 121 adj 0 pick - cutall 0
+V527 BUNKER HOLD 121 why notarmed blk armed orth 4
+V527 PICKASK 122 adj 0 pick - cutall 0
+V527 BUNKER HOLD 122 why notarmed blk armed orth 2
+V527 PICKASK 123 adj 0 pick - cutall 0
+V527 BUNKER HOLD 123 why notarmed blk armed orth 4
+V527 PICKASK 124 adj 0 pick - cutall 0
+V527 BUNKER HOLD 124 why notarmed blk armed orth 2
+V527 PICKASK 125 adj 0 pick - cutall 0
+V527 BUNKER HOLD 125 why notarmed blk armed orth 4
+V527 PICKASK 126 adj 0 pick - cutall 0
+V527 BUNKER HOLD 126 why notarmed blk armed orth 2
+V527 PICKASK 127 adj 0 pick - cutall 0
+V527 BUNKER HOLD 127 why notarmed blk armed orth 4
+V527 PICKASK 128 adj 0 pick - cutall 0
+V527 BUNKER HOLD 128 why notarmed blk armed orth 2
+V527 PICKASK 129 adj 0 pick - cutall 0
+V527 BUNKER HOLD 129 why notarmed blk armed orth 4
+V527 PICKASK 130 adj 0 pick - cutall 0
+V527 BUNKER HOLD 130 why notarmed blk armed orth 2
+V527 PICKASK 131 adj 0 pick - cutall 0
+V527 BUNKER HOLD 131 why notarmed blk armed orth 4
+V527 PICKASK 132 adj 0 pick - cutall 0
+V527 BUNKER HOLD 132 why notarmed blk armed orth 2
+V527 PICKASK 133 adj 0 pick - cutall 0
+V527 BUNKER HOLD 133 why notarmed blk armed orth 4
+V527 PICKASK 134 adj 0 pick - cutall 0
+V527 BUNKER HOLD 134 why notarmed blk armed orth 2
+V527 PICKASK 135 adj 0 pick - cutall 0
+V527 BUNKER HOLD 135 why notarmed blk armed orth 4
+V527 PICKASK 136 adj 0 pick - cutall 0
+V527 BUNKER HOLD 136 why notarmed blk armed orth 2
+V527 PICKASK 137 adj 0 pick - cutall 0
+V527 BUNKER HOLD 137 why notarmed blk armed orth 4
+V527 PICKASK 138 adj 0 pick - cutall 0
+V527 BUNKER HOLD 138 why notarmed blk armed orth 3
+V527 PICKASK 139 adj 0 pick - cutall 0
+V527 BUNKER HOLD 139 why notarmed blk armed orth 2
+V527 PICKASK 140 adj 0 pick - cutall 0
+V527 BUNKER HOLD 140 why notarmed blk armed orth 2
+V527 PICKASK 141 adj 0 pick - cutall 0
+V527 BUNKER HOLD 141 why notarmed blk armed orth 2
+V527 PICKASK 142 adj 0 pick - cutall 0
+V527 BUNKER HOLD 142 why notarmed blk armed orth 2
+V527 PICKASK 143 adj 1 pick - cutall 1
+V527 SELFCUT 143 n 1
+V527 PICKASK 144 adj 0 pick - cutall 0
+V527 BUNKER HOLD 144 why collar blk gate
+V527 PICKASK 145 adj 0 pick - cutall 0
+V527 BUNKER HOLD 145 why collar blk gate
+V527 PICKASK 146 adj 0 pick - cutall 0
+V527 BUNKER HOLD 146 why collar blk gate
+V527 PICKASK 147 adj 0 pick - cutall 0
+V527 BUNKER HOLD 147 why collar blk gate
+V527 PICKASK 148 adj 0 pick - cutall 0
+V527 BUNKER HOLD 148 why notarmed blk armed orth 2
+V527 PICKASK 149 adj 0 pick - cutall 0
+V527 BUNKER HOLD 149 why notarmed blk armed orth 2
+V527 PICKASK 150 adj 0 pick - cutall 0
+V527 BUNKER HOLD 150 why notarmed blk armed orth 2
+V527 PICKASK 151 adj 0 pick - cutall 0
+V527 BUNKER HOLD 151 why notarmed blk armed orth 2
+V527 PICKASK 152 adj 1 pick - cutall 1
+V527 SELFCUT 152 n 2
+V527 PICKASK 153 adj 0 pick - cutall 0
+V527 BUNKER HOLD 153 why collar blk gate
+V527 PICKASK 154 adj 0 pick - cutall 0
+V527 BUNKER HOLD 154 why collar blk gate
+V527 PICKASK 155 adj 0 pick - cutall 0
+V527 BUNKER HOLD 155 why collar blk gate
+V527 PICKASK 156 adj 0 pick - cutall 0
+V527 BUNKER HOLD 156 why collar blk gate
+V527 PICKASK 157 adj 1 pick - cutall 1
+V527 SELFCUT 157 n 3
+V527 PICKASK 158 adj 0 pick - cutall 0
+V527 BUNKER HOLD 158 why collar blk gate
+V527 PICKASK 159 adj 0 pick - cutall 0
+V527 BUNKER HOLD 159 why collar blk gate
+V527 PICKASK 160 adj 0 pick - cutall 0
+V527 BUNKER HOLD 160 why notarmed blk armed orth 3
+V527 PICKASK 161 adj 0 pick - cutall 0
+V527 BUNKER HOLD 161 why notarmed blk armed orth 5
+V527 PICKASK 162 adj 0 pick - cutall 0
+V527 BUNKER HOLD 162 why notarmed blk armed orth 5
+V527 PICKASK 163 adj 0 pick - cutall 0
+V527 BUNKER HOLD 163 why notarmed blk armed orth 2
+V527 PICKASK 164 adj 1 pick - cutall 1
+V527 SELFCUT 164 n 4
+V527 PICKASK 165 adj 0 pick - cutall 0
+V527 BUNKER HOLD 165 why collar blk gate
+V527 PICKASK 166 adj 0 pick - cutall 0
+V527 BUNKER HOLD 166 why collar blk gate
+V527 PICKASK 167 adj 0 pick - cutall 0
+V527 BUNKER HOLD 167 why collar blk gate
+V527 PICKASK 168 adj 0 pick - cutall 0
+V527 BUNKER HOLD 168 why collar blk gate
+V527 PICKASK 169 adj 0 pick - cutall 0
+V527 BUNKER HOLD 169 why collar blk gate
+V527 PICKASK 170 adj 0 pick - cutall 0
+V527 BUNKER HOLD 170 why notarmed blk armed orth 2
+V527 PICKASK 171 adj 0 pick - cutall 0
+V527 BUNKER HOLD 171 why notarmed blk armed orth 4
+V527 PICKASK 172 adj 0 pick - cutall 0
+V527 BUNKER HOLD 172 why notarmed blk armed orth 2
+V527 PICKASK 173 adj 0 pick - cutall 0
+V527 BUNKER HOLD 173 why notarmed blk armed orth 4
+V527 PICKASK 174 adj 0 pick - cutall 0
+V527 BUNKER HOLD 174 why notarmed blk armed orth 2
+V527 PICKASK 175 adj 0 pick - cutall 0
+V527 BUNKER HOLD 175 why notarmed blk armed orth 4
+V527 PICKASK 176 adj 0 pick - cutall 0
+V527 BUNKER HOLD 176 why notarmed blk armed orth 2
+V527 PICKASK 177 adj 0 pick - cutall 0
+V527 BUNKER HOLD 177 why notarmed blk armed orth 4
+V527 PICKASK 178 adj 0 pick - cutall 0
+V527 BUNKER HOLD 178 why notarmed blk armed orth 3
+V527 PICKASK 179 adj 0 pick - cutall 0
+V527 BUNKER HOLD 179 why notarmed blk armed orth 2
+V527 PICKASK 180 adj 0 pick - cutall 0
+V527 BUNKER HOLD 180 why notarmed blk armed orth 2
+V527 PICKASK 181 adj 0 pick - cutall 0
+V527 BUNKER HOLD 181 why notarmed blk armed orth 2
+V527 PICKASK 182 adj 0 pick - cutall 0
+V527 BUNKER HOLD 182 why notarmed blk armed orth 2
+V527 PICKASK 183 adj 1 pick - cutall 1
+V527 SELFCUT 183 n 5
+V527 PICKASK 184 adj 0 pick - cutall 0
+V527 BUNKER HOLD 184 why collar blk gate
+V527 PICKASK 185 adj 0 pick - cutall 0
+V527 BUNKER HOLD 185 why collar blk gate
+V527 PICKASK 186 adj 0 pick - cutall 0
+V527 BUNKER HOLD 186 why collar blk gate
+V527 PICKASK 187 adj 0 pick - cutall 0
+V527 BUNKER HOLD 187 why collar blk gate
+V527 PICKASK 188 adj 0 pick - cutall 0
+V527 BUNKER HOLD 188 why notarmed blk armed orth 2
+V527 PICKASK 189 adj 0 pick - cutall 0
+V527 BUNKER HOLD 189 why notarmed blk armed orth 4
+V527 PICKASK 190 adj 0 pick - cutall 0
+V527 BUNKER HOLD 190 why notarmed blk armed orth 2
+V527 PICKASK 191 adj 0 pick - cutall 0
+V527 BUNKER HOLD 191 why notarmed blk armed orth 2
+V527 PICKASK 192 adj 0 pick - cutall 0
+V527 BUNKER HOLD 192 why notarmed blk armed orth 2
+V527 PICKASK 193 adj 0 pick - cutall 0
+V527 BUNKER HOLD 193 why notarmed blk armed orth 2
+V527 PICKASK 194 adj 1 pick - cutall 1
+V527 SELFCUT 194 n 6
+V527 PICKASK 195 adj 0 pick - cutall 0
+V527 BUNKER HOLD 195 why collar blk gate
+V527 PICKASK 196 adj 0 pick - cutall 0
+V527 BUNKER HOLD 196 why collar blk gate
+V527 PICKASK 197 adj 0 pick - cutall 0
+V527 BUNKER HOLD 197 why collar blk gate
+V527 PICKASK 198 adj 0 pick - cutall 0
+V527 BUNKER HOLD 198 why collar blk gate
+V527 PICKASK 199 adj 0 pick - cutall 0
+V527 BUNKER HOLD 199 why notarmed blk armed orth 2
+V527 PICKASK 200 adj 0 pick - cutall 0
+V527 BUNKER HOLD 200 why notarmed blk armed orth 2
+V527 PICKASK 201 adj 0 pick - cutall 0
+V527 BUNKER HOLD 201 why notarmed blk armed orth 2
+V527 PICKASK 202 adj 0 pick - cutall 0
+V527 BUNKER HOLD 202 why notarmed blk armed orth 2
+V527 PICKASK 203 adj 1 pick - cutall 1
+V527 SELFCUT 203 n 7
+V527 PICKASK 204 adj 0 pick - cutall 0
+V527 BUNKER HOLD 204 why collar blk gate
+V527 PICKASK 205 adj 0 pick - cutall 0
+V527 BUNKER HOLD 205 why collar blk gate
+V527 PICKASK 206 adj 0 pick - cutall 0
+V527 BUNKER HOLD 206 why collar blk gate
+V527 PICKASK 207 adj 0 pick - cutall 0
+V527 BUNKER HOLD 207 why collar blk gate
+V527 PICKASK 208 adj 1 pick - cutall 1
+V527 SELFCUT 208 n 8
+V527 PICKASK 209 adj 0 pick - cutall 0
+V527 BUNKER HOLD 209 why collar blk gate
+V527 PICKASK 210 adj 0 pick - cutall 0
+V527 BUNKER HOLD 210 why collar blk gate
+V527 PICKASK 211 adj 0 pick - cutall 0
+V527 BUNKER HOLD 211 why notarmed blk armed orth 3
+V527 PICKASK 212 adj 0 pick - cutall 0
+V527 BUNKER HOLD 212 why notarmed blk armed orth 5
+V527 PICKASK 213 adj 0 pick - cutall 0
+V527 BUNKER HOLD 213 why notarmed blk armed orth 5
+V527 PICKASK 214 adj 0 pick - cutall 0
+V527 BUNKER HOLD 214 why notarmed blk armed orth 2
+V527 PICKASK 215 adj 1 pick - cutall 1
+V527 SELFCUT 215 n 9
+V527 PICKASK 216 adj 0 pick - cutall 0
+V527 BUNKER HOLD 216 why collar blk gate
+V527 PICKASK 217 adj 0 pick - cutall 0
+V527 BUNKER HOLD 217 why collar blk gate
+V527 PICKASK 218 adj 0 pick - cutall 0
+V527 BUNKER HOLD 218 why collar blk gate
+V527 PICKASK 219 adj 0 pick - cutall 0
+V527 BUNKER HOLD 219 why collar blk gate
+V527 PICKASK 220 adj 0 pick - cutall 0
+V527 BUNKER HOLD 220 why collar blk gate
+V527 PICKASK 221 adj 0 pick - cutall 0
+V527 BUNKER HOLD 221 why notarmed blk armed orth 3
+V527 PICKASK 222 adj 0 pick - cutall 0
+V527 BUNKER HOLD 222 why notarmed blk armed orth 2
+V527 PICKASK 223 adj 0 pick - cutall 0
+V527 BUNKER HOLD 223 why notarmed blk armed orth 2
+V527 PICKASK 224 adj 0 pick - cutall 0
+V527 BUNKER HOLD 224 why notarmed blk armed orth 2
+V527 PICKASK 225 adj 0 pick - cutall 0
+V527 BUNKER HOLD 225 why notarmed blk armed orth 2
+V527 PICKASK 226 adj 1 pick - cutall 1
+V527 SELFCUT 226 n 10
+V527 PICKASK 227 adj 0 pick - cutall 0
+V527 BUNKER HOLD 227 why collar blk gate
+V527 PICKASK 228 adj 0 pick - cutall 0
+V527 BUNKER HOLD 228 why collar blk gate
+V527 PICKASK 229 adj 0 pick - cutall 0
+V527 BUNKER HOLD 229 why collar blk gate
+V527 PICKASK 230 adj 0 pick - cutall 0
+V527 BUNKER HOLD 230 why collar blk gate
+V527 PICKASK 231 adj 0 pick - cutall 0
+V527 BUNKER HOLD 231 why notarmed blk armed orth 2
+V527 PICKASK 232 adj 0 pick - cutall 0
+V527 BUNKER HOLD 232 why notarmed blk armed orth 2
+V527 PICKASK 233 adj 0 pick - cutall 0
+V527 BUNKER HOLD 233 why notarmed blk armed orth 2
+V527 PICKASK 234 adj 0 pick - cutall 0
+V527 BUNKER HOLD 234 why notarmed blk armed orth 2
+V527 PICKASK 235 adj 1 pick - cutall 1
+V527 SELFCUT 235 n 11
+V527 PICKASK 236 adj 0 pick - cutall 0
+V527 BUNKER HOLD 236 why collar blk gate
+V527 PICKASK 237 adj 0 pick - cutall 0
+V527 BUNKER HOLD 237 why collar blk gate
+V527 PICKASK 238 adj 0 pick - cutall 0
+V527 BUNKER HOLD 238 why collar blk gate
+V527 PICKASK 239 adj 0 pick - cutall 0
+V527 BUNKER HOLD 239 why collar blk gate
+V527 PICKASK 240 adj 0 pick - cutall 0
+V527 BUNKER HOLD 240 why notarmed blk armed orth 2
+V527 PICKASK 241 adj 0 pick - cutall 0
+V527 BUNKER HOLD 241 why notarmed blk armed orth 2
+V527 PICKASK 242 adj 0 pick - cutall 0
+V527 BUNKER HOLD 242 why notarmed blk armed orth 2
+V527 PICKASK 243 adj 0 pick - cutall 0
+V527 BUNKER HOLD 243 why notarmed blk armed orth 2
+V527 PICKASK 244 adj 1 pick - cutall 1
+V527 SELFCUT 244 n 12
+V527 PICKASK 245 adj 0 pick - cutall 0
+V527 BUNKER HOLD 245 why collar blk gate
+V527 PICKASK 246 adj 0 pick - cutall 0
+V527 BUNKER HOLD 246 why collar blk gate
+V527 PICKASK 247 adj 0 pick - cutall 0
+V527 BUNKER HOLD 247 why collar blk gate
+V527 PICKASK 248 adj 0 pick - cutall 0
+V527 BUNKER HOLD 248 why collar blk gate
+V527 PICKASK 249 adj 0 pick - cutall 0
+V527 BUNKER HOLD 249 why notarmed blk armed orth 2
+V527 PICKASK 250 adj 0 pick - cutall 0
+V527 BUNKER HOLD 250 why notarmed blk armed orth 2
+V527 PICKASK 251 adj 0 pick - cutall 0
+V527 BUNKER HOLD 251 why notarmed blk armed orth 2
+V527 PICKASK 252 adj 0 pick - cutall 0
+V527 BUNKER HOLD 252 why notarmed blk armed orth 2
+V527 PICKASK 253 adj 1 pick - cutall 1
+V527 SELFCUT 253 n 13
+V527 PICKASK 254 adj 0 pick - cutall 0
+V527 BUNKER HOLD 254 why collar blk gate
+V527 PICKASK 255 adj 0 pick - cutall 0
+V527 BUNKER HOLD 255 why collar blk gate
+V527 PICKASK 256 adj 0 pick - cutall 0
+V527 BUNKER HOLD 256 why collar blk gate
+V527 PICKASK 257 adj 0 pick - cutall 0
+V527 BUNKER HOLD 257 why collar blk gate
+V527 PICKASK 258 adj 0 pick - cutall 0
+V527 BUNKER HOLD 258 why notarmed blk armed orth 2
+V527 PICKASK 259 adj 0 pick - cutall 0
+V527 BUNKER HOLD 259 why notarmed blk armed orth 2
+V527 PICKASK 260 adj 0 pick - cutall 0
+V527 BUNKER HOLD 260 why notarmed blk armed orth 2
+V527 PICKASK 261 adj 0 pick - cutall 0
+V527 BUNKER HOLD 261 why notarmed blk armed orth 2
+V527 PICKASK 262 adj 1 pick (18, 10) cutall 0
+V527 REORDER 262 was (18, 9) now (18, 10) n 4
+V527 BUNKER HOLD 262 why notarmed blk armed orth 2
+V527 PICKASK 263 adj 0 pick - cutall 0
+V527 BUNKER HOLD 263 why notarmed blk armed orth 2
+V527 PICKASK 264 adj 0 pick - cutall 0
+V527 BUNKER HOLD 264 why notarmed blk armed orth 2
+V527 PICKASK 265 adj 0 pick - cutall 0
+V527 BUNKER HOLD 265 why notarmed blk armed orth 4
+V527 PICKASK 266 adj 0 pick - cutall 0
+V527 BUNKER HOLD 266 why notarmed blk armed orth 5
+V527 PICKASK 267 adj 0 pick - cutall 0
+V527 BUNKER HOLD 267 why notarmed blk armed orth 6
+V527 PICKASK 268 adj 0 pick - cutall 0
+V527 BUNKER HOLD 268 why notarmed blk armed orth 5
+V527 PICKASK 269 adj 0 pick - cutall 0
+V527 BUNKER HOLD 269 why notarmed blk armed orth 6
+V527 PICKASK 270 adj 0 pick - cutall 0
+V527 BUNKER HOLD 270 why notarmed blk armed orth 5
+V527 PICKASK 271 adj 0 pick - cutall 0
+V527 BUNKER HOLD 271 why notarmed blk armed orth 6
+V527 PICKASK 272 adj 0 pick - cutall 0
+V527 BUNKER HOLD 272 why notarmed blk armed orth 5
+V527 PICKASK 273 adj 0 pick - cutall 0
+V527 BUNKER HOLD 273 why notarmed blk armed orth 2
+V527 PICKASK 274 adj 1 pick - cutall 1
+V527 SELFCUT 274 n 14
+V527 PICKASK 275 adj 0 pick - cutall 0
+V527 BUNKER HOLD 275 why collar blk gate
+V527 PICKASK 276 adj 0 pick - cutall 0
+V527 BUNKER HOLD 276 why collar blk gate
+V527 PICKASK 277 adj 0 pick - cutall 0
+V527 BUNKER HOLD 277 why collar blk gate
+V527 PICKASK 278 adj 0 pick - cutall 0
+V527 BUNKER HOLD 278 why collar blk gate
+V527 PICKASK 279 adj 0 pick - cutall 0
+V527 BUNKER HOLD 279 why notarmed blk armed orth 2
+V527 PICKASK 280 adj 0 pick - cutall 0
+V527 BUNKER HOLD 280 why notarmed blk armed orth 2
+V527 PICKASK 281 adj 0 pick - cutall 0
+V527 BUNKER HOLD 281 why notarmed blk armed orth 2
+V527 PICKASK 282 adj 0 pick - cutall 0
+V527 BUNKER HOLD 282 why notarmed blk armed orth 2
+V527 PICKASK 283 adj 1 pick - cutall 1
+V527 SELFCUT 283 n 15
+V527 PICKASK 284 adj 0 pick - cutall 0
+V527 BUNKER HOLD 284 why collar blk gate
+V527 PICKASK 285 adj 0 pick - cutall 0
+V527 BUNKER HOLD 285 why collar blk gate
+V527 PICKASK 286 adj 0 pick - cutall 0
+V527 BUNKER HOLD 286 why collar blk gate
+V527 PICKASK 287 adj 0 pick - cutall 0
+V527 BUNKER HOLD 287 why collar blk gate
+V527 PICKASK 288 adj 0 pick - cutall 0
+V527 BUNKER HOLD 288 why notarmed blk armed orth 2
+V527 PICKASK 289 adj 0 pick - cutall 0
+V527 BUNKER HOLD 289 why notarmed blk armed orth 2
+V527 PICKASK 290 adj 0 pick - cutall 0
+V527 BUNKER HOLD 290 why notarmed blk armed orth 2
+V527 PICKASK 291 adj 0 pick - cutall 0
+V527 BUNKER HOLD 291 why notarmed blk armed orth 2
+V527 PICKASK 292 adj 1 pick - cutall 1
+V527 SELFCUT 292 n 16
+V527 PICKASK 293 adj 0 pick - cutall 0
+V527 BUNKER HOLD 293 why collar blk gate
+V527 PICKASK 294 adj 0 pick - cutall 0
+V527 BUNKER HOLD 294 why collar blk gate
+V527 PICKASK 295 adj 0 pick - cutall 0
+V527 BUNKER HOLD 295 why collar blk gate
+V527 PICKASK 296 adj 0 pick - cutall 0
+V527 BUNKER HOLD 296 why collar blk gate
+V527 PICKASK 297 adj 0 pick - cutall 0
+V527 BUNKER HOLD 297 why notarmed blk armed orth 2
+V527 PICKASK 298 adj 0 pick - cutall 0
+V527 BUNKER HOLD 298 why notarmed blk armed orth 2
+V527 PICKASK 299 adj 0 pick - cutall 0
+V527 BUNKER HOLD 299 why notarmed blk armed orth 2
+V527 PICKASK 300 adj 0 pick - cutall 0
+V527 BUNKER HOLD 300 why notarmed blk armed orth 2
+V527 PICKASK 301 adj 1 pick - cutall 1
+V527 SELFCUT 301 n 17
+V527 PICKASK 302 adj 0 pick - cutall 0
+V527 BUNKER HOLD 302 why collar blk gate
+V527 PICKASK 303 adj 0 pick - cutall 0
+V527 BUNKER HOLD 303 why collar blk gate
+V527 PICKASK 304 adj 0 pick - cutall 0
+V527 BUNKER HOLD 304 why collar blk gate
+V527 PICKASK 305 adj 0 pick - cutall 0
+V527 BUNKER HOLD 305 why collar blk gate
+V527 PICKASK 306 adj 0 pick - cutall 0
+V527 BUNKER HOLD 306 why notarmed blk armed orth 2
+V527 PICKASK 307 adj 0 pick - cutall 0
+V527 BUNKER HOLD 307 why notarmed blk armed orth 2
+V527 PICKASK 308 adj 0 pick - cutall 0
+V527 BUNKER HOLD 308 why notarmed blk armed orth 2
+V527 PICKASK 309 adj 0 pick - cutall 0
+V527 BUNKER HOLD 309 why notarmed blk armed orth 2
+V527 PICKASK 310 adj 1 pick - cutall 1
+V527 SELFCUT 310 n 18
+V527 PICKASK 311 adj 0 pick - cutall 0
+V527 BUNKER HOLD 311 why collar blk gate
+V527 PICKASK 312 adj 0 pick - cutall 0
+V527 BUNKER HOLD 312 why collar blk gate
+V527 PICKASK 313 adj 0 pick - cutall 0
+V527 BUNKER HOLD 313 why collar blk gate
+V527 PICKASK 314 adj 0 pick - cutall 0
+V527 BUNKER HOLD 314 why collar blk gate
+V527 PICKASK 315 adj 0 pick - cutall 0
+V527 BUNKER HOLD 315 why notarmed blk armed orth 2
+V527 PICKASK 316 adj 0 pick - cutall 0
+V527 BUNKER HOLD 316 why notarmed blk armed orth 2
+V527 PICKASK 317 adj 0 pick - cutall 0
+V527 BUNKER HOLD 317 why notarmed blk armed orth 2
+V527 PICKASK 318 adj 0 pick - cutall 0
+V527 BUNKER HOLD 318 why notarmed blk armed orth 2
+V527 PICKASK 319 adj 1 pick - cutall 1
+V527 SELFCUT 319 n 19
+V527 PICKASK 320 adj 0 pick - cutall 0
+V527 BUNKER HOLD 320 why collar blk gate
+V527 PICKASK 321 adj 0 pick - cutall 0
+V527 BUNKER HOLD 321 why collar blk gate
+V527 PICKASK 322 adj 0 pick - cutall 0
+V527 BUNKER HOLD 322 why collar blk gate
+V527 PICKASK 323 adj 0 pick - cutall 0
+V527 BUNKER HOLD 323 why collar blk gate
+V527 PICKASK 324 adj 0 pick - cutall 0
+V527 BUNKER HOLD 324 why notarmed blk armed orth 4
+V527 PICKASK 325 adj 0 pick - cutall 0
+V527 BUNKER HOLD 325 why notarmed blk armed orth 4
+V527 PICKASK 326 adj 0 pick - cutall 0
+V527 BUNKER HOLD 326 why notarmed blk armed orth 2
+V527 PICKASK 327 adj 0 pick - cutall 0
+V527 BUNKER HOLD 327 why notarmed blk armed orth 2
+V527 PICKASK 328 adj 1 pick - cutall 1
+V527 SELFCUT 328 n 20
+V527 PICKASK 329 adj 0 pick - cutall 0
+V527 BUNKER HOLD 329 why collar blk gate
+V527 PICKASK 330 adj 0 pick - cutall 0
+V527 BUNKER HOLD 330 why collar blk gate
+V527 PICKASK 331 adj 0 pick - cutall 0
+V527 BUNKER HOLD 331 why collar blk gate
+V527 PICKASK 332 adj 0 pick - cutall 0
+V527 BUNKER HOLD 332 why collar blk gate
+V527 PICKASK 333 adj 0 pick - cutall 0
+V527 BUNKER HOLD 333 why collar blk gate
+V527 PICKASK 334 adj 0 pick - cutall 0
+V527 BUNKER HOLD 334 why notarmed blk armed orth 2
+V527 PICKASK 335 adj 0 pick - cutall 0
+V527 BUNKER HOLD 335 why notarmed blk armed orth 4
+V527 PICKASK 336 adj 0 pick - cutall 0
+V527 BUNKER HOLD 336 why notarmed blk armed orth 3
+V527 PICKASK 337 adj 0 pick - cutall 0
+V527 BUNKER HOLD 337 why notarmed blk armed orth 2
+V527 PICKASK 338 adj 0 pick - cutall 0
+V527 BUNKER HOLD 338 why notarmed blk armed orth 2
+V527 PICKASK 339 adj 0 pick - cutall 0
+V527 BUNKER HOLD 339 why notarmed blk armed orth 2
+V527 PICKASK 340 adj 0 pick - cutall 0
+V527 BUNKER HOLD 340 why notarmed blk armed orth 2
+V527 PICKASK 341 adj 1 pick - cutall 1
+V527 SELFCUT 341 n 21
+V527 PICKASK 342 adj 0 pick - cutall 0
+V527 BUNKER HOLD 342 why collar blk gate
+V527 PICKASK 343 adj 0 pick - cutall 0
+V527 BUNKER HOLD 343 why collar blk gate
+V527 PICKASK 344 adj 0 pick - cutall 0
+V527 BUNKER HOLD 344 why collar blk gate
+V527 PICKASK 345 adj 0 pick - cutall 0
+V527 BUNKER HOLD 345 why collar blk gate
+V527 PICKASK 346 adj 0 pick - cutall 0
+V527 BUNKER HOLD 346 why notarmed blk armed orth 2
+V527 PICKASK 347 adj 0 pick - cutall 0
+V527 BUNKER HOLD 347 why notarmed blk armed orth 2
+V527 PICKASK 348 adj 0 pick - cutall 0
+V527 BUNKER HOLD 348 why notarmed blk armed orth 2
+V527 PICKASK 349 adj 0 pick - cutall 0
+V527 BUNKER HOLD 349 why notarmed blk armed orth 2
+V527 PICKASK 350 adj 1 pick - cutall 1
+V527 SELFCUT 350 n 22
+V527 PICKASK 351 adj 0 pick - cutall 0
+V527 BUNKER HOLD 351 why collar blk gate
+V527 PICKASK 352 adj 0 pick - cutall 0
+V527 BUNKER HOLD 352 why collar blk gate
+V527 PICKASK 353 adj 0 pick - cutall 0
+V527 BUNKER HOLD 353 why collar blk gate
+V527 PICKASK 354 adj 0 pick - cutall 0
+V527 BUNKER HOLD 354 why collar blk gate
+V527 PICKASK 355 adj 0 pick - cutall 0
+V527 BUNKER HOLD 355 why notarmed blk armed orth 2
+V527 PICKASK 356 adj 0 pick - cutall 0
+V527 BUNKER HOLD 356 why notarmed blk armed orth 2
+V527 PICKASK 357 adj 0 pick - cutall 0
+V527 BUNKER HOLD 357 why notarmed blk armed orth 2
+V527 PICKASK 358 adj 0 pick - cutall 0
+V527 BUNKER HOLD 358 why notarmed blk armed orth 2
+V527 PICKASK 359 adj 1 pick - cutall 1
+V527 SELFCUT 359 n 23
+V527 PICKASK 360 adj 0 pick - cutall 0
+V527 BUNKER HOLD 360 why collar blk gate
+V527 PICKASK 361 adj 0 pick - cutall 0
+V527 BUNKER HOLD 361 why collar blk gate
+V527 PICKASK 362 adj 0 pick - cutall 0
+V527 BUNKER HOLD 362 why collar blk gate
+V527 PICKASK 363 adj 0 pick - cutall 0
+V527 BUNKER HOLD 363 why collar blk gate
+V527 PICKASK 364 adj 0 pick - cutall 0
+V527 BUNKER HOLD 364 why notarmed blk armed orth 4
+V527 PICKASK 365 adj 0 pick - cutall 0
+V527 BUNKER HOLD 365 why notarmed blk armed orth 4
+V527 PICKASK 366 adj 0 pick - cutall 0
+V527 BUNKER HOLD 366 why notarmed blk armed orth 2
+V527 PICKASK 367 adj 0 pick - cutall 0
+V527 BUNKER HOLD 367 why notarmed blk armed orth 2
+V527 PICKASK 368 adj 1 pick - cutall 1
+V527 SELFCUT 368 n 24
+V527 PICKASK 369 adj 0 pick - cutall 0
+V527 BUNKER HOLD 369 why collar blk gate
+V527 PICKASK 370 adj 0 pick - cutall 0
+V527 BUNKER HOLD 370 why collar blk gate
+V527 PICKASK 371 adj 0 pick - cutall 0
+V527 BUNKER HOLD 371 why collar blk gate
+V527 PICKASK 372 adj 0 pick - cutall 0
+V527 BUNKER HOLD 372 why collar blk gate
+V527 PICKASK 373 adj 0 pick - cutall 0
+V527 BUNKER HOLD 373 why notarmed blk armed orth 2
+V527 PICKASK 374 adj 0 pick - cutall 0
+V527 BUNKER HOLD 374 why notarmed blk armed orth 2
+V527 PICKASK 375 adj 0 pick - cutall 0
+V527 BUNKER HOLD 375 why notarmed blk armed orth 2
+V527 PICKASK 376 adj 0 pick - cutall 0
+V527 BUNKER HOLD 376 why notarmed blk armed orth 2
+V527 PICKASK 377 adj 1 pick - cutall 1
+V527 SELFCUT 377 n 25
+V527 PICKASK 378 adj 0 pick - cutall 0
+V527 BUNKER HOLD 378 why collar blk gate
+V527 PICKASK 379 adj 0 pick - cutall 0
+V527 BUNKER HOLD 379 why collar blk gate
+V527 PICKASK 380 adj 0 pick - cutall 0
+V527 BUNKER HOLD 380 why collar blk gate
+V527 PICKASK 381 adj 0 pick - cutall 0
+V527 BUNKER HOLD 381 why collar blk gate
+V527 PICKASK 382 adj 0 pick - cutall 0
+V527 BUNKER HOLD 382 why notarmed blk armed orth 2
+V527 PICKASK 383 adj 0 pick - cutall 0
+V527 BUNKER HOLD 383 why notarmed blk armed orth 2
+V527 PICKASK 384 adj 0 pick - cutall 0
+V527 BUNKER HOLD 384 why notarmed blk armed orth 2
+V527 PICKASK 385 adj 0 pick - cutall 0
+V527 BUNKER HOLD 385 why notarmed blk armed orth 2
+V527 PICKASK 386 adj 1 pick - cutall 1
+V527 SELFCUT 386 n 26
+V527 PICKASK 387 adj 0 pick - cutall 0
+V527 BUNKER HOLD 387 why collar blk gate
+V527 PICKASK 388 adj 0 pick - cutall 0
+V527 BUNKER HOLD 388 why collar blk gate
+V527 PICKASK 389 adj 0 pick - cutall 0
+V527 BUNKER HOLD 389 why collar blk gate
+V527 PICKASK 390 adj 0 pick - cutall 0
+V527 BUNKER HOLD 390 why collar blk gate
+V527 PICKASK 391 adj 0 pick - cutall 0
+V527 BUNKER HOLD 391 why notarmed blk armed orth 2
+V527 PICKASK 392 adj 0 pick - cutall 0
+V527 BUNKER HOLD 392 why notarmed blk armed orth 2
+V527 PICKASK 393 adj 0 pick - cutall 0
+V527 BUNKER HOLD 393 why notarmed blk armed orth 2
+V527 PICKASK 394 adj 0 pick - cutall 0
+V527 BUNKER HOLD 394 why notarmed blk armed orth 2
+V527 PICKASK 395 adj 1 pick - cutall 1
+V527 SELFCUT 395 n 27
+V527 PICKASK 396 adj 0 pick - cutall 0
+V527 BUNKER HOLD 396 why collar blk gate
+V527 PICKASK 397 adj 0 pick - cutall 0
+V527 BUNKER HOLD 397 why collar blk gate
+V527 PICKASK 398 adj 0 pick - cutall 0
+V527 BUNKER HOLD 398 why collar blk gate
+V527 PICKASK 399 adj 0 pick - cutall 0
+V527 BUNKER HOLD 399 why collar blk gate
+V527 PICKASK 400 adj 0 pick - cutall 0
+V527 BUNKER HOLD 400 why notarmed blk armed orth 2
+V527 PICKASK 401 adj 0 pick - cutall 0
+V527 BUNKER HOLD 401 why notarmed blk armed orth 2
+V527 PICKASK 402 adj 0 pick - cutall 0
+V527 BUNKER HOLD 402 why notarmed blk armed orth 2
+V527 PICKASK 403 adj 0 pick - cutall 0
+V527 BUNKER HOLD 403 why notarmed blk armed orth 2
+V527 PICKASK 404 adj 1 pick - cutall 1
+V527 SELFCUT 404 n 28
+V527 PICKASK 405 adj 0 pick - cutall 0
+V527 BUNKER HOLD 405 why collar blk gate
+V527 PICKASK 406 adj 0 pick - cutall 0
+V527 BUNKER HOLD 406 why collar blk gate
+V527 PICKASK 407 adj 0 pick - cutall 0
+V527 BUNKER HOLD 407 why collar blk gate
+V527 PICKASK 408 adj 0 pick - cutall 0
+V527 BUNKER HOLD 408 why collar blk gate
+V527 PICKASK 409 adj 0 pick - cutall 0
+V527 BUNKER HOLD 409 why notarmed blk armed orth 2
+V527 PICKASK 410 adj 0 pick - cutall 0
+V527 BUNKER HOLD 410 why notarmed blk armed orth 2
+V527 PICKASK 411 adj 0 pick - cutall 0
+V527 BUNKER HOLD 411 why notarmed blk armed orth 2
+V527 PICKASK 412 adj 0 pick - cutall 0
+V527 BUNKER HOLD 412 why notarmed blk armed orth 2
+V527 PICKASK 413 adj 1 pick - cutall 1
+V527 SELFCUT 413 n 29
+V527 PICKASK 414 adj 0 pick - cutall 0
+V527 BUNKER HOLD 414 why collar blk gate
+V527 PICKASK 415 adj 0 pick - cutall 0
+V527 BUNKER HOLD 415 why collar blk gate
+V527 PICKASK 416 adj 0 pick - cutall 0
+V527 BUNKER HOLD 416 why collar blk gate
+V527 PICKASK 417 adj 0 pick - cutall 0
+V527 BUNKER HOLD 417 why collar blk gate
+V527 PICKASK 418 adj 0 pick - cutall 0
+V527 BUNKER HOLD 418 why notarmed blk armed orth 4
+V527 PICKASK 419 adj 0 pick - cutall 0
+V527 BUNKER HOLD 419 why notarmed blk armed orth 4
+V527 PICKASK 420 adj 0 pick - cutall 0
+V527 BUNKER HOLD 420 why notarmed blk armed orth 2
+V527 PICKASK 421 adj 0 pick - cutall 0
+V527 BUNKER HOLD 421 why notarmed blk armed orth 2
+V527 PICKASK 422 adj 1 pick - cutall 1
+V527 SELFCUT 422 n 30
+V527 PICKASK 423 adj 0 pick - cutall 0
+V527 BUNKER HOLD 423 why collar blk gate
+V527 PICKASK 424 adj 0 pick - cutall 0
+V527 BUNKER HOLD 424 why collar blk gate
+V527 PICKASK 425 adj 0 pick - cutall 0
+V527 BUNKER HOLD 425 why collar blk gate
+V527 PICKASK 426 adj 0 pick - cutall 0
+V527 BUNKER HOLD 426 why collar blk gate
+V527 PICKASK 427 adj 0 pick - cutall 0
+V527 BUNKER HOLD 427 why notarmed blk armed orth 2
+V527 PICKASK 428 adj 0 pick - cutall 0
+V527 BUNKER HOLD 428 why notarmed blk armed orth 2
+V527 PICKASK 429 adj 0 pick - cutall 0
+V527 BUNKER HOLD 429 why notarmed blk armed orth 2
+V527 PICKASK 430 adj 0 pick - cutall 0
+V527 BUNKER HOLD 430 why notarmed blk armed orth 2
+V527 PICKASK 431 adj 1 pick - cutall 1
+V527 SELFCUT 431 n 31
+V527 PICKASK 432 adj 0 pick - cutall 0
+V527 BUNKER HOLD 432 why collar blk gate
+V527 PICKASK 433 adj 0 pick - cutall 0
+V527 BUNKER HOLD 433 why collar blk gate
+V527 PICKASK 434 adj 0 pick - cutall 0
+V527 BUNKER HOLD 434 why collar blk gate
+V527 PICKASK 435 adj 0 pick - cutall 0
+V527 BUNKER HOLD 435 why collar blk gate
+V527 PICKASK 436 adj 0 pick - cutall 0
+V527 BUNKER HOLD 436 why notarmed blk armed orth 4
+V527 PICKASK 437 adj 0 pick - cutall 0
+V527 BUNKER HOLD 437 why notarmed blk armed orth 4
+V527 PICKASK 438 adj 0 pick - cutall 0
+V527 BUNKER HOLD 438 why notarmed blk armed orth 2
+V527 PICKASK 439 adj 0 pick - cutall 0
+V527 BUNKER HOLD 439 why notarmed blk armed orth 2
+V527 PICKASK 440 adj 1 pick - cutall 1
+V527 SELFCUT 440 n 32
+V527 PICKASK 441 adj 0 pick - cutall 0
+V527 BUNKER HOLD 441 why collar blk gate
+V527 PICKASK 442 adj 0 pick - cutall 0
+V527 BUNKER HOLD 442 why collar blk gate
+V527 PICKASK 443 adj 0 pick - cutall 0
+V527 BUNKER HOLD 443 why collar blk gate
+V527 PICKASK 444 adj 0 pick - cutall 0
+V527 BUNKER HOLD 444 why collar blk gate
+V527 PICKASK 445 adj 0 pick - cutall 0
+V527 BUNKER HOLD 445 why notarmed blk armed orth 4
+V527 PICKASK 446 adj 0 pick - cutall 0
+V527 BUNKER HOLD 446 why notarmed blk armed orth 4
+V527 PICKASK 447 adj 0 pick - cutall 0
+V527 BUNKER HOLD 447 why notarmed blk armed orth 2
+V527 PICKASK 448 adj 0 pick - cutall 0
+V527 BUNKER HOLD 448 why notarmed blk armed orth 2
+V527 PICKASK 449 adj 1 pick - cutall 1
+V527 SELFCUT 449 n 33
+V527 PICKASK 450 adj 0 pick - cutall 0
+V527 BUNKER HOLD 450 why collar blk gate
+V527 PICKASK 451 adj 0 pick - cutall 0
+V527 BUNKER HOLD 451 why collar blk gate
+V527 PICKASK 452 adj 0 pick - cutall 0
+V527 BUNKER HOLD 452 why collar blk gate
+V527 PICKASK 453 adj 0 pick - cutall 0
+V527 BUNKER HOLD 453 why collar blk gate
+V527 PICKASK 454 adj 0 pick - cutall 0
+V527 BUNKER HOLD 454 why notarmed blk armed orth 4
+V527 PICKASK 455 adj 0 pick - cutall 0
+V527 BUNKER HOLD 455 why notarmed blk armed orth 4
+V527 PICKASK 456 adj 0 pick - cutall 0
+V527 BUNKER HOLD 456 why notarmed blk armed orth 2
+V527 PICKASK 457 adj 0 pick - cutall 0
+V527 BUNKER HOLD 457 why notarmed blk armed orth 2
+V527 PICKASK 458 adj 1 pick - cutall 1
+V527 SELFCUT 458 n 34
+V527 PICKASK 459 adj 0 pick - cutall 0
+V527 BUNKER HOLD 459 why collar blk gate
+V527 PICKASK 460 adj 0 pick - cutall 0
+V527 BUNKER HOLD 460 why collar blk gate
+V527 PICKASK 461 adj 0 pick - cutall 0
+V527 BUNKER HOLD 461 why collar blk gate
+V527 PICKASK 462 adj 0 pick - cutall 0
+V527 BUNKER HOLD 462 why collar blk gate
+V527 PICKASK 463 adj 0 pick - cutall 0
+V527 BUNKER HOLD 463 why notarmed blk armed orth 4
+V527 PICKASK 464 adj 0 pick - cutall 0
+V527 BUNKER HOLD 464 why notarmed blk armed orth 4
+V527 PICKASK 465 adj 0 pick - cutall 0
+V527 BUNKER HOLD 465 why notarmed blk armed orth 2
+V527 PICKASK 466 adj 0 pick - cutall 0
+V527 BUNKER HOLD 466 why notarmed blk armed orth 2
+V527 PICKASK 467 adj 1 pick - cutall 1
+V527 SELFCUT 467 n 35
+V527 PICKASK 468 adj 0 pick - cutall 0
+V527 BUNKER HOLD 468 why collar blk gate
+V527 PICKASK 469 adj 0 pick - cutall 0
+V527 BUNKER HOLD 469 why collar blk gate
+V527 PICKASK 470 adj 0 pick - cutall 0
+V527 BUNKER HOLD 470 why collar blk gate
+V527 PICKASK 471 adj 0 pick - cutall 0
+V527 BUNKER HOLD 471 why collar blk gate
+V527 PICKASK 472 adj 0 pick - cutall 0
+V527 BUNKER HOLD 472 why notarmed blk armed orth 4
+V527 PICKASK 473 adj 0 pick - cutall 0
+V527 BUNKER HOLD 473 why notarmed blk armed orth 4
+V527 PICKASK 474 adj 0 pick - cutall 0
+V527 BUNKER HOLD 474 why notarmed blk armed orth 2
+V527 PICKASK 475 adj 0 pick - cutall 0
+V527 BUNKER HOLD 475 why notarmed blk armed orth 2
+V527 PICKASK 476 adj 1 pick - cutall 1
+V527 SELFCUT 476 n 36
+V527 PICKASK 477 adj 0 pick - cutall 0
+V527 BUNKER HOLD 477 why collar blk gate
+V527 PICKASK 478 adj 0 pick - cutall 0
+V527 BUNKER HOLD 478 why collar blk gate
+V527 PICKASK 479 adj 0 pick - cutall 0
+V527 BUNKER HOLD 479 why collar blk gate
+V527 PICKASK 480 adj 0 pick - cutall 0
+V527 BUNKER HOLD 480 why collar blk gate
+V527 PICKASK 481 adj 0 pick - cutall 0
+V527 BUNKER HOLD 481 why notarmed blk armed orth 4
+V527 PICKASK 482 adj 0 pick - cutall 0
+V527 BUNKER HOLD 482 why notarmed blk armed orth 4
+V527 PICKASK 483 adj 0 pick - cutall 0
+V527 BUNKER HOLD 483 why notarmed blk armed orth 2
+V527 PICKASK 484 adj 0 pick - cutall 0
+V527 BUNKER HOLD 484 why notarmed blk armed orth 2
+V527 PICKASK 485 adj 1 pick - cutall 1
+V527 SELFCUT 485 n 37
+V527 PICKASK 486 adj 0 pick - cutall 0
+V527 BUNKER HOLD 486 why collar blk gate
+V527 PICKASK 487 adj 0 pick - cutall 0
+V527 BUNKER HOLD 487 why collar blk gate
+V527 PICKASK 488 adj 0 pick - cutall 0
+V527 BUNKER HOLD 488 why collar blk gate
+V527 PICKASK 489 adj 0 pick - cutall 0
+V527 BUNKER HOLD 489 why collar blk gate
+V527 PICKASK 490 adj 0 pick - cutall 0
+V527 BUNKER HOLD 490 why notarmed blk armed orth 4
+V527 PICKASK 491 adj 0 pick - cutall 0
+V527 BUNKER HOLD 491 why notarmed blk armed orth 4
+V527 PICKASK 492 adj 0 pick - cutall 0
+V527 BUNKER HOLD 492 why notarmed blk armed orth 2
+V527 PICKASK 493 adj 0 pick - cutall 0
+V527 BUNKER HOLD 493 why notarmed blk armed orth 2
+V527 PICKASK 494 adj 1 pick - cutall 1
+V527 SELFCUT 494 n 38
+V527 PICKASK 495 adj 0 pick - cutall 0
+V527 BUNKER HOLD 495 why collar blk gate
+V527 PICKASK 496 adj 0 pick - cutall 0
+V527 BUNKER HOLD 496 why collar blk gate
+V527 PICKASK 497 adj 0 pick - cutall 0
+V527 BUNKER HOLD 497 why collar blk gate
+V527 PICKASK 498 adj 0 pick - cutall 0
+V527 BUNKER HOLD 498 why collar blk gate
+V527 PICKASK 499 adj 0 pick - cutall 0
+V527 BUNKER HOLD 499 why notarmed blk armed orth 4
+V527 PICKASK 500 adj 0 pick - cutall 0
+V527 BUNKER HOLD 500 why notarmed blk armed orth 4
+V527 PICKASK 501 adj 0 pick - cutall 0
+V527 BUNKER HOLD 501 why notarmed blk armed orth 2
+V527 PICKASK 502 adj 0 pick - cutall 0
+V527 BUNKER HOLD 502 why notarmed blk armed orth 2
+V527 PICKASK 503 adj 1 pick - cutall 1
+V527 SELFCUT 503 n 39
+V527 PICKASK 504 adj 0 pick - cutall 0
+V527 BUNKER HOLD 504 why collar blk gate
+V527 PICKASK 505 adj 0 pick - cutall 0
+V527 BUNKER HOLD 505 why collar blk gate
+V527 PICKASK 506 adj 0 pick - cutall 0
+V527 BUNKER HOLD 506 why collar blk gate
+V527 PICKASK 507 adj 0 pick - cutall 0
+V527 BUNKER HOLD 507 why collar blk gate
+V527 PICKASK 508 adj 0 pick - cutall 0
+V527 BUNKER HOLD 508 why notarmed blk armed orth 4
+V527 PICKASK 509 adj 0 pick - cutall 0
+V527 BUNKER HOLD 509 why notarmed blk armed orth 4
+V527 PICKASK 510 adj 0 pick - cutall 0
+V527 BUNKER HOLD 510 why notarmed blk armed orth 2
+V527 PICKASK 511 adj 0 pick - cutall 0
+V527 BUNKER HOLD 511 why notarmed blk armed orth 2
+V527 PICKASK 512 adj 1 pick - cutall 1
+V527 SELFCUT 512 n 40
+V527 PICKASK 513 adj 0 pick - cutall 0
+V527 BUNKER HOLD 513 why collar blk gate
+V527 PICKASK 514 adj 0 pick - cutall 0
+V527 BUNKER HOLD 514 why collar blk gate
+V527 PICKASK 515 adj 0 pick - cutall 0
+V527 BUNKER HOLD 515 why collar blk gate
+V527 PICKASK 516 adj 0 pick - cutall 0
+V527 BUNKER HOLD 516 why collar blk gate
+V527 PICKASK 517 adj 0 pick - cutall 0
+V527 BUNKER HOLD 517 why notarmed blk armed orth 2
+V527 PICKASK 518 adj 0 pick - cutall 0
+V527 BUNKER HOLD 518 why notarmed blk armed orth 2
+V527 PICKASK 519 adj 0 pick - cutall 0
+V527 BUNKER HOLD 519 why notarmed blk armed orth 2
+V527 PICKASK 520 adj 0 pick - cutall 0
+V527 BUNKER HOLD 520 why notarmed blk armed orth 2
+V527 PICKASK 521 adj 1 pick - cutall 1
+V527 SELFCUT 521 n 41
+V527 PICKASK 522 adj 0 pick - cutall 0
+V527 BUNKER HOLD 522 why collar blk gate
+V527 PICKASK 523 adj 0 pick - cutall 0
+V527 BUNKER HOLD 523 why collar blk gate
+V527 PICKASK 524 adj 0 pick - cutall 0
+V527 BUNKER HOLD 524 why collar blk gate
+V527 PICKASK 525 adj 0 pick - cutall 0
+V527 BUNKER HOLD 525 why collar blk gate
+V527 PICKASK 526 adj 0 pick - cutall 0
+V527 BUNKER HOLD 526 why notarmed blk armed orth 2
+V527 PICKASK 527 adj 0 pick - cutall 0
+V527 BUNKER HOLD 527 why notarmed blk armed orth 2
+V527 PICKASK 528 adj 0 pick - cutall 0
+V527 BUNKER HOLD 528 why notarmed blk armed orth 2
+V527 PICKASK 529 adj 0 pick - cutall 0
+V527 BUNKER HOLD 529 why notarmed blk armed orth 2
+V527 PICKASK 530 adj 1 pick - cutall 1
+V527 SELFCUT 530 n 42
+V527 PICKASK 531 adj 0 pick - cutall 0
+V527 BUNKER HOLD 531 why collar blk gate
+V527 PICKASK 532 adj 0 pick - cutall 0
+V527 BUNKER HOLD 532 why collar blk gate
+V527 PICKASK 534 adj 0 pick - cutall 0
+V527 BUNKER HOLD 534 why collar blk gate
+V527 PICKASK 536 adj 0 pick - cutall 0
+V527 BUNKER HOLD 536 why notarmed blk armed orth 2
+V527 PICKASK 538 adj 0 pick - cutall 0
+V527 BUNKER HOLD 538 why notarmed blk armed orth 2
+V527 PICKASK 539 adj 1 pick - cutall 1
+V527 SELFCUT 539 n 43
+V527 PICKASK 540 adj 0 pick - cutall 0
+V527 BUNKER HOLD 540 why collar blk gate
+V527 PICKASK 541 adj 0 pick - cutall 0
+V527 BUNKER HOLD 541 why collar blk gate
+V527 PICKASK 542 adj 0 pick - cutall 0
+V527 BUNKER HOLD 542 why collar blk gate
+V527 PICKASK 543 adj 0 pick - cutall 0
+V527 BUNKER HOLD 543 why collar blk gate
+V527 PICKASK 544 adj 0 pick - cutall 0
+V527 BUNKER HOLD 544 why collar blk gate
+V527 PICKASK 545 adj 0 pick - cutall 0
+V527 BUNKER HOLD 545 why notarmed blk armed orth 3
+V527 PICKASK 546 adj 0 pick - cutall 0
+V527 BUNKER HOLD 546 why notarmed blk armed orth 4
+V527 PICKASK 547 adj 0 pick - cutall 0
+V527 BUNKER HOLD 547 why collar blk gate
+V527 PICKASK 548 adj 0 pick - cutall 0
+V527 BUNKER HOLD 548 why collar blk gate
+V527 PICKASK 549 adj 0 pick - cutall 0
+V527 BUNKER HOLD 549 why collar blk gate
+V527 PICKASK 550 adj 0 pick - cutall 0
+V527 BUNKER HOLD 550 why notarmed blk armed orth 2
+V527 PICKASK 551 adj 0 pick - cutall 0
+V527 BUNKER HOLD 551 why notarmed blk armed orth 2
+V527 PICKASK 552 adj 1 pick - cutall 1
+V527 SELFCUT 552 n 44
+V527 PICKASK 553 adj 0 pick - cutall 0
+V527 BUNKER HOLD 553 why collar blk gate
+V527 PICKASK 554 adj 0 pick - cutall 0
+V527 BUNKER HOLD 554 why collar blk gate
+V527 PICKASK 555 adj 0 pick - cutall 0
+V527 BUNKER HOLD 555 why collar blk gate
+V527 PICKASK 556 adj 0 pick - cutall 0
+V527 BUNKER HOLD 556 why notarmed blk armed orth 3
+V527 PICKASK 557 adj 0 pick - cutall 0
+V527 BUNKER HOLD 557 why notarmed blk armed orth 3
+V527 PICKASK 559 adj 0 pick - cutall 0
+V527 BUNKER HOLD 559 why notarmed blk armed orth 3
+V527 PICKASK 561 adj 0 pick - cutall 0
+V527 BUNKER HOLD 561 why notarmed blk armed orth 3
+V527 PICKASK 562 adj 0 pick - cutall 0
+V527 BUNKER HOLD 562 why notarmed blk armed orth 3
+V527 PICKASK 563 adj 0 pick - cutall 0
+V527 BUNKER HOLD 563 why collar blk gate
+V527 PICKASK 564 adj 0 pick - cutall 0
+V527 BUNKER HOLD 564 why collar blk gate
+V527 PICKASK 565 adj 0 pick - cutall 0
+V527 BUNKER HOLD 565 why collar blk gate
+V527 PICKASK 566 adj 0 pick - cutall 0
+V527 BUNKER HOLD 566 why collar blk gate
+V527 PICKASK 567 adj 0 pick - cutall 0
+V527 BUNKER HOLD 567 why notarmed blk armed orth 3
+V527 PICKASK 568 adj 0 pick - cutall 0
+V527 BUNKER HOLD 568 why notarmed blk armed orth 3
+V527 PICKASK 569 adj 0 pick - cutall 0
+V527 BUNKER HOLD 569 why notarmed blk armed orth 4
+V527 PICKASK 570 adj 0 pick - cutall 0
+V527 BUNKER HOLD 570 why notarmed blk armed orth 4
+V527 PICKASK 571 adj 0 pick - cutall 0
+V527 BUNKER HOLD 571 why notarmed blk armed orth 2
+V527 PICKASK 572 adj 0 pick - cutall 0
+V527 BUNKER HOLD 572 why notarmed blk armed orth 2
+V527 PICKASK 573 adj 1 pick - cutall 1
+V527 SELFCUT 573 n 45
+V527 PICKASK 574 adj 0 pick - cutall 0
+V527 BUNKER HOLD 574 why collar blk gate
+V527 PICKASK 575 adj 0 pick - cutall 0
+V527 BUNKER HOLD 575 why collar blk gate
+V527 PICKASK 576 adj 0 pick - cutall 0
+V527 BUNKER HOLD 576 why collar blk gate
+V527 PICKASK 577 adj 0 pick - cutall 0
+V527 BUNKER HOLD 577 why notarmed blk armed orth 3
+V527 PICKASK 578 adj 0 pick - cutall 0
+V527 BUNKER HOLD 578 why notarmed blk armed orth 3
+V527 PICKASK 579 adj 0 pick - cutall 0
+V527 BUNKER HOLD 579 why collar blk gate
+V527 PICKASK 580 adj 0 pick - cutall 0
+V527 BUNKER HOLD 580 why collar blk gate
+V527 PICKASK 581 adj 0 pick - cutall 0
+V527 BUNKER HOLD 581 why notarmed blk armed orth 2
+V527 PICKASK 582 adj 0 pick - cutall 0
+V527 BUNKER HOLD 582 why notarmed blk armed orth 4
+V527 PICKASK 583 adj 0 pick - cutall 0
+V527 BUNKER HOLD 583 why notarmed blk armed orth 2
+V527 PICKASK 584 adj 0 pick - cutall 0
+V527 BUNKER HOLD 584 why notarmed blk armed orth 4
+V527 PICKASK 585 adj 0 pick - cutall 0
+V527 BUNKER HOLD 585 why notarmed blk armed orth 2
+V527 PICKASK 586 adj 0 pick - cutall 0
+V527 BUNKER HOLD 586 why notarmed blk armed orth 4
+V527 PICKASK 587 adj 0 pick - cutall 0
+V527 BUNKER HOLD 587 why notarmed blk armed orth 2
+V527 PICKASK 588 adj 0 pick - cutall 0
+V527 BUNKER HOLD 588 why notarmed blk armed orth 4
+V527 PICKASK 589 adj 0 pick - cutall 0
+V527 BUNKER HOLD 589 why notarmed blk armed orth 3
+V527 PICKASK 590 adj 0 pick - cutall 0
+V527 BUNKER HOLD 590 why notarmed blk armed orth 2
+V527 PICKASK 591 adj 0 pick - cutall 0
+V527 BUNKER HOLD 591 why notarmed blk armed orth 2
+V527 PICKASK 592 adj 0 pick - cutall 0
+V527 BUNKER HOLD 592 why notarmed blk armed orth 2
+V527 PICKASK 593 adj 0 pick - cutall 0
+V527 BUNKER HOLD 593 why notarmed blk armed orth 2
+V527 PICKASK 594 adj 1 pick - cutall 1
+V527 SELFCUT 594 n 46
+V527 PICKASK 595 adj 0 pick - cutall 0
+V527 BUNKER HOLD 595 why collar blk gate
+V527 PICKASK 596 adj 0 pick - cutall 0
+V527 BUNKER HOLD 596 why collar blk gate
+V527 PICKASK 597 adj 0 pick - cutall 0
+V527 BUNKER HOLD 597 why collar blk gate
+V527 PICKASK 598 adj 0 pick - cutall 0
+V527 BUNKER HOLD 598 why collar blk gate
+V527 PICKASK 599 adj 0 pick - cutall 0
+V527 BUNKER HOLD 599 why collar blk gate
+V527 PICKASK 600 adj 0 pick - cutall 0
+V527 BUNKER HOLD 600 why notarmed blk armed orth 2
+V527 PICKASK 601 adj 0 pick - cutall 0
+V527 BUNKER HOLD 601 why notarmed blk armed orth 4
+V527 PICKASK 602 adj 0 pick - cutall 0
+V527 BUNKER HOLD 602 why notarmed blk armed orth 2
+V527 PICKASK 603 adj 0 pick - cutall 0
+V527 BUNKER HOLD 603 why notarmed blk armed orth 4
+V527 PICKASK 604 adj 0 pick - cutall 0
+V527 BUNKER HOLD 604 why notarmed blk armed orth 2
+V527 PICKASK 605 adj 0 pick - cutall 0
+V527 BUNKER HOLD 605 why notarmed blk armed orth 4
+V527 PICKASK 606 adj 0 pick - cutall 0
+V527 BUNKER HOLD 606 why notarmed blk armed orth 2
+V527 PICKASK 607 adj 0 pick - cutall 0
+V527 BUNKER HOLD 607 why notarmed blk armed orth 4
+V527 PICKASK 608 adj 0 pick - cutall 0
+V527 BUNKER HOLD 608 why notarmed blk armed orth 2
+V527 PICKASK 609 adj 0 pick - cutall 0
+V527 BUNKER HOLD 609 why notarmed blk armed orth 4
+V527 PICKASK 610 adj 0 pick - cutall 0
+V527 BUNKER HOLD 610 why notarmed blk armed orth 2
+V527 PICKASK 611 adj 0 pick - cutall 0
+V527 BUNKER HOLD 611 why notarmed blk armed orth 4
+V527 PICKASK 612 adj 0 pick - cutall 0
+V527 BUNKER HOLD 612 why notarmed blk armed orth 2
+V527 PICKASK 613 adj 0 pick - cutall 0
+V527 BUNKER HOLD 613 why notarmed blk armed orth 4
+V527 PICKASK 614 adj 0 pick - cutall 0
+V527 BUNKER HOLD 614 why notarmed blk armed orth 2
+V527 PICKASK 615 adj 0 pick - cutall 0
+V527 BUNKER HOLD 615 why notarmed blk armed orth 4
+V527 PICKASK 616 adj 0 pick - cutall 0
+V527 BUNKER HOLD 616 why notarmed blk armed orth 2
+V527 PICKASK 617 adj 0 pick - cutall 0
+V527 BUNKER HOLD 617 why notarmed blk armed orth 4
+V527 PICKASK 618 adj 0 pick - cutall 0
+V527 BUNKER HOLD 618 why notarmed blk armed orth 2
+V527 PICKASK 619 adj 0 pick - cutall 0
+V527 BUNKER HOLD 619 why notarmed blk armed orth 4
+V527 PICKASK 620 adj 0 pick - cutall 0
+V527 BUNKER HOLD 620 why notarmed blk armed orth 2
+V527 PICKASK 621 adj 0 pick - cutall 0
+V527 BUNKER HOLD 621 why notarmed blk armed orth 4
+V527 PICKASK 622 adj 0 pick - cutall 0
+V527 BUNKER HOLD 622 why notarmed blk armed orth 2
+V527 PICKASK 623 adj 0 pick - cutall 0
+V527 BUNKER HOLD 623 why notarmed blk armed orth 4
+V527 PICKASK 624 adj 0 pick - cutall 0
+V527 BUNKER HOLD 624 why notarmed blk armed orth 2
+V527 PICKASK 625 adj 0 pick - cutall 0
+V527 BUNKER HOLD 625 why notarmed blk armed orth 4
+V527 PICKASK 626 adj 0 pick - cutall 0
+V527 BUNKER HOLD 626 why notarmed blk armed orth 3
+V527 PICKASK 627 adj 0 pick - cutall 0
+V527 BUNKER HOLD 627 why notarmed blk armed orth 2
+V527 PICKASK 628 adj 0 pick - cutall 0
+V527 BUNKER HOLD 628 why notarmed blk armed orth 2
+V527 PICKASK 629 adj 0 pick - cutall 0
+V527 BUNKER HOLD 629 why notarmed blk armed orth 2
+V527 PICKASK 630 adj 0 pick - cutall 0
+V527 BUNKER HOLD 630 why notarmed blk armed orth 2
+V527 PICKASK 631 adj 1 pick - cutall 1
+V527 SELFCUT 631 n 47
+V527 PICKASK 632 adj 0 pick - cutall 0
+V527 BUNKER HOLD 632 why collar blk gate
+V527 PICKASK 633 adj 0 pick - cutall 0
+V527 BUNKER HOLD 633 why collar blk gate
+V527 PICKASK 634 adj 0 pick - cutall 0
+V527 BUNKER HOLD 634 why collar blk gate
+V527 PICKASK 635 adj 0 pick - cutall 0
+V527 BUNKER HOLD 635 why collar blk gate
+V527 PICKASK 636 adj 0 pick - cutall 0
+V527 BUNKER HOLD 636 why collar blk gate
+V527 PICKASK 637 adj 0 pick - cutall 0
+V527 BUNKER HOLD 637 why notarmed blk armed orth 2
+V527 PICKASK 638 adj 0 pick - cutall 0
+V527 BUNKER HOLD 638 why notarmed blk armed orth 4
+V527 PICKASK 639 adj 0 pick - cutall 0
+V527 BUNKER HOLD 639 why notarmed blk armed orth 2
+V527 PICKASK 640 adj 0 pick - cutall 0
+V527 BUNKER HOLD 640 why notarmed blk armed orth 4
+V527 PICKASK 641 adj 0 pick - cutall 0
+V527 BUNKER HOLD 641 why notarmed blk armed orth 2
+V527 PICKASK 642 adj 0 pick - cutall 0
+V527 BUNKER HOLD 642 why notarmed blk armed orth 4
+V527 PICKASK 643 adj 0 pick - cutall 0
+V527 BUNKER HOLD 643 why notarmed blk armed orth 2
+V527 PICKASK 644 adj 0 pick - cutall 0
+V527 BUNKER HOLD 644 why notarmed blk armed orth 4
+V527 PICKASK 645 adj 0 pick - cutall 0
+V527 BUNKER HOLD 645 why notarmed blk armed orth 2
+V527 PICKASK 646 adj 0 pick - cutall 0
+V527 BUNKER HOLD 646 why notarmed blk armed orth 4
+V527 PICKASK 647 adj 0 pick - cutall 0
+V527 BUNKER HOLD 647 why notarmed blk armed orth 2
+V527 PICKASK 648 adj 0 pick - cutall 0
+V527 BUNKER HOLD 648 why notarmed blk armed orth 4
+V527 PICKASK 649 adj 0 pick - cutall 0
+V527 BUNKER HOLD 649 why notarmed blk armed orth 3
+V527 PICKASK 650 adj 0 pick - cutall 0
+V527 BUNKER HOLD 650 why notarmed blk armed orth 2
+V527 PICKASK 651 adj 0 pick - cutall 0
+V527 BUNKER HOLD 651 why notarmed blk armed orth 2
+V527 PICKASK 652 adj 0 pick - cutall 0
+V527 BUNKER HOLD 652 why notarmed blk armed orth 2
+V527 PICKASK 653 adj 0 pick - cutall 0
+V527 BUNKER HOLD 653 why notarmed blk armed orth 2
+V527 PICKASK 654 adj 1 pick - cutall 1
+V527 SELFCUT 654 n 48
+V527 PICKASK 655 adj 0 pick - cutall 0
+V527 BUNKER HOLD 655 why collar blk gate
+V527 PICKASK 656 adj 0 pick - cutall 0
+V527 BUNKER HOLD 656 why collar blk gate
+V527 PICKASK 657 adj 0 pick - cutall 0
+V527 BUNKER HOLD 657 why collar blk gate
+V527 PICKASK 658 adj 0 pick - cutall 0
+V527 BUNKER HOLD 658 why collar blk gate
+V527 PICKASK 659 adj 0 pick - cutall 0
+V527 BUNKER HOLD 659 why collar blk gate
+V527 PICKASK 660 adj 0 pick - cutall 0
+V527 BUNKER HOLD 660 why notarmed blk armed orth 2
+V527 PICKASK 661 adj 0 pick - cutall 0
+V527 BUNKER HOLD 661 why notarmed blk armed orth 4
+V527 PICKASK 662 adj 0 pick - cutall 0
+V527 BUNKER HOLD 662 why notarmed blk armed orth 2
+V527 PICKASK 663 adj 0 pick - cutall 0
+V527 BUNKER HOLD 663 why notarmed blk armed orth 4
+V527 PICKASK 664 adj 0 pick - cutall 0
+V527 BUNKER HOLD 664 why notarmed blk armed orth 2
+V527 PICKASK 665 adj 0 pick - cutall 0
+V527 BUNKER HOLD 665 why notarmed blk armed orth 4
+V527 PICKASK 666 adj 0 pick - cutall 0
+V527 BUNKER HOLD 666 why notarmed blk armed orth 2
+V527 PICKASK 667 adj 0 pick - cutall 0
+V527 BUNKER HOLD 667 why notarmed blk armed orth 4
+V527 PICKASK 668 adj 0 pick - cutall 0
+V527 BUNKER HOLD 668 why notarmed blk armed orth 2
+V527 PICKASK 669 adj 0 pick - cutall 0
+V527 BUNKER HOLD 669 why notarmed blk armed orth 4
+V527 PICKASK 670 adj 0 pick - cutall 0
+V527 BUNKER HOLD 670 why notarmed blk armed orth 3
+V527 PICKASK 671 adj 0 pick - cutall 0
+V527 BUNKER HOLD 671 why notarmed blk armed orth 2
+V527 PICKASK 672 adj 0 pick - cutall 0
+V527 BUNKER HOLD 672 why notarmed blk armed orth 2
+V527 PICKASK 673 adj 0 pick - cutall 0
+V527 BUNKER HOLD 673 why notarmed blk armed orth 2
+V527 PICKASK 674 adj 0 pick - cutall 0
+V527 BUNKER HOLD 674 why notarmed blk armed orth 2
+V527 PICKASK 675 adj 1 pick - cutall 1
+V527 SELFCUT 675 n 49
+V527 PICKASK 676 adj 0 pick - cutall 0
+V527 BUNKER HOLD 676 why collar blk gate
+V527 PICKASK 677 adj 0 pick - cutall 0
+V527 BUNKER HOLD 677 why collar blk gate
+V527 PICKASK 678 adj 0 pick - cutall 0
+V527 BUNKER HOLD 678 why collar blk gate
+V527 PICKASK 679 adj 0 pick - cutall 0
+V527 BUNKER HOLD 679 why collar blk gate
+V527 PICKASK 680 adj 0 pick - cutall 0
+V527 BUNKER HOLD 680 why collar blk gate
+V527 PICKASK 681 adj 0 pick - cutall 0
+V527 BUNKER HOLD 681 why collar blk gate
+V527 PICKASK 682 adj 0 pick - cutall 0
+V527 BUNKER HOLD 682 why collar blk gate
+V527 PICKASK 683 adj 0 pick - cutall 0
+V527 BUNKER HOLD 683 why notarmed blk armed orth 2
+V527 PICKASK 684 adj 0 pick - cutall 0
+V527 BUNKER HOLD 684 why notarmed blk armed orth 4
+V527 PICKASK 685 adj 0 pick - cutall 0
+V527 BUNKER HOLD 685 why notarmed blk armed orth 2
+V527 PICKASK 686 adj 0 pick - cutall 0
+V527 BUNKER HOLD 686 why notarmed blk armed orth 4
+V527 PICKASK 687 adj 0 pick - cutall 0
+V527 BUNKER HOLD 687 why notarmed blk armed orth 2
+V527 PICKASK 688 adj 0 pick - cutall 0
+V527 BUNKER HOLD 688 why notarmed blk armed orth 4
+V527 PICKASK 689 adj 0 pick - cutall 0
+V527 BUNKER HOLD 689 why notarmed blk armed orth 3
+V527 PICKASK 690 adj 0 pick - cutall 0
+V527 BUNKER HOLD 690 why notarmed blk armed orth 2
+V527 PICKASK 691 adj 0 pick - cutall 0
+V527 BUNKER HOLD 691 why notarmed blk armed orth 2
+V527 PICKASK 692 adj 0 pick - cutall 0
+V527 BUNKER HOLD 692 why notarmed blk armed orth 2
+V527 PICKASK 693 adj 0 pick - cutall 0
+V527 BUNKER HOLD 693 why notarmed blk armed orth 2
+V527 PICKASK 694 adj 1 pick - cutall 1
+V527 SELFCUT 694 n 50
+V527 PICKASK 695 adj 0 pick - cutall 0
+V527 BUNKER HOLD 695 why collar blk gate
+V527 PICKASK 696 adj 0 pick - cutall 0
+V527 BUNKER HOLD 696 why collar blk gate
+V527 PICKASK 697 adj 0 pick - cutall 0
+V527 BUNKER HOLD 697 why collar blk gate
+V527 PICKASK 698 adj 0 pick - cutall 0
+V527 BUNKER HOLD 698 why collar blk gate
+V527 PICKASK 699 adj 0 pick - cutall 0
+V527 BUNKER HOLD 699 why collar blk gate
+V527 PICKASK 700 adj 0 pick - cutall 0
+V527 BUNKER HOLD 700 why collar blk gate
+V527 PICKASK 701 adj 0 pick - cutall 0
+V527 BUNKER HOLD 701 why collar blk gate
+V527 PICKASK 702 adj 0 pick - cutall 0
+V527 BUNKER HOLD 702 why notarmed blk armed orth 2
+V527 PICKASK 703 adj 0 pick - cutall 0
+V527 BUNKER HOLD 703 why notarmed blk armed orth 4
+V527 PICKASK 704 adj 0 pick - cutall 0
+V527 BUNKER HOLD 704 why notarmed blk armed orth 2
+V527 PICKASK 705 adj 0 pick - cutall 0
+V527 BUNKER HOLD 705 why notarmed blk armed orth 4
+V527 PICKASK 706 adj 0 pick - cutall 0
+V527 BUNKER HOLD 706 why notarmed blk armed orth 2
+V527 PICKASK 707 adj 0 pick - cutall 0
+V527 BUNKER HOLD 707 why notarmed blk armed orth 4
+V527 PICKASK 708 adj 0 pick - cutall 0
+V527 BUNKER HOLD 708 why notarmed blk armed orth 2
+V527 PICKASK 709 adj 0 pick - cutall 0
+V527 BUNKER HOLD 709 why notarmed blk armed orth 4
+V527 PICKASK 710 adj 0 pick - cutall 0
+V527 BUNKER HOLD 710 why notarmed blk armed orth 2
+V527 PICKASK 711 adj 0 pick - cutall 0
+V527 BUNKER HOLD 711 why notarmed blk armed orth 4
+V527 PICKASK 712 adj 0 pick - cutall 0
+V527 BUNKER HOLD 712 why notarmed blk armed orth 2
+V527 PICKASK 713 adj 0 pick - cutall 0
+V527 BUNKER HOLD 713 why notarmed blk armed orth 4
+V527 PICKASK 714 adj 0 pick - cutall 0
+V527 BUNKER HOLD 714 why notarmed blk armed orth 3
+V527 PICKASK 715 adj 0 pick - cutall 0
+V527 BUNKER HOLD 715 why notarmed blk armed orth 2
+V527 PICKASK 716 adj 0 pick - cutall 0
+V527 BUNKER HOLD 716 why notarmed blk armed orth 2
+V527 PICKASK 717 adj 0 pick - cutall 0
+V527 BUNKER HOLD 717 why notarmed blk armed orth 2
+V527 PICKASK 718 adj 0 pick - cutall 0
+V527 BUNKER HOLD 718 why notarmed blk armed orth 2
+V527 PICKASK 719 adj 1 pick - cutall 1
+V527 SELFCUT 719 n 51
+V527 PICKASK 720 adj 0 pick - cutall 0
+V527 BUNKER HOLD 720 why collar blk gate
+V527 PICKASK 721 adj 0 pick - cutall 0
+V527 BUNKER HOLD 721 why collar blk gate
+V527 PICKASK 722 adj 0 pick - cutall 0
+V527 BUNKER HOLD 722 why collar blk gate
+V527 PICKASK 723 adj 0 pick - cutall 0
+V527 BUNKER HOLD 723 why collar blk gate
+V527 PICKASK 724 adj 0 pick - cutall 0
+V527 BUNKER HOLD 724 why collar blk gate
+V527 PICKASK 725 adj 0 pick - cutall 0
+V527 BUNKER HOLD 725 why collar blk gate
+V527 PICKASK 726 adj 0 pick - cutall 0
+V527 BUNKER HOLD 726 why collar blk gate
+V527 PICKASK 727 adj 0 pick - cutall 0
+V527 BUNKER HOLD 727 why notarmed blk armed orth 2
+V527 PICKASK 728 adj 0 pick - cutall 0
+V527 BUNKER HOLD 728 why notarmed blk armed orth 4
+V527 PICKASK 729 adj 0 pick - cutall 0
+V527 BUNKER HOLD 729 why notarmed blk armed orth 2
+V527 PICKASK 730 adj 0 pick - cutall 0
+V527 BUNKER HOLD 730 why notarmed blk armed orth 4
+V527 PICKASK 731 adj 0 pick - cutall 0
+V527 BUNKER HOLD 731 why notarmed blk armed orth 2
+V527 PICKASK 732 adj 0 pick - cutall 0
+V527 BUNKER HOLD 732 why notarmed blk armed orth 4
+V527 PICKASK 733 adj 0 pick - cutall 0
+V527 BUNKER HOLD 733 why notarmed blk armed orth 2
+V527 PICKASK 734 adj 0 pick - cutall 0
+V527 BUNKER HOLD 734 why notarmed blk armed orth 4
+V527 PICKASK 735 adj 0 pick - cutall 0
+V527 BUNKER HOLD 735 why notarmed blk armed orth 2
+V527 PICKASK 736 adj 0 pick - cutall 0
+V527 BUNKER HOLD 736 why notarmed blk armed orth 4
+V527 PICKASK 737 adj 0 pick - cutall 0
+V527 BUNKER HOLD 737 why notarmed blk armed orth 3
+V527 PICKASK 738 adj 0 pick - cutall 0
+V527 BUNKER HOLD 738 why notarmed blk armed orth 2
+V527 PICKASK 739 adj 0 pick - cutall 0
+V527 BUNKER HOLD 739 why notarmed blk armed orth 2
+V527 PICKASK 740 adj 0 pick - cutall 0
+V527 BUNKER HOLD 740 why notarmed blk armed orth 2
+V527 PICKASK 741 adj 0 pick - cutall 0
+V527 BUNKER HOLD 741 why notarmed blk armed orth 2
+V527 PICKASK 742 adj 1 pick - cutall 1
+V527 SELFCUT 742 n 52
+V527 PICKASK 743 adj 0 pick - cutall 0
+V527 BUNKER HOLD 743 why collar blk gate
+V527 PICKASK 744 adj 0 pick - cutall 0
+V527 BUNKER HOLD 744 why collar blk gate
+V527 PICKASK 745 adj 0 pick - cutall 0
+V527 BUNKER HOLD 745 why collar blk gate
+V527 PICKASK 746 adj 0 pick - cutall 0
+V527 BUNKER HOLD 746 why collar blk gate
+V527 PICKASK 747 adj 0 pick - cutall 0
+V527 BUNKER HOLD 747 why collar blk gate
+V527 PICKASK 748 adj 0 pick - cutall 0
+V527 BUNKER HOLD 748 why collar blk gate
+V527 PICKASK 749 adj 0 pick - cutall 0
+V527 BUNKER HOLD 749 why collar blk gate
+V527 PICKASK 750 adj 0 pick - cutall 0
+V527 BUNKER HOLD 750 why notarmed blk armed orth 2
+V527 PICKASK 751 adj 0 pick - cutall 0
+V527 BUNKER HOLD 751 why notarmed blk armed orth 4
+V527 PICKASK 752 adj 0 pick - cutall 0
+V527 BUNKER HOLD 752 why notarmed blk armed orth 2
+V527 PICKASK 753 adj 0 pick - cutall 0
+V527 BUNKER HOLD 753 why notarmed blk armed orth 4
+V527 PICKASK 754 adj 0 pick - cutall 0
+V527 BUNKER HOLD 754 why notarmed blk armed orth 2
+V527 PICKASK 755 adj 0 pick - cutall 0
+V527 BUNKER HOLD 755 why notarmed blk armed orth 4
+V527 PICKASK 756 adj 0 pick - cutall 0
+V527 BUNKER HOLD 756 why notarmed blk armed orth 2
+V527 PICKASK 757 adj 0 pick - cutall 0
+V527 BUNKER HOLD 757 why notarmed blk armed orth 4
+V527 PICKASK 758 adj 0 pick - cutall 0
+V527 BUNKER HOLD 758 why notarmed blk armed orth 2
+V527 PICKASK 759 adj 0 pick - cutall 0
+V527 BUNKER HOLD 759 why notarmed blk armed orth 4
+V527 PICKASK 760 adj 0 pick - cutall 0
+V527 BUNKER HOLD 760 why notarmed blk armed orth 2
+V527 PICKASK 761 adj 0 pick - cutall 0
+V527 BUNKER HOLD 761 why notarmed blk armed orth 4
+V527 PICKASK 762 adj 0 pick - cutall 0
+V527 BUNKER HOLD 762 why notarmed blk armed orth 3
+V527 PICKASK 763 adj 0 pick - cutall 0
+V527 BUNKER HOLD 763 why notarmed blk armed orth 2
+V527 PICKASK 764 adj 0 pick - cutall 0
+V527 BUNKER HOLD 764 why notarmed blk armed orth 2
+V527 PICKASK 765 adj 0 pick - cutall 0
+V527 BUNKER HOLD 765 why notarmed blk armed orth 2
+V527 PICKASK 766 adj 0 pick - cutall 0
+V527 BUNKER HOLD 766 why notarmed blk armed orth 2
+V527 PICKASK 767 adj 1 pick - cutall 1
+V527 SELFCUT 767 n 53
+V527 PICKASK 768 adj 0 pick - cutall 0
+V527 BUNKER HOLD 768 why collar blk gate
+V527 PICKASK 769 adj 0 pick - cutall 0
+V527 BUNKER HOLD 769 why collar blk gate
+V527 PICKASK 770 adj 0 pick - cutall 0
+V527 BUNKER HOLD 770 why collar blk gate
+V527 PICKASK 771 adj 0 pick - cutall 0
+V527 BUNKER HOLD 771 why collar blk gate
+V527 PICKASK 772 adj 0 pick - cutall 0
+V527 BUNKER HOLD 772 why collar blk gate
+V527 PICKASK 773 adj 0 pick - cutall 0
+V527 BUNKER HOLD 773 why collar blk gate
+V527 PICKASK 774 adj 0 pick - cutall 0
+V527 BUNKER HOLD 774 why collar blk gate
+V527 PICKASK 775 adj 0 pick - cutall 0
+V527 BUNKER HOLD 775 why notarmed blk armed orth 2
+V527 PICKASK 776 adj 0 pick - cutall 0
+V527 BUNKER HOLD 776 why notarmed blk armed orth 4
+V527 PICKASK 777 adj 0 pick - cutall 0
+V527 BUNKER HOLD 777 why notarmed blk armed orth 2
+V527 PICKASK 778 adj 0 pick - cutall 0
+V527 BUNKER HOLD 778 why notarmed blk armed orth 4
+V527 PICKASK 779 adj 0 pick - cutall 0
+V527 BUNKER HOLD 779 why notarmed blk armed orth 2
+V527 PICKASK 780 adj 0 pick - cutall 0
+V527 BUNKER HOLD 780 why notarmed blk armed orth 4
+V527 PICKASK 781 adj 0 pick - cutall 0
+V527 BUNKER HOLD 781 why notarmed blk armed orth 2
+V527 PICKASK 782 adj 0 pick - cutall 0
+V527 BUNKER HOLD 782 why notarmed blk armed orth 4
+V527 PICKASK 783 adj 0 pick - cutall 0
+V527 BUNKER HOLD 783 why notarmed blk armed orth 2
+V527 PICKASK 784 adj 0 pick - cutall 0
+V527 BUNKER HOLD 784 why notarmed blk armed orth 4
+V527 PICKASK 785 adj 0 pick - cutall 0
+V527 BUNKER HOLD 785 why notarmed blk armed orth 3
+V527 PICKASK 786 adj 0 pick - cutall 0
+V527 BUNKER HOLD 786 why notarmed blk armed orth 2
+V527 PICKASK 787 adj 0 pick - cutall 0
+V527 BUNKER HOLD 787 why notarmed blk armed orth 2
+V527 PICKASK 788 adj 0 pick - cutall 0
+V527 BUNKER HOLD 788 why notarmed blk armed orth 2
+V527 PICKASK 789 adj 0 pick - cutall 0
+V527 BUNKER HOLD 789 why notarmed blk armed orth 2
+V527 PICKASK 790 adj 1 pick - cutall 1
+V527 SELFCUT 790 n 54
+V527 PICKASK 791 adj 0 pick - cutall 0
+V527 BUNKER HOLD 791 why collar blk gate
+V527 PICKASK 792 adj 0 pick - cutall 0
+V527 BUNKER HOLD 792 why collar blk gate
+V527 PICKASK 793 adj 0 pick - cutall 0
+V527 BUNKER HOLD 793 why collar blk gate
+V527 PICKASK 794 adj 0 pick - cutall 0
+V527 BUNKER HOLD 794 why collar blk gate
+V527 PICKASK 795 adj 0 pick - cutall 0
+V527 BUNKER HOLD 795 why collar blk gate
+V527 PICKASK 796 adj 0 pick - cutall 0
+V527 BUNKER HOLD 796 why collar blk gate
+V527 PICKASK 797 adj 0 pick - cutall 0
+V527 BUNKER HOLD 797 why collar blk gate
+V527 PICKASK 798 adj 0 pick - cutall 0
+V527 BUNKER HOLD 798 why notarmed blk armed orth 2
+V527 PICKASK 799 adj 0 pick - cutall 0
+V527 BUNKER HOLD 799 why notarmed blk armed orth 4
+V527 PICKASK 800 adj 0 pick - cutall 0
+V527 BUNKER HOLD 800 why notarmed blk armed orth 2
+V527 PICKASK 801 adj 0 pick - cutall 0
+V527 BUNKER HOLD 801 why notarmed blk armed orth 4
+V527 PICKASK 802 adj 0 pick - cutall 0
+V527 BUNKER HOLD 802 why notarmed blk armed orth 2
+V527 PICKASK 803 adj 0 pick - cutall 0
+V527 BUNKER HOLD 803 why notarmed blk armed orth 4
+V527 PICKASK 804 adj 0 pick - cutall 0
+V527 BUNKER HOLD 804 why notarmed blk armed orth 2
+V527 PICKASK 805 adj 0 pick - cutall 0
+V527 BUNKER HOLD 805 why notarmed blk armed orth 4
+V527 PICKASK 806 adj 0 pick - cutall 0
+V527 BUNKER HOLD 806 why notarmed blk armed orth 2
+V527 PICKASK 807 adj 0 pick - cutall 0
+V527 BUNKER HOLD 807 why notarmed blk armed orth 4
+V527 PICKASK 808 adj 0 pick - cutall 0
+V527 BUNKER HOLD 808 why notarmed blk armed orth 2
+V527 PICKASK 809 adj 0 pick - cutall 0
+V527 BUNKER HOLD 809 why notarmed blk armed orth 4
+V527 PICKASK 810 adj 0 pick - cutall 0
+V527 BUNKER HOLD 810 why notarmed blk armed orth 3
+V527 PICKASK 811 adj 0 pick - cutall 0
+V527 BUNKER HOLD 811 why notarmed blk armed orth 2
+V527 PICKASK 812 adj 0 pick - cutall 0
+V527 BUNKER HOLD 812 why notarmed blk armed orth 2
+V527 PICKASK 813 adj 0 pick - cutall 0
+V527 BUNKER HOLD 813 why notarmed blk armed orth 2
+V527 PICKASK 814 adj 0 pick - cutall 0
+V527 BUNKER HOLD 814 why notarmed blk armed orth 2
+V527 PICKASK 815 adj 1 pick - cutall 1
+V527 SELFCUT 815 n 55
+V527 PICKASK 816 adj 0 pick - cutall 0
+V527 BUNKER HOLD 816 why collar blk gate
+V527 PICKASK 817 adj 0 pick - cutall 0
+V527 BUNKER HOLD 817 why collar blk gate
+V527 PICKASK 818 adj 0 pick - cutall 0
+V527 BUNKER HOLD 818 why collar blk gate
+V527 PICKASK 819 adj 0 pick - cutall 0
+V527 BUNKER HOLD 819 why collar blk gate
+V527 PICKASK 820 adj 0 pick - cutall 0
+V527 BUNKER HOLD 820 why collar blk gate
+V527 PICKASK 821 adj 0 pick - cutall 0
+V527 BUNKER HOLD 821 why collar blk gate
+V527 PICKASK 822 adj 0 pick - cutall 0
+V527 BUNKER HOLD 822 why collar blk gate
+V527 PICKASK 823 adj 0 pick - cutall 0
+V527 BUNKER HOLD 823 why notarmed blk armed orth 2
+V527 PICKASK 824 adj 0 pick - cutall 0
+V527 BUNKER HOLD 824 why notarmed blk armed orth 4
+V527 PICKASK 825 adj 0 pick - cutall 0
+V527 BUNKER HOLD 825 why notarmed blk armed orth 2
+V527 PICKASK 826 adj 0 pick - cutall 0
+V527 BUNKER HOLD 826 why notarmed blk armed orth 4
+V527 PICKASK 827 adj 0 pick - cutall 0
+V527 BUNKER HOLD 827 why notarmed blk armed orth 2
+V527 PICKASK 828 adj 0 pick - cutall 0
+V527 BUNKER HOLD 828 why notarmed blk armed orth 4
+V527 PICKASK 829 adj 0 pick - cutall 0
+V527 BUNKER HOLD 829 why notarmed blk armed orth 2
+V527 PICKASK 830 adj 0 pick - cutall 0
+V527 BUNKER HOLD 830 why notarmed blk armed orth 4
+V527 PICKASK 831 adj 0 pick - cutall 0
+V527 BUNKER HOLD 831 why notarmed blk armed orth 2
+V527 PICKASK 832 adj 0 pick - cutall 0
+V527 BUNKER HOLD 832 why notarmed blk armed orth 4
+V527 PICKASK 833 adj 0 pick - cutall 0
+V527 BUNKER HOLD 833 why notarmed blk armed orth 3
+V527 PICKASK 834 adj 0 pick - cutall 0
+V527 BUNKER HOLD 834 why notarmed blk armed orth 2
+V527 PICKASK 835 adj 0 pick - cutall 0
+V527 BUNKER HOLD 835 why notarmed blk armed orth 2
+V527 PICKASK 836 adj 0 pick - cutall 0
+V527 BUNKER HOLD 836 why notarmed blk armed orth 2
+V527 PICKASK 837 adj 0 pick - cutall 0
+V527 BUNKER HOLD 837 why notarmed blk armed orth 2
+V527 PICKASK 838 adj 1 pick - cutall 1
+V527 SELFCUT 838 n 56
+V527 PICKASK 839 adj 0 pick - cutall 0
+V527 BUNKER HOLD 839 why collar blk gate
+V527 PICKASK 840 adj 0 pick - cutall 0
+V527 BUNKER HOLD 840 why collar blk gate
+V527 PICKASK 841 adj 0 pick - cutall 0
+V527 BUNKER HOLD 841 why collar blk gate
+V527 PICKASK 842 adj 0 pick - cutall 0
+V527 BUNKER HOLD 842 why collar blk gate
+V527 PICKASK 843 adj 0 pick - cutall 0
+V527 BUNKER HOLD 843 why collar blk gate
+V527 PICKASK 844 adj 0 pick - cutall 0
+V527 BUNKER HOLD 844 why collar blk gate
+V527 PICKASK 845 adj 0 pick - cutall 0
+V527 BUNKER HOLD 845 why collar blk gate
+V527 PICKASK 846 adj 0 pick - cutall 0
+V527 BUNKER HOLD 846 why notarmed blk armed orth 2
+V527 PICKASK 847 adj 0 pick - cutall 0
+V527 BUNKER HOLD 847 why notarmed blk armed orth 4
+V527 PICKASK 848 adj 0 pick - cutall 0
+V527 BUNKER HOLD 848 why notarmed blk armed orth 2
+V527 PICKASK 849 adj 0 pick - cutall 0
+V527 BUNKER HOLD 849 why notarmed blk armed orth 4
+V527 PICKASK 850 adj 0 pick - cutall 0
+V527 BUNKER HOLD 850 why notarmed blk armed orth 2
+V527 PICKASK 851 adj 0 pick - cutall 0
+V527 BUNKER HOLD 851 why notarmed blk armed orth 4
+V527 PICKASK 852 adj 0 pick - cutall 0
+V527 BUNKER HOLD 852 why notarmed blk armed orth 2
+V527 PICKASK 853 adj 0 pick - cutall 0
+V527 BUNKER HOLD 853 why notarmed blk armed orth 4
+V527 PICKASK 854 adj 0 pick - cutall 0
+V527 BUNKER HOLD 854 why notarmed blk armed orth 2
+V527 PICKASK 855 adj 0 pick - cutall 0
+V527 BUNKER HOLD 855 why notarmed blk armed orth 4
+V527 PICKASK 856 adj 0 pick - cutall 0
+V527 BUNKER HOLD 856 why notarmed blk armed orth 2
+V527 PICKASK 857 adj 0 pick - cutall 0
+V527 BUNKER HOLD 857 why notarmed blk armed orth 4
+V527 PICKASK 858 adj 0 pick - cutall 0
+V527 BUNKER HOLD 858 why notarmed blk armed orth 3
+V527 PICKASK 859 adj 0 pick - cutall 0
+V527 BUNKER HOLD 859 why notarmed blk armed orth 2
+V527 PICKASK 860 adj 0 pick - cutall 0
+V527 BUNKER HOLD 860 why notarmed blk armed orth 2
+V527 PICKASK 861 adj 0 pick - cutall 0
+V527 BUNKER HOLD 861 why notarmed blk armed orth 2
+V527 PICKASK 862 adj 0 pick - cutall 0
+V527 BUNKER HOLD 862 why notarmed blk armed orth 2
+V527 PICKASK 863 adj 1 pick - cutall 1
+V527 SELFCUT 863 n 57
+V527 PICKASK 864 adj 0 pick - cutall 0
+V527 BUNKER HOLD 864 why collar blk gate
+V527 PICKASK 865 adj 0 pick - cutall 0
+V527 BUNKER HOLD 865 why collar blk gate
+V527 PICKASK 866 adj 0 pick - cutall 0
+V527 BUNKER HOLD 866 why collar blk gate
+V527 PICKASK 867 adj 0 pick - cutall 0
+V527 BUNKER HOLD 867 why collar blk gate
+V527 PICKASK 868 adj 0 pick - cutall 0
+V527 BUNKER HOLD 868 why collar blk gate
+V527 PICKASK 869 adj 0 pick - cutall 0
+V527 BUNKER HOLD 869 why collar blk gate
+V527 PICKASK 870 adj 0 pick - cutall 0
+V527 BUNKER HOLD 870 why collar blk gate
+V527 PICKASK 871 adj 0 pick - cutall 0
+V527 BUNKER HOLD 871 why notarmed blk armed orth 2
+V527 PICKASK 872 adj 0 pick - cutall 0
+V527 BUNKER HOLD 872 why notarmed blk armed orth 4
+V527 PICKASK 873 adj 0 pick - cutall 0
+V527 BUNKER HOLD 873 why notarmed blk armed orth 2
+V527 PICKASK 874 adj 0 pick - cutall 0
+V527 BUNKER HOLD 874 why notarmed blk armed orth 4
+V527 PICKASK 875 adj 0 pick - cutall 0
+V527 BUNKER HOLD 875 why notarmed blk armed orth 2
+V527 PICKASK 876 adj 0 pick - cutall 0
+V527 BUNKER HOLD 876 why notarmed blk armed orth 4
+V527 PICKASK 877 adj 0 pick - cutall 0
+V527 BUNKER HOLD 877 why notarmed blk armed orth 2
+V527 PICKASK 878 adj 0 pick - cutall 0
+V527 BUNKER HOLD 878 why notarmed blk armed orth 4
+V527 PICKASK 879 adj 0 pick - cutall 0
+V527 BUNKER HOLD 879 why notarmed blk armed orth 2
+V527 PICKASK 880 adj 0 pick - cutall 0
+V527 BUNKER HOLD 880 why notarmed blk armed orth 4
+V527 PICKASK 881 adj 0 pick - cutall 0
+V527 BUNKER HOLD 881 why notarmed blk armed orth 3
+V527 PICKASK 882 adj 0 pick - cutall 0
+V527 BUNKER HOLD 882 why notarmed blk armed orth 2
+V527 PICKASK 883 adj 0 pick - cutall 0
+V527 BUNKER HOLD 883 why notarmed blk armed orth 2
+V527 PICKASK 884 adj 0 pick - cutall 0
+V527 BUNKER HOLD 884 why notarmed blk armed orth 2
+V527 PICKASK 885 adj 0 pick - cutall 0
+V527 BUNKER HOLD 885 why notarmed blk armed orth 2
+V527 PICKASK 886 adj 1 pick - cutall 1
+V527 SELFCUT 886 n 58
+V527 PICKASK 887 adj 0 pick - cutall 0
+V527 BUNKER HOLD 887 why collar blk gate
+V527 PICKASK 888 adj 0 pick - cutall 0
+V527 BUNKER HOLD 888 why collar blk gate
+V527 PICKASK 889 adj 0 pick - cutall 0
+V527 BUNKER HOLD 889 why collar blk gate
+V527 PICKASK 890 adj 0 pick - cutall 0
+V527 BUNKER HOLD 890 why collar blk gate
+V527 PICKASK 891 adj 0 pick - cutall 0
+V527 BUNKER HOLD 891 why collar blk gate
+V527 PICKASK 892 adj 0 pick - cutall 0
+V527 BUNKER HOLD 892 why collar blk gate
+V527 PICKASK 893 adj 0 pick - cutall 0
+V527 BUNKER HOLD 893 why collar blk gate
+V527 PICKASK 894 adj 0 pick - cutall 0
+V527 BUNKER HOLD 894 why notarmed blk armed orth 2
+V527 PICKASK 895 adj 0 pick - cutall 0
+V527 BUNKER HOLD 895 why notarmed blk armed orth 4
+V527 PICKASK 896 adj 0 pick - cutall 0
+V527 BUNKER HOLD 896 why notarmed blk armed orth 2
+V527 PICKASK 897 adj 0 pick - cutall 0
+V527 BUNKER HOLD 897 why notarmed blk armed orth 4
+V527 PICKASK 898 adj 0 pick - cutall 0
+V527 BUNKER HOLD 898 why notarmed blk armed orth 2
+V527 PICKASK 899 adj 0 pick - cutall 0
+V527 BUNKER HOLD 899 why notarmed blk armed orth 4
+V527 PICKASK 900 adj 0 pick - cutall 0
+V527 BUNKER HOLD 900 why notarmed blk armed orth 2
+V527 PICKASK 901 adj 0 pick - cutall 0
+V527 BUNKER HOLD 901 why notarmed blk armed orth 4
+V527 PICKASK 902 adj 0 pick - cutall 0
+V527 BUNKER HOLD 902 why notarmed blk armed orth 2
+V527 PICKASK 903 adj 0 pick - cutall 0
+V527 BUNKER HOLD 903 why notarmed blk armed orth 4
+V527 PICKASK 904 adj 0 pick - cutall 0
+V527 BUNKER HOLD 904 why notarmed blk armed orth 2
+V527 PICKASK 905 adj 0 pick - cutall 0
+V527 BUNKER HOLD 905 why notarmed blk armed orth 4
+V527 PICKASK 906 adj 0 pick - cutall 0
+V527 BUNKER HOLD 906 why notarmed blk armed orth 3
+V527 PICKASK 907 adj 0 pick - cutall 0
+V527 BUNKER HOLD 907 why notarmed blk armed orth 2
+V527 PICKASK 908 adj 0 pick - cutall 0
+V527 BUNKER HOLD 908 why notarmed blk armed orth 2
+V527 PICKASK 909 adj 0 pick - cutall 0
+V527 BUNKER HOLD 909 why notarmed blk armed orth 2
+V527 PICKASK 910 adj 0 pick - cutall 0
+V527 BUNKER HOLD 910 why notarmed blk armed orth 2
+V527 PICKASK 911 adj 1 pick - cutall 1
+V527 SELFCUT 911 n 59
+V527 PICKASK 912 adj 0 pick - cutall 0
+V527 BUNKER HOLD 912 why collar blk gate
+V527 PICKASK 913 adj 0 pick - cutall 0
+V527 BUNKER HOLD 913 why collar blk gate
+V527 PICKASK 914 adj 0 pick - cutall 0
+V527 BUNKER HOLD 914 why collar blk gate
+V527 PICKASK 915 adj 0 pick - cutall 0
+V527 BUNKER HOLD 915 why collar blk gate
+V527 PICKASK 916 adj 0 pick - cutall 0
+V527 BUNKER HOLD 916 why collar blk gate
+V527 PICKASK 917 adj 0 pick - cutall 0
+V527 BUNKER HOLD 917 why collar blk gate
+V527 PICKASK 918 adj 0 pick - cutall 0
+V527 BUNKER HOLD 918 why collar blk gate
+V527 PICKASK 919 adj 0 pick - cutall 0
+V527 BUNKER HOLD 919 why notarmed blk armed orth 2
+V527 PICKASK 920 adj 0 pick - cutall 0
+V527 BUNKER HOLD 920 why notarmed blk armed orth 4
+V527 PICKASK 921 adj 0 pick - cutall 0
+V527 BUNKER HOLD 921 why notarmed blk armed orth 2
+V527 PICKASK 922 adj 0 pick - cutall 0
+V527 BUNKER HOLD 922 why notarmed blk armed orth 4
+V527 PICKASK 923 adj 0 pick - cutall 0
+V527 BUNKER HOLD 923 why notarmed blk armed orth 2
+V527 PICKASK 924 adj 0 pick - cutall 0
+V527 BUNKER HOLD 924 why notarmed blk armed orth 4
+V527 PICKASK 925 adj 0 pick - cutall 0
+V527 BUNKER HOLD 925 why notarmed blk armed orth 2
+V527 PICKASK 926 adj 0 pick - cutall 0
+V527 BUNKER HOLD 926 why notarmed blk armed orth 4
+V527 PICKASK 927 adj 0 pick - cutall 0
+V527 BUNKER HOLD 927 why notarmed blk armed orth 2
+V527 PICKASK 928 adj 0 pick - cutall 0
+V527 BUNKER HOLD 928 why notarmed blk armed orth 4
+V527 PICKASK 929 adj 0 pick - cutall 0
+V527 BUNKER HOLD 929 why notarmed blk armed orth 3
+V527 PICKASK 930 adj 0 pick - cutall 0
+V527 BUNKER HOLD 930 why notarmed blk armed orth 2
+V527 PICKASK 931 adj 0 pick - cutall 0
+V527 BUNKER HOLD 931 why notarmed blk armed orth 2
+V527 PICKASK 932 adj 0 pick - cutall 0
+V527 BUNKER HOLD 932 why notarmed blk armed orth 2
+V527 PICKASK 933 adj 0 pick - cutall 0
+V527 BUNKER HOLD 933 why notarmed blk armed orth 2
+V527 PICKASK 934 adj 1 pick - cutall 1
+V527 SELFCUT 934 n 60
+V527 PICKASK 935 adj 0 pick - cutall 0
+V527 BUNKER HOLD 935 why collar blk gate
+V527 PICKASK 936 adj 0 pick - cutall 0
+V527 BUNKER HOLD 936 why collar blk gate
+V527 PICKASK 937 adj 0 pick - cutall 0
+V527 BUNKER HOLD 937 why collar blk gate
+V527 PICKASK 938 adj 0 pick - cutall 0
+V527 BUNKER HOLD 938 why collar blk gate
+V527 PICKASK 939 adj 0 pick - cutall 0
+V527 BUNKER HOLD 939 why collar blk gate
+V527 PICKASK 940 adj 0 pick - cutall 0
+V527 BUNKER HOLD 940 why notarmed blk armed orth 2
+V527 PICKASK 941 adj 0 pick - cutall 0
+V527 BUNKER HOLD 941 why notarmed blk armed orth 4
+V527 PICKASK 942 adj 0 pick - cutall 0
+V527 BUNKER HOLD 942 why notarmed blk armed orth 2
+V527 PICKASK 943 adj 0 pick - cutall 0
+V527 BUNKER HOLD 943 why notarmed blk armed orth 4
+V527 PICKASK 944 adj 0 pick - cutall 0
+V527 BUNKER HOLD 944 why notarmed blk armed orth 2
+V527 PICKASK 945 adj 0 pick - cutall 0
+V527 BUNKER HOLD 945 why notarmed blk armed orth 4
+V527 PICKASK 946 adj 0 pick - cutall 0
+V527 BUNKER HOLD 946 why notarmed blk armed orth 2
+V527 PICKASK 947 adj 0 pick - cutall 0
+V527 BUNKER HOLD 947 why notarmed blk armed orth 4
+V527 PICKASK 948 adj 0 pick - cutall 0
+V527 BUNKER HOLD 948 why notarmed blk armed orth 2
+V527 PICKASK 949 adj 0 pick - cutall 0
+V527 BUNKER HOLD 949 why notarmed blk armed orth 4
+V527 PICKASK 950 adj 0 pick - cutall 0
+V527 BUNKER HOLD 950 why notarmed blk armed orth 2
+V527 PICKASK 951 adj 0 pick - cutall 0
+V527 BUNKER HOLD 951 why notarmed blk armed orth 4
+V527 PICKASK 952 adj 0 pick - cutall 0
+V527 BUNKER HOLD 952 why notarmed blk armed orth 2
+V527 PICKASK 953 adj 0 pick - cutall 0
+V527 BUNKER HOLD 953 why notarmed blk armed orth 4
+V527 PICKASK 954 adj 0 pick - cutall 0
+V527 BUNKER HOLD 954 why notarmed blk armed orth 3
+V527 PICKASK 955 adj 0 pick - cutall 0
+V527 BUNKER HOLD 955 why notarmed blk armed orth 2
+V527 PICKASK 956 adj 0 pick - cutall 0
+V527 BUNKER HOLD 956 why notarmed blk armed orth 2
+V527 PICKASK 957 adj 0 pick - cutall 0
+V527 BUNKER HOLD 957 why notarmed blk armed orth 2
+V527 PICKASK 958 adj 0 pick - cutall 0
+V527 BUNKER HOLD 958 why notarmed blk armed orth 2
+V527 PICKASK 959 adj 1 pick - cutall 1
+V527 SELFCUT 959 n 61
+V527 PICKASK 960 adj 0 pick - cutall 0
+V527 BUNKER HOLD 960 why collar blk gate
+V527 PICKASK 961 adj 0 pick - cutall 0
+V527 BUNKER HOLD 961 why collar blk gate
+V527 PICKASK 962 adj 0 pick - cutall 0
+V527 BUNKER HOLD 962 why collar blk gate
+V527 PICKASK 963 adj 0 pick - cutall 0
+V527 BUNKER HOLD 963 why collar blk gate
+V527 PICKASK 964 adj 0 pick - cutall 0
+V527 BUNKER HOLD 964 why collar blk gate
+V527 PICKASK 965 adj 0 pick - cutall 0
+V527 BUNKER HOLD 965 why notarmed blk armed orth 2
+V527 PICKASK 966 adj 0 pick - cutall 0
+V527 BUNKER HOLD 966 why notarmed blk armed orth 4
+V527 PICKASK 967 adj 0 pick - cutall 0
+V527 BUNKER HOLD 967 why notarmed blk armed orth 2
+V527 PICKASK 968 adj 0 pick - cutall 0
+V527 BUNKER HOLD 968 why notarmed blk armed orth 4
+V527 PICKASK 969 adj 0 pick - cutall 0
+V527 BUNKER HOLD 969 why notarmed blk armed orth 2
+V527 PICKASK 970 adj 0 pick - cutall 0
+V527 BUNKER HOLD 970 why notarmed blk armed orth 4
+V527 PICKASK 971 adj 0 pick - cutall 0
+V527 BUNKER HOLD 971 why notarmed blk armed orth 2
+V527 PICKASK 972 adj 0 pick - cutall 0
+V527 BUNKER HOLD 972 why notarmed blk armed orth 4
+V527 DEFHIT 973 at (15, 12)
+V527 DEFHIT 973 at (13, 12)
+V527 PICKASK 974 adj 0 pick - cutall 0
+V527 BUNKER HOLD 974 why notarmed blk armed orth 2
+V527 PICKASK 975 adj 0 pick - cutall 0
+V527 BUNKER HOLD 975 why collar blk gate
+V527 PICKASK 976 adj 0 pick - cutall 0
+V527 BUNKER HOLD 976 why collar blk gate
+V527 PICKASK 977 adj 0 pick - cutall 0
+V527 BUNKER HOLD 977 why notarmed blk armed orth 3
+V527 PICKASK 979 adj 0 pick - cutall 0
+V527 BUNKER HOLD 979 why notarmed blk armed orth 3
+V527 PICKASK 981 adj 0 pick - cutall 0
+V527 BUNKER HOLD 981 why notarmed blk armed orth 3
+V527 PICKASK 983 adj 0 pick - cutall 0
+V527 BUNKER HOLD 983 why notarmed blk armed orth 3
+V527 PICKASK 985 adj 0 pick - cutall 0
+V527 BUNKER HOLD 985 why notarmed blk armed orth 3
+V527 PICKASK 988 adj 0 pick - cutall 0
+V527 BUNKER HOLD 988 why collar blk gate
+V527 PICKASK 990 adj 0 pick - cutall 0
+V527 BUNKER HOLD 990 why collar blk gate
+V527 PICKASK 992 adj 0 pick - cutall 0
+V527 BUNKER HOLD 992 why collar blk gate
+V527 PICKASK 994 adj 0 pick - cutall 0
+V527 BUNKER HOLD 994 why collar blk gate
+V527 PICKASK 996 adj 0 pick - cutall 0
+V527 BUNKER HOLD 996 why collar blk gate
+V527 PICKASK 998 adj 0 pick - cutall 0
+V527 BUNKER HOLD 998 why collar blk gate

@@ -1,0 +1,11 @@
+=== v527 BUILD, recorded PIDs ===
+Thu 20 Aug 2026 04:08:24 UTC
+MINE  headline driver PID 8003  (drive_headline.sh, PAR=4)
+NOT MINE, left running (another lane's head-vs-holder grid):
+  82027 run_grid.py bots/_v525flip -> scratchpad/s51_vs_holder/head_vs_v165.tsv (4 fcode workers)
+NOT MINE, dangling v520-era waiter shells (would fire more batteries):
+  10683 -> would run scratchpad/s51_v520_build/drive_latency.sh
+  94206 -> would run scratchpad/s51_v520_build/drive_gated.sh + drive_iso.sh
+  left untouched; arms are INTERLEAVED per cell so a CPU perturbation
+  lands on all three arms equally (the v518 finding-2 reason for interleaving).
+MINE  sealnt chain PID 40416

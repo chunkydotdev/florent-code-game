@@ -1,0 +1,84 @@
+Update available: 2.3.6 -> 2.3.8. Run: pip install --upgrade fcode
+V527 PICKASK 9 adj 0 pick - cutall 0
+V527 BUNKER HOLD 9 why notarmed blk armed orth 8
+V527 PICKASK 10 adj 0 pick - cutall 0
+V527 BUNKER HOLD 10 why notarmed blk armed orth 8
+V527 PICKASK 11 adj 0 pick - cutall 0
+V527 BUNKER HOLD 11 why notarmed blk armed orth 8
+V527 PICKASK 12 adj 2 pick (13, 3) cutall 0
+V527 PICKASK 12 adj 0 pick - cutall 0
+V527 BUNKER HOLD 12 why notarmed blk armed orth 7
+V527 PICKASK 13 adj 1 pick (14, 4) cutall 0
+V527 REORDER 13 was (13, 2) now (14, 4) n 1
+V527 PICKASK 13 adj 1 pick - cutall 1
+V527 SELFCUT 13 n 1
+V527 PICKASK 14 adj 0 pick - cutall 0
+V527 BUNKER HOLD 14 why notarmed blk armed orth 5
+V527 PICKASK 14 adj 0 pick - cutall 0
+V527 BUNKER HOLD 14 why notarmed blk armed orth 5
+V527 PICKASK 15 adj 0 pick - cutall 0
+V527 BUNKER HOLD 15 why notarmed blk armed orth 5
+V527 PICKASK 15 adj 0 pick - cutall 0
+V527 BUNKER HOLD 15 why notarmed blk armed orth 5
+V527 PICKASK 16 adj 0 pick - cutall 0
+V527 BUNKER HOLD 16 why notarmed blk armed orth 5
+V527 PICKASK 16 adj 0 pick - cutall 0
+V527 BUNKER HOLD 16 why notarmed blk armed orth 5
+V527 PICKASK 17 adj 0 pick - cutall 0
+V527 BUNKER HOLD 17 why notarmed blk armed orth 5
+V527 PICKASK 18 adj 0 pick - cutall 0
+V527 BUNKER HOLD 18 why notarmed blk armed orth 5
+V527 PICKASK 18 adj 0 pick - cutall 0
+V527 BUNKER HOLD 18 why notarmed blk armed orth 5
+V527 PICKASK 19 adj 0 pick - cutall 0
+V527 BUNKER HOLD 19 why notarmed blk armed orth 5
+V527 PICKASK 20 adj 0 pick - cutall 0
+V527 BUNKER HOLD 20 why notarmed blk armed orth 5
+V527 PICKASK 20 adj 0 pick - cutall 0
+V527 BUNKER HOLD 20 why notarmed blk armed orth 5
+V527 PICKASK 21 adj 0 pick - cutall 0
+V527 BUNKER HOLD 21 why notarmed blk armed orth 5
+V527 PICKASK 21 adj 0 pick - cutall 0
+V527 BUNKER HOLD 21 why notarmed blk armed orth 5
+V527 PICKASK 22 adj 0 pick - cutall 0
+V527 BUNKER HOLD 22 why notarmed blk armed orth 5
+V527 PICKASK 22 adj 0 pick - cutall 0
+V527 BUNKER HOLD 22 why notarmed blk armed orth 5
+V527 PICKASK 23 adj 0 pick - cutall 0
+V527 BUNKER HOLD 23 why notarmed blk armed orth 5
+V527 PICKASK 23 adj 0 pick - cutall 0
+V527 BUNKER HOLD 23 why notarmed blk armed orth 5
+V527 PICKASK 24 adj 0 pick - cutall 0
+V527 BUNKER HOLD 24 why notarmed blk armed orth 5
+V527 PICKASK 25 adj 0 pick - cutall 0
+V527 BUNKER HOLD 25 why notarmed blk armed orth 5
+V527 PICKASK 25 adj 0 pick - cutall 0
+V527 BUNKER HOLD 25 why notarmed blk armed orth 5
+V527 PICKASK 26 adj 0 pick - cutall 0
+V527 BUNKER HOLD 26 why notarmed blk armed orth 5
+V527 PICKASK 27 adj 0 pick - cutall 0
+V527 BUNKER HOLD 27 why notarmed blk armed orth 5
+V527 PICKASK 28 adj 0 pick - cutall 0
+V527 BUNKER HOLD 28 why notarmed blk armed orth 5
+V527 PICKASK 29 adj 0 pick - cutall 0
+V527 BUNKER HOLD 29 why notarmed blk armed orth 6
+V527 PICKASK 30 adj 0 pick - cutall 0
+V527 BUNKER HOLD 30 why notarmed blk armed orth 5
+V527 PICKASK 31 adj 0 pick - cutall 0
+V527 BUNKER HOLD 31 why notarmed blk armed orth 4
+V527 PICKASK 32 adj 0 pick - cutall 0
+V527 BUNKER HOLD 32 why notarmed blk armed orth 5
+V527 PICKASK 33 adj 0 pick - cutall 0
+V527 BUNKER HOLD 33 why notarmed blk armed orth 4
+V527 PICKASK 34 adj 0 pick - cutall 0
+V527 BUNKER HOLD 34 why notarmed blk armed orth 4
+V527 PICKASK 35 adj 0 pick - cutall 0
+V527 BUNKER HOLD 35 why notarmed blk armed orth 4
+V527 PICKASK 36 adj 0 pick - cutall 0
+V527 BUNKER HOLD 36 why notarmed blk armed orth 4
+V527 PICKASK 37 adj 0 pick - cutall 0
+V527 BUNKER HOLD 37 why notarmed blk armed orth 4
+V527 PICKASK 38 adj 0 pick - cutall 0
+V527 BUNKER HOLD 38 why notarmed blk armed orth 4
+V527 PICKASK 115 adj 0 pick - cutall 0
+V527 BUNKER HOLD 115 why notarmed blk armed orth 6
