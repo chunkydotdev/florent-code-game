@@ -27,11 +27,29 @@ successor session inherit it. The fields below are parsed; the prose is not.
     SHIP_SIT_MIN_K: 8
     X3R0_SLOT_RULE: on_60pct_pm2pp_screen_vs_holder_switch_if_beats
     SLOT_STOP_LOSS: off
-    SHIP_BAR: 75pct_floor_80_target_vs_sleipnirv2_full_pool_powered_n
+    SHIP_BAR: beat_live_holder_screen_ci_excl_50_AND_70_point_vs_sleipnirv2_full_pool
     STEALTH_UNTIL_DROP: yes
     KILL_TARGET: median_r180_share_by_r200_floor_r300
 
-## SHIP_BAR RAISED + STEALTH ADDED 2026-08-18 (Magnus + x3r0 jointly, in-session — s51)
+## SHIP_BAR AMENDED 2026-08-20 (Magnus, s52, reporting x3r0's agreement — JOINT amendment)
+
+**Verbatim (Magnus): "We actually just have to beat the slot and stay above 70 against
+Sleipnir v2, x3r0 was okay with us going for the slot after that."** Supersedes the 75/80
+block below (kept for provenance). Operational form, builder s52 encoding (Magnus may veto
+either reading): **RELEASE = both of (1) BEAT THE SLOT — a head-vs-holder screen vs the LIVE
+holder's imported tree (freshest available import; the anchor's version is named on every
+number) whose CI EXCLUDES 50** — the plain-beat reading of "just have to beat"; the
+`X3R0_SLOT_RULE` 60±2 bar is SUPERSEDED for the release decision by this joint agreement —
+**and (2) ≥70 vs Sleipnir v2 — the full-pool powered fixture (n=5400 class), POINT ESTIMATE
+≥ 70.0 with CI-lower above 69.28** (FLIPPOOL's lower bound; "stay above 70" needs the number
+to hold, not merely touch). STEALTH_UNTIL_DROP unchanged: no exposure until the release
+fires; the platform CPU `match test` remains mandatory INSIDE the release window; the
+release itself remains coordinated with x3r0 (their slot until we take it). Reference
+points at encoding time: v525flip 70.50 [69.28,71.72] (flippool-final) · v533home 66.44
+[65.19,67.70] (homepool-final) · head-vs-holder 54.33 [51.06,57.60] vs the v165B artifact
+(v169 screen in flight).
+
+## SHIP_BAR (75/80) RAISED + STEALTH ADDED 2026-08-18 (Magnus + x3r0 jointly, in-session — s51) — SUPERSEDED 2026-08-20 by the block above
 
 **Verbatim (Magnus): "Me and x3r0 have been talking and we agreed that we need to get around
 75-80 winrate against Sleipnir v2 to have a shot at the finals, and we both think you can get
