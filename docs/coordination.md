@@ -71751,3 +71751,33 @@ them as your wrap-fix batch or earlier on his word.
 * **NOTHING OF MINE IS RUNNING.** Seven agents spawned, seven completed, seven banked+relayed. Watcher killed at wrap (pgrep empty 08:46:05Z). **DIES WITH ME: NOTHING.**
 * **HARD LIMITS HELD ALL SESSION: no bot edits, no submissions/activations, ZERO matches fired, no arena/engine games (the probe half of the reconciliation was declined to the builder on exactly this line), no verdicts, no HANDOVER/PROGRAMME/tape writes.**
 * **WAKE PATHS: none of mine persist.** Daemons are the builder's surface per their HANDOVER. The morning boot's now.py + a rated decode from `8dc79d90` is the recovery path, and this note is its brief.
+
+# ============================================================================
+# 2026-08-20T08:48:18Z — **SIDE LANE s51 WRAP + REBOOT STATE — SIDE LANE** (trigger: the BUILDER'S
+# WRAP-PING relaying Magnus's call — standing rule, SIXTH firing). **Arm retro ran FIRST
+# per charter: docs/retro-side-lane-2026-08-20-s51.md, instrument v1.18 → v1.19, FIRING 19
+# — committed and pushed before this block.**
+# ============================================================================
+
+## HOLDER LINE — from now.py IN THIS SAME SHELL, never a poller (D28)
+ Q: WHAT IS LIVE ON THE LADDER RIGHT NOW? [source: fcode status — THE authority] HOLDER v168 "Mjolnir fix1only w35 TEST" uploaded by x3r0 at 2026-08-20T08:02:27.815Z 
+**CONTROL/INCUMBENT = bots/_v488beltbreak2 (= Sleipnir v2) — HOLDER ≠ CONTROL; the holder is x3r0's churning line.** **STEALTH_UNTIL_DROP + SHIP_BAR 75/80 vs Sleipnir v2 (Magnus+x3r0 joint) govern the successor: no release, no submit, no unrated exposure of the new line until the coordinated drop. The mid-session slot-hold (Magnus: "lets build a better bot first") is the precedent.**
+
+## PROCESS DELTAS (s51) — routed at write time
+1. **A CLEARANCE NAMES ITS CHECKS** — both of this lane's published errors were the bare word "clean" over a bounded checklist. Publishable form: "clean on: [enumerated checks]". *(Routed: retro v1.19 standing rule; applied in this block.)*
+2. **A COMPLETION CERT RECOMPOSES THE SEGMENTS TO THE NUMERATOR** — both full-distance shards verified this way to the game (3581, 3807); it catches composition errors no interval check can. *(Routed: here, as the completion-cert standard; first applied in the 08-20 certs.)*
+3. **THE TAPE-STEP ADJUDICATION METHOD** — when two surfaces disagree on a game count, the Elo tape's step arithmetic (32×(S−E) per candidate) picks the true one exactly; settled the v159 record dispute and the transposed-δ label. *(Routed: here; reusable by any lane.)*
+4. **A DEFERRED FIX CARRIES A BEHAVIOUR-NOW LINE** — D1/D3/D4 went to wrap debts with interim constraints (never SHIP_VERSION without SHIP_BASELINE; a dotfile .tsv in a corpus_sanity failure is a race artifact; DRAINED proves no unstarted work only). *(Routed: scratchpad/s51_wrap_debts.md carries them verbatim.)*
+5. **DECISION-TIME PARTIALS BIND TO THEIR FINALS** — the 46.6 slot-gate read is now explicitly bound to the banked 46.56 row, so the decision's citation cannot diverge silently. *(Routed: the headvsholder row carries it; the pattern is the ask for any future decision-quoted partial.)*
+
+## SESSION LEDGER (clean-on: the enumerated closures below, each verified on a primary)
+3 lock certificates (SIEGECREW 86 s · PINCERPOOL 86 s+FIXTURE · FLIPPOOL 22 s — all two-clock clean, prereg_check re-run each time, arithmetic cell-exact incl. 63.91 and the 0.8155 input) · 2 completion certificates (66.31 and 70.50, segments recomposing exactly, priors in-band, pricing instrument 5-for-5 on shard fates) · 1 shard closure audit (siegecrew-final: 2 record flags, both consumed via a correction row) · 3 report certs (v526 verdict lines · v527 dose-first · v528 bar-direction check) + the v513 D-pass (12 flags; F1 door plank → Magnus's list; F2 RMST₃₀₀ computed and registered; F3 evidence base banked before reaping) + the wrap-fix re-drive (6/10 verified exact; D1 HIGH ship_watch laundering → wrap debt; D2 atlas inversion → fixed) + 2 PROGRAMME encoding verifications and 2 encoding flags (SHIP_BAR field; KILL_TARGET orphan-restoration was the builder's catch on my additions-only miss) + the bar-arithmetic independent confirmation (96.88 / impossible / 87.5). 2 published errors of mine, both wrong clearances, both peer-caught, both in the retro. Conduct claims zero.
+
+## OPEN FOR THE SUCCESSOR
+1. **Nothing owed from this lane's queue — all inherited and in-session items discharged with verified closures.** The standing carry is the v1.19 clearance rule (its first full-session test is the successor's).
+2. **The builder's 8 wrap debts (scratchpad/s51_wrap_debts.md) are the successor batch per Magnus's rule** — D1 (ship_watch baseline laundering) is the HIGH one; drive every discharged guard both ways per D19, as this session did for s50's.
+3. **Still with Magnus: the x3r0 lock-in scope question** (three live instances now) and the door-turret plank ruling (HANDOVER item 6, double-measured).
+4. **The successor boots INTO stealth+bar+lock-in**; the head is bots/_v529merge at 70.50-full-pool-for-its-parent with adopted planks unpriced at scale — the next full-pool read is the distance instrument.
+
+## WAKE PATHS AND LIMITS
+My commit monitor and this session's watch die with the session (session-scoped by design; the builder's daemons survive per their HANDOVER). Hard limits held all session: no bot edits, no arena/unrated fires, no verdicts, no HANDOVER/tape writes; committed only my own notes, certificates, audit docs and retro files; every commit pushed within the minute.
