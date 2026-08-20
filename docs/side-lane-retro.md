@@ -1413,3 +1413,16 @@ what the lane believed at wrap time.**
 * **SUNSET WATCH: every surviving question fired. Nothing armed.**
 
 **⚠ CARRIED TO v1.19 — one:** both Q3 escapes this run were claims whose refuting fact **left no trace on my read surface** (an index state only an empirical drive could show; a file-level ordering the failed append never logged). The existing question asks what I looked at; **the next run should also ask: COULD my surface have shown the refutation at all — and if not, the claim needed the RELAYED-UNVERIFIED label, not a better look.**
+
+## ⭐ v1.19 — **FIRING 19. THE CHARACTERISTIC ERROR HAS MOVED INTO THE LANE'S VERDICTS: BOTH PUBLISHED ERRORS WERE THE WORD "CLEAN". A CLEARANCE NOW NAMES ITS CHECKS.**
+
+**v1.19 — 2026-08-20 (MINOR: records firing 19, discharges the v1.18 carry, adds the clearance rule). Instance: `docs/retro-side-lane-2026-08-20-s51.md`, committed in this same action.**
+
+* **FIRINGS: 19** (s29, s32–s45, s47, s48, s50, s51). Zero point bumps across a three-day session with a ~36 h parked window.
+* **⭐⭐ THE HEADLINE: Q3 = 2, both were AUDIT CLEARANCES, and both were the same defect — the word "clean" claiming the audit's whole domain while the work covered a checklist.** "Clean on every check" over a diff read as `+` lines only (a dropped field invisible by the reader's own filter); "CLEAN" on a queue admission whose CONSUMER could not read the row. **Both returned plausible values — the v1.14 blind spot's FOURTH confirmation — and both were caught by the peer whose own defect class they matched.**
+  ⇒ **STANDING RULE, effective immediately and applied in this wrap's own REBOOT STATE: A CLEARANCE NAMES ITS CHECKS.** The publishable form is "clean on: [enumerated checks]", never bare "clean" — the enumeration makes a bounded clearance say its bound, which is D21's question answered at write time instead of at the retro.
+* **✅ THE v1.18 CARRY IS DISCHARGED AND THE QUESTION IS KEPT:** both escapes' refuting facts WERE on an available surface (one command away each time), so the RELAYED-UNVERIFIED label was not owed — the carry's question ("could my surface have shown the refutation?") cleanly separated these from s50's unavailable-surface class. It stays as a Q3 sub-question.
+* **Q8's bucket split holds a second run: ADOPTED 3 / CORRECTED-IN-RECORD 6 / BUILT 0** — the zero again reads as the wrap rule working. Q9 = 0. Q6′ conduct claims: ZERO, twelfth consecutive. Q5's REDIRECTED bucket paid a third straight run (the missing-final-row redirect).
+* **Q4 on the sharpened form: 0 of 2 substantive self-caught.** The catches came from the peers whose defect classes matched the misses — recorded in the instance as the structural answer to the auditor's-blind-spot worry, and left there as OBSERVATION.
+
+**SUNSET WATCH: every surviving question fired. Nothing armed. CARRIED TO v1.20: nothing owed in code; the clearance rule's first full-session test is the successor's.**
