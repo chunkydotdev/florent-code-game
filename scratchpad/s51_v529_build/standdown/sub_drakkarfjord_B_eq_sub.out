@@ -1,0 +1,3 @@
+Completed turn 0
+Completed turn 100
+{"replay": "scratchpad/s51_v529_build/standdown/sub_drakkarfjord_B_eq_sub.replay26", "winner": "B", "turns": 149, "win_condition": "core_destroyed", "resign_message": null, "a_titanium": 12, "a_titanium_collected": 0, "b_titanium": 14, "b_titanium_collected": 340, "a_units": 7, "a_buildings": 17, "b_units": 5, "b_buildings": 42}

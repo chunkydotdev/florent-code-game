@@ -1,0 +1,11 @@
+Completed turn 0
+Completed turn 100
+Completed turn 200
+Completed turn 300
+Completed turn 400
+Completed turn 500
+Completed turn 600
+Completed turn 700
+Completed turn 800
+Completed turn 900
+{"replay": "scratchpad/s51_v529_build/standdown/sub_yulerune_B_eq_sub.replay26", "winner": "A", "turns": 1000, "win_condition": "titanium_collected", "resign_message": null, "a_titanium": 230, "a_titanium_collected": 2460, "b_titanium": 126, "b_titanium_collected": 910, "a_units": 24, "a_buildings": 78, "b_units": 4, "b_buildings": 23}

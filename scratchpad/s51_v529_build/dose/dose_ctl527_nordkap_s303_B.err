@@ -1,0 +1,1375 @@
+Update available: 2.3.6 -> 2.3.8. Run: pip install --upgrade fcode
+RC MAP w 20 h 26 ours 9,18 theirs 9,6
+V527I SEALNT 0 ph 0 fwd 0 hv 0
+V527I SEALNT 1 ph 0 fwd 0 hv 0
+RC SEAT 1 id 4 seat 0
+RC POS 1 id 4 seat 0 role raid fs 1 body 1 pos 9,17 stuck 0
+V527I SEALNT 2 ph 1 fwd 0 hv 0
+RC POS 2 id 4 seat 0 role raid fs 1 body 1 pos 9,17 stuck 1
+RC SEAT 2 id 6 seat 1
+RC POS 2 id 6 seat 1 role expand fs 0 body 1 pos 10,17 stuck 0
+V528 PICK r 2 id 6 tgt 14,18 cs 14 bs 14 reg 0 cc 3 bc 3 cands 6 banned 0 regall 0 seat 1
+RC WALK 2 id 6 role expand pos 10,17 tgt 13,18 want NORTH
+V527I SEALNT 3 ph 1 fwd 0 hv 0
+RC POS 3 id 4 seat 0 role raid fs 1 body 1 pos 9,17 stuck 2
+RC POS 3 id 6 seat 1 role expand fs 0 body 1 pos 10,16 stuck 0
+RC WALK 3 id 6 role expand pos 10,16 tgt 13,18 want EAST
+RC SEAT 3 id 8 seat 2
+RC POS 3 id 8 seat 2 role expand fs 0 body 1 pos 11,17 stuck 0
+V528 PICK r 3 id 8 tgt 14,18 cs 13 bs 13 reg 0 cc 3 bc 3 cands 6 banned 0 regall 0 seat 2
+RC WALK 3 id 8 role expand pos 11,17 tgt 13,18 want EAST
+V527I SEALNT 4 ph 1 fwd 0 hv 0
+RC POS 4 id 4 seat 0 role raid fs 1 body 1 pos 9,17 stuck 3
+RC POS 4 id 6 seat 1 role expand fs 0 body 1 pos 11,16 stuck 0
+RC WALK 4 id 6 role expand pos 11,16 tgt 13,18 want EAST
+RC POS 4 id 8 seat 2 role expand fs 0 body 1 pos 12,17 stuck 0
+RC WALK 4 id 8 role expand pos 12,17 tgt 13,18 want EAST
+RC SEAT 4 id 10 seat 3
+RC POS 4 id 10 seat 3 role raid fs 1 body 2 pos 8,17 stuck 0
+V527I SEALNT 5 ph 1 fwd 0 hv 0
+RC POS 5 id 4 seat 0 role raid fs 1 body 1 pos 9,17 stuck 4
+RC POS 5 id 6 seat 1 role expand fs 0 body 1 pos 12,16 stuck 0
+RC WALK 5 id 6 role expand pos 12,16 tgt 13,18 want SOUTH
+RC POS 5 id 8 seat 2 role expand fs 0 body 1 pos 13,17 stuck 0
+RC WALK 5 id 8 role expand pos 13,17 tgt 13,18 want SOUTH
+RC POS 5 id 10 seat 3 role raid fs 1 body 2 pos 8,17 stuck 1
+V527I SEALNT 6 ph 1 fwd 0 hv 0
+RC POS 6 id 4 seat 0 role raid fs 1 body 1 pos 9,17 stuck 5
+RC POS 6 id 6 seat 1 role expand fs 0 body 1 pos 12,17 stuck 0
+RC WALK 6 id 6 role expand pos 12,17 tgt 13,18 want EAST
+RC POS 6 id 8 seat 2 role expand fs 0 body 1 pos 13,18 stuck 0
+V528 CONN r 6 id 8 at 14,18 chosen 3 best 3 regret 0 cands 5 role expand seat 2
+RC POS 6 id 10 seat 3 role raid fs 1 body 2 pos 8,16 stuck 0
+V527I SEALNT 7 ph 1 fwd 0 hv 1
+RC POS 7 id 4 seat 0 role raid fs 1 body 1 pos 9,11 stuck 0
+RC POS 7 id 6 seat 1 role expand fs 0 body 1 pos 13,17 stuck 0
+RC WALK 7 id 6 role expand pos 13,17 tgt 13,18 want CENTRE
+RC POS 7 id 8 seat 2 role expand fs 0 body 1 pos 13,18 stuck 1
+RC POS 7 id 10 seat 3 role raid fs 1 body 2 pos 8,16 stuck 1
+V527I SEALNT 8 ph 1 fwd 0 hv 1
+RC POS 8 id 4 seat 0 role raid fs 1 body 1 pos 9,11 stuck 1
+RC POS 8 id 6 seat 1 role expand fs 0 body 1 pos 13,17 stuck 1
+RC POS 8 id 8 seat 2 role expand fs 0 body 1 pos 13,18 stuck 2
+RC WALK 8 id 8 role expand pos 13,18 tgt 11,18 want WEST
+RC POS 8 id 10 seat 3 role raid fs 1 body 2 pos 8,11 stuck 0
+V527I SEALNT 9 ph 1 fwd 0 hv 1
+RC POS 9 id 4 seat 0 role raid fs 1 body 1 pos 9,11 stuck 2
+RC POS 9 id 6 seat 1 role expand fs 0 body 1 pos 13,17 stuck 2
+RC WALK 9 id 6 role expand pos 13,17 tgt 13,18 want SOUTH
+RC POS 9 id 8 seat 2 role expand fs 0 body 1 pos 12,18 stuck 0
+RC POS 9 id 10 seat 3 role raid fs 1 body 2 pos 8,11 stuck 1
+V527I SEALNT 10 ph 1 fwd 0 hv 1
+RC POS 10 id 4 seat 0 role raid fs 1 body 1 pos 9,5 stuck 0
+RC POS 10 id 6 seat 1 role expand fs 0 body 1 pos 13,18 stuck 0
+V528 PICK r 10 id 6 tgt 9,12 cs 37 bs 37 reg 0 cc 9 bc 9 cands 5 banned 0 regall 0 seat 1
+RC WALK 10 id 6 role expand pos 13,18 tgt 9,12 want NORTH
+RC POS 10 id 8 seat 2 role expand fs 0 body 1 pos 12,18 stuck 1
+RC WALK 10 id 8 role expand pos 12,18 tgt 11,18 want WEST
+RC POS 10 id 10 seat 3 role raid fs 1 body 2 pos 8,11 stuck 2
+V527I SEALNT 11 ph 2 fwd 0 hv 1
+RC POS 11 id 4 seat 0 role raid fs 1 body 1 pos 9,5 stuck 1
+RC POS 11 id 6 seat 1 role expand fs 0 body 1 pos 13,17 stuck 0
+RC WALK 11 id 6 role expand pos 13,17 tgt 9,12 want NORTH
+RC POS 11 id 8 seat 2 role expand fs 0 body 1 pos 11,18 stuck 0
+V528 PICK r 11 id 8 tgt 11,13 cs 20 bs 20 reg 0 cc 5 bc 5 cands 5 banned 0 regall 0 seat 2
+RC WALK 11 id 8 role expand pos 11,18 tgt 11,13 want NORTH
+RC POS 11 id 10 seat 3 role raid fs 1 body 2 pos 8,7 stuck 0
+V527I SEALNT 12 ph 2 fwd 0 hv 1
+RC POS 12 id 4 seat 0 role raid fs 1 body 1 pos 9,5 stuck 2
+RC WALK 12 id 4 role raid pos 9,5 tgt 10,8 want NORTH
+RC POS 12 id 6 seat 1 role expand fs 0 body 1 pos 13,16 stuck 0
+RC WALK 12 id 6 role expand pos 13,16 tgt 9,12 want WEST
+RC POS 12 id 8 seat 2 role expand fs 0 body 1 pos 11,17 stuck 0
+RC WALK 12 id 8 role expand pos 11,17 tgt 11,14 want NORTH
+RC POS 12 id 10 seat 3 role raid fs 1 body 2 pos 8,7 stuck 1
+RC WALK 12 id 10 role raid pos 8,7 tgt 8,8 want SOUTH
+V527I SEALNT 13 ph 2 fwd 0 hv 1
+RC POS 13 id 4 seat 0 role raid fs 1 body 1 pos 9,5 stuck 4
+RC WALK 13 id 4 role raid pos 9,5 tgt 10,8 want NORTH
+RC POS 13 id 6 seat 1 role expand fs 0 body 1 pos 12,16 stuck 0
+RC WALK 13 id 6 role expand pos 12,16 tgt 9,12 want NORTH
+RC POS 13 id 8 seat 2 role expand fs 0 body 1 pos 11,16 stuck 0
+RC WALK 13 id 8 role expand pos 11,16 tgt 11,14 want NORTH
+RC POS 13 id 10 seat 3 role raid fs 1 body 2 pos 8,8 stuck 0
+V527I SEALNT 14 ph 2 fwd 0 hv 1
+RC POS 14 id 4 seat 0 role raid fs 1 body 1 pos 9,5 stuck 6
+RC WALK 14 id 4 role raid pos 9,5 tgt 9,9 want NORTH
+RC POS 14 id 6 seat 1 role expand fs 0 body 1 pos 12,15 stuck 0
+RC WALK 14 id 6 role expand pos 12,15 tgt 9,12 want NORTH
+RC POS 14 id 8 seat 2 role expand fs 0 body 1 pos 11,15 stuck 0
+RC WALK 14 id 8 role expand pos 11,15 tgt 10,15 want WEST
+RC POS 14 id 10 seat 3 role raid fs 1 body 2 pos 8,8 stuck 1
+V527I SEALNT 15 ph 2 fwd 0 hv 1
+RC POS 15 id 4 seat 0 role raid fs 1 body 1 pos 9,5 stuck 8
+RC WALK 15 id 4 role raid pos 9,5 tgt 9,4 want NORTH
+RC POS 15 id 6 seat 1 role expand fs 0 body 1 pos 12,14 stuck 0
+RC WALK 15 id 6 role expand pos 12,14 tgt 11,14 want WEST
+RC POS 15 id 8 seat 2 role expand fs 0 body 1 pos 10,15 stuck 0
+V528 PICK r 15 id 8 tgt 14,18 cs 7 bs 7 reg 0 cc 0 bc 0 cands 6 banned 0 regall 0 seat 2
+RC WALK 15 id 8 role expand pos 10,15 tgt 10,14 want NORTH
+RC POS 15 id 10 seat 3 role raid fs 1 body 2 pos 8,8 stuck 2
+RC WALK 15 id 10 role raid pos 8,8 tgt 11,8 want WEST
+V527I SEALNT 16 ph 2 fwd 0 hv 1
+RC POS 16 id 4 seat 0 role raid fs 1 body 1 pos 9,4 stuck 0
+RC POS 16 id 6 seat 1 role expand fs 0 body 1 pos 11,14 stuck 0
+V528 PICK r 16 id 6 tgt 14,18 cs 7 bs 7 reg 0 cc 0 bc 0 cands 5 banned 0 regall 0 seat 1
+RC WALK 16 id 6 role expand pos 11,14 tgt 11,13 want NORTH
+RC POS 16 id 8 seat 2 role expand fs 0 body 1 pos 10,14 stuck 0
+V528 PICK r 16 id 8 tgt 14,18 cs 8 bs 8 reg 0 cc 0 bc 0 cands 6 banned 0 regall 0 seat 2
+RC WALK 16 id 8 role expand pos 10,14 tgt 9,14 want WEST
+RC POS 16 id 10 seat 3 role raid fs 1 body 2 pos 7,8 stuck 0
+RC WALK 16 id 10 role raid pos 7,8 tgt 11,8 want EAST
+V527I SEALNT 17 ph 2 fwd 0 hv 1
+RC POS 17 id 4 seat 0 role raid fs 1 body 1 pos 9,4 stuck 1
+RC POS 17 id 6 seat 1 role expand fs 0 body 1 pos 11,13 stuck 0
+V528 PICK r 17 id 6 tgt 14,18 cs 8 bs 8 reg 0 cc 0 bc 0 cands 5 banned 0 regall 0 seat 1
+RC WALK 17 id 6 role expand pos 11,13 tgt 10,15 want SOUTH
+RC POS 17 id 8 seat 2 role expand fs 0 body 1 pos 9,14 stuck 0
+V528 PICK r 17 id 8 tgt 14,18 cs 9 bs 9 reg 0 cc 0 bc 0 cands 6 banned 0 regall 0 seat 2
+RC WALK 17 id 8 role expand pos 9,14 tgt 10,15 want EAST
+RC POS 17 id 10 seat 3 role raid fs 1 body 2 pos 8,8 stuck 0
+RC WALK 17 id 10 role raid pos 8,8 tgt 11,8 want WEST
+V527I SEALNT 18 ph 2 fwd 0 hv 1
+RC POS 18 id 4 seat 0 role raid fs 1 body 1 pos 9,4 stuck 2
+RC POS 18 id 6 seat 1 role expand fs 0 body 1 pos 11,14 stuck 0
+RC WALK 18 id 6 role expand pos 11,14 tgt 11,13 want NORTH
+RC POS 18 id 8 seat 2 role expand fs 0 body 1 pos 10,14 stuck 0
+RC WALK 18 id 8 role expand pos 10,14 tgt 9,14 want WEST
+RC POS 18 id 10 seat 3 role raid fs 1 body 2 pos 7,8 stuck 0
+RC WALK 18 id 10 role raid pos 7,8 tgt 11,8 want EAST
+V527I SEALNT 19 ph 2 fwd 0 hv 1
+RC POS 19 id 4 seat 0 role raid fs 1 body 1 pos 9,4 stuck 3
+RC POS 19 id 6 seat 1 role expand fs 0 body 1 pos 11,13 stuck 0
+V528 PICK r 19 id 6 tgt 14,18 cs 8 bs 8 reg 0 cc 0 bc 0 cands 5 banned 0 regall 0 seat 1
+RC WALK 19 id 6 role expand pos 11,13 tgt 11,14 want SOUTH
+RC POS 19 id 8 seat 2 role expand fs 0 body 1 pos 9,14 stuck 0
+V528 PICK r 19 id 8 tgt 14,18 cs 9 bs 9 reg 0 cc 0 bc 0 cands 6 banned 0 regall 0 seat 2
+RC WALK 19 id 8 role expand pos 9,14 tgt 10,14 want EAST
+RC POS 19 id 10 seat 3 role raid fs 1 body 2 pos 8,8 stuck 0
+RC WALK 19 id 10 role raid pos 8,8 tgt 11,8 want SOUTH
+V527I SEALNT 20 ph 2 fwd 0 hv 1
+RC POS 20 id 4 seat 0 role raid fs 1 body 1 pos 9,4 stuck 4
+RC POS 20 id 8 seat 2 role expand fs 0 body 1 pos 10,14 stuck 0
+V528 PICK r 20 id 8 tgt 14,18 cs 8 bs 8 reg 0 cc 0 bc 0 cands 6 banned 0 regall 0 seat 2
+RC WALK 20 id 8 role expand pos 10,14 tgt 9,14 want WEST
+RC POS 20 id 10 seat 3 role raid fs 1 body 2 pos 8,9 stuck 0
+V527I SEALNT 21 ph 2 fwd 0 hv 1
+RC POS 21 id 4 seat 0 role raid fs 1 body 1 pos 9,4 stuck 5
+RC POS 21 id 8 seat 2 role expand fs 0 body 1 pos 9,14 stuck 0
+V528 PICK r 21 id 8 tgt 14,18 cs 9 bs 9 reg 0 cc 0 bc 0 cands 6 banned 0 regall 0 seat 2
+RC WALK 21 id 8 role expand pos 9,14 tgt 11,14 want EAST
+RC POS 21 id 10 seat 3 role raid fs 1 body 2 pos 8,9 stuck 1
+RC WALK 21 id 10 role raid pos 8,9 tgt 10,9 want NORTH
+V527I SEALNT 22 ph 2 fwd 0 hv 1
+RC POS 22 id 4 seat 0 role raid fs 1 body 1 pos 9,4 stuck 6
+RC POS 22 id 8 seat 2 role expand fs 0 body 1 pos 10,14 stuck 0
+RC WALK 22 id 8 role expand pos 10,14 tgt 9,14 want WEST
+RC POS 22 id 10 seat 3 role raid fs 1 body 2 pos 8,8 stuck 0
+RC WALK 22 id 10 role raid pos 8,8 tgt 11,8 want SOUTH
+V527I SEALNT 23 ph 2 fwd 0 hv 1
+RC POS 23 id 4 seat 0 role raid fs 1 body 1 pos 9,4 stuck 7
+RC POS 23 id 8 seat 2 role expand fs 0 body 1 pos 9,14 stuck 0
+V528 PICK r 23 id 8 tgt 14,18 cs 9 bs 9 reg 0 cc 0 bc 0 cands 6 banned 0 regall 0 seat 2
+RC WALK 23 id 8 role expand pos 9,14 tgt 11,14 want EAST
+RC POS 23 id 10 seat 3 role raid fs 1 body 2 pos 8,9 stuck 0
+RC WALK 23 id 10 role raid pos 8,9 tgt 10,9 want WEST
+V527I SEALNT 24 ph 2 fwd 0 hv 1
+RC POS 24 id 4 seat 0 role raid fs 1 body 1 pos 9,4 stuck 8
+RC POS 24 id 8 seat 2 role expand fs 0 body 1 pos 10,14 stuck 0
+RC WALK 24 id 8 role expand pos 10,14 tgt 11,14 want EAST
+RC POS 24 id 10 seat 3 role raid fs 1 body 2 pos 7,9 stuck 0
+RC WALK 24 id 10 role raid pos 7,9 tgt 10,9 want NORTH
+V527I SEALNT 25 ph 2 fwd 0 hv 1
+RC POS 25 id 4 seat 0 role raid fs 1 body 1 pos 9,4 stuck 9
+RC POS 25 id 8 seat 2 role expand fs 0 body 1 pos 11,14 stuck 0
+V528 PICK r 25 id 8 tgt 14,18 cs 7 bs 7 reg 0 cc 0 bc 0 cands 6 banned 0 regall 0 seat 2
+RC WALK 25 id 8 role expand pos 11,14 tgt 11,13 want NORTH
+RC POS 25 id 10 seat 3 role raid fs 1 body 2 pos 7,8 stuck 0
+RC WALK 25 id 10 role raid pos 7,8 tgt 11,8 want NORTH
+V527I SEALNT 26 ph 2 fwd 0 hv 1
+RC POS 26 id 4 seat 0 role raid fs 1 body 1 pos 9,4 stuck 10
+RC POS 26 id 8 seat 2 role expand fs 0 body 1 pos 11,13 stuck 0
+V528 PICK r 26 id 8 tgt 14,18 cs 8 bs 8 reg 0 cc 0 bc 0 cands 6 banned 0 regall 0 seat 2
+RC WALK 26 id 8 role expand pos 11,13 tgt 11,14 want SOUTH
+RC POS 26 id 10 seat 3 role raid fs 1 body 2 pos 7,7 stuck 0
+RC WALK 26 id 10 role raid pos 7,7 tgt 11,7 want NORTH
+V527I SEALNT 27 ph 2 fwd 0 hv 1
+RC POS 27 id 4 seat 0 role raid fs 1 body 1 pos 9,4 stuck 11
+RC POS 27 id 8 seat 2 role expand fs 0 body 1 pos 11,14 stuck 0
+V528 PICK r 27 id 8 tgt 14,18 cs 7 bs 7 reg 0 cc 0 bc 0 cands 6 banned 0 regall 0 seat 2
+RC WALK 27 id 8 role expand pos 11,14 tgt 11,13 want NORTH
+RC POS 27 id 10 seat 3 role raid fs 1 body 2 pos 7,6 stuck 0
+RC WALK 27 id 10 role raid pos 7,6 tgt 11,6 want NORTH
+V527I SEALNT 28 ph 2 fwd 0 hv 1
+RC POS 28 id 4 seat 0 role raid fs 1 body 1 pos 9,4 stuck 12
+RC POS 28 id 8 seat 2 role expand fs 0 body 1 pos 11,13 stuck 0
+V528 PICK r 28 id 8 tgt 14,18 cs 8 bs 8 reg 0 cc 0 bc 0 cands 6 banned 0 regall 0 seat 2
+RC WALK 28 id 8 role expand pos 11,13 tgt 11,14 want SOUTH
+RC POS 28 id 10 seat 3 role raid fs 1 body 2 pos 7,5 stuck 0
+RC WALK 28 id 10 role raid pos 7,5 tgt 11,5 want NORTH
+V527I SEALNT 29 ph 2 fwd 0 hv 1
+RC POS 29 id 4 seat 0 role raid fs 1 body 1 pos 9,4 stuck 13
+RC POS 29 id 10 seat 3 role raid fs 1 body 2 pos 7,4 stuck 0
+RC WALK 29 id 10 role raid pos 7,4 tgt 11,5 want EAST
+V527I SEALNT 30 ph 2 fwd 0 hv 1
+RC POS 30 id 4 seat 0 role raid fs 1 body 1 pos 9,4 stuck 14
+RC POS 30 id 10 seat 3 role raid fs 1 body 2 pos 8,4 stuck 0
+RC WALK 30 id 10 role raid pos 8,4 tgt 11,5 want NORTH
+V527I SEALNT 31 ph 2 fwd 0 hv 1
+RC POS 31 id 4 seat 0 role raid fs 1 body 1 pos 9,4 stuck 15
+RC POS 31 id 10 seat 3 role raid fs 1 body 2 pos 8,3 stuck 0
+RC WALK 31 id 10 role raid pos 8,3 tgt 8,8 want SOUTH
+V527I SEALNT 32 ph 2 fwd 0 hv 1
+RC POS 32 id 4 seat 0 role raid fs 1 body 1 pos 9,4 stuck 16
+RC POS 32 id 10 seat 3 role raid fs 1 body 2 pos 8,4 stuck 0
+RC WALK 32 id 10 role raid pos 8,4 tgt 11,5 want NORTH
+V527I SEALNT 33 ph 2 fwd 0 hv 1
+RC POS 33 id 4 seat 0 role raid fs 1 body 1 pos 9,4 stuck 17
+RC POS 33 id 10 seat 3 role raid fs 1 body 2 pos 8,3 stuck 0
+RC WALK 33 id 10 role raid pos 8,3 tgt 8,8 want SOUTH
+V527I SEALNT 34 ph 2 fwd 0 hv 1
+RC POS 34 id 4 seat 0 role raid fs 1 body 1 pos 9,4 stuck 18
+RC POS 34 id 10 seat 3 role raid fs 1 body 2 pos 8,4 stuck 0
+RC WALK 34 id 10 role raid pos 8,4 tgt 11,5 want NORTH
+V527I SEALNT 35 ph 2 fwd 0 hv 1
+RC POS 35 id 4 seat 0 role raid fs 1 body 1 pos 9,4 stuck 19
+RC POS 35 id 10 seat 3 role raid fs 1 body 2 pos 8,3 stuck 0
+RC WALK 35 id 10 role raid pos 8,3 tgt 8,8 want SOUTH
+V527I SEALNT 36 ph 2 fwd 0 hv 1
+RC POS 36 id 4 seat 0 role raid fs 1 body 1 pos 9,4 stuck 20
+RC POS 36 id 10 seat 3 role raid fs 1 body 2 pos 8,4 stuck 0
+RC WALK 36 id 10 role raid pos 8,4 tgt 11,5 want NORTH
+V527I SEALNT 37 ph 2 fwd 0 hv 1
+RC POS 37 id 4 seat 0 role raid fs 1 body 1 pos 9,4 stuck 21
+RC POS 37 id 10 seat 3 role raid fs 1 body 2 pos 8,3 stuck 0
+RC WALK 37 id 10 role raid pos 8,3 tgt 8,8 want SOUTH
+V527I SEALNT 38 ph 2 fwd 0 hv 1
+RC POS 38 id 4 seat 0 role raid fs 1 body 1 pos 9,4 stuck 22
+RC POS 38 id 10 seat 3 role raid fs 1 body 2 pos 8,4 stuck 0
+RC WALK 38 id 10 role raid pos 8,4 tgt 11,5 want NORTH
+V527I SEALNT 39 ph 2 fwd 0 hv 1
+RC POS 39 id 4 seat 0 role raid fs 1 body 1 pos 9,4 stuck 23
+RC WALK 39 id 4 role raid pos 9,4 tgt 11,5 want NORTH
+RC POS 39 id 10 seat 3 role raid fs 1 body 2 pos 8,3 stuck 0
+RC WALK 39 id 10 role raid pos 8,3 tgt 8,8 want SOUTH
+V527I SEALNT 40 ph 2 fwd 0 hv 1
+RC POS 40 id 4 seat 0 role raid fs 1 body 1 pos 9,4 stuck 24
+RC WALK 40 id 4 role raid pos 9,4 tgt 11,5 want NORTH
+RC POS 40 id 10 seat 3 role raid fs 1 body 2 pos 8,4 stuck 0
+RC WALK 40 id 10 role raid pos 8,4 tgt 11,5 want NORTH
+V527I SEALNT 41 ph 2 fwd 0 hv 1
+RC POS 41 id 4 seat 0 role raid fs 1 body 1 pos 9,3 stuck 0
+RC WALK 41 id 4 role raid pos 9,3 tgt 11,5 want EAST
+RC POS 41 id 10 seat 3 role raid fs 1 body 2 pos 8,3 stuck 0
+RC WALK 41 id 10 role raid pos 8,3 tgt 8,8 want SOUTH
+V527I SEALNT 42 ph 2 fwd 0 hv 1
+RC POS 42 id 4 seat 0 role raid fs 1 body 1 pos 10,3 stuck 0
+RC WALK 42 id 4 role raid pos 10,3 tgt 11,5 want EAST
+RC POS 42 id 10 seat 3 role raid fs 1 body 2 pos 8,4 stuck 0
+RC WALK 42 id 10 role raid pos 8,4 tgt 11,5 want EAST
+V527I SEALNT 43 ph 2 fwd 0 hv 1
+RC POS 43 id 4 seat 0 role raid fs 1 body 1 pos 11,3 stuck 0
+RC WALK 43 id 4 role raid pos 11,3 tgt 11,5 want SOUTH
+RC POS 43 id 10 seat 3 role raid fs 1 body 2 pos 9,4 stuck 0
+RC WALK 43 id 10 role raid pos 9,4 tgt 11,5 want NORTH
+V527I SEALNT 44 ph 2 fwd 0 hv 1
+RC POS 44 id 4 seat 0 role raid fs 1 body 1 pos 11,4 stuck 0
+RC WALK 44 id 4 role raid pos 11,4 tgt 11,5 want SOUTH
+RC POS 44 id 10 seat 3 role raid fs 1 body 2 pos 8,8 stuck 0
+RC WALK 44 id 10 role raid pos 8,8 tgt 11,8 want SOUTH
+V527I SEALNT 45 ph 2 fwd 0 hv 1
+RC POS 45 id 4 seat 0 role raid fs 1 body 1 pos 11,5 stuck 0
+RC POS 45 id 10 seat 3 role raid fs 1 body 2 pos 8,9 stuck 0
+RC WALK 45 id 10 role raid pos 8,9 tgt 10,9 want WEST
+V527I SEALNT 46 ph 2 fwd 0 hv 1
+RC POS 46 id 4 seat 0 role raid fs 1 body 1 pos 11,5 stuck 1
+RC WALK 46 id 4 role raid pos 11,5 tgt 11,8 want EAST
+RC POS 46 id 10 seat 3 role raid fs 1 body 2 pos 7,9 stuck 0
+RC WALK 46 id 10 role raid pos 7,9 tgt 10,9 want WEST
+V527I SEALNT 47 ph 2 fwd 0 hv 1
+RC POS 47 id 4 seat 0 role raid fs 1 body 1 pos 12,5 stuck 0
+RC WALK 47 id 4 role raid pos 12,5 tgt 12,7 want SOUTH
+RC POS 47 id 10 seat 3 role raid fs 1 body 2 pos 6,9 stuck 0
+RC WALK 47 id 10 role raid pos 6,9 tgt 10,9 want WEST
+V527I SEALNT 48 ph 2 fwd 0 hv 1
+RC POS 48 id 4 seat 0 role raid fs 1 body 1 pos 12,6 stuck 0
+RC WALK 48 id 4 role raid pos 12,6 tgt 12,7 want SOUTH
+RC POS 48 id 10 seat 3 role raid fs 1 body 2 pos 5,9 stuck 0
+RC WALK 48 id 10 role raid pos 5,9 tgt 10,9 want EAST
+V527I SEALNT 49 ph 2 fwd 0 hv 1
+RC POS 49 id 4 seat 0 role raid fs 1 body 1 pos 12,7 stuck 0
+RC POS 49 id 10 seat 3 role raid fs 1 body 2 pos 6,9 stuck 0
+RC WALK 49 id 10 role raid pos 6,9 tgt 10,9 want WEST
+V527I SEALNT 50 ph 2 fwd 0 hv 1
+RC POS 50 id 4 seat 0 role raid fs 1 body 1 pos 12,7 stuck 1
+RC WALK 50 id 4 role raid pos 12,7 tgt 11,8 want SOUTH
+RC POS 50 id 10 seat 3 role raid fs 1 body 2 pos 5,9 stuck 0
+RC WALK 50 id 10 role raid pos 5,9 tgt 10,9 want EAST
+V527I SEALNT 51 ph 3 fwd 0 hv 1
+RC POS 51 id 4 seat 0 role raid fs 1 body 1 pos 12,8 stuck 0
+RC WALK 51 id 4 role raid pos 12,8 tgt 11,8 want WEST
+RC POS 51 id 10 seat 3 role raid fs 1 body 2 pos 6,9 stuck 0
+RC WALK 51 id 10 role raid pos 6,9 tgt 10,9 want WEST
+V527I SEALNT 52 ph 3 fwd 0 hv 1
+RC POS 52 id 4 seat 0 role raid fs 1 body 1 pos 11,8 stuck 0
+RC POS 52 id 10 seat 3 role raid fs 1 body 2 pos 5,9 stuck 0
+RC WALK 52 id 10 role raid pos 5,9 tgt 10,9 want SOUTH
+V527I SEALNT 53 ph 3 fwd 0 hv 1
+RC POS 53 id 4 seat 0 role raid fs 1 body 1 pos 11,8 stuck 1
+RC POS 53 id 10 seat 3 role raid fs 1 body 2 pos 5,10 stuck 0
+RC WALK 53 id 10 role raid pos 5,10 tgt 10,9 want EAST
+V527I SEALNT 54 ph 3 fwd 0 hv 1
+RC POS 54 id 4 seat 0 role raid fs 1 body 1 pos 11,8 stuck 2
+RC POS 54 id 10 seat 3 role raid fs 1 body 2 pos 6,10 stuck 0
+RC WALK 54 id 10 role raid pos 6,10 tgt 10,9 want WEST
+V527I SEALNT 55 ph 3 fwd 0 hv 1
+RC POS 55 id 4 seat 0 role raid fs 1 body 1 pos 11,8 stuck 3
+RC POS 55 id 10 seat 3 role raid fs 1 body 2 pos 5,10 stuck 0
+RC WALK 55 id 10 role raid pos 5,10 tgt 10,9 want EAST
+V527I SEALNT 56 ph 3 fwd 0 hv 1
+RC POS 56 id 4 seat 0 role raid fs 1 body 1 pos 11,8 stuck 4
+RC POS 56 id 10 seat 3 role raid fs 1 body 2 pos 6,10 stuck 0
+RC WALK 56 id 10 role raid pos 6,10 tgt 10,9 want WEST
+V527I SEALNT 57 ph 3 fwd 0 hv 1
+RC POS 57 id 4 seat 0 role raid fs 1 body 1 pos 11,8 stuck 5
+RC POS 57 id 10 seat 3 role raid fs 1 body 2 pos 5,10 stuck 0
+RC WALK 57 id 10 role raid pos 5,10 tgt 10,9 want EAST
+V527I SEALNT 58 ph 3 fwd 0 hv 1
+RC POS 58 id 4 seat 0 role raid fs 1 body 1 pos 11,8 stuck 6
+RC POS 58 id 10 seat 3 role raid fs 1 body 2 pos 6,10 stuck 0
+RC WALK 58 id 10 role raid pos 6,10 tgt 10,9 want WEST
+V527I SEALNT 59 ph 3 fwd 0 hv 1
+RC POS 59 id 4 seat 0 role raid fs 1 body 1 pos 11,8 stuck 7
+RC POS 59 id 10 seat 3 role raid fs 1 body 2 pos 5,10 stuck 0
+RC WALK 59 id 10 role raid pos 5,10 tgt 10,9 want EAST
+V527I SEALNT 60 ph 3 fwd 0 hv 1
+RC POS 60 id 4 seat 0 role raid fs 1 body 1 pos 11,8 stuck 8
+RC WALK 60 id 4 role raid pos 11,8 tgt 8,9 want WEST
+RC POS 60 id 10 seat 3 role raid fs 1 body 2 pos 6,10 stuck 0
+RC WALK 60 id 10 role raid pos 6,10 tgt 10,9 want WEST
+V527I SEALNT 61 ph 3 fwd 0 hv 1
+RC POS 61 id 4 seat 0 role raid fs 1 body 1 pos 10,8 stuck 0
+RC POS 61 id 10 seat 3 role raid fs 1 body 2 pos 5,10 stuck 0
+RC WALK 61 id 10 role raid pos 5,10 tgt 10,9 want EAST
+V527I SEALNT 62 ph 3 fwd 0 hv 1
+RC POS 62 id 4 seat 0 role raid fs 1 body 1 pos 10,8 stuck 1
+RC WALK 62 id 4 role raid pos 10,8 tgt 8,9 want SOUTH
+RC POS 62 id 10 seat 3 role raid fs 1 body 2 pos 6,10 stuck 0
+RC WALK 62 id 10 role raid pos 6,10 tgt 7,5 want NORTH
+V527I SEALNT 63 ph 3 fwd 0 hv 1
+RC POS 63 id 4 seat 0 role raid fs 1 body 1 pos 10,9 stuck 0
+RC POS 63 id 10 seat 3 role raid fs 1 body 2 pos 6,9 stuck 0
+RC WALK 63 id 10 role raid pos 6,9 tgt 11,8 want EAST
+V527I SEALNT 64 ph 3 fwd 0 hv 1
+RC POS 64 id 4 seat 0 role raid fs 1 body 1 pos 10,9 stuck 1
+RC POS 64 id 10 seat 3 role raid fs 1 body 2 pos 7,9 stuck 0
+RC WALK 64 id 10 role raid pos 7,9 tgt 10,4 want NORTH
+V527I SEALNT 65 ph 3 fwd 0 hv 1
+RC POS 65 id 4 seat 0 role raid fs 1 body 1 pos 10,9 stuck 2
+RC POS 65 id 10 seat 3 role raid fs 1 body 2 pos 7,8 stuck 0
+V527I SEALNT 66 ph 2 fwd 0 hv 1
+RC POS 66 id 4 seat 0 role raid fs 1 body 1 pos 10,9 stuck 3
+RC WALK 66 id 4 role raid pos 10,9 tgt 11,5 want EAST
+RC POS 66 id 10 seat 3 role raid fs 1 body 2 pos 7,8 stuck 1
+RC WALK 66 id 10 role raid pos 7,8 tgt 11,5 want NORTH
+V527I SEALNT 67 ph 3 fwd 0 hv 1
+RC POS 67 id 4 seat 0 role raid fs 1 body 1 pos 11,9 stuck 0
+RC WALK 67 id 4 role raid pos 11,9 tgt 8,4 want EAST
+RC POS 67 id 10 seat 3 role raid fs 1 body 2 pos 7,7 stuck 0
+RC WALK 67 id 10 role raid pos 7,7 tgt 11,5 want NORTH
+V527I SEALNT 68 ph 3 fwd 0 hv 1
+RC POS 68 id 4 seat 0 role raid fs 1 body 1 pos 12,9 stuck 0
+RC WALK 68 id 4 role raid pos 12,9 tgt 9,5 want NORTH
+RC POS 68 id 10 seat 3 role raid fs 1 body 2 pos 7,6 stuck 0
+RC WALK 68 id 10 role raid pos 7,6 tgt 11,5 want NORTH
+V527I SEALNT 69 ph 2 fwd 0 hv 1
+RC POS 69 id 4 seat 0 role raid fs 1 body 1 pos 12,8 stuck 0
+RC WALK 69 id 4 role raid pos 12,8 tgt 8,4 want NORTH
+RC POS 69 id 10 seat 3 role raid fs 1 body 2 pos 7,5 stuck 0
+RC WALK 69 id 10 role raid pos 7,5 tgt 12,8 want NORTH
+V527I SEALNT 70 ph 3 fwd 0 hv 1
+RC POS 70 id 4 seat 0 role raid fs 1 body 1 pos 12,7 stuck 0
+RC WALK 70 id 4 role raid pos 12,7 tgt 11,5 want NORTH
+RC POS 70 id 10 seat 3 role raid fs 1 body 2 pos 7,4 stuck 0
+RC WALK 70 id 10 role raid pos 7,4 tgt 11,8 want SOUTH
+V527I SEALNT 71 ph 3 fwd 0 hv 1
+RC POS 71 id 4 seat 0 role raid fs 1 body 1 pos 12,6 stuck 0
+RC WALK 71 id 4 role raid pos 12,6 tgt 11,5 want NORTH
+RC POS 71 id 10 seat 3 role raid fs 1 body 2 pos 7,5 stuck 0
+RC WALK 71 id 10 role raid pos 7,5 tgt 12,8 want NORTH
+V527I SEALNT 72 ph 3 fwd 0 hv 1
+RC POS 72 id 4 seat 0 role raid fs 1 body 1 pos 12,5 stuck 0
+RC WALK 72 id 4 role raid pos 12,5 tgt 8,9 want SOUTH
+RC POS 72 id 10 seat 3 role raid fs 1 body 2 pos 7,4 stuck 0
+RC WALK 72 id 10 role raid pos 7,4 tgt 11,8 want SOUTH
+V527I SEALNT 73 ph 3 fwd 0 hv 1
+RC POS 73 id 4 seat 0 role raid fs 1 body 1 pos 12,6 stuck 0
+RC POS 73 id 10 seat 3 role raid fs 1 body 2 pos 7,5 stuck 0
+RC WALK 73 id 10 role raid pos 7,5 tgt 12,8 want NORTH
+V527I SEALNT 74 ph 3 fwd 1 hv 1
+RC POS 74 id 4 seat 0 role raid fs 1 body 1 pos 12,6 stuck 1
+RC WALK 74 id 4 role raid pos 12,6 tgt 11,5 want NORTH
+RC POS 74 id 10 seat 3 role raid fs 1 body 2 pos 7,4 stuck 0
+RC WALK 74 id 10 role raid pos 7,4 tgt 11,8 want SOUTH
+V527I SEALNT 75 ph 4 fwd 1 hv 1
+RC POS 75 id 4 seat 0 role raid fs 1 body 1 pos 12,5 stuck 0
+RC WALK 75 id 4 role raid pos 12,5 tgt 8,9 want SOUTH
+RC POS 75 id 10 seat 3 role raid fs 1 body 2 pos 7,5 stuck 0
+RC WALK 75 id 10 role raid pos 7,5 tgt 12,8 want NORTH
+V527I SEALNT 76 ph 4 fwd 1 hv 1
+RC POS 76 id 4 seat 0 role raid fs 1 body 1 pos 12,6 stuck 0
+RC WALK 76 id 4 role raid pos 12,6 tgt 11,5 want NORTH
+RC POS 76 id 10 seat 3 role raid fs 1 body 2 pos 7,4 stuck 0
+RC WALK 76 id 10 role raid pos 7,4 tgt 11,8 want SOUTH
+V527I SEALNT 77 ph 4 fwd 1 hv 1
+RC POS 77 id 4 seat 0 role raid fs 1 body 1 pos 12,5 stuck 0
+RC WALK 77 id 4 role raid pos 12,5 tgt 8,9 want SOUTH
+RC POS 77 id 10 seat 3 role raid fs 1 body 2 pos 7,5 stuck 0
+RC WALK 77 id 10 role raid pos 7,5 tgt 12,8 want NORTH
+V527I SEALNT 78 ph 4 fwd 1 hv 1
+RC POS 78 id 4 seat 0 role raid fs 1 body 1 pos 12,6 stuck 0
+RC WALK 78 id 4 role raid pos 12,6 tgt 11,5 want NORTH
+RC POS 78 id 10 seat 3 role raid fs 1 body 2 pos 7,4 stuck 0
+RC WALK 78 id 10 role raid pos 7,4 tgt 11,8 want SOUTH
+V527I SEALNT 79 ph 4 fwd 1 hv 1
+RC POS 79 id 4 seat 0 role raid fs 1 body 1 pos 12,5 stuck 0
+RC WALK 79 id 4 role raid pos 12,5 tgt 8,9 want SOUTH
+RC POS 79 id 10 seat 3 role raid fs 1 body 2 pos 7,5 stuck 0
+RC WALK 79 id 10 role raid pos 7,5 tgt 12,8 want SOUTH
+V527I SEALNT 80 ph 4 fwd 1 hv 1
+RC POS 80 id 4 seat 0 role raid fs 1 body 1 pos 12,6 stuck 0
+RC WALK 80 id 4 role raid pos 12,6 tgt 11,5 want NORTH
+RC POS 80 id 10 seat 3 role raid fs 1 body 2 pos 7,6 stuck 0
+RC WALK 80 id 10 role raid pos 7,6 tgt 11,5 want WEST
+V527I SEALNT 81 ph 4 fwd 1 hv 1
+RC POS 81 id 4 seat 0 role raid fs 1 body 1 pos 12,5 stuck 0
+RC WALK 81 id 4 role raid pos 12,5 tgt 8,9 want SOUTH
+RC POS 81 id 10 seat 3 role raid fs 1 body 2 pos 6,6 stuck 0
+RC WALK 81 id 10 role raid pos 6,6 tgt 11,6 want EAST
+V527I SEALNT 82 ph 4 fwd 1 hv 1
+RC POS 82 id 4 seat 0 role raid fs 1 body 1 pos 12,6 stuck 0
+RC WALK 82 id 4 role raid pos 12,6 tgt 11,5 want NORTH
+RC POS 82 id 10 seat 3 role raid fs 1 body 2 pos 7,6 stuck 0
+RC WALK 82 id 10 role raid pos 7,6 tgt 11,5 want WEST
+V527I SEALNT 83 ph 4 fwd 1 hv 1
+RC POS 83 id 4 seat 0 role raid fs 1 body 1 pos 12,5 stuck 0
+RC WALK 83 id 4 role raid pos 12,5 tgt 8,9 want SOUTH
+RC POS 83 id 10 seat 3 role raid fs 1 body 2 pos 6,6 stuck 0
+RC WALK 83 id 10 role raid pos 6,6 tgt 11,6 want EAST
+V527I SEALNT 84 ph 4 fwd 1 hv 1
+RC POS 84 id 4 seat 0 role raid fs 1 body 1 pos 12,6 stuck 0
+RC WALK 84 id 4 role raid pos 12,6 tgt 11,5 want NORTH
+RC POS 84 id 10 seat 3 role raid fs 1 body 2 pos 7,6 stuck 0
+RC WALK 84 id 10 role raid pos 7,6 tgt 11,5 want WEST
+V527I SEALNT 85 ph 4 fwd 1 hv 1
+RC POS 85 id 4 seat 0 role raid fs 1 body 1 pos 12,5 stuck 0
+RC WALK 85 id 4 role raid pos 12,5 tgt 8,9 want SOUTH
+RC POS 85 id 10 seat 3 role raid fs 1 body 2 pos 6,6 stuck 0
+RC WALK 85 id 10 role raid pos 6,6 tgt 11,6 want EAST
+V527I SEALNT 86 ph 4 fwd 1 hv 1
+RC POS 86 id 4 seat 0 role raid fs 1 body 1 pos 12,6 stuck 0
+RC WALK 86 id 4 role raid pos 12,6 tgt 11,5 want NORTH
+RC POS 86 id 10 seat 3 role raid fs 1 body 2 pos 7,6 stuck 0
+RC WALK 86 id 10 role raid pos 7,6 tgt 11,5 want WEST
+V527I SEALNT 87 ph 4 fwd 1 hv 1
+RC POS 87 id 4 seat 0 role raid fs 1 body 1 pos 12,5 stuck 0
+RC WALK 87 id 4 role raid pos 12,5 tgt 8,9 want SOUTH
+RC POS 87 id 10 seat 3 role raid fs 1 body 2 pos 6,6 stuck 0
+RC WALK 87 id 10 role raid pos 6,6 tgt 11,6 want NORTH
+V527I SEALNT 88 ph 4 fwd 1 hv 1
+RC POS 88 id 4 seat 0 role raid fs 1 body 1 pos 12,6 stuck 0
+RC WALK 88 id 4 role raid pos 12,6 tgt 11,5 want NORTH
+RC POS 88 id 10 seat 3 role raid fs 1 body 2 pos 6,5 stuck 0
+RC WALK 88 id 10 role raid pos 6,5 tgt 11,5 want EAST
+V527I SEALNT 89 ph 4 fwd 1 hv 1
+RC POS 89 id 4 seat 0 role raid fs 1 body 1 pos 12,5 stuck 0
+RC WALK 89 id 4 role raid pos 12,5 tgt 8,9 want SOUTH
+RC POS 89 id 10 seat 3 role raid fs 1 body 2 pos 7,5 stuck 0
+RC WALK 89 id 10 role raid pos 7,5 tgt 12,8 want NORTH
+V527I SEALNT 90 ph 4 fwd 1 hv 1
+RC POS 90 id 4 seat 0 role raid fs 1 body 1 pos 12,6 stuck 0
+RC WALK 90 id 4 role raid pos 12,6 tgt 11,5 want NORTH
+RC POS 90 id 10 seat 3 role raid fs 1 body 2 pos 7,4 stuck 0
+RC WALK 90 id 10 role raid pos 7,4 tgt 11,8 want SOUTH
+V527I SEALNT 91 ph 4 fwd 1 hv 1
+RC POS 91 id 4 seat 0 role raid fs 1 body 1 pos 12,5 stuck 0
+RC WALK 91 id 4 role raid pos 12,5 tgt 8,9 want SOUTH
+RC POS 91 id 10 seat 3 role raid fs 1 body 2 pos 7,5 stuck 0
+RC WALK 91 id 10 role raid pos 7,5 tgt 12,8 want NORTH
+V527I SEALNT 92 ph 4 fwd 1 hv 1
+RC POS 92 id 4 seat 0 role raid fs 1 body 1 pos 12,6 stuck 0
+RC WALK 92 id 4 role raid pos 12,6 tgt 11,5 want NORTH
+RC POS 92 id 10 seat 3 role raid fs 1 body 2 pos 7,4 stuck 0
+RC WALK 92 id 10 role raid pos 7,4 tgt 11,8 want SOUTH
+V527I SEALNT 93 ph 4 fwd 1 hv 1
+RC POS 93 id 4 seat 0 role raid fs 1 body 1 pos 12,5 stuck 0
+RC WALK 93 id 4 role raid pos 12,5 tgt 8,9 want SOUTH
+RC POS 93 id 10 seat 3 role raid fs 1 body 2 pos 7,5 stuck 0
+RC WALK 93 id 10 role raid pos 7,5 tgt 12,8 want WEST
+V527I SEALNT 94 ph 4 fwd 1 hv 1
+RC POS 94 id 4 seat 0 role raid fs 1 body 1 pos 12,6 stuck 0
+RC WALK 94 id 4 role raid pos 12,6 tgt 11,5 want NORTH
+RC POS 94 id 10 seat 3 role raid fs 1 body 2 pos 6,5 stuck 0
+RC WALK 94 id 10 role raid pos 6,5 tgt 11,5 want NORTH
+V527I SEALNT 95 ph 4 fwd 1 hv 1
+RC POS 95 id 4 seat 0 role raid fs 1 body 1 pos 12,5 stuck 0
+RC WALK 95 id 4 role raid pos 12,5 tgt 8,9 want SOUTH
+RC POS 95 id 10 seat 3 role raid fs 1 body 2 pos 6,4 stuck 0
+RC WALK 95 id 10 role raid pos 6,4 tgt 11,5 want EAST
+V527I SEALNT 96 ph 4 fwd 1 hv 1
+RC POS 96 id 4 seat 0 role raid fs 1 body 1 pos 12,6 stuck 0
+RC WALK 96 id 4 role raid pos 12,6 tgt 11,5 want NORTH
+RC POS 96 id 10 seat 3 role raid fs 1 body 2 pos 7,4 stuck 0
+RC WALK 96 id 10 role raid pos 7,4 tgt 11,8 want EAST
+V527I SEALNT 97 ph 4 fwd 1 hv 1
+RC POS 97 id 4 seat 0 role raid fs 1 body 1 pos 12,5 stuck 0
+RC WALK 97 id 4 role raid pos 12,5 tgt 8,9 want SOUTH
+RC POS 97 id 10 seat 3 role raid fs 1 body 2 pos 8,4 stuck 0
+RC WALK 97 id 10 role raid pos 8,4 tgt 12,8 want EAST
+V527I SEALNT 98 ph 4 fwd 1 hv 1
+RC POS 98 id 4 seat 0 role raid fs 1 body 1 pos 12,6 stuck 0
+RC WALK 98 id 4 role raid pos 12,6 tgt 11,5 want NORTH
+RC POS 98 id 10 seat 3 role raid fs 1 body 2 pos 9,4 stuck 0
+RC WALK 98 id 10 role raid pos 9,4 tgt 11,5 want NORTH
+V527I SEALNT 99 ph 4 fwd 1 hv 1
+RC POS 99 id 4 seat 0 role raid fs 1 body 1 pos 12,5 stuck 0
+RC WALK 99 id 4 role raid pos 12,5 tgt 8,9 want SOUTH
+RC POS 99 id 10 seat 3 role raid fs 1 body 2 pos 9,3 stuck 0
+RC WALK 99 id 10 role raid pos 9,3 tgt 9,8 want SOUTH
+V527I SEALNT 100 ph 4 fwd 1 hv 1
+RC POS 100 id 4 seat 0 role raid fs 1 body 1 pos 12,6 stuck 0
+RC WALK 100 id 4 role raid pos 12,6 tgt 11,5 want NORTH
+RC POS 100 id 10 seat 3 role raid fs 1 body 2 pos 9,4 stuck 0
+RC WALK 100 id 10 role raid pos 9,4 tgt 11,5 want NORTH
+V527I SEALNT 101 ph 4 fwd 1 hv 1
+RC POS 101 id 4 seat 0 role raid fs 1 body 1 pos 12,5 stuck 0
+RC WALK 101 id 4 role raid pos 12,5 tgt 8,9 want SOUTH
+RC POS 101 id 10 seat 3 role raid fs 1 body 2 pos 9,3 stuck 0
+RC WALK 101 id 10 role raid pos 9,3 tgt 9,8 want SOUTH
+V527I SEALNT 102 ph 4 fwd 1 hv 1
+RC POS 102 id 4 seat 0 role raid fs 1 body 1 pos 12,6 stuck 0
+RC WALK 102 id 4 role raid pos 12,6 tgt 11,5 want NORTH
+RC POS 102 id 10 seat 3 role raid fs 1 body 2 pos 9,4 stuck 0
+RC WALK 102 id 10 role raid pos 9,4 tgt 11,5 want NORTH
+V527I SEALNT 103 ph 4 fwd 1 hv 1
+RC POS 103 id 4 seat 0 role raid fs 1 body 1 pos 12,5 stuck 0
+RC WALK 103 id 4 role raid pos 12,5 tgt 8,9 want SOUTH
+RC POS 103 id 10 seat 3 role raid fs 1 body 2 pos 9,3 stuck 0
+RC WALK 103 id 10 role raid pos 9,3 tgt 9,8 want SOUTH
+V527I SEALNT 104 ph 4 fwd 1 hv 1
+RC POS 104 id 4 seat 0 role raid fs 1 body 1 pos 12,6 stuck 0
+RC WALK 104 id 4 role raid pos 12,6 tgt 11,5 want NORTH
+RC POS 104 id 10 seat 3 role raid fs 1 body 2 pos 9,4 stuck 0
+RC WALK 104 id 10 role raid pos 9,4 tgt 11,5 want NORTH
+V527I SEALNT 105 ph 4 fwd 1 hv 1
+RC POS 105 id 4 seat 0 role raid fs 1 body 1 pos 12,5 stuck 0
+RC WALK 105 id 4 role raid pos 12,5 tgt 8,9 want SOUTH
+RC POS 105 id 10 seat 3 role raid fs 1 body 2 pos 9,3 stuck 0
+RC WALK 105 id 10 role raid pos 9,3 tgt 9,8 want SOUTH
+V527I SEALNT 106 ph 4 fwd 1 hv 1
+RC POS 106 id 4 seat 0 role raid fs 1 body 1 pos 12,6 stuck 0
+RC WALK 106 id 4 role raid pos 12,6 tgt 11,5 want NORTH
+RC POS 106 id 10 seat 3 role raid fs 1 body 2 pos 9,4 stuck 0
+RC WALK 106 id 10 role raid pos 9,4 tgt 11,5 want NORTH
+V527I SEALNT 107 ph 4 fwd 1 hv 1
+RC POS 107 id 4 seat 0 role raid fs 1 body 1 pos 12,5 stuck 0
+RC WALK 107 id 4 role raid pos 12,5 tgt 8,9 want SOUTH
+RC POS 107 id 10 seat 3 role raid fs 1 body 2 pos 9,3 stuck 0
+RC WALK 107 id 10 role raid pos 9,3 tgt 9,8 want SOUTH
+V527I SEALNT 108 ph 4 fwd 1 hv 1
+RC POS 108 id 4 seat 0 role raid fs 1 body 1 pos 12,6 stuck 0
+RC WALK 108 id 4 role raid pos 12,6 tgt 11,5 want NORTH
+RC POS 108 id 10 seat 3 role raid fs 1 body 2 pos 9,4 stuck 0
+RC WALK 108 id 10 role raid pos 9,4 tgt 11,5 want NORTH
+V527I SEALNT 109 ph 4 fwd 1 hv 1
+RC POS 109 id 4 seat 0 role raid fs 1 body 1 pos 12,5 stuck 0
+RC WALK 109 id 4 role raid pos 12,5 tgt 8,9 want SOUTH
+RC POS 109 id 10 seat 3 role raid fs 1 body 2 pos 9,3 stuck 0
+RC WALK 109 id 10 role raid pos 9,3 tgt 9,8 want SOUTH
+V527I SEALNT 110 ph 4 fwd 1 hv 1
+RC POS 110 id 4 seat 0 role raid fs 1 body 1 pos 12,6 stuck 0
+RC WALK 110 id 4 role raid pos 12,6 tgt 11,5 want NORTH
+RC POS 110 id 10 seat 3 role raid fs 1 body 2 pos 9,4 stuck 0
+RC WALK 110 id 10 role raid pos 9,4 tgt 11,5 want NORTH
+V527I SEALNT 111 ph 4 fwd 1 hv 1
+RC POS 111 id 4 seat 0 role raid fs 1 body 1 pos 12,5 stuck 0
+RC WALK 111 id 4 role raid pos 12,5 tgt 8,9 want SOUTH
+RC POS 111 id 10 seat 3 role raid fs 1 body 2 pos 9,3 stuck 0
+RC WALK 111 id 10 role raid pos 9,3 tgt 9,8 want SOUTH
+V527I SEALNT 112 ph 4 fwd 1 hv 1
+RC POS 112 id 4 seat 0 role raid fs 1 body 1 pos 12,6 stuck 0
+RC WALK 112 id 4 role raid pos 12,6 tgt 11,5 want NORTH
+RC POS 112 id 10 seat 3 role raid fs 1 body 2 pos 9,4 stuck 0
+RC WALK 112 id 10 role raid pos 9,4 tgt 11,5 want NORTH
+V527I SEALNT 113 ph 4 fwd 1 hv 1
+RC POS 113 id 4 seat 0 role raid fs 1 body 1 pos 12,5 stuck 0
+RC WALK 113 id 4 role raid pos 12,5 tgt 8,9 want SOUTH
+RC POS 113 id 10 seat 3 role raid fs 1 body 2 pos 9,3 stuck 0
+RC WALK 113 id 10 role raid pos 9,3 tgt 9,8 want EAST
+V527I SEALNT 114 ph 4 fwd 1 hv 1
+RC POS 114 id 4 seat 0 role raid fs 1 body 1 pos 12,6 stuck 0
+RC WALK 114 id 4 role raid pos 12,6 tgt 11,5 want NORTH
+RC POS 114 id 10 seat 3 role raid fs 1 body 2 pos 10,3 stuck 0
+RC WALK 114 id 10 role raid pos 10,3 tgt 10,8 want WEST
+V527I SEALNT 115 ph 4 fwd 1 hv 1
+RC POS 115 id 4 seat 0 role raid fs 1 body 1 pos 12,5 stuck 0
+RC WALK 115 id 4 role raid pos 12,5 tgt 8,9 want SOUTH
+RC POS 115 id 10 seat 3 role raid fs 1 body 2 pos 9,3 stuck 0
+RC WALK 115 id 10 role raid pos 9,3 tgt 9,8 want SOUTH
+V527I SEALNT 116 ph 4 fwd 1 hv 1
+RC POS 116 id 4 seat 0 role raid fs 1 body 1 pos 12,6 stuck 0
+RC WALK 116 id 4 role raid pos 12,6 tgt 11,5 want NORTH
+RC POS 116 id 10 seat 3 role raid fs 1 body 2 pos 9,4 stuck 0
+RC WALK 116 id 10 role raid pos 9,4 tgt 11,5 want NORTH
+V527I SEALNT 117 ph 4 fwd 1 hv 1
+RC POS 117 id 4 seat 0 role raid fs 1 body 1 pos 12,5 stuck 0
+RC WALK 117 id 4 role raid pos 12,5 tgt 8,9 want SOUTH
+RC POS 117 id 10 seat 3 role raid fs 1 body 2 pos 9,3 stuck 0
+RC WALK 117 id 10 role raid pos 9,3 tgt 9,8 want SOUTH
+V527I SEALNT 118 ph 4 fwd 1 hv 1
+RC POS 118 id 4 seat 0 role raid fs 1 body 1 pos 12,6 stuck 0
+RC WALK 118 id 4 role raid pos 12,6 tgt 11,5 want NORTH
+RC POS 118 id 10 seat 3 role raid fs 1 body 2 pos 9,4 stuck 0
+RC WALK 118 id 10 role raid pos 9,4 tgt 11,5 want NORTH
+V527I SEALNT 119 ph 4 fwd 1 hv 1
+RC POS 119 id 4 seat 0 role raid fs 1 body 1 pos 12,5 stuck 0
+RC WALK 119 id 4 role raid pos 12,5 tgt 8,9 want SOUTH
+RC POS 119 id 10 seat 3 role raid fs 1 body 2 pos 9,3 stuck 0
+RC WALK 119 id 10 role raid pos 9,3 tgt 9,8 want SOUTH
+V527I SEALNT 120 ph 4 fwd 1 hv 1
+RC POS 120 id 4 seat 0 role raid fs 1 body 1 pos 12,6 stuck 0
+RC WALK 120 id 4 role raid pos 12,6 tgt 11,5 want SOUTH
+RC POS 120 id 10 seat 3 role raid fs 1 body 2 pos 9,4 stuck 0
+RC WALK 120 id 10 role raid pos 9,4 tgt 11,5 want NORTH
+V527I SEALNT 121 ph 4 fwd 1 hv 1
+RC POS 121 id 4 seat 0 role raid fs 1 body 1 pos 12,7 stuck 0
+RC WALK 121 id 4 role raid pos 12,7 tgt 11,5 want SOUTH
+RC POS 121 id 10 seat 3 role raid fs 1 body 2 pos 9,3 stuck 0
+RC WALK 121 id 10 role raid pos 9,3 tgt 9,8 want SOUTH
+V527I SEALNT 122 ph 4 fwd 1 hv 1
+RC POS 122 id 4 seat 0 role raid fs 1 body 1 pos 12,8 stuck 0
+RC WALK 122 id 4 role raid pos 12,8 tgt 8,4 want SOUTH
+RC POS 122 id 10 seat 3 role raid fs 1 body 2 pos 9,4 stuck 0
+RC WALK 122 id 10 role raid pos 9,4 tgt 11,5 want NORTH
+V527I SEALNT 123 ph 4 fwd 1 hv 1
+RC POS 123 id 4 seat 0 role raid fs 1 body 1 pos 12,9 stuck 0
+RC WALK 123 id 4 role raid pos 12,9 tgt 9,5 want WEST
+RC POS 123 id 10 seat 3 role raid fs 1 body 2 pos 9,3 stuck 0
+RC WALK 123 id 10 role raid pos 9,3 tgt 9,8 want SOUTH
+V527I SEALNT 124 ph 5 fwd 1 hv 1
+RC POS 124 id 4 seat 0 role raid fs 1 body 1 pos 11,9 stuck 0
+RC WALK 124 id 4 role raid pos 11,9 tgt 8,4 want EAST
+RC POS 124 id 10 seat 3 role raid fs 1 body 2 pos 9,4 stuck 0
+RC WALK 124 id 10 role raid pos 9,4 tgt 11,5 want NORTH
+V527I SEALNT 125 ph 4 fwd 1 hv 1
+RC POS 125 id 4 seat 0 role raid fs 1 body 1 pos 12,9 stuck 0
+RC WALK 125 id 4 role raid pos 12,9 tgt 9,5 want EAST
+RC POS 125 id 10 seat 3 role raid fs 1 body 2 pos 9,3 stuck 0
+RC WALK 125 id 10 role raid pos 9,3 tgt 9,8 want SOUTH
+V527I SEALNT 126 ph 5 fwd 1 hv 1
+RC POS 126 id 4 seat 0 role raid fs 1 body 1 pos 13,9 stuck 0
+RC WALK 126 id 4 role raid pos 13,9 tgt 11,5 want WEST
+RC POS 126 id 10 seat 3 role raid fs 1 body 2 pos 9,4 stuck 0
+RC WALK 126 id 10 role raid pos 9,4 tgt 11,5 want NORTH
+V527I SEALNT 127 ph 5 fwd 1 hv 1
+RC POS 127 id 4 seat 0 role raid fs 1 body 1 pos 12,9 stuck 0
+RC WALK 127 id 4 role raid pos 12,9 tgt 9,5 want EAST
+RC POS 127 id 10 seat 3 role raid fs 1 body 2 pos 9,3 stuck 0
+RC WALK 127 id 10 role raid pos 9,3 tgt 9,8 want SOUTH
+V527I SEALNT 128 ph 5 fwd 1 hv 1
+RC POS 128 id 4 seat 0 role raid fs 1 body 1 pos 13,9 stuck 0
+RC WALK 128 id 4 role raid pos 13,9 tgt 11,5 want WEST
+RC POS 128 id 10 seat 3 role raid fs 1 body 2 pos 9,4 stuck 0
+RC WALK 128 id 10 role raid pos 9,4 tgt 11,5 want NORTH
+V527I SEALNT 129 ph 5 fwd 1 hv 1
+RC POS 129 id 4 seat 0 role raid fs 1 body 1 pos 12,9 stuck 0
+RC WALK 129 id 4 role raid pos 12,9 tgt 9,5 want EAST
+RC POS 129 id 10 seat 3 role raid fs 1 body 2 pos 9,3 stuck 0
+RC WALK 129 id 10 role raid pos 9,3 tgt 9,8 want SOUTH
+V527I SEALNT 130 ph 5 fwd 1 hv 1
+RC POS 130 id 4 seat 0 role raid fs 1 body 1 pos 13,9 stuck 0
+RC WALK 130 id 4 role raid pos 13,9 tgt 11,5 want NORTH
+RC POS 130 id 10 seat 3 role raid fs 1 body 2 pos 9,4 stuck 0
+RC WALK 130 id 10 role raid pos 9,4 tgt 11,5 want NORTH
+V527I SEALNT 131 ph 2 fwd 1 hv 1
+RC POS 131 id 4 seat 0 role raid fs 1 body 1 pos 13,8 stuck 0
+RC POS 131 id 10 seat 3 role raid fs 1 body 2 pos 9,3 stuck 0
+RC WALK 131 id 10 role raid pos 9,3 tgt 9,8 want SOUTH
+V527I SEALNT 132 ph 2 fwd 1 hv 1
+RC POS 132 id 4 seat 0 role raid fs 1 body 1 pos 12,8 stuck 0
+RC WALK 132 id 4 role raid pos 12,8 tgt 8,4 want NORTH
+RC POS 132 id 10 seat 3 role raid fs 1 body 2 pos 9,4 stuck 0
+RC WALK 132 id 10 role raid pos 9,4 tgt 11,5 want NORTH
+V527I SEALNT 133 ph 3 fwd 1 hv 1
+RC POS 133 id 4 seat 0 role raid fs 1 body 1 pos 12,7 stuck 0
+RC WALK 133 id 4 role raid pos 12,7 tgt 11,5 want NORTH
+RC POS 133 id 10 seat 3 role raid fs 1 body 2 pos 9,3 stuck 0
+RC WALK 133 id 10 role raid pos 9,3 tgt 9,8 want SOUTH
+V527I SEALNT 134 ph 3 fwd 1 hv 1
+RC POS 134 id 4 seat 0 role raid fs 1 body 1 pos 12,6 stuck 0
+RC WALK 134 id 4 role raid pos 12,6 tgt 11,5 want NORTH
+RC POS 134 id 10 seat 3 role raid fs 1 body 2 pos 9,4 stuck 0
+RC WALK 134 id 10 role raid pos 9,4 tgt 11,5 want NORTH
+V527I SEALNT 135 ph 3 fwd 1 hv 1
+RC POS 135 id 4 seat 0 role raid fs 1 body 1 pos 12,5 stuck 0
+RC POS 135 id 10 seat 3 role raid fs 1 body 2 pos 9,3 stuck 0
+RC WALK 135 id 10 role raid pos 9,3 tgt 9,8 want SOUTH
+V527I SEALNT 136 ph 3 fwd 1 hv 1
+RC POS 136 id 4 seat 0 role raid fs 1 body 1 pos 12,6 stuck 0
+RC WALK 136 id 4 role raid pos 12,6 tgt 11,5 want NORTH
+RC POS 136 id 10 seat 3 role raid fs 1 body 2 pos 9,4 stuck 0
+RC WALK 136 id 10 role raid pos 9,4 tgt 11,5 want NORTH
+V527I SEALNT 137 ph 3 fwd 1 hv 1
+RC POS 137 id 4 seat 0 role raid fs 1 body 1 pos 12,5 stuck 0
+RC POS 137 id 10 seat 3 role raid fs 1 body 2 pos 9,3 stuck 0
+RC WALK 137 id 10 role raid pos 9,3 tgt 9,8 want WEST
+V527I SEALNT 138 ph 3 fwd 1 hv 1
+RC POS 138 id 4 seat 0 role raid fs 1 body 1 pos 12,6 stuck 0
+RC WALK 138 id 4 role raid pos 12,6 tgt 11,5 want NORTH
+RC POS 138 id 10 seat 3 role raid fs 1 body 2 pos 8,3 stuck 0
+RC WALK 138 id 10 role raid pos 8,3 tgt 8,8 want WEST
+V527I SEALNT 139 ph 3 fwd 1 hv 1
+RC POS 139 id 4 seat 0 role raid fs 1 body 1 pos 12,5 stuck 0
+RC POS 139 id 10 seat 3 role raid fs 1 body 2 pos 7,3 stuck 0
+RC WALK 139 id 10 role raid pos 7,3 tgt 8,8 want WEST
+V527I SEALNT 140 ph 3 fwd 1 hv 1
+RC POS 140 id 4 seat 0 role raid fs 1 body 1 pos 12,6 stuck 0
+RC WALK 140 id 4 role raid pos 12,6 tgt 11,5 want NORTH
+RC POS 140 id 10 seat 3 role raid fs 1 body 2 pos 6,3 stuck 0
+RC WALK 140 id 10 role raid pos 6,3 tgt 8,8 want SOUTH
+V527I SEALNT 141 ph 3 fwd 1 hv 1
+RC POS 141 id 4 seat 0 role raid fs 1 body 1 pos 12,5 stuck 0
+RC POS 141 id 10 seat 3 role raid fs 1 body 2 pos 6,4 stuck 0
+RC WALK 141 id 10 role raid pos 6,4 tgt 9,8 want SOUTH
+V527I SEALNT 142 ph 3 fwd 1 hv 1
+RC POS 142 id 4 seat 0 role raid fs 1 body 1 pos 12,6 stuck 0
+RC WALK 142 id 4 role raid pos 12,6 tgt 11,5 want NORTH
+RC POS 142 id 10 seat 3 role raid fs 1 body 2 pos 6,5 stuck 0
+RC WALK 142 id 10 role raid pos 6,5 tgt 11,6 want EAST
+V527I SEALNT 143 ph 3 fwd 1 hv 1
+RC POS 143 id 4 seat 0 role raid fs 1 body 1 pos 12,5 stuck 0
+RC POS 143 id 10 seat 3 role raid fs 1 body 2 pos 7,5 stuck 0
+RC WALK 143 id 10 role raid pos 7,5 tgt 12,8 want WEST
+V527I SEALNT 144 ph 3 fwd 1 hv 1
+RC POS 144 id 4 seat 0 role raid fs 1 body 1 pos 12,6 stuck 0
+RC POS 144 id 10 seat 3 role raid fs 1 body 2 pos 6,5 stuck 0
+RC WALK 144 id 10 role raid pos 6,5 tgt 11,5 want EAST
+V527I SEALNT 145 ph 3 fwd 1 hv 1
+RC POS 145 id 4 seat 0 role raid fs 1 body 1 pos 12,7 stuck 0
+RC WALK 145 id 4 role raid pos 12,7 tgt 11,5 want NORTH
+RC POS 145 id 10 seat 3 role raid fs 1 body 2 pos 7,5 stuck 0
+RC WALK 145 id 10 role raid pos 7,5 tgt 12,8 want WEST
+V527I SEALNT 146 ph 3 fwd 1 hv 1
+RC POS 146 id 4 seat 0 role raid fs 1 body 1 pos 12,6 stuck 0
+RC POS 146 id 10 seat 3 role raid fs 1 body 2 pos 6,5 stuck 0
+RC WALK 146 id 10 role raid pos 6,5 tgt 11,5 want EAST
+V527I SEALNT 147 ph 3 fwd 1 hv 1
+RC POS 147 id 4 seat 0 role raid fs 1 body 1 pos 12,7 stuck 0
+RC WALK 147 id 4 role raid pos 12,7 tgt 11,5 want NORTH
+RC POS 147 id 10 seat 3 role raid fs 1 body 2 pos 7,5 stuck 0
+RC WALK 147 id 10 role raid pos 7,5 tgt 12,8 want WEST
+V527I SEALNT 148 ph 3 fwd 1 hv 1
+RC POS 148 id 4 seat 0 role raid fs 1 body 1 pos 12,6 stuck 0
+RC POS 148 id 10 seat 3 role raid fs 1 body 2 pos 6,5 stuck 0
+RC WALK 148 id 10 role raid pos 6,5 tgt 11,5 want EAST
+V527I SEALNT 149 ph 3 fwd 1 hv 1
+RC POS 149 id 4 seat 0 role raid fs 1 body 1 pos 12,7 stuck 0
+RC WALK 149 id 4 role raid pos 12,7 tgt 11,5 want NORTH
+RC POS 149 id 10 seat 3 role raid fs 1 body 2 pos 7,5 stuck 0
+RC WALK 149 id 10 role raid pos 7,5 tgt 12,8 want WEST
+V527I SEALNT 150 ph 3 fwd 1 hv 1
+RC POS 150 id 4 seat 0 role raid fs 1 body 1 pos 12,6 stuck 0
+RC POS 150 id 10 seat 3 role raid fs 1 body 2 pos 6,5 stuck 0
+RC WALK 150 id 10 role raid pos 6,5 tgt 11,5 want EAST
+V527I SEALNT 151 ph 3 fwd 1 hv 1
+RC POS 151 id 4 seat 0 role raid fs 1 body 1 pos 12,7 stuck 0
+RC WALK 151 id 4 role raid pos 12,7 tgt 11,5 want NORTH
+RC POS 151 id 10 seat 3 role raid fs 1 body 2 pos 7,5 stuck 0
+RC WALK 151 id 10 role raid pos 7,5 tgt 12,8 want WEST
+V527I SEALNT 152 ph 3 fwd 1 hv 1
+RC POS 152 id 4 seat 0 role raid fs 1 body 1 pos 12,6 stuck 0
+RC POS 152 id 10 seat 3 role raid fs 1 body 2 pos 6,5 stuck 0
+RC WALK 152 id 10 role raid pos 6,5 tgt 11,5 want EAST
+V527I SEALNT 153 ph 3 fwd 1 hv 1
+RC POS 153 id 4 seat 0 role raid fs 1 body 1 pos 12,7 stuck 0
+RC WALK 153 id 4 role raid pos 12,7 tgt 11,5 want NORTH
+RC POS 153 id 10 seat 3 role raid fs 1 body 2 pos 7,5 stuck 0
+RC WALK 153 id 10 role raid pos 7,5 tgt 12,8 want WEST
+V527I SEALNT 154 ph 3 fwd 1 hv 1
+RC POS 154 id 10 seat 3 role raid fs 1 body 2 pos 6,5 stuck 0
+RC WALK 154 id 10 role raid pos 6,5 tgt 11,5 want EAST
+V527I SEALNT 155 ph 3 fwd 1 hv 1
+RC POS 155 id 10 seat 3 role raid fs 1 body 2 pos 7,5 stuck 0
+RC WALK 155 id 10 role raid pos 7,5 tgt 12,8 want WEST
+V527I SEALNT 156 ph 3 fwd 1 hv 1
+RC POS 156 id 10 seat 3 role raid fs 1 body 2 pos 6,5 stuck 0
+RC WALK 156 id 10 role raid pos 6,5 tgt 11,5 want EAST
+V527I SEALNT 157 ph 3 fwd 1 hv 1
+RC POS 157 id 10 seat 3 role raid fs 1 body 2 pos 7,5 stuck 0
+RC WALK 157 id 10 role raid pos 7,5 tgt 12,8 want WEST
+V527I SEALNT 158 ph 3 fwd 1 hv 1
+RC POS 158 id 10 seat 3 role raid fs 1 body 2 pos 6,5 stuck 0
+RC WALK 158 id 10 role raid pos 6,5 tgt 11,5 want NORTH
+V527I SEALNT 159 ph 3 fwd 1 hv 1
+RC POS 159 id 10 seat 3 role raid fs 1 body 2 pos 6,4 stuck 0
+RC WALK 159 id 10 role raid pos 6,4 tgt 11,5 want NORTH
+V527I SEALNT 160 ph 3 fwd 1 hv 1
+RC POS 160 id 10 seat 3 role raid fs 1 body 2 pos 6,3 stuck 0
+RC WALK 160 id 10 role raid pos 6,3 tgt 8,8 want SOUTH
+V527I SEALNT 161 ph 3 fwd 1 hv 1
+RC POS 161 id 10 seat 3 role raid fs 1 body 2 pos 6,4 stuck 0
+RC WALK 161 id 10 role raid pos 6,4 tgt 11,5 want EAST
+V527I SEALNT 162 ph 3 fwd 1 hv 1
+RC POS 162 id 10 seat 3 role raid fs 1 body 2 pos 7,4 stuck 0
+RC WALK 162 id 10 role raid pos 7,4 tgt 11,8 want EAST
+V527I SEALNT 163 ph 3 fwd 1 hv 1
+RC POS 163 id 10 seat 3 role raid fs 1 body 2 pos 8,4 stuck 0
+RC WALK 163 id 10 role raid pos 8,4 tgt 12,7 want EAST
+V527I SEALNT 164 ph 3 fwd 1 hv 1
+RC POS 164 id 10 seat 3 role raid fs 1 body 2 pos 9,4 stuck 0
+RC WALK 164 id 10 role raid pos 9,4 tgt 12,7 want NORTH
+V527I SEALNT 165 ph 3 fwd 1 hv 1
+RC POS 165 id 10 seat 3 role raid fs 1 body 2 pos 9,3 stuck 0
+RC WALK 165 id 10 role raid pos 9,3 tgt 9,8 want SOUTH
+V527I SEALNT 166 ph 3 fwd 1 hv 1
+RC POS 166 id 10 seat 3 role raid fs 1 body 2 pos 9,4 stuck 0
+V527I SEALNT 167 ph 3 fwd 1 hv 1
+RC POS 167 id 10 seat 3 role raid fs 1 body 2 pos 9,4 stuck 1
+RC WALK 167 id 10 role raid pos 9,4 tgt 12,7 want NORTH
+RC SEAT 167 id 85 seat 4
+RC POS 167 id 85 seat 4 role defend fs 0 body 1 pos 8,17 stuck 0
+RC WALK 167 id 85 role defend pos 8,17 tgt 8,20 want WEST
+V527I SEALNT 168 ph 3 fwd 1 hv 1
+RC POS 168 id 10 seat 3 role raid fs 1 body 2 pos 9,3 stuck 0
+RC WALK 168 id 10 role raid pos 9,3 tgt 9,8 want EAST
+RC POS 168 id 85 seat 4 role defend fs 0 body 1 pos 7,17 stuck 0
+RC WALK 168 id 85 role defend pos 7,17 tgt 8,20 want SOUTH
+V527I SEALNT 169 ph 3 fwd 1 hv 1
+RC POS 169 id 10 seat 3 role raid fs 1 body 2 pos 10,3 stuck 0
+RC WALK 169 id 10 role raid pos 10,3 tgt 10,8 want EAST
+RC POS 169 id 85 seat 4 role defend fs 0 body 1 pos 7,18 stuck 0
+RC WALK 169 id 85 role defend pos 7,18 tgt 8,20 want SOUTH
+V527I SEALNT 170 ph 3 fwd 1 hv 1
+RC POS 170 id 10 seat 3 role raid fs 1 body 2 pos 11,3 stuck 0
+RC WALK 170 id 10 role raid pos 11,3 tgt 11,8 want SOUTH
+RC POS 170 id 85 seat 4 role defend fs 0 body 1 pos 7,19 stuck 0
+RC WALK 170 id 85 role defend pos 7,19 tgt 8,20 want SOUTH
+V527I SEALNT 171 ph 3 fwd 1 hv 1
+RC POS 171 id 10 seat 3 role raid fs 1 body 2 pos 11,4 stuck 0
+RC WALK 171 id 10 role raid pos 11,4 tgt 8,9 want SOUTH
+RC POS 171 id 85 seat 4 role defend fs 0 body 1 pos 7,20 stuck 0
+RC WALK 171 id 85 role defend pos 7,20 tgt 8,20 want CENTRE
+V527I SEALNT 172 ph 3 fwd 1 hv 1
+RC POS 172 id 10 seat 3 role raid fs 1 body 2 pos 11,5 stuck 0
+RC WALK 172 id 10 role raid pos 11,5 tgt 12,7 want EAST
+RC POS 172 id 85 seat 4 role defend fs 0 body 1 pos 7,20 stuck 1
+RC WALK 172 id 85 role defend pos 7,20 tgt 8,20 want CENTRE
+V527I SEALNT 173 ph 3 fwd 1 hv 1
+RC POS 173 id 10 seat 3 role raid fs 1 body 2 pos 12,5 stuck 0
+RC POS 173 id 85 seat 4 role defend fs 0 body 1 pos 7,20 stuck 2
+RC WALK 173 id 85 role defend pos 7,20 tgt 8,20 want CENTRE
+V527I SEALNT 174 ph 3 fwd 1 hv 1
+RC POS 174 id 10 seat 3 role raid fs 1 body 2 pos 12,4 stuck 0
+RC WALK 174 id 10 role raid pos 12,4 tgt 8,8 want SOUTH
+RC POS 174 id 85 seat 4 role defend fs 0 body 1 pos 7,20 stuck 3
+RC WALK 174 id 85 role defend pos 7,20 tgt 8,20 want CENTRE
+V527I SEALNT 175 ph 3 fwd 1 hv 1
+RC POS 175 id 10 seat 3 role raid fs 1 body 2 pos 12,5 stuck 0
+RC POS 175 id 85 seat 4 role defend fs 0 body 1 pos 7,20 stuck 4
+RC WALK 175 id 85 role defend pos 7,20 tgt 8,20 want CENTRE
+V527I SEALNT 176 ph 3 fwd 1 hv 1
+RC POS 176 id 10 seat 3 role raid fs 1 body 2 pos 12,4 stuck 0
+RC WALK 176 id 10 role raid pos 12,4 tgt 8,8 want SOUTH
+RC POS 176 id 85 seat 4 role defend fs 0 body 1 pos 7,20 stuck 5
+RC WALK 176 id 85 role defend pos 7,20 tgt 10,23 want SOUTH
+V527I SEALNT 177 ph 3 fwd 1 hv 1
+RC POS 177 id 10 seat 3 role raid fs 1 body 2 pos 12,5 stuck 0
+RC POS 177 id 85 seat 4 role defend fs 0 body 1 pos 7,21 stuck 0
+RC WALK 177 id 85 role defend pos 7,21 tgt 10,23 want EAST
+V527I SEALNT 178 ph 3 fwd 1 hv 1
+RC POS 178 id 10 seat 3 role raid fs 1 body 2 pos 12,4 stuck 0
+RC WALK 178 id 10 role raid pos 12,4 tgt 8,8 want SOUTH
+RC POS 178 id 85 seat 4 role defend fs 0 body 1 pos 8,21 stuck 0
+RC WALK 178 id 85 role defend pos 8,21 tgt 10,23 want EAST
+V527I SEALNT 179 ph 3 fwd 1 hv 1
+RC POS 179 id 10 seat 3 role raid fs 1 body 2 pos 12,5 stuck 0
+RC POS 179 id 85 seat 4 role defend fs 0 body 1 pos 9,21 stuck 0
+RC WALK 179 id 85 role defend pos 9,21 tgt 10,23 want SOUTH
+V527I SEALNT 180 ph 3 fwd 1 hv 1
+RC POS 180 id 10 seat 3 role raid fs 1 body 2 pos 12,6 stuck 0
+RC WALK 180 id 10 role raid pos 12,6 tgt 11,5 want NORTH
+RC POS 180 id 85 seat 4 role defend fs 0 body 1 pos 9,22 stuck 0
+V527I SEALNT 181 ph 3 fwd 1 hv 1
+RC POS 181 id 10 seat 3 role raid fs 1 body 2 pos 12,5 stuck 0
+RC POS 181 id 85 seat 4 role defend fs 0 body 1 pos 9,22 stuck 1
+RC WALK 181 id 85 role defend pos 9,22 tgt 10,23 want EAST
+V527I SEALNT 182 ph 3 fwd 1 hv 1
+RC POS 182 id 10 seat 3 role raid fs 1 body 2 pos 12,6 stuck 0
+RC POS 182 id 85 seat 4 role defend fs 0 body 1 pos 10,22 stuck 0
+RC WALK 182 id 85 role defend pos 10,22 tgt 10,23 want SOUTH
+V527I SEALNT 183 ph 3 fwd 1 hv 1
+RC POS 183 id 10 seat 3 role raid fs 1 body 2 pos 12,7 stuck 0
+RC WALK 183 id 10 role raid pos 12,7 tgt 11,5 want NORTH
+RC POS 183 id 85 seat 4 role defend fs 0 body 1 pos 10,23 stuck 0
+RC WALK 183 id 85 role defend pos 10,23 tgt 9,23 want WEST
+V527I SEALNT 184 ph 3 fwd 1 hv 1
+RC POS 184 id 10 seat 3 role raid fs 1 body 2 pos 12,6 stuck 0
+RC POS 184 id 85 seat 4 role defend fs 0 body 1 pos 9,23 stuck 0
+RC WALK 184 id 85 role defend pos 9,23 tgt 10,23 want EAST
+V527I SEALNT 185 ph 3 fwd 1 hv 1
+RC POS 185 id 10 seat 3 role raid fs 1 body 2 pos 12,7 stuck 0
+RC WALK 185 id 10 role raid pos 12,7 tgt 11,5 want NORTH
+RC POS 185 id 85 seat 4 role defend fs 0 body 1 pos 10,23 stuck 0
+RC WALK 185 id 85 role defend pos 10,23 tgt 9,23 want WEST
+V527I SEALNT 186 ph 3 fwd 1 hv 1
+RC POS 186 id 85 seat 4 role defend fs 0 body 1 pos 9,23 stuck 0
+RC WALK 186 id 85 role defend pos 9,23 tgt 10,23 want EAST
+V527I SEALNT 187 ph 3 fwd 1 hv 1
+RC POS 187 id 85 seat 4 role defend fs 0 body 1 pos 10,23 stuck 0
+RC WALK 187 id 85 role defend pos 10,23 tgt 9,23 want WEST
+V527I SEALNT 188 ph 3 fwd 1 hv 1
+RC POS 188 id 85 seat 4 role defend fs 0 body 1 pos 9,23 stuck 0
+RC WALK 188 id 85 role defend pos 9,23 tgt 10,23 want EAST
+V527I SEALNT 189 ph 3 fwd 1 hv 1
+RC POS 189 id 85 seat 4 role defend fs 0 body 1 pos 10,23 stuck 0
+RC WALK 189 id 85 role defend pos 10,23 tgt 9,23 want WEST
+V527I SEALNT 190 ph 3 fwd 1 hv 1
+RC POS 190 id 85 seat 4 role defend fs 0 body 1 pos 9,23 stuck 0
+RC WALK 190 id 85 role defend pos 9,23 tgt 10,23 want EAST
+V527I SEALNT 191 ph 3 fwd 1 hv 1
+RC POS 191 id 85 seat 4 role defend fs 0 body 1 pos 10,23 stuck 0
+RC WALK 191 id 85 role defend pos 10,23 tgt 9,23 want WEST
+V527I SEALNT 192 ph 3 fwd 1 hv 1
+RC POS 192 id 85 seat 4 role defend fs 0 body 1 pos 9,23 stuck 0
+RC WALK 192 id 85 role defend pos 9,23 tgt 10,23 want EAST
+V527I SEALNT 193 ph 3 fwd 1 hv 1
+RC POS 193 id 85 seat 4 role defend fs 0 body 1 pos 10,23 stuck 0
+RC WALK 193 id 85 role defend pos 10,23 tgt 9,23 want WEST
+V527I SEALNT 194 ph 3 fwd 1 hv 1
+RC POS 194 id 85 seat 4 role defend fs 0 body 1 pos 9,23 stuck 0
+RC WALK 194 id 85 role defend pos 9,23 tgt 10,23 want EAST
+V527I SEALNT 195 ph 3 fwd 1 hv 1
+RC POS 195 id 85 seat 4 role defend fs 0 body 1 pos 10,23 stuck 0
+RC WALK 195 id 85 role defend pos 10,23 tgt 8,21 want WEST
+V527I SEALNT 196 ph 3 fwd 1 hv 1
+RC POS 196 id 85 seat 4 role defend fs 0 body 1 pos 9,23 stuck 0
+RC WALK 196 id 85 role defend pos 9,23 tgt 8,20 want NORTH
+V527I SEALNT 197 ph 3 fwd 1 hv 1
+RC POS 197 id 85 seat 4 role defend fs 0 body 1 pos 9,22 stuck 0
+RC WALK 197 id 85 role defend pos 9,22 tgt 8,20 want WEST
+V527I SEALNT 198 ph 3 fwd 1 hv 1
+RC POS 198 id 85 seat 4 role defend fs 0 body 1 pos 8,22 stuck 0
+RC WALK 198 id 85 role defend pos 8,22 tgt 8,20 want NORTH
+V527I SEALNT 199 ph 3 fwd 1 hv 1
+RC POS 199 id 85 seat 4 role defend fs 0 body 1 pos 8,21 stuck 0
+RC WALK 199 id 85 role defend pos 8,21 tgt 8,20 want CENTRE
+V527I SEALNT 200 ph 3 fwd 1 hv 1
+RC POS 200 id 85 seat 4 role defend fs 0 body 1 pos 8,21 stuck 1
+RC WALK 200 id 85 role defend pos 8,21 tgt 8,20 want CENTRE
+V527I SEALNT 201 ph 3 fwd 1 hv 1
+RC POS 201 id 85 seat 4 role defend fs 0 body 1 pos 8,21 stuck 2
+RC WALK 201 id 85 role defend pos 8,21 tgt 8,20 want CENTRE
+V527I SEALNT 202 ph 3 fwd 1 hv 1
+RC POS 202 id 85 seat 4 role defend fs 0 body 1 pos 8,21 stuck 3
+RC WALK 202 id 85 role defend pos 8,21 tgt 8,20 want CENTRE
+V527I SEALNT 203 ph 3 fwd 1 hv 1
+RC POS 203 id 85 seat 4 role defend fs 0 body 1 pos 8,21 stuck 4
+RC WALK 203 id 85 role defend pos 8,21 tgt 8,20 want CENTRE
+V527I SEALNT 204 ph 3 fwd 1 hv 1
+RC POS 204 id 85 seat 4 role defend fs 0 body 1 pos 8,21 stuck 5
+RC WALK 204 id 85 role defend pos 8,21 tgt 10,23 want SOUTH
+V527I SEALNT 205 ph 3 fwd 1 hv 1
+RC POS 205 id 85 seat 4 role defend fs 0 body 1 pos 8,22 stuck 0
+RC WALK 205 id 85 role defend pos 8,22 tgt 10,23 want EAST
+V527I SEALNT 206 ph 3 fwd 1 hv 1
+RC POS 206 id 85 seat 4 role defend fs 0 body 1 pos 9,22 stuck 0
+RC WALK 206 id 85 role defend pos 9,22 tgt 10,23 want EAST
+V527I SEALNT 207 ph 3 fwd 1 hv 1
+RC POS 207 id 85 seat 4 role defend fs 0 body 1 pos 10,22 stuck 0
+RC WALK 207 id 85 role defend pos 10,22 tgt 10,23 want SOUTH
+V527I SEALNT 208 ph 3 fwd 1 hv 1
+RC POS 208 id 85 seat 4 role defend fs 0 body 1 pos 10,23 stuck 0
+RC WALK 208 id 85 role defend pos 10,23 tgt 9,23 want WEST
+V527I SEALNT 209 ph 3 fwd 1 hv 1
+RC POS 209 id 85 seat 4 role defend fs 0 body 1 pos 9,23 stuck 0
+RC WALK 209 id 85 role defend pos 9,23 tgt 10,23 want EAST
+V527I SEALNT 210 ph 3 fwd 1 hv 1
+RC POS 210 id 85 seat 4 role defend fs 0 body 1 pos 10,23 stuck 0
+RC WALK 210 id 85 role defend pos 10,23 tgt 9,23 want WEST
+V527I SEALNT 211 ph 3 fwd 1 hv 1
+RC POS 211 id 85 seat 4 role defend fs 0 body 1 pos 9,23 stuck 0
+RC WALK 211 id 85 role defend pos 9,23 tgt 10,23 want EAST
+V527I SEALNT 212 ph 3 fwd 1 hv 1
+RC POS 212 id 85 seat 4 role defend fs 0 body 1 pos 10,23 stuck 0
+V528 CONN r 212 id 85 at 9,23 chosen 6 best 2 regret 4 cands 21 role defend seat 4
+RC WALK 212 id 85 role defend pos 10,23 tgt 9,22 want NORTH
+V527I SEALNT 213 ph 3 fwd 1 hv 2
+RC POS 213 id 85 seat 4 role defend fs 0 body 1 pos 10,23 stuck 2
+RC WALK 213 id 85 role defend pos 10,23 tgt 9,22 want NORTH
+V527I SEALNT 214 ph 3 fwd 1 hv 2
+RC POS 214 id 85 seat 4 role defend fs 0 body 1 pos 10,22 stuck 0
+V527I SEALNT 215 ph 3 fwd 1 hv 2
+RC POS 215 id 85 seat 4 role defend fs 0 body 1 pos 10,22 stuck 1
+V527I SEALNT 216 ph 3 fwd 1 hv 2
+RC POS 216 id 85 seat 4 role defend fs 0 body 1 pos 10,22 stuck 2
+V527I SEALNT 217 ph 3 fwd 1 hv 2
+RC POS 217 id 85 seat 4 role defend fs 0 body 1 pos 10,22 stuck 3
+RC WALK 217 id 85 role defend pos 10,22 tgt 8,22 want WEST
+V527I SEALNT 218 ph 3 fwd 1 hv 2
+RC POS 218 id 85 seat 4 role defend fs 0 body 1 pos 9,22 stuck 0
+V527I SEALNT 219 ph 3 fwd 1 hv 2
+RC POS 219 id 85 seat 4 role defend fs 0 body 1 pos 9,22 stuck 1
+V527I SEALNT 220 ph 3 fwd 1 hv 2
+RC POS 220 id 85 seat 4 role defend fs 0 body 1 pos 9,22 stuck 2
+V527I SEALNT 221 ph 3 fwd 1 hv 2
+RC POS 221 id 85 seat 4 role defend fs 0 body 1 pos 9,22 stuck 3
+RC WALK 221 id 85 role defend pos 9,22 tgt 8,21 want WEST
+V527I SEALNT 222 ph 3 fwd 1 hv 2
+RC POS 222 id 85 seat 4 role defend fs 0 body 1 pos 8,22 stuck 0
+V527I SEALNT 223 ph 3 fwd 1 hv 2
+RC POS 223 id 85 seat 4 role defend fs 0 body 1 pos 8,22 stuck 1
+RC WALK 223 id 85 role defend pos 8,22 tgt 11,20 want EAST
+V527I SEALNT 224 ph 3 fwd 1 hv 2
+RC POS 224 id 85 seat 4 role defend fs 0 body 1 pos 9,22 stuck 0
+RC WALK 224 id 85 role defend pos 9,22 tgt 11,20 want EAST
+V527I SEALNT 225 ph 3 fwd 1 hv 2
+RC POS 225 id 85 seat 4 role defend fs 0 body 1 pos 10,22 stuck 0
+RC WALK 225 id 85 role defend pos 10,22 tgt 11,20 want NORTH
+V527I SEALNT 226 ph 3 fwd 1 hv 2
+RC POS 226 id 85 seat 4 role defend fs 0 body 1 pos 10,21 stuck 0
+RC WALK 226 id 85 role defend pos 10,21 tgt 11,20 want EAST
+V527I SEALNT 227 ph 3 fwd 1 hv 2
+RC POS 227 id 85 seat 4 role defend fs 0 body 1 pos 11,21 stuck 0
+RC WALK 227 id 85 role defend pos 11,21 tgt 11,20 want CENTRE
+V527I SEALNT 228 ph 3 fwd 1 hv 2
+RC POS 228 id 85 seat 4 role defend fs 0 body 1 pos 11,21 stuck 1
+RC WALK 228 id 85 role defend pos 11,21 tgt 11,20 want CENTRE
+V527I SEALNT 229 ph 3 fwd 1 hv 2
+RC POS 229 id 85 seat 4 role defend fs 0 body 1 pos 11,21 stuck 2
+RC WALK 229 id 85 role defend pos 11,21 tgt 11,20 want CENTRE
+V527I SEALNT 230 ph 3 fwd 1 hv 2
+RC POS 230 id 85 seat 4 role defend fs 0 body 1 pos 11,21 stuck 3
+RC WALK 230 id 85 role defend pos 11,21 tgt 11,20 want CENTRE
+V527I SEALNT 231 ph 3 fwd 1 hv 2
+RC POS 231 id 85 seat 4 role defend fs 0 body 1 pos 11,21 stuck 4
+RC WALK 231 id 85 role defend pos 11,21 tgt 8,20 want WEST
+V527I SEALNT 232 ph 3 fwd 1 hv 2
+RC POS 232 id 85 seat 4 role defend fs 0 body 1 pos 10,21 stuck 0
+RC WALK 232 id 85 role defend pos 10,21 tgt 8,20 want SOUTH
+V527I SEALNT 233 ph 3 fwd 1 hv 2
+RC POS 233 id 85 seat 4 role defend fs 0 body 1 pos 10,22 stuck 0
+RC WALK 233 id 85 role defend pos 10,22 tgt 8,20 want WEST
+V527I SEALNT 234 ph 3 fwd 1 hv 2
+RC POS 234 id 85 seat 4 role defend fs 0 body 1 pos 9,22 stuck 0
+RC WALK 234 id 85 role defend pos 9,22 tgt 8,20 want WEST
+V527I SEALNT 235 ph 3 fwd 1 hv 2
+RC POS 235 id 85 seat 4 role defend fs 0 body 1 pos 8,22 stuck 0
+RC WALK 235 id 85 role defend pos 8,22 tgt 8,20 want NORTH
+V527I SEALNT 236 ph 3 fwd 1 hv 2
+RC POS 236 id 85 seat 4 role defend fs 0 body 1 pos 8,21 stuck 0
+V527I SEALNT 237 ph 3 fwd 1 hv 2
+RC POS 237 id 85 seat 4 role defend fs 0 body 1 pos 8,21 stuck 1
+RC WALK 237 id 85 role defend pos 8,21 tgt 7,20 want WEST
+V527I SEALNT 238 ph 3 fwd 1 hv 2
+RC POS 238 id 85 seat 4 role defend fs 0 body 1 pos 7,21 stuck 0
+V527I SEALNT 239 ph 3 fwd 1 hv 2
+RC POS 239 id 85 seat 4 role defend fs 0 body 1 pos 7,21 stuck 1
+RC WALK 239 id 85 role defend pos 7,21 tgt 7,19 want NORTH
+V527I SEALNT 240 ph 3 fwd 1 hv 2
+RC POS 240 id 85 seat 4 role defend fs 0 body 1 pos 7,20 stuck 0
+V527I SEALNT 241 ph 3 fwd 1 hv 2
+RC POS 241 id 85 seat 4 role defend fs 0 body 1 pos 7,20 stuck 1
+RC WALK 241 id 85 role defend pos 7,20 tgt 7,18 want NORTH
+V527I SEALNT 242 ph 3 fwd 1 hv 2
+RC POS 242 id 85 seat 4 role defend fs 0 body 1 pos 7,19 stuck 0
+V527I SEALNT 243 ph 3 fwd 1 hv 2
+RC POS 243 id 85 seat 4 role defend fs 0 body 1 pos 7,19 stuck 1
+RC WALK 243 id 85 role defend pos 7,19 tgt 8,18 want NORTH
+V527I SEALNT 244 ph 3 fwd 1 hv 2
+RC POS 244 id 85 seat 4 role defend fs 0 body 1 pos 7,18 stuck 0
+RC WALK 244 id 85 role defend pos 7,18 tgt 8,18 want CENTRE
+V527I SEALNT 245 ph 3 fwd 1 hv 2
+RC POS 245 id 85 seat 4 role defend fs 0 body 1 pos 7,18 stuck 1
+RC WALK 245 id 85 role defend pos 7,18 tgt 8,18 want CENTRE
+V527I SEALNT 246 ph 3 fwd 1 hv 2
+RC POS 246 id 85 seat 4 role defend fs 0 body 1 pos 7,18 stuck 2
+RC WALK 246 id 85 role defend pos 7,18 tgt 8,18 want CENTRE
+V527I SEALNT 247 ph 3 fwd 1 hv 2
+RC POS 247 id 85 seat 4 role defend fs 0 body 1 pos 7,18 stuck 3
+RC WALK 247 id 85 role defend pos 7,18 tgt 8,18 want CENTRE
+V527I SEALNT 248 ph 3 fwd 1 hv 2
+RC POS 248 id 85 seat 4 role defend fs 0 body 1 pos 7,18 stuck 4
+RC WALK 248 id 85 role defend pos 7,18 tgt 8,18 want CENTRE
+V527I SEALNT 249 ph 3 fwd 1 hv 2
+RC POS 249 id 85 seat 4 role defend fs 0 body 1 pos 7,18 stuck 5
+RC WALK 249 id 85 role defend pos 7,18 tgt 7,14 want NORTH
+V527I SEALNT 250 ph 3 fwd 1 hv 2
+RC POS 250 id 85 seat 4 role defend fs 0 body 1 pos 7,17 stuck 0
+RC WALK 250 id 85 role defend pos 7,17 tgt 7,14 want NORTH
+V527I SEALNT 251 ph 3 fwd 1 hv 2
+RC POS 251 id 85 seat 4 role defend fs 0 body 1 pos 7,16 stuck 0
+RC WALK 251 id 85 role defend pos 7,16 tgt 11,18 want EAST
+V527I SEALNT 252 ph 3 fwd 1 hv 2
+RC POS 252 id 85 seat 4 role defend fs 0 body 1 pos 8,16 stuck 0
+RC WALK 252 id 85 role defend pos 8,16 tgt 11,18 want EAST
+V527I SEALNT 253 ph 3 fwd 1 hv 2
+RC POS 253 id 85 seat 4 role defend fs 0 body 1 pos 9,16 stuck 0
+RC WALK 253 id 85 role defend pos 9,16 tgt 11,18 want EAST
+V527I SEALNT 254 ph 3 fwd 1 hv 2
+RC POS 254 id 85 seat 4 role defend fs 0 body 1 pos 10,16 stuck 0
+RC WALK 254 id 85 role defend pos 10,16 tgt 11,18 want SOUTH
+V527I SEALNT 255 ph 3 fwd 1 hv 2
+RC POS 255 id 85 seat 4 role defend fs 0 body 1 pos 9,16 stuck 0
+RC WALK 255 id 85 role defend pos 9,16 tgt 11,18 want EAST
+V527I SEALNT 256 ph 3 fwd 1 hv 2
+RC POS 256 id 85 seat 4 role defend fs 0 body 1 pos 10,16 stuck 0
+RC WALK 256 id 85 role defend pos 10,16 tgt 11,18 want SOUTH
+V527I SEALNT 257 ph 3 fwd 1 hv 2
+RC POS 257 id 85 seat 4 role defend fs 0 body 1 pos 9,16 stuck 0
+RC WALK 257 id 85 role defend pos 9,16 tgt 11,18 want EAST
+V527I SEALNT 258 ph 3 fwd 1 hv 2
+RC POS 258 id 85 seat 4 role defend fs 0 body 1 pos 10,16 stuck 0
+RC WALK 258 id 85 role defend pos 10,16 tgt 11,18 want SOUTH
+V527I SEALNT 259 ph 3 fwd 1 hv 2
+RC POS 259 id 85 seat 4 role defend fs 0 body 1 pos 9,16 stuck 0
+RC WALK 259 id 85 role defend pos 9,16 tgt 11,18 want EAST
+V527I SEALNT 260 ph 3 fwd 1 hv 2
+RC POS 260 id 85 seat 4 role defend fs 0 body 1 pos 10,16 stuck 0
+RC WALK 260 id 85 role defend pos 10,16 tgt 11,18 want SOUTH
+V527I SEALNT 261 ph 3 fwd 1 hv 2
+RC POS 261 id 85 seat 4 role defend fs 0 body 1 pos 9,16 stuck 0
+RC WALK 261 id 85 role defend pos 9,16 tgt 11,18 want EAST
+V527I SEALNT 262 ph 3 fwd 1 hv 2
+RC POS 262 id 85 seat 4 role defend fs 0 body 1 pos 10,16 stuck 0
+RC WALK 262 id 85 role defend pos 10,16 tgt 11,18 want SOUTH
+V527I SEALNT 263 ph 3 fwd 1 hv 2
+RC POS 263 id 85 seat 4 role defend fs 0 body 1 pos 9,16 stuck 0
+RC WALK 263 id 85 role defend pos 9,16 tgt 11,18 want EAST
+V527I SEALNT 264 ph 3 fwd 1 hv 2
+RC POS 264 id 85 seat 4 role defend fs 0 body 1 pos 10,16 stuck 0
+RC WALK 264 id 85 role defend pos 10,16 tgt 11,18 want SOUTH
+V527I SEALNT 265 ph 3 fwd 1 hv 2
+RC POS 265 id 85 seat 4 role defend fs 0 body 1 pos 9,16 stuck 0
+RC WALK 265 id 85 role defend pos 9,16 tgt 11,18 want EAST
+V527I SEALNT 266 ph 3 fwd 1 hv 2
+RC POS 266 id 85 seat 4 role defend fs 0 body 1 pos 10,16 stuck 0
+RC WALK 266 id 85 role defend pos 10,16 tgt 11,18 want SOUTH
+V527I SEALNT 267 ph 3 fwd 1 hv 2
+RC POS 267 id 85 seat 4 role defend fs 0 body 1 pos 9,16 stuck 0
+RC WALK 267 id 85 role defend pos 9,16 tgt 11,18 want EAST
+V527I SEALNT 268 ph 3 fwd 1 hv 2
+RC POS 268 id 85 seat 4 role defend fs 0 body 1 pos 10,16 stuck 0
+RC WALK 268 id 85 role defend pos 10,16 tgt 11,18 want SOUTH
+V527I SEALNT 269 ph 3 fwd 1 hv 2
+RC POS 269 id 85 seat 4 role defend fs 0 body 1 pos 9,16 stuck 0
+RC WALK 269 id 85 role defend pos 9,16 tgt 11,18 want EAST
+V527I SEALNT 270 ph 3 fwd 1 hv 2
+RC POS 270 id 85 seat 4 role defend fs 0 body 1 pos 10,16 stuck 0
+RC WALK 270 id 85 role defend pos 10,16 tgt 11,18 want SOUTH
+V527I SEALNT 271 ph 3 fwd 1 hv 2
+RC POS 271 id 85 seat 4 role defend fs 0 body 1 pos 9,16 stuck 0
+RC WALK 271 id 85 role defend pos 9,16 tgt 11,18 want EAST
+V527I SEALNT 272 ph 3 fwd 1 hv 2
+RC POS 272 id 85 seat 4 role defend fs 0 body 1 pos 10,16 stuck 0
+RC WALK 272 id 85 role defend pos 10,16 tgt 11,18 want SOUTH
+V527I SEALNT 273 ph 3 fwd 1 hv 2
+RC POS 273 id 85 seat 4 role defend fs 0 body 1 pos 9,16 stuck 0
+RC WALK 273 id 85 role defend pos 9,16 tgt 11,18 want EAST
+V527I SEALNT 274 ph 3 fwd 1 hv 2
+RC POS 274 id 85 seat 4 role defend fs 0 body 1 pos 10,16 stuck 0
+RC WALK 274 id 85 role defend pos 10,16 tgt 11,18 want SOUTH
+V527I SEALNT 275 ph 3 fwd 1 hv 2
+RC POS 275 id 85 seat 4 role defend fs 0 body 1 pos 9,16 stuck 0
+RC WALK 275 id 85 role defend pos 9,16 tgt 11,18 want EAST
+V527I SEALNT 276 ph 3 fwd 1 hv 2
+RC POS 276 id 85 seat 4 role defend fs 0 body 1 pos 10,16 stuck 0
+RC WALK 276 id 85 role defend pos 10,16 tgt 11,18 want SOUTH
+V527I SEALNT 277 ph 3 fwd 1 hv 2
+RC POS 277 id 85 seat 4 role defend fs 0 body 1 pos 9,16 stuck 0
+RC WALK 277 id 85 role defend pos 9,16 tgt 11,18 want EAST
+V527I SEALNT 278 ph 3 fwd 1 hv 2
+RC POS 278 id 85 seat 4 role defend fs 0 body 1 pos 10,16 stuck 0
+V527I SEALNT 279 ph 3 fwd 1 hv 2
+RC POS 279 id 85 seat 4 role defend fs 0 body 1 pos 10,16 stuck 1
+RC WALK 279 id 85 role defend pos 10,16 tgt 11,18 want SOUTH
+V527I SEALNT 280 ph 3 fwd 1 hv 2
+RC POS 280 id 85 seat 4 role defend fs 0 body 1 pos 9,16 stuck 0
+RC WALK 280 id 85 role defend pos 9,16 tgt 11,18 want EAST
+V527I SEALNT 281 ph 3 fwd 1 hv 2
+RC POS 281 id 85 seat 4 role defend fs 0 body 1 pos 10,16 stuck 0
+RC WALK 281 id 85 role defend pos 10,16 tgt 11,14 want NORTH
+V527I SEALNT 282 ph 3 fwd 1 hv 2
+RC POS 282 id 85 seat 4 role defend fs 0 body 1 pos 10,15 stuck 0
+RC WALK 282 id 85 role defend pos 10,15 tgt 10,14 want CENTRE
+V527I SEALNT 283 ph 3 fwd 1 hv 2
+RC POS 283 id 85 seat 4 role defend fs 0 body 1 pos 10,15 stuck 1
+RC WALK 283 id 85 role defend pos 10,15 tgt 9,14 want WEST
+V527I SEALNT 284 ph 3 fwd 1 hv 2
+RC POS 284 id 85 seat 4 role defend fs 0 body 1 pos 9,15 stuck 0
+RC WALK 284 id 85 role defend pos 9,15 tgt 8,14 want NORTH
+V527I SEALNT 285 ph 3 fwd 1 hv 2
+RC POS 285 id 85 seat 4 role defend fs 0 body 1 pos 9,14 stuck 0
+RC WALK 285 id 85 role defend pos 9,14 tgt 8,13 want WEST
+V527I SEALNT 286 ph 3 fwd 1 hv 2
+RC POS 286 id 85 seat 4 role defend fs 0 body 1 pos 8,14 stuck 0
+RC WALK 286 id 85 role defend pos 8,14 tgt 8,13 want NORTH
+V527I SEALNT 287 ph 3 fwd 1 hv 2
+RC POS 287 id 85 seat 4 role defend fs 0 body 1 pos 8,13 stuck 0
+RC WALK 287 id 85 role defend pos 8,13 tgt 9,12 want EAST
+V527I SEALNT 288 ph 3 fwd 1 hv 2
+RC POS 288 id 85 seat 4 role defend fs 0 body 1 pos 9,13 stuck 0
+RC WALK 288 id 85 role defend pos 9,13 tgt 9,14 want SOUTH
+V527I SEALNT 289 ph 3 fwd 1 hv 2
+RC POS 289 id 85 seat 4 role defend fs 0 body 1 pos 9,14 stuck 0
+RC WALK 289 id 85 role defend pos 9,14 tgt 9,12 want NORTH
+V527I SEALNT 290 ph 3 fwd 1 hv 2
+RC POS 290 id 85 seat 4 role defend fs 0 body 1 pos 9,13 stuck 0
+RC WALK 290 id 85 role defend pos 9,13 tgt 9,14 want SOUTH
+V527I SEALNT 291 ph 3 fwd 1 hv 2
+RC POS 291 id 85 seat 4 role defend fs 0 body 1 pos 9,14 stuck 0
+RC WALK 291 id 85 role defend pos 9,14 tgt 9,12 want NORTH
+V527I SEALNT 292 ph 3 fwd 1 hv 2
+V527I SEALNT 293 ph 3 fwd 1 hv 2
+V527I SEALNT 294 ph 3 fwd 1 hv 2
+V527I SEALNT 295 ph 3 fwd 1 hv 2
+V527I SEALNT 296 ph 3 fwd 1 hv 2
+V527I SEALNT 297 ph 3 fwd 1 hv 2
+V527I SEALNT 298 ph 3 fwd 1 hv 2
+V527I SEALNT 299 ph 3 fwd 1 hv 2
+V527I SEALNT 300 ph 3 fwd 1 hv 2
+V527I SEALNT 301 ph 3 fwd 1 hv 2
+V527I SEALNT 302 ph 3 fwd 1 hv 2
+V527I SEALNT 303 ph 3 fwd 1 hv 2
+V527I SEALNT 304 ph 3 fwd 1 hv 2
+V527I SEALNT 305 ph 3 fwd 1 hv 2
+V527I SEALNT 306 ph 3 fwd 1 hv 2
+V527I SEALNT 307 ph 3 fwd 1 hv 2
+V527I SEALNT 308 ph 3 fwd 1 hv 2
+V527I SEALNT 309 ph 3 fwd 1 hv 2
+V527I SEALNT 310 ph 3 fwd 1 hv 2
+V527I SEALNT 311 ph 3 fwd 1 hv 2
+V527I SEALNT 312 ph 3 fwd 1 hv 2
+V527I SEALNT 313 ph 3 fwd 1 hv 2
+V527I SEALNT 314 ph 3 fwd 1 hv 2
+V527I SEALNT 315 ph 3 fwd 1 hv 2
+V527I SEALNT 316 ph 3 fwd 1 hv 2
+V527I SEALNT 317 ph 3 fwd 1 hv 2
+V527I SEALNT 318 ph 3 fwd 1 hv 2
+V527I SEALNT 319 ph 3 fwd 1 hv 2
+V527I SEALNT 320 ph 3 fwd 1 hv 2
+V527I SEALNT 321 ph 3 fwd 1 hv 2
+V527I SEALNT 322 ph 3 fwd 1 hv 2
+V527I SEALNT 323 ph 3 fwd 1 hv 2
+V527I SEALNT 324 ph 3 fwd 1 hv 2
+V527I SEALNT 325 ph 3 fwd 1 hv 2
+V527I SEALNT 326 ph 3 fwd 1 hv 2
+V527I SEALNT 327 ph 3 fwd 1 hv 2
+V527I SEALNT 328 ph 3 fwd 1 hv 2
+V527I SEALNT 329 ph 3 fwd 1 hv 2
+V527I SEALNT 330 ph 3 fwd 1 hv 2
+V527I SEALNT 331 ph 3 fwd 1 hv 2
+V527I SEALNT 332 ph 3 fwd 1 hv 2
+V527I SEALNT 333 ph 3 fwd 1 hv 2
+V527I SEALNT 334 ph 3 fwd 1 hv 2
+V527I SEALNT 335 ph 3 fwd 1 hv 2
+V527I SEALNT 336 ph 3 fwd 1 hv 2
+V527I SEALNT 337 ph 3 fwd 1 hv 2
+V527I SEALNT 338 ph 3 fwd 1 hv 2
+V527I SEALNT 339 ph 3 fwd 1 hv 2
+V527I SEALNT 340 ph 3 fwd 1 hv 2
+V527I SEALNT 341 ph 3 fwd 1 hv 2
+V527I SEALNT 342 ph 3 fwd 1 hv 2
+V527I SEALNT 343 ph 3 fwd 1 hv 2
+V527I SEALNT 344 ph 3 fwd 1 hv 2
+V527I SEALNT 345 ph 3 fwd 1 hv 2
+V527I SEALNT 346 ph 3 fwd 1 hv 2
+V527I SEALNT 347 ph 3 fwd 1 hv 2
+V527I SEALNT 348 ph 3 fwd 1 hv 2
+V527I SEALNT 349 ph 3 fwd 1 hv 2
+V527I SEALNT 350 ph 3 fwd 1 hv 2
+V527I SEALNT 351 ph 3 fwd 1 hv 2
+V527I SEALNT 352 ph 3 fwd 1 hv 2
+V527I SEALNT 353 ph 3 fwd 1 hv 2
+V527I SEALNT 354 ph 3 fwd 1 hv 2
+V527I SEALNT 355 ph 3 fwd 1 hv 2
+V527I SEALNT 356 ph 3 fwd 1 hv 2
+V527I SEALNT 357 ph 3 fwd 1 hv 2
+V527I SEALNT 358 ph 3 fwd 1 hv 2
+V527I SEALNT 359 ph 3 fwd 1 hv 2
+V527I SEALNT 360 ph 3 fwd 1 hv 2
+V527I SEALNT 361 ph 3 fwd 1 hv 2
+V527I SEALNT 362 ph 3 fwd 1 hv 2
+V527I SEALNT 363 ph 3 fwd 1 hv 2
+V527I SEALNT 364 ph 3 fwd 1 hv 2
+V527I SEALNT 365 ph 3 fwd 1 hv 2
+V527I SEALNT 366 ph 3 fwd 1 hv 2
+V527I SEALNT 367 ph 3 fwd 1 hv 2
+V527I SEALNT 368 ph 3 fwd 1 hv 2
+V527I SEALNT 369 ph 3 fwd 1 hv 2
+V527I SEALNT 370 ph 3 fwd 1 hv 2
+V527I SEALNT 371 ph 3 fwd 1 hv 2
+V527I SEALNT 372 ph 3 fwd 1 hv 2
+V527I SEALNT 373 ph 3 fwd 1 hv 2
+V527I SEALNT 374 ph 3 fwd 1 hv 2
+V527I SEALNT 375 ph 3 fwd 1 hv 2
+V527I SEALNT 376 ph 3 fwd 1 hv 2
+V527I SEALNT 377 ph 3 fwd 1 hv 2
+V527I SEALNT 378 ph 3 fwd 1 hv 2
+V527I SEALNT 379 ph 3 fwd 1 hv 2
+V527I SEALNT 380 ph 3 fwd 1 hv 2
+V527I SEALNT 381 ph 3 fwd 1 hv 2
+V527I SEALNT 382 ph 3 fwd 1 hv 2
+V527I SEALNT 383 ph 3 fwd 1 hv 2
+V527I SEALNT 384 ph 3 fwd 1 hv 2
+V527I SEALNT 385 ph 3 fwd 1 hv 2
+V527I SEALNT 386 ph 3 fwd 1 hv 2
+V527I SEALNT 387 ph 3 fwd 1 hv 2
+V527I SEALNT 388 ph 3 fwd 1 hv 2
+V527I SEALNT 389 ph 3 fwd 1 hv 2
+V527I SEALNT 390 ph 3 fwd 1 hv 2
+V527I SEALNT 391 ph 3 fwd 1 hv 2
+V527I SEALNT 392 ph 3 fwd 1 hv 2
+V527I SEALNT 393 ph 3 fwd 1 hv 2
+V527I SEALNT 394 ph 3 fwd 1 hv 2
+V527I SEALNT 395 ph 3 fwd 1 hv 2
+V527I SEALNT 396 ph 3 fwd 1 hv 2
+V527I SEALNT 397 ph 3 fwd 1 hv 2
+V527I SEALNT 398 ph 3 fwd 1 hv 2
+V527I SEALNT 399 ph 3 fwd 1 hv 2
+V527I SEALNT 400 ph 3 fwd 1 hv 2
+V527I SEALNT 401 ph 3 fwd 1 hv 2
+V527I SEALNT 402 ph 3 fwd 1 hv 2
+V527I SEALNT 403 ph 3 fwd 1 hv 2
+V527I SEALNT 404 ph 3 fwd 1 hv 2
+V527I SEALNT 405 ph 3 fwd 1 hv 2
+V527I SEALNT 406 ph 3 fwd 1 hv 2
+V527I SEALNT 407 ph 3 fwd 1 hv 2
+V527I SEALNT 408 ph 3 fwd 1 hv 2
+V527I SEALNT 409 ph 3 fwd 1 hv 2
+V527I SEALNT 410 ph 3 fwd 1 hv 2
+V527I SEALNT 411 ph 3 fwd 1 hv 2
+V527I SEALNT 412 ph 3 fwd 1 hv 2
+V527I SEALNT 413 ph 3 fwd 1 hv 2
+V527I SEALNT 414 ph 3 fwd 1 hv 2
+V527I SEALNT 415 ph 3 fwd 1 hv 2
+V527I SEALNT 416 ph 3 fwd 1 hv 2
+V527I SEALNT 417 ph 3 fwd 1 hv 2
+V527I SEALNT 418 ph 3 fwd 1 hv 2
+V527I SEALNT 419 ph 3 fwd 1 hv 2
+V527I SEALNT 420 ph 3 fwd 1 hv 2
+V527I SEALNT 421 ph 3 fwd 1 hv 2
+V527I SEALNT 422 ph 3 fwd 1 hv 2
+V527I SEALNT 423 ph 3 fwd 1 hv 2
+V527I SEALNT 424 ph 3 fwd 1 hv 2
+V527I SEALNT 425 ph 3 fwd 1 hv 2
+V527I SEALNT 426 ph 3 fwd 1 hv 2
+V527I SEALNT 427 ph 3 fwd 1 hv 2
+V527I SEALNT 428 ph 3 fwd 1 hv 2
+V527I SEALNT 429 ph 3 fwd 1 hv 2
+V527I SEALNT 430 ph 3 fwd 1 hv 2
+V527I SEALNT 431 ph 3 fwd 1 hv 2
+V527I SEALNT 432 ph 3 fwd 1 hv 2
+V527I SEALNT 433 ph 3 fwd 1 hv 2
+V527I SEALNT 434 ph 3 fwd 1 hv 2
+V527I SEALNT 435 ph 3 fwd 1 hv 2
+V527I SEALNT 436 ph 3 fwd 1 hv 2

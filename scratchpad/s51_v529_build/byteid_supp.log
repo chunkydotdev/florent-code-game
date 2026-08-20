@@ -1,0 +1,22 @@
+map             seed seat   eq_527 vs parent eq_u527 vs eq_527
+antler        527919    A   DIFFERS        IDENTICAL     
+antler        529820    A   DIFFERS        IDENTICAL     
+antler        527919    B   identical      IDENTICAL     
+antler        529820    B   identical      IDENTICAL     
+fjordgate     527919    A   identical      IDENTICAL     
+fjordgate     529820    A   identical      IDENTICAL     
+fjordgate     527919    B   identical      IDENTICAL     
+fjordgate     529820    B   identical      IDENTICAL     
+archipelago   527919    A   identical      IDENTICAL     
+archipelago   529820    A   identical      IDENTICAL     
+archipelago   527919    B   identical      IDENTICAL     
+archipelago   529820    B   identical      IDENTICAL     
+frostgate     527919    A   DIFFERS        IDENTICAL     
+frostgate     529820    A   DIFFERS        IDENTICAL     
+frostgate     527919    B   identical      IDENTICAL     
+frostgate     529820    B   identical      IDENTICAL     
+
+S1  cells where the v527 side separates from the parent: 4/16 [('antler', 'A', 527919), ('antler', 'A', 529820), ('frostgate', 'A', 527919), ('frostgate', 'A', 529820)]
+S2  on those cells, eq_u527 == eq_527 on 4, differs on 0
+TRACEBACKS: 0
+RESULT: PASS

@@ -1,0 +1,98 @@
+=== A1   eq_off vs eq_parent -- must be IDENTICAL ===
+  atoll          seatA  IDENTICAL
+  atoll          seatB  IDENTICAL
+  drakkarfjord   seatA  IDENTICAL
+  drakkarfjord   seatB  IDENTICAL
+  glacierkeep    seatA  IDENTICAL
+  glacierkeep    seatB  IDENTICAL
+  nordkap        seatA  IDENTICAL
+  nordkap        seatB  IDENTICAL
+  yulerune       seatA  IDENTICAL
+  yulerune       seatB  IDENTICAL
+  valkyrie       seatA  IDENTICAL
+  valkyrie       seatB  IDENTICAL
+  ragnarok       seatA  IDENTICAL
+  ragnarok       seatB  IDENTICAL
+  midgard        seatA  IDENTICAL
+  midgard        seatB  IDENTICAL
+  -> 16/16 IDENTICAL   PASS
+
+=== A2   eq_v529 vs eq_parent -- must be DIFFER ===
+  atoll          seatA  DIFFERS
+  atoll          seatB  IDENTICAL
+  drakkarfjord   seatA  DIFFERS
+  drakkarfjord   seatB  DIFFERS
+  glacierkeep    seatA  DIFFERS
+  glacierkeep    seatB  DIFFERS
+  nordkap        seatA  DIFFERS
+  nordkap        seatB  DIFFERS
+  yulerune       seatA  DIFFERS
+  yulerune       seatB  DIFFERS
+  -> 9/10 differ       PASS
+
+=== A3   eq_u527 vs eq_527 -- must be IDENTICAL ===
+  atoll          seatA  IDENTICAL
+  atoll          seatB  IDENTICAL
+  drakkarfjord   seatA  IDENTICAL
+  drakkarfjord   seatB  IDENTICAL
+  glacierkeep    seatA  IDENTICAL
+  glacierkeep    seatB  IDENTICAL
+  nordkap        seatA  IDENTICAL
+  nordkap        seatB  IDENTICAL
+  yulerune       seatA  IDENTICAL
+  yulerune       seatB  IDENTICAL
+  valkyrie       seatA  IDENTICAL
+  valkyrie       seatB  IDENTICAL
+  ragnarok       seatA  IDENTICAL
+  ragnarok       seatB  IDENTICAL
+  midgard        seatA  IDENTICAL
+  midgard        seatB  IDENTICAL
+  -> 16/16 IDENTICAL   PASS
+
+=== A3n  eq_u527 vs eq_parent -- must be DIFFER ===
+  atoll          seatA  IDENTICAL
+  atoll          seatB  IDENTICAL
+  drakkarfjord   seatA  IDENTICAL
+  drakkarfjord   seatB  IDENTICAL
+  glacierkeep    seatA  IDENTICAL
+  glacierkeep    seatB  IDENTICAL
+  nordkap        seatA  IDENTICAL
+  nordkap        seatB  IDENTICAL
+  yulerune       seatA  IDENTICAL
+  yulerune       seatB  IDENTICAL
+  -> 0/10 differ       FAIL (a control that never fires)
+
+=== A4   eq_u528 vs eq_528 -- must be IDENTICAL ===
+  atoll          seatA  IDENTICAL
+  atoll          seatB  IDENTICAL
+  drakkarfjord   seatA  IDENTICAL
+  drakkarfjord   seatB  IDENTICAL
+  glacierkeep    seatA  IDENTICAL
+  glacierkeep    seatB  IDENTICAL
+  nordkap        seatA  IDENTICAL
+  nordkap        seatB  IDENTICAL
+  yulerune       seatA  IDENTICAL
+  yulerune       seatB  IDENTICAL
+  valkyrie       seatA  IDENTICAL
+  valkyrie       seatB  IDENTICAL
+  ragnarok       seatA  IDENTICAL
+  ragnarok       seatB  IDENTICAL
+  midgard        seatA  IDENTICAL
+  midgard        seatB  IDENTICAL
+  -> 16/16 IDENTICAL   PASS
+
+=== A4n  eq_u528 vs eq_parent -- must be DIFFER ===
+  atoll          seatA  DIFFERS
+  atoll          seatB  IDENTICAL
+  drakkarfjord   seatA  DIFFERS
+  drakkarfjord   seatB  DIFFERS
+  glacierkeep    seatA  DIFFERS
+  glacierkeep    seatB  DIFFERS
+  nordkap        seatA  DIFFERS
+  nordkap        seatB  DIFFERS
+  yulerune       seatA  DIFFERS
+  yulerune       seatB  DIFFERS
+  -> 9/10 differ       PASS
+
+TRACEBACKS: 0
+RESULT: FAIL ['A3n']

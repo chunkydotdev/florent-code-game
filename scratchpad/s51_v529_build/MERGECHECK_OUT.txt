@@ -1,0 +1,20 @@
+C1a  PASS  v527 doctrine minus its block is AST-identical to the RDV-only base (its 2 text hunks are comment-only)
+C1b  PASS  v528 doctrine minus its block is AST-identical to the RDV-only base
+C2a  PASS  both appended blocks are module-level Assign statements only (19 + 14)
+C2b  PASS  the two blocks' target names are DISJOINT (overlap: [])
+C2c  PASS  neither block shadows a base name (v527 [] / v528 [])
+C3   PASS  UNION AST == base ++ v527block ++ v528block, statement-for-statement (551 vs 551 stmts)
+C4a  PASS  UNION-vs-v527 namespace delta == exactly v528's 14 names (got 14, sym-diff [])
+C4b  PASS  UNION-vs-v528 namespace delta == exactly v527's 19 names (got 19, sym-diff [])
+C5   PASS  eco.py    == v528   91cd121a  
+C5   PASS  main.py   == v527   93a85f57  
+C5   PASS  siege.py  == v527   0ee5bb2d  
+C5   PASS  raid.py   == PARENT 3b3a0456  
+
+RESULT: PASS
+--- selftest: each guard must FAIL on a mutated input ---
+  PASS  expected ['C1a'] -> got ['C1a', 'C4a']
+  PASS  expected ['C2b'] -> got ['C2b', 'C3']
+  PASS  expected ['C3'] -> got ['C3', 'C4a', 'C4b']
+  PASS  expected ['C3', 'C4b'] -> got ['C3', 'C4b']
+SELFTEST OK: C1/C2/C3/C4 each produced the FAIL verdict on a mutated input, so none of them is a constant.

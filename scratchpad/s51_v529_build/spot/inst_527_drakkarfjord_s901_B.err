@@ -1,0 +1,208 @@
+Update available: 2.3.6 -> 2.3.8. Run: pip install --upgrade fcode
+V527I SEALNT 0 ph 0 fwd 0 hv 0
+V527I SEALNT 1 ph 0 fwd 0 hv 0
+V527I SEALNT 2 ph 1 fwd 0 hv 0
+V527I SEALNT 3 ph 1 fwd 0 hv 0
+V527I SEALNT 4 ph 1 fwd 0 hv 0
+V527I SEALNT 5 ph 1 fwd 0 hv 0
+V527I SEALNT 6 ph 1 fwd 0 hv 0
+V527I SEALNT 7 ph 1 fwd 0 hv 0
+V527I SEALNT 8 ph 1 fwd 0 hv 0
+V527I SEALNT 9 ph 1 fwd 0 hv 0
+V527I SEALNT 10 ph 1 fwd 0 hv 1
+V527I SEALNT 11 ph 1 fwd 0 hv 1
+V527I SEALNT 12 ph 1 fwd 0 hv 1
+V527I SEALNT 13 ph 1 fwd 0 hv 1
+V527I SEALNT 14 ph 1 fwd 0 hv 2
+V527I SEALNT 15 ph 1 fwd 0 hv 2
+V527I SEALNT 16 ph 2 fwd 0 hv 2
+V527 SELFCUT 16 n 1
+V527I SEALNT 17 ph 2 fwd 0 hv 2
+V527I SEALNT 18 ph 2 fwd 0 hv 2
+V527I SEALNT 19 ph 2 fwd 0 hv 2
+V527I SEALNT 20 ph 2 fwd 0 hv 2
+V527I SEALNT 21 ph 2 fwd 0 hv 2
+V527I SEALNT 22 ph 2 fwd 0 hv 2
+V527I SEALNT 23 ph 2 fwd 0 hv 2
+V527I SEALNT 24 ph 2 fwd 0 hv 2
+V527I SEALNT 25 ph 2 fwd 0 hv 2
+V527I SEALNT 26 ph 2 fwd 0 hv 2
+V527I SEALNT 27 ph 2 fwd 0 hv 2
+V527I SEALNT 28 ph 2 fwd 0 hv 2
+V527I SEALNT 29 ph 2 fwd 0 hv 2
+V527I SEALNT 30 ph 2 fwd 0 hv 2
+V527I SEALNT 31 ph 2 fwd 0 hv 2
+V527 BUNKER HOLD 31 why collar blk gate
+V527I SEALNT 32 ph 2 fwd 0 hv 2
+V527 BUNKER HOLD 32 why collar blk gate
+V527 BUNKER HOLD 32 why collar blk gate
+V527I SEALNT 33 ph 3 fwd 0 hv 2
+V527 PSURV ARM 33 ph 3 repl 0 cap 4
+V527 BUNKER HOLD 33 why collar blk gate
+V527I SEALNT 34 ph 3 fwd 0 hv 2
+V527 BUNKER HOLD 34 why collar blk gate
+V527I SEALNT 35 ph 3 fwd 0 hv 2
+V527 BUNKER HOLD 35 why collar blk gate
+V527 BUNKER HOLD 35 why collar blk gate
+V527I SEALNT 36 ph 3 fwd 0 hv 2
+V527 BUNKER HOLD 36 why collar blk gate
+V527I SEALNT 37 ph 3 fwd 0 hv 2
+V527 BUNKER HOLD 37 why collar blk gate
+V527I SEALNT 38 ph 3 fwd 0 hv 2
+V527 BUNKER HOLD 38 why collar blk gate
+V527 BUNKER HOLD 38 why collar blk gate
+V527I SEALNT 39 ph 3 fwd 0 hv 2
+V527 BUNKER HOLD 39 why collar blk gate
+V527I SEALNT 40 ph 2 fwd 0 hv 2
+V527 BUNKER HOLD 40 why collar blk gate
+V527 BUNKER HOLD 40 why collar blk gate
+V527I SEALNT 41 ph 3 fwd 0 hv 2
+V527I SEALNT 42 ph 3 fwd 1 hv 2
+V527 BUNKER HOLD 42 why collar blk gate
+V527 BUNKER HOLD 42 why collar blk gate
+V527I SEALNT 43 ph 3 fwd 1 hv 2
+V527 BUNKER HOLD 43 why collar blk gate
+V527 BUNKER HOLD 43 why collar blk gate
+V527I SEALNT 44 ph 4 fwd 1 hv 2
+V527 BUNKER HOLD 44 why collar blk gate
+V527 BUNKER HOLD 44 why collar blk gate
+V527I SEALNT 45 ph 4 fwd 1 hv 2
+V527 BUNKER HOLD 45 why collar blk gate
+V527 BUNKER HOLD 45 why collar blk gate
+V527I SEALNT 46 ph 4 fwd 1 hv 2
+V527 BUNKER HOLD 46 why collar blk gate
+V527 BUNKER HOLD 46 why collar blk gate
+V527I SEALNT 47 ph 4 fwd 1 hv 2
+V527 BUNKER HOLD 47 why collar blk gate
+V527 BUNKER HOLD 47 why trapped blk gate
+V527I SEALNT 48 ph 4 fwd 1 hv 2
+V527 BUNKER HOLD 48 why collar blk gate
+V527 BUNKER HOLD 48 why trapped blk gate
+V527I SEALNT 49 ph 4 fwd 1 hv 2
+V527 BUNKER HOLD 49 why trapped blk gate
+V527I SEALNT 50 ph 4 fwd 1 hv 2
+V527 BUNKER HOLD 50 why trapped blk gate
+V527I SEALNT 51 ph 4 fwd 1 hv 2
+V527 BUNKER HOLD 51 why trapped blk gate
+V527I SEALNT 52 ph 4 fwd 1 hv 2
+V527 BUNKER HOLD 52 why collar blk gate
+V527I SEALNT 53 ph 4 fwd 1 hv 2
+V527 BUNKER HOLD 53 why trapped blk gate
+V527I SEALNT 54 ph 4 fwd 1 hv 2
+V527 BUNKER HOLD 54 why collar blk gate
+V527I SEALNT 55 ph 4 fwd 1 hv 2
+V527 BUNKER HOLD 55 why trapped blk gate
+V527I SEALNT 56 ph 4 fwd 1 hv 2
+V527 BUNKER HOLD 56 why collar blk gate
+V527I SEALNT 57 ph 4 fwd 1 hv 2
+V527 BUNKER HOLD 57 why trapped blk gate
+V527I SEALNT 58 ph 4 fwd 1 hv 2
+V527 BUNKER HOLD 58 why collar blk gate
+V527I SEALNT 59 ph 4 fwd 1 hv 2
+V527 BUNKER HOLD 59 why trapped blk gate
+V527I SEALNT 60 ph 4 fwd 1 hv 2
+V527 BUNKER HOLD 60 why collar blk gate
+V527I SEALNT 61 ph 4 fwd 1 hv 2
+V527 BUNKER HOLD 61 why trapped blk gate
+V527I SEALNT 62 ph 4 fwd 1 hv 2
+V527 BUNKER HOLD 62 why collar blk gate
+V527I SEALNT 63 ph 4 fwd 1 hv 2
+V527 BUNKER HOLD 63 why trapped blk gate
+V527I SEALNT 64 ph 4 fwd 1 hv 2
+V527 BUNKER HOLD 64 why collar blk gate
+V527I SEALNT 65 ph 4 fwd 1 hv 2
+V527 BUNKER HOLD 65 why trapped blk gate
+V527I SEALNT 66 ph 4 fwd 1 hv 2
+V527 BUNKER HOLD 66 why collar blk gate
+V527I SEALNT 67 ph 4 fwd 1 hv 2
+V527 BUNKER HOLD 67 why collar blk gate
+V527I SEALNT 68 ph 4 fwd 1 hv 2
+V527I SEALNT 69 ph 4 fwd 1 hv 2
+V527I SEALNT 70 ph 4 fwd 1 hv 2
+V527I SEALNT 71 ph 4 fwd 1 hv 2
+V527 BUNKER HOLD 71 why collar blk gate
+V527I SEALNT 72 ph 4 fwd 1 hv 2
+V527 BUNKER HOLD 72 why collar blk gate
+V527I SEALNT 73 ph 4 fwd 1 hv 2
+V527 BUNKER HOLD 73 why collar blk gate
+V527I SEALNT 74 ph 4 fwd 1 hv 2
+V527 BUNKER HOLD 74 why collar blk gate
+V527I SEALNT 75 ph 4 fwd 1 hv 2
+V527 BUNKER HOLD 75 why collar blk gate
+V527I SEALNT 76 ph 4 fwd 1 hv 2
+V527I SEALNT 77 ph 4 fwd 1 hv 2
+V527I SEALNT 78 ph 4 fwd 1 hv 2
+V527I SEALNT 79 ph 4 fwd 1 hv 2
+V527I SEALNT 80 ph 4 fwd 1 hv 2
+V527 BUNKER HOLD 80 why collar blk gate
+V527I SEALNT 81 ph 4 fwd 1 hv 2
+V527 BUNKER HOLD 81 why collar blk gate
+V527I SEALNT 82 ph 4 fwd 1 hv 2
+V527 BUNKER HOLD 82 why collar blk gate
+V527I SEALNT 83 ph 4 fwd 1 hv 2
+V527I SEALNT 84 ph 4 fwd 1 hv 2
+V527 BUNKER HOLD 84 why collar blk gate
+V527I SEALNT 85 ph 4 fwd 1 hv 2
+V527 BUNKER HOLD 85 why collar blk gate
+V527I SEALNT 86 ph 4 fwd 1 hv 2
+V527 BUNKER HOLD 86 why collar blk gate
+V527I SEALNT 87 ph 4 fwd 1 hv 2
+V527 BUNKER HOLD 87 why collar blk gate
+V527I SEALNT 88 ph 4 fwd 1 hv 2
+V527I SEALNT 89 ph 4 fwd 1 hv 2
+V527 BUNKER HOLD 89 why collar blk gate
+V527I SEALNT 90 ph 4 fwd 1 hv 2
+V527I SEALNT 91 ph 4 fwd 1 hv 2
+V527 BUNKER HOLD 91 why collar blk gate
+V527I SEALNT 92 ph 4 fwd 1 hv 2
+V527 BUNKER HOLD 92 why collar blk gate
+V527I SEALNT 93 ph 4 fwd 1 hv 2
+V527 BUNKER HOLD 93 why collar blk gate
+V527I SEALNT 94 ph 4 fwd 1 hv 2
+V527 BUNKER HOLD 94 why collar blk gate
+V527I SEALNT 95 ph 4 fwd 1 hv 2
+V527 BUNKER HOLD 95 why collar blk gate
+V527I SEALNT 96 ph 4 fwd 1 hv 2
+V527 BUNKER HOLD 96 why collar blk gate
+V527I SEALNT 97 ph 4 fwd 1 hv 2
+V527 BUNKER HOLD 97 why collar blk gate
+V527I SEALNT 98 ph 4 fwd 1 hv 2
+V527 BUNKER HOLD 98 why collar blk gate
+V527I SEALNT 99 ph 4 fwd 1 hv 2
+V527 BUNKER HOLD 99 why collar blk gate
+V527I SEALNT 100 ph 4 fwd 1 hv 2
+V527 BUNKER HOLD 100 why collar blk gate
+V527I SEALNT 101 ph 4 fwd 1 hv 2
+V527 BUNKER HOLD 101 why collar blk gate
+V527I SEALNT 102 ph 4 fwd 1 hv 2
+V527 BUNKER HOLD 102 why collar blk gate
+V527I SEALNT 103 ph 4 fwd 1 hv 2
+V527 BUNKER HOLD 103 why collar blk gate
+V527I SEALNT 104 ph 4 fwd 1 hv 2
+V527 BUNKER HOLD 104 why collar blk gate
+V527I SEALNT 105 ph 4 fwd 1 hv 2
+V527 BUNKER HOLD 105 why collar blk gate
+V527I SEALNT 106 ph 4 fwd 1 hv 2
+V527 BUNKER HOLD 106 why collar blk gate
+V527I SEALNT 107 ph 4 fwd 1 hv 2
+V527 BUNKER HOLD 107 why collar blk gate
+V527I SEALNT 108 ph 4 fwd 1 hv 2
+V527 BUNKER HOLD 108 why collar blk gate
+V527I SEALNT 109 ph 4 fwd 1 hv 2
+V527I SEALNT 110 ph 4 fwd 1 hv 2
+V527I SEALNT 111 ph 4 fwd 1 hv 2
+V527I SEALNT 112 ph 4 fwd 1 hv 2
+V527I SEALNT 113 ph 4 fwd 1 hv 2
+V527I SEALNT 114 ph 4 fwd 1 hv 2
+V527 BUNKER HOLD 114 why collar blk gate
+V527I SEALNT 115 ph 4 fwd 1 hv 2
+V527 BUNKER HOLD 115 why collar blk gate
+V527I SEALNT 116 ph 4 fwd 1 hv 2
+V527I SEALNT 117 ph 4 fwd 1 hv 2
+V527 BUNKER HOLD 117 why collar blk gate
+V527I SEALNT 118 ph 4 fwd 1 hv 2
+V527 BUNKER HOLD 118 why collar blk gate
+V527I SEALNT 119 ph 4 fwd 1 hv 2
+V527 BUNKER HOLD 119 why collar blk gate
+V527I SEALNT 120 ph 4 fwd 1 hv 2
+V527 BUNKER HOLD 120 why collar blk gate

@@ -1,0 +1,17 @@
+=== (a) MAP STANDDOWN: 0 v527 clauses on gated boards ===
+archipelago    games 6   V527 clauses reached = 0    BUNKER = 0    PSURV = 0    tb 0
+midgard        games 6   V527 clauses reached = 0    BUNKER = 0    PSURV = 0    tb 0
+
+=== (b) SUB-FLAG STANDDOWN: masters ON, every sub-flag OFF == parent ===
+  atoll          seatA  IDENTICAL
+  atoll          seatB  IDENTICAL
+  drakkarfjord   seatA  IDENTICAL
+  drakkarfjord   seatB  IDENTICAL
+  glacierkeep    seatA  IDENTICAL
+  glacierkeep    seatB  IDENTICAL
+  nordkap        seatA  IDENTICAL
+  nordkap        seatB  IDENTICAL
+  yulerune       seatA  IDENTICAL
+  yulerune       seatB  IDENTICAL
+  -> 10/10 IDENTICAL
+STANDDOWN DONE 2026-08-20T05:47:14Z

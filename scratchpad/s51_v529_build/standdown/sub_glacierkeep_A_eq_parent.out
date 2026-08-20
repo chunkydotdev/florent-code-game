@@ -1,0 +1,8 @@
+Completed turn 0
+Completed turn 100
+Completed turn 200
+Completed turn 300
+Completed turn 400
+Completed turn 500
+Completed turn 600
+{"replay": "scratchpad/s51_v529_build/standdown/sub_glacierkeep_A_eq_parent.replay26", "winner": "B", "turns": 601, "win_condition": "core_destroyed", "resign_message": null, "a_titanium": 14, "a_titanium_collected": 320, "b_titanium": 11, "b_titanium_collected": 210, "a_units": 6, "a_buildings": 28, "b_units": 8, "b_buildings": 52}
