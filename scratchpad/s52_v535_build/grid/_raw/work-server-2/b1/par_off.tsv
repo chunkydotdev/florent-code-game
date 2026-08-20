@@ -1,0 +1,25 @@
+tag	map	seed	seat	ours	winner	cond	turn	tracebacks	ours_mined	opp_mined
+archipelago_s3_A	archipelago	3	A	OPP	opp_off	Core destroyed	205	0	1420	1460
+archipelago_s3_B	archipelago	3	B	OPP	opp_off	Core destroyed	282	0	1350	2060
+archipelago_s4_A	archipelago	4	A	OPP	opp_off	Core destroyed	205	0	1420	1460
+archipelago_s4_B	archipelago	4	B	OPP	opp_off	Core destroyed	282	0	1350	2060
+midgard_s3_A	midgard	3	A	US	par_off	Core destroyed	333	0	590	870
+midgard_s3_B	midgard	3	B	OPP	opp_off	Titanium collected (tiebreak)	1000	0	880	2830
+midgard_s4_A	midgard	4	A	US	par_off	Core destroyed	333	0	590	870
+midgard_s4_B	midgard	4	B	OPP	opp_off	Titanium collected (tiebreak)	1000	0	870	3000
+nordkap_s3_A	nordkap	3	A	US	par_off	Core destroyed	224	0	680	140
+nordkap_s3_B	nordkap	3	B	OPP	opp_off	Core destroyed	139	0	240	730
+nordkap_s4_A	nordkap	4	A	US	par_off	Core destroyed	224	0	680	140
+nordkap_s4_B	nordkap	4	B	OPP	opp_off	Core destroyed	139	0	240	730
+drakkarfjord_s3_A	drakkarfjord	3	A	US	par_off	Core destroyed	89	0	340	0
+drakkarfjord_s3_B	drakkarfjord	3	B	US	par_off	Core destroyed	599	0	1500	0
+drakkarfjord_s4_A	drakkarfjord	4	A	US	par_off	Core destroyed	89	0	340	0
+drakkarfjord_s4_B	drakkarfjord	4	B	US	par_off	Core destroyed	599	0	1500	0
+glacierkeep_s3_A	glacierkeep	3	A	US	par_off	Core destroyed	99	0	180	0
+glacierkeep_s3_B	glacierkeep	3	B	US	par_off	Titanium collected (tiebreak)	1000	0	220	0
+glacierkeep_s4_A	glacierkeep	4	A	US	par_off	Core destroyed	99	0	180	0
+glacierkeep_s4_B	glacierkeep	4	B	US	par_off	Titanium collected (tiebreak)	1000	0	220	0
+ragnarok_s3_A	ragnarok	3	A	OPP	opp_off	Core destroyed	333	0	810	3400
+ragnarok_s3_B	ragnarok	3	B	OPP	opp_off	Titanium collected (tiebreak)	1000	0	2590	8450
+ragnarok_s4_A	ragnarok	4	A	OPP	opp_off	Core destroyed	333	0	810	3400
+ragnarok_s4_B	ragnarok	4	B	OPP	opp_off	Titanium collected (tiebreak)	1000	0	2590	8450

@@ -1,0 +1,73 @@
+tag	map	seed	seat	ours	winner	cond	turn	tracebacks	ours_mined	opp_mined
+archipelago_s1_A	archipelago	1	A	US	v535_on	Core destroyed	242	0	2820	800
+archipelago_s1_B	archipelago	1	B	OPP	opp_off	Core destroyed	572	0	2150	4830
+archipelago_s2_A	archipelago	2	A	US	v535_on	Core destroyed	242	0	2830	800
+archipelago_s2_B	archipelago	2	B	OPP	opp_off	Core destroyed	572	0	2150	4830
+midgard_s1_A	midgard	1	A	OPP	opp_off	Core destroyed	669	0	480	740
+midgard_s1_B	midgard	1	B	OPP	opp_off	Core destroyed	239	0	700	1090
+midgard_s2_A	midgard	2	A	US	v535_on	Core destroyed	178	0	820	640
+midgard_s2_B	midgard	2	B	OPP	opp_off	Titanium collected (tiebreak)	1000	0	700	3170
+nordkap_s1_A	nordkap	1	A	US	v535_on	Core destroyed	224	0	680	140
+nordkap_s1_B	nordkap	1	B	OPP	opp_off	Core destroyed	139	0	240	730
+nordkap_s2_A	nordkap	2	A	US	v535_on	Core destroyed	224	0	680	140
+nordkap_s2_B	nordkap	2	B	OPP	opp_off	Core destroyed	139	0	240	730
+drakkarfjord_s1_A	drakkarfjord	1	A	US	v535_on	Core destroyed	89	0	340	0
+drakkarfjord_s1_B	drakkarfjord	1	B	US	v535_on	Core destroyed	599	0	1500	0
+drakkarfjord_s2_A	drakkarfjord	2	A	US	v535_on	Core destroyed	89	0	340	0
+drakkarfjord_s2_B	drakkarfjord	2	B	US	v535_on	Core destroyed	599	0	1500	0
+glacierkeep_s1_A	glacierkeep	1	A	US	v535_on	Core destroyed	99	0	180	0
+glacierkeep_s1_B	glacierkeep	1	B	US	v535_on	Titanium collected (tiebreak)	1000	0	220	0
+glacierkeep_s2_A	glacierkeep	2	A	US	v535_on	Core destroyed	99	0	180	0
+glacierkeep_s2_B	glacierkeep	2	B	US	v535_on	Titanium collected (tiebreak)	1000	0	220	0
+ragnarok_s1_A	ragnarok	1	A	OPP	opp_off	Core destroyed	333	0	810	3400
+ragnarok_s1_B	ragnarok	1	B	OPP	opp_off	Titanium collected (tiebreak)	1000	0	2590	8450
+ragnarok_s2_A	ragnarok	2	A	OPP	opp_off	Core destroyed	333	0	810	3400
+ragnarok_s2_B	ragnarok	2	B	OPP	opp_off	Titanium collected (tiebreak)	1000	0	2590	8450
+archipelago_s3_A	archipelago	3	A	US	v535_on	Core destroyed	242	0	2830	800
+archipelago_s3_B	archipelago	3	B	OPP	opp_off	Core destroyed	572	0	2150	4830
+archipelago_s4_A	archipelago	4	A	US	v535_on	Core destroyed	242	0	2820	800
+archipelago_s4_B	archipelago	4	B	OPP	opp_off	Core destroyed	572	0	2150	4830
+midgard_s3_A	midgard	3	A	OPP	opp_off	Core destroyed	669	0	480	740
+midgard_s3_B	midgard	3	B	OPP	opp_off	Titanium collected (tiebreak)	1000	0	700	3170
+midgard_s4_A	midgard	4	A	OPP	opp_off	Core destroyed	669	0	480	740
+midgard_s4_B	midgard	4	B	OPP	opp_off	Titanium collected (tiebreak)	1000	0	700	3170
+nordkap_s3_A	nordkap	3	A	US	v535_on	Core destroyed	224	0	680	140
+nordkap_s3_B	nordkap	3	B	OPP	opp_off	Core destroyed	139	0	240	730
+nordkap_s4_A	nordkap	4	A	US	v535_on	Core destroyed	224	0	680	140
+nordkap_s4_B	nordkap	4	B	OPP	opp_off	Core destroyed	139	0	240	730
+drakkarfjord_s3_A	drakkarfjord	3	A	US	v535_on	Core destroyed	89	0	340	0
+drakkarfjord_s3_B	drakkarfjord	3	B	US	v535_on	Core destroyed	599	0	1500	0
+drakkarfjord_s4_A	drakkarfjord	4	A	US	v535_on	Core destroyed	89	0	340	0
+drakkarfjord_s4_B	drakkarfjord	4	B	US	v535_on	Core destroyed	599	0	1500	0
+glacierkeep_s3_A	glacierkeep	3	A	US	v535_on	Core destroyed	99	0	180	0
+glacierkeep_s3_B	glacierkeep	3	B	US	v535_on	Titanium collected (tiebreak)	1000	0	220	0
+glacierkeep_s4_A	glacierkeep	4	A	US	v535_on	Core destroyed	99	0	180	0
+glacierkeep_s4_B	glacierkeep	4	B	US	v535_on	Titanium collected (tiebreak)	1000	0	220	0
+ragnarok_s3_A	ragnarok	3	A	OPP	opp_off	Core destroyed	333	0	810	3400
+ragnarok_s3_B	ragnarok	3	B	OPP	opp_off	Titanium collected (tiebreak)	1000	0	2590	8450
+ragnarok_s4_A	ragnarok	4	A	OPP	opp_off	Core destroyed	333	0	810	3400
+ragnarok_s4_B	ragnarok	4	B	OPP	opp_off	Titanium collected (tiebreak)	1000	0	2590	8450
+archipelago_s5_A	archipelago	5	A	US	v535_on	Core destroyed	242	0	2830	800
+archipelago_s5_B	archipelago	5	B	OPP	opp_off	Core destroyed	572	0	2150	4830
+archipelago_s6_A	archipelago	6	A	US	v535_on	Core destroyed	242	0	2830	800
+archipelago_s6_B	archipelago	6	B	OPP	opp_off	Core destroyed	572	0	2150	4830
+midgard_s5_A	midgard	5	A	US	v535_on	Core destroyed	178	0	820	640
+midgard_s5_B	midgard	5	B	OPP	opp_off	Core destroyed	239	0	700	1090
+midgard_s6_A	midgard	6	A	US	v535_on	Core destroyed	178	0	820	640
+midgard_s6_B	midgard	6	B	OPP	opp_off	Titanium collected (tiebreak)	1000	0	700	3170
+nordkap_s5_A	nordkap	5	A	US	v535_on	Core destroyed	224	0	680	140
+nordkap_s5_B	nordkap	5	B	OPP	opp_off	Core destroyed	139	0	240	730
+nordkap_s6_A	nordkap	6	A	US	v535_on	Core destroyed	224	0	680	140
+nordkap_s6_B	nordkap	6	B	OPP	opp_off	Core destroyed	139	0	240	730
+drakkarfjord_s5_A	drakkarfjord	5	A	US	v535_on	Core destroyed	89	0	340	0
+drakkarfjord_s5_B	drakkarfjord	5	B	US	v535_on	Core destroyed	599	0	1500	0
+drakkarfjord_s6_A	drakkarfjord	6	A	US	v535_on	Core destroyed	89	0	340	0
+drakkarfjord_s6_B	drakkarfjord	6	B	US	v535_on	Core destroyed	599	0	1500	0
+glacierkeep_s5_A	glacierkeep	5	A	US	v535_on	Core destroyed	99	0	180	0
+glacierkeep_s5_B	glacierkeep	5	B	US	v535_on	Titanium collected (tiebreak)	1000	0	220	0
+glacierkeep_s6_A	glacierkeep	6	A	US	v535_on	Core destroyed	99	0	180	0
+glacierkeep_s6_B	glacierkeep	6	B	US	v535_on	Titanium collected (tiebreak)	1000	0	220	0
+ragnarok_s5_A	ragnarok	5	A	OPP	opp_off	Core destroyed	333	0	810	3400
+ragnarok_s5_B	ragnarok	5	B	OPP	opp_off	Titanium collected (tiebreak)	1000	0	2590	8450
+ragnarok_s6_A	ragnarok	6	A	OPP	opp_off	Core destroyed	333	0	810	3400
+ragnarok_s6_B	ragnarok	6	B	OPP	opp_off	Titanium collected (tiebreak)	1000	0	2590	8450

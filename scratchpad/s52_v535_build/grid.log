@@ -1,0 +1,30 @@
+2026-08-20T15:06:02Z capacity: work-server-2  arms=3 x par=2 = 6 <= our_cores 6  OK
+2026-08-20T15:06:02Z PLAN runid=bb_20260820T150602Z_10908
+2026-08-20T15:06:02Z   arms=par_off,v535_off,v535_on opp=opp_off
+2026-08-20T15:06:02Z   maps=6 seeds=6 blocks=3 par=2 -> 72 rows/arm, 216 total
+2026-08-20T15:06:02Z   work-server-2    blocks=[0, 1, 2] rows=216
+2026-08-20T15:06:02Z   out=/Users/junghard/Projects/Work/florent-code-game/scratchpad/s52_v535_build/grid
+2026-08-20T15:06:04Z host work-server-2: nproc=6 load=0.06 corefill_workers=0 fcode=2.3.6(pin ok)
+2026-08-20T15:06:12Z shipped to work-server-2:fcode-build/bb_20260820T150602Z_10908 — 3 arms, opp opp_off, 6 maps, 3 blocks
+2026-08-20T15:06:13Z LAUNCHED work-server-2 pid=1566351 root=fcode-build/bb_20260820T150602Z_10908
+2026-08-20T15:06:13Z PIDS: work-server-2=1566351
+2026-08-20T15:06:33Z   work-server-2    rows=0/216 state=STARTING driver=ALIVE
+2026-08-20T15:06:54Z   work-server-2    rows=0/216 state=RUNNING driver=ALIVE
+2026-08-20T15:07:14Z   work-server-2    rows=72/216 state=RUNNING driver=ALIVE
+2026-08-20T15:07:35Z   work-server-2    rows=72/216 state=RUNNING driver=ALIVE
+2026-08-20T15:07:55Z   work-server-2    rows=144/216 state=RUNNING driver=ALIVE
+2026-08-20T15:08:16Z   work-server-2    rows=144/216 state=RUNNING driver=ALIVE
+2026-08-20T15:08:37Z   work-server-2    rows=216/216 state=COMPLETE driver=DEAD
+2026-08-20T15:08:40Z   runid  bb_20260820T150602Z_10908
+2026-08-20T15:08:40Z   generated  2026-08-20T15:08:40Z
+2026-08-20T15:08:40Z   hosts  work-server-2
+2026-08-20T15:08:40Z   opp  opp_off
+2026-08-20T15:08:40Z   maps  archipelago,midgard,nordkap,drakkarfjord,glacierkeep,ragnarok
+2026-08-20T15:08:40Z   seeds  1-6
+2026-08-20T15:08:40Z   par  2
+2026-08-20T15:08:40Z   planned_rows_per_arm  72
+2026-08-20T15:08:40Z   arm  par_off  delivered  72  planned  72  COMPLETE
+2026-08-20T15:08:40Z   arm  v535_off  delivered  72  planned  72  COMPLETE
+2026-08-20T15:08:40Z   arm  v535_on  delivered  72  planned  72  COMPLETE
+2026-08-20T15:08:40Z cleanup work-server-2: CLEANED
+2026-08-20T15:08:40Z COMPLETE — 72 rows/arm on each of 3 arms. Read it: .venv/bin/python <build>/summarise.py <name> /Users/junghard/Projects/Work/florent-code-game/scratchpad/s52_v535_build/grid/<arm>.tsv

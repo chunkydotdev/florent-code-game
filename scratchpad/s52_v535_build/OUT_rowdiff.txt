@@ -1,0 +1,29 @@
+tape scratchpad/s52_v535_build/grid/ALL.tsv -- 216 rows, arms ['par_off', 'v535_off', 'v535_on']
+== LIVE ==
+   par_off      vs v535_off       72 shared cells,   0 rows differ
+   par_off      vs v535_on        72 shared cells,  24 rows differ
+        ('archipelago', '1', 'A')  {'ours': ('OPP', 'US'), 'turn': ('205', '242'), 'ours_mined': ('1420', '2820'), 'opp_mined': ('1460', '800')}
+        ('archipelago', '1', 'B')  {'turn': ('282', '572'), 'ours_mined': ('1350', '2150'), 'opp_mined': ('2060', '4830')}
+        ('archipelago', '2', 'A')  {'ours': ('OPP', 'US'), 'turn': ('205', '242'), 'ours_mined': ('1420', '2830'), 'opp_mined': ('1460', '800')}
+        ('archipelago', '2', 'B')  {'turn': ('282', '572'), 'ours_mined': ('1350', '2150'), 'opp_mined': ('2060', '4830')}
+        ... 20 more
+   v535_off     vs v535_on        72 shared cells,  24 rows differ
+        ('archipelago', '1', 'A')  {'ours': ('OPP', 'US'), 'turn': ('205', '242'), 'ours_mined': ('1420', '2820'), 'opp_mined': ('1460', '800')}
+        ('archipelago', '1', 'B')  {'turn': ('282', '572'), 'ours_mined': ('1350', '2150'), 'opp_mined': ('2060', '4830')}
+        ('archipelago', '2', 'A')  {'ours': ('OPP', 'US'), 'turn': ('205', '242'), 'ours_mined': ('1420', '2830'), 'opp_mined': ('1460', '800')}
+        ('archipelago', '2', 'B')  {'turn': ('282', '572'), 'ours_mined': ('1350', '2150'), 'opp_mined': ('2060', '4830')}
+        ... 20 more
+== BY MAP CLASS ==
+   par_off      vs v535_off    
+        REFUSE   24 cells,   0 differ
+        run      48 cells,   0 differ
+   par_off      vs v535_on     
+        REFUSE   24 cells,  24 differ
+        run      48 cells,   0 differ
+   v535_off     vs v535_on     
+        REFUSE   24 cells,  24 differ
+        run      48 cells,   0 differ
+== corrupting arm 'par_off' (currently 0 differences vs 'v535_off') ==
+   MUTANT turn +1        par_off vs v535_off -> 1 rows differ (expect 1)
+   MUTANT ours flipped   par_off vs v535_off -> 1 rows differ (expect 1)
+SELFTEST PASS -- the comparator produced the other verdict on a pair that reads 0 in the live tape

@@ -1,0 +1,17 @@
+[ok] mutant 1 (8x8 board, under min dim) refuses: True
+[ok] mutant 1 corners stand down: False
+[ok] mutant 2 (cores d^2=2) refuses: True
+[ok] control (30x30 open, cores far) RUNS: False
+[ok] control corners stay ON: True
+[ok] mutant 3 archipelago refuses: True
+[ok] mutant 3 archipelago corners stand down: False
+[ok] mutant 4 (arch signature, flat grid) RUNS: False
+[ok] mutant 4 corners stay ON: True
+[ok] mutant 5 gate-off: corners ON on a refusing board: True
+[ok] mutant 5 gate-off: refusal never computed (cache stays None): None
+[ok] mutant 6 corners-off: corners OFF on a running board: False
+[ok] mutant 6 corners-off: gate never consulted (cache stays None): None
+[ok] parent FS_V530_CORNERS is the whole predicate: True
+[ok] mutant 8 second call costs 0 extra tile reads: 0
+[ok] mutant 8 first call DID read tiles (so 0 above means cached): True
+SELFTEST PASS

@@ -1,0 +1,11 @@
+runid	bb_20260820T150602Z_10908
+generated	2026-08-20T15:08:40Z
+hosts	work-server-2
+opp	opp_off
+maps	archipelago,midgard,nordkap,drakkarfjord,glacierkeep,ragnarok
+seeds	1-6
+par	2
+planned_rows_per_arm	72
+arm	par_off	delivered	72	planned	72	COMPLETE
+arm	v535_off	delivered	72	planned	72	COMPLETE
+arm	v535_on	delivered	72	planned	72	COMPLETE

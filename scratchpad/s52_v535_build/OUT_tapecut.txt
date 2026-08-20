@@ -1,0 +1,18 @@
+A. OUTCOMES BY ARM x MAP CLASS  (DIAGNOSTIC -- see table B)
+arm        class       n  wins     win% kill<=300   tb
+par_off    REFUSE     24     6    25.0%        0    0
+par_off    run        48    30    62.5%       18    0
+v535_off   REFUSE     24     6    25.0%        0    0
+v535_off   run        48    30    62.5%       18    0
+v535_on    REFUSE     24     9    37.5%        9    0
+v535_on    run        48    30    62.5%       18    0
+
+B. SEED DEGENERACY -- what table A's `n` is really worth
+
+arm        class    cells     seeds  distinct effective n
+par_off    REFUSE       4        24         5  5 of 24 rows
+par_off    run          8        48         8  8 of 48 rows
+v535_off   REFUSE       4        24         5  5 of 24 rows
+v535_off   run          8        48         8  8 of 48 rows
+v535_on    REFUSE       4        24         7  7 of 24 rows
+v535_on    run          8        48         8  8 of 48 rows

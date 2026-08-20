@@ -1,0 +1,9 @@
+[ok] loader: parent (_v534maptrust) has no FS_V535_CORNER_GATE
+[ok] loader: child (_v535cornergate) FS_V535_CORNER_GATE=True
+[ok] loader: main.Player importable from both trees
+[ok] FakeCt: 113 tiles at nordkap core, env round-trips
+[ok] FakeCt: corrupted fixture reads WALL (the harness can lie)
+[ok] FakeCt: off-map read raises, as the engine does
+[ok] make_player: child Player boots with v535_refuse=None
+[ok] make_player: parent Player has no _v535_corners_on (the probe can tell the trees apart)
+SELFTEST PASS

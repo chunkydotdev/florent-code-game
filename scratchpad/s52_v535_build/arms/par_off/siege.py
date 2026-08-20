@@ -483,38 +483,6 @@ class SiegeMixin:
             return self.fs_gate_ok
         if self.core is None or not (self.mw and self.mh):
             return False            # not cached: ask again once we know
-        E = self._fs_enemy_anchor(ct)
-        if E is None:
-            return False
-        ok = self._fs_map_gated(self.mw, self.mh, self.core, E, ct)
-        self.fs_gate_ok = ok
-        return ok
-
-    def _fs_enemy_anchor(self, ct):
-        """The enemy core anchor this unit should gate against, or None.
-
-        ⭐ v535 EXTRACTION -- BEHAVIOUR-PRESERVING, and it exists so that the
-        v535 corner gate CALLS this resolution instead of COPYING it.  These
-        exact eight lines stood inline in `_fs_gate` and the first draft of
-        `_v535_map_refuses` duplicated them; a copy inherits none of the
-        original's verification and would need its own both-ways drive (D21d).
-        Extracting is strictly better than verifying a twin: there is now ONE
-        anchor resolution in the tree, as there is ONE `_fs_map_gated`.
-
-        Order and fallbacks are `_fs_gate`'s, unchanged: this unit's own
-        `self.enemy`, else the published `SLOT_ENEMY_CORE`, else the mirror
-        derivation from our own core.  `None` means "not resolvable yet" and
-        every caller's contract on it is the same: DO NOT CACHE A VERDICT,
-        ask again next round.
-
-        ⛔ NOT FLAG-GATED, and that is deliberate.  A flag here would make the
-        two paths differ under `FS_V535_CORNER_GATE = False`, which is exactly
-        the property flag-off exists to rule out.  Identity is proved instead
-        the way this repo proves it -- on the ENGINE, game-row for game-row
-        (see the build report's determinism grid: `v535_off` vs `_v534maptrust`,
-        0 of 72 rows differ on all eleven columns, NOISE_OFF both sides
-        INCLUDING the opponent).
-        """
         E = self.enemy
         if E is None:
             try:
@@ -523,7 +491,11 @@ class SiegeMixin:
                 E = None
         if E is None:
             E = enemy_core_for(self.mw, self.mh, self.core)
-        return E
+        if E is None:
+            return False
+        ok = self._fs_map_gated(self.mw, self.mh, self.core, E, ct)
+        self.fs_gate_ok = ok
+        return ok
 
     def _fs_map_gated(self, mw, mh, ours, E, ct=None):
         """The map gate as a PURE function of the two anchors and the board.
@@ -668,70 +640,6 @@ class SiegeMixin:
         if not LOKI_FERRY_SIEGE_ON or self.fs_off:
             return False
         return self._fs_gate(ct)
-
-    # ------------------------------------------------------------------
-    # B2. v535 -- THE REFUSAL VERDICT, PUBLISHED FOR NON-SIEGE PLANKS
-    # ------------------------------------------------------------------
-
-    def _v535_map_refuses(self, ct):
-        """True when THIS board is one the ferry-siege REFUSES.  Cached/unit.
-
-        ⭐ v535.  The home package's corner barriers (`FS_V530_CORNERS`,
-        eco.py) were designed against a SIEGE-BOARD picture and fired on every
-        map; s52's refusing decomposition measured that as the plank carrying a
-        -14.2pp deficit on refusing boards (doctrine.py's v535 block).  The fix
-        needs exactly one thing from this file: the verdict `_fs_map_gated`
-        already computes.  So this is a READER, not a second predicate --
-        `_fs_map_gated` stays the single definition of "this board refuses",
-        and any future correction to it moves the corner plank too.
-
-        ⛔ WHY NOT `_fs_gate` ITSELF, which looks like the obvious call:
-          1. `_fs_gate` returns False for `LOKI_FERRY_SIEGE_ON = False`, which
-             is the master flag being OFF -- a property of OUR BUILD, not of
-             the BOARD.  Conflating the two would silently kill the corners in
-             every `_v488beltbreak2`-equivalent arm and make the master-off
-             control mean something different from what it says.
-          2. It CACHES into `self.fs_gate_ok`.  Being called from the eco path
-             would populate that cache on a round the siege had not yet asked,
-             and `_fs_gate`'s enemy-anchor resolution falls back to a MIRROR
-             GUESS before `SLOT_ENEMY_CORE` is published -- so an early eco
-             call could freeze a siege verdict computed off the guess.  This
-             reader keeps its own cache and never touches `fs_gate_ok`.
-        `_fs_map_gated` itself writes NOTHING to `self` on any path (its v524
-        and v534 blocks both say so in as many words, and the v524 comment
-        records the live divergence found when an earlier draft did), which is
-        what makes it safe to ask from here.
-
-        ⛔ NOTHING BELOW IS RE-DERIVED.  Both halves of the verdict are CALLS:
-        the anchor comes from `_fs_enemy_anchor` (extracted from `_fs_gate`
-        for this build, so there is one resolution rather than a twin) and the
-        verdict from `_fs_map_gated`.  What is local to this method is only the
-        CACHE and the SIGN FLIP.  That was not true of the first draft, which
-        copied `_fs_gate`'s eight anchor lines inline; a copy inherits none of
-        the original's verification (D21d), so it was refactored away rather
-        than defended.
-        """
-        if self.v535_refuse is not None:
-            return self.v535_refuse
-        if self.core is None or not (self.mw and self.mh):
-            return False            # not cached: ask again once anchors exist
-        E = self._fs_enemy_anchor(ct)
-        if E is None:
-            return False
-        try:
-            ok = self._fs_map_gated(self.mw, self.mh, self.core, E, ct)
-        except Exception:
-            return False            # gate unreadable => parent behaviour
-        refuse = not ok
-        self.v535_refuse = refuse
-        if FS_V535_LOG:
-            try:
-                print("V535GATE rnd=%d id=%d refuse=%d"
-                      % (ct.get_current_round(), ct.get_id(), 1 if refuse else 0),
-                      file=sys.stderr)
-            except Exception:
-                pass
-        return refuse
 
     # ------------------------------------------------------------------
     # geometry
