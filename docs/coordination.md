@@ -71720,3 +71720,34 @@ k=5-9: Bisons v29 3-2 +0.15 · farming v19 2-3 -0.49 · I Stone v43 4-1 +7.89 ·
 ship_watch baseline laundering D1, mkarm lint, gate.py field-completeness manifest,
 fleet_dispatch G7 blindness). Per Magnus's rule these are wrap-time work — SUCCESSOR: run
 them as your wrap-fix batch or earlier on his word.
+
+# ============================================================================
+# 2026-08-20T08:46:05Z — ⭐⭐ **RESEARCH ARM s51 WRAP — PROCESS DELTAS.** Fired by the
+# BUILDER'S WRAP (standing rule: their wrap is this lane's wrap-call). **Arm retro ran
+# FIRST per charter — `docs/retro-research-s51-2026-08-20.md`; instrument v1.20 → v1.21,
+# FIRINGS FIVE.** Session 08-18 03:07Z → 08-20 08:46Z with the Magnus stand-down gap
+# (08-18 17:54 → 08-20 04:08). SEVEN opus agents, all completed, all banked, all relayed.
+# ============================================================================
+
+## PROCESS DELTAS (s51) — routed at write time
+1. **AN UNDER-POWERED CORRECTION IS WORSE THAN THE MARKED INFERENCE IT REPLACES** (Q9's second firing, the gsxWins field-improvement amendment): when correcting your own inference, state both branches with n unless the correcting cut is BETTER-powered than the original error. *(Routed: retro v1.21 changelog + here.)*
+2. **PREFER ALLOWED-FORM RULES OVER NAMED-FAILURE RULES for mechanical habits** — "never chained" failed three times; "the watcher is always the sole content of its own background call" is the surviving form. *(Routed: retro + here.)*
+3. **A PREDECESSOR-RECORD CLAIM ABOUT CURRENT STATE IS VERIFIED BEFORE IT ENTERS MY SENTENCES** (the bytes-identity instance, caught by the side lane's D21f) — verification-on-inheritance, not verification-on-challenge. *(Routed: here; candidate for the charter if it recurs.)*
+4. **THE TWO-LANE RECONCILIATION PATTERN IS VALIDATED AT FULL SIZE** (conveyor passability): corpus half and live-probe half split along charter hard limits, run in parallel from opposite directions, agreeing completely, each half catching what the other could not (my dating/walk cuts vs their controlled 6/6). The split-by-hard-limits was not friction — it was the design. *(Observation + confirmed approach; no routing owed.)*
+5. **BRIEF PREMISES ARE REFUTABLE CONTEXT, AND THE BRIEF MUST LICENSE THE REFUTATION** — both wrong premises in the gsxWins brief were refuted by the agent because the brief asked the discriminating question rather than assuming its answer. Q3c's mechanical form works when paired with a refutation-licensing question. *(Routed: retro.)*
+6. **DECODE-ONLY CAN DISCRIMINATE ENGINE HYPOTHESES** (the by-date cliff test, the walked-vs-thrown trace): before spending a probe, ask whether the archive already brackets the answer — here it refuted three of four hypotheses without running a game. *(Routed: here as method note.)*
+
+--- 2026-08-20T08:46:05Z ⭐⭐ **RESEARCH ARM s51 — STATE NOTE. LIVE SURFACES VERIFIED, NOT ASSERTED.** ---
+
+## ⛔ WHAT A SUCCESSOR MUST NOT INHERIT UNCHECKED
+1. **HOLDER at my last read (08:32 pairing): v168 (x3r0's, shipping fast — v165→166/167→168 inside 26h).** Read it off `fcode status` at boot, NEVER this note. CONTROL = whatever `PROGRAMME.md` INCUMBENT says at your boot — holder and control have diverged repeatedly this session. Rating was ~1760s, #23-area, on a −109 slide from the 1863 ATH; x3r0's slot, x3r0's call, but the slide is why the drain-cell work matters.
+2. **THE RATED TAPE IS DECODED THROUGH `8dc79d90` (08:32:59Z pairing).** My watcher is DEAD (killed at wrap, pgrep-verified). Resume with `fcode match list --json` from that id; per-match ourver labels are the only honest version column.
+3. **SEVEN STUDIES BANKED THIS SESSION** (all consumed, receipts in the tail): 0033-incremental2 · FIELD-PRIOR-two-forward-bodies · notadgato-v23 · gsxwins-v65 · RING-ENGAGEMENT-mjolnir · AUTOPSY-crater-vs-sweep · RECONCILE-conveyor-passability (+ live-probe addendum). Ledger rows all cumulative-semantics (the 0033 parser fix is in move_miner's docstring).
+4. **STANDING DRAIN CELLS at wrap: 0033 v57 (collar; #96 stocked+audited is the answer we control; Mjolnir's ring.py evict gave the cell its first wins — partial live test), HTTP418 v116 (unstudied diff 113→116), Flotte v55, gsxWins (studied — mechanism banked, #21/#22/#86 re-priced to top).** Pairing pool has shifted DOWN with the slide: TRRR (~1708) and jmc (~1710) are now in range, one study-less loss cell each at first meeting.
+5. **The builder's home package sits 2 items from clean** (their wrap: cap6-on-crater + atoll collision + non-mouth residual — successor-builder's first fire; signed queue in HANDOVER). This lane's matching duty: the belt-finish and corner-barrier planks will want their preregs' greps run against whatever the incumbent is THEN (hazard 5b's standing logic).
+6. **Queue: 79 unblocked, floor clear.** #96 carries tonight's live pricing (−55.98/5 in its cell); the re-price block (04:38 08-20) orders the offensive stock.
+
+## RESEARCH ARM STATE — VERIFIED
+* **NOTHING OF MINE IS RUNNING.** Seven agents spawned, seven completed, seven banked+relayed. Watcher killed at wrap (pgrep empty 08:46:05Z). **DIES WITH ME: NOTHING.**
+* **HARD LIMITS HELD ALL SESSION: no bot edits, no submissions/activations, ZERO matches fired, no arena/engine games (the probe half of the reconciliation was declined to the builder on exactly this line), no verdicts, no HANDOVER/PROGRAMME/tape writes.**
+* **WAKE PATHS: none of mine persist.** Daemons are the builder's surface per their HANDOVER. The morning boot's now.py + a rated decode from `8dc79d90` is the recovery path, and this note is its brief.
