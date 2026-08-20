@@ -387,7 +387,126 @@ a harvester in any of the 48 games.
 
 ---
 
-## 8. RAW — tapes, instruments, PIDs
+## 8. FAILURE REEL + MANIFEST
+
+### 8.1 FAILURE REEL — atoll grid, `v532weave` arm
+
+Selection rule (house convention, stated before looking): the **earliest
+our-core-death on each map**, ties by lowest seed then seat A, capped at 5.
+**This battery has ONE map**, so the rule degenerates to the 5 earliest
+our-core-deaths on atoll — recorded as a deviation from the convention rather
+than silently applied.
+
+`v532weave`: deaths **29 of 60 (48.3%)**, r1000 games 5.
+*(`parent` 28/60 with 3 r1000 · `v531fix` 37/60 with 7 r1000 — the arm this
+build fixes dies most.)*
+
+| map | turn | seed | seat | replay |
+|---|---|---|---|---|
+| atoll | 177 | 12 | A | `scratchpad/s52_v532_build/grid/rep/v532weave_atoll_s12_A.replay26` |
+| atoll | 187 | 23 | A | `.../grid/rep/v532weave_atoll_s23_A.replay26` |
+| atoll | 198 | 25 | A | `.../grid/rep/v532weave_atoll_s25_A.replay26` |
+| atoll | 206 | 20 | B | `.../grid/rep/v532weave_atoll_s20_B.replay26` |
+| atoll | 217 | 16 | B | `.../grid/rep/v532weave_atoll_s16_B.replay26` |
+
+Labelled extension, **not** part of the reel — the other tail, which is the one
+the kill-round bar binds on: latest-kill WINS are
+`grid/rep/v532weave_atoll_s20_A.replay26` (**r951**) and
+`grid/rep/v532weave_atoll_s23_B.replay26` (**r925**).
+
+⚠ **The reel is the LEAST informative artefact in this build and the manifest
+below is the most.** Every row above is a game the fix already improved on
+average; the defect this build exists to kill leaves no trace in a
+death-round list, because an unwired harvester loses a game slowly. **If one
+replay is worth opening it is a `v531fix` row, for contrast:**
+`grid/rep/v531fix_atoll_s12_A.replay26` is the same cell in the arm that still
+has the hole.
+
+### 8.2 MANIFEST — the 30 §1 classification games
+
+Instrument `scratchpad/s52_v532_build/probe531` (= `_v531fix` + `FS_V530_LOG` +
+the classified `MOUTH occ` line). Tapes at
+`scratchpad/s52_v532_build/probe/atoll_<seed>_<seat>.err` (stdout `.out` beside
+each), seeds **1–15 × seats A,B = 30 games**, opponent `bots/_v488beltbreak2`,
+`--tle 10`, `NOISE_ON = True`. Full extraction in
+`scratchpad/s52_v532_build/MANIFEST_S1.txt`.
+
+⛔ **REPLAYS WERE NOT RETAINED FOR THESE 30.** `probe.sh` passed no `--replay`,
+so each game's replay went to the repo-root default and was overwritten by the
+next. **Exact re-run recipe** (deterministic to the extent shown below):
+`OUT=<dir> SEEDS="<seed>" bash scratchpad/s52_v532_build/probe.sh`.
+
+**Every one of the 30 games reads identically apart from the mirrored tile:**
+
+| seat | corner tile | corner built | by seat | mouth pops it | links planned | links laid |
+|---|---|---|---|---|---|---|
+| **A** (15 games, seeds 1–15) | **(1,16)** | **r3** | 2 | **r4** | 2 | **1** |
+| **B** (15 games, seeds 1–15) | **(13,1)** | **r3** | 2 | **r4** | 2 | **1** |
+
+Verified over all 30 rows: a barrier pop is present in **30/30**, the barrier
+tile is a **logged `V530 CORNER` build in 30/30**, and `corner_rnd < occ_rnd` in
+**30/30**.
+
+⛔ **AND A CONSTANT COLUMN VALIDATES ANYTHING, SO SAY WHY THIS ONE IS NOT
+BLIND.** Every cell above being identical is a property of the **opening**, not
+of the reader: the same instrument, on the same tapes, emitted **four distinct
+classes** across the 88 pops (§1.1) and **four distinct classes** across the 52
+parent-order pops (§1.2), and it separates `dir == want` from `dir != want`
+inside the CONVEYOR class. A reader that could only ever print "BARRIER" would
+have produced neither table. The constancy is the finding — atoll's ore at
+(1,17)/(12,0) sits behind a corner on both seats, every seed.
+
+### 8.3 MANIFEST — the §7 nordkap anomaly
+
+⚠ **CORRECTION TO THE COUNT AS RELAYED: it is 5 hole-class EVENTS in 3 GAMES,
+not 5 games.** The `occ_hole` column counts events; §7 quoted it as such and
+the games behind it are enumerated here for the first time.
+
+`inst_532` (as fired), nordkap, seeds 5321–5323 × seats A,B = 6 games:
+
+| tape | rnd | seat | tile | occupier | class |
+|---|---|---|---|---|---|
+| `scratchpad/s52_v532_build/dose/inst_532/nordkap_5321_A.err` | 14 | 2 | (10,9) | **ours, SENTINEL** (dir NORTHEAST, want NORTH) | hole |
+| `.../dose/inst_532/nordkap_5322_A.err` | 28 | 2 | (10,8) | **ENEMY, BARRIER** | hole |
+| `.../dose/inst_532/nordkap_5322_A.err` | 28 | 2 | (10,9) | **ours, SENTINEL** (dir SOUTH, want NORTH) | hole |
+| `.../dose/inst_532/nordkap_5323_A.err` | 12 | 2 | (10,8) | **ours, SENTINEL** (dir SOUTHEAST, want NORTH) | hole |
+| `.../dose/inst_532/nordkap_5323_A.err` | 28 | 4 | (9,8) | **ENEMY, BARRIER** | hole |
+
+**Control arm, same 6 cells** — `inst_531off` (= `_v531fix` byte-identically),
+**1 hole event in 1 game**:
+
+| tape | rnd | seat | tile | occupier | class |
+|---|---|---|---|---|---|
+| `.../dose/inst_531off/nordkap_5323_A.err` | 25 | 4 | (13,7) | **ours, GUNNER** (dir WEST, want WEST) | hole |
+
+**Benign in both arms and therefore not part of the anomaly:** `rnd=9 seat=1
+tile=(12,18) mine=1 et=CONVEYOR dir=WEST want=WEST` appears in
+`nordkap_5321_B`, `nordkap_5322_B`, `nordkap_5323_B` of **both** arms —
+identical text, so seat 1's chain on seat B is untouched by the fix on this
+board.
+
+**What the manifest adds to §7:** the rise is carried by **seat 2 on seat-A
+games only** (3 of the 5 events, all our own SENTINEL at (10,8)/(10,9), r12–r28),
+plus 2 enemy barriers. **Seat 1 — the seat the whole plank is about — is not
+involved in a single one of them.** ⛔ **Still unexplained, and still n=3 games
+per cell.** `harv`/`shortH`/`holeH` on nordkap are 3/0/0 in **both** arms, so
+no chain that reached a harvester was affected either way.
+
+⛔ **REPLAYS WERE NOT RETAINED FOR THE DOSE EITHER** (`dose532.sh` passes no
+`--replay`). **Exact re-run recipe:**
+`.venv/bin/fcode run scratchpad/s52_v532_build/inst_532 bots/_v488beltbreak2
+maps/nordkap.map26 --seed 5322 --tle 0 --replay <path>` (swap the two bot
+arguments for a seat-B cell; `inst_531off` for the control arm).
+
+⚠ **NOT RETAINING THOSE REPLAYS IS A DEFECT OF THIS BUILD, NOT A PROPERTY OF
+THE FIXTURE.** The one class of game a marker loop most wants to open is the
+unexplained one, and it is exactly the class this build can only offer a
+re-run recipe for. **Successor: pass `--replay` in `probe.sh` and
+`dose532.sh`.**
+
+---
+
+## 9. RAW — tapes, instruments, PIDs
 
 All under `scratchpad/s52_v532_build/`:
 `probe/` 30 games of stderr (v531fix, classified `MOUTH occ`) ·
@@ -396,7 +515,8 @@ All under `scratchpad/s52_v532_build/`:
 stderr · `grid/results.tsv` 180 rows + `grid/rep/` 180 replays · `raceG.tsv`
 (routetape batch, **180/180 winner-vs-tape agree, 0 parse failures**) ·
 `BYTEID_OUT.txt` · `ASTSCAN_OUT.txt` · `READSITE_OUT.txt` · `DOSE_OUT.txt` ·
-`DOSEPANEL_OUT.txt` · `GRID_OUT.txt` · `FINDING-defect.md` (the pre-design
+`DOSEPANEL_OUT.txt` · `GRID_OUT.txt` · `MANIFEST_S1.txt` (the §8.2 extraction,
+all 30 rows) · `FINDING-defect.md` (the pre-design
 falsification, written before any code was changed) · `TREE.md5` · `PIDS`
 (DOSE 23610, GRID 31093) · `probe.sh` · `dose532.sh` · `grid_atoll.sh`.
 
@@ -427,7 +547,7 @@ per round; that is an argument, not a measurement.
 
 ---
 
-## 9. HONEST LIMITS
+## 10. HONEST LIMITS
 
 1. **NO CURRENCY READ WAS RUN.** No battery A, no battery B, no
    `DEFENCE_ADMISSION_BAR`, no `KILL_TARGET`. The only pooled win numbers here
@@ -451,6 +571,13 @@ per round; that is an argument, not a measurement.
    at n=48 and the fixture is not a battery fixture. It is the one number in
    this report that would matter to `DEFENCE_ADMISSION_BAR` and it has not been
    measured properly.
-6. **THE NORDKAP EVENT RISE (§7) IS UNEXPLAINED.**
+6. **THE NORDKAP EVENT RISE (§7) IS UNEXPLAINED**, and §8.3 enumerates the 3
+   games behind the 5 events without explaining them. Note the count
+   correction there: **5 EVENTS in 3 GAMES**, not 5 games.
+7. **THE PROBE AND DOSE REPLAYS WERE NOT RETAINED** (§8.2, §8.3) — neither
+   runner passed `--replay`, so the 30 classification games and the 3 nordkap
+   anomaly games exist only as stderr tapes plus a re-run recipe. **The one
+   class a marker loop most wants to open is the one this build cannot hand
+   over.** The atoll grid's 180 replays ARE on disk.
 7. **`_v532weave` HAS NEVER PLAYED A LIVE TEAM.** Per `CLAUDE.md` point 6, a
    local battery may prioritise a plank and may not retire a road.
