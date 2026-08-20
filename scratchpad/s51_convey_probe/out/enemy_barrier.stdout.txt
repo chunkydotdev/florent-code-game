@@ -1,0 +1,3 @@
+Completed turn 0
+Completed turn 100
+{"replay": "scratchpad/s51_convey_probe/out/enemy_barrier.replay", "winner": "B", "turns": 151, "win_condition": "titanium_stored", "resign_message": null, "a_titanium": 738, "a_titanium_collected": 0, "b_titanium": 837, "b_titanium_collected": 0, "a_units": 2, "a_buildings": 0, "b_units": 1, "b_buildings": 1}

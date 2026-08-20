@@ -1,0 +1,583 @@
+Update available: 2.3.6 -> 2.3.8. Run: pip install --upgrade fcode
+CORE r=0 spawn H id=3 at Position(x=3, y=1)
+DEFCORE r=0 spawn Hp id=4 at Position(x=4, y=6)
+OBS r=1 target=Position(x=4, y=5) builder_on_tile=None is_tile_passable=True is_tile_empty=True
+H r=1 can_build_launcher(Position(x=4, y=1))=True
+H r=1 build_launcher OK
+BUILD can_build_barrier(Position(x=4, y=5))=True
+Hp r=1 build barrier at Position(x=4, y=5) -> True
+CORE r=2 spawn T id=7 at Position(x=2, y=0)
+LNCH r=2 can_launch(pickup=Position(x=4, y=0),target=Position(x=4, y=5))=False
+OBS r=3 target=Position(x=4, y=5) builder_on_tile=None is_tile_passable=False is_tile_empty=False
+LNCH r=3 can_launch(pickup=Position(x=4, y=0),target=Position(x=4, y=5))=False
+T r=3 pos=Position(x=2, y=0) hp=40
+OBS r=4 target=Position(x=4, y=5) builder_on_tile=None is_tile_passable=False is_tile_empty=False
+LNCH r=4 can_launch(pickup=Position(x=4, y=0),target=Position(x=4, y=5))=False
+T r=4 pos=Position(x=3, y=0) hp=40
+OBS r=5 target=Position(x=4, y=5) builder_on_tile=None is_tile_passable=False is_tile_empty=False
+LNCH r=5 can_launch(pickup=Position(x=4, y=0),target=Position(x=4, y=5))=False
+LNCH r=5 LAUNCH FAIL GameError Cannot launch
+T r=5 pos=Position(x=4, y=0) hp=40
+CORE r=6 spawn W id=8 at Position(x=3, y=2)
+LNCH r=6 can_launch(pickup=Position(x=4, y=0),target=Position(x=4, y=5))=False
+T r=6 pos=Position(x=4, y=0) hp=40
+OBS r=7 target=Position(x=4, y=5) builder_on_tile=None is_tile_passable=False is_tile_empty=False
+LNCH r=7 can_launch(pickup=Position(x=4, y=0),target=Position(x=4, y=5))=False
+T r=7 pos=Position(x=4, y=0) hp=40
+OBS r=8 target=Position(x=4, y=5) builder_on_tile=None is_tile_passable=False is_tile_empty=False
+LNCH r=8 can_launch(pickup=Position(x=4, y=0),target=Position(x=4, y=5))=False
+T r=8 pos=Position(x=4, y=0) hp=40
+OBS r=9 target=Position(x=4, y=5) builder_on_tile=None is_tile_passable=False is_tile_empty=False
+LNCH r=9 can_launch(pickup=Position(x=4, y=0),target=Position(x=4, y=5))=False
+T r=9 pos=Position(x=4, y=0) hp=40
+W r=9 pos=Position(x=3, y=0) blocked toward Position(x=4, y=0) can_move=False
+OBS r=10 target=Position(x=4, y=5) builder_on_tile=None is_tile_passable=False is_tile_empty=False
+LNCH r=10 can_launch(pickup=Position(x=4, y=0),target=Position(x=4, y=5))=False
+T r=10 pos=Position(x=4, y=0) hp=40
+W r=10 pos=Position(x=3, y=0) blocked toward Position(x=4, y=0) can_move=False
+OBS r=11 target=Position(x=4, y=5) builder_on_tile=None is_tile_passable=False is_tile_empty=False
+LNCH r=11 can_launch(pickup=Position(x=4, y=0),target=Position(x=4, y=5))=False
+T r=11 pos=Position(x=4, y=0) hp=40
+W r=11 pos=Position(x=3, y=0) blocked toward Position(x=4, y=0) can_move=False
+OBS r=12 target=Position(x=4, y=5) builder_on_tile=None is_tile_passable=False is_tile_empty=False
+LNCH r=12 can_launch(pickup=Position(x=4, y=0),target=Position(x=4, y=5))=False
+T r=12 pos=Position(x=4, y=0) hp=40
+W r=12 pos=Position(x=3, y=0) blocked toward Position(x=4, y=0) can_move=False
+OBS r=13 target=Position(x=4, y=5) builder_on_tile=None is_tile_passable=False is_tile_empty=False
+LNCH r=13 can_launch(pickup=Position(x=4, y=0),target=Position(x=4, y=5))=False
+T r=13 pos=Position(x=4, y=0) hp=40
+W r=13 pos=Position(x=3, y=0) blocked toward Position(x=4, y=0) can_move=False
+OBS r=14 target=Position(x=4, y=5) builder_on_tile=None is_tile_passable=False is_tile_empty=False
+LNCH r=14 can_launch(pickup=Position(x=4, y=0),target=Position(x=4, y=5))=False
+T r=14 pos=Position(x=4, y=0) hp=40
+W r=14 pos=Position(x=3, y=0) blocked toward Position(x=4, y=0) can_move=False
+OBS r=15 target=Position(x=4, y=5) builder_on_tile=None is_tile_passable=False is_tile_empty=False
+LNCH r=15 can_launch(pickup=Position(x=4, y=0),target=Position(x=4, y=5))=False
+T r=15 pos=Position(x=4, y=0) hp=40
+W r=15 pos=Position(x=3, y=0) blocked toward Position(x=4, y=0) can_move=False
+OBS r=16 target=Position(x=4, y=5) builder_on_tile=None is_tile_passable=False is_tile_empty=False
+LNCH r=16 can_launch(pickup=Position(x=4, y=0),target=Position(x=4, y=5))=False
+T r=16 pos=Position(x=4, y=0) hp=40
+W r=16 pos=Position(x=3, y=0) blocked toward Position(x=4, y=0) can_move=False
+OBS r=17 target=Position(x=4, y=5) builder_on_tile=None is_tile_passable=False is_tile_empty=False
+LNCH r=17 can_launch(pickup=Position(x=4, y=0),target=Position(x=4, y=5))=False
+T r=17 pos=Position(x=4, y=0) hp=40
+W r=17 pos=Position(x=3, y=0) blocked toward Position(x=4, y=0) can_move=False
+OBS r=18 target=Position(x=4, y=5) builder_on_tile=None is_tile_passable=False is_tile_empty=False
+LNCH r=18 can_launch(pickup=Position(x=4, y=0),target=Position(x=4, y=5))=False
+T r=18 pos=Position(x=4, y=0) hp=40
+W r=18 pos=Position(x=3, y=0) blocked toward Position(x=4, y=0) can_move=False
+OBS r=19 target=Position(x=4, y=5) builder_on_tile=None is_tile_passable=False is_tile_empty=False
+LNCH r=19 can_launch(pickup=Position(x=4, y=0),target=Position(x=4, y=5))=False
+T r=19 pos=Position(x=4, y=0) hp=40
+W r=19 pos=Position(x=3, y=0) blocked toward Position(x=4, y=0) can_move=False
+OBS r=20 target=Position(x=4, y=5) builder_on_tile=None is_tile_passable=False is_tile_empty=False
+LNCH r=20 can_launch(pickup=Position(x=4, y=0),target=Position(x=4, y=5))=False
+T r=20 pos=Position(x=4, y=0) hp=40
+W r=20 pos=Position(x=3, y=0) blocked toward Position(x=4, y=0) can_move=False
+OBS r=21 target=Position(x=4, y=5) builder_on_tile=None is_tile_passable=False is_tile_empty=False
+LNCH r=21 can_launch(pickup=Position(x=4, y=0),target=Position(x=4, y=5))=False
+T r=21 pos=Position(x=4, y=0) hp=40
+W r=21 pos=Position(x=3, y=0) blocked toward Position(x=4, y=0) can_move=False
+OBS r=22 target=Position(x=4, y=5) builder_on_tile=None is_tile_passable=False is_tile_empty=False
+LNCH r=22 can_launch(pickup=Position(x=4, y=0),target=Position(x=4, y=5))=False
+T r=22 pos=Position(x=4, y=0) hp=40
+W r=22 pos=Position(x=3, y=0) blocked toward Position(x=4, y=0) can_move=False
+OBS r=23 target=Position(x=4, y=5) builder_on_tile=None is_tile_passable=False is_tile_empty=False
+LNCH r=23 can_launch(pickup=Position(x=4, y=0),target=Position(x=4, y=5))=False
+T r=23 pos=Position(x=4, y=0) hp=40
+W r=23 pos=Position(x=3, y=0) blocked toward Position(x=4, y=0) can_move=False
+OBS r=24 target=Position(x=4, y=5) builder_on_tile=None is_tile_passable=False is_tile_empty=False
+LNCH r=24 can_launch(pickup=Position(x=4, y=0),target=Position(x=4, y=5))=False
+T r=24 pos=Position(x=4, y=0) hp=40
+W r=24 pos=Position(x=3, y=0) blocked toward Position(x=4, y=0) can_move=False
+OBS r=25 target=Position(x=4, y=5) builder_on_tile=None is_tile_passable=False is_tile_empty=False
+LNCH r=25 can_launch(pickup=Position(x=4, y=0),target=Position(x=4, y=5))=False
+T r=25 pos=Position(x=4, y=0) hp=40
+W r=25 pos=Position(x=3, y=0) blocked toward Position(x=4, y=0) can_move=False
+OBS r=26 target=Position(x=4, y=5) builder_on_tile=None is_tile_passable=False is_tile_empty=False
+LNCH r=26 can_launch(pickup=Position(x=4, y=0),target=Position(x=4, y=5))=False
+T r=26 pos=Position(x=4, y=0) hp=40
+W r=26 pos=Position(x=3, y=0) blocked toward Position(x=4, y=0) can_move=False
+OBS r=27 target=Position(x=4, y=5) builder_on_tile=None is_tile_passable=False is_tile_empty=False
+LNCH r=27 can_launch(pickup=Position(x=4, y=0),target=Position(x=4, y=5))=False
+T r=27 pos=Position(x=4, y=0) hp=40
+W r=27 pos=Position(x=3, y=0) blocked toward Position(x=4, y=0) can_move=False
+OBS r=28 target=Position(x=4, y=5) builder_on_tile=None is_tile_passable=False is_tile_empty=False
+LNCH r=28 can_launch(pickup=Position(x=4, y=0),target=Position(x=4, y=5))=False
+T r=28 pos=Position(x=4, y=0) hp=40
+W r=28 pos=Position(x=3, y=0) blocked toward Position(x=4, y=0) can_move=False
+OBS r=29 target=Position(x=4, y=5) builder_on_tile=None is_tile_passable=False is_tile_empty=False
+LNCH r=29 can_launch(pickup=Position(x=4, y=0),target=Position(x=4, y=5))=False
+T r=29 pos=Position(x=4, y=0) hp=40
+W r=29 pos=Position(x=3, y=0) blocked toward Position(x=4, y=0) can_move=False
+OBS r=30 target=Position(x=4, y=5) builder_on_tile=None is_tile_passable=False is_tile_empty=False
+LNCH r=30 can_launch(pickup=Position(x=4, y=0),target=Position(x=4, y=5))=False
+T r=30 pos=Position(x=4, y=0) hp=40
+W r=30 pos=Position(x=3, y=0) blocked toward Position(x=4, y=0) can_move=False
+OBS r=31 target=Position(x=4, y=5) builder_on_tile=None is_tile_passable=False is_tile_empty=False
+LNCH r=31 can_launch(pickup=Position(x=4, y=0),target=Position(x=4, y=5))=False
+T r=31 pos=Position(x=4, y=0) hp=40
+W r=31 pos=Position(x=3, y=0) blocked toward Position(x=4, y=0) can_move=False
+OBS r=32 target=Position(x=4, y=5) builder_on_tile=None is_tile_passable=False is_tile_empty=False
+LNCH r=32 can_launch(pickup=Position(x=4, y=0),target=Position(x=4, y=5))=False
+T r=32 pos=Position(x=4, y=0) hp=40
+W r=32 pos=Position(x=3, y=0) blocked toward Position(x=4, y=0) can_move=False
+OBS r=33 target=Position(x=4, y=5) builder_on_tile=None is_tile_passable=False is_tile_empty=False
+LNCH r=33 can_launch(pickup=Position(x=4, y=0),target=Position(x=4, y=5))=False
+T r=33 pos=Position(x=4, y=0) hp=40
+W r=33 pos=Position(x=3, y=0) blocked toward Position(x=4, y=0) can_move=False
+OBS r=34 target=Position(x=4, y=5) builder_on_tile=None is_tile_passable=False is_tile_empty=False
+LNCH r=34 can_launch(pickup=Position(x=4, y=0),target=Position(x=4, y=5))=False
+T r=34 pos=Position(x=4, y=0) hp=40
+W r=34 pos=Position(x=3, y=0) blocked toward Position(x=4, y=0) can_move=False
+OBS r=35 target=Position(x=4, y=5) builder_on_tile=None is_tile_passable=False is_tile_empty=False
+LNCH r=35 can_launch(pickup=Position(x=4, y=0),target=Position(x=4, y=5))=False
+T r=35 pos=Position(x=4, y=0) hp=40
+W r=35 pos=Position(x=3, y=0) blocked toward Position(x=4, y=0) can_move=False
+OBS r=36 target=Position(x=4, y=5) builder_on_tile=None is_tile_passable=False is_tile_empty=False
+LNCH r=36 can_launch(pickup=Position(x=4, y=0),target=Position(x=4, y=5))=False
+T r=36 pos=Position(x=4, y=0) hp=40
+W r=36 pos=Position(x=3, y=0) blocked toward Position(x=4, y=0) can_move=False
+OBS r=37 target=Position(x=4, y=5) builder_on_tile=None is_tile_passable=False is_tile_empty=False
+LNCH r=37 can_launch(pickup=Position(x=4, y=0),target=Position(x=4, y=5))=False
+T r=37 pos=Position(x=4, y=0) hp=40
+W r=37 pos=Position(x=3, y=0) blocked toward Position(x=4, y=0) can_move=False
+OBS r=38 target=Position(x=4, y=5) builder_on_tile=None is_tile_passable=False is_tile_empty=False
+LNCH r=38 can_launch(pickup=Position(x=4, y=0),target=Position(x=4, y=5))=False
+T r=38 pos=Position(x=4, y=0) hp=40
+W r=38 pos=Position(x=3, y=0) blocked toward Position(x=4, y=0) can_move=False
+OBS r=39 target=Position(x=4, y=5) builder_on_tile=None is_tile_passable=False is_tile_empty=False
+LNCH r=39 can_launch(pickup=Position(x=4, y=0),target=Position(x=4, y=5))=False
+T r=39 pos=Position(x=4, y=0) hp=40
+W r=39 pos=Position(x=3, y=0) blocked toward Position(x=4, y=0) can_move=False
+OBS r=40 target=Position(x=4, y=5) builder_on_tile=None is_tile_passable=False is_tile_empty=False
+LNCH r=40 can_launch(pickup=Position(x=4, y=0),target=Position(x=4, y=5))=False
+T r=40 pos=Position(x=4, y=0) hp=40
+W r=40 pos=Position(x=3, y=0) blocked toward Position(x=4, y=0) can_move=False
+OBS r=41 target=Position(x=4, y=5) builder_on_tile=None is_tile_passable=False is_tile_empty=False
+LNCH r=41 can_launch(pickup=Position(x=4, y=0),target=Position(x=4, y=5))=False
+T r=41 pos=Position(x=4, y=0) hp=40
+OBS r=42 target=Position(x=4, y=5) builder_on_tile=None is_tile_passable=False is_tile_empty=False
+LNCH r=42 can_launch(pickup=Position(x=4, y=0),target=Position(x=4, y=5))=False
+OBS r=43 target=Position(x=4, y=5) builder_on_tile=None is_tile_passable=False is_tile_empty=False
+LNCH r=43 can_launch(pickup=Position(x=4, y=0),target=Position(x=4, y=5))=False
+OBS r=44 target=Position(x=4, y=5) builder_on_tile=None is_tile_passable=False is_tile_empty=False
+LNCH r=44 can_launch(pickup=Position(x=4, y=0),target=Position(x=4, y=5))=False
+OBS r=45 target=Position(x=4, y=5) builder_on_tile=None is_tile_passable=False is_tile_empty=False
+LNCH r=45 can_launch(pickup=Position(x=4, y=0),target=Position(x=4, y=5))=False
+OBS r=46 target=Position(x=4, y=5) builder_on_tile=None is_tile_passable=False is_tile_empty=False
+LNCH r=46 can_launch(pickup=Position(x=4, y=0),target=Position(x=4, y=5))=False
+OBS r=47 target=Position(x=4, y=5) builder_on_tile=None is_tile_passable=False is_tile_empty=False
+LNCH r=47 can_launch(pickup=Position(x=4, y=0),target=Position(x=4, y=5))=False
+OBS r=48 target=Position(x=4, y=5) builder_on_tile=None is_tile_passable=False is_tile_empty=False
+LNCH r=48 can_launch(pickup=Position(x=4, y=0),target=Position(x=4, y=5))=False
+W r=48 AT STAGE=Position(x=4, y=4) dir_to_target=Direction.SOUTH can_move=False
+W r=48 MOVE FAIL can_move_said=False exc=GameError Cannot move
+OBS r=49 target=Position(x=4, y=5) builder_on_tile=None is_tile_passable=False is_tile_empty=False
+LNCH r=49 can_launch(pickup=Position(x=4, y=0),target=Position(x=4, y=5))=False
+W r=49 AT STAGE=Position(x=4, y=4) dir_to_target=Direction.SOUTH can_move=False
+W r=49 MOVE FAIL can_move_said=False exc=GameError Cannot move
+OBS r=50 target=Position(x=4, y=5) builder_on_tile=None is_tile_passable=False is_tile_empty=False
+LNCH r=50 can_launch(pickup=Position(x=4, y=0),target=Position(x=4, y=5))=False
+W r=50 AT STAGE=Position(x=4, y=4) dir_to_target=Direction.SOUTH can_move=False
+W r=50 MOVE FAIL can_move_said=False exc=GameError Cannot move
+OBS r=51 target=Position(x=4, y=5) builder_on_tile=None is_tile_passable=False is_tile_empty=False
+LNCH r=51 can_launch(pickup=Position(x=4, y=0),target=Position(x=4, y=5))=False
+W r=51 AT STAGE=Position(x=4, y=4) dir_to_target=Direction.SOUTH can_move=False
+W r=51 MOVE FAIL can_move_said=False exc=GameError Cannot move
+OBS r=52 target=Position(x=4, y=5) builder_on_tile=None is_tile_passable=False is_tile_empty=False
+LNCH r=52 can_launch(pickup=Position(x=4, y=0),target=Position(x=4, y=5))=False
+W r=52 AT STAGE=Position(x=4, y=4) dir_to_target=Direction.SOUTH can_move=False
+W r=52 MOVE FAIL can_move_said=False exc=GameError Cannot move
+OBS r=53 target=Position(x=4, y=5) builder_on_tile=None is_tile_passable=False is_tile_empty=False
+LNCH r=53 can_launch(pickup=Position(x=4, y=0),target=Position(x=4, y=5))=False
+W r=53 AT STAGE=Position(x=4, y=4) dir_to_target=Direction.SOUTH can_move=False
+W r=53 MOVE FAIL can_move_said=False exc=GameError Cannot move
+OBS r=54 target=Position(x=4, y=5) builder_on_tile=None is_tile_passable=False is_tile_empty=False
+LNCH r=54 can_launch(pickup=Position(x=4, y=0),target=Position(x=4, y=5))=False
+W r=54 AT STAGE=Position(x=4, y=4) dir_to_target=Direction.SOUTH can_move=False
+W r=54 MOVE FAIL can_move_said=False exc=GameError Cannot move
+OBS r=55 target=Position(x=4, y=5) builder_on_tile=None is_tile_passable=False is_tile_empty=False
+LNCH r=55 can_launch(pickup=Position(x=4, y=0),target=Position(x=4, y=5))=False
+W r=55 AT STAGE=Position(x=4, y=4) dir_to_target=Direction.SOUTH can_move=False
+W r=55 MOVE FAIL can_move_said=False exc=GameError Cannot move
+OBS r=56 target=Position(x=4, y=5) builder_on_tile=None is_tile_passable=False is_tile_empty=False
+LNCH r=56 can_launch(pickup=Position(x=4, y=0),target=Position(x=4, y=5))=False
+W r=56 AT STAGE=Position(x=4, y=4) dir_to_target=Direction.SOUTH can_move=False
+W r=56 MOVE FAIL can_move_said=False exc=GameError Cannot move
+OBS r=57 target=Position(x=4, y=5) builder_on_tile=None is_tile_passable=False is_tile_empty=False
+LNCH r=57 can_launch(pickup=Position(x=4, y=0),target=Position(x=4, y=5))=False
+W r=57 AT STAGE=Position(x=4, y=4) dir_to_target=Direction.SOUTH can_move=False
+W r=57 MOVE FAIL can_move_said=False exc=GameError Cannot move
+OBS r=58 target=Position(x=4, y=5) builder_on_tile=None is_tile_passable=False is_tile_empty=False
+LNCH r=58 can_launch(pickup=Position(x=4, y=0),target=Position(x=4, y=5))=False
+W r=58 AT STAGE=Position(x=4, y=4) dir_to_target=Direction.SOUTH can_move=False
+W r=58 MOVE FAIL can_move_said=False exc=GameError Cannot move
+OBS r=59 target=Position(x=4, y=5) builder_on_tile=None is_tile_passable=False is_tile_empty=False
+LNCH r=59 can_launch(pickup=Position(x=4, y=0),target=Position(x=4, y=5))=False
+W r=59 AT STAGE=Position(x=4, y=4) dir_to_target=Direction.SOUTH can_move=False
+W r=59 MOVE FAIL can_move_said=False exc=GameError Cannot move
+OBS r=60 target=Position(x=4, y=5) builder_on_tile=None is_tile_passable=False is_tile_empty=False
+LNCH r=60 can_launch(pickup=Position(x=4, y=0),target=Position(x=4, y=5))=False
+W r=60 AT STAGE=Position(x=4, y=4) dir_to_target=Direction.SOUTH can_move=False
+W r=60 MOVE FAIL can_move_said=False exc=GameError Cannot move
+OBS r=61 target=Position(x=4, y=5) builder_on_tile=None is_tile_passable=False is_tile_empty=False
+LNCH r=61 can_launch(pickup=Position(x=4, y=0),target=Position(x=4, y=5))=False
+W r=61 AT STAGE=Position(x=4, y=4) dir_to_target=Direction.SOUTH can_move=False
+W r=61 MOVE FAIL can_move_said=False exc=GameError Cannot move
+OBS r=62 target=Position(x=4, y=5) builder_on_tile=None is_tile_passable=False is_tile_empty=False
+LNCH r=62 can_launch(pickup=Position(x=4, y=0),target=Position(x=4, y=5))=False
+W r=62 AT STAGE=Position(x=4, y=4) dir_to_target=Direction.SOUTH can_move=False
+W r=62 MOVE FAIL can_move_said=False exc=GameError Cannot move
+OBS r=63 target=Position(x=4, y=5) builder_on_tile=None is_tile_passable=False is_tile_empty=False
+LNCH r=63 can_launch(pickup=Position(x=4, y=0),target=Position(x=4, y=5))=False
+W r=63 AT STAGE=Position(x=4, y=4) dir_to_target=Direction.SOUTH can_move=False
+W r=63 MOVE FAIL can_move_said=False exc=GameError Cannot move
+OBS r=64 target=Position(x=4, y=5) builder_on_tile=None is_tile_passable=False is_tile_empty=False
+LNCH r=64 can_launch(pickup=Position(x=4, y=0),target=Position(x=4, y=5))=False
+W r=64 AT STAGE=Position(x=4, y=4) dir_to_target=Direction.SOUTH can_move=False
+W r=64 MOVE FAIL can_move_said=False exc=GameError Cannot move
+OBS r=65 target=Position(x=4, y=5) builder_on_tile=None is_tile_passable=False is_tile_empty=False
+LNCH r=65 can_launch(pickup=Position(x=4, y=0),target=Position(x=4, y=5))=False
+W r=65 AT STAGE=Position(x=4, y=4) dir_to_target=Direction.SOUTH can_move=False
+W r=65 MOVE FAIL can_move_said=False exc=GameError Cannot move
+OBS r=66 target=Position(x=4, y=5) builder_on_tile=None is_tile_passable=False is_tile_empty=False
+LNCH r=66 can_launch(pickup=Position(x=4, y=0),target=Position(x=4, y=5))=False
+W r=66 AT STAGE=Position(x=4, y=4) dir_to_target=Direction.SOUTH can_move=False
+W r=66 MOVE FAIL can_move_said=False exc=GameError Cannot move
+OBS r=67 target=Position(x=4, y=5) builder_on_tile=None is_tile_passable=False is_tile_empty=False
+LNCH r=67 can_launch(pickup=Position(x=4, y=0),target=Position(x=4, y=5))=False
+W r=67 AT STAGE=Position(x=4, y=4) dir_to_target=Direction.SOUTH can_move=False
+W r=67 MOVE FAIL can_move_said=False exc=GameError Cannot move
+OBS r=68 target=Position(x=4, y=5) builder_on_tile=None is_tile_passable=False is_tile_empty=False
+LNCH r=68 can_launch(pickup=Position(x=4, y=0),target=Position(x=4, y=5))=False
+W r=68 AT STAGE=Position(x=4, y=4) dir_to_target=Direction.SOUTH can_move=False
+W r=68 MOVE FAIL can_move_said=False exc=GameError Cannot move
+OBS r=69 target=Position(x=4, y=5) builder_on_tile=None is_tile_passable=False is_tile_empty=False
+LNCH r=69 can_launch(pickup=Position(x=4, y=0),target=Position(x=4, y=5))=False
+W r=69 AT STAGE=Position(x=4, y=4) dir_to_target=Direction.SOUTH can_move=False
+W r=69 MOVE FAIL can_move_said=False exc=GameError Cannot move
+OBS r=70 target=Position(x=4, y=5) builder_on_tile=None is_tile_passable=False is_tile_empty=False
+LNCH r=70 can_launch(pickup=Position(x=4, y=0),target=Position(x=4, y=5))=False
+W r=70 AT STAGE=Position(x=4, y=4) dir_to_target=Direction.SOUTH can_move=False
+W r=70 MOVE FAIL can_move_said=False exc=GameError Cannot move
+OBS r=71 target=Position(x=4, y=5) builder_on_tile=None is_tile_passable=False is_tile_empty=False
+LNCH r=71 can_launch(pickup=Position(x=4, y=0),target=Position(x=4, y=5))=False
+W r=71 AT STAGE=Position(x=4, y=4) dir_to_target=Direction.SOUTH can_move=False
+W r=71 MOVE FAIL can_move_said=False exc=GameError Cannot move
+OBS r=72 target=Position(x=4, y=5) builder_on_tile=None is_tile_passable=False is_tile_empty=False
+LNCH r=72 can_launch(pickup=Position(x=4, y=0),target=Position(x=4, y=5))=False
+W r=72 AT STAGE=Position(x=4, y=4) dir_to_target=Direction.SOUTH can_move=False
+W r=72 MOVE FAIL can_move_said=False exc=GameError Cannot move
+OBS r=73 target=Position(x=4, y=5) builder_on_tile=None is_tile_passable=False is_tile_empty=False
+LNCH r=73 can_launch(pickup=Position(x=4, y=0),target=Position(x=4, y=5))=False
+W r=73 AT STAGE=Position(x=4, y=4) dir_to_target=Direction.SOUTH can_move=False
+W r=73 MOVE FAIL can_move_said=False exc=GameError Cannot move
+OBS r=74 target=Position(x=4, y=5) builder_on_tile=None is_tile_passable=False is_tile_empty=False
+LNCH r=74 can_launch(pickup=Position(x=4, y=0),target=Position(x=4, y=5))=False
+W r=74 AT STAGE=Position(x=4, y=4) dir_to_target=Direction.SOUTH can_move=False
+W r=74 MOVE FAIL can_move_said=False exc=GameError Cannot move
+OBS r=75 target=Position(x=4, y=5) builder_on_tile=None is_tile_passable=False is_tile_empty=False
+LNCH r=75 can_launch(pickup=Position(x=4, y=0),target=Position(x=4, y=5))=False
+W r=75 AT STAGE=Position(x=4, y=4) dir_to_target=Direction.SOUTH can_move=False
+W r=75 MOVE FAIL can_move_said=False exc=GameError Cannot move
+OBS r=76 target=Position(x=4, y=5) builder_on_tile=None is_tile_passable=False is_tile_empty=False
+LNCH r=76 can_launch(pickup=Position(x=4, y=0),target=Position(x=4, y=5))=False
+W r=76 AT STAGE=Position(x=4, y=4) dir_to_target=Direction.SOUTH can_move=False
+W r=76 MOVE FAIL can_move_said=False exc=GameError Cannot move
+OBS r=77 target=Position(x=4, y=5) builder_on_tile=None is_tile_passable=False is_tile_empty=False
+LNCH r=77 can_launch(pickup=Position(x=4, y=0),target=Position(x=4, y=5))=False
+W r=77 AT STAGE=Position(x=4, y=4) dir_to_target=Direction.SOUTH can_move=False
+W r=77 MOVE FAIL can_move_said=False exc=GameError Cannot move
+OBS r=78 target=Position(x=4, y=5) builder_on_tile=None is_tile_passable=False is_tile_empty=False
+LNCH r=78 can_launch(pickup=Position(x=4, y=0),target=Position(x=4, y=5))=False
+W r=78 AT STAGE=Position(x=4, y=4) dir_to_target=Direction.SOUTH can_move=False
+W r=78 MOVE FAIL can_move_said=False exc=GameError Cannot move
+OBS r=79 target=Position(x=4, y=5) builder_on_tile=None is_tile_passable=False is_tile_empty=False
+LNCH r=79 can_launch(pickup=Position(x=4, y=0),target=Position(x=4, y=5))=False
+W r=79 AT STAGE=Position(x=4, y=4) dir_to_target=Direction.SOUTH can_move=False
+W r=79 MOVE FAIL can_move_said=False exc=GameError Cannot move
+OBS r=80 target=Position(x=4, y=5) builder_on_tile=None is_tile_passable=False is_tile_empty=False
+LNCH r=80 can_launch(pickup=Position(x=4, y=0),target=Position(x=4, y=5))=False
+W r=80 AT STAGE=Position(x=4, y=4) dir_to_target=Direction.SOUTH can_move=False
+W r=80 MOVE FAIL can_move_said=False exc=GameError Cannot move
+OBS r=81 target=Position(x=4, y=5) builder_on_tile=None is_tile_passable=False is_tile_empty=False
+LNCH r=81 can_launch(pickup=Position(x=4, y=0),target=Position(x=4, y=5))=False
+W r=81 AT STAGE=Position(x=4, y=4) dir_to_target=Direction.SOUTH can_move=False
+W r=81 MOVE FAIL can_move_said=False exc=GameError Cannot move
+OBS r=82 target=Position(x=4, y=5) builder_on_tile=None is_tile_passable=False is_tile_empty=False
+LNCH r=82 can_launch(pickup=Position(x=4, y=0),target=Position(x=4, y=5))=False
+W r=82 AT STAGE=Position(x=4, y=4) dir_to_target=Direction.SOUTH can_move=False
+W r=82 MOVE FAIL can_move_said=False exc=GameError Cannot move
+OBS r=83 target=Position(x=4, y=5) builder_on_tile=None is_tile_passable=False is_tile_empty=False
+LNCH r=83 can_launch(pickup=Position(x=4, y=0),target=Position(x=4, y=5))=False
+W r=83 AT STAGE=Position(x=4, y=4) dir_to_target=Direction.SOUTH can_move=False
+W r=83 MOVE FAIL can_move_said=False exc=GameError Cannot move
+OBS r=84 target=Position(x=4, y=5) builder_on_tile=None is_tile_passable=False is_tile_empty=False
+LNCH r=84 can_launch(pickup=Position(x=4, y=0),target=Position(x=4, y=5))=False
+W r=84 AT STAGE=Position(x=4, y=4) dir_to_target=Direction.SOUTH can_move=False
+W r=84 MOVE FAIL can_move_said=False exc=GameError Cannot move
+OBS r=85 target=Position(x=4, y=5) builder_on_tile=None is_tile_passable=False is_tile_empty=False
+LNCH r=85 can_launch(pickup=Position(x=4, y=0),target=Position(x=4, y=5))=False
+W r=85 AT STAGE=Position(x=4, y=4) dir_to_target=Direction.SOUTH can_move=False
+W r=85 MOVE FAIL can_move_said=False exc=GameError Cannot move
+OBS r=86 target=Position(x=4, y=5) builder_on_tile=None is_tile_passable=False is_tile_empty=False
+LNCH r=86 can_launch(pickup=Position(x=4, y=0),target=Position(x=4, y=5))=False
+W r=86 AT STAGE=Position(x=4, y=4) dir_to_target=Direction.SOUTH can_move=False
+W r=86 MOVE FAIL can_move_said=False exc=GameError Cannot move
+OBS r=87 target=Position(x=4, y=5) builder_on_tile=None is_tile_passable=False is_tile_empty=False
+LNCH r=87 can_launch(pickup=Position(x=4, y=0),target=Position(x=4, y=5))=False
+W r=87 AT STAGE=Position(x=4, y=4) dir_to_target=Direction.SOUTH can_move=False
+W r=87 MOVE FAIL can_move_said=False exc=GameError Cannot move
+OBS r=88 target=Position(x=4, y=5) builder_on_tile=None is_tile_passable=False is_tile_empty=False
+LNCH r=88 can_launch(pickup=Position(x=4, y=0),target=Position(x=4, y=5))=False
+W r=88 AT STAGE=Position(x=4, y=4) dir_to_target=Direction.SOUTH can_move=False
+W r=88 MOVE FAIL can_move_said=False exc=GameError Cannot move
+OBS r=89 target=Position(x=4, y=5) builder_on_tile=None is_tile_passable=False is_tile_empty=False
+LNCH r=89 can_launch(pickup=Position(x=4, y=0),target=Position(x=4, y=5))=False
+W r=89 AT STAGE=Position(x=4, y=4) dir_to_target=Direction.SOUTH can_move=False
+W r=89 MOVE FAIL can_move_said=False exc=GameError Cannot move
+OBS r=90 target=Position(x=4, y=5) builder_on_tile=None is_tile_passable=False is_tile_empty=False
+LNCH r=90 can_launch(pickup=Position(x=4, y=0),target=Position(x=4, y=5))=False
+W r=90 AT STAGE=Position(x=4, y=4) dir_to_target=Direction.SOUTH can_move=False
+W r=90 MOVE FAIL can_move_said=False exc=GameError Cannot move
+OBS r=91 target=Position(x=4, y=5) builder_on_tile=None is_tile_passable=False is_tile_empty=False
+LNCH r=91 can_launch(pickup=Position(x=4, y=0),target=Position(x=4, y=5))=False
+W r=91 AT STAGE=Position(x=4, y=4) dir_to_target=Direction.SOUTH can_move=False
+W r=91 MOVE FAIL can_move_said=False exc=GameError Cannot move
+OBS r=92 target=Position(x=4, y=5) builder_on_tile=None is_tile_passable=False is_tile_empty=False
+LNCH r=92 can_launch(pickup=Position(x=4, y=0),target=Position(x=4, y=5))=False
+W r=92 AT STAGE=Position(x=4, y=4) dir_to_target=Direction.SOUTH can_move=False
+W r=92 MOVE FAIL can_move_said=False exc=GameError Cannot move
+OBS r=93 target=Position(x=4, y=5) builder_on_tile=None is_tile_passable=False is_tile_empty=False
+LNCH r=93 can_launch(pickup=Position(x=4, y=0),target=Position(x=4, y=5))=False
+W r=93 AT STAGE=Position(x=4, y=4) dir_to_target=Direction.SOUTH can_move=False
+W r=93 MOVE FAIL can_move_said=False exc=GameError Cannot move
+OBS r=94 target=Position(x=4, y=5) builder_on_tile=None is_tile_passable=False is_tile_empty=False
+LNCH r=94 can_launch(pickup=Position(x=4, y=0),target=Position(x=4, y=5))=False
+W r=94 AT STAGE=Position(x=4, y=4) dir_to_target=Direction.SOUTH can_move=False
+W r=94 MOVE FAIL can_move_said=False exc=GameError Cannot move
+OBS r=95 target=Position(x=4, y=5) builder_on_tile=None is_tile_passable=False is_tile_empty=False
+LNCH r=95 can_launch(pickup=Position(x=4, y=0),target=Position(x=4, y=5))=False
+W r=95 AT STAGE=Position(x=4, y=4) dir_to_target=Direction.SOUTH can_move=False
+W r=95 MOVE FAIL can_move_said=False exc=GameError Cannot move
+OBS r=96 target=Position(x=4, y=5) builder_on_tile=None is_tile_passable=False is_tile_empty=False
+LNCH r=96 can_launch(pickup=Position(x=4, y=0),target=Position(x=4, y=5))=False
+W r=96 AT STAGE=Position(x=4, y=4) dir_to_target=Direction.SOUTH can_move=False
+W r=96 MOVE FAIL can_move_said=False exc=GameError Cannot move
+OBS r=97 target=Position(x=4, y=5) builder_on_tile=None is_tile_passable=False is_tile_empty=False
+LNCH r=97 can_launch(pickup=Position(x=4, y=0),target=Position(x=4, y=5))=False
+W r=97 AT STAGE=Position(x=4, y=4) dir_to_target=Direction.SOUTH can_move=False
+W r=97 MOVE FAIL can_move_said=False exc=GameError Cannot move
+OBS r=98 target=Position(x=4, y=5) builder_on_tile=None is_tile_passable=False is_tile_empty=False
+LNCH r=98 can_launch(pickup=Position(x=4, y=0),target=Position(x=4, y=5))=False
+W r=98 AT STAGE=Position(x=4, y=4) dir_to_target=Direction.SOUTH can_move=False
+W r=98 MOVE FAIL can_move_said=False exc=GameError Cannot move
+OBS r=99 target=Position(x=4, y=5) builder_on_tile=None is_tile_passable=False is_tile_empty=False
+LNCH r=99 can_launch(pickup=Position(x=4, y=0),target=Position(x=4, y=5))=False
+W r=99 AT STAGE=Position(x=4, y=4) dir_to_target=Direction.SOUTH can_move=False
+W r=99 MOVE FAIL can_move_said=False exc=GameError Cannot move
+OBS r=100 target=Position(x=4, y=5) builder_on_tile=None is_tile_passable=False is_tile_empty=False
+LNCH r=100 can_launch(pickup=Position(x=4, y=0),target=Position(x=4, y=5))=False
+W r=100 AT STAGE=Position(x=4, y=4) dir_to_target=Direction.SOUTH can_move=False
+W r=100 MOVE FAIL can_move_said=False exc=GameError Cannot move
+OBS r=101 target=Position(x=4, y=5) builder_on_tile=None is_tile_passable=False is_tile_empty=False
+LNCH r=101 can_launch(pickup=Position(x=4, y=0),target=Position(x=4, y=5))=False
+W r=101 AT STAGE=Position(x=4, y=4) dir_to_target=Direction.SOUTH can_move=False
+W r=101 MOVE FAIL can_move_said=False exc=GameError Cannot move
+OBS r=102 target=Position(x=4, y=5) builder_on_tile=None is_tile_passable=False is_tile_empty=False
+LNCH r=102 can_launch(pickup=Position(x=4, y=0),target=Position(x=4, y=5))=False
+W r=102 AT STAGE=Position(x=4, y=4) dir_to_target=Direction.SOUTH can_move=False
+W r=102 MOVE FAIL can_move_said=False exc=GameError Cannot move
+OBS r=103 target=Position(x=4, y=5) builder_on_tile=None is_tile_passable=False is_tile_empty=False
+LNCH r=103 can_launch(pickup=Position(x=4, y=0),target=Position(x=4, y=5))=False
+W r=103 AT STAGE=Position(x=4, y=4) dir_to_target=Direction.SOUTH can_move=False
+W r=103 MOVE FAIL can_move_said=False exc=GameError Cannot move
+OBS r=104 target=Position(x=4, y=5) builder_on_tile=None is_tile_passable=False is_tile_empty=False
+LNCH r=104 can_launch(pickup=Position(x=4, y=0),target=Position(x=4, y=5))=False
+W r=104 AT STAGE=Position(x=4, y=4) dir_to_target=Direction.SOUTH can_move=False
+W r=104 MOVE FAIL can_move_said=False exc=GameError Cannot move
+OBS r=105 target=Position(x=4, y=5) builder_on_tile=None is_tile_passable=False is_tile_empty=False
+LNCH r=105 can_launch(pickup=Position(x=4, y=0),target=Position(x=4, y=5))=False
+W r=105 AT STAGE=Position(x=4, y=4) dir_to_target=Direction.SOUTH can_move=False
+W r=105 MOVE FAIL can_move_said=False exc=GameError Cannot move
+OBS r=106 target=Position(x=4, y=5) builder_on_tile=None is_tile_passable=False is_tile_empty=False
+LNCH r=106 can_launch(pickup=Position(x=4, y=0),target=Position(x=4, y=5))=False
+W r=106 AT STAGE=Position(x=4, y=4) dir_to_target=Direction.SOUTH can_move=False
+W r=106 MOVE FAIL can_move_said=False exc=GameError Cannot move
+OBS r=107 target=Position(x=4, y=5) builder_on_tile=None is_tile_passable=False is_tile_empty=False
+LNCH r=107 can_launch(pickup=Position(x=4, y=0),target=Position(x=4, y=5))=False
+W r=107 AT STAGE=Position(x=4, y=4) dir_to_target=Direction.SOUTH can_move=False
+W r=107 MOVE FAIL can_move_said=False exc=GameError Cannot move
+OBS r=108 target=Position(x=4, y=5) builder_on_tile=None is_tile_passable=False is_tile_empty=False
+LNCH r=108 can_launch(pickup=Position(x=4, y=0),target=Position(x=4, y=5))=False
+W r=108 AT STAGE=Position(x=4, y=4) dir_to_target=Direction.SOUTH can_move=False
+W r=108 MOVE FAIL can_move_said=False exc=GameError Cannot move
+OBS r=109 target=Position(x=4, y=5) builder_on_tile=None is_tile_passable=False is_tile_empty=False
+LNCH r=109 can_launch(pickup=Position(x=4, y=0),target=Position(x=4, y=5))=False
+W r=109 AT STAGE=Position(x=4, y=4) dir_to_target=Direction.SOUTH can_move=False
+W r=109 MOVE FAIL can_move_said=False exc=GameError Cannot move
+OBS r=110 target=Position(x=4, y=5) builder_on_tile=None is_tile_passable=False is_tile_empty=False
+LNCH r=110 can_launch(pickup=Position(x=4, y=0),target=Position(x=4, y=5))=False
+W r=110 AT STAGE=Position(x=4, y=4) dir_to_target=Direction.SOUTH can_move=False
+W r=110 MOVE FAIL can_move_said=False exc=GameError Cannot move
+OBS r=111 target=Position(x=4, y=5) builder_on_tile=None is_tile_passable=False is_tile_empty=False
+LNCH r=111 can_launch(pickup=Position(x=4, y=0),target=Position(x=4, y=5))=False
+W r=111 AT STAGE=Position(x=4, y=4) dir_to_target=Direction.SOUTH can_move=False
+W r=111 MOVE FAIL can_move_said=False exc=GameError Cannot move
+OBS r=112 target=Position(x=4, y=5) builder_on_tile=None is_tile_passable=False is_tile_empty=False
+LNCH r=112 can_launch(pickup=Position(x=4, y=0),target=Position(x=4, y=5))=False
+W r=112 AT STAGE=Position(x=4, y=4) dir_to_target=Direction.SOUTH can_move=False
+W r=112 MOVE FAIL can_move_said=False exc=GameError Cannot move
+OBS r=113 target=Position(x=4, y=5) builder_on_tile=None is_tile_passable=False is_tile_empty=False
+LNCH r=113 can_launch(pickup=Position(x=4, y=0),target=Position(x=4, y=5))=False
+W r=113 AT STAGE=Position(x=4, y=4) dir_to_target=Direction.SOUTH can_move=False
+W r=113 MOVE FAIL can_move_said=False exc=GameError Cannot move
+OBS r=114 target=Position(x=4, y=5) builder_on_tile=None is_tile_passable=False is_tile_empty=False
+LNCH r=114 can_launch(pickup=Position(x=4, y=0),target=Position(x=4, y=5))=False
+W r=114 AT STAGE=Position(x=4, y=4) dir_to_target=Direction.SOUTH can_move=False
+W r=114 MOVE FAIL can_move_said=False exc=GameError Cannot move
+OBS r=115 target=Position(x=4, y=5) builder_on_tile=None is_tile_passable=False is_tile_empty=False
+LNCH r=115 can_launch(pickup=Position(x=4, y=0),target=Position(x=4, y=5))=False
+W r=115 AT STAGE=Position(x=4, y=4) dir_to_target=Direction.SOUTH can_move=False
+W r=115 MOVE FAIL can_move_said=False exc=GameError Cannot move
+OBS r=116 target=Position(x=4, y=5) builder_on_tile=None is_tile_passable=False is_tile_empty=False
+LNCH r=116 can_launch(pickup=Position(x=4, y=0),target=Position(x=4, y=5))=False
+W r=116 AT STAGE=Position(x=4, y=4) dir_to_target=Direction.SOUTH can_move=False
+W r=116 MOVE FAIL can_move_said=False exc=GameError Cannot move
+OBS r=117 target=Position(x=4, y=5) builder_on_tile=None is_tile_passable=False is_tile_empty=False
+LNCH r=117 can_launch(pickup=Position(x=4, y=0),target=Position(x=4, y=5))=False
+W r=117 AT STAGE=Position(x=4, y=4) dir_to_target=Direction.SOUTH can_move=False
+W r=117 MOVE FAIL can_move_said=False exc=GameError Cannot move
+OBS r=118 target=Position(x=4, y=5) builder_on_tile=None is_tile_passable=False is_tile_empty=False
+LNCH r=118 can_launch(pickup=Position(x=4, y=0),target=Position(x=4, y=5))=False
+W r=118 AT STAGE=Position(x=4, y=4) dir_to_target=Direction.SOUTH can_move=False
+W r=118 MOVE FAIL can_move_said=False exc=GameError Cannot move
+OBS r=119 target=Position(x=4, y=5) builder_on_tile=None is_tile_passable=False is_tile_empty=False
+LNCH r=119 can_launch(pickup=Position(x=4, y=0),target=Position(x=4, y=5))=False
+W r=119 AT STAGE=Position(x=4, y=4) dir_to_target=Direction.SOUTH can_move=False
+W r=119 MOVE FAIL can_move_said=False exc=GameError Cannot move
+OBS r=120 target=Position(x=4, y=5) builder_on_tile=None is_tile_passable=False is_tile_empty=False
+LNCH r=120 can_launch(pickup=Position(x=4, y=0),target=Position(x=4, y=5))=False
+W r=120 AT STAGE=Position(x=4, y=4) dir_to_target=Direction.SOUTH can_move=False
+W r=120 MOVE FAIL can_move_said=False exc=GameError Cannot move
+OBS r=121 target=Position(x=4, y=5) builder_on_tile=None is_tile_passable=False is_tile_empty=False
+LNCH r=121 can_launch(pickup=Position(x=4, y=0),target=Position(x=4, y=5))=False
+W r=121 AT STAGE=Position(x=4, y=4) dir_to_target=Direction.SOUTH can_move=False
+W r=121 MOVE FAIL can_move_said=False exc=GameError Cannot move
+OBS r=122 target=Position(x=4, y=5) builder_on_tile=None is_tile_passable=False is_tile_empty=False
+LNCH r=122 can_launch(pickup=Position(x=4, y=0),target=Position(x=4, y=5))=False
+W r=122 AT STAGE=Position(x=4, y=4) dir_to_target=Direction.SOUTH can_move=False
+W r=122 MOVE FAIL can_move_said=False exc=GameError Cannot move
+OBS r=123 target=Position(x=4, y=5) builder_on_tile=None is_tile_passable=False is_tile_empty=False
+LNCH r=123 can_launch(pickup=Position(x=4, y=0),target=Position(x=4, y=5))=False
+W r=123 AT STAGE=Position(x=4, y=4) dir_to_target=Direction.SOUTH can_move=False
+W r=123 MOVE FAIL can_move_said=False exc=GameError Cannot move
+OBS r=124 target=Position(x=4, y=5) builder_on_tile=None is_tile_passable=False is_tile_empty=False
+LNCH r=124 can_launch(pickup=Position(x=4, y=0),target=Position(x=4, y=5))=False
+W r=124 AT STAGE=Position(x=4, y=4) dir_to_target=Direction.SOUTH can_move=False
+W r=124 MOVE FAIL can_move_said=False exc=GameError Cannot move
+OBS r=125 target=Position(x=4, y=5) builder_on_tile=None is_tile_passable=False is_tile_empty=False
+LNCH r=125 can_launch(pickup=Position(x=4, y=0),target=Position(x=4, y=5))=False
+W r=125 AT STAGE=Position(x=4, y=4) dir_to_target=Direction.SOUTH can_move=False
+W r=125 MOVE FAIL can_move_said=False exc=GameError Cannot move
+OBS r=126 target=Position(x=4, y=5) builder_on_tile=None is_tile_passable=False is_tile_empty=False
+LNCH r=126 can_launch(pickup=Position(x=4, y=0),target=Position(x=4, y=5))=False
+W r=126 AT STAGE=Position(x=4, y=4) dir_to_target=Direction.SOUTH can_move=False
+W r=126 MOVE FAIL can_move_said=False exc=GameError Cannot move
+OBS r=127 target=Position(x=4, y=5) builder_on_tile=None is_tile_passable=False is_tile_empty=False
+LNCH r=127 can_launch(pickup=Position(x=4, y=0),target=Position(x=4, y=5))=False
+W r=127 AT STAGE=Position(x=4, y=4) dir_to_target=Direction.SOUTH can_move=False
+W r=127 MOVE FAIL can_move_said=False exc=GameError Cannot move
+OBS r=128 target=Position(x=4, y=5) builder_on_tile=None is_tile_passable=False is_tile_empty=False
+LNCH r=128 can_launch(pickup=Position(x=4, y=0),target=Position(x=4, y=5))=False
+W r=128 AT STAGE=Position(x=4, y=4) dir_to_target=Direction.SOUTH can_move=False
+W r=128 MOVE FAIL can_move_said=False exc=GameError Cannot move
+OBS r=129 target=Position(x=4, y=5) builder_on_tile=None is_tile_passable=False is_tile_empty=False
+LNCH r=129 can_launch(pickup=Position(x=4, y=0),target=Position(x=4, y=5))=False
+W r=129 AT STAGE=Position(x=4, y=4) dir_to_target=Direction.SOUTH can_move=False
+W r=129 MOVE FAIL can_move_said=False exc=GameError Cannot move
+OBS r=130 target=Position(x=4, y=5) builder_on_tile=None is_tile_passable=False is_tile_empty=False
+LNCH r=130 can_launch(pickup=Position(x=4, y=0),target=Position(x=4, y=5))=False
+W r=130 AT STAGE=Position(x=4, y=4) dir_to_target=Direction.SOUTH can_move=False
+W r=130 MOVE FAIL can_move_said=False exc=GameError Cannot move
+OBS r=131 target=Position(x=4, y=5) builder_on_tile=None is_tile_passable=False is_tile_empty=False
+LNCH r=131 can_launch(pickup=Position(x=4, y=0),target=Position(x=4, y=5))=False
+W r=131 AT STAGE=Position(x=4, y=4) dir_to_target=Direction.SOUTH can_move=False
+W r=131 MOVE FAIL can_move_said=False exc=GameError Cannot move
+OBS r=132 target=Position(x=4, y=5) builder_on_tile=None is_tile_passable=False is_tile_empty=False
+LNCH r=132 can_launch(pickup=Position(x=4, y=0),target=Position(x=4, y=5))=False
+W r=132 AT STAGE=Position(x=4, y=4) dir_to_target=Direction.SOUTH can_move=False
+W r=132 MOVE FAIL can_move_said=False exc=GameError Cannot move
+OBS r=133 target=Position(x=4, y=5) builder_on_tile=None is_tile_passable=False is_tile_empty=False
+LNCH r=133 can_launch(pickup=Position(x=4, y=0),target=Position(x=4, y=5))=False
+W r=133 AT STAGE=Position(x=4, y=4) dir_to_target=Direction.SOUTH can_move=False
+W r=133 MOVE FAIL can_move_said=False exc=GameError Cannot move
+OBS r=134 target=Position(x=4, y=5) builder_on_tile=None is_tile_passable=False is_tile_empty=False
+LNCH r=134 can_launch(pickup=Position(x=4, y=0),target=Position(x=4, y=5))=False
+W r=134 AT STAGE=Position(x=4, y=4) dir_to_target=Direction.SOUTH can_move=False
+W r=134 MOVE FAIL can_move_said=False exc=GameError Cannot move
+OBS r=135 target=Position(x=4, y=5) builder_on_tile=None is_tile_passable=False is_tile_empty=False
+LNCH r=135 can_launch(pickup=Position(x=4, y=0),target=Position(x=4, y=5))=False
+W r=135 AT STAGE=Position(x=4, y=4) dir_to_target=Direction.SOUTH can_move=False
+W r=135 MOVE FAIL can_move_said=False exc=GameError Cannot move
+OBS r=136 target=Position(x=4, y=5) builder_on_tile=None is_tile_passable=False is_tile_empty=False
+LNCH r=136 can_launch(pickup=Position(x=4, y=0),target=Position(x=4, y=5))=False
+W r=136 AT STAGE=Position(x=4, y=4) dir_to_target=Direction.SOUTH can_move=False
+W r=136 MOVE FAIL can_move_said=False exc=GameError Cannot move
+OBS r=137 target=Position(x=4, y=5) builder_on_tile=None is_tile_passable=False is_tile_empty=False
+LNCH r=137 can_launch(pickup=Position(x=4, y=0),target=Position(x=4, y=5))=False
+W r=137 AT STAGE=Position(x=4, y=4) dir_to_target=Direction.SOUTH can_move=False
+W r=137 MOVE FAIL can_move_said=False exc=GameError Cannot move
+OBS r=138 target=Position(x=4, y=5) builder_on_tile=None is_tile_passable=False is_tile_empty=False
+LNCH r=138 can_launch(pickup=Position(x=4, y=0),target=Position(x=4, y=5))=False
+W r=138 AT STAGE=Position(x=4, y=4) dir_to_target=Direction.SOUTH can_move=False
+W r=138 MOVE FAIL can_move_said=False exc=GameError Cannot move
+OBS r=139 target=Position(x=4, y=5) builder_on_tile=None is_tile_passable=False is_tile_empty=False
+LNCH r=139 can_launch(pickup=Position(x=4, y=0),target=Position(x=4, y=5))=False
+W r=139 AT STAGE=Position(x=4, y=4) dir_to_target=Direction.SOUTH can_move=False
+W r=139 MOVE FAIL can_move_said=False exc=GameError Cannot move
+OBS r=140 target=Position(x=4, y=5) builder_on_tile=None is_tile_passable=False is_tile_empty=False
+LNCH r=140 can_launch(pickup=Position(x=4, y=0),target=Position(x=4, y=5))=False
+W r=140 AT STAGE=Position(x=4, y=4) dir_to_target=Direction.SOUTH can_move=False
+W r=140 MOVE FAIL can_move_said=False exc=GameError Cannot move
+OBS r=141 target=Position(x=4, y=5) builder_on_tile=None is_tile_passable=False is_tile_empty=False
+LNCH r=141 can_launch(pickup=Position(x=4, y=0),target=Position(x=4, y=5))=False
+W r=141 AT STAGE=Position(x=4, y=4) dir_to_target=Direction.SOUTH can_move=False
+W r=141 MOVE FAIL can_move_said=False exc=GameError Cannot move
+OBS r=142 target=Position(x=4, y=5) builder_on_tile=None is_tile_passable=False is_tile_empty=False
+LNCH r=142 can_launch(pickup=Position(x=4, y=0),target=Position(x=4, y=5))=False
+W r=142 AT STAGE=Position(x=4, y=4) dir_to_target=Direction.SOUTH can_move=False
+W r=142 MOVE FAIL can_move_said=False exc=GameError Cannot move
+OBS r=143 target=Position(x=4, y=5) builder_on_tile=None is_tile_passable=False is_tile_empty=False
+LNCH r=143 can_launch(pickup=Position(x=4, y=0),target=Position(x=4, y=5))=False
+W r=143 AT STAGE=Position(x=4, y=4) dir_to_target=Direction.SOUTH can_move=False
+W r=143 MOVE FAIL can_move_said=False exc=GameError Cannot move
+OBS r=144 target=Position(x=4, y=5) builder_on_tile=None is_tile_passable=False is_tile_empty=False
+LNCH r=144 can_launch(pickup=Position(x=4, y=0),target=Position(x=4, y=5))=False
+W r=144 AT STAGE=Position(x=4, y=4) dir_to_target=Direction.SOUTH can_move=False
+W r=144 MOVE FAIL can_move_said=False exc=GameError Cannot move
+OBS r=145 target=Position(x=4, y=5) builder_on_tile=None is_tile_passable=False is_tile_empty=False
+LNCH r=145 can_launch(pickup=Position(x=4, y=0),target=Position(x=4, y=5))=False
+W r=145 AT STAGE=Position(x=4, y=4) dir_to_target=Direction.SOUTH can_move=False
+W r=145 MOVE FAIL can_move_said=False exc=GameError Cannot move
+OBS r=146 target=Position(x=4, y=5) builder_on_tile=None is_tile_passable=False is_tile_empty=False
+LNCH r=146 can_launch(pickup=Position(x=4, y=0),target=Position(x=4, y=5))=False
+W r=146 AT STAGE=Position(x=4, y=4) dir_to_target=Direction.SOUTH can_move=False
+W r=146 MOVE FAIL can_move_said=False exc=GameError Cannot move
+OBS r=147 target=Position(x=4, y=5) builder_on_tile=None is_tile_passable=False is_tile_empty=False
+LNCH r=147 can_launch(pickup=Position(x=4, y=0),target=Position(x=4, y=5))=False
+W r=147 AT STAGE=Position(x=4, y=4) dir_to_target=Direction.SOUTH can_move=False
+W r=147 MOVE FAIL can_move_said=False exc=GameError Cannot move
+OBS r=148 target=Position(x=4, y=5) builder_on_tile=None is_tile_passable=False is_tile_empty=False
+LNCH r=148 can_launch(pickup=Position(x=4, y=0),target=Position(x=4, y=5))=False
+W r=148 AT STAGE=Position(x=4, y=4) dir_to_target=Direction.SOUTH can_move=False
+W r=148 MOVE FAIL can_move_said=False exc=GameError Cannot move
+OBS r=149 target=Position(x=4, y=5) builder_on_tile=None is_tile_passable=False is_tile_empty=False
+LNCH r=149 can_launch(pickup=Position(x=4, y=0),target=Position(x=4, y=5))=False
+W r=149 AT STAGE=Position(x=4, y=4) dir_to_target=Direction.SOUTH can_move=False
+W r=149 MOVE FAIL can_move_said=False exc=GameError Cannot move
+LNCH r=150 can_launch(pickup=Position(x=4, y=0),target=Position(x=4, y=5))=False
+W r=150 AT STAGE=Position(x=4, y=4) dir_to_target=Direction.SOUTH can_move=False
+W r=150 MOVE FAIL can_move_said=False exc=GameError Cannot move

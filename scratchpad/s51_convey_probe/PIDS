@@ -1,0 +1,15 @@
+PIDS: own_barrier=91128 own_empty=91131
+PIDS: own_splitter=92746 enemy_conveyor=92748
+=== batch1 ===
+own_conveyor=96328 own_barrier=96329
+=== batch2 ===
+own_empty=96503 own_splitter=96504
+=== batch3 ===
+enemy_conveyor=96667 enemy_barrier=96668
+=== batch4 ===
+enemy_empty=98327 enemy_splitter=98328
+=== FINAL rerun batch1 ===
+own_conveyor=99716 own_barrier=99718
+own_empty=99881 own_splitter=99882
+enemy_conveyor=159 enemy_barrier=163
+enemy_empty=404 enemy_splitter=405

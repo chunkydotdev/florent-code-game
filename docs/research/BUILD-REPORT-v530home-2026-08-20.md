@@ -669,3 +669,16 @@ opponent, and nothing here is a ladder read.**
   landing check differs from walking. Downstream stakes: heal-from-belt reasoning (Mjolnir
   sockets, heal-outrun mechanism), HS_SEAT_BAN_CONVEYORS pricing, the ring's heal-seat cost.
 * ⭐ Conveyors DO block gunner rays (16/16) — banked for the ring's ledger and siting logic.
+
+---
+*⛔ DATED CORRECTION (s51, same day, live-probe half of the reconciliation): the "conveyors
+are NOT bot-passable" engine finding above is RETRACTED — an instrument bug. Definitive truth
+table (scratchpad/s51_convey_probe/, 8 deterministic games, barrier+empty controls both ways,
+SDK docstring corroboration at fcode/_types.py:345): builders WALK ONTO and LAND ON conveyors
+and splitters, OWN and ENEMY alike (6/6); is_tile_passable correctly reads False only when a
+BOT already occupies the tile — the likely shape of this build's probe bug (probing occupied
+tiles). Consequences: the banked 33.5%-landings fact STANDS; healers-stand-on-conveyors STANDS
+(the builder's statement to Magnus needed no correction after all); the RING candidate's
+heal-seat objection DISSOLVES (ring conveyors are healer-standable) while its gunner-ray
+blocking (verified correctly, 16/16) stands — the ring lead strengthens. The v530 probe code's
+specific defect is the reconcile doc's to name.*
