@@ -232,7 +232,14 @@ def _lookup_ratings() -> tuple[float, dict[str, float], str]:
 
 
 def _payout(gap: float) -> float:
-    return 32.0 * (1.0 - 1.0 / (1.0 + 10 ** (-gap / 400.0)))
+    # gap = theirs - ours. E_us = 1/(1+10^(gap/400)); a 5-0 pays 32*(1-E_us).
+    # FIXED 2026-08-20 (research s52): the exponent's sign was flipped, so this
+    # returned the 0-5 LOSS magnitude, not the 5-0 payout — printed as
+    # "a 5-0 pays +10.79" for Flotte (+117.89) when the true figure is +21.23.
+    # Caught by the Flotte v55 study agent recomputing from ratings; the
+    # admissibility GATE was unaffected (it routes through target_value when
+    # importable), only the printed figure and the dormant inline fallback.
+    return 32.0 * (1.0 - 1.0 / (1.0 + 10 ** (gap / 400.0)))
 
 
 def _admissible(gap: float) -> tuple[bool, str]:
