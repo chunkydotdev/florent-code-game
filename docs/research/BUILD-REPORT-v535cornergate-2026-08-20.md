@@ -378,6 +378,15 @@ asserted the 48 games anyway (corrected there too). Caught by the V535POOL prere
 at draft (blocker B3). The dose is OWED post-screen; until it exists the gate's evidence
 is the predicate drive and the engine grid (§4), and nothing in this section may be cited.
 
+⭐ **DOSE DISCHARGED s52 ~20:5xZ (builder, post-screen per the locked sequence; tape
+`scratchpad/s52_v535_build/dose/`, 24 games/arm, NOISE_OFF all three trees, reader
+`doseread.py` selftest-PASS):** REFUSING boards (archipelago+midgard): parent **42 corners
+/ 12 games (3.50/game)** → v535 **0 corners, 24/24 gate firings, 24 refusals**; RUNNING
+boards (glacierkeep+ragnarok): **12 of 12 games per-game IDENTICAL corner counts** (30
+each, 2.50/game) — the positive control that separates "gated on refusing maps" from
+"broken everywhere". 0 tracebacks. The §6 manifest row's correction stands as history;
+this paragraph is the dose's record of existence and the readout may cite THESE numbers.
+
 `doseread.py --selftest` drives every counter to the other verdict: a tape with
 corner lines counts them (2); the same tape with them removed reads exactly 0
 while still seeing the gate line (**the two counters are not aliases**); a
