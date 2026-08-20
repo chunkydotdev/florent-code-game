@@ -1,0 +1,901 @@
+map	w	h	coredsq	rounds	seats	claim_onset	claim2_onset	claim3_onset	claim5_onset	own_onset	claim_r20	claim_r40	claim_r80	claim_r150	claim_max	own_max	claim_mean	claim_tail50	own_mean	ours_max	ours_seatrounds	ours_first	episodes	epi_ended	retakes	retake_lat_mean	retake_lat_med	pecks_total	ourblock_seatrounds	ourconv_seatrounds	mjbody_seatrounds	empty_seatrounds	claim_w40_100	block_w40_100	mj_claim_epis	mj_claim_ended	mj_claim_life_med	claim_pre_press	claim_post_press	our_near16_first	our_near36_first	mj_harv1	mj_harv2	mj_harv_n	pecks_on_ours	pecks_on_theirs	peck_victims	tag	seat	result	cond	turn
+antler	14	18	64	377	8	2	3	-1	-1	2	2	2	2	1	2	2	1.223	1.0	1.223	7	2255	10	10	3	2	1.0	1	111	2255	0	193	107	1.917	5.317	4	3	23	2	1	9	9	4	6	2	73	38	barrier:73	antler_s300_A	A	OPP	Core destroyed	377
+antler	14	18	64	81	8	2	3	45	-1	2	2	2	3	-1	3	3	2.383	2.72	2.383	5	266	10	5	1	1	1.0	1	92	266	0	16	161	-1	-1	3	0	-1	2	2	9	9	4	6	2	83	9	barrier:83	antler_s300_B	B	OPP	Core destroyed	81
+antler	14	18	64	282	8	2	3	-1	-1	2	2	2	0	1	2	2	1.085	1.0	1.085	6	1502	10	9	3	2	1.0	1	104	1502	0	156	292	0.95	5.267	4	3	34	2	1	9	9	4	6	2	68	36	barrier:68	antler_s301_A	A	OPP	Core destroyed	282
+antler	14	18	64	263	8	2	3	24	57	2	2	3	6	6	7	7	4.875	5.0	4.875	3	575	10	10	7	7	2.43	1	211	575	0	7	139	5.133	1.783	9	4	118	2	3	9	9	4	6	3	101	110	barrier:101	antler_s301_B	B	OPP	Core destroyed	263
+antler	14	18	64	222	8	2	3	31	-1	2	2	2	4	4	4	4	3.311	3.34	3.311	5	845	11	25	21	3	1.0	1	237	845	0	33	163	3.55	3.85	7	3	77	2	2	9	9	4	6	2	138	99	barrier:138	antler_s302_A	A	US	Core destroyed	222
+antler	14	18	64	101	8	2	3	-1	-1	2	2	2	2	-1	2	2	1.881	1.86	1.881	3	159	17	17	14	0	-1	-1	77	159	0	8	359	1.9	1.933	2	1	92	2	2	9	9	4	6	2	67	10	barrier:67	antler_s302_B	B	OPP	Core destroyed	101
+antler	14	18	64	343	8	2	3	33	-1	2	2	3	1	1	3	3	1.277	1.0	1.277	6	1852	10	30	24	1	1.0	1	180	1852	0	254	200	1.883	5.033	3	2	66	2	2	9	9	4	6	2	144	36	barrier:144	antler_s303_A	A	US	Core destroyed	343
+antler	14	18	64	418	8	2	3	24	28	2	2	5	5	6	6	6	2.545	0.0	2.545	8	1785	90	11	4	2	29.5	58	171	1785	0	20	385	5.0	0.167	8	8	145	2	5	9	9	4	6	5	45	126	barrier:45	antler_s303_B	B	US	Core destroyed	418
+antler	14	18	64	463	8	2	3	-1	-1	2	2	1	1	1	2	2	1.056	1.0	1.056	5	2001	11	72	68	0	-1	-1	116	2001	0	328	886	1.0	4.9	2	1	28	2	2	9	9	4	6	2	106	10	barrier:106	antler_s304_A	A	OPP	Core destroyed	463
+antler	14	18	64	253	8	2	3	24	29	2	2	5	5	5	6	6	4.921	5.6	4.921	2	172	109	5	4	3	1.0	1	124	172	0	33	475	5.033	0.0	9	3	107	2	5	9	9	4	6	3	60	64	barrier:60	antler_s304_B	B	US	Core destroyed	253
+antler	14	18	64	146	8	2	3	31	-1	2	2	3	3	-1	3	3	2.404	2.0	2.404	6	671	11	8	2	1	1.0	1	183	671	0	6	140	2.917	4.833	3	1	93	2	2	9	9	4	6	2	130	53	barrier:130	antler_s305_A	A	OPP	Core destroyed	146
+antler	14	18	64	332	8	2	3	26	31	2	2	5	5	3	5	5	2.786	3.4	2.786	7	992	84	7	4	4	1.0	1	167	992	0	10	646	4.533	0.533	9	5	159	2	4	9	9	4	6	2	92	75	barrier:92	antler_s305_B	B	US	Core destroyed	332
+antler	14	18	64	257	8	2	3	-1	-1	2	2	1	0	0	2	2	0.389	0.0	0.389	8	1723	11	12	4	3	17.33	17	89	1723	0	50	168	0.667	6.0	3	3	22	2	1	9	9	4	6	2	57	32	barrier:57	antler_s306_A	A	OPP	Core destroyed	257
+antler	14	18	64	229	8	2	3	24	28	2	2	5	5	6	6	6	4.934	5.94	4.934	3	212	90	4	3	1	1.0	1	117	212	0	24	376	5.0	0.167	8	2	119	2	5	9	9	4	6	3	50	67	barrier:50	antler_s306_B	B	OPP	Core destroyed	229
+antler	14	18	64	350	8	2	3	31	-1	2	2	3	2	1	3	3	1.366	1.0	1.366	6	1893	10	10	4	1	1.0	1	106	1893	0	301	128	2.317	4.65	3	2	103	2	2	9	9	4	6	2	64	42	barrier:64	antler_s307_A	A	US	Core destroyed	350
+antler	14	18	64	66	8	2	3	24	28	2	2	5	-1	-1	5	5	3.742	4.4	3.742	0	0	-1	0	0	0	-1	-1	4	0	0	9	216	-1	-1	5	0	-1	2	5	9	9	4	6	3	0	4		antler_s307_B	B	OPP	Core destroyed	66
+antler	14	18	64	125	8	2	3	31	-1	2	2	3	3	-1	3	3	2.472	2.4	2.472	6	546	11	7	1	1	1.0	1	161	546	0	6	139	2.917	4.833	3	1	93	2	2	9	9	4	6	2	108	53	barrier:108	antler_s308_A	A	OPP	Core destroyed	125
+antler	14	18	64	117	8	2	3	38	-1	2	2	3	3	-1	3	3	2.427	2.52	2.427	2	125	13	3	1	1	1.0	1	49	125	0	48	450	2.883	1.067	4	2	93	2	2	8	8	4	6	2	25	24	barrier:25	antler_s308_B	B	OPP	Core destroyed	117
+antler	14	18	64	125	8	2	3	31	-1	2	2	3	3	-1	3	3	2.472	2.4	2.472	6	546	11	7	1	1	1.0	1	161	546	0	5	140	2.917	4.833	3	1	93	2	2	9	9	4	6	2	108	53	barrier:108	antler_s309_A	A	OPP	Core destroyed	125
+antler	14	18	64	255	8	2	3	49	-1	2	2	2	3	3	4	4	2.365	0.54	2.365	7	747	17	15	8	2	10.5	20	102	537	210	55	513	2.85	0.133	4	4	175	2	2	9	9	4	6	3	48	54	barrier:36,conveyor:12	antler_s309_B	B	US	Core destroyed	255
+antler	14	18	64	183	8	2	3	63	-1	2	2	2	3	3	3	3	2.579	3.0	2.579	5	698	11	5	1	1	1.0	1	57	698	0	15	279	2.617	4.367	4	1	22	2	1	9	9	4	6	2	39	18	barrier:39	antler_s310_A	A	OPP	Core destroyed	183
+antler	14	18	64	320	8	2	3	72	-1	2	2	1	3	3	4	4	2.094	1.0	2.094	7	1364	13	8	1	1	1.0	1	92	1044	320	9	476	2.133	2.8	5	4	137	2	1	9	9	4	6	2	52	40	barrier:31,conveyor:21	antler_s310_B	B	US	Core destroyed	320
+antler	14	18	64	496	8	2	3	36	-1	2	2	3	2	1	3	3	1.702	3.0	1.702	7	2882	11	24	20	3	1.0	1	128	2882	0	23	219	1.9	5.517	5	2	80	2	2	9	9	4	6	3	108	20	barrier:108	antler_s311_A	A	US	Core destroyed	496
+antler	14	18	64	527	8	2	3	426	-1	2	2	2	2	0	4	4	1.376	4.0	1.376	7	2310	17	26	22	3	2.0	1	260	2194	116	114	937	2.0	1.883	6	2	117	2	2	9	9	4	6	2	232	28	barrier:212,conveyor:20	antler_s311_B	B	OPP	Core destroyed	527
+antler	14	18	64	337	8	2	3	96	-1	2	2	2	2	3	3	3	2.682	3.0	2.682	5	1294	11	5	1	1	1.0	1	120	1294	0	302	196	2.067	4.0	4	1	22	2	1	9	9	4	6	2	98	22	barrier:98	antler_s312_A	A	US	Core destroyed	337
+antler	14	18	64	133	8	2	3	-1	-1	2	2	1	0	-1	2	2	0.526	0.0	0.526	6	596	17	11	5	0	-1	-1	36	434	162	88	276	0.2	4.0	2	2	49	2	1	9	9	4	6	2	16	20	barrier:16	antler_s312_B	B	US	Core destroyed	133
+antler	14	18	64	440	8	2	3	281	308	2	2	2	2	1	7	7	3.002	7.0	3.002	6	1491	11	35	35	11	13.45	1	160	1491	0	48	649	1.717	4.167	9	2	48	2	2	9	9	4	6	4	140	20	barrier:140	antler_s313_A	A	OPP	Core destroyed	440
+antler	14	18	64	379	8	2	3	139	-1	2	2	2	1	2	3	3	1.918	2.86	1.918	5	1148	10	17	14	4	1.0	1	253	1148	0	25	1060	1.267	3.933	7	4	54	2	2	9	9	4	6	2	184	69	barrier:184	antler_s313_B	B	US	Core destroyed	379
+antler	14	18	64	146	8	2	3	31	-1	2	2	3	3	-1	3	3	2.404	2.0	2.404	6	671	11	8	2	1	1.0	1	183	671	0	6	140	2.917	4.833	3	1	93	2	2	9	9	4	6	2	130	53	barrier:130	antler_s314_A	A	OPP	Core destroyed	146
+antler	14	18	64	569	8	2	3	-1	-1	2	2	1	1	1	2	2	1.032	1.0	1.032	3	1638	13	3	0	0	-1	-1	31	1638	0	999	1302	1.0	3.0	2	1	21	2	1	8	8	4	6	2	6	25	barrier:6	antler_s314_B	B	OPP	Core destroyed	569
+antler	14	18	64	321	8	2	3	-1	-1	2	2	1	0	0	2	2	0.296	0.0	0.296	7	1864	11	8	1	0	-1	-1	105	1864	0	190	419	0.25	5.733	3	3	25	2	1	9	9	4	6	2	75	30	barrier:75	antler_s315_A	A	OPP	Core destroyed	321
+antler	14	18	64	66	8	2	3	24	28	2	2	5	-1	-1	5	5	3.742	4.4	3.742	0	0	-1	0	0	0	-1	-1	4	0	0	9	216	-1	-1	5	0	-1	2	5	9	9	4	6	3	0	4		antler_s315_B	B	OPP	Core destroyed	66
+antler	14	18	64	257	8	2	3	31	-1	2	2	4	2	2	4	4	2.249	2.0	2.249	5	1099	11	14	9	2	1.0	1	171	1099	0	11	368	2.95	3.7	4	2	76	2	2	9	9	4	6	2	131	40	barrier:131	antler_s316_A	A	US	Core destroyed	257
+antler	14	18	64	345	8	2	3	26	31	2	2	5	5	3	5	5	2.261	1.04	2.261	7	1228	84	8	3	3	1.0	1	130	1228	0	10	659	4.533	0.533	8	6	159	2	4	9	9	4	6	2	60	70	barrier:60	antler_s316_B	B	US	Core destroyed	345
+antler	14	18	64	177	8	2	3	34	120	2	2	3	4	5	5	5	3.695	5.0	3.695	4	527	11	7	4	2	1.0	1	48	527	0	6	229	3.467	3.467	5	0	-1	2	2	9	9	4	6	2	30	18	barrier:30	antler_s317_A	A	OPP	Core destroyed	177
+antler	14	18	64	63	8	2	3	24	29	2	2	5	-1	-1	5	5	3.667	4.2	3.667	0	0	-1	0	0	0	-1	-1	12	0	0	7	213	-1	-1	5	0	-1	2	5	9	9	4	6	2	0	12		antler_s317_B	B	OPP	Core destroyed	63
+antler	14	18	64	166	8	2	3	36	-1	2	2	3	3	2	3	3	2.494	2.48	2.494	6	756	11	9	3	3	9.33	1	78	756	0	23	135	2.717	4.633	4	2	138	2	2	9	9	4	6	2	49	29	barrier:49	antler_s318_A	A	OPP	Core destroyed	166
+antler	14	18	64	250	8	2	3	24	29	2	2	5	5	3	5	5	3.712	3.0	3.712	4	329	120	4	2	0	-1	-1	76	329	0	74	555	5.0	0.0	5	2	119	2	5	9	9	4	6	4	30	46	barrier:30	antler_s318_B	B	US	Core destroyed	250
+antler	14	18	64	368	8	2	3	33	-1	2	2	3	1	1	3	3	1.258	1.0	1.258	6	1999	10	33	27	1	1.0	1	187	1999	0	279	203	1.883	5.033	3	2	66	2	2	9	9	4	6	2	151	36	barrier:151	antler_s319_A	A	US	Core destroyed	368
+antler	14	18	64	467	8	2	3	120	158	2	2	1	1	4	8	8	4.822	4.0	4.822	6	867	36	11	8	8	3.25	1	247	704	163	21	463	1.0	1.767	11	7	118	2	2	9	9	4	6	2	110	137	barrier:90,conveyor:20	antler_s319_B	B	US	Core destroyed	467
+antler	14	18	64	229	8	2	3	-1	-1	2	2	2	2	2	2	2	1.952	2.0	1.952	5	839	11	5	2	1	1.0	1	158	839	0	134	412	2.0	4.0	3	1	22	2	1	9	9	4	6	2	136	22	barrier:136	antler_s320_A	A	OPP	Core destroyed	229
+antler	14	18	64	303	8	2	3	24	29	2	2	5	5	7	7	7	4.564	3.44	4.564	5	488	122	8	3	2	1.0	1	157	488	0	32	410	5.0	0.0	8	5	186	2	5	9	9	4	6	5	50	107	barrier:50	antler_s320_B	B	US	Core destroyed	303
+antler	14	18	64	257	8	2	3	31	-1	2	2	4	2	2	4	4	2.249	2.0	2.249	5	1099	11	14	9	2	1.0	1	171	1099	0	11	368	2.95	3.7	4	2	76	2	2	9	9	4	6	2	131	40	barrier:131	antler_s321_A	A	US	Core destroyed	257
+antler	14	18	64	113	8	2	3	-1	-1	2	2	2	2	-1	2	2	1.956	2.0	1.956	4	312	11	6	3	0	-1	-1	73	312	0	6	262	2.0	3.167	2	0	-1	2	2	9	9	4	6	3	64	9	barrier:64	antler_s321_B	B	OPP	Core destroyed	113
+antler	14	18	64	162	8	2	3	31	-1	2	2	3	3	2	3	3	2.364	2.0	2.364	6	759	11	8	2	1	1.0	1	180	759	0	5	149	2.917	4.833	3	1	93	2	2	9	9	4	6	2	127	53	barrier:127	antler_s322_A	A	OPP	Core destroyed	162
+antler	14	18	64	61	8	2	3	-1	-1	2	2	2	-1	-1	2	2	1.902	1.98	1.902	1	27	34	1	0	0	-1	-1	17	27	0	6	288	-1	-1	2	1	58	2	2	9	9	4	6	2	0	17		antler_s322_B	B	OPP	Core destroyed	61
+antler	14	18	64	367	8	2	3	34	-1	2	2	3	2	2	3	3	2.065	2.0	2.065	5	1700	10	29	24	1	1.0	1	172	1700	0	3	473	2.383	4.533	3	1	61	2	2	9	9	4	6	2	143	29	barrier:143	antler_s323_A	A	US	Core destroyed	367
+antler	14	18	64	283	8	2	3	24	28	2	2	5	5	7	8	8	6.184	7.54	6.184	0	0	-1	0	0	0	-1	-1	14	0	0	12	433	5.0	0.0	9	2	232	2	5	9	9	4	6	4	0	14		antler_s323_B	B	US	Core destroyed	283
+antler	14	18	64	126	8	2	3	31	-1	2	2	3	3	-1	3	3	2.468	2.38	2.468	6	552	11	7	1	1	1.0	1	162	552	0	5	140	2.917	4.833	3	1	93	2	2	9	9	4	6	2	109	53	barrier:109	antler_s324_A	A	OPP	Core destroyed	126
+antler	14	18	64	296	8	2	3	-1	-1	2	2	2	1	1	2	2	1.142	0.94	1.142	7	1074	17	15	8	0	-1	-1	76	920	154	187	700	1.167	1.15	2	2	291	2	2	9	9	4	6	2	32	44	barrier:12,conveyor:20	antler_s324_B	B	US	Core destroyed	296
+antler	14	18	64	146	8	2	3	31	-1	2	2	3	3	-1	3	3	2.404	2.0	2.404	6	672	11	7	1	1	1.0	1	174	672	0	5	140	2.917	4.833	3	1	93	2	2	9	9	4	6	2	121	53	barrier:121	antler_s325_A	A	OPP	Core destroyed	146
+antler	14	18	64	334	8	2	3	120	-1	2	2	1	1	3	3	3	1.455	1.0	1.455	4	959	13	6	2	1	1.0	1	138	959	0	105	1049	1.0	2.283	4	3	39	2	1	8	8	4	6	3	70	68	barrier:70	antler_s325_B	B	OPP	Core destroyed	334
+antler	14	18	64	235	8	2	3	34	-1	2	2	3	1	1	3	3	1.272	1.0	1.272	4	871	10	5	1	1	1.0	1	77	871	0	356	354	1.433	3.833	4	3	23	2	2	9	9	4	6	3	47	30	barrier:47	antler_s326_A	A	US	Core destroyed	235
+antler	14	18	64	393	8	2	3	131	153	2	2	2	1	4	6	6	3.768	4.48	3.768	5	1160	10	20	17	6	1.83	1	394	1160	0	7	426	1.267	3.983	10	5	81	2	2	9	9	4	6	2	284	110	barrier:284	antler_s326_B	B	US	Core destroyed	393
+antler	14	18	64	275	8	2	3	31	-1	2	2	4	2	2	4	4	2.233	2.0	2.233	5	1188	11	15	10	2	1.0	1	170	1188	0	11	387	2.95	3.7	4	2	76	2	2	9	9	4	6	2	130	40	barrier:130	antler_s327_A	A	US	Core destroyed	275
+antler	14	18	64	191	8	2	3	22	61	2	1	4	5	6	6	6	4.686	6.0	4.686	3	221	13	3	2	2	1.0	1	40	221	0	9	353	4.65	1.333	7	1	15	2	3	9	9	4	6	4	30	10	barrier:30	antler_s327_B	B	OPP	Core destroyed	191
+antler	14	18	64	229	8	2	3	-1	-1	2	2	2	2	2	2	2	1.952	2.0	1.952	5	839	11	5	2	1	1.0	1	158	839	0	134	412	2.0	4.0	3	1	22	2	1	9	9	4	6	2	136	22	barrier:136	antler_s328_A	A	OPP	Core destroyed	229
+antler	14	18	64	282	8	2	3	24	28	2	2	5	5	6	7	7	5.681	7.0	5.681	1	101	163	2	1	1	4.0	4	17	101	0	17	384	5.0	0.0	7	0	-1	2	5	9	9	4	6	3	3	14	barrier:3	antler_s328_B	B	OPP	Core destroyed	282
+antler	14	18	64	321	8	2	3	-1	-1	2	2	1	0	0	2	2	0.296	0.0	0.296	7	1864	11	8	1	0	-1	-1	105	1864	0	190	419	0.25	5.733	3	3	25	2	1	9	9	4	6	2	75	30	barrier:75	antler_s329_A	A	OPP	Core destroyed	321
+antler	14	18	64	331	8	2	3	36	-1	2	2	3	3	3	3	3	2.317	2.0	2.317	5	1172	12	13	8	2	1.0	1	71	1172	0	13	375	2.917	2.117	4	2	149	2	2	9	9	4	6	2	47	24	barrier:47	antler_s329_B	B	US	Core destroyed	331
+archipelago	26	26	392	344	8	2	3	21	89	1	2	3	4	5	6	6	4.971	6.0	4.974	1	56	125	1	1	1	1.0	1	16	56	0	49	936	3.9	0.0	6	0	-1	5	5	125	87	8	9	11	15	1	barrier:15	archipelago_s300_A	A	OPP	Core destroyed	344
+archipelago	26	26	392	294	8	2	3	17	45	1	3	3	8	8	8	8	6.956	8.0	6.959	2	30	53	2	2	2	4.0	7	14	30	0	23	253	6.583	0.5	8	0	-1	6	7	53	32	8	15	18	12	2	barrier:12	archipelago_s300_B	B	OPP	Core destroyed	294
+archipelago	26	26	392	193	8	2	3	22	-1	1	2	3	3	3	3	3	2.86	3.0	2.865	3	160	135	3	0	0	-1	-1	2	160	0	188	643	3.0	0.0	3	0	-1	3	3	135	20	8	9	3	0	2		archipelago_s301_A	A	OPP	Core destroyed	193
+archipelago	26	26	392	525	8	2	3	18	44	1	3	4	8	7	8	8	7.09	7.64	7.091	2	242	32	4	4	3	1.0	1	179	242	0	27	208	7.167	0.567	9	2	458	3	7	32	32	8	14	19	91	88	barrier:91	archipelago_s301_B	B	OPP	Core destroyed	525
+archipelago	26	26	392	224	8	2	3	24	39	1	2	5	5	5	5	5	4.527	5.0	4.531	3	530	36	6	3	2	1.0	1	102	530	0	28	219	4.967	2.567	7	2	59	3	5	36	20	8	9	3	82	20	barrier:82	archipelago_s302_A	A	US	Core destroyed	224
+archipelago	26	26	392	372	8	2	3	21	33	1	2	6	7	8	8	8	7.277	8.0	7.28	1	50	29	2	2	1	1.0	1	79	50	0	15	203	6.983	0.633	8	0	-1	4	7	29	29	8	15	11	15	64	barrier:15	archipelago_s302_B	B	US	Core destroyed	372
+archipelago	26	26	392	151	8	2	3	31	-1	1	2	3	3	3	3	3	2.762	3.0	2.768	2	11	144	2	0	0	-1	-1	0	11	0	151	628	3.0	0.0	3	0	-1	3	3	144	20	8	9	4	0	0		archipelago_s303_A	A	OPP	Core destroyed	151
+archipelago	26	26	392	279	8	2	3	18	51	1	3	4	5	8	8	8	6.466	8.0	6.47	2	110	31	6	6	6	12.83	12	69	110	0	25	292	5.467	1.067	9	1	29	3	5	31	31	8	14	15	58	11	barrier:58	archipelago_s303_B	B	US	Core destroyed	279
+archipelago	26	26	392	312	8	2	3	24	32	1	2	5	6	6	6	6	4.702	4.0	4.705	3	666	36	5	2	2	1.0	1	184	666	0	32	194	5.65	1.933	8	4	183	5	5	36	20	8	9	7	111	73	barrier:111	archipelago_s304_A	A	US	Core destroyed	312
+archipelago	26	26	392	517	8	2	3	25	54	1	2	4	6	8	8	8	7.338	8.0	7.34	4	116	35	4	4	4	0.75	1	83	116	0	15	210	6.0	1.8	8	0	-1	4	6	35	35	8	17	15	76	7	barrier:76	archipelago_s304_B	B	US	Core destroyed	517
+archipelago	26	26	392	279	8	2	3	53	56	1	2	2	5	6	6	6	4.846	5.0	4.849	3	570	30	5	2	1	1.0	1	83	570	0	33	276	4.6	2.333	6	1	152	2	2	30	30	8	9	5	70	13	barrier:70	archipelago_s305_A	A	US	Core destroyed	279
+archipelago	26	26	392	262	8	2	3	15	57	1	3	4	8	8	8	8	6.901	8.0	6.905	1	4	49	1	1	1	1.0	1	18	4	0	20	263	6.7	0.067	9	1	33	3	8	49	49	8	13	15	1	17	barrier:1	archipelago_s305_B	B	OPP	Core destroyed	262
+archipelago	26	26	392	564	8	2	3	24	41	1	2	4	6	6	6	6	5.718	6.0	5.72	1	13	39	1	1	0	-1	-1	1	13	0	292	981	5.833	0.2	6	0	-1	3	6	39	39	8	9	3	0	1		archipelago_s306_A	A	OPP	Core destroyed	564
+archipelago	26	26	392	669	8	2	3	18	44	1	3	4	8	7	8	8	7.193	8.0	7.194	2	317	32	3	3	3	1.0	1	176	317	0	27	195	7.167	0.567	9	1	103	3	7	32	32	8	14	23	91	85	barrier:91	archipelago_s306_B	B	OPP	Core destroyed	669
+archipelago	26	26	392	216	8	2	3	28	34	1	2	5	5	4	5	5	4.176	4.0	4.181	4	512	33	4	1	0	-1	-1	71	512	0	89	224	5.0	2.2	5	1	105	4	5	33	20	8	9	3	61	10	barrier:61	archipelago_s307_A	A	US	Core destroyed	216
+archipelago	26	26	392	226	8	2	3	16	38	1	3	6	7	8	8	8	6.553	8.0	6.558	2	107	39	5	5	2	2.0	3	44	107	0	28	191	6.567	1.35	8	0	-1	6	6	39	32	8	14	3	37	7	barrier:37	archipelago_s307_B	B	OPP	Core destroyed	226
+archipelago	26	26	392	167	8	2	3	23	29	1	2	6	7	7	7	7	5.988	7.0	5.994	1	127	37	2	1	1	1.0	1	81	127	0	26	182	6.783	0.95	7	0	-1	6	7	37	20	8	9	4	75	6	barrier:75	archipelago_s308_A	A	OPP	Core destroyed	167
+archipelago	26	26	392	335	8	2	3	18	51	1	3	4	5	8	8	8	6.722	8.0	6.725	2	110	31	6	6	6	12.83	12	68	110	0	25	292	5.467	1.067	9	1	29	3	5	31	31	8	14	11	58	10	barrier:58	archipelago_s308_B	B	OPP	Core destroyed	335
+archipelago	26	26	392	151	8	2	3	31	-1	1	2	3	3	3	3	3	2.762	3.0	2.768	2	11	144	2	0	0	-1	-1	0	11	0	151	628	3.0	0.0	3	0	-1	3	3	144	20	8	9	4	0	0		archipelago_s309_A	A	OPP	Core destroyed	151
+archipelago	26	26	392	204	8	2	3	21	33	1	2	6	7	8	8	8	6.681	8.0	6.686	1	50	29	2	2	1	1.0	1	39	50	0	15	203	6.983	0.633	8	0	-1	4	7	29	29	8	15	6	15	24	barrier:15	archipelago_s309_B	B	US	Core destroyed	204
+archipelago	26	26	392	198	8	2	3	23	41	1	2	4	7	7	7	7	5.783	7.0	5.788	3	211	36	3	2	2	1.0	1	52	211	0	22	205	6.083	1.767	7	0	-1	3	5	36	20	8	9	3	50	2	barrier:50	archipelago_s310_A	A	OPP	Core destroyed	198
+archipelago	26	26	392	371	8	2	3	16	38	1	3	6	7	8	8	8	7.073	8.0	7.075	2	78	39	8	8	3	32.33	45	35	78	0	27	238	6.567	1.283	8	0	-1	6	6	39	32	8	14	18	35	0	barrier:35	archipelago_s310_B	B	US	Core destroyed	371
+archipelago	26	26	392	178	8	2	3	23	29	1	2	5	5	5	5	5	4.393	4.54	4.399	4	404	31	4	0	0	-1	-1	64	404	0	12	225	5.0	2.317	5	1	132	5	5	31	20	8	9	3	40	24	barrier:40	archipelago_s311_A	A	US	Core destroyed	178
+archipelago	26	26	392	229	8	2	3	21	33	1	2	7	7	8	8	8	6.729	7.36	6.734	1	5	29	1	1	0	-1	-1	50	5	0	16	237	7.0	0.0	8	1	175	4	7	29	29	8	15	8	0	50		archipelago_s311_B	B	US	Core destroyed	229
+archipelago	26	26	392	302	8	2	3	23	38	1	2	5	6	8	8	8	6.911	8.0	6.914	2	64	36	2	2	2	1.0	1	34	64	0	22	242	6.233	0.95	8	0	-1	3	5	36	36	8	9	13	33	1	barrier:33	archipelago_s312_A	A	OPP	Core destroyed	302
+archipelago	26	26	392	159	8	2	3	18	65	1	3	4	8	8	8	8	5.899	8.0	5.906	1	48	29	1	1	1	1.0	1	19	48	0	37	248	5.883	0.617	8	0	-1	4	4	29	29	8	16	4	15	4	barrier:15	archipelago_s312_B	B	OPP	Core destroyed	159
+archipelago	26	26	392	465	8	2	3	21	45	1	2	3	6	6	7	7	5.727	7.0	5.729	3	625	121	4	3	3	1.0	1	96	625	0	43	388	5.733	0.0	9	2	138	6	6	121	80	8	9	4	76	20	barrier:76	archipelago_s313_A	A	OPP	Core destroyed	465
+archipelago	26	26	392	269	8	2	3	18	44	1	3	4	5	5	5	5	4.602	5.0	4.606	3	667	34	4	1	0	-1	-1	70	667	0	24	222	4.933	2.583	5	0	-1	3	5	34	34	8	16	4	70	0	barrier:70	archipelago_s313_B	B	OPP	Core destroyed	269
+archipelago	26	26	392	230	8	2	3	24	147	1	2	4	4	5	6	6	4.352	5.62	4.357	2	251	36	3	3	3	1.0	1	89	251	0	78	509	4.0	1.767	7	1	169	4	4	36	20	8	9	5	75	14	barrier:75	archipelago_s314_A	A	US	Core destroyed	230
+archipelago	26	26	392	211	8	2	3	15	48	1	3	4	8	8	8	8	6.73	8.0	6.735	1	18	29	1	1	1	1.0	1	19	18	0	14	235	6.9	0.117	8	0	-1	4	5	29	29	8	13	4	15	4	barrier:15	archipelago_s314_B	B	OPP	Core destroyed	211
+archipelago	26	26	392	532	8	2	3	-1	-1	1	2	2	2	1	2	2	1.16	1.0	1.162	3	1366	68	3	0	0	-1	-1	13	1366	0	587	1685	1.833	1.167	2	1	88	2	2	68	20	8	9	3	3	10	barrier:3	archipelago_s315_A	A	US	Core destroyed	532
+archipelago	26	26	392	382	8	2	3	17	37	1	3	5	7	7	7	7	6.188	6.0	6.191	2	454	29	3	1	1	1.0	1	64	454	0	17	220	6.5	0.817	7	1	230	4	5	29	29	8	16	3	54	10	barrier:54	archipelago_s315_B	B	OPP	Core destroyed	382
+archipelago	26	26	392	276	8	2	3	24	36	1	2	6	7	6	7	7	5.743	6.0	5.746	2	387	44	3	1	1	1.0	1	146	387	0	31	204	6.667	0.883	7	1	81	6	7	44	20	8	9	8	116	30	barrier:116	archipelago_s316_A	A	US	Core destroyed	276
+archipelago	26	26	392	248	8	2	3	15	53	1	3	4	6	8	8	8	6.645	8.0	6.649	2	76	48	2	2	2	1.0	1	90	76	0	20	239	5.9	1.267	8	0	-1	4	6	48	48	8	13	11	81	9	barrier:81	archipelago_s316_B	B	OPP	Core destroyed	248
+archipelago	26	26	392	158	8	2	3	22	27	1	2	6	8	8	8	8	6.494	8.0	6.5	0	0	-1	0	0	0	-1	-1	13	0	0	12	225	7.167	0.0	8	0	-1	-1	-1	-1	20	8	9	4	0	13		archipelago_s317_A	A	OPP	Core destroyed	158
+archipelago	26	26	392	149	8	2	3	15	-1	1	3	4	4	-1	4	4	3.671	4.0	3.678	3	252	39	3	1	0	-1	-1	87	252	0	70	322	4.0	2.55	4	0	-1	4	4	39	39	8	13	3	87	0	barrier:87	archipelago_s317_B	B	OPP	Core destroyed	149
+archipelago	26	26	392	208	8	2	3	23	29	1	2	6	7	7	7	7	6.135	7.0	6.139	1	165	36	2	1	1	1.0	1	90	165	0	17	205	6.583	0.883	8	1	57	6	7	36	20	8	9	4	50	40	barrier:50	archipelago_s318_A	A	US	Core destroyed	208
+archipelago	26	26	392	292	8	2	3	17	47	1	3	3	7	7	8	8	6.418	7.0	6.421	1	190	52	11	10	8	28.88	32	63	190	0	26	245	6.55	0.75	8	1	39	7	7	52	45	8	15	4	53	10	barrier:53	archipelago_s318_B	B	US	Core destroyed	292
+archipelago	26	26	392	282	8	2	3	23	225	1	2	3	3	4	5	5	3.624	5.0	3.628	0	0	-1	0	0	0	-1	-1	0	0	0	78	1155	3.0	0.0	5	0	-1	-1	-1	-1	-1	8	9	15	0	0		archipelago_s319_A	A	OPP	Core destroyed	282
+archipelago	26	26	392	204	8	2	3	21	33	1	2	6	7	8	8	8	6.681	8.0	6.686	1	50	29	2	2	1	1.0	1	39	50	0	15	203	6.983	0.633	8	0	-1	4	7	29	29	8	15	6	15	24	barrier:15	archipelago_s319_B	B	US	Core destroyed	204
+archipelago	26	26	392	958	8	2	3	23	-1	1	2	3	3	3	3	3	2.971	3.0	2.972	4	2476	90	4	2	0	-1	-1	85	2476	0	733	1608	3.0	0.167	3	0	-1	3	3	90	20	8	9	3	45	40	barrier:45	archipelago_s320_A	A	US	Core destroyed	958
+archipelago	26	26	392	200	8	2	3	16	32	1	3	6	5	5	6	6	4.735	5.0	4.74	3	463	30	3	0	0	-1	-1	30	463	0	15	174	5.417	2.55	6	1	31	3	6	30	30	8	15	3	20	10	barrier:20	archipelago_s320_B	B	US	Core destroyed	200
+archipelago	26	26	392	1000	8	2	3	66	84	1	2	2	4	5	5	5	4.766	5.0	4.767	2	1908	43	3	1	1	1.0	1	36	1908	0	847	478	3.183	1.8	5	0	-1	2	2	43	20	8	9	5	30	6	barrier:30	archipelago_s321_A	A	OPP	Titanium collected (tiebreak)	1000
+archipelago	26	26	392	368	8	2	3	15	75	1	3	3	5	6	8	8	5.992	8.0	5.995	4	350	32	5	5	5	13.8	3	93	350	0	70	318	3.967	2.517	9	1	14	3	3	32	32	8	13	17	82	11	barrier:82	archipelago_s321_B	B	OPP	Core destroyed	368
+archipelago	26	26	392	176	8	2	3	24	-1	1	2	4	4	4	4	4	3.665	4.0	3.67	0	0	-1	0	0	0	-1	-1	0	0	0	169	593	4.0	0.0	4	0	-1	-1	-1	-1	20	8	9	3	0	0		archipelago_s322_A	A	OPP	Core destroyed	176
+archipelago	26	26	392	471	8	2	3	18	44	1	3	4	8	7	8	8	6.885	8.0	6.887	2	294	32	3	3	3	3.67	1	170	294	0	27	203	7.167	0.567	9	1	103	3	7	32	32	8	14	18	91	79	barrier:91	archipelago_s322_B	B	OPP	Core destroyed	471
+archipelago	26	26	392	371	8	2	3	43	46	1	2	2	5	8	8	8	6.561	8.0	6.563	1	97	39	1	1	1	1.0	1	35	97	0	35	401	4.783	1.0	8	0	-1	2	5	39	39	8	9	18	35	0	barrier:35	archipelago_s323_A	A	OPP	Core destroyed	371
+archipelago	26	26	392	159	8	2	3	18	65	1	3	4	8	8	8	8	5.899	8.0	5.906	1	48	29	1	1	1	1.0	1	19	48	0	37	248	5.883	0.617	8	0	-1	4	4	29	29	8	16	4	15	4	barrier:15	archipelago_s323_B	B	OPP	Core destroyed	159
+archipelago	26	26	392	284	8	2	3	64	97	1	2	2	4	6	6	6	4.827	6.0	4.831	2	440	47	13	11	0	-1	-1	78	440	0	138	321	3.217	1.35	6	0	-1	2	4	47	20	8	9	6	76	2	barrier:76	archipelago_s324_A	A	OPP	Core destroyed	284
+archipelago	26	26	392	258	8	2	3	20	31	1	3	7	8	8	8	8	7.147	8.0	7.151	1	38	31	2	2	2	18.0	35	32	38	0	20	161	7.483	0.5	8	0	-1	4	7	31	31	8	13	14	32	0	barrier:32	archipelago_s324_B	B	OPP	Core destroyed	258
+archipelago	26	26	392	358	8	2	3	29	35	1	2	5	6	8	8	8	6.877	7.76	6.88	2	139	36	3	2	2	22.5	44	105	139	0	11	250	5.967	1.6	8	1	304	5	6	36	20	8	9	18	58	47	barrier:58	archipelago_s325_A	A	US	Core destroyed	358
+archipelago	26	26	392	453	8	2	3	20	31	1	3	5	6	6	7	7	5.724	6.0	5.726	2	794	31	6	4	0	-1	-1	90	794	0	25	211	5.867	1.333	7	1	56	4	5	31	31	8	13	4	80	10	barrier:80	archipelago_s325_B	B	US	Core destroyed	453
+archipelago	26	26	392	482	8	2	3	22	95	1	2	4	4	3	5	5	3.239	3.0	3.241	1	347	66	2	1	1	1.0	1	69	347	0	490	1457	4.083	0.467	6	3	112	4	4	66	66	8	9	5	35	34	barrier:35	archipelago_s326_A	A	US	Core destroyed	482
+archipelago	26	26	392	201	8	2	3	16	-1	1	3	3	3	4	4	4	3.169	3.02	3.174	3	348	47	3	1	1	1.0	1	112	348	0	77	545	3.05	2.433	4	1	55	3	3	47	42	8	14	3	100	12	barrier:100	archipelago_s326_B	B	US	Core destroyed	201
+archipelago	26	26	392	169	8	2	3	28	62	1	2	3	6	6	6	6	4.71	6.0	4.716	2	239	40	4	2	2	1.0	1	98	239	0	36	280	4.917	1.683	6	0	-1	3	4	40	20	8	9	5	88	10	barrier:88	archipelago_s327_A	A	OPP	Core destroyed	169
+archipelago	26	26	392	295	8	2	3	18	50	1	3	4	8	8	8	8	6.878	8.0	6.881	2	36	32	5	5	5	21.4	27	19	36	0	19	275	5.95	0.383	8	0	-1	4	5	32	32	8	14	15	19	0	barrier:19	archipelago_s327_B	B	OPP	Core destroyed	295
+archipelago	26	26	392	289	8	2	3	53	56	1	2	2	5	4	6	6	4.09	5.2	4.093	4	835	30	4	2	2	1.0	1	70	835	0	33	261	4.283	2.667	7	1	81	2	2	30	30	8	9	4	58	12	barrier:58	archipelago_s328_A	A	US	Core destroyed	289
+archipelago	26	26	392	285	8	2	3	17	37	1	3	5	6	6	7	7	5.225	5.0	5.228	3	426	29	4	1	1	1.0	1	56	426	0	143	221	6.183	0.6	7	2	152	4	5	29	29	8	16	3	35	21	barrier:35	archipelago_s328_B	B	OPP	Core destroyed	285
+archipelago	26	26	392	225	8	2	3	23	28	1	2	6	6	6	6	6	5.502	6.0	5.507	2	345	31	2	0	0	-1	-1	40	345	0	14	202	6.0	1.433	6	0	-1	6	6	31	20	8	9	3	40	0	barrier:40	archipelago_s329_A	A	US	Core destroyed	225
+archipelago	26	26	392	243	8	2	3	18	56	1	3	4	6	6	7	7	5.683	7.0	5.687	2	232	32	12	11	6	37.17	44	96	232	0	34	296	5.283	1.383	8	1	129	4	4	32	32	8	14	11	85	11	barrier:85	archipelago_s329_B	B	OPP	Core destroyed	243
+auroraveil	20	20	256	1000	8	2	3	-1	-1	2	2	2	2	1	2	2	1.076	1.0	1.076	7	5493	13	61	56	0	-1	-1	30	5493	0	11	1416	1.683	4.45	2	1	78	2	2	13	11	10	464	4	20	10	barrier:20	auroraveil_s300_A	A	US	Titanium stored (tiebreak)	1000
+auroraveil	20	20	256	354	8	2	3	152	-1	2	2	2	2	2	3	3	2.376	2.0	2.376	2	493	19	5	3	1	1.0	1	68	493	0	33	1462	2.0	2.0	3	1	138	2	2	19	17	28	126	2	50	18	barrier:50	auroraveil_s300_B	B	OPP	Core destroyed	354
+auroraveil	20	20	256	171	8	2	3	91	-1	2	2	2	1	4	4	4	2.561	4.0	2.561	5	530	14	5	2	2	1.0	1	59	530	0	38	359	1.65	4.067	5	1	55	2	2	13	11	10	36	4	43	16	barrier:43	auroraveil_s301_A	A	OPP	Core destroyed	171
+auroraveil	20	20	256	424	8	2	3	129	170	2	2	2	1	3	8	8	4.998	8.0	4.998	4	296	56	5	5	5	1.4	1	96	296	0	40	937	1.617	2.233	10	2	168	2	2	11	11	20	24	7	60	36	barrier:60	auroraveil_s301_B	B	OPP	Core destroyed	424
+auroraveil	20	20	256	268	8	2	3	79	162	2	2	2	3	4	5	5	2.862	2.4	2.862	6	750	14	10	4	3	1.0	1	130	750	0	13	614	1.95	3.0	7	6	114	2	2	13	11	10	36	4	62	68	barrier:62	auroraveil_s302_A	A	OPP	Core destroyed	268
+auroraveil	20	20	256	264	8	2	3	102	133	2	2	2	2	7	8	8	4.852	7.44	4.852	3	132	79	5	3	3	1.0	1	88	132	0	10	687	2.0	0.917	8	2	240	2	2	9	9	13	15	6	45	43	barrier:45	auroraveil_s302_B	B	OPP	Core destroyed	264
+auroraveil	20	20	256	314	8	2	3	90	-1	2	2	2	2	3	4	4	2.755	3.64	2.755	6	1200	13	11	6	5	1.2	1	201	1200	0	38	407	2.167	3.817	8	5	50	2	2	13	11	10	52	6	95	106	barrier:95	auroraveil_s303_A	A	OPP	Core destroyed	314
+auroraveil	20	20	256	196	8	2	3	45	102	2	2	2	2	7	7	7	4.469	7.0	4.469	4	307	12	4	3	3	1.0	1	67	307	0	30	355	2.8	2.617	8	1	71	2	2	12	12	15	38	4	36	31	barrier:36	auroraveil_s303_B	B	OPP	Core destroyed	196
+auroraveil	20	20	256	1000	8	2	3	223	297	2	2	2	2	1	8	8	5.125	8.0	5.125	5	1255	13	9	9	7	11.71	1	158	1255	0	56	1513	2.0	3.617	10	2	272	2	2	13	11	10	44	9	105	53	barrier:105	auroraveil_s304_A	A	OPP	Titanium collected (tiebreak)	1000
+auroraveil	20	20	256	292	8	2	3	155	-1	2	2	2	2	2	4	4	2.901	4.0	2.901	0	0	-1	0	0	0	-1	-1	0	0	0	33	1434	2.0	0.0	4	0	-1	2	2	11	11	76	116	9	0	0		auroraveil_s304_B	B	OPP	Core destroyed	292
+auroraveil	20	20	256	506	8	2	3	190	-1	2	2	2	2	2	3	3	1.688	1.0	1.688	7	2662	13	10	3	1	1.0	1	102	2662	0	27	438	2.0	4.367	4	3	73	2	2	13	11	10	32	4	70	32	barrier:70	auroraveil_s305_A	A	US	Core destroyed	506
+auroraveil	20	20	256	373	8	2	3	68	103	2	2	2	3	8	8	8	5.71	6.0	5.71	3	256	12	5	4	3	22.0	11	44	256	0	23	573	2.633	1.317	8	2	271	2	2	9	9	13	49	7	15	29	barrier:15	auroraveil_s305_B	B	US	Core destroyed	373
+auroraveil	20	20	256	302	8	2	3	86	126	2	2	2	2	6	6	6	3.97	5.0	3.97	4	658	13	29	27	3	1.67	1	85	658	0	8	549	2.233	3.75	6	1	88	2	2	13	11	10	52	6	50	35	barrier:50	auroraveil_s306_A	A	OPP	Core destroyed	302
+auroraveil	20	20	256	301	8	2	3	86	145	2	2	2	2	5	8	8	5.146	8.0	5.146	2	26	124	5	5	5	7.4	7	15	26	0	44	757	2.233	0.0	8	0	-1	2	2	11	11	49	74	6	15	0	barrier:15	auroraveil_s306_B	B	OPP	Core destroyed	301
+auroraveil	20	20	256	314	8	2	3	90	-1	2	2	2	2	3	4	4	2.739	3.54	2.739	6	1205	13	11	6	5	1.2	1	204	1205	0	38	407	2.167	3.817	8	5	50	2	2	13	11	10	52	7	92	112	barrier:92	auroraveil_s307_A	A	OPP	Core destroyed	314
+auroraveil	20	20	256	654	8	2	3	53	56	2	2	2	5	7	8	8	6.017	5.0	6.017	3	824	14	6	4	3	1.0	1	152	824	0	39	247	4.283	2.283	8	3	414	2	2	14	14	22	51	10	71	81	barrier:71	auroraveil_s307_B	B	US	Core destroyed	654
+auroraveil	20	20	256	314	8	2	3	90	-1	2	2	2	2	3	4	4	2.755	3.64	2.755	6	1200	13	11	6	5	1.2	1	201	1200	0	38	407	2.167	3.817	8	5	50	2	2	13	11	10	52	6	95	106	barrier:95	auroraveil_s308_A	A	OPP	Core destroyed	314
+auroraveil	20	20	256	181	8	2	3	69	107	2	2	2	4	7	7	7	4.077	6.72	4.077	5	414	20	5	4	4	1.0	1	70	414	0	30	259	2.983	3.917	7	0	-1	2	2	20	20	16	48	3	66	4	barrier:66	auroraveil_s308_B	B	OPP	Core destroyed	181
+auroraveil	20	20	256	337	8	2	3	107	156	2	2	2	1	4	5	5	2.593	2.0	2.593	5	1198	13	11	8	6	1.0	1	204	1198	0	27	595	1.467	4.5	8	6	51	2	2	13	11	10	45	6	120	84	barrier:120	auroraveil_s309_A	A	OPP	Core destroyed	337
+auroraveil	20	20	256	1000	8	2	3	110	143	2	2	2	2	5	8	8	7.107	8.0	7.107	3	179	12	3	3	1	1.0	1	16	179	0	14	698	2.0	1.567	8	0	-1	2	2	9	9	13	81	8	15	1	barrier:15	auroraveil_s309_B	B	OPP	Titanium collected (tiebreak)	1000
+auroraveil	20	20	256	335	8	2	3	176	-1	2	2	2	2	1	4	4	2.018	2.0	2.018	7	1657	13	9	3	3	21.67	24	85	1657	0	33	309	2.0	4.367	5	3	37	2	2	13	11	10	52	3	55	30	barrier:55	auroraveil_s310_A	A	OPP	Core destroyed	335
+auroraveil	20	20	256	299	8	2	3	103	151	2	2	2	2	4	8	8	4.726	8.0	4.726	0	0	-1	0	0	0	-1	-1	2	0	0	44	926	2.0	0.0	8	0	-1	2	2	11	11	49	86	9	0	2		auroraveil_s310_B	B	OPP	Core destroyed	299
+auroraveil	20	20	256	1000	8	2	3	97	-1	2	2	2	1	2	4	4	2.662	3.0	2.662	6	4661	13	14	9	4	10.5	4	140	4661	0	37	638	1.583	4.367	7	4	67	2	2	13	11	10	52	5	75	65	barrier:75	auroraveil_s311_A	A	OPP	Titanium collected (tiebreak)	1000
+auroraveil	20	20	256	201	8	2	3	-1	-1	2	2	2	2	1	2	2	1.557	1.0	1.557	4	325	113	5	1	0	-1	-1	32	325	0	18	952	2.0	0.0	2	1	114	2	2	11	11	11	27	3	22	10	barrier:22	auroraveil_s311_B	B	OPP	Core destroyed	201
+auroraveil	20	20	256	1000	8	2	3	180	-1	2	2	2	2	2	3	3	1.526	3.0	1.526	6	3329	13	36	35	3	2.33	1	125	3329	0	136	2995	2.0	3.433	5	2	273	2	2	13	11	10	136	4	105	20	barrier:105	auroraveil_s312_A	A	US	Harvesters (tiebreak)	1000
+auroraveil	20	20	256	197	8	2	3	101	128	2	2	2	2	6	6	6	3.528	6.0	3.528	0	0	-1	0	0	0	-1	-1	20	0	0	23	858	2.0	0.0	6	0	-1	2	2	11	11	11	60	3	0	20		auroraveil_s312_B	B	OPP	Core destroyed	197
+auroraveil	20	20	256	259	8	2	3	119	-1	2	2	2	2	3	4	4	3.012	4.0	3.012	6	1039	13	7	3	3	1.0	1	82	1039	0	11	239	2.0	4.667	5	1	21	2	2	13	11	10	64	6	64	18	barrier:64	auroraveil_s313_A	A	OPP	Core destroyed	259
+auroraveil	20	20	256	150	8	2	3	113	-1	2	2	2	1	-1	3	3	2.04	2.74	2.04	4	244	52	4	2	2	1.0	1	50	244	0	9	636	1.567	2.2	4	1	67	2	2	11	11	12	53	4	38	12	barrier:38	auroraveil_s313_B	B	OPP	Core destroyed	150
+auroraveil	20	20	256	190	8	2	3	63	-1	2	2	2	3	3	3	3	2.642	3.0	2.642	2	220	13	3	2	1	1.0	1	30	220	0	15	604	2.617	1.367	3	0	-1	2	2	13	11	10	37	4	30	0	barrier:30	auroraveil_s314_A	A	OPP	Core destroyed	190
+auroraveil	20	20	256	253	8	2	3	-1	-1	2	2	2	2	2	2	2	1.98	2.0	1.98	2	465	19	2	0	0	-1	-1	0	465	0	19	1036	2.0	2.0	2	0	-1	2	2	19	17	32	85	3	0	0		auroraveil_s314_B	B	OPP	Core destroyed	253
+auroraveil	20	20	256	399	8	2	3	96	-1	2	2	2	2	3	4	4	2.912	3.96	2.912	6	1210	13	10	10	4	1.0	1	88	1210	0	24	785	2.067	2.917	6	2	147	2	2	13	11	10	59	4	60	28	barrier:60	auroraveil_s315_A	A	OPP	Core destroyed	399
+auroraveil	20	20	256	197	8	2	3	101	110	2	2	2	2	6	6	6	3.624	5.96	3.624	0	0	-1	0	0	0	-1	-1	2	0	0	50	800	2.0	0.0	6	0	-1	2	2	11	11	48	76	4	0	2		auroraveil_s315_B	B	OPP	Core destroyed	197
+auroraveil	20	20	256	1000	8	2	3	180	-1	2	2	2	2	2	3	3	0.903	0.0	0.903	7	4462	13	21	15	1	5.0	5	92	4462	0	39	1765	2.0	3.433	3	3	409	2	2	13	11	10	136	3	62	30	barrier:62	auroraveil_s316_A	A	US	Harvesters (tiebreak)	1000
+auroraveil	20	20	256	148	8	2	3	90	-1	2	2	1	2	-1	4	4	2.304	3.62	2.304	4	307	19	4	4	3	1.0	1	72	307	0	8	526	1.617	3.35	5	1	31	2	2	11	11	12	33	4	60	12	barrier:60	auroraveil_s316_B	B	OPP	Core destroyed	148
+auroraveil	20	20	256	190	8	2	3	63	-1	2	2	2	3	3	3	3	2.642	3.0	2.642	2	220	13	3	2	1	1.0	1	30	220	0	15	604	2.617	1.367	3	0	-1	2	2	13	11	10	37	4	30	0	barrier:30	auroraveil_s317_A	A	OPP	Core destroyed	190
+auroraveil	20	20	256	177	8	2	3	-1	-1	2	2	2	2	1	2	2	1.458	1.0	1.458	1	47	87	1	1	0	-1	-1	25	47	0	65	1046	1.767	0.217	2	1	83	2	2	11	11	15	37	4	15	10	barrier:15	auroraveil_s317_B	B	OPP	Core destroyed	177
+auroraveil	20	20	256	226	8	2	3	131	225	2	2	2	2	4	5	5	2.721	4.02	2.721	6	857	13	7	5	4	6.5	1	110	857	0	24	310	2.0	4.0	6	1	115	2	2	13	11	10	48	6	90	20	barrier:90	auroraveil_s318_A	A	OPP	Core destroyed	226
+auroraveil	20	20	256	197	8	2	3	101	128	2	2	2	2	6	6	6	3.528	6.0	3.528	0	0	-1	0	0	0	-1	-1	20	0	0	23	858	2.0	0.0	6	0	-1	2	2	11	11	11	60	3	0	20		auroraveil_s318_B	B	OPP	Core destroyed	197
+auroraveil	20	20	256	240	8	2	3	127	146	2	2	2	2	5	6	6	3.571	6.0	3.571	5	625	13	5	4	4	1.0	1	85	625	0	13	346	2.0	4.183	6	0	-1	2	2	13	11	10	34	4	60	25	barrier:60	auroraveil_s319_A	A	OPP	Core destroyed	240
+auroraveil	20	20	256	287	8	2	3	49	104	2	2	2	3	8	8	8	5.711	8.0	5.711	3	231	12	3	3	3	1.0	1	48	231	0	24	402	2.85	2.25	8	0	-1	2	2	12	12	11	36	9	42	6	barrier:42	auroraveil_s319_B	B	OPP	Core destroyed	287
+auroraveil	20	20	256	181	8	2	3	-1	-1	2	2	2	2	2	2	2	1.972	2.0	1.972	4	646	14	4	0	0	-1	-1	5	646	0	9	434	2.0	4.0	2	0	-1	2	2	14	11	10	56	2	0	5		auroraveil_s320_A	A	OPP	Core destroyed	181
+auroraveil	20	20	256	194	8	2	3	69	108	2	2	2	3	8	8	8	4.856	8.0	4.856	2	108	16	3	3	3	12.33	8	25	108	0	34	467	2.783	1.033	8	0	-1	2	2	16	16	16	47	7	19	6	barrier:19	auroraveil_s320_B	B	OPP	Core destroyed	194
+auroraveil	20	20	256	741	8	2	3	180	-1	2	2	2	2	2	3	3	2.522	3.0	2.522	5	2363	13	11	7	1	5.0	5	103	2363	0	39	1630	2.0	3.433	5	2	362	2	2	13	11	10	136	4	75	28	barrier:75	auroraveil_s321_A	A	OPP	Core destroyed	741
+auroraveil	20	20	256	285	8	2	3	136	185	2	2	2	1	4	7	7	3.723	7.0	3.723	4	449	19	5	5	5	6.2	1	93	449	0	16	752	1.183	3.8	8	1	48	2	2	11	11	13	40	3	71	22	barrier:71	auroraveil_s321_B	B	OPP	Core destroyed	285
+auroraveil	20	20	256	469	8	2	3	107	-1	2	2	2	1	4	4	4	2.299	2.0	2.299	6	1958	13	14	8	6	11.17	5	168	1958	0	53	661	1.467	4.5	6	4	56	2	2	13	11	10	45	6	112	56	barrier:112	auroraveil_s322_A	A	OPP	Core destroyed	469
+auroraveil	20	20	256	249	8	2	3	72	97	2	2	2	3	4	7	7	3.98	6.5	3.98	2	123	56	3	3	3	1.0	1	98	123	0	46	797	2.667	1.017	8	1	22	2	2	11	11	15	16	4	45	53	barrier:45	auroraveil_s322_B	B	OPP	Core destroyed	249
+auroraveil	20	20	256	171	8	2	3	91	-1	2	2	2	1	4	4	4	2.561	4.0	2.561	5	530	14	5	2	2	1.0	1	59	530	0	38	359	1.65	4.067	5	1	55	2	2	13	11	10	36	4	43	16	barrier:43	auroraveil_s323_A	A	OPP	Core destroyed	171
+auroraveil	20	20	256	503	8	2	3	249	272	2	2	2	2	2	8	8	4.702	8.0	4.702	4	946	11	5	5	4	2.25	1	53	946	0	18	686	2.0	3.917	8	0	-1	2	2	11	11	200	229	7	34	19	barrier:34	auroraveil_s323_B	B	OPP	Core destroyed	503
+auroraveil	20	20	256	1000	8	2	3	180	-1	2	2	2	2	2	3	3	1.526	3.0	1.526	6	3329	13	36	35	3	2.33	1	125	3329	0	136	2995	2.0	3.433	5	2	273	2	2	13	11	10	136	4	105	20	barrier:105	auroraveil_s324_A	A	US	Harvesters (tiebreak)	1000
+auroraveil	20	20	256	197	8	2	3	127	133	2	2	2	2	5	7	7	3.289	6.2	3.289	3	403	11	3	2	2	1.5	2	50	403	0	42	482	2.0	2.883	7	0	-1	2	2	11	11	11	40	5	49	1	barrier:49	auroraveil_s324_B	B	OPP	Core destroyed	197
+auroraveil	20	20	256	189	8	2	3	123	-1	2	2	2	2	4	4	4	2.307	2.96	2.307	6	609	13	9	3	3	1.0	1	113	609	0	15	449	2.0	3.0	5	3	42	2	2	13	11	10	64	3	56	57	barrier:56	auroraveil_s325_A	A	OPP	Core destroyed	189
+auroraveil	20	20	256	159	8	2	3	110	-1	2	2	2	2	4	4	4	2.491	3.66	2.491	3	130	81	3	2	2	6.5	12	42	130	0	13	731	2.0	0.783	4	0	-1	2	2	11	11	12	32	4	41	1	barrier:41	auroraveil_s325_B	B	OPP	Core destroyed	159
+auroraveil	20	20	256	226	8	2	3	131	225	2	2	2	2	4	5	5	2.721	4.02	2.721	6	857	13	7	5	4	6.5	1	110	857	0	24	310	2.0	4.0	6	1	115	2	2	13	11	10	48	6	90	20	barrier:90	auroraveil_s326_A	A	OPP	Core destroyed	226
+auroraveil	20	20	256	422	8	2	3	130	153	2	2	2	2	3	8	8	4.028	2.36	4.028	4	376	100	9	5	3	4.33	1	169	376	0	131	1116	2.0	0.0	8	6	178	2	2	11	11	84	112	7	58	111	barrier:58	auroraveil_s326_B	B	US	Core destroyed	422
+auroraveil	20	20	256	437	8	2	3	90	-1	2	2	2	2	3	3	3	2.128	2.0	2.128	7	1836	13	12	8	4	13.5	1	192	1836	0	78	650	2.167	3.817	5	3	89	2	2	13	11	10	52	9	115	77	barrier:115	auroraveil_s327_A	A	OPP	Core destroyed	437
+auroraveil	20	20	256	338	8	2	3	103	151	2	2	2	2	4	8	8	5.104	8.0	5.104	0	0	-1	0	0	0	-1	-1	0	0	0	44	926	2.0	0.0	8	0	-1	2	2	11	11	49	86	9	0	0		auroraveil_s327_B	B	OPP	Core destroyed	338
+auroraveil	20	20	256	732	8	2	3	172	420	2	2	2	2	2	8	8	4.791	7.0	4.791	5	1676	13	7	6	5	4.8	1	227	1676	0	43	564	2.0	4.367	11	4	126	2	2	13	11	10	32	7	108	119	barrier:108	auroraveil_s328_A	A	US	Core destroyed	732
+auroraveil	20	20	256	115	8	2	3	41	-1	2	2	2	3	-1	3	3	2.6	3.0	2.6	0	0	-1	0	0	0	-1	-1	0	0	0	20	601	2.983	0.0	3	0	-1	2	2	11	11	11	27	4	0	0		auroraveil_s328_B	B	OPP	Core destroyed	115
+auroraveil	20	20	256	506	8	2	3	190	-1	2	2	2	2	2	3	3	1.688	1.0	1.688	7	2662	13	10	3	1	1.0	1	102	2662	0	27	438	2.0	4.367	4	3	73	2	2	13	11	10	32	4	70	32	barrier:70	auroraveil_s329_A	A	US	Core destroyed	506
+auroraveil	20	20	256	271	8	2	3	115	132	2	2	2	2	6	8	8	4.952	8.0	4.952	2	52	98	3	3	3	1.0	1	46	52	0	29	745	2.0	0.033	8	0	-1	2	2	11	11	15	37	8	45	1	barrier:45	auroraveil_s329_B	B	OPP	Core destroyed	271
+drakkarfjord	30	30	976	1000	8	2	3	-1	-1	2	2	2	1	1	2	2	0.796	0.0	0.796	8	6368	15	80	73	0	-1	-1	121	6368	0	103	730	1.617	5.6	2	2	721	2	2	15	13	11	656	3	73	48	barrier:73	drakkarfjord_s300_A	A	OPP	Titanium collected (tiebreak)	1000
+drakkarfjord	30	30	976	549	8	2	3	-1	-1	2	2	1	1	1	2	2	1.062	1.0	1.062	7	3553	17	8	1	0	-1	-1	106	3553	0	8	242	1.0	6.1	2	1	37	2	2	15	13	11	345	2	44	62	barrier:44	drakkarfjord_s300_B	B	US	Core destroyed	549
+drakkarfjord	30	30	976	517	8	2	3	-1	-1	2	2	2	0	2	2	2	0.288	0.0	0.288	8	3330	15	12	6	2	1.0	1	147	3330	0	86	472	0.25	7.483	4	4	42	2	2	15	13	11	43	3	107	40	barrier:107	drakkarfjord_s301_A	A	OPP	Core destroyed	517
+drakkarfjord	30	30	976	199	8	2	3	-1	-1	2	2	1	1	1	2	2	1.171	1.0	1.171	7	971	17	9	3	0	-1	-1	62	971	0	6	378	1.0	5.567	2	1	37	2	2	15	13	11	77	2	52	10	barrier:52	drakkarfjord_s301_B	B	US	Core destroyed	199
+drakkarfjord	30	30	976	1000	8	2	3	172	208	2	2	2	1	2	8	8	5.918	8.0	5.918	7	1118	15	10	10	6	1.33	1	228	1118	0	9	952	1.317	6.117	11	3	88	2	2	15	13	11	93	13	124	104	barrier:124	drakkarfjord_s302_A	A	OPP	Titanium collected (tiebreak)	1000
+drakkarfjord	30	30	976	606	8	2	3	-1	-1	2	2	1	1	1	2	2	1.058	1.0	1.058	7	3447	17	8	2	0	-1	-1	87	3447	0	462	292	1.0	5.25	2	1	38	2	2	15	13	11	77	2	60	27	barrier:60	drakkarfjord_s302_B	B	US	Core destroyed	606
+drakkarfjord	30	30	976	885	8	2	3	-1	-1	2	2	2	1	1	2	2	1.081	1.0	1.081	7	5631	15	71	66	0	-1	-1	87	5631	0	2	486	1.617	5.6	2	1	75	2	2	15	13	11	-1	1	49	38	barrier:49	drakkarfjord_s303_A	A	US	Core destroyed	885
+drakkarfjord	30	30	976	170	8	2	3	-1	-1	2	2	1	1	1	2	2	1.2	1.0	1.2	7	799	17	14	8	0	-1	-1	40	799	0	7	346	1.0	5.683	2	1	37	2	2	15	13	11	-1	1	30	10	barrier:30	drakkarfjord_s303_B	B	US	Core destroyed	170
+drakkarfjord	30	30	976	301	8	2	3	-1	-1	2	2	2	1	0	2	2	0.701	0.0	0.701	8	1696	15	39	33	0	-1	-1	86	1696	0	6	492	1.617	5.533	2	2	136	2	2	15	13	11	-1	1	38	48	barrier:38	drakkarfjord_s304_A	A	US	Core destroyed	301
+drakkarfjord	30	30	976	228	8	2	3	-1	-1	2	2	2	1	0	2	2	0.627	0.0	0.627	7	1185	17	9	3	0	-1	-1	65	1185	0	132	360	1.05	6.233	2	2	102	2	2	15	13	11	45	2	45	20	barrier:45	drakkarfjord_s304_B	B	US	Core destroyed	228
+drakkarfjord	30	30	976	1000	8	2	3	359	439	2	2	1	0	0	7	7	3.765	7.0	3.765	8	3005	15	15	14	6	4.67	1	246	3005	0	79	1148	0.633	6.05	12	5	75	2	2	15	13	11	177	11	128	118	barrier:128	drakkarfjord_s305_A	A	OPP	Titanium collected (tiebreak)	1000
+drakkarfjord	30	30	976	1000	8	2	3	313	854	2	2	1	1	1	6	6	2.546	6.0	2.546	7	4426	17	15	13	6	1.0	1	214	4426	0	86	921	1.0	6.15	10	4	120	2	2	15	13	11	145	5	175	39	barrier:175	drakkarfjord_s305_B	B	US	Titanium collected (tiebreak)	1000
+drakkarfjord	30	30	976	1000	8	2	3	359	439	2	2	1	0	0	8	8	3.818	8.0	3.818	8	2951	15	15	15	7	4.14	1	285	2951	0	79	1149	0.633	6.05	13	5	75	2	2	15	13	11	177	11	142	143	barrier:142	drakkarfjord_s306_A	A	OPP	Titanium collected (tiebreak)	1000
+drakkarfjord	30	30	976	228	8	2	3	-1	-1	2	2	2	1	0	2	2	0.627	0.0	0.627	7	1185	17	9	3	0	-1	-1	65	1185	0	132	360	1.05	6.233	2	2	102	2	2	15	13	11	45	2	45	20	barrier:45	drakkarfjord_s306_B	B	US	Core destroyed	228
+drakkarfjord	30	30	976	517	8	2	3	-1	-1	2	2	2	0	2	2	2	0.288	0.0	0.288	8	3330	15	12	6	2	1.0	1	147	3330	0	86	472	0.25	7.483	4	4	42	2	2	15	13	11	43	3	107	40	barrier:107	drakkarfjord_s307_A	A	OPP	Core destroyed	517
+drakkarfjord	30	30	976	1000	8	2	3	313	854	2	2	1	1	1	6	6	2.546	6.0	2.546	7	4426	17	15	13	6	1.0	1	214	4426	0	86	921	1.0	6.15	10	4	120	2	2	15	13	11	145	5	175	39	barrier:175	drakkarfjord_s307_B	B	US	Titanium collected (tiebreak)	1000
+drakkarfjord	30	30	976	1000	8	2	3	-1	-1	2	2	2	1	1	2	2	1.072	1.0	1.072	7	6316	15	68	61	0	-1	-1	87	6316	0	4	605	1.617	5.6	2	1	75	2	2	15	13	11	-1	1	49	38	barrier:49	drakkarfjord_s308_A	A	OPP	Titanium collected (tiebreak)	1000
+drakkarfjord	30	30	976	199	8	2	3	-1	-1	2	2	1	1	1	2	2	1.171	1.0	1.171	7	971	17	9	3	0	-1	-1	62	971	0	6	378	1.0	5.567	2	1	37	2	2	15	13	11	77	2	52	10	barrier:52	drakkarfjord_s308_B	B	US	Core destroyed	199
+drakkarfjord	30	30	976	953	8	2	3	-1	-1	2	2	1	0	0	2	2	0.448	0.0	0.448	8	6849	15	16	8	5	1.0	1	244	6849	0	53	292	0.133	7.867	7	7	35	2	2	15	13	11	43	8	150	94	barrier:150	drakkarfjord_s309_A	A	US	Core destroyed	953
+drakkarfjord	30	30	976	199	8	2	3	-1	-1	2	2	1	1	1	2	2	1.171	1.0	1.171	7	971	17	9	3	0	-1	-1	62	971	0	6	378	1.0	5.567	2	1	37	2	2	15	13	11	77	2	52	10	barrier:52	drakkarfjord_s309_B	B	US	Core destroyed	199
+drakkarfjord	30	30	976	353	8	2	3	157	-1	2	2	2	1	1	4	4	2.632	4.0	2.632	7	1354	15	10	8	4	1.0	1	125	1354	0	7	531	1.317	6.117	6	2	86	2	2	15	13	11	93	4	85	40	barrier:85	drakkarfjord_s310_A	A	OPP	Core destroyed	353
+drakkarfjord	30	30	976	512	8	2	3	-1	-1	2	2	1	1	1	2	2	1.068	1.0	1.068	7	2882	17	8	3	0	-1	-1	79	2882	0	367	294	1.0	5.25	2	1	38	2	2	15	13	11	77	2	52	27	barrier:52	drakkarfjord_s310_B	B	US	Core destroyed	512
+drakkarfjord	30	30	976	1000	8	2	3	-1	-1	2	2	2	1	1	2	2	1.072	1.0	1.072	7	6370	16	68	61	0	-1	-1	91	6370	0	5	550	1.617	5.6	2	1	75	2	2	15	13	11	-1	1	49	42	barrier:49	drakkarfjord_s311_A	A	OPP	Titanium collected (tiebreak)	1000
+drakkarfjord	30	30	976	580	8	2	3	-1	-1	2	2	1	1	1	2	2	1.06	1.0	1.06	7	3214	17	8	3	0	-1	-1	83	3214	0	436	369	1.0	5.25	2	1	38	2	2	15	13	11	77	2	56	27	barrier:56	drakkarfjord_s311_B	B	US	Core destroyed	580
+drakkarfjord	30	30	976	345	8	2	3	157	-1	2	2	2	1	1	3	3	2.261	3.0	2.261	7	1325	15	9	7	2	1.0	1	119	1325	0	6	646	1.317	6.117	4	1	57	2	2	15	13	11	93	4	85	34	barrier:85	drakkarfjord_s312_A	A	OPP	Core destroyed	345
+drakkarfjord	30	30	976	158	8	2	3	-1	-1	2	2	1	1	0	2	2	0.854	0.0	0.854	8	879	17	9	1	0	-1	-1	39	879	0	8	238	1.0	6.2	2	2	98	2	2	16	13	11	153	2	19	20	barrier:19	drakkarfjord_s312_B	B	US	Core destroyed	158
+drakkarfjord	30	30	976	1000	8	2	3	172	208	2	2	2	1	2	8	8	5.935	8.0	5.935	7	1057	15	18	18	14	15.14	13	294	1057	0	10	995	1.317	6.117	13	5	227	2	2	15	13	11	93	13	124	170	barrier:124	drakkarfjord_s313_A	A	OPP	Titanium collected (tiebreak)	1000
+drakkarfjord	30	30	976	632	8	2	3	-1	-1	2	2	1	1	1	2	2	1.055	1.0	1.055	7	3685	17	10	3	0	-1	-1	106	3685	0	398	300	1.0	5.25	2	1	38	2	2	15	13	11	77	2	79	27	barrier:79	drakkarfjord_s313_B	B	US	Core destroyed	632
+drakkarfjord	30	30	976	1000	8	2	3	841	896	2	2	1	0	0	6	6	1.456	5.34	1.456	8	6124	15	17	15	6	1.0	1	226	6124	0	79	338	0.45	6.3	8	4	64	2	2	15	13	11	132	6	176	50	barrier:176	drakkarfjord_s314_A	A	OPP	Titanium collected (tiebreak)	1000
+drakkarfjord	30	30	976	228	8	2	3	-1	-1	2	2	2	1	0	2	2	0.627	0.0	0.627	7	1185	17	9	3	0	-1	-1	65	1185	0	132	360	1.05	6.233	2	2	102	2	2	15	13	11	45	2	45	20	barrier:45	drakkarfjord_s314_B	B	US	Core destroyed	228
+drakkarfjord	30	30	976	333	8	2	3	-1	-1	2	2	2	1	0	2	2	0.547	0.0	0.547	8	2109	15	38	31	0	-1	-1	58	2109	0	16	354	1.2	5.367	2	2	132	2	2	15	13	11	-1	1	38	20	barrier:38	drakkarfjord_s315_A	A	US	Core destroyed	333
+drakkarfjord	30	30	976	195	8	2	3	-1	-1	2	2	1	1	1	2	2	1.164	0.96	1.164	7	1075	17	8	1	0	-1	-1	53	1075	0	8	244	1.0	6.1	2	2	190	2	2	15	13	11	177	2	25	28	barrier:25	drakkarfjord_s315_B	B	US	Core destroyed	195
+drakkarfjord	30	30	976	480	8	2	3	157	257	2	2	2	1	1	7	7	3.802	7.0	3.802	7	1234	15	11	11	5	1.6	1	121	1234	0	7	770	1.317	6.117	9	2	148	2	2	15	13	11	93	5	85	36	barrier:85	drakkarfjord_s316_A	A	OPP	Core destroyed	480
+drakkarfjord	30	30	976	228	8	2	3	-1	-1	2	2	2	1	0	2	2	0.627	0.0	0.627	7	1185	17	9	3	0	-1	-1	65	1185	0	132	360	1.05	6.233	2	2	102	2	2	15	13	11	45	2	45	20	barrier:45	drakkarfjord_s316_B	B	US	Core destroyed	228
+drakkarfjord	30	30	976	1000	8	2	3	987	-1	2	2	2	1	1	3	3	1.005	1.86	1.005	7	5774	16	78	76	3	1.0	1	174	5774	0	126	1037	1.617	5.6	5	2	745	2	2	15	13	11	668	3	126	48	barrier:126	drakkarfjord_s317_A	A	OPP	Titanium collected (tiebreak)	1000
+drakkarfjord	30	30	976	512	8	2	3	-1	-1	2	2	1	1	1	2	2	1.068	1.0	1.068	7	2882	17	8	3	0	-1	-1	79	2882	0	367	294	1.0	5.25	2	1	38	2	2	15	13	11	77	2	52	27	barrier:52	drakkarfjord_s317_B	B	US	Core destroyed	512
+drakkarfjord	30	30	976	528	8	2	3	381	466	2	2	1	0	0	7	7	1.858	6.9	1.858	8	2588	15	11	11	8	12.38	3	121	2588	0	79	573	0.35	4.633	9	2	58	2	2	15	13	11	129	7	101	20	barrier:101	drakkarfjord_s318_A	A	OPP	Core destroyed	528
+drakkarfjord	30	30	976	338	8	2	3	-1	-1	2	2	1	1	1	2	2	1.101	1.0	1.101	7	1838	17	23	17	0	-1	-1	38	1838	0	4	486	1.0	6.3	2	1	37	2	2	15	13	11	-1	1	28	10	barrier:28	drakkarfjord_s318_B	B	US	Core destroyed	338
+drakkarfjord	30	30	976	1000	8	2	3	-1	-1	2	2	2	1	1	2	2	1.072	1.0	1.072	7	6315	16	68	61	0	-1	-1	87	6315	0	5	605	1.617	5.6	2	1	75	2	2	15	13	11	-1	1	49	38	barrier:49	drakkarfjord_s319_A	A	OPP	Titanium collected (tiebreak)	1000
+drakkarfjord	30	30	976	338	8	2	3	-1	-1	2	2	1	1	1	2	2	1.101	1.0	1.101	7	1838	17	23	17	0	-1	-1	38	1838	0	4	486	1.0	6.3	2	1	37	2	2	15	13	11	-1	1	28	10	barrier:28	drakkarfjord_s319_B	B	US	Core destroyed	338
+drakkarfjord	30	30	976	1000	8	2	3	757	794	2	2	2	0	2	7	7	1.618	7.0	1.618	8	5571	15	12	11	8	1.0	1	216	5571	0	86	722	0.25	7.483	11	4	42	2	2	15	13	11	43	11	176	40	barrier:176	drakkarfjord_s320_A	A	OPP	Titanium collected (tiebreak)	1000
+drakkarfjord	30	30	976	1000	8	2	3	313	845	2	2	1	1	1	8	8	2.627	8.0	2.627	7	4343	17	15	15	8	1.0	1	241	4343	0	86	923	1.0	6.15	12	4	120	2	2	15	13	11	145	9	202	39	barrier:202	drakkarfjord_s320_B	B	OPP	Titanium collected (tiebreak)	1000
+drakkarfjord	30	30	976	1000	8	2	3	-1	-1	2	2	2	1	1	2	2	0.888	0.48	0.888	8	6203	16	84	77	0	-1	-1	157	6203	0	278	627	1.617	5.6	3	2	789	2	2	15	13	11	648	2	109	48	barrier:109	drakkarfjord_s321_A	A	OPP	Titanium collected (tiebreak)	1000
+drakkarfjord	30	30	976	1000	8	2	3	313	854	2	2	1	1	1	6	6	2.546	6.0	2.546	7	4426	17	15	13	6	1.0	1	214	4426	0	86	921	1.0	6.15	10	4	120	2	2	15	13	11	145	5	175	39	barrier:175	drakkarfjord_s321_B	B	US	Titanium collected (tiebreak)	1000
+drakkarfjord	30	30	976	1000	8	2	3	-1	-1	2	2	2	1	1	2	2	0.62	0.0	0.62	8	6439	15	81	74	0	-1	-1	97	6439	0	339	599	1.617	5.6	2	2	545	2	2	15	13	11	996	2	49	48	barrier:49	drakkarfjord_s322_A	A	OPP	Titanium collected (tiebreak)	1000
+drakkarfjord	30	30	976	555	8	2	3	403	436	2	2	1	1	1	6	6	1.8	2.36	1.8	7	3104	17	14	8	6	1.67	1	283	3104	0	17	281	1.0	6.1	10	8	62	2	2	15	13	11	357	3	134	149	barrier:134	drakkarfjord_s322_B	B	US	Core destroyed	555
+drakkarfjord	30	30	976	1000	8	2	3	841	-1	2	2	1	0	0	4	4	1.103	1.22	1.103	8	6480	15	22	15	5	11.2	1	216	6480	0	84	330	0.45	6.3	7	6	122	2	2	15	13	11	132	6	146	70	barrier:146	drakkarfjord_s323_A	A	OPP	Harvesters (tiebreak)	1000
+drakkarfjord	30	30	976	580	8	2	3	-1	-1	2	2	1	1	1	2	2	1.06	1.0	1.06	7	3214	17	8	3	0	-1	-1	83	3214	0	435	370	1.0	5.25	2	1	38	2	2	15	13	11	77	2	56	27	barrier:56	drakkarfjord_s323_B	B	US	Core destroyed	580
+drakkarfjord	30	30	976	1000	8	2	3	359	439	2	2	1	0	0	7	7	3.888	7.0	3.888	8	2877	15	15	14	6	10.67	1	310	2877	0	51	1166	0.633	6.05	12	5	75	2	2	15	13	11	177	13	138	172	barrier:138	drakkarfjord_s324_A	A	OPP	Titanium collected (tiebreak)	1000
+drakkarfjord	30	30	976	567	8	2	3	-1	-1	2	2	1	1	1	2	2	0.741	0.0	0.741	7	3643	17	9	2	0	-1	-1	95	3643	0	168	273	1.0	6.1	3	3	37	2	2	15	13	11	345	2	47	48	barrier:47	drakkarfjord_s324_B	B	US	Core destroyed	567
+drakkarfjord	30	30	976	638	8	2	3	583	618	2	2	1	1	1	6	6	0.687	4.12	0.687	8	3624	15	16	15	3	2.0	1	138	3624	0	251	783	1.05	5.267	9	3	65	2	2	15	13	11	224	4	100	38	barrier:100	drakkarfjord_s325_A	A	OPP	Core destroyed	638
+drakkarfjord	30	30	976	199	8	2	3	-1	-1	2	2	1	1	1	2	2	1.171	1.0	1.171	7	971	17	9	3	0	-1	-1	62	971	0	6	378	1.0	5.567	2	1	37	2	2	15	13	11	77	2	52	10	barrier:52	drakkarfjord_s325_B	B	US	Core destroyed	199
+drakkarfjord	30	30	976	341	8	2	3	157	-1	2	2	2	1	1	4	4	2.569	3.54	2.569	7	1445	15	10	5	3	1.0	1	113	1445	0	5	399	1.317	6.117	5	2	108	2	2	15	13	11	93	5	69	44	barrier:69	drakkarfjord_s326_A	A	OPP	Core destroyed	341
+drakkarfjord	30	30	976	1000	8	2	3	843	973	2	2	1	1	1	6	6	1.228	4.34	1.228	8	5763	19	35	33	5	1.8	1	215	5763	0	197	800	1.0	6.15	9	3	126	2	2	15	13	11	145	4	173	42	barrier:173	drakkarfjord_s326_B	B	US	Titanium collected (tiebreak)	1000
+drakkarfjord	30	30	976	1000	8	2	3	-1	-1	2	2	2	1	1	2	2	1.111	1.0	1.111	7	6256	15	70	63	1	1.0	1	174	6256	0	201	428	1.617	5.6	3	2	75	2	2	15	13	11	648	4	124	50	barrier:124	drakkarfjord_s327_A	A	OPP	Titanium collected (tiebreak)	1000
+drakkarfjord	30	30	976	580	8	2	3	-1	-1	2	2	1	1	1	2	2	1.06	1.0	1.06	7	3214	17	8	3	0	-1	-1	83	3214	0	435	370	1.0	5.25	2	1	38	2	2	15	13	11	77	2	56	27	barrier:56	drakkarfjord_s327_B	B	US	Core destroyed	580
+drakkarfjord	30	30	976	1000	8	2	3	-1	-1	2	2	2	1	1	2	2	1.072	1.0	1.072	7	6315	16	68	61	0	-1	-1	87	6315	0	5	605	1.617	5.6	2	1	75	2	2	15	13	11	-1	1	49	38	barrier:49	drakkarfjord_s328_A	A	OPP	Titanium collected (tiebreak)	1000
+drakkarfjord	30	30	976	606	8	2	3	-1	-1	2	2	1	1	1	2	2	1.058	1.0	1.058	7	3447	17	8	2	0	-1	-1	84	3447	0	461	293	1.0	5.25	2	1	38	2	2	15	13	11	77	2	57	27	barrier:57	drakkarfjord_s328_B	B	US	Core destroyed	606
+drakkarfjord	30	30	976	1000	8	2	3	841	-1	2	2	1	0	0	4	4	1.103	1.22	1.103	8	6480	15	22	15	5	11.2	1	216	6480	0	84	330	0.45	6.3	7	6	122	2	2	15	13	11	132	6	146	70	barrier:146	drakkarfjord_s329_A	A	OPP	Harvesters (tiebreak)	1000
+drakkarfjord	30	30	976	1000	8	2	3	313	854	2	2	1	1	1	6	6	2.546	6.0	2.546	7	4426	17	15	13	6	1.0	1	214	4426	0	86	921	1.0	6.15	10	4	120	2	2	15	13	11	145	5	175	39	barrier:175	drakkarfjord_s329_B	B	US	Titanium collected (tiebreak)	1000
+drumlin	25	25	338	150	8	2	3	20	-1	2	3	2	0	-1	3	3	0.767	0.0	0.767	8	943	12	10	2	0	-1	-1	117	943	0	15	121	0.4	7.567	3	3	33	2	3	10	9	8	12	2	87	30	barrier:87	drumlin_s300_A	A	US	Core destroyed	150
+drumlin	25	25	338	203	8	2	3	-1	-1	2	2	2	1	2	2	2	1.833	2.0	1.833	7	1146	12	9	3	2	1.0	1	103	1146	0	5	98	1.6	6.333	4	2	73	2	2	10	9	8	12	2	66	37	barrier:66	drumlin_s300_B	B	US	Core destroyed	203
+drumlin	25	25	338	351	8	2	3	26	70	2	2	3	5	4	6	6	4.328	5.0	4.328	4	986	12	11	8	7	3.29	1	250	986	0	40	257	3.95	1.75	9	4	74	2	3	10	9	8	12	5	120	130	barrier:120	drumlin_s301_A	A	OPP	Core destroyed	351
+drumlin	25	25	338	313	8	2	3	-1	-1	2	2	2	0	0	2	2	0.316	0.0	0.316	7	1975	12	8	1	0	-1	-1	87	1975	0	82	125	0.4	6.233	2	2	50	2	2	10	9	8	12	2	63	24	barrier:63	drumlin_s301_B	B	US	Core destroyed	313
+drumlin	25	25	338	216	8	2	3	20	-1	2	3	3	4	4	4	4	3.583	4.0	3.583	5	807	12	7	3	3	1.0	1	93	807	0	32	113	3.583	4.083	6	2	42	2	3	10	9	8	12	4	55	38	barrier:55	drumlin_s302_A	A	OPP	Core destroyed	216
+drumlin	25	25	338	205	8	2	3	52	78	2	2	2	5	4	5	5	3.327	3.0	3.327	6	824	12	11	6	6	4.83	1	192	824	0	6	124	3.4	4.4	7	4	66	2	2	10	9	8	12	5	102	90	barrier:102	drumlin_s302_B	B	OPP	Core destroyed	205
+drumlin	25	25	338	317	8	2	3	28	166	2	2	2	2	4	5	5	2.297	1.0	2.297	7	1608	12	12	5	4	1.0	1	208	1608	0	10	173	2.55	5.017	7	6	49	2	3	10	9	8	12	4	88	120	barrier:88	drumlin_s303_A	A	US	Core destroyed	317
+drumlin	25	25	338	297	8	2	3	-1	-1	2	2	2	0	0	2	2	0.354	0.0	0.354	7	1689	12	7	1	0	-1	-1	38	1689	0	246	333	0.5	6.133	2	2	53	2	2	10	9	8	12	2	18	20	barrier:18	drumlin_s303_B	B	OPP	Core destroyed	297
+drumlin	25	25	338	1000	8	2	3	28	33	2	2	4	4	5	7	7	4.078	7.0	4.078	4	2352	13	9	8	6	2.33	1	248	2352	0	64	902	4.533	1.7	14	7	115	2	3	10	9	8	12	17	120	128	barrier:120	drumlin_s304_A	A	OPP	Titanium collected (tiebreak)	1000
+drumlin	25	25	338	508	8	2	3	393	-1	2	2	1	2	2	4	4	1.76	4.0	1.76	7	2617	12	9	6	5	4.4	1	157	2617	0	142	304	1.633	5.533	9	5	39	2	2	10	9	8	28	12	102	55	barrier:102	drumlin_s304_B	B	OPP	Core destroyed	508
+drumlin	25	25	338	214	8	2	3	20	-1	2	3	3	4	4	4	4	3.579	4.0	3.579	5	799	12	7	3	3	1.0	1	93	799	0	32	113	3.583	4.083	6	2	42	2	3	10	9	8	12	4	55	38	barrier:55	drumlin_s305_A	A	OPP	Core destroyed	214
+drumlin	25	25	338	164	8	2	3	37	109	2	2	3	4	6	6	6	3.78	5.72	3.78	6	568	12	7	5	5	1.0	1	139	568	0	7	113	3.25	4.7	7	1	50	2	2	10	9	8	12	3	90	49	barrier:90	drumlin_s305_B	B	OPP	Core destroyed	164
+drumlin	25	25	338	492	8	2	3	21	-1	2	2	4	3	3	4	4	2.951	3.0	2.951	5	1890	13	7	3	3	1.0	1	89	1890	0	9	102	3.017	3.9	6	3	44	2	3	10	9	8	12	3	51	38	barrier:51	drumlin_s306_A	A	US	Core destroyed	492
+drumlin	25	25	338	168	8	2	3	-1	-1	2	2	2	2	2	2	2	1.887	2.0	1.887	7	914	12	7	1	1	1.0	1	30	914	0	5	104	1.767	6.2	3	1	46	2	2	10	9	8	12	2	20	10	barrier:20	drumlin_s306_B	B	US	Core destroyed	168
+drumlin	25	25	338	1000	8	2	3	86	-1	2	2	1	2	2	4	4	2.918	3.0	2.918	7	4800	13	10	5	5	1.0	1	177	4800	0	19	107	1.233	5.7	8	5	56	2	2	10	9	8	12	5	90	87	barrier:90	drumlin_s307_A	A	OPP	Titanium collected (tiebreak)	1000
+drumlin	25	25	338	203	8	2	3	-1	-1	2	2	2	1	2	2	2	1.833	2.0	1.833	7	1146	12	9	3	2	1.0	1	103	1146	0	5	98	1.6	6.333	4	2	73	2	2	10	9	8	12	2	66	37	barrier:66	drumlin_s307_B	B	US	Core destroyed	203
+drumlin	25	25	338	1000	8	2	3	28	33	2	2	4	4	5	7	7	4.086	7.0	4.086	4	2345	13	8	7	5	2.8	1	233	2345	0	64	901	4.533	1.7	13	6	115	2	3	10	9	8	12	16	105	128	barrier:105	drumlin_s308_A	A	OPP	Titanium collected (tiebreak)	1000
+drumlin	25	25	338	313	8	2	3	-1	-1	2	2	2	0	0	2	2	0.316	0.0	0.316	7	1975	12	8	1	0	-1	-1	87	1975	0	82	125	0.4	6.233	2	2	50	2	2	10	9	8	12	2	63	24	barrier:63	drumlin_s308_B	B	US	Core destroyed	313
+drumlin	25	25	338	1000	8	2	3	28	33	2	2	4	4	5	7	7	4.086	7.0	4.086	4	2345	13	8	7	5	2.8	1	233	2345	0	64	901	4.533	1.7	13	6	115	2	3	10	9	8	12	16	105	128	barrier:105	drumlin_s309_A	A	OPP	Titanium collected (tiebreak)	1000
+drumlin	25	25	338	405	8	2	3	34	-1	2	2	3	3	2	4	4	2.207	2.0	2.207	6	2229	12	8	2	2	1.0	1	246	2229	0	14	100	3.3	4.583	5	3	71	2	2	10	9	8	12	3	52	194	barrier:52	drumlin_s309_B	B	OPP	Core destroyed	405
+drumlin	25	25	338	742	8	2	3	20	-1	2	3	3	1	2	3	3	1.64	0.0	1.64	8	3895	12	17	10	3	1.0	1	186	3895	0	178	633	1.917	6.067	6	6	308	2	2	10	9	8	12	2	114	72	barrier:114	drumlin_s310_A	A	US	Core destroyed	742
+drumlin	25	25	338	405	8	2	3	34	-1	2	2	3	3	2	4	4	2.207	2.0	2.207	6	2229	12	8	2	2	1.0	1	246	2229	0	14	100	3.3	4.583	5	3	71	2	2	10	9	8	12	3	52	194	barrier:52	drumlin_s310_B	B	OPP	Core destroyed	405
+drumlin	25	25	338	1000	8	2	3	86	-1	2	2	1	2	2	4	4	2.918	3.0	2.918	7	4800	13	10	5	5	1.0	1	177	4800	0	19	107	1.233	5.7	8	5	56	2	2	10	9	8	12	5	90	87	barrier:90	drumlin_s311_A	A	OPP	Titanium collected (tiebreak)	1000
+drumlin	25	25	338	407	8	2	3	-1	-1	2	2	2	1	1	2	2	0.99	0.0	0.99	8	2112	12	14	6	0	-1	-1	142	2112	0	261	457	1.3	4.933	2	2	347	2	2	10	9	8	12	3	120	22	barrier:120	drumlin_s311_B	B	US	Core destroyed	407
+drumlin	25	25	338	661	8	2	3	54	-1	2	2	2	4	4	4	4	2.463	2.0	2.463	5	2812	13	8	3	2	1.0	1	149	2812	0	27	172	3.167	3.733	5	3	147	2	2	10	9	8	12	2	57	92	barrier:57	drumlin_s312_A	A	US	Core destroyed	661
+drumlin	25	25	338	245	8	2	3	34	61	2	2	3	6	2	6	6	2.212	0.0	2.212	8	1286	12	14	6	6	2.83	1	255	1286	0	7	122	4.517	3.367	8	8	83	2	2	10	9	8	12	2	105	150	barrier:105	drumlin_s312_B	B	OPP	Core destroyed	245
+drumlin	25	25	338	213	8	2	3	20	-1	2	3	3	4	4	4	4	3.577	4.0	3.577	5	795	12	7	3	3	1.0	1	93	795	0	32	113	3.583	4.083	6	2	42	2	3	10	9	8	12	4	55	38	barrier:55	drumlin_s313_A	A	OPP	Core destroyed	213
+drumlin	25	25	338	297	8	2	3	-1	-1	2	2	2	0	0	2	2	0.354	0.0	0.354	7	1689	12	7	1	0	-1	-1	38	1689	0	246	333	0.5	6.133	2	2	53	2	2	10	9	8	12	2	18	20	barrier:18	drumlin_s313_B	B	OPP	Core destroyed	297
+drumlin	25	25	338	213	8	2	3	20	-1	2	3	3	4	4	4	4	3.577	4.0	3.577	5	795	12	7	3	3	1.0	1	93	795	0	32	113	3.583	4.083	6	2	42	2	3	10	9	8	12	4	55	38	barrier:55	drumlin_s314_A	A	OPP	Core destroyed	213
+drumlin	25	25	338	297	8	2	3	-1	-1	2	2	2	0	0	2	2	0.354	0.0	0.354	7	1689	12	7	1	0	-1	-1	38	1689	0	246	333	0.5	6.133	2	2	53	2	2	10	9	8	12	2	18	20	barrier:18	drumlin_s314_B	B	OPP	Core destroyed	297
+drumlin	25	25	338	221	8	2	3	20	80	2	3	3	5	5	6	6	4.163	5.06	4.163	6	640	12	7	4	4	9.75	1	134	640	0	9	193	3.617	4.0	7	2	202	2	3	10	9	8	12	3	74	60	barrier:74	drumlin_s315_A	A	OPP	Core destroyed	221
+drumlin	25	25	338	405	8	2	3	34	-1	2	2	3	3	2	4	4	2.207	2.0	2.207	6	2229	12	8	2	2	1.0	1	246	2229	0	14	100	3.3	4.583	5	3	71	2	2	10	9	8	12	3	52	194	barrier:52	drumlin_s315_B	B	OPP	Core destroyed	405
+drumlin	25	25	338	333	8	2	3	26	-1	2	2	2	2	2	4	4	1.375	0.0	1.375	8	2022	12	13	5	4	6.5	1	190	2022	0	11	166	2.4	5.517	7	7	62	2	3	10	9	8	12	3	83	107	barrier:83	drumlin_s316_A	A	OPP	Core destroyed	333
+drumlin	25	25	338	297	8	2	3	-1	-1	2	2	2	0	0	2	2	0.354	0.0	0.354	7	1689	12	7	1	0	-1	-1	38	1689	0	245	334	0.5	6.133	2	2	53	2	2	10	9	8	12	2	18	20	barrier:18	drumlin_s316_B	B	OPP	Core destroyed	297
+drumlin	25	25	338	495	8	2	3	20	67	2	3	3	5	5	6	6	3.495	5.0	3.495	5	1695	12	13	11	8	7.38	1	198	1695	0	15	510	3.867	3.65	12	7	70	2	3	10	9	8	12	5	106	92	barrier:106	drumlin_s317_A	A	OPP	Core destroyed	495
+drumlin	25	25	338	245	8	2	3	34	61	2	2	3	6	2	6	6	2.212	0.0	2.212	8	1286	12	14	6	6	2.83	1	255	1286	0	7	122	4.517	3.367	8	8	83	2	2	10	9	8	12	2	105	150	barrier:105	drumlin_s317_B	B	OPP	Core destroyed	245
+drumlin	25	25	338	492	8	2	3	21	-1	2	2	4	3	3	4	4	2.951	3.0	2.951	5	1890	13	7	3	3	1.0	1	89	1890	0	9	102	3.017	3.9	6	3	44	2	3	10	9	8	12	3	51	38	barrier:51	drumlin_s318_A	A	US	Core destroyed	492
+drumlin	25	25	338	202	8	2	3	-1	-1	2	2	2	1	1	2	2	1.198	1.0	1.198	7	1122	12	7	1	0	-1	-1	49	1122	0	5	243	1.083	6.267	2	1	43	2	2	10	9	8	12	3	33	16	barrier:33	drumlin_s318_B	B	US	Core destroyed	202
+drumlin	25	25	338	1000	8	2	3	28	33	2	2	4	4	5	7	7	4.027	7.0	4.027	4	2400	13	10	9	7	2.29	1	292	2400	0	64	905	4.533	1.7	15	8	145	2	3	10	9	8	12	17	135	157	barrier:135	drumlin_s319_A	A	OPP	Titanium collected (tiebreak)	1000
+drumlin	25	25	338	164	8	2	3	37	109	2	2	3	4	6	6	6	3.78	5.72	3.78	6	568	12	7	5	5	1.0	1	139	568	0	7	113	3.25	4.7	7	1	50	2	2	10	9	8	12	3	90	49	barrier:90	drumlin_s319_B	B	OPP	Core destroyed	164
+drumlin	25	25	338	150	8	2	3	20	-1	2	3	2	0	-1	3	3	0.767	0.0	0.767	8	943	12	10	2	0	-1	-1	117	943	0	15	121	0.4	7.567	3	3	33	2	3	10	9	8	12	2	87	30	barrier:87	drumlin_s320_A	A	US	Core destroyed	150
+drumlin	25	25	338	205	8	2	3	52	78	2	2	2	5	4	5	5	3.327	3.0	3.327	6	824	12	11	6	6	4.83	1	192	824	0	6	124	3.4	4.4	7	4	66	2	2	10	9	8	12	5	102	90	barrier:102	drumlin_s320_B	B	OPP	Core destroyed	205
+drumlin	25	25	338	1000	8	2	3	86	-1	2	2	1	2	2	4	4	2.918	3.0	2.918	7	4800	13	10	5	5	1.0	1	177	4800	0	19	107	1.233	5.7	8	5	56	2	2	10	9	8	12	5	90	87	barrier:90	drumlin_s321_A	A	OPP	Titanium collected (tiebreak)	1000
+drumlin	25	25	338	204	8	2	3	82	161	2	2	2	2	3	5	5	3.034	4.86	3.034	6	800	12	6	3	2	1.0	1	124	800	0	20	190	2.3	5.0	5	0	-1	2	2	10	9	8	12	3	82	42	barrier:82	drumlin_s321_B	B	OPP	Core destroyed	204
+drumlin	25	25	338	1000	8	2	3	37	-1	2	2	3	2	3	3	3	1.786	1.0	1.786	6	4993	13	10	4	2	1.0	1	229	4993	0	55	178	2.417	4.533	6	5	54	2	2	10	9	8	12	4	96	133	barrier:96	drumlin_s322_A	A	OPP	Titanium collected (tiebreak)	1000
+drumlin	25	25	338	297	8	2	3	-1	-1	2	2	2	0	0	2	2	0.354	0.0	0.354	7	1689	12	7	1	0	-1	-1	38	1689	0	246	333	0.5	6.133	2	2	53	2	2	10	9	8	12	2	18	20	barrier:18	drumlin_s322_B	B	OPP	Core destroyed	297
+drumlin	25	25	338	1000	8	2	3	28	33	2	2	4	4	5	8	8	4.129	7.86	4.129	4	2301	13	8	8	6	2.5	1	246	2301	0	64	902	4.533	1.7	14	6	115	2	3	10	9	8	12	15	120	126	barrier:120	drumlin_s323_A	A	OPP	Titanium collected (tiebreak)	1000
+drumlin	25	25	338	411	8	2	3	41	320	2	2	2	3	2	5	5	3.136	5.0	3.136	6	1604	12	8	5	3	1.0	1	126	1604	0	39	352	2.767	5.183	7	2	82	2	2	10	9	8	12	10	103	23	barrier:103	drumlin_s323_B	B	OPP	Core destroyed	411
+drumlin	25	25	338	742	8	2	3	20	-1	2	3	3	1	2	3	3	1.64	0.0	1.64	8	3895	12	17	10	3	1.0	1	186	3895	0	178	633	1.917	6.067	6	6	308	2	2	10	9	8	12	2	114	72	barrier:114	drumlin_s324_A	A	US	Core destroyed	742
+drumlin	25	25	338	405	8	2	3	34	-1	2	2	3	3	2	4	4	2.207	2.0	2.207	6	2229	12	8	2	2	1.0	1	246	2229	0	14	100	3.3	4.583	5	3	71	2	2	10	9	8	12	3	52	194	barrier:52	drumlin_s324_B	B	OPP	Core destroyed	405
+drumlin	25	25	338	742	8	2	3	20	-1	2	3	3	1	2	3	3	1.64	0.0	1.64	8	3895	12	17	10	3	1.0	1	186	3895	0	178	633	1.917	6.067	6	6	308	2	2	10	9	8	12	2	114	72	barrier:114	drumlin_s325_A	A	US	Core destroyed	742
+drumlin	25	25	338	701	8	2	3	-1	-1	2	2	2	2	2	2	2	1.307	1.0	1.307	7	3770	12	19	13	2	1.0	1	189	3770	0	365	553	0.983	5.883	6	5	44	2	2	10	9	8	12	3	104	85	barrier:104	drumlin_s325_B	B	OPP	Core destroyed	701
+drumlin	25	25	338	492	8	2	3	21	-1	2	2	4	3	3	4	4	2.951	3.0	2.951	5	1890	13	7	3	3	1.0	1	89	1890	0	9	102	3.017	3.9	6	3	44	2	3	10	9	8	12	3	51	38	barrier:51	drumlin_s326_A	A	US	Core destroyed	492
+drumlin	25	25	338	477	8	2	3	90	-1	2	2	2	2	3	3	3	2.755	3.0	2.755	6	1862	17	6	2	2	1.0	1	72	1862	0	36	137	1.8	4.8	5	2	65	2	2	10	9	8	12	2	52	20	barrier:52	drumlin_s326_B	B	US	Core destroyed	477
+drumlin	25	25	338	1000	8	2	3	28	33	2	2	4	4	5	7	7	4.086	7.0	4.086	4	2345	13	8	7	5	2.8	1	239	2345	0	64	901	4.533	1.7	13	6	115	2	3	10	9	8	12	18	105	134	barrier:105	drumlin_s327_A	A	OPP	Titanium collected (tiebreak)	1000
+drumlin	25	25	338	405	8	2	3	24	258	2	2	3	3	3	7	7	4.249	7.0	4.249	5	1386	12	6	5	5	1.0	1	107	1386	0	5	119	2.983	4.983	8	1	54	2	3	10	9	8	12	6	79	28	barrier:79	drumlin_s327_B	B	OPP	Core destroyed	405
+drumlin	25	25	338	250	8	2	3	18	-1	2	3	3	3	0	3	3	1.396	0.0	1.396	8	1415	12	12	4	2	1.0	1	141	1415	0	64	166	2.817	4.733	5	5	70	2	3	10	9	8	12	3	84	57	barrier:84	drumlin_s328_A	A	US	Core destroyed	250
+drumlin	25	25	338	297	8	2	3	-1	-1	2	2	2	0	0	2	2	0.354	0.0	0.354	7	1689	12	7	1	0	-1	-1	38	1689	0	245	334	0.5	6.133	2	2	53	2	2	10	9	8	12	2	18	20	barrier:18	drumlin_s328_B	B	OPP	Core destroyed	297
+drumlin	25	25	338	216	8	2	3	20	-1	2	3	3	4	4	4	4	3.583	4.0	3.583	5	807	12	7	3	3	1.0	1	93	807	0	32	113	3.583	4.083	6	2	42	2	3	10	9	8	12	4	55	38	barrier:55	drumlin_s329_A	A	OPP	Core destroyed	216
+drumlin	25	25	338	202	8	2	3	-1	-1	2	2	2	1	1	2	2	1.198	1.0	1.198	7	1122	12	7	1	0	-1	-1	49	1122	0	5	243	1.083	6.267	2	1	43	2	2	10	9	8	12	3	33	16	barrier:33	drumlin_s329_B	B	US	Core destroyed	202
+fjordgate	10	10	32	249	8	2	3	-1	-1	2	2	2	2	2	2	2	1.98	2.0	1.98	2	410	26	21	19	0	-1	-1	64	410	0	152	920	2.0	1.75	2	0	-1	1	2	3	3	7	-1	1	64	0	barrier:64	fjordgate_s300_A	A	US	Core destroyed	249
+fjordgate	10	10	32	253	8	2	3	6	104	2	3	3	3	7	8	8	5.628	8.0	5.628	2	205	5	2	2	2	1.0	1	99	205	0	22	369	3.017	2.0	8	0	-1	1	3	3	3	7	73	3	30	69	barrier:30	fjordgate_s300_B	B	OPP	Core destroyed	253
+fjordgate	10	10	32	299	8	2	4	25	-1	2	2	2	2	1	3	3	1.405	1.0	1.405	7	1394	26	8	1	0	-1	-1	27	1394	0	27	546	2.0	3.017	3	2	117	1	2	3	3	6	-1	1	15	12	barrier:15	fjordgate_s301_A	A	US	Core destroyed	299
+fjordgate	10	10	32	259	8	2	3	-1	-1	2	2	2	1	1	2	2	1.212	1.0	1.212	6	855	4	49	43	0	-1	-1	0	855	0	7	870	1.333	2.617	2	1	57	1	2	3	3	6	-1	1	0	0		fjordgate_s301_B	B	US	Core destroyed	259
+fjordgate	10	10	32	149	8	2	4	25	-1	2	2	2	2	-1	3	3	1.826	1.44	1.826	5	436	6	6	1	0	-1	-1	27	436	0	56	424	2.0	3.117	3	2	119	1	2	3	3	6	-1	1	15	12	barrier:15	fjordgate_s302_A	A	OPP	Core destroyed	149
+fjordgate	10	10	32	486	8	2	4	-1	-1	2	2	2	2	2	2	2	1.988	2.0	1.988	3	1364	4	7	4	0	-1	-1	69	1364	0	95	1449	2.0	2.267	2	0	-1	1	2	4	4	8	-1	1	69	0	barrier:69	fjordgate_s302_B	B	US	Core destroyed	486
+fjordgate	10	10	32	162	8	2	3	6	77	2	3	2	5	8	8	8	5.216	7.76	5.216	1	61	22	1	1	1	1.0	1	15	61	0	48	334	4.417	0.717	23	16	5	1	3	3	3	7	43	3	15	0	barrier:15	fjordgate_s303_A	A	OPP	Core destroyed	162
+fjordgate	10	10	32	141	8	2	4	32	-1	2	2	3	3	-1	3	3	2.73	3.0	2.73	2	273	4	2	0	0	-1	-1	0	273	0	60	384	3.0	2.0	3	0	-1	1	2	3	3	8	-1	1	0	0		fjordgate_s303_B	B	OPP	Core destroyed	141
+fjordgate	10	10	32	230	8	2	4	87	116	2	2	2	2	6	6	7	4.091	6.0	4.165	3	265	4	3	3	3	1.0	1	45	265	0	19	598	2.217	2.767	6	0	-1	1	2	3	3	8	64	4	45	0	barrier:45	fjordgate_s304_A	A	OPP	Core destroyed	230
+fjordgate	10	10	32	192	8	2	3	6	184	2	3	3	2	2	5	5	2.589	3.48	2.589	4	594	5	4	2	2	7.5	14	70	594	0	18	416	2.167	3.467	6	1	47	1	3	3	3	7	141	3	47	23	barrier:47	fjordgate_s304_B	B	OPP	Core destroyed	192
+fjordgate	10	10	32	442	8	2	4	6	431	2	3	3	3	3	7	7	3.034	3.68	3.034	3	911	11	3	3	2	1.0	1	24	911	0	166	1112	2.95	2.75	14	7	3	1	2	3	3	6	425	2	20	4	barrier:20	fjordgate_s305_A	A	OPP	Core destroyed	442
+fjordgate	10	10	32	394	8	2	5	-1	-1	2	2	2	2	2	2	2	1.982	2.0	1.982	4	952	4	10	6	0	-1	-1	83	952	0	209	1104	2.0	1.95	2	0	-1	1	2	4	4	7	-1	1	83	0	barrier:83	fjordgate_s305_B	B	US	Core destroyed	394
+fjordgate	10	10	32	1000	8	2	4	6	-1	2	3	3	2	2	3	3	1.484	2.0	1.484	4	2417	19	6	4	0	-1	-1	31	2417	0	78	3997	2.083	1.217	14	12	3	1	3	3	3	6	-1	1	15	16	barrier:15	fjordgate_s306_A	A	OPP	Titanium collected (tiebreak)	1000
+fjordgate	10	10	32	280	8	2	3	6	104	2	3	3	3	7	8	8	5.596	8.0	5.596	2	277	5	3	3	3	1.0	1	43	277	0	12	382	3.0	2.0	9	1	176	1	3	3	3	7	93	3	43	0	barrier:30,gunner:13	fjordgate_s306_B	B	OPP	Core destroyed	280
+fjordgate	10	10	32	550	8	2	4	-1	-1	2	2	2	2	2	2	2	1.989	2.0	1.989	3	1621	4	3	0	0	-1	-1	0	1621	0	11	1674	2.0	3.0	2	0	-1	1	2	3	3	8	-1	1	0	0		fjordgate_s307_A	A	OPP	Core destroyed	550
+fjordgate	10	10	32	267	8	2	4	6	176	2	3	3	3	3	7	7	4.262	7.0	4.262	2	200	4	2	2	1	1.0	1	30	200	0	35	752	3.0	1.0	7	0	-1	1	3	4	4	6	157	4	30	0	barrier:30	fjordgate_s307_B	B	OPP	Core destroyed	267
+fjordgate	10	10	32	238	8	2	4	-1	-1	2	2	2	2	2	2	2	1.975	2.0	1.975	5	1007	4	10	5	0	-1	-1	88	1007	0	16	411	2.0	3.95	2	0	-1	1	2	3	3	6	-1	1	88	0	barrier:88	fjordgate_s308_A	A	US	Core destroyed	238
+fjordgate	10	10	32	182	8	2	3	58	78	2	2	2	5	5	7	7	4.302	5.24	4.302	3	187	15	4	3	3	1.0	1	69	187	0	73	376	3.783	1.433	7	2	86	1	2	3	3	7	32	3	45	24	barrier:45	fjordgate_s308_B	B	OPP	Core destroyed	182
+fjordgate	10	10	32	297	8	2	4	144	157	2	2	2	2	4	7	7	4.0	6.0	4.024	6	731	4	6	6	6	6.83	1	120	731	0	33	415	2.0	5.067	8	2	18	1	2	3	3	6	116	2	90	30	barrier:90	fjordgate_s309_A	A	OPP	Core destroyed	297
+fjordgate	10	10	32	187	8	2	4	6	-1	2	3	3	3	3	3	3	2.936	3.0	2.936	4	478	4	4	0	0	-1	-1	11	478	0	8	450	3.0	2.0	3	0	-1	1	3	3	3	-1	-1	0	7	4	barrier:7	fjordgate_s309_B	B	OPP	Core destroyed	187
+fjordgate	10	10	32	310	8	2	4	144	150	2	2	2	2	5	7	7	4.029	5.9	4.029	6	924	4	7	6	5	8.0	1	143	924	0	14	288	2.0	5.067	7	2	301	1	2	3	3	6	116	2	90	53	barrier:90	fjordgate_s310_A	A	OPP	Core destroyed	310
+fjordgate	10	10	32	157	8	2	3	6	-1	2	3	3	3	4	4	4	3.236	3.96	3.236	3	336	5	3	0	0	-1	-1	18	336	0	8	396	3.0	2.0	4	0	-1	1	3	3	3	7	60	2	0	18		fjordgate_s310_B	B	US	Core destroyed	157
+fjordgate	10	10	32	610	8	2	4	20	253	2	3	2	2	2	5	6	2.705	2.0	3.313	3	1121	4	9	7	3	1.0	1	126	1121	0	96	1640	2.0	2.283	7	5	93	1	3	3	3	8	136	3	58	68	barrier:45,gunner:13	fjordgate_s311_A	A	US	Core destroyed	610
+fjordgate	10	10	32	166	8	2	5	45	-1	2	2	2	3	3	3	3	2.687	3.0	2.687	4	395	4	4	0	0	-1	-1	0	395	0	30	379	2.917	2.0	3	0	-1	1	2	3	3	-1	-1	0	0	0		fjordgate_s311_B	B	US	Core destroyed	166
+fjordgate	10	10	32	230	8	2	4	87	116	2	2	2	2	6	6	7	4.091	6.0	4.165	3	265	4	3	3	3	1.0	1	45	265	0	19	598	2.217	2.767	6	0	-1	1	2	3	3	8	64	4	45	0	barrier:45	fjordgate_s312_A	A	OPP	Core destroyed	230
+fjordgate	10	10	32	217	8	2	4	6	-1	2	3	3	3	3	3	3	2.903	2.82	2.903	6	652	4	6	0	0	-1	-1	26	652	0	45	386	3.0	2.0	3	1	204	1	3	3	3	-1	-1	0	0	26		fjordgate_s312_B	B	OPP	Core destroyed	217
+fjordgate	10	10	32	219	8	2	3	6	-1	2	3	3	2	3	3	3	2.863	3.0	2.863	0	0	-1	0	0	0	-1	-1	0	0	0	72	1043	2.783	0.0	18	15	4	1	3	3	3	7	162	2	0	0		fjordgate_s313_A	A	OPP	Core destroyed	219
+fjordgate	10	10	32	365	8	2	3	-1	-1	2	2	2	2	2	2	2	1.986	2.0	1.986	2	677	4	46	44	0	-1	-1	0	677	0	15	1497	2.0	1.917	2	0	-1	2	2	4	4	6	-1	1	0	0		fjordgate_s313_B	B	OPP	Core destroyed	365
+fjordgate	10	10	32	235	8	2	4	-1	-1	2	2	2	2	2	2	2	1.579	0.16	1.579	7	1027	4	12	5	0	-1	-1	105	1027	0	37	437	2.0	3.9	2	2	191	1	2	3	3	6	-1	1	85	20	barrier:85	fjordgate_s314_A	A	US	Core destroyed	235
+fjordgate	10	10	32	145	8	2	5	-1	-1	2	2	2	2	-1	2	2	1.952	2.0	1.952	2	275	4	8	6	0	-1	-1	93	275	0	130	453	2.0	1.95	2	0	-1	1	2	4	4	-1	-1	0	93	0	barrier:93	fjordgate_s314_B	B	OPP	Core destroyed	145
+fjordgate	10	10	32	258	8	2	4	-1	-1	2	2	2	2	2	2	2	1.508	0.0	1.508	7	1192	4	13	6	0	-1	-1	133	1192	0	17	452	2.0	3.9	2	2	198	1	2	3	3	6	-1	1	97	36	barrier:97	fjordgate_s315_A	A	US	Core destroyed	258
+fjordgate	10	10	32	375	8	2	3	-1	-1	2	2	2	2	2	2	2	1.987	2.0	1.987	2	682	31	6	4	0	-1	-1	69	682	0	302	1260	2.0	1.933	2	0	-1	1	2	3	3	7	20	2	69	0	barrier:69	fjordgate_s315_B	B	OPP	Core destroyed	375
+fjordgate	10	10	32	85	8	2	4	24	-1	2	2	3	3	-1	3	3	2.647	3.0	2.647	3	129	20	3	0	0	-1	-1	7	64	65	47	269	-1	-1	3	0	-1	1	2	3	3	6	-1	1	6	1	barrier:6	fjordgate_s316_A	A	OPP	Core destroyed	85
+fjordgate	10	10	32	175	8	2	3	-1	-1	2	2	2	2	2	2	2	1.971	2.0	1.971	2	296	17	16	14	0	-1	-1	89	296	0	87	665	2.0	1.817	2	0	-1	1	2	3	3	7	-1	1	89	0	barrier:89	fjordgate_s316_B	B	OPP	Core destroyed	175
+fjordgate	10	10	32	292	8	2	3	150	173	2	2	2	2	3	6	6	2.777	3.02	2.777	4	602	22	13	9	2	1.0	1	197	602	0	84	820	2.0	1.917	7	4	26	1	2	3	3	7	123	2	153	44	barrier:153	fjordgate_s317_A	A	OPP	Core destroyed	292
+fjordgate	10	10	32	105	8	2	3	6	-1	2	3	3	3	-1	3	3	2.895	3.0	2.895	2	141	5	2	1	0	-1	-1	15	141	0	15	356	3.0	1.117	3	0	-1	1	3	3	3	7	-1	1	15	0	barrier:15	fjordgate_s317_B	B	OPP	Core destroyed	105
+fjordgate	10	10	32	175	8	2	3	6	-1	2	3	3	3	3	3	3	2.937	3.0	2.937	4	384	24	4	0	0	-1	-1	7	384	0	28	471	3.0	2.0	3	0	-1	1	3	3	3	-1	-1	0	0	7		fjordgate_s318_A	A	US	Core destroyed	175
+fjordgate	10	10	32	181	8	2	3	6	-1	2	3	3	3	3	3	3	2.939	3.0	2.939	4	405	5	9	5	0	-1	-1	77	405	0	46	441	3.0	1.95	3	0	-1	1	3	3	3	-1	-1	0	77	0	barrier:77	fjordgate_s318_B	B	OPP	Core destroyed	181
+fjordgate	10	10	32	405	8	2	4	-1	-1	2	2	2	2	2	2	2	1.504	0.0	1.504	8	2268	4	14	6	0	-1	-1	132	2268	0	51	310	2.0	4.933	2	2	335	1	2	3	3	6	-1	1	96	36	barrier:96	fjordgate_s319_A	A	US	Core destroyed	405
+fjordgate	10	10	32	105	8	2	3	6	-1	2	3	3	3	-1	3	3	2.895	3.0	2.895	3	272	5	3	0	0	-1	-1	0	272	0	7	250	3.0	3.0	3	0	-1	1	3	3	3	7	-1	1	0	0		fjordgate_s319_B	B	OPP	Core destroyed	105
+fjordgate	10	10	32	276	8	2	3	172	215	2	2	2	2	2	6	6	3.098	5.88	3.098	3	492	21	12	9	2	1.0	1	194	492	0	42	809	2.0	1.917	6	1	59	1	2	3	3	7	105	3	176	18	barrier:176	fjordgate_s320_A	A	OPP	Core destroyed	276
+fjordgate	10	10	32	365	8	2	4	-1	-1	2	2	2	2	2	2	2	1.984	2.0	1.984	3	998	4	3	0	0	-1	-1	0	998	0	26	1139	2.0	2.2	2	0	-1	1	2	4	4	6	-1	1	0	0		fjordgate_s320_B	B	OPP	Core destroyed	365
+fjordgate	10	10	32	117	8	2	4	25	-1	2	2	2	2	-1	3	3	2.017	2.0	2.017	3	282	6	3	0	0	-1	-1	8	282	0	56	358	2.0	3.0	3	1	8	1	2	3	3	6	-1	1	0	8		fjordgate_s321_A	A	OPP	Core destroyed	117
+fjordgate	10	10	32	149	8	2	3	34	-1	2	2	3	3	-1	3	3	2.738	3.0	2.738	2	209	15	3	1	0	-1	-1	15	209	0	36	537	3.0	1.1	3	0	-1	1	2	3	3	7	72	3	15	0	barrier:15	fjordgate_s321_B	B	US	Core destroyed	149
+fjordgate	10	10	32	122	8	2	4	-1	-1	2	2	2	2	-1	2	2	1.951	2.0	1.951	2	216	6	2	0	0	-1	-1	12	116	100	39	470	2.0	1.0	2	0	-1	1	2	3	3	6	-1	1	12	0	barrier:12	fjordgate_s322_A	A	OPP	Core destroyed	122
+fjordgate	10	10	32	294	8	2	3	6	-1	2	3	3	3	2	3	3	2.139	1.0	2.184	2	577	5	2	0	0	-1	-1	0	577	0	84	1021	3.0	2.0	3	2	220	1	3	3	3	7	91	2	0	0		fjordgate_s322_B	B	US	Core destroyed	294
+fjordgate	10	10	32	517	8	2	4	-1	-1	2	2	2	1	1	2	2	1.126	1.0	1.126	5	2373	6	6	1	0	-1	-1	39	2373	0	434	743	1.517	4.017	2	1	69	1	2	3	3	6	-1	1	15	24	barrier:15	fjordgate_s323_A	A	US	Core destroyed	517
+fjordgate	10	10	32	275	8	2	3	6	-1	2	3	3	3	2	3	3	1.775	0.0	1.775	8	928	5	10	4	0	-1	-1	61	928	0	36	727	3.0	1.967	3	3	184	1	3	3	3	-1	-1	0	41	20	barrier:41	fjordgate_s323_B	B	US	Core destroyed	275
+fjordgate	10	10	32	181	8	2	3	6	-1	2	3	3	3	3	3	3	2.89	2.82	2.89	4	372	24	4	0	0	-1	-1	19	372	0	25	525	3.0	2.0	3	1	170	1	3	3	3	-1	-1	0	0	19		fjordgate_s324_A	A	US	Core destroyed	181
+fjordgate	10	10	32	117	8	2	3	6	-1	2	3	3	3	-1	3	3	2.786	2.72	2.786	4	266	5	6	2	0	-1	-1	52	266	0	12	315	3.0	2.217	3	1	100	1	3	3	3	7	-1	1	33	19	barrier:33	fjordgate_s324_B	B	OPP	Core destroyed	117
+fjordgate	10	10	32	122	8	2	4	-1	-1	2	2	2	2	-1	2	2	1.951	2.0	1.951	2	214	6	3	1	0	-1	-1	16	115	99	78	431	2.0	1.0	2	0	-1	1	2	3	3	6	-1	1	16	0	barrier:16	fjordgate_s325_A	A	OPP	Core destroyed	122
+fjordgate	10	10	32	234	8	2	4	6	-1	2	3	3	2	1	3	3	1.855	1.0	1.855	7	1092	4	7	0	0	-1	-1	27	1092	0	8	329	2.4	3.533	3	2	146	1	3	4	4	6	-1	1	7	20	barrier:7	fjordgate_s325_B	B	US	Core destroyed	234
+fjordgate	10	10	32	174	8	2	4	-1	-1	2	2	2	2	2	2	2	1.966	2.0	1.966	4	603	4	4	0	0	-1	-1	0	603	0	15	383	2.0	3.667	2	0	-1	1	2	3	3	8	-1	1	0	0		fjordgate_s326_A	A	US	Core destroyed	174
+fjordgate	10	10	32	244	8	2	5	-1	-1	2	2	2	2	2	2	2	1.971	2.0	1.971	4	624	4	16	12	0	-1	-1	88	624	0	219	532	2.0	1.933	2	0	-1	1	2	4	4	7	-1	1	88	0	barrier:88	fjordgate_s326_B	B	US	Core destroyed	244
+fjordgate	10	10	32	173	8	2	4	6	-1	2	3	3	3	3	3	3	2.931	3.0	2.931	3	440	11	7	4	0	-1	-1	87	440	0	20	401	3.0	2.883	3	0	-1	1	3	3	3	6	141	2	61	26	barrier:61	fjordgate_s327_A	A	OPP	Core destroyed	173
+fjordgate	10	10	32	182	8	2	3	58	78	2	2	2	5	5	7	7	4.302	5.24	4.302	3	187	15	4	3	3	1.0	1	69	187	0	73	376	3.783	1.433	7	2	86	1	2	3	3	7	32	3	45	24	barrier:45	fjordgate_s327_B	B	OPP	Core destroyed	182
+fjordgate	10	10	32	122	8	2	4	-1	-1	2	2	2	2	-1	2	2	1.951	2.0	1.951	2	214	6	3	1	0	-1	-1	16	115	99	78	431	2.0	1.0	2	0	-1	1	2	3	3	6	-1	1	16	0	barrier:16	fjordgate_s328_A	A	OPP	Core destroyed	122
+fjordgate	10	10	32	275	8	2	3	6	-1	2	3	3	3	2	3	3	1.775	0.0	1.775	8	928	5	10	4	0	-1	-1	61	928	0	35	728	3.0	1.967	3	3	184	1	3	3	3	-1	-1	0	41	20	barrier:41	fjordgate_s328_B	B	US	Core destroyed	275
+fjordgate	10	10	32	1000	8	2	3	6	-1	2	3	3	3	3	4	4	3.737	4.0	3.737	2	590	97	3	1	0	-1	-1	24	568	22	917	2753	2.883	0.0	15	11	4	1	3	3	3	7	-1	1	10	14	conveyor:10	fjordgate_s329_A	A	OPP	Titanium collected (tiebreak)	1000
+fjordgate	10	10	32	365	8	2	4	-1	-1	2	2	2	2	2	2	2	1.984	2.0	1.984	3	998	4	3	0	0	-1	-1	0	998	0	26	1139	2.0	2.2	2	0	-1	1	2	4	4	6	-1	1	0	0		fjordgate_s329_B	B	OPP	Core destroyed	365
+frostgate	20	20	196	572	8	2	3	11	445	2	3	2	4	4	5	5	3.673	5.0	3.673	6	1967	17	6	4	4	1.0	1	128	1967	0	383	124	3.55	4.417	7	2	136	3	3	12	11	6	9	2	62	66	barrier:62	frostgate_s300_A	A	US	Core destroyed	572
+frostgate	20	20	196	113	8	2	3	10	15	2	6	5	4	-1	6	6	4.195	3.9	4.195	5	301	11	5	0	0	-1	-1	75	301	0	11	118	4.133	3.6	6	3	46	3	6	11	7	6	9	2	15	60	barrier:15	frostgate_s300_B	B	OPP	Core destroyed	113
+frostgate	20	20	196	253	8	2	3	14	-1	2	3	2	1	2	3	3	1.336	1.0	1.336	7	1512	10	10	3	3	3.0	1	124	1512	0	17	156	1.267	6.283	6	5	9	2	3	10	7	6	9	6	64	60	barrier:64	frostgate_s301_A	A	US	Core destroyed	253
+frostgate	20	20	196	260	8	2	3	135	164	2	2	1	1	4	6	6	2.912	4.92	2.912	7	946	33	13	10	7	9.29	1	203	946	0	16	339	1.0	5.4	11	6	61	2	2	12	12	6	9	7	153	50	barrier:153	frostgate_s301_B	B	OPP	Core destroyed	260
+frostgate	20	20	196	172	8	2	3	14	-1	2	3	1	1	1	3	3	1.331	1.0	1.331	7	941	10	7	1	0	-1	-1	81	941	0	38	167	1.0	6.2	3	2	38	2	3	10	7	6	9	2	37	44	barrier:37	frostgate_s302_A	A	US	Core destroyed	172
+frostgate	20	20	196	169	8	2	3	12	-1	2	3	3	3	2	3	3	2.337	2.0	2.337	6	849	10	7	1	1	1.0	1	101	849	0	5	101	2.567	5.383	4	2	91	2	3	10	7	6	9	2	43	58	barrier:43	frostgate_s302_B	B	US	Core destroyed	169
+frostgate	20	20	196	252	8	2	3	14	-1	2	3	2	1	2	3	3	1.706	2.26	1.706	7	1420	10	8	3	2	1.0	1	108	1420	0	10	155	1.067	6.517	5	2	42	2	3	10	7	6	9	5	80	28	barrier:80	frostgate_s303_A	A	US	Core destroyed	252
+frostgate	20	20	196	361	8	2	3	12	-1	2	3	3	3	2	3	3	1.188	0.0	1.188	8	2338	10	9	1	1	1.0	1	94	2338	0	4	104	2.667	5.3	4	4	153	2	3	10	7	6	9	2	17	77	barrier:17	frostgate_s303_B	B	US	Core destroyed	361
+frostgate	20	20	196	141	8	2	3	-1	-1	2	2	1	0	-1	2	2	0.667	0.0	0.667	8	867	19	9	1	1	1.0	1	91	867	0	13	154	0.5	7.45	3	3	27	2	1	19	11	6	9	3	61	30	barrier:61	frostgate_s304_A	A	US	Core destroyed	141
+frostgate	20	20	196	117	8	2	3	10	15	2	6	7	5	-1	7	7	4.915	4.86	4.915	4	224	10	5	1	1	1.0	1	91	224	0	27	110	5.2	2.367	7	3	48	2	6	10	7	6	9	2	27	64	barrier:27	frostgate_s304_B	B	OPP	Core destroyed	117
+frostgate	20	20	196	232	8	2	3	10	-1	2	3	3	2	1	3	3	1.284	0.0	1.284	8	1345	10	12	4	2	1.0	1	136	1345	0	28	185	2.067	5.033	5	5	41	2	2	10	7	6	9	4	64	72	barrier:64	frostgate_s305_A	A	US	Core destroyed	232
+frostgate	20	20	196	138	8	2	3	-1	-1	2	2	1	1	-1	2	2	1.493	1.8	1.493	7	569	33	7	1	1	1.0	1	50	569	0	16	291	1.033	5.483	3	1	31	2	2	12	12	6	9	3	32	18	barrier:32	frostgate_s305_B	B	OPP	Core destroyed	138
+frostgate	20	20	196	220	8	2	3	14	-1	2	3	2	0	0	3	3	0.591	0.0	0.591	7	1312	10	9	2	0	-1	-1	83	1312	0	163	154	0.55	6.483	3	3	42	2	3	10	7	6	9	3	53	30	barrier:53	frostgate_s306_A	A	US	Core destroyed	220
+frostgate	20	20	196	519	8	2	3	12	17	2	5	4	3	5	8	8	5.408	5.9	5.408	5	923	35	7	5	5	20.0	3	267	923	0	64	351	3.167	2.817	11	6	84	2	5	12	12	6	9	9	93	174	barrier:93	frostgate_s306_B	B	US	Core destroyed	519
+frostgate	20	20	196	176	8	2	3	14	-1	2	3	1	1	1	3	3	1.324	1.0	1.324	7	961	10	7	1	0	-1	-1	84	961	0	46	167	1.0	6.2	3	2	38	2	3	10	7	6	9	2	40	44	barrier:40	frostgate_s307_A	A	US	Core destroyed	176
+frostgate	20	20	196	361	8	2	3	12	-1	2	3	3	3	2	3	3	1.188	0.0	1.188	8	2338	10	9	1	1	1.0	1	94	2338	0	4	104	2.667	5.3	4	4	153	2	3	10	7	6	9	2	17	77	barrier:17	frostgate_s307_B	B	US	Core destroyed	361
+frostgate	20	20	196	337	8	2	3	-1	-1	2	2	2	1	1	2	2	1.05	1.0	1.05	7	1815	17	7	1	1	1.0	1	54	1815	0	39	488	0.7	5.95	3	2	48	2	2	14	11	6	9	3	30	24	barrier:30	frostgate_s308_A	A	OPP	Core destroyed	337
+frostgate	20	20	196	205	8	2	3	12	-1	2	3	3	2	0	4	4	1.541	0.0	1.541	8	1191	10	10	2	1	1.0	1	123	1191	0	6	125	2.267	5.717	4	4	104	2	3	10	7	6	9	2	68	55	barrier:68	frostgate_s308_B	B	OPP	Core destroyed	205
+frostgate	20	20	196	317	8	2	3	-1	-1	2	2	2	0	1	2	2	1.095	1.0	1.095	8	2005	22	9	2	2	1.0	1	82	2005	0	6	177	0.933	7.017	4	3	33	2	2	12	11	6	9	2	52	30	barrier:52	frostgate_s309_A	A	OPP	Core destroyed	317
+frostgate	20	20	196	117	8	2	3	12	15	2	6	7	5	-1	7	7	4.897	4.86	4.897	4	224	10	5	1	1	1.0	1	91	224	0	27	112	5.2	2.367	7	3	48	2	6	10	7	6	9	2	27	64	barrier:27	frostgate_s309_B	B	OPP	Core destroyed	117
+frostgate	20	20	196	178	8	2	3	14	-1	2	3	1	1	0	3	3	1.169	0.0	1.169	8	1044	10	11	3	2	1.0	1	125	1044	0	9	162	1.45	6.0	5	5	38	2	3	10	7	6	9	5	67	58	barrier:67	frostgate_s310_A	A	US	Core destroyed	178
+frostgate	20	20	196	171	8	2	3	-1	-1	2	2	2	0	0	2	2	0.585	0.0	0.585	8	1004	33	8	0	0	-1	-1	64	1004	0	5	237	0.433	7.117	3	3	31	2	2	12	12	6	9	3	34	30	barrier:34	frostgate_s310_B	B	US	Core destroyed	171
+frostgate	20	20	196	172	8	2	3	14	-1	2	3	1	1	1	3	3	1.331	1.0	1.331	7	941	10	7	1	0	-1	-1	81	941	0	38	167	1.0	6.2	3	2	38	2	3	10	7	6	9	2	37	44	barrier:37	frostgate_s311_A	A	US	Core destroyed	172
+frostgate	20	20	196	113	8	2	3	10	15	2	6	5	4	-1	6	6	4.195	3.9	4.195	5	301	11	5	0	0	-1	-1	75	301	0	11	118	4.133	3.6	6	3	46	3	6	11	7	6	9	2	15	60	barrier:15	frostgate_s311_B	B	OPP	Core destroyed	113
+frostgate	20	20	196	122	8	2	3	14	-1	2	3	3	1	-1	4	4	1.607	1.0	1.607	7	574	10	8	1	1	1.0	1	100	574	0	19	187	1.167	6.117	4	3	35	2	3	10	7	6	9	2	60	40	barrier:60	frostgate_s312_A	A	US	Core destroyed	122
+frostgate	20	20	196	117	8	2	3	10	15	2	6	7	5	-1	7	7	4.915	4.86	4.915	4	224	10	5	1	1	1.0	1	91	224	0	27	110	5.2	2.367	7	3	48	2	6	10	7	6	9	2	27	64	barrier:27	frostgate_s312_B	B	OPP	Core destroyed	117
+frostgate	20	20	196	134	8	2	3	38	-1	2	2	2	2	-1	3	3	1.97	2.0	1.97	5	532	22	6	1	1	1.0	1	67	532	0	80	195	2.0	5.0	3	1	37	2	2	12	11	6	9	2	29	38	barrier:29	frostgate_s313_A	A	OPP	Core destroyed	134
+frostgate	20	20	196	105	8	2	3	-1	-1	2	2	1	1	-1	2	2	1.219	0.98	1.219	7	494	10	8	1	0	-1	-1	45	494	0	23	192	1.0	6.733	2	2	101	2	1	10	7	6	9	2	25	20	barrier:25	frostgate_s313_B	B	US	Core destroyed	105
+frostgate	20	20	196	134	8	2	3	38	-1	2	2	2	2	-1	3	3	1.97	2.0	1.97	5	532	22	6	1	1	1.0	1	67	532	0	80	195	2.0	5.0	3	1	37	2	2	12	11	6	9	2	29	38	barrier:29	frostgate_s314_A	A	OPP	Core destroyed	134
+frostgate	20	20	196	105	8	2	3	-1	-1	2	2	1	1	-1	2	2	1.219	0.98	1.219	7	494	10	8	1	0	-1	-1	45	494	0	23	192	1.0	6.733	2	2	101	2	1	10	7	6	9	2	25	20	barrier:25	frostgate_s314_B	B	US	Core destroyed	105
+frostgate	20	20	196	122	8	2	3	14	-1	2	3	3	1	-1	4	4	1.607	1.0	1.607	7	574	10	8	1	1	1.0	1	100	574	0	19	187	1.167	6.117	4	3	35	2	3	10	7	6	9	2	60	40	barrier:60	frostgate_s315_A	A	US	Core destroyed	122
+frostgate	20	20	196	105	8	2	3	-1	-1	2	2	1	1	-1	2	2	1.219	0.98	1.219	7	494	10	8	1	0	-1	-1	45	494	0	23	192	1.0	6.733	2	2	101	2	1	10	7	6	9	2	25	20	barrier:25	frostgate_s315_B	B	US	Core destroyed	105
+frostgate	20	20	196	122	8	2	3	14	-1	2	3	3	1	-1	4	4	1.607	1.0	1.607	7	574	10	8	1	1	1.0	1	100	574	0	19	187	1.167	6.117	4	3	35	2	3	10	7	6	9	2	60	40	barrier:60	frostgate_s316_A	A	US	Core destroyed	122
+frostgate	20	20	196	122	8	2	3	-1	-1	2	2	1	1	-1	2	2	1.23	1.0	1.23	7	567	33	7	0	0	-1	-1	40	567	0	6	231	1.0	6.65	2	1	31	2	2	12	12	6	9	3	22	18	barrier:22	frostgate_s316_B	B	OPP	Core destroyed	122
+frostgate	20	20	196	317	8	2	3	-1	-1	2	2	2	0	1	2	2	1.095	1.0	1.095	8	2005	22	9	2	2	1.0	1	82	2005	0	6	177	0.933	7.017	4	3	33	2	2	12	11	6	9	2	52	30	barrier:52	frostgate_s317_A	A	OPP	Core destroyed	317
+frostgate	20	20	196	117	8	2	3	12	15	2	6	7	5	-1	7	7	4.897	4.86	4.897	4	224	10	5	1	1	1.0	1	91	224	0	27	112	5.2	2.367	7	3	48	2	6	10	7	6	9	2	27	64	barrier:27	frostgate_s317_B	B	OPP	Core destroyed	117
+frostgate	20	20	196	270	8	2	3	10	-1	2	3	3	2	3	3	3	2.556	3.0	2.556	6	1255	10	7	2	2	1.5	2	140	1255	0	19	196	2.067	4.917	5	2	41	2	2	10	7	6	9	3	45	95	barrier:45	frostgate_s318_A	A	US	Core destroyed	270
+frostgate	20	20	196	113	8	2	3	10	15	2	6	5	4	-1	6	6	4.195	3.9	4.195	5	301	11	5	0	0	-1	-1	75	301	0	11	118	4.133	3.6	6	3	46	3	6	11	7	6	9	2	15	60	barrier:15	frostgate_s318_B	B	OPP	Core destroyed	113
+frostgate	20	20	196	279	8	2	3	90	-1	2	2	2	2	1	3	3	1.591	1.0	1.591	7	1596	22	10	3	2	2.0	3	151	1596	0	10	181	2.117	5.8	4	3	89	2	2	12	11	6	9	2	64	87	barrier:64	frostgate_s319_A	A	US	Core destroyed	279
+frostgate	20	20	196	117	8	2	3	10	15	2	6	7	5	-1	7	7	4.915	4.86	4.915	4	224	10	5	1	1	1.0	1	91	224	0	27	110	5.2	2.367	7	3	48	2	6	10	7	6	9	2	27	64	barrier:27	frostgate_s319_B	B	OPP	Core destroyed	117
+frostgate	20	20	196	220	8	2	3	14	-1	2	3	2	0	0	3	3	0.591	0.0	0.591	7	1312	10	9	2	0	-1	-1	83	1312	0	161	156	0.55	6.483	3	3	42	2	3	10	7	6	9	3	53	30	barrier:53	frostgate_s320_A	A	US	Core destroyed	220
+frostgate	20	20	196	129	8	2	3	59	-1	2	2	1	3	-1	3	3	2.349	2.82	2.349	5	340	33	7	4	2	1.0	1	99	340	0	72	295	2.483	3.317	5	2	48	2	2	12	12	6	9	3	63	36	barrier:63	frostgate_s320_B	B	OPP	Core destroyed	129
+frostgate	20	20	196	122	8	2	3	14	-1	2	3	3	1	-1	4	4	1.607	1.0	1.607	7	574	10	8	1	1	1.0	1	100	574	0	19	187	1.167	6.117	4	3	35	2	3	10	7	6	9	2	60	40	barrier:60	frostgate_s321_A	A	US	Core destroyed	122
+frostgate	20	20	196	117	8	2	3	10	15	2	6	7	5	-1	7	7	4.915	4.86	4.915	4	224	10	5	1	1	1.0	1	91	224	0	27	110	5.2	2.367	7	3	48	2	6	10	7	6	9	2	27	64	barrier:27	frostgate_s321_B	B	OPP	Core destroyed	117
+frostgate	20	20	196	572	8	2	3	11	428	2	3	2	4	4	7	7	3.911	6.28	3.911	6	1829	17	6	6	6	1.0	1	155	1829	0	383	126	3.55	4.417	9	2	136	3	3	12	11	6	9	3	90	65	barrier:90	frostgate_s322_A	A	US	Core destroyed	572
+frostgate	20	20	196	138	8	2	3	-1	-1	2	2	1	1	-1	2	2	1.493	1.8	1.493	7	569	33	7	1	1	1.0	1	50	569	0	16	291	1.033	5.483	3	1	31	2	2	12	12	6	9	3	32	18	barrier:32	frostgate_s322_B	B	OPP	Core destroyed	138
+frostgate	20	20	196	255	8	2	3	14	-1	2	3	2	1	2	4	4	1.941	3.44	1.941	7	1378	10	8	4	3	1.0	1	112	1378	0	11	155	1.067	6.517	6	2	42	2	3	10	7	6	9	7	83	29	barrier:83	frostgate_s323_A	A	US	Core destroyed	255
+frostgate	20	20	196	171	8	2	3	-1	-1	2	2	2	0	0	2	2	0.585	0.0	0.585	8	1002	33	8	1	0	-1	-1	59	1002	0	6	238	0.433	7.117	3	3	31	2	2	12	12	6	9	3	29	30	barrier:29	frostgate_s323_B	B	US	Core destroyed	171
+frostgate	20	20	196	317	8	2	3	-1	-1	2	2	2	0	1	2	2	1.095	1.0	1.095	8	2005	22	9	2	2	1.0	1	82	2005	0	6	177	0.933	7.017	4	3	33	2	2	12	11	6	9	2	52	30	barrier:52	frostgate_s324_A	A	OPP	Core destroyed	317
+frostgate	20	20	196	169	8	2	3	12	-1	2	3	3	3	2	3	3	2.337	2.0	2.337	6	849	10	7	1	1	1.0	1	101	849	0	5	101	2.567	5.383	4	2	91	2	3	10	7	6	9	2	43	58	barrier:43	frostgate_s324_B	B	US	Core destroyed	169
+frostgate	20	20	196	220	8	2	3	14	-1	2	3	2	0	0	3	3	0.591	0.0	0.591	7	1312	10	9	2	0	-1	-1	83	1312	0	162	155	0.55	6.483	3	3	42	2	3	10	7	6	9	3	53	30	barrier:53	frostgate_s325_A	A	US	Core destroyed	220
+frostgate	20	20	196	406	8	2	3	12	17	2	5	4	3	2	5	5	1.99	0.14	1.99	7	1805	34	10	3	0	-1	-1	178	1805	0	175	460	3.2	1.783	5	5	93	4	5	13	13	6	9	2	64	114	barrier:64	frostgate_s325_B	B	US	Core destroyed	406
+frostgate	20	20	196	232	8	2	3	10	-1	2	3	3	2	1	3	3	1.284	0.0	1.284	8	1345	10	12	4	2	1.0	1	136	1345	0	28	185	2.067	5.033	5	5	41	2	2	10	7	6	9	4	64	72	barrier:64	frostgate_s326_A	A	US	Core destroyed	232
+frostgate	20	20	196	406	8	2	3	12	17	2	5	4	3	2	5	5	1.99	0.14	1.99	7	1805	34	10	3	0	-1	-1	178	1805	0	174	461	3.2	1.783	5	5	93	4	5	13	13	6	9	2	64	114	barrier:64	frostgate_s326_B	B	US	Core destroyed	406
+frostgate	20	20	196	134	8	2	3	38	-1	2	2	2	2	-1	3	3	1.97	2.0	1.97	5	532	22	6	1	1	1.0	1	67	532	0	80	195	2.0	5.0	3	1	37	2	2	12	11	6	9	2	29	38	barrier:29	frostgate_s327_A	A	OPP	Core destroyed	134
+frostgate	20	20	196	209	8	2	3	12	-1	2	3	3	2	0	4	4	1.512	0.0	1.512	8	1223	10	10	2	1	1.0	1	129	1223	0	4	127	2.267	5.717	4	4	104	2	3	10	7	6	9	2	74	55	barrier:74	frostgate_s327_B	B	OPP	Core destroyed	209
+frostgate	20	20	196	220	8	2	3	14	-1	2	3	2	0	0	3	3	0.591	0.0	0.591	7	1312	10	9	2	0	-1	-1	83	1312	0	163	154	0.55	6.483	3	3	42	2	3	10	7	6	9	3	53	30	barrier:53	frostgate_s328_A	A	US	Core destroyed	220
+frostgate	20	20	196	497	8	2	3	12	17	2	5	4	3	5	8	8	4.376	3.0	4.376	5	1195	35	10	6	6	16.83	3	249	1195	0	244	354	3.167	2.817	12	9	84	2	5	12	12	6	9	12	77	172	barrier:77	frostgate_s328_B	B	US	Core destroyed	497
+frostgate	20	20	196	409	8	2	3	11	-1	2	3	3	2	2	3	3	1.235	0.0	1.235	8	2515	22	11	3	1	1.0	1	118	2515	0	90	161	2.183	5.8	4	4	190	3	3	12	11	6	9	2	64	54	barrier:64	frostgate_s329_A	A	US	Core destroyed	409
+frostgate	20	20	196	361	8	2	3	12	-1	2	3	3	3	2	3	3	1.188	0.0	1.188	8	2338	10	9	1	1	1.0	1	94	2338	0	4	104	2.667	5.3	4	4	153	2	3	10	7	6	9	2	17	77	barrier:17	frostgate_s329_B	B	US	Core destroyed	361
+glacierkeep	30	30	576	1000	8	2	3	708	742	2	2	2	2	2	8	8	3.365	7.78	3.365	6	3587	13	11	10	5	18.8	1	230	3587	0	109	936	2.0	5.217	10	3	164	2	2	11	11	56	512	8	107	123	barrier:107	glacierkeep_s300_A	A	OPP	Titanium collected (tiebreak)	1000
+glacierkeep	30	30	576	357	8	2	3	235	256	2	2	2	1	1	6	6	2.692	6.0	2.692	7	1770	13	7	5	5	1.0	1	88	1770	0	12	110	1.117	6.867	7	1	44	2	2	11	11	88	156	2	78	10	barrier:78	glacierkeep_s300_B	B	OPP	Core destroyed	357
+glacierkeep	30	30	576	680	8	2	3	576	-1	2	2	2	1	1	3	3	1.579	3.0	1.579	6	3345	13	8	5	2	1.0	1	110	3345	0	88	433	1.4	5.3	5	2	76	2	2	11	11	48	108	4	90	20	barrier:90	glacierkeep_s301_A	A	OPP	Core destroyed	680
+glacierkeep	30	30	576	1000	8	2	3	380	448	2	2	2	2	0	8	8	4.456	8.0	4.456	8	3072	13	11	11	8	6.62	1	158	3072	0	80	381	1.967	5.017	10	2	98	2	2	11	11	48	156	18	124	34	barrier:124	glacierkeep_s301_B	B	OPP	Titanium collected (tiebreak)	1000
+glacierkeep	30	30	576	509	8	2	3	-1	-1	2	2	2	1	1	2	2	1.086	1.0	1.086	7	3269	13	8	1	0	-1	-1	38	3269	0	100	147	1.15	5.75	2	1	46	2	2	11	11	48	-1	1	28	10	barrier:28	glacierkeep_s302_A	A	US	Core destroyed	509
+glacierkeep	30	30	576	977	8	2	3	-1	-1	2	2	2	0	0	2	2	0.1	0.0	0.1	8	7334	13	29	22	0	-1	-1	20	7334	0	12	310	0.383	7.4	2	2	51	2	2	11	11	52	-1	1	0	20		glacierkeep_s302_B	B	US	Core destroyed	977
+glacierkeep	30	30	576	1000	8	2	3	-1	-1	2	2	2	1	0	2	2	0.494	2.0	0.494	8	6637	13	54	48	5	12.6	1	255	6637	0	81	785	1.35	6.417	8	6	24	2	2	11	11	13	55	10	187	68	barrier:187	glacierkeep_s303_A	A	OPP	Titanium collected (tiebreak)	1000
+glacierkeep	30	30	576	483	8	2	3	267	326	2	2	1	0	0	7	7	2.6	7.0	2.6	8	2381	13	8	7	6	4.33	1	111	2381	0	9	197	0.067	7.917	9	2	42	2	2	11	11	88	140	4	91	20	barrier:91	glacierkeep_s303_B	B	OPP	Core destroyed	483
+glacierkeep	30	30	576	1000	8	2	3	736	968	2	2	2	1	1	6	6	1.588	4.92	1.588	7	5337	14	14	13	7	8.71	1	183	5337	0	7	1058	1.2	6.35	10	4	49	2	2	11	11	13	95	5	90	93	barrier:90	glacierkeep_s304_A	A	OPP	Titanium collected (tiebreak)	1000
+glacierkeep	30	30	576	517	8	2	3	407	428	2	2	2	1	1	7	7	2.155	7.0	2.155	7	2299	14	10	9	4	1.0	1	101	2299	0	34	681	1.167	5.367	8	1	47	2	2	11	11	220	308	4	91	10	barrier:91	glacierkeep_s304_B	B	OPP	Core destroyed	517
+glacierkeep	30	30	576	281	8	2	3	216	-1	2	2	2	1	0	3	3	1.142	1.22	1.142	8	1739	13	16	9	8	20.38	15	217	1739	0	27	157	1.267	6.35	6	5	50	2	2	11	11	13	48	4	147	70	barrier:147	glacierkeep_s305_A	A	OPP	Core destroyed	281
+glacierkeep	30	30	576	1000	8	2	3	309	477	2	2	2	0	0	8	8	4.421	7.86	4.421	8	3374	13	15	15	13	2.31	1	434	3374	0	14	177	0.383	7.583	17	9	124	2	2	11	11	72	168	14	190	244	barrier:190	glacierkeep_s305_B	B	OPP	Titanium collected (tiebreak)	1000
+glacierkeep	30	30	576	719	8	2	3	562	659	2	2	2	2	2	5	5	2.423	5.0	2.423	6	3611	13	13	10	2	1.0	1	121	3611	0	26	371	2.0	5.917	5	0	-1	2	2	11	11	104	519	3	121	0	barrier:121	glacierkeep_s306_A	A	OPP	Core destroyed	719
+glacierkeep	30	30	576	516	8	2	3	272	280	2	2	2	0	0	8	8	3.671	8.0	3.671	8	1858	13	9	9	7	16.57	1	155	1858	0	83	279	0.383	7.583	10	2	59	2	2	11	11	64	108	10	135	20	barrier:135	glacierkeep_s306_B	B	OPP	Core destroyed	516
+glacierkeep	30	30	576	1000	8	2	3	768	800	2	2	2	2	2	8	8	2.261	7.26	2.261	8	4849	13	41	40	6	9.0	1	199	4849	0	14	871	2.0	5.6	11	4	338	2	2	11	11	13	708	11	105	94	barrier:105	glacierkeep_s307_A	A	OPP	Titanium collected (tiebreak)	1000
+glacierkeep	30	30	576	465	8	2	3	273	327	2	2	1	0	0	8	8	2.869	8.0	2.869	7	1926	13	12	12	6	1.0	1	125	1926	0	80	373	0.333	6.5	10	2	58	2	2	11	11	208	241	9	105	20	barrier:105	glacierkeep_s307_B	B	OPP	Core destroyed	465
+glacierkeep	30	30	576	337	8	2	3	262	296	2	2	2	0	0	6	6	1.418	5.48	1.418	7	1505	14	10	9	2	1.0	1	144	1505	0	39	671	0.6	6.583	8	2	63	2	2	11	11	13	140	3	124	20	barrier:124	glacierkeep_s308_A	A	OPP	Core destroyed	337
+glacierkeep	30	30	576	661	8	2	3	262	279	2	2	2	2	2	7	7	4.528	7.0	4.528	6	2169	13	6	5	5	1.0	1	107	2169	0	12	111	2.0	6.0	7	0	-1	2	2	11	11	112	176	10	75	32	barrier:75	glacierkeep_s308_B	B	US	Core destroyed	661
+glacierkeep	30	30	576	558	8	2	3	223	-1	2	2	2	0	0	4	4	2.645	4.0	2.645	8	2651	13	8	4	2	30.0	59	70	2651	0	19	315	0.4	7.45	6	2	51	2	2	11	11	13	109	5	50	20	barrier:50	glacierkeep_s309_A	A	OPP	Core destroyed	558
+glacierkeep	30	30	576	674	8	2	3	483	596	2	2	2	2	2	6	6	2.625	6.0	2.625	6	3360	13	10	8	3	18.67	1	132	3360	0	25	231	2.0	5.95	6	0	-1	2	2	11	11	228	324	6	132	0	barrier:132	glacierkeep_s309_B	B	OPP	Core destroyed	674
+glacierkeep	30	30	576	282	8	2	3	62	74	2	2	2	5	8	8	8	5.989	8.0	5.989	3	185	13	3	3	3	1.67	1	43	185	0	18	361	3.617	1.8	8	0	-1	2	2	11	11	13	46	9	40	3	barrier:40	glacierkeep_s310_A	A	OPP	Core destroyed	282
+glacierkeep	30	30	576	324	8	2	3	251	280	2	2	1	0	0	6	6	1.528	5.48	1.528	8	1950	13	8	6	6	1.67	1	123	1950	0	9	117	0.033	7.95	8	2	40	2	2	11	11	80	132	4	103	20	barrier:103	glacierkeep_s310_B	B	OPP	Core destroyed	324
+glacierkeep	30	30	576	1000	8	2	3	540	710	2	2	1	1	1	8	8	3.584	8.0	3.584	7	3871	13	13	13	7	9.29	1	247	3871	0	53	462	1.0	6.7	11	3	157	2	2	11	11	220	312	17	150	97	barrier:150	glacierkeep_s311_A	A	OPP	Titanium collected (tiebreak)	1000
+glacierkeep	30	30	576	478	8	2	3	305	340	2	2	2	0	0	7	7	2.379	7.0	2.379	8	2346	13	9	8	6	1.0	1	104	2346	0	71	264	0.283	7.65	9	2	53	2	2	11	11	212	248	4	84	20	barrier:84	glacierkeep_s311_B	B	OPP	Core destroyed	478
+glacierkeep	30	30	576	392	8	2	3	286	-1	2	2	2	0	0	4	4	1.301	4.0	1.301	7	1910	14	11	8	2	6.0	11	149	1910	0	30	676	0.6	6.583	6	2	63	2	2	11	11	13	140	4	129	20	barrier:129	glacierkeep_s312_A	A	OPP	Core destroyed	392
+glacierkeep	30	30	576	465	8	2	3	347	410	2	2	2	2	2	7	7	2.443	6.56	2.443	7	1874	14	15	14	4	0.75	1	95	1874	0	24	675	2.0	4.317	8	1	181	2	2	11	11	84	272	4	75	20	barrier:75	glacierkeep_s312_B	B	OPP	Core destroyed	465
+glacierkeep	30	30	576	337	8	2	3	262	296	2	2	2	0	0	6	6	1.418	5.48	1.418	7	1505	14	10	9	2	1.0	1	144	1505	0	39	671	0.6	6.583	8	2	63	2	2	11	11	13	140	3	124	20	barrier:124	glacierkeep_s313_A	A	OPP	Core destroyed	337
+glacierkeep	30	30	576	1000	8	2	3	546	551	2	2	0	0	0	8	8	3.563	7.28	3.563	8	3595	13	21	19	4	1.0	1	182	3595	0	220	601	0.0	7.85	10	4	467	2	2	11	11	200	244	16	129	53	barrier:129	glacierkeep_s313_B	B	OPP	Titanium collected (tiebreak)	1000
+glacierkeep	30	30	576	713	8	2	3	-1	-1	2	2	2	0	0	2	2	0.216	0.0	0.216	8	5011	13	19	12	2	1.0	1	127	5011	0	89	427	0.85	6.15	5	5	19	2	2	11	11	13	47	6	75	52	barrier:75	glacierkeep_s314_A	A	OPP	Core destroyed	713
+glacierkeep	30	30	576	513	8	2	3	-1	-1	2	2	2	1	1	2	2	1.135	1.0	1.135	7	2832	13	11	5	0	-1	-1	57	2832	0	278	398	1.567	5.067	2	1	71	2	2	11	11	164	208	2	44	13	barrier:44	glacierkeep_s314_B	B	US	Core destroyed	513
+glacierkeep	30	30	576	283	8	2	3	198	210	2	2	2	0	0	5	5	2.057	5.0	2.057	8	1475	14	10	7	7	12.71	4	166	1475	0	80	124	0.917	6.65	8	3	48	2	2	11	11	13	94	3	117	49	barrier:117	glacierkeep_s315_A	A	OPP	Core destroyed	283
+glacierkeep	30	30	576	700	8	2	3	350	385	2	2	2	0	0	8	8	3.681	8.0	3.681	8	2721	13	8	8	7	5.0	1	133	2721	0	18	279	0.367	7.583	10	2	53	2	2	11	11	56	272	11	91	42	barrier:91	glacierkeep_s315_B	B	OPP	Core destroyed	700
+glacierkeep	30	30	576	558	8	2	3	223	-1	2	2	2	0	0	4	4	2.645	4.0	2.645	8	2651	13	8	4	2	30.0	59	70	2651	0	19	315	0.4	7.45	6	2	51	2	2	11	11	13	109	5	50	20	barrier:50	glacierkeep_s316_A	A	OPP	Core destroyed	558
+glacierkeep	30	30	576	1000	8	2	3	486	630	2	2	2	2	2	8	8	4.117	8.0	4.117	6	2430	13	24	24	4	1.0	1	92	2430	0	73	1370	2.0	5.0	9	1	243	2	2	11	11	72	312	12	60	32	barrier:60	glacierkeep_s316_B	B	OPP	Titanium collected (tiebreak)	1000
+glacierkeep	30	30	576	381	8	2	3	302	320	2	2	2	2	2	5	5	2.538	5.0	2.538	6	1644	14	20	17	1	1.0	1	78	1644	0	20	414	1.867	5.817	6	1	50	2	2	11	11	13	255	2	60	18	barrier:60	glacierkeep_s317_A	A	OPP	Core destroyed	381
+glacierkeep	30	30	576	977	8	2	3	-1	-1	2	2	2	0	0	2	2	0.1	0.0	0.1	8	7334	13	29	22	0	-1	-1	20	7334	0	12	310	0.383	7.4	2	2	51	2	2	11	11	52	-1	1	0	20		glacierkeep_s317_B	B	US	Core destroyed	977
+glacierkeep	30	30	576	1000	8	2	3	-1	-1	2	2	2	0	0	2	2	0.105	0.0	0.105	8	7485	13	41	34	0	-1	-1	30	7485	0	13	372	0.5	7.217	2	2	53	2	2	11	11	13	980	2	8	22	barrier:8	glacierkeep_s318_A	A	US	Harvesters (tiebreak)	1000
+glacierkeep	30	30	576	668	8	2	3	-1	-1	2	2	2	2	1	2	2	0.503	0.0	0.503	8	4123	13	41	34	1	1.0	1	109	4123	0	78	792	2.0	5.933	3	3	111	2	2	11	11	64	132	3	66	43	barrier:66	glacierkeep_s318_B	B	US	Core destroyed	668
+glacierkeep	30	30	576	363	8	2	3	-1	-1	2	2	2	2	2	2	2	1.54	1.0	1.54	7	2183	13	10	3	0	-1	-1	61	2183	0	10	149	2.0	5.717	2	1	198	2	2	11	11	-1	-1	0	51	10	barrier:51	glacierkeep_s319_A	A	US	Core destroyed	363
+glacierkeep	30	30	576	542	8	2	3	362	431	2	2	2	0	0	7	7	2.017	6.0	2.017	8	2802	13	10	8	5	1.0	1	122	2802	0	52	384	0.05	7.867	14	8	39	2	2	11	11	184	269	7	79	43	barrier:79	glacierkeep_s319_B	B	US	Core destroyed	542
+glacierkeep	30	30	576	680	8	2	3	576	-1	2	2	2	1	1	3	3	1.579	3.0	1.579	6	3345	13	8	5	2	1.0	1	110	3345	0	88	433	1.4	5.3	5	2	76	2	2	11	11	48	108	4	90	20	barrier:90	glacierkeep_s320_A	A	OPP	Core destroyed	680
+glacierkeep	30	30	576	1000	8	2	3	-1	-1	2	2	2	0	0	2	2	0.266	2.0	0.266	8	6767	13	23	20	2	1.0	1	53	6767	0	170	774	0.383	7.4	4	2	51	2	2	11	11	52	846	3	33	20	barrier:33	glacierkeep_s320_B	B	US	Harvesters (tiebreak)	1000
+glacierkeep	30	30	576	615	8	2	3	362	391	2	2	2	2	1	7	7	3.135	6.62	3.135	7	2258	13	15	14	8	7.25	1	251	2258	0	29	703	2.0	5.85	11	4	133	2	2	11	11	13	221	5	182	69	barrier:182	glacierkeep_s321_A	A	OPP	Core destroyed	615
+glacierkeep	30	30	576	1000	8	2	3	486	630	2	2	2	2	2	8	8	4.036	8.0	4.036	6	2487	13	26	26	6	1.0	1	122	2487	0	73	1396	2.0	5.0	11	3	166	2	2	11	11	72	312	10	90	32	barrier:90	glacierkeep_s321_B	B	OPP	Titanium collected (tiebreak)	1000
+glacierkeep	30	30	576	1000	8	2	3	234	898	2	2	2	0	0	8	8	1.258	7.88	1.258	8	6165	13	26	26	10	1.0	1	287	6165	0	29	541	0.4	7.45	15	7	51	2	2	11	11	13	73	8	150	137	barrier:150	glacierkeep_s322_A	A	OPP	Titanium collected (tiebreak)	1000
+glacierkeep	30	30	576	650	8	2	3	317	346	2	2	2	0	0	8	8	3.982	7.24	3.982	8	2283	13	10	9	7	1.57	1	160	2283	0	23	273	0.2	7.65	10	4	218	2	2	11	11	64	232	11	98	62	barrier:98	glacierkeep_s322_B	B	OPP	Core destroyed	650
+glacierkeep	30	30	576	1000	8	2	3	881	945	2	2	2	2	1	5	5	1.503	5.0	1.503	7	5574	13	35	35	4	1.0	1	230	5574	0	227	694	2.0	5.917	7	2	895	2	2	11	11	13	561	3	170	60	barrier:170	glacierkeep_s323_A	A	US	Titanium collected (tiebreak)	1000
+glacierkeep	30	30	576	672	8	2	3	365	384	2	2	1	1	0	8	8	3.658	8.0	3.658	8	2529	13	12	12	9	7.67	1	165	2529	0	14	372	0.967	7.017	11	3	95	2	2	11	11	68	113	8	115	50	barrier:115	glacierkeep_s323_B	B	OPP	Core destroyed	672
+glacierkeep	30	30	576	398	8	2	3	85	150	2	2	2	2	5	8	8	5.585	8.0	5.585	6	799	13	7	7	7	0.71	1	156	799	0	19	140	2.25	5.317	9	1	16	2	2	11	11	13	67	13	105	51	barrier:105	glacierkeep_s324_A	A	OPP	Core destroyed	398
+glacierkeep	30	30	576	465	8	2	3	347	410	2	2	2	2	2	7	7	2.443	6.56	2.443	7	1874	14	15	14	4	0.75	1	95	1874	0	24	675	2.0	4.317	8	1	181	2	2	11	11	84	272	4	75	20	barrier:75	glacierkeep_s324_B	B	OPP	Core destroyed	465
+glacierkeep	30	30	576	1000	8	2	3	752	777	2	2	2	2	2	8	8	2.685	2.18	2.685	6	4288	13	61	56	15	14.2	1	285	4288	0	22	996	2.0	5.383	11	9	82	2	2	11	11	13	729	6	129	156	barrier:129	glacierkeep_s325_A	A	OPP	Titanium collected (tiebreak)	1000
+glacierkeep	30	30	576	257	8	2	3	-1	-1	2	2	2	0	0	2	2	0.366	0.0	0.366	7	1588	13	7	0	0	-1	-1	20	1588	0	9	124	0.317	6.467	2	2	52	2	2	11	11	-1	-1	0	0	20		glacierkeep_s325_B	B	US	Core destroyed	257
+glacierkeep	30	30	576	486	8	2	3	328	-1	2	2	2	1	1	3	3	1.949	3.0	1.949	7	2799	14	10	5	2	3.0	5	101	2799	0	13	126	1.167	6.633	4	1	48	2	2	11	11	13	204	2	86	15	barrier:86	glacierkeep_s326_A	A	OPP	Core destroyed	486
+glacierkeep	30	30	576	911	8	2	3	-1	-1	2	2	2	0	0	2	2	0.158	0.0	0.158	8	6282	14	32	25	0	-1	-1	34	6282	0	250	578	1.15	6.817	2	2	76	2	2	11	11	52	704	2	14	20	barrier:14	glacierkeep_s326_B	B	US	Core destroyed	911
+glacierkeep	30	30	576	609	8	2	3	-1	-1	2	2	2	1	1	2	2	0.734	0.0	0.734	8	4064	13	22	14	0	-1	-1	86	4064	0	111	247	1.183	5.45	2	2	399	2	2	11	11	13	335	2	58	28	barrier:58	glacierkeep_s327_A	A	US	Core destroyed	609
+glacierkeep	30	30	576	353	8	2	3	184	270	2	2	2	2	2	7	7	3.207	6.34	3.207	4	786	13	12	12	5	15.8	1	120	786	0	74	829	2.0	3.2	7	0	-1	2	2	11	11	96	192	2	120	0	barrier:120	glacierkeep_s327_B	B	OPP	Core destroyed	353
+glacierkeep	30	30	576	577	8	2	3	-1	-1	2	2	2	1	0	2	2	0.958	1.0	0.958	8	3770	13	17	10	2	1.0	1	188	3770	0	84	205	1.35	6.3	5	4	71	2	2	11	11	13	52	3	148	40	barrier:148	glacierkeep_s328_A	A	OPP	Core destroyed	577
+glacierkeep	30	30	576	443	8	2	3	-1	-1	2	2	2	0	0	2	2	0.219	0.06	0.219	8	3297	13	12	5	1	1.0	1	131	3297	0	10	135	0.317	7.583	3	2	49	2	2	11	11	15	72	5	111	20	barrier:111	glacierkeep_s328_B	B	US	Core destroyed	443
+glacierkeep	30	30	576	581	8	2	3	-1	-1	2	2	2	2	1	2	2	1.169	1.0	1.169	7	3847	13	10	3	0	-1	-1	65	3847	0	9	111	2.0	5.933	2	1	100	2	2	11	11	92	-1	1	55	10	barrier:55	glacierkeep_s329_A	A	US	Core destroyed	581
+glacierkeep	30	30	576	426	8	2	3	230	234	2	2	2	1	1	8	8	4.15	8.0	4.15	7	1408	13	7	7	6	1.0	1	146	1408	0	10	218	1.083	6.9	9	1	43	2	2	11	11	48	128	10	105	41	barrier:105	glacierkeep_s329_B	B	OPP	Core destroyed	426
+icefloe	20	20	452	1000	8	2	3	780	-1	2	2	2	0	0	3	3	0.522	1.08	0.522	7	5885	12	49	43	4	8.5	1	169	5885	0	60	1509	0.567	5.433	7	5	45	2	2	11	11	12	39	7	111	58	barrier:111	icefloe_s300_A	A	OPP	Titanium collected (tiebreak)	1000
+icefloe	20	20	452	310	8	2	3	17	-1	2	3	3	2	2	3	3	2.158	2.0	2.158	2	466	45	30	28	1	2.0	2	137	466	0	53	1028	2.233	1.517	4	2	43	2	3	11	11	10	25	2	58	79	barrier:58	icefloe_s300_B	B	OPP	Core destroyed	310
+icefloe	20	20	452	263	8	2	3	36	102	2	2	3	3	6	8	8	5.274	8.0	5.274	6	485	20	7	7	7	1.0	1	126	485	0	14	218	3.083	4.367	10	2	63	2	3	20	20	16	47	5	93	33	barrier:93	icefloe_s301_A	A	OPP	Core destroyed	263
+icefloe	20	20	452	1000	8	2	3	112	-1	2	2	2	2	4	4	4	3.738	4.0	3.738	3	1910	36	10	8	1	24.0	24	126	1910	0	25	1096	1.517	1.833	5	1	43	2	2	11	11	10	28	8	116	10	barrier:116	icefloe_s301_B	B	OPP	Titanium collected (tiebreak)	1000
+icefloe	20	20	452	162	8	2	3	41	54	2	2	2	7	7	8	8	5.235	6.8	5.235	2	109	20	3	2	1	1.0	1	85	109	0	20	319	5.633	0.583	8	2	76	2	2	20	20	16	46	4	30	55	barrier:30	icefloe_s302_A	A	OPP	Core destroyed	162
+icefloe	20	20	452	590	8	2	3	506	-1	2	2	2	2	2	3	3	1.554	3.0	1.554	6	1796	36	12	9	3	17.33	1	164	1796	0	53	1562	1.917	1.967	5	2	160	2	2	11	11	10	17	5	96	68	barrier:96	icefloe_s302_B	B	OPP	Core destroyed	590
+icefloe	20	20	452	149	8	2	3	38	58	2	2	3	5	-1	8	8	4.906	7.18	4.906	4	272	11	5	5	5	10.8	1	122	272	0	15	174	5.033	2.717	8	0	-1	2	2	11	11	12	26	2	60	62	barrier:60	icefloe_s303_A	A	OPP	Core destroyed	149
+icefloe	20	20	452	377	8	2	3	60	76	2	2	2	5	5	8	8	5.997	8.0	5.997	3	235	36	7	7	5	3.2	1	137	235	0	25	415	3.383	1.5	9	1	43	2	2	11	11	10	29	12	76	61	barrier:76	icefloe_s303_B	B	OPP	Core destroyed	377
+icefloe	20	20	452	261	8	2	3	36	102	2	2	3	3	6	8	8	5.253	8.0	5.253	6	485	20	7	7	7	1.0	1	126	485	0	14	218	3.083	4.367	10	2	63	2	3	20	20	16	47	5	93	33	barrier:93	icefloe_s304_A	A	OPP	Core destroyed	261
+icefloe	20	20	452	204	8	2	3	94	105	2	2	2	2	7	7	7	4.127	7.0	4.127	3	149	36	4	4	4	6.75	1	94	149	0	21	580	2.05	1.85	8	1	43	2	2	11	11	10	18	5	60	34	barrier:60	icefloe_s304_B	B	OPP	Core destroyed	204
+icefloe	20	20	452	458	8	2	3	-1	-1	2	2	2	1	1	2	2	1.157	1.0	1.157	7	2445	11	17	12	0	-1	-1	92	2445	0	247	439	1.617	6.233	2	1	75	2	2	11	11	24	188	3	81	11	barrier:81	icefloe_s305_A	A	US	Core destroyed	458
+icefloe	20	20	452	197	8	2	3	17	-1	2	3	3	3	2	3	3	2.35	2.0	2.35	2	243	45	14	12	1	1.0	1	178	243	0	67	652	2.583	1.183	4	2	46	2	3	11	11	10	27	2	102	76	barrier:102	icefloe_s305_B	B	OPP	Core destroyed	197
+icefloe	20	20	452	966	8	2	3	754	-1	2	2	2	0	0	3	3	0.744	2.0	0.744	7	5302	12	40	34	2	1.0	1	179	5302	0	96	1602	0.567	5.433	6	4	95	2	2	11	11	12	39	9	131	48	barrier:131	icefloe_s306_A	A	US	Core destroyed	966
+icefloe	20	20	452	376	8	2	3	60	76	2	2	2	5	5	8	8	6.003	8.0	6.003	3	235	36	7	7	5	3.2	1	161	235	0	24	412	3.383	1.5	9	1	43	2	2	11	11	10	29	12	76	85	barrier:76	icefloe_s306_B	B	OPP	Core destroyed	376
+icefloe	20	20	452	403	8	2	3	62	95	2	2	2	3	6	8	8	5.663	8.0	5.663	2	336	11	37	37	19	22.53	20	165	336	0	125	479	2.983	1.283	10	2	58	2	2	11	11	13	29	12	103	62	barrier:103	icefloe_s307_A	A	OPP	Core destroyed	403
+icefloe	20	20	452	197	8	2	3	17	-1	2	3	3	3	2	3	3	2.35	2.0	2.35	2	243	45	14	12	1	1.0	1	178	243	0	67	652	2.583	1.183	4	2	46	2	3	11	11	10	27	2	102	76	barrier:102	icefloe_s307_B	B	OPP	Core destroyed	197
+icefloe	20	20	452	391	8	2	3	93	131	2	2	2	2	8	8	8	5.905	8.0	5.905	2	56	11	6	6	3	43.33	48	65	56	0	19	741	2.117	0.2	9	1	129	2	2	11	11	77	104	12	18	47	barrier:18	icefloe_s308_A	A	OPP	Core destroyed	391
+icefloe	20	20	452	192	8	2	3	17	-1	2	3	3	2	2	3	3	2.255	2.0	2.255	2	246	45	20	18	1	2.0	2	119	246	0	37	674	2.233	1.517	4	2	43	2	3	11	11	10	25	2	40	79	barrier:40	icefloe_s308_B	B	OPP	Core destroyed	192
+icefloe	20	20	452	966	8	2	3	754	-1	2	2	2	0	0	3	3	0.744	2.0	0.744	7	5302	12	40	34	2	1.0	1	179	5302	0	96	1602	0.567	5.433	6	4	95	2	2	11	11	12	39	9	131	48	barrier:131	icefloe_s309_A	A	US	Core destroyed	966
+icefloe	20	20	452	197	8	2	3	17	-1	2	3	3	3	2	3	3	2.35	2.0	2.35	2	243	45	14	12	1	1.0	1	178	243	0	67	652	2.583	1.183	4	2	46	2	3	11	11	10	27	2	102	76	barrier:102	icefloe_s309_B	B	OPP	Core destroyed	197
+icefloe	20	20	452	149	8	2	3	38	58	2	2	3	5	-1	8	8	4.919	7.22	4.919	4	270	11	5	5	5	10.8	1	133	270	0	12	177	5.033	2.717	8	0	-1	2	2	11	11	12	26	3	60	73	barrier:60	icefloe_s310_A	A	OPP	Core destroyed	149
+icefloe	20	20	452	212	8	2	3	160	-1	2	2	2	2	2	3	3	2.184	3.0	2.184	3	317	36	17	15	5	34.2	41	149	317	0	31	719	1.867	1.567	4	1	43	2	2	11	11	10	28	3	80	69	barrier:80	icefloe_s310_B	B	OPP	Core destroyed	212
+icefloe	20	20	452	162	8	2	3	41	54	2	2	2	7	7	8	8	5.235	6.8	5.235	2	109	20	3	2	1	1.0	1	85	109	0	20	319	5.633	0.583	8	2	76	2	2	20	20	16	46	4	30	55	barrier:30	icefloe_s311_A	A	OPP	Core destroyed	162
+icefloe	20	20	452	169	8	2	3	19	40	2	3	5	5	4	5	5	4.083	4.42	4.083	2	152	45	26	24	1	1.0	1	90	152	0	15	372	4.567	1.15	6	2	100	2	3	11	11	10	33	3	15	75	barrier:15	icefloe_s311_B	B	OPP	Core destroyed	169
+icefloe	20	20	452	333	8	2	3	237	-1	2	2	2	1	1	4	4	1.961	4.0	1.961	7	1705	11	17	13	2	4.5	8	101	1705	0	7	296	1.617	6.233	5	1	75	2	2	11	11	24	188	4	82	19	barrier:82	icefloe_s312_A	A	OPP	Core destroyed	333
+icefloe	20	20	452	265	8	2	3	31	34	2	2	5	4	3	5	5	2.842	1.62	2.842	6	1004	36	11	5	4	1.0	1	226	1004	0	11	342	4.483	2.55	9	8	43	2	3	11	11	10	17	3	89	137	barrier:89	icefloe_s312_B	B	OPP	Core destroyed	265
+icefloe	20	20	452	254	8	2	3	26	45	2	2	4	8	8	8	8	6.941	8.0	6.941	4	105	11	4	4	4	0.75	1	92	105	0	24	139	7.233	0.617	8	0	-1	2	3	11	11	12	15	10	60	32	barrier:60	icefloe_s313_A	A	OPP	Core destroyed	254
+icefloe	20	20	452	212	8	2	3	160	-1	2	2	2	2	2	3	3	2.184	3.0	2.184	3	317	36	17	15	5	34.2	41	149	317	0	31	719	1.867	1.567	4	1	43	2	2	11	11	10	28	3	80	69	barrier:80	icefloe_s313_B	B	OPP	Core destroyed	212
+icefloe	20	20	452	562	8	2	3	-1	-1	2	2	2	1	1	2	2	1.089	1.0	1.089	7	2782	11	19	12	0	-1	-1	105	2782	0	50	1049	1.25	5.567	2	1	53	2	2	11	11	17	116	2	87	18	barrier:87	icefloe_s314_A	A	US	Core destroyed	562
+icefloe	20	20	452	169	8	2	3	19	40	2	3	5	5	4	5	5	4.083	4.42	4.083	2	152	45	26	24	1	1.0	1	90	152	0	15	372	4.567	1.15	6	2	100	2	3	11	11	10	33	3	15	75	barrier:15	icefloe_s314_B	B	OPP	Core destroyed	169
+icefloe	20	20	452	149	8	2	3	38	58	2	2	3	5	-1	8	8	4.906	7.18	4.906	4	272	11	5	5	5	10.8	1	122	272	0	12	177	5.033	2.717	8	0	-1	2	2	11	11	12	26	2	60	62	barrier:60	icefloe_s315_A	A	OPP	Core destroyed	149
+icefloe	20	20	452	169	8	2	3	19	40	2	3	5	5	4	5	5	4.083	4.42	4.083	2	152	45	26	24	1	1.0	1	90	152	0	15	372	4.567	1.15	6	2	100	2	3	11	11	10	33	3	15	75	barrier:15	icefloe_s315_B	B	OPP	Core destroyed	169
+icefloe	20	20	452	966	8	2	3	754	-1	2	2	2	0	0	3	3	0.744	2.0	0.744	7	5302	12	40	34	2	1.0	1	179	5302	0	96	1602	0.567	5.433	6	4	95	2	2	11	11	12	39	9	131	48	barrier:131	icefloe_s316_A	A	US	Core destroyed	966
+icefloe	20	20	452	212	8	2	3	160	-1	2	2	2	2	2	3	3	2.184	3.0	2.184	3	317	36	17	15	5	34.2	41	149	317	0	31	719	1.867	1.567	4	1	43	2	2	11	11	10	28	3	80	69	barrier:80	icefloe_s316_B	B	OPP	Core destroyed	212
+icefloe	20	20	452	354	8	2	3	89	93	2	2	2	2	8	8	8	6.206	8.0	6.206	5	350	11	5	5	5	9.4	1	106	350	0	6	279	2.467	4.55	8	0	-1	2	2	11	11	12	42	13	105	1	barrier:105	icefloe_s317_A	A	OPP	Core destroyed	354
+icefloe	20	20	452	353	8	2	3	60	76	2	2	2	5	5	8	8	5.873	8.0	5.873	3	235	36	7	7	5	3.2	1	128	235	0	24	412	3.383	1.5	9	1	43	2	2	11	11	10	29	11	76	52	barrier:76	icefloe_s317_B	B	OPP	Core destroyed	353
+icefloe	20	20	452	396	8	2	3	62	95	2	2	2	3	6	8	8	5.634	8.0	5.634	2	336	11	37	37	19	22.53	20	165	336	0	124	475	2.983	1.283	10	2	58	2	2	11	11	13	29	13	103	62	barrier:103	icefloe_s318_A	A	OPP	Core destroyed	396
+icefloe	20	20	452	313	8	2	3	103	119	2	2	2	1	5	5	5	2.617	1.0	2.617	5	743	36	12	7	4	29.0	39	200	743	0	29	814	1.217	2.633	6	5	139	2	2	11	11	10	36	4	100	100	barrier:100	icefloe_s318_B	B	OPP	Core destroyed	313
+icefloe	20	20	452	966	8	2	3	754	-1	2	2	2	0	0	3	3	0.744	2.0	0.744	7	5302	12	40	34	2	1.0	1	179	5302	0	96	1602	0.567	5.433	6	4	95	2	2	11	11	12	39	9	131	48	barrier:131	icefloe_s319_A	A	US	Core destroyed	966
+icefloe	20	20	452	197	8	2	3	17	-1	2	3	3	3	2	3	3	2.35	2.0	2.35	2	243	45	14	12	1	1.0	1	178	243	0	67	652	2.583	1.183	4	2	46	2	3	11	11	10	27	2	102	76	barrier:102	icefloe_s319_B	B	OPP	Core destroyed	197
+icefloe	20	20	452	344	8	2	3	49	77	2	2	2	5	7	8	8	6.131	8.0	6.131	5	268	11	5	5	5	8.6	1	124	268	0	38	337	3.683	3.083	9	1	70	2	2	11	11	12	28	11	73	51	barrier:73	icefloe_s320_A	A	OPP	Core destroyed	344
+icefloe	20	20	452	212	8	2	3	160	-1	2	2	2	2	2	3	3	2.184	3.0	2.184	3	317	36	17	15	5	34.2	41	149	317	0	31	719	1.867	1.567	4	1	43	2	2	11	11	10	28	3	80	69	barrier:80	icefloe_s320_B	B	OPP	Core destroyed	212
+icefloe	20	20	452	440	8	2	3	228	-1	2	2	2	1	0	4	4	2.111	3.0	2.111	8	2054	15	20	16	3	1.0	1	230	2054	0	48	477	1.2	5.483	8	5	61	2	2	13	13	160	185	2	73	157	barrier:73	icefloe_s321_A	A	OPP	Core destroyed	440
+icefloe	20	20	452	369	8	2	3	60	76	2	2	2	5	5	8	8	5.954	8.0	5.954	3	235	36	7	7	5	3.2	1	137	235	0	25	415	3.383	1.5	9	1	43	2	2	11	11	10	29	12	76	61	barrier:76	icefloe_s321_B	B	OPP	Core destroyed	369
+icefloe	20	20	452	479	8	2	3	89	93	2	2	2	2	8	8	8	6.299	6.0	6.299	5	528	11	7	5	5	9.4	1	187	528	0	6	281	2.467	4.55	8	2	292	2	2	11	11	12	42	14	108	79	barrier:108	icefloe_s322_A	A	OPP	Core destroyed	479
+icefloe	20	20	452	154	8	2	3	31	36	2	2	5	5	6	6	6	4.169	5.04	4.169	4	302	36	7	5	5	1.2	1	155	302	0	11	267	4.65	2.283	10	5	54	2	3	11	11	10	16	3	76	79	barrier:76	icefloe_s322_B	B	OPP	Core destroyed	154
+icefloe	20	20	452	255	8	2	3	26	45	2	2	4	8	8	8	8	6.945	8.0	6.945	4	105	11	4	4	4	0.75	1	92	105	0	24	139	7.233	0.617	8	0	-1	2	3	11	11	12	15	10	60	32	barrier:60	icefloe_s323_A	A	OPP	Core destroyed	255
+icefloe	20	20	452	204	8	2	3	94	105	2	2	2	2	7	7	7	4.127	7.0	4.127	3	149	36	4	4	4	6.75	1	94	149	0	21	580	2.05	1.85	8	1	43	2	2	11	11	10	18	5	60	34	barrier:60	icefloe_s323_B	B	OPP	Core destroyed	204
+icefloe	20	20	452	1000	8	2	3	578	-1	2	2	2	1	1	4	4	1.963	3.0	1.963	7	4796	11	19	14	2	1.0	1	177	4796	0	118	1076	1.25	5.567	5	2	53	2	2	11	11	17	116	4	127	50	barrier:127	icefloe_s324_A	A	OPP	Titanium collected (tiebreak)	1000
+icefloe	20	20	452	244	8	2	3	160	190	2	2	2	2	2	5	5	2.775	5.0	2.775	3	294	36	16	15	6	28.67	41	103	294	0	35	748	1.867	1.567	6	1	43	2	2	11	11	10	28	3	75	28	barrier:75	icefloe_s324_B	B	OPP	Core destroyed	244
+icefloe	20	20	452	433	8	2	3	98	117	2	2	2	2	6	8	8	6.014	8.0	6.014	4	393	11	8	8	4	1.0	1	62	393	0	8	459	2.033	3.917	8	0	-1	2	2	11	11	13	76	15	60	2	barrier:60	icefloe_s325_A	A	OPP	Core destroyed	433
+icefloe	20	20	452	153	8	2	3	31	36	2	2	5	5	6	6	6	4.163	5.02	4.163	4	300	36	7	5	5	1.2	1	142	300	0	11	266	4.65	2.283	10	4	54	2	3	11	11	10	16	3	76	66	barrier:76	icefloe_s325_B	B	OPP	Core destroyed	153
+icefloe	20	20	452	328	8	2	3	-1	-1	2	2	2	0	0	2	2	0.332	0.0	0.332	7	1864	12	28	22	0	-1	-1	49	1864	0	14	634	0.567	5.433	2	2	58	2	2	11	11	12	39	4	21	28	barrier:21	icefloe_s326_A	A	US	Core destroyed	328
+icefloe	20	20	452	204	8	2	3	94	105	2	2	2	2	7	7	7	4.127	7.0	4.127	3	149	36	4	4	4	6.75	1	94	149	0	21	580	2.05	1.85	8	1	43	2	2	11	11	10	18	5	60	34	barrier:60	icefloe_s326_B	B	OPP	Core destroyed	204
+icefloe	20	20	452	162	8	2	3	41	54	2	2	2	7	7	8	8	5.235	6.8	5.235	2	109	20	3	2	1	1.0	1	85	109	0	20	319	5.633	0.583	8	2	76	2	2	20	20	16	46	4	30	55	barrier:30	icefloe_s327_A	A	OPP	Core destroyed	162
+icefloe	20	20	452	788	8	2	3	-1	-1	2	2	2	2	2	2	2	0.84	0.0	0.84	7	3582	36	12	5	1	0.0	0	165	3582	0	55	1263	1.917	1.967	3	3	160	2	2	11	11	10	17	3	95	70	barrier:95	icefloe_s327_B	B	US	Core destroyed	788
+icefloe	20	20	452	319	8	2	3	40	82	2	2	3	4	7	8	8	6.172	8.0	6.172	4	315	20	6	6	6	1.0	1	156	315	0	33	233	4.133	2.917	10	2	141	2	3	20	20	20	45	10	105	51	barrier:105	icefloe_s328_A	A	OPP	Core destroyed	319
+icefloe	20	20	452	265	8	2	3	31	34	2	2	5	4	3	5	5	2.913	2.0	2.913	6	986	36	10	5	4	1.0	1	218	986	0	11	341	4.483	2.55	9	7	40	2	3	11	11	10	17	3	90	128	barrier:90	icefloe_s328_B	B	OPP	Core destroyed	265
+icefloe	20	20	452	356	8	2	3	74	126	2	2	2	3	7	8	8	5.927	8.0	5.927	4	362	28	5	5	5	1.0	1	75	362	0	11	365	2.433	3.133	8	0	-1	2	2	18	18	12	34	13	75	0	barrier:75	icefloe_s329_A	A	OPP	Core destroyed	356
+icefloe	20	20	452	686	8	2	3	112	273	2	2	2	2	4	8	8	5.3	8.0	5.3	3	757	36	11	11	3	8.67	1	162	757	0	28	451	1.517	1.833	9	1	43	2	2	11	11	10	28	15	152	10	barrier:152	icefloe_s329_B	B	OPP	Core destroyed	686
+midgard	30	30	1152	152	8	2	3	34	60	2	2	3	6	8	8	8	5.164	7.64	5.164	2	36	44	2	2	2	1.0	1	23	36	0	8	387	5.133	0.6	8	0	-1	3	5	44	44	6	7	5	21	2	barrier:21	midgard_s300_A	A	OPP	Core destroyed	152
+midgard	30	30	1152	188	8	2	3	34	-1	2	2	3	2	2	3	3	2.197	2.0	2.197	5	561	45	8	4	0	-1	-1	30	561	0	180	350	2.6	3.5	3	1	73	3	3	45	45	6	7	6	20	10	barrier:20	midgard_s300_B	B	US	Core destroyed	188
+midgard	30	30	1152	149	8	2	3	36	47	2	2	3	7	-1	7	7	5.275	7.0	5.275	2	118	45	3	2	2	1.0	1	90	118	0	13	275	6.067	1.15	8	1	15	4	6	45	41	6	7	7	80	10	barrier:80	midgard_s301_A	A	OPP	Core destroyed	149
+midgard	30	30	1152	238	8	2	3	34	-1	2	2	3	2	3	3	3	2.794	3.0	2.794	6	787	45	6	2	1	1.0	1	56	787	0	48	404	2.833	3.917	4	1	40	3	3	45	39	6	7	5	45	11	barrier:45	midgard_s301_B	B	US	Core destroyed	238
+midgard	30	30	1152	228	8	2	3	34	77	2	2	3	7	8	8	8	6.14	8.0	6.14	1	31	44	2	2	2	1.0	1	23	31	0	35	358	4.917	0.517	8	0	-1	3	4	44	44	6	7	9	21	2	barrier:21	midgard_s302_A	A	OPP	Core destroyed	228
+midgard	30	30	1152	207	8	2	3	31	53	2	2	3	5	4	5	5	3.787	4.0	3.787	4	573	47	4	0	0	-1	-1	44	573	0	9	290	4.533	2.417	5	1	45	3	5	47	47	6	7	4	30	14	barrier:30	midgard_s302_B	B	US	Core destroyed	207
+midgard	30	30	1152	187	8	2	3	34	-1	2	2	3	4	4	4	4	3.551	4.0	3.551	4	542	45	4	0	0	-1	-1	52	542	0	7	283	3.917	3.233	4	0	-1	3	4	45	45	6	7	5	52	0	barrier:52	midgard_s303_A	A	OPP	Core destroyed	187
+midgard	30	30	1152	334	8	2	3	35	-1	2	2	3	2	3	3	3	2.85	3.0	2.85	5	1402	45	8	3	1	1.0	1	118	1402	0	20	298	2.833	3.9	4	1	73	3	3	45	39	6	7	4	108	10	barrier:108	midgard_s303_B	B	US	Core destroyed	334
+midgard	30	30	1152	462	8	2	3	36	46	2	2	3	5	7	8	8	6.55	8.0	6.55	2	302	52	2	2	2	1.0	1	94	302	0	14	354	4.933	1.333	9	1	65	5	5	52	52	6	7	11	84	10	barrier:84	midgard_s304_A	A	OPP	Core destroyed	462
+midgard	30	30	1152	343	8	2	3	35	-1	2	2	3	2	4	4	4	2.974	3.0	2.974	5	1272	49	18	15	2	1.0	1	136	1272	0	107	345	2.817	3.383	5	2	73	3	3	49	49	6	7	8	110	26	barrier:110	midgard_s304_B	B	US	Core destroyed	343
+midgard	30	30	1152	135	8	2	3	34	51	2	2	3	7	-1	8	8	5.148	7.34	5.148	1	69	44	2	2	2	1.0	1	44	69	0	20	296	5.867	0.867	9	1	29	3	6	44	44	6	7	5	30	14	barrier:30	midgard_s305_A	A	OPP	Core destroyed	135
+midgard	30	30	1152	187	8	2	3	34	-1	2	2	3	2	1	3	3	1.69	1.0	1.69	6	751	46	6	0	0	-1	-1	40	751	0	17	300	2.467	3.817	3	2	86	3	3	46	46	6	7	5	20	20	barrier:20	midgard_s305_B	B	US	Core destroyed	187
+midgard	30	30	1152	135	8	2	3	34	51	2	2	3	7	-1	8	8	5.148	7.34	5.148	1	69	44	2	2	2	1.0	1	44	69	0	20	296	5.867	0.867	9	1	29	3	6	44	44	6	7	5	30	14	barrier:30	midgard_s306_A	A	OPP	Core destroyed	135
+midgard	30	30	1152	292	8	2	3	31	-1	2	2	3	3	2	3	3	2.26	2.0	2.26	4	923	44	12	8	0	-1	-1	83	923	0	403	350	3.0	2.717	3	1	109	3	3	44	44	6	7	4	65	18	barrier:65	midgard_s306_B	B	US	Core destroyed	292
+midgard	30	30	1152	215	8	2	3	39	47	2	2	3	6	7	7	7	5.581	7.0	5.581	1	48	45	4	4	0	-1	-1	6	48	0	14	458	5.65	0.717	7	0	-1	3	6	45	45	6	7	5	6	0	barrier:6	midgard_s307_A	A	OPP	Core destroyed	215
+midgard	30	30	1152	370	8	2	3	38	102	2	2	3	3	4	5	5	4.13	5.0	4.13	5	1082	45	7	4	4	13.5	23	88	1082	0	10	340	3.0	3.317	7	2	153	3	3	45	40	6	7	5	60	28	barrier:60	midgard_s307_B	B	US	Core destroyed	370
+midgard	30	30	1152	860	8	2	3	36	44	2	2	3	6	6	8	8	6.585	7.0	6.585	2	902	52	4	3	3	12.0	1	223	902	0	11	304	6.133	1.233	10	3	68	7	6	52	52	6	7	7	145	78	barrier:145	midgard_s308_A	A	US	Core destroyed	860
+midgard	30	30	1152	395	8	2	3	35	101	2	2	3	2	7	8	8	6.192	8.0	6.192	5	374	44	5	5	5	6.0	1	114	374	0	16	324	3.2	3.617	9	1	74	3	3	44	44	6	7	10	90	24	barrier:90	midgard_s308_B	B	OPP	Core destroyed	395
+midgard	30	30	1152	616	8	2	3	38	47	2	2	3	7	8	8	8	7.161	7.0	7.161	1	231	45	3	2	2	3.0	5	85	231	0	12	274	6.617	0.767	9	2	401	3	8	45	39	6	7	9	55	30	barrier:55	midgard_s309_A	A	US	Core destroyed	616
+midgard	30	30	1152	1000	8	2	3	31	838	2	2	3	3	3	7	7	3.349	6.2	3.349	2	1873	47	2	1	1	1.0	1	67	1873	0	1669	1109	3.0	1.7	7	0	-1	3	3	47	47	6	7	5	65	2	barrier:65	midgard_s309_B	B	US	Titanium collected (tiebreak)	1000
+midgard	30	30	1152	741	8	2	3	38	48	2	2	3	5	6	7	7	6.49	7.0	6.49	2	706	45	4	3	3	5.67	6	70	706	0	26	387	4.95	1.083	8	1	33	3	5	45	45	6	7	9	57	13	barrier:57	midgard_s310_A	A	OPP	Core destroyed	741
+midgard	30	30	1152	322	8	2	3	35	53	2	2	3	6	8	8	8	6.68	8.0	6.68	3	130	44	4	4	4	1.0	1	109	130	0	12	283	5.483	1.617	9	1	19	3	6	44	44	6	7	9	78	31	barrier:78	midgard_s310_B	B	US	Core destroyed	322
+midgard	30	30	1152	341	8	2	3	38	48	2	2	3	6	5	7	7	4.551	3.62	4.551	3	817	45	3	0	0	-1	-1	128	817	0	7	280	5.65	1.567	7	4	254	3	6	45	39	6	7	4	46	82	barrier:46	midgard_s311_A	A	US	Core destroyed	341
+midgard	30	30	1152	241	8	2	3	35	116	2	2	3	3	6	6	6	4.444	6.0	4.444	4	529	45	4	2	2	1.0	1	46	529	0	11	317	3.283	3.283	6	0	-1	3	3	45	39	6	7	5	46	0	barrier:46	midgard_s311_B	B	OPP	Core destroyed	241
+midgard	30	30	1152	137	8	2	3	36	-1	2	2	3	4	-1	4	4	3.365	4.0	3.365	4	271	45	15	11	0	-1	-1	50	271	0	21	343	3.9	2.6	4	0	-1	3	4	45	41	6	7	5	50	0	barrier:50	midgard_s312_A	A	OPP	Core destroyed	137
+midgard	30	30	1152	348	8	2	3	31	53	2	2	3	5	3	5	5	3.287	3.0	3.287	3	887	47	3	0	0	-1	-1	70	887	0	465	288	4.6	2.383	5	2	122	3	5	47	47	6	7	4	30	40	barrier:30	midgard_s312_B	B	US	Core destroyed	348
+midgard	30	30	1152	338	8	2	3	38	48	2	2	3	6	7	7	7	6.074	7.0	6.074	2	295	45	6	5	5	45.8	49	80	295	0	16	340	5.417	0.95	8	1	33	3	6	45	39	6	7	7	70	10	barrier:70	midgard_s313_A	A	OPP	Core destroyed	338
+midgard	30	30	1152	446	8	2	3	35	101	2	2	3	2	7	8	8	6.399	8.0	6.399	5	374	44	5	5	5	6.0	1	114	374	0	16	324	3.2	3.617	9	1	74	3	3	44	44	6	7	10	90	24	barrier:90	midgard_s313_B	B	OPP	Core destroyed	446
+midgard	30	30	1152	129	8	2	3	35	45	2	2	3	7	-1	8	8	5.643	7.8	5.643	1	30	44	2	2	2	1.0	1	65	30	0	12	262	6.933	0.5	9	1	19	3	8	44	44	6	7	4	34	31	barrier:34	midgard_s314_A	A	OPP	Core destroyed	129
+midgard	30	30	1152	348	8	2	3	35	-1	2	2	3	2	3	3	3	2.856	3.0	2.856	5	1472	45	8	3	1	1.0	1	118	1472	0	20	298	2.833	3.9	4	1	73	3	3	45	39	6	7	4	108	10	barrier:108	midgard_s314_B	B	US	Core destroyed	348
+midgard	30	30	1152	270	8	2	3	34	119	2	2	3	3	7	8	8	5.381	8.0	5.381	2	200	44	4	4	2	1.0	1	99	200	0	12	495	3.0	1.55	8	0	-1	3	3	44	44	6	7	9	95	4	barrier:95	midgard_s315_A	A	OPP	Core destroyed	270
+midgard	30	30	1152	414	8	2	3	31	53	2	2	3	5	5	6	6	4.396	3.0	4.396	3	1010	44	47	45	2	1.0	1	195	1010	0	11	327	4.967	2.033	7	4	244	3	5	44	44	6	7	4	111	84	barrier:111	midgard_s315_B	B	US	Core destroyed	414
+midgard	30	30	1152	186	8	2	3	34	45	2	2	3	6	6	6	6	5.016	6.0	5.016	2	245	45	2	0	0	-1	-1	40	245	0	11	299	5.6	1.217	6	0	-1	4	6	45	45	6	7	4	40	0	barrier:40	midgard_s316_A	A	US	Core destroyed	186
+midgard	30	30	1152	381	8	2	3	35	219	2	2	3	2	3	8	8	4.764	7.66	4.764	5	611	44	19	19	3	13.33	1	122	611	0	63	558	2.65	3.45	9	2	362	3	3	44	44	6	7	8	100	22	barrier:100	midgard_s316_B	B	US	Core destroyed	381
+midgard	30	30	1152	166	8	2	3	34	45	2	2	3	6	5	6	6	4.44	5.0	4.44	3	287	47	3	0	0	-1	-1	34	287	0	11	292	5.433	1.483	6	1	46	5	6	47	47	6	7	4	23	11	barrier:23	midgard_s317_A	A	US	Core destroyed	166
+midgard	30	30	1152	384	8	2	3	35	265	2	2	3	2	2	8	8	3.844	8.0	3.844	5	729	44	5	5	3	1.0	1	64	729	0	76	791	2.65	3.2	9	1	76	3	3	44	44	6	7	8	52	12	barrier:52	midgard_s317_B	B	OPP	Core destroyed	384
+midgard	30	30	1152	187	8	2	3	34	-1	2	2	3	4	4	4	4	3.551	4.0	3.551	4	542	45	4	0	0	-1	-1	50	542	0	7	283	3.917	3.233	4	0	-1	3	4	45	45	6	7	5	50	0	barrier:50	midgard_s318_A	A	OPP	Core destroyed	187
+midgard	30	30	1152	414	8	2	3	31	326	2	2	3	3	3	6	6	3.56	5.68	3.56	2	730	47	2	0	0	-1	-1	40	730	0	422	686	3.0	1.7	6	0	-1	3	3	47	47	6	7	4	40	0	barrier:40	midgard_s318_B	B	US	Core destroyed	414
+midgard	30	30	1152	339	8	2	3	39	70	2	2	3	6	8	8	8	6.425	7.0	6.425	1	114	45	5	4	1	57.0	57	70	114	0	20	395	5.167	0.367	8	1	207	3	4	45	45	6	7	7	15	55	barrier:15	midgard_s319_A	A	OPP	Core destroyed	339
+midgard	30	30	1152	503	8	2	3	31	-1	2	2	3	3	3	3	3	2.928	3.0	2.928	2	908	47	2	0	0	-1	-1	17	908	0	461	1182	3.0	1.7	3	0	-1	3	3	47	47	6	7	4	13	4	barrier:13	midgard_s319_B	B	US	Core destroyed	503
+midgard	30	30	1152	388	8	2	3	34	46	2	2	3	7	8	8	8	7.098	8.0	7.098	2	55	44	3	3	3	6.67	1	67	55	0	20	275	6.35	0.917	9	1	20	3	7	44	44	6	7	8	49	18	barrier:49	midgard_s320_A	A	OPP	Core destroyed	388
+midgard	30	30	1152	246	8	2	3	35	-1	2	2	3	2	4	4	4	2.963	3.0	2.963	5	889	49	7	2	2	1.0	1	106	889	0	31	319	2.817	3.383	5	2	73	3	3	49	49	6	7	8	80	26	barrier:80	midgard_s320_B	B	US	Core destroyed	246
+midgard	30	30	1152	561	8	2	3	36	44	2	2	3	7	6	7	7	5.538	4.0	5.538	4	1059	52	5	2	1	1.0	1	196	1059	0	52	270	6.5	0.883	8	4	441	7	6	52	52	6	7	5	82	114	barrier:82	midgard_s321_A	A	US	Core destroyed	561
+midgard	30	30	1152	263	8	2	3	35	116	2	2	3	3	5	5	5	4.091	5.0	4.091	4	701	45	4	1	1	1.0	1	33	701	0	12	315	3.283	3.283	5	0	-1	3	3	45	39	6	7	5	33	0	barrier:33	midgard_s321_B	B	OPP	Core destroyed	263
+midgard	30	30	1152	343	8	2	3	38	48	2	2	3	7	8	8	8	6.822	8.0	6.822	1	57	45	3	3	3	11.33	12	74	57	0	11	336	5.6	0.867	8	0	-1	3	5	45	45	6	7	13	44	30	barrier:44	midgard_s322_A	A	OPP	Core destroyed	343
+midgard	30	30	1152	372	8	2	3	31	306	2	2	3	3	3	6	6	3.446	5.4	3.446	2	645	47	2	0	0	-1	-1	41	645	0	395	654	3.0	1.683	6	0	-1	3	3	47	47	6	7	4	40	1	barrier:40	midgard_s322_B	B	US	Core destroyed	372
+midgard	30	30	1152	271	8	2	3	34	56	2	2	3	6	7	7	7	5.886	7.0	5.886	2	233	46	17	16	1	1.0	1	50	233	0	17	323	5.283	1.283	7	0	-1	3	5	46	46	6	7	7	35	15	barrier:35	midgard_s323_A	A	OPP	Core destroyed	271
+midgard	30	30	1152	945	8	2	3	33	141	2	2	3	4	5	8	8	7.141	8.0	7.141	5	427	48	7	7	7	15.86	10	125	427	0	26	359	3.567	3.2	10	2	87	3	4	48	48	6	7	7	91	34	barrier:91	midgard_s323_B	B	US	Core destroyed	945
+midgard	30	30	1152	252	8	2	3	34	46	2	2	3	6	5	7	7	4.909	5.0	4.909	3	487	45	4	1	1	1.0	1	97	487	0	7	285	5.85	1.283	7	2	63	4	6	45	45	6	7	7	76	21	barrier:76	midgard_s324_A	A	OPP	Core destroyed	252
+midgard	30	30	1152	524	8	2	3	35	138	2	2	3	3	5	8	8	6.008	8.0	6.008	4	528	45	6	6	4	26.75	47	61	528	0	15	500	3.283	3.283	8	0	-1	3	3	45	39	6	7	14	61	0	barrier:61	midgard_s324_B	B	OPP	Core destroyed	524
+midgard	30	30	1152	223	8	2	3	34	151	2	2	3	3	4	6	6	3.677	5.82	3.677	2	185	44	2	2	2	25.5	51	58	185	0	107	672	3.0	1.717	6	0	-1	3	3	44	44	6	7	9	57	1	barrier:57	midgard_s325_A	A	OPP	Core destroyed	223
+midgard	30	30	1152	343	8	2	3	35	-1	2	2	3	2	4	4	4	2.974	3.0	2.974	5	1272	49	18	15	2	1.0	1	136	1272	0	107	345	2.817	3.383	5	2	73	3	3	49	49	6	7	8	110	26	barrier:110	midgard_s325_B	B	US	Core destroyed	343
+midgard	30	30	1152	797	8	2	3	38	47	2	2	3	6	5	7	7	4.934	5.0	4.934	3	2161	45	4	1	0	-1	-1	100	2161	0	13	269	5.883	1.517	7	2	70	3	6	45	45	6	7	4	80	20	barrier:80	midgard_s326_A	A	US	Core destroyed	797
+midgard	30	30	1152	501	8	2	3	35	138	2	2	3	3	5	8	8	5.916	8.0	5.916	4	528	45	6	6	4	26.75	47	61	528	0	15	500	3.283	3.283	8	0	-1	3	3	45	39	6	7	14	61	0	barrier:61	midgard_s326_B	B	OPP	Core destroyed	501
+midgard	30	30	1152	384	8	2	3	39	48	2	2	3	7	8	8	8	7.01	8.0	7.01	1	38	45	7	7	7	31.14	36	24	38	0	11	326	5.833	0.583	8	0	-1	3	5	45	45	6	7	8	20	4	barrier:20	midgard_s327_A	A	OPP	Core destroyed	384
+midgard	30	30	1152	318	8	2	3	31	-1	2	2	3	3	3	3	3	2.808	3.0	2.808	5	1112	47	6	2	1	1.0	1	93	1112	0	140	399	2.833	3.033	4	1	87	3	3	47	47	6	7	4	80	13	barrier:80	midgard_s327_B	B	US	Core destroyed	318
+midgard	30	30	1152	251	8	2	3	38	46	2	2	3	5	8	8	8	6.315	8.0	6.315	2	98	45	5	5	5	14.8	20	74	98	0	18	307	5.467	1.183	9	1	27	3	5	45	45	6	7	8	63	11	barrier:63	midgard_s328_A	A	OPP	Core destroyed	251
+midgard	30	30	1152	462	8	2	3	31	278	2	2	3	3	3	7	7	4.208	7.0	4.208	2	764	47	2	1	1	1.0	1	64	764	0	356	632	3.0	1.683	7	0	-1	3	3	47	47	6	7	4	63	1	barrier:63	midgard_s328_B	B	US	Core destroyed	462
+midgard	30	30	1152	332	8	2	3	38	48	2	2	3	5	5	7	7	5.542	7.0	5.542	3	477	45	3	2	2	31.0	57	89	477	0	11	328	5.233	2.2	8	1	71	4	6	45	45	6	7	10	73	16	barrier:73	midgard_s329_A	A	OPP	Core destroyed	332
+midgard	30	30	1152	349	8	2	3	35	-1	2	2	3	2	3	3	3	2.857	3.0	2.857	5	1434	45	6	2	1	1.0	1	118	1434	0	64	297	2.833	3.9	4	1	73	3	3	45	39	6	7	4	108	10	barrier:108	midgard_s329_B	B	US	Core destroyed	349
+nordkap	20	26	144	244	8	2	3	-1	-1	2	2	2	1	1	2	2	1.16	1.0	1.16	6	1327	9	7	1	0	-1	-1	38	1327	0	154	177	1.067	5.683	2	1	42	2	2	9	7	9	-1	1	15	23	barrier:15	nordkap_s300_A	A	US	Core destroyed	244
+nordkap	20	26	144	130	8	2	3	-1	-1	2	2	0	0	-1	2	2	0.462	0.0	0.462	8	888	9	8	0	0	-1	-1	29	888	0	4	86	0.0	8.0	2	2	31	2	2	7	7	8	11	2	9	20	barrier:9	nordkap_s300_B	B	US	Core destroyed	130
+nordkap	20	26	144	233	8	2	3	-1	-1	2	2	2	1	1	2	2	1.288	1.0	1.288	8	1264	9	12	5	2	1.0	1	75	1264	0	3	293	1.65	3.867	4	3	77	2	2	9	7	9	72	3	45	30	barrier:45	nordkap_s301_A	A	US	Core destroyed	233
+nordkap	20	26	144	114	8	2	3	-1	-1	2	2	0	0	-1	2	2	0.553	0.0	0.553	8	752	9	8	0	0	-1	-1	29	752	0	4	91	0.0	8.0	2	2	34	2	2	7	7	8	11	2	9	20	barrier:9	nordkap_s301_B	B	US	Core destroyed	114
+nordkap	20	26	144	227	8	2	3	-1	-1	2	2	2	1	0	2	2	0.731	0.0	0.731	8	1426	9	18	10	0	-1	-1	56	1426	0	9	210	1.1	5.983	2	2	122	2	2	9	7	9	-1	1	36	20	barrier:36	nordkap_s302_A	A	US	Core destroyed	227
+nordkap	20	26	144	299	8	2	3	14	53	2	3	4	6	7	8	8	6.264	8.0	6.264	3	109	9	3	3	3	1.0	1	60	109	0	22	385	5.317	0.65	8	0	-1	2	4	7	7	8	11	12	45	15	barrier:45	nordkap_s302_B	B	OPP	Core destroyed	299
+nordkap	20	26	144	276	8	2	3	157	179	2	2	2	2	2	8	8	3.967	7.3	3.967	6	607	9	10	10	5	15.6	1	115	607	0	31	465	2.0	4.383	9	1	55	2	2	9	7	9	128	4	102	13	barrier:102	nordkap_s303_A	A	US	Core destroyed	276
+nordkap	20	26	144	516	8	2	3	14	132	2	3	3	3	5	7	7	2.68	0.0	2.68	8	2014	9	19	11	5	0.8	1	164	2014	0	175	554	3.117	3.85	8	8	211	2	3	7	7	8	11	2	94	70	barrier:94	nordkap_s303_B	B	US	Core destroyed	516
+nordkap	20	26	144	433	8	2	3	308	-1	2	2	2	1	0	3	3	1.524	3.0	1.524	8	2611	9	12	7	4	1.0	1	135	2611	0	14	165	1.3	6.167	6	3	56	2	2	9	7	9	152	3	105	30	barrier:105	nordkap_s304_A	A	US	Core destroyed	433
+nordkap	20	26	144	582	8	2	3	22	71	2	2	4	5	6	8	8	6.117	7.0	6.117	4	305	9	19	19	15	19.8	14	215	305	0	13	776	4.7	1.283	13	6	122	2	3	7	7	8	11	7	86	129	barrier:86	nordkap_s304_B	B	OPP	Core destroyed	582
+nordkap	20	26	144	244	8	2	3	-1	-1	2	2	2	2	2	2	2	1.98	2.0	1.98	6	1239	9	16	10	0	-1	-1	77	1239	0	15	201	2.0	5.083	2	0	-1	2	2	9	7	9	-1	1	65	12	barrier:65	nordkap_s305_A	A	US	Core destroyed	244
+nordkap	20	26	144	314	8	2	3	46	-1	2	2	2	3	3	3	3	2.838	3.0	2.838	6	1342	9	6	3	1	1.0	1	72	1342	0	8	269	2.9	5.083	3	0	-1	2	2	7	7	8	11	2	46	26	barrier:46	nordkap_s305_B	B	OPP	Core destroyed	314
+nordkap	20	26	144	1000	8	2	3	329	-1	2	2	2	2	2	4	4	1.832	0.44	1.832	7	4022	9	59	53	2	1.0	1	117	4022	0	127	1887	2.0	4.417	4	4	551	2	2	9	7	9	309	2	59	58	barrier:59	nordkap_s306_A	A	US	Titanium collected (tiebreak)	1000
+nordkap	20	26	144	114	8	2	3	-1	-1	2	2	0	0	-1	2	2	0.474	0.0	0.474	8	761	9	8	0	0	-1	-1	26	761	0	4	91	0.0	8.0	2	2	30	2	1	7	7	8	11	2	6	20	barrier:6	nordkap_s306_B	B	US	Core destroyed	114
+nordkap	20	26	144	293	8	2	3	168	198	2	2	2	2	1	5	5	2.98	5.0	2.98	7	1232	9	8	5	4	1.0	1	109	1232	0	5	194	2.0	4.6	6	1	114	2	2	9	7	9	136	5	89	20	barrier:89	nordkap_s307_A	A	OPP	Core destroyed	293
+nordkap	20	26	144	211	8	2	3	14	-1	2	3	2	1	1	3	3	1.284	1.0	1.284	8	1240	9	10	3	1	1.0	1	88	1240	0	3	172	1.233	6.033	4	3	55	2	3	7	7	8	11	2	50	38	barrier:50	nordkap_s307_B	B	US	Core destroyed	211
+nordkap	20	26	144	175	8	2	3	-1	-1	2	2	2	1	0	2	2	0.886	0.0	0.886	8	1136	9	11	3	0	-1	-1	65	1136	0	2	103	1.183	6.717	2	2	106	2	2	9	7	9	-1	1	45	20	barrier:45	nordkap_s308_A	A	US	Core destroyed	175
+nordkap	20	26	144	244	8	2	3	14	50	2	3	4	6	6	6	6	5.361	6.0	5.361	3	102	9	3	3	3	1.0	1	91	102	0	19	520	5.433	0.533	6	0	-1	2	4	7	7	8	11	2	45	46	barrier:45	nordkap_s308_B	B	US	Core destroyed	244
+nordkap	20	26	144	258	8	2	3	-1	-1	2	2	2	2	1	2	2	1.558	1.0	1.558	7	1241	9	18	13	0	-1	-1	62	1241	0	8	403	2.0	4.517	2	1	146	2	2	9	7	9	-1	1	46	16	barrier:46	nordkap_s309_A	A	US	Core destroyed	258
+nordkap	20	26	144	429	8	2	3	22	53	2	2	3	5	6	8	8	6.492	8.0	6.492	4	456	9	8	8	6	1.0	1	205	456	0	20	170	4.717	2.233	9	1	130	2	3	7	7	8	11	7	115	90	barrier:115	nordkap_s309_B	B	OPP	Core destroyed	429
+nordkap	20	26	144	731	8	2	3	-1	-1	2	2	2	0	1	2	2	1.057	1.0	1.057	7	4074	9	17	11	0	-1	-1	118	4074	0	135	857	1.117	5.95	3	2	77	2	2	9	7	9	529	2	88	30	barrier:88	nordkap_s310_A	A	US	Core destroyed	731
+nordkap	20	26	144	225	8	2	3	42	-1	2	2	2	1	1	3	3	1.333	1.0	1.333	7	1275	9	13	6	1	21.0	21	68	1275	0	7	214	1.667	5.867	3	2	52	2	2	7	7	8	11	2	32	36	barrier:32	nordkap_s310_B	B	US	Core destroyed	225
+nordkap	20	26	144	394	8	2	3	-1	-1	2	2	2	2	0	2	2	0.576	0.0	0.576	8	2781	9	12	5	0	-1	-1	45	2781	0	13	127	1.983	6.0	2	2	131	2	2	9	7	9	-1	1	25	20	barrier:25	nordkap_s311_A	A	US	Core destroyed	394
+nordkap	20	26	144	429	8	2	3	22	53	2	2	3	5	6	8	8	6.492	8.0	6.492	4	456	9	8	8	6	1.0	1	205	456	0	20	170	4.717	2.233	9	1	130	2	3	7	7	8	11	7	115	90	barrier:115	nordkap_s311_B	B	OPP	Core destroyed	429
+nordkap	20	26	144	169	8	2	3	-1	-1	2	2	2	0	0	2	2	0.633	0.0	0.633	8	1133	9	9	1	0	-1	-1	43	1133	0	2	106	0.533	7.383	2	2	59	2	2	9	7	9	-1	1	23	20	barrier:23	nordkap_s312_A	A	US	Core destroyed	169
+nordkap	20	26	144	204	8	2	3	14	63	2	3	3	5	7	7	7	5.338	7.0	5.338	3	165	9	7	7	6	22.33	21	142	165	0	17	355	4.733	0.867	7	0	-1	2	3	7	7	8	11	7	93	49	barrier:93	nordkap_s312_B	B	OPP	Core destroyed	204
+nordkap	20	26	144	227	8	2	3	-1	-1	2	2	2	1	0	2	2	0.731	0.0	0.731	8	1426	9	18	10	0	-1	-1	56	1426	0	9	210	1.1	5.983	2	2	122	2	2	9	7	9	-1	1	36	20	barrier:36	nordkap_s313_A	A	US	Core destroyed	227
+nordkap	20	26	144	612	8	2	3	128	474	2	2	1	1	3	8	8	3.58	8.0	3.58	7	2247	9	11	11	9	5.56	1	260	2247	0	268	186	1.4	6.533	12	4	58	2	2	7	7	8	11	6	129	131	barrier:129	nordkap_s313_B	B	US	Core destroyed	612
+nordkap	20	26	144	785	8	2	3	-1	-1	2	2	2	2	0	2	2	0.254	0.0	0.254	8	5911	9	17	9	0	-1	-1	41	5911	0	7	159	1.967	5.983	2	2	104	2	2	9	7	9	-1	1	21	20	barrier:21	nordkap_s314_A	A	US	Core destroyed	785
+nordkap	20	26	144	500	8	2	3	46	-1	2	2	2	3	2	3	3	0.844	0.0	0.844	8	2947	9	9	3	1	1.0	1	107	2947	0	541	88	2.9	5.083	3	3	130	2	2	7	7	8	11	2	48	59	barrier:48	nordkap_s314_B	B	US	Core destroyed	500
+nordkap	20	26	144	240	8	2	3	-1	-1	2	2	2	1	0	2	2	0.729	0.0	0.729	8	1541	9	9	1	0	-1	-1	47	1541	0	27	175	1.65	5.567	2	2	98	2	2	9	7	9	-1	1	27	20	barrier:27	nordkap_s315_A	A	US	Core destroyed	240
+nordkap	20	26	144	495	8	2	3	14	46	2	3	4	6	8	8	8	7.291	8.0	7.291	3	103	9	4	4	4	1.5	1	112	103	0	10	235	5.7	0.433	9	1	195	2	4	7	7	8	11	18	46	66	barrier:46	nordkap_s315_B	B	OPP	Core destroyed	495
+nordkap	20	26	144	244	8	2	3	-1	-1	2	2	2	1	1	2	2	1.16	1.0	1.16	6	1327	9	7	1	0	-1	-1	38	1327	0	154	177	1.067	5.683	2	1	42	2	2	9	7	9	-1	1	15	23	barrier:15	nordkap_s316_A	A	US	Core destroyed	244
+nordkap	20	26	144	114	8	2	3	-1	-1	2	2	0	0	-1	2	2	0.474	0.0	0.474	8	761	9	8	0	0	-1	-1	26	761	0	4	91	0.0	8.0	2	2	30	2	1	7	7	8	11	2	6	20	barrier:6	nordkap_s316_B	B	US	Core destroyed	114
+nordkap	20	26	144	578	8	2	3	424	-1	2	2	2	1	0	3	3	1.614	2.08	1.614	8	3452	9	12	7	4	1.0	1	145	3452	0	60	165	1.3	6.167	6	4	108	2	2	9	7	9	152	4	105	40	barrier:105	nordkap_s317_A	A	US	Core destroyed	578
+nordkap	20	26	144	225	8	2	3	42	-1	2	2	2	1	1	3	3	1.333	1.0	1.333	7	1275	9	13	6	1	21.0	21	68	1275	0	7	214	1.667	5.867	3	2	52	2	2	7	7	8	11	2	32	36	barrier:32	nordkap_s317_B	B	US	Core destroyed	225
+nordkap	20	26	144	258	8	2	3	-1	-1	2	2	2	2	1	2	2	1.558	1.0	1.558	7	1241	9	18	13	0	-1	-1	62	1241	0	8	403	2.0	4.517	2	1	146	2	2	9	7	9	-1	1	46	16	barrier:46	nordkap_s318_A	A	US	Core destroyed	258
+nordkap	20	26	144	383	8	2	3	14	253	2	3	3	4	3	7	7	4.266	7.0	4.266	4	1094	9	6	5	5	1.0	1	121	1094	0	21	313	3.2	3.733	9	2	70	2	3	7	7	8	11	8	88	33	barrier:88	nordkap_s318_B	B	OPP	Core destroyed	383
+nordkap	20	26	144	301	8	2	3	-1	-1	2	2	2	0	0	2	2	0.435	0.0	0.435	8	2049	9	18	10	0	-1	-1	65	2049	0	21	197	0.933	6.417	2	2	77	2	2	9	7	9	-1	1	45	20	barrier:45	nordkap_s319_A	A	US	Core destroyed	301
+nordkap	20	26	144	309	8	2	3	41	-1	2	2	2	4	1	4	4	1.553	0.0	1.553	8	1837	9	11	3	2	1.0	1	129	1837	0	5	148	3.417	4.15	4	4	117	2	2	7	7	8	11	2	65	64	barrier:65	nordkap_s319_B	B	US	Core destroyed	309
+nordkap	20	26	144	171	8	2	3	-1	-1	2	2	2	1	0	2	2	0.819	0.0	0.819	8	1058	9	10	2	0	-1	-1	59	1058	0	14	139	1.083	6.317	2	2	86	2	2	9	7	9	149	2	39	20	barrier:39	nordkap_s320_A	A	US	Core destroyed	171
+nordkap	20	26	144	189	8	2	3	34	66	2	2	3	5	4	5	5	3.608	4.0	3.608	5	374	9	21	19	4	4.0	1	135	374	0	16	438	4.083	1.117	5	1	20	2	2	7	7	8	11	2	86	49	barrier:86	nordkap_s320_B	B	OPP	Core destroyed	189
+nordkap	20	26	144	1000	8	2	3	852	-1	2	2	2	1	0	3	3	0.797	3.0	0.797	8	5382	9	35	32	2	1.0	1	116	5382	0	561	1220	1.4	5.367	5	2	112	2	2	9	7	9	701	8	90	26	barrier:90	nordkap_s321_A	A	OPP	Titanium stored (tiebreak)	1000
+nordkap	20	26	144	307	8	2	3	-1	-1	2	2	2	0	0	2	2	0.951	2.0	0.951	8	2050	9	9	3	2	1.0	1	98	2050	0	5	107	0.533	7.35	4	2	66	2	2	7	7	8	11	2	76	22	barrier:76	nordkap_s321_B	B	US	Core destroyed	307
+nordkap	20	26	144	160	8	2	3	-1	-1	2	2	2	1	0	2	2	0.919	0.0	0.919	8	1015	9	10	2	0	-1	-1	62	1015	0	2	112	1.2	6.567	2	2	86	2	2	9	7	9	-1	1	38	24	barrier:38	nordkap_s322_A	A	US	Core destroyed	160
+nordkap	20	26	144	299	8	2	3	14	53	2	3	4	6	7	8	8	6.264	8.0	6.264	3	109	9	3	3	3	1.0	1	60	109	0	22	385	5.317	0.65	8	0	-1	2	4	7	7	8	11	12	45	15	barrier:45	nordkap_s322_B	B	OPP	Core destroyed	299
+nordkap	20	26	144	169	8	2	3	-1	-1	2	2	2	0	0	2	2	0.633	0.0	0.633	8	1133	9	9	1	0	-1	-1	43	1133	0	2	106	0.533	7.383	2	2	59	2	2	9	7	9	-1	1	23	20	barrier:23	nordkap_s323_A	A	US	Core destroyed	169
+nordkap	20	26	144	299	8	2	3	14	53	2	3	4	6	7	8	8	6.264	8.0	6.264	3	109	9	3	3	3	1.0	1	60	109	0	22	385	5.317	0.65	8	0	-1	2	4	7	7	8	11	12	45	15	barrier:45	nordkap_s323_B	B	OPP	Core destroyed	299
+nordkap	20	26	144	301	8	2	3	-1	-1	2	2	2	0	0	2	2	0.435	0.0	0.435	8	2049	9	18	10	0	-1	-1	65	2049	0	21	197	0.933	6.417	2	2	77	2	2	9	7	9	-1	1	45	20	barrier:45	nordkap_s324_A	A	US	Core destroyed	301
+nordkap	20	26	144	392	8	2	3	14	49	2	3	4	6	8	8	8	6.554	8.0	6.554	3	286	9	4	4	4	1.0	1	93	286	0	16	260	5.25	0.783	9	1	138	2	4	7	7	8	11	15	60	33	barrier:60	nordkap_s324_B	B	OPP	Core destroyed	392
+nordkap	20	26	144	233	8	2	3	-1	-1	2	2	2	1	1	2	2	1.288	1.0	1.288	8	1264	9	12	5	2	1.0	1	75	1264	0	3	293	1.65	3.867	4	3	77	2	2	9	7	9	72	3	45	30	barrier:45	nordkap_s325_A	A	US	Core destroyed	233
+nordkap	20	26	144	323	8	2	3	14	48	2	3	4	6	6	7	7	5.52	6.04	5.52	3	103	9	3	3	3	1.0	1	61	103	0	19	676	5.417	0.55	7	0	-1	2	4	7	7	8	11	7	45	16	barrier:45	nordkap_s325_B	B	OPP	Core destroyed	323
+nordkap	20	26	144	474	8	2	3	245	320	2	2	2	1	0	6	6	2.85	6.0	2.85	8	2257	9	9	7	6	1.0	1	137	2257	0	2	178	1.55	5.433	8	2	101	2	2	9	7	9	148	4	105	32	barrier:105	nordkap_s326_A	A	OPP	Core destroyed	474
+nordkap	20	26	144	314	8	2	3	46	-1	2	2	2	3	3	3	3	2.838	3.0	2.838	6	1342	9	6	3	1	1.0	1	72	1342	0	8	269	2.9	5.083	3	0	-1	2	2	7	7	8	11	2	46	26	barrier:46	nordkap_s326_B	B	OPP	Core destroyed	314
+nordkap	20	26	144	457	8	2	3	352	388	2	2	2	2	1	5	5	1.829	5.0	1.829	8	2590	9	11	8	7	1.0	1	170	2590	0	6	184	1.8	4.867	9	4	86	2	2	9	7	9	82	5	130	40	barrier:130	nordkap_s327_A	A	OPP	Core destroyed	457
+nordkap	20	26	144	316	8	2	3	14	48	2	3	4	6	6	7	7	5.516	6.08	5.516	3	103	9	3	3	3	1.0	1	57	103	0	18	661	5.417	0.55	7	0	-1	2	4	7	7	8	11	5	45	12	barrier:45	nordkap_s327_B	B	OPP	Core destroyed	316
+nordkap	20	26	144	216	8	2	3	-1	-1	2	2	2	1	0	2	2	0.935	0.0	0.935	8	1309	9	11	5	0	-1	-1	120	1309	0	40	173	1.45	6.25	2	2	137	2	2	9	7	9	140	2	84	36	barrier:84	nordkap_s328_A	A	US	Core destroyed	216
+nordkap	20	26	144	144	8	2	3	14	46	2	3	4	6	-1	6	6	4.951	6.0	4.951	3	97	9	3	3	3	1.0	1	63	97	0	12	327	5.517	0.45	6	0	-1	2	4	7	7	8	11	2	45	18	barrier:45	nordkap_s328_B	B	OPP	Core destroyed	144
+nordkap	20	26	144	227	8	2	3	-1	-1	2	2	2	1	0	2	2	0.731	0.0	0.731	8	1426	9	18	10	0	-1	-1	56	1426	0	9	210	1.1	5.983	2	2	122	2	2	9	7	9	-1	1	36	20	barrier:36	nordkap_s329_A	A	US	Core destroyed	227
+nordkap	20	26	144	144	8	2	3	14	46	2	3	4	6	-1	6	6	4.951	6.0	4.951	3	97	9	3	3	3	1.0	1	63	97	0	12	327	5.517	0.45	6	0	-1	2	4	7	7	8	11	2	45	18	barrier:45	nordkap_s329_B	B	OPP	Core destroyed	144
+ragnarok	30	30	1152	126	6	2	3	-1	-1	2	2	1	0	-1	2	2	0.746	0.0	0.746	6	523	29	6	0	0	-1	-1	20	523	0	0	137	0.4	5.583	2	2	62	2	1	27	27	3	7	2	0	20		ragnarok_s300_A	A	US	Core destroyed	126
+ragnarok	30	30	1152	169	6	2	3	-1	-1	2	2	1	1	1	2	2	1.243	1.0	1.243	5	681	20	7	2	1	1.0	1	50	681	0	0	122	1.15	4.683	3	2	52	2	1	20	20	4	6	2	30	20	barrier:30	ragnarok_s300_B	B	US	Core destroyed	169
+ragnarok	30	30	1152	126	6	2	3	-1	-1	2	2	1	0	-1	2	2	0.746	0.0	0.746	6	523	29	6	0	0	-1	-1	20	523	0	0	137	0.4	5.583	2	2	62	2	1	27	27	3	7	2	0	20		ragnarok_s301_A	A	US	Core destroyed	126
+ragnarok	30	30	1152	169	6	2	3	-1	-1	2	2	1	1	1	2	2	1.243	1.0	1.243	5	681	20	7	2	1	1.0	1	50	681	0	0	122	1.15	4.683	3	2	52	2	1	20	20	4	6	2	30	20	barrier:30	ragnarok_s301_B	B	US	Core destroyed	169
+ragnarok	30	30	1152	126	6	2	3	-1	-1	2	2	1	0	-1	2	2	0.746	0.0	0.746	6	523	29	6	0	0	-1	-1	20	523	0	0	137	0.4	5.583	2	2	62	2	1	27	27	3	7	2	0	20		ragnarok_s302_A	A	US	Core destroyed	126
+ragnarok	30	30	1152	182	6	2	3	-1	-1	2	2	1	1	1	2	2	1.099	1.0	1.099	5	617	20	6	2	1	1.0	1	50	617	0	40	235	0.817	4.383	3	2	43	2	1	20	20	4	6	2	30	20	barrier:30	ragnarok_s302_B	B	US	Core destroyed	182
+ragnarok	30	30	1152	126	6	2	3	-1	-1	2	2	1	0	-1	2	2	0.746	0.0	0.746	6	523	29	6	0	0	-1	-1	20	523	0	0	137	0.4	5.583	2	2	62	2	1	27	27	3	7	2	0	20		ragnarok_s303_A	A	US	Core destroyed	126
+ragnarok	30	30	1152	182	6	2	3	-1	-1	2	2	1	1	1	2	2	1.099	1.0	1.099	5	617	20	6	2	1	1.0	1	50	617	0	40	235	0.817	4.383	3	2	43	2	1	20	20	4	6	2	30	20	barrier:30	ragnarok_s303_B	B	US	Core destroyed	182
+ragnarok	30	30	1152	126	6	2	3	-1	-1	2	2	1	0	-1	2	2	0.746	0.0	0.746	6	523	29	6	0	0	-1	-1	20	523	0	0	137	0.4	5.583	2	2	62	2	1	27	27	3	7	2	0	20		ragnarok_s304_A	A	US	Core destroyed	126
+ragnarok	30	30	1152	182	6	2	3	-1	-1	2	2	1	1	1	2	2	1.099	1.0	1.099	5	617	20	6	2	1	1.0	1	50	617	0	41	234	0.817	4.383	3	2	43	2	1	20	20	4	6	2	30	20	barrier:30	ragnarok_s304_B	B	US	Core destroyed	182
+ragnarok	30	30	1152	126	6	2	3	-1	-1	2	2	1	0	-1	2	2	0.746	0.0	0.746	6	523	29	6	0	0	-1	-1	20	523	0	0	137	0.4	5.583	2	2	62	2	1	27	27	3	7	2	0	20		ragnarok_s305_A	A	US	Core destroyed	126
+ragnarok	30	30	1152	151	6	2	3	-1	-1	2	2	2	1	1	2	2	1.358	1.0	1.358	5	515	20	6	1	1	1.0	1	59	515	0	27	150	1.367	3.983	3	2	59	2	2	20	20	4	6	2	23	36	barrier:23	ragnarok_s305_B	B	US	Core destroyed	151
+ragnarok	30	30	1152	122	6	2	3	-1	-1	2	2	1	0	-1	2	2	0.656	0.0	0.656	6	516	29	6	0	0	-1	-1	20	516	0	0	134	0.183	5.8	2	2	49	2	1	27	27	3	7	2	0	20		ragnarok_s306_A	A	US	Core destroyed	122
+ragnarok	30	30	1152	169	6	2	3	-1	-1	2	2	1	1	1	2	2	1.243	1.0	1.243	5	681	20	7	2	1	1.0	1	50	681	0	0	122	1.15	4.683	3	2	52	2	1	20	20	4	6	2	30	20	barrier:30	ragnarok_s306_B	B	US	Core destroyed	169
+ragnarok	30	30	1152	126	6	2	3	-1	-1	2	2	1	0	-1	2	2	0.746	0.0	0.746	6	523	29	6	0	0	-1	-1	20	523	0	0	137	0.4	5.583	2	2	62	2	1	27	27	3	7	2	0	20		ragnarok_s307_A	A	US	Core destroyed	126
+ragnarok	30	30	1152	182	6	2	3	-1	-1	2	2	1	1	1	2	2	1.099	1.0	1.099	5	617	20	6	2	1	1.0	1	50	617	0	40	235	0.817	4.383	3	2	43	2	1	20	20	4	6	2	30	20	barrier:30	ragnarok_s307_B	B	US	Core destroyed	182
+ragnarok	30	30	1152	126	6	2	3	-1	-1	2	2	1	0	-1	2	2	0.746	0.0	0.746	6	523	29	6	0	0	-1	-1	20	523	0	0	137	0.4	5.583	2	2	62	2	1	27	27	3	7	2	0	20		ragnarok_s308_A	A	US	Core destroyed	126
+ragnarok	30	30	1152	189	6	2	3	-1	-1	2	2	1	0	0	2	2	0.397	0.0	0.397	5	629	20	5	1	0	-1	-1	35	629	0	172	258	0.1	4.117	2	2	43	2	1	20	20	4	6	2	15	20	barrier:15	ragnarok_s308_B	B	US	Core destroyed	189
+ragnarok	30	30	1152	122	6	2	3	-1	-1	2	2	1	0	-1	2	2	0.656	0.0	0.656	6	516	29	6	0	0	-1	-1	20	516	0	0	134	0.183	5.8	2	2	49	2	1	27	27	3	7	2	0	20		ragnarok_s309_A	A	US	Core destroyed	122
+ragnarok	30	30	1152	182	6	2	3	-1	-1	2	2	1	1	1	2	2	1.099	1.0	1.099	5	617	20	6	2	1	1.0	1	50	617	0	40	235	0.817	4.383	3	2	43	2	1	20	20	4	6	2	30	20	barrier:30	ragnarok_s309_B	B	US	Core destroyed	182
+ragnarok	30	30	1152	126	6	2	3	-1	-1	2	2	1	0	-1	2	2	0.746	0.0	0.746	6	523	29	6	0	0	-1	-1	20	523	0	0	137	0.4	5.583	2	2	62	2	1	27	27	3	7	2	0	20		ragnarok_s310_A	A	US	Core destroyed	126
+ragnarok	30	30	1152	151	6	2	3	-1	-1	2	2	2	1	1	2	2	1.358	1.0	1.358	5	515	20	6	1	1	1.0	1	59	515	0	26	151	1.367	3.983	3	2	59	2	2	20	20	4	6	2	23	36	barrier:23	ragnarok_s310_B	B	US	Core destroyed	151
+ragnarok	30	30	1152	126	6	2	3	-1	-1	2	2	1	0	-1	2	2	0.746	0.0	0.746	6	523	29	6	0	0	-1	-1	20	523	0	0	137	0.4	5.583	2	2	62	2	1	27	27	3	7	2	0	20		ragnarok_s311_A	A	US	Core destroyed	126
+ragnarok	30	30	1152	151	6	2	3	-1	-1	2	2	2	1	1	2	2	1.358	1.0	1.358	5	515	20	6	1	1	1.0	1	59	515	0	27	150	1.367	3.983	3	2	59	2	2	20	20	4	6	2	23	36	barrier:23	ragnarok_s311_B	B	US	Core destroyed	151
+ragnarok	30	30	1152	126	6	2	3	-1	-1	2	2	1	0	-1	2	2	0.746	0.0	0.746	6	523	29	6	0	0	-1	-1	20	523	0	0	137	0.4	5.583	2	2	62	2	1	27	27	3	7	2	0	20		ragnarok_s312_A	A	US	Core destroyed	126
+ragnarok	30	30	1152	182	6	2	3	-1	-1	2	2	1	1	1	2	2	1.099	1.0	1.099	5	617	20	6	2	1	1.0	1	50	617	0	41	234	0.817	4.383	3	2	43	2	1	20	20	4	6	2	30	20	barrier:30	ragnarok_s312_B	B	US	Core destroyed	182
+ragnarok	30	30	1152	126	6	2	3	-1	-1	2	2	1	0	-1	2	2	0.746	0.0	0.746	6	523	29	6	0	0	-1	-1	20	523	0	0	137	0.4	5.583	2	2	62	2	1	27	27	3	7	2	0	20		ragnarok_s313_A	A	US	Core destroyed	126
+ragnarok	30	30	1152	156	6	2	3	-1	-1	2	2	1	0	0	2	2	0.641	0.0	0.641	6	616	36	7	1	1	1.0	1	79	616	0	48	172	0.5	4.6	3	3	33	2	1	24	24	4	6	2	31	48	barrier:31	ragnarok_s313_B	B	US	Core destroyed	156
+ragnarok	30	30	1152	126	6	2	3	-1	-1	2	2	1	0	-1	2	2	0.746	0.0	0.746	6	523	29	6	0	0	-1	-1	20	523	0	0	137	0.4	5.583	2	2	62	2	1	27	27	3	7	2	0	20		ragnarok_s314_A	A	US	Core destroyed	126
+ragnarok	30	30	1152	131	6	2	3	-1	-1	2	2	1	0	-1	2	2	0.71	0.0	0.71	6	528	20	7	1	1	1.0	1	61	528	0	16	149	0.4	5.283	3	3	32	2	1	20	20	4	6	2	31	30	barrier:31	ragnarok_s314_B	B	US	Core destroyed	131
+ragnarok	30	30	1152	126	6	2	3	-1	-1	2	2	1	0	-1	2	2	0.746	0.0	0.746	6	523	29	6	0	0	-1	-1	20	523	0	0	137	0.4	5.583	2	2	62	2	1	27	27	3	7	2	0	20		ragnarok_s315_A	A	US	Core destroyed	126
+ragnarok	30	30	1152	156	6	2	3	-1	-1	2	2	1	0	0	2	2	0.641	0.0	0.641	6	616	36	7	1	1	1.0	1	79	616	0	48	172	0.5	4.6	3	3	33	2	1	24	24	4	6	2	31	48	barrier:31	ragnarok_s315_B	B	US	Core destroyed	156
+ragnarok	30	30	1152	126	6	2	3	-1	-1	2	2	1	0	-1	2	2	0.746	0.0	0.746	6	523	29	6	0	0	-1	-1	20	523	0	0	137	0.4	5.583	2	2	62	2	1	27	27	3	7	2	0	20		ragnarok_s316_A	A	US	Core destroyed	126
+ragnarok	30	30	1152	169	6	2	3	-1	-1	2	2	1	1	1	2	2	1.243	1.0	1.243	5	681	20	7	2	1	1.0	1	50	681	0	0	122	1.15	4.683	3	2	52	2	1	20	20	4	6	2	30	20	barrier:30	ragnarok_s316_B	B	US	Core destroyed	169
+ragnarok	30	30	1152	126	6	2	3	-1	-1	2	2	1	0	-1	2	2	0.746	0.0	0.746	6	523	29	6	0	0	-1	-1	20	523	0	0	137	0.4	5.583	2	2	62	2	1	27	27	3	7	2	0	20		ragnarok_s317_A	A	US	Core destroyed	126
+ragnarok	30	30	1152	169	6	2	3	-1	-1	2	2	1	1	1	2	2	1.243	1.0	1.243	5	681	20	7	2	1	1.0	1	50	681	0	0	122	1.15	4.683	3	2	52	2	1	20	20	4	6	2	30	20	barrier:30	ragnarok_s317_B	B	US	Core destroyed	169
+ragnarok	30	30	1152	126	6	2	3	-1	-1	2	2	1	0	-1	2	2	0.746	0.0	0.746	6	523	29	6	0	0	-1	-1	20	523	0	0	137	0.4	5.583	2	2	62	2	1	27	27	3	7	2	0	20		ragnarok_s318_A	A	US	Core destroyed	126
+ragnarok	30	30	1152	151	6	2	3	-1	-1	2	2	2	1	1	2	2	1.358	1.0	1.358	5	515	20	6	1	1	1.0	1	59	515	0	27	150	1.367	3.983	3	2	59	2	2	20	20	4	6	2	23	36	barrier:23	ragnarok_s318_B	B	US	Core destroyed	151
+ragnarok	30	30	1152	126	6	2	3	-1	-1	2	2	1	0	-1	2	2	0.746	0.0	0.746	6	523	29	6	0	0	-1	-1	20	523	0	0	137	0.4	5.583	2	2	62	2	1	27	27	3	7	2	0	20		ragnarok_s319_A	A	US	Core destroyed	126
+ragnarok	30	30	1152	182	6	2	3	-1	-1	2	2	1	1	1	2	2	1.099	1.0	1.099	5	617	20	6	2	1	1.0	1	50	617	0	40	235	0.817	4.383	3	2	43	2	1	20	20	4	6	2	30	20	barrier:30	ragnarok_s319_B	B	US	Core destroyed	182
+ragnarok	30	30	1152	126	6	2	3	-1	-1	2	2	1	0	-1	2	2	0.746	0.0	0.746	6	523	29	6	0	0	-1	-1	20	523	0	0	137	0.4	5.583	2	2	62	2	1	27	27	3	7	2	0	20		ragnarok_s320_A	A	US	Core destroyed	126
+ragnarok	30	30	1152	182	6	2	3	-1	-1	2	2	1	1	1	2	2	1.099	1.0	1.099	5	617	20	6	2	1	1.0	1	50	617	0	40	235	0.817	4.383	3	2	43	2	1	20	20	4	6	2	30	20	barrier:30	ragnarok_s320_B	B	US	Core destroyed	182
+ragnarok	30	30	1152	126	6	2	3	-1	-1	2	2	1	0	-1	2	2	0.746	0.0	0.746	6	523	29	6	0	0	-1	-1	20	523	0	0	137	0.4	5.583	2	2	62	2	1	27	27	3	7	2	0	20		ragnarok_s321_A	A	US	Core destroyed	126
+ragnarok	30	30	1152	182	6	2	3	-1	-1	2	2	1	1	1	2	2	1.099	1.0	1.099	5	617	20	6	2	1	1.0	1	50	617	0	40	235	0.817	4.383	3	2	43	2	1	20	20	4	6	2	30	20	barrier:30	ragnarok_s321_B	B	US	Core destroyed	182
+ragnarok	30	30	1152	126	6	2	3	-1	-1	2	2	1	0	-1	2	2	0.746	0.0	0.746	6	523	29	6	0	0	-1	-1	20	523	0	0	137	0.4	5.583	2	2	62	2	1	27	27	3	7	2	0	20		ragnarok_s322_A	A	US	Core destroyed	126
+ragnarok	30	30	1152	151	6	2	3	-1	-1	2	2	2	1	1	2	2	1.358	1.0	1.358	5	515	20	6	1	1	1.0	1	59	515	0	27	150	1.367	3.983	3	2	59	2	2	20	20	4	6	2	23	36	barrier:23	ragnarok_s322_B	B	US	Core destroyed	151
+ragnarok	30	30	1152	122	6	2	3	-1	-1	2	2	1	0	-1	2	2	0.656	0.0	0.656	6	516	29	6	0	0	-1	-1	20	516	0	0	134	0.183	5.8	2	2	49	2	1	27	27	3	7	2	0	20		ragnarok_s323_A	A	US	Core destroyed	122
+ragnarok	30	30	1152	151	6	2	3	-1	-1	2	2	2	1	1	2	2	1.358	1.0	1.358	5	515	20	6	1	1	1.0	1	59	515	0	27	150	1.367	3.983	3	2	59	2	2	20	20	4	6	2	23	36	barrier:23	ragnarok_s323_B	B	US	Core destroyed	151
+ragnarok	30	30	1152	126	6	2	3	-1	-1	2	2	1	0	-1	2	2	0.746	0.0	0.746	6	523	29	6	0	0	-1	-1	20	523	0	0	137	0.4	5.583	2	2	62	2	1	27	27	3	7	2	0	20		ragnarok_s324_A	A	US	Core destroyed	126
+ragnarok	30	30	1152	151	6	2	3	-1	-1	2	2	2	1	1	2	2	1.358	1.0	1.358	5	515	20	6	1	1	1.0	1	59	515	0	27	150	1.367	3.983	3	2	59	2	2	20	20	4	6	2	23	36	barrier:23	ragnarok_s324_B	B	US	Core destroyed	151
+ragnarok	30	30	1152	126	6	2	3	-1	-1	2	2	1	0	-1	2	2	0.746	0.0	0.746	6	523	29	6	0	0	-1	-1	20	523	0	0	137	0.4	5.583	2	2	62	2	1	27	27	3	7	2	0	20		ragnarok_s325_A	A	US	Core destroyed	126
+ragnarok	30	30	1152	156	6	2	3	-1	-1	2	2	1	0	0	2	2	0.641	0.0	0.641	6	616	36	7	1	1	1.0	1	79	616	0	48	172	0.5	4.6	3	3	33	2	1	24	24	4	6	2	31	48	barrier:31	ragnarok_s325_B	B	US	Core destroyed	156
+ragnarok	30	30	1152	126	6	2	3	-1	-1	2	2	1	0	-1	2	2	0.746	0.0	0.746	6	523	29	6	0	0	-1	-1	20	523	0	0	137	0.4	5.583	2	2	62	2	1	27	27	3	7	2	0	20		ragnarok_s326_A	A	US	Core destroyed	126
+ragnarok	30	30	1152	182	6	2	3	-1	-1	2	2	1	1	1	2	2	1.099	1.0	1.099	5	617	20	6	2	1	1.0	1	50	617	0	41	234	0.817	4.383	3	2	43	2	1	20	20	4	6	2	30	20	barrier:30	ragnarok_s326_B	B	US	Core destroyed	182
+ragnarok	30	30	1152	122	6	2	3	-1	-1	2	2	1	0	-1	2	2	0.656	0.0	0.656	6	516	29	6	0	0	-1	-1	20	516	0	0	134	0.183	5.8	2	2	49	2	1	27	27	3	7	2	0	20		ragnarok_s327_A	A	US	Core destroyed	122
+ragnarok	30	30	1152	169	6	2	3	-1	-1	2	2	1	1	1	2	2	1.243	1.0	1.243	5	681	20	7	2	1	1.0	1	50	681	0	0	122	1.15	4.683	3	2	52	2	1	20	20	4	6	2	30	20	barrier:30	ragnarok_s327_B	B	US	Core destroyed	169
+ragnarok	30	30	1152	126	6	2	3	-1	-1	2	2	1	0	-1	2	2	0.746	0.0	0.746	6	523	29	6	0	0	-1	-1	20	523	0	0	137	0.4	5.583	2	2	62	2	1	27	27	3	7	2	0	20		ragnarok_s328_A	A	US	Core destroyed	126
+ragnarok	30	30	1152	131	6	2	3	-1	-1	2	2	1	0	-1	2	2	0.71	0.0	0.71	6	528	20	7	1	1	1.0	1	61	528	0	16	149	0.4	5.283	3	3	32	2	1	20	20	4	6	2	31	30	barrier:31	ragnarok_s328_B	B	US	Core destroyed	131
+ragnarok	30	30	1152	126	6	2	3	-1	-1	2	2	1	0	-1	2	2	0.746	0.0	0.746	6	523	29	6	0	0	-1	-1	20	523	0	0	137	0.4	5.583	2	2	62	2	1	27	27	3	7	2	0	20		ragnarok_s329_A	A	US	Core destroyed	126
+ragnarok	30	30	1152	151	6	2	3	-1	-1	2	2	2	1	1	2	2	1.358	1.0	1.358	5	515	20	6	1	1	1.0	1	59	515	0	27	150	1.367	3.983	3	2	59	2	2	20	20	4	6	2	23	36	barrier:23	ragnarok_s329_B	B	US	Core destroyed	151
+royale	20	20	196	174	8	2	3	18	-1	2	3	4	3	3	4	4	2.862	3.0	2.862	6	744	11	13	8	2	1.0	1	121	744	0	9	132	2.983	4.533	5	2	54	2	3	9	9	14	17	3	65	56	barrier:65	royale_s300_A	A	OPP	Core destroyed	174
+royale	20	20	196	248	8	2	3	31	-1	2	2	2	2	1	3	3	1.488	1.0	1.488	6	1266	9	12	7	4	12.0	11	72	1266	0	192	152	2.0	5.483	4	3	31	2	2	9	9	14	23	2	29	43	barrier:29	royale_s300_B	B	US	Core destroyed	248
+royale	20	20	196	1000	8	2	3	31	38	2	2	5	8	6	8	8	6.097	7.0	6.097	6	372	10	35	35	6	3.83	1	192	372	0	142	1049	6.917	1.017	10	3	48	2	2	9	9	15	18	3	102	90	barrier:102	royale_s301_A	A	US	Titanium collected (tiebreak)	1000
+royale	20	20	196	134	8	2	3	-1	-1	2	2	2	0	-1	2	2	0.754	0.0	0.754	8	818	9	12	5	0	-1	-1	65	818	0	11	139	0.45	7.317	3	3	32	2	2	9	9	13	22	3	27	38	barrier:27	royale_s301_B	B	US	Core destroyed	134
+royale	20	20	196	162	8	2	3	-1	-1	2	2	0	2	1	2	2	1.327	1.0	1.327	7	889	9	10	4	2	1.0	1	100	889	0	32	155	1.433	6.333	4	3	36	2	2	9	9	26	31	2	64	36	barrier:64	royale_s302_A	A	US	Core destroyed	162
+royale	20	20	196	205	8	2	3	31	-1	2	2	2	2	1	3	3	1.405	0.24	1.405	6	1027	9	12	7	4	12.0	11	81	1027	0	138	182	2.0	5.483	4	4	110	2	2	9	9	14	23	2	26	55	barrier:26	royale_s302_B	B	US	Core destroyed	205
+royale	20	20	196	199	8	2	3	25	-1	2	2	4	2	2	4	4	2.241	1.7	2.241	7	998	9	11	4	3	4.0	1	128	998	0	3	139	2.783	5.15	5	4	51	2	3	9	9	12	18	2	51	77	barrier:51	royale_s303_A	A	US	Core destroyed	199
+royale	20	20	196	137	8	2	3	-1	-1	2	2	2	0	-1	2	2	0.737	0.0	0.737	8	843	9	12	4	0	-1	-1	60	843	0	11	138	0.45	7.317	3	3	32	2	2	9	9	13	22	3	22	38	barrier:22	royale_s303_B	B	US	Core destroyed	137
+royale	20	20	196	601	8	2	3	20	22	2	4	6	6	6	7	7	6.012	6.0	6.012	2	440	9	39	38	4	0.75	1	171	440	0	127	618	6.2	0.4	18	12	3	2	5	9	9	16	19	6	87	84	barrier:87	royale_s304_A	A	US	Core destroyed	601
+royale	20	20	196	234	8	2	3	-1	-1	2	2	1	0	0	2	2	0.321	0.0	0.321	7	1308	9	11	5	0	-1	-1	64	1308	0	289	197	0.067	6.617	2	2	41	2	2	9	9	16	30	2	44	20	barrier:44	royale_s304_B	B	US	Core destroyed	234
+royale	20	20	196	155	8	2	3	-1	-1	2	2	0	2	1	2	2	1.374	1.0	1.374	7	848	9	10	3	2	1.0	1	100	848	0	20	154	1.517	6.25	4	3	36	2	2	9	9	26	31	2	64	36	barrier:64	royale_s305_A	A	US	Core destroyed	155
+royale	20	20	196	359	8	2	3	-1	-1	2	2	1	0	1	2	2	1.089	1.0	1.089	7	1812	9	10	5	2	12.0	23	95	1812	0	151	345	1.033	5.5	4	3	36	2	2	9	9	9	81	2	56	39	barrier:56	royale_s305_B	B	US	Core destroyed	359
+royale	20	20	196	319	8	2	3	20	22	2	4	6	6	7	7	7	5.912	6.0	5.912	2	88	9	4	4	3	0.67	1	98	88	0	29	543	6.2	0.4	14	8	55	2	5	9	9	16	19	3	45	53	barrier:45	royale_s306_A	A	OPP	Core destroyed	319
+royale	20	20	196	206	8	2	3	-1	-1	2	2	1	0	0	2	2	0.364	0.0	0.364	7	1148	9	10	4	0	-1	-1	64	1148	0	226	196	0.067	6.617	2	2	41	2	2	9	9	16	30	2	44	20	barrier:44	royale_s306_B	B	US	Core destroyed	206
+royale	20	20	196	318	8	2	3	36	48	2	2	3	6	4	6	6	3.135	2.0	3.135	5	1049	9	12	7	6	8.67	1	181	1049	0	117	357	5.083	2.467	8	6	107	2	2	9	9	14	17	2	77	104	barrier:77	royale_s307_A	A	US	Core destroyed	318
+royale	20	20	196	206	8	2	3	-1	-1	2	2	1	0	0	2	2	0.364	0.0	0.364	7	1148	9	10	4	0	-1	-1	64	1148	0	226	196	0.067	6.617	2	2	41	2	2	9	9	16	30	2	44	20	barrier:44	royale_s307_B	B	US	Core destroyed	206
+royale	20	20	196	414	8	2	3	20	22	2	4	6	6	7	7	7	4.986	3.0	4.986	5	567	9	11	6	4	0.75	1	183	567	0	55	619	6.083	0.417	11	8	119	2	5	9	9	16	19	3	60	123	barrier:60	royale_s308_A	A	US	Core destroyed	414
+royale	20	20	196	164	8	2	3	-1	-1	2	2	1	1	1	2	2	1.152	1.0	1.152	6	851	9	7	1	0	-1	-1	26	851	0	145	124	1.0	6.0	2	1	27	2	2	9	9	12	23	3	14	12	barrier:14	royale_s308_B	B	US	Core destroyed	164
+royale	20	20	196	214	8	2	3	76	115	2	2	1	3	5	5	5	3.505	5.0	3.505	4	383	9	10	9	5	15.8	7	68	383	0	174	389	2.233	2.8	7	2	47	2	1	9	9	12	24	2	31	37	barrier:31	royale_s309_A	A	US	Core destroyed	214
+royale	20	20	196	310	8	2	3	27	-1	2	2	3	2	4	4	4	2.248	1.0	2.248	6	1431	9	8	2	2	1.0	1	80	1431	0	29	320	2.683	5.267	6	5	79	2	2	9	9	17	35	3	40	40	barrier:40	royale_s309_B	B	US	Core destroyed	310
+royale	20	20	196	409	8	2	3	20	22	2	4	6	6	5	7	7	5.856	6.0	5.856	2	198	9	4	4	3	0.67	1	114	198	0	8	646	5.983	0.933	9	3	94	2	5	9	9	16	19	3	45	69	barrier:45	royale_s310_A	A	OPP	Core destroyed	409
+royale	20	20	196	158	8	2	3	-1	-1	2	2	1	0	0	2	2	0.671	0.28	0.671	7	839	9	9	3	2	1.0	1	90	839	0	161	155	0.283	6.717	4	4	30	2	2	9	9	16	30	2	50	40	barrier:50	royale_s310_B	B	US	Core destroyed	158
+royale	20	20	196	264	8	2	3	19	30	2	3	5	7	5	7	7	4.697	4.0	4.697	3	417	9	23	20	4	1.0	1	166	417	0	209	241	6.083	0.317	8	4	115	2	4	9	9	9	12	2	47	119	barrier:47	royale_s311_A	A	US	Core destroyed	264
+royale	20	20	196	113	8	2	3	-1	-1	2	2	2	0	-1	2	2	0.876	0.0	0.876	8	657	9	12	4	0	-1	-1	59	657	0	11	134	0.417	7.417	3	3	32	2	2	9	9	13	22	3	21	38	barrier:21	royale_s311_B	B	US	Core destroyed	113
+royale	20	20	196	153	8	2	3	31	38	2	2	5	8	5	8	8	4.915	5.08	4.915	6	347	10	9	6	6	3.83	1	110	347	0	8	114	6.533	1.383	8	3	57	2	2	9	9	15	18	3	74	36	barrier:74	royale_s312_A	A	US	Core destroyed	153
+royale	20	20	196	172	8	2	3	-1	-1	2	2	1	1	1	2	2	1.145	1.0	1.145	6	899	9	7	1	0	-1	-1	26	899	0	153	124	1.0	6.0	2	1	27	2	2	9	9	12	23	3	14	12	barrier:14	royale_s312_B	B	US	Core destroyed	172
+royale	20	20	196	164	8	2	3	24	67	2	2	3	4	3	5	5	3.744	4.04	3.744	5	533	9	10	5	5	0.8	1	181	533	0	32	129	4.233	3.517	8	5	53	2	2	9	9	9	12	4	85	96	barrier:85	royale_s313_A	A	US	Core destroyed	164
+royale	20	20	196	120	8	2	3	93	-1	2	2	1	2	-1	3	3	2.058	2.3	2.058	5	443	9	7	3	2	12.0	23	58	443	0	15	252	2.083	4.667	4	2	66	2	2	9	9	9	69	2	15	43	barrier:15	royale_s313_B	B	US	Core destroyed	120
+royale	20	20	196	122	8	2	3	-1	-1	2	2	1	0	-1	2	2	0.672	0.32	0.672	8	720	9	11	4	1	1.0	1	42	720	0	10	159	0.017	7.633	3	2	39	2	2	9	9	21	26	3	22	20	barrier:22	royale_s314_A	A	US	Core destroyed	122
+royale	20	20	196	1000	8	2	3	188	206	2	2	2	2	2	8	8	6.09	8.0	6.09	6	1240	9	8	8	6	12.0	3	204	1240	0	64	598	1.767	5.783	9	1	47	2	2	9	9	56	71	4	76	128	barrier:76	royale_s314_B	B	US	Titanium collected (tiebreak)	1000
+royale	20	20	196	177	8	2	3	46	-1	2	2	2	4	1	4	4	2.277	1.0	2.277	7	751	9	13	7	3	3.33	1	105	751	0	27	229	3.667	3.2	5	4	61	2	2	9	9	18	33	3	45	60	barrier:45	royale_s315_A	A	US	Core destroyed	177
+royale	20	20	196	203	8	2	3	31	-1	2	2	2	1	1	3	3	1.241	1.0	1.241	5	805	9	6	1	0	-1	-1	74	805	0	163	211	1.217	3.967	3	2	29	2	2	9	9	14	23	2	20	54	barrier:20	royale_s315_B	B	US	Core destroyed	203
+royale	20	20	196	152	8	2	3	-1	-1	2	2	0	2	1	2	2	1.414	1.0	1.414	7	803	9	10	4	2	1.0	1	101	803	0	38	155	1.6	6.167	4	3	36	2	2	9	9	26	31	2	65	36	barrier:65	royale_s316_A	A	US	Core destroyed	152
+royale	20	20	196	158	8	2	3	-1	-1	2	2	1	0	0	2	2	0.475	0.0	0.475	7	900	9	9	2	0	-1	-1	48	900	0	135	151	0.083	6.717	2	2	43	2	2	9	9	13	22	3	28	20	barrier:28	royale_s316_B	B	US	Core destroyed	158
+royale	20	20	196	195	8	2	3	24	74	2	2	3	5	3	5	5	3.467	2.76	3.467	6	655	9	14	8	5	0.8	1	177	655	0	32	193	4.167	3.217	8	6	57	2	2	9	9	9	12	2	75	102	barrier:75	royale_s317_A	A	US	Core destroyed	195
+royale	20	20	196	366	8	2	3	27	84	2	2	3	4	8	8	8	5.082	4.0	5.082	6	584	9	14	12	9	6.44	1	199	584	0	110	368	3.633	3.95	11	7	84	2	3	9	9	17	43	3	89	110	barrier:89	royale_s317_B	B	US	Core destroyed	366
+royale	20	20	196	482	8	2	3	19	38	2	3	5	7	8	8	8	7.216	7.0	7.216	3	141	11	6	5	5	5.4	1	157	141	0	16	219	6.667	0.15	9	2	429	2	3	9	9	14	17	10	60	97	barrier:60	royale_s318_A	A	US	Core destroyed	482
+royale	20	20	196	164	8	2	3	-1	-1	2	2	1	1	1	2	2	1.152	1.0	1.152	6	851	9	7	1	0	-1	-1	26	851	0	145	124	1.0	6.0	2	1	27	2	2	9	9	12	23	3	14	12	barrier:14	royale_s318_B	B	US	Core destroyed	164
+royale	20	20	196	231	8	2	3	25	-1	2	2	3	2	1	4	4	1.658	1.0	1.658	6	1049	9	12	6	3	8.33	1	126	1049	0	156	252	2.233	3.75	6	5	36	2	3	9	9	16	19	3	52	74	barrier:52	royale_s319_A	A	US	Core destroyed	231
+royale	20	20	196	120	8	2	3	-1	-1	2	2	1	2	-1	2	2	1.708	1.46	1.708	6	476	9	8	2	1	23.0	23	39	476	0	15	261	1.967	4.8	3	3	58	2	2	9	9	9	99	3	0	39		royale_s319_B	B	US	Core destroyed	120
+royale	20	20	196	173	8	2	3	21	-1	2	2	2	2	1	3	3	1.746	1.2	1.746	5	620	10	8	3	1	1.0	1	76	620	0	51	398	1.75	3.333	4	3	35	2	3	9	9	13	35	3	30	46	barrier:30	royale_s320_A	A	US	Core destroyed	173
+royale	20	20	196	260	8	2	3	107	204	2	2	2	1	3	5	5	2.358	2.42	2.358	7	1144	9	16	11	6	8.83	1	174	1144	0	63	248	0.8	6.6	8	6	46	2	2	9	9	12	24	3	113	61	barrier:113	royale_s320_B	B	US	Core destroyed	260
+royale	20	20	196	109	8	2	3	82	-1	2	2	2	2	-1	3	3	2.092	2.46	2.092	6	383	9	6	2	1	20.0	20	18	383	0	61	200	2.1	4.433	4	1	48	2	2	9	9	14	-1	1	0	18		royale_s321_A	A	US	Core destroyed	109
+royale	20	20	196	201	8	2	3	27	-1	2	2	4	4	3	4	4	2.896	2.0	2.896	6	865	9	10	4	4	3.75	5	150	865	0	29	129	3.417	4.4	6	4	93	2	4	9	9	9	26	2	68	82	barrier:68	royale_s321_B	B	US	Core destroyed	201
+royale	20	20	196	271	8	2	3	30	47	2	2	3	6	6	6	6	4.686	4.04	4.686	5	587	10	10	8	7	0.86	1	167	587	0	2	303	5.35	2.567	9	4	105	2	2	9	9	15	18	3	90	77	barrier:90	royale_s322_A	A	US	Core destroyed	271
+royale	20	20	196	1000	8	2	3	209	235	2	2	2	1	2	7	7	5.689	7.0	5.689	5	1524	12	21	20	3	1.0	1	118	1524	0	75	702	1.35	4.367	9	2	59	2	2	9	9	23	53	4	61	57	barrier:61	royale_s322_B	B	US	Titanium collected (tiebreak)	1000
+royale	20	20	196	264	8	2	3	19	30	2	3	5	7	5	7	7	4.697	4.0	4.697	3	417	9	23	20	4	1.0	1	166	417	0	209	241	6.083	0.317	8	4	115	2	4	9	9	9	12	2	47	119	barrier:47	royale_s323_A	A	US	Core destroyed	264
+royale	20	20	196	264	8	2	3	134	-1	2	2	1	2	3	3	3	2.265	2.32	2.265	6	1036	9	13	8	2	14.5	24	33	1036	0	90	373	1.767	4.733	4	2	227	2	2	9	9	16	-1	1	8	25	barrier:8	royale_s323_B	B	US	Core destroyed	264
+royale	20	20	196	549	8	2	3	19	34	2	3	6	5	6	7	7	6.097	7.0	6.097	3	897	9	6	5	5	1.0	1	176	897	0	31	112	5.117	2.883	9	2	26	2	2	9	9	9	12	4	65	111	barrier:65	royale_s324_A	A	OPP	Core destroyed	549
+royale	20	20	196	201	8	2	3	-1	-1	2	2	1	0	0	2	2	0.373	0.0	0.373	7	1123	9	11	4	0	-1	-1	63	1123	0	208	199	0.067	6.617	2	2	41	2	2	9	9	16	30	2	43	20	barrier:43	royale_s324_B	B	US	Core destroyed	201
+royale	20	20	196	257	8	2	3	20	22	2	4	6	6	5	7	7	4.556	3.1	4.556	3	352	9	6	3	2	0.5	1	108	352	0	19	495	5.983	0.933	7	4	191	2	5	9	9	16	19	2	50	58	barrier:50	royale_s325_A	A	US	Core destroyed	257
+royale	20	20	196	254	8	2	3	27	-1	2	2	3	2	4	4	4	2.835	2.0	2.835	6	1098	9	7	2	2	1.0	1	78	1098	0	65	146	2.683	5.267	6	4	94	2	2	9	9	17	35	3	38	40	barrier:38	royale_s325_B	B	US	Core destroyed	254
+royale	20	20	196	264	8	2	3	19	30	2	3	5	7	5	7	7	4.697	4.0	4.697	3	417	9	23	20	4	1.0	1	166	417	0	209	241	6.083	0.317	8	4	115	2	4	9	9	9	12	2	47	119	barrier:47	royale_s326_A	A	US	Core destroyed	264
+royale	20	20	196	321	8	2	3	27	70	2	2	3	5	7	7	7	5.551	5.0	5.551	5	609	9	7	4	4	1.0	1	171	609	0	15	159	4.783	3.15	9	4	176	2	2	9	9	17	35	4	60	111	barrier:60	royale_s326_B	B	US	Core destroyed	321
+royale	20	20	196	167	8	2	3	19	34	2	3	5	7	5	8	8	5.192	5.1	5.192	3	207	9	6	5	5	1.0	1	191	207	0	31	226	6.517	1.433	11	6	75	2	2	9	9	9	12	2	61	130	barrier:61	royale_s327_A	A	US	Core destroyed	167
+royale	20	20	196	174	8	2	3	17	-1	2	3	2	1	0	3	3	1.0	0.0	1.0	6	763	13	13	7	2	5.5	10	92	763	0	228	221	1.317	4.45	4	4	38	2	3	9	9	12	16	2	48	44	barrier:48	royale_s327_B	B	US	Core destroyed	174
+royale	20	20	196	210	8	2	3	29	-1	2	2	3	2	2	3	3	1.91	1.42	1.91	7	1144	9	10	4	3	4.33	1	99	1144	0	10	117	2.083	5.9	4	3	43	2	3	9	9	21	26	2	31	68	barrier:31	royale_s328_A	A	US	Core destroyed	210
+royale	20	20	196	248	8	2	3	28	120	2	2	2	3	6	6	6	3.855	4.24	3.855	6	745	9	14	11	8	4.25	1	175	745	0	2	276	2.917	5.033	14	10	27	2	2	9	9	12	18	2	89	86	barrier:89	royale_s328_B	B	US	Core destroyed	248
+royale	20	20	196	208	8	2	3	18	205	2	3	4	3	3	5	5	2.966	3.34	2.966	6	895	11	13	10	4	1.0	1	142	895	0	9	134	2.983	4.533	7	2	54	2	3	9	9	14	17	3	87	55	barrier:87	royale_s329_A	A	OPP	Core destroyed	208
+royale	20	20	196	134	8	2	3	-1	-1	2	2	2	0	-1	2	2	0.754	0.0	0.754	8	818	9	12	5	0	-1	-1	65	818	0	11	139	0.45	7.317	3	3	32	2	2	9	9	13	22	3	27	38	barrier:27	royale_s329_B	B	US	Core destroyed	134
+valkyrie	30	30	576	525	8	3	3	-1	-1	3	2	1	1	2	2	2	0.638	0.0	0.638	8	3349	13	10	2	0	-1	-1	77	3349	0	17	499	1.0	4.117	3	3	123	2	2	11	11	10	69	2	47	30	barrier:47	valkyrie_s300_A	A	OPP	Core destroyed	525
+valkyrie	30	30	576	342	8	3	4	-1	-1	3	2	2	1	1	2	2	1.114	1.0	1.114	6	1625	13	6	2	0	-1	-1	53	1625	0	510	220	1.1	5.35	2	1	42	2	2	11	11	13	21	2	43	10	barrier:43	valkyrie_s300_B	B	US	Core destroyed	342
+valkyrie	30	30	576	411	8	3	4	114	283	3	2	1	1	4	5	5	3.474	4.98	3.474	5	982	13	6	4	3	1.0	1	130	982	0	43	835	1.0	4.083	7	3	296	2	2	11	11	10	84	5	60	70	barrier:60	valkyrie_s301_A	A	OPP	Core destroyed	411
+valkyrie	30	30	576	331	8	3	3	52	-1	3	2	2	1	1	3	3	1.571	2.0	1.571	6	1586	13	9	3	3	1.0	1	113	1586	0	94	448	1.6	4.35	5	3	34	2	1	11	11	13	21	4	75	38	barrier:75	valkyrie_s301_B	B	US	Core destroyed	331
+valkyrie	30	30	576	286	8	6	6	9	114	6	3	3	3	7	7	7	5.052	6.48	5.052	2	119	13	7	7	4	8.5	9	106	119	0	24	700	3.233	0.8	10	3	87	3	3	11	11	16	70	8	34	72	barrier:34	valkyrie_s302_A	A	OPP	Core destroyed	286
+valkyrie	30	30	576	387	8	3	4	271	-1	3	2	2	1	1	3	3	1.984	3.0	1.984	5	1586	13	12	8	2	1.0	1	90	1586	0	144	588	1.167	4.133	4	1	46	2	2	11	11	13	84	3	75	15	barrier:75	valkyrie_s302_B	B	US	Core destroyed	387
+valkyrie	30	30	576	510	8	3	10	-1	-1	3	2	1	1	0	2	2	0.318	0.0	0.318	7	2981	13	14	8	0	-1	-1	76	2981	0	97	840	1.0	4.267	2	2	139	2	1	11	11	10	145	2	50	26	barrier:50	valkyrie_s303_A	A	US	Core destroyed	510
+valkyrie	30	30	576	245	8	3	3	61	70	3	2	2	5	5	5	5	4.188	5.0	4.188	3	584	13	5	2	2	1.0	1	30	584	0	11	336	3.783	1.817	5	0	-1	2	2	11	11	13	33	4	30	0	barrier:30	valkyrie_s303_B	B	OPP	Core destroyed	245
+valkyrie	30	30	576	292	8	3	3	-1	-1	3	2	1	1	1	2	2	0.89	0.0	0.89	5	1085	13	15	11	0	-1	-1	33	1085	0	236	755	1.0	3.75	2	2	237	2	1	11	11	10	-1	1	15	18	barrier:15	valkyrie_s304_A	A	US	Core destroyed	292
+valkyrie	30	30	576	313	8	3	3	61	78	3	2	2	5	5	5	5	4.006	4.0	4.006	4	706	13	11	8	2	1.0	1	64	706	0	11	530	3.65	1.95	5	1	206	2	2	11	11	13	33	4	40	24	barrier:40	valkyrie_s304_B	B	OPP	Core destroyed	313
+valkyrie	30	30	576	174	8	2	3	125	139	2	2	1	1	5	5	5	2.08	4.22	2.08	5	570	13	7	4	4	1.0	1	121	570	0	8	452	1.0	5.0	6	3	27	2	1	11	11	10	77	3	79	42	barrier:79	valkyrie_s305_A	A	OPP	Core destroyed	174
+valkyrie	30	30	576	117	8	3	3	63	-1	3	2	2	3	-1	3	3	2.41	3.0	2.41	4	399	13	4	0	0	-1	-1	8	399	0	8	245	2.617	4.0	3	0	-1	2	2	11	11	13	21	3	0	8		valkyrie_s305_B	B	US	Core destroyed	117
+valkyrie	30	30	576	1000	8	3	3	491	-1	3	2	1	1	1	4	4	1.907	1.0	1.907	5	3866	13	49	44	0	-1	-1	141	3866	0	311	1459	1.0	4.367	5	4	284	2	2	11	11	10	212	8	101	40	barrier:101	valkyrie_s306_A	A	US	Titanium collected (tiebreak)	1000
+valkyrie	30	30	576	213	8	3	3	50	72	3	2	2	5	5	5	5	4.103	5.0	4.103	3	299	13	3	2	2	1.0	1	30	299	0	10	519	3.917	1.883	5	0	-1	2	2	11	11	13	31	3	30	0	barrier:30	valkyrie_s306_B	B	OPP	Core destroyed	213
+valkyrie	30	30	576	1000	8	2	3	-1	-1	2	2	1	1	1	2	2	1.021	1.0	1.021	4	2116	13	66	64	0	-1	-1	33	2116	0	742	4121	1.0	3.0	2	1	23	2	1	11	11	10	993	2	15	18	barrier:15	valkyrie_s307_A	A	US	Titanium collected (tiebreak)	1000
+valkyrie	30	30	576	599	8	3	3	61	78	3	2	2	5	5	7	7	5.311	6.0	5.311	3	319	13	16	16	2	1.0	1	85	319	0	31	1258	3.65	1.95	8	2	365	2	2	11	11	13	33	6	34	51	barrier:34	valkyrie_s307_B	B	US	Core destroyed	599
+valkyrie	30	30	576	503	8	3	3	116	248	3	1	1	1	4	6	6	4.268	6.0	4.268	3	935	16	11	9	1	20.0	20	54	935	0	43	892	1.0	1.85	7	1	16	2	1	11	11	10	10	10	0	54		valkyrie_s308_A	A	OPP	Core destroyed	503
+valkyrie	30	30	576	391	8	2	3	39	-1	2	2	3	4	4	4	4	3.179	2.0	3.179	6	1715	13	8	2	2	1.0	1	86	1715	0	9	159	3.683	4.1	4	2	297	2	2	11	11	12	20	3	50	36	barrier:50	valkyrie_s308_B	B	US	Core destroyed	391
+valkyrie	30	30	576	240	8	3	5	125	198	3	2	1	1	4	5	5	2.629	4.52	2.629	4	621	13	4	2	2	2.5	4	91	621	0	32	608	0.9	4.0	7	3	57	2	1	11	11	10	88	2	33	58	barrier:33	valkyrie_s309_A	A	OPP	Core destroyed	240
+valkyrie	30	30	576	468	8	6	6	9	-1	6	3	3	3	2	4	4	2.865	3.0	2.865	5	1577	13	6	1	1	1.0	1	33	1577	0	113	700	3.0	3.0	5	2	332	3	3	11	11	240	256	2	15	18	barrier:15	valkyrie_s309_B	B	US	Core destroyed	468
+valkyrie	30	30	576	393	8	2	3	94	-1	2	2	1	1	4	4	4	3.025	3.0	3.025	6	1610	13	8	4	3	15.67	1	166	1610	0	8	337	1.217	5.45	5	2	165	2	2	11	11	10	76	2	66	100	barrier:66	valkyrie_s310_A	A	OPP	Core destroyed	393
+valkyrie	30	30	576	182	8	3	4	73	-1	3	2	2	3	4	4	4	2.923	4.0	2.923	6	754	13	6	2	2	1.0	1	46	754	0	11	157	2.45	5.333	4	0	-1	2	2	11	11	13	21	3	38	8	barrier:38	valkyrie_s310_B	B	US	Core destroyed	182
+valkyrie	30	30	576	223	8	6	6	9	86	6	3	2	4	8	8	8	5.794	7.64	5.794	2	98	13	3	3	3	13.0	1	87	98	0	14	372	3.983	0.917	10	2	97	3	2	11	11	16	62	6	30	57	barrier:30	valkyrie_s311_A	A	OPP	Core destroyed	223
+valkyrie	30	30	576	593	8	3	4	86	174	3	2	2	2	4	8	8	5.393	7.0	5.393	4	622	13	18	18	15	28.33	31	102	622	0	29	884	2.233	3.0	10	3	372	2	2	11	11	13	39	6	65	37	barrier:65	valkyrie_s311_B	B	OPP	Core destroyed	593
+valkyrie	30	30	576	184	8	3	3	55	106	3	2	1	4	5	5	5	3.668	5.0	3.668	5	529	13	7	4	3	1.0	1	74	529	0	40	228	3.167	3.983	6	1	34	2	2	11	11	10	33	2	64	10	barrier:64	valkyrie_s312_A	A	OPP	Core destroyed	184
+valkyrie	30	30	576	469	8	3	4	86	119	3	2	2	2	5	6	6	4.038	3.0	4.038	4	762	13	7	4	2	25.0	49	107	762	0	53	1039	2.233	3.0	7	4	275	2	2	11	11	13	39	5	45	62	barrier:45	valkyrie_s312_B	B	US	Core destroyed	469
+valkyrie	30	30	576	233	8	2	3	58	-1	2	2	1	3	3	4	4	3.034	4.0	3.034	6	661	13	15	13	3	1.0	1	95	661	0	8	487	2.583	4.533	5	1	34	2	2	11	11	10	32	2	85	10	barrier:85	valkyrie_s313_A	A	OPP	Core destroyed	233
+valkyrie	30	30	576	197	8	3	4	84	-1	3	2	2	2	3	3	3	2.538	3.0	2.538	3	430	13	3	1	1	1.0	1	26	430	0	10	634	2.267	2.717	3	0	-1	2	2	11	11	13	32	3	26	0	barrier:26	valkyrie_s313_B	B	OPP	Core destroyed	197
+valkyrie	30	30	576	505	8	3	3	230	-1	3	1	1	1	1	4	4	2.113	2.0	2.113	5	1485	15	60	56	1	55.0	55	128	1485	0	102	1379	1.0	2.3	6	4	215	2	1	11	11	10	10	5	23	105	barrier:23	valkyrie_s314_A	A	OPP	Core destroyed	505
+valkyrie	30	30	576	478	8	3	3	74	219	3	2	2	3	4	6	6	4.418	6.0	4.418	3	553	13	6	5	4	9.25	1	91	553	0	50	1106	2.717	2.25	7	1	181	2	2	11	11	13	31	7	60	31	barrier:60	valkyrie_s314_B	B	OPP	Core destroyed	478
+valkyrie	30	30	576	359	8	2	3	45	65	2	2	2	6	6	7	7	5.744	6.34	5.744	4	575	13	10	8	7	1.0	1	187	575	0	8	227	4.567	2.783	9	4	190	2	2	11	11	10	32	4	105	82	barrier:105	valkyrie_s315_A	A	OPP	Core destroyed	359
+valkyrie	30	30	576	363	8	3	4	120	180	3	2	2	2	4	7	7	4.364	7.0	4.364	4	685	13	5	4	2	1.0	1	55	685	0	53	508	2.0	3.883	7	0	-1	2	2	11	11	32	53	4	51	4	barrier:51	valkyrie_s315_B	B	OPP	Core destroyed	363
+valkyrie	30	30	576	367	8	3	3	45	94	3	2	2	4	6	7	7	5.589	7.0	5.589	3	502	13	6	5	5	3.4	1	86	502	0	47	336	3.867	2.55	8	1	46	2	2	11	11	10	31	6	76	10	barrier:76	valkyrie_s316_A	A	OPP	Core destroyed	367
+valkyrie	30	30	576	328	8	3	3	-1	-1	3	2	2	2	2	2	2	1.534	1.0	1.534	4	1180	13	9	5	0	-1	-1	18	1180	0	481	458	2.0	4.0	2	1	178	2	2	11	11	13	21	3	8	10	barrier:8	valkyrie_s316_B	B	US	Core destroyed	328
+valkyrie	30	30	576	505	8	3	3	230	-1	3	1	1	1	1	4	4	2.113	2.0	2.113	5	1485	15	60	56	1	55.0	55	128	1485	0	102	1379	1.0	2.3	6	4	215	2	1	11	11	10	10	5	23	105	barrier:23	valkyrie_s317_A	A	OPP	Core destroyed	505
+valkyrie	30	30	576	328	8	3	3	-1	-1	3	2	2	2	2	2	2	1.534	1.0	1.534	4	1180	13	9	5	0	-1	-1	18	1180	0	481	458	2.0	4.0	2	1	178	2	2	11	11	13	21	3	8	10	barrier:8	valkyrie_s317_B	B	US	Core destroyed	328
+valkyrie	30	30	576	1000	8	6	6	9	114	6	3	3	3	7	8	8	6.952	8.0	6.952	2	153	13	14	14	10	15.2	23	162	153	0	22	873	3.233	0.8	14	6	89	3	3	11	11	16	70	9	43	119	barrier:43	valkyrie_s318_A	A	OPP	Titanium collected (tiebreak)	1000
+valkyrie	30	30	576	294	8	3	3	114	191	3	2	2	2	3	5	5	3.296	4.32	3.296	5	1030	13	8	4	4	20.0	32	92	1030	0	24	327	2.0	3.983	5	1	257	2	2	11	11	13	21	3	62	30	barrier:62	valkyrie_s318_B	B	US	Core destroyed	294
+valkyrie	30	30	576	505	8	3	3	230	-1	3	1	1	1	1	4	4	2.113	2.0	2.113	5	1485	15	60	56	1	55.0	55	128	1485	0	102	1379	1.0	2.3	6	4	215	2	1	11	11	10	10	5	23	105	barrier:23	valkyrie_s319_A	A	OPP	Core destroyed	505
+valkyrie	30	30	576	342	8	3	4	-1	-1	3	2	2	1	1	2	2	1.114	1.0	1.114	6	1625	13	6	2	0	-1	-1	53	1625	0	510	220	1.1	5.35	2	1	42	2	2	11	11	13	21	2	43	10	barrier:43	valkyrie_s319_B	B	US	Core destroyed	342
+valkyrie	30	30	576	411	8	3	3	130	133	3	1	1	1	5	5	5	3.749	5.0	3.749	3	591	16	19	17	3	19.33	2	101	591	0	74	1050	1.0	1.9	8	3	91	2	1	11	11	10	10	5	15	86	barrier:15	valkyrie_s320_A	A	OPP	Core destroyed	411
+valkyrie	30	30	576	707	8	2	3	86	96	2	2	2	2	4	6	6	4.687	5.0	4.687	4	1366	13	9	7	4	17.75	34	111	1366	0	20	954	2.517	3.367	8	3	142	2	2	11	11	12	54	17	64	47	barrier:64	valkyrie_s320_B	B	US	Core destroyed	707
+valkyrie	30	30	576	221	8	2	3	76	106	2	2	2	4	3	6	6	2.891	2.0	2.891	6	678	13	12	8	6	11.67	1	169	678	0	10	441	2.75	3.8	6	4	54	2	2	11	11	10	60	3	97	72	barrier:97	valkyrie_s321_A	A	OPP	Core destroyed	221
+valkyrie	30	30	576	582	8	3	3	120	125	3	2	2	2	5	7	7	5.244	7.0	5.244	3	1084	13	5	4	4	7.75	11	95	1084	0	23	495	2.0	3.0	7	0	-1	2	2	11	11	13	32	5	48	47	barrier:48	valkyrie_s321_B	B	OPP	Core destroyed	582
+valkyrie	30	30	576	348	8	3	10	-1	-1	3	2	1	1	1	2	2	0.506	0.0	0.506	5	1298	13	10	6	0	-1	-1	56	1298	0	198	1096	1.0	4.5	2	2	153	2	1	11	11	10	141	3	30	26	barrier:30	valkyrie_s322_A	A	US	Core destroyed	348
+valkyrie	30	30	576	389	8	3	4	118	139	3	2	2	2	5	7	7	5.018	7.0	5.018	4	746	13	7	6	5	1.0	1	85	746	0	15	333	2.0	3.95	8	1	48	2	2	11	11	32	53	2	75	10	barrier:75	valkyrie_s322_B	B	OPP	Core destroyed	389
+valkyrie	30	30	576	393	8	2	3	94	-1	2	2	1	1	4	4	4	3.025	3.0	3.025	6	1610	13	8	4	3	15.67	1	166	1610	0	8	337	1.217	5.45	5	2	165	2	2	11	11	10	76	2	66	100	barrier:66	valkyrie_s323_A	A	OPP	Core destroyed	393
+valkyrie	30	30	576	413	8	3	3	63	151	3	2	2	3	4	7	7	4.077	4.0	4.077	5	1114	13	8	5	4	1.0	1	127	1114	0	168	336	2.617	3.95	8	4	233	2	2	11	11	13	21	4	64	63	barrier:64	valkyrie_s323_B	B	US	Core destroyed	413
+valkyrie	30	30	576	661	8	3	5	43	66	3	2	2	6	7	8	8	6.257	5.0	6.257	4	450	13	16	14	11	5.73	1	168	450	0	24	678	4.833	2.283	10	5	254	2	2	11	11	10	32	14	91	77	barrier:91	valkyrie_s324_A	A	US	Core destroyed	661
+valkyrie	30	30	576	496	8	3	3	58	76	3	2	2	5	5	5	5	4.19	4.0	4.19	4	930	13	12	11	4	16.25	25	50	930	0	11	940	3.783	1.867	6	2	337	2	2	11	11	13	31	5	30	20	barrier:30	valkyrie_s324_B	B	US	Core destroyed	496
+valkyrie	30	30	576	274	8	3	3	44	65	3	2	2	6	5	7	7	5.237	7.0	5.237	4	524	13	9	8	8	1.0	1	264	524	0	8	225	4.617	2.733	10	3	46	2	2	11	11	10	32	4	105	159	barrier:105	valkyrie_s325_A	A	OPP	Core destroyed	274
+valkyrie	30	30	576	417	8	3	3	148	203	3	2	2	2	3	7	7	3.871	5.0	3.871	4	1160	13	20	17	6	19.0	6	93	1160	0	103	446	2.0	4.0	8	3	109	2	2	11	11	13	21	5	52	41	barrier:52	valkyrie_s325_B	B	US	Core destroyed	417
+valkyrie	30	30	576	411	8	3	10	-1	-1	3	2	1	1	1	2	2	0.511	0.0	0.511	7	2359	13	13	6	1	1.0	1	134	2359	0	8	711	1.0	4.467	3	3	28	2	1	11	11	10	148	3	98	36	barrier:98	valkyrie_s326_A	A	US	Core destroyed	411
+valkyrie	30	30	576	245	8	3	3	61	70	3	2	2	5	5	5	5	4.188	5.0	4.188	3	584	13	5	2	2	1.0	1	30	584	0	11	336	3.783	1.817	5	0	-1	2	2	11	11	13	33	4	30	0	barrier:30	valkyrie_s326_B	B	OPP	Core destroyed	245
+valkyrie	30	30	576	1000	8	3	5	708	760	3	2	2	2	2	6	6	2.857	5.0	2.857	4	1738	13	13	12	5	7.4	3	108	1738	0	362	3036	2.0	2.0	7	2	740	2	2	11	11	10	156	6	75	33	barrier:75	valkyrie_s327_A	A	US	Titanium collected (tiebreak)	1000
+valkyrie	30	30	576	357	8	3	3	33	-1	3	2	3	2	3	3	3	2.737	3.0	2.737	5	1303	30	8	3	2	1.0	1	83	1303	0	13	546	2.683	3.067	5	2	76	2	2	11	11	13	23	4	33	50	barrier:33	valkyrie_s327_B	B	US	Core destroyed	357
+valkyrie	30	30	576	214	8	2	3	76	106	2	2	2	4	3	6	6	2.921	2.0	2.921	6	650	13	12	8	6	11.67	1	169	650	0	10	427	2.75	3.8	6	4	54	2	2	11	11	10	60	3	97	72	barrier:97	valkyrie_s328_A	A	OPP	Core destroyed	214
+valkyrie	30	30	576	270	8	3	3	63	151	3	2	2	3	4	5	5	3.244	4.0	3.244	5	859	13	8	5	3	1.0	1	100	859	0	36	387	2.617	3.95	6	2	55	2	2	11	11	13	21	4	72	28	barrier:72	valkyrie_s328_B	B	OPP	Core destroyed	270
+valkyrie	30	30	576	179	8	3	3	58	64	3	2	2	8	7	8	8	5.112	6.48	5.112	3	152	13	5	2	2	1.0	1	128	152	0	20	345	5.083	0.583	9	5	102	2	2	11	11	10	10	4	32	96	barrier:32	valkyrie_s329_A	A	OPP	Core destroyed	179
+valkyrie	30	30	576	116	8	2	3	-1	-1	2	2	2	2	-1	2	2	1.957	2.0	1.957	5	411	13	6	1	0	-1	-1	5	411	0	11	276	2.0	4.033	2	0	-1	2	2	11	11	12	28	3	5	0	barrier:5	valkyrie_s329_B	B	US	Core destroyed	116
+yulerune	20	20	196	153	8	2	3	15	48	2	3	4	7	6	7	7	5.131	6.26	5.131	5	300	14	8	6	6	1.0	1	209	300	0	7	132	5.85	2.05	9	4	92	2	3	14	14	7	12	4	95	114	barrier:95	yulerune_s300_A	A	OPP	Core destroyed	153
+yulerune	20	20	196	670	8	2	3	398	442	2	2	2	1	1	5	5	2.655	5.0	2.655	6	1883	40	44	41	2	8.0	15	147	1883	0	211	1139	0.967	3.833	7	2	50	2	2	11	11	13	53	5	121	26	barrier:121	yulerune_s300_B	B	US	Core destroyed	670
+yulerune	20	20	196	153	8	2	3	14	71	2	3	2	6	8	8	8	4.922	7.86	4.922	4	209	12	6	6	6	8.17	1	122	209	0	28	223	4.167	2.033	10	2	71	2	2	12	12	7	14	2	75	47	barrier:75	yulerune_s301_A	A	OPP	Core destroyed	153
+yulerune	20	20	196	336	8	2	3	134	164	2	2	1	1	4	8	8	4.908	8.0	4.908	4	389	33	6	6	6	1.0	1	114	389	0	14	618	1.0	3.017	9	1	31	2	1	15	15	13	64	10	90	24	barrier:90	yulerune_s301_B	B	OPP	Core destroyed	336
+yulerune	20	20	196	216	8	2	3	14	55	2	3	4	8	8	8	8	6.574	8.0	6.574	4	133	12	8	8	8	15.38	14	49	133	0	8	166	6.367	0.983	8	0	-1	2	4	12	12	7	14	8	45	4	barrier:45	yulerune_s302_A	A	OPP	Core destroyed	216
+yulerune	20	20	196	192	8	2	3	86	127	2	2	1	2	6	6	6	3.333	5.98	3.333	7	671	26	7	5	5	4.8	1	107	671	0	7	208	1.717	6.0	7	1	23	2	1	14	14	13	29	3	97	10	barrier:97	yulerune_s302_B	B	OPP	Core destroyed	192
+yulerune	20	20	196	341	8	2	3	14	194	2	3	2	1	2	6	6	3.777	6.0	3.777	6	633	12	7	6	3	30.67	37	92	633	0	26	781	1.55	3.233	8	2	40	2	2	12	12	7	14	4	60	32	barrier:60	yulerune_s303_A	A	OPP	Core destroyed	341
+yulerune	20	20	196	260	8	2	3	150	174	2	2	2	2	3	6	6	2.973	5.3	2.973	7	1109	24	10	7	7	1.29	1	174	1109	0	17	171	1.4	6.55	9	4	83	2	2	14	14	13	27	3	114	60	barrier:114	yulerune_s303_B	B	OPP	Core destroyed	260
+yulerune	20	20	196	281	8	2	3	16	-1	2	3	3	1	0	3	3	0.676	0.0	0.676	8	1910	14	13	5	0	-1	-1	125	1910	0	18	130	1.35	6.383	3	3	57	2	3	14	14	7	225	2	87	38	barrier:87	yulerune_s304_A	A	US	Core destroyed	281
+yulerune	20	20	196	336	8	2	3	134	164	2	2	1	1	4	8	8	4.908	8.0	4.908	4	389	33	6	6	6	1.0	1	114	389	0	14	618	1.0	3.017	9	1	31	2	1	15	15	13	64	10	90	24	barrier:90	yulerune_s304_B	B	OPP	Core destroyed	336
+yulerune	20	20	196	212	8	2	3	15	34	2	3	5	7	7	8	8	6.274	7.74	6.274	4	236	14	7	7	7	1.0	1	186	236	0	7	123	6.633	1.3	10	2	59	2	5	14	14	7	16	5	105	81	barrier:105	yulerune_s305_A	A	OPP	Core destroyed	212
+yulerune	20	20	196	258	8	2	3	80	120	2	2	1	3	7	7	7	4.543	6.98	4.543	7	650	26	9	8	6	6.33	1	187	650	0	34	198	1.833	5.917	9	2	107	2	1	14	14	13	28	8	120	67	barrier:120	yulerune_s305_B	B	OPP	Core destroyed	258
+yulerune	20	20	196	153	8	2	3	15	48	2	3	4	7	6	7	7	5.131	6.26	5.131	5	300	14	8	6	6	1.0	1	209	300	0	7	132	5.85	2.05	9	4	92	2	3	14	14	7	12	4	95	114	barrier:95	yulerune_s306_A	A	OPP	Core destroyed	153
+yulerune	20	20	196	336	8	2	3	134	164	2	2	1	1	4	8	8	4.908	8.0	4.908	4	389	33	6	6	6	1.0	1	114	389	0	14	618	1.0	3.017	9	1	31	2	1	15	15	13	64	10	90	24	barrier:90	yulerune_s306_B	B	OPP	Core destroyed	336
+yulerune	20	20	196	173	8	2	3	14	41	2	3	4	7	5	8	8	5.41	5.04	5.41	4	311	14	9	5	5	1.0	1	223	311	0	7	130	7.167	0.75	8	4	84	2	4	14	14	7	14	4	85	138	barrier:85	yulerune_s307_A	A	OPP	Core destroyed	173
+yulerune	20	20	196	1000	8	2	3	-1	-1	2	2	1	1	2	2	2	0.346	0.0	0.346	8	5745	34	20	14	2	1.0	1	165	5745	0	151	1166	1.167	4.55	4	4	109	2	1	15	15	13	28	3	120	45	barrier:120	yulerune_s307_B	B	US	Titanium collected (tiebreak)	1000
+yulerune	20	20	196	184	8	2	3	14	85	2	3	3	4	7	8	8	4.891	6.58	4.891	5	276	23	9	6	6	0.67	1	168	276	0	6	280	3.883	2.4	9	4	91	3	3	23	23	7	60	5	100	68	barrier:100	yulerune_s308_A	A	OPP	Core destroyed	184
+yulerune	20	20	196	458	8	2	3	82	140	2	2	2	2	5	8	8	5.83	8.0	5.83	4	233	14	7	7	5	17.0	1	106	233	0	37	700	2.383	1.983	9	1	144	2	2	11	11	44	56	6	45	61	barrier:45	yulerune_s308_B	B	US	Core destroyed	458
+yulerune	20	20	196	101	8	2	3	14	47	2	3	3	5	-1	6	6	3.891	4.92	3.891	5	282	14	7	3	3	1.0	1	119	282	0	6	127	4.8	3.117	6	2	63	2	3	14	14	7	14	3	60	59	barrier:60	yulerune_s309_A	A	OPP	Core destroyed	101
+yulerune	20	20	196	368	8	2	3	72	88	2	2	2	4	6	7	7	5.215	7.0	5.215	7	736	41	9	8	8	1.0	1	220	736	0	12	277	2.817	4.55	11	4	82	2	2	11	11	13	34	7	120	100	barrier:120	yulerune_s309_B	B	OPP	Core destroyed	368
+yulerune	20	20	196	184	8	2	3	14	85	2	3	3	4	7	8	8	4.891	6.58	4.891	5	276	23	9	6	6	0.67	1	168	276	0	6	280	3.883	2.4	9	4	91	3	3	23	23	7	60	5	100	68	barrier:100	yulerune_s310_A	A	OPP	Core destroyed	184
+yulerune	20	20	196	380	8	2	3	-1	-1	2	2	2	0	1	2	2	0.453	0.0	0.453	8	2624	24	13	5	2	1.0	1	177	2624	0	31	203	0.333	7.65	5	5	44	2	2	14	14	13	28	6	90	87	barrier:90	yulerune_s310_B	B	US	Core destroyed	380
+yulerune	20	20	196	160	8	2	3	15	51	2	3	4	6	2	6	6	3.987	3.4	3.987	6	484	14	11	6	5	1.0	1	216	484	0	6	152	5.083	2.817	8	6	60	2	3	14	14	7	16	4	101	115	barrier:101	yulerune_s311_A	A	OPP	Core destroyed	160
+yulerune	20	20	196	158	8	2	3	103	-1	2	2	2	1	4	4	4	2.335	3.84	2.335	7	582	41	7	3	3	1.0	1	83	582	0	6	283	1.35	5.55	5	1	46	2	2	15	15	13	48	4	45	38	barrier:45	yulerune_s311_B	B	OPP	Core destroyed	158
+yulerune	20	20	196	212	8	2	3	15	34	2	3	5	7	7	8	8	6.274	7.74	6.274	4	236	14	7	7	7	1.0	1	186	236	0	7	123	6.633	1.3	10	2	59	2	5	14	14	7	16	5	105	81	barrier:105	yulerune_s312_A	A	OPP	Core destroyed	212
+yulerune	20	20	196	262	8	2	3	86	107	2	2	1	2	5	8	8	4.786	8.0	4.786	7	613	26	7	7	7	4.0	1	115	613	0	9	210	1.933	6.017	9	1	23	2	1	14	14	13	29	8	105	10	barrier:105	yulerune_s312_B	B	OPP	Core destroyed	262
+yulerune	20	20	196	101	8	2	3	14	47	2	3	3	5	-1	6	6	3.891	4.92	3.891	5	282	14	7	3	3	1.0	1	119	282	0	6	127	4.8	3.117	6	2	63	2	3	14	14	7	14	3	60	59	barrier:60	yulerune_s313_A	A	OPP	Core destroyed	101
+yulerune	20	20	196	364	8	2	3	82	140	2	2	2	2	6	8	8	5.849	8.0	5.849	4	226	14	6	6	6	20.17	22	83	226	0	33	500	2.383	1.983	9	1	145	2	2	11	11	44	56	4	45	38	barrier:45	yulerune_s313_B	B	US	Core destroyed	364
+yulerune	20	20	196	167	8	2	3	14	75	2	3	2	5	7	7	7	4.695	7.0	4.695	4	155	12	4	4	4	14.5	1	105	155	0	26	360	3.767	1.283	8	1	26	2	2	12	12	7	14	3	45	60	barrier:45	yulerune_s314_A	A	OPP	Core destroyed	167
+yulerune	20	20	196	322	8	2	3	-1	-1	2	2	2	1	1	2	2	1.199	1.0	1.199	7	1541	13	9	2	0	-1	-1	29	1541	0	86	510	1.483	2.617	2	1	67	2	2	13	13	52	-1	1	15	14	barrier:15	yulerune_s314_B	B	US	Core destroyed	322
+yulerune	20	20	196	281	8	2	3	16	-1	2	3	3	1	0	3	3	0.676	0.0	0.676	8	1910	14	13	5	0	-1	-1	125	1910	0	18	130	1.35	6.383	3	3	57	2	3	14	14	7	225	2	87	38	barrier:87	yulerune_s315_A	A	US	Core destroyed	281
+yulerune	20	20	196	350	8	2	3	104	110	2	2	2	2	8	8	8	5.211	5.0	5.211	3	287	13	5	4	1	5.0	5	98	287	0	21	668	2.0	0.983	8	3	115	2	2	11	11	45	72	5	46	52	barrier:46	yulerune_s315_B	B	US	Core destroyed	350
+yulerune	20	20	196	245	8	2	3	15	113	2	3	3	3	5	6	6	4.261	5.92	4.261	5	655	14	7	4	3	1.0	1	71	655	0	12	249	2.767	4.2	7	2	139	2	3	14	14	7	64	7	51	20	barrier:51	yulerune_s316_A	A	OPP	Core destroyed	245
+yulerune	20	20	196	262	8	2	3	86	107	2	2	1	2	5	8	8	4.786	8.0	4.786	7	613	26	7	7	7	4.0	1	115	613	0	9	210	1.933	6.017	9	1	23	2	1	14	14	13	29	8	105	10	barrier:105	yulerune_s316_B	B	OPP	Core destroyed	262
+yulerune	20	20	196	219	8	2	3	14	115	2	3	3	3	7	7	7	4.47	6.0	4.47	4	459	14	8	7	6	10.33	1	189	459	0	34	249	3.317	2.717	9	3	46	2	3	14	14	7	12	5	100	89	barrier:100	yulerune_s317_A	A	OPP	Core destroyed	219
+yulerune	20	20	196	158	8	2	3	103	-1	2	2	2	1	4	4	4	2.335	3.84	2.335	7	582	41	7	3	3	1.0	1	83	582	0	6	283	1.35	5.55	5	1	46	2	2	15	15	13	48	4	45	38	barrier:45	yulerune_s317_B	B	OPP	Core destroyed	158
+yulerune	20	20	196	153	8	2	3	15	48	2	3	4	7	6	7	7	5.131	6.26	5.131	5	300	14	8	6	6	1.0	1	209	300	0	7	132	5.85	2.05	9	4	92	2	3	14	14	7	12	4	95	114	barrier:95	yulerune_s318_A	A	OPP	Core destroyed	153
+yulerune	20	20	196	423	8	2	3	38	74	2	2	3	4	7	8	8	6.083	6.6	6.083	4	378	53	9	8	7	1.0	1	260	378	0	21	307	3.933	2.583	12	5	174	2	2	11	11	13	31	4	105	155	barrier:105	yulerune_s318_B	B	US	Core destroyed	423
+yulerune	20	20	196	194	8	2	3	14	70	2	3	3	5	7	7	7	5.299	7.0	5.299	4	202	52	4	3	3	0.67	1	132	202	0	11	309	4.483	1.8	7	0	-1	3	3	18	18	7	12	2	45	87	barrier:45	yulerune_s319_A	A	OPP	Core destroyed	194
+yulerune	20	20	196	328	8	2	3	260	293	2	2	2	1	0	5	5	1.787	4.7	1.787	7	1443	30	8	6	5	21.2	1	78	1443	0	34	547	1.133	5.917	7	2	98	2	2	14	14	13	200	4	50	28	barrier:50	yulerune_s319_B	B	OPP	Core destroyed	328
+yulerune	20	20	196	194	8	2	3	14	70	2	3	3	5	7	7	7	5.299	7.0	5.299	4	202	52	4	3	3	0.67	1	132	202	0	11	309	4.483	1.8	7	0	-1	3	3	18	18	7	12	2	45	87	barrier:45	yulerune_s320_A	A	OPP	Core destroyed	194
+yulerune	20	20	196	250	8	2	3	79	191	2	2	1	3	4	6	6	3.4	5.84	3.4	8	889	24	8	6	6	0.83	1	159	889	0	12	225	1.5	6.033	8	2	41	2	2	15	15	13	29	7	103	56	barrier:103	yulerune_s320_B	B	OPP	Core destroyed	250
+yulerune	20	20	196	145	8	2	3	15	113	2	3	3	3	-1	5	5	3.283	4.5	3.283	5	452	14	6	4	3	1.0	1	81	452	0	12	220	2.767	4.2	6	1	40	2	3	14	14	7	64	3	54	27	barrier:54	yulerune_s321_A	A	OPP	Core destroyed	145
+yulerune	20	20	196	238	8	2	3	57	62	2	2	2	5	8	8	8	5.815	8.0	5.815	3	102	71	3	3	3	1.0	1	47	102	0	15	403	4.017	1.15	8	0	-1	2	2	11	11	13	47	9	45	2	barrier:45	yulerune_s321_B	B	OPP	Core destroyed	238
+yulerune	20	20	196	160	8	2	3	15	51	2	3	4	6	2	6	6	3.987	3.4	3.987	6	484	14	11	6	5	1.0	1	216	484	0	6	152	5.083	2.817	8	6	60	2	3	14	14	7	16	4	101	115	barrier:101	yulerune_s322_A	A	OPP	Core destroyed	160
+yulerune	20	20	196	208	8	2	3	103	111	2	2	2	1	6	6	6	3.745	6.0	3.745	6	414	30	6	6	4	1.0	1	95	414	0	24	421	1.583	5.283	7	1	58	2	2	14	14	13	71	4	69	26	barrier:69	yulerune_s322_B	B	OPP	Core destroyed	208
+yulerune	20	20	196	160	8	2	3	15	51	2	3	4	6	2	6	6	3.987	3.4	3.987	6	484	14	11	6	5	1.0	1	216	484	0	6	152	5.083	2.817	8	6	60	2	3	14	14	7	16	4	101	115	barrier:101	yulerune_s323_A	A	OPP	Core destroyed	160
+yulerune	20	20	196	380	8	2	3	-1	-1	2	2	2	0	1	2	2	0.453	0.0	0.453	8	2624	24	13	5	2	1.0	1	177	2624	0	31	203	0.333	7.65	5	5	44	2	2	14	14	13	28	6	90	87	barrier:90	yulerune_s323_B	B	US	Core destroyed	380
+yulerune	20	20	196	194	8	2	3	14	70	2	3	3	5	7	7	7	5.299	7.0	5.299	4	202	52	4	3	3	0.67	1	132	202	0	11	309	4.483	1.8	7	0	-1	3	3	18	18	7	12	2	45	87	barrier:45	yulerune_s324_A	A	OPP	Core destroyed	194
+yulerune	20	20	196	375	8	2	3	94	124	2	2	1	2	5	6	6	4.067	5.0	4.067	6	1002	33	8	6	5	1.0	1	129	1002	0	7	448	1.583	5.4	7	2	141	2	1	15	15	13	27	7	75	54	barrier:75	yulerune_s324_B	B	OPP	Core destroyed	375
+yulerune	20	20	196	160	8	2	3	15	51	2	3	4	6	2	6	6	3.987	3.4	3.987	6	484	14	11	6	5	1.0	1	216	484	0	6	152	5.083	2.817	8	6	60	2	3	14	14	7	16	4	101	115	barrier:101	yulerune_s325_A	A	OPP	Core destroyed	160
+yulerune	20	20	196	564	8	2	3	88	141	2	2	2	1	6	6	6	5.066	6.0	5.066	6	1223	49	8	6	6	3.83	1	126	1223	0	16	394	1.817	3.933	8	2	94	2	2	11	11	13	34	8	77	49	barrier:77	yulerune_s325_B	B	OPP	Core destroyed	564
+yulerune	20	20	196	153	8	2	3	15	68	2	3	3	7	8	8	8	5.529	8.0	5.529	1	46	13	1	1	1	1.0	1	19	46	0	11	321	5.367	0.317	8	0	-1	2	3	13	13	7	28	6	15	4	barrier:15	yulerune_s326_A	A	OPP	Core destroyed	153
+yulerune	20	20	196	597	8	2	3	87	-1	2	2	1	2	3	3	3	1.308	2.0	1.308	8	3434	34	14	8	4	12.75	1	236	3434	0	38	504	1.7	4.933	7	5	68	2	1	15	15	13	28	7	120	116	barrier:120	yulerune_s326_B	B	OPP	Core destroyed	597
+yulerune	20	20	196	133	8	2	3	15	32	2	3	5	7	-1	8	8	6.053	7.88	6.053	5	124	14	7	6	6	6.67	1	140	124	0	6	129	7.1	0.833	8	1	117	2	5	14	14	7	12	2	90	50	barrier:90	yulerune_s327_A	A	OPP	Core destroyed	133
+yulerune	20	20	196	158	8	2	3	103	-1	2	2	2	1	4	4	4	2.335	3.84	2.335	7	582	41	7	3	3	1.0	1	83	582	0	6	283	1.35	5.55	5	1	46	2	2	15	15	13	48	4	45	38	barrier:45	yulerune_s327_B	B	OPP	Core destroyed	158
+yulerune	20	20	196	209	8	2	3	14	114	2	3	2	3	6	7	7	4.167	7.0	4.167	6	530	12	11	10	8	5.88	1	247	530	0	24	243	2.033	4.35	10	3	33	2	2	12	12	7	18	4	98	149	barrier:98	yulerune_s328_A	A	OPP	Core destroyed	209
+yulerune	20	20	196	192	8	2	3	86	127	2	2	1	2	6	6	6	3.333	5.98	3.333	7	671	26	7	5	5	4.8	1	107	671	0	7	208	1.717	6.0	7	1	23	2	1	14	14	13	29	3	97	10	barrier:97	yulerune_s328_B	B	OPP	Core destroyed	192
+yulerune	20	20	196	133	8	2	3	15	32	2	3	5	7	-1	8	8	6.053	7.88	6.053	5	124	14	7	6	6	6.67	1	140	124	0	6	129	7.1	0.833	8	1	117	2	5	14	14	7	12	2	90	50	barrier:90	yulerune_s329_A	A	OPP	Core destroyed	133
+yulerune	20	20	196	336	8	2	3	134	164	2	2	1	1	4	8	8	4.908	8.0	4.908	4	389	33	6	6	6	1.0	1	114	389	0	14	618	1.0	3.017	9	1	31	2	1	15	15	13	64	10	90	24	barrier:90	yulerune_s329_B	B	OPP	Core destroyed	336
