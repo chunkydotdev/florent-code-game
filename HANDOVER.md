@@ -1,6 +1,73 @@
 # ⭐⭐⭐ FIRST: `.venv/bin/python tools/now.py` — the holder comes from fcode status,
 # NEVER from a poller or any line below (this block is a CACHE).
 
+# ===== s51 WRAP (builder, 2026-08-20 ~08:2xZ; Magnus called it after v530.1) =====
+
+## THE SLOT — x3r0's, churning; STEALTH_UNTIL_DROP governs us
+HOLDER at wrap: **v168 "Mjolnir fix1only w35 TEST" (x3r0, 08:02:27Z, 1773/#22)** — their
+line has churned v162→v168 in two days; tenure-can't-rank; imported trees: v161/v162/v165
+(later ones not imported — import-on-need per the 2-minute pattern in version_trees.tsv).
+**STEALTH_UNTIL_DROP: yes + SHIP_BAR 75-floor/80-target vs Sleipnir v2 (Magnus+x3r0 JOINT,
+PROGRAMME) — no release, no submit, NO UNRATED EXPOSURE of the new line until the
+coordinated drop. Magnus proposed activating mid-session and HELD on the four gates
+(stealth pact / 75-floor / 46.6-vs-holder screen / unrun platform CPU test) — that hold is
+the precedent.** CONTROL/INCUMBENT = bots/_v488beltbreak2 (unchanged, = Sleipnir v2).
+
+## THE LINE — THE HEAD IS bots/_v529merge; THE NUMBER IS 70.50
+* **flippool-final: bots/_v525flip = 70.50 [69.28,71.72] n=5400 FULL POOL vs the incumbent**
+  (+4.19 over the v524 baseline's 66.31; both shards ran full distance; the three-segment
+  composition method validated end-to-end — priors in-band on both).
+* HEAD = **bots/_v529merge** (v525flip + RDV + collar/eco fixes; ADOPTED ON STRUCTURE —
+  ablation-identity proven, mechanisms alive; currency deferred to the next full-pool read).
+* KILL_TARGET (PROGRAMME): median r180 · k≤200→50% · r300 floor. Best k≤200 sits ~28%
+  (v520-era); v531fix's cap6 diagnostic arm hit medkill 180 ON TARGET.
+* Distance to the 75 floor: head 70.5 + unmeasured-at-scale adopted planks; the home
+  package (below) is the next block of points.
+
+## THE HOME PACKAGE — mechanisms PROVEN, two items from clean (the successor's first fire)
+Magnus-designed (mouth-first belt / corner barriers / door-launcher kill), built v530 +
+fixed v530.1 (= bots/_v531fix): **crater-class belt failure DEAD on Mjolnir's own bytes**
+(race won 0.36→0.69, beltfail 0.35→0.16, icefloe socket r124→r6; DEFENCE breach GONE on the
+crater battery). REMAINING before it joins the head: (1) run `cap6` (V530_MOUTH_MAX_LINKS=6
+— reads INSIDE the bar at medkill 180 on battery A) on the CRATER battery; (2) fix the atoll
+mixed-chain-order collision (wins 35/24/10, the mouth pops planned tiles); (3) attribute the
+non-mouth two-thirds of battery A's residual (§7 five-arm battery = the instrument). Then
+merge → ONE full-pool read prices the composite vs SHIP_BAR.
+
+## THE SIGNED QUEUE (all evidence-complete, briefs' anchors in the coordination tail)
+1. Home package completion (above) — then the FULL-POOL READ.
+2. **v531 SIEGE MOBILITY** (Magnus markers: rescue-throw on stuck/pinned/oscillating raiders,
+   perimeter orbit via the sited terminal launcher) + **DECOUPLED-LAUNCHER OPENING** (eco-1
+   builds the chain launcher en route; raider spawns 2nd — tempo without eco-seat cost) +
+   the **OPENING SCRIPT** (Magnus's r1-4 choreography incl. 3rd-builder-connects-harvester,
+   4th-builder ring IF the ring prices in).
+3. **THE RING** (FS_V530_RING, ships OFF): passability objection DISSOLVED (conveyors ARE
+   passable — double-sourced reconcile), blocks gunner rays, only arm that gained wins;
+   needs its tempo/eco price at scale.
+4. ANTI-RING vs Mjolnir-class (constraints banked: clear-and-stand only, more-collar-buys-
+   nothing) · archipelago MODE (falsifier confirmed strong-map story, 68.9 vs kladturbo) ·
+   corner-case queue rows re-priced by research (#21/#22/#86 family top of offensive stock).
+5. Platform CPU `match test` — MANDATORY before any drop (thrice-established: local CPU is
+   blind).
+
+## FIXTURES / INSTRUMENTS (what a successor must not re-learn — full deltas in the wrap block)
+One-draw ±9/90 · known-zero arm mandatory · registered-prior-not-grid-point · derived-default
+AST scan with positive control · append-readback · deterministic dose test needs same-store-
+write baseline · remote batteries: **tools/remote_battery.py VALIDATED** (ws1≤10/ws2≤6 cores,
+auto_gate-namespace proven, partial-tape honest; fleet_dispatch G7 blindness = wrap debt).
+Two-opponent panel standing: incumbent = verdict surface, Mjolnir-class = transfer guard
+(anchor v165 imported; update on x3r0 ship via the import pattern). Dashboard: /reel (105+
+games incl. Magnus's 21 markers → ~half the mandate queue), /shards live.
+
+## STATE / WAKE PATHS
+All lanes RESUMED (conservation lifted). Daemons: watchers/keeper/auto_gate/corefill_forever/
+dashboard(84849, restarted with /reel) alive. NO agents of this session survive it — all
+landed and banked; nothing unrelayed. Corefill worklist drained (PINCERPOOL/FLIPPOOL
+complete). **NOTHING WAKES A HUMAN.** Wrap debts: scratchpad/s51_wrap_debts.md (8 items).
+Successor boots per /builder; the side lane was pinged at this wrap per the standing rule.
+
+## ===== ARCHIVE MARKER: everything below predates s51's wrap =====
+
 # ===== s50 WRAP (builder, 2026-08-17 ~21:1xZ; Magnus called it — LOCK-IN NIGHT) =====
 
 ## THE SLOT — LOCK-IN MODE, MAGNUS'S WORD REQUIRED FOR ANY TOUCH

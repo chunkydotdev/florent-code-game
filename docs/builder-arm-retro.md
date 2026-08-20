@@ -1442,3 +1442,32 @@ was machinery-CATCHABLE (the BARS append) and the machine check now exists.
 **OPEN ITEMS CARRIED:** inside-band-needs-NEG-cell (unchanged) · self-play
 blindness (fired again ×3 — keep) · NEW: bind-every-append-to-its-readback
 (the s50 addition; WRAP-FIX item 12 is the mechanisation).
+
+---
+# ARM RETRO — instance s51 (2026-08-18 → 2026-08-20, wrap on Magnus's call)
+
+**FIRINGS: 4 registered instruments** — SIEGECREW (trend-floor stop, gated-alarm fired
+correctly and its suspect was later REFUTED by isolation — the alarm did its job, the
+registered suspicion was wrong), PINCERPOOL (full 5400, prior in-band), FLIPPOOL (full 5400,
+prior in-band, THE HEAD at 70.50), head-vs-holder screen (banked with decision-time read
+acknowledged). Pricing instrument 5-for-5 on shard fates across the session.
+
+**Q: WERE THIS LANE'S DECISIONS SOUND?** The big ones held: fix-first over fire-as-is
+(twice: v524, v530.1); the slot-hold evidence surface when Magnus proposed activating (he
+held; stealth+bar+screen+CPU all pointed the other way); adopting-on-structure/pricing-on-
+full-pool for the merge; the ring demoted to measured-candidate on Magnus's own calibration.
+The recurring judgment error, THREE instances, all caught by controls not by me: OVERSELLING
+A FRESH MECHANISM'S SIZE before the powered read (v514's door +18.9→+7.1; v528's delivery
++149→not-established; my own ~71 flip projection→69.6 registered). The controls caught every
+one; the lesson is to quote the registered prior, never the build-grid point.
+
+**OBSERVATION — NOT ROUTED:** Magnus's replay markers (21 of them) supplied ~half the
+mandate queue and two engine-fact catches; the reel page turned him into a second
+measurement instrument. The marker→mandate→build→measure loop is this session's best
+process invention and lives in the reel convention + build-brief template already.
+
+**OPEN ITEMS CARRIED:** inside-band-needs-NEG-cell · self-play blindness (the entire
+session is self-play + one teammate architecture; STEALTH makes live legs impossible until
+the drop — the risk is now POLICY, note it at every readout) · bind-append-readback (fired
+s51: caught the BARS glue-line and the results.tsv tab corruption — keep) · NEW: quote the
+registered prior, never the grid point.

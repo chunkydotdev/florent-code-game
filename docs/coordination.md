@@ -71681,3 +71681,42 @@ k=5-9: Bisons v29 3-2 +0.15 · farming v19 2-3 -0.49 · I Stone v43 4-1 +7.89 ·
 * **Classifier controls all driven both ways** (impassables/walls read 0 on 27.7M arrivals; +1-tile mutation drives them 0→18,840; throw population ties `throws.tsv` 23,329=23,329).
 * **The 08-10 doc's fact reproduces; its 33.5% was subset-specific (27.71% complete-archive; era drift 24%→10% is field composition, not legality).**
 * **DOWNSTREAM: Mjolnir socket-heal reasoning, heal-outrun, x3r0's §G, `HS_SEAT_BAN_CONVEYORS=False` ALL STAND. The RING candidate's passability blocker is REMOVED. The builder's "healers stand on conveyors" to Magnus is CONFIRMED — no correction owed.** ⛔ What needs retracting is the probe's generalized sentence "conveyors NOT bot-passable": the two predicates returned False in THAT PROBE'S STATE (suspects: move-cooldown, act/move exclusivity, or a stricter predicate) — **the controlled re-probe is the one open item, builder-side.**
+
+===== s51 BUILDER WRAP (2026-08-20T08:44:00Z; Magnus called it after v530.1) =====
+
+## PROCESS DELTAS (s51) — appended per-verdict through the session, synthesised:
+1. **Quote the registered prior, never the build-grid point** (three overshoots, all
+   control-caught: door +18.9→+7.1, delivery +149→n.e., flip ~71→69.6-registered→70.5-measured).
+2. **The one-draw law got its number** (±9/90 same-config; OS-entropy salt both sides;
+   --seed pins nothing NOISE_ON) ⇒ n≥450 concurrent-interleaved arms + byte-identical
+   known-zero arm = the only readable design at panel scale; known-zero spread ~2x on derived
+   kill columns.
+3. **Deterministic dose test promoted WITH its caveat**: .replay26 serialises the comms
+   store — same-store-write baselines mandatory or phantom doses score.
+4. **Derived-default hazard class**: mkarm appends can't reach module-scope derived
+   constants — two live instances (door, FERRY_HOME_ON), both caught by behavioural/preflight
+   guards; read-site evaluation is the standard; AST scan with positive control in every build.
+5. **Append-readback fired twice** (BARS glue-line, results.tsv tab corruption) — keep
+   forever.
+6. **Autopsy-before-spec paid every time it ran** (eviction→seal-wait acquitted; closure→
+   belt not collar; crater→our belt not their ring; both Magnus priors sign-inverted) and
+   the one build specced on an un-autopsied premise (v521 sync) was rejected by measurement.
+7. **The marker loop**: Magnus watching replays + the reel manifest supplied ~half the
+   mandate queue + 2 engine-fact catches; failure-reel section + manifest rows are now
+   mandatory in every build report.
+8. **Fix-first beats fire-as-is when a shard would measure an accident** (v524 cripple
+   collision; v530.1) — a 5400-game read measures the intended config or it measures noise
+   with provenance.
+9. **Composition is a claim we test**: merge batteries with ablation-identity proofs
+   (union|childOff == other child, 16/16) + two-sample intervals for additivity banners
+   (the known-zero is one draw, not a standard error).
+10. **Instrument hygiene catches of the session**: 104x dose over-report; hv30/execTimeUs
+   constant columns ("0 TLEs" is NEVER evidence locally — platform match test remains the
+   only CPU read); a report-suggested test whose constant was read nowhere; the v530
+   passability probe reading occupied tiles ⇒ the two-lane reconcile pattern (corpus half +
+   live-probe half, opposite directions) closed it in hours.
+
+## INSTRUMENT DEBTS → the wrap-fix list is scratchpad/s51_wrap_debts.md (8 items incl.
+ship_watch baseline laundering D1, mkarm lint, gate.py field-completeness manifest,
+fleet_dispatch G7 blindness). Per Magnus's rule these are wrap-time work — SUCCESSOR: run
+them as your wrap-fix batch or earlier on his word.
