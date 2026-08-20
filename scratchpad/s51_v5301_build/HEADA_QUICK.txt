@@ -1,0 +1,35 @@
+=== THE KILL_TARGET PANEL ===
+arm             n   wins%    <=r150    <=r180    <=r200    <=r250    <=r300  medkill  ourcore   tb
+parent        480   73.5% 130(0.271) 161(0.335) 193(0.402) 235(0.490) 262(0.546)      187      116    0
+flagoff       480   77.1% 126(0.263) 174(0.362) 196(0.408) 234(0.487) 261(0.544)      183       98    0
+v530          480   67.1%  33(0.069)  55(0.115)  81(0.169) 141(0.294) 186(0.388)      261      129    0
+v531fix       480   67.3%  60(0.125)  93(0.194) 115(0.240) 157(0.327) 193(0.402)      233      144    0
+
+flagoff    vs parent   wins      +3.54 pp (hw 5.46)  inside
+flagoff    vs parent   k<=200    +0.62 pp (hw 6.21)  inside
+flagoff    vs parent   k<=300    -0.21 pp (hw 6.30)  inside
+flagoff    vs parent   ourcore   -3.75 pp (hw 5.27)  inside
+flagoff    vs parent   medkill 182.5 vs 187.0   (kill-conditioned, diagnostic only -- carries the collider)
+
+v530       vs parent   wins      -6.46 pp (hw 5.78)  OUTSIDE   [known-zero on this metric: +3.54 pp]
+v530       vs parent   k<=200   -23.33 pp (hw 5.71)  OUTSIDE   [known-zero on this metric: +0.62 pp]
+v530       vs parent   k<=300   -15.83 pp (hw 6.31)  OUTSIDE   [known-zero on this metric: -0.21 pp]
+v530       vs parent   ourcore   +2.71 pp (hw 5.52)  inside   [known-zero on this metric: -3.75 pp]  << SMALLER THAN THE KNOWN ZERO
+v530       vs parent   medkill 261 vs 187.0   (kill-conditioned, diagnostic only -- carries the collider)
+
+v531fix    vs parent   wins      -6.25 pp (hw 5.77)  OUTSIDE   [known-zero on this metric: +3.54 pp]
+v531fix    vs parent   k<=200   -16.25 pp (hw 5.91)  OUTSIDE   [known-zero on this metric: +0.62 pp]
+v531fix    vs parent   k<=300   -14.37 pp (hw 6.32)  OUTSIDE   [known-zero on this metric: -0.21 pp]
+v531fix    vs parent   ourcore   +5.83 pp (hw 5.62)  OUTSIDE   [known-zero on this metric: -3.75 pp]
+v531fix    vs parent   medkill 233 vs 187.0   (kill-conditioned, diagnostic only -- carries the collider)
+
+=== PER MAP: wins/n  [k<=300]  {k<=200} ===
+map            parent                  flagoff                 v530                    v531fix               
+antler         45/60  [34] {26}       45/60  [30] {18}       40/60  [28] {17}       37/60  [28] {17}     
+atoll          35/60  [22] {20}       40/60  [21] {14}       24/60  [12] { 6}       10/60  [ 4] { 1}     
+drakkarfjord   54/60  [41] {37}       54/60  [41] {40}       43/60  [18] { 4}       47/60  [20] { 8}     
+fjordgate      38/60  [33] {19}       39/60  [30] {17}       41/60  [29] {12}       43/60  [27] {13}     
+glacierkeep    53/60  [33] {23}       55/60  [39] {29}       50/60  [25] { 4}       58/60  [39] {19}     
+midgard        32/60  [23] {12}       36/60  [19] { 9}       27/60  [13] { 2}       26/60  [13] { 5}     
+nordkap        41/60  [30] {14}       47/60  [32] {23}       47/60  [31] {14}       46/60  [26] {18}     
+yulerune       55/60  [46] {42}       54/60  [49] {46}       50/60  [30] {22}       56/60  [36] {34}     

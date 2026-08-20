@@ -1,0 +1,10 @@
+rows compared: 400   missing replays: 0
+deliv.harv1 == routetape.harv1_rnd on 400/400 rows (0 mismatch)
+rows compared: 400   missing replays: 0
+deliv.harv1 == routetape.harv1_rnd on 375/400 rows (25 mismatch)
+   MISMATCH parent_atoll_s1_A deliv=2 tape=9
+   MISMATCH flagoff_atoll_s1_A deliv=2 tape=9
+   MISMATCH v530_atoll_s1_A deliv=6 tape=13
+   MISMATCH v531fix_atoll_s1_A deliv=5 tape=12
+   MISMATCH parent_atoll_s1_B deliv=2 tape=9
+MUTATION CONTROL: 25 rows corrupted, 25 mismatches reported -> PASS

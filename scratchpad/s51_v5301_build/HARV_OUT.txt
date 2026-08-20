@@ -1,0 +1,63 @@
+SELFTEST OK: h1med and h1mean each separate an early arm from a late one; a never-arm reads noharv 1.000 / n_h 0 / h1med -1 (NOT 0) and its rows are excluded from the conditional mean (mixed: mean 70.0, median 5, noharv 0.400); the >r60 boundary is strict (r60 -> 0.000, r61 -> 1.000); the three synthetic arms give three distinct noharv values, so the column is not constant.
+=== BATTERY A (opp _v488beltbreak2) ===
+replays read: 1920
+=== THE HARVESTER-BOOTSTRAP PANEL ===
+arm             n    n_h   noharv   h1med   h1mean     >r60
+parent        480    480    0.000     5.0     5.75    0.000
+flagoff       480    480    0.000     5.0     5.79    0.000
+v530          480    429    0.106     8.0    42.87    0.146
+v531fix       480    478    0.004     7.0     9.55    0.004
+
+flagoff    vs parent   noharv  +0.00 pp (hw 0.00)  inside
+flagoff    vs parent   h1med  5.0 vs 5.0   h1mean 5.79 vs 5.75
+flagoff    vs parent   MEAN-MINUS-MEDIAN (the tail) 0.79 vs 0.75
+
+v530       vs parent   noharv +10.62 pp (hw 2.84)  OUTSIDE
+v530       vs parent   h1med  8.0 vs 5.0   h1mean 42.87 vs 5.75
+v530       vs parent   MEAN-MINUS-MEDIAN (the tail) 34.87 vs 0.75
+
+v531fix    vs parent   noharv  +0.42 pp (hw 0.58)  inside
+v531fix    vs parent   h1med  7.0 vs 5.0   h1mean 9.55 vs 5.75
+v531fix    vs parent   MEAN-MINUS-MEDIAN (the tail) 2.55 vs 0.75
+
+=== PER MAP: noharv share  (h1 median) ===
+map            parent            flagoff           v530              v531fix         
+antler         0.000 ( 2.0)    0.000 ( 2.0)    0.000 ( 6.0)    0.000 ( 5.0)  
+atoll          0.000 ( 2.0)    0.000 ( 2.0)    0.000 ( 5.5)    0.000 ( 5.0)  
+drakkarfjord   0.000 ( 9.0)    0.000 ( 9.0)    0.283 (128.0)    0.000 (14.0)  
+fjordgate      0.000 ( 3.0)    0.000 ( 3.0)    0.017 ( 8.0)    0.000 ( 6.0)  
+glacierkeep    0.000 (14.5)    0.000 (14.5)    0.550 (140.0)    0.033 (18.0)  
+midgard        0.000 ( 3.0)    0.000 ( 3.0)    0.000 ( 7.0)    0.000 ( 7.0)  
+nordkap        0.000 ( 6.0)    0.000 ( 6.0)    0.000 ( 9.0)    0.000 ( 7.5)  
+yulerune       0.000 ( 5.0)    0.000 ( 5.0)    0.000 (11.5)    0.000 (10.0)  
+=== BATTERY B (opp _x3r0v165mjolnirB) ===
+replays read: 1920
+=== THE HARVESTER-BOOTSTRAP PANEL ===
+arm             n    n_h   noharv   h1med   h1mean     >r60
+parent        480    476    0.008     6.0    14.57    0.046
+flagoff       480    474    0.013     6.0    14.03    0.037
+v530          480    450    0.062    14.0    71.79    0.406
+v531fix       480    462    0.037     9.0    31.96    0.146
+
+flagoff    vs parent   noharv  +0.42 pp (hw 1.28)  inside
+flagoff    vs parent   h1med  6.0 vs 6.0   h1mean 14.03 vs 14.57
+flagoff    vs parent   MEAN-MINUS-MEDIAN (the tail) 8.03 vs 8.57
+
+v530       vs parent   noharv  +5.42 pp (hw 2.34)  OUTSIDE
+v530       vs parent   h1med  14.0 vs 6.0   h1mean 71.79 vs 14.57
+v530       vs parent   MEAN-MINUS-MEDIAN (the tail) 57.79 vs 8.57
+
+v531fix    vs parent   noharv  +2.92 pp (hw 1.89)  OUTSIDE
+v531fix    vs parent   h1med  9.0 vs 6.0   h1mean 31.96 vs 14.57
+v531fix    vs parent   MEAN-MINUS-MEDIAN (the tail) 22.96 vs 8.57
+
+=== PER MAP: noharv share  (h1 median) ===
+map            parent            flagoff           v530              v531fix         
+auroraveil     0.000 (10.0)    0.067 ( 9.0)    0.233 (95.0)    0.217 (13.0)  
+drakkarfjord   0.000 ( 9.0)    0.000 ( 9.0)    0.133 (152.0)    0.000 (14.0)  
+glacierkeep    0.067 (13.0)    0.033 (13.0)    0.067 (140.5)    0.050 (88.0)  
+icefloe        0.000 ( 7.0)    0.000 ( 7.0)    0.000 (96.0)    0.000 ( 9.0)  
+nordkap        0.000 ( 6.0)    0.000 ( 6.0)    0.000 ( 9.0)    0.000 ( 7.5)  
+ragnarok       0.000 ( 3.0)    0.000 ( 3.0)    0.000 (11.5)    0.000 ( 5.0)  
+royale         0.000 ( 6.0)    0.000 ( 6.0)    0.017 (13.0)    0.000 ( 9.0)  
+yulerune       0.000 ( 5.0)    0.000 ( 5.0)    0.050 (12.0)    0.033 ( 9.0)  

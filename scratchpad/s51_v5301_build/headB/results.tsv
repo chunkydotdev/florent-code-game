@@ -1,0 +1,1921 @@
+tag	map	seed	seat	arm	ours	winner	cond	turn	tracebacks	ours_mined	opp_mined
+parent_icefloe_s1_A	icefloe	1	A	parent	OPP	_x3r0v165mjolnirB	Core destroyed	479	0	0	600
+flagoff_icefloe_s1_A	icefloe	1	A	flagoff	OPP	_x3r0v165mjolnirB	Core destroyed	377	0	0	2210
+v530_icefloe_s1_A	icefloe	1	A	v530	US	v530_arm	Core destroyed	404	0	1550	800
+v531fix_icefloe_s1_A	icefloe	1	A	v531fix	US	_v531fix	Core destroyed	184	0	420	100
+parent_icefloe_s1_B	icefloe	1	B	parent	OPP	_x3r0v165mjolnirB	Core destroyed	239	0	0	980
+flagoff_icefloe_s1_B	icefloe	1	B	flagoff	OPP	_x3r0v165mjolnirB	Core destroyed	120	0	0	610
+v530_icefloe_s1_B	icefloe	1	B	v530	OPP	_x3r0v165mjolnirB	Core destroyed	551	0	4700	8440
+v531fix_icefloe_s1_B	icefloe	1	B	v531fix	OPP	_x3r0v165mjolnirB	Core destroyed	311	0	1210	1700
+parent_icefloe_s2_A	icefloe	2	A	parent	OPP	_x3r0v165mjolnirB	Core destroyed	149	0	0	620
+flagoff_icefloe_s2_A	icefloe	2	A	flagoff	OPP	_x3r0v165mjolnirB	Core destroyed	156	0	0	680
+v530_icefloe_s2_A	icefloe	2	A	v530	OPP	_x3r0v165mjolnirB	Core destroyed	382	0	1090	4850
+v531fix_icefloe_s2_A	icefloe	2	A	v531fix	US	_v531fix	Core destroyed	191	0	440	0
+parent_icefloe_s2_B	icefloe	2	B	parent	OPP	_x3r0v165mjolnirB	Core destroyed	373	0	0	850
+flagoff_icefloe_s2_B	icefloe	2	B	flagoff	OPP	_x3r0v165mjolnirB	Core destroyed	239	0	0	980
+v530_icefloe_s2_B	icefloe	2	B	v530	US	v530_arm	Core destroyed	316	0	2160	2020
+v531fix_icefloe_s2_B	icefloe	2	B	v531fix	US	_v531fix	Core destroyed	427	0	4170	560
+parent_auroraveil_s1_A	auroraveil	1	A	parent	US	parent_arm	Core destroyed	173	0	390	10
+flagoff_auroraveil_s1_A	auroraveil	1	A	flagoff	US	flagoff_arm	Core destroyed	184	0	530	40
+v530_auroraveil_s1_A	auroraveil	1	A	v530	OPP	_x3r0v165mjolnirB	Core destroyed	201	0	0	780
+v531fix_auroraveil_s1_A	auroraveil	1	A	v531fix	OPP	_x3r0v165mjolnirB	Core destroyed	585	0	1710	5220
+parent_auroraveil_s1_B	auroraveil	1	B	parent	OPP	_x3r0v165mjolnirB	Core destroyed	474	0	0	2120
+flagoff_auroraveil_s1_B	auroraveil	1	B	flagoff	OPP	_x3r0v165mjolnirB	Core destroyed	255	0	0	1450
+v530_auroraveil_s1_B	auroraveil	1	B	v530	OPP	_x3r0v165mjolnirB	Core destroyed	905	0	0	2210
+v531fix_auroraveil_s1_B	auroraveil	1	B	v531fix	US	_v531fix	Core destroyed	504	0	1400	220
+parent_auroraveil_s2_A	auroraveil	2	A	parent	US	parent_arm	Core destroyed	201	0	460	620
+flagoff_auroraveil_s2_A	auroraveil	2	A	flagoff	US	flagoff_arm	Core destroyed	432	0	1040	0
+v530_auroraveil_s2_A	auroraveil	2	A	v530	OPP	_x3r0v165mjolnirB	Core destroyed	178	0	180	810
+v531fix_auroraveil_s2_A	auroraveil	2	A	v531fix	OPP	_x3r0v165mjolnirB	Core destroyed	671	0	1450	3900
+parent_auroraveil_s2_B	auroraveil	2	B	parent	OPP	_x3r0v165mjolnirB	Core destroyed	184	0	0	1100
+flagoff_auroraveil_s2_B	auroraveil	2	B	flagoff	OPP	_x3r0v165mjolnirB	Titanium collected (tiebreak)	1000	0	6580	10700
+v530_auroraveil_s2_B	auroraveil	2	B	v530	OPP	_x3r0v165mjolnirB	Core destroyed	293	0	0	2210
+v531fix_auroraveil_s2_B	auroraveil	2	B	v531fix	OPP	_x3r0v165mjolnirB	Core destroyed	261	0	0	2060
+parent_glacierkeep_s1_A	glacierkeep	1	A	parent	US	parent_arm	Core destroyed	314	0	0	0
+flagoff_glacierkeep_s1_A	glacierkeep	1	A	flagoff	OPP	_x3r0v165mjolnirB	Core destroyed	303	0	0	710
+v530_glacierkeep_s1_A	glacierkeep	1	A	v530	OPP	_x3r0v165mjolnirB	Titanium collected (tiebreak)	1000	0	0	110
+v531fix_glacierkeep_s1_A	glacierkeep	1	A	v531fix	US	_v531fix	Core destroyed	480	0	0	0
+parent_glacierkeep_s1_B	glacierkeep	1	B	parent	OPP	_x3r0v165mjolnirB	Titanium collected (tiebreak)	1000	0	0	3610
+flagoff_glacierkeep_s1_B	glacierkeep	1	B	flagoff	OPP	_x3r0v165mjolnirB	Core destroyed	521	0	0	3700
+v530_glacierkeep_s1_B	glacierkeep	1	B	v530	OPP	_x3r0v165mjolnirB	Core destroyed	770	0	0	5000
+v531fix_glacierkeep_s1_B	glacierkeep	1	B	v531fix	OPP	_x3r0v165mjolnirB	Core destroyed	556	0	1250	4570
+parent_glacierkeep_s2_A	glacierkeep	2	A	parent	US	parent_arm	Core destroyed	281	0	0	110
+flagoff_glacierkeep_s2_A	glacierkeep	2	A	flagoff	US	flagoff_arm	Titanium stored (tiebreak)	1000	0	0	0
+v530_glacierkeep_s2_A	glacierkeep	2	A	v530	US	v530_arm	Titanium stored (tiebreak)	1000	0	0	0
+v531fix_glacierkeep_s2_A	glacierkeep	2	A	v531fix	OPP	_x3r0v165mjolnirB	Titanium collected (tiebreak)	1000	0	0	7360
+parent_glacierkeep_s2_B	glacierkeep	2	B	parent	OPP	_x3r0v165mjolnirB	Core destroyed	391	0	0	750
+flagoff_glacierkeep_s2_B	glacierkeep	2	B	flagoff	US	flagoff_arm	Core destroyed	990	0	0	0
+v530_glacierkeep_s2_B	glacierkeep	2	B	v530	US	v530_arm	Core destroyed	640	0	2910	1990
+v531fix_glacierkeep_s2_B	glacierkeep	2	B	v531fix	OPP	_x3r0v165mjolnirB	Core destroyed	488	0	0	640
+parent_yulerune_s1_A	yulerune	1	A	parent	OPP	_x3r0v165mjolnirB	Core destroyed	153	0	0	640
+flagoff_yulerune_s1_A	yulerune	1	A	flagoff	OPP	_x3r0v165mjolnirB	Core destroyed	160	0	0	600
+v530_yulerune_s1_A	yulerune	1	A	v530	OPP	_x3r0v165mjolnirB	Core destroyed	249	0	80	1340
+v531fix_yulerune_s1_A	yulerune	1	A	v531fix	OPP	_x3r0v165mjolnirB	Core destroyed	129	0	480	660
+parent_yulerune_s1_B	yulerune	1	B	parent	OPP	_x3r0v165mjolnirB	Core destroyed	278	0	70	1190
+flagoff_yulerune_s1_B	yulerune	1	B	flagoff	OPP	_x3r0v165mjolnirB	Core destroyed	327	0	0	640
+v530_yulerune_s1_B	yulerune	1	B	v530	OPP	_x3r0v165mjolnirB	Core destroyed	240	0	0	1460
+v531fix_yulerune_s1_B	yulerune	1	B	v531fix	OPP	_x3r0v165mjolnirB	Core destroyed	241	0	840	1420
+parent_yulerune_s2_A	yulerune	2	A	parent	OPP	_x3r0v165mjolnirB	Core destroyed	153	0	0	720
+flagoff_yulerune_s2_A	yulerune	2	A	flagoff	OPP	_x3r0v165mjolnirB	Core destroyed	101	0	0	520
+v530_yulerune_s2_A	yulerune	2	A	v530	OPP	_x3r0v165mjolnirB	Core destroyed	248	0	80	1560
+v531fix_yulerune_s2_A	yulerune	2	A	v531fix	OPP	_x3r0v165mjolnirB	Core destroyed	426	0	360	680
+parent_yulerune_s2_B	yulerune	2	B	parent	OPP	_x3r0v165mjolnirB	Titanium collected (tiebreak)	1000	0	0	7180
+flagoff_yulerune_s2_B	yulerune	2	B	flagoff	OPP	_x3r0v165mjolnirB	Titanium collected (tiebreak)	1000	0	460	3870
+v530_yulerune_s2_B	yulerune	2	B	v530	OPP	_x3r0v165mjolnirB	Core destroyed	350	0	2730	4260
+v531fix_yulerune_s2_B	yulerune	2	B	v531fix	OPP	_x3r0v165mjolnirB	Core destroyed	361	0	2770	2880
+parent_drakkarfjord_s1_A	drakkarfjord	1	A	parent	US	parent_arm	Core destroyed	285	0	0	0
+flagoff_drakkarfjord_s1_A	drakkarfjord	1	A	flagoff	OPP	_x3r0v165mjolnirB	Core destroyed	528	0	0	1970
+v530_drakkarfjord_s1_A	drakkarfjord	1	A	v530	OPP	_x3r0v165mjolnirB	Titanium collected (tiebreak)	1000	0	0	11600
+v531fix_drakkarfjord_s1_A	drakkarfjord	1	A	v531fix	OPP	_x3r0v165mjolnirB	Core destroyed	220	0	1210	500
+parent_drakkarfjord_s1_B	drakkarfjord	1	B	parent	OPP	_x3r0v165mjolnirB	Core destroyed	653	0	320	0
+flagoff_drakkarfjord_s1_B	drakkarfjord	1	B	flagoff	US	flagoff_arm	Core destroyed	196	0	920	0
+v530_drakkarfjord_s1_B	drakkarfjord	1	B	v530	OPP	_x3r0v165mjolnirB	Titanium collected (tiebreak)	1000	0	0	100
+v531fix_drakkarfjord_s1_B	drakkarfjord	1	B	v531fix	OPP	_x3r0v165mjolnirB	Core destroyed	454	0	0	1600
+parent_drakkarfjord_s2_A	drakkarfjord	2	A	parent	OPP	_x3r0v165mjolnirB	Core destroyed	532	0	0	2030
+flagoff_drakkarfjord_s2_A	drakkarfjord	2	A	flagoff	US	flagoff_arm	Core destroyed	285	0	0	0
+v530_drakkarfjord_s2_A	drakkarfjord	2	A	v530	US	v530_arm	Core destroyed	216	0	190	170
+v531fix_drakkarfjord_s2_A	drakkarfjord	2	A	v531fix	US	_v531fix	Core destroyed	226	0	330	0
+parent_drakkarfjord_s2_B	drakkarfjord	2	B	parent	US	parent_arm	Core destroyed	172	0	730	0
+flagoff_drakkarfjord_s2_B	drakkarfjord	2	B	flagoff	US	flagoff_arm	Core destroyed	453	0	310	0
+v530_drakkarfjord_s2_B	drakkarfjord	2	B	v530	US	v530_arm	Core destroyed	302	0	670	90
+v531fix_drakkarfjord_s2_B	drakkarfjord	2	B	v531fix	OPP	_x3r0v165mjolnirB	Titanium collected (tiebreak)	1000	0	0	6220
+parent_ragnarok_s1_A	ragnarok	1	A	parent	US	parent_arm	Core destroyed	126	0	580	210
+flagoff_ragnarok_s1_A	ragnarok	1	A	flagoff	US	flagoff_arm	Core destroyed	126	0	580	210
+v530_ragnarok_s1_A	ragnarok	1	A	v530	OPP	_x3r0v165mjolnirB	Core destroyed	165	0	0	790
+v531fix_ragnarok_s1_A	ragnarok	1	A	v531fix	US	_v531fix	Core destroyed	127	0	570	230
+parent_ragnarok_s1_B	ragnarok	1	B	parent	US	parent_arm	Core destroyed	309	0	800	490
+flagoff_ragnarok_s1_B	ragnarok	1	B	flagoff	US	flagoff_arm	Core destroyed	193	0	510	190
+v530_ragnarok_s1_B	ragnarok	1	B	v530	US	v530_arm	Core destroyed	153	0	410	220
+v531fix_ragnarok_s1_B	ragnarok	1	B	v531fix	US	_v531fix	Core destroyed	208	0	1000	220
+parent_ragnarok_s2_A	ragnarok	2	A	parent	US	parent_arm	Core destroyed	126	0	590	220
+flagoff_ragnarok_s2_A	ragnarok	2	A	flagoff	US	flagoff_arm	Core destroyed	126	0	590	220
+v530_ragnarok_s2_A	ragnarok	2	A	v530	OPP	_x3r0v165mjolnirB	Core destroyed	153	0	0	730
+v531fix_ragnarok_s2_A	ragnarok	2	A	v531fix	US	_v531fix	Core destroyed	127	0	570	230
+parent_ragnarok_s2_B	ragnarok	2	B	parent	US	parent_arm	Core destroyed	277	0	720	490
+flagoff_ragnarok_s2_B	ragnarok	2	B	flagoff	US	flagoff_arm	Core destroyed	193	0	510	180
+v530_ragnarok_s2_B	ragnarok	2	B	v530	US	v530_arm	Core destroyed	179	0	520	210
+v531fix_ragnarok_s2_B	ragnarok	2	B	v531fix	US	_v531fix	Core destroyed	183	0	870	230
+parent_royale_s1_A	royale	1	A	parent	US	parent_arm	Core destroyed	203	0	2330	420
+flagoff_royale_s1_A	royale	1	A	flagoff	US	flagoff_arm	Core destroyed	207	0	2310	60
+v530_royale_s1_A	royale	1	A	v530	OPP	_x3r0v165mjolnirB	Titanium collected (tiebreak)	1000	0	11620	13780
+v531fix_royale_s1_A	royale	1	A	v531fix	US	_v531fix	Core destroyed	471	0	5110	2240
+parent_royale_s1_B	royale	1	B	parent	US	parent_arm	Core destroyed	168	0	1420	50
+flagoff_royale_s1_B	royale	1	B	flagoff	US	flagoff_arm	Core destroyed	160	0	1260	70
+v530_royale_s1_B	royale	1	B	v530	OPP	_x3r0v165mjolnirB	Core destroyed	289	0	680	2770
+v531fix_royale_s1_B	royale	1	B	v531fix	US	_v531fix	Core destroyed	185	0	2030	80
+parent_royale_s2_A	royale	2	A	parent	US	parent_arm	Core destroyed	217	0	2810	440
+flagoff_royale_s2_A	royale	2	A	flagoff	US	flagoff_arm	Core destroyed	360	0	4320	2210
+v530_royale_s2_A	royale	2	A	v530	US	v530_arm	Core destroyed	208	0	680	0
+v531fix_royale_s2_A	royale	2	A	v531fix	US	_v531fix	Core destroyed	349	0	3830	200
+parent_royale_s2_B	royale	2	B	parent	US	parent_arm	Core destroyed	208	0	2000	70
+flagoff_royale_s2_B	royale	2	B	flagoff	US	flagoff_arm	Core destroyed	226	0	2480	640
+v530_royale_s2_B	royale	2	B	v530	US	v530_arm	Core destroyed	243	0	1350	0
+v531fix_royale_s2_B	royale	2	B	v531fix	US	_v531fix	Core destroyed	514	0	3940	2100
+parent_nordkap_s1_A	nordkap	1	A	parent	US	parent_arm	Core destroyed	164	0	660	70
+flagoff_nordkap_s1_A	nordkap	1	A	flagoff	US	flagoff_arm	Core destroyed	552	0	4500	670
+v530_nordkap_s1_A	nordkap	1	A	v530	US	v530_arm	Core destroyed	169	0	400	110
+v531fix_nordkap_s1_A	nordkap	1	A	v531fix	US	_v531fix	Core destroyed	805	0	90	70
+parent_nordkap_s1_B	nordkap	1	B	parent	US	parent_arm	Core destroyed	504	0	1360	110
+flagoff_nordkap_s1_B	nordkap	1	B	flagoff	US	flagoff_arm	Core destroyed	322	0	760	650
+v530_nordkap_s1_B	nordkap	1	B	v530	OPP	_x3r0v165mjolnirB	Core destroyed	132	0	200	610
+v531fix_nordkap_s1_B	nordkap	1	B	v531fix	OPP	_x3r0v165mjolnirB	Core destroyed	95	0	210	420
+parent_nordkap_s2_A	nordkap	2	A	parent	US	parent_arm	Core destroyed	276	0	1040	190
+flagoff_nordkap_s2_A	nordkap	2	A	flagoff	US	flagoff_arm	Core destroyed	258	0	2290	140
+v530_nordkap_s2_A	nordkap	2	A	v530	US	v530_arm	Core destroyed	197	0	470	70
+v531fix_nordkap_s2_A	nordkap	2	A	v531fix	US	_v531fix	Core destroyed	537	0	230	160
+parent_nordkap_s2_B	nordkap	2	B	parent	US	parent_arm	Core destroyed	309	0	750	840
+flagoff_nordkap_s2_B	nordkap	2	B	flagoff	OPP	_x3r0v165mjolnirB	Core destroyed	152	0	280	1290
+v530_nordkap_s2_B	nordkap	2	B	v530	US	v530_arm	Core destroyed	288	0	780	220
+v531fix_nordkap_s2_B	nordkap	2	B	v531fix	OPP	_x3r0v165mjolnirB	Core destroyed	414	0	200	5610
+parent_icefloe_s3_A	icefloe	3	A	parent	OPP	_x3r0v165mjolnirB	Core destroyed	196	0	0	780
+flagoff_icefloe_s3_A	icefloe	3	A	flagoff	OPP	_x3r0v165mjolnirB	Titanium collected (tiebreak)	1000	0	0	80
+v530_icefloe_s3_A	icefloe	3	A	v530	US	v530_arm	Core destroyed	201	0	400	0
+v531fix_icefloe_s3_A	icefloe	3	A	v531fix	OPP	_x3r0v165mjolnirB	Core destroyed	430	0	890	1040
+parent_icefloe_s3_B	icefloe	3	B	parent	OPP	_x3r0v165mjolnirB	Core destroyed	373	0	0	850
+flagoff_icefloe_s3_B	icefloe	3	B	flagoff	OPP	_x3r0v165mjolnirB	Core destroyed	120	0	0	610
+v530_icefloe_s3_B	icefloe	3	B	v530	OPP	_x3r0v165mjolnirB	Core destroyed	735	0	9080	7550
+v531fix_icefloe_s3_B	icefloe	3	B	v531fix	OPP	_x3r0v165mjolnirB	Core destroyed	675	0	5660	6750
+parent_icefloe_s4_A	icefloe	4	A	parent	OPP	_x3r0v165mjolnirB	Titanium collected (tiebreak)	1000	0	0	930
+flagoff_icefloe_s4_A	icefloe	4	A	flagoff	OPP	_x3r0v165mjolnirB	Core destroyed	481	0	790	3510
+v530_icefloe_s4_A	icefloe	4	A	v530	US	v530_arm	Core destroyed	451	0	1490	0
+v531fix_icefloe_s4_A	icefloe	4	A	v531fix	US	_v531fix	Core destroyed	355	0	1120	20
+parent_icefloe_s4_B	icefloe	4	B	parent	OPP	_x3r0v165mjolnirB	Core destroyed	141	0	0	550
+flagoff_icefloe_s4_B	icefloe	4	B	flagoff	OPP	_x3r0v165mjolnirB	Core destroyed	331	0	270	830
+v530_icefloe_s4_B	icefloe	4	B	v530	OPP	_x3r0v165mjolnirB	Core destroyed	719	0	7600	6000
+v531fix_icefloe_s4_B	icefloe	4	B	v531fix	US	_v531fix	Titanium collected (tiebreak)	1000	0	10290	6670
+parent_auroraveil_s3_A	auroraveil	3	A	parent	OPP	_x3r0v165mjolnirB	Core destroyed	621	0	830	180
+flagoff_auroraveil_s3_A	auroraveil	3	A	flagoff	US	flagoff_arm	Core destroyed	291	0	680	320
+v530_auroraveil_s3_A	auroraveil	3	A	v530	OPP	_x3r0v165mjolnirB	Core destroyed	184	0	0	1010
+v531fix_auroraveil_s3_A	auroraveil	3	A	v531fix	OPP	_x3r0v165mjolnirB	Core destroyed	673	0	1490	3920
+parent_auroraveil_s3_B	auroraveil	3	B	parent	OPP	_x3r0v165mjolnirB	Core destroyed	171	0	0	610
+flagoff_auroraveil_s3_B	auroraveil	3	B	flagoff	OPP	_x3r0v165mjolnirB	Core destroyed	254	0	0	1730
+v530_auroraveil_s3_B	auroraveil	3	B	v530	OPP	_x3r0v165mjolnirB	Core destroyed	580	0	0	4930
+v531fix_auroraveil_s3_B	auroraveil	3	B	v531fix	OPP	_x3r0v165mjolnirB	Core destroyed	461	0	460	2650
+parent_auroraveil_s4_A	auroraveil	4	A	parent	US	parent_arm	Core destroyed	209	0	480	0
+flagoff_auroraveil_s4_A	auroraveil	4	A	flagoff	US	flagoff_arm	Core destroyed	223	0	510	0
+v530_auroraveil_s4_A	auroraveil	4	A	v530	OPP	_x3r0v165mjolnirB	Core destroyed	164	0	0	740
+v531fix_auroraveil_s4_A	auroraveil	4	A	v531fix	OPP	_x3r0v165mjolnirB	Core destroyed	177	0	0	230
+parent_auroraveil_s4_B	auroraveil	4	B	parent	OPP	_x3r0v165mjolnirB	Core destroyed	209	0	0	1380
+flagoff_auroraveil_s4_B	auroraveil	4	B	flagoff	US	flagoff_arm	Harvesters (tiebreak)	1000	0	0	0
+v530_auroraveil_s4_B	auroraveil	4	B	v530	OPP	_x3r0v165mjolnirB	Core destroyed	391	0	160	2760
+v531fix_auroraveil_s4_B	auroraveil	4	B	v531fix	OPP	_x3r0v165mjolnirB	Core destroyed	200	0	0	1300
+parent_glacierkeep_s3_A	glacierkeep	3	A	parent	OPP	_x3r0v165mjolnirB	Core destroyed	323	0	0	690
+flagoff_glacierkeep_s3_A	glacierkeep	3	A	flagoff	OPP	_x3r0v165mjolnirB	Titanium collected (tiebreak)	1000	0	0	1430
+v530_glacierkeep_s3_A	glacierkeep	3	A	v530	US	v530_arm	Core destroyed	386	0	0	0
+v531fix_glacierkeep_s3_A	glacierkeep	3	A	v531fix	US	_v531fix	Harvesters (tiebreak)	493	0	0	0
+parent_glacierkeep_s3_B	glacierkeep	3	B	parent	US	parent_arm	Core destroyed	261	0	0	0
+flagoff_glacierkeep_s3_B	glacierkeep	3	B	flagoff	OPP	_x3r0v165mjolnirB	Core destroyed	460	0	0	4700
+v530_glacierkeep_s3_B	glacierkeep	3	B	v530	OPP	_x3r0v165mjolnirB	Core destroyed	397	0	0	850
+v531fix_glacierkeep_s3_B	glacierkeep	3	B	v531fix	OPP	_x3r0v165mjolnirB	Core destroyed	583	0	1300	4650
+parent_glacierkeep_s4_A	glacierkeep	4	A	parent	OPP	_x3r0v165mjolnirB	Core destroyed	381	0	0	540
+flagoff_glacierkeep_s4_A	glacierkeep	4	A	flagoff	OPP	_x3r0v165mjolnirB	Core destroyed	379	0	0	950
+v530_glacierkeep_s4_A	glacierkeep	4	A	v530	OPP	_x3r0v165mjolnirB	Core destroyed	460	0	0	5020
+v531fix_glacierkeep_s4_A	glacierkeep	4	A	v531fix	US	_v531fix	Core destroyed	621	0	0	0
+parent_glacierkeep_s4_B	glacierkeep	4	B	parent	OPP	_x3r0v165mjolnirB	Core destroyed	460	0	0	4700
+flagoff_glacierkeep_s4_B	glacierkeep	4	B	flagoff	US	flagoff_arm	Core destroyed	957	0	0	0
+v530_glacierkeep_s4_B	glacierkeep	4	B	v530	OPP	_x3r0v165mjolnirB	Core destroyed	598	0	2170	3230
+v531fix_glacierkeep_s4_B	glacierkeep	4	B	v531fix	OPP	_x3r0v165mjolnirB	Titanium collected (tiebreak)	1000	0	3010	8750
+parent_yulerune_s3_A	yulerune	3	A	parent	OPP	_x3r0v165mjolnirB	Core destroyed	197	0	0	830
+flagoff_yulerune_s3_A	yulerune	3	A	flagoff	OPP	_x3r0v165mjolnirB	Core destroyed	222	0	0	1020
+v530_yulerune_s3_A	yulerune	3	A	v530	OPP	_x3r0v165mjolnirB	Core destroyed	376	0	80	3900
+v531fix_yulerune_s3_A	yulerune	3	A	v531fix	OPP	_x3r0v165mjolnirB	Core destroyed	371	0	230	690
+parent_yulerune_s3_B	yulerune	3	B	parent	US	parent_arm	Core destroyed	329	0	1980	2190
+flagoff_yulerune_s3_B	yulerune	3	B	flagoff	OPP	_x3r0v165mjolnirB	Core destroyed	349	0	0	320
+v530_yulerune_s3_B	yulerune	3	B	v530	US	v530_arm	Core destroyed	420	0	3350	1530
+v531fix_yulerune_s3_B	yulerune	3	B	v531fix	US	_v531fix	Core destroyed	510	0	5690	5250
+parent_yulerune_s4_A	yulerune	4	A	parent	OPP	_x3r0v165mjolnirB	Core destroyed	222	0	0	1090
+flagoff_yulerune_s4_A	yulerune	4	A	flagoff	OPP	_x3r0v165mjolnirB	Core destroyed	101	0	0	520
+v530_yulerune_s4_A	yulerune	4	A	v530	OPP	_x3r0v165mjolnirB	Core destroyed	267	0	80	1650
+v531fix_yulerune_s4_A	yulerune	4	A	v531fix	OPP	_x3r0v165mjolnirB	Core destroyed	197	0	900	650
+parent_yulerune_s4_B	yulerune	4	B	parent	OPP	_x3r0v165mjolnirB	Core destroyed	340	0	0	2400
+flagoff_yulerune_s4_B	yulerune	4	B	flagoff	OPP	_x3r0v165mjolnirB	Core destroyed	495	0	0	2260
+v530_yulerune_s4_B	yulerune	4	B	v530	OPP	_x3r0v165mjolnirB	Titanium collected (tiebreak)	1000	0	6330	9390
+v531fix_yulerune_s4_B	yulerune	4	B	v531fix	OPP	_x3r0v165mjolnirB	Titanium collected (tiebreak)	1000	0	8270	10300
+parent_drakkarfjord_s3_A	drakkarfjord	3	A	parent	US	parent_arm	Core destroyed	885	0	0	140
+flagoff_drakkarfjord_s3_A	drakkarfjord	3	A	flagoff	US	flagoff_arm	Core destroyed	565	0	0	140
+v530_drakkarfjord_s3_A	drakkarfjord	3	A	v530	US	v530_arm	Core destroyed	583	0	1470	1880
+v531fix_drakkarfjord_s3_A	drakkarfjord	3	A	v531fix	US	_v531fix	Core destroyed	112	0	220	50
+parent_drakkarfjord_s3_B	drakkarfjord	3	B	parent	OPP	_x3r0v165mjolnirB	Titanium collected (tiebreak)	1000	0	320	1310
+flagoff_drakkarfjord_s3_B	drakkarfjord	3	B	flagoff	US	flagoff_arm	Core destroyed	182	0	770	0
+v530_drakkarfjord_s3_B	drakkarfjord	3	B	v530	OPP	_x3r0v165mjolnirB	Core destroyed	337	0	770	1240
+v531fix_drakkarfjord_s3_B	drakkarfjord	3	B	v531fix	OPP	_x3r0v165mjolnirB	Titanium collected (tiebreak)	1000	0	0	1460
+parent_drakkarfjord_s4_A	drakkarfjord	4	A	parent	OPP	_x3r0v165mjolnirB	Core destroyed	593	0	0	250
+flagoff_drakkarfjord_s4_A	drakkarfjord	4	A	flagoff	OPP	_x3r0v165mjolnirB	Titanium collected (tiebreak)	1000	0	0	140
+v530_drakkarfjord_s4_A	drakkarfjord	4	A	v530	OPP	_x3r0v165mjolnirB	Titanium collected (tiebreak)	1000	0	0	400
+v531fix_drakkarfjord_s4_A	drakkarfjord	4	A	v531fix	OPP	_x3r0v165mjolnirB	Core destroyed	571	0	520	1000
+parent_drakkarfjord_s4_B	drakkarfjord	4	B	parent	OPP	_x3r0v165mjolnirB	Core destroyed	653	0	320	0
+flagoff_drakkarfjord_s4_B	drakkarfjord	4	B	flagoff	US	flagoff_arm	Core destroyed	182	0	770	0
+v530_drakkarfjord_s4_B	drakkarfjord	4	B	v530	US	v530_arm	Core destroyed	302	0	670	90
+v531fix_drakkarfjord_s4_B	drakkarfjord	4	B	v531fix	OPP	_x3r0v165mjolnirB	Titanium collected (tiebreak)	1000	0	0	260
+parent_ragnarok_s3_A	ragnarok	3	A	parent	US	parent_arm	Core destroyed	132	0	610	430
+flagoff_ragnarok_s3_A	ragnarok	3	A	flagoff	US	flagoff_arm	Core destroyed	132	0	610	430
+v530_ragnarok_s3_A	ragnarok	3	A	v530	OPP	_x3r0v165mjolnirB	Core destroyed	145	0	0	690
+v531fix_ragnarok_s3_A	ragnarok	3	A	v531fix	US	_v531fix	Core destroyed	128	0	570	210
+parent_ragnarok_s3_B	ragnarok	3	B	parent	US	parent_arm	Core destroyed	193	0	510	190
+flagoff_ragnarok_s3_B	ragnarok	3	B	flagoff	US	flagoff_arm	Core destroyed	277	0	720	490
+v530_ragnarok_s3_B	ragnarok	3	B	v530	US	v530_arm	Core destroyed	197	0	520	180
+v531fix_ragnarok_s3_B	ragnarok	3	B	v531fix	US	_v531fix	Core destroyed	153	0	410	420
+parent_ragnarok_s4_A	ragnarok	4	A	parent	US	parent_arm	Core destroyed	120	0	520	170
+flagoff_ragnarok_s4_A	ragnarok	4	A	flagoff	US	flagoff_arm	Core destroyed	120	0	520	170
+v530_ragnarok_s4_A	ragnarok	4	A	v530	OPP	_x3r0v165mjolnirB	Core destroyed	145	0	0	690
+v531fix_ragnarok_s4_A	ragnarok	4	A	v531fix	US	_v531fix	Core destroyed	127	0	570	230
+parent_ragnarok_s4_B	ragnarok	4	B	parent	US	parent_arm	Core destroyed	309	0	800	490
+flagoff_ragnarok_s4_B	ragnarok	4	B	flagoff	US	flagoff_arm	Core destroyed	153	0	410	210
+v530_ragnarok_s4_B	ragnarok	4	B	v530	US	v530_arm	Core destroyed	337	0	870	880
+v531fix_ragnarok_s4_B	ragnarok	4	B	v531fix	US	_v531fix	Core destroyed	245	0	640	160
+parent_royale_s3_A	royale	3	A	parent	US	parent_arm	Core destroyed	168	0	1750	20
+flagoff_royale_s3_A	royale	3	A	flagoff	US	flagoff_arm	Core destroyed	248	0	3240	80
+v530_royale_s3_A	royale	3	A	v530	US	v530_arm	Core destroyed	257	0	530	100
+v531fix_royale_s3_A	royale	3	A	v531fix	US	_v531fix	Core destroyed	403	0	5050	1770
+parent_royale_s3_B	royale	3	B	parent	US	parent_arm	Core destroyed	298	0	3580	430
+flagoff_royale_s3_B	royale	3	B	flagoff	US	flagoff_arm	Core destroyed	296	0	2180	1250
+v530_royale_s3_B	royale	3	B	v530	US	v530_arm	Core destroyed	209	0	1670	1410
+v531fix_royale_s3_B	royale	3	B	v531fix	US	_v531fix	Core destroyed	302	0	3070	730
+parent_royale_s4_A	royale	4	A	parent	US	parent_arm	Core destroyed	262	0	2900	110
+flagoff_royale_s4_A	royale	4	A	flagoff	US	flagoff_arm	Core destroyed	136	0	1280	450
+v530_royale_s4_A	royale	4	A	v530	US	v530_arm	Core destroyed	213	0	480	0
+v531fix_royale_s4_A	royale	4	A	v531fix	US	_v531fix	Core destroyed	230	0	2290	380
+parent_royale_s4_B	royale	4	B	parent	US	parent_arm	Core destroyed	168	0	1800	0
+flagoff_royale_s4_B	royale	4	B	flagoff	US	flagoff_arm	Core destroyed	228	0	3660	490
+v530_royale_s4_B	royale	4	B	v530	US	v530_arm	Titanium collected (tiebreak)	1000	0	15450	8600
+v531fix_royale_s4_B	royale	4	B	v531fix	US	_v531fix	Core destroyed	280	0	2300	660
+parent_nordkap_s3_A	nordkap	3	A	parent	US	parent_arm	Core destroyed	274	0	1260	120
+flagoff_nordkap_s3_A	nordkap	3	A	flagoff	US	flagoff_arm	Core destroyed	263	0	1980	320
+v530_nordkap_s3_A	nordkap	3	A	v530	US	v530_arm	Core destroyed	500	0	2930	540
+v531fix_nordkap_s3_A	nordkap	3	A	v531fix	US	_v531fix	Core destroyed	452	0	850	110
+parent_nordkap_s3_B	nordkap	3	B	parent	US	parent_arm	Titanium collected (tiebreak)	1000	0	2480	210
+flagoff_nordkap_s3_B	nordkap	3	B	flagoff	OPP	_x3r0v165mjolnirB	Core destroyed	152	0	280	1290
+v530_nordkap_s3_B	nordkap	3	B	v530	OPP	_x3r0v165mjolnirB	Titanium collected (tiebreak)	1000	0	330	2550
+v531fix_nordkap_s3_B	nordkap	3	B	v531fix	OPP	_x3r0v165mjolnirB	Core destroyed	141	0	320	240
+parent_nordkap_s4_A	nordkap	4	A	parent	US	parent_arm	Core destroyed	133	0	340	40
+flagoff_nordkap_s4_A	nordkap	4	A	flagoff	US	flagoff_arm	Core destroyed	282	0	1340	40
+v530_nordkap_s4_A	nordkap	4	A	v530	US	v530_arm	Core destroyed	537	0	230	160
+v531fix_nordkap_s4_A	nordkap	4	A	v531fix	US	_v531fix	Core destroyed	305	0	980	120
+parent_nordkap_s4_B	nordkap	4	B	parent	US	parent_arm	Core destroyed	514	0	3190	1020
+flagoff_nordkap_s4_B	nordkap	4	B	flagoff	US	flagoff_arm	Core destroyed	521	0	3280	1020
+v530_nordkap_s4_B	nordkap	4	B	v530	OPP	_x3r0v165mjolnirB	Core destroyed	132	0	200	610
+v531fix_nordkap_s4_B	nordkap	4	B	v531fix	US	_v531fix	Core destroyed	242	0	400	110
+parent_icefloe_s5_A	icefloe	5	A	parent	OPP	_x3r0v165mjolnirB	Core destroyed	377	0	0	2210
+flagoff_icefloe_s5_A	icefloe	5	A	flagoff	OPP	_x3r0v165mjolnirB	Titanium collected (tiebreak)	1000	0	250	6540
+v530_icefloe_s5_A	icefloe	5	A	v530	US	v530_arm	Core destroyed	560	0	740	20
+v531fix_icefloe_s5_A	icefloe	5	A	v531fix	US	_v531fix	Core destroyed	168	0	380	140
+parent_icefloe_s5_B	icefloe	5	B	parent	OPP	_x3r0v165mjolnirB	Core destroyed	373	0	0	850
+flagoff_icefloe_s5_B	icefloe	5	B	flagoff	OPP	_x3r0v165mjolnirB	Core destroyed	441	0	420	550
+v530_icefloe_s5_B	icefloe	5	B	v530	US	v530_arm	Core destroyed	274	0	1130	1240
+v531fix_icefloe_s5_B	icefloe	5	B	v531fix	OPP	_x3r0v165mjolnirB	Titanium collected (tiebreak)	1000	0	8720	13930
+parent_icefloe_s6_A	icefloe	6	A	parent	OPP	_x3r0v165mjolnirB	Core destroyed	334	0	0	620
+flagoff_icefloe_s6_A	icefloe	6	A	flagoff	OPP	_x3r0v165mjolnirB	Core destroyed	589	0	0	6450
+v530_icefloe_s6_A	icefloe	6	A	v530	OPP	_x3r0v165mjolnirB	Core destroyed	221	0	490	1230
+v531fix_icefloe_s6_A	icefloe	6	A	v531fix	US	_v531fix	Core destroyed	314	0	740	70
+parent_icefloe_s6_B	icefloe	6	B	parent	OPP	_x3r0v165mjolnirB	Core destroyed	141	0	0	550
+flagoff_icefloe_s6_B	icefloe	6	B	flagoff	OPP	_x3r0v165mjolnirB	Core destroyed	373	0	0	850
+v530_icefloe_s6_B	icefloe	6	B	v530	OPP	_x3r0v165mjolnirB	Core destroyed	495	0	2820	7390
+v531fix_icefloe_s6_B	icefloe	6	B	v531fix	OPP	_x3r0v165mjolnirB	Core destroyed	173	0	640	470
+parent_auroraveil_s5_A	auroraveil	5	A	parent	US	parent_arm	Core destroyed	449	0	1080	0
+flagoff_auroraveil_s5_A	auroraveil	5	A	flagoff	OPP	_x3r0v165mjolnirB	Core destroyed	261	0	610	250
+v530_auroraveil_s5_A	auroraveil	5	A	v530	OPP	_x3r0v165mjolnirB	Core destroyed	191	0	200	1020
+v531fix_auroraveil_s5_A	auroraveil	5	A	v531fix	OPP	_x3r0v165mjolnirB	Core destroyed	265	0	320	1000
+parent_auroraveil_s5_B	auroraveil	5	B	parent	OPP	_x3r0v165mjolnirB	Core destroyed	171	0	0	610
+flagoff_auroraveil_s5_B	auroraveil	5	B	flagoff	OPP	_x3r0v165mjolnirB	Core destroyed	217	0	0	290
+v530_auroraveil_s5_B	auroraveil	5	B	v530	OPP	_x3r0v165mjolnirB	Core destroyed	316	0	860	620
+v531fix_auroraveil_s5_B	auroraveil	5	B	v531fix	OPP	_x3r0v165mjolnirB	Core destroyed	210	0	0	1490
+parent_auroraveil_s6_A	auroraveil	6	A	parent	US	parent_arm	Core destroyed	344	0	820	130
+flagoff_auroraveil_s6_A	auroraveil	6	A	flagoff	US	flagoff_arm	Core destroyed	285	0	670	10
+v530_auroraveil_s6_A	auroraveil	6	A	v530	OPP	_x3r0v165mjolnirB	Core destroyed	164	0	0	740
+v531fix_auroraveil_s6_A	auroraveil	6	A	v531fix	OPP	_x3r0v165mjolnirB	Core destroyed	174	0	270	640
+parent_auroraveil_s6_B	auroraveil	6	B	parent	OPP	_x3r0v165mjolnirB	Core destroyed	293	0	0	840
+flagoff_auroraveil_s6_B	auroraveil	6	B	flagoff	OPP	_x3r0v165mjolnirB	Core destroyed	192	0	0	340
+v530_auroraveil_s6_B	auroraveil	6	B	v530	OPP	_x3r0v165mjolnirB	Core destroyed	140	0	0	950
+v531fix_auroraveil_s6_B	auroraveil	6	B	v531fix	OPP	_x3r0v165mjolnirB	Core destroyed	410	0	0	3540
+parent_glacierkeep_s5_A	glacierkeep	5	A	parent	OPP	_x3r0v165mjolnirB	Titanium collected (tiebreak)	1000	0	350	710
+flagoff_glacierkeep_s5_A	glacierkeep	5	A	flagoff	OPP	_x3r0v165mjolnirB	Core destroyed	316	0	0	900
+v530_glacierkeep_s5_A	glacierkeep	5	A	v530	OPP	_x3r0v165mjolnirB	Titanium collected (tiebreak)	1000	0	0	3540
+v531fix_glacierkeep_s5_A	glacierkeep	5	A	v531fix	OPP	_x3r0v165mjolnirB	Core destroyed	319	0	0	2560
+parent_glacierkeep_s5_B	glacierkeep	5	B	parent	US	parent_arm	Core destroyed	361	0	0	0
+flagoff_glacierkeep_s5_B	glacierkeep	5	B	flagoff	OPP	_x3r0v165mjolnirB	Core destroyed	277	0	0	1090
+v530_glacierkeep_s5_B	glacierkeep	5	B	v530	OPP	_x3r0v165mjolnirB	Core destroyed	455	0	0	2000
+v531fix_glacierkeep_s5_B	glacierkeep	5	B	v531fix	OPP	_x3r0v165mjolnirB	Core destroyed	340	0	0	660
+parent_glacierkeep_s6_A	glacierkeep	6	A	parent	US	parent_arm	Core destroyed	293	0	0	290
+flagoff_glacierkeep_s6_A	glacierkeep	6	A	flagoff	OPP	_x3r0v165mjolnirB	Core destroyed	292	0	0	2430
+v530_glacierkeep_s6_A	glacierkeep	6	A	v530	OPP	_x3r0v165mjolnirB	Titanium collected (tiebreak)	1000	0	0	460
+v531fix_glacierkeep_s6_A	glacierkeep	6	A	v531fix	OPP	_x3r0v165mjolnirB	Titanium collected (tiebreak)	1000	0	0	11870
+parent_glacierkeep_s6_B	glacierkeep	6	B	parent	OPP	_x3r0v165mjolnirB	Core destroyed	690	0	0	3800
+flagoff_glacierkeep_s6_B	glacierkeep	6	B	flagoff	OPP	_x3r0v165mjolnirB	Core destroyed	441	0	0	690
+v530_glacierkeep_s6_B	glacierkeep	6	B	v530	OPP	_x3r0v165mjolnirB	Core destroyed	312	0	0	1340
+v531fix_glacierkeep_s6_B	glacierkeep	6	B	v531fix	OPP	_x3r0v165mjolnirB	Core destroyed	223	0	0	590
+parent_yulerune_s5_A	yulerune	5	A	parent	OPP	_x3r0v165mjolnirB	Core destroyed	173	0	0	590
+flagoff_yulerune_s5_A	yulerune	5	A	flagoff	OPP	_x3r0v165mjolnirB	Core destroyed	194	0	0	480
+v530_yulerune_s5_A	yulerune	5	A	v530	OPP	_x3r0v165mjolnirB	Core destroyed	379	0	80	3980
+v531fix_yulerune_s5_A	yulerune	5	A	v531fix	OPP	_x3r0v165mjolnirB	Core destroyed	129	0	480	660
+parent_yulerune_s5_B	yulerune	5	B	parent	OPP	_x3r0v165mjolnirB	Core destroyed	297	0	70	520
+flagoff_yulerune_s5_B	yulerune	5	B	flagoff	US	flagoff_arm	Core destroyed	280	0	1070	0
+v530_yulerune_s5_B	yulerune	5	B	v530	OPP	_x3r0v165mjolnirB	Core destroyed	474	0	3950	4930
+v531fix_yulerune_s5_B	yulerune	5	B	v531fix	US	_v531fix	Core destroyed	388	0	4860	2130
+parent_yulerune_s6_A	yulerune	6	A	parent	OPP	_x3r0v165mjolnirB	Core destroyed	145	0	0	370
+flagoff_yulerune_s6_A	yulerune	6	A	flagoff	OPP	_x3r0v165mjolnirB	Core destroyed	204	0	0	1390
+v530_yulerune_s6_A	yulerune	6	A	v530	OPP	_x3r0v165mjolnirB	Core destroyed	250	0	90	1690
+v531fix_yulerune_s6_A	yulerune	6	A	v531fix	US	_v531fix	Core destroyed	361	0	230	190
+parent_yulerune_s6_B	yulerune	6	B	parent	US	parent_arm	Core destroyed	314	0	1470	1130
+flagoff_yulerune_s6_B	yulerune	6	B	flagoff	OPP	_x3r0v165mjolnirB	Core destroyed	303	0	0	1200
+v530_yulerune_s6_B	yulerune	6	B	v530	US	v530_arm	Core destroyed	432	0	5520	430
+v531fix_yulerune_s6_B	yulerune	6	B	v531fix	OPP	_x3r0v165mjolnirB	Core destroyed	287	0	320	1290
+parent_drakkarfjord_s5_A	drakkarfjord	5	A	parent	US	parent_arm	Core destroyed	285	0	0	0
+flagoff_drakkarfjord_s5_A	drakkarfjord	5	A	flagoff	OPP	_x3r0v165mjolnirB	Core destroyed	457	0	0	200
+v530_drakkarfjord_s5_A	drakkarfjord	5	A	v530	OPP	_x3r0v165mjolnirB	Core destroyed	160	0	0	800
+v531fix_drakkarfjord_s5_A	drakkarfjord	5	A	v531fix	US	_v531fix	Core destroyed	173	0	900	0
+parent_drakkarfjord_s5_B	drakkarfjord	5	B	parent	OPP	_x3r0v165mjolnirB	Core destroyed	689	0	320	530
+flagoff_drakkarfjord_s5_B	drakkarfjord	5	B	flagoff	US	flagoff_arm	Core destroyed	196	0	920	0
+v530_drakkarfjord_s5_B	drakkarfjord	5	B	v530	US	v530_arm	Core destroyed	321	0	320	0
+v531fix_drakkarfjord_s5_B	drakkarfjord	5	B	v531fix	OPP	_x3r0v165mjolnirB	Core destroyed	360	0	0	500
+parent_drakkarfjord_s6_A	drakkarfjord	6	A	parent	US	parent_arm	Core destroyed	301	0	0	140
+flagoff_drakkarfjord_s6_A	drakkarfjord	6	A	flagoff	US	flagoff_arm	Core destroyed	285	0	0	0
+v530_drakkarfjord_s6_A	drakkarfjord	6	A	v530	OPP	_x3r0v165mjolnirB	Titanium collected (tiebreak)	1000	0	1820	12740
+v531fix_drakkarfjord_s6_A	drakkarfjord	6	A	v531fix	US	_v531fix	Core destroyed	162	0	320	60
+parent_drakkarfjord_s6_B	drakkarfjord	6	B	parent	US	parent_arm	Core destroyed	196	0	920	0
+flagoff_drakkarfjord_s6_B	drakkarfjord	6	B	flagoff	US	flagoff_arm	Core destroyed	243	0	1080	0
+v530_drakkarfjord_s6_B	drakkarfjord	6	B	v530	OPP	_x3r0v165mjolnirB	Titanium collected (tiebreak)	1000	0	0	350
+v531fix_drakkarfjord_s6_B	drakkarfjord	6	B	v531fix	OPP	_x3r0v165mjolnirB	Titanium collected (tiebreak)	1000	0	0	260
+parent_ragnarok_s5_A	ragnarok	5	A	parent	US	parent_arm	Core destroyed	126	0	590	220
+flagoff_ragnarok_s5_A	ragnarok	5	A	flagoff	US	flagoff_arm	Core destroyed	120	0	550	170
+v530_ragnarok_s5_A	ragnarok	5	A	v530	OPP	_x3r0v165mjolnirB	Core destroyed	145	0	0	690
+v531fix_ragnarok_s5_A	ragnarok	5	A	v531fix	US	_v531fix	Core destroyed	127	0	570	230
+parent_ragnarok_s5_B	ragnarok	5	B	parent	US	parent_arm	Core destroyed	153	0	410	210
+flagoff_ragnarok_s5_B	ragnarok	5	B	flagoff	US	flagoff_arm	Core destroyed	277	0	720	490
+v530_ragnarok_s5_B	ragnarok	5	B	v530	US	v530_arm	Core destroyed	337	0	870	880
+v531fix_ragnarok_s5_B	ragnarok	5	B	v531fix	US	_v531fix	Core destroyed	168	0	800	460
+parent_ragnarok_s6_A	ragnarok	6	A	parent	US	parent_arm	Core destroyed	149	0	480	430
+flagoff_ragnarok_s6_A	ragnarok	6	A	flagoff	US	flagoff_arm	Core destroyed	126	0	580	210
+v530_ragnarok_s6_A	ragnarok	6	A	v530	OPP	_x3r0v165mjolnirB	Core destroyed	165	0	0	790
+v531fix_ragnarok_s6_A	ragnarok	6	A	v531fix	US	_v531fix	Core destroyed	127	0	570	230
+parent_ragnarok_s6_B	ragnarok	6	B	parent	US	parent_arm	Core destroyed	193	0	510	190
+flagoff_ragnarok_s6_B	ragnarok	6	B	flagoff	US	flagoff_arm	Core destroyed	187	0	500	190
+v530_ragnarok_s6_B	ragnarok	6	B	v530	US	v530_arm	Core destroyed	337	0	870	880
+v531fix_ragnarok_s6_B	ragnarok	6	B	v531fix	US	_v531fix	Core destroyed	153	0	410	420
+parent_royale_s5_A	royale	5	A	parent	US	parent_arm	Core destroyed	259	0	3610	1040
+flagoff_royale_s5_A	royale	5	A	flagoff	US	flagoff_arm	Core destroyed	265	0	3230	380
+v530_royale_s5_A	royale	5	A	v530	OPP	_x3r0v165mjolnirB	Core destroyed	339	0	770	2090
+v531fix_royale_s5_A	royale	5	A	v531fix	OPP	_x3r0v165mjolnirB	Core destroyed	457	0	4940	5270
+parent_royale_s5_B	royale	5	B	parent	US	parent_arm	Core destroyed	179	0	1920	80
+flagoff_royale_s5_B	royale	5	B	flagoff	US	flagoff_arm	Core destroyed	165	0	1760	0
+v530_royale_s5_B	royale	5	B	v530	US	v530_arm	Core destroyed	223	0	1480	60
+v531fix_royale_s5_B	royale	5	B	v531fix	OPP	_x3r0v165mjolnirB	Core destroyed	401	0	70	4030
+parent_royale_s6_A	royale	6	A	parent	US	parent_arm	Core destroyed	523	0	4110	3070
+flagoff_royale_s6_A	royale	6	A	flagoff	US	flagoff_arm	Core destroyed	225	0	2940	1020
+v530_royale_s6_A	royale	6	A	v530	US	v530_arm	Core destroyed	296	0	2280	640
+v531fix_royale_s6_A	royale	6	A	v531fix	US	_v531fix	Core destroyed	234	0	1880	0
+parent_royale_s6_B	royale	6	B	parent	US	parent_arm	Core destroyed	234	0	3810	510
+flagoff_royale_s6_B	royale	6	B	flagoff	US	flagoff_arm	Core destroyed	212	0	2860	410
+v530_royale_s6_B	royale	6	B	v530	US	v530_arm	Core destroyed	183	0	1610	20
+v531fix_royale_s6_B	royale	6	B	v531fix	US	_v531fix	Core destroyed	650	0	5840	3140
+parent_nordkap_s5_A	nordkap	5	A	parent	US	parent_arm	Core destroyed	164	0	660	70
+flagoff_nordkap_s5_A	nordkap	5	A	flagoff	US	flagoff_arm	Titanium collected (tiebreak)	1000	0	140	20
+v530_nordkap_s5_A	nordkap	5	A	v530	US	v530_arm	Core destroyed	382	0	190	120
+v531fix_nordkap_s5_A	nordkap	5	A	v531fix	US	_v531fix	Core destroyed	537	0	230	160
+parent_nordkap_s5_B	nordkap	5	B	parent	US	parent_arm	Core destroyed	382	0	1100	830
+flagoff_nordkap_s5_B	nordkap	5	B	flagoff	OPP	_x3r0v165mjolnirB	Core destroyed	138	0	290	630
+v530_nordkap_s5_B	nordkap	5	B	v530	OPP	_x3r0v165mjolnirB	Core destroyed	445	0	1080	3580
+v531fix_nordkap_s5_B	nordkap	5	B	v531fix	OPP	_x3r0v165mjolnirB	Core destroyed	533	0	1300	2430
+parent_nordkap_s6_A	nordkap	6	A	parent	OPP	_x3r0v165mjolnirB	Core destroyed	345	0	120	570
+flagoff_nordkap_s6_A	nordkap	6	A	flagoff	US	flagoff_arm	Core destroyed	245	0	250	20
+v530_nordkap_s6_A	nordkap	6	A	v530	US	v530_arm	Core destroyed	603	0	570	80
+v531fix_nordkap_s6_A	nordkap	6	A	v531fix	US	_v531fix	Core destroyed	709	0	210	70
+parent_nordkap_s6_B	nordkap	6	B	parent	US	parent_arm	Core destroyed	309	0	750	840
+flagoff_nordkap_s6_B	nordkap	6	B	flagoff	OPP	_x3r0v165mjolnirB	Core destroyed	404	0	240	5280
+v530_nordkap_s6_B	nordkap	6	B	v530	OPP	_x3r0v165mjolnirB	Core destroyed	132	0	200	610
+v531fix_nordkap_s6_B	nordkap	6	B	v531fix	OPP	_x3r0v165mjolnirB	Core destroyed	382	0	930	2540
+parent_icefloe_s7_A	icefloe	7	A	parent	OPP	_x3r0v165mjolnirB	Core destroyed	189	0	0	1270
+flagoff_icefloe_s7_A	icefloe	7	A	flagoff	OPP	_x3r0v165mjolnirB	Core destroyed	149	0	0	620
+v530_icefloe_s7_A	icefloe	7	A	v530	US	v530_arm	Core destroyed	360	0	460	50
+v531fix_icefloe_s7_A	icefloe	7	A	v531fix	US	_v531fix	Titanium collected (tiebreak)	1000	0	2840	1200
+parent_icefloe_s7_B	icefloe	7	B	parent	OPP	_x3r0v165mjolnirB	Core destroyed	362	0	0	860
+flagoff_icefloe_s7_B	icefloe	7	B	flagoff	OPP	_x3r0v165mjolnirB	Core destroyed	120	0	0	610
+v530_icefloe_s7_B	icefloe	7	B	v530	OPP	_x3r0v165mjolnirB	Titanium collected (tiebreak)	1000	0	10650	19100
+v531fix_icefloe_s7_B	icefloe	7	B	v531fix	OPP	_x3r0v165mjolnirB	Titanium collected (tiebreak)	1000	0	8410	16530
+parent_icefloe_s8_A	icefloe	8	A	parent	OPP	_x3r0v165mjolnirB	Core destroyed	367	0	1290	1140
+flagoff_icefloe_s8_A	icefloe	8	A	flagoff	OPP	_x3r0v165mjolnirB	Core destroyed	414	0	0	4200
+v530_icefloe_s8_A	icefloe	8	A	v530	OPP	_x3r0v165mjolnirB	Core destroyed	346	0	440	1410
+v531fix_icefloe_s8_A	icefloe	8	A	v531fix	OPP	_x3r0v165mjolnirB	Titanium collected (tiebreak)	1000	0	4330	10300
+parent_icefloe_s8_B	icefloe	8	B	parent	OPP	_x3r0v165mjolnirB	Core destroyed	246	0	100	540
+flagoff_icefloe_s8_B	icefloe	8	B	flagoff	OPP	_x3r0v165mjolnirB	Core destroyed	235	0	0	980
+v530_icefloe_s8_B	icefloe	8	B	v530	OPP	_x3r0v165mjolnirB	Core destroyed	377	0	2810	4170
+v531fix_icefloe_s8_B	icefloe	8	B	v531fix	US	_v531fix	Core destroyed	476	0	5340	2330
+parent_auroraveil_s7_A	auroraveil	7	A	parent	OPP	_x3r0v165mjolnirB	Core destroyed	170	0	380	560
+flagoff_auroraveil_s7_A	auroraveil	7	A	flagoff	US	flagoff_arm	Core destroyed	206	0	470	10
+v530_auroraveil_s7_A	auroraveil	7	A	v530	OPP	_x3r0v165mjolnirB	Core destroyed	166	0	140	890
+v531fix_auroraveil_s7_A	auroraveil	7	A	v531fix	OPP	_x3r0v165mjolnirB	Core destroyed	327	0	570	760
+parent_auroraveil_s7_B	auroraveil	7	B	parent	OPP	_x3r0v165mjolnirB	Core destroyed	133	0	0	620
+flagoff_auroraveil_s7_B	auroraveil	7	B	flagoff	OPP	_x3r0v165mjolnirB	Core destroyed	276	0	0	2200
+v530_auroraveil_s7_B	auroraveil	7	B	v530	OPP	_x3r0v165mjolnirB	Core destroyed	293	0	0	2210
+v531fix_auroraveil_s7_B	auroraveil	7	B	v531fix	OPP	_x3r0v165mjolnirB	Core destroyed	587	0	0	930
+parent_auroraveil_s8_A	auroraveil	8	A	parent	US	parent_arm	Core destroyed	184	0	530	40
+flagoff_auroraveil_s8_A	auroraveil	8	A	flagoff	US	flagoff_arm	Core destroyed	417	0	1000	0
+v530_auroraveil_s8_A	auroraveil	8	A	v530	OPP	_x3r0v165mjolnirB	Core destroyed	200	0	100	1230
+v531fix_auroraveil_s8_A	auroraveil	8	A	v531fix	OPP	_x3r0v165mjolnirB	Core destroyed	250	0	0	1540
+parent_auroraveil_s8_B	auroraveil	8	B	parent	OPP	_x3r0v165mjolnirB	Titanium collected (tiebreak)	1000	0	0	7670
+flagoff_auroraveil_s8_B	auroraveil	8	B	flagoff	OPP	_x3r0v165mjolnirB	Core destroyed	190	0	0	990
+v530_auroraveil_s8_B	auroraveil	8	B	v530	OPP	_x3r0v165mjolnirB	Core destroyed	293	0	0	680
+v531fix_auroraveil_s8_B	auroraveil	8	B	v531fix	OPP	_x3r0v165mjolnirB	Core destroyed	251	0	0	410
+parent_glacierkeep_s7_A	glacierkeep	7	A	parent	US	parent_arm	Core destroyed	554	0	1240	0
+flagoff_glacierkeep_s7_A	glacierkeep	7	A	flagoff	OPP	_x3r0v165mjolnirB	Core destroyed	633	0	0	690
+v530_glacierkeep_s7_A	glacierkeep	7	A	v530	OPP	_x3r0v165mjolnirB	Titanium collected (tiebreak)	1000	0	0	700
+v531fix_glacierkeep_s7_A	glacierkeep	7	A	v531fix	US	_v531fix	Core destroyed	657	0	0	0
+parent_glacierkeep_s7_B	glacierkeep	7	B	parent	OPP	_x3r0v165mjolnirB	Core destroyed	249	0	0	940
+flagoff_glacierkeep_s7_B	glacierkeep	7	B	flagoff	OPP	_x3r0v165mjolnirB	Core destroyed	379	0	0	820
+v530_glacierkeep_s7_B	glacierkeep	7	B	v530	OPP	_x3r0v165mjolnirB	Core destroyed	292	0	0	560
+v531fix_glacierkeep_s7_B	glacierkeep	7	B	v531fix	OPP	_x3r0v165mjolnirB	Core destroyed	589	0	0	750
+parent_glacierkeep_s8_A	glacierkeep	8	A	parent	OPP	_x3r0v165mjolnirB	Titanium collected (tiebreak)	1000	0	0	10070
+flagoff_glacierkeep_s8_A	glacierkeep	8	A	flagoff	OPP	_x3r0v165mjolnirB	Core destroyed	438	0	0	930
+v530_glacierkeep_s8_A	glacierkeep	8	A	v530	US	v530_arm	Core destroyed	501	0	0	0
+v531fix_glacierkeep_s8_A	glacierkeep	8	A	v531fix	OPP	_x3r0v165mjolnirB	Core destroyed	287	0	0	2820
+parent_glacierkeep_s8_B	glacierkeep	8	B	parent	OPP	_x3r0v165mjolnirB	Core destroyed	398	0	0	1190
+flagoff_glacierkeep_s8_B	glacierkeep	8	B	flagoff	OPP	_x3r0v165mjolnirB	Core destroyed	661	0	0	5070
+v530_glacierkeep_s8_B	glacierkeep	8	B	v530	OPP	_x3r0v165mjolnirB	Core destroyed	677	0	4700	6420
+v531fix_glacierkeep_s8_B	glacierkeep	8	B	v531fix	OPP	_x3r0v165mjolnirB	Titanium collected (tiebreak)	1000	0	0	8490
+parent_yulerune_s7_A	yulerune	7	A	parent	OPP	_x3r0v165mjolnirB	Core destroyed	160	0	0	600
+flagoff_yulerune_s7_A	yulerune	7	A	flagoff	OPP	_x3r0v165mjolnirB	Titanium collected (tiebreak)	1000	0	0	190
+v530_yulerune_s7_A	yulerune	7	A	v530	OPP	_x3r0v165mjolnirB	Core destroyed	321	0	110	2210
+v531fix_yulerune_s7_A	yulerune	7	A	v531fix	OPP	_x3r0v165mjolnirB	Core destroyed	301	0	230	1270
+parent_yulerune_s7_B	yulerune	7	B	parent	US	parent_arm	Core destroyed	349	0	120	110
+flagoff_yulerune_s7_B	yulerune	7	B	flagoff	OPP	_x3r0v165mjolnirB	Core destroyed	451	0	0	2210
+v530_yulerune_s7_B	yulerune	7	B	v530	OPP	_x3r0v165mjolnirB	Core destroyed	472	0	1880	3920
+v531fix_yulerune_s7_B	yulerune	7	B	v531fix	US	_v531fix	Core destroyed	716	0	6030	4380
+parent_yulerune_s8_A	yulerune	8	A	parent	OPP	_x3r0v165mjolnirB	Core destroyed	160	0	0	600
+flagoff_yulerune_s8_A	yulerune	8	A	flagoff	OPP	_x3r0v165mjolnirB	Core destroyed	221	0	0	270
+v530_yulerune_s8_A	yulerune	8	A	v530	OPP	_x3r0v165mjolnirB	Core destroyed	469	0	120	2190
+v531fix_yulerune_s8_A	yulerune	8	A	v531fix	US	_v531fix	Core destroyed	223	0	1150	110
+parent_yulerune_s8_B	yulerune	8	B	parent	OPP	_x3r0v165mjolnirB	Core destroyed	332	0	220	1020
+flagoff_yulerune_s8_B	yulerune	8	B	flagoff	OPP	_x3r0v165mjolnirB	Core destroyed	557	0	0	40
+v530_yulerune_s8_B	yulerune	8	B	v530	OPP	_x3r0v165mjolnirB	Core destroyed	313	0	0	1040
+v531fix_yulerune_s8_B	yulerune	8	B	v531fix	US	_v531fix	Core destroyed	487	0	2570	3830
+parent_drakkarfjord_s7_A	drakkarfjord	7	A	parent	OPP	_x3r0v165mjolnirB	Titanium collected (tiebreak)	1000	0	0	6570
+flagoff_drakkarfjord_s7_A	drakkarfjord	7	A	flagoff	OPP	_x3r0v165mjolnirB	Titanium collected (tiebreak)	1000	0	0	6620
+v530_drakkarfjord_s7_A	drakkarfjord	7	A	v530	OPP	_x3r0v165mjolnirB	Core destroyed	229	0	10	970
+v531fix_drakkarfjord_s7_A	drakkarfjord	7	A	v531fix	US	_v531fix	Core destroyed	108	0	210	0
+parent_drakkarfjord_s7_B	drakkarfjord	7	B	parent	US	parent_arm	Core destroyed	196	0	920	0
+flagoff_drakkarfjord_s7_B	drakkarfjord	7	B	flagoff	US	flagoff_arm	Core destroyed	175	0	750	0
+v530_drakkarfjord_s7_B	drakkarfjord	7	B	v530	US	v530_arm	Core destroyed	302	0	670	90
+v531fix_drakkarfjord_s7_B	drakkarfjord	7	B	v531fix	OPP	_x3r0v165mjolnirB	Core destroyed	454	0	0	1600
+parent_drakkarfjord_s8_A	drakkarfjord	8	A	parent	OPP	_x3r0v165mjolnirB	Titanium collected (tiebreak)	1000	0	0	140
+flagoff_drakkarfjord_s8_A	drakkarfjord	8	A	flagoff	US	flagoff_arm	Core destroyed	285	0	0	0
+v530_drakkarfjord_s8_A	drakkarfjord	8	A	v530	OPP	_x3r0v165mjolnirB	Core destroyed	474	0	0	2490
+v531fix_drakkarfjord_s8_A	drakkarfjord	8	A	v531fix	OPP	_x3r0v165mjolnirB	Core destroyed	629	0	640	1230
+parent_drakkarfjord_s8_B	drakkarfjord	8	B	parent	US	parent_arm	Core destroyed	283	0	1470	0
+flagoff_drakkarfjord_s8_B	drakkarfjord	8	B	flagoff	US	flagoff_arm	Core destroyed	453	0	310	0
+v530_drakkarfjord_s8_B	drakkarfjord	8	B	v530	US	v530_arm	Core destroyed	302	0	670	90
+v531fix_drakkarfjord_s8_B	drakkarfjord	8	B	v531fix	OPP	_x3r0v165mjolnirB	Titanium collected (tiebreak)	1000	0	0	260
+parent_ragnarok_s7_A	ragnarok	7	A	parent	US	parent_arm	Core destroyed	116	0	530	360
+flagoff_ragnarok_s7_A	ragnarok	7	A	flagoff	US	flagoff_arm	Core destroyed	149	0	480	430
+v530_ragnarok_s7_A	ragnarok	7	A	v530	OPP	_x3r0v165mjolnirB	Core destroyed	165	0	0	790
+v531fix_ragnarok_s7_A	ragnarok	7	A	v531fix	US	_v531fix	Core destroyed	127	0	570	230
+parent_ragnarok_s7_B	ragnarok	7	B	parent	US	parent_arm	Core destroyed	187	0	500	190
+flagoff_ragnarok_s7_B	ragnarok	7	B	flagoff	US	flagoff_arm	Core destroyed	193	0	510	190
+v530_ragnarok_s7_B	ragnarok	7	B	v530	US	v530_arm	Core destroyed	153	0	410	220
+v531fix_ragnarok_s7_B	ragnarok	7	B	v531fix	US	_v531fix	Core destroyed	164	0	780	450
+parent_ragnarok_s8_A	ragnarok	8	A	parent	US	parent_arm	Core destroyed	126	0	590	220
+flagoff_ragnarok_s8_A	ragnarok	8	A	flagoff	US	flagoff_arm	Core destroyed	126	0	580	210
+v530_ragnarok_s8_A	ragnarok	8	A	v530	US	v530_arm	Core destroyed	162	0	360	180
+v531fix_ragnarok_s8_A	ragnarok	8	A	v531fix	US	_v531fix	Core destroyed	127	0	570	230
+parent_ragnarok_s8_B	ragnarok	8	B	parent	US	parent_arm	Core destroyed	193	0	510	190
+flagoff_ragnarok_s8_B	ragnarok	8	B	flagoff	US	flagoff_arm	Core destroyed	177	0	470	170
+v530_ragnarok_s8_B	ragnarok	8	B	v530	US	v530_arm	Core destroyed	177	0	470	210
+v531fix_ragnarok_s8_B	ragnarok	8	B	v531fix	US	_v531fix	Core destroyed	245	0	640	160
+parent_royale_s7_A	royale	7	A	parent	US	parent_arm	Core destroyed	939	0	12680	3320
+flagoff_royale_s7_A	royale	7	A	flagoff	US	flagoff_arm	Core destroyed	218	0	2620	140
+v530_royale_s7_A	royale	7	A	v530	US	v530_arm	Core destroyed	178	0	1100	110
+v531fix_royale_s7_A	royale	7	A	v531fix	OPP	_x3r0v165mjolnirB	Core destroyed	475	0	530	3540
+parent_royale_s7_B	royale	7	B	parent	US	parent_arm	Core destroyed	218	0	3240	520
+flagoff_royale_s7_B	royale	7	B	flagoff	US	flagoff_arm	Core destroyed	182	0	2200	0
+v530_royale_s7_B	royale	7	B	v530	US	v530_arm	Core destroyed	542	0	5600	2110
+v531fix_royale_s7_B	royale	7	B	v531fix	US	_v531fix	Core destroyed	208	0	2250	130
+parent_royale_s8_A	royale	8	A	parent	OPP	_x3r0v165mjolnirB	Titanium collected (tiebreak)	1000	0	5450	21330
+flagoff_royale_s8_A	royale	8	A	flagoff	US	flagoff_arm	Core destroyed	496	0	7860	500
+v530_royale_s8_A	royale	8	A	v530	US	v530_arm	Core destroyed	259	0	720	0
+v531fix_royale_s8_A	royale	8	A	v531fix	OPP	_x3r0v165mjolnirB	Core destroyed	637	0	5050	5450
+parent_royale_s8_B	royale	8	B	parent	US	parent_arm	Core destroyed	210	0	2410	90
+flagoff_royale_s8_B	royale	8	B	flagoff	US	flagoff_arm	Core destroyed	179	0	1920	80
+v530_royale_s8_B	royale	8	B	v530	US	v530_arm	Core destroyed	385	0	0	0
+v531fix_royale_s8_B	royale	8	B	v531fix	US	_v531fix	Core destroyed	568	0	9670	3480
+parent_nordkap_s7_A	nordkap	7	A	parent	US	parent_arm	Core destroyed	133	0	340	40
+flagoff_nordkap_s7_A	nordkap	7	A	flagoff	US	flagoff_arm	Core destroyed	548	0	3830	70
+v530_nordkap_s7_A	nordkap	7	A	v530	OPP	_x3r0v165mjolnirB	Core destroyed	360	0	220	1680
+v531fix_nordkap_s7_A	nordkap	7	A	v531fix	US	_v531fix	Core destroyed	709	0	210	70
+parent_nordkap_s7_B	nordkap	7	B	parent	OPP	_x3r0v165mjolnirB	Core destroyed	151	0	290	700
+flagoff_nordkap_s7_B	nordkap	7	B	flagoff	US	flagoff_arm	Core destroyed	243	0	1200	910
+v530_nordkap_s7_B	nordkap	7	B	v530	US	v530_arm	Core destroyed	445	0	640	120
+v531fix_nordkap_s7_B	nordkap	7	B	v531fix	US	_v531fix	Core destroyed	242	0	400	110
+parent_nordkap_s8_A	nordkap	8	A	parent	US	parent_arm	Core destroyed	233	0	620	260
+flagoff_nordkap_s8_A	nordkap	8	A	flagoff	US	flagoff_arm	Core destroyed	330	0	2100	60
+v530_nordkap_s8_A	nordkap	8	A	v530	US	v530_arm	Core destroyed	537	0	230	160
+v531fix_nordkap_s8_A	nordkap	8	A	v531fix	US	_v531fix	Core destroyed	361	0	880	130
+parent_nordkap_s8_B	nordkap	8	B	parent	OPP	_x3r0v165mjolnirB	Core destroyed	345	0	2240	1830
+flagoff_nordkap_s8_B	nordkap	8	B	flagoff	US	flagoff_arm	Core destroyed	322	0	760	650
+v530_nordkap_s8_B	nordkap	8	B	v530	US	v530_arm	Core destroyed	445	0	640	120
+v531fix_nordkap_s8_B	nordkap	8	B	v531fix	US	_v531fix	Core destroyed	149	0	220	110
+parent_icefloe_s9_A	icefloe	9	A	parent	OPP	_x3r0v165mjolnirB	Core destroyed	290	0	0	1110
+flagoff_icefloe_s9_A	icefloe	9	A	flagoff	US	flagoff_arm	Core destroyed	753	0	410	120
+v530_icefloe_s9_A	icefloe	9	A	v530	OPP	_x3r0v165mjolnirB	Core destroyed	371	0	590	1020
+v531fix_icefloe_s9_A	icefloe	9	A	v531fix	OPP	_x3r0v165mjolnirB	Core destroyed	499	0	1000	1150
+parent_icefloe_s9_B	icefloe	9	B	parent	OPP	_x3r0v165mjolnirB	Core destroyed	120	0	0	610
+flagoff_icefloe_s9_B	icefloe	9	B	flagoff	OPP	_x3r0v165mjolnirB	Core destroyed	351	0	0	4070
+v530_icefloe_s9_B	icefloe	9	B	v530	OPP	_x3r0v165mjolnirB	Core destroyed	449	0	1330	3360
+v531fix_icefloe_s9_B	icefloe	9	B	v531fix	US	_v531fix	Core destroyed	768	0	6360	1770
+parent_icefloe_s10_A	icefloe	10	A	parent	US	parent_arm	Core destroyed	753	0	410	120
+flagoff_icefloe_s10_A	icefloe	10	A	flagoff	OPP	_x3r0v165mjolnirB	Core destroyed	387	0	710	2170
+v530_icefloe_s10_A	icefloe	10	A	v530	OPP	_x3r0v165mjolnirB	Core destroyed	221	0	490	1230
+v531fix_icefloe_s10_A	icefloe	10	A	v531fix	US	_v531fix	Core destroyed	184	0	420	80
+parent_icefloe_s10_B	icefloe	10	B	parent	OPP	_x3r0v165mjolnirB	Core destroyed	141	0	0	550
+flagoff_icefloe_s10_B	icefloe	10	B	flagoff	OPP	_x3r0v165mjolnirB	Core destroyed	268	0	0	1680
+v530_icefloe_s10_B	icefloe	10	B	v530	OPP	_x3r0v165mjolnirB	Core destroyed	422	0	3300	3290
+v531fix_icefloe_s10_B	icefloe	10	B	v531fix	OPP	_x3r0v165mjolnirB	Core destroyed	771	0	5520	9150
+parent_auroraveil_s9_A	auroraveil	9	A	parent	US	parent_arm	Core destroyed	170	0	380	0
+flagoff_auroraveil_s9_A	auroraveil	9	A	flagoff	OPP	_x3r0v165mjolnirB	Core destroyed	349	0	830	330
+v530_auroraveil_s9_A	auroraveil	9	A	v530	OPP	_x3r0v165mjolnirB	Core destroyed	213	0	0	440
+v531fix_auroraveil_s9_A	auroraveil	9	A	v531fix	OPP	_x3r0v165mjolnirB	Core destroyed	258	0	0	1640
+parent_auroraveil_s9_B	auroraveil	9	B	parent	OPP	_x3r0v165mjolnirB	Core destroyed	180	0	0	760
+flagoff_auroraveil_s9_B	auroraveil	9	B	flagoff	OPP	_x3r0v165mjolnirB	Core destroyed	293	0	0	840
+v530_auroraveil_s9_B	auroraveil	9	B	v530	OPP	_x3r0v165mjolnirB	Core destroyed	340	0	360	1200
+v531fix_auroraveil_s9_B	auroraveil	9	B	v531fix	OPP	_x3r0v165mjolnirB	Titanium collected (tiebreak)	1000	0	0	480
+parent_auroraveil_s10_A	auroraveil	10	A	parent	OPP	_x3r0v165mjolnirB	Core destroyed	133	0	290	420
+flagoff_auroraveil_s10_A	auroraveil	10	A	flagoff	OPP	_x3r0v165mjolnirB	Core destroyed	440	0	1050	360
+v530_auroraveil_s10_A	auroraveil	10	A	v530	OPP	_x3r0v165mjolnirB	Titanium collected (tiebreak)	1000	0	3850	9260
+v531fix_auroraveil_s10_A	auroraveil	10	A	v531fix	OPP	_x3r0v165mjolnirB	Core destroyed	153	0	0	750
+parent_auroraveil_s10_B	auroraveil	10	B	parent	US	parent_arm	Core destroyed	379	0	2910	830
+flagoff_auroraveil_s10_B	auroraveil	10	B	flagoff	OPP	_x3r0v165mjolnirB	Core destroyed	314	0	0	890
+v530_auroraveil_s10_B	auroraveil	10	B	v530	OPP	_x3r0v165mjolnirB	Core destroyed	277	0	0	1710
+v531fix_auroraveil_s10_B	auroraveil	10	B	v531fix	OPP	_x3r0v165mjolnirB	Core destroyed	576	0	0	2670
+parent_glacierkeep_s9_A	glacierkeep	9	A	parent	OPP	_x3r0v165mjolnirB	Core destroyed	378	0	0	400
+flagoff_glacierkeep_s9_A	glacierkeep	9	A	flagoff	OPP	_x3r0v165mjolnirB	Titanium collected (tiebreak)	1000	0	2350	7880
+v530_glacierkeep_s9_A	glacierkeep	9	A	v530	OPP	_x3r0v165mjolnirB	Core destroyed	375	0	0	2870
+v531fix_glacierkeep_s9_A	glacierkeep	9	A	v531fix	US	_v531fix	Harvesters (tiebreak)	1000	0	0	0
+parent_glacierkeep_s9_B	glacierkeep	9	B	parent	US	parent_arm	Core destroyed	261	0	0	0
+flagoff_glacierkeep_s9_B	glacierkeep	9	B	flagoff	OPP	_x3r0v165mjolnirB	Harvesters (tiebreak)	1000	0	0	0
+v530_glacierkeep_s9_B	glacierkeep	9	B	v530	OPP	_x3r0v165mjolnirB	Core destroyed	810	0	0	300
+v531fix_glacierkeep_s9_B	glacierkeep	9	B	v531fix	OPP	_x3r0v165mjolnirB	Core destroyed	513	0	0	4190
+parent_glacierkeep_s10_A	glacierkeep	10	A	parent	OPP	_x3r0v165mjolnirB	Core destroyed	275	0	0	750
+flagoff_glacierkeep_s10_A	glacierkeep	10	A	flagoff	OPP	_x3r0v165mjolnirB	Core destroyed	436	0	0	1530
+v530_glacierkeep_s10_A	glacierkeep	10	A	v530	OPP	_x3r0v165mjolnirB	Core destroyed	494	0	0	6050
+v531fix_glacierkeep_s10_A	glacierkeep	10	A	v531fix	US	_v531fix	Titanium stored (tiebreak)	1000	0	0	0
+parent_glacierkeep_s10_B	glacierkeep	10	B	parent	US	parent_arm	Core destroyed	281	0	0	0
+flagoff_glacierkeep_s10_B	glacierkeep	10	B	flagoff	OPP	_x3r0v165mjolnirB	Core destroyed	251	0	0	950
+v530_glacierkeep_s10_B	glacierkeep	10	B	v530	OPP	_x3r0v165mjolnirB	Core destroyed	677	0	4690	6420
+v531fix_glacierkeep_s10_B	glacierkeep	10	B	v531fix	OPP	_x3r0v165mjolnirB	Core destroyed	482	0	0	3280
+parent_yulerune_s9_A	yulerune	9	A	parent	OPP	_x3r0v165mjolnirB	Core destroyed	145	0	0	370
+flagoff_yulerune_s9_A	yulerune	9	A	flagoff	OPP	_x3r0v165mjolnirB	Core destroyed	221	0	0	270
+v530_yulerune_s9_A	yulerune	9	A	v530	OPP	_x3r0v165mjolnirB	Core destroyed	274	0	80	1660
+v531fix_yulerune_s9_A	yulerune	9	A	v531fix	OPP	_x3r0v165mjolnirB	Core destroyed	348	0	230	2680
+parent_yulerune_s9_B	yulerune	9	B	parent	US	parent_arm	Core destroyed	329	0	1980	2190
+flagoff_yulerune_s9_B	yulerune	9	B	flagoff	OPP	_x3r0v165mjolnirB	Core destroyed	403	0	0	390
+v530_yulerune_s9_B	yulerune	9	B	v530	US	v530_arm	Core destroyed	293	0	3330	2000
+v531fix_yulerune_s9_B	yulerune	9	B	v531fix	OPP	_x3r0v165mjolnirB	Core destroyed	444	0	3890	4690
+parent_yulerune_s10_A	yulerune	10	A	parent	OPP	_x3r0v165mjolnirB	Core destroyed	249	0	0	210
+flagoff_yulerune_s10_A	yulerune	10	A	flagoff	OPP	_x3r0v165mjolnirB	Core destroyed	194	0	0	480
+v530_yulerune_s10_A	yulerune	10	A	v530	OPP	_x3r0v165mjolnirB	Core destroyed	248	0	80	1580
+v531fix_yulerune_s10_A	yulerune	10	A	v531fix	OPP	_x3r0v165mjolnirB	Core destroyed	129	0	480	660
+parent_yulerune_s10_B	yulerune	10	B	parent	US	parent_arm	Core destroyed	247	0	590	230
+flagoff_yulerune_s10_B	yulerune	10	B	flagoff	OPP	_x3r0v165mjolnirB	Core destroyed	413	0	0	2200
+v530_yulerune_s10_B	yulerune	10	B	v530	OPP	_x3r0v165mjolnirB	Core destroyed	220	0	0	980
+v531fix_yulerune_s10_B	yulerune	10	B	v531fix	OPP	_x3r0v165mjolnirB	Core destroyed	158	0	100	1060
+parent_drakkarfjord_s9_A	drakkarfjord	9	A	parent	OPP	_x3r0v165mjolnirB	Titanium collected (tiebreak)	1000	0	0	140
+flagoff_drakkarfjord_s9_A	drakkarfjord	9	A	flagoff	US	flagoff_arm	Harvesters (tiebreak)	1000	0	0	0
+v530_drakkarfjord_s9_A	drakkarfjord	9	A	v530	US	v530_arm	Core destroyed	837	0	0	440
+v531fix_drakkarfjord_s9_A	drakkarfjord	9	A	v531fix	OPP	_x3r0v165mjolnirB	Titanium collected (tiebreak)	1000	0	680	2410
+parent_drakkarfjord_s9_B	drakkarfjord	9	B	parent	US	parent_arm	Core destroyed	182	0	770	0
+flagoff_drakkarfjord_s9_B	drakkarfjord	9	B	flagoff	US	flagoff_arm	Core destroyed	237	0	1050	60
+v530_drakkarfjord_s9_B	drakkarfjord	9	B	v530	US	v530_arm	Core destroyed	249	0	190	0
+v531fix_drakkarfjord_s9_B	drakkarfjord	9	B	v531fix	OPP	_x3r0v165mjolnirB	Titanium collected (tiebreak)	1000	0	0	240
+parent_drakkarfjord_s10_A	drakkarfjord	10	A	parent	US	parent_arm	Core destroyed	737	0	0	140
+flagoff_drakkarfjord_s10_A	drakkarfjord	10	A	flagoff	OPP	_x3r0v165mjolnirB	Titanium collected (tiebreak)	1000	0	0	140
+v530_drakkarfjord_s10_A	drakkarfjord	10	A	v530	US	v530_arm	Core destroyed	292	0	620	90
+v531fix_drakkarfjord_s10_A	drakkarfjord	10	A	v531fix	US	_v531fix	Core destroyed	108	0	210	0
+parent_drakkarfjord_s10_B	drakkarfjord	10	B	parent	US	parent_arm	Core destroyed	175	0	740	0
+flagoff_drakkarfjord_s10_B	drakkarfjord	10	B	flagoff	US	flagoff_arm	Core destroyed	175	0	740	0
+v530_drakkarfjord_s10_B	drakkarfjord	10	B	v530	OPP	_x3r0v165mjolnirB	Core destroyed	690	0	0	3350
+v531fix_drakkarfjord_s10_B	drakkarfjord	10	B	v531fix	OPP	_x3r0v165mjolnirB	Titanium collected (tiebreak)	1000	0	0	1510
+parent_ragnarok_s9_A	ragnarok	9	A	parent	US	parent_arm	Core destroyed	126	0	590	220
+flagoff_ragnarok_s9_A	ragnarok	9	A	flagoff	US	flagoff_arm	Core destroyed	126	0	580	210
+v530_ragnarok_s9_A	ragnarok	9	A	v530	OPP	_x3r0v165mjolnirB	Core destroyed	165	0	0	790
+v531fix_ragnarok_s9_A	ragnarok	9	A	v531fix	US	_v531fix	Core destroyed	128	0	570	210
+parent_ragnarok_s9_B	ragnarok	9	B	parent	US	parent_arm	Core destroyed	187	0	500	190
+flagoff_ragnarok_s9_B	ragnarok	9	B	flagoff	US	flagoff_arm	Core destroyed	193	0	510	190
+v530_ragnarok_s9_B	ragnarok	9	B	v530	US	v530_arm	Core destroyed	337	0	870	880
+v531fix_ragnarok_s9_B	ragnarok	9	B	v531fix	US	_v531fix	Core destroyed	160	0	760	440
+parent_ragnarok_s10_A	ragnarok	10	A	parent	US	parent_arm	Core destroyed	120	0	550	170
+flagoff_ragnarok_s10_A	ragnarok	10	A	flagoff	US	flagoff_arm	Core destroyed	120	0	520	170
+v530_ragnarok_s10_A	ragnarok	10	A	v530	OPP	_x3r0v165mjolnirB	Core destroyed	165	0	0	790
+v531fix_ragnarok_s10_A	ragnarok	10	A	v531fix	US	_v531fix	Core destroyed	127	0	570	230
+parent_ragnarok_s10_B	ragnarok	10	B	parent	US	parent_arm	Core destroyed	187	0	500	190
+flagoff_ragnarok_s10_B	ragnarok	10	B	flagoff	US	flagoff_arm	Core destroyed	153	0	410	210
+v530_ragnarok_s10_B	ragnarok	10	B	v530	US	v530_arm	Core destroyed	179	0	520	210
+v531fix_ragnarok_s10_B	ragnarok	10	B	v531fix	US	_v531fix	Core destroyed	188	0	900	240
+parent_royale_s9_A	royale	9	A	parent	OPP	_x3r0v165mjolnirB	Core destroyed	362	0	1180	2200
+flagoff_royale_s9_A	royale	9	A	flagoff	US	flagoff_arm	Core destroyed	435	0	5040	1520
+v530_royale_s9_A	royale	9	A	v530	US	v530_arm	Core destroyed	213	0	1570	420
+v531fix_royale_s9_A	royale	9	A	v531fix	US	_v531fix	Core destroyed	772	0	7240	3970
+parent_royale_s9_B	royale	9	B	parent	US	parent_arm	Core destroyed	148	0	880	380
+flagoff_royale_s9_B	royale	9	B	flagoff	US	flagoff_arm	Core destroyed	168	0	1790	0
+v530_royale_s9_B	royale	9	B	v530	OPP	_x3r0v165mjolnirB	Titanium collected (tiebreak)	1000	0	10820	11320
+v531fix_royale_s9_B	royale	9	B	v531fix	US	_v531fix	Core destroyed	261	0	2410	300
+parent_royale_s10_A	royale	10	A	parent	US	parent_arm	Core destroyed	409	0	6360	2210
+flagoff_royale_s10_A	royale	10	A	flagoff	US	flagoff_arm	Core destroyed	212	0	2740	450
+v530_royale_s10_A	royale	10	A	v530	OPP	_x3r0v165mjolnirB	Core destroyed	318	0	1880	2090
+v531fix_royale_s10_A	royale	10	A	v531fix	OPP	_x3r0v165mjolnirB	Core destroyed	503	0	730	2710
+parent_royale_s10_B	royale	10	B	parent	US	parent_arm	Core destroyed	241	0	3260	690
+flagoff_royale_s10_B	royale	10	B	flagoff	US	flagoff_arm	Core destroyed	172	0	1830	0
+v530_royale_s10_B	royale	10	B	v530	US	v530_arm	Core destroyed	208	0	1330	60
+v531fix_royale_s10_B	royale	10	B	v531fix	US	_v531fix	Core destroyed	131	0	560	50
+parent_nordkap_s9_A	nordkap	9	A	parent	US	parent_arm	Core destroyed	265	0	300	20
+flagoff_nordkap_s9_A	nordkap	9	A	flagoff	US	flagoff_arm	Core destroyed	293	0	190	20
+v530_nordkap_s9_A	nordkap	9	A	v530	US	v530_arm	Core destroyed	537	0	230	160
+v531fix_nordkap_s9_A	nordkap	9	A	v531fix	US	_v531fix	Core destroyed	345	0	70	70
+parent_nordkap_s9_B	nordkap	9	B	parent	US	parent_arm	Core destroyed	395	0	340	90
+flagoff_nordkap_s9_B	nordkap	9	B	flagoff	US	flagoff_arm	Core destroyed	427	0	1730	1020
+v530_nordkap_s9_B	nordkap	9	B	v530	US	v530_arm	Core destroyed	478	0	1460	2020
+v531fix_nordkap_s9_B	nordkap	9	B	v531fix	US	_v531fix	Core destroyed	248	0	570	130
+parent_nordkap_s10_A	nordkap	10	A	parent	OPP	_x3r0v165mjolnirB	Core destroyed	301	0	140	750
+flagoff_nordkap_s10_A	nordkap	10	A	flagoff	US	flagoff_arm	Core destroyed	133	0	340	40
+v530_nordkap_s10_A	nordkap	10	A	v530	US	v530_arm	Core destroyed	454	0	760	70
+v531fix_nordkap_s10_A	nordkap	10	A	v531fix	US	_v531fix	Core destroyed	141	0	330	70
+parent_nordkap_s10_B	nordkap	10	B	parent	US	parent_arm	Core destroyed	970	0	230	90
+flagoff_nordkap_s10_B	nordkap	10	B	flagoff	US	flagoff_arm	Core destroyed	389	0	2720	190
+v530_nordkap_s10_B	nordkap	10	B	v530	US	v530_arm	Core destroyed	288	0	780	220
+v531fix_nordkap_s10_B	nordkap	10	B	v531fix	US	_v531fix	Core destroyed	614	0	2710	950
+parent_icefloe_s11_A	icefloe	11	A	parent	OPP	_x3r0v165mjolnirB	Core destroyed	218	0	0	980
+flagoff_icefloe_s11_A	icefloe	11	A	flagoff	OPP	_x3r0v165mjolnirB	Titanium collected (tiebreak)	1000	0	0	80
+v530_icefloe_s11_A	icefloe	11	A	v530	OPP	_x3r0v165mjolnirB	Core destroyed	333	0	910	2730
+v531fix_icefloe_s11_A	icefloe	11	A	v531fix	OPP	_x3r0v165mjolnirB	Core destroyed	479	0	3790	5170
+parent_icefloe_s11_B	icefloe	11	B	parent	OPP	_x3r0v165mjolnirB	Core destroyed	672	0	1370	1640
+flagoff_icefloe_s11_B	icefloe	11	B	flagoff	OPP	_x3r0v165mjolnirB	Core destroyed	271	0	0	1150
+v530_icefloe_s11_B	icefloe	11	B	v530	OPP	_x3r0v165mjolnirB	Core destroyed	430	0	3270	2230
+v531fix_icefloe_s11_B	icefloe	11	B	v531fix	OPP	_x3r0v165mjolnirB	Core destroyed	466	0	1770	3650
+parent_icefloe_s12_A	icefloe	12	A	parent	OPP	_x3r0v165mjolnirB	Core destroyed	149	0	0	620
+flagoff_icefloe_s12_A	icefloe	12	A	flagoff	OPP	_x3r0v165mjolnirB	Core destroyed	196	0	0	780
+v530_icefloe_s12_A	icefloe	12	A	v530	US	v530_arm	Core destroyed	414	0	830	0
+v531fix_icefloe_s12_A	icefloe	12	A	v531fix	OPP	_x3r0v165mjolnirB	Core destroyed	546	0	1290	5070
+parent_icefloe_s12_B	icefloe	12	B	parent	OPP	_x3r0v165mjolnirB	Core destroyed	373	0	0	850
+flagoff_icefloe_s12_B	icefloe	12	B	flagoff	OPP	_x3r0v165mjolnirB	Core destroyed	668	0	1360	1630
+v530_icefloe_s12_B	icefloe	12	B	v530	OPP	_x3r0v165mjolnirB	Titanium collected (tiebreak)	1000	0	9390	13590
+v531fix_icefloe_s12_B	icefloe	12	B	v531fix	US	_v531fix	Core destroyed	627	0	6370	5250
+parent_auroraveil_s11_A	auroraveil	11	A	parent	US	parent_arm	Core destroyed	194	0	440	0
+flagoff_auroraveil_s11_A	auroraveil	11	A	flagoff	OPP	_x3r0v165mjolnirB	Core destroyed	260	0	600	1200
+v530_auroraveil_s11_A	auroraveil	11	A	v530	OPP	_x3r0v165mjolnirB	Core destroyed	196	0	0	1440
+v531fix_auroraveil_s11_A	auroraveil	11	A	v531fix	OPP	_x3r0v165mjolnirB	Core destroyed	121	0	0	610
+parent_auroraveil_s11_B	auroraveil	11	B	parent	OPP	_x3r0v165mjolnirB	Core destroyed	131	0	0	790
+flagoff_auroraveil_s11_B	auroraveil	11	B	flagoff	OPP	_x3r0v165mjolnirB	Titanium collected (tiebreak)	1000	0	0	1420
+v530_auroraveil_s11_B	auroraveil	11	B	v530	US	v530_arm	Core destroyed	588	0	3580	2930
+v531fix_auroraveil_s11_B	auroraveil	11	B	v531fix	OPP	_x3r0v165mjolnirB	Core destroyed	434	0	0	3420
+parent_auroraveil_s12_A	auroraveil	12	A	parent	US	parent_arm	Core destroyed	170	0	380	0
+flagoff_auroraveil_s12_A	auroraveil	12	A	flagoff	US	flagoff_arm	Core destroyed	210	0	480	10
+v530_auroraveil_s12_A	auroraveil	12	A	v530	OPP	_x3r0v165mjolnirB	Core destroyed	212	0	290	1100
+v531fix_auroraveil_s12_A	auroraveil	12	A	v531fix	OPP	_x3r0v165mjolnirB	Core destroyed	641	0	0	330
+parent_auroraveil_s12_B	auroraveil	12	B	parent	OPP	_x3r0v165mjolnirB	Core destroyed	258	0	0	1970
+flagoff_auroraveil_s12_B	auroraveil	12	B	flagoff	OPP	_x3r0v165mjolnirB	Core destroyed	261	0	0	1260
+v530_auroraveil_s12_B	auroraveil	12	B	v530	OPP	_x3r0v165mjolnirB	Core destroyed	188	0	0	1440
+v531fix_auroraveil_s12_B	auroraveil	12	B	v531fix	OPP	_x3r0v165mjolnirB	Titanium collected (tiebreak)	1000	0	0	370
+parent_glacierkeep_s11_A	glacierkeep	11	A	parent	OPP	_x3r0v165mjolnirB	Core destroyed	325	0	0	3390
+flagoff_glacierkeep_s11_A	glacierkeep	11	A	flagoff	US	flagoff_arm	Core destroyed	376	0	0	0
+v530_glacierkeep_s11_A	glacierkeep	11	A	v530	OPP	_x3r0v165mjolnirB	Titanium collected (tiebreak)	1000	0	0	460
+v531fix_glacierkeep_s11_A	glacierkeep	11	A	v531fix	US	_v531fix	Core destroyed	481	0	0	0
+parent_glacierkeep_s11_B	glacierkeep	11	B	parent	OPP	_x3r0v165mjolnirB	Core destroyed	318	0	0	910
+flagoff_glacierkeep_s11_B	glacierkeep	11	B	flagoff	OPP	_x3r0v165mjolnirB	Core destroyed	624	0	0	5750
+v530_glacierkeep_s11_B	glacierkeep	11	B	v530	OPP	_x3r0v165mjolnirB	Core destroyed	537	0	0	2790
+v531fix_glacierkeep_s11_B	glacierkeep	11	B	v531fix	OPP	_x3r0v165mjolnirB	Core destroyed	620	0	0	5890
+parent_glacierkeep_s12_A	glacierkeep	12	A	parent	OPP	_x3r0v165mjolnirB	Titanium collected (tiebreak)	1000	0	0	4080
+flagoff_glacierkeep_s12_A	glacierkeep	12	A	flagoff	US	flagoff_arm	Titanium stored (tiebreak)	1000	0	0	0
+v530_glacierkeep_s12_A	glacierkeep	12	A	v530	OPP	_x3r0v165mjolnirB	Titanium collected (tiebreak)	1000	0	0	460
+v531fix_glacierkeep_s12_A	glacierkeep	12	A	v531fix	US	_v531fix	Core destroyed	413	0	0	0
+parent_glacierkeep_s12_B	glacierkeep	12	B	parent	OPP	_x3r0v165mjolnirB	Core destroyed	370	0	0	1690
+flagoff_glacierkeep_s12_B	glacierkeep	12	B	flagoff	OPP	_x3r0v165mjolnirB	Titanium collected (tiebreak)	1000	0	0	3600
+v530_glacierkeep_s12_B	glacierkeep	12	B	v530	OPP	_x3r0v165mjolnirB	Core destroyed	672	0	0	7780
+v531fix_glacierkeep_s12_B	glacierkeep	12	B	v531fix	OPP	_x3r0v165mjolnirB	Core destroyed	482	0	0	3280
+parent_yulerune_s11_A	yulerune	11	A	parent	OPP	_x3r0v165mjolnirB	Core destroyed	149	0	0	670
+flagoff_yulerune_s11_A	yulerune	11	A	flagoff	OPP	_x3r0v165mjolnirB	Core destroyed	194	0	0	480
+v530_yulerune_s11_A	yulerune	11	A	v530	OPP	_x3r0v165mjolnirB	Core destroyed	249	0	90	1680
+v531fix_yulerune_s11_A	yulerune	11	A	v531fix	OPP	_x3r0v165mjolnirB	Core destroyed	206	0	260	1580
+parent_yulerune_s11_B	yulerune	11	B	parent	US	parent_arm	Core destroyed	534	0	6300	3590
+flagoff_yulerune_s11_B	yulerune	11	B	flagoff	US	flagoff_arm	Core destroyed	359	0	1780	210
+v530_yulerune_s11_B	yulerune	11	B	v530	US	v530_arm	Core destroyed	553	0	1870	400
+v531fix_yulerune_s11_B	yulerune	11	B	v531fix	OPP	_x3r0v165mjolnirB	Core destroyed	253	0	1630	520
+parent_yulerune_s12_A	yulerune	12	A	parent	OPP	_x3r0v165mjolnirB	Core destroyed	173	0	0	590
+flagoff_yulerune_s12_A	yulerune	12	A	flagoff	OPP	_x3r0v165mjolnirB	Core destroyed	222	0	0	1020
+v530_yulerune_s12_A	yulerune	12	A	v530	OPP	_x3r0v165mjolnirB	Core destroyed	333	0	80	3430
+v531fix_yulerune_s12_A	yulerune	12	A	v531fix	OPP	_x3r0v165mjolnirB	Core destroyed	327	0	230	1400
+parent_yulerune_s12_B	yulerune	12	B	parent	OPP	_x3r0v165mjolnirB	Core destroyed	456	0	0	1300
+flagoff_yulerune_s12_B	yulerune	12	B	flagoff	OPP	_x3r0v165mjolnirB	Core destroyed	403	0	0	390
+v530_yulerune_s12_B	yulerune	12	B	v530	OPP	_x3r0v165mjolnirB	Core destroyed	287	0	320	1290
+v531fix_yulerune_s12_B	yulerune	12	B	v531fix	US	_v531fix	Core destroyed	661	0	5680	4890
+parent_drakkarfjord_s11_A	drakkarfjord	11	A	parent	OPP	_x3r0v165mjolnirB	Titanium collected (tiebreak)	1000	0	0	10160
+flagoff_drakkarfjord_s11_A	drakkarfjord	11	A	flagoff	OPP	_x3r0v165mjolnirB	Titanium collected (tiebreak)	1000	0	0	1040
+v530_drakkarfjord_s11_A	drakkarfjord	11	A	v530	OPP	_x3r0v165mjolnirB	Titanium collected (tiebreak)	1000	0	8300	10660
+v531fix_drakkarfjord_s11_A	drakkarfjord	11	A	v531fix	US	_v531fix	Core destroyed	173	0	900	0
+parent_drakkarfjord_s11_B	drakkarfjord	11	B	parent	US	parent_arm	Core destroyed	182	0	770	0
+flagoff_drakkarfjord_s11_B	drakkarfjord	11	B	flagoff	US	flagoff_arm	Core destroyed	175	0	750	0
+v530_drakkarfjord_s11_B	drakkarfjord	11	B	v530	OPP	_x3r0v165mjolnirB	Core destroyed	189	0	0	660
+v531fix_drakkarfjord_s11_B	drakkarfjord	11	B	v531fix	OPP	_x3r0v165mjolnirB	Core destroyed	593	0	0	1290
+parent_drakkarfjord_s12_A	drakkarfjord	12	A	parent	OPP	_x3r0v165mjolnirB	Titanium collected (tiebreak)	1000	0	0	5200
+flagoff_drakkarfjord_s12_A	drakkarfjord	12	A	flagoff	US	flagoff_arm	Core destroyed	285	0	0	0
+v530_drakkarfjord_s12_A	drakkarfjord	12	A	v530	OPP	_x3r0v165mjolnirB	Core destroyed	346	0	0	2520
+v531fix_drakkarfjord_s12_A	drakkarfjord	12	A	v531fix	US	_v531fix	Core destroyed	173	0	900	0
+parent_drakkarfjord_s12_B	drakkarfjord	12	B	parent	US	parent_arm	Core destroyed	453	0	310	0
+flagoff_drakkarfjord_s12_B	drakkarfjord	12	B	flagoff	US	flagoff_arm	Core destroyed	453	0	310	0
+v530_drakkarfjord_s12_B	drakkarfjord	12	B	v530	US	v530_arm	Core destroyed	251	0	200	0
+v531fix_drakkarfjord_s12_B	drakkarfjord	12	B	v531fix	OPP	_x3r0v165mjolnirB	Titanium collected (tiebreak)	1000	0	0	7400
+parent_ragnarok_s11_A	ragnarok	11	A	parent	US	parent_arm	Core destroyed	149	0	480	430
+flagoff_ragnarok_s11_A	ragnarok	11	A	flagoff	US	flagoff_arm	Core destroyed	116	0	530	360
+v530_ragnarok_s11_A	ragnarok	11	A	v530	OPP	_x3r0v165mjolnirB	Core destroyed	145	0	0	690
+v531fix_ragnarok_s11_A	ragnarok	11	A	v531fix	US	_v531fix	Core destroyed	128	0	570	210
+parent_ragnarok_s11_B	ragnarok	11	B	parent	US	parent_arm	Core destroyed	193	0	510	190
+flagoff_ragnarok_s11_B	ragnarok	11	B	flagoff	US	flagoff_arm	Core destroyed	277	0	720	490
+v530_ragnarok_s11_B	ragnarok	11	B	v530	US	v530_arm	Core destroyed	337	0	870	880
+v531fix_ragnarok_s11_B	ragnarok	11	B	v531fix	US	_v531fix	Core destroyed	156	0	740	200
+parent_ragnarok_s12_A	ragnarok	12	A	parent	US	parent_arm	Core destroyed	132	0	610	430
+flagoff_ragnarok_s12_A	ragnarok	12	A	flagoff	US	flagoff_arm	Core destroyed	126	0	580	210
+v530_ragnarok_s12_A	ragnarok	12	A	v530	OPP	_x3r0v165mjolnirB	Core destroyed	153	0	0	730
+v531fix_ragnarok_s12_A	ragnarok	12	A	v531fix	US	_v531fix	Core destroyed	127	0	570	230
+parent_ragnarok_s12_B	ragnarok	12	B	parent	US	parent_arm	Core destroyed	193	0	510	180
+flagoff_ragnarok_s12_B	ragnarok	12	B	flagoff	US	flagoff_arm	Core destroyed	177	0	470	170
+v530_ragnarok_s12_B	ragnarok	12	B	v530	US	v530_arm	Core destroyed	337	0	870	880
+v531fix_ragnarok_s12_B	ragnarok	12	B	v531fix	US	_v531fix	Core destroyed	171	0	810	160
+parent_royale_s11_A	royale	11	A	parent	US	parent_arm	Core destroyed	244	0	2850	80
+flagoff_royale_s11_A	royale	11	A	flagoff	US	flagoff_arm	Core destroyed	228	0	3020	420
+v530_royale_s11_A	royale	11	A	v530	US	v530_arm	Core destroyed	331	0	3110	1410
+v531fix_royale_s11_A	royale	11	A	v531fix	US	_v531fix	Core destroyed	184	0	950	50
+parent_royale_s11_B	royale	11	B	parent	US	parent_arm	Core destroyed	196	0	2110	580
+flagoff_royale_s11_B	royale	11	B	flagoff	US	flagoff_arm	Core destroyed	184	0	2080	80
+v530_royale_s11_B	royale	11	B	v530	US	v530_arm	Core destroyed	226	0	2130	130
+v531fix_royale_s11_B	royale	11	B	v531fix	OPP	_x3r0v165mjolnirB	Titanium collected (tiebreak)	1000	0	7270	12370
+parent_royale_s12_A	royale	12	A	parent	US	parent_arm	Core destroyed	182	0	2260	520
+flagoff_royale_s12_A	royale	12	A	flagoff	US	flagoff_arm	Core destroyed	156	0	1560	360
+v530_royale_s12_A	royale	12	A	v530	US	v530_arm	Core destroyed	285	0	3420	740
+v531fix_royale_s12_A	royale	12	A	v531fix	OPP	_x3r0v165mjolnirB	Core destroyed	427	0	970	2810
+parent_royale_s12_B	royale	12	B	parent	US	parent_arm	Titanium collected (tiebreak)	1000	0	18940	12210
+flagoff_royale_s12_B	royale	12	B	flagoff	US	flagoff_arm	Core destroyed	201	0	2720	140
+v530_royale_s12_B	royale	12	B	v530	US	v530_arm	Core destroyed	192	0	1970	760
+v531fix_royale_s12_B	royale	12	B	v531fix	US	_v531fix	Core destroyed	229	0	2020	540
+parent_nordkap_s11_A	nordkap	11	A	parent	US	parent_arm	Core destroyed	222	0	710	70
+flagoff_nordkap_s11_A	nordkap	11	A	flagoff	US	flagoff_arm	Core destroyed	393	0	320	20
+v530_nordkap_s11_A	nordkap	11	A	v530	OPP	_x3r0v165mjolnirB	Core destroyed	519	0	1120	2020
+v531fix_nordkap_s11_A	nordkap	11	A	v531fix	US	_v531fix	Core destroyed	537	0	230	160
+parent_nordkap_s11_B	nordkap	11	B	parent	OPP	_x3r0v165mjolnirB	Core destroyed	217	0	520	1160
+flagoff_nordkap_s11_B	nordkap	11	B	flagoff	OPP	_x3r0v165mjolnirB	Core destroyed	404	0	240	5280
+v530_nordkap_s11_B	nordkap	11	B	v530	OPP	_x3r0v165mjolnirB	Core destroyed	420	0	1200	1770
+v531fix_nordkap_s11_B	nordkap	11	B	v531fix	OPP	_x3r0v165mjolnirB	Core destroyed	97	0	210	430
+parent_nordkap_s12_A	nordkap	12	A	parent	US	parent_arm	Core destroyed	293	0	190	20
+flagoff_nordkap_s12_A	nordkap	12	A	flagoff	US	flagoff_arm	Core destroyed	458	0	1590	20
+v530_nordkap_s12_A	nordkap	12	A	v530	US	v530_arm	Core destroyed	185	0	440	130
+v531fix_nordkap_s12_A	nordkap	12	A	v531fix	US	_v531fix	Core destroyed	869	0	80	120
+parent_nordkap_s12_B	nordkap	12	B	parent	OPP	_x3r0v165mjolnirB	Core destroyed	281	0	1250	790
+flagoff_nordkap_s12_B	nordkap	12	B	flagoff	OPP	_x3r0v165mjolnirB	Core destroyed	622	0	110	690
+v530_nordkap_s12_B	nordkap	12	B	v530	OPP	_x3r0v165mjolnirB	Core destroyed	303	0	170	2180
+v531fix_nordkap_s12_B	nordkap	12	B	v531fix	OPP	_x3r0v165mjolnirB	Core destroyed	152	0	350	410
+parent_icefloe_s13_A	icefloe	13	A	parent	OPP	_x3r0v165mjolnirB	Core destroyed	259	0	0	880
+flagoff_icefloe_s13_A	icefloe	13	A	flagoff	OPP	_x3r0v165mjolnirB	Core destroyed	149	0	0	620
+v530_icefloe_s13_A	icefloe	13	A	v530	OPP	_x3r0v165mjolnirB	Core destroyed	329	0	890	2660
+v531fix_icefloe_s13_A	icefloe	13	A	v531fix	US	_v531fix	Core destroyed	252	0	590	650
+parent_icefloe_s13_B	icefloe	13	B	parent	OPP	_x3r0v165mjolnirB	Core destroyed	257	0	0	610
+flagoff_icefloe_s13_B	icefloe	13	B	flagoff	OPP	_x3r0v165mjolnirB	Core destroyed	373	0	0	850
+v530_icefloe_s13_B	icefloe	13	B	v530	OPP	_x3r0v165mjolnirB	Core destroyed	633	0	3880	4730
+v531fix_icefloe_s13_B	icefloe	13	B	v531fix	OPP	_x3r0v165mjolnirB	Core destroyed	282	0	1510	1760
+parent_icefloe_s14_A	icefloe	14	A	parent	OPP	_x3r0v165mjolnirB	Core destroyed	292	0	0	1210
+flagoff_icefloe_s14_A	icefloe	14	A	flagoff	OPP	_x3r0v165mjolnirB	Titanium collected (tiebreak)	1000	0	0	930
+v530_icefloe_s14_A	icefloe	14	A	v530	OPP	_x3r0v165mjolnirB	Titanium collected (tiebreak)	1000	0	4020	4640
+v531fix_icefloe_s14_A	icefloe	14	A	v531fix	US	_v531fix	Core destroyed	107	0	230	30
+parent_icefloe_s14_B	icefloe	14	B	parent	OPP	_x3r0v165mjolnirB	Core destroyed	352	0	0	1150
+flagoff_icefloe_s14_B	icefloe	14	B	flagoff	OPP	_x3r0v165mjolnirB	Core destroyed	373	0	0	850
+v530_icefloe_s14_B	icefloe	14	B	v530	US	v530_arm	Core destroyed	360	0	2550	1620
+v531fix_icefloe_s14_B	icefloe	14	B	v531fix	OPP	_x3r0v165mjolnirB	Core destroyed	461	0	3670	6120
+parent_auroraveil_s13_A	auroraveil	13	A	parent	US	parent_arm	Core destroyed	209	0	480	0
+flagoff_auroraveil_s13_A	auroraveil	13	A	flagoff	OPP	_x3r0v165mjolnirB	Core destroyed	481	0	1160	0
+v530_auroraveil_s13_A	auroraveil	13	A	v530	OPP	_x3r0v165mjolnirB	Core destroyed	202	0	300	1030
+v531fix_auroraveil_s13_A	auroraveil	13	A	v531fix	OPP	_x3r0v165mjolnirB	Core destroyed	174	0	270	640
+parent_auroraveil_s13_B	auroraveil	13	B	parent	OPP	_x3r0v165mjolnirB	Core destroyed	197	0	0	440
+flagoff_auroraveil_s13_B	auroraveil	13	B	flagoff	OPP	_x3r0v165mjolnirB	Core destroyed	293	0	0	840
+v530_auroraveil_s13_B	auroraveil	13	B	v530	OPP	_x3r0v165mjolnirB	Core destroyed	194	0	0	710
+v531fix_auroraveil_s13_B	auroraveil	13	B	v531fix	OPP	_x3r0v165mjolnirB	Core destroyed	155	0	0	880
+parent_auroraveil_s14_A	auroraveil	14	A	parent	US	parent_arm	Core destroyed	218	0	500	0
+flagoff_auroraveil_s14_A	auroraveil	14	A	flagoff	OPP	_x3r0v165mjolnirB	Core destroyed	302	0	710	950
+v530_auroraveil_s14_A	auroraveil	14	A	v530	OPP	_x3r0v165mjolnirB	Core destroyed	178	0	180	810
+v531fix_auroraveil_s14_A	auroraveil	14	A	v531fix	OPP	_x3r0v165mjolnirB	Core destroyed	177	0	0	230
+parent_auroraveil_s14_B	auroraveil	14	B	parent	OPP	_x3r0v165mjolnirB	Core destroyed	310	0	0	1950
+flagoff_auroraveil_s14_B	auroraveil	14	B	flagoff	US	flagoff_arm	Core destroyed	265	0	0	0
+v530_auroraveil_s14_B	auroraveil	14	B	v530	OPP	_x3r0v165mjolnirB	Core destroyed	427	0	1180	3840
+v531fix_auroraveil_s14_B	auroraveil	14	B	v531fix	OPP	_x3r0v165mjolnirB	Core destroyed	324	0	0	1840
+parent_glacierkeep_s13_A	glacierkeep	13	A	parent	OPP	_x3r0v165mjolnirB	Core destroyed	279	0	0	2510
+flagoff_glacierkeep_s13_A	glacierkeep	13	A	flagoff	US	flagoff_arm	Core destroyed	554	0	1240	0
+v530_glacierkeep_s13_A	glacierkeep	13	A	v530	US	v530_arm	Core destroyed	217	0	0	0
+v531fix_glacierkeep_s13_A	glacierkeep	13	A	v531fix	OPP	_x3r0v165mjolnirB	Titanium collected (tiebreak)	1000	0	0	650
+parent_glacierkeep_s13_B	glacierkeep	13	B	parent	OPP	_x3r0v165mjolnirB	Core destroyed	711	0	4720	8300
+flagoff_glacierkeep_s13_B	glacierkeep	13	B	flagoff	OPP	_x3r0v165mjolnirB	Titanium collected (tiebreak)	1000	0	0	4720
+v530_glacierkeep_s13_B	glacierkeep	13	B	v530	OPP	_x3r0v165mjolnirB	Core destroyed	705	0	1850	6760
+v531fix_glacierkeep_s13_B	glacierkeep	13	B	v531fix	OPP	_x3r0v165mjolnirB	Core destroyed	581	0	0	0
+parent_glacierkeep_s14_A	glacierkeep	14	A	parent	OPP	_x3r0v165mjolnirB	Core destroyed	303	0	0	710
+flagoff_glacierkeep_s14_A	glacierkeep	14	A	flagoff	OPP	_x3r0v165mjolnirB	Core destroyed	504	0	0	2240
+v530_glacierkeep_s14_A	glacierkeep	14	A	v530	OPP	_x3r0v165mjolnirB	Core destroyed	254	0	0	870
+v531fix_glacierkeep_s14_A	glacierkeep	14	A	v531fix	OPP	_x3r0v165mjolnirB	Titanium collected (tiebreak)	1000	0	0	8350
+parent_glacierkeep_s14_B	glacierkeep	14	B	parent	US	parent_arm	Core destroyed	720	0	2360	190
+flagoff_glacierkeep_s14_B	glacierkeep	14	B	flagoff	OPP	_x3r0v165mjolnirB	Core destroyed	654	0	0	1810
+v530_glacierkeep_s14_B	glacierkeep	14	B	v530	OPP	_x3r0v165mjolnirB	Core destroyed	790	0	0	4240
+v531fix_glacierkeep_s14_B	glacierkeep	14	B	v531fix	OPP	_x3r0v165mjolnirB	Titanium collected (tiebreak)	1000	0	0	3480
+parent_yulerune_s13_A	yulerune	13	A	parent	OPP	_x3r0v165mjolnirB	Core destroyed	194	0	0	480
+flagoff_yulerune_s13_A	yulerune	13	A	flagoff	OPP	_x3r0v165mjolnirB	Core destroyed	160	0	0	600
+v530_yulerune_s13_A	yulerune	13	A	v530	OPP	_x3r0v165mjolnirB	Core destroyed	418	0	840	3820
+v531fix_yulerune_s13_A	yulerune	13	A	v531fix	US	_v531fix	Core destroyed	153	0	680	90
+parent_yulerune_s13_B	yulerune	13	B	parent	OPP	_x3r0v165mjolnirB	Core destroyed	423	0	3330	3770
+flagoff_yulerune_s13_B	yulerune	13	B	flagoff	OPP	_x3r0v165mjolnirB	Core destroyed	321	0	0	480
+v530_yulerune_s13_B	yulerune	13	B	v530	OPP	_x3r0v165mjolnirB	Core destroyed	265	0	1730	1960
+v531fix_yulerune_s13_B	yulerune	13	B	v531fix	OPP	_x3r0v165mjolnirB	Core destroyed	295	0	2040	2320
+parent_yulerune_s14_A	yulerune	14	A	parent	OPP	_x3r0v165mjolnirB	Core destroyed	249	0	0	210
+flagoff_yulerune_s14_A	yulerune	14	A	flagoff	OPP	_x3r0v165mjolnirB	Core destroyed	222	0	0	1090
+v530_yulerune_s14_A	yulerune	14	A	v530	OPP	_x3r0v165mjolnirB	Titanium collected (tiebreak)	1000	0	80	190
+v531fix_yulerune_s14_A	yulerune	14	A	v531fix	OPP	_x3r0v165mjolnirB	Core destroyed	284	0	2430	1960
+parent_yulerune_s14_B	yulerune	14	B	parent	OPP	_x3r0v165mjolnirB	Core destroyed	275	0	170	1090
+flagoff_yulerune_s14_B	yulerune	14	B	flagoff	OPP	_x3r0v165mjolnirB	Core destroyed	332	0	120	1740
+v530_yulerune_s14_B	yulerune	14	B	v530	US	v530_arm	Core destroyed	262	0	860	720
+v531fix_yulerune_s14_B	yulerune	14	B	v531fix	OPP	_x3r0v165mjolnirB	Core destroyed	392	0	840	2470
+parent_drakkarfjord_s13_A	drakkarfjord	13	A	parent	OPP	_x3r0v165mjolnirB	Titanium collected (tiebreak)	1000	0	0	140
+flagoff_drakkarfjord_s13_A	drakkarfjord	13	A	flagoff	OPP	_x3r0v165mjolnirB	Titanium collected (tiebreak)	1000	0	0	140
+v530_drakkarfjord_s13_A	drakkarfjord	13	A	v530	US	v530_arm	Core destroyed	725	0	0	420
+v531fix_drakkarfjord_s13_A	drakkarfjord	13	A	v531fix	US	_v531fix	Core destroyed	136	0	490	50
+parent_drakkarfjord_s13_B	drakkarfjord	13	B	parent	US	parent_arm	Core destroyed	196	0	920	0
+flagoff_drakkarfjord_s13_B	drakkarfjord	13	B	flagoff	US	flagoff_arm	Core destroyed	243	0	1080	0
+v530_drakkarfjord_s13_B	drakkarfjord	13	B	v530	US	v530_arm	Core destroyed	321	0	320	0
+v531fix_drakkarfjord_s13_B	drakkarfjord	13	B	v531fix	OPP	_x3r0v165mjolnirB	Core destroyed	593	0	0	1290
+parent_drakkarfjord_s14_A	drakkarfjord	14	A	parent	US	parent_arm	Harvesters (tiebreak)	1000	0	0	0
+flagoff_drakkarfjord_s14_A	drakkarfjord	14	A	flagoff	OPP	_x3r0v165mjolnirB	Titanium collected (tiebreak)	1000	0	0	140
+v530_drakkarfjord_s14_A	drakkarfjord	14	A	v530	OPP	_x3r0v165mjolnirB	Core destroyed	293	0	0	2490
+v531fix_drakkarfjord_s14_A	drakkarfjord	14	A	v531fix	US	_v531fix	Core destroyed	162	0	560	50
+parent_drakkarfjord_s14_B	drakkarfjord	14	B	parent	US	parent_arm	Core destroyed	237	0	1050	60
+flagoff_drakkarfjord_s14_B	drakkarfjord	14	B	flagoff	US	flagoff_arm	Core destroyed	175	0	750	0
+v530_drakkarfjord_s14_B	drakkarfjord	14	B	v530	US	v530_arm	Core destroyed	302	0	670	90
+v531fix_drakkarfjord_s14_B	drakkarfjord	14	B	v531fix	OPP	_x3r0v165mjolnirB	Titanium collected (tiebreak)	1000	0	0	1470
+parent_ragnarok_s13_A	ragnarok	13	A	parent	US	parent_arm	Core destroyed	132	0	610	430
+flagoff_ragnarok_s13_A	ragnarok	13	A	flagoff	US	flagoff_arm	Core destroyed	120	0	520	170
+v530_ragnarok_s13_A	ragnarok	13	A	v530	OPP	_x3r0v165mjolnirB	Core destroyed	145	0	0	690
+v531fix_ragnarok_s13_A	ragnarok	13	A	v531fix	US	_v531fix	Core destroyed	127	0	570	230
+parent_ragnarok_s13_B	ragnarok	13	B	parent	US	parent_arm	Core destroyed	309	0	800	490
+flagoff_ragnarok_s13_B	ragnarok	13	B	flagoff	US	flagoff_arm	Core destroyed	193	0	510	190
+v530_ragnarok_s13_B	ragnarok	13	B	v530	US	v530_arm	Core destroyed	337	0	870	880
+v531fix_ragnarok_s13_B	ragnarok	13	B	v531fix	US	_v531fix	Core destroyed	160	0	760	440
+parent_ragnarok_s14_A	ragnarok	14	A	parent	US	parent_arm	Core destroyed	126	0	580	210
+flagoff_ragnarok_s14_A	ragnarok	14	A	flagoff	US	flagoff_arm	Core destroyed	120	0	520	170
+v530_ragnarok_s14_A	ragnarok	14	A	v530	US	v530_arm	Core destroyed	162	0	360	180
+v531fix_ragnarok_s14_A	ragnarok	14	A	v531fix	US	_v531fix	Core destroyed	127	0	570	230
+parent_ragnarok_s14_B	ragnarok	14	B	parent	US	parent_arm	Core destroyed	277	0	720	490
+flagoff_ragnarok_s14_B	ragnarok	14	B	flagoff	US	flagoff_arm	Core destroyed	277	0	720	490
+v530_ragnarok_s14_B	ragnarok	14	B	v530	US	v530_arm	Core destroyed	153	0	410	220
+v531fix_ragnarok_s14_B	ragnarok	14	B	v531fix	US	_v531fix	Core destroyed	172	0	820	160
+parent_royale_s13_A	royale	13	A	parent	OPP	_x3r0v165mjolnirB	Titanium collected (tiebreak)	1000	0	8980	21220
+flagoff_royale_s13_A	royale	13	A	flagoff	US	flagoff_arm	Core destroyed	151	0	1490	350
+v530_royale_s13_A	royale	13	A	v530	US	v530_arm	Core destroyed	484	0	5630	2930
+v531fix_royale_s13_A	royale	13	A	v531fix	US	_v531fix	Titanium collected (tiebreak)	1000	0	13890	11160
+parent_royale_s13_B	royale	13	B	parent	US	parent_arm	Core destroyed	687	0	11020	6090
+flagoff_royale_s13_B	royale	13	B	flagoff	US	flagoff_arm	Core destroyed	116	0	880	390
+v530_royale_s13_B	royale	13	B	v530	OPP	_x3r0v165mjolnirB	Titanium collected (tiebreak)	1000	0	650	700
+v531fix_royale_s13_B	royale	13	B	v531fix	OPP	_x3r0v165mjolnirB	Core destroyed	658	0	10200	5340
+parent_royale_s14_A	royale	14	A	parent	US	parent_arm	Core destroyed	148	0	1420	190
+flagoff_royale_s14_A	royale	14	A	flagoff	US	flagoff_arm	Core destroyed	183	0	2220	80
+v530_royale_s14_A	royale	14	A	v530	US	v530_arm	Core destroyed	235	0	2350	130
+v531fix_royale_s14_A	royale	14	A	v531fix	OPP	_x3r0v165mjolnirB	Core destroyed	538	0	6080	4220
+parent_royale_s14_B	royale	14	B	parent	US	parent_arm	Core destroyed	229	0	2980	460
+flagoff_royale_s14_B	royale	14	B	flagoff	US	flagoff_arm	Core destroyed	205	0	1960	70
+v530_royale_s14_B	royale	14	B	v530	US	v530_arm	Core destroyed	333	0	1900	1090
+v531fix_royale_s14_B	royale	14	B	v531fix	US	_v531fix	Core destroyed	255	0	1310	660
+parent_nordkap_s13_A	nordkap	13	A	parent	OPP	_x3r0v165mjolnirB	Core destroyed	486	0	1710	1860
+flagoff_nordkap_s13_A	nordkap	13	A	flagoff	OPP	_x3r0v165mjolnirB	Core destroyed	345	0	840	1420
+v530_nordkap_s13_A	nordkap	13	A	v530	US	v530_arm	Core destroyed	289	0	1690	210
+v531fix_nordkap_s13_A	nordkap	13	A	v531fix	US	_v531fix	Core destroyed	247	0	590	90
+parent_nordkap_s13_B	nordkap	13	B	parent	US	parent_arm	Core destroyed	395	0	340	90
+flagoff_nordkap_s13_B	nordkap	13	B	flagoff	US	flagoff_arm	Core destroyed	386	0	2660	190
+v530_nordkap_s13_B	nordkap	13	B	v530	US	v530_arm	Core destroyed	469	0	1430	1710
+v531fix_nordkap_s13_B	nordkap	13	B	v531fix	OPP	_x3r0v165mjolnirB	Core destroyed	426	0	1040	2710
+parent_nordkap_s14_A	nordkap	14	A	parent	US	parent_arm	Core destroyed	280	0	2190	350
+flagoff_nordkap_s14_A	nordkap	14	A	flagoff	US	flagoff_arm	Core destroyed	478	0	2330	80
+v530_nordkap_s14_A	nordkap	14	A	v530	US	v530_arm	Core destroyed	454	0	760	70
+v531fix_nordkap_s14_A	nordkap	14	A	v531fix	US	_v531fix	Core destroyed	376	0	1300	690
+parent_nordkap_s14_B	nordkap	14	B	parent	OPP	_x3r0v165mjolnirB	Core destroyed	390	0	940	3020
+flagoff_nordkap_s14_B	nordkap	14	B	flagoff	US	flagoff_arm	Core destroyed	421	0	220	600
+v530_nordkap_s14_B	nordkap	14	B	v530	OPP	_x3r0v165mjolnirB	Core destroyed	301	0	170	2150
+v531fix_nordkap_s14_B	nordkap	14	B	v531fix	US	_v531fix	Core destroyed	352	0	2020	450
+parent_icefloe_s15_A	icefloe	15	A	parent	OPP	_x3r0v165mjolnirB	Core destroyed	643	0	0	4100
+flagoff_icefloe_s15_A	icefloe	15	A	flagoff	OPP	_x3r0v165mjolnirB	Core destroyed	557	0	0	6010
+v530_icefloe_s15_A	icefloe	15	A	v530	OPP	_x3r0v165mjolnirB	Core destroyed	375	0	1010	5240
+v531fix_icefloe_s15_A	icefloe	15	A	v531fix	US	_v531fix	Core destroyed	252	0	590	110
+parent_icefloe_s15_B	icefloe	15	B	parent	OPP	_x3r0v165mjolnirB	Core destroyed	249	0	0	1110
+flagoff_icefloe_s15_B	icefloe	15	B	flagoff	OPP	_x3r0v165mjolnirB	Core destroyed	248	0	0	1460
+v530_icefloe_s15_B	icefloe	15	B	v530	US	v530_arm	Core destroyed	460	0	2100	0
+v531fix_icefloe_s15_B	icefloe	15	B	v531fix	OPP	_x3r0v165mjolnirB	Core destroyed	418	0	3050	5020
+parent_icefloe_s16_A	icefloe	16	A	parent	US	parent_arm	Core destroyed	592	0	2880	2720
+flagoff_icefloe_s16_A	icefloe	16	A	flagoff	OPP	_x3r0v165mjolnirB	Core destroyed	355	0	0	1820
+v530_icefloe_s16_A	icefloe	16	A	v530	OPP	_x3r0v165mjolnirB	Core destroyed	371	0	590	1020
+v531fix_icefloe_s16_A	icefloe	16	A	v531fix	US	_v531fix	Core destroyed	304	0	720	680
+parent_icefloe_s16_B	icefloe	16	B	parent	OPP	_x3r0v165mjolnirB	Core destroyed	117	0	0	550
+flagoff_icefloe_s16_B	icefloe	16	B	flagoff	OPP	_x3r0v165mjolnirB	Core destroyed	323	0	440	1490
+v530_icefloe_s16_B	icefloe	16	B	v530	OPP	_x3r0v165mjolnirB	Core destroyed	685	0	7050	8970
+v531fix_icefloe_s16_B	icefloe	16	B	v531fix	US	_v531fix	Core destroyed	394	0	3530	310
+parent_auroraveil_s15_A	auroraveil	15	A	parent	US	parent_arm	Core destroyed	316	0	750	0
+flagoff_auroraveil_s15_A	auroraveil	15	A	flagoff	US	flagoff_arm	Core destroyed	363	0	860	0
+v530_auroraveil_s15_A	auroraveil	15	A	v530	US	v530_arm	Core destroyed	776	0	1640	360
+v531fix_auroraveil_s15_A	auroraveil	15	A	v531fix	OPP	_x3r0v165mjolnirB	Core destroyed	111	0	0	570
+parent_auroraveil_s15_B	auroraveil	15	B	parent	OPP	_x3r0v165mjolnirB	Core destroyed	181	0	0	1160
+flagoff_auroraveil_s15_B	auroraveil	15	B	flagoff	OPP	_x3r0v165mjolnirB	Core destroyed	254	0	0	900
+v530_auroraveil_s15_B	auroraveil	15	B	v530	OPP	_x3r0v165mjolnirB	Core destroyed	274	0	0	1630
+v531fix_auroraveil_s15_B	auroraveil	15	B	v531fix	OPP	_x3r0v165mjolnirB	Core destroyed	424	0	0	3240
+parent_auroraveil_s16_A	auroraveil	16	A	parent	US	parent_arm	Core destroyed	387	0	920	180
+flagoff_auroraveil_s16_A	auroraveil	16	A	flagoff	OPP	_x3r0v165mjolnirB	Core destroyed	349	0	830	330
+v530_auroraveil_s16_A	auroraveil	16	A	v530	OPP	_x3r0v165mjolnirB	Core destroyed	422	0	590	1710
+v531fix_auroraveil_s16_A	auroraveil	16	A	v531fix	US	_v531fix	Core destroyed	447	0	730	280
+parent_auroraveil_s16_B	auroraveil	16	B	parent	OPP	_x3r0v165mjolnirB	Core destroyed	142	0	0	710
+flagoff_auroraveil_s16_B	auroraveil	16	B	flagoff	US	flagoff_arm	Core destroyed	445	0	3600	2070
+v530_auroraveil_s16_B	auroraveil	16	B	v530	OPP	_x3r0v165mjolnirB	Core destroyed	434	0	0	3420
+v531fix_auroraveil_s16_B	auroraveil	16	B	v531fix	OPP	_x3r0v165mjolnirB	Core destroyed	142	0	0	740
+parent_glacierkeep_s15_A	glacierkeep	15	A	parent	OPP	_x3r0v165mjolnirB	Core destroyed	279	0	0	2510
+flagoff_glacierkeep_s15_A	glacierkeep	15	A	flagoff	OPP	_x3r0v165mjolnirB	Core destroyed	297	0	0	640
+v530_glacierkeep_s15_A	glacierkeep	15	A	v530	OPP	_x3r0v165mjolnirB	Titanium collected (tiebreak)	1000	0	0	70
+v531fix_glacierkeep_s15_A	glacierkeep	15	A	v531fix	US	_v531fix	Core destroyed	369	0	0	0
+parent_glacierkeep_s15_B	glacierkeep	15	B	parent	OPP	_x3r0v165mjolnirB	Core destroyed	507	0	0	3580
+flagoff_glacierkeep_s15_B	glacierkeep	15	B	flagoff	OPP	_x3r0v165mjolnirB	Titanium collected (tiebreak)	1000	0	0	9010
+v530_glacierkeep_s15_B	glacierkeep	15	B	v530	OPP	_x3r0v165mjolnirB	Titanium collected (tiebreak)	1000	0	0	6050
+v531fix_glacierkeep_s15_B	glacierkeep	15	B	v531fix	US	_v531fix	Core destroyed	809	0	0	0
+parent_glacierkeep_s16_A	glacierkeep	16	A	parent	OPP	_x3r0v165mjolnirB	Core destroyed	323	0	0	2250
+flagoff_glacierkeep_s16_A	glacierkeep	16	A	flagoff	OPP	_x3r0v165mjolnirB	Core destroyed	483	0	0	1650
+v530_glacierkeep_s16_A	glacierkeep	16	A	v530	OPP	_x3r0v165mjolnirB	Core destroyed	775	0	220	920
+v531fix_glacierkeep_s16_A	glacierkeep	16	A	v531fix	OPP	_x3r0v165mjolnirB	Titanium collected (tiebreak)	1000	0	0	7910
+parent_glacierkeep_s16_B	glacierkeep	16	B	parent	OPP	_x3r0v165mjolnirB	Core destroyed	324	0	0	1440
+flagoff_glacierkeep_s16_B	glacierkeep	16	B	flagoff	OPP	_x3r0v165mjolnirB	Harvesters (tiebreak)	1000	0	0	0
+v530_glacierkeep_s16_B	glacierkeep	16	B	v530	OPP	_x3r0v165mjolnirB	Core destroyed	512	0	0	1780
+v531fix_glacierkeep_s16_B	glacierkeep	16	B	v531fix	OPP	_x3r0v165mjolnirB	Core destroyed	513	0	0	4190
+parent_yulerune_s15_A	yulerune	15	A	parent	OPP	_x3r0v165mjolnirB	Core destroyed	197	0	0	830
+flagoff_yulerune_s15_A	yulerune	15	A	flagoff	OPP	_x3r0v165mjolnirB	Core destroyed	663	0	0	1490
+v530_yulerune_s15_A	yulerune	15	A	v530	OPP	_x3r0v165mjolnirB	Titanium collected (tiebreak)	1000	0	90	2020
+v531fix_yulerune_s15_A	yulerune	15	A	v531fix	OPP	_x3r0v165mjolnirB	Core destroyed	301	0	230	1270
+parent_yulerune_s15_B	yulerune	15	B	parent	OPP	_x3r0v165mjolnirB	Core destroyed	605	0	5070	1370
+flagoff_yulerune_s15_B	yulerune	15	B	flagoff	OPP	_x3r0v165mjolnirB	Core destroyed	297	0	70	520
+v530_yulerune_s15_B	yulerune	15	B	v530	OPP	_x3r0v165mjolnirB	Titanium collected (tiebreak)	1000	0	8600	17800
+v531fix_yulerune_s15_B	yulerune	15	B	v531fix	OPP	_x3r0v165mjolnirB	Core destroyed	686	0	6010	6210
+parent_yulerune_s16_A	yulerune	16	A	parent	OPP	_x3r0v165mjolnirB	Core destroyed	153	0	0	640
+flagoff_yulerune_s16_A	yulerune	16	A	flagoff	OPP	_x3r0v165mjolnirB	Core destroyed	143	0	0	750
+v530_yulerune_s16_A	yulerune	16	A	v530	OPP	_x3r0v165mjolnirB	Core destroyed	368	0	80	3710
+v531fix_yulerune_s16_A	yulerune	16	A	v531fix	OPP	_x3r0v165mjolnirB	Core destroyed	330	0	230	2560
+parent_yulerune_s16_B	yulerune	16	B	parent	OPP	_x3r0v165mjolnirB	Titanium collected (tiebreak)	1000	0	460	3790
+flagoff_yulerune_s16_B	yulerune	16	B	flagoff	OPP	_x3r0v165mjolnirB	Core destroyed	806	0	6810	10240
+v530_yulerune_s16_B	yulerune	16	B	v530	OPP	_x3r0v165mjolnirB	Core destroyed	266	0	600	1290
+v531fix_yulerune_s16_B	yulerune	16	B	v531fix	US	_v531fix	Titanium collected (tiebreak)	1000	0	13050	10410
+parent_drakkarfjord_s15_A	drakkarfjord	15	A	parent	US	parent_arm	Core destroyed	980	0	0	420
+flagoff_drakkarfjord_s15_A	drakkarfjord	15	A	flagoff	OPP	_x3r0v165mjolnirB	Core destroyed	528	0	0	1970
+v530_drakkarfjord_s15_A	drakkarfjord	15	A	v530	OPP	_x3r0v165mjolnirB	Core destroyed	346	0	0	2520
+v531fix_drakkarfjord_s15_A	drakkarfjord	15	A	v531fix	OPP	_x3r0v165mjolnirB	Core destroyed	220	0	1210	500
+parent_drakkarfjord_s15_B	drakkarfjord	15	B	parent	US	parent_arm	Core destroyed	243	0	1080	0
+flagoff_drakkarfjord_s15_B	drakkarfjord	15	B	flagoff	US	flagoff_arm	Core destroyed	237	0	1050	60
+v530_drakkarfjord_s15_B	drakkarfjord	15	B	v530	OPP	_x3r0v165mjolnirB	Core destroyed	337	0	770	1240
+v531fix_drakkarfjord_s15_B	drakkarfjord	15	B	v531fix	US	_v531fix	Core destroyed	248	0	360	0
+parent_drakkarfjord_s16_A	drakkarfjord	16	A	parent	US	parent_arm	Core destroyed	961	0	0	300
+flagoff_drakkarfjord_s16_A	drakkarfjord	16	A	flagoff	US	flagoff_arm	Titanium stored (tiebreak)	1000	0	0	0
+v530_drakkarfjord_s16_A	drakkarfjord	16	A	v530	OPP	_x3r0v165mjolnirB	Core destroyed	716	0	0	5530
+v531fix_drakkarfjord_s16_A	drakkarfjord	16	A	v531fix	US	_v531fix	Core destroyed	108	0	210	0
+parent_drakkarfjord_s16_B	drakkarfjord	16	B	parent	US	parent_arm	Core destroyed	237	0	1050	60
+flagoff_drakkarfjord_s16_B	drakkarfjord	16	B	flagoff	US	flagoff_arm	Core destroyed	311	0	1630	0
+v530_drakkarfjord_s16_B	drakkarfjord	16	B	v530	US	v530_arm	Core destroyed	302	0	670	90
+v531fix_drakkarfjord_s16_B	drakkarfjord	16	B	v531fix	OPP	_x3r0v165mjolnirB	Core destroyed	359	0	0	490
+parent_ragnarok_s15_A	ragnarok	15	A	parent	US	parent_arm	Core destroyed	116	0	530	360
+flagoff_ragnarok_s15_A	ragnarok	15	A	flagoff	US	flagoff_arm	Core destroyed	126	0	580	210
+v530_ragnarok_s15_A	ragnarok	15	A	v530	OPP	_x3r0v165mjolnirB	Core destroyed	145	0	0	690
+v531fix_ragnarok_s15_A	ragnarok	15	A	v531fix	US	_v531fix	Core destroyed	128	0	570	210
+parent_ragnarok_s15_B	ragnarok	15	B	parent	US	parent_arm	Core destroyed	153	0	410	210
+flagoff_ragnarok_s15_B	ragnarok	15	B	flagoff	US	flagoff_arm	Core destroyed	177	0	470	170
+v530_ragnarok_s15_B	ragnarok	15	B	v530	US	v530_arm	Core destroyed	337	0	870	880
+v531fix_ragnarok_s15_B	ragnarok	15	B	v531fix	US	_v531fix	Core destroyed	208	0	1000	220
+parent_ragnarok_s16_A	ragnarok	16	A	parent	US	parent_arm	Core destroyed	126	0	580	210
+flagoff_ragnarok_s16_A	ragnarok	16	A	flagoff	US	flagoff_arm	Core destroyed	149	0	480	430
+v530_ragnarok_s16_A	ragnarok	16	A	v530	OPP	_x3r0v165mjolnirB	Core destroyed	165	0	0	790
+v531fix_ragnarok_s16_A	ragnarok	16	A	v531fix	US	_v531fix	Core destroyed	127	0	570	220
+parent_ragnarok_s16_B	ragnarok	16	B	parent	US	parent_arm	Core destroyed	153	0	410	210
+flagoff_ragnarok_s16_B	ragnarok	16	B	flagoff	US	flagoff_arm	Core destroyed	193	0	510	190
+v530_ragnarok_s16_B	ragnarok	16	B	v530	US	v530_arm	Core destroyed	272	0	710	250
+v531fix_ragnarok_s16_B	ragnarok	16	B	v531fix	US	_v531fix	Core destroyed	164	0	780	450
+parent_royale_s15_A	royale	15	A	parent	US	parent_arm	Titanium collected (tiebreak)	1000	0	14290	8890
+flagoff_royale_s15_A	royale	15	A	flagoff	US	flagoff_arm	Core destroyed	398	0	6270	1400
+v530_royale_s15_A	royale	15	A	v530	US	v530_arm	Titanium collected (tiebreak)	1000	0	12810	8690
+v531fix_royale_s15_A	royale	15	A	v531fix	US	_v531fix	Core destroyed	657	0	9000	5910
+parent_royale_s15_B	royale	15	B	parent	US	parent_arm	Core destroyed	152	0	1510	240
+flagoff_royale_s15_B	royale	15	B	flagoff	US	flagoff_arm	Core destroyed	166	0	1410	300
+v530_royale_s15_B	royale	15	B	v530	US	v530_arm	Core destroyed	278	0	3090	450
+v531fix_royale_s15_B	royale	15	B	v531fix	US	_v531fix	Core destroyed	220	0	2600	610
+parent_royale_s16_A	royale	16	A	parent	OPP	_x3r0v165mjolnirB	Core destroyed	404	0	1020	2650
+flagoff_royale_s16_A	royale	16	A	flagoff	US	flagoff_arm	Core destroyed	191	0	2340	840
+v530_royale_s16_A	royale	16	A	v530	US	v530_arm	Core destroyed	383	0	3080	430
+v531fix_royale_s16_A	royale	16	A	v531fix	US	_v531fix	Core destroyed	192	0	1630	70
+parent_royale_s16_B	royale	16	B	parent	US	parent_arm	Core destroyed	186	0	2340	510
+flagoff_royale_s16_B	royale	16	B	flagoff	US	flagoff_arm	Core destroyed	177	0	2050	0
+v530_royale_s16_B	royale	16	B	v530	US	v530_arm	Core destroyed	355	0	2120	1090
+v531fix_royale_s16_B	royale	16	B	v531fix	OPP	_x3r0v165mjolnirB	Core destroyed	310	0	1420	3000
+parent_nordkap_s15_A	nordkap	15	A	parent	US	parent_arm	Core destroyed	478	0	2330	80
+flagoff_nordkap_s15_A	nordkap	15	A	flagoff	US	flagoff_arm	Core destroyed	393	0	320	20
+v530_nordkap_s15_A	nordkap	15	A	v530	US	v530_arm	Core destroyed	382	0	190	120
+v531fix_nordkap_s15_A	nordkap	15	A	v531fix	US	_v531fix	Core destroyed	666	0	3060	70
+parent_nordkap_s15_B	nordkap	15	B	parent	OPP	_x3r0v165mjolnirB	Core destroyed	238	0	180	1640
+flagoff_nordkap_s15_B	nordkap	15	B	flagoff	US	flagoff_arm	Core destroyed	391	0	1210	430
+v530_nordkap_s15_B	nordkap	15	B	v530	US	v530_arm	Core destroyed	548	0	1790	110
+v531fix_nordkap_s15_B	nordkap	15	B	v531fix	US	_v531fix	Core destroyed	431	0	2080	1220
+parent_nordkap_s16_A	nordkap	16	A	parent	US	parent_arm	Core destroyed	771	0	2060	220
+flagoff_nordkap_s16_A	nordkap	16	A	flagoff	OPP	_x3r0v165mjolnirB	Core destroyed	347	0	210	560
+v530_nordkap_s16_A	nordkap	16	A	v530	US	v530_arm	Core destroyed	289	0	230	90
+v531fix_nordkap_s16_A	nordkap	16	A	v531fix	US	_v531fix	Core destroyed	305	0	630	130
+parent_nordkap_s16_B	nordkap	16	B	parent	OPP	_x3r0v165mjolnirB	Core destroyed	188	0	260	570
+flagoff_nordkap_s16_B	nordkap	16	B	flagoff	US	flagoff_arm	Core destroyed	309	0	750	840
+v530_nordkap_s16_B	nordkap	16	B	v530	US	v530_arm	Core destroyed	197	0	180	120
+v531fix_nordkap_s16_B	nordkap	16	B	v531fix	OPP	_x3r0v165mjolnirB	Core destroyed	221	0	520	2930
+parent_icefloe_s17_A	icefloe	17	A	parent	OPP	_x3r0v165mjolnirB	Titanium collected (tiebreak)	1000	0	0	70
+flagoff_icefloe_s17_A	icefloe	17	A	flagoff	OPP	_x3r0v165mjolnirB	Core destroyed	201	0	0	920
+v530_icefloe_s17_A	icefloe	17	A	v530	US	v530_arm	Core destroyed	272	0	560	150
+v531fix_icefloe_s17_A	icefloe	17	A	v531fix	OPP	_x3r0v165mjolnirB	Core destroyed	601	0	1460	5460
+parent_icefloe_s17_B	icefloe	17	B	parent	OPP	_x3r0v165mjolnirB	Core destroyed	373	0	0	850
+flagoff_icefloe_s17_B	icefloe	17	B	flagoff	OPP	_x3r0v165mjolnirB	Core destroyed	120	0	0	610
+v530_icefloe_s17_B	icefloe	17	B	v530	OPP	_x3r0v165mjolnirB	Titanium collected (tiebreak)	1000	0	10810	14400
+v531fix_icefloe_s17_B	icefloe	17	B	v531fix	OPP	_x3r0v165mjolnirB	Core destroyed	448	0	3940	5300
+parent_icefloe_s18_A	icefloe	18	A	parent	OPP	_x3r0v165mjolnirB	Core destroyed	250	0	0	1670
+flagoff_icefloe_s18_A	icefloe	18	A	flagoff	OPP	_x3r0v165mjolnirB	Titanium collected (tiebreak)	1000	0	0	1060
+v530_icefloe_s18_A	icefloe	18	A	v530	US	v530_arm	Core destroyed	296	0	620	1860
+v531fix_icefloe_s18_A	icefloe	18	A	v531fix	US	_v531fix	Core destroyed	335	0	800	20
+parent_icefloe_s18_B	icefloe	18	B	parent	OPP	_x3r0v165mjolnirB	Core destroyed	141	0	0	550
+flagoff_icefloe_s18_B	icefloe	18	B	flagoff	OPP	_x3r0v165mjolnirB	Core destroyed	322	0	0	3890
+v530_icefloe_s18_B	icefloe	18	B	v530	OPP	_x3r0v165mjolnirB	Core destroyed	532	0	2890	6080
+v531fix_icefloe_s18_B	icefloe	18	B	v531fix	US	_v531fix	Core destroyed	643	0	5590	4880
+parent_auroraveil_s17_A	auroraveil	17	A	parent	US	parent_arm	Core destroyed	417	0	1000	0
+flagoff_auroraveil_s17_A	auroraveil	17	A	flagoff	US	flagoff_arm	Core destroyed	313	0	740	390
+v530_auroraveil_s17_A	auroraveil	17	A	v530	OPP	_x3r0v165mjolnirB	Core destroyed	438	0	740	1100
+v531fix_auroraveil_s17_A	auroraveil	17	A	v531fix	OPP	_x3r0v165mjolnirB	Core destroyed	270	0	460	1010
+parent_auroraveil_s17_B	auroraveil	17	B	parent	OPP	_x3r0v165mjolnirB	Core destroyed	239	0	0	1360
+flagoff_auroraveil_s17_B	auroraveil	17	B	flagoff	OPP	_x3r0v165mjolnirB	Core destroyed	116	0	0	640
+v530_auroraveil_s17_B	auroraveil	17	B	v530	OPP	_x3r0v165mjolnirB	Core destroyed	210	0	0	1160
+v531fix_auroraveil_s17_B	auroraveil	17	B	v531fix	OPP	_x3r0v165mjolnirB	Core destroyed	144	0	0	760
+parent_auroraveil_s18_A	auroraveil	18	A	parent	US	parent_arm	Core destroyed	229	0	530	360
+flagoff_auroraveil_s18_A	auroraveil	18	A	flagoff	OPP	_x3r0v165mjolnirB	Core destroyed	302	0	710	950
+v530_auroraveil_s18_A	auroraveil	18	A	v530	OPP	_x3r0v165mjolnirB	Core destroyed	171	0	200	940
+v531fix_auroraveil_s18_A	auroraveil	18	A	v531fix	OPP	_x3r0v165mjolnirB	Core destroyed	287	0	500	2030
+parent_auroraveil_s18_B	auroraveil	18	B	parent	OPP	_x3r0v165mjolnirB	Core destroyed	252	0	510	1520
+flagoff_auroraveil_s18_B	auroraveil	18	B	flagoff	OPP	_x3r0v165mjolnirB	Core destroyed	160	0	0	970
+v530_auroraveil_s18_B	auroraveil	18	B	v530	US	v530_arm	Core destroyed	522	0	2980	540
+v531fix_auroraveil_s18_B	auroraveil	18	B	v531fix	OPP	_x3r0v165mjolnirB	Core destroyed	542	0	0	1210
+parent_glacierkeep_s17_A	glacierkeep	17	A	parent	OPP	_x3r0v165mjolnirB	Core destroyed	532	0	0	590
+flagoff_glacierkeep_s17_A	glacierkeep	17	A	flagoff	OPP	_x3r0v165mjolnirB	Core destroyed	549	0	0	120
+v530_glacierkeep_s17_A	glacierkeep	17	A	v530	OPP	_x3r0v165mjolnirB	Core destroyed	615	0	0	3550
+v531fix_glacierkeep_s17_A	glacierkeep	17	A	v531fix	OPP	_x3r0v165mjolnirB	Core destroyed	426	0	0	4660
+parent_glacierkeep_s17_B	glacierkeep	17	B	parent	OPP	_x3r0v165mjolnirB	Titanium collected (tiebreak)	1000	0	0	2320
+flagoff_glacierkeep_s17_B	glacierkeep	17	B	flagoff	OPP	_x3r0v165mjolnirB	Core destroyed	556	0	0	4250
+v530_glacierkeep_s17_B	glacierkeep	17	B	v530	OPP	_x3r0v165mjolnirB	Titanium collected (tiebreak)	1000	0	0	360
+v531fix_glacierkeep_s17_B	glacierkeep	17	B	v531fix	OPP	_x3r0v165mjolnirB	Core destroyed	525	0	0	3860
+parent_glacierkeep_s18_A	glacierkeep	18	A	parent	US	parent_arm	Core destroyed	343	0	210	0
+flagoff_glacierkeep_s18_A	glacierkeep	18	A	flagoff	OPP	_x3r0v165mjolnirB	Titanium collected (tiebreak)	1000	0	0	760
+v530_glacierkeep_s18_A	glacierkeep	18	A	v530	OPP	_x3r0v165mjolnirB	Titanium collected (tiebreak)	1000	0	3420	8430
+v531fix_glacierkeep_s18_A	glacierkeep	18	A	v531fix	US	_v531fix	Core destroyed	641	0	0	0
+parent_glacierkeep_s18_B	glacierkeep	18	B	parent	OPP	_x3r0v165mjolnirB	Core destroyed	641	0	0	4860
+flagoff_glacierkeep_s18_B	glacierkeep	18	B	flagoff	OPP	_x3r0v165mjolnirB	Core destroyed	526	0	0	1350
+v530_glacierkeep_s18_B	glacierkeep	18	B	v530	OPP	_x3r0v165mjolnirB	Core destroyed	426	0	0	1040
+v531fix_glacierkeep_s18_B	glacierkeep	18	B	v531fix	OPP	_x3r0v165mjolnirB	Core destroyed	601	0	0	4890
+parent_yulerune_s17_A	yulerune	17	A	parent	OPP	_x3r0v165mjolnirB	Core destroyed	184	0	0	930
+flagoff_yulerune_s17_A	yulerune	17	A	flagoff	OPP	_x3r0v165mjolnirB	Core destroyed	153	0	0	720
+v530_yulerune_s17_A	yulerune	17	A	v530	OPP	_x3r0v165mjolnirB	Titanium collected (tiebreak)	1000	0	1660	16190
+v531fix_yulerune_s17_A	yulerune	17	A	v531fix	US	_v531fix	Core destroyed	341	0	1580	350
+parent_yulerune_s17_B	yulerune	17	B	parent	OPP	_x3r0v165mjolnirB	Core destroyed	220	0	70	1080
+flagoff_yulerune_s17_B	yulerune	17	B	flagoff	OPP	_x3r0v165mjolnirB	Core destroyed	220	0	70	1080
+v530_yulerune_s17_B	yulerune	17	B	v530	OPP	_x3r0v165mjolnirB	Core destroyed	432	0	670	2110
+v531fix_yulerune_s17_B	yulerune	17	B	v531fix	US	_v531fix	Core destroyed	297	0	2110	0
+parent_yulerune_s18_A	yulerune	18	A	parent	OPP	_x3r0v165mjolnirB	Core destroyed	129	0	0	750
+flagoff_yulerune_s18_A	yulerune	18	A	flagoff	OPP	_x3r0v165mjolnirB	Core destroyed	378	0	0	800
+v530_yulerune_s18_A	yulerune	18	A	v530	OPP	_x3r0v165mjolnirB	Core destroyed	248	0	80	1560
+v531fix_yulerune_s18_A	yulerune	18	A	v531fix	OPP	_x3r0v165mjolnirB	Core destroyed	198	0	260	1480
+parent_yulerune_s18_B	yulerune	18	B	parent	US	parent_arm	Core destroyed	349	0	120	110
+flagoff_yulerune_s18_B	yulerune	18	B	flagoff	OPP	_x3r0v165mjolnirB	Titanium collected (tiebreak)	1000	0	3230	12060
+v530_yulerune_s18_B	yulerune	18	B	v530	OPP	_x3r0v165mjolnirB	Core destroyed	260	0	0	1010
+v531fix_yulerune_s18_B	yulerune	18	B	v531fix	OPP	_x3r0v165mjolnirB	Core destroyed	311	0	2340	2180
+parent_drakkarfjord_s17_A	drakkarfjord	17	A	parent	OPP	_x3r0v165mjolnirB	Core destroyed	528	0	0	1970
+flagoff_drakkarfjord_s17_A	drakkarfjord	17	A	flagoff	US	flagoff_arm	Core destroyed	737	0	0	140
+v530_drakkarfjord_s17_A	drakkarfjord	17	A	v530	OPP	_x3r0v165mjolnirB	Core destroyed	197	0	0	800
+v531fix_drakkarfjord_s17_A	drakkarfjord	17	A	v531fix	US	_v531fix	Core destroyed	108	0	210	0
+parent_drakkarfjord_s17_B	drakkarfjord	17	B	parent	US	parent_arm	Core destroyed	465	0	2410	0
+flagoff_drakkarfjord_s17_B	drakkarfjord	17	B	flagoff	US	flagoff_arm	Core destroyed	184	0	820	0
+v530_drakkarfjord_s17_B	drakkarfjord	17	B	v530	OPP	_x3r0v165mjolnirB	Core destroyed	673	0	0	3080
+v531fix_drakkarfjord_s17_B	drakkarfjord	17	B	v531fix	OPP	_x3r0v165mjolnirB	Titanium collected (tiebreak)	1000	0	0	260
+parent_drakkarfjord_s18_A	drakkarfjord	18	A	parent	OPP	_x3r0v165mjolnirB	Titanium collected (tiebreak)	1000	0	0	6370
+flagoff_drakkarfjord_s18_A	drakkarfjord	18	A	flagoff	OPP	_x3r0v165mjolnirB	Titanium collected (tiebreak)	1000	0	0	7810
+v530_drakkarfjord_s18_A	drakkarfjord	18	A	v530	US	v530_arm	Core destroyed	389	0	450	1820
+v531fix_drakkarfjord_s18_A	drakkarfjord	18	A	v531fix	US	_v531fix	Core destroyed	108	0	210	0
+parent_drakkarfjord_s18_B	drakkarfjord	18	B	parent	OPP	_x3r0v165mjolnirB	Core destroyed	437	0	0	560
+flagoff_drakkarfjord_s18_B	drakkarfjord	18	B	flagoff	US	flagoff_arm	Core destroyed	196	0	920	0
+v530_drakkarfjord_s18_B	drakkarfjord	18	B	v530	US	v530_arm	Core destroyed	302	0	670	90
+v531fix_drakkarfjord_s18_B	drakkarfjord	18	B	v531fix	US	_v531fix	Core destroyed	248	0	340	0
+parent_ragnarok_s17_A	ragnarok	17	A	parent	US	parent_arm	Core destroyed	132	0	610	430
+flagoff_ragnarok_s17_A	ragnarok	17	A	flagoff	US	flagoff_arm	Core destroyed	126	0	590	220
+v530_ragnarok_s17_A	ragnarok	17	A	v530	OPP	_x3r0v165mjolnirB	Core destroyed	153	0	0	730
+v531fix_ragnarok_s17_A	ragnarok	17	A	v531fix	US	_v531fix	Core destroyed	128	0	570	210
+parent_ragnarok_s17_B	ragnarok	17	B	parent	US	parent_arm	Core destroyed	187	0	500	190
+flagoff_ragnarok_s17_B	ragnarok	17	B	flagoff	US	flagoff_arm	Core destroyed	193	0	510	180
+v530_ragnarok_s17_B	ragnarok	17	B	v530	US	v530_arm	Core destroyed	337	0	870	880
+v531fix_ragnarok_s17_B	ragnarok	17	B	v531fix	US	_v531fix	Core destroyed	177	0	840	220
+parent_ragnarok_s18_A	ragnarok	18	A	parent	US	parent_arm	Core destroyed	120	0	520	170
+flagoff_ragnarok_s18_A	ragnarok	18	A	flagoff	US	flagoff_arm	Core destroyed	126	0	580	210
+v530_ragnarok_s18_A	ragnarok	18	A	v530	OPP	_x3r0v165mjolnirB	Core destroyed	165	0	0	790
+v531fix_ragnarok_s18_A	ragnarok	18	A	v531fix	US	_v531fix	Core destroyed	128	0	570	210
+parent_ragnarok_s18_B	ragnarok	18	B	parent	US	parent_arm	Core destroyed	309	0	800	490
+flagoff_ragnarok_s18_B	ragnarok	18	B	flagoff	US	flagoff_arm	Core destroyed	193	0	510	190
+v530_ragnarok_s18_B	ragnarok	18	B	v530	US	v530_arm	Core destroyed	288	0	750	300
+v531fix_ragnarok_s18_B	ragnarok	18	B	v531fix	US	_v531fix	Core destroyed	116	0	540	340
+parent_royale_s17_A	royale	17	A	parent	US	parent_arm	Core destroyed	157	0	1380	100
+flagoff_royale_s17_A	royale	17	A	flagoff	US	flagoff_arm	Core destroyed	311	0	3980	1370
+v530_royale_s17_A	royale	17	A	v530	US	v530_arm	Titanium collected (tiebreak)	1000	0	10930	7980
+v531fix_royale_s17_A	royale	17	A	v531fix	US	_v531fix	Core destroyed	651	0	6640	5100
+parent_royale_s17_B	royale	17	B	parent	US	parent_arm	Core destroyed	280	0	4270	500
+flagoff_royale_s17_B	royale	17	B	flagoff	US	flagoff_arm	Core destroyed	196	0	2130	220
+v530_royale_s17_B	royale	17	B	v530	US	v530_arm	Core destroyed	265	0	1020	110
+v531fix_royale_s17_B	royale	17	B	v531fix	US	_v531fix	Titanium collected (tiebreak)	1000	0	9400	5550
+parent_royale_s18_A	royale	18	A	parent	US	parent_arm	Core destroyed	256	0	3600	1070
+flagoff_royale_s18_A	royale	18	A	flagoff	US	flagoff_arm	Core destroyed	201	0	2080	60
+v530_royale_s18_A	royale	18	A	v530	US	v530_arm	Core destroyed	534	0	5780	1100
+v531fix_royale_s18_A	royale	18	A	v531fix	US	_v531fix	Titanium collected (tiebreak)	1000	0	13930	11520
+parent_royale_s18_B	royale	18	B	parent	US	parent_arm	Core destroyed	279	0	3250	530
+flagoff_royale_s18_B	royale	18	B	flagoff	US	flagoff_arm	Titanium collected (tiebreak)	1000	0	18730	8690
+v530_royale_s18_B	royale	18	B	v530	OPP	_x3r0v165mjolnirB	Core destroyed	269	0	1160	1140
+v531fix_royale_s18_B	royale	18	B	v531fix	US	_v531fix	Core destroyed	338	0	3680	1520
+parent_nordkap_s17_A	nordkap	17	A	parent	US	parent_arm	Core destroyed	274	0	1260	120
+flagoff_nordkap_s17_A	nordkap	17	A	flagoff	US	flagoff_arm	Core destroyed	164	0	590	20
+v530_nordkap_s17_A	nordkap	17	A	v530	US	v530_arm	Core destroyed	264	0	880	180
+v531fix_nordkap_s17_A	nordkap	17	A	v531fix	US	_v531fix	Core destroyed	185	0	440	60
+parent_nordkap_s17_B	nordkap	17	B	parent	US	parent_arm	Core destroyed	404	0	1590	1170
+flagoff_nordkap_s17_B	nordkap	17	B	flagoff	OPP	_x3r0v165mjolnirB	Core destroyed	154	0	360	1190
+v530_nordkap_s17_B	nordkap	17	B	v530	OPP	_x3r0v165mjolnirB	Core destroyed	318	0	180	2500
+v531fix_nordkap_s17_B	nordkap	17	B	v531fix	OPP	_x3r0v165mjolnirB	Core destroyed	222	0	530	2920
+parent_nordkap_s18_A	nordkap	18	A	parent	US	parent_arm	Core destroyed	417	0	3130	880
+flagoff_nordkap_s18_A	nordkap	18	A	flagoff	US	flagoff_arm	Core destroyed	164	0	590	20
+v530_nordkap_s18_A	nordkap	18	A	v530	US	v530_arm	Core destroyed	177	0	270	70
+v531fix_nordkap_s18_A	nordkap	18	A	v531fix	OPP	_x3r0v165mjolnirB	Core destroyed	347	0	320	1290
+parent_nordkap_s18_B	nordkap	18	B	parent	OPP	_x3r0v165mjolnirB	Core destroyed	147	0	100	790
+flagoff_nordkap_s18_B	nordkap	18	B	flagoff	US	flagoff_arm	Core destroyed	322	0	760	650
+v530_nordkap_s18_B	nordkap	18	B	v530	US	v530_arm	Core destroyed	251	0	250	100
+v531fix_nordkap_s18_B	nordkap	18	B	v531fix	OPP	_x3r0v165mjolnirB	Core destroyed	382	0	930	2540
+parent_icefloe_s19_A	icefloe	19	A	parent	OPP	_x3r0v165mjolnirB	Core destroyed	331	0	0	2860
+flagoff_icefloe_s19_A	icefloe	19	A	flagoff	OPP	_x3r0v165mjolnirB	Core destroyed	590	0	2670	7940
+v530_icefloe_s19_A	icefloe	19	A	v530	OPP	_x3r0v165mjolnirB	Core destroyed	262	0	790	1140
+v531fix_icefloe_s19_A	icefloe	19	A	v531fix	OPP	_x3r0v165mjolnirB	Core destroyed	244	0	390	640
+parent_icefloe_s19_B	icefloe	19	B	parent	OPP	_x3r0v165mjolnirB	Core destroyed	672	0	1370	1640
+flagoff_icefloe_s19_B	icefloe	19	B	flagoff	OPP	_x3r0v165mjolnirB	Core destroyed	141	0	0	550
+v530_icefloe_s19_B	icefloe	19	B	v530	US	v530_arm	Core destroyed	326	0	2530	220
+v531fix_icefloe_s19_B	icefloe	19	B	v531fix	US	_v531fix	Core destroyed	352	0	2600	1220
+parent_icefloe_s20_A	icefloe	20	A	parent	US	parent_arm	Core destroyed	773	0	1190	80
+flagoff_icefloe_s20_A	icefloe	20	A	flagoff	OPP	_x3r0v165mjolnirB	Core destroyed	334	0	0	690
+v530_icefloe_s20_A	icefloe	20	A	v530	OPP	_x3r0v165mjolnirB	Core destroyed	461	0	1810	4620
+v531fix_icefloe_s20_A	icefloe	20	A	v531fix	US	_v531fix	Core destroyed	184	0	420	80
+parent_icefloe_s20_B	icefloe	20	B	parent	OPP	_x3r0v165mjolnirB	Core destroyed	120	0	0	610
+flagoff_icefloe_s20_B	icefloe	20	B	flagoff	OPP	_x3r0v165mjolnirB	Core destroyed	234	0	90	460
+v530_icefloe_s20_B	icefloe	20	B	v530	OPP	_x3r0v165mjolnirB	Core destroyed	235	0	860	940
+v531fix_icefloe_s20_B	icefloe	20	B	v531fix	US	_v531fix	Core destroyed	383	0	3710	900
+parent_auroraveil_s19_A	auroraveil	19	A	parent	OPP	_x3r0v165mjolnirB	Core destroyed	154	0	340	530
+flagoff_auroraveil_s19_A	auroraveil	19	A	flagoff	US	flagoff_arm	Core destroyed	206	0	470	10
+v530_auroraveil_s19_A	auroraveil	19	A	v530	OPP	_x3r0v165mjolnirB	Core destroyed	159	0	0	720
+v531fix_auroraveil_s19_A	auroraveil	19	A	v531fix	OPP	_x3r0v165mjolnirB	Core destroyed	387	0	260	2940
+parent_auroraveil_s19_B	auroraveil	19	B	parent	OPP	_x3r0v165mjolnirB	Core destroyed	171	0	0	610
+flagoff_auroraveil_s19_B	auroraveil	19	B	flagoff	OPP	_x3r0v165mjolnirB	Core destroyed	235	0	0	870
+v530_auroraveil_s19_B	auroraveil	19	B	v530	US	v530_arm	Titanium collected (tiebreak)	1000	0	1730	840
+v531fix_auroraveil_s19_B	auroraveil	19	B	v531fix	OPP	_x3r0v165mjolnirB	Core destroyed	155	0	0	880
+parent_auroraveil_s20_A	auroraveil	20	A	parent	US	parent_arm	Core destroyed	172	0	390	10
+flagoff_auroraveil_s20_A	auroraveil	20	A	flagoff	OPP	_x3r0v165mjolnirB	Core destroyed	349	0	830	330
+v530_auroraveil_s20_A	auroraveil	20	A	v530	OPP	_x3r0v165mjolnirB	Core destroyed	278	0	490	1630
+v531fix_auroraveil_s20_A	auroraveil	20	A	v531fix	OPP	_x3r0v165mjolnirB	Core destroyed	655	0	1440	3720
+parent_auroraveil_s20_B	auroraveil	20	B	parent	OPP	_x3r0v165mjolnirB	Core destroyed	159	0	0	700
+flagoff_auroraveil_s20_B	auroraveil	20	B	flagoff	OPP	_x3r0v165mjolnirB	Core destroyed	122	0	0	640
+v530_auroraveil_s20_B	auroraveil	20	B	v530	OPP	_x3r0v165mjolnirB	Core destroyed	188	0	0	1050
+v531fix_auroraveil_s20_B	auroraveil	20	B	v531fix	OPP	_x3r0v165mjolnirB	Core destroyed	396	0	0	2490
+parent_glacierkeep_s19_A	glacierkeep	19	A	parent	US	parent_arm	Core destroyed	381	0	0	120
+flagoff_glacierkeep_s19_A	glacierkeep	19	A	flagoff	OPP	_x3r0v165mjolnirB	Core destroyed	394	0	0	3160
+v530_glacierkeep_s19_A	glacierkeep	19	A	v530	US	v530_arm	Core destroyed	452	0	0	0
+v531fix_glacierkeep_s19_A	glacierkeep	19	A	v531fix	US	_v531fix	Harvesters (tiebreak)	1000	0	0	0
+parent_glacierkeep_s19_B	glacierkeep	19	B	parent	OPP	_x3r0v165mjolnirB	Core destroyed	332	0	0	820
+flagoff_glacierkeep_s19_B	glacierkeep	19	B	flagoff	US	flagoff_arm	Core destroyed	957	0	0	0
+v530_glacierkeep_s19_B	glacierkeep	19	B	v530	US	v530_arm	Core destroyed	600	0	1570	5180
+v531fix_glacierkeep_s19_B	glacierkeep	19	B	v531fix	OPP	_x3r0v165mjolnirB	Core destroyed	624	0	0	10330
+parent_glacierkeep_s20_A	glacierkeep	20	A	parent	OPP	_x3r0v165mjolnirB	Core destroyed	536	0	0	2840
+flagoff_glacierkeep_s20_A	glacierkeep	20	A	flagoff	OPP	_x3r0v165mjolnirB	Core destroyed	652	0	0	6270
+v530_glacierkeep_s20_A	glacierkeep	20	A	v530	OPP	_x3r0v165mjolnirB	Core destroyed	300	0	0	1630
+v531fix_glacierkeep_s20_A	glacierkeep	20	A	v531fix	US	_v531fix	Harvesters (tiebreak)	1000	0	0	0
+parent_glacierkeep_s20_B	glacierkeep	20	B	parent	OPP	_x3r0v165mjolnirB	Core destroyed	531	0	0	3900
+flagoff_glacierkeep_s20_B	glacierkeep	20	B	flagoff	OPP	_x3r0v165mjolnirB	Core destroyed	292	0	0	920
+v530_glacierkeep_s20_B	glacierkeep	20	B	v530	OPP	_x3r0v165mjolnirB	Core destroyed	590	0	420	5730
+v531fix_glacierkeep_s20_B	glacierkeep	20	B	v531fix	OPP	_x3r0v165mjolnirB	Core destroyed	685	0	0	8050
+parent_yulerune_s19_A	yulerune	19	A	parent	OPP	_x3r0v165mjolnirB	Titanium collected (tiebreak)	1000	0	0	5110
+flagoff_yulerune_s19_A	yulerune	19	A	flagoff	OPP	_x3r0v165mjolnirB	Core destroyed	164	0	0	990
+v530_yulerune_s19_A	yulerune	19	A	v530	OPP	_x3r0v165mjolnirB	Core destroyed	256	0	80	1570
+v531fix_yulerune_s19_A	yulerune	19	A	v531fix	US	_v531fix	Core destroyed	361	0	230	190
+parent_yulerune_s19_B	yulerune	19	B	parent	OPP	_x3r0v165mjolnirB	Core destroyed	255	0	120	1260
+flagoff_yulerune_s19_B	yulerune	19	B	flagoff	OPP	_x3r0v165mjolnirB	Titanium collected (tiebreak)	1000	0	0	5020
+v530_yulerune_s19_B	yulerune	19	B	v530	US	v530_arm	Core destroyed	756	0	9550	7100
+v531fix_yulerune_s19_B	yulerune	19	B	v531fix	OPP	_x3r0v165mjolnirB	Core destroyed	194	0	0	1170
+parent_yulerune_s20_A	yulerune	20	A	parent	OPP	_x3r0v165mjolnirB	Core destroyed	249	0	0	210
+flagoff_yulerune_s20_A	yulerune	20	A	flagoff	OPP	_x3r0v165mjolnirB	Core destroyed	149	0	0	670
+v530_yulerune_s20_A	yulerune	20	A	v530	OPP	_x3r0v165mjolnirB	Core destroyed	469	0	120	2190
+v531fix_yulerune_s20_A	yulerune	20	A	v531fix	US	_v531fix	Core destroyed	361	0	230	190
+parent_yulerune_s20_B	yulerune	20	B	parent	OPP	_x3r0v165mjolnirB	Core destroyed	286	0	360	750
+flagoff_yulerune_s20_B	yulerune	20	B	flagoff	OPP	_x3r0v165mjolnirB	Core destroyed	212	0	70	1360
+v530_yulerune_s20_B	yulerune	20	B	v530	OPP	_x3r0v165mjolnirB	Core destroyed	472	0	3920	4900
+v531fix_yulerune_s20_B	yulerune	20	B	v531fix	US	_v531fix	Core destroyed	432	0	5520	430
+parent_drakkarfjord_s19_A	drakkarfjord	19	A	parent	OPP	_x3r0v165mjolnirB	Titanium collected (tiebreak)	1000	0	0	5600
+flagoff_drakkarfjord_s19_A	drakkarfjord	19	A	flagoff	US	flagoff_arm	Titanium stored (tiebreak)	1000	0	0	0
+v530_drakkarfjord_s19_A	drakkarfjord	19	A	v530	OPP	_x3r0v165mjolnirB	Titanium collected (tiebreak)	1000	0	0	9000
+v531fix_drakkarfjord_s19_A	drakkarfjord	19	A	v531fix	US	_v531fix	Core destroyed	162	0	320	60
+parent_drakkarfjord_s19_B	drakkarfjord	19	B	parent	US	parent_arm	Core destroyed	175	0	740	0
+flagoff_drakkarfjord_s19_B	drakkarfjord	19	B	flagoff	US	flagoff_arm	Core destroyed	327	0	1740	0
+v530_drakkarfjord_s19_B	drakkarfjord	19	B	v530	US	v530_arm	Core destroyed	249	0	190	0
+v531fix_drakkarfjord_s19_B	drakkarfjord	19	B	v531fix	US	_v531fix	Harvesters (tiebreak)	1000	0	0	0
+parent_drakkarfjord_s20_A	drakkarfjord	20	A	parent	OPP	_x3r0v165mjolnirB	Titanium collected (tiebreak)	1000	0	0	140
+flagoff_drakkarfjord_s20_A	drakkarfjord	20	A	flagoff	OPP	_x3r0v165mjolnirB	Harvesters (tiebreak)	1000	0	0	0
+v530_drakkarfjord_s20_A	drakkarfjord	20	A	v530	OPP	_x3r0v165mjolnirB	Core destroyed	702	0	0	9190
+v531fix_drakkarfjord_s20_A	drakkarfjord	20	A	v531fix	OPP	_x3r0v165mjolnirB	Core destroyed	629	0	640	1230
+parent_drakkarfjord_s20_B	drakkarfjord	20	B	parent	US	parent_arm	Core destroyed	465	0	2410	0
+flagoff_drakkarfjord_s20_B	drakkarfjord	20	B	flagoff	US	flagoff_arm	Core destroyed	175	0	740	0
+v530_drakkarfjord_s20_B	drakkarfjord	20	B	v530	OPP	_x3r0v165mjolnirB	Titanium collected (tiebreak)	1000	0	0	1200
+v531fix_drakkarfjord_s20_B	drakkarfjord	20	B	v531fix	OPP	_x3r0v165mjolnirB	Core destroyed	390	0	0	720
+parent_ragnarok_s19_A	ragnarok	19	A	parent	US	parent_arm	Core destroyed	126	0	590	220
+flagoff_ragnarok_s19_A	ragnarok	19	A	flagoff	US	flagoff_arm	Core destroyed	126	0	590	220
+v530_ragnarok_s19_A	ragnarok	19	A	v530	OPP	_x3r0v165mjolnirB	Core destroyed	153	0	0	730
+v531fix_ragnarok_s19_A	ragnarok	19	A	v531fix	US	_v531fix	Core destroyed	128	0	570	210
+parent_ragnarok_s19_B	ragnarok	19	B	parent	US	parent_arm	Core destroyed	153	0	410	210
+flagoff_ragnarok_s19_B	ragnarok	19	B	flagoff	US	flagoff_arm	Core destroyed	153	0	410	210
+v530_ragnarok_s19_B	ragnarok	19	B	v530	US	v530_arm	Core destroyed	213	0	560	200
+v531fix_ragnarok_s19_B	ragnarok	19	B	v531fix	US	_v531fix	Core destroyed	208	0	1000	220
+parent_ragnarok_s20_A	ragnarok	20	A	parent	US	parent_arm	Core destroyed	126	0	580	210
+flagoff_ragnarok_s20_A	ragnarok	20	A	flagoff	US	flagoff_arm	Core destroyed	120	0	520	170
+v530_ragnarok_s20_A	ragnarok	20	A	v530	OPP	_x3r0v165mjolnirB	Core destroyed	165	0	0	790
+v531fix_ragnarok_s20_A	ragnarok	20	A	v531fix	US	_v531fix	Core destroyed	127	0	570	230
+parent_ragnarok_s20_B	ragnarok	20	B	parent	US	parent_arm	Core destroyed	309	0	800	490
+flagoff_ragnarok_s20_B	ragnarok	20	B	flagoff	US	flagoff_arm	Core destroyed	177	0	470	170
+v530_ragnarok_s20_B	ragnarok	20	B	v530	US	v530_arm	Core destroyed	177	0	470	210
+v531fix_ragnarok_s20_B	ragnarok	20	B	v531fix	US	_v531fix	Core destroyed	146	0	390	190
+parent_royale_s19_A	royale	19	A	parent	US	parent_arm	Core destroyed	262	0	2900	110
+flagoff_royale_s19_A	royale	19	A	flagoff	US	flagoff_arm	Core destroyed	156	0	1830	20
+v530_royale_s19_A	royale	19	A	v530	US	v530_arm	Core destroyed	204	0	760	80
+v531fix_royale_s19_A	royale	19	A	v531fix	US	_v531fix	Core destroyed	279	0	2660	560
+parent_royale_s19_B	royale	19	B	parent	US	parent_arm	Core destroyed	151	0	1450	50
+flagoff_royale_s19_B	royale	19	B	flagoff	US	flagoff_arm	Core destroyed	208	0	2000	70
+v530_royale_s19_B	royale	19	B	v530	US	v530_arm	Core destroyed	293	0	3130	200
+v531fix_royale_s19_B	royale	19	B	v531fix	US	_v531fix	Core destroyed	314	0	2760	890
+parent_royale_s20_A	royale	20	A	parent	US	parent_arm	Core destroyed	283	0	3810	480
+flagoff_royale_s20_A	royale	20	A	flagoff	US	flagoff_arm	Core destroyed	179	0	2350	270
+v530_royale_s20_A	royale	20	A	v530	OPP	_x3r0v165mjolnirB	Core destroyed	603	0	4410	3840
+v531fix_royale_s20_A	royale	20	A	v531fix	OPP	_x3r0v165mjolnirB	Core destroyed	379	0	1780	4660
+parent_royale_s20_B	royale	20	B	parent	US	parent_arm	Core destroyed	188	0	2110	30
+flagoff_royale_s20_B	royale	20	B	flagoff	US	flagoff_arm	Core destroyed	168	0	1420	50
+v530_royale_s20_B	royale	20	B	v530	US	v530_arm	Core destroyed	274	0	3560	550
+v531fix_royale_s20_B	royale	20	B	v531fix	US	_v531fix	Core destroyed	276	0	2930	1130
+parent_nordkap_s19_A	nordkap	19	A	parent	OPP	_x3r0v165mjolnirB	Core destroyed	325	0	1360	970
+flagoff_nordkap_s19_A	nordkap	19	A	flagoff	US	flagoff_arm	Core destroyed	164	0	660	70
+v530_nordkap_s19_A	nordkap	19	A	v530	US	v530_arm	Core destroyed	166	0	390	80
+v531fix_nordkap_s19_A	nordkap	19	A	v531fix	US	_v531fix	Core destroyed	537	0	230	160
+parent_nordkap_s19_B	nordkap	19	B	parent	US	parent_arm	Core destroyed	192	0	460	280
+flagoff_nordkap_s19_B	nordkap	19	B	flagoff	OPP	_x3r0v165mjolnirB	Core destroyed	162	0	280	990
+v530_nordkap_s19_B	nordkap	19	B	v530	US	v530_arm	Core destroyed	197	0	180	120
+v531fix_nordkap_s19_B	nordkap	19	B	v531fix	OPP	_x3r0v165mjolnirB	Core destroyed	123	0	280	400
+parent_nordkap_s20_A	nordkap	20	A	parent	US	parent_arm	Core destroyed	509	0	5860	2360
+flagoff_nordkap_s20_A	nordkap	20	A	flagoff	US	flagoff_arm	Titanium collected (tiebreak)	1000	0	180	20
+v530_nordkap_s20_A	nordkap	20	A	v530	US	v530_arm	Core destroyed	845	0	80	130
+v531fix_nordkap_s20_A	nordkap	20	A	v531fix	US	_v531fix	Core destroyed	427	0	3520	610
+parent_nordkap_s20_B	nordkap	20	B	parent	US	parent_arm	Core destroyed	467	0	1140	360
+flagoff_nordkap_s20_B	nordkap	20	B	flagoff	OPP	_x3r0v165mjolnirB	Core destroyed	148	0	280	1230
+v530_nordkap_s20_B	nordkap	20	B	v530	US	v530_arm	Core destroyed	803	0	250	890
+v531fix_nordkap_s20_B	nordkap	20	B	v531fix	OPP	_x3r0v165mjolnirB	Core destroyed	306	0	180	2780
+parent_icefloe_s21_A	icefloe	21	A	parent	OPP	_x3r0v165mjolnirB	Core destroyed	517	0	0	3690
+flagoff_icefloe_s21_A	icefloe	21	A	flagoff	OPP	_x3r0v165mjolnirB	Core destroyed	149	0	0	620
+v530_icefloe_s21_A	icefloe	21	A	v530	OPP	_x3r0v165mjolnirB	Core destroyed	502	0	850	1190
+v531fix_icefloe_s21_A	icefloe	21	A	v531fix	US	_v531fix	Core destroyed	224	0	520	480
+parent_icefloe_s21_B	icefloe	21	B	parent	OPP	_x3r0v165mjolnirB	Core destroyed	120	0	0	610
+flagoff_icefloe_s21_B	icefloe	21	B	flagoff	OPP	_x3r0v165mjolnirB	Core destroyed	373	0	0	850
+v530_icefloe_s21_B	icefloe	21	B	v530	US	v530_arm	Core destroyed	674	0	7560	4290
+v531fix_icefloe_s21_B	icefloe	21	B	v531fix	US	_v531fix	Core destroyed	477	0	4660	2010
+parent_icefloe_s22_A	icefloe	22	A	parent	US	parent_arm	Core destroyed	726	0	660	80
+flagoff_icefloe_s22_A	icefloe	22	A	flagoff	OPP	_x3r0v165mjolnirB	Core destroyed	444	0	0	5890
+v530_icefloe_s22_A	icefloe	22	A	v530	US	v530_arm	Core destroyed	540	0	1340	890
+v531fix_icefloe_s22_A	icefloe	22	A	v531fix	US	_v531fix	Core destroyed	597	0	870	710
+parent_icefloe_s22_B	icefloe	22	B	parent	OPP	_x3r0v165mjolnirB	Core destroyed	271	0	0	1150
+flagoff_icefloe_s22_B	icefloe	22	B	flagoff	OPP	_x3r0v165mjolnirB	Core destroyed	141	0	0	550
+v530_icefloe_s22_B	icefloe	22	B	v530	OPP	_x3r0v165mjolnirB	Core destroyed	561	0	4620	5780
+v531fix_icefloe_s22_B	icefloe	22	B	v531fix	US	_v531fix	Core destroyed	382	0	3590	460
+parent_auroraveil_s21_A	auroraveil	21	A	parent	OPP	_x3r0v165mjolnirB	Core destroyed	349	0	830	330
+flagoff_auroraveil_s21_A	auroraveil	21	A	flagoff	OPP	_x3r0v165mjolnirB	Core destroyed	133	0	290	420
+v530_auroraveil_s21_A	auroraveil	21	A	v530	OPP	_x3r0v165mjolnirB	Core destroyed	217	0	290	760
+v531fix_auroraveil_s21_A	auroraveil	21	A	v531fix	OPP	_x3r0v165mjolnirB	Core destroyed	202	0	60	1050
+parent_auroraveil_s21_B	auroraveil	21	B	parent	US	parent_arm	Core destroyed	309	0	580	130
+flagoff_auroraveil_s21_B	auroraveil	21	B	flagoff	OPP	_x3r0v165mjolnirB	Core destroyed	176	0	0	1000
+v530_auroraveil_s21_B	auroraveil	21	B	v530	OPP	_x3r0v165mjolnirB	Core destroyed	314	0	0	1480
+v531fix_auroraveil_s21_B	auroraveil	21	B	v531fix	OPP	_x3r0v165mjolnirB	Core destroyed	222	0	0	410
+parent_auroraveil_s22_A	auroraveil	22	A	parent	US	parent_arm	Core destroyed	184	0	530	40
+flagoff_auroraveil_s22_A	auroraveil	22	A	flagoff	US	flagoff_arm	Core destroyed	194	0	440	0
+v530_auroraveil_s22_A	auroraveil	22	A	v530	OPP	_x3r0v165mjolnirB	Core destroyed	156	0	150	800
+v531fix_auroraveil_s22_A	auroraveil	22	A	v531fix	OPP	_x3r0v165mjolnirB	Core destroyed	163	0	70	780
+parent_auroraveil_s22_B	auroraveil	22	B	parent	OPP	_x3r0v165mjolnirB	Core destroyed	131	0	0	600
+flagoff_auroraveil_s22_B	auroraveil	22	B	flagoff	OPP	_x3r0v165mjolnirB	Core destroyed	227	0	0	980
+v530_auroraveil_s22_B	auroraveil	22	B	v530	OPP	_x3r0v165mjolnirB	Titanium collected (tiebreak)	1000	0	5570	11670
+v531fix_auroraveil_s22_B	auroraveil	22	B	v531fix	OPP	_x3r0v165mjolnirB	Core destroyed	456	0	0	3840
+parent_glacierkeep_s21_A	glacierkeep	21	A	parent	OPP	_x3r0v165mjolnirB	Core destroyed	365	0	0	4160
+flagoff_glacierkeep_s21_A	glacierkeep	21	A	flagoff	OPP	_x3r0v165mjolnirB	Core destroyed	270	0	0	2540
+v530_glacierkeep_s21_A	glacierkeep	21	A	v530	OPP	_x3r0v165mjolnirB	Core destroyed	253	0	0	780
+v531fix_glacierkeep_s21_A	glacierkeep	21	A	v531fix	OPP	_x3r0v165mjolnirB	Core destroyed	334	0	0	2950
+parent_glacierkeep_s21_B	glacierkeep	21	B	parent	OPP	_x3r0v165mjolnirB	Core destroyed	540	0	0	4510
+flagoff_glacierkeep_s21_B	glacierkeep	21	B	flagoff	OPP	_x3r0v165mjolnirB	Titanium collected (tiebreak)	1000	0	1580	2630
+v530_glacierkeep_s21_B	glacierkeep	21	B	v530	OPP	_x3r0v165mjolnirB	Core destroyed	397	0	0	850
+v531fix_glacierkeep_s21_B	glacierkeep	21	B	v531fix	OPP	_x3r0v165mjolnirB	Core destroyed	452	0	0	3480
+parent_glacierkeep_s22_A	glacierkeep	22	A	parent	OPP	_x3r0v165mjolnirB	Core destroyed	264	0	0	1700
+flagoff_glacierkeep_s22_A	glacierkeep	22	A	flagoff	US	flagoff_arm	Core destroyed	376	0	790	0
+v530_glacierkeep_s22_A	glacierkeep	22	A	v530	US	v530_arm	Core destroyed	369	0	0	0
+v531fix_glacierkeep_s22_A	glacierkeep	22	A	v531fix	US	_v531fix	Core destroyed	481	0	0	620
+parent_glacierkeep_s22_B	glacierkeep	22	B	parent	OPP	_x3r0v165mjolnirB	Core destroyed	524	0	0	3420
+flagoff_glacierkeep_s22_B	glacierkeep	22	B	flagoff	OPP	_x3r0v165mjolnirB	Titanium collected (tiebreak)	1000	0	0	860
+v530_glacierkeep_s22_B	glacierkeep	22	B	v530	OPP	_x3r0v165mjolnirB	Core destroyed	551	0	0	4270
+v531fix_glacierkeep_s22_B	glacierkeep	22	B	v531fix	OPP	_x3r0v165mjolnirB	Core destroyed	524	0	0	4860
+parent_yulerune_s21_A	yulerune	21	A	parent	OPP	_x3r0v165mjolnirB	Core destroyed	184	0	0	930
+flagoff_yulerune_s21_A	yulerune	21	A	flagoff	OPP	_x3r0v165mjolnirB	Core destroyed	184	0	0	930
+v530_yulerune_s21_A	yulerune	21	A	v530	OPP	_x3r0v165mjolnirB	Core destroyed	181	0	80	910
+v531fix_yulerune_s21_A	yulerune	21	A	v531fix	US	_v531fix	Core destroyed	341	0	1580	350
+parent_yulerune_s21_B	yulerune	21	B	parent	OPP	_x3r0v165mjolnirB	Core destroyed	237	0	0	1090
+flagoff_yulerune_s21_B	yulerune	21	B	flagoff	OPP	_x3r0v165mjolnirB	Core destroyed	301	0	70	510
+v530_yulerune_s21_B	yulerune	21	B	v530	OPP	_x3r0v165mjolnirB	Core destroyed	373	0	1020	3920
+v531fix_yulerune_s21_B	yulerune	21	B	v531fix	OPP	_x3r0v165mjolnirB	Core destroyed	245	0	540	1510
+parent_yulerune_s22_A	yulerune	22	A	parent	OPP	_x3r0v165mjolnirB	Core destroyed	249	0	0	210
+flagoff_yulerune_s22_A	yulerune	22	A	flagoff	OPP	_x3r0v165mjolnirB	Core destroyed	711	0	0	1140
+v530_yulerune_s22_A	yulerune	22	A	v530	OPP	_x3r0v165mjolnirB	Core destroyed	339	0	550	1610
+v531fix_yulerune_s22_A	yulerune	22	A	v531fix	US	_v531fix	Core destroyed	223	0	1140	110
+parent_yulerune_s22_B	yulerune	22	B	parent	OPP	_x3r0v165mjolnirB	Core destroyed	375	0	1480	1680
+flagoff_yulerune_s22_B	yulerune	22	B	flagoff	OPP	_x3r0v165mjolnirB	Core destroyed	409	0	1410	4290
+v530_yulerune_s22_B	yulerune	22	B	v530	US	v530_arm	Core destroyed	311	0	3650	170
+v531fix_yulerune_s22_B	yulerune	22	B	v531fix	US	_v531fix	Titanium collected (tiebreak)	1000	0	11160	8040
+parent_drakkarfjord_s21_A	drakkarfjord	21	A	parent	US	parent_arm	Core destroyed	285	0	0	0
+flagoff_drakkarfjord_s21_A	drakkarfjord	21	A	flagoff	OPP	_x3r0v165mjolnirB	Core destroyed	528	0	0	1970
+v530_drakkarfjord_s21_A	drakkarfjord	21	A	v530	OPP	_x3r0v165mjolnirB	Core destroyed	177	0	0	880
+v531fix_drakkarfjord_s21_A	drakkarfjord	21	A	v531fix	US	_v531fix	Core destroyed	136	0	490	50
+parent_drakkarfjord_s21_B	drakkarfjord	21	B	parent	US	parent_arm	Core destroyed	196	0	920	0
+flagoff_drakkarfjord_s21_B	drakkarfjord	21	B	flagoff	US	flagoff_arm	Core destroyed	237	0	1050	60
+v530_drakkarfjord_s21_B	drakkarfjord	21	B	v530	US	v530_arm	Core destroyed	251	0	200	0
+v531fix_drakkarfjord_s21_B	drakkarfjord	21	B	v531fix	US	_v531fix	Core destroyed	248	0	360	0
+parent_drakkarfjord_s22_A	drakkarfjord	22	A	parent	US	parent_arm	Core destroyed	737	0	0	140
+flagoff_drakkarfjord_s22_A	drakkarfjord	22	A	flagoff	OPP	_x3r0v165mjolnirB	Titanium collected (tiebreak)	1000	0	0	1040
+v530_drakkarfjord_s22_A	drakkarfjord	22	A	v530	OPP	_x3r0v165mjolnirB	Core destroyed	289	0	0	380
+v531fix_drakkarfjord_s22_A	drakkarfjord	22	A	v531fix	US	_v531fix	Core destroyed	173	0	900	0
+parent_drakkarfjord_s22_B	drakkarfjord	22	B	parent	US	parent_arm	Core destroyed	283	0	1470	0
+flagoff_drakkarfjord_s22_B	drakkarfjord	22	B	flagoff	US	flagoff_arm	Core destroyed	237	0	1050	60
+v530_drakkarfjord_s22_B	drakkarfjord	22	B	v530	US	v530_arm	Core destroyed	324	0	460	120
+v531fix_drakkarfjord_s22_B	drakkarfjord	22	B	v531fix	OPP	_x3r0v165mjolnirB	Titanium collected (tiebreak)	1000	0	0	1510
+parent_ragnarok_s21_A	ragnarok	21	A	parent	US	parent_arm	Core destroyed	126	0	590	220
+flagoff_ragnarok_s21_A	ragnarok	21	A	flagoff	US	flagoff_arm	Core destroyed	120	0	520	170
+v530_ragnarok_s21_A	ragnarok	21	A	v530	OPP	_x3r0v165mjolnirB	Core destroyed	153	0	0	730
+v531fix_ragnarok_s21_A	ragnarok	21	A	v531fix	US	_v531fix	Core destroyed	127	0	570	230
+parent_ragnarok_s21_B	ragnarok	21	B	parent	US	parent_arm	Core destroyed	193	0	510	190
+flagoff_ragnarok_s21_B	ragnarok	21	B	flagoff	US	flagoff_arm	Core destroyed	277	0	720	490
+v530_ragnarok_s21_B	ragnarok	21	B	v530	US	v530_arm	Core destroyed	213	0	560	250
+v531fix_ragnarok_s21_B	ragnarok	21	B	v531fix	US	_v531fix	Core destroyed	153	0	410	420
+parent_ragnarok_s22_A	ragnarok	22	A	parent	US	parent_arm	Core destroyed	116	0	530	360
+flagoff_ragnarok_s22_A	ragnarok	22	A	flagoff	US	flagoff_arm	Core destroyed	126	0	580	210
+v530_ragnarok_s22_A	ragnarok	22	A	v530	OPP	_x3r0v165mjolnirB	Core destroyed	165	0	0	790
+v531fix_ragnarok_s22_A	ragnarok	22	A	v531fix	US	_v531fix	Core destroyed	127	0	570	230
+parent_ragnarok_s22_B	ragnarok	22	B	parent	US	parent_arm	Core destroyed	193	0	510	180
+flagoff_ragnarok_s22_B	ragnarok	22	B	flagoff	US	flagoff_arm	Core destroyed	153	0	410	210
+v530_ragnarok_s22_B	ragnarok	22	B	v530	US	v530_arm	Core destroyed	177	0	470	210
+v531fix_ragnarok_s22_B	ragnarok	22	B	v531fix	US	_v531fix	Core destroyed	139	0	650	390
+parent_royale_s21_A	royale	21	A	parent	US	parent_arm	Core destroyed	186	0	2150	20
+flagoff_royale_s21_A	royale	21	A	flagoff	US	flagoff_arm	Core destroyed	128	0	1170	110
+v530_royale_s21_A	royale	21	A	v530	US	v530_arm	Core destroyed	618	0	7830	5650
+v531fix_royale_s21_A	royale	21	A	v531fix	US	_v531fix	Core destroyed	245	0	2770	1100
+parent_royale_s21_B	royale	21	B	parent	US	parent_arm	Core destroyed	415	0	6140	3350
+flagoff_royale_s21_B	royale	21	B	flagoff	US	flagoff_arm	Core destroyed	113	0	680	50
+v530_royale_s21_B	royale	21	B	v530	US	v530_arm	Core destroyed	594	0	6460	2570
+v531fix_royale_s21_B	royale	21	B	v531fix	US	_v531fix	Titanium collected (tiebreak)	1000	0	15340	10670
+parent_royale_s22_A	royale	22	A	parent	US	parent_arm	Core destroyed	218	0	2560	580
+flagoff_royale_s22_A	royale	22	A	flagoff	US	flagoff_arm	Core destroyed	183	0	2280	680
+v530_royale_s22_A	royale	22	A	v530	OPP	_x3r0v165mjolnirB	Core destroyed	398	0	4270	3920
+v531fix_royale_s22_A	royale	22	A	v531fix	OPP	_x3r0v165mjolnirB	Core destroyed	499	0	4740	2390
+parent_royale_s22_B	royale	22	B	parent	US	parent_arm	Core destroyed	152	0	1410	0
+flagoff_royale_s22_B	royale	22	B	flagoff	US	flagoff_arm	Core destroyed	212	0	3500	200
+v530_royale_s22_B	royale	22	B	v530	OPP	_x3r0v165mjolnirB	Titanium collected (tiebreak)	1000	0	6950	12600
+v531fix_royale_s22_B	royale	22	B	v531fix	US	_v531fix	Core destroyed	528	0	6160	3490
+parent_nordkap_s21_A	nordkap	21	A	parent	OPP	_x3r0v165mjolnirB	Core destroyed	397	0	2450	590
+flagoff_nordkap_s21_A	nordkap	21	A	flagoff	US	flagoff_arm	Core destroyed	137	0	390	70
+v530_nordkap_s21_A	nordkap	21	A	v530	US	v530_arm	Core destroyed	386	0	1870	100
+v531fix_nordkap_s21_A	nordkap	21	A	v531fix	OPP	_x3r0v165mjolnirB	Core destroyed	375	0	260	2080
+parent_nordkap_s21_B	nordkap	21	B	parent	OPP	_x3r0v165mjolnirB	Core destroyed	143	0	330	660
+flagoff_nordkap_s21_B	nordkap	21	B	flagoff	US	flagoff_arm	Core destroyed	427	0	1730	1020
+v530_nordkap_s21_B	nordkap	21	B	v530	US	v530_arm	Core destroyed	121	0	280	100
+v531fix_nordkap_s21_B	nordkap	21	B	v531fix	US	_v531fix	Core destroyed	451	0	2310	1400
+parent_nordkap_s22_A	nordkap	22	A	parent	US	parent_arm	Core destroyed	251	0	1720	60
+flagoff_nordkap_s22_A	nordkap	22	A	flagoff	US	flagoff_arm	Core destroyed	417	0	220	20
+v530_nordkap_s22_A	nordkap	22	A	v530	US	v530_arm	Core destroyed	321	0	3100	1310
+v531fix_nordkap_s22_A	nordkap	22	A	v531fix	US	_v531fix	Core destroyed	233	0	1390	120
+parent_nordkap_s22_B	nordkap	22	B	parent	OPP	_x3r0v165mjolnirB	Core destroyed	133	0	120	610
+flagoff_nordkap_s22_B	nordkap	22	B	flagoff	US	flagoff_arm	Core destroyed	309	0	750	840
+v530_nordkap_s22_B	nordkap	22	B	v530	US	v530_arm	Core destroyed	445	0	640	120
+v531fix_nordkap_s22_B	nordkap	22	B	v531fix	US	_v531fix	Core destroyed	149	0	220	110
+parent_icefloe_s23_A	icefloe	23	A	parent	OPP	_x3r0v165mjolnirB	Titanium collected (tiebreak)	1000	0	0	70
+flagoff_icefloe_s23_A	icefloe	23	A	flagoff	OPP	_x3r0v165mjolnirB	Core destroyed	334	0	0	620
+v530_icefloe_s23_A	icefloe	23	A	v530	US	v530_arm	Core destroyed	580	0	2350	6320
+v531fix_icefloe_s23_A	icefloe	23	A	v531fix	US	_v531fix	Core destroyed	314	0	740	70
+parent_icefloe_s23_B	icefloe	23	B	parent	OPP	_x3r0v165mjolnirB	Core destroyed	249	0	20	1160
+flagoff_icefloe_s23_B	icefloe	23	B	flagoff	US	flagoff_arm	Core destroyed	525	0	1430	830
+v530_icefloe_s23_B	icefloe	23	B	v530	US	v530_arm	Core destroyed	348	0	2830	2390
+v531fix_icefloe_s23_B	icefloe	23	B	v531fix	US	_v531fix	Core destroyed	212	0	1120	10
+parent_icefloe_s24_A	icefloe	24	A	parent	OPP	_x3r0v165mjolnirB	Titanium collected (tiebreak)	1000	0	0	1060
+flagoff_icefloe_s24_A	icefloe	24	A	flagoff	OPP	_x3r0v165mjolnirB	Core destroyed	162	0	0	610
+v530_icefloe_s24_A	icefloe	24	A	v530	OPP	_x3r0v165mjolnirB	Core destroyed	325	0	80	2770
+v531fix_icefloe_s24_A	icefloe	24	A	v531fix	US	_v531fix	Core destroyed	256	0	600	290
+parent_icefloe_s24_B	icefloe	24	B	parent	OPP	_x3r0v165mjolnirB	Core destroyed	265	0	180	1080
+flagoff_icefloe_s24_B	icefloe	24	B	flagoff	OPP	_x3r0v165mjolnirB	Core destroyed	320	0	380	1080
+v530_icefloe_s24_B	icefloe	24	B	v530	OPP	_x3r0v165mjolnirB	Core destroyed	306	0	390	3830
+v531fix_icefloe_s24_B	icefloe	24	B	v531fix	OPP	_x3r0v165mjolnirB	Core destroyed	244	0	640	930
+parent_auroraveil_s23_A	auroraveil	23	A	parent	US	parent_arm	Core destroyed	417	0	1000	0
+flagoff_auroraveil_s23_A	auroraveil	23	A	flagoff	OPP	_x3r0v165mjolnirB	Core destroyed	133	0	290	420
+v530_auroraveil_s23_A	auroraveil	23	A	v530	OPP	_x3r0v165mjolnirB	Core destroyed	168	0	190	1010
+v531fix_auroraveil_s23_A	auroraveil	23	A	v531fix	OPP	_x3r0v165mjolnirB	Core destroyed	156	0	0	910
+parent_auroraveil_s23_B	auroraveil	23	B	parent	US	parent_arm	Core destroyed	325	0	1590	190
+flagoff_auroraveil_s23_B	auroraveil	23	B	flagoff	US	flagoff_arm	Core destroyed	245	0	740	0
+v530_auroraveil_s23_B	auroraveil	23	B	v530	OPP	_x3r0v165mjolnirB	Core destroyed	192	0	0	900
+v531fix_auroraveil_s23_B	auroraveil	23	B	v531fix	OPP	_x3r0v165mjolnirB	Core destroyed	194	0	0	710
+parent_auroraveil_s24_A	auroraveil	24	A	parent	US	parent_arm	Core destroyed	229	0	530	360
+flagoff_auroraveil_s24_A	auroraveil	24	A	flagoff	OPP	_x3r0v165mjolnirB	Core destroyed	467	0	1120	370
+v530_auroraveil_s24_A	auroraveil	24	A	v530	OPP	_x3r0v165mjolnirB	Core destroyed	347	0	600	1440
+v531fix_auroraveil_s24_A	auroraveil	24	A	v531fix	OPP	_x3r0v165mjolnirB	Core destroyed	285	0	150	130
+parent_auroraveil_s24_B	auroraveil	24	B	parent	OPP	_x3r0v165mjolnirB	Core destroyed	248	0	0	1170
+flagoff_auroraveil_s24_B	auroraveil	24	B	flagoff	OPP	_x3r0v165mjolnirB	Core destroyed	184	0	0	970
+v530_auroraveil_s24_B	auroraveil	24	B	v530	OPP	_x3r0v165mjolnirB	Core destroyed	323	0	0	990
+v531fix_auroraveil_s24_B	auroraveil	24	B	v531fix	OPP	_x3r0v165mjolnirB	Core destroyed	154	0	0	740
+parent_glacierkeep_s23_A	glacierkeep	23	A	parent	OPP	_x3r0v165mjolnirB	Core destroyed	286	0	0	2500
+flagoff_glacierkeep_s23_A	glacierkeep	23	A	flagoff	OPP	_x3r0v165mjolnirB	Core destroyed	417	0	0	330
+v530_glacierkeep_s23_A	glacierkeep	23	A	v530	OPP	_x3r0v165mjolnirB	Core destroyed	580	0	0	4510
+v531fix_glacierkeep_s23_A	glacierkeep	23	A	v531fix	OPP	_x3r0v165mjolnirB	Core destroyed	397	0	0	440
+parent_glacierkeep_s23_B	glacierkeep	23	B	parent	OPP	_x3r0v165mjolnirB	Core destroyed	273	0	0	750
+flagoff_glacierkeep_s23_B	glacierkeep	23	B	flagoff	US	flagoff_arm	Core destroyed	261	0	0	0
+v530_glacierkeep_s23_B	glacierkeep	23	B	v530	OPP	_x3r0v165mjolnirB	Core destroyed	518	0	0	4320
+v531fix_glacierkeep_s23_B	glacierkeep	23	B	v531fix	OPP	_x3r0v165mjolnirB	Core destroyed	361	0	0	1150
+parent_glacierkeep_s24_A	glacierkeep	24	A	parent	OPP	_x3r0v165mjolnirB	Core destroyed	724	0	0	4620
+flagoff_glacierkeep_s24_A	glacierkeep	24	A	flagoff	OPP	_x3r0v165mjolnirB	Core destroyed	325	0	0	750
+v530_glacierkeep_s24_A	glacierkeep	24	A	v530	OPP	_x3r0v165mjolnirB	Core destroyed	393	0	0	0
+v531fix_glacierkeep_s24_A	glacierkeep	24	A	v531fix	OPP	_x3r0v165mjolnirB	Titanium collected (tiebreak)	1000	0	0	280
+parent_glacierkeep_s24_B	glacierkeep	24	B	parent	OPP	_x3r0v165mjolnirB	Core destroyed	326	0	0	690
+flagoff_glacierkeep_s24_B	glacierkeep	24	B	flagoff	OPP	_x3r0v165mjolnirB	Core destroyed	704	0	470	710
+v530_glacierkeep_s24_B	glacierkeep	24	B	v530	OPP	_x3r0v165mjolnirB	Core destroyed	321	0	0	1420
+v531fix_glacierkeep_s24_B	glacierkeep	24	B	v531fix	OPP	_x3r0v165mjolnirB	Core destroyed	245	0	0	970
+parent_yulerune_s23_A	yulerune	23	A	parent	OPP	_x3r0v165mjolnirB	Core destroyed	133	0	0	590
+flagoff_yulerune_s23_A	yulerune	23	A	flagoff	OPP	_x3r0v165mjolnirB	Core destroyed	222	0	0	1020
+v530_yulerune_s23_A	yulerune	23	A	v530	OPP	_x3r0v165mjolnirB	Core destroyed	469	0	120	2190
+v531fix_yulerune_s23_A	yulerune	23	A	v531fix	US	_v531fix	Core destroyed	341	0	1580	350
+parent_yulerune_s23_B	yulerune	23	B	parent	OPP	_x3r0v165mjolnirB	Core destroyed	495	0	0	2410
+flagoff_yulerune_s23_B	yulerune	23	B	flagoff	OPP	_x3r0v165mjolnirB	Core destroyed	378	0	2550	3050
+v530_yulerune_s23_B	yulerune	23	B	v530	OPP	_x3r0v165mjolnirB	Titanium collected (tiebreak)	1000	0	10140	11200
+v531fix_yulerune_s23_B	yulerune	23	B	v531fix	US	_v531fix	Core destroyed	296	0	2780	530
+parent_yulerune_s24_A	yulerune	24	A	parent	OPP	_x3r0v165mjolnirB	Core destroyed	222	0	0	1020
+flagoff_yulerune_s24_A	yulerune	24	A	flagoff	OPP	_x3r0v165mjolnirB	Titanium collected (tiebreak)	1000	0	0	5100
+v530_yulerune_s24_A	yulerune	24	A	v530	OPP	_x3r0v165mjolnirB	Core destroyed	267	0	80	1660
+v531fix_yulerune_s24_A	yulerune	24	A	v531fix	US	_v531fix	Core destroyed	153	0	680	90
+parent_yulerune_s24_B	yulerune	24	B	parent	OPP	_x3r0v165mjolnirB	Core destroyed	323	0	0	1130
+flagoff_yulerune_s24_B	yulerune	24	B	flagoff	OPP	_x3r0v165mjolnirB	Core destroyed	220	0	70	1080
+v530_yulerune_s24_B	yulerune	24	B	v530	US	v530_arm	Core destroyed	470	0	5970	1530
+v531fix_yulerune_s24_B	yulerune	24	B	v531fix	OPP	_x3r0v165mjolnirB	Core destroyed	260	0	0	1010
+parent_drakkarfjord_s23_A	drakkarfjord	23	A	parent	US	parent_arm	Core destroyed	285	0	0	0
+flagoff_drakkarfjord_s23_A	drakkarfjord	23	A	flagoff	US	flagoff_arm	Core destroyed	737	0	0	140
+v530_drakkarfjord_s23_A	drakkarfjord	23	A	v530	OPP	_x3r0v165mjolnirB	Core destroyed	197	0	0	800
+v531fix_drakkarfjord_s23_A	drakkarfjord	23	A	v531fix	US	_v531fix	Core destroyed	136	0	490	50
+parent_drakkarfjord_s23_B	drakkarfjord	23	B	parent	US	parent_arm	Core destroyed	237	0	1050	60
+flagoff_drakkarfjord_s23_B	drakkarfjord	23	B	flagoff	US	flagoff_arm	Core destroyed	243	0	1080	0
+v530_drakkarfjord_s23_B	drakkarfjord	23	B	v530	US	v530_arm	Core destroyed	302	0	670	90
+v531fix_drakkarfjord_s23_B	drakkarfjord	23	B	v531fix	OPP	_x3r0v165mjolnirB	Core destroyed	286	0	0	780
+parent_drakkarfjord_s24_A	drakkarfjord	24	A	parent	US	parent_arm	Core destroyed	257	0	0	30
+flagoff_drakkarfjord_s24_A	drakkarfjord	24	A	flagoff	OPP	_x3r0v165mjolnirB	Titanium collected (tiebreak)	1000	0	0	3810
+v530_drakkarfjord_s24_A	drakkarfjord	24	A	v530	OPP	_x3r0v165mjolnirB	Core destroyed	258	0	0	940
+v531fix_drakkarfjord_s24_A	drakkarfjord	24	A	v531fix	US	_v531fix	Core destroyed	101	0	190	260
+parent_drakkarfjord_s24_B	drakkarfjord	24	B	parent	US	parent_arm	Core destroyed	184	0	820	0
+flagoff_drakkarfjord_s24_B	drakkarfjord	24	B	flagoff	US	flagoff_arm	Core destroyed	175	0	740	0
+v530_drakkarfjord_s24_B	drakkarfjord	24	B	v530	OPP	_x3r0v165mjolnirB	Core destroyed	800	0	0	4250
+v531fix_drakkarfjord_s24_B	drakkarfjord	24	B	v531fix	OPP	_x3r0v165mjolnirB	Titanium collected (tiebreak)	1000	0	0	1530
+parent_ragnarok_s23_A	ragnarok	23	A	parent	US	parent_arm	Core destroyed	132	0	610	430
+flagoff_ragnarok_s23_A	ragnarok	23	A	flagoff	US	flagoff_arm	Core destroyed	118	0	550	180
+v530_ragnarok_s23_A	ragnarok	23	A	v530	OPP	_x3r0v165mjolnirB	Core destroyed	153	0	0	730
+v531fix_ragnarok_s23_A	ragnarok	23	A	v531fix	US	_v531fix	Core destroyed	127	0	570	230
+parent_ragnarok_s23_B	ragnarok	23	B	parent	US	parent_arm	Core destroyed	187	0	500	190
+flagoff_ragnarok_s23_B	ragnarok	23	B	flagoff	US	flagoff_arm	Core destroyed	153	0	410	210
+v530_ragnarok_s23_B	ragnarok	23	B	v530	US	v530_arm	Core destroyed	169	0	450	180
+v531fix_ragnarok_s23_B	ragnarok	23	B	v531fix	US	_v531fix	Core destroyed	139	0	650	390
+parent_ragnarok_s24_A	ragnarok	24	A	parent	US	parent_arm	Core destroyed	120	0	550	170
+flagoff_ragnarok_s24_A	ragnarok	24	A	flagoff	US	flagoff_arm	Core destroyed	126	0	580	210
+v530_ragnarok_s24_A	ragnarok	24	A	v530	OPP	_x3r0v165mjolnirB	Core destroyed	165	0	0	790
+v531fix_ragnarok_s24_A	ragnarok	24	A	v531fix	US	_v531fix	Core destroyed	127	0	570	230
+parent_ragnarok_s24_B	ragnarok	24	B	parent	US	parent_arm	Core destroyed	193	0	510	190
+flagoff_ragnarok_s24_B	ragnarok	24	B	flagoff	US	flagoff_arm	Core destroyed	187	0	500	190
+v530_ragnarok_s24_B	ragnarok	24	B	v530	US	v530_arm	Core destroyed	177	0	470	210
+v531fix_ragnarok_s24_B	ragnarok	24	B	v531fix	US	_v531fix	Core destroyed	139	0	650	390
+parent_royale_s23_A	royale	23	A	parent	US	parent_arm	Core destroyed	210	0	2700	80
+flagoff_royale_s23_A	royale	23	A	flagoff	US	flagoff_arm	Core destroyed	314	0	3520	1040
+v530_royale_s23_A	royale	23	A	v530	US	v530_arm	Core destroyed	381	0	2230	0
+v531fix_royale_s23_A	royale	23	A	v531fix	US	_v531fix	Core destroyed	177	0	1610	380
+parent_royale_s23_B	royale	23	B	parent	US	parent_arm	Core destroyed	187	0	1500	60
+flagoff_royale_s23_B	royale	23	B	flagoff	US	flagoff_arm	Core destroyed	152	0	1410	0
+v530_royale_s23_B	royale	23	B	v530	US	v530_arm	Core destroyed	529	0	5090	3520
+v531fix_royale_s23_B	royale	23	B	v531fix	US	_v531fix	Core destroyed	208	0	2250	130
+parent_royale_s24_A	royale	24	A	parent	US	parent_arm	Core destroyed	338	0	2180	1230
+flagoff_royale_s24_A	royale	24	A	flagoff	US	flagoff_arm	Core destroyed	180	0	1850	570
+v530_royale_s24_A	royale	24	A	v530	US	v530_arm	Core destroyed	170	0	1270	40
+v531fix_royale_s24_A	royale	24	A	v531fix	OPP	_x3r0v165mjolnirB	Titanium collected (tiebreak)	1000	0	5770	16940
+parent_royale_s24_B	royale	24	B	parent	US	parent_arm	Core destroyed	188	0	2110	30
+flagoff_royale_s24_B	royale	24	B	flagoff	US	flagoff_arm	Core destroyed	250	0	3580	460
+v530_royale_s24_B	royale	24	B	v530	US	v530_arm	Core destroyed	553	0	4310	2620
+v531fix_royale_s24_B	royale	24	B	v531fix	OPP	_x3r0v165mjolnirB	Core destroyed	387	0	410	1970
+parent_nordkap_s23_A	nordkap	23	A	parent	US	parent_arm	Core destroyed	164	0	590	20
+flagoff_nordkap_s23_A	nordkap	23	A	flagoff	US	flagoff_arm	Core destroyed	215	0	980	90
+v530_nordkap_s23_A	nordkap	23	A	v530	OPP	_x3r0v165mjolnirB	Titanium collected (tiebreak)	1000	0	70	2530
+v531fix_nordkap_s23_A	nordkap	23	A	v531fix	US	_v531fix	Core destroyed	454	0	760	70
+parent_nordkap_s23_B	nordkap	23	B	parent	US	parent_arm	Core destroyed	493	0	1210	390
+flagoff_nordkap_s23_B	nordkap	23	B	flagoff	US	flagoff_arm	Core destroyed	141	0	140	120
+v530_nordkap_s23_B	nordkap	23	B	v530	US	v530_arm	Core destroyed	197	0	180	120
+v531fix_nordkap_s23_B	nordkap	23	B	v531fix	OPP	_x3r0v165mjolnirB	Titanium collected (tiebreak)	1000	0	260	2460
+parent_nordkap_s24_A	nordkap	24	A	parent	US	parent_arm	Core destroyed	313	0	2910	810
+flagoff_nordkap_s24_A	nordkap	24	A	flagoff	US	flagoff_arm	Core destroyed	231	0	1410	20
+v530_nordkap_s24_A	nordkap	24	A	v530	OPP	_x3r0v165mjolnirB	Core destroyed	614	0	1030	1630
+v531fix_nordkap_s24_A	nordkap	24	A	v531fix	US	_v531fix	Core destroyed	537	0	230	160
+parent_nordkap_s24_B	nordkap	24	B	parent	US	parent_arm	Core destroyed	493	0	2930	1020
+flagoff_nordkap_s24_B	nordkap	24	B	flagoff	OPP	_x3r0v165mjolnirB	Core destroyed	496	0	1210	3820
+v530_nordkap_s24_B	nordkap	24	B	v530	US	v530_arm	Core destroyed	121	0	280	100
+v531fix_nordkap_s24_B	nordkap	24	B	v531fix	US	_v531fix	Core destroyed	328	0	2430	880
+parent_icefloe_s25_A	icefloe	25	A	parent	OPP	_x3r0v165mjolnirB	Core destroyed	417	0	0	4300
+flagoff_icefloe_s25_A	icefloe	25	A	flagoff	US	flagoff_arm	Core destroyed	741	0	0	80
+v530_icefloe_s25_A	icefloe	25	A	v530	OPP	_x3r0v165mjolnirB	Core destroyed	499	0	1150	4550
+v531fix_icefloe_s25_A	icefloe	25	A	v531fix	OPP	_x3r0v165mjolnirB	Core destroyed	283	0	480	790
+parent_icefloe_s25_B	icefloe	25	B	parent	OPP	_x3r0v165mjolnirB	Core destroyed	373	0	0	850
+flagoff_icefloe_s25_B	icefloe	25	B	flagoff	OPP	_x3r0v165mjolnirB	Core destroyed	320	0	380	1080
+v530_icefloe_s25_B	icefloe	25	B	v530	OPP	_x3r0v165mjolnirB	Core destroyed	616	0	4200	10490
+v531fix_icefloe_s25_B	icefloe	25	B	v531fix	US	_v531fix	Core destroyed	415	0	4340	1400
+parent_icefloe_s26_A	icefloe	26	A	parent	US	parent_arm	Core destroyed	901	0	1840	80
+flagoff_icefloe_s26_A	icefloe	26	A	flagoff	OPP	_x3r0v165mjolnirB	Core destroyed	253	0	0	940
+v530_icefloe_s26_A	icefloe	26	A	v530	US	v530_arm	Core destroyed	416	0	1210	5890
+v531fix_icefloe_s26_A	icefloe	26	A	v531fix	US	_v531fix	Core destroyed	314	0	740	70
+parent_icefloe_s26_B	icefloe	26	B	parent	OPP	_x3r0v165mjolnirB	Core destroyed	182	0	0	1170
+flagoff_icefloe_s26_B	icefloe	26	B	flagoff	US	flagoff_arm	Core destroyed	410	0	850	430
+v530_icefloe_s26_B	icefloe	26	B	v530	US	v530_arm	Core destroyed	224	0	1590	20
+v531fix_icefloe_s26_B	icefloe	26	B	v531fix	OPP	_x3r0v165mjolnirB	Core destroyed	358	0	2520	4200
+parent_auroraveil_s25_A	auroraveil	25	A	parent	US	parent_arm	Core destroyed	184	0	530	40
+flagoff_auroraveil_s25_A	auroraveil	25	A	flagoff	OPP	_x3r0v165mjolnirB	Core destroyed	209	0	480	310
+v530_auroraveil_s25_A	auroraveil	25	A	v530	OPP	_x3r0v165mjolnirB	Core destroyed	159	0	0	720
+v531fix_auroraveil_s25_A	auroraveil	25	A	v531fix	OPP	_x3r0v165mjolnirB	Core destroyed	123	0	0	590
+parent_auroraveil_s25_B	auroraveil	25	B	parent	OPP	_x3r0v165mjolnirB	Titanium collected (tiebreak)	1000	0	8240	9880
+flagoff_auroraveil_s25_B	auroraveil	25	B	flagoff	OPP	_x3r0v165mjolnirB	Core destroyed	308	0	0	300
+v530_auroraveil_s25_B	auroraveil	25	B	v530	OPP	_x3r0v165mjolnirB	Core destroyed	597	0	450	0
+v531fix_auroraveil_s25_B	auroraveil	25	B	v531fix	OPP	_x3r0v165mjolnirB	Core destroyed	465	0	0	3710
+parent_auroraveil_s26_A	auroraveil	26	A	parent	US	parent_arm	Core destroyed	184	0	530	40
+flagoff_auroraveil_s26_A	auroraveil	26	A	flagoff	US	flagoff_arm	Core destroyed	206	0	470	0
+v530_auroraveil_s26_A	auroraveil	26	A	v530	OPP	_x3r0v165mjolnirB	Core destroyed	339	0	1020	1890
+v531fix_auroraveil_s26_A	auroraveil	26	A	v531fix	US	_v531fix	Core destroyed	360	0	1360	1810
+parent_auroraveil_s26_B	auroraveil	26	B	parent	OPP	_x3r0v165mjolnirB	Core destroyed	184	0	0	970
+flagoff_auroraveil_s26_B	auroraveil	26	B	flagoff	OPP	_x3r0v165mjolnirB	Core destroyed	170	0	0	970
+v530_auroraveil_s26_B	auroraveil	26	B	v530	OPP	_x3r0v165mjolnirB	Core destroyed	250	0	0	1070
+v531fix_auroraveil_s26_B	auroraveil	26	B	v531fix	US	_v531fix	Titanium collected (tiebreak)	1000	0	1730	840
+parent_glacierkeep_s25_A	glacierkeep	25	A	parent	US	parent_arm	Titanium stored (tiebreak)	1000	0	0	0
+flagoff_glacierkeep_s25_A	glacierkeep	25	A	flagoff	OPP	_x3r0v165mjolnirB	Core destroyed	573	0	0	320
+v530_glacierkeep_s25_A	glacierkeep	25	A	v530	US	v530_arm	Core destroyed	529	0	0	0
+v531fix_glacierkeep_s25_A	glacierkeep	25	A	v531fix	OPP	_x3r0v165mjolnirB	Titanium collected (tiebreak)	1000	0	0	6350
+parent_glacierkeep_s25_B	glacierkeep	25	B	parent	OPP	_x3r0v165mjolnirB	Core destroyed	310	0	0	950
+flagoff_glacierkeep_s25_B	glacierkeep	25	B	flagoff	OPP	_x3r0v165mjolnirB	Core destroyed	428	0	0	3100
+v530_glacierkeep_s25_B	glacierkeep	25	B	v530	US	v530_arm	Core destroyed	485	0	3280	0
+v531fix_glacierkeep_s25_B	glacierkeep	25	B	v531fix	OPP	_x3r0v165mjolnirB	Core destroyed	515	0	90	940
+parent_glacierkeep_s26_A	glacierkeep	26	A	parent	OPP	_x3r0v165mjolnirB	Titanium collected (tiebreak)	1000	0	0	9040
+flagoff_glacierkeep_s26_A	glacierkeep	26	A	flagoff	OPP	_x3r0v165mjolnirB	Titanium collected (tiebreak)	1000	0	0	5090
+v530_glacierkeep_s26_A	glacierkeep	26	A	v530	OPP	_x3r0v165mjolnirB	Core destroyed	328	0	0	860
+v531fix_glacierkeep_s26_A	glacierkeep	26	A	v531fix	OPP	_x3r0v165mjolnirB	Titanium stored (tiebreak)	1000	0	0	0
+parent_glacierkeep_s26_B	glacierkeep	26	B	parent	OPP	_x3r0v165mjolnirB	Core destroyed	544	0	0	3390
+flagoff_glacierkeep_s26_B	glacierkeep	26	B	flagoff	US	flagoff_arm	Core destroyed	361	0	0	0
+v530_glacierkeep_s26_B	glacierkeep	26	B	v530	OPP	_x3r0v165mjolnirB	Core destroyed	573	0	0	1330
+v531fix_glacierkeep_s26_B	glacierkeep	26	B	v531fix	OPP	_x3r0v165mjolnirB	Titanium collected (tiebreak)	1000	0	0	9420
+parent_yulerune_s25_A	yulerune	25	A	parent	OPP	_x3r0v165mjolnirB	Core destroyed	153	0	0	640
+flagoff_yulerune_s25_A	yulerune	25	A	flagoff	OPP	_x3r0v165mjolnirB	Core destroyed	666	0	0	1040
+v530_yulerune_s25_A	yulerune	25	A	v530	OPP	_x3r0v165mjolnirB	Titanium collected (tiebreak)	1000	0	80	190
+v531fix_yulerune_s25_A	yulerune	25	A	v531fix	OPP	_x3r0v165mjolnirB	Core destroyed	186	0	240	1210
+parent_yulerune_s25_B	yulerune	25	B	parent	OPP	_x3r0v165mjolnirB	Core destroyed	306	0	0	1470
+flagoff_yulerune_s25_B	yulerune	25	B	flagoff	OPP	_x3r0v165mjolnirB	Core destroyed	801	0	160	650
+v530_yulerune_s25_B	yulerune	25	B	v530	US	v530_arm	Core destroyed	298	0	3370	1210
+v531fix_yulerune_s25_B	yulerune	25	B	v531fix	OPP	_x3r0v165mjolnirB	Core destroyed	604	0	3350	6000
+parent_yulerune_s26_A	yulerune	26	A	parent	OPP	_x3r0v165mjolnirB	Core destroyed	249	0	0	210
+flagoff_yulerune_s26_A	yulerune	26	A	flagoff	OPP	_x3r0v165mjolnirB	Titanium collected (tiebreak)	1000	0	0	5090
+v530_yulerune_s26_A	yulerune	26	A	v530	OPP	_x3r0v165mjolnirB	Core destroyed	469	0	120	2190
+v531fix_yulerune_s26_A	yulerune	26	A	v531fix	OPP	_x3r0v165mjolnirB	Core destroyed	426	0	360	680
+parent_yulerune_s26_B	yulerune	26	B	parent	OPP	_x3r0v165mjolnirB	Core destroyed	546	0	0	1510
+flagoff_yulerune_s26_B	yulerune	26	B	flagoff	OPP	_x3r0v165mjolnirB	Core destroyed	348	0	0	530
+v530_yulerune_s26_B	yulerune	26	B	v530	US	v530_arm	Core destroyed	448	0	6060	2010
+v531fix_yulerune_s26_B	yulerune	26	B	v531fix	US	_v531fix	Core destroyed	737	0	6110	1120
+parent_drakkarfjord_s25_A	drakkarfjord	25	A	parent	OPP	_x3r0v165mjolnirB	Core destroyed	441	0	0	520
+flagoff_drakkarfjord_s25_A	drakkarfjord	25	A	flagoff	OPP	_x3r0v165mjolnirB	Titanium collected (tiebreak)	1000	0	0	6880
+v530_drakkarfjord_s25_A	drakkarfjord	25	A	v530	OPP	_x3r0v165mjolnirB	Titanium collected (tiebreak)	1000	0	6130	14190
+v531fix_drakkarfjord_s25_A	drakkarfjord	25	A	v531fix	OPP	_x3r0v165mjolnirB	Titanium collected (tiebreak)	1000	0	680	2410
+parent_drakkarfjord_s25_B	drakkarfjord	25	B	parent	US	parent_arm	Core destroyed	465	0	2410	0
+flagoff_drakkarfjord_s25_B	drakkarfjord	25	B	flagoff	US	flagoff_arm	Core destroyed	453	0	310	0
+v530_drakkarfjord_s25_B	drakkarfjord	25	B	v530	US	v530_arm	Core destroyed	302	0	670	90
+v531fix_drakkarfjord_s25_B	drakkarfjord	25	B	v531fix	US	_v531fix	Harvesters (tiebreak)	1000	0	0	0
+parent_drakkarfjord_s26_A	drakkarfjord	26	A	parent	OPP	_x3r0v165mjolnirB	Titanium collected (tiebreak)	1000	0	0	12050
+flagoff_drakkarfjord_s26_A	drakkarfjord	26	A	flagoff	OPP	_x3r0v165mjolnirB	Titanium collected (tiebreak)	1000	0	0	140
+v530_drakkarfjord_s26_A	drakkarfjord	26	A	v530	OPP	_x3r0v165mjolnirB	Core destroyed	438	0	1010	410
+v531fix_drakkarfjord_s26_A	drakkarfjord	26	A	v531fix	OPP	_x3r0v165mjolnirB	Core destroyed	571	0	520	1000
+parent_drakkarfjord_s26_B	drakkarfjord	26	B	parent	US	parent_arm	Core destroyed	175	0	740	0
+flagoff_drakkarfjord_s26_B	drakkarfjord	26	B	flagoff	OPP	_x3r0v165mjolnirB	Core destroyed	491	0	310	1000
+v530_drakkarfjord_s26_B	drakkarfjord	26	B	v530	US	v530_arm	Core destroyed	321	0	320	0
+v531fix_drakkarfjord_s26_B	drakkarfjord	26	B	v531fix	OPP	_x3r0v165mjolnirB	Titanium collected (tiebreak)	1000	0	0	1510
+parent_ragnarok_s25_A	ragnarok	25	A	parent	US	parent_arm	Core destroyed	126	0	580	210
+flagoff_ragnarok_s25_A	ragnarok	25	A	flagoff	US	flagoff_arm	Core destroyed	118	0	550	180
+v530_ragnarok_s25_A	ragnarok	25	A	v530	OPP	_x3r0v165mjolnirB	Core destroyed	165	0	0	790
+v531fix_ragnarok_s25_A	ragnarok	25	A	v531fix	US	_v531fix	Core destroyed	127	0	570	230
+parent_ragnarok_s25_B	ragnarok	25	B	parent	US	parent_arm	Core destroyed	309	0	800	490
+flagoff_ragnarok_s25_B	ragnarok	25	B	flagoff	US	flagoff_arm	Core destroyed	309	0	800	490
+v530_ragnarok_s25_B	ragnarok	25	B	v530	US	v530_arm	Core destroyed	351	0	930	920
+v531fix_ragnarok_s25_B	ragnarok	25	B	v531fix	US	_v531fix	Core destroyed	139	0	650	390
+parent_ragnarok_s26_A	ragnarok	26	A	parent	US	parent_arm	Core destroyed	126	0	590	220
+flagoff_ragnarok_s26_A	ragnarok	26	A	flagoff	US	flagoff_arm	Core destroyed	149	0	480	430
+v530_ragnarok_s26_A	ragnarok	26	A	v530	OPP	_x3r0v165mjolnirB	Core destroyed	165	0	0	790
+v531fix_ragnarok_s26_A	ragnarok	26	A	v531fix	US	_v531fix	Core destroyed	128	0	570	210
+parent_ragnarok_s26_B	ragnarok	26	B	parent	US	parent_arm	Core destroyed	153	0	410	210
+flagoff_ragnarok_s26_B	ragnarok	26	B	flagoff	US	flagoff_arm	Core destroyed	153	0	410	210
+v530_ragnarok_s26_B	ragnarok	26	B	v530	US	v530_arm	Core destroyed	337	0	870	880
+v531fix_ragnarok_s26_B	ragnarok	26	B	v531fix	US	_v531fix	Core destroyed	208	0	1000	220
+parent_royale_s25_A	royale	25	A	parent	US	parent_arm	Core destroyed	218	0	2560	580
+flagoff_royale_s25_A	royale	25	A	flagoff	US	flagoff_arm	Core destroyed	338	0	2180	1230
+v530_royale_s25_A	royale	25	A	v530	US	v530_arm	Titanium collected (tiebreak)	1000	0	15940	10430
+v531fix_royale_s25_A	royale	25	A	v531fix	US	_v531fix	Core destroyed	159	0	1180	0
+parent_royale_s25_B	royale	25	B	parent	US	parent_arm	Core destroyed	387	0	6610	1780
+flagoff_royale_s25_B	royale	25	B	flagoff	US	flagoff_arm	Core destroyed	198	0	2250	50
+v530_royale_s25_B	royale	25	B	v530	OPP	_x3r0v165mjolnirB	Core destroyed	284	0	990	1540
+v531fix_royale_s25_B	royale	25	B	v531fix	US	_v531fix	Titanium collected (tiebreak)	1000	0	13500	9520
+parent_royale_s26_A	royale	26	A	parent	US	parent_arm	Core destroyed	221	0	3200	330
+flagoff_royale_s26_A	royale	26	A	flagoff	US	flagoff_arm	Core destroyed	178	0	1730	360
+v530_royale_s26_A	royale	26	A	v530	US	v530_arm	Core destroyed	238	0	2620	760
+v531fix_royale_s26_A	royale	26	A	v531fix	US	_v531fix	Core destroyed	240	0	2820	770
+parent_royale_s26_B	royale	26	B	parent	US	parent_arm	Core destroyed	184	0	1750	220
+flagoff_royale_s26_B	royale	26	B	flagoff	US	flagoff_arm	Core destroyed	226	0	1590	70
+v530_royale_s26_B	royale	26	B	v530	US	v530_arm	Core destroyed	170	0	620	0
+v531fix_royale_s26_B	royale	26	B	v531fix	US	_v531fix	Titanium collected (tiebreak)	1000	0	11700	11070
+parent_nordkap_s25_A	nordkap	25	A	parent	US	parent_arm	Core destroyed	330	0	2100	60
+flagoff_nordkap_s25_A	nordkap	25	A	flagoff	OPP	_x3r0v165mjolnirB	Titanium collected (tiebreak)	1000	0	360	1430
+v530_nordkap_s25_A	nordkap	25	A	v530	US	v530_arm	Core destroyed	271	0	650	150
+v531fix_nordkap_s25_A	nordkap	25	A	v531fix	US	_v531fix	Core destroyed	454	0	760	70
+parent_nordkap_s25_B	nordkap	25	B	parent	US	parent_arm	Core destroyed	467	0	1140	360
+flagoff_nordkap_s25_B	nordkap	25	B	flagoff	US	flagoff_arm	Core destroyed	155	0	690	480
+v530_nordkap_s25_B	nordkap	25	B	v530	US	v530_arm	Core destroyed	241	0	180	100
+v531fix_nordkap_s25_B	nordkap	25	B	v531fix	US	_v531fix	Core destroyed	361	0	1500	210
+parent_nordkap_s26_A	nordkap	26	A	parent	OPP	_x3r0v165mjolnirB	Core destroyed	363	0	490	630
+flagoff_nordkap_s26_A	nordkap	26	A	flagoff	US	flagoff_arm	Core destroyed	231	0	1730	170
+v530_nordkap_s26_A	nordkap	26	A	v530	US	v530_arm	Core destroyed	199	0	470	160
+v531fix_nordkap_s26_A	nordkap	26	A	v531fix	US	_v531fix	Core destroyed	666	0	3060	70
+parent_nordkap_s26_B	nordkap	26	B	parent	US	parent_arm	Core destroyed	395	0	340	90
+flagoff_nordkap_s26_B	nordkap	26	B	flagoff	US	flagoff_arm	Core destroyed	395	0	340	90
+v530_nordkap_s26_B	nordkap	26	B	v530	OPP	_x3r0v165mjolnirB	Core destroyed	193	0	370	1150
+v531fix_nordkap_s26_B	nordkap	26	B	v531fix	US	_v531fix	Core destroyed	854	0	3510	13010
+parent_icefloe_s27_A	icefloe	27	A	parent	OPP	_x3r0v165mjolnirB	Core destroyed	324	0	0	1630
+flagoff_icefloe_s27_A	icefloe	27	A	flagoff	OPP	_x3r0v165mjolnirB	Titanium collected (tiebreak)	1000	0	0	3800
+v530_icefloe_s27_A	icefloe	27	A	v530	US	v530_arm	Core destroyed	376	0	1360	130
+v531fix_icefloe_s27_A	icefloe	27	A	v531fix	US	_v531fix	Core destroyed	355	0	1120	20
+parent_icefloe_s27_B	icefloe	27	B	parent	OPP	_x3r0v165mjolnirB	Core destroyed	429	0	420	550
+flagoff_icefloe_s27_B	icefloe	27	B	flagoff	OPP	_x3r0v165mjolnirB	Core destroyed	410	0	300	1870
+v530_icefloe_s27_B	icefloe	27	B	v530	OPP	_x3r0v165mjolnirB	Core destroyed	390	0	2940	5440
+v531fix_icefloe_s27_B	icefloe	27	B	v531fix	OPP	_x3r0v165mjolnirB	Core destroyed	551	0	4380	4620
+parent_icefloe_s28_A	icefloe	28	A	parent	OPP	_x3r0v165mjolnirB	Core destroyed	459	0	0	5910
+flagoff_icefloe_s28_A	icefloe	28	A	flagoff	OPP	_x3r0v165mjolnirB	Core destroyed	359	0	0	4750
+v530_icefloe_s28_A	icefloe	28	A	v530	OPP	_x3r0v165mjolnirB	Core destroyed	280	0	870	1460
+v531fix_icefloe_s28_A	icefloe	28	A	v531fix	OPP	_x3r0v165mjolnirB	Core destroyed	361	0	860	1270
+parent_icefloe_s28_B	icefloe	28	B	parent	OPP	_x3r0v165mjolnirB	Core destroyed	246	0	100	540
+flagoff_icefloe_s28_B	icefloe	28	B	flagoff	OPP	_x3r0v165mjolnirB	Core destroyed	300	0	0	2220
+v530_icefloe_s28_B	icefloe	28	B	v530	US	v530_arm	Core destroyed	412	0	3070	900
+v531fix_icefloe_s28_B	icefloe	28	B	v531fix	US	_v531fix	Core destroyed	454	0	4250	3810
+parent_auroraveil_s27_A	auroraveil	27	A	parent	US	parent_arm	Core destroyed	173	0	390	10
+flagoff_auroraveil_s27_A	auroraveil	27	A	flagoff	OPP	_x3r0v165mjolnirB	Core destroyed	349	0	830	330
+v530_auroraveil_s27_A	auroraveil	27	A	v530	OPP	_x3r0v165mjolnirB	Core destroyed	303	0	0	1540
+v531fix_auroraveil_s27_A	auroraveil	27	A	v531fix	OPP	_x3r0v165mjolnirB	Core destroyed	165	0	240	600
+parent_auroraveil_s27_B	auroraveil	27	B	parent	OPP	_x3r0v165mjolnirB	Core destroyed	134	0	0	640
+flagoff_auroraveil_s27_B	auroraveil	27	B	flagoff	OPP	_x3r0v165mjolnirB	Core destroyed	157	0	0	610
+v530_auroraveil_s27_B	auroraveil	27	B	v530	OPP	_x3r0v165mjolnirB	Core destroyed	412	0	1590	1310
+v531fix_auroraveil_s27_B	auroraveil	27	B	v531fix	OPP	_x3r0v165mjolnirB	Core destroyed	155	0	0	880
+parent_auroraveil_s28_A	auroraveil	28	A	parent	OPP	_x3r0v165mjolnirB	Core destroyed	133	0	290	420
+flagoff_auroraveil_s28_A	auroraveil	28	A	flagoff	US	flagoff_arm	Core destroyed	170	0	380	0
+v530_auroraveil_s28_A	auroraveil	28	A	v530	OPP	_x3r0v165mjolnirB	Core destroyed	213	0	0	440
+v531fix_auroraveil_s28_A	auroraveil	28	A	v531fix	OPP	_x3r0v165mjolnirB	Core destroyed	194	0	220	1190
+parent_auroraveil_s28_B	auroraveil	28	B	parent	OPP	_x3r0v165mjolnirB	Core destroyed	257	0	0	1710
+flagoff_auroraveil_s28_B	auroraveil	28	B	flagoff	OPP	_x3r0v165mjolnirB	Core destroyed	128	0	0	720
+v530_auroraveil_s28_B	auroraveil	28	B	v530	OPP	_x3r0v165mjolnirB	Core destroyed	140	0	0	950
+v531fix_auroraveil_s28_B	auroraveil	28	B	v531fix	OPP	_x3r0v165mjolnirB	Core destroyed	465	0	0	3310
+parent_glacierkeep_s27_A	glacierkeep	27	A	parent	OPP	_x3r0v165mjolnirB	Core destroyed	521	0	0	500
+flagoff_glacierkeep_s27_A	glacierkeep	27	A	flagoff	US	flagoff_arm	Core destroyed	314	0	0	0
+v530_glacierkeep_s27_A	glacierkeep	27	A	v530	OPP	_x3r0v165mjolnirB	Core destroyed	574	0	0	4370
+v531fix_glacierkeep_s27_A	glacierkeep	27	A	v531fix	OPP	_x3r0v165mjolnirB	Core destroyed	537	0	0	0
+parent_glacierkeep_s27_B	glacierkeep	27	B	parent	OPP	_x3r0v165mjolnirB	Titanium collected (tiebreak)	1000	0	0	860
+flagoff_glacierkeep_s27_B	glacierkeep	27	B	flagoff	OPP	_x3r0v165mjolnirB	Core destroyed	296	0	0	690
+v530_glacierkeep_s27_B	glacierkeep	27	B	v530	OPP	_x3r0v165mjolnirB	Core destroyed	670	0	3680	5860
+v531fix_glacierkeep_s27_B	glacierkeep	27	B	v531fix	OPP	_x3r0v165mjolnirB	Core destroyed	557	0	0	5280
+parent_glacierkeep_s28_A	glacierkeep	28	A	parent	OPP	_x3r0v165mjolnirB	Core destroyed	275	0	0	750
+flagoff_glacierkeep_s28_A	glacierkeep	28	A	flagoff	OPP	_x3r0v165mjolnirB	Core destroyed	549	0	0	120
+v530_glacierkeep_s28_A	glacierkeep	28	A	v530	OPP	_x3r0v165mjolnirB	Titanium collected (tiebreak)	1000	0	0	720
+v531fix_glacierkeep_s28_A	glacierkeep	28	A	v531fix	OPP	_x3r0v165mjolnirB	Core destroyed	685	0	0	5710
+parent_glacierkeep_s28_B	glacierkeep	28	B	parent	OPP	_x3r0v165mjolnirB	Titanium collected (tiebreak)	1000	0	0	8610
+flagoff_glacierkeep_s28_B	glacierkeep	28	B	flagoff	OPP	_x3r0v165mjolnirB	Core destroyed	326	0	0	530
+v530_glacierkeep_s28_B	glacierkeep	28	B	v530	OPP	_x3r0v165mjolnirB	Core destroyed	327	0	0	830
+v531fix_glacierkeep_s28_B	glacierkeep	28	B	v531fix	OPP	_x3r0v165mjolnirB	Core destroyed	425	0	0	1600
+parent_yulerune_s27_A	yulerune	27	A	parent	OPP	_x3r0v165mjolnirB	Titanium collected (tiebreak)	1000	0	0	190
+flagoff_yulerune_s27_A	yulerune	27	A	flagoff	OPP	_x3r0v165mjolnirB	Core destroyed	101	0	0	520
+v530_yulerune_s27_A	yulerune	27	A	v530	OPP	_x3r0v165mjolnirB	Core destroyed	469	0	120	2190
+v531fix_yulerune_s27_A	yulerune	27	A	v531fix	US	_v531fix	Core destroyed	724	0	8210	9470
+parent_yulerune_s27_B	yulerune	27	B	parent	OPP	_x3r0v165mjolnirB	Core destroyed	471	0	150	1340
+flagoff_yulerune_s27_B	yulerune	27	B	flagoff	OPP	_x3r0v165mjolnirB	Titanium collected (tiebreak)	1000	0	460	3870
+v530_yulerune_s27_B	yulerune	27	B	v530	US	v530_arm	Titanium collected (tiebreak)	1000	0	20820	3730
+v531fix_yulerune_s27_B	yulerune	27	B	v531fix	OPP	_x3r0v165mjolnirB	Core destroyed	318	0	2240	1370
+parent_yulerune_s28_A	yulerune	28	A	parent	OPP	_x3r0v165mjolnirB	Core destroyed	153	0	0	720
+flagoff_yulerune_s28_A	yulerune	28	A	flagoff	OPP	_x3r0v165mjolnirB	Core destroyed	222	0	0	1020
+v530_yulerune_s28_A	yulerune	28	A	v530	OPP	_x3r0v165mjolnirB	Core destroyed	415	0	80	4600
+v531fix_yulerune_s28_A	yulerune	28	A	v531fix	OPP	_x3r0v165mjolnirB	Core destroyed	371	0	230	690
+parent_yulerune_s28_B	yulerune	28	B	parent	US	parent_arm	Core destroyed	495	0	5000	2870
+flagoff_yulerune_s28_B	yulerune	28	B	flagoff	OPP	_x3r0v165mjolnirB	Core destroyed	495	0	2870	4260
+v530_yulerune_s28_B	yulerune	28	B	v530	OPP	_x3r0v165mjolnirB	Core destroyed	299	0	0	4430
+v531fix_yulerune_s28_B	yulerune	28	B	v531fix	US	_v531fix	Core destroyed	422	0	4310	650
+parent_drakkarfjord_s27_A	drakkarfjord	27	A	parent	US	parent_arm	Core destroyed	357	0	1660	450
+flagoff_drakkarfjord_s27_A	drakkarfjord	27	A	flagoff	OPP	_x3r0v165mjolnirB	Harvesters (tiebreak)	1000	0	0	0
+v530_drakkarfjord_s27_A	drakkarfjord	27	A	v530	US	v530_arm	Core destroyed	725	0	0	420
+v531fix_drakkarfjord_s27_A	drakkarfjord	27	A	v531fix	US	_v531fix	Core destroyed	136	0	490	50
+parent_drakkarfjord_s27_B	drakkarfjord	27	B	parent	US	parent_arm	Core destroyed	237	0	1050	60
+flagoff_drakkarfjord_s27_B	drakkarfjord	27	B	flagoff	OPP	_x3r0v165mjolnirB	Core destroyed	653	0	320	0
+v530_drakkarfjord_s27_B	drakkarfjord	27	B	v530	OPP	_x3r0v165mjolnirB	Core destroyed	390	0	70	3710
+v531fix_drakkarfjord_s27_B	drakkarfjord	27	B	v531fix	OPP	_x3r0v165mjolnirB	Titanium collected (tiebreak)	1000	0	0	240
+parent_drakkarfjord_s28_A	drakkarfjord	28	A	parent	US	parent_arm	Core destroyed	565	0	0	140
+flagoff_drakkarfjord_s28_A	drakkarfjord	28	A	flagoff	OPP	_x3r0v165mjolnirB	Titanium collected (tiebreak)	1000	0	0	140
+v530_drakkarfjord_s28_A	drakkarfjord	28	A	v530	US	v530_arm	Core destroyed	216	0	190	170
+v531fix_drakkarfjord_s28_A	drakkarfjord	28	A	v531fix	US	_v531fix	Core destroyed	136	0	490	50
+parent_drakkarfjord_s28_B	drakkarfjord	28	B	parent	US	parent_arm	Core destroyed	184	0	820	0
+flagoff_drakkarfjord_s28_B	drakkarfjord	28	B	flagoff	US	flagoff_arm	Core destroyed	327	0	1740	0
+v530_drakkarfjord_s28_B	drakkarfjord	28	B	v530	US	v530_arm	Core destroyed	440	0	1430	90
+v531fix_drakkarfjord_s28_B	drakkarfjord	28	B	v531fix	US	_v531fix	Harvesters (tiebreak)	1000	0	0	0
+parent_ragnarok_s27_A	ragnarok	27	A	parent	US	parent_arm	Core destroyed	116	0	530	360
+flagoff_ragnarok_s27_A	ragnarok	27	A	flagoff	US	flagoff_arm	Core destroyed	126	0	580	210
+v530_ragnarok_s27_A	ragnarok	27	A	v530	OPP	_x3r0v165mjolnirB	Core destroyed	145	0	0	690
+v531fix_ragnarok_s27_A	ragnarok	27	A	v531fix	US	_v531fix	Core destroyed	127	0	570	230
+parent_ragnarok_s27_B	ragnarok	27	B	parent	US	parent_arm	Core destroyed	187	0	500	190
+flagoff_ragnarok_s27_B	ragnarok	27	B	flagoff	US	flagoff_arm	Core destroyed	277	0	720	490
+v530_ragnarok_s27_B	ragnarok	27	B	v530	US	v530_arm	Core destroyed	280	0	730	270
+v531fix_ragnarok_s27_B	ragnarok	27	B	v531fix	US	_v531fix	Core destroyed	160	0	760	440
+parent_ragnarok_s28_A	ragnarok	28	A	parent	US	parent_arm	Core destroyed	126	0	590	220
+flagoff_ragnarok_s28_A	ragnarok	28	A	flagoff	US	flagoff_arm	Core destroyed	116	0	530	360
+v530_ragnarok_s28_A	ragnarok	28	A	v530	US	v530_arm	Core destroyed	162	0	360	180
+v531fix_ragnarok_s28_A	ragnarok	28	A	v531fix	US	_v531fix	Core destroyed	128	0	570	210
+parent_ragnarok_s28_B	ragnarok	28	B	parent	US	parent_arm	Core destroyed	277	0	720	490
+flagoff_ragnarok_s28_B	ragnarok	28	B	flagoff	US	flagoff_arm	Core destroyed	193	0	510	190
+v530_ragnarok_s28_B	ragnarok	28	B	v530	US	v530_arm	Core destroyed	169	0	450	180
+v531fix_ragnarok_s28_B	ragnarok	28	B	v531fix	US	_v531fix	Core destroyed	168	0	800	460
+parent_royale_s27_A	royale	27	A	parent	US	parent_arm	Core destroyed	218	0	2560	580
+flagoff_royale_s27_A	royale	27	A	flagoff	OPP	_x3r0v165mjolnirB	Core destroyed	213	0	1440	960
+v530_royale_s27_A	royale	27	A	v530	US	v530_arm	Core destroyed	352	0	2030	1450
+v531fix_royale_s27_A	royale	27	A	v531fix	OPP	_x3r0v165mjolnirB	Titanium collected (tiebreak)	1000	0	7040	14330
+parent_royale_s27_B	royale	27	B	parent	US	parent_arm	Core destroyed	166	0	1550	230
+flagoff_royale_s27_B	royale	27	B	flagoff	US	flagoff_arm	Core destroyed	187	0	2240	0
+v530_royale_s27_B	royale	27	B	v530	US	v530_arm	Core destroyed	328	0	900	390
+v531fix_royale_s27_B	royale	27	B	v531fix	US	_v531fix	Core destroyed	746	0	6880	6410
+parent_royale_s28_A	royale	28	A	parent	US	parent_arm	Core destroyed	178	0	1580	130
+flagoff_royale_s28_A	royale	28	A	flagoff	US	flagoff_arm	Core destroyed	155	0	1550	180
+v530_royale_s28_A	royale	28	A	v530	OPP	_x3r0v165mjolnirB	Titanium collected (tiebreak)	1000	0	11720	12940
+v531fix_royale_s28_A	royale	28	A	v531fix	US	_v531fix	Core destroyed	157	0	1280	670
+parent_royale_s28_B	royale	28	B	parent	US	parent_arm	Core destroyed	156	0	1140	0
+flagoff_royale_s28_B	royale	28	B	flagoff	US	flagoff_arm	Core destroyed	225	0	2570	90
+v530_royale_s28_B	royale	28	B	v530	US	v530_arm	Core destroyed	194	0	760	0
+v531fix_royale_s28_B	royale	28	B	v531fix	US	_v531fix	Core destroyed	255	0	2400	60
+parent_nordkap_s27_A	nordkap	27	A	parent	US	parent_arm	Core destroyed	467	0	2080	570
+flagoff_nordkap_s27_A	nordkap	27	A	flagoff	US	flagoff_arm	Core destroyed	417	0	3130	880
+v530_nordkap_s27_A	nordkap	27	A	v530	US	v530_arm	Core destroyed	657	0	210	110
+v531fix_nordkap_s27_A	nordkap	27	A	v531fix	US	_v531fix	Core destroyed	296	0	1760	150
+parent_nordkap_s27_B	nordkap	27	B	parent	US	parent_arm	Core destroyed	399	0	970	390
+flagoff_nordkap_s27_B	nordkap	27	B	flagoff	US	flagoff_arm	Core destroyed	769	0	270	500
+v530_nordkap_s27_B	nordkap	27	B	v530	US	v530_arm	Core destroyed	288	0	780	220
+v531fix_nordkap_s27_B	nordkap	27	B	v531fix	US	_v531fix	Core destroyed	514	0	2550	150
+parent_nordkap_s28_A	nordkap	28	A	parent	OPP	_x3r0v165mjolnirB	Core destroyed	345	0	120	520
+flagoff_nordkap_s28_A	nordkap	28	A	flagoff	US	flagoff_arm	Core destroyed	276	0	1050	190
+v530_nordkap_s28_A	nordkap	28	A	v530	OPP	_x3r0v165mjolnirB	Titanium collected (tiebreak)	1000	0	70	2530
+v531fix_nordkap_s28_A	nordkap	28	A	v531fix	US	_v531fix	Core destroyed	233	0	1390	120
+parent_nordkap_s28_B	nordkap	28	B	parent	OPP	_x3r0v165mjolnirB	Core destroyed	152	0	280	1290
+flagoff_nordkap_s28_B	nordkap	28	B	flagoff	US	flagoff_arm	Core destroyed	395	0	340	90
+v530_nordkap_s28_B	nordkap	28	B	v530	US	v530_arm	Core destroyed	445	0	640	120
+v531fix_nordkap_s28_B	nordkap	28	B	v531fix	OPP	_x3r0v165mjolnirB	Core destroyed	426	0	1040	2710
+parent_icefloe_s29_A	icefloe	29	A	parent	OPP	_x3r0v165mjolnirB	Core destroyed	324	0	0	3680
+flagoff_icefloe_s29_A	icefloe	29	A	flagoff	OPP	_x3r0v165mjolnirB	Core destroyed	149	0	0	620
+v530_icefloe_s29_A	icefloe	29	A	v530	OPP	_x3r0v165mjolnirB	Core destroyed	440	0	400	3740
+v531fix_icefloe_s29_A	icefloe	29	A	v531fix	US	_v531fix	Core destroyed	200	0	460	270
+parent_icefloe_s29_B	icefloe	29	B	parent	OPP	_x3r0v165mjolnirB	Core destroyed	249	0	0	1040
+flagoff_icefloe_s29_B	icefloe	29	B	flagoff	OPP	_x3r0v165mjolnirB	Core destroyed	141	0	0	550
+v530_icefloe_s29_B	icefloe	29	B	v530	US	v530_arm	Core destroyed	412	0	3070	900
+v531fix_icefloe_s29_B	icefloe	29	B	v531fix	OPP	_x3r0v165mjolnirB	Core destroyed	340	0	590	1290
+parent_icefloe_s30_A	icefloe	30	A	parent	US	parent_arm	Core destroyed	776	0	1230	80
+flagoff_icefloe_s30_A	icefloe	30	A	flagoff	OPP	_x3r0v165mjolnirB	Core destroyed	204	0	0	1760
+v530_icefloe_s30_A	icefloe	30	A	v530	OPP	_x3r0v165mjolnirB	Core destroyed	601	0	440	3230
+v531fix_icefloe_s30_A	icefloe	30	A	v531fix	US	_v531fix	Core destroyed	191	0	440	0
+parent_icefloe_s30_B	icefloe	30	B	parent	OPP	_x3r0v165mjolnirB	Core destroyed	120	0	0	610
+flagoff_icefloe_s30_B	icefloe	30	B	flagoff	OPP	_x3r0v165mjolnirB	Core destroyed	668	0	1360	1630
+v530_icefloe_s30_B	icefloe	30	B	v530	US	v530_arm	Core destroyed	560	0	5090	1260
+v531fix_icefloe_s30_B	icefloe	30	B	v531fix	US	_v531fix	Core destroyed	209	0	1100	10
+parent_auroraveil_s29_A	auroraveil	29	A	parent	US	parent_arm	Core destroyed	310	0	730	0
+flagoff_auroraveil_s29_A	auroraveil	29	A	flagoff	OPP	_x3r0v165mjolnirB	Core destroyed	349	0	830	330
+v530_auroraveil_s29_A	auroraveil	29	A	v530	OPP	_x3r0v165mjolnirB	Core destroyed	159	0	0	720
+v531fix_auroraveil_s29_A	auroraveil	29	A	v531fix	OPP	_x3r0v165mjolnirB	Core destroyed	175	0	80	680
+parent_auroraveil_s29_B	auroraveil	29	B	parent	OPP	_x3r0v165mjolnirB	Core destroyed	262	0	0	1520
+flagoff_auroraveil_s29_B	auroraveil	29	B	flagoff	OPP	_x3r0v165mjolnirB	Core destroyed	302	0	0	2560
+v530_auroraveil_s29_B	auroraveil	29	B	v530	OPP	_x3r0v165mjolnirB	Core destroyed	237	0	0	1750
+v531fix_auroraveil_s29_B	auroraveil	29	B	v531fix	OPP	_x3r0v165mjolnirB	Titanium collected (tiebreak)	1000	0	0	520
+parent_auroraveil_s30_A	auroraveil	30	A	parent	US	parent_arm	Core destroyed	229	0	530	360
+flagoff_auroraveil_s30_A	auroraveil	30	A	flagoff	OPP	_x3r0v165mjolnirB	Core destroyed	177	0	400	590
+v530_auroraveil_s30_A	auroraveil	30	A	v530	OPP	_x3r0v165mjolnirB	Core destroyed	217	0	290	760
+v531fix_auroraveil_s30_A	auroraveil	30	A	v531fix	OPP	_x3r0v165mjolnirB	Core destroyed	181	0	0	390
+parent_auroraveil_s30_B	auroraveil	30	B	parent	OPP	_x3r0v165mjolnirB	Core destroyed	283	0	0	1380
+flagoff_auroraveil_s30_B	auroraveil	30	B	flagoff	OPP	_x3r0v165mjolnirB	Core destroyed	425	0	0	1750
+v530_auroraveil_s30_B	auroraveil	30	B	v530	OPP	_x3r0v165mjolnirB	Core destroyed	668	0	390	980
+v531fix_auroraveil_s30_B	auroraveil	30	B	v531fix	OPP	_x3r0v165mjolnirB	Core destroyed	260	0	0	1590
+parent_glacierkeep_s29_A	glacierkeep	29	A	parent	US	parent_arm	Core destroyed	249	0	470	0
+flagoff_glacierkeep_s29_A	glacierkeep	29	A	flagoff	US	flagoff_arm	Core destroyed	589	0	0	480
+v530_glacierkeep_s29_A	glacierkeep	29	A	v530	US	v530_arm	Core destroyed	946	0	0	620
+v531fix_glacierkeep_s29_A	glacierkeep	29	A	v531fix	US	_v531fix	Core destroyed	517	0	0	0
+parent_glacierkeep_s29_B	glacierkeep	29	B	parent	US	parent_arm	Core destroyed	357	0	0	0
+flagoff_glacierkeep_s29_B	glacierkeep	29	B	flagoff	OPP	_x3r0v165mjolnirB	Core destroyed	386	0	0	370
+v530_glacierkeep_s29_B	glacierkeep	29	B	v530	OPP	_x3r0v165mjolnirB	Titanium collected (tiebreak)	1000	0	1350	9020
+v531fix_glacierkeep_s29_B	glacierkeep	29	B	v531fix	OPP	_x3r0v165mjolnirB	Core destroyed	315	0	0	860
+parent_glacierkeep_s30_A	glacierkeep	30	A	parent	US	parent_arm	Core destroyed	696	0	0	0
+flagoff_glacierkeep_s30_A	glacierkeep	30	A	flagoff	OPP	_x3r0v165mjolnirB	Titanium collected (tiebreak)	1000	0	0	280
+v530_glacierkeep_s30_A	glacierkeep	30	A	v530	OPP	_x3r0v165mjolnirB	Core destroyed	581	0	0	4510
+v531fix_glacierkeep_s30_A	glacierkeep	30	A	v531fix	OPP	_x3r0v165mjolnirB	Core destroyed	441	0	0	750
+parent_glacierkeep_s30_B	glacierkeep	30	B	parent	OPP	_x3r0v165mjolnirB	Titanium collected (tiebreak)	1000	0	1040	3910
+flagoff_glacierkeep_s30_B	glacierkeep	30	B	flagoff	OPP	_x3r0v165mjolnirB	Core destroyed	468	0	0	4880
+v530_glacierkeep_s30_B	glacierkeep	30	B	v530	OPP	_x3r0v165mjolnirB	Core destroyed	316	0	0	1310
+v531fix_glacierkeep_s30_B	glacierkeep	30	B	v531fix	OPP	_x3r0v165mjolnirB	Core destroyed	710	0	0	5760
+parent_yulerune_s29_A	yulerune	29	A	parent	OPP	_x3r0v165mjolnirB	Titanium collected (tiebreak)	1000	0	0	3980
+flagoff_yulerune_s29_A	yulerune	29	A	flagoff	OPP	_x3r0v165mjolnirB	Core destroyed	233	0	0	220
+v530_yulerune_s29_A	yulerune	29	A	v530	OPP	_x3r0v165mjolnirB	Core destroyed	469	0	120	2190
+v531fix_yulerune_s29_A	yulerune	29	A	v531fix	OPP	_x3r0v165mjolnirB	Core destroyed	260	0	230	1830
+parent_yulerune_s29_B	yulerune	29	B	parent	OPP	_x3r0v165mjolnirB	Core destroyed	516	0	1330	2860
+flagoff_yulerune_s29_B	yulerune	29	B	flagoff	OPP	_x3r0v165mjolnirB	Core destroyed	239	0	70	1560
+v530_yulerune_s29_B	yulerune	29	B	v530	OPP	_x3r0v165mjolnirB	Core destroyed	274	0	0	2080
+v531fix_yulerune_s29_B	yulerune	29	B	v531fix	OPP	_x3r0v165mjolnirB	Core destroyed	491	0	3670	2860
+parent_yulerune_s30_A	yulerune	30	A	parent	OPP	_x3r0v165mjolnirB	Titanium collected (tiebreak)	1000	0	0	190
+flagoff_yulerune_s30_A	yulerune	30	A	flagoff	OPP	_x3r0v165mjolnirB	Core destroyed	145	0	0	370
+v530_yulerune_s30_A	yulerune	30	A	v530	OPP	_x3r0v165mjolnirB	Core destroyed	321	0	110	2210
+v531fix_yulerune_s30_A	yulerune	30	A	v531fix	US	_v531fix	Core destroyed	153	0	680	90
+parent_yulerune_s30_B	yulerune	30	B	parent	OPP	_x3r0v165mjolnirB	Core destroyed	326	0	0	620
+flagoff_yulerune_s30_B	yulerune	30	B	flagoff	OPP	_x3r0v165mjolnirB	Core destroyed	297	0	70	520
+v530_yulerune_s30_B	yulerune	30	B	v530	OPP	_x3r0v165mjolnirB	Core destroyed	271	0	610	1200
+v531fix_yulerune_s30_B	yulerune	30	B	v531fix	OPP	_x3r0v165mjolnirB	Core destroyed	351	0	1460	2730
+parent_drakkarfjord_s29_A	drakkarfjord	29	A	parent	US	parent_arm	Titanium stored (tiebreak)	1000	0	0	0
+flagoff_drakkarfjord_s29_A	drakkarfjord	29	A	flagoff	OPP	_x3r0v165mjolnirB	Titanium collected (tiebreak)	1000	0	0	6750
+v530_drakkarfjord_s29_A	drakkarfjord	29	A	v530	OPP	_x3r0v165mjolnirB	Core destroyed	235	0	220	1590
+v531fix_drakkarfjord_s29_A	drakkarfjord	29	A	v531fix	OPP	_x3r0v165mjolnirB	Core destroyed	220	0	1210	500
+parent_drakkarfjord_s29_B	drakkarfjord	29	B	parent	US	parent_arm	Core destroyed	283	0	1470	0
+flagoff_drakkarfjord_s29_B	drakkarfjord	29	B	flagoff	US	flagoff_arm	Core destroyed	184	0	820	0
+v530_drakkarfjord_s29_B	drakkarfjord	29	B	v530	US	v530_arm	Core destroyed	302	0	670	90
+v531fix_drakkarfjord_s29_B	drakkarfjord	29	B	v531fix	OPP	_x3r0v165mjolnirB	Core destroyed	292	0	0	830
+parent_drakkarfjord_s30_A	drakkarfjord	30	A	parent	US	parent_arm	Core destroyed	737	0	0	140
+flagoff_drakkarfjord_s30_A	drakkarfjord	30	A	flagoff	OPP	_x3r0v165mjolnirB	Harvesters (tiebreak)	1000	0	0	0
+v530_drakkarfjord_s30_A	drakkarfjord	30	A	v530	OPP	_x3r0v165mjolnirB	Core destroyed	270	0	30	2200
+v531fix_drakkarfjord_s30_A	drakkarfjord	30	A	v531fix	US	_v531fix	Core destroyed	162	0	320	60
+parent_drakkarfjord_s30_B	drakkarfjord	30	B	parent	US	parent_arm	Core destroyed	294	0	1610	0
+flagoff_drakkarfjord_s30_B	drakkarfjord	30	B	flagoff	US	flagoff_arm	Core destroyed	405	0	310	50
+v530_drakkarfjord_s30_B	drakkarfjord	30	B	v530	OPP	_x3r0v165mjolnirB	Core destroyed	189	0	0	660
+v531fix_drakkarfjord_s30_B	drakkarfjord	30	B	v531fix	OPP	_x3r0v165mjolnirB	Core destroyed	390	0	0	720
+parent_ragnarok_s29_A	ragnarok	29	A	parent	US	parent_arm	Core destroyed	126	0	580	210
+flagoff_ragnarok_s29_A	ragnarok	29	A	flagoff	US	flagoff_arm	Core destroyed	126	0	580	210
+v530_ragnarok_s29_A	ragnarok	29	A	v530	OPP	_x3r0v165mjolnirB	Core destroyed	165	0	0	790
+v531fix_ragnarok_s29_A	ragnarok	29	A	v531fix	US	_v531fix	Core destroyed	128	0	570	210
+parent_ragnarok_s29_B	ragnarok	29	B	parent	US	parent_arm	Core destroyed	187	0	500	190
+flagoff_ragnarok_s29_B	ragnarok	29	B	flagoff	US	flagoff_arm	Core destroyed	187	0	500	190
+v530_ragnarok_s29_B	ragnarok	29	B	v530	US	v530_arm	Core destroyed	153	0	410	220
+v531fix_ragnarok_s29_B	ragnarok	29	B	v531fix	US	_v531fix	Core destroyed	139	0	650	390
+parent_ragnarok_s30_A	ragnarok	30	A	parent	US	parent_arm	Core destroyed	126	0	580	210
+flagoff_ragnarok_s30_A	ragnarok	30	A	flagoff	US	flagoff_arm	Core destroyed	118	0	550	180
+v530_ragnarok_s30_A	ragnarok	30	A	v530	US	v530_arm	Core destroyed	162	0	360	180
+v531fix_ragnarok_s30_A	ragnarok	30	A	v531fix	US	_v531fix	Core destroyed	128	0	570	210
+parent_ragnarok_s30_B	ragnarok	30	B	parent	US	parent_arm	Core destroyed	193	0	510	190
+flagoff_ragnarok_s30_B	ragnarok	30	B	flagoff	US	flagoff_arm	Core destroyed	193	0	510	180
+v530_ragnarok_s30_B	ragnarok	30	B	v530	US	v530_arm	Core destroyed	337	0	870	880
+v531fix_ragnarok_s30_B	ragnarok	30	B	v531fix	US	_v531fix	Core destroyed	139	0	650	390
+parent_royale_s29_A	royale	29	A	parent	US	parent_arm	Core destroyed	159	0	2020	350
+flagoff_royale_s29_A	royale	29	A	flagoff	US	flagoff_arm	Core destroyed	194	0	2040	140
+v530_royale_s29_A	royale	29	A	v530	US	v530_arm	Core destroyed	405	0	3100	1760
+v531fix_royale_s29_A	royale	29	A	v531fix	US	_v531fix	Core destroyed	259	0	1440	0
+parent_royale_s29_B	royale	29	B	parent	US	parent_arm	Core destroyed	188	0	2110	30
+flagoff_royale_s29_B	royale	29	B	flagoff	US	flagoff_arm	Core destroyed	113	0	680	50
+v530_royale_s29_B	royale	29	B	v530	US	v530_arm	Titanium collected (tiebreak)	1000	0	15460	8890
+v531fix_royale_s29_B	royale	29	B	v531fix	US	_v531fix	Core destroyed	244	0	2390	130
+parent_royale_s30_A	royale	30	A	parent	US	parent_arm	Titanium collected (tiebreak)	1000	0	13940	12260
+flagoff_royale_s30_A	royale	30	A	flagoff	US	flagoff_arm	Core destroyed	262	0	2900	110
+v530_royale_s30_A	royale	30	A	v530	US	v530_arm	Core destroyed	283	0	2750	1450
+v531fix_royale_s30_A	royale	30	A	v531fix	US	_v531fix	Core destroyed	344	0	3280	1740
+parent_royale_s30_B	royale	30	B	parent	US	parent_arm	Core destroyed	418	0	6320	2620
+flagoff_royale_s30_B	royale	30	B	flagoff	US	flagoff_arm	Core destroyed	160	0	970	580
+v530_royale_s30_B	royale	30	B	v530	US	v530_arm	Titanium collected (tiebreak)	1000	0	16390	10380
+v531fix_royale_s30_B	royale	30	B	v531fix	OPP	_x3r0v165mjolnirB	Core destroyed	681	0	4940	5630
+parent_nordkap_s29_A	nordkap	29	A	parent	US	parent_arm	Core destroyed	329	0	270	20
+flagoff_nordkap_s29_A	nordkap	29	A	flagoff	US	flagoff_arm	Core destroyed	276	0	1050	190
+v530_nordkap_s29_A	nordkap	29	A	v530	US	v530_arm	Core destroyed	185	0	440	130
+v531fix_nordkap_s29_A	nordkap	29	A	v531fix	US	_v531fix	Core destroyed	537	0	230	160
+parent_nordkap_s29_B	nordkap	29	B	parent	US	parent_arm	Core destroyed	399	0	2740	190
+flagoff_nordkap_s29_B	nordkap	29	B	flagoff	US	flagoff_arm	Core destroyed	398	0	290	440
+v530_nordkap_s29_B	nordkap	29	B	v530	OPP	_x3r0v165mjolnirB	Titanium collected (tiebreak)	1000	0	2470	2500
+v531fix_nordkap_s29_B	nordkap	29	B	v531fix	OPP	_x3r0v165mjolnirB	Core destroyed	152	0	350	410
+parent_nordkap_s30_A	nordkap	30	A	parent	US	parent_arm	Core destroyed	354	0	150	20
+flagoff_nordkap_s30_A	nordkap	30	A	flagoff	US	flagoff_arm	Core destroyed	164	0	590	20
+v530_nordkap_s30_A	nordkap	30	A	v530	US	v530_arm	Core destroyed	383	0	2410	480
+v531fix_nordkap_s30_A	nordkap	30	A	v531fix	US	_v531fix	Core destroyed	476	0	3680	890
+parent_nordkap_s30_B	nordkap	30	B	parent	US	parent_arm	Core destroyed	399	0	970	390
+flagoff_nordkap_s30_B	nordkap	30	B	flagoff	US	flagoff_arm	Titanium collected (tiebreak)	1000	0	2480	210
+v530_nordkap_s30_B	nordkap	30	B	v530	OPP	_x3r0v165mjolnirB	Core destroyed	129	0	290	590
+v531fix_nordkap_s30_B	nordkap	30	B	v531fix	US	_v531fix	Core destroyed	361	0	1500	210

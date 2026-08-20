@@ -1,0 +1,71 @@
+SELFTEST OK: all-win / all-loss / mixed fold to different counters (wins, k300, ourcore, r1000, medkill); delivery folds low/high to different means; a game that never reached r300 is EXCLUDED from n300 (0) rather than counted as zero delivery.
+=== THE KILL_TARGET PANEL ===
+arm             n   wins%    <=r150    <=r180    <=r200    <=r250    <=r300  medkill  ourcore   tb
+parent        480   53.1%  34(0.071)  63(0.131) 102(0.212) 132(0.275) 164(0.342)      237      191    0
+flagoff       480   50.0%  38(0.079)  77(0.160) 108(0.225) 143(0.298) 167(0.348)      208      196    0
+v530          480   41.9%   2(0.004)  24(0.050)  35(0.073)  56(0.117)  85(0.177)      316      236    0
+v531fix       480   52.5%  55(0.115)  84(0.175)  96(0.200) 126(0.263) 139(0.290)      242      189    0
+
+flagoff    vs parent   wins      -3.12 pp (hw 6.32)  inside
+flagoff    vs parent   k<=200    +1.25 pp (hw 5.23)  inside
+flagoff    vs parent   k<=300    +0.62 pp (hw 6.01)  inside
+flagoff    vs parent   ourcore   +1.04 pp (hw 6.21)  inside
+flagoff    vs parent   medkill 207.5 vs 237.0   (kill-conditioned, diagnostic only -- carries the collider)
+
+v530       vs parent   wins     -11.25 pp (hw 6.32)  OUTSIDE   [known-zero on this metric: -3.12 pp]
+v530       vs parent   k<=200   -13.96 pp (hw 4.43)  OUTSIDE   [known-zero on this metric: +1.25 pp]
+v530       vs parent   k<=300   -16.46 pp (hw 5.55)  OUTSIDE   [known-zero on this metric: +0.62 pp]
+v530       vs parent   ourcore   +9.38 pp (hw 6.29)  OUTSIDE   [known-zero on this metric: +1.04 pp]
+v530       vs parent   medkill 313.5 vs 237.0   (kill-conditioned, diagnostic only -- carries the collider)
+
+v531fix    vs parent   wins      -0.62 pp (hw 6.32)  inside   [known-zero on this metric: -3.12 pp]  << SMALLER THAN THE KNOWN ZERO
+v531fix    vs parent   k<=200    -1.25 pp (hw 5.12)  inside   [known-zero on this metric: +1.25 pp]  << SMALLER THAN THE KNOWN ZERO
+v531fix    vs parent   k<=300    -5.21 pp (hw 5.88)  inside   [known-zero on this metric: +0.62 pp]
+v531fix    vs parent   ourcore   -0.42 pp (hw 6.19)  inside   [known-zero on this metric: +1.04 pp]  << SMALLER THAN THE KNOWN ZERO
+v531fix    vs parent   medkill 242 vs 237.0   (kill-conditioned, diagnostic only -- carries the collider)
+
+=== THE DELIVERY PANEL ===
+CROSS-INSTRUMENT GATE: deliv.dend == scoreboard ours_mined on 1920/1920 joined rows (0 replays missing)
+arm             n     n100  d100med d100mean     n300  d300med d300mean dendmed  t1rate  t1med    h50   h100   h200   h300
+parent        480      480      140    201.2      211        0    555.2     385   0.881     45   1.88   2.47   2.29   1.69
+flagoff       480      480      170    209.3      221        0    380.6     330   0.902     60   1.98   2.46   2.13   1.57
+v530          480      480        0    103.9      284      440    752.5     440   0.927     17   0.67   1.28   2.34   2.23
+v531fix       480      478      210    206.4      269      360    866.7     570   0.935     48   1.22   2.05   2.53   2.36
+
+flagoff    vs parent   d100_mean      209.31 vs     201.19  (+8.12)
+flagoff    vs parent   d300_mean      380.63 vs     555.17  (-174.53)
+flagoff    vs parent   dend_mean      731.83 vs     930.25  (-198.42)
+flagoff    vs parent   t1_med          60.00 vs      45.00  (+15.00)
+flagoff    vs parent   h50              1.98 vs       1.88  (+0.10)
+flagoff    vs parent   h100             2.46 vs       2.47  (-0.01)
+flagoff    vs parent   h200             2.13 vs       2.29  (-0.16)
+flagoff    vs parent   h300             1.57 vs       1.69  (-0.12)
+
+v530       vs parent   d100_mean      103.92 vs     201.19  (-97.27)   [known-zero +8.12]
+v530       vs parent   d300_mean      752.54 vs     555.17  (+197.37)   [known-zero -174.53]
+v530       vs parent   dend_mean     1395.38 vs     930.25  (+465.12)   [known-zero -198.42]
+v530       vs parent   t1_med          17.00 vs      45.00  (-28.00)   [known-zero +15.00]
+v530       vs parent   h50              0.67 vs       1.88  (-1.21)   [known-zero +0.10]
+v530       vs parent   h100             1.28 vs       2.47  (-1.19)   [known-zero -0.01]
+v530       vs parent   h200             2.34 vs       2.29  (+0.05)   [known-zero -0.16]  << SMALLER THAN THE KNOWN ZERO
+v530       vs parent   h300             2.23 vs       1.69  (+0.54)   [known-zero -0.12]
+
+v531fix    vs parent   d100_mean      206.44 vs     201.19  (+5.26)   [known-zero +8.12]  << SMALLER THAN THE KNOWN ZERO
+v531fix    vs parent   d300_mean      866.65 vs     555.17  (+311.49)   [known-zero -174.53]
+v531fix    vs parent   dend_mean     1436.54 vs     930.25  (+506.29)   [known-zero -198.42]
+v531fix    vs parent   t1_med          48.00 vs      45.00  (+3.00)   [known-zero +15.00]  << SMALLER THAN THE KNOWN ZERO
+v531fix    vs parent   h50              1.22 vs       1.88  (-0.66)   [known-zero +0.10]
+v531fix    vs parent   h100             2.05 vs       2.47  (-0.42)   [known-zero -0.01]
+v531fix    vs parent   h200             2.53 vs       2.29  (+0.24)   [known-zero -0.16]
+v531fix    vs parent   h300             2.36 vs       1.69  (+0.67)   [known-zero -0.12]
+
+=== PER MAP: wins/n  [k<=300]  {k<=200} ===
+map            parent                  flagoff                 v530                    v531fix               
+auroraveil     27/60  [17] {10}       18/60  [12] { 3}        4/60  [ 0] { 0}        4/60  [ 0] { 0}     
+drakkarfjord   41/60  [26] {12}       38/60  [24] {13}       27/60  [ 7] { 0}       27/60  [24] {20}     
+glacierkeep    15/60  [ 6] { 0}       12/60  [ 1] { 0}       11/60  [ 1] { 0}       15/60  [ 0] { 0}     
+icefloe         6/60  [ 0] { 0}        4/60  [ 0] { 0}       23/60  [ 5] { 0}       36/60  [14] { 8}     
+nordkap        42/60  [15] { 6}       47/60  [19] { 8}       43/60  [21] {12}       42/60  [11] { 4}     
+ragnarok       60/60  [54] {51}       60/60  [59] {53}       34/60  [22] {17}       60/60  [60] {54}     
+royale         56/60  [45] {23}       59/60  [51] {31}       48/60  [26] { 6}       44/60  [23] { 7}     
+yulerune        8/60  [ 1] { 0}        2/60  [ 1] { 0}       11/60  [ 3] { 0}       24/60  [ 7] { 3}     

@@ -1,0 +1,13 @@
+Update available: 2.3.6 -> 2.3.8. Run: pip install --upgrade fcode
+V530 CORNER rnd=3 seat=2 tile=28,6 held=1
+V530 MOUTH arm rnd=6 seat=1 ore=26,14 links=8 sock=26,6
+V530 MOUTH link rnd=9 seat=1 tile=26,6 face=NORTH left=7
+V530 MOUTH link rnd=11 seat=1 tile=26,7 face=NORTH left=6
+V530 MOUTH link rnd=13 seat=1 tile=26,8 face=NORTH left=5
+V530 MOUTH link rnd=15 seat=1 tile=26,9 face=NORTH left=4
+V530 MOUTH link rnd=17 seat=1 tile=26,10 face=NORTH left=3
+V530 CORNER rnd=18 seat=4 tile=25,6 held=2
+V530 MOUTH link rnd=19 seat=1 tile=26,11 face=NORTH left=2
+V530 MOUTH link rnd=21 seat=1 tile=26,12 face=NORTH left=1
+V530 MOUTH link rnd=24 seat=1 tile=26,13 face=NORTH left=0
+V530 MOUTH ttl rnd=67 seat=1 left=0

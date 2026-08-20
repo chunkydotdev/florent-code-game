@@ -1,0 +1,35 @@
+replays read: 2400
+=== THE HARVESTER-BOOTSTRAP PANEL ===
+arm             n    n_h   noharv   h1med   h1mean     >r60
+parent        480    480    0.000     5.0     5.79    0.000
+cap6          480    480    0.000     7.0     7.87    0.000
+flagoff       480    480    0.000     5.0     5.73    0.000
+nomouth       480    480    0.000     5.0     5.97    0.000
+v531fix       480    477    0.006     7.0     9.75    0.010
+
+cap6       vs parent   noharv  +0.00 pp (hw 0.00)  inside
+cap6       vs parent   h1med  7.0 vs 5.0   h1mean 7.87 vs 5.79
+cap6       vs parent   MEAN-MINUS-MEDIAN (the tail) 0.87 vs 0.79
+
+flagoff    vs parent   noharv  +0.00 pp (hw 0.00)  inside
+flagoff    vs parent   h1med  5.0 vs 5.0   h1mean 5.73 vs 5.79
+flagoff    vs parent   MEAN-MINUS-MEDIAN (the tail) 0.73 vs 0.79
+
+nomouth    vs parent   noharv  +0.00 pp (hw 0.00)  inside
+nomouth    vs parent   h1med  5.0 vs 5.0   h1mean 5.97 vs 5.79
+nomouth    vs parent   MEAN-MINUS-MEDIAN (the tail) 0.97 vs 0.79
+
+v531fix    vs parent   noharv  +0.62 pp (hw 0.71)  inside
+v531fix    vs parent   h1med  7.0 vs 5.0   h1mean 9.75 vs 5.79
+v531fix    vs parent   MEAN-MINUS-MEDIAN (the tail) 2.75 vs 0.79
+
+=== PER MAP: noharv share  (h1 median) ===
+map            parent            cap6              flagoff           nomouth           v531fix         
+antler         0.000 ( 2.0)    0.000 ( 5.0)    0.000 ( 2.0)    0.000 ( 2.0)    0.000 ( 5.0)  
+atoll          0.000 ( 2.0)    0.000 ( 5.0)    0.000 ( 2.0)    0.000 ( 2.0)    0.000 ( 5.0)  
+drakkarfjord   0.000 ( 9.0)    0.000 ( 9.0)    0.000 ( 9.0)    0.000 ( 9.0)    0.000 (14.0)  
+fjordgate      0.000 ( 3.0)    0.000 ( 6.0)    0.000 ( 3.0)    0.000 ( 4.0)    0.000 ( 6.0)  
+glacierkeep    0.000 (14.5)    0.000 (14.5)    0.000 (14.5)    0.000 (14.5)    0.050 (17.0)  
+midgard        0.000 ( 3.0)    0.000 ( 7.0)    0.000 ( 3.0)    0.000 ( 4.0)    0.000 ( 7.0)  
+nordkap        0.000 ( 6.0)    0.000 ( 7.5)    0.000 ( 6.0)    0.000 ( 6.0)    0.000 ( 7.5)  
+yulerune       0.000 ( 5.0)    0.000 (10.0)    0.000 ( 5.0)    0.000 ( 6.0)    0.000 (10.0)  

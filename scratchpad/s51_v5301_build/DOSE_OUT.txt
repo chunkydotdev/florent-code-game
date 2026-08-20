@@ -1,0 +1,5 @@
+SELFTEST OK: a full tape counts every line type; a stripped tape reads 0 on all six counters; a tape whose second arm lands at r80 reads multiseat_r30 = {1} while the same tape at r4 reads {1,2} -- so multiseat is not an alias for the arm count; a corner-only tape reads 0 mouth arms and 4 corners; a harvester reached with 1 of 3 planned links counts as short and one reached with 3 of 3 counts as full.
+arm          games   arms  links   harv shortH  fullH    ttl  multi30 | arms by seat: n(median arm round)
+inst_v530       48    116    445     37     13     24     62    0.917 | s1:48(2)  s2:42(6)  s4:26(15)
+inst_v531       48     80    279     20     10     10     45    0.500 | s1:48(2)  s2:8(7)  s4:24(16)
+tracebacks:        0

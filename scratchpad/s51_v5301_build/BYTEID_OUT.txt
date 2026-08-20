@@ -1,0 +1,57 @@
+2026-08-20T07:34:23Z
+=== B1   eq_bootoff vs eq_v530 -- must be IDENTICAL ===
+  atoll          seatA  IDENTICAL
+  atoll          seatB  IDENTICAL
+  drakkarfjord   seatA  IDENTICAL
+  drakkarfjord   seatB  IDENTICAL
+  glacierkeep    seatA  IDENTICAL
+  glacierkeep    seatB  IDENTICAL
+  nordkap        seatA  IDENTICAL
+  nordkap        seatB  IDENTICAL
+  yulerune       seatA  IDENTICAL
+  yulerune       seatB  IDENTICAL
+  -> 10/10 IDENTICAL   PASS
+
+=== B2   eq_v531 vs eq_v530 -- must be DIFFER ===
+  atoll          seatA  DIFFERS
+  atoll          seatB  IDENTICAL
+  drakkarfjord   seatA  DIFFERS
+  drakkarfjord   seatB  DIFFERS
+  glacierkeep    seatA  DIFFERS
+  glacierkeep    seatB  DIFFERS
+  nordkap        seatA  DIFFERS
+  nordkap        seatB  DIFFERS
+  yulerune       seatA  DIFFERS
+  yulerune       seatB  IDENTICAL
+  -> 8/10 differ       PASS
+
+=== B3   eq_masteroff vs eq_parent -- must be IDENTICAL ===
+  atoll          seatA  IDENTICAL
+  atoll          seatB  IDENTICAL
+  drakkarfjord   seatA  IDENTICAL
+  drakkarfjord   seatB  IDENTICAL
+  glacierkeep    seatA  IDENTICAL
+  glacierkeep    seatB  IDENTICAL
+  nordkap        seatA  IDENTICAL
+  nordkap        seatB  IDENTICAL
+  yulerune       seatA  IDENTICAL
+  yulerune       seatB  IDENTICAL
+  -> 10/10 IDENTICAL   PASS
+
+=== B4   eq_v531 vs eq_parent -- must be DIFFER ===
+  atoll          seatA  DIFFERS
+  atoll          seatB  DIFFERS
+  drakkarfjord   seatA  DIFFERS
+  drakkarfjord   seatB  DIFFERS
+  glacierkeep    seatA  DIFFERS
+  glacierkeep    seatB  DIFFERS
+  nordkap        seatA  DIFFERS
+  nordkap        seatB  DIFFERS
+  yulerune       seatA  DIFFERS
+  yulerune       seatB  DIFFERS
+  -> 10/10 differ       PASS
+
+TRACEBACKS: 0
+RESULT: PASS
+EXIT=0
+2026-08-20T07:35:44Z
