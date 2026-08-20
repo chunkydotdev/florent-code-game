@@ -467,12 +467,18 @@ class SiegeMixin:
     def _fs_gate(self, ct):
         """May the ferry-siege run on THIS map?  Cached per unit.
 
-        fjordgate (10x10, cores d^2=32) is the game the 2174-rated version
-        LOST, and it lost it because every leg of the plank inverts on a small
-        board: the ferry buys no tempo, the raider lands in the middle of an
-        army that is already home, and the barriers are contested rather than
-        built once.  jackpot is the other refusal -- the probe's ferry never
-        found a route there on any hop budget.
+        ⛔ HISTORY, NOT BEHAVIOUR (corrected s52 2026-08-20, side-lane audit of
+        the v535 build): this docstring used to present fjordgate and jackpot
+        as canonical refusals, and NEITHER refuses under the CURRENT floors --
+        the v525 constants (FS_V525_MIN_MAP_DIM=10, FS_V525_MIN_CORE_DSQ=32)
+        were lowered TO fjordgate's own values and the tests pass it, and
+        jackpot left the pool in the 2026-08-10 rotation.  On the current
+        15-map pool the maps this gate actually refuses are exactly
+        {archipelago (FS_MAP_SKIP, grid-confirmed since v534), midgard
+        (cripple)} -- the enumeration is measured in
+        BUILD-REPORT-v535cornergate-2026-08-20.md §3 and any prereg citing the
+        refusing set MUST cite that enumeration, not this prose.  The
+        fjordgate loss story lives in git history.
 
         Refusing is not a fallback: the bot plays the incumbent raid doctrine
         for that game, unchanged.
