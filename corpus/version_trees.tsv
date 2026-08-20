@@ -95,3 +95,4 @@ version	name	tree	evidence	recorded_at
 161	Gungnir v1 (sprint, kladde-fixed)	bots/_x3r0v161gungnir	imported s51 via `fcode submission download 161` (v160 precedent) — x3r0 ship, uploaded 2026-08-18T04:35:58.736Z	2026-08-18T04:35:59Z
 162	Mjolnir v1 (banded opening, ring claim, endgame)	bots/_x3r0v162mjolnir	imported s51 via `fcode submission download 162` (v161 precedent) — x3r0 ship, uploaded 2026-08-18T17:12:43Z	2026-08-18T17:12:44Z
 165	Mjolnir restore-B w31	bots/_x3r0v165mjolnirB	imported s51 via `fcode submission download 165` — x3r0 ship, uploaded 2026-08-20T03:48:12.483Z	2026-08-20T03:48:13Z
+169	Mjolnir rank w37 TEST	bots/_x3r0v169mjolnir	imported s52 via `.venv/bin/fcode submission download 169 --output ...` on Magnus retry-instruction — x3r0 ship, holder since ~09:5xZ per research relay	2026-08-20T14:46:35Z
