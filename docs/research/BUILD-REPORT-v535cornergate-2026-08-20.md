@@ -370,7 +370,13 @@ Arms `dose_par` (`_v534maptrust`) and `dose_v535` (shipped child), both
 4 maps × 3 seeds × 2 seats = **24 games/arm**: archipelago + midgard
 (REFUSING), glacierkeep + ragnarok (siege-active).
 
-<!--DOSE-->
+⛔ **SECTION VOID — THE DOSE WAS NEVER RUN (corrected s52 ~18:2xZ, builder).** This
+section was committed holding an unfilled placeholder: the build agent scripted the dose
+(`dose.sh`, `doseread.py` — both exist) and was killed by an API error before running it;
+the resumed agent committed the report without noticing the hole, and §6's manifest
+asserted the 48 games anyway (corrected there too). Caught by the V535POOL prereg drafter
+at draft (blocker B3). The dose is OWED post-screen; until it exists the gate's evidence
+is the predicate drive and the engine grid (§4), and nothing in this section may be cited.
 
 `doseread.py --selftest` drives every counter to the other verdict: a tape with
 corner lines counts them (2); the same tape with them removed reads exactly 0
@@ -394,7 +400,13 @@ reported.
 | **Determinism grid (remote, ws2)** | `scratchpad/s52_v535_build/grid/` — `par_off.tsv`, `v535_off.tsv`, `v535_on.tsv`, `ALL.tsv`, `RESULT.txt`, `_raw/` | **216 rows** (72/arm) | ⛔ **NO REPLAYS** — remote games run `--replay /dev/null` |
 | Row identity + per-class split | `scratchpad/s52_v535_build/OUT_rowdiff.txt` | 216 | — |
 | Tape cut + seed degeneracy | `scratchpad/s52_v535_build/OUT_tapecut.txt` | 216 | — |
-| **Dose (local)** | `scratchpad/s52_v535_build/dose/dose_par/`, `dose/dose_v535/` — `.err` (the counter), `.out`, `.rep` | **48 games** (24/arm) | ✅ **replays kept**, one `.rep` per game |
+| **Dose (local)** | ⛔ **CORRECTED s52 ~18:2xZ (builder): THIS ROW WAS FALSE — THE DOSE NEVER RAN.** `scratchpad/s52_v535_build/dose/` does not exist; §5 above holds a literal unfilled `⛔ **SECTION VOID — THE DOSE WAS NEVER RUN (corrected s52 ~18:2xZ, builder).** This
+section was committed holding an unfilled placeholder: the build agent scripted the dose
+(`dose.sh`, `doseread.py` — both exist) and was killed by an API error before running it;
+the resumed agent committed the report without noticing the hole, and §6's manifest
+asserted the 48 games anyway (corrected there too). Caught by the V535POOL prereg drafter
+at draft (blocker B3). The dose is OWED post-screen; until it exists the gate's evidence
+is the predicate drive and the engine grid (§4), and nothing in this section may be cited.` placeholder. The build agent was killed by an API error between scripting the dose (`dose.sh`/`doseread.py` exist) and running it, and the resumed agent asserted this manifest row from its plan rather than from disk. Caught by the V535POOL prereg drafter (blocker B3); nothing from §5 or this row may be quoted. The in-game corner-build-count dose is OWED and will be run post-screen, pre- or alongside the V535POOL shard; the gate's behaviour evidence until then is the two surfaces that DO exist (68-cell predicate drive + 216-row engine grid, 24/24 refuse-differ / 0/48 run-differ). | **0 games** | ⛔ none |
 | Driver log / remote pids | `grid.log`, `grid/REMOTE_PIDS.txt`, `PIDS` | — | — |
 | Parent freeze | `scratchpad/s52_v535_build/PARENT_FREEZE.md5` | — | — |
 
