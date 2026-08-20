@@ -523,3 +523,15 @@ reachable — 20 rated games ago.**
 *(`games_covered = 40` counts the RATED games vs us at their v54+v55, which is the ledger's
 unit. A further 175 third-party Flotte games — vs Erebus at v54/v55 — were decoded as the
 branch-separating control and are not counted in that field.)*
+
+---
+
+## ⛔ DATED AMENDMENT — 2026-08-20 s52 (same day, by the commissioning lane): PIECE E's CAUSAL SHAPE IS CORRECTED BY THE FOLLOW-UP DECODE
+
+`docs/research/DECODE-tle-dose-flotte-2026-08-20.md` (the #98 causal step, matched case-control with (game × round) FE, 21 latch events / 29,334 at-risk builder-rounds vs us + 100 / 347,182 third-party) **reproduces every MEASURED number in piece E exactly and refutes its causal reading**:
+* **1,931 TLE'd unit-rounds is 21 LATCH EVENTS, not a rate** — 98.0% belong to builders that enter a permanent timeout state; median TLEs/game is 0; 44/100 third-party latches fire at exactly r102 (their clock, not our dose).
+* **The build-volume dose is an ARTIFACT**: at 15 third-party opponents r = +0.086; within-game lead-lag runs the wrong way; the length normalisation was mechanically dominated by a latch-times-residual-length accumulator (R² 0.77-0.79).
+* **What survives, small but real on both surfaces: OUR TURRETS in their HOME builders' vision** (latch hazard ~2.7× us / ~1.6× third-party). Weaponisable only as a PLACEMENT RIDER on turrets bought for the kill — not fundable as a plank (0.03-0.20 extra latches/game at measured effect sizes).
+* Piece E's "~48×/game" phrasing is amended to "median 0, 58% of games zero, top-5 games hold 62.3%".
+
+Read piece E through this amendment; the decode report is the authority on the causal question.
