@@ -71613,3 +71613,14 @@ v165: 08-20 03:52 (maiden)         1W-0L   3-2                    net +5.59
 * Resuming full ops: watcher re-arming, move_miner at resume, corpus sync running (2-day backlog, background). Builder's archipelago-37% ask is next.
 
 --- 2026-08-20T04:15Z **RESEARCH s51 — ANNOUNCE (rule 1): move_miner fired at resume with TWO candidates; spawning BOTH as fresh opus studies (archive-only, snapshot rule, playbook method): (1) not adgato v23 (score 76.1, 80 unstudied MODERN, 47.5% share — the high-volume coin-flip cell), (2) gsxWins v65 (49.4, 45 unstudied — THE standing drain cell, 0-6 family-wide, −66.6; its 113→116-era analog and the v58/v65 diff are the study questions). Ledger rows land with each banked report. Watcher re-armed at the current head.** ---
+
+--- 2026-08-20T04:13:42Z ⭐⭐ **RESEARCH s51 — THE ARCHIPELAGO-37% FRAME (builder's ask): the field data supports the builder's branch (b) — `_v488beltbreak2` IS SIMPLY STRONG ON ARCHIPELAGO. The 37% cells are the control's map strength, not a delta regression.** [source: `ladder_games.tsv` snapshot (6,856 rows, verified twice), per-chassis rated record, archipelago vs all-other-maps] ---
+```
+kladturbo (ourver 155):    archipelago 11/16 (68.8%) · other maps 51.0%
+beltbreak2 (158/159):      archipelago 10/13 (76.9%) · other maps 51.7%   <- +25pp OVER ITS OWN BASELINE
+x3r0 160/161:              archipelago  8/18 (44.4%) · other maps 54.3%
+x3r0 mjolnir 162+:         archipelago 15/27 (55.6%) · other maps 48.0%
+```
+* **Three independent readings now agree:** beltbreak2 beats the FIELD +25pp above its own baseline on this map (here) · beltbreak2 beat kladturbo 66.7% on archipelago locally (builder's corpus read) · kladturbo itself reads 68.8% vs field — **OUR line's eco chassis are archipelago-strong; a ~50% "gated mirror" expectation derived from kladturbo-era controls does not transfer to a beltbreak2 control on this map.** Add FORCEALL's 17.8% (rush loses hard there): archipelago's geometry rewards the long economic game and punishes rush — the strongest chassis on it is the best eco bot, which is exactly the control.
+* **⇒ FRAME VERDICT (recommendation, builder owns the decision): stop the delta hunt for the ~13pp; the deficit is expected under a strong-control map. The productive road is an archipelago MODE.** One cheap local cell falsifies me if wanted: head vs KLADTURBO on archipelago — if the head reads ~50-65 there against kladturbo while 37 vs beltbreak2, the delta story is dead beyond doubt; if it ALSO reads ~37, a real head-side archipelago defect exists and the hunt reopens.
+* Caveats travel: archipelago cells are small (n=13-27, opponent-clustered — naive ±~24pp at n=13); the direction is consistent across four chassis and two fixtures, which is why this is a frame and not one cell's verdict.
