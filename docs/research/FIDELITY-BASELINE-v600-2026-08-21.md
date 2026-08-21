@@ -1,5 +1,17 @@
 # SKALMAN PHASE-1 FIDELITY BASELINE — `bots/_v600skalman1`, tape30
 
+**⛔ AMENDED s54 (~17:5xZ, same session — instrument alarm from the tape30 autopsy,
+`scratchpad/s54_autopsy/tape30_autopsy.md` §alarm): THE SEED AXIS IS INERT. Both trees are
+deterministic, and every `_s11`/`_s12` pair is byte-identical on all decisive event kinds
+(15/15 map pairs, death/birth lists hash-identical). EFFECTIVE n = 15, not 30 — every
+±ci95 below is ~×1.41 too narrow.** No verdict in this doc moves (the misses are multiples
+of any interval), but no v601-vs-v600 comparison may inherit this fixture as n=30.
+**Fixture rule going forward: with two deterministic trees, vary MAP and SEAT, never seed
+— 15 pool maps × 2 seats = 30 distinct games is this pair's ceiling** (det.py's paired
+same-(map,seat) flip shape is the accepted comparison instrument). Also recorded, because
+this doc chose not to tabulate outcomes: the tape is 15 losses in 15 distinct games
+(core destroyed 14/15, median r180) — descriptive, still no game-share claim.
+
 **Builder s54, 2026-08-21 ~17:4xZ.** The founding tree's first at-n mechanism read — the
 reference row every v601+ iteration is measured against. **Fixture:** canonical
 `bots/_v600skalman1` (seat A) vs the NOISE_OFF `_v542wave` copy (recipe:
