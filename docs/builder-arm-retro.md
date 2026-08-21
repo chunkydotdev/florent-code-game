@@ -1526,3 +1526,71 @@ retired — the live fixture reopened post-stealth) · bind-append-readback (fir
 row, TSTAMP) · quote-the-registered-prior (held all session) · NEW: running-consumer rule to
 the charter · NEW: wake-notifications-need-a-deadman (the 93-min hang) · NEW: paired =
 NOISE_OFF on disk in EVERY tree incl. the opponent.
+
+# ============================================================================
+# ARM RETRO — instance s53 (2026-08-21, wrap on Magnus's pre-called condition: the playbook)
+# ============================================================================
+
+**FIRINGS (5 registered instruments):** NEWPOOL-BASELINE (ANCHOR-CLASS, ran to 5400,
+composition clean, readout row-2 with ALL THREE registered segment signs FALSIFIED and
+reported as such; firewall held, side-lane certified incl. recomposition) · KLADDEDOSE
+(locked pre-fire, 25/25 pins clean, verdict reached FINAL FORM AT v3.1 through two peer
+catches — see Q2) · V543POOL (locked with dose-tape precondition PASSED, trend-floor
+stopped at its registered mark n=1229 — the lock's own priced MODAL outcome; the
+pre-committed sentence typed verbatim, no other) · DOORWAVE (locked, 20/20 accepts across
+4 cells, two treatment windows both zero-leak; readout transfers to the successor) · the
+AUDIT SESSION (fired by audit_trigger at boot; its central claims verified on primaries
+before consumption — the ship-screen paired tie and the survivor split are now record).
+
+**Q1 VERDICTS:** Every verdict sentence was typed against a pre-committed table or bar;
+the two that needed amendment (KLADDEDOSE v1/v2) were amended ON the record with grounds,
+and the final form (shipped-config REFUTED on static+live grounds / mechanism NEVER
+DOSED) is the correct two-claim split. The anchor readout wrote no forbidden form. The
+V543POOL stop was read exactly as pre-committed. Nothing oversold; the ship-note
+correction (v542-vs-v537 = paired tie) ran AGAINST our own record and was typed anyway.
+
+**Q2 ERROR DIRECTIONS, named per the standing question:** v1 KLADDEDOSE ran
+plank-flattering (inert clause over-applied); v2 ran toward-the-critic (refutation on a
+falsely-registered live path); the boot note's "9 undocumented columns" was a neutral
+double-count. Both directions occurred in one day and both were caught by peers within
+minutes — the record-with-directions discipline is working; the mean is still not zero.
+
+**Q3 INSTRUMENTS — the day's class finding: UNDRIVEN PATHS ON IRREVERSIBLE OPS.** Three
+siblings in one session: the KLADDEDOSE lock registered a dead-live path (OB17 passed,
+two certs passed, the five-minute reachability drive was the only thing that would have
+caught it — now the REACHABILITY-DRIVEN ratify rule, applied same-day to two locks); the
+block-2 rollback called `submission activate <uuid>` (integer required) on a live-slot
+op with the path never driven; the block-4 timer's zsh string-compare failed silently
+for 25 minutes. ⇒ **RULE CANDIDATE (routed to the wrap deltas): any path whose failure
+is IRREVERSIBLE or WINDOW-CRITICAL is driven on a no-op before the op — same standard
+the instruments rule already applies to verdicts.** Positives: the readout aggregator
+(selftested 6/6, independently audited, then reused on three tapes), the dose-tape
+denominator catch (flattering-direction defect found BEFORE the read), the peck-drive
+fixture (turned a never-fired decoder column into a driven one).
+
+**Q5 THE SLOT:** one accidental displacement of a teammate's unannounced activation
+(x3r0's v176; my window op's restore target was stale), disclosed in full, escalated,
+resolved on Magnus's word ("Restore their 176") — plus one rated match (16:01:10)
+carried our v177 during the interregnum, subject-ledgered. Two treatment windows: both
+zero rated leak, both boundary-certified. The permission-classifier block on my first
+176-restore attempt was CORRECT — handing the slot away is a human call, and the system
+held that line better than my script did. **Successor rule already in the tail: window
+ops READ the pre-submit holder and restore THAT; shared-account activations need a
+coordination signal (third subject-discipline instance today).**
+
+**Q6 WHAT THE BUDGET BOUGHT:** the new era's ruler (the anchor + bar-2 set by Magnus on
+it) · three locked-and-fired legs incl. the era's first two prototype-window ops under
+the 10-min cadence · two built trees (v543burst 150/150, v544doorflip) with proofs ·
+the KLADDEDOSE closure that re-routed the conversion war to the damage engine · five
+Magnus-direct intelligence deliverables (Bean study, O(1) study, two era playbook halves,
+the merged 2,127-line playbook) · THE LINE DECISION: rush sunset, SKALMAN founded
+(name, benchmark _v542wave frozen, kill-stays-the-win ruling, from-scratch-with-curated-
+imports architecture), queue re-scoped 57/27/12/19+25 · and the pivot menu that the
+top-ladder evidence unanimously endorsed before Magnus called it.
+
+**OPEN ITEMS CARRIED → HANDOVER:** DOORWAVE mechanism readout (locked metrics, replays
+archiving) · version-binding semantics probe (the Torsko row) · the consolidated
+instrument-debt list (~20 items incl. results.tsv schema, submit_clean --restore-to,
+audit_trigger live-tail selftests, R2 ship-gate-in-code with parsed-SHIP_BAR rider) ·
+the 25 PENDING-DESIGN queue rows awaiting Skalman design calls · #116 belt-gun gap ·
+Skalman v1 founding per the playbook §6 + the architecture note.
