@@ -99,3 +99,4 @@ version	name	tree	evidence	recorded_at
 173	Mjolnir freshgate w66 SHADOW	bots/_x3r0v173mjolnir	imported s52 (extract-at-import per pattern) for the pre-ship holder screen — Magnus asked "Have we tested against v173?"	2026-08-21T04:55:07Z
 174	Baltsars banditer v1	bots/_v537socket	submit_clean auto — `fcode status` Active bot: v174 (Baltsars banditer v1)	2026-08-21T05:26:38Z
 168	Mjolnir fix1only w35 TEST	bots/_x3r0v168mjolnir	imported s52 (extract-at-import) as the NEW BASELINE per Magnus directive "use x3r0s best one as baseline" — best-by-tenure (16W-9L day, recovered slide to 1845; v173 current but 2W-8L SHADOW)	2026-08-21T08:03:38Z
+175	Mjolnir carrier w70	bots/_x3r0v175carrier	imported s52 (extract-at-import) — the live holder; Magnus slot ruling: "if we beat it we take the slot back"	2026-08-21T08:19:12Z
