@@ -1,34 +1,39 @@
-## RD1 (research s52) — move_miner FAST-SHIPPER BLIND SPOT
-The per-(opp, CURRENT-version) coverage reset structurally exempts fast shippers:
-kladde shipped v140→v141→v144 inside one day, never accumulated ≥20 unstudied on
-any single version, and billed the family ~−100 Elo across the span while the
-trigger stayed QUIET — the drain cell least likely to be studied is the one
-shipped against most often. FIX SHAPE (validated s52, team-lazy study Q4): pool
-an opponent's adjacent versions under the 11-dim build-profile equivalence test
-(permutation null; positive controls read DIFFERENT at p<0.004) BEFORE counting
-unstudied games; a pooled-equivalent span crosses the bar honestly.
-BEHAVIOUR NOW (interim, no tool edit): hand-commission studies for fast-shipping
-drain cells when the bleed warrants — done this session for kladde (announce in
-the coordination tail, 21:5xZ).
+# s52 WRAP DEBTS — pre-assembled during the v2 ship screen (wrap fires on the ship per Magnus)
 
-## RD2 (research s52, proposed by side lane on the launch-timing audit) — FLAG-EFFECTIVE-STATE LINT
-The session's THIRD prose-vs-code divergence and the most dangerous shape: a path
-LIVE though labeled inert — `FS_CREW_ON = False` literally while `fs_crew_on()`
-resolves True via the v520 pincer override; FOUR comment sites assert the path
-dead; the tree's own doctrine records the 4-round price verbatim. (s51's
-derived-default hazard, comment-side variant: prose trusting the literal while
-the EFFECTIVE state diverges.)
-FIX SHAPE: a lint that checks any comment asserting a flag-gated path inert/live
-against the RESOLVED predicate (call the accessor, never read the constant);
-positive control = this exact muster case (must flag it).
-BEHAVIOUR NOW (interim): any lane citing a flag's state cites the ACCESSOR's
-resolution, never the constant; the muster case is the standing example.
+## TOOL FIXES (Magnus's rule: at wrap; the three in-session fixes were his explicit carve-outs)
+1. **report_lint.py** (side-lane spec, promoted after 3 D16 recurrences): mandatory-sections
+   manifest + first-token timestamp check + referent existence sampling; driven vs a must-fail report.
+2. **run_battery.py silent shells** (v169-screen incident: engine-launch failure → NOWINNER rows,
+   tracebacks=0, no error) + **remote_battery.py silent delivery** (GENPOOL: 1,080 shells delivered
+   COMPLETE) — ONE fix family: shells are loud or fatal, never quiet rows.
+3. **now.py CONTROL line** (re-implements the control_pin defect locally; boot instrument): delegate
+   to control_pin's row-aware resolution or print incumbent+baseline+row-controls distinctly.
+   Adjacent same-class: h2h.sh:38, submit_clean.py:666-668 (its own acknowledged copy).
+4. **gate-receipt design** (side lane): gate.py writes a pass-receipt (verdict+ts+tree hash);
+   launchers require a fresh matching receipt — makes gate/fire chaining structurally safe.
+5. **mkarm.sh**: chmod-before-write for mode-444 sources (v536 §7.4; v538 re-worked-around); zsh
+   $K[ ] subscript hazard.
+6. **overnight.sh last_delivery_round columns** (RD3, research): totals are monotone — a stopped
+   economy is invisible on every banked surface; the r77-stop class needs its column.
+7. **BARS.tsv seeds-token backfill**: 884000 (V529POOL row) still free-text; the token grep is
+   blind to it (reported three times).
+8. **fcode team search truncated IDs** (cost one failed challenge): a resolver helper or corpus
+   lookup pattern documented.
+9. **control_pin interim re-pin cleanup**: the _v537socket pin taken during the incident is now
+   redundant (harmless); prune or document the multi-pin file's semantics in the tool header.
+10. **move_miner RD1** (fast-shipper pooling; kladde's 5-versions-day) — research's spec.
 
-## RD3 (research s52, from AUTOPSY-v174-losses surprise 3) — last_delivery_round COLUMN
-The economy STOPS at median r77 in 10/10 v174 losses (one game collects literally 0 Ti
-in 1,000 rounds) and no banked surface can show it: we bank stacks DELIVERED (a total,
-monotone) which cannot represent a stop. FIX SHAPE: every instrument that banks stack
-totals adds last_delivery_round (and ideally delivery-gap-max). Positive control: lazy
-g3 auroraveil (must read last_delivery=never/r0-class); negative: any win (late last
-delivery). BEHAVIOUR NOW (interim): any economy claim about a game names the LAST
-delivery round, not only the total.
+## PROGRAMME / DOC ITEMS
+11. Baseline staleness policy line (B7 of the anchor prereg): re-anchor on x3r0's next MEASURED-best,
+    not every churn — needs its PROGRAMME line or a standing note.
+12. v534 tree still carries the stale doctrine paragraph its own eco deleted (v536 fixed its copy).
+13. LINE_DIRS: check _v5?? patterns still cover v542+ (they do — _v[2-9]??*; verify at wrap).
+
+## RETRO SEEDS (for the arm retro, not deltas)
+- The running-consumer rule fired 4x (v537 screen zip, v541 premise, reclaim stand-down, TSTAMP) — the
+  session's process invention; candidate for the charter.
+- Stale-anchor discipline paid twice at release stakes (v165B→v169 bar-flip; v173→v175 stand-down).
+- Twin-arm control + NOISE_OFF-everything + candidate-not-proxy + pathspec-commit + no-branch-in-shared-
+  worktree + post-resume-disk-check + registration-completes-at-zero-rows — all adopted this session.
+- Error-direction check: the v538 brief inverted a falsifier (agent caught it); my fleet_queue misread
+  (caught pre-B3); the 4-0 tenure miscount (Magnus caught) — mixed directions, two self-caught.
