@@ -1,5 +1,75 @@
 # ⭐⭐⭐ FIRST: `.venv/bin/python tools/now.py` — the holder comes from fcode status,
 # NEVER from a poller or any line below (this block is a CACHE).
+# ⚠ s52 CAVEAT: now.py's CONTROL line prints the INCUMBENT only — post-ship that is the
+# candidate ITSELF; row/BARS controls + PROGRAMME's BASELINE field are the control truth
+# (wrap debt #3).
+
+# ===== s52 WRAP (builder, 2026-08-21 ~12:4xZ; Magnus called it at the v2 ship) =====
+
+## THE SLOT — OURS at wrap: **v177 "Baltsars banditer v2" = bots/_v542wave** (shipped
+12:26:50Z in-window under the NEW 10-MIN CADENCE; maiden = the 12:31:10Z pairing).
+ROLLBACK TARGET v176 (x3r0 "rotfix"). **THE LADDER CADENCE HALVED ~11:5xZ: pairings every
+10 min at :x1:10 (was 20 min at :x2:59) — every exposure/window calculation re-prices;
+re-derive from createdAt rows ALWAYS.** x3r0 shipped 5x this session (v175 carrier, v176
+rotfix incl. the jotunheim fix from our intel); slot policy per Magnus: "if we beat it we
+take the slot back" (encoded: screen vs live holder CI-excl-50, n>=900, rotated pool).
+INCUMBENT = bots/_v542wave · PREVIOUS = bots/_v537socket · BASELINE = bots/_x3r0v168mjolnir
+(new PROGRAMME field; Magnus: x3r0's best replaces Sleipnir v2).
+
+## THE ERA — THE POOL ROTATED (2026-08-21, 10 of 15 new; survivors auroraveil/glacierkeep/
+icefloe/midgard/valkyrie). Old-pool numbers are HISTORICAL. SHIP_BAR bar-2's number is
+UNSET pending the ANCHOR (below); bar-1 = beat the live holder on candidate bytes.
+**MAPTRUST'S INSURANCE PAID ON DAY ONE: jotunheim carries saga's exact signature — pre-fix
+trees adopt the wrong grid AND falsely refuse ferry-siege; the shipped line runs it clean.**
+Refusing-by-construction = {midgard} only (6.7%).
+
+## WHAT v177 IS: v537socket (socket claim, r1, the 75.44-certified line record) + v538
+claim-gate (midgard-only now) + v539 famine-rebuild (kill-refunding, the TRRR/-18.76 class)
++ v541 finisher-peck (core-adjacent, zero-clock) + MAPTRUST — merged with 4/4
+ablation-identities, per-plank doses reproduced, one positional conflict resolved under
+proofs (BUILD-REPORT-v542wave). SHIP EVIDENCE: pooled boundary-extension screen vs v175
+bytes 53.83 [51.53,56.14] n=1800 (holder aged to v176 at fire — disclosed); class evidence
+per plank; CPU match test in-window (6fb4a650).
+
+## RUNNING AT WRAP (daemons keep it; the readout is the successor's)
+* **NEWPOOL-BASELINE anchor** (ANCHOR-CLASS, unstoppable except CATASTROPHE): v174-vs-v168,
+  rotated pool, seeds 890000, ~n=3300/5400 at wrap, interim 52.2 [±3.0] in-band. ITS READOUT
+  SETS BAR-2'S NEW NUMBER (Magnus rules on it) + the new-pool per-map table + KILL_TARGET
+  re-anchors. Prereg: PREREG-NEWPOOL-BASELINE-2026-08-21.md (band 50-62 point-free; B1-B7
+  ruled; the no-verdict-on-the-shipped-bot firewall BINDS the readout).
+* All four watchers + keeper + auto_gate --apply + corefill_forever alive. ws1+ws2 idle.
+
+## THE QUEUE (evidence-complete, briefs in the tail)
+1. **The anchor readout** (first fire on its completion — the firewall applies).
+2. **v542's post-ship reads**: the rated tape IS the battery now (per-match ourver=177);
+   the #101 surviving fixture (midgard/seatA) + kladde reach-binary + never-claims% armed as
+   free daily probes; a KLADDE-CLASS unrated leg is the v541 finisher's only confirming
+   fixture (research's fire order; data-collection class cites its study).
+3. **v540muster** (specced: dissolve the 4-round launch tax; constraint = v527's −10.83) +
+   **#104 pump-guard** (kladde's 6.6:1 titanium pump; sentinel replant-loop) — the wave's
+   second echelon, fold as v543 when the tape names the binding gap.
+4. **#80 bank-burst consumer** (focalground study: sentinel pair at d²≤32, ~800-Ti trigger
+   analogue via eco-saturation; pair-at-r150 kills ~r180) — the kill-clock's big lever.
+5. Wrap-fix batch: scratchpad/s52_wrap_debts.md (14 items; report_lint + silent-shells +
+   now.py control line + wake-deadman are the HIGH four).
+
+## FIXTURES / RULES A SUCCESSOR MUST NOT RE-LEARN (s52 additions)
+Running-consumer rule (5/5) · same-shell gates on irreversible acts · candidate-not-proxy +
+stale-anchor labels · pool-windows-resolve-boundaries (label the extension) · PAIRED =
+NOISE_OFF every tree INCL. OPPONENT · registration-completes-at-zero-rows · pathspec
+commits + no-branch-in-shared-worktree · guards' assumptions age (control_pin BASELINE
+class + auto_gate ANCHOR-CLASS now exist, selftested) · fcode submission download returns a
+ZIP (extract-at-import) · team-search truncates ids (corpus lookup) · unrated legs read the
+ACTIVE bot (gate every fire on a same-shell status read).
+
+## STATE / WAKE PATHS
+All s52 agents landed and relayed; nothing dies with the session. **NOTHING WAKES A HUMAN.**
+The anchor completes unattended (~13:3xZ); its readout is the successor's first job — or
+Magnus's word reopens sooner. Side lane runs the v177 boundary cert + maiden watch; research
+runs the tape decode + cadence plan. Wrap debts are wrap-time work (Magnus's rule) — NONE
+executed inline here.
+
+## ===== ARCHIVE MARKER: everything below predates s52's wrap =====
 
 # ===== s51 WRAP (builder, 2026-08-20 ~08:2xZ; Magnus called it after v530.1) =====
 
