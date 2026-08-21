@@ -1,0 +1,23 @@
+Update available: 2.3.6 -> 2.3.9. Run: pip install --upgrade fcode
+Running match: arm_sense_off vs opp_v542wave_noiseoff
+  Map: fimbulwinter.map26  Seed: 7  Replay: 
+scratchpad/s54_v602/rep_sense_off/fimbulwinter_seatA.replay26  TLE: 10ms
+Completed turn 0
+Completed turn 100
+Completed turn 200
+Completed turn 300
+Completed turn 400
+Completed turn 500
+Completed turn 600
+Completed turn 700
+Completed turn 800
+Completed turn 900
+Replay written to scratchpad/s54_v602/rep_sense_off/fimbulwinter_seatA.replay26
+
+  Winner: arm_sense_off  (Titanium collected (tiebreak), turn 1000)
+
+                   arm_sense_off    opp_v542wave_noiseoff  
+  Titanium     3351 (3220 mined)         267 (2470 mined)  
+  Units                        6                       26  
+  Buildings                   26                       21  
+

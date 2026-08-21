@@ -1,0 +1,16 @@
+Update available: 2.3.6 -> 2.3.9. Run: pip install --upgrade fcode
+Running match: arm_cycle_danger_off vs opp_v542wave_noiseoff
+  Map: fimbulwinter.map26  Seed: 7  Replay: 
+scratchpad/s54_v602/bat_cycle_danger_off/fimbulwinter_seatA.replay26  TLE: 10ms
+Completed turn 0
+Completed turn 100
+Replay written to 
+scratchpad/s54_v602/bat_cycle_danger_off/fimbulwinter_seatA.replay26
+
+  Winner: arm_cycle_danger_off  (Core destroyed, turn 133)
+
+               arm_cycle_danger_off    opp_v542wave_noiseoff  
+  Titanium            1 (590 mined)           16 (290 mined)  
+  Units                           6                        8  
+  Buildings                      30                       12  
+

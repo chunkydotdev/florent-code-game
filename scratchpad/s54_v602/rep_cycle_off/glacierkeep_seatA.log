@@ -1,0 +1,16 @@
+Update available: 2.3.6 -> 2.3.9. Run: pip install --upgrade fcode
+Running match: arm_cycle_off vs opp_v542wave_noiseoff
+  Map: glacierkeep.map26  Seed: 7  Replay: 
+scratchpad/s54_v602/rep_cycle_off/glacierkeep_seatA.replay26  TLE: 10ms
+Completed turn 0
+Completed turn 100
+Completed turn 200
+Replay written to scratchpad/s54_v602/rep_cycle_off/glacierkeep_seatA.replay26
+
+  Winner: arm_cycle_off  (Core destroyed, turn 217)
+
+               arm_cycle_off    opp_v542wave_noiseoff  
+  Titanium     0 (790 mined)             32 (0 mined)  
+  Units                    6                        6  
+  Buildings               50                       34  
+

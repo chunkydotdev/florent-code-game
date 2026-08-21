@@ -1,0 +1,15 @@
+Update available: 2.3.6 -> 2.3.9. Run: pip install --upgrade fcode
+Running match: arm_cagefirst_off vs opp_v542wave_noiseoff
+  Map: paths.map26  Seed: 7  Replay: 
+scratchpad/s54_v602/bat_cagefirst_off/paths_seatA.replay26  TLE: 10ms
+Completed turn 0
+Completed turn 100
+Replay written to scratchpad/s54_v602/bat_cagefirst_off/paths_seatA.replay26
+
+  Winner: opp_v542wave_noiseoff  (Core destroyed, turn 152)
+
+               arm_cagefirst_off    opp_v542wave_noiseoff  
+  Titanium         10 (50 mined)           27 (700 mined)  
+  Units                        5                       10  
+  Buildings                   13                       22  
+

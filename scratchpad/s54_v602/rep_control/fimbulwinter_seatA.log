@@ -1,0 +1,15 @@
+Update available: 2.3.6 -> 2.3.9. Run: pip install --upgrade fcode
+Running match: arm_control vs opp_v542wave_noiseoff
+  Map: fimbulwinter.map26  Seed: 7  Replay: 
+scratchpad/s54_v602/rep_control/fimbulwinter_seatA.replay26  TLE: 10ms
+Completed turn 0
+Completed turn 100
+Replay written to scratchpad/s54_v602/rep_control/fimbulwinter_seatA.replay26
+
+  Winner: arm_control  (Core destroyed, turn 141)
+
+                 arm_control    opp_v542wave_noiseoff  
+  Titanium     1 (630 mined)          161 (320 mined)  
+  Units                    6                        9  
+  Buildings               29                        8  
+
