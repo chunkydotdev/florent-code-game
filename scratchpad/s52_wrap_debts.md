@@ -10,3 +10,16 @@ unstudied games; a pooled-equivalent span crosses the bar honestly.
 BEHAVIOUR NOW (interim, no tool edit): hand-commission studies for fast-shipping
 drain cells when the bleed warrants — done this session for kladde (announce in
 the coordination tail, 21:5xZ).
+
+## RD2 (research s52, proposed by side lane on the launch-timing audit) — FLAG-EFFECTIVE-STATE LINT
+The session's THIRD prose-vs-code divergence and the most dangerous shape: a path
+LIVE though labeled inert — `FS_CREW_ON = False` literally while `fs_crew_on()`
+resolves True via the v520 pincer override; FOUR comment sites assert the path
+dead; the tree's own doctrine records the 4-round price verbatim. (s51's
+derived-default hazard, comment-side variant: prose trusting the literal while
+the EFFECTIVE state diverges.)
+FIX SHAPE: a lint that checks any comment asserting a flag-gated path inert/live
+against the RESOLVED predicate (call the accessor, never read the constant);
+positive control = this exact muster case (must flag it).
+BEHAVIOUR NOW (interim): any lane citing a flag's state cites the ACCESSOR's
+resolution, never the constant; the muster case is the standing example.
