@@ -174,7 +174,7 @@ it is why the two clauses sit on opposite sides of the salt verb.
 | file | what it answers | selftest |
 |---|---|---|
 | `flagoff_audit.py` | static flag-off: R1 no derived module-level constant; R2 every subordinate read dominated by the master; R3 every call into the `_v541_*` family guarded | **10 cases, 3 rules, each driven to both verdicts** — including the short-circuit-ORDER case (master as a *later* `and` operand must FAIL) |
-| `harness.py` | mechanism/dose on `tools/stub_engine.py`, calling the **real** methods | **32 cases**; every gate driven to both verdicts, incl. both sides of the r300-analogue boundaries (core HP 120 fires / 121 refuses) and two vacuity controls on the harm check |
+| `harness.py` | mechanism/dose on `tools/stub_engine.py`, calling the **real** methods | **41 assertions**; every gate driven to both verdicts, incl. both sides of the r300-analogue boundaries (core HP 120 fires / 121 refuses) and two vacuity controls on the harm check |
 | `diverge.py` | did the flag change the game at all; and the flag-off certificate | identity + divergence both produced; **all 5 compared columns driven individually** |
 | `paired.py` | McNemar on the PROGRAMME primary, paired sign test on kill round, the noise control, and the `(map,seat)` breakdown | 9 groups, each both ways |
 
@@ -376,15 +376,134 @@ LOKI-QUIET warned about.**
 
 ---
 
-## 7. FILES
+## 7. MANIFEST — every artefact this build produced
 
-**Tree:** `bots/_v541quiet/` (doctrine.py, eco.py, main.py, raid.py, siege.py).
-Changed vs parent: `doctrine.py` (flag block), `siege.py` (the `_v541_*`
-family), `raid.py` (clause 6.5 redirect, clause 8 additive, `import sys`),
-`main.py` (3 per-body state fields). `eco.py` unchanged.
+**Tree:** `bots/_v541quiet/`. Changed vs parent: `doctrine.py` (the v541 flag
+block), `siege.py` (the `_v541_*` family), `raid.py` (clause 6.5 redirect,
+clause 8 additive, `import sys`), `main.py` (3 per-body state fields).
+`eco.py` unchanged. Frozen: `scratchpad/s52_v541_build/TREE_FINAL.md5`.
 
-**Instruments:** `scratchpad/s52_v541_build/{flagoff_audit,harness,diverge,paired,summarise}.py`
-— all `--selftest` clean.
-**Tapes:** `grid_*` and `grid2_*` (NOISE_ON, **VOID**, kept as the §0 noise
-control), `n0_*` (unconditional redirect), `fin_*` (shipped finisher + flag-off
-identity). `arms/`, `arms_n0/`, `opps_n0/` carry the frozen arms.
+**Arms** (`scratchpad/s52_v541_build/`):
+
+| path | configuration | role |
+|---|---|---|
+| `arms/parent` | `bots/_v537socket` verbatim, md5-verified (`PARENT_FREEZE.md5`) | control |
+| `arms_n0/parent` | as above + `NOISE_ON = False` | control, deterministic |
+| `arms_n0/v541` | shipped config + `NOISE_ON = False` | **treatment** |
+| `arms_n0/v541flagoff` | `FS_V541_COREPECK = False` + `NOISE_ON = False` | identity certificate |
+| `arms/v541both` | `FS_V541_IDLEPECK = True` | built, **not fired** (see §6.4) |
+| `opps_n0/beltbreak2`, `opps_n0/mjolnir` | opponents + `NOISE_ON = False` | fixture |
+
+**Instruments**, all `--selftest` clean, each guard driven to both verdicts:
+`flagoff_audit.py` (10 cases / 3 rules), `harness.py` (41 assertions),
+`diverge.py` (5 columns individually), `paired.py` (9 groups),
+`summarise.py` (reused from `scratchpad/s51_v523_build/`, re-selftested here).
+
+**Tapes** (each `<dir>/<arm>.tsv`, run_grid format, plus `RESULT.txt` and
+`_raw/<host>/` driver logs):
+
+| dir | fixture | status |
+|---|---|---|
+| `grid_mjolnir`, `grid_beltbreak`, `grid2_mjolnir`, `grid2_beltbreak` | NOISE_ON | ⛔ **VOID** — retained *only* as the §0 noise control |
+| `n0_beltbreak`, `n0_mjolnir` | NOISE_OFF, unconditional redirect | valid; §4.3 rows 1-2 |
+| `fin_beltbreak` | NOISE_OFF, shipped finisher + flag-off arm | valid; §4.3 rows 3, 5 and §4.6 |
+| `fin_mjolnir` | NOISE_OFF, shipped finisher | valid; §4.3 row 4 (zero dose) |
+| `reel_check` | NOISE_OFF, `midgard` only | §8 reproduction check |
+
+**Logs:** `OUT_grid*.log`, `OUT_n0_*.log`, `OUT_fin_*.log`, `OUT_reel_check.log`
+(driver transcripts, incl. the oversubscription refusal at 08:08:26Z).
+**Selftest transcripts:** `OUT_flagoff_selftest.txt`, `OUT_flagoff_scan.txt`.
+
+---
+
+## 8. REEL — WHAT TO WATCH, AND WHAT THERE IS TO WATCH IT WITH
+
+⛔ **THERE ARE NO REPLAYS, AND THAT IS A LIMIT RATHER THAN A STYLE CHOICE.**
+This build made **zero local `fcode` runs** (V537POOL gate, §0) and
+`tools/remote_battery.py` returns the run_grid **tape**, not replays; the remote
+scratch is reaped by the driver's own cleanup (`_raw/<host>/` holds driver logs
+and per-block tapes only — 20 files, no `.replay26`). **So the reel is a
+deterministic re-run recipe.** That substitute is only worth anything because
+the fixture was *proved* reproducible: the frozen parent reproduced itself
+**0/180 across two separate ws1 runs** (§4.2).
+
+**Re-executed at 2026-08-21 08:45:22Z and it reproduced the stored cell
+byte-for-byte: `v541` 0/36 rows differ, `parent` 0/36 rows differ.** That check
+is this reel's substitute for pressing play.
+
+### REEL 1 — ⭐⭐ **THE ONLY CELL THE PLANK ACTS IN: `midgard`, seat B, vs `_v488beltbreak2`**
+
+*There is exactly one, and that is the finding — §4.4. Watch it knowing it is a
+single `(map, seat)` observation replicated over 18 degenerate seeds, not 18
+independent games.*
+
+```
+.venv/bin/python tools/remote_battery.py \
+    --arm v541=scratchpad/s52_v541_build/arms_n0/v541 \
+    --arm parent=scratchpad/s52_v541_build/arms_n0/parent \
+    --opp scratchpad/s52_v541_build/opps_n0/beltbreak2 \
+    --maps midgard --seeds 1-18 --block-size 3 --par 5 \
+    --hosts work-server-1 --out <outdir> --runid <runid>
+
+.venv/bin/python scratchpad/s52_v541_build/paired.py \
+    <outdir>/v541.tsv <outdir>/parent.tsv
+```
+
+| seat B, all 18 seeds | kill round | timely ≤r300 |
+|---|---|---|
+| `parent` (`_v537socket`) | r270 | 18/18 |
+| **`v541` shipped (finisher)** | **r268** | **18/18** |
+| `v541` unconditional redirect (`FS_V541_FINISH_ON = False`) | **our core dies r289** | **0/18** |
+
+**Read all three rows together — the middle one is only interesting next to the
+third.** The same clause, on the same board, with and without the finisher
+condition, is the difference between shaving two rounds off a kill and losing
+the game outright. Seat **A** on the same map and every other map is
+**byte-identical to the parent**; the whole plank lives in this one row.
+To watch the refuted arm, flip `FS_V541_FINISH_ON` to `False` in
+`arms_n0/v541/doctrine.py` and re-run the recipe above — that reproduces
+`n0_beltbreak`.
+
+### REEL 2 — THE FLAG-OFF CERTIFICATE (same recipe, third arm)
+
+```
+    --arm flagoff=scratchpad/s52_v541_build/arms_n0/v541flagoff   # add, --par 3
+.venv/bin/python scratchpad/s52_v541_build/diverge.py \
+    <outdir>/v541flagoff.tsv <outdir>/parent.tsv --expect same
+```
+**0/180 rows differ**, in the same grid where the treatment arm reads 18/180.
+**The positive control is in the same table as the negative one**, which is the
+only reason the zero means anything.
+
+### REEL 3 — ⛔ **THERE IS NO REEL FOR THE NOISE_ON CELLS, AND WHY**
+
+`grid_*` and `grid2_*` are **VOID and not re-runnable by construction**: their
+arms carry `NOISE_ON = True`, `main.py:1190` seeds `spawn_salt` from an
+**unseeded** `random.Random()`, and re-running them produces a different tape
+every time — measured at **177/180 and 176/180 rows differing for the frozen
+parent against itself** (§0). **A recipe that cannot reproduce its own output is
+not a reel**, so none is given. Those four tapes are retained for exactly one
+purpose: they *are* the evidence for the noise finding, and deleting them would
+delete it.
+
+### 8.1 What replaces this section
+
+The mechanism dose in field units (builder attacks into cores per game; core HP
+dealt by builders, field baseline **0 in 25/25**) is deferred to a
+post-V537POOL **local replay decode** (§6.1). **When that lands it produces real
+replays, and those replace this reel.**
+
+---
+
+## 9. WHERE THE TRANSFERABLE RULE LIVES
+
+⭐ **THE TRANSFERABLE RULE FROM THIS BUILD IS §0 SURPRISE 1, AND IT IS HEADED
+THERE FOR A READER WHO SKIMS: *a paired battery in this repo is paired only if
+every tree in it — both arms AND the opponent — has `NOISE_ON = False` on
+disk.*** It is stated in the report's first section under its own bolded
+heading, restated in `scratchpad/s52_v541_build/paired.py`'s module docstring
+(the file a future author runs to read a paired cell), and carried in the
+commit message. **`tools/remote_battery.py` is NOT edited** — the constraint
+forbids it — so a future author who reaches only for the tool gets its existing
+docstring, which already records the NOISE_ON control at 11-12/12 rows
+differing; this build is the worked example of what ignoring that costs.
