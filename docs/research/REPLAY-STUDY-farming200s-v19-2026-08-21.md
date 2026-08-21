@@ -396,6 +396,15 @@ object where 2 damage a round FINISHES."*
 
 It is switched off in the shipped build at `main.py:1734-1735`:
 
+> ⛔ **AMENDED 2026-08-21T13:56Z (research lane, s53): both `main.py:1734-1735` cites in
+> this document are WRONG — the enforcement is `main.py:1729-1730`. Settled by opening
+> the file after the DOORWAVE drafter flagged that this study and the not-adgato study
+> disagreed on the line (`:1729-1730` there — correct). Lines 1732+ are the raider/role
+> and Ti-floor checks. The quoted code below is real; only its line number is off.
+> Nothing else rests on the cite: the flag name, its value, and the doctrine anchor
+> (`doctrine.py:3132`) are unaffected. Second cite at the CANDIDATE A GREP carries this
+> same correction by reference.**
+
 ```python
 if LOKI_FS_V515 and FS_V515_DOOR_OFF:
     return False
