@@ -14,3 +14,9 @@ SPEC (one line of behaviour, D29-proofed):
 OWNER: research (cell owner per side-lane assignment). EXECUTE: at wrap or Magnus-called fix batch,
 with a both-ways drive (a window containing a known x3r0-only churn day must NOT trip; a window
 containing our 2-ship day must count exactly 2).
+
+## RD-s53-2 — audit_trigger delegation cell + selftest rule (from the s53 audit session's report, ack'd 2026-08-21T13:12:43Z)
+- delegation cell is DEAD (parses a header format the coordination tail no longer uses) — fix or retire;
+- standing rule from the audit: audit_trigger selftests must run against LIVE tail slices, not frozen
+  fixtures (a selftest on a frozen fixture validates the parser of a format that can silently die).
+OWNER: research (cell owner). Execute at wrap batch with RD-s53-1, both-ways drives.
