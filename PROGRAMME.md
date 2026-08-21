@@ -31,6 +31,49 @@ successor session inherit it. The fields below are parsed; the prose is not.
     SHIP_BAR: beat_live_holder_screen_ci_excl_50_AND_full_pool_vs_x3r0best_ci_lower_ge_53.3
     STEALTH_UNTIL_DROP: yes
     KILL_TARGET: median_r180_share_by_r200_floor_r300
+    NEXT_LINE: skalman
+    NEXT_LINE_DOCTRINE: beancounters_replication_then_amplify
+    NEXT_LINE_BENCHMARK: bots/_v542wave
+    RUSH_LINE_STATUS: sunset_2026-08-21_magnus_directive_v177_holds_slot_until_displaced
+
+## NEW LINE DECLARED 2026-08-21 (Magnus, s53 — verbatim in the coordination tail at ~15:5xZ: build our own version of the Bean counters tactics; basics first, then amplify our specialities; the end for two rushed raiders and Baltsars banditer; wrap when the playbook lands; next session starts from scratch)
+
+**The next line is `SKALMAN` (builder's naming call under Magnus's "popular Swedish kid
+show" instruction): Skalman from Bamse — the methodical genius turtle who carries
+everything he needs in his shell, runs his life on an exact clock, and is the smartest
+one in the forest.** The fit is the doctrine: the shell = the barrier cage and the clean
+home ring; the clock = the drip-convert rhythm (Bean counters' 56 small `convert_ammo`
+calls); the inventor = the amplification phase where the Loki toolbox goes on top.
+Iterations version the name (Skalman v1, v2, …); burst-amplified variants may carry
+Bamse-family flavor later.
+
+**Doctrine, two phases per Magnus:** (1) REPLICATE the measured Bean counters basics
+properly — 4-builder capped eco, big terminated home belt (their 83% harvester→core
+connectivity vs our 58.8%), the core-ring barrier CAGE (55.5% of barriers on the eight
+victim tiles), the d²≈25 sentinel nest (inside sentinel reach, outside gunner reach),
+drip ammo conversion, home-ring turret clearance (their 79.7% vs our 42.8%); the
+founding doc is `PLAYBOOK-beancounters-2026-08-21.md` + the study. (2) AMPLIFY with our
+own specialities once the basics measure at parity.
+
+**NEXT_LINE_BENCHMARK = `bots/_v542wave`, FROZEN (builder's call per the directive):**
+our strongest own tree — the live ship, the retiring line's peak — with a MEASURED
+position on the new-era scale (the anchor read its byte-equivalent at 51.94
+[50.61,53.28] vs the BASELINE, and v542-vs-v537 is a verified paired tie), so every
+Skalman read vs the benchmark CHAINS to the bar-2 scale without re-anchoring.
+Iteration screens still run vs the previous line iteration (mill discipline unchanged);
+the benchmark answers "has the new doctrine caught the old one," and the slot changes
+hands only on the full SHIP_BAR. BASELINE (`bots/_x3r0v168mjolnir`) and bar-2 (53.3)
+unchanged — they are properties of the ladder era, not of our line.
+
+**Sunset scope:** the two-raider rush doctrine and the Baltsars banditer name end with
+this directive. v177 HOLDS the ladder slot until a Skalman clears SHIP_BAR (a live bot
+is not pulled for sentiment). Transferable evidence banks: v543burst's d²≤32 siting
+(=the nest geometry), #50 kladde cadence (=the belt engine), DOORWAVE/#96 (=home-ring
+clearance, a core verb of the NEW doctrine — its locked leg completes), #113 SEALWATCH,
+the cage/anti-cage instruments. The v544 stall-and-bank governor build is CANCELLED
+(the new doctrine's funding rhythm is the drip, not the burst-bank).
+
+
 
 ## BASELINE MOVED 2026-08-21 (Magnus, s52, post-rotation — verbatim: "i dont think we can keep sleipnir v2 as the baseline anymore, use x3r0's best one as baseline instead")
 
