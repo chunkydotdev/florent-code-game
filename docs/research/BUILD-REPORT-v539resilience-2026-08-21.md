@@ -498,3 +498,165 @@ change.
    (§7) — e.g. a belt kept alive but starved, which should *not* declare.
 6. **THE LIFELINE-LENGTH SWEEP** (§6): `FS_V539_LIFELINE_RNDS` and the
    mouth-exists-vs-delivery-seen stop condition.
+
+---
+
+## 9. REEL — WHAT TO WATCH, AND WHAT THERE IS TO WATCH IT WITH
+
+⛔ **THERE ARE NO REPLAYS. THE REEL IS A RE-RUN RECIPE, AND THAT IS A LIMIT, NOT
+A STYLE CHOICE.** This build made **zero `fcode` runs** (§7), so there is no
+`.replay` for any cell below. What exists is the fake-engine tape plus a
+deterministic recipe that regenerates it byte-for-byte on demand — the fixture
+is NOISE_OFF and was proved deterministic by a parent-vs-parent self control
+(§4.1). Every recipe below was **re-executed at `08:01:38Z` and reproduced its
+cell exactly**; that check is the reel's substitute for pressing play.
+
+**When the live dose in §8.1 lands, THAT is the real reel and it replaces this
+section.** Until then, a reader who wants to see the plank work runs these.
+
+### 9.1 The three cells worth watching, in order
+
+**REEL 1 — ⭐⭐ THE SURPRISE CELL: `atoll`, wipe @ r190.** *This is the one to
+watch first, because it is the cell that argues against the plank as much as
+for it.*
+
+```
+.venv/bin/python scratchpad/s52_v539_build/harness.py \
+    --endgame --maps atoll --rounds 340 --wipe-at 190
+```
+
+| | `_v537socket` | `_v539resilience` |
+|---|---|---|
+| first rebuild | **never (-1)** | **r224** |
+| famine declared | — (no detector) | **r213** |
+| core mouth alive, post-wipe rounds | **0** | **112** |
+| delivery sightings | **0** | **28** |
+| ⚠ rounds bank ≥ sentinel bar (107 Ti) | **27** | **19** |
+| ⚠ turrets built post-wipe | **3** | **1** |
+| bank at end | 92 | 114 |
+
+**Read both halves.** The parent's economy is dead for the rest of the game —
+mouth 0, delivery 0, no rebuild ever — and it converts that into **three
+turrets** off a bank nothing is drawing down. v539 re-establishes delivery 11
+rounds after declaring famine and buys **one**. **That trade is the whole
+`DEFENCE_ADMISSION_BAR` question in a single cell** and the fixture cannot
+settle it, because it contains no opponent for either turret to shoot.
+
+**REEL 2 — THE CLEAN MECHANISM CELL: `atoll`, wipe @ r100.**
+
+```
+.venv/bin/python scratchpad/s52_v539_build/harness.py \
+    --endgame --maps atoll --rounds 340 --wipe-at 100
+```
+Parent `252/85/22` vs v539 `132/202/51` (rebuild round / mouth-alive rounds /
+delivery sightings). **120 rounds of tempo, and the belt alive for 202 rounds
+against 85.** This is what the plank looks like when nothing argues back.
+
+**REEL 3 — THE ONE REVERSE CELL, LEFT IN: `heart`, wipe @ r190.**
+
+```
+.venv/bin/python scratchpad/s52_v539_build/harness.py \
+    --endgame --maps heart --rounds 340 --wipe-at 190
+```
+v539 rebuilds earlier (r214 vs r220) and then holds the mouth for **fewer**
+rounds (58 vs 104) with fewer deliveries (15 vs 26) — the only cell in 50 where
+the belt metric goes the wrong way. **No explanation is offered.** It is the
+first cell to look at if the live dose disappoints.
+
+### 9.2 The divergence reel — where the two bots first differ
+
+```
+.venv/bin/python - <<'EOF'
+import sys; sys.path.insert(0, "scratchpad/s52_v539_build")
+from harness import identity_cmp
+for m in ("atoll", "eider", "heart", "nordkap", "drakkarfjord"):
+    print(identity_cmp(m, 340, 140, a="_v537socket", b="_v539resilience"))
+EOF
+```
+**Every map: `first_divergence = 161`** — the famine declaration round. There is
+no behavioural difference of any kind before it. Swap `b=` for
+`scratchpad/s52_v539_build/arms/v539flagoff` and every line reads
+`identical: True`.
+
+### 9.3 The full batteries
+
+```
+# 25 paired cells, run 1 (the §4.2 table)
+.venv/bin/python scratchpad/s52_v539_build/harness.py --endgame \
+  --maps atoll,eider,heart,nordkap,drakkarfjord --rounds 340 \
+  --wipe-at 100,130,160,190,220 > OUT_endgame_run1.tsv
+.venv/bin/python scratchpad/s52_v539_build/agg.py OUT_endgame_run1.tsv
+
+# the replicate (§4.3): identical command, --wipe-at 110,140,170,200,230
+# the consumer table (§3):
+.venv/bin/python scratchpad/s52_v539_build/consumers.py _v539resilience
+# every instrument, both verdicts per guard:
+.venv/bin/python scratchpad/s52_v539_build/harness.py   --selftest
+.venv/bin/python scratchpad/s52_v539_build/agg.py       --selftest
+.venv/bin/python scratchpad/s52_v539_build/consumers.py --selftest
+```
+
+⚠ **`agg.py` output is PAIRED-ONLY for a reason** (§4.1): absolute cells are
+comparable **within** one harness invocation and **not across** invocations,
+because `fcode`'s enums hash by identity. Compare two runs as replicates; never
+subtract their absolute numbers.
+
+---
+
+## 10. MANIFEST
+
+Everything this build wrote, with the md5 it was committed at. Disk verified at
+`08:01:09Z`: **82 Gi free**, all paths present and readable, no mode-444 file
+written or required (`bots/_v488beltbreak2` was never touched by this build).
+
+### 10.1 Shipped tree — `bots/_v539resilience/` (`ARM_FREEZE.md5`)
+
+| file | note |
+|---|---|
+| `doctrine.py` | + the LOKI-REESTABLISH block (§1) |
+| `eco.py` | rung A (`_eco_spendable`), honest-slot branch (off) |
+| `main.py` | rungs B and C, per-unit state |
+| `siege.py` | detector + readers, folded into `_fs_eco_publish` |
+| `raid.py` | **unchanged from the parent** |
+
+Parent `bots/_v537socket` frozen `07:35:52Z` (`PARENT_FREEZE.md5`) and
+**re-verified byte-identical** `07:54:41Z` (`PARENT_REFREEZE.md5`) — the two
+files `diff` clean.
+
+### 10.2 Instruments — all three carry `--selftest`, all drive every guard both ways
+
+| file | md5 | what |
+|---|---|---|
+| `scratchpad/s52_v539_build/harness.py` | `c025ca04607e5a39992029fdefcedfb5` | fake-engine famine harness, detector/gate/endgame/identity modes |
+| `scratchpad/s52_v539_build/agg.py` | `030773146d59b1145aea6787ecdd8e3a` | paired aggregator + sign test |
+| `scratchpad/s52_v539_build/consumers.py` | `14a38f39dd047ee13a2c4e67c8e7d7fd` | `SLOT_HARVESTERS` site enumeration (§3) |
+
+### 10.3 Tapes
+
+| file | md5 | contents |
+|---|---|---|
+| `OUT_endgame_run1.tsv` | `6d3d35c8dbf0b9cc382fd0cbc5f3e361` | 25 paired cells, wipes 100–220 (§4.2) |
+| `OUT_endgame_run2.tsv` | `d1c275da71a63981cc6318942be9373d` | the replicate, wipes 110–230 (§4.3) |
+| `OUT_agg_run1.txt` | `af2537829e526e8e0700da06a655b93b` | §4.2 table + sign tests |
+| `OUT_agg_run2.txt` | `0c94bef8d75ef8f41f0a02853aa2a116` | §4.3 |
+| `OUT_identity.txt` | `cee771497a4e124c365ec2c19a6cfac2` | the four identity batteries (§5) |
+| `OUT_consumers_parent.txt` | `f477c5e4f406ec614e0a2ddcc43a6c18` | 13 sites |
+| `OUT_consumers_v539.txt` | `e61c32ba97465535f0e8422f8954ec55` | 15 sites |
+| `OUT_selftest_harness.txt` | `64953ea895cd00096c54ffc5059d7443` | 10 groups, all pass |
+| `OUT_selftest_agg.txt` | `6af307a6d99d12f9181076b5a71aec97` | 4 groups, all pass |
+| `OUT_selftest_consumers.txt` | `d042a53a27ff8fe9e44cc726edb42144` | 4 groups, all pass |
+| `OUT_endgame.txt` | `fb036cdb7e3acfb70cb3c079b6ec6118` | ⛔ **SUPERSEDED — the pre-NOISE_OFF run.** Kept because §4.1's non-determinism finding is read off it. **Do not quote its numbers.** |
+| `arms/v539flagoff/` | — | byte copy of the shipped tree, one line changed to `LOKI_FS_V539 = False` |
+
+### 10.4 What was NOT produced, and why
+
+* **No `.replay`, no platform tape, no Elo row.** Zero `fcode` runs; V537POOL
+  held **2,461 of 5,400 rows at `07:54:41Z`** and **2,674 at `08:01:09Z`**, both
+  under the gate.
+* **No stderr tape.** `FS_V539_LOG` ships `False`, and platform replays strip
+  stdout regardless (CLAUDE.md s28). The `V539 DECLARE/CLEAR` lines exist for a
+  **local** dose only and §8.1 says so.
+* **No CPU measurement.** The plank makes the Core poll `_fs_eco_mouth` every
+  round instead of stopping at the v514 latch (§1.1). That is a real per-round
+  cost on one unit with a 10 ms budget and **it is unmeasured**; add it to the
+  live dose.
