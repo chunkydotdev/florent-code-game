@@ -67,9 +67,31 @@ SK_BELT/HOME KEEPER survivability. v601's iteration target #1.**
 * The wrapper took an unplanned live drive: a genuine NameError fired mid-game; the unit
   survived, the game completed, report-once held.
 
-## Status
+## §6.4 ADDENDUM (builder, s54 — completing the ablation set after a side-lane flag)
 
-**FOUNDED. Acceptance §6.1-6.5 all satisfied** (fidelity instrument green; aliveness with
-forced-raise drive; fidelity read with misses attributed; ablation identity; no game-share
-claims). Next: a gate.py-governed fidelity battery at real n vs the frozen benchmark for
-the phase-1 parity table, and v601 opens on the belt verb.
+The build agent drove 3 of 7 flags; the original status line over-claimed §6.4 and is
+amended below. The remaining four were driven by the builder on a deterministic fixture
+(NOISE_OFF copy of `_v542wave`, inv_small12/atoll/midgard, seeds 1-3, 3 games/arm + a
+3-game shared control; replays + logs at `scratchpad/s54_fidtape/`), read via
+`skalman_fidelity.py --dir --side 0 --deff 0.98`:
+
+| flag off | its metric, control → ablation | identity shape |
+|---|---|---|
+| SK_NEST | M4c/d sentinel builds 2/2 in-band → **0/0 builds** | CLEAN — signature vanishes |
+| SK_DOOR | M7 removal 16.7% (1/6 turrets) → **0.0% (0/5)** | direction-clean on THIN events (control's own base is one removal) |
+| SK_BELT | M1 connectivity 16.7% (1/6 harv) → **0.0% (0/1)** | present-but-thin — the verb's positive signature is weak even in control (the known weak row) |
+| SK_ROLES | cage 10/14 barriers → **0/0** · drip median 27 → **0** · builders median 5 → **9 (mean 9.33, max 10)** | **CHASSIS COLLAPSE, not a leaf no-verb signature** — SK_ROLES is the dispatch backbone; identity demonstrated BY the collapse (multiple verb signatures vanish at once, the spawn cap disappears), stated as such |
+
+Cross-verb signatures stayed alive under each single ablation except roles_off (the
+backbone). One additional observation from the shared control, recorded not spun:
+**M5a counts DISTINCT builder ids = median 5 / max 8 vs BC's 4.0** — our role bodies die
+and are replaced (BC's modal game has zero deaths); the living count respects the cap but
+builder MORTALITY is part of the same weak-row cluster as the belt.
+
+## Status (amended s54, supersedes the original line)
+
+**FOUNDED. §6.1, §6.2, §6.3 (misses attributed), §6.5 satisfied per the build agent's
+drives; §6.4 now 7/7 flags driven** — 3 by the build agent, 4 by the builder per the
+addendum above, with each identity's shape named (clean / thin / collapse). Next: a
+gate.py-governed fidelity battery at real n vs the frozen benchmark for the phase-1
+parity table, and v601 opens on the belt verb (now with builder mortality attached to it).
