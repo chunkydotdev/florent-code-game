@@ -67,6 +67,17 @@ Phase-1 verdicts are REPLICATION FIDELITY vs the study's mechanism numbers (inst
    the enemy sentinel's axis (the mirror of GUNAXIS). DOORWAVE's readout feeds this verb.
 8. **BELT-GUN DEFENCE = COPY 4 defensive half + ledger V1**: a tile rebuilt N times
    (default 3) without surviving escalates to turret-location + removal, never rebuild #4.
+   ⚠ **AMENDED s54 by #116 (`CUT-116-beltgun-answer-2026-08-21.md`, spot-verified): the
+   V1 premise "BC has no removal loop" is REFUTED at population scale — BC removes
+   belt-covering guns 75.9%±3.1 (v47, 837 games), and the Pivot collapse was the 20.5%
+   never-removed TAIL, whose mechanism is COVERAGE: 41.3% of belt-cutters sit outside
+   every live BC turret's reach.** So the requirement is TWO-part: (a) the escalation
+   rule above (unchanged — it handles the reachable case), AND (b) **coverage geometry:
+   home-gun siting must leave no belt tile outside every live home turret's reach** —
+   the unreachable annulus, not a missing branch, is what v1 must not inherit. The
+   offensive mirror (a Skalman-era Pivot-counter prereg) must register BOTH siting
+   constraints: belt tile in our gun's line AND our gun outside every live enemy
+   turret's r² — bare "gun on their belt" does not reproduce the collapse.
 9. **DISPLACEMENT = COPY 3 deferred** (n=1 loop, a leg not a plank — phase 2).
 
 ## 3. THE CHASSIS CALLS (what the ⚠ queue rows settle on)
