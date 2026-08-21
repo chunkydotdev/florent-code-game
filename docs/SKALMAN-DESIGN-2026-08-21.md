@@ -13,7 +13,10 @@ operational design; it binds the v1 build and ANSWERS the chassis questions the 
 * **Player logic FROM SCRATCH, ~1.5k lines, per-verb attributable**: every doctrine verb lives
   behind its own module-level flag (`SK_ORE_DENY`, `SK_CAGE`, `SK_DRIP`, `SK_NEST`, `SK_DOOR`,
   `SK_BELT`, `SK_ROLES`) so ablation identities are one-flag cheap and every fidelity metric
-  maps to exactly one flag. Tree: `bots/_skalman_v1/`.
+  maps to exactly one flag. Tree: `bots/_v600skalman1/` (side-lane flag s54, verified:
+  `_skalman_v1` matches no LINE_DIRS pattern and gate.py would refuse every battery on it —
+  the s31/s46 defect class; `_v600skalman1` fnmatch-passes `_v[2-9]??*`, keeps the version
+  convention, needs no PROGRAMME edit. Skalman iterations continue v600, v601, …).
 * **Curated imports VERBATIM from `bots/_v542wave`** (boundaries per
   `SKALMAN-IMPORT-MANIFEST` when it lands): MAPTRUST/known_map_for (+F1/F2 insurance) ·
   bounds discipline · displacement guards (re-plan-from-actual-position) · the exception
