@@ -35,7 +35,20 @@ successor session inherit it. The fields below are parsed; the prose is not.
     NEXT_LINE: skalman
     NEXT_LINE_DOCTRINE: beancounters_replication_then_amplify
     NEXT_LINE_BENCHMARK: bots/_v542wave
+    NEXT_LINE_SCREEN_LADDER: benchmark_then_current_holder_then_sleipnir_v2_magnus_2026-08-21
     RUSH_LINE_STATUS: sunset_2026-08-21_magnus_directive_v177_holds_slot_until_displaced
+
+## NEXT_LINE_SCREEN_LADDER ADDED 2026-08-21 (Magnus, s54, in-session — verbatim: "If we finally find something that beats our benchmark bot we will also need to run it against the current slot and sleipnir v2, but that's only if we actually beat the benchmark bot we put up.")
+
+**The post-benchmark screening ladder, conditional and ordered:** a Skalman version that
+BEATS `NEXT_LINE_BENCHMARK` (bots/_v542wave) is then screened against **(2) the CURRENT
+SLOT HOLDER's bytes** (read the holder from `fcode status` at screen time — currently
+x3r0's v176 "Mjolnir rotfix", whose tree is NOT yet imported locally; import-on-need per
+the version_trees 2-minute pattern — local x3r0 trees stop at v175carrier) and **(3)
+Sleipnir v2 = `bots/_v488beltbreak2`**. Neither downstream screen fires unless the
+benchmark is actually beaten — the ladder is conditional by his phrasing. This sequences
+LOCAL screens; the FIRST CONTACT unrated cells (BC mirror / Pivot / kladde, authorized
+pre-drop by the exposure ruling below) are a separate surface with their own gates.
 
 ## STEALTH_PREDROP_RIDER ADDED 2026-08-21 (Magnus, s54 — exposure ruling on the explicit question)
 
