@@ -8,6 +8,7 @@ successor session inherit it. The fields below are parsed; the prose is not.
     INCUMBENT: bots/_v537socket
     INCUMBENT_FROZEN: no
     PREVIOUS_INCUMBENT: bots/_v488beltbreak2
+    BASELINE: bots/_x3r0v168mjolnir
     PRIMARY_CURRENCY: game_share
     SECONDARY_CURRENCY: kill_speed_score
     KILL_SPEED_SHIP_GATE: -1.76
