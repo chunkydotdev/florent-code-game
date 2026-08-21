@@ -1,0 +1,331 @@
+{
+  "label": "v601 seatB",
+  "era": "v68",
+  "deff": 0.98,
+  "deny_window": 3,
+  "n_games": 15,
+  "skipped": [],
+  "elapsed_s": 0.31,
+  "metrics": [
+    {
+      "metric": "M1 belt_connectivity_directed",
+      "value": 23.529411764705884,
+      "n": "8/34 harvesters alive at end, 15 games",
+      "ci95": 21.67363410655019,
+      "target_bc_v68": 81.4,
+      "target_bc_v47": 82.7,
+      "our_old_baseline": 58.8,
+      "note": "replay_census.Replay.chains(chain_dir), pooled over harvesters; CI is games-as-units over the 14 games with >=1 surviving harvester"
+    },
+    {
+      "metric": "M1b belt_connectivity_undirected",
+      "value": 26.470588235294116,
+      "n": "9/34 harvesters alive at end, 15 games",
+      "ci95": null,
+      "target_bc_v68": null,
+      "target_bc_v47": null,
+      "our_old_baseline": null,
+      "note": "diagnostic: ignores conveyor facing"
+    },
+    {
+      "metric": "M2a cage_ring_share",
+      "value": 56.52173913043478,
+      "n": "13/23 barriers built, 15 games",
+      "ci95": 30.73098327963707,
+      "target_bc_v68": 39.6,
+      "target_bc_v47": 55.5,
+      "our_old_baseline": 75.4,
+      "note": "share of ALL subject barriers landing on the enemy core's non-wall ring"
+    },
+    {
+      "metric": "M2b full_seal_rate",
+      "value": 0.0,
+      "n": "0/15 games",
+      "ci95": 0.0,
+      "target_bc_v68": 22.2,
+      "target_bc_v47": 22.3,
+      "our_old_baseline": 12.0,
+      "note": "max ring tiles simultaneously held == open ring tiles"
+    },
+    {
+      "metric": "M2c first_ring_build_median",
+      "value": 33,
+      "n": "5/15 games with any ring build",
+      "ci95": null,
+      "target_bc_v68": 52.0,
+      "target_bc_v47": 35.0,
+      "our_old_baseline": 12.0,
+      "note": "first round ANY subject building lands on the enemy ring"
+    },
+    {
+      "metric": "M2d ring_tiles_held_median",
+      "value": 0,
+      "n": "15 games",
+      "ci95": null,
+      "target_bc_v68": 6.0,
+      "target_bc_v47": 5.0,
+      "our_old_baseline": 5.0,
+      "note": "max simultaneously held, of a median 8 open"
+    },
+    {
+      "metric": "M3a drip_lattice_share",
+      "value": 97.77777777777777,
+      "n": "132/135 convert_ammo calls, 15 games",
+      "ci95": null,
+      "target_bc_v68": 97.3,
+      "target_bc_v47": null,
+      "our_old_baseline": null,
+      "note": "amount is an exact nonneg sum of 4s and 10s; ACCEPTANCE TEST for the drip (PLAYBOOK COPY 7)"
+    },
+    {
+      "metric": "M3b converts_per_game_median",
+      "value": 6,
+      "n": "15 games",
+      "ci95": null,
+      "target_bc_v68": 67.0,
+      "target_bc_v47": null,
+      "our_old_baseline": null,
+      "note": "p90 25, MEAN 9.0 (STUDY \u00a73.3's v47 figure 56.2 is a mean, not a median \u2014 compare like for like)"
+    },
+    {
+      "metric": "M3c converted_ti_per_game_median",
+      "value": 38,
+      "n": "15 games",
+      "ci95": null,
+      "target_bc_v68": 650.0,
+      "target_bc_v47": null,
+      "our_old_baseline": null,
+      "note": "p90 262, MEAN 84 (STUDY \u00a73.3's v47 figure 530 is a mean)"
+    },
+    {
+      "metric": "M3d peak_ammo_median",
+      "value": 18,
+      "n": "15 games",
+      "ci95": null,
+      "target_bc_v68": 26.0,
+      "target_bc_v47": null,
+      "our_old_baseline": null,
+      "note": "p90 28, max 28"
+    },
+    {
+      "metric": "M3e first_convert_round_median",
+      "value": 41,
+      "n": "9/15 games with any convert",
+      "ci95": null,
+      "target_bc_v68": 27.5,
+      "target_bc_v47": null,
+      "our_old_baseline": null,
+      "note": "p10 15; r0 in 0 games (the field's habit, not the drip's)"
+    },
+    {
+      "metric": "M4a fwd_turret_band_share",
+      "value": 83.33333333333333,
+      "n": "5/6 forward gunner+sentinel builds, 15 games",
+      "ci95": null,
+      "target_bc_v68": null,
+      "target_bc_v47": null,
+      "our_old_baseline": null,
+      "note": "d^2 14-32 from the ENEMY core footprint: inside sentinel reach, outside every gunner's"
+    },
+    {
+      "metric": "M4b fwd_turret_pointblank_share",
+      "value": 0.0,
+      "n": "0/6 forward gunner+sentinel builds, 15 games",
+      "ci95": null,
+      "target_bc_v68": null,
+      "target_bc_v47": null,
+      "our_old_baseline": null,
+      "note": "d^2 <= 13 \u2014 inside a defending gunner's reach. FLAG unless home-ring clearance (M7) is at parity (PLAYBOOK COPY 5)"
+    },
+    {
+      "metric": "M4c sentinel_band_share",
+      "value": 100.0,
+      "n": "5/5 sentinel builds (ALL, not only forward), 15 games",
+      "ci95": null,
+      "target_bc_v68": null,
+      "target_bc_v47": null,
+      "our_old_baseline": null,
+      "note": "FOOTPRINT origin (PLAYBOOK COPY 5's wording). median d^2 32"
+    },
+    {
+      "metric": "M4d sentinel_pointblank_share",
+      "value": 0.0,
+      "n": "0/5 sentinel builds (ALL), 15 games",
+      "ci95": null,
+      "target_bc_v68": null,
+      "target_bc_v47": null,
+      "our_old_baseline": null,
+      "note": "FOOTPRINT origin"
+    },
+    {
+      "metric": "M4e sentinel_band_share_anchor",
+      "value": 0.0,
+      "n": "0/5 sentinel builds (ALL), 15 games",
+      "ci95": null,
+      "target_bc_v68": 32.1,
+      "target_bc_v47": 48.1,
+      "our_old_baseline": null,
+      "note": "STUDY-COMPAT: d^2 to the core's NW-CORNER ANCHOR, the origin STUDY \u00a73.5's table was actually computed on (tools/corpus/replay_events.py). This is the row that reproduces the published 48.1/32.1. median d^2 50"
+    },
+    {
+      "metric": "M4f sentinel_pointblank_share_anchor",
+      "value": 0.0,
+      "n": "0/5 sentinel builds (ALL), 15 games",
+      "ci95": null,
+      "target_bc_v68": 53.3,
+      "target_bc_v47": 23.9,
+      "our_old_baseline": null,
+      "note": "STUDY-COMPAT anchor origin; reproduces the published 23.9/53.3"
+    },
+    {
+      "metric": "M5a builders_per_game_median",
+      "value": 4,
+      "n": "15 games",
+      "ci95": null,
+      "target_bc_v68": 4.0,
+      "target_bc_v47": 4.0,
+      "our_old_baseline": null,
+      "note": "mean 4.87, max 13"
+    },
+    {
+      "metric": "M5b exactly_four_builders_share",
+      "value": 73.33333333333333,
+      "n": "11/15 games",
+      "ci95": 22.931906932384745,
+      "target_bc_v68": 92.9,
+      "target_bc_v47": null,
+      "our_old_baseline": null,
+      "note": ">4 in 4 games, <4 in 0"
+    },
+    {
+      "metric": "M5c fourth_spawn_round_median",
+      "value": 3,
+      "n": "15/15 games with >=4 builders",
+      "ci95": null,
+      "target_bc_v68": 3.0,
+      "target_bc_v47": null,
+      "our_old_baseline": null,
+      "note": "p10 3 p90 3"
+    },
+    {
+      "metric": "M5d ring_barrier_top_share_median",
+      "value": 1.0,
+      "n": "1/15 games with >=4 ring barriers (PLAYBOOK T2's population)",
+      "ci95": null,
+      "target_bc_v68": null,
+      "target_bc_v47": 1.0,
+      "our_old_baseline": null,
+      "note": "1.000 = one bot laid every ring barrier that game (a fixed job). field reference 0.857. On the looser >=1-ring-barrier population (n=5) this reads 1.0 \u2014 do not mix the two"
+    },
+    {
+      "metric": "M5e role_home_keeper_share",
+      "value": 100.0,
+      "n": "15/15 games",
+      "ci95": null,
+      "target_bc_v68": null,
+      "target_bc_v47": null,
+      "our_old_baseline": null,
+      "note": "PLAYBOOK COPY 8 recogniser, on builders with >=5 actions"
+    },
+    {
+      "metric": "M5f role_cage_walker_share",
+      "value": 33.333333333333336,
+      "n": "5/15 games",
+      "ci95": null,
+      "target_bc_v68": null,
+      "target_bc_v47": null,
+      "our_old_baseline": null,
+      "note": "PLAYBOOK COPY 8 recogniser, on builders with >=5 actions"
+    },
+    {
+      "metric": "M5g role_ore_denier_share",
+      "value": 0.0,
+      "n": "0/15 games",
+      "ci95": null,
+      "target_bc_v68": null,
+      "target_bc_v47": null,
+      "our_old_baseline": null,
+      "note": "PLAYBOOK COPY 8 recogniser, on builders with >=5 actions"
+    },
+    {
+      "metric": "M5h role_siege_engineer_share",
+      "value": 0.0,
+      "n": "0/15 games",
+      "ci95": null,
+      "target_bc_v68": null,
+      "target_bc_v47": null,
+      "our_old_baseline": null,
+      "note": "PLAYBOOK COPY 8 recogniser, on builders with >=5 actions"
+    },
+    {
+      "metric": "M5i four_distinct_roles_share",
+      "value": 0.0,
+      "n": "0/15 games",
+      "ci95": 0.0,
+      "target_bc_v68": null,
+      "target_bc_v47": null,
+      "our_old_baseline": null,
+      "note": "all four COPY-8 roles filled by four DIFFERENT builders in the same game \u2014 the checkable form of 'four fixed jobs'. \u26d4 READ THE CAVEAT: on Bean counters v68 this measures 1.8% (2/112). The literal recognisers COPY 8 publishes co-occur almost never, so 'four fixed jobs' is a watched-game narrative, NOT a census-verified property. Do not set a SKALMAN acceptance bar on this row; use M5b + M5g + M5d instead"
+    },
+    {
+      "metric": "M6a barriers_on_ore_share",
+      "value": 0.0,
+      "n": "0/23 barriers built, 15 games",
+      "ci95": null,
+      "target_bc_v68": 37.9,
+      "target_bc_v47": 35.9,
+      "our_old_baseline": 0.0,
+      "note": "engine: harvesters can only be built on ore, so a barrier there denies the tile permanently"
+    },
+    {
+      "metric": "M6b ore_denial_coverage_w30",
+      "value": 0.0,
+      "n": "0/1 enemy harvester deaths, 15 games",
+      "ci95": null,
+      "target_bc_v68": 92.5,
+      "target_bc_v47": 90.6,
+      "our_old_baseline": 0.0,
+      "note": "subject barriers that tile within 30 rounds \u2014 the study's window"
+    },
+    {
+      "metric": "M6c ore_denial_coverage_w3",
+      "value": 0.0,
+      "n": "0/1 enemy harvester deaths, 15 games",
+      "ci95": null,
+      "target_bc_v68": null,
+      "target_bc_v47": 80.3,
+      "our_old_baseline": 0.0,
+      "note": "within 3 rounds \u2014 the tight window the COPY-1 trigger specifies"
+    },
+    {
+      "metric": "M6d ore_denial_latency_median",
+      "value": null,
+      "n": "0 covered deaths",
+      "ci95": null,
+      "target_bc_v68": 1.0,
+      "target_bc_v47": 1.0,
+      "our_old_baseline": null,
+      "note": "p90 None, min None"
+    },
+    {
+      "metric": "M7 fwd_turret_removal_rate",
+      "value": 7.6923076923076925,
+      "n": "13/15 games holding >=1 enemy forward turret (2/19 turrets)",
+      "ci95": 10.104538398782276,
+      "target_bc_v68": 76.6,
+      "target_bc_v47": 79.7,
+      "our_old_baseline": 42.8,
+      "note": "GAMES AS UNITS (the study's unit). subject is the DEFENDER. pooled turret share 10.5%; entity-id-matched variant 10.5% of turrets (diagnostic \u2014 the study's published definition matches on (kind, tile, later round) only, so it can credit a REBUILT turret's death to the original)"
+    },
+    {
+      "metric": "M7b fwd_turret_removal_rate_anchor",
+      "value": 7.6923076923076925,
+      "n": "13/15 games holding >=1 (2/19 turrets)",
+      "ci95": 10.104538398782276,
+      "target_bc_v68": null,
+      "target_bc_v47": null,
+      "our_old_baseline": null,
+      "note": "STUDY-COMPAT origin (NW-corner anchor) for the 'forward' test only"
+    }
+  ]
+}
