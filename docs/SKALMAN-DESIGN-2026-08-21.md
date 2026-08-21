@@ -50,10 +50,18 @@ Phase-1 verdicts are REPLICATION FIDELITY vs the study's mechanism numbers (inst
 5. **ORE DENIAL = COPY 1**: harvester-death→barrier-on-T (target 92.5% @ 1-round median)
    + the pre-emptive half (enemy-half unharvested ore, ~r66). PROGRAMME rider carried:
    argued as opens-the-lane, never as economy.
-6. **NEST = COPY 5**: band-first (d²14-32 from enemy core footprint, diagonal-max d²=32
+6. **NEST = COPY 5**: band-first (d²14-32 from enemy core FOOTPRINT, diagonal-max d²=32
    preferred), barriers 1-4 rounds before the gun including inside the firing line.
    **Point-blank plants are OFF in v1** (the §6 dependency: no point-blank until
    ring-clearance measures at parity).
+   ⚠ **COORDINATE-ORIGIN NOTE (fidelity-instrument finding, s54): COPY 5's published
+   band numbers (48.1%/23.9% on v47) were computed from the core's NW-CORNER anchor,
+   not the footprint — footprint-based the same population reads 66.9%/33.1%.** The
+   ENGINE-REAL quantity (sentinel reach to any core tile) is footprint distance, so the
+   BUILD uses footprint; fidelity reads use the instrument's M4c/d (footprint) columns,
+   never the anchor-based M4e/f, for our acceptance. Our point-blank target is ~0 BY
+   DESIGN (a deliberate deviation from v68's 51.5%-anchor point-blank share, per the
+   COPY-5 dependency), so the nest metric is checked against the DESIGN, not vs BC.
 7. **RING CLEARANCE = COPY 6 + COPY 2**: the door verb — shoot what gets planted
    (target 61.9%), kill adjacent counter-turrets (target 87.2%), and site answers OFF
    the enemy sentinel's axis (the mirror of GUNAXIS). DOORWAVE's readout feeds this verb.
@@ -111,6 +119,14 @@ toolbox (phase-2 amplify candidates, each behind its own prereg) · no CPU-denia
    imported and driven: a forced-raise harness cell shows the unit survives).
 3. Fidelity read on a local self-battery (v1 vs `_v542wave`, n small, NOT a verdict):
    every §2 metric within its named band or the miss attributed per-verb.
+   **SCORED METRIC SET (instrument findings, s54): the discriminating metrics are
+   M1 (connectivity), M3a/b/e (drip lattice/calls/first-convert), M5a (builder count),
+   M5g (ore-denier signature), M6a/b/c (ore denial), M7 (ring clearance) — plus M2
+   as we-side calibration.** The four-role CENSUS (M5's joint recognisers) is emitted
+   but NOT scored — it census-verifies in only 2/112 of BC's own games; the roles are
+   checked by their discriminating single signatures instead. The ring-barrier
+   top-share target is **0.80 (v68's measured value)**, not COPY 8's 1.000 (a v47
+   number); v68 shares the cage between walker and engineer, and so may we.
 4. Per-verb ablation identity: each SK_* flag off reproduces the no-verb signature on its
    own metric (the fidelity instrument is the detector).
 5. NO game-share claim of any kind in v1's founding report. The first currency read comes
