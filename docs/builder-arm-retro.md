@@ -1471,3 +1471,58 @@ session is self-play + one teammate architecture; STEALTH makes live legs imposs
 the drop — the risk is now POLICY, note it at every readout) · bind-append-readback (fired
 s51: caught the BARS glue-line and the results.tsv tab corruption — keep) · NEW: quote the
 registered prior, never the grid point.
+
+---
+# ARM RETRO — instance s52 (2026-08-20 → 2026-08-21, wrap on Magnus's call after the v2 ship)
+
+**FIRINGS: the registered instruments across two eras** — V536POOL (full 5400, PASS, equivalence
+in-window), V537POOL (full 5400, 75.44 LINE RECORD, every registered branch beaten upward),
+HOMEPOOL/V529POOL/V535POOL (the -4.06 triangulation: every prior about the seam was wrong in the
+same direction and the pipeline said so), the pooled two-window ship screen (boundary trigger
+resolved BY the pooling rule), the anchor shard (ANCHOR-CLASS, mid-fill at wrap). auto_gate:
+zero false stops; the two guard extensions (BASELINE class, ANCHOR-CLASS) landed with
+both-ways cells on Magnus's word.
+
+**Q: WERE THIS LANE'S DECISIONS SOUND?** The big ones held under pressure: TWO ships executed
+on Magnus's orders with every disclosure honest (v174: bar-2 waived-informed, back-filled to
+zero residual within 5h ending at the 75.44 record; v177: pooled trigger + aged-evidence gap
+lines); the reclaim fire STOOD DOWN 90s before executing against a stale holder fact
+(research's gate); the v538-not-v537 candidate call reversed on evidence both times the
+evidence said so. The recurring near-failure class: RUNNING CONSUMERS OF MOVED FACTS — fired
+5x (zip-era screen, v541 premise, reclaim stand-down, TSTAMP, the hung wake) and was caught
+5x, 4 by cross-lane checks and once by the tool's own preflight. The rule that emerged (a
+repaired artifact's consumers get the domain question immediately; silence is never evidence)
+is the session's process invention and belongs in the charter.
+
+**Q2 RETRACTIONS, direction:** (1) the 4-0-tenure miscount (counted a pre-activation match) —
+FLATTERING, Magnus-caught; (2) the fleet_queue QUEUED misread (header+CANCELLED rows) —
+FLATTERING, self-caught pre-B3; (3) the GENPOOL "incumbent wins the invented maps" inference —
+FLATTERING, self-caught within minutes via the cond column. All three flattering: the mean
+still is not zero; the catches came from checking the artifact, not the narrative.
+
+**Q3 INSTRUMENTS:** the day's builds produced 20+ scratch instruments, every one selftested
+both ways (the standard held); THREE tool defects found by USE (control_pin's two
+incumbent-assumptions, the silent-shell family) and one by AUDIT (now.py's local copy of the
+same class). The gate-and-fire-in-one-command violation (slot-vs-Sleipnir cell) was mine —
+killed in 5s, disclosed, and the receipt design (side lane) mechanises it at wrap.
+
+**Q5 THE SLOT:** two ships (v174, v177), zero rollbacks by this lane, one reclaim stood down,
+zero rated leaks (both boundary certs clean), CPU tests inside both windows. The slot changed
+hands 6x this session (x3r0 4x); the import-on-need pattern held every time.
+
+**Q6 WHAT THE BUDGET BOUGHT:** ~12 opus agents + 2 sonnet (7 builds v532-v542, 4 preregs, 1
+audit); ~30,000 local/remote battery games across 9 gated batteries; 2 ships; 4 pool
+certifications incl. the line record; the rotation absorbed same-day (MAPTRUST's collision
+class materialised on a real pool map 21h after shipping); the conversion wave built end to
+end from Magnus's replay markers to shipped planks.
+
+**THE ONE QUESTION:** the decision machinery could not have produced alone: shipping v174 on
+the informed waiver (Magnus's call, vindicated), and the v542-over-iterating choice under the
+ASAP order. What the machinery caught that I would have missed: all five running-consumer
+incidents. The asymmetry says keep building the machinery.
+
+**OPEN ITEMS CARRIED:** inside-band-needs-NEG-cell · self-play-blindness (now partially
+retired — the live fixture reopened post-stealth) · bind-append-readback (fired again: BARS
+row, TSTAMP) · quote-the-registered-prior (held all session) · NEW: running-consumer rule to
+the charter · NEW: wake-notifications-need-a-deadman (the 93-min hang) · NEW: paired =
+NOISE_OFF on disk in EVERY tree incl. the opponent.
