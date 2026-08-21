@@ -1,0 +1,181 @@
+tag	map	seed	seat	ours	winner	cond	turn	tracebacks	ours_mined	opp_mined
+atoll_s1_A	atoll	1	A	US	_v541quiet	Core destroyed	144	0	470	210
+atoll_s1_B	atoll	1	B	US	_v541quiet	Core destroyed	308	0	630	180
+atoll_s2_A	atoll	2	A	US	_v541quiet	Core destroyed	152	0	730	190
+atoll_s2_B	atoll	2	B	OPP	_v488beltbreak2	Core destroyed	321	0	740	1580
+atoll_s3_A	atoll	3	A	OPP	_v488beltbreak2	Core destroyed	546	0	3240	3090
+atoll_s3_B	atoll	3	B	US	_v541quiet	Core destroyed	196	0	1340	110
+drakkarfjord_s1_A	drakkarfjord	1	A	US	_v541quiet	Core destroyed	216	0	320	0
+drakkarfjord_s1_B	drakkarfjord	1	B	US	_v541quiet	Core destroyed	686	0	6750	0
+drakkarfjord_s2_A	drakkarfjord	2	A	US	_v541quiet	Core destroyed	92	0	280	0
+drakkarfjord_s2_B	drakkarfjord	2	B	US	_v541quiet	Core destroyed	96	0	280	0
+drakkarfjord_s3_A	drakkarfjord	3	A	US	_v541quiet	Core destroyed	107	0	270	0
+drakkarfjord_s3_B	drakkarfjord	3	B	US	_v541quiet	Core destroyed	162	0	910	0
+glacierkeep_s1_A	glacierkeep	1	A	OPP	_v488beltbreak2	Core destroyed	746	0	50	2710
+glacierkeep_s1_B	glacierkeep	1	B	US	_v541quiet	Core destroyed	253	0	150	0
+glacierkeep_s2_A	glacierkeep	2	A	US	_v541quiet	Core destroyed	390	0	1170	0
+glacierkeep_s2_B	glacierkeep	2	B	US	_v541quiet	Core destroyed	857	0	0	0
+glacierkeep_s3_A	glacierkeep	3	A	OPP	_v488beltbreak2	Core destroyed	367	0	50	620
+glacierkeep_s3_B	glacierkeep	3	B	US	_v541quiet	Core destroyed	392	0	0	0
+midgard_s1_A	midgard	1	A	OPP	_v488beltbreak2	Core destroyed	270	0	840	2800
+midgard_s1_B	midgard	1	B	OPP	_v488beltbreak2	Core destroyed	170	0	640	1430
+midgard_s2_A	midgard	2	A	US	_v541quiet	Core destroyed	262	0	1530	1200
+midgard_s2_B	midgard	2	B	US	_v541quiet	Core destroyed	198	0	1530	560
+midgard_s3_A	midgard	3	A	US	_v541quiet	Core destroyed	225	0	1320	680
+midgard_s3_B	midgard	3	B	US	_v541quiet	Core destroyed	178	0	1330	860
+nordkap_s1_A	nordkap	1	A	OPP	_v488beltbreak2	Titanium collected (tiebreak)	1000	0	100	2410
+nordkap_s1_B	nordkap	1	B	US	_v541quiet	Core destroyed	600	0	8140	4560
+nordkap_s2_A	nordkap	2	A	US	_v541quiet	Core destroyed	158	0	630	120
+nordkap_s2_B	nordkap	2	B	OPP	_v488beltbreak2	Titanium collected (tiebreak)	1000	0	110	2690
+nordkap_s3_A	nordkap	3	A	OPP	_v488beltbreak2	Core destroyed	297	0	100	1610
+nordkap_s3_B	nordkap	3	B	US	_v541quiet	Core destroyed	461	0	7040	2510
+atoll_s4_A	atoll	4	A	OPP	_v488beltbreak2	Core destroyed	529	0	2710	3090
+atoll_s4_B	atoll	4	B	US	_v541quiet	Core destroyed	435	0	2300	1920
+atoll_s5_A	atoll	5	A	US	_v541quiet	Core destroyed	123	0	690	110
+atoll_s5_B	atoll	5	B	OPP	_v488beltbreak2	Core destroyed	446	0	1240	3810
+atoll_s6_A	atoll	6	A	US	_v541quiet	Core destroyed	238	0	1680	820
+atoll_s6_B	atoll	6	B	US	_v541quiet	Core destroyed	136	0	640	640
+drakkarfjord_s4_A	drakkarfjord	4	A	US	_v541quiet	Core destroyed	123	0	510	0
+drakkarfjord_s4_B	drakkarfjord	4	B	US	_v541quiet	Core destroyed	104	0	300	0
+drakkarfjord_s5_A	drakkarfjord	5	A	US	_v541quiet	Core destroyed	105	0	360	0
+drakkarfjord_s5_B	drakkarfjord	5	B	US	_v541quiet	Core destroyed	350	0	2260	0
+drakkarfjord_s6_A	drakkarfjord	6	A	US	_v541quiet	Core destroyed	113	0	320	0
+drakkarfjord_s6_B	drakkarfjord	6	B	US	_v541quiet	Core destroyed	96	0	260	0
+glacierkeep_s4_A	glacierkeep	4	A	US	_v541quiet	Core destroyed	115	0	250	0
+glacierkeep_s4_B	glacierkeep	4	B	US	_v541quiet	Core destroyed	377	0	0	0
+glacierkeep_s5_A	glacierkeep	5	A	US	_v541quiet	Core destroyed	143	0	310	0
+glacierkeep_s5_B	glacierkeep	5	B	US	_v541quiet	Core destroyed	181	0	200	0
+glacierkeep_s6_A	glacierkeep	6	A	US	_v541quiet	Core destroyed	789	0	1830	0
+glacierkeep_s6_B	glacierkeep	6	B	US	_v541quiet	Core destroyed	385	0	140	0
+midgard_s4_A	midgard	4	A	US	_v541quiet	Core destroyed	234	0	1660	500
+midgard_s4_B	midgard	4	B	OPP	_v488beltbreak2	Core destroyed	446	0	760	3440
+midgard_s5_A	midgard	5	A	US	_v541quiet	Core destroyed	160	0	1250	680
+midgard_s5_B	midgard	5	B	OPP	_v488beltbreak2	Core destroyed	338	0	630	1480
+midgard_s6_A	midgard	6	A	OPP	_v488beltbreak2	Core destroyed	236	0	1090	2460
+midgard_s6_B	midgard	6	B	US	_v541quiet	Core destroyed	704	0	2430	800
+nordkap_s4_A	nordkap	4	A	US	_v541quiet	Core destroyed	204	0	940	70
+nordkap_s4_B	nordkap	4	B	US	_v541quiet	Core destroyed	173	0	250	80
+nordkap_s5_A	nordkap	5	A	OPP	_v488beltbreak2	Core destroyed	467	0	1310	1920
+nordkap_s5_B	nordkap	5	B	US	_v541quiet	Core destroyed	251	0	600	370
+nordkap_s6_A	nordkap	6	A	US	_v541quiet	Core destroyed	275	0	1930	70
+nordkap_s6_B	nordkap	6	B	OPP	_v488beltbreak2	Core destroyed	180	0	1580	1700
+atoll_s7_A	atoll	7	A	US	_v541quiet	Core destroyed	162	0	700	530
+atoll_s7_B	atoll	7	B	OPP	_v488beltbreak2	Core destroyed	145	0	370	910
+atoll_s8_A	atoll	8	A	US	_v541quiet	Titanium collected (tiebreak)	1000	0	2600	180
+atoll_s8_B	atoll	8	B	US	_v541quiet	Core destroyed	226	0	1420	660
+atoll_s9_A	atoll	9	A	US	_v541quiet	Core destroyed	716	0	2290	470
+atoll_s9_B	atoll	9	B	OPP	_v488beltbreak2	Core destroyed	417	0	260	1280
+drakkarfjord_s7_A	drakkarfjord	7	A	US	_v541quiet	Core destroyed	501	0	2350	0
+drakkarfjord_s7_B	drakkarfjord	7	B	US	_v541quiet	Core destroyed	150	0	990	0
+drakkarfjord_s8_A	drakkarfjord	8	A	US	_v541quiet	Core destroyed	92	0	260	0
+drakkarfjord_s8_B	drakkarfjord	8	B	US	_v541quiet	Core destroyed	96	0	260	0
+drakkarfjord_s9_A	drakkarfjord	9	A	US	_v541quiet	Core destroyed	109	0	380	0
+drakkarfjord_s9_B	drakkarfjord	9	B	US	_v541quiet	Core destroyed	142	0	850	0
+glacierkeep_s7_A	glacierkeep	7	A	OPP	_v488beltbreak2	Titanium collected (tiebreak)	1000	0	360	3350
+glacierkeep_s7_B	glacierkeep	7	B	US	_v541quiet	Core destroyed	597	0	0	0
+glacierkeep_s8_A	glacierkeep	8	A	US	_v541quiet	Core destroyed	780	0	1780	0
+glacierkeep_s8_B	glacierkeep	8	B	US	_v541quiet	Core destroyed	517	0	0	220
+glacierkeep_s9_A	glacierkeep	9	A	US	_v541quiet	Core destroyed	189	0	710	0
+glacierkeep_s9_B	glacierkeep	9	B	OPP	_v488beltbreak2	Harvesters (tiebreak)	1000	0	0	0
+midgard_s7_A	midgard	7	A	US	_v541quiet	Core destroyed	213	0	2100	500
+midgard_s7_B	midgard	7	B	US	_v541quiet	Core destroyed	377	0	1210	520
+midgard_s8_A	midgard	8	A	US	_v541quiet	Core destroyed	139	0	1040	520
+midgard_s8_B	midgard	8	B	OPP	_v488beltbreak2	Core destroyed	338	0	750	1810
+midgard_s9_A	midgard	9	A	US	_v541quiet	Core destroyed	225	0	2020	500
+midgard_s9_B	midgard	9	B	US	_v541quiet	Core destroyed	725	0	1480	720
+nordkap_s7_A	nordkap	7	A	US	_v541quiet	Core destroyed	269	0	140	460
+nordkap_s7_B	nordkap	7	B	US	_v541quiet	Core destroyed	195	0	600	190
+nordkap_s8_A	nordkap	8	A	US	_v541quiet	Core destroyed	941	0	370	80
+nordkap_s8_B	nordkap	8	B	US	_v541quiet	Core destroyed	181	0	210	470
+nordkap_s9_A	nordkap	9	A	US	_v541quiet	Core destroyed	96	0	320	0
+nordkap_s9_B	nordkap	9	B	OPP	_v488beltbreak2	Core destroyed	316	0	110	1920
+atoll_s10_A	atoll	10	A	US	_v541quiet	Core destroyed	313	0	1780	180
+atoll_s10_B	atoll	10	B	US	_v541quiet	Core destroyed	155	0	970	440
+atoll_s11_A	atoll	11	A	OPP	_v488beltbreak2	Core destroyed	338	0	1500	2890
+atoll_s11_B	atoll	11	B	OPP	_v488beltbreak2	Titanium collected (tiebreak)	1000	0	5390	12170
+atoll_s12_A	atoll	12	A	US	_v541quiet	Titanium collected (tiebreak)	1000	0	2200	70
+atoll_s12_B	atoll	12	B	US	_v541quiet	Core destroyed	353	0	370	680
+drakkarfjord_s10_A	drakkarfjord	10	A	US	_v541quiet	Core destroyed	112	0	320	0
+drakkarfjord_s10_B	drakkarfjord	10	B	US	_v541quiet	Core destroyed	100	0	300	0
+drakkarfjord_s11_A	drakkarfjord	11	A	US	_v541quiet	Core destroyed	107	0	290	0
+drakkarfjord_s11_B	drakkarfjord	11	B	US	_v541quiet	Core destroyed	162	0	910	0
+drakkarfjord_s12_A	drakkarfjord	12	A	US	_v541quiet	Core destroyed	166	0	320	0
+drakkarfjord_s12_B	drakkarfjord	12	B	US	_v541quiet	Core destroyed	111	0	260	230
+glacierkeep_s10_A	glacierkeep	10	A	US	_v541quiet	Core destroyed	390	0	1170	0
+glacierkeep_s10_B	glacierkeep	10	B	US	_v541quiet	Titanium collected (tiebreak)	1000	0	110	0
+glacierkeep_s11_A	glacierkeep	11	A	US	_v541quiet	Core destroyed	115	0	230	0
+glacierkeep_s11_B	glacierkeep	11	B	US	_v541quiet	Core destroyed	575	0	300	0
+glacierkeep_s12_A	glacierkeep	12	A	OPP	_v488beltbreak2	Core destroyed	367	0	50	620
+glacierkeep_s12_B	glacierkeep	12	B	OPP	_v488beltbreak2	Core destroyed	753	0	0	0
+midgard_s10_A	midgard	10	A	US	_v541quiet	Titanium collected (tiebreak)	1000	0	1550	630
+midgard_s10_B	midgard	10	B	US	_v541quiet	Titanium collected (tiebreak)	1000	0	7550	680
+midgard_s11_A	midgard	11	A	OPP	_v488beltbreak2	Core destroyed	629	0	700	700
+midgard_s11_B	midgard	11	B	US	_v541quiet	Core destroyed	253	0	1940	730
+midgard_s12_A	midgard	12	A	OPP	_v488beltbreak2	Titanium collected (tiebreak)	1000	0	770	930
+midgard_s12_B	midgard	12	B	OPP	_v488beltbreak2	Core destroyed	265	0	1990	940
+nordkap_s10_A	nordkap	10	A	US	_v541quiet	Core destroyed	151	0	360	70
+nordkap_s10_B	nordkap	10	B	US	_v541quiet	Core destroyed	131	0	360	20
+nordkap_s11_A	nordkap	11	A	US	_v541quiet	Core destroyed	148	0	680	70
+nordkap_s11_B	nordkap	11	B	US	_v541quiet	Core destroyed	122	0	390	80
+nordkap_s12_A	nordkap	12	A	OPP	_v488beltbreak2	Core destroyed	236	0	320	2890
+nordkap_s12_B	nordkap	12	B	US	_v541quiet	Core destroyed	257	0	110	70
+atoll_s13_A	atoll	13	A	US	_v541quiet	Core destroyed	340	0	2320	70
+atoll_s13_B	atoll	13	B	OPP	_v488beltbreak2	Core destroyed	594	0	250	2160
+atoll_s14_A	atoll	14	A	US	_v541quiet	Titanium collected (tiebreak)	1000	0	2200	70
+atoll_s14_B	atoll	14	B	US	_v541quiet	Core destroyed	304	0	2170	2130
+atoll_s15_A	atoll	15	A	OPP	_v488beltbreak2	Core destroyed	512	0	3670	3920
+atoll_s15_B	atoll	15	B	US	_v541quiet	Core destroyed	245	0	860	940
+drakkarfjord_s13_A	drakkarfjord	13	A	OPP	_v488beltbreak2	Titanium collected (tiebreak)	1000	0	320	1350
+drakkarfjord_s13_B	drakkarfjord	13	B	US	_v541quiet	Core destroyed	365	0	3420	0
+drakkarfjord_s14_A	drakkarfjord	14	A	US	_v541quiet	Core destroyed	116	0	300	0
+drakkarfjord_s14_B	drakkarfjord	14	B	US	_v541quiet	Core destroyed	99	0	320	0
+drakkarfjord_s15_A	drakkarfjord	15	A	US	_v541quiet	Core destroyed	107	0	300	0
+drakkarfjord_s15_B	drakkarfjord	15	B	US	_v541quiet	Core destroyed	97	0	280	0
+glacierkeep_s13_A	glacierkeep	13	A	US	_v541quiet	Core destroyed	125	0	180	0
+glacierkeep_s13_B	glacierkeep	13	B	US	_v541quiet	Core destroyed	372	0	0	0
+glacierkeep_s14_A	glacierkeep	14	A	OPP	_v488beltbreak2	Titanium collected (tiebreak)	1000	0	360	3350
+glacierkeep_s14_B	glacierkeep	14	B	US	_v541quiet	Core destroyed	857	0	0	0
+glacierkeep_s15_A	glacierkeep	15	A	US	_v541quiet	Titanium collected (tiebreak)	1000	0	160	0
+glacierkeep_s15_B	glacierkeep	15	B	US	_v541quiet	Core destroyed	361	0	0	0
+midgard_s13_A	midgard	13	A	US	_v541quiet	Titanium collected (tiebreak)	1000	0	3230	690
+midgard_s13_B	midgard	13	B	OPP	_v488beltbreak2	Core destroyed	263	0	740	2710
+midgard_s14_A	midgard	14	A	US	_v541quiet	Core destroyed	493	0	1720	590
+midgard_s14_B	midgard	14	B	US	_v541quiet	Core destroyed	195	0	1560	740
+midgard_s15_A	midgard	15	A	OPP	_v488beltbreak2	Core destroyed	301	0	750	500
+midgard_s15_B	midgard	15	B	US	_v541quiet	Core destroyed	286	0	2160	670
+nordkap_s13_A	nordkap	13	A	US	_v541quiet	Core destroyed	435	0	680	80
+nordkap_s13_B	nordkap	13	B	OPP	_v488beltbreak2	Core destroyed	243	0	640	2930
+nordkap_s14_A	nordkap	14	A	US	_v541quiet	Core destroyed	309	0	1940	510
+nordkap_s14_B	nordkap	14	B	US	_v541quiet	Core destroyed	133	0	130	10
+nordkap_s15_A	nordkap	15	A	US	_v541quiet	Core destroyed	257	0	190	80
+nordkap_s15_B	nordkap	15	B	US	_v541quiet	Core destroyed	133	0	130	10
+atoll_s16_A	atoll	16	A	US	_v541quiet	Core destroyed	442	0	2170	150
+atoll_s16_B	atoll	16	B	OPP	_v488beltbreak2	Core destroyed	429	0	2390	1880
+atoll_s17_A	atoll	17	A	US	_v541quiet	Core destroyed	347	0	2290	960
+atoll_s17_B	atoll	17	B	US	_v541quiet	Core destroyed	126	0	600	280
+atoll_s18_A	atoll	18	A	US	_v541quiet	Core destroyed	127	0	400	180
+atoll_s18_B	atoll	18	B	US	_v541quiet	Core destroyed	403	0	1810	1890
+drakkarfjord_s16_A	drakkarfjord	16	A	US	_v541quiet	Core destroyed	209	0	940	0
+drakkarfjord_s16_B	drakkarfjord	16	B	US	_v541quiet	Core destroyed	150	0	990	0
+drakkarfjord_s17_A	drakkarfjord	17	A	US	_v541quiet	Core destroyed	91	0	320	0
+drakkarfjord_s17_B	drakkarfjord	17	B	US	_v541quiet	Titanium collected (tiebreak)	1000	0	330	0
+drakkarfjord_s18_A	drakkarfjord	18	A	US	_v541quiet	Core destroyed	601	0	480	0
+drakkarfjord_s18_B	drakkarfjord	18	B	US	_v541quiet	Core destroyed	122	0	330	0
+glacierkeep_s16_A	glacierkeep	16	A	US	_v541quiet	Core destroyed	645	0	2630	0
+glacierkeep_s16_B	glacierkeep	16	B	US	_v541quiet	Core destroyed	241	0	160	0
+glacierkeep_s17_A	glacierkeep	17	A	US	_v541quiet	Core destroyed	125	0	180	0
+glacierkeep_s17_B	glacierkeep	17	B	US	_v541quiet	Core destroyed	213	0	90	0
+glacierkeep_s18_A	glacierkeep	18	A	US	_v541quiet	Core destroyed	131	0	330	0
+glacierkeep_s18_B	glacierkeep	18	B	US	_v541quiet	Core destroyed	361	0	0	0
+midgard_s16_A	midgard	16	A	US	_v541quiet	Core destroyed	234	0	1470	630
+midgard_s16_B	midgard	16	B	US	_v541quiet	Core destroyed	374	0	1560	680
+midgard_s17_A	midgard	17	A	US	_v541quiet	Core destroyed	167	0	1240	1310
+midgard_s17_B	midgard	17	B	US	_v541quiet	Core destroyed	246	0	2040	790
+midgard_s18_A	midgard	18	A	US	_v541quiet	Core destroyed	248	0	1630	1100
+midgard_s18_B	midgard	18	B	OPP	_v488beltbreak2	Core destroyed	317	0	730	530
+nordkap_s16_A	nordkap	16	A	US	_v541quiet	Core destroyed	867	0	4870	1180
+nordkap_s16_B	nordkap	16	B	US	_v541quiet	Core destroyed	489	0	5560	6610
+nordkap_s17_A	nordkap	17	A	US	_v541quiet	Core destroyed	161	0	130	70
+nordkap_s17_B	nordkap	17	B	US	_v541quiet	Core destroyed	125	0	280	100
+nordkap_s18_A	nordkap	18	A	US	_v541quiet	Core destroyed	96	0	630	60
+nordkap_s18_B	nordkap	18	B	US	_v541quiet	Core destroyed	257	0	110	70

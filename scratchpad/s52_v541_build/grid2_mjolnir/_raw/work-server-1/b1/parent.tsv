@@ -1,0 +1,31 @@
+tag	map	seed	seat	ours	winner	cond	turn	tracebacks	ours_mined	opp_mined
+atoll_s4_A	atoll	4	A	OPP	_x3r0v173mjolnir	Core destroyed	159	0	390	870
+atoll_s4_B	atoll	4	B	OPP	_x3r0v173mjolnir	Core destroyed	121	0	310	480
+atoll_s5_A	atoll	5	A	US	parent	Core destroyed	216	0	870	1030
+atoll_s5_B	atoll	5	B	OPP	_x3r0v173mjolnir	Core destroyed	124	0	320	560
+atoll_s6_A	atoll	6	A	OPP	_x3r0v173mjolnir	Core destroyed	136	0	370	350
+atoll_s6_B	atoll	6	B	OPP	_x3r0v173mjolnir	Core destroyed	134	0	340	490
+drakkarfjord_s4_A	drakkarfjord	4	A	US	parent	Core destroyed	199	0	1000	610
+drakkarfjord_s4_B	drakkarfjord	4	B	US	parent	Core destroyed	171	0	1000	0
+drakkarfjord_s5_A	drakkarfjord	5	A	OPP	_x3r0v173mjolnir	Core destroyed	277	0	850	1160
+drakkarfjord_s5_B	drakkarfjord	5	B	US	parent	Titanium collected (tiebreak)	1000	0	200	0
+drakkarfjord_s6_A	drakkarfjord	6	A	US	parent	Core destroyed	390	0	1840	0
+drakkarfjord_s6_B	drakkarfjord	6	B	OPP	_x3r0v173mjolnir	Titanium collected (tiebreak)	1000	0	1450	3970
+glacierkeep_s4_A	glacierkeep	4	A	US	parent	Core destroyed	613	0	0	0
+glacierkeep_s4_B	glacierkeep	4	B	US	parent	Core destroyed	652	0	1210	0
+glacierkeep_s5_A	glacierkeep	5	A	OPP	_x3r0v173mjolnir	Core destroyed	513	0	0	0
+glacierkeep_s5_B	glacierkeep	5	B	OPP	_x3r0v173mjolnir	Core destroyed	570	0	0	1410
+glacierkeep_s6_A	glacierkeep	6	A	US	parent	Core destroyed	578	0	1120	0
+glacierkeep_s6_B	glacierkeep	6	B	OPP	_x3r0v173mjolnir	Titanium collected (tiebreak)	1000	0	2850	9930
+midgard_s4_A	midgard	4	A	US	parent	Core destroyed	218	0	1590	760
+midgard_s4_B	midgard	4	B	OPP	_x3r0v173mjolnir	Core destroyed	457	0	1520	900
+midgard_s5_A	midgard	5	A	OPP	_x3r0v173mjolnir	Core destroyed	279	0	640	2940
+midgard_s5_B	midgard	5	B	OPP	_x3r0v173mjolnir	Core destroyed	535	0	1880	2660
+midgard_s6_A	midgard	6	A	OPP	_x3r0v173mjolnir	Core destroyed	465	0	2980	4380
+midgard_s6_B	midgard	6	B	US	parent	Core destroyed	181	0	1100	850
+nordkap_s4_A	nordkap	4	A	US	parent	Core destroyed	745	0	100	20
+nordkap_s4_B	nordkap	4	B	US	parent	Core destroyed	543	0	2740	1250
+nordkap_s5_A	nordkap	5	A	US	parent	Core destroyed	241	0	230	20
+nordkap_s5_B	nordkap	5	B	US	parent	Core destroyed	530	0	4070	130
+nordkap_s6_A	nordkap	6	A	OPP	_x3r0v173mjolnir	Core destroyed	585	0	1830	3780
+nordkap_s6_B	nordkap	6	B	US	parent	Core destroyed	200	0	930	550

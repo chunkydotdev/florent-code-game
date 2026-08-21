@@ -1,0 +1,31 @@
+tag	map	seed	seat	ours	winner	cond	turn	tracebacks	ours_mined	opp_mined
+atoll_s1_A	atoll	1	A	OPP	_x3r0v173mjolnir	Core destroyed	301	0	750	2540
+atoll_s1_B	atoll	1	B	OPP	_x3r0v173mjolnir	Core destroyed	95	0	250	430
+atoll_s2_A	atoll	2	A	US	parent	Core destroyed	547	0	5220	1750
+atoll_s2_B	atoll	2	B	OPP	_x3r0v173mjolnir	Core destroyed	121	0	310	480
+atoll_s3_A	atoll	3	A	OPP	_x3r0v173mjolnir	Core destroyed	107	0	260	320
+atoll_s3_B	atoll	3	B	OPP	_x3r0v173mjolnir	Core destroyed	126	0	320	530
+drakkarfjord_s1_A	drakkarfjord	1	A	US	parent	Core destroyed	273	0	1260	0
+drakkarfjord_s1_B	drakkarfjord	1	B	OPP	_x3r0v173mjolnir	Core destroyed	685	0	200	0
+drakkarfjord_s2_A	drakkarfjord	2	A	US	parent	Core destroyed	194	0	860	0
+drakkarfjord_s2_B	drakkarfjord	2	B	US	parent	Core destroyed	323	0	2390	0
+drakkarfjord_s3_A	drakkarfjord	3	A	US	parent	Core destroyed	194	0	860	0
+drakkarfjord_s3_B	drakkarfjord	3	B	US	parent	Core destroyed	340	0	2340	0
+glacierkeep_s1_A	glacierkeep	1	A	US	parent	Core destroyed	578	0	1120	0
+glacierkeep_s1_B	glacierkeep	1	B	OPP	_x3r0v173mjolnir	Titanium collected (tiebreak)	1000	0	510	3600
+glacierkeep_s2_A	glacierkeep	2	A	US	parent	Core destroyed	313	0	0	0
+glacierkeep_s2_B	glacierkeep	2	B	OPP	_x3r0v173mjolnir	Core destroyed	769	0	3220	5680
+glacierkeep_s3_A	glacierkeep	3	A	OPP	_x3r0v173mjolnir	Titanium collected (tiebreak)	1000	0	0	5180
+glacierkeep_s3_B	glacierkeep	3	B	OPP	_x3r0v173mjolnir	Core destroyed	395	0	0	1420
+midgard_s1_A	midgard	1	A	US	parent	Core destroyed	163	0	1410	810
+midgard_s1_B	midgard	1	B	US	parent	Core destroyed	204	0	1450	1390
+midgard_s2_A	midgard	2	A	OPP	_x3r0v173mjolnir	Core destroyed	556	0	2600	3130
+midgard_s2_B	midgard	2	B	US	parent	Core destroyed	205	0	1480	620
+midgard_s3_A	midgard	3	A	OPP	_x3r0v173mjolnir	Core destroyed	317	0	3430	4210
+midgard_s3_B	midgard	3	B	US	parent	Core destroyed	241	0	2430	1690
+nordkap_s1_A	nordkap	1	A	US	parent	Core destroyed	261	0	630	20
+nordkap_s1_B	nordkap	1	B	US	parent	Core destroyed	659	0	5240	1170
+nordkap_s2_A	nordkap	2	A	US	parent	Core destroyed	357	0	330	20
+nordkap_s2_B	nordkap	2	B	US	parent	Core destroyed	496	0	4110	2320
+nordkap_s3_A	nordkap	3	A	US	parent	Core destroyed	237	0	570	20
+nordkap_s3_B	nordkap	3	B	US	parent	Core destroyed	342	0	2250	470

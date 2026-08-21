@@ -1,0 +1,31 @@
+tag	map	seed	seat	ours	winner	cond	turn	tracebacks	ours_mined	opp_mined
+atoll_s1_A	atoll	1	A	US	_v541quiet	Core destroyed	144	0	470	210
+atoll_s1_B	atoll	1	B	US	_v541quiet	Core destroyed	308	0	630	180
+atoll_s2_A	atoll	2	A	US	_v541quiet	Core destroyed	152	0	730	190
+atoll_s2_B	atoll	2	B	OPP	_v488beltbreak2	Core destroyed	321	0	740	1580
+atoll_s3_A	atoll	3	A	OPP	_v488beltbreak2	Core destroyed	546	0	3240	3090
+atoll_s3_B	atoll	3	B	US	_v541quiet	Core destroyed	196	0	1340	110
+drakkarfjord_s1_A	drakkarfjord	1	A	US	_v541quiet	Core destroyed	216	0	320	0
+drakkarfjord_s1_B	drakkarfjord	1	B	US	_v541quiet	Core destroyed	686	0	6750	0
+drakkarfjord_s2_A	drakkarfjord	2	A	US	_v541quiet	Core destroyed	92	0	280	0
+drakkarfjord_s2_B	drakkarfjord	2	B	US	_v541quiet	Core destroyed	96	0	280	0
+drakkarfjord_s3_A	drakkarfjord	3	A	US	_v541quiet	Core destroyed	107	0	270	0
+drakkarfjord_s3_B	drakkarfjord	3	B	US	_v541quiet	Core destroyed	162	0	910	0
+glacierkeep_s1_A	glacierkeep	1	A	OPP	_v488beltbreak2	Core destroyed	746	0	50	2710
+glacierkeep_s1_B	glacierkeep	1	B	US	_v541quiet	Core destroyed	253	0	150	0
+glacierkeep_s2_A	glacierkeep	2	A	US	_v541quiet	Core destroyed	390	0	1170	0
+glacierkeep_s2_B	glacierkeep	2	B	US	_v541quiet	Core destroyed	857	0	0	0
+glacierkeep_s3_A	glacierkeep	3	A	OPP	_v488beltbreak2	Core destroyed	367	0	50	620
+glacierkeep_s3_B	glacierkeep	3	B	US	_v541quiet	Core destroyed	392	0	0	0
+midgard_s1_A	midgard	1	A	OPP	_v488beltbreak2	Core destroyed	270	0	840	2800
+midgard_s1_B	midgard	1	B	OPP	_v488beltbreak2	Core destroyed	170	0	640	1430
+midgard_s2_A	midgard	2	A	US	_v541quiet	Core destroyed	262	0	1530	1200
+midgard_s2_B	midgard	2	B	US	_v541quiet	Core destroyed	198	0	1530	560
+midgard_s3_A	midgard	3	A	US	_v541quiet	Core destroyed	225	0	1320	680
+midgard_s3_B	midgard	3	B	US	_v541quiet	Core destroyed	178	0	1330	860
+nordkap_s1_A	nordkap	1	A	OPP	_v488beltbreak2	Titanium collected (tiebreak)	1000	0	100	2410
+nordkap_s1_B	nordkap	1	B	US	_v541quiet	Core destroyed	600	0	8140	4560
+nordkap_s2_A	nordkap	2	A	US	_v541quiet	Core destroyed	158	0	630	120
+nordkap_s2_B	nordkap	2	B	OPP	_v488beltbreak2	Titanium collected (tiebreak)	1000	0	110	2690
+nordkap_s3_A	nordkap	3	A	OPP	_v488beltbreak2	Core destroyed	297	0	100	1610
+nordkap_s3_B	nordkap	3	B	US	_v541quiet	Core destroyed	461	0	7040	2510

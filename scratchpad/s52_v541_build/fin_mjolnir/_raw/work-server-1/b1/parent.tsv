@@ -1,0 +1,31 @@
+tag	map	seed	seat	ours	winner	cond	turn	tracebacks	ours_mined	opp_mined
+atoll_s4_A	atoll	4	A	OPP	mjolnir	Core destroyed	437	0	1720	4480
+atoll_s4_B	atoll	4	B	OPP	mjolnir	Core destroyed	96	0	250	380
+atoll_s5_A	atoll	5	A	OPP	mjolnir	Titanium collected (tiebreak)	1000	0	5760	11500
+atoll_s5_B	atoll	5	B	OPP	mjolnir	Core destroyed	96	0	250	380
+atoll_s6_A	atoll	6	A	OPP	mjolnir	Core destroyed	222	0	630	1780
+atoll_s6_B	atoll	6	B	OPP	mjolnir	Core destroyed	96	0	250	380
+drakkarfjord_s4_A	drakkarfjord	4	A	US	parent	Core destroyed	109	0	440	0
+drakkarfjord_s4_B	drakkarfjord	4	B	US	parent	Core destroyed	306	0	1790	0
+drakkarfjord_s5_A	drakkarfjord	5	A	US	parent	Core destroyed	109	0	440	0
+drakkarfjord_s5_B	drakkarfjord	5	B	US	parent	Core destroyed	295	0	1860	0
+drakkarfjord_s6_A	drakkarfjord	6	A	US	parent	Core destroyed	109	0	440	0
+drakkarfjord_s6_B	drakkarfjord	6	B	US	parent	Core destroyed	295	0	1860	0
+glacierkeep_s4_A	glacierkeep	4	A	US	parent	Core destroyed	569	0	0	690
+glacierkeep_s4_B	glacierkeep	4	B	US	parent	Core destroyed	412	0	550	590
+glacierkeep_s5_A	glacierkeep	5	A	US	parent	Core destroyed	569	0	0	690
+glacierkeep_s5_B	glacierkeep	5	B	US	parent	Core destroyed	412	0	550	590
+glacierkeep_s6_A	glacierkeep	6	A	US	parent	Core destroyed	569	0	0	690
+glacierkeep_s6_B	glacierkeep	6	B	US	parent	Core destroyed	412	0	550	590
+midgard_s4_A	midgard	4	A	US	parent	Core destroyed	134	0	1140	800
+midgard_s4_B	midgard	4	B	OPP	mjolnir	Core destroyed	405	0	4710	4190
+midgard_s5_A	midgard	5	A	US	parent	Core destroyed	134	0	1140	800
+midgard_s5_B	midgard	5	B	OPP	mjolnir	Core destroyed	405	0	4710	4190
+midgard_s6_A	midgard	6	A	US	parent	Core destroyed	134	0	1140	800
+midgard_s6_B	midgard	6	B	OPP	mjolnir	Core destroyed	405	0	4710	4190
+nordkap_s4_A	nordkap	4	A	US	parent	Core destroyed	218	0	770	20
+nordkap_s4_B	nordkap	4	B	US	parent	Core destroyed	550	0	2860	3740
+nordkap_s5_A	nordkap	5	A	US	parent	Core destroyed	218	0	770	20
+nordkap_s5_B	nordkap	5	B	OPP	mjolnir	Core destroyed	594	0	3190	4330
+nordkap_s6_A	nordkap	6	A	US	parent	Core destroyed	218	0	770	20
+nordkap_s6_B	nordkap	6	B	US	parent	Core destroyed	550	0	2860	3740

@@ -1,0 +1,1 @@
+2026-08-21T08:08:26Z ⛔ REFUSING: 3 arms x PAR=5 = 15 concurrent games exceeds our allocation of 10 cores on work-server-1. --tle 10 is WALL-CLOCK, so oversubscription CORRUPTS rows (SALTREF2: a byte-identical null moved 2.67pp). Lower --par or split the arms.

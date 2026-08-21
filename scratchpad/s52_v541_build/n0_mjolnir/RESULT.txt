@@ -1,0 +1,10 @@
+runid	s52v541n0mj
+generated	2026-08-21T08:29:50Z
+hosts	work-server-1
+opp	mjolnir
+maps	atoll,drakkarfjord,glacierkeep,midgard,nordkap
+seeds	1-18
+par	5
+planned_rows_per_arm	180
+arm	v541	delivered	180	planned	180	COMPLETE
+arm	parent	delivered	180	planned	180	COMPLETE

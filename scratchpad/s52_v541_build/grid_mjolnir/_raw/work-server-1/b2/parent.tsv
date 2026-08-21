@@ -1,0 +1,31 @@
+tag	map	seed	seat	ours	winner	cond	turn	tracebacks	ours_mined	opp_mined
+atoll_s7_A	atoll	7	A	OPP	_x3r0v173mjolnir	Core destroyed	450	0	540	1230
+atoll_s7_B	atoll	7	B	OPP	_x3r0v173mjolnir	Core destroyed	121	0	310	480
+atoll_s8_A	atoll	8	A	OPP	_x3r0v173mjolnir	Core destroyed	122	0	300	360
+atoll_s8_B	atoll	8	B	OPP	_x3r0v173mjolnir	Core destroyed	122	0	310	440
+atoll_s9_A	atoll	9	A	OPP	_x3r0v173mjolnir	Core destroyed	184	0	410	1600
+atoll_s9_B	atoll	9	B	OPP	_x3r0v173mjolnir	Core destroyed	121	0	310	480
+drakkarfjord_s7_A	drakkarfjord	7	A	US	parent	Core destroyed	152	0	650	70
+drakkarfjord_s7_B	drakkarfjord	7	B	US	parent	Core destroyed	377	0	2720	0
+drakkarfjord_s8_A	drakkarfjord	8	A	US	parent	Core destroyed	390	0	1840	0
+drakkarfjord_s8_B	drakkarfjord	8	B	OPP	_x3r0v173mjolnir	Titanium collected (tiebreak)	1000	0	1470	3770
+drakkarfjord_s9_A	drakkarfjord	9	A	US	parent	Core destroyed	390	0	1840	0
+drakkarfjord_s9_B	drakkarfjord	9	B	OPP	_x3r0v173mjolnir	Core destroyed	685	0	200	0
+glacierkeep_s7_A	glacierkeep	7	A	OPP	_x3r0v173mjolnir	Titanium collected (tiebreak)	1000	0	0	320
+glacierkeep_s7_B	glacierkeep	7	B	OPP	_x3r0v173mjolnir	Titanium collected (tiebreak)	1000	0	0	1360
+glacierkeep_s8_A	glacierkeep	8	A	US	parent	Core destroyed	313	0	0	0
+glacierkeep_s8_B	glacierkeep	8	B	US	parent	Harvesters (tiebreak)	1000	0	0	0
+glacierkeep_s9_A	glacierkeep	9	A	OPP	_x3r0v173mjolnir	Titanium collected (tiebreak)	1000	0	0	160
+glacierkeep_s9_B	glacierkeep	9	B	US	parent	Core destroyed	341	0	0	0
+midgard_s7_A	midgard	7	A	OPP	_x3r0v173mjolnir	Core destroyed	98	0	230	780
+midgard_s7_B	midgard	7	B	US	parent	Core destroyed	140	0	1250	730
+midgard_s8_A	midgard	8	A	US	parent	Core destroyed	323	0	3010	690
+midgard_s8_B	midgard	8	B	US	parent	Core destroyed	256	0	2940	560
+midgard_s9_A	midgard	9	A	OPP	_x3r0v173mjolnir	Core destroyed	412	0	710	3130
+midgard_s9_B	midgard	9	B	US	parent	Core destroyed	203	0	2120	1160
+nordkap_s7_A	nordkap	7	A	US	parent	Core destroyed	753	0	2190	20
+nordkap_s7_B	nordkap	7	B	OPP	_x3r0v173mjolnir	Core destroyed	214	0	460	550
+nordkap_s8_A	nordkap	8	A	OPP	_x3r0v173mjolnir	Core destroyed	196	0	170	630
+nordkap_s8_B	nordkap	8	B	OPP	_x3r0v173mjolnir	Core destroyed	214	0	460	550
+nordkap_s9_A	nordkap	9	A	US	parent	Core destroyed	569	0	3430	1690
+nordkap_s9_B	nordkap	9	B	US	parent	Core destroyed	635	0	4880	1170

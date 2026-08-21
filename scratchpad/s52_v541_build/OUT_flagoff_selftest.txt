@@ -1,0 +1,11 @@
+  PASS  R1 dirty: module-level derived constant  -> ['R1', 'R2']
+  PASS  R1 clean: same module, constant not derived  -> clean
+  PASS  R2 dirty: bare subordinate read outside the family  -> ['R2']
+  PASS  R2 clean-b: master is an EARLIER `and` operand  -> clean
+  PASS  R2 dirty-order: master is a LATER `and` operand (no short-circuit)  -> ['R2']
+  PASS  R2 clean-c: nested inside `if FS_V541_ATTACK:`  -> clean
+  PASS  R2 clean-a: read lives inside a _v541_ method  -> clean
+  PASS  R3 dirty: unguarded call into the family  -> ['R3']
+  PASS  R3 clean: guarded call into the family  -> clean
+  PASS  R3 clean: family calls family  -> clean
+SELFTEST PASS -- 10 cases, 3 rules, each driven to both verdicts

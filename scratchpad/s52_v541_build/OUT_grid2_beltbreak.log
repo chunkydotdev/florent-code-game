@@ -1,0 +1,30 @@
+2026-08-21T08:16:46Z capacity: work-server-1  arms=2 x par=5 = 10 <= our_cores 10  OK
+2026-08-21T08:16:46Z PLAN runid=s52v541bb2
+2026-08-21T08:16:46Z   arms=_v541quiet,parent opp=_v488beltbreak2
+2026-08-21T08:16:46Z   maps=5 seeds=18 blocks=6 par=5 -> 180 rows/arm, 360 total
+2026-08-21T08:16:46Z   work-server-1    blocks=[0, 1, 2, 3, 4, 5] rows=360
+2026-08-21T08:16:46Z   out=/Users/junghard/Projects/Work/florent-code-game/scratchpad/s52_v541_build/grid2_beltbreak
+2026-08-21T08:16:46Z host work-server-1: nproc=16 load=0.66 corefill_workers=0 fcode=2.3.6(pin ok)
+2026-08-21T08:16:47Z shipped to work-server-1:fcode-build/s52v541bb2 — 2 arms, opp _v488beltbreak2, 5 maps, 6 blocks
+2026-08-21T08:16:47Z LAUNCHED work-server-1 pid=1094880 root=fcode-build/s52v541bb2
+2026-08-21T08:16:47Z PIDS: work-server-1=1094880
+2026-08-21T08:17:08Z   work-server-1    rows=0/360 state=STARTING driver=ALIVE
+2026-08-21T08:17:28Z   work-server-1    rows=60/360 state=RUNNING driver=ALIVE
+2026-08-21T08:17:48Z   work-server-1    rows=120/360 state=RUNNING driver=ALIVE
+2026-08-21T08:18:09Z   work-server-1    rows=180/360 state=RUNNING driver=ALIVE
+2026-08-21T08:18:29Z   work-server-1    rows=180/360 state=RUNNING driver=ALIVE
+2026-08-21T08:18:49Z   work-server-1    rows=240/360 state=RUNNING driver=ALIVE
+2026-08-21T08:19:09Z   work-server-1    rows=300/360 state=RUNNING driver=ALIVE
+2026-08-21T08:19:30Z   work-server-1    rows=360/360 state=COMPLETE driver=DEAD
+2026-08-21T08:19:30Z   runid  s52v541bb2
+2026-08-21T08:19:30Z   generated  2026-08-21T08:19:30Z
+2026-08-21T08:19:30Z   hosts  work-server-1
+2026-08-21T08:19:30Z   opp  _v488beltbreak2
+2026-08-21T08:19:30Z   maps  atoll,drakkarfjord,glacierkeep,midgard,nordkap
+2026-08-21T08:19:30Z   seeds  1-18
+2026-08-21T08:19:30Z   par  5
+2026-08-21T08:19:30Z   planned_rows_per_arm  180
+2026-08-21T08:19:30Z   arm  _v541quiet  delivered  180  planned  180  COMPLETE
+2026-08-21T08:19:30Z   arm  parent  delivered  180  planned  180  COMPLETE
+2026-08-21T08:19:31Z cleanup work-server-1: CLEANED
+2026-08-21T08:19:31Z COMPLETE — 180 rows/arm on each of 2 arms. Read it: .venv/bin/python <build>/summarise.py <name> /Users/junghard/Projects/Work/florent-code-game/scratchpad/s52_v541_build/grid2_beltbreak/<arm>.tsv

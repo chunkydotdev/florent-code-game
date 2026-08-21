@@ -1,0 +1,31 @@
+tag	map	seed	seat	ours	winner	cond	turn	tracebacks	ours_mined	opp_mined
+atoll_s4_A	atoll	4	A	US	parent	Core destroyed	235	0	730	630
+atoll_s4_B	atoll	4	B	US	parent	Core destroyed	429	0	1640	1180
+atoll_s5_A	atoll	5	A	US	parent	Core destroyed	186	0	1460	530
+atoll_s5_B	atoll	5	B	US	parent	Core destroyed	734	0	2260	230
+atoll_s6_A	atoll	6	A	US	parent	Titanium collected (tiebreak)	1000	0	5320	4890
+atoll_s6_B	atoll	6	B	US	parent	Core destroyed	201	0	560	190
+drakkarfjord_s4_A	drakkarfjord	4	A	US	parent	Core destroyed	123	0	510	0
+drakkarfjord_s4_B	drakkarfjord	4	B	US	parent	Core destroyed	97	0	320	0
+drakkarfjord_s5_A	drakkarfjord	5	A	US	parent	Core destroyed	123	0	510	0
+drakkarfjord_s5_B	drakkarfjord	5	B	US	parent	Core destroyed	117	0	160	0
+drakkarfjord_s6_A	drakkarfjord	6	A	US	parent	Core destroyed	108	0	430	0
+drakkarfjord_s6_B	drakkarfjord	6	B	US	parent	Core destroyed	97	0	320	0
+glacierkeep_s4_A	glacierkeep	4	A	US	parent	Core destroyed	115	0	230	0
+glacierkeep_s4_B	glacierkeep	4	B	OPP	_v488beltbreak2	Core destroyed	843	0	260	2760
+glacierkeep_s5_A	glacierkeep	5	A	US	parent	Core destroyed	131	0	330	0
+glacierkeep_s5_B	glacierkeep	5	B	US	parent	Core destroyed	177	0	170	0
+glacierkeep_s6_A	glacierkeep	6	A	OPP	_v488beltbreak2	Core destroyed	269	0	260	1080
+glacierkeep_s6_B	glacierkeep	6	B	US	parent	Core destroyed	228	0	480	0
+midgard_s4_A	midgard	4	A	OPP	_v488beltbreak2	Core destroyed	237	0	910	1760
+midgard_s4_B	midgard	4	B	US	parent	Core destroyed	188	0	1500	760
+midgard_s5_A	midgard	5	A	US	parent	Core destroyed	228	0	1270	820
+midgard_s5_B	midgard	5	B	US	parent	Core destroyed	165	0	1260	640
+midgard_s6_A	midgard	6	A	US	parent	Core destroyed	188	0	1370	480
+midgard_s6_B	midgard	6	B	OPP	_v488beltbreak2	Core destroyed	169	0	780	1220
+nordkap_s4_A	nordkap	4	A	US	parent	Core destroyed	195	0	460	210
+nordkap_s4_B	nordkap	4	B	US	parent	Titanium collected (tiebreak)	1000	0	130	110
+nordkap_s5_A	nordkap	5	A	US	parent	Core destroyed	293	0	980	110
+nordkap_s5_B	nordkap	5	B	OPP	_v488beltbreak2	Core destroyed	207	0	160	2010
+nordkap_s6_A	nordkap	6	A	US	parent	Core destroyed	435	0	680	80
+nordkap_s6_B	nordkap	6	B	US	parent	Core destroyed	181	0	210	470

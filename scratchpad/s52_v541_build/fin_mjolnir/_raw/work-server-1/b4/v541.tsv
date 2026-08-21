@@ -1,0 +1,31 @@
+tag	map	seed	seat	ours	winner	cond	turn	tracebacks	ours_mined	opp_mined
+atoll_s13_A	atoll	13	A	OPP	mjolnir	Core destroyed	222	0	630	1780
+atoll_s13_B	atoll	13	B	OPP	mjolnir	Core destroyed	96	0	250	380
+atoll_s14_A	atoll	14	A	OPP	mjolnir	Titanium collected (tiebreak)	1000	0	5760	11500
+atoll_s14_B	atoll	14	B	OPP	mjolnir	Core destroyed	96	0	250	380
+atoll_s15_A	atoll	15	A	OPP	mjolnir	Titanium collected (tiebreak)	1000	0	5760	11500
+atoll_s15_B	atoll	15	B	OPP	mjolnir	Core destroyed	96	0	250	380
+drakkarfjord_s13_A	drakkarfjord	13	A	US	v541	Core destroyed	109	0	440	0
+drakkarfjord_s13_B	drakkarfjord	13	B	US	v541	Core destroyed	306	0	1790	0
+drakkarfjord_s14_A	drakkarfjord	14	A	US	v541	Core destroyed	109	0	440	0
+drakkarfjord_s14_B	drakkarfjord	14	B	US	v541	Core destroyed	295	0	1860	0
+drakkarfjord_s15_A	drakkarfjord	15	A	US	v541	Core destroyed	109	0	440	0
+drakkarfjord_s15_B	drakkarfjord	15	B	US	v541	Core destroyed	295	0	1860	0
+glacierkeep_s13_A	glacierkeep	13	A	US	v541	Core destroyed	569	0	0	690
+glacierkeep_s13_B	glacierkeep	13	B	US	v541	Core destroyed	412	0	550	590
+glacierkeep_s14_A	glacierkeep	14	A	US	v541	Core destroyed	569	0	0	690
+glacierkeep_s14_B	glacierkeep	14	B	US	v541	Core destroyed	412	0	550	590
+glacierkeep_s15_A	glacierkeep	15	A	US	v541	Core destroyed	569	0	0	690
+glacierkeep_s15_B	glacierkeep	15	B	US	v541	Core destroyed	412	0	550	590
+midgard_s13_A	midgard	13	A	US	v541	Core destroyed	134	0	1140	800
+midgard_s13_B	midgard	13	B	OPP	mjolnir	Core destroyed	405	0	4710	4190
+midgard_s14_A	midgard	14	A	US	v541	Core destroyed	134	0	1140	800
+midgard_s14_B	midgard	14	B	OPP	mjolnir	Core destroyed	405	0	4710	4190
+midgard_s15_A	midgard	15	A	US	v541	Core destroyed	134	0	1140	800
+midgard_s15_B	midgard	15	B	OPP	mjolnir	Core destroyed	405	0	4710	4190
+nordkap_s13_A	nordkap	13	A	US	v541	Core destroyed	218	0	770	20
+nordkap_s13_B	nordkap	13	B	OPP	mjolnir	Core destroyed	556	0	2790	4470
+nordkap_s14_A	nordkap	14	A	US	v541	Core destroyed	218	0	770	20
+nordkap_s14_B	nordkap	14	B	OPP	mjolnir	Core destroyed	556	0	2790	4470
+nordkap_s15_A	nordkap	15	A	US	v541	Core destroyed	218	0	770	20
+nordkap_s15_B	nordkap	15	B	OPP	mjolnir	Core destroyed	556	0	2790	4470

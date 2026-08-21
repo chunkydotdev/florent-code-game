@@ -1,0 +1,31 @@
+tag	map	seed	seat	ours	winner	cond	turn	tracebacks	ours_mined	opp_mined
+atoll_s1_A	atoll	1	A	US	_v541quiet	Core destroyed	316	0	2810	2600
+atoll_s1_B	atoll	1	B	US	_v541quiet	Core destroyed	278	0	1180	1260
+atoll_s2_A	atoll	2	A	US	_v541quiet	Core destroyed	532	0	2240	150
+atoll_s2_B	atoll	2	B	US	_v541quiet	Titanium collected (tiebreak)	1000	0	370	220
+atoll_s3_A	atoll	3	A	OPP	_v488beltbreak2	Core destroyed	377	0	1310	3260
+atoll_s3_B	atoll	3	B	US	_v541quiet	Core destroyed	182	0	880	720
+drakkarfjord_s1_A	drakkarfjord	1	A	US	_v541quiet	Core destroyed	124	0	280	0
+drakkarfjord_s1_B	drakkarfjord	1	B	US	_v541quiet	Core destroyed	97	0	320	0
+drakkarfjord_s2_A	drakkarfjord	2	A	US	_v541quiet	Core destroyed	88	0	310	0
+drakkarfjord_s2_B	drakkarfjord	2	B	US	_v541quiet	Core destroyed	150	0	990	0
+drakkarfjord_s3_A	drakkarfjord	3	A	US	_v541quiet	Core destroyed	102	0	420	0
+drakkarfjord_s3_B	drakkarfjord	3	B	US	_v541quiet	Core destroyed	97	0	280	0
+glacierkeep_s1_A	glacierkeep	1	A	US	_v541quiet	Titanium collected (tiebreak)	1000	0	210	0
+glacierkeep_s1_B	glacierkeep	1	B	US	_v541quiet	Core destroyed	257	0	0	0
+glacierkeep_s2_A	glacierkeep	2	A	US	_v541quiet	Core destroyed	333	0	2670	0
+glacierkeep_s2_B	glacierkeep	2	B	US	_v541quiet	Core destroyed	217	0	0	0
+glacierkeep_s3_A	glacierkeep	3	A	US	_v541quiet	Core destroyed	135	0	360	0
+glacierkeep_s3_B	glacierkeep	3	B	US	_v541quiet	Core destroyed	253	0	0	0
+midgard_s1_A	midgard	1	A	US	_v541quiet	Core destroyed	277	0	910	690
+midgard_s1_B	midgard	1	B	OPP	_v488beltbreak2	Titanium collected (tiebreak)	1000	0	630	2940
+midgard_s2_A	midgard	2	A	OPP	_v488beltbreak2	Core destroyed	327	0	770	1670
+midgard_s2_B	midgard	2	B	US	_v541quiet	Core destroyed	228	0	1360	780
+midgard_s3_A	midgard	3	A	OPP	_v488beltbreak2	Core destroyed	599	0	620	2070
+midgard_s3_B	midgard	3	B	US	_v541quiet	Core destroyed	240	0	1940	730
+nordkap_s1_A	nordkap	1	A	US	_v541quiet	Core destroyed	161	0	130	70
+nordkap_s1_B	nordkap	1	B	US	_v541quiet	Core destroyed	251	0	600	370
+nordkap_s2_A	nordkap	2	A	US	_v541quiet	Core destroyed	95	0	230	0
+nordkap_s2_B	nordkap	2	B	US	_v541quiet	Core destroyed	251	0	3170	660
+nordkap_s3_A	nordkap	3	A	US	_v541quiet	Core destroyed	157	0	440	80
+nordkap_s3_B	nordkap	3	B	US	_v541quiet	Core destroyed	294	0	2280	2480

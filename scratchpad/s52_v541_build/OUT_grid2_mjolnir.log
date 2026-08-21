@@ -1,0 +1,32 @@
+2026-08-21T08:19:41Z capacity: work-server-1  arms=2 x par=5 = 10 <= our_cores 10  OK
+2026-08-21T08:19:41Z PLAN runid=s52v541mj2
+2026-08-21T08:19:41Z   arms=_v541quiet,parent opp=_x3r0v173mjolnir
+2026-08-21T08:19:41Z   maps=5 seeds=18 blocks=6 par=5 -> 180 rows/arm, 360 total
+2026-08-21T08:19:41Z   work-server-1    blocks=[0, 1, 2, 3, 4, 5] rows=360
+2026-08-21T08:19:41Z   out=/Users/junghard/Projects/Work/florent-code-game/scratchpad/s52_v541_build/grid2_mjolnir
+2026-08-21T08:19:41Z host work-server-1: nproc=16 load=6.39 corefill_workers=0 fcode=2.3.6(pin ok)
+2026-08-21T08:19:42Z shipped to work-server-1:fcode-build/s52v541mj2 — 2 arms, opp _x3r0v173mjolnir, 5 maps, 6 blocks
+2026-08-21T08:19:42Z LAUNCHED work-server-1 pid=1099070 root=fcode-build/s52v541mj2
+2026-08-21T08:19:42Z PIDS: work-server-1=1099070
+2026-08-21T08:20:03Z   work-server-1    rows=0/360 state=STARTING driver=ALIVE
+2026-08-21T08:20:23Z   work-server-1    rows=60/360 state=RUNNING driver=ALIVE
+2026-08-21T08:20:43Z   work-server-1    rows=60/360 state=RUNNING driver=ALIVE
+2026-08-21T08:21:03Z   work-server-1    rows=120/360 state=RUNNING driver=ALIVE
+2026-08-21T08:21:24Z   work-server-1    rows=180/360 state=RUNNING driver=ALIVE
+2026-08-21T08:21:44Z   work-server-1    rows=180/360 state=RUNNING driver=ALIVE
+2026-08-21T08:22:04Z   work-server-1    rows=240/360 state=RUNNING driver=ALIVE
+2026-08-21T08:22:24Z   work-server-1    rows=240/360 state=RUNNING driver=ALIVE
+2026-08-21T08:22:44Z   work-server-1    rows=300/360 state=RUNNING driver=ALIVE
+2026-08-21T08:23:05Z   work-server-1    rows=360/360 state=COMPLETE driver=DEAD
+2026-08-21T08:23:06Z   runid  s52v541mj2
+2026-08-21T08:23:06Z   generated  2026-08-21T08:23:06Z
+2026-08-21T08:23:06Z   hosts  work-server-1
+2026-08-21T08:23:06Z   opp  _x3r0v173mjolnir
+2026-08-21T08:23:06Z   maps  atoll,drakkarfjord,glacierkeep,midgard,nordkap
+2026-08-21T08:23:06Z   seeds  1-18
+2026-08-21T08:23:06Z   par  5
+2026-08-21T08:23:06Z   planned_rows_per_arm  180
+2026-08-21T08:23:06Z   arm  _v541quiet  delivered  180  planned  180  COMPLETE
+2026-08-21T08:23:06Z   arm  parent  delivered  180  planned  180  COMPLETE
+2026-08-21T08:23:06Z cleanup work-server-1: CLEANED
+2026-08-21T08:23:06Z COMPLETE — 180 rows/arm on each of 2 arms. Read it: .venv/bin/python <build>/summarise.py <name> /Users/junghard/Projects/Work/florent-code-game/scratchpad/s52_v541_build/grid2_mjolnir/<arm>.tsv

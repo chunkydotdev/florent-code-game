@@ -1,0 +1,31 @@
+tag	map	seed	seat	ours	winner	cond	turn	tracebacks	ours_mined	opp_mined
+atoll_s13_A	atoll	13	A	OPP	_x3r0v173mjolnir	Core destroyed	145	0	140	510
+atoll_s13_B	atoll	13	B	OPP	_x3r0v173mjolnir	Core destroyed	167	0	430	340
+atoll_s14_A	atoll	14	A	US	_v541quiet	Core destroyed	382	0	2960	1340
+atoll_s14_B	atoll	14	B	OPP	_x3r0v173mjolnir	Core destroyed	95	0	250	430
+atoll_s15_A	atoll	15	A	OPP	_x3r0v173mjolnir	Core destroyed	122	0	100	540
+atoll_s15_B	atoll	15	B	OPP	_x3r0v173mjolnir	Core destroyed	183	0	470	870
+drakkarfjord_s13_A	drakkarfjord	13	A	US	_v541quiet	Core destroyed	161	0	700	0
+drakkarfjord_s13_B	drakkarfjord	13	B	OPP	_x3r0v173mjolnir	Titanium collected (tiebreak)	1000	0	1490	3360
+drakkarfjord_s14_A	drakkarfjord	14	A	US	_v541quiet	Core destroyed	107	0	430	0
+drakkarfjord_s14_B	drakkarfjord	14	B	US	_v541quiet	Titanium collected (tiebreak)	1000	0	180	0
+drakkarfjord_s15_A	drakkarfjord	15	A	US	_v541quiet	Core destroyed	238	0	1280	0
+drakkarfjord_s15_B	drakkarfjord	15	B	OPP	_x3r0v173mjolnir	Core destroyed	685	0	200	0
+glacierkeep_s13_A	glacierkeep	13	A	US	_v541quiet	Core destroyed	506	0	2600	0
+glacierkeep_s13_B	glacierkeep	13	B	US	_v541quiet	Core destroyed	277	0	0	0
+glacierkeep_s14_A	glacierkeep	14	A	US	_v541quiet	Core destroyed	722	0	1700	0
+glacierkeep_s14_B	glacierkeep	14	B	OPP	_x3r0v173mjolnir	Core destroyed	463	0	0	760
+glacierkeep_s15_A	glacierkeep	15	A	OPP	_x3r0v173mjolnir	Core destroyed	532	0	270	4980
+glacierkeep_s15_B	glacierkeep	15	B	OPP	_x3r0v173mjolnir	Titanium collected (tiebreak)	1000	0	0	6070
+midgard_s13_A	midgard	13	A	OPP	_x3r0v173mjolnir	Core destroyed	98	0	230	720
+midgard_s13_B	midgard	13	B	US	_v541quiet	Core destroyed	186	0	1810	1290
+midgard_s14_A	midgard	14	A	OPP	_x3r0v173mjolnir	Core destroyed	224	0	1890	1790
+midgard_s14_B	midgard	14	B	US	_v541quiet	Titanium collected (tiebreak)	1000	0	780	630
+midgard_s15_A	midgard	15	A	OPP	_x3r0v173mjolnir	Core destroyed	158	0	870	1460
+midgard_s15_B	midgard	15	B	OPP	_x3r0v173mjolnir	Core destroyed	409	0	4950	4310
+nordkap_s13_A	nordkap	13	A	US	_v541quiet	Core destroyed	724	0	1430	20
+nordkap_s13_B	nordkap	13	B	US	_v541quiet	Core destroyed	354	0	2620	280
+nordkap_s14_A	nordkap	14	A	US	_v541quiet	Core destroyed	292	0	1090	20
+nordkap_s14_B	nordkap	14	B	US	_v541quiet	Core destroyed	200	0	930	550
+nordkap_s15_A	nordkap	15	A	US	_v541quiet	Core destroyed	160	0	380	20
+nordkap_s15_B	nordkap	15	B	US	_v541quiet	Core destroyed	154	0	700	510

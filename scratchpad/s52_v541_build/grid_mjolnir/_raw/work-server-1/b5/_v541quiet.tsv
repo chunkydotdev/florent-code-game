@@ -1,0 +1,31 @@
+tag	map	seed	seat	ours	winner	cond	turn	tracebacks	ours_mined	opp_mined
+atoll_s16_A	atoll	16	A	OPP	_x3r0v173mjolnir	Core destroyed	196	0	370	900
+atoll_s16_B	atoll	16	B	OPP	_x3r0v173mjolnir	Core destroyed	121	0	310	480
+atoll_s17_A	atoll	17	A	OPP	_x3r0v173mjolnir	Core destroyed	102	0	250	370
+atoll_s17_B	atoll	17	B	OPP	_x3r0v173mjolnir	Core destroyed	147	0	380	530
+atoll_s18_A	atoll	18	A	OPP	_x3r0v173mjolnir	Core destroyed	200	0	340	1500
+atoll_s18_B	atoll	18	B	OPP	_x3r0v173mjolnir	Core destroyed	167	0	430	340
+drakkarfjord_s16_A	drakkarfjord	16	A	US	_v541quiet	Core destroyed	273	0	1260	0
+drakkarfjord_s16_B	drakkarfjord	16	B	US	_v541quiet	Titanium collected (tiebreak)	1000	0	210	0
+drakkarfjord_s17_A	drakkarfjord	17	A	OPP	_x3r0v173mjolnir	Core destroyed	526	0	4110	6520
+drakkarfjord_s17_B	drakkarfjord	17	B	US	_v541quiet	Core destroyed	307	0	1810	0
+drakkarfjord_s18_A	drakkarfjord	18	A	US	_v541quiet	Core destroyed	237	0	1080	630
+drakkarfjord_s18_B	drakkarfjord	18	B	US	_v541quiet	Titanium collected (tiebreak)	1000	0	180	0
+glacierkeep_s16_A	glacierkeep	16	A	US	_v541quiet	Titanium stored (tiebreak)	1000	0	0	0
+glacierkeep_s16_B	glacierkeep	16	B	OPP	_x3r0v173mjolnir	Core destroyed	534	0	0	700
+glacierkeep_s17_A	glacierkeep	17	A	OPP	_x3r0v173mjolnir	Core destroyed	324	0	0	1240
+glacierkeep_s17_B	glacierkeep	17	B	OPP	_x3r0v173mjolnir	Core destroyed	713	0	0	7230
+glacierkeep_s18_A	glacierkeep	18	A	US	_v541quiet	Harvesters (tiebreak)	1000	0	0	0
+glacierkeep_s18_B	glacierkeep	18	B	OPP	_x3r0v173mjolnir	Core destroyed	339	0	0	950
+midgard_s16_A	midgard	16	A	OPP	_x3r0v173mjolnir	Core destroyed	305	0	1710	1470
+midgard_s16_B	midgard	16	B	US	_v541quiet	Core destroyed	451	0	2190	890
+midgard_s17_A	midgard	17	A	OPP	_x3r0v173mjolnir	Core destroyed	174	0	1000	1640
+midgard_s17_B	midgard	17	B	OPP	_x3r0v173mjolnir	Core destroyed	187	0	780	1310
+midgard_s18_A	midgard	18	A	OPP	_x3r0v173mjolnir	Core destroyed	422	0	1530	2410
+midgard_s18_B	midgard	18	B	US	_v541quiet	Core destroyed	300	0	3120	820
+nordkap_s16_A	nordkap	16	A	OPP	_x3r0v173mjolnir	Core destroyed	577	0	260	520
+nordkap_s16_B	nordkap	16	B	US	_v541quiet	Core destroyed	903	0	3620	120
+nordkap_s17_A	nordkap	17	A	US	_v541quiet	Core destroyed	745	0	100	20
+nordkap_s17_B	nordkap	17	B	US	_v541quiet	Core destroyed	200	0	930	550
+nordkap_s18_A	nordkap	18	A	US	_v541quiet	Core destroyed	308	0	2540	110
+nordkap_s18_B	nordkap	18	B	US	_v541quiet	Core destroyed	234	0	1090	420

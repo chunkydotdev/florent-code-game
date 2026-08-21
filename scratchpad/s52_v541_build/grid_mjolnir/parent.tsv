@@ -1,0 +1,181 @@
+tag	map	seed	seat	ours	winner	cond	turn	tracebacks	ours_mined	opp_mined
+atoll_s1_A	atoll	1	A	OPP	_x3r0v173mjolnir	Core destroyed	243	0	600	1510
+atoll_s1_B	atoll	1	B	OPP	_x3r0v173mjolnir	Core destroyed	147	0	380	530
+atoll_s2_A	atoll	2	A	OPP	_x3r0v173mjolnir	Core destroyed	361	0	900	270
+atoll_s2_B	atoll	2	B	US	parent	Core destroyed	227	0	580	500
+atoll_s3_A	atoll	3	A	OPP	_x3r0v173mjolnir	Core destroyed	159	0	390	870
+atoll_s3_B	atoll	3	B	OPP	_x3r0v173mjolnir	Core destroyed	95	0	250	430
+drakkarfjord_s1_A	drakkarfjord	1	A	US	parent	Core destroyed	109	0	440	0
+drakkarfjord_s1_B	drakkarfjord	1	B	US	parent	Core destroyed	261	0	230	0
+drakkarfjord_s2_A	drakkarfjord	2	A	US	parent	Core destroyed	238	0	1280	0
+drakkarfjord_s2_B	drakkarfjord	2	B	US	parent	Core destroyed	323	0	2390	0
+drakkarfjord_s3_A	drakkarfjord	3	A	US	parent	Core destroyed	238	0	1280	0
+drakkarfjord_s3_B	drakkarfjord	3	B	US	parent	Core destroyed	171	0	1000	0
+glacierkeep_s1_A	glacierkeep	1	A	OPP	_x3r0v173mjolnir	Titanium collected (tiebreak)	1000	0	0	4570
+glacierkeep_s1_B	glacierkeep	1	B	OPP	_x3r0v173mjolnir	Titanium collected (tiebreak)	1000	0	8100	10320
+glacierkeep_s2_A	glacierkeep	2	A	OPP	_x3r0v173mjolnir	Core destroyed	609	0	0	470
+glacierkeep_s2_B	glacierkeep	2	B	OPP	_x3r0v173mjolnir	Core destroyed	527	0	0	960
+glacierkeep_s3_A	glacierkeep	3	A	OPP	_x3r0v173mjolnir	Titanium collected (tiebreak)	1000	0	700	6880
+glacierkeep_s3_B	glacierkeep	3	B	OPP	_x3r0v173mjolnir	Core destroyed	577	0	0	3110
+midgard_s1_A	midgard	1	A	US	parent	Core destroyed	280	0	3160	1110
+midgard_s1_B	midgard	1	B	OPP	_x3r0v173mjolnir	Core destroyed	318	0	3050	3470
+midgard_s2_A	midgard	2	A	OPP	_x3r0v173mjolnir	Core destroyed	525	0	2850	2630
+midgard_s2_B	midgard	2	B	US	parent	Core destroyed	202	0	2110	1110
+midgard_s3_A	midgard	3	A	US	parent	Core destroyed	848	0	2550	1390
+midgard_s3_B	midgard	3	B	US	parent	Core destroyed	256	0	2940	560
+nordkap_s1_A	nordkap	1	A	US	parent	Core destroyed	301	0	230	20
+nordkap_s1_B	nordkap	1	B	OPP	_x3r0v173mjolnir	Core destroyed	581	0	2760	4420
+nordkap_s2_A	nordkap	2	A	US	parent	Core destroyed	264	0	680	20
+nordkap_s2_B	nordkap	2	B	OPP	_x3r0v173mjolnir	Core destroyed	471	0	2490	4700
+nordkap_s3_A	nordkap	3	A	US	parent	Core destroyed	241	0	2710	20
+nordkap_s3_B	nordkap	3	B	US	parent	Core destroyed	318	0	950	760
+atoll_s4_A	atoll	4	A	OPP	_x3r0v173mjolnir	Core destroyed	97	0	240	280
+atoll_s4_B	atoll	4	B	OPP	_x3r0v173mjolnir	Core destroyed	124	0	320	560
+atoll_s5_A	atoll	5	A	OPP	_x3r0v173mjolnir	Core destroyed	264	0	650	1510
+atoll_s5_B	atoll	5	B	OPP	_x3r0v173mjolnir	Core destroyed	95	0	250	430
+atoll_s6_A	atoll	6	A	OPP	_x3r0v173mjolnir	Titanium collected (tiebreak)	1000	0	140	2700
+atoll_s6_B	atoll	6	B	OPP	_x3r0v173mjolnir	Core destroyed	214	0	540	790
+drakkarfjord_s4_A	drakkarfjord	4	A	US	parent	Core destroyed	109	0	440	0
+drakkarfjord_s4_B	drakkarfjord	4	B	OPP	_x3r0v173mjolnir	Core destroyed	785	0	1390	350
+drakkarfjord_s5_A	drakkarfjord	5	A	OPP	_x3r0v173mjolnir	Core destroyed	451	0	3080	3820
+drakkarfjord_s5_B	drakkarfjord	5	B	US	parent	Core destroyed	388	0	3200	0
+drakkarfjord_s6_A	drakkarfjord	6	A	US	parent	Core destroyed	107	0	430	0
+drakkarfjord_s6_B	drakkarfjord	6	B	US	parent	Titanium collected (tiebreak)	1000	0	970	0
+glacierkeep_s4_A	glacierkeep	4	A	OPP	_x3r0v173mjolnir	Titanium collected (tiebreak)	1000	0	2810	4620
+glacierkeep_s4_B	glacierkeep	4	B	US	parent	Core destroyed	667	0	1870	0
+glacierkeep_s5_A	glacierkeep	5	A	US	parent	Core destroyed	313	0	0	0
+glacierkeep_s5_B	glacierkeep	5	B	OPP	_x3r0v173mjolnir	Core destroyed	718	0	2020	8360
+glacierkeep_s6_A	glacierkeep	6	A	US	parent	Harvesters (tiebreak)	1000	0	0	0
+glacierkeep_s6_B	glacierkeep	6	B	OPP	_x3r0v173mjolnir	Titanium collected (tiebreak)	1000	0	0	3790
+midgard_s4_A	midgard	4	A	OPP	_x3r0v173mjolnir	Core destroyed	282	0	970	2050
+midgard_s4_B	midgard	4	B	OPP	_x3r0v173mjolnir	Core destroyed	399	0	860	2380
+midgard_s5_A	midgard	5	A	OPP	_x3r0v173mjolnir	Core destroyed	193	0	1500	2060
+midgard_s5_B	midgard	5	B	US	parent	Core destroyed	391	0	4470	660
+midgard_s6_A	midgard	6	A	US	parent	Core destroyed	222	0	1950	710
+midgard_s6_B	midgard	6	B	US	parent	Core destroyed	140	0	1250	730
+nordkap_s4_A	nordkap	4	A	OPP	_x3r0v173mjolnir	Core destroyed	319	0	190	460
+nordkap_s4_B	nordkap	4	B	OPP	_x3r0v173mjolnir	Core destroyed	392	0	1010	1120
+nordkap_s5_A	nordkap	5	A	US	parent	Core destroyed	235	0	2040	260
+nordkap_s5_B	nordkap	5	B	US	parent	Core destroyed	200	0	1170	530
+nordkap_s6_A	nordkap	6	A	US	parent	Core destroyed	148	0	350	20
+nordkap_s6_B	nordkap	6	B	US	parent	Core destroyed	659	0	5240	1170
+atoll_s7_A	atoll	7	A	OPP	_x3r0v173mjolnir	Core destroyed	450	0	540	1230
+atoll_s7_B	atoll	7	B	OPP	_x3r0v173mjolnir	Core destroyed	121	0	310	480
+atoll_s8_A	atoll	8	A	OPP	_x3r0v173mjolnir	Core destroyed	122	0	300	360
+atoll_s8_B	atoll	8	B	OPP	_x3r0v173mjolnir	Core destroyed	122	0	310	440
+atoll_s9_A	atoll	9	A	OPP	_x3r0v173mjolnir	Core destroyed	184	0	410	1600
+atoll_s9_B	atoll	9	B	OPP	_x3r0v173mjolnir	Core destroyed	121	0	310	480
+drakkarfjord_s7_A	drakkarfjord	7	A	US	parent	Core destroyed	152	0	650	70
+drakkarfjord_s7_B	drakkarfjord	7	B	US	parent	Core destroyed	377	0	2720	0
+drakkarfjord_s8_A	drakkarfjord	8	A	US	parent	Core destroyed	390	0	1840	0
+drakkarfjord_s8_B	drakkarfjord	8	B	OPP	_x3r0v173mjolnir	Titanium collected (tiebreak)	1000	0	1470	3770
+drakkarfjord_s9_A	drakkarfjord	9	A	US	parent	Core destroyed	390	0	1840	0
+drakkarfjord_s9_B	drakkarfjord	9	B	OPP	_x3r0v173mjolnir	Core destroyed	685	0	200	0
+glacierkeep_s7_A	glacierkeep	7	A	OPP	_x3r0v173mjolnir	Titanium collected (tiebreak)	1000	0	0	320
+glacierkeep_s7_B	glacierkeep	7	B	OPP	_x3r0v173mjolnir	Titanium collected (tiebreak)	1000	0	0	1360
+glacierkeep_s8_A	glacierkeep	8	A	US	parent	Core destroyed	313	0	0	0
+glacierkeep_s8_B	glacierkeep	8	B	US	parent	Harvesters (tiebreak)	1000	0	0	0
+glacierkeep_s9_A	glacierkeep	9	A	OPP	_x3r0v173mjolnir	Titanium collected (tiebreak)	1000	0	0	160
+glacierkeep_s9_B	glacierkeep	9	B	US	parent	Core destroyed	341	0	0	0
+midgard_s7_A	midgard	7	A	OPP	_x3r0v173mjolnir	Core destroyed	98	0	230	780
+midgard_s7_B	midgard	7	B	US	parent	Core destroyed	140	0	1250	730
+midgard_s8_A	midgard	8	A	US	parent	Core destroyed	323	0	3010	690
+midgard_s8_B	midgard	8	B	US	parent	Core destroyed	256	0	2940	560
+midgard_s9_A	midgard	9	A	OPP	_x3r0v173mjolnir	Core destroyed	412	0	710	3130
+midgard_s9_B	midgard	9	B	US	parent	Core destroyed	203	0	2120	1160
+nordkap_s7_A	nordkap	7	A	US	parent	Core destroyed	753	0	2190	20
+nordkap_s7_B	nordkap	7	B	OPP	_x3r0v173mjolnir	Core destroyed	214	0	460	550
+nordkap_s8_A	nordkap	8	A	OPP	_x3r0v173mjolnir	Core destroyed	196	0	170	630
+nordkap_s8_B	nordkap	8	B	OPP	_x3r0v173mjolnir	Core destroyed	214	0	460	550
+nordkap_s9_A	nordkap	9	A	US	parent	Core destroyed	569	0	3430	1690
+nordkap_s9_B	nordkap	9	B	US	parent	Core destroyed	635	0	4880	1170
+atoll_s10_A	atoll	10	A	OPP	_x3r0v173mjolnir	Core destroyed	229	0	400	890
+atoll_s10_B	atoll	10	B	US	parent	Core destroyed	227	0	580	500
+atoll_s11_A	atoll	11	A	OPP	_x3r0v173mjolnir	Core destroyed	262	0	750	1940
+atoll_s11_B	atoll	11	B	OPP	_x3r0v173mjolnir	Core destroyed	124	0	320	560
+atoll_s12_A	atoll	12	A	OPP	_x3r0v173mjolnir	Core destroyed	709	0	3270	3370
+atoll_s12_B	atoll	12	B	OPP	_x3r0v173mjolnir	Core destroyed	167	0	430	340
+drakkarfjord_s10_A	drakkarfjord	10	A	US	parent	Core destroyed	152	0	650	70
+drakkarfjord_s10_B	drakkarfjord	10	B	US	parent	Titanium collected (tiebreak)	1000	0	1460	0
+drakkarfjord_s11_A	drakkarfjord	11	A	US	parent	Core destroyed	390	0	1840	0
+drakkarfjord_s11_B	drakkarfjord	11	B	US	parent	Core destroyed	377	0	2720	0
+drakkarfjord_s12_A	drakkarfjord	12	A	US	parent	Core destroyed	847	0	5290	8580
+drakkarfjord_s12_B	drakkarfjord	12	B	US	parent	Titanium collected (tiebreak)	1000	0	210	0
+glacierkeep_s10_A	glacierkeep	10	A	US	parent	Harvesters (tiebreak)	1000	0	0	0
+glacierkeep_s10_B	glacierkeep	10	B	OPP	_x3r0v173mjolnir	Core destroyed	413	0	0	620
+glacierkeep_s11_A	glacierkeep	11	A	OPP	_x3r0v173mjolnir	Core destroyed	717	0	0	0
+glacierkeep_s11_B	glacierkeep	11	B	OPP	_x3r0v173mjolnir	Titanium collected (tiebreak)	1000	0	340	880
+glacierkeep_s12_A	glacierkeep	12	A	OPP	_x3r0v173mjolnir	Titanium collected (tiebreak)	1000	0	0	3510
+glacierkeep_s12_B	glacierkeep	12	B	OPP	_x3r0v173mjolnir	Core destroyed	582	0	0	2970
+midgard_s10_A	midgard	10	A	US	parent	Core destroyed	237	0	1960	890
+midgard_s10_B	midgard	10	B	US	parent	Core destroyed	204	0	1450	1390
+midgard_s11_A	midgard	11	A	US	parent	Core destroyed	187	0	1420	750
+midgard_s11_B	midgard	11	B	US	parent	Core destroyed	223	0	1980	1190
+midgard_s12_A	midgard	12	A	OPP	_x3r0v173mjolnir	Core destroyed	151	0	1100	1050
+midgard_s12_B	midgard	12	B	US	parent	Core destroyed	259	0	2630	630
+nordkap_s10_A	nordkap	10	A	US	parent	Core destroyed	281	0	90	20
+nordkap_s10_B	nordkap	10	B	US	parent	Core destroyed	597	0	320	250
+nordkap_s11_A	nordkap	11	A	US	parent	Core destroyed	357	0	170	30
+nordkap_s11_B	nordkap	11	B	US	parent	Core destroyed	318	0	950	760
+nordkap_s12_A	nordkap	12	A	OPP	_x3r0v173mjolnir	Core destroyed	320	0	1870	2130
+nordkap_s12_B	nordkap	12	B	US	parent	Core destroyed	519	0	3360	1170
+atoll_s13_A	atoll	13	A	OPP	_x3r0v173mjolnir	Core destroyed	384	0	1220	1470
+atoll_s13_B	atoll	13	B	OPP	_x3r0v173mjolnir	Core destroyed	134	0	340	490
+atoll_s14_A	atoll	14	A	OPP	_x3r0v173mjolnir	Core destroyed	177	0	170	660
+atoll_s14_B	atoll	14	B	OPP	_x3r0v173mjolnir	Core destroyed	95	0	250	430
+atoll_s15_A	atoll	15	A	OPP	_x3r0v173mjolnir	Core destroyed	159	0	390	870
+atoll_s15_B	atoll	15	B	OPP	_x3r0v173mjolnir	Core destroyed	121	0	310	480
+drakkarfjord_s13_A	drakkarfjord	13	A	US	parent	Core destroyed	109	0	440	0
+drakkarfjord_s13_B	drakkarfjord	13	B	US	parent	Core destroyed	171	0	1000	0
+drakkarfjord_s14_A	drakkarfjord	14	A	US	parent	Core destroyed	390	0	1840	0
+drakkarfjord_s14_B	drakkarfjord	14	B	US	parent	Core destroyed	688	0	200	0
+drakkarfjord_s15_A	drakkarfjord	15	A	US	parent	Core destroyed	194	0	860	0
+drakkarfjord_s15_B	drakkarfjord	15	B	US	parent	Core destroyed	323	0	2390	0
+glacierkeep_s13_A	glacierkeep	13	A	US	parent	Core destroyed	413	0	0	0
+glacierkeep_s13_B	glacierkeep	13	B	OPP	_x3r0v173mjolnir	Titanium collected (tiebreak)	1000	0	7140	8200
+glacierkeep_s14_A	glacierkeep	14	A	US	parent	Harvesters (tiebreak)	1000	0	0	0
+glacierkeep_s14_B	glacierkeep	14	B	OPP	_x3r0v173mjolnir	Titanium collected (tiebreak)	1000	0	2130	5450
+glacierkeep_s15_A	glacierkeep	15	A	US	parent	Core destroyed	445	0	0	0
+glacierkeep_s15_B	glacierkeep	15	B	OPP	_x3r0v173mjolnir	Core destroyed	352	0	0	700
+midgard_s13_A	midgard	13	A	OPP	_x3r0v173mjolnir	Core destroyed	159	0	800	1480
+midgard_s13_B	midgard	13	B	US	parent	Core destroyed	205	0	1480	620
+midgard_s14_A	midgard	14	A	OPP	_x3r0v173mjolnir	Core destroyed	393	0	710	2980
+midgard_s14_B	midgard	14	B	US	parent	Core destroyed	227	0	2420	1220
+midgard_s15_A	midgard	15	A	OPP	_x3r0v173mjolnir	Core destroyed	243	0	980	1630
+midgard_s15_B	midgard	15	B	OPP	_x3r0v173mjolnir	Core destroyed	490	0	4770	5730
+nordkap_s13_A	nordkap	13	A	US	parent	Core destroyed	357	0	330	20
+nordkap_s13_B	nordkap	13	B	OPP	_x3r0v173mjolnir	Core destroyed	347	0	1720	3260
+nordkap_s14_A	nordkap	14	A	US	parent	Core destroyed	470	0	2050	160
+nordkap_s14_B	nordkap	14	B	US	parent	Core destroyed	243	0	1530	810
+nordkap_s15_A	nordkap	15	A	US	parent	Core destroyed	156	0	370	20
+nordkap_s15_B	nordkap	15	B	OPP	_x3r0v173mjolnir	Core destroyed	347	0	1720	3260
+atoll_s16_A	atoll	16	A	OPP	_x3r0v173mjolnir	Core destroyed	136	0	370	350
+atoll_s16_B	atoll	16	B	OPP	_x3r0v173mjolnir	Core destroyed	121	0	310	480
+atoll_s17_A	atoll	17	A	US	parent	Core destroyed	381	0	2970	1850
+atoll_s17_B	atoll	17	B	OPP	_x3r0v173mjolnir	Core destroyed	121	0	310	480
+atoll_s18_A	atoll	18	A	OPP	_x3r0v173mjolnir	Titanium collected (tiebreak)	1000	0	140	2700
+atoll_s18_B	atoll	18	B	OPP	_x3r0v173mjolnir	Core destroyed	92	0	240	400
+drakkarfjord_s16_A	drakkarfjord	16	A	US	parent	Core destroyed	161	0	700	0
+drakkarfjord_s16_B	drakkarfjord	16	B	US	parent	Core destroyed	688	0	200	0
+drakkarfjord_s17_A	drakkarfjord	17	A	US	parent	Core destroyed	237	0	1080	630
+drakkarfjord_s17_B	drakkarfjord	17	B	US	parent	Core destroyed	261	0	230	0
+drakkarfjord_s18_A	drakkarfjord	18	A	US	parent	Core destroyed	107	0	430	0
+drakkarfjord_s18_B	drakkarfjord	18	B	US	parent	Core destroyed	307	0	1810	0
+glacierkeep_s16_A	glacierkeep	16	A	OPP	_x3r0v173mjolnir	Core destroyed	290	0	0	1960
+glacierkeep_s16_B	glacierkeep	16	B	OPP	_x3r0v173mjolnir	Core destroyed	561	0	0	2210
+glacierkeep_s17_A	glacierkeep	17	A	US	parent	Core destroyed	445	0	0	0
+glacierkeep_s17_B	glacierkeep	17	B	US	parent	Core destroyed	373	0	0	0
+glacierkeep_s18_A	glacierkeep	18	A	OPP	_x3r0v173mjolnir	Core destroyed	733	0	0	0
+glacierkeep_s18_B	glacierkeep	18	B	OPP	_x3r0v173mjolnir	Core destroyed	533	0	3860	6940
+midgard_s16_A	midgard	16	A	OPP	_x3r0v173mjolnir	Core destroyed	155	0	720	1440
+midgard_s16_B	midgard	16	B	OPP	_x3r0v173mjolnir	Core destroyed	262	0	2390	2170
+midgard_s17_A	midgard	17	A	OPP	_x3r0v173mjolnir	Titanium collected (tiebreak)	1000	0	2850	5210
+midgard_s17_B	midgard	17	B	US	parent	Core destroyed	204	0	2130	1190
+midgard_s18_A	midgard	18	A	OPP	_x3r0v173mjolnir	Core destroyed	155	0	720	1440
+midgard_s18_B	midgard	18	B	US	parent	Core destroyed	201	0	1380	1080
+nordkap_s16_A	nordkap	16	A	US	parent	Core destroyed	437	0	1580	20
+nordkap_s16_B	nordkap	16	B	US	parent	Core destroyed	200	0	930	550
+nordkap_s17_A	nordkap	17	A	US	parent	Core destroyed	237	0	1230	410
+nordkap_s17_B	nordkap	17	B	OPP	_x3r0v173mjolnir	Core destroyed	170	0	300	790
+nordkap_s18_A	nordkap	18	A	US	parent	Core destroyed	148	0	350	20
+nordkap_s18_B	nordkap	18	B	US	parent	Core destroyed	217	0	270	270

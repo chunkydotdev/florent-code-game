@@ -1,0 +1,2 @@
+scanned 5 files under bots/_v541quiet: doctrine.py, eco.py, main.py, raid.py, siege.py
+CLEAN -- R1/R2/R3 all satisfied (master=FS_V541_ATTACK, 6 subordinate flags)

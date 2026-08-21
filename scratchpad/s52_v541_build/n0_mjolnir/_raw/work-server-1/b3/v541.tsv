@@ -1,0 +1,31 @@
+tag	map	seed	seat	ours	winner	cond	turn	tracebacks	ours_mined	opp_mined
+atoll_s10_A	atoll	10	A	OPP	mjolnir	Core destroyed	222	0	630	1780
+atoll_s10_B	atoll	10	B	OPP	mjolnir	Core destroyed	96	0	250	380
+atoll_s11_A	atoll	11	A	OPP	mjolnir	Titanium collected (tiebreak)	1000	0	5760	11500
+atoll_s11_B	atoll	11	B	OPP	mjolnir	Core destroyed	96	0	250	380
+atoll_s12_A	atoll	12	A	OPP	mjolnir	Core destroyed	222	0	630	1780
+atoll_s12_B	atoll	12	B	OPP	mjolnir	Core destroyed	96	0	250	380
+drakkarfjord_s10_A	drakkarfjord	10	A	US	v541	Core destroyed	109	0	440	0
+drakkarfjord_s10_B	drakkarfjord	10	B	US	v541	Core destroyed	306	0	1790	0
+drakkarfjord_s11_A	drakkarfjord	11	A	US	v541	Core destroyed	109	0	440	0
+drakkarfjord_s11_B	drakkarfjord	11	B	US	v541	Core destroyed	295	0	1860	0
+drakkarfjord_s12_A	drakkarfjord	12	A	US	v541	Core destroyed	109	0	440	0
+drakkarfjord_s12_B	drakkarfjord	12	B	US	v541	Core destroyed	306	0	1790	0
+glacierkeep_s10_A	glacierkeep	10	A	US	v541	Core destroyed	569	0	0	690
+glacierkeep_s10_B	glacierkeep	10	B	US	v541	Core destroyed	412	0	550	590
+glacierkeep_s11_A	glacierkeep	11	A	US	v541	Core destroyed	569	0	0	690
+glacierkeep_s11_B	glacierkeep	11	B	US	v541	Core destroyed	412	0	550	590
+glacierkeep_s12_A	glacierkeep	12	A	US	v541	Core destroyed	569	0	0	690
+glacierkeep_s12_B	glacierkeep	12	B	US	v541	Core destroyed	412	0	550	590
+midgard_s10_A	midgard	10	A	US	v541	Core destroyed	136	0	1160	960
+midgard_s10_B	midgard	10	B	OPP	mjolnir	Core destroyed	405	0	4710	4190
+midgard_s11_A	midgard	11	A	US	v541	Core destroyed	136	0	1160	960
+midgard_s11_B	midgard	11	B	OPP	mjolnir	Core destroyed	405	0	4710	4190
+midgard_s12_A	midgard	12	A	US	v541	Core destroyed	136	0	1160	960
+midgard_s12_B	midgard	12	B	OPP	mjolnir	Core destroyed	405	0	4710	4190
+nordkap_s10_A	nordkap	10	A	US	v541	Core destroyed	218	0	770	20
+nordkap_s10_B	nordkap	10	B	OPP	mjolnir	Core destroyed	619	0	3320	4820
+nordkap_s11_A	nordkap	11	A	US	v541	Core destroyed	218	0	770	20
+nordkap_s11_B	nordkap	11	B	US	v541	Core destroyed	694	0	3840	6000
+nordkap_s12_A	nordkap	12	A	US	v541	Core destroyed	218	0	770	20
+nordkap_s12_B	nordkap	12	B	US	v541	Core destroyed	550	0	2860	3740

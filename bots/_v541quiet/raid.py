@@ -1,0 +1,1454 @@
+"""LOKI-1 raid layer -- THE COLLAR.  Ablatable as a unit: delete this module's
+call sites in main.py and what remains is a plain economy bot.
+
+THE PROBLEM THIS EXISTS FOR (pre-registered target).  Against opponents rated
+>=1550 our per-window kill hazard runs 15.1 / 5.9 / 7.7 / 9.8 % over r0-150,
+r150-200, r200-300, r300+, while theirs runs 9.8 / 5.9 / 12.5 / 40.9 %.  The
+ratio is 1.54 early and 0.62 by r200-300.  We START kills fine -- 29.8% of
+games produce one, median r148 -- and then fail to CLOSE about 70% of them.
+So the job is CLOSING, and TIME IS THEIR ASSET: any design that merely
+lengthens games moves us into the window where they convert four times better.
+
+WHY SIEGES DON'T CLOSE, in one number.  A builder heals +4 HP for 1 Ti, every
+round, from any of the eight tiles orthogonally adjacent to the 2x2 footprint.
+That is 0.25 Ti per HP against roughly 0.56 for any attacker.  Measured over 14
+decoded ladder games the NET HP to kill a Core is a stable 500-512 while the
+RAW hits landed ranged from 28 to 1206 -- a 43x spread that is entirely the
+defender's heal line.  A siege that is not out-healing the defender is not
+making progress however long it runs, and ours was not.
+
+THE MECHANISM.  Those same eight tiles are ALSO the only tiles a conveyor can
+deliver into a Core from, and eight of the twelve tiles it can spawn a builder
+onto.  They are a single chokepoint for healing, income and reinforcement.  A
+BARRIER is 3 Ti for 30 HP and is bot-impassable; breaking one costs 15 builder
+pecks at 2 Ti each, i.e. 30 Ti and 15 rounds of a body -- a 10:1 exchange in
+our favour, and every round they spend pecking is a round they are not healing.
+A raider standing on one of the four DIAGONAL ring tiles is orthogonally
+adjacent to exactly the two seats flanking it and to no Core tile, so four
+corner raiders can seal all eight seats.  Sealed, the defender's heal rate is
+zero and every point of damage we land is permanent.
+
+The damage itself then comes from a forward SENTINEL.  This is not a turret
+preference, it is forced: barriers block line of sight, so a Gunner ray dies on
+our own collar, while the Sentinel line ignores obstacles and shoots THROUGH
+it.  18 damage on a 2-round reload is 6 HP/round against a defender who can no
+longer repair -- 500 HP in ~84 rounds.  Opened at the median kill-attempt round
+of r148 that lands inside r200-300, which is the window we are trying to move.
+
+COLD INSERTION vs FOOTHOLD REINFORCEMENT.  This file was first written with no
+round gate at all, on a brief that turned out to rest on a refuted premise.
+The corpus that refuted it (11,895 forward throws) shows median raider life
+after a throw collapsing 43 -> 6 rounds at exactly r150 and only 2.34% of
+r200+ throws ever landing one attack -- so sending a FRESH body on a long walk
+into intact defences is measurably dead late, and the incumbent's r180 cutoff
+was a correct constant justified by a wrong reason.  The other half of the same
+corpus is why this module still exists: of the 528 raiders that did land
+attacks, 25 produced half of all 40,114 attacks and 319 were on the WINNING
+team.  Establishment wins games; the throw does not.
+
+So the two are separated.  COLD INSERTION -- a raider that holds nothing
+walking at an undamaged ring -- is open only until LOKI_COLD_INSERT_RND.
+FOOTHOLD REINFORCEMENT -- any round in which some raider is still acting at the
+ring, published as a heartbeat in SLOT_RAID_LIVE -- has no cutoff at all,
+because that is precisely the state the winning raiders were in.  Everything
+this file does at the destination is a survival package for that state:
+barriers deposited on the first action after landing (value that outlives the
+body), those same barriers as LOS cover against Gunner rays, arrival spread
+across twelve stations rather than one, stations covered by a visible enemy
+Launcher scored down and banned after a throw, mutual healing between adjacent
+raiders, and a forward Sentinel -- a 40 HP BUILDING that keeps firing after
+every body in the raid is dead.
+"""
+import sys              # v541: the FS_V541_LOG tape only (stderr, local only)
+
+from fcode import Direction, EntityType, Position
+
+from doctrine import *  # noqa: F401,F403
+from eco import (
+    core_corners, core_tiles, dsq_core, enemy_core_for, heal_seats, unpack_pos,
+)
+
+# Hoisted: `_raid_peck` rebuilt its if-chain per tile and `_salt_turn` its
+# tuple per tile.  Same membership, same priorities.
+BELT_TYPES = frozenset((EntityType.CONVEYOR, EntityType.SPLITTER))
+TURRET_TYPES = frozenset((EntityType.GUNNER, EntityType.SENTINEL))
+
+# LOKI-BELTBREAK.  The SITING ladder of study §7.2, and it is deliberately
+# short: only the economy classes are a reason to spend 20 Ti and a +20% scale
+# contribution on a gunner planted in the enemy's half.  Everything absent from
+# this dict scores 0 and is REJECTED as a siting target -- the CORE included
+# (a gunner needs 72 shots / 288 ammo for a core and cannot even reach one from
+# the band), the BARRIER included (34.1% measured ammo leak).
+BB_SITE_VALUE = {
+    EntityType.HARVESTER: 100,
+    EntityType.CONVEYOR: 40,
+    EntityType.SPLITTER: 40,
+}
+# What a planted beltbreak gunner will SHOOT at.  Wider than the siting ladder
+# -- once the turret exists, a builder or turret standing on its ray is a free
+# 7 damage a round -- but never the CORE and never a BARRIER.
+BB_NO_FIRE = frozenset((EntityType.CORE, EntityType.BARRIER))
+
+
+class RaidMixin:
+
+    # --- target acquisition ------------------------------------------------
+
+    def _enemy_anchor(self, ct):
+        """The enemy Core anchor, or None.
+
+        Store first (a builder that has SEEN the Core publishes the true
+        position), then map symmetry.  Never an opponent-specific tile table:
+        the one we shipped was keyed to a single opponent's build and that
+        opponent shipped a new version.
+        """
+        if self.enemy is not None:
+            return self.enemy
+        e = unpack_pos(ct.read_store(SLOT_ENEMY_CORE))
+        if e is None and self.core is not None and self.mw and self.mh:
+            e = enemy_core_for(self.mw, self.mh, self.core)
+        self.enemy = e
+        return e
+
+    def _ring(self, E):
+        """(corners, seats) of the enemy footprint, cached per unit.
+
+        Both are pure functions of the anchor and the map dimensions, so every
+        raider derives the same twelve tiles with no store traffic at all.
+        """
+        key = (E.x, E.y)
+        if self.raid_ring_key != key:
+            self.raid_ring_key = key
+            self.raid_corners = core_corners(E, self.mw, self.mh)
+            self.raid_seats = heal_seats(E, self.mw, self.mh)
+            self.raid_seatkeys = frozenset((s.x, s.y) for s in self.raid_seats)
+            # LOKI-TURBO: `_raid_station` concatenated these two lists on every
+            # call, including the once-per-round far-phase lookup.
+            self.raid_stations = self.raid_corners + self.raid_seats
+        return self.raid_corners, self.raid_seats
+
+    # --- the turn ----------------------------------------------------------
+
+    def _foothold_live(self, ct, rnd):
+        """Is some raider still ACTING at the enemy ring right now?
+
+        The heartbeat is written below by any raider inside LOKI_ESTABLISH_DSQ
+        of an enemy Core tile.  It is the one signal that separates the state
+        the winning 319 raiders were in ("established") from the state the
+        r200+ corpus says is dead ("thrown, six rounds to live").
+        """
+        beat = ct.read_store(SLOT_RAID_LIVE)
+        if LOKI_FERRY_SIEGE_ON:
+            # LOKI-FERRY-SIEGE shares this slot: every store index 0-15 was
+            # already spoken for, so the plank's phase and raider id sit ABOVE
+            # the heartbeat this function reads.  Same low bits, same meaning,
+            # same predicate.  With the plank's flag off, not one bit of that
+            # layout is written and this masks a value that never has high bits.
+            beat &= FS_BEAT_MASK
+        return bool(beat) and rnd - (beat - 1) <= LOKI_FOOTHOLD_STALE
+
+    def _raid_open(self, ct, rnd, established):
+        """May THIS raider be on the raid this round?
+
+        Three ways in, and only the first is time-limited:
+          * COLD INSERTION, open until LOKI_COLD_INSERT_RND;
+          * this raider is itself established at the ring -- never withdrawn,
+            because a raider that is still acting there is the asset;
+          * a teammate's foothold is live, so this body is reinforcement into
+            a position we already hold rather than a fresh six-round throw.
+        """
+        if established:
+            return True
+        if rnd < LOKI_COLD_INSERT_RND:
+            return True
+        return self._foothold_live(ct, rnd)
+
+    def _raid(self, ct):
+        E = self._enemy_anchor(ct)
+        rnd = ct.get_current_round()
+        if LOKI6_BEAT_BEFORE_PAUSE and E is not None:
+            # FIX 2. Publish BEFORE any early return. A raider standing at the
+            # ring is a live foothold even while its own navigation is paused,
+            # and this heartbeat is the only thing that keeps the cold-insert
+            # gate open for the rest of the team.
+            try:
+                if dsq_core(ct.get_position(), E) <= LOKI_ESTABLISH_DSQ:
+                    self._fs_beat_only(ct, rnd)
+            except Exception:
+                pass
+        if E is None or rnd < self.raid_pause_until:
+            # STATE-BASED stand-down: with no anchor there is nothing to raid,
+            # and a raider that cannot reach the ring is worth more on ore than
+            # oscillating against a wall.
+            self._expand(ct)
+            return
+
+        p = ct.get_position()
+        # One distance to the enemy footprint, reused by the establishment
+        # test and the approach test (LOKI computed it twice, each time
+        # building four Position objects first).
+        core_dsq = dsq_core(p, E)
+        established = core_dsq <= LOKI_ESTABLISH_DSQ
+        if established:
+            self._fs_beat_only(ct, rnd)
+        elif not self._raid_open(ct, rnd, established):
+            # Cold-insertion window closed and no live foothold to reinforce.
+            # The body goes back to the economy; it is NOT retired, so the
+            # moment a teammate re-establishes, this rejoins on the next turn.
+            # The ferry ping is skipped with it, or the launcher would fling a
+            # stood-down body forward and re-open cold insertion by the back
+            # door -- which is the exact thing the corpus says stops working.
+            self._expand(ct)
+            return
+        self._raid_ferry_ping(ct)
+
+        # EXILE DETECTION.  A launcher throws any adjacent builder from EITHER
+        # team, so a position that jumped more than one step since our last
+        # turn means we were picked up.  If the throw moved us AWAY from the
+        # target, the station we were working is covered by a launcher: ban it
+        # and re-enter the ring somewhere else rather than walking back into
+        # the same pickup.  Trail memory is cleared for the same reason
+        # _v103split clears it on a drop -- pave_prev is now arbitrarily far.
+        if self.raid_prev is not None and p.distance_squared(self.raid_prev) > LOKI_TELEPORT_DSQ:
+            if (
+                self.raid_station is not None
+                and p.distance_squared(E) > self.raid_prev.distance_squared(E)
+            ):
+                self.raid_ban[(self.raid_station.x, self.raid_station.y)] = rnd + 80
+            self.raid_station = None
+            self.raid_rescan = rnd
+            self.tgt = None
+            self.stuck = 0
+            self.pave_prev = None
+            self.pave_dir = None
+            self.pave_rnd = -2
+        self.raid_prev = p
+
+        near = established or core_dsq <= LOKI_APPROACH_DSQ
+
+        if ct.get_action_cooldown() == 0 and self._raid_act(ct, E, near):
+            return
+
+        if self._cpu_exhausted(ct):
+            return
+        if ct.get_move_cooldown() != 0:
+            return
+
+        st = self._raid_station(ct, E, near)
+        self.tgt = st if st is not None else E
+        if p.x == self.tgt.x and p.y == self.tgt.y:
+            self.stuck = 0
+            return
+        before = self.stuck
+        self._nav(ct, pave=False)
+        if LOKI6_STALL_SEPARATE:
+            # FIX 1. Count only THIS round's navigation failure, not the
+            # position-unchanged increments that productive action also causes.
+            if self.stuck > before:
+                self.nav_fail = getattr(self, "nav_fail", 0) + 1
+            else:
+                self.nav_fail = 0
+            stalled = self.nav_fail >= 8
+        else:
+            stalled = self.stuck > before and self.stuck >= 8
+        if stalled:
+            # Navigation stall.  Ban this station and take another; if the
+            # whole ring is unreachable the pause below hands the body back to
+            # the economy for a bounded spell instead of grinding a wall.
+            if self.raid_station is not None:
+                self.raid_ban[(self.raid_station.x, self.raid_station.y)] = rnd + 120
+            self.raid_station = None
+            self.raid_rescan = rnd
+            self.stuck = 0
+            # Rotate the far-phase assignment too, or an unreachable preassigned
+            # station would be re-chosen for the rest of the match.
+            self.nav_fail = 0
+            self.raid_slot += 1
+            self.raid_stalls += 1
+            if self.raid_stalls >= 3:
+                self.raid_stalls = 0
+                self.raid_pause_until = rnd + 60
+
+    # --- the productive action ---------------------------------------------
+
+    def _raid_act(self, ct, E, near):
+        """One action, ranked so that ARRIVING is already productive.
+
+        The prior finding this ordering answers: every long-game launcher-throw
+        loop examined in our replays belonged to the DEFENDER disposing of the
+        attacker's raiders, so a lone raider beside a defended Core is food.
+        The answer is not to protect the body but to make the body deposit
+        something that outlives it -- a barrier is placed on the first action
+        after landing and is still there after an exile.
+        """
+        p = ct.get_position()
+        ti = ct.get_global_resources()
+        self._ring(E)
+        seatkeys = self.raid_seatkeys
+        on_seat = (p.x, p.y) in seatkeys
+
+        # 1. STANDING ON A SEAT: peck the Core.  Two damage a round that the
+        # collar makes permanent, plus the seat itself is denied by our body.
+        if on_seat and ti >= LOKI_PECK_TI_FLOOR and not LOKI_QUIET_ON:
+            for c in core_tiles(E):
+                if abs(p.x - c.x) + abs(p.y - c.y) != 1:
+                    continue
+                try:
+                    if ct.can_fire(c):
+                        ct.fire(c)
+                        return True
+                except Exception:
+                    continue
+
+        # 2. SEAL A FREE SEAT.  can_build_barrier enforces adjacency, emptiness
+        # and occupancy, so a seat one of our own raiders is standing on is
+        # refused by the engine and stays a peck station.
+        if LOKI_BARRIER_SEAL_ON and ti >= ct.get_barrier_cost() + LOKI_SEAL_TI_FLOOR:
+            for dx, dy in CARD_DELTAS:
+                tx, ty = p.x + dx, p.y + dy
+                if (tx, ty) not in seatkeys:
+                    continue
+                try:
+                    t = Position(tx, ty)
+                    if ct.can_build_barrier(t):
+                        ct.build_barrier(t)
+                        return True
+                except Exception:
+                    continue
+
+        # 3. THE FORWARD SENTINEL.  Built on the approach, before the ring is
+        # reached, because that is where the 5-tile band is.
+        if self._try_forward_sentinel(ct, E):
+            return True
+
+        # 3b. LOKI-BELTBREAK: THE FORWARD ECONOMY-SHREDDER GUNNER.
+        # AFTER the sentinel, not before, and that ordering is the whole of
+        # this plank's answer to DEFENCE_ADMISSION_BAR: the sentinel is the
+        # kill and it keeps first refusal on the builder's action in the one
+        # band where both are legal (d^2 20-50, where `_try_forward_sentinel`'s
+        # own `dsq_core(p, E) > 50` pre-scan has not yet bailed).  Above d^2=50
+        # the sentinel path is inert by construction and this is the only
+        # bidder, which is precisely the annulus the study measures.
+        # Steps 1 and 2 cannot compete at all: both are keyed to `seatkeys`,
+        # the eight tiles orthogonally adjacent to the enemy footprint, and no
+        # tile orthogonally adjacent to a builder standing at d^2 >= 20 is one
+        # of them.
+        if LOKI_BELTBREAK_ON and self._try_beltbreak_gunner(ct, E):
+            return True
+
+        # 4. BUDDY HEAL -- the survival half of the package.  heal(pos) repairs
+        # every friendly entity standing on pos, a friendly BUILDER BOT
+        # included, at +4 HP for 1 Ti.  Against a Gunner's 7 damage on a
+        # 1-round reload (3.5 HP/round) a single neighbour healing a wounded
+        # raider more than cancels it, and the measured failure mode is exactly
+        # this: median raider life after a throw is six rounds.  Gated on a
+        # real wound (LOKI_BUDDY_HEAL_GAP) so it never outbids sealing or a
+        # peck for cosmetic damage.
+        if near:
+            for dx, dy in CARD_DELTAS:
+                tx, ty = p.x + dx, p.y + dy
+                if not (0 <= tx < self.mw and 0 <= ty < self.mh):
+                    continue
+                t = Position(tx, ty)
+                try:
+                    oid = ct.get_tile_builder_bot_id(t)
+                    if (
+                        oid is not None and ct.get_team(oid) == self.team
+                        and ct.get_hp(oid) <= ct.get_max_hp(oid) - LOKI_BUDDY_HEAL_GAP
+                        and ct.can_heal(t)
+                    ):
+                        ct.heal(t)
+                        return True
+                except Exception:
+                    continue
+
+        # 5. HOLD THE COLLAR.  +4 HP for 1 Ti against their 2 dmg for 2 Ti: a
+        # raider parked beside its own barriers out-repairs a pecker two to one
+        # on HP and eight to one on titanium, so the seal does not decay -- and
+        # the same barriers are the raider's own LOS cover against Gunner rays.
+        if near:
+            for dx, dy in CARD_DELTAS:
+                tx, ty = p.x + dx, p.y + dy
+                if not (0 <= tx < self.mw and 0 <= ty < self.mh):
+                    continue
+                t = Position(tx, ty)
+                try:
+                    bid = ct.get_tile_building_id(t)
+                    if (
+                        bid is not None and ct.get_team(bid) == self.team
+                        and ct.get_hp(bid) < ct.get_max_hp(bid)
+                        and ct.can_heal(t)
+                    ):
+                        ct.heal(t)
+                        return True
+                except Exception:
+                    continue
+
+        # 6. Otherwise clear whatever is in the way.
+        if (ti >= LOKI_PECK_TI_FLOOR and not LOKI_QUIET_ON
+                and self._raid_peck(ct, seatkeys)):
+            return True
+
+        # 6.5 ⭐⭐⭐ v541 COREFIRST -- ON-SEAT TARGET PRIORITY, AND IT IS THE
+        # WHOLE PLANK.  A body orthogonally adjacent to the ENEMY CORE attacks
+        # the CORE instead of the belt.
+        #
+        # ⛔ THE PLACEMENT IS THE FIX.  Premise:
+        # `docs/research/AUTOPSY-v174-losses-2026-08-21.md` §5.2 --
+        # **556 builder attacks over ten match games; 517 into enemy CONVEYORS,
+        # ZERO into an enemy CORE; 419 of the attacks were made while standing
+        # next to an enemy core and 407 of those went into a 20 HP conveyor.**
+        # The verb is not silent, it is MISDIRECTED: clause 1 above forbids the
+        # core (`not LOKI_QUIET_ON`) while clause 7 below permits the belt, so
+        # an established raider saws the cheapest object in reach with the win
+        # condition one tile away (kladde g1: 64 rounds parked, 51 conveyor
+        # attacks, 0 on the core; kladde g3: 226 of 229).
+        #
+        # ⭐ SO THIS COSTS NOTHING IN THE CURRENCY LOKI-QUIET PROTECTS.  It is
+        # a target swap on a round the parent was ALREADY spending on an
+        # action: same one action, same 2 Ti, same body, same tile -- only the
+        # target moves from a 20 HP belt to the 500 HP object that ends the
+        # game.  `_v178salt` regressed kill round because it bought actions
+        # with STEPS; this buys no actions at all, so there is no step to lose
+        # and no idle gate is needed.  (The ADDITIVE form, which does need one,
+        # is clause 8 below and is separately flagged.)
+        #
+        # ⚠ SCOPE, and it is deliberately narrow: it changes nothing for a body
+        # that is not orthogonally adjacent to the enemy core.  `LOKI_QUIET_ON`
+        # is NOT flipped, clause 1 is NOT un-silenced, and the salt verb below
+        # is untouched everywhere else on the map -- the -10.83 v527 precedent
+        # against wholesale un-silencing stands and is not tested here.
+        if FS_V541_COREPECK and FS_V541_RAID_ON \
+                and self._v541_corefirst(ct, E, p):
+            return True
+
+        # 7. LOKI-48: SALT, AND ONLY ON A ROUND THE PARENT SPENT IDLE.
+        # Last in the ACTION ranking, as in _v178salt -- and additionally
+        # gated on the MOVE the parent would have made this round.  That
+        # second gate is the whole arm; see _salt_idle_ok.
+        if LOKI_SALTIDLE_ON:
+            self.si_reach += 1
+            if self._salt_idle_ok(ct, E, p, near):
+                self.si_open += 1
+                if self._salt_turn(ct, E, p, ti):
+                    self.si_fire += 1
+                    if LOKI_SALTIDLE_LOG:
+                        # Funnel, cumulative per raider: reached step 7 /
+                        # gate opened / salt actually acted.  Take the MAX per
+                        # unit id when reading a replay back.
+                        print("S48", ct.get_id(), self.si_reach,
+                              self.si_open, self.si_fire)
+                    return True
+            if LOKI_SALTIDLE_LOG:
+                print("S48", ct.get_id(), self.si_reach,
+                      self.si_open, self.si_fire)
+
+        # 8. v541 IDLEPECK -- THE ADDITIVE FORM, DEAD LAST, AND SHIPPED OFF.
+        # Clause 6.5 above is a REDIRECT and costs nothing; this one ADDS an
+        # action the parent never took, so it is the half that has to argue in
+        # both currencies -- and the autopsy does not license it.  It licenses
+        # target priority.  So `FS_V541_IDLEPECK` ships **False** and this
+        # clause is inert in the fired configuration; it is kept, flagged and
+        # measurable because the arr2 -> first-sentinel gap (median r12 to
+        # r67+) is a real 50-150 round window in which a body with no belt in
+        # reach has nothing to redirect FROM.
+        # ⛔ CLAUSE 1 IS STILL SILENCED AND STAYS SILENCED.  It sits ABOVE the
+        # seal, the sentinel and the heal, so un-silencing it there would spend
+        # the raider's first action after landing on 2 damage instead of on a
+        # barrier that outlives the body -- the measured LOKI-QUIET harm
+        # exactly (v96: 12-3, 80% core-kill share, BECAUSE those rounds went
+        # back to arriving).  This clause takes the LOKI-48 seat instead:
+        # behind the salt and behind `_salt_idle_ok`, the predicate that
+        # reproduces the parent's own movement decision and permits an action
+        # only where that decision was "stand still".
+        # ⚠ `_salt_idle_ok` is called at most ONCE per raider per round: clause
+        # 7 short-circuits on `LOKI_SALTIDLE_ON` and returns True when salt
+        # fires, so reaching here means either salt is off or salt declined.
+        # Its `_raid_station` call is cached on `raid_rescan`, so a second call
+        # is a dict read, not a rescan.
+        # ⛔ FUNDING IS THE SIEGE LAYER'S GATE, NOT A SECOND ONE WRITTEN HERE.
+        # The first form of this clause carried its own bank floor and that was
+        # a mistake of exactly the kind the s50 belt-lastlink autopsy is about:
+        # two reserves over one bank, never checked against each other.
+        # `_v541_core_attack` is on SiegeMixin and `Player(EcoMixin, RaidMixin,
+        # SiegeMixin)` mixes both, so this path uses the SAME predicate -- the
+        # collar reserve, the sentinel reserve AND the ammunition clause.
+        # `needed=[]` because a raid-layer body is not the collar's sealer and
+        # owes no barriers; the sentinel and ammunition reserves still bind.
+        if FS_V541_COREPECK and FS_V541_RAID_ON and FS_V541_IDLEPECK \
+                and self._salt_idle_ok(ct, E, p, near) \
+                and self._v541_core_attack(ct, E, p, []):
+            return True
+        return False
+
+    # --- LOKI-48: the idle gate --------------------------------------------
+
+    def _salt_idle_ok(self, ct, E, p, near):
+        """Would this raider have MOVED this round?  If yes, salt is refused.
+
+        WHAT KILLED _v178salt, measured on 25 live games: its mechanism worked
+        (20/20 salts landed on a tile the same bot had pecked to <=2 HP, median
+        latency 1 round; 6.68 barriers/game against a 3.48-3.72 baseline) and
+        its KILL ROUND regressed to median r179 against a pooled r129,
+        Mann-Whitney p=0.008.  The diagnosis was never the mechanism: cutting a
+        20 HP conveyor costs ~10 raider ACTIONS, acting and moving are mutually
+        exclusive for a builder, and this whole line wins on ARRIVAL.  Salt was
+        buying denial with the one currency the collar cannot spare.
+
+        SO THE GATE IS ON THE MOVE, NOT ON THE ACTION.  Being last in
+        _raid_act only proves no better ACTION existed; the parent's next move
+        after a declined action is to WALK, and _v178salt's `return True`
+        cancelled that walk.  This reproduces the parent's own movement
+        decision, in the parent's order, and permits salt only where that
+        decision was "stand still":
+
+          * move cooldown non-zero -- the parent returns before it even picks a
+            station, so the round is free by construction; and
+          * already standing on the station it picked (or no station at all) --
+            the parent's `p == tgt` branch, which moves nothing.
+
+        `_raid_station` is safe to call here: it caches on `raid_rescan`, which
+        it sets to `rnd + LOKI_RAID_RESCAN` on the pass that rescans, so the
+        move-phase call later this round returns the same station from cache
+        and the expensive scan still happens at most once per raider per round.
+        `self.tgt` and `self.stuck` are updated exactly as the branch we are
+        standing in would have updated them.
+        """
+        try:
+            if ct.get_move_cooldown() != 0:
+                return True
+        except Exception:
+            return False
+        try:
+            st = self._raid_station(ct, E, near)
+        except Exception:
+            return False
+        self.tgt = st if st is not None else E
+        if st is None:
+            return False          # the parent walks at the anchor instead
+        if p.x == st.x and p.y == st.y:
+            self.stuck = 0        # the parent's own bookkeeping on this branch
+            return True
+        return False
+
+    # --- LOKI-SALT ---------------------------------------------------------
+
+    def _salt_forward(self, t, E):
+        """True iff tile t is on the ENEMY side of the two Core anchors.
+
+        A raider that has been thrown home, or one working a belt that runs
+        past the midline, must never barrier our own ground or saw at a
+        conveyor on our side of the map -- both of those spend the raider on
+        something the economy layer owns.
+        """
+        if self.core is None or E is None:
+            return False
+        return t.distance_squared(E) < t.distance_squared(self.core)
+
+    def _salt_turn(self, ct, E, p, ti):
+        """Melee an adjacent enemy CONVEYOR/SPLITTER, and barrier the corpse.
+
+        WHY THE CARVE-OUT IS NARROW.  LOKI_QUIET_ON silences all builder melee
+        and stays on: 2 damage a round against a 500 HP Core that heals +4 for
+        1 Ti is not progress, and every peck costs the step that arrival is
+        made of.  A belt piece is the one adjacent target where the arithmetic
+        inverts -- 20 HP is ten pecks, and the tenth severs a delivery chain.
+
+        WHY THE BARRIER IS NOT OPTIONAL.  The field repairs 40.5% of cut
+        conveyors at a median latency of 4 rounds, so a bare cut is a loan.  A
+        3 Ti / 30 HP barrier on the dead tile costs them 15 pecks (30 Ti and 15
+        builder-turns) to undo.
+
+        Ordered: salt the corpse first (that is the round the cut becomes
+        permanent), then cut, then -- capped separately and lower -- barrier an
+        empty tile that is itself adjacent to a live belt, which denies the
+        rebuild seat before the cut has even landed.
+        """
+        if self.core is None or E is None or self.mw == 0:
+            return False
+        rnd = ct.get_current_round()
+        marks = self.salt_marks
+        if len(marks) > 24:
+            cut = rnd - LOKI_SALT_MEMORY
+            self.salt_marks = marks = {k: v for k, v in marks.items() if v >= cut}
+
+        # (0) MARK.  Record every adjacent enemy belt piece BEFORE anything is
+        # pecked, so the tile that dies to this very turn's peck is already
+        # remembered when we come back for it next turn.  This is also what
+        # makes the salt work for a conveyor killed by our forward Sentinel.
+        belt = []
+        for dx, dy in CARD_DELTAS:
+            tx, ty = p.x + dx, p.y + dy
+            if not (0 <= tx < self.mw and 0 <= ty < self.mh):
+                continue
+            t = Position(tx, ty)
+            if not self._salt_forward(t, E):
+                continue
+            try:
+                bid = ct.get_tile_building_id(t)
+                if bid is None or ct.get_team(bid) == self.team:
+                    continue
+                et = ct.get_entity_type(bid)
+            except Exception:
+                continue
+            if et in BELT_TYPES:
+                marks[(tx, ty)] = rnd
+                try:
+                    belt.append((ct.get_hp(bid), t))
+                except Exception:
+                    belt.append((999, t))
+
+        try:
+            bcost = ct.get_barrier_cost()
+        except Exception:
+            bcost = 3
+        can_pay_barrier = (
+            ti >= bcost + LOKI_SALT_TI_FLOOR
+            and self.salt_n < LOKI_SALT_MAX_PER_UNIT
+        )
+
+        # (1) SALT THE CORPSE.  can_build_barrier enforces adjacency and
+        # emptiness, so a mark whose tile is still occupied simply fails here
+        # and is retried next turn until the memory window expires.
+        if can_pay_barrier and marks:
+            for dx, dy in CARD_DELTAS:
+                k = (p.x + dx, p.y + dy)
+                m = marks.get(k)
+                if m is None or rnd - m > LOKI_SALT_MEMORY:
+                    continue
+                t = Position(k[0], k[1])
+                if not self._salt_forward(t, E):
+                    continue
+                try:
+                    if not ct.can_build_barrier(t):
+                        continue
+                    ct.build_barrier(t)
+                except Exception:
+                    continue
+                marks.pop(k, None)
+                self.salt_n += 1
+                if LOKI_SALT_LOG:
+                    print("SALT bar cut r=%d t=%d,%d n=%d"
+                          % (rnd, t.x, t.y, self.salt_n))
+                return True
+
+        # (2) CUT.  Lowest HP first -- finishing a belt piece is what severs a
+        # chain; spreading damage across three of them severs nothing.
+        if belt and ti >= LOKI_PECK_TI_FLOOR and self.salt_pecks < LOKI_SALT_CUT_MAX:
+            # LOKI-48 DOWNSTREAM TIEBREAK.  A conveyor has out-degree 1, so a
+            # belt is a PATH and cutting one link zeroes every harvester
+            # UPSTREAM of it -- the nearer their Core the cut lands, the more
+            # it severs.  HP still leads (the tenth peck is the one that cuts;
+            # spreading damage severs nothing), and the tiebreak is free: `E`
+            # and the tile are both already in hand, so this is one extra
+            # distance_squared per adjacent belt piece and no new scan.
+            if LOKI_SALTIDLE_DOWNSTREAM:
+                belt.sort(key=lambda hb: (hb[0], hb[1].distance_squared(E)))
+            else:
+                belt.sort(key=lambda hb: hb[0])
+            for hp, t in belt:
+                try:
+                    if not ct.can_fire(t):
+                        continue
+                    ct.fire(t)
+                except Exception:
+                    continue
+                self.salt_pecks += 1
+                if LOKI_SALT_LOG:
+                    print("SALT cut r=%d t=%d,%d hp=%d n=%d"
+                          % (rnd, t.x, t.y, hp, self.salt_pecks))
+                return True
+
+        # (3) DENY THE REBUILD SEAT.  Sub-capped below the total, because this
+        # one is speculative: it barriers ground next to a belt that is still
+        # alive.  It pays when their repair bot arrives and finds the approach
+        # tile gone, and it is the cheapest thing a raider can do with a round
+        # it was going to spend standing still.
+        if (LOKI_SALT_BLOCK_ON and can_pay_barrier
+                and self.salt_block_n < LOKI_SALT_BLOCK_MAX):
+            for dx, dy in CARD_DELTAS:
+                tx, ty = p.x + dx, p.y + dy
+                if not (0 <= tx < self.mw and 0 <= ty < self.mh):
+                    continue
+                t = Position(tx, ty)
+                if not self._salt_forward(t, E):
+                    continue
+                try:
+                    if not ct.can_build_barrier(t):
+                        continue
+                except Exception:
+                    continue
+                if not self._salt_beside_belt(ct, t):
+                    continue
+                try:
+                    ct.build_barrier(t)
+                except Exception:
+                    continue
+                self.salt_n += 1
+                self.salt_block_n += 1
+                if LOKI_SALT_LOG:
+                    print("SALT bar blk r=%d t=%d,%d n=%d"
+                          % (rnd, t.x, t.y, self.salt_n))
+                return True
+        return False
+
+    def _salt_beside_belt(self, ct, t):
+        """Is t orthogonally adjacent to a live enemy conveyor/splitter?
+
+        Four tile reads, and only for a tile can_build_barrier has already
+        accepted, so the whole check runs at most four times a turn.
+        """
+        for dx, dy in CARD_DELTAS:
+            qx, qy = t.x + dx, t.y + dy
+            if not (0 <= qx < self.mw and 0 <= qy < self.mh):
+                continue
+            try:
+                bid = ct.get_tile_building_id(Position(qx, qy))
+                if bid is None or ct.get_team(bid) == self.team:
+                    continue
+                if ct.get_entity_type(bid) in BELT_TYPES:
+                    return True
+            except Exception:
+                continue
+        return False
+
+    def _raid_peck(self, ct, seatkeys):
+        """Melee the best adjacent enemy building.
+
+        An enemy CONVEYOR standing on one of their own seats ranks above every
+        other soft target: it is 20 HP (ten pecks) and killing it converts that
+        seat from theirs into a tile we can seal permanently for 3 Ti -- and it
+        was carrying their delivery, which is tiebreak #1.
+        """
+        p = ct.get_position()
+        best, best_pr = None, 99
+        for dx, dy in CARD_DELTAS:
+            tx, ty = p.x + dx, p.y + dy
+            if not (0 <= tx < self.mw and 0 <= ty < self.mh):
+                continue
+            t = Position(tx, ty)
+            try:
+                bid = ct.get_tile_building_id(t)
+                if bid is None or ct.get_team(bid) == self.team:
+                    continue
+                et = ct.get_entity_type(bid)
+            except Exception:
+                continue
+            if et == EntityType.CORE:
+                pr = 0
+            elif (tx, ty) in seatkeys and et in BELT_TYPES:
+                pr = 1
+            elif et == EntityType.LAUNCHER:
+                pr = 2
+            elif et in TURRET_TYPES:
+                pr = 3
+            elif et == EntityType.HARVESTER:
+                pr = 4
+            elif et in BELT_TYPES:
+                pr = 5
+            else:
+                pr = 6
+            if pr >= best_pr:
+                continue
+            try:
+                if ct.can_fire(t):
+                    best_pr, best = pr, t
+            except Exception:
+                continue
+        if best is not None:
+            ct.fire(best)
+            return True
+        return False
+
+    def _try_forward_sentinel(self, ct, E):
+        """Plant a Sentinel whose line already contains an enemy Core tile.
+
+        SENTINEL, not Gunner, and not as a preference: the collar blocks LOS,
+        so a Gunner built to shoot the Core would be shooting our own barriers.
+        can_fire_from is the hypothetical-turret predicate (ignores ammo and
+        cooldown by contract), which is exactly the question asked here.
+
+        LOKI-2: inside the committed-opening window the harvester prerequisite
+        and the bank floor are relaxed (doctrine.py, LOKI-2 block).  99.3% of
+        1,269 early Core kills are turret fire and the sub-r80 recipe is three
+        turrets planted by r22 -- a rush is over before the economy the LOKI-1
+        gate waits for would have paid for anything.  The cap is untouched: 3
+        is already the specialists' number.
+        """
+        if not LOKI_FWD_SENTINEL_ON:
+            return False
+        live = self._live_fwd_guns(ct, E) if LOKI2B_LIVE_CAP_ON else None
+        if (live if live is not None else ct.read_store(SLOT_FWD_GUN)) >= LOKI_FWD_GUN_CAP:
+            return False
+        rush = LOKI2_RUSH_ON and ct.get_current_round() < LOKI2_RUSH_RND
+        min_harv = LOKI2_RUSH_MIN_HARV if rush else LOKI_FWD_MIN_HARV
+        ti_floor = LOKI2_RUSH_TI_FLOOR if rush else LOKI_FWD_TI_FLOOR
+        if ct.read_store(SLOT_HARVESTERS) < min_harv:
+            return False
+        cost = ct.get_sentinel_cost()
+        if ct.get_global_resources() < cost + ti_floor:
+            return False
+        p = ct.get_position()
+        # A Sentinel reaches r^2 = 32; a build site is one step from here, so
+        # anything past ~50 cannot possibly align and the scan is skipped.
+        if dsq_core(p, E) > 50:
+            return False
+        if self._cpu_exhausted(ct):
+            return False
+        tiles = core_tiles(E)
+        for dx, dy in CARD_DELTAS:
+            bx, by = p.x + dx, p.y + dy
+            if not (0 <= bx < self.mw and 0 <= by < self.mh):
+                continue
+            bp = Position(bx, by)
+            for target in tiles:
+                if bp.distance_squared(target) > 32:
+                    continue
+                facing = bp.direction_to(target)
+                if facing == Direction.CENTRE:
+                    continue
+                try:
+                    if not ct.can_fire_from(bp, facing, EntityType.SENTINEL, target):
+                        continue
+                    if not ct.can_build_sentinel(bp, facing):
+                        continue
+                except Exception:
+                    continue
+                ct.build_sentinel(bp, facing)
+                if LOKI2B_LIVE_CAP_ON:
+                    # Publish the live count INCLUDING the one just built, so a
+                    # second raider in the same round does not double-spend the
+                    # cap before the census refreshes next turn.
+                    ct.write_store(SLOT_FWD_GUN, (live or 0) + 1)
+                else:
+                    ct.write_store(SLOT_FWD_GUN, ct.read_store(SLOT_FWD_GUN) + 1)
+                return True
+        return False
+
+    def _live_fwd_guns(self, ct, E):
+        """Count LIVE friendly sentinels near the enemy Core, or None if blind.
+
+        Returns None when this unit cannot see the siege band at all, so the
+        caller falls back to the monotone store rather than reading a census of
+        zero as "the cap is free" and spamming turrets from across the map.
+        """
+        try:
+            p = ct.get_position()
+            if dsq_core(p, E) > LOKI2B_CENSUS_DSQ * 2:
+                return None
+            me = ct.get_team()
+            n = 0
+            for eid in ct.get_nearby_buildings():
+                if ct.get_entity_type(eid) != EntityType.SENTINEL:
+                    continue
+                if ct.get_team(eid) != me:
+                    continue
+                if dsq_core(ct.get_position(eid), E) <= LOKI2B_CENSUS_DSQ:
+                    n += 1
+            return n
+        except Exception:
+            return None
+
+    # --- LOKI-BELTBREAK: the forward economy-shredder gunner ----------------
+
+    def _live_beltbreak_guns(self, ct, E):
+        """Friendly GUNNERs this raider can SEE standing in the annulus.
+
+        A LIVE census, never a store counter, and that is the whole point:
+        `SLOT_FWD_GUN` is written only as `read + 1` and never decremented, so
+        LOKI_FWD_GUN_CAP counts RUBBLE and three dead forward turrets close
+        that arm for the match.  This arm cannot fail that way because there is
+        nothing monotone in it -- a beltbreak gunner dying drops the census,
+        which re-arms both the cap AND the funding waiver below, and the raid
+        replants.
+
+        `_live_fwd_guns` counts SENTINELs only, so the two arms are invisible
+        to each other and share no slot: BELTBREAK never writes SLOT_FWD_GUN.
+
+        Blind case: unlike `_live_fwd_guns` there is no monotone fallback to
+        return None to, so a raider that cannot see a teammate's gunner reads a
+        low count.  Bounded and accepted: the caller only ever runs with the
+        raider itself INSIDE the band (the pre-scan below), where builder
+        vision r^2=20 covers the annulus around it, and the worst case is two
+        raiders on opposite faces of the enemy core planting one each -- which
+        is LOKI_BELTBREAK_CAP exactly.
+        """
+        n = 0
+        try:
+            me = ct.get_team()
+            lo, hi = LOKI_BELTBREAK_DSQ_LO, LOKI_BELTBREAK_DSQ_HI
+            for eid in ct.get_nearby_buildings():
+                if ct.get_entity_type(eid) != EntityType.GUNNER:
+                    continue
+                if ct.get_team(eid) != me:
+                    continue
+                if lo <= dsq_core(ct.get_position(eid), E) <= hi:
+                    n += 1
+        except Exception:
+            return n
+        return n
+
+    def _bb_ray_clear(self, ct, bp, facing, tp):
+        """Does the ray bp->tp cross a building of OURS?
+
+        ⛔ THIS IS CONSTRAINT 2 AND IT IS NOT REDUNDANT WITH `can_fire_from`.
+        LOKI_BARRIER_SEAL_ON puts OUR OWN barriers on the enemy ring, and a
+        gunner's line is blocked by ANY friendly entity
+        (`turret-line-blocking-2026-08-09`) -- that is the literal reason v102
+        deleted the forward gunner (doctrine LOKI_BARRIER_SEAL block).  The
+        engine's own predicate is believed to model this, but the repo has a
+        standing finding that `get_attackable_tiles()` LIES about friendly
+        blocking, so the ray is walked explicitly rather than trusted.  Belt
+        and braces, and it is four tile reads at most (gunner reach is 3).
+
+        Returns False the moment a friendly BUILDING stands strictly between
+        the build tile and the target.  Friendly builder BOTS are not checked:
+        they move, and a plant refused because a teammate happened to be
+        standing on the ray this round is a refusal that would not reproduce.
+        """
+        dx, dy = DELTA[facing]
+        x, y = bp.x + dx, bp.y + dy
+        for _ in range(4):          # gunner reach is d^2 <= 13, i.e. 3 steps
+            if (x, y) == (tp.x, tp.y):
+                return True
+            if not (0 <= x < self.mw and 0 <= y < self.mh):
+                return True
+            try:
+                bid = ct.get_tile_building_id(Position(x, y))
+                if bid is not None and ct.get_team(bid) == self.team:
+                    return False
+            except Exception:
+                return True
+            x += dx
+            y += dy
+        return True
+
+    def _try_beltbreak_gunner(self, ct, E, rnd_floor=None, dsq_lo=None):
+        """Plant a GUNNER in the d^2 20-100 annulus, aimed at LIVE belt.
+
+        `rnd_floor` (v519 change 1) overrides THE ROUND GATE AND NOTHING ELSE.
+        Default None is the parent path byte for byte.  It exists because the
+        ferry crosses the annulus BEFORE `LOKI_BELTBREAK_RND` opens (measured:
+        the crossing is r1-r10 and the gate is r10, so on 3 of 5 siege maps the
+        body has already left the band when the gate opens), and "when" is
+        precisely what v519 change 1 is allowed to move.  Everything else in
+        this function -- the band, the live-target gate, the ladder, the census
+        cap, the funding waiver, the refusal counters -- is shared, not forked.
+
+        THE ONE RULE THIS FUNCTION EXISTS TO ENFORCE, from study §5.1(1): a
+        tile is scored by the LIVE ENEMY ENTITY its ray would hit RIGHT NOW,
+        read out of this builder's vision this round and confirmed with the
+        engine's own `can_fire_from`.  v94's `_plan_siege` scored geometry
+        against a static wall map -- no live-target predicate -- and measured
+        BELOW a random ray (0.09 vs 0.11) with 51.7% of gunners built with
+        nothing in range.  There is no geometric fallback path here: a tile
+        whose best score is 0 is not built on, ever.
+
+        The band filter is applied to the BUILD TILE, not to the builder, and
+        the band is the plank: across 3,662 in-band gunners the share of shots
+        at the enemy core is 0.000, because a gunner reaches 3 tiles and the
+        band starts at 4.5.  "Everything other than the core" is a consequence
+        of standing in the right place, not a targeting instruction.
+        """
+        p = ct.get_position()
+        d = dsq_core(p, E)
+        lo, hi = LOKI_BELTBREAK_DSQ_LO, LOKI_BELTBREAK_DSQ_HI
+        # ⭐⭐ v520 CHANGE 3 -- THE ANNULUS FLOOR, AND IT IS A "WHAT" CHANGE.
+        # `dsq_lo` overrides the INNER EDGE and nothing else.  Default None is
+        # the parent path byte for byte, and the CHASSIS raid doctrine's own
+        # call site passes nothing -- so the lowered floor reaches only the
+        # v519 GUNFIRST clause, which is the caller v519 measured at 356
+        # attempts / 0 plants with `NORAY` (142) and `NOTGT` (60) binding.
+        # The price of the road is on the record: the `pBAND` probe arm moved
+        # this same constant 20 -> 8 and produced 8 plants in 8 of 30 games at
+        # r9-r38, from a body standing at d^2 = 4-13 -- i.e. AT THE RING, which
+        # is exactly where the floor of 20 forbade it.
+        if dsq_lo is not None:
+            lo = dsq_lo
+        # Pre-scan bail, FIRST and silent.  A build tile is one orthogonal step
+        # from here, so its own d^2 to the core differs from ours by at most
+        # 2*sqrt(d)+1, which is 21 at the outer edge; 24 is that bound rounded
+        # up.  No legal build tile can be in band if this fails, so the whole
+        # scan is skipped for every raider still walking in -- and, because it
+        # is first, every refusal COUNTED below is a refusal that happened with
+        # the raider actually standing in the productive annulus.  That is what
+        # makes the counters readable as a funnel instead of as a distance
+        # histogram.
+        if d < lo - 24 or d > hi + 24:
+            return False
+
+        rnd = ct.get_current_round()
+        # THE TIMING GATE -- the entire difference between the two arms.
+        gate = (LOKI_BELTBREAK_RND if LOKI_BELTBREAK_EARLY
+                else LOKI_BELTBREAK_LATE_RND)
+        if rnd_floor is not None:
+            gate = rnd_floor
+        if rnd < gate:
+            return self._bb_refuse("EARLY")
+        if ct.read_store(SLOT_HARVESTERS) < LOKI_BELTBREAK_MIN_HARV:
+            return self._bb_refuse("HARV")
+
+        live = self._live_beltbreak_guns(ct, E)
+        if live >= LOKI_BELTBREAK_CAP:
+            return self._bb_refuse("CAP")
+
+        # FUNDING -- the reserve-floor waiver of _v473kladladder, same shape.
+        # While we hold NO beltbreak gunner the plant is the committed
+        # priority and the bank reserve is waived: we pay the gunner and the
+        # 12 ammo of one kill cycle (study §6: a 20-HP conveyor is 3 gunner
+        # shots = 12 ammo, the class where the gunner beats the sentinel 0.60x)
+        # and nothing else.  Once one is live the arm demotes to opportunistic
+        # and must clear the full forward reserve before buying a second, so a
+        # second gunner never competes with the economy that funds the first.
+        # Self-healing falls out of the LIVE census: losing the gunner re-arms
+        # both the priority and the waiver.
+        need = ct.get_gunner_cost()
+        if live > 0:
+            need += LOKI_BELTBREAK_TI_FLOOR + LOKI_BELTBREAK_AMMO
+        ti = ct.get_global_resources()
+        if ti < need:
+            return self._bb_refuse("TI", ti, need)
+        if self._cpu_exhausted(ct):
+            return False
+
+        # LIVE TARGETS, from this builder's own vision (r^2 = 20).  Only the
+        # economy classes score; BB_SITE_VALUE has no CORE and no BARRIER row.
+        me = self.team
+        cands = []
+        try:
+            for eid in ct.get_nearby_buildings():
+                try:
+                    if ct.get_team(eid) == me:
+                        continue
+                    v = BB_SITE_VALUE.get(ct.get_entity_type(eid))
+                    if not v:
+                        continue
+                    cands.append((v, ct.get_position(eid)))
+                except Exception:
+                    continue
+        except Exception:
+            return False
+        if not cands:
+            return self._bb_refuse("NOTGT")
+        if len(cands) > LOKI_BELTBREAK_MAX_TGT:
+            cands.sort(key=lambda c: (p.distance_squared(c[1]), -c[0]))
+            del cands[LOKI_BELTBREAK_MAX_TGT:]
+
+        best = None                     # (value, -d2, density, bp, facing, tp)
+        blocked_own = False
+        for dx, dy in CARD_DELTAS:
+            bx, by = p.x + dx, p.y + dy
+            if not (0 <= bx < self.mw and 0 <= by < self.mh):
+                continue
+            bp = Position(bx, by)
+            db = dsq_core(bp, E)
+            if db < lo or db > hi:
+                continue
+            # In gunner reach of THIS tile, nearest first.  A target further
+            # than r^2=13 cannot be on any ray we could fire, so the facing
+            # loop never sees it.
+            reach = []
+            dens = 0
+            for v, tp in cands:
+                dt = bp.distance_squared(tp)
+                if dt <= 13:
+                    reach.append((dt, v, tp))
+                    dens += 1
+            if not reach:
+                continue
+            reach.sort()
+            buildable = {}
+            for dt, v, tp in reach:
+                facing = bp.direction_to(tp)
+                if facing == Direction.CENTRE:
+                    continue
+                try:
+                    # THE LIVE-TARGET GATE.  `tp` is an entity that exists this
+                    # round; can_fire_from is the engine's own LOS+range check
+                    # for a hypothetical gunner on bp facing `facing`.
+                    if not ct.can_fire_from(bp, facing, EntityType.GUNNER, tp):
+                        continue
+                except Exception:
+                    continue
+                if not self._bb_ray_clear(ct, bp, facing, tp):
+                    # Our own collar is on this line.  Refuse the (tile,
+                    # facing), do not "fire through it" -- this is the v102
+                    # deletion rationale restated as a siting rule.  Counted
+                    # HERE and not only at the refusal below, so the check is
+                    # observable even in the games where some OTHER tile went
+                    # on to work: a guard is only known to guard once it has
+                    # been seen to produce the other verdict.
+                    blocked_own = True
+                    self.bb_refuse["OWNRAYHIT"] = n = \
+                        self.bb_refuse.get("OWNRAYHIT", 0) + 1
+                    if LOKI_BELTBREAK_LOG and n % 25 == 1:
+                        print("BB48 OWNRAYHIT r%d bp=(%d,%d) %s tgt=(%d,%d) n=%d"
+                              % (ct.get_current_round(), bp.x, bp.y,
+                                 facing.name, tp.x, tp.y, n))
+                    continue
+                ok = buildable.get(facing)
+                if ok is None:
+                    try:
+                        ok = bool(ct.can_build_gunner(bp, facing))
+                    except Exception:
+                        ok = False
+                    buildable[facing] = ok
+                if not ok:
+                    continue
+                # THE LADDER, study §7.2: harvester (100) over belt (40)
+                # first, then the nearer target, then the denser tile.  NOT
+                # "the nearest passing target" -- a harvester two tiles out is
+                # the SOURCE and beats a conveyor one tile out, which is the
+                # whole HARVESTER-SNIPE vs CONVEYOR-FARM choice (§7.0: the farm
+                # is a 511-turn engine and DEFENCE_ADMISSION_BAR forbids it).
+                key = (v, -dt, dens)
+                if best is None or key > best[0]:
+                    best = (key, bp, facing, tp)
+        if best is None:
+            return self._bb_refuse("OWNRAY" if blocked_own else "NORAY")
+
+        key, bp, facing, tp = best
+        try:
+            ct.build_gunner(bp, facing)
+        except Exception:
+            return False
+        # Heartbeat, so the Core's magazine rises BEFORE the first shot rather
+        # than after it -- study §7.3's closed loop (our ammo target is keyed
+        # to turrets we already own, so a turret we are about to own is
+        # unfunded).  Buffered writes land next round, which is the first round
+        # this gunner can fire.
+        ct.write_store(SLOT_BELTBREAK, ct.get_current_round() + 1)
+        self.bb_plants += 1
+        if LOKI_BELTBREAK_LOG:
+            try:
+                print("BB48 PLANT r%d at (%d,%d) dsq=%d face=%s tgt=%s d2=%d "
+                      "live=%d" % (rnd, bp.x, bp.y, dsq_core(bp, E),
+                                   facing.name, ct.get_entity_type(
+                                       ct.get_tile_building_id(tp)).name,
+                                   bp.distance_squared(tp), live))
+            except Exception:
+                pass
+        return True
+
+    def _bb_refuse(self, why, a=0, b=0):
+        """One refusal, counted and (rarely) logged.  Always returns False.
+
+        Every call site is a raider ALREADY STANDING IN THE ANNULUS (the band
+        pre-scan is first and silent), so this is a funnel and not a distance
+        histogram.  The counters are the demo instrument for "the live-target
+        gate REFUSES a plant when nothing is in range" -- a gate that has never
+        produced the other verdict has not been seen to gate.  Logging is
+        rate-limited because a raider parked in the band re-refuses every
+        round, and print() is a replay-side instrument only (it is STRIPPED
+        from platform-downloaded replays, so no live leg may be read with it).
+        """
+        self.bb_refuse[why] = n = self.bb_refuse.get(why, 0) + 1
+        if LOKI_BELTBREAK_LOG and n % 25 == 1:
+            print("BB48 REFUSE %s n=%d %d/%d" % (why, n, a, b))
+        return False
+
+    # --- station choice ----------------------------------------------------
+
+    def _raid_station(self, ct, E, near):
+        """Which of the twelve ring tiles this raider is walking to.
+
+        FAR: a deterministic seat derived from this unit's raid slot, so the
+        raid spreads across the ring on the way in without a single store write
+        and without four bodies funnelling onto one tile.
+        NEAR: rescored from live vision every LOKI_RAID_RESCAN rounds.
+        """
+        rnd = ct.get_current_round()
+        corners, seats = self._ring(E)
+        stations = self.raid_stations
+        if not stations:
+            return None
+        if not near:
+            return stations[self.raid_slot % len(stations)]
+        if self.raid_station is not None and rnd < self.raid_rescan:
+            return self.raid_station
+        self.raid_rescan = rnd + LOKI_RAID_RESCAN
+
+        p = ct.get_position()
+        me = ct.get_id()
+        # One pass for the launchers that can exile us off a station.
+        threats = []
+        gun_axis = set()
+        try:
+            for bid in ct.get_nearby_buildings():
+                if ct.get_team(bid) == self.team:
+                    continue
+                if ct.get_entity_type(bid) == EntityType.LAUNCHER:
+                    threats.append(ct.get_position(bid))
+                # LOKI-25: GUNNER FIRING AXES.  92% of our FORWARD builder deaths
+                # are enemy gunners against 42.8% for the rest of the league
+                # (4,379 vs 6,830 forward deaths) -- so this is a property of
+                # where our raiders stand, not of the game.  A gunner's shot is a
+                # straight line that IS BLOCKED by obstacles and reaches only
+                # r^2=13; a sentinel's ignores obstacles.  **We are dying almost
+                # entirely to the AVOIDABLE one.**  `get_attackable_tiles_from`
+                # returns a hypothetical turret's pattern and has ZERO call sites
+                # anywhere in this tree -- the exact predicate this needs was
+                # never once invoked.
+                elif ct.get_entity_type(bid) == EntityType.GUNNER:
+                    try:
+                        gp = ct.get_position(bid)
+                        gd = ct.get_direction(bid)
+                        for t in ct.get_attackable_tiles_from(
+                                gp, gd, EntityType.GUNNER):
+                            gun_axis.add((t.x, t.y))
+                    except Exception:
+                        continue
+        except Exception:
+            pass
+
+        ncorner = len(corners)
+        best, best_k = None, None
+        for i, s in enumerate(stations):
+            key = (s.x, s.y)
+            if self.raid_ban.get(key, 0) > rnd:
+                continue
+            standing_here = (p.x == s.x and p.y == s.y)
+            try:
+                if ct.is_in_vision(s) and not standing_here:
+                    if not ct.is_tile_passable(s):
+                        continue
+                    other = ct.get_tile_builder_bot_id(s)
+                    if other is not None and other != me:
+                        continue
+            except Exception:
+                pass
+            score = abs(p.x - s.x) + abs(p.y - s.y)
+            if i < ncorner:
+                # A corner is a BUILD station and is only worth holding while
+                # it still has an unsealed seat beside it.
+                if self._open_seats_by(ct, s) == 0:
+                    score += 12
+                else:
+                    score -= 6
+            else:
+                # A seat is a PECK station: two damage a round plus denial.
+                score -= 3
+            for tp in threats:
+                if s.distance_squared(tp) <= 2:
+                    score += LOKI_EXILE_PENALTY
+                    break
+            # Same penalty machinery, one more entity type. A station on a live
+            # gunner's ray is a station that dies; stepping one tile off it costs
+            # nothing and forces them to spend 10 Ti AND a full action cooldown
+            # to rotate -- a tempo trade in our favour even when they answer it.
+            if (s.x, s.y) in gun_axis:
+                score += LOKI_GUNAXIS_PENALTY
+            if standing_here:
+                score -= 2  # hysteresis: do not shuffle between equal tiles
+            k = (score, (s.x * 17 + s.y * 31 + self.raid_slot * 7) % 97, s.y, s.x)
+            if best_k is None or k < best_k:
+                best, best_k = s, k
+        self.raid_station = best
+        return best
+
+    def _open_seats_by(self, ct, corner):
+        """How many seats orthogonally beside `corner` still need sealing.
+
+        Unreadable (out of vision) counts as OPEN: the pessimistic direction
+        here is to walk to a corner that turns out to be finished, which costs
+        one rescan, against refusing to walk to one that is not, which costs
+        the seal.
+        """
+        n = 0
+        for dx, dy in CARD_DELTAS:
+            tx, ty = corner.x + dx, corner.y + dy
+            if (tx, ty) not in self.raid_seatkeys:
+                continue
+            t = Position(tx, ty)
+            try:
+                if not ct.is_in_vision(t):
+                    n += 1
+                    continue
+                if ct.get_tile_building_id(t) is None:
+                    n += 1
+            except Exception:
+                n += 1
+        return n
+
+    # --- the ferry ---------------------------------------------------------
+
+    def _raid_ferry_ping(self, ct):
+        """Advertise for a launcher hop -- WITHOUT waiting for one.
+
+        _v103split had a `launchwait` role that parked a builder beside the
+        launcher until it was thrown; that spends the one resource the hazard
+        table says belongs to the opponent.  Here the raider simply walks, and
+        publishes its id whenever it happens to be inside the launcher's
+        neighbourhood.  Store writes are buffered one round, which is why the
+        ping fires from r^2 <= 8 rather than from the pickup ring itself.
+        """
+        # v514 change D: FERRY_HOME_ON, not LOKI_FERRY_ON.  The flag keeps
+        # its chassis value (True); the derived gate stands the HOME ferry down
+        # only in the crew-ON configuration, where slot 10 is body 2's publish
+        # channel and two writers on one buffered slot is the r197 defect.
+        # In the FIRED config (FS_CREW_ON False) FERRY_HOME_ON is True and this
+        # line is the parent's.
+        if not self._ferry_home_on() or self.enemy is None:
+            return
+        try:
+            for bid in ct.get_nearby_buildings():
+                if ct.get_team(bid) != self.team:
+                    continue
+                if ct.get_entity_type(bid) != EntityType.LAUNCHER:
+                    continue
+                if ct.get_position(bid).distance_squared(ct.get_position()) <= 8:
+                    ct.write_store(SLOT_FERRY_ID, ct.get_id() + 1)
+                    ct.write_store(SLOT_FERRY_RND, ct.get_current_round())
+                    return
+        except Exception:
+            return
+
+    def _ferry_home_on(self):
+        """⭐⭐ v516 CHANGE 1c -- `FERRY_HOME_ON` EVALUATED AT THE READ SITE.
+
+        The doctrine constant of the same name is a MODULE-LEVEL DERIVED
+        DEFAULT reading FS_CREW_ON, and this repo's arm mechanism (`mkarm.sh`)
+        APPENDS overrides to the end of doctrine.py -- so an arm that sets
+        `FS_CREW_ON = True` gets the derivation that already ran with the OLD
+        value, `FERRY_HOME_ON` stays True, and slot 10 then has TWO writers:
+        the r197 lost-update class, confirmed COLLISION:True at the s51 06:24Z
+        pre-flight.  This is the SECOND live instance of v515 finding 3; the
+        first was the door.
+        ⛔ Both flags are read at RUN time here, so no assignment order can
+        strand the decision, and the constant keeps the parent's value so
+        reading it still reports what v515 shipped.
+        ⚠ With LOKI_FS_V516 off this returns the module constant unchanged, so
+        the master flag reproduces the parent byte for byte on this path.
+        """
+        if not (LOKI_FS_V516 and FS_V516_TEARDOWN and FS_V516_FERRY_READSITE):
+            return FERRY_HOME_ON
+        return LOKI_FERRY_ON and not (LOKI_FS_V514 and FS_V514_RELAY
+                                      and LOKI_FS_CREW and fs_crew_on())
+
+    def _launcher_turn(self, ct):
+        """Launcher: exile intruders first, then ferry raiders forward.
+
+        No lifetime cap and no round cutoff on the ferry -- the two gates that
+        made the incumbent's insertion pipeline dead code from r180.
+        """
+        if self.team is None:
+            self.team = ct.get_team()
+            self.mw, self.mh = ct.get_map_width(), ct.get_map_height()
+        ct.write_store(SLOT_LAUNCHER, 1)
+        if self.core is None:
+            for eid in ct.get_nearby_buildings():
+                try:
+                    if ct.get_entity_type(eid) == EntityType.CORE and ct.get_team(eid) == self.team:
+                        self.core = ct.get_position(eid)
+                        break
+                except Exception:
+                    continue
+        # LOKI-FERRY-SIEGE owns this launcher's turn if it is one of ITS
+        # launchers -- a ferry link that has to throw and then delete itself, or
+        # a ring-sited evictor that must NEVER take the ferry branch (the
+        # probe's integrated run had exactly that bug: the ring launcher threw
+        # our own sealer two tiles off the ring).  Returns False for a plain
+        # home launcher, which then plays the incumbent doctrine below.
+        # ⛔ THIS HOOK SITS ABOVE THE `self.core is None` RETURN BELOW, AND
+        # THAT PLACEMENT IS LOAD-BEARING: a launcher's vision is r^2=26, so
+        # every ferry link past the second one CANNOT SEE OUR OWN CORE and the
+        # incumbent's discovery loop leaves `self.core` None forever.  Measured
+        # on the first integrated midgard run -- link 1 at (2,5) threw, link 2
+        # at (7,8) returned before the hook and the ferry stopped at r4.  The
+        # plank derives both anchors from map symmetry instead.
+        if LOKI_FERRY_SIEGE_ON and self._fs_launcher_turn(ct):
+            return
+
+        if self.core is None:
+            return
+
+        lp = ct.get_position()
+        w, h = self.mw, self.mh
+        dest = self._enemy_anchor(ct)
+
+        # Reachable throw sites: r^2 <= 26 from the launcher.  LOKI rebuilt
+        # this ~81-Position list EVERY ROUND for the launcher's whole life
+        # (loki_analysis.md 5.2) even on the rounds it threw nothing.  A
+        # launcher is a building and never moves, so it is built once.
+        skey = (lp, w, h)
+        if self._launch_key != skey:
+            sites = []
+            for dx in range(-5, 6):
+                for dy in range(-5, 6):
+                    if dx * dx + dy * dy > 26:
+                        continue
+                    tx, ty = lp.x + dx, lp.y + dy
+                    if 0 <= tx < w and 0 <= ty < h:
+                        sites.append(Position(tx, ty))
+            self._launch_sites = sites
+            self._launch_key = skey
+            self._launch_far_key = None
+            self._launch_near_key = None
+        sites = self._launch_sites
+
+        # 1. EXILE.  Pickup is the full 8-neighbourhood at d^2 <= 2 (measured,
+        # 1471/1472 wild throw events).  This is the same tool the field uses
+        # against our raiders, and it is the cheapest home defence we own.
+        friendly_bots = []
+        for eid in ct.get_nearby_entities():
+            try:
+                if ct.get_entity_type(eid) != EntityType.BUILDER_BOT:
+                    continue
+                bp = ct.get_position(eid)
+                if bp.distance_squared(lp) > 2:
+                    continue
+                if ct.get_team(eid) == self.team:
+                    friendly_bots.append((eid, bp))
+                    continue
+            except Exception:
+                continue
+            # Same order as LOKI's per-intruder sort: sorted() is stable and
+            # reverse=True keeps equal keys in their original order, so sorting
+            # the identical list once gives the identical sequence.
+            fkey = (lp, self.core)
+            if self._launch_far_key != fkey:
+                self._launch_far = sorted(
+                    sites, key=lambda t: t.distance_squared(self.core), reverse=True)
+                self._launch_far_key = fkey
+            for site in self._launch_far:
+                try:
+                    if ct.can_launch(bp, site):
+                        ct.launch(bp, site)
+                        # v516 change 1b: the idle clock counts EXILE throws
+                        # too, so a launcher doing home-defence work is never
+                        # torn down for idleness.
+                        self.fs516_last_throw = ct.get_current_round()
+                        return
+                except Exception:
+                    continue
+
+        # 2. FERRY.  Only the raider that pinged, only while the ping is fresh,
+        # and only to a site strictly closer to the enemy Core than it stands.
+        if not self._ferry_home_on() or dest is None or not friendly_bots:
+            return
+        want = ct.read_store(SLOT_FERRY_ID)
+        if not want:
+            return
+        if ct.get_current_round() - ct.read_store(SLOT_FERRY_RND) > LOKI_FERRY_STALE_RNDS:
+            return
+        nkey = (lp, dest)
+        if self._launch_near_key != nkey:
+            self._launch_near = sorted(sites, key=lambda t: t.distance_squared(dest))
+            self._launch_near_key = nkey
+        near_first = self._launch_near
+        for eid, bp in friendly_bots:
+            if eid + 1 != want:
+                continue
+            here = bp.distance_squared(dest)
+            for site in near_first:
+                if site.distance_squared(dest) >= here:
+                    break
+                try:
+                    if ct.can_launch(bp, site):
+                        ct.launch(bp, site)
+                        ct.write_store(SLOT_FERRY_ID, 0)
+                        self.fs516_last_throw = ct.get_current_round()
+                        return
+                except Exception:
+                    continue
+            return
