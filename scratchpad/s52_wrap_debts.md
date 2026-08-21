@@ -37,3 +37,4 @@
   worktree + post-resume-disk-check + registration-completes-at-zero-rows — all adopted this session.
 - Error-direction check: the v538 brief inverted a falsifier (agent caught it); my fleet_queue misread
   (caught pre-B3); the 4-0 tenure miscount (Magnus caught) — mixed directions, two self-caught.
+14. wake-deadman: background wake completions can silently fail to notify (93-min hang at the v2 fire; side-lane escalation was the catch) — wakes that gate irreversible acts need a second surface (side-lane watch or a self-expiring marker file).
