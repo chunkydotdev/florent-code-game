@@ -1,6 +1,6 @@
-# s53 WRAP DEBTS — research lane (started 2026-08-21T12:5xZ; wrap-batch per Magnus's rule, none executed mid-session)
+# s53 WRAP DEBTS — research lane (wrap-batch per Magnus's rule, none executed mid-session)
 
-## RD-s53-1 — audit_trigger ship-cadence cell: subject filter (spec'd 2026-08-21T13:0xZ, side-lane confirmed the hazard)
+## RD-s53-1 — audit_trigger ship-cadence cell: subject filter (spec commit's author clock 12:58:35Z is the stamp; side-lane confirmed the hazard; hand-rounded "13:0x" stamp corrected per timestamps rule at 12:59:47Z)
 INCIDENT: the s53 boot trip counted 8 activations/24h as "our" ship cadence; side-lane subject check
 (commit 111bbbb59) attributed only 2 to our line (v174, v177 ships), 5 to x3r0's slot actions
 (incl. their v175 ship + self-rollback to v174 — ours-by-VERSION, theirs-by-HAND), 1 unattributed
