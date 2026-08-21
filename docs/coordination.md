@@ -72138,3 +72138,35 @@ v533home    29.6      19       52             —
 ## INSTRUMENT DEBTS → scratchpad/s52_wrap_debts.md (14 items: the 13 pre-assembled + #14
 wake-deadman). Per Magnus's rule these are wrap-time work — this wrap executes NONE inline;
 the successor (or a Magnus-called wrap-fix batch) runs them with both-ways drives.
+
+# ============================================================================
+# 2026-08-21T12:32:11Z — ⭐⭐ **RESEARCH ARM s52 WRAP — fired by the BUILDER'S WRAP at Magnus's
+# call (standing rule). ARM RETRO RAN FIRST per charter:
+# `docs/retro-research-s52-2026-08-21.md`, instrument v1.21 → v1.22, FIRINGS FIVE.**
+# Session 2026-08-20T08:52Z → 2026-08-21T12:3xZ. TEN fresh-opus agents commissioned,
+# ten completed, ten banked, ten consumed — one became the day's ship.
+# ============================================================================
+
+## PROCESS DELTAS (s52) — routed at write time
+1. **`git commit <paths>` ALWAYS on the shared working tree** — a bare commit takes the whole index and swept 19 of the build agent's staged files (builder-caught, provenance repaired). Allowed-form statement, same family as the watcher sole-content rule. *(Routed: retro v1.22 + here; applied from 08:12 onward.)*
+2. **The v1.21 allowed-form rule fired on its author**: one commit chained into a watcher background call at first temptation (succeeded, verified after, logged). The named failure recurring is the rule's proof. *(Routed: retro.)*
+3. **BANK-EARLY is now standard agent-brief language** (two machine-sleep agent kills; the resumed agent correctly refused a restart-from-top instruction — respect agent context on resume, steer, don't reset). *(Routed: here; every s52 brief after the first kill carried it.)*
+4. **A correction can be under-SPECIFIED, not only under-powered (Q9's new face):** "silenced verb" → "misdirected verb" — my compression of my own study reached a build brief before my own commissioned autopsy corrected it. Dated amendments at the SOURCE study each time. *(Routed: retro + the study files' amendment blocks.)*
+5. **Decode-first before weapon rows is validated as a class**: the #98 arc (approval → decode → artifact verdict → free rider) closed a weapon road without spending a leg; the team-lazy TLE row was declined on that precedent. *(Routed: here as method note; #98's row carries the arc.)*
+6. **Instrument drives need their own positive controls**: the zsh word-split produced a PASS-SHAPED harness result; caught only by the per-iteration echo. *(Routed: retro; the blind-guard + reset drives are the worked example.)*
+7. **The watcher form that survived the session**: exit-on-event (not poll-forever), blind-guard (5 fails → loud exit, driven both ways), None-safe printing, heartbeat lines for suspension diagnosis. Machine SLEEP (not CLI failure) caused every blind window — an ops fact for Magnus, not a code fix. *(Routed: here; the successor inherits the form from any of today's re-arm blocks.)*
+
+--- 2026-08-21T12:32:11Z ⭐⭐ **RESEARCH ARM s52 — STATE NOTE. LIVE SURFACES VERIFIED, NOT ASSERTED.** ---
+
+## ⛔ WHAT A SUCCESSOR MUST NOT INHERIT UNCHECKED
+1. **HOLDER at my last read: v177 (maiden 12:31:10Z, the v2 ship line).** Read `fcode status` at boot, never this note. **THE LADDER CADENCE IS ~10 MINUTES** (three-slot confirmed 12:01/12:11/12:21, seconds anchor :10) — every 20-min assumption anywhere is stale; re-derive offset AND interval from recent rows.
+2. **THE MAP POOL ROTATED 10/15 at ~07:4xZ 2026-08-21.** Surviving fixture set re-derived in `GEOMETRY-newpool-2026-08-21.md`: F-CRATER glacierkeep/jotunheim/auroraveil · F-REFUSAL midgard (#103) · F-LAZY-DET midgard/seatA (#101's ONE surviving cell) · F-SOCKET-REG icefloe. frostgate and ragnarok fixtures RETIRED. jotunheim ≡ saga by signature (MAPTRUST-protected in shipped trees; pre-MAPTRUST trees false-skip AND wrong-grid there).
+3. **RATED TAPE decoded through the 12:21:10Z pairing** (+1 errored match da62cf6e, no delta). My watcher is DEAD (TaskStop-verified at wrap). Resume from id `81c5c93b…` / the errored `da62cf6e…`; per-match ourver is the only honest version column — the slot alternated v174/v175/v176/v177 across the day (two lines sharing it).
+4. **Queue 87 unblocked, floor clear.** New this session: #97-#104 (all GREPs run at admission). The builder's HANDOVER carries my successor items: the cadence plan under 10-min reality · the kladde-class leg for v541's confirmation · anchor-readout consumption · #101's surviving-fixture watch · RD1's fast-shipper spec. Wrap debts: `scratchpad/s52_wrap_debts.md` (RD1 move_miner pooling · RD2 flag-effective-state lint · RD3 last_delivery_round columns), each with a behaviour-now line.
+5. **Corpus synced last at ~19:39Z 2026-08-20 + the day's archiver accrual — a successor's first act is `tools/corpus/sync.py`** (the rotation + ~30 matches postdate the last full sync).
+6. **Standing analytical state: the conversion war is the campaign** (arrival 25/25, damage 0 — misdirected verb, v541/v542 building at wrap); the famine/tiebreak class is priced (−18.76/match vs TRRR); Focalground's camp tell and Ti-threshold are banked; kladde remains the largest drain with #102/#104 as its answers.
+
+## RESEARCH ARM STATE — VERIFIED
+* **NOTHING OF MINE IS RUNNING.** Ten agents: all completed, banked, relayed. Watcher: TaskStop-confirmed dead this minute. **DIES WITH ME: NOTHING.**
+* **HARD LIMITS HELD ALL SESSION:** no bot edits, no submissions/activations, ZERO matches fired (both unrated legs were the builder's), no verdicts, no HANDOVER/tape writes. One mid-session tool edit (move_miner) — breach logged at 09:28, carve-out granted by Magnus at 09:43, rule treated absolute thereafter (RD1-3 all went to wrap debts, not edits).
+* **WAKE PATHS: none of mine persist.** The builder's daemons are their HANDOVER's surface. Boot recovery: now.py → corpus sync → rated decode from the ids above → this note.
