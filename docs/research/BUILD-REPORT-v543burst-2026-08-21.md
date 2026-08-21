@@ -14,7 +14,12 @@ plank committed `13:12:02Z` (`9f64c4426`), report written `13:15Z`. Parent
 
 **⛔ THIS BUILD MAKES NO VALUE CLAIM.** Nothing here is a screen, a verdict or a
 ship recommendation. It is a tree, its self-checks, and an honest statement of
-what the mechanism did on the one live cell it was allowed to touch.
+what the mechanism did.
+
+**Two proof runs, both after the first draft, both on cores freed by the anchor
+battery (`13:53Z`–`14:00Z`, 720 games, 0 tracebacks): the DYNAMIC flag-off
+identity (§9.1) and the SIMULTANEOUS-PAIR existence proof (§9.2).** No screen was
+started; the screen fires under its own prereg when the lane locks it.
 
 ---
 
@@ -49,11 +54,14 @@ what the mechanism did on the one live cell it was allowed to touch.
    on midgard the ferry-siege lane never runs at all, so the consumer has no
    site to execute from** (§4.4). Corpus dose at the shipped setting: **~17.5%
    of game-sides, median first fire r178** (§4.7).
-5. **Flag-off identity is argued statically and is CLEAN under a self-tested
-   audit** (R1/R2/R3, mutation positive control fires 3 violations on a
-   deliberately unguarded copy) — **the DYNAMIC half (paired NOISE_OFF identity
-   games vs the frozen parent) was NOT run and is owed by the screen lane**
-   (§3).
+5. **Flag-off identity holds STATICALLY AND DYNAMICALLY.** Static: CLEAN under a
+   self-tested AST audit (R1/R2/R3, mutation control fires 3 violations on a
+   deliberately unguarded copy, §3). **Dynamic, run after this report's first
+   draft: `FS_V543_BURST = False` is BYTE-IDENTICAL to the frozen parent in
+   180 of 180 cells (~140 independent) over 35 maps and 2 opponents, with all
+   three controls live — determinism, discrimination (72/180) and non-vacuity
+   (21/180)** (§9.1). **And the word "pair" is now earned: 20 purchases at
+   `live 1` — a second sentinel bought while the first still stands** (§9.2).
 
 ---
 
@@ -307,8 +315,10 @@ over a trace that fires twice with them on: **0 fires, 0 open rounds, and
 `v543_rnd` still `-1` with `v543_hist` still empty** — the method returns on its
 first line and does not even record history.
 
-⛔ **WHAT IS MISSING, AND IT IS THE HALF THIS TREE CANNOT SUPPLY: THE DYNAMIC
-IDENTITY.** The house standard is a paired NOISE_OFF battery — flag-off arm vs
+✅ **DISCHARGED IN s9.1 — THE DYNAMIC IDENTITY RAN AND READ 0 OF 180.** The
+paragraph below is the state of this report before the cores freed, kept because
+it states correctly what the static half can and cannot do. ⛔ **WHAT WAS MISSING
+AT THAT POINT:** The house standard is a paired NOISE_OFF battery — flag-off arm vs
 the frozen parent, same seeds, expect 0 rows differing, with the same tape
 showing the plank moved something when it is on. **That battery was not run
 here** (the box is on an 8-worker ANCHOR-CLASS corefill battery and this build is
@@ -689,7 +699,140 @@ identity games require a NOISE_OFF arm on BOTH sides.** The smoke arm used for
 
 ---
 
-## 9. REPRODUCING THIS
+## 9. ⭐⭐ THE TWO OWED PROOFS — RUN 2026-08-21 13:53Z–14:00Z ON FREED CORES
+
+Both were owed by §3 and §4.4 and both are now discharged. The anchor battery had
+completed (0 engine processes at start), so these ran at `--jobs 8`, `nice -n 19`.
+**720 engine games, 0 tracebacks, 0 missing replays.**
+
+### 9.1 PROOF 1 — DYNAMIC FLAG-OFF IDENTITY: **0 of 180 CELLS DIFFER**
+
+**Instrument:** `scratchpad/s53_v543_build/identity_grid.py` — runs one
+`fcode run` per (arm, opponent, map, seed, seat) and compares the **md5 of the
+replay file**, i.e. byte-identity of the whole game, not of an outcome summary.
+
+**Arm construction, and the flag question the coordinator asked about.** ⛔ **NO
+FLAG IN ANY REPO TREE WAS EVER EDITED, so there is nothing to restore and the
+restoration is not a promise but an absence.** Every arm is a **scratch copy**
+under `scratchpad/s53_v543_build/arms/` with its overrides appended at
+`doctrine.py`'s EOF — the house arm-construction pattern (`mkarm.sh`), and the
+exact shape `flagoff_audit.py`'s R1 exists to keep safe. Verified in HEAD after
+the run: `bots/_v542wave` and `bots/_v543burst` both carry `NOISE_ON = True`,
+zero occurrences of `NOISE_ON = False`, and `LOKI_FS_V543 = True`,
+`FS_V543_BURST = True`, `FS_V543_BURST_TI = 200`, `FS_V543_LOG = False`;
+`git status bots/` shows no modification to either tree.
+
+| arm | tree | EOF overrides |
+|---|---|---|
+| **P0** (control) | `bots/_v542wave` | `NOISE_ON = False` |
+| **TOFF** (the claim) | `bots/_v543burst` | `NOISE_ON = False`, `FS_V543_BURST = False` |
+| **TON** (non-vacuity) | `bots/_v543burst` | `NOISE_ON = False` |
+| **BASE** (discrimination) | `bots/_v537socket` | `NOISE_ON = False` |
+| **OPP1 / OPP2** | `bots/_v488beltbreak2` / `bots/_x3r0v168mjolnir` | `NOISE_ON = False` |
+
+**`NOISE_OFF` IS ON DISK IN ALL SIX TREES INCLUDING BOTH OPPONENTS** — with
+decision noise live in *either* seat the one-draw law does not hold and every
+zero below would be unreadable.
+
+**THREE CONTROLS, all satisfied, none of them optional:**
+
+* **C1 DETERMINISM.** Same cell (P0 vs OPP1, atoll, seed 3) run twice →
+  **identical md5 `bdaeb9d5…`**. Without this the comparator measures noise.
+* **C2 DISCRIMINATION.** `BASE` (`_v537socket`, the common ancestor of the three
+  planks merged into the parent) differs from P0 in **72 of 180 cells** — so
+  md5-of-replay is demonstrably sensitive to a real behavioural difference, and
+  a zero is not the comparator failing to look.
+* **C3 NON-VACUITY.** `TON` — the same tree with the plank **ON** — differs from
+  P0 in **21 of 180 cells**, so "flag off is identical" is not trivially true by
+  the plank doing nothing.
+
+**RESULT:**
+
+| comparison | cells differing | cells identical |
+|---|---|---|
+| **TOFF vs P0 (grid 1, 10 maps × 2 opps × 2 seeds × 2 seats)** | **0** | 80 |
+| **TOFF vs P0 (grid 2, 25 maps × 2 opps × 1 seed × 2 seats)** | **0** | 100 |
+| **TOFF vs P0, POOLED** | **0** | **180** |
+| TON vs P0, pooled | 21 | 159 |
+| BASE vs P0, pooled | 72 | 108 |
+
+> **⇒ WITH `FS_V543_BURST = False` THE TREE IS BYTE-IDENTICAL TO THE FROZEN
+> PARENT IN 180 OF 180 CELLS**, across 35 maps, 2 opponents and both seats,
+> while the same comparator sees 21 differences from the plank and 72 from an
+> older tree.
+
+⚠ **HONEST CELL COUNT, AND IT IS SMALLER THAN 180.** Grid 1 varied the seed, and
+**seeds are behaviourally degenerate here**: the forced-dose tapes are
+**byte-identical across all four seeds in 37 of 40 (opponent, map, seat)
+groups**, and outcomes match across seeds in 153 of 160. *(The replay md5 still
+differs by seed because the seed is recorded in the replay — which is why the
+naive md5-based degeneracy test says "independent" and is wrong. The comparison
+above is unaffected: it holds the seed fixed and varies only the arm.)*
+⇒ **the number of INDEPENDENT behavioural cells is ~140 (40 + 100), not 180**,
+and grid 2 was run over 25 fresh maps rather than more seeds for exactly that
+reason. **The claim to quote is "0 differences over ~140 independent cells on 35
+maps", not "180".**
+
+⚠ **AND WHAT THE 21 NON-VACUITY CELLS SHOW IS NOT A VALUE CLAIM — IT POINTS BOTH
+WAYS.** In grid 1 all 7 differing cells are **bytes-only**: same round count,
+same winner, same win condition. In grid 2, 7 of 14 move the outcome, and the
+directions are mixed: **one flip to a win** (hive, OPP2 seat A: r1000
+`titanium_collected` loss → **r285 core kill**), **one flip to a loss**
+(fjordgate, OPP2 seat B: r104 win → r221 loss), one large speed-up (helheim
+341 → **225** rounds) and two large slow-downs (yggdrasil 287 → 537, frostgate
+364 → 460). **n is tiny, the sign is mixed, and the screen owns this question —
+it is quoted here only to prove the plank moves games at all.**
+
+### 9.2 PROOF 2 — THE SIMULTANEOUS PAIR EXISTS: **20 PURCHASES AT `live 1`**
+
+§4.4 could only show a buy-and-replace (`live 0` twice), so the word *pair* was
+unearned. **It is earned now.** Forced-dose arm (`FS_V543_BURST_TI =
+FS_V543_REARM_TI = 60`, `FS_V543_LOG = True`, `NOISE_ON = False` — scratch copy
+only), 160 games over 10 FS-lane maps × 2 opponents × 4 seeds × 2 seats.
+
+**112 `V543 PAIR` purchases, decomposed by the live-sentinel count AT THE MOMENT
+OF PURCHASE — the field the tape prints for exactly this question:**
+
+```
+  92  live=0     first barrel (or a replacement for a dead one)
+  20  live=1     ⭐ THE SECOND SENTINEL BOUGHT WHILE THE FIRST IS STILL ALIVE
+```
+
+Named cells, so this is checkable rather than asserted:
+
+```
+TDOSE_OPP1_jotunheim_{3,7,11,19}_B : V543 PAIR 308 id 239 live 1 ti 148 need 3 orth 3 n 2
+TDOSE_OPP2_fjordgate_{3,7,11,19}_A : V543 PAIR 108 id 3   live 1 ti 119 need 7 orth 6 n 1
+TDOSE_OPP2_fjordgate_{3,7,11,19}_A : V543 PAIR 137 id 3   live 1 ti 128 need 7 orth 6 n 2
+```
+
+> **⇒ A LIVE-2 FORWARD STATE IS REACHABLE BY THIS CLAUSE**, and on fjordgate one
+> body reaches it **twice in the same game** (r108 and r137), both purchases
+> inside its own burst windows, both with the collar still owing seats
+> (`need 7`, `orth 6`) — i.e. precisely the state where the parent's rung-4 path
+> would have been held by the collar reserve.
+
+⚠ **FOUR CAVEATS, and the first is the one that matters.** (i) **This is the
+FORCED-DOSE arm at threshold 60, not the shipped 200** — it proves the code path
+can reach a live pair, **not** that the shipped configuration reaches it at any
+rate. (ii) The 20 hits are **4-fold duplicated by seed degeneracy** (§9.1), so
+they are **5 distinct behavioural events**, not 20 — quote five. (iii) 82% of
+purchases are still `live 0`, i.e. the dominant behaviour remains one barrel at a
+time. (iv) Nothing here says the pair killed anything; pair→core-death is a
+screen measurement.
+
+### 9.3 What these two proofs do NOT settle
+
+* **No screen was started and none is implied.** Per instruction, the screen
+  fires under its own prereg after the lane locks it.
+* **The shipped-threshold pair rate is unmeasured.** §4.7 puts the gate at 17.5%
+  of game-sides; the *pair* rate conditional on a fire is unknown.
+* **The 21 non-vacuity cells are a mechanism signal, not an effect size** — mixed
+  in sign, tiny in n, and drawn from two opponents we chose.
+
+---
+
+## 10. REPRODUCING THIS
 
 ```bash
 # static flag-off audit (self-test first -- it must fail on its own dirty cases)
