@@ -1,0 +1,361 @@
+tag	map	seed	seat	arm	ours	winner	cond	turn	tracebacks	ours_mined	opp_mined
+twinA_archipelago_s1_A	archipelago	1	A	twinA	OPP	_x3r0v169mjolnir	Titanium collected (tiebreak)	1000	0	12550	19040
+twinB_archipelago_s1_A	archipelago	1	A	twinB	OPP	_x3r0v169mjolnir	Core destroyed	370	0	2250	2570
+twinA_archipelago_s1_B	archipelago	1	B	twinA	OPP	_x3r0v169mjolnir	Core destroyed	234	0	570	3160
+twinB_archipelago_s1_B	archipelago	1	B	twinB	OPP	_x3r0v169mjolnir	Core destroyed	184	0	810	2240
+twinA_archipelago_s2_A	archipelago	2	A	twinA	OPP	_x3r0v169mjolnir	Core destroyed	540	0	6970	7100
+twinB_archipelago_s2_A	archipelago	2	A	twinB	OPP	_x3r0v169mjolnir	Core destroyed	371	0	940	4470
+twinA_archipelago_s2_B	archipelago	2	B	twinA	OPP	_x3r0v169mjolnir	Core destroyed	341	0	2250	3800
+twinB_archipelago_s2_B	archipelago	2	B	twinB	OPP	_x3r0v169mjolnir	Titanium collected (tiebreak)	1000	0	2750	3520
+twinA_archipelago_s3_A	archipelago	3	A	twinA	OPP	_x3r0v169mjolnir	Core destroyed	161	0	590	1110
+twinB_archipelago_s3_A	archipelago	3	A	twinB	OPP	_x3r0v169mjolnir	Core destroyed	325	0	2030	3240
+twinA_archipelago_s3_B	archipelago	3	B	twinA	OPP	_x3r0v169mjolnir	Core destroyed	177	0	700	1020
+twinB_archipelago_s3_B	archipelago	3	B	twinB	OPP	_x3r0v169mjolnir	Core destroyed	166	0	330	1160
+twinA_archipelago_s4_A	archipelago	4	A	twinA	OPP	_x3r0v169mjolnir	Core destroyed	192	0	490	1490
+twinB_archipelago_s4_A	archipelago	4	A	twinB	US	twinB	Core destroyed	332	0	3030	3170
+twinA_archipelago_s4_B	archipelago	4	B	twinA	OPP	_x3r0v169mjolnir	Core destroyed	188	0	200	1240
+twinB_archipelago_s4_B	archipelago	4	B	twinB	OPP	_x3r0v169mjolnir	Core destroyed	193	0	780	1340
+twinA_archipelago_s5_A	archipelago	5	A	twinA	US	twinA	Core destroyed	630	0	7300	5180
+twinB_archipelago_s5_A	archipelago	5	A	twinB	OPP	_x3r0v169mjolnir	Core destroyed	127	0	330	1000
+twinA_archipelago_s5_B	archipelago	5	B	twinA	OPP	_x3r0v169mjolnir	Core destroyed	144	0	610	1450
+twinB_archipelago_s5_B	archipelago	5	B	twinB	OPP	_x3r0v169mjolnir	Core destroyed	326	0	590	1410
+twinA_yulerune_s1_A	yulerune	1	A	twinA	OPP	_x3r0v169mjolnir	Core destroyed	327	0	290	770
+twinB_yulerune_s1_A	yulerune	1	A	twinB	OPP	_x3r0v169mjolnir	Core destroyed	239	0	330	1810
+twinA_yulerune_s1_B	yulerune	1	B	twinA	US	twinA	Core destroyed	842	0	5340	2940
+twinB_yulerune_s1_B	yulerune	1	B	twinB	OPP	_x3r0v169mjolnir	Core destroyed	308	0	880	710
+twinA_yulerune_s2_A	yulerune	2	A	twinA	US	twinA	Core destroyed	182	0	1280	140
+twinB_yulerune_s2_A	yulerune	2	A	twinB	OPP	_x3r0v169mjolnir	Core destroyed	300	0	290	1810
+twinA_yulerune_s2_B	yulerune	2	B	twinA	OPP	_x3r0v169mjolnir	Core destroyed	310	0	2150	2660
+twinB_yulerune_s2_B	yulerune	2	B	twinB	OPP	_x3r0v169mjolnir	Titanium collected (tiebreak)	1000	0	3880	5060
+twinA_yulerune_s3_A	yulerune	3	A	twinA	OPP	_x3r0v169mjolnir	Core destroyed	276	0	340	540
+twinB_yulerune_s3_A	yulerune	3	A	twinB	OPP	_x3r0v169mjolnir	Core destroyed	407	0	270	3200
+twinA_yulerune_s3_B	yulerune	3	B	twinA	OPP	_x3r0v169mjolnir	Core destroyed	364	0	1870	1030
+twinB_yulerune_s3_B	yulerune	3	B	twinB	US	twinB	Core destroyed	113	0	320	0
+twinA_yulerune_s4_A	yulerune	4	A	twinA	US	twinA	Core destroyed	182	0	1280	140
+twinB_yulerune_s4_A	yulerune	4	A	twinB	OPP	_x3r0v169mjolnir	Core destroyed	275	0	340	530
+twinA_yulerune_s4_B	yulerune	4	B	twinA	US	twinA	Core destroyed	360	0	2060	240
+twinB_yulerune_s4_B	yulerune	4	B	twinB	US	twinB	Core destroyed	95	0	280	0
+twinA_yulerune_s5_A	yulerune	5	A	twinA	OPP	_x3r0v169mjolnir	Core destroyed	376	0	340	460
+twinB_yulerune_s5_A	yulerune	5	A	twinB	OPP	_x3r0v169mjolnir	Titanium collected (tiebreak)	1000	0	320	7280
+twinA_yulerune_s5_B	yulerune	5	B	twinA	US	twinA	Core destroyed	227	0	2270	680
+twinB_yulerune_s5_B	yulerune	5	B	twinB	US	twinB	Core destroyed	548	0	2750	840
+twinA_glacierkeep_s1_A	glacierkeep	1	A	twinA	US	twinA	Core destroyed	412	0	950	160
+twinB_glacierkeep_s1_A	glacierkeep	1	A	twinB	OPP	_x3r0v169mjolnir	Core destroyed	714	0	0	1090
+twinA_glacierkeep_s1_B	glacierkeep	1	B	twinA	OPP	_x3r0v169mjolnir	Core destroyed	508	0	0	1210
+twinB_glacierkeep_s1_B	glacierkeep	1	B	twinB	OPP	_x3r0v169mjolnir	Core destroyed	905	0	0	5740
+twinA_glacierkeep_s2_A	glacierkeep	2	A	twinA	OPP	_x3r0v169mjolnir	Core destroyed	514	0	0	880
+twinB_glacierkeep_s2_A	glacierkeep	2	A	twinB	OPP	_x3r0v169mjolnir	Core destroyed	404	0	0	2320
+twinA_glacierkeep_s2_B	glacierkeep	2	B	twinA	OPP	_x3r0v169mjolnir	Core destroyed	534	0	0	700
+twinB_glacierkeep_s2_B	glacierkeep	2	B	twinB	US	twinB	Core destroyed	623	0	6580	0
+twinA_glacierkeep_s3_A	glacierkeep	3	A	twinA	US	twinA	Core destroyed	699	0	1310	220
+twinB_glacierkeep_s3_A	glacierkeep	3	A	twinB	OPP	_x3r0v169mjolnir	Harvesters (tiebreak)	1000	0	0	0
+twinA_glacierkeep_s3_B	glacierkeep	3	B	twinA	US	twinA	Core destroyed	548	0	5260	2820
+twinB_glacierkeep_s3_B	glacierkeep	3	B	twinB	OPP	_x3r0v169mjolnir	Core destroyed	483	0	0	1420
+twinA_glacierkeep_s4_A	glacierkeep	4	A	twinA	OPP	_x3r0v169mjolnir	Core destroyed	311	0	0	1590
+twinB_glacierkeep_s4_A	glacierkeep	4	A	twinB	OPP	_x3r0v169mjolnir	Core destroyed	402	0	590	1260
+twinA_glacierkeep_s4_B	glacierkeep	4	B	twinA	OPP	_x3r0v169mjolnir	Core destroyed	369	0	0	1080
+twinB_glacierkeep_s4_B	glacierkeep	4	B	twinB	OPP	_x3r0v169mjolnir	Core destroyed	761	0	750	4200
+twinA_glacierkeep_s5_A	glacierkeep	5	A	twinA	US	twinA	Core destroyed	569	0	0	690
+twinB_glacierkeep_s5_A	glacierkeep	5	A	twinB	OPP	_x3r0v169mjolnir	Core destroyed	713	0	0	0
+twinA_glacierkeep_s5_B	glacierkeep	5	B	twinA	OPP	_x3r0v169mjolnir	Core destroyed	468	0	0	1690
+twinB_glacierkeep_s5_B	glacierkeep	5	B	twinB	OPP	_x3r0v169mjolnir	Titanium collected (tiebreak)	1000	0	10520	11360
+twinA_archipelago_s6_A	archipelago	6	A	twinA	OPP	_x3r0v169mjolnir	Core destroyed	266	0	2520	3000
+twinB_archipelago_s6_A	archipelago	6	A	twinB	OPP	_x3r0v169mjolnir	Core destroyed	412	0	3180	4540
+twinA_archipelago_s6_B	archipelago	6	B	twinA	OPP	_x3r0v169mjolnir	Core destroyed	205	0	910	2070
+twinB_archipelago_s6_B	archipelago	6	B	twinB	OPP	_x3r0v169mjolnir	Core destroyed	213	0	950	990
+twinA_archipelago_s7_A	archipelago	7	A	twinA	US	twinA	Core destroyed	234	0	1830	1220
+twinB_archipelago_s7_A	archipelago	7	A	twinB	OPP	_x3r0v169mjolnir	Core destroyed	347	0	3390	5090
+twinA_archipelago_s7_B	archipelago	7	B	twinA	OPP	_x3r0v169mjolnir	Core destroyed	242	0	590	1360
+twinB_archipelago_s7_B	archipelago	7	B	twinB	OPP	_x3r0v169mjolnir	Core destroyed	198	0	880	1410
+twinA_archipelago_s8_A	archipelago	8	A	twinA	OPP	_x3r0v169mjolnir	Core destroyed	154	0	400	1160
+twinB_archipelago_s8_A	archipelago	8	A	twinB	OPP	_x3r0v169mjolnir	Core destroyed	198	0	410	1000
+twinA_archipelago_s8_B	archipelago	8	B	twinA	OPP	_x3r0v169mjolnir	Core destroyed	138	0	580	1830
+twinB_archipelago_s8_B	archipelago	8	B	twinB	OPP	_x3r0v169mjolnir	Core destroyed	199	0	810	1760
+twinA_archipelago_s9_A	archipelago	9	A	twinA	US	twinA	Core destroyed	189	0	1320	1470
+twinB_archipelago_s9_A	archipelago	9	A	twinB	OPP	_x3r0v169mjolnir	Titanium collected (tiebreak)	1000	0	11500	16300
+twinA_archipelago_s9_B	archipelago	9	B	twinA	OPP	_x3r0v169mjolnir	Core destroyed	153	0	650	1810
+twinB_archipelago_s9_B	archipelago	9	B	twinB	OPP	_x3r0v169mjolnir	Core destroyed	177	0	700	1020
+twinA_archipelago_s10_A	archipelago	10	A	twinA	OPP	_x3r0v169mjolnir	Core destroyed	253	0	1300	1770
+twinB_archipelago_s10_A	archipelago	10	A	twinB	OPP	_x3r0v169mjolnir	Core destroyed	492	0	1960	5560
+twinA_archipelago_s10_B	archipelago	10	B	twinA	OPP	_x3r0v169mjolnir	Core destroyed	188	0	200	1240
+twinB_archipelago_s10_B	archipelago	10	B	twinB	OPP	_x3r0v169mjolnir	Core destroyed	161	0	680	1770
+twinA_yulerune_s6_A	yulerune	6	A	twinA	US	twinA	Core destroyed	402	0	1340	10
+twinB_yulerune_s6_A	yulerune	6	A	twinB	OPP	_x3r0v169mjolnir	Core destroyed	219	0	340	1550
+twinA_yulerune_s6_B	yulerune	6	B	twinA	US	twinA	Core destroyed	510	0	5740	1310
+twinB_yulerune_s6_B	yulerune	6	B	twinB	US	twinB	Core destroyed	651	0	4630	4530
+twinA_yulerune_s7_A	yulerune	7	A	twinA	OPP	_x3r0v169mjolnir	Core destroyed	362	0	630	1180
+twinB_yulerune_s7_A	yulerune	7	A	twinB	OPP	_x3r0v169mjolnir	Titanium collected (tiebreak)	1000	0	320	7280
+twinA_yulerune_s7_B	yulerune	7	B	twinA	US	twinA	Core destroyed	631	0	4760	10
+twinB_yulerune_s7_B	yulerune	7	B	twinB	US	twinB	Core destroyed	315	0	3180	0
+twinA_yulerune_s8_A	yulerune	8	A	twinA	OPP	_x3r0v169mjolnir	Core destroyed	377	0	340	470
+twinB_yulerune_s8_A	yulerune	8	A	twinB	OPP	_x3r0v169mjolnir	Core destroyed	327	0	290	770
+twinA_yulerune_s8_B	yulerune	8	B	twinA	US	twinA	Core destroyed	92	0	270	0
+twinB_yulerune_s8_B	yulerune	8	B	twinB	OPP	_x3r0v169mjolnir	Core destroyed	717	0	2690	820
+twinA_yulerune_s9_A	yulerune	9	A	twinA	US	twinA	Core destroyed	396	0	230	360
+twinB_yulerune_s9_A	yulerune	9	A	twinB	OPP	_x3r0v169mjolnir	Core destroyed	421	0	290	750
+twinA_yulerune_s9_B	yulerune	9	B	twinA	US	twinA	Titanium collected (tiebreak)	1000	0	730	420
+twinB_yulerune_s9_B	yulerune	9	B	twinB	US	twinB	Core destroyed	111	0	320	0
+twinA_yulerune_s10_A	yulerune	10	A	twinA	OPP	_x3r0v169mjolnir	Core destroyed	239	0	330	1810
+twinB_yulerune_s10_A	yulerune	10	A	twinB	OPP	_x3r0v169mjolnir	Core destroyed	413	0	290	2470
+twinA_yulerune_s10_B	yulerune	10	B	twinA	OPP	_x3r0v169mjolnir	Core destroyed	592	0	480	430
+twinB_yulerune_s10_B	yulerune	10	B	twinB	US	twinB	Core destroyed	272	0	1000	0
+twinA_glacierkeep_s6_A	glacierkeep	6	A	twinA	US	twinA	Core destroyed	569	0	0	690
+twinB_glacierkeep_s6_A	glacierkeep	6	A	twinB	US	twinB	Harvesters (tiebreak)	1000	0	0	0
+twinA_glacierkeep_s6_B	glacierkeep	6	B	twinA	US	twinA	Titanium collected (tiebreak)	1000	0	3020	2550
+twinB_glacierkeep_s6_B	glacierkeep	6	B	twinB	US	twinB	Core destroyed	277	0	0	0
+twinA_glacierkeep_s7_A	glacierkeep	7	A	twinA	US	twinA	Core destroyed	548	0	0	0
+twinB_glacierkeep_s7_A	glacierkeep	7	A	twinB	US	twinB	Core destroyed	315	0	210	0
+twinA_glacierkeep_s7_B	glacierkeep	7	B	twinA	OPP	_x3r0v169mjolnir	Core destroyed	412	0	0	1130
+twinB_glacierkeep_s7_B	glacierkeep	7	B	twinB	US	twinB	Core destroyed	373	0	0	0
+twinA_glacierkeep_s8_A	glacierkeep	8	A	twinA	OPP	_x3r0v169mjolnir	Titanium collected (tiebreak)	1000	0	0	5450
+twinB_glacierkeep_s8_A	glacierkeep	8	A	twinB	US	twinB	Core destroyed	399	0	220	0
+twinA_glacierkeep_s8_B	glacierkeep	8	B	twinA	OPP	_x3r0v169mjolnir	Titanium collected (tiebreak)	1000	0	2040	7580
+twinB_glacierkeep_s8_B	glacierkeep	8	B	twinB	OPP	_x3r0v169mjolnir	Core destroyed	369	0	0	1080
+twinA_glacierkeep_s9_A	glacierkeep	9	A	twinA	US	twinA	Core destroyed	313	0	0	0
+twinB_glacierkeep_s9_A	glacierkeep	9	A	twinB	US	twinB	Core destroyed	429	0	0	0
+twinA_glacierkeep_s9_B	glacierkeep	9	B	twinA	OPP	_x3r0v169mjolnir	Core destroyed	637	0	0	1650
+twinB_glacierkeep_s9_B	glacierkeep	9	B	twinB	US	twinB	Titanium collected (tiebreak)	1000	0	330	0
+twinA_glacierkeep_s10_A	glacierkeep	10	A	twinA	US	twinA	Core destroyed	404	0	480	0
+twinB_glacierkeep_s10_A	glacierkeep	10	A	twinB	OPP	_x3r0v169mjolnir	Core destroyed	531	0	420	5070
+twinA_glacierkeep_s10_B	glacierkeep	10	B	twinA	US	twinA	Core destroyed	257	0	0	0
+twinB_glacierkeep_s10_B	glacierkeep	10	B	twinB	OPP	_x3r0v169mjolnir	Core destroyed	559	0	0	1210
+twinA_archipelago_s11_A	archipelago	11	A	twinA	OPP	_x3r0v169mjolnir	Core destroyed	138	0	640	1210
+twinB_archipelago_s11_A	archipelago	11	A	twinB	OPP	_x3r0v169mjolnir	Core destroyed	417	0	1840	5500
+twinA_archipelago_s11_B	archipelago	11	B	twinA	US	twinA	Core destroyed	414	0	2220	1880
+twinB_archipelago_s11_B	archipelago	11	B	twinB	OPP	_x3r0v169mjolnir	Core destroyed	169	0	730	1260
+twinA_archipelago_s12_A	archipelago	12	A	twinA	OPP	_x3r0v169mjolnir	Core destroyed	137	0	360	1210
+twinB_archipelago_s12_A	archipelago	12	A	twinB	OPP	_x3r0v169mjolnir	Core destroyed	154	0	720	1560
+twinA_archipelago_s12_B	archipelago	12	B	twinA	US	twinA	Core destroyed	496	0	3920	4190
+twinB_archipelago_s12_B	archipelago	12	B	twinB	OPP	_x3r0v169mjolnir	Core destroyed	257	0	460	1700
+twinA_archipelago_s13_A	archipelago	13	A	twinA	OPP	_x3r0v169mjolnir	Core destroyed	154	0	400	1160
+twinB_archipelago_s13_A	archipelago	13	A	twinB	OPP	_x3r0v169mjolnir	Core destroyed	208	0	1500	1620
+twinA_archipelago_s13_B	archipelago	13	B	twinA	OPP	_x3r0v169mjolnir	Titanium collected (tiebreak)	1000	0	5000	24150
+twinB_archipelago_s13_B	archipelago	13	B	twinB	US	twinB	Core destroyed	535	0	4420	4490
+twinA_archipelago_s14_A	archipelago	14	A	twinA	OPP	_x3r0v169mjolnir	Core destroyed	102	0	590	790
+twinB_archipelago_s14_A	archipelago	14	A	twinB	OPP	_x3r0v169mjolnir	Core destroyed	114	0	350	970
+twinA_archipelago_s14_B	archipelago	14	B	twinA	OPP	_x3r0v169mjolnir	Core destroyed	362	0	1700	5170
+twinB_archipelago_s14_B	archipelago	14	B	twinB	OPP	_x3r0v169mjolnir	Core destroyed	164	0	630	750
+twinA_archipelago_s15_A	archipelago	15	A	twinA	OPP	_x3r0v169mjolnir	Core destroyed	468	0	3530	4470
+twinB_archipelago_s15_A	archipelago	15	A	twinB	OPP	_x3r0v169mjolnir	Core destroyed	153	0	520	1100
+twinA_archipelago_s15_B	archipelago	15	B	twinA	OPP	_x3r0v169mjolnir	Core destroyed	398	0	640	3230
+twinB_archipelago_s15_B	archipelago	15	B	twinB	OPP	_x3r0v169mjolnir	Core destroyed	333	0	2940	5270
+twinA_yulerune_s11_A	yulerune	11	A	twinA	OPP	_x3r0v169mjolnir	Core destroyed	227	0	220	940
+twinB_yulerune_s11_A	yulerune	11	A	twinB	OPP	_x3r0v169mjolnir	Core destroyed	343	0	270	2300
+twinA_yulerune_s11_B	yulerune	11	B	twinA	OPP	_x3r0v169mjolnir	Titanium collected (tiebreak)	1000	0	9150	9230
+twinB_yulerune_s11_B	yulerune	11	B	twinB	OPP	_x3r0v169mjolnir	Titanium collected (tiebreak)	1000	0	820	4900
+twinA_yulerune_s12_A	yulerune	12	A	twinA	OPP	_x3r0v169mjolnir	Core destroyed	365	0	230	850
+twinB_yulerune_s12_A	yulerune	12	A	twinB	OPP	_x3r0v169mjolnir	Core destroyed	234	0	330	1660
+twinA_yulerune_s12_B	yulerune	12	B	twinA	OPP	_x3r0v169mjolnir	Core destroyed	414	0	1200	660
+twinB_yulerune_s12_B	yulerune	12	B	twinB	US	twinB	Core destroyed	95	0	280	0
+twinA_yulerune_s13_A	yulerune	13	A	twinA	OPP	_x3r0v169mjolnir	Core destroyed	276	0	340	540
+twinB_yulerune_s13_A	yulerune	13	A	twinB	OPP	_x3r0v169mjolnir	Core destroyed	254	0	220	1460
+twinA_yulerune_s13_B	yulerune	13	B	twinA	US	twinA	Core destroyed	336	0	3400	0
+twinB_yulerune_s13_B	yulerune	13	B	twinB	OPP	_x3r0v169mjolnir	Core destroyed	376	0	1990	3690
+twinA_yulerune_s14_A	yulerune	14	A	twinA	OPP	_x3r0v169mjolnir	Core destroyed	421	0	290	750
+twinB_yulerune_s14_A	yulerune	14	A	twinB	OPP	_x3r0v169mjolnir	Core destroyed	361	0	290	860
+twinA_yulerune_s14_B	yulerune	14	B	twinA	US	twinA	Core destroyed	410	0	3570	0
+twinB_yulerune_s14_B	yulerune	14	B	twinB	US	twinB	Core destroyed	256	0	1690	0
+twinA_yulerune_s15_A	yulerune	15	A	twinA	US	twinA	Core destroyed	182	0	1280	140
+twinB_yulerune_s15_A	yulerune	15	A	twinB	OPP	_x3r0v169mjolnir	Core destroyed	327	0	290	770
+twinA_yulerune_s15_B	yulerune	15	B	twinA	US	twinA	Core destroyed	295	0	2020	0
+twinB_yulerune_s15_B	yulerune	15	B	twinB	US	twinB	Titanium collected (tiebreak)	1000	0	5050	4470
+twinA_glacierkeep_s11_A	glacierkeep	11	A	twinA	US	twinA	Core destroyed	867	0	1440	0
+twinB_glacierkeep_s11_A	glacierkeep	11	A	twinB	OPP	_x3r0v169mjolnir	Harvesters (tiebreak)	1000	0	0	0
+twinA_glacierkeep_s11_B	glacierkeep	11	B	twinA	OPP	_x3r0v169mjolnir	Core destroyed	772	0	5460	8890
+twinB_glacierkeep_s11_B	glacierkeep	11	B	twinB	OPP	_x3r0v169mjolnir	Titanium collected (tiebreak)	1000	0	6030	11580
+twinA_glacierkeep_s12_A	glacierkeep	12	A	twinA	OPP	_x3r0v169mjolnir	Core destroyed	342	0	0	990
+twinB_glacierkeep_s12_A	glacierkeep	12	A	twinB	US	twinB	Core destroyed	341	0	270	0
+twinA_glacierkeep_s12_B	glacierkeep	12	B	twinA	OPP	_x3r0v169mjolnir	Core destroyed	658	0	2070	4920
+twinB_glacierkeep_s12_B	glacierkeep	12	B	twinB	US	twinB	Titanium collected (tiebreak)	1000	0	120	0
+twinA_glacierkeep_s13_A	glacierkeep	13	A	twinA	US	twinA	Core destroyed	578	0	1120	0
+twinB_glacierkeep_s13_A	glacierkeep	13	A	twinB	US	twinB	Core destroyed	445	0	0	0
+twinA_glacierkeep_s13_B	glacierkeep	13	B	twinA	OPP	_x3r0v169mjolnir	Titanium collected (tiebreak)	1000	0	2040	7580
+twinB_glacierkeep_s13_B	glacierkeep	13	B	twinB	US	twinB	Core destroyed	277	0	0	0
+twinA_glacierkeep_s14_A	glacierkeep	14	A	twinA	OPP	_x3r0v169mjolnir	Core destroyed	308	0	0	1630
+twinB_glacierkeep_s14_A	glacierkeep	14	A	twinB	US	twinB	Core destroyed	411	0	230	0
+twinA_glacierkeep_s14_B	glacierkeep	14	B	twinA	OPP	_x3r0v169mjolnir	Core destroyed	573	0	0	2240
+twinB_glacierkeep_s14_B	glacierkeep	14	B	twinB	US	twinB	Core destroyed	721	0	4250	3200
+twinA_glacierkeep_s15_A	glacierkeep	15	A	twinA	OPP	_x3r0v169mjolnir	Core destroyed	514	0	0	880
+twinB_glacierkeep_s15_A	glacierkeep	15	A	twinB	OPP	_x3r0v169mjolnir	Titanium collected (tiebreak)	1000	0	2240	8320
+twinA_glacierkeep_s15_B	glacierkeep	15	B	twinA	US	twinA	Core destroyed	373	0	0	0
+twinB_glacierkeep_s15_B	glacierkeep	15	B	twinB	OPP	_x3r0v169mjolnir	Core destroyed	433	0	0	400
+twinA_archipelago_s16_A	archipelago	16	A	twinA	US	twinA	Core destroyed	189	0	1320	1470
+twinB_archipelago_s16_A	archipelago	16	A	twinB	OPP	_x3r0v169mjolnir	Core destroyed	345	0	1660	4540
+twinA_archipelago_s16_B	archipelago	16	B	twinA	OPP	_x3r0v169mjolnir	Core destroyed	353	0	440	440
+twinB_archipelago_s16_B	archipelago	16	B	twinB	OPP	_x3r0v169mjolnir	Core destroyed	288	0	1710	2890
+twinA_archipelago_s17_A	archipelago	17	A	twinA	US	twinA	Core destroyed	312	0	2200	2460
+twinB_archipelago_s17_A	archipelago	17	A	twinB	OPP	_x3r0v169mjolnir	Core destroyed	349	0	970	4880
+twinA_archipelago_s17_B	archipelago	17	B	twinA	OPP	_x3r0v169mjolnir	Core destroyed	214	0	960	3030
+twinB_archipelago_s17_B	archipelago	17	B	twinB	OPP	_x3r0v169mjolnir	Core destroyed	128	0	530	1190
+twinA_archipelago_s18_A	archipelago	18	A	twinA	OPP	_x3r0v169mjolnir	Core destroyed	485	0	5490	6250
+twinB_archipelago_s18_A	archipelago	18	A	twinB	OPP	_x3r0v169mjolnir	Core destroyed	776	0	7310	7870
+twinA_archipelago_s18_B	archipelago	18	B	twinA	OPP	_x3r0v169mjolnir	Core destroyed	207	0	480	1100
+twinB_archipelago_s18_B	archipelago	18	B	twinB	OPP	_x3r0v169mjolnir	Core destroyed	210	0	1020	2750
+twinA_archipelago_s19_A	archipelago	19	A	twinA	OPP	_x3r0v169mjolnir	Core destroyed	155	0	400	900
+twinB_archipelago_s19_A	archipelago	19	A	twinB	OPP	_x3r0v169mjolnir	Core destroyed	497	0	6270	6240
+twinA_archipelago_s19_B	archipelago	19	B	twinA	OPP	_x3r0v169mjolnir	Core destroyed	233	0	360	680
+twinB_archipelago_s19_B	archipelago	19	B	twinB	OPP	_x3r0v169mjolnir	Core destroyed	160	0	290	1750
+twinA_archipelago_s20_A	archipelago	20	A	twinA	OPP	_x3r0v169mjolnir	Core destroyed	224	0	1870	1790
+twinB_archipelago_s20_A	archipelago	20	A	twinB	OPP	_x3r0v169mjolnir	Core destroyed	150	0	900	1050
+twinA_archipelago_s20_B	archipelago	20	B	twinA	OPP	_x3r0v169mjolnir	Core destroyed	191	0	770	1050
+twinB_archipelago_s20_B	archipelago	20	B	twinB	OPP	_x3r0v169mjolnir	Core destroyed	135	0	570	1170
+twinA_yulerune_s16_A	yulerune	16	A	twinA	OPP	_x3r0v169mjolnir	Core destroyed	361	0	290	860
+twinB_yulerune_s16_A	yulerune	16	A	twinB	OPP	_x3r0v169mjolnir	Core destroyed	245	0	230	500
+twinA_yulerune_s16_B	yulerune	16	B	twinA	OPP	_x3r0v169mjolnir	Titanium collected (tiebreak)	1000	0	11260	14220
+twinB_yulerune_s16_B	yulerune	16	B	twinB	OPP	_x3r0v169mjolnir	Titanium collected (tiebreak)	1000	0	2470	17540
+twinA_yulerune_s17_A	yulerune	17	A	twinA	OPP	_x3r0v169mjolnir	Core destroyed	376	0	340	460
+twinB_yulerune_s17_A	yulerune	17	A	twinB	OPP	_x3r0v169mjolnir	Core destroyed	421	0	290	750
+twinA_yulerune_s17_B	yulerune	17	B	twinA	US	twinA	Core destroyed	260	0	1230	0
+twinB_yulerune_s17_B	yulerune	17	B	twinB	US	twinB	Core destroyed	215	0	1100	0
+twinA_yulerune_s18_A	yulerune	18	A	twinA	OPP	_x3r0v169mjolnir	Core destroyed	239	0	330	1800
+twinB_yulerune_s18_A	yulerune	18	A	twinB	OPP	_x3r0v169mjolnir	Core destroyed	327	0	290	770
+twinA_yulerune_s18_B	yulerune	18	B	twinA	US	twinA	Titanium collected (tiebreak)	1000	0	10480	7540
+twinB_yulerune_s18_B	yulerune	18	B	twinB	US	twinB	Core destroyed	174	0	700	280
+twinA_yulerune_s19_A	yulerune	19	A	twinA	OPP	_x3r0v169mjolnir	Core destroyed	421	0	290	750
+twinB_yulerune_s19_A	yulerune	19	A	twinB	OPP	_x3r0v169mjolnir	Core destroyed	234	0	330	1660
+twinA_yulerune_s19_B	yulerune	19	B	twinA	US	twinA	Core destroyed	411	0	4010	0
+twinB_yulerune_s19_B	yulerune	19	B	twinB	US	twinB	Core destroyed	290	0	1400	770
+twinA_yulerune_s20_A	yulerune	20	A	twinA	OPP	_x3r0v169mjolnir	Core destroyed	276	0	340	540
+twinB_yulerune_s20_A	yulerune	20	A	twinB	OPP	_x3r0v169mjolnir	Core destroyed	421	0	290	750
+twinA_yulerune_s20_B	yulerune	20	B	twinA	OPP	_x3r0v169mjolnir	Core destroyed	473	0	6860	3120
+twinB_yulerune_s20_B	yulerune	20	B	twinB	US	twinB	Core destroyed	215	0	1100	0
+twinA_glacierkeep_s16_A	glacierkeep	16	A	twinA	OPP	_x3r0v169mjolnir	Core destroyed	713	0	0	0
+twinB_glacierkeep_s16_A	glacierkeep	16	A	twinB	OPP	_x3r0v169mjolnir	Titanium collected (tiebreak)	1000	0	0	2920
+twinA_glacierkeep_s16_B	glacierkeep	16	B	twinA	US	twinA	Core destroyed	735	0	3630	3300
+twinB_glacierkeep_s16_B	glacierkeep	16	B	twinB	OPP	_x3r0v169mjolnir	Core destroyed	512	0	0	1700
+twinA_glacierkeep_s17_A	glacierkeep	17	A	twinA	US	twinA	Core destroyed	380	0	0	0
+twinB_glacierkeep_s17_A	glacierkeep	17	A	twinB	US	twinB	Harvesters (tiebreak)	1000	0	0	0
+twinA_glacierkeep_s17_B	glacierkeep	17	B	twinA	OPP	_x3r0v169mjolnir	Core destroyed	577	0	0	3200
+twinB_glacierkeep_s17_B	glacierkeep	17	B	twinB	OPP	_x3r0v169mjolnir	Core destroyed	506	0	0	320
+twinA_glacierkeep_s18_A	glacierkeep	18	A	twinA	OPP	_x3r0v169mjolnir	Titanium collected (tiebreak)	1000	0	0	10630
+twinB_glacierkeep_s18_A	glacierkeep	18	A	twinB	US	twinB	Titanium collected (tiebreak)	1000	0	6080	310
+twinA_glacierkeep_s18_B	glacierkeep	18	B	twinA	OPP	_x3r0v169mjolnir	Core destroyed	419	0	2540	3400
+twinB_glacierkeep_s18_B	glacierkeep	18	B	twinB	US	twinB	Core destroyed	341	0	0	0
+twinA_glacierkeep_s19_A	glacierkeep	19	A	twinA	OPP	_x3r0v169mjolnir	Titanium collected (tiebreak)	1000	0	0	1490
+twinB_glacierkeep_s19_A	glacierkeep	19	A	twinB	US	twinB	Core destroyed	726	0	1090	0
+twinA_glacierkeep_s19_B	glacierkeep	19	B	twinA	US	twinA	Core destroyed	841	0	6640	5470
+twinB_glacierkeep_s19_B	glacierkeep	19	B	twinB	OPP	_x3r0v169mjolnir	Core destroyed	661	0	0	700
+twinA_glacierkeep_s20_A	glacierkeep	20	A	twinA	OPP	_x3r0v169mjolnir	Titanium collected (tiebreak)	1000	0	0	5610
+twinB_glacierkeep_s20_A	glacierkeep	20	A	twinB	US	twinB	Core destroyed	485	0	0	0
+twinA_glacierkeep_s20_B	glacierkeep	20	B	twinA	OPP	_x3r0v169mjolnir	Core destroyed	646	0	0	3120
+twinB_glacierkeep_s20_B	glacierkeep	20	B	twinB	OPP	_x3r0v169mjolnir	Core destroyed	422	0	0	930
+twinA_archipelago_s21_A	archipelago	21	A	twinA	OPP	_x3r0v169mjolnir	Core destroyed	408	0	2340	4000
+twinB_archipelago_s21_A	archipelago	21	A	twinB	US	twinB	Core destroyed	189	0	1320	1470
+twinA_archipelago_s21_B	archipelago	21	B	twinA	OPP	_x3r0v169mjolnir	Core destroyed	226	0	1020	3070
+twinB_archipelago_s21_B	archipelago	21	B	twinB	OPP	_x3r0v169mjolnir	Core destroyed	349	0	270	3780
+twinA_archipelago_s22_A	archipelago	22	A	twinA	OPP	_x3r0v169mjolnir	Core destroyed	471	0	2990	5090
+twinB_archipelago_s22_A	archipelago	22	A	twinB	US	twinB	Core destroyed	301	0	1870	1000
+twinA_archipelago_s22_B	archipelago	22	B	twinA	OPP	_x3r0v169mjolnir	Core destroyed	274	0	1260	3600
+twinB_archipelago_s22_B	archipelago	22	B	twinB	OPP	_x3r0v169mjolnir	Core destroyed	226	0	1020	3070
+twinA_archipelago_s23_A	archipelago	23	A	twinA	OPP	_x3r0v169mjolnir	Core destroyed	208	0	1500	1620
+twinB_archipelago_s23_A	archipelago	23	A	twinB	OPP	_x3r0v169mjolnir	Core destroyed	218	0	560	1120
+twinA_archipelago_s23_B	archipelago	23	B	twinA	OPP	_x3r0v169mjolnir	Core destroyed	169	0	730	1220
+twinB_archipelago_s23_B	archipelago	23	B	twinB	OPP	_x3r0v169mjolnir	Core destroyed	191	0	500	1740
+twinA_archipelago_s24_A	archipelago	24	A	twinA	US	twinA	Core destroyed	553	0	7980	7440
+twinB_archipelago_s24_A	archipelago	24	A	twinB	US	twinB	Core destroyed	205	0	1440	1140
+twinA_archipelago_s24_B	archipelago	24	B	twinA	OPP	_x3r0v169mjolnir	Core destroyed	246	0	1060	3590
+twinB_archipelago_s24_B	archipelago	24	B	twinB	OPP	_x3r0v169mjolnir	Core destroyed	161	0	360	1490
+twinA_archipelago_s25_A	archipelago	25	A	twinA	OPP	_x3r0v169mjolnir	Core destroyed	133	0	620	1160
+twinB_archipelago_s25_A	archipelago	25	A	twinB	OPP	_x3r0v169mjolnir	Core destroyed	334	0	2530	4690
+twinA_archipelago_s25_B	archipelago	25	B	twinA	OPP	_x3r0v169mjolnir	Core destroyed	356	0	270	3910
+twinB_archipelago_s25_B	archipelago	25	B	twinB	OPP	_x3r0v169mjolnir	Core destroyed	222	0	990	3000
+twinA_yulerune_s21_A	yulerune	21	A	twinA	US	twinA	Core destroyed	920	0	280	230
+twinB_yulerune_s21_A	yulerune	21	A	twinB	OPP	_x3r0v169mjolnir	Core destroyed	276	0	340	540
+twinA_yulerune_s21_B	yulerune	21	B	twinA	US	twinA	Core destroyed	95	0	280	0
+twinB_yulerune_s21_B	yulerune	21	B	twinB	US	twinB	Core destroyed	497	0	4760	500
+twinA_yulerune_s22_A	yulerune	22	A	twinA	OPP	_x3r0v169mjolnir	Core destroyed	361	0	290	860
+twinB_yulerune_s22_A	yulerune	22	A	twinB	OPP	_x3r0v169mjolnir	Core destroyed	407	0	270	3200
+twinA_yulerune_s22_B	yulerune	22	B	twinA	US	twinA	Core destroyed	485	0	2700	880
+twinB_yulerune_s22_B	yulerune	22	B	twinB	US	twinB	Core destroyed	95	0	280	0
+twinA_yulerune_s23_A	yulerune	23	A	twinA	OPP	_x3r0v169mjolnir	Core destroyed	377	0	340	470
+twinB_yulerune_s23_A	yulerune	23	A	twinB	OPP	_x3r0v169mjolnir	Core destroyed	227	0	220	940
+twinA_yulerune_s23_B	yulerune	23	B	twinA	US	twinA	Core destroyed	268	0	3170	600
+twinB_yulerune_s23_B	yulerune	23	B	twinB	US	twinB	Core destroyed	167	0	840	0
+twinA_yulerune_s24_A	yulerune	24	A	twinA	OPP	_x3r0v169mjolnir	Core destroyed	245	0	230	500
+twinB_yulerune_s24_A	yulerune	24	A	twinB	US	twinB	Core destroyed	920	0	280	230
+twinA_yulerune_s24_B	yulerune	24	B	twinA	US	twinA	Titanium collected (tiebreak)	1000	0	17580	9080
+twinB_yulerune_s24_B	yulerune	24	B	twinB	US	twinB	Core destroyed	295	0	2020	0
+twinA_yulerune_s25_A	yulerune	25	A	twinA	OPP	_x3r0v169mjolnir	Core destroyed	341	0	270	2260
+twinB_yulerune_s25_A	yulerune	25	A	twinB	OPP	_x3r0v169mjolnir	Core destroyed	245	0	230	500
+twinA_yulerune_s25_B	yulerune	25	B	twinA	US	twinA	Core destroyed	92	0	270	0
+twinB_yulerune_s25_B	yulerune	25	B	twinB	OPP	_x3r0v169mjolnir	Titanium collected (tiebreak)	1000	0	3340	4500
+twinA_glacierkeep_s21_A	glacierkeep	21	A	twinA	US	twinA	Core destroyed	429	0	0	0
+twinB_glacierkeep_s21_A	glacierkeep	21	A	twinB	US	twinB	Core destroyed	776	0	1690	230
+twinA_glacierkeep_s21_B	glacierkeep	21	B	twinA	OPP	_x3r0v169mjolnir	Core destroyed	448	0	0	1200
+twinB_glacierkeep_s21_B	glacierkeep	21	B	twinB	OPP	_x3r0v169mjolnir	Core destroyed	543	0	430	2360
+twinA_glacierkeep_s22_A	glacierkeep	22	A	twinA	US	twinA	Core destroyed	411	0	230	0
+twinB_glacierkeep_s22_A	glacierkeep	22	A	twinB	US	twinB	Core destroyed	429	0	0	0
+twinA_glacierkeep_s22_B	glacierkeep	22	B	twinA	OPP	_x3r0v169mjolnir	Core destroyed	529	0	0	1030
+twinB_glacierkeep_s22_B	glacierkeep	22	B	twinB	OPP	_x3r0v169mjolnir	Core destroyed	341	0	0	950
+twinA_glacierkeep_s23_A	glacierkeep	23	A	twinA	OPP	_x3r0v169mjolnir	Core destroyed	404	0	0	2320
+twinB_glacierkeep_s23_A	glacierkeep	23	A	twinB	OPP	_x3r0v169mjolnir	Core destroyed	353	0	0	900
+twinA_glacierkeep_s23_B	glacierkeep	23	B	twinA	OPP	_x3r0v169mjolnir	Core destroyed	590	0	1720	4890
+twinB_glacierkeep_s23_B	glacierkeep	23	B	twinB	OPP	_x3r0v169mjolnir	Core destroyed	345	0	0	1020
+twinA_glacierkeep_s24_A	glacierkeep	24	A	twinA	US	twinA	Core destroyed	445	0	0	0
+twinB_glacierkeep_s24_A	glacierkeep	24	A	twinB	US	twinB	Titanium collected (tiebreak)	1000	0	2400	1330
+twinA_glacierkeep_s24_B	glacierkeep	24	B	twinA	OPP	_x3r0v169mjolnir	Core destroyed	503	0	0	930
+twinB_glacierkeep_s24_B	glacierkeep	24	B	twinB	OPP	_x3r0v169mjolnir	Titanium collected (tiebreak)	1000	0	0	1890
+twinA_glacierkeep_s25_A	glacierkeep	25	A	twinA	OPP	_x3r0v169mjolnir	Core destroyed	353	0	0	900
+twinB_glacierkeep_s25_A	glacierkeep	25	A	twinB	US	twinB	Core destroyed	367	0	820	200
+twinA_glacierkeep_s25_B	glacierkeep	25	B	twinA	OPP	_x3r0v169mjolnir	Core destroyed	543	0	430	2360
+twinB_glacierkeep_s25_B	glacierkeep	25	B	twinB	OPP	_x3r0v169mjolnir	Core destroyed	501	0	0	1930
+twinA_archipelago_s26_A	archipelago	26	A	twinA	OPP	_x3r0v169mjolnir	Core destroyed	303	0	3210	4260
+twinB_archipelago_s26_A	archipelago	26	A	twinB	OPP	_x3r0v169mjolnir	Core destroyed	242	0	1710	2520
+twinA_archipelago_s26_B	archipelago	26	B	twinA	US	twinA	Core destroyed	608	0	4080	2370
+twinB_archipelago_s26_B	archipelago	26	B	twinB	OPP	_x3r0v169mjolnir	Core destroyed	224	0	720	3030
+twinA_archipelago_s27_A	archipelago	27	A	twinA	OPP	_x3r0v169mjolnir	Core destroyed	376	0	4260	5480
+twinB_archipelago_s27_A	archipelago	27	A	twinB	OPP	_x3r0v169mjolnir	Core destroyed	434	0	1100	5200
+twinA_archipelago_s27_B	archipelago	27	B	twinA	OPP	_x3r0v169mjolnir	Core destroyed	218	0	580	2090
+twinB_archipelago_s27_B	archipelago	27	B	twinB	OPP	_x3r0v169mjolnir	Core destroyed	214	0	960	3030
+twinA_archipelago_s28_A	archipelago	28	A	twinA	OPP	_x3r0v169mjolnir	Titanium collected (tiebreak)	1000	0	13480	17130
+twinB_archipelago_s28_A	archipelago	28	A	twinB	OPP	_x3r0v169mjolnir	Core destroyed	564	0	6230	9430
+twinA_archipelago_s28_B	archipelago	28	B	twinA	OPP	_x3r0v169mjolnir	Core destroyed	179	0	410	1440
+twinB_archipelago_s28_B	archipelago	28	B	twinB	OPP	_x3r0v169mjolnir	Core destroyed	178	0	780	1890
+twinA_archipelago_s29_A	archipelago	29	A	twinA	OPP	_x3r0v169mjolnir	Core destroyed	368	0	3950	4210
+twinB_archipelago_s29_A	archipelago	29	A	twinB	OPP	_x3r0v169mjolnir	Core destroyed	193	0	1000	1760
+twinA_archipelago_s29_B	archipelago	29	B	twinA	US	twinA	Core destroyed	943	0	6650	17950
+twinB_archipelago_s29_B	archipelago	29	B	twinB	OPP	_x3r0v169mjolnir	Core destroyed	222	0	990	3000
+twinA_archipelago_s30_A	archipelago	30	A	twinA	OPP	_x3r0v169mjolnir	Core destroyed	224	0	1870	1790
+twinB_archipelago_s30_A	archipelago	30	A	twinB	OPP	_x3r0v169mjolnir	Core destroyed	424	0	1850	5640
+twinA_archipelago_s30_B	archipelago	30	B	twinA	OPP	_x3r0v169mjolnir	Core destroyed	177	0	400	1970
+twinB_archipelago_s30_B	archipelago	30	B	twinB	OPP	_x3r0v169mjolnir	Core destroyed	133	0	290	1010
+twinA_yulerune_s26_A	yulerune	26	A	twinA	OPP	_x3r0v169mjolnir	Core destroyed	399	0	270	3050
+twinB_yulerune_s26_A	yulerune	26	A	twinB	OPP	_x3r0v169mjolnir	Core destroyed	413	0	290	2470
+twinA_yulerune_s26_B	yulerune	26	B	twinA	OPP	_x3r0v169mjolnir	Core destroyed	437	0	2470	3430
+twinB_yulerune_s26_B	yulerune	26	B	twinB	US	twinB	Core destroyed	256	0	1810	0
+twinA_yulerune_s27_A	yulerune	27	A	twinA	US	twinA	Core destroyed	182	0	1280	140
+twinB_yulerune_s27_A	yulerune	27	A	twinB	OPP	_x3r0v169mjolnir	Core destroyed	275	0	340	530
+twinA_yulerune_s27_B	yulerune	27	B	twinA	OPP	_x3r0v169mjolnir	Core destroyed	309	0	890	860
+twinB_yulerune_s27_B	yulerune	27	B	twinB	US	twinB	Core destroyed	199	0	540	0
+twinA_yulerune_s28_A	yulerune	28	A	twinA	OPP	_x3r0v169mjolnir	Core destroyed	377	0	340	470
+twinB_yulerune_s28_A	yulerune	28	A	twinB	OPP	_x3r0v169mjolnir	Core destroyed	245	0	230	500
+twinA_yulerune_s28_B	yulerune	28	B	twinA	US	twinA	Titanium collected (tiebreak)	1000	0	14840	14710
+twinB_yulerune_s28_B	yulerune	28	B	twinB	US	twinB	Core destroyed	215	0	1100	0
+twinA_yulerune_s29_A	yulerune	29	A	twinA	OPP	_x3r0v169mjolnir	Core destroyed	327	0	290	770
+twinB_yulerune_s29_A	yulerune	29	A	twinB	OPP	_x3r0v169mjolnir	Core destroyed	219	0	340	1590
+twinA_yulerune_s29_B	yulerune	29	B	twinA	US	twinA	Core destroyed	457	0	3420	0
+twinB_yulerune_s29_B	yulerune	29	B	twinB	US	twinB	Core destroyed	539	0	1320	0
+twinA_yulerune_s30_A	yulerune	30	A	twinA	OPP	_x3r0v169mjolnir	Core destroyed	362	0	630	1180
+twinB_yulerune_s30_A	yulerune	30	A	twinB	OPP	_x3r0v169mjolnir	Core destroyed	276	0	340	540
+twinA_yulerune_s30_B	yulerune	30	B	twinA	OPP	_x3r0v169mjolnir	Core destroyed	282	0	1390	1000
+twinB_yulerune_s30_B	yulerune	30	B	twinB	OPP	_x3r0v169mjolnir	Core destroyed	753	0	70	0
+twinA_glacierkeep_s26_A	glacierkeep	26	A	twinA	US	twinA	Core destroyed	269	0	0	90
+twinB_glacierkeep_s26_A	glacierkeep	26	A	twinB	US	twinB	Core destroyed	313	0	0	0
+twinA_glacierkeep_s26_B	glacierkeep	26	B	twinA	OPP	_x3r0v169mjolnir	Core destroyed	508	0	0	1210
+twinB_glacierkeep_s26_B	glacierkeep	26	B	twinB	US	twinB	Core destroyed	341	0	0	0
+twinA_glacierkeep_s27_A	glacierkeep	27	A	twinA	OPP	_x3r0v169mjolnir	Titanium collected (tiebreak)	1000	0	2280	13440
+twinB_glacierkeep_s27_A	glacierkeep	27	A	twinB	US	twinB	Core destroyed	429	0	0	0
+twinA_glacierkeep_s27_B	glacierkeep	27	B	twinA	OPP	_x3r0v169mjolnir	Titanium collected (tiebreak)	1000	0	1300	5330
+twinB_glacierkeep_s27_B	glacierkeep	27	B	twinB	OPP	_x3r0v169mjolnir	Titanium collected (tiebreak)	1000	0	0	100
+twinA_glacierkeep_s28_A	glacierkeep	28	A	twinA	OPP	_x3r0v169mjolnir	Titanium collected (tiebreak)	1000	0	0	2910
+twinB_glacierkeep_s28_A	glacierkeep	28	A	twinB	OPP	_x3r0v169mjolnir	Titanium collected (tiebreak)	1000	0	0	5820
+twinA_glacierkeep_s28_B	glacierkeep	28	B	twinA	US	twinA	Core destroyed	721	0	0	0
+twinB_glacierkeep_s28_B	glacierkeep	28	B	twinB	OPP	_x3r0v169mjolnir	Core destroyed	508	0	0	1210
+twinA_glacierkeep_s29_A	glacierkeep	29	A	twinA	OPP	_x3r0v169mjolnir	Core destroyed	713	0	0	0
+twinB_glacierkeep_s29_A	glacierkeep	29	A	twinB	US	twinB	Core destroyed	689	0	1270	0
+twinA_glacierkeep_s29_B	glacierkeep	29	B	twinA	OPP	_x3r0v169mjolnir	Titanium collected (tiebreak)	1000	0	9430	14440
+twinB_glacierkeep_s29_B	glacierkeep	29	B	twinB	OPP	_x3r0v169mjolnir	Core destroyed	632	0	3210	4570
+twinA_glacierkeep_s30_A	glacierkeep	30	A	twinA	OPP	_x3r0v169mjolnir	Core destroyed	640	0	2910	8820
+twinB_glacierkeep_s30_A	glacierkeep	30	A	twinB	US	twinB	Core destroyed	533	0	1250	0
+twinA_glacierkeep_s30_B	glacierkeep	30	B	twinA	US	twinA	Titanium collected (tiebreak)	1000	0	770	360
+twinB_glacierkeep_s30_B	glacierkeep	30	B	twinB	US	twinB	Core destroyed	257	0	0	0

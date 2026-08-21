@@ -1,0 +1,51 @@
+POOLED OVER BOTH RUNS (arm order reversed in run 2), n per arm shown
+cut                                arm              n   wins   share%     hw95  timely%
+archipelago  (GATED - refuses)     v536trust      120     57    47.50     8.95    25.83
+archipelago  (GATED - refuses)     v537socket     120     20    16.67     8.95     7.50
+archipelago  (GATED - refuses)     v538refine     120     61    50.83     8.95    25.83
+
+glacierkeep  (runs)                v536trust      120     23    19.17     8.95     2.50
+glacierkeep  (runs)                v537socket     120     52    43.33     8.95     0.83
+glacierkeep  (runs)                v538refine     120     56    46.67     8.95     2.50
+
+yulerune     (runs)                v536trust      120     11     9.17     8.95     0.00
+yulerune     (runs)                v537socket     120     44    36.67     8.95    15.83
+yulerune     (runs)                v538refine     120     58    48.33     8.95    21.67
+
+RUNNING maps (gate cannot act)     v536trust      240     34    14.17     6.33     1.25
+RUNNING maps (gate cannot act)     v537socket     240     96    40.00     6.33     8.33
+RUNNING maps (gate cannot act)     v538refine     240    114    47.50     6.33    12.08
+
+ALL 3 maps                         v536trust      360     91    25.28     5.17     9.44
+ALL 3 maps                         v537socket     360    116    32.22     5.17     8.06
+ALL 3 maps                         v538refine     360    175    48.61     5.17    16.67
+
+PAIRED McNEMAR, pooled within run
+cut                                A            B             cells A-only B-only        z  delta pp
+archipelago  (GATED - refuses)     v536trust    v537socket      120     45      8     5.08     30.83
+archipelago  (GATED - refuses)     v536trust    v538refine      120     27     31    -0.53     -3.33
+archipelago  (GATED - refuses)     v537socket   v538refine      120      9     50    -5.34    -34.17
+
+glacierkeep  (runs)                v536trust    v537socket      120     13     42    -3.91    -24.17
+glacierkeep  (runs)                v536trust    v538refine      120     14     47    -4.23    -27.50
+glacierkeep  (runs)                v537socket   v538refine      120     34     38    -0.47     -3.33
+
+yulerune     (runs)                v536trust    v537socket      120      4     37    -5.15    -27.50
+yulerune     (runs)                v536trust    v538refine      120      2     49    -6.58    -39.17
+yulerune     (runs)                v537socket   v538refine      120      8     22    -2.56    -11.67
+
+RUNNING maps (gate cannot act)     v536trust    v537socket      240     17     79    -6.33    -25.83
+RUNNING maps (gate cannot act)     v536trust    v538refine      240     16     96    -7.56    -33.33
+RUNNING maps (gate cannot act)     v537socket   v538refine      240     42     60    -1.78     -7.50
+
+ALL 3 maps                         v536trust    v537socket      360     62     87    -2.05     -6.94
+ALL 3 maps                         v536trust    v538refine      360     43    127    -6.44    -23.33
+ALL 3 maps                         v537socket   v538refine      360     51    110    -4.65    -16.39
+
+PER-RUN REPRODUCIBILITY of the v537->v538 contrast
+cut                                 run1 pp  run2 pp spread pp
+archipelago  (GATED - refuses)        30.00    38.33     8.33
+glacierkeep  (runs)                   20.00   -13.33    33.33
+yulerune     (runs)                   11.67    11.67     0.00
+RUNNING maps (gate cannot act)        15.83    -0.83    16.67
+ALL 3 maps                            20.56    12.22     8.33

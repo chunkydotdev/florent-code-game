@@ -1,0 +1,6 @@
+[ok] two runs, same flip: pooled discordants add: (10, 10, 0)
+[ok] two runs that cancel: pooled net zero: (10, 5, 5, 0.0)
+[ok] cells are keyed by run (no cross-run pairing): 10
+[ok] hw95 at n=60: 12.65
+[ok] hw95 at n=120 is narrower: True
+POOL SELFTEST PASS

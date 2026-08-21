@@ -1,0 +1,67 @@
+tape scratchpad/s52_v538_build/ident/results.tsv -- 250 rows, arms ['flagoff_off', 'masteroff_off', 'par_off', 'par_twin', 'v538_off']
+== LIVE ==
+   flagoff_off  vs masteroff_off   50 shared cells,   0 rows differ
+   flagoff_off  vs par_off        50 shared cells,   0 rows differ
+   flagoff_off  vs par_twin       50 shared cells,   0 rows differ
+   flagoff_off  vs v538_off       50 shared cells,  20 rows differ
+        ('archipelago', '1', 'A')  {'turn': ('147', '447'), 'ours_mined': ('880', '2330'), 'opp_mined': ('580', '2270')}
+        ('archipelago', '1', 'B')  {'turn': ('450', '311'), 'ours_mined': ('1250', '980'), 'opp_mined': ('1490', '800')}
+        ('archipelago', '2', 'A')  {'turn': ('147', '447'), 'ours_mined': ('880', '2330'), 'opp_mined': ('580', '2270')}
+        ('archipelago', '2', 'B')  {'turn': ('450', '311'), 'ours_mined': ('1250', '980'), 'opp_mined': ('1490', '800')}
+        ... 16 more
+   masteroff_off vs par_off        50 shared cells,   0 rows differ
+   masteroff_off vs par_twin       50 shared cells,   0 rows differ
+   masteroff_off vs v538_off       50 shared cells,  20 rows differ
+        ('archipelago', '1', 'A')  {'turn': ('147', '447'), 'ours_mined': ('880', '2330'), 'opp_mined': ('580', '2270')}
+        ('archipelago', '1', 'B')  {'turn': ('450', '311'), 'ours_mined': ('1250', '980'), 'opp_mined': ('1490', '800')}
+        ('archipelago', '2', 'A')  {'turn': ('147', '447'), 'ours_mined': ('880', '2330'), 'opp_mined': ('580', '2270')}
+        ('archipelago', '2', 'B')  {'turn': ('450', '311'), 'ours_mined': ('1250', '980'), 'opp_mined': ('1490', '800')}
+        ... 16 more
+   par_off      vs par_twin       50 shared cells,   0 rows differ
+   par_off      vs v538_off       50 shared cells,  20 rows differ
+        ('archipelago', '1', 'A')  {'turn': ('147', '447'), 'ours_mined': ('880', '2330'), 'opp_mined': ('580', '2270')}
+        ('archipelago', '1', 'B')  {'turn': ('450', '311'), 'ours_mined': ('1250', '980'), 'opp_mined': ('1490', '800')}
+        ('archipelago', '2', 'A')  {'turn': ('147', '447'), 'ours_mined': ('880', '2330'), 'opp_mined': ('580', '2270')}
+        ('archipelago', '2', 'B')  {'turn': ('450', '311'), 'ours_mined': ('1250', '980'), 'opp_mined': ('1490', '800')}
+        ... 16 more
+   par_twin     vs v538_off       50 shared cells,  20 rows differ
+        ('archipelago', '1', 'A')  {'turn': ('147', '447'), 'ours_mined': ('880', '2330'), 'opp_mined': ('580', '2270')}
+        ('archipelago', '1', 'B')  {'turn': ('450', '311'), 'ours_mined': ('1250', '980'), 'opp_mined': ('1490', '800')}
+        ('archipelago', '2', 'A')  {'turn': ('147', '447'), 'ours_mined': ('880', '2330'), 'opp_mined': ('580', '2270')}
+        ('archipelago', '2', 'B')  {'turn': ('450', '311'), 'ours_mined': ('1250', '980'), 'opp_mined': ('1490', '800')}
+        ... 16 more
+== BY MAP CLASS ==
+   flagoff_off  vs masteroff_off
+        REFUSE   20 cells,   0 differ
+        run      30 cells,   0 differ
+   flagoff_off  vs par_off     
+        REFUSE   20 cells,   0 differ
+        run      30 cells,   0 differ
+   flagoff_off  vs par_twin    
+        REFUSE   20 cells,   0 differ
+        run      30 cells,   0 differ
+   flagoff_off  vs v538_off    
+        REFUSE   20 cells,  20 differ
+        run      30 cells,   0 differ
+   masteroff_off vs par_off     
+        REFUSE   20 cells,   0 differ
+        run      30 cells,   0 differ
+   masteroff_off vs par_twin    
+        REFUSE   20 cells,   0 differ
+        run      30 cells,   0 differ
+   masteroff_off vs v538_off    
+        REFUSE   20 cells,  20 differ
+        run      30 cells,   0 differ
+   par_off      vs par_twin    
+        REFUSE   20 cells,   0 differ
+        run      30 cells,   0 differ
+   par_off      vs v538_off    
+        REFUSE   20 cells,  20 differ
+        run      30 cells,   0 differ
+   par_twin     vs v538_off    
+        REFUSE   20 cells,  20 differ
+        run      30 cells,   0 differ
+== corrupting arm 'flagoff_off' (currently 0 differences vs 'masteroff_off') ==
+   MUTANT turn +1        flagoff_off vs masteroff_off -> 1 rows differ (expect 1)
+   MUTANT ours flipped   flagoff_off vs masteroff_off -> 1 rows differ (expect 1)
+SELFTEST PASS -- the comparator produced the other verdict on a pair that reads 0 in the live tape

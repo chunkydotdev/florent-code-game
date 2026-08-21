@@ -1,0 +1,21 @@
+tape scratchpad/s52_v538_build/midg/results.tsv -- 180 rows
+== PER MAP, PER ARM ==
+map            arm                n   wins   share%  timely%  medkill  r1000   tb
+midgard        v536trust         60     34    56.67    36.67    236.0      1    0
+midgard        v537socket        60     35    58.33    48.33      205      0    0
+midgard        v538refine        60     39    65.00    40.00    281.5      1    0
+
+POOL           v536trust         60     34    56.67    36.67    236.0      1    0
+POOL           v537socket        60     35    58.33    48.33      205      0    0
+POOL           v538refine        60     39    65.00    40.00    281.5      1    0
+
+== PAIRED McNEMAR ==
+map            arm A          arm B           cells A-only B-only        z delta pp
+midgard        v536trust      v537socket         60     15     16    -0.18    -1.67
+midgard        v536trust      v538refine         60      9     14    -1.04    -8.33
+midgard        v537socket     v538refine         60     12     16    -0.76    -6.67
+
+POOL           v536trust      v537socket         60     15     16    -0.18    -1.67
+POOL           v536trust      v538refine         60      9     14    -1.04    -8.33
+POOL           v537socket     v538refine         60     12     16    -0.76    -6.67
+

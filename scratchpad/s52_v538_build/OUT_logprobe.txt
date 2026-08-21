@@ -1,0 +1,4 @@
+archipelago logpar  V538GATE_lines=0  first=''  V537_SOCKET_claims=2
+archipelago logv538  V538GATE_lines=4  first='V538GATE rnd=1 id=3 refuse=1'  V537_SOCKET_claims=0
+nordkap logpar  V538GATE_lines=0  first=''  V537_SOCKET_claims=2
+nordkap logv538  V538GATE_lines=4  first='V538GATE rnd=1 id=3 refuse=0'  V537_SOCKET_claims=2

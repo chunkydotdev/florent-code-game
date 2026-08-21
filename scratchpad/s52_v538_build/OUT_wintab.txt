@@ -1,0 +1,37 @@
+tape scratchpad/s52_v538_build/mech/results.tsv -- 540 rows
+== PER MAP, PER ARM ==
+map            arm                n   wins   share%  timely%  medkill  r1000   tb
+archipelago    v536trust         60     28    46.67    26.67      272      4    0
+archipelago    v537socket        60     13    21.67    11.67      300      2    0
+archipelago    v538refine        60     31    51.67    20.00      322      1    0
+
+glacierkeep    v536trust         60     11    18.33     3.33      515     14    0
+glacierkeep    v537socket        60     20    33.33     1.67    451.0     10    0
+glacierkeep    v538refine        60     32    53.33     1.67    463.5     11    0
+
+yulerune       v536trust         60      6    10.00     0.00      522      8    0
+yulerune       v537socket        60     21    35.00     8.33    334.0      2    0
+yulerune       v538refine        60     28    46.67    23.33    291.0      7    0
+
+POOL           v536trust        180     45    25.00    10.00      325     26    0
+POOL           v537socket       180     54    30.00     7.22      396     14    0
+POOL           v538refine       180     91    50.56    15.00      373     19    0
+
+== PAIRED McNEMAR ==
+map            arm A          arm B           cells A-only B-only        z delta pp
+archipelago    v536trust      v537socket         60     21      6     2.89    25.00
+archipelago    v536trust      v538refine         60     13     16    -0.56    -5.00
+archipelago    v537socket     v538refine         60      5     23    -3.40   -30.00
+
+glacierkeep    v536trust      v537socket         60      8     17    -1.80   -15.00
+glacierkeep    v536trust      v538refine         60      6     27    -3.66   -35.00
+glacierkeep    v537socket     v538refine         60     11     23    -2.06   -20.00
+
+yulerune       v536trust      v537socket         60      1     16    -3.64   -25.00
+yulerune       v536trust      v538refine         60      1     23    -4.49   -36.67
+yulerune       v537socket     v538refine         60      5     12    -1.70   -11.67
+
+POOL           v536trust      v537socket        180     30     39    -1.08    -5.00
+POOL           v536trust      v538refine        180     20     66    -4.96   -25.56
+POOL           v537socket     v538refine        180     21     58    -4.16   -20.56
+

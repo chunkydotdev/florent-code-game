@@ -1,0 +1,5 @@
+Update available: 2.3.6 -> 2.3.9. Run: pip install --upgrade fcode
+V538GATE rnd=1 id=3 refuse=1
+V538GATE rnd=2 id=5 refuse=1
+V538GATE rnd=3 id=8 refuse=1
+V538GATE rnd=4 id=11 refuse=1

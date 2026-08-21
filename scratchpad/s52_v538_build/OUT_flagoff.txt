@@ -1,0 +1,18 @@
+[ok] raid.py byte-identical to the parent: '3b3a0456e9a22083df4653526bfd68c8'
+[ok] exactly the 4 intended files differ: ['doctrine.py', 'eco.py', 'main.py', 'siege.py']
+    v538 read sites: [('eco.py', 645, 'LOKI_FS_V538', True), ('eco.py', 645, 'FS_V538_CLAIM_GATE', True), ('siege.py', 577, 'FS_V538_LOG', True)]
+[ok] every v538 read site is INSIDE a function: True
+[ok] v538 flags are read at all (>=3 sites): True
+[ok] all three v538 names are read somewhere: ['FS_V538_CLAIM_GATE', 'FS_V538_LOG', 'LOKI_FS_V538']
+[ok] POSITIVE CONTROL: FS_V525_LOG (known dead flag) has 0 read sites: 0
+[ok] NEGATIVE CONTROL: FS_V537_SOCKET (live flag) has read sites: True
+[ok] the dead flag is actually DEFINED in doctrine.py: True
+[ok] no module-level default derives from a v538 flag: []
+[ok] mutant: scanner FINDS a derived module-level default: 1
+[ok] mutant: scanner passes the safe form: 0
+[ok] gate-off matches the parent on all 68 cells: []
+[ok] gate-ON differs from the parent on >0 cells (or 4 proves nothing): True
+    gate-ON differs on 16 of 68 cells
+[ok] gate-off never calls _v535_map_refuses (helper raises): True
+[ok] CONTROL: gate-ON DOES call _v535_map_refuses (trap armed)
+FLAGOFF PASS

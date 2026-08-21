@@ -1,0 +1,11 @@
+[ok] perfect flip: 10 cells, all one way: (10, 10, 0)
+[ok] perfect flip z: 3.16
+[ok] identical arms: no discordant cells: (10, 0, 0, 0.0)
+[ok] all-win arm share: (7, 7, 100.0)
+[ok] all-loss arm share: (0, 0.0)
+[ok] timely counts only the <=r300 core-kill: 1
+[ok] timely rate is over ALL games, not over wins: 25.0
+[ok] a r1000 tiebreak win is a WIN but not a KILL: (3, 300.0)
+[ok] r1000 games counted: 1
+[ok] NOWINNER row: 0 wins, 0 timely: (0, 0)
+WINTAB SELFTEST PASS

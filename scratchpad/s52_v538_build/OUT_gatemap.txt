@@ -1,0 +1,74 @@
+map              seat  refuse  v538_on   par_on  delta
+antler              0       0        1        1  
+antler              1       0        1        1  
+archipelago         0       1        0        1  GATED-OFF
+archipelago         1       1        0        1  GATED-OFF
+atoll               0       0        1        1  
+atoll               1       0        1        1  
+auroraveil          0       0        1        1  
+auroraveil          1       0        1        1  
+drakkarfjord        0       0        1        1  
+drakkarfjord        1       0        1        1  
+drumlin             0       0        1        1  
+drumlin             1       0        1        1  
+eider               0       0        1        1  
+eider               1       0        1        1  
+fjordgate           0       0        1        1  
+fjordgate           1       0        1        1  
+frostgate           0       0        1        1  
+frostgate           1       0        1        1  
+glacierkeep         0       0        1        1  
+glacierkeep         1       0        1        1  
+heart               0       1        0        1  GATED-OFF
+heart               1       1        0        1  GATED-OFF
+hive                0       0        1        1  
+hive                1       0        1        1  
+icefloe             0       0        1        1  
+icefloe             1       0        1        1  
+inv_duel16          0       0        1        1  
+inv_duel16          1       0        1        1  
+inv_hsym16          0       0        1        1  
+inv_hsym16          1       0        1        1  
+inv_large30         0       0        1        1  
+inv_large30         1       0        1        1  
+inv_mid20           0       0        1        1  
+inv_mid20           1       0        1        1  
+inv_pierce16        0       0        1        1  
+inv_pierce16        1       0        1        1  
+inv_small12         0       0        1        1  
+inv_small12         1       0        1        1  
+inv_tiny8           0       1        0        1  GATED-OFF
+inv_tiny8           1       1        0        1  GATED-OFF
+inv_vsym16          0       0        1        1  
+inv_vsym16          1       0        1        1  
+inv_wide30x14       0       0        1        1  
+inv_wide30x14       1       0        1        1  
+jackpot             0       0        1        1  
+jackpot             1       0        1        1  
+lighthouse          0       1        0        1  GATED-OFF
+lighthouse          1       1        0        1  GATED-OFF
+meander             0       0        1        1  
+meander             1       0        1        1  
+midgard             0       1        0        1  GATED-OFF
+midgard             1       1        0        1  GATED-OFF
+moonrise            0       1        0        1  GATED-OFF
+moonrise            1       1        0        1  GATED-OFF
+nordkap             0       0        1        1  
+nordkap             1       0        1        1  
+ragnarok            0       0        1        1  
+ragnarok            1       0        1        1  
+royale              0       0        1        1  
+royale              1       0        1        1  
+saga                0       1        0        1  GATED-OFF
+saga                1       1        0        1  GATED-OFF
+snowflake           0       1        0        1  GATED-OFF
+snowflake           1       1        0        1  GATED-OFF
+valkyrie            0       0        1        1  
+valkyrie            1       0        1        1  
+yulerune            0       0        1        1  
+yulerune            1       0        1        1  
+
+CELLS 68 | refuse 16 | run 52 | GATED-OFF 16
+REFUSING MAPS (8): archipelago,heart,inv_tiny8,lighthouse,midgard,moonrise,saga,snowflake
+RUNNING  MAPS (26): antler,atoll,auroraveil,drakkarfjord,drumlin,eider,fjordgate,frostgate,glacierkeep,hive,icefloe,inv_duel16,inv_hsym16,inv_large30,inv_mid20,inv_pierce16,inv_small12,inv_vsym16,inv_wide30x14,jackpot,meander,nordkap,ragnarok,royale,valkyrie,yulerune
+SEAT-ASYMMETRIC: none

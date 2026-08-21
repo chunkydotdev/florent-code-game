@@ -1,0 +1,15 @@
+[ok] _v535_map_refuses CALLS _fs_map_gated: True
+[ok] _v535_map_refuses CALLS _fs_enemy_anchor: True
+[ok] _v535_map_refuses re-derives NO gate logic: []
+[ok] _v535_map_refuses re-derives NO anchor logic: []
+[ok] CONTROL: _fs_map_gated DOES contain gate logic: True
+[ok] CONTROL: _fs_enemy_anchor DOES contain anchor logic: True
+    _v535_map_refuses calls: ['_fs_enemy_anchor', '_fs_map_gated', 'get_current_round', 'get_id', 'print']
+[ok] PARENT has no _fs_enemy_anchor (the extraction is this build's): False
+[ok] extracted _fs_gate matches the PARENT on all 204 cells: []
+[ok] ...and that comparison saw BOTH verdicts: [False, True]
+[ok] MUTANT precondition: nordkap RUNS for the parent: True
+[ok] MUTANT: a wrong anchor changes _fs_gate's verdict: True
+[ok] _v535_map_refuses == not _fs_gate on all 68 cells: []
+[ok] ...and BOTH refusal verdicts occurred: [False, True]
+CALLED_NOT_DERIVED PASS

@@ -1,0 +1,7 @@
+Update available: 2.3.6 -> 2.3.9. Run: pip install --upgrade fcode
+V538GATE rnd=1 id=3 refuse=0
+V537 SOCKET r1 seat=(10,8) face=Direction.NORTH held=1
+V538GATE rnd=2 id=5 refuse=0
+V537 SOCKET r2 seat=(10,5) face=Direction.SOUTH held=2
+V538GATE rnd=3 id=8 refuse=0
+V538GATE rnd=4 id=12 refuse=0

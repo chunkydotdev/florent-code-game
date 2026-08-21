@@ -1,0 +1,3 @@
+Update available: 2.3.6 -> 2.3.9. Run: pip install --upgrade fcode
+V537 SOCKET r1 seat=(10,8) face=Direction.NORTH held=1
+V537 SOCKET r2 seat=(10,5) face=Direction.SOUTH held=2

@@ -1,0 +1,21 @@
+-- par_off
+NOISE_ON = False
+-- par_twin
+NOISE_ON = False
+-- v538_off
+NOISE_ON = False
+LOKI_FS_V538 = True         # master.  False == `bots/_v537socket` unchanged,
+-- flagoff_off
+NOISE_ON = False
+LOKI_FS_V538 = True         # master.  False == `bots/_v537socket` unchanged,
+-- masteroff_off
+NOISE_ON = False
+LOKI_FS_V538 = False         # master.  False == `bots/_v537socket` unchanged,
+-- opp_off
+NOISE_ON = False
+-- flagoff_off
+FS_V538_CLAIM_GATE = False   # the gate itself: the v537 socket claim stands
+-- v538_off
+FS_V538_CLAIM_GATE = True   # the gate itself: the v537 socket claim stands
+-- masteroff_off
+FS_V538_CLAIM_GATE = True   # the gate itself: the v537 socket claim stands
