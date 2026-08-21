@@ -1,10 +1,11 @@
 # s54 wrap debts (builder) — accumulating; executed at wrap per Magnus's rule, none inline
 
-1. **CLAUDE.md DEFF cluster-enumeration edit** (research-routed, side-lane-accepted):
-   add the third cluster CONTENT-DUPLICATE to "NAME EVERY CLUSTER THIS DATA HAS"
-   — CUT-116 measured 17.3% exact-duplicate games in BC's v47 pool, intervals ~13%
-   optimistic, not covered by platform constants. VERBATIM paste-ready sentence is in
-   research's tail note (~17:1xZ, 2026-08-21). #117 later mechanizes the check.
+1. **CLAUDE.md DEFF cluster-enumeration edit — USE RESEARCH'S v2 TEXT** (their newest
+   tail note, superseding the ~17:1xZ v1): third cluster CONTENT-DUPLICATE, now citing
+   BOTH measured instances (BC v47 17.3% duplicates AND our tape30 seed-inert alarm,
+   verified vs ebd62b932) + the deterministic-pair fixture rule ("vary MAP and SEAT,
+   never seed") + the #117 pointer, one paste-ready block. Side lane verifies both edit
+   sites at the batch commit.
 2. **Obligations-doc rider** (from the side lane's DOORWAVE cert observation): fixture-check
    tolerances must be sized on the denominator that will exist UNDER TREATMENT (the A-C
    "large majority" ended up judged on a 5-game reaching-r70 denominator).
