@@ -1,0 +1,24 @@
+2026-08-21T08:44:38Z capacity: work-server-1  arms=2 x par=5 = 10 <= our_cores 10  OK
+2026-08-21T08:44:38Z PLAN runid=s52v541reel
+2026-08-21T08:44:38Z   arms=v541,parent opp=beltbreak2
+2026-08-21T08:44:38Z   maps=1 seeds=18 blocks=6 par=5 -> 36 rows/arm, 72 total
+2026-08-21T08:44:38Z   work-server-1    blocks=[0, 1, 2, 3, 4, 5] rows=72
+2026-08-21T08:44:38Z   out=/Users/junghard/Projects/Work/florent-code-game/scratchpad/s52_v541_build/reel_check
+2026-08-21T08:44:39Z host work-server-1: nproc=16 load=0.49 corefill_workers=0 fcode=2.3.6(pin ok)
+2026-08-21T08:44:40Z shipped to work-server-1:fcode-build/s52v541reel — 2 arms, opp beltbreak2, 1 maps, 6 blocks
+2026-08-21T08:44:40Z LAUNCHED work-server-1 pid=1132419 root=fcode-build/s52v541reel
+2026-08-21T08:44:40Z PIDS: work-server-1=1132419
+2026-08-21T08:45:01Z   work-server-1    rows=36/72 state=RUNNING driver=ALIVE
+2026-08-21T08:45:21Z   work-server-1    rows=72/72 state=COMPLETE driver=DEAD
+2026-08-21T08:45:22Z   runid  s52v541reel
+2026-08-21T08:45:22Z   generated  2026-08-21T08:45:22Z
+2026-08-21T08:45:22Z   hosts  work-server-1
+2026-08-21T08:45:22Z   opp  beltbreak2
+2026-08-21T08:45:22Z   maps  midgard
+2026-08-21T08:45:22Z   seeds  1-18
+2026-08-21T08:45:22Z   par  5
+2026-08-21T08:45:22Z   planned_rows_per_arm  36
+2026-08-21T08:45:22Z   arm  v541  delivered  36  planned  36  COMPLETE
+2026-08-21T08:45:22Z   arm  parent  delivered  36  planned  36  COMPLETE
+2026-08-21T08:45:22Z cleanup work-server-1: CLEANED
+2026-08-21T08:45:22Z COMPLETE — 36 rows/arm on each of 2 arms. Read it: .venv/bin/python <build>/summarise.py <name> /Users/junghard/Projects/Work/florent-code-game/scratchpad/s52_v541_build/reel_check/<arm>.tsv

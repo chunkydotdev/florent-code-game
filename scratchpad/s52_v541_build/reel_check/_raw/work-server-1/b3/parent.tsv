@@ -1,0 +1,7 @@
+tag	map	seed	seat	ours	winner	cond	turn	tracebacks	ours_mined	opp_mined
+midgard_s10_A	midgard	10	A	OPP	beltbreak2	Core destroyed	365	0	490	610
+midgard_s10_B	midgard	10	B	US	parent	Core destroyed	270	0	2050	1600
+midgard_s11_A	midgard	11	A	OPP	beltbreak2	Core destroyed	365	0	490	610
+midgard_s11_B	midgard	11	B	US	parent	Core destroyed	270	0	2050	1600
+midgard_s12_A	midgard	12	A	OPP	beltbreak2	Core destroyed	365	0	490	610
+midgard_s12_B	midgard	12	B	US	parent	Core destroyed	270	0	2050	1600

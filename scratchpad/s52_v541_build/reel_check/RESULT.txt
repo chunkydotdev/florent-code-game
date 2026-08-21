@@ -1,0 +1,10 @@
+runid	s52v541reel
+generated	2026-08-21T08:45:22Z
+hosts	work-server-1
+opp	beltbreak2
+maps	midgard
+seeds	1-18
+par	5
+planned_rows_per_arm	36
+arm	v541	delivered	36	planned	36	COMPLETE
+arm	parent	delivered	36	planned	36	COMPLETE
