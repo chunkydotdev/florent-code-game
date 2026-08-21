@@ -16,10 +16,17 @@ plank committed `13:12:02Z` (`9f64c4426`), report written `13:15Z`. Parent
 ship recommendation. It is a tree, its self-checks, and an honest statement of
 what the mechanism did.
 
-**Two proof runs, both after the first draft, both on cores freed by the anchor
-battery (`13:53Z`–`14:00Z`, 720 games, 0 tracebacks): the DYNAMIC flag-off
-identity (§9.1) and the SIMULTANEOUS-PAIR existence proof (§9.2).** No screen was
-started; the screen fires under its own prereg when the lane locks it.
+**Three post-draft runs, all on cores freed by the anchor battery — 1,320 engine
+games, 0 tracebacks: the DYNAMIC flag-off identity (§9.1), the
+SIMULTANEOUS-PAIR existence proof (§9.2), and the RATIFY-C dose tape on the
+NEW shipped bytes at 150/150 (§10 — all three pre-committed floors PASS:
+fires 38.7%, bought 16.3%, pair-exists 9 events).** No screen was started; the
+screen fires under its own prereg when the lane locks it.
+
+⛔ **NOTE FOR ANY READER OF s1–s8: THOSE SECTIONS WERE WRITTEN AT
+`FS_V543_BURST_TI = 200`. The tree now ships 150/150 (`1b4ee9973`, the lane's
+RATIFY-A).** The §4.7 corpus pre-read priced both; §10 is the only section
+measured on the current bytes.
 
 ---
 
@@ -832,7 +839,114 @@ screen measurement.
 
 ---
 
-## 10. REPRODUCING THIS
+## 10. ⭐⭐ RATIFY-C — THE INSTRUMENTED DOSE TAPE ON THE **NEW SHIPPED BYTES** (n=600, `14:19Z`–`14:23Z`)
+
+**The V543POOL lock precondition.** Run against `bots/_v543burst` at
+**`1b4ee9973` — `FS_V543_BURST_TI = FS_V543_REARM_TI = 150`**, the lane's
+RATIFY-A change. **Screened bytes = shipped bytes**: the only override in the
+arm is `FS_V543_LOG = True`; **`NOISE_ON` is deliberately LEFT AT ITS SHIPPED
+`True`** because this is a dose read, not a pairing — the bytes play as they
+ship. Opponent = `bots/_v542wave`, **verbatim, zero overrides** (`diff` against
+the repo tree = 0 lines). Both arms are scratch copies; no repo tree was edited.
+
+**Design:** 15 ROTATED POOL MAPS (`tools/overnight.sh:73`) × 2 seats × seeds
+1–20 = **600 games**, `--jobs 8`, `nice -n 19`. **0 tracebacks, 0 missing
+replays, 600/600 tapes recovered.**
+
+### 10.1 ⛔ THE INSTRUMENT'S OWN DEFECT, CAUGHT BEFORE THE READ AND IN THE FLATTERING DIRECTION
+
+`identity_grid.py --keep-err` writes a tape file **only for games with non-empty
+stderr**. Counting files as the denominator would therefore **silently drop every
+silent game and bias both shares UPWARD** — the direction that would have made
+the floors easier. `dose_read.py` now takes its denominator from the run's TSV
+**manifest**, and a game with no tape is counted as `fires=0, bought=0`.
+
+**Driven both ways on a fixture with 4 games and 1 tape:** files-only reads
+**100.0% (1/1) → PASS**; manifest reads the truth **25.0% (1/4)**. Per-map and
+per-seat denominators come from the manifest for the same reason, so a
+fully-silent map reads 0% instead of vanishing from the table. On this run the
+two agree (600 files / 600 games, 0 missing) — **which is exactly why it had to
+be checked rather than assumed.** The tape parser is separately self-tested on 6
+cases, driven to fire/no-fire, pair/no-pair and live-0/live-1 both ways, and the
+reader **refuses to print a share** below `--min-games`.
+
+### 10.2 THE THREE PRE-COMMITTED FLOORS — **ALL PASS**
+
+*(Floors registered in the draft prereg by the owning lane. Not mine to adjust,
+and quoted here beside the measurement so the comparison is visible.)*
+
+| clause | measured | floor | verdict |
+|---|---|---|---|
+| **`v543_fires >= 1`** | **38.7%** (232/600) | ≥ 20.0% | ✅ **PASS** |
+| **`v543_bought >= 1`** | **16.3%** (98/600) | ≥ 8.0% | ✅ **PASS** |
+| **PAIR-EXISTS (≥1 purchase at `live ≥ 1`)** | **9 events in 7 games** | ≥ 1 | ✅ **PASS** |
+
+**Counter totals across all 600 tapes:** `FIRE` 706 lines · `PAIR` 121 · of
+those **`live ≥ 1`: 9** · `AMMO` 960. (706 fires over 232 firing games ≈ 3.0 per
+game — several bodies each run their own state machine, as designed.)
+
+**Timing:** first fire median **r190** (IQR 121–328); first purchase median
+**r204** (IQR 145–352); **61.2% of first purchases land before r300.**
+**Fire → purchase conversion: 98/232 = 42.2%.**
+
+⭐ **AND THE PAIR-EXISTS CLAUSE PASSES ON THE SHIPPED CONSTANTS, WHICH IS WHAT
+THE EARLIER FORCED-DOSE PROOF COULD NOT SHOW** (§9.2 ran at threshold 60). The 9
+events are in 7 distinct games across **5 maps** (bifrost, helheim ×3,
+jotunheim, skald, valkyrie ×2), both seats.
+
+### 10.3 ⛔ MIDGARD — THE COVERAGE DEFECT REPRODUCES EXACTLY AS §7.7 PREDICTED
+
+| map | games | `fires ≥ 1` | `bought ≥ 1` |
+|---|---|---|---|
+| **midgard** | 40 | **28 (70.0%)** | **0 (0.0%)** |
+
+> **The gate fires in 70% of midgard games and buys in ZERO of them.** This is
+> the FS-lane-off cell called in §4.4 (`_fs_turn` ran 0 times there) and §7.7,
+> now measured at n=40 on the shipped constants: **the trigger works, the
+> consumer has no site to execute from, and the plank is a no-op on that map.**
+> midgard is 1 of the 15 pool maps, i.e. **6.7% of the screen's games carry a
+> firing gate with nothing attached.**
+
+**Excluding midgard: `fires ≥ 1` 36.4% (204/560), `bought ≥ 1` 17.5% (98/560).**
+Both floors still pass, so the headline does not depend on the dead cell.
+
+### 10.4 FULL PER-MAP TABLE, AND THREE MORE ANOMALIES
+
+| map | `fires≥1` | `bought≥1` | | map | `fires≥1` | `bought≥1` |
+|---|---|---|---|---|---|---|
+| fimbulwinter | 70.0% | 40.0% | | paths | 42.5% | 7.5% |
+| **midgard** | **70.0%** | **0.0%** | | helheim | 40.0% | 15.0% |
+| auroraveil | 67.5% | 35.0% | | holmgang | 37.5% | 17.5% |
+| valkyrie | 62.5% | 37.5% | | jotunheim | 35.0% | 20.0% |
+| skald | 60.0% | 15.0% | | yggdrasil | 25.0% | 12.5% |
+| stavkirke | 42.5% | 32.5% | | bifrost | 22.5% | 10.0% |
+| | | | | **glacierkeep** | **2.5%** | **2.5%** |
+| | | | | **longhouse** | **2.5%** | **0.0%** |
+| | | | | **icefloe** | **0.0%** | **0.0%** |
+
+1. **⚠ THREE NEAR-DEAD MAPS: icefloe 0/40 fires, longhouse 1/40, glacierkeep
+   1/40.** Together with midgard that is **4 of 15 pool maps — 26.7% of the
+   screen's games — in which the plank buys essentially nothing** (midgard fires
+   but cannot buy; the other three barely fire). The per-map spread runs 0% →
+   70%. **A pooled screen average will be diluted by roughly a quarter of its
+   cells; a per-map cut is worth more here than the pool number.**
+2. **⚠ THE SIMULTANEOUS PAIR IS MOSTLY A LATE-GAME EVENT.** 7 of the 9
+   `live ≥ 1` purchases land at **r350–r629**; only two are inside the kill
+   window (skald r136, helheim r125). **The clause passes and the mechanism is
+   real, but "a pair by r180" is NOT what this tape shows** — most pairs form
+   long after `DEFENCE_ADMISSION_BAR`'s r300. This is the single most important
+   caveat for anyone reading the pair as the kill channel.
+3. **Seat asymmetry: seat A fires in 42.0% (126/300), seat B in 35.3%
+   (106/300)** — 6.7pp. Team A acts first every round, so some asymmetry is
+   expected; flagged, not explained, and the design is seat-balanced so it
+   cannot bias the pooled share.
+
+⛔ **NO SCREEN AND NO OTHER BATTERY WAS STARTED.** This is the RATIFY-C
+precondition tape only.
+
+---
+
+## 11. REPRODUCING THIS
 
 ```bash
 # static flag-off audit (self-test first -- it must fail on its own dirty cases)
