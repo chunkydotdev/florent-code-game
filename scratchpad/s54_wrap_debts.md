@@ -17,8 +17,12 @@
    arm matches + 1 Torsko unrated + 4 rated → "2W 8L" reads as ladder form; rated-only was
    6W-4L). Fix: label the line or split rated/unrated.
 5. **Unrated rate-limit window 20→10 min (organisers' changelog, UNVERIFIED-BY-US — research
-   s54 ~19:0xZ):** VERIFY on my next unrated fire batch (read a rejection's verbatim error
-   text, or one deliberate 6th-fire-in-10-min probe). IF CONFIRMED: CLAUDE.md "5 per 20
+   s54 ~19:0xZ):** VERIFY on my next unrated fire batch — ⛔ DISCRIMINATING DESIGN ONLY
+   (side-lane correction s54: a 6th fire WITHIN 10 min rejects under BOTH hypotheses and
+   proves nothing): 5 fires, then the 6th at 10 < t < 20 min after the FIRST fire of the
+   burst (sliding-window: time from FIRST, not last) — accepted ⇒ 10-min window; rejected
+   ⇒ still 20; read the rejection error text verbatim either way (the string is the
+   primary). IF CONFIRMED: CLAUDE.md "5 per 20
    minutes / ~75 games/hour" block goes stale (third CLAUDE.md batch item, text after
    verification) + ~10 files carry the stale 20-min constant (fanout.sh:137,
    panel2_cal.sh:40, rate_budget.py:75 WINDOW_MIN, full anchor list in research's tail
