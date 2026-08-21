@@ -1,4 +1,4 @@
-# SIDE-LANE RETRO — the instrument. **v1.15** (2026-08-16; header last tracked v1.11 on 2026-08-14 and was corrected at the s45 side-lane boot; created v1 2026-08-10; the changelog below is the authority)
+# SIDE-LANE RETRO — the instrument. **v1.21** (2026-08-16; header last tracked v1.11 on 2026-08-14 and was corrected at the s45 side-lane boot; created v1 2026-08-10; the changelog below is the authority)
 
 **Commissioned by Magnus, 2026-08-10, asked of all three arms.** The generic
 session wrap is **lane-agnostic and is a FAILURE LOG** — it records what broke
@@ -1450,3 +1450,40 @@ what the lane believed at wrap time.**
 
 **SUNSET WATCH: all questions fired. CARRIED TO v1.21: the two sub-rules' first
 full-session test is the successor's.**
+
+## ⭐ v1.21 — **FIRING 21. BOTH v1.20 SUB-RULES PASS THEIR FULL-SESSION TEST; THE CONCEDING PRE-REGISTRATION FIRES AND IS CONFIRMED; CERTIFICATES GAIN THE HEAD-CHECK.**
+
+**v1.21 — 2026-08-21 (MINOR: records firing 21, ratifies the two v1.20 sub-rules, adds the
+certificate HEAD-check, records the conjecture's first confirmed firing). Instance:
+`docs/retro-side-lane-2026-08-21-s53.md`, committed in this same action.**
+
+* **FIRINGS: 21.** ~12 flags, consumption effectively total; 11 certificates; prevented ~8 /
+  caused 0 / nearly caused 1.
+* **✅ BOTH v1.20 SUB-RULES RATIFIED ON A FULL SESSION:** existence-checks fired with teeth
+  (RATIFY-F verified executed, not read off a subject line; digests re-derived 5/5 at two
+  locks) and the non-fire deadman armed FOUR times with zero invisible windows — against
+  s52's 93-minute hung wake, the class did not recur.
+* **⭐⭐ THE CONCEDING PRE-REGISTRATION (v1.3.3) FIRED FOR THE FIRST TIME AND THE MODEL
+  SURVIVES:** I certified a peer's verdict against my own already-published pre-flag,
+  within minutes of reading their contrary artifact, without re-deriving the deciding
+  test ("entirely") — the error ran TOWARD THE CRITIC exactly as pre-registered. n=1;
+  recorded, not promoted. The working counter-practice, applied twice later the same
+  session: before conceding to a contrary reading, RE-DERIVE THE DECIDING CLAUSE rather
+  than re-weighing the readings.
+* **⭐ NEW SUB-RULE, earned by three stale-at-publication certificates in one session: A
+  CERTIFICATE'S WRITING SHELL RE-READS HEAD FOR NEWER ARTIFACTS ON ITS SUBJECT BEFORE THE
+  PUSH.** One git-log line; zero stale certificates after adoption.
+* **Q3 = 5 published (all corrected in-record), and the vocabulary class is new: twice the
+  right substance carried the wrong VERDICT WORD (a "refuted" for an undosed mechanism; a
+  "clean" certificate for a superseded verdict). The claims-split that ended it (two
+  claims, two words) came from the peer — prescription remains the weaker half.**
+* **Q8 buckets hold a third run: ADOPTED 6 / CORRECTED-IN-RECORD 5 / BUILT 0** — the wrap
+  rule working; the reachability ratify line is the session's durable export (adopted by
+  both lanes, executed in two locks the same day).
+
+**SUNSET WATCH: every surviving question fired. CARRIED TO v1.22: the HEAD-check's first
+full-session test; and Q2 should ask whether any deadman's PATTERN failed to match its
+target commit (this session's window deadman would have false-fired at 16:08 had it not
+been stopped — the grep matched neither the actual completion subject nor the disclosure
+form; a deadman whose clear-condition cannot match reality is a non-fire alarm wearing a
+fire alarm's clothes).**
