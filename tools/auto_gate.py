@@ -320,6 +320,16 @@ COMBO_BAR = 55.0
 # produces, because an exemption claimed against a document that does not exist
 # is strictly worse than claiming none.
 CONFIRMATION_TOKEN = "CONFIRMATION-CLASS"
+# ANCHOR-CLASS (added 2026-08-21, s52, Magnus: "fix them" — the guard half of his
+# baseline directive). SAME mechanism as CONFIRMATION-CLASS (registration-time
+# literal token + a citation that must resolve), DIFFERENT rationale so neither
+# wording stretches: an ANCHOR read's product IS the completed number on a new
+# fixture/baseline — the floors' premise ("a low prefix means a dead plank not
+# worth precision") is INVERTED for it: no ship decision rides on the shard, the
+# arm may already be LIVE, and stopping early destroys the only thing the shard
+# exists to produce. CATASTROPHE still brakes it (an anchor tracking CI-hi<45
+# has answered the anchor question in the cheapest possible way).
+ANCHOR_TOKEN = "ANCHOR-CLASS"
 
 DEFAULT_WORKLIST = REPO / "scratchpad/corefill_work.txt"
 DEFAULT_TSVDIR = REPO / "scratchpad/overnight"
@@ -838,15 +848,18 @@ def decide(sh: Shard, bars: dict[str, Bar], stale_s: float,
     # may not stop a confirmation run; the CATASTROPHE brake still may. Moving
     # this block one clause earlier would disarm the disaster brake and turn a
     # run-to-completion exemption into an unstoppable shard.
-    if bar is not None and CONFIRMATION_TOKEN in bar.source:
+    _rtc_token = (CONFIRMATION_TOKEN if (bar is not None and CONFIRMATION_TOKEN in bar.source)
+                  else ANCHOR_TOKEN if (bar is not None and ANCHOR_TOKEN in bar.source)
+                  else None)
+    if _rtc_token is not None:
         _m = re.search(r"(\S+\.md)", bar.source)
         _cite = _m.group(1) if _m else None
         _cp = (Path(_cite) if _cite and os.path.isabs(_cite)
                else (REPO / _cite) if _cite else None)
         if _cp is not None and _cp.exists():
-            return d("CONTINUE", "CONFIRMATION-CLASS",
-                     f"registered CONFIRMATION-CLASS (citation resolved: {_cite}) "
-                     f"— a confirmation run is RUN-TO-COMPLETION per commit "
+            return d("CONTINUE", _rtc_token,
+                     f"registered {_rtc_token} (citation resolved: {_cite}) "
+                     f"— this class is RUN-TO-COMPLETION per commit "
                      f"3be00e46: the trend floor and the mark bars do not "
                      f"adjudicate it, because a confirmation's job is to produce "
                      f"the FULL registered n against a pre-stated read, not to "
@@ -854,7 +867,7 @@ def decide(sh: Shard, bars: dict[str, Bar], stale_s: float,
                      f"(CI-hi < {CATASTROPHE_CI_HI:.1f} at n>={MARK_CATASTROPHE}) "
                      f"is checked ABOVE this line and still applies.")
         conf_warn = (
-            f"  ⛔⛔ {CONFIRMATION_TOKEN} TOKEN PRESENT BUT "
+            f"  ⛔⛔ {_rtc_token} TOKEN PRESENT BUT "
             + (f"THE CITED PREREG IS MISSING: {_cite}" if _cite
                else "IT CITES NO .md PREREG AT ALL")
             + f" — a claimed exemption that resolves to nothing GRANTS NOTHING, so "
@@ -2100,6 +2113,30 @@ def selftest() -> int:
     chk("⛔ token + NO .md citation at all => also stoppable, also shouted",
         (decide(conf_n, TC, DEFAULT_STALE_S).action,
          "CITES NO .md" in decide(conf_n, TC, DEFAULT_STALE_S).detail), ("STOP", True))
+
+    # ── ANCHOR-CLASS (added 2026-08-21, s52 — the baseline-anchor sibling) ──
+    # Same discipline: the token is the ONLY difference per pair; the shared
+    # path must treat it exactly as CONFIRMATION-CLASS, incl. the disaster
+    # brake and the silencer guard.
+    print("\n── ANCHOR-class: same run-to-completion mechanics, own token ─────────")
+    (tmp / "PREREG-anchor.md").write_text("# fixture anchor prereg\n")
+    TC["ANCH"] = Bar(51.33, "ge",
+                     f"ANCHOR-CLASS baseline anchor, {tmp / 'PREREG-anchor.md'}")
+    TC["ANCHM"] = Bar(51.33, "ge",
+                      f"ANCHOR-CLASS cites {tmp / 'no_such_anchor.md'}")
+    anch_lo = trend_shard("ANCH_LO", BELOW_FLOOR, "ANCH")
+    chk("registered ANCHOR-CLASS, prefix@1000 51.90%  => CONTINUE",
+        decide(anch_lo, TC, DEFAULT_STALE_S).action, "CONTINUE")
+    chk("...on the ANCHOR clause, which NAMES itself",
+        decide(anch_lo, TC, DEFAULT_STALE_S).clause, "ANCHOR-CLASS")
+    anch_cata = trend_shard("ANCH_CATA", [(150, "T"), (850, "C")], "ANCH")
+    chk("⛔ an ANCHOR-CLASS run at a catastrophic 15.0%  => STOP anyway",
+        decide(anch_cata, TC, DEFAULT_STALE_S).clause, "CATASTROPHE")
+    anch_m = trend_shard("ANCH_M", BELOW_FLOOR, "ANCHM")
+    chk("⛔ ANCHOR token + MISSING citation => ordinary rule decides (STOP), shouted",
+        (decide(anch_m, TC, DEFAULT_STALE_S).clause,
+         "TOKEN PRESENT BUT" in decide(anch_m, TC, DEFAULT_STALE_S).detail),
+        (f"TREND-FLOOR@{MARK_MID}", True))
     # ⛔ AND IT IS A REGISTRATION PROPERTY, NOT A NAME. A shard NAMED like a
     # confirmation with no registry token gets no exemption; the token in the
     # registry protects a shard whose name says nothing.

@@ -121,6 +121,29 @@ def previous_incumbent() -> Path | None:
     return None
 
 
+def baseline() -> Path | None:
+    """Read BASELINE from PROGRAMME.md (same rules as incumbent()).
+
+    ⛔ ADDED 2026-08-21 (s52, Magnus: "fix them") — the THIRD control class.
+    His baseline directive moved the pricing denominator to a teammate's tree
+    (`BASELINE:` field, the BASELINE MOVED block); an anchor row scored against
+    it is the directive executing, not an off-programme drift. Older-than-all-
+    three still refuses — the flattering class stays shut.
+    """
+    try:
+        for ln in PROGRAMME.read_text().splitlines():
+            s = ln.strip()
+            if s.upper().startswith("BASELINE:"):
+                v = s.split(":", 1)[1].strip().strip("`")
+                if not v:
+                    return None
+                p = ROOT / v if not v.startswith("/") else Path(v)
+                return p if p.is_dir() else None
+    except OSError:
+        return None
+    return None
+
+
 def row_control(shard: str) -> Path | None:
     """Resolve THE ROW'S OWN control from the worklist, by shard name.
 
@@ -232,7 +255,10 @@ def cmd_audit(paths: list[str]) -> int:
         return 1
     want = str(inc.relative_to(ROOT)) if inc.is_relative_to(ROOT) else str(inc)
     prev = previous_incumbent()
+    base = baseline()
     accepted = {want}
+    if base is not None:
+        accepted.add(str(base.relative_to(ROOT)) if base.is_relative_to(ROOT) else str(base))
     if prev is not None:
         # transition class (see previous_incumbent's docstring): rows locked
         # when their control WAS the incumbent, overtaken by a ship. Anything
@@ -275,9 +301,9 @@ def cmd_audit(paths: list[str]) -> int:
                 bad += 1
                 print(f"⛔ {p.name}: {shard} scored against {ctl}, not any of {sorted(accepted)}")
     if bad:
-        print(f"\n⛔ {bad} of {total} live row(s) scored against neither the incumbent "
-              f"nor the previous incumbent. A row against an OLDER control reads HIGH "
-              f"and is off-programme.")
+        print(f"\n⛔ {bad} of {total} live row(s) scored against none of the accepted "
+              f"controls (incumbent / previous incumbent / BASELINE). A row against an "
+              f"OLDER control reads HIGH and is off-programme.")
         return 1
     print(f"control audit OK: all {total} live row(s) scored against {sorted(accepted)}")
     return 0
@@ -435,6 +461,24 @@ def selftest() -> int:
         wlp.write_text("TRANS bots/_arm bots/_prev 5400 1\n")
         chk("audit: NO previous field declared => prev-row REFUSES (no silent widening)",
             cmd_audit([str(wlp)]), 1)
+
+        # ── the BASELINE class (2026-08-21, the third control) ──────────────
+        baset = tmp / "bots" / "_base"
+        baset.mkdir(parents=True)
+        (baset / "main.py").write_text("Z = 1\n")
+        PROGRAMME.write_text("INCUMBENT: bots/_ctrl\nBASELINE: bots/_base\n")
+        wlb = tmp / "wlb.txt"
+        wlb.write_text("ANCH bots/_arm bots/_base 5400 1\n")
+        chk("audit: a row against the BASELINE => PASS (the directive's class)",
+            cmd_audit([str(wlb)]), 0)
+        PROGRAMME.write_text("INCUMBENT: bots/_ctrl\n")
+        chk("audit: NO baseline field declared => base-row REFUSES (no silent widening)",
+            cmd_audit([str(wlb)]), 1)
+        PROGRAMME.write_text("INCUMBENT: bots/_ctrl\nBASELINE: bots/_base\n")
+        wlb.write_text("ANCH bots/_arm bots/_base 5400 1\n"
+                       "OLD3 bots/_arm bots/_v50relic 5400 2\n")
+        chk("audit: baseline accepted while OLDER-than-all-three still REFUSES",
+            cmd_audit([str(wlb)]), 1)
         wl2.unlink()
 
         print("\n── the added-file case (a plank dropped in beside the control) ─")
