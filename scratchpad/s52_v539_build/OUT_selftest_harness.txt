@@ -1,0 +1,39 @@
+[1] DeliveryCt is a real channel and can be driven both ways
+  ok   held TRUE with harvester alive on a stack round
+  ok   held FALSE off-cadence (the other verdict)
+  ok   held FALSE with the harvester dead (the other verdict)
+[2] the mouth predicate answers both ways on the real code
+  ok   mouth FOUND when a conveyor faces the core
+  ok   mouth NOT found when it faces away (the other verdict)
+[3] detector: famine declares on a wipe and NOT on a healthy belt
+  ok   famine DECLARED after the wipe (round 141)
+  ok   declared inside [wipe+drought-4, wipe+drought+4] (got 141)
+  ok   famine NOT declared on a belt that never stops (control)
+[4] detector: the opening is untouchable, both guards
+  ok   no famine before FS_V539_MIN_RND (declared 60)
+  ok   MIN_RND pushed out => never declares (the other verdict)
+[5] detector: it CLEARS when delivery resumes
+  ok   famine declared after the kill (r121)
+  ok   famine CLEARED once delivery resumed (r200)
+[6] PARENT tree has no famine bit at all (the counter-control)
+  ok   _v537socket never declares (it has no detector)
+[7] rung A: the lifeline flips _eco_spendable, and only in famine
+  ok   parent REFUSES the spend on a wiped bank
+  ok   v539 ALLOWS it during famine (expander, in window)
+  ok   v539 REFUSES it outside famine (the other verdict)
+  ok   v539 REFUSES it for a RAIDER (bound 1)
+  ok   v539 REFUSES it past LIFELINE_RNDS (bound 2)
+[8] rung B: the draft flips the role, and only in famine
+  ok   n=6 body drafted to EXPAND during famine
+  ok   n=6 body stays RAID with no famine (other verdict)
+  ok   parent n=6 body is RAID in the same board (control)
+  ok   n=2 (a real eco seat) resolves IDENTICALLY in both trees: raid
+[9] the SENTINEL GATE survives a famine (Magnus's s51 ruling)
+  ok   sentinel gate OPEN before the wipe
+  ok   famine IS declared at r199 (the dose landed)
+  ok   sentinel gate STILL OPEN during famine -- the CONN/DELIV latch is never cleared by the famine bits
+  ok   CONN and DELIV bits both still set alongside the famine bit
+[10] flag-off: LOKI_FS_V539=False reproduces the parent verdicts
+  ok   (flag-off identity is asserted by flagoff.py, not here)
+
+SELFTEST PASSED

@@ -1,0 +1,38 @@
+paired cells: 25  (maps ['atoll', 'drakkarfjord', 'eider', 'heart', 'nordkap'])
+
+map            seed  _v537socket            _v539resilience       
+                     rebuild/mouth/deliv    rebuild/mouth/deliv   
+atoll          110   248/89/23              134/203/51            
+atoll          140   276/61/16              162/174/44            
+atoll          170   284/53/14              224/112/28            
+atoll          200   -1/0/0                 228/108/27            
+atoll          230   -1/0/0                 254/83/21             
+drakkarfjord   110   298/200/11             298/202/11            
+drakkarfjord   140   301/0/0                163/161/41            
+drakkarfjord   170   273/114/17             273/126/17            
+drakkarfjord   200   285/0/0                225/96/24             
+drakkarfjord   230   328/86/3               328/86/3              
+eider          110   244/91/23              244/91/23             
+eider          140   252/81/21              192/136/34            
+eider          170   256/79/20              194/139/35            
+eider          200   284/49/13              222/112/28            
+eider          230   284/51/13              254/79/20             
+heart          110   136/176/44             134/180/45            
+heart          140   172/138/35             164/144/36            
+heart          170   200/110/28             194/116/29            
+heart          200   232/78/20              224/84/21             
+heart          230   260/50/13              254/56/14             
+nordkap        110   216/119/30             216/119/30            
+nordkap        140   224/111/28             192/140/35            
+nordkap        170   220/115/29             194/141/36            
+nordkap        200   252/83/21              222/112/28            
+nordkap        230   280/55/14              254/81/21             
+
+first_rebuild_rnd      (lower is better)  v539 20 | parent  0 | tie  5
+mouth_rounds_post      (higher is better)  v539 22 | parent  0 | tie  3
+deliv_sightings_post   (higher is better)  v539 20 | parent  0 | tie  5
+harv_built_post        (higher is better)  v539  2 | parent  0 | tie 23
+conv_built_post        (higher is better)  v539  6 | parent  2 | tie 17
+
+famine declared: v539 25/25 cells | parent 0/25 (it has no detector)
+run() raised, both arms pooled: 0

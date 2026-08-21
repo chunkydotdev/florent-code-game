@@ -1,0 +1,13 @@
+[1] the parser ignores the bot's own log chatter
+  ok   2 data rows parsed out of 4 lines
+  ok   a file of pure chatter parses to 0 rows (the other verdict)
+[2] the sign test moves BOTH ways on inverted inputs
+  ok   v539 wins when it rebuilds earlier
+  ok   PARENT wins on the inverted fixture (the other verdict)
+[3] 'never rebuilt' (-1) is scored as WORSE, not best
+  ok   a real r300 beats a parent that never rebuilt
+  ok   and an arm that never rebuilt LOSES (the other verdict)
+[4] unpaired cells are dropped, not half-counted
+  ok   no cell has both arms => 0 pairs
+
+SELFTEST PASSED

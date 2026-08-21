@@ -1,0 +1,14 @@
+tree: _v537socket   sites: 13  (READ 11 / WRITE 2)
+  eco.py         800  READ                       | if live > ct.read_store(SLOT_HARVESTERS):
+  eco.py         801  WRITE                      | ct.write_store(SLOT_HARVESTERS, live)
+  eco.py        2230  READ  >=  1                | if not ore_ban and ct.read_store(SLOT_HARVESTERS) >= 1 \
+  eco.py        2392  READ                       | harv = ct.read_store(SLOT_HARVESTERS)
+  eco.py        2457  WRITE                      | ct.write_store(SLOT_HARVESTERS, ct.read_store(SLOT_HARVESTERS) + 1)
+  eco.py        2459  READ  >=  ECO_NEED         | if ct.read_store(SLOT_HARVESTERS) >= ECO_NEED \
+  main.py        446  READ                       | harv = ct.read_store(SLOT_HARVESTERS)
+  main.py       1411  READ  >=  ECO_NEED         | and not self.link_queue and ct.read_store(SLOT_HARVESTERS) >= ECO_NEED
+  main.py       1808  READ  <   ECO_NEED         | if ct.read_store(SLOT_HARVESTERS) < ECO_NEED and self._live_home_gun(ct):
+  main.py       1901  READ  <   1                | if ct.read_store(SLOT_HARVESTERS) < 1:
+  raid.py        714  READ  <   min_harv         | if ct.read_store(SLOT_HARVESTERS) < min_harv:
+  raid.py        916  READ  <   LOKI_BELTBREAK_MIN_HARV | if ct.read_store(SLOT_HARVESTERS) < LOKI_BELTBREAK_MIN_HARV:
+  siege.py      4330  READ                       | harv = ct.read_store(SLOT_HARVESTERS)

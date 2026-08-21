@@ -1,0 +1,15 @@
+[1] it finds a read, a write, and a threshold
+  ok   2 sites in a 3-line fixture
+  ok   read/op/threshold decoded
+  ok   the write is classified as a WRITE
+[2] it returns NOTHING on text that does not use the slot
+  ok   a different slot is not reported (the other verdict)
+  ok   a mere mention in a COMMENT is not a site (the other verdict)
+[3] mutation: rename the slot and every site must disappear
+  ok   0 sites after renaming the slot out of the fixture
+[4] the real trees: parent and arm agree on the site count
+  ok   parent has >= 10 sites (found 13)
+  ok   v539 adds EXACTLY the honest-reset branch (2 sites): 15 vs 13
+  ok   and exactly ONE of the two is a new READ
+
+SELFTEST PASSED

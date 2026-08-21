@@ -1,0 +1,24 @@
+A) SELF CONTROL parent-vs-parent, wipe@140  (must be IDENTICAL)
+   {'map': 'atoll', 'wipe_at': 140, 'rounds': 340, 'identical': True, 'first_divergence': -1}
+   {'map': 'eider', 'wipe_at': 140, 'rounds': 340, 'identical': True, 'first_divergence': -1}
+   {'map': 'heart', 'wipe_at': 140, 'rounds': 340, 'identical': True, 'first_divergence': -1}
+   {'map': 'nordkap', 'wipe_at': 140, 'rounds': 340, 'identical': True, 'first_divergence': -1}
+   {'map': 'drakkarfjord', 'wipe_at': 140, 'rounds': 340, 'identical': True, 'first_divergence': -1}
+B) FLAG-OFF vs PARENT, wipe@140  (must be IDENTICAL)
+   {'map': 'atoll', 'wipe_at': 140, 'rounds': 340, 'identical': True, 'first_divergence': -1}
+   {'map': 'eider', 'wipe_at': 140, 'rounds': 340, 'identical': True, 'first_divergence': -1}
+   {'map': 'heart', 'wipe_at': 140, 'rounds': 340, 'identical': True, 'first_divergence': -1}
+   {'map': 'nordkap', 'wipe_at': 140, 'rounds': 340, 'identical': True, 'first_divergence': -1}
+   {'map': 'drakkarfjord', 'wipe_at': 140, 'rounds': 340, 'identical': True, 'first_divergence': -1}
+C) FLAG-ON vs PARENT, NO WIPE  (must be IDENTICAL: the path is inert)
+   {'map': 'atoll', 'wipe_at': 1000000, 'rounds': 340, 'identical': True, 'first_divergence': -1}
+   {'map': 'eider', 'wipe_at': 1000000, 'rounds': 340, 'identical': True, 'first_divergence': -1}
+   {'map': 'heart', 'wipe_at': 1000000, 'rounds': 340, 'identical': True, 'first_divergence': -1}
+   {'map': 'nordkap', 'wipe_at': 1000000, 'rounds': 340, 'identical': True, 'first_divergence': -1}
+   {'map': 'drakkarfjord', 'wipe_at': 1000000, 'rounds': 340, 'identical': True, 'first_divergence': -1}
+D) FLAG-ON vs PARENT, wipe@140  (must DIVERGE: makes B and C mean something)
+   {'map': 'atoll', 'wipe_at': 140, 'rounds': 340, 'identical': False, 'first_divergence': 161}
+   {'map': 'eider', 'wipe_at': 140, 'rounds': 340, 'identical': False, 'first_divergence': 161}
+   {'map': 'heart', 'wipe_at': 140, 'rounds': 340, 'identical': False, 'first_divergence': 161}
+   {'map': 'nordkap', 'wipe_at': 140, 'rounds': 340, 'identical': False, 'first_divergence': 161}
+   {'map': 'drakkarfjord', 'wipe_at': 140, 'rounds': 340, 'identical': False, 'first_divergence': 161}
