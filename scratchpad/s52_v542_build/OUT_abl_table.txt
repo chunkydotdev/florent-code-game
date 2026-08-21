@@ -1,0 +1,22 @@
+ABLATION IDENTITY (NOISE_OFF everything, opp=_v488beltbreak2, 5 maps x 12 seeds x 2 seats)
+comparison                                     cells    differ   maps of differing cells
+--- THE FOUR IDENTITY CLAIMS (must be 0) ---
+v542[LOKI_FS_V538=F]   ==  merge(539,541)      120      0        -
+v542[LOKI_FS_V539=F]   ==  merge(538,541)      120      0        -
+v542[FS_V541_COREPECK=F] == merge(538,539)     120      0        -
+v542[ALL THREE OFF]    ==  _v537socket         120      0        -
+--- THE NEGATIVE CONTROLS (must be > 0, else the four above are vacuous) ---
+v542  vs  v542[LOKI_FS_V538=F]      (v538 dose) 120      24       midgard:24
+v542  vs  v542[LOKI_FS_V539=F]      (v539 dose) 120      12       valkyrie:12
+v542  vs  v542[FS_V541_COREPECK=F]  (v541 dose) 120      12       midgard:12
+v542  vs  _v537socket               (whole merge) 120      36       midgard:24 valkyrie:12
+--- PAIRWISE REFERENCE STRUCTURE (context) ---
+_v537socket vs merge(539,541)                  120      24       midgard:12 valkyrie:12
+_v537socket vs merge(538,541)                  120      24       midgard:24
+_v537socket vs merge(538,539)                  120      36       midgard:24 valkyrie:12
+merge(538,539) vs v542  (= v541 added last)    120      12       midgard:12
+merge(538,541) vs v542  (= v539 added last)    120      12       valkyrie:12
+merge(539,541) vs v542  (= v538 added last)    120      24       midgard:24
+
+VERDICT identities: PASS (0,0,0,0)   controls: PASS (all >0)
+TRACEBACKS across all 1080 games: 0

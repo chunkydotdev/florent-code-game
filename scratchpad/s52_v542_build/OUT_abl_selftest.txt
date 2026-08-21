@@ -1,0 +1,9 @@
+SELFTEST abl.py — every verdict, both ways
+  HONEST tape: identities PASS                                     ok
+  HONEST tape: controls PASS                                       ok
+  broken identity (ref_no539 moved) -> identities FAIL             ok
+    ...and controls still PASS                                     ok
+  no plank acts -> identities PASS but controls FAIL               ok
+  missing arm -> must REFUSE                                       ok
+  normalising `winner` changes nothing (it is ignored)             ok
+SELFTEST PASS (0 wrong verdicts)

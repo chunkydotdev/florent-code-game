@@ -1,0 +1,62 @@
+##### harness538 --selftest #####
+[ok] loader: parent (_v537socket) has no FS_V538_CLAIM_GATE
+[ok] loader: child (_v542wave) FS_V538_CLAIM_GATE=True
+[ok] loader: main.Player importable from both trees
+[ok] FakeCt: 113 tiles at nordkap core, env round-trips
+[ok] FakeCt: corrupted fixture reads WALL (the harness can lie)
+[ok] FakeCt: off-map read raises, as the engine does
+[ok] make_player: child Player boots with v535_refuse=None
+[ok] make_player: parent Player has no _v538_claim_on (the probe can tell the trees apart)
+SELFTEST PASS
+##### harness539 --selftest #####
+  ok   v539 REFUSES it for a RAIDER (bound 1)
+  ok   v539 REFUSES it past LIFELINE_RNDS (bound 2)
+[8] rung B: the draft flips the role, and only in famine
+  ok   n=6 body drafted to EXPAND during famine
+  ok   n=6 body stays RAID with no famine (other verdict)
+  ok   parent n=6 body is RAID in the same board (control)
+  ok   n=2 (a real eco seat) resolves IDENTICALLY in both trees: raid
+[9] v539.1 RESERVE FLOOR binds, and ONLY when it should
+  ok   the floor is a real number: sentinel + reserve = 46 Ti
+  ok   floor ON + famine + wiped bank (8 Ti): REFUSES -- the rebuild waits
+  ok   floor OFF, same board: ALLOWS (the other verdict, and the arm diff)
+  ok   floor ON + famine + bank 246 Ti: ALLOWS -- true surplus rebuilds
+  ok   ⭐ floor ON is PARENT-IDENTICAL across all 68 sweep cells -- i.e. the floor makes RUNG A EXACTLY INERT, so v539.1 is a clean ABLATION of rung A (draft + hold only), not a softer lifeline
+  ok   floor OFF differs from the parent in ALL FOUR sweeps [[4, 8, 16], [4, 8, 16], [24, 32], [24, 32, 40, 44, 46, 48, 52, 60]] (the other verdict: the comparison can fail, and this is the whole arm difference)
+  ok   the parent answers both ways in every sweep (no constant column)
+  ok   floor ON but NO famine: identical to the parent (True)
+[10] the SENTINEL GATE survives a famine (Magnus's s51 ruling)
+  ok   sentinel gate OPEN before the wipe
+  ok   famine IS declared at r199 (the dose landed)
+  ok   sentinel gate STILL OPEN during famine -- the CONN/DELIV latch is never cleared by the famine bits
+  ok   CONN and DELIV bits both still set alongside the famine bit
+[11] flag-off: LOKI_FS_V539=False reproduces the parent verdicts
+  ok   (flag-off identity is asserted by flagoff.py, not here)
+
+SELFTEST PASSED
+##### harness541 --selftest #####
+  ok    core at 100 HP (<= the 120 budget): redirect fires
+  ok    ⭐ core at FULL 500 HP: REFUSES (the other verdict) -- and this is the whole finding: the unconditional form lost 18 timely kills of 180 with 0 gained, because a 2-damage peck FINISHES a 20 HP belt and never finishes a healed core
+  ok    same board, FINISH_ON off: fires -- proving the refusal came from THAT clause (and reproducing the refuted arm exactly)
+  ok    core at 100 HP but the body's budget is SPENT: refuses -- the cap is min(FINISH_HP, 2 x remaining budget), so a spent body stops claiming it can finish
+  ok    boundary: exactly 120 HP is finishable
+  ok    boundary: 121 HP is not (the other side of the same edge)
+[A] THE AMMUNITION CLAUSE -- and the two clauses differ on it
+  ok    ADDITIVE clause with a live sentinel and an empty magazine: REFUSES -- 2 Ti as ammunition is 1.80 HP/Ti against the peck's 1.00
+  ok    same board, AMMO_AWARE off: fires -- proving the refusal above came from THAT clause and not from the sentinel reserve
+  ok    magazine FULL: fires (the other verdict) -- surplus is surplus
+  ok    NO live sentinel, empty magazine: fires -- nothing to starve, and this is the arr2->first-sentinel gap
+  ok    ⭐ THE ASYMMETRY: the REDIRECT fires on the SAME board the additive clause refused -- there the 2 Ti goes to a conveyor either way, so the ammunition premise is false
+[G7] TARGET DISCIPLINE -- the enemy CORE and nothing else
+  ok    body orthogonally adjacent to an ENEMY CONVEYOR but not to the core: refuses -- demolition lowers their cost scale and is a gift
+[H] THE HARM CHECK -- idle_ok never opens a round the parent walks
+  ok        collar closed, body parked                  parent_moves=True   idle_ok=False
+  ok        collar closed, move on cooldown             parent_moves=False  idle_ok=True 
+  ok        seat owed, body already beside it           parent_moves=False  idle_ok=True 
+  ok        seat owed FAR AWAY, body free to walk       parent_moves=True   idle_ok=False
+  ok        seat owed far, but move on cooldown         parent_moves=False  idle_ok=True 
+  ok    0 conflicts over 5 boards (found 0)
+  ok    POSITIVE CONTROL: at least one board DOES make the parent walk -- otherwise 'no conflict' is vacuous
+  ok    POSITIVE CONTROL: at least one board DOES open the idle gate -- otherwise 'no conflict' is vacuous the other way
+
+SELFTEST PASSED

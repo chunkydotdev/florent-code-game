@@ -1,0 +1,34 @@
+ARM scratchpad/s52_v542_build/arms/parent
+NOISE_ON = False
+ARM scratchpad/s52_v542_build/arms/v542
+NOISE_ON = False
+ARM scratchpad/s52_v542_build/arms/v542_538off
+NOISE_ON = False
+ARM scratchpad/s52_v542_build/arms/v542_538off
+LOKI_FS_V538 = False         # master.  False == `bots/_v537socket` unchanged,
+ARM scratchpad/s52_v542_build/arms/v542_539off
+NOISE_ON = False
+ARM scratchpad/s52_v542_build/arms/v542_539off
+LOKI_FS_V539 = False         # master.  False == `bots/_v537socket` unchanged
+ARM scratchpad/s52_v542_build/arms/v542_541off
+NOISE_ON = False
+ARM scratchpad/s52_v542_build/arms/v542_541off
+FS_V541_COREPECK = False     # master.  False == `bots/_v537socket` unchanged,
+ARM scratchpad/s52_v542_build/arms/v542_alloff
+NOISE_ON = False
+ARM scratchpad/s52_v542_build/arms/v542_alloff
+LOKI_FS_V538 = False         # master.  False == `bots/_v537socket` unchanged,
+ARM scratchpad/s52_v542_build/arms/v542_alloff
+LOKI_FS_V539 = False         # master.  False == `bots/_v537socket` unchanged
+ARM scratchpad/s52_v542_build/arms/v542_alloff
+FS_V541_COREPECK = False     # master.  False == `bots/_v537socket` unchanged,
+ARM scratchpad/s52_v542_build/arms/ref_no538
+NOISE_ON = False
+ARM scratchpad/s52_v542_build/arms/ref_no539
+NOISE_ON = False
+ARM scratchpad/s52_v542_build/arms/ref_no541
+NOISE_ON = False
+ARM scratchpad/s52_v542_build/arms/opp_bb2
+NOISE_ON = False
+ARM scratchpad/s52_v542_build/arms/opp_mjol
+NOISE_ON = False

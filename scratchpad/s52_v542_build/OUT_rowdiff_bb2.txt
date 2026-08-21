@@ -1,0 +1,307 @@
+tape scratchpad/s52_v542_build/ident_bb2_combined.tsv -- 1080 rows, arms ['parent', 'ref_no538', 'ref_no539', 'ref_no541', 'v542', 'v542_538off', 'v542_539off', 'v542_541off', 'v542_alloff']
+== LIVE ==
+   parent       vs ref_no538     120 shared cells,  24 rows differ
+        ('midgard', '1', 'B')  {'turn': ('270', '268'), 'ours_mined': ('2050', '2030'), 'opp_mined': ('1600', '1580')}
+        ('midgard', '10', 'B')  {'turn': ('270', '268'), 'ours_mined': ('2050', '2030'), 'opp_mined': ('1600', '1580')}
+        ('midgard', '11', 'B')  {'turn': ('270', '268'), 'ours_mined': ('2050', '2030'), 'opp_mined': ('1600', '1580')}
+        ('midgard', '12', 'B')  {'turn': ('270', '268'), 'ours_mined': ('2050', '2030'), 'opp_mined': ('1600', '1580')}
+        ... 20 more
+   parent       vs ref_no539     120 shared cells,  24 rows differ
+        ('midgard', '1', 'A')  {'turn': ('365', '629'), 'ours_mined': ('490', '550'), 'opp_mined': ('610', '620')}
+        ('midgard', '1', 'B')  {'turn': ('270', '150'), 'ours_mined': ('2050', '1200'), 'opp_mined': ('1600', '550')}
+        ('midgard', '10', 'A')  {'turn': ('365', '629'), 'ours_mined': ('490', '550'), 'opp_mined': ('610', '620')}
+        ('midgard', '10', 'B')  {'turn': ('270', '150'), 'ours_mined': ('2050', '1200'), 'opp_mined': ('1600', '550')}
+        ... 20 more
+   parent       vs ref_no541     120 shared cells,  36 rows differ
+        ('midgard', '1', 'A')  {'turn': ('365', '629'), 'ours_mined': ('490', '550'), 'opp_mined': ('610', '620')}
+        ('midgard', '1', 'B')  {'turn': ('270', '152'), 'ours_mined': ('2050', '1230'), 'opp_mined': ('1600', '550')}
+        ('midgard', '10', 'A')  {'turn': ('365', '629'), 'ours_mined': ('490', '550'), 'opp_mined': ('610', '620')}
+        ('midgard', '10', 'B')  {'turn': ('270', '152'), 'ours_mined': ('2050', '1230'), 'opp_mined': ('1600', '550')}
+        ... 32 more
+   parent       vs v542          120 shared cells,  36 rows differ
+        ('midgard', '1', 'A')  {'turn': ('365', '629'), 'ours_mined': ('490', '550'), 'opp_mined': ('610', '620')}
+        ('midgard', '1', 'B')  {'turn': ('270', '150'), 'ours_mined': ('2050', '1200'), 'opp_mined': ('1600', '550')}
+        ('midgard', '10', 'A')  {'turn': ('365', '629'), 'ours_mined': ('490', '550'), 'opp_mined': ('610', '620')}
+        ('midgard', '10', 'B')  {'turn': ('270', '150'), 'ours_mined': ('2050', '1200'), 'opp_mined': ('1600', '550')}
+        ... 32 more
+   parent       vs v542_538off   120 shared cells,  24 rows differ
+        ('midgard', '1', 'B')  {'turn': ('270', '268'), 'ours_mined': ('2050', '2030'), 'opp_mined': ('1600', '1580')}
+        ('midgard', '10', 'B')  {'turn': ('270', '268'), 'ours_mined': ('2050', '2030'), 'opp_mined': ('1600', '1580')}
+        ('midgard', '11', 'B')  {'turn': ('270', '268'), 'ours_mined': ('2050', '2030'), 'opp_mined': ('1600', '1580')}
+        ('midgard', '12', 'B')  {'turn': ('270', '268'), 'ours_mined': ('2050', '2030'), 'opp_mined': ('1600', '1580')}
+        ... 20 more
+   parent       vs v542_539off   120 shared cells,  24 rows differ
+        ('midgard', '1', 'A')  {'turn': ('365', '629'), 'ours_mined': ('490', '550'), 'opp_mined': ('610', '620')}
+        ('midgard', '1', 'B')  {'turn': ('270', '150'), 'ours_mined': ('2050', '1200'), 'opp_mined': ('1600', '550')}
+        ('midgard', '10', 'A')  {'turn': ('365', '629'), 'ours_mined': ('490', '550'), 'opp_mined': ('610', '620')}
+        ('midgard', '10', 'B')  {'turn': ('270', '150'), 'ours_mined': ('2050', '1200'), 'opp_mined': ('1600', '550')}
+        ... 20 more
+   parent       vs v542_541off   120 shared cells,  36 rows differ
+        ('midgard', '1', 'A')  {'turn': ('365', '629'), 'ours_mined': ('490', '550'), 'opp_mined': ('610', '620')}
+        ('midgard', '1', 'B')  {'turn': ('270', '152'), 'ours_mined': ('2050', '1230'), 'opp_mined': ('1600', '550')}
+        ('midgard', '10', 'A')  {'turn': ('365', '629'), 'ours_mined': ('490', '550'), 'opp_mined': ('610', '620')}
+        ('midgard', '10', 'B')  {'turn': ('270', '152'), 'ours_mined': ('2050', '1230'), 'opp_mined': ('1600', '550')}
+        ... 32 more
+   parent       vs v542_alloff   120 shared cells,   0 rows differ
+   ref_no538    vs ref_no539     120 shared cells,  36 rows differ
+        ('midgard', '1', 'A')  {'turn': ('365', '629'), 'ours_mined': ('490', '550'), 'opp_mined': ('610', '620')}
+        ('midgard', '1', 'B')  {'turn': ('268', '150'), 'ours_mined': ('2030', '1200'), 'opp_mined': ('1580', '550')}
+        ('midgard', '10', 'A')  {'turn': ('365', '629'), 'ours_mined': ('490', '550'), 'opp_mined': ('610', '620')}
+        ('midgard', '10', 'B')  {'turn': ('268', '150'), 'ours_mined': ('2030', '1200'), 'opp_mined': ('1580', '550')}
+        ... 32 more
+   ref_no538    vs ref_no541     120 shared cells,  24 rows differ
+        ('midgard', '1', 'A')  {'turn': ('365', '629'), 'ours_mined': ('490', '550'), 'opp_mined': ('610', '620')}
+        ('midgard', '1', 'B')  {'turn': ('268', '152'), 'ours_mined': ('2030', '1230'), 'opp_mined': ('1580', '550')}
+        ('midgard', '10', 'A')  {'turn': ('365', '629'), 'ours_mined': ('490', '550'), 'opp_mined': ('610', '620')}
+        ('midgard', '10', 'B')  {'turn': ('268', '152'), 'ours_mined': ('2030', '1230'), 'opp_mined': ('1580', '550')}
+        ... 20 more
+   ref_no538    vs v542          120 shared cells,  24 rows differ
+        ('midgard', '1', 'A')  {'turn': ('365', '629'), 'ours_mined': ('490', '550'), 'opp_mined': ('610', '620')}
+        ('midgard', '1', 'B')  {'turn': ('268', '150'), 'ours_mined': ('2030', '1200'), 'opp_mined': ('1580', '550')}
+        ('midgard', '10', 'A')  {'turn': ('365', '629'), 'ours_mined': ('490', '550'), 'opp_mined': ('610', '620')}
+        ('midgard', '10', 'B')  {'turn': ('268', '150'), 'ours_mined': ('2030', '1200'), 'opp_mined': ('1580', '550')}
+        ... 20 more
+   ref_no538    vs v542_538off   120 shared cells,   0 rows differ
+   ref_no538    vs v542_539off   120 shared cells,  36 rows differ
+        ('midgard', '1', 'A')  {'turn': ('365', '629'), 'ours_mined': ('490', '550'), 'opp_mined': ('610', '620')}
+        ('midgard', '1', 'B')  {'turn': ('268', '150'), 'ours_mined': ('2030', '1200'), 'opp_mined': ('1580', '550')}
+        ('midgard', '10', 'A')  {'turn': ('365', '629'), 'ours_mined': ('490', '550'), 'opp_mined': ('610', '620')}
+        ('midgard', '10', 'B')  {'turn': ('268', '150'), 'ours_mined': ('2030', '1200'), 'opp_mined': ('1580', '550')}
+        ... 32 more
+   ref_no538    vs v542_541off   120 shared cells,  24 rows differ
+        ('midgard', '1', 'A')  {'turn': ('365', '629'), 'ours_mined': ('490', '550'), 'opp_mined': ('610', '620')}
+        ('midgard', '1', 'B')  {'turn': ('268', '152'), 'ours_mined': ('2030', '1230'), 'opp_mined': ('1580', '550')}
+        ('midgard', '10', 'A')  {'turn': ('365', '629'), 'ours_mined': ('490', '550'), 'opp_mined': ('610', '620')}
+        ('midgard', '10', 'B')  {'turn': ('268', '152'), 'ours_mined': ('2030', '1230'), 'opp_mined': ('1580', '550')}
+        ... 20 more
+   ref_no538    vs v542_alloff   120 shared cells,  24 rows differ
+        ('midgard', '1', 'B')  {'turn': ('268', '270'), 'ours_mined': ('2030', '2050'), 'opp_mined': ('1580', '1600')}
+        ('midgard', '10', 'B')  {'turn': ('268', '270'), 'ours_mined': ('2030', '2050'), 'opp_mined': ('1580', '1600')}
+        ('midgard', '11', 'B')  {'turn': ('268', '270'), 'ours_mined': ('2030', '2050'), 'opp_mined': ('1580', '1600')}
+        ('midgard', '12', 'B')  {'turn': ('268', '270'), 'ours_mined': ('2030', '2050'), 'opp_mined': ('1580', '1600')}
+        ... 20 more
+   ref_no539    vs ref_no541     120 shared cells,  24 rows differ
+        ('midgard', '1', 'B')  {'turn': ('150', '152'), 'ours_mined': ('1200', '1230')}
+        ('midgard', '10', 'B')  {'turn': ('150', '152'), 'ours_mined': ('1200', '1230')}
+        ('midgard', '11', 'B')  {'turn': ('150', '152'), 'ours_mined': ('1200', '1230')}
+        ('midgard', '12', 'B')  {'turn': ('150', '152'), 'ours_mined': ('1200', '1230')}
+        ... 20 more
+   ref_no539    vs v542          120 shared cells,  12 rows differ
+        ('valkyrie', '1', 'B')  {'turn': ('474', '373'), 'opp_mined': ('3650', '2210')}
+        ('valkyrie', '10', 'B')  {'turn': ('474', '373'), 'opp_mined': ('3650', '2210')}
+        ('valkyrie', '11', 'B')  {'turn': ('474', '373'), 'opp_mined': ('3650', '2210')}
+        ('valkyrie', '12', 'B')  {'turn': ('474', '373'), 'opp_mined': ('3650', '2210')}
+        ... 8 more
+   ref_no539    vs v542_538off   120 shared cells,  36 rows differ
+        ('midgard', '1', 'A')  {'turn': ('629', '365'), 'ours_mined': ('550', '490'), 'opp_mined': ('620', '610')}
+        ('midgard', '1', 'B')  {'turn': ('150', '268'), 'ours_mined': ('1200', '2030'), 'opp_mined': ('550', '1580')}
+        ('midgard', '10', 'A')  {'turn': ('629', '365'), 'ours_mined': ('550', '490'), 'opp_mined': ('620', '610')}
+        ('midgard', '10', 'B')  {'turn': ('150', '268'), 'ours_mined': ('1200', '2030'), 'opp_mined': ('550', '1580')}
+        ... 32 more
+   ref_no539    vs v542_539off   120 shared cells,   0 rows differ
+   ref_no539    vs v542_541off   120 shared cells,  24 rows differ
+        ('midgard', '1', 'B')  {'turn': ('150', '152'), 'ours_mined': ('1200', '1230')}
+        ('midgard', '10', 'B')  {'turn': ('150', '152'), 'ours_mined': ('1200', '1230')}
+        ('midgard', '11', 'B')  {'turn': ('150', '152'), 'ours_mined': ('1200', '1230')}
+        ('midgard', '12', 'B')  {'turn': ('150', '152'), 'ours_mined': ('1200', '1230')}
+        ... 20 more
+   ref_no539    vs v542_alloff   120 shared cells,  24 rows differ
+        ('midgard', '1', 'A')  {'turn': ('629', '365'), 'ours_mined': ('550', '490'), 'opp_mined': ('620', '610')}
+        ('midgard', '1', 'B')  {'turn': ('150', '270'), 'ours_mined': ('1200', '2050'), 'opp_mined': ('550', '1600')}
+        ('midgard', '10', 'A')  {'turn': ('629', '365'), 'ours_mined': ('550', '490'), 'opp_mined': ('620', '610')}
+        ('midgard', '10', 'B')  {'turn': ('150', '270'), 'ours_mined': ('1200', '2050'), 'opp_mined': ('550', '1600')}
+        ... 20 more
+   ref_no541    vs v542          120 shared cells,  12 rows differ
+        ('midgard', '1', 'B')  {'turn': ('152', '150'), 'ours_mined': ('1230', '1200')}
+        ('midgard', '10', 'B')  {'turn': ('152', '150'), 'ours_mined': ('1230', '1200')}
+        ('midgard', '11', 'B')  {'turn': ('152', '150'), 'ours_mined': ('1230', '1200')}
+        ('midgard', '12', 'B')  {'turn': ('152', '150'), 'ours_mined': ('1230', '1200')}
+        ... 8 more
+   ref_no541    vs v542_538off   120 shared cells,  24 rows differ
+        ('midgard', '1', 'A')  {'turn': ('629', '365'), 'ours_mined': ('550', '490'), 'opp_mined': ('620', '610')}
+        ('midgard', '1', 'B')  {'turn': ('152', '268'), 'ours_mined': ('1230', '2030'), 'opp_mined': ('550', '1580')}
+        ('midgard', '10', 'A')  {'turn': ('629', '365'), 'ours_mined': ('550', '490'), 'opp_mined': ('620', '610')}
+        ('midgard', '10', 'B')  {'turn': ('152', '268'), 'ours_mined': ('1230', '2030'), 'opp_mined': ('550', '1580')}
+        ... 20 more
+   ref_no541    vs v542_539off   120 shared cells,  24 rows differ
+        ('midgard', '1', 'B')  {'turn': ('152', '150'), 'ours_mined': ('1230', '1200')}
+        ('midgard', '10', 'B')  {'turn': ('152', '150'), 'ours_mined': ('1230', '1200')}
+        ('midgard', '11', 'B')  {'turn': ('152', '150'), 'ours_mined': ('1230', '1200')}
+        ('midgard', '12', 'B')  {'turn': ('152', '150'), 'ours_mined': ('1230', '1200')}
+        ... 20 more
+   ref_no541    vs v542_541off   120 shared cells,   0 rows differ
+   ref_no541    vs v542_alloff   120 shared cells,  36 rows differ
+        ('midgard', '1', 'A')  {'turn': ('629', '365'), 'ours_mined': ('550', '490'), 'opp_mined': ('620', '610')}
+        ('midgard', '1', 'B')  {'turn': ('152', '270'), 'ours_mined': ('1230', '2050'), 'opp_mined': ('550', '1600')}
+        ('midgard', '10', 'A')  {'turn': ('629', '365'), 'ours_mined': ('550', '490'), 'opp_mined': ('620', '610')}
+        ('midgard', '10', 'B')  {'turn': ('152', '270'), 'ours_mined': ('1230', '2050'), 'opp_mined': ('550', '1600')}
+        ... 32 more
+   v542         vs v542_538off   120 shared cells,  24 rows differ
+        ('midgard', '1', 'A')  {'turn': ('629', '365'), 'ours_mined': ('550', '490'), 'opp_mined': ('620', '610')}
+        ('midgard', '1', 'B')  {'turn': ('150', '268'), 'ours_mined': ('1200', '2030'), 'opp_mined': ('550', '1580')}
+        ('midgard', '10', 'A')  {'turn': ('629', '365'), 'ours_mined': ('550', '490'), 'opp_mined': ('620', '610')}
+        ('midgard', '10', 'B')  {'turn': ('150', '268'), 'ours_mined': ('1200', '2030'), 'opp_mined': ('550', '1580')}
+        ... 20 more
+   v542         vs v542_539off   120 shared cells,  12 rows differ
+        ('valkyrie', '1', 'B')  {'turn': ('373', '474'), 'opp_mined': ('2210', '3650')}
+        ('valkyrie', '10', 'B')  {'turn': ('373', '474'), 'opp_mined': ('2210', '3650')}
+        ('valkyrie', '11', 'B')  {'turn': ('373', '474'), 'opp_mined': ('2210', '3650')}
+        ('valkyrie', '12', 'B')  {'turn': ('373', '474'), 'opp_mined': ('2210', '3650')}
+        ... 8 more
+   v542         vs v542_541off   120 shared cells,  12 rows differ
+        ('midgard', '1', 'B')  {'turn': ('150', '152'), 'ours_mined': ('1200', '1230')}
+        ('midgard', '10', 'B')  {'turn': ('150', '152'), 'ours_mined': ('1200', '1230')}
+        ('midgard', '11', 'B')  {'turn': ('150', '152'), 'ours_mined': ('1200', '1230')}
+        ('midgard', '12', 'B')  {'turn': ('150', '152'), 'ours_mined': ('1200', '1230')}
+        ... 8 more
+   v542         vs v542_alloff   120 shared cells,  36 rows differ
+        ('midgard', '1', 'A')  {'turn': ('629', '365'), 'ours_mined': ('550', '490'), 'opp_mined': ('620', '610')}
+        ('midgard', '1', 'B')  {'turn': ('150', '270'), 'ours_mined': ('1200', '2050'), 'opp_mined': ('550', '1600')}
+        ('midgard', '10', 'A')  {'turn': ('629', '365'), 'ours_mined': ('550', '490'), 'opp_mined': ('620', '610')}
+        ('midgard', '10', 'B')  {'turn': ('150', '270'), 'ours_mined': ('1200', '2050'), 'opp_mined': ('550', '1600')}
+        ... 32 more
+   v542_538off  vs v542_539off   120 shared cells,  36 rows differ
+        ('midgard', '1', 'A')  {'turn': ('365', '629'), 'ours_mined': ('490', '550'), 'opp_mined': ('610', '620')}
+        ('midgard', '1', 'B')  {'turn': ('268', '150'), 'ours_mined': ('2030', '1200'), 'opp_mined': ('1580', '550')}
+        ('midgard', '10', 'A')  {'turn': ('365', '629'), 'ours_mined': ('490', '550'), 'opp_mined': ('610', '620')}
+        ('midgard', '10', 'B')  {'turn': ('268', '150'), 'ours_mined': ('2030', '1200'), 'opp_mined': ('1580', '550')}
+        ... 32 more
+   v542_538off  vs v542_541off   120 shared cells,  24 rows differ
+        ('midgard', '1', 'A')  {'turn': ('365', '629'), 'ours_mined': ('490', '550'), 'opp_mined': ('610', '620')}
+        ('midgard', '1', 'B')  {'turn': ('268', '152'), 'ours_mined': ('2030', '1230'), 'opp_mined': ('1580', '550')}
+        ('midgard', '10', 'A')  {'turn': ('365', '629'), 'ours_mined': ('490', '550'), 'opp_mined': ('610', '620')}
+        ('midgard', '10', 'B')  {'turn': ('268', '152'), 'ours_mined': ('2030', '1230'), 'opp_mined': ('1580', '550')}
+        ... 20 more
+   v542_538off  vs v542_alloff   120 shared cells,  24 rows differ
+        ('midgard', '1', 'B')  {'turn': ('268', '270'), 'ours_mined': ('2030', '2050'), 'opp_mined': ('1580', '1600')}
+        ('midgard', '10', 'B')  {'turn': ('268', '270'), 'ours_mined': ('2030', '2050'), 'opp_mined': ('1580', '1600')}
+        ('midgard', '11', 'B')  {'turn': ('268', '270'), 'ours_mined': ('2030', '2050'), 'opp_mined': ('1580', '1600')}
+        ('midgard', '12', 'B')  {'turn': ('268', '270'), 'ours_mined': ('2030', '2050'), 'opp_mined': ('1580', '1600')}
+        ... 20 more
+   v542_539off  vs v542_541off   120 shared cells,  24 rows differ
+        ('midgard', '1', 'B')  {'turn': ('150', '152'), 'ours_mined': ('1200', '1230')}
+        ('midgard', '10', 'B')  {'turn': ('150', '152'), 'ours_mined': ('1200', '1230')}
+        ('midgard', '11', 'B')  {'turn': ('150', '152'), 'ours_mined': ('1200', '1230')}
+        ('midgard', '12', 'B')  {'turn': ('150', '152'), 'ours_mined': ('1200', '1230')}
+        ... 20 more
+   v542_539off  vs v542_alloff   120 shared cells,  24 rows differ
+        ('midgard', '1', 'A')  {'turn': ('629', '365'), 'ours_mined': ('550', '490'), 'opp_mined': ('620', '610')}
+        ('midgard', '1', 'B')  {'turn': ('150', '270'), 'ours_mined': ('1200', '2050'), 'opp_mined': ('550', '1600')}
+        ('midgard', '10', 'A')  {'turn': ('629', '365'), 'ours_mined': ('550', '490'), 'opp_mined': ('620', '610')}
+        ('midgard', '10', 'B')  {'turn': ('150', '270'), 'ours_mined': ('1200', '2050'), 'opp_mined': ('550', '1600')}
+        ... 20 more
+   v542_541off  vs v542_alloff   120 shared cells,  36 rows differ
+        ('midgard', '1', 'A')  {'turn': ('629', '365'), 'ours_mined': ('550', '490'), 'opp_mined': ('620', '610')}
+        ('midgard', '1', 'B')  {'turn': ('152', '270'), 'ours_mined': ('1230', '2050'), 'opp_mined': ('550', '1600')}
+        ('midgard', '10', 'A')  {'turn': ('629', '365'), 'ours_mined': ('550', '490'), 'opp_mined': ('620', '610')}
+        ('midgard', '10', 'B')  {'turn': ('152', '270'), 'ours_mined': ('1230', '2050'), 'opp_mined': ('550', '1600')}
+        ... 32 more
+== BY MAP CLASS ==
+   parent       vs ref_no538   
+        REFUSE   24 cells,  12 differ
+        run      96 cells,  12 differ
+   parent       vs ref_no539   
+        REFUSE   24 cells,  24 differ
+        run      96 cells,   0 differ
+   parent       vs ref_no541   
+        REFUSE   24 cells,  24 differ
+        run      96 cells,  12 differ
+   parent       vs v542        
+        REFUSE   24 cells,  24 differ
+        run      96 cells,  12 differ
+   parent       vs v542_538off 
+        REFUSE   24 cells,  12 differ
+        run      96 cells,  12 differ
+   parent       vs v542_539off 
+        REFUSE   24 cells,  24 differ
+        run      96 cells,   0 differ
+   parent       vs v542_541off 
+        REFUSE   24 cells,  24 differ
+        run      96 cells,  12 differ
+   parent       vs v542_alloff 
+        REFUSE   24 cells,   0 differ
+        run      96 cells,   0 differ
+   ref_no538    vs ref_no539   
+        REFUSE   24 cells,  24 differ
+        run      96 cells,  12 differ
+   ref_no538    vs ref_no541   
+        REFUSE   24 cells,  24 differ
+        run      96 cells,   0 differ
+   ref_no538    vs v542        
+        REFUSE   24 cells,  24 differ
+        run      96 cells,   0 differ
+   ref_no538    vs v542_538off 
+        REFUSE   24 cells,   0 differ
+        run      96 cells,   0 differ
+   ref_no538    vs v542_539off 
+        REFUSE   24 cells,  24 differ
+        run      96 cells,  12 differ
+   ref_no538    vs v542_541off 
+        REFUSE   24 cells,  24 differ
+        run      96 cells,   0 differ
+   ref_no538    vs v542_alloff 
+        REFUSE   24 cells,  12 differ
+        run      96 cells,  12 differ
+   ref_no539    vs ref_no541   
+        REFUSE   24 cells,  12 differ
+        run      96 cells,  12 differ
+   ref_no539    vs v542        
+        REFUSE   24 cells,   0 differ
+        run      96 cells,  12 differ
+   ref_no539    vs v542_538off 
+        REFUSE   24 cells,  24 differ
+        run      96 cells,  12 differ
+   ref_no539    vs v542_539off 
+        REFUSE   24 cells,   0 differ
+        run      96 cells,   0 differ
+   ref_no539    vs v542_541off 
+        REFUSE   24 cells,  12 differ
+        run      96 cells,  12 differ
+   ref_no539    vs v542_alloff 
+        REFUSE   24 cells,  24 differ
+        run      96 cells,   0 differ
+   ref_no541    vs v542        
+        REFUSE   24 cells,  12 differ
+        run      96 cells,   0 differ
+   ref_no541    vs v542_538off 
+        REFUSE   24 cells,  24 differ
+        run      96 cells,   0 differ
+   ref_no541    vs v542_539off 
+        REFUSE   24 cells,  12 differ
+        run      96 cells,  12 differ
+   ref_no541    vs v542_541off 
+        REFUSE   24 cells,   0 differ
+        run      96 cells,   0 differ
+   ref_no541    vs v542_alloff 
+        REFUSE   24 cells,  24 differ
+        run      96 cells,  12 differ
+   v542         vs v542_538off 
+        REFUSE   24 cells,  24 differ
+        run      96 cells,   0 differ
+   v542         vs v542_539off 
+        REFUSE   24 cells,   0 differ
+        run      96 cells,  12 differ
+   v542         vs v542_541off 
+        REFUSE   24 cells,  12 differ
+        run      96 cells,   0 differ
+   v542         vs v542_alloff 
+        REFUSE   24 cells,  24 differ
+        run      96 cells,  12 differ
+   v542_538off  vs v542_539off 
+        REFUSE   24 cells,  24 differ
+        run      96 cells,  12 differ
+   v542_538off  vs v542_541off 
+        REFUSE   24 cells,  24 differ
+        run      96 cells,   0 differ
+   v542_538off  vs v542_alloff 
+        REFUSE   24 cells,  12 differ
+        run      96 cells,  12 differ
+   v542_539off  vs v542_541off 
+        REFUSE   24 cells,  12 differ
+        run      96 cells,  12 differ
+   v542_539off  vs v542_alloff 
+        REFUSE   24 cells,  24 differ
+        run      96 cells,   0 differ
+   v542_541off  vs v542_alloff 
+        REFUSE   24 cells,  24 differ
+        run      96 cells,  12 differ

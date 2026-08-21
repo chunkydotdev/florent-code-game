@@ -1,0 +1,12 @@
+v541 CARVE-OUT HARNESS -- mechanism report (stub engine)
+
+DOSE (per single call, arrived body, collar closed, 500 bank):
+  FS_V541_COREPECK=True  (shipped) fired=True  core_hp=-2 ti=-2 pecks=1
+  FS_V541_COREPECK=False (parent)  fired=False core_hp=+0 ti=+0 pecks=0
+
+HARM CHECK (parent's own _fs_walk vs the child's idle gate):
+  ok        collar closed, body parked                  parent_moves=True   idle_ok=False
+  ok        collar closed, move on cooldown             parent_moves=False  idle_ok=True 
+  ok        seat owed, body already beside it           parent_moves=False  idle_ok=True 
+  ok        seat owed FAR AWAY, body free to walk       parent_moves=True   idle_ok=False
+  ok        seat owed far, but move on cooldown         parent_moves=False  idle_ok=True 

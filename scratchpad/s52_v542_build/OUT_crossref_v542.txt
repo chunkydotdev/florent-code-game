@@ -1,0 +1,12 @@
+POPULATION  71 flag reads · 28 family calls · 2013 self-attr sites
+            v538:   3 flag reads,   1 calls
+            v539:  47 flag reads,  11 calls
+            v541:  21 flag reads,  16 calls
+
+X1 CROSS-FAMILY FLAG READS (must be empty): 0
+X2 CROSS-FAMILY CALLS (must be empty): 0
+
+X3 SHARED CALL SITES — THE INTERACTION SURFACE (enumerated, not judged): 0
+X4 SHARED PER-UNIT STATE (enumerated, not judged): 0
+
+RESULT: PASS (X1=0, X2=0)

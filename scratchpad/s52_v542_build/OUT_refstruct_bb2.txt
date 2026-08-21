@@ -1,0 +1,6 @@
+_v537socket vs merge(v539,v541)                   24  midgard/B:12 valkyrie/B:12
+_v537socket vs merge(v538,v541)                   24  midgard/A:12 midgard/B:12
+_v537socket vs merge(v538,v539)                   36  midgard/A:12 midgard/B:12 valkyrie/B:12
+merge(v538,v539) vs v542  (= v541 added last)     12  midgard/B:12
+merge(v538,v541) vs v542  (= v539 added last)     12  valkyrie/B:12
+merge(v539,v541) vs v542  (= v538 added last)     24  midgard/A:12 midgard/B:12

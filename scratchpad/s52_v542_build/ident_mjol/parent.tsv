@@ -1,0 +1,181 @@
+tag	map	seed	seat	ours	winner	cond	turn	tracebacks	ours_mined	opp_mined
+auroraveil_s21_A	auroraveil	21	A	US	parent	Core destroyed	175	0	580	0
+auroraveil_s21_B	auroraveil	21	B	OPP	opp_mjol	Titanium collected (tiebreak)	1000	0	10430	11410
+auroraveil_s22_A	auroraveil	22	A	US	parent	Core destroyed	175	0	580	0
+auroraveil_s22_B	auroraveil	22	B	OPP	opp_mjol	Titanium collected (tiebreak)	1000	0	10430	11410
+bifrost_s21_A	bifrost	21	A	OPP	opp_mjol	Core destroyed	372	0	930	990
+bifrost_s21_B	bifrost	21	B	US	parent	Titanium collected (tiebreak)	1000	0	3860	940
+bifrost_s22_A	bifrost	22	A	OPP	opp_mjol	Core destroyed	372	0	930	990
+bifrost_s22_B	bifrost	22	B	US	parent	Titanium collected (tiebreak)	1000	0	3860	940
+fimbulwinter_s21_A	fimbulwinter	21	A	OPP	opp_mjol	Core destroyed	277	0	670	150
+fimbulwinter_s21_B	fimbulwinter	21	B	US	parent	Core destroyed	287	0	1270	0
+fimbulwinter_s22_A	fimbulwinter	22	A	OPP	opp_mjol	Core destroyed	277	0	670	150
+fimbulwinter_s22_B	fimbulwinter	22	B	US	parent	Core destroyed	287	0	1270	0
+glacierkeep_s21_A	glacierkeep	21	A	US	parent	Core destroyed	569	0	0	690
+glacierkeep_s21_B	glacierkeep	21	B	US	parent	Core destroyed	420	0	570	350
+glacierkeep_s22_A	glacierkeep	22	A	US	parent	Core destroyed	569	0	0	690
+glacierkeep_s22_B	glacierkeep	22	B	US	parent	Core destroyed	420	0	570	350
+helheim_s21_A	helheim	21	A	US	parent	Core destroyed	289	0	810	70
+helheim_s21_B	helheim	21	B	OPP	opp_mjol	Core destroyed	275	0	220	900
+helheim_s22_A	helheim	22	A	US	parent	Core destroyed	289	0	810	70
+helheim_s22_B	helheim	22	B	OPP	opp_mjol	Core destroyed	275	0	220	900
+holmgang_s21_A	holmgang	21	A	US	parent	Core destroyed	102	0	560	0
+holmgang_s21_B	holmgang	21	B	US	parent	Core destroyed	302	0	1460	330
+holmgang_s22_A	holmgang	22	A	US	parent	Core destroyed	102	0	550	0
+holmgang_s22_B	holmgang	22	B	US	parent	Core destroyed	302	0	1460	330
+icefloe_s21_A	icefloe	21	A	OPP	opp_mjol	Core destroyed	294	0	0	2080
+icefloe_s21_B	icefloe	21	B	US	parent	Core destroyed	449	0	1420	0
+icefloe_s22_A	icefloe	22	A	OPP	opp_mjol	Core destroyed	294	0	0	2080
+icefloe_s22_B	icefloe	22	B	US	parent	Core destroyed	449	0	1420	0
+jotunheim_s21_A	jotunheim	21	A	OPP	opp_mjol	Core destroyed	814	0	620	570
+jotunheim_s21_B	jotunheim	21	B	OPP	opp_mjol	Titanium collected (tiebreak)	1000	0	0	3610
+jotunheim_s22_A	jotunheim	22	A	OPP	opp_mjol	Core destroyed	814	0	620	570
+jotunheim_s22_B	jotunheim	22	B	OPP	opp_mjol	Titanium collected (tiebreak)	1000	0	0	3610
+longhouse_s21_A	longhouse	21	A	US	parent	Core destroyed	217	0	1010	280
+longhouse_s21_B	longhouse	21	B	OPP	opp_mjol	Titanium collected (tiebreak)	1000	0	2460	9390
+longhouse_s22_A	longhouse	22	A	US	parent	Core destroyed	217	0	1010	280
+longhouse_s22_B	longhouse	22	B	OPP	opp_mjol	Titanium collected (tiebreak)	1000	0	2460	9390
+midgard_s21_A	midgard	21	A	US	parent	Core destroyed	156	0	1360	720
+midgard_s21_B	midgard	21	B	OPP	opp_mjol	Core destroyed	375	0	4260	2960
+midgard_s22_A	midgard	22	A	US	parent	Core destroyed	156	0	1360	720
+midgard_s22_B	midgard	22	B	OPP	opp_mjol	Core destroyed	375	0	4260	2960
+paths_s21_A	paths	21	A	OPP	opp_mjol	Core destroyed	163	0	760	740
+paths_s21_B	paths	21	B	OPP	opp_mjol	Core destroyed	266	0	160	1180
+paths_s22_A	paths	22	A	OPP	opp_mjol	Core destroyed	163	0	760	740
+paths_s22_B	paths	22	B	OPP	opp_mjol	Core destroyed	266	0	160	1180
+skald_s21_A	skald	21	A	US	parent	Core destroyed	346	0	940	860
+skald_s21_B	skald	21	B	OPP	opp_mjol	Core destroyed	374	0	1800	1330
+skald_s22_A	skald	22	A	US	parent	Core destroyed	346	0	940	860
+skald_s22_B	skald	22	B	OPP	opp_mjol	Core destroyed	378	0	1820	1340
+stavkirke_s21_A	stavkirke	21	A	US	parent	Core destroyed	231	0	390	130
+stavkirke_s21_B	stavkirke	21	B	US	parent	Core destroyed	405	0	970	0
+stavkirke_s22_A	stavkirke	22	A	US	parent	Core destroyed	231	0	390	130
+stavkirke_s22_B	stavkirke	22	B	US	parent	Core destroyed	405	0	970	0
+valkyrie_s21_A	valkyrie	21	A	US	parent	Core destroyed	311	0	2420	650
+valkyrie_s21_B	valkyrie	21	B	US	parent	Core destroyed	246	0	1620	930
+valkyrie_s22_A	valkyrie	22	A	US	parent	Core destroyed	311	0	2420	650
+valkyrie_s22_B	valkyrie	22	B	US	parent	Core destroyed	246	0	1620	930
+yggdrasil_s21_A	yggdrasil	21	A	OPP	opp_mjol	Core destroyed	201	0	470	1010
+yggdrasil_s21_B	yggdrasil	21	B	US	parent	Titanium collected (tiebreak)	1000	0	2460	2030
+yggdrasil_s22_A	yggdrasil	22	A	OPP	opp_mjol	Core destroyed	201	0	470	1010
+yggdrasil_s22_B	yggdrasil	22	B	US	parent	Titanium collected (tiebreak)	1000	0	2460	2030
+auroraveil_s23_A	auroraveil	23	A	US	parent	Core destroyed	175	0	580	0
+auroraveil_s23_B	auroraveil	23	B	OPP	opp_mjol	Titanium collected (tiebreak)	1000	0	10430	11410
+auroraveil_s24_A	auroraveil	24	A	US	parent	Core destroyed	175	0	580	0
+auroraveil_s24_B	auroraveil	24	B	OPP	opp_mjol	Titanium collected (tiebreak)	1000	0	10430	11410
+bifrost_s23_A	bifrost	23	A	OPP	opp_mjol	Core destroyed	372	0	930	990
+bifrost_s23_B	bifrost	23	B	US	parent	Titanium collected (tiebreak)	1000	0	3860	940
+bifrost_s24_A	bifrost	24	A	OPP	opp_mjol	Core destroyed	372	0	930	990
+bifrost_s24_B	bifrost	24	B	US	parent	Titanium collected (tiebreak)	1000	0	3860	940
+fimbulwinter_s23_A	fimbulwinter	23	A	OPP	opp_mjol	Core destroyed	277	0	670	150
+fimbulwinter_s23_B	fimbulwinter	23	B	US	parent	Core destroyed	287	0	1270	0
+fimbulwinter_s24_A	fimbulwinter	24	A	OPP	opp_mjol	Core destroyed	277	0	670	150
+fimbulwinter_s24_B	fimbulwinter	24	B	US	parent	Core destroyed	287	0	1270	0
+glacierkeep_s23_A	glacierkeep	23	A	US	parent	Core destroyed	569	0	0	690
+glacierkeep_s23_B	glacierkeep	23	B	US	parent	Core destroyed	420	0	570	350
+glacierkeep_s24_A	glacierkeep	24	A	US	parent	Core destroyed	569	0	0	690
+glacierkeep_s24_B	glacierkeep	24	B	US	parent	Core destroyed	420	0	570	350
+helheim_s23_A	helheim	23	A	US	parent	Core destroyed	289	0	810	70
+helheim_s23_B	helheim	23	B	OPP	opp_mjol	Core destroyed	275	0	220	900
+helheim_s24_A	helheim	24	A	US	parent	Core destroyed	289	0	810	70
+helheim_s24_B	helheim	24	B	OPP	opp_mjol	Core destroyed	275	0	220	900
+holmgang_s23_A	holmgang	23	A	US	parent	Core destroyed	102	0	560	0
+holmgang_s23_B	holmgang	23	B	US	parent	Core destroyed	302	0	1460	330
+holmgang_s24_A	holmgang	24	A	US	parent	Core destroyed	102	0	560	0
+holmgang_s24_B	holmgang	24	B	US	parent	Core destroyed	302	0	1460	330
+icefloe_s23_A	icefloe	23	A	OPP	opp_mjol	Core destroyed	294	0	0	2080
+icefloe_s23_B	icefloe	23	B	US	parent	Core destroyed	449	0	1420	0
+icefloe_s24_A	icefloe	24	A	OPP	opp_mjol	Core destroyed	294	0	0	2080
+icefloe_s24_B	icefloe	24	B	US	parent	Core destroyed	449	0	1420	0
+jotunheim_s23_A	jotunheim	23	A	OPP	opp_mjol	Core destroyed	814	0	620	570
+jotunheim_s23_B	jotunheim	23	B	OPP	opp_mjol	Titanium collected (tiebreak)	1000	0	0	3610
+jotunheim_s24_A	jotunheim	24	A	OPP	opp_mjol	Core destroyed	814	0	620	570
+jotunheim_s24_B	jotunheim	24	B	OPP	opp_mjol	Titanium collected (tiebreak)	1000	0	0	3610
+longhouse_s23_A	longhouse	23	A	US	parent	Core destroyed	217	0	1010	280
+longhouse_s23_B	longhouse	23	B	OPP	opp_mjol	Titanium collected (tiebreak)	1000	0	2460	9390
+longhouse_s24_A	longhouse	24	A	US	parent	Core destroyed	217	0	1010	280
+longhouse_s24_B	longhouse	24	B	OPP	opp_mjol	Titanium collected (tiebreak)	1000	0	2460	9390
+midgard_s23_A	midgard	23	A	US	parent	Core destroyed	156	0	1360	720
+midgard_s23_B	midgard	23	B	OPP	opp_mjol	Core destroyed	375	0	4260	2960
+midgard_s24_A	midgard	24	A	US	parent	Core destroyed	156	0	1360	720
+midgard_s24_B	midgard	24	B	OPP	opp_mjol	Core destroyed	375	0	4260	2960
+paths_s23_A	paths	23	A	OPP	opp_mjol	Core destroyed	163	0	760	740
+paths_s23_B	paths	23	B	OPP	opp_mjol	Core destroyed	266	0	160	1180
+paths_s24_A	paths	24	A	OPP	opp_mjol	Core destroyed	163	0	760	740
+paths_s24_B	paths	24	B	OPP	opp_mjol	Core destroyed	266	0	160	1180
+skald_s23_A	skald	23	A	US	parent	Core destroyed	346	0	940	860
+skald_s23_B	skald	23	B	OPP	opp_mjol	Core destroyed	378	0	1820	1340
+skald_s24_A	skald	24	A	US	parent	Core destroyed	346	0	940	860
+skald_s24_B	skald	24	B	OPP	opp_mjol	Core destroyed	378	0	1820	1340
+stavkirke_s23_A	stavkirke	23	A	US	parent	Core destroyed	231	0	390	130
+stavkirke_s23_B	stavkirke	23	B	US	parent	Core destroyed	405	0	970	0
+stavkirke_s24_A	stavkirke	24	A	US	parent	Core destroyed	231	0	390	130
+stavkirke_s24_B	stavkirke	24	B	US	parent	Core destroyed	405	0	970	0
+valkyrie_s23_A	valkyrie	23	A	US	parent	Core destroyed	311	0	2420	650
+valkyrie_s23_B	valkyrie	23	B	US	parent	Core destroyed	246	0	1620	930
+valkyrie_s24_A	valkyrie	24	A	US	parent	Core destroyed	311	0	2420	650
+valkyrie_s24_B	valkyrie	24	B	US	parent	Core destroyed	246	0	1620	930
+yggdrasil_s23_A	yggdrasil	23	A	OPP	opp_mjol	Core destroyed	201	0	470	1010
+yggdrasil_s23_B	yggdrasil	23	B	US	parent	Titanium collected (tiebreak)	1000	0	2460	2030
+yggdrasil_s24_A	yggdrasil	24	A	OPP	opp_mjol	Core destroyed	201	0	470	1010
+yggdrasil_s24_B	yggdrasil	24	B	US	parent	Titanium collected (tiebreak)	1000	0	2460	2030
+auroraveil_s25_A	auroraveil	25	A	US	parent	Core destroyed	175	0	580	0
+auroraveil_s25_B	auroraveil	25	B	OPP	opp_mjol	Titanium collected (tiebreak)	1000	0	10430	11410
+auroraveil_s26_A	auroraveil	26	A	US	parent	Core destroyed	175	0	580	0
+auroraveil_s26_B	auroraveil	26	B	OPP	opp_mjol	Titanium collected (tiebreak)	1000	0	10430	11410
+bifrost_s25_A	bifrost	25	A	OPP	opp_mjol	Core destroyed	372	0	930	990
+bifrost_s25_B	bifrost	25	B	US	parent	Titanium collected (tiebreak)	1000	0	3860	940
+bifrost_s26_A	bifrost	26	A	OPP	opp_mjol	Core destroyed	372	0	930	990
+bifrost_s26_B	bifrost	26	B	US	parent	Titanium collected (tiebreak)	1000	0	3860	940
+fimbulwinter_s25_A	fimbulwinter	25	A	OPP	opp_mjol	Core destroyed	277	0	670	150
+fimbulwinter_s25_B	fimbulwinter	25	B	US	parent	Core destroyed	287	0	1270	0
+fimbulwinter_s26_A	fimbulwinter	26	A	OPP	opp_mjol	Core destroyed	277	0	670	150
+fimbulwinter_s26_B	fimbulwinter	26	B	US	parent	Core destroyed	287	0	1270	0
+glacierkeep_s25_A	glacierkeep	25	A	US	parent	Core destroyed	569	0	0	690
+glacierkeep_s25_B	glacierkeep	25	B	US	parent	Core destroyed	420	0	570	350
+glacierkeep_s26_A	glacierkeep	26	A	US	parent	Core destroyed	569	0	0	690
+glacierkeep_s26_B	glacierkeep	26	B	US	parent	Core destroyed	420	0	570	350
+helheim_s25_A	helheim	25	A	US	parent	Core destroyed	289	0	810	70
+helheim_s25_B	helheim	25	B	OPP	opp_mjol	Core destroyed	275	0	220	900
+helheim_s26_A	helheim	26	A	US	parent	Core destroyed	289	0	810	70
+helheim_s26_B	helheim	26	B	OPP	opp_mjol	Core destroyed	275	0	220	900
+holmgang_s25_A	holmgang	25	A	US	parent	Core destroyed	102	0	550	0
+holmgang_s25_B	holmgang	25	B	US	parent	Core destroyed	302	0	1460	330
+holmgang_s26_A	holmgang	26	A	US	parent	Core destroyed	102	0	560	0
+holmgang_s26_B	holmgang	26	B	US	parent	Core destroyed	302	0	1460	330
+icefloe_s25_A	icefloe	25	A	OPP	opp_mjol	Core destroyed	294	0	0	2080
+icefloe_s25_B	icefloe	25	B	US	parent	Core destroyed	449	0	1420	0
+icefloe_s26_A	icefloe	26	A	OPP	opp_mjol	Core destroyed	294	0	0	2080
+icefloe_s26_B	icefloe	26	B	US	parent	Core destroyed	449	0	1420	0
+jotunheim_s25_A	jotunheim	25	A	OPP	opp_mjol	Core destroyed	814	0	620	570
+jotunheim_s25_B	jotunheim	25	B	OPP	opp_mjol	Titanium collected (tiebreak)	1000	0	0	3610
+jotunheim_s26_A	jotunheim	26	A	OPP	opp_mjol	Core destroyed	814	0	620	570
+jotunheim_s26_B	jotunheim	26	B	OPP	opp_mjol	Titanium collected (tiebreak)	1000	0	0	3610
+longhouse_s25_A	longhouse	25	A	US	parent	Core destroyed	217	0	1010	280
+longhouse_s25_B	longhouse	25	B	OPP	opp_mjol	Titanium collected (tiebreak)	1000	0	2460	9390
+longhouse_s26_A	longhouse	26	A	US	parent	Core destroyed	217	0	1010	280
+longhouse_s26_B	longhouse	26	B	OPP	opp_mjol	Titanium collected (tiebreak)	1000	0	2460	9390
+midgard_s25_A	midgard	25	A	US	parent	Core destroyed	156	0	1360	720
+midgard_s25_B	midgard	25	B	OPP	opp_mjol	Core destroyed	375	0	4260	2960
+midgard_s26_A	midgard	26	A	US	parent	Core destroyed	156	0	1360	720
+midgard_s26_B	midgard	26	B	OPP	opp_mjol	Core destroyed	375	0	4260	2960
+paths_s25_A	paths	25	A	OPP	opp_mjol	Core destroyed	163	0	760	740
+paths_s25_B	paths	25	B	OPP	opp_mjol	Core destroyed	266	0	160	1180
+paths_s26_A	paths	26	A	OPP	opp_mjol	Core destroyed	163	0	760	740
+paths_s26_B	paths	26	B	OPP	opp_mjol	Core destroyed	266	0	160	1180
+skald_s25_A	skald	25	A	US	parent	Core destroyed	346	0	940	860
+skald_s25_B	skald	25	B	OPP	opp_mjol	Core destroyed	378	0	1820	1340
+skald_s26_A	skald	26	A	US	parent	Core destroyed	346	0	940	860
+skald_s26_B	skald	26	B	OPP	opp_mjol	Core destroyed	374	0	1800	1330
+stavkirke_s25_A	stavkirke	25	A	US	parent	Core destroyed	231	0	390	130
+stavkirke_s25_B	stavkirke	25	B	US	parent	Core destroyed	405	0	970	0
+stavkirke_s26_A	stavkirke	26	A	US	parent	Core destroyed	231	0	390	130
+stavkirke_s26_B	stavkirke	26	B	US	parent	Core destroyed	405	0	970	0
+valkyrie_s25_A	valkyrie	25	A	US	parent	Core destroyed	311	0	2420	650
+valkyrie_s25_B	valkyrie	25	B	US	parent	Core destroyed	246	0	1620	930
+valkyrie_s26_A	valkyrie	26	A	US	parent	Core destroyed	311	0	2420	650
+valkyrie_s26_B	valkyrie	26	B	US	parent	Core destroyed	246	0	1620	930
+yggdrasil_s25_A	yggdrasil	25	A	OPP	opp_mjol	Core destroyed	201	0	470	1010
+yggdrasil_s25_B	yggdrasil	25	B	US	parent	Titanium collected (tiebreak)	1000	0	2460	2030
+yggdrasil_s26_A	yggdrasil	26	A	OPP	opp_mjol	Core destroyed	201	0	470	1010
+yggdrasil_s26_B	yggdrasil	26	B	US	parent	Titanium collected (tiebreak)	1000	0	2460	2030

@@ -1,0 +1,52 @@
+2026-08-21T09:11:05Z capacity: work-server-1  arms=9 x par=1 = 9 <= our_cores 10  OK
+2026-08-21T09:11:05Z PLAN runid=bb_20260821T091105Z_10381
+2026-08-21T09:11:05Z   arms=parent,v542,v542_538off,ref_no538,v542_539off,ref_no539,v542_541off,ref_no541,v542_alloff opp=opp_bb2
+2026-08-21T09:11:05Z   maps=5 seeds=12 blocks=4 par=1 -> 120 rows/arm, 1080 total
+2026-08-21T09:11:05Z   work-server-1    blocks=[0, 1, 2, 3] rows=1080
+2026-08-21T09:11:05Z   out=/Users/junghard/Projects/Work/florent-code-game/scratchpad/s52_v542_build/ident_bb2
+2026-08-21T09:11:05Z host work-server-1: nproc=16 load=0.11 corefill_workers=0 fcode=2.3.6(pin ok)
+2026-08-21T09:11:07Z shipped to work-server-1:fcode-build/bb_20260821T091105Z_10381 — 9 arms, opp opp_bb2, 5 maps, 4 blocks
+2026-08-21T09:11:07Z LAUNCHED work-server-1 pid=1165150 root=fcode-build/bb_20260821T091105Z_10381
+2026-08-21T09:11:07Z PIDS: work-server-1=1165150
+2026-08-21T09:11:27Z   work-server-1    rows=0/1080 state=STARTING driver=ALIVE
+2026-08-21T09:11:48Z   work-server-1    rows=0/1080 state=RUNNING driver=ALIVE
+2026-08-21T09:12:08Z   work-server-1    rows=0/1080 state=RUNNING driver=ALIVE
+2026-08-21T09:12:28Z   work-server-1    rows=0/1080 state=RUNNING driver=ALIVE
+2026-08-21T09:12:48Z   work-server-1    rows=0/1080 state=RUNNING driver=ALIVE
+2026-08-21T09:13:09Z   work-server-1    rows=270/1080 state=RUNNING driver=ALIVE
+2026-08-21T09:13:29Z   work-server-1    rows=270/1080 state=RUNNING driver=ALIVE
+2026-08-21T09:13:49Z   work-server-1    rows=270/1080 state=RUNNING driver=ALIVE
+2026-08-21T09:14:09Z   work-server-1    rows=270/1080 state=RUNNING driver=ALIVE
+2026-08-21T09:14:30Z   work-server-1    rows=270/1080 state=RUNNING driver=ALIVE
+2026-08-21T09:14:50Z   work-server-1    rows=270/1080 state=RUNNING driver=ALIVE
+2026-08-21T09:15:10Z   work-server-1    rows=540/1080 state=RUNNING driver=ALIVE
+2026-08-21T09:15:30Z   work-server-1    rows=540/1080 state=RUNNING driver=ALIVE
+2026-08-21T09:15:51Z   work-server-1    rows=540/1080 state=RUNNING driver=ALIVE
+2026-08-21T09:16:11Z   work-server-1    rows=540/1080 state=RUNNING driver=ALIVE
+2026-08-21T09:16:31Z   work-server-1    rows=540/1080 state=RUNNING driver=ALIVE
+2026-08-21T09:16:52Z   work-server-1    rows=810/1080 state=RUNNING driver=ALIVE
+2026-08-21T09:17:12Z   work-server-1    rows=810/1080 state=RUNNING driver=ALIVE
+2026-08-21T09:17:32Z   work-server-1    rows=810/1080 state=RUNNING driver=ALIVE
+2026-08-21T09:17:52Z   work-server-1    rows=810/1080 state=RUNNING driver=ALIVE
+2026-08-21T09:18:13Z   work-server-1    rows=810/1080 state=RUNNING driver=ALIVE
+2026-08-21T09:18:33Z   work-server-1    rows=810/1080 state=RUNNING driver=ALIVE
+2026-08-21T09:18:53Z   work-server-1    rows=1080/1080 state=COMPLETE driver=DEAD
+2026-08-21T09:18:54Z   runid  bb_20260821T091105Z_10381
+2026-08-21T09:18:54Z   generated  2026-08-21T09:18:54Z
+2026-08-21T09:18:54Z   hosts  work-server-1
+2026-08-21T09:18:54Z   opp  opp_bb2
+2026-08-21T09:18:54Z   maps  midgard,glacierkeep,icefloe,valkyrie,auroraveil
+2026-08-21T09:18:54Z   seeds  1-12
+2026-08-21T09:18:54Z   par  1
+2026-08-21T09:18:54Z   planned_rows_per_arm  120
+2026-08-21T09:18:54Z   arm  parent  delivered  120  planned  120  COMPLETE
+2026-08-21T09:18:54Z   arm  v542  delivered  120  planned  120  COMPLETE
+2026-08-21T09:18:54Z   arm  v542_538off  delivered  120  planned  120  COMPLETE
+2026-08-21T09:18:54Z   arm  ref_no538  delivered  120  planned  120  COMPLETE
+2026-08-21T09:18:54Z   arm  v542_539off  delivered  120  planned  120  COMPLETE
+2026-08-21T09:18:54Z   arm  ref_no539  delivered  120  planned  120  COMPLETE
+2026-08-21T09:18:54Z   arm  v542_541off  delivered  120  planned  120  COMPLETE
+2026-08-21T09:18:54Z   arm  ref_no541  delivered  120  planned  120  COMPLETE
+2026-08-21T09:18:54Z   arm  v542_alloff  delivered  120  planned  120  COMPLETE
+2026-08-21T09:18:54Z cleanup work-server-1: CLEANED
+2026-08-21T09:18:54Z COMPLETE — 120 rows/arm on each of 9 arms. Read it: .venv/bin/python <build>/summarise.py <name> /Users/junghard/Projects/Work/florent-code-game/scratchpad/s52_v542_build/ident_bb2/<arm>.tsv

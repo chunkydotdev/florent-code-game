@@ -1,0 +1,61 @@
+tag	map	seed	seat	ours	winner	cond	turn	tracebacks	ours_mined	opp_mined
+auroraveil_s25_A	auroraveil	25	A	US	v542_alloff	Core destroyed	175	0	580	0
+auroraveil_s25_B	auroraveil	25	B	OPP	opp_mjol	Titanium collected (tiebreak)	1000	0	10430	11410
+auroraveil_s26_A	auroraveil	26	A	US	v542_alloff	Core destroyed	175	0	580	0
+auroraveil_s26_B	auroraveil	26	B	OPP	opp_mjol	Titanium collected (tiebreak)	1000	0	10430	11410
+bifrost_s25_A	bifrost	25	A	OPP	opp_mjol	Core destroyed	372	0	930	990
+bifrost_s25_B	bifrost	25	B	US	v542_alloff	Titanium collected (tiebreak)	1000	0	3860	940
+bifrost_s26_A	bifrost	26	A	OPP	opp_mjol	Core destroyed	372	0	930	990
+bifrost_s26_B	bifrost	26	B	US	v542_alloff	Titanium collected (tiebreak)	1000	0	3860	940
+fimbulwinter_s25_A	fimbulwinter	25	A	OPP	opp_mjol	Core destroyed	277	0	670	150
+fimbulwinter_s25_B	fimbulwinter	25	B	US	v542_alloff	Core destroyed	287	0	1270	0
+fimbulwinter_s26_A	fimbulwinter	26	A	OPP	opp_mjol	Core destroyed	277	0	670	150
+fimbulwinter_s26_B	fimbulwinter	26	B	US	v542_alloff	Core destroyed	287	0	1270	0
+glacierkeep_s25_A	glacierkeep	25	A	US	v542_alloff	Core destroyed	569	0	0	690
+glacierkeep_s25_B	glacierkeep	25	B	US	v542_alloff	Core destroyed	420	0	570	350
+glacierkeep_s26_A	glacierkeep	26	A	US	v542_alloff	Core destroyed	569	0	0	690
+glacierkeep_s26_B	glacierkeep	26	B	US	v542_alloff	Core destroyed	420	0	570	350
+helheim_s25_A	helheim	25	A	US	v542_alloff	Core destroyed	289	0	810	70
+helheim_s25_B	helheim	25	B	OPP	opp_mjol	Core destroyed	275	0	220	900
+helheim_s26_A	helheim	26	A	US	v542_alloff	Core destroyed	289	0	810	70
+helheim_s26_B	helheim	26	B	OPP	opp_mjol	Core destroyed	275	0	220	900
+holmgang_s25_A	holmgang	25	A	US	v542_alloff	Core destroyed	102	0	550	0
+holmgang_s25_B	holmgang	25	B	US	v542_alloff	Core destroyed	302	0	1460	330
+holmgang_s26_A	holmgang	26	A	US	v542_alloff	Core destroyed	102	0	560	0
+holmgang_s26_B	holmgang	26	B	US	v542_alloff	Core destroyed	302	0	1460	330
+icefloe_s25_A	icefloe	25	A	OPP	opp_mjol	Core destroyed	294	0	0	2080
+icefloe_s25_B	icefloe	25	B	US	v542_alloff	Core destroyed	449	0	1420	0
+icefloe_s26_A	icefloe	26	A	OPP	opp_mjol	Core destroyed	294	0	0	2080
+icefloe_s26_B	icefloe	26	B	US	v542_alloff	Core destroyed	449	0	1420	0
+jotunheim_s25_A	jotunheim	25	A	OPP	opp_mjol	Core destroyed	814	0	620	570
+jotunheim_s25_B	jotunheim	25	B	OPP	opp_mjol	Titanium collected (tiebreak)	1000	0	0	3610
+jotunheim_s26_A	jotunheim	26	A	OPP	opp_mjol	Core destroyed	814	0	620	570
+jotunheim_s26_B	jotunheim	26	B	OPP	opp_mjol	Titanium collected (tiebreak)	1000	0	0	3610
+longhouse_s25_A	longhouse	25	A	US	v542_alloff	Core destroyed	217	0	1010	280
+longhouse_s25_B	longhouse	25	B	OPP	opp_mjol	Titanium collected (tiebreak)	1000	0	2460	9390
+longhouse_s26_A	longhouse	26	A	US	v542_alloff	Core destroyed	217	0	1010	280
+longhouse_s26_B	longhouse	26	B	OPP	opp_mjol	Titanium collected (tiebreak)	1000	0	2460	9390
+midgard_s25_A	midgard	25	A	US	v542_alloff	Core destroyed	156	0	1360	720
+midgard_s25_B	midgard	25	B	OPP	opp_mjol	Core destroyed	375	0	4260	2960
+midgard_s26_A	midgard	26	A	US	v542_alloff	Core destroyed	156	0	1360	720
+midgard_s26_B	midgard	26	B	OPP	opp_mjol	Core destroyed	375	0	4260	2960
+paths_s25_A	paths	25	A	OPP	opp_mjol	Core destroyed	163	0	760	740
+paths_s25_B	paths	25	B	OPP	opp_mjol	Core destroyed	266	0	160	1180
+paths_s26_A	paths	26	A	OPP	opp_mjol	Core destroyed	163	0	760	740
+paths_s26_B	paths	26	B	OPP	opp_mjol	Core destroyed	266	0	160	1180
+skald_s25_A	skald	25	A	US	v542_alloff	Core destroyed	346	0	940	860
+skald_s25_B	skald	25	B	OPP	opp_mjol	Core destroyed	378	0	1820	1340
+skald_s26_A	skald	26	A	US	v542_alloff	Core destroyed	346	0	940	860
+skald_s26_B	skald	26	B	OPP	opp_mjol	Core destroyed	374	0	1800	1330
+stavkirke_s25_A	stavkirke	25	A	US	v542_alloff	Core destroyed	231	0	390	130
+stavkirke_s25_B	stavkirke	25	B	US	v542_alloff	Core destroyed	405	0	970	0
+stavkirke_s26_A	stavkirke	26	A	US	v542_alloff	Core destroyed	231	0	390	130
+stavkirke_s26_B	stavkirke	26	B	US	v542_alloff	Core destroyed	405	0	970	0
+valkyrie_s25_A	valkyrie	25	A	US	v542_alloff	Core destroyed	311	0	2420	650
+valkyrie_s25_B	valkyrie	25	B	US	v542_alloff	Core destroyed	246	0	1620	930
+valkyrie_s26_A	valkyrie	26	A	US	v542_alloff	Core destroyed	311	0	2420	650
+valkyrie_s26_B	valkyrie	26	B	US	v542_alloff	Core destroyed	246	0	1620	930
+yggdrasil_s25_A	yggdrasil	25	A	OPP	opp_mjol	Core destroyed	201	0	470	1010
+yggdrasil_s25_B	yggdrasil	25	B	US	v542_alloff	Titanium collected (tiebreak)	1000	0	2460	2030
+yggdrasil_s26_A	yggdrasil	26	A	OPP	opp_mjol	Core destroyed	201	0	470	1010
+yggdrasil_s26_B	yggdrasil	26	B	US	v542_alloff	Titanium collected (tiebreak)	1000	0	2460	2030

@@ -1,0 +1,82 @@
+2026-08-21T09:27:11Z capacity: work-server-1  arms=9 x par=1 = 9 <= our_cores 10  OK
+2026-08-21T09:27:11Z PLAN runid=bb_20260821T092711Z_68846
+2026-08-21T09:27:11Z   arms=parent,v542,v542_538off,ref_no538,v542_539off,ref_no539,v542_541off,ref_no541,v542_alloff opp=opp_mjol
+2026-08-21T09:27:11Z   maps=15 seeds=6 blocks=3 par=1 -> 180 rows/arm, 1620 total
+2026-08-21T09:27:11Z   work-server-1    blocks=[0, 1, 2] rows=1620
+2026-08-21T09:27:11Z   out=/Users/junghard/Projects/Work/florent-code-game/scratchpad/s52_v542_build/ident_mjol
+2026-08-21T09:27:11Z host work-server-1: nproc=16 load=0.78 corefill_workers=0 fcode=2.3.6(pin ok)
+2026-08-21T09:27:13Z shipped to work-server-1:fcode-build/bb_20260821T092711Z_68846 — 9 arms, opp opp_mjol, 15 maps, 3 blocks
+2026-08-21T09:27:13Z LAUNCHED work-server-1 pid=1185989 root=fcode-build/bb_20260821T092711Z_68846
+2026-08-21T09:27:13Z PIDS: work-server-1=1185989
+2026-08-21T09:27:34Z   work-server-1    rows=0/1620 state=STARTING driver=ALIVE
+2026-08-21T09:27:54Z   work-server-1    rows=0/1620 state=RUNNING driver=ALIVE
+2026-08-21T09:28:15Z   work-server-1    rows=0/1620 state=RUNNING driver=ALIVE
+2026-08-21T09:28:35Z   work-server-1    rows=0/1620 state=RUNNING driver=ALIVE
+2026-08-21T09:28:55Z   work-server-1    rows=0/1620 state=RUNNING driver=ALIVE
+2026-08-21T09:29:15Z   work-server-1    rows=0/1620 state=RUNNING driver=ALIVE
+2026-08-21T09:29:36Z   work-server-1    rows=0/1620 state=RUNNING driver=ALIVE
+2026-08-21T09:29:56Z   work-server-1    rows=0/1620 state=RUNNING driver=ALIVE
+2026-08-21T09:30:17Z   work-server-1    rows=0/1620 state=RUNNING driver=ALIVE
+2026-08-21T09:30:37Z   work-server-1    rows=0/1620 state=RUNNING driver=ALIVE
+2026-08-21T09:30:57Z   work-server-1    rows=0/1620 state=RUNNING driver=ALIVE
+2026-08-21T09:31:18Z   work-server-1    rows=0/1620 state=RUNNING driver=ALIVE
+2026-08-21T09:31:38Z   work-server-1    rows=0/1620 state=RUNNING driver=ALIVE
+2026-08-21T09:31:58Z   work-server-1    rows=0/1620 state=RUNNING driver=ALIVE
+2026-08-21T09:32:18Z   work-server-1    rows=0/1620 state=RUNNING driver=ALIVE
+2026-08-21T09:32:39Z   work-server-1    rows=0/1620 state=RUNNING driver=ALIVE
+2026-08-21T09:32:59Z   work-server-1    rows=540/1620 state=RUNNING driver=ALIVE
+2026-08-21T09:33:19Z   work-server-1    rows=540/1620 state=RUNNING driver=ALIVE
+2026-08-21T09:33:39Z   work-server-1    rows=540/1620 state=RUNNING driver=ALIVE
+2026-08-21T09:34:00Z   work-server-1    rows=540/1620 state=RUNNING driver=ALIVE
+2026-08-21T09:34:20Z   work-server-1    rows=540/1620 state=RUNNING driver=ALIVE
+2026-08-21T09:34:40Z   work-server-1    rows=540/1620 state=RUNNING driver=ALIVE
+2026-08-21T09:35:00Z   work-server-1    rows=540/1620 state=RUNNING driver=ALIVE
+2026-08-21T09:35:21Z   work-server-1    rows=540/1620 state=RUNNING driver=ALIVE
+2026-08-21T09:35:41Z   work-server-1    rows=540/1620 state=RUNNING driver=ALIVE
+2026-08-21T09:36:01Z   work-server-1    rows=540/1620 state=RUNNING driver=ALIVE
+2026-08-21T09:36:21Z   work-server-1    rows=540/1620 state=RUNNING driver=ALIVE
+2026-08-21T09:36:42Z   work-server-1    rows=540/1620 state=RUNNING driver=ALIVE
+2026-08-21T09:37:02Z   work-server-1    rows=540/1620 state=RUNNING driver=ALIVE
+2026-08-21T09:37:22Z   work-server-1    rows=540/1620 state=RUNNING driver=ALIVE
+2026-08-21T09:37:43Z   work-server-1    rows=540/1620 state=RUNNING driver=ALIVE
+2026-08-21T09:38:03Z   work-server-1    rows=540/1620 state=RUNNING driver=ALIVE
+2026-08-21T09:38:23Z   work-server-1    rows=540/1620 state=RUNNING driver=ALIVE
+2026-08-21T09:38:44Z   work-server-1    rows=600/1620 state=RUNNING driver=ALIVE
+2026-08-21T09:39:04Z   work-server-1    rows=1080/1620 state=RUNNING driver=ALIVE
+2026-08-21T09:39:24Z   work-server-1    rows=1080/1620 state=RUNNING driver=ALIVE
+2026-08-21T09:39:44Z   work-server-1    rows=1080/1620 state=RUNNING driver=ALIVE
+2026-08-21T09:40:05Z   work-server-1    rows=1080/1620 state=RUNNING driver=ALIVE
+2026-08-21T09:40:25Z   work-server-1    rows=1080/1620 state=RUNNING driver=ALIVE
+2026-08-21T09:40:45Z   work-server-1    rows=1080/1620 state=RUNNING driver=ALIVE
+2026-08-21T09:41:05Z   work-server-1    rows=1080/1620 state=RUNNING driver=ALIVE
+2026-08-21T09:41:26Z   work-server-1    rows=1080/1620 state=RUNNING driver=ALIVE
+2026-08-21T09:41:46Z   work-server-1    rows=1080/1620 state=RUNNING driver=ALIVE
+2026-08-21T09:42:06Z   work-server-1    rows=1080/1620 state=RUNNING driver=ALIVE
+2026-08-21T09:42:26Z   work-server-1    rows=1080/1620 state=RUNNING driver=ALIVE
+2026-08-21T09:42:47Z   work-server-1    rows=1080/1620 state=RUNNING driver=ALIVE
+2026-08-21T09:43:07Z   work-server-1    rows=1080/1620 state=RUNNING driver=ALIVE
+2026-08-21T09:43:27Z   work-server-1    rows=1080/1620 state=RUNNING driver=ALIVE
+2026-08-21T09:43:47Z   work-server-1    rows=1080/1620 state=RUNNING driver=ALIVE
+2026-08-21T09:44:08Z   work-server-1    rows=1080/1620 state=RUNNING driver=ALIVE
+2026-08-21T09:44:28Z   work-server-1    rows=1080/1620 state=RUNNING driver=ALIVE
+2026-08-21T09:44:48Z   work-server-1    rows=1080/1620 state=RUNNING driver=ALIVE
+2026-08-21T09:45:09Z   work-server-1    rows=1620/1620 state=COMPLETE driver=DEAD
+2026-08-21T09:45:09Z   runid  bb_20260821T092711Z_68846
+2026-08-21T09:45:09Z   generated  2026-08-21T09:45:09Z
+2026-08-21T09:45:09Z   hosts  work-server-1
+2026-08-21T09:45:09Z   opp  opp_mjol
+2026-08-21T09:45:09Z   maps  auroraveil,bifrost,fimbulwinter,glacierkeep,helheim,holmgang,icefloe,jotunheim,longhouse,midgard,paths,skald,stavkirke,valkyrie,yggdrasil
+2026-08-21T09:45:09Z   seeds  21-26
+2026-08-21T09:45:09Z   par  1
+2026-08-21T09:45:09Z   planned_rows_per_arm  180
+2026-08-21T09:45:09Z   arm  parent  delivered  180  planned  180  COMPLETE
+2026-08-21T09:45:09Z   arm  v542  delivered  180  planned  180  COMPLETE
+2026-08-21T09:45:09Z   arm  v542_538off  delivered  180  planned  180  COMPLETE
+2026-08-21T09:45:09Z   arm  ref_no538  delivered  180  planned  180  COMPLETE
+2026-08-21T09:45:09Z   arm  v542_539off  delivered  180  planned  180  COMPLETE
+2026-08-21T09:45:09Z   arm  ref_no539  delivered  180  planned  180  COMPLETE
+2026-08-21T09:45:09Z   arm  v542_541off  delivered  180  planned  180  COMPLETE
+2026-08-21T09:45:09Z   arm  ref_no541  delivered  180  planned  180  COMPLETE
+2026-08-21T09:45:09Z   arm  v542_alloff  delivered  180  planned  180  COMPLETE
+2026-08-21T09:45:10Z cleanup work-server-1: CLEANED
+2026-08-21T09:45:10Z COMPLETE — 180 rows/arm on each of 9 arms. Read it: .venv/bin/python <build>/summarise.py <name> /Users/junghard/Projects/Work/florent-code-game/scratchpad/s52_v542_build/ident_mjol/<arm>.tsv

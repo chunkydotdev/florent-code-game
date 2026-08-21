@@ -1,0 +1,8 @@
+AST-LEVEL: 591 module-level Assign names in canon
+  orderA   only-canon=0 only-here=0 values-differ=0  IDENTICAL
+  orderB   only-canon=0 only-here=0 values-differ=0  IDENTICAL
+EXECUTION-LEVEL: 601 bindings in canon
+  orderA   bindings-differ=0  IDENTICAL
+  orderB   bindings-differ=0  IDENTICAL
+  CONTROL (one constant mutated): differ=1  ok — the check CAN fail
+  CONTROL (one FUNCTION body mutated): differ=1  ok — functions are really compared

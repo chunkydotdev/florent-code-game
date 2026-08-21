@@ -1,0 +1,12 @@
+SELFTEST doctrine_union.py — each guard, both ways
+  HONEST base+s1+s2                              PASS             ok
+  P1 side edits a base line -> must FAIL         FAIL(P1 FAIL /var/folders/3p/vkf0y41d6z7bgn2g44l3hnlh0000gn/T/dun_v2raiiq5/bad1.py) ok
+  P1 side shorter than base -> must FAIL         FAIL(P1 FAIL /var/folders/3p/vkf0y41d6z7bgn2g44l3hnlh0000gn/T/dun_v2raiiq5/bad1b.py) ok
+  P2 tail carries a def -> must FAIL             FAIL(P2 FAIL /var/folders/3p/vkf0y41d6z7bgn2g44l3hnlh0000gn/T/dun_v2raiiq5/bad2.py) ok
+  P2 tail carries an import -> must FAIL         FAIL(P2 FAIL /var/folders/3p/vkf0y41d6z7bgn2g44l3hnlh0000gn/T/dun_v2raiiq5/bad2b.py) ok
+  P3 two tails assign X -> must FAIL             FAIL(P3 FAIL)    ok
+  P4 tail shadows base A -> must FAIL            FAIL(P4 FAIL)    ok
+  P6 writer drops a statement -> must FAIL       FAIL(P6 FAIL)    ok
+  P7 union value != side value -> must FAIL      FAIL(P7 FAIL)    ok
+  HONEST again (patches reverted)                PASS             ok
+SELFTEST PASS (0 wrong verdicts)

@@ -1,0 +1,14 @@
+TAPE scratchpad/s52_v542_build/ident_mjol_combined.tsv [opp=_x3r0v168mjolnir, FULL rotated 15-map pool x 6 seeds x 2 seats] — 1620 rows, 9 arms
+                                                      cells   differ  where
+--- THE FOUR IDENTITY CLAIMS (each must read 0) ---
+v542[LOKI_FS_V538=False]     == merge(v539,v541)        180        0  -
+v542[LOKI_FS_V539=False]     == merge(v538,v541)        180        0  -
+v542[FS_V541_COREPECK=False] == merge(v538,v539)        180        0  -
+v542[ALL THREE OFF]          == _v537socket             180        0  -
+--- THE NEGATIVE CONTROLS (each must read > 0) ---
+v542 vs v542[LOKI_FS_V538=False]     (v538 acted?)      180       12  midgard/A:6 midgard/B:6
+v542 vs v542[LOKI_FS_V539=False]     (v539 acted?)      180        6  helheim/B:6
+v542 vs v542[FS_V541_COREPECK=False] (v541 acted?)      180        1  midgard/B:1
+v542 vs _v537socket                  (merge acted?)     180       18  helheim/B:6 midgard/A:6 midgard/B:6
+
+IDENTITIES PASS   CONTROLS PASS   TRACEBACKS 0

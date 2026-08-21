@@ -1,0 +1,27 @@
+THE CELLS WHERE ANYTHING MOVES — one representative seed per (map,seat)
+
+midgard seat A (seed 1)
+   parent(v537)   ours=OPP  cond=Core destroyed   turn=365   mined=490/610
+   539+541        ours=OPP  cond=Core destroyed   turn=365   mined=490/610
+   538+541        ours=OPP  cond=Core destroyed   turn=629   mined=550/620
+   538+539        ours=OPP  cond=Core destroyed   turn=629   mined=550/620
+   v542(all3)     ours=OPP  cond=Core destroyed   turn=629   mined=550/620
+
+midgard seat B (seed 1)
+   parent(v537)   ours=US   cond=Core destroyed   turn=270   mined=2050/1600
+   539+541        ours=US   cond=Core destroyed   turn=268   mined=2030/1580
+   538+541        ours=US   cond=Core destroyed   turn=150   mined=1200/550
+   538+539        ours=US   cond=Core destroyed   turn=152   mined=1230/550
+   v542(all3)     ours=US   cond=Core destroyed   turn=150   mined=1200/550
+
+valkyrie seat B (seed 1)
+   parent(v537)   ours=OPP  cond=Core destroyed   turn=474   mined=390/3650
+   539+541        ours=OPP  cond=Core destroyed   turn=373   mined=390/2210
+   538+541        ours=OPP  cond=Core destroyed   turn=474   mined=390/3650
+   538+539        ours=OPP  cond=Core destroyed   turn=373   mined=390/2210
+   v542(all3)     ours=OPP  cond=Core destroyed   turn=373   mined=390/2210
+
+--- seat distribution of each plank's differing cells ---
+  v538 dose  24 cells: midgard/A:12 midgard/B:12
+  v539 dose  12 cells: valkyrie/B:12
+  v541 dose  12 cells: midgard/B:12

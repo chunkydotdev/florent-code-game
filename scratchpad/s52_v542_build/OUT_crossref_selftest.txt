@@ -1,0 +1,12 @@
+SELFTEST crossref.py — every scan, both verdicts
+  CLEAN: X1 empty                                                ok
+  CLEAN: X2 empty                                                ok
+  CLEAN: X3 empty                                                ok
+  CLEAN: X4 empty                                                ok
+  CLEAN: population non-empty (zeros are not vacuous)            ok
+  X1 fires on a v539 flag read inside a _v541_ method            ok
+  X2 fires on a _v539_ call inside a _v541_ method               ok
+  X3 fires on a plain fn calling two families                    ok
+  X4 fires on self.p538 touched by v538 and v541                 ok
+  module-level flag read is not counted as coupling              ok
+SELFTEST PASS (0 wrong verdicts)

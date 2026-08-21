@@ -1,0 +1,14 @@
+TAPE scratchpad/s52_v542_build/ident_bb2_combined.tsv [opp=_v488beltbreak2, 5 maps x 12 seeds x 2 seats] — 1080 rows, 9 arms
+                                                      cells   differ  where
+--- THE FOUR IDENTITY CLAIMS (each must read 0) ---
+v542[LOKI_FS_V538=False]     == merge(v539,v541)        120        0  -
+v542[LOKI_FS_V539=False]     == merge(v538,v541)        120        0  -
+v542[FS_V541_COREPECK=False] == merge(v538,v539)        120        0  -
+v542[ALL THREE OFF]          == _v537socket             120        0  -
+--- THE NEGATIVE CONTROLS (each must read > 0) ---
+v542 vs v542[LOKI_FS_V538=False]     (v538 acted?)      120       24  midgard/A:12 midgard/B:12
+v542 vs v542[LOKI_FS_V539=False]     (v539 acted?)      120       12  valkyrie/B:12
+v542 vs v542[FS_V541_COREPECK=False] (v541 acted?)      120       12  midgard/B:12
+v542 vs _v537socket                  (merge acted?)     120       36  midgard/A:12 midgard/B:12 valkyrie/B:12
+
+IDENTITIES PASS   CONTROLS PASS   TRACEBACKS 0

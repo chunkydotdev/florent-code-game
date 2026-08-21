@@ -1,0 +1,32 @@
+MAPS IN THE TAPE (15): auroraveil bifrost fimbulwinter glacierkeep helheim holmgang icefloe jotunheim longhouse midgard paths skald stavkirke valkyrie yggdrasil
+
+REFERENCE STRUCTURE
+_v537socket vs merge(v539,v541)                   12  helheim/B:6 midgard/A:6
+_v537socket vs merge(v538,v541)                   12  midgard/A:6 midgard/B:6
+_v537socket vs merge(v538,v539)                   18  helheim/B:6 midgard/A:6 midgard/B:6
+merge(v538,v539) vs v542  (= v541 added last)      1  midgard/B:1
+merge(v538,v541) vs v542  (= v539 added last)      6  helheim/B:6
+merge(v539,v541) vs v542  (= v538 added last)     12  midgard/A:6 midgard/B:6
+
+CELL DETAIL (representative seed per acting (map,seat))
+
+helheim seat B (seed 21)
+   parent(v537)   ours=OPP  cond=Core destroyed   turn=275   mined=220/900
+   539+541        ours=OPP  cond=Core destroyed   turn=297   mined=220/960
+   538+541        ours=OPP  cond=Core destroyed   turn=275   mined=220/900
+   538+539        ours=OPP  cond=Core destroyed   turn=297   mined=220/960
+   v542(all3)     ours=OPP  cond=Core destroyed   turn=297   mined=220/960
+
+midgard seat A (seed 21)
+   parent(v537)   ours=US   cond=Core destroyed   turn=156   mined=1360/720
+   539+541        ours=US   cond=Core destroyed   turn=149   mined=1290/720
+   538+541        ours=US   cond=Core destroyed   turn=298   mined=2080/1600
+   538+539        ours=US   cond=Core destroyed   turn=298   mined=2080/1600
+   v542(all3)     ours=US   cond=Core destroyed   turn=298   mined=2080/1600
+
+midgard seat B (seed 21)
+   parent(v537)   ours=OPP  cond=Core destroyed   turn=375   mined=4260/2960
+   539+541        ours=OPP  cond=Core destroyed   turn=375   mined=4260/2960
+   538+541        ours=US   cond=Core destroyed   turn=629   mined=9260/6630
+   538+539        ours=US   cond=Core destroyed   turn=629   mined=9260/6630
+   v542(all3)     ours=US   cond=Core destroyed   turn=629   mined=9260/6630

@@ -1,0 +1,17 @@
+runid	bb_20260821T091105Z_10381
+generated	2026-08-21T09:18:54Z
+hosts	work-server-1
+opp	opp_bb2
+maps	midgard,glacierkeep,icefloe,valkyrie,auroraveil
+seeds	1-12
+par	1
+planned_rows_per_arm	120
+arm	parent	delivered	120	planned	120	COMPLETE
+arm	v542	delivered	120	planned	120	COMPLETE
+arm	v542_538off	delivered	120	planned	120	COMPLETE
+arm	ref_no538	delivered	120	planned	120	COMPLETE
+arm	v542_539off	delivered	120	planned	120	COMPLETE
+arm	ref_no539	delivered	120	planned	120	COMPLETE
+arm	v542_541off	delivered	120	planned	120	COMPLETE
+arm	ref_no541	delivered	120	planned	120	COMPLETE
+arm	v542_alloff	delivered	120	planned	120	COMPLETE

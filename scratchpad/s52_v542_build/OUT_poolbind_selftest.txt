@@ -1,0 +1,11 @@
+SELFTEST poolbind.py — each guard, both ways
+  HONEST: binds on {midgard}, claims on 2                    PASS  ok
+  two live MAPS=() lines -> must FAIL                        FAIL  ok
+  no live MAPS=() line -> must FAIL                          FAIL  ok
+  empty pool -> must FAIL                                    FAIL  ok
+  pool map absent from the gatemap table -> must FAIL        FAIL  ok
+  a map both refusing and running -> must FAIL               FAIL  ok
+  constant column (no refusals at all) -> must FAIL          FAIL  ok
+  not a gatemap table -> must FAIL                           FAIL  ok
+  pool with no refusing map -> binds on 0, still PASSES      PASS  ok
+SELFTEST PASS (0 wrong verdicts)

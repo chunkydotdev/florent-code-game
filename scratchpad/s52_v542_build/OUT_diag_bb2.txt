@@ -1,0 +1,13 @@
+⚠ DIAGNOSTIC ONLY — NOT A VALUE READ.  120 cells/arm, ONE opponent (_v488beltbreak2),
+  5 maps, NOISE_OFF.  Every difference in this tape lives in 3 (map,seat) cells
+  (midgard/A, midgard/B, valkyrie/B), so EFFECTIVE n IS 3 CELLS, NOT 120 GAMES.
+arm              wins  kills kill<=300 kill<=200 med kill
+parent             84     84       48       36    270.0
+v542               84     84       48       48    170.5
+v542_538off        84     84       48       36    268.0
+v542_539off        84     84       48       48    170.5
+v542_541off        84     84       48       48    170.5
+ref_no538          84     84       48       36    268.0
+ref_no539          84     84       48       48    170.5
+ref_no541          84     84       48       48    170.5
+v542_alloff        84     84       48       36    270.0

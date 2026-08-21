@@ -1,0 +1,23 @@
+P1/P2 ok  bots/_v538refine/doctrine.py tail  4271 bytes   3 assigns
+P1/P2 ok  bots/_v539resilience/doctrine.py tail 13475 bytes  16 assigns
+P1/P2 ok  bots/_v541quiet/doctrine.py  tail 20799 bytes  13 assigns
+P3 ok     tails pairwise disjoint
+P4 ok     no tail shadows a base name
+P6 ok     union AST == base ++ tails, 599 statements
+P7 ok     every name carries its own side's value (559 base + 32 tail names)
+WROTE     bots/_v542wave/doctrine.py  399794 bytes
+MERGE ok        bots/_v542wave/eco.py  <- bots/_v538refine
+MERGE ok        bots/_v542wave/main.py  <- bots/_v538refine
+MERGE ok        bots/_v542wave/siege.py  <- bots/_v538refine
+MERGE ok        bots/_v542wave/eco.py  <- bots/_v539resilience
+MERGE ok        bots/_v542wave/main.py  <- bots/_v539resilience
+MERGE ok        bots/_v542wave/siege.py  <- bots/_v539resilience
+MERGE ok        bots/_v542wave/main.py  <- bots/_v541quiet
+MERGE ok        bots/_v542wave/raid.py  <- bots/_v541quiet
+MERGE ok        bots/_v542wave/siege.py  <- bots/_v541quiet
+MD5 bots/_v542wave doctrine 20848e531b50ff5f8b27b75ce2218141
+MD5 bots/_v542wave eco c954b674c566abb5d07fae17554b530d
+MD5 bots/_v542wave main fe037a69dd64ace9db606ab06c1654a8
+MD5 bots/_v542wave raid e0e74d83880f4379115fa5ae2064b2ff
+MD5 bots/_v542wave siege a798cb53522644e3dfcd9a2097409938
+MERGE TREE OK bots/_v542wave

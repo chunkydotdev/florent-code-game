@@ -1,0 +1,7 @@
+SELFTEST repoint.py — each guard, both ways
+  HONEST substitution                                  PASS  ok
+  token absent -> must FAIL                            FAIL  ok
+  identity substitution (no change) -> must FAIL       FAIL  ok
+  new contains old -> must FAIL                        FAIL  ok
+  substitution adds a line -> must FAIL                FAIL  ok
+SELFTEST PASS (0 wrong verdicts)

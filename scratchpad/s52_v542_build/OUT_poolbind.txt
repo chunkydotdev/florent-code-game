@@ -1,0 +1,7 @@
+LIVE POOL (tools/overnight.sh): 15 maps
+  auroraveil,bifrost,fimbulwinter,glacierkeep,helheim,holmgang,icefloe,jotunheim,longhouse,midgard,paths,skald,stavkirke,valkyrie,yggdrasil
+GATE REFUSES over all maps/: 8
+  archipelago,heart,inv_tiny8,lighthouse,midgard,moonrise,saga,snowflake
+
+⇒ ON THE LIVE POOL THE GATE BINDS ON 1 MAP(S): midgard
+⇒ THE r1-r4 SOCKET CLAIM STILL RUNS ON 14: auroraveil,bifrost,fimbulwinter,glacierkeep,helheim,holmgang,icefloe,jotunheim,longhouse,paths,skald,stavkirke,valkyrie,yggdrasil

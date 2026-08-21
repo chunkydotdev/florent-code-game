@@ -1,0 +1,60 @@
+===== ref_no538 =====
+P1/P2 ok  bots/_v539resilience/doctrine.py tail 13475 bytes  16 assigns
+P1/P2 ok  bots/_v541quiet/doctrine.py  tail 20799 bytes  13 assigns
+P3 ok     tails pairwise disjoint
+P4 ok     no tail shadows a base name
+P6 ok     union AST == base ++ tails, 596 statements
+P7 ok     every name carries its own side's value (559 base + 29 tail names)
+WROTE     scratchpad/s52_v542_build/ref/ref_no538/doctrine.py  395523 bytes
+MERGE ok        scratchpad/s52_v542_build/ref/ref_no538/eco.py  <- bots/_v539resilience
+MERGE ok        scratchpad/s52_v542_build/ref/ref_no538/main.py  <- bots/_v539resilience
+MERGE ok        scratchpad/s52_v542_build/ref/ref_no538/siege.py  <- bots/_v539resilience
+MERGE ok        scratchpad/s52_v542_build/ref/ref_no538/main.py  <- bots/_v541quiet
+MERGE ok        scratchpad/s52_v542_build/ref/ref_no538/raid.py  <- bots/_v541quiet
+MERGE ok        scratchpad/s52_v542_build/ref/ref_no538/siege.py  <- bots/_v541quiet
+MD5 scratchpad/s52_v542_build/ref/ref_no538 doctrine 94c28ccdc48230fc00ae94f87dcda967
+MD5 scratchpad/s52_v542_build/ref/ref_no538 eco 486de3aad533cd9dcabe26761e5a2f0b
+MD5 scratchpad/s52_v542_build/ref/ref_no538 main 58446df1eb4830954cda57808248176d
+MD5 scratchpad/s52_v542_build/ref/ref_no538 raid e0e74d83880f4379115fa5ae2064b2ff
+MD5 scratchpad/s52_v542_build/ref/ref_no538 siege 162edb5a881a08491ccab68c1de2cb5b
+MERGE TREE OK scratchpad/s52_v542_build/ref/ref_no538
+===== ref_no539 =====
+P1/P2 ok  bots/_v538refine/doctrine.py tail  4271 bytes   3 assigns
+P1/P2 ok  bots/_v541quiet/doctrine.py  tail 20799 bytes  13 assigns
+P3 ok     tails pairwise disjoint
+P4 ok     no tail shadows a base name
+P6 ok     union AST == base ++ tails, 583 statements
+P7 ok     every name carries its own side's value (559 base + 16 tail names)
+WROTE     scratchpad/s52_v542_build/ref/ref_no539/doctrine.py  386319 bytes
+MERGE ok        scratchpad/s52_v542_build/ref/ref_no539/eco.py  <- bots/_v538refine
+MERGE ok        scratchpad/s52_v542_build/ref/ref_no539/main.py  <- bots/_v538refine
+MERGE ok        scratchpad/s52_v542_build/ref/ref_no539/siege.py  <- bots/_v538refine
+MERGE ok        scratchpad/s52_v542_build/ref/ref_no539/main.py  <- bots/_v541quiet
+MERGE ok        scratchpad/s52_v542_build/ref/ref_no539/raid.py  <- bots/_v541quiet
+MERGE ok        scratchpad/s52_v542_build/ref/ref_no539/siege.py  <- bots/_v541quiet
+MD5 scratchpad/s52_v542_build/ref/ref_no539 doctrine 9ed961acac705375c135c0d6fe533af6
+MD5 scratchpad/s52_v542_build/ref/ref_no539 eco 31dbcf5ad36d55fefb888ca77bd94f3a
+MD5 scratchpad/s52_v542_build/ref/ref_no539 main a3426067652f58872db4b8f7ec2d52f2
+MD5 scratchpad/s52_v542_build/ref/ref_no539 raid e0e74d83880f4379115fa5ae2064b2ff
+MD5 scratchpad/s52_v542_build/ref/ref_no539 siege 5902493f3ffe717004f4fd3fad53bdbc
+MERGE TREE OK scratchpad/s52_v542_build/ref/ref_no539
+===== ref_no541 =====
+P1/P2 ok  bots/_v538refine/doctrine.py tail  4271 bytes   3 assigns
+P1/P2 ok  bots/_v539resilience/doctrine.py tail 13475 bytes  16 assigns
+P3 ok     tails pairwise disjoint
+P4 ok     no tail shadows a base name
+P6 ok     union AST == base ++ tails, 586 statements
+P7 ok     every name carries its own side's value (559 base + 19 tail names)
+WROTE     scratchpad/s52_v542_build/ref/ref_no541/doctrine.py  378995 bytes
+MERGE ok        scratchpad/s52_v542_build/ref/ref_no541/eco.py  <- bots/_v538refine
+MERGE ok        scratchpad/s52_v542_build/ref/ref_no541/main.py  <- bots/_v538refine
+MERGE ok        scratchpad/s52_v542_build/ref/ref_no541/siege.py  <- bots/_v538refine
+MERGE ok        scratchpad/s52_v542_build/ref/ref_no541/eco.py  <- bots/_v539resilience
+MERGE ok        scratchpad/s52_v542_build/ref/ref_no541/main.py  <- bots/_v539resilience
+MERGE ok        scratchpad/s52_v542_build/ref/ref_no541/siege.py  <- bots/_v539resilience
+MD5 scratchpad/s52_v542_build/ref/ref_no541 doctrine e2d2486ce0c4635be93273e07ad95009
+MD5 scratchpad/s52_v542_build/ref/ref_no541 eco c954b674c566abb5d07fae17554b530d
+MD5 scratchpad/s52_v542_build/ref/ref_no541 main 2e49ef37b490660711137a9d1b974f6b
+MD5 scratchpad/s52_v542_build/ref/ref_no541 raid 3b3a0456e9a22083df4653526bfd68c8
+MD5 scratchpad/s52_v542_build/ref/ref_no541 siege 60882d8bbc02d0cb06bb9056d4acb612
+MERGE TREE OK scratchpad/s52_v542_build/ref/ref_no541

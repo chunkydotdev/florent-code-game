@@ -1,0 +1,24 @@
+
+=== bb2 (5 maps x 12 seeds) ===
+arm              wins kill<=300 kill<=200 med kill
+parent             84       48       36    270.0
+v542               84       48       48    170.5
+v542_538off        84       48       36    268.0
+v542_539off        84       48       48    170.5
+v542_541off        84       48       48    170.5
+ref_no538          84       48       36    268.0
+ref_no539          84       48       48    170.5
+ref_no541          84       48       48    170.5
+v542_alloff        84       48       36    270.0
+
+=== mjolnir (15 maps x 6 seeds) ===
+arm              wins kill<=300 kill<=200 med kill
+parent            102       48       18    289.0
+v542              107       48       12      298
+v542_538off       102       48       18    289.0
+v542_539off       107       48       12      298
+v542_541off       107       48       12      298
+ref_no538         102       48       18    289.0
+ref_no539         107       48       12      298
+ref_no541         107       48       12      298
+v542_alloff       102       48       18    289.0
