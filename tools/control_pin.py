@@ -96,6 +96,53 @@ def incumbent() -> Path | None:
     return None
 
 
+def previous_incumbent() -> Path | None:
+    """Read PREVIOUS_INCUMBENT from PROGRAMME.md (same rules as incumbent()).
+
+    ⛔ ADDED 2026-08-21 (s52, Magnus: "Fix it now") — THE SHIP THAT SEPARATED
+    control FROM incumbent. Every guard below was built while control ==
+    incumbent held for every row in history; the v174 ship legitimately broke
+    it (V537POOL's registered control is the PREVIOUS incumbent, required for
+    cross-tape subtraction). A row against the previous incumbent is the
+    TRANSITION class, not the flattering-old-control class this tool exists
+    to refuse.
+    """
+    try:
+        for ln in PROGRAMME.read_text().splitlines():
+            s = ln.strip()
+            if s.upper().startswith("PREVIOUS_INCUMBENT:"):
+                v = s.split(":", 1)[1].strip().strip("`")
+                if not v:
+                    return None
+                p = ROOT / v if not v.startswith("/") else Path(v)
+                return p if p.is_dir() else None
+    except OSError:
+        return None
+    return None
+
+
+def row_control(shard: str) -> Path | None:
+    """Resolve THE ROW'S OWN control from the worklist, by shard name.
+
+    The row is the registration (the prereg pins treatment AND control by
+    name); INCUMBENT is a pointer that ships move. Resolution order at
+    check time: the row's word, then the pointer as fallback.
+    """
+    wl = ROOT / "scratchpad" / "corefill_work.txt"
+    try:
+        for ln in wl.read_text(errors="replace").splitlines():
+            if not ln.strip() or ln.lstrip().startswith("#"):
+                continue
+            f = ln.split("\t") if "\t" in ln else ln.split()
+            if len(f) >= 3 and f[0].strip() == shard:
+                v = f[2].strip()
+                p = ROOT / v if not v.startswith("/") else Path(v)
+                return p if p.is_dir() else None
+    except OSError:
+        return None
+    return None
+
+
 def tree_hash(tree: Path) -> str | None:
     """md5 over sorted (name, bytes) of every *.py in the tree.
 
@@ -118,26 +165,46 @@ def tree_hash(tree: Path) -> str | None:
         return None
 
 
-def read_pin() -> tuple[str, str] | None:
+def read_pins() -> dict[str, str]:
+    """{tree(rel): hash} — one line per pinned tree. Backward compatible with
+    the single-line format (hash tree)."""
     try:
-        parts = PIN_FILE.read_text().split()
+        lines = PIN_FILE.read_text().splitlines()
     except OSError:
-        return None
-    return (parts[0], parts[1]) if len(parts) >= 2 else None
+        return {}
+    out: dict[str, str] = {}
+    for ln in lines:
+        parts = ln.split()
+        if len(parts) >= 2:
+            out[parts[1]] = parts[0]
+    return out
 
 
-def cmd_pin() -> int:
-    t = incumbent()
-    if t is None:
-        print("⛔ REFUSING to pin: PROGRAMME.md has no readable INCUMBENT tree.")
-        return 2
+def write_pin(tree_rel: str, h: str) -> None:
+    pins = read_pins()
+    pins[tree_rel] = h
+    PIN_FILE.parent.mkdir(parents=True, exist_ok=True)
+    PIN_FILE.write_text("".join(f"{v} {k}\n" for k, v in sorted(pins.items())))
+
+
+def cmd_pin(tree: str | None = None) -> int:
+    if tree:
+        t = ROOT / tree if not tree.startswith("/") else Path(tree)
+        if not t.is_dir():
+            print(f"⛔ REFUSING to pin: {tree} is not a directory.")
+            return 2
+    else:
+        t = incumbent()
+        if t is None:
+            print("⛔ REFUSING to pin: PROGRAMME.md has no readable INCUMBENT tree.")
+            return 2
     h = tree_hash(t)
     if h is None:
         print(f"⛔ REFUSING to pin: cannot hash {t} (unreadable, or no .py files).")
         return 2
-    PIN_FILE.parent.mkdir(parents=True, exist_ok=True)
-    PIN_FILE.write_text(f"{h} {t.relative_to(ROOT)}\n")
-    print(f"pinned {t.relative_to(ROOT)} = {h}")
+    rel = str(t.relative_to(ROOT)) if t.is_relative_to(ROOT) else str(t)
+    write_pin(rel, h)
+    print(f"pinned {rel} = {h}")
     return 0
 
 
@@ -164,6 +231,13 @@ def cmd_audit(paths: list[str]) -> int:
         print("⛔ REFUSE: PROGRAMME.md has no readable INCUMBENT — cannot audit controls.")
         return 1
     want = str(inc.relative_to(ROOT)) if inc.is_relative_to(ROOT) else str(inc)
+    prev = previous_incumbent()
+    accepted = {want}
+    if prev is not None:
+        # transition class (see previous_incumbent's docstring): rows locked
+        # when their control WAS the incumbent, overtaken by a ship. Anything
+        # OLDER than previous still refuses — the flattering class stays shut.
+        accepted.add(str(prev.relative_to(ROOT)) if prev.is_relative_to(ROOT) else str(prev))
     started_dir = ROOT / "scratchpad" / "corefill_started"
     bad = 0
     total = 0
@@ -197,34 +271,40 @@ def cmd_audit(paths: list[str]) -> int:
             if treat == ctl:
                 continue
             total += 1
-            if ctl != want:
+            if ctl not in accepted:
                 bad += 1
-                print(f"⛔ {p.name}: {shard} scored against {ctl}, not {want}")
+                print(f"⛔ {p.name}: {shard} scored against {ctl}, not any of {sorted(accepted)}")
     if bad:
-        print(f"\n⛔ {bad} of {total} live row(s) do NOT beat {want}. "
-              f"A row against an older control reads HIGH and is off-programme.")
+        print(f"\n⛔ {bad} of {total} live row(s) scored against neither the incumbent "
+              f"nor the previous incumbent. A row against an OLDER control reads HIGH "
+              f"and is off-programme.")
         return 1
-    print(f"control audit OK: all {total} live row(s) scored against {want}")
+    print(f"control audit OK: all {total} live row(s) scored against {sorted(accepted)}")
     return 0
 
 
 def cmd_check(shard: str | None) -> int:
     who = f" for shard {shard}" if shard else ""
-    t = incumbent()
+    t = row_control(shard) if shard else None
     if t is None:
-        print(f"⛔ REFUSE{who}: PROGRAMME.md has no readable INCUMBENT tree — BLIND, not OK.")
+        t = incumbent()   # fallback: no row found (or no shard named)
+    if t is None:
+        print(f"⛔ REFUSE{who}: no row control and no readable INCUMBENT — BLIND, not OK.")
         return 1
     now = tree_hash(t)
     if now is None:
         print(f"⛔ REFUSE{who}: cannot hash the control tree {t} — BLIND, not OK.")
         return 1
-    pin = read_pin()
+    rel = str(t.relative_to(ROOT)) if t.is_relative_to(ROOT) else str(t)
+    pins = read_pins()
+    pin = (pins[rel], rel) if rel in pins else None
     if pin is None:
         # ⛔ NO PIN IS A REFUSAL, NOT A PASS. The whole point is to fail closed:
         # an absent pin is exactly what a fresh checkout or a deleted scratchpad
         # looks like, and treating it as "fine" restores the silent failure.
-        print(f"⛔ REFUSE{who}: no control pin recorded. Run `control_pin.py --pin` "
-              f"deliberately, after confirming the control is the one the queue means.")
+        print(f"⛔ REFUSE{who}: no pin recorded for {rel}. Run `control_pin.py --pin "
+              f"--tree {rel}` deliberately, after confirming it is the control the "
+              f"row means.")
         return 1
     want, wtree = pin
     if now != want:
@@ -319,6 +399,44 @@ def selftest() -> int:
         chk("an unreadable worklist => REFUSE (blind, not clean)",
             cmd_audit([str(tmp / "nope.txt")]), 1)
 
+        print("\n── the SHIP-SEPARATION class (control != incumbent; 2026-08-21) ──")
+        # restore a hashable control first
+        (ctrl / "main.py").write_text("A = 1\n")
+        (ctrl / "eco.py").write_text("B = 2\n")
+        prevt = tmp / "bots" / "_prev"
+        prevt.mkdir(parents=True)
+        (prevt / "main.py").write_text("P = 1\n")
+        PROGRAMME.write_text("INCUMBENT: bots/_ctrl\nPREVIOUS_INCUMBENT: bots/_prev\n")
+        wl2 = tmp / "scratchpad" / "corefill_work.txt"
+        wl2.parent.mkdir(parents=True, exist_ok=True)
+        wl2.write_text("ROWSHARD\tbots/_arm\tbots/_prev\t5400\t1\n")
+        cmd_pin()
+        chk("row control (prev) UNPINNED => REFUSE (fails closed)",
+            cmd_check("ROWSHARD"), 1)
+        chk("pinning the row's own tree by name succeeds", cmd_pin("bots/_prev"), 0)
+        chk("row control resolved FROM THE ROW, pinned => PASS",
+            cmd_check("ROWSHARD"), 0)
+        (prevt / "main.py").write_text("P = 2\n")
+        chk("row's control edited => REFUSE (the guard still bites the right tree)",
+            cmd_check("ROWSHARD"), 1)
+        (prevt / "main.py").write_text("P = 1\n")
+        chk("...reverted => PASS", cmd_check("ROWSHARD"), 0)
+        chk("unknown shard falls back to INCUMBENT => PASS",
+            cmd_check("NOSUCHROW"), 0)
+        wlp = tmp / "wlp.txt"
+        wlp.write_text("TRANS bots/_arm bots/_prev 5400 1\n")
+        chk("audit: a row against the PREVIOUS incumbent => PASS (transition class)",
+            cmd_audit([str(wlp)]), 0)
+        wlp.write_text("TRANS bots/_arm bots/_prev 5400 1\n"
+                       "OLD2 bots/_arm bots/_v99ancient 5400 2\n")
+        chk("audit: OLDER-than-previous still => REFUSE (flattery stays shut)",
+            cmd_audit([str(wlp)]), 1)
+        PROGRAMME.write_text("INCUMBENT: bots/_ctrl\n")
+        wlp.write_text("TRANS bots/_arm bots/_prev 5400 1\n")
+        chk("audit: NO previous field declared => prev-row REFUSES (no silent widening)",
+            cmd_audit([str(wlp)]), 1)
+        wl2.unlink()
+
         print("\n── the added-file case (a plank dropped in beside the control) ─")
         (ctrl / "main.py").write_text("A = 1\n")
         (ctrl / "eco.py").write_text("B = 2\n")
@@ -336,13 +454,15 @@ def selftest() -> int:
     print("SELFTEST PASS — every guard driven to BOTH verdicts: pin/check cycle, "
           "one-line edit caught, revert un-catches it, mtime-only ignored, rename "
           "caught, missing-pin REFUSES, blind incumbent REFUSES, empty tree REFUSES "
-          "rather than reading as unchanged, new file caught")
+          "rather than reading as unchanged, new file caught; SHIP-SEPARATION: row-resolved control both verdicts, unpinned-row fails closed, previous-incumbent transition accepted while older refuses and absent-field refuses")
     return 0
 
 
 def main() -> int:
     ap = argparse.ArgumentParser(description=__doc__.split("\n")[0])
     ap.add_argument("--pin", action="store_true", help="record the current control hash")
+    ap.add_argument("--tree", metavar="PATH",
+                    help="pin THIS tree (default: the PROGRAMME incumbent)")
     ap.add_argument("--check", action="store_true", help="exit 1 if the control moved")
     ap.add_argument("--shard", metavar="NAME", help="name the shard being gated, for the message")
     ap.add_argument("--audit", nargs="+", metavar="WORKLIST",
@@ -354,7 +474,7 @@ def main() -> int:
     if a.audit:
         return cmd_audit(a.audit)
     if a.pin:
-        return cmd_pin()
+        return cmd_pin(a.tree)
     if a.check:
         return cmd_check(a.shard)
     ap.print_help()
