@@ -116,5 +116,48 @@ toolbox (phase-2 amplify candidates, each behind its own prereg) · no CPU-denia
 5. NO game-share claim of any kind in v1's founding report. The first currency read comes
    later, vs previous-iteration, under a prereg.
 
-*Store-slot allocation and the entry-point skeleton follow the import manifest (landing);
-they will be appended as §7 before the build agent is briefed.*
+## 7. SKELETON, STORE ALLOCATION AND BUILD RULES (from `SKALMAN-IMPORT-MANIFEST-2026-08-21.md`)
+
+**Import order = manifest §8** (~430 code lines + ~95 map-data lines, ~22% of budget):
+`sk_maps.py` (map data + constants, renamed SK_*) → `eco.py:82-234` map layer verbatim
+MINUS the `FS_V534_MAPTRUST=False` legacy branch (deleted, it IS the v123 bug) →
+`run`/`_dispatch` (main.py:396-418) retargeted at the four roles → `_cpu_exhausted` →
+templates + `_bfs_direction`/`_nav` with `_move` rewritten pave-free (~10 lines).
+F2 grid-confirm: carry the PATTERN only (signature hit = candidate, confirm vs decoded
+grid, no-match ⇒ default), cut the siege stand-down consumer.
+
+**Store allocation — FRESH (the benchmark occupies all 16; none inherited blind).
+Conventions that lift:** `pack_pos`/`unpack_pos` · ONE WRITER PER SLOT · flags read at
+the read site never module scope · mask-preserving RMW · absolute round+1 in ≥11 bits,
+never modular · explicit staleness constants. **v1 allocation:**
+| slot | name | meaning |
+|---|---|---|
+| 0 | SK_SLOT_ROLES | packed role claims (4 × role id + claimant beat) |
+| 1 | SK_SLOT_UNDER | core-under-attack latch (round+1) |
+| 2 | SK_SLOT_THREAT_POS | pack_pos of newest home threat |
+| 3 | SK_SLOT_ENEMY_CORE | pack_pos, 0=unset (the benchmark's one keep-convention) |
+| 4 | SK_SLOT_HARV | harvester ratchet |
+| 5 | SK_SLOT_BELT | belt/connectivity word (conn bits + latch round) |
+| 6 | SK_SLOT_CAGE | cage progress word (seats claimed/sealed) |
+| 7 | SK_SLOT_NEST | nest word (site pack_pos + plant round) |
+| 8 | SK_SLOT_DRIP | drip word (live-gunner/sentinel counts for `need`) |
+| 9 | SK_SLOT_STALL | stall-detector word (last seal-advance round) |
+| 10-15 | FREE | reserved; phase-2 amplify claims from 15 downward |
+
+**Build rules the manifest makes mandatory (each is a measured fact, not taste):**
+1. **Wrapper:** bare `except Exception` one layer, report-once — `finally:`,
+   `except BaseException:` and `except SystemExit:` are AST-REJECTED at load.
+2. **`write_store` raises `OverflowError`, not GameError**, on negative/>2³²-1 —
+   handlers must not narrow to GameError; values are masked before write.
+3. **`in_bounds(x, y, w, h)` defined ONCE and used everywhere** — the benchmark
+   open-codes it at 71 sites; Skalman makes it a helper + build rule. `is_in_vision`
+   is never a bounds guard (CLAUDE.md s50).
+4. **Displacement guard re-sited to the SHARED movement path** (it lived only inside
+   the deleted `_raid()`), and it clears ALL cached work-queues on trigger — the
+   benchmark's guard leaving stale build queues is a latent defect we fix, not copy.
+5. **No cross-round Position caching for throwable bodies** (the property that keeps
+   the guard sufficient), or every cache is registered with the guard's clear list.
+6. **Per-unit sub-interpreters: module state is NOT shared between units** — the 16
+   store ints are the only channel; any "shared" cache is per-unit and priced as such.
+7. **CPU: local `get_cpu_time_elapsed()` reads 0 under `fcode run`** — local screens
+   are un-CPU-tested; the platform `match test` before any exposure is mandatory.
