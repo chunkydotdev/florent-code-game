@@ -37,6 +37,28 @@ successor session inherit it. The fields below are parsed; the prose is not.
     NEXT_LINE_BENCHMARK: bots/_v542wave
     RUSH_LINE_STATUS: sunset_2026-08-21_magnus_directive_v177_holds_slot_until_displaced
 
+## STEALTH_PREDROP_RIDER ADDED 2026-08-21 (Magnus, s54 — exposure ruling on the explicit question)
+
+**The question put to Magnus (research s54, in-session, coordination tail 19:29:10Z):**
+does `STEALTH_UNTIL_DROP` hold at screen-clear, or does a live window open for the new
+line's first-contact testing? Options offered: stealth-holds / mirror-only carve-out /
+full pre-drop. **Magnus selected FULL PRE-DROP TESTING: all three FIRST CONTACT cells
+(BC-v68 mirror pinned · Pivot counter-check pinned · kladde clock unpinned) fire as soon
+as a Skalman version clears the local screen.** Recorded here because this file is
+edit-on-his-directive-only and a successor must see WHY a parsed field changed in the
+file itself.
+
+**Scope, exactly as asked and answered:** pre-drop UNRATED testing of screen-clear
+Skalman versions is authorized. **Release/submission/drop stealth is otherwise intact** —
+the rider does not touch the coordinated-drop half of `STEALTH_UNTIL_DROP`, which stands.
+The remaining first-contact gates are the builder's: (1) a version clears the local
+screen (declaration of record required — v602's 6/30 is declared NOT MET), (2) the
+activation-window pricing under the 10-min cadence.
+
+**Provenance note, surfaced not resolved:** the s51 stealth field was set jointly by
+Magnus + x3r0; this rider is Magnus solo (2026-08-21). Squaring it with x3r0 is his
+conversation, no lane's.
+
 ## NEW LINE DECLARED 2026-08-21 (Magnus, s53 — verbatim in the coordination tail at ~15:5xZ: build our own version of the Bean counters tactics; basics first, then amplify our specialities; the end for two rushed raiders and Baltsars banditer; wrap when the playbook lands; next session starts from scratch)
 
 **The next line is `SKALMAN` (builder's naming call under Magnus's "popular Swedish kid
