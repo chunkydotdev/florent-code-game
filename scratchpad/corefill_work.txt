@@ -1249,3 +1249,10 @@ RINGLADDER	bots/_v512ringladder	bots/_v488beltbreak2	5400	872000
 SIEGECREW	bots/_v513siegecrew	bots/_v488beltbreak2	5400	874000
 PINCERPOOL	bots/_v524exact	bots/_v488beltbreak2	5400	876000
 FLIPPOOL	bots/_v525flip	bots/_v488beltbreak2	5400	878000
+HOMEPOOL	bots/_v533home	bots/_v488beltbreak2	5400	880000
+V535POOL	bots/_v535cornergate	bots/_v488beltbreak2	5400	882000
+V529POOL	bots/_v529merge	bots/_v488beltbreak2	5400	884000
+V536POOL	bots/_v536trustport	bots/_v488beltbreak2	5400	886000
+V537POOL	bots/_v537socket	bots/_v488beltbreak2	5400	888000
+NEWPOOL-BASELINE	bots/_v537socket	bots/_x3r0v168mjolnir	5400	890000
+V543POOL	bots/_v543burst	bots/_v542wave	5400	892000
