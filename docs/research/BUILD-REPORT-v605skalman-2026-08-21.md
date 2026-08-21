@@ -1,6 +1,6 @@
 # BUILD REPORT + READ — `bots/_v605skalman` (the exit-guard release)
 
-**Builder s54, 2026-08-22 ~00:1xZ.** Copy of `_v604skalman` + the v605 queue; fresh opus
+**Builder s54, 2026-08-21 ~22:0xZ (corrected: the draft header hand-wrote a rolled-over date; date -u at commit read 2026-08-21T22:08Z — the timestamps rule's 5th recorded instance, self-caught).** Copy of `_v604skalman` + the v605 queue; fresh opus
 agent; artifacts `scratchpad/s54_v605/`. Outcome column builder-verified on the shipped
 K=6 tape (12 wins = 11 core-kills + 1 tiebreak; by-r300 = 10; median kill r209 — matches).
 Fixture = the authored NOISE_OFF benchmark copy; no game-share claim, no submit.
