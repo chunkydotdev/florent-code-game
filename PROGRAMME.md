@@ -30,6 +30,7 @@ successor session inherit it. The fields below are parsed; the prose is not.
     SLOT_STOP_LOSS: off
     SHIP_BAR: beat_live_holder_screen_ci_excl_50_AND_full_pool_vs_x3r0best_ci_lower_ge_53.3
     STEALTH_UNTIL_DROP: yes
+    STEALTH_PREDROP_RIDER: unrated_first_contact_testing_authorized_magnus_2026-08-21_full_predrop_ruling_drop_stealth_otherwise_intact
     KILL_TARGET: median_r180_share_by_r200_floor_r300
     NEXT_LINE: skalman
     NEXT_LINE_DOCTRINE: beancounters_replication_then_amplify
