@@ -588,6 +588,11 @@ no behavioural difference of any kind before it. Swap `b=` for
 .venv/bin/python scratchpad/s52_v539_build/agg.py OUT_endgame_run1.tsv
 
 # the replicate (§4.3): identical command, --wipe-at 110,140,170,200,230
+# the THREE-ARM run incl. v539.1 (§11.2):
+.venv/bin/python scratchpad/s52_v539_build/harness.py --endgame \
+  --maps atoll,eider,heart,nordkap,drakkarfjord --rounds 340 \
+  --wipe-at 100,130,160,190,220 \
+  --arms _v537socket,_v539resilience,scratchpad/s52_v539_build/arms/v539_1_floor
 # the consumer table (§3):
 .venv/bin/python scratchpad/s52_v539_build/consumers.py _v539resilience
 # every instrument, both verdicts per guard:
@@ -623,36 +628,61 @@ Parent `bots/_v537socket` frozen `07:35:52Z` (`PARENT_FREEZE.md5`) and
 **re-verified byte-identical** `07:54:41Z` (`PARENT_REFREEZE.md5`) — the two
 files `diff` clean.
 
-### 10.2 Instruments — all three carry `--selftest`, all drive every guard both ways
+### 10.2 ⛔ THE FIRST VERSION OF THIS TABLE CERTIFIED THE WRONG FILES
+
+The md5 table committed at `08:02:52Z` was **misaligned**: it was built by
+`paste`-ing `md5 -q` output (argument order) against `ls` output (sort order),
+so every hash sat beside the wrong filename — `harness.py` was credited with
+`OUT_consumers_parent.txt`'s hash, and so on down the list. **A manifest that
+certifies the wrong artefact is worse than no manifest**, because it reads as a
+check that passed. Caught at `08:07:5xZ` by regenerating with `md5` (which
+prints its own filenames) rather than `md5 -q`. The table below is that output,
+verbatim, and **the rule taken from it: never pair hashes and names from two
+separately-ordered commands.**
+
+### 10.3 Instruments — all three carry `--selftest`, all drive every guard both ways
 
 | file | md5 | what |
 |---|---|---|
-| `scratchpad/s52_v539_build/harness.py` | `c025ca04607e5a39992029fdefcedfb5` | fake-engine famine harness, detector/gate/endgame/identity modes |
-| `scratchpad/s52_v539_build/agg.py` | `030773146d59b1145aea6787ecdd8e3a` | paired aggregator + sign test |
-| `scratchpad/s52_v539_build/consumers.py` | `14a38f39dd047ee13a2c4e67c8e7d7fd` | `SLOT_HARVESTERS` site enumeration (§3) |
+| `scratchpad/s52_v539_build/harness.py` | `050e059e9801d865bfe6b50bde4ebbc0` | fake-engine famine harness: detector / gate / floor-sweep / endgame / identity |
+| `scratchpad/s52_v539_build/agg.py` | `d042a53a27ff8fe9e44cc726edb42144` | paired aggregator + sign test |
+| `scratchpad/s52_v539_build/consumers.py` | `64953ea895cd00096c54ffc5059d7443` | `SLOT_HARVESTERS` site enumeration (§3) |
 
-### 10.3 Tapes
+### 10.3.1 Tapes
 
 | file | md5 | contents |
 |---|---|---|
-| `OUT_endgame_run1.tsv` | `6d3d35c8dbf0b9cc382fd0cbc5f3e361` | 25 paired cells, wipes 100–220 (§4.2) |
-| `OUT_endgame_run2.tsv` | `d1c275da71a63981cc6318942be9373d` | the replicate, wipes 110–230 (§4.3) |
-| `OUT_agg_run1.txt` | `af2537829e526e8e0700da06a655b93b` | §4.2 table + sign tests |
-| `OUT_agg_run2.txt` | `0c94bef8d75ef8f41f0a02853aa2a116` | §4.3 |
-| `OUT_identity.txt` | `cee771497a4e124c365ec2c19a6cfac2` | the four identity batteries (§5) |
-| `OUT_consumers_parent.txt` | `f477c5e4f406ec614e0a2ddcc43a6c18` | 13 sites |
-| `OUT_consumers_v539.txt` | `e61c32ba97465535f0e8422f8954ec55` | 15 sites |
-| `OUT_selftest_harness.txt` | `64953ea895cd00096c54ffc5059d7443` | 10 groups, all pass |
-| `OUT_selftest_agg.txt` | `6af307a6d99d12f9181076b5a71aec97` | 4 groups, all pass |
-| `OUT_selftest_consumers.txt` | `d042a53a27ff8fe9e44cc726edb42144` | 4 groups, all pass |
-| `OUT_endgame.txt` | `fb036cdb7e3acfb70cb3c079b6ec6118` | ⛔ **SUPERSEDED — the pre-NOISE_OFF run.** Kept because §4.1's non-determinism finding is read off it. **Do not quote its numbers.** |
-| `arms/v539flagoff/` | — | byte copy of the shipped tree, one line changed to `LOKI_FS_V539 = False` |
+| `OUT_endgame_run1.tsv` | `fb036cdb7e3acfb70cb3c079b6ec6118` | 25 paired cells, wipes 100–220 (§4.2) |
+| `OUT_endgame_run2.tsv` | `cee771497a4e124c365ec2c19a6cfac2` | the replicate, wipes 110–230 (§4.3) |
+| `OUT_endgame_run3_threearm.tsv` | `2a8bc8803b8a1bb04fe49fc651812462` | **three-arm run incl. v539.1 (§11)** |
+| `OUT_agg_run1.txt` | `030773146d59b1145aea6787ecdd8e3a` | §4.2 table + sign tests |
+| `OUT_agg_run2.txt` | `14a38f39dd047ee13a2c4e67c8e7d7fd` | §4.3 |
+| `OUT_identity.txt` | `09a235410967a712da1383fe2247e027` | **six identity batteries, re-run on FINAL bytes (§5, §11.3)** |
+| `OUT_floor_sweep.txt` | `ac17551cab5c1d392ead1381e92f9964` | **the v539.1 four-way bank sweep (§11.2)** |
+| `OUT_consumers_parent.txt` | `c025ca04607e5a39992029fdefcedfb5` | 13 sites |
+| `OUT_consumers_v539.txt` | `e8eb0a6c015703353cb7ca533124851a` | 15 sites |
+| `OUT_selftest_harness.txt` | `30527489a869607e502fe9f27a557eaf` | 11 groups, all pass |
+| `OUT_selftest_agg.txt` | `e61c32ba97465535f0e8422f8954ec55` | 4 groups, all pass |
+| `OUT_selftest_consumers.txt` | `6d3d35c8dbf0b9cc382fd0cbc5f3e361` | 4 groups, all pass |
+| `OUT_endgame.txt` | `0c94bef8d75ef8f41f0a02853aa2a116` | ⛔ **SUPERSEDED — the pre-NOISE_OFF run.** Kept because §4.1's non-determinism finding is read off it. **Do not quote its numbers.** |
+| `ARM_FREEZE.md5` | `c8a68e3a1e7bbdb8f2d5d97a5d65782e` | the shipped tree's per-file hashes, final bytes |
+| `PARENT_FREEZE.md5` / `PARENT_REFREEZE.md5` | both `60ab7e173e739bba1247901ef792dbd5` | parent byte-unchanged across the whole build |
+
+### 10.3.2 Arms
+
+| arm | one line changed | purpose |
+|---|---|---|
+| `arms/v539flagoff/` | `LOKI_FS_V539 = False` | flag-off identity (§5 B) |
+| `arms/v539_1_floor/` | `FS_V539_RESERVE_FLOOR = True` | **the v539.1 conservative arm (§11)** |
+
+Both are byte copies of the **final** shipped tree, rebuilt at `08:06:16Z`
+after the last code change, and both compile.
 
 ### 10.4 What was NOT produced, and why
 
 * **No `.replay`, no platform tape, no Elo row.** Zero `fcode` runs; V537POOL
-  held **2,461 of 5,400 rows at `07:54:41Z`** and **2,674 at `08:01:09Z`**, both
-  under the gate.
+  held **2,461 of 5,400 rows at `07:54:41Z`**, **2,674 at `08:01:09Z`** and
+  **2,897 at `08:08:04Z`** — all three under the gate.
 * **No stderr tape.** `FS_V539_LOG` ships `False`, and platform replays strip
   stdout regardless (CLAUDE.md s28). The `V539 DECLARE/CLEAR` lines exist for a
   **local** dose only and §8.1 says so.
@@ -660,3 +690,89 @@ files `diff` clean.
   round instead of stopping at the v514 latch (§1.1). That is a real per-round
   cost on one unit with a 10 ms budget and **it is unmeasured**; add it to the
   live dose.
+
+---
+
+## 11. v539.1 — THE RESERVE-FLOOR ARM, AND WHAT IT TURNED OUT TO BE
+
+Accepted from the side-lane audit: §6's surprise (the parent ahead 16-to-0 on
+post-wipe sentinel-affordable rounds) is a `DEFENCE_ADMISSION`-shaped risk — the
+plank buying economy with the kill budget — and the battery will want both arms
+rather than an argument. **Built, unit-verified both ways, shipped OFF.**
+
+**THE RULE.** Under `FS_V539_RESERVE_FLOOR`, rung A's waiver additionally
+requires `bank − cost >= sentinel_cost + SIEGE_HEAL_RESERVE_TI` — the literal
+bar `main.py` checks before buying a sentinel. **The rebuild waits rather than
+raiding the kill budget.**
+
+### 11.1 ⭐⭐ THE SURPRISE: THE FLOOR MAKES RUNG A EXACTLY INERT
+
+Written before it is explained. A four-way sweep — **17 bank levels ×
+{conveyor, harvester} cost × {collar live, collar idle} = 68 cells**
+(`OUT_floor_sweep.txt`, `harness.py --selftest` §9):
+
+| arm | cells differing from the PARENT's `_eco_spendable` verdict |
+|---|---|
+| floor **ON** | **0 of 68** |
+| floor **OFF** (shipped v539) | conveyor/idle `[4, 8, 16]` · conveyor/collar `[4, 8, 16]` · harvester/idle `[24, 32]` · **harvester/collar `[24, 32, 40, 44, 46, 48, 52, 60]`** |
+
+**The region where rung A matters is exactly the region the floor forbids**, so
+the floor does not soften the lifeline — it deletes it. ⇒ **v539.1 is a clean
+ABLATION of rung A: draft + seat-3 hold, no funding waiver.** That is a more
+useful arm than the one requested, and it is not what the design intended.
+
+⛔ **The first version of this check asserted the opposite** ("the arm acts, it
+is not a no-op", tested under a live collar) and **failed**. It is recorded here
+rather than deleted: the collar reserve is clamped by `FS_ECO_LIFELINE`, so it
+almost never pushes the parent below its own bar for a cheap link.
+
+### 11.2 What the ablation costs, measured
+
+Three-arm endgame, final bytes, 25 paired (map, wipe) cells
+(`OUT_endgame_run3_threearm.tsv`), each arm scored against the parent:
+
+| metric | v539 (shipped) W/L/T | **v539.1 (floor) W/L/T** |
+|---|---|---|
+| first rebuild round | **21 / 0 / 4** | **0 / 0 / 25** |
+| mouth alive rounds | **20 / 1 / 4** | **0 / 0 / 25** |
+| delivery sightings | **19 / 1 / 5** | **0 / 0 / 25** |
+| rounds bank ≥ sentinel bar | 0 / 16 / 9 | **0 / 0 / 25** |
+| turrets built post-wipe | 0 / 2 / 23 | **0 / 0 / 25** |
+| famine declared | 25 / 25 | **25 / 25** |
+| `run()` raised (all 3 arms) | — | **0** |
+
+**v539.1 is outcome-identical to the parent on every counted metric in all 25
+cells** — while still declaring famine 25/25 and still diverging from the parent
+in state (§11.3). ⇒ **RUNG A IS THE WHOLE PLANK. Rungs B and C are necessary
+scaffolding that accomplish nothing on their own**: a drafted body with no
+funding walks to the ore and cannot buy the harvester.
+
+⚠ **THE HONEST READING FOR THE BATTERY: on this fixture v539.1 neither costs
+nor gains anything.** It is a null arm here. Only a live leg — with an opponent,
+a real bank trajectory and turret purchases that actually matter — could
+separate it from the parent. **Spending games on it is a decision to test
+whether §6's cost is real, not to test the rebuild.**
+
+### 11.3 Identity, re-proven on the FINAL bytes (`08:06:29Z`)
+
+Re-run after the last code change, NOISE_OFF, 5 maps, 340 rounds:
+
+| battery | expectation | result |
+|---|---|---|
+| **A** parent vs parent | identical | **5/5 identical** |
+| **B** `LOKI_FS_V539 = False` vs parent | identical | **5/5 identical** |
+| **C** flag ON vs parent, no wipe | identical | **5/5 identical** |
+| **D** flag ON vs parent, wipe@140 | must diverge | **5/5 diverge, round 161 on every map** |
+| **E** v539.1 vs shipped v539, wipe@140 | must diverge (rung A ablated) | **5/5 diverge: r162, r192, r164, r192, r163** |
+| **F** v539.1 vs parent, wipe@140 | must diverge (B and C still act) | **5/5 diverge, round 161 on every map** |
+
+**E's divergence rounds are the shipped arm's first-rebuild rounds** — the exact
+place the ablated lifeline bites. **F proves v539.1 is not simply the parent
+recompiled**, which is what makes §11.2's all-ties table a finding rather than a
+tautology.
+
+### 11.4 Added to the deferred list
+
+7. **RUN v539.1 AS THE THIRD ARM** of the `r300` screen (§8.2). §11.2 predicts
+   it reads as the parent; if it does not, the fixture is missing something the
+   live game has.

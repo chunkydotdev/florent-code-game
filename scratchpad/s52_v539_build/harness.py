@@ -273,9 +273,17 @@ def detector_run(tree, rounds, wipe_at, harv=2, min_rnd_override=None):
 # SCENARIO 2 -- THE GATES, driven on real Player objects
 # ---------------------------------------------------------------------------
 
-def gate_probe(tree, famine, bank, role, rnd=120, started=100, under=1):
-    """(_eco_spendable verdict, drafted role) for one scripted board."""
+def gate_probe(tree, famine, bank, role, rnd=120, started=100, under=1,
+               floor=None, collar=False, cost="conveyor"):
+    """`_eco_spendable` verdict for one scripted board.
+
+    `floor` overrides FS_V539_RESERVE_FLOOR in EVERY module (each holds its own
+    binding via `from doctrine import *` -- the no-op trap of §4.1).
+    """
     mods = load_tree(tree)
+    if floor is not None:
+        for m in MODNAMES:
+            setattr(mods[m], "FS_V539_RESERVE_FLOOR", floor)
     fc = fc_maps(mods)
     d = mods["doctrine"]
     w = World(14, 14)
@@ -292,6 +300,12 @@ def gate_probe(tree, famine, bank, role, rnd=120, started=100, under=1):
     w.store[Team.A][d.FS_ECO_SLOT] = word
     w.store[Team.A][d.SLOT_UNDER] = under
     w.store[Team.A][d.SLOT_ATK_RND] = rnd
+    if collar:
+        # a ferry-siege raider standing at the enemy ring: `_eco_spendable`
+        # subtracts the whole 8-barrier collar reserve while this is live
+        w.store[Team.A][d.SLOT_FS] = (
+            ((rnd + 1) & d.FS_BEAT_MASK)
+            | ((d.FS_PH_RING & d.FS_PHASE_MASK) << d.FS_PHASE_SHIFT))
 
     P = mods["main"].Player()
     P.core = Position(3, 3)
@@ -299,8 +313,20 @@ def gate_probe(tree, famine, bank, role, rnd=120, started=100, under=1):
     P.mw, P.mh = 14, 14
     P.role = role
     ct = DeliveryCt(w, bot, fc)
-    spend = P._eco_spendable(ct, ct.get_conveyor_cost())
+    c = (ct.get_harvester_cost() if cost == "harvester"
+         else ct.get_conveyor_cost())
+    spend = P._eco_spendable(ct, c)
     return spend
+
+
+def gate_bar(tree="_v539resilience"):
+    """The floor the v539.1 arm defends: sentinel cost + the siege reserve."""
+    mods = load_tree(tree)
+    fc = fc_maps(mods)
+    w = World(14, 14)
+    b = w.add(EntityType.CORE, Team.A, Position(3, 3))
+    ct = DeliveryCt(w, b, fc)
+    return ct.get_sentinel_cost() + mods["doctrine"].SIEGE_HEAL_RESERVE_TI
 
 
 def draft_probe(tree, famine, role_n, rnd=120, started=100):
@@ -678,7 +704,64 @@ def selftest():
     chk(r_eco == r_eco_p,
         "n=2 (a real eco seat) resolves IDENTICALLY in both trees: %s" % r_eco)
 
-    print("[9] the SENTINEL GATE survives a famine (Magnus's s51 ruling)")
+    print("[9] v539.1 RESERVE FLOOR binds, and ONLY when it should")
+    bar = gate_bar()
+    chk(bar > 0, "the floor is a real number: sentinel + reserve = %d Ti" % bar)
+    # famine + a bank the wipe drained: the floor must REFUSE
+    lo_on = gate_probe("_v539resilience", True, 8, "expand", floor=True)
+    lo_off = gate_probe("_v539resilience", True, 8, "expand", floor=False)
+    chk(lo_on is False,
+        "floor ON + famine + wiped bank (8 Ti): REFUSES -- the rebuild waits")
+    chk(lo_off is True,
+        "floor OFF, same board: ALLOWS (the other verdict, and the arm diff)")
+    # famine + a bank well above the floor: the floor must ALLOW
+    hi_on = gate_probe("_v539resilience", True, bar + 200, "expand", floor=True)
+    chk(hi_on is True,
+        "floor ON + famine + bank %d Ti: ALLOWS -- true surplus rebuilds"
+        % (bar + 200))
+    # ⛔⛔ A FOUR-WAY BANK SWEEP, NOT A BOUNDARY CELL, AND THE FIRST DRAFT GOT
+    # THIS WRONG IN THE FLATTERING DIRECTION.  `_v539_lifeline` returning False
+    # does NOT mean the spend is refused -- it means the call FALLS THROUGH to
+    # the parent's own reserve logic, which on a healthy bank says yes anyway.
+    # So "the floor refuses at exactly the bar" is not a proposition about the
+    # floor at all; it is a proposition about the parent.  The proposition that
+    # IS about the floor: across bank levels x {conveyor, harvester} cost x
+    # {collar live, collar idle}, does the arm ever differ from the parent?
+    banks = [0, 4, 8, 16, 24, 32, 40, 44, 46, 48, 52, 60, 80, 100, 150, 200,
+             400]
+    on_diffs, off_diffs, both_ways = [], [], []
+    for cost in ("conveyor", "harvester"):
+        for collar in (False, True):
+            kw = dict(collar=collar, cost=cost)
+            par = [gate_probe("_v537socket", True, b, "expand", **kw)
+                   for b in banks]
+            on = [gate_probe("_v539resilience", True, b, "expand", floor=True,
+                             **kw) for b in banks]
+            off = [gate_probe("_v539resilience", True, b, "expand", floor=False,
+                              **kw) for b in banks]
+            on_diffs.append([b for b, x, y in zip(banks, par, on) if x != y])
+            off_diffs.append([b for b, x, y in zip(banks, par, off) if x != y])
+            both_ways.append(False in par and True in par)
+    chk(all(x == [] for x in on_diffs),
+        "⭐ floor ON is PARENT-IDENTICAL across all %d sweep cells -- i.e. the "
+        "floor makes RUNG A EXACTLY INERT, so v539.1 is a clean ABLATION of "
+        "rung A (draft + hold only), not a softer lifeline"
+        % (len(banks) * 4))
+    chk(all(len(x) > 0 for x in off_diffs),
+        "floor OFF differs from the parent in ALL FOUR sweeps %s (the other "
+        "verdict: the comparison can fail, and this is the whole arm "
+        "difference)" % off_diffs)
+    chk(all(both_ways),
+        "the parent answers both ways in every sweep (no constant column)")
+
+    # the floor must not resurrect the lifeline outside a famine
+    nf_on = gate_probe("_v539resilience", False, bar + 200, "expand",
+                       floor=True)
+    par_hi = gate_probe("_v537socket", True, bar + 200, "expand")
+    chk(nf_on == par_hi,
+        "floor ON but NO famine: identical to the parent (%s)" % nf_on)
+
+    print("[10] the SENTINEL GATE survives a famine (Magnus's s51 ruling)")
     # THE QUESTION THE AMENDMENT ASKS: does declaring famine CLOSE the
     # 2-harvesters-built-AND-connected gate?  Measured, not read off the code.
     modsg = load_tree("_v539resilience")
@@ -716,7 +799,7 @@ def selftest():
     chk(bool(v & dg.FS_ECO_BIT_CONN) and bool(v & dg.FS_ECO_BIT_DELIV),
         "CONN and DELIV bits both still set alongside the famine bit")
 
-    print("[10] flag-off: LOKI_FS_V539=False reproduces the parent verdicts")
+    print("[11] flag-off: LOKI_FS_V539=False reproduces the parent verdicts")
     mods3 = load_tree("_v539resilience")
     mods3["doctrine"].LOKI_FS_V539 = False
     # the modules already bound the name via `from doctrine import *`, so the
@@ -745,6 +828,9 @@ def main():
     ap.add_argument("--maps", default="atoll")
     ap.add_argument("--identity", action="store_true")
     ap.add_argument("--seeds", type=int, default=1)
+    ap.add_argument("--arms", default="_v537socket,_v539resilience",
+                    help="comma list of trees (name under bots/, "
+                         "or a repo-relative path)")
     a = ap.parse_args()
     if a.selftest:
         return selftest()
@@ -762,7 +848,7 @@ def main():
         wipes = [int(x) for x in str(a.wipe_at).split(",")]
         for mp in a.maps.split(","):
             for wp in wipes:
-                for tree in ("_v537socket", "_v539resilience"):
+                for tree in a.arms.split(","):
                     row = endgame_run(tree, map_name=mp, rounds=a.rounds,
                                       wipe_at=wp, seed=0)
                     row["seed"] = wp          # the cell key: the wipe round

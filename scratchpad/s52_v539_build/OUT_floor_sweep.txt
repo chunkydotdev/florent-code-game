@@ -1,0 +1,22 @@
+floor = sentinel_cost + SIEGE_HEAL_RESERVE_TI = 46 Ti (this probe's scale)
+bank levels: [0, 4, 8, 16, 24, 32, 40, 44, 46, 48, 52, 60, 80, 100, 150, 200, 400]
+
+cost=conveyor collar=False
+  parent allows at:    [24, 32, 40, 44, 46, 48, 52, 60, 80, 100, 150, 200, 400]
+  floor ON differs at: []
+  floor OFF differs at: [4, 8, 16]
+
+cost=conveyor collar=True
+  parent allows at:    [24, 32, 40, 44, 46, 48, 52, 60, 80, 100, 150, 200, 400]
+  floor ON differs at: []
+  floor OFF differs at: [4, 8, 16]
+
+cost=harvester collar=False
+  parent allows at:    [40, 44, 46, 48, 52, 60, 80, 100, 150, 200, 400]
+  floor ON differs at: []
+  floor OFF differs at: [24, 32]
+
+cost=harvester collar=True
+  parent allows at:    [80, 100, 150, 200, 400]
+  floor ON differs at: []
+  floor OFF differs at: [24, 32, 40, 44, 46, 48, 52, 60]

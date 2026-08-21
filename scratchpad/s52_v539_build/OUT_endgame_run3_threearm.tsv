@@ -1,0 +1,802 @@
+BB48 REFUSE NOTGT n=1 0/0
+BB48 REFUSE NOTGT n=1 0/0
+BB48 REFUSE TI n=1 37/48
+BB48 REFUSE NOTGT n=1 0/0
+BB48 REFUSE TI n=26 14/53
+BB48 REFUSE TI n=51 14/53
+BB48 REFUSE TI n=76 14/50
+BB48 REFUSE TI n=101 4/54
+BB48 REFUSE TI n=126 16/54
+BB48 REFUSE TI n=151 16/54
+BB48 REFUSE TI n=176 39/54
+BB48 REFUSE NOTGT n=26 0/0
+BB48 REFUSE NOTGT n=51 0/0
+BB48 REFUSE NOTGT n=76 0/0
+L4R45 L4REPAIR rnd=284 tile=2,15 face=NORTH feed=belt id=12
+BB48 REFUSE NOTGT n=101 0/0
+BB48 REFUSE NOTGT n=126 0/0
+tree=_v537socket	map=atoll	harv_built_pre=2	harv_built_post=2	first_rebuild_rnd=252	conv_built_pre=5	conv_built_post=5	famine_rnd=-1	mouth_rounds_post=85	deliv_sightings_post=22	run_raised=0	turret_built_post=2	afford_sentinel_rounds=36	sentinel_bar_ti=107	ti_final=115	final_harvesters=2	seed=100
+BB48 REFUSE NOTGT n=1 0/0
+BB48 REFUSE NOTGT n=1 0/0
+BB48 REFUSE TI n=1 37/48
+BB48 REFUSE NOTGT n=1 0/0
+BB48 REFUSE TI n=26 14/53
+BB48 REFUSE TI n=51 14/53
+BB48 REFUSE TI n=76 14/50
+BB48 REFUSE TI n=101 4/51
+BB48 REFUSE TI n=126 50/51
+BB48 REFUSE TI n=151 16/55
+BB48 REFUSE TI n=176 16/55
+BB48 REFUSE TI n=201 43/55
+BB48 REFUSE NOTGT n=26 0/0
+BB48 REFUSE NOTGT n=51 0/0
+BB48 REFUSE NOTGT n=76 0/0
+L4R45 L4REPAIR rnd=316 tile=2,15 face=NORTH feed=belt id=12
+tree=_v539resilience	map=atoll	harv_built_pre=2	harv_built_post=2	first_rebuild_rnd=132	conv_built_pre=5	conv_built_post=5	famine_rnd=121	mouth_rounds_post=202	deliv_sightings_post=51	run_raised=0	turret_built_post=2	afford_sentinel_rounds=19	sentinel_bar_ti=107	ti_final=114	final_harvesters=2	seed=100
+BB48 REFUSE NOTGT n=1 0/0
+BB48 REFUSE NOTGT n=1 0/0
+BB48 REFUSE TI n=1 37/48
+BB48 REFUSE NOTGT n=1 0/0
+BB48 REFUSE TI n=26 14/53
+BB48 REFUSE TI n=51 14/53
+BB48 REFUSE TI n=76 14/50
+BB48 REFUSE TI n=101 4/54
+BB48 REFUSE TI n=126 16/54
+BB48 REFUSE TI n=151 16/54
+BB48 REFUSE TI n=176 39/54
+BB48 REFUSE NOTGT n=26 0/0
+BB48 REFUSE NOTGT n=51 0/0
+BB48 REFUSE NOTGT n=76 0/0
+L4R45 L4REPAIR rnd=284 tile=2,15 face=NORTH feed=belt id=12
+BB48 REFUSE NOTGT n=101 0/0
+BB48 REFUSE NOTGT n=126 0/0
+tree=scratchpad/s52_v539_build/arms/v539_1_floor	map=atoll	harv_built_pre=2	harv_built_post=2	first_rebuild_rnd=252	conv_built_pre=5	conv_built_post=5	famine_rnd=121	mouth_rounds_post=85	deliv_sightings_post=22	run_raised=0	turret_built_post=2	afford_sentinel_rounds=36	sentinel_bar_ti=107	ti_final=115	final_harvesters=2	seed=100
+BB48 REFUSE NOTGT n=1 0/0
+BB48 REFUSE NOTGT n=1 0/0
+BB48 REFUSE TI n=1 37/48
+BB48 REFUSE NOTGT n=1 0/0
+BB48 REFUSE TI n=26 14/53
+BB48 REFUSE TI n=51 14/53
+BB48 REFUSE TI n=76 14/53
+BB48 REFUSE TI n=101 15/50
+BB48 REFUSE NOTGT n=26 0/0
+BB48 REFUSE TI n=126 16/54
+BB48 REFUSE TI n=151 16/54
+BB48 REFUSE TI n=176 19/54
+BB48 REFUSE NOTGT n=51 0/0
+BB48 REFUSE NOTGT n=76 0/0
+L4R45 L4REPAIR rnd=296 tile=2,15 face=NORTH feed=belt id=12
+BB48 REFUSE NOTGT n=101 0/0
+tree=_v537socket	map=atoll	harv_built_pre=2	harv_built_post=2	first_rebuild_rnd=264	conv_built_pre=5	conv_built_post=5	famine_rnd=-1	mouth_rounds_post=73	deliv_sightings_post=19	run_raised=0	turret_built_post=2	afford_sentinel_rounds=35	sentinel_bar_ti=107	ti_final=85	final_harvesters=2	seed=130
+BB48 REFUSE NOTGT n=1 0/0
+BB48 REFUSE NOTGT n=1 0/0
+BB48 REFUSE TI n=1 37/48
+BB48 REFUSE NOTGT n=1 0/0
+BB48 REFUSE TI n=26 14/53
+BB48 REFUSE TI n=51 14/53
+BB48 REFUSE TI n=76 14/53
+BB48 REFUSE TI n=101 15/50
+BB48 REFUSE TI n=126 31/51
+BB48 REFUSE NOTGT n=26 0/0
+BB48 REFUSE TI n=151 16/55
+BB48 REFUSE TI n=176 16/55
+BB48 REFUSE TI n=201 33/55
+BB48 REFUSE NOTGT n=51 0/0
+BB48 REFUSE NOTGT n=76 0/0
+L4R45 L4REPAIR rnd=328 tile=2,15 face=NORTH feed=belt id=12
+tree=_v539resilience	map=atoll	harv_built_pre=2	harv_built_post=2	first_rebuild_rnd=154	conv_built_pre=5	conv_built_post=5	famine_rnd=153	mouth_rounds_post=183	deliv_sightings_post=46	run_raised=0	turret_built_post=2	afford_sentinel_rounds=18	sentinel_bar_ti=107	ti_final=84	final_harvesters=2	seed=130
+BB48 REFUSE NOTGT n=1 0/0
+BB48 REFUSE NOTGT n=1 0/0
+BB48 REFUSE TI n=1 37/48
+BB48 REFUSE NOTGT n=1 0/0
+BB48 REFUSE TI n=26 14/53
+BB48 REFUSE TI n=51 14/53
+BB48 REFUSE TI n=76 14/53
+BB48 REFUSE TI n=101 15/50
+BB48 REFUSE NOTGT n=26 0/0
+BB48 REFUSE TI n=126 16/54
+BB48 REFUSE TI n=151 16/54
+BB48 REFUSE TI n=176 19/54
+BB48 REFUSE NOTGT n=51 0/0
+BB48 REFUSE NOTGT n=76 0/0
+L4R45 L4REPAIR rnd=296 tile=2,15 face=NORTH feed=belt id=12
+BB48 REFUSE NOTGT n=101 0/0
+tree=scratchpad/s52_v539_build/arms/v539_1_floor	map=atoll	harv_built_pre=2	harv_built_post=2	first_rebuild_rnd=264	conv_built_pre=5	conv_built_post=5	famine_rnd=153	mouth_rounds_post=73	deliv_sightings_post=19	run_raised=0	turret_built_post=2	afford_sentinel_rounds=35	sentinel_bar_ti=107	ti_final=85	final_harvesters=2	seed=130
+BB48 REFUSE NOTGT n=1 0/0
+BB48 REFUSE NOTGT n=1 0/0
+BB48 REFUSE TI n=1 37/48
+BB48 REFUSE NOTGT n=1 0/0
+BB48 REFUSE TI n=26 14/53
+BB48 REFUSE TI n=51 14/53
+BB48 REFUSE TI n=76 14/53
+BB48 REFUSE TI n=101 14/57
+BB48 REFUSE TI n=126 16/54
+BB48 REFUSE TI n=151 16/54
+BB48 REFUSE TI n=176 33/54
+BB48 REFUSE NOTGT n=26 0/0
+BB48 REFUSE NOTGT n=51 0/0
+BB48 REFUSE NOTGT n=76 0/0
+BB48 REFUSE NOTGT n=101 0/0
+L4R45 L4REPAIR rnd=324 tile=2,15 face=NORTH feed=belt id=12
+BB48 REFUSE NOTGT n=126 0/0
+tree=_v537socket	map=atoll	harv_built_pre=2	harv_built_post=2	first_rebuild_rnd=288	conv_built_pre=5	conv_built_post=5	famine_rnd=-1	mouth_rounds_post=49	deliv_sightings_post=13	run_raised=0	turret_built_post=1	afford_sentinel_rounds=31	sentinel_bar_ti=107	ti_final=102	final_harvesters=2	seed=160
+BB48 REFUSE NOTGT n=1 0/0
+BB48 REFUSE NOTGT n=1 0/0
+BB48 REFUSE TI n=1 37/48
+BB48 REFUSE NOTGT n=1 0/0
+BB48 REFUSE TI n=26 14/53
+BB48 REFUSE TI n=51 14/53
+BB48 REFUSE TI n=76 14/53
+BB48 REFUSE TI n=101 14/57
+BB48 REFUSE TI n=126 16/54
+BB48 REFUSE TI n=151 16/54
+BB48 REFUSE TI n=176 33/54
+BB48 REFUSE NOTGT n=26 0/0
+BB48 REFUSE NOTGT n=51 0/0
+BB48 REFUSE NOTGT n=76 0/0
+BB48 REFUSE NOTGT n=101 0/0
+L4R45 L4REPAIR rnd=324 tile=2,15 face=NORTH feed=belt id=12
+BB48 REFUSE NOTGT n=126 0/0
+tree=_v539resilience	map=atoll	harv_built_pre=2	harv_built_post=2	first_rebuild_rnd=288	conv_built_pre=5	conv_built_post=5	famine_rnd=181	mouth_rounds_post=49	deliv_sightings_post=13	run_raised=0	turret_built_post=1	afford_sentinel_rounds=31	sentinel_bar_ti=107	ti_final=102	final_harvesters=2	seed=160
+BB48 REFUSE NOTGT n=1 0/0
+BB48 REFUSE NOTGT n=1 0/0
+BB48 REFUSE TI n=1 37/48
+BB48 REFUSE NOTGT n=1 0/0
+BB48 REFUSE TI n=26 14/53
+BB48 REFUSE TI n=51 14/53
+BB48 REFUSE TI n=76 14/53
+BB48 REFUSE TI n=101 14/57
+BB48 REFUSE TI n=126 16/54
+BB48 REFUSE TI n=151 16/54
+BB48 REFUSE TI n=176 33/54
+BB48 REFUSE NOTGT n=26 0/0
+BB48 REFUSE NOTGT n=51 0/0
+BB48 REFUSE NOTGT n=76 0/0
+BB48 REFUSE NOTGT n=101 0/0
+L4R45 L4REPAIR rnd=324 tile=2,15 face=NORTH feed=belt id=12
+BB48 REFUSE NOTGT n=126 0/0
+tree=scratchpad/s52_v539_build/arms/v539_1_floor	map=atoll	harv_built_pre=2	harv_built_post=2	first_rebuild_rnd=288	conv_built_pre=5	conv_built_post=5	famine_rnd=181	mouth_rounds_post=49	deliv_sightings_post=13	run_raised=0	turret_built_post=1	afford_sentinel_rounds=31	sentinel_bar_ti=107	ti_final=102	final_harvesters=2	seed=160
+BB48 REFUSE NOTGT n=1 0/0
+BB48 REFUSE NOTGT n=1 0/0
+BB48 REFUSE TI n=1 37/48
+BB48 REFUSE NOTGT n=1 0/0
+BB48 REFUSE TI n=26 14/53
+BB48 REFUSE TI n=51 14/53
+BB48 REFUSE TI n=76 14/53
+BB48 REFUSE TI n=101 14/57
+BB48 REFUSE TI n=126 16/57
+BB48 REFUSE TI n=151 15/54
+BB48 REFUSE TI n=176 43/54
+BB48 REFUSE NOTGT n=26 0/0
+BB48 REFUSE NOTGT n=51 0/0
+BB48 REFUSE NOTGT n=76 0/0
+BB48 REFUSE NOTGT n=101 0/0
+BB48 REFUSE TI n=201 52/66
+tree=_v537socket	map=atoll	harv_built_pre=2	harv_built_post=0	first_rebuild_rnd=-1	conv_built_pre=5	conv_built_post=0	famine_rnd=-1	mouth_rounds_post=0	deliv_sightings_post=0	run_raised=0	turret_built_post=3	afford_sentinel_rounds=27	sentinel_bar_ti=115	ti_final=92	final_harvesters=0	seed=190
+BB48 REFUSE NOTGT n=1 0/0
+BB48 REFUSE NOTGT n=1 0/0
+BB48 REFUSE TI n=1 37/48
+BB48 REFUSE NOTGT n=1 0/0
+BB48 REFUSE TI n=26 14/53
+BB48 REFUSE TI n=51 14/53
+BB48 REFUSE TI n=76 14/53
+BB48 REFUSE TI n=101 14/57
+BB48 REFUSE TI n=126 16/57
+BB48 REFUSE TI n=151 15/54
+BB48 REFUSE TI n=176 43/54
+BB48 REFUSE TI n=201 43/55
+BB48 REFUSE NOTGT n=26 0/0
+BB48 REFUSE NOTGT n=51 0/0
+BB48 REFUSE NOTGT n=76 0/0
+L4R45 L4REPAIR rnd=316 tile=2,15 face=NORTH feed=belt id=12
+tree=_v539resilience	map=atoll	harv_built_pre=2	harv_built_post=2	first_rebuild_rnd=224	conv_built_pre=5	conv_built_post=5	famine_rnd=213	mouth_rounds_post=112	deliv_sightings_post=28	run_raised=0	turret_built_post=1	afford_sentinel_rounds=19	sentinel_bar_ti=107	ti_final=114	final_harvesters=2	seed=190
+BB48 REFUSE NOTGT n=1 0/0
+BB48 REFUSE NOTGT n=1 0/0
+BB48 REFUSE TI n=1 37/48
+BB48 REFUSE NOTGT n=1 0/0
+BB48 REFUSE TI n=26 14/53
+BB48 REFUSE TI n=51 14/53
+BB48 REFUSE TI n=76 14/53
+BB48 REFUSE TI n=101 14/57
+BB48 REFUSE TI n=126 16/57
+BB48 REFUSE TI n=151 15/54
+BB48 REFUSE TI n=176 43/54
+BB48 REFUSE NOTGT n=26 0/0
+BB48 REFUSE NOTGT n=51 0/0
+BB48 REFUSE NOTGT n=76 0/0
+BB48 REFUSE NOTGT n=101 0/0
+BB48 REFUSE TI n=201 52/66
+tree=scratchpad/s52_v539_build/arms/v539_1_floor	map=atoll	harv_built_pre=2	harv_built_post=0	first_rebuild_rnd=-1	conv_built_pre=5	conv_built_post=0	famine_rnd=213	mouth_rounds_post=0	deliv_sightings_post=0	run_raised=0	turret_built_post=3	afford_sentinel_rounds=27	sentinel_bar_ti=115	ti_final=92	final_harvesters=0	seed=190
+BB48 REFUSE NOTGT n=1 0/0
+BB48 REFUSE NOTGT n=1 0/0
+BB48 REFUSE TI n=1 37/48
+BB48 REFUSE NOTGT n=1 0/0
+BB48 REFUSE TI n=26 14/53
+BB48 REFUSE TI n=51 14/53
+BB48 REFUSE TI n=76 14/53
+BB48 REFUSE TI n=101 14/57
+BB48 REFUSE TI n=126 16/57
+BB48 REFUSE TI n=151 16/57
+BB48 REFUSE TI n=176 54/57
+BB48 REFUSE NOTGT n=26 0/0
+BB48 REFUSE NOTGT n=51 0/0
+BB48 REFUSE TI n=201 54/58
+BB48 REFUSE NOTGT n=76 0/0
+BB48 REFUSE NOTGT n=101 0/0
+tree=_v537socket	map=atoll	harv_built_pre=2	harv_built_post=0	first_rebuild_rnd=-1	conv_built_pre=5	conv_built_post=0	famine_rnd=-1	mouth_rounds_post=0	deliv_sightings_post=0	run_raised=0	turret_built_post=2	afford_sentinel_rounds=31	sentinel_bar_ti=109	ti_final=137	final_harvesters=0	seed=220
+BB48 REFUSE NOTGT n=1 0/0
+BB48 REFUSE NOTGT n=1 0/0
+BB48 REFUSE TI n=1 37/48
+BB48 REFUSE NOTGT n=1 0/0
+BB48 REFUSE TI n=26 14/53
+BB48 REFUSE TI n=51 14/53
+BB48 REFUSE TI n=76 14/53
+BB48 REFUSE TI n=101 14/57
+BB48 REFUSE TI n=126 16/57
+BB48 REFUSE TI n=151 16/57
+BB48 REFUSE TI n=176 54/57
+BB48 REFUSE NOTGT n=26 0/0
+BB48 REFUSE TI n=201 3/55
+BB48 REFUSE NOTGT n=51 0/0
+BB48 REFUSE TI n=226 52/59
+BB48 REFUSE NOTGT n=76 0/0
+L4R45 L4REPAIR rnd=336 tile=2,15 face=NORTH feed=belt id=12
+tree=_v539resilience	map=atoll	harv_built_pre=2	harv_built_post=2	first_rebuild_rnd=242	conv_built_pre=5	conv_built_post=5	famine_rnd=241	mouth_rounds_post=92	deliv_sightings_post=23	run_raised=0	turret_built_post=1	afford_sentinel_rounds=18	sentinel_bar_ti=107	ti_final=66	final_harvesters=2	seed=220
+BB48 REFUSE NOTGT n=1 0/0
+BB48 REFUSE NOTGT n=1 0/0
+BB48 REFUSE TI n=1 37/48
+BB48 REFUSE NOTGT n=1 0/0
+BB48 REFUSE TI n=26 14/53
+BB48 REFUSE TI n=51 14/53
+BB48 REFUSE TI n=76 14/53
+BB48 REFUSE TI n=101 14/57
+BB48 REFUSE TI n=126 16/57
+BB48 REFUSE TI n=151 16/57
+BB48 REFUSE TI n=176 54/57
+BB48 REFUSE NOTGT n=26 0/0
+BB48 REFUSE NOTGT n=51 0/0
+BB48 REFUSE TI n=201 54/58
+BB48 REFUSE NOTGT n=76 0/0
+BB48 REFUSE NOTGT n=101 0/0
+tree=scratchpad/s52_v539_build/arms/v539_1_floor	map=atoll	harv_built_pre=2	harv_built_post=0	first_rebuild_rnd=-1	conv_built_pre=5	conv_built_post=0	famine_rnd=241	mouth_rounds_post=0	deliv_sightings_post=0	run_raised=0	turret_built_post=2	afford_sentinel_rounds=31	sentinel_bar_ti=109	ti_final=137	final_harvesters=0	seed=220
+BB48 REFUSE NOTGT n=1 0/0
+BB48 REFUSE NOTGT n=1 0/0
+L4R45 L4REPAIR rnd=277 tile=7,10 face=NORTH feed=belt id=5
+L4R45 L4REPAIR rnd=305 tile=8,10 face=WEST feed=belt id=16
+tree=_v537socket	map=eider	harv_built_pre=2	harv_built_post=3	first_rebuild_rnd=268	conv_built_pre=7	conv_built_post=10	famine_rnd=-1	mouth_rounds_post=65	deliv_sightings_post=17	run_raised=0	turret_built_post=2	afford_sentinel_rounds=37	sentinel_bar_ti=104	ti_final=66	final_harvesters=3	seed=100
+BB48 REFUSE NOTGT n=1 0/0
+BB48 REFUSE NOTGT n=1 0/0
+tree=_v539resilience	map=eider	harv_built_pre=2	harv_built_post=3	first_rebuild_rnd=122	conv_built_pre=7	conv_built_post=8	famine_rnd=121	mouth_rounds_post=212	deliv_sightings_post=53	run_raised=0	turret_built_post=2	afford_sentinel_rounds=28	sentinel_bar_ti=103	ti_final=89	final_harvesters=3	seed=100
+BB48 REFUSE NOTGT n=1 0/0
+BB48 REFUSE NOTGT n=1 0/0
+L4R45 L4REPAIR rnd=277 tile=7,10 face=NORTH feed=belt id=5
+L4R45 L4REPAIR rnd=305 tile=8,10 face=WEST feed=belt id=16
+tree=scratchpad/s52_v539_build/arms/v539_1_floor	map=eider	harv_built_pre=2	harv_built_post=3	first_rebuild_rnd=268	conv_built_pre=7	conv_built_post=10	famine_rnd=121	mouth_rounds_post=65	deliv_sightings_post=17	run_raised=0	turret_built_post=2	afford_sentinel_rounds=37	sentinel_bar_ti=104	ti_final=66	final_harvesters=3	seed=100
+BB48 REFUSE NOTGT n=1 0/0
+BB48 REFUSE NOTGT n=1 0/0
+tree=_v537socket	map=eider	harv_built_pre=2	harv_built_post=3	first_rebuild_rnd=248	conv_built_pre=7	conv_built_post=8	famine_rnd=-1	mouth_rounds_post=87	deliv_sightings_post=22	run_raised=0	turret_built_post=1	afford_sentinel_rounds=46	sentinel_bar_ti=103	ti_final=125	final_harvesters=3	seed=130
+BB48 REFUSE NOTGT n=1 0/0
+BB48 REFUSE NOTGT n=1 0/0
+tree=_v539resilience	map=eider	harv_built_pre=2	harv_built_post=3	first_rebuild_rnd=188	conv_built_pre=7	conv_built_post=8	famine_rnd=153	mouth_rounds_post=140	deliv_sightings_post=35	run_raised=0	turret_built_post=1	afford_sentinel_rounds=41	sentinel_bar_ti=103	ti_final=130	final_harvesters=3	seed=130
+BB48 REFUSE NOTGT n=1 0/0
+BB48 REFUSE NOTGT n=1 0/0
+tree=scratchpad/s52_v539_build/arms/v539_1_floor	map=eider	harv_built_pre=2	harv_built_post=3	first_rebuild_rnd=248	conv_built_pre=7	conv_built_post=8	famine_rnd=153	mouth_rounds_post=87	deliv_sightings_post=22	run_raised=0	turret_built_post=1	afford_sentinel_rounds=46	sentinel_bar_ti=103	ti_final=125	final_harvesters=3	seed=130
+BB48 REFUSE NOTGT n=1 0/0
+BB48 REFUSE NOTGT n=1 0/0
+L4R45 L4REPAIR rnd=269 tile=7,10 face=NORTH feed=belt id=5
+L4R45 L4REPAIR rnd=293 tile=8,10 face=WEST feed=belt id=16
+tree=_v537socket	map=eider	harv_built_pre=2	harv_built_post=3	first_rebuild_rnd=260	conv_built_pre=7	conv_built_post=10	famine_rnd=-1	mouth_rounds_post=73	deliv_sightings_post=19	run_raised=0	turret_built_post=1	afford_sentinel_rounds=45	sentinel_bar_ti=104	ti_final=99	final_harvesters=3	seed=160
+BB48 REFUSE NOTGT n=1 0/0
+BB48 REFUSE NOTGT n=1 0/0
+L4R45 L4REPAIR rnd=206 tile=7,10 face=NORTH feed=belt id=5
+L4R45 L4REPAIR rnd=289 tile=8,10 face=WEST feed=belt id=16
+tree=_v539resilience	map=eider	harv_built_pre=2	harv_built_post=3	first_rebuild_rnd=192	conv_built_pre=7	conv_built_post=10	famine_rnd=181	mouth_rounds_post=136	deliv_sightings_post=34	run_raised=0	turret_built_post=1	afford_sentinel_rounds=29	sentinel_bar_ti=104	ti_final=105	final_harvesters=3	seed=160
+BB48 REFUSE NOTGT n=1 0/0
+BB48 REFUSE NOTGT n=1 0/0
+L4R45 L4REPAIR rnd=269 tile=7,10 face=NORTH feed=belt id=5
+L4R45 L4REPAIR rnd=293 tile=8,10 face=WEST feed=belt id=16
+tree=scratchpad/s52_v539_build/arms/v539_1_floor	map=eider	harv_built_pre=2	harv_built_post=3	first_rebuild_rnd=260	conv_built_pre=7	conv_built_post=10	famine_rnd=181	mouth_rounds_post=73	deliv_sightings_post=19	run_raised=0	turret_built_post=1	afford_sentinel_rounds=45	sentinel_bar_ti=104	ti_final=99	final_harvesters=3	seed=160
+BB48 REFUSE NOTGT n=1 0/0
+BB48 REFUSE NOTGT n=1 0/0
+tree=_v537socket	map=eider	harv_built_pre=2	harv_built_post=3	first_rebuild_rnd=272	conv_built_pre=7	conv_built_post=8	famine_rnd=-1	mouth_rounds_post=63	deliv_sightings_post=16	run_raised=0	turret_built_post=1	afford_sentinel_rounds=49	sentinel_bar_ti=103	ti_final=80	final_harvesters=3	seed=190
+BB48 REFUSE NOTGT n=1 0/0
+BB48 REFUSE NOTGT n=1 0/0
+L4R45 L4REPAIR rnd=223 tile=7,10 face=NORTH feed=belt id=5
+L4R45 L4REPAIR rnd=305 tile=8,10 face=WEST feed=belt id=16
+tree=_v539resilience	map=eider	harv_built_pre=2	harv_built_post=3	first_rebuild_rnd=214	conv_built_pre=7	conv_built_post=10	famine_rnd=213	mouth_rounds_post=119	deliv_sightings_post=30	run_raised=0	turret_built_post=1	afford_sentinel_rounds=28	sentinel_bar_ti=104	ti_final=70	final_harvesters=3	seed=190
+BB48 REFUSE NOTGT n=1 0/0
+BB48 REFUSE NOTGT n=1 0/0
+tree=scratchpad/s52_v539_build/arms/v539_1_floor	map=eider	harv_built_pre=2	harv_built_post=3	first_rebuild_rnd=272	conv_built_pre=7	conv_built_post=8	famine_rnd=213	mouth_rounds_post=63	deliv_sightings_post=16	run_raised=0	turret_built_post=1	afford_sentinel_rounds=49	sentinel_bar_ti=103	ti_final=80	final_harvesters=3	seed=190
+BB48 REFUSE NOTGT n=1 0/0
+BB48 REFUSE NOTGT n=1 0/0
+L4R45 L4REPAIR rnd=285 tile=7,10 face=NORTH feed=belt id=5
+L4R45 L4REPAIR rnd=317 tile=8,10 face=WEST feed=belt id=16
+tree=_v537socket	map=eider	harv_built_pre=2	harv_built_post=3	first_rebuild_rnd=276	conv_built_pre=7	conv_built_post=8	famine_rnd=-1	mouth_rounds_post=57	deliv_sightings_post=15	run_raised=0	turret_built_post=0	afford_sentinel_rounds=48	sentinel_bar_ti=103	ti_final=75	final_harvesters=3	seed=220
+BB48 REFUSE NOTGT n=1 0/0
+BB48 REFUSE NOTGT n=1 0/0
+tree=_v539resilience	map=eider	harv_built_pre=2	harv_built_post=3	first_rebuild_rnd=242	conv_built_pre=7	conv_built_post=8	famine_rnd=241	mouth_rounds_post=88	deliv_sightings_post=22	run_raised=0	turret_built_post=0	afford_sentinel_rounds=31	sentinel_bar_ti=103	ti_final=75	final_harvesters=3	seed=220
+BB48 REFUSE NOTGT n=1 0/0
+BB48 REFUSE NOTGT n=1 0/0
+L4R45 L4REPAIR rnd=285 tile=7,10 face=NORTH feed=belt id=5
+L4R45 L4REPAIR rnd=317 tile=8,10 face=WEST feed=belt id=16
+tree=scratchpad/s52_v539_build/arms/v539_1_floor	map=eider	harv_built_pre=2	harv_built_post=3	first_rebuild_rnd=276	conv_built_pre=7	conv_built_post=8	famine_rnd=241	mouth_rounds_post=57	deliv_sightings_post=15	run_raised=0	turret_built_post=0	afford_sentinel_rounds=48	sentinel_bar_ti=103	ti_final=75	final_harvesters=3	seed=220
+BB48 REFUSE EARLY n=1 0/0
+L4R45 L4REPAIR rnd=5 tile=7,10 face=NORTH feed=belt id=3
+L4R45 L4REPAIR rnd=6 tile=8,10 face=WEST feed=belt id=8
+BB48 REFUSE NOTGT n=1 0/0
+BB48 REFUSE TI n=1 40/49
+BB48 REFUSE TI n=1 33/49
+BB48 REFUSE TI n=26 5/52
+L4R45 L4REPAIR rnd=50 tile=8,9 face=WEST feed=belt id=3
+BB48 REFUSE NOTGT n=1 0/0
+BB48 REFUSE NOTGT n=26 0/0
+BB48 REFUSE TI n=51 5/48
+BB48 REFUSE TI n=26 5/48
+BB48 REFUSE TI n=76 19/49
+BB48 REFUSE TI n=101 16/51
+BB48 REFUSE TI n=126 21/53
+BB48 REFUSE TI n=51 24/53
+BB48 REFUSE TI n=151 20/55
+BB48 REFUSE NOTGT n=51 0/0
+BB48 REFUSE NOTGT n=76 0/0
+BB48 REFUSE NOTGT n=26 0/0
+BB48 REFUSE NOTGT n=101 0/0
+BB48 REFUSE NOTGT n=126 0/0
+tree=_v537socket	map=heart	harv_built_pre=3	harv_built_post=3	first_rebuild_rnd=128	conv_built_pre=25	conv_built_post=16	famine_rnd=-1	mouth_rounds_post=184	deliv_sightings_post=46	run_raised=0	turret_built_post=1	afford_sentinel_rounds=63	sentinel_bar_ti=107	ti_final=189	final_harvesters=3	seed=100
+BB48 REFUSE EARLY n=1 0/0
+L4R45 L4REPAIR rnd=5 tile=7,10 face=NORTH feed=belt id=3
+L4R45 L4REPAIR rnd=6 tile=8,10 face=WEST feed=belt id=8
+BB48 REFUSE NOTGT n=1 0/0
+BB48 REFUSE TI n=1 40/49
+BB48 REFUSE TI n=1 33/49
+BB48 REFUSE TI n=26 5/52
+L4R45 L4REPAIR rnd=50 tile=8,9 face=WEST feed=belt id=3
+BB48 REFUSE NOTGT n=1 0/0
+BB48 REFUSE NOTGT n=26 0/0
+BB48 REFUSE TI n=51 5/48
+BB48 REFUSE TI n=26 5/48
+BB48 REFUSE TI n=76 9/49
+BB48 REFUSE TI n=101 6/51
+BB48 REFUSE TI n=126 18/52
+BB48 REFUSE TI n=51 24/53
+BB48 REFUSE TI n=151 18/54
+BB48 REFUSE NOTGT n=51 0/0
+BB48 REFUSE NOTGT n=76 0/0
+BB48 REFUSE NOTGT n=26 0/0
+BB48 REFUSE NOTGT n=101 0/0
+BB48 REFUSE NOTGT n=126 0/0
+tree=_v539resilience	map=heart	harv_built_pre=3	harv_built_post=3	first_rebuild_rnd=124	conv_built_pre=25	conv_built_post=16	famine_rnd=121	mouth_rounds_post=188	deliv_sightings_post=47	run_raised=0	turret_built_post=1	afford_sentinel_rounds=63	sentinel_bar_ti=107	ti_final=189	final_harvesters=3	seed=100
+BB48 REFUSE EARLY n=1 0/0
+L4R45 L4REPAIR rnd=5 tile=7,10 face=NORTH feed=belt id=3
+L4R45 L4REPAIR rnd=6 tile=8,10 face=WEST feed=belt id=8
+BB48 REFUSE NOTGT n=1 0/0
+BB48 REFUSE TI n=1 40/49
+BB48 REFUSE TI n=1 33/49
+BB48 REFUSE TI n=26 5/52
+L4R45 L4REPAIR rnd=50 tile=8,9 face=WEST feed=belt id=3
+BB48 REFUSE NOTGT n=1 0/0
+BB48 REFUSE NOTGT n=26 0/0
+BB48 REFUSE TI n=51 5/48
+BB48 REFUSE TI n=26 5/48
+BB48 REFUSE TI n=76 19/49
+BB48 REFUSE TI n=101 16/51
+BB48 REFUSE TI n=126 21/53
+BB48 REFUSE TI n=51 24/53
+BB48 REFUSE TI n=151 20/55
+BB48 REFUSE NOTGT n=51 0/0
+BB48 REFUSE NOTGT n=76 0/0
+BB48 REFUSE NOTGT n=26 0/0
+BB48 REFUSE NOTGT n=101 0/0
+BB48 REFUSE NOTGT n=126 0/0
+tree=scratchpad/s52_v539_build/arms/v539_1_floor	map=heart	harv_built_pre=3	harv_built_post=3	first_rebuild_rnd=128	conv_built_pre=25	conv_built_post=16	famine_rnd=121	mouth_rounds_post=184	deliv_sightings_post=46	run_raised=0	turret_built_post=1	afford_sentinel_rounds=63	sentinel_bar_ti=107	ti_final=189	final_harvesters=3	seed=100
+BB48 REFUSE EARLY n=1 0/0
+L4R45 L4REPAIR rnd=5 tile=7,10 face=NORTH feed=belt id=3
+L4R45 L4REPAIR rnd=6 tile=8,10 face=WEST feed=belt id=8
+BB48 REFUSE NOTGT n=1 0/0
+BB48 REFUSE TI n=1 40/49
+BB48 REFUSE TI n=1 33/49
+BB48 REFUSE TI n=26 5/52
+L4R45 L4REPAIR rnd=50 tile=8,9 face=WEST feed=belt id=3
+BB48 REFUSE NOTGT n=1 0/0
+BB48 REFUSE NOTGT n=26 0/0
+BB48 REFUSE NOTGT n=26 0/0
+BB48 REFUSE NOTGT n=51 0/0
+BB48 REFUSE TI n=51 44/60
+BB48 REFUSE TI n=76 25/53
+BB48 REFUSE TI n=26 19/55
+BB48 REFUSE TI n=101 21/55
+BB48 REFUSE TI n=126 24/57
+BB48 REFUSE TI n=151 52/58
+BB48 REFUSE TI n=51 30/59
+BB48 REFUSE TI n=176 40/59
+BB48 REFUSE NOTGT n=76 0/0
+BB48 REFUSE NOTGT n=101 0/0
+BB48 REFUSE NOTGT n=126 0/0
+tree=_v537socket	map=heart	harv_built_pre=3	harv_built_post=3	first_rebuild_rnd=160	conv_built_pre=25	conv_built_post=19	famine_rnd=-1	mouth_rounds_post=150	deliv_sightings_post=38	run_raised=0	turret_built_post=0	afford_sentinel_rounds=30	sentinel_bar_ti=108	ti_final=151	final_harvesters=3	seed=130
+BB48 REFUSE EARLY n=1 0/0
+L4R45 L4REPAIR rnd=5 tile=7,10 face=NORTH feed=belt id=3
+L4R45 L4REPAIR rnd=6 tile=8,10 face=WEST feed=belt id=8
+BB48 REFUSE NOTGT n=1 0/0
+BB48 REFUSE TI n=1 40/49
+BB48 REFUSE TI n=1 33/49
+BB48 REFUSE TI n=26 5/52
+L4R45 L4REPAIR rnd=50 tile=8,9 face=WEST feed=belt id=3
+BB48 REFUSE NOTGT n=1 0/0
+BB48 REFUSE NOTGT n=26 0/0
+BB48 REFUSE NOTGT n=26 0/0
+BB48 REFUSE NOTGT n=51 0/0
+BB48 REFUSE TI n=51 44/60
+BB48 REFUSE TI n=76 15/53
+BB48 REFUSE TI n=101 3/55
+BB48 REFUSE TI n=26 3/55
+BB48 REFUSE TI n=126 20/56
+BB48 REFUSE TI n=151 32/58
+BB48 REFUSE TI n=176 20/59
+BB48 REFUSE TI n=51 30/59
+BB48 REFUSE NOTGT n=76 0/0
+BB48 REFUSE NOTGT n=101 0/0
+BB48 REFUSE NOTGT n=126 0/0
+tree=_v539resilience	map=heart	harv_built_pre=3	harv_built_post=3	first_rebuild_rnd=154	conv_built_pre=25	conv_built_post=19	famine_rnd=153	mouth_rounds_post=156	deliv_sightings_post=39	run_raised=0	turret_built_post=0	afford_sentinel_rounds=30	sentinel_bar_ti=108	ti_final=151	final_harvesters=3	seed=130
+BB48 REFUSE EARLY n=1 0/0
+L4R45 L4REPAIR rnd=5 tile=7,10 face=NORTH feed=belt id=3
+L4R45 L4REPAIR rnd=6 tile=8,10 face=WEST feed=belt id=8
+BB48 REFUSE NOTGT n=1 0/0
+BB48 REFUSE TI n=1 40/49
+BB48 REFUSE TI n=1 33/49
+BB48 REFUSE TI n=26 5/52
+L4R45 L4REPAIR rnd=50 tile=8,9 face=WEST feed=belt id=3
+BB48 REFUSE NOTGT n=1 0/0
+BB48 REFUSE NOTGT n=26 0/0
+BB48 REFUSE NOTGT n=26 0/0
+BB48 REFUSE NOTGT n=51 0/0
+BB48 REFUSE TI n=51 44/60
+BB48 REFUSE TI n=76 25/53
+BB48 REFUSE TI n=26 19/55
+BB48 REFUSE TI n=101 21/55
+BB48 REFUSE TI n=126 24/57
+BB48 REFUSE TI n=151 52/58
+BB48 REFUSE TI n=51 30/59
+BB48 REFUSE TI n=176 40/59
+BB48 REFUSE NOTGT n=76 0/0
+BB48 REFUSE NOTGT n=101 0/0
+BB48 REFUSE NOTGT n=126 0/0
+tree=scratchpad/s52_v539_build/arms/v539_1_floor	map=heart	harv_built_pre=3	harv_built_post=3	first_rebuild_rnd=160	conv_built_pre=25	conv_built_post=19	famine_rnd=153	mouth_rounds_post=150	deliv_sightings_post=38	run_raised=0	turret_built_post=0	afford_sentinel_rounds=30	sentinel_bar_ti=108	ti_final=151	final_harvesters=3	seed=130
+BB48 REFUSE EARLY n=1 0/0
+L4R45 L4REPAIR rnd=5 tile=7,10 face=NORTH feed=belt id=3
+L4R45 L4REPAIR rnd=6 tile=8,10 face=WEST feed=belt id=8
+BB48 REFUSE NOTGT n=1 0/0
+BB48 REFUSE TI n=1 40/49
+BB48 REFUSE TI n=1 33/49
+BB48 REFUSE TI n=26 5/52
+L4R45 L4REPAIR rnd=50 tile=8,9 face=WEST feed=belt id=3
+BB48 REFUSE NOTGT n=1 0/0
+BB48 REFUSE NOTGT n=26 0/0
+BB48 REFUSE NOTGT n=26 0/0
+BB48 REFUSE NOTGT n=51 0/0
+BB48 REFUSE TI n=51 44/60
+BB48 REFUSE NOTGT n=76 0/0
+BB48 REFUSE TI n=76 37/52
+BB48 REFUSE TI n=26 47/52
+BB48 REFUSE TI n=101 17/55
+BB48 REFUSE TI n=126 20/56
+BB48 REFUSE TI n=151 56/57
+BB48 REFUSE TI n=51 3/58
+BB48 REFUSE TI n=176 45/59
+BB48 REFUSE NOTGT n=101 0/0
+BB48 REFUSE NOTGT n=126 0/0
+tree=_v537socket	map=heart	harv_built_pre=3	harv_built_post=3	first_rebuild_rnd=192	conv_built_pre=25	conv_built_post=16	famine_rnd=-1	mouth_rounds_post=118	deliv_sightings_post=30	run_raised=0	turret_built_post=0	afford_sentinel_rounds=17	sentinel_bar_ti=107	ti_final=96	final_harvesters=3	seed=160
+BB48 REFUSE EARLY n=1 0/0
+L4R45 L4REPAIR rnd=5 tile=7,10 face=NORTH feed=belt id=3
+L4R45 L4REPAIR rnd=6 tile=8,10 face=WEST feed=belt id=8
+BB48 REFUSE NOTGT n=1 0/0
+BB48 REFUSE TI n=1 40/49
+BB48 REFUSE TI n=1 33/49
+BB48 REFUSE TI n=26 5/52
+L4R45 L4REPAIR rnd=50 tile=8,9 face=WEST feed=belt id=3
+BB48 REFUSE NOTGT n=1 0/0
+BB48 REFUSE NOTGT n=26 0/0
+BB48 REFUSE NOTGT n=26 0/0
+BB48 REFUSE NOTGT n=51 0/0
+BB48 REFUSE TI n=51 44/60
+BB48 REFUSE NOTGT n=76 0/0
+BB48 REFUSE TI n=76 37/52
+BB48 REFUSE TI n=26 47/52
+BB48 REFUSE TI n=101 5/54
+BB48 REFUSE TI n=126 35/55
+BB48 REFUSE TI n=151 36/57
+BB48 REFUSE TI n=51 56/57
+BB48 REFUSE TI n=176 25/59
+BB48 REFUSE NOTGT n=101 0/0
+BB48 REFUSE NOTGT n=126 0/0
+tree=_v539resilience	map=heart	harv_built_pre=3	harv_built_post=3	first_rebuild_rnd=184	conv_built_pre=25	conv_built_post=16	famine_rnd=181	mouth_rounds_post=124	deliv_sightings_post=31	run_raised=0	turret_built_post=0	afford_sentinel_rounds=17	sentinel_bar_ti=107	ti_final=96	final_harvesters=3	seed=160
+BB48 REFUSE EARLY n=1 0/0
+L4R45 L4REPAIR rnd=5 tile=7,10 face=NORTH feed=belt id=3
+L4R45 L4REPAIR rnd=6 tile=8,10 face=WEST feed=belt id=8
+BB48 REFUSE NOTGT n=1 0/0
+BB48 REFUSE TI n=1 40/49
+BB48 REFUSE TI n=1 33/49
+BB48 REFUSE TI n=26 5/52
+L4R45 L4REPAIR rnd=50 tile=8,9 face=WEST feed=belt id=3
+BB48 REFUSE NOTGT n=1 0/0
+BB48 REFUSE NOTGT n=26 0/0
+BB48 REFUSE NOTGT n=26 0/0
+BB48 REFUSE NOTGT n=51 0/0
+BB48 REFUSE TI n=51 44/60
+BB48 REFUSE NOTGT n=76 0/0
+BB48 REFUSE TI n=76 37/52
+BB48 REFUSE TI n=26 47/52
+BB48 REFUSE TI n=101 17/55
+BB48 REFUSE TI n=126 20/56
+BB48 REFUSE TI n=151 56/57
+BB48 REFUSE TI n=51 3/58
+BB48 REFUSE TI n=176 45/59
+BB48 REFUSE NOTGT n=101 0/0
+BB48 REFUSE NOTGT n=126 0/0
+tree=scratchpad/s52_v539_build/arms/v539_1_floor	map=heart	harv_built_pre=3	harv_built_post=3	first_rebuild_rnd=192	conv_built_pre=25	conv_built_post=16	famine_rnd=181	mouth_rounds_post=118	deliv_sightings_post=30	run_raised=0	turret_built_post=0	afford_sentinel_rounds=17	sentinel_bar_ti=107	ti_final=96	final_harvesters=3	seed=160
+BB48 REFUSE EARLY n=1 0/0
+L4R45 L4REPAIR rnd=5 tile=7,10 face=NORTH feed=belt id=3
+L4R45 L4REPAIR rnd=6 tile=8,10 face=WEST feed=belt id=8
+BB48 REFUSE NOTGT n=1 0/0
+BB48 REFUSE TI n=1 40/49
+BB48 REFUSE TI n=1 33/49
+BB48 REFUSE TI n=26 5/52
+L4R45 L4REPAIR rnd=50 tile=8,9 face=WEST feed=belt id=3
+BB48 REFUSE NOTGT n=1 0/0
+BB48 REFUSE NOTGT n=26 0/0
+BB48 REFUSE NOTGT n=26 0/0
+BB48 REFUSE NOTGT n=51 0/0
+BB48 REFUSE TI n=51 44/60
+BB48 REFUSE NOTGT n=76 0/0
+BB48 REFUSE NOTGT n=101 0/0
+BB48 REFUSE TI n=26 15/54
+BB48 REFUSE TI n=76 47/54
+BB48 REFUSE TI n=101 25/57
+BB48 REFUSE TI n=126 22/58
+BB48 REFUSE TI n=51 26/58
+BB48 REFUSE TI n=151 28/60
+BB48 REFUSE TI n=176 1/61
+tree=_v537socket	map=heart	harv_built_pre=3	harv_built_post=3	first_rebuild_rnd=220	conv_built_pre=25	conv_built_post=19	famine_rnd=-1	mouth_rounds_post=104	deliv_sightings_post=26	run_raised=0	turret_built_post=0	afford_sentinel_rounds=0	sentinel_bar_ti=108	ti_final=51	final_harvesters=3	seed=190
+BB48 REFUSE EARLY n=1 0/0
+L4R45 L4REPAIR rnd=5 tile=7,10 face=NORTH feed=belt id=3
+L4R45 L4REPAIR rnd=6 tile=8,10 face=WEST feed=belt id=8
+BB48 REFUSE NOTGT n=1 0/0
+BB48 REFUSE TI n=1 40/49
+BB48 REFUSE TI n=1 33/49
+BB48 REFUSE TI n=26 5/52
+L4R45 L4REPAIR rnd=50 tile=8,9 face=WEST feed=belt id=3
+BB48 REFUSE NOTGT n=1 0/0
+BB48 REFUSE NOTGT n=26 0/0
+BB48 REFUSE NOTGT n=26 0/0
+BB48 REFUSE NOTGT n=51 0/0
+BB48 REFUSE TI n=51 44/60
+BB48 REFUSE NOTGT n=76 0/0
+BB48 REFUSE NOTGT n=101 0/0
+BB48 REFUSE TI n=26 15/54
+BB48 REFUSE TI n=76 47/54
+BB48 REFUSE TI n=101 29/56
+BB48 REFUSE TI n=126 19/58
+BB48 REFUSE TI n=51 27/58
+BB48 REFUSE TI n=151 23/59
+BB48 REFUSE TI n=176 24/60
+BB48 REFUSE TI n=201 34/61
+tree=_v539resilience	map=heart	harv_built_pre=3	harv_built_post=4	first_rebuild_rnd=214	conv_built_pre=25	conv_built_post=13	famine_rnd=213	mouth_rounds_post=58	deliv_sightings_post=15	run_raised=0	turret_built_post=0	afford_sentinel_rounds=0	sentinel_bar_ti=108	ti_final=44	final_harvesters=4	seed=190
+BB48 REFUSE EARLY n=1 0/0
+L4R45 L4REPAIR rnd=5 tile=7,10 face=NORTH feed=belt id=3
+L4R45 L4REPAIR rnd=6 tile=8,10 face=WEST feed=belt id=8
+BB48 REFUSE NOTGT n=1 0/0
+BB48 REFUSE TI n=1 40/49
+BB48 REFUSE TI n=1 33/49
+BB48 REFUSE TI n=26 5/52
+L4R45 L4REPAIR rnd=50 tile=8,9 face=WEST feed=belt id=3
+BB48 REFUSE NOTGT n=1 0/0
+BB48 REFUSE NOTGT n=26 0/0
+BB48 REFUSE NOTGT n=26 0/0
+BB48 REFUSE NOTGT n=51 0/0
+BB48 REFUSE TI n=51 44/60
+BB48 REFUSE NOTGT n=76 0/0
+BB48 REFUSE NOTGT n=101 0/0
+BB48 REFUSE TI n=26 15/54
+BB48 REFUSE TI n=76 47/54
+BB48 REFUSE TI n=101 25/57
+BB48 REFUSE TI n=126 22/58
+BB48 REFUSE TI n=51 26/58
+BB48 REFUSE TI n=151 28/60
+BB48 REFUSE TI n=176 1/61
+tree=scratchpad/s52_v539_build/arms/v539_1_floor	map=heart	harv_built_pre=3	harv_built_post=3	first_rebuild_rnd=220	conv_built_pre=25	conv_built_post=19	famine_rnd=213	mouth_rounds_post=104	deliv_sightings_post=26	run_raised=0	turret_built_post=0	afford_sentinel_rounds=0	sentinel_bar_ti=108	ti_final=51	final_harvesters=3	seed=190
+BB48 REFUSE EARLY n=1 0/0
+L4R45 L4REPAIR rnd=5 tile=7,10 face=NORTH feed=belt id=3
+L4R45 L4REPAIR rnd=6 tile=8,10 face=WEST feed=belt id=8
+BB48 REFUSE NOTGT n=1 0/0
+BB48 REFUSE TI n=1 40/49
+BB48 REFUSE TI n=1 33/49
+BB48 REFUSE TI n=26 5/52
+L4R45 L4REPAIR rnd=50 tile=8,9 face=WEST feed=belt id=3
+BB48 REFUSE NOTGT n=1 0/0
+BB48 REFUSE NOTGT n=26 0/0
+BB48 REFUSE NOTGT n=26 0/0
+BB48 REFUSE NOTGT n=51 0/0
+BB48 REFUSE TI n=51 44/60
+BB48 REFUSE NOTGT n=76 0/0
+BB48 REFUSE NOTGT n=101 0/0
+BB48 REFUSE NOTGT n=51 0/0
+BB48 REFUSE NOTGT n=126 0/0
+BB48 REFUSE TI n=76 37/54
+BB48 REFUSE TI n=26 29/56
+BB48 REFUSE TI n=101 39/56
+BB48 REFUSE NOTGT n=151 0/0
+BB48 REFUSE TI n=126 25/58
+BB48 REFUSE TI n=151 53/59
+tree=_v537socket	map=heart	harv_built_pre=3	harv_built_post=3	first_rebuild_rnd=252	conv_built_pre=25	conv_built_post=14	famine_rnd=-1	mouth_rounds_post=26	deliv_sightings_post=7	run_raised=0	turret_built_post=0	afford_sentinel_rounds=0	sentinel_bar_ti=106	ti_final=15	final_harvesters=3	seed=220
+BB48 REFUSE EARLY n=1 0/0
+L4R45 L4REPAIR rnd=5 tile=7,10 face=NORTH feed=belt id=3
+L4R45 L4REPAIR rnd=6 tile=8,10 face=WEST feed=belt id=8
+BB48 REFUSE NOTGT n=1 0/0
+BB48 REFUSE TI n=1 40/49
+BB48 REFUSE TI n=1 33/49
+BB48 REFUSE TI n=26 5/52
+L4R45 L4REPAIR rnd=50 tile=8,9 face=WEST feed=belt id=3
+BB48 REFUSE NOTGT n=1 0/0
+BB48 REFUSE NOTGT n=26 0/0
+BB48 REFUSE NOTGT n=26 0/0
+BB48 REFUSE NOTGT n=51 0/0
+BB48 REFUSE TI n=51 44/60
+BB48 REFUSE NOTGT n=76 0/0
+BB48 REFUSE NOTGT n=101 0/0
+BB48 REFUSE NOTGT n=51 0/0
+BB48 REFUSE NOTGT n=126 0/0
+BB48 REFUSE TI n=76 37/54
+BB48 REFUSE TI n=101 19/56
+BB48 REFUSE TI n=26 29/56
+BB48 REFUSE TI n=126 17/57
+BB48 REFUSE TI n=151 13/59
+BB48 REFUSE TI n=176 14/60
+tree=_v539resilience	map=heart	harv_built_pre=3	harv_built_post=3	first_rebuild_rnd=244	conv_built_pre=25	conv_built_post=13	famine_rnd=241	mouth_rounds_post=26	deliv_sightings_post=7	run_raised=0	turret_built_post=0	afford_sentinel_rounds=0	sentinel_bar_ti=106	ti_final=24	final_harvesters=3	seed=220
+BB48 REFUSE EARLY n=1 0/0
+L4R45 L4REPAIR rnd=5 tile=7,10 face=NORTH feed=belt id=3
+L4R45 L4REPAIR rnd=6 tile=8,10 face=WEST feed=belt id=8
+BB48 REFUSE NOTGT n=1 0/0
+BB48 REFUSE TI n=1 40/49
+BB48 REFUSE TI n=1 33/49
+BB48 REFUSE TI n=26 5/52
+L4R45 L4REPAIR rnd=50 tile=8,9 face=WEST feed=belt id=3
+BB48 REFUSE NOTGT n=1 0/0
+BB48 REFUSE NOTGT n=26 0/0
+BB48 REFUSE NOTGT n=26 0/0
+BB48 REFUSE NOTGT n=51 0/0
+BB48 REFUSE TI n=51 44/60
+BB48 REFUSE NOTGT n=76 0/0
+BB48 REFUSE NOTGT n=101 0/0
+BB48 REFUSE NOTGT n=51 0/0
+BB48 REFUSE NOTGT n=126 0/0
+BB48 REFUSE TI n=76 37/54
+BB48 REFUSE TI n=26 29/56
+BB48 REFUSE TI n=101 39/56
+BB48 REFUSE NOTGT n=151 0/0
+BB48 REFUSE TI n=126 25/58
+BB48 REFUSE TI n=151 53/59
+tree=scratchpad/s52_v539_build/arms/v539_1_floor	map=heart	harv_built_pre=3	harv_built_post=3	first_rebuild_rnd=252	conv_built_pre=25	conv_built_post=14	famine_rnd=241	mouth_rounds_post=26	deliv_sightings_post=7	run_raised=0	turret_built_post=0	afford_sentinel_rounds=0	sentinel_bar_ti=106	ti_final=15	final_harvesters=3	seed=220
+BB48 REFUSE HARV n=1 0/0
+BB48 REFUSE HARV n=1 0/0
+BB48 REFUSE NOTGT n=1 0/0
+BB48 REFUSE NOTGT n=1 0/0
+tree=_v537socket	map=nordkap	harv_built_pre=2	harv_built_post=4	first_rebuild_rnd=232	conv_built_pre=6	conv_built_post=10	famine_rnd=-1	mouth_rounds_post=103	deliv_sightings_post=26	run_raised=0	turret_built_post=1	afford_sentinel_rounds=47	sentinel_bar_ti=100	ti_final=109	final_harvesters=4	seed=100
+BB48 REFUSE HARV n=1 0/0
+BB48 REFUSE HARV n=1 0/0
+BB48 REFUSE NOTGT n=1 0/0
+BB48 REFUSE NOTGT n=1 0/0
+tree=_v539resilience	map=nordkap	harv_built_pre=2	harv_built_post=4	first_rebuild_rnd=122	conv_built_pre=6	conv_built_post=10	famine_rnd=121	mouth_rounds_post=212	deliv_sightings_post=53	run_raised=0	turret_built_post=1	afford_sentinel_rounds=34	sentinel_bar_ti=100	ti_final=111	final_harvesters=4	seed=100
+BB48 REFUSE HARV n=1 0/0
+BB48 REFUSE HARV n=1 0/0
+BB48 REFUSE NOTGT n=1 0/0
+BB48 REFUSE NOTGT n=1 0/0
+tree=scratchpad/s52_v539_build/arms/v539_1_floor	map=nordkap	harv_built_pre=2	harv_built_post=4	first_rebuild_rnd=232	conv_built_pre=6	conv_built_post=10	famine_rnd=121	mouth_rounds_post=103	deliv_sightings_post=26	run_raised=0	turret_built_post=1	afford_sentinel_rounds=47	sentinel_bar_ti=100	ti_final=109	final_harvesters=4	seed=100
+BB48 REFUSE HARV n=1 0/0
+BB48 REFUSE HARV n=1 0/0
+BB48 REFUSE NOTGT n=1 0/0
+BB48 REFUSE NOTGT n=1 0/0
+L4R45 L4REPAIR rnd=330 tile=9,7 face=NORTH feed=belt id=5
+L4R45 L4REPAIR rnd=333 tile=10,9 face=WEST feed=belt id=5
+tree=_v537socket	map=nordkap	harv_built_pre=2	harv_built_post=4	first_rebuild_rnd=220	conv_built_pre=6	conv_built_post=16	famine_rnd=-1	mouth_rounds_post=115	deliv_sightings_post=29	run_raised=0	turret_built_post=0	afford_sentinel_rounds=63	sentinel_bar_ti=101	ti_final=107	final_harvesters=4	seed=130
+BB48 REFUSE HARV n=1 0/0
+BB48 REFUSE HARV n=1 0/0
+BB48 REFUSE NOTGT n=1 0/0
+BB48 REFUSE NOTGT n=1 0/0
+L4R45 L4REPAIR rnd=330 tile=9,7 face=NORTH feed=belt id=5
+L4R45 L4REPAIR rnd=333 tile=10,9 face=WEST feed=belt id=5
+tree=_v539resilience	map=nordkap	harv_built_pre=2	harv_built_post=4	first_rebuild_rnd=188	conv_built_pre=6	conv_built_post=16	famine_rnd=153	mouth_rounds_post=144	deliv_sightings_post=36	run_raised=0	turret_built_post=0	afford_sentinel_rounds=46	sentinel_bar_ti=101	ti_final=107	final_harvesters=4	seed=130
+BB48 REFUSE HARV n=1 0/0
+BB48 REFUSE HARV n=1 0/0
+BB48 REFUSE NOTGT n=1 0/0
+BB48 REFUSE NOTGT n=1 0/0
+L4R45 L4REPAIR rnd=330 tile=9,7 face=NORTH feed=belt id=5
+L4R45 L4REPAIR rnd=333 tile=10,9 face=WEST feed=belt id=5
+tree=scratchpad/s52_v539_build/arms/v539_1_floor	map=nordkap	harv_built_pre=2	harv_built_post=4	first_rebuild_rnd=220	conv_built_pre=6	conv_built_post=16	famine_rnd=153	mouth_rounds_post=115	deliv_sightings_post=29	run_raised=0	turret_built_post=0	afford_sentinel_rounds=63	sentinel_bar_ti=101	ti_final=107	final_harvesters=4	seed=130
+BB48 REFUSE HARV n=1 0/0
+BB48 REFUSE HARV n=1 0/0
+BB48 REFUSE NOTGT n=1 0/0
+BB48 REFUSE NOTGT n=1 0/0
+L4R45 L4REPAIR rnd=336 tile=9,7 face=NORTH feed=belt id=5
+L4R45 L4REPAIR rnd=339 tile=10,9 face=WEST feed=belt id=5
+tree=_v537socket	map=nordkap	harv_built_pre=2	harv_built_post=4	first_rebuild_rnd=224	conv_built_pre=6	conv_built_post=16	famine_rnd=-1	mouth_rounds_post=111	deliv_sightings_post=28	run_raised=0	turret_built_post=0	afford_sentinel_rounds=75	sentinel_bar_ti=101	ti_final=97	final_harvesters=4	seed=160
+BB48 REFUSE HARV n=1 0/0
+BB48 REFUSE HARV n=1 0/0
+BB48 REFUSE NOTGT n=1 0/0
+BB48 REFUSE NOTGT n=1 0/0
+L4R45 L4REPAIR rnd=336 tile=9,7 face=NORTH feed=belt id=5
+L4R45 L4REPAIR rnd=339 tile=10,9 face=WEST feed=belt id=5
+tree=_v539resilience	map=nordkap	harv_built_pre=2	harv_built_post=4	first_rebuild_rnd=192	conv_built_pre=6	conv_built_post=16	famine_rnd=181	mouth_rounds_post=140	deliv_sightings_post=35	run_raised=0	turret_built_post=0	afford_sentinel_rounds=58	sentinel_bar_ti=101	ti_final=97	final_harvesters=4	seed=160
+BB48 REFUSE HARV n=1 0/0
+BB48 REFUSE HARV n=1 0/0
+BB48 REFUSE NOTGT n=1 0/0
+BB48 REFUSE NOTGT n=1 0/0
+L4R45 L4REPAIR rnd=336 tile=9,7 face=NORTH feed=belt id=5
+L4R45 L4REPAIR rnd=339 tile=10,9 face=WEST feed=belt id=5
+tree=scratchpad/s52_v539_build/arms/v539_1_floor	map=nordkap	harv_built_pre=2	harv_built_post=4	first_rebuild_rnd=224	conv_built_pre=6	conv_built_post=16	famine_rnd=181	mouth_rounds_post=111	deliv_sightings_post=28	run_raised=0	turret_built_post=0	afford_sentinel_rounds=75	sentinel_bar_ti=101	ti_final=97	final_harvesters=4	seed=160
+BB48 REFUSE HARV n=1 0/0
+BB48 REFUSE HARV n=1 0/0
+BB48 REFUSE NOTGT n=1 0/0
+BB48 REFUSE NOTGT n=1 0/0
+tree=_v537socket	map=nordkap	harv_built_pre=2	harv_built_post=4	first_rebuild_rnd=240	conv_built_pre=6	conv_built_post=10	famine_rnd=-1	mouth_rounds_post=95	deliv_sightings_post=24	run_raised=0	turret_built_post=0	afford_sentinel_rounds=63	sentinel_bar_ti=100	ti_final=103	final_harvesters=4	seed=190
+BB48 REFUSE HARV n=1 0/0
+BB48 REFUSE HARV n=1 0/0
+BB48 REFUSE NOTGT n=1 0/0
+BB48 REFUSE NOTGT n=1 0/0
+tree=_v539resilience	map=nordkap	harv_built_pre=2	harv_built_post=4	first_rebuild_rnd=214	conv_built_pre=6	conv_built_post=10	famine_rnd=213	mouth_rounds_post=121	deliv_sightings_post=31	run_raised=0	turret_built_post=0	afford_sentinel_rounds=46	sentinel_bar_ti=100	ti_final=103	final_harvesters=4	seed=190
+BB48 REFUSE HARV n=1 0/0
+BB48 REFUSE HARV n=1 0/0
+BB48 REFUSE NOTGT n=1 0/0
+BB48 REFUSE NOTGT n=1 0/0
+tree=scratchpad/s52_v539_build/arms/v539_1_floor	map=nordkap	harv_built_pre=2	harv_built_post=4	first_rebuild_rnd=240	conv_built_pre=6	conv_built_post=10	famine_rnd=213	mouth_rounds_post=95	deliv_sightings_post=24	run_raised=0	turret_built_post=0	afford_sentinel_rounds=63	sentinel_bar_ti=100	ti_final=103	final_harvesters=4	seed=190
+BB48 REFUSE HARV n=1 0/0
+BB48 REFUSE HARV n=1 0/0
+BB48 REFUSE NOTGT n=1 0/0
+BB48 REFUSE NOTGT n=1 0/0
+tree=_v537socket	map=nordkap	harv_built_pre=3	harv_built_post=3	first_rebuild_rnd=272	conv_built_pre=11	conv_built_post=5	famine_rnd=-1	mouth_rounds_post=116	deliv_sightings_post=17	run_raised=0	turret_built_post=0	afford_sentinel_rounds=53	sentinel_bar_ti=97	ti_final=116	final_harvesters=3	seed=220
+BB48 REFUSE HARV n=1 0/0
+BB48 REFUSE HARV n=1 0/0
+BB48 REFUSE NOTGT n=1 0/0
+BB48 REFUSE NOTGT n=1 0/0
+tree=_v539resilience	map=nordkap	harv_built_pre=3	harv_built_post=3	first_rebuild_rnd=244	conv_built_pre=11	conv_built_post=5	famine_rnd=241	mouth_rounds_post=116	deliv_sightings_post=24	run_raised=0	turret_built_post=0	afford_sentinel_rounds=40	sentinel_bar_ti=97	ti_final=116	final_harvesters=3	seed=220
+BB48 REFUSE HARV n=1 0/0
+BB48 REFUSE HARV n=1 0/0
+BB48 REFUSE NOTGT n=1 0/0
+BB48 REFUSE NOTGT n=1 0/0
+tree=scratchpad/s52_v539_build/arms/v539_1_floor	map=nordkap	harv_built_pre=3	harv_built_post=3	first_rebuild_rnd=272	conv_built_pre=11	conv_built_post=5	famine_rnd=241	mouth_rounds_post=116	deliv_sightings_post=17	run_raised=0	turret_built_post=0	afford_sentinel_rounds=53	sentinel_bar_ti=97	ti_final=116	final_harvesters=3	seed=220
+BB48 REFUSE NOTGT n=1 0/0
+tree=_v537socket	map=drakkarfjord	harv_built_pre=2	harv_built_post=1	first_rebuild_rnd=302	conv_built_pre=11	conv_built_post=10	famine_rnd=-1	mouth_rounds_post=198	deliv_sightings_post=10	run_raised=0	turret_built_post=1	afford_sentinel_rounds=65	sentinel_bar_ti=95	ti_final=166	final_harvesters=1	seed=100
+BB48 REFUSE NOTGT n=1 0/0
+tree=_v539resilience	map=drakkarfjord	harv_built_pre=2	harv_built_post=1	first_rebuild_rnd=302	conv_built_pre=11	conv_built_post=10	famine_rnd=121	mouth_rounds_post=216	deliv_sightings_post=10	run_raised=0	turret_built_post=1	afford_sentinel_rounds=65	sentinel_bar_ti=95	ti_final=166	final_harvesters=1	seed=100
+BB48 REFUSE NOTGT n=1 0/0
+tree=scratchpad/s52_v539_build/arms/v539_1_floor	map=drakkarfjord	harv_built_pre=2	harv_built_post=1	first_rebuild_rnd=302	conv_built_pre=11	conv_built_post=10	famine_rnd=121	mouth_rounds_post=198	deliv_sightings_post=10	run_raised=0	turret_built_post=1	afford_sentinel_rounds=65	sentinel_bar_ti=95	ti_final=166	final_harvesters=1	seed=100
+BB48 REFUSE NOTGT n=1 0/0
+tree=_v537socket	map=drakkarfjord	harv_built_pre=2	harv_built_post=1	first_rebuild_rnd=314	conv_built_pre=11	conv_built_post=10	famine_rnd=-1	mouth_rounds_post=186	deliv_sightings_post=7	run_raised=0	turret_built_post=1	afford_sentinel_rounds=53	sentinel_bar_ti=95	ti_final=136	final_harvesters=1	seed=130
+BB48 REFUSE NOTGT n=1 0/0
+tree=_v539resilience	map=drakkarfjord	harv_built_pre=2	harv_built_post=1	first_rebuild_rnd=314	conv_built_pre=11	conv_built_post=10	famine_rnd=153	mouth_rounds_post=186	deliv_sightings_post=7	run_raised=0	turret_built_post=1	afford_sentinel_rounds=53	sentinel_bar_ti=95	ti_final=136	final_harvesters=1	seed=130
+BB48 REFUSE NOTGT n=1 0/0
+tree=scratchpad/s52_v539_build/arms/v539_1_floor	map=drakkarfjord	harv_built_pre=2	harv_built_post=1	first_rebuild_rnd=314	conv_built_pre=11	conv_built_post=10	famine_rnd=153	mouth_rounds_post=186	deliv_sightings_post=7	run_raised=0	turret_built_post=1	afford_sentinel_rounds=53	sentinel_bar_ti=95	ti_final=136	final_harvesters=1	seed=130
+BB48 REFUSE NOTGT n=1 0/0
+L4R45 L4REPAIR rnd=293 tile=2,22 face=EAST feed=belt id=4
+tree=_v537socket	map=drakkarfjord	harv_built_pre=2	harv_built_post=1	first_rebuild_rnd=271	conv_built_pre=11	conv_built_post=20	famine_rnd=-1	mouth_rounds_post=110	deliv_sightings_post=18	run_raised=0	turret_built_post=0	afford_sentinel_rounds=29	sentinel_bar_ti=98	ti_final=85	final_harvesters=1	seed=160
+BB48 REFUSE NOTGT n=1 0/0
+L4R45 L4REPAIR rnd=293 tile=2,22 face=EAST feed=belt id=4
+tree=_v539resilience	map=drakkarfjord	harv_built_pre=2	harv_built_post=1	first_rebuild_rnd=271	conv_built_pre=11	conv_built_post=20	famine_rnd=181	mouth_rounds_post=138	deliv_sightings_post=18	run_raised=0	turret_built_post=0	afford_sentinel_rounds=29	sentinel_bar_ti=98	ti_final=85	final_harvesters=1	seed=160
+BB48 REFUSE NOTGT n=1 0/0
+L4R45 L4REPAIR rnd=293 tile=2,22 face=EAST feed=belt id=4
+tree=scratchpad/s52_v539_build/arms/v539_1_floor	map=drakkarfjord	harv_built_pre=2	harv_built_post=1	first_rebuild_rnd=271	conv_built_pre=11	conv_built_post=20	famine_rnd=181	mouth_rounds_post=110	deliv_sightings_post=18	run_raised=0	turret_built_post=0	afford_sentinel_rounds=29	sentinel_bar_ti=98	ti_final=85	final_harvesters=1	seed=160
+BB48 REFUSE NOTGT n=1 0/0
+L4R45 L4REPAIR rnd=295 tile=2,22 face=EAST feed=belt id=4
+tree=_v537socket	map=drakkarfjord	harv_built_pre=2	harv_built_post=1	first_rebuild_rnd=273	conv_built_pre=11	conv_built_post=20	famine_rnd=-1	mouth_rounds_post=114	deliv_sightings_post=17	run_raised=0	turret_built_post=0	afford_sentinel_rounds=35	sentinel_bar_ti=98	ti_final=95	final_harvesters=1	seed=190
+BB48 REFUSE NOTGT n=1 0/0
+L4R45 L4REPAIR rnd=282 tile=2,23 face=SOUTH feed=belt id=4
+tree=_v539resilience	map=drakkarfjord	harv_built_pre=2	harv_built_post=1	first_rebuild_rnd=241	conv_built_pre=11	conv_built_post=21	famine_rnd=213	mouth_rounds_post=116	deliv_sightings_post=25	run_raised=0	turret_built_post=0	afford_sentinel_rounds=21	sentinel_bar_ti=98	ti_final=88	final_harvesters=1	seed=190
+BB48 REFUSE NOTGT n=1 0/0
+L4R45 L4REPAIR rnd=295 tile=2,22 face=EAST feed=belt id=4
+tree=scratchpad/s52_v539_build/arms/v539_1_floor	map=drakkarfjord	harv_built_pre=2	harv_built_post=1	first_rebuild_rnd=273	conv_built_pre=11	conv_built_post=20	famine_rnd=213	mouth_rounds_post=114	deliv_sightings_post=17	run_raised=0	turret_built_post=0	afford_sentinel_rounds=35	sentinel_bar_ti=98	ti_final=95	final_harvesters=1	seed=190
+BB48 REFUSE NOTGT n=1 0/0
+L4R45 L4REPAIR rnd=303 tile=4,16 face=WEST feed=belt id=4
+tree=_v537socket	map=drakkarfjord	harv_built_pre=2	harv_built_post=1	first_rebuild_rnd=301	conv_built_pre=11	conv_built_post=3	famine_rnd=-1	mouth_rounds_post=0	deliv_sightings_post=0	run_raised=0	turret_built_post=0	afford_sentinel_rounds=60	sentinel_bar_ti=93	ti_final=166	final_harvesters=1	seed=220
+BB48 REFUSE NOTGT n=1 0/0
+tree=_v539resilience	map=drakkarfjord	harv_built_pre=2	harv_built_post=1	first_rebuild_rnd=243	conv_built_pre=11	conv_built_post=8	famine_rnd=241	mouth_rounds_post=80	deliv_sightings_post=20	run_raised=0	turret_built_post=0	afford_sentinel_rounds=30	sentinel_bar_ti=94	ti_final=132	final_harvesters=1	seed=220
+BB48 REFUSE NOTGT n=1 0/0
+L4R45 L4REPAIR rnd=303 tile=4,16 face=WEST feed=belt id=4
+tree=scratchpad/s52_v539_build/arms/v539_1_floor	map=drakkarfjord	harv_built_pre=2	harv_built_post=1	first_rebuild_rnd=301	conv_built_pre=11	conv_built_post=3	famine_rnd=241	mouth_rounds_post=0	deliv_sightings_post=0	run_raised=0	turret_built_post=0	afford_sentinel_rounds=60	sentinel_bar_ti=93	ti_final=166	final_harvesters=1	seed=220

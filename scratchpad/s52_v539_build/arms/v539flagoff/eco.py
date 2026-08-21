@@ -505,7 +505,7 @@ class EcoMixin:
         # 40-round window at passive rates.  Expanders only, capped rounds,
         # capped episodes: the collar's 8-barrier reserve outlives all three.
         if (LOKI_FS_V539 and FS_V539_REEST and FS_V539_LIFELINE
-                and self._v539_lifeline(ct)):
+                and self._v539_lifeline(ct, cost)):
             return ti >= cost
         # LOKI-FERRY-SIEGE: while a raider is standing at the enemy ring, the
         # titanium the collar still needs is not the economy's to spend.  Eight

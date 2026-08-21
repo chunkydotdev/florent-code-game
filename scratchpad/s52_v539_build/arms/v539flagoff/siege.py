@@ -345,13 +345,30 @@ class SiegeMixin:
     def _v539_famine(self, ct):
         return self._v539_famine_state(ct)[0]
 
-    def _v539_lifeline(self, ct):
+    def _v539_lifeline(self, ct, cost):
         """RUNG A's predicate: may THIS body's eco spend waive the reserves?
 
         Three bounds, and every one of them is a refusal to convert a siege
         into an economy: EXPANDERS ONLY (a raider's spending is never waived),
         the first FS_V539_LIFELINE_RNDS of an episode only, and at most
         FS_V539_MAX_EPISODES episodes per match (enforced Core-side).
+
+        ⭐ v539.1 -- THE RESERVE FLOOR (`FS_V539_RESERVE_FLOOR`), THE FOURTH
+        BOUND, AND IT EXISTS BECAUSE OF THIS BUILD'S OWN SURPRISE.  Build
+        report §6: with the floor OFF the plank spends the recovering bank on
+        belt, and the PARENT is ahead on "rounds the bank could afford a
+        sentinel" in 16 of 25 cells against v539's 0.  That is a
+        DEFENCE_ADMISSION-shaped risk -- the plank buying economy with the kill
+        budget -- so the conservative arm is built rather than argued about:
+        the rebuild may only spend down to `sentinel_cost +
+        SIEGE_HEAL_RESERVE_TI`, the literal bar `main.py` checks before buying
+        a sentinel.  **THE REBUILD WAITS INSTEAD OF RAIDING THE KILL BUDGET.**
+        ⛔ AND ITS COST IS STATED, NOT HIDDEN: on a bank the wipe drained to
+        single digits, the floor means the lifeline NEVER FIRES inside its
+        40-round window -- passive income is 2.5 Ti/round and the bar is ~107
+        plus the harvester.  That IS the trade, and it is the point: this arm
+        rebuilds only out of true surplus, which is exactly the case where the
+        belt was cut while the bank was healthy.  Both arms go to the battery.
         """
         if not (LOKI_FS_V539 and FS_V539_REEST and FS_V539_LIFELINE):
             return False
@@ -361,7 +378,13 @@ class SiegeMixin:
         if not fam or started < 0:
             return False
         try:
-            return ct.get_current_round() - started < FS_V539_LIFELINE_RNDS
+            if ct.get_current_round() - started >= FS_V539_LIFELINE_RNDS:
+                return False
+            if FS_V539_RESERVE_FLOOR:
+                floor = ct.get_sentinel_cost() + SIEGE_HEAL_RESERVE_TI
+                if ct.get_global_resources() - cost < floor:
+                    return False
+            return True
         except Exception:
             return False
 

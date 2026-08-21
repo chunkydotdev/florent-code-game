@@ -5658,6 +5658,28 @@ FS_V539_MAX_EPISODES = 3    # famines per match.  The third failure to
 FS_V539_DRAFT = True        # rung B
 FS_V539_SEAT3_HOLD = True   # rung C
 FS_V539_LIFELINE = True     # rung A
+FS_V539_RESERVE_FLOOR = False
+                            # ⭐ v539.1 -- THE CONSERVATIVE ARM, SHIPPED OFF,
+                            # BUILT BECAUSE OF THIS BUILD'S OWN SURPRISE.
+                            # Report §6: with the lifeline unfloored the parent
+                            # is ahead on "rounds the bank could afford a
+                            # sentinel" 16 of 25 cells to v539's 0 -- the plank
+                            # buying economy with the kill budget, which is a
+                            # DEFENCE_ADMISSION-shaped risk and not a thing to
+                            # settle by argument.  With this ON the rebuild may
+                            # spend only down to `sentinel_cost +
+                            # SIEGE_HEAL_RESERVE_TI` -- the literal bar main.py
+                            # checks before buying a sentinel -- so THE REBUILD
+                            # WAITS RATHER THAN RAIDING THE KILL BUDGET.
+                            # ⛔ ITS COST, STATED: on a bank the wipe drained to
+                            # single digits the floor means the lifeline never
+                            # fires inside its 40-round window (passive is
+                            # 2.5 Ti/round against a ~107 Ti bar plus the
+                            # harvester).  That is the trade, and it is the
+                            # point -- this arm rebuilds only out of TRUE
+                            # SURPLUS, i.e. the belt-cut-while-rich case.  The
+                            # battery runs BOTH arms; nothing here claims which
+                            # wins.
 FS_V539_HONEST_SLOT = False # ⛔ SHIPPED OFF ON PURPOSE.  The commission's
                             # "reset the ratchet to the live count" change,
                             # built so a leg can price it.  The consumer

@@ -1,3 +1,4 @@
+RE-RUN ON FINAL BYTES (post FS_V539_RESERVE_FLOOR), NOISE_OFF, 340 rounds
 A) SELF CONTROL parent-vs-parent, wipe@140  (must be IDENTICAL)
    {'map': 'atoll', 'wipe_at': 140, 'rounds': 340, 'identical': True, 'first_divergence': -1}
    {'map': 'eider', 'wipe_at': 140, 'rounds': 340, 'identical': True, 'first_divergence': -1}
@@ -16,7 +17,19 @@ C) FLAG-ON vs PARENT, NO WIPE  (must be IDENTICAL: the path is inert)
    {'map': 'heart', 'wipe_at': 1000000, 'rounds': 340, 'identical': True, 'first_divergence': -1}
    {'map': 'nordkap', 'wipe_at': 1000000, 'rounds': 340, 'identical': True, 'first_divergence': -1}
    {'map': 'drakkarfjord', 'wipe_at': 1000000, 'rounds': 340, 'identical': True, 'first_divergence': -1}
-D) FLAG-ON vs PARENT, wipe@140  (must DIVERGE: makes B and C mean something)
+D) FLAG-ON vs PARENT, wipe@140  (must DIVERGE)
+   {'map': 'atoll', 'wipe_at': 140, 'rounds': 340, 'identical': False, 'first_divergence': 161}
+   {'map': 'eider', 'wipe_at': 140, 'rounds': 340, 'identical': False, 'first_divergence': 161}
+   {'map': 'heart', 'wipe_at': 140, 'rounds': 340, 'identical': False, 'first_divergence': 161}
+   {'map': 'nordkap', 'wipe_at': 140, 'rounds': 340, 'identical': False, 'first_divergence': 161}
+   {'map': 'drakkarfjord', 'wipe_at': 140, 'rounds': 340, 'identical': False, 'first_divergence': 161}
+E) v539.1 FLOOR arm vs SHIPPED v539, wipe@140  (must DIVERGE: rung A ablated)
+   {'map': 'atoll', 'wipe_at': 140, 'rounds': 340, 'identical': False, 'first_divergence': 162}
+   {'map': 'eider', 'wipe_at': 140, 'rounds': 340, 'identical': False, 'first_divergence': 192}
+   {'map': 'heart', 'wipe_at': 140, 'rounds': 340, 'identical': False, 'first_divergence': 164}
+   {'map': 'nordkap', 'wipe_at': 140, 'rounds': 340, 'identical': False, 'first_divergence': 192}
+   {'map': 'drakkarfjord', 'wipe_at': 140, 'rounds': 340, 'identical': False, 'first_divergence': 163}
+F) v539.1 FLOOR arm vs PARENT, wipe@140  (must DIVERGE: rungs B+C still act)
    {'map': 'atoll', 'wipe_at': 140, 'rounds': 340, 'identical': False, 'first_divergence': 161}
    {'map': 'eider', 'wipe_at': 140, 'rounds': 340, 'identical': False, 'first_divergence': 161}
    {'map': 'heart', 'wipe_at': 140, 'rounds': 340, 'identical': False, 'first_divergence': 161}

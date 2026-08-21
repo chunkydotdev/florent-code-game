@@ -23,3 +23,12 @@ against the RESOLVED predicate (call the accessor, never read the constant);
 positive control = this exact muster case (must flag it).
 BEHAVIOUR NOW (interim): any lane citing a flag's state cites the ACCESSOR's
 resolution, never the constant; the muster case is the standing example.
+
+## RD3 (research s52, from AUTOPSY-v174-losses surprise 3) — last_delivery_round COLUMN
+The economy STOPS at median r77 in 10/10 v174 losses (one game collects literally 0 Ti
+in 1,000 rounds) and no banked surface can show it: we bank stacks DELIVERED (a total,
+monotone) which cannot represent a stop. FIX SHAPE: every instrument that banks stack
+totals adds last_delivery_round (and ideally delivery-gap-max). Positive control: lazy
+g3 auroraveil (must read last_delivery=never/r0-class); negative: any win (late last
+delivery). BEHAVIOUR NOW (interim): any economy claim about a game names the LAST
+delivery round, not only the total.

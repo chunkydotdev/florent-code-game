@@ -28,12 +28,21 @@
   ok   n=6 body stays RAID with no famine (other verdict)
   ok   parent n=6 body is RAID in the same board (control)
   ok   n=2 (a real eco seat) resolves IDENTICALLY in both trees: raid
-[9] the SENTINEL GATE survives a famine (Magnus's s51 ruling)
+[9] v539.1 RESERVE FLOOR binds, and ONLY when it should
+  ok   the floor is a real number: sentinel + reserve = 46 Ti
+  ok   floor ON + famine + wiped bank (8 Ti): REFUSES -- the rebuild waits
+  ok   floor OFF, same board: ALLOWS (the other verdict, and the arm diff)
+  ok   floor ON + famine + bank 246 Ti: ALLOWS -- true surplus rebuilds
+  ok   ⭐ floor ON is PARENT-IDENTICAL across all 68 sweep cells -- i.e. the floor makes RUNG A EXACTLY INERT, so v539.1 is a clean ABLATION of rung A (draft + hold only), not a softer lifeline
+  ok   floor OFF differs from the parent in ALL FOUR sweeps [[4, 8, 16], [4, 8, 16], [24, 32], [24, 32, 40, 44, 46, 48, 52, 60]] (the other verdict: the comparison can fail, and this is the whole arm difference)
+  ok   the parent answers both ways in every sweep (no constant column)
+  ok   floor ON but NO famine: identical to the parent (True)
+[10] the SENTINEL GATE survives a famine (Magnus's s51 ruling)
   ok   sentinel gate OPEN before the wipe
   ok   famine IS declared at r199 (the dose landed)
   ok   sentinel gate STILL OPEN during famine -- the CONN/DELIV latch is never cleared by the famine bits
   ok   CONN and DELIV bits both still set alongside the famine bit
-[10] flag-off: LOKI_FS_V539=False reproduces the parent verdicts
+[11] flag-off: LOKI_FS_V539=False reproduces the parent verdicts
   ok   (flag-off identity is asserted by flagoff.py, not here)
 
 SELFTEST PASSED

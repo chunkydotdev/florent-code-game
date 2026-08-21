@@ -13,4 +13,4 @@ tree: _v539resilience   sites: 15  (READ 12 / WRITE 3)
   main.py       1967  READ  <   1                | if ct.read_store(SLOT_HARVESTERS) < 1:
   raid.py        714  READ  <   min_harv         | if ct.read_store(SLOT_HARVESTERS) < min_harv:
   raid.py        916  READ  <   LOKI_BELTBREAK_MIN_HARV | if ct.read_store(SLOT_HARVESTERS) < LOKI_BELTBREAK_MIN_HARV:
-  siege.py      4452  READ                       | harv = ct.read_store(SLOT_HARVESTERS)
+  siege.py      4475  READ                       | harv = ct.read_store(SLOT_HARVESTERS)

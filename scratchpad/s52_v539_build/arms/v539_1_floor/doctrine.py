@@ -5628,7 +5628,7 @@ FS_V537_RAIDER_CLAIMS = True
 # READ-SITE ONLY, same convention as the v524/v528/v534/v537 blocks: every
 # name below is read inside the branch it guards, so
 # `LOKI_FS_V539 = False` reproduces `bots/_v537socket` byte-for-byte.
-LOKI_FS_V539 = False        # master.  False == `bots/_v537socket` unchanged
+LOKI_FS_V539 = True         # master.  False == `bots/_v537socket` unchanged
 FS_V539_REEST = True        # the plank.  Master and plank are separate so a
                             # flag-off battery can kill either one.
 FS_V539_MIN_RND = 60        # no famine may be declared before this round.
@@ -5658,7 +5658,7 @@ FS_V539_MAX_EPISODES = 3    # famines per match.  The third failure to
 FS_V539_DRAFT = True        # rung B
 FS_V539_SEAT3_HOLD = True   # rung C
 FS_V539_LIFELINE = True     # rung A
-FS_V539_RESERVE_FLOOR = False
+FS_V539_RESERVE_FLOOR = True 
                             # ⭐ v539.1 -- THE CONSERVATIVE ARM, SHIPPED OFF,
                             # BUILT BECAUSE OF THIS BUILD'S OWN SURPRISE.
                             # Report §6: with the lifeline unfloored the parent
