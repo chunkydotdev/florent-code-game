@@ -96,3 +96,4 @@ version	name	tree	evidence	recorded_at
 162	Mjolnir v1 (banded opening, ring claim, endgame)	bots/_x3r0v162mjolnir	imported s51 via `fcode submission download 162` (v161 precedent) — x3r0 ship, uploaded 2026-08-18T17:12:43Z	2026-08-18T17:12:44Z
 165	Mjolnir restore-B w31	bots/_x3r0v165mjolnirB	imported s51 via `fcode submission download 165` — x3r0 ship, uploaded 2026-08-20T03:48:12.483Z	2026-08-20T03:48:13Z
 169	Mjolnir rank w37 TEST	bots/_x3r0v169mjolnir	imported s52 via `.venv/bin/fcode submission download 169 --output ...` on Magnus retry-instruction — x3r0 ship, holder since ~09:5xZ per research relay	2026-08-20T14:46:35Z
+173	Mjolnir freshgate w66 SHADOW	bots/_x3r0v173mjolnir	imported s52 (extract-at-import per pattern) for the pre-ship holder screen — Magnus asked "Have we tested against v173?"	2026-08-21T04:55:07Z
