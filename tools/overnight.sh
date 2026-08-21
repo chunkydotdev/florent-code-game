@@ -65,7 +65,12 @@ FC=.venv/bin/fcode
 # The pool also added a size class we had never played: five 30x30 maps (area 900)
 # against a previous maximum of 625. Targets should be multiples of 30 (15 maps x
 # 2 seats) for exact map/seat balance; the old multiples of 16 no longer balance.
-MAPS=(antler archipelago auroraveil drakkarfjord drumlin fjordgate frostgate glacierkeep icefloe midgard nordkap ragnarok royale valkyrie yulerune)
+# ⛔ RE-POINTED AGAIN 2026-08-21 (s52): SECOND ROTATION. Old set kept one line up
+# for provenance; this edit executes Magnus's baseline directive (new-pool shards
+# cannot fire without the live pool) — the same re-point this file already
+# documents from the 2026-08-13 rotation.
+# OLD (pre-2026-08-21): antler archipelago auroraveil drakkarfjord drumlin fjordgate frostgate glacierkeep icefloe midgard nordkap ragnarok royale valkyrie yulerune
+MAPS=(auroraveil bifrost fimbulwinter glacierkeep helheim holmgang icefloe jotunheim longhouse midgard paths skald stavkirke valkyrie yggdrasil)
 B=$(basename $TREAT); C=$(basename $CTRL)
 
 # IDENTICAL BASENAMES ARE UNSCORABLE -- fcode names the winner by basename, so a

@@ -31,6 +31,23 @@ successor session inherit it. The fields below are parsed; the prose is not.
     STEALTH_UNTIL_DROP: yes
     KILL_TARGET: median_r180_share_by_r200_floor_r300
 
+## BASELINE MOVED 2026-08-21 (Magnus, s52, post-rotation — verbatim: "i dont think we can keep sleipnir v2 as the baseline anymore, use x3r0's best one as baseline instead")
+
+**The pricing/battery BASELINE (the full-pool denominator, formerly `bots/_v488beltbreak2` =
+Sleipnir v2) is now `bots/_x3r0v168mjolnir`** — the builder's operational reading of "x3r0's
+best", vetoable: v168 is their best BY TENURE RECORD (the 16W-9L day that recovered their
+slide to 1845; the then-current v173 was a 2W-8L "SHADOW" test build). Consequences: (1)
+`SHIP_BAR`'s bar (2) denominator MOVES with the baseline; **its NUMBER does not transfer**
+("≥70" was Sleipnir-v2-denominated on the OLD pool — our line screens ~52-60 vs the Mjolnir
+line, so the bar's number RE-ANCHORS at the first new-pool baseline shard and is then
+Magnus's to set); every old-pool anchor (70.50/66.44/72.57/72.06, the 69.28 floor, the
+70.4964 binding point) is a HISTORICAL quantity of the old fixture, named as such at any
+citation. (2) The first new-pool shard = **the BASELINE ANCHOR: v174 (`_v537socket`) vs
+`_x3r0v168mjolnir` on the rotated 15-map pool** — control-anchoring before candidate
+pricing; its readout re-derives the refusing segment and KILL_TARGET bands shard-native.
+(3) `PREVIOUS_INCUMBENT`-class tools accept the transition per the 2026-08-21 control_pin
+fix; Sleipnir v2 remains on disk for historical cross-tape reads only.
+
 ## SHIP_BAR AMENDED 2026-08-20 (Magnus, s52, reporting x3r0's agreement — JOINT amendment)
 
 **Verbatim (Magnus): "We actually just have to beat the slot and stay above 70 against
