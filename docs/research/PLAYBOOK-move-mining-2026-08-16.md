@@ -32,6 +32,11 @@ the ledger that records WHAT has been covered.
      shots cannot be plugged, and measured 1.6 vs 6.6);
    * refuted mechanisms are RETAINED in the report so nobody re-derives them
      (the 0033 study killed two in passing);
+   * ⭐ **the IN-LEG MIRROR CONTROL** (added 2026-08-21 s53, from the KLADDEDOSE
+     decode): when the OPPONENT performs the very verb your leg is dosing (kladde
+     pecked a core in 7c3e9ae0 g3), side-swap the decoder and confirm every
+     column flips — a free positive control that validates the instrument on
+     live data inside the same leg, no fixture needed;
    * a piece is SMALL (one behaviour), cited at ≥2 games with file+round
      anchors, and sketched against OUR doctrine (<r300 kill).
 4. **BANK** — the report is committed verbatim under `docs/research/` with a
