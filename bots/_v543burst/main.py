@@ -218,6 +218,32 @@ class Player(EcoMixin, RaidMixin, SiegeMixin):
         self.v541_pecks = 0         # lifetime pecks this body has landed
         self.v541_st_rnd = -1       # round the idle probe cached a station for
         self.v541_st = None         # that cached station (mirrors _fs_walk)
+        # v543: per-BODY bank-burst state (QUEUE #71's gate + #80's consumer).
+        # ⛔ EVERY ONE OF THESE IS READ ONLY INSIDE A BRANCH `LOKI_FS_V543`
+        # GUARDS, so with the master False not one of them is ever written
+        # either -- `_v543_tick` returns on its first line.  Per BODY and not
+        # per team because the engine gives every unit its own `Player`
+        # instance; the state machine's INPUTS are team-global, which is what
+        # lets two bodies agree without spending a store slot.
+        self.v543_rnd = -1          # round this body last ticked
+        self.v543_hist = []         # [(round, bank)], pruned to the income
+                                    # window -- at most RISE_RNDS+1 entries
+        self.v543_armed = False     # ⭐ STARTS FALSE.  Only an observation of
+                                    # `ti < FS_V543_REARM_TI` arms it, which
+                                    # is what keeps the 470-Ti opening
+                                    # endowment from firing the plank at r0.
+        self.v543_fires = 0         # windows opened by this body
+        self.v543_until = -1        # last round of the open window (-1 = none)
+        self.v543_bought = 0        # INSTRUMENT: sentinels this clause bought
+        self.v543_full = 0          # refusals: the pair is already standing
+        self.v543_poor = 0          # refusals: bank under cost + reserve
+        self.v543_nosite = 0        # refusals: no aligned d^2<=32 site
+        self.v543_spent = 0         # non-fires: bank FELL over the window
+        self.v543_noharv = 0        # non-fires: under FS_V543_MIN_HARV
+        self.v543_ammo_ti = 0       # Ti converted under the v543 waiver
+        self.v543_ammo_bind = 0     # rounds the waiver actually LOWERED the
+                                    # floor (the denominator that makes
+                                    # `v543_ammo_ti == 0` readable)
         self.fs_blocked_now = frozenset()
         self.fs_evictors = 0
         self.fs_healer_hist = {}    # (x, y) -> times an enemy body sat there
@@ -1063,6 +1089,26 @@ class Player(EcoMixin, RaidMixin, SiegeMixin):
                               "until", self.v520_pres_until, file=sys.stderr)
                     except Exception:
                         pass
+            # ⭐⭐ v543 CONSUMER B -- THE BURST'S MAGAZINE.  ⛔ THIS IS THE ONE
+            # PLACE IN THIS TREE WHERE A FLOOR IS LOWERED RATHER THAN RAISED,
+            # so it is written as a bounded OVERRIDE, at the very end of the
+            # cascade, rather than folded into the `max()` chain above (which
+            # by construction can only ever raise the bar).  A burst that has
+            # just bought a forward pair leaves ~20 Ti against a seal-only
+            # `ti_floor` near 120: without this the pair stands EMPTY until
+            # the bank climbs back over a reserve the burst itself just spent.
+            # `_v543_ammo_waive` carries all four bounds (window open, a
+            # forward sentinel actually bought, floor no lower than
+            # FS_V543_AMMO_FLOOR, and FS_V543_AMMO_MAX total Ti per match).
+            # The ammunition TARGET is untouched -- the parent's
+            # `min(120, 40 + 20*fwd_guns)` still caps a pair at 80.
+            _v543_waived = False
+            if LOKI_FS_V543 \
+                    and self._v543_ammo_waive(ct, rnd, fwd_guns) \
+                    and ti_floor > FS_V543_AMMO_FLOOR:
+                ti_floor = FS_V543_AMMO_FLOOR
+                _v543_waived = True
+                self.v543_ammo_bind += 1
             if (under or weapons_top or bb_live or fs_live or harv >= 2) \
                     and ammo < ammo_target and ti > ti_floor:
                 amt = min(chunk, ammo_target - ammo, ti - ti_floor)
@@ -1077,6 +1123,11 @@ class Player(EcoMixin, RaidMixin, SiegeMixin):
                                  and fs_live) else 4
                 if amt >= _min_amt and ct.can_convert_ammo(amt):
                     ct.convert_ammo(amt)
+                    if LOKI_FS_V543 and _v543_waived:
+                        # The counter and its tape live in `_v543_ammo_spent`
+                        # (siege.py, inside the family) so this file carries no
+                        # v543 read outside a master-guarded branch.
+                        self._v543_ammo_spent(ct, rnd, amt, ti_floor, fwd_guns)
                     if LOKI_FS_V518 and FS_V518_TIWATCH:
                         try:
                             print("TICONV518", rnd, "amt", amt,

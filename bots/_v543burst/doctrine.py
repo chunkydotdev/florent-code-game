@@ -6078,3 +6078,181 @@ FS_V541_NEED_SENTINEL = False
                             # do.  Named, flagged and reversible without
                             # touching siege.py -- the house pattern
                             # (FS_SALT_LATCH, FS_V520_GUNNEAR).
+
+# ======================================================================
+# ⭐⭐ LOKI-v543 BURST -- THE BANK EDGE BUYS THE FORWARD SENTINEL **PAIR**
+# (QUEUE #80's CONSUMER half + #71's GATE half, re-spec'd s52/s53)
+# ======================================================================
+# THE ROW THIS CLOSES, and both halves of it are measured rather than
+# preferred:
+#
+#   * THE GATE (#71).  `SURGE_TI_FLOOR = 1500 and rnd >= 300` fires in
+#     1.21% of v140 games and 0 of 1,243 game-sides EVER hold 1500 Ti
+#     before r250, so MOVING THE ROUND GATE CHANGES THE FIRE RATE BY
+#     0.00pp -- the floor is the sole binding constraint and it is a
+#     FOSSIL of an economy we no longer run (ever->=1500: v80 30.9%,
+#     v90 35.6% -> v140 1.21%).  The replacement threshold comes off the
+#     same cut's menu: **200 Ti fires in 25.6% of games at a median first
+#     crossing of r67, 18.5% of them before r150**
+#     (`docs/research/BANK-UNDER-HARASSMENT-2026-08-16.md` s7).
+#     ⛔ AND ONLY 10.3% OF GAMES HOLD 200 FOR TEN CONSECUTIVE ROUNDS, so
+#     the trigger MUST be an EDGE.  A level test with any hysteresis or
+#     confirmation delay fires in far fewer games than 25.6%.
+#     ⛔⛔ AND THE EDGE MUST ARM FROM BELOW OR IT IS THE `LOKI_SURPLUS_TI`
+#     TRAP IN A NEW COSTUME: the game STARTS at 470 Ti, so `ti >= 200` is
+#     satisfied trivially at r0 in 100.0% of games and the bank first
+#     falls under 260 at median r8.  `v543_armed` therefore starts FALSE
+#     and is set only by an observation of `ti < FS_V543_REARM_TI`; a
+#     burst is a CROSSING, never a level.
+#
+#   * THE CONSUMER (#80).  The r300 surge's only surviving consumer buys
+#     ECO HANDS (`SURGE_ECO_CAP`, eco.py) and its kill-hardware half
+#     (`SURGE_EXTRA`) was dropped in the modular refactor and is dead
+#     code with a single definition and no reader.  What the FIELD does
+#     with a bank is buy a FORWARD SENTINEL PAIR inside its own firing
+#     range of the enemy core: Focalground v32, n=80 -- Ti-at-salvo
+#     CV 0.261 against round-at-salvo CV 0.681, 67% of their sentinels
+#     within d^2<=32 of the ENEMY core, **first sentinel -> enemy core
+#     death median 30 rounds** (n=48 v32, n=201 v18-22), and
+#     P(kill | salvo of >=2 within 12 rounds) = 0.92 vs 0.00 without
+#     (⚠ a COLLIDER -- read it as "their kill channel IS the pair", not
+#     as an effect size).  A pair landing r150 kills ~r180: ON
+#     `KILL_TARGET`, inside `DEFENCE_ADMISSION_BAR`'s r300.
+#     `docs/research/REPLAY-STUDY-focalground-bankburst-2026-08-21.md`.
+#
+# ⛔ WHAT WE DO **NOT** COPY: their 750-800 Ti threshold.  Our median
+# peak bank is 470 = the opening endowment, and it is 470 through p95.
+# Copying the threshold copies a delay we cannot pay for.  What
+# transfers is the SHAPE (an edge, then a pair) at OUR bank size.
+#
+# ⭐ THE SATURATION QUALIFIER, and it is the study's own implementable
+# proxy rather than a Ti level: their bank does not fill slowly, it
+# DOUBLES in the 40 rounds before the burst because ECO SPEND SATURATES
+# WHILE INCOME KEEPS ARRIVING (s1.1).  Operationalised here from two
+# reads every unit already has -- `SLOT_HARVESTERS >= FS_V543_MIN_HARV`
+# (income exists) AND the team bank NET NON-FALLING over the last
+# `FS_V543_RISE_RNDS` rounds (income is outrunning spend, i.e. the eco
+# hand has nothing left to buy).  Passive alone pays +20 Ti per 8
+# rounds, so `rise >= 0` over 8 rounds is a statement about SPEND, not
+# about luck.
+#
+# ⛔ NO ROUND GATE.  Deleted by evidence, not by taste (#80: moving it
+# 300 -> 250 -> 200 is worth 0.00pp and 150 is worth +0.16pp).  The
+# arm-from-below latch is what keeps the opening endowment out.
+#
+# WHERE THE CONSUMER PLUGS IN -- and the plank is deliberately SMALL
+# because the siting machinery already exists and is good:
+# `_fs_try_sentinel` already scores the <=4 tiles orthogonally adjacent
+# to the raider, requires `can_fire_from(..., SENTINEL, core_tile)` and
+# d^2 <= 32 to an ENEMY CORE TILE, penalises visible gunner axes and the
+# ring, and prefers a different SIDE for the second.  It is not
+# re-implemented here and not touched.  What is structurally starved is
+# the SECOND purchase:
+#   * sentinel #1 already jumps the collar (`_v518_early_sentinel`,
+#     gated `live <= FS_V518_EARLY_MAX_LIVE` = 0);
+#   * sentinel #2 exists ONLY as rung 4 -- the BOTTOM of the ladder, by
+#     design "fires on the rounds the collar has nothing actionable
+#     left" -- and additionally pays `FS_SENT_REBUY_TI` on top of the
+#     whole remaining collar reserve.
+# ⇒ the burst window is what lets the PAIR close, and it closes it by
+# replacing the collar reserve with a small flat reserve for a bounded
+# number of rounds, for at most `FS_V543_PAIR_MAX` LIVE sentinels.
+LOKI_FS_V543 = True         # ⭐ MASTER.  False == `bots/_v542wave`,
+                            # byte-behaviour: every v543 read site sits
+                            # inside a branch this flag guards, and the
+                            # per-unit state below is never touched.
+FS_V543_BURST = True        # the plank itself.  Master and plank are
+                            # separate so an ablation can turn the plank
+                            # off without disarming the state machine.
+FS_V543_BURST_TI = 200      # ⭐ THE EDGE.  Bank at or above this, having
+                            # been observed BELOW `FS_V543_REARM_TI`
+                            # first, opens the window.  25.6% of games,
+                            # median first crossing r67.
+FS_V543_REARM_TI = 200      # the bank must be seen strictly BELOW this
+                            # before a (re-)fire is possible.  Equal to
+                            # the fire threshold == a pure crossing; a
+                            # LOWER value would add hysteresis and cost
+                            # fire rate (only 10.3% sustain 200 for ten
+                            # rounds), which is why it is not lower.
+FS_V543_RISE_RNDS = 8       # length of the income window, in rounds.
+                            # Two passive ticks (10 Ti / 4 rounds).
+FS_V543_RISE_TI = 0         # net bank change over that window required
+                            # to call eco spend SATURATED.  0 == "we
+                            # earned at least as much as we spent".
+FS_V543_PEAK = True         # ⭐ the second half of the saturation qualifier:
+                            # the bank must be at the window's MAXIMUM, not
+                            # merely net-up over it.  ⛔ ADDED BECAUSE THE
+                            # BUILD'S OWN STATE-MACHINE TEST DROVE THE
+                            # NET-RISE TERM TO THE WRONG VERDICT: a bank that
+                            # SPIKED eight rounds ago and has been DRAINING
+                            # since still reads net-up, and that is precisely
+                            # a delivery landing into an ACTIVE eco hand --
+                            # the opposite of saturation.  A shape test over
+                            # the nine samples already held; NOT a
+                            # confirmation delay (those are forbidden by the
+                            # 10.3%-sustained figure) and free at a genuine
+                            # crossing, where the bank is the maximum by
+                            # construction.  Separable so an arm can price it.
+FS_V543_MIN_HARV = 2        # `SLOT_HARVESTERS` floor: income exists at
+                            # all.  Same number as `LOKI_FWD_MIN_HARV`
+                            # and `FS_SENT_HARV_MIN`, written as a
+                            # literal rather than aliased so an arm can
+                            # move it without moving theirs.
+FS_V543_WINDOW = 40         # rounds the window stays OPEN after a fire.
+                            # ⭐ THE WINDOW, NOT THE LEVEL, IS WHAT FUNDS
+                            # THE PAIR: the first purchase drops the bank
+                            # under the threshold immediately, so a
+                            # level test would fund exactly one sentinel
+                            # and then re-arm.  40 rounds is the study's
+                            # own pre-burst doubling window and it sits
+                            # inside the 30-round pair->core-death
+                            # constant.
+FS_V543_MAX_FIRES = 3       # windows per BODY per match.  Bounded for
+                            # the same reason every melee verb in this
+                            # tree is bounded: a treadmill on one body is
+                            # the failure mode.
+FS_V543_PAIR_MAX = 2        # LIVE forward sentinels the window will
+                            # fund.  The PAIR is the load-bearing number
+                            # in the field study, not four.  Equal to
+                            # `FS_SENTINEL_MAX`, which `_fs_try_sentinel`
+                            # enforces independently -- this constant
+                            # only bounds what the BURST pays for.
+FS_V543_JUMP = True         # CONSUMER A: inside the window the pair
+                            # outranks the collar, in the same ladder
+                            # seat `_v518_early_sentinel` already holds
+                            # for sentinel #1.
+FS_V543_RESERVE = 24        # bank left above the sentinel's own cost
+                            # inside the window, REPLACING the collar
+                            # reserve (`len(needed)*bar + sen`) for the
+                            # duration.  One barrier plus change: the
+                            # collar can still answer a broken seat the
+                            # round after the purchase.
+FS_V543_AMMO = True         # CONSUMER B: the magazine.  ⛔ WITHOUT THIS
+                            # THE PLANK BUYS TWO STATUES.  The Core's
+                            # convert gate is `ti > ti_floor` and under
+                            # seal-only `ti_floor >= 12*bar + margin + 6`
+                            # (~120 Ti at the measured 2.6-3.1x scale),
+                            # while a 200-Ti burst that has just bought a
+                            # pair leaves ~20.  The ammunition ladder
+                            # (`min(120, 40 + 20*fwd_guns)`) is NOT
+                            # duplicated -- only the floor that blocks it
+                            # is lowered, and only while the window is
+                            # open AND a forward sentinel is actually
+                            # standing.  (Focalground's own tell: they
+                            # convert NOTHING until the sentinel is up,
+                            # then drip 10-20 Ti chunks -- the same shape
+                            # this tree already has.)
+FS_V543_AMMO_FLOOR = 12     # the floor used in place of the collar
+                            # reserve while the waiver binds.  Not 0:
+                            # one barrier stays affordable.
+FS_V543_AMMO_MAX = 120      # ⛔ TOTAL titanium this waiver may convert
+                            # over a whole match, per Core.  The ammo
+                            # TARGET already caps the magazine at 80 for
+                            # a pair; this caps the WAIVER so a long
+                            # window cannot become the magazine lock in
+                            # reverse.
+FS_V543_LOG = False         # stderr V543 tape (ARM / FIRE / PAIR /
+                            # AMMO), LOCAL INSTRUMENT ONLY -- platform
+                            # replays strip stdout and this is stderr
+                            # regardless.  SHIPS OFF, like every other
+                            # `*_LOG` in this tree.

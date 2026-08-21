@@ -2886,6 +2886,243 @@ class SiegeMixin:
                 pass
         return True
 
+    # --- v543: THE BANK-BURST EDGE (#71) AND ITS PAIR CONSUMER (#80) -------
+
+    def _v543_on(self):
+        return LOKI_FS_V543 and FS_V543_BURST
+
+    def _v543_tick(self, ct, rnd):
+        """⭐⭐ THE EDGE.  Advance this body's bank-burst state machine, once
+        per round, and return True while the window is OPEN.
+
+        ⛔ ARM FROM BELOW, ALWAYS.  `v543_armed` starts FALSE and is set ONLY
+        by an observation of `ti < FS_V543_REARM_TI`.  Without that latch this
+        is `LOKI_SURPLUS_TI = 260` again -- the game STARTS at 470 Ti, so a
+        level test on 200 is satisfied at r0 in 100.0% of games and the plank
+        would fire in the opening on the starting endowment rather than on
+        accumulated surplus (QUEUE #80, SURPRISE 2).  A burst is a CROSSING.
+
+        ⛔ NO ROUND GATE.  Deleted by evidence: moving `SURGE_MIN_RND` from
+        300 to 250 or 200 changes the fire rate by 0.00pp because the FLOOR
+        was always the binding term.  The arm-from-below latch does the work a
+        round gate was being asked to do, and does it without a constant
+        fitted to a distribution we no longer have.
+
+        THE SATURATION QUALIFIER is the field study's own implementable
+        proxy -- "eco spend saturated AND income still arriving" -- read off
+        two things every unit already has:
+          * `SLOT_HARVESTERS >= FS_V543_MIN_HARV`  (income exists at all)
+          * the team bank NET NON-FALLING over `FS_V543_RISE_RNDS` rounds
+            (income is outrunning spend, i.e. the eco hand has run out of
+            things to buy).  Passive alone pays +20 per 8 rounds, so this is
+            a statement about SPEND rather than about luck.
+
+        ⚠ PER BODY, NOT PER TEAM, AND DELIBERATELY: the engine gives EVERY
+        UNIT ITS OWN `Player` INSTANCE (`fcode/data/starter_bot.py:3`), so
+        `self` is not a team channel.  The inputs here (`get_global_resources`
+        and `SLOT_HARVESTERS`) are TEAM-GLOBAL, so two bodies that have been
+        alive the same rounds reach the same verdict without spending a store
+        slot -- and every one of the 16 slots already has a live writer.  A
+        body born mid-game simply has no history yet and cannot fire until it
+        has `FS_V543_RISE_RNDS` rounds of it, which is the conservative
+        direction.
+
+        ⚠ THE WINDOW, NOT THE LEVEL, IS WHAT FUNDS THE PAIR.  The first
+        purchase drops the bank straight back under the threshold, so a level
+        test would buy exactly one sentinel and then re-arm -- and the PAIR is
+        the load-bearing element in the field evidence, not the single.
+        """
+        if not self._v543_on():
+            return False
+        if self.v543_rnd == rnd:
+            return self.v543_until >= rnd
+        self.v543_rnd = rnd
+        try:
+            ti = ct.get_global_resources()
+        except Exception:
+            return self.v543_until >= rnd
+        # Bank history over the income window.  Bounded at FS_V543_RISE_RNDS+1
+        # entries by the prune below, so this is O(1) per round and holds nine
+        # integers -- no full-map scan, nothing cached across a map change.
+        h = self.v543_hist
+        h.append((rnd, ti))
+        cut = rnd - FS_V543_RISE_RNDS
+        while h and h[0][0] < cut:
+            del h[0]
+        if ti < FS_V543_REARM_TI:
+            self.v543_armed = True
+        if self.v543_until >= rnd:
+            return True                     # a window is already open
+        if not self.v543_armed:
+            return False
+        if ti < FS_V543_BURST_TI:
+            return False
+        if self.v543_fires >= FS_V543_MAX_FIRES:
+            return False
+        # ⛔ HISTORY DEPTH, tolerant of ONE missed round: a CPU timeout skips
+        # this body's turn entirely, and a strict `age == FS_V543_RISE_RNDS`
+        # would silently disarm the plank on exactly the rounds the box is
+        # loaded.  Requiring RISE_RNDS-1 costs one round of income evidence.
+        if not h or (rnd - h[0][0]) < FS_V543_RISE_RNDS - 1:
+            return False
+        if (ti - h[0][1]) < FS_V543_RISE_TI:
+            self.v543_spent += 1
+            return False
+        # ⭐ THE PEAK TEST, AND IT IS HERE BECAUSE THE BUILD'S OWN STATE-MACHINE
+        # TEST DROVE THE NET-RISE TERM TO THE WRONG VERDICT.  A net rise over
+        # the window is satisfied by a bank that SPIKED eight rounds ago and
+        # has been DRAINING since (a delivery landing into an active eco hand),
+        # which is the opposite of "eco spend has saturated".  Requiring the
+        # current bank to be the window's maximum is a shape test on the nine
+        # samples already held -- NOT a confirmation delay, which is the thing
+        # the 10.3%-sustained figure forbids -- and it is free at a genuine
+        # crossing, where the bank has just gone from below the threshold to
+        # above it and is therefore the maximum by construction.
+        if FS_V543_PEAK:
+            for _r, _v in h:
+                if _v > ti:
+                    self.v543_spent += 1
+                    return False
+        try:
+            harv = ct.read_store(SLOT_HARVESTERS)
+        except Exception:
+            return False
+        if harv < FS_V543_MIN_HARV:
+            self.v543_noharv += 1
+            return False
+        self.v543_armed = False
+        self.v543_fires += 1
+        self.v543_until = rnd + FS_V543_WINDOW
+        if FS_V543_LOG:
+            try:
+                print("V543 FIRE", rnd, "id", ct.get_id(), "ti", ti,
+                      "rise", ti - h[0][1], "harv", harv,
+                      "n", self.v543_fires, "until", self.v543_until,
+                      file=sys.stderr)
+            except Exception:
+                pass
+        return True
+
+    def _v543_pair(self, ct, E, p, rnd, needed, ti, orth_open):
+        """⭐⭐ THE CONSUMER.  Inside a burst window the forward sentinel PAIR
+        outranks the collar -- the same ladder seat `_v518_early_sentinel`
+        already holds for sentinel #1, extended to the SECOND.
+
+        WHY THE SECOND IS THE PLANK.  `_v518_early_sentinel` is gated on
+        `live <= FS_V518_EARLY_MAX_LIVE` (= 0), so it shuts the moment one
+        sentinel stands.  After that the only route to a second is rung 4 --
+        the BOTTOM of the ladder, which by its own docstring "fires on the
+        rounds the collar has nothing actionable left" -- and it must clear
+        `len(needed) * barrier_cost + sentinel_cost` on top of
+        `FS_SENT_REBUY_TI`.  The field evidence says the PAIR is the kill
+        channel: two sentinels alternating at 18 dmg / reload 2 take a 500-HP
+        core in ~28 rounds, observed first-sentinel -> enemy-core-death median
+        30 (n=48 v32, n=201 v18-22), and P(kill | salvo of >=2 in 12 rounds)
+        = 0.92 against 0.00 without (⚠ collider: read as "their kill channel
+        IS the pair", not as an effect size).
+
+        ⛔ WHAT IS WAIVED AND WHAT IS NOT.  This clause replaces
+        `_fs_sentinel_ok` -- i.e. the COLLAR RESERVE and the salt/eco gate --
+        with `sentinel_cost + FS_V543_RESERVE`.  It does NOT weaken
+        `_fs_try_sentinel`, which still enforces `FS_SENTINEL_MAX` live,
+        `FS_SENT_BUY_MAX` lifetime purchases, `FS_SENTINEL_TI_FLOOR`, the
+        `FS_SENT_REBUY_TI` surcharge on every purchase after the first (and
+        `FS_V543_RESERVE` is set EQUAL to it, so the rebuy guard survives
+        intact), the d^2 <= 32 enemy-core siting, `can_fire_from` alignment,
+        the gunner-axis and ring penalties and the side preference.  The
+        siting machinery is reused verbatim; only the funding rank changes.
+
+        ⛔ AND IT DOES NOT CALL `_fs_rung`.  That falsifier re-asks every
+        HIGHER rung and reports a non-empty `hi` list as a bug; a clause that
+        deliberately outranks rung 1 would trip it every time it fired.  Same
+        reason `_v518_early_sentinel` does not call it either.
+
+        ⚠ SCOPE LIMIT, DELIBERATE: this clause sits INSIDE the ladder's
+        `not _v521_near` block, so v521's measured suppression of a second
+        sentinel while the collar is one or two seats from closing is
+        UNCHANGED.  Overriding that would be a second, entangled change to a
+        clause that was screened on its own.
+        """
+        if not (self._v543_on() and FS_V543_JUMP):
+            return False
+        if not self._v543_tick(ct, rnd):
+            return False
+        try:
+            live = self._fs_live_sentinels(ct, E)
+        except Exception:
+            return False
+        if live >= FS_V543_PAIR_MAX:
+            self.v543_full += 1
+            return False
+        try:
+            if ct.get_global_resources() \
+                    < ct.get_sentinel_cost() + FS_V543_RESERVE:
+                self.v543_poor += 1
+                return False
+        except Exception:
+            return False
+        if not self._fs_try_sentinel(ct, E, p):
+            self.v543_nosite += 1
+            return False
+        self.v543_bought += 1
+        if FS_V543_LOG:
+            try:
+                print("V543 PAIR", rnd, "id", ct.get_id(),
+                      "live", live, "ti", ti, "need", len(needed),
+                      "orth", orth_open, "n", self.v543_bought,
+                      "until", self.v543_until, file=sys.stderr)
+            except Exception:
+                pass
+        return True
+
+    def _v543_ammo_waive(self, ct, rnd, fwd_guns):
+        """CONSUMER B, CORE-SIDE.  May the Core convert below the collar
+        reserve this round?
+
+        ⛔ WITHOUT THIS THE PLANK BUYS TWO STATUES.  The Core's drip is gated
+        on `ti > ti_floor`, and under seal-only `ti_floor >= 12*bar +
+        FS_SEAL_MARGIN + 6` -- roughly 120 Ti at the measured 2.6-3.1x scale.
+        A 200-Ti burst that has just bought a pair leaves ~20, so the pair
+        would stand with an empty magazine until the bank climbed back over a
+        reserve the burst itself just spent.  (Focalground hit the mirror
+        image of this and it is SURPRISE #1 of the study: they hold ZERO
+        ammunition through the whole buildup, and a builder killed on the
+        round it plants sentinel #1 leaves them with 800 idle Ti.)
+
+        BOUNDED FOUR WAYS, none of them a judgement call: only while a window
+        is open; only while a forward sentinel has actually been BOUGHT
+        (`SLOT_FWD_GUN`, the monotone purchase counter the ammunition ladder
+        already keys off); only down to `FS_V543_AMMO_FLOOR`, which still
+        leaves a barrier affordable; and only until `FS_V543_AMMO_MAX`
+        titanium has been converted under the waiver over the whole match.
+        The ammunition TARGET itself is untouched -- `min(120, 40 +
+        20*fwd_guns)` is the parent's and caps a pair's magazine at 80.
+        """
+        if not (self._v543_on() and FS_V543_AMMO):
+            return False
+        if not fwd_guns:
+            return False
+        if self.v543_ammo_ti >= FS_V543_AMMO_MAX:
+            return False
+        return self._v543_tick(ct, rnd)
+
+    def _v543_ammo_spent(self, ct, rnd, amt, ti_floor, fwd_guns):
+        """Charge a conversion made under the waiver against its match budget.
+
+        ⛔ CHARGED IN FULL, not just the part the waiver unlocked.  Some of
+        `amt` might have been convertible anyway; over-charging spends the
+        budget FASTER, which is the conservative direction for a bound whose
+        whole job is to stop this becoming the magazine lock in reverse.
+        """
+        self.v543_ammo_ti += amt
+        if FS_V543_LOG:
+            try:
+                print("V543 AMMO", rnd, "amt", amt, "floor", ti_floor,
+                      "fwd", fwd_guns, "spent", self.v543_ammo_ti,
+                      "bind", self.v543_ammo_bind, file=sys.stderr)
+            except Exception:
+                pass
+
     def _v518_gap_mark(self, ct, rnd, code):
         """A ring round the purchase never got a chance at: the body spent the
         round surviving.  Same tape as `_v518_gap_log` so the decomposition
@@ -3558,6 +3795,23 @@ class SiegeMixin:
                 # and for the flagged collision with Magnus's priority ruling 1.
                 if self._v518_early_sentinel(ct, E, p, rnd, needed, ti,
                                              orth_open):
+                    return
+                # ⭐⭐⭐ v543 -- RUNG 1'b, THE BANK-BURST PAIR.  Directly BELOW
+                # the v518 clause and directly ABOVE rung 1, and both halves
+                # of that placement are deliberate: v518 keeps first refusal
+                # on sentinel #1 (its gate is the tighter one -- it reserves
+                # the whole collar), and what this clause adds is the SECOND
+                # sentinel, which today exists only as rung 4 at the bottom of
+                # the ladder.  It fires ONLY inside an open bank-burst window
+                # (`_v543_tick`: an edge-triggered crossing of
+                # FS_V543_BURST_TI armed from below, with the saturation
+                # qualifier), so outside a burst this ladder is the parent's.
+                # (`LOKI_FS_V543` is named HERE as well as inside the method so
+                # the flag-off audit's R3 can see the guard lexically -- the
+                # house pattern from `FS_V541_COREPECK and self._v541_...`.)
+                if LOKI_FS_V543 \
+                        and self._v543_pair(ct, E, p, rnd, needed, ti,
+                                            orth_open):
                     return
             # ⭐⭐ v519 CHANGE 1 -- RUNG 1'', THE SHREDDER JUMPS THE COLLAR ONCE.
             # ⚠⚠ THIS IS A DELIBERATE, BOUNDED AMENDMENT TO MAGNUS'S PRIORITY
