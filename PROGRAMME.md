@@ -28,7 +28,7 @@ successor session inherit it. The fields below are parsed; the prose is not.
     SHIP_SIT_MIN_K: 8
     X3R0_SLOT_RULE: superseded_2026-08-20_by_ship_bar_joint_amendment_no_residual_scope
     SLOT_STOP_LOSS: off
-    SHIP_BAR: beat_live_holder_screen_ci_excl_50_AND_full_pool_vs_x3r0best_number_reanchors_at_baseline_shard
+    SHIP_BAR: beat_live_holder_screen_ci_excl_50_AND_full_pool_vs_x3r0best_ci_lower_ge_53.3
     STEALTH_UNTIL_DROP: yes
     KILL_TARGET: median_r180_share_by_r200_floor_r300
 
@@ -48,6 +48,22 @@ citation. (2) The first new-pool shard = **the BASELINE ANCHOR: v174 (`_v537sock
 pricing; its readout re-derives the refusing segment and KILL_TARGET bands shard-native.
 (3) `PREVIOUS_INCUMBENT`-class tools accept the transition per the 2026-08-21 control_pin
 fix; Sleipnir v2 remains on disk for historical cross-tape reads only.
+
+## BAR-2 NUMBER SET 2026-08-21 (Magnus, s53, on the NEWPOOL-BASELINE anchor — verbatim: "Oh, yeah 75 is not going to happen unless we move away from the rush tactic, so we can skip that to something smaller")
+
+**Bar (2) = the candidate's full-pool CI LOWER >= 53.3 vs `bots/_x3r0v168mjolnir` on the
+rotated pool (n=5400 house form).** Basis: the anchor read the live line at 51.94
+[50.61, 53.28], so 53.3 = clear the anchor's UPPER bound = a provable improvement over the
+line that ships today, requiring a point read of roughly >= 54.6 at full-shard width. This
+was the builder's stricter recommended form; Magnus ruled "something smaller" than the
+75-class number and the recommendation stood un-overridden (run-with-recommendations).
+The 75-floor/80-target vs Sleipnir v2 is RETIRED WITH ITS FIXTURE — it was a number about
+a different ruler, not a lowered standard. **Magnus's rationale is recorded as doctrine
+context: the rush tactic trades full-pool dominance for kill speed; bar-2 exists to stop
+sideways ships, not to punish the doctrine.** Bar (1) unchanged. Note the distinction the
+V543POOL lock already carries: a screen's own registered DECISION bar (51.33 comparability
+floor) governs its READOUT; bar (2) governs the SHIP decision — the two are applied at
+different moments and neither substitutes for the other.
 
 ## SHIP_BAR AMENDED 2026-08-20 (Magnus, s52, reporting x3r0's agreement — JOINT amendment)
 
