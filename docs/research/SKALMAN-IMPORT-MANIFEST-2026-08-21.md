@@ -1,7 +1,8 @@
 # SKALMAN IMPORT MANIFEST — the six curated verbatim lifts from `bots/_v542wave`
 
 **Scope:** the six ratified infrastructure imports from the frozen benchmark tree
-`bots/_v542wave/` into the new-from-scratch `bots/_skalman_v1/`.
+`bots/_v542wave/` into the new-from-scratch `bots/_v600skalman1/` *(tree renamed s54 for
+LINE_DIRS conformance; this manifest's original draft said `_skalman_v1`)*.
 **Read-only analysis; no file in the repo was modified.** Every line anchor below was read
 in this session; function line ranges are AST-derived (`ast.FunctionDef.lineno/end_lineno`),
 not eyeballed.

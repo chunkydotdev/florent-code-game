@@ -107,7 +107,7 @@ toolbox (phase-2 amplify candidates, each behind its own prereg) · no CPU-denia
 ## 6. ACCEPTANCE — what "founded" means for v1
 
 1. `tools/skalman_fidelity.py` selftest green (both populations, both verdicts, per metric).
-2. `bots/_skalman_v1` plays full local games without unit deaths by exception (the wrapper
+2. `bots/_v600skalman1` plays full local games without unit deaths by exception (the wrapper
    imported and driven: a forced-raise harness cell shows the unit survives).
 3. Fidelity read on a local self-battery (v1 vs `_v542wave`, n small, NOT a verdict):
    every §2 metric within its named band or the miss attributed per-verb.
