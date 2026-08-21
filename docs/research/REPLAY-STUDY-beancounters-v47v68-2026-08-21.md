@@ -1,5 +1,7 @@
 # REPLAY STUDY — "Bean counters": v47 doctrine, and the v68 line that replaced it
 
+> ⚠ **RIDER s54, 2026-08-21 (`CUT-116-beltgun-answer-2026-08-21.md` §1.7, found while reproducing this study's cells digit-for-digit):** (1) **17.3% of the v47 games in this study's population are EXACT DUPLICATES** (1,199 games → 992 distinct turret-event fingerprints; one game present six times — deterministic bots re-challenged on the same map). Point estimates move ≤0.3pp on dedup but **intervals widen ~13%; this pseudo-replication is NOT covered by the DEFF 1.833 this study applies.** Treat every interval here as ~13% optimistic. (2) The forward-turret clearance response variable **REMOVED is a near-constant column against a driven placebo** (turrets BC's belt is nowhere near: 73.1%±4.3 vs the castle cell's 79.7%±2.2) — the BC-vs-opponents 46pp contrast this study draws remains valid; do not reuse REMOVED as a discriminating response against within-BC controls (active-fire columns discriminate properly).
+
 **Commissioned:** 2026-08-21, direct question from Magnus: *"What kind of bot is
 bean counter running?"*
 **Agent:** move-mining replay-study agent (s53), read-only except this file.

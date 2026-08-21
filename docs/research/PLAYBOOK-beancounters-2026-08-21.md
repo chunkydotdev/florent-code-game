@@ -1056,6 +1056,12 @@ watched games plus one v68-era analogue.** ⚠ The population version — *"do t
 answer a gun on their belt?"* — **is measured by neither part** and should be
 before anything is built on it (§6 COPY 4, and §8 caveat 6).
 
+⭐ **MEASURED s54, 2026-08-21 (`CUT-116-beltgun-answer-2026-08-21.md` — the queue #116 cut; population = all archived BC field games, validation: four base-study cells reproduced digit-for-digit).** The population answer REFRAMES this tactic:
+* **"No removal loop" is REFUTED at population scale: a turret whose firing line covers a live BC belt tile is removed 75.9%±3.1 (v47, n=837 games / 3,034 turret-lives), median 11 rounds from onset, first BC shot at median 6 rounds.** The castle/supply-line split the row hypothesised does not separate (castle 79.7%±2.2, intervals overlap). v68 too thin to separate (74.3%±18.2, 36 games).
+* **The real deficit is COVERAGE, not blindness: 41.3% of belt-cutting turrets never enter any live BC turret's reach at all**, and belt-cutters are shot at 47.5%±4.4 vs 67.8%±3.3 for same-half turrets aimed elsewhere — a siting artifact, not a doctrine branch (reach→aim conversion is flat, median aim latency 0 rounds).
+* **The two watched games above are the TAIL, not the rule: 20.5% of belt-cutters are never removed; 17.0% survive ≥100 rounds** (present in 10.3% of games). G-A's Pivot gunner reproduces in the population decode.
+* ⇒ **The COUNTER survives but its load-bearing clause moves: any Pivot-collapse prereg must register the SITING constraint — belt tile in the gun's line, gun outside every live BC turret's r² — not the bare "gun on their belt".** (Stated as the cut's implication; not shipped anywhere yet.)
+
 ### T25 — NO "AM I WINNING?" GATE, AND NO PLAN B
 
 **What.** The branches fire on their own triggers regardless of game state, and
