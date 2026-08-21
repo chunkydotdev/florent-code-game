@@ -1,0 +1,23 @@
+Update available: 2.3.6 -> 2.3.9. Run: pip install --upgrade fcode
+Running match: _v601skalman vs opp_v542wave_noiseoff
+  Map: fimbulwinter.map26  Seed: 7  Replay: 
+scratchpad/s54_v601/rep_v601/fimbulwinter_seatA.replay26  TLE: 10ms
+Completed turn 0
+Completed turn 100
+Completed turn 200
+Completed turn 300
+Completed turn 400
+Completed turn 500
+Completed turn 600
+Completed turn 700
+Completed turn 800
+Completed turn 900
+Replay written to scratchpad/s54_v601/rep_v601/fimbulwinter_seatA.replay26
+
+  Winner: _v601skalman  (Titanium collected (tiebreak), turn 1000)
+
+                    _v601skalman    opp_v542wave_noiseoff  
+  Titanium     3061 (4930 mined)        2083 (2470 mined)  
+  Units                        4                       15  
+  Buildings                   16                       11  
+

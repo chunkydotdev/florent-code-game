@@ -1,0 +1,15 @@
+Update available: 2.3.6 -> 2.3.9. Run: pip install --upgrade fcode
+Running match: opp_v542wave_noiseoff vs _v601skalman
+  Map: holmgang.map26  Seed: 7  Replay: 
+scratchpad/s54_v601/rep_v601/holmgang_seatB.replay26  TLE: 10ms
+Completed turn 0
+Completed turn 100
+Replay written to scratchpad/s54_v601/rep_v601/holmgang_seatB.replay26
+
+  Winner: opp_v542wave_noiseoff  (Core destroyed, turn 122)
+
+               opp_v542wave_noiseoff     _v601skalman  
+  Titanium            34 (460 mined)    13 (40 mined)  
+  Units                            8                5  
+  Buildings                       14                8  
+

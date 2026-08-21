@@ -1,0 +1,14 @@
+Update available: 2.3.6 -> 2.3.9. Run: pip install --upgrade fcode
+Running match: opp_v542wave_noiseoff vs arm_ore_off
+  Map: yggdrasil.map26  Seed: 7  Replay: 
+scratchpad/s54_v601/rep_ore_off/yggdrasil_seatB.replay26  TLE: 10ms
+Completed turn 0
+Replay written to scratchpad/s54_v601/rep_ore_off/yggdrasil_seatB.replay26
+
+  Winner: opp_v542wave_noiseoff  (Core destroyed, turn 100)
+
+               opp_v542wave_noiseoff      arm_ore_off  
+  Titanium            24 (220 mined)    521 (0 mined)  
+  Units                            6                4  
+  Buildings                       20                2  
+

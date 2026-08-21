@@ -1,0 +1,15 @@
+Update available: 2.3.6 -> 2.3.9. Run: pip install --upgrade fcode
+Running match: _v600skalman1 vs opp_v542wave_noiseoff
+  Map: fimbulwinter.map26  Seed: 7  Replay: 
+scratchpad/s54_v601/rep_v600/fimbulwinter_seatA.replay26  TLE: 10ms
+Completed turn 0
+Completed turn 100
+Replay written to scratchpad/s54_v601/rep_v600/fimbulwinter_seatA.replay26
+
+  Winner: opp_v542wave_noiseoff  (Core destroyed, turn 138)
+
+               _v600skalman1    opp_v542wave_noiseoff  
+  Titanium     612 (0 mined)           47 (800 mined)  
+  Units                    4                        9  
+  Buildings                0                       25  
+

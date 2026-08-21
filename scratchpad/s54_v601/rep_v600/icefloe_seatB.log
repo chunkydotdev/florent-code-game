@@ -1,0 +1,14 @@
+Update available: 2.3.6 -> 2.3.9. Run: pip install --upgrade fcode
+Running match: opp_v542wave_noiseoff vs _v600skalman1
+  Map: icefloe.map26  Seed: 7  Replay: 
+scratchpad/s54_v601/rep_v600/icefloe_seatB.replay26  TLE: 10ms
+Completed turn 0
+Replay written to scratchpad/s54_v601/rep_v600/icefloe_seatB.replay26
+
+  Winner: opp_v542wave_noiseoff  (Core destroyed, turn 90)
+
+               opp_v542wave_noiseoff    _v600skalman1  
+  Titanium            10 (300 mined)      1 (0 mined)  
+  Units                            6                5  
+  Buildings                       24               11  
+
