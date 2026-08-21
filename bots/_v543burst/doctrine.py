@@ -6164,7 +6164,14 @@ LOKI_FS_V543 = True         # ⭐ MASTER.  False == `bots/_v542wave`,
 FS_V543_BURST = True        # the plank itself.  Master and plank are
                             # separate so an ablation can turn the plank
                             # off without disarming the state machine.
-FS_V543_BURST_TI = 200      # ⭐ THE EDGE.  Bank at or above this, having
+FS_V543_BURST_TI = 150      # ⭐ THE EDGE.  Bank at or above this, having
+                            # (RATIFY-A, V543POOL lock: 200→150 — the corpus
+                            # sim reads 200 at 17.5% fires/median r178 vs
+                            # 150/150 at 35.5%/r127 capturing 96% of
+                            # crossings; at 200 the dose caps the pooled
+                            # effect below TREND_FLOOR and the modal outcome
+                            # is an inert null.  Screened bytes = shipped
+                            # bytes, per the lock.)
                             # been observed BELOW `FS_V543_REARM_TI`
                             # first, opens the window.  25.6% of games,
                             # median first crossing r67.
@@ -6182,7 +6189,8 @@ FS_V543_BURST_TI = 200      # ⭐ THE EDGE.  Bank at or above this, having
 # it as the thing doing the work.  THE THRESHOLD IS THE ONLY REAL DIAL:
 # 150 -> 35.5% of game-sides, median first fire r127 · 200 -> 17.5%, r178 ·
 # 260 -> 11.5%, r196.  See the build report s4.7.
-FS_V543_REARM_TI = 200      # the bank must be seen strictly BELOW this
+FS_V543_REARM_TI = 150      # the bank must be seen strictly BELOW this
+                            # (RATIFY-A: moved with BURST_TI, same basis)
                             # before a (re-)fire is possible.  Equal to
                             # the fire threshold == a pure crossing; a
                             # LOWER value would add hysteresis and cost
