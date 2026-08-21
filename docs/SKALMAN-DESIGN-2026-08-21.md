@@ -169,7 +169,13 @@ never modular · explicit staleness constants. **v1 allocation:**
 | 7 | SK_SLOT_NEST | nest word (site pack_pos + plant round) |
 | 8 | SK_SLOT_DRIP | drip word (live-gunner/sentinel counts for `need`) |
 | 9 | SK_SLOT_STALL | stall-detector word (last seal-advance round) |
-| 10-15 | FREE | reserved; phase-2 amplify claims from 15 downward |
+| 10-13 | SK_SLOT_BEAT_0..3 | per-role liveness beats (AS-BUILT deviation 1: four 11-bit absolute beats cannot share one 32-bit word; slot 0 carries the seat counter only, role identity derived from beat staleness) |
+| 14-15 | FREE | reserved; phase-2 amplify claims from 15 downward |
+
+*As-built notes (v1, disclosed in the founding report): slot 7 uses a 10-bit `pack_tile`
+(not `pack_pos`) so the plant round coexists in-slot; only the SIEGE ENGINEER buys forward
+turrets (one-writer on slot 8 + the fire-at-0-ammo raise hazard); `SK_DOOR_GUN_CAP = 2`
+caps door-verb gunner purchases (uncapped it bought six and starved every verb).*
 
 **Build rules the manifest makes mandatory (each is a measured fact, not taste):**
 1. **Wrapper:** bare `except Exception` one layer, report-once — `finally:`,
