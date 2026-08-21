@@ -1,0 +1,38 @@
+6db3add5 g1 {('ours', 'bldg_conveyor'): 149, ('theirs', 'bldg_conveyor'): 48, ('theirs', 'empty_tile'): 8, ('ours', 'empty_tile'): 2}
+6db3add5 g2 {('ours', 'bldg_conveyor'): 65, ('ours', 'empty_tile'): 1, ('theirs', 'bldg_conveyor'): 72, ('theirs', 'empty_tile'): 4}
+6db3add5 g3 {('theirs', 'bldg_launcher'): 3, ('ours', 'bldg_conveyor'): 57, ('theirs', 'bldg_conveyor'): 18, ('theirs', 'empty_tile'): 2, ('ours', 'empty_tile'): 1}
+6db3add5 g4 {('ours', 'bldg_conveyor'): 99, ('theirs', 'bldg_conveyor'): 16, ('ours', 'empty_tile'): 6, ('theirs', 'empty_tile'): 1}
+6db3add5 g5 {('ours', 'bldg_conveyor'): 173, ('theirs', 'bldg_conveyor'): 27, ('theirs', 'empty_tile'): 3, ('ours', 'empty_tile'): 5}
+6bf8980e g1 {('ours', 'bldg_conveyor'): 54, ('theirs', 'bldg_conveyor'): 45, ('theirs', 'empty_tile'): 5}
+6bf8980e g2 {('ours', 'bldg_conveyor'): 138, ('theirs', 'bldg_conveyor'): 16, ('theirs', 'empty_tile'): 1, ('ours', 'empty_tile'): 2, ('theirs', 'bldg_launcher'): 2}
+6bf8980e g3 {('ours', 'bldg_conveyor'): 64, ('ours', 'empty_tile'): 6, ('theirs', 'bldg_conveyor'): 9, ('theirs', 'empty_tile'): 1}
+6bf8980e g4 {('ours', 'bldg_conveyor'): 41, ('theirs', 'bldg_conveyor'): 34, ('theirs', 'empty_tile'): 3, ('theirs', 'bldg_launcher'): 2}
+6bf8980e g5 {('ours', 'bldg_conveyor'): 68, ('theirs', 'bldg_conveyor'): 18, ('theirs', 'empty_tile'): 3, ('theirs', 'bldg_launcher'): 2, ('ours', 'empty_tile'): 2, ('theirs', 'bldg_sentinel'): 3, ('theirs', 'bldg_harvester'): 14}
+73e920b9 g1 {('ours', 'bldg_conveyor'): 9, ('ours', 'empty_tile'): 1, ('theirs', 'bldg_harvester'): 9, ('theirs', 'bldg_conveyor'): 27, ('theirs', 'empty_tile'): 3}
+73e920b9 g2 {('ours', 'bldg_conveyor'): 21, ('theirs', 'bldg_conveyor'): 36, ('theirs', 'empty_tile'): 4}
+73e920b9 g3 {('ours', 'bldg_conveyor'): 10, ('theirs', 'bldg_conveyor'): 9, ('theirs', 'empty_tile'): 1}
+73e920b9 g4 {('ours', 'bldg_conveyor'): 71, ('ours', 'empty_tile'): 2}
+73e920b9 g5 {('ours', 'bldg_conveyor'): 52, ('ours', 'empty_tile'): 1}
+7c3e9ae0 g1 {('ours', 'bldg_conveyor'): 46, ('theirs', 'bldg_conveyor'): 18, ('theirs', 'empty_tile'): 2, ('ours', 'empty_tile'): 1}
+7c3e9ae0 g2 {('ours', 'bldg_conveyor'): 179, ('theirs', 'bldg_conveyor'): 27, ('theirs', 'empty_tile'): 3, ('ours', 'empty_tile'): 5, ('theirs', 'bldg_harvester'): 3}
+7c3e9ae0 g3 {('theirs', 'bldg_launcher'): 5, ('ours', 'bldg_conveyor'): 30, ('ours', 'empty_tile'): 1, ('theirs', 'bldg_sentinel'): 6, ('theirs', 'bldg_conveyor'): 18, ('theirs', 'empty_tile'): 2, ('theirs', 'ENEMY_CORE'): 2}
+7c3e9ae0 g4 {('theirs', 'bldg_conveyor'): 80, ('theirs', 'empty_tile'): 8, ('ours', 'bldg_conveyor'): 40}
+7c3e9ae0 g5 {('ours', 'bldg_conveyor'): 151, ('ours', 'empty_tile'): 8, ('theirs', 'bldg_conveyor'): 79, ('theirs', 'empty_tile'): 7}
+99bb733a g1 {('ours', 'bldg_conveyor'): 14, ('theirs', 'bldg_conveyor'): 49, ('theirs', 'bldg_launcher'): 5, ('theirs', 'empty_tile'): 5}
+99bb733a g2 {('ours', 'bldg_conveyor'): 143, ('theirs', 'bldg_conveyor'): 12, ('theirs', 'empty_tile'): 1, ('theirs', 'bldg_launcher'): 2, ('theirs', 'bldg_sentinel'): 31}
+99bb733a g3 {('theirs', 'bldg_launcher'): 5, ('ours', 'bldg_conveyor'): 29, ('theirs', 'bldg_conveyor'): 25, ('theirs', 'empty_tile'): 4, ('ours', 'empty_tile'): 1, ('theirs', 'bldg_harvester'): 19}
+99bb733a g4 {('ours', 'bldg_conveyor'): 48, ('theirs', 'bldg_conveyor'): 27, ('theirs', 'empty_tile'): 2, ('ours', 'empty_tile'): 3}
+99bb733a g5 {('ours', 'bldg_conveyor'): 166, ('theirs', 'bldg_conveyor'): 27, ('theirs', 'empty_tile'): 3, ('ours', 'empty_tile'): 4}
+
+POOLED over 25 games:
+   ('ours', 'bldg_conveyor') 1917
+   ('theirs', 'bldg_conveyor') 737
+   ('theirs', 'empty_tile') 76
+   ('ours', 'empty_tile') 52
+   ('theirs', 'bldg_harvester') 45
+   ('theirs', 'bldg_sentinel') 40
+   ('theirs', 'bldg_launcher') 26
+   ('theirs', 'ENEMY_CORE') 2
+
+OURS total: 1969 | ours into ENEMY_CORE: 0
+THEIRS total: 926 | theirs into ENEMY_CORE (= our core): 2
