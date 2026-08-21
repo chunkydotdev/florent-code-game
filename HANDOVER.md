@@ -4,6 +4,73 @@
 # candidate ITSELF; row/BARS controls + PROGRAMME's BASELINE field are the control truth
 # (wrap debt #3).
 
+# ===== s53 WRAP (builder, 2026-08-21 ~16:4xZ; Magnus pre-called it: wrap when the playbook lands) =====
+
+## ⭐⭐⭐ THE HEADLINE: THE RUSH ERA ENDED THIS SESSION. THE NEXT SESSION FOUNDS **SKALMAN**.
+Magnus's directive (verbatim in the tail ~15:5xZ): replicate the Bean counters basics, then
+amplify our specialities; the two-raider rush and the Baltsars banditer name are done. The
+FOUNDING DOCS: `docs/research/PLAYBOOK-beancounters-2026-08-21.md` (2,127 lines — §6 is the
+copy-spec COPY 1-9 + the 12-row vulnerability ledger + DO-NOT-COPY) + the study + PROGRAMME's
+NEW LINE block (name rationale, benchmark, kill ruling). ARCHITECTURE (Magnus-ratified in
+conversation): **from scratch for the player (~1.5k lines, per-verb attributable), curated
+imports verbatim** — MAPTRUST/known_map_for, bounds discipline, displacement guards, the
+exception wrapper, store idioms, cardinal pathing. Phase-1 verdicts = replication-fidelity
+vs the study's mechanism numbers (belt connectivity 83%, cage share 55.5%, drip clock
+97.3%-exact-sums/peak-26/first-convert r27.5, nest d²25, four fixed roles), NOT game share.
+
+## THE SLOT — x3r0's v176 "Mjolnir rotfix w77" holds, BY MAGNUS'S RULING ("Restore their 176")
+after my window op accidentally displaced their unannounced swap (incident fully disclosed in
+the tail, 16:0xZ). Our v177 "Baltsars banditer v2" (= bots/_v542wave) is submission 177,
+ready, and holds the record as the rush line's peak. **v178 = bots/_v544doorflip is a LEG
+TREE, never a holder — do not activate it outside a DOORWAVE-class window.** RUSH_LINE_STATUS
+in PROGRAMME: v177 re-takes the slot only per that field's terms. WINDOW-OP RULES (learned at
+cost today): read the pre-submit holder same-shell and restore THAT, by VERSION INTEGER, with
+the path no-op-driven first; pairing grid ~10 min at :x1:10 (re-derive ALWAYS).
+
+## THE ERA CONSTANTS (all set today, all certified)
+* **NEWPOOL-BASELINE anchor: 51.94 [50.61, 53.28]** vs bots/_x3r0v168mjolnir, n=5400, F1
+  clean. ALL THREE registered segment signs falsified: survivors 37.64 (our WORST — two-cell
+  convergent), new10 56.47, midgard 63.89. Craters: icefloe 23.06 / paths 28.06 / glacierkeep
+  40.83 / auroraveil 41.67 / jotunheim 41.94.
+* **Bar-2 (Magnus): candidate full-pool CI-LOWER ≥ 53.3 vs the BASELINE** (PROGRAMME, certified).
+* **Kill CDF anchors (T-side, this pool): medkill 311.5 [301,321], k≤200 9.50%, k≤300 21.46%,
+  RMST300 280.5, r1000 20.4%** — grindier era confirmed; famine maps pay eco bots ~−22/match.
+* **KILL RULING (Magnus, verbatim): "We play to destroy their cores"** — R1000_IS_DEFEAT
+  survives into Skalman; strangle-then-kill.
+
+## THE SUCCESSOR'S QUEUE (priority order)
+1. **FOUND SKALMAN v1** — playbook §6 + the architecture note above; build the fidelity
+   instruments FIRST (per-verb mechanism metrics from the study; the decoders exist —
+   replay_autopsy driven both ways, the ringrace/launchtime instruments). Benchmark =
+   bots/_v542wave FROZEN (chains to bar-2 scale via the anchor).
+2. **DOORWAVE MECHANISM READOUT** — the leg is 20/20 fired (4 cells), locked metrics at
+   PREREG-LEG-DOORWAVE-2026-08-21.md, replays archiving; the door verb (home-ring clearance,
+   BC's 79.7% vs our 42.8%) is a core Skalman verb, so this readout feeds the founding.
+   Side-lane cert covers the fire side; the readout verdict is the builder's.
+3. **Queue re-scope settles**: 25 PENDING-DESIGN rows classify on the Skalman design calls
+   (forward raiders? ferry? raid-station picker?) — settle conditions per row in
+   QUEUE-RESCOPE-DRAFT-skalman-2026-08-21.md; also owed: the v543burst nest-prior-art row
+   (supply screen-tape numbers to research) and the #90/#91 annulus-survival grep vs _v542wave.
+4. **The instrument-debt batch** (consolidated list in the s53 wrap deltas block, tail):
+   HIGH = results.tsv schema, submit_clean --restore-to, audit_trigger live-tail selftests,
+   R2 ship-gate reading parsed SHIP_BAR.
+5. #114 (O(1) calibration leg, prereg-gated) · #116 (BC belt-gun answer rate, n=2 gap).
+
+## FIXTURES / RULES ADDED s53 (successor must not re-learn)
+REACHABILITY-DRIVEN at every mechanism-prereg ratify (60-vs-0 drive pattern) · undriven
+paths on irreversible ops get no-op drives first · window ops read-then-restore the holder ·
+subject discipline on ALL shared-account surfaces (3 instances today) · the pre-committed
+modal-stop sentence (V543POOL precedent) · version-binding semantics UNRESOLVED (Torsko row
+— do not build a window call on bind-at-creation) · pool-era + DEFF discipline unchanged.
+
+## STATE / WAKE PATHS
+All four watchers + keeper + corefill_forever alive (corefill idle, worklist consumed incl.
+the cancelled V543POOL). All agents landed and relayed; NOTHING DIES WITH THIS SESSION.
+**NOTHING WAKES A HUMAN.** The next scheduled human-facing event is the successor's boot.
+Research + side lane wrap on my ping (sent); their reboot states follow in the tail.
+
+## ===== ARCHIVE MARKER: everything below predates s53's wrap =====
+
 # ===== s52 WRAP (builder, 2026-08-21 ~12:4xZ; Magnus called it at the v2 ship) =====
 
 ## THE SLOT — OURS at wrap: **v177 "Baltsars banditer v2" = bots/_v542wave** (shipped
