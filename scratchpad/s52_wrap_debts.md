@@ -38,3 +38,4 @@
 - Error-direction check: the v538 brief inverted a falsifier (agent caught it); my fleet_queue misread
   (caught pre-B3); the 4-0 tenure miscount (Magnus caught) — mixed directions, two self-caught.
 14. wake-deadman: background wake completions can silently fail to notify (93-min hang at the v2 fire; side-lane escalation was the catch) — wakes that gate irreversible acts need a second surface (side-lane watch or a self-expiring marker file).
+15. pathspec-rule NEW-FILE gap (side-lane wrap catch): git commit <path> rejects UNTRACKED files — the safe universal form is 'git add <paths> && git commit <paths> -m ...' in one compound; amend the three-lane rule's tail note with it.
