@@ -776,3 +776,47 @@ tautology.
 7. **RUN v539.1 AS THE THIRD ARM** of the `r300` screen (§8.2). §11.2 predicts
    it reads as the parent; if it does not, the fixture is missing something the
    live game has.
+
+---
+
+## 12. ⛔ PROVENANCE DEFECT — THE v539.1 WORK IS COMMITTED UNDER ANOTHER LANE'S
+MESSAGE
+
+Recorded because a searchable record that points at the wrong commit is the
+same failure class as §10.2's misaligned manifest: it reads as correct.
+
+**WHAT HAPPENED.** At `08:09:46Z` this build ran `git add` on its three paths
+and then, in the next shell call, `git commit`. Between the two, the **research
+lane committed** — with no pathspec — and its commit took everything sitting in
+the shared index. **All 19 v539 paths (the `FS_V539_RESERVE_FLOOR` code, both
+arms, the refreshed tapes, §10.2's manifest fix and §11) are therefore recorded
+inside `a03f63c32`, a RESEARCH two-loss-autopsy commit**, and this build's own
+`git commit` then found nothing staged and exited without creating anything.
+
+**NOTHING IS LOST AND NOTHING IS WRONG IN THE TREE.** Verified at `08:11:06Z`
+against `HEAD`:
+
+| check | result |
+|---|---|
+| all 19 v539 paths present in `a03f63c32` | **yes** |
+| `bots/_v539resilience/doctrine.py` flags in HEAD | `LOKI_FS_V539 = True`, `FS_V539_REEST = True`, `FS_V539_RESERVE_FLOOR = False`, `FS_V539_HONEST_SLOT = False`, `FS_V539_LOG = False` — **all as intended** |
+| `arms/v539_1_floor` in HEAD | `FS_V539_RESERVE_FLOOR = True` |
+| `arms/v539flagoff` in HEAD | `LOKI_FS_V539 = False` |
+| working tree vs HEAD, all three paths | **clean** |
+| `harness.py --selftest` on HEAD bytes | **PASSED** |
+
+**WHAT IS ACTUALLY DAMAGED IS SEARCHABILITY.** `git log --grep RESERVE_FLOOR`
+and `git log --oneline -- bots/_v539resilience` both point a reader at a
+research autopsy about `kladde` and `frostgate`. **This section is the index
+entry that commit should have carried**, and §11 is the content.
+
+**THE HISTORY IS NOT REWRITTEN.** `a03f63c32` is pushed and other lanes have it;
+rewriting shared history to fix an attribution would trade a labelling defect
+for a real one.
+
+**THE RULE TAKEN, and it is mechanical rather than a promise to be careful:**
+with concurrent lanes on one working tree, **`git add` opens a window in which
+another lane's `git commit` owns your work.** Use the **pathspec form** —
+`git commit <paths> -m …`, which commits those paths' working-tree state and
+never touches the shared index — for every multi-lane commit. *This section is
+committed that way.*
