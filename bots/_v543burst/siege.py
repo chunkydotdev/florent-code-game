@@ -1252,6 +1252,19 @@ class SiegeMixin:
 
     def _fs_turn(self, ct):
         rnd = ct.get_current_round()
+        # ⭐⭐ v543 -- SAMPLE THE BANK EVERY ROUND THIS BODY LIVES, not only on
+        # the rounds it reaches the ladder.  ⛔ THIS IS A CORRECTNESS FIX, NOT
+        # A TIDY-UP, and the defect it closes is silent: `_v543_pair` sits
+        # behind `action_cooldown == 0`, behind arrival at the ring and behind
+        # `not _v521_near`, so a body that ticked ONLY there would carry a
+        # history full of holes and -- worse -- could arrive at the ring during
+        # a high-bank phase, never once observe `ti < FS_V543_REARM_TI`, and
+        # therefore NEVER ARM.  The edge is a property of the TEAM BANK over
+        # time; it must be sampled on the body's own clock, not on the
+        # ladder's.  `_v543_tick` is idempotent per round, so the call inside
+        # `_v543_pair` is still correct and still cheap.
+        if LOKI_FS_V543:
+            self._v543_tick(ct, rnd)
         if self._v520_appt_lost(ct, rnd):
             # ⛔ THE READBACK ARM OF THE APPOINTMENT GUARD.  Two bodies can
             # still CLAIM the support seat in the same round (the store is
@@ -3032,6 +3045,25 @@ class SiegeMixin:
         the gunner-axis and ring penalties and the side preference.  The
         siting machinery is reused verbatim; only the funding rank changes.
 
+        ⭐⭐ AND THE BYPASS OF `_fs_sentinel_ok` IS THE POINT, NOT A SIDE
+        EFFECT -- CONFIRMED AGAINST v177's MAIDEN DECODE
+        (`docs/research/DECODE-ringrace-8013d088-2026-08-21.md`): in 5/5 games
+        OUR forward sentinel lands r100-128 against THEIRS at r21-58, and first
+        core damage is our-forward-sentinel-round + 1 in 4/4.  The binding term
+        is this gate: its salt disjunct fired **0 times in 5 games**, so every
+        sentinel waited out `FS_SENT_RND_FLOOR = 60` on the eco disjunct plus
+        40-68 further rounds of hesitancy.  A burst whose median crossing is
+        r67 routed through that gate would be throttled by the exact path that
+        makes the shipped bot 40-100 rounds late.  ⇒ this clause carries its
+        OWN funding disjunct (`cost + FS_V543_RESERVE`) and never consults
+        `_fs_sentinel_ok`; `_fs_try_sentinel`, which it does call, contains no
+        reference to the gate, the salt/eco disjuncts or the round floor.
+        ⚠ The bypass is FLAG-SCOPED, not an edit to the shared gate: with
+        `LOKI_FS_V543 = False` every other caller still meets `_fs_sentinel_ok`
+        exactly as the parent wrote it.
+        ⭐ OBSERVED: the forced-dose probe bought at **r28** on atoll s7 -- 32
+        rounds INSIDE the r60 floor the eco disjunct would have imposed.
+
         ⛔ AND IT DOES NOT CALL `_fs_rung`.  That falsifier re-asks every
         HIGHER rung and reports a non-empty `hi` list as a bug; a clause that
         deliberately outranks rung 1 would trip it every time it fired.  Same
@@ -3100,11 +3132,20 @@ class SiegeMixin:
         """
         if not (self._v543_on() and FS_V543_AMMO):
             return False
+        # ⛔ TICK FIRST, UNCONDITIONALLY, AND THE ORDER IS THE WHOLE POINT.
+        # The state machine needs an UNBROKEN bank history; if the tick sat
+        # behind the `fwd_guns` test the Core would record nothing until the
+        # first forward sentinel was already standing, and would then need
+        # FS_V543_RISE_RNDS rounds of history before the waiver could bind --
+        # a delay landing exactly on the rounds the fresh pair has an empty
+        # magazine, which is the state this waiver exists for.
+        if not self._v543_tick(ct, rnd):
+            return False
         if not fwd_guns:
             return False
         if self.v543_ammo_ti >= FS_V543_AMMO_MAX:
             return False
-        return self._v543_tick(ct, rnd)
+        return True
 
     def _v543_ammo_spent(self, ct, rnd, amt, ti_floor, fwd_guns):
         """Charge a conversion made under the waiver against its match budget.

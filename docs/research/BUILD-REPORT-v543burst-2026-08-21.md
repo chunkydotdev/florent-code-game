@@ -20,28 +20,35 @@ what the mechanism did on the one live cell it was allowed to touch.
 
 ## ⛔ TOP LINE — FIVE SENTENCES
 
-1. **THE DIFF IS ADD-ONLY: 483 inserted lines, ZERO deleted, ZERO modified,
-   across three files** (`doctrine.py` +178, `siege.py` +254, `main.py` +51;
+1. **THE DIFF IS ADD-ONLY: 538 inserted lines, ZERO deleted, ZERO modified,
+   across three files** (`doctrine.py` +192, `siege.py` +295, `main.py` +51;
    `eco.py` and `raid.py` byte-identical). Nothing in the parent's behaviour is
    edited — the plank is inserted, never substituted.
-2. **The gate arms FROM BELOW, and that is the whole reason it is not
-   `LOKI_SURPLUS_TI` in a new costume.** The game starts at 470 Ti, so a level
-   test on 200 is satisfied at r0 in 100.0% of games; `v543_armed` starts
-   `False` and is set only by an observation of `ti < 200`. The build's own
-   state-machine test drives this to both verdicts (§4.1).
+2. **The gate arms FROM BELOW** — the game starts at 470 Ti, so a bare level
+   test on 200 fires at r0 in 100.0% of games; `v543_armed` starts `False` and
+   is set only by an observation of `ti < 200`. ⛔ **BUT DO NOT CITE THE LATCH
+   AS LOAD-BEARING: measured over 1,405 real rated game-sides it is worth
+   EXACTLY 0.0pp**, because on real series the harvester clause blocks the
+   opening endowment first. The latch, `FS_V543_PEAK` and the net-rise term are
+   mutually redundant substitutes; all three stay, none of them is the dial.
+   **The dial is the threshold: 17.5% of game-sides at 200, 35.5% at 150**
+   (§4.7 — and it corrects a claim this build first wrote into its own doctrine
+   block).
 3. **The consumer is the SECOND sentinel, because the first already jumps the
    collar and the second does not.** `_v518_early_sentinel` is gated on
    `live <= 0`; after that the only route to a pair is rung 4, the *bottom* of
    the ladder, plus a rebuy surcharge on top of the whole remaining collar
    reserve. The burst window replaces the collar reserve — and nothing else —
    for at most two live sentinels (§2.2).
-4. **⚠ MECHANISM FIRST, AND THE FIRST READ IS ZERO: the gate fired 0 times in
-   the one instrumented live game (midgard s21, 294 rounds), and the tape says
-   why — that game contains NO edge crossing of 200 Ti at all** (bank falls from
-   500 and is ≥200 on only 16 rounds, all before the first dip). The instrument
-   is not blind: the same run's positive-control tape emitted 294 lines (§4.3).
-   The corpus says crossings exist in 25.6% of games at a median r67; one game
-   is a sample of one.
+4. **⚠ MECHANISM FIRST. At the shipped setting the gate fired 0 times in both
+   instrumented live games — and the tapes say why: neither game contains an
+   edge crossing of 200 Ti at all** (§4.3; the instrument is not blind — the
+   same runs' positive-control tape emitted 294 lines). **A forced-dose probe
+   at a lowered threshold then drove the whole path end to end — gate → PAIR
+   purchase → ammo waiver, 0 tracebacks — and exposed a map-coverage defect:
+   on midgard the ferry-siege lane never runs at all, so the consumer has no
+   site to execute from** (§4.4). Corpus dose at the shipped setting: **~17.5%
+   of game-sides, median first fire r178** (§4.7).
 5. **Flag-off identity is argued statically and is CLEAN under a self-tested
    audit** (R1/R2/R3, mutation positive control fires 3 violations on a
    deliberately unguarded copy) — **the DYNAMIC half (paired NOISE_OFF identity
@@ -184,6 +191,50 @@ call it either, for the same reason.
 implements: the clause re-runs every ring round the window is open and buys the
 moment `ti ≥ sentinel_cost + 24` again, without waiting for another crossing.
 
+### 2.2b ⭐⭐ THE BYPASS OF `_fs_sentinel_ok` IS DELIBERATE, AND v177's MAIDEN DECODE IS WHY
+
+Relayed mid-build by the coordinating lane from
+`docs/research/DECODE-ringrace-8013d088-2026-08-21.md` (v177's maiden, 5 games):
+
+* **our forward sentinel lands r100–128; the opponent's lands r21–58**;
+* **first core damage = our-forward-sentinel-round + 1 in 4/4** — the sentinel
+  *is* the damage clock;
+* conversion cost from raider arrival to sentinel: **91–112 rounds**;
+* **the binding term is `_fs_sentinel_ok` (`siege.py:5792`): its salt disjunct
+  fired 0 times in 5 games**, so every sentinel waited out
+  `FS_SENT_RND_FLOOR = 60` (`doctrine.py:3165`) on the eco disjunct **plus 40–68
+  further rounds of hesitancy**;
+* all core damage in the maiden was sentinel −18; **zero builder pecks** —
+  consistent with the pair being the kill channel this plank funds.
+
+⇒ **A burst whose median first crossing is r67, routed through a gate that
+cannot open before r60 and in practice opens 40–68 rounds after that, would be
+throttled by the exact path that makes the shipped bot late.** The edge trigger
+exists to buy the pair EARLY; running it through that gate would delete its
+reason to exist.
+
+**The build already satisfies this and it was verified rather than assumed:**
+`_v543_pair` carries its **own** funding disjunct (`ti ≥ sentinel_cost +
+FS_V543_RESERVE`) and **never calls `_fs_sentinel_ok`**; `_fs_try_sentinel`,
+which it does call, contains **zero** references to that gate, to the salt/eco
+disjuncts or to `FS_SENT_RND_FLOOR` (grepped over the whole function body).
+**The bypass is FLAG-SCOPED — a new disjunct inside a `LOKI_FS_V543`-guarded
+clause, not an edit to the shared gate** — so with the master off every other
+caller meets `_fs_sentinel_ok` exactly as the parent wrote it, which is also
+what keeps the ablation identity in §3 intact.
+
+⭐ **Observed, not just argued: the forced-dose probe bought its sentinel at
+r28 on atoll s7 (§4.4) — 32 rounds INSIDE the r60 floor** the eco disjunct would
+have imposed on every other route to a forward sentinel.
+
+⚠ **The obvious hazard of a bypass, named:** `_fs_sentinel_ok`'s eco disjunct
+also encodes *"we can sustain a sentinel"* (two connected harvesters). The burst
+substitutes its own income evidence for that — `FS_V543_MIN_HARV = 2` plus a
+bank that is net non-falling over 8 rounds — which is a **stronger** income
+statement than the gate's, but it is a different one, and it is not the term the
+gate was tuned on. If the screen shows bursts buying sentinels that immediately
+starve for ammunition, this is the first place to look.
+
 ### 2.3 Ammo — integrated, not duplicated
 
 The parent already converts in small just-in-time chunks off a demand-driven
@@ -221,7 +272,7 @@ sentinel switches the waiver off automatically.** No new code.
 `bots/_v543burst` behaves exactly as `bots/_v542wave`.
 
 **Argument 1 — the diff is ADD-ONLY.** `diff -r` reports **0 deleted and 0
-modified lines** in all five files; 483 lines are inserted and nothing else
+modified lines** in all five files; 538 lines are inserted and nothing else
 changes. A parent behaviour that is never edited cannot be altered except through
 one of the inserted read sites, and those are enumerable.
 
@@ -335,7 +386,162 @@ fire rate.**
 opponent tree ships `NOISE_ON = True`, so the same seed gave 365 and 294 rounds.
 Determinism requires a NOISE_OFF opponent, which is a battery-construction task.
 
-### 4.4 CPU
+### 4.4 ⭐ THE FORCED-DOSE PROBE — the consumer path RUNS END TO END, and a map-coverage defect fell out of it
+
+A zero-dose smoke proves nothing about the consumer, so a **scratch probe arm**
+(threshold dropped to `FS_V543_BURST_TI = FS_V543_REARM_TI = 60`, tape on, noise
+off — **not a shippable configuration and it exists nowhere in `bots/`**) was run
+to force the path. Two games, both `nice -n 19`.
+
+**atoll s7 — the plank executes end to end, 0 tracebacks, won by core kill:**
+
+```
+V543 FIRE 24 id 1  ti 93  rise 46 harv 2 n 1 until 64     <- Core
+V543 FIRE 24 id 3  ti 93  rise 46 harv 2 n 1 until 64     <- raider
+V543 FIRE 24 id 15 ti 93  rise 46 harv 2 n 1 until 64     <- raider
+V543 PAIR 28 id 3  live 0 ti 103 need 7 orth 5 n 1 until 64
+V543 AMMO 30 amt 27 floor 12 fwd 1 spent 27 bind 1
+V543 FIRE 66 id 15 ti 101 rise 32 harv 3 n 2 until 106
+V543 PAIR 100 id 15 live 0 ti 113 need 6 orth 5 n 1 until 106
+V543 AMMO 102 amt 16 floor 12 fwd 2 spent 63 bind 4
+```
+
+Three things are settled by that tape and each was a real open question:
+* **the gate, the consumer and the magazine all execute**, in that order, with
+  no exception and no destroyed unit;
+* **three different bodies reached the identical verdict on the identical round
+  (r24) with no coordination** — the per-body design's whole premise, observed
+  rather than argued;
+* **the ammo waiver binds and converts** (`floor 12`, `fwd` rising 1 → 2), which
+  is the failure this build predicted and pre-empted.
+
+⚠ **AND ONE THING IT DOES NOT SHOW: A SIMULTANEOUS PAIR.** Both purchases read
+`live 0` — the second (r100) is a **replacement** for a dead first, not a second
+barrel. On this cell the plank bought a sentinel and later re-bought one. **The
+pair is the plank's thesis and this probe did not demonstrate it.** Nor can the
+r28 purchase be attributed to the plank without an ablation arm — `_v518_early_
+sentinel` might have taken it a few rounds later. Both are screen questions.
+
+**⛔ midgard s21 — 0 `PAIR` lines, AND THE REASON IS A COVERAGE DEFECT WORTH MORE
+THAN THE PROBE.** The same arm fires the gate three times (r34/r77/r118, all
+`id 1`) and never buys. A one-line debug tape added to the probe arm's `_fs_turn`
+emitted **0 lines in the entire midgard game against 222 on atoll**:
+
+> **⇒ ON MIDGARD THE FERRY-SIEGE LANE NEVER RUNS AT ALL, so `_v543_pair` — which
+> lives in that lane's ladder — HAS NO SITE TO EXECUTE FROM.** The forward
+> sentinel that midgard *does* buy comes from `raid.py:_try_forward_sentinel`, a
+> different lane with its own cap and its own 40-Ti floor.
+
+**This is a real scope limit on the plank and it is stated here rather than
+discovered by a flat screen** (§7.7): the map gating that `_v534`/`_v535`/`_v538`
+built decides whether this plank has a consumer at all. **The screen must select
+maps where the FS lane runs, or it will measure a gate with nothing attached.**
+⚠ **And note what it implies for the raid lane: at burst time the raid path's own
+`ti ≥ cost + LOKI_FWD_TI_FLOOR (40)` is ALREADY satisfied** (a 200-Ti bank buys a
+60–91-Ti sentinel with room to spare), so a burst clause there would add
+approximately nothing — **the FS ladder is starved and the raid lane is not.**
+That is why the plank is scoped to the FS lane, and it is an argument, not a
+measurement.
+
+### 4.5 TWO ORDERING DEFECTS FOUND ON REVIEW, AFTER THE FIRST SMOKE, AND FIXED
+
+Both are the same class — *the state machine was only being ticked on the paths
+that consume it* — and neither would have raised an exception or shown up in a
+compile:
+
+1. **`_v543_ammo_waive` tested `fwd_guns` BEFORE ticking.** The Core would then
+   record no bank history until the first forward sentinel was already standing,
+   and would need `FS_V543_RISE_RNDS` further rounds before the waiver could
+   bind — a delay landing exactly on the rounds the fresh pair has an empty
+   magazine, i.e. on the state the waiver exists for. **Fixed: tick first,
+   unconditionally.**
+2. **Raider bodies only ticked inside `_v543_pair`**, which sits behind
+   `action_cooldown == 0`, behind arrival at the ring and behind `not
+   _v521_near`. A body ticking only there carries a history full of holes and —
+   worse — **can arrive at the ring during a high-bank phase, never once observe
+   `ti < 200`, and therefore NEVER ARM.** **Fixed: `_fs_turn` ticks once per
+   round for every raider**, on the body's own clock rather than the ladder's;
+   `_v543_tick` is idempotent per round so the ladder's call is still correct.
+
+The atoll tape in §4.4 is post-fix and is what shows three bodies agreeing on
+r24; the §4.3 smoke games are pre-fix, which does not affect their reading (both
+contained no crossing at any threshold).
+
+### 4.7 ⭐⭐ THE DOSE PRE-READ — MEASURED ON 1,405 REAL RATED GAME-SIDES, AND IT CORRECTS THIS BUILD'S OWN DOCTRINE COMMENT
+
+Commissioned alongside the build and run against the corpus, **not** against our
+own arena: the exact `_v543_tick` predicate replayed over per-round bank series
+decoded at `--step 1` from `replay_archive` (`tools/bank_under_harassment.py`
+primitives). **Population: 1,405 game-sides, our versions 159–177, 100% RATED
+LADDER** (all 1,405 match ids present in `ladder_games.tsv`, 0 in
+`unrated_games.tsv` — no rated/unrated pooling). Median series 222 rounds; only
+30.8% of games survive past r300. Harvester clause modelled as the monotone
+high-water ratchet, which is `SLOT_HARVESTERS`'s real semantics.
+
+**NEGATIVE CONTROL, and it must come out the other way for any of this to
+count:** the same simulator with the latch replaced by a bare level test
+`bank ≥ 200` fires in **1,405 of 1,405 game-sides at median round 0** (r0 bank
+reads exactly 470). The instrument can produce the other verdict.
+
+| arm | fires ≥1× (ALL, n=1405) | 172–177 (n=195) | first fire, median | fires before r300 (all games) |
+|---|---|---|---|---|
+| **150 / 150** (fallback) | **35.5%** | 29.2% | **r127** IQR[83,192] | **31.5%** |
+| **200 / 200** (shipped) | **17.5%** ±2.5pp | 15.4% ±6.3pp | r178.5 IQR[83,275] | 14.1% |
+| 260 / 260 | 11.5% | 9.2% | r196 | 8.3% |
+
+*(intervals with the rated DEFF = 1.529 applied.)* Capture rate against the
+crossings that exist at all: 96% at 150, 84% at 200, 85% at 260 — **the gate is
+not throwing away available crossings; the threshold is what there is.**
+
+⛔⛔ **AND HERE IS THE CORRECTION, WRITTEN DOWN BECAUSE IT FALSIFIES A CLAIM THIS
+BUILD PUT IN ITS OWN DOCTRINE BLOCK.** The full 2×2×2 decomposition (latch ×
+PEAK × RISE) over the same 1,405 series:
+
+```
+latch peak rise   fires   rate
+  1    1    1      246    17.5%   <- shipped
+  1    1    0      246    17.5%
+  1    0    1      246    17.5%
+  0    1    1      246    17.5%   <- LATCH REMOVED: byte-identical
+  0    0    0      277    19.7%   <- only removing ALL THREE moves anything
+```
+
+**Removing the arm-from-below latch alone costs exactly 0.0pp.** My docstring
+argued the latch is what keeps the 470-Ti opening endowment out; on real series
+**it is `FS_V543_MIN_HARV` that does that** (the harvester ratchet does not reach
+2 by r7). The three clauses are complete substitutes — any one of them suppresses
+the same ~31 games — and the `HISTORY DEPTH` clause is **exactly inert**.
+Dropping `harv ≥ 2` on its own is worth +1.1pp.
+
+**What I changed and what I did not.** The latch and both qualifiers **stay**:
+each costs zero, the latch is the semantically correct guard, and unlike the
+harvester clause it does not depend on the eco lane's timing to hold. **The
+doctrine comment is amended in place** (`doctrine.py`, above `FS_V543_REARM_TI`)
+so nobody cites the latch as load-bearing on the strength of a synthetic trace.
+⚠ **This is exactly the failure mode the house rules name: a guard that has never
+been driven to the other verdict on the real distribution has not been seen to
+guard.** My `gate_test.py` case *"opening endowment never fires"* is true of a
+flat-470 synthetic and does not establish what it appeared to establish.
+
+**⛔ WHAT THIS MEANS FOR THE PREREG, and it is not comfortable: at the shipped
+200/200 the plank is INERT IN ~5 OF EVERY 6 GAMES, and the median first fire
+(r178) sits close to the r300 bar with only 14.1% of ALL game-sides firing before
+it.** On dose grounds the **150/150 arm is the one worth firing first** (~2× the
+dose, median r127, 31.5% before r300). That is a screen decision for the owning
+lane, not mine — but the number belongs in the prereg before the leg, not after.
+
+**Caveats carried verbatim from the measurement:** (i) these are trajectories from
+bots that do **not** contain the plank, so the ≥1-fire rate and the first-fire
+round are sound counterfactuals while everything downstream (2nd/3rd fires) is
+not — the plank re-shapes the series it reads; (ii) simulated as **one body alive
+from r0**, so per-body divergence and mid-game births are unmodelled (the
+conservative direction); (iii) it assumes the tick is reached every round, which
+is what §4.5's second fix now guarantees for raiders and which the Core satisfies
+outside the endgame branch; (iv) 69.2% of game-sides end before r300, so "never
+fired" and "the game was already over" are confounded — **conditional on reaching
+r300 the rate is 24.9%.**
+
+### 4.6 CPU
 
 `_v543_tick` is O(1) per unit per round: one `get_global_resources`, one
 `read_store` on the fire path only, and a list of at most nine `(round, bank)`
@@ -347,15 +553,15 @@ pairs pruned by a `while`. No map scan, no BFS, no per-round full-map read. The
 ## 5. FILES AND LINES TOUCHED
 
 ```
-bots/_v543burst/doctrine.py  +178  -0     the constant block (EOF append, house pattern)
-bots/_v543burst/siege.py     +254  -0     _v543_on/_v543_tick/_v543_pair/_v543_ammo_waive/
+bots/_v543burst/doctrine.py  +192  -0     the constant block (EOF append, house pattern)
+bots/_v543burst/siege.py     +295  -0     _v543_on/_v543_tick/_v543_pair/_v543_ammo_waive/
                                           _v543_ammo_spent  +  the ladder insertion
 bots/_v543burst/main.py       +51  -0     __init__ state (13 fields) + the convert-floor
                                           waiver + its accounting call
 bots/_v543burst/eco.py         0   -0     byte-identical to _v542wave
 bots/_v543burst/raid.py        0   -0     byte-identical to _v542wave
                              ----  ---
-                             +483   -0    ADD-ONLY
+                             +538   -0    ADD-ONLY
 ```
 
 Insertion points (line numbers in `_v543burst`):
@@ -412,9 +618,11 @@ identity games require a NOISE_OFF arm on BOTH sides.** The smoke arm used for
    the row already carries. The **pre-registered fallback arm** is
    `FS_V543_BURST_TI = FS_V543_REARM_TI = 150` (menu: fires 47.3%, median r95,
    36.9% before r150) — named here, before any data, so it cannot be chosen
-   afterwards. A dose pre-read simulating this exact predicate over the corpus's
-   per-round bank series was commissioned alongside this build; **its numbers are
-   not in this report and must not be inferred from it.**
+   afterwards. ⭐ **THE DOSE PRE-READ CAME BACK AND IT VINDICATES THE FALLBACK
+   BEFORE THE SCREEN RUNS: 17.5% at the shipped 200 against 35.5% at 150, with
+   the median first fire moving r178 → r127** (§4.7, n=1,405 rated game-sides).
+   The shipped arm is thin enough that a flat primary would be uninformative by
+   construction.
 2. **The collar-reserve waiver is a real cost and it is not measured here.**
    Inside a window the pair outranks barriers and is funded from money the collar
    was holding. `_v518_early_sentinel`'s own build measured its (tighter) version
@@ -436,6 +644,13 @@ identity games require a NOISE_OFF arm on BOTH sides.** The smoke arm used for
    are alive". The net-rise clause is the term that actually detects income, so
    this is a floor, not the load-bearing test — but it is a known
    over-permissiveness.
+7. **⛔ MAP COVERAGE — THE CONSUMER ONLY EXISTS WHERE THE FERRY-SIEGE LANE
+   RUNS.** Measured, not assumed (§4.4): `_fs_turn` was called **222 times on
+   atoll s7 and 0 times on midgard s21**. On maps where the FS lane is gated
+   off, the gate still fires and there is nothing to spend it on. **A screen
+   pooled over a map set that is mostly FS-gated will read a near-zero pair
+   count and it will not be the plank's fault.** Either select the map pool or
+   report the FS-lane share alongside the dose.
 6. **Bodies born mid-game are conservative by construction** (no history ⇒ no
    fire for 8 rounds, and no fire ever if they never observe a sub-200 bank).
    Acceptable, and stated so a zero from a late body is not read as a bug.

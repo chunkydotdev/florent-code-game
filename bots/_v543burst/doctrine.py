@@ -6168,6 +6168,20 @@ FS_V543_BURST_TI = 200      # ⭐ THE EDGE.  Bank at or above this, having
                             # been observed BELOW `FS_V543_REARM_TI`
                             # first, opens the window.  25.6% of games,
                             # median first crossing r67.
+# ⛔⛔ MEASURED AMENDMENT, SAME DAY, BEFORE ANY SCREEN -- THE ARM-FROM-BELOW
+# ARGUMENT ABOVE IS CORRECT ABOUT THE SEMANTICS AND WRONG ABOUT WHAT BINDS.
+# Simulated over 1,405 REAL rated game-sides (our v159-177, per-round bank
+# decoded at --step 1): removing the latch and changing NOTHING else leaves the
+# fire count at 246/1405, byte-identical distribution -- **0.0pp**.  The opening
+# endowment is blocked in practice by `FS_V543_MIN_HARV` (the ratchet does not
+# reach 2 by r7), not by the latch.  The latch, `FS_V543_PEAK` and
+# `FS_V543_RISE_TI` are MUTUALLY REDUNDANT: any ONE of the three produces the
+# same 246 fires, and only removing ALL THREE moves anything (+2.2pp, 246->277).
+# ⇒ the latch STAYS -- it is the semantically correct guard, it costs zero, and
+# it does not depend on the eco lane's timing to hold -- but no one should cite
+# it as the thing doing the work.  THE THRESHOLD IS THE ONLY REAL DIAL:
+# 150 -> 35.5% of game-sides, median first fire r127 · 200 -> 17.5%, r178 ·
+# 260 -> 11.5%, r196.  See the build report s4.7.
 FS_V543_REARM_TI = 200      # the bank must be seen strictly BELOW this
                             # before a (re-)fire is possible.  Equal to
                             # the fire threshold == a pure crossing; a
