@@ -1,0 +1,105 @@
+--- 8013d088-6a5d-416f-aa07-90477cee7818_game_1.replay26: sockets of team EREBUS(B) core (16, 17) ---
+  (15, 17)  FIRST r13 by US(A) (barrier)   | r13:place:U:barrier
+  (15, 18)  FIRST r15 by US(A) (barrier)   | r15:place:U:barrier
+  (16, 16)  FIRST r5 by EREBUS(B) (conveyor)   | r5:place:E:conveyor
+  (16, 19)  FIRST r20 by US(A) (barrier)   | r20:place:U:barrier
+  (17, 16)  FIRST r4 by EREBUS(B) (conveyor)   | r4:place:E:conveyor
+  (17, 19)  NEVER BUILT ON
+  (18, 17)  FIRST r2 by EREBUS(B) (conveyor)   | r2:place:E:conveyor
+  (18, 18)  NEVER BUILT ON
+  => owner-first 3/8 · enemy-first 3/8 · never 2/8
+--- 8013d088-6a5d-416f-aa07-90477cee7818_game_1.replay26: sockets of team US(A) core (2, 1) ---
+  (1, 1)  NEVER BUILT ON
+  (1, 2)  FIRST r8 by US(A) (conveyor)   | r8:place:U:conveyor r54:remove:U:conveyor r55:place:E:barrier r56:remove:E:barrier r65:place:U:conveyor
+  (2, 0)  NEVER BUILT ON
+  (2, 3)  FIRST r49 by EREBUS(B) (gunner)   | r49:place:E:gunner r78:place:E:gunner r81:place:E:gunner r82:place:E:gunner r85:remove:E:gunner
+  (3, 0)  NEVER BUILT ON
+  (3, 3)  FIRST r2 by US(A) (conveyor)   | r2:place:U:conveyor
+  (4, 1)  NEVER BUILT ON
+  (4, 2)  FIRST r1 by US(A) (conveyor)   | r1:place:U:conveyor r42:remove:U:conveyor
+  => owner-first 3/8 · enemy-first 1/8 · never 4/8
+
+--- 8013d088-6a5d-416f-aa07-90477cee7818_game_2.replay26: sockets of team EREBUS(B) core (24, 8) ---
+  (23, 8)  FIRST r18 by EREBUS(B) (conveyor)   | r18:place:E:conveyor r93:remove:E:conveyor r94:place:U:barrier
+  (23, 9)  FIRST r17 by EREBUS(B) (conveyor)   | r17:place:E:conveyor
+  (24, 7)  FIRST r2 by EREBUS(B) (conveyor)   | r2:place:E:conveyor r91:remove:E:conveyor r92:place:U:barrier
+  (24, 10)  FIRST r3 by EREBUS(B) (conveyor)   | r3:place:E:conveyor
+  (25, 7)  FIRST r4 by EREBUS(B) (conveyor)   | r4:place:E:conveyor r122:remove:E:conveyor r123:place:U:barrier
+  (25, 10)  FIRST r29 by US(A) (barrier)   | r29:place:U:barrier
+  (26, 8)  FIRST r33 by US(A) (barrier)   | r33:place:U:barrier
+  (26, 9)  FIRST r28 by US(A) (barrier)   | r28:place:U:barrier
+  => owner-first 5/8 · enemy-first 3/8 · never 0/8
+--- 8013d088-6a5d-416f-aa07-90477cee7818_game_2.replay26: sockets of team US(A) core (2, 8) ---
+  (1, 8)  NEVER BUILT ON
+  (1, 9)  NEVER BUILT ON
+  (2, 7)  NEVER BUILT ON
+  (2, 10)  FIRST r2 by US(A) (conveyor)   | r2:place:U:conveyor
+  (3, 7)  NEVER BUILT ON
+  (3, 10)  NEVER BUILT ON
+  (4, 8)  NEVER BUILT ON
+  (4, 9)  FIRST r1 by US(A) (conveyor)   | r1:place:U:conveyor
+  => owner-first 2/8 · enemy-first 0/8 · never 6/8
+
+--- 8013d088-6a5d-416f-aa07-90477cee7818_game_3.replay26: sockets of team EREBUS(B) core (14, 8) ---
+  (13, 8)  FIRST r4 by EREBUS(B) (conveyor)   | r4:place:E:conveyor r41:remove:E:conveyor r42:place:U:barrier
+  (13, 9)  NEVER BUILT ON
+  (14, 7)  FIRST r2 by EREBUS(B) (conveyor)   | r2:place:E:conveyor r38:remove:E:conveyor r39:place:U:barrier
+  (14, 10)  FIRST r3 by EREBUS(B) (conveyor)   | r3:place:E:conveyor
+  (15, 7)  FIRST r8 by EREBUS(B) (conveyor)   | r8:place:E:conveyor r44:remove:E:conveyor r45:place:U:barrier
+  (15, 10)  FIRST r22 by US(A) (barrier)   | r22:place:U:barrier
+  (16, 8)  FIRST r26 by US(A) (barrier)   | r26:place:U:barrier
+  (16, 9)  FIRST r21 by US(A) (barrier)   | r21:place:U:barrier
+  => owner-first 4/8 · enemy-first 3/8 · never 1/8
+--- 8013d088-6a5d-416f-aa07-90477cee7818_game_3.replay26: sockets of team US(A) core (2, 8) ---
+  (1, 8)  NEVER BUILT ON
+  (1, 9)  NEVER BUILT ON
+  (2, 7)  FIRST r5 by US(A) (conveyor)   | r5:place:U:conveyor r32:remove:U:conveyor r33:place:E:sentinel r54:remove:E:sentinel r56:place:U:conveyor r86:remove:U:conveyor
+  (2, 10)  FIRST r2 by US(A) (conveyor)   | r2:place:U:conveyor
+  (3, 7)  NEVER BUILT ON
+  (3, 10)  NEVER BUILT ON
+  (4, 8)  FIRST r81 by US(A) (conveyor)   | r81:place:U:conveyor
+  (4, 9)  FIRST r1 by US(A) (conveyor)   | r1:place:U:conveyor
+  => owner-first 4/8 · enemy-first 0/8 · never 4/8
+
+--- 8013d088-6a5d-416f-aa07-90477cee7818_game_4.replay26: sockets of team EREBUS(B) core (21, 11) ---
+  (20, 11)  FIRST r11 by US(A) (barrier)   | r11:place:U:barrier
+  (20, 12)  FIRST r29 by US(A) (barrier)   | r29:place:U:barrier
+  (21, 10)  FIRST r5 by EREBUS(B) (conveyor)   | r5:place:E:conveyor r23:remove:E:conveyor r24:place:U:barrier
+  (21, 13)  FIRST r18 by EREBUS(B) (conveyor)   | r18:place:E:conveyor r96:remove:E:conveyor r97:place:U:barrier
+  (22, 10)  FIRST r2 by EREBUS(B) (conveyor)   | r2:place:E:conveyor
+  (22, 13)  FIRST r3 by EREBUS(B) (conveyor)   | r3:place:E:conveyor
+  (23, 11)  FIRST r87 by US(A) (barrier)   | r87:place:U:barrier
+  (23, 12)  FIRST r99 by US(A) (barrier)   | r99:place:U:barrier
+  => owner-first 4/8 · enemy-first 4/8 · never 0/8
+--- 8013d088-6a5d-416f-aa07-90477cee7818_game_4.replay26: sockets of team US(A) core (1, 11) ---
+  (0, 11)  FIRST r2 by US(A) (conveyor)   | r2:place:U:conveyor
+  (0, 12)  NEVER BUILT ON
+  (1, 10)  FIRST r12 by US(A) (conveyor)   | r12:place:U:conveyor r40:remove:U:conveyor r41:place:E:barrier r42:remove:E:barrier
+  (1, 13)  FIRST r13 by US(A) (conveyor)   | r13:place:U:conveyor
+  (2, 10)  NEVER BUILT ON
+  (2, 13)  NEVER BUILT ON
+  (3, 11)  NEVER BUILT ON
+  (3, 12)  FIRST r1 by US(A) (conveyor)   | r1:place:U:conveyor
+  => owner-first 4/8 · enemy-first 0/8 · never 4/8
+
+--- 8013d088-6a5d-416f-aa07-90477cee7818_game_5.replay26: sockets of team EREBUS(B) core (14, 26) ---
+  (13, 26)  FIRST r4 by EREBUS(B) (conveyor)   | r4:place:E:conveyor
+  (13, 27)  FIRST r50 by US(A) (barrier)   | r50:place:U:barrier
+  (14, 25)  FIRST r2 by EREBUS(B) (conveyor)   | r2:place:E:conveyor
+  (14, 28)  FIRST r51 by US(A) (barrier)   | r51:place:U:barrier
+  (15, 25)  FIRST r14 by US(A) (barrier)   | r14:place:U:barrier
+  (15, 28)  NEVER BUILT ON
+  (16, 26)  FIRST r3 by EREBUS(B) (conveyor)   | r3:place:E:conveyor
+  (16, 27)  FIRST r62 by EREBUS(B) (conveyor)   | r62:place:E:conveyor
+  => owner-first 4/8 · enemy-first 3/8 · never 1/8
+--- 8013d088-6a5d-416f-aa07-90477cee7818_game_5.replay26: sockets of team US(A) core (14, 2) ---
+  (13, 2)  FIRST r32 by US(A) (conveyor)   | r32:place:U:conveyor r70:remove:U:conveyor r71:place:E:barrier
+  (13, 3)  FIRST r2 by US(A) (conveyor)   | r2:place:U:conveyor
+  (14, 1)  NEVER BUILT ON
+  (14, 4)  NEVER BUILT ON
+  (15, 1)  NEVER BUILT ON
+  (15, 4)  FIRST r1 by US(A) (conveyor)   | r1:place:U:conveyor
+  (16, 2)  NEVER BUILT ON
+  (16, 3)  NEVER BUILT ON
+  => owner-first 3/8 · enemy-first 0/8 · never 5/8
+
