@@ -72098,3 +72098,43 @@ v533home    29.6      19       52             —
 --- 2026-08-21T12:24:24Z ⚠ **RESEARCH s52 — LADDER CADENCE HALVED, three-slot confirmed off the wire: rated pairings at 12:01:10 / 12:11:10 / 12:21:10Z — ~10-MINUTE intervals (was 20), seconds anchor moved :59→:10.** Consequences: rated velocity ~doubles (≈144 matches/day); every submit-window/exposure calculation carrying the 20-min interval is stale (the CLAUDE.md rule already says re-derive the offset, never hardcode — the INTERVAL just proved unstable again, second time); drain cells bill twice as fast, good cells pay twice as fast. One errored match in the stream (da62cf6e vs lingling, status error, no delta) — the known cond=error class. ---
 --- 2026-08-21T12:27:06Z ⭐⭐⭐⭐ **BUILDER s52 — SHIPPED: "BALTSARS BANDITER v2" LIVE (v177 = bots/_v542wave, activated ~12:26:50Z; Active-bot VERIFIED v177; holder before=v176 after=v177; INCUMBENT → _v542wave committed with the ship).** THE DELAY DISCLOSED: the 10:53 wake's completion never reached the session (~93 min lost; the hung-wake class — side-lane escalation caught it; wrap-debt: wake notifications need a deadman check). FIRED under the NEW cadence (10-min pairings at :x1:10 — re-derived in the fire shell from 4 fresh createdAt rows; 4:44 clear air at fire). EVIDENCE (labels exact): pooled boundary-extension screen vs v175 bytes 53.83 [51.53,56.14] n=1800 (holder at ship = v176 'rotfix', two teammate ships newer — the freshest-at-screen-fire clause + the gap line per the v174 form) · merge report ablation-identities 4/4 + per-plank doses · class evidence (famine/TRRR −18.76 live · finisher cell · claim gate) · anchor interim 52.2-vs-v168 n≈1050. CPU match test FIRED in-window on the NEW bytes (matchId in shell log). ROLLBACK v176. v2 carries: socket claim + famine rebuild + finisher peck + refusing claim-gate + MAPTRUST. **WRAP BEGINS per Magnus's call.** ---
 
+
+===== s52 BUILDER WRAP (2026-08-21T12:28:33Z; Magnus called it at the v2 ship) =====
+
+## PROCESS DELTAS (s52) — appended through the session, synthesised:
+1. **THE RUNNING-CONSUMER RULE** (5 firings, 5 catches): when an upstream fact moves — a repaired
+   artifact, a shipped holder, a changed cadence, a corrected premise — every RUNNING consumer
+   gets the domain question immediately and BY NAME; silence from a consumer of a moved fact is
+   never evidence it was unaffected. *(Routed: charter candidate; both peer lanes adopted.)*
+2. **Same-shell fact gates on irreversible acts**: every submit conditions on a fresh Active-bot
+   read; every window on a fresh createdAt derivation (the cadence CHANGED mid-session: 20-min
+   :x2:59 → 10-min :x1:10 — the never-hardcode rule paid twice in one day). *(Routed: ship
+   sequence + submit_clean wrap-debt.)*
+3. **Candidate-not-proxy + stale-anchor labels are RELEASE currency**: the label flipped a
+   bar-met to bar-unmet on identical bytes (v165B→v169) and stood a fire down (v173→v175→v176).
+   *(Routed: SHIP_BAR encoding carries it.)*
+4. **Pool windows resolve boundary triggers** (the two-window ship screen); the pooled read
+   names its sequential nature ("pooled after a boundary trigger, extension pre-committed").
+   *(Routed: the readout label convention.)*
+5. **PAIRED = NOISE_OFF ON DISK IN EVERY TREE INCLUDING THE OPPONENT** (v534 paid, v541 paid
+   again and named it; v542 executed it). *(Routed: build-brief template + v541 §0/§9.)*
+6. **Registration completes at zero tape rows** (the ANCHOR-CLASS token added post-append,
+   pre-look — the distinction that keeps a registry honest). *(Routed: the BARS convention.)*
+7. **Shared-surface git discipline**: pathspec commits (three-lane rule, side-lane authored) +
+   never checkout a branch in the shared worktree (v541 incident). *(Routed: standing rule in
+   the tail + brief template.)*
+8. **A guard's worldview ages**: control_pin assumed control==incumbent (broken by the first
+   ship that separated them), auto_gate's floors assumed every shard is a prospect (broken by
+   the first anchor read), now.py still carries the local copy (wrap debt). The class: enumerate
+   a tool's ASSUMPTIONS at write time; the residual-sweep-after-incident pattern found 1 more
+   in 9 tools. *(Routed: the two fixes' doctrine blocks + debt #3.)*
+9. **Defect disclosures compound**: the manifest-pairing bug, the tee-swallowed exit, the
+   §5-placeholder — each written up with mechanism rather than quietly fixed, and each produced
+   a rule the NEXT build already used. *(Observation with receipts; report_lint mechanises.)*
+10. **Two ships, two clean boundaries, zero leaks** under two different cadences — the
+   submit_clean + window-call + leak-check pipeline is production-grade; its one gap (the
+   hung wake, 93 min) was liveness, not correctness → the deadman debt. *(Routed: debt #14.)*
+
+## INSTRUMENT DEBTS → scratchpad/s52_wrap_debts.md (14 items: the 13 pre-assembled + #14
+wake-deadman). Per Magnus's rule these are wrap-time work — this wrap executes NONE inline;
+the successor (or a Magnus-called wrap-fix batch) runs them with both-ways drives.
