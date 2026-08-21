@@ -27,7 +27,7 @@ successor session inherit it. The fields below are parsed; the prose is not.
     SHIP_SIT_MIN_K: 8
     X3R0_SLOT_RULE: superseded_2026-08-20_by_ship_bar_joint_amendment_no_residual_scope
     SLOT_STOP_LOSS: off
-    SHIP_BAR: beat_live_holder_screen_ci_excl_50_AND_70_point_vs_sleipnirv2_full_pool
+    SHIP_BAR: beat_live_holder_screen_ci_excl_50_AND_full_pool_vs_x3r0best_number_reanchors_at_baseline_shard
     STEALTH_UNTIL_DROP: yes
     KILL_TARGET: median_r180_share_by_r200_floor_r300
 
