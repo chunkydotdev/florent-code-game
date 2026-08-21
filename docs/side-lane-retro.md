@@ -1426,3 +1426,27 @@ what the lane believed at wrap time.**
 * **Q4 on the sharpened form: 0 of 2 substantive self-caught.** The catches came from the peers whose defect classes matched the misses — recorded in the instance as the structural answer to the auditor's-blind-spot worry, and left there as OBSERVATION.
 
 **SUNSET WATCH: every surviving question fired. Nothing armed. CARRIED TO v1.20: nothing owed in code; the clearance rule's first full-session test is the successor's.**
+
+## ⭐ v1.20 — **FIRING 20. THE CLEARANCE RULE PASSES ITS FULL-SESSION TEST WITH TEETH, AND GAINS THE EXISTENCE-CHECK SUB-RULE; A NEW GAP CLASS NAMED: NOTHING CERTIFIES NON-FIRES.**
+
+**v1.20 — 2026-08-21 (MINOR: records firing 20, adds two Q3/Q2 sub-rules). Instance:
+`docs/retro-side-lane-2026-08-21-s52.md`, committed in this same action.**
+
+* **FIRINGS: 20.** Two ships, five lock certs, ~12 flags all consumed, prevented 7 / caused 0.
+* **⭐ THE v1.19 CLEARANCE RULE'S FULL-SESSION TEST: PASSED-WITH-TEETH.** Every clearance
+  named its checks; the one escape was a WORD exceeding the enumeration ("manifest
+  complete" over a table-shape check). ⇒ **SUB-RULE, effective now: a manifest/artifact
+  clearance includes a SAMPLED EXISTENCE CHECK of referents before any completeness word.**
+* **⭐ Q2's FIRST STRUCTURAL MISS: the hung fire-wake was detected 93 minutes late, from
+  another lane's finding — this lane certifies FIRES and nothing certifies NON-FIRES.**
+  ⇒ **SUB-RULE: every window-call GO arms a completion-deadline check (fire-confirmed or
+  alarm within N minutes), the audit-side deadman.** *(The builder's wake-deadman is wrap
+  debt #14; this is the matching lane-side habit.)*
+* **Q3 = 3 (all corrected; one relayed figure repeated without re-derivation — the
+  relayed-unverified label was owed). Q5 = 0 wrong flags. Q9 = 0. Conduct claims 0, 13th
+  consecutive.**
+* **Q8 buckets: ADOPTED 9 / CORRECTED-IN-RECORD 4 / BUILT 0** — the wrap rule working;
+  report_lint.py reached the 3-failure promotion threshold and is a NAMED wrap debt.
+
+**SUNSET WATCH: all questions fired. CARRIED TO v1.21: the two sub-rules' first
+full-session test is the successor's.**
