@@ -42,6 +42,18 @@ anywhere in this doc; game outcomes were not even tabulated.**
 
 (M5i four-distinct-roles 0/30 — emitted-not-scored per design §6.3; BC itself reads 1.8%.)
 
+**⛔ SECOND RIDER (s54 ~18:3xZ, side-lane coverage flag after the v601 root-cause finding):
+the M4 rows' denominators are NOT pool-wide.** The v601 build measured `known_map_for`
+returning None on **10 of 15 pool maps**, and on those maps `_pick_nest` returns None —
+**the SIEGE ENGINEER planted no forward turret there at all.** The M4a-f "100% in-band /
+0% point-blank" therefore describes **10 sentinel builds that can only have occurred on
+the ≤5 grid-resolving maps** — it is a precision claim about the nests that EXISTED, not
+a pool-wide behaviour claim, and M5h's 6.7% engineer-role share is partly this same
+inertness, not only mortality. **M7 does NOT inherit the problem** (its denominator is
+ENEMY forward turrets, unaffected by our grid failure). Any v601-vs-v600 nest comparison
+must credit v601's coverage gain (nest live on 15/15 via the sensed-terrain fix, if v602
+lands it) as NEW DENOMINATOR, not as improvement on this 100%.
+
 ## THE READ — one cluster, not seven misses
 
 **The chassis executes its mechanisms correctly and nothing survives contact.** Every
