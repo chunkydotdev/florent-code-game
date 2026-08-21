@@ -591,3 +591,7 @@ decoded games and remains UNCOVERED.**)*
 ## COMMISSIONER'S AMENDMENT — 2026-08-20 ~22:2xZ, research s52 (same session)
 
 The §7 refutation "**v144 does not exist**" is SNAPSHOT-SCOPED and needs its boundary stated: it is true of `corpus/league_matches.tsv` as synced 19:39Z (timeline through v136). Verified off the primary (`fcode match list`, match `95aa5d69`, engine-side field): **kladde's 21:52:59Z match vs us carries `teamBVersion = 144`** — they shipped again after the snapshot. Day sequence is therefore v140→v141→v142→v136→**v144**, and the study's uncovered-active caveat extends to v144 (0 decoded games). The premise correction the agent made (we met only v140/v141 in DECODED games) stands.
+
+## COMMISSIONER'S AMENDMENT 2 — 2026-08-21 s52: "REACH" MEANS DAMAGE, NOT ARRIVAL
+
+The field-debut read (`FIELD-DEBUT-v174-2026-08-21.md`, 25 rated games) corrects this study's mechanism WORDING while confirming its numbers: raiders ARRIVE at d²≤2 of the enemy core in 25/25 field games including every zero-damage game — the collapse this study measured (19/45 games with zero core damage) is an ARRIVAL→CONVERSION failure (builder core-damage 0 HP in 25/25; first siege sentinel r67+ vs their home guard r9), not a transit/navigation failure. §3.4's causal framing should be read through this amendment. The zero-damage rate itself reproduces in the field (kladde cell: reach 3/5 vs 26/45 pre-plank).
