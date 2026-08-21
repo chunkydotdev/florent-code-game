@@ -72170,3 +72170,35 @@ the successor (or a Magnus-called wrap-fix batch) runs them with both-ways drive
 * **NOTHING OF MINE IS RUNNING.** Ten agents: all completed, banked, relayed. Watcher: TaskStop-confirmed dead this minute. **DIES WITH ME: NOTHING.**
 * **HARD LIMITS HELD ALL SESSION:** no bot edits, no submissions/activations, ZERO matches fired (both unrated legs were the builder's), no verdicts, no HANDOVER/tape writes. One mid-session tool edit (move_miner) — breach logged at 09:28, carve-out granted by Magnus at 09:43, rule treated absolute thereafter (RD1-3 all went to wrap debts, not edits).
 * **WAKE PATHS: none of mine persist.** The builder's daemons are their HANDOVER's surface. Boot recovery: now.py → corpus sync → rated decode from the ids above → this note.
+
+# ============================================================================
+# 2026-08-21T12:33:39Z — **SIDE LANE s52 WRAP 2/2 + REBOOT STATE — SIDE LANE** (trigger: the BUILDER'S
+# WRAP-PING relaying Magnus's wrap-after-v2 call — standing rule, SEVENTH firing). **Arm retro
+# ran FIRST per charter: docs/retro-side-lane-2026-08-21-s52.md, instrument v1.19 → v1.20,
+# FIRING 20 — committed and pushed before this block.**
+# ============================================================================
+
+## HOLDER LINE — from now.py IN THIS SAME SHELL, never a poller (D28)
+HOLDER v177 "Baltsars banditer v2"  uploaded by Moonfarm  at 2026-08-21T12:26:39.942Z
+**CONTROL surfaces for queued work: per-ROW registration (control_pin row-resolution) — the parsed BASELINE is bots/_x3r0v168mjolnir; INCUMBENT = bots/_v542wave (the shipped v177). HOLDER = the shipped bot's own bytes at this write.**
+
+## PROCESS DELTAS (s52) — routed at write time
+1. **THE RUNNING-CONSUMER RULE** (three firings, each a catch): when an upstream artifact or finding is corrected mid-flight, every RUNNING consumer of it gets the domain question — "what is this instrument actually touching?" — immediately and by name; silence from a consumer of a repaired artifact is never evidence it was unaffected. *(Routed: both arm retros + this block; candidate for the drift-watch mandate file next session.)*
+2. **A CLEARANCE'S COMPLETENESS WORDS REQUIRE EXISTENCE CHECKS** — "manifest complete" over a table-shape check was this lane's Q3 instance; the sub-rule (sampled referent existence before any completeness word) is in instrument v1.20. *(Routed: retro instrument.)*
+3. **CERTIFY NON-FIRES, NOT ONLY FIRES** — the hung ship-wake ran 93 min invisible because every watch certified events that happened; the audit-side deadman (every GO arms a completion-deadline alarm) is in v1.20; the builder's wake-deadman is wrap debt #14. *(Routed: retro instrument + builder debt.)*
+4. **THE HOLDER AND THE OFFSET ARE MOVING FACTS AT FIRE TIME** — two window calls carried stale holder facts (v173→gap disclosed; v175/v176 objection) and the cadence halved with the anchor moving :59→:10 mid-window; the fire-conditioned-on-status rule + re-derive-in-the-firing-shell are now the standing form, and the INTERVAL is confirmed unstable a second time. *(Routed: builder's submit compound + this block.)*
+5. **SHARED-SURFACE RULES ARE MECHANICAL OR THEY FAIL** — the index race (pathspec commits, +new-file gap = debt #15) and the worktree-HEAD rule joined the brief templates as commands, not cautions. *(Routed: standing-rule note 12:2xZ + briefs.)*
+6. **AN ANCHOR READ IS POINT-FREE** — the ANCHOR-CLASS (band registration, guards extended pre-lock, no-verdict firewall) is the new-era pattern for coordinate-setting shards. *(Routed: PROGRAMME block + guards, done in-session.)*
+
+## SESSION LEDGER (clean-on: the enumerated closures, each verified on a primary)
+5 lock certificates (HOMEPOOL 142 s · V535POOL 2h46m-with-digests · V536POOL 2m39s · V537POOL front+fire · NEWPOOL-BASELINE 90 s — all two-clock clean, prereg_check re-run each, digests independently exact at every deferred fire) · 2 SHIP CERTIFICATIONS (v174: boundary + maiden v174-at-05:32:59 clean; v177: interim boundary clean at 12:27:30Z — last pre-activation pairing 12:21:10 = v176, gap empty, Active bot v177 verified — **maiden confirmation IN FLIGHT, named wake: background watch bfv81itih, 30-min horizon; lands as a post-wrap addendum**) · 1 screen VOID (v169 zip-era, 150/201 shells, provenance question) · 1 hung-wake escalation (93 min recovered; ping+push) · 2 PROGRAMME both-ways verifications with 2 slug catches (X3R0_SLOT_RULE · SHIP_BAR/baseline) + the parsed BASELINE field verified · the r300 completeness flag that surfaced a MEASURED double-bar violation · the INCUMBENT-consumer sweep (8/9 clean, now.py hazard + interim) · ~12 flags raised, ALL closed; 3 published errors of mine, all corrected in-record (retro Q3). Conduct claims zero.
+
+## OPEN FOR THE SUCCESSOR
+1. **The v177 maiden confirmation** — the one in-flight item, wake named above; if the watch times out, re-read the pairing tape (new cadence: ~10-min, anchor :10, THREE-SLOT pattern suspected — :51/:01/:11/:21 observed; the next slots after 12:21 are unconfirmed).
+2. **The NEWPOOL-BASELINE readout (~13:3xZ)** — ANCHOR-CLASS, band [50-62] point-free, no-verdict firewall; its number is the new era's origin and re-derives the refusing segment + KILL_TARGET bands.
+3. **The wrap-debt list (15 items incl. report_lint at threshold, wake-deadman #14, pathspec new-file #15, now.py boot-path hazard with interim)** — successor-builder's batch per Magnus's rule; drive every discharged guard both ways per D19.
+4. **now.py's CONTROL line reads "current incumbent" ONLY** (interim constraint, committed 06:4xZ) until its row-aware fix lands — the successor boots through now.py and must carry this.
+5. **Bar (2)'s number is UNSET pending the anchor** — Magnus sets it on the anchor's data; the parsed SHIP_BAR slug says so.
+
+## WAKE PATHS AND LIMITS
+My commit monitor and the maiden watch die with this session (session-scoped; the builder's daemons survive per their HANDOVER). Hard limits held all session: no bot edits, no arena/unrated fires (two window-call GOs and two boundary certs are VERIFICATION, not platform actions — the fires were the builder's), no verdicts, no HANDOVER/tape writes; committed only my own notes, certificates, audit docs and retro files, all pathspec-form since the rule landed; every commit pushed within the minute.
