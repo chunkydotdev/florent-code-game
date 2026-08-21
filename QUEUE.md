@@ -36,6 +36,18 @@ regression — the stamp at stocking is the only cheap gate).**
 
 ---
 
+## ⭐⭐⭐ SKALMAN RE-SCOPE — RATIFIED s53 2026-08-21T15:56:51Z (research, queue owner; line directive PROGRAMME af4e1268b: NEXT_LINE=skalman, doctrine=beancounters_replication_then_amplify, benchmark=_v542wave FROZEN, rush sunset)
+
+**Full classification table: `docs/research/QUEUE-RESCOPE-DRAFT-skalman-2026-08-21.md` (agent-drafted, ratified per below). This block is the authority; the draft carries the per-row reasons.**
+
+1. **RATIFIED AS CLASSIFIED (un-flagged rows):** PROMOTE 57 · KEEP-AGNOSTIC 27 · SUNSET 12 · DEAD/DONE 19, per the draft's lists. **SUNSET ≠ delete** — a sunset row is not stocked for the Skalman line unless re-admitted; 9 of the 12 are the launcher/throw offence toolbox (#106 stays as the deliberate carve-out: same weapon, defends the holder).
+2. **⚠-FLAGGED ROWS (25): PENDING-DESIGN, not decided today.** Their settle conditions are named in the draft (most hinge on Skalman design calls the builder has not made: does the line keep forward raiders / the ferry / the raid-station picker). They classify when those calls land; until then they count as their PRE-pivot status for queue_check purposes.
+3. **⛔ STALE-GREP RULE (largest ratification cost, converted to a gate):** only #96 and #105-114 have ever been grepped against the frozen benchmark `_v542wave`; every other PROMOTE row's GREP sits against older trees (`_v187…`→`_v488…`). **A PROMOTE row's grep MUST re-run against `_v542wave` before its prereg locks** — the re-grep cost moves to lock time where it was always paid, and a row whose re-grep contradicts its premise comes back here for re-scope.
+4. **RATIFIED STRUCTURAL CALLS:** (a) the door-clearance block **#96 + #107(C) + #112 ratifies as ONE flag family** (a flip plus two tunings on `FS_V515_DOOR_OFF`) — one prereg lineage, not three; (b) **#89 RECOVERS standalone status** — its s51 collapse-into-rider was priced under the retired rush currency, and under a doctrine whose clock IS the conversion cadence the ammo row is a headline plank; (c) **#45/#97 merge** (duplicate target-priority asks) — merged at prereg time, #97 is the survivor row; (d) **#98 folds into #41/#112 as a placement rider**, never stocked alone.
+5. **VERIFICATION DEBT (real, found by the classifier):** #90/#91 were retired as "shipped in `_v480beltbreak`" against `_v468kladturbo` — **nobody has verified that the annulus ladder survived into `_v542wave`.** Owed before any nest-siting prereg cites them as shipped. #109's header now says ANSWERED (its amendment already did).
+6. **OWED NEW ROW (not stocked today, named so it is not lost):** the v543burst d²-siting evidence as nest prior art — no current row carries it (v543 appears only as a screen dependency in #109/#110); the builder supplies the screen-tape evidence and it enters through the normal admission gate.
+7. **NEW-VALUE NOTE:** the pivot CREATES an anti-cage family (#49 #73 #104 #113) — the Bean study measured the tourniquet working both ways, so cage-defence rows gained value the day we became a cage bot.
+
 ## ⭐⭐⭐ FIRE ORDER — RE-RANKED s36 2026-08-13 (research, on Magnus's question "do we need to re-rank now that maps lean toward bigger areas?" — answer: YES, scoped)
 
 **THE GEOMETRY FACT DRIVING IT:** the rotated pool is 10 maps ≤676 + 5 maps at
