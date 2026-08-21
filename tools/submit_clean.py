@@ -28,7 +28,7 @@ directory, and auxiliary modules must travel with it for the imports to resolve
 — so this is per-extension and recursive, never main.py-only.
 
 NAMING IS ENFORCED, NOT REMEMBERED (Magnus, 2026-08-13):
-    a SHIP        -> --name 'Loki vN' OR 'Sleipnir vN'   and --activate
+    a SHIP        -> --name 'Loki vN' OR 'Sleipnir vN' OR 'Baltsars banditer vN'   and --activate
     an UNRATED LEG-> --name 'Loki rcX.Y'                 and NO --activate
 `--name` is REQUIRED and the format must match the ship/leg mode, or this exits 2.
 It exists because this tool never passed `-n` at all and **v123 shipped UNNAMED**
@@ -321,7 +321,11 @@ def record_version(ledger: Path, holder_before: str | None,
 # steered a real ship to the wrong name (see the module docstring). The regex and
 # every message a reader sees are now GENERATED from this tuple, so the next era
 # is one edit and cannot leave a stale instruction behind.
-SHIP_ERAS = ("Loki", "Sleipnir")
+SHIP_ERAS = ("Loki", "Sleipnir", "Baltsars banditer")
+# ^ "Baltsars banditer" era added 2026-08-21 (s52) on Magnus's DIRECT naming
+#   directive ("This bot shall be named Baltsars banditer") + amendment order
+#   ("Amend it") — the release-era name for the v537socket ship. Spaces are
+#   literal in the rendered regex; the selftest drives this era both ways.
 SHIP_NAME_RE = re.compile(r"^(" + "|".join(SHIP_ERAS) + r") v\d+$")
 # Legs did NOT move to the Sleipnir era — no `Sleipnir rc` exists anywhere in
 # this repo or its history; the last leg shipped was `Loki rc10.1` (v154). Kept
@@ -357,8 +361,10 @@ def check_name(name: str | None, activate: bool) -> tuple[bool, str]:
     that the durable surfaces are the always-loaded file and **tools that exit 1**.
 
     THE CONVENTION, Magnus 2026-08-13, widened to the Sleipnir era 2026-08-16:
-      * a SHIP (`--activate`) is named  `Loki vN` OR `Sleipnir vN`
-        e.g. "Loki v7", "Sleipnir v2" — the accepted eras are SHIP_ERAS and
+      * a SHIP (`--activate`) is named  `Loki vN` OR `Sleipnir vN` OR
+        `Baltsars banditer vN` (the 2026-08-21 release era, Magnus-named)
+        e.g. "Loki v7", "Sleipnir v2", "Baltsars banditer v1" — the accepted
+        eras are SHIP_ERAS and
         every message below is rendered from that one tuple, never retyped.
       * an UNRATED LEG (no --activate) is `Loki rcX.Y` e.g. "Loki rc7.1"
         — a release candidate off ship lineage X, leg Y. NOT widened: no
