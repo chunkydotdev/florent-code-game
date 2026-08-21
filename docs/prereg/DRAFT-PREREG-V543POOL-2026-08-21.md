@@ -1,0 +1,883 @@
+# SCREEN PREREG (DRAFT) — `V543POOL`: `bots/_v543burst` (THE BANK-BURST PAIR) vs `bots/_v542wave` (THE INCUMBENT) — A ROUTINE CANDIDATE PRICING ON THE ROTATED POOL
+
+Drafted by a **fresh opus subagent with NO inherited session context** beyond the
+files named under `PROVENANCE`. The builder lane ratifies the eight `⟨RATIFY⟩`
+lines and types the lock commit. **This agent wrote no code under `bots/`,
+appended no worklist row, appended no `docs/prereg/BARS.tsv` row, ran no game,
+no battery and no platform command, started no shard, and committed nothing.**
+Its only write is this file. Every number below was computed in this agent's own
+shell at draft and the commands are disclosed inline.
+
+**STATUS: drafted BEFORE the `V543POOL` row exists anywhere and BEFORE any game
+of this fixture has been played.** Drafting wall clock **`2026-08-21T14:05:59Z`**
+(`date -u`, same shell call); repo HEAD at draft **`031688363`** (2026-08-21
+16:03:01 +0200). Verified at draft: `grep -c "V543POOL\|v543burst"` → **0** on
+`docs/prereg/BARS.tsv`, `results.tsv`, `scratchpad/corefill_work.txt` and
+`elo_history.tsv`; `ls docs/prereg/ | grep -i v543` → **no matches**;
+`grep -rl V543 scratchpad/overnight*/` → **no tape**;
+`git status --porcelain bots/_v543burst bots/_v542wave` → **empty**.
+
+---
+
+## ⛔ THE FIVE THINGS TO READ BEFORE ANYTHING ELSE
+
+**1. ⛔⛔ THE DOSE BOUNDS THE POOLED EFFECT, AND AT THE SHIPPED 200-EDGE THE
+BOUND IS BELOW THE FLOOR THAT WILL CANCEL THE SHARD.** The plank is ADD-ONLY and
+flag-dominated, so in every game where the gate never fires the two trees are
+behaviourally identical and the cell is a pure A/A at 50%. Therefore
+
+```
+pooled_share  =  50  +  DOSE x WITHIN-FIRE EFFECT
+```
+
+and with the corpus dose measured at **17.5% of game-sides at 200/200** and
+**35.5% at 150/150** (BUILD-REPORT §4.7, n = 1,405 rated game-sides), the
+within-fire effect this screen would need is:
+
+| target | at DOSE 17.5% (200/200, shipped) | at DOSE 35.5% (150/150, fallback) |
+|---|---:|---:|
+| clear the 51.33 DECISION bar | **+7.60pp** | **+3.75pp** |
+| clear `TREND_FLOOR` 52.0 @1000 | **+11.43pp** | **+5.63pp** |
+| clear `COMBO_BAR` 55.0 @2700 | **+28.57pp** | **+14.08pp** |
+
+⇒ **AT THE SHIPPED SETTING THIS SHARD IS PRICED TO BE CANCELLED**, and not by a
+bad plank: `P(reaching 5,400) = 0.000` for every true share at or below 52
+(§3, 20,000-trial MC over `auto_gate`'s own clauses, positive control
+reproducing five prior publications). **This is `⟨RATIFY-A⟩` and it is the
+page's most consequential open question.**
+
+**2. ⛔⛔ THE MECHANISM COUNTERS ARE NOT READABLE OFF A COREFILL TAPE — SO THE
+"FIRES BEFORE SHARE" RULE IS NOT EXECUTABLE ON THE REGISTERED RUNNER (OB17).**
+Measured at draft, not assumed: `tools/overnight.sh:143-144` runs every game with
+`--replay /dev/null` and greps `Winner:` out of a merged `2>&1` capture; the tape
+columns are `ts shard game map seed seat winner cond turns` (`:109`); and
+`FS_V543_LOG = False` ships on disk (`doctrine.py:6268`). **`v543_fires`,
+`v543_bought`, `v543_full/poor/nosite/spent/noharv`, `v543_ammo_ti/bind` are
+invisible on this surface.** ⇒ **A SEPARATE INSTRUMENTED DOSE TAPE IS A LOCK
+PRECONDITION** (`⟨RATIFY-C⟩`), not a nice-to-have — without it the
+FIRINGS-BEFORE-PRIMARY rule in the `BARS.tsv` header cannot be honoured and a
+flat primary is uninterpretable by construction (`#78`/`#76`, the soft-knob
+lesson). **CONSEQUENCE OF SILENT NON-EXECUTION: the screen quietly measures an
+outcome with no dose beside it and reads as a null on the plank.**
+
+**3. ⛔⛔ THE BOX IS ALREADY REFUSING TO LAUNCH ANYTHING, RIGHT NOW, FOR A REASON
+THAT HAS NOTHING TO DO WITH THIS PAGE — AND IT BLOCKS THIS SHARD.** Measured at
+draft in this agent's shell:
+
+```
+$ .venv/bin/python tools/control_pin.py --check
+⛔ REFUSE: no pin recorded for bots/_v542wave. Run
+   `control_pin.py --pin --tree bots/_v542wave` deliberately...      rc=1
+
+$ tail scratchpad/corefill.log
+2026-08-21T14:04:05Z REFUSING TO LAUNCH: control tree moved (or is unverifiable).
+   (once per minute since the INCUMBENT moved to _v542wave)
+```
+
+`corefill.sh:335-339` consumes that exit code and answers `sleep $POLL_S;
+continue`. **The `--audit` guard is FINE** — simulated at draft by appending the
+exact proposed row to a copy of the worklist: `control audit OK: all 1 live
+row(s) scored against ['bots/_v537socket', 'bots/_v542wave',
+'bots/_x3r0v168mjolnir']`, **rc=0** (the control IS the `PROGRAMME.md:8`
+INCUMBENT). **It is guard 5, not guard 6, that binds.**
+⇒ **`.venv/bin/python tools/control_pin.py --pin --tree bots/_v542wave` IS OWED
+BEFORE THE WORKLIST APPEND** (`⟨RATIFY-F⟩`), and it is owed whether or not this
+prereg is ever locked.
+
+**4. ⭐ THE FS-LANE EXPOSURE IS SMALL ON THIS POOL AND IT WAS DRIVEN
+SHARD-NATIVE ON THE CANDIDATE TREE, NOT INHERITED.** The build report's
+map-coverage defect (`_fs_turn` called 222 times on atoll and **0 times on
+midgard**, so `_v543_pair` has no site to execute from) is real — and on the
+rotated pool it costs exactly one map. Driven at draft over every
+`maps/*.map26` × both seats on **`bots/_v543burst`'s own**
+`SiegeMixin._fs_map_gated`:
+
+```
+CELLS 88 | refuse 16 | run 72 | SEAT-ASYMMETRIC none
+POOL CELLS 30 | POOL refuse 2 | POOL run 28
+POOL REFUSING MAPS (1 of 15): midgard          = 2/30 = 6.6667% of rows
+_v543burst vs _v542wave: 0/88 cells differ     (the segmentation is arm-invariant)
+--selftest -> SELFTEST PASS (six mutants, each driven to the other verdict)
+jotunheim  FS_V534_MAPTRUST=True -> RUN, =False -> REFUSE   (pool-native both-ways)
+midgard    REFUSE under both                                (a real refusal)
+```
+
+⇒ **THE GATE-WITH-NO-CONSUMER SEGMENT IS `{midgard}`, 360 rows, 6.67%.**
+⚠ **AND THE MAP PREDICATE IS A LOWER BOUND ON FS-LANE-OFF, NOT THE WHOLE OF IT:
+`_fs_turn` also requires a raider to have arrived and a route to exist. The
+RUNTIME share is a DOSE-TAPE quantity and is registered as one** (F1b).
+
+**5. ⛔ TWO OF THE PLANK'S OWN PROOFS ARE STILL IN FLIGHT AND ARE CITED AS
+PENDING, NOT AS DONE.** (a) **DYNAMIC FLAG-OFF IDENTITY** — the static AST audit
+is CLEAN with a mutation control firing 3 violations (BUILD-REPORT §3), but the
+paired NOISE_OFF battery vs the frozen parent **was not run by the build**; the
+build agent is running it at draft (8 `fcode run` processes on
+`scratchpad/s53_v543_build/arms/{P0,TOFF,OPP1,OPP2}` observed in `ps` at
+14:05Z). (b) **THE SIMULTANEOUS PAIR HAS NEVER BEEN OBSERVED** — the forced-dose
+probe's two purchases both read `live 0`, i.e. a buy and a later re-buy, **not a
+pair**, and the pair is the plank's whole thesis. **BOTH ARE LOCK PRECONDITIONS
+THE BUILDER CONFIRMS AT LOCK** (`⟨RATIFY-G⟩`).
+
+---
+
+## ⭐ COMMIT PROVENANCE — BOTH TREES GIT-PINNED AND CLEAN AT DRAFT
+
+`md5 -q` / `wc -l` / `git status --porcelain` / `git log`, in this agent's shell.
+
+* **TREATMENT `bots/_v543burst`** — porcelain **empty**; seeded `f938e9f13` (a
+  verbatim copy of the parent), plank `9f64c4426`, fixes `09177ba0d`
+  (2026-08-21 15:24:38 +0200).
+  `doctrine.py 970d2d300129a7eb346afd8c8d778f45` (6,272) ·
+  `eco.py c954b674c566abb5d07fae17554b530d` (2,708) ·
+  `main.py 2eeaf5cb30c6810a42b7e88654e4af78` (2,627) ·
+  `raid.py e0e74d83880f4379115fa5ae2064b2ff` (1,454) ·
+  `siege.py d9071b6c8bd0d3e3f168728c2c262fb0` (7,073).
+* **CONTROL `bots/_v542wave`** — porcelain **empty**; added whole in `28fde0637`
+  (2026-08-21 11:50:29 +0200). `doctrine.py 20848e531b50ff5f8b27b75ce2218141`
+  (6,080) · `eco.py c954b674c566abb5d07fae17554b530d` (2,708) ·
+  `main.py fe037a69dd64ace9db606ab06c1654a8` (2,576) ·
+  `raid.py e0e74d83880f4379115fa5ae2064b2ff` (1,454) ·
+  `siege.py a798cb53522644e3dfcd9a2097409938` (6,778).
+
+**THE STRUCTURAL FACT THIS PAGE RESTS ON, MEASURED RATHER THAN QUOTED FROM THE
+BUILD REPORT:** `diff` on all five module pairs returns **538 added lines and
+ZERO removed lines** (`doctrine +192 / siege +295 / main +51`; `eco.py` and
+`raid.py` are **md5-identical**). ⇒ **THIS IS A TRUE PARENT-CHILD SELF-LEG AND
+THE 50.00 BASE RATE HAS A GENUINE STRUCTURAL CLAIM** — unlike
+`PREREG-NEWPOOL-BASELINE`, whose two arms shared 0 of 35 digests and whose own
+page had to declare 50.00 "an arbitrary midpoint". **Here the control is the
+treatment with the plank removed, and with `LOKI_FS_V543 = False` it is claimed
+to be the control byte-for-byte in behaviour.**
+
+**`PROGRAMME.md:8` `INCUMBENT: bots/_v542wave`** — verified at draft by `grep`.
+The control IS the incumbent; no `PREVIOUS_INCUMBENT` or `BASELINE` argument is
+needed and none is made.
+
+### LOCK, clock 2 (local shard)
+Per the obligations doc's **2026-08-17T07:24:55Z addendum**, cited rather than
+restated. **PRIMARY:** the shard tape's own `# FIXTURE … start=` stamp
+(`tools/overnight.sh:104` sets `START=$(date -u …)`, `:108` writes it to the tape
+before the first game). **BACKSTOP:** the tape's FIRST COMPLETED ROW `ts`
+(conservative by construction). ⛔ **NOT AVAILABLE: the heartbeat `STARTING`
+line** (`:105` writes with `>` and every later state overwrites it).
+⚠ **THE THIRD CLOCK THE SIBLING HAD IS NOT AVAILABLE HERE: the worklist is
+DRAINED** (`NEWPOOL-BASELINE` COMPLETE 5400/5400 at `2026-08-21T13:46:49Z`), so
+there is no predecessor `COMPLETE` line to bound the start from below.
+**State which clock was used.**
+
+---
+
+## §1 — WHAT IS UNDER TEST
+
+**THE GATE (#71).** An **edge-triggered** bank crossing: a burst fires on the
+first round where the bank is ≥ `FS_V543_BURST_TI`, having been observed strictly
+below `FS_V543_REARM_TI` earlier in this body's life, with the bank the MAXIMUM
+of the last 8 rounds and net non-falling across them, and `SLOT_HARVESTERS ≥ 2`.
+A fire opens a **40-round window**; at most 3 windows per body per match.
+
+**THE CONSUMER (#80).** Inside a window, `_v543_pair` (`siege.py:3006`) sits in
+the ferry-siege ladder directly below `_v518_early_sentinel` and above rung 1,
+and **waives `_fs_sentinel_ok` only** — replacing the collar reserve with
+`sentinel_cost + FS_V543_RESERVE (24)`. Every guard inside `_fs_try_sentinel`
+survives (`FS_SENTINEL_MAX` 2 live, `FS_SENT_BUY_MAX` 4 lifetime, the
+`FS_SENT_REBUY_TI` surcharge, the d²≤32 siting, the alignment predicate).
+**THE POINT OF THE WAIVER IS THE r60 FLOOR**: `DECODE-ringrace-8013d088` measures
+`_fs_salt_ok` firing **0 times in 5 games**, so every forward sentinel came
+through the eco disjunct's `FS_SENT_RND_FLOOR = 60` **plus 40–68 further rounds**
+— our forward sentinel lands **r100–128** against the opponent's **r21–58**, and
+**first damage to their core = our forward-sentinel round + 1 in 4 of 4**.
+
+**THE MAGAZINE.** `_v543_ammo_waive` (`main.py:1107-1113`) lowers the
+convert-floor to `FS_V543_AMMO_FLOOR = 12`, bounded four ways (window open,
+`SLOT_FWD_GUN` non-zero, floor ≥ 12, ≤ 120 Ti per match).
+⛔ **AND A CHANNEL THIS PAGE FOUND BY GREP AND THE BUILD REPORT DOES NOT NAME:
+`SLOT_FWD_GUN` IS WRITTEN BY THE RAID LANE TOO** (`raid.py:822,824`), which is a
+different lane from the ferry siege. ⇒ **ON `midgard`, WHERE THE FS LANE IS GATED
+OFF, THE GATE STILL FIRES AND THE AMMO WAIVER CAN STILL BIND — so that cell is a
+PURE COST CHANNEL, not an inert one.** That is why S1's registered direction
+below is NULL-to-NEGATIVE and not simply NULL.
+
+---
+
+## §2 — THE FIXTURE, THE SEGMENTS, THE DOSE, AND THE REGISTERED PRIOR
+
+### 2.1 The pool and the balance
+
+`tools/overnight.sh:73` carries the **rotated 15-map pool** (`auroraveil bifrost
+fimbulwinter glacierkeep helheim holmgang icefloe jotunheim longhouse midgard
+paths skald stavkirke valkyrie yggdrasil`), re-pointed 2026-08-21. Balance is
+registered from the runner's loop (`:132-137` cycles 15 maps × both seats before
+repeating; `:224` advances the seed once per 30-game pass) **AND from a completed
+tape of this same runner on this exact pool** — `NEWPOOL-BASELINE.tsv`, parsed at
+draft: **5,400 rows, 5,400 distinct game ids, exactly 360 rows on each of 15
+maps, 2,700 per seat, 180 distinct seeds at exactly 30 games each
+(890000–890179), 0 `NOWINNER`.** ⚠ **It is still a CHECK OWED AT READOUT for
+THIS tape, not a fact in hand.**
+
+### 2.2 The segments — two-way, exhaustive, with signs
+
+| segment | maps | rows | weight | hw @p=.5 | **registered direction** |
+|---|---|---:|---:|---:|---|
+| **S1 — FS-LANE-REFUSING** | `{midgard}` | **360** | 6.667% | **±5.165** | ⛔ **NULL-to-NEGATIVE** vs pooled |
+| **S2 — FS-LANE-ACTIVE** | the other 14 | **5,040** | 93.333% | **±1.381** | ⭐ **POSITIVE** vs pooled |
+| **POOLED** | all 15 | **5,400** | 100% | **±1.334** | the PRIMARY |
+
+* **S1 NULL-to-NEGATIVE.** The gate fires and `_v543_pair` has no lane to execute
+  in (measured: `_fs_turn` 0 calls on midgard vs 222 on atoll), so the plank's
+  only live channel there is the ammo-floor waiver reached through the raid
+  lane's `SLOT_FWD_GUN` — a cost with no matching benefit, and the build report's
+  own risk #3 (barrier starvation inside windows) is scored here first.
+  **REGISTERED CLAIM FORM: the 95% CI on (S1 − pooled) EXCLUDES a rise.**
+  ⚠ **POWER DECLARED: ±5.17 resolves a ≥10pp gap and nothing smaller. A 5pp fall
+  is invisible here and this shard closes no road about it.**
+* **S2 POSITIVE.** The consumer exists on all fourteen. **REGISTERED CLAIM FORM:
+  the 95% CI on (S2 − pooled) EXCLUDES a fall.** ⚠ At 93.33% of rows S2 and
+  pooled are near-collinear by construction (`S2 − pooled = 0.0667 × (S2 − S1)`),
+  so this is a WEAK test and is registered as DESCRIPTIVE, never a primary.
+
+### 2.3 ⭐⭐ THE DOSE, AND WHY IT IS THE WHOLE DESIGN
+
+From `BUILD-REPORT §4.7` — the exact `_v543_tick` predicate replayed over
+per-round bank series for **1,405 rated game-sides** (versions 159–177, 100%
+rated ladder, 0 unrated pooling), with a **negative control that comes out the
+other way** (the same simulator with the latch replaced by a bare `bank ≥ 200`
+level test fires in **1,405 of 1,405** at median round 0):
+
+| arm | fires ≥1× | first fire, median | fires before r300 |
+|---|---:|---:|---:|
+| **150 / 150** | **35.5%** | **r127** IQR[83,192] | **31.5%** |
+| **200 / 200** (on disk) | **17.5%** ±2.5pp | r178.5 IQR[83,275] | 14.1% |
+| 260 / 260 | 11.5% | r196 | 8.3% |
+
+⛔ **AN INTERNAL CONTRADICTION IN THE INPUT, REPORTED RATHER THAN RESOLVED:**
+BUILD-REPORT §7.1 quotes a 150/150 "menu" of *"fires 47.3%, median r95, 36.9%
+before r150"*, and **§7.1's "36.9% before r150" cannot coexist with §4.7's "31.5%
+before r300" for the same arm** — a before-r150 share cannot exceed the same
+arm's before-r300 share. **THIS PAGE REGISTERS §4.7's NUMBERS** (the n = 1,405
+rated measurement with its stated population, its negative control and its four
+carried caveats) **and treats §7.1's menu as superseded.** The builder should
+confirm which measurement §7.1 came from.
+
+**THE FOUR CAVEATS ARE CARRIED VERBATIM AND THEY BITE:** (i) the trajectories
+come from bots that do **not** contain the plank, so the ≥1-fire rate and the
+first-fire round are sound counterfactuals and everything downstream is not;
+(ii) simulated as one body alive from r0; (iii) it assumes the tick is reached
+every round; (iv) **69.2% of game-sides end before r300, so "never fired" and
+"the game was already over" are confounded — conditional on reaching r300 the
+rate is 24.9%.**
+
+### 2.4 THE REGISTERED PRIOR
+
+⛔ **REGISTERED BAND: `50.0 – 54.0`, MODAL `51.0 – 52.0`, on the 150/150 arm.**
+Derived, not guessed: `50 + 0.355 × Δ_within` with `Δ_within` in `[0, +11]pp`.
+**On the 200/200 arm the same construction gives `50.0 – 51.9`, MODAL
+`50.5 – 51.0` — a band whose ENTIRE mass sits below the `TREND_FLOOR`.**
+
+⚠ **AND THE ANCHOR'S NUMBERS ARE PRIORS ABOUT THE FIXTURE'S SHAPE, NOT ABOUT
+THIS ARM'S SHARE, AND THEY ARE LABELLED AT EVERY USE.**
+`results.tsv:521 newpool-baseline-anchor` reads **51.94 [50.61, 53.28]** for
+`_v537socket` vs `_x3r0v168mjolnir` — **A DIFFERENT CONTROL AND A DIFFERENT
+QUESTION; it is used in no cell and no band on this page.** What it legitimately
+tells us is that **the rotated pool is GRINDY**: T-side **medkill 311.5**, **ITT
+k≤300 21.46%**, **RMST₃₀₀ 280.53**, **r1000 share 20.43%** against the retired
+fixture's 7.69%. ⇒ **A pool where 20% of games reach r1000 and the median kill
+is past r300 is one where a plank that buys a forward turret 50 rounds earlier
+has room to matter — and equally one where the burst's own r127 median first
+fire lands late relative to nothing.** Registered as SHAPE, not as level.
+
+---
+
+## §3 — THE OPERATIONAL FLOORS, PRICED BEFORE THE FIRE
+
+Simulated exactly as `tools/auto_gate.py` implements the clauses: **CATASTROPHE**
+re-checked on the running tape at every 100-row look from n ≥ 400 (`:255`,
+`CATASTROPHE_CI_HI = 45.0`); **TREND-FLOOR** on the n = 1,000 and n = 2,700
+PREFIXES (`TREND_FLOOR = 52.0`, `:915`); **COMBO-BAR** on the n = 2,700 prefix
+(`COMBO_BAR = 55.0`, `:962`) — **and it BINDS, because
+`bots/_v543burst/doctrine.py:2078` carries the `# ---- composed by
+tools/stack.py` marker, so `combo_of()` classifies this arm COMBO** (checked at
+draft by grep); **FUTILITY-BAR** at marks 1000/2700 with the s44 margin
+`0.5 × (hi − lo)/2` (`:1004`). `Z95 = 1.96`, local DEFF 0.98 ⇒ naive.
+**20,000 trials per row, written and run by this agent at draft.**
+
+```
+  true  P(CATA)  P(TR1k)  P(TR2.7k)  P(COMBO)  P(FUT)  P(reach)
+ 45.00    0.066    0.934      0.000     0.000   0.000     0.000
+ 48.00    0.001    0.993      0.005     0.000   0.000     0.000
+ 50.00    0.000    0.891      0.097     0.012   0.000     0.000  [POSITIVE CONTROL]
+ 51.33    0.000    0.652      0.186     0.162   0.000     0.000  ** THE DECISION BAR **
+ 52.00    0.000    0.490      0.145     0.364   0.000     0.001  [POSITIVE CONTROL]
+ 53.00    0.000    0.250      0.051     0.677   0.000     0.022  ** modal 150-arm top **
+ 54.00    0.000    0.097      0.007     0.745   0.000     0.151  ** band ceiling **
+ 55.00    0.000    0.026      0.000     0.465   0.000     0.508  [POSITIVE CONTROL]
+ 56.00    0.000    0.005      0.000     0.143   0.000     0.852
+ 58.00    0.000    0.000      0.000     0.001   0.000     0.999
+```
+
+⭐ **TWO CONTROLS, AND THE POSITIVE ONE REPRODUCES SIX PRIOR PUBLICATIONS.**
+`PINCERPOOL`/`V535POOL`/`V529POOL`/`V536POOL`/`V537POOL`/`NEWPOOL-BASELINE` §3
+published 50.00 → `0.888–0.892 / 0.096–0.100 / 0.012`, 52.00 → `0.489–0.493 /
+0.146 / 0.360–0.364`, 55.00 → `0.024–0.026 / 0.464–0.469 / 0.507–0.509`. **This
+is a SEVENTH independent implementation agreeing to Monte-Carlo error on every
+cell.** **NEGATIVE CONTROL** (fresh RNG base, 10,000 trials): true **20.0 → CATA
+1.000** · **30.0 → 1.000** · **40.0 → 0.926** · **45.0 → 0.070** · **50.0 →
+0.000** — monotone, with CATASTROPHE **seen both firing and not firing**,
+including at its 7.0% boundary.
+
+**AND THE ONE VARIANT THAT CHANGES THE ANSWER — `COMBO-BAR-EXEMPT` (combo clause
+off, same simulator, 20,000 trials):**
+
+```
+  true   P(TR1k)  P(TR2.7k)  P(reach)        vs P(reach) with COMBO binding
+ 51.33     0.655      0.180     0.165                 0.000
+ 52.00     0.492      0.145     0.363                 0.001
+ 53.00     0.258      0.052     0.690                 0.022
+ 54.00     0.099      0.008     0.893                 0.151
+```
+
+⇒ ⛔⛔ **THE COMBO BAR IS THE DOMINANT TERM AND IT IS ADJUDICATING AN ARM WHOSE
+OWN REGISTERED PREDICTION IS BELOW IT BY CONSTRUCTION.** `auto_gate.py:934-941`
+defines the exemption for *"a MECHANISM test scored against its own additive
+prediction [that] can sit ON its registered target and still be under 55 —
+cancelling it there is the one state that teaches nothing"*. **THIS PAGE'S
+PREDICTION IS LITERALLY ADDITIVE — `50 + dose × within-fire`, with a
+pre-registered ceiling of 5.00pp (§SEGMENT VALUE CEILING) — so 55.0 is
+unreachable for this arm even if the plank is excellent.** `⟨RATIFY-E⟩`.
+
+---
+
+## RATIFY: HYPOTHESIS
+
+> *`bots/_v543burst` — the edge-triggered bank-burst gate plus the forward
+> sentinel-pair consumer, behind `LOKI_FS_V543` — produces a LOCAL pooled game
+> share of **51.33% or higher** against its own parent `bots/_v542wave` at
+> n = 5,400 games across the 15-map pool rotated 2026-08-21 and both seats,
+> **because the burst funds a forward sentinel pair inside the r60 eco floor that
+> the ring-race decode shows is what makes our kill 50–80 rounds late.***
+
+**EXPECTED DIRECTION: POSITIVE. REGISTERED BAND `50.0 – 54.0` (150/150 arm),
+MODAL `51.0 – 52.0`.**
+
+**THE MECHANISM CHAIN, STATED SO IT CAN BE WRONG, WITH THE LINK THAT BREAKS IT
+NAMED AT EACH STEP:**
+`bank crosses the edge` (dose 35.5%, measured) → `_v543_pair` buys sentinel #1
+inside r60 (**observed once, r28 on atoll, forced-dose probe**) → **a SECOND
+sentinel stands beside it inside the window** (⛔ **NEVER OBSERVED — both probe
+purchases read `live 0`; `⟨RATIFY-G⟩`**) → the magazine is not empty (**observed:
+`floor 12`, `fwd` 1→2**) → first core damage lands ~1 round later (**decode, 4/4,
+on the SHIPPED tree**) → the kill lands earlier → **more games won.**
+⛔ **THE THIRD LINK IS THE ONE THE WHOLE PLANK RESTS ON AND IT IS THE ONE WITH NO
+EVIDENCE.**
+
+---
+
+## REGISTRATION BLOCK
+
+**TARGET BAND: N/A** — a LOCAL corefill shard with ZERO rated ladder exposure: no submission, no activation, no unrated challenge, so `tools/target_value.py` has no input and nothing on this page reaches the platform. ⚠ `PROGRAMME.md:31` `STEALTH_UNTIL_DROP: yes` is discharged as of the 2026-08-21 v174 drop and is not an independent bar here; the N/A rests on the surface being local and on nothing else.
+**PINNED: N/A** — local shard, no opponent to pin and no calibration relevance to protect. The control's bytes are fixed by construction (`bots/_v542wave` at `28fde0637`, porcelain-clean at draft, five digests in §COMMIT PROVENANCE). ⛔ **BUT THE PIN FILE DOES NOT CARRY IT: `scratchpad/CONTROL_PIN` holds `_v488beltbreak2`, `_v537socket` and `_x3r0v168mjolnir` only, and `control_pin.py --check` REFUSES at rc=1 today. `--pin --tree bots/_v542wave` is owed before the append** (`⟨RATIFY-F⟩`).
+**SURFACE: local**
+**CLUSTER UNIT: none** — `CLAUDE.md`'s enumeration PERFORMED at draft for THIS fixture, not inherited. (i) **MATCH** — does not exist on this surface: `tools/overnight.sh:219` writes one TSV row per `fcode run`; verified on this runner's most recent completed tape (`NEWPOOL-BASELINE.tsv`: **5,400 rows, 5,400 distinct `game` ids**). (ii) **OPPONENT** — degenerate: all 5,400 rows play the identical control tree, so the stratum holds exactly one opponent and there is no between-opponent variation for a design effect to describe. (iii) **SEED** — dies twice over: the live loop (`:224`) advances the seed once per full 15-map × 2-seat pass, so the 30 rows sharing a seed span all 15 maps and both seats and no two share a map (**verified: 180 distinct seeds at exactly 30 games each on the reference tape**); and `NOISE_ON = True` at `doctrine.py:474` in BOTH trees puts an UNSEEDED `random.Random()` spawn salt at the sole read site (`_v543burst/main.py:1259`, `_v542wave/main.py:1208`), so two rows at one seed are not even reproducible, let alone correlated. (iv) **MAP** — a **STRATUM, NOT A CLUSTER**: the loop cycles all 15 maps × 2 seats before repeating (verified: exactly 360 rows per map, 2,700 per seat on the reference tape). A balanced stratum does not inflate the pooled interval. (v) **HOST** — killed by REGISTRATION, not measurement: registered **SAME-HOST, MULTI-WORKER (8), ONE BOX (`MacBook-Pro`)**, per the obligations doc's Addendum 11 cross-host rider. All candidates die ⇒ DEFF = the measured local **0.98** (ρ = −0.020, s39 audit, pair-weighted over 124 shards of this same runner) ⇒ **NAIVE intervals, correct and marginally conservative. The platform constants (1.529 rated / 1.833 unrated) are NOT applicable and importing them would widen every interval here by 24–35% for correlation measured absent.** ⚠ **PER-SEGMENT RIDER (OB15 units rider), performed rather than cited:** the per-map and per-segment cuts carry no MATCH cluster (no match exists) and no OPPONENT cluster (one control), so the ≈1.07 residual the rider describes for the PLATFORM surface has no analogue here; 0.98 applies to every cut on this page. ⚠ **The 0.98 was measured over shards of the OLD pool; nothing suggests a rotation changes a property of the runner and the seed structure, but this pool has not been measured and saying so is more accurate than not.**
+**ESTIMATOR: the unweighted pooled treatment game share** = (rows with `winner == T`) / (completed rows), over all 5,400 rows, both seats pooled, all 15 maps pooled, no reweighting. The shard is exactly balanced (15 × 2 × 180) so the pooled and map-stratified equal-weight shares coincide by construction; the stratified form (`0.06667 × S1 + 0.93333 × S2 = pooled`) is an arithmetic consistency check, never a second estimator. **THE PRIMARY IS THAT POOLED SHARE WITH ITS 95% NAIVE WALD INTERVAL, SCORED AGAINST THE 51.33 BAR.** Seat A and seat B shares are reported SEPARATELY as a fixture diagnostic and are never a bar. **The r1000/core-kill DECOMPOSITION is a MANDATORY companion read on the same rows: it cannot rescue a failed bar and it CAN downgrade a passing one (THIRD FALSIFIER).** ⛔ **The arm-name normalisation hazard is checked and ABSENT: `overnight.sh:76-79`'s SUBSTRING guard was driven at draft on this exact pair — `_v543burst` is not a substring of `_v542wave` and `_v542wave` is not a substring of `_v543burst` — PASS in both directions.** Any estimate quoted at readout arrives from `tools/cluster_ci.py`; the pre-data half-widths here are closed-form Wald and their arithmetic is shown inline.
+**DOSE: the gate opens at least one window in 35.5% of game-sides at the proposed 150/150 threshold vs 0.0% with the master flag off** (n=1405 rated game-sides for the treatment half — `BUILD-REPORT §4.7`, the exact `_v543_tick` predicate replayed over decoded per-round bank series, versions 159–177, all 1,405 match ids present in `ladder_games.tsv` and 0 in `unrated_games.tsv`; the flag-off half is 0.0% by construction and is CONFIRMED dynamically by `gate_test.py`'s two master-off cases, which return `fires=0`, `v543_rnd=-1`, `v543_hist=[]` on a trace that fires twice with the flag on). **THE PROBE'S OWN NEGATIVE CONTROL COMES OUT THE OTHER WAY:** the same simulator with the latch replaced by a bare `bank ≥ 200` level test fires in **1,405 of 1,405 game-sides at median round 0** — the instrument can produce the other verdict. **At the ON-DISK 200/200 setting the same measurement reads 17.5% ±2.5pp, median first fire r178.5, and 14.1% of all game-sides firing before r300.** ⛔ **AND THE HONEST LIMIT, WHICH IS `⟨RATIFY-C⟩`: NONE OF THIS IS READABLE OFF THE SHARD'S OWN TAPE** (`--replay /dev/null`, stderr discarded, `FS_V543_LOG = False`), so the FIRINGS-BEFORE-PRIMARY rule requires a SEPARATE instrumented dose tape, registered below as a lock precondition. **The consumer half is weaker still: `_v543_pair` has executed end-to-end exactly twice, on one map, in a forced-dose scratch arm at a threshold of 60 that exists nowhere in `bots/` — and NEITHER purchase was a simultaneous pair.**
+**PLANNED n: 5400 games** (= 15 maps × 2 seats × 180; targets must be multiples of 30). ⛔ **5400 IS SAID EXPLICITLY** because a shard otherwise defaults to a 2,700 target, and at 2,700 the half-width widens 1.334 → 1.886pp, which puts the 1.33pp bar margin INSIDE the interval and makes the primary unresolvable. ⚠ **AND IT IS NOT A FORECAST: §3 prices `P(reaching 5,400)` at 0.001 at the top of the modal band with the floors binding.**
+**BOUNDARY: 5400 games** — LOCAL surface, one tape row is one game; no accept/attempt distinction and no accepts count, so the two units coincide (5,400 games = 5,400 rows = 5,400 `fcode run` invocations). ⛔ **A LINE COUNT IS NOT A ROW COUNT**: the tape carries an unprefixed header line under the `# FIXTURE` line, so a naive `wc -l` over-reports n by exactly two (verified on `NEWPOOL-BASELINE.tsv`: 5,401 non-`#` lines for 5,400 rows). The registered denominator is **DictReader row count over non-`#` lines, cross-checked against the heartbeat's `n TARGET` and against `max(game id) + 1`.** `NOWINNER` rows are counted in n, excluded from the numerator, and reported.
+**CUT-SHORT: floor 2700 games for the BAR verdict; below 1000 completed rows this arm publishes descriptive tallies only and takes NO bar verdict and NO mechanism claim.** Between 1,000 and 2,700 the share is reported at ±3.099pp (n=1000) to ±1.886pp (n=2700), labelled `PROVISIONAL`, and NO bar verdict is available. An `auto_gate` firing at CATASTROPHE@400, TREND-FLOOR@1000, TREND-FLOOR@2700, COMBO-BAR@2700 or FUTILITY-BAR@1000/@2700 is an **OPERATIONAL CANCELLATION, not a verdict**, typed `cancellation`, **rows KEPT**; so is a builder cancel-for-capacity. ⛔⛔ **THE SELECTION LABEL IS MANDATORY AND ITS DIRECTION IS NAMED: a floor/combo/catastrophe stop is TRIGGERED BY A LOW PREFIX, so a share reported at such a stop is SELECTED-PESSIMISTIC and biased LOW by construction; the size of that bias is not estimated here.** ⭐ **AND THE PRE-COMMITTED READING OF THE MODAL STOP, typed before the fire so it cannot be improvised: a TREND-FLOOR@1000 stop on this arm is CONSISTENT WITH THE PLANK WORKING — §3 gives P(stop)=0.490 at a true 52.0, which is a within-fire effect of +5.6pp — and the readout sentence is *"the shard tracked at X% over its first 1,000 rows and was cancelled; the dose-bounded ceiling on this arm was 5.00pp and the floor sits 2.00pp above the null, so the fixture could not separate a working plank from a null at this dose"*, never *"the plank failed"*.** **CANCEL-FOR-CAPACITY** (the box is also the build lane's): typed `cancellation`, POLICY NOT EVIDENCE, partial disclosed as **UNSELECTED** (blind to the share, so the selected-pessimistic caveat does NOT apply — and saying so is required), rows KEPT.
+**BAR: 51.33. MDE: 0.00pp — THIS BAR IS A POINT RULE ONLY AND LICENSES NO EXCLUSION CLAIM ABOUT AN EFFECT SIZE** (OB16 corollary, 2026-08-15T03:52:45Z: the standard corefill band IS `50 ± half_width` at n = 5,400, so clearing 51.33 puts the CI's lower edge at exactly 50.00 — it excludes 50 and excludes no positive effect size). n for the one exclusion it CAN make (bar ≠ 50.0): **5,400**, the planned n. ⭐ **The OB16-form statement is available for free on the KEEP BAND: Band 1 requires the CI LOWER bound ≥ 51.33, which carries an implied minimum effect of +1.33pp — a property of the BAND, not of the BAR.** ⚠ **THE ALTERNATIVE THE BUILDER MAY PREFER IS NAMED RATHER THAN SILENTLY DECLINED (`⟨RATIFY-B⟩`): a true OB16-form bar `50.00 + MDE(1.00) + hw(1.33) = 52.33`. It is refused as drafted for one operational reason — `auto_gate`'s FUTILITY clause reads the `BARS.tsv` value, so raising the bar also tightens the canceller on an arm this page has already priced as likely to be cancelled — and for one comparability reason: twenty-plus family rows carry 51.33.**
+**BASE RATE: 50.00**
+**BAR SOURCE:** the house-standard corefill futility band, **re-derived at draft rather than copied**: `50 + 1.96 × sqrt(0.25/5400) × 100 = 50 + 1.3336 = 51.3336 → 51.33pp`; local DEFF 0.98 so naive (applying it gives 51.32, a marginally LOWER bar; the family's convention is the naive form and this page keeps it for comparability). The identical bar is carried by `docs/prereg/BARS.tsv` rows `SALTRAY`, `RINGLADDER`, `SIEGECREW`, `PINCERPOOL`, `FLIPPOOL`, `HOMEPOOL`, `V535POOL`, `V529POOL`, `V536POOL`, `V537POOL`, `NEWPOOL-BASELINE` and a dozen others. **Constructed, not observed.**
+**BASE RATE SOURCE:** the structural A/A expectation of a seat-balanced, map-balanced SELF-LEG. ⭐⭐ **AND UNLIKE `PREREG-NEWPOOL-BASELINE`, WHOSE OWN PAGE HAD TO CALL 50.00 "AN ARBITRARY MIDPOINT" BECAUSE ITS TWO ARMS SHARED 0 OF 35 DIGESTS, THE CLAIM IS GENUINE HERE AND WAS MEASURED AT DRAFT: the treatment is the control plus 538 inserted lines and ZERO deleted or modified lines, `eco.py` and `raid.py` are md5-identical, and with `LOKI_FS_V543 = False` the tree is claimed byte-equivalent in behaviour under a self-tested static audit.** ⚠ **THE CLAIM'S DYNAMIC HALF IS PENDING** (`⟨RATIFY-G⟩`): a paired NOISE_OFF identity battery vs the frozen parent is running at draft and had not returned. **If it returns any differing row, 50.00 is not this fixture's null and the bar is unsourced.** ⚠ The old-pool A/A calibration (`IDNULL140` 49.27 / `NULL125` 51.04, 1.77pp apart at n = 5,400) is quoted once, labelled OLD-POOL, and is NOT transferred.
+**REFERENCE n: none** — the BAR's comparator is a STRUCTURAL 50.00 generated inside this same shard. ⛔ **No banked full-pool number is registered as a reference SAMPLE, and the `newpool-baseline-anchor` 51.94 is NOT one** — it is a different control (`_x3r0v168mjolnir`) answering a different question, cited on this page only for the fixture's SHAPE (grindiness, r1000 share, kill CDF) and used in no interval.
+**TREATMENT TREE: bots/_v543burst**
+**TREATMENT DIFF REFS: f938e9f13 09177ba0d**
+`f938e9f13` seeded the tree as a verbatim copy of the parent and `09177ba0d` is the plank's last commit, so the ref pair's paths under `bots/_v543burst` are **exactly** `doctrine.py`, `main.py`, `siege.py` (`git diff --name-only`, driven at draft) — which is what makes the OB13 intersection machine-computable rather than an ADD-commit that intersects everything.
+**MECHANISM METRIC READS: `bots/_v543burst/siege.py:2894`** `_v543_tick` (the gate; `self.v543_fires` at the fire branch) → **`bots/_v543burst/siege.py:3006`** `_v543_pair` (the consumer; `self.v543_bought`, `v543_full`, `v543_poor`, `v543_nosite`) → **`bots/_v543burst/main.py:1107`** the convert-floor waiver (`self.v543_ammo_bind`) and **`siege.py:3109`** `_v543_ammo_spent` (`v543_ammo_ti`); plus **`bots/_v543burst/siege.py:731`** `_fs_map_gated`, the SEGMENTATION read, driven to BOTH verdicts on a POOL cell at draft (`jotunheim` under `FS_V534_MAPTRUST` True → RUNS, False → REFUSES; `midgard` refuses under both). The OUTCOME read is the tape's own `winner` column (`overnight.sh:219`, scored by the basename substring guard at `:76-79`, driven on this pair — PASS) and has no line in a bot tree by construction. **TREATMENT DIFF TOUCHES: bots/_v543burst/doctrine.py bots/_v543burst/main.py bots/_v543burst/siege.py.** **INTERSECTION: yes** — every mechanism site is in a file the ref pair touches, and the two modules the diff does NOT touch (the byte-identical pair named in §COMMIT PROVENANCE) carry no mechanism metric. ⛔ **AND THE OB13 HAZARD IS NAMED IN ITS LIVE FORM RATHER THAN DECLARED ABSENT: the counters above intersect the diff and are NOT READABLE ON THE REGISTERED SURFACE (§DOSE). A metric that exists in the right file and cannot be read on the tape is LOKI-18's failure reached from the other side, and `⟨RATIFY-C⟩` is the fix.**
+**METRIC WINDOW: r0-r1000. GATING CONSTANTS: LOKI_FS_V543=True, FS_V543_BURST=True, FS_V543_BURST_TI=200, FS_V543_REARM_TI=200, FS_V543_RISE_RNDS=8, FS_V543_RISE_TI=0, FS_V543_PEAK=True, FS_V543_MIN_HARV=2, FS_V543_WINDOW=40, FS_V543_MAX_FIRES=3, FS_V543_PAIR_MAX=2, FS_V543_JUMP=True, FS_V543_RESERVE=24, FS_V543_AMMO=True, FS_V543_AMMO_FLOOR=12, FS_V543_AMMO_MAX=120, FS_V543_LOG=False, FS_SENT_RND_FLOOR=60, FS_SENTINEL_MAX=2, FS_SENT_BUY_MAX=4, FS_V518_EARLY_MAX_LIVE=0, LOKI_FWD_TI_FLOOR=40, FS_V534_MAPTRUST=True, FS_MAP_SKIP_ON=True, LOKI_FS_V525=True, LOKI_QUIET_ON=True, NOISE_ON=True. MECHANISM CAN OCCUR IN WINDOW: yes.**
+⛔ **THE ROUND-CONSTANT ENUMERATION IS PERFORMED BEFORE THE CHECKER RUNS, inheriting `HOMEPOOL`'s lesson deliberately:**
+* **THREE ARE REAL ROUND CONSTANTS.** **`FS_V543_WINDOW = 40`** (`doctrine.py:6215`) — the funding window's length in rounds, the plank's central duration; **`FS_V543_RISE_RNDS = 8`** (`:6191`) — the income window, two passive ticks, a real round duration; **`FS_SENT_RND_FLOOR = 60`** (parent, `doctrine.py:3165`) — a real round GATE, and **the one this plank exists to bypass**.
+* ⚠ **THIRTEEN ARE ARTEFACTS, NAMED INDIVIDUALLY so a green run cannot launder them.** The checker reads every declared integer as a ROUND. **TITANIUM AMOUNTS** `FS_V543_BURST_TI = 200` · `FS_V543_REARM_TI = 200` · `FS_V543_RISE_TI = 0` · `FS_V543_RESERVE = 24` · `FS_V543_AMMO_FLOOR = 12` · `FS_V543_AMMO_MAX = 120` · `LOKI_FWD_TI_FLOOR = 40`; **COUNTS AND CAPS** `FS_V543_MIN_HARV = 2` · `FS_V543_MAX_FIRES = 3` · `FS_V543_PAIR_MAX = 2` · `FS_SENTINEL_MAX = 2` · `FS_SENT_BUY_MAX = 4` · `FS_V518_EARLY_MAX_LIVE = 0`.
+* ⭐ **RUN AT DRAFT, NOT PREDICTED:** `.venv/bin/python tools/prereg_check.py docs/prereg/DRAFT-PREREG-V543POOL-2026-08-21.md` returns **`PREREG_CHECK: OK`** with **EXACTLY 14 partial-window WARNs and no others**, matching the enumeration above item for item: **THREE REAL** (`FS_V543_WINDOW = 40`, `FS_V543_RISE_RNDS = 8`, `FS_SENT_RND_FLOOR = 60`) **and ELEVEN ARTEFACTS**. ⚠ **The two remaining artefacts — `FS_V543_RISE_TI = 0` and `FS_V518_EARLY_MAX_LIVE = 0` — do NOT warn, because a value of 0 leaves no partial window to complain about. That is exactly the arbitrariness that makes the enumeration necessary rather than the count.** Every arithmetic row closes (`BOUNDARY_UNITS`, `BOUNDARY_VS_N`, `CUT_SHORT_FLOOR`, `BAR_RESOLVABLE` at margin 1.3 vs ±1.3, `BAR_NULL`, `SEGMENT_CEILING` recomputed to 5.00, `DOSE_BOTH_VERDICTS` 35.5 vs 0.0, `OB13_INTERSECTION` — metric file IS in the 9-path diff); `REFERENCE_FLOOR` reads `n/a` and `POOL_ERA` reads `n/a` on a LOCAL surface.
+* **THE OUTCOME IS SCORED OVER THE WHOLE GAME (r0–r1000)** and no gate on this page is narrower. The plank's own window can open at any round (there is **no round gate on the burst** — the parent's `SURGE_MIN_RND = 300` was deliberately not carried, `BUILD-REPORT §1.1`), and the corpus places the median first fire at **r127** (150/150) or **r178.5** (200/200), both inside r0–r1000. `MECHANISM CAN OCCUR IN WINDOW: yes`.
+**PRE-STATE: the predicted-change behaviour is NOT already in the target state at lock, and the check is unusually easy here because NOTHING EXISTS.** Verified at draft: `grep -c "V543POOL\|v543burst"` → **0** on `docs/prereg/BARS.tsv`, `results.tsv`, `scratchpad/corefill_work.txt` and `elo_history.tsv`; no `scratchpad/overnight*` tape names `V543`; `ls docs/prereg/ | grep -i v543` → no matches. ⇒ **`bots/_v543burst`'s share against `bots/_v542wave` does not exist on any tape at any n.** The outcome claim is a change (share ABOVE 50) on a fixture that has never been played, and the mechanism claim (a forward sentinel PAIR standing inside a burst window) is **measured to be ABSENT in the only two games where the consumer executed** — the pre-state is the opposite of the target state on both, which is what OB7 asks for.
+**PLANK CLASS: OFFENSIVE** — the plank exists to buy the kill hardware earlier; it adds no defensive behaviour and removes none. ⇒ `PROGRAMME.md`'s `DEFENCE_ADMISSION_BAR` (`r300_crossing_non_regression`) does not bind. ⭐ **THE r300 READ IS REGISTERED ANYWAY AND IN THE EXCLUSION FORM, because the plank's whole thesis is a kill-clock claim and a page that only reported the share would be declining to test its own mechanism** (next field).
+**KILL-ROUND NON-REGRESSION: SCORED AS AN EXCLUSION, ITT, OVER ALL 5,400 GAMES, PER SIDE.** DEFINITIONS: **ITT RMST₃₀₀** = mean kill time censored at r300 over ALL games, a non-kill scoring 300; **ITT timely-kill** = share of ALL games ending `cond == core_destroyed` with `turns ≤ 300` AND won by that side. ⛔ **THE PER-SIDE CLAUSE IS LOAD-BEARING AND IS CARRIED FROM THE SIBLINGS: a SIDE-BLIND `mean(min(turn,300))` computes the wrong quantity.** **REGISTERED CLAIM FORMS:** the 95% CI **LOWER** bound on (treatment − control) ITT timely-kill-by-r300 **EXCLUDES a 3.0pp FALL**, and the 95% CI **UPPER** bound on (treatment − control) ITT RMST₃₀₀ **EXCLUDES a +5.0-round RISE**. **EXPECTED DIRECTION: POSITIVE** — the burst buys the forward pair inside the r60 floor (probe: r28), and the decode establishes first-core-damage = forward-sentinel-round + 1 in 4 of 4. ⭐⭐ **AND THE ESTIMATOR IS THE WITHIN-GAME PAIRED DIFFERENCE, NOT A SUM OF PER-SIDE VARIANCES — MEASURED AT DRAFT ON THE ONLY COMPLETED TAPE OF THIS POOL, BECAUSE THE NAIVE FORM FAILS IN THE NULL-FLATTERING DIRECTION.** On `NEWPOOL-BASELINE.tsv` (5,400 rows, a DIFFERENT fixture — this is a VARIANCE transfer on the same pool, never a mean transfer): per-side RMST₃₀₀ sd 43.67 (T) and 32.17 (C), but the **per-game difference** `d_i` has sd **58.11**, giving a paired half-width of **±1.550 rounds** against the naive unpaired **±1.447** — the two sides are ANTI-correlated on the same game (a kill for one is a non-kill for the other), so summing variances UNDERSTATES the interval by ~7%. Same on the binary: paired **±1.592pp** vs naive **±1.445pp**. ⇒ **REGISTER THE PAIRED FORM AND RE-SIZE IT FROM THIS TAPE'S OWN sd AT READOUT.** ⚠ For context, labelled NOT COMPARABLE and used in no band: that tape's T-side reads medkill 311.5, ITT k≤300 21.46%, RMST₃₀₀ 280.53, r1000 20.43%.
+**MAP SEGMENT: DECLARED, TWO-WAY, EXHAUSTIVE, WITH SIGNS, AND MECHANISM-SPECIFIC RATHER THAN A SIZE CLASS** (OB15a: a mechanism-specific segment beats a size class whenever the mechanism names a terrain property, and this one does — the consumer only exists where the ferry-siege lane runs). **(a) THE GATE, driven shard-native at draft** on `bots/_v543burst`'s own `SiegeMixin._fs_map_gated` over every `maps/*.map26` × both seats, with `SELFTEST PASS` on six both-ways mutants plus a pool-native seventh: **POOL CELLS 30 | refuse 2 | run 28; FS-LANE-REFUSING = `{midgard}` = 1 of 15 = 6.6667% of rows; FS-LANE-ACTIVE = the other fourteen = 93.3333%.** The verdicts are **arm-invariant** (`diff _v543burst _v542wave`: **0 of 88 cells differ**), so the segmentation cannot be an artefact of the treatment. **(b) THE PARTITION AND ITS SIGNS: S1 FS-LANE-REFUSING `{midgard}` 360 rows 6.667% — EXPECTED DIRECTION NULL-to-NEGATIVE vs pooled** (the gate fires with no consumer, and the ammo waiver can still bind through the raid lane's `SLOT_FWD_GUN` — a cost channel with no benefit channel); **S2 FS-LANE-ACTIVE 5,040 rows 93.333% — EXPECTED DIRECTION POSITIVE vs pooled** (the consumer exists). Per-map cells hold 360 games ⇒ ±5.165pp, so **no single map cell carries a verdict**; the per-map table is computed and reported DESCRIPTIVELY and may not rescue a failed bar. ⛔ **`midgard` IS REPORTED SEPARATELY FROM EVERY OTHER CELL, ALWAYS.**
+**PRIMARY SEGMENT: NONE — THE POOLED SHARE IS THE PRIMARY, AND EXACTLY ONE PRIMARY IS DECLARED (OB15b).** S2 is 93.33% of rows, so `S2 − pooled = 0.0667 × (S2 − S1)` and a segment primary would buy essentially nothing while costing the one-primary discipline. **Every map cut on this page — S1, S2, per-map, per-seat — is REGISTERED (with its sign and stop rule) but DESCRIPTIVE, and may not rescue a failed bar.**
+**EXPECTED DIRECTION: POSITIVE, REGISTERED BAND `50.0 – 54.0`, MODAL `51.0 – 52.0`** (150/150 arm; `50.0 – 51.9` modal `50.5 – 51.0` on the 200/200 arm) — **NULL-to-NEGATIVE on S1**, **POSITIVE on S2**. **On the clock: POSITIVE** (earlier forward sentinel ⇒ earlier first core damage ⇒ shorter ITT RMST₃₀₀ and a higher ITT timely-kill share).
+**SEGMENT VALUE CEILING: 93.33% × 5.36pp = 5.00pp** — S2 (FS-LANE-ACTIVE)'s maximum plausible contribution to the pooled share, the pairing share being the shard's EXACT map composition (14 of 15, balanced by construction at 360 rows/map) and the on-segment figure being itself **dose-bounded**: `DOSE 35.5% × WITHIN-FIRE 15.1pp = 5.36pp`. ⚠ **THE 15.1pp WITHIN-FIRE FIGURE IS A REGISTERED CEILING INPUT, NOT A PREDICTION**, and it is set deliberately below the largest single-cell movements this line has measured (`glacierkeep` 10 → 24 of 60 = +23.3pp under the v537 socket plank; `archipelago` −27 of 60 = −45pp) because a one-map cell effect is not a within-fire effect across a pool. ⛔⛔ **THIS FIELD IS THE PAGE'S CENTRAL ARITHMETIC AND IT IS WHY §3's FLOORS BITE: a 5.00pp pooled ceiling on the 150/150 arm means the arm's own best case is ~55.0 and its realistic case is 51–52, i.e. AT the decision bar and BELOW the 55.0 combo bar by construction. On the 200/200 arm the same chain gives `93.33% × 2.64pp = 2.46pp` and a best case of ~52.5.**
+**POOL ERA: post-2026-08-21-rotation** — the rotated 15-map pool of `tools/overnight.sh:73`. ⛔ **Every full-pool number banked before 2026-08-21 (70.50 / 66.44 / 72.57 / 72.06 / the 69.28 floor / the 70.4964 binding point) is a HISTORICAL QUANTITY OF A RETIRED FIXTURE and appears nowhere on this page.**
+**SPANS-POOL-CHANGE: no** — fired entirely after the 2026-08-21 rotation, on a single fixed 15-map pool. ⚠ **CONDITIONAL ON A CHECK OWED AT READOUT AND NAMED IN THE FIRE CHECKLIST: the tape's own map set must be exactly the fifteen rotated maps at 360 rows each.**
+**CELL VERSION CHURN: N/A** — not a panel, no cell list, one fixed local control tree pinned at `28fde0637`.
+**GATE RESOLUTION: four gates, sized separately.**
+* **(a) THE PRIMARY BAR.** Margin 1.33pp against a half-width of **±1.334pp at n = 5,400** — resolvable at full n and **only just.** ⚠ **The slack at p = 50 is ~0.00pp, which is `GUNAXABL`'s exact failure mode (it missed its keep edge by 0.0152pp — ONE GAME). Registered consequence: a result within one game of the bar is reported as "the fixture cannot resolve the question", not as a verdict in whichever direction the rounding falls.** ⛔ **On this arm that hazard is not a tail: the modal band `51.0 – 52.0` STRADDLES the bar.**
+* **(b) THE DOSE GATE** (`⟨RATIFY-C⟩`). At a dose-tape n of 600 the half-width on a 35.5% rate is **±3.83pp** (±5.42pp at n=300). **RESOLVES the registered 20.0% floor against the 35.5% prior with ~4pp to spare, and resolves nothing finer.**
+* **(c) THE SEGMENTS.** S1 ±5.165 · S2 ±1.381. **RESOLVES a ≥10pp S1 deviation and a ≥3pp S2 deviation — AND NOTHING FINER. Effects smaller than those are invisible here and this shard closes no road about them.**
+* **(d) THE OPERATIONAL FLOORS.** CATASTROPHE (CI-hi < 45.0 at n ≥ 400), TREND-FLOOR@1000/@2700 (prefix < 52.0), COMBO-BAR@2700 (prefix < 55.0, **binding — the compose marker is present**) and FUTILITY-BAR@1000/@2700. **Priced at §3 and they are the dominant term: `P(stop)` runs 1.000 → 0.849 across the registered band, and the exemption question is `⟨RATIFY-E⟩`.** The bar plausibility guard (`[30,70]`) admits 51.33.
+**Everything else on this page (F1–F5, the per-map and per-seat splits, the kill-clock panel) is DIAGNOSTIC and cannot rescue a failed bar. Any branch that does not resolve is UNRESOLVED, and an UNRESOLVED gate defaults to the RESTRICTION: no KEEP, no promotion, and no sentence claiming the mechanism was shown to work.**
+
+---
+
+## ⭐ THE MECHANISM-FIRST READING STRUCTURE — `⟨RATIFY-C⟩`, AND IT IS A HARD SEQUENCE
+
+⛔ **THE RULE (`docs/prereg/BARS.tsv` header, research 2026-08-16T13:27:33Z):
+F1–F5 are read, and their numbers written down, BEFORE any sentence containing
+this arm's pooled share is typed. A primary typed ahead of the firings read is a
+REGISTRATION BREACH regardless of what it says.**
+
+**AND ON THIS ARM THE RULE NEEDS AN INSTRUMENT THAT DOES NOT YET EXIST.**
+Registered, as a **LOCK PRECONDITION**:
+
+> **THE DOSE TAPE.** A scratch arm — `bots/_v543burst` + `FS_V543_LOG = True`
+> appended, living OUTSIDE `bots/` — played against `bots/_v542wave` over the
+> **same 15-map pool × both seats**, **n = 600 (20 per cell)**, stderr captured,
+> seeds from a base OUTSIDE the shard's reservation. Reported per map and pooled:
+> **(i) `v543_fires` ≥ 1 per treatment game-side; (ii) `v543_bought` ≥ 1;
+> (iii) TWO LIVE forward sentinels simultaneously (the pair); (iv) the runtime
+> FS-lane share (`_fs_turn` reached at least once); (v) `v543_ammo_bind` rounds
+> and `v543_ammo_ti`; (vi) the refusal mix `v543_full/poor/nosite/spent/noharv`.**
+
+**THE PRE-COMMITTED FLOORS, and what happens below them:**
+
+```
+FIRE FLOOR   : v543_fires >= 1 in >= 20.0% of treatment game-sides   (prior 35.5% at 150/150)
+PAIR FLOOR   : v543_bought >= 1 in >=  8.0% of treatment game-sides
+PAIR-EXISTS  : >= 1 game anywhere in the tape with TWO live forward sentinels
+```
+
+⛔ **BELOW THE FIRE FLOOR OR BELOW THE PAIR FLOOR, THE SCREEN'S POOLED SHARE IS
+READ AS `UNRESOLVED — INERT MECHANISM`, NEVER AS A NULL ON THE PLANK** (OB13/OB17
+and the `#78`/`#76` soft-knob lesson: *"never fires"* and *"fires but the metric
+cannot move"* read identically on a flat primary). **A dose below the fire floor
+is a reason to re-point the threshold and re-screen, not to close the road.**
+⚠ **THE PAIR FLOOR AT 8.0% IS A JUDGMENT NUMBER WITH NO MEASURED BASIS** — the
+consumer has executed twice, on one map, in a forced-dose arm — **and it is
+flagged as the weakest constant on this page. The builder ratifies it or replaces
+it; what may NOT happen is choosing it after the tape is read.**
+⭐ **AND THE PAIR-EXISTS CLAUSE IS THE ONE THAT CAN SURPRISE US (the OB17 rider):
+if 600 games contain ZERO simultaneous pairs, the plank's registered mechanism is
+not the mechanism it delivers, and the screen is measuring a
+"buy-one-sentinel-earlier" plank under a "pair" hypothesis.** That is a finding,
+and it arrives before the screen rather than after.
+
+---
+
+## FIRINGS-BEFORE-PRIMARY — F1 TO F5
+
+⛔ **THE SHARD ITSELF CAN SEE VERY LITTLE.** `overnight.sh:143-144` runs every
+game with `--replay /dev/null`; the tape's columns are `ts shard game map seed
+seat winner cond turns`; every log flag in the fired config is False. ⛔ **AND
+THE `cond` COLUMN IS THINNER THAN IT LOOKS: on every completed tape checked at
+draft it takes exactly TWO values — `core_destroyed` and `tiebreak`. It does NOT
+carry the tiebreak KEY.**
+
+* **F1a — THE MAP PREDICATE. SHARD-NATIVE ON THE CANDIDATE TREE, EXACT.**
+  88 cells, refuse 16, run 72, SEAT-ASYMMETRIC none; on the pool, **REFUSING
+  `{midgard}` = 2/30 cells = 6.6667% of rows**; `--selftest` **PASS** on six
+  mutants each driven to the other verdict; the v534 F2 grid-confirm driven to
+  BOTH verdicts on a POOL cell; **0 of 88 cells differ between the arms.**
+  ⛔ **REGISTERED BY THIS ENUMERATION AND NEVER BY DOCSTRING PROSE:**
+  `siege.py`'s `_fs_gate` docstring names `fjordgate` and `jackpot` as the
+  refusals and **both RUN**. **A readout sentence sourced from it is a breach.**
+  **STOP RULE: any POOL map whose refusing status differs from `{midgard}` halts
+  the readout** — S1/S2 would be mis-composed.
+* **F1b — THE RUNTIME FS-LANE SHARE.** From the dose tape, per map: the share of
+  treatment game-sides in which `_fs_turn` was reached at least once.
+  **REGISTERED PREDICTION: ~0% on `midgard` and materially above 0% on all
+  fourteen others.** ⚠ **The map predicate is a LOWER bound on FS-lane-off; a
+  fourteen-map cell reading near zero is a finding about the lane, not about
+  this plank, and it would make the screen inert on that cell.**
+* **F2 — THE DOSE AND THE PAIR** (§MECHANISM-FIRST). Read FIRST, floors above.
+* **F3 — THE SEGMENTS.** S1 `{midgard}` 360 rows ±5.165, prediction **at or
+  below** pooled; S2 5,040 rows ±1.381, prediction **at or above** pooled.
+  **STOP RULE (INSTRUMENT, not plank): a `midgard` cell at 0% or 100% is
+  inspected before any share sentence** — a degenerate cell is the signature of
+  a scoring or map-loading fault.
+* **F4 — THE r1000 / OFF-DOCTRINE CHECK.** ⛔ **NOT recoverable as
+  `titanium_collected`** — the `cond` column is binary. **OPERATIONAL
+  DEFINITION: `cond == "tiebreak"` IS PRIMARY; strict `turns == 1000` IS REPORTED
+  BESIDE IT and the gap between them is reported** (on `NEWPOOL-BASELINE` the gap
+  was 2 rows: 20.43% vs 20.39%). ⛔⛔ **NO INSTRUMENT-ALARM THRESHOLD IS
+  REGISTERED ON THE r1000 SHARE, and that is deliberate: `V537POOL`'s inherited
+  *"materially above ~16% is an INSTRUMENT ALARM"* was anchored on an OLD-POOL
+  7.69%, and the completed `NEWPOOL-BASELINE` tape reads 20.43% on this pool.
+  The threshold would false-fire.** The instrument alarms that remain are
+  `NOWINNER` rows and shell rows only.
+* **F5 — THE CRASH INVARIANT.** ⛔ **NOT measurable on the shard — registered as
+  such rather than assumed clean:** stderr is discarded, so a permanently
+  destroyed unit is invisible except as an anomalous r1000 spike or a `NOWINNER`
+  row. **WHAT EXISTS PRE-LOCK IS THIN AND IS QUOTED WITH ITS THINNESS: 2 smoke
+  games (midgard, 0 tracebacks) + 2 forced-dose games (atoll/midgard, 0
+  tracebacks) + `py_compile` on all five modules + an import smoke.** ⛔⛔
+  **FOUR GAMES ON TWO MAPS, ONE OF WHICH IS OFF-POOL (`atoll`), IS NOT A CRASH
+  READ FOR A 15-MAP POOL — thirteen pool maps are unprobed, including the two
+  new size classes (`holmgang` 12×12, `bifrost` 26×12) where `CLAUDE.md`'s
+  corrected `is_in_vision` bullet says edge geometry bites.** The pending dynamic
+  identity battery (`⟨RATIFY-G⟩`) partially discharges this and the builder
+  should say so at lock. **STOP RULE: any `NOWINNER` row halts the readout for a
+  tape inspection before any share sentence** (the s52 v169 VOID precedent is 150
+  of 201 rows as engine-launch shells with no error signal).
+
+**NOT MEASURABLE on this leg — named, not silently dropped.**
+* **THE COLLAR-DISPLACEMENT COST** (BUILD-REPORT risk #2): barrier counts and
+  collar-closure rounds are not on the tape. **The dose tape can carry them and
+  should** (`v543_full/poor/nosite` plus a barrier counter) — otherwise a
+  win-share KEEP would ship an unmeasured cost.
+* **ANY PER-UNIT CPU / TLE READ.** `get_cpu_time_elapsed()` reads 0 under local
+  `fcode run` (`tools/monitors/cpu_watch.py:13-16`). **Labelled UNINFORMATIVE,
+  NOT CLEAN.**
+* **ANY CLAIM ABOUT THE FIELD.** One opponent, and it is our own parent.
+  `CLAUDE.md` rule 6 governs: **THIS PAGE CLOSES NO ROAD.**
+
+---
+
+## FALSIFIER
+
+**PRIMARY FALSIFIER.** The pooled share's 95% CI lower bound fails to reach
+51.33 at n = 5,400 **with the dose floors MET**. ⛔ **The dose condition is not a
+let-out clause, it is what makes the falsifier a test of the PLANK rather than of
+the THRESHOLD: with the floors met, a miss prices the mechanism; with them
+unmet, the leg never dosed and the honest status is "never delivered", exactly as
+LOKI-3's was.**
+
+**SECOND FALSIFIER (the segment signs, each falsifiable alone).** (a) the 95% CI
+on (S1 − pooled) fails to exclude a rise — **which would mean the ammo-waiver
+cost channel on FS-gated geometry is not real, and would partially retire a cost
+class this page registered**; (b) the CI on (S2 − pooled) fails to exclude a fall
+— **which, at 93.33% weight, would mean the pooled and on-segment readings
+disagree in a way the arithmetic says they cannot, and is an INSTRUMENT question
+first.**
+
+**THIRD FALSIFIER (the doctrine composition).** The share above 50.00 is
+**majority r1000 tiebreak wins**. Then the reading is downgraded one band and
+labelled `OFF-DOCTRINE COMPOSITION` — combination input only, no KEEP.
+⛔ **LIVE ON THIS FIXTURE IN A WAY IT WAS NOT ON THE OLD POOL: the completed
+`NEWPOOL-BASELINE` tape reads a 20.43% tiebreak share.** Scored on the MAJORITY
+condition alone, which needs no anchor.
+
+**MECHANISM FALSIFIER (fires FIRST).** If F1a's pool composition differs from
+`{midgard}` refusing / 14 running — the segmentation is wrong and every segment
+sentence is unlicensed. If the tape's map set is not exactly the fifteen rotated
+maps at 360 rows each — `SPANS-POOL-CHANGE` is violated. If the `# FIXTURE`
+header's `host=` is not `MacBook-Pro` or `workers=` is not 8 — the registration
+is violated and the per-map table is labelled `HOST-UNREGISTERED`. If the fired
+trees' digests do not match §COMMIT PROVENANCE — **the shard measured a tree
+nobody characterised and its number is RETRACTED, not reinterpreted.** ⛔ **If
+the pending dynamic flag-off identity returns ANY differing row, the 50.00 base
+rate is unsourced and this prereg is amended before the readout, not after.**
+
+### ⭐ THE HONEST-NULL CLAUSE — pre-committed
+
+| state | pre-committed reading |
+|---|---|
+| **(1) COMPLETED at 5,400, dose floors MET, CI lower ≥ 51.33** | ⭐ **KEEP-CLASS: the plank clears the DECISION bar at full power.** OB16 status: the BAR's MDE is 0; clearing the BAND excludes 50.00 AND 51.33, so an implied minimum effect of +1.33pp may be claimed **and nothing larger**. Reported with its subjects in the same sentence, always: `X% [lo, hi] vs bots/_v542wave, 15-map pool rotated 2026-08-21, n=5400, LOCAL MacBook-Pro, 8 workers, dose D%`. |
+| **(2) COMPLETED, dose floors MET, point ≥ 51.33 but CI lower < 51.33** | **REAL-BUT-SMALL, COMBINATION INPUT ONLY.** Pre-registered as WEAK; rows KEPT; no ship sentence. |
+| **(3) COMPLETED, dose floors MET, CI contains 50.0** | **NULL ON THE PLANK, AT THIS DOSE.** ⭐ **A REGISTERED OUTCOME, NOT AN ABSURDITY — the dose-bounded ceiling is 5.00pp and the modal band straddles the bar.** Closes no road; the named successor is the same plank at a higher dose, not a different plank. |
+| **(4) COMPLETED, dose floors NOT met** | ⛔⛔ **`UNRESOLVED — INERT MECHANISM`. The share is reported and carries NO verdict on the plank in either direction.** The pre-committed next step is a threshold re-point and a re-screen, and **the first question is the dose, not the number.** |
+| **(5) STOPPED BY ANY `auto_gate` CLAUSE** | **CANCELLED — UNRESOLVED, defaults to the RESTRICTION.** Rows KEPT. The share is published at its actual n, labelled `PROVISIONAL` and `SELECTED-PESSIMISTIC`. ⛔ **AND THE PRE-COMMITTED SENTENCE IS §CUT-SHORT's, NOT "the plank failed": at this dose a TREND-FLOOR stop is consistent with a working plank.** |
+| **(6) CANCELLED FOR CAPACITY** | **POLICY, NOT EVIDENCE.** Partial disclosed as **UNSELECTED** — a capacity stop is blind to the share, so the selected-pessimistic caveat does NOT apply. Rows KEPT. |
+| **(7) COMPLETED, CI upper < 45.0** | **AN INSTRUMENT QUESTION BEFORE A PLANK QUESTION** — priced at 0.000 across the whole registered band, and CATASTROPHE would have stopped it long before. |
+
+---
+
+## READING, PRE-COMMITTED
+
+**Read TOP-DOWN; the first row whose condition holds is the reading. Every band
+is CONDITIONAL on F1–F5 having been read and written down first, on the dose
+floors having been evaluated, and on the r1000/core-kill decomposition having
+been computed. A majority-r1000 composition DOWNGRADES the row by one and appends
+`OFF-DOCTRINE COMPOSITION`.**
+
+| # | band on the pooled share vs `bots/_v542wave` | reading |
+|---|---|---|
+| **1** | **CI lower ≥ 51.33** | **KEEP-CLASS.** Goes to the builder with the dose, the pair-existence answer, the two segments and the kill-clock exclusions beside it. |
+| **2** | **point ≥ 51.33, CI lower < 51.33** | **REAL-BUT-SMALL, combination input only.** |
+| **3** | **point < 51.33, CI contains 50.0** | **NULL AT THIS DOSE.** |
+| **4** | **CI upper < 50.0** | **THE PLANK COSTS US.** First suspects: the collar-reserve displacement (risk #2) and the ammo-floor waiver's barrier starvation (risk #3) — **and S1 is the cell that discriminates them, because on `midgard` the waiver is the ONLY live channel.** |
+
+⛔ **FORBIDDEN READOUT FORMS, named so they cannot be typed by accident:** *"no
+significant difference"* · *"consistent with zero"* · *"the interval contains
+zero"* · *"the burst works/does not work"* **without its dose in the same
+sentence** · *"the pair lands earlier"* **unless a pair was observed** · any
+comparison to `70.50 / 66.44 / 72.57 / 72.06 / 69.28 / 70.4964` (retired
+fixture) · any comparison to the **51.94** newpool anchor (**different control**)
+· and **any sentence about the LADDER**, which this local shard cannot reach.
+
+---
+
+## ⛔ THE ONE-DRAW LAW
+
+`NOISE_ON = True` at **`doctrine.py:474` in BOTH trees** (verified at draft), and
+the sole read site seeds a spawn salt from an **unseeded `random.Random()`**,
+independent of `--seed`: `_v543burst/main.py:1259` and `_v542wave/main.py:1208`,
+`self.spawn_salt = random.Random().randrange(97) if NOISE_ON else 0`.
+⇒ **A REPEATED `(map, seed, seat)` CELL IS AN INDEPENDENT REDRAW, NOT A
+REPLICATION. A seed base buys map/seat balance and resume bookkeeping — not
+reproducibility.** Re-running a cell after seeing its result is a second draw and
+would be optional stopping. ⚠ **This drafter fired NO games, so the measurement
+is the sibling's (three identical invocations returning turns 453 / 431 / 236)
+and is cited, not re-run; what IS verified here is the flag, its value, its line
+number and its read site in both trees.** ⚠ **AND IT BINDS ON THE PENDING
+IDENTITY BATTERY: a paired flag-off identity test requires `NOISE_OFF` on BOTH
+sides or it cannot pair, which is exactly what the build report says
+(`§6`).**
+
+---
+
+## SEEDS, SURFACE, RUNNER
+
+**SEED BASE 892000 — VERIFIED FREE AT DRAFT ON FOUR SURFACES, IN THIS AGENT'S OWN
+SHELL:**
+* `git grep -l 892000` → **three files, none a registration**:
+  `docs/coordination.md` (this screen's own commission line, 13:51:08Z),
+  `docs/prereg/PREREG-NEWPOOL-BASELINE-2026-08-21.md` (the sentence *"the next
+  family shard should take 892000"*), and
+  `corpus/_rebuild/league_matches.tsv.pre-trap9-…` — **INSPECTED AND DISMISSED:
+  the hit is the substring `892000` inside the Elo float `1434.778892000483`**,
+  the same false-positive shape `V529POOL`/`V536POOL`/`V537POOL` each found and
+  inspected for their own bases.
+* **RANGE CHECK, computed by parsing the seed column of EVERY local and remote
+  tape (360 files): `[892000, 892338)` → NO COLLISIONS (0 rows).**
+* **GLOBAL MAX SEED under 10⁷ across every tape = 890179** — exactly
+  `NEWPOOL-BASELINE`'s consumption, so **892000 is strictly above the entire
+  local family's used space.**
+* **THE FAMILY LADDER on the 2000-spacing convention:** 870000 `SALTRAY` ·
+  872000 `RINGLADDER` · 874000 `SIEGECREW` · 876000 `PINCERPOOL` · 878000
+  `FLIPPOOL` · 880000 `HOMEPOOL` · 882000 `V535POOL` · 884000 `V529POOL` ·
+  886000 `V536POOL` · 888000 `V537POOL` · 890000 `NEWPOOL-BASELINE`.
+  **892000 is the next free block and follows the convention exactly.**
+
+**SEED CONSUMPTION, re-measured rather than quoted:** `overnight.sh:129` computes
+`seed = SEEDLO + n/16` **on RESUME only**; the live loop at **`:224`** advances
+`seed=$((seed+1))` **once per full 15-map × 2-seat pass, i.e. once per 30 games.**
+Measured on `NEWPOOL-BASELINE.tsv`: **exactly 180 distinct seeds at exactly 30
+games each, 890000..890179.** ⇒ **RESERVED 892000-892337, EXPECTED CONSUMPTION
+892000-892179.** Any battery run against these trees must use a base outside the
+reservation — **including the DOSE TAPE, which this page requires to take a
+different base.** **The next family shard should take 894000.**
+
+**SURFACE: LOCAL, SAME-HOST (`MacBook-Pro`), 8 in-process workers on one box.**
+**RUNNER:** `zsh tools/overnight.sh V543POOL bots/_v543burst bots/_v542wave 5400 892000`
+— basenames do not collide (**driven through `overnight.sh:76-79`'s own SUBSTRING
+guard at draft, both directions — PASS**).
+
+**OB17 EXECUTABILITY, PERFORMED NOT ASSERTED, AND ONE OF THE THREE CHECKS
+FAILS:**
+1. **NAME THE EXECUTING TOOL.** `tools/corefill.sh` reading
+   `scratchpad/corefill_work.txt` (5 fields, `read -r SH TR CT TG SL`) and
+   dispatching `tools/overnight.sh`.
+2. **CONFIRM THE PATH EXISTS IN THAT TOOL.** The runner emits every registered
+   element — the `# FIXTURE … start=` stamp (`:104`/`:108`), `--tle 10`
+   (`:143-144`), the rotated 15-map pool (`:73`), the seed advance (`:224`), the
+   `NOWINNER` row form (`:147`). **CONFIRMED by reading the file at draft.**
+3. ⛔⛔ **STATE THE CONSEQUENCE OF SILENT NON-EXECUTION — AND THIS IS THE CLAUSE
+   THAT RETURNED AN ANSWER NOBODY HAD.** Two independent non-executions exist
+   TODAY: **(a) `control_pin.py --check` returns rc=1 for the unpinned incumbent
+   and `corefill.sh:335-339` is logging `REFUSING TO LAUNCH` once a minute — the
+   shard would simply never start, and a never-started shard is
+   indistinguishable from a busy box** (`⟨RATIFY-F⟩`); **(b) the mechanism
+   counters are not on the tape, so the dose read does not fail loudly — it
+   QUIETLY MEASURES SOMETHING ELSE, namely an outcome with no dose beside it**
+   (`⟨RATIFY-C⟩`).
+
+**SEQUENCING.** At draft the worklist is **DRAINED** (`NEWPOOL-BASELINE`
+COMPLETE 5400/5400 at 13:46:49Z) and `corefill_forever.sh … 8` (pid 68004),
+`corefill.sh` (pid 1226) and the `auto_gate --apply` loop (pid 61319) are all
+alive. ⇒ **APPENDING THE WORKLIST ROW FIRES THIS SHARD IMMEDIATELY** — there is
+no predecessor to wait behind, unlike the sibling. ⚠ **AND THE BOX IS NOT IDLE:
+eight `fcode run` processes belonging to the build lane's identity battery
+(`scratchpad/s53_v543_build/arms/{P0,TOFF,OPP1,OPP2}`) were running at 14:05Z.
+Firing a 5,400-game 8-worker shard on top of them is a throughput contention the
+builder should sequence deliberately** (`⟨RATIFY-H⟩`).
+
+**GATE:** `tools/auto_gate.py` against the `V543POOL` row. **As drafted no token
+is claimed and `TREND_FLOOR = 52.0` and `COMBO_BAR = 55.0` both bind; the compose
+marker at `doctrine.py:2078` makes the COMBO clause applicable. `⟨RATIFY-E⟩` MAY
+CHANGE THIS AND THE `BARS.tsv` ROW MUST BE WRITTEN TO MATCH WHATEVER IS RULED —
+the token is registration-time and cannot be acquired later.**
+
+---
+
+## ⛔ RATIFICATION ITEMS — EIGHT THINGS THE BUILDER SETTLES BEFORE LOCKING
+
+**⟨RATIFY-A⟩ THE TRIGGER THRESHOLD — 200/200 (on disk) vs 150/150 (fallback).**
+**Drafter's recommendation: SCREEN THE 150/150 FORM, AND CHANGE THE TWO
+CONSTANTS IN THE TREE BEFORE THE LOCK SO THE SCREENED BYTES AND THE SHIPPED BYTES
+ARE THE SAME BYTES.** The trade, both ways: **screening 200/200** measures the
+tree exactly as it sits, and its dose (17.5%, median first fire r178.5, 14.1% of
+game-sides firing before r300) caps the pooled effect at **2.46pp** — below the
+`TREND_FLOOR` — so the modal outcome is `UNRESOLVED — INERT MECHANISM` at a full
+shard's cost, which is the OB13/OB17 failure this page exists to avoid.
+**Screening 150/150 as a scratch arm** doubles the dose (35.5%, r127, 31.5%
+before r300) but **tests bytes that differ from the shipped default**, so a KEEP
+would price a configuration that is not in `bots/` — and the later one-constant
+re-point would itself be an unscreened change. ⛔ **Those are the only two
+options if the tree is frozen; changing the constants first collapses them and
+costs one commit.** ⚠ **AND THE INPUT DISAGREES WITH ITSELF ABOUT THIS ARM:
+BUILD-REPORT §7.1's menu (47.3% / r95 / 36.9% before r150) contradicts §4.7's
+measurement (35.5% / r127 / 31.5% before r300) — a before-r150 share cannot
+exceed the same arm's before-r300 share. This page registers §4.7. THE BUILDER
+SHOULD CONFIRM WHICH IS RIGHT BEFORE THE BAND IS FIXED.**
+
+**⟨RATIFY-B⟩ THE BAR.** **Drafter's recommendation: 51.33, POINT RULE, MDE 0.00,
+with the KEEP requiring CI-lower ≥ 51.33 (implied minimum effect +1.33pp).**
+Alternative: the OB16-form `50.00 + 1.00 + 1.33 = 52.33`, refused as drafted
+because `auto_gate`'s FUTILITY clause reads the registry value and raising the
+bar tightens a canceller already priced as the dominant risk. **The BASE RATE of
+50.00 has a genuine structural claim here (true parent-child, 538/+0/−0) and the
+page says so — conditional on the pending dynamic identity.**
+
+**⟨RATIFY-C⟩ THE MECHANISM-FIRST STRUCTURE AND ITS FLOORS.** **Drafter's
+recommendation: the DOSE TAPE (n = 600, instrumented scratch arm, seeds outside
+the reservation) is a LOCK PRECONDITION, with FIRE FLOOR 20.0%, PAIR FLOOR 8.0%
+and the PAIR-EXISTS clause.** The pair floor is a judgment number and is flagged
+as the weakest constant on the page. **A share read below either floor is
+`UNRESOLVED — INERT`, never a null on the plank.**
+
+**⟨RATIFY-D⟩ THE FS-LANE DISCLOSURE.** **Drafter's recommendation: DISCLOSE,
+DO NOT EXCLUDE.** `{midgard}` stays in the pooled primary and is reported
+separately in every table, with a registered NULL-to-NEGATIVE direction, because
+(i) it is 6.67% of rows, (ii) excluding it breaks the pooled/equal-weight
+coincidence, and (iii) **it is the only cell that isolates the ammo-waiver cost
+channel, which is a thing this screen wants to measure rather than discard.** The
+runtime FS-lane share is reported per map beside the dose (F1b).
+
+**⟨RATIFY-E⟩ THE `COMBO-BAR-EXEMPT` TOKEN.** **Drafter's recommendation: CLAIM
+IT, citing this prereg.** The token's registered premise — *"a MECHANISM test
+scored against its own additive prediction"* — **obtains here literally: the
+prediction is `50 + dose × within-fire` with a registered ceiling of 5.00pp, so
+55.0 is unreachable by construction even if the plank is excellent.** It moves
+`P(reach 5,400)` at a true 53 from **0.022 → 0.690**. ⛔ **The citation must
+resolve to a file that exists or the token is worse than nothing
+(`auto_gate.py:944-966` — a broken exemption STOPS and flags the registry).**
+⚠ **`CONFIRMATION-CLASS` and `ANCHOR-CLASS` are NOT claimed: this is neither a
+confirmation run nor an anchor read, and stretching a token past its wording is
+how a registry stops meaning anything.**
+
+**⟨RATIFY-F⟩ THE CONTROL PIN — A MEASURED TOOL REFUSAL, NOT A JUDGMENT CALL.**
+`control_pin.py --check` is rc=1 **right now** and `corefill.sh` has been logging
+`REFUSING TO LAUNCH` once a minute since the incumbent moved.
+**`.venv/bin/python tools/control_pin.py --pin --tree bots/_v542wave` must be run
+before the worklist append**, and it is owed independently of this prereg.
+⭐ **The `--audit` guard is already clean on the proposed row (rc=0, driven at
+draft) — the two guards fail differently and only one of them is broken.**
+
+**⟨RATIFY-G⟩ THE TWO PENDING PROOFS.** (a) the **dynamic flag-off identity**
+battery vs the frozen parent (running at draft, not returned) and (b) the
+**simultaneous-pair existence** cell. **Drafter's recommendation: both are LOCK
+PRECONDITIONS.** (a) sources the 50.00 base rate; (b) decides whether the
+screened hypothesis is "a pair" or "one sentinel, earlier" — **and the page's
+mechanism chain names (b) as the link with no evidence.**
+
+**⟨RATIFY-H⟩ SEQUENCING AND CAPACITY.** The worklist is drained, so the append IS
+the fire and it lands on a box already running eight of the build lane's games.
+**Drafter's recommendation: append only after the identity battery has returned
+(which is also `⟨RATIFY-G⟩`(a)), so the shard does not share the box with the
+proof it depends on.**
+
+---
+
+**PROVENANCE: docs/research/PREREG-amendments-and-lock-obligations-2026-08-09.md (the obligations doc — OB7 pre-state, OB12 gate resolution + the unresolved-defaults-to-RESTRICTION rule (Addendum 8), OB13 metric read path + INTERSECTION (Addendum 9), OB14 (n/a, not a panel), OB15a/b/c map dependence, one-primary-segment and the units rider (Addendum 10), OB16 original + the preferred bar-with-MDE-inside form + the 2026-08-15T03:52:45Z zero-MDE corollary for the standard corefill band + the GUNAXABL one-game-margin lesson (Addendum 11), the Addendum 11 cross-host rider, OB17 method executability + its can-only-confirm rider (Addendum 12), and the 2026-08-17T07:24:55Z local-shard clock-2 addendum with its named clock sources) · docs/prereg/PREREG-NEWPOOL-BASELINE-2026-08-21.md (the structural sibling — its registration-block form, its cluster enumeration, its one-draw structure, its 180-vs-337 seed-consumption correction, its F4 cond-primary definition, its per-side ITT RMST300 form, its seeds-token BARS discipline and its 890000 freeness method, ALL re-derived here on this fixture rather than quoted; and its banked anchor readout, used ONLY as fixture SHAPE and labelled DIFFERENT-CONTROL at every citation) · docs/research/BUILD-REPORT-v543burst-2026-08-21.md (the candidate — the gate operationalization §1.2, the constant table, the consumer and the _fs_sentinel_ok bypass §2.2/§2.2b, the ammo waiver §2.3, the flag-off audit §3, gate_test.py's ten both-ways cases §4.1, the two zero-dose smoke games §4.3, the forced-dose probe and the midgard FS-lane coverage defect §4.4, the two tick-ordering fixes §4.5, THE DOSE PRE-READ §4.7 with its negative control and four caveats, the counter table §5, the flag inventory §6, and the seven risks §7 — with §7.1's 150/150 menu figures REPORTED AS CONTRADICTING §4.7 and not used) · docs/research/DECODE-ringrace-8013d088-2026-08-21.md (the field evidence — forward sentinel r100-128 vs their r21-58, first core damage = forward-sentinel round + 1 in 4/4, the _fs_salt_ok 0-of-5 measurement and the r60 eco floor + 40-68 rounds of hesitancy, and the constant-column guard driven to the other verdict on a 150-replay control) · PROGRAMME.md (INCUMBENT :8 = bots/_v542wave, PREVIOUS_INCUMBENT :10, BASELINE :11 · PRIMARY_CURRENCY · R1000_IS_DEFEAT · PLAY_DEFENCE · DEFENCE_ADMISSION_BAR · KILL_TARGET :32 · SHIP_BAR :30 · STEALTH_UNTIL_DROP :31 · the 2026-08-21 BASELINE MOVED block :34-49) · docs/coordination.md 2026-08-21T13:51:08Z (this screen's commission: candidate, control, rotated pool, seeds 892000, n=5400, normal floors, and the three ratify items it names) · results.tsv:521 newpool-baseline-anchor (the completed anchor readout, used as fixture SHAPE only) · scratchpad/overnight/NEWPOOL-BASELINE.tsv + .heartbeat (the only completed tape of this pool — parsed at draft for the balance evidence, the kill-clock sd sizing and the r1000 share; a DIFFERENT fixture and used for no mean) · scratchpad/s52_rotation/gatemap_rot.py + scratchpad/s52_v535_build/harness.py (RUN at draft on bots/_v543burst: table, --selftest, diff vs the control, and a pool-native jotunheim MAPTRUST both-ways drive; both imported unmodified) · tools/auto_gate.py (:252-255 the marks, :915 TREND_FLOOR, :934-966 the COMBO-BAR-EXEMPT block, :962 COMBO_BAR, :1004 the s44 FUTILITY margin, :322-332 the CONFIRMATION-CLASS and ANCHOR-CLASS tokens, and combo_of()) · tools/control_pin.py (--check and --audit DRIVEN at draft, one refusing and one passing) · tools/corefill.sh :319-359 (the guard-5 and guard-6 consumers) · scratchpad/corefill.log + corefill_forever.log + auto_gate.log (the live REFUSING TO LAUNCH state) · tools/overnight.sh (:73 the rotated pool, :76-79 the basename guard driven on this pair, :104/:108 the start stamp, :129/:224 the seed forms, :132-150 the loop, :219 the row writer) · tools/prereg_check.py · tools/monitors/cpu_watch.py :13-16 · maps/ (all 44 .map26 files, 15 of them this pool) · bots/_v543burst/{doctrine,eco,main,raid,siege}.py and bots/_v542wave/{doctrine,eco,main,raid,siege}.py (md5, wc -l, git log, and a five-file diff establishing 538 added / 0 removed) · scratchpad/CONTROL_PIN · docs/prereg/BARS.tsv (header FIRINGS-BEFORE-PRIMARY rule, append idiom, the family's bar rows and seed bases) · scratchpad/corefill_work.txt**
+
+*Computed directly by the drafting agent at draft and cited inline where used:
+`md5 -q` / `wc -l` / `git status --porcelain` / `git log` / `git diff
+--name-only` on both trees and the **538-added / 0-removed** five-file diff; a
+fresh shard-native drive of THIS TREE'S `_fs_map_gated` over 88 cells with
+`SELFTEST PASS` on six both-ways mutants, a **0-of-88 arm diff**, and the
+`jotunheim` MAPTRUST drive to BOTH verdicts on a POOL cell; the
+`overnight.sh:76-79` basename-collision guard driven on this arm's pair in both
+directions; `control_pin.py --check` (rc=1, refusal quoted) and `--audit` driven
+against a simulated worklist carrying the exact proposed row (rc=0, output
+quoted); a full parse of `NEWPOOL-BASELINE.tsv` establishing 5,400 rows / 5,400
+distinct game ids / 360 per map / 2,700 per seat / 180 seeds × 30 / 0 NOWINNER,
+and its per-side and **within-game PAIRED** kill-clock sd (43.67 / 32.17 / 58.11)
+with the paired-vs-naive half-width comparison that the naive form understates;
+the four-surface 892000 freeness check including the inspected
+`1434.778892000483` substring false positive, the range check over 360 local and
+remote tapes, and the global-max-seed sweep (890179); every half-width on this
+page including the reduced-n, per-segment and dose-tape forms; the 51.3336 bar
+re-derivation and the dose→within-fire→pooled arithmetic in both directions; and
+a **20,000-trial Monte Carlo over `auto_gate`'s clauses** whose 50/52/55 rows
+reproduce `PINCERPOOL` §3's, `V535POOL` §3's, `V529POOL` §3's, `V536POOL` §3's,
+`V537POOL` §3's and `NEWPOOL-BASELINE` §3's published values as a SEVENTH
+implementation, whose negative control was run on a fresh RNG base at 20.0 / 30.0
+/ 40.0 / 45.0 / 50.0 and seen to move CATASTROPHE monotonically from 1.000
+through 0.070 to 0.000, and whose COMBO-exempt variant was run separately to
+price `⟨RATIFY-E⟩`.*
+
+---
+
+## READY-TO-PASTE ROWS — ⛔ FOR THE BUILDER TO APPEND AT LOCK, NOT BY THIS AGENT
+
+⛔ **ORDER IS LOAD-BEARING: the `BARS.tsv` row goes in BEFORE the worklist row**
+(a worklist row that lands first is a LIVE SHARD WITH NO BAR — the `BELTBREAKR`
+lesson). ⛔ **AND THE APPEND IS NOT DONE UNTIL THE ROW IS GREPPED BACK OUT OF THE
+FILE IN THE SAME SHELL CALL** — the `BARS.tsv` header carries the exact
+`printf … && grep -qxF … || exit 1` idiom; use it.
+
+**FIRE CHECKLIST — in order, all of it before the worklist append:**
+1. **RULE ⟨RATIFY-A⟩** and, if 150/150 is chosen, **commit the two-constant
+   change so the screened tree IS the tree**; then **re-read the digests into
+   §COMMIT PROVENANCE** — a locked page citing digests that no longer exist is
+   the retraction shape.
+2. **RULE ⟨RATIFY-E⟩ and write the `BARS.tsv` row to match it** — the token is
+   registration-time and cannot be acquired afterwards.
+3. **`.venv/bin/python tools/control_pin.py --pin --tree bots/_v542wave`**, then
+   confirm `--check` rc=0 and `--audit scratchpad/corefill_work.txt` rc=0.
+4. **Confirm ⟨RATIFY-G⟩**: the dynamic flag-off identity battery returned with
+   **0 differing rows**, and record the simultaneous-pair answer.
+5. **Run the DOSE TAPE (⟨RATIFY-C⟩) and write its numbers into the lock commit.**
+6. **Append the `BARS.tsv` row, grep it back.**
+7. **Append the worklist row, grep it back. THE APPEND IS THE FIRE — the worklist
+   is drained and `corefill` picks it up on the next poll.**
+8. **At first rows: confirm the `# FIXTURE` header reads `host=MacBook-Pro
+   workers=8` and that the first 30 rows name the ROTATED maps.**
+
+### 1. `docs/prereg/BARS.tsv` — tab-separated, four columns (`name`, `bar`, `cmp`, `source`)
+
+```
+V543POOL	51.33	ge	docs/prereg/DRAFT-PREREG-V543POOL-2026-08-21.md — DECISION bar 51.33 ge, POINT RULE (OB16, MDE 0.00; re-derived as 50 + 1.96*sqrt(0.25/5400) = 51.3336), n=5400, h2h share, LOCAL SAME-HOST MacBook-Pro (one box, 8 in-process workers) seeds 892000 RESERVED 892000-892337 / EXPECTED CONSUMPTION 892000-892179. Locked <TS> PRE-START by the builder (s53); drafted by a FRESH opus agent with no inherited session context, judgment lines ratified by the lane. CANDIDATE PRICING, not an anchor read: TREATMENT bots/_v543burst (the bank-burst gate #71 + forward sentinel-PAIR consumer #80 behind LOKI_FS_V543) vs CONTROL bots/_v542wave = the PROGRAMME.md:8 INCUMBENT. ⭐ TRUE PARENT-CHILD SELF-LEG, MEASURED AT DRAFT: 538 lines ADDED, ZERO removed, ZERO modified across doctrine/siege/main; eco.py and raid.py md5-IDENTICAL — so BASE RATE 50.00 has a genuine structural claim (unlike NEWPOOL-BASELINE, whose arms shared 0 of 35 digests). ⛔⛔ THE DOSE BOUNDS THE POOLED EFFECT AND THE PAGE IS BUILT ON THAT ARITHMETIC: pooled = 50 + DOSE x WITHIN-FIRE, with DOSE measured on 1,405 RATED game-sides (BUILD-REPORT §4.7, exact _v543_tick predicate replayed over decoded per-round bank series, versions 159-177, all 1405 ids in ladder_games.tsv and 0 in unrated_games.tsv, negative control = bare level test fires 1405/1405 at median r0) at 17.5%+-2.5pp (200/200, on disk; median first fire r178.5; 14.1% before r300) and 35.5% (150/150; r127; 31.5% before r300). ⇒ REQUIRED WITHIN-FIRE EFFECT: to clear 51.33 = +7.60pp at 200 / +3.75pp at 150; to clear TREND_FLOOR 52.0 = +11.43 / +5.63; to clear COMBO_BAR 55.0 = +28.57 / +14.08. SEGMENT VALUE CEILING 93.33% x 5.36pp = 5.00pp (the on-segment figure is itself dose-bounded: 35.5% x a REGISTERED CEILING INPUT of 15.1pp). ⛔ 20k-trial MC over auto_gate's own clauses (CATASTROPHE 45.0 @400+, TREND_FLOOR 52.0 @1000/@2700 prefixes, COMBO_BAR 55.0 @2700 — BINDING because doctrine.py:2078 carries the stack.py compose marker — and the s44 FUTILITY margin): P(reach 5400) = 0.000 at 50 / 0.000 at 51.33 / 0.001 at 52 / 0.022 at 53 / 0.151 at 54 / 0.508 at 55. POSITIVE CONTROL reproduces PINCERPOOL/V535POOL/V529POOL/V536POOL/V537POOL/NEWPOOL-BASELINE §3 as a SEVENTH implementation (50.00 -> 0.891/0.097/0.012; 52.00 -> 0.490/0.145/0.364; 55.00 -> 0.026/0.465). NEGATIVE CONTROL on a fresh RNG base: 20.0 -> CATA 1.000, 30.0 -> 1.000, 40.0 -> 0.926, 45.0 -> 0.070, 50.0 -> 0.000 — monotone, CATASTROPHE SEEN both firing and not. WITH COMBO-BAR-EXEMPT the same sim gives P(reach) 0.165/0.363/0.690/0.893 at 51.33/52/53/54 — the token moves this arm more than the plank plausibly can, which is why it is a registration-time ratify item. ⛔⛔ MECHANISM-FIRST IS A HARD SEQUENCE AND ITS INSTRUMENT IS NOT ON THE TAPE: overnight.sh runs --replay /dev/null, discards stderr and the tape columns are ts/shard/game/map/seed/seat/winner/cond/turns, while FS_V543_LOG ships False — so v543_fires / v543_bought / v543_full/poor/nosite/spent/noharv / v543_ammo_ti/bind are UNREADABLE on this surface (OB13 reached from the other side, and OB17 check 3's quiet case). A SEPARATE INSTRUMENTED DOSE TAPE (n=600, scratch arm, seeds OUTSIDE this reservation) IS A LOCK PRECONDITION, with PRE-COMMITTED FLOORS: fires >=1 in >=20.0% of treatment game-sides, v543_bought >=1 in >=8.0%, and >=1 game anywhere with TWO LIVE forward sentinels. BELOW EITHER FLOOR THE POOLED SHARE IS `UNRESOLVED — INERT MECHANISM`, NEVER A NULL ON THE PLANK. ⚠ The 8.0% pair floor is a JUDGMENT number with no measured basis and is flagged as the weakest constant on the page. ⛔ AND THE PAIR — THE PLANK'S WHOLE THESIS — HAS NEVER BEEN OBSERVED: the forced-dose probe's two purchases both read `live 0` (a buy and a later re-buy). ⭐ MAP SEGMENT DECLARED, MECHANISM-SPECIFIC, DRIVEN SHARD-NATIVE ON THE CANDIDATE TREE AT DRAFT: this tree's own SiegeMixin._fs_map_gated over every maps/*.map26 x both seats gives CELLS 88 | refuse 16 | run 72 | SEAT-ASYMMETRIC none; POOL CELLS 30 | refuse 2 | run 28; FS-LANE-REFUSING = {midgard} = 2/30 = 6.6667% of rows; SELFTEST PASS on six mutants each driven to the other verdict; jotunheim driven BOTH ways on a POOL cell (FS_V534_MAPTRUST True -> RUNS, False -> REFUSES) while midgard refuses under both; and the verdicts are ARM-INVARIANT (diff _v543burst vs _v542wave: 0 of 88 cells differ). S1 FS-LANE-REFUSING {midgard} 360 rows 6.667% hw +-5.165 — EXPECTED NULL-to-NEGATIVE (the build measured _fs_turn at 0 calls on midgard vs 222 on atoll, so the gate fires with NO consumer; and the ammo waiver can still bind there through the raid lane's SLOT_FWD_GUN at raid.py:822/824 — a cost channel with no benefit channel, which is this page's own grep finding). S2 FS-LANE-ACTIVE 5040 rows 93.333% hw +-1.381 — EXPECTED POSITIVE. PRIMARY SEGMENT NONE: the POOLED share is the one primary (OB15b); at 93.33% weight S2 - pooled = 0.0667 x (S2 - S1) and a segment primary would buy nothing. ⛔ midgard IS REPORTED SEPARATELY, ALWAYS. KILL-ROUND read registered ANYWAY though PLANK CLASS is OFFENSIVE, because the plank's thesis IS a kill-clock claim: ITT, over all 5400 games, PER SIDE, as EXCLUSIONS — the CI LOWER on (T-C) ITT timely-kill-by-r300 EXCLUDES a 3.0pp FALL and the CI UPPER on (T-C) ITT RMST300 EXCLUDES a +5.0-round RISE, EXPECTED DIRECTION POSITIVE (decode: first core damage = forward-sentinel round + 1 in 4/4; our fwd sentinel r100-128 vs theirs r21-58; _fs_salt_ok fired 0 times in 5 games so every sentinel waited out FS_SENT_RND_FLOOR=60 plus 40-68 rounds). ⭐⭐ ESTIMATOR IS THE WITHIN-GAME PAIRED DIFFERENCE, NOT A SUM OF PER-SIDE VARIANCES — measured at draft on NEWPOOL-BASELINE.tsv (the only completed tape of this pool, a DIFFERENT fixture, a VARIANCE transfer only): per-side sd 43.67/32.17 but the per-game difference sd is 58.11, so the paired hw is +-1.550 rounds against the naive +-1.447 (and +-1.592pp vs +-1.445pp on the binary) — the two sides are ANTI-correlated on the same game and the naive form understates in the NULL-FLATTERING direction. RE-SIZE FROM THIS TAPE'S OWN sd AT READOUT. F4: cond=="tiebreak" PRIMARY, strict turns==1000 REPORTED BESIDE IT; ⛔ NO r1000 instrument-alarm threshold is registered — V537POOL's inherited "above ~16%" was anchored on an OLD-POOL 7.69% and the completed NEWPOOL-BASELINE tape reads 20.43% on THIS pool, so it would false-fire; the only instrument alarms left are NOWINNER and shell rows. THIRD FALSIFIER (majority-r1000 -> OFF-DOCTRINE, downgrade one band) is scored on the MAJORITY condition alone and is LIVE on this fixture. ⛔ CLUSTER UNIT none, enumeration PERFORMED for this fixture (MATCH dead — 1 row = 1 game, verified 5400 rows/5400 distinct game ids; OPPONENT degenerate — one control tree; SEED dead twice over — advance once per 30-game pass at overnight.sh:224, verified 180 seeds x exactly 30, plus an UNSEEDED random.Random() spawn salt at _v543burst/main.py:1259 and _v542wave/main.py:1208 with NOISE_ON=True at doctrine.py:474 in BOTH trees; MAP a balanced STRATUM, verified 360/map and 2700/seat on the reference tape but a CHECK OWED AT READOUT for THIS tape; HOST killed by REGISTRATION) ⇒ local DEFF 0.98, NAIVE intervals; the platform constants 1.529/1.833 are NOT applicable. ⚠ 0.98 was measured over 124 shards of the OLD pool. ⛔ F5 CRASH READ IS THIN AND IS QUOTED WITH ITS THINNESS: 4 games on 2 maps (one of them off-pool), 0 tracebacks — thirteen pool maps unprobed including holmgang 12x12 and bifrost 26x12, where CLAUDE.md's corrected is_in_vision bullet says edge geometry bites. ⛔⛔ TWO PENDING PROOFS ARE LOCK PRECONDITIONS: the DYNAMIC flag-off identity battery vs the frozen parent (static AST audit is CLEAN with a mutation control firing 3 violations, but the paired NOISE_OFF battery was NOT run by the build; it was in flight at draft) — IF IT RETURNS ANY DIFFERING ROW THE 50.00 BASE RATE IS UNSOURCED — and the simultaneous-pair existence cell. ⛔⛔ AND THE SHARD CANNOT FIRE AS OF THIS DRAFT FOR A REASON THAT PREDATES IT: control_pin.py --check returns rc=1 ("no pin recorded for bots/_v542wave") and corefill.sh:335-339 has been logging REFUSING TO LAUNCH once a minute since the INCUMBENT moved — `control_pin.py --pin --tree bots/_v542wave` is owed before the append, independently of this prereg. The --audit guard is CLEAN on this row (rc=0, driven at draft against a simulated worklist). SEQUENCING: the worklist is DRAINED (NEWPOOL-BASELINE COMPLETE 5400/5400 at 2026-08-21T13:46:49Z), so THE APPEND IS THE FIRE with no predecessor to wait behind — and the box was running eight of the build lane's identity-battery games at draft. POOL ERA post-2026-08-21-rotation; SPANS-POOL-CHANGE no, conditional on the readout check that the tape's map set is exactly the fifteen rotated maps at 360 rows each. CUT-SHORT floor 2700 for the BAR verdict; below 1000 rows descriptive tallies only; a floor/combo/catastrophe stop makes the partial SELECTED-PESSIMISTIC (biased LOW, bias size NOT estimated) while a capacity stop is UNSELECTED; rows KEPT either way; and the PRE-COMMITTED sentence for the modal stop is "the fixture could not separate a working plank from a null at this dose", never "the plank failed". ⛔ FORBIDDEN READOUT FORMS: "no significant difference" · "consistent with zero" · "the burst works" without its dose in the same sentence · "the pair lands earlier" unless a pair was OBSERVED · any comparison to 70.50/66.44/72.57/72.06/69.28/70.4964 (retired fixture) · any comparison to the 51.94 newpool anchor (DIFFERENT CONTROL) · any sentence about the LADDER. TREATMENT bots/_v543burst (commits f938e9f13 seed / 9f64c4426 plank / 09177ba0d fixes; doctrine 970d2d300129a7eb346afd8c8d778f45 / eco c954b674c566abb5d07fae17554b530d / main 2eeaf5cb30c6810a42b7e88654e4af78 / raid e0e74d83880f4379115fa5ae2064b2ff / siege d9071b6c8bd0d3e3f168728c2c262fb0) vs CONTROL bots/_v542wave (commit 28fde0637; doctrine 20848e531b50ff5f8b27b75ce2218141 / eco c954b674c566abb5d07fae17554b530d / main fe037a69dd64ace9db606ab06c1654a8 / raid e0e74d83880f4379115fa5ae2064b2ff / siege a798cb53522644e3dfcd9a2097409938); both porcelain-clean at draft. ⚠ IF ⟨RATIFY-A⟩ RE-POINTS THE THRESHOLD TO 150/150 THE doctrine.py DIGEST CHANGES AND THIS ROW MUST CARRY THE NEW ONE. ⚠ AN INPUT CONTRADICTION IS REPORTED RATHER THAN RESOLVED: BUILD-REPORT §7.1's 150/150 menu (47.3% / r95 / 36.9% before r150) cannot coexist with §4.7's measurement (35.5% / r127 / 31.5% before r300) — a before-r150 share cannot exceed the same arm's before-r300 share. THIS PAGE REGISTERS §4.7.
+```
+
+### 2. `scratchpad/corefill_work.txt` — tab-separated, five columns, appended AFTER the BARS row and AFTER the pin
+
+```
+V543POOL	bots/_v543burst	bots/_v542wave	5400	892000
+```
+
+⛔ **Exactly five fields** (`corefill.sh:142` and `worker.sh`'s G4 both read the
+row with `read -r SH TR CT TG SL`, so a sixth field lands inside `$SL`, and
+`corefill.sh` passes `$SL` unquoted while every remote worker refuses a
+non-numeric seedbase outright).
+
+---
+
+## RATIFICATION (builder s53 — the lane types this)
+
+**⟨RATIFY-A⟩ threshold — NOT YET RULED.**
+**⟨RATIFY-B⟩ bar — NOT YET RULED.**
+**⟨RATIFY-C⟩ dose tape + floors — NOT YET RULED.**
+**⟨RATIFY-D⟩ FS-lane disclosure — NOT YET RULED.**
+**⟨RATIFY-E⟩ COMBO-BAR-EXEMPT — NOT YET RULED.**
+**⟨RATIFY-F⟩ control pin — NOT YET RULED.**
+**⟨RATIFY-G⟩ pending proofs — NOT YET RULED.**
+**⟨RATIFY-H⟩ sequencing — NOT YET RULED.**
+
+**NOT YET RATIFIED. NOT LOCKED. NOT COMMITTED. AND NOT YET EXECUTABLE:
+`⟨RATIFY-F⟩` IS A MEASURED TOOL REFUSAL THAT IS BLOCKING THE BOX TODAY, AND
+`⟨RATIFY-C⟩` REGISTERS AN INSTRUMENT THAT DOES NOT EXIST YET.**
+Lock commit = clock 1; shard creation follows (clock 2, the tape's own
+`# FIXTURE … start=` stamp; **no predecessor `COMPLETE` line is available as a
+backstop on this arm — the worklist is drained**).
+
+---
+
+## §RATIFICATION — BUILDER s53 (lock follows the dose tape; every ⟨RATIFY⟩ resolved here)
+
+* **A (THRESHOLD): ACCEPTED AND EXECUTED — the tree now ships 150/150** (`bots/_v543burst/doctrine.py`, commit `1b4ee9973`): screened bytes = shipped bytes. **Identity transfer verified before the edit:** `_v543_tick` self-guards on `_v543_on()` (`siege.py:2948`) before any constant read, so the flag-off byte-identity proof (0/~140 cells, a88594ca3) is unaffected by a constant change inside the flag's scope.
+* **B (BAR): ACCEPTED as drafted** — 51.33 POINT RULE, MDE 0.00, KEEP = CI-lower ≥ 51.33; the 52.33 form refused for the FUTILITY-tightening reason the draft states. The self-leg base-rate-50 claim is genuine here (538/0/0 add-only, two modules md5-identical).
+* **C (MECHANISM-FIRST): ACCEPTED — the n=600 instrumented dose tape is RUNNING as this is written** (proofs agent, shipped 150/150 bytes vs the control, 15 pool maps). Floors as registered: fires ≥1 in ≥20.0%, bought ≥1 in ≥8.0%, PAIR-EXISTS at shipped constants. Its readout is appended below before the lock commit; below either floor the screen does not fire and the page reads UNRESOLVED — INERT at zero shard cost.
+* **D (FS-LANE): ACCEPTED** — disclose, never exclude; midgard stays pooled, reported separately, registered NULL-to-NEGATIVE (the pure ammo-waiver cost cell, per the SLOT_FWD_GUN cross-lane write the drafter found).
+* **E (COMBO-BAR-EXEMPT): CLAIMED** — the token's registered premise obtains literally (this page carries the mechanism's own additive prediction: the dose-bounded ceiling), and the MC prices the alternative as the destruction of the product (P(reach 5400)=0.022 at true 53 without it). CONFIRMATION-CLASS and ANCHOR-CLASS are not claimed and would be stretches. This claim cites THIS page, not a nonexistent prereg — the precedent's failure mode is named and avoided.
+* **F (CONTROL PIN): EXECUTED** — `control_pin.py --pin --tree bots/_v542wave` recorded (`2c5947858af4cb9c7e2f59d6dd21d28b`), `--check` now rc=0; the box's minute-ly REFUSING TO LAUNCH (finding 1, pre-existing) clears with it.
+* **G (PENDING PROOFS): BOTH DISCHARGED** (a88594ca3): dynamic flag-off identity 0 differing cells over ~140 independent on 35 maps (C1/C2/C3 controls all live — discrimination 72/180 on the ancestor, non-vacuity 21/180 flag-on); simultaneous pair EXISTS (20 live=1 purchases = 5 distinct events, forced-dose arm). **The hypothesis stays "the burst-funded forward pair/replacement", with the pair-vs-single split reported as mechanism colour** — 82% of forced-dose purchases were replacements, and the screen does not adjudicate that split.
+* **H (SEQUENCING): ACCEPTED** — the identity battery has returned; the worklist append IS the fire and happens only at lock, after the dose tape passes its floors.
+* **Findings adopted into the registration:** the paired RMST₃₀₀ estimator (finding 7 — the within-game paired sd 58.11 form, anti-correlation named); the r1000 instrument-alarm removal (finding 8 — the 16% anchor was old-pool; this pool reads 20.43%); the §4.7-over-§7.1 build-report registration with the contradiction reported unresolved (finding 4); the modal TREND-FLOOR-stop-is-consistent-with-a-working-plank pre-commitment (finding 3, mooted if E holds but registered anyway).
