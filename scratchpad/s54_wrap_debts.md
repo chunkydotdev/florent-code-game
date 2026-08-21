@@ -16,3 +16,11 @@
 4. **now.py "last 10" line pools unrated** (research s54 boot finding, reproduced: 5 DOORWAVE
    arm matches + 1 Torsko unrated + 4 rated → "2W 8L" reads as ladder form; rated-only was
    6W-4L). Fix: label the line or split rated/unrated.
+5. **Unrated rate-limit window 20→10 min (organisers' changelog, UNVERIFIED-BY-US — research
+   s54 ~19:0xZ):** VERIFY on my next unrated fire batch (read a rejection's verbatim error
+   text, or one deliberate 6th-fire-in-10-min probe). IF CONFIRMED: CLAUDE.md "5 per 20
+   minutes / ~75 games/hour" block goes stale (third CLAUDE.md batch item, text after
+   verification) + ~10 files carry the stale 20-min constant (fanout.sh:137,
+   panel2_cal.sh:40, rate_budget.py:75 WINDOW_MIN, full anchor list in research's tail
+   note) + window-op leak math re-prices (~1 rated pairing per 10 min). ⛔ No constant
+   edits before the CLI confirms — the organisers' doc has been wrong before.

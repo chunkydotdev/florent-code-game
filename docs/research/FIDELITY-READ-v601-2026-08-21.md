@@ -28,9 +28,16 @@ the v601 build report's own hazard flag.**
   disappeared: need-based drip + guns that no longer spam barriers + still almost no
   turrets = almost no ammo need. **The fire-discipline plank exposed that our shot volume
   was mostly barrier spam; what remains is honest and small.**
-* **CAGE VOLUME COLLAPSED: 20 / 23 barriers built vs 80 on tape30** (ring share 50.0 /
-  56.5 vs 72.5). Cause unknown — walker behaviour changed or walker lifetime changed;
-  **autopsy owed before v602 touches the cage.**
+* **CAGE VOLUME COLLAPSED: 20 / 23 barriers built vs 40 on tape30's 15 DISTINCT games**
+  (⛔ corrected s54 ~19:0xZ — this line first said "vs 80", double-counting the s11/s12
+  duplicate pairs; ring barriers/game 1.933 → 0.767, ×0.4, the collapse stands on the
+  corrected denominator). Ring share 50.0 / 56.5 vs 72.5. **CAUSE FOUND by the tape601
+  autopsy (scratchpad/s54_autopsy601/): `_peck_priority` inserted at
+  `_cage_walker` sk_roles.py:1534 — the enemy core scores top priority and is adjacent
+  to EVERY seal tile, so the walker parks and pecks the core (276 of 286 lap pecks)
+  instead of lapping; 92.6% of lap actions redirected, and the 41-round glacierkeep
+  peck-park lost the healing race 95 heals to 82 pecks because `_enemy_builder_adjacent`
+  is tile-local on a 2×2 core.**
 * **OUTCOMES (the build report's hazard, confirmed): we killed their core 0/30. Our core
   died 27/30, median ~r120 (range 88-314). The other 3 games (fimbulwinter A+B,
   stavkirke B) ran to r1000 tiebreaks — nominal wins, DEFEATS under `R1000_IS_DEFEAT`.**

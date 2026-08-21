@@ -4,8 +4,12 @@
 `scratchpad/s54_autopsy/tape30_autopsy.md` §alarm): THE SEED AXIS IS INERT. Both trees are
 deterministic, and every `_s11`/`_s12` pair is byte-identical on all decisive event kinds
 (15/15 map pairs, death/birth lists hash-identical). EFFECTIVE n = 15, not 30 — every
-±ci95 below is ~×1.41 too narrow.** No verdict in this doc moves (the misses are multiples
-of any interval), but no v601-vs-v600 comparison may inherit this fixture as n=30.
+±ci95 below is ~×1.41 too narrow — and every RAW EVENT COUNT in the table (58/80
+barriers, 1480/1488 converts, 12/56 turrets, /28 harvesters, …) double-counts by exactly
+2×: halve for distinct-game numbers; shares are unaffected (tape601 autopsy caught the
+80-barrier figure being quoted downstream).** No verdict in this doc moves (the misses
+are multiples of any interval), but no v601-vs-v600 comparison may inherit this fixture
+as n=30.
 **Fixture rule going forward: with two deterministic trees, vary MAP and SEAT, never seed
 — 15 pool maps × 2 seats = 30 distinct games is this pair's ceiling** (det.py's paired
 same-(map,seat) flip shape is the accepted comparison instrument). Also recorded, because
