@@ -47,6 +47,11 @@ calls); the inventor = the amplification phase where the Loki toolbox goes on to
 Iterations version the name (Skalman v1, v2, …); burst-amplified variants may carry
 Bamse-family flavor later.
 
+**GAME-TERMS RULING (Magnus, s53, verbatim: "We play to destroy their cores"): the kill
+stays the win in the Skalman era — strangle-then-KILL. `R1000_IS_DEFEAT: yes` survives
+the line change; the cage, the belt and the nest are means; core destruction is the end.
+(The s31-class collision the side lane flagged is resolved by this ruling.)**
+
 **Doctrine, two phases per Magnus:** (1) REPLICATE the measured Bean counters basics
 properly — 4-builder capped eco, big terminated home belt (their 83% harvester→core
 connectivity vs our 58.8%), the core-ring barrier CAGE (55.5% of barriers on the eight
