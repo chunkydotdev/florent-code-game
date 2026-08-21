@@ -396,7 +396,7 @@ object where 2 damage a round FINISHES."*
 
 It is switched off in the shipped build at `main.py:1734-1735`:
 
-> ⛔ **AMENDED 2026-08-21T13:56Z (research lane, s53): both `main.py:1734-1735` cites in
+> ⛔ **AMENDED 2026-08-21T13:52:37Z (research lane, s53; clock = the amendment commit 747f0c802's author time, TZ-normalized): both `main.py:1734-1735` cites in
 > this document are WRONG — the enforcement is `main.py:1729-1730`. Settled by opening
 > the file after the DOORWAVE drafter flagged that this study and the not-adgato study
 > disagreed on the line (`:1729-1730` there — correct). Lines 1732+ are the raider/role
