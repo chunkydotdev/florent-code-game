@@ -72400,3 +72400,34 @@ CONSEQUENCES, routed now: (1) **THE RUSH LINE SUNSETS** — the two-raider doctr
 
 ## INSTRUMENT DEBTS → consolidated for the successor (NONE executed inline, per the rule):
 HIGH: results.tsv schema fork repair + consumer updates (audit L1) · submit_clean --restore-to <version> with driven selftest · audit_trigger selftests against live tail slices + delegation cell + ship-cadence gauge recalibration (L3 + the 9-of-14-days trip record) · R2 ship-gate-in-code reading the parsed SHIP_BAR field. MEDIUM: corpus_sanity counter split + KNOWN_DEAD re-derivation guard + stale livelock wording (L2) · pool-era stamp on measurement surfaces (L4) · version-binding semantics probe (the Torsko row) · shared-account activation coordination signal · obligations-doc REACHABILITY-DRIVEN text · wake-deadman #14 + pathspec-new-file #15 (inherited s52) · the s52 14-item list where still applicable to the new era.
+
+# ============================================================================
+# 2026-08-21T16:38:18Z — ⭐⭐ **RESEARCH ARM s53 WRAP — fired by the BUILDER'S WRAP-PING
+# (standing rule). ARM RETRO RAN FIRST per charter: `docs/retro-research-s53-2026-08-21.md`,
+# instrument v1.22 → v1.23, FIRINGS FIVE.** Session 2026-08-21T12:49:57Z → 16:3xZ.
+# NINE fresh-opus agents commissioned, nine completed, nine banked, nine consumed —
+# five of them were the day's Magnus-direct deliverable chain.
+# ============================================================================
+
+## PROCESS DELTAS (s53) — routed at write time
+1. **Q3d — VERIFY THE COMMISSIONER'S FRAMING, not only your own premises.** Two same-day instances of a commissioning lane's wrong framing reaching/nearly reaching a brief ("v68 = line under test" → 29-0 incumbent; "O(1) = fast riser" → fallen bot). The s40 fresh-drafter rule guards against MY anchoring; nothing guarded against the commissioner's until now. *(Routed: retro v1.23 sub-question.)*
+2. **THE PRE-SPAWN PREMISE FIX: the running-consumer rule applies to BRIEFS.** An upstream amendment (KLADDEDOSE v2) reached a written-but-not-yet-spawned commission file and was fixed for ~1 minute before the drafter read it. Cheapest correction point in the whole pipeline. *(Routed: retro v1.23; applied twice more in-session.)*
+3. **REACHABILITY BEFORE ATTRIBUTION: a gate inferred from an absence needs the five-minute is-the-clause-reachable check first** — fired on this lane's own #109 GREP and the builder's readout in the same hour; adopted by the next lock (DOORWAVE's reachability-driven dose drive) same day. *(Routed: tail + lock + obligations wrap-debt.)*
+4. **Brief premises generated from SELF-MEMORY carry Q3c's duty too** — both of today's brief errors were my own session memory compressing my own reads (the farming tape summary; the probe-overlap caveat). *(Routed: retro Q3c amendment.)*
+5. **Agent-draft/owner-ratify scales to queue governance**: the 113-row re-scope classified by a fresh agent with unsure-flags-not-guesses, ratified in one block, pending rows counted honestly. *(Routed: the RE-SCOPE block pattern in QUEUE.md.)*
+6. **Same-shell fact gates caught the third moving-holder instance of the day at wrap itself** — the 16:38 now.py read found v176 holding, not v177; flagged to the builder pre-wrap-close rather than absorbed. *(Routed: the state note below + builder's boundary question.)*
+
+--- 2026-08-21T16:38:18Z ⭐⭐ **RESEARCH ARM s53 — STATE NOTE. LIVE SURFACES VERIFIED, NOT ASSERTED.** ---
+
+## ⛔ WHAT A SUCCESSOR MUST NOT INHERIT UNCHECKED
+1. **HOLDER at my 16:38:18Z same-shell read: v176 "Mjolnir rotfix" (x3r0's bytes) — NOT our v177 — rating 1798, rank #22, last 10 = 2W-8L.** Whether this is the intended post-DOORWAVE resting state or a stale-rollback-target displacement is an OPEN QUESTION flagged to the builder mid-wrap; read their wrap note for the resolution and `fcode status` for the truth. **The ladder cadence is ~10-min (:x1:10 anchor)** — re-derive offset AND interval in any firing shell.
+2. **THE LINE IS SKALMAN** (PROGRAMME af4e1268b: beancounters_replication_then_amplify; benchmark _v542wave FROZEN; rush sunset). The queue is re-scoped for it (RE-SCOPE block at the top of QUEUE.md; 25 rows PENDING-DESIGN on builder calls; the STALE-GREP rule: every PROMOTE row re-greps vs _v542wave at lock time).
+3. **Queue 99 unblocked.** New today: #105-116, all GREP'd at admission. The day's studies: Bean counters (study + 2 parts + merged PLAYBOOK-beancounters-2026-08-21.md — Magnus's commission), O(1), adgato rush, farming v19, the v541 gate trace. Ledger current through all of them.
+4. **Preregs: KLADDEDOSE locked/fired/read/amended (v3.1 — v541 refuted-as-shipped, additive path unreachable); DOORWAVE locked + fired 20/20, MECHANISM READOUT OWED (successor item, builder's HANDOVER carries it).** The version-binding semantics probe is wrap-debted (builder); its empirical half is closed (ed8172e7 bytes = v176, column truthful, no leak).
+5. **Corpus synced last ~16:0xZ within-session; a successor's first act is `tools/corpus/sync.py`** (DOORWAVE's 20 matches + the post-16:00 rated tape postdate it).
+6. **Wrap debts mine: RD-s53-1 (audit_trigger cadence-cell subject filter, spec in scratchpad/s53_wrap_debts.md) · RD-s53-2 (delegation cell + live-slice selftest rule) · replay_builds.py two-output refusal-message nit.**
+
+## RESEARCH ARM STATE — VERIFIED
+* **NOTHING OF MINE IS RUNNING.** Nine agents: all completed, banked, relayed, consumed. No watchers, no crons, no background tasks (last background sync completed 16:0x). **DIES WITH ME: NOTHING.**
+* **HARD LIMITS HELD ALL SESSION:** no bot edits, no submissions/activations, ZERO matches fired (KLADDEDOSE and DOORWAVE fires were the builder's), no verdicts (every verdict-shaped output labelled CLAIM and handed to the builder), no HANDOVER/tape writes. All commits pathspec-form, every one pushed within the minute (one GitHub SSH outage ~14:01-14:07 verified to have stranded nothing of mine).
+* **WAKE PATHS: none of mine persist.** Boot recovery: now.py → corpus sync → this note → the builder's HANDOVER successor items (25 pending-design rows · #116 belt-gun gap · DOORWAVE mechanism readout · version-binding semantics).
