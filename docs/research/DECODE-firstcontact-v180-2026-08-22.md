@@ -446,6 +446,18 @@ the d² 14-32 band, zero point-blank plants, in every cell. **And it is the losi
 the trade against the bot it is replicating**, which plants 73.2% point-blank *because* its
 clearance runs at 69.2%.
 
+> ⛔ **RIDER (s56, 2026-08-22 ~12:3xZ, builder flag verified on the primary by the row owner —
+> the "because" clause above is WITHDRAWN; the columns stand.** M7 is computed **AGAINST the
+> subject** (`tools/skalman_fidelity.py:236-239` verbatim: *"every metric below is computed FOR
+> that side, except M7 which is computed AGAINST it (the subject is the defender clearing
+> turrets planted in its own half)"*). So BC's 69.2% is BC's **defensive** clearing of turrets
+> planted in ITS half — and the sentence welded it causally to BC's **offensive** point-blank
+> siting: wrong-subject causal glue, unmarked as inference. What survives: both columns as
+> measured, and the section's actionable read (the band rule is followed and following it is
+> not enough) — which never needed the "because". Related flag, routed to the playbook's next
+> touch: COPY 5's dependency clause conflates T7 (offensive ring clearing) with T19 (home
+> defence) — the dependency's own metric choice inherits this rider's question.)
+
 The prescription is not wrong; **the dependency is simply not satisfied and the band plant
 alone does not kill.** Our band sentinels sit at d²=25-32 and deliver 198-243 damage before
 dying. **This is the sharpest actionable read in the fidelity column set: the band rule is
