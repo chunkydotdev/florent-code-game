@@ -1,0 +1,1 @@
+COMPARATOR: scratchpad/s57_v630/t_ctrl_f2 (shared same-session control tape; there is NO t_ctrl1_* — reusing the v630.0-session controls per EXPECTATION-v630-1 §2). Wrong-pair grab is the measured failure mode (sed-built idcheck + side lane's first recount both reached for it).
