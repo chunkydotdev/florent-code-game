@@ -16,7 +16,17 @@ anchor: the RETIRING line's v174 read 51.94 [50.61,53.28] vs this same baseline 
 — Skalman is still well below the old line on this opponent class, consistent with
 mid-replication and the shut first-contact gate.
 
-## The doctrinal finding: THE MACHINE TRANSFERS; THE RACE DOES NOT
+**⛔ HEADLINE CORRECTED s54 ~04:0xZ by the tapemj anatomy (scratchpad/s54_anatomy_mj/):
+"the loss mode is the RACE" IS NOT WHAT THE TAPE SHOWS.** In 14 of 19 losses THEIR core
+is at 500/500 when ours dies — `healed == dealt` to the point (jotunheim_B 2,446 dealt /
+2,446 healed). **We win iff we out-deal their heal by one core (all 7 wins: dealt−healed
+= 500-512); the r184 clock describes the WINS ONLY. The loss mode is NET DAMAGE vs their
+healers, plus their point-blank apron** (58.3% of their core-shooters at d²≤5, mechanism
+named from their tree: ferry→collar→siege tube; their launcher plucks our answering body
+off the peck seat; 1,153 of our bodies thrown per 30 games). The paragraph below stands
+for its mechanism-transfer numbers; its race framing is superseded.
+
+## The doctrinal finding: THE MACHINE TRANSFERS; THE RACE DOES NOT *(headline superseded — see the correction above)*
 Mechanisms vs Mjolnir read AT OR ABOVE the home-fixture values: drip volume 54/47
 calls/game (home: 23-30; BC target 67) at lattice **100.0/100.0** · nest volume 50+30
 forward builds at 96.0/96.7% band, 0 point-blank · M7 29.7/14.0 (home: ~24/10) · M1
