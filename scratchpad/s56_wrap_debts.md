@@ -24,3 +24,11 @@ Game context: all items concern in-game Florent Code League tooling.
    (`if DEAD_FLAG:` guarding replacement logic) and escapes that pattern. Add
    the second shape: any `if <flag>:` block whose flag is permanently False
    and whose body carries measurement-bearing logic.
+6. **Cross-host non-determinism (measured s56, POWERED-V624 dose spot):** the
+   same trees+map+seed produce DIFFERENT games locally vs on the work servers
+   (grid row outcomes differ on local re-run). Consequences to encode durably
+   (side-lane ask): remote grids can never be spot-reproduced byte-for-byte;
+   any registered check on a remote grid must name an instrument that exists
+   ON that surface (TSVs only — no replays retained); local re-runs of grid
+   cells are fresh same-cell samples, never reproductions. Candidate home:
+   the remote_battery.py docstring + the builder-method doc.
