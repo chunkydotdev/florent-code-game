@@ -940,6 +940,15 @@ class Player(CommonMixin, RolesMixin, CoreMixin):
         self.apron_relay_total = 0    # per-game backstop
         self.apron_relaid = 0         # instrument: relays landed
         self.apron_losses = 0         # instrument: apron buildings lost
+        # ⭐ v632 PLANK 7 (SK_APRON_MESH).  UNCONDITIONAL, like every other attr
+        # in this file: a flag gates BEHAVIOUR, never the existence of state --
+        # otherwise the flag-off tree carries a latent AttributeError one edit
+        # away.  `mesh_tiles` is read by `_belt_evict` on every occupied planned
+        # tile whether the plank is on or off, so an empty set here IS the
+        # off-identity.
+        self.mesh_tiles = set()       # the seats THIS body added to belt_plan
+        self.mesh_planned = 0         # instrument: mesh tiles ever planned
+        self.mesh_spawn_refused = 0   # instrument: refused by the spawn reserve
         # PLANK 2 (SK_TUBE_FLOOR) instruments.
         self.tube_noprep = 0          # turns the prep barriers were skipped
         self.tube_fund_waived = 0     # 1 once the ammo surcharge was waived

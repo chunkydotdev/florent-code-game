@@ -104,6 +104,8 @@ from sk_maps import (
     # --- v613 (the ANTI-APRON axis) ---------------------------------------
     SK_APRON_DENY, SK_APRON_DSQ, SK_APRON_RELAY_CAP, SK_APRON_WINDOW,
     SK_APRON_RELAY_TOTAL, SK_APRON_BELT_PREF,
+    # --- v632 PLANK 7 (the core-apron MESH, study §4d) ---------------------
+    SK_APRON_MESH, SK_APRON_MESH_MAX, SK_APRON_MESH_SPAWN_RESERVE,
     SK_TUBE_FLOOR, SK_TUBE_NOPREP, SK_TUBE_FUND, SK_TUBE_FUND_AMMO,
     SK_TUBE_GAP_RELAX, SK_TUBE_GAP_MIN,
     SK_GAP_RELAX_SOLO, SK_NEST_EXHAUST_PB,
@@ -2002,7 +2004,132 @@ class RolesMixin:
                 self.belt_head[h] = None     # harvester already touches home
         for h in self.harv_tiles:
             plan.pop(h, None)                # a harvester tile is a harvester
+        # ⭐ v632 PLANK 7, HALF 2 -- THE MESH, AND IT IS THE LAST THING THAT
+        # TOUCHES `plan`.  It reads the finished tree for its adjacency test,
+        # so a mesh tile can never become somebody's parent and no chain's
+        # length, facing or termination changes.  Flag off: returns before the
+        # first read (`plan` untouched, `mesh_tiles` stays the empty set from
+        # `__init__`, every downstream membership test answers as it did).
+        self._apron_mesh(ct, plan)
         self.belt_plan = plan
+
+    def _apron_mesh(self, ct, plan):
+        """⭐⭐ v632 HEIMDALL PLANK 7, HALF 2 -- THE CORE-APRON MESH (§4d).
+
+        Magnus's Bean-counters observation as a plan mutation: the extra
+        conveyors that wall a core's exposed faces are PAYING infrastructure
+        doing triple duty -- belt-cut redundancy, plant-tile denial and fire
+        occlusion -- at +1% scale each, where a barrier is deadweight at the
+        same 3 Ti.
+
+        Spec, and each clause is a filter below:
+          (a) cardinal-adjacent to an ALREADY-PLANNED belt tile;
+          (b) faces a core FOOTPRINT tile (`_seat_face`), i.e. it is a TERMINAL
+              conveyor that delivers rather than a stub;
+          (c) UNOCCUPIED;
+          (d) apron member, buildable terrain, not banned, not escalated;
+          (e) the spawn reserve (`SK_APRON_MESH_SPAWN_RESERVE`).
+
+        ⛔ (b) IS ALSO THE POPULATION, AND IT IS A SMALLER SET THAN §4d SAYS.
+        A conveyor outputs to ONE cardinal neighbour, so "faces a footprint
+        tile" is the same predicate as "orthogonally adjacent to the footprint"
+        -- i.e. `core_seats()`, exactly EIGHT tiles.  The study's "~6-10 extra
+        tiles on a 20x20" is an over-count; the ceiling is 8 minus the seats
+        the belt plan already terminates on, and `SK_APRON_MESH_MAX` is a fence
+        on top of that rather than the binding number.
+
+        ⛔ NO NEW BUILD VERB.  The tiles enter `belt_plan` and are therefore
+        priced, walked to, laid, watched, repaired and re-planned by exactly
+        the machinery that owns every other planned tile.  That is the point of
+        putting them here rather than in a rung of their own: a new rung would
+        compete for the keeper's turn, which is the scarce resource in this
+        tree (`main.py:16`), and PLANK 3's redesign is what that costs.
+
+        ⚠ THE ADJACENCY TEST READS `plan`, NEVER `mesh`.  Single pass, no
+        chaining: a mesh tile cannot seed another mesh tile.  On the seat ring
+        that is very nearly a fixed point anyway (the two seats of one core
+        face are cardinal-adjacent to each other, but seats on DIFFERENT faces
+        are diagonal), and it keeps the addition a strict function of the belt
+        the planner actually built.
+        """
+        if not SK_APRON_MESH or self.core is None or not plan:
+            return
+        foot = set(core_tiles_xy(self.core))
+        apron = set(self._apron_list())
+        taken = set()
+
+        def _spawn_free():
+            """Anchor-adjacent tiles still spawnable once `taken` is built on.
+
+            ⛔ `plan` COUNTS AS TAKEN TOO.  The hazard is the STATE the mesh
+            leaves behind, not the marginal tile: a belt that already
+            terminates on one anchor seat plus three mesh tiles is the same
+            self-inflicted spawn lock as four mesh tiles.  Counting both is the
+            conservative direction and it is the direction that cannot cost us
+            a replacement body.
+            """
+            free = 0
+            for dx, dy in NEIGHBOURS8:
+                x2, y2 = self.core.x + dx, self.core.y + dy
+                if not self.ib(x2, y2) or (x2, y2) in foot:
+                    continue
+                if (x2, y2) in taken or (x2, y2) in plan:
+                    continue
+                try:
+                    if ct.is_tile_empty(Position(x2, y2)):
+                        free += 1
+                except Exception:
+                    continue          # unreadable: NOT counted as free
+            return free
+
+        for xy in core_seats(self.core):
+            if len(taken) >= SK_APRON_MESH_MAX:
+                break
+            if xy in plan or xy in foot:
+                continue                      # the belt already wants it
+            x, y = xy
+            if not self.ib(x, y) or xy not in apron:
+                continue
+            if self.wall_at(x, y):
+                continue
+            # ⛔ NEVER ON ORE.  A conveyor on an ore tile consumes a harvester
+            # seat permanently, and `_harvester_action` already denies that
+            # tile with a building that also EARNS.  Same rule as
+            # `_claim_targets` and `_apron_buildable`.
+            if self.ore_at(x, y) or xy in self.harv_tiles:
+                continue
+            if xy in self.belt_ban or xy in self.belt_escalated:
+                continue
+            face = self._seat_face(xy)        # (b)
+            if face is None:
+                continue
+            adj = False                       # (a)
+            for dx, dy in ((0, -1), (1, 0), (0, 1), (-1, 0)):
+                if (x + dx, y + dy) in plan:
+                    adj = True
+                    break
+            if not adj:
+                continue
+            # (c) UNOCCUPIED, and an UNSEEN tile is not an occupied tile -- the
+            # planner is deliberately optimistic everywhere else for the same
+            # reason (`_belt_watch` is the refutation half).  Bounds first,
+            # then vision: `is_in_vision` is a pure radius test with NO bounds
+            # check (CLAUDE.md, corrected s50), and `self.ib` above is the
+            # bounds test.
+            q = Position(x, y)
+            try:
+                if ct.is_in_vision(q) and not ct.is_tile_empty(q):
+                    continue
+            except Exception:
+                pass
+            taken.add(xy)                     # (e) is evaluated WITH this tile
+            if _spawn_free() < SK_APRON_MESH_SPAWN_RESERVE:
+                taken.discard(xy)
+                self.mesh_spawn_refused += 1
+                continue
+            plan[xy] = face
+        self.mesh_planned += len(taken - self.mesh_tiles)
+        self.mesh_tiles = taken
 
     def _belt_band(self):
         """v606 ITEM 2 -- the enemy turret band as an (x, y) set, or None.
@@ -2052,8 +2179,18 @@ class RolesMixin:
         MORE: the frontier is a level set, so re-ordering inside it cannot make
         any chain longer.
         """
+        # ⭐ v632 PLANK 7, HALF 1 -- THE MASTER TAKES THIS SITE WITHOUT
+        # TOUCHING `SK_APRON_BELT_PREF`'s OWN CONSTANT.  DISCLOSED: the
+        # sub-flag keeps the value and the meaning its own s55 screen measured
+        # (ON alone: F1 by-r300 9 vs 11, 8 of 12 named cells moved); the OR
+        # here is what lets PLANK 7 own the routing half as part of the mesh
+        # while leaving the sub-flag independently ablatable in both
+        # directions.  ⛔ THE CONJUNCTION WITH `SK_APRON_DENY` IS DELIBERATE
+        # AND UNCHANGED: the apron SET is that plank's, so the tie-break can
+        # only exist where the apron is defined.
         apron = None
-        if SK_APRON_DENY and SK_APRON_BELT_PREF and self.core is not None:
+        if (SK_APRON_DENY and (SK_APRON_BELT_PREF or SK_APRON_MESH)
+                and self.core is not None):
             apron = set(self._apron_list())
         # v601: terrain through `wall_at`/`ore_at`, which answer from the
         # confirmed grid when there is one and from SENSED tiles otherwise.
@@ -2190,6 +2327,20 @@ class RolesMixin:
             mine = ct.get_team(bid) == self.team
             et = ct.get_entity_type(bid)
         except Exception:
+            return False
+        # ⛔⛔ v632 PLANK 7's ONE FENCE, AND IT EXISTS SO THE MESH CANNOT
+        # SMUGGLE A REFUTED PLANK BACK IN.  A mesh tile is a DELIVERY SEAT, and
+        # pecking an enemy building off a delivery seat is `SK_SEAT_CLEAR`'s
+        # verb -- built, mechanism-confirmed and SHIPPED OFF (`sk_maps.py:1350`)
+        # after v603 measured the unbounded form at 2,179 pecks.  Without this
+        # line, adding eight seats to `belt_plan` would hand that verb back to
+        # `_belt_evict` under a different name and with no seat budget at all,
+        # and PLANK 7 would be scored with SEAT_CLEAR riding along inside it.
+        # The mesh's claim is on EMPTY tiles; a tile they already hold is not
+        # its business.  ⚠ FLAG OFF: `mesh_tiles` is empty for the whole game,
+        # so this is a membership test against an empty set on every call and
+        # the branch below is reached exactly as it was.
+        if not mine and (q.x, q.y) in self.mesh_tiles:
             return False
         if mine:
             if et in BELT_TYPES:

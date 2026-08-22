@@ -4064,6 +4064,86 @@ SK_ROTATE_CLUSTER_GAP = 2    # THE FIRST BATTERY IS CLUSTERED.  Magnus, direct:
                              # position".
 
 # ===========================================================================
+# v632 HEIMDALL PLANK 7 -- THE CORE-APRON MESH  (DESIGN §4d)
+# ===========================================================================
+# GAME CONTEXT: in-game build work for the Florent Code League, a sandboxed
+# bot-vs-bot competition.  "denial", "plant", "clear-out" are moves between
+# competing game bots on a simulated grid.
+#
+# MAGNUS'S FIELD OBSERVATION, WHICH IS THE WHOLE PLANK (`docs/coordination.md`
+# ae8dd8c2 game 3, r8): the Bean counters run TEN conveyors against the ~four
+# their two harvesters need.  The extras wall their core's exposed faces, and
+# the tiles they wall are "exactly the point-blank plant ring, i.e. they deny
+# to others the point-blank gunner plant that is their OWN signature move".
+# Triple duty on PAYING infrastructure -- belt-cut redundancy, plant-tile
+# denial, fire occlusion -- at +1% scale each instead of barrier deadweight.
+#
+# THE PREDICTION STUDY IS WHY THE RING IS THE RIGHT RADIUS (coordination tail
+# ~20:2xZ 2026-08-22): 100% of first core damage is turret fire from PLANTS;
+# the plant band is chebyshev 1-3 of our core (their adjacent builds 243/204/
+# 122 per fixture; our-half turrets median cheb 2-4; point-blank d^2 <= 4 at
+# 25/33/11%); and the belt is eaten AT THE CORE END (82-92% within cheb 2).
+# The mesh sits on cheb 1 -- inside the point-blank band and on the tiles the
+# belt loses most.
+SK_APRON_MESH = False     # ⭐⭐ MASTER FOR BOTH HALVES OF §4d, AND ONE FLAG IS
+                          # THE POINT: the FREE half (`SK_APRON_BELT_PREF`, the
+                          # BFS tie-break) was built, measured ALONE, and
+                          # shipped off -- so it was never worth an arm by
+                          # itself.  Under this master it is the routing half
+                          # of a plank that also lays REDUNDANT terminals, and
+                          # the pair is what Magnus actually observed.
+                          # ⛔ THE MASTER DOES NOT EDIT `SK_APRON_BELT_PREF`.
+                          # It is OR-ed at the ONE consumption site
+                          # (`sk_roles._belt_parents`), so that flag keeps its
+                          # own measured meaning and its own separate ablation.
+                          # HALF 1 (routing, free): apron tiles become the
+                          #   preferred parent at equal BFS depth -- a tie-break
+                          #   inside a level set, so no chain gets longer.
+                          # HALF 2 (redundancy, ~7-8 Ti/tile): after
+                          #   `_plan_belt` completes, every UNOCCUPIED delivery
+                          #   seat that is cardinal-adjacent to an already
+                          #   planned belt tile is added to `belt_plan` as a
+                          #   TERMINAL conveyor facing the footprint.  The
+                          #   keeper then builds it through `_belt_action` like
+                          #   any other planned tile -- no new build verb, no
+                          #   new spend rung, no new priority.
+SK_APRON_MESH_MAX = 8     # ⛔ THE CAP -- AND THE GEOMETRY MAKES IT A FENCE
+                          # RATHER THAN A BINDING CONSTANT, WHICH IS WORTH
+                          # SAYING OUT LOUD.  §4d asks for tiles "facing a core
+                          # footprint tile"; a conveyor outputs to ONE cardinal
+                          # neighbour, so a tile that can face the footprint is
+                          # orthogonally adjacent to it -- i.e. exactly
+                          # `core_seats()`, and there are EIGHT of those.  The
+                          # study's "~6-10 extra tiles on a 20x20" over-counts:
+                          # the true ceiling is 8 minus whatever the belt plan
+                          # already terminates on.  The constant is kept so a
+                          # successor can tighten it, never to widen it.
+SK_APRON_MESH_SPAWN_RESERVE = 2   # ⛔⛔ THE ENGINE HAZARD, AND IT IS THE SAME
+                          # ONE `_claim_spawn_ok` EXISTS FOR -- BUT WORSE HERE,
+                          # BECAUSE THE MESH IS PERMANENT AND UNBUDGETED.
+                          # `_spawn_plan` (`sk_core.py:450`) offers the core
+                          # `p.add(d)` over the 8 DIRECTIONS FROM THE ANCHOR:
+                          # three land inside the 2x2 footprint, FOUR are
+                          # delivery seats (N, NE, W, SW) and exactly ONE -- the
+                          # NW corner -- is neither, and may be a wall.  A mesh
+                          # that takes all four anchor seats leaves our own core
+                          # ONE spawn candidate in the entire loop: we would be
+                          # playing musical chairs against ourselves.  Builder
+                          # deaths run 29 of 30 games on the F1 tape, so a
+                          # replacement spawn is a routine path.  This many
+                          # anchor-adjacent tiles must remain SPAWNABLE after
+                          # every mesh addition, counting the tiles the mesh has
+                          # already taken this pass AND the ones the belt plan
+                          # already wants.  TWO, not `SK_SEAT_CLAIM_SPAWN_
+                          # RESERVE`'s one: a single remaining tile is a single
+                          # point of failure the opponent can stand on, and the
+                          # seat-claim's one is priced for a 30-round window,
+                          # not for a building that stands all game.
+                          # ⚠ AN UNREADABLE TILE COUNTS AS NOT SPAWNABLE -- the
+                          # guard fails toward REFUSING the mesh tile, which is
+                          # the direction that cannot cost us a body.
+
+# ===========================================================================
 # 3.  IMPORT BANNER (verbatim) -- doctrine.py:1078-1172, map data
 # ===========================================================================
 
