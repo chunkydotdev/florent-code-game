@@ -27,3 +27,37 @@ clearance). No column is silently replaced.
 **OWNERSHIP:** research patches (instrument is a research read surface); wrap-scoped unless a
 decision needs `M7_dmg` sooner. Every doc quoting M7 levels is listed in the coordination
 tail note of this timestamp; each gets a rider or a re-read AT NEXT TOUCH, not silently.
+
+---
+
+## VALIDATION RECORD — BUILT AND PASSED, 2026-08-22T18:31:40Z (research s57)
+
+Implemented in `tools/skalman_fidelity.py`: `updateHp` (unum 5, id + signed delta per
+`replay_autopsy.py:67`) feeds `dmg_ids` (ids with >=1 negative delta, whole life);
+new columns `fwd_turrets_removed_dmg`, `fwd_turrets_removed_by_id_dmg`,
+`own_fwd_turrets{,_removed,_removed_dmg}`; new aggregate row **`M7d
+fwd_turret_removal_rate_dmg`**; `M7_raw` unchanged (continuity). Corruption control is
+`--strip-hp`.
+
+**1. Positive control — REPRODUCED DIGIT-FOR-DIGIT** on the builder's exact population
+(the `fwd_theirs`/`fwd_ours` per-entity records of `scratchpad/s54_fc_games.json`,
+65 games, classifier = this patch's `dmg_ids`): MIRROR **22/38** · PIVOT **20/50** ·
+KLADDE **7/26** undamaged enemy forward-turret kills; ours **0/112** undamaged. All four
+match `DESIGN-v629-homeanswer-2026-08-22.md` §S2 exactly.
+⚠ Scope note discovered in validation: the builder's cells live on the s54 pool's
+per-entity forward records, NOT on M7's (kind, tile, later-round) matching — M7's loose
+matching counts rebuilds (e.g. PIVOT cell: M7-matched 58 removals vs 50 per-entity kills).
+The CLASSIFIER is what this control validates; M7d applies it to M7's own population, raw
+column retained beside it, and the by-id diagnostic now has a dmg variant too.
+
+**2. Corruption control — FIRES.** `--strip-hp` on a MIRROR replay: damage-linked
+removals collapse 2+2 → 0+0 while raw counts are byte-identical. The check can fail and
+was made to.
+
+**3. Subject-side invariant holds in the shipped row's own note:** our removed forward
+turrets read damage-linked == raw in every validation cell (a gap is an instrument alarm
+by construction).
+
+First honest readout available (MIRROR cell, n=20 games): M7 raw 37.6 → **M7d 17.7**
+(16/82 damage-linked vs 36/82 raw) — consistent with the s56 tail's predicted ~19-33%
+honest band. Full re-reads of banked M7 docs remain AT NEXT TOUCH per the routing note.

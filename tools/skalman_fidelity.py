@@ -231,7 +231,14 @@ def _roles(subj_bots):
     return out
 
 
-def scan_replay(path: Path, side: int, deny_window: int = 3) -> dict:
+def _signed(v: int) -> int:
+    # updateHp.delta arrives as an unsigned varint carrying a two's-complement
+    # 64-bit value (same convention as tools/corpus/replay_autopsy.py:67).
+    return v - (1 << 64) if v >= (1 << 63) else v
+
+
+def scan_replay(path: Path, side: int, deny_window: int = 3,
+                strip_hp: bool = False) -> dict:
     """One pass over a replay; every per-game contribution for the SUBJECT side.
 
     `side` is the subject's team index (0 = A, 1 = B).  Every metric below is
@@ -318,6 +325,11 @@ def scan_replay(path: Path, side: int, deny_window: int = 3) -> dict:
     # collected series
     builds = []            # (rnd, team, kind, id, pos)
     deaths = []            # (rnd, team, kind, id, pos)
+    dmg_ids = set()        # entity ids that EVER took a negative updateHp
+                           # (whole life; ids are match-unique).  M7 cause
+                           # filter per SPEC-m7-cause-filter-2026-08-22.md.
+                           # `strip_hp` empties this by construction — the
+                           # corruption control that must be able to fail.
     build_at = {}          # (rnd, pos) -> (team, kind, id)
     converts = {0: [], 1: []}
     peak_ammo = {0: 0, 1: 0}
@@ -411,6 +423,10 @@ def scan_replay(path: Path, side: int, deny_window: int = 3) -> dict:
                         for pn, _pw, pv in fields(mbuf):
                             if pn == 1:
                                 ship_from.add(read_pos(pv))
+                elif unum == 5 and not strip_hp:                 # updateHp
+                    d5 = scalars(ub)
+                    if _signed(d5.get(2, 0)) < 0 and d5.get(1) is not None:
+                        dmg_ids.add(d5[1])
                 elif unum == 6:                                  # updatePlayers
                     for pn, _pw, pv in fields(ub):
                         if pn != 1:
@@ -532,27 +548,50 @@ def scan_replay(path: Path, side: int, deny_window: int = 3) -> dict:
     # published definition is visible rather than assumed harmless.
     death_kind_pos = {}
     for (rnd, team, kind, eid, pos) in deaths:
-        death_kind_pos.setdefault((kind, pos), []).append(rnd)
+        death_kind_pos.setdefault((kind, pos), []).append((rnd, eid))
     death_ids = {eid for (_r, _t, _k, eid, _p) in deaths}
     fwd_against = 0
     fwd_removed = 0
     fwd_removed_by_id = 0
+    fwd_removed_by_id_dmg = 0
+    fwd_removed_dmg = 0
     fwd_against_anchor = 0
     fwd_removed_anchor = 0
+    # SUBJECT-side mirror (OUR forward turrets, forward toward the enemy):
+    # exists for the cause-filter's positive control — damage-death always
+    # leaves a damage event, so removed_dmg must equal removed here.
+    own_fwd = 0
+    own_fwd_removed = 0
+    own_fwd_removed_dmg = 0
     for (rnd, team, kind, eid, pos) in builds:
-        if team != enemy or kind not in TURRETS:
+        if kind not in TURRETS:
             continue
-        removed = any(r > rnd for r in death_kind_pos.get((kind, pos), ()))
-        if dsq_to_set(pos, cfoot[side]) < dsq_to_set(pos, cfoot[enemy]):
-            fwd_against += 1
-            if removed:
-                fwd_removed += 1
-            if eid in death_ids:
-                fwd_removed_by_id += 1
-        if dsq(pos, canchor[side]) < dsq(pos, canchor[enemy]):
-            fwd_against_anchor += 1
-            if removed:
-                fwd_removed_anchor += 1
+        cells = death_kind_pos.get((kind, pos), ())
+        removed = any(r > rnd for (r, _e) in cells)
+        # cause filter: the matched later-death's entity took damage in life.
+        removed_dmg = any(r > rnd and e2 in dmg_ids for (r, e2) in cells)
+        if team == enemy:
+            if dsq_to_set(pos, cfoot[side]) < dsq_to_set(pos, cfoot[enemy]):
+                fwd_against += 1
+                if removed:
+                    fwd_removed += 1
+                if removed_dmg:
+                    fwd_removed_dmg += 1
+                if eid in death_ids:
+                    fwd_removed_by_id += 1
+                    if eid in dmg_ids:
+                        fwd_removed_by_id_dmg += 1
+            if dsq(pos, canchor[side]) < dsq(pos, canchor[enemy]):
+                fwd_against_anchor += 1
+                if removed:
+                    fwd_removed_anchor += 1
+        else:
+            if dsq_to_set(pos, cfoot[enemy]) < dsq_to_set(pos, cfoot[side]):
+                own_fwd += 1
+                if removed:
+                    own_fwd_removed += 1
+                if removed_dmg:
+                    own_fwd_removed_dmg += 1
 
     conv = converts[side]
     return {
@@ -607,8 +646,13 @@ def scan_replay(path: Path, side: int, deny_window: int = 3) -> dict:
         "fwd_turrets_against": fwd_against,
         "fwd_turrets_removed": fwd_removed,
         "fwd_turrets_removed_by_id": fwd_removed_by_id,
+        "fwd_turrets_removed_by_id_dmg": fwd_removed_by_id_dmg,
+        "fwd_turrets_removed_dmg": fwd_removed_dmg,
         "fwd_turrets_against_anchor": fwd_against_anchor,
         "fwd_turrets_removed_anchor": fwd_removed_anchor,
+        "own_fwd_turrets": own_fwd,
+        "own_fwd_turrets_removed": own_fwd_removed,
+        "own_fwd_turrets_removed_dmg": own_fwd_removed_dmg,
     }
 
 
@@ -686,6 +730,7 @@ TARGETS = {
     "M6d ore_denial_latency_median":      (1.0, 1.0, None),
     "M7 fwd_turret_removal_rate":         (76.6, 79.7, 42.8),
     "M7b fwd_turret_removal_rate_anchor": (None, None, None),
+    "M7d fwd_turret_removal_rate_dmg":    (None, None, None),
 }
 
 
@@ -898,6 +943,29 @@ def aggregate(rows, deff, deny_window):
         f"{len(gshare_a)}/{n} games holding >=1 ({fra}/{fta} turrets)",
         ci95(gshare_a, deff),
         "STUDY-COMPAT origin (NW-corner anchor) for the 'forward' test only")
+    # ---- M7d cause-filtered clearance (SPEC-m7-cause-filter-2026-08-22) ----
+    # Same definition as M7 but a removal only counts when the matched death's
+    # entity took >=1 negative updateHp in its life — an opponent demolishing
+    # its own turret (self-removal, zero damage events) no longer scores as
+    # the defender's clearance.  M7 above is UNCHANGED (continuity with every
+    # banked doc); this row is the honest level.
+    frd = sum(r["fwd_turrets_removed_dmg"] for r in rows)
+    gshare_d = [100 * r["fwd_turrets_removed_dmg"] / r["fwd_turrets_against"]
+                for r in rows if r["fwd_turrets_against"]]
+    own_t = sum(r["own_fwd_turrets"] for r in rows)
+    own_r = sum(r["own_fwd_turrets_removed"] for r in rows)
+    own_d = sum(r["own_fwd_turrets_removed_dmg"] for r in rows)
+    add("M7d fwd_turret_removal_rate_dmg",
+        statistics.mean(gshare_d) if gshare_d else None,
+        f"{len(gshare_d)}/{n} games holding >=1 enemy forward turret "
+        f"({frd}/{ft} turrets damage-linked, vs {fr}/{ft} raw)",
+        ci95(gshare_d, deff),
+        "DAMAGE-LINKED only (cause filter). Positive control, subject side: "
+        f"our own forward turrets removed {own_r}/{own_t}, damage-linked "
+        f"{own_d}/{own_t} — these two MUST be equal (damage-death always "
+        "leaves a damage event; a gap here is an instrument alarm, not a "
+        "finding). Undamaged enemy removals (raw minus dmg = "
+        f"{fr - frd}) are the opponent's own demolitions, not our clearance.")
     return out
 
 
@@ -939,7 +1007,7 @@ def load_corpus(team_id=None, team_name=None, versions=None, replay_root=None):
     return out
 
 
-def run_population(files, deff, deny_window, flip_side=False):
+def run_population(files, deff, deny_window, flip_side=False, strip_hp=False):
     rows = []
     skipped = []
     t0 = time.time()
@@ -949,7 +1017,7 @@ def run_population(files, deff, deny_window, flip_side=False):
             continue
         try:
             rows.append(scan_replay(path, (1 - side) if flip_side else side,
-                                    deny_window))
+                                    deny_window, strip_hp=strip_hp))
         except Exception as exc:                                # noqa: BLE001
             skipped.append((path.name, f"{type(exc).__name__}: {exc}"))
     if not rows:
@@ -995,6 +1063,10 @@ def main() -> int:
     ap.add_argument("--replay-root", default=str(DEFAULT_REPLAY_ROOT))
     ap.add_argument("--limit", type=int, default=0)
     ap.add_argument("--label", default="unnamed population")
+    ap.add_argument("--strip-hp", action="store_true",
+                    help="CORRUPTION CONTROL ONLY: ignore updateHp events so "
+                         "every removal reads non-damage-linked — M7d must "
+                         "collapse to 0. Never use for a real readout.")
     ap.add_argument("--era", choices=("v68", "v47"), default="v68",
                     help="which Bean-counters era the target column shows")
     ap.add_argument("--deff", type=float, default=1.833,
@@ -1036,7 +1108,7 @@ def main() -> int:
     files.sort()
     if a.limit:
         files = files[:a.limit]
-    res = run_population(files, a.deff, a.deny_window)
+    res = run_population(files, a.deff, a.deny_window, strip_hp=a.strip_hp)
     print_table(res, a.label, a.era)
     if a.json:
         payload = {"label": a.label, "era": a.era, "deff": a.deff,
