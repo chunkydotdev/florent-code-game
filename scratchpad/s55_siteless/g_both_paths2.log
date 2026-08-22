@@ -1,0 +1,23 @@
+Update available: 2.3.6 -> 2.3.9. Run: pip install --upgrade fcode
+Running match: arm_both vs opp_v542wave_noiseoff
+  Map: paths.map26  Seed: 7  Replay: 
+scratchpad/s55_siteless/g_both_paths2.replay26  TLE: 10ms
+Completed turn 0
+Completed turn 100
+Completed turn 200
+Completed turn 300
+Completed turn 400
+Completed turn 500
+Completed turn 600
+Completed turn 700
+Completed turn 800
+Completed turn 900
+Replay written to scratchpad/s55_siteless/g_both_paths2.replay26
+
+  Winner: opp_v542wave_noiseoff  (Titanium collected (tiebreak), turn 1000)
+
+                        arm_both    opp_v542wave_noiseoff  
+  Titanium     1961 (2480 mined)         316 (4200 mined)  
+  Units                        7                       10  
+  Buildings                   17                       22  
+

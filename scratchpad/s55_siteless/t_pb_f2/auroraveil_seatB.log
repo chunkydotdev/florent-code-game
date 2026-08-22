@@ -1,0 +1,19 @@
+Update available: 2.3.6 -> 2.3.9. Run: pip install --upgrade fcode
+Running match: opp_mjolnir_noiseoff vs arm_pb_clean
+  Map: auroraveil.map26  Seed: 11  Replay: 
+scratchpad/s55_siteless/t_pb_f2/auroraveil_seatB.replay26  TLE: 10ms
+Completed turn 0
+Completed turn 100
+Completed turn 200
+Completed turn 300
+Completed turn 400
+Completed turn 500
+Replay written to scratchpad/s55_siteless/t_pb_f2/auroraveil_seatB.replay26
+
+  Winner: opp_mjolnir_noiseoff  (Core destroyed, turn 521)
+
+               opp_mjolnir_noiseoff     arm_pb_clean  
+  Titanium             10 (0 mined)    568 (0 mined)  
+  Units                          11                6  
+  Buildings                      34               28  
+

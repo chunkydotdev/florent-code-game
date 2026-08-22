@@ -2,6 +2,95 @@
 # NEVER from a poller or any line below (this block is a CACHE).
 # ⚠ now.py's "last 10" POOLS UNRATED (wrap debt): rated-only differs.
 
+# ===== s55 WRAP (builder, 2026-08-22 ~11:0xZ; Magnus called it) =====
+
+## ⛔⛔ READ THIS FIRST — THE SESSION-LEVEL BLOCKER, NOT A BOT FACT
+**Both Fable 5 and Opus 5 refused messages in the s55 transcript today with
+`Details: [cyber]`** (req_011CeHeA2yaoX8ad5ifQU13R · req_011CeHfYKe…YyMzafi5uh).
+Model-side safeguard on CONVERSATION CONTENT; **switching models did not help**, and
+nothing in the repo causes or cures it (no PreToolUse/PostToolUse hooks exist; no model
+constraint in `.claude/settings*.json` or `tools/`). Plausible input: this project's house
+vocabulary (exploit / weapon / kidnap / poisoning / crash-induction) piled up over an
+11-hour transcript, describing what is really sandboxed bot-vs-bot competition play.
+**⇒ BOOT FRESH, do not resume that transcript. Describe the work in plain game terms
+because that is MORE ACCURATE. Send `/feedback` with the request IDs.** Do NOT try to
+engineer text past a safety classifier — that is not the guidance.
+
+## THE SLOT — UNTOUCHED THIS SESSION. x3r0's **v176 "Mjolnir rotfix w77"** holds
+(11:04Z wire read: rating **1797**, rank **#21**, 1605 matches). NO submit, NO activation,
+NO rated exposure by this lane all session. Rollback target if ever needed: v176 by integer.
+CONTROL = `bots/_v542wave` (unchanged). **LINE HEAD = `bots/_v622nestfall`** (main.py md5
+`de4c9af07a80de277f411aeccebfc7a6`), = v620 + `SK_NEST_EXHAUST_PB` ON.
+
+## WHAT s55 SETTLED
+* **THE SITELESS QUESTION IS CLOSED, and it corrected BOTH prior sessions.** The 648 NOSITE
+  rounds are genuine siting refusals, **100% concentrated in 2 of 30 F1 cells** (icefloe_seatB
+  383, paths_seatA 265 — both defeats, crater maps); v620's "site-limited chassis" was a
+  2-cell phenomenon wearing a global mean, and **v621's "the scan never refuses" is itself
+  refuted — its probe set had no icefloe cell and the wrong seat for paths.**
+  → `docs/research/DIAG-siteless-decomposition-2026-08-22.md`.
+* **v622 ADOPTED on deterministic attribution:** F1 14→15/30 with 28/30 cells turn-identical,
+  **icefloe_seatB r698 loss → WIN r437**; F2 8→8/30 non-regressing.
+  → `docs/research/BUILD-REPORT-v622nestfall-2026-08-22.md`.
+* **POWERED READ — NO LEVEL CLAIM (the pre-registered honest branch).** n=900×3:
+  v622−ctrl **+1.67pp** [−2.71,+6.05], but **v622−ctrl_dup = +0.00pp exactly** — control
+  choice moves the answer more than the candidate effect. Tapes `scratchpad/s55_power/grid/`.
+* **FIRST-CONTACT MECHANISM VERDICTS TYPED** (tail 10:18:50Z), off research's decode:
+  kladde **PASS** on the registered reach+first-damage bar (31.1→88.0%, excludes zero;
+  seat-B-only + MAP-cluster caveats carried); mirror **PARTIAL** — and **the s54 HANDOVER's
+  "first game ever taken off BC's doctrine" is RE-ATTRIBUTED to a crash cascade**, honest
+  mirror score **0 damage-kills in 20**; Pivot = best answer latency of the set, worst
+  lethality. **THE FIELD-STATE SENTENCE: WE NOW ARRIVE, WE DO NOT FINISH** (~200 of the 500
+  damage needed, everywhere; killer = enemy forward sentinel in 63/63 losses).
+* **KILL_TARGET RE-ANCHOR — MY RECOMMENDATION IS *DO NOT MOVE THE NUMBERS*** (pending
+  Magnus): this data measures a bot that cannot yet convert, so anchoring a kill target on it
+  would encode a capability gap. Adopt **conversion** as the graded bar instead (damage-to-500
+  share · forward-turret median life · answer-kill rate); r300 guard unchanged.
+
+## THE SUCCESSOR'S QUEUE (priority order)
+1. **v623 — THE WELDED HEALGUARD, the cheapest conversion lever on the board.**
+   `_attack_enemy_core`'s v603 healing-race guard is gated `SK_CAGE_CEIL and
+   SK_CORE_PECK_HEALGUARD` with **`SK_CAGE_CEIL = False`** (`sk_maps.py:182`) — so the
+   shipped core peck has NO heal-race check, the exact hazard its own comment prices
+   (`sk_roles.py:5150`). Fix the weld; do NOT un-ban anything (the verb is LIVE — see the
+   correction below). Research's dose: our core damage = sentinel 91.4% / **builder melee
+   8.6%**, verb fires 12/65 games, **Pivot 0/20**; two Skalman games park 200-241 rounds
+   adjacent without pecking. **Open tree questions, mine not research's: which role parks,
+   and why Pivot never fires the verb.**
+2. **CRASHREP-BC — LOCKED AND HELD, not cancelled.** `docs/prereg/PREREG-LEG-CRASHREP-BC-2026-08-22.md`,
+   **PREREG_CHECK: OK**, lock commit `b878ecf0d` (the two-clock anchor). One 5-fire window,
+   hand-typed CLI, 5 explicit `--map midgard`. **Held because an activation window must not
+   open while the session may change models mid-flight** (a switch between activation and
+   restore orphans the restore). Note its own TARGET BAND: **reachable NO** — the value is
+   class knowledge, and it is the most `[cyber]`-shaped work on the board.
+3. **The conversion front generally** — the decode's own open question: band-only siting
+   delivers 198-243 and dies at median life 9-14. **COPY 5 was copied from the wrong ERA:**
+   live BC plants 73.2% point-blank behind a 69.2% home-clearance verb; we plant 0%
+   point-blank behind 20.8-37.6% clearance. The gap is the CLEARANCE VERB, not more band
+   discipline.
+4. **Wrap debts: `scratchpad/s55_wrap_debts.md`** — incl. the **weld-pattern AST sweep** (#5)
+   and the audit's escalation: the audit_trigger/results.tsv decision-surface debt has now
+   survived TWO wrap cycles (`docs/workflow-analysis/AUDIT-2026-08-22-s55-boot-fire.md`).
+
+## ⛔ CORRECTIONS A SUCCESSOR MUST NOT RE-INHERIT
+* **#119 ("we never attack the enemy core") IS WITHDRAWN — the verb is LIVE.** `_peck_priority`
+  has NINE call sites (3 leave CORE on the ladder) and `_attack_enemy_core` pecks it directly;
+  the 0-attacks observation was **Mjolnir's** behaviour, not ours. **My "verified in code" was
+  not independent — I re-ran the claimant's own incomplete grep.**
+* **A verification that reuses the claimant's method is agreement, not verification** — three
+  instances in s55. Re-derive a PATTERN claim by copying the pattern from its SOURCE FILE.
+* **There is NO `audit_trigger` fable-blindness defect** — that claim was published by me and
+  refuted on re-derivation (the full pattern has two model-agnostic alternatives).
+
+## STATE / WAKE PATHS
+All four watchers + keeper + auto_gate + corefill_forever + fleet_dispatch alive at wrap
+(corefill idle by design). ws1/ws2 **free** (the powered grid completed and cleaned).
+**NO agents of this session survive it** — all landed and relayed. **NOTHING WAKES A HUMAN.**
+Research + side lane were pinged at this wrap per the standing rule; their reboot states
+follow in the tail.
+
+## ===== ARCHIVE MARKER: everything below predates s55's wrap =====
+
 # ===== s54 WRAP (builder, 2026-08-22 ~09:4xZ; Magnus called it) =====
 
 ## ⭐⭐⭐ THE HEADLINE: SKALMAN WENT FROM FOUNDING TO FIRST CONTACT IN ONE SESSION.

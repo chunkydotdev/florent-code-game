@@ -1,0 +1,16 @@
+Update available: 2.3.6 -> 2.3.9. Run: pip install --upgrade fcode
+Running match: opp_v542wave_noiseoff vs arm_pb_clean
+  Map: longhouse.map26  Seed: 7  Replay: 
+scratchpad/s55_siteless/t_pb_f1/longhouse_seatB.replay26  TLE: 10ms
+Completed turn 0
+Completed turn 100
+Completed turn 200
+Replay written to scratchpad/s55_siteless/t_pb_f1/longhouse_seatB.replay26
+
+  Winner: opp_v542wave_noiseoff  (Core destroyed, turn 209)
+
+               opp_v542wave_noiseoff     arm_pb_clean  
+  Titanium            25 (790 mined)    68 (60 mined)  
+  Units                            7                8  
+  Buildings                       31               19  
+

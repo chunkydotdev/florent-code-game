@@ -1,0 +1,23 @@
+Update available: 2.3.6 -> 2.3.9. Run: pip install --upgrade fcode
+Running match: opp_mjolnir_noiseoff vs arm_pb_clean
+  Map: jotunheim.map26  Seed: 11  Replay: 
+scratchpad/s55_siteless/t_pb_f2/jotunheim_seatB.replay26  TLE: 10ms
+Completed turn 0
+Completed turn 100
+Completed turn 200
+Completed turn 300
+Completed turn 400
+Completed turn 500
+Completed turn 600
+Completed turn 700
+Completed turn 800
+Completed turn 900
+Replay written to scratchpad/s55_siteless/t_pb_f2/jotunheim_seatB.replay26
+
+  Winner: opp_mjolnir_noiseoff  (Harvesters (tiebreak), turn 1000)
+
+               opp_mjolnir_noiseoff     arm_pb_clean  
+  Titanium             82 (0 mined)    143 (0 mined)  
+  Units                           9                6  
+  Buildings                      24               18  
+

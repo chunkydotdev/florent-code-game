@@ -1,0 +1,15 @@
+Update available: 2.3.6 -> 2.3.9. Run: pip install --upgrade fcode
+Running match: opp_v542wave_noiseoff vs arm_pb_clean
+  Map: skald.map26  Seed: 7  Replay: 
+scratchpad/s55_siteless/t_pb_f1/skald_seatB.replay26  TLE: 10ms
+Completed turn 0
+Completed turn 100
+Replay written to scratchpad/s55_siteless/t_pb_f1/skald_seatB.replay26
+
+  Winner: arm_pb_clean  (Core destroyed, turn 119)
+
+               opp_v542wave_noiseoff     arm_pb_clean  
+  Titanium             6 (180 mined)    0 (540 mined)  
+  Units                            6                8  
+  Buildings                        9               13  
+

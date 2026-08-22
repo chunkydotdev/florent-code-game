@@ -1,0 +1,15 @@
+Update available: 2.3.6 -> 2.3.9. Run: pip install --upgrade fcode
+Running match: arm_pb_clean vs opp_v542wave_noiseoff
+  Map: icefloe.map26  Seed: 7  Replay: 
+scratchpad/s55_siteless/t_pb_f1/icefloe_seatA.replay26  TLE: 10ms
+Completed turn 0
+Completed turn 100
+Replay written to scratchpad/s55_siteless/t_pb_f1/icefloe_seatA.replay26
+
+  Winner: arm_pb_clean  (Core destroyed, turn 137)
+
+                 arm_pb_clean    opp_v542wave_noiseoff  
+  Titanium     22 (460 mined)           55 (220 mined)  
+  Units                     7                        2  
+  Buildings                21                       34  
+

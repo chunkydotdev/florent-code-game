@@ -1,0 +1,15 @@
+Update available: 2.3.6 -> 2.3.9. Run: pip install --upgrade fcode
+Running match: arm_pb_clean vs opp_mjolnir_noiseoff
+  Map: stavkirke.map26  Seed: 11  Replay: 
+scratchpad/s55_siteless/t_pb_f2/stavkirke_seatA.replay26  TLE: 10ms
+Completed turn 0
+Completed turn 100
+Replay written to scratchpad/s55_siteless/t_pb_f2/stavkirke_seatA.replay26
+
+  Winner: opp_mjolnir_noiseoff  (Core destroyed, turn 172)
+
+                  arm_pb_clean    opp_mjolnir_noiseoff  
+  Titanium     190 (130 mined)          22 (630 mined)  
+  Units                      7                       9  
+  Buildings                 18                      27  
+

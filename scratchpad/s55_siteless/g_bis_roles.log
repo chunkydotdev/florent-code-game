@@ -1,0 +1,39 @@
+Update available: 2.3.6 -> 2.3.9. Run: pip install --upgrade fcode
+Running match: opp_v542wave_noiseoff vs bis_roles
+  Map: icefloe.map26  Seed: 7  Replay: /dev/null  TLE: 10ms
+Completed turn 0
+Completed turn 100
+Completed turn 200
+Traceback (most recent call last):
+  File "/Users/junghard/Projects/Work/florent-code-game/scratchpad/s55_siteless/bis_roles/main.py", line 1000, in run
+    self._dispatch(ct)
+    ~~~~~~~~~~~~~~^^^^
+  File "/Users/junghard/Projects/Work/florent-code-game/scratchpad/s55_siteless/bis_roles/main.py", line 1013, in _dispatch
+    self._builder(ct)
+    ~~~~~~~~~~~~~^^^^
+  File "/Users/junghard/Projects/Work/florent-code-game/scratchpad/s55_siteless/bis_roles/sk_roles.py", line 320, in _builder
+    self._siege_engineer(ct, p, rnd)
+    ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^
+  File "/Users/junghard/Projects/Work/florent-code-game/scratchpad/s55_siteless/bis_roles/sk_roles.py", line 5460, in _siege_engineer
+    self.nest_site = self._pick_nest(ct, p, rnd)
+                     ~~~~~~~~~~~~~~~^^^^^^^^^^^^
+  File "/Users/junghard/Projects/Work/florent-code-game/scratchpad/s55_siteless/bis_roles/sk_roles.py", line 5948, in _pick_nest
+    if (site is None and (SK_TUBE_FLOOR or SK_GAP_RELAX_SOLO)
+                                           ^^^^^^^^^^^^^^^^^
+NameError: name 'SK_GAP_RELAX_SOLO' is not defined
+Completed turn 300
+Completed turn 400
+Completed turn 500
+Completed turn 600
+Completed turn 700
+Completed turn 800
+Completed turn 900
+Replay written to /dev/null
+
+  Winner: opp_v542wave_noiseoff  (Core destroyed, turn 952)
+
+               opp_v542wave_noiseoff         bis_roles  
+  Titanium            96 (780 mined)    1037 (0 mined)  
+  Units                            3                 7  
+  Buildings                       88                23  
+

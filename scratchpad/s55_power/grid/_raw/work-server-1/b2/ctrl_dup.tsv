@@ -1,0 +1,91 @@
+tag	map	seed	seat	ours	winner	cond	turn	tracebacks	ours_mined	opp_mined
+auroraveil_s904006_A	auroraveil	904006	A	OPP	_v542wave	Core destroyed	461	0	1110	3340
+auroraveil_s904006_B	auroraveil	904006	B	OPP	_v542wave	Core destroyed	171	0	120	530
+auroraveil_s904007_A	auroraveil	904007	A	OPP	_v542wave	Core destroyed	422	0	1010	3280
+auroraveil_s904007_B	auroraveil	904007	B	OPP	_v542wave	Core destroyed	297	0	0	350
+auroraveil_s904008_A	auroraveil	904008	A	OPP	_v542wave	Core destroyed	461	0	1110	3340
+auroraveil_s904008_B	auroraveil	904008	B	OPP	_v542wave	Core destroyed	175	0	0	810
+bifrost_s904006_A	bifrost	904006	A	OPP	_v542wave	Core destroyed	448	0	1550	2150
+bifrost_s904006_B	bifrost	904006	B	OPP	_v542wave	Core destroyed	481	0	80	2360
+bifrost_s904007_A	bifrost	904007	A	OPP	_v542wave	Core destroyed	868	0	3410	4250
+bifrost_s904007_B	bifrost	904007	B	US	ctrl_dup	Core destroyed	294	0	1240	1420
+bifrost_s904008_A	bifrost	904008	A	OPP	_v542wave	Core destroyed	158	0	370	600
+bifrost_s904008_B	bifrost	904008	B	US	ctrl_dup	Titanium collected (tiebreak)	1000	0	2470	200
+fimbulwinter_s904006_A	fimbulwinter	904006	A	US	ctrl_dup	Core destroyed	149	0	660	530
+fimbulwinter_s904006_B	fimbulwinter	904006	B	OPP	_v542wave	Core destroyed	187	0	870	850
+fimbulwinter_s904007_A	fimbulwinter	904007	A	US	ctrl_dup	Core destroyed	118	0	500	270
+fimbulwinter_s904007_B	fimbulwinter	904007	B	US	ctrl_dup	Core destroyed	169	0	780	750
+fimbulwinter_s904008_A	fimbulwinter	904008	A	US	ctrl_dup	Core destroyed	162	0	720	710
+fimbulwinter_s904008_B	fimbulwinter	904008	B	US	ctrl_dup	Core destroyed	151	0	700	250
+glacierkeep_s904006_A	glacierkeep	904006	A	US	ctrl_dup	Core destroyed	201	0	500	0
+glacierkeep_s904006_B	glacierkeep	904006	B	OPP	_v542wave	Core destroyed	176	0	0	580
+glacierkeep_s904007_A	glacierkeep	904007	A	US	ctrl_dup	Core destroyed	201	0	500	0
+glacierkeep_s904007_B	glacierkeep	904007	B	OPP	_v542wave	Core destroyed	223	0	0	880
+glacierkeep_s904008_A	glacierkeep	904008	A	US	ctrl_dup	Core destroyed	201	0	500	0
+glacierkeep_s904008_B	glacierkeep	904008	B	OPP	_v542wave	Core destroyed	223	0	0	880
+helheim_s904006_A	helheim	904006	A	OPP	_v542wave	Core destroyed	352	0	660	2460
+helheim_s904006_B	helheim	904006	B	OPP	_v542wave	Core destroyed	409	0	1000	1030
+helheim_s904007_A	helheim	904007	A	OPP	_v542wave	Core destroyed	127	0	300	600
+helheim_s904007_B	helheim	904007	B	OPP	_v542wave	Core destroyed	307	0	1730	1500
+helheim_s904008_A	helheim	904008	A	US	ctrl_dup	Core destroyed	190	0	770	190
+helheim_s904008_B	helheim	904008	B	OPP	_v542wave	Titanium collected (tiebreak)	1000	0	2920	7240
+holmgang_s904006_A	holmgang	904006	A	OPP	_v542wave	Core destroyed	329	0	670	1930
+holmgang_s904006_B	holmgang	904006	B	OPP	_v542wave	Core destroyed	213	0	170	240
+holmgang_s904007_A	holmgang	904007	A	OPP	_v542wave	Core destroyed	152	0	0	710
+holmgang_s904007_B	holmgang	904007	B	OPP	_v542wave	Core destroyed	232	0	150	560
+holmgang_s904008_A	holmgang	904008	A	OPP	_v542wave	Core destroyed	152	0	0	710
+holmgang_s904008_B	holmgang	904008	B	US	ctrl_dup	Core destroyed	317	0	810	680
+icefloe_s904006_A	icefloe	904006	A	US	ctrl_dup	Core destroyed	137	0	460	220
+icefloe_s904006_B	icefloe	904006	B	OPP	_v542wave	Core destroyed	194	0	0	2260
+icefloe_s904007_A	icefloe	904007	A	US	ctrl_dup	Core destroyed	137	0	460	220
+icefloe_s904007_B	icefloe	904007	B	US	ctrl_dup	Core destroyed	481	0	0	780
+icefloe_s904008_A	icefloe	904008	A	US	ctrl_dup	Core destroyed	137	0	460	220
+icefloe_s904008_B	icefloe	904008	B	OPP	_v542wave	Core destroyed	698	0	0	780
+jotunheim_s904006_A	jotunheim	904006	A	US	ctrl_dup	Titanium collected (tiebreak)	1000	0	120	0
+jotunheim_s904006_B	jotunheim	904006	B	US	ctrl_dup	Core destroyed	185	0	720	0
+jotunheim_s904007_A	jotunheim	904007	A	US	ctrl_dup	Titanium collected (tiebreak)	273	0	120	0
+jotunheim_s904007_B	jotunheim	904007	B	OPP	_v542wave	Core destroyed	173	0	0	0
+jotunheim_s904008_A	jotunheim	904008	A	US	ctrl_dup	Titanium collected (tiebreak)	1000	0	120	0
+jotunheim_s904008_B	jotunheim	904008	B	OPP	_v542wave	Core destroyed	253	0	0	60
+longhouse_s904006_A	longhouse	904006	A	OPP	_v542wave	Core destroyed	124	0	180	880
+longhouse_s904006_B	longhouse	904006	B	OPP	_v542wave	Core destroyed	204	0	920	770
+longhouse_s904007_A	longhouse	904007	A	OPP	_v542wave	Core destroyed	134	0	60	840
+longhouse_s904007_B	longhouse	904007	B	OPP	_v542wave	Core destroyed	204	0	920	770
+longhouse_s904008_A	longhouse	904008	A	OPP	_v542wave	Core destroyed	127	0	160	720
+longhouse_s904008_B	longhouse	904008	B	US	ctrl_dup	Core destroyed	293	0	60	140
+midgard_s904006_A	midgard	904006	A	OPP	_v542wave	Core destroyed	96	0	340	910
+midgard_s904006_B	midgard	904006	B	OPP	_v542wave	Core destroyed	70	0	320	490
+midgard_s904007_A	midgard	904007	A	OPP	_v542wave	Core destroyed	96	0	340	910
+midgard_s904007_B	midgard	904007	B	OPP	_v542wave	Core destroyed	107	0	430	920
+midgard_s904008_A	midgard	904008	A	OPP	_v542wave	Core destroyed	75	0	300	620
+midgard_s904008_B	midgard	904008	B	OPP	_v542wave	Core destroyed	106	0	360	980
+paths_s904006_A	paths	904006	A	US	ctrl_dup	Core destroyed	409	0	1000	2490
+paths_s904006_B	paths	904006	B	OPP	_v542wave	Core destroyed	143	0	330	660
+paths_s904007_A	paths	904007	A	OPP	_v542wave	Core destroyed	147	0	350	430
+paths_s904007_B	paths	904007	B	OPP	_v542wave	Core destroyed	161	0	380	730
+paths_s904008_A	paths	904008	A	OPP	_v542wave	Core destroyed	341	0	830	480
+paths_s904008_B	paths	904008	B	OPP	_v542wave	Core destroyed	120	0	280	540
+skald_s904006_A	skald	904006	A	OPP	_v542wave	Core destroyed	140	0	550	860
+skald_s904006_B	skald	904006	B	US	ctrl_dup	Core destroyed	173	0	800	490
+skald_s904007_A	skald	904007	A	US	ctrl_dup	Core destroyed	186	0	1440	1000
+skald_s904007_B	skald	904007	B	US	ctrl_dup	Core destroyed	193	0	920	900
+skald_s904008_A	skald	904008	A	US	ctrl_dup	Core destroyed	189	0	1300	1250
+skald_s904008_B	skald	904008	B	US	ctrl_dup	Core destroyed	119	0	540	180
+stavkirke_s904006_A	stavkirke	904006	A	OPP	_v542wave	Titanium collected (tiebreak)	1000	0	330	2380
+stavkirke_s904006_B	stavkirke	904006	B	OPP	_v542wave	Core destroyed	146	0	0	620
+stavkirke_s904007_A	stavkirke	904007	A	OPP	_v542wave	Core destroyed	325	0	780	370
+stavkirke_s904007_B	stavkirke	904007	B	OPP	_v542wave	Core destroyed	158	0	90	680
+stavkirke_s904008_A	stavkirke	904008	A	OPP	_v542wave	Core destroyed	506	0	2350	540
+stavkirke_s904008_B	stavkirke	904008	B	OPP	_v542wave	Core destroyed	249	0	120	0
+valkyrie_s904006_A	valkyrie	904006	A	OPP	_v542wave	Core destroyed	108	0	190	460
+valkyrie_s904006_B	valkyrie	904006	B	OPP	_v542wave	Core destroyed	230	0	750	1460
+valkyrie_s904007_A	valkyrie	904007	A	OPP	_v542wave	Core destroyed	108	0	190	460
+valkyrie_s904007_B	valkyrie	904007	B	OPP	_v542wave	Core destroyed	287	0	610	1880
+valkyrie_s904008_A	valkyrie	904008	A	OPP	_v542wave	Core destroyed	108	0	190	460
+valkyrie_s904008_B	valkyrie	904008	B	OPP	_v542wave	Core destroyed	287	0	610	1880
+yggdrasil_s904006_A	yggdrasil	904006	A	OPP	_v542wave	Core destroyed	132	0	50	300
+yggdrasil_s904006_B	yggdrasil	904006	B	US	ctrl_dup	Core destroyed	345	0	830	830
+yggdrasil_s904007_A	yggdrasil	904007	A	OPP	_v542wave	Titanium collected (tiebreak)	1000	0	50	440
+yggdrasil_s904007_B	yggdrasil	904007	B	US	ctrl_dup	Core destroyed	196	0	460	130
+yggdrasil_s904008_A	yggdrasil	904008	A	OPP	_v542wave	Core destroyed	109	0	50	240
+yggdrasil_s904008_B	yggdrasil	904008	B	US	ctrl_dup	Core destroyed	325	0	780	780

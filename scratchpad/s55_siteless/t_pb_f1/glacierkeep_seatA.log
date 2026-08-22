@@ -1,0 +1,16 @@
+Update available: 2.3.6 -> 2.3.9. Run: pip install --upgrade fcode
+Running match: arm_pb_clean vs opp_v542wave_noiseoff
+  Map: glacierkeep.map26  Seed: 7  Replay: 
+scratchpad/s55_siteless/t_pb_f1/glacierkeep_seatA.replay26  TLE: 10ms
+Completed turn 0
+Completed turn 100
+Completed turn 200
+Replay written to scratchpad/s55_siteless/t_pb_f1/glacierkeep_seatA.replay26
+
+  Winner: arm_pb_clean  (Core destroyed, turn 201)
+
+                arm_pb_clean    opp_v542wave_noiseoff  
+  Titanium     1 (500 mined)             24 (0 mined)  
+  Units                    8                        4  
+  Buildings               40                       45  
+

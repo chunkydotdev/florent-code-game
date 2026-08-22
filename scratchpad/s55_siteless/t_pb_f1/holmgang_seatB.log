@@ -1,0 +1,19 @@
+Update available: 2.3.6 -> 2.3.9. Run: pip install --upgrade fcode
+Running match: opp_v542wave_noiseoff vs arm_pb_clean
+  Map: holmgang.map26  Seed: 7  Replay: 
+scratchpad/s55_siteless/t_pb_f1/holmgang_seatB.replay26  TLE: 10ms
+Completed turn 0
+Completed turn 100
+Completed turn 200
+Completed turn 300
+Completed turn 400
+Completed turn 500
+Replay written to scratchpad/s55_siteless/t_pb_f1/holmgang_seatB.replay26
+
+  Winner: arm_pb_clean  (Core destroyed, turn 585)
+
+               opp_v542wave_noiseoff        arm_pb_clean  
+  Titanium            180 (60 mined)    537 (1780 mined)  
+  Units                            7                   8  
+  Buildings                        9                  11  
+

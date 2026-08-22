@@ -1,0 +1,18 @@
+Update available: 2.3.6 -> 2.3.9. Run: pip install --upgrade fcode
+Running match: opp_mjolnir_noiseoff vs arm_pb_clean
+  Map: yggdrasil.map26  Seed: 11  Replay: 
+scratchpad/s55_siteless/t_pb_f2/yggdrasil_seatB.replay26  TLE: 10ms
+Completed turn 0
+Completed turn 100
+Completed turn 200
+Completed turn 300
+Completed turn 400
+Replay written to scratchpad/s55_siteless/t_pb_f2/yggdrasil_seatB.replay26
+
+  Winner: opp_mjolnir_noiseoff  (Core destroyed, turn 417)
+
+               opp_mjolnir_noiseoff        arm_pb_clean  
+  Titanium          108 (930 mined)    434 (1010 mined)  
+  Units                          11                   7  
+  Buildings                      31                  12  
+
