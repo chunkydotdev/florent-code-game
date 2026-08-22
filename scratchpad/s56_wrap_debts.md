@@ -39,3 +39,6 @@ Game context: all items concern in-game Florent Code League tooling.
    post-first-death rounds or state why not); (c) operational primary is
    candidate−dup with its own interval (adopted mid-session, encode in the
    template).
+   (d) two-opponent minimum in powered registrations for this line
+   (Mjolnir-class + benchmark-class) — opponent-conditionality measured, not
+   discovered post-hoc (s56 benchmark readout).
