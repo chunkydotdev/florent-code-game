@@ -145,6 +145,10 @@ from sk_maps import (
     SK_IDLE_ACT_ALL,
     # --- v632 HEIMDALL PLANK 2 (THE DEMOLITION SWEEP) ----------------------
     SK_DEMOLISH, SK_DEMOLISH_CAP, SK_DEMOLISH_DSQ, SK_DEMOLISH_WALK_DSQ,
+    # --- v632 HEIMDALL PLANK 3 (THE TURRET RING) ---------------------------
+    SK_FORT_RING, SK_FORT_RING_GUNNERS, SK_FORT_RING_SENT,
+    SK_FORT_RING_WINDOW, SK_FORT_RING_RESERVE, SK_FORT_RING_LANE,
+    SK_FORT_RING_SENT_DSQ,
 )
 
 # --- v611: the 8 neighbours, for a LAUNCHER's pickup disc (d^2 <= 2) --------
@@ -1376,6 +1380,27 @@ class RolesMixin:
             # every one of those is a body or a core about to die, and a
             # building that is one round late is still a building.
             if self._home_launcher_action(ct, p, rnd):
+                return
+            # ⭐⭐ v632 HEIMDALL PLANK 3 -- THE TURRET RING (SK_FORT_RING), THE
+            # ACTION HALF.  BELOW EVERY HEAL RUNG AND EVERY BODY-ANSWER RUNG,
+            # ABOVE THE ECONOMY -- and the placement is the plank's own claim,
+            # not a convenience.  The prediction study's metronome (banked s57,
+            # coordination tail ~20:2xZ) is that their ladder lands r1-r5, the
+            # first plant in OUR half at median r5 and the collar at median
+            # r11; a turret bought after that has missed the thing it answers,
+            # exactly as `_home_launcher_action` above argues for itself.  It
+            # sits BELOW the heals for the reason every home rung in this tree
+            # does: a body or a core about to die outranks a building that is
+            # one round late, and the v630/p11 finding is that a keeper which
+            # spends its turn while its own core bleeds loses the game the
+            # priority ladder was supposed to win.
+            # ⛔ DISCLOSED DIFFERENCE FROM SK_HOME_GUNNER's placement:
+            # `_home_gun_action` sits BELOW the economy (under the harvester
+            # and the seat claim).  This plank is above it, which is the one
+            # ordering change plank 3 makes, and it is what the R2 reserve
+            # prices -- the ring may take a keeper turn the belt wanted, but it
+            # may never take the last SK_FORT_RING_RESERVE titanium.
+            if SK_FORT_RING and self._fort_ring_action(ct, p, rnd):
                 return
             # ⭐ v610 PLANK 2, THE ACTION HALF.  While a chain is ONE tile from
             # delivering, that conveyor outranks a new harvester: a harvester
@@ -2729,6 +2754,404 @@ class RolesMixin:
         self.home_gun_walks += 1
         return best[1]
 
+    # ==================================================================
+    # v632 HEIMDALL PLANK 3 -- THE TURRET RING (SK_FORT_RING)
+    # ==================================================================
+    # GAME CONTEXT: in-engine purchases for the Florent Code League, a
+    # sandboxed bot-vs-bot competition.  "raider"/"intruder" = a competing
+    # bot's builder piece standing inside our own core annulus.
+    #
+    # DOCTRINE: PROGRAMME.md `CITADEL_WEAPON: turret_ring` (Magnus s57
+    # 2026-08-22; the launcher taxi was put to him and REFUSED).  Design study
+    # `docs/research/DESIGN-fortress-heimdall-2026-08-22.md` §5b: the ring is
+    # THREE turrets covering LANES, not a blanket over Chebyshev-3 -- one
+    # SENTINEL on the core-to-core axis lane and SK_FORT_RING_GUNNERS flank
+    # gunners.  §5a's machinery (`_home_gun_window/_score/_action/_walk`) is
+    # REUSED here rather than re-derived; SK_HOME_GUNNER's own flag stays
+    # False so its measured history stays attached to its own arm.
+    #
+    # ⛔ THE BUILDER IS A HOME BODY.  The study's "engineer's fortress duty" is
+    # NOT re-homed in this tree (that is plank 1's family and it is parked), so
+    # the ring is bought by the HOME KEEPER, whose leash (SK_KEEPER_LEASH,
+    # ADOPTED) already holds it near the core -- and every ring site is inside
+    # the apron / SK_FORT_RING_SENT_DSQ of our own footprint, i.e. inside the
+    # leash's own fence.  The two do not fight; disclosed in the build report.
+
+    def _fort_ring_next(self):
+        """What the ring still owes, in BUY ORDER -- axis SENTINEL first.
+
+        Sentinel first because it is the highest-value single turret in the
+        design (study §5b item 1): its site is fixed AND the approach direction
+        is fixed, its line IGNORES OBSTACLES so our own apron mesh cannot block
+        it, and it reaches r^2=32 where a gunner reaches 13.  It is also the
+        one that cannot be re-aimed later -- a sentinel cannot rotate -- so it
+        should be placed while the lane is still empty.
+        """
+        if self.fort_sents < SK_FORT_RING_SENT:
+            return EntityType.SENTINEL
+        if self.fort_guns < SK_FORT_RING_GUNNERS:
+            return EntityType.GUNNER
+        return None
+
+    def _fort_ring_window(self, rnd):
+        """The buy window, as ONE predicate so the action and the walk cannot
+        disagree -- the launcher arm's lesson ("do not walk at a buy we cannot
+        make"), applied before it can bite.
+        """
+        if not SK_FORT_RING or self.core is None:
+            return False
+        lo, hi = SK_FORT_RING_WINDOW
+        if rnd < lo or rnd > hi:
+            return False
+        return self._fort_ring_next() is not None
+
+    def _fort_afford(self, ct, kind):
+        """⛔ THE R2 DEFENCE (study §7 R2).  Scale cost is REAL on this plank --
+        it is the first PURCHASING plank of the Heimdall line and every turret
+        is +20% on the ONE GLOBAL ADDITIVE factor, inflating every later build
+        of every type.  Three planks have died to that surcharge landing before
+        the economy could pay it, so no ring turret is ever bought out of the
+        last SK_FORT_RING_RESERVE titanium.
+        """
+        try:
+            if kind == EntityType.SENTINEL:
+                cost = ct.get_sentinel_cost()
+            else:
+                cost = ct.get_gunner_cost()
+            return ct.get_global_resources() >= cost + SK_FORT_RING_RESERVE
+        except Exception:
+            return False
+
+    def _fort_axis(self, q):
+        """(signed cross, |axis|^2, forward dot) of tile q about the
+        our-core -> enemy-core axis, or None if the axis is undefined.
+
+        Integer-exact: the perpendicular distance of q from the lane is
+        |cross| / sqrt(d2), so a lane budget of L tiles is the integer test
+        `cross*cross <= L*L*d2` with no floating point anywhere.  The SIGN of
+        the cross is the FLANK, which is what keeps the two gunners on
+        opposite sides of the corridor (Magnus's ring covers the axis
+        symmetrically -- no favoured flank).
+        """
+        if self.core is None or self.enemy is None:
+            return None
+        ax = self.enemy.x - self.core.x
+        ay = self.enemy.y - self.core.y
+        if ax == 0 and ay == 0:
+            return None
+        qx = q.x - self.core.x
+        qy = q.y - self.core.y
+        return (qx * ay - qy * ax, ax * ax + ay * ay, qx * ax + qy * ay)
+
+    def _fort_on_lane(self, q):
+        """True if q sits within SK_FORT_RING_LANE tiles of the axis lane."""
+        a = self._fort_axis(q)
+        if a is None:
+            return False
+        cross, d2, _fwd = a
+        return cross * cross <= SK_FORT_RING_LANE * SK_FORT_RING_LANE * d2
+
+    def _fort_lane_cover(self, q, face):
+        """Lane tiles a SENTINEL at q facing `face` would sweep.
+
+        ⛔ A RAY, NOT A DISC -- `_ray_cover`'s rule, with two differences that
+        are both engine facts rather than choices: the reach is a SENTINEL's
+        r^2=32 (not a gunner's 13), and the walk does NOT stop at an occupied
+        tile because a sentinel's single-tile-wide line IGNORES OBSTACLES.
+        Only in-bounds ends it.  A tile counts when it is on the lane AND
+        forward of our own core, i.e. in the corridor the raider walks in
+        along -- a ray pointing back over our own half sweeps nothing.
+        """
+        dx, dy = face.delta()
+        if dx == 0 and dy == 0:
+            return 0
+        n = 0
+        k = 1
+        while k * k * (dx * dx + dy * dy) <= 32:
+            x = q.x + dx * k
+            y = q.y + dy * k
+            if not self.ib(x, y):
+                break
+            r = Position(x, y)
+            a = self._fort_axis(r)
+            if a is not None:
+                cross, d2, fwd = a
+                if (fwd > 0
+                        and cross * cross <= SK_FORT_RING_LANE * SK_FORT_RING_LANE * d2):
+                    n += 1
+            k += 1
+        return n
+
+    def _fort_sent_score(self, ct, q):
+        """(score, facing) for THE AXIS SENTINEL at q, or (None, None).
+
+        The site must sit ON the lane and within SK_FORT_RING_SENT_DSQ of our
+        own 2x2 footprint; the FACING is chosen as the one whose ray sweeps the
+        most corridor.  A sentinel CANNOT ROTATE (`_rotate_toward` is
+        gunner-only, COPY 2's asymmetry seen from our own side), so this facing
+        is permanent for the rest of the match and is worth choosing properly.
+        """
+        if self.core is None or self.enemy is None:
+            return None, None
+        a = self._fort_axis(q)
+        if a is None:
+            return None, None
+        cross, d2, _fwd = a
+        if cross * cross > SK_FORT_RING_LANE * SK_FORT_RING_LANE * d2:
+            return None, None               # off the lane
+        if dsq_core(q, self.core) > SK_FORT_RING_SENT_DSQ:
+            return None, None               # outside the citadel neighbourhood
+        best = None
+        for face in DIRECTIONS:
+            if face == Direction.CENTRE:
+                continue
+            n = self._fort_lane_cover(q, face)
+            if n <= 0:
+                continue                    # the plank IS the corridor sweep
+            # Tie-break toward the enemy core: of two facings that sweep the
+            # same amount of lane, the one pointing at their half meets the
+            # raider a round earlier.  Same term as `_home_gun_score`'s.
+            dx, dy = face.delta()
+            toward = dx * (self.enemy.x - q.x) + dy * (self.enemy.y - q.y)
+            score = (n, toward)
+            if best is None or score > best[0]:
+                best = (score, face)
+        if best is None:
+            return None, None
+        # -abs(cross): of two legal sites, the one nearer the lane centre.
+        return (best[0][0], best[0][1], -abs(cross)), best[1]
+
+    def _fort_gun_score(self, ct, q, seats):
+        """(score, facing) for a FLANK GUNNER at q -- `_home_gun_score`'s
+        measured collar geometry (seats weighted 3, apron 1, enemy-approach
+        tie-break), with THE OPPOSITE-FLANK REQUIREMENT in front of it.
+
+        ⛔ THE FLANK RULE IS INERT FOR THE FIRST GUNNER by construction
+        (`self.fort_flank` is 0 until one stands), so it cannot reorder the
+        shipped scoring where there is nothing to balance against.  It binds on
+        the SECOND gunner only.
+
+        ⛔⛔ AND IT IS A REFUSAL, NOT A PREFERENCE, BECAUSE THE PREFERENCE FORM
+        WAS MEASURED AND NEVER FIRED.  The first cut scored the flank as a
+        leading tie-break term; on the 6-cell ON smoke both gunners landed on
+        the SAME side of the axis in 6 of 6 cells (icefloe/glacierkeep/
+        stavkirke/holmgang: cross signs -72/-48, -40/-32, +72/+120, -44/-58).
+        The cause is structural, not statistical: the action's candidates are
+        the keeper's FOUR cardinal neighbours, the two gunners are bought a few
+        rounds apart with the keeper in nearly the same place, so no
+        opposite-flank candidate is ever in the running to be preferred.  A
+        term that cannot fire is not an implementation of "the ring covers the
+        core-to-core axis symmetrically, no favoured flank" (Magnus's ring,
+        study §5b) -- it is a comment.  Refusing the same flank makes the WALK
+        half carry the body across the lane instead, which is what the walk is
+        for.
+        ⚠ THE COST IS DISCLOSED AND COUNTED: this can leave the ring at two
+        turrets if no opposite-flank site is ever legal, and it spends keeper
+        turns walking.  Both are measurable -- `fort_ring_bought` and
+        `fort_ring_walks` -- and the apron surrounds the footprint, so an
+        opposite-flank site with a delivery seat on its ray is the normal case
+        rather than the lucky one.  A tile exactly ON the lane (cross == 0) is
+        not the favoured flank and is allowed.
+        """
+        if self.fort_flank:
+            a = self._fort_axis(q)
+            if a is not None and a[0] != 0 and (a[0] > 0) == (self.fort_flank > 0):
+                return None, None           # the flank we already hold
+        base, face = self._home_gun_score(ct, q, seats)
+        if face is None:
+            return None, None
+        return tuple(base), face
+
+    def _fort_site_ok(self, ct, p, q, seats):
+        """The siting guards, every one of them reused from a shipped turret
+        verb rather than re-invented:
+          * NEVER ON A DELIVERY SEAT -- those eight tiles are the belt's
+            terminus; a turret on one is a permanently blocked chain, the exact
+            defect `_belt_evict` exists for (`_home_gun_action`'s rule).
+          * the tile ARBITER (`tile_owner`), so the ring cannot take a tile
+            another verb has planned.
+          * NEVER IN AN ENEMY SENTINEL'S LINE (`_on_enemy_axis`, COPY 2).
+          * THE SELF-TRAP GUARD -- two free neighbours, not one: v601's
+            measured lesson that a turret is PERMANENT and a gun taking the
+            keeper's second-to-last tile gets demolished by `_escape` at full
+            HP the next round.  Skipped when p is None (the WALK half, where
+            the builder is not yet adjacent -- the same guard set the shipped
+            `_home_gun_walk` uses).
+          * never on ORE (a harvester tile is worth more than a turret tile)
+            and never on a tile we cannot read.
+        """
+        if not self.ibp(q):
+            return False
+        if (q.x, q.y) in seats:
+            return False
+        if self.tile_owner(q) not in (OWNER_NONE, OWNER_DOOR):
+            return False
+        if self._on_enemy_axis(q):
+            return False
+        if p is not None and self.free_neighbours(ct, p, exclude=q) < 2:
+            return False
+        try:
+            if not ct.is_tile_empty(q):
+                return False
+            if ct.get_tile_env(q) == Environment.ORE_TITANIUM:
+                return False
+        except Exception:
+            return False
+        return True
+
+    def _fort_ring_action(self, ct, p, rnd):
+        """PLANK 3's ACTION half -- buy the next ring turret.  True if it took
+        the turn.  At most SK_FORT_RING_SENT + SK_FORT_RING_GUNNERS purchases
+        in a game, each inside SK_FORT_RING_WINDOW and each behind the reserve.
+        """
+        if not self._fort_ring_window(rnd):
+            return False
+        kind = self._fort_ring_next()
+        if not self._fort_afford(ct, kind):
+            return False
+        seats = self._seat_set()
+        if not seats:
+            return False
+        best = None
+        for d in CARDINALS:
+            q = p.add(d)
+            if not self._fort_site_ok(ct, p, q, seats):
+                continue
+            if kind == EntityType.SENTINEL:
+                score, face = self._fort_sent_score(ct, q)
+            else:
+                score, face = self._fort_gun_score(ct, q, seats)
+            if face is None:
+                continue
+            if best is None or score > best[0]:
+                best = (score, q, face)
+        if best is None:
+            return False
+        _score, q, face = best
+        if not self.path_arbiter_ok(ct, q, rnd):
+            return False                    # v605 FIX 1: a turret is IMPASSABLE
+        try:
+            if kind == EntityType.SENTINEL:
+                if not ct.can_build_sentinel(q, face):
+                    return False
+                ct.build_sentinel(q, face)
+            else:
+                if not ct.can_build_gunner(q, face):
+                    return False
+                ct.build_gunner(q, face)
+        except Exception:
+            return False
+        if kind == EntityType.SENTINEL:
+            self.fort_sents += 1
+        else:
+            self.fort_guns += 1
+            if not self.fort_flank:
+                a = self._fort_axis(q)
+                if a is not None and a[0] != 0:
+                    self.fort_flank = 1 if a[0] > 0 else -1
+        self.fort_ring_bought += 1
+        return True
+
+    def _fort_lane_list(self):
+        """The candidate SENTINEL tiles -- on the lane, inside
+        SK_FORT_RING_SENT_DSQ of the footprint -- cached on the core/enemy
+        anchors.  Both anchors are fixed for the match, so this is computed
+        once and is a handful of tiles: the walk is a home-lap step and never
+        a tour (the v610 finding, "the keeper's turn is the scarce resource",
+        written into the walk and not only into the action).
+        """
+        if self.core is None or self.enemy is None:
+            return ()
+        key = (self.core.x, self.core.y, self.enemy.x, self.enemy.y,
+               self.mw, self.mh)
+        if self._fort_lane_cache is not None and self._fort_lane_key == key:
+            return self._fort_lane_cache
+        r = 0
+        while (r + 1) * (r + 1) <= SK_FORT_RING_SENT_DSQ:
+            r += 1
+        foot = set(core_tiles_xy(self.core))
+        out = []
+        for x in range(self.core.x - r, self.core.x + r + 2):
+            for y in range(self.core.y - r, self.core.y + r + 2):
+                if (x, y) in foot:
+                    continue
+                if not self.ib(x, y):
+                    continue
+                q = Position(x, y)
+                if dsq_core(q, self.core) > SK_FORT_RING_SENT_DSQ:
+                    continue
+                if not self._fort_on_lane(q):
+                    continue
+                out.append((x, y))
+        self._fort_lane_cache = tuple(out)
+        self._fort_lane_key = key
+        return self._fort_lane_cache
+
+    def _fort_ring_walk(self, ct, p, rnd):
+        """PLANK 3's MOVEMENT half -- a tile from which the next ring buy is
+        legal.  Gated on the SAME window and the SAME affordability as the buy,
+        and it terminates permanently once the ring stands.
+
+        The site domain is bounded by construction: the apron for a gunner
+        (d^2 <= SK_APRON_DSQ of the footprint) and `_fort_lane_list` for the
+        sentinel (d^2 <= SK_FORT_RING_SENT_DSQ, on the lane).
+        """
+        if not self._fort_ring_window(rnd):
+            return None
+        kind = self._fort_ring_next()
+        if not self._fort_afford(ct, kind):
+            return None
+        seats = self._seat_set()
+        if not seats:
+            return None
+        if self.fort_ring_rnd == rnd:
+            site = self.fort_ring_site
+        else:
+            domain = (self._fort_lane_list() if kind == EntityType.SENTINEL
+                      else self._apron_list())
+            best = None
+            for xy in domain:
+                q = Position(xy[0], xy[1])
+                if p.distance_squared(q) <= 1:
+                    continue                # adjacent already: the action fires
+                if not self._fort_site_ok(ct, None, q, seats):
+                    continue
+                if kind == EntityType.SENTINEL:
+                    score, face = self._fort_sent_score(ct, q)
+                else:
+                    score, face = self._fort_gun_score(ct, q, seats)
+                if face is None:
+                    continue
+                cand = (score, -p.distance_squared(q))
+                if best is None or cand > best[0]:
+                    best = (cand, q)
+            site = best[1] if best is not None else None
+            self.fort_ring_rnd = rnd
+            self.fort_ring_site = site
+        if site is None:
+            return None
+        # Stand orthogonally beside the site, not on it -- a builder cannot
+        # build on its OWN tile (ledger V2).
+        best = None
+        for d in CARDINALS:
+            r = site.add(d)
+            if not self.ibp(r):
+                continue
+            if r.x == p.x and r.y == p.y:
+                return None                 # already in position
+            try:
+                if not ct.is_tile_passable(r):
+                    continue
+            except Exception:
+                continue
+            dd = p.distance_squared(r)
+            if best is None or dd < best[0]:
+                best = (dd, r)
+        if best is None:
+            return None
+        self.fort_ring_walks += 1
+        return best[1]
+
     # --- PLANK 3 -- SK_GUN_ROUTEBLOCK -----------------------------------
 
     def _routeblock_tile(self, xy):
@@ -3953,6 +4376,18 @@ class RolesMixin:
         if cseat is not None:
             self.step_to(ct, cseat)
             return
+        # ⭐⭐ v632 HEIMDALL PLANK 3, THE MOVEMENT HALF (SK_FORT_RING).  Same
+        # rung as PLANK 2's gun walk and immediately above it, for the same
+        # reasons stated there: gated on the SAME window and the SAME
+        # affordability as the buy, bounded to the apron / the lane list, and
+        # it terminates permanently once the three ring turrets stand.  Below
+        # the medic seat, the escalated shooter and the seat walks -- a core
+        # under fire owns this body and always will.
+        if SK_FORT_RING:
+            fsite = self._fort_ring_walk(ct, p, rnd)
+            if fsite is not None:
+                self.step_to(ct, fsite)
+                return
         # ⭐ v618 PLANK 2, THE MOVEMENT HALF.  Gated on the SAME window and the
         # SAME affordability as the buy -- the launcher arm's own lesson, that a
         # keeper standing beside a buy it cannot make is the v610 cost in a new
@@ -7537,6 +7972,31 @@ class RolesMixin:
                 if self.gave_up(eid, rnd):
                     continue
                 rb_hit = False              # v618 PLANK 3: per CANDIDATE
+                # ⭐⭐ v632 HEIMDALL PLANK 3 READS THIS LADDER AND CHANGES NOT
+                # ONE LINE OF IT (comment only).  The ring turrets are ordinary
+                # gunners/sentinels and run this exact firing turn, so
+                # `CITADEL_TARGET_ORDER: raider_first_then_gunners_remove_
+                # collar_barriers` (Magnus s57 2026-08-22) maps as:
+                #   * RAIDER = a BODY.  The loop above reads
+                #     `get_tile_builder_bot_id`, so an enemy builder IS a
+                #     candidate and `_target_pri` scores it SK_PRI_BODY = 2 --
+                #     above SK_PRI_OTHER and above a barrier.  This is the only
+                #     verb in the tree that reaches a body at all (a builder
+                #     cannot attack one: engine-re-proven s57, `can_fire` False
+                #     990/990).  ⚠ HONESTLY: a HARVESTER scores 3, so the
+                #     shipped ladder puts their harvester ABOVE the raider.
+                #     Re-ranking is left out of this plank on purpose -- it
+                #     would move EVERY turret in the tree (door, cover,
+                #     forward tubes) and is a separate one-thing arm.
+                #   * A TURRET SHOOTING US is handled by the counter-battery
+                #     machinery, not here: SK_PRI_TURRET = 4 / SK_PRI_MARKED =
+                #     5 (an armed building on our own ring), plus
+                #     `_counter_sent_action` and `_peck_priority`.
+                #   * COLLAR BARRIERS score SK_PRI_BARRIER = 0 and 0 is never
+                #     fired at.  The flag that would change it exists and is
+                #     SK_GUN_ROUTEBLOCK, below -- it is False, PLANK 3 DOES NOT
+                #     FLIP IT, and it is the named phase-1 follow-up with the
+                #     refutation-transfer caveat written at its flag.
                 if SK_TARGET_PRIO:
                     # ⭐ v601 PLANK 3.  ⛔ NOTE WHAT THIS REPLACES: v600's top
                     # class was "anything on our home ring", BARRIERS INCLUDED,

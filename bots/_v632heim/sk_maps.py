@@ -3523,6 +3523,181 @@ SK_DEMOLISH_CAP = 20      # Pecks per (TILE, OCCUPANT ID) episode -- the
                           # 40 = 20, conveyor 20 = 10).
 
 # ===========================================================================
+# v632 HEIMDALL PLANK 3 -- THE TURRET RING (the citadel's WEAPON)
+# ===========================================================================
+#
+# GAME CONTEXT: in-game machinery for the Florent Code League, a sandboxed
+# bot-vs-bot programming competition on a simulated grid.  Every "raider",
+# "intruder", "fire" and "destroy" below is an engine API call against a
+# competing bot's pieces; nothing here touches anything outside the engine.
+#
+# DOCTRINE: PROGRAMME.md `CITADEL_WEAPON: turret_ring...launcher_taxi_rejected`
+# (Magnus s57 2026-08-22 -- the taxi was put and REFUSED, "wants them gone
+# forever"), under `HEIMDALL_PRIO_LADDER` p1 (destroy raiders) / p2 (destroy
+# enemy turrets).  Design study
+# `docs/research/DESIGN-fortress-heimdall-2026-08-22.md` §5 (5a machinery, 5b
+# the three-turret ring, 5c ammo economics), §0.3, §7 R2/R3.
+#
+# ⛔⛔ THE ENGINE FACT THAT MAKES THIS PLANK THE WEAPON AT ALL.  A builder
+# CANNOT attack an enemy builder bot (re-proven s57 on the engine:
+# `scratchpad/s57_heim0/bvb_probe4.log`, `can_fire` False 990/990 and an
+# ungated `fire()` raised GameError 990/990).  PLANK 1's dispatch can only
+# DENY TILES to a body.  `_turret` reads `get_tile_builder_bot_id` and scores
+# a body at SK_PRI_BODY = 2 -- ⇒ A TURRET IS THE ONLY SHIPPED VERB IN THIS
+# TREE THAT REACHES AN INTRUDING BODY (study §5a).  That is what plank 3 buys.
+#
+# ⛔ A TURRET RING CANNOT BLANKET CHEBYSHEV-3.  IT COVERS LANES (study §5b).
+# Chebyshev-3 around a 2x2 is 60 tiles; a gunner is a straight obstacle-BLOCKED
+# line of ~3-4 tiles (r^2=13) and a sentinel a single-tile-wide line that
+# IGNORES obstacles out to r^2=32.  Blanketing 60 tiles by rays needs 12-15
+# turrets at +20% scale EACH.  The design is therefore THREE turrets:
+#   1 SENTINEL on the our-core -> enemy-core AXIS LANE, facing the enemy core.
+#     Highest-value single turret because the site is fixed AND the approach
+#     direction is fixed; ignores obstacles, so our own apron mesh and belt
+#     do not block it, and it reaches beyond the citadel zone.
+#   2 GUNNERS on the FLANKS of that lane, rotating (SK_HOME_GUN_ROTATE, whose
+#     evidence direction is measured: rotating toward a LIVE THREAT helps --
+#     rotate-off read 8 kills instead of 12, main.py:84-86 -- while rotating
+#     at a BARRIER is the defect that killed SK_GUN_ROUTEBLOCK).
+#
+# ⭐⭐ THE PREDICTION STUDY IS WHAT SIZES THE CLOCK (banked s57, coordination
+# tail ~20:2xZ).  Their ladder lands r1-r5, the first plant in OUR half at
+# median r5 and the collar at median r11.  A turret bought after that has
+# missed the thing it answers, and AMMUNITION BOUGHT AFTER THAT IS A GUN THAT
+# CANNOT SHOOT: `can_fire` returns TRUE at 0 ammo and the engine RAISES inside
+# finish_firing_turret, which permanently destroys OUR OWN turret, so
+# `_turret`'s balance guard makes an unfunded gun simply silent.  Hence the
+# ammo bank is a SEPARATE, EARLIER clock than the need-based drip.
+#
+# ⛔ THE WELD RULE (s55 class).  SK_FORT_RING is its OWN master and is
+# conjoined with NOTHING -- not with SK_FORTRESS, not with SK_CITADEL, not
+# with SK_HOME_GUNNER, all of which are False and PARKED.  A plank welded to a
+# permanently-False neighbour ships unmeasured.  OFF = exact identity by
+# CALL-SITE conjunction (`if SK_FORT_RING and self._fort_ring_action(...)`),
+# so the flags-off tree is character-for-character the current adopted
+# leash+demolish tree.
+# ⛔ AND SK_HOME_GUNNER IS NOT FLIPPED BY THIS PLANK.  Its machinery
+# (`_home_gun_window/_score/_action/_walk`) is REUSED -- the score function is
+# called directly -- but its own flag stays False so that flag's measured
+# history (by-r300 12 -> 5, median kill 201 -> 315) stays attached to the arm
+# that produced it and is not silently re-attributed to this one.
+SK_FORT_RING = False      # PLANK 3 MASTER.  Own flag, no conjunction.
+SK_FORT_RING_GUNNERS = 2  # flank gunners (study §5b item 2).  ⛔ THE CAP IS THE
+                          # PLANK: a gunner is +20% on the ONE GLOBAL ADDITIVE
+                          # cost factor and inflates every later build of EVERY
+                          # type.  The first local v600 game bought six and
+                          # starved every other verb.
+SK_FORT_RING_SENT = 1     # ONE axis sentinel (study §5b item 1).  A sentinel is
+                          # +20% as well and CANNOT ROTATE, so a second one
+                          # would be a second permanent commitment to a second
+                          # fixed direction -- and there is only one axis.
+SK_FORT_RING_WINDOW = (6, 120)  # THE BUY WINDOW, and BOTH ends are measured.
+                          # EARLIEST r6 -- NOT r1 -- because of FUNDING
+                          # REALITY, not caution: the spawn plan buys four
+                          # builders r0-r3 at +20% each (30+36+42+48 = 156 Ti
+                          # of a 500 opening) and the first harvesters follow,
+                          # so a turret bought at r4 is bought at a scale the
+                          # economy has not yet earned.  It is set as EARLY as
+                          # the prediction clock allows: their first plant in
+                          # our half lands median r5 and the collar median r11
+                          # (prediction study, s57), so r6 is the first round
+                          # where the buy can still be AHEAD of the thing it
+                          # answers.  LATEST r120 = SK_HOME_GUN_MAX_ROUND's
+                          # value, for its reason: past there the buy is
+                          # REACTIVE, which is the form already measured and
+                          # declined (v610 SK_SEAT_GUNS).  A window, not a
+                          # floor -- the plank lands early or does not land.
+SK_FORT_RING_RESERVE = 40 # Ti floor left standing after EVERY ring buy.  ⛔ THIS
+                          # IS THE R2 DEFENCE AND IT IS THE PLANK'S ONE REAL
+                          # RISK CONTROL (study §7 R2): three planks have died
+                          # to "a +20% scale surcharge landing BEFORE the kill
+                          # machinery is funded" (SK_HOME_GUNNER, SK_HOME_
+                          # LAUNCHER, v615/v616, main.py:82-83).  The r300
+                          # ruling reprices the SURCHARGE half -- there is no
+                          # kill machinery to fund before r300 -- but ONLY IF
+                          # THE ECO IS ACTUALLY BUILT.  40 = SK_HOME_GUN_
+                          # RESERVE's value, the same constant the launcher arm
+                          # used, and it is a bank floor rather than a
+                          # delivered-Ti-per-round floor because this tree has
+                          # no per-round delivery meter that a BUILDER can read
+                          # (disclosed: study §7 R2 asks for the throughput
+                          # form; the bank floor is the available proxy and a
+                          # later arm can sharpen it).
+SK_FORT_RING_LANE = 2     # THE LANE HALF-WIDTH for the axis sentinel, in
+                          # PERPENDICULAR TILES off the our-core -> enemy-core
+                          # ray.  A sentinel's shot is a SINGLE-TILE-WIDE line,
+                          # so the site must sit essentially ON the lane or its
+                          # ray sweeps empty ground beside the corridor; 2 is
+                          # wide enough that a blocked/owned/ore tile does not
+                          # cost the plank its only sentinel, and narrow enough
+                          # that the ray still runs down the corridor.
+SK_FORT_RING_SENT_DSQ = 13  # ... and it must stand within this d^2 of our own
+                          # 2x2 FOOTPRINT (`dsq_core`).  13 is a GUNNER's
+                          # r^2 -- deliberately: the sentinel's own reach is 32
+                          # and fencing the SITE at 13 keeps it inside the
+                          # apron/citadel neighbourhood the keeper already
+                          # walks, so the buy never turns into a tour.  Its
+                          # RAY still reaches out to r^2=32 from there.
+SK_FORT_AMMO_BY = 5       # THE AMMO CLOCK'S DEADLINE, in rounds, and it is the
+                          # prediction study's metronome read straight off:
+                          # THEIR LADDER LANDS r1-r5, FIRST OUR-HALF PLANT
+                          # MEDIAN r5, COLLAR MEDIAN r11 (banked s57,
+                          # coordination tail ~20:2xZ).  Ammunition must be
+                          # STANDING when the first ring turret exists (r6+),
+                          # because the need-based drip (`_drip`, sk_core)
+                          # converts only for turrets that ALREADY EXIST and
+                          # NEVER BANKS -- by construction it cannot pre-fund
+                          # a turret that has not been bought yet.
+SK_FORT_AMMO_FLOOR = 30   # ... and the size is ONE SENTINEL INTRUDER-KILL.
+                          # Study §5c: a 40 HP builder takes 3 sentinel shots
+                          # (18 dmg, 10 ammo each) = 30 ammo-Ti, or 6 gunner
+                          # shots (7 dmg, 4 ammo each) = 24.  So 30 buys the
+                          # first raider outright by either weapon, on the
+                          # 4/10 lattice exactly (10+10+10).  ⛔ NOT a standing
+                          # balance and NOT a change to `SK_AMMO_FLOOR`, which
+                          # was swept to 20/30 and is monotonically WORSE
+                          # (sk_maps.py:2442-2461): this is a ONE-TIME EARLY
+                          # BANK inside r1..SK_FORT_AMMO_BY, after which the
+                          # need-based drip is again the only converter.
+                          # Cost context: 30 Ti of a 500 opening = 6%, against
+                          # study §5c's "24-30 Ti per intruder is a rounding
+                          # error at 27.5 Ti/round income".
+#
+# ⭐ TARGET ORDER -- HOW MAGNUS'S RULING MAPS ONTO THE FIRING TURN WE ALREADY
+# SHIP.  `CITADEL_TARGET_ORDER: raider_first_then_gunners_remove_collar_
+# barriers` (Magnus s57 2026-08-22).  The ring turrets run the EXISTING
+# `_turret` (sk_roles) unchanged -- plank 3 buys turrets, it does not rewrite
+# the firing turn -- and `_target_pri`'s ladder already expresses the ruling:
+#     SK_PRI_CORE      6   their core                    (not reachable at home)
+#     SK_PRI_MARKED    5   an armed building ON OUR RING  -- the collar SHOOTER
+#     SK_PRI_TURRET    4   an armed building elsewhere    -- ladder p2
+#     SK_PRI_HARVESTER 3   their harvester
+#     SK_PRI_BODY      2   ⭐ THE RAIDER.  `_turret:6919-6920` reads
+#                          `get_tile_builder_bot_id`, so a body IS a candidate
+#                          and outranks everything below -- ladder p1.
+#     SK_PRI_OTHER     1   anything else alive
+#     SK_PRI_BARRIER   0   ⛔ NEVER FIRED AT (`_turret` skips `pri <= 0`).
+# ⇒ RAIDER-FIRST IS ALREADY TRUE *AMONG THINGS THAT ARE ALIVE*: a body (2)
+# beats a harvester?  No -- 3 > 2, and that is the one place the shipped
+# ladder reads BELOW the ruling.  It is left alone in this plank ON PURPOSE:
+# re-ranking `_target_pri` changes EVERY turret in the tree (door guns, cover
+# guns, forward tubes), which is a separate one-thing arm, not a rider on a
+# purchasing plank.
+# ⇒ "THEN GUNNERS REMOVE COLLAR BARRIERS" IS THE HALF WE DO NOT SHIP HERE.  A
+# BARRIER scores 0 and 0 is never fired at, so no gun of ours has ever shot a
+# collar barrier.  The flag that changes it EXISTS and is `SK_GUN_ROUTEBLOCK`
+# (sk_maps.py:1886) -- ⛔ IT IS False AND THIS PLANK DOES NOT FLIP IT.  It is
+# the named PHASE-1 FOLLOW-UP, and it carries a REFUTATION-TRANSFER CAVEAT
+# that must be written into that arm rather than assumed away: it was measured
+# at 1,353 shots into collar barriers buying 528 FEWER shots into their core
+# (= 3,696 HP = seven and a half enemy cores) and kills 14 -> 7.  Under the
+# r300 ruling the currency of that refutation (shots into THEIR core before
+# r300) is suspended -- but "suspended" is a HYPOTHESIS about a currency, not
+# a measurement of this plank, and the ammunition half of the cost (a barrier
+# in a ray is a converted harvester, 1:1) transfers to phase 1 UNCHANGED.
+# Same shape, and it is stated so the follow-up cannot skip it.
+
+# ===========================================================================
 # 3.  IMPORT BANNER (verbatim) -- doctrine.py:1078-1172, map data
 # ===========================================================================
 

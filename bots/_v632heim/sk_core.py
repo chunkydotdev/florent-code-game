@@ -24,6 +24,8 @@ from sk_maps import (
     SK_SPAWN_EXIT,
     SK_COREFIRE, SK_SLOT_COREFIRE, SK_DANGER_GUNNER_REACH,
     SK_DANGER_SENT_REACH,
+    # --- v632 HEIMDALL PLANK 3 (THE TURRET RING) --------------------------
+    SK_FORT_RING, SK_FORT_AMMO_BY, SK_FORT_AMMO_FLOOR,
 )
 from sk_roles import (
     DRIP_GUN_MASK, DRIP_SENT_FIELD, SEAT_MASK,
@@ -70,7 +72,19 @@ class CoreMixin:
         home_guns, home_sents = self._threat_scan(ct, p, rnd)
         self._corefire_report(ct, p, rnd)          # v608 SENSOR
 
-        if SK_DRIP:
+        # ⭐⭐ v632 HEIMDALL PLANK 3 -- THE AMMO CLOCK, ABOVE THE DRIP.
+        # `convert_ammo` is at most ONCE PER TEAM PER TURN, so the two
+        # converters must not both try in the same round: the bank runs first
+        # and the drip is skipped on any round the bank spent the conversion.
+        # ⛔ THAT SKIP IS FREE INSIDE THE BANK'S WINDOW: the drip is
+        # need-based off turrets that ALREADY EXIST, and the earliest ring
+        # turret is SK_FORT_RING_WINDOW[0] = r6, i.e. after the bank has
+        # finished -- so on r1..SK_FORT_AMMO_BY the drip's `need` is 0 for the
+        # ring by construction.
+        banked = False
+        if SK_FORT_RING:
+            banked = self._fort_ammo_bank(ct, rnd)
+        if SK_DRIP and not banked:
             self._drip(ct, rnd, home_guns, home_sents)
 
         self._spawn_plan(ct, p, rnd)
@@ -323,6 +337,72 @@ class CoreMixin:
                 self.converts += 1
         except Exception:
             return
+
+    # ------------------------------------------------------------------
+    # v632 HEIMDALL PLANK 3 -- THE AMMO CLOCK (SK_FORT_RING)
+    # ------------------------------------------------------------------
+
+    def _fort_ammo_bank(self, ct, rnd):
+        """Bank SK_FORT_AMMO_FLOOR ammunition BY r SK_FORT_AMMO_BY.  True iff
+        it spent this round's one conversion.
+
+        GAME CONTEXT: an in-engine resource conversion in the Florent Code
+        League; "kill" below is the engine's stated removal of a competing
+        bot's piece.
+
+        ⭐⭐ WHY A SECOND CONVERTER EXISTS AT ALL, AND IT IS THE PREDICTION
+        STUDY'S METRONOME (banked s57, coordination tail ~20:2xZ): THEIR LADDER
+        LANDS r1-r5, THE FIRST PLANT IN OUR HALF AT MEDIAN r5, THE COLLAR AT
+        MEDIAN r11.  The ring's first turret can stand at r6
+        (SK_FORT_RING_WINDOW) -- and `_drip` CANNOT PRE-FUND IT: the drip is
+        need-based off turrets that ALREADY EXIST and it NEVER BANKS, so on the
+        round the first ring turret is bought the balance is 0 and the turret
+        is silent until the drip catches up a round later.  ⛔ SILENT IS THE
+        BEST CASE: `can_fire` returns TRUE at 0 ammo and the engine RAISES
+        inside finish_firing_turret, which would permanently destroy our own
+        turret -- `_turret`'s balance guard is what turns that into silence.
+        A gun that cannot shoot on the round the raider arrives is the whole
+        plank missing its window.
+
+        ⛔ THIS IS NOT A CHANGE TO `SK_AMMO_FLOOR` and must not become one:
+        that constant was swept to 20/30 and is monotonically WORSE
+        (sk_maps.py:2442-2461).  This is a ONE-TIME EARLY BANK inside
+        r1..SK_FORT_AMMO_BY, after which the need-based drip is again the only
+        converter and the standing-balance behaviour is unchanged.
+
+        SIZE: SK_FORT_AMMO_FLOOR = 30 = one sentinel intruder-kill (study §5c:
+        3 shots x 18 dmg vs a 40 HP builder, 10 ammo each), which is also
+        6 gunner shots' worth minus one.  Exactly on the 4/10 lattice.
+        """
+        if rnd <= 0 or rnd > SK_FORT_AMMO_BY:
+            return False                        # NEVER at r0 (the drip's rule)
+        try:
+            ammo = ct.get_global_ammo()
+        except Exception:
+            return False
+        if ammo >= SK_FORT_AMMO_FLOOR:
+            return False
+        amt = SK_FORT_AMMO_FLOOR - ammo
+        try:
+            have = ct.get_global_resources()
+        except Exception:
+            return False
+        if amt > have:
+            amt = have
+        # The 4/10 lattice, floored -- `_drip`'s v602 FIX 6 rule applied
+        # unconditionally so a partial bank cannot leave the lattice either.
+        amt = lattice_floor(amt)
+        if amt <= 0:
+            return False
+        try:
+            if not ct.can_convert_ammo(amt):
+                return False
+            ct.convert_ammo(amt)
+        except Exception:
+            return False
+        self.converts += 1
+        self.fort_ammo_banked += amt
+        return True
 
     # ------------------------------------------------------------------
     # COPY 8 -- the four-builder cap

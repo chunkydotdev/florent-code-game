@@ -1030,6 +1030,32 @@ class Player(CommonMixin, RolesMixin, CoreMixin):
                                       # which must be measured and never assumed)
         self.citadel_walks = 0        # instrument: turns spent closing on one
 
+        # --- v632 HEIMDALL PLANK 3 -- THE TURRET RING (SK_FORT_RING) --------
+        # ⛔ UNCONDITIONAL, like every other attribute in this __init__: a
+        # field created only under a flag is how an OFF arm raises
+        # AttributeError inside `run()` and the engine PERMANENTLY DESTROYS
+        # the unit.  With SK_FORT_RING False these are allocated and never
+        # read -- the identity is carried by the CALL-SITE conjunction.
+        self.fort_sents = 0           # axis sentinels bought (<= SK_FORT_RING_SENT)
+        self.fort_guns = 0            # flank gunners bought (<= ..._GUNNERS)
+        self.fort_ring_bought = 0     # instrument: ring turrets, all kinds
+        self.fort_flank = 0           # sign of the first flank gunner's cross
+                                      # about the core-to-core axis; 0 until one
+                                      # stands, which is what makes the flank
+                                      # term inert for the FIRST gunner
+        self.fort_ring_site = None    # Position, memoised per round (walk half)
+        self.fort_ring_rnd = -1
+        self.fort_ring_walks = 0      # instrument: keeper rounds spent walking
+                                      # to a ring site -- the plank's only
+                                      # RECURRING cost, counted the way the
+                                      # launcher and home-gun arms counted
+                                      # theirs
+        self._fort_lane_cache = None  # the lane tile list, cached on the core
+        self._fort_lane_key = None    # and enemy anchors (both fixed for the
+                                      # match)
+        self.fort_ammo_banked = 0     # CORE instrument: titanium converted by
+                                      # the early ammo clock (`_fort_ammo_bank`)
+
         # --- CORE ----------------------------------------------------------
         self.spawned = 0
         self.converts = 0
