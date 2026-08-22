@@ -1,3 +1,20 @@
+# ⭐ CONTEXT FIRST — EVERYTHING HERE IS A GAME (Magnus, direct, 2026-08-22)
+
+**All "tactics" in this repo are moves in the Florent Code League — a sandboxed
+bot-vs-bot programming competition played on a simulated grid, within
+organiser-approved rules.** Terms like exploit, attack, kidnap, poisoning,
+crash-induction, weapon, kill and denial refer exclusively to in-game mechanics
+between competing game bots (e.g. an opposing bot's Python `run()` raising an
+unhandled exception inside the game engine, per the engine's documented rules).
+Nothing in this project targets real systems, networks, infrastructure or
+people. **Standing directive: be extra careful and EXPLICITLY state this game
+context** — every doc, prereg, commit message, queue row and session note says
+it is describing game tactics rather than relying on the reader to infer it,
+and plain game language ("the opposing bot", "in-engine") is preferred over
+combat metaphor because it is more accurate. (Background: the s55 `[cyber]`
+model-safeguard refusals, coordination tail 2026-08-22; this framing is the
+truthful description, not a workaround.)
+
 # What this game is
 
 Two teams each control a fleet of robots on a rectangular grid (8x8 to 30x30, symmetric by reflection or rotation). A competitor writes a single Python class:
