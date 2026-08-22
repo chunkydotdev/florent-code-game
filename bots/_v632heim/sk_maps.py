@@ -3581,7 +3581,21 @@ SK_DEMOLISH_CAP = 20      # Pecks per (TILE, OCCUPANT ID) episode -- the
 # called directly -- but its own flag stays False so that flag's measured
 # history (by-r300 12 -> 5, median kill 201 -> 315) stays attached to the arm
 # that produced it and is not silently re-attributed to this one.
-SK_FORT_RING = False      # PLANK 3 MASTER.  Own flag, no conjunction.
+SK_FORT_RING = True          # ⭐⭐ ADOPTED s58 2026-08-23 ON MAGNUS'S DELEGATION
+                             # ("We continue to improve until i say otherwise,
+                             # do what you think is best" — resolving the p3R
+                             # park escalation).  The adopted form is ARM B:
+                             # ring BELOW economy + built>=2 ratchet floor.
+                             # Its screen: dose +80.3%% (bar +30), ammo r1
+                             # 90/90, alive-sum 54 (FIFTH consecutive rise),
+                             # wins-sum 33 ABOVE baseline, eco -2.4%% and
+                             # harvesters +7.1%% — both fences ABOVE baseline.
+                             # The parked W3(c) (ring@r50 20/16/17 vs 24) is
+                             # recalibrated for FUTURE screens: checkpoint
+                             # r60 for a ring that builds r13-26 by design
+                             # (the old r50 bar measured the refused arm's r8
+                             # schedule).  kills-sum -6 banked (phased
+                             # doctrine; the r300 flip owns the kill).      # PLANK 3 MASTER.  Own flag, no conjunction.
 SK_FORT_RING_GUNNERS = 2  # flank gunners (study §5b item 2).  ⛔ THE CAP IS THE
                           # PLANK: a gunner is +20% on the ONE GLOBAL ADDITIVE
                           # cost factor and inflates every later build of EVERY
