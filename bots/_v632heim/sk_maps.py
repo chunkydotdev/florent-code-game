@@ -3485,6 +3485,16 @@ SK_DEMOLISH_DSQ = 39      # THE HOME FENCE, d^2 to our own 2x2 FOOTPRINT
                           # already broadcasts.  Study §3b: "start at the
                           # existing home fence, widen later" -- widening is a
                           # LATER arm, not a free parameter of this one.
+SK_DEMOLISH_WALK_DSQ = 39 # THE WALK FENCE, same `dsq_core` clamp, for the
+                          # REDESIGN's walk pick (denier only).  EQUAL to
+                          # SK_DEMOLISH_DSQ by default ON PURPOSE: this arm
+                          # moves ONE thing (the reachability split + the
+                          # walk), so the walk must not smuggle a wider fence
+                          # in with it.  It is a separate constant only so a
+                          # LATER arm can widen where the denier is willing to
+                          # WALK without widening where any body is willing to
+                          # CHEW -- the two are different questions and v1
+                          # could not ask either, since it had no walk at all.
 SK_DEMOLISH_CAP = 20      # Pecks per (TILE, OCCUPANT ID) episode -- the
                           # `_seat_charge` pattern (sk_roles), and the keying is
                           # the whole point: `collar_pecks` is keyed on the tile

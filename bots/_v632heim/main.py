@@ -789,6 +789,13 @@ class Player(CommonMixin, RolesMixin, CoreMixin):
         # `seat_pecks` above, for the same measured reason.
         self.demo_pecks = {}          # (x,y) -> (occupant id, pecks this episode)
         self.demolishes = 0           # instrument: pecks this sweep landed
+        self.demo_walks = 0           # instrument: turns the DENIER spent
+                                      # WALKING toward a sweep target it could
+                                      # not reach (the s57 redesign's own
+                                      # channel -- Z3 failed with no walk in
+                                      # the plank at all, so this counter is
+                                      # what makes the new path visible in a
+                                      # readout separately from `demolishes`)
         self.demo_pick = None         # ((x,y), bid) of the current pick
         self.demo_seats = None        # frozenset of our 8 delivery seats (memo)
         self._seat_rnd = -1           # `_seat_targets` per-round memo

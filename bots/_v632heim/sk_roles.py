@@ -144,7 +144,7 @@ from sk_maps import (
     SK_CITADEL_GIVEUP, SK_CITADEL_JOIN_DSQ, SK_CITADEL_ROLES, SK_KEEPER_LEASH, SK_LEASH_DSQ, SK_ORE_STEPOFF,
     SK_IDLE_ACT_ALL,
     # --- v632 HEIMDALL PLANK 2 (THE DEMOLITION SWEEP) ----------------------
-    SK_DEMOLISH, SK_DEMOLISH_CAP, SK_DEMOLISH_DSQ,
+    SK_DEMOLISH, SK_DEMOLISH_CAP, SK_DEMOLISH_DSQ, SK_DEMOLISH_WALK_DSQ,
 )
 
 # --- v611: the 8 neighbours, for a LAUNCHER's pickup disc (d^2 <= 2) --------
@@ -7164,37 +7164,86 @@ class RolesMixin:
         self.demolishes += 1
 
     def _demolish_target(self, ct, p, rnd):
-        """ONE pass over `ct.get_nearby_buildings()` -> the enemy structure in
-        our own half this body should chew, or None.
+        """ONE pass over `ct.get_nearby_buildings()` -> `(act_q, walk_q)`:
+        the enemy structure in our own half this body can chew THIS ROUND, and
+        the one it should be WALKING toward.  Either may be None.
 
         The enumerator the tree has never had (study §3a/§3b).  One engine
         sweep per body per round -- the same idiom `_prep_cover` and
         `_launcher` already use -- and well inside CPU_BUDGET_US.
 
-        Filters, in order: enemy team, in bounds, inside SK_DEMOLISH_DSQ of OUR
-        footprint (`dsq_core`, the same clamp the citadel predicate uses), not
-        their CORE, and not already capped out by this body's episode ledger.
-        Ranked by `_demolish_pri` FIRST and distance second, so the class
-        ordering strictly outranks proximity -- a launcher three tiles away
-        outranks an adjacent plain barrier.  A pick this body cannot reach this
-        round simply produces no peck (`_clear_tile` declines on `can_fire`)
-        and the role's ladder continues below it; that is cheaper than teaching
-        this plank a walk, which would be a second plank (R4: never compose).
+        ⛔⛔ REDESIGN, s57 2026-08-22 -- THE SPLIT PICK.  ITS PROVENANCE IS THE
+        PLANK'S OWN Z3 FAILURE, and the v1 docstring's reasoning is printed
+        below as the thing that was measured wrong.
 
-        ⛔ The occupant id of the pick is stashed for `_demolish_action`, which
-        charges the ledger only when a peck actually LANDS.  Charging at
-        selection time would count refusals (healing race, V7 trend) against
-        the episode cap and retire the tile without ever hitting it.
+        v1 ranked `key = (-pri, distance, x, y)` over ONE pick -- class
+        STRICTLY over distance -- and argued: "A pick this body cannot reach
+        this round simply produces no peck (`_clear_tile` declines on
+        `can_fire`) and the role's ladder continues below it; that is cheaper
+        than teaching this plank a walk."  **THAT ARGUMENT IS FALSIFIED ON THE
+        TAPE** (verdict 2026-08-22T20:56:05Z, readout `e46*`, registered bars
+        in `docs/research/EXPECTATION-v632heim-plank2-2026-08-22.md`):
+
+          * **Z3 destroyed-share +0.029 / -0.025 / -0.009, SUM -0.005 against a
+            registered bar of >= +0.10 -- 0 of 3 fixtures, FAIL.**
+          * **chews-per-destroyed UNMOVED: 7.7 -> 8.3 (F1), 10.2 -> 10.5 (F2),
+            29.4 -> 29.8 (F3).**  The sweep was not converting chews into
+            removals any better than the tree already did.
+          * **THE CLASS MIX MOVED AGAINST THE DECLARED PRIORITY: F1
+            barrier-kill share UP while launcher share went DOWN** -- the
+            inversion of the ordering this plank exists to impose.
+
+        The mechanism those three numbers name together: the strict
+        class-over-distance pick selects a FAR launcher, `_clear_tile` then
+        declines it (a builder attack needs an ORTHOGONALLY ADJACENT tile), the
+        rung wastes, and the pecks that do land eat whatever happens to be
+        adjacent -- barriers.  "The ladder continues below it" is exactly what
+        did NOT happen: the rung returned False, but the round was spent
+        arriving at a target the body was never going to reach, because
+        **nothing in the plank ever WALKED toward a sweep target.**
+
+        SO THE PICK SPLITS IN TWO, over the same single pass:
+          (a) **ACT pick** -- highest class among candidates ORTHOGONALLY
+              ADJACENT to this body (Manhattan 1: the engine's own build/
+              attack/heal adjacency).  Every member of this set is reachable by
+              `_clear_tile` this round, so class ordering inside it is free:
+              there is no far-launcher-beats-adjacent-barrier trap left,
+              because a far launcher is not in the set.
+          (b) **WALK pick** -- highest class among candidates that are NOT
+              adjacent, ranked (class, then distance).  Disjoint from (a) by
+              construction, so a walk step is always toward something this body
+              genuinely cannot act on.  `_demolish_action` turns this into ONE
+              step for the DENIER only.
+
+        Priorities, fence, episode cap and the `_clear_tile` verb are all
+        UNCHANGED -- the redesign is the reachability split and the walk, and
+        nothing else.
+
+        ⛔ The occupant id of the ACT pick (only) is stashed for
+        `_demolish_action`, which charges the ledger only when a peck actually
+        LANDS.  Charging at selection time would count refusals (healing race,
+        V7 trend) against the episode cap and retire the tile without ever
+        hitting it.  The walk pick is never charged: walking is not a peck.
         """
+        self.demo_pick = None
         if self.core is None:
-            return None
+            return None, None
         try:
             ids = ct.get_nearby_buildings()
         except Exception:
-            return None
-        best_key = None
-        best_q = None
-        best_bid = None
+            return None, None
+        # One fence read per pass.  The act and walk fences are separate
+        # constants (see sk_maps) and are EQUAL by default, so this arm moves
+        # one thing; the wider of the two admits a candidate to the pass and
+        # each pick re-tests its own.
+        fence = SK_DEMOLISH_DSQ
+        if SK_DEMOLISH_WALK_DSQ > fence:
+            fence = SK_DEMOLISH_WALK_DSQ
+        act_key = None
+        act_q = None
+        act_bid = None
+        walk_key = None
+        walk_q = None
         for bid in ids:
             try:
                 if ct.get_team(bid) == self.team:
@@ -7209,47 +7258,119 @@ class RolesMixin:
                 continue
             if not self.ibp(q):
                 continue
-            if dsq_core(q, self.core) > SK_DEMOLISH_DSQ:
+            dsq = dsq_core(q, self.core)
+            if dsq > fence:
                 continue
             xy = (q.x, q.y)
             if not self._demolish_budget_ok(xy, bid):
                 continue
-            key = (-self._demolish_pri(et, q), p.distance_squared(q), q.x, q.y)
-            if best_key is None or key < best_key:
-                best_key = key
-                best_q = q
-                best_bid = bid
-        if best_q is None:
-            return None
-        self.demo_pick = ((best_q.x, best_q.y), best_bid)
-        return best_q
+            pri = self._demolish_pri(et, q)
+            if abs(q.x - p.x) + abs(q.y - p.y) == 1:
+                # (a) ACT SET.  Orthogonally adjacent == what the engine lets a
+                # builder attack.  Distance is 1 for every member, so the key
+                # is class then a stable tile tie-break.
+                if dsq > SK_DEMOLISH_DSQ:
+                    continue
+                key = (-pri, q.x, q.y)
+                if act_key is None or key < act_key:
+                    act_key = key
+                    act_q = q
+                    act_bid = bid
+            else:
+                # (b) WALK SET.  Class first, then distance -- the ordering v1
+                # applied to the WHOLE pick now applies only where distance is
+                # something the body can actually do something about.
+                if dsq > SK_DEMOLISH_WALK_DSQ:
+                    continue
+                key = (-pri, p.distance_squared(q), q.x, q.y)
+                if walk_key is None or key < walk_key:
+                    walk_key = key
+                    walk_q = q
+        if act_q is not None:
+            self.demo_pick = ((act_q.x, act_q.y), act_bid)
+        return act_q, walk_q
 
     def _demolish_action(self, ct, p, rnd):
-        """The rung: pick, feed `_clear_tile`, charge the ledger.  True iff it
-        took this body's action.
+        """The rung: pick, feed `_clear_tile`, charge the ledger -- and, for the
+        DENIER only, spend the turn WALKING toward a target it cannot reach.
+        True iff it took this body's turn.
 
         ⚠ DISCLOSED DEVIATION FROM THE STUDY'S SKETCH (§3b writes the call site
         as `if SK_DEMOLISH and self._demolish_target(...)`): the ledger charge
         needs the OCCUPANT ID at the moment the peck lands, and `_clear_tile`
         is not to be touched (it is shared with the cage walker, the citadel
         answer and the nest clear).  So the call-site conjunction names this
-        three-line wrapper instead of the selector.  The identity property the
-        sketch exists for is unchanged and is what the grep proof checks:
+        wrapper instead of the selector.  The identity property the sketch
+        exists for is unchanged and is what the grep proof checks:
         `SK_DEMOLISH and self._demolish_action` at BOTH call sites, so with the
         master False neither branch is reachable and the tree is
         character-for-character the adopted-leash baseline.
+
+        ⭐ THE WALK BRANCH (redesign, s57).  Z3 failed with
+        chews-per-destroyed UNMOVED (7.7->8.3 / 10.2->10.5 / 29.4->29.8) and
+        the class mix INVERTED (F1 barrier share up, launcher down) because no
+        walk toward a sweep target existed anywhere in the plank: the rung
+        picked a far launcher, `_clear_tile` declined on adjacency, and the
+        turn was wasted.  One step, `step_to` -- the tree's ONLY movement
+        entry, which already owns the flood, the danger pricing and the
+        2-cycle strike-out -- is what converts that wasted rung into approach.
+
+        ⛔⛔ THE DENIER WALKS; THE KEEPER NEVER DOES, and that is the p11
+        lesson paid for in this same session (verdict 2026-08-22T20:40:28Z:
+        plank 1.1's citadel dispatch sat above the keeper's ladder and failed
+        Y2 on F1 core-footprint heals 9.60 vs >= 10.6 and Y2b on death cells
+        21 vs <= 18).  A keeper that WALKS OFF the core footprint to chase a
+        zone structure is strictly worse than one that merely wastes a rung
+        standing on it: heal-first doctrine binds, and the keeper's demolition
+        half stays exactly what it was -- act-only, opportunistic, below every
+        heal rung.  `self.role` is the gate because both call sites are inside
+        role-dispatched methods, which keeps the call-site text unchanged.
+
+        ⚠ SECOND DISCLOSED DEVIATION, and it is deliberate: the brief reads
+        "if no adjacent act target and a walk target exists".  This walks
+        whenever the ACT PATH DID NOT TAKE THE TURN -- which includes the case
+        where an adjacent target existed and `_clear_tile` DECLINED it (healing
+        race, chew clock, affordability, `hp_trend_ok`).  A declined adjacent
+        target is the very wasted rung the redesign exists to remove, and the
+        act/walk sets are disjoint by construction, so the walk can never be a
+        step toward a tile the body is already standing beside.
+
+        ⚠ NAMED INTERACTION, because v606 ITEM 4(b) is the note that warns
+        about exactly this shape: the walk is a SECOND MOVEMENT AUTHORITY on
+        the denier, and it sits ABOVE the `SK_CYCLE_ALL_ROLES` commit freeze
+        further down the role (which exists because "freezing only the V5
+        branch would leave the other authority free to keep re-picking").  The
+        reason it is admitted above the freeze rather than below it: the walk
+        pick is STABLE BY CONSTRUCTION -- it is ranked over a fence anchored to
+        OUR OWN core, so it cannot alternate between a home target and the
+        enemy core the way the deny/orbit pair measured on fimbulwinter did,
+        and a step toward it only shortens the distance that ranks it.  A pick
+        flip needs a HIGHER-CLASS structure to appear, which is a real change
+        of object, not thrash.  `_nav`'s own FIX 3 two-cycle strike-out remains
+        the backstop.  If the screen shows denier step-thrash, this ordering is
+        the first thing to test, not the walk itself.
         """
         if not SK_DEMOLISH:
             return False
-        q = self._demolish_target(ct, p, rnd)
-        if q is None:
+        act_q, walk_q = self._demolish_target(ct, p, rnd)
+        if act_q is not None and self._clear_tile(ct, act_q, rnd):
+            pick = self.demo_pick
+            if pick is not None:
+                self._demolish_charge(pick[0], pick[1])
+            return True
+        if walk_q is None or self.role != SK_ORE_DENIER:
             return False
-        if not self._clear_tile(ct, q, rnd):
+        # Cheap pre-test before the flood: `_nav` refuses on a move cooldown
+        # anyway, but asking first saves a BFS on the rounds it cannot use.
+        try:
+            if ct.get_move_cooldown() != 0:
+                return False
+        except Exception:
             return False
-        pick = self.demo_pick
-        if pick is not None:
-            self._demolish_charge(pick[0], pick[1])
-        return True
+        if self.step_to(ct, walk_q):
+            self.demo_walks += 1
+            return True
+        return False
 
     # ==================================================================
     # TURRETS  (COPY 6a: shoot what gets planted -- their 61.9%)
