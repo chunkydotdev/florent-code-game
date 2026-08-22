@@ -6886,6 +6886,22 @@ class RolesMixin:
         """
         if self.core is None:
             return False
+        # ⭐⭐ v632 PLANK 1.1 -- THE KEEPER YIELDS TO THE MEDIC DUTY.  The p14
+        # composite screen measured plank 1.0's exact defect: this dispatch
+        # sits ABOVE the keeper's whole action ladder, so with a threat
+        # latched the keeper chews zone structures while its own core bleeds
+        # -- the five carrying F1 cells (icefloe_seatB, holmgang_seatA,
+        # glacierkeep_seatB, skald_seatA, stavkirke_seatA -- the SAME set as
+        # the v630 attribution) fell to 0-9 core heals WITH THE LEASH ON,
+        # because the leash brings the body home and the dispatch then spends
+        # its turn anyway.  While the corefire latch is fresh (the core's own
+        # HP delta, cannot be out of vision), the KEEPER falls through to its
+        # normal turn -- whose ladder heals -- and the denier/walker still
+        # answer the zone.  Magnus's ladder is respected: destroying raiders
+        # is p1, but a dead core loses before any priority pays.
+        if self.role == SK_HOME_KEEPER and self.corefire_fresh(ct, rnd):
+            self.citadel_tgt = None
+            return False
         try:
             threat = unpack_pos(ct.read_store(SK_SLOT_THREAT_POS))
         except Exception:

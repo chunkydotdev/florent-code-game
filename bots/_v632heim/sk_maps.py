@@ -3380,7 +3380,14 @@ SK_CITADEL_ROLES = (SK_HOME_KEEPER, SK_ORE_DENIER, SK_CAGE_WALKER)
 SK_IDLE_ACT_ALL = False
 
 # --- v632 PLANK 4 -- THE KEEPER LEASH (#128a), THREAT-CONDITIONAL ----------
-SK_KEEPER_LEASH = False      # ⭐ the registered remedy for the thrice-measured
+SK_KEEPER_LEASH = True       # ⭐ ADOPTED s57 (leash-alone screen passed every
+                             # registered bar: heals ABOVE control on all three
+                             # fixtures +6.8/+53.2/+27.5%, death cells 16/20/18,
+                             # survival sum 46 vs 45; two costs BANKED, not
+                             # hidden: econ builds -17..-28% at common horizon
+                             # under threat, and the jotunheim_seatA degenerate
+                             # cell (0 eco builds in a 477r game) -- the
+                             # leashed-duty fix is plank 4.1, queued) — was: the registered remedy for the thrice-measured
                              # F1 signature (v630.0/v630.1/p1: any home-duty
                              # divergence collapses keeper core-footprint heals
                              # and our core dies more; confirmed puller = the
