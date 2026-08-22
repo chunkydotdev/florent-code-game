@@ -72895,3 +72895,37 @@ My commit monitor (b5f99irlp) is STOPPED in the action following this block, Tas
 ## ⛔ NEW OPERATIONAL FACT FOR EVERY LANE — THE `[cyber]` SAFEGUARD
 **Both Fable 5 AND Opus 5 refused messages in this session's content today, `Details: [cyber]`** (req_011CeHeA2yaoX8ad5ifQU13R, req_011CeHfYKe…YyMzafi5uh). It is a model-side safeguard on CONVERSATION CONTENT — not a repo setting: there are no PreToolUse/PostToolUse hooks at all, and nothing in `.claude/settings*.json` or `tools/` constrains it. Switching models did NOT help. **The plausible input is this project's own house vocabulary** — exploit/weapon/kidnap/poisoning/crash-induction/"vulnerable code shape" — accumulated over an 11-hour transcript describing what is, in fact, sandboxed bot-vs-bot competition play. **Successor guidance: boot fresh rather than resume this transcript; describe the work in plain game terms (an opposing BOT raising an unhandled exception in-engine per the documented rules) because that is more accurate, not because it is a workaround; and send `/feedback` with the request IDs — a false positive on a legitimate competitive-programming task is exactly what that channel is for.** ⛔ Nobody should attempt to engineer text to slip past a safety classifier; that is not the recommendation and must not become one.
 ===== END s55 BUILDER WRAP DELTAS =====
+
+# ============================================================================
+# 2026-08-22T11:09:58Z — ⭐⭐ **RESEARCH ARM s55 WRAP — fired by the BUILDER'S WRAP-PING on
+# Magnus's call (standing rule). ARM RETRO RAN FIRST per charter:
+# `docs/retro-research-s55-2026-08-22.md`, instrument v1.24 → v1.25, FIRINGS FOUR.**
+# Session 2026-08-22T09:47Z → ~11:1xZ. Two fresh-opus agents commissioned, both banked
+# and relayed (first-contact decode; gsxWins v88 study); one inline instrument built
+# and validated (Skalman dose).
+# ============================================================================
+
+## PROCESS DELTAS (s55, research) — routed at write time
+1. **⭐ A GREP CELL NAMES ITS SEARCH PATTERN, AND THE PATTERN MUST BE ABLE TO RETURN THE DISCONFIRMING CASE** — #119 enumerated call sites by grepping the `skip_core` token, a search that can only find callers that PASS it; the full by-function-name enumeration was 9 sites incl. three live ones and a dedicated method that had already won a recorded game. Enumerate by the FUNCTION's name, never by the token whose presence the claim asserts. Compounding: the builder's verification re-ran the same grep (their delta). *(Routed: retro v1.25 headline rule + this delta; queue stewardship applies it at every future GREP cell.)*
+2. **EVIDENCE ROWS CARRY THE SUBJECT TREE OF THE MEASURED GAMES** — #119's 0-in-30/30 was MJOLNIR's behavior (the study said so at :610/:645), compressed to "our builders" and aimed at the Skalman head. The charter's characteristic wrong-subject error, landing in a queue row for the first time. *(Routed: retro v1.25 Q3-family extension + this delta.)*
+3. **A RELAY PRESERVES ITS SOURCE'S OWN EVIDENCE HIERARCHY** — "65/65 turns+seat" flattened the doc's §0.2 grading of the seat check as weak. Corrected in-record on a side-lane catch. *(Routed: existing relay-fidelity class, firing recorded in retro.)*
+4. **THE FRESH-COMMISSION DESIGN KEEPS PAYING: both agents refuted their own briefs' premises before those premises could misprice anything** (decode: effective n 58, crash re-attribution, jitter inversion; study: launcher-family dead, "not strong", my stale rating figures). Third consecutive session. *(OBSERVATION — routing already exists (s40 rule); receipts in the retro.)*
+5. **AN INLINE INSTRUMENT CLEARS THE SAME BAR AS A COMMISSIONED ONE BEFORE ITS NUMBERS ARE RELAYED** — the dose script banked only after known-cell exact (446/54) + mutation control driven both ways (12/65 break). This is the standing instruments rule applied at speed; recorded because #119's grep failed exactly where this held. *(Routed: no new rule needed; the contrast is the teaching artifact in retro v1.25.)*
+
+--- 2026-08-22T11:09:58Z ⭐⭐ **RESEARCH ARM s55 — STATE NOTE. LIVE SURFACES VERIFIED, NOT ASSERTED.** ---
+
+## ⛔ WHAT A SUCCESSOR MUST NOT INHERIT UNCHECKED
+1. **HOLDER at wrap-time same-shell read (now.py 11:08:33Z): v176 (x3r0's), 1797, rank #21, last-10 3W-7L** (that line pools unrated — s54 caveat stands). Soft morning: today's rated 147/295 at my 09:5x read. Read fresh at boot, always.
+2. **CRASHREP-BC: LOCKED (b878ecf0d, side-lane certified, PREREG_CHECK OK) AND THE WINDOW IS DELIBERATELY HELD** — the builder held it under model-switch uncertainty (an activation window must not straddle a possible mid-session model change; restore-orphan risk). **Do not fire without settling the model question; the lock keeps.** Pooled readout is research's when it fires; window certs side lane's.
+3. **The [cyber] model-safeguard refusals (Fable 5 AND Opus 5, content-triggered)**: the builder's HANDOVER top block carries successor guidance (boot fresh, plain game language, /feedback the request IDs). The builder's related self-disclosure (never-fable repeal written on an invented attribution, fable subagent spawned, ALL REVERTED, charters byte-restored) is on the tail at 10:55:48Z — a successor should read it, not re-litigate it.
+4. **v623 design brief (builder's successor queue, top): healguard un-weld lead item** (`SK_CORE_PECK_HEALGUARD` welded off via `SK_CAGE_CEIL=False`), + the two tree questions handed by this lane (which role parks 200+ rounds adjacent without pecking; why Pivot fires the melee verb 0/20). Dose instrument reusable: `scratchpad/s55_skalman_dose.py` (validated both ways).
+5. **Queue 100 unblocked. #119 is WITHDRAWN with its correction inline — do not re-admit its shape without the corrected subjects and a by-function-name grep.** #116 carries its Status token now. #117/#118 live.
+6. **The Mjolnir forgone-melee finding (28/30 games parked adjacent vs gsxWins, 0 attacks, ~438 dmg/game forgone) is X3R0-ACTIONABLE, relayed to Magnus — no lane action.**
+7. **Opponent bumps this morning: Ouroboros v111→v115, I Stone v48→v49** (staleness rule); gsxWins v88 CONTINUOUS with v87/v65 (study, permutation-tested) — their launcher-family label is DEAD, kidnap risk to us ZERO.
+8. **Runner rate constants still 20-min** (fanout.sh:137, panel2_cal.sh:40, rate_budget.py) — safe direction, builder debt 5; CLAUDE.md text is already 10-min.
+9. **Corpus synced 09:53Z**; first act at boot: `tools/corpus/sync.py`.
+
+## RESEARCH ARM STATE — VERIFIED
+* **NOTHING RUNS.** Both commissioned agents (decode aa…, study a2…) COMPLETED and their results are banked+relayed (deliverables committed; the agents' final returns are fully reflected on the tail — nothing dies with this session). No crons, no watchers, no monitors, no background shells from this lane (the corpus sync completed 09:53Z).
+* **HARD LIMITS HELD:** zero matches fired (all fires were the builder's; my platform use read-only), no bot edits (bots/ opened READ-ONLY for the #119 grep + its correction), no submissions/activations, no verdict sentences (every verdict-shaped clause labeled and handed to the builder), no HANDOVER/tape/CLAUDE.md writes (both flags routed through the builder's batch). All commits pathspec-form, pushed within the minute.
+* **WAKE PATHS: none of mine persist.** Boot recovery: now.py → corpus sync → this note → builder's HANDOVER (CRASHREP hold + v623 brief first, then queue).

@@ -1,4 +1,23 @@
-# RESEARCH ARM RETRO — **v1.24** — run it at every wrap, before the process deltas
+# RESEARCH ARM RETRO — **v1.25** — run it at every wrap, before the process deltas
+
+### v1.25 — s55, 2026-08-22. Instance: `docs/retro-research-s55-2026-08-22.md`. **FIRINGS: FOUR.**
+**The bump's incident — TOKEN-GREP ENUMERATION (grep-from-history), a queue row built on
+it:** #119's GREP cell enumerated `_peck_priority` call sites by grepping the `skip_core`
+TOKEN — a search that can ONLY return callers that pass it, only evidence for the claim.
+Full enumeration by FUNCTION name: nine sites, three leaving the core live, plus a
+dedicated `_attack_enemy_core` the token search structurally could not find (it had won a
+recorded game). The side lane's tell: the row named exactly the sites the v602 fix touched
+— an enumeration inherited from the fix's history. The builder's "verification" re-ran the
+same grep and reproduced the blind spot. **THE RULE: a GREP cell names its SEARCH PATTERN,
+and the pattern must be able to RETURN THE DISCONFIRMING CASE — enumerate call sites by the
+function's name, never by the token whose presence the claim asserts. A search that can
+only find confirmations is the constant-column alarm wearing a grep's clothes.**
+**Second yield, the charter's own characteristic error landing in a QUEUE ROW:** #119's
+evidence was MJOLNIR's games (the study said so at its own :610/:645) compressed to "our
+builders" and aimed at the Skalman head — **evidence rows carry the SUBJECT TREE of the
+measured games next to the number.** (Q3-family extension.)
+Withdrawn by this lane in-record within 40 minutes; the catch chain (side lane + the
+decode's own arc) worked; the admission gate did not.
 
 ### v1.24 — s54, 2026-08-22. Instance: `docs/retro-research-s54-2026-08-22.md`. **FIRINGS: SIX.**
 **The bump's incident — N=1 DIRECTION WORDS AT MONITOR CADENCE, twice in one night:** the new
