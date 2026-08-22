@@ -140,6 +140,8 @@ read_store(index) -> int / write_store(index, value) -> None — index in 0..Gam
 
 draw_indicator_line(pos_a, pos_b, r, g, b) and draw_indicator_dot(pos, r, g, b) draw into the replay for visual debugging. print() output is captured to the replay; use stderr for console-only output.
 
+**⛔ RE-CORRECTED s54, 2026-08-22 — THE LOCAL HALF IS NOW ALSO DEAD: under fcode 2.3.6, bot `print()` output does NOT surface in LOCAL replays either** (measured 09:34:53Z: a forced-fire probe printed to stdout in an instrumented tree and its lines appear nowhere — not in the console, not via strings on the protobuf replay — while the same lines on stderr reach the console; the mutant control fired 996 lines the moment the channel moved). This is distinct from and in addition to the s28 LOKI-14 rule below (platform replays strip stdout). **The ONLY live channel for local probe output is stderr-to-console. A local probe that prints to stdout is instrumenting a channel that does not exist, and its zeros validate nothing.**
+
 **⛔ CORRECTED s28, 2026-08-10 — `print()` IS STRIPPED FROM PLATFORM-DOWNLOADED REPLAYS.** The sentence above is true LOCALLY and **false for what the platform returns**. Measured on the LOKI-14 leg: **30,664 `BotOutput` events carry only `{id, execTimeUs}`; the `stdout` field is empty in 30,664 of 30,664.** Independently spot-checked by the builder with the control that makes an absence meaningful: `bots/_v131loki14/raid.py:700` prints `LOKI14 KIDNAP arm=…` once per throw, `LOKI14_KIDNAP_LOG = True` in the fired build, and the leg decoded **314 kidnaps** — yet the literal strings `LOKI14`, `KIDNAP` and `arm=` occur **0 times in 1.8 MB** of that leg's platform replays. **CONSEQUENCE FOR EVERY FUTURE PREREG: a leg that plans to read its own arm tag, dose counter or state flag out of a LIVE replay is planning on an instrument that does not exist.** LOKI-14's prereg did exactly that and the method was not executable as written; the substitute was the throw destination read off the wire. Read arms from ENGINE-SIDE facts (positions, entity events), never from our own stdout.
 
 # Key types and constants
@@ -542,12 +544,19 @@ and both produced false findings on 2026-08-10:**
 Magnus, 2026-08-10: *"You are free to use unrated games as much as you want,
 it's a free tool meant to be used."* **This retires throughput caution as a
 reason not to test.** The only constraint is the platform's own:
-**5 test/unrated matches per 20 minutes** (**CORRECTED s28, 2026-08-10 15:0x —
-this said 10 MINUTES and the CLI now says otherwise, verbatim: `Error: Rate
-limit exceeded: max 5 test/unrated matches per 20 minutes`**); **rejected
-attempts appear to count**; shared across `match unrated` AND `match test`.
+**5 test/unrated matches per 10 minutes** (**RE-CORRECTED s54, 2026-08-22 — the window
+halved 20→10 with the organisers' cadence change, VERIFIED TWO WAYS on our own account:
+the discriminating 6th-fire probe ACCEPTED at t≈12 min from the burst's first fire
+(93629c58, 08:36:20Z), and the CLI's fresh verbatim rejection: `Error: Rate limit
+exceeded: max 5 test/unrated matches per 10 minutes` (08:41:24Z). The s28 20-minute
+correction below stands as history — this constant has now flip-flopped 10→20→10;
+re-derive it from a rejection string whenever it matters, never trust this line alone**);
+**rejected attempts appear to count**; shared across `match unrated` AND `match test`;
+**opponent-initiated challenges do NOT count against our budget, and opponents CAN
+challenge our live prototype mid-window (measured: Jacobs ×2, 2026-08-22) — every
+activation window is also a free look for the field.**
 Matches complete in ~15 s, so **the rate limit is the ENTIRE cadence
-constraint** — **ceiling ~75 games/hour, half what this file claimed.**
+constraint** — **ceiling ~150 games/hour under the 10-min window.**
 **Evidence it CHANGED rather than always having been 20:** every s27 arm filled
 its five panel cells uniformly (v104 7/7/7/6/6, loki15 7/7/6/6/6, confirm 4/4/4/4/4)
 on a 620 s inter-arm cadence — impossible under a 20-minute window, which would
@@ -637,8 +646,22 @@ WHAT LETS SOMEONE DROP THE CORRECTION BY DECIDING THEIR CUT "LOOKS LIKE" ONE.**
 MORE THAN ONE MEMBER OF THE CLUSTER.**
 
 **THE PROCEDURE, and a banked cut performs it in writing:**
-1. **NAME EVERY CLUSTER THIS DATA HAS.** Currently **two: MATCH and OPPONENT**
-   (add a third if a window effect is ever shown to bind).
+1. **NAME EVERY CLUSTER THIS DATA HAS.** Currently **four: MATCH, OPPONENT, MAP, and
+   CONTENT-DUPLICATE** (⛔ amended s54 2026-08-22 — this line said "two" and the
+   missing pair produced real defects the same week). MAP binds on any powered
+   multi-map fixture with heterogeneous arms (measured: DEFF 4.57, interval ×2.14 at
+   180-240 games/cell, v620 tape — applied in the EXCLUSION direction per the
+   restatement rule). CONTENT-DUPLICATE binds whenever the pool can contain
+   byte-identical or near-identical games — measured twice in one day on opposite
+   fixtures: 17.3% exact-duplicate games in BC's v47 field pool
+   (`CUT-116-beltgun-answer-2026-08-21.md` §1.7, intervals ~13% optimistic) and the
+   tape30 inert seed axis (15/15 byte-identical pairs, effective n halved,
+   `FIDELITY-BASELINE-v600-2026-08-21.md` §0.4). The platform DEFF constants cover
+   none of these. VERIFICATION STEP OF THE ENUMERATION PROCEDURE: every powered grid
+   carries a DUPLICATE CONTROL (same-tree arm; v620 measured its same-bot swing at
+   2.22pp), and with two deterministic trees vary MAP and SEAT, never seed. Any cut
+   over a deterministic opponent states whether it checked for content duplicates
+   (#117 mechanizes).
 2. **For each, state whether YOUR stratum can hold more than one member — and
    VERIFY it, do not assert it.**
 3. **The applicable DEFF is over the clusters that SURVIVE.**
