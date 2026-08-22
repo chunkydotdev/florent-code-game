@@ -325,11 +325,15 @@ class RolesMixin:
         # sentinels as necessary" = the nest machinery with a fortress bank
         # behind it). The denier stays home forever.
         if HEIM_DEMO:
+            # Magnus, on the v3 reel: "no pecking, we only watch our sentinels
+            # work and move to the next position to put up new ones if they
+            # are destroyed" — BOTH raiders run the engineer (sentinel siting +
+            # death-memo re-site); nobody melees. _attack_enemy_core is a
+            # no-op under HEIM_DEMO (below), so an engineer between sites
+            # walks and watches instead of poking.
             if rnd < HEIM_FLIP_ROUND:
                 self._home_keeper(ct, p, rnd)
-            elif self.role == SK_CAGE_WALKER:
-                self._cage_walker(ct, p, rnd)
-            elif self.role == SK_SIEGE_ENGINEER:
+            elif self.role in (SK_CAGE_WALKER, SK_SIEGE_ENGINEER):
                 self._siege_engineer(ct, p, rnd)
             else:
                 self._home_keeper(ct, p, rnd)
@@ -5153,6 +5157,8 @@ class RolesMixin:
 
     def _attack_enemy_core(self, ct, p, rnd):
         """Strangle-then-KILL: the cage is a means, the core is the end."""
+        if HEIM_DEMO:
+            return          # Magnus: "no pecking" — sentinels do ALL damage
         if self.enemy is None:
             return
         if ct.get_action_cooldown() == 0 and ct.get_global_resources() >= 2:
@@ -5569,7 +5575,19 @@ class RolesMixin:
                         if _cown:
                             if SK_NEST_CLEAR_OWN:
                                 try:
-                                    if ct.can_destroy(site):
+                                    # HEIM DEMO: two engineers share no ledger,
+                                    # so B's "occupied plant tile" can be A's
+                                    # STANDING SENTINEL — never eat a friendly
+                                    # turret to clear a site; re-site instead.
+                                    _ct_kind = None
+                                    if HEIM_DEMO:
+                                        try:
+                                            _ct_kind = ct.get_entity_type(_cbid)
+                                        except Exception:
+                                            _ct_kind = None
+                                    if HEIM_DEMO and _ct_kind in TURRET_TYPES:
+                                        pass
+                                    elif ct.can_destroy(site):
                                         ct.destroy(site)
                                         self.nest_clears_own += 1
                                 except Exception:
