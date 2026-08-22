@@ -3236,6 +3236,20 @@ SK_TUBE_GUARD = False        # ⭐⭐ v630 THE TUBE GUARD.  Evidence chain, all
                              # read registers plants/game, nest_lives, tube
                              # median life and adjacent-at-death share as
                              # co-diagnostics.
+                             # ⭐ v630.1 (same tree, post-screen iteration; the
+                             # v630.0 screen verdict is BUILD-REPORT-
+                             # v630tubeguard-2026-08-22.md): (a) the approach
+                             # bias is TERMINAL-ONLY (E6 attribution traced all
+                             # 9 flipped cells to r4-45 macro-path divergence);
+                             # (b) a band-scoped heal rung in the SITING path
+                             # (E4b measured 1 heal event in 60 ON games — the
+                             # hold-branch rung alone is unreachable when it
+                             # matters).
+SK_TUBE_GUARD_NEAR = 8       # d^2 gate for BOTH v630.1 changes: the seat bias
+                             # engages, and the siting heal rung fires, only
+                             # within this disc of the site/tube.  8 = the two
+                             # tiles of a knight-ish approach; outside it the
+                             # engineer is v628 exactly.
 
 # --- v620 PLANK 2 -- SK_RENT_EARLY: the refund must land BEFORE the buy ----
 SK_RENT_EARLY = False        # ⭐ v619's ITEM 2, AND IT IS A TIMING PLANK WITH

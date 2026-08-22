@@ -134,7 +134,7 @@ from sk_maps import (
     # --- v620 (THE TWO SUCCESSOR ITEMS) ------------------------------------
     SK_TUBE_FLOOR2, SK_TUBE_FLOOR2_N, SK_TUBE_FLOOR2_GRACE,
     SK_TUBE_FLOOR2_PREPREP, SK_TUBE_FLOOR2_PREPREP_MAX, SK_TUBE_FLOOR2_STAGE,
-    SK_TUBE_LATENCY_SOLO, SK_TUBE_GUARD,
+    SK_TUBE_LATENCY_SOLO, SK_TUBE_GUARD, SK_TUBE_GUARD_NEAR,
     SK_RENT_EARLY, SK_RENT_EARLY_RESITE, SK_RENT_EARLY_AGE,
     SK_RENT_EARLY_AGE_N, SK_RENT_EARLY_WINDOW, SK_RENT_EARLY_STEP,
     SK_RENT_STEP_BUDGET,
@@ -5483,7 +5483,10 @@ class RolesMixin:
             # that tile is where the heal rung reaches both the tube and its
             # screen, and standing there is the babysit.  A bias, never a
             # refusal state: seat unreachable => the v619 hold, line for line.
-            if SK_TUBE_GUARD:
+            # v630.1: same terminal-only gate as the siting walk -- the seat
+            # targeting engages only once the body is already near the tube,
+            # so the macro path to the hold is v628's.
+            if SK_TUBE_GUARD and p.distance_squared(hold) <= SK_TUBE_GUARD_NEAR:
                 seat = self._guard_seat(hold)
                 if seat is not None:
                     if p.x == seat.x and p.y == seat.y:
@@ -5624,6 +5627,19 @@ class RolesMixin:
                         return
                 if self._plant_gun(ct, p, site, rnd, live, want):
                     return
+        # ⭐ v630.1 -- BAND-SCOPED HEAL RUNG IN THE SITING PATH.  v630.0's only
+        # heal caller sat in the `live >= want` hold branch, which the engineer
+        # does not occupy after a first tube death -- measured: 39 F2 removals,
+        # 0 tube/screen heals (E4b falsifier fired).  This rung runs while
+        # SITING, but only when standing within d^2<=SK_TUBE_GUARD_NEAR of a
+        # LIVE ledger tube, so a walk through home territory never stalls on a
+        # pecked conveyor (the E6 lesson: behaviour leaking outside the band is
+        # how this plank lost checkmates).  Prep/plant above already returned
+        # if they acted; this fires only on their leftovers.
+        if (SK_TUBE_GUARD and ct.get_action_cooldown() == 0
+                and self._near_live_tube(p)
+                and self._heal_action(ct, p, rnd)):
+            return
         # ⭐ v630 SK_TUBE_GUARD -- APPROACH BIAS.  Walk to the site's enemy-side
         # seat rather than the site itself, so the prep barriers (laid from
         # wherever the body stands) land as FRONT cover by construction: from
@@ -5632,7 +5648,16 @@ class RolesMixin:
         # cooldown-0 block above preps/plants from here; v628's step_to(site)
         # would wander onto the plant tile itself).  Seat unreachable =>
         # exactly v628's walk.
-        if SK_TUBE_GUARD:
+        # ⛔ v630.1 -- TERMINAL-APPROACH ONLY.  v630.0 biased the walk from
+        # spawn, and the E6 attribution traced every one of the 9 flipped F1
+        # cells to a one-tile walk-target change at r4-r45 -- the bias was
+        # re-seeding the OPENING corridor and everything downstream was
+        # cascade (auroraveil: first enemy-core adjacency r99 -> r179).  The
+        # seat targeting now engages only inside d^2<=SK_TUBE_GUARD_NEAR of
+        # the site: the macro path is v628's line for line, and the last two
+        # steps land the body on the front seat, which is all the screen
+        # geometry ever needed.
+        if SK_TUBE_GUARD and p.distance_squared(site) <= SK_TUBE_GUARD_NEAR:
             seat = self._guard_seat(site)
             if seat is not None:
                 if p.x == seat.x and p.y == seat.y:
@@ -6285,6 +6310,17 @@ class RolesMixin:
                     if d.delta() == (sx, sy):
                         return d
         return None
+
+    def _near_live_tube(self, p):
+        """v630.1: is this body within d^2<=SK_TUBE_GUARD_NEAR of a LIVE ledger
+        tube?  Gates the siting-path heal rung to the band, so the rung can
+        never stall a walk through home territory on a pecked conveyor."""
+        for t in self._nest_slots():
+            if t is None:
+                continue
+            if p.distance_squared(t[1]) <= SK_TUBE_GUARD_NEAR:
+                return True
+        return False
 
     def _guard_seat(self, site):
         """v630 SK_TUBE_GUARD: the screen/babysit seat for `site` -- its
