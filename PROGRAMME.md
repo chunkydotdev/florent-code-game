@@ -36,6 +36,9 @@ successor session inherit it. The fields below are parsed; the prose is not.
     HEIMDALL_FIXTURES: F1_baltsars_v542wave__F2_mjolnir_noiseoff__F3_sleipnir_v2_v488beltbreak2_magnus_2026-08-22
     HEIMDALL_FIXTURE_BAR: defend_remove_raiders_rebuild_until_r300_then_win
     SESSION_MODE: max_subagents_keep_builder_context_clean_magnus_watching_2026-08-22
+    HEIMDALL_VICTORY_CONDITION: beat_sleipnir2_AND_baltsars_AND_current_slot_before_anything_else_magnus_2026-08-23
+    HEIMDALL_VICTORY_BAR: majority_wins_per_fixture_16_of_30_each_under_v21_screens
+    HEIMDALL_TACTIC_LOCK: eco_and_defence_to_r300_then_rotate_and_destroy_exploration_free_within
     HEIMDALL_PRIO_LADDER: p0_expand_eco_and_defence__p1_destroy_raiders__p2_destroy_enemy_turrets__p3_rebuild_preserve_eco_until_r300_magnus_2026-08-22
     HEIMDALL_PREDICTION: predict_their_moves_and_targets_to_react_quickly_magnus_2026-08-22
     KILL_TARGET_STATUS: superseded_for_heimdall_line_by_phase_flip_kill_lands_after_r300_by_design
