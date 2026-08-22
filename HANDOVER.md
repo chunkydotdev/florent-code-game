@@ -19,8 +19,12 @@ engineer text past a safety classifier — that is not the guidance.
 ## THE SLOT — UNTOUCHED THIS SESSION. x3r0's **v176 "Mjolnir rotfix w77"** holds
 (11:04Z wire read: rating **1797**, rank **#21**, 1605 matches). NO submit, NO activation,
 NO rated exposure by this lane all session. Rollback target if ever needed: v176 by integer.
-CONTROL = `bots/_v542wave` (unchanged). **LINE HEAD = `bots/_v622nestfall`** (main.py md5
-`de4c9af07a80de277f411aeccebfc7a6`), = v620 + `SK_NEST_EXHAUST_PB` ON.
+CONTROL = `bots/_v542wave` (unchanged). ~~LINE HEAD = `bots/_v622nestfall`~~ **LINE HEAD =
+`bots/_v623healweld` (s56 adoption, 2026-08-22 ~11:5xZ)** = v622 + heal-race guard un-weld
+(`sk_roles.py:5150`; only sk_roles.py differs — md5 `3f180a39bab7ced95925a672731ffde9`;
+main.py/sk_maps.py byte-identical to v622, so main.py md5 `de4c9af0…` does NOT distinguish
+the trees). Adopted on 60/60 turn-identity vs v622 + mutation-verified guard liveness:
+`docs/research/BUILD-REPORT-v623healweld-2026-08-22.md`.
 
 ## WHAT s55 SETTLED
 * **THE SITELESS QUESTION IS CLOSED, and it corrected BOTH prior sessions.** The 648 NOSITE

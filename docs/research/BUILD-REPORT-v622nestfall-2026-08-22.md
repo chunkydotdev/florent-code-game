@@ -17,7 +17,18 @@ two-surface practice — the LEVEL rides the next powered read.
   a flag with its measurement attached.
 
 ## Screen results (deterministic F1 = NOISE_OFF _v542wave, F2 = NOISE_OFF Mjolnir;
-15 maps × 2 seats, seed inert; tapes `scratchpad/s55_siteless/t_pb_f{1,2}`)
+15 maps × 2 seats, ~~seed inert~~; tapes `scratchpad/s55_siteless/t_pb_f{1,2}`)
+
+> ⛔ **CORRECTION RIDER (s56, 2026-08-22): "seed inert" is REFUTED for F2.**
+> Measured with v622-equivalent bytes on both sides of the comparison: seeds 7
+> vs 11 diverge in **29/30 F2 cells** (opp = NOISE_OFF Mjolnir; only
+> stavkirke_seatB identical). F1 was fired only at seed 7 in both s55 and s56,
+> so no seed claim is made for F1 either way. Operational fact this session
+> re-derived at cost: **F1 tapes are seed 7, F2 tapes are seed 11 — a
+> reproduction at the wrong seed diverges for fixture reasons that read as bot
+> reasons.** This does NOT disturb the vary-MAP-and-SEAT-never-seed fixture
+> rule below (line 55) — that rule guards against duplicate-content inflation
+> on deterministic pools, a different question; do not over-withdraw it.
 
 | tape | control (v620) | v622 (PB on) | identity |
 |---|---|---|---|
