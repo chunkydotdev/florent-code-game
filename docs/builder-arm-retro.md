@@ -1594,3 +1594,67 @@ instrument-debt list (~20 items incl. results.tsv schema, submit_clean --restore
 audit_trigger live-tail selftests, R2 ship-gate-in-code with parsed-SHIP_BAR rider) ·
 the 25 PENDING-DESIGN queue rows awaiting Skalman design calls · #116 belt-gun gap ·
 Skalman v1 founding per the playbook §6 + the architecture note.
+
+============================================================================
+# BUILDER ARM RETRO — instance s54 (2026-08-21T16:4xZ → 2026-08-22T09:4xZ; Magnus called the wrap)
+
+**FIRINGS: 22nd recorded instance.** The session: SKALMAN FOUNDED and iterated v600→v620
+(21 trees), first contact fired, the era's measurement practice rebuilt twice.
+
+**Q1 VERDICTS — every verdict typed against a pre-stated rule, and the two hardest calls
+were REFUSALS OF TECHNICAL PASSES:** v616's afterS2 4/4-clause pass refused on nil-dose
++ one-game moves (the broken producer found underneath); v620's p2b refused after passing
+all three gates because the grid's own duplicate control measured the claimed effect as
+inseparable from control-choice noise. The v608→v609 chain (adopted-on-structure →
+admission on the pre-stated condition) and the v619 tie-break selection ran exactly as
+their rules said. DOORWAVE typed to its locked bands and certified. First-contact
+verdicts correctly DEFERRED to the mechanism decode (game share was never the cells'
+bar). KILLED with mechanisms named: the launcher axis (3 designs), collar-fighting (4
+independent axes), the cushion pair, purchase ordering, one-cursor, cage-ceiling,
+block-memo, the medic (twice, second time with the corrected label), the seat package.
+
+**Q2 ERROR DIRECTIONS, named:** five published errors — "two games from beating the
+banditer" (FLATTERING; corrected by the powered read the same hour it was measurable);
+consuming v620's site-limited claim into a successor brief without verifying its anchor
+(FLATTERING toward a buildable lever; refuted by my own follow-up instrument); the
+tape30 "loss mode is the race" headline (analysis error, corrected by the anatomy); the
+v605 hand-written timestamp (neutral; 5th timestamps instance, self-caught); the
+s47-exception citation on a dead authority (neutral; side-lane caught). **Two of five
+flattering — the mean is still not zero and the correction machinery caught all five.**
+
+**Q3 INSTRUMENTS — the day's class: DEAD CHANNELS AND MISANCHORED COUNTERS.** The
+verdict-line-presence rule (three silent-instrument instances share it); the
+state-counter-wearing-a-refusal-name anchor (v620's NOSITE — the class landed on the
+instrument that named a successor lever, and the lever did not exist); the local-stdout
+dead channel (zeros validated nothing until the forced-fire drive exposed it — the
+never-seen-to-fire rule caught two dead instruments in one hour); comment-defeats-scan
+instances 5-9; ship-config-assertion instances 4-5 (fix shape: invert, never delete);
+the powered fixture's missing duplicate control and un-enumerated MAP cluster.
+**Positives: every one of these was caught by its own control or the both-ways rule
+BEFORE a verdict consumed it, except v620's — caught one wave later by re-instrumenting
+at the mechanism.**
+
+**Q5 THE SLOT:** FIRST CONTACT executed over four activation windows — zero rated leak,
+every window boundary-certified by the side lane, restore-by-integer + same-shell gates
+every time, the platform CPU test FIRST, the rc era added to submit_clean by its own
+designed extension point (citation corrected on the record). Two wait-inside-command
+timeouts died safely in their wait loops (disclosed; the class is noted for successors:
+launch windows near their time, never wait long inside a timed command). By-products:
+the 10-minute rate window verified two independent ways; opponent-initiated challenges
+measured (no budget cost; CAN catch a live prototype — the leak channel is priced).
+
+**Q6 WHAT THE BUDGET BOUGHT:** the SKALMAN LINE from zero — design doc, import manifest,
+fidelity instrument (digit-for-digit vs the study), 21 trees, fixture progression 0→14/30
+kills with median r160-188 · the powered practice (35.78% [32.68,38.88] vs the benchmark
+at n=900; founding tree 2.78% — ~33pp in one day) · FIRST CONTACT (15 cells + CPU + probe;
+the first game ever taken off BC's doctrine) · four doctrine closures with mechanisms
+(collar/launcher/tube-supply/cushion) · the DEFF enumeration rebuilt (2→4 clusters,
+duplicate controls standing) · Magnus's rc/unrated/experiment/screen-ladder rulings all
+encoded in PROGRAMME · ~15 banked evidence docs · the CLAUDE.md wrap batch shipped.
+
+**OPEN ITEMS CARRIED → HANDOVER:** first-contact MECHANISM verdicts (research's decode
+banks, builder types) · the siteless-state decomposition (state-anchored instrument,
+honestly labelled) · KILL_TARGET re-anchor on first-contact data (Magnus-confirmed
+deferral) · the residual wrap-debt file items (several discharged in the batch; the rest
+enumerated in scratchpad/s54_wrap_debts.md) · the v618 seat-war economics as design
+input for any future home work · the agent-layer availability note for the successor.
