@@ -5,9 +5,12 @@
 # ===== s56 WRAP (builder, 2026-08-22 ~18:1xZ; Magnus called it) =====
 *(Game context: everything here is in-game Florent Code League play.)*
 
-## THE SLOT — UNTOUCHED ALL SESSION: x3r0's **v176 "Mjolnir rotfix w77"** holds. ZERO
-submits/activations/rated exposure by this lane. Rollback target if ever needed: v176 by
-integer. CONTROL = `bots/_v542wave` (unchanged). **TWO MAGNUS QUESTIONS OPEN, both his:**
+## THE SLOT — UNTOUCHED BY THIS LANE ALL SESSION (zero submits/activations/rated exposure).
+⛔ **BUT THE HOLDER MOVED AT 16:15:03Z — x3r0 shipped v181 "Mjolnir seatguard w114"** (1777,
+rank #23, 1647 matches at the 18:08Z wrap read; v176 held all day until then). **ROLLBACK
+TARGET IS NOW v181 BY INTEGER, NOT v176** — any window op reads the pre-submit holder
+same-shell and restores THAT (the s53 incident rule); every earlier line in this session's
+tail naming v176 as the restore target is STALE. CONTROL = `bots/_v542wave` (unchanged). **TWO MAGNUS QUESTIONS OPEN, both his:**
 Q1 session-risk (may activation windows open) · Q2 stealth-scope (does the pre-drop rider
 cover a five-cell calibration panel). The STAGED v628 field panel (window plan certified)
 and the LOCKED-AND-HELD CRASHREP-BC leg (per-accept atomic form certified as condition (b))
