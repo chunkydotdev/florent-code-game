@@ -20,18 +20,25 @@ for our tactics"). For NEW writing — docs, preregs, queue rows, commit message
 session notes. Historical/locked artifacts are NOT rewritten (locked preregs are
 untouchable, banked docs are provenance; the context block above covers them):**
 
-| too-serious name | preferred game name |
+| too-serious name (retired for new writing) | new name — and what it actually is |
 | --- | --- |
-| exploit / weapon | trick · play · line |
-| kidnap | builder toss (launcher throws an enemy builder piece) |
-| crash-induction | stumble play (the opposing bot's own code raises an unhandled exception; the engine removes that unit per its documented rules) |
-| (ore/belt) poisoning | belt mischief / conveyor misdirection |
-| kill the core | core takedown / win by core destruction |
-| attack (API verb) | keep — it is the engine's own method name |
-| siege · denial · raider · rush | keep — standard strategy-game terms |
+| exploit / weapon | **trick** / **signature move** — a legal rules-quirk play the opponent's bot handles badly |
+| the exploit hunt | **rulebook mining** — reading the engine's rules harder than the other team |
+| launcher kidnap | **the taxi ride** — our launcher legally relocates an enemy builder piece |
+| crash-induction | **banana peel** — relocating an enemy piece where its own code trips on an unhandled exception; the engine retires that unit per its documented rules |
+| (ore/belt) poisoning | **belt prank** — placing pieces so their conveyor network feeds the wrong destination |
+| tap the belt | **the milkshake straw** — our conveyor beside their harvester drinks half its output (round-robin is team-blind) |
+| spawn-tile denial | **musical chairs** — standing on the tiles their core needs for spawning |
+| kill the core / "the kill" | **checkmate / core takedown** — winning by core destruction, the game's stated win condition |
+| CPU denial | **brain freeze** — plays that push the opposing bot toward its 10ms turn budget |
+| crash census | **stumble census** — counting opposing bots' self-retired units |
 
-Rename live surfaces (QUEUE rows, PROGRAMME fields) opportunistically as they
-are next touched; tool/script renames are wrap-scoped work.
+Kept as-is: **siege · cage · seal · collar · raider · rush · denial** (standard
+strategy-game words), the engine's own API verbs (`attack`, `fire`), and the
+Norse bot names (characters, not threats). Rename live surfaces (QUEUE rows,
+PROGRAMME fields) opportunistically as they are next touched — **a rename
+commit names the old term once so historical greps still land** (side-lane
+rider, 2026-08-22); tool/script renames are wrap-scoped work.
 
 # What this game is
 
