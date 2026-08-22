@@ -15,6 +15,24 @@ combat metaphor because it is more accurate. (Background: the s55 `[cyber]`
 model-safeguard refusals, coordination tail 2026-08-22; this framing is the
 truthful description, not a workaround.)
 
+**VOCABULARY CARD (Magnus, 2026-08-22: "We might have used too serious namings
+for our tactics"). For NEW writing — docs, preregs, queue rows, commit messages,
+session notes. Historical/locked artifacts are NOT rewritten (locked preregs are
+untouchable, banked docs are provenance; the context block above covers them):**
+
+| too-serious name | preferred game name |
+| --- | --- |
+| exploit / weapon | trick · play · line |
+| kidnap | builder toss (launcher throws an enemy builder piece) |
+| crash-induction | stumble play (the opposing bot's own code raises an unhandled exception; the engine removes that unit per its documented rules) |
+| (ore/belt) poisoning | belt mischief / conveyor misdirection |
+| kill the core | core takedown / win by core destruction |
+| attack (API verb) | keep — it is the engine's own method name |
+| siege · denial · raider · rush | keep — standard strategy-game terms |
+
+Rename live surfaces (QUEUE rows, PROGRAMME fields) opportunistically as they
+are next touched; tool/script renames are wrap-scoped work.
+
 # What this game is
 
 Two teams each control a fleet of robots on a rectangular grid (8x8 to 30x30, symmetric by reflection or rotation). A competitor writes a single Python class:
