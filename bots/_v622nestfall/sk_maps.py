@@ -2120,7 +2120,17 @@ SK_GAP_RELAX_SOLO = False # ⭐ v622 PLANK 1 -- UN-WELD THE GAP RELAX FROM THE
                           # candidates recoverable every round.  ON: the retry
                           # arms on `taken` alone.  OFF is an exact identity
                           # (the original conjunction is unchanged).
-SK_NEST_EXHAUST_PB = False # ⭐ v622 PLANK 2 -- LAST-RESORT POINT-BLANK ON A
+SK_NEST_EXHAUST_PB = True # ⭐ v622 PLANK 2, SHIPPED ON -- LAST-RESORT POINT-
+                          # BLANK ON A FULLY EXHAUSTED BAND.  Screen evidence
+                          # (deterministic F1/F2, s55): F1 14->15/30 with all
+                          # 28 quiet cells turn-identical (icefloe_seatB loss
+                          # r698 -> WIN r437, EXHPB fired r284 = the exhaustion
+                          # round); F2 8->8/30, 29 cells identical, one loss
+                          # delayed r386->r485.  Fires only when the band scan
+                          # returns nothing, so cells with a live band are
+                          # untouched BY CONSTRUCTION AND BY MEASUREMENT.
+                          # (Original rationale follows.)
+                          # v622 PLANK 2 -- LAST-RESORT POINT-BLANK ON A
                           # FULLY EXHAUSTED BAND.  The v1 point-blank ban
                           # (SK_NEST_POINT_BLANK) priced close plants against
                           # in-band plants ("die 30% faster").  This retry runs
