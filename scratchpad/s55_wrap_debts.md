@@ -36,3 +36,10 @@
    guard · submit_clean --restore-to · now.py last-10 label (pools unrated) · anat620
    zero-comparison blind alarm · fidtab schema · the inherited s53 HIGH batch
    (results.tsv schema, audit_trigger live-tail selftests, R2 ship-gate parsed SHIP_BAR).
+
+5. **WELD-PATTERN SWEEP** (added after the third same-day instance): enumerate every
+   guard whose condition conjoins 2+ SK_ flags; for each, check whether one side is a
+   permanently-False road-closure flag (the weld kills the guard silently). Instances
+   today: gap-relax→SK_TUBE_FLOOR (v622 fixed), core-peck healguard→SK_CAGE_CEIL (v623
+   candidate), + the s54 ship-config-assertion class is adjacent. A static sweep is
+   buildable (AST: `BoolOp(And)` with a Name whose sk_maps default is False).
