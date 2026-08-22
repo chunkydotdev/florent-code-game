@@ -3475,7 +3475,20 @@ SK_LEASH_DSQ = 50            # the "far" bar the E6 attribution measured: a
 # identity by CALL-SITE conjunction (`if SK_DEMOLISH and self._demolish_action`
 # at both sites), so the flags-off tree is character-for-character the CURRENT
 # adopted-leash tree.
-SK_DEMOLISH = False       # MASTER.  Own flag, no conjunction (see above).
+SK_DEMOLISH = True        # ⭐⭐ ADOPTED s57 (p2R, the redesign's registered
+                          # final attempt, PASSED EVERY BAR: destroyed-share
+                          # +0.176/+0.031/+0.088 vs ctrl, sum +0.295 vs >=+0.10;
+                          # v2.1 sums alive 49 (+3 — ABOVE the n=2 null
+                          # envelope, a real signal), deaths 55 (+1), eco -1.2%,
+                          # wins -1, kills -1 both inside null floors.  First
+                          # arm tonight to IMPROVE the F1 columns.  Banked
+                          # honestly beside it: the kill mix is barrier-heavy
+                          # (0.45-0.68 share) against the declared priority —
+                          # clearing collars appears to BE what pays; the F1
+                          # opponent plants +50% more when swept (share still
+                          # up); chews-per-destroyed worse on F1/F2; F3 sweep
+                          # bodies show the v606 thrash signature (+0.105) —
+                          # watch item.  MASTER.  Own flag, no conjunction.
 SK_DEMOLISH_DSQ = 39      # THE HOME FENCE, d^2 to our own 2x2 FOOTPRINT
                           # (`dsq_core`).  Deliberately the fence the tree
                           # already uses for "our core's business":
