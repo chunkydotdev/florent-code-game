@@ -19,12 +19,16 @@ engineer text past a safety classifier — that is not the guidance.
 ## THE SLOT — UNTOUCHED THIS SESSION. x3r0's **v176 "Mjolnir rotfix w77"** holds
 (11:04Z wire read: rating **1797**, rank **#21**, 1605 matches). NO submit, NO activation,
 NO rated exposure by this lane all session. Rollback target if ever needed: v176 by integer.
-CONTROL = `bots/_v542wave` (unchanged). ~~LINE HEAD = `bots/_v622nestfall`~~ **LINE HEAD =
-`bots/_v623healweld` (s56 adoption, 2026-08-22 ~11:5xZ)** = v622 + heal-race guard un-weld
-(`sk_roles.py:5150`; only sk_roles.py differs — md5 `3f180a39bab7ced95925a672731ffde9`;
-main.py/sk_maps.py byte-identical to v622, so main.py md5 `de4c9af0…` does NOT distinguish
-the trees). Adopted on 60/60 turn-identity vs v622 + mutation-verified guard liveness:
-`docs/research/BUILD-REPORT-v623healweld-2026-08-22.md`.
+CONTROL = `bots/_v542wave` (unchanged). ~~LINE HEAD = `bots/_v622nestfall` → `_v623healweld`~~
+**LINE HEAD = `bots/_v628compose` (s56 adoption ~14:2xZ, the session's first LEVEL claim)** =
+v623 + SK_NEST_CLEAR+OWN (engineer clears its occupied plant tile) + SK_TUBE_LATENCY_SOLO+STAGE
+(hold-state staging un-welded from the closed floor road); PB_LIFE carried OFF. Adopted on the
+pre-registered pooled POWERED read (n=1800/arm vs Mjolnir noise-ON): **candidate−dup +6.33pp
+[+1.40, +11.26] CI excludes 0 · null pair covers 0 · timely-checkmate 16.44 vs 14.28** — after
+the W1 duplicate-control alarm gated a tainted +5.89 (full chain on the tail 13:5x-14:2xZ).
+Ablation identities 60/60 both planks. sk_roles.py md5 `9db5b17eb1e62d2b2a732bc4d36a98a6`,
+sk_maps.py md5 `3153f256b…`. SUBJECT: one opponent — no field-general claim; vs-field battery
+owed before any ladder decision. Prior heads for identity work: v623 (`3f180a39…`), v622.
 
 ## WHAT s55 SETTLED
 * **THE SITELESS QUESTION IS CLOSED, and it corrected BOTH prior sessions.** The 648 NOSITE
