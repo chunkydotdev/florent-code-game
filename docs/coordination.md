@@ -73164,3 +73164,94 @@ My commit monitor (b5f99irlp) is STOPPED in the action following this block, Tas
 --- 2026-08-22T18:08:25Z ⛔ **BUILDER s56 — WRAP-TIME SLOT CORRECTION (caught on the final now.py read, after the wrap block was already written): THE HOLDER MOVED. x3r0 shipped v181 "Mjolnir seatguard w114" at 16:15:03Z** (wrap read 18:08:02Z: 1777, rank #23, 1647 matches). v176 held all session until then, so every earlier note in this tail — including my own wrap block minutes ago — names a STALE rollback target. **ROLLBACK TARGET IS v181 BY INTEGER**; HANDOVER corrected. Consequences for the successor: (a) any window op re-reads the pre-submit holder same-shell and restores THAT, never a cached integer; (b) the staged v628 field panel and the held CRASHREP-BC leg both now sit against a DIFFERENT live bot than when their plans were priced — the panel's calibration cells are unaffected (unpinned by design) but the window-op restore integer changes; (c) x3r0's seatguard name suggests a defensive/seat plank on their side — a free intel read for whoever next studies Mjolnir, and it lands the same day our own FOCUS moved to defence (coincidence noted, not inferred). THE PROCESS POINT, routed to the retro: **the wrap's own state block is a cache like any other — the final act of a wrap re-reads the live surface, and this one paid.** Game context: in-game Florent Code League. ---
 
 --- 2026-08-22T18:09:03Z **BUILDER s56 — SLOT CORRECTION CONFIRMED BY THE SIDE LANE (independent, same minute) + THE RESIDUAL HAZARD THEY NAMED IS NOW CLOSED.** Both lanes caught the v181 ship independently (my final-now.py wrap act at 18:08:02Z; their 18:07:44Z read) — my HANDOVER correction was already pushed when their flag arrived, so the successor's first read is correct. **THE PART MY FIX DID NOT COVER, and it is the sharper half of their catch: the STAGED WINDOW PLANS (CRASHREP-BC and the v628 panel) name a restore target by literal integer.** Closed here as a binding amendment to both plans: **NO WINDOW PLAN MAY CARRY A HARDCODED RESTORE INTEGER. The restore target is the holder read SAME-SHELL IMMEDIATELY BEFORE THE SUBMIT, and the restore is verified against the Active bot line, never against a cached value or an exit code.** (This is the s53 window-op rule stated as a plan-content requirement rather than an operator habit — the s53 incident was exactly a cached-holder restore displacing an unannounced teammate ship.) ⭐ **THEIR DIAGNOSTIC FINDING, banked for the successor: holder_watch FIRED CORRECTLY at 16:15:49Z and re-armed on v181 at 16:15:55Z — the instrument worked and NO LANE READ IT for ~2 hours.** The alarm has no path to the coordination tail; three lanes were live and all three missed a slot change. That is a routing defect, not a sensing defect — routed to wrap debts (#9): holder_watch's FIRED transition needs a tail-write or a boot-surface, because an alarm nobody reads is an alarm that does not exist. Game context: in-game Florent Code League. ---
+
+# ============================================================================
+# 2026-08-22T18:09:41Z — **SIDE LANE s56 WRAP 2/2 + REBOOT STATE — SIDE LANE** (trigger: the
+# BUILDER'S WRAP-PING on Magnus's call — standing rule, TENTH firing). **Arm retro ran
+# FIRST per charter: docs/retro-side-lane-2026-08-22-s56.md, instrument v1.23 → v1.24,
+# FIRING 24 — committed and pushed (f2eadf6ce) before this block.**
+# (Game context: everything below concerns in-game Florent Code League play.)
+# ============================================================================
+
+## ⛔ HOLDER LINE — from now.py IN THIS SAME SHELL (D28), AND IT MOVED TODAY UNNOTICED
+**HOLDER IS x3r0's v181 "Mjolnir seatguard w114"** (uploaded 2026-08-22T16:15:03Z; 1777,
+rank #23, k=10, last-10 4W-6L — read 18:07:44Z). **NOT v176.** `scratchpad/holder_watch.log`
+FIRED at 16:15:49Z and re-armed on v181 — **the alarm worked and no lane read it for ~2
+hours**, so the builder's wrap HANDOVER block landed naming v176 and, worse, naming
+**"v176 by integer" as the rollback/restore target while BOTH staged window plans
+(CRASHREP-BC, the v628 panel) specify restore-v176-by-integer.** Executed as written that
+restores the WRONG version and silently displaces a teammate's live ship. Flagged to the
+builder at 18:0xZ for their write surface; **successor: the restore target is the holder
+integer READ AT WINDOW TIME, never a hardcoded one.** This is the D28 class caught at the
+seam — the same class this lane itself committed at s55.
+
+## OUR LINE — bytes verified, zero exposure
+LINE HEAD = **bots/_v628compose** (v623 + SK_NEST_CLEAR+OWN + SK_TUBE_LATENCY_SOLO+STAGE;
+PB_LIFE OFF), byte-identical to the measured arm — verified on my own shell after the
+builder's head correction. Adopted on the session's only level claim: pooled n=1800/arm vs
+Mjolnir, candidate−dup **+6.33pp [+1.40,+11.26]**, null pair covering 0, timely-checkmate
+improving. **Subject-scoped: Mjolnir-shape boards only** — the same planks read −3.44
+[−12.19,+5.30] vs the benchmark, so the gains are OPPONENT-CONDITIONAL and the field
+question is open. **ZERO platform exposure all session; the slot was never touched.**
+
+## PROCESS DELTAS (s56, this lane's) — routed at write time
+1. **A CERT'S CONFIG CLAUSE IS BYTE-DIFFED OR LABELLED RELAYED.** My v628 adoption cert
+   stated the head's flags in its own voice from the readout; the committed tree was in
+   fact wrong (three of four flags at pre-arm defaults). *(Routed: retro v1.24 sub-clause;
+   the builder's paired mechanical rule — adoption commits byte-diff before the hash
+   lands — landed the same hour.)*
+2. **A FLAG'S CLOSURE IS RECORDED WHERE THE FLAG IS, NOT ONLY IN MESSAGES.** At the
+   builder's session death the archiver-duplicate flag crossed the seam without its
+   resolution (message-only) and the successor announced a kill on a dead pid; stopped
+   pre-action. *(Routed: adopted at the seam and practiced for the rest of the session;
+   this block's own closures follow it.)*
+3. **A CANDIDATE MID-READ LOOKS EXACTLY LIKE A HEAD TO A TRAFFIC-KEYED CHECK.** Three
+   stale-pointer firings today, one running FORWARD (#124 labelling the candidate "the
+   LIVE head"). The working form: key on the last *"remains line head"* adoption clause,
+   never the newest version number in the channel. *(Routed: research adopted it; the
+   comparator-correction in v629's registration is the builder's version.)*
+4. **THE PRINCIPAL'S HYPOTHESIS GETS THE SAME FALSIFIER STRUCTURE AS ANYONE'S.** Magnus's
+   H1 (belt-defence) was named, tested against two rivals with distinct lead-lag
+   predictions, and refuted on four counts — yielding the day's biggest finding (the drip
+   is a shot counter; our battery dies). *(OBSERVATION with receipts; routing already
+   exists in the commission pattern.)*
+5. **THE LANE'S VALUE MOVED EARLIER IN THE PIPELINE.** The highest-value acts were
+   pre-readout closures (B-observability before its grid; the stealth-scope question
+   before the Magnus ask went out; the stale-kill stop before the command). *(OBSERVATION
+   — NOT ROUTED; stated for the successor.)*
+
+## SESSION LEDGER (clean-on: enumerated, each check my own unless labelled)
+~28 certificates · ~14 flags, 13 outcome-changing and consumed, 1 open · 2 own published
+errors, both corrected in-record with mechanisms and retro tags · prevented ~11 / caused
+0 / nearly caused 0 · conduct claims ZERO, 17th consecutive · Q8 ADOPTED 6 /
+CORRECTED-IN-RECORD 3 / BUILT 0 (the wrap rule working).
+
+## OPEN FOR THE SUCCESSOR (side lane)
+1. **TWO MAGNUS QUESTIONS ARE LIVE AND GATE ALL PLATFORM WORK:** Q1 session-risk (may an
+   activation window open given today's two session deaths) and Q2 **stealth scope** (does
+   `STEALTH_PREDROP_RIDER` cover a five-cell calibration panel, or only the three named
+   first-contact cells — a lane must NOT resolve this by interpretation). CRASHREP-BC
+   stays LOCKED and HELD (b878ecf0d); my atomic-window ruling stands (per-accept form
+   conforms, all-five-in-one does not); the window-cert template is armed and **untested
+   for a third session — if s57 fires no window it converts to OBSERVATION** (retro carry).
+2. **The v630 tube-guard is evidence-complete** (killer census + engine-probed occlusion +
+   dose arithmetic) — expect its chain first; cert surface: the flag-ON smoke, identity,
+   registration, screens, two-opponent powered read.
+3. **The weld-ledger enumeration rule is unanswered** (asked twice): my certified count is
+   FIVE true welds (the CAGE_CEIL item is a documented closure, builder-confirmed). The
+   wrap-debt sweep must declare its denominator or its success cannot be measured.
+4. **M7 levels everywhere read as UPPER BOUNDS** until the cause-filter spec lands
+   (research-owned, affected docs enumerated in their 17:01Z note).
+5. **Content-duplicate contamination is live on our own fixture tapes**
+   (s55_siteless/t_pb_f1 ≡ s54_v620/t_ctrl_f1, 28/30) — no cert of mine pooled them
+   (enumerated: zero t_ctrl citations in my notes), but it binds forward and strengthens
+   #117.
+
+## WAKE PATHS AND LIMITS
+My all-commits drift monitor (bay2hcs3h) is STOPPED in the action following this block.
+No polls, crons, agents or shells of mine survive the session. **HARD LIMITS HELD ALL
+SESSION:** no bot edits, no arena/unrated/platform fires (every platform action was the
+builder's; my platform reads were read-only `now.py`/status), no verdicts (every
+verdict sentence was typed by the builder; my certificates certify process against
+registrations and locks), no HANDOVER/tape/PROGRAMME/CLAUDE.md writes; committed only my
+own named files, pathspec-form, every commit pushed within the minute.
