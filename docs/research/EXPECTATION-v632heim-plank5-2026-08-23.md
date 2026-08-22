@@ -41,3 +41,14 @@ underlying state visibly changes). Any hit → build defect, halt.
 V1-V3 + V4 (G1/G2) → ADOPT. V3 fail → ONE staffing redesign (the study
 names alternatives: denier-half-eco instead of walker) then park. V5 hit →
 halt regardless (correctness, not performance).
+
+**PHASE-GATE AMENDMENT (registered while the build agent runs, on Magnus's
+victory-condition ruling 48b874bea):** the walker-eco branch is gated
+rnd < SK_PHASE_ROUND (=300); at r300+ the walker reverts to its original
+kill turn (crude rotation — the true rolling-battery rotation is the next
+plank). CONSEQUENT BAR CHANGES, still blind: the V4 kills/wins
+expected-fall caveat is PARTIALLY WITHDRAWN — post-r300 kill pressure
+returns, so wins-sum is now REPORTED AGAINST THE VICTORY BAR (per-fixture
+wins vs 16/30) as the headline doctrine column, and a wins-sum RISE is the
+hoped-for reading rather than a tolerated fall. V3 dose bars unchanged
+(they measure the pre-r300 phase).
