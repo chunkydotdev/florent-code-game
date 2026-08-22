@@ -72745,3 +72745,33 @@ CONTEXT CELLS for the builder's verdict sentence (facts, not verdict): our SHIPP
 
 ## INSTRUMENT DEBTS → the successor (discharged in this wrap's batch: DEFF text, rate text, stdout text; the rest in scratchpad/s54_wrap_debts.md incl. the inherited s53 HIGH batch, pool.py MAP fold, tape.sh case guard, anat620 zero-refusal, fidtab schema, submit_clean --restore-to, now.py last-10 label.)
 ===== END s54 BUILDER WRAP DELTAS =====
+
+# ============================================================================
+# 2026-08-22T09:41:35Z — **SIDE LANE s54 WRAP 2/2 + REBOOT STATE — SIDE LANE** (trigger: the BUILDER'S
+# WRAP-PING on Magnus's call — standing rule, NINTH firing). **Arm retro ran FIRST per
+# charter: docs/retro-side-lane-2026-08-22-s54.md, instrument v1.21 → v1.22, FIRING 22 —
+# committed and pushed before this block.**
+# ============================================================================
+
+## HOLDER LINE — from now.py IN THIS SAME SHELL, never a poller (D28)
+The holder is x3r0's **v176 "Mjolnir rotfix w77"** (their v179 experiment rolled back after 75 min this morning; every first-contact window restored to 176 by integer, all eight flanking rated boundaries wire-verified). The SKALMAN line is at **v621** local (v600 founded → 14 iterations in one session), first-contact measured (pooled 2/65 with the mechanism decode owed), NOT on the ladder — the slot changes only per SHIP_BAR + Magnus.
+
+## PROCESS DELTAS (s54, this lane's) — routed at write time
+1. **A CERTIFICATE RE-DERIVES EVERY NUMBER IT REPEATS** — the one broken clause in six certificates was a quoted party-arithmetic (the ≥5 rescue); everywhere re-derived, nothing broke. *(Routed: retro v1.22 headline rule + the amendment chain on the record.)*
+2. **THE FIRE-SIDE WINDOW-CERT TEMPLATE held four windows:** pre-boundary → exposure contents with per-match pin decode → restore boundary → leak declaration, enumerated each time; the one UNEXPLAINED hold (b9bb73e2) became the opponent-challenge leak-channel discovery instead of a false clean. *(Routed: the four cert notes are the template; retro v1.23 carry asks if it survives as the successor's form.)*
+3. **PRE-FLAG THE ALWAYS-LOADED-FILE BATCH, VERIFY AGAINST EVIDENCE COMMITS:** three CLAUDE.md edits shipped with zero text-vs-evidence divergence because the checklist reached the builder before the commit and the verification ran at it. *(Routed: this block as precedent; the batch commit is the worked example.)*
+4. **A GATE-PASSING ARM CAN BE REFUSED ON MEASURED NOISE and a FAVORABLE nil-dose pass on the never-dosed rule** — v616/v620 set the precedents; certification language must leave room for both refusal classes. *(Routed: already in the builder's verdict record; noted here so the successor's cert vocabulary carries it.)*
+5. **The conceding counter-practice held:** before conceding to research's third hypothesis I re-derived the deciding arithmetic myself — the concession was RIGHT this time, and the re-derivation is what made the amendment precise instead of deferential. *(Routed: retro Q3#2 tags.)*
+
+## SESSION LEDGER (clean-on: enumerated, each on a primary)
+6 certificates — DOORWAVE readout (9 checks) · SKALMAN founding chain (4 surfaces + nit → closed) · first-contact windows 1/2/3+4 incl. campaign closure (15/15 accepts, zero rated leak, 8 boundaries = 176) · ~14 flags, consumption effectively total, 1 wrong (paste-slip, corrected) · 3 own published errors, all corrected in-record with mechanisms named · 10-min rate window: my conditional amendment → CONFIRMED on the verbatim-string primary · CLAUDE.md batch three-site verification clean · conduct claims ZERO, 15th consecutive.
+
+## OPEN FOR THE SUCCESSOR (side lane, next session)
+1. **First-contact mechanism decode** (reach/first-damage/fidelity-in-contact) commissioned — builder types verdicts, this lane certifies against the fire order's registered bars; the KILL_TARGET re-anchor rides the same data (Magnus-confirmed position, no PROGRAMME numbers move until it lands).
+2. **The window-cert template** (delta 2) is the form for any future activation campaign; the leak channel (opponent-initiated challenges catch a live prototype, spend none of our budget — Jacobs ×5 on 08-22) is a PRICED window-design input, both directions.
+3. **The launcher axis is PARKED** with a named revisit (post-seat-defence world) after three refuted designs; the siteless-state decomposition is open with v621's corrected instrument requirement (state-anchored, labelled as such).
+4. **Retro v1.23 carries:** the re-derive rule's first full-session test; Q1's template-survival question.
+5. The obligations-doc riders (fixture-tolerance-on-treatment-denominator; reachability text) ride the builder's wrap batch — verify landed.
+
+## WAKE PATHS AND LIMITS
+My commit monitor (b5f99irlp) is STOPPED in the action following this block, TaskStop-verified. No polls survive (all four bounded polls completed with their results banked in certificates). Hard limits held all session: no bot edits, no arena/unrated fires (every platform fire was the builder's; my reads were read-only list/status pulls), no verdicts (certificates certify process against locks and orders; every verdict sentence was typed by the builder), no HANDOVER/tape writes; committed only my own notes, certificates, corrections and retro files, all pathspec-form; every commit pushed within the minute.
