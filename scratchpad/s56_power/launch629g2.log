@@ -1,0 +1,91 @@
+2026-08-22T17:21:33Z capacity: work-server-1  arms=3 x par=2 = 6 <= our_cores 10  OK
+2026-08-22T17:21:33Z capacity: work-server-2  arms=3 x par=2 = 6 <= our_cores 6  OK
+2026-08-22T17:21:33Z PLAN runid=bb_20260822T172133Z_74526
+2026-08-22T17:21:33Z   arms=arm_d_full,arm_c_full,dup628 opp=_v542wave
+2026-08-22T17:21:33Z   maps=15 seeds=30 blocks=10 par=2 -> 900 rows/arm, 2700 total
+2026-08-22T17:21:33Z   work-server-1    blocks=[0, 2, 4, 6, 8] rows=1350
+2026-08-22T17:21:33Z   work-server-2    blocks=[1, 3, 5, 7, 9] rows=1350
+2026-08-22T17:21:33Z   out=/Users/junghard/Projects/Work/florent-code-game/scratchpad/s56_power/grid629g2
+2026-08-22T17:21:34Z host work-server-1: nproc=16 load=4.97 corefill_workers=0 fcode=2.3.6(pin ok)
+2026-08-22T17:21:35Z host work-server-2: nproc=6 load=1.20 corefill_workers=0 fcode=2.3.6(pin ok)
+2026-08-22T17:21:36Z shipped to work-server-1:fcode-build/bb_20260822T172133Z_74526 — 3 arms, opp _v542wave, 15 maps, 5 blocks
+2026-08-22T17:21:37Z LAUNCHED work-server-1 pid=3633156 root=fcode-build/bb_20260822T172133Z_74526
+2026-08-22T17:21:37Z shipped to work-server-2:fcode-build/bb_20260822T172133Z_74526 — 3 arms, opp _v542wave, 15 maps, 5 blocks
+2026-08-22T17:21:38Z LAUNCHED work-server-2 pid=2022550 root=fcode-build/bb_20260822T172133Z_74526
+2026-08-22T17:21:38Z PIDS: work-server-1=3633156  work-server-2=2022550
+2026-08-22T17:21:58Z   work-server-1    rows=0/1350 state=STARTING driver=ALIVE
+2026-08-22T17:22:00Z   work-server-2    rows=0/1350 state=STARTING driver=ALIVE
+2026-08-22T17:22:20Z   work-server-1    rows=0/1350 state=RUNNING driver=ALIVE
+2026-08-22T17:22:21Z   work-server-2    rows=0/1350 state=RUNNING driver=ALIVE
+2026-08-22T17:22:41Z   work-server-1    rows=0/1350 state=RUNNING driver=ALIVE
+2026-08-22T17:22:42Z   work-server-2    rows=0/1350 state=RUNNING driver=ALIVE
+2026-08-22T17:23:02Z   work-server-1    rows=0/1350 state=RUNNING driver=ALIVE
+2026-08-22T17:23:03Z   work-server-2    rows=0/1350 state=RUNNING driver=ALIVE
+2026-08-22T17:23:23Z   work-server-1    rows=0/1350 state=RUNNING driver=ALIVE
+2026-08-22T17:23:24Z   work-server-2    rows=0/1350 state=RUNNING driver=ALIVE
+2026-08-22T17:23:44Z   work-server-1    rows=0/1350 state=RUNNING driver=ALIVE
+2026-08-22T17:23:44Z   work-server-2    rows=270/1350 state=RUNNING driver=ALIVE
+2026-08-22T17:24:05Z   work-server-1    rows=270/1350 state=RUNNING driver=ALIVE
+2026-08-22T17:24:06Z   work-server-2    rows=270/1350 state=RUNNING driver=ALIVE
+2026-08-22T17:24:26Z   work-server-1    rows=270/1350 state=RUNNING driver=ALIVE
+2026-08-22T17:24:27Z   work-server-2    rows=270/1350 state=RUNNING driver=ALIVE
+2026-08-22T17:24:47Z   work-server-1    rows=270/1350 state=RUNNING driver=ALIVE
+2026-08-22T17:24:48Z   work-server-2    rows=270/1350 state=RUNNING driver=ALIVE
+2026-08-22T17:25:08Z   work-server-1    rows=270/1350 state=RUNNING driver=ALIVE
+2026-08-22T17:25:09Z   work-server-2    rows=270/1350 state=RUNNING driver=ALIVE
+2026-08-22T17:25:29Z   work-server-1    rows=270/1350 state=RUNNING driver=ALIVE
+2026-08-22T17:25:30Z   work-server-2    rows=540/1350 state=RUNNING driver=ALIVE
+2026-08-22T17:25:50Z   work-server-1    rows=270/1350 state=RUNNING driver=ALIVE
+2026-08-22T17:25:51Z   work-server-2    rows=540/1350 state=RUNNING driver=ALIVE
+2026-08-22T17:26:11Z   work-server-1    rows=270/1350 state=RUNNING driver=ALIVE
+2026-08-22T17:26:12Z   work-server-2    rows=540/1350 state=RUNNING driver=ALIVE
+2026-08-22T17:26:32Z   work-server-1    rows=540/1350 state=RUNNING driver=ALIVE
+2026-08-22T17:26:33Z   work-server-2    rows=540/1350 state=RUNNING driver=ALIVE
+2026-08-22T17:26:53Z   work-server-1    rows=540/1350 state=RUNNING driver=ALIVE
+2026-08-22T17:26:54Z   work-server-2    rows=540/1350 state=RUNNING driver=ALIVE
+2026-08-22T17:27:14Z   work-server-1    rows=540/1350 state=RUNNING driver=ALIVE
+2026-08-22T17:27:15Z   work-server-2    rows=540/1350 state=RUNNING driver=ALIVE
+2026-08-22T17:27:35Z   work-server-1    rows=540/1350 state=RUNNING driver=ALIVE
+2026-08-22T17:27:36Z   work-server-2    rows=810/1350 state=RUNNING driver=ALIVE
+2026-08-22T17:27:56Z   work-server-1    rows=540/1350 state=RUNNING driver=ALIVE
+2026-08-22T17:27:57Z   work-server-2    rows=810/1350 state=RUNNING driver=ALIVE
+2026-08-22T17:28:17Z   work-server-1    rows=540/1350 state=RUNNING driver=ALIVE
+2026-08-22T17:28:18Z   work-server-2    rows=810/1350 state=RUNNING driver=ALIVE
+2026-08-22T17:28:38Z   work-server-1    rows=720/1350 state=RUNNING driver=ALIVE
+2026-08-22T17:28:39Z   work-server-2    rows=810/1350 state=RUNNING driver=ALIVE
+2026-08-22T17:28:59Z   work-server-1    rows=810/1350 state=RUNNING driver=ALIVE
+2026-08-22T17:29:00Z   work-server-2    rows=810/1350 state=RUNNING driver=ALIVE
+2026-08-22T17:29:20Z   work-server-1    rows=810/1350 state=RUNNING driver=ALIVE
+2026-08-22T17:29:21Z   work-server-2    rows=1080/1350 state=RUNNING driver=ALIVE
+2026-08-22T17:29:42Z   work-server-1    rows=810/1350 state=RUNNING driver=ALIVE
+2026-08-22T17:29:42Z   work-server-2    rows=1080/1350 state=RUNNING driver=ALIVE
+2026-08-22T17:30:02Z   work-server-1    rows=810/1350 state=RUNNING driver=ALIVE
+2026-08-22T17:30:03Z   work-server-2    rows=1080/1350 state=RUNNING driver=ALIVE
+2026-08-22T17:30:23Z   work-server-1    rows=810/1350 state=RUNNING driver=ALIVE
+2026-08-22T17:30:24Z   work-server-2    rows=1080/1350 state=RUNNING driver=ALIVE
+2026-08-22T17:30:44Z   work-server-1    rows=810/1350 state=RUNNING driver=ALIVE
+2026-08-22T17:30:45Z   work-server-2    rows=1080/1350 state=RUNNING driver=ALIVE
+2026-08-22T17:31:05Z   work-server-1    rows=1080/1350 state=RUNNING driver=ALIVE
+2026-08-22T17:31:06Z   work-server-2    rows=1080/1350 state=RUNNING driver=ALIVE
+2026-08-22T17:31:26Z   work-server-1    rows=1080/1350 state=RUNNING driver=ALIVE
+2026-08-22T17:31:27Z   work-server-2    rows=1350/1350 state=COMPLETE driver=DEAD
+2026-08-22T17:31:47Z   work-server-1    rows=1080/1350 state=RUNNING driver=ALIVE
+2026-08-22T17:32:07Z   work-server-1    rows=1080/1350 state=RUNNING driver=ALIVE
+2026-08-22T17:32:28Z   work-server-1    rows=1080/1350 state=RUNNING driver=ALIVE
+2026-08-22T17:32:48Z   work-server-1    rows=1080/1350 state=RUNNING driver=ALIVE
+2026-08-22T17:33:08Z   work-server-1    rows=1080/1350 state=RUNNING driver=ALIVE
+2026-08-22T17:33:29Z   work-server-1    rows=1350/1350 state=COMPLETE driver=DEAD
+2026-08-22T17:33:32Z   runid  bb_20260822T172133Z_74526
+2026-08-22T17:33:32Z   generated  2026-08-22T17:33:32Z
+2026-08-22T17:33:32Z   hosts  work-server-1,work-server-2
+2026-08-22T17:33:32Z   opp  _v542wave
+2026-08-22T17:33:32Z   maps  auroraveil,bifrost,fimbulwinter,glacierkeep,helheim,holmgang,icefloe,jotunheim,longhouse,midgard,paths,skald,stavkirke,valkyrie,yggdrasil
+2026-08-22T17:33:32Z   seeds  930800-930829
+2026-08-22T17:33:32Z   par  2
+2026-08-22T17:33:32Z   planned_rows_per_arm  900
+2026-08-22T17:33:32Z   arm  arm_d_full  delivered  900  planned  900  COMPLETE
+2026-08-22T17:33:32Z   arm  arm_c_full  delivered  900  planned  900  COMPLETE
+2026-08-22T17:33:32Z   arm  dup628  delivered  900  planned  900  COMPLETE
+2026-08-22T17:33:33Z cleanup work-server-1: CLEANED
+2026-08-22T17:33:33Z cleanup work-server-2: CLEANED
+2026-08-22T17:33:33Z COMPLETE — 900 rows/arm on each of 3 arms. Read it: .venv/bin/python <build>/summarise.py <name> /Users/junghard/Projects/Work/florent-code-game/scratchpad/s56_power/grid629g2/<arm>.tsv
