@@ -1,0 +1,5 @@
+Running match: opp_v542wave_noiseoff vs probe_nest
+  Map: glacierkeep A.map26  Seed: 11  Replay: /dev/null  TLE: 10ms
+Error: failed to load map 
+/Users/junghard/Projects/Work/florent-code-game/maps/glacierkeep A.map26: No 
+such file or directory (os error 2)

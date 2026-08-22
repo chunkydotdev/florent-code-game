@@ -1,0 +1,16 @@
+Running match: opp_v542wave_noiseoff vs probe_nest
+  Map: yggdrasil.map26  Seed: 11  Replay: /dev/null  TLE: 10ms
+Completed turn 0
+Completed turn 100
+Completed turn 200
+Completed turn 300
+Completed turn 400
+Replay written to /dev/null
+
+  Winner: probe_nest  (Core destroyed, turn 402)
+
+               opp_v542wave_noiseoff         probe_nest  
+  Titanium           160 (480 mined)    301 (780 mined)  
+  Units                            9                  7  
+  Buildings                       15                 16  
+

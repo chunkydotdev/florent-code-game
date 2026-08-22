@@ -1,0 +1,13 @@
+Running match: opp_v542wave_noiseoff vs probe_nest
+  Map: paths.map26  Seed: 11  Replay: /dev/null  TLE: 10ms
+Completed turn 0
+Completed turn 100
+Replay written to /dev/null
+
+  Winner: opp_v542wave_noiseoff  (Core destroyed, turn 120)
+
+               opp_v542wave_noiseoff        probe_nest  
+  Titanium            21 (540 mined)    30 (280 mined)  
+  Units                            7                 5  
+  Buildings                       18                 6  
+

@@ -1,0 +1,13 @@
+Running match: probe_nest vs opp_v542wave_noiseoff
+  Map: skald.map26  Seed: 11  Replay: /dev/null  TLE: 10ms
+Completed turn 0
+Completed turn 100
+Replay written to /dev/null
+
+  Winner: probe_nest  (Core destroyed, turn 136)
+
+                   probe_nest    opp_v542wave_noiseoff  
+  Titanium     10 (770 mined)           22 (570 mined)  
+  Units                     9                        7  
+  Buildings                20                       12  
+
