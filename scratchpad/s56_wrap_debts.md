@@ -32,3 +32,10 @@ Game context: all items concern in-game Florent Code League tooling.
    ON that surface (TSVs only — no replays retained); local re-runs of grid
    cells are fresh same-cell samples, never reproductions. Candidate home:
    the remote_battery.py docstring + the builder-method doc.
+7. **Registration-template fixes (from v625 + v627 readouts):** (a) every
+   pooled dose metric states per-cell vs pooled explicitly (v625's ambiguity);
+   (b) every rate/clock metric states its normalization (v627's tube-down
+   clock was raw rounds — a longer game reads as a worse clock; normalize by
+   post-first-death rounds or state why not); (c) operational primary is
+   candidate−dup with its own interval (adopted mid-session, encode in the
+   template).
