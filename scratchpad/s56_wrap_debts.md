@@ -18,3 +18,9 @@ Game context: all items concern in-game Florent Code League tooling.
 4. **Inherited s55 debts stand:** `scratchpad/s55_wrap_debts.md` — incl. the
    weld-pattern AST sweep (#5) and the twice-carried audit_trigger/results.tsv
    decision-surface escalation (now three wrap cycles if not discharged here).
+5. **Weld-sweep second shape (side-lane audit, s56):** the specced AST sweep
+   covers multi-flag CONJUNCTIONS (`DEAD_FLAG and LIVE_FLAG`); the
+   SK_CAGE_CEIL dynamic-accept block is a single-dead-flag-gated ENHANCEMENT
+   (`if DEAD_FLAG:` guarding replacement logic) and escapes that pattern. Add
+   the second shape: any `if <flag>:` block whose flag is permanently False
+   and whose body carries measurement-bearing logic.
