@@ -53,3 +53,17 @@ miss parks it (the two-strikes rule, now standing policy). Z4(a/b/c) breach
 on F1 through the five named cells → that is the #129 systematic, not this
 plank; the readout must separate the five cells before any verdict line is
 typed (pre-registered so the separation is not post-hoc).
+
+---
+
+## RE-SCREEN ADDENDUM (p2R, registered before its readout)
+
+The redesigned arm (arm_p2r) screens against: **Z3 unchanged** (the dose bars
+above — they were valid under both rulers) + **GUARD-FRAMEWORK v2.1 sums in
+place of the Z4 per-fixture guards**: G1 alive-sum within −2 of leash [46],
+G2 death-sum within +4 [54], G3 eco-sum common-horizon within −12%, G4
+wins-sum informational [33, null floor −5..−1], kills-sum informational
+[21, null floor −5]. Identity: flags-off ≡ t_leash 30/30 ×3. The v606
+ordering hazard (denier walk above the commit freeze) is the named first
+suspect if denier step-thrash appears. Two-strikes: this is the sweep's
+final registered attempt.
