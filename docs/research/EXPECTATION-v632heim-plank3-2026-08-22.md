@@ -47,3 +47,11 @@ kill: ONE redesign (siting/facing), then park — two-strikes standing.
 W4 breach outside null envelopes → refused regardless of dose. W5 breach →
 refused (the fortress exists for the economy; a ring that starves it
 contradicts FORTRESS_GOAL).
+
+**W3(a) DENOMINATOR FLOOR (side-lane rider, registered while still blind):**
+the +30% ratio bar binds only if the baseline three-fixture intruder-death
+sum ≥ **K = 20** (safely below the prediction study's expectation of ~2-2.5
+raider bodies/game × 90 cells); below K the readout REPORTS both sums and
+the bar re-registers on measured values before any verdict — closing the
+degenerate-denominator case (0→1 trivially passes; integer quantization
+trivially fails) without surrendering the blind property.
