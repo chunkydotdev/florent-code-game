@@ -33,6 +33,26 @@ untouchable, banked docs are provenance; the context block above covers them):**
 | CPU denial | **brain freeze** — plays that push the opposing bot toward its 10ms turn budget |
 | crash census | **stumble census** — counting opposing bots' self-retired units |
 
+**SECOND PASS (Magnus, direct, 2026-08-22 ~11:5xZ: "We are using words that can
+be confused as unpleasant outside the context of the game") — the first card
+did not go far enough; lane traffic the same day still carried kill-compounds,
+"crash", "threat change". Additional rows, same scope (NEW writing only):**
+
+| still-confusable term | new name — and what it actually is |
+| --- | --- |
+| kill window / kill rate / timely kill (prose compounds) | **the closing window / checkmate rate / timely checkmate** — how fast we win by the game's stated condition |
+| crash / crash cascade (their units) | **stumble / stumble chain** — an opposing bot's own code raising an in-engine exception; the engine retires the piece per its rules |
+| threat / threat change (an opponent) | **matchup shift / new look** — the opponent shipped a different strategy |
+| our units die / are killed | **knocked out / retired** — the engine removes the piece per its rules |
+| killer (their winning unit) | **finisher** — the piece that completes their checkmate |
+| eviction (of their pieces) | **clear-out** — legally removing enemy structures from a zone |
+
+Code/tool/field identifiers (`KILL_TARGET`, `crash_census.py`, the locked
+CRASHREP-BC leg name) are NOT renamed inline — parsed surfaces rename only as
+tooled, grep-continuous work at wrap, and locked preregs never; new prose
+refers to them by identifier once and then uses the game name (e.g. "the
+banana-peel replication leg (registered as CRASHREP-BC)").
+
 Kept as-is: **siege · cage · seal · collar · raider · rush · denial** (standard
 strategy-game words), the engine's own API verbs (`attack`, `fire`), and the
 Norse bot names (characters, not threats). Rename live surfaces (QUEUE rows,
