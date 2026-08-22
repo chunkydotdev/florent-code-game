@@ -72775,3 +72775,36 @@ The holder is x3r0's **v176 "Mjolnir rotfix w77"** (their v179 experiment rolled
 
 ## WAKE PATHS AND LIMITS
 My commit monitor (b5f99irlp) is STOPPED in the action following this block, TaskStop-verified. No polls survive (all four bounded polls completed with their results banked in certificates). Hard limits held all session: no bot edits, no arena/unrated fires (every platform fire was the builder's; my reads were read-only list/status pulls), no verdicts (certificates certify process against locks and orders; every verdict sentence was typed by the builder), no HANDOVER/tape writes; committed only my own notes, certificates, corrections and retro files, all pathspec-form; every commit pushed within the minute.
+
+# ============================================================================
+# 2026-08-22T09:45:49Z — ⭐⭐ **RESEARCH ARM s54 WRAP — fired by the BUILDER'S WRAP-PING on
+# Magnus's call (standing rule). ARM RETRO RAN FIRST per charter:
+# `docs/retro-research-s54-2026-08-22.md`, instrument v1.23 → v1.24, FIRINGS SIX.**
+# Session 2026-08-21T16:41Z → 2026-08-22 ~10:2xZ (overnight watch included).
+# Three fresh-opus agents commissioned: #116 cut, kladde v173 study, first-contact
+# mechanism decode (the third is LIVE at wrap — see state note).
+# ============================================================================
+
+## PROCESS DELTAS (s54) — routed at write time
+1. **N=1 DIRECTION WORDS AT MONITOR CADENCE** — a decode-within-a-minute invites a verdict-within-a-minute; two single-match direction-labels were refuted by the next data point. Mechanical form: a single-match tape read carries its n and no direction word (or "one-match read") in the same clause. *(Routed: retro v1.24 Q7.)*
+2. **AN ALARM'S ACT-ON CLASS IS SUBJECT-DEPENDENT** — the same |Δ| means different things on our bot vs a teammate's; the wake monitor was retuned asymmetric (losses wake, wins don't) after an hour live. Derivable at arming time. *(Routed: in-session retune note + retro standing line A.)*
+3. **ABSENCE-OF-ATTRIBUTION IS AN ANCHOR-CLASS CLAIM** — "unattributed" published for an id its owner had disclosed on the tail 40 min earlier. Grep the tail for the id before publishing an attribution absence. *(Routed: retro v1.24, closing-line B extension.)*
+4. **A FIRE PLAN IS CHECKED AGAINST PROGRAMME.md's PARSED FIELDS BEFORE PUBLISH** — the stealth-gate omission was one grep away; the side lane found it by running exactly that grep. *(Routed: retro line B; the fire-order template carries the gate list now.)*
+5. **THE WINDOW LEAK CHANNEL IS BIDIRECTIONAL AND CONFIRMED LIVE** — opponents field-read our prototype during activation windows (Jacobs, free, twice); symmetrically, their challenges against our fixed holder are a free controlled read of THEIR iteration direction. *(Routed: window pricing (builder, consumed) + queue #118.)*
+6. **VERIFY-RELAY-BEFORE-FOLD held as standing practice** — every peer-relayed instance (ebd62b932, 35981aedc, the v620 figures) was checked against its primary before entering the amendment text; the one unverified absence (delta 3) is the counterexample that proves the rule's scope. *(Routed: already the practice; scope extension in retro.)*
+7. **QUEUE-STEWARD ROWS OBEY THE COUNTER'S CONTRACT** — two of my rows were invisible to queue_check for lacking the literal `GREP:` token; fixed my rows, not the matcher; near-miss warning left as the owner's call. *(Routed: tool-owner observation on the tail 10:0x; my format corrected.)*
+
+--- 2026-08-22T09:45:49Z ⭐⭐ **RESEARCH ARM s54 — STATE NOTE. LIVE SURFACES VERIFIED, NOT ASSERTED.** ---
+
+## ⛔ WHAT A SUCCESSOR MUST NOT INHERIT UNCHECKED
+1. **HOLDER at wrap-time wire read: v176 (x3r0's), ~1790-1800, rank ~#19-20** — the slot moved FOUR times in 37h (v176→v177 confusion→v176→v179→v176); read `fcode status` fresh, always.
+2. **FIRST CONTACT IS FIRED AND POOLED (2/65; mirror 1/20 · Pivot 0/20 · kladde 1/25) — but the REGISTERED BARS ARE MECHANISM (reach/first-damage/answer-latency), NOT game share.** The MECHANISM DECODE was commissioned and its agent was live at wrap: if `docs/research/DECODE-firstcontact-v180-2026-08-22.md` exists, consume it FIRST; if not, re-spawn from `scratchpad/s54_firstcontact_decode_commission.md` (replays archived+synced, one agent, ~30 min). The builder's HANDOVER names it the successor's first verdict surface.
+3. **Queue 101 unblocked** (true count after the GREP-token fix; my earlier 99s were miscounted). New: #117 (dup fingerprint), #118 (repeat-challenger derivative). #116 resolved-in-place still COUNTS pending a `Status: answered` token — add it on next queue touch.
+4. **The kladde reframe: 0.521 league-wide, 0.943 vs us — our worst matchup, not a strong bot; their rating substantially farmed from us (INFERENCE).** Fire-order cell-3 bar is reach+first-damage. Their kidnap risk to us: ZERO (0 launchers/160 games).
+5. **Rate window: 10-min CONFIRMED on our own accepts (6 our-side in 13m56s refutes 20-min); opponent-initiated fires spend none of our budget; CLAUDE.md + constants updated in the builder's batch — verify the ~10-file constant edit actually landed before trusting any runner cadence.**
+6. **Corpus: synced ~09:33Z.** First act: `tools/corpus/sync.py` (overnight rated tape + any post-09:33 matches).
+
+## RESEARCH ARM STATE — VERIFIED
+* **Wake monitor b3vmfonon: TaskStop'd this shell, stop confirmed in the tool result.** Its predecessor bw2mm6c64 was TaskStop-verified at retune. **The one thing that may outlive intent: the first-contact decode agent (in-process, dies with this session silently if unfinished — no orphan process risk, its worktree artifacts are under scratchpad/ and its brief is committed).** NOTHING ELSE RUNS: no crons, no watchers, no shells.
+* **HARD LIMITS HELD:** zero matches fired (all fires were the builder's; my platform use was read-only list/info/status), no bot edits, no submissions/activations, no verdicts (every verdict-shaped sentence labeled and handed to the builder), no HANDOVER/tape writes, no CLAUDE.md edits (both amendment requests routed through the builder's batch). All commits pathspec-form, pushed within the minute.
+* **WAKE PATHS: none of mine persist.** Boot recovery: now.py → corpus sync → this note → builder's HANDOVER (mechanism decode first, then #117/#118 and the 25 pending-design rows).

@@ -1,4 +1,20 @@
-# RESEARCH ARM RETRO — **v1.19** — run it at every wrap, before the process deltas
+# RESEARCH ARM RETRO — **v1.24** — run it at every wrap, before the process deltas
+
+### v1.24 — s54, 2026-08-22. Instance: `docs/retro-research-s54-2026-08-22.md`. **FIRINGS: SIX.**
+**The bump's incident — N=1 DIRECTION WORDS AT MONITOR CADENCE, twice in one night:** the new
+rated-tape wake monitor decodes a match within a minute, and twice that speed produced a
+direction-label on a single-match read ("ship-and-improve"; "threat softened") that the next data
+point refuted. **Q7 gains the mechanical form: a single-match tape read carries its n and either no
+direction word or "one-match read" in the same clause — the monitor's speed is the hazard, because
+a decode-within-a-minute invites a verdict-within-a-minute.** (Q9's under-powered-correction lesson,
+arriving on the generator side at instrument cadence.)
+**Second yield — ABSENCE-OF-ATTRIBUTION is an anchor-class claim:** "unattributed" was published
+for an id whose owner had disclosed it on the tail 40 minutes earlier; closing-line B's grep rule
+now explicitly covers attribution absences (grep the tail for the id before publishing).
+**Third yield, positive:** the delegation mechanism (Q4, v1.17) produced the session's two
+highest-value corrections — a commissioned agent refuting its own brief's framing ("kladde is
+top-tier" → 0.521 league-wide, our worst matchup) before the framing could misprice a leg.
+Sunset clause NOT armed.
 
 **RETRO v1.2 · created 2026-08-10 (s28) · bumped twice 2026-08-11 (s29) · companion to `EXPERIMENT-METHOD-CHANGELOG.md`
 (method v3.4) and to `two-session-protocol.md` rule 5.**
