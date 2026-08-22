@@ -3623,6 +3623,29 @@ SK_FORT_RING_RESERVE = 40 # Ti floor left standing after EVERY ring buy.  ⛔ TH
                           # (disclosed: study §7 R2 asks for the throughput
                           # form; the bank floor is the available proxy and a
                           # later arm can sharpen it).
+SK_FORT_RING_HARV_MIN = 2 # ⭐⭐ THE ECONOMY FLOOR, ADDED BY THE REDESIGN, AND
+                          # IT IS THE HALF OF R2 THE FIRST ATTEMPT COULD NOT
+                          # EXPRESS.  Study §7 R2 asks for a DELIVERED-Ti-PER-
+                          # ROUND floor; attempt 1 shipped a BANK floor
+                          # (SK_FORT_RING_RESERVE) as the available proxy and
+                          # disclosed the substitution.  The screen then
+                          # refused the arm on the economy fences alone --
+                          # eco-sum -24.8% vs a -12% bar, harvesters-built
+                          # -20.3% vs -10% -- with every dose bar crushed.  A
+                          # BANK floor cannot see the difference between "we
+                          # have 100 Ti because the belt is delivering" and
+                          # "we have 100 Ti because we never built the belt";
+                          # a HARVESTER COUNT can, and it is the closest
+                          # readable proxy for throughput a BUILDER has (there
+                          # is no per-round delivery getter in the Controller
+                          # API).  TWO because one harvester is the opening
+                          # move every arm makes and gates nothing, and
+                          # because `titanium_collected` is delivery-to-core:
+                          # two live harvesters means a belt that is actually
+                          # routing.  ⛔ NOT A REPLACEMENT FOR THE RESERVE --
+                          # both gates are ANDed, they answer different
+                          # questions (can we afford it / has the economy
+                          # started).
 SK_FORT_RING_LANE = 2     # THE LANE HALF-WIDTH for the axis sentinel, in
                           # PERPENDICULAR TILES off the our-core -> enemy-core
                           # ray.  A sentinel's shot is a SINGLE-TILE-WIDE line,

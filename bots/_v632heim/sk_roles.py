@@ -148,7 +148,7 @@ from sk_maps import (
     # --- v632 HEIMDALL PLANK 3 (THE TURRET RING) ---------------------------
     SK_FORT_RING, SK_FORT_RING_GUNNERS, SK_FORT_RING_SENT,
     SK_FORT_RING_WINDOW, SK_FORT_RING_RESERVE, SK_FORT_RING_LANE,
-    SK_FORT_RING_SENT_DSQ,
+    SK_FORT_RING_SENT_DSQ, SK_FORT_RING_HARV_MIN,
 )
 
 # --- v611: the 8 neighbours, for a LAUNCHER's pickup disc (d^2 <= 2) --------
@@ -1381,27 +1381,6 @@ class RolesMixin:
             # building that is one round late is still a building.
             if self._home_launcher_action(ct, p, rnd):
                 return
-            # ⭐⭐ v632 HEIMDALL PLANK 3 -- THE TURRET RING (SK_FORT_RING), THE
-            # ACTION HALF.  BELOW EVERY HEAL RUNG AND EVERY BODY-ANSWER RUNG,
-            # ABOVE THE ECONOMY -- and the placement is the plank's own claim,
-            # not a convenience.  The prediction study's metronome (banked s57,
-            # coordination tail ~20:2xZ) is that their ladder lands r1-r5, the
-            # first plant in OUR half at median r5 and the collar at median
-            # r11; a turret bought after that has missed the thing it answers,
-            # exactly as `_home_launcher_action` above argues for itself.  It
-            # sits BELOW the heals for the reason every home rung in this tree
-            # does: a body or a core about to die outranks a building that is
-            # one round late, and the v630/p11 finding is that a keeper which
-            # spends its turn while its own core bleeds loses the game the
-            # priority ladder was supposed to win.
-            # ⛔ DISCLOSED DIFFERENCE FROM SK_HOME_GUNNER's placement:
-            # `_home_gun_action` sits BELOW the economy (under the harvester
-            # and the seat claim).  This plank is above it, which is the one
-            # ordering change plank 3 makes, and it is what the R2 reserve
-            # prices -- the ring may take a keeper turn the belt wanted, but it
-            # may never take the last SK_FORT_RING_RESERVE titanium.
-            if SK_FORT_RING and self._fort_ring_action(ct, p, rnd):
-                return
             # ⭐ v610 PLANK 2, THE ACTION HALF.  While a chain is ONE tile from
             # delivering, that conveyor outranks a new harvester: a harvester
             # with no route home is worth exactly zero forever, and 30 of 68
@@ -1427,6 +1406,34 @@ class RolesMixin:
             if self._home_gun_action(ct, p, rnd):
                 return
             if SK_BELT and self._belt_action(ct, p, rnd):
+                return
+            # ⭐⭐ v632 HEIMDALL PLANK 3 -- THE TURRET RING (SK_FORT_RING), THE
+            # ACTION HALF.  ⛔⛔ BELOW EVERY ECONOMY VERB -- BELOW
+            # `_harvester_action` AND BELOW `_belt_action` -- AND THAT
+            # PLACEMENT IS THE REDESIGN.  The first attempt put this rung ABOVE
+            # the economy (disclosed as deviation 1 in its build report) and
+            # the screen refused it on the pre-registered ECONOMY fences and on
+            # nothing else: eco-sum -24.8% against a -12% bar and
+            # harvesters-built -20.3% against -10%, while every dose bar was
+            # crushed (intruder kills +187%, r1 ammo bank 90/90, ring stands
+            # 87/90) and survival rose for the fourth consecutive arm
+            # (alive-sum 51).  The measured mechanism is TURRET-FOR-BELT
+            # SUBSTITUTION, not overspend: turrets at r120 +30-70% while
+            # conveyors and harvesters fell 20-30% at ~flat total spend -- i.e.
+            # the ring was taking the KEEPER'S TURN the belt wanted, exactly
+            # the scarcity this tree names in `main.py:16` ("THE KEEPER'S TURN
+            # IS THE SCARCE RESOURCE").  A titanium reserve cannot price a
+            # turn, so the fix is the ladder, not the constant.
+            # ⇒ The ring now buys only out of a round in which no heal duty, no
+            # seat duty, no harvester and no belt build wanted the turn.  It
+            # sits beside `_cover_gun_action` and just below `_home_gun_action`
+            # -- the same rung every other once-a-game turret purchase in this
+            # tree occupies, which is where they were priced.
+            # ⚠ THE COST IS REAL AND IS REPORTED, NOT HIDDEN: the ring lands
+            # LATER than the prediction clock wants (their ladder r1-r5, first
+            # our-half plant median r5, collar median r11).  A later ring is
+            # the price of an economy that still exists to defend.
+            if SK_FORT_RING and self._fort_ring_action(ct, p, rnd):
                 return
             if self._cover_gun_action(ct, p, rnd):  # v601 PLANK 2
                 return
@@ -2793,15 +2800,80 @@ class RolesMixin:
             return EntityType.GUNNER
         return None
 
-    def _fort_ring_window(self, rnd):
+    def _fort_harv_live(self, ct):
+        """OUR live harvester count, as this body knows it.
+
+        ⛔ THE CENSUS IS `harv_tiles` AND THE CHOICE IS DISCLOSED, INCLUDING
+        WHICH WAY IT IS WRONG.  Three censuses were available:
+          (a) `len(self.harv_tiles)` -- CHOSEN.  ZERO engine calls.  It is the
+              HOME KEEPER's own build ledger, maintained by the same body that
+              buys the ring: a tile is added by `_harvester_action` on a
+              successful build and DROPPED by `_harv_watch` when this body can
+              SEE the tile is empty.  It is also the exact set the global belt
+              plan routes trunks to, so "2 harvesters" here means the same two
+              things the economy means.
+          (b) `ct.read_store(SK_SLOT_HARV)` -- REJECTED.  Slot 4 is documented
+              as a MONOTONE RATCHET (`sk_maps.py:2335`): it never falls when a
+              harvester dies, so a bot whose harvesters were all killed would
+              still read its high-water mark and buy turrets on an economy that
+              no longer exists.  That is the exact failure this gate exists to
+              prevent, and it is also a round stale (writes are buffered).
+          (c) a live count over `self.vis_friend` -- REJECTED as strictly worse
+              than (a) for the same price: it sees only d^2 <= 20 of this body,
+              so a harvester across the home half reads as dead.
+        STALENESS, BOTH DIRECTIONS, because a gate whose error direction is
+        unstated is not a gate:
+          * OVER-COUNT (fails toward ALLOWING the buy): a harvester killed
+            outside the keeper's vision stays in the set until this body walks
+            within d^2 <= 20 of the tile and `_harv_watch` reads it empty.
+            `_harv_watch` also needs SK_HARV_ESCALATE, which is ON.
+          * UNDER-COUNT (fails toward REFUSING the buy): a REPLACEMENT keeper
+            starts from an empty set and re-learns nothing -- it only ever adds
+            tiles it builds itself.  So after a keeper death the ring can be
+            gated shut for the rest of the window.
+        The under-count direction is the safe one for this plank (it protects
+        the economy, which is what the gate is for) and the over-count is
+        bounded by the keeper being the body that stands at home.
+
+        ⛔⛔ SEMANTICS CORRECTED PRE-SCREEN (builder, registered in the p3R
+        addendum): the floor reads harvesters BUILT (the slot-4 monotone
+        ratchet) rather than the live set above -- the live census's two
+        smokes measured our tree holding ~ONE live harvester under fire, so
+        an ALIVE floor is OPPONENT-CONTROLLABLE: killing our harvester locks
+        our weapon off exactly when it is needed (ring stood 3/10 vs 87/90).
+        The ratchet's own danger (buying turrets on a dead economy), which
+        the original rejection above correctly named, is now neutralized
+        STRUCTURALLY by the ladder demotion: _harvester_action outranks the
+        ring rung, so a keeper with dead harvesters rebuilds before it can
+        ever reach a ring buy.  Ratchet is one round stale -- a threshold
+        that only rises tolerates that.  The rejected-text above is kept as
+        the record of the argument this correction answers.
+        """
+        try:
+            return ct.read_store(SK_SLOT_HARV)
+        except Exception:
+            return 0
+
+    def _fort_ring_window(self, ct, rnd):
         """The buy window, as ONE predicate so the action and the walk cannot
         disagree -- the launcher arm's lesson ("do not walk at a buy we cannot
         make"), applied before it can bite.
+
+        ⭐⭐ THE REDESIGN'S SECOND CHANGE LIVES HERE: the ring may not be bought
+        (or WALKED AT) until the economy has started -- SK_FORT_RING_HARV_MIN
+        live harvesters.  It is in the WINDOW rather than in `_fort_afford` so
+        that the walk half is gated by the same predicate as the buy; a keeper
+        walking toward a turret site it may not buy is the v610 cost in a new
+        hat, and under the refused arm's own diagnosis (turret-for-belt
+        SUBSTITUTION of the keeper's turn) a wasted walk is the same currency
+        as a wasted build.
         """
         if not SK_FORT_RING or self.core is None:
             return False
         lo, hi = SK_FORT_RING_WINDOW
         if rnd < lo or rnd > hi:
+            return False
+        if self._fort_harv_live(ct) < SK_FORT_RING_HARV_MIN:
             return False
         return self._fort_ring_next() is not None
 
@@ -3004,7 +3076,7 @@ class RolesMixin:
         the turn.  At most SK_FORT_RING_SENT + SK_FORT_RING_GUNNERS purchases
         in a game, each inside SK_FORT_RING_WINDOW and each behind the reserve.
         """
-        if not self._fort_ring_window(rnd):
+        if not self._fort_ring_window(ct, rnd):
             return False
         kind = self._fort_ring_next()
         if not self._fort_afford(ct, kind):
@@ -3096,7 +3168,7 @@ class RolesMixin:
         (d^2 <= SK_APRON_DSQ of the footprint) and `_fort_lane_list` for the
         sentinel (d^2 <= SK_FORT_RING_SENT_DSQ, on the lane).
         """
-        if not self._fort_ring_window(rnd):
+        if not self._fort_ring_window(ct, rnd):
             return None
         kind = self._fort_ring_next()
         if not self._fort_afford(ct, kind):

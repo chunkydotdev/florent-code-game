@@ -72,3 +72,13 @@ plank**, and the measured tension between CITADEL_BAR's funding-unconstrained
 clause and CITADEL_ECON_RIDER goes to Magnus with both sides' numbers
 (the refused arm's +187%/51-alive dose-and-survival vs its −25%/−20% eco
 cost) rather than to a third build.
+
+**p3R SEMANTIC CORRECTION, registered before any p3R tape exists:** the
+HARV_MIN floor reads "harvesters BUILT ≥ 2" (the monotone SK_SLOT_HARV
+ratchet), not simultaneous-alive — the build agent's two independent censuses
+showed the alive form is OPPONENT-CONTROLLABLE (our tree holds ~1 live
+harvester under fire, so an enemy killing our harvester would lock our
+weapon off precisely when it is needed; ring stood 3/10 vs 87/90). This
+corrects the builder's own specification error, disclosed as such. The
+watched dial stands: median first-ring round ~r25 under the demotion (was
+r8); the registered question remains whether the dose bars survive it.
