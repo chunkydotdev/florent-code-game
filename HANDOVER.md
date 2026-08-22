@@ -2,6 +2,43 @@
 # NEVER from a poller or any line below (this block is a CACHE).
 # ⚠ now.py's "last 10" POOLS UNRATED (wrap debt): rated-only differs.
 
+# ===== MID-SESSION STATE s57/s58 (builder, 2026-08-23 ~00:3xZ — NOT a wrap; Magnus directed continuous operation "until i intervene"; this block is a session-mortality hedge) =====
+*(Game context: everything here is in-game Florent Code League play.)*
+
+## THE SLOT — untouched all session (zero submits/activations). Holder was v181 (x3r0) at last read; ANY window op re-reads fcode status same-shell. CONTROL unchanged (_v542wave = Baltsars).
+
+## THE HEIMDALL LINE — bots/_v632heim, THE CITADEL TRIAD COMPLETE AND ADOPTED (all default ON):
+KEEPER LEASH (threat-conditional) + DEMOLITION SWEEP (act/walk split, denier-primary) +
+TURRET RING (Arm B: below-economy, built>=2 ratchet, r1 ammo bank, axis sentinel + 2 gunners).
+Fixture stack survival sum 45->54 across the build; wins above baseline; eco fences positive.
+Magnus resolved the ring park BY DELEGATION 2026-08-23 ("do what you think is best").
+Baseline tapes: scratchpad/s57_heim0/t_p3r (≡ t_trid, generating). Sums [alive 54/deaths 52/
+wins 33/kills 14/eco 31.77/harv 195]. GUARD FRAMEWORK v2.1 governs ALL screens (null-stable
+three-fixture sums; per-fixture F1 columns retired — two null arms proved they measure
+divergence; heals retired as symptom metric). Fixtures F1 Baltsars/_v542wave, F2 Mjolnir,
+F3 Sleipnir-v2 (opp_sleipnir2_noiseoff), runner scratchpad/s57_heim0/f3_tape.sh.
+
+## IN FLIGHT at this writing: (a) RB/SO chain (ROUTEBLOCK phase-1 + ORE_STEPOFF arms, blind
+expectation EXPECTATION-v632heim-rb-stepoff-2026-08-23.md); (b) plank-5 build agent (second
+eco body, blind expectation EXPECTATION-v632heim-plank5-2026-08-23.md). Readout method: resume
+the standing readout agent (validated classifier library e46*_lib under scratchpad/s57_heim0/).
+
+## DOCTRINE (PROGRAMME.md, all Magnus verbatim, all committed): FORTRESS two-phase — eco+defence
+to r300, then two raiders + rolling 4-sentinel battery (no preps, no seals, no pecking);
+citadel chebyshev-3, turret ring weapon, raiders-then-barriers targeting; belt doctrine;
+prio ladder p0-p3; KILL_TARGET superseded for this line. Q1/Q2 platform questions REMAIN OPEN
+(no unrated/rated exposure without Magnus).
+
+## KEY BANKED DOCS (all docs/research/): DESIGN-fortress-heimdall (the 10-plank map) ·
+STUDY-opponent-prediction-heimdall (openings per opponent; ammo-by-r5 basis) ·
+GUARD-FRAMEWORK-v2 (+v2.1) · ATTRIBUTION-keeper-fivecell + AUDIT-walk-terminals (research) ·
+build/expectation docs per plank. Queue: #130/#131 stocked; #70 re-priced (idle 19-21% of
+body-rounds); ensemble-nulls routed to research.
+
+## WAKE PATHS: monitors as at boot; agents die with the session — if resuming after death,
+re-read this block + the coordination tail from the s58 marker; tapes and expectations are
+all committed.
+
 # ===== s56 WRAP (builder, 2026-08-22 ~18:1xZ; Magnus called it) =====
 *(Game context: everything here is in-game Florent Code League play.)*
 
