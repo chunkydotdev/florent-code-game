@@ -3571,3 +3571,9 @@ HEIM_FLIP_ROUND = 300        # Magnus: "until round 300 our entire focus is eco"
 # the dead tile 400r, V3 re-site picks a new band spot). Tail override: last
 # assignment wins at import.
 SK_NEST_PREP_BARRIERS = 0
+# HEIM DEMO (Magnus, on the seal question: "we don't need to put barriers
+# around their core if we're running with this tactic, that's only good for
+# rushes") — the walker keeps marching and pecking but seals NOTHING; the
+# siege is sentinels only. SK_CAGE OFF is the tree's own designed ablation
+# identity (walker melee preserved, zero ring barriers).
+SK_CAGE = False

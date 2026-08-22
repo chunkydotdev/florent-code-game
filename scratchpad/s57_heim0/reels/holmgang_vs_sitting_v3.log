@@ -1,0 +1,17 @@
+Update available: 2.3.6 -> 2.3.9. Run: pip install --upgrade fcode
+Running match: _heim0demo vs _probe_sitting
+  Map: holmgang.map26  Seed: 7  Replay: 
+scratchpad/s57_heim0/reels/holmgang_vs_sitting_v3.replay26  TLE: 10ms
+Completed turn 0
+Completed turn 100
+Completed turn 200
+Completed turn 300
+Replay written to scratchpad/s57_heim0/reels/holmgang_vs_sitting_v3.replay26
+
+  Winner: _heim0demo  (Core destroyed, turn 334)
+
+                      _heim0demo    _probe_sitting  
+  Titanium     2206 (1620 mined)    1330 (0 mined)  
+  Units                        7                 0  
+  Buildings                    8                 0  
+
