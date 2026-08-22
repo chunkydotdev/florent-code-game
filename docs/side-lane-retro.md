@@ -1526,3 +1526,37 @@ Instance: `docs/retro-side-lane-2026-08-22-s55.md`, committed in this same actio
 
 **SUNSET WATCH: every surviving question fired except Q7 (one labelled decline — fired).
 Nothing armed.**
+
+## ⭐ v1.24 — **FIRING 24. THE UNFILTERED-ENUMERATION SUB-RULE RATIFIES; THE CERT GAINS THE BYTE-DIFF-OR-LABEL CLAUSE; STATE `certifying` PRE-REGISTERED.**
+
+**v1.24 — 2026-08-22 (MINOR: records firing 24, ratifies the v1.23 sub-rule, adds one
+clearance sub-clause, extends the v1.4 tag taxonomy). Instance:
+`docs/retro-side-lane-2026-08-22-s56.md`, committed in this same action.**
+
+* **FIRINGS: 24.** ~14 flags, 13 outcome-changing and consumed; ~28 certificates;
+  prevented ~11 / caused 0 / nearly caused 0; conduct claims ZERO, seventeenth
+  consecutive.
+* **✅ THE v1.23 UNFILTERED-ENUMERATION SUB-RULE RATIFIES ON ITS FULL-SESSION TEST** —
+  the truncation class did not recur where the rule was applied. ⚠ Both of the session's
+  published errors are its NEIGHBOR class (partial-view: a two-site record read at one
+  site; a config clause relayed inside a cert) — the sub-rule's wording covers counts,
+  not sites; the site form is covered by the new clause below.
+* **⭐ NEW SUB-CLAUSE OF THE CLEARANCE RULE (earned by Q3#2): AN ADOPTION CERT EITHER
+  RUNS THE BYTE-DIFF AGAINST THE MEASURED ARM ITSELF OR LABELS ITS CONFIG CLAUSE
+  RELAYED.** The builder's mechanical half (adoption commits byte-diff before the hash
+  lands) is the paired rule; both landed the same hour as the incident.
+* **⭐ STATE `certifying` ADDED to the v1.4 tag taxonomy, pre-registered to behave like
+  `auditing`/`defending`** — a certificate's authority attaches to every clause in it,
+  so an unverified clause inside a cert errs toward the cert's own thesis. One instance
+  (s56 Q3#2); the pre-registration makes the next one classifiable at publication time.
+* **Q8 buckets, fifth run: ADOPTED 6 / CORRECTED-IN-RECORD 3 / BUILT 0** — the wrap rule
+  working; the six adoptions include three registration-template rules adopted by the
+  owning lane same-day, the lane's best mechanisation-through-others session.
+* **CARRY (THIRD ROLL, with a sunset condition): the window-cert template survival
+  question** — no live window fired for a third consecutive session. **If s57 also fires
+  none, the carry converts to OBSERVATION and stops rolling.**
+* **OPEN, not this lane's to close: the weld-ledger enumeration rule** (certified count
+  FIVE true welds; the sweep spec declares its own denominator or its success cannot be
+  measured).
+
+**SUNSET WATCH: every surviving question fired. Nothing armed.**
