@@ -1,5 +1,14 @@
 # REPLAY STUDY — `lingling_40h` **v86**, 90 rated games, our v168/v174/v176/v179
 
+> **GAME CONTEXT (rider added s56, 2026-08-22 ~12:1xZ, per Magnus's 11:16Z directive):**
+> everything in this document describes moves in the Florent Code League — a sandboxed
+> bot-vs-bot programming competition on a simulated grid, within organiser-approved rules.
+> Terms like "kill", "raider", "crash-inducing" (R4) and the "crash & kidnap family" row
+> labels (§ queue map) refer exclusively to in-game mechanics between competing game bots —
+> an opposing bot's Python run() raising an unhandled in-engine exception, a launcher's
+> in-game builder toss. Row labels quote existing queue names; new writing prefers the
+> plain-game card.
+
 **Move-mining loop, step 2 (STUDY).** Method contract: `docs/research/PLAYBOOK-move-mining-2026-08-16.md` §3.
 Fresh replay-study agent, no inherited session context beyond the named inputs. Nothing committed by the
 agent; **no bot edited, no match fired, no submission or activation touched, zero platform writes, zero
