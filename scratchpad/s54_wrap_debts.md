@@ -54,3 +54,9 @@
 10. **Powered-fixture reproducibility constant**: same-tree swing 2.22pp at n=900 NOISE_ON
    (engine seed does not pin opponent RNG) — bars finer than ~2pp need NOISE_OFF or ~4×n;
    record beside the DEFF constants at the CLAUDE.md batch if worth promoting.
+11. **pool.py/powered.py: fold the MAP cluster** (DEFF 4.57 measured on heterogeneous arms;
+   maps-as-units beside games-as-units for every between-arm delta) + **duplicate-control
+   arm required per grid** (2.22pp same-tree within-grid swing measured directly, v620 g4).
+   The CLAUDE.md cluster-enumeration wrap edit gains this as its 4th instance.
+12. **anat620 --check refuses on 0 round-comparisons** (printed a clean-looking 0/0 when
+   handed a file instead of a directory — a blind alarm).
