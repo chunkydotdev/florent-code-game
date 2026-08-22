@@ -63,3 +63,35 @@ plank (leash), one real dose defect shared by both dispatch planks
 (reachability), one latent base defect found and fixed-pending-screen
 (ore step-off), and the fixture knife-edge documented so no future lane
 burns strikes on it.
+
+---
+
+# v2.1 AMENDMENT — the envelope at n=2 (second null arm; side-lane's n=1 flag honoured)
+
+NULL2 (reversed spawn tie-break, diverges r0, 30/30/30 cells) beside NULL1:
+
+1. **The heal channel's envelope is TWO-SIDED at ±78%/+40% on every fixture**
+   (NULL2 moves F1 +25.6% where NULL1 moved it −76.2%; F2 −78.2% vs +37.5%).
+   Retirement confirmed with margin.
+2. **The five-cell #129 block collapses to ~50 from 308 under BOTH independent
+   nulls by different cell routes** — the block is a knife-edge byte-stream
+   coincidence, formally retired as evidence of anything.
+3. **Guard recalibration from the n=2 sum envelopes** (alive −2..+1, deaths
+   +1..+3, wins −5..−1, kills −5..−5):
+   - G1 alive-sum: bar stays **within −2** — now stated as sitting ON the
+     null edge (a null-level arm passes at exactly −2; anything beyond is
+     outside both nulls).
+   - **G2 death-sum WIDENED to +4** (the +2 bar would have refused NULL2 at
+     +3 — a guard a null breaches is measuring divergence again).
+   - G4 wins-sum: informational only, null spread −5..−1 documented.
+   - **NEW: kills-sum null floor −5, both nulls exactly** — any arm's
+     by-r300 kill drop ≤5 is uninformative; documented, not gated (phased
+     doctrine).
+4. **The honest scope statement these envelopes force: 30-cell-per-fixture
+   screens can only catch CATASTROPHES.** Sums beyond the envelope = real;
+   anything inside = unknown. The framework's registered NEXT STEP (research
+   admission requested): **ENSEMBLE NULLS** — 5-10 independent inert
+   perturbations as the noise model, converting envelopes from 2-point
+   ranges to distributions, which is what a fixture this chaotic requires
+   before any non-catastrophic claim is typed. Cost: ~10 tape-minutes per
+   ensemble member.
