@@ -149,6 +149,8 @@ from sk_maps import (
     SK_FORT_RING, SK_FORT_RING_GUNNERS, SK_FORT_RING_SENT,
     SK_FORT_RING_WINDOW, SK_FORT_RING_RESERVE, SK_FORT_RING_LANE,
     SK_FORT_RING_SENT_DSQ, SK_FORT_RING_HARV_MIN,
+    # --- v632 HEIMDALL PLANK 5 (THE SECOND ECO BODY) -----------------------
+    SK_FORT_WALKER_ECO, SK_PHASE_ROUND,
 )
 
 # --- v611: the 8 neighbours, for a LAUNCHER's pickup disc (d^2 <= 2) --------
@@ -347,7 +349,46 @@ class RolesMixin:
                 and self._citadel_answer(ct, p, rnd)):
             return
 
-        if self.role == SK_CAGE_WALKER:
+        # ⭐⭐ v632 HEIMDALL PLANK 5 -- THE SECOND ECO BODY (SK_FORT_WALKER_ECO).
+        # The body holding role SK_CAGE_WALKER runs the KEEPER's turn instead
+        # of the cage.  Under FORTRESS DOCTRINE clause (1) ("builders never
+        # raid") the cage is the one role with nothing left to do -- it is
+        # 100% enemy-anchored, `cage_lap(self.enemy)` IS the role -- and the
+        # keeper's turn is the tree's own named scarce resource
+        # (`main.py:16`), so the cheapest way to buy more of it is a second
+        # body on the same ladder.  Study §1a and §9 row 5.
+        # ⛔ THE ROLE ID IS NOT CHANGED, ONLY THE TURN.  `self.role` stays 1,
+        # which is what keeps the slot-11 beat (written in this method ABOVE,
+        # keyed on `self.role`), the role parity, the seat claim and every
+        # `self.role`-reading predicate exactly as they are today.  It is also
+        # what makes the publisher gate below expressible at all.
+        # ⛔ THE R5 PRECONDITION SHIPS WITH IT, NOT AFTER IT: every wstore rung
+        # reachable from `_home_keeper` is gated on `self.role ==
+        # SK_HOME_KEEPER` (slot 5 `_belt_report`, slot 14 `_killer_report`,
+        # slot 4 `_harvester_action`), so the second body ACTS and never
+        # PUBLISHES.  Buffered writes make two writers of one slot a SILENT
+        # lost update -- measured at 291 frozen rounds on the tube beat.
+        # ⛔ CALL-SITE CONJUNCTION, OWN FLAG, NO WELD: with SK_FORT_WALKER_ECO
+        # False the first arm is unreachable and this switch is
+        # character-for-character the current adopted tree.  It does NOT touch
+        # and does not read the PARKED SK_FORTRESS/SK_CITADEL branch above,
+        # which returns before ever reaching here.
+        # ⭐⭐ PHASE-GATED FROM BIRTH (Magnus 2026-08-23, PROGRAMME.md
+        # 48b874bea: `HEIMDALL_TACTIC_LOCK: eco_and_defence_to_r300_then_
+        # rotate_and_destroy`, `FORTRESS_PHASE_FLIP: r300_two_raiders_...`).
+        # The second eco body is a PHASE-1 body: at `rnd >= SK_PHASE_ROUND`
+        # this arm stops matching and the walker falls through to its ORIGINAL
+        # `_cage_walker` turn below, so the kill game returns.  ⛔ THAT
+        # FALL-THROUGH IS A CRUDE PLACEHOLDER, NOT THE DESIGN: Magnus's
+        # rotation is a rolling four-sentinel siege by two raiders, which is
+        # the NEXT plank and will REPLACE the `elif` branch.  One-plank
+        # discipline holds -- the flag still controls one behaviour change and
+        # the r300 boundary is doctrine, already written in PROGRAMME.md,
+        # not a second mechanism.
+        if (SK_FORT_WALKER_ECO and rnd < SK_PHASE_ROUND
+                and self.role == SK_CAGE_WALKER):
+            self._home_keeper(ct, p, rnd)
+        elif self.role == SK_CAGE_WALKER:
             self._cage_walker(ct, p, rnd)
         elif self.role == SK_ORE_DENIER:
             self._ore_denier(ct, p, rnd)
@@ -1577,9 +1618,27 @@ class RolesMixin:
                 continue
             self.harv_tiles.add((q.x, q.y))
             self.belt_key = None                  # the global plan must re-run
-            n = ct.read_store(SK_SLOT_HARV)
-            if len(self.harv_tiles) > n:
-                self.wstore(ct, SK_SLOT_HARV, len(self.harv_tiles))
+            # ⛔⛔ v632 PLANK 5's R5 GATE (slot 4), AND IT IS THE ONE GATE THAT
+            # SITS AT THE WSTORE RATHER THAN AT THE TOP OF THE RUNG.  The BUILD
+            # above is exactly what the second eco body exists to do, so it
+            # must run for every role; only the PUBLISH is role-0's.  The write
+            # is a read-modify-write of a monotone ratchet
+            # (`if len(...) > n`), which is precisely the shape the buffered
+            # store loses silently: both bodies would read LAST round's word
+            # and the loser's increment would be dropped, permanently, because
+            # nothing re-attempts it.
+            # ⚠ DISCLOSED: with the gate, slot 4 counts the KEEPER's own
+            # harvesters, so `_fort_harv_live` (PLANK 3's SK_FORT_RING_HARV_MIN
+            # floor) reads LOW when the second body built them.  Conservative
+            # in the only direction that matters -- it delays a ring buy, it
+            # never licenses one on a dead economy.  See the SK_FORT_WALKER_ECO
+            # flag note in sk_maps.
+            if self.role == SK_HOME_KEEPER:
+                n = ct.read_store(SK_SLOT_HARV)
+                if len(self.harv_tiles) > n:
+                    self.wstore(ct, SK_SLOT_HARV, len(self.harv_tiles))
+            else:
+                self.eco_pub_blocked += 1
             return True
         return False
 
@@ -1707,6 +1766,17 @@ class RolesMixin:
         killer so the door and turret verbs can consume it.  ONE WRITER.
         """
         if not SK_HARV_ESCALATE:
+            return
+        # ⛔⛔ v632 PLANK 5's R5 GATE (slot 14).  This rung is reachable from
+        # `_home_keeper`, and under SK_FORT_WALKER_ECO a SECOND body runs that
+        # turn.  Two writers of one slot in one round is a SILENT LOST UPDATE
+        # (writes are buffered, so both read last round's word), measured at
+        # 291 frozen rounds on the tube beat.  The gate is on the ROLE, which
+        # this plank deliberately does not change, so the keeper's behaviour
+        # is bit-identical and the second body publishes nothing.  Inert while
+        # the flag is OFF: nothing but role 0 ever calls this today.
+        if self.role != SK_HOME_KEEPER:
+            self.eco_pub_blocked += 1
             return
         word = 0
         if self.killer_pos is not None and self.ibp(self.killer_pos):
@@ -4814,6 +4884,19 @@ class RolesMixin:
         tile that faces the core, has actually been built.  Fidelity target:
         83% harvester->core connectivity (ours today: 58.8%).
         """
+        # ⛔⛔ v632 PLANK 5's R5 GATE (slot 5).  Same reason as `_killer_report`
+        # above, and this is the slot the study named FIRST: `_belt_seed_store`
+        # READS b24-31 of it every round, so a lost update here does not just
+        # drop a diagnostic -- it corrupts the terminus world model the second
+        # body was added to share.  Gated at the TOP of the rung rather than at
+        # the wstore because everything below it is pure computation for the
+        # published word (the only side effect, `_belt_seat_bits` refreshing
+        # per-body `belt_term_bits`, is re-seeded from the store each round by
+        # `_belt_seed_store` anyway) -- so the gate also returns the whole
+        # chain-walk to the CPU budget for a body that cannot use it.
+        if self.role != SK_HOME_KEEPER:
+            self.eco_pub_blocked += 1
+            return
         conn = 0
         for h in self.harv_tiles:
             cur = self.belt_head.get(h)

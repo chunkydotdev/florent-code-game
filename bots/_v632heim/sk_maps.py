@@ -3735,6 +3735,124 @@ SK_FORT_AMMO_FLOOR = 30   # ... and the size is ONE SENTINEL INTRUDER-KILL.
 # Same shape, and it is stated so the follow-up cannot skip it.
 
 # ===========================================================================
+# v632 HEIMDALL PLANK 5 -- THE SECOND ECO BODY  (SK_FORT_WALKER_ECO)
+# ===========================================================================
+#
+# GAME CONTEXT: in-game machinery for the Florent Code League, a sandboxed
+# bot-vs-bot competition on a simulated grid.  Everything below is a builder
+# bot of ours running a different in-engine turn (harvesters, conveyors,
+# heals) instead of walking at a competing bot's core.
+#
+# DOCTRINE: PROGRAMME.md FORTRESS DOCTRINE (Magnus s57 2026-08-22) clause (1),
+# "BUILDERS NEVER RAID -- no cage-walker march ... all four bodies work the
+# home territory", plus clause (4) "ECO + DEFENCE TO THE ABSOLUTE EDGE, the
+# optimization target is titanium delivered per round".  Design study
+# `docs/research/DESIGN-fortress-heimdall-2026-08-22.md` §1a (the walker
+# re-home) and §9 row 5.
+#
+# ⭐ THE SIZE OF THE LEVER, and it is the biggest single economy number on the
+# board.  The current tree builds ~2.2 harvesters/game against computed
+# home-half ceilings of 8-10.  The binding constraint named by this tree in
+# its own words is `main.py:16`, "THE KEEPER'S TURN IS THE SCARCE RESOURCE" --
+# ONE body owns the harvesters, the whole belt, every heal rung, the door and
+# the apron.  This plank does not raise a cap or re-order a ladder; it adds a
+# SECOND BODY to the same ladder.
+#
+# ⛔ WHY THE WALKER AND NOT ANOTHER ROLE.  Study §1a: the cage walker is 100%
+# forward and 100% enemy-anchored (`cage_lap(self.enemy)` IS the role), so
+# under "builders never raid" it is the one role with NOTHING left to do --
+# every other role keeps a home duty.  The study also rejects the obvious
+# alternative in the same breath: re-pointing `cage_lap` at OUR core would
+# fight the keeper for the same 8 tiles through `tile_owner`/`may_build`
+# (sk_common) and lose most of its builds.  The walker runs the KEEPER's turn.
+#
+# ⛔⛔ THE R5 CORRECTNESS PRECONDITION -- NOT A SEPARATE FLAG, PART OF THIS
+# PLANK.  Two bodies in `_home_keeper` collide on the store.  The store's
+# writes are BUFFERED (visible next round), so two writers of one slot in one
+# round is a SILENT LOST UPDATE -- the exact defect SK_TEAM_TUBES was built to
+# fix, and it is measured, not theoretical: a beat frozen for 291 rounds
+# (`sk_maps.py` SK_TEAM_TUBES note, "the loser's field is dropped EVERY round,
+# not once").  ⇒ EVERY PUBLISHER RUNG REACHABLE FROM `_home_keeper` IS GATED
+# ON `self.role == SK_HOME_KEEPER`, so the second body ACTS and never
+# PUBLISHES.  The complete audit (transitive AST reachability from
+# `_home_keeper`, not a grep of names) is exactly three sites:
+#     slot 5  SK_SLOT_BELT    `_belt_report`      -> gated, whole rung
+#     slot 14 SK_SLOT_KILLER  `_killer_report`    -> gated, whole rung
+#     slot 4  SK_SLOT_HARV    `_harvester_action` -> gated AT THE WSTORE ONLY
+#                                                    (the BUILD must still
+#                                                    happen -- that is the
+#                                                    plank)
+# `_belt_seed_store` is a READER of slot 5 (it adopts the terminus bits into
+# per-body `belt_built`); it is deliberately left ungated -- a second reader
+# is free and the seed is exactly the world model a second body wants.
+# The role BEAT (slot 11) is written in `_builder` ABOVE this dispatch, keyed
+# on `self.role`, which this plank does NOT change -- so the walker keeps
+# beating its own slot and the core's spawn census (`sk_core` beat_fresh) is
+# untouched.  That liveness is what makes the gate safe.
+#
+# ⛔ THE WELD RULE (s55 class).  This master is its OWN flag and is conjoined
+# with NOTHING -- not with SK_FORTRESS, not with SK_CITADEL, not with
+# SK_IDLE_ACT_ALL (all three False and PARKED).  A plank welded to a
+# permanently-False neighbour ships unmeasured (SK_CORE_PECK_HEALGUARD ran
+# with no guard for four versions).  OFF = exact identity by CALL-SITE
+# conjunction in the `_builder` dispatch switch, so the flags-off tree is
+# character-for-character the current adopted tree.
+SK_FORT_WALKER_ECO = False   # MASTER, own flag, no conjunction.  ON: the body
+                             # holding role SK_CAGE_WALKER runs `_home_keeper`
+                             # instead of `_cage_walker` -- a SECOND ECO BODY
+                             # on the same action ladder, with the publisher
+                             # rungs gated to role 0.  ⚠ THE WALKER KEEPS ITS
+                             # ROLE ID: only the turn function changes.  That
+                             # is what preserves the slot-11 beat, the role
+                             # parity, the seat claim and the citadel/idle
+                             # staffing predicates, all of which read
+                             # `self.role`.
+                             # ⚠ DISCLOSED CONSEQUENCE OF THE SLOT-4 GATE:
+                             # SK_SLOT_HARV becomes a count of the KEEPER's
+                             # own harvesters, not the team's, so
+                             # `_fort_harv_live` (PLANK 3's economy floor,
+                             # SK_FORT_RING_HARV_MIN) reads LOW when the
+                             # second body built them.  The bias is
+                             # CONSERVATIVE in the one direction that matters
+                             # -- it delays a turret buy, it never licenses
+                             # one on a dead economy -- and a shared counter
+                             # would need a second writer, which is the defect
+                             # this plank exists to avoid.  Reported, not
+                             # papered over; a team-wide harvester census is a
+                             # later plank with its own slot design.
+SK_PHASE_ROUND = 300         # ⭐⭐ THE PHASE BOUNDARY, AND IT IS DOCTRINE, NOT A
+                             # SECOND MECHANISM.  PROGRAMME.md
+                             # `FORTRESS_PHASE_FLIP:
+                             # r300_two_raiders_sentinel_siege_until_enemy_core
+                             # _down` and `HEIMDALL_TACTIC_LOCK:
+                             # eco_and_defence_to_r300_then_rotate_and_destroy`
+                             # (Magnus 2026-08-23, PROGRAMME.md 48b874bea),
+                             # from the Q3 ruling "until round 300 our entire
+                             # focus is eco, then we send two raiders that puts
+                             # up as many sentinels as necessary to bring the
+                             # enemy core down".  Study §8a names this constant
+                             # and this value.
+                             # ⛔ WHAT IT GATES HERE, AND WHAT IT DOES NOT.  The
+                             # SK_FORT_WALKER_ECO dispatch branch applies only
+                             # while `rnd < SK_PHASE_ROUND`; at and after it the
+                             # walker falls through to its ORIGINAL
+                             # `_cage_walker` turn, so the kill game returns as
+                             # a CRUDE rotation -- one body, the cage it already
+                             # has.  That is deliberately not the shape Magnus
+                             # specified: the REAL rotation (his rolling
+                             # four-sentinel spec, two raiders) is the NEXT
+                             # plank and will REPLACE that fall-through branch.
+                             # Stated here so the successor cannot mistake the
+                             # placeholder for the design.
+                             # ⛔ ONE-PLANK DISCIPLINE IS INTACT: the flag still
+                             # controls exactly one behaviour change (which turn
+                             # the walker runs); the boundary is where the
+                             # doctrine already put it, not a second knob.
+                             # With SK_FORT_WALKER_ECO False the whole
+                             # conjunction is unreachable and this constant is
+                             # read by nothing.
+
+# ===========================================================================
 # 3.  IMPORT BANNER (verbatim) -- doctrine.py:1078-1172, map data
 # ===========================================================================
 

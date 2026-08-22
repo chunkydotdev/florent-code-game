@@ -1056,6 +1056,23 @@ class Player(CommonMixin, RolesMixin, CoreMixin):
         self.fort_ammo_banked = 0     # CORE instrument: titanium converted by
                                       # the early ammo clock (`_fort_ammo_bank`)
 
+        # --- v632 HEIMDALL PLANK 5 -- THE SECOND ECO BODY (SK_FORT_WALKER_ECO)
+        # ⛔ UNCONDITIONAL, like every other attribute in this __init__ and for
+        # the same engine reason: a field created only under a flag is how an
+        # OFF arm raises AttributeError inside `run()`, and the engine then
+        # PERMANENTLY DESTROYS the unit for the rest of the match.  With
+        # SK_FORT_WALKER_ECO False this counter is allocated and stays 0 --
+        # the three publisher gates it counts are unreachable by any body but
+        # role 0 today, which is exactly why it is the identity witness.
+        # ⭐ IT IS THE PLANK'S OWN R5 INSTRUMENT, NOT DECORATION.  The study's
+        # named failure is SILENT: a lost buffered write leaves no trace in the
+        # store and no exception anywhere.  This counter is the gate's refusal
+        # tap -- 0 on every OFF arm, and strictly > 0 on an ON arm the moment
+        # the second body reaches a publisher rung.  A gate that has never been
+        # seen to refuse has not been seen to work.
+        self.eco_pub_blocked = 0      # publisher rungs (slots 4/5/14) refused
+                                      # because this body is not the HOME KEEPER
+
         # --- CORE ----------------------------------------------------------
         self.spawned = 0
         self.converts = 0
