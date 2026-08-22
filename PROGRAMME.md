@@ -20,7 +20,10 @@ successor session inherit it. The fields below are parsed; the prose is not.
     R1000_IS_DEFEAT: yes
     PLAY_DEFENCE: not_at_the_kill_s_expense
     DEFENCE_ADMISSION_BAR: r300_crossing_non_regression
-    FOCUS: defence_copy6_class_magnus_2026-08-22_r1000_still_defeat
+    FOCUS: citadel_perimeter_magnus_2026-08-22_one_thing_at_a_time
+    CITADEL_ZONE: chebyshev_3_of_core_footprint
+    CITADEL_BAR: every_enemy_unit_entering_zone_destroyed_funding_unconstrained
+    CITADEL_ECON_RIDER: maintain_economy_his_own_words
     FIXTURE_OF_RECORD: live_unrated
     ALWAYS_BE_RUNNING: yes
     QUEUE_FLOOR: 3
@@ -40,7 +43,24 @@ successor session inherit it. The fields below are parsed; the prose is not.
     NEXT_LINE_EXPERIMENTS: open_magnus_2026-08-22_r1000_still_defeat_no_rush
     RUSH_LINE_STATUS: sunset_2026-08-21_magnus_directive_v177_holds_slot_until_displaced
 
-## FOCUS SET TO DEFENCE 2026-08-22 (Magnus, s56, in-session — verbatim: "So lets focus on defense, we just can not win by round 1000")
+## FOCUS NARROWED TO THE CITADEL PERIMETER 2026-08-22 (Magnus, s57, in-session — verbatim: "I think we're trying to do everything at the same time, what if we start at one thing, can we make a defence and maintain economy? Spend everything we need on defence, i want every single raider destroyed that 3 squares from our core.")
+
+Operational form, typed by the builder for the record: (1) ONE THING AT A TIME —
+the citadel package outranks every other build front until it measures; other
+fronts (v630 tube-guard powered read, CRASHREP-BC, the field panel) HOLD unless
+Magnus says otherwise. (2) THE ZONE: enemy units within Chebyshev 3 of our 2x2
+core footprint (the raider annulus; "3 squares" operationalized as board
+distance — challenge this line if he meant something else). (3) THE BAR: every
+enemy unit entering the zone is destroyed — the metric is intruder survival
+time and share destroyed, plus core damage taken; funding for the response is
+explicitly unconstrained BY HIS WORDS ("spend everything we need"), with the
+economy maintained (his same sentence). (4) The DEFENCE_ADMISSION_BAR (r300
+checkmate non-regression) still governs SHIPPING; building and screening the
+citadel is what the focus buys. R1000_IS_DEFEAT stands — the citadel exists so
+our own checkmate lands, not so games reach tiebreaks.
+Game context: in-game Florent Code League doctrine.
+
+## FOCUS SET TO DEFENCE 2026-08-22 (Magnus, s56, in-session — verbatim: "So lets focus on defense, we just can not win by round 1000") — NARROWED BY THE CITADEL BLOCK ABOVE, same day
 
 Read with both existing clauses intact: **R1000_IS_DEFEAT stands** (his own sentence
 re-affirms it — the tiebreak road stays retired) and **DEFENCE_ADMISSION_BAR is
