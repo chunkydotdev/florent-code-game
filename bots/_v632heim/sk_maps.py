@@ -4149,6 +4149,16 @@ SK_APRON_MESH_SPAWN_RESERVE = 2   # ⛔⛔ THE ENGINE HAZARD, AND IT IS THE SAME
                           # point of failure the opponent can stand on, and the
                           # seat-claim's one is priced for a 30-round window,
                           # not for a building that stands all game.
+                          # ⛔⛔ SCOPE, AND IT IS A REGISTERED FIX WITH MEASURED
+                          # PROVENANCE: the reserve binds ONLY on a candidate
+                          # INSIDE THE SPAWN RING (`_spawn_plan`'s own 8-way
+                          # anchor walk minus the footprint).  Four of the eight
+                          # delivery seats are outside it and cannot change the
+                          # count whatever is built on them.  Run on all eight,
+                          # the guard refused 62 of 114 times (54%) on tiles it
+                          # could not affect and suppressed the plank to ZERO on
+                          # stavkirke, where `free=0` was PRE-EXISTING -- not the
+                          # mesh's doing (`scratchpad/s58_p7/diag2/*.log`).
                           # ⚠ AN UNREADABLE TILE COUNTS AS NOT SPAWNABLE -- the
                           # guard fails toward REFUSING the mesh tile, which is
                           # the direction that cannot cost us a body.

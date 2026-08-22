@@ -2075,6 +2075,18 @@ class RolesMixin:
             return
         foot = set(core_tiles_xy(self.core))
         apron = set(self._apron_list())
+        # ⛔⛔ THE SPAWN RING -- THE TILES `_spawn_plan` ACTUALLY OFFERS THE
+        # CORE, AND THE ONLY TILES THE RESERVE HAS ANY BUSINESS REFUSING.
+        # `_spawn_plan` (`sk_core.py:450`) walks `p.add(d)` over the 8
+        # DIRECTIONS FROM THE ANCHOR, so this set is exactly its candidate
+        # list minus the footprint.  FOUR of the eight delivery seats sit
+        # inside it; the other four cannot change the count no matter what is
+        # built on them.
+        ring = set()
+        for dx, dy in NEIGHBOURS8:
+            x2, y2 = self.core.x + dx, self.core.y + dy
+            if self.ib(x2, y2) and (x2, y2) not in foot:
+                ring.add((x2, y2))
         taken = set()
 
         def _spawn_free():
@@ -2140,7 +2152,24 @@ class RolesMixin:
             except Exception:
                 pass
             taken.add(xy)                     # (e) is evaluated WITH this tile
-            if _spawn_free() < SK_APRON_MESH_SPAWN_RESERVE:
+            # ⛔⛔ (e) BINDS ON IN-RING CANDIDATES ONLY -- REGISTERED FIX, AND
+            # THE PROVENANCE IS THIS PLANK'S OWN HISTOGRAM.  The first cut ran
+            # the reserve on every seat, which asks "are N spawn tiles free
+            # AFTER this addition" of tiles whose addition cannot change the
+            # answer.  Measured over the 3 f1 smoke cells post-amendment
+            # (`scratchpad/s58_p7/diag2/*.log`, 2026-08-22): **114 reserve
+            # refusals, 62 of them (54%) on seats OUTSIDE the spawn ring** --
+            # and on stavkirke it read `free=0` on all eight seats in all ten
+            # re-plans, suppressing the plank to **ZERO tiles** on a cell where
+            # four of the seats were never the core's to spawn on.  A
+            # pre-existing `free=0` is not the mesh's doing; the guard's SENTENCE
+            # said "after the addition" while its PURPOSE is "the mesh must not
+            # CAUSE a spawn lock", and only in-ring candidates can.
+            # ⚠ THE GUARD IS NOT WEAKENED WHERE IT MATTERS: every tile that can
+            # consume a spawn candidate is still checked with `taken` and `plan`
+            # counted against it, which is the whole of the musical-chairs
+            # hazard at `sk_maps.py:4131`.
+            if xy in ring and _spawn_free() < SK_APRON_MESH_SPAWN_RESERVE:
                 taken.discard(xy)
                 self.mesh_spawn_refused += 1
                 continue
