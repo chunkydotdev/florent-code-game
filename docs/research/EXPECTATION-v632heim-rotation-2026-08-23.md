@@ -67,3 +67,21 @@ r290-299 (the doctrine's letter), from the taps/decode.
 Fail on T3′ or T5′ → **PARK** (two-strikes exhausted); the campaign then
 iterates the battery's other dials (funding, tube-guard survival) as NEW
 planks against the parked rotation's banked numbers.
+
+**RO-P PRE-TAPE AMENDMENT (disclosed; no tape of this arm exists — the blind
+property holds; motivated by the build smoke's MECHANISM findings, which is
+what smokes are for):** (1) the commute was measured too short for the
+home-side raider (needs ~22-25 rounds; role-3 body already forward) —
+**SK_ROTATE_PRESTAGE moves 290 → 278**, with the doctrine reasoning banked:
+the walker's phase-1 job is already forward, and a commuting body builds
+and attacks nothing (proxy-proven: 0 mutating verbs in 18-verb trap across
+three cells). (2) **The study's §8c funding assumption is FALSIFIED on 2 of
+3 smoke cells** (bank at flip 40 / 38 / 1,118 vs sentinel 88 / 72 / 81) —
+the majority binding lag is FUNDING, which prestage cannot touch. Added to
+the same arm as its second half: **SK_ROTATE_CHEST_FROM = 250** — in
+[250, 300), the keeper's discretionary purchases (ring turrets, non-belt
+barriers) refuse while the bank sits below (2 × current sentinel cost) +
+the purchase price; harvesters/conveyors EXEMPT (p0), threat-active rounds
+EXEMPT (defence first). Bars unchanged (T3′/T5′/T4 as registered above);
+the chest's own dial reported: bank at flip per touchable cell (smoke
+read 40/38/1,118). This remains the FINAL registered attempt.
