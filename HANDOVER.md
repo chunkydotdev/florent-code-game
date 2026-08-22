@@ -58,6 +58,13 @@ _v542wave since v620) — no field-general claim; the panel is the confirming su
 3. **v631 flow watchdog** (Magnus's design seed, specced on the tail) · the v629
    minus-one row · the first-turret-build slip r14→r31 (bots/ question) · #123 with its
    both-ways fixture spec.
+   ⚠ **v631 and the v629 minus-one row are INHERITED-UNADMITTED** (research s56 wrap:
+   they did not reach admission before wrapping — they are queue work for the next
+   research session, NOT lost, and NOT builder rows until admitted). The drip study
+   (STUDY-drip-collapse-decomposition) is owed a research stewardship pass against the
+   defence-class rows whose premises it touches (#40/#49/#52/#59 and the M7-quoting
+   docs). v630 is a BUILDER row and tops queue item 1 above — it is not waiting on
+   research.
 4. **Wrap debts: scratchpad/s56_wrap_debts.md** (8 items + inherited s55) — incl. the
    h4-tree rename, rdiff machine-verdict, template fixes (pooled-vs-per-cell,
    normalization, converts-fraction, two-opponent), durable homes for cross-host
