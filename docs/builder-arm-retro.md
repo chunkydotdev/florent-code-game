@@ -1801,3 +1801,14 @@ seeds specced (belt-flow watchdog; tube guard = v630, evidence-complete).
 pipeline-ready) · v631 flow watchdog · the minus-one v629 decomposition row ·
 the first-turret-build slip r14→r31 (bots/ question) · Magnus's Q1/Q2 ·
 CRASHREP-BC held · the wrap-debt batch (s56_wrap_debts.md, 8 items + inherited).
+
+**⛔ s56 ADDENDUM — THE WRAP'S OWN STATE BLOCK IS A CACHE.** The final now.py read,
+run AFTER the wrap block was written, caught that x3r0 shipped v181 at 16:15:03Z —
+so my freshly-written HANDOVER named a stale rollback target (v176) for the ~2 hours
+it had been wrong. Corrected before the session closed. **Routed as a wrap-sequence
+rule: the LAST act of a wrap is a live-surface re-read, and any state block written
+earlier in the wrap is re-checked against it.** Same class as the s43 side-lane
+incident (closing state written off a poller inside its blind window) — this time it
+was the wrap's own elapsed time, not a poller, that made the cache stale. Directional
+note for Q2: this error would have flattered nothing, but it would have handed a
+successor a wrong integer for an irreversible op.
