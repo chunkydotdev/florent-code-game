@@ -26,9 +26,15 @@ v623 + SK_NEST_CLEAR+OWN (engineer clears its occupied plant tile) + SK_TUBE_LAT
 pre-registered pooled POWERED read (n=1800/arm vs Mjolnir noise-ON): **candidate−dup +6.33pp
 [+1.40, +11.26] CI excludes 0 · null pair covers 0 · timely-checkmate 16.44 vs 14.28** — after
 the W1 duplicate-control alarm gated a tainted +5.89 (full chain on the tail 13:5x-14:2xZ).
-Ablation identities 60/60 both planks. sk_roles.py md5 `9db5b17eb1e62d2b2a732bc4d36a98a6`,
-sk_maps.py md5 `3153f256b…`. SUBJECT: one opponent — no field-general claim; vs-field battery
-owed before any ladder decision. Prior heads for identity work: v623 (`3f180a39…`), v622.
+Ablation identities 60/60 both planks. **⛔ CORRECTED ~15:0xZ (design-agent catch, my error):
+the tree as first committed carried the DEFAULT flags (PB_LIFE ON, LATENCY/STAGE OFF) — NOT
+the adopted config; the measured +6.33pp belongs to the arm's bytes. Fixed by folding the
+adopted values in; the tree is now BYTE-IDENTICAL to the measured arm (diff -r empty).**
+sk_maps.py md5 `d9608a9de8a6cc590d5cec990e76519b`, sk_roles.py md5
+`9db5b17eb1e62d2b2a732bc4d36a98a6`. SUBJECT: one opponent — no field-general claim; vs-field
+battery owed before any ladder decision. Benchmark read s56: plateau vs _v542wave (~33-36%
+since v620) — the v628 gains are opponent-conditional. FOCUS since ~14:5xZ = DEFENCE (COPY 6
+class, Magnus direct; PROGRAMME.md FOCUS field). Prior heads: v623 (`3f180a39…`), v622.
 
 ## WHAT s55 SETTLED
 * **THE SITELESS QUESTION IS CLOSED, and it corrected BOTH prior sessions.** The 648 NOSITE

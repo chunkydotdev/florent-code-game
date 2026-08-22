@@ -2477,7 +2477,7 @@ SK_NEST_CLEAR_GIVEUP = 12    # rounds of chew per site before banning -- caps th
                              # 15 turns exceeds the S1->S2 window (median r56).
 SK_NEST_CLEAR_OWN = True     # ALLIED building on the site: destroy() -- free, no
                              # cooldown, same-turn build (engine-probed).
-SK_NEST_PB_LIFE = True       # ⭐ v626 PLANK B: COPY 5's dependency in the only
+SK_NEST_PB_LIFE = False       # ⭐ v626 PLANK B: COPY 5's dependency in the only
                              # in-game-readable currency -- point-blank admitted
                              # only where the OPPONENT has demonstrably failed to
                              # clear our forward tubes (mean nest life >= R over
@@ -3145,7 +3145,7 @@ SK_TUBE_FLOOR2_GRACE = 6     # ⛔⛔ THE BIRTH GRACE, AND IT IS A CORRECTNESS
                              # GRACE rounds; under-counting buys a tube we
                              # already have.  This plank is about the second
                              # failure, so the grace fails toward the first.
-SK_TUBE_LATENCY_SOLO = False # ⭐ v627/v628 -- un-weld the latency half from the
+SK_TUBE_LATENCY_SOLO = True # ⭐ v627/v628 -- un-weld the latency half from the
                              # closed floor road (fifth weld instance; see the
                              # v627 tree for the full record).  Admits STAGE/
                              # PREPREP alone in the live>=want hold state; no
@@ -3162,7 +3162,7 @@ SK_TUBE_FLOOR2_PREPREP = False   # THE OTHER HALF OF "no further purchases":
                              # = 6 Ti and +2% of scale, paid speculatively), and
                              # a plank whose spending half is welded to its
                              # saving half cannot be priced.
-SK_TUBE_FLOOR2_STAGE = False # ⭐⭐ THE PROBE'S OWN SUCCESSOR, BUILT INSIDE THE
+SK_TUBE_FLOOR2_STAGE = True # ⭐⭐ THE PROBE'S OWN SUCCESSOR, BUILT INSIDE THE
                              # WAVE BECAUSE THE REFUSAL PARTITION NAMED IT.
                              # Instrumented over 30 F1 games, the CONTROL's
                              # engineer-rounds under SK_NEST partition as:
