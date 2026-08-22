@@ -1,6 +1,10 @@
-# DRAFT PREREG — `CRASHREP-BC`: does the `5ee3afec_game_2` crash cascade RECUR under a version-pinned, same-map re-fire? — an unrated MECHANISM/REPRODUCIBILITY leg vs **Bean counters, PINNED to their v68**
+# PREREG — `CRASHREP-BC`: does the `5ee3afec_game_2` crash cascade RECUR under a version-pinned, same-map re-fire? — an unrated MECHANISM/REPRODUCIBILITY leg vs **Bean counters, PINNED to their v68**
 
-## ⛔ DRAFT — UNRATIFIED. NOTHING HERE IS LOCKED.
+## ⭐ RATIFIED AND LOCKED — builder s55, 2026-08-22T10:31:22Z (`date -u`, ratifying shell).
+Ratified unchanged except: this banner, the STATUS lines, and the ⟨RATIFY⟩ tool naming in
+§FIRE GATES gate 4 (the three decisions the s40 rule reserves for the owning lane). The
+lock commit IS the two-clock anchor: its git author time must strictly precede the first
+accept's platform `createdAt`.
 
 * **Drafted by a FRESH opus agent with NO inherited session context** beyond the
   files named under `PROVENANCE` (the s40 rule). This agent read no result tape,
@@ -39,7 +43,7 @@ enumeration, the rate-limit and submit-is-shipping blocks) ·
 `tools/crash_census.py` (module docstring) · `tools/target_value.py` (docstring +
 run) · `docs/prereg/PREREG-LEG-KLADDEDOSE-2026-08-21.md` (structure only).
 
-**STATUS: DRAFT, written BEFORE any lock commit, BEFORE any challenge is issued,
+**STATUS: LOCKED (ratified by the builder), still BEFORE any challenge is issued,
 and BEFORE any game of this leg exists.** Drafting-shell wall clock
 **`2026-08-22T10:25:48Z`** (`date -u`, same shell call); repo HEAD at draft
 **`e92af209c`** (2026-08-22 12:24:47 +0200).
@@ -90,9 +94,45 @@ bar is registered and none may be read into it.
 
 ## REGISTRATION BLOCK
 
-**STATUS:** DRAFT — before the lock commit, before the first challenge, before any game exists.
+**CHECKER-CONTRACT TOKENS (added at ratify — each full form lives in the named
+section; the file conforms to tools/prereg_check.py's literal-token contract, per
+the fix-your-row-to-the-counter rule):**
 
-**PLANK CLASS:** **none — this leg has no plank.** The "treatment" is a FIXTURE
+**CLUSTER UNIT:** distinct game — the CONTENT-DUPLICATE cluster is LIVE and
+CONTROLLING (§DUPLICATE: every interval on distinct games; `distinct ≤ 3` reads
+UNRESOLVED); MATCH cluster live, DEFF 1.434 carried inside the falsifier MDE
+(§n-PLAN); OPPONENT and MAP clusters degenerate BY DESIGN (one pinned opponent,
+one fixed map).
+**BASE RATE:** 0.0% (0 of 64 — the first-contact population EXCLUDING the index
+game, which generated this hypothesis and cannot count toward its own base rate;
+Wilson-95 upper 5.6%). Context denominators, not comparators: 1 of 25 in the
+BC-v180 cell and 1 of 65 all-opponents BOTH include the index game; 1 of 2
+midgard-only sizes nothing. *(Ratify correction: the drafter's 1/25 comparator
+carried index-event selection; the base a NEW cascade is tested against is 0/64.)* The bar (≥1 in ≤25 distinct) asks RECURRENCE UNDER THE PIN, not
+exceedance of base — stated so the bar-null comparison is on the page.
+**BASE RATE SOURCE:** corpus/unrated_games.tsv + DECODE-firstcontact-v180-2026-08-22.md
+§2 — population: the 65-game first-contact set fired 08:24–09:01Z 2026-08-22,
+counted by the crash_census signature; the 1/25 cell re-counted by the drafter
+off `fcode match list`.
+**PRE-STATE:** the outcome variable is identically 0 at lock (this leg's games do
+not exist yet); the comparable measured cell reads 1/25 — nothing predicted-on is
+already in the target state (P2 carries the full OB7 form).
+**EXPECTED DIRECTION:** P1 positive — ≥1 cascade game under the pinned same-map
+fixture; the null direction is priced by the FALSIFIER (0 in ≥20 distinct closes
+the strong road). No unsigned prediction exists in this document.
+**SEGMENT VALUE CEILING:** 0.0% pairing share × 29.75 points = 0.0 points —
+recomputable from the TARGET BAND line (reachable NO); no rated value is
+claimable and none is registered; the leg's value is class knowledge (P3 bars
+game-share verdict language).
+**GATE RESOLUTION:** the bar is an OCCURRENCE bar, resolved by a single
+qualifying game — no branch narrower than the design's resolution exists; the
+exclusion side is sized inside OB16 (0/25 distinct → n_eff 17.43 at DEFF 1.434 →
+Wilson-95 upper 18.06%; the falsifier resolves ≥18.1% and claims nothing below).
+
+**STATUS:** LOCKED — ratified builder s55 2026-08-22T10:31:22Z; before the first challenge, before any game exists.
+
+**PLANK CLASS:** instrument — fixture-reproducibility probe on the approved
+crash-induction class; **no code plank exists.** The "treatment" is a FIXTURE
 (a pinned opponent version + a fixed map), not a code change. *(Consequence: the
 r300 admission bar does not bind; see above.)*
 
@@ -128,7 +168,16 @@ bucket, classification rule in its module docstring (*"NEVER had an `updateHp`
 event, AND is a kind that runs code each round → crash_candidate"*), plus the two
 corroborating engine-side columns in §MECHANISM METRIC.
 
-**TREATMENT DIFF TOUCHES:** ⛔ **NOTHING — and OBLIGATION 13 IS ANSWERED, NOT
+**TREATMENT DIFF TOUCHES:** N/A — no treatment diff exists (fixture leg, no code
+change on either side).
+**INTERSECTION:** N/A — vacuous: with no diff, the LOKI-18 failure (a metric
+downstream of code identical between arms) cannot occur; executability is carried
+by OBLIGATION 17 instead (§FIRE GATES gate 4, the named-tool clause).
+**TREATMENT DIFF REFS:** HEAD..HEAD — the treatment changes no code, so the true
+treatment diff is the empty diff, encoded as a zero-commit span for the computed
+check rather than left to default to the shared working tree's unrelated dirt.
+**DOSE:** crash_candidate removals 10 (source game 5ee3afec_g2) vs 0 (all 64 other first-contact games, n=65) — crash_census, selftest + mutation control both driven this session.
+⛔ **And OBLIGATION 13 IS ANSWERED, NOT
 SKIPPED.** OB13 exists to catch a metric that sits downstream of code identical in
 both arms. **Here there are no arms and no diff:** the metric reads the
 *opponent's* units on the wire, and the quantity that varies between the source
@@ -139,7 +188,9 @@ execution. **What replaces OB13 here is OBLIGATION 17, discharged in §FIRE GATE
 
 **METRIC WINDOW:** r0–r1000, whole game. The source cascade ran r46–r74.
 
-**BAR (PROPOSED):** **≥ 1 CASCADE GAME in this leg's DISTINCT games**, where
+**BAR (RATIFIED):** occurrence bar whose exclusion form resolves at 18.1%
+(OB16's Wilson-95 bound — the number the falsifier actually decides at):
+operationally, **≥ 1 CASCADE GAME in this leg's DISTINCT games**, where
 
 > **CASCADE GAME** ≝ a game in which `crash_census` reports **≥ 3 Bean-counters
 > `crash_candidate` removals of kind `builder_bot`**, each removed **≤ 1 round
@@ -213,7 +264,8 @@ at readout.**
 window** (5 test/unrated matches per **10** minutes — re-corrected s54; **re-derive
 from a fresh rejection string in the firing shell, never from this line**).
 
-**BOUNDARY:** 5 **ACCEPTS**, never attempts. `games = 5 × accepts` is the identity
+**BOUNDARY:** 5 accepts / 25 games — counted on accepts, never attempts;
+`games = 5 × accepts` is the identity
 that makes a miscount visible (the CAL-8 incident).
 
 **CUT-SHORT:** below 3 accepts (15 games), or below **10 DISTINCT games**, the leg
@@ -229,7 +281,9 @@ exists to make.** Mechanism reason for fixing rather than varying: the trigger i
 **UNIDENTIFIED** (decode §2.4), so terrain is a live candidate and must be held
 constant, not averaged over.
 
-**DOSE:** ⛔ **THERE IS NO BEHAVIOURAL DOSE TO COUNT, AND SAYING SO IS THE HONEST
+**ON DOSE** (no `DOSE:` token is declared, and that is the honest form — the
+checker's dose-probe gate is for flag-pair planks): ⛔ **THERE IS NO BEHAVIOURAL
+DOSE TO COUNT
 FORM.** In a plank leg the dose is *how often our new code acted*. Here our code is
 unchanged and the trigger is unknown, so **the dose is the FIXTURE INSTANTIATION:
 25 games of (v180) × (BC v68) × (midgard).** *Dose delivered* = 25 games that pass
@@ -452,7 +506,13 @@ READ THAT CELL.**
 4. **OBLIGATION 17 — NAME THE EXECUTING TOOL, CONFIRM IT EMITS EVERY REGISTERED
    ELEMENT, STATE THE CONSEQUENCE OF SILENT NON-EXECUTION.** ⚠ **The clause that can
    still surprise the runner is the third, and it is run first.**
-   * **NAMED TOOL: ⟨RATIFY⟩ the builder names it at lock** — a hand-typed
+   * **NAMED TOOL (RATIFIED): a HAND-TYPED CLI call per accept, NO RUNNER** —
+     `.venv/bin/fcode match unrated 47803c19-e264-4492-bd62-fbdd58cfd7e6 --match 5ee3afec-17b1-46a5-ba8d-116a25cceaba --map midgard --map midgard --map midgard --map midgard --map midgard --json`
+     (five explicit `--map` tokens so the request is unambiguous whatever the
+     client's repeat semantics; the first accept remains the map-plan PROBE per
+     this gate's pre-committed branch). Runners are REFUSED for this leg for the
+     two defects this section already names (bare-call pin loss; retry-drop).
+     Originally drafted as: a hand-typed
      `.venv/bin/fcode match unrated …` per accept, or a runner. ⛔ **If a runner is
      used it must be grepped for BOTH `--match` AND `--map` before the lock:**
      `tools/unrated_run.sh` historically fired a bare `fcode match unrated "$id"
@@ -489,7 +549,10 @@ READ THAT CELL.**
    line**, never the exit code.
 8. **SIDE-LANE CERTIFICATE** per the s54 template, two clocks, after the fire.
 
-**TARGET BAND — `tools/target_value.py "Bean counters"`, run by this drafter at
+**TARGET BAND:** Bean counters, gaps +448..+448, win pays +29.75..+29.75, reachable NO
+*(conforming token line, typed at ratify from the verbatim tool output below)*
+
+**The tool's own output — `tools/target_value.py "Bean counters"`, run by the drafter at
 `2026-08-22T10:20:45Z`, PASTED VERBATIM:**
 
 ```
