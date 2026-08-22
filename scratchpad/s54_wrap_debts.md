@@ -1,5 +1,14 @@
 # s54 wrap debts (builder) — accumulating; executed at wrap per Magnus's rule, none inline
 
+0. **WRAP-DELTA CLASS (side-lane routed, s54): A BATTERY'S CONSUMER GATES ON THE PRESENCE
+   OF THE VERDICT LINE, never on the absence of failures** — the fcode load-bearing-field
+   rule applied to our own instruments. Three instances this session share it: S14's
+   distance-regex window (fails silently when a comment moves code), the s53 deadman
+   whose clear-condition never matched its target's completion form, and the v613 static
+   battery dying silently at control 47/101 on a swallowed SystemExit (no VERDICT line
+   printed, nobody noticed). The class goes in the deltas; the S14 re-scope is the
+   instance fix and already shipped in v614's battery.
+
 1. **CLAUDE.md DEFF cluster-enumeration edit — USE RESEARCH'S v2 TEXT** (their newest
    tail note, superseding the ~17:1xZ v1): third cluster CONTENT-DUPLICATE, now citing
    BOTH measured instances (BC v47 17.3% duplicates AND our tape30 seed-inert alarm,
