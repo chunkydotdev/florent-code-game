@@ -45,3 +45,25 @@ RO passes but FD fails through the p5 interaction → adopt RO, plank 5
 returns to design. T3 fail on both → the rotation returns to design ONCE
 (battery size / siting / timing are the study's named dials) then parks —
 two-strikes standing. T5 mechanical failures → build defect, halt.
+
+---
+
+## RE-SCREEN ADDENDUM (RO-P, prestage redesign — FINAL registered attempt, committed while the build agent runs)
+
+One change: SK_ROTATE_PRESTAGE=290 (rotation bodies walk to their band
+halves from r290, build nothing before 300). Bars, blind:
+**T3′ wins-sum ≥ 40** (unchanged; baseline 31, RO read 34) and the
+**corrected kill channel** (owning the prior spec defect): total core-kill
+wins sum ≥ **36** (baseline 29, RO read 33 — the prestage must add ≥3 more
+converted wins). Per-fixture wins vs the victory bars reported (RO read
+9/10/15).
+**T5′ ARRIVAL (the redesign's own mechanic):** median first battery
+sentinel ≤ **r310** per fixture (RO read r336/r344/r449) AND ≥ **70%** of
+touchable cells field ≥1 battery sentinel (RO read 23/39 = 59%).
+**T4 guards unchanged** (alive within −2 of 53, deaths +4 of 54, eco −12%
+of 35.47, harvesters −10% of 208 — RO passed all with room).
+**Prestage discipline:** zero builds and zero attacks by rotation bodies in
+r290-299 (the doctrine's letter), from the taps/decode.
+Fail on T3′ or T5′ → **PARK** (two-strikes exhausted); the campaign then
+iterates the battery's other dials (funding, tube-guard survival) as NEW
+planks against the parked rotation's banked numbers.
