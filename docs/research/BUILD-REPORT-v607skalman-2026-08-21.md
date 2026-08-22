@@ -228,9 +228,13 @@ AGGREGATE (WON,  n=11)   channel none=7 sentinel=4 · S2 stood yes=10 no=1 ·
    fixture, so there is no second thing to defend against.
 2. **NO CLOCK LOSSES AT ALL.** losses == our-core-dead == 19. The r1000 tail does
    not exist here; we die.
-3. **THE 54-ROUND WINDOW.** 11 of 19 rows are exactly 504 damage = 28 shots, and
-   in those the first-hit→death window is 54 rounds (52–63 across the class).
-   **Fifty-four rounds of continuous fire on our core, never once interrupted.**
+3. **THE 54-ROUND WINDOW.** ⛔ CORRECTED s54 (v608's instrument, which reproduces this
+   report's own printed table): **13 of 19 rows** are exactly 504 damage = 28 shots (the
+   prose above the table hand-counted 11); the ~54-round window holds for **8 of the
+   13** (three members run 70/95/203 rounds), and 3 of 13 already carried one
+   interruption. The design conclusion (the unanswered-streak class dominates our
+   losses) is unchanged; the class is larger and slightly less uniform than the prose
+   claimed.
 4. **S2 leans but does not decide:** S2 stood in 63% of losses vs 91% of wins;
    4 losses never built two sentinels at all (longhouse seat A built **one**, at
    r93, and died at r94).
