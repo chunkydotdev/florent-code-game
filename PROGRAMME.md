@@ -20,10 +20,15 @@ successor session inherit it. The fields below are parsed; the prose is not.
     R1000_IS_DEFEAT: yes
     PLAY_DEFENCE: not_at_the_kill_s_expense
     DEFENCE_ADMISSION_BAR: r300_crossing_non_regression
-    FOCUS: citadel_perimeter_magnus_2026-08-22_one_thing_at_a_time
+    FOCUS: fortress_eco_defence_magnus_2026-08-22_builders_never_raid
     CITADEL_ZONE: chebyshev_3_of_core_footprint
     CITADEL_BAR: every_enemy_unit_entering_zone_destroyed_funding_unconstrained
     CITADEL_ECON_RIDER: maintain_economy_his_own_words
+    FORTRESS_NO_RAID: builders_never_leave_home_territory
+    FORTRESS_RESPONSE: all_builders_destroy_intruding_raiders
+    FORTRESS_DEMOLITION: enemy_buildings_in_our_territory_destroyed_launchers_barriers_everything
+    FORTRESS_GOAL: eco_and_defence_optimized_to_the_absolute_edge
+    FORTRESS_R1000_QUESTION: OPEN_Q3_see_block_below
     FIXTURE_OF_RECORD: live_unrated
     ALWAYS_BE_RUNNING: yes
     QUEUE_FLOOR: 3
@@ -43,7 +48,34 @@ successor session inherit it. The fields below are parsed; the prose is not.
     NEXT_LINE_EXPERIMENTS: open_magnus_2026-08-22_r1000_still_defeat_no_rush
     RUSH_LINE_STATUS: sunset_2026-08-21_magnus_directive_v177_holds_slot_until_displaced
 
-## FOCUS NARROWED TO THE CITADEL PERIMETER 2026-08-22 (Magnus, s57, in-session — verbatim: "I think we're trying to do everything at the same time, what if we start at one thing, can we make a defence and maintain economy? Spend everything we need on defence, i want every single raider destroyed that 3 squares from our core.")
+## FORTRESS DOCTRINE 2026-08-22 (Magnus, s57, in-session, later the same evening — verbatim: "Don't send our builders on raid missions, we will work on eco and defence, how can we optimize them to the absolute edge of what can be done? Any raiders trying something, all builders are to destroy them, any enemy buildings should also be destroyed, launchers, barriers, everything")
+
+Extends the citadel block below. Operational form, typed by the builder:
+(1) **BUILDERS NEVER RAID** — no cage-walker march, no forward tubes built by
+travelling engineers, no forward ore denial: all four bodies work the home
+territory ("home territory" operationalized as the HOME HALF pending Magnus's
+word — challenge-this, same class as the Chebyshev choice). (2) **ALL builders
+are intruder-responders** — a raider in our ground is destroyed by whoever is
+in reach, not by one assigned role. This RESOLVES the earlier raider-vs-unit
+challenge-this: raiders die AND (3) **enemy BUILDINGS in our territory are
+demolished — launchers, barriers, everything** (his enumeration). (4) **ECO +
+DEFENCE TO THE ABSOLUTE EDGE** — the optimization target is measurable:
+titanium delivered per round (the belt ceiling on home ore), core damage taken,
+intruder survival time, enemy-structure dwell time in our half.
+⚠ **OPEN QUESTION Q3 FOR MAGNUS, flagged not resolved: this doctrine and
+R1000_IS_DEFEAT collide.** A bot whose builders never raid generates almost no
+checkmate pressure; its games will reach r1000 often, where key 1
+(titanium_collected) — which this doctrine MAXIMIZES — decides 94% of
+tiebreaks in our favour by construction. Readings: (a) development-phase
+exemption (build the fortress, measure the edge, the kill verb returns later
+on top of it); (b) the tiebreak road is being deliberately REOPENED (reversing
+the R1000_IS_DEFEAT clause for this line). The builder proceeds under reading
+(a) — it requires no reversal of standing doctrine and the work is identical
+for a long way — but the ruling is Magnus's, and every screen of this line
+will report r1000 shares honestly rather than hiding them.
+Game context: in-game Florent Code League doctrine.
+
+## FOCUS NARROWED TO THE CITADEL PERIMETER 2026-08-22 (Magnus, s57, in-session — verbatim: "I think we're trying to do everything at the same time, what if we start at one thing, can we make a defence and maintain economy? Spend everything we need on defence, i want every single raider destroyed that 3 squares from our core.") — EXTENDED BY THE FORTRESS BLOCK ABOVE, same evening
 
 Operational form, typed by the builder for the record: (1) ONE THING AT A TIME —
 the citadel package outranks every other build front until it measures; other
