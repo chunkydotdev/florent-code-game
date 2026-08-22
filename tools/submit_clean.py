@@ -330,7 +330,11 @@ SHIP_NAME_RE = re.compile(r"^(" + "|".join(SHIP_ERAS) + r") v\d+$")
 # Legs did NOT move to the Sleipnir era — no `Sleipnir rc` exists anywhere in
 # this repo or its history; the last leg shipped was `Loki rc10.1` (v154). Kept
 # a separate constant precisely so widening ships cannot silently widen legs.
-LEG_ERAS = ("Loki",)
+LEG_ERAS = ("Loki", "Skalman")
+# ^ "Skalman" leg era added 2026-08-22 (s54) on Magnus's DIRECT order ("I think
+#   we used to tag them rc, use unrated games as much as you want") — the
+#   first-contact rc legs of the Skalman line. Loop-blocking inline edit under
+#   the s47 rule's own exception, disclosed on the tail; the selftest drives it.
 LEG_NAME_RE = re.compile(r"^(" + "|".join(LEG_ERAS) + r") rc\d+\.\d+$")
 
 # The human-readable form of each rule, rendered from the same tuples the regexes
