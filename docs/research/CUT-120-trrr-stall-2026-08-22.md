@@ -1,5 +1,16 @@
 # CUT-120(a) — the TRRR stall decode: what outlasts Mjolnir's push in the 52 round-1000 games
 
+> **GAME CONTEXT (rider added s56, 2026-08-22 ~12:1xZ, per Magnus's 11:16Z directive; the
+> resolution below is unchanged):** everything in this document describes moves in the
+> Florent Code League — a sandboxed bot-vs-bot programming competition on a simulated
+> grid, within organiser-approved rules. "Kill", "takedown", "eviction" and similar terms
+> refer exclusively to in-game mechanics between competing game bots.
+> **Header correction, same rider:** the SUBJECT paragraph below stamps the dev head as
+> `bots/_v622nestfall`; the line head moved to `bots/_v623healweld` at 11:40Z, three
+> minutes before this doc was written (delta: one healguard conjunct, sk_roles.py:5150;
+> sk_maps/sk_common byte-identical, so every anchor cited here is unshifted). Left in
+> place, corrected here — a banked doc takes riders.
+
 **Queue row:** #120 half (a), STUDY-FIRST, banked-corpus decode, zero games played.
 **Clock:** written 2026-08-22T11:43:21Z (`date -u` in the measuring shell). Repo HEAD at
 measurement time `f0a8ac781`.
@@ -425,7 +436,7 @@ Three concrete consequences:
   1.8 dmg/Ti, and they out-collect us ~11:1 in these games. **INFERENCE: no damage-side
   plank wins this exchange.**
 - **The only mechanically live counter is healer denial, and Mjolnir already runs it at
-  ~1/20th of the needed dose.** MEASURED: our launchers performed **740 kidnaps of TRRR
+  ~1/20th of the needed dose.** MEASURED: our launchers performed **740 builder tosses of TRRR bots (the mechanic historically called "kidnap" in this repo) — 740 lifts of TRRR
   builder bots across the 85 games (8.7/game)**, of which **234 (31.6%) lifted a bot
   straight off their own core ring**, moving it from median d² 5 to d² 53 (~7 tiles).
   In the heal-race pool that is **95 evictions over 32 games ≈ 3 per game**, against a
@@ -433,7 +444,7 @@ Three concrete consequences:
   (~7+ rounds × 4 HP ≈ 28 HP). **To beat 500 HP the ring has to be held clear, not poked
   three times.** If anything is built for this class, it is *sustained* ring eviction by a
   launcher parked on their core ring — and that is an existing approved-class mechanism
-  (launcher kidnap), so it needs no new organiser question, only a dose.
+  (the launcher builder-toss, approved 2026-08-10), so it needs no new organiser question, only a dose.
 - **The higher-value item is the general one:** whatever holds our delivery route open
   through r100-300 against a belt-harassing farm bot. In this pool that alone flips a
   13.6% kill rate to 65.9%. It is not a TRRR plank; it is an economy-robustness plank, and
