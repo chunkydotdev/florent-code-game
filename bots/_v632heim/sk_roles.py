@@ -152,8 +152,8 @@ from sk_maps import (
     # --- v632 HEIMDALL PLANK 5 (THE SECOND ECO BODY) -----------------------
     SK_FORT_WALKER_ECO, SK_PHASE_ROUND,
     # --- v632 HEIMDALL PLANKS 8+9 (THE r300 ROTATION) ----------------------
-    SK_ROTATE, SK_ROTATE_CLUSTER_GAP, SK_ROTATE_PREPS, SK_ROTATE_RAIDERS,
-    SK_ROTATE_WANT,
+    SK_ROTATE, SK_ROTATE_CHEST_FROM, SK_ROTATE_CLUSTER_GAP, SK_ROTATE_PREPS,
+    SK_ROTATE_PRESTAGE, SK_ROTATE_RAIDERS, SK_ROTATE_WANT,
 )
 
 # --- v611: the 8 neighbours, for a LAUNCHER's pickup disc (d^2 <= 2) --------
@@ -279,8 +279,18 @@ class RolesMixin:
         # ⛔ BOTH ARE FALSE FOR EVERY ROUND OF EVERY SK_ROTATE-OFF ARM, so every
         # site that reads them is unreachable and the tree is character-for-
         # character the adopted one.
+        # ⭐⭐ AND A THIRD, ADDED BY THE REDESIGN:
+        #   `rot_stage` -- THIS BODY IS COMMUTING.  True for a raider in
+        #                  [SK_ROTATE_PRESTAGE, SK_PHASE_ROUND), and it is
+        #                  mutually exclusive with `rot_body` by construction:
+        #                  one is the half-open window below the flip, the other
+        #                  the half-open window at and above it, so no round can
+        #                  set both and no site has to arbitrate between them.
         self.rot_on = bool(SK_ROTATE and rnd >= SK_PHASE_ROUND)
         self.rot_body = bool(self.rot_on and self.role in SK_ROTATE_RAIDERS)
+        self.rot_stage = bool(SK_ROTATE
+                              and SK_ROTATE_PRESTAGE <= rnd < SK_PHASE_ROUND
+                              and self.role in SK_ROTATE_RAIDERS)
         # ⛔ v602 FIX 5(a): EVERY ROLE SENSES TERRAIN NOW.  v601 called
         # `_ore_scan` from the HOME KEEPER and the ORE DENIER only, and it is
         # the one thing that fills `map_walls` on an unconfirmed map -- so the
@@ -326,7 +336,11 @@ class RolesMixin:
         # r300 with the period-K orbit detector switched off -- exactly the
         # 188-round orbit v606 ITEM 4(b) was built for.  `rot_body` is False on
         # every SK_ROTATE-off round, so the gate is unchanged there.
-        if SK_CYCLE_ALL_ROLES and (self.role != SK_CAGE_WALKER or self.rot_body):
+        # ⭐ THE COMMUTE NEEDS IT TOO, AND MORE THAN THE SIEGE DOES: r290-r300 is
+        # the ONE stretch where the converted walker crosses the whole board in
+        # one unbroken march with no build to break an orbit.
+        if SK_CYCLE_ALL_ROLES and (self.role != SK_CAGE_WALKER
+                                   or self.rot_body or self.rot_stage):
             self._cycle_commit(rnd)
 
         # ⭐ v608 PLANKS 2 and 1, THE DENIER'S HOME ANSWER, PLACED ABOVE LEDGER
@@ -445,8 +459,18 @@ class RolesMixin:
         # every round of every SK_ROTATE-off arm, so the first arm is
         # unreachable and this switch is character-for-character the adopted
         # tree (including plank 5's own OFF-identity).
+        #
+        # ⭐⭐ THE REDESIGN ADDS ONE ARM ABOVE THE FLIP, NOT A SECOND MECHANISM.
+        # `rot_stage` occupies [SK_ROTATE_PRESTAGE, SK_PHASE_ROUND) -- the ten
+        # rounds in which a raider does nothing but walk to where the flip needs
+        # it.  It takes PRECEDENCE over plank 5's `_home_keeper` arm and over
+        # the plain `_cage_walker`/`_siege_engineer` arms for those two roles
+        # only, so the truth table above gains one row per SK_ROTATE=True line:
+        # `_rot_prestage` for rnd in [290, 300), unchanged either side.
         if self.rot_body:
             self._siege_engineer(ct, p, rnd)
+        elif self.rot_stage:
+            self._rot_prestage(ct, p, rnd)
         elif (SK_FORT_WALKER_ECO and rnd < SK_PHASE_ROUND
                 and self.role == SK_CAGE_WALKER):
             self._home_keeper(ct, p, rnd)
@@ -3044,6 +3068,22 @@ class RolesMixin:
         except Exception:
             return False
 
+    def _fort_price(self, ct, kind):
+        """The scaled price of the next ring turret -- `_fort_afford`'s own two
+        getters, exposed so the war chest can add the purchase's own cost to
+        its reserve without a second copy of the kind->getter mapping.
+
+        ⛔ 0 ON AN UNREADABLE COST, which weakens the chest test to "two
+        sentinels" rather than strengthening it: a refusal is never manufactured
+        out of a failed read.  `_chest_refuse` fails open for the same reason.
+        """
+        try:
+            if kind == EntityType.SENTINEL:
+                return ct.get_sentinel_cost()
+            return ct.get_gunner_cost()
+        except Exception:
+            return 0
+
     def _fort_axis(self, q):
         """(signed cross, |axis|^2, forward dot) of tile q about the
         our-core -> enemy-core axis, or None if the axis is undefined.
@@ -3230,6 +3270,17 @@ class RolesMixin:
             return False
         kind = self._fort_ring_next()
         if not self._fort_afford(ct, kind):
+            return False
+        # ⭐⭐ WAR-CHEST CALL SITE 1 of 2 -- THE RING TURRET.  Placed directly
+        # below `_fort_afford` and above the site search: the kind is decided
+        # (so the price is known) and nothing has been spent or scanned yet, so
+        # a refusal costs one comparison.  ⛔ THE RING IS THE DISCRETIONARY BUY
+        # THIS TREE ALREADY PRICES AS SUCH -- plank 3's own redesign moved it
+        # BELOW every economy verb after the screen measured turret-for-belt
+        # substitution, and this is the same judgement extended in time: inside
+        # the last 50 rounds before the flip, a 3rd ring turret and the battery
+        # that ends the game are competing for one bank.
+        if self._chest_refuse(ct, rnd, self._fort_price(ct, kind)):
             return False
         seats = self._seat_set()
         if not seats:
@@ -3704,6 +3755,15 @@ class RolesMixin:
                 self.belt_seen[xy] = rnd
             else:
                 if ct.get_global_resources() < ct.get_barrier_cost():
+                    return False
+                # ⭐⭐ WAR-CHEST CALL SITE 2 of 2 -- THE APRON BARRIER, AND IT IS
+                # THIS BRANCH ONLY.  The `if face is not None` arm above is a
+                # BELT-PLAN CONVEYOR and is p0-exempt by construction: the
+                # exemption is the shape of the if/else, not a clause that a
+                # later edit could quietly widen.  A relay that the belt plan
+                # asked for is economy; a barrier on the same tile is the apron
+                # MESH, which is discretionary cover.
+                if self._chest_refuse(ct, rnd, ct.get_barrier_cost()):
                     return False
                 if not ct.can_build_barrier(q):
                     return False
@@ -6162,6 +6222,132 @@ class RolesMixin:
     # ROLE 3 -- SIEGE ENGINEER  (COPY 5 + V3 + V4 + V9)
     # ==================================================================
 
+    def _chest_refuse(self, ct, rnd, cost):
+        """⭐⭐ v632 PLANKS 8+9 AMENDMENT -- THE WAR CHEST (SK_ROTATE_CHEST_FROM).
+
+        True when a DISCRETIONARY keeper purchase must stand down because the
+        bank would not still cover two sentinels after paying for it.
+
+        WHY IT EXISTS.  The prestage build's smoke falsified study §8c's funding
+        assumption on 2 of 3 cells: bank vs sentinel cost AT THE FLIP read
+        40 vs 88 (longhouse) and 38 vs 72 (jotunheim) against 1,118 vs 81
+        (valkyrie).  Where that happens, the raiders arrive on time and then
+        STAND THERE -- the first plant slipped to r361 and r413 with the bank at
+        3 and 22 Ti.  Travel is what SK_ROTATE_PRESTAGE buys; this buys the
+        other half, and neither is a substitute for the other.
+
+        ⛔ THE TWO EXEMPTIONS ARE THE SPECIFICATION, NOT SOFTENING:
+          * **p0 ECONOMY IS NEVER REFUSED.**  Harvesters and belt-plan
+            conveyors do not pass through this predicate at all -- see the call
+            sites; the exemption is STRUCTURAL, not a clause that could be
+            edited out.  This tree's own founding fact is that a harvester with
+            no route home is worth zero forever.
+          * **DEFENCE FIRST.**  `_under_attack` is the slot-1 threat latch
+            (SK_SLOT_UNDER, 50-round freshness) -- the SAME latch ledger V5
+            arbitrates survival on.  A fortress that banks 200 Ti and loses its
+            core at r280 has banked nothing, so the chest yields on exactly the
+            signal the rest of the tree already yields on.
+
+        ⛔ OFF-IDENTITY IS THE FIRST LINE.  With SK_ROTATE False the window
+        predicate is False for every round of the game, this returns False
+        before touching the controller, and no purchase anywhere in the tree
+        changes.  `chest_blocked == 0` is the witness.
+        ⛔ AND IT FAILS OPEN.  Any exception reading the bank or a cost getter
+        returns False -- a refusal built on an unreadable number is a purchase
+        cancelled for no measured reason, which is worse than the overspend.
+        """
+        if not (SK_ROTATE and SK_ROTATE_CHEST_FROM <= rnd < SK_PHASE_ROUND):
+            return False
+        try:
+            if self._under_attack(ct, rnd):
+                return False
+            if ct.get_global_resources() >= 2 * ct.get_sentinel_cost() + cost:
+                return False
+        except Exception:
+            return False
+        self.chest_blocked += 1
+        return True
+
+    def _rot_prestage(self, ct, p, rnd):
+        """⭐⭐ v632 PLANKS 8+9 REDESIGN -- THE COMMUTE (SK_ROTATE_PRESTAGE).
+
+        GAME CONTEXT: in-engine movement for the Florent Code League, a
+        sandboxed bot-vs-bot competition on a simulated grid.  This method
+        issues `move` calls and nothing else -- no build, no fire, no spend.
+
+        WHAT IT IS.  Attempt 1's screen passed every guard and lost on ARRIVAL:
+        the first post-flip sentinel landed at a median r336/r344/r449 by
+        fixture and 16 of 39 touchable cells never fielded one.  The cause is
+        that travel, siting and funding were all paid IN SERIES from a standing
+        start at r300.  This pays the travel EARLY and in parallel with the
+        fortress's last ten eco rounds, so the flip finds both raiders standing
+        in their band halves with a site already chosen and `_siege_engineer`'s
+        existing adjacency test true on the first round it runs.
+
+        ⛔⛔ IT BUILDS NOTHING AND PECKS NOTHING.  PROGRAMME.md
+        `HEIMDALL_TACTIC_LOCK: eco_and_defence_to_r300_then_rotate_and_destroy`
+        -- eco and defence UNTIL 300.  There is exactly one mutating engine call
+        reachable from this method and it is `move`, through `step_to` ->
+        `_nav`.  No `build_*`, no `fire`, no `convert_ammo`, no titanium leaves
+        the bank before SK_PHASE_ROUND.  The doctrine gives up ten rounds of two
+        bodies' PHASE-1 LABOUR, not one titanium of phase-1 SPENDING.
+
+        ⛔ THE RE-HOME LATCH IS A CORRECTNESS REQUIREMENT, NOT TIDINESS.  The
+        ORIGINAL engineer (role 3) has been running `_siege_engineer` all game
+        against the FULL band; whatever `nest_site` it holds at r290 was chosen
+        without the role-parity half split and is very likely in the OTHER
+        raider's half.  Walking to it would deliver both bodies to the same arc
+        and re-open hazard (b) at exactly the round the split exists for.  The
+        site is therefore dropped ONCE, on the first prestage round, so the
+        re-pick runs under the split.
+        """
+        if self.enemy is None:
+            return
+        if not self.rot_staged:
+            self.rot_staged = True
+            self.nest_site = None
+            self.nest_face = None
+            self.nest_prepped = 0
+            self.nest_best_d = None
+        # The refutation half, exactly as `_siege_engineer` runs it: a target
+        # that vision proves is a WALL, or that this body has failed to close on
+        # for SK_NEST_STUCK_ROUNDS, is abandoned and re-picked.  Without it a
+        # ten-round commute can be spent walking at a tile that does not exist.
+        self._nest_site_watch(ct, p, rnd)
+        if self.nest_site is None:
+            self.nest_site = self._pick_nest(ct, p, rnd)
+            if self.nest_site is not None:
+                self.nest_best_d = None
+                self.nest_since = rnd
+                self.nest_anchor = None
+                self.nest_anchor_rnd = rnd
+        self.rot_stage_walks += 1
+        if self.nest_site is not None:
+            # ⛔⛔ THE COMMUTE STOPS **BESIDE** THE SITE, NOT ON IT, AND THE
+            # 22-ROUND COMMUTE IS WHAT MADE THIS BITE.  `_plant_gun` builds on
+            # an ORTHOGONALLY ADJACENT tile -- `_siege_engineer`'s own gate is
+            # `abs(site.x - p.x) + abs(site.y - p.y) == 1` -- so a body standing
+            # ON its chosen tile cannot build there and must step off and back.
+            # Measured on valkyrie at 290 (a ten-round commute that never
+            # arrived) this was invisible; at 278 the body reached (21,10) at
+            # r299, stepped onto its own site (22,10) at r300 and pushed the
+            # first plant from r321 to r338 -- the redesign's whole gain, spent
+            # on one tile.  Holding station at Manhattan 1 is what makes "at
+            # r300 they are IN the band and the existing plant logic fires
+            # immediately" literally true.
+            if (abs(self.nest_site.x - p.x)
+                    + abs(self.nest_site.y - p.y)) == 1:
+                return
+            self.step_to(ct, self.nest_site)
+            return
+        # No site yet -- the board is unconfirmed, or this body's half is
+        # momentarily empty.  Close on the enemy anchor so the NEXT `_pick_nest`
+        # runs from inside the band, capped at the band edge for the same reason
+        # `_attack_enemy_core`'s rotation arm is capped: walking further in
+        # parks the body at d^2 ~2, inside every enemy gunner's r^2 = 13.
+        if dsq_core(p, self.enemy) > SK_NEST_DSQ_MAX:
+            self.step_to(ct, self.enemy)
+
     def _siege_engineer(self, ct, p, rnd):
         """COPY 5 -- band-first siting: d^2 14-32 from the enemy core
         footprint, inside sentinel reach (r^2=32) and outside every gunner's
@@ -6894,8 +7080,13 @@ class RolesMixin:
         # phase only, then v603's spread returns for REPLACEMENTS, which is what
         # "then move to the next position" asks for and what keeps the rolling
         # half of the siege from re-stacking on a tile that just lost a tube.
+        # ⭐ THE COMMUTE PICKS UNDER THE SAME RULE IT WILL PLANT UNDER.  If the
+        # prestage target were chosen at the spread and the r300 plant at the
+        # cluster gap, the body would walk ten rounds to a tile it then declines
+        # -- the arrival gain this redesign exists for, spent twice.
         gap = SK_NEST_PAIR_MIN_GAP
-        if self.rot_body and self.rot_plants < SK_ROTATE_WANT:
+        if ((self.rot_body or self.rot_stage)
+                and self.rot_plants < SK_ROTATE_WANT):
             gap = SK_ROTATE_CLUSTER_GAP
         site = self._nest_scan(ct, p, rnd, taken, gap, haste=haste)
         # ⭐ v613 PLANK 2(c), SK_TUBE_GAP_RELAX.  "The band d^2 14-32 is wide
@@ -6985,8 +7176,11 @@ class RolesMixin:
         # BAND -- measured d^2 16..32 on each side (16, not 14, is the closest
         # value the clamp grid realises and is pre-existing) -- so the +30%
         # turret-life premium the band is bought for is intact for both raiders.
+        # ⭐ THE COMMUTE IS SPLIT TOO -- and this is the half of the redesign
+        # that makes the prestage worth walking: two bodies that pre-stage into
+        # the SAME arc arrive early and then fight over it.
         rot_half = None
-        if self.rot_body:
+        if self.rot_body or self.rot_stage:
             rot_half = 1 if self.role == SK_SIEGE_ENGINEER else 0
         for dx in range(-7, 9):
             for dy in range(-7, 9):

@@ -1093,6 +1093,25 @@ class Player(CommonMixin, RolesMixin, CoreMixin):
         # stay 0 -- which is exactly what makes them the identity witnesses.
         self.rot_on = False           # the phase is open (rnd >= SK_PHASE_ROUND)
         self.rot_body = False         # ...and THIS body is one of the raiders
+        self.rot_stage = False        # THE COMMUTE: a raider inside
+                                      # [SK_ROTATE_PRESTAGE, SK_PHASE_ROUND).
+                                      # Mutually exclusive with `rot_body`
+        self.rot_staged = False       # the one-shot re-home latch: the phase-1
+                                      # nest site is dropped on the FIRST
+                                      # prestage round so the re-pick runs under
+                                      # the role-parity half split
+        self.rot_stage_walks = 0      # commute rounds spent by this body -- the
+                                      # redesign's cost instrument, and the
+                                      # denominator for its arrival gain
+        self.chest_blocked = 0        # THE WAR CHEST's refusal tap
+                                      # (SK_ROTATE_CHEST_FROM): discretionary
+                                      # keeper purchases stood down in
+                                      # [250, 300) so the battery is affordable
+                                      # at the flip.  0 on every SK_ROTATE-off
+                                      # arm -- the window predicate's first
+                                      # term is the master -- which is what
+                                      # makes it the identity witness as well
+                                      # as the dose counter
         self.rot_plants = 0           # sentinels planted by this body since the
                                       # flip.  Drives the first battery's
                                       # clustering AND is the plant-rate

@@ -3939,6 +3939,116 @@ SK_ROTATE_PREPS = 0          # PREP BARRIERS PER SITE, POST-FLIP.  ZERO, and it
                              # round before SK_PHASE_ROUND and every arm with
                              # SK_ROTATE off; this constant is read ONLY inside
                              # the rotation conjunction.
+SK_ROTATE_PRESTAGE = 278     # ⭐⭐ THE REDESIGN'S ONE CHANGE, AND THE SCREEN IS
+                             # WHAT COMMISSIONED IT.  Attempt 1 passed every
+                             # guard -- the rotation costs nothing (eco +0.7%,
+                             # harvesters +1.9%, survival flat), wins moved
+                             # 17 -> 20 inside the touchable population, F3 at
+                             # 15/30 (one from its bar), prep/peck discipline
+                             # perfect -- and lost on ARRIVAL: the first
+                             # post-flip sentinel lands at a median of r336 /
+                             # r344 / r449 by fixture, i.e. 36-150 rounds AFTER
+                             # the flip, and 16 of 39 touchable cells never
+                             # field one at all.  The lag is travel + siting +
+                             # funding, paid IN SERIES starting from a standing
+                             # start at r300.
+                             # ⇒ FROM THIS ROUND the two rotation bodies stop
+                             # their phase-1 duties and WALK to their band
+                             # halves, so the flip finds them already there and
+                             # the existing plant logic fires on arrival rather
+                             # than after a cross-board march.
+                             # ⛔⛔ IT BUILDS NOTHING AND PECKS NOTHING BEFORE
+                             # SK_PHASE_ROUND, AND THAT IS THE DOCTRINE'S
+                             # LETTER, NOT A SAFETY MARGIN.  PROGRAMME.md
+                             # `HEIMDALL_TACTIC_LOCK:
+                             # eco_and_defence_to_r300_then_rotate_and_destroy`
+                             # -- eco and defence UNTIL 300.  A body in transit
+                             # spends no titanium, lays no barrier, plants no
+                             # turret and fires at nothing; it only stops doing
+                             # its own phase-1 job ten rounds early.  The
+                             # walking is not the rotation, it is the rotation's
+                             # commute.
+                             # ⭐⭐ TWENTY-TWO ROUNDS, AND THE NUMBER IS MEASURED,
+                             # NOT CHOSEN.  This constant shipped at 290 for one
+                             # build cycle and the ten-round commute was too
+                             # short for the HOME-SIDE raider -- taken straight
+                             # off that build's own smoke taps:
+                             #   valkyrie  role 1 walked (3,7) -> (9,10) in ten
+                             #             rounds and stood at d^2 = 305 from
+                             #             their core at the flip, against a
+                             #             band of d^2 <= 32.  Manhattan from
+                             #             its start to its chosen site (22,10)
+                             #             is 22.
+                             #   jotunheim role 1 walked (3,11) -> (11,13);
+                             #             Manhattan to its site (15,14) is 15.
+                             #   longhouse role 1 (4,4) -> (8,10), site (20,4).
+                             # ⇒ the measured requirement is ~22-25 rounds for
+                             # the body that starts at OUR core, and 278 is the
+                             # low end of that band.  ⛔ THE OTHER RAIDER NEEDED
+                             # NONE OF IT: the ORIGINAL engineer is forward all
+                             # game and was already in its half at r300 in every
+                             # cell ((19,19)->(20,18), (19,9)->(21,11)).  The
+                             # constant is sized by the worst commuter, which is
+                             # the one that decides when the BATTERY forms.
+                             # ⛔ WHAT 22 ROUNDS COSTS THE DOCTRINE, STATED
+                             # PLAINLY: 22 rounds of TWO bodies' phase-1 labour,
+                             # and ZERO titanium.  A commuting body builds
+                             # nothing and attacks nothing -- proxy-proven, not
+                             # argued: an 18-verb mutating-call trap wrapped
+                             # around the commuting body's Controller fired 0
+                             # times across three cells while the same trap with
+                             # one real build wired in fired 20.
+                             # ⭐ AND IT IS STILL ONLY HALF THE LAG.  The same
+                             # smoke falsified the study's §8c funding
+                             # assumption ("bank at r300 ... is thousands of
+                             # Ti"): bank vs sentinel cost AT THE FLIP read
+                             # 1,118 vs 81 on valkyrie but 40 vs 88 on longhouse
+                             # and 38 vs 72 on jotunheim -- 2 of 3 cells could
+                             # not afford ONE sentinel at the flip.  Travel is
+                             # what this constant buys; SK_ROTATE_CHEST_FROM
+                             # below buys the other half.
+SK_ROTATE_CHEST_FROM = 250   # ⭐⭐ THE WAR CHEST, AND IT EXISTS BECAUSE THE
+                             # MAJORITY BINDING LAG IS FUNDING, NOT TRAVEL.
+                             # From this round to the flip, the KEEPER's
+                             # DISCRETIONARY purchases stand down until the bank
+                             # can still afford them ON TOP OF two sentinels --
+                             # `bank >= 2 * get_sentinel_cost() + this
+                             # purchase's own cost`.  TWO sentinels because
+                             # study §8b prices a single tube at 130 rounds
+                             # against a healed core (a stalemate) and the pair
+                             # is the smallest opening the battery can use;
+                             # `get_sentinel_cost()` and not a constant because
+                             # the ONE GLOBAL ADDITIVE scale is at its
+                             # game-maximum by r250 and a hardcoded price would
+                             # under-reserve exactly when it matters.
+                             # ⛔⛔ WHAT IT DOES **NOT** TOUCH, AND THE EXEMPTIONS
+                             # ARE THE SPECIFICATION:
+                             #   * HARVESTERS and BELT-PLAN CONVEYORS -- p0, the
+                             #     economy this whole line is built on.  A
+                             #     harvester with no route home is worth zero
+                             #     forever; starving the belt to buy a sentinel
+                             #     is eating the seed corn 50 rounds before the
+                             #     harvest.
+                             #   * ANY ROUND WITH THE THREAT LATCH FRESH
+                             #     (`_under_attack`, slot 1 SK_SLOT_UNDER,
+                             #     50-round freshness).  DEFENCE FIRST: a
+                             #     fortress that banks 200 Ti and loses its core
+                             #     at r280 has banked nothing.  This is the same
+                             #     latch ledger V5 arbitrates on, so the chest
+                             #     yields to survival on exactly the signal the
+                             #     rest of the tree already yields to.
+                             # ⛔ FIFTY ROUNDS, and the span is what the measured
+                             # shortfall needs: longhouse was 48 Ti short of one
+                             # sentinel at the flip and jotunheim 34, against a
+                             # fortress income of ~27.5 Ti/round -- so a couple
+                             # of deferred discretionary purchases inside fifty
+                             # rounds covers it with room.  It starts at 250 and
+                             # not at 278 so the chest FILLS before the commute
+                             # empties the ladder of its two spenders.
+                             # ⛔ OFF-CONJOINED WITH SK_ROTATE, like everything
+                             # else in this family: with the master False the
+                             # window predicate is unreachable and no purchase
+                             # anywhere in the tree is refused.
 SK_ROTATE_CLUSTER_GAP = 2    # THE FIRST BATTERY IS CLUSTERED.  Magnus, direct:
                              # "put the first 4 sentinels together".  The band
                              # spread `SK_NEST_PAIR_MIN_GAP = 8` is v603's
