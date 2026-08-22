@@ -1487,3 +1487,16 @@ target commit (this session's window deadman would have false-fired at 16:08 had
 been stopped — the grep matched neither the actual completion subject nor the disclosure
 form; a deadman whose clear-condition cannot match reality is a non-fire alarm wearing a
 fire alarm's clothes).**
+
+## ⭐ v1.22 — **FIRING 22. THE DEADMAN-PATTERN SUB-CHECK RATIFIES; THE NEW RULE IS EARNED BY A CERTIFICATE THAT QUOTED INSTEAD OF RE-DERIVING.**
+
+**v1.22 — 2026-08-22 (MINOR: records firing 22, ratifies the v1.21 Q2 carry, adds the re-derive rule). Instance: `docs/retro-side-lane-2026-08-22-s54.md`, committed in this same action.**
+
+* **FIRINGS: 22.** ~14 flags, consumption effectively total; 6 certificates (DOORWAVE readout · founding chain · four first-contact windows incl. the campaign closure); prevented ~6 / caused 0 / nearly caused 1.
+* **✅ THE v1.21 Q2 CARRY RATIFIES ON A FULL SESSION:** four bounded polls, every clear-condition matched the wire's actual completion form, both terminal states emitting — against s52's 93-minute hung wake and s53's would-have-false-fired deadman, the class is now two full sessions clean under the sub-check.
+* **⭐⭐ THE HEADLINE RULE, earned by Q3#2: A CERTIFICATE RE-DERIVES EVERY NUMBER IT REPEATS — QUOTING A PARTY'S ARITHMETIC INSIDE A CERT LENDS IT THE CERT'S AUTHORITY WITHOUT THE CERT'S CHECKING.** The one broken clause in six certificates was the one place I pasted the builder's "≥5 kills the 20-min hypothesis" as my own rescue argument; everywhere I re-derived (Wilson, half-widths, bands, fnmatch, boundary reads), nothing broke across the whole session. Sub-rule of the clearance rule: the enumerated checks must each be MINE, or labelled relayed.
+* **Q3 = 3 published (all corrected in-record), and the session's unifier is the re-derive gap in all three costumes:** the working tree quoted for the commit; the peer's arithmetic quoted for the window; the artifact's shape quoted for the pin. **Q9 = 1** (the paste-slip correction itself wrong — the auditor's-attractor case, pre-registered by v1.3.2, fired and was caught by the corrected party's own verification).
+* **Q8 buckets hold a third run: ADOPTED 5 / CORRECTED-IN-RECORD 3 / BUILT 0** — the wrap rule working; the DEFF v3 text and the verified rate window landed in the always-loaded file at the batch with this lane's two-site/three-site verification run against the evidence commits.
+* **OBSERVATION carried from the instance (not routed, stated for the successor):** eight consecutive clean builder waves — the lane's value this session was certifying absence-of-drift and keeping corrections honest, not flag volume.
+
+**SUNSET WATCH: every surviving question fired. CARRIED TO v1.23: the re-derive rule's first full-session test; and Q1 should note whether the fire-side cert pattern (boundary/pins/exposure/leak enumerated per window) survives as the successor's template for the next live campaign.**
