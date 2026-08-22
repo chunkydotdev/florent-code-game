@@ -2,6 +2,72 @@
 # NEVER from a poller or any line below (this block is a CACHE).
 # ⚠ now.py's "last 10" POOLS UNRATED (wrap debt): rated-only differs.
 
+# ===== s56 WRAP (builder, 2026-08-22 ~18:1xZ; Magnus called it) =====
+*(Game context: everything here is in-game Florent Code League play.)*
+
+## THE SLOT — UNTOUCHED ALL SESSION: x3r0's **v176 "Mjolnir rotfix w77"** holds. ZERO
+submits/activations/rated exposure by this lane. Rollback target if ever needed: v176 by
+integer. CONTROL = `bots/_v542wave` (unchanged). **TWO MAGNUS QUESTIONS OPEN, both his:**
+Q1 session-risk (may activation windows open) · Q2 stealth-scope (does the pre-drop rider
+cover a five-cell calibration panel). The STAGED v628 field panel (window plan certified)
+and the LOCKED-AND-HELD CRASHREP-BC leg (per-accept atomic form certified as condition (b))
+both wait on them. **FOCUS = DEFENCE since ~14:5xZ** (Magnus direct; PROGRAMME.md FOCUS
+field; R1000_IS_DEFEAT re-affirmed by the directive's own second clause).
+
+## LINE HEAD = `bots/_v628compose` — **BYTE-IDENTICAL to the measured arm** (corrected
+~15:0xZ after the wrong-head catch; the tree as first committed carried defaults, not the
+adopted config). = v623 + SK_NEST_CLEAR+OWN + SK_TUBE_LATENCY_SOLO+STAGE, PB_LIFE OFF.
+Adopted on the pooled POWERED read n=1800/arm vs Mjolnir: candidate−dup **+6.33pp
+[+1.40,+11.26] CI excludes 0**, null pair covers 0, timely-checkmate 16.44 vs 14.28 —
+after the W1 duplicate-control alarm refused a tainted +5.89 (the alarm→pool procedure is
+the template). sk_maps md5 `d9608a9d…`, sk_roles md5 `9db5b17e…`. SUBJECT: one opponent;
+the benchmark read shows the gains are OPPONENT-CONDITIONAL (line plateau ~33-36% vs
+_v542wave since v620) — no field-general claim; the panel is the confirming surface.
+
+## WHAT s56 SETTLED (all banked as docs/research/ files, agent reports verbatim)
+* **v623 adopted** (healguard un-weld, 60/60 identity, mutation-verified liveness).
+* **v624/v625/v626/v627 mechanisms banked, levels null** (three registered screens with
+  committed blind expectations; every falsifier battery run; adoption declined each time).
+  v626's PLANK-B registered null: COPY 5's dependency has NEVER been satisfied on any
+  fixture. The walker micro-front is DEPRIORITIZED for level (not closed).
+* **v628 adopted** (above). **v629 (three zero-purchase defence planks) null-to-negative
+  on both opponents** despite cell-perfect cap attribution — the zero-cost defence class
+  is priced; minus-one decomposition is a queue row.
+* **THE DRIP DECOMPOSITION (Magnus's H1 question): the economy does NOT collapse — the
+  BATTERY does.** Closed ammo ledger exact 95/95: converts = shots; gun-rounds fall 3.5x
+  (turret life 23r vs 130r, 59% die, **79% killed by enemy gunners at d²=4**, no builder
+  near in 91%). Funding excluded four ways (we are RICHER in contact). → STUDY-drip-
+  collapse-decomposition-2026-08-22.md.
+* **Barrier-occludes-gunner ENGINE-PROBED** (target flips to the interposed barrier) —
+  with the killer census + heal arithmetic, **v630 THE TUBE GUARD is evidence-complete**.
+* **M7 corrections** (subject inversion + no-cause-filter; our honest clearance 19-33% vs
+  their 70-89%); **six weld instances**; **t_pb_f1 ≡ t_ctrl_f1 28/30 byte-identical (one
+  population, two names)**; **cross-host grids are non-deterministic** (no local
+  reproduction of grid rows).
+
+## THE SUCCESSOR'S QUEUE (priority order)
+1. **v630 TUBE GUARD** — prep-barrier orientation toward the enemy approach + #52
+   heal-babysit arm; design read of _prep_barrier placement first; resolve the
+   babysit-vs-STAGE staffing tension (STAGE walks the engineer AWAY from the tube —
+   possibly feeding the 91% nobody-near number). Full pipeline incl. flag-ON smoke.
+2. **Magnus Q1/Q2** → the staged field panel (research's fire order + certified window
+   plan) and/or CRASHREP-BC.
+3. **v631 flow watchdog** (Magnus's design seed, specced on the tail) · the v629
+   minus-one row · the first-turret-build slip r14→r31 (bots/ question) · #123 with its
+   both-ways fixture spec.
+4. **Wrap debts: scratchpad/s56_wrap_debts.md** (8 items + inherited s55) — incl. the
+   h4-tree rename, rdiff machine-verdict, template fixes (pooled-vs-per-cell,
+   normalization, converts-fraction, two-opponent), durable homes for cross-host
+   non-determinism + the tape-duplication finding, and the thrice-carried
+   audit_trigger/results.tsv escalation.
+
+## STATE / WAKE PATHS
+All monitors + keeper + auto_gate + corefill_forever + fleet_dispatch alive; ws1/ws2
+delivered + cleaned. All five commissioned agents landed; their reports are BANKED as repo
+docs. **NOTHING WAKES A HUMAN.** Research + side lane pinged to wrap per the standing rule.
+
+## ===== ARCHIVE MARKER: everything below predates s56's wrap =====
+
 # ===== s55 WRAP (builder, 2026-08-22 ~11:0xZ; Magnus called it) =====
 
 ## ⛔⛔ READ THIS FIRST — THE SESSION-LEVEL BLOCKER, NOT A BOT FACT
