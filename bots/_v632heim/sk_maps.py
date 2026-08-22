@@ -3400,6 +3400,13 @@ SK_KEEPER_LEASH = True       # ⭐ ADOPTED s57 (leash-alone screen passed every
                              # build-out -- design study R2).  OFF = exact
                              # identity: the _leashed conjunction is False at
                              # both loop sites.
+SK_ORE_STEPOFF = False       # v632 BUGFIX flag -- the ore half of the v601
+                             # stand-on-your-own-target deadlock (belt half
+                             # guarded since v601; ore half never was; #130's
+                             # class).  Measured live: icefloe_seatB 475 frozen
+                             # rounds ON an ore tile, skald_seatA 33.  OFF
+                             # default: screens under GUARD-FRAMEWORK v2 like
+                             # any plank rather than shipping on attribution.
 SK_LEASH_DSQ = 50            # the "far" bar the E6 attribution measured: a
                              # healthy keeper reads median d^2 6.5 from the
                              # core and 7.3% of rounds beyond 50; the drifted

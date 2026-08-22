@@ -141,7 +141,7 @@ from sk_maps import (
     SK_RENT_STEP_BUDGET,
     # --- v632 HEIMDALL PLANK 1 (THE CITADEL DISPATCH) ----------------------
     SK_FORTRESS, SK_CITADEL, SK_CITADEL_CHEB, SK_CITADEL_BODIES,
-    SK_CITADEL_GIVEUP, SK_CITADEL_JOIN_DSQ, SK_CITADEL_ROLES, SK_KEEPER_LEASH, SK_LEASH_DSQ,
+    SK_CITADEL_GIVEUP, SK_CITADEL_JOIN_DSQ, SK_CITADEL_ROLES, SK_KEEPER_LEASH, SK_LEASH_DSQ, SK_ORE_STEPOFF,
     SK_IDLE_ACT_ALL,
     # --- v632 HEIMDALL PLANK 2 (THE DEMOLITION SWEEP) ----------------------
     SK_DEMOLISH, SK_DEMOLISH_CAP, SK_DEMOLISH_DSQ,
@@ -4016,6 +4016,26 @@ class RolesMixin:
                     continue
                 self.step_to(ct, q)
                 return
+        # ⭐ v632 BUGFIX (SK_ORE_STEPOFF) -- THE SAME DEADLOCK, ORE HALF.  The
+        # v601 guard above covers BELT tiles only; the ore walk below never
+        # got it, so a keeper standing ON an eligible unbuilt home-ore target
+        # walks at itself (CENTRE) forever -- #129's attribution measured it
+        # live: icefloe_seatB frozen 475 rounds ON an ore tile with zero
+        # actions and every neighbour free; skald_seatA 33 rounds.  Latent in
+        # the v628 base (any divergence shape can park a body there); exposed
+        # by the dispatch arms.  Same mechanics as the belt guard verbatim.
+        if SK_ORE_STEPOFF and self._on_eligible_ore(ct, p, rnd):
+            for d in CARDINALS:
+                q = p.add(d)
+                if not self.ibp(q):
+                    continue
+                try:
+                    if not ct.is_tile_passable(q):
+                        continue
+                except Exception:
+                    continue
+                self.step_to(ct, q)
+                return
         # ⭐ v632 PLANK 4 -- THE KEEPER LEASH (#128a), THREAT-CONDITIONAL.
         # Three independent arms (v630.0, v630.1, p1) measured the same F1
         # signature: any home-duty divergence collapses the keeper's core-
@@ -6354,6 +6374,25 @@ class RolesMixin:
                     if d.delta() == (sx, sy):
                         return d
         return None
+
+    def _on_eligible_ore(self, ct, p, rnd):
+        """v632 SK_ORE_STEPOFF: is this body STANDING ON an unbuilt home-ore
+        tile the ore walk would target?  Mirrors the ore loop's own filters so
+        the step-off fires exactly when the deadlock would (#129 attribution:
+        icefloe 475 frozen rounds, skald 33)."""
+        xy = (p.x, p.y)
+        try:
+            if ct.get_tile_env(p) != Environment.ORE_TITANIUM:
+                return False
+        except Exception:
+            return False
+        if xy in self.harv_tiles or not self.is_home_half(p):
+            return False
+        if self.belt_plan.get(xy) is not None:
+            return False
+        if self._harv_blocked(ct, xy, rnd):
+            return False
+        return True
 
     def _prep_barrier(self, ct, p, site, rnd):
         """COPY 5's preparation: barriers 1-4 rounds before the gun, including
