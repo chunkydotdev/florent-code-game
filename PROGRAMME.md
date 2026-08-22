@@ -72,7 +72,11 @@ on top of it); (b) the tiebreak road is being deliberately REOPENED (reversing
 the R1000_IS_DEFEAT clause for this line). The builder proceeds under reading
 (a) — it requires no reversal of standing doctrine and the work is identical
 for a long way — but the ruling is Magnus's, and every screen of this line
-will report r1000 shares honestly rather than hiding them.
+will report r1000 shares honestly rather than hiding them. **The same ruling
+also settles `KILL_TARGET` (median_r180_share_by_r200_floor_r300): under
+reading (a) it is DORMANT for the fortress development phase; under (b) it is
+DEAD — named here so one ruling closes both fields and no successor trips on
+a stale constant.**
 Game context: in-game Florent Code League doctrine.
 
 ## FOCUS NARROWED TO THE CITADEL PERIMETER 2026-08-22 (Magnus, s57, in-session — verbatim: "I think we're trying to do everything at the same time, what if we start at one thing, can we make a defence and maintain economy? Spend everything we need on defence, i want every single raider destroyed that 3 squares from our core.") — EXTENDED BY THE FORTRESS BLOCK ABOVE, same evening
