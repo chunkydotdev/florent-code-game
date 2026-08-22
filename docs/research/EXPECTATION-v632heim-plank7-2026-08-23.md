@@ -36,3 +36,17 @@ built (not just planned) in ≥ 15/30; positions cheb ≤ 2 of the footprint.
 M1+M2+M5 + either M3 channel + M4 → ADOPT. M3 both-miss with M5 clean →
 ONE siting/cap redesign then park (standing two-strikes). M5 fail → build
 defect, halt.
+
+**PRE-TAPE AMENDMENT (no tape of the arm exists; blind held; the build
+smoke's reason-histogram measured the defect):** study clause (a)
+("cardinal-adjacent to planned belt") is DROPPED from the mesh filter —
+it chains the mesh off the trunk's single face (6 of 8 seats refused
+`notadj` in every re-plan of every smoke cell; total dose 1 tile in 3
+cells), structurally defeating the plant-denial and occlusion duties the
+plank exists for and making M5 unpassable by construction. The mesh's
+population is the eight core seats gated by the spawn reserve (2),
+occupancy, terrain, and ban filters only — the shape Magnus observed.
+Consequence priced into M4 unchanged: up to ~6 conveyors ≈ +6% scale and
+~45 Ti; the guards decide if that costs too much. M-bars otherwise
+unchanged. Builder's decision under the delegation; the redundancy duty
+keeps whatever the trunk face provides naturally.
