@@ -50,3 +50,13 @@ Consequence priced into M4 unchanged: up to ~6 conveyors ≈ +6% scale and
 ~45 Ti; the guards decide if that costs too much. M-bars otherwise
 unchanged. Builder's decision under the delegation; the redundancy duty
 keeps whatever the trunk face provides naturally.
+
+**SECOND PRE-TAPE AMENDMENT (blind held; the guard's own histogram is the
+provenance):** the spawn reserve is corrected to its PURPOSE — it applies
+only when the candidate seat is IN the core's anchor-adjacent spawn ring
+(54% of its 114 smoke refusals fell on seats outside that ring, which
+cannot affect spawnability; stavkirke's 0-tile reading was entirely this
+defect). Expected effect: stavkirke 0→~4 at first re-plan. REGISTERED
+CO-DIAGNOSTIC added to M5: planned vs BUILT per cell (icefloe planned 6,
+built 0 — the keeper's turn never reached them; the arm reports both and
+M5's built-bar stands as registered).
