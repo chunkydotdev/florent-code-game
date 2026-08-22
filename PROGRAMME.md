@@ -33,6 +33,9 @@ successor session inherit it. The fields below are parsed; the prose is not.
     CITADEL_WEAPON: turret_ring_magnus_2026-08-22_launcher_taxi_rejected_wants_them_gone_forever
     CITADEL_TARGET_ORDER: raider_first_then_gunners_remove_collar_barriers_magnus_2026-08-22
     BELT_DOCTRINE: everything_allowed_to_keep_belts_alive_interference_destroyed_safety_measures_once_online_magnus_2026-08-22
+    HEIMDALL_FIXTURES: F1_baltsars_v542wave__F2_mjolnir_noiseoff__F3_sleipnir_v2_v488beltbreak2_magnus_2026-08-22
+    HEIMDALL_FIXTURE_BAR: defend_remove_raiders_rebuild_until_r300_then_win
+    SESSION_MODE: max_subagents_keep_builder_context_clean_magnus_watching_2026-08-22
     KILL_TARGET_STATUS: superseded_for_heimdall_line_by_phase_flip_kill_lands_after_r300_by_design
     FIXTURE_OF_RECORD: live_unrated
     ALWAYS_BE_RUNNING: yes
