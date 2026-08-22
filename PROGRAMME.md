@@ -20,6 +20,7 @@ successor session inherit it. The fields below are parsed; the prose is not.
     R1000_IS_DEFEAT: yes
     PLAY_DEFENCE: not_at_the_kill_s_expense
     DEFENCE_ADMISSION_BAR: r300_crossing_non_regression
+    FOCUS: defence_copy6_class_magnus_2026-08-22_r1000_still_defeat
     FIXTURE_OF_RECORD: live_unrated
     ALWAYS_BE_RUNNING: yes
     QUEUE_FLOOR: 3
@@ -38,6 +39,19 @@ successor session inherit it. The fields below are parsed; the prose is not.
     NEXT_LINE_SCREEN_LADDER: benchmark_then_current_holder_then_sleipnir_v2_magnus_2026-08-21
     NEXT_LINE_EXPERIMENTS: open_magnus_2026-08-22_r1000_still_defeat_no_rush
     RUSH_LINE_STATUS: sunset_2026-08-21_magnus_directive_v177_holds_slot_until_displaced
+
+## FOCUS SET TO DEFENCE 2026-08-22 (Magnus, s56, in-session — verbatim: "So lets focus on defense, we just can not win by round 1000")
+
+Read with both existing clauses intact: **R1000_IS_DEFEAT stands** (his own sentence
+re-affirms it — the tiebreak road stays retired) and **DEFENCE_ADMISSION_BAR is
+unchanged** (a defence plank is off-programme if it pushes checkmates past r300).
+What moves is PRIORITY: the build front is now the COPY 6 class — the home-answer
+half of the Bean-counters doctrine that the benchmark plateau isolated (their
+home-ring clearance 76.6-79.7% vs ours 20.8-42.8%; their answer latency 4-8 rounds
+at 70-91% vs ours 10-13 at 43-57%; s56 benchmark readout + DECODE-firstcontact
+§3.1/§4.4). Defence here means SURVIVING THE r150-250 WINDOW SO OUR OWN CHECKMATE
+LANDS — the s31 scope sentence, now as the focus rather than the side-condition.
+Game context: in-game Florent Code League doctrine.
 
 ## NEXT_LINE_EXPERIMENTS OPENED 2026-08-22 (Magnus, s54, in-session — verbatim: "You're free to experiment as much as you want, but a win at r1000 is still a loss and we dont want to build a rush bot")
 
