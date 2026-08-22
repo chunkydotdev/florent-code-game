@@ -1,0 +1,91 @@
+tag	map	seed	seat	ours	winner	cond	turn	tracebacks	ours_mined	opp_mined
+auroraveil_s930309_A	auroraveil	930309	A	OPP	_x3r0v168mjolnir	Core destroyed	171	0	0	880
+auroraveil_s930309_B	auroraveil	930309	B	OPP	_x3r0v168mjolnir	Core destroyed	272	0	0	680
+auroraveil_s930310_A	auroraveil	930310	A	OPP	_x3r0v168mjolnir	Core destroyed	265	0	0	790
+auroraveil_s930310_B	auroraveil	930310	B	OPP	_x3r0v168mjolnir	Core destroyed	319	0	0	2130
+auroraveil_s930311_A	auroraveil	930311	A	OPP	_x3r0v168mjolnir	Core destroyed	192	0	0	850
+auroraveil_s930311_B	auroraveil	930311	B	OPP	_x3r0v168mjolnir	Core destroyed	170	0	0	950
+bifrost_s930309_A	bifrost	930309	A	OPP	_x3r0v168mjolnir	Core destroyed	208	0	160	960
+bifrost_s930309_B	bifrost	930309	B	OPP	_x3r0v168mjolnir	Core destroyed	146	0	340	670
+bifrost_s930310_A	bifrost	930310	A	OPP	_x3r0v168mjolnir	Core destroyed	169	0	100	770
+bifrost_s930310_B	bifrost	930310	B	OPP	_x3r0v168mjolnir	Core destroyed	146	0	340	670
+bifrost_s930311_A	bifrost	930311	A	OPP	_x3r0v168mjolnir	Core destroyed	164	0	100	740
+bifrost_s930311_B	bifrost	930311	B	OPP	_x3r0v168mjolnir	Core destroyed	146	0	340	590
+fimbulwinter_s930309_A	fimbulwinter	930309	A	US	_v623healweld	Core destroyed	274	0	1280	1230
+fimbulwinter_s930309_B	fimbulwinter	930309	B	OPP	_x3r0v168mjolnir	Core destroyed	189	0	880	500
+fimbulwinter_s930310_A	fimbulwinter	930310	A	OPP	_x3r0v168mjolnir	Core destroyed	282	0	1320	680
+fimbulwinter_s930310_B	fimbulwinter	930310	B	US	_v623healweld	Core destroyed	100	0	440	390
+fimbulwinter_s930311_A	fimbulwinter	930311	A	OPP	_x3r0v168mjolnir	Titanium collected (tiebreak)	1000	0	4770	6770
+fimbulwinter_s930311_B	fimbulwinter	930311	B	OPP	_x3r0v168mjolnir	Core destroyed	158	0	720	570
+glacierkeep_s930309_A	glacierkeep	930309	A	OPP	_x3r0v168mjolnir	Titanium collected (tiebreak)	1000	0	140	2830
+glacierkeep_s930309_B	glacierkeep	930309	B	OPP	_x3r0v168mjolnir	Core destroyed	219	0	0	990
+glacierkeep_s930310_A	glacierkeep	930310	A	OPP	_x3r0v168mjolnir	Core destroyed	173	0	140	560
+glacierkeep_s930310_B	glacierkeep	930310	B	OPP	_x3r0v168mjolnir	Core destroyed	233	0	0	890
+glacierkeep_s930311_A	glacierkeep	930311	A	OPP	_x3r0v168mjolnir	Core destroyed	638	0	130	1350
+glacierkeep_s930311_B	glacierkeep	930311	B	OPP	_x3r0v168mjolnir	Core destroyed	391	0	0	820
+helheim_s930309_A	helheim	930309	A	OPP	_x3r0v168mjolnir	Core destroyed	154	0	370	560
+helheim_s930309_B	helheim	930309	B	OPP	_x3r0v168mjolnir	Core destroyed	161	0	200	1110
+helheim_s930310_A	helheim	930310	A	OPP	_x3r0v168mjolnir	Core destroyed	382	0	940	2480
+helheim_s930310_B	helheim	930310	B	OPP	_x3r0v168mjolnir	Core destroyed	161	0	200	1110
+helheim_s930311_A	helheim	930311	A	US	_v623healweld	Core destroyed	392	0	970	1420
+helheim_s930311_B	helheim	930311	B	OPP	_x3r0v168mjolnir	Core destroyed	485	0	310	2720
+holmgang_s930309_A	holmgang	930309	A	US	_v623healweld	Core destroyed	165	0	380	730
+holmgang_s930309_B	holmgang	930309	B	US	_v623healweld	Core destroyed	126	0	430	280
+holmgang_s930310_A	holmgang	930310	A	OPP	_x3r0v168mjolnir	Core destroyed	319	0	520	1190
+holmgang_s930310_B	holmgang	930310	B	US	_v623healweld	Core destroyed	133	0	260	510
+holmgang_s930311_A	holmgang	930311	A	OPP	_x3r0v168mjolnir	Core destroyed	394	0	870	1860
+holmgang_s930311_B	holmgang	930311	B	OPP	_x3r0v168mjolnir	Core destroyed	213	0	260	150
+icefloe_s930309_A	icefloe	930309	A	OPP	_x3r0v168mjolnir	Core destroyed	331	0	440	3210
+icefloe_s930309_B	icefloe	930309	B	OPP	_x3r0v168mjolnir	Core destroyed	224	0	0	1170
+icefloe_s930310_A	icefloe	930310	A	OPP	_x3r0v168mjolnir	Core destroyed	479	0	410	3970
+icefloe_s930310_B	icefloe	930310	B	OPP	_x3r0v168mjolnir	Core destroyed	518	0	0	7410
+icefloe_s930311_A	icefloe	930311	A	OPP	_x3r0v168mjolnir	Core destroyed	572	0	340	4260
+icefloe_s930311_B	icefloe	930311	B	OPP	_x3r0v168mjolnir	Core destroyed	297	0	0	1740
+jotunheim_s930309_A	jotunheim	930309	A	US	_v623healweld	Core destroyed	248	0	1000	0
+jotunheim_s930309_B	jotunheim	930309	B	US	_v623healweld	Core destroyed	369	0	0	0
+jotunheim_s930310_A	jotunheim	930310	A	US	_v623healweld	Core destroyed	282	0	790	0
+jotunheim_s930310_B	jotunheim	930310	B	OPP	_x3r0v168mjolnir	Core destroyed	505	0	290	0
+jotunheim_s930311_A	jotunheim	930311	A	OPP	_x3r0v168mjolnir	Titanium collected (tiebreak)	1000	0	150	2740
+jotunheim_s930311_B	jotunheim	930311	B	OPP	_x3r0v168mjolnir	Harvesters (tiebreak)	1000	0	0	0
+longhouse_s930309_A	longhouse	930309	A	OPP	_x3r0v168mjolnir	Titanium collected (tiebreak)	1000	0	2120	7530
+longhouse_s930309_B	longhouse	930309	B	US	_v623healweld	Core destroyed	314	0	710	2660
+longhouse_s930310_A	longhouse	930310	A	OPP	_x3r0v168mjolnir	Titanium collected (tiebreak)	1000	0	2390	9650
+longhouse_s930310_B	longhouse	930310	B	US	_v623healweld	Core destroyed	233	0	1060	1640
+longhouse_s930311_A	longhouse	930311	A	US	_v623healweld	Core destroyed	397	0	890	3620
+longhouse_s930311_B	longhouse	930311	B	OPP	_x3r0v168mjolnir	Titanium collected (tiebreak)	1000	0	2420	7470
+midgard_s930309_A	midgard	930309	A	OPP	_x3r0v168mjolnir	Core destroyed	87	0	410	610
+midgard_s930309_B	midgard	930309	B	OPP	_x3r0v168mjolnir	Core destroyed	62	0	140	380
+midgard_s930310_A	midgard	930310	A	OPP	_x3r0v168mjolnir	Core destroyed	93	0	460	670
+midgard_s930310_B	midgard	930310	B	OPP	_x3r0v168mjolnir	Core destroyed	62	0	140	380
+midgard_s930311_A	midgard	930311	A	OPP	_x3r0v168mjolnir	Core destroyed	87	0	410	620
+midgard_s930311_B	midgard	930311	B	OPP	_x3r0v168mjolnir	Core destroyed	62	0	140	380
+paths_s930309_A	paths	930309	A	OPP	_x3r0v168mjolnir	Core destroyed	245	0	240	1120
+paths_s930309_B	paths	930309	B	OPP	_x3r0v168mjolnir	Core destroyed	186	0	120	1390
+paths_s930310_A	paths	930310	A	OPP	_x3r0v168mjolnir	Core destroyed	235	0	260	1110
+paths_s930310_B	paths	930310	B	OPP	_x3r0v168mjolnir	Core destroyed	186	0	120	1390
+paths_s930311_A	paths	930311	A	OPP	_x3r0v168mjolnir	Core destroyed	189	0	450	880
+paths_s930311_B	paths	930311	B	OPP	_x3r0v168mjolnir	Core destroyed	182	0	430	840
+skald_s930309_A	skald	930309	A	OPP	_x3r0v168mjolnir	Core destroyed	182	0	0	1100
+skald_s930309_B	skald	930309	B	US	_v623healweld	Core destroyed	161	0	390	480
+skald_s930310_A	skald	930310	A	OPP	_x3r0v168mjolnir	Core destroyed	182	0	0	1100
+skald_s930310_B	skald	930310	B	OPP	_x3r0v168mjolnir	Core destroyed	133	0	210	430
+skald_s930311_A	skald	930311	A	OPP	_x3r0v168mjolnir	Core destroyed	172	0	0	640
+skald_s930311_B	skald	930311	B	OPP	_x3r0v168mjolnir	Core destroyed	111	0	260	500
+stavkirke_s930309_A	stavkirke	930309	A	OPP	_x3r0v168mjolnir	Core destroyed	217	0	130	710
+stavkirke_s930309_B	stavkirke	930309	B	OPP	_x3r0v168mjolnir	Core destroyed	149	0	0	0
+stavkirke_s930310_A	stavkirke	930310	A	OPP	_x3r0v168mjolnir	Core destroyed	172	0	130	630
+stavkirke_s930310_B	stavkirke	930310	B	OPP	_x3r0v168mjolnir	Core destroyed	149	0	0	0
+stavkirke_s930311_A	stavkirke	930311	A	OPP	_x3r0v168mjolnir	Core destroyed	188	0	210	590
+stavkirke_s930311_B	stavkirke	930311	B	OPP	_x3r0v168mjolnir	Core destroyed	149	0	0	0
+valkyrie_s930309_A	valkyrie	930309	A	OPP	_x3r0v168mjolnir	Core destroyed	117	0	310	700
+valkyrie_s930309_B	valkyrie	930309	B	US	_v623healweld	Core destroyed	141	0	860	590
+valkyrie_s930310_A	valkyrie	930310	A	OPP	_x3r0v168mjolnir	Core destroyed	151	0	210	890
+valkyrie_s930310_B	valkyrie	930310	B	US	_v623healweld	Core destroyed	229	0	1410	530
+valkyrie_s930311_A	valkyrie	930311	A	OPP	_x3r0v168mjolnir	Core destroyed	165	0	360	800
+valkyrie_s930311_B	valkyrie	930311	B	OPP	_x3r0v168mjolnir	Core destroyed	274	0	560	1240
+yggdrasil_s930309_A	yggdrasil	930309	A	OPP	_x3r0v168mjolnir	Core destroyed	261	0	480	530
+yggdrasil_s930309_B	yggdrasil	930309	B	US	_v623healweld	Titanium collected (tiebreak)	1000	0	2470	2420
+yggdrasil_s930310_A	yggdrasil	930310	A	OPP	_x3r0v168mjolnir	Core destroyed	245	0	460	580
+yggdrasil_s930310_B	yggdrasil	930310	B	OPP	_x3r0v168mjolnir	Core destroyed	257	0	610	370
+yggdrasil_s930311_A	yggdrasil	930311	A	US	_v623healweld	Core destroyed	133	0	290	130
+yggdrasil_s930311_B	yggdrasil	930311	B	OPP	_x3r0v168mjolnir	Core destroyed	269	0	640	310
