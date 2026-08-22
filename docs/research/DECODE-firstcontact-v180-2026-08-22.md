@@ -458,6 +458,16 @@ clearance runs at 69.2%.
 > touch: COPY 5's dependency clause conflates T7 (offensive ring clearing) with T19 (home
 > defence) — the dependency's own metric choice inherits this rider's question.)
 
+> ⛔ **SECOND M7 RIDER (s56, ~13:5xZ, builder finding verified on the primary by the row owner):
+> M7's LEVELS are inflated wherever the opponent demolishes its own turrets — the decoder books
+> every `removeEntity` with NO cause filter (`tools/skalman_fidelity.py:398-408`, read this
+> shell), so a self-removal scores as the defender's clearance. Builder-measured on this doc's
+> own cells (DESIGN-v629 §S2, one-sided): 22/38 (MIRROR), 20/50 (PIVOT), 7/26 (KLADDE) of enemy
+> forward turrets scored "killed by us" took ZERO damage events, vs 0 of our 112 removed
+> turrets — the honest clearance asymmetry is ~19-33% (us) vs 70-89% (them), WIDER than any M7
+> level printed here. Treat every M7 number in this doc as an UPPER BOUND on true clearance;
+> the damage-linked re-read follows `SPEC-m7-cause-filter-2026-08-22.md`.**
+
 The prescription is not wrong; **the dependency is simply not satisfied and the band plant
 alone does not kill.** Our band sentinels sit at d²=25-32 and deliver 198-243 damage before
 dying. **This is the sharpest actionable read in the fidelity column set: the band rule is
