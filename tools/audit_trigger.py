@@ -80,17 +80,22 @@ def note_verdict_ratio():
     numerator would silently invalidate that), and the blindness is closed by
     `cross_lane_analysis` instead, which is a new row with its own calibration.
     """
+    # ⭐ RE-VOCABULARIED s57 (M1). The s25 note above froze this cell's decision
+    # set "so the 2026-08-08 calibration stays valid" — the s55 audit measured
+    # that frozen set recognizing 6 of the last 50 rows (12%) while auto_gate
+    # wrote 28 `cancellation` rows it could not see. A counter blind to 88% of
+    # its tape is not calibrated, it is decorative; the shared vocabulary wins.
     rows = _OVERRIDE.get("tape") or list(csv.reader((ROOT / "results.tsv").read_text().splitlines(), delimiter="\t"))[1:]
     tail = [r for r in rows if len(r) > 5][-WINDOW_ROWS:]
-    c = Counter(r[5] for r in tail)
-    analysis = c["note"] + c["caveat"] + c["info"]
-    # baseline and ship ARE decisions — a baseline row records an activation.
-    # Excluding them inflated this ratio ~2.4x (instrument-audit-2026-08-08-late
-    # :203-210; fix adopted 2026-08-09 with the process review).
-    decisions = (c["verdict"] + c["keep"] + c["discard"] + c["refuted"] + c["gate"]
-                 + c["baseline"] + c["ship"])
+    c = Counter(_row_kind(r) for r in tail)
+    analysis = sum(c[k] for k in ANALYSIS_KINDS)
+    decisions = sum(c[k] for k in DECISION_KINDS)
+    fork = c[None]                     # schema-fork rows: reported, never guessed
     ratio = analysis / max(decisions, 1)
-    return ratio, f"{analysis} analysis rows / {decisions} decision rows (last {len(tail)})"
+    detail = f"{analysis} analysis rows / {decisions} decision rows (last {len(tail)})"
+    if fork:
+        detail += f" [+{fork} SCHEMA-FORK row(s) unclassifiable — see _row_kind]"
+    return ratio, detail
 
 
 # Prose surfaces this repo's METHOD REQUIRES. Writing them is doing the work,
@@ -214,11 +219,40 @@ def ship_cadence():
     # TWO HOURS off the rows it filters -- silently including or dropping
     # activations at the edge. Both sides are UTC now. The `_OVERRIDE` seam is
     # preserved (tests pass a naive datetime and still control the clock).
+    # ⭐ M5 REPAIRS (s55 audit, fixed s57 on Magnus's direct order), three:
+    #
+    # (1) POLICY HOLD IS NOT DRIFT. Under PROGRAMME.md `STEALTH_UNTIL_DROP: yes`
+    #     a zero-activation day is the DIRECTIVE being followed, and the
+    #     account-wide numerator (teammates ship too) has no our-subject left
+    #     to score. The cell reports HELD and refuses a verdict rather than
+    #     tripping on obedience. Overridable ("stealth") so the selftest can
+    #     force both states.
+    # (2) A ROLLBACK IS NOT A SHIP. The old count scored every active_bot
+    #     TRANSITION, so one fire→rollback window read as 2+ "decisions".
+    #     Now only a transition to a version NEVER SEEN BEFORE in the tape
+    #     counts — a restore returns to a seen version and scores zero.
+    # (3) SUBJECTS DISCLOSED, BLINDNESS DISCLOSED. The numerator is ACCOUNT-
+    #     WIDE (elo_history cannot attribute an activation to a lane or a
+    #     teammate) over OUR-git active hours, and a 5-minute poller cannot
+    #     see a sub-poll activation window at all (measured: v180's entire
+    #     rated exposure left 0 rows in 288). The detail line now says so —
+    #     numbers carry subjects.
+    stealth = _OVERRIDE.get("stealth")
+    if stealth is None:
+        try:
+            stealth = "STEALTH_UNTIL_DROP: yes" in (ROOT / "PROGRAMME.md").read_text()
+        except OSError:
+            stealth = False
+    if stealth:
+        return None, ("HELD BY POLICY — PROGRAMME.md STEALTH_UNTIL_DROP: yes; "
+                      "zero activations is the directive, not drift (activation "
+                      "cadence not scored)")
+
     now = _OVERRIDE.get("now") or datetime.now(timezone.utc).replace(tzinfo=None)
     cutoff = now - timedelta(hours=CHURN_HOURS)
     rows = _OVERRIDE.get("elo") or list(csv.reader((ROOT / "elo_history.tsv").read_text().splitlines(), delimiter="\t"))[1:]
 
-    ships, prev = 0, None
+    ships, prev, seen = 0, None, set()
     for r in rows:
         if len(r) < 4 or not r[0]:
             continue
@@ -226,8 +260,10 @@ def ship_cadence():
             when = datetime.strptime(r[0][:16], "%Y-%m-%dT%H:%M")
         except ValueError:
             continue
-        if prev is not None and r[3] != prev and when >= cutoff:
+        if (prev is not None and r[3] != prev and r[3] not in seen
+                and when >= cutoff):
             ships += 1
+        seen.add(r[3])
         prev = r[3]
 
     # `hours` is overridable for the same reason `elo` is: without it a test of
@@ -245,7 +281,9 @@ def ship_cadence():
             capture_output=True, text=True, cwd=ROOT).stdout.split()
         active_hours = max(len(set(out)), 1)
     rate = ships / active_hours
-    return rate, f"{ships} activations in the last {CHURN_HOURS}h over ~{active_hours} active hours"
+    return rate, (f"{ships} first-time activations (ACCOUNT-WIDE incl. teammates; "
+                  f"5-min poller misses sub-poll windows) in the last "
+                  f"{CHURN_HOURS}h over ~{active_hours} our-git active hours")
 
 
 def cross_lane_analysis():
@@ -304,17 +342,67 @@ def cross_lane_analysis():
     # never by this sibling — 4 of the 10 files behind that day's FIRE were
     # preregs. Retros are mandated too (each lane's wrap REQUIRES one), so they
     # are excluded here for the same reason preregs are.
+    # ⭐ M4 (s55 audit): a READOUT document — a build report, a decode, a
+    # powered/transfer read — is a decision being PUBLISHED, and counting it as
+    # analysis made the "no decisions" alarm louder every time a decision
+    # landed (25 of the 31 docs behind the s55 FIRE carried disposition
+    # language; 11 were BUILD-REPORT-*). Excluded from the numerator; the
+    # decision itself is counted on the tape side when its row lands.
+    def _is_readout(name):
+        n = Path(name).name
+        return n.startswith(("BUILD-REPORT-", "DECODE-")) or "-READ-" in n
+
     docs = sum(1 for ln in out.splitlines()
                if ln.strip().startswith("docs/") and ln.strip().endswith(".md")
                and not any(ln.strip().startswith(m) for m in MANDATED_PROSE)
-               and "retro" not in Path(ln.strip()).name.lower())
+               and "retro" not in Path(ln.strip()).name.lower()
+               and not _is_readout(ln.strip()))
     decisions = _decisions_in_window()
     ratio = docs / max(decisions, 1)
     return ratio, (f"{docs} new analysis docs / {decisions} decision rows ADDED "
                    f"(BOTH sides last {CHURN_HOURS}h, same git window)")
 
 
-DECISION_KINDS = ("verdict", "keep", "discard", "refuted", "gate", "baseline", "ship")
+# ⭐ M1 REPAIR (s55 audit, fixed s57 2026-08-22 on Magnus's direct order): the
+# tape's disposition vocabulary, reconciled with what the lanes and auto_gate
+# ACTUALLY write. Before this, `cancellation` — written by tools/auto_gate.py
+# as the tape's second-most-common row type (28 of the last 50 rows) — was
+# invisible to every counter, along with no-verdict/hold/negative/correction/
+# inert/frozen. The counters recognized 6 of the last 50 rows (12%).
+#
+# THE JUDGMENT CALLS, typed by the builder so the next reader argues with a
+# decision instead of an accident:
+#   * cancellation IS a decision — auto_gate stopping an arm is a disposition
+#     (the stop-vs-verdict distinction in auto_gate's own header governs what
+#     the row may CLAIM, not whether deciding to stop was a decision).
+#   * no-verdict / hold / refusal / deferral ARE decisions — the s55 audit
+#     measured 29% of real window decisions as refusals/deferrals with no row
+#     type to land on; an explicit withhold is the era's modal disposition.
+#     `refusal` and `deferral` are NEW row types lanes may now write.
+#   * negative / correction / inert / frozen ARE decisions (a road closed or a
+#     number retracted is a disposition).
+#   * screen / probe / calibration / cert are NOT decisions — they are
+#     measurement or verification acts; the decision they feed gets its own row.
+DECISION_KINDS = ("verdict", "keep", "discard", "refuted", "gate", "baseline",
+                  "ship", "cancellation", "no-verdict", "hold", "negative",
+                  "correction", "refusal", "deferral", "inert", "frozen")
+ANALYSIS_KINDS = ("note", "caveat", "info", "screen", "probe", "calibration", "cert")
+KNOWN_KINDS = DECISION_KINDS + ANALYSIS_KINDS
+
+
+def _row_kind(r):
+    """Kind of a tape row under the 7-field header schema, else None.
+
+    ⛔ M2 (s55 audit): results.tsv carries a second, 9-field dialect (powered-
+    read rows: id/date/trees/share/CI/n/note) whose index 5 is a NUMBER. The
+    old `len(r) > 5 and r[5]` parse silently read those as unknown kinds and
+    they zeroed the decision denominator on the day six n=5,400 verdicts
+    landed. A fork row is NOT guessed at — it returns None and the callers
+    COUNT and REPORT it, so schema drift is surfaced instead of swallowed.
+    The schema unification itself is auto_gate/lane-side wrap debt."""
+    if len(r) == 7:
+        return r[5]
+    return None
 
 
 def _decisions_in_window(hours=None):
@@ -402,17 +490,30 @@ def delegation_drought():
     many decisions, no delegation. Spawn-mentions must match SPAWN phrasing,
     not the word "agent" (retros discuss agents without spawning any).
     """
+    # ⭐ M3 REPAIRS (s55 audit, fixed s57), three:
+    #   (1) WHOLE FILE, not tail-2500 — the tail slice could fail to cover the
+    #       24h window on a busy day and silently window on less than it claims.
+    #   (2) 8-LINE BLOCK WINDOW, not 3 — real headers wrap over 4-6 lines and
+    #       both regexes matched 0 of 7 real in-window headers under the old
+    #       window. Vocabulary extended to the era's actual disposition words
+    #       (ADOPTED/BANKED/REFUTED/CANCELLED) and spawn phrasing
+    #       ("commissioned").
+    #   (3) 0/0 WITH ACTIVITY IS BLIND, NOT HEALTHY. If dated in-window blocks
+    #       exist and BOTH regexes match zero, the cell cannot distinguish a
+    #       quiet day from format drift and must say so — it raises, and
+    #       main()'s BLIND path reports it. A genuinely empty window (no dated
+    #       blocks at all) still reads 0.0/ok.
     import re as _re
     from datetime import datetime, timedelta, timezone
     text = _OVERRIDE.get("deleg_coord")
     if text is None:
-        text = "\n".join((ROOT / "docs" / "coordination.md").read_text().splitlines()[-2500:])
+        text = (ROOT / "docs" / "coordination.md").read_text()
     now = _OVERRIDE.get("deleg_now") or datetime.now(timezone.utc)
     cutoff = now - timedelta(hours=24)
-    spawn_re = _re.compile(r"(sonnet|opus)\s+agent\b|agent\s+spawn|spawn(ed|ing)\b[^\n]{0,60}\bagent", _re.I)
-    dec_re = _re.compile(r"VERDICT|GATE[: ]|FINAL[: ]|TRIAGE|SHIP ANNOUNCEMENT", _re.I)
+    spawn_re = _re.compile(r"(sonnet|opus)\s+agent\b|agent\s+spawn|spawn(ed|ing)\b[^\n]{0,60}\bagent|commissioned\b[^\n]{0,80}\bagent", _re.I)
+    dec_re = _re.compile(r"VERDICT|GATE[: ]|FINAL[: ]|TRIAGE|SHIP ANNOUNCEMENT|ADOPTED|BANKED|REFUTED|CANCELLED", _re.I)
     lines = text.splitlines()
-    spawns = decisions = 0
+    spawns = decisions = headers = 0
     for i, ln in enumerate(lines):
         m = _re.search(r"(\d{4}-\d{2}-\d{2})T(\d{2}):(\d{2}):(\d{2})Z", ln)
         if not m or not ln.lstrip().startswith("#"):
@@ -423,13 +524,19 @@ def delegation_drought():
             continue
         if ts < cutoff:
             continue
-        window = "\n".join(lines[i:i + 3])
+        headers += 1
+        window = "\n".join(lines[i:i + 8])
         if spawn_re.search(window):
             spawns += 1
         if dec_re.search(window):
             decisions += 1
+    if headers >= 5 and spawns == 0 and decisions == 0:
+        raise RuntimeError(
+            f"matched 0 of {headers} dated in-window blocks on BOTH regexes — "
+            "format drift, not a quiet day; the cell is BLIND")
     val = decisions / (spawns + 1)
-    return val, f"{decisions} decision blocks / {spawns} spawn announcements (24h)"
+    return val, (f"{decisions} decision blocks / {spawns} spawn announcements "
+                 f"(24h, {headers} dated blocks scanned)")
 
 
 CHECKS = [
@@ -447,7 +554,8 @@ CHECKS = [
 _TRIPPERS = {
     "note:verdict ratio":  {"tape": [["", "", "", "", "", "note", "x"]] * 40},
     "doc:code churn":      {"numstat": "900\t0\tdocs/a.md\n1\t0\ttools/b.py\n"},
-    "ship cadence":        {"elo": [["2026-08-09T10:00", "1", "1", "vX"]] * 5},
+    "ship cadence":        {"elo": [["2026-08-09T10:00", "1", "1", "vX"]] * 5,
+                            "hours": 20, "stealth": False},
     "stuck planks":        {"tape": [["", "", "", "", "", "note", "KEEP-dev"]] * 9},
     # cross-lane now reads NET-ADDED decision rows out of a git patch, not the
     # tape tail, so its tripper feeds a patch with exactly one added row.
@@ -483,6 +591,44 @@ _MUST_STILL_TRIP = {
             for i in range(30)),
          "deleg_now": __import__("datetime").datetime(2026, 8, 14, 12, 0, tzinfo=__import__("datetime").timezone.utc)},
         "the word 'agent' in prose (reports READ, not spawned) must not silence the drought"),
+    # M5(2): a day of fire→rollback churn. The OLD transition count read 12
+    # transitions = 0.60/hr and stayed silent; only 6 are first-time versions,
+    # 0.30/hr, and a churn day with no lasting ship MUST still read as a stall.
+    "ship cadence": (
+        {"elo": [["2026-08-09T10:%02d" % (i * 4), "1500", str(i), v]
+                 for i, v in enumerate(
+                     ["vBase"] + [x for k in range(6) for x in (f"vP{k}", "vBase")])],
+         "now": __import__("datetime").datetime(2026, 8, 9, 12, 0),
+         "hours": 20, "stealth": False},
+        "6 fire+rollback pairs must read 6 ships (0.30/hr, TRIP), not 12 transitions (0.60, silent)"),
+}
+
+# THE OTHER VERDICT. The standing instrument rule requires every guard driven to
+# BOTH verdicts — _TRIPPERS/_MUST_STILL_TRIP prove the alarm fires; these prove
+# it can also stay QUIET on input that must not fire (a row stuck at TRIP passes
+# every fixture above). Each entry: (override, must_not_trip_reason).
+_MUST_NOT_TRIP = {
+    # M4: five READOUT docs (published decisions) and one tape decision — the
+    # old numerator read 5/1 = 5.0 TRIP; publishing decisions must not raise
+    # the "no decisions" alarm.
+    "cross-lane analysis": (
+        {"namestat": "docs/research/BUILD-REPORT-a.md\ndocs/research/DECODE-b.md\n"
+                     "docs/research/POWERED-READ-c.md\ndocs/research/TRANSFER-READ-d.md\n"
+                     "docs/research/BUILD-REPORT-e.md\n",
+         "tape_patch": "+++ b/results.tsv\n+a\tb\tc\td\te\tverdict\tx\n"},
+        "readout docs are decisions being published, not analysis piling up"),
+    # M3(3): a genuinely empty window (no dated blocks at all) is a quiet day,
+    # not format drift — it must read 0.0/ok and must NOT raise BLIND.
+    "delegation drought": (
+        {"deleg_coord": "no dated headers here at all\n",
+         "deleg_now": __import__("datetime").datetime(2026, 8, 14, 12, 0, tzinfo=__import__("datetime").timezone.utc)},
+        "an empty 24h window is a quiet day, not a blind cell"),
+    # M5(1): under STEALTH_UNTIL_DROP a zero-activation day is the directive —
+    # the cell must report HELD (val None), never trip.
+    "ship cadence": (
+        {"elo": [["2026-08-09T10:00", "1500", "1", "vX"]] * 5,
+         "hours": 20, "stealth": True},
+        "a policy hold must read HELD, not a cadence stall"),
 }
 
 
@@ -541,6 +687,67 @@ def selftest() -> int:
         if not trip:
             bad.append(f"{name} (quiet-direction)")
     _OVERRIDE.clear()
+    # THE OTHER VERDICT -- see _MUST_NOT_TRIP. A row stuck at TRIP passes every
+    # fixture above; these drive each repaired guard to its quiet verdict.
+    if _MUST_NOT_TRIP:
+        print("\n  -- and does it stay QUIET on input that must not fire? --")
+    for name, fn, thresh, _why in CHECKS:
+        fx = _MUST_NOT_TRIP.get(name)
+        if not fx:
+            continue
+        override, why = fx
+        _OVERRIDE.clear()
+        _OVERRIDE.update(override)
+        try:
+            val, detail = fn()
+        except Exception as e:
+            print(f"  [ERROR] {name}: {type(e).__name__}: {e}")
+            bad.append(f"{name} (must-not-trip)")
+            continue
+        if val is None:
+            trip = False
+        elif name == "ship cadence":
+            trip = val < 0.5
+        else:
+            trip = val >= thresh
+        shown = "held" if val is None else f"{val:.2f}"
+        print(f"  [{'FAIL' if trip else 'PASS'}] {name:<20} -> {shown}   ({why})")
+        print(f"         {detail}")
+        if trip:
+            bad.append(f"{name} (must-not-trip)")
+    _OVERRIDE.clear()
+    # LIVE-TAIL -- the s55 audit's item (d): every fixture above is FROZEN, and
+    # a frozen-fixture selftest passes 6/6 while the live surfaces drift out
+    # from under the parsers (that is exactly what happened: 12% kind coverage,
+    # 0/7 header matches, and this selftest was green throughout). These two
+    # checks run against TODAY'S tape and TODAY'S coordination tail, so format
+    # drift turns the boot check red instead of silently blinding a cell.
+    print("\n  -- LIVE-TAIL: do the parsers recognize the surfaces as written TODAY? --")
+    try:
+        rows = list(csv.reader((ROOT / "results.tsv").read_text().splitlines(),
+                               delimiter="\t"))[1:]
+        tail = rows[-WINDOW_ROWS:]
+        known = sum(1 for r in tail if _row_kind(r) in KNOWN_KINDS)
+        fork = sum(1 for r in tail if len(r) != 7)
+        frac = known / max(len(tail), 1)
+        ok = frac >= 0.6
+        print(f"  [{'PASS' if ok else 'FAIL'}] tape kind coverage    "
+              f"{known}/{len(tail)} rows classified ({frac:.0%}; "
+              f"{fork} schema-fork) -- FAIL below 60%")
+        if not ok:
+            bad.append("tape kind coverage (live-tail)")
+    except Exception as e:
+        print(f"  [ERROR] tape kind coverage: {type(e).__name__}: {e}")
+        bad.append("tape kind coverage (live-tail)")
+    try:
+        val, detail = delegation_drought()      # raises if blocks exist and
+        print(f"  [PASS] delegation regexes    {detail}")   # both regexes miss
+    except RuntimeError as e:
+        print(f"  [FAIL] delegation regexes    {e}")
+        bad.append("delegation regexes (live-tail)")
+    except Exception as e:
+        print(f"  [ERROR] delegation regexes: {type(e).__name__}: {e}")
+        bad.append("delegation regexes (live-tail)")
     print()
     if bad:
         print(f"SELFTEST FAILED — {len(bad)} row(s) could not be made to fire: "
@@ -573,6 +780,10 @@ def main():
             print(f"  [BLIND] {name}: {type(e).__name__}: {e}")
             blind.append(name)
             continue
+        if val is None:                    # a cell that REFUSES a verdict by
+            print(f"  [held] {name:<20} {'—':<10} {detail}")     # policy (see
+            continue                       # ship_cadence M5(1)) is neither
+                                           # tripped nor blind, and says why.
         if name == "ship cadence":
             trip = val < 0.5
             shown = f"{val:.2f}/hr"

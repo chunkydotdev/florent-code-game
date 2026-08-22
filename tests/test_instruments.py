@@ -164,7 +164,14 @@ class TestAuditTriggerPredicate(unittest.TestCase):
             "elo_history shows almost no activations — either the tape changed "
             "shape or elo_logger stopped recording active_bot",
         )
-        rate, detail = self.mod.ship_cadence()
+        # stealth pinned False: under a live STEALTH_UNTIL_DROP directive the
+        # cell (correctly) refuses a verdict, and this test is about the
+        # counting path, not the policy hold (which has its own test below).
+        self.mod._OVERRIDE.update({"stealth": False})
+        try:
+            rate, detail = self.mod.ship_cadence()
+        finally:
+            self.mod._OVERRIDE.clear()
         self.assertIn("activation", detail)
         self.assertGreaterEqual(rate, 0.0)
 
@@ -178,6 +185,7 @@ class TestAuditTriggerPredicate(unittest.TestCase):
         orig = self.mod.CHURN_HOURS
         try:
             self.mod.CHURN_HOURS = 0
+            self.mod._OVERRIDE.update({"stealth": False})
             rate, _ = self.mod.ship_cadence()
             self.assertEqual(
                 rate, 0.0,
@@ -186,6 +194,7 @@ class TestAuditTriggerPredicate(unittest.TestCase):
             )
         finally:
             self.mod.CHURN_HOURS = orig
+            self.mod._OVERRIDE.clear()
 
     def test_does_not_fire_on_a_normal_shipping_day(self):
         """Regression: the trigger summoned an audit session by reporting on itself.
@@ -235,7 +244,7 @@ class TestAuditTriggerPredicate(unittest.TestCase):
             self.mod._OVERRIDE.clear()
             # Pin the clock the cutoff is measured from, not just the rows.
             self.mod._OVERRIDE.update({
-                "elo": rows, "hours": hours,
+                "elo": rows, "hours": hours, "stealth": False,
                 "now": BASE + timedelta(hours=activations // 6 + 1),
             })
             try:
@@ -260,9 +269,56 @@ class TestAuditTriggerPredicate(unittest.TestCase):
         """The live coupling that IS worth asserting: the real tape still parses
         and yields a number. What that number IS depends on the day, and is the
         instrument's business, not this test's."""
-        rate, detail = self.mod.ship_cadence()
+        self.mod._OVERRIDE.update({"stealth": False})
+        try:
+            rate, detail = self.mod.ship_cadence()
+        finally:
+            self.mod._OVERRIDE.clear()
         self.assertGreaterEqual(rate, 0.0)
         self.assertIn("activation", detail)
+
+    def test_a_rollback_is_not_a_ship(self):
+        """M5(2), s55 audit: a fire→rollback window used to score 2+ transitions.
+
+        Only a transition to a never-before-seen version is an activation
+        decision; restoring the holder returns to a seen version and scores 0.
+        """
+        BASE = datetime(2026, 8, 9, 10, 0)
+        rows = []
+        for i, tag in enumerate(["vH", "vProto", "vH"]):   # fire, then rollback
+            when = BASE + timedelta(minutes=10 * i)
+            rows.append([when.strftime("%Y-%m-%dT%H:%M"), "1500", str(i), tag])
+        self.mod._OVERRIDE.clear()
+        self.mod._OVERRIDE.update({
+            "elo": rows, "hours": 20, "stealth": False,
+            "now": BASE + timedelta(hours=1),
+        })
+        try:
+            rate, _ = self.mod.ship_cadence()
+        finally:
+            self.mod._OVERRIDE.clear()
+        self.assertAlmostEqual(
+            rate, 1 / 20,
+            msg="a fire+rollback pair must count exactly ONE activation "
+                "(the fire); counting the rollback re-inflates cadence with "
+                "slot churn — the exact defect the s55 audit named",
+        )
+
+    def test_stealth_hold_refuses_a_verdict(self):
+        """M5(1): under STEALTH_UNTIL_DROP a zero-activation day is the
+        directive being followed — the cell reports HELD (val None) instead of
+        tripping on obedience."""
+        self.mod._OVERRIDE.clear()
+        self.mod._OVERRIDE.update({
+            "elo": [["2026-08-09T10:00", "1500", "1", "vX"]] * 5,
+            "hours": 20, "stealth": True,
+        })
+        try:
+            rate, detail = self.mod.ship_cadence()
+        finally:
+            self.mod._OVERRIDE.clear()
+        self.assertIsNone(rate)
+        self.assertIn("HELD BY POLICY", detail)
 
 
 class TestArenaCeilingCoupling(unittest.TestCase):
