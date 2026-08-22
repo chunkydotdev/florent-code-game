@@ -30,6 +30,7 @@ successor session inherit it. The fields below are parsed; the prose is not.
     FORTRESS_GOAL: eco_and_defence_optimized_to_the_absolute_edge
     FORTRESS_PHASE_FLIP: r300_two_raiders_sentinel_siege_until_enemy_core_down
     FORTRESS_R1000_QUESTION: RESOLVED_Q3_phased_kill_see_block_below
+    CITADEL_WEAPON: turret_ring_magnus_2026-08-22_launcher_taxi_rejected_wants_them_gone_forever
     KILL_TARGET_STATUS: superseded_for_heimdall_line_by_phase_flip_kill_lands_after_r300_by_design
     FIXTURE_OF_RECORD: live_unrated
     ALWAYS_BE_RUNNING: yes
