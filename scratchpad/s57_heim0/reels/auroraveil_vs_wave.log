@@ -1,0 +1,16 @@
+Update available: 2.3.6 -> 2.3.9. Run: pip install --upgrade fcode
+Running match: _heim0demo vs opp_v542wave_noiseoff
+  Map: auroraveil.map26  Seed: 7  Replay: 
+scratchpad/s57_heim0/reels/auroraveil_vs_wave.replay26  TLE: 10ms
+Completed turn 0
+Completed turn 100
+Completed turn 200
+Replay written to scratchpad/s57_heim0/reels/auroraveil_vs_wave.replay26
+
+  Winner: opp_v542wave_noiseoff  (Core destroyed, turn 242)
+
+                   _heim0demo    opp_v542wave_noiseoff  
+  Titanium     39 (690 mined)          61 (1820 mined)  
+  Units                     6                       11  
+  Buildings                47                       41  
+

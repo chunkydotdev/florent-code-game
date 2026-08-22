@@ -1,0 +1,15 @@
+Update available: 2.3.6 -> 2.3.9. Run: pip install --upgrade fcode
+Running match: _heim0demo vs _probe_idledose
+  Map: holmgang.map26  Seed: 7  Replay: 
+scratchpad/s57_heim0/reels/holmgang_vs_idle.replay26  TLE: 10ms
+Completed turn 0
+Completed turn 100
+Replay written to scratchpad/s57_heim0/reels/holmgang_vs_idle.replay26
+
+  Winner: _probe_idledose  (Core destroyed, turn 113)
+
+                    _heim0demo    _probe_idledose  
+  Titanium     558 (390 mined)    135 (490 mined)  
+  Units                      6                  8  
+  Buildings                  6                 10  
+

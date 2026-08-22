@@ -1,0 +1,15 @@
+Update available: 2.3.6 -> 2.3.9. Run: pip install --upgrade fcode
+Running match: _heim0demo vs opp_mjolnir_noiseoff
+  Map: midgard.map26  Seed: 7  Replay: 
+scratchpad/s57_heim0/reels/midgard_vs_mjolnir.replay26  TLE: 10ms
+Completed turn 0
+Completed turn 100
+Replay written to scratchpad/s57_heim0/reels/midgard_vs_mjolnir.replay26
+
+  Winner: opp_mjolnir_noiseoff  (Core destroyed, turn 139)
+
+                    _heim0demo    opp_mjolnir_noiseoff  
+  Titanium     239 (630 mined)        100 (1510 mined)  
+  Units                     10                       5  
+  Buildings                 28                      84  
+
