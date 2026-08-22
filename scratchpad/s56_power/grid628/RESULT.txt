@@ -1,0 +1,11 @@
+runid	bb_20260822T134939Z_49270
+generated	2026-08-22T14:03:02Z
+hosts	work-server-1,work-server-2
+opp	_x3r0v168mjolnir
+maps	auroraveil,bifrost,fimbulwinter,glacierkeep,helheim,holmgang,icefloe,jotunheim,longhouse,midgard,paths,skald,stavkirke,valkyrie,yggdrasil
+seeds	930400-930429
+par	2
+planned_rows_per_arm	900
+arm	arm_c_full	delivered	900	planned	900	COMPLETE
+arm	_v623healweld	delivered	900	planned	900	COMPLETE
+arm	ctrl_dup	delivered	900	planned	900	COMPLETE
