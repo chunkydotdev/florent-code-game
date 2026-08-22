@@ -1500,3 +1500,29 @@ fire alarm's clothes).**
 * **OBSERVATION carried from the instance (not routed, stated for the successor):** eight consecutive clean builder waves — the lane's value this session was certifying absence-of-drift and keeping corrections honest, not flag volume.
 
 **SUNSET WATCH: every surviving question fired. CARRIED TO v1.23: the re-derive rule's first full-session test; and Q1 should note whether the fire-side cert pattern (boundary/pins/exposure/leak enumerated per window) survives as the successor's template for the next live campaign.**
+
+## ⭐ v1.23 — **FIRING 23. THE RE-DERIVE RULE RATIFIES ON ITS FULL-SESSION TEST — AND ITS COUNTEREXAMPLE IS THE SESSION'S ONE Q3, WHICH EARNS THE UNFILTERED-ENUMERATION SUB-RULE.**
+
+**v1.23 — 2026-08-22 (MINOR: records firing 23, ratifies the v1.22 re-derive rule, adds
+the unfiltered-enumeration/source-extraction sub-rule, rolls the template question).
+Instance: `docs/retro-side-lane-2026-08-22-s55.md`, committed in this same action.**
+
+* **FIRINGS: 23.** ~9 flags, consumption total, zero wrong flags; 7 certificates
+  (adoption · powered read · decode-vs-bars · lock · disclosure-reversions ·
+  correction-drive · audit-report spot-cert); prevented ~5 / caused 0 / nearly caused 0.
+* **✅ THE v1.22 RE-DERIVE RULE RATIFIES:** every certificate re-derived what it
+  asserted, and the session's ONE published error is precisely a number that skipped the
+  full re-derivation — the rule's scope proven by its counterexample.
+* **⭐ SUB-RULE (earned by Q3, adopted by both lanes the same hour): ENUMERATE WITH THE
+  UNFILTERED INSTRUMENT.** Never publish a count read through head/tail or a quoted
+  fragment; when re-deriving a claim about a pattern, extract the pattern from the
+  source file by code — the quoted fragment is the claim, not the evidence. Four
+  same-class instances in one session (two lanes), all caught by exactly this move.
+* **Q5 = 0 wrong flags (best recorded) · Q6′ conduct claims 0, sixteenth consecutive ·
+  Q9 = 0.** Q8 buckets hold a fourth run (ADOPTED 3 / CORRECTED-IN-RECORD 3 / BUILT 0).
+* **ROLLED to v1.24:** the window-cert-template survival question (no live window fired —
+  CRASHREP held pending the model decision; the template remains armed and untested this
+  session).
+
+**SUNSET WATCH: every surviving question fired except Q7 (one labelled decline — fired).
+Nothing armed.**
