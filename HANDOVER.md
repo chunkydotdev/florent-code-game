@@ -1,8 +1,77 @@
 # ⭐⭐⭐ FIRST: `.venv/bin/python tools/now.py` — the holder comes from fcode status,
 # NEVER from a poller or any line below (this block is a CACHE).
-# ⚠ s52 CAVEAT: now.py's CONTROL line prints the INCUMBENT only — post-ship that is the
-# candidate ITSELF; row/BARS controls + PROGRAMME's BASELINE field are the control truth
-# (wrap debt #3).
+# ⚠ now.py's "last 10" POOLS UNRATED (wrap debt): rated-only differs.
+
+# ===== s54 WRAP (builder, 2026-08-22 ~09:4xZ; Magnus called it) =====
+
+## ⭐⭐⭐ THE HEADLINE: SKALMAN WENT FROM FOUNDING TO FIRST CONTACT IN ONE SESSION.
+v600 founded (design doc + import manifest + fidelity instrument, all certified) →
+iterated to **v620 (21 trees)**: fixture kills 0→14/30, **POWERED 35.78% [32.68,38.88]
+vs the frozen benchmark at n=900 (founding tree: 2.78%)**, median kill r160-188.
+**FIRST CONTACT FIRED IN FULL under Magnus's waiver** (15 cells: BC-mirror 1/20 incl.
+THE FIRST GAME EVER TAKEN OFF BC'S DOCTRINE · Pivot 0/20 · kladde 1/25; four windows,
+ZERO rated leak, all side-lane certified; platform CPU clean; v180 "Skalman rc619.1"
+is the uploaded rc). **MECHANISM VERDICTS PENDING research's reach/first-damage decode
+— the successor's first verdict surface.** KILL_TARGET re-anchors on that data
+(Magnus-confirmed deferral; r300 guard STAYS).
+
+## THE SLOT — x3r0's v176 holds (1824, #20, their 8W-2L run); v177 = _v542wave remains
+the rush line's frozen benchmark. **LINE HEAD = bots/_v619skalman (main.py md5
+e24d121fbd7446e2305d9033c8300bbb; SK_RENT ON — Magnus's plank, the only clean pass of
+its wave); v620 ≡ v619 behaviourally (instruments); v615-v618 carry refuted planks
+FLAGGED OFF with their evidence.** Uploaded rc: v180 (leg-era "Skalman rcX.Y" added to
+submit_clean, citation corrected on the tail). Rollback target if anything odd: v176 by
+integer, the validated window procedure.
+
+## THE ERA FACTS SET THIS SESSION (all verified, most twice)
+* **Rate window = 5 per 10 MINUTES** (probe accept t≈12 + verbatim rejection string;
+  CLAUDE.md re-corrected; ceiling ~150/hr). **Opponent challenges cost no budget AND can
+  catch a live prototype mid-window** (Jacobs ×2 — every window is a free look for the
+  field; priced into window ops).
+* **DEFF enumeration is FOUR clusters** (MATCH/OPPONENT/MAP/CONTENT-DUPLICATE) + the
+  duplicate-control verification step (same-tree within-grid swing 2.22pp measured).
+  Deterministic pairs vary MAP and SEAT, never seed.
+* **Local bot stdout is a DEAD channel (fcode 2.3.6)** — stderr-to-console only;
+  CLAUDE.md Debugging re-corrected.
+* **Doctrine closures with mechanisms:** the collar is answered by NOT fighting it (4
+  axes); the launcher axis is refuted at 3 designs; the tube supply was the broken
+  ledger's accidental replant loop; v620's "site-limited" successor lever REFUTED (the
+  nest scan never refuses — state-vs-refusal anchor class).
+
+## THE SUCCESSOR'S QUEUE (priority order)
+1. **FIRST-CONTACT MECHANISM VERDICTS** — research banks the reach/first-damage/fidelity
+   decode; builder types the cell verdicts + the KILL_TARGET re-anchor proposal for
+   Magnus.
+2. **The siteless-state decomposition** (STATE-anchored instrument, honestly labelled:
+   post-plant hold vs watchdog-clear vs travel) — the real tube-cadence question after
+   the v620/v621 correction chain.
+3. **Iteration continues under the two-surface practice**: deterministic screens for
+   attribution (fixture rule: map×seat), POWERED reads (duplicate control + maps-as-units)
+   for the level; a V-POWER read every few versions; ws1/ws2 never idle.
+4. **Wrap-debt residue**: scratchpad/s54_wrap_debts.md (batch-discharged items marked;
+   pool.py MAP fold, tape.sh case guard, submit_clean --restore-to, now.py last-10
+   label, anat620/fidtab instrument nits, the inherited s53 HIGH batch).
+5. #118 (repeat-challenger read of THEIR direction — research-admitted) · the v618
+   seat-war economics as design input · the Jacobs leak channel in all window pricing.
+
+## FIXTURES / RULES ADDED s54 (successor must not re-learn)
+Refuse technical passes on nil dose or sub-noise effects · verdict-line presence gating
+· anchor-is-the-thing (state counters labelled as state) · forced-fire before trusting
+any zero · window ops: read-then-restore by integer, CPU test first, cadence re-derived,
+never wait long inside a timed command · rc legs via submit_clean only ("Skalman rcX.Y")
+· agent-layer availability may lapse mid-session (this session's tail ran INLINE at
+bounded scale — it works; prefer a fresh session for big waves).
+
+## STATE / WAKE PATHS
+All four watchers + keeper + auto_gate + corefill_forever + fleet_dispatch alive
+(corefill idle by design). ws1/ws2 idle, clean, validated at 1,800 games/8 min. NO
+agents of this session survive it (all landed and relayed; the spawn layer was blocked
+late-session — nothing was lost to it). **NOTHING WAKES A HUMAN.** The next scheduled
+human-facing event is the successor's boot — or research's mechanism-decode bank, which
+the successor consumes first. Research + side lane wrap on my ping (sent); their reboot
+states follow in the tail.
+
+## ===== ARCHIVE MARKER: everything below predates s54's wrap =====
 
 # ===== s53 WRAP (builder, 2026-08-21 ~16:4xZ; Magnus pre-called it: wrap when the playbook lands) =====
 
