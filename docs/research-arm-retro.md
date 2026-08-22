@@ -1,4 +1,37 @@
-# RESEARCH ARM RETRO — **v1.25** — run it at every wrap, before the process deltas
+# RESEARCH ARM RETRO — **v1.26** — run it at every wrap, before the process deltas
+
+### v1.26 — s56, 2026-08-22. Instance: `docs/retro-research-s56-2026-08-22.md`. **FIRINGS: FIVE.**
+**The bump's incidents — TWO NEW QUESTIONS, both bought with same-day firings:**
+
+⭐⭐ **Q17 — LIVE-FROM-CODE-PRESENCE: did I claim code RUNS from seeing it EXIST?** I wrote
+*"the down-clock ledger SHIPS"* from the presence of `if SK_TUBE_RELIGHT:` **without reading the
+flag's value** — `SK_TUBE_RELIGHT = False`, built/dosed/measured/shipped OFF, with a recorded
+postmortem (by-r300 12→10, median kill 201→265) that then became the row's binding design
+constraint. The side lane logged the class firing independently the same day.
+**MECHANICAL FORM: a claim that code RUNS cites the FLAG'S VALUE and the CALL PATH, never the
+gate's existence — grep the flag's ASSIGNMENT in the same breath as its gate.**
+⭐ **STATED AS ONE FAMILY WITH s55's TOKEN-GREP RULE, because they are the same defect: a search
+that can only return confirmations is not a check.** Token-grep finds only callers that pass the
+token; gate-grep finds only that the branch was written. **FAMILY RULE: name what result would
+DISCONFIRM the claim, and confirm the search could RETURN it, before running the search.**
+
+⭐ **Q18 — DID I STAMP A POINTER FROM TRAFFIC INSTEAD OF FROM AN ADOPTION CLAUSE?** Three
+firings in one day, the third running FORWARD: GREP cells stamped `_v622nestfall` after v623's
+adoption, then `_v626nestclear` labelled *"the LIVE head"* while it was an **unadopted candidate
+under a running grid**. **MECHANICAL FORM: the line head comes from the last "remains line head"
+ADOPTION clause — never the newest version number in the traffic, never directory mtimes.**
+Anchors are tree-specific (one flag sat at :3124 and :3148 in two trees), so a stale pointer is
+material, not cosmetic.
+
+**Q4 WENT BACKWARDS AND THE COMPOSITION IS THE FINDING: 2 self-caught vs 6 peer-caught**, and
+**two of the six were the same class twice in ONE row** (#124's head label and its liveness
+claim). The generator-vs-auditor asymmetry (v1.4) explains part and excuses none.
+**Q15 fired twice, both in #124** — a correct finding lending its credibility to an unchecked
+clause riding beside it, which is why Q17/Q18 are rules rather than resolutions.
+**Positive, fourth consecutive session: both fresh commissions refuted premises of their own
+briefs** (launcher-family label dead; the wall/heal shape the TRRR row anticipated refuted).
+Sunset clause NOT armed.
+
 
 ### v1.25 — s55, 2026-08-22. Instance: `docs/retro-research-s55-2026-08-22.md`. **FIRINGS: FOUR.**
 **The bump's incident — TOKEN-GREP ENUMERATION (grep-from-history), a queue row built on
