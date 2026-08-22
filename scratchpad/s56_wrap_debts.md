@@ -48,3 +48,9 @@ Game context: all items concern in-game Florent Code League tooling.
    sk_roles:6906); (c) adoption commits byte-diff the committed tree against the
    MEASURED ARM before the hash lands in HANDOVER (the wrong-head incident);
    (d) plank spend reported as fraction-of-converts, never absolute Ti.
+9. **holder_watch has no reader (side-lane catch, s56):** it FIRED correctly on
+   x3r0's v181 ship at 16:15:49Z and re-armed at 16:15:55Z, and no lane saw it
+   for ~2 hours while three sessions were live. Route its FIRED transition to
+   the coordination tail (or to now.py's boot surface) — an alarm with no
+   reader is not an alarm. Related: the wrap-sequence rule (final live re-read)
+   now in the arm retro addendum.
