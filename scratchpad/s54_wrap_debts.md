@@ -45,3 +45,7 @@
    battery fails v615's committed tree, ...) — the v615/v616 pattern (INVERT rather than
    delete, assert the current decision with driven controls) is the fix shape; a wrap
    delta names the class beside the verdict-line class (item 0).
+8. **remote_battery.py replay-pull enhancement** (Magnus-triggered practice change ~05:5xZ
+   08-22: waves price levels remote; mechanism decodes still need local replays — pulling
+   remote replay26 files would unify the surfaces). Wrap-time build unless Magnus pulls
+   it forward.
