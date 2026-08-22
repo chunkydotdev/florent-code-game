@@ -1252,23 +1252,24 @@ class RolesMixin:
         # revision so the danger cache rebuilds.  Generalises _live_launchers'
         # existing rule; costs zero engine calls.
         if SK_ARMED_SWEEP:
-            seen_armed = {(e.x, e.y) for _i, _t, e in
-                          ((i2, t2, e2) for i2, t2, e2 in self.vis_enemy
-                           if t2 in ARMED_TYPES)}
             try:
+                _sp = ct.get_position()
                 vr = ct.get_vision_radius_sq() - SK_ARMED_SWEEP_MARGIN
             except Exception:
-                vr = 18
-            for t in list(self.armed_memo):
-                if t in seen_armed:
-                    continue
-                if not self.ib(t[0], t[1]):
-                    continue
-                if (t[0] - p.x) ** 2 + (t[1] - p.y) ** 2 <= vr:
-                    del self.armed_memo[t]
-                    self.armed_facing.pop(t, None)
-                    self._armed_rev += 1
-                    self.armed_swept = getattr(self, "armed_swept", 0) + 1
+                _sp = None
+            if _sp is not None:
+                seen_armed = {(e2.x, e2.y) for _i2, t2, e2 in self.vis_enemy
+                              if t2 in ARMED_TYPES}
+                for t in list(self.armed_memo):
+                    if t in seen_armed:
+                        continue
+                    if not self.ib(t[0], t[1]):
+                        continue
+                    if (t[0] - _sp.x) ** 2 + (t[1] - _sp.y) ** 2 <= vr:
+                        del self.armed_memo[t]
+                        self.armed_facing.pop(t, None)
+                        self._armed_rev += 1
+                        self.armed_swept += 1
 
     # ==================================================================
     # ROLE 0 -- HOME KEEPER  (harvesters, the global belt, heals, the door)
