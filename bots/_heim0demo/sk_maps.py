@@ -3564,3 +3564,10 @@ def known_map_for(w, h, own, ct=None):
 # ============================================================================
 HEIM_DEMO = True             # master demo flag (whole tree is the demo)
 HEIM_FLIP_ROUND = 300        # Magnus: "until round 300 our entire focus is eco"
+# HEIM DEMO (Magnus, watching the showcase reel: "Why is our raiders putting
+# barriers, they just need to put down sentinels and if they go down they need
+# to put up new ones on other spots") — siege raiders skip the COPY 5 prep
+# entirely: sentinels only. Re-siting on death already exists (death memo bans
+# the dead tile 400r, V3 re-site picks a new band spot). Tail override: last
+# assignment wins at import.
+SK_NEST_PREP_BARRIERS = 0
