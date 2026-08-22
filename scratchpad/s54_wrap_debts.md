@@ -37,3 +37,11 @@
    panel2_cal.sh:40, rate_budget.py:75 WINDOW_MIN, full anchor list in research's tail
    note) + window-op leak math re-prices (~1 rated pairing per 10 min). ⛔ No constant
    edits before the CLI confirms — the organisers' doc has been wrong before.
+6. **fidtab.py schema-broken** (keys "M1" vs the JSON's "M1 belt_connectivity_directed" —
+   prints None for all acceptance rows; v616 report deviation 4) · **tape30_deaths.py**
+   single-file argv + hardcoded our=0 (v616 deviation 5) — both scratchpad instruments,
+   fix-or-retire at wrap.
+7. **Ship-config-assertion battery class: FIVE instances** (v614 fails v615, v615's own
+   battery fails v615's committed tree, ...) — the v615/v616 pattern (INVERT rather than
+   delete, assert the current decision with driven controls) is the fix shape; a wrap
+   delta names the class beside the verdict-line class (item 0).
