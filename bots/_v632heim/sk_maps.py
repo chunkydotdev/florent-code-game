@@ -3856,6 +3856,104 @@ SK_PHASE_ROUND = 300         # ⭐⭐ THE PHASE BOUNDARY, AND IT IS DOCTRINE, NO
                              # read by nothing.
 
 # ===========================================================================
+# v632 HEIMDALL PLANKS 8+9 -- THE r300 ROTATION  (SK_ROTATE)
+# ===========================================================================
+#
+# GAME CONTEXT: in-game machinery for the Florent Code League, a sandboxed
+# bot-vs-bot programming competition on a simulated grid.  "Raider", "siege",
+# "battery" and "core takedown" below name in-engine builder-bot turns and
+# `build_sentinel` calls against a competing bot's pieces, inside the
+# organisers' documented rules.  Nothing here touches anything outside the
+# game engine.
+#
+# DOCTRINE, VERBATIM: PROGRAMME.md 48b874bea `FORTRESS_PHASE_FLIP:
+# r300_two_raiders_sentinel_siege_until_enemy_core_down` and
+# `HEIMDALL_TACTIC_LOCK: eco_and_defence_to_r300_then_rotate_and_destroy`,
+# from Magnus's Q3 ruling -- "until round 300 our entire focus is eco, then we
+# send two raiders that puts up as many sentinels as necessary to bring the
+# enemy core down".  Design study
+# `docs/research/DESIGN-fortress-heimdall-2026-08-22.md` §8a (the flip and its
+# five named hazards) and §8b (siting, funding, battery arithmetic).
+#
+# ⭐⭐ WHY TWO PLANKS SHIP UNDER ONE FLAG, DISCLOSED AS A DEVIATION FROM
+# ONE-PLANK-PER-ARM (pre-approved by the builder).  §9 splits this into row 8
+# (the flip, siege untouched) and row 9 (the battery size).  Row 8 ALONE ships
+# two bodies that both keep exactly TWO tubes standing -- and §8b's own table
+# prices two concurrent sentinels at 130 rounds to a healed core, i.e. a
+# STALEMATE, which is not a measurable rotation.  The flip without a battery
+# is nothing; the pair is the smallest unit that can win a game, so it is the
+# smallest shippable scope here.  The arm therefore measures FLIP+BATTERY and
+# says so.
+#
+# ⛔ THE WELD RULE (s55 class).  SK_ROTATE is its OWN master, conjoined with
+# NOTHING -- not SK_FORTRESS, not SK_CITADEL, not SK_IDLE_ACT_ALL, not
+# SK_FORT_WALKER_ECO (see the truth table at the `_builder` dispatch).  OFF is
+# exact identity by CALL-SITE conjunction at every one of its sites.
+SK_ROTATE = False            # MASTER.  ON: at and after SK_PHASE_ROUND the two
+                             # bodies in SK_ROTATE_RAIDERS both run
+                             # `_siege_engineer` -- the rolling sentinel siege.
+                             # ⛔ IT SUPERSEDES PLANK 5's PLACEHOLDER: the
+                             # `SK_PHASE_ROUND` note above says the walker
+                             # "falls through to its ORIGINAL `_cage_walker`
+                             # turn ... a CRUDE rotation ... the NEXT plank
+                             # will REPLACE that fall-through".  This is that
+                             # plank.  With SK_ROTATE False the fall-through
+                             # stands exactly as plank 5 shipped it.
+SK_ROTATE_RAIDERS = (SK_CAGE_WALKER, SK_SIEGE_ENGINEER)
+                             # THE TWO BODIES THAT CONVERT, and study §8a names
+                             # them: the ENGINEER is the siege body already,
+                             # and the WALKER is the role with no fortress duty
+                             # worth keeping past r300 (its phase-1 job is
+                             # second-eco and by r300 the belt is built and
+                             # static).  HOME_KEEPER(0) and ORE_DENIER(2) do
+                             # NOT convert -- the fortress does not stand down
+                             # at r300, it loses two bodies.
+SK_ROTATE_WANT = 4           # THE BATTERY.  Magnus: "put the first 4 sentinels
+                             # together ... then move to the next position".
+                             # Study §8b's table: 2 concurrent = 130 rounds to
+                             # a healed core (a stalemate), 4 = 65, 6 = 44.
+                             # FOUR is the smallest number in that table that
+                             # closes inside the ~700 rounds available.
+                             # ⚠⚠ DISCLOSED: THIS IS A PER-BODY FLOOR, NOT A
+                             # TEAM ONE.  `_floor_live` is a TEAM census only
+                             # under SK_TUBE_FLOOR2 (False, parked) and the
+                             # team census in slot 7 holds TWO seats, so
+                             # raising it to four is a slot RE-LAY -- a
+                             # separate plank with its own bit budget.  Two
+                             # raiders each holding a 4-floor therefore give a
+                             # team ceiling of EIGHT concurrent tubes.  Eight
+                             # is inside §8b's sustainable ammo band (26.7
+                             # Ti/round of ammo against 27.5 Ti/round of
+                             # income) and the REALISED count sits far below
+                             # the floor anyway at the measured forward-tube
+                             # life of 8-10 rounds (§8b: two bodies deliver
+                             # ~0.3-0.4 plants/round => steady state 3-4).
+                             # Reported, not papered over.
+SK_ROTATE_PREPS = 0          # PREP BARRIERS PER SITE, POST-FLIP.  ZERO, and it
+                             # is a MEASUREMENT, not a preference: the s57
+                             # rotation demo measured checkmate r374 -> r336
+                             # when the prep barriers were dropped from the
+                             # siege (coordination tail 2026-08-22 ~19:2x-19:4xZ).
+                             # ⛔ THE PRE-FLIP CONSTANT IS NOT TOUCHED.
+                             # `SK_NEST_PREP_BARRIERS = 2` still governs every
+                             # round before SK_PHASE_ROUND and every arm with
+                             # SK_ROTATE off; this constant is read ONLY inside
+                             # the rotation conjunction.
+SK_ROTATE_CLUSTER_GAP = 2    # THE FIRST BATTERY IS CLUSTERED.  Magnus, direct:
+                             # "put the first 4 sentinels together".  The band
+                             # spread `SK_NEST_PAIR_MIN_GAP = 8` is v603's
+                             # answer to a DIFFERENT question (two tubes
+                             # sharing one answering gunner's ray) and it is
+                             # priced for a PAIR; a battery of four wants
+                             # concentrated fire on one core face and one
+                             # walk.  Relaxed to d^2 >= 2 (orthogonally
+                             # adjacent tiles are legal, the same tile is not)
+                             # for the FIRST SK_ROTATE_WANT plants of the
+                             # phase, then the normal spread returns for
+                             # replacements -- "then move to the next
+                             # position".
+
+# ===========================================================================
 # 3.  IMPORT BANNER (verbatim) -- doctrine.py:1078-1172, map data
 # ===========================================================================
 

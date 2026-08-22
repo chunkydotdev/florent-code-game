@@ -151,6 +151,9 @@ from sk_maps import (
     SK_FORT_RING_SENT_DSQ, SK_FORT_RING_HARV_MIN,
     # --- v632 HEIMDALL PLANK 5 (THE SECOND ECO BODY) -----------------------
     SK_FORT_WALKER_ECO, SK_PHASE_ROUND,
+    # --- v632 HEIMDALL PLANKS 8+9 (THE r300 ROTATION) ----------------------
+    SK_ROTATE, SK_ROTATE_CLUSTER_GAP, SK_ROTATE_PREPS, SK_ROTATE_RAIDERS,
+    SK_ROTATE_WANT,
 )
 
 # --- v611: the 8 neighbours, for a LAUNCHER's pickup disc (d^2 <= 2) --------
@@ -261,6 +264,23 @@ class RolesMixin:
 
         if self.role is None:
             self._claim_role(ct, rnd)
+        # ⭐⭐ v632 HEIMDALL PLANKS 8+9 -- THE PHASE STATE, COMPUTED ONCE PER
+        # BODY PER ROUND AND READ BY EVERY ROTATION SITE.  Two facts, kept
+        # apart on purpose:
+        #   `rot_on`   -- THE PHASE IS OPEN.  True for EVERY body (the home
+        #                 keeper reads it too, for the §8a hazard-4 belt guard).
+        #   `rot_body` -- THIS BODY IS A RAIDER.  True only for the two roles
+        #                 in SK_ROTATE_RAIDERS, and it is what the dispatch,
+        #                 the ledger width and every siege behaviour read.
+        # ⛔ WHY HERE AND NOT AT THE SWITCH: the period-K cycle gate below runs
+        # ABOVE the switch and needs `rot_body` (the walker body is excluded
+        # from it today because `_cage_walker` calls `_cycle_commit` itself --
+        # a call a rotation body never makes).
+        # ⛔ BOTH ARE FALSE FOR EVERY ROUND OF EVERY SK_ROTATE-OFF ARM, so every
+        # site that reads them is unreachable and the tree is character-for-
+        # character the adopted one.
+        self.rot_on = bool(SK_ROTATE and rnd >= SK_PHASE_ROUND)
+        self.rot_body = bool(self.rot_on and self.role in SK_ROTATE_RAIDERS)
         # ⛔ v602 FIX 5(a): EVERY ROLE SENSES TERRAIN NOW.  v601 called
         # `_ore_scan` from the HOME KEEPER and the ORE DENIER only, and it is
         # the one thing that fills `map_walls` on an unconfirmed map -- so the
@@ -299,7 +319,14 @@ class RolesMixin:
         # 188 rounds of a period-6 orbit, `period_cycle()` = 6 on 151 of them,
         # `commit_until` = -1 on all 188.  Hoisted ABOVE the V5 survival branch
         # because that branch is one of the two authorities being arbitrated.
-        if SK_CYCLE_ALL_ROLES and self.role != SK_CAGE_WALKER:
+        # ⭐ v632 PLANKS 8+9, HAZARD (c) -- TRAVEL.  The walker is excluded here
+        # ONLY because `_cage_walker` calls `_cycle_commit` itself (`:5146`).  A
+        # rotation body never runs `_cage_walker`, so without this term the
+        # converted walker would cross a board that is DENSE WITH BUILDINGS at
+        # r300 with the period-K orbit detector switched off -- exactly the
+        # 188-round orbit v606 ITEM 4(b) was built for.  `rot_body` is False on
+        # every SK_ROTATE-off round, so the gate is unchanged there.
+        if SK_CYCLE_ALL_ROLES and (self.role != SK_CAGE_WALKER or self.rot_body):
             self._cycle_commit(rnd)
 
         # ⭐ v608 PLANKS 2 and 1, THE DENIER'S HOME ANSWER, PLACED ABOVE LEDGER
@@ -385,7 +412,42 @@ class RolesMixin:
         # discipline holds -- the flag still controls one behaviour change and
         # the r300 boundary is doctrine, already written in PROGRAMME.md,
         # not a second mechanism.
-        if (SK_FORT_WALKER_ECO and rnd < SK_PHASE_ROUND
+        # ⭐⭐ v632 HEIMDALL PLANKS 8+9 -- THE r300 ROTATION (SK_ROTATE), AND IT
+        # SITS FIRST IN THE SWITCH BECAUSE IT SUPERSEDES PLANK 5's PLACEHOLDER.
+        # PROGRAMME.md 48b874bea `FORTRESS_PHASE_FLIP:
+        # r300_two_raiders_sentinel_siege_until_enemy_core_down`.  Both bodies
+        # in SK_ROTATE_RAIDERS run the ENGINEER's turn -- the rolling sentinel
+        # battery -- and everything phase-specific about that turn (battery
+        # size, clustering, no preps, no pecking, the band split) is gated on
+        # `self.rot_body` at its own site, never here.
+        #
+        # ⛔ THE TRUTH TABLE FOR THE TWO PHASE FLAGS, because they compose and a
+        # successor must not have to derive it:
+        #
+        #   SK_ROTATE | SK_FORT_WALKER_ECO | walker's turn      | engineer's turn
+        #   ----------|--------------------|--------------------|----------------
+        #   False     | False              | _cage_walker (all) | _siege_engineer
+        #   False     | True               | _home_keeper <300  | _siege_engineer
+        #             |                    | _cage_walker >=300 |   (plank 5's
+        #             |                    |   (PLACEHOLDER)    |    fall-through
+        #             |                    |                    |    STANDS)
+        #   True      | False              | _cage_walker <300  | _siege_engineer
+        #             |                    | _siege_eng.  >=300 |
+        #   True      | True               | _home_keeper <300  | _siege_engineer
+        #             |                    | _siege_eng.  >=300 |   <- THE FULL
+        #             |                    |                    |    DOCTRINE ARM
+        #
+        # The two flags are ORTHOGONAL by construction: plank 5 owns rounds
+        # BELOW SK_PHASE_ROUND, this plank owns rounds AT OR ABOVE it, and
+        # neither arm of the switch can match in the other's half.  The engineer
+        # column never changes -- only where the branch is entered from.
+        # ⛔ CALL-SITE CONJUNCTION, OWN FLAG, NO WELD: `rot_body` is False on
+        # every round of every SK_ROTATE-off arm, so the first arm is
+        # unreachable and this switch is character-for-character the adopted
+        # tree (including plank 5's own OFF-identity).
+        if self.rot_body:
+            self._siege_engineer(ct, p, rnd)
+        elif (SK_FORT_WALKER_ECO and rnd < SK_PHASE_ROUND
                 and self.role == SK_CAGE_WALKER):
             self._home_keeper(ct, p, rnd)
         elif self.role == SK_CAGE_WALKER:
@@ -1817,7 +1879,25 @@ class RolesMixin:
         # v606 ITEM 2: `self.enemy` joins the key because the BAND is derived
         # from it -- it is unset until the core reports it, and a plan cached
         # before that would never see the band at all.
-        key = (self.core, self.enemy, len(self.harv_tiles), len(self.belt_ban),
+        # ⛔ v632 PLANKS 8+9, HAZARD (d) -- NO BAND RE-PLAN AT THE FLIP.  Study
+        # §8a hazard 4: "the keeper re-plans on a changed `self.enemy` key and
+        # should not re-route a working belt at r300.  Worth an explicit
+        # `rnd < SK_PHASE_ROUND` guard on band re-planning."  Dropping the enemy
+        # anchor from the key at and after the flip is that guard, expressed
+        # where the re-plan is actually triggered.
+        # ⚠ DISPOSITION, MEASURED RATHER THAN ASSERTED: in THIS tree the hazard
+        # does not bind.  SK_BELT_BAND_AVOID/_DROP are unconditional (not
+        # phase-gated), so the band is already live in phase 1 and nothing about
+        # it changes at r300; and `_resolve_enemy` is WRITE-ONCE (`if
+        # self.enemy is None`), so the anchor cannot change mid-game either.
+        # The guard is therefore a no-op today and is shipped as a FENCE against
+        # a successor making the band phase-conditional -- at which point the
+        # keeper would re-route a working belt on the exact round the raiders
+        # leave.  It is deliberately NOT a freeze of the whole plan: harvester
+        # deaths, belt bans and newly sensed walls must still re-plan, or the
+        # belt stops being repaired for the last 700 rounds of the game.
+        _band_key = None if self.rot_on else self.enemy
+        key = (self.core, _band_key, len(self.harv_tiles), len(self.belt_ban),
                len(self.map_walls))
         if self.belt_key == key:
             return
@@ -5825,6 +5905,29 @@ class RolesMixin:
         """Strangle-then-KILL: the cage is a means, the core is the end."""
         if self.enemy is None:
             return
+        # ⭐⭐ v632 PLANKS 8+9 -- NO PECKING POST-FLIP.  Magnus, on the s57
+        # rotation demo: "no pecking, we only watch our sentinels work"
+        # (coordination tail 2026-08-22 ~19:2x-19:4xZ).  The arithmetic agrees
+        # and this tree already measured it: a builder peck is 2 damage a round
+        # into a core absorbing a heal-tax of 0.68 (95 enemy heals against 82 of
+        # our pecks over 41 rounds, v602 autopsy) -- 100% of the 14,130 damage
+        # we have ever dealt an enemy core was SENTINEL fire and the walker's
+        # pecks contributed ZERO (v603 FIX 1).  A raider standing at the
+        # footprint is a raider not planting, and §8b's binding constraint is
+        # PLANT RATE.
+        # ⛔ THE TRAVEL HALF SURVIVES, CAPPED AT THE BAND EDGE.  This method is
+        # the engineer's only fallback when its band half is exhausted, and a
+        # body that neither plants nor moves is worse than one that repositions.
+        # But walking all the way IN would park the raider at d^2 ~2, inside
+        # every enemy gunner's r^2 = 13 -- the point-blank zone
+        # SK_NEST_POINT_BLANK exists to refuse -- so the approach stops at
+        # SK_NEST_DSQ_MAX, the outer edge of the siting band, which is where the
+        # next `_pick_nest` wants to be measured from anyway.
+        if self.rot_body:
+            self.rot_pecks_skipped += 1
+            if dsq_core(p, self.enemy) > SK_NEST_DSQ_MAX:
+                self.step_to(ct, self.enemy)
+            return
         if ct.get_action_cooldown() == 0 and ct.get_global_resources() >= 2:
             # ⭐ v603 FIX 5, THE GUARD THAT MAKES THE RE-ADMITTED CORE PECK
             # HONEST.  This branch fired with NO healing-race check while
@@ -6132,6 +6235,14 @@ class RolesMixin:
         want = SK_NEST_PAIR_N if SK_NEST_PAIR else 1
         if SK_TUBE_FLOOR2 and SK_NEST_PAIR:
             want = SK_TUBE_FLOOR2_N
+        # ⭐⭐ v632 PLANKS 8+9 -- THE BATTERY.  "as many sentinels as necessary
+        # to bring the enemy core down" (Magnus, PROGRAMME.md 48b874bea), and
+        # study §8b puts the number at 4-6 CONCURRENT: two tubes is 130 rounds
+        # against a core healing at the measured 0.68 tax, i.e. a stalemate;
+        # four is 65 rounds, six is 44.  See SK_ROTATE_WANT's note for the
+        # disclosed per-body/team distinction.
+        if self.rot_body:
+            want = SK_ROTATE_WANT
         live = self._floor_live(ct, rnd)
         # ⭐ v619 PLANK 3 (SK_TUBE_RELIGHT) -- THE DOWN-CLOCK.  This is the
         # instrument the plank is scored on (tube-down rounds per game) and it
@@ -6313,6 +6424,23 @@ class RolesMixin:
                              and 0 < live < want)
                 if skip_prep and self.nest_prepped < SK_NEST_PREP_BARRIERS:
                     self.tube_noprep += 1
+                # ⭐⭐ v632 PLANKS 8+9 -- NO PREP BARRIERS IN THE SIEGE, AND IT
+                # IS A MEASUREMENT.  The s57 rotation demo measured checkmate
+                # r374 -> r336 with the preps dropped (coordination tail
+                # 2026-08-22 ~19:2x-19:4xZ).  Two builder turns per site in
+                # front of a tube whose measured life is 8-10 rounds buys
+                # latency the battery cannot spend; §8b's binding constraint is
+                # PLANT RATE, and a prep is a plant not made.
+                # ⛔ IT IS APPLIED BELOW THE v613 COUNTER ON PURPOSE, so
+                # `tube_noprep` stays SK_TUBE_NOPREP's instrument and does not
+                # silently absorb this plank's refusals.
+                # ⛔ AND IT DOES NOT TOUCH THE PRE-FLIP CONSTANT:
+                # SK_NEST_PREP_BARRIERS is unchanged and still governs every
+                # round below SK_PHASE_ROUND and every SK_ROTATE-off arm.
+                if self.rot_body and self.nest_prepped >= SK_ROTATE_PREPS:
+                    if not skip_prep and self.nest_prepped < SK_NEST_PREP_BARRIERS:
+                        self.rot_preps_skipped += 1   # the refusal tap
+                    skip_prep = True
                 if not skip_prep and self.nest_prepped < SK_NEST_PREP_BARRIERS:
                     if self._prep_barrier(ct, p, site, rnd):
                         return
@@ -6326,6 +6454,17 @@ class RolesMixin:
         # that costs: bot 146 pinned on {(0,10),(0,11)} in a five-tile dead-end
         # for 105 turns, 37 of them with `free_neighbours == 0` and a zero action
         # cooldown.  Identical verb, identical guards; only the caller is new.
+        # ⚠ v632 PLANKS 8+9, DISCLOSED SCOPE OF "NO PECKING".  The suppression
+        # lives in `_attack_enemy_core` and covers the CORE peck and its
+        # `_peck_priority` ladder -- the verb Magnus named ("no pecking, we only
+        # watch our sentinels work") and the one that donates a raider's whole
+        # game into a 0.68 heal-tax.  THIS rung survives for rotation bodies and
+        # deliberately so: it fires only when the body has ZERO free
+        # neighbours, i.e. it is boxed in and can neither walk nor plant this
+        # turn, and it carries `skip_core=True` so it can never reach the enemy
+        # footprint.  It is the v606 anti-pin verb, not a damage plan, and
+        # removing it would re-open the 105-turn pin it was built for on a board
+        # that is denser at r300 than at any earlier round.
         if (SK_IDLE_ACT_ENGINEER and SK_IDLE_ACT
                 and ct.get_action_cooldown() == 0
                 and self.free_neighbours(ct, p) == 0):
@@ -6662,6 +6801,21 @@ class RolesMixin:
         same inputs.  That is what makes the flag-off tape an exact identity
         rather than an argued one.
         """
+        # ⭐⭐ v632 PLANKS 8+9 -- THE LEDGER IS AS WIDE AS THE BATTERY, AND
+        # WITHOUT THIS THE `want` RAISE IS A NO-OP THAT SPENDS.  The ledger is
+        # two slots; `_nest_live()` therefore CANNOT return more than 2, so a
+        # `want` of 4 would be permanently unmet, `_plant_gun`'s slot loop would
+        # silently find no free slot (the `break` never fires), and the engineer
+        # would buy sentinels every affordable round with no book of what it
+        # owns and no death memo for any of them.  Four named slots, four
+        # entries, and every count / promotion / compaction below already runs
+        # over `len(self._nest_slots())` (v619 wrote them generic).
+        # ⛔ EXACT IDENTITY WHEN OFF: `rot_body` is False on every round of every
+        # SK_ROTATE-off arm, so this returns v619's tuple unchanged and
+        # `nest_turret4` is assigned by no path.
+        if self.rot_body:
+            return (self.nest_turret, self.nest_turret2,
+                    self.nest_turret3, self.nest_turret4)
         if SK_NEST_N3:
             return (self.nest_turret, self.nest_turret2, self.nest_turret3)
         return (self.nest_turret, self.nest_turret2)
@@ -6671,8 +6825,13 @@ class RolesMixin:
             self.nest_turret = v
         elif i == 1:
             self.nest_turret2 = v
-        else:
+        elif i == 2:
+            # v632: was the `else` arm.  With SK_ROTATE off `_nest_slots()` is
+            # at most three long, so index 3 is unreachable and this is v619's
+            # branch on v619's inputs.
             self.nest_turret3 = v
+        else:
+            self.nest_turret4 = v
 
     def _nest_live(self):
         """How many band sentinels the engineer's own ledger believes stand."""
@@ -6725,8 +6884,20 @@ class RolesMixin:
         # already stands, i.e. exactly on a FOLLOW-UP pick, so the first tube's
         # site is chosen by v618's rule unchanged and this cannot move S1.
         haste = bool(SK_S2_HASTE and taken)
-        site = self._nest_scan(ct, p, rnd, taken, SK_NEST_PAIR_MIN_GAP,
-                               haste=haste)
+        # ⭐⭐ v632 PLANKS 8+9 -- THE FIRST BATTERY IS CLUSTERED.  Magnus,
+        # direct: "put the first 4 sentinels together ... then move to the next
+        # position".  `SK_NEST_PAIR_MIN_GAP = 8` is v603's answer to a
+        # DIFFERENT question -- two tubes sharing one answering gunner's ray --
+        # and it is priced for a PAIR whose job is to survive; a battery of four
+        # is priced on damage per round onto ONE core face and on the walk it
+        # costs to lay it.  Relaxed for the first SK_ROTATE_WANT plants of the
+        # phase only, then v603's spread returns for REPLACEMENTS, which is what
+        # "then move to the next position" asks for and what keeps the rolling
+        # half of the siege from re-stacking on a tile that just lost a tube.
+        gap = SK_NEST_PAIR_MIN_GAP
+        if self.rot_body and self.rot_plants < SK_ROTATE_WANT:
+            gap = SK_ROTATE_CLUSTER_GAP
+        site = self._nest_scan(ct, p, rnd, taken, gap, haste=haste)
         # ⭐ v613 PLANK 2(c), SK_TUBE_GAP_RELAX.  "The band d^2 14-32 is wide
         # enough" is true on a 30x30 and NOT on a 12x12: with one tube standing,
         # an 8-d^2 spread can empty the band outright, and the engineer then
@@ -6791,8 +6962,36 @@ class RolesMixin:
                         >= SK_NEST_PB_LIFE_R):
                 lo = 2
                 self.nest_pb_life += 1
+        # ⭐⭐ v632 PLANKS 8+9, HAZARD (b) -- SITE COLLISION, AND THE STUDY'S OWN
+        # SPLIT KEY DOES NOT WORK.  §8a hazard 2: `_nest_taken()` is a PER-BODY
+        # ledger, so two raiders' spread checks see only their own tubes and
+        # nothing stops them siting the same tile or fighting over one corner of
+        # the band.  The study prescribes "a band half by role parity
+        # (`self.role_parity`)" -- ⛔ AND role_parity CANNOT SPLIT THESE TWO
+        # BODIES: it is `self.role & 1` (`_claim_role`), the raiders are roles
+        # 1 and 3, and 1 & 1 == 3 & 1 == 1.  BOTH HALVES WOULD BE THE SAME HALF
+        # and the hazard would ship unaddressed behind a line of prose that
+        # looks like it addresses it.  The split key is therefore the role
+        # IDENTITY, which does distinguish them.
+        # ⛔ THE SPLIT KEY, AND ITS SIZE COST IS MEASURED, NOT ASSUMED.  Counted
+        # over the scan's own sweep: `dx + dy >= 0` gives halves of 28 and 36
+        # band tiles, and so does the obvious alternative `dx >= 0` -- 12%
+        # imbalance either way, inherited from the asymmetric [-7, 9) sweep and
+        # the 2x2 clamp in `dsq_core`, NOT from the choice of key.  ⭐ WHAT DOES
+        # differ is which core faces a half touches: `dx >= 0` gives one body a
+        # column that reaches three of the four faces and the other only one,
+        # while the anti-diagonal cuts through opposite corners so each half is
+        # an arc against two adjacent faces.  ⭐ AND BOTH HALVES CARRY THE FULL
+        # BAND -- measured d^2 16..32 on each side (16, not 14, is the closest
+        # value the clamp grid realises and is pre-existing) -- so the +30%
+        # turret-life premium the band is bought for is intact for both raiders.
+        rot_half = None
+        if self.rot_body:
+            rot_half = 1 if self.role == SK_SIEGE_ENGINEER else 0
         for dx in range(-7, 9):
             for dy in range(-7, 9):
+                if rot_half is not None and (1 if dx + dy >= 0 else 0) != rot_half:
+                    continue
                 x, y = ex + dx, ey + dy
                 if not self.ib(x, y):
                     continue
@@ -7163,6 +7362,14 @@ class RolesMixin:
             if t is None:
                 self._nest_slot_set(i, (tid, site, rnd))
                 break
+        # ⭐ v632 PLANKS 8+9 -- THE PHASE PLANT COUNTER.  It drives the FIRST
+        # battery's clustering in `_pick_nest` ("put the first 4 sentinels
+        # together ... then move to the next position") and it is the arm's
+        # plant-rate instrument (§8b names plant rate as the binding
+        # constraint).  Counted at the SUCCESSFUL build, so a refused or
+        # unaffordable site never advances it.
+        if self.rot_body:
+            self.rot_plants += 1
         self._nest_publish(ct, rnd)
         # v603 FIX 1: if a second gun is still wanted, free the siting machinery
         # NOW -- same round -- so `_pick_nest` runs next turn with `taken`
@@ -7175,6 +7382,11 @@ class RolesMixin:
         want = SK_NEST_PAIR_N if SK_NEST_PAIR else 1
         if SK_TUBE_FLOOR2 and SK_NEST_PAIR:
             want = SK_TUBE_FLOOR2_N
+        # v632 PLANKS 8+9: the SAME substitution as the turn head.  The two must
+        # agree or the same-round re-arm would stop one plant short of the
+        # battery.
+        if self.rot_body:
+            want = SK_ROTATE_WANT
         n = self._floor_live(ct, rnd)
         if n < want:
             self.nest_site = None
@@ -7231,6 +7443,29 @@ class RolesMixin:
         # The static battery asserts that dependency (S24g) rather than trusting
         # this comment -- the fifth time prose has been the thing that was
         # checked on this line is five times too many.
+        # ⛔⛔ v632 PLANKS 8+9, HAZARD (a) -- THE SLOT-7 WRITER COLLISION, AND
+        # THIS IS THE FIX THAT SHIPPED.  Study §8a hazard 1 offers two: (a) gate
+        # this method on the body's ORIGINAL role, (b) flip SK_NEST_N3 = True,
+        # which sets SK_TUBE_ENG_SLOT7 = False and removes the engineer from
+        # slot 7 altogether.  The study prefers (b).  ⭐ (b) IS NOT AVAILABLE
+        # HERE AND THE REASON IS THE WELD RULE, NOT TASTE: SK_NEST_N3 is a
+        # module constant with NO phase term -- flipping it also re-lays slot 7,
+        # raises SK_NEST_PAIR_N 2 -> 3 and changes the tube target from ROUND
+        # ZERO, i.e. it changes PRE-flip behaviour and welds a second, already
+        # REFUTED axis (-1.22pp game share, n=1800/side, `sk_maps.py` SK_NEST_N3)
+        # onto this master.  The arm would then measure flip+battery+N3 and be
+        # unable to say which moved.  (a) is a strict correctness gate with an
+        # exact OFF identity, so (a) it is.
+        # ⛔ WHY IT IS AN EXACT IDENTITY: every call path into this method comes
+        # from `_siege_engineer`, which the dispatch reaches only for
+        # `self.role == SK_SIEGE_ENGINEER` on any SK_ROTATE-off arm.  The gate
+        # therefore never refuses there, and `rot_pub_blocked` == 0 is the
+        # witness.  ⭐ IT IS ALSO THE INSTRUMENT: the failure it prevents is
+        # SILENT (a lost buffered write leaves no trace and no exception), so a
+        # gate that has never been seen to refuse has not been seen to work.
+        if self.role != SK_SIEGE_ENGINEER:
+            self.rot_pub_blocked += 1
+            return
         if SK_TEAM_TUBES and not SK_TUBE_ENG_SLOT7:
             return
         keep = 0
@@ -7389,7 +7624,35 @@ class RolesMixin:
         7's `need`.  The core counts what it can see; forward turrets sit
         outside its vision, so the one body that stands with them reports how
         many WILL FIRE next round (a live turret with an enemy in its reach).
+
+        ⛔⛔ v632 PLANKS 8+9, HAZARD (a) EXTENDED -- SLOT 8 IS THE SAME DEFECT AS
+        SLOT 7 AND THE STUDY DOES NOT NAME IT.  §8a hazard 1 names slot 7; the
+        transitive wstore audit from `_siege_engineer` (the same AST-reachability
+        audit plank 5 ran from `_home_keeper`) returns THREE rungs, not one:
+            slot 7  SK_SLOT_NEST   `_nest_publish`  -> gated
+            slot 8  SK_SLOT_DRIP   `_drip_report`   -> gated (here)
+            slot 12 SK_SLOT_STALL  `_stall_check`   -> gated
+        And slot 8 is WORSE than slot 7, because this write is a plain
+        OVERWRITE rather than a read-modify-write on a disjoint field: two
+        raider bodies would each publish the tube census THEY can see and the
+        loser's word is dropped whole, every round.
+        ⚠ DISCLOSED COST OF GATING RATHER THAN MERGING: the surviving writer is
+        the ORIGINAL engineer, which counts only the tubes inside ITS vision
+        (r^2 = 20), so the other raider's tubes are under-reported and the
+        core's ammo `need` reads LOW.  Three reasons that is the right failure
+        direction: (1) the first battery is CLUSTERED by
+        SK_ROTATE_CLUSTER_GAP, so both raiders and the whole battery sit inside
+        one vision disc for most of the phase; (2) `_turret` refuses to fire
+        below its shot price (`:8098-8101`), so an ammo shortfall costs SHOTS
+        and never a unit -- `can_fire` returns True at 0 ammo and firing would
+        RAISE, which destroys our own turret, and that is the hazard this
+        refusal already closes; (3) the drip re-evaluates every round and never
+        banks.  A merged two-writer census needs a slot re-lay and is a separate
+        plank.
         """
+        if self.role != SK_SIEGE_ENGINEER:
+            self.rot_pub_blocked += 1
+            return
         guns = sents = 0
         for eid, et, ep in self.vis_friend:
             if et not in TURRET_TYPES:
@@ -7420,13 +7683,32 @@ class RolesMixin:
         391 rounds of the same four jobs, and 14 forward turrets fed to an
         adjacent-answering opponent at a median age of 7, is the measured
         alternative.
+
+        ⛔ v632 PLANKS 8+9, HAZARD (a) EXTENDED -- slot 12 is the third rung of
+        the `_siege_engineer` wstore audit (see `_drip_report`), gated on the
+        original role for the same one-writer reason.
         """
+        if self.role != SK_SIEGE_ENGINEER:
+            self.rot_pub_blocked += 1
+            return
         cage = ct.read_store(SK_SLOT_CAGE)
         adv = (cage >> CAGE_BEAT_FIELD) & SK_BEAT_MASK
         lives = self.nest_lives
         mean_life = (sum(lives) // len(lives)) if lives else 99
         stalled = (adv != 0 and rnd - (adv - 1) > SK_STALL_ROUNDS
                    and mean_life < SK_STALL_LIFETIME)
+        # ⛔ v632 PLANKS 8+9 -- A WRITER THAT LEFT IS NOT A STALL.  `adv` is the
+        # CAGE WALKER's seal-advance beat (slot 6, `_cage_report`), and at the
+        # flip the walker stops running `_cage_walker` for the rest of the game
+        # -- so `adv` freezes and `rnd - (adv - 1)` crosses SK_STALL_ROUNDS for
+        # a reason that has nothing to do with a stalled seal.  The latch's
+        # effect (`nest_site = None`, one forced re-site into the far quadrant)
+        # would be a pure loss during the battery.  There IS no seal post-flip,
+        # so the detector's input is undefined and the honest answer is False.
+        # An ALREADY-LATCHED stall from phase 1 is left standing: that one was
+        # measured on a live writer.
+        if self.rot_on:
+            stalled = False
         word = ((rnd + 1) & SK_BEAT_MASK)
         word |= (min(len(lives), 63) & STALL_DEATH_MASK) << STALL_DEATH_FIELD
         if stalled or self.stall_latched:

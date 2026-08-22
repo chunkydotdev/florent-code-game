@@ -862,6 +862,14 @@ class Player(CommonMixin, RolesMixin, CoreMixin):
         # code path assigns it -- so `_nest_live()` reduces to v618's
         # two-term expression and the flag off is an exact identity.
         self.nest_turret3 = None
+        # ⭐⭐ v632 HEIMDALL PLANKS 8+9 (SK_ROTATE): the FOURTH band sentinel,
+        # same tuple shape.  The rotation battery is SK_ROTATE_WANT = 4 tubes
+        # and `_nest_slots()` must be as wide as the target or the floor can
+        # never be met -- see the note there.  It stays None for the whole game
+        # on every SK_ROTATE-off arm (no path assigns it, because
+        # `_nest_slots()` is then at most three long), so every count,
+        # promotion and compaction reduces to v619's on v619's inputs.
+        self.nest_turret4 = None
         self.nest_site2 = None        # the standing first site, while siting #2
         # ⭐⭐ v617 ITEM 1 (SK_TEAM_TUBES) -- FORWARD-TUBE SELF-HEARTBEAT state,
         # and it lives on the TURRET's own module namespace, not the engineer's.
@@ -1072,6 +1080,37 @@ class Player(CommonMixin, RolesMixin, CoreMixin):
         # seen to refuse has not been seen to work.
         self.eco_pub_blocked = 0      # publisher rungs (slots 4/5/14) refused
                                       # because this body is not the HOME KEEPER
+
+        # --- v632 HEIMDALL PLANKS 8+9 -- THE r300 ROTATION (SK_ROTATE) -------
+        # GAME CONTEXT: in-engine state for the Florent Code League's simulated
+        # grid -- which builder-bot turn this piece runs after round 300.
+        # ⛔ UNCONDITIONAL, like every other attribute in this __init__ and for
+        # the same engine reason: a field created only under a flag is how an
+        # OFF arm raises AttributeError inside `run()`, and the engine then
+        # PERMANENTLY DESTROYS the unit for the rest of the match.  With
+        # SK_ROTATE False every one of these is allocated, `rot_on`/`rot_body`
+        # are re-set to False on every builder round, and the four counters
+        # stay 0 -- which is exactly what makes them the identity witnesses.
+        self.rot_on = False           # the phase is open (rnd >= SK_PHASE_ROUND)
+        self.rot_body = False         # ...and THIS body is one of the raiders
+        self.rot_plants = 0           # sentinels planted by this body since the
+                                      # flip.  Drives the first battery's
+                                      # clustering AND is the plant-rate
+                                      # instrument (§8b's binding constraint)
+        self.rot_pub_blocked = 0      # HAZARD (a)'s refusal tap: publisher rungs
+                                      # (slots 7/8/12) refused because this body
+                                      # is not the ORIGINAL siege engineer.  The
+                                      # failure it prevents is SILENT -- a lost
+                                      # buffered write leaves no trace and no
+                                      # exception -- so a gate never seen to
+                                      # refuse has not been seen to work.  0 on
+                                      # every OFF arm, > 0 the moment the second
+                                      # raider reaches a publisher rung.
+        self.rot_preps_skipped = 0    # prep barriers NOT built post-flip (the
+                                      # r374 -> r336 demo finding)
+        self.rot_pecks_skipped = 0    # `_attack_enemy_core` entries suppressed
+                                      # post-flip ("no pecking, we only watch
+                                      # our sentinels work")
 
         # --- CORE ----------------------------------------------------------
         self.spawned = 0
