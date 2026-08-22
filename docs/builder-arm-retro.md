@@ -1737,3 +1737,67 @@ CRASHREP-BC leg (locked, held) · **v623 = the welded healguard**, with research
 (melee 8.6% of our core damage, Pivot 0/20) and the role-attribution question · the
 weld-pattern sweep · the KILL_TARGET proposal pending Magnus · the twice-carried
 audit_trigger debt the audit escalated.
+
+# ===== s56 ENTRY (builder, 2026-08-22 ~11:31Z boot → ~18:1xZ wrap; Magnus called it) =====
+*(Game context: everything below concerns in-game Florent Code League play.)*
+
+**FIRINGS: MANY — the mill's densest session.** Two adoptions (v623 safety;
+v628 composition with the session's first CI-clean level claim). Seven powered
+grids + one benchmark grid + one two-window pooled resolution. Five registered
+screens (v624-v629) each with committed pre-readout expectations — the
+blind-registration discipline held across a SESSION SEAM once (v623: predecessor
+registered, successor read out) and across nine registrations total.
+
+**Q1 DECISIONS SOUND?** Mostly. The strongest calls: refusing the tainted +5.89
+when the duplicate control fired and pre-registering the pooled three-conjunct
+resolution BEFORE W2 data existed; taking branch (ii) three times on planks with
+beautiful attribution but null levels; the two-question split of the Magnus ask
+(session-risk vs stealth-scope) rather than treating one yes as covering both.
+The weakest: committing a head tree I never byte-checked against the measured
+arm (caught by a fresh agent), and shipping a flag-ON code path that had never
+run one game (caught by the screen, expensively — 180 voided games).
+
+**Q2 ERROR DIRECTIONS — four instrument/artifact errors, and the direction
+pattern is new: none flattering, all "record-completeness" — asserting the
+record was what it should be without checking (wrong-head commit; sweep
+NameError; three wrapper-literal defects reading the wrong token/column).
+Every one was caught by a control, a visible raw output, or a fresh agent —
+NONE by my own first check (the s55 finding repeats exactly).** Routed: the
+adoption byte-diff rule + the flag-ON smoke rule are now standing checks
+(both executed the same session they were written).
+
+**Q3 INSTRUMENTS.** The day's theme: zeros and constants forced to fire before
+being believed — the mutation-verified healguard zero, the precondition probes
+driven both ways (5×), the rotations instrument's sentinel-zero control, the
+closed ammo ledger's price-mutation control. The duplicate control caught a
+false positive that every earlier era of this repo would have banked. New
+classes named: registered-check-surface-existence (the dose-sanity line that had
+no instrument on the grid), cross-host non-determinism, t_pb≡t_ctrl tape
+duplication (one population wearing two names), the tube-down clock as
+butterfly-dominated at screen n.
+
+**Q4 PEER TRAFFIC.** Side lane certified nine surfaces same-hour, caught the
+B-observability gap BEFORE the grid landed, and split the stealth-scope
+question off my ask; research verified every relayed defect on primaries before
+consuming, amended #124's costing on my weld catch, and their fresh-commission
+agents refuted their own briefs' premises FIVE times today — the pattern is now
+the single most reliable quality mechanism this project has.
+
+**Q5 THE SLOT: UNTOUCHED ALL SESSION — zero submits, zero activations, zero
+rated exposure.** The field panel was staged, certified, and never fired: Q1
+(session-risk) and Q2 (stealth-scope) remain Magnus's; CRASHREP-BC stays locked
+and held with the per-accept atomic form certified as its condition (b).
+
+**Q6 WHAT THE BUDGET BOUGHT:** v623+v628 adopted · four honest powered nulls
+that redirected the line twice (walker micro-front deprioritized; zero-cost
+defence class priced) · the M7 subject-inversion + no-cause-filter corrections ·
+six weld instances (the class is now a first-check at every admission) · the
+FOCUS=defence directive encoded with the drip decomposition answering its causal
+question same-day (H1 refuted, need-gating confirmed, battery uptime named as
+the binding constraint) · the barrier-occlusion engine probe · two Magnus design
+seeds specced (belt-flow watchdog; tube guard = v630, evidence-complete).
+
+**OPEN ITEMS CARRIED → HANDOVER:** v630 tube-guard build (evidence-complete,
+pipeline-ready) · v631 flow watchdog · the minus-one v629 decomposition row ·
+the first-turret-build slip r14→r31 (bots/ question) · Magnus's Q1/Q2 ·
+CRASHREP-BC held · the wrap-debt batch (s56_wrap_debts.md, 8 items + inherited).
