@@ -47,11 +47,15 @@ successor session inherit it. The fields below are parsed; the prose is not.
 
 Operational form, typed by the builder for the record: (1) ONE THING AT A TIME —
 the citadel package outranks every other build front until it measures; other
-fronts (v630 tube-guard powered read, CRASHREP-BC, the field panel) HOLD unless
-Magnus says otherwise. (2) THE ZONE: enemy units within Chebyshev 3 of our 2x2
-core footprint (the raider annulus; "3 squares" operationalized as board
-distance — challenge this line if he meant something else). (3) THE BAR: every
-enemy unit entering the zone is destroyed — the metric is intruder survival
+fronts (v630 tube-guard POWERED READ — its already-running SCREENS complete
+and bank, the powered read is what holds — CRASHREP-BC, the field panel) HOLD
+unless Magnus says otherwise. (2) THE ZONE: enemy units within Chebyshev 3 of
+our 2x2 core footprint (the raider annulus; "3 squares" operationalized as
+board distance — challenge this line if he meant something else). (3) THE BAR:
+every enemy unit entering the zone is destroyed — ⚠ HIS NOUN WAS "RAIDER";
+"every enemy UNIT" is the builder's widening (a planted point-blank gunner is
+surely inside the intent, but the word is mine, not his — challenge this line
+too if raiders-only was meant) — the metric is intruder survival
 time and share destroyed, plus core damage taken; funding for the response is
 explicitly unconstrained BY HIS WORDS ("spend everything we need"), with the
 economy maintained (his same sentence). (4) The DEFENCE_ADMISSION_BAR (r300
