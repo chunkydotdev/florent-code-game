@@ -781,6 +781,16 @@ class Player(CommonMixin, RolesMixin, CoreMixin):
         self.seat_pecks = {}          # (x,y) -> (occupant id, pecks this episode)
         self.seat_peck_total = 0      # per-game bound on the whole plank
         self.seat_clears = 0          # instrument: pecks this plank landed
+        # --- v632 HEIMDALL PLANK 2: the DEMOLITION SWEEP ledger -------------
+        # ⛔ UNCONDITIONAL, like every other attribute in this constructor.  A
+        # flag-gated attribute is how a masters-ON tape dies on AttributeError
+        # in a branch nobody exercised OFF -- and an escaping exception
+        # destroys the unit permanently.  Same (tile, occupant id) keying as
+        # `seat_pecks` above, for the same measured reason.
+        self.demo_pecks = {}          # (x,y) -> (occupant id, pecks this episode)
+        self.demolishes = 0           # instrument: pecks this sweep landed
+        self.demo_pick = None         # ((x,y), bid) of the current pick
+        self.demo_seats = None        # frozenset of our 8 delivery seats (memo)
         self._seat_rnd = -1           # `_seat_targets` per-round memo
         self._seat_list = []
         # --- v611 SK_HOME_LAUNCHER (default OFF) ----------------------------

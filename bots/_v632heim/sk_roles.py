@@ -143,6 +143,8 @@ from sk_maps import (
     SK_FORTRESS, SK_CITADEL, SK_CITADEL_CHEB, SK_CITADEL_BODIES,
     SK_CITADEL_GIVEUP, SK_CITADEL_JOIN_DSQ, SK_CITADEL_ROLES, SK_KEEPER_LEASH, SK_LEASH_DSQ,
     SK_IDLE_ACT_ALL,
+    # --- v632 HEIMDALL PLANK 2 (THE DEMOLITION SWEEP) ----------------------
+    SK_DEMOLISH, SK_DEMOLISH_CAP, SK_DEMOLISH_DSQ,
 )
 
 # --- v611: the 8 neighbours, for a LAUNCHER's pickup disc (d^2 <= 2) --------
@@ -1339,6 +1341,25 @@ class RolesMixin:
             # between a harvester and `titanium_collected`, and 180 of the 220
             # enemy barriers on the board at end of game stand on one.
             if self._seat_clear(ct, p, rnd):
+                return
+            # ⭐ v632 HEIMDALL PLANK 2 -- THE KEEPER'S HALF OF THE DEMOLITION
+            # SWEEP, AND ITS PLACEMENT IS THE PLANK'S OWN MEASURED LESSON.
+            # ⛔ BELOW EVERY HEAL RUNG (`_core_medic`, `_seat_heal_action`,
+            # `_heal_action`) AND BELOW `_seat_clear`, ABOVE THE ECONOMY.  This
+            # is the p11 finding paid for in this same session: plank 1.1's
+            # citadel dispatch sat ABOVE the keeper's whole ladder, and the
+            # readout (`e46p11_*`, coordination 2026-08-22T20:40:28Z) failed
+            # Y2 on F1 core-footprint heals 9.60 vs >= 10.6 and Y2b on death
+            # cells 21 vs <= 18 -- a keeper that chews zone structures while
+            # its own core bleeds loses the game the priority ladder was
+            # supposed to win.  Magnus's ladder still reads p1 destroy raiders,
+            # p2 destroy their turrets; a dead core loses before any priority
+            # pays, so the sweep takes the keeper's turn ONLY when no heal duty
+            # and no seat duty fired this round.  THE DENIER IS THE PRIMARY
+            # DEMOLISHER (above, in `_ore_denier`); the keeper is the
+            # opportunistic second body, which is also what keeps Z4(d) -- the
+            # sweep spends the denier's builder-turns, not the economy's.
+            if SK_DEMOLISH and self._demolish_action(ct, p, rnd):
                 return
             # ⭐ v613 PLANK 1, THE ACTION HALF.  Above the economy and below
             # every verb that answers a body or a core about to die.  The
@@ -5265,6 +5286,23 @@ class RolesMixin:
             # its own quarry -- 4 of 4 enemy forward gunners survived the tape.
             if self._peck_priority(ct, p, rnd):
                 return
+            # ⭐ v632 HEIMDALL PLANK 2 -- THE DEMOLITION SWEEP, AND THE DENIER
+            # IS THE PRIMARY DEMOLISHER.  Study §1b re-homes this role as the
+            # PERIMETER BODY: it already reads the home answer (`_home_defence`,
+            # `_denier_home_answer` are gated on this role), it already carries
+            # the chew verbs, and it is the body that stands where our
+            # harvesters are, which is where their planted structures land.
+            # ABOVE `_melee_harvester` because inside SK_DEMOLISH_DSQ the CLASS
+            # ordering has to win: `_melee_harvester` is an orthogonal-4 local
+            # scan with no class scale, so leaving it first would let an
+            # adjacent conveyor outrank a planted launcher three tiles away --
+            # and the prediction study says the planted armed structure is what
+            # carries the core damage (64/64 first-damage events).  BELOW
+            # `_peck_priority`, which answers an enemy TURRET already adjacent
+            # to this body: that is the same target class one rung earlier and
+            # with a cheaper test.
+            if SK_DEMOLISH and self._demolish_action(ct, p, rnd):
+                return
             acted = self._melee_harvester(ct, p, rnd)
         if acted:
             return
@@ -7002,6 +7040,177 @@ class RolesMixin:
             self.citadel_walks += 1
             return True
         return False
+
+    # ==================================================================
+    # v632 HEIMDALL PLANK 2 -- THE DEMOLITION SWEEP (SK_DEMOLISH)
+    # ==================================================================
+
+    def _demolish_pri(self, et, q):
+        """The sweep's OWN class ordering, highest first.
+
+        GAME CONTEXT: `et` is a competing bot's structure planted inside our
+        half of the simulated grid; the ordering decides which one our builder
+        chews first.
+
+        ⛔⛔ THIS DELIBERATELY DOES NOT REUSE `_target_pri`, AND THE REASON IS
+        THE CURRENCY (study §3b).  `_target_pri` scores SK_PRI_TURRET = 4 for
+        all three armed types (so a launcher and a gunner are indistinguishable
+        to it) and SK_PRI_BARRIER = 0, and `_peck_priority` refuses anything
+        <= SK_PRI_OTHER -- i.e. it cannot express this plank's order and would
+        VETO two of its six classes outright.  That barrier-0 is not a defect:
+        it exists because 1,280 of 1,712 pecks went into barriers under the
+        KILL currency.  Under the r300 fortress ruling the demolition of a
+        planted structure in OUR half is not a detour from the kill, it is the
+        job (PROGRAMME `FORTRESS_DEMOLITION`), so the sweep needs its own scale
+        and `_target_pri` keeps its.
+
+        THE ORDER, with the study's reasoning:
+          LAUNCHER  -- first, and NOT by HP.  It is a 30 HP building that
+                       cannot defend itself (15 pecks), its removal frees every
+                       seat it covers, and it is the ONLY enemy structure that
+                       can move OUR bodies (`can_launch` has no team check).
+          SENTINEL  -- 40 HP, r^2=32, ignores obstacles: the structure the
+                       prediction study measures behind first core damage.
+          GUNNER    -- 25 HP, r^2=13, the same class one tier cheaper.
+          SEAT BARRIER -- a barrier standing on one of our eight DELIVERY SEATS
+                       is the tile between a harvester and the core; 180 of the
+                       220 enemy barriers standing at end of game sit on one.
+          BELT      -- their conveyor/splitter: the belt-prank acceptor that
+                       drinks our harvester output (round-robin is team-blind).
+          BARRIER   -- a plain barrier anywhere else in the fence.
+        Anything else in the fence (e.g. a harvester they planted on our ore)
+        still scores 1 -- "everything", per the directive -- but never outranks
+        a named class.  Their CORE is excluded by the caller.
+        """
+        if et == EntityType.LAUNCHER:
+            return 6
+        if et == EntityType.SENTINEL:
+            return 5
+        if et == EntityType.GUNNER:
+            return 4
+        if et == EntityType.BARRIER:
+            # The delivery-seat set is a pure function of our own core anchor
+            # (`core_seats`, canonical order), so it is computed once per body
+            # and never re-derived -- no engine call, no per-round cost.
+            if self.demo_seats is None and self.core is not None:
+                self.demo_seats = frozenset(core_seats(self.core))
+            if self.demo_seats and (q.x, q.y) in self.demo_seats:
+                return 3
+            return 1
+        if et in BELT_TYPES:
+            return 2
+        return 1
+
+    def _demolish_budget_ok(self, xy, bid):
+        """The per-(tile, occupant) episode budget -- `_seat_budget_ok`'s form.
+
+        ⛔ KEYED ON THE OCCUPANT AS WELL AS THE TILE.  A ledger keyed on the
+        tile alone concedes that tile for the rest of the game the moment they
+        re-plant it (`collar_pecks`, measured glacierkeep seat A r48 -> r146).
+        There is no per-game total here on purpose: the sweep's other bound is
+        `_clear_tile`'s own SK_CAGE_MELEE_GIVEUP chew clock, which already stops
+        a hard tile from owning a body, and a second global cap would silently
+        retire the verb mid-game in exactly the games where the fence is
+        fullest -- the opposite of the doctrine.
+        """
+        prev = self.demo_pecks.get(xy)
+        if prev is not None and prev[0] == bid and prev[1] >= SK_DEMOLISH_CAP:
+            return False
+        return True
+
+    def _demolish_charge(self, xy, bid):
+        prev = self.demo_pecks.get(xy)
+        n = prev[1] + 1 if (prev is not None and prev[0] == bid) else 1
+        self.demo_pecks[xy] = (bid, n)
+        self.demolishes += 1
+
+    def _demolish_target(self, ct, p, rnd):
+        """ONE pass over `ct.get_nearby_buildings()` -> the enemy structure in
+        our own half this body should chew, or None.
+
+        The enumerator the tree has never had (study §3a/§3b).  One engine
+        sweep per body per round -- the same idiom `_prep_cover` and
+        `_launcher` already use -- and well inside CPU_BUDGET_US.
+
+        Filters, in order: enemy team, in bounds, inside SK_DEMOLISH_DSQ of OUR
+        footprint (`dsq_core`, the same clamp the citadel predicate uses), not
+        their CORE, and not already capped out by this body's episode ledger.
+        Ranked by `_demolish_pri` FIRST and distance second, so the class
+        ordering strictly outranks proximity -- a launcher three tiles away
+        outranks an adjacent plain barrier.  A pick this body cannot reach this
+        round simply produces no peck (`_clear_tile` declines on `can_fire`)
+        and the role's ladder continues below it; that is cheaper than teaching
+        this plank a walk, which would be a second plank (R4: never compose).
+
+        ⛔ The occupant id of the pick is stashed for `_demolish_action`, which
+        charges the ledger only when a peck actually LANDS.  Charging at
+        selection time would count refusals (healing race, V7 trend) against
+        the episode cap and retire the tile without ever hitting it.
+        """
+        if self.core is None:
+            return None
+        try:
+            ids = ct.get_nearby_buildings()
+        except Exception:
+            return None
+        best_key = None
+        best_q = None
+        best_bid = None
+        for bid in ids:
+            try:
+                if ct.get_team(bid) == self.team:
+                    continue
+                et = ct.get_entity_type(bid)
+                q = ct.get_position(bid)
+            except Exception:
+                continue
+            if et == EntityType.CORE:
+                # Their core is the WALKER's object (`_attack_enemy_core`) and
+                # under the r300 ruling it is not this phase's business at all.
+                continue
+            if not self.ibp(q):
+                continue
+            if dsq_core(q, self.core) > SK_DEMOLISH_DSQ:
+                continue
+            xy = (q.x, q.y)
+            if not self._demolish_budget_ok(xy, bid):
+                continue
+            key = (-self._demolish_pri(et, q), p.distance_squared(q), q.x, q.y)
+            if best_key is None or key < best_key:
+                best_key = key
+                best_q = q
+                best_bid = bid
+        if best_q is None:
+            return None
+        self.demo_pick = ((best_q.x, best_q.y), best_bid)
+        return best_q
+
+    def _demolish_action(self, ct, p, rnd):
+        """The rung: pick, feed `_clear_tile`, charge the ledger.  True iff it
+        took this body's action.
+
+        ⚠ DISCLOSED DEVIATION FROM THE STUDY'S SKETCH (§3b writes the call site
+        as `if SK_DEMOLISH and self._demolish_target(...)`): the ledger charge
+        needs the OCCUPANT ID at the moment the peck lands, and `_clear_tile`
+        is not to be touched (it is shared with the cage walker, the citadel
+        answer and the nest clear).  So the call-site conjunction names this
+        three-line wrapper instead of the selector.  The identity property the
+        sketch exists for is unchanged and is what the grep proof checks:
+        `SK_DEMOLISH and self._demolish_action` at BOTH call sites, so with the
+        master False neither branch is reachable and the tree is
+        character-for-character the adopted-leash baseline.
+        """
+        if not SK_DEMOLISH:
+            return False
+        q = self._demolish_target(ct, p, rnd)
+        if q is None:
+            return False
+        if not self._clear_tile(ct, q, rnd):
+            return False
+        pick = self.demo_pick
+        if pick is not None:
+            self._demolish_charge(pick[0], pick[1])
+        return True
 
     # ==================================================================
     # TURRETS  (COPY 6a: shoot what gets planted -- their 61.9%)

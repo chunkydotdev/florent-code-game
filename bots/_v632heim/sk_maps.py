@@ -3421,6 +3421,78 @@ SK_LEASH_DSQ = 50            # the "far" bar the E6 attribution measured: a
                           # apart from the dispatch it protects.
 
 # ===========================================================================
+# v632 HEIMDALL PLANK 2 -- THE DEMOLITION SWEEP
+# ===========================================================================
+#
+# GAME CONTEXT: in-game machinery for the Florent Code League, a sandboxed
+# bot-vs-bot competition on a simulated grid.  "Demolish"/"chew" is the
+# engine's builder attack (2 Ti -> 2 damage on an orthogonally adjacent
+# BUILDING) aimed at a competing bot's planted structures inside our own half.
+#
+# DOCTRINE: PROGRAMME.md `FORTRESS_DEMOLITION:
+# enemy_buildings_in_our_territory_destroyed_launchers_barriers_everything`
+# (Magnus s57 2026-08-22), `BELT_DOCTRINE: everything_allowed_to_keep_belts
+# _alive_interference_destroyed...` and `HEIMDALL_PRIO_LADDER` p2
+# (destroy enemy turrets).  Design study
+# `docs/research/DESIGN-fortress-heimdall-2026-08-22.md` §3a/§3b/§3c and §9
+# row 2.  Registered expectation:
+# `docs/research/EXPECTATION-v632heim-plank2-2026-08-22.md`.
+#
+# ⭐ WHY THIS PLANK IS A TARGET SELECTOR AND NOTHING ELSE (study §3a).  The
+# VERB already exists and is complete: `_clear_tile` (sk_roles) carries the
+# in-bounds test, the affordability test, the team check, the healing-race veto
+# (`_enemy_builder_adjacent` -- "2 damage against +4 HP a round is a race we
+# lose", where the bulk of the 1,280 barrier pecks went), a per-tile chew clock
+# and ledger V7's `hp_trend_ok`.  What the tree has NEVER had is an
+# ENUMERATOR: there is no function anywhere in v628/v632 that lists enemy
+# buildings in our own half -- every attack surface is a fixed small ring, a
+# single-nearest pick or an orthogonal-4 local scan, and `is_home_half`'s four
+# consumers all gate OUR OWN builds and patrols.  This plank is that one pass.
+#
+# ⭐⭐ THE PREDICTION-STUDY INVARIANTS THAT MAKE PLANTED STRUCTURES THE TARGET
+# CLASS (banked s57, coordination tail ~20:2xZ): ALL first core damage is
+# TURRET FIRE FROM PLANTED ENEMY STRUCTURES (64/64), and the belt is eaten AT
+# THE CORE END (82-92% of belt damage inside cheb 2 of our core).  Both say the
+# same thing: the object that hurts us is a structure they PLANT in our half,
+# not a body passing through -- and a body is unreachable by a builder anyway
+# (the s57 engine re-probe: `can_fire` False 990/990 on an adjacent enemy
+# builder).  So the one verb a builder HAS is aimed at exactly the class that
+# carries the damage.
+#
+# ⛔ THE WELD RULE (s55 class, three instances paid for in this tree): this
+# master is its OWN flag and is conjoined with NOTHING.  It is NOT gated on
+# SK_FORTRESS and NOT gated on any parked plank-1 bit (SK_CITADEL,
+# SK_IDLE_ACT_ALL, SK_FORTRESS are all False and PARKED) -- a plank welded to a
+# permanently-False neighbour ships unmeasured, which is precisely how
+# SK_CORE_PECK_HEALGUARD ran with no guard for four versions.  OFF = exact
+# identity by CALL-SITE conjunction (`if SK_DEMOLISH and self._demolish_action`
+# at both sites), so the flags-off tree is character-for-character the CURRENT
+# adopted-leash tree.
+SK_DEMOLISH = False       # MASTER.  Own flag, no conjunction (see above).
+SK_DEMOLISH_DSQ = 39      # THE HOME FENCE, d^2 to our own 2x2 FOOTPRINT
+                          # (`dsq_core`).  Deliberately the fence the tree
+                          # already uses for "our core's business":
+                          # `_threat_scan`'s publish fence is
+                          # SK_HOME_RING_DSQ*3 = 39 (sk_core), so this sweep
+                          # cannot see further into our half than the core
+                          # already broadcasts.  Study §3b: "start at the
+                          # existing home fence, widen later" -- widening is a
+                          # LATER arm, not a free parameter of this one.
+SK_DEMOLISH_CAP = 20      # Pecks per (TILE, OCCUPANT ID) episode -- the
+                          # `_seat_charge` pattern (sk_roles), and the keying is
+                          # the whole point: `collar_pecks` is keyed on the tile
+                          # ALONE and never reset, so the 15 pecks that killed
+                          # their barrier at r48 were still on the ledger when
+                          # they re-laid the same seat at r146 and the tile was
+                          # conceded for the game (measured live, glacierkeep
+                          # seat A).  Keyed on the occupant, a re-planted
+                          # structure is a NEW contest.  20 = SK_CAGE_MELEE_
+                          # GIVEUP's value and covers the study's cost table
+                          # exactly once for every class it names (barrier
+                          # 30 HP = 15 pecks, launcher 30 = 15, sentinel
+                          # 40 = 20, conveyor 20 = 10).
+
+# ===========================================================================
 # 3.  IMPORT BANNER (verbatim) -- doctrine.py:1078-1172, map data
 # ===========================================================================
 
