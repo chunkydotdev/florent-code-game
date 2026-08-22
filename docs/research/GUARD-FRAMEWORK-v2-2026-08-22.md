@@ -95,3 +95,11 @@ NULL2 (reversed spawn tie-break, diverges r0, 30/30/30 cells) beside NULL1:
    ranges to distributions, which is what a fixture this chaotic requires
    before any non-catastrophic claim is typed. Cost: ~10 tape-minutes per
    ensemble member.
+
+**Re-score ledger completeness (side-lane ask):** the p14 COMPOSITE refusal
+(X3 F1 heals + per-fixture deaths + X4 per-fixture dose) is likewise
+**VOID-AND-MOOT under v2.1** — its heal/death basis is retired-class, and it
+is NOT re-opened because re-opening is superseded: the dispatch's
+reachability dose defect is real (divergence-independent, measured twice)
+and the p2R redesign path owns it. A successor should neither cite the p14
+refusal as valid evidence nor re-score it without the dose fix landed.
