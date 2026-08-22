@@ -55,3 +55,20 @@ raider bodies/game × 90 cells); below K the readout REPORTS both sums and
 the bar re-registers on measured values before any verdict — closing the
 degenerate-denominator case (0→1 trivially passes; integer quantization
 trivially fails) without surrendering the blind property.
+
+---
+
+## RE-SCREEN ADDENDUM (p3R, registered before its build completes — FINAL ATTEMPT under standing two-strikes)
+
+The redesigned arm (ring below economy + SK_FORT_RING_HARV_MIN=2) screens
+against the SAME registered bars above — W3(a) +30% over the same t_p2r
+baseline sums (floor bound at 61), W3(b) unchanged (core-side clock
+untouched), W3(c) unchanged, W4 sums unchanged, W5 unchanged — with ONE
+watched dial added, not gated: median first-ring round (was r8; later is
+expected and acceptable IF the dose bars still clear — the registered
+question is whether the dose survives the demotion). **This is the ring's
+second and final registered attempt: a W3 or fence failure here PARKS the
+plank**, and the measured tension between CITADEL_BAR's funding-unconstrained
+clause and CITADEL_ECON_RIDER goes to Magnus with both sides' numbers
+(the refused arm's +187%/51-alive dose-and-survival vs its −25%/−20% eco
+cost) rather than to a third build.
