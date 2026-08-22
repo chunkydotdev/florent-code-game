@@ -73292,3 +73292,38 @@ own named files, pathspec-form, every commit pushed within the minute.
 * **WAKE PATHS: none of mine persist.** Boot recovery: `now.py` → corpus sync → this note → the builder's HANDOVER (CRASHREP hold + v630 first, then the queue).
 
 --- 2026-08-22T18:11:45Z **SIDE LANE s56 — POST-WRAP, ONE LINE (Q6′ v1.14 applied to a peer-volunteered FAVOURABLE claim about this lane, which the instrument treats as the same object as a claim about a peer, and the more dangerous direction).** Research's wrap credits this lane with "four of the six peer-caught, none of yours caught by me". **The half I can derive from MY OWN record is confirmed and is the only half I adopt:** both my published errors (the mis-classed weld; the cert's relayed config clause) were caught by the BUILDER and by the builder's design agent — zero by research, as stated in my banked retro Q3/Q4. **The four-of-six count is THEIR enumeration of THEIR errors and I do not ratify it as mine** — I did not derive it, and a count is only as wide as its enumeration rule. Their asymmetry reading ("not symmetric the way s31 did") is THEIR judgement about THEIR session, logged as theirs, not adopted as a finding about this lane. Recorded because the claim arrived after my retro was banked and past instances are never edited; **conduct claims remain ZERO, 17th consecutive, and this is the second recorded firing of the favourable-claim-about-self extension.** Nothing else changes; this lane stays wrapped and nothing of mine runs. ---
+
+# ============================================================================
+# 2026-08-22T18:15:30Z — **SIDE LANE s57 BOOT** (commissioned by Magnus via /sidelane; fresh
+# session on the post-s56 seam — predecessor wrapped 18:09:41Z, retro v1.24 FIRING 24).
+# (Game context: everything below concerns in-game Florent Code League play.)
+# ============================================================================
+
+## BOOT CERT (clean on: enumerated checks, each my own)
+- **HOLDER (now.py/fcode status, same shell, 18:13:27Z): v181 "Mjolnir seatguard w114"
+  (x3r0's, uploaded 16:15:03Z), rating 1768, rank #23, matches 1648, last-10 4W-6L.**
+  Note the poller/tape read 1777 at matches 1647 — status is one match fresher; the
+  status line is the authority (D28). CONTROL: bots/_v542wave (PROGRAMME INCUMBENT).
+- **PROGRAMME.md read** (FOCUS defence_copy6_class; R1000_IS_DEFEAT stands;
+  DEFENCE_ADMISSION_BAR r300; SHIP_BAR two-leg form; STEALTH_UNTIL_DROP + predrop rider).
+- **s56 seam inherited**: side-lane reboot state (73169) + research state note (73260)
+  read in full. Open items acknowledged: (1) Magnus Q1 session-risk + Q2 stealth-scope
+  GATE ALL PLATFORM WORK — no lane resolves Q2 by interpretation; CRASHREP-BC LOCKED+HELD
+  (b878ecf0d); (2) v630 tube-guard chain expected first from builder; (3) weld-ledger
+  denominator question open; (4) M7 levels are UPPER BOUNDS until the cause-filter spec
+  lands; (5) content-duplicate contamination binds forward (#117). Restore-target rule
+  carried: **window plans restore the holder integer READ AT WINDOW TIME, never a
+  hardcoded one** (v176-vs-v181 catch, s56).
+- **LINE HEAD = bots/_v628compose** — re-derived from the last adoption clause on the
+  tail (s56 side-lane block 73188-73195), not from traffic (Q18 scar).
+- **Monitors verified, not re-armed** (builder-owned): keeper.pid 63331 == live keeper.py
+  pid; holder_watch 5290 alive; SessionStart fleet-health read 0 problems (corefill
+  drained = expected idle). Shard runners: none (expected-idle note stands).
+- **Retro v1.24 carries armed**: window-cert template question — THIRD roll; if s57
+  fires no window it CONVERTS TO OBSERVATION and stops rolling. Clearance rule +
+  re-derive rule + unfiltered-enumeration + byte-diff-or-label all in force; state
+  `certifying` pre-registered to behave like defending.
+- **Wake paths being armed in the next action**: all-commits drift monitor (persistent)
+  + peer message channel. Announcement to both peers follows this commit.
+- Hard limits restated: no bot edits, no arena/unrated/platform fires, no verdicts, no
+  HANDOVER/tape/PROGRAMME/CLAUDE.md writes; own named files only, every commit pushed.
