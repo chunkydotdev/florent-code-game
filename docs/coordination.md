@@ -73329,3 +73329,25 @@ own named files, pathspec-form, every commit pushed within the minute.
   HANDOVER/tape/PROGRAMME/CLAUDE.md writes; own named files only, every commit pushed.
 
 --- 2026-08-22T18:16:47Z **RESEARCH ARM s57 — BOOT (session florent-code-game-9d).** Boot sequence run: `now.py` (holder **v181 "Mjolnir seatguard w114"**, x3r0's, 1768→1777 rank #23; CONTROL still `_v542wave`), queue floor green (100 unblocked), `target_value --band` read (15 admissible, top payers Besvikomat +20.79 / lingling_40h +20.65 / gsxWins +20.09; MIN_PAYOUT denomination), coordination+spitball tails read since the s56 wraps, retro v1.26 carried (Q17 live-from-code-presence, Q18 adoption-clause head — both armed for this session). **Corpus sync RUNNING in background** (overnight backlog >120s; no corpus-derived claim from me until it completes and I say so). **`audit_trigger` FIRES 2/6** (ship cadence 0.13/hr; cross-lane analysis 27 docs / 0 decision rows, 24h window) — relayed to builder+Magnus per charter; note the window spans the s56 wrap-heavy tail. **Move-miner fired but both top candidates are stale-version** (Jacobs v283 studied-surface vs their live v340; Ouroboros v116 vs v123) — lineage evidence only, NOT commissioning a study on a dead version; will re-check when volume accrues on the live versions. **Inherited from my s56 state note, not dropped:** v631 flow-watchdog seed + v629 minus-one decomposition (admission judgement owed), drip-study stewardship pass vs defence-class rows, M7 cause-filter spec (wrap-scoped, mine), CRASHREP-BC locked+held (Magnus Q1/Q2 gate), staged FIRE ORDER (1: CRASHREP-BC, 2: v628 field panel, unpinned calibration class). Game context: everything here is in-game Florent Code League tactics. ---
+
+# ============================================================================
+# 2026-08-22T18:18:14Z — **BUILDER s57 BOOT** (fresh session on the post-s56 seam; /builder charter).
+# (Game context: everything below concerns in-game Florent Code League play.)
+# ============================================================================
+- **HOLDER (now.py/fcode status at boot, 18:12:18Z): v181 "Mjolnir seatguard w114" (x3r0,
+  16:15:03Z), 1777, rank #23, 1647 matches.** CONTROL = bots/_v542wave. Restore-target rule
+  carried: window ops read the pre-submit holder same-shell, never a cached integer.
+- **Boot checks:** test_instruments PASS · corpus_sanity CHECK (known _v542wave MAP_CODES
+  gaps on skald/stavkirke/yggdrasil + 9 flagged columns — instrument-debt noted, no inline
+  fix per the s48 rule) · **audit_trigger FIRES 2/6 (ship cadence 0.13/hr; cross-lane 27/0).
+  NOT spawning a fourth audit: both tripped cells are the SAME cells the s55 audit
+  (docs/workflow-analysis/AUDIT-2026-08-22-s55-boot-fire.md) diagnosed as instrument-blind /
+  misdiagnosed-by-own-cell, and the repair is the thrice-carried escalation already sitting
+  in s56_wrap_debts.md for Magnus.** A fourth audit on known-broken cells buys the s55
+  report again. Recorded here as the decision the trigger asked for.
+- Monitors: fleet-health 0 problems (corefill drained = expected idle). Peers: side lane s57
+  (booted 18:15Z) and research s57 both online; wrap-ping standing rule acknowledged to both.
+- **IN-FLIGHT: v630 TUBE GUARD (queue item 1, evidence-complete)** — starting with the
+  design read of _prep_barrier placement + the babysit-vs-STAGE staffing tension, then the
+  full pipeline incl. flag-ON smoke. Magnus Q1/Q2 remain open; no platform work until they
+  resolve (staged v628 field panel + CRASHREP-BC stay held).
