@@ -3400,7 +3400,10 @@ SK_KEEPER_LEASH = True       # ⭐ ADOPTED s57 (leash-alone screen passed every
                              # build-out -- design study R2).  OFF = exact
                              # identity: the _leashed conjunction is False at
                              # both loop sites.
-SK_ORE_STEPOFF = False       # v632 BUGFIX flag -- the ore half of the v601
+SK_ORE_STEPOFF = True        # ⭐ ADOPTED s58 (arm SO screen: frozen rounds
+                             # 2,046 -> 21 (-99.0%%, bar -50%%), two fixtures at
+                             # exactly ZERO; eco +6.7%%, harvesters +6.7%%; all
+                             # guards inside envelopes) — v632 BUGFIX flag -- the ore half of the v601
                              # stand-on-your-own-target deadlock (belt half
                              # guarded since v601; ore half never was; #130's
                              # class).  Measured live: icefloe_seatB 475 frozen
