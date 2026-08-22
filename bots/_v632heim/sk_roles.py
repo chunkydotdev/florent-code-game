@@ -2022,13 +2022,33 @@ class RolesMixin:
         occlusion -- at +1% scale each, where a barrier is deadweight at the
         same 3 Ti.
 
-        Spec, and each clause is a filter below:
-          (a) cardinal-adjacent to an ALREADY-PLANNED belt tile;
+        Filters, in the order they run below:
           (b) faces a core FOOTPRINT tile (`_seat_face`), i.e. it is a TERMINAL
               conveyor that delivers rather than a stub;
           (c) UNOCCUPIED;
           (d) apron member, buildable terrain, not banned, not escalated;
           (e) the spawn reserve (`SK_APRON_MESH_SPAWN_RESERVE`).
+
+        ⛔⛔ §4d's CLAUSE (a) -- "cardinal-adjacent to an already-planned belt
+        tile" -- IS DROPPED, ON A REGISTERED AMENDMENT (pre-tape, at the
+        expectation doc's tail), AND THE PROVENANCE IS THIS PLANK'S OWN BUILD
+        MEASUREMENT.  It was implemented as specified first and instrumented
+        with a per-seat reason histogram over 3 f1 cells
+        (`scratchpad/s58_p7/diag/*.log`, 2026-08-22):
+
+            helheim  r=3  2,7:inplan 3,7:TAKEN 4,8:notadj 4,9:notadj
+                          2,10:notadj 3,10:notadj 1,8:notadj 1,9:notadj
+
+        SIX OF EIGHT SEATS READ `notadj` IN EVERY RE-PLAN OF EVERY CELL, and
+        the total dose was ONE TILE ACROSS THREE CELLS.  The mechanism is
+        structural, not incidental: the trunk arrives at ONE core face, and
+        footprint tiles are never in `plan` (the BFS starts from them), so a
+        seat touching only the core can never satisfy (a).  Clause (a) serves
+        the BELT-CUT REDUNDANCY duty and structurally defeats the other two
+        §4d names -- PLANT-TILE DENIAL and FIRE OCCLUSION -- because both want
+        the faces the trunk does not use.  ⇒ It cannot reproduce the thing
+        Magnus actually observed: ten conveyors WALLING THE EXPOSED FACES.
+        The population is now the eight seats, gated by (b)-(e).
 
         ⛔ (b) IS ALSO THE POPULATION, AND IT IS A SMALLER SET THAN §4d SAYS.
         A conveyor outputs to ONE cardinal neighbour, so "faces a footprint
@@ -2045,12 +2065,11 @@ class RolesMixin:
         compete for the keeper's turn, which is the scarce resource in this
         tree (`main.py:16`), and PLANK 3's redesign is what that costs.
 
-        ⚠ THE ADJACENCY TEST READS `plan`, NEVER `mesh`.  Single pass, no
-        chaining: a mesh tile cannot seed another mesh tile.  On the seat ring
-        that is very nearly a fixed point anyway (the two seats of one core
-        face are cardinal-adjacent to each other, but seats on DIFFERENT faces
-        are diagonal), and it keeps the addition a strict function of the belt
-        the planner actually built.
+        ⚠ WITH (a) GONE, THE SPAWN RESERVE IS THE ONLY THING BETWEEN THE MESH
+        AND OUR OWN CORE'S SPAWN LOOP.  It was already mandatory; it is now
+        LOAD-BEARING, because the unfiltered population includes all four
+        anchor-adjacent seats.  Do not weaken it without re-reading
+        `sk_maps.py:4121`.
         """
         if not SK_APRON_MESH or self.core is None or not plan:
             return
@@ -2103,13 +2122,11 @@ class RolesMixin:
             face = self._seat_face(xy)        # (b)
             if face is None:
                 continue
-            adj = False                       # (a)
-            for dx, dy in ((0, -1), (1, 0), (0, 1), (-1, 0)):
-                if (x + dx, y + dy) in plan:
-                    adj = True
-                    break
-            if not adj:
-                continue
+            # ⛔ §4d's clause (a) STOOD HERE (cardinal-adjacent to an already-
+            # planned belt tile) and is dropped on the registered amendment --
+            # see the docstring for the histogram that refused it: 6 of 8 seats
+            # `notadj` in every re-plan, dose 1 tile in 3 cells, and the two
+            # duties it defeats are the two the wall is FOR.
             # (c) UNOCCUPIED, and an UNSEEN tile is not an occupied tile -- the
             # planner is deliberately optimistic everywhere else for the same
             # reason (`_belt_watch` is the refutation half).  Bounds first,

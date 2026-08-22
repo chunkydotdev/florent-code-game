@@ -4099,14 +4099,24 @@ SK_APRON_MESH = False     # ⭐⭐ MASTER FOR BOTH HALVES OF §4d, AND ONE FLAG 
                           # HALF 1 (routing, free): apron tiles become the
                           #   preferred parent at equal BFS depth -- a tie-break
                           #   inside a level set, so no chain gets longer.
-                          # HALF 2 (redundancy, ~7-8 Ti/tile): after
-                          #   `_plan_belt` completes, every UNOCCUPIED delivery
-                          #   seat that is cardinal-adjacent to an already
-                          #   planned belt tile is added to `belt_plan` as a
-                          #   TERMINAL conveyor facing the footprint.  The
-                          #   keeper then builds it through `_belt_action` like
-                          #   any other planned tile -- no new build verb, no
-                          #   new spend rung, no new priority.
+                          # HALF 2 (the wall, ~7-8 Ti/tile): after `_plan_belt`
+                          #   completes, every UNOCCUPIED delivery seat is added
+                          #   to `belt_plan` as a TERMINAL conveyor facing the
+                          #   footprint.  The keeper then builds it through
+                          #   `_belt_action` like any other planned tile -- no
+                          #   new build verb, no new spend rung, no new
+                          #   priority.
+                          # ⛔ §4d ALSO ASKED FOR "cardinal-adjacent to an
+                          #   already-planned belt tile" AND THAT CLAUSE IS
+                          #   DROPPED ON A REGISTERED PRE-TAPE AMENDMENT.  Built
+                          #   as specified first and measured: 6 of 8 seats
+                          #   refused in EVERY re-plan of every one of 3 f1
+                          #   cells, total dose ONE TILE.  The trunk reaches one
+                          #   core face, so the clause serves belt-cut
+                          #   redundancy and structurally defeats plant-tile
+                          #   denial and fire occlusion -- the two duties the
+                          #   wall exists for.  Provenance and the histogram:
+                          #   `sk_roles._apron_mesh`'s docstring.
 SK_APRON_MESH_MAX = 8     # ⛔ THE CAP -- AND THE GEOMETRY MAKES IT A FENCE
                           # RATHER THAN A BINDING CONSTANT, WHICH IS WORTH
                           # SAYING OUT LOUD.  §4d asks for tiles "facing a core
