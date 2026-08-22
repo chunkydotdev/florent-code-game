@@ -1,0 +1,20 @@
+# s56 wrap debts (builder) — wrap-scoped per the momentum rule (Magnus s47/s48)
+
+Game context: all items concern in-game Florent Code League tooling.
+
+1. **h4-era tree collision (side-lane warning, s56):** `bots/_v623h4` (s44-era)
+   coexists with `bots/_v623healweld`, and `_v624h4` awaits the next version
+   number. Any tooling resolving "v623"/"v624" by glob can grab the wrong era;
+   LINE_DIRS matches both. Decide rename vs quarantine for the h4 trees at wrap
+   (a rename commit names the old term once for grep continuity).
+2. **rdiff wrapper class:** my readout one-liner grepped "identical" and
+   mislabeled 60/60 identical cells DIVERGE (rdiff's pass phrase is "NO
+   behavioral divergence"). Consider a machine-readable exit code or `--quiet
+   PASS/DIVERGE` line on tools/rdiff.py so wrappers can't misparse the prose.
+3. **Fleet-health hook counts archiver wrapper+child as a duplicate** (pid
+   19887 loop + transient 30-min child) — two peers flagged it as a defect in
+   two sessions; teach the hook the loop/child pattern or it cries wolf every
+   30 minutes.
+4. **Inherited s55 debts stand:** `scratchpad/s55_wrap_debts.md` — incl. the
+   weld-pattern AST sweep (#5) and the twice-carried audit_trigger/results.tsv
+   decision-surface escalation (now three wrap cycles if not discharged here).
