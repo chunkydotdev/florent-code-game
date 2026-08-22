@@ -3377,7 +3377,27 @@ SK_CITADEL_ROLES = (SK_HOME_KEEPER, SK_ORE_DENIER, SK_CAGE_WALKER)
                           # r300 siege phase opens, and it is the body whose
                           # absence from the eco/defence pool the
                           # CITADEL_ECON_RIDER is denominated in.
-SK_IDLE_ACT_ALL = False   # ⛔ R6 (study §7) -- TERMINAL-IDLE IS THIS PLANK'S OWN
+SK_IDLE_ACT_ALL = False
+
+# --- v632 PLANK 4 -- THE KEEPER LEASH (#128a), THREAT-CONDITIONAL ----------
+SK_KEEPER_LEASH = False      # ⭐ the registered remedy for the thrice-measured
+                             # F1 signature (v630.0/v630.1/p1: any home-duty
+                             # divergence collapses keeper core-footprint heals
+                             # and our core dies more; confirmed puller = the
+                             # economy walk's is_home_half-only fence,
+                             # sk_roles _home_keeper_move).  ON: while the
+                             # core's own threat latch is fresh (_under_attack,
+                             # slot 1), economy walk targets beyond SK_LEASH_DSQ
+                             # of our core are refused; in peace the walk is
+                             # unchanged (a hard fence would starve the belt
+                             # build-out -- design study R2).  OFF = exact
+                             # identity: the _leashed conjunction is False at
+                             # both loop sites.
+SK_LEASH_DSQ = 50            # the "far" bar the E6 attribution measured: a
+                             # healthy keeper reads median d^2 6.5 from the
+                             # core and 7.3% of rounds beyond 50; the drifted
+                             # one 20.5 and 16.6%.  50 keeps every apron/seat/
+                             # near-trunk duty and refuses the midline range.   # ⛔ R6 (study §7) -- TERMINAL-IDLE IS THIS PLANK'S OWN
                           # FAILURE MODE WEARING A DOCTRINE'S UNIFORM.  Under
                           # the engine fact above the citadel's default action
                           # against a BODY *is standing still*, and Magnus's own

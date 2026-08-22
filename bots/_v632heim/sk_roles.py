@@ -141,7 +141,7 @@ from sk_maps import (
     SK_RENT_STEP_BUDGET,
     # --- v632 HEIMDALL PLANK 1 (THE CITADEL DISPATCH) ----------------------
     SK_FORTRESS, SK_CITADEL, SK_CITADEL_CHEB, SK_CITADEL_BODIES,
-    SK_CITADEL_GIVEUP, SK_CITADEL_JOIN_DSQ, SK_CITADEL_ROLES,
+    SK_CITADEL_GIVEUP, SK_CITADEL_JOIN_DSQ, SK_CITADEL_ROLES, SK_KEEPER_LEASH, SK_LEASH_DSQ,
     SK_IDLE_ACT_ALL,
 )
 
@@ -3995,12 +3995,28 @@ class RolesMixin:
                     continue
                 self.step_to(ct, q)
                 return
+        # ⭐ v632 PLANK 4 -- THE KEEPER LEASH (#128a), THREAT-CONDITIONAL.
+        # Three independent arms (v630.0, v630.1, p1) measured the same F1
+        # signature: any home-duty divergence collapses the keeper's core-
+        # footprint heals (398->80, ->84, ->266 raw) and our core dies more.
+        # The confirmed puller is this economy walk: fenced by is_home_half
+        # ONLY (a Voronoi half-plane), no d^2 term, so the keeper legally
+        # ranges to the midline while the core is being shot. The leash binds
+        # ONLY while the core's own threat latch is fresh (_under_attack --
+        # slot 1, the CORE's writer): under threat, economy targets beyond
+        # SK_LEASH_DSQ of our core are refused, keeping the body inside heal
+        # range of what is being shot; in peace the walk is v628's exactly
+        # (a hard fence would starve the belt build-out -- R2's trap).
+        _leashed = (SK_KEEPER_LEASH and self.core is not None
+                    and self._under_attack(ct, rnd))
         for (x, y) in self.belt_plan:
             if (x, y) in self.belt_escalated or (x, y) in self.belt_built:
                 continue
             if x == p.x and y == p.y:
                 continue
             q = Position(x, y)
+            if _leashed and dsq_core(q, self.core) > SK_LEASH_DSQ:
+                continue
             d = p.distance_squared(q)
             if best is None or d < best:
                 best = d
@@ -4020,6 +4036,9 @@ class RolesMixin:
             # is the only thing in the tree that walks a keeper toward ore.
             for ore in self.ore_list():
                 if (ore.x, ore.y) in self.harv_tiles or not self.is_home_half(ore):
+                    continue
+                # v632 PLANK 4: same threat-conditional leash as the belt loop.
+                if _leashed and dsq_core(ore, self.core) > SK_LEASH_DSQ:
                     continue
                 if self.belt_plan.get((ore.x, ore.y)) is not None:
                     continue
