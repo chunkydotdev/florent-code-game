@@ -99,3 +99,52 @@ corroborates E1.*
    preservation.
 3. The powered read happens only when a screen delivers dose without the E6
    regression.
+
+---
+
+# ADDENDUM — v630.1 SCREEN VERDICT (same day, post-attribution iteration)
+
+**Registered expectation: `EXPECTATION-v630-1-tubeguard-screens-2026-08-22.md`
+(committed pre-tape). Readout agent's full numbers banked in the coordination
+tail note and `scratchpad/s57_v630/e46_v6301.py`; refresh seat-mapping control
+120/120 with wrong-seat mutation flipping all 120.**
+
+## Verdict per registered line (typed by the builder)
+
+| line | bar | measured | verdict |
+|---|---|---|---|
+| E1 identity | 30/30 ×2 | **60/60** (after discarding my own defective first count — the sed-built checker compared the v630.0 tapes; the "sed that matches nothing" class, self-caught, recounted with explicit paths) | **PASS** |
+| E2 liveness | ≥8/30 | 29/30 F1, 28/30 F2 | **PASS** |
+| E2b opening invariance | no divergence < r8 | earliest **r10** both fixtures (v630.0: r4) | **PASS — the macro-path seed is gone** |
+| E4a′ front share | ≥0.40 AND ≥+0.10 each fixture | F1 **0.467 / +0.169** PASS · F2 **0.359 / +0.114** — contrast clears, **absolute half FAILS** (0.359 < 0.40) | **SPLIT** — mechanism present on both (control 0.298/0.245) but the F2 share fell from v630.0's 0.506; the terminal-only gate weakened steering asymmetrically |
+| E4b′ heal dose | ≥3 per fixture | **F1 12, F2 30** (control 0/0; 23 events on the tube tile itself — first time in any arm) | **PASS** numerically, with the concentration caveat on the record: F1's 12 sit in 2 games, 11 from one body r390–400; a games-reached bar would read differently |
+| E5 survival direction | non-decreasing, F2, fixed-horizon + cell-matched | h=50 **+0.028**, h=100 **+0.062**; M7d removal rate **0.466→0.333**; cell-matched median +0.0 | **PASS — the screen genuinely protects tubes on the contact-shaped opponent** |
+| E6 by-r300 | within −2 on F1 | **−7** (12→5); F2 reads **+3** (4→7) | **FAIL** |
+| E6 our-core-death | within +2 on F1 | **+6** (16→22); F2 +0 | **FAIL** |
+
+## What this settles
+
+1. **The opening-corridor explanation of the E6 loss is DEAD.** v630.1 removed
+   the macro divergence (E2b passes) and the SAME seven F1 cells flip anyway,
+   our-core deaths +6, the F1 team-heal/keeper collapse persists (497→174,
+   core-footprint 398→84). The cascade does not need the opening; the guard's
+   later behaviour (or irreducible per-cell divergence on a deterministic
+   fixture) reshapes F1 games the same way.
+2. **The plank's mechanisms now demonstrably work** — front steering (E4a′),
+   real heal dose incl. tube-tile heals (E4b′), and tube survival up with
+   removal rate down a full 13pp on F2 (E5) — **and the composite still loses
+   the F1 race.** Mechanism ≠ currency, measured twice in one day.
+3. **Strong opponent-conditionality:** F2 (Mjolnir fixture) IMPROVES by-r300
+   (+3) with core-deaths flat, while F1 (v542wave fixture) pays −7/+6. A
+   fixture claim only — but consistent with the line's plateau story.
+
+## Disposition (pre-committed by the expectation's own falsifier)
+
+**v630.1 NOT ADVANCED. The E6 falsifier fires its registered path: the
+composite is refused and the plank DECOMPOSES (bias-only arm vs heal-only arm)
+before any further composite iteration.** That decomposition is tube-guard
+front work and therefore **HOLDS behind the CITADEL focus** (PROGRAMME.md,
+Magnus s57). Banked here so the successor picks it up with the design already
+cut: two sub-flags under SK_TUBE_GUARD, one screen each, same fixtures, same
+registered-bar classes (front-share for the bias arm, dose+core-death guard
+for the heal arm).
