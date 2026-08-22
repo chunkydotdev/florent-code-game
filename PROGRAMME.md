@@ -36,7 +36,20 @@ successor session inherit it. The fields below are parsed; the prose is not.
     NEXT_LINE_DOCTRINE: beancounters_replication_then_amplify
     NEXT_LINE_BENCHMARK: bots/_v542wave
     NEXT_LINE_SCREEN_LADDER: benchmark_then_current_holder_then_sleipnir_v2_magnus_2026-08-21
+    NEXT_LINE_EXPERIMENTS: open_magnus_2026-08-22_r1000_still_defeat_no_rush
     RUSH_LINE_STATUS: sunset_2026-08-21_magnus_directive_v177_holds_slot_until_displaced
+
+## NEXT_LINE_EXPERIMENTS OPENED 2026-08-22 (Magnus, s54, in-session — verbatim: "You're free to experiment as much as you want, but a win at r1000 is still a loss and we dont want to build a rush bot")
+
+**The ruling, in context:** given after the launcher dose table (v611: parity axis moves
+hard, currency does not follow at that design) and the two-fixture evidence chain. The
+experimentation gate is OPEN — including phase-2 verbs like the home launcher — with the
+two standing constraints RE-AFFIRMED in the same sentence: **`R1000_IS_DEFEAT` stands**
+(a stall converted is not a win bought; kills remain the currency of every verdict) and
+**no rush doctrine** (the no-rush course confirmed 2026-08-21 remains the line's shape —
+experiments extend the strangle-then-kill machine, never revive the raider opening).
+Adoption discipline unchanged: experiments ship into defaults only on the measured
+currency (F1 by-r300 gate + F2 transfer), same as every wave so far.
 
 ## NEXT_LINE_SCREEN_LADDER ADDED 2026-08-21 (Magnus, s54, in-session — verbatim: "If we finally find something that beats our benchmark bot we will also need to run it against the current slot and sleipnir v2, but that's only if we actually beat the benchmark bot we put up.")
 
