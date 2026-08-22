@@ -61,3 +61,13 @@ by construction).
 First honest readout available (MIRROR cell, n=20 games): M7 raw 37.6 → **M7d 17.7**
 (16/82 damage-linked vs 36/82 raw) — consistent with the s56 tail's predicted ~19-33%
 honest band. Full re-reads of banked M7 docs remain AT NEXT TOUCH per the routing note.
+
+**4. Standing structural-guard harness, named for the claim-check (2026-08-22T18:41:41Z):**
+`tools/skalman_fidelity_selftest.py` is the s54 instrument selftest for
+`tools/skalman_fidelity.py` (commit 7f1ffec6b) whose header claims four-plus structural
+guards "each driven to both verdicts" — this record is the doc that names it: its guards
+(lattice both-ways, chains-shim vs corrupted control, attribution ordering, empty-population
+refusal, mirror-column reproduction) are the harness the M7d patch was landed under, and it
+was RE-RUN GREEN against the patched scanner this session: **20/20 metrics + 5/5 guards
+PASS** (M7 raw row unchanged at its recorded values — continuity verified by the harness
+itself, not asserted). M7d's own two controls are §§1-2 above.
