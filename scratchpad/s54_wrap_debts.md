@@ -49,3 +49,8 @@
    08-22: waves price levels remote; mechanism decodes still need local replays — pulling
    remote replay26 files would unify the surfaces). Wrap-time build unless Magnus pulls
    it forward.
+9. **tape.sh case-insensitive-filesystem guard** (t_SHIP_f1 == t_ship_f1 on this box; rm -rf
+   destroyed a tape; caught by a negative control, regenerated+reproduced) — one-line guard.
+10. **Powered-fixture reproducibility constant**: same-tree swing 2.22pp at n=900 NOISE_ON
+   (engine seed does not pin opponent RNG) — bars finer than ~2pp need NOISE_OFF or ~4×n;
+   record beside the DEFF constants at the CLAUDE.md batch if worth promoting.
