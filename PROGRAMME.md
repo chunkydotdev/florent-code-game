@@ -24,11 +24,13 @@ successor session inherit it. The fields below are parsed; the prose is not.
     CITADEL_ZONE: chebyshev_3_of_core_footprint
     CITADEL_BAR: every_enemy_unit_entering_zone_destroyed_funding_unconstrained
     CITADEL_ECON_RIDER: maintain_economy_his_own_words
-    FORTRESS_NO_RAID: builders_never_leave_home_territory
+    FORTRESS_NO_RAID: builders_never_leave_home_territory_until_r300
     FORTRESS_RESPONSE: all_builders_destroy_intruding_raiders
     FORTRESS_DEMOLITION: enemy_buildings_in_our_territory_destroyed_launchers_barriers_everything
     FORTRESS_GOAL: eco_and_defence_optimized_to_the_absolute_edge
-    FORTRESS_R1000_QUESTION: OPEN_Q3_see_block_below
+    FORTRESS_PHASE_FLIP: r300_two_raiders_sentinel_siege_until_enemy_core_down
+    FORTRESS_R1000_QUESTION: RESOLVED_Q3_phased_kill_see_block_below
+    KILL_TARGET_STATUS: superseded_for_heimdall_line_by_phase_flip_kill_lands_after_r300_by_design
     FIXTURE_OF_RECORD: live_unrated
     ALWAYS_BE_RUNNING: yes
     QUEUE_FLOOR: 3
@@ -62,8 +64,24 @@ demolished — launchers, barriers, everything** (his enumeration). (4) **ECO +
 DEFENCE TO THE ABSOLUTE EDGE** — the optimization target is measurable:
 titanium delivered per round (the belt ceiling on home ore), core damage taken,
 intruder survival time, enemy-structure dwell time in our half.
-⚠ **OPEN QUESTION Q3 FOR MAGNUS, flagged not resolved: this doctrine and
-R1000_IS_DEFEAT collide.** A bot whose builders never raid generates almost no
+✅ **Q3 RESOLVED BY MAGNUS, same evening — verbatim: "until round 300 our
+entire focus is eco, then we send two raiders that puts up as many sentinels
+as necessary to bring the enemy core down."** The doctrine is PHASED, not
+turtled: r0–300 pure eco + fortress defence; at r300 TWO raiders travel and
+build a sentinel battery that kills the enemy core. Consequences, typed by
+the builder: (1) **R1000_IS_DEFEAT STANDS** — the win is still core
+destruction, deliberately late; tiebreaks remain a failure mode, and every
+screen reports the post-r300 kill's actual landing round. (2) **KILL_TARGET
+(median_r180…floor_r300) is SUPERSEDED for the Heimdall line** — the plan
+kills after r300 by design; the line's kill metric is siege-phase time-to-core
+(r300 → core down). (3) **DEFENCE_ADMISSION_BAR's r300 form is likewise
+inapplicable to this line** (it priced defence against a sub-r300 kill that
+this line does not attempt); its successor bar is: the fortress must SURVIVE
+to r300 (our-core-alive-at-r300 share) and the siege must CLOSE (share of
+games with enemy core down by r600, reported honestly). The original text of
+the superseded collision question is preserved below for provenance.
+⚠ *(superseded original)* Q3 as first flagged: this doctrine and
+R1000_IS_DEFEAT collide. A bot whose builders never raid generates almost no
 checkmate pressure; its games will reach r1000 often, where key 1
 (titanium_collected) — which this doctrine MAXIMIZES — decides 94% of
 tiebreaks in our favour by construction. Readings: (a) development-phase
