@@ -56,8 +56,10 @@ The scan window is 16×16 = 256 tiles around the enemy core; per-round clause ki
 ## The levers this names (and one it kills)
 
 1. **THE GAP-RELAX IS DEAD CODE IN THE SHIPPED CONFIGURATION.** The v613 retry
-   (sk_roles.py:5722) requires `SK_TUBE_FLOOR and SK_TUBE_GAP_RELAX and taken`;
-   the shipped head has `SK_TUBE_FLOOR = False` (sk_maps.py:2050), so the relax can
+   (bots/_v620skalman/sk_roles.py:5948 — CORRECTED from 5722, a v619-tree offset;
+   side-lane flag 2026-08-22 10:05Z) requires `SK_TUBE_FLOOR and SK_TUBE_GAP_RELAX
+   and taken`; the shipped head has `SK_TUBE_FLOOR = False` since the v614 road
+   closure (sk_maps.py:2050; CORRECTED from "since v619", same flag), so the relax can
    never arm — while on paths_seatA it had up to 8 gap-blocked candidates recoverable
    EVERY round for 265 rounds. Un-welding the relax from the floor flag is a one-line
    plank with a guaranteed exact-identity-off ablation. (v622 candidate 1.)
