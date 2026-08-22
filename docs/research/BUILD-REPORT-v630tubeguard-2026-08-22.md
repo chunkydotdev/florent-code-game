@@ -58,6 +58,18 @@ design fact is validated in-engine at screen scale.
    NOTHING where v628 wandered-but-acted. Suspected main contributor to
    E6's −6 alongside anomaly (2) below — attribution diagnostic
    commissioned before v630.1 is designed.
+   **⛔ RIDER, added after the diagnostic ran (D14 closure): this hypothesis
+   is REFUTED.** The E6 attribution (coordination tail 2026-08-22T19:11:10Z;
+   scripts `scratchpad/s57_v630/e46_attrib*.py`) measured idle share
+   FALLING under the guard (0.267→0.259 all bots, 0.445→0.421 engineer
+   bodies; longest still-run 664→381) and offensive tempo unchanged
+   (median rounds-to-500 enemy-core damage 121.0 in both arms). The real
+   E6 mechanism is the HOME KEEPER relocating forward and ceasing core
+   heals (core-footprint heals 398→80, the entire drop after r100; our
+   core died in 21 ON cells vs 16 CTRL). The stand states remain in the
+   code and remain a design smell, but they are not what cost the
+   checkmates. Error direction logged at retro Q2: the refuted hypothesis
+   was the one that flattered my own design instinct.
 3. **Anomalies from the readout needing attribution:** ON builds **~25%
    fewer barriers overall** (F1 347→260, F2 320→246) while re-siting them
    frontward; F1 ON total team heals collapse 497→155; F2 ON adds 2 r1000
