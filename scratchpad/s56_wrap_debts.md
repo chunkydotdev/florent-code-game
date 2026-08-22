@@ -42,3 +42,9 @@ Game context: all items concern in-game Florent Code League tooling.
    (d) two-opponent minimum in powered registrations for this line
    (Mjolnir-class + benchmark-class) — opponent-conditionality measured, not
    discovered post-hoc (s56 benchmark readout).
+8. **From the v629 brief (s56):** (a) rotation ships UNCAPPED — SK_HOME_GUN_ROT_CAP
+   gated on two False masters (sk_roles:7180), sixth weld-class instance;
+   (b) a zero-ammo turret cannot re-aim (ammo guard returns before _rotate_toward,
+   sk_roles:6906); (c) adoption commits byte-diff the committed tree against the
+   MEASURED ARM before the hash lands in HANDOVER (the wrong-head incident);
+   (d) plank spend reported as fraction-of-converts, never absolute Ti.
