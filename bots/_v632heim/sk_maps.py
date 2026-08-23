@@ -7938,3 +7938,133 @@ SK_VH_CARD_FACE = True    # ⛔ THE OPERATIONAL DEFINITION OF "CARDINALLY
                           # ALREADY computed: pure Python, zero engine calls,
                           # and no second definition that could drift from
                           # `_firing_face`.
+
+
+# ==========================================================================
+# s57 THE SENTRY (SK_SENTRY) -- the field-general defence arm.
+# Registered in docs/research/EXPECTATION-v632heim-sentry1-2026-08-23.md.
+#
+# GAME CONTEXT: in-game mechanics of the Florent Code League, a sandboxed
+# bot-vs-bot programming competition.  "turret", "plant", "peck", "heal-lock",
+# "fence" are the engine's documented verbs and states between competing game
+# bots on a simulated grid.  Nothing here reaches a real system.
+#
+# THE BANKED DEFECT (MJAUT-double-autopsy-2026-08-23, half A, t_bg_f2 20 losses):
+# every answer verb in this tree gates on the COREFIRE latch -- our core's own
+# HP DELTA.  The killer's build-to-first-shot median is 28 ROUNDS, so the latch
+# is 43r late (autopsy) and 17/19 killers took ZERO pecks in that window while
+# 10/19 had a body and 40 Ti in reach.  SK_DEMOLISH's d^2 39 fence ALREADY
+# covers 19/19 of them: the FENCE is right, the TRIGGER is late.
+# ==========================================================================
+
+SK_SENTRY = False         # ⛔ THE MASTER, DEFAULT OFF.  Off is exact identity:
+                          # every added branch is a call-site conjunction whose
+                          # FIRST term is this module constant, so an OFF arm
+                          # makes zero extra engine calls, publishes no extra
+                          # bit, and the replay is byte-identical (MEASURED by
+                          # the identity gate, not claimed).
+
+SK_SENTRY_ALARM = True    # PIECE 1, ablatable alone under the master.  THE
+                          # PRESENCE TRIGGER: an enemy GUNNER/SENTINEL BUILDING
+                          # standing inside SK_SENTRY_DSQ of our core footprint
+                          # arms the SAME answer freshness the corefire latch
+                          # arms today.  ⛔ NOT A NEW SEMANTIC AND NOT A NEW
+                          # SLOT: it is a parallel round-stamp published into
+                          # slot 15's EXISTING hit field, flagged with
+                          # CF_SENTRY_BIT so every consumer can tell presence
+                          # from damage and so the trace can attribute it.
+
+SK_SENTRY_FOCUS = True    # PIECE 2, ablatable alone under the master.  THE
+                          # COMMITMENT: once the demolition sweep has landed its
+                          # first peck on an enemy TURRET inside the fence, it
+                          # holds that target instead of re-picking by class and
+                          # distance every round.  Banked: we buy 85% of our
+                          # checkmates with 17.0 pecks SPREAD over 24 targets,
+                          # and only 13 of 24 pecked targets ever completed.
+
+SK_SENTRY_DSQ = 39        # THE PRESENCE FENCE, d^2 to our own 2x2 FOOTPRINT
+                          # (`dsq_core`), DELIBERATELY THE SAME INTEGER AS
+                          # SK_DEMOLISH_DSQ.  It is not a new fence: the autopsy
+                          # measured this exact fence covering 19/19 killers, so
+                          # the alarm arms over precisely the set the answer
+                          # verbs can already reach.  ⚠ DISCLOSED CEILING: the
+                          # scan runs on the CORE, whose vision is r^2 = 36 from
+                          # its ANCHOR, so a tile at d^2 39 from the far
+                          # footprint corner can sit outside vision and be
+                          # missed.  The killers are at d^2 2-13 (19/19) and
+                          # 71.7% of the field's are at d^2 <= 13, so the miss
+                          # band is the empty tail, not the population.
+
+SK_SENTRY_ARM_MAX = 80    # ⛔⛔ THE IN-WINDOW SCOPE, AND IT IS THE SC LESSON
+                          # WRITTEN AS AN INTEGER.  Rounds a SINGLE (tile,
+                          # occupant id) episode may keep the alarm armed.  A
+                          # presence latch with no clock is an alarm that never
+                          # stops ringing: one enemy gunner parked in the fence
+                          # would hold `corefire_fresh` TRUE for the rest of the
+                          # match and turn the answer ladder into all-game
+                          # pecking -- which is exactly the failure the guards
+                          # exist to catch.  80 rounds is ~3x the banked 28r
+                          # free window, so the window the plank exists to buy
+                          # is inside it with room, and a parked gun (the
+                          # field's class D, a 221.5-round lease) is NOT.
+                          # ⛔ THE EPISODE IS KEYED ON THE OCCUPANT TOO, so a
+                          # RE-PLANT on the same tile is a NEW episode -- the
+                          # `demo_pecks` keying, for the same reason.
+
+SK_SENTRY_HP_LIFT = True  # ⛔ THE ONE GATE THE PRESENCE TRIGGER MUST LIFT, and
+                          # it is disclosed as a real consumer change rather
+                          # than folded into the latch.  v609 GATE B refuses the
+                          # counter-peck while our published core HP is above
+                          # SK_COUNTER_HP_MAX (450) -- i.e. until we have taken
+                          # ~50 damage.  A PRESENCE alarm fires at 500/500 by
+                          # construction (the autopsy: their core at 500/500 in
+                          # 12/20, median net damage in losses = 0), so with
+                          # GATE B live the earlier trigger is swallowed and
+                          # this plank measures nothing.  The lift applies ONLY
+                          # on rounds whose freshness carries CF_SENTRY_BIT.
+
+SK_SENTRY_FOCUS_MAX = 20  # PECKS the sweep will spend on one engaged turret
+                          # before releasing the commitment.  40 HP / 2 dmg = 20
+                          # is the engine's own price for a sentinel and is
+                          # already SK_DEMOLISH_CAP's number; naming it again
+                          # here keeps the commitment's bound ablatable without
+                          # moving the sweep's episode budget.
+
+SK_SENTRY_HEAL_K = 6      # THE HEAL-LOCK WINDOW, in OUR pecks on the engaged
+                          # target.  Banked: Mjolnir heals ~1:1 on the 14.3% it
+                          # defends (4 HP for 1 Ti against our 2 dmg for 2 Ti --
+                          # 4:1 their favour), so feeding a defended target is
+                          # the worst trade on the board.  Over K pecks we deal
+                          # 2K damage; if the target's HP fell by LESS THAN HALF
+                          # of that, the target is heal-locked.
+                          # ⚠ DISCLOSED CONSERVATIVE DIRECTION: the ledger is
+                          # per-body and reads HP BEFORE each of THIS body's
+                          # pecks, so damage another of our bodies deals inside
+                          # the window inflates the observed fall and makes the
+                          # lock HARDER to declare.  The error direction is
+                          # fewer abandonments, never more.
+
+SK_SENTRY_FOCUS_RNDS = 60 # ⛔ THE COMMITMENT'S SECOND BOUND, IN ROUNDS, AND IT
+                          # IS HERE BECAUSE THE PECK BOUND ALONE CANNOT CLOSE.
+                          # SK_SENTRY_FOCUS_MAX counts PECKS, so a body that is
+                          # committed but never lands one -- walking at a target
+                          # behind a wall, or blocked -- would hold the
+                          # commitment forever and never advance the counter
+                          # that releases it.  This clock runs on rounds since
+                          # engagement and closes that hole.  Same integer and
+                          # the same reasoning family as the ban below.
+
+SK_SENTRY_BAN_RNDS = 60   # ⛔ THE BAN IS BOUNDED, and that is the #132 rule.
+                          # A heal-locked target is banned from the sweep for
+                          # this many rounds -- not for the game.  Their medic
+                          # can walk away, run out of titanium, or die; a
+                          # permanent ban would concede the tile on evidence
+                          # that expires.  Same clock family as
+                          # SK_STAND_SEATS_BAN (40).
+
+# ⛔ THE WIRE BIT (CF_SENTRY_BIT, slot 15 b30) IS **NOT** DECLARED HERE.  Every
+# other CF_* field of the corefire word lives beside its own layout comment in
+# `sk_roles.py` (the "v608: slot 15, THE COREFIRE WORD" block) and is imported
+# from there by `sk_core`; a second CF_ home in this file is exactly how two
+# definitions of one wire format drift apart.  The bit is declared with its
+# siblings.

@@ -811,7 +811,37 @@ class Player(CommonMixin, RolesMixin, CoreMixin):
                                       # what makes the new path visible in a
                                       # readout separately from `demolishes`)
         self.demo_pick = None         # ((x,y), bid) of the current pick
+        self.demo_pick_armed = False  # s57: is that pick a GUNNER/SENTINEL/
+                                      # LAUNCHER?  A SEPARATE attribute rather
+                                      # than a third element of `demo_pick`, so
+                                      # the tuple's shape -- which scratch
+                                      # mutation scripts anchor on -- does not
+                                      # move.
         self.demo_seats = None        # frozenset of our 8 delivery seats (memo)
+        # --- s57 THE SENTRY, PIECE 2 (SK_SENTRY_FOCUS): the COMMITMENT -------
+        # Per BODY, not published: commitment is a property of which body is
+        # standing beside which structure, and 11 comms bits are not free.
+        # Same unconditional-attribute rule as the block above.
+        self.focus_tgt = None         # ((x,y), occupant id) this body is
+                                      # COMMITTED to, or None
+        self.focus_since = -1         # round the commitment was opened (the
+                                      # SK_SENTRY_FOCUS_RNDS bound)
+        self.focus_hp = []            # HP samples read BEFORE each of THIS
+                                      # body's pecks on `focus_tgt` -- the
+                                      # heal-lock ledger
+        self.focus_ban = {}           # (x,y) -> (occupant id, round banned):
+                                      # the BOUNDED ban (SK_SENTRY_BAN_RNDS)
+        self.focus_engagements = 0    # instrument: targets committed to
+        self.focus_holds = 0          # instrument: rounds the commitment
+                                      # OVERRODE the sweep's own class pick
+        self.focus_locks = 0          # instrument: heal-lock give-ups fired
+        self.focus_stales = 0         # instrument: commitments released on the
+                                      # SK_SENTRY_FOCUS_RNDS round bound
+        self.focus_norole = 0         # instrument: commitments released because
+                                      # this body cannot WALK and the target was
+                                      # not adjacent (the keeper's tail)
+        self.focus_full = 0           # instrument: commitments released on the
+                                      # SK_SENTRY_FOCUS_MAX peck bound
         self._seat_rnd = -1           # `_seat_targets` per-round memo
         self._seat_list = []
         # ⭐ s57 THE STAND, arm 3 (SK_SEAT_CLEAR_ADJ).  The SAME per-round memo,
@@ -1211,6 +1241,24 @@ class Player(CommonMixin, RolesMixin, CoreMixin):
         # it, so it is counted per body rather than published (11 bits are not
         # free and the keeper dies in 2 of 30 games).
         self.corefire_streak = 0
+        # --- s57 THE SENTRY, PIECE 1 (SK_SENTRY_ALARM): the PRESENCE latch ---
+        # ⛔ UNCONDITIONAL, like every other attribute in this constructor: a
+        # flag-gated attribute is how a masters-ON tape dies on AttributeError
+        # in a branch nobody exercised OFF, and an escaping exception destroys
+        # the unit permanently for the rest of the match.
+        # CORE side only (the core is the writer, as with `core_hp_prev`).
+        self.sentry_last = -1         # round an enemy turret was last SEEN
+                                      # standing inside SK_SENTRY_DSQ of our
+                                      # footprint, or -1 -- and -1 is written
+                                      # BACK the round it dies or its episode
+                                      # runs out (`_sentry_commit`, the #132
+                                      # expiry rule)
+        self.sentry_pos = None        # (Position, is_sentinel) of that turret
+        self.sentry_seen = {}         # (x,y) -> (occupant id, first round seen)
+                                      # -- the SK_SENTRY_ARM_MAX episode clock,
+                                      # keyed on the occupant too so a re-plant
+                                      # re-arms (`demo_pecks`' keying)
+        self.sentry_arms = 0          # instrument: rounds the alarm armed
         self.core_heals = 0           # instrument: PLANK 1 heals landed
         self.counter_pecks = 0        # instrument: PLANK 2 pecks at the shooter
         self.counter_sents = 0        # PLANK 3 purchases (capped)

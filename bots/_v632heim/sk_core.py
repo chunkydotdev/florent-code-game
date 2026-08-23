@@ -24,6 +24,8 @@ from sk_maps import (
     SK_SPAWN_EXIT,
     SK_COREFIRE, SK_SLOT_COREFIRE, SK_DANGER_GUNNER_REACH,
     SK_DANGER_SENT_REACH,
+    # --- s57 THE SENTRY, PIECE 1 (SK_SENTRY_ALARM) ------------------------
+    SK_SENTRY, SK_SENTRY_ALARM, SK_SENTRY_DSQ, SK_SENTRY_ARM_MAX,
     # --- v632 HEIMDALL PLANK 3 (THE TURRET RING) --------------------------
     SK_FORT_RING, SK_FORT_AMMO_BY, SK_FORT_AMMO_FLOOR,
     # --- v632 HEIMDALL -- THE FUNDING PRIORITY (SK_ROTATE_FUND) -----------
@@ -40,7 +42,7 @@ from sk_maps import (
 from sk_roles import (
     DRIP_GUN_MASK, DRIP_SENT_FIELD, SEAT_MASK,
     CF_HIT_MASK, CF_TILE_FIELD, CF_TILE_MASK, CF_HP_FIELD, CF_HP_MASK,
-    CF_HP_UNIT, CF_SENT_BIT, CF_RAY_BIT,
+    CF_HP_UNIT, CF_SENT_BIT, CF_RAY_BIT, CF_SENTRY_BIT,
 )
 
 
@@ -199,12 +201,43 @@ class CoreMixin:
         word = 0
         if self.corefire_last >= 0:
             word |= (self.corefire_last + 1) & CF_HIT_MASK
+        # ⭐⭐ s57 THE SENTRY, PIECE 1 -- THE PRESENCE BIT, AND IT IS A BIT AND
+        # NOT A SECOND ROUND-STAMP ON PURPOSE.
+        # ⛔⛔ THE FIRST DRAFT OF THIS BLOCK PUBLISHED `max(damage, presence)`
+        # INTO THE b0-10 HIT FIELD AND WAS WRONG, and it is written down here
+        # because the error is invisible from the call sites: b0-10 is what
+        # `corefire_fresh` reads, `corefire_fresh` has FIFTEEN consumers, and
+        # only some of them dispatch an ANSWER.  A presence stamp in that field
+        # silently hands the earlier trigger to the medic, the heal-stand, the
+        # push-quiet gate and the recall as well -- planks whose bars were
+        # measured against the DAMAGE latch.  So the presence latch gets its own
+        # bit, `answer_fresh` is the only reader that ORs it in, and the swap
+        # list in the build report is exactly the set of consumers affected.
+        # ⛔ THE BIT IS THE LATCH: the core republishes it EVERY round, so it is
+        # never more than one round stale and it goes to 0 the round the threat
+        # dies or its episode runs out (`_sentry_commit`, the #132 expiry).  No
+        # TTL is needed and none is applied.
+        if SK_SENTRY and SK_SENTRY_ALARM and self.sentry_last == rnd:
+            word |= CF_SENTRY_BIT
         if shooter is not None:
             word |= (pack_tile(shooter[0]) & CF_TILE_MASK) << CF_TILE_FIELD
             if shooter[1]:
                 word |= CF_SENT_BIT
             if shooter[2]:
                 word |= CF_RAY_BIT
+        elif (SK_SENTRY and SK_SENTRY_ALARM
+                and (word & CF_SENTRY_BIT) and self.sentry_pos is not None):
+            # ⛔ THE TILE IS A FALLBACK, NEVER AN OVERRIDE.  `_corefire_shooter`
+            # already publishes a ray-confirmed or reach-covering turret and its
+            # three rungs are strictly better evidence than "it is standing in
+            # the fence"; this line fills the tile ONLY where those rungs found
+            # nothing -- the case that otherwise leaves `_counter_target` with
+            # no target at all and the answer with nothing to march at.  No
+            # CF_RAY_BIT: this tile was not ray-confirmed and must not pass
+            # SK_COUNTER_RAY_ONLY's filter.
+            word |= (pack_tile(self.sentry_pos[0]) & CF_TILE_MASK) << CF_TILE_FIELD
+            if self.sentry_pos[1]:
+                word |= CF_SENT_BIT
         h = hp // CF_HP_UNIT
         if h < 0:
             h = 0
@@ -226,6 +259,8 @@ class CoreMixin:
         """
         foot = core_tiles_xy(self.core if self.core is not None else p)
         best = None                       # (rank, dsq, Position, is_sent)
+        sentry = None                     # (dsq, x, y, Position, is_sent, eid)
+        anchor = self.core if self.core is not None else p
         try:
             ids = ct.get_nearby_entities()
         except Exception:
@@ -244,6 +279,19 @@ class CoreMixin:
             except Exception:
                 continue
             sent = et != EntityType.GUNNER
+            # ⭐ s57 THE SENTRY, PIECE 1 -- THE PRESENCE READ, AND IT IS FREE.
+            # team, type and position for exactly this entity class have ALL
+            # been read by the three statements above; the whole read is one
+            # `dsq_core` on integers already in hand.  ⛔ TURRET_TYPES is
+            # (GUNNER, SENTINEL) -- a LAUNCHER is not an alarm here, because the
+            # verb this arms is the counter-peck and the autopsy's killer class
+            # is 19/19 sentinel.
+            if SK_SENTRY and SK_SENTRY_ALARM:
+                sd = dsq_core(ep, anchor)
+                if sd <= SK_SENTRY_DSQ:
+                    cand = (sd, ep.x, ep.y)
+                    if sentry is None or cand < sentry[0]:
+                        sentry = (cand, ep, sent, eid)
             reach = SK_DANGER_SENT_REACH if sent else SK_DANGER_GUNNER_REACH
             f = None
             try:
@@ -271,6 +319,8 @@ class CoreMixin:
             cand = (rank, d, ep, sent)
             if best is None or (cand[0], cand[1]) < (best[0], best[1]):
                 best = cand
+        if SK_SENTRY and SK_SENTRY_ALARM:
+            self._sentry_commit(sentry, rnd)
         if best is not None:
             self.cf_shooter = (best[2], best[3], best[0] <= 1)
             self.cf_shooter_rnd = rnd
@@ -291,6 +341,65 @@ class CoreMixin:
         except Exception:
             pass
         return held
+
+    def _sentry_commit(self, sentry, rnd):
+        """s57 THE SENTRY, PIECE 1 -- turn this round's presence read into the
+        latch `_corefire_report` publishes.  Writer: the CORE, same as the
+        damage latch.  No engine call: `sentry` is already decided.
+
+        GAME CONTEXT: `sentry` is a competing bot's GUNNER/SENTINEL building
+        standing inside our own half of the simulated grid.  Everything here is
+        bookkeeping over the engine's documented entity stream.
+
+        ⛔⛔ THE LATCH EXPIRES, AND THAT IS THE #132 RULE, NOT A COURTESY.  A
+        latch that only ever ARMS is an alarm nobody can switch off, and it
+        fails in the flattering direction (an answer verb that never stands
+        down looks busy on every dose column).  THREE INDEPENDENT EXITS, each
+        of which drives `sentry_last` back to -1 IN THE SAME ROUND:
+
+          (a) THE THREAT DIED, or was never there.  A turret is a BUILDING and
+              cannot move, so "no enemy turret inside the fence this round" is
+              conclusive for everything the core can see: `sentry is None` ->
+              cleared immediately.  This is the DEATH tail and it needs no
+              clock -- 24 rounds of COREFIRE-style TTL would be 24 rounds of
+              answering a building that is already rubble.
+          (b) THE THREAT LEFT THE FENCE.  Structurally the same read: it is not
+              in the candidate set, so it is not in `sentry`.  (A building
+              cannot walk; this tail is reachable in practice only if our own
+              core anchor were to move, which it cannot, so it is folded into
+              (a) rather than given a second code path -- and the unit battery
+              drives it by moving the THREAT, which is what a test can do.)
+          (c) THE EPISODE RAN OUT.  SK_SENTRY_ARM_MAX rounds after the FIRST
+              round this (tile, occupant) was seen, the alarm stops arming for
+              that occupant even though it is still standing.  This is the
+              in-window scoping the SC lesson demands: without it a parked gun
+              (the field's class D, a measured 221.5-round lease) would hold
+              the answer ladder open for the rest of the match.
+
+        ⛔ THE EPISODE KEY IS (TILE, OCCUPANT ID), the `demo_pecks` keying, for
+        the same reason it has that keying: a RE-PLANT on a burnt-out tile is a
+        NEW threat and must re-arm, while a key on the tile alone would concede
+        that tile for the rest of the game.
+        """
+        if sentry is None:
+            self.sentry_last = -1
+            self.sentry_pos = None
+            return
+        (_sd, sx, sy), ep, sent, eid = sentry
+        key = (sx, sy)
+        prev = self.sentry_seen.get(key)
+        if prev is None or prev[0] != eid:
+            self.sentry_seen[key] = (eid, rnd)
+            first = rnd
+        else:
+            first = prev[1]
+        if rnd - first >= SK_SENTRY_ARM_MAX:
+            self.sentry_last = -1          # (c) episode exhausted
+            self.sentry_pos = None
+            return
+        self.sentry_last = rnd
+        self.sentry_pos = (ep, sent)
+        self.sentry_arms += 1
 
     # ------------------------------------------------------------------
     # COPY 7 -- THE DRIP CLOCK

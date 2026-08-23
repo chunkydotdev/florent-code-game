@@ -181,6 +181,10 @@ from sk_maps import (
     SK_IDLE_ACT_ALL,
     # --- v632 HEIMDALL PLANK 2 (THE DEMOLITION SWEEP) ----------------------
     SK_DEMOLISH, SK_DEMOLISH_CAP, SK_DEMOLISH_DSQ, SK_DEMOLISH_WALK_DSQ,
+    # --- s57 THE SENTRY (SK_SENTRY) ----------------------------------------
+    SK_SENTRY, SK_SENTRY_ALARM, SK_SENTRY_FOCUS, SK_SENTRY_HP_LIFT,
+    SK_SENTRY_FOCUS_MAX, SK_SENTRY_FOCUS_RNDS, SK_SENTRY_HEAL_K,
+    SK_SENTRY_BAN_RNDS,
     # --- v632 HEIMDALL PLANK 3 (THE TURRET RING) ---------------------------
     SK_FORT_RING, SK_FORT_RING_GUNNERS, SK_FORT_RING_SENT,
     SK_FORT_RING_WINDOW, SK_FORT_RING_RESERVE, SK_FORT_RING_LANE,
@@ -308,6 +312,14 @@ CF_HP_UNIT = 4
 CF_SENT_BIT = 1 << 28
 CF_RAY_BIT = 1 << 29      # the shooter was identified by its FACING RAY,
                           # not by the reach-only fallback rung
+# --- s57 THE SENTRY (SK_SENTRY_ALARM): b30 of the SAME word ----------------
+# "the freshness in b0-10 this round came from the PRESENCE latch (an enemy
+# turret STANDING inside SK_SENTRY_DSQ of our footprint), not from an HP
+# delta".  b0-29 were allocated above; b30 was free, so the presence trigger
+# costs no second slot and every existing consumer keeps reading b0-10 exactly
+# as before.  ⛔ SET ONLY WHEN THE PRESENCE STAMP IS THE NEWER OF THE TWO, so a
+# round on which our core actually lost HP never wears it.
+CF_SENTRY_BIT = 1 << 30
 
 KILLER_TILE_MASK = 0x3FF  # slot 14 b0-9  (pack_tile)
 KILLER_RND_FIELD = 10     # slot 14 b10-20
@@ -1032,6 +1044,65 @@ class RolesMixin:
             return False
         age = rnd - (hit - 1)
         return 0 <= age <= SK_COREFIRE_TTL
+
+    def sentry_bit(self, ct):
+        """s57 THE SENTRY -- True when THIS round's freshness came from the
+        PRESENCE latch (an enemy turret standing inside SK_SENTRY_DSQ) rather
+        than from our core actually losing HP.  Slot 15 b30.
+
+        ⛔ WITH THE MASTER OFF THIS IS ALWAYS FALSE WITHOUT READING THE STORE:
+        the core never sets b30, but the flag term first means an OFF arm makes
+        no extra call at all -- which is what the byte-identity gate measures.
+        """
+        if not (SK_SENTRY and SK_SENTRY_ALARM):
+            return False
+        return bool(self.corefire_word(ct) & CF_SENTRY_BIT)
+
+    def answer_fresh(self, ct, rnd):
+        """THE PREDICATE THE ANSWER-DISPATCHING CONSUMERS READ -- the damage
+        latch OR the presence latch.
+
+        ⛔ NOT A NEW SEMANTIC.  "The answer ladder is armed" is exactly what
+        `corefire_fresh` has always meant to these call sites; piece 1 adds a
+        SECOND, EARLIER EVENT that arms it and nothing else.  The banked defect
+        is that the only arming event was our core LOSING HP, which the autopsy
+        measured 43 rounds after the killer was planted.
+
+        ⛔ WHY A SEPARATE PREDICATE rather than widening `corefire_fresh`:
+        that word has FIFTEEN consumers and only some of them DISPATCH AN
+        ANSWER.  Widening it would arm the medic, the heal-stand, the
+        push-quiet gate and the recall on the mere PRESENCE of a turret --
+        planks whose bars were measured against the damage latch and which this
+        expectation did not register.  This split IS the disclosure surface:
+        `corefire_fresh` keeps every one of its readers unchanged, and the swap
+        list in the build report is precisely the set given the earlier
+        trigger.  OFF, the second term is a module constant that short-circuits
+        before any store read, so this is `corefire_fresh` verbatim.
+        """
+        if self.corefire_fresh(ct, rnd):
+            return True
+        return self.sentry_bit(ct)
+
+    def _sentry_gate_b_ok(self, ct, rnd):
+        """v609 GATE B, with the PRESENCE lift.  True == the counter-peck may
+        proceed on HP grounds.
+
+        GATE B refuses the march while our published core HP is above
+        SK_COUNTER_HP_MAX (450) -- i.e. until we have already taken ~50 damage.
+        That is coherent for a DAMAGE alarm and fatal for a PRESENCE one: the
+        autopsy measured their core at 500/500 in 12 of 20 losses and a median
+        NET core damage of 0, so a presence trigger fires at full HP by
+        construction and GATE B would swallow it every time.  The lift applies
+        ONLY on a round wearing CF_SENTRY_BIT -- i.e. only where the freshness
+        itself is presence-derived; on any damage round this returns exactly
+        what the v609 line returned.
+        """
+        if not SK_COUNTER_HP_MAX:
+            return True
+        if self.corefire_hp(ct) <= SK_COUNTER_HP_MAX:
+            return True
+        return bool(SK_SENTRY and SK_SENTRY_ALARM and SK_SENTRY_HP_LIFT
+                    and self.sentry_bit(ct))
 
     def corefire_hp(self, ct):
         """Our core's HP as the CORE last published it (quantised by 4)."""
@@ -1959,7 +2030,19 @@ class RolesMixin:
         if not (SK_PECK_FOCUS and SK_PECK_FOCUS_KEEPER
                 and SK_COREFIRE and SK_COUNTER_PECK):
             return False
-        if self.core is None or not self.corefire_fresh(ct, rnd):
+        # ⭐ s57 THE SENTRY, PIECE 1 -- SWAP 1 of 2 (the KEEPER's arming).
+        # `answer_fresh` is `corefire_fresh` OR the presence bit; with SK_SENTRY
+        # False the second term short-circuits on a module constant and this IS
+        # `corefire_fresh`, evaluated identically.
+        # ⛔ TWO FURTHER ANSWER DISPATCHES WERE FOUND AND DELIBERATELY NOT
+        # SWAPPED, and they are named here rather than in a report nobody
+        # greps: `_stand_answer_action` and `_stand_swarm_action`.  Both are
+        # answers, both read `corefire_fresh` -- and both sit under masters that
+        # ship False (SK_STAND_ANSWER, SK_STAND_SWARM), so a swap is
+        # unreachable on every tape this arm can run, while their trigger blocks
+        # carry expect-1 anchors that `s4build_mkarm.py` mutates.  Turning
+        # either master on is the moment to swap them, in that arm.
+        if self.core is None or not self.answer_fresh(ct, rnd):
             return False
         # ⛔ v609 GATE B, BORROWED -- and it is written with this comment
         # ATTACHED so the line is not TEXTUALLY IDENTICAL to the one inside
@@ -1968,7 +2051,10 @@ class RolesMixin:
         # of it in this file makes the mutation land in the wrong method and
         # the scan pass a tree that breaks it (observed on the first v613
         # build: S11 reported BROKEN).
-        if SK_COUNTER_HP_MAX and self.corefire_hp(ct) > SK_COUNTER_HP_MAX:  # v609 GATE B
+        # ⭐ s57 THE SENTRY: the gate keeps its integer and gains the PRESENCE
+        # LIFT (see `_sentry_gate_b_ok`).  OFF, the helper's first two lines
+        # reproduce this test exactly.
+        if not self._sentry_gate_b_ok(ct, rnd):                 # v609 GATE B
             return False
         tgt = self._counter_target(ct, rnd)
         if tgt is None or dsq_core(tgt, self.core) > SK_PECK_FOCUS_DSQ:
@@ -1992,10 +2078,15 @@ class RolesMixin:
         self.nav_soft_bodies = False      # v609 GATE E: never enter stale
         if not SK_COREFIRE or self.core is None:
             return False
-        if not self.corefire_fresh(ct, rnd):
+        # ⭐ s57 THE SENTRY, PIECE 1 -- SWAP 2 of 2 (the DENIER's own arming).
+        if not self.answer_fresh(ct, rnd):
             return False
         # ⭐ v609 GATE B -- the HP ceiling.  0 is OFF and is v608's behaviour.
-        if SK_COUNTER_HP_MAX and self.corefire_hp(ct) > SK_COUNTER_HP_MAX:
+        # ⭐ s57: the ceiling is unchanged; the PRESENCE LIFT is added inside
+        # `_sentry_gate_b_ok` (its own docstring carries the measurement).  This
+        # block stays TEXTUALLY DISTINCT from `_keeper_counter`'s copy -- see
+        # the warning attached to that one.
+        if not self._sentry_gate_b_ok(ct, rnd):
             return False
         # ⭐ v609 GATE A -- the NEAR emergency outranks the FAR one.  Returning
         # False here does not idle the body: the very next branch in
@@ -15687,6 +15778,165 @@ class RolesMixin:
         self.demo_pecks[xy] = (bid, n)
         self.demolishes += 1
 
+    # ------------------------------------------------------------------
+    # s57 THE SENTRY, PIECE 2 -- SK_SENTRY_FOCUS: THE COMMITMENT
+    # ------------------------------------------------------------------
+    # GAME CONTEXT: every verb below is the engine's documented builder attack
+    # ("peck") on a competing bot's structure inside our own half of the
+    # simulated grid, and the "heal" being detected is that bot's own documented
+    # heal verb on its own building.  No new verb is introduced anywhere in this
+    # section: it is a POLICY over `_demolish_target`'s existing pick.
+    #
+    # THE BANKED DEFECT (MJAUT half A): we buy 85% of our checkmates -- 17.0
+    # pecks per game, SPREAD over 24 distinct targets, of which only 13
+    # completed.  A 40 HP sentinel costs 20 pecks; five targets at four pecks
+    # each removes nothing at all.  And on the 14.3% Mjolnir defends, its heal
+    # (+4 HP for 1 Ti) beats our peck (2 dmg for 2 Ti) 4:1 -- so the OTHER half
+    # of commitment is knowing when to stop.
+
+    def _focus_banned(self, xy, bid, rnd):
+        """Is this (tile, occupant) inside its heal-lock ban window?
+
+        ⛔ BOUNDED, AND THE BOUND IS THE POINT (#132).  The evidence for a ban
+        is "their medic was standing here for the last K pecks", and that
+        evidence EXPIRES: the medic can be knocked out, walk away, or run the
+        bank to zero.  A permanent ban would concede the tile on a fact that has
+        gone stale, which is the same defect `collar_pecks` measured on
+        glacierkeep (seat A r48 -> r146).  The ban self-clears here rather than
+        needing a sweeper.
+        """
+        b = self.focus_ban.get(xy)
+        if b is None or b[0] != bid:
+            return False
+        if rnd - b[1] >= SK_SENTRY_BAN_RNDS:
+            del self.focus_ban[xy]
+            return False
+        return True
+
+    def _focus_release(self, why):
+        self.focus_tgt = None
+        self.focus_hp = []
+        self.focus_since = -1
+        if why == "full":
+            self.focus_full += 1
+        elif why == "lock":
+            self.focus_locks += 1
+        elif why == "stale":
+            self.focus_stales += 1
+        elif why == "norole":
+            self.focus_norole += 1
+
+    def _focus_pecks(self, xy, bid):
+        prev = self.demo_pecks.get(xy)
+        return prev[1] if (prev is not None and prev[0] == bid) else 0
+
+    def _focus_pick(self, rnd, act_q, act_bid, act_et, walk_q,
+                    foc_q, foc_bid, foc_et, foc_adj):
+        """Apply the commitment to this round's (act, walk) pair.
+
+        THREE OUTCOMES, and only the first changes anything:
+          * COMMITTED AND STILL THERE -> the engaged target REPLACES the pick.
+            Adjacent, it becomes the ACT pick; not adjacent, it becomes the WALK
+            pick, so the body closes on the thing it is committed to instead of
+            drifting to whatever happens to be beside it.  This is the whole
+            "17.0 pecks over 24 targets" fix.
+          * COMMITTED AND GONE -> release.  `foc_q is None` means the target
+            failed the pass's OWN filters this round: destroyed, out of the
+            fence, over SK_DEMOLISH_CAP, banned, or simply out of this body's
+            `get_nearby_buildings`.  ⚠ THE LAST ONE IS A REAL AMBIGUITY AND IS
+            DISCLOSED: a body that walks out of vision of its target releases,
+            rather than marching blind at a tile it can no longer see.  That is
+            the conservative direction -- it can only ever SHORTEN a commitment,
+            never extend one past the evidence.
+          * NOT COMMITTED -> the pair is returned exactly as the sweep formed
+            it, and engagement (if any) begins in `_demolish_action` when a peck
+            actually LANDS on a turret.  ⛔ ENGAGEMENT IS NEVER DECLARED AT
+            SELECTION TIME: the registered rule is "once a turret target is
+            engaged (first peck landed)", and charging a commitment for a target
+            `_clear_tile` then declines would commit this body to something it
+            never touched.
+        """
+        if self.focus_tgt is None:
+            return act_q, act_bid, act_et, walk_q
+        xy, bid = self.focus_tgt
+        if foc_q is None:
+            self._focus_release("gone")
+            return act_q, act_bid, act_et, walk_q
+        if (self.focus_since >= 0
+                and rnd - self.focus_since >= SK_SENTRY_FOCUS_RNDS):
+            # THE ROUND BOUND.  See SK_SENTRY_FOCUS_RNDS: the peck bound cannot
+            # close on a commitment that never lands a peck.
+            self._focus_release("stale")
+            return act_q, act_bid, act_et, walk_q
+        if not foc_adj and self.role != SK_ORE_DENIER:
+            # ⛔⛔ ONLY A BODY THAT WALKS MAY HOLD A NON-ADJACENT COMMITMENT,
+            # and this line is the p11 lesson applied to piece 2.  The sweep's
+            # walk branch is DENIER-ONLY (`_demolish_action`: "THE DENIER WALKS;
+            # THE KEEPER NEVER DOES"), so a keeper committed to a target it is
+            # not standing beside can never close the distance -- it would hold
+            # the commitment forever, and because the commitment SUPPRESSES the
+            # sweep's own adjacent pick it would also stop chewing the structure
+            # it IS beside.  A stall dressed as a policy.  The keeper releases
+            # and the sweep's ordinary pick stands.
+            self._focus_release("norole")
+            return act_q, act_bid, act_et, walk_q
+        if self._focus_pecks(xy, bid) >= SK_SENTRY_FOCUS_MAX:
+            # THE PECK BOUND.  20 pecks == 40 damage == a sentinel's whole HP
+            # bar, so a target still standing after 20 is not being converted by
+            # this body and the commitment is spent.  (SK_DEMOLISH_CAP is the
+            # sweep's own episode budget and is a different bound with the same
+            # integer; this one is ablatable on its own.)
+            self._focus_release("full")
+            return act_q, act_bid, act_et, walk_q
+        self.focus_holds += 1
+        if foc_adj:
+            return foc_q, foc_bid, foc_et, walk_q
+        return None, None, None, foc_q
+
+    def _focus_after_peck(self, ct, xy, bid, armed, hp_before, rnd):
+        """Called ONLY on a round a peck actually LANDED.  Opens the commitment
+        on first blood, extends the heal ledger, and fires the give-up.
+
+        THE HEAL LEDGER, and it is a MEASUREMENT of their heal rather than an
+        inference about their intent: `hp_before` is this target's HP read
+        immediately BEFORE each of THIS body's pecks.  Over the last K pecks we
+        dealt 2*K damage (the engine's builder attack is 2, fixed), so absent
+        any healing the HP must have fallen by 2*K.  If it fell by LESS THAN
+        HALF of that, something is putting HP back at roughly our own rate --
+        the banked ~1:1 -- and every further peck is a 4:1 trade in their
+        favour.
+
+        ⚠ DISCLOSED, AND IT ONLY EVER UNDER-FIRES: the ledger is per body, so
+        damage a SECOND body of ours deals inside the window is counted as
+        "fall" we did not pay for and makes the lock harder to declare.  A
+        two-body chew therefore reads as healthy even when it is heal-locked.
+        The opposite error -- abandoning a target we are in fact converting --
+        is the one that would cost checkmates, and this construction cannot
+        make it.
+        """
+        if not armed:
+            # Not a turret: the sweep's normal spread behaviour is unchanged for
+            # barriers, belts and everything else.  Commitment is a TURRET
+            # policy -- the registered scope -- and the autopsy's population is
+            # 19/19 sentinels.
+            return
+        if self.focus_tgt != (xy, bid):
+            self.focus_tgt = (xy, bid)
+            self.focus_hp = []
+            self.focus_since = rnd
+            self.focus_engagements += 1
+        if hp_before is not None:
+            self.focus_hp.append(hp_before)
+            if len(self.focus_hp) > SK_SENTRY_HEAL_K + 1:
+                del self.focus_hp[0]
+        if len(self.focus_hp) < SK_SENTRY_HEAL_K + 1:
+            return
+        fell = self.focus_hp[0] - self.focus_hp[-1]
+        dealt = 2 * SK_SENTRY_HEAL_K
+        if fell * 2 < dealt:
+            self.focus_ban[xy] = (bid, rnd)
+            self._focus_release("lock")
+
     def _demolish_target(self, ct, p, rnd):
         """ONE pass over `ct.get_nearby_buildings()` -> `(act_q, walk_q)`:
         the enemy structure in our own half this body can chew THIS ROUND, and
@@ -15750,12 +16000,20 @@ class RolesMixin:
         hitting it.  The walk pick is never charged: walking is not a peck.
         """
         self.demo_pick = None
+        self.demo_pick_armed = False
         if self.core is None:
             return None, None
         try:
             ids = ct.get_nearby_buildings()
         except Exception:
             return None, None
+        # ⭐ s57 THE SENTRY, PIECE 2 -- the commitment's three per-pass slots.
+        # Filled inside the loop below (no second pass, no second engine call);
+        # read by `_focus_pick` after it.
+        foc_q = None
+        foc_bid = None
+        foc_et = None
+        foc_adj = False
         # One fence read per pass.  The act and walk fences are separate
         # constants (see sk_maps) and are EQUAL by default, so this arm moves
         # one thing; the wider of the two admits a candidate to the pass and
@@ -15766,6 +16024,8 @@ class RolesMixin:
         act_key = None
         act_q = None
         act_bid = None
+        act_et = None                 # s57: the ACT pick's class, for the
+                                      # commitment's "is this a turret?" test
         walk_key = None
         walk_q = None
         for bid in ids:
@@ -15788,8 +16048,17 @@ class RolesMixin:
             xy = (q.x, q.y)
             if not self._demolish_budget_ok(xy, bid):
                 continue
+            adj = abs(q.x - p.x) + abs(q.y - p.y) == 1
+            # ⭐ s57 THE SENTRY, PIECE 2 -- the BAN and the COMMITMENT read,
+            # both inside the pass the sweep already makes.
+            if SK_SENTRY and SK_SENTRY_FOCUS:
+                if self._focus_banned(xy, bid, rnd):
+                    continue
+                f = self.focus_tgt
+                if f is not None and f[0] == xy and f[1] == bid:
+                    foc_q, foc_bid, foc_et, foc_adj = q, bid, et, adj
             pri = self._demolish_pri(et, q)
-            if abs(q.x - p.x) + abs(q.y - p.y) == 1:
+            if adj:
                 # (a) ACT SET.  Orthogonally adjacent == what the engine lets a
                 # builder attack.  Distance is 1 for every member, so the key
                 # is class then a stable tile tie-break.
@@ -15800,6 +16069,7 @@ class RolesMixin:
                     act_key = key
                     act_q = q
                     act_bid = bid
+                    act_et = et
             else:
                 # (b) WALK SET.  Class first, then distance -- the ordering v1
                 # applied to the WHOLE pick now applies only where distance is
@@ -15810,8 +16080,19 @@ class RolesMixin:
                 if walk_key is None or key < walk_key:
                     walk_key = key
                     walk_q = q
+        # ⭐⭐ s57 THE SENTRY, PIECE 2 -- THE COMMITMENT OVERRIDES THE PICK.
+        # Placed HERE, after both picks are formed and before either is
+        # published, so the sweep's class ordering, fence, episode cap and walk
+        # split are all completely untouched: the commitment REPLACES the pick,
+        # it does not rank inside it.  With the flag off this line is a module
+        # constant and the two picks below are v632's, character for character.
+        if SK_SENTRY and SK_SENTRY_FOCUS:
+            act_q, act_bid, act_et, walk_q = self._focus_pick(
+                rnd, act_q, act_bid, act_et, walk_q,
+                foc_q, foc_bid, foc_et, foc_adj)
         if act_q is not None:
             self.demo_pick = ((act_q.x, act_q.y), act_bid)
+            self.demo_pick_armed = act_et in ARMED_TYPES
         return act_q, walk_q
 
     def _demolish_action(self, ct, p, rnd):
@@ -15877,10 +16158,27 @@ class RolesMixin:
         if not SK_DEMOLISH:
             return False
         act_q, walk_q = self._demolish_target(ct, p, rnd)
+        # ⭐ s57 THE SENTRY, PIECE 2 -- THE HP SAMPLE, READ BEFORE THE PECK.
+        # It has to be before: after `_clear_tile` fires, the 2 damage is
+        # already applied and the sample would price our own hit as their
+        # failure to heal.  ONE `get_hp` on a round we are about to spend
+        # anyway, and only on an ARMED pick.  A read that raises leaves the
+        # ledger un-extended (`None`), which delays the give-up by one peck and
+        # never fires it wrongly.
+        hp_before = None
+        if (SK_SENTRY and SK_SENTRY_FOCUS and act_q is not None
+                and self.demo_pick_armed and self.demo_pick is not None):
+            try:
+                hp_before = ct.get_hp(self.demo_pick[1])
+            except Exception:
+                hp_before = None
         if act_q is not None and self._clear_tile(ct, act_q, rnd):
             pick = self.demo_pick
             if pick is not None:
                 self._demolish_charge(pick[0], pick[1])
+                if SK_SENTRY and SK_SENTRY_FOCUS:
+                    self._focus_after_peck(ct, pick[0], pick[1],
+                                           self.demo_pick_armed, hp_before, rnd)
             return True
         if walk_q is None or self.role != SK_ORE_DENIER:
             return False
