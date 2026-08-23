@@ -26,3 +26,32 @@ reported both arms. S4 currency: ≤r300 ITT non-fall per fixture. S5
 guards: alive-sum [53,−2] deaths [49,+4] eco [35.80,−12%] harv [212,−10%];
 the destroyed-building count and scale-refund side effects reported.
 Adoption per bars; a fail routes to STAND arm 3, never to a new plank.
+
+## DISPOSITION — BUILT, VERIFIED, INERT; PREMISE RETRACTED AS INSTRUMENT
+ARTIFACT (BUILDER s57)
+
+**GAME CONTEXT: in-game analysis for the Florent Code League, a sandboxed
+bot-vs-bot programming competition.**
+
+The build is clean (88/88 unit controls, 9/9 OFF byte-identity, mutation
+controls as registered) and measurably inert: 552 candidates over 30 F1
+cells, **0 destroys — because the target population is zero.** The
+motivating census (ahbuild: "1.54/8 free, 2.63 OURS") keyed builder BOTS
+to their spawn tiles (on the ring by construction); corrected
+buildings-only figures: **FREE 3.87/8, OURS 0.53, THEIRS 3.60**,
+triangulated against the engine-side live read. ⇒ The walled-in claim in
+the ammoheal verdict tail is RETRACTED; `ssbuild_ownclass.py` is the
+corrected census and MUST be used by any future cut of seat occupancy.
+
+**EXECUTION-QUALITY LINE (play-it-well):** the arm executed perfectly;
+dose achievable = ZERO. No strike on the plank. Two build-agent engine
+corrections banked: `destroy` costs NO turn (the _rent_sweep probe), and
+the brief's sequencing concern was moot.
+
+**ROUTES TO STAND ARM 3:** the real seat-blockers are THEIR barriers
+(3.60/8 during sieges; destroy is team-checked, the answer is the attack
+verb). `SK_SEAT_CLEAR` (sk_maps.py:1350, ships OFF, built for exactly
+enemy barriers on our seats) + queue row #133 are the vehicle — arm 3 is
+its re-screen on the current baseline, covering heal seats AND delivery
+seats (serving THE ROUTE plank simultaneously). SK_STAND_SEATS stays
+built, OFF, with its corrected-census instrument as the durable yield.
