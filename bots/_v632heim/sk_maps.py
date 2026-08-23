@@ -7955,9 +7955,14 @@ SK_VH_CARD_FACE = True    # ⛔ THE OPERATIONAL DEFINITION OF "CARDINALLY
 # is 43r late (autopsy) and 17/19 killers took ZERO pecks in that window while
 # 10/19 had a body and 40 Ti in reach.  SK_DEMOLISH's d^2 39 fence ALREADY
 # covers 19/19 of them: the FENCE is right, the TRIGGER is late.
+# ⭐ V3 AMENDS THE SECOND HALF OF THAT LAST SENTENCE.  The d^2 39 fence is
+# right for the ANSWER VERBS (SK_DEMOLISH_DSQ, unchanged) and WRONG for the
+# TRIGGER: at 39 the presence alarm is near-always fresh late-game and pulls
+# home bodies at turrets that are not killers (V2's 90-cell gate split).  The
+# killers sit at MEDIAN d^2 = 5, 71.7% at <= 13, so SK_SENTRY_DSQ is 13.
 # ==========================================================================
 
-SK_SENTRY = False         # ⛔ THE MASTER, DEFAULT OFF.  Off is exact identity:
+SK_SENTRY = True   # ADOPTED s57 2026-08-23 v3 (ALARM, FROM=20, idle lift, DSQ=13 killing band; FOCUS dead): dose held (answer 7r, spread 37->24), alive 58 in envelope, wins 40=40, medians -4/-3/-8 — hardening+tempo grade         # ⛔ THE MASTER, DEFAULT OFF.  Off is exact identity:
                           # every added branch is a call-site conjunction whose
                           # FIRST term is this module constant, so an OFF arm
                           # makes zero extra engine calls, publishes no extra
@@ -8004,18 +8009,44 @@ SK_SENTRY_FOCUS = False   # ⛔⛔ PIECE 2, **DROPPED AT V1 DISPOSITION AND NOW
                           # round (banked: 85% of our checkmates bought with
                           # 17.0 pecks SPREAD over 24 targets, 13/24 completed).
 
-SK_SENTRY_DSQ = 39        # THE PRESENCE FENCE, d^2 to our own 2x2 FOOTPRINT
-                          # (`dsq_core`), DELIBERATELY THE SAME INTEGER AS
-                          # SK_DEMOLISH_DSQ.  It is not a new fence: the autopsy
-                          # measured this exact fence covering 19/19 killers, so
-                          # the alarm arms over precisely the set the answer
-                          # verbs can already reach.  ⚠ DISCLOSED CEILING: the
-                          # scan runs on the CORE, whose vision is r^2 = 36 from
-                          # its ANCHOR, so a tile at d^2 39 from the far
-                          # footprint corner can sit outside vision and be
-                          # missed.  The killers are at d^2 2-13 (19/19) and
-                          # 71.7% of the field's are at d^2 <= 13, so the miss
-                          # band is the empty tail, not the population.
+SK_SENTRY_DSQ = 13        # ⭐⭐ THE PRESENCE FENCE, d^2 to our own 2x2 FOOTPRINT
+                          # (`dsq_core`).  **V3, 2026-08-23: 39 -> 13, AND IT IS
+                          # THE WHOLE OF V3.**  V2's 90-cell gate-split census
+                          # found the alive breach (51 vs the [59,-2] bar) was
+                          # POST-r20, i.e. not a pre-FROM dispatch problem at
+                          # all: at d^2 39 the presence alarm is NEAR-ALWAYS
+                          # FRESH late-game (the #132 always-fresh class in
+                          # presence form), so home bodies were pulled at
+                          # turrets that are not killers.  Both autopsies put
+                          # the killers at MEDIAN d^2 = 5 with 71.7% at <= 13.
+                          # 13 is THE KILLING BAND; 39 chased everything.
+                          # ⛔ READERS OF THIS CONSTANT, DISCLOSED IN FULL --
+                          # there is exactly ONE, `sk_core._corefire_shooter`
+                          # (`if sd <= SK_SENTRY_DSQ`), plus its import at
+                          # `sk_core` top.  Every other occurrence in the tree
+                          # is PROSE naming it (main.py's `sentry_last`
+                          # docstring, sk_roles' two comments).
+                          # ⛔⛔ AND THE FENCE IS **NOT** SHARED WITH THE
+                          # DEMOLITION SWEEP.  SK_DEMOLISH_DSQ is a SEPARATE
+                          # module constant read only by `_demolish_target`
+                          # (sk_roles ~16101/16145); the two were equal BY
+                          # VALUE, never by reference, so the sentry already
+                          # owned its own integer and nothing needed splitting.
+                          # **SK_DEMOLISH_DSQ STAYS 39 -- the demolition
+                          # sweep's fence is NOT changed by V3**, which is what
+                          # keeps the answer VERBS reaching the same set while
+                          # only the TRIGGER narrows.
+                          # ⚠ THE OLD CEILING NOTE IS NOW MOOT AND THAT IS
+                          # ITSELF A CONSEQUENCE: the scan runs on the CORE
+                          # (vision r^2 = 36 from its ANCHOR), so at 39 the
+                          # fence sat AT/ABOVE vision and admitted everything
+                          # the core could see -- the reason a 9999 mutant is
+                          # expected to reproduce the 39 tape byte for byte.
+                          # At 13 the fence BINDS strictly inside vision.
+                          # ⚠ BOTH-TAIL, REGISTERED: an enemy turret at
+                          # d^2 14-39 must NOT stamp the presence bit (b30);
+                          # the DAMAGE/reach path -- `_corefire_shooter`'s
+                          # three rungs, untouched by V3 -- still covers it.
 
 SK_SENTRY_ARM_MAX = 80    # ⛔⛔ THE IN-WINDOW SCOPE, AND IT IS THE SC LESSON
                           # WRITTEN AS AN INTEGER.  Rounds a SINGLE (tile,

@@ -78,3 +78,17 @@ Bars: dose columns held on the ≤13 population (destroyed-before-first-
 shot vs 6); alive-sum back within [59,−2]; currency grid non-fall; the
 ±4 floor governs win reads. Both-tail: turrets at d²14-39 UNANSWERED by
 the presence path (the damage path still covers them), ≤13 answered.
+
+## V3 VERDICT — ADOPTED (BUILDER s57): alarm at the killing band (DSQ 13)
++ FROM gate + idle lift; FOCUS dead. Dose held (build-to-answer 7r on
+F2, spread 37.3→24.3, destroyed-before-first-shot held), alive-sum 58
+within [59,−2], deaths 47 = base, wins 40 = 40 (kills −1, inside floor),
+medians −4/−3/−8 — hardening + tempo grade, disclosed as outcome-flat at
+the win column. Named trade: helheim_seatA's 14-32-band-only population
+is given up to the damage path (20/36 vs 13/36 on the touched cells says
+the trade pays). Banked engine fact: the 33-39 band cannot threaten the
+core (sentinel reach r²=32) — the wide fence armed at harmless pieces.
+**NEW BASELINE: the st3build_smoke tapes** [alive 58 / deaths 47 / wins
+40 / kills 23; per-fixture wins from the smoke readout]. NEXT: the
+3-seed CONFIRMATION BATTERY on this config (the standard's first run —
+F3's bar claim + fresh denominators), then the unrated window.
