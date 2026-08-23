@@ -121,6 +121,8 @@ from sk_maps import (
     SK_STAND_SEATS, SK_STAND_SEATS_BAN, SK_STAND_SEATS_FLOW_K,
     SK_STAND_SEATS_GUN_DSQ, SK_STAND_SEATS_MAX, SK_STAND_SEATS_TARGET,
     SK_STAND_SEATS_WALK,
+    # --- s57 THE STAND, ARM 4 -- THE ANSWER SENTINEL (SK_STAND_ANSWER) -----
+    SK_STAND_ANSWER, SK_STAND_ANSWER_SPAWN,
     # --- v617 (the PRODUCER FIX) ------------------------------------------
     SK_TEAM_TUBES, SK_TUBE_BEAT_MASK, SK_TUBE_SEAT_FIELDS, SK_TUBE_STALE,
     SK_TUBE_BAND_DSQ, SK_TUBE_PHASES,
@@ -1850,8 +1852,17 @@ class RolesMixin:
         if tgt is not None and self._counter_march(ct, p, rnd, tgt):
             return True
         if self._medic_armed(ct) and self.corefire_hp(ct) <= self._medic_help_hp():
-            return self._medic_turn(ct, p, rnd)
-        return False
+            if self._medic_turn(ct, p, rnd):
+                return True
+        # ⭐⭐ s57 THE STAND, ARM 4 -- THE ANSWER, CALL SITE 2 of 2.  The second
+        # medic gets the same non-preemption: this line is only reached on a
+        # turn `_medic_turn` DECLINED (or a turn on which this body is not the
+        # medic at all).  It is a second call site rather than one because the
+        # build needs an ORTHOGONALLY ADJACENT covering seat, so which body is
+        # standing where decides whether the answer is available at all -- and
+        # under SK_CORE_STAND this body is at home for the same siege.
+        # Flag off -> False on the first line -> v632 behaviour exactly.
+        return self._stand_answer_action(ct, p, rnd)
 
     # --- PLANK 3: SK_COUNTER_SENT --------------------------------------
 
@@ -1935,6 +1946,204 @@ class RolesMixin:
         except Exception:
             return False
         self.counter_sents += 1
+        return True
+
+    # ==================================================================
+    # s57 THE STAND, ARM 4 -- THE ANSWER SENTINEL (SK_STAND_ANSWER)
+    # ==================================================================
+    # GAME CONTEXT: in-engine mechanics of the Florent Code League, a sandboxed
+    # bot-vs-bot programming competition.  The "shooter"/"killer" is an
+    # OPPOSING BOT'S TURRET taking HP off our core under the engine's rules;
+    # the answer is a legal `build_sentinel` call at a tile of our own.
+    #
+    # The measurement this implements (CF-2 of KILLDIAG-ring-blindness) and why
+    # it is not `SK_COUNTER_SENT` renamed are both written out at the flag.
+    # ⛔ EVERY GEOMETRY QUESTION HERE IS PUT TO THE ENGINE.  `can_fire_from` is
+    # the engine's own hypothetical-turret predicate (it ignores ammo and
+    # cooldown, which is right: the question is BEARING, not readiness).  The
+    # diagnosis this plank comes from had to correct hand-rolled ray math
+    # twice, and the tree's own `_ray_hits` is the form PLANK 3 used.
+
+    def _stand_answer_ep(self, rnd):
+        """The current siege EPISODE's key: the round this body's unbroken
+        freshness span began.  `_corefire_tick` maintains the streak at the top
+        of every builder turn, so at action time a fresh alarm has streak >= 1.
+        Per body, and both consequences of that are disclosed at the flag.
+        """
+        return rnd - self.corefire_streak + 1
+
+    def _stand_answer_type(self, ct):
+        """What the CORE said the shooter is, as an EntityType.
+
+        Slot 15 carries one bit (CF_SENT_BIT) and the v607 anatomy's channel is
+        19/19 enemy SENTINEL fire.  A gunner reading is the conservative one for
+        the lane refusal below -- its attack pattern is the shorter of the two
+        -- so an unset bit is taken at face value rather than upgraded.
+        """
+        if self.corefire_word(ct) & CF_SENT_BIT:
+            return EntityType.SENTINEL
+        return EntityType.GUNNER
+
+    def _stand_answer_lane_faces(self, ct, tgt, et):
+        """The shooter's OWN facings that bear on our core footprint.
+
+        ⛔ THIS IS THE HALF THAT KEEPS US FROM FEEDING THE KILLER A LANE.  A
+        seat on one of these rays is a 40-HP building standing in the line that
+        is already taking our core apart, and a sentinel's shot IGNORES
+        obstacles, so it does not even absorb the round -- it just dies.
+        Asked with `can_fire_from(shooter, face, <their type>, <a core tile>)`,
+        i.e. from THEIR tile outward, which is the engine's own answer to "can
+        that turret, so faced, hit this".
+        Cached on (shooter tile, core anchor): a turret is a BUILDING and cannot
+        move, so the answer is stable for the whole episode and this costs at
+        most 8 x 4 engine calls ONCE per siege rather than per round.
+        """
+        key = (tgt.x, tgt.y, self.core.x, self.core.y, et)
+        if self._sa_face_key == key:
+            return self._sa_faces
+        foot = [Position(x, y) for (x, y) in core_tiles_xy(self.core)]
+        faces = []
+        for face in DIRECTIONS:
+            for q in foot:
+                try:
+                    if ct.can_fire_from(tgt, face, et, q):
+                        faces.append(face)
+                        break
+                except Exception:
+                    continue
+        self._sa_face_key = key
+        self._sa_faces = tuple(faces)
+        return self._sa_faces
+
+    def _stand_answer_in_lane(self, ct, tgt, et, faces, q):
+        """True if seat q sits on one of those lanes.  Fails toward REFUSING:
+        an unreadable answer counts as in-lane, because the cost of refusing a
+        good seat is one round of search and the cost of accepting a bad one is
+        30+ Ti of turret standing in the killer's ray.
+        """
+        for face in faces:
+            try:
+                if ct.can_fire_from(tgt, face, et, q):
+                    return True
+            except Exception:
+                return True
+        return False
+
+    def _stand_answer_action(self, ct, p, rnd):
+        """Build ONE sentinel that BEARS ON the tile shooting our core.
+
+        Returns True iff it took this body's turn with the build.
+
+        ⛔ ORDERED BELOW THE MEDIC AT BOTH CALL SITES, and that is a staffing
+        decision, not an accident: `_core_medic` is +4 HP on a core that is
+        losing 9 HP/round and it reads the SAME armed state this rung reads, so
+        a body mid-heal is never pulled off it to go shopping.  The answer runs
+        on the turn the medic declined (core full, bank at the floor, or this
+        body is not the medic at all).  "Prefer the body already nearest the
+        seat" falls out of the engine rather than out of a ranking: a build
+        needs an ORTHOGONALLY ADJACENT tile, so only a body already standing
+        beside a covering seat can ever propose one.
+        """
+        if not SK_STAND_ANSWER or self.core is None:
+            return False
+        if not SK_COREFIRE:
+            return False
+        try:
+            if ct.get_action_cooldown() != 0:
+                return False
+        except Exception:
+            return False
+        if not self.corefire_fresh(ct, rnd):
+            return False
+        tgt = self.corefire_shooter(ct)     # THE PUBLISHED WORD ONLY (slot 15)
+        if tgt is None:
+            return False
+        # ⛔ A NAMED TILE WHOSE BUILDING IS GONE IS NOT A SHOOTER.  Bounds test
+        # FIRST and vision second -- `is_in_vision` is a pure radius test with
+        # no bounds check (CLAUDE.md, corrected s50), so `ibp` has to be the
+        # outer guard or the next `get_tile_*` raises off-map.  Out of vision we
+        # cannot tell, and the latch's durable-fact argument (a turret is a
+        # building; it cannot move) is what we fall back on.
+        try:
+            if self.ibp(tgt) and ct.is_in_vision(tgt):
+                held = ct.get_tile_building_id(tgt)
+                if held is None or ct.get_team(held) == self.team:
+                    return False
+        except Exception:
+            pass
+        ep = self._stand_answer_ep(rnd)
+        if self._sa_seen_ep != ep:
+            self._sa_seen_ep = ep
+            self.stand_answer_eps += 1      # SEEN-CHOOSING: episodes armed
+        self.stand_answer_windows += 1      # ... and rounds armed
+        if self._sa_done_ep == ep:
+            self.stand_answer_have += 1
+            return False                    # one answer per siege episode
+        # ⛔ THE CROSS-BODY HALF OF "ONE PER EPISODE".  The store has no free
+        # slot (v608 took the last one), so the shared fact is read off the
+        # BOARD instead: if one of our turrets already bears on the shooter,
+        # the answer is already standing and a second is a second +20% on the
+        # ONE GLOBAL ADDITIVE cost scale for nothing.
+        if self._gun_bears(ct, tgt):
+            self.stand_answer_covered += 1
+            return False
+        try:
+            cost = ct.get_sentinel_cost()
+            need = cost
+            if SK_STAND_ANSWER_SPAWN:
+                need += ct.get_builder_bot_cost()   # `_spawn_plan`'s own bar
+            if ct.get_global_resources() < need:
+                self.stand_answer_unfunded += 1
+                return False
+        except Exception:
+            return False
+        if self._sa_funded_ep != ep:
+            self._sa_funded_ep = ep
+            self.stand_answer_funded_eps += 1   # THE OPPORTUNITY COLUMN
+        et = self._stand_answer_type(ct)
+        faces = self._stand_answer_lane_faces(ct, tgt, et)
+        best = None
+        best_site = None
+        best_face = None
+        for d in CARDINALS:
+            q = p.add(d)
+            if not self.ibp(q) or not self.may_build(q, OWNER_DOOR):
+                continue
+            if self.free_neighbours(ct, p, exclude=q) < 2:
+                continue                    # the self-trap guard, v601 PLANK 2
+            if not self.path_arbiter_ok(ct, q, rnd):
+                continue                    # v605 FIX 1: a turret is impassable
+            if SK_STAND_ANSWER_SPAWN and not self._claim_spawn_ok(ct, q):
+                continue                    # the TILE half of the spawn reserve
+            if self._stand_answer_in_lane(ct, tgt, et, faces, q):
+                self.stand_answer_lane_refuse += 1
+                continue                    # never stand in the killer's lane
+            for face in DIRECTIONS:
+                try:
+                    if not ct.can_fire_from(q, face, EntityType.SENTINEL, tgt):
+                        continue
+                except Exception:
+                    continue
+                # All four candidates are d^2 = 1 from this body, so the rank
+                # that separates them is closeness to the SHOOTER; CARDINALS
+                # order (N, E, S, W) breaks the remaining ties deterministically
+                # because the comparison is strict.
+                score = (-q.distance_squared(tgt),)
+                if best is None or score > best:
+                    best = score
+                    best_site = q
+                    best_face = face
+        if best_site is None:
+            self.stand_answer_noseat += 1
+            return False
+        try:
+            if not ct.can_build_sentinel(best_site, best_face):
+                return False
+            ct.build_sentinel(best_site, best_face)
+        except Exception:
+            return False
+        self._sa_done_ep = ep
+        self.stand_answers += 1
         return True
 
     # --- shared sensing ------------------------------------------------
@@ -2034,6 +2243,15 @@ class RolesMixin:
             if self._counter_sent_action(ct, p, rnd):
                 return
             if self._core_medic(ct, p, rnd):
+                return
+            # ⭐⭐ s57 THE STAND, ARM 4 -- THE ANSWER, CALL SITE 1 of 2.
+            # BELOW the medic and ABOVE the door, and both halves of that are
+            # the staffing rule: the medic reads the same armed state and is
+            # never pulled off an active heal, while the door is a clearance
+            # answer to what stands on our ring and the anatomy's channel is
+            # 19/19 the gun shooting the CORE.  Flag off -> False on the first
+            # line -> v632 behaviour exactly.
+            if self._stand_answer_action(ct, p, rnd):
                 return
             if SK_DOOR and self._door_action(ct, p, rnd):
                 return

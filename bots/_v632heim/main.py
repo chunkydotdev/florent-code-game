@@ -1427,6 +1427,41 @@ class Player(CommonMixin, RolesMixin, CoreMixin):
                                       # i.e. the census's 1.54/8, live
         self.stand_flow = {}          # (x,y) -> round a stack was last seen on
                                       # a seat belt piece
+
+        # --- s57 THE STAND, ARM 4 -- THE ANSWER SENTINEL (SK_STAND_ANSWER) ---
+        # ⛔ UNCONDITIONAL, for the same engine reason as the two blocks above:
+        # a field created only under a flag is how an OFF arm raises
+        # AttributeError inside `run()`, after which the engine PERMANENTLY
+        # DESTROYS that unit for the rest of the match.  Every one of these
+        # stays at its initial value on an OFF arm -- `_stand_answer_action`
+        # returns on its first line -- which is what makes them the identity
+        # witness rather than a behaviour change.
+        #
+        # THE SEEN-CHOOSING COLUMNS, and they are laid out so both tails are
+        # readable off one line: `stand_answer_eps` is how many siege episodes
+        # this body saw the trigger armed for, `stand_answer_funded_eps` is how
+        # many of those it could also AFFORD (the OPPORTUNITY denominator), and
+        # `stand_answers` is how many it bought.  answers == 0 with funded_eps
+        # high is the NEVER-FIRED falsifier; answers == funded_eps with the
+        # refusal counters at 0 is the DEGENERATE-ALWAYS falsifier.
+        self.stand_answers = 0        # sentinels this body actually built
+        self.stand_answer_eps = 0     # distinct episodes seen armed
+        self.stand_answer_funded_eps = 0   # ... of those, episodes with funds
+        self.stand_answer_windows = 0      # armed ROUNDS (the dose, not the n)
+        self.stand_answer_have = 0    # rounds refused: this episode is answered
+        self.stand_answer_covered = 0 # rounds refused: one of OURS already bears
+        self.stand_answer_unfunded = 0     # rounds refused on the funding bar
+        self.stand_answer_noseat = 0  # armed+funded rounds with no covering
+                                      # seat orthogonally adjacent to this body
+        self.stand_answer_lane_refuse = 0  # seats refused for sitting in the
+                                      # shooter's own lane onto our core -- the
+                                      # OTHER verdict of the lane branch, which
+                                      # is what makes that branch measurable
+        self._sa_seen_ep = -1         # episode keys, per body (see the flag)
+        self._sa_funded_ep = -1
+        self._sa_done_ep = -1
+        self._sa_face_key = None      # the shooter's lane-facing cache
+        self._sa_faces = ()
         self.stand_watch = {}         # (x,y) -> round this body first watched
                                       # it; a tile we have not watched is not a
                                       # quiet tile

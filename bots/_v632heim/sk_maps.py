@@ -5322,6 +5322,137 @@ SK_STAND_SEATS_WALK = True  # ⚠⚠ THE POSITIONING HALF, AND IT IS DISCLOSED A
                           # and the destroy-only form is the brief as written.
 
 # ===========================================================================
+# s57 THE STAND, ARM 4 -- THE ANSWER SENTINEL (SK_STAND_ANSWER)
+#
+# GAME CONTEXT: in-engine mechanics of the Florent Code League, a sandboxed
+# bot-vs-bot programming competition.  "Shooter", "killer" and "siege" name an
+# OPPOSING BOT'S TURRET standing in range and taking HP off our core under the
+# engine's documented rules; the answer is a legal `build_sentinel` call.
+#
+# WHAT IT ANSWERS, measured (KILLDIAG-ring-blindness-2026-08-23, banked; full
+# per-cell data in scratchpad/s57_heim0/killdiag_*):
+#   * 35 of 36 killer windows on the t_cs tape are ZERO-SHOT -- our home ring
+#     never fires on the piece that takes our core.  All 36 killers are
+#     SENTINELS at Chebyshev 2-3.
+#   * ROOT CAUSE: facing is chosen ONCE at build time to sweep OUR OWN delivery
+#     seats or the lane (`_home_gun_score`, `_fort_sent_score`), the one fire()
+#     site iterates the CURRENT ray only, and a sentinel cannot rotate (492 of
+#     492 wire rotations are gunners).  The slot-15 alarm NAMES the shooter tile
+#     and can only re-RANK, never re-AIM.
+#   * RANKED CONVERSION CF-2: an answer sentinel built at a COVERING seat during
+#     the window converts 22 of 36 cells at a 30-Ti gate (14/36 at 90 Ti; 33/36
+#     geometry-feasible; median 60 rounds of window remain after the earliest
+#     feasible build).  A covering HOME-BAND seat existed in 36 of 36 cells --
+#     the geometry was never the binding constraint.
+#   * EXONERATED BY THE SAME MEASUREMENT, AND THEREFORE OUT OF SCOPE HERE: a
+#     rotate rung (0/36), a defensive ammo reserve (0/36 aligned rounds lost to
+#     ammo), cooldown, target priority, and any ring re-site (CF-5's 19/36 is
+#     IN-SAMPLE with an oracle caveat).  This plank is CF-2 and nothing else.
+#
+# ⛔ WHY THIS IS NOT `SK_COUNTER_SENT` WITH A NEW NAME.  PLANK 3 is the same
+# PURCHASE and it measured an EXACT NULL (see its own note): its gate needs
+# SK_COUNTER_RNDS = 20 rounds of UNBROKEN alarm, and PLANK 2 breaks the alarm
+# long before 20 accumulate (shipped streak median 11), so the gate is almost
+# never open in time.  THREE THINGS DIFFER HERE and each is the reason a cell
+# converts:
+#   (1) THE TRIGGER IS FRESHNESS, NOT A 20-ROUND STREAK -- the killdiag's window
+#       arithmetic prices the FIRST feasible round, not the twentieth.
+#   (2) THE GEOMETRY IS THE ENGINE'S OWN.  PLANK 3 hand-rolls `_ray_hits` and
+#       refuses seats with the hand-rolled `_on_enemy_axis`/`_on_armed_axis`
+#       memo test; this rung asks `can_fire_from(seat, facing, SENTINEL,
+#       shooter)` for the bearing and `can_fire_from(shooter, facing, <their
+#       type>, seat)` for the refusal.  Hand-rolled ray math is what the
+#       diagnosis had to correct for twice.
+#   (3) ONE ANSWER PER SIEGE EPISODE, not one per game (SK_COUNTER_SENT_CAP=1).
+#
+# SK_COUNTER_SENT IS UNTOUCHED AND STAYS False.  The two are separately
+# ablatable and must never be armed together in one arm: they buy the same
+# piece and an arm with both on cannot attribute the buy.
+# ===========================================================================
+# ⛔⛔ BUILT, VERIFIED, AND MEASURED INERT ON THE F1 TAPE -- READ THIS BEFORE
+# SPENDING ANOTHER LEG ON IT.  s4build, 2026-08-23, 30 F1 cells against the
+# t_cs_f1 baseline (`scratchpad/s57_heim0/s4build_smoke*`):
+#   * THE ARM IS BYTE-IDENTICAL TO THE BASELINE IN 30 OF 30 CELLS with the
+#     master ON.  0 answer sentinels bought, and every outcome column moves +0
+#     (alive@300 17, death cells 18, wins 10, <=r300 kills 5, eco 10.77,
+#     harvesters 64, home-fire-on-killer 0/18).
+#   * THE TRIGGER IS NOT THE PROBLEM: the rung ARMED 604 times across those 30
+#     cells (fresh latch AND slot 15 naming a live enemy tile).
+#   * THE GEOMETRY IS NOT THE PROBLEM EITHER.  With the funding gate ablated so
+#     the seat search is reached, 103 covering seats were found across 4 traced
+#     cells, and the build path itself is sound: a synthetic-target positive
+#     control landed 12 builds, `bears=1` in 12 of 12 under
+#     `get_attackable_tiles_from` -- an INDEPENDENT engine predicate from the
+#     `can_fire_from` that chose the seat.
+#   * ⭐ THE BINDING CONSTRAINT IS TITANIUM AT LIVE COST SCALE, AND IT IS AN
+#     ENGINE FACT RATHER THAN OUR GATE.  567 of 604 armed rounds refused on
+#     funding; ablating our own gate does not convert one cell, because the
+#     ENGINE's `can_build_sentinel` then refuses instead -- 138 of 138 such
+#     refusals across the 30 cells decompose as 127 UNAFFORDABLE + 11 non-empty
+#     tile, 0 unexplained.  In the traced siege windows our bank sits at 0-20 Ti
+#     while a sentinel costs 75-85 Ti at the live scale.
+#   ⇒ KILLDIAG'S CF-2 "22 of 36 at the 30-Ti gate" IS NOT REACHABLE AS WRITTEN,
+#     and the diagnosis said why before the fact: it priced the buy at the BASE
+#     30 Ti because "the cost scale is not on the wire", flagging that as a
+#     LOWER bound.  Measured on the engine, the live figure is 2.5-2.8x that and
+#     the window bank is an order of magnitude below it.  A CF-2 arm that is to
+#     convert has to buy the TITANIUM first -- i.e. it is an economy plank
+#     wearing a turret plank's clothes -- or buy something cheaper than a
+#     sentinel.  ⚠ The 2 armed rounds that WERE affordable (skald_seatB r23,
+#     bank 137 vs cost 75) had no covering seat orthogonally adjacent to the
+#     acting body, so the funded rounds and the covering-seat rounds are
+#     DISJOINT in these cells -- which is a second, independent obstacle and
+#     not a restatement of the first.
+SK_STAND_ANSWER = False   # ⭐ THE MASTER.  False => `_stand_answer_action`
+                          # returns on its first line and the tree is byte
+                          # identical to the t_cs_* baseline.
+                          # THE TRIGGER: the corefire latch is FRESH (our core
+                          # actually lost HP inside SK_COREFIRE_TTL) AND slot 15
+                          # NAMES a shooter tile (`corefire_shooter`, the
+                          # published word only -- no per-body memo fallback and
+                          # no `_counter_target` distance fence, because a tile
+                          # this rung spends 30+ Ti on should be one the CORE
+                          # itself identified).
+                          # THE ACT: ONE sentinel at a COVERING seat -- a
+                          # buildable tile orthogonally adjacent to the acting
+                          # body for which `can_fire_from(seat, face, SENTINEL,
+                          # shooter)` is True for the face the build then passes
+                          # explicitly.  Orthogonal adjacency is not a choice:
+                          # the build API requires it, and it is exactly the
+                          # adjacency CF-2 priced.
+                          # ⚠ THE EPISODE KEY IS PER BODY and it is
+                          # `rnd - corefire_streak + 1` -- the round the current
+                          # unbroken freshness span began.  `_corefire_tick`
+                          # already maintains that streak at the top of every
+                          # builder turn.  TWO DISCLOSED CONSEQUENCES: a body
+                          # replaced mid-siege restarts its own key (the same
+                          # argument `_corefire_tick`'s docstring already makes
+                          # for the streak), and a ONE-ROUND FLICKER in
+                          # freshness opens a new episode.  The second layer is
+                          # what makes that safe: the rung refuses outright when
+                          # one of OUR turrets ALREADY BEARS on the shooter tile
+                          # (`_gun_bears`, the engine's own bearing test), so a
+                          # standing answer suppresses the next buy whichever
+                          # body proposes it.
+SK_STAND_ANSWER_SPAWN = True  # ⛔ THE SPAWN RESERVE, BOTH HALVES, ablatable as
+                          # one sub-flag because they answer one hazard.
+                          # TITANIUM: the bank must clear the sentinel cost PLUS
+                          # `get_builder_bot_cost()`, which is the exact number
+                          # `_spawn_plan` (sk_core.py:723-727) silently RETURNS
+                          # below -- a buy that takes the bank under it costs us
+                          # the replacement of a dead role body, and builder
+                          # deaths run 29 of 30 games on the F1 tape.  This is
+                          # also what keeps the funding gate between the
+                          # killdiag's two priced gates (30 Ti = 22/36 cells,
+                          # 90 Ti = 14/36) instead of over-fencing to the low
+                          # conversion.
+                          # TILES: `_claim_spawn_ok` verbatim
+                          # (SK_SEAT_CLAIM_SPAWN_RESERVE = 1), because the seat
+                          # this rung fills may be one of the four
+                          # anchor-adjacent tiles the core spawns onto.
+                          # ⚠ Both halves fail toward REFUSING the buy.
+
+# ===========================================================================
 # 3.  IMPORT BANNER (verbatim) -- doctrine.py:1078-1172, map data
 # ===========================================================================
 
@@ -5832,7 +5963,7 @@ SK_BATTERY2_LEDGER_TTL = 24  # ⛔ ABSENCE OF EVIDENCE EXPIRES.  Without a clock
 # barrel is answered and replaced before the second arrives (loss taxonomy
 # class A, 12 of 41).  So the engineer withholds plant #1 until the purse
 # covers BOTH at the surcharge form `_plant_gun` will actually charge.
-SK_BATTERY2_BURST = True     # (b) alone, ablatable under the master.
+SK_BATTERY2_BURST = False  # ARM-4: restored to the REGISTERED state — shipped True against the arm-3 registration's 'dropped' (b3f2diag: 5/90 cells held plant #1 exactly 20r, the one attributable F2 kill loss) (s57 2026-08-23)     # (b) alone, ablatable under the master.
 SK_BATTERY2_BURST_HOLD = 20  # ⛔⛔ THE REGISTERED ESCAPE, AND IT IS REQUIRED:
                              # a cell that can NEVER fund two must not be held
                              # forever -- the study measured funding-stagger
