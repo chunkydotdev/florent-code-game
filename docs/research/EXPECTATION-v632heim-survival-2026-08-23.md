@@ -58,3 +58,17 @@ conditional seen-firing with state columns) — with the honest note that
 the ≥50r mass at these sites may already be small post-SO; a
 vacuous-with-disclosure outcome adopts as hardening per the registered
 rule.
+
+**ARM A DOSE BAR RE-FORMED PRE-TAPE (blind held; the 4.2 smoke's paradox
+is the provenance):** the global ≥50r freeze-round pool is DOMINATED by the
+#131 crawl class these sites never touch (jotunheim's 1,475-round parked
+body alone), and the escape-only form SCORED BETTER on it by shuttling —
+the instrument rewards the dishonest fix. The bar re-forms to the
+mechanism's terms: (i) conditional seen-firing (escapes execute where
+deadlock states occur — unchanged); (ii) NO POST-ESCAPE OSCILLATION — after
+each executed escape, the body's next 20 rounds visit ≥3 distinct tiles or
+the walk target changes (the smoke's 64%→16% top-2-share is the shape);
+(iii) freeze rounds ON THE GUARDED STATE-TILES ONLY → reduced-or-zero
+where states occur. Global freeze pool reported, never gated. Adoption =
+hardening grade (correctness plank); any alive-sum rise reported against
+the campaign arithmetic as a bonus, never required.
