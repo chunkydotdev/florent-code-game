@@ -123,6 +123,8 @@ from sk_maps import (
     SK_STAND_SEATS_WALK,
     # --- s57 THE STAND, ARM 4 -- THE ANSWER SENTINEL (SK_STAND_ANSWER) -----
     SK_STAND_ANSWER, SK_STAND_ANSWER_SPAWN,
+    # --- s57 THE STAND, ARM 5 -- THE SIEGE PECK SWARM (SK_STAND_SWARM) -----
+    SK_STAND_SWARM, SK_SWARM_N, SK_SWARM_PECKS, SK_SWARM_STALL,
     # --- v617 (the PRODUCER FIX) ------------------------------------------
     SK_TEAM_TUBES, SK_TUBE_BEAT_MASK, SK_TUBE_SEAT_FIELDS, SK_TUBE_STALE,
     SK_TUBE_BAND_DSQ, SK_TUBE_PHASES,
@@ -1734,10 +1736,24 @@ class RolesMixin:
                     self.march_ownskip += 1
                     return False
             # ⭐ v613 PLANK 3 -- THE V7 RELAX (rationale in the docstring).
-            relax = (SK_PECK_FOCUS and self.core is not None
-                     and dsq_core(tgt, self.core) <= SK_PECK_FOCUS_DSQ
-                     and self._friendly_adjacent(ct, tgt)
-                     >= SK_PECK_FOCUS_BODIES)
+            # ⭐⭐ s57 THE STAND, ARM 5 -- THE SWARM TAKES THE SAME ESCAPE, and
+            # it is a DISJUNCT rather than a new branch on purpose: the relax
+            # already exists, is already argued, and already skips the veto
+            # WITHOUT calling it (which is the load-bearing half -- `hp_trend_ok`
+            # MUTATES `hp_memo` and latches `give_up`, so calling it and
+            # ignoring the answer would still retire the target for every other
+            # verb).  `self.sw_relax` is written ONLY inside
+            # `_stand_swarm_action`, which returns on its first line when
+            # SK_STAND_SWARM is False, so on every OFF arm this reads a field
+            # that is False on every round of every game and the expression is
+            # the v613 one exactly.  Scoped like v609 GATE E's
+            # `nav_soft_bodies`: set immediately before the call, cleared
+            # immediately after, never across a round boundary.
+            relax = (self.sw_relax
+                     or (SK_PECK_FOCUS and self.core is not None
+                         and dsq_core(tgt, self.core) <= SK_PECK_FOCUS_DSQ
+                         and self._friendly_adjacent(ct, tgt)
+                         >= SK_PECK_FOCUS_BODIES))
             if relax:
                 self.peck_relaxed += 1
             elif not self.hp_trend_ok(ct, tid, rnd):
@@ -1862,7 +1878,22 @@ class RolesMixin:
         # standing where decides whether the answer is available at all -- and
         # under SK_CORE_STAND this body is at home for the same siege.
         # Flag off -> False on the first line -> v632 behaviour exactly.
-        return self._stand_answer_action(ct, p, rnd)
+        if self._stand_answer_action(ct, p, rnd):
+            return True
+        # ⭐⭐ s57 THE STAND, ARM 5 -- THE SWARM, CALL SITE 2 of 2, same slot and
+        # same non-preemption as arm 4's.
+        # ⚠ TWO STRUCTURAL FENCES SIT ABOVE THIS LINE AND THIS ARM DOES NOT LIFT
+        # THEM, so a denier can be absent from a window the keeper is inside:
+        # v609 GATE B returns above when our core's published HP is over
+        # SK_COUNTER_HP_MAX, and GATE A yields the body to a nearer home threat
+        # (SK_COUNTER_YIELD_HOME).  Lifting either would be a second mechanism in
+        # one plank; they are named here so the readout can attribute a
+        # one-body-only window to them rather than to the swarm's own cap.
+        # ⚠ AND `_counter_march` HAS ALREADY RUN ONCE ABOVE (line ~1852) with the
+        # ledger-V7 veto live.  Reaching this line means that march DECLINED --
+        # which for an adjacent body is very often the veto itself -- so the
+        # swarm's contribution on this role is precisely the relaxed retry.
+        return self._stand_swarm_action(ct, p, rnd)
 
     # --- PLANK 3: SK_COUNTER_SENT --------------------------------------
 
@@ -2146,6 +2177,206 @@ class RolesMixin:
         self.stand_answers += 1
         return True
 
+    # ==================================================================
+    # s57 THE STAND, ARM 5 -- THE SIEGE PECK SWARM (SK_STAND_SWARM)
+    # ==================================================================
+    # GAME CONTEXT: in-engine mechanics of the Florent Code League, a sandboxed
+    # bot-vs-bot programming competition.  The "shooter"/"killer" is an OPPOSING
+    # BOT'S TURRET taking HP off our core under the engine's documented rules;
+    # the "peck" is the engine's own documented builder action (`fire` on an
+    # orthogonally adjacent tile, 2 Ti for 2 damage) against that opposing bot's
+    # in-game structure.  Every call below is a documented Controller method.
+    #
+    # The measurement (killdiag CF-3), the arm-3 STRIKE this must not repeat,
+    # and the three reasons the existing marches are not this rung are all
+    # written out at SK_STAND_SWARM in sk_maps.py.  What is written HERE is only
+    # what a reader of the code needs at the code.
+    #
+    # ⛔ THIS ARM ADDS NO MOVEMENT CODE AND NO FIRE CODE.  The walk and the peck
+    # are `_counter_march` -- shipped, and already reached from these same two
+    # roles today.  Consequences, all deliberate and all inherited unchanged:
+    #   * the walk goes through `step_to`, the tree's ONLY movement entry, so
+    #     SK_NAV_STALL's stall detector and ban cover this walk at the EXECUTOR
+    #     level exactly as they cover every other walk (`sk_common.py:1451`);
+    #   * SK_WALK_GUARDS does NOT cover it, and does not need to: that guard
+    #     answers a walk at a STANDABLE tile the body is itself standing on
+    #     (`_walk_escape`'s docstring), and this walk's target is an enemy
+    #     BUILDING -- impassable, never underfoot -- so the terminal state it
+    #     guards is unreachable here by construction;
+    #   * the v612 FIX 1 team check comes with it (never peck our own relay laid
+    #     on a recycled shooter tile), as does the `bank >= 2` floor and the
+    #     SK_PLUCK_AWARE retarget/seat choice.
+    #   * ⚠ IT ALSO INHERITS THE CONJUNCTION: with SK_COUNTER_PECK False,
+    #     `_counter_march` returns False on its first line and this whole arm is
+    #     inert.  SK_COUNTER_PECK is True in the shipped tree; stated so the
+    #     dependency is on the record rather than discovered by a null.
+
+    def _stand_swarm_action(self, ct, p, rnd):
+        """Hold the shooter's ring and peck it, ONLY while the siege is live.
+
+        Returns True iff it took this body's turn (a peck, a step, or holding a
+        seat it must not be walked off).
+
+        ⛔ ORDERED BELOW THE MEDIC AT BOTH CALL SITES -- arm 4's non-preemption
+        read, reused rather than re-derived.  `_core_medic` is +4 HP on a core
+        losing 9 HP/round and reads the SAME armed state this rung reads; this
+        line is only reached on a turn the medic DECLINED (core full, bank at
+        the floor, or this body is not the medic at all), so a body mid-heal is
+        never pulled off it to go pecking.
+
+        ⛔ THE RELEASE PATH, because the arm-3 refusal makes scope the whole
+        plank.  There is NO latch.  The first five statements re-test the
+        trigger EVERY round: master, core known, SK_COREFIRE, `corefire_fresh`,
+        `corefire_shooter`, then the liveness read.  The moment the latch goes
+        stale or the named tile stops holding an enemy building, this returns
+        False and the body's normal ladder runs IN THE SAME ROUND -- there is no
+        wind-down, no cooldown and no memory of having been dispatched.  The
+        only cross-round state the arm owns is `_sw_seen_ep` / `_sw_peck_ep` /
+        `_sw_pecks` / `_sw_last_rnd`, none of which is read by anything outside
+        this method, and all of which are keyed to an episode that expires with
+        the streak.  ⚠ TWO PRE-EXISTING MUTATIONS DO OUTLIVE THE CALL and are
+        disclosed rather than suppressed: `_counter_march` may pop `armed_memo`
+        on its team check and may move `pluck_last`.  Both are the shipped
+        march's own behaviour, already reachable from these two roles today.
+        """
+        if not SK_STAND_SWARM or self.core is None:
+            return False
+        if not SK_COREFIRE:
+            return False
+        if not self.corefire_fresh(ct, rnd):
+            return False
+        # ⛔ THE COMMENT ON THE NEXT LINE IS DELIBERATELY NOT ARM 4's WORDING.
+        # The three lines above it would otherwise be TEXTUALLY IDENTICAL to
+        # `_stand_answer_action`'s trigger, and the v613 build report's own
+        # lesson is that a duplicated block makes a scratch mutation land in the
+        # WRONG METHOD and a broken tree read as passing.  `s4build_mkarm.py`'s
+        # M8/M9/M11 anchor on exactly that block with an expect-1 assertion.
+        tgt = self.corefire_shooter(ct)     # slot 15's published tile (arm 4's)
+        if tgt is None:
+            return False
+        # ⛔ ARM 4's LIVENESS TEST, SAME ORDER, SAME FAIL-OPEN.  Bounds FIRST and
+        # vision second -- `is_in_vision` is a pure radius test with no bounds
+        # check (CLAUDE.md, corrected s50), so `ibp` has to be the outer guard
+        # or the next `get_tile_*` raises off-map.  Out of vision we cannot
+        # tell, and the latch's durable-fact argument (a turret is a BUILDING;
+        # it cannot move) is what we fall back on.  A body ADJACENT to the tile
+        # always has it in vision, so the release below is never blind on the
+        # one body whose turn this actually costs.
+        try:
+            if self.ibp(tgt) and ct.is_in_vision(tgt):
+                held = ct.get_tile_building_id(tgt)
+                if held is None or ct.get_team(held) == self.team:
+                    self.swarm_dead_release += 1
+                    return False
+        except Exception:
+            pass
+        ep = self._stand_answer_ep(rnd)     # arm 4's episode key, verbatim
+        if self._sw_seen_ep != ep:
+            self._sw_seen_ep = ep
+            self.swarm_eps += 1
+        self.swarm_windows += 1             # THE OPPORTUNITY DENOMINATOR
+        # ⭐ THE ENEMY-LAUNCHER HAZARD, COUNTED AND NOT ANSWERED (registered out
+        # of scope).  `thrown_rnd` is the tree's own displacement guard
+        # (`sk_common.py:352`): a jump of more than SK_TELEPORT_DSQ since our
+        # last turn proves a launcher picked this body up.  Counted only when
+        # this body was dispatched within the last two rounds, so it measures
+        # THROWS OF SWARM BODIES DURING WINDOWS rather than throws in general.
+        if self.thrown_rnd == rnd and rnd - self._sw_last_rnd <= 2:
+            self.swarm_throws += 1
+        if self._sw_walk_ep != ep:
+            self._sw_walk_ep = ep
+            self._sw_best = 1 << 30
+            self._sw_stall = 0
+        man = abs(tgt.x - p.x) + abs(tgt.y - p.y)
+        adj = man == 1
+        if adj:
+            self.swarm_adj_rounds += 1
+            self._sw_best = 1
+            self._sw_stall = 0
+        else:
+            # ⭐⭐ THE WALK-PROGRESS BOUND, AND IT IS HERE BECAUSE THE TRACE PUT
+            # IT HERE (s5build, f1/auroraveil_seatB, the arm's own first traced
+            # cell).  The home keeper was dispatched at r148 from Manhattan 8 of
+            # a shooter at (10,14) and spent 55 CONSECUTIVE armed rounds -- to
+            # r202, when our core died -- cycling (6,18)->(6,17)->(5,17)->
+            # (6,17)->(5,17)->(5,18)->(6,18), an 8-round loop at constant
+            # distance 7-9.  It never reached the ring and never pecked.  That is
+            # 55 keeper turns, and "the keeper's TURN is the scarce resource" is
+            # the exact sentence STAND arm 3 was refused on.
+            # ⛔⛔ AND NEITHER ADOPTED WALK GUARD SEES IT.  SK_NAV_STALL is at
+            # the executor (`step_to`) and DOES cover this walk -- but its
+            # predicate resets the moment the body's position changes
+            # (`_ns_tick`: `if p.x != p0.x or p.y != p0.y: self.ns_run = 0`), so
+            # it detects a FROZEN body and is blind to a MOVING loop.
+            # SK_WALK_GUARDS answers a walk at a STANDABLE tile the body is
+            # standing on; this walk's target is an enemy BUILDING, impassable
+            # and never underfoot, so its terminal state cannot occur here.  The
+            # bound is therefore this arm's own, on the axis those two cannot
+            # see: MOTION WITHOUT PROGRESS.
+            # THE THRESHOLD IS MEASURED, NOT PICKED.  Off-ring runs of
+            # non-improving Manhattan distance across the 13 traced (body,
+            # episode) approaches: 0,0,0,0,2,2,2,2,2,3,5 for the ELEVEN that
+            # reached the ring, then 24 and 53.  SK_SWARM_STALL = 16 sits inside
+            # that gap: every approach that ever arrived is untouched, and the
+            # only two it truncates are the 55-round auroraveil loop and
+            # stavkirke's r370 approach -- which, when it did arrive, landed 15
+            # pecks on a target the enemy healed back to full every round (post-
+            # peck HP 38 on all 15 lines, +30 HP healed) for 30 Ti of nothing.
+            # ⚠ IT IS A PER-EPISODE BOUND ON THIS ARM'S OWN DISPATCH, NOT A
+            # GIVE-UP: nothing is latched, no other verb is retired, and it
+            # expires with the episode key like the peck budget.  0 disables it.
+            if man < self._sw_best:
+                self._sw_best = man
+                self._sw_stall = 0
+            else:
+                self._sw_stall += 1
+                if SK_SWARM_STALL and self._sw_stall > SK_SWARM_STALL:
+                    self.swarm_stalled += 1
+                    return False
+            # ⛔ THE CAP IS ON ADMISSION, NOT TENURE.  A body already on the ring
+            # is inside this census and can never be evicted by it; evicting a
+            # seated body is how a cap becomes an oscillation.  Only a body that
+            # would have to WALK IN is refused when the ring is full.
+            if self._friendly_adjacent(ct, tgt) >= SK_SWARM_N:
+                self.swarm_full += 1
+                return False
+        if self._sw_peck_ep != ep:
+            self._sw_peck_ep = ep
+            self._sw_pecks = 0              # the budget expires WITH the episode
+        if self._sw_pecks >= SK_SWARM_PECKS:
+            self.swarm_capped += 1
+            return False
+        self.swarm_dispatch += 1
+        self._sw_last_rnd = rnd
+        before = self.counter_pecks
+        # ⭐ THE V7 RELAX, SCOPED LIKE v609 GATE E's `nav_soft_bodies`: set
+        # immediately before the call, cleared immediately after, never across a
+        # round boundary.  ⛔ NO `try/finally` -- THE PLATFORM SANDBOX REJECTS
+        # `finally` BLOCKS OUTRIGHT (`ValueError: 'finally' blocks are not
+        # allowed`, the note at `_counter_march`).  The plain form is equivalent:
+        # `_counter_march` swallows its own engine errors, and anything that did
+        # escape would destroy this unit for the rest of the match, so there is
+        # no later turn for a stale flag to corrupt.
+        self.sw_relax = True
+        took = self._counter_march(ct, p, rnd, tgt)
+        self.sw_relax = False
+        if self.counter_pecks > before:
+            self._sw_pecks += 1
+            self.swarm_pecks += 1
+        if took:
+            return True
+        # ⛔ SEATED AND WITHOUT A VERB IS STILL TAKING THE TURN -- the same call
+        # `_keeper_counter` makes (`keeper_holds`).  A body that returns False
+        # here is walked off the ring by `_home_keeper_move` / the denier's own
+        # walk, and a lost seat is indistinguishable from the plank declining:
+        # the currency CF-3 prices is ADJACENT ROUNDS, so giving one back to
+        # spend the round elsewhere is the plank paying its own bar out.
+        if adj:
+            self.swarm_holds += 1
+            return True
+        self.swarm_nowalk += 1
+        return False
+
     # --- shared sensing ------------------------------------------------
 
     def _sense(self, ct, rnd):
@@ -2252,6 +2483,15 @@ class RolesMixin:
             # 19/19 the gun shooting the CORE.  Flag off -> False on the first
             # line -> v632 behaviour exactly.
             if self._stand_answer_action(ct, p, rnd):
+                return
+            # ⭐⭐ s57 THE STAND, ARM 5 -- THE SWARM, CALL SITE 1 of 2.
+            # IMMEDIATELY BELOW ARM 4 because the two are the same answer at two
+            # prices: arm 4 BUYS a piece that ends the episode, arm 5 spends 2
+            # Ti a round when that purchase is unaffordable (which arm 4's own
+            # disposition measured at 567 of 604 armed rounds).  Below the medic
+            # for arm 4's non-preemption reason, verbatim.  Flag off -> False on
+            # the first line -> v632 behaviour exactly.
+            if self._stand_swarm_action(ct, p, rnd):
                 return
             if SK_DOOR and self._door_action(ct, p, rnd):
                 return

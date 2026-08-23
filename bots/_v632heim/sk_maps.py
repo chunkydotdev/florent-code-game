@@ -5453,6 +5453,184 @@ SK_STAND_ANSWER_SPAWN = True  # ⛔ THE SPAWN RESERVE, BOTH HALVES, ablatable as
                           # ⚠ Both halves fail toward REFUSING the buy.
 
 # ===========================================================================
+# s57 THE STAND, ARM 5 -- THE SIEGE PECK SWARM (SK_STAND_SWARM)
+#
+# GAME CONTEXT: in-engine mechanics of the Florent Code League, a sandboxed
+# bot-vs-bot programming competition.  The "shooter"/"killer" is an OPPOSING
+# BOT'S TURRET taking HP off our core under the engine's documented rules; the
+# "peck" is the engine's own documented builder action (`fire` on an
+# orthogonally adjacent tile, 2 Ti for 2 damage) against that opposing bot's
+# in-game structure.  Nothing here touches anything outside the game engine.
+#
+# WHY THIS ARM EXISTS, AND IT IS ARM 4's OWN DISPOSITION.  SK_STAND_ANSWER was
+# built, verified and measured INERT: 0 builds in 604 armed rounds, because a
+# sentinel costs 75-85 Ti at live scale and the siege bank sits at 0-20 (its
+# flag note above carries the decomposition).  The registration routed the plank
+# to THE ONE VERB THAT IS AFFORDABLE IN-WINDOW -- 2 Ti a peck -- which is
+# killdiag CF-3.
+#
+# WHAT CF-3 MEASURED (KILLDIAG-ring-blindness-2026-08-23; per-cell data in
+# scratchpad/s57_heim0/killdiag_cf.json):
+#   * 13 of 36 killer windows already had >= 20 window rounds with one of our
+#     builder bots ORTHOGONALLY ADJACENT to the killer tile and a bank >= 2 --
+#     i.e. the pecks were AFFORDABLE and the body was THERE, and we still did
+#     not take the piece down.  Median adjacent rounds 11 against the 20 a
+#     40-HP sentinel needs at 2 damage a peck.
+#   * 14 of 36 cells had ZERO adjacent rounds: nobody ever stood next to the
+#     piece that was killing our core.
+#   * THE ENEMY HEAL RATE ON THE KILLER IS MEASURED, NOT ASSUMED: 99 HP total
+#     across the 5 of 36 cells with any heal at all (worst single cell 61 HP,
+#     f2/paths_seatA, i.e. 51 pecks rather than 20).  A peck race is winnable
+#     in 31 of 36 cells with no healer to out-run.
+#
+# ⛔⛔ THE ONE THING THIS ARM MUST NOT BECOME, AND IT HAS A STRIKE ON IT.
+# STAND arm 3 (SK_SEAT_CLEAR) was REFUSED the same session: the mechanism
+# worked (peck rate up to 3.1/round, seat occupancy down) and the PRICE was
+# catastrophic -- alive -6, deaths +7, eco -15.1%, wins -4, kills -6.  The
+# v610 note's "the keeper's TURN is the scarce resource" was confirmed at full
+# grid.  ⇒ STRIKE 1 ON THE SEAT-PECKING TACTIC.
+# THE LOAD-BEARING DIFFERENCE IS SCOPE, AND IT IS THE WHOLE DESIGN: arm 3
+# pecked ALL GAME at whatever stood on our seats.  This rung exists ONLY while
+# the corefire latch is FRESH and slot 15 NAMES a live enemy tile -- i.e. only
+# on rounds where our core is actively losing HP to an identified piece, where
+# the turn's alternative is not eco but death.  That claim is falsifiable and
+# is measured as a column: peck rounds vs armed rounds (`swarm_windows`).
+#
+# ⛔ WHY IT IS NOT `_keeper_counter` / `_denier_home_answer` WITH A WIDER FENCE.
+# Both already march at the shooter and both already exist; three things stop
+# them being the swarm, and each is why a cell fails to convert:
+#   (1) THE KEEPER IS FENCED AT SK_PECK_FOCUS_DSQ = 8 (`_keeper_counter` refuses
+#       `dsq_core(tgt) > 8`).  The killdiag's 36 killers sit at Chebyshev 2-3,
+#       78% of them at d^2 4-9 -- so the fence lands squarely inside the
+#       population and the keeper simply never joins for the outer half.
+#   (2) THE LEDGER-V7 GIVE-UP BINDS THE MARCH.  `_counter_march` vetoes on
+#       `hp_trend_ok`, which latches `give_up[tid]` when the target's HP has not
+#       FALLEN for SK_HP_TREND_WINDOW rounds -- and a body spends its first
+#       several rounds WALKING, not pecking, so the veto fires on a target
+#       nobody has hit yet and then poisons every other verb for 40 rounds.
+#       V7 was written against a HEALED target; the measurement says heals are
+#       5 of 36.  Inside a window this rung takes the relax (see
+#       `self.sw_relax`), which is the SAME escape PLANK 3 already uses.
+#   (3) NEITHER IS CAPPED OR COUNTED as a swarm: there is no admission bound,
+#       so "up to N bodies" is not expressible, and no seen-choosing column.
+#
+# WHAT IS EXPLICITLY OUT OF SCOPE HERE (registered, so a successor does not
+# read the omission as an oversight): ANTI-TAXI MACHINERY.  Their launcher
+# throws our bodies off the shooter's ring (`SK_PLUCK_AWARE`'s own note: 1,153
+# of our builder bots thrown).  This arm does not answer that -- it only COUNTS
+# it (`swarm_throws`), so the readout can price the hazard before anyone builds
+# a counter to it.
+SK_STAND_SWARM = False    # ⭐ THE MASTER.  False => `_stand_swarm_action`
+                          # returns on its first line, `self.sw_relax` is never
+                          # written, and the tree is byte identical to the
+                          # t_cs_* baseline.
+                          # THE TRIGGER IS ARM 4's, REUSED VERBATIM AND NOT
+                          # RE-DERIVED: `corefire_fresh` (our core actually lost
+                          # HP inside SK_COREFIRE_TTL) AND `corefire_shooter`
+                          # (slot 15's published tile, no per-body memo
+                          # fallback).  That machinery is PROVEN -- it armed 604
+                          # times across 30 F1 cells on the arm-4 tape, which is
+                          # the one thing arm 4 established beyond doubt.
+                          # THE LIVENESS TEST IS ARM 4's TOO: bounds
+                          # (`ibp`) FIRST, then `is_in_vision` (a pure radius
+                          # test with no bounds check -- CLAUDE.md, corrected
+                          # s50), then `get_tile_building_id`; a named tile
+                          # holding nothing, or holding something of OURS, is
+                          # not a shooter and RELEASES the body that round.
+                          # THE EPISODE KEY IS ARM 4's `_stand_answer_ep`:
+                          # `rnd - corefire_streak + 1`, per body, with the same
+                          # two disclosed consequences (a body replaced mid-siege
+                          # restarts its key; a one-round freshness flicker opens
+                          # a new episode -- here that only refreshes a PECK
+                          # BUDGET, never a purchase, so the flicker is cheap).
+                          # THE ACT: walk at the shooter tile and, when
+                          # ORTHOGONALLY ADJACENT, peck it.  The walk and the
+                          # peck are `_counter_march` -- the tree's existing,
+                          # shipped march -- so this arm adds NO new movement
+                          # code, and inherits its pluck-aware retarget, its
+                          # v612 FIX 1 team check (never peck our own relay on a
+                          # recycled tile) and its `bank >= 2` floor unchanged.
+SK_SWARM_N = 2            # ⭐ THE ADMISSION CAP, and it is read off the BOARD
+                          # rather than the store: the comms store has no free
+                          # slot (v608 took the last one), so "how many of us are
+                          # on this" is answered by `_friendly_adjacent(ct,
+                          # shooter)` -- our builder bots standing orthogonally
+                          # adjacent to the shooter tile.  That is also the
+                          # resource CF-3 actually prices (ADJACENT ROUNDS), so
+                          # the cap and the currency are the same number.
+                          # ⛔ IT CAPS ADMISSION, NOT TENURE: a body ALREADY
+                          # adjacent is inside the census and is never evicted by
+                          # it, because evicting a seated body is how a cap turns
+                          # into an oscillation.  Only a body that would have to
+                          # WALK IN is refused when the ring is full.
+                          # ⚠ DISCLOSED BOUND: under the baseline flags the rung
+                          # has exactly TWO call sites (the keeper's turn and the
+                          # denier's), so at most two bodies can reach it and the
+                          # census cap is not the binding constraint today.  It
+                          # binds the moment a third body runs a keeper turn
+                          # (SK_FORT_WALKER_ECO) -- and it is driven to BOTH
+                          # verdicts in the unit battery at N=1.
+SK_SWARM_PECKS = 60       # ⭐ THE PER-BODY, PER-EPISODE PECK BUDGET, and it is
+                          # deliberately GENEROUS because the failure mode it
+                          # must not have is STRANDING A 90%-DEAD KILLER.  The
+                          # arithmetic, all of it measured:
+                          #   * an unhealed 40-HP sentinel is 20 pecks;
+                          #   * the WORST measured enemy heal on a killer across
+                          #     the whole 36-cell population is 61 HP in one cell
+                          #     (f2/paths_seatA), i.e. 51 pecks -- and 31 of 36
+                          #     cells see ZERO heal;
+                          #   * 60 clears the worst measured cell with margin,
+                          #     and the real bound on the spend is the WINDOW
+                          #     itself (the rung cannot run outside it), not this
+                          #     number.
+                          # Effective team bound is SK_SWARM_N x SK_SWARM_PECKS =
+                          # 120 pecks = 240 Ti per episode, which is the number to
+                          # read against the eco guard if this arm regresses it.
+                          # ⛔ IT IS A BUDGET, NOT A GIVE-UP: it never latches
+                          # anything, it expires with the episode key, and it
+                          # cannot refuse a body that has not itself spent it.
+SK_SWARM_STALL = 16       # ⭐⭐ THE WALK-PROGRESS BOUND, in consecutive off-ring
+                          # armed rounds WITHOUT a new best Manhattan distance to
+                          # the shooter.  0 disables it (the ablation identity).
+                          # ⛔ IT IS IN THIS ARM BECAUSE THE ARM'S OWN FIRST
+                          # TRACE PUT IT THERE, not because a walk bound sounded
+                          # prudent: on f1/auroraveil_seatB the home keeper was
+                          # dispatched at r148 and spent 55 CONSECUTIVE armed
+                          # rounds cycling four tiles at distance 7-9 from the
+                          # shooter, arriving never and pecking never, until our
+                          # core died at r202.  55 keeper turns -- and "the
+                          # keeper's TURN is the scarce resource" is the sentence
+                          # STAND arm 3 was REFUSED on.  An unbounded walk inside
+                          # the window is the same tactic-cost failure wearing a
+                          # different verb.
+                          # ⛔⛔ NEITHER ADOPTED GUARD COVERS IT, and that was
+                          # checked rather than assumed.  SK_NAV_STALL sits at
+                          # the executor (`step_to`) so it DOES see this walk,
+                          # but `_ns_tick` resets its run counter the moment the
+                          # body's position changes -- it detects a FROZEN body
+                          # and is structurally blind to a MOVING loop.
+                          # SK_WALK_GUARDS answers a walk at a STANDABLE tile the
+                          # body is itself standing on; this target is an enemy
+                          # BUILDING, impassable and never underfoot, so that
+                          # terminal state cannot arise here.  This bound is on
+                          # the axis both of them miss: MOTION WITHOUT PROGRESS.
+                          # THE THRESHOLD IS MEASURED.  Off-ring non-improving
+                          # runs across the 13 traced (body, episode) approaches:
+                          # 0,0,0,0,2,2,2,2,2,3,5 for the ELEVEN that reached the
+                          # ring, then 24 and 53.  16 sits inside that gap: no
+                          # approach that ever arrived is touched.  ⚠ THE TWO IT
+                          # TRUNCATES ARE DISCLOSED: the 55-round auroraveil loop
+                          # (pure waste) and stavkirke's r370 approach, which on
+                          # arrival landed 15 pecks on a killer the enemy healed
+                          # back to full EVERY ROUND (post-peck HP 38 on all 15
+                          # traced lines, +30 HP healed in-window) -- 30 Ti for
+                          # zero net damage, i.e. the ledger-V7 case this arm's
+                          # relax deliberately turns off.
+                          # ⚠ IT IS NOT A GIVE-UP: nothing is latched, no other
+                          # verb is retired, and it expires with the episode key
+                          # exactly like the peck budget.
+
+# ===========================================================================
 # 3.  IMPORT BANNER (verbatim) -- doctrine.py:1078-1172, map data
 # ===========================================================================
 

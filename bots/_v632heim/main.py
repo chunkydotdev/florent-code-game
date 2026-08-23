@@ -1465,6 +1465,56 @@ class Player(CommonMixin, RolesMixin, CoreMixin):
         self.stand_watch = {}         # (x,y) -> round this body first watched
                                       # it; a tile we have not watched is not a
                                       # quiet tile
+        # --- s57 THE STAND, ARM 5 -- THE SIEGE PECK SWARM (SK_STAND_SWARM) ---
+        # ⛔ UNCONDITIONAL, for the same engine reason as every block above: a
+        # field created only under a flag is how an OFF arm raises
+        # AttributeError inside `run()`, after which the engine PERMANENTLY
+        # DESTROYS that unit for the rest of the match.  Every one of these
+        # stays at its initial value on an OFF arm -- `_stand_swarm_action`
+        # returns on its first line -- which is what makes them the identity
+        # witness rather than a behaviour change.
+        #
+        # THE SEEN-CHOOSING COLUMNS, laid out so BOTH TAILS are readable off one
+        # line.  `swarm_windows` is the OPPORTUNITY DENOMINATOR (armed rounds
+        # that reached the rung at all); `swarm_dispatch` is how many of those
+        # the rung actually spent.  dispatch == 0 with windows high is the
+        # NEVER-FIRED falsifier.  dispatch == windows with every refusal counter
+        # at 0 is the DEGENERATE-ALWAYS falsifier -- and `swarm_windows` is
+        # itself bounded by the trigger, so peck rounds vs armed rounds is the
+        # direct measurement of the in-window scoping that arm 3's STRIKE makes
+        # load-bearing.
+        self.swarm_windows = 0        # armed ROUNDS this body reached the rung
+        self.swarm_eps = 0            # distinct siege episodes seen armed
+        self.swarm_dispatch = 0       # ... rounds it handed the turn to the march
+        self.swarm_pecks = 0          # pecks that LANDED on the shooter tile
+        self.swarm_adj_rounds = 0     # armed rounds with THIS body on the ring
+        self.swarm_holds = 0          # ... of those, rounds seated with no verb
+        self.swarm_nowalk = 0         # dispatched, off-ring, step did not execute
+        self.swarm_full = 0           # rounds refused: the ring is at SK_SWARM_N
+        self.swarm_stalled = 0        # rounds refused: this body's walk has not
+                                      # improved its distance to the shooter for
+                                      # SK_SWARM_STALL rounds (the 55-round
+                                      # auroraveil loop is what this counts)
+        self.swarm_capped = 0         # rounds refused: episode peck budget spent
+        self.swarm_dead_release = 0   # rounds RELEASED: the named tile holds no
+                                      # enemy building any more -- the
+                                      # release-on-dead path, counted so it is
+                                      # not merely asserted
+        self.swarm_throws = 0         # BUILDER instrument, no answer attached:
+                                      # times their launcher threw this body
+                                      # while it was a dispatched swarm body
+        self.sw_relax = False         # the scoped ledger-V7 escape (see
+                                      # `_counter_march`).  Written ONLY inside
+                                      # `_stand_swarm_action`; False on every
+                                      # round of every OFF arm.
+        self._sw_seen_ep = -1         # episode keys, per body (arm 4's key)
+        self._sw_peck_ep = -1
+        self._sw_pecks = 0            # pecks spent in `_sw_peck_ep`
+        self._sw_last_rnd = -999      # last round this body was dispatched
+        self._sw_walk_ep = -1         # the walk-progress bound's episode key,
+        self._sw_best = 1 << 30       # the best Manhattan distance this body has
+        self._sw_stall = 0            # reached in it, and the non-improving run
+
         self.stand_gate_rnd = -1      # the round the sweep last read the seat
         self.stand_gate_free = 0      # census, and what it read -- so
                                       # `_stand_station` (movement, later in the
