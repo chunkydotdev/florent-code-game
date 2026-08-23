@@ -121,3 +121,20 @@ posture. Bars: pair share and barrels-standing rise where the latch has
 fired (the composite's own collapsed columns are the dose); grid ITT
 non-fall with the rise hoped; guards vs t_b4_*; the ladder inversion
 seen-choosing (fires only post-latch — never in the opening).
+
+## HAMMER-PRIO V1 DISPOSITION + V2 AMENDMENT (blind, BUILDER s57)
+
+V1 near-inert with the cause structural: `_b2_eco_ready`'s single call
+site is behind `live < want` — the latch measures readiness only AFTER
+the pair stands, so the "funded → build the pair" chain was impossible
+as wired (134/134 deferrals at one tube, 0 at zero; latch silent in
+47/60 cells). The gate half is verified and stands. **V2: under
+SK_HAMMER_PRIO, the readiness evaluation runs UNCONDITIONALLY each
+engineer round (same bar, same ring, same latch-once semantics; the
+wire bit publishes on fire regardless of live count). OFF path keeps
+the old single call site byte-exact. The adopted battery's own
+behaviour under ON changes only in that the latch may already be set
+when _battery_open later consults it — same bar met earlier, disclosed
+as a retiming and screened as such.** Bars unchanged; the dose now has
+its intended population (the latch firing at zero/one tubes, the gate
+deferring eco into barrel funding).
