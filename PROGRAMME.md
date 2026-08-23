@@ -1151,3 +1151,17 @@ launcher planted on the measured rush corridors, and a reactive
 treadmill (throw-back) that works BEFORE any pocket exists. The engine
 probe (in flight) stamps the mechanics; every arm carries the
 seen-choosing and play-it-well disciplines like any other.
+
+## THE TRIANGLE (Magnus, direct, 2026-08-23 — the game's three parts and their order)
+
+**"We have three very strong parts to our game now, eco, defence and a
+finisher, which we can optimize further once eco and defence are tight."**
+Optimization order under the three-plank lock: (1) DEFENCE TIGHT — the
+box family to its working form (arm 3 speed package in flight; lean
+3-site config: launcher + 2-chamber detention, no execution, peel where
+free); (2) ECO TIGHT — the ROUTE arms: stand-smart laying (the 33%
+stance rule), ore-by-route-length (rounds-to-first-delivery as the
+planner objective), nearest-builder task assignment; (3) FINISHER
+OPTIMIZATION LAST — battery scaling (barrels, exile-medics guard-breaker
+with the sleeping-dogs rule) once 1-2 hold. Every arm keeps the standing
+bars; the tempo bar binds all three (nothing may slow the kill).
