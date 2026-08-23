@@ -116,6 +116,10 @@ from sk_maps import (
     # --- s57 LEVER 2 -- THE HEAL-STAND (SK_CORE_STAND) --------------------
     SK_CORE_STAND, SK_CORE_STAND_HP, SK_CORE_STAND_HELP_HP,
     SK_CORE_STAND_SEAT_DSQ, SK_CORE_STAND_TI_FLOOR,
+    # --- s57 THE STAND, ARM 2 -- HEAL-SEAT CLEARING (SK_STAND_SEATS) -------
+    SK_STAND_SEATS, SK_STAND_SEATS_BAN, SK_STAND_SEATS_FLOW_K,
+    SK_STAND_SEATS_GUN_DSQ, SK_STAND_SEATS_MAX, SK_STAND_SEATS_TARGET,
+    SK_STAND_SEATS_WALK,
     # --- v617 (the PRODUCER FIX) ------------------------------------------
     SK_TEAM_TUBES, SK_TUBE_BEAT_MASK, SK_TUBE_SEAT_FIELDS, SK_TUBE_STALE,
     SK_TUBE_BAND_DSQ, SK_TUBE_PHASES,
@@ -161,6 +165,8 @@ from sk_maps import (
     SK_ROTATE_PRESTAGE, SK_ROTATE_RAIDERS, SK_ROTATE_WANT,
     # --- v632 HEIMDALL PLANK 10 (BATTERY SURVIVAL) -------------------------
     SK_ROTATE_GUARD, SK_ROTATE_GUARD_NEAR,
+    # --- s57 THE BATTERY, ARM 1 (the live ceiling) -------------------------
+    SK_BATTERY_WANT,
     # --- v632 SURVIVAL FAMILY -- PLANK A (walk-terminal guards, #130) and
     # --- PLANK B (the leashed keeper's duty, #128a residual / queued 4.1) ----
     SK_WALK_GUARDS, SK_WALK_GUARD_BAN, SK_LEASH_DUTY,
@@ -380,6 +386,15 @@ class RolesMixin:
         # tree that can run above the whole turn without taking anything from
         # it.  Roles other than the two plan owners return 0 on the first line.
         self._rent_sweep(ct, p, rnd)
+        # ⭐ s57 THE STAND, ARM 2 (SK_STAND_SEATS) -- SAME PLACEMENT, SAME
+        # ENGINE FACT.  `destroy` costs no action cooldown, no move and no turn,
+        # so opening a blocked heal seat competes with nothing below it and the
+        # heal rungs -- `_core_medic` at the top of the keeper's ladder -- run
+        # this same round exactly as they would have.  Roles other than the two
+        # home bodies, and every round the stand is not armed, return 0 on the
+        # first lines.  With the flag False the first line returns 0 and this
+        # call is inert.
+        self._stand_seat_sweep(ct, p, rnd)
 
         # --- ledger V5: DENIAL yields to survival when the core is hit -----
         # ⛔ THE DENIAL ROLE ONLY.  The first cut had the cage walker yield too
@@ -1086,6 +1101,10 @@ class RolesMixin:
             return True
         seat = self._medic_seat(ct, p, rnd)
         if seat is None:
+            # ⭐ s57 THE STAND, ARM 2 -- the clearing station, second, exactly
+            # as in `_home_keeper_move`.  Flag off -> None -> v608 behaviour.
+            seat = self._stand_station(ct, p, rnd)
+        if seat is None:
             return False
         if seat.x == p.x and seat.y == p.y:
             # Seated but nothing to heal (core full, or bank at the floor).
@@ -1093,6 +1112,366 @@ class RolesMixin:
             # layer, not by burning the turn.
             return False
         return bool(self.step_to(ct, seat))
+
+    # ==================================================================
+    # s57 THE STAND, ARM 2 -- HEAL-SEAT CLEARING (SK_STAND_SEATS)
+    # ==================================================================
+    # GAME CONTEXT: in-engine mechanics of the Florent Code League, a sandboxed
+    # bot-vs-bot programming competition.  `destroy` acts on an ALLIED building
+    # only -- ours -- and the engine team-checks it; nothing here touches an
+    # opposing bot's pieces.
+    #
+    # THE MEASURED PROBLEM (`ahbuild_seatcensus.py`, engine-side, over the siege
+    # windows of the 60 baseline cells): 1.54 of our core's 8 heal seats free,
+    # 2.63 holding one of OUR OWN buildings, and 10 of 46 siege cells with NO
+    # free seat at all.  `_medic_seat` refuses a seat holding a building, so on
+    # those cells the adopted stand cannot be staffed at any arming threshold.
+    #
+    # THE SHAPE, in one line: same trigger as the medic (no new latch),
+    # scarcity-gated, ONE destroy per body per round, in a registered safety
+    # order, above the turn because `destroy` costs no part of it.
+
+    def _stand_flow_watch(self, ct, p, rnd, seats):
+        """The BELIEF half of the belt refusal: which seat belt pieces have
+        carried a resource stack, and how long we have been able to say so.
+
+        ⛔ A TILE WE HAVE NOT WATCHED IS NOT A QUIET TILE.  Both dicts are
+        needed and the second is the load-bearing one: `stand_flow` alone would
+        read "never seen flowing" on the first armed round for every conveyor on
+        the ring -- including the live delivery terminus -- because we had not
+        looked yet.  `stand_watch` dates the LOOKING.
+        ⚠ PER BODY, and populated only while the stand is armed: at most 8 tile
+        reads a round for at most two home bodies, inside a siege window whose
+        measured median is 54 rounds.
+        ⛔ BOUNDS FIRST, THEN VISION (CLAUDE.md, corrected s50: `is_in_vision`
+        is a pure radius test with NO bounds check, so it cannot be the outer
+        guard).
+        """
+        for q in seats:
+            if not self.ibp(q) or p.distance_squared(q) > 20:
+                continue                    # this body's vision r^2
+            xy = (q.x, q.y)
+            try:
+                if not ct.is_in_vision(q):
+                    continue
+                bid = ct.get_tile_building_id(q)
+            except Exception:
+                continue                    # unreadable: keep the last belief
+            if bid is None:
+                # The tile went empty -- whatever we believed about the piece
+                # that stood here is about a building that no longer exists.
+                self.stand_watch.pop(xy, None)
+                self.stand_flow.pop(xy, None)
+                continue
+            try:
+                if (ct.get_team(bid) != self.team
+                        or ct.get_entity_type(bid) not in BELT_TYPES):
+                    continue
+            except Exception:
+                continue
+            if xy not in self.stand_watch:
+                self.stand_watch[xy] = rnd
+            try:
+                if ct.get_stored_resource_id(bid) is not None:
+                    self.stand_flow[xy] = rnd
+            except Exception:
+                # An unreadable stack reads as FLOW, not as quiet: the refusal
+                # must fail toward keeping the belt piece.
+                self.stand_flow[xy] = rnd
+
+    def _stand_flow_quiet(self, ct, bid, xy, rnd):
+        """True only if this belt piece has been WATCHED for
+        SK_STAND_SEATS_FLOW_K rounds, has carried nothing in that window, and
+        is carrying nothing right now.  12 rounds is three harvester emission
+        periods (a stack every 4), so a piece on the live line cannot be quiet.
+        """
+        first = self.stand_watch.get(xy)
+        if first is None or rnd - first < SK_STAND_SEATS_FLOW_K:
+            return False                    # not watched long enough to say
+        last = self.stand_flow.get(xy)
+        if last is not None and rnd - last <= SK_STAND_SEATS_FLOW_K:
+            return False
+        try:
+            if ct.get_stored_resource_id(bid) is not None:
+                return False
+        except Exception:
+            return False                    # unreadable: treat as carrying
+        return True
+
+    def _stand_gunners(self, ct):
+        """[(position, facing-delta or None)] for opposing GUNNERS near our own
+        core -- live in vision, plus the tile-keyed memo.
+
+        A turret is a BUILDING and cannot move, so a remembered tile outlives
+        the entity leaving vision (`armed_memo`'s own durable-fact argument,
+        v601 PLANK 1).  Including the memo makes the shield test refuse MORE
+        often, which is the safe direction for a destructive verb.
+        ⛔ GUNNERS ONLY, AND THAT IS AN ENGINE FACT RATHER THAN A CHOICE: a
+        sentinel's line IGNORES OBSTACLES (entity table), so no barrier of ours
+        has ever been cover against one and refusing on a sentinel's account
+        would protect nothing while costing the whole capability.
+        """
+        out = []
+        if self.core is None:
+            return out
+        for eid, et, ep in self.vis_enemy:
+            if et != EntityType.GUNNER:
+                continue
+            if dsq_core(ep, self.core) > SK_STAND_SEATS_GUN_DSQ:
+                continue
+            try:
+                f = ct.get_direction(eid).delta()
+            except Exception:
+                f = None                    # unreadable facing: test every ray
+            out.append((ep, f))
+        for xy, v in self.armed_memo.items():
+            if v[0] != EntityType.GUNNER:
+                continue
+            q = Position(xy[0], xy[1])
+            if dsq_core(q, self.core) > SK_STAND_SEATS_GUN_DSQ:
+                continue
+            out.append((q, self.armed_facing.get(xy)))
+        return out
+
+    def _stand_shielded(self, ct, q):
+        """True if the building on seat q stands BETWEEN an opposing gunner and
+        our own core footprint -- i.e. it is the cover this verb must not take.
+
+        The test is exact where the facing is readable (the ray must be the
+        facing) and CONSERVATIVE where it is not (every ray from that gunner).
+        Reach is the gunner's own SK_KILLER_GUNNER_REACH, so at most 3 tiles
+        cardinally and 2 diagonally: the seat has to be genuinely in the line.
+        """
+        if self.core is None:
+            return False
+        foot = core_tiles_xy(self.core)
+        for g, face in self._stand_gunners(ct):
+            dx = q.x - g.x
+            dy = q.y - g.y
+            if dx == 0 and dy == 0:
+                continue
+            if dx and dy and abs(dx) != abs(dy):
+                continue                    # not one of the 8 compass rays
+            if dx * dx + dy * dy > SK_KILLER_GUNNER_REACH:
+                continue                    # the seat is out of its reach
+            sx = (dx > 0) - (dx < 0)
+            sy = (dy > 0) - (dy < 0)
+            if face is not None and (face[0], face[1]) != (sx, sy):
+                continue                    # it is not facing this way
+            k = max(abs(dx), abs(dy)) + 1   # STRICTLY BEYOND the seat
+            while k * k * (sx * sx + sy * sy) <= SK_KILLER_GUNNER_REACH:
+                if (g.x + sx * k, g.y + sy * k) in foot:
+                    return True
+                k += 1
+        return False
+
+    def _stand_seat_class(self, ct, q, rnd):
+        """THE SAFETY ORDER, and the refusals ARE the plank.  Read them as the
+        specification; a class added here is a different experiment.
+
+          0  PLAIN BARRIER      -- a barrier on a seat this body has no record
+                                   of the apron plank having laid.
+          1  APRON/DOOR BARRIER -- one the apron relay owns (`apron_ours`), and
+                                   only while it is not shielding (see below).
+          2  SPENT BELT PIECE   -- a conveyor/splitter OFF the current belt plan
+                                   that has been watched quiet for
+                                   SK_STAND_SEATS_FLOW_K rounds.
+        REFUSED, always, in this order of reading:
+          * NEVER a turret (ARMED_TYPES), NEVER the core, NEVER the HARVESTER.
+          * NEVER a belt piece on the CURRENT PLAN.  `titanium_collected` counts
+            DELIVERY, and the belt's terminal tile is a door tile by
+            construction (`tile_owner`'s own ordering note) -- so the terminus
+            IS a heal seat and taking it would trade the whole economy for one
+            seat.
+          * NEVER a belt piece that has carried a stack inside the window, or
+            that this body has not watched long enough to say.
+          * NEVER a barrier that occludes a live gunner's line to our footprint.
+            ⛔ APPLIED TO CLASS 0 AS WELL AS CLASS 1, and that is deliberately
+            WIDER than "apron/door barriers only": occlusion is a physical fact
+            about the tile, not a property of which verb laid it, and a plain
+            barrier in the line is exactly as load-bearing as a registered one.
+            The registry decides only the ORDER.
+          * NEVER anything whose type this plank has not priced (final `None`).
+        """
+        try:
+            bid = ct.get_tile_building_id(q)
+            if bid is None or ct.get_team(bid) != self.team:
+                return None                 # empty, or an opposing bot's piece
+            et = ct.get_entity_type(bid)
+        except Exception:
+            return None                     # unreadable: never destroy blind
+        if et == EntityType.CORE or et == EntityType.HARVESTER:
+            return None
+        if et in ARMED_TYPES:
+            return None                     # NEVER a turret
+        xy = (q.x, q.y)
+        if et in BELT_TYPES:
+            if xy in self.belt_plan:
+                return None                 # the delivery line
+            if not self._stand_flow_quiet(ct, bid, xy, rnd):
+                return None
+            return 2
+        if et == EntityType.BARRIER:
+            if self._stand_shielded(ct, q):
+                return None
+            return 1 if xy in self.apron_ours else 0
+        return None
+
+    def _stand_seat_sweep(self, ct, p, rnd):
+        """Open ONE heal seat.  Returns the number of buildings destroyed
+        (0 or 1).
+
+        ⛔ IT TAKES NOTHING FROM THE TURN.  `destroy` costs no action cooldown,
+        no move and no turn (organisers' entity table; engine-probed on this
+        line at `_rent_sweep`), which is why this runs at the TOP of the builder
+        turn beside the rent sweep instead of as a rung in the ladder.  Every
+        heal rung below -- `_core_medic` first -- runs afterwards unchanged, so
+        a medic that already had a seat heals in the SAME round it clears one
+        for the other body.
+        ⛔ NO NEW TRIGGER.  The gate is `_medic_armed` (which under this line's
+        CS arm is `_core_stand_armed`: corefire_fresh AND core HP <=
+        SK_CORE_STAND_HP) plus `corefire_fresh` and the ORE DENIER's own
+        `_medic_help_hp` rung -- the same three tests `_core_medic` and
+        `_medic_seat` read.  Row #132 (the always-fresh class) is answered once,
+        upstream, and re-answering it here would be a second latch to keep in
+        step.
+        ⚠ SCARCITY IS THE OTHER GATE: above SK_STAND_SEATS_TARGET known-free
+        seats this verb is silent, and an UNREADABLE seat counts as FREE -- so
+        the count fails toward NOT destroying.
+        """
+        if not SK_STAND_SEATS or self.core is None:
+            return 0
+        if self.role != SK_HOME_KEEPER and self.role != SK_ORE_DENIER:
+            return 0                        # home bodies only; never a raider
+        if self.stand_clears >= SK_STAND_SEATS_MAX:
+            return 0
+        if not self._medic_armed(ct) or not self.corefire_fresh(ct, rnd):
+            return 0
+        if (self.role == SK_ORE_DENIER
+                and self.corefire_hp(ct) > self._medic_help_hp()):
+            return 0                        # the second medic is bought late
+        seats = core_ring(self.core)
+        self._stand_flow_watch(ct, p, rnd, seats)
+        free = 0
+        held = []
+        for q in seats:
+            if not self.ibp(q):
+                continue
+            try:
+                if (ct.is_tile_passable(q)
+                        and ct.get_tile_builder_bot_id(q) is None):
+                    free += 1
+                    continue
+            except Exception:
+                free += 1                   # unreadable reads as FREE
+                continue
+            held.append(q)
+        self.stand_seat_free += free
+        self.stand_seat_rounds += 1
+        # The gate reading, cached for `_stand_station` -- which runs LATER in
+        # the same turn (movement) and must not pay the 8 reads a second time.
+        self.stand_gate_rnd = rnd
+        self.stand_gate_free = free
+        if free >= SK_STAND_SEATS_TARGET:
+            return 0                        # the stand can seat itself
+        best = None
+        for q in held:
+            # `destroy` needs an ORTHOGONALLY ADJACENT tile -- not diagonal,
+            # not this body's own tile.  d^2 == 1 is exactly that set.
+            if p.distance_squared(q) != 1:
+                continue
+            cls = self._stand_seat_class(ct, q, rnd)
+            if cls is None:
+                self.stand_seat_refused += 1
+                continue
+            if best is None or cls < best[0]:
+                best = (cls, q)             # ring order breaks ties, so the
+                                            # choice is deterministic
+        if best is None:
+            return 0
+        cls, q = best
+        try:
+            if not ct.can_destroy(q):
+                return 0
+            ct.destroy(q)
+        except Exception:
+            return 0
+        xy = (q.x, q.y)
+        self.stand_clears += 1
+        self.stand_clear_cls[cls] += 1
+        # Keep every belief that names this tile honest, and shut the thrash
+        # loop: `escape_ban` is the dict `_apron_buildable` already consults,
+        # so the apron relay will not re-lay this barrier for
+        # SK_STAND_SEATS_BAN rounds.
+        self.belt_built.discard(xy)
+        self.belt_seen.pop(xy, None)
+        self.apron_ours.pop(xy, None)
+        self.apron_lost.pop(xy, None)
+        self.stand_watch.pop(xy, None)
+        self.stand_flow.pop(xy, None)
+        self.escape_ban[xy] = rnd + SK_STAND_SEATS_BAN
+        return 1
+
+    def _stand_station(self, ct, p, rnd):
+        """The tile to stand on in order to OPEN a seat, or None.
+
+        ⚠⚠ DISCLOSED AS AN EXTENSION OF THE BRIEF, which specifies the destroy
+        verb only, AND THE REASON IS THIS BUILD'S OWN FIRST MEASUREMENT: with
+        the destroy alone, three walled-in siege cells gave 380 gated rounds,
+        113 candidate seats and **ZERO** destroys -- every seat the body was
+        ever orthogonally adjacent to was our own GUNNER (refused, correctly) or
+        an opposing bot's building (not ours to destroy).  `destroy` needs an
+        ADJACENT tile; `_medic_seat` returns None when every seat is blocked; so
+        the medic never walks home and is never beside the blockage.  That loop
+        is the same one the CS arm's first build hit ("armed 152 times, landed
+        ZERO heals") and it has the same answer.  SK_STAND_SEATS_WALK = False
+        ablates this half and restores the brief as written.
+
+        FOUR TILES, geometric and fixed: the CORNERS of the core ring.  Each is
+        orthogonally adjacent to exactly two seats and diagonal to the
+        footprint, so a body standing on one can clear either of two seats and
+        is one step from both.  Returns `p` itself when already stationed, which
+        is how the caller learns to HOLD rather than wander back to the belt.
+
+        ⛔ IT IS OFFERED ONLY WHERE `_medic_seat` ALREADY GAVE UP -- the callers
+        ask this second -- so it can never displace a real seat, and it re-uses
+        the stand's own walk fence, so it can add no walk the adopted arm would
+        not already have made.
+        """
+        if not (SK_STAND_SEATS and SK_STAND_SEATS_WALK) or self.core is None:
+            return None
+        if self.stand_clears >= SK_STAND_SEATS_MAX:
+            return None
+        # The scarcity gate, read off the sweep's own cache from earlier THIS
+        # turn.  A stale or absent reading means the sweep did not run (wrong
+        # role, not armed, cap reached) and there is nothing to station for.
+        if self.stand_gate_rnd != rnd:
+            return None
+        if self.stand_gate_free >= SK_STAND_SEATS_TARGET:
+            return None
+        ox, oy = self.core.x, self.core.y
+        best = None
+        for cx, cy in ((ox - 1, oy - 1), (ox + 2, oy - 1),
+                       (ox - 1, oy + 2), (ox + 2, oy + 2)):
+            q = Position(cx, cy)
+            if not self.ibp(q):
+                continue
+            d = p.distance_squared(q)
+            if d == 0:
+                return p                    # stationed: hold
+            if d > self._medic_seat_dsq():
+                continue
+            rank = 0
+            try:
+                if not ct.is_tile_passable(q):
+                    continue
+                if ct.get_tile_builder_bot_id(q) is not None:
+                    continue                # one body per corner
+            except Exception:
+                rank = 1                    # unreadable: a walk target, last
+            if best is None or (rank, d) < (best[0], best[1]):
+                best = (rank, d, q)
+        return None if best is None else best[2]
 
     # --- v609 GATE A: the near emergency outranks the far one -----------
 
@@ -1733,6 +2112,12 @@ class RolesMixin:
             # delivering, that conveyor outranks a new harvester: a harvester
             # with no route home is worth exactly zero forever, and 30 of 68
             # alive harvesters on the v609 tape are one build from home.
+            # ⭐⭐ THE ROUTE, ARM 1 (SK_ROUTE_HOME) -- THE ACTION HALF, and its
+            # placement is the rung immediately above SK_TERM_FIRST because it
+            # is SK_TERM_FIRST's own argument carried to a chain that is more
+            # than one tile short.  ⛔ OFF: one `if` on a module constant.
+            if SK_ROUTE_HOME and self._route_action(ct, p, rnd):
+                return
             if (SK_TERMINATE and SK_TERM_FIRST and SK_BELT
                     and self._route_gaps(ct, rnd)
                     and self._belt_action(ct, p, rnd)):
@@ -5171,6 +5556,12 @@ class RolesMixin:
         # moving) for as long as the alarm is fresh; SK_COREFIRE_TTL is what
         # bounds that, and it is the plank's whole cost.
         seat = self._medic_seat(ct, p, rnd)
+        if seat is None:
+            # ⭐ s57 THE STAND, ARM 2 -- the CLEARING STATION, and it is asked
+            # SECOND on purpose: a real seat always outranks a station, so this
+            # can only ever fire where the v608 positioning half had already
+            # given up.  Flag off -> None, and this is one `is None` test.
+            seat = self._stand_station(ct, p, rnd)
         if seat is not None:
             if seat.x != p.x or seat.y != p.y:
                 self.step_to(ct, seat)
@@ -5269,6 +5660,20 @@ class RolesMixin:
         if hl is not None:
             self.step_to(ct, hl)
             return
+        # ⭐⭐ THE ROUTE, ARM 1 (SK_ROUTE_HOME) -- THE MOVEMENT HALF + STALL
+        # BREAKER.  ABOVE the v610 gap walk because it is the same preference
+        # generalised (a chain FOUR tiles short is as orphaned as one), and
+        # BELOW `_medic_seat`, the escalated shooter and the home-gun walk --
+        # every rung that answers a core or a body about to die keeps its
+        # priority.  ⛔ IT ONLY ENDS THE TURN IF A STEP ACTUALLY HAPPENED:
+        # `step_to` returns True iff it moved, so an unreachable target falls
+        # through to the walks below instead of silently spending the round.
+        if SK_ROUTE_HOME:
+            _rt = self._route_walk(ct, p, rnd)
+            if _rt is not None:
+                self.route_walks += 1
+                if self.step_to(ct, _rt):
+                    return
         tgt = None
         best = None
         # ⭐ v610 PLANK 2, THE MOVEMENT HALF.  Prefer a tile that COMPLETES a
@@ -7205,7 +7610,32 @@ class RolesMixin:
                 self.relight_rounds += 1
             elif live >= want:
                 self.relight_since = None
-        if live >= want:
+        # ⭐⭐ s57 THE BATTERY, ARM 1 -- THE LIVE CEILING (SK_BATTERY_WANT), AND
+        # THIS IS THE WHOLE ARM.  Study STUDY-battery-execution-2026-08-23: 62
+        # of 90 cells stop at exactly the line below, and in WIN-class cells the
+        # peak ACHIEVABLE against the cell's own purse and this bot's own
+        # surcharge bar is 4.0 against an achieved 2.0.
+        # ⛔ `want` IS NOT RAISED, AND THAT IS THE DESIGN.  Raising it here
+        # would also move `skip_prep` (`0 < live < want`), `_plant_gun`'s
+        # SK_TUBE_FUND waiver (`live < want`) and the post-plant re-arm
+        # (`n < want`) -- three policies this arm has no mandate to change and
+        # which would make a result unattributable.  Only the HOLD is skipped,
+        # and only while `_battery_open` says the purse has already cleared the
+        # bar the very next `_plant_gun` will charge.  So:
+        #   * plants 1 and 2 run under today's conditions, character for
+        #     character (this branch is not even consulted below the floor);
+        #   * a cell whose purse never clears the bar never leaves the hold and
+        #     its tape is byte-identical;
+        #   * a plant beyond the pair pays the FULL surcharge, because with
+        #     `want` still 2 and `live >= 2` the waiver's `live < want` is
+        #     False and `_plant_gun` takes its else branch -- the same
+        #     expression `_battery_bar` restates.
+        batt = False
+        if SK_BATTERY_WANT:
+            batt = self._battery_open(ct, rnd, live, want)
+            if batt:
+                self._battery_rearm()
+        if live >= want and not batt:
             # ⭐⭐ v620 PLANK 1's SECOND HALF -- AT OR ABOVE THE FLOOR, NO TUBE
             # IS BOUGHT.  That is the loop closing, and it is the whole reason
             # the honest death signal becomes shippable: v619 measured
@@ -7811,7 +8241,22 @@ class RolesMixin:
         # ⛔ EXACT IDENTITY WHEN OFF: `rot_body` is False on every round of every
         # SK_ROTATE-off arm, so this returns v619's tuple unchanged and
         # `nest_turret4` is assigned by no path.
-        if self.rot_body:
+        # ⭐⭐ s57 THE BATTERY, ARM 1 (SK_BATTERY_WANT) -- THE SAME WIDENING,
+        # FOR THE ARM THAT ACTUALLY RUNS.  The rot_body branch above is dead on
+        # every SK_ROTATE-off arm and SK_ROTATE ships False, so the shipped
+        # ledger is TWO slots and `_nest_live()` cannot return more than 2.
+        # A ceiling of 4 against a 2-wide book is the failure that branch's own
+        # note describes: `_plant_gun`'s slot loop finds no free slot, the
+        # `break` never fires, and the engineer buys a sentinel every affordable
+        # round with no book of what it owns and no death memo for any of them.
+        # ⛔ EXACT IDENTITY WHEN OFF: SK_BATTERY_WANT is 0, so this returns
+        # v619's tuple unchanged and `nest_turret4` is assigned by no path.
+        # ⛔ AND IT IS INERT AT OR BELOW THE PAIR EVEN WHEN ON: every consumer
+        # (`_nest_live`, `_nest_taken`, `_nest_watch`'s compaction,
+        # `_plant_gun`'s first-empty loop) skips None entries and runs over
+        # `len(self._nest_slots())`, so two extra None slots change no count,
+        # no promotion and no site.
+        if self.rot_body or SK_BATTERY_WANT:
             return (self.nest_turret, self.nest_turret2,
                     self.nest_turret3, self.nest_turret4)
         if SK_NEST_N3:
@@ -7851,6 +8296,121 @@ class RolesMixin:
             if t is not None:
                 out.append(t[1])
         return out
+
+    # ==================================================================
+    # s57 THE BATTERY, ARM 1 -- THE LIVE CEILING  (SK_BATTERY_WANT)
+    # ==================================================================
+    # GAME CONTEXT: in-game build work for the Florent Code League, a
+    # sandboxed bot-vs-bot competition.  "battery", "tube", "plant" are
+    # in-engine mechanics between competing game bots.
+    #
+    # THREE PURE-ISH HELPERS, AND NONE OF THEM IS REACHED ON AN OFF ARM:
+    # every call site is guarded by `if SK_BATTERY_WANT:` at the ONE gate,
+    # so with the flag 0 the added cost is one test of a module constant per
+    # engineer round and the control flow is v632's, character for character.
+
+    def _battery_bar(self, ct, live):
+        """The purse a plant beyond the pair must clear, in titanium.
+
+        ⛔ THIS IS `_plant_gun`'s OWN ELSE-BRANCH ARITHMETIC, RESTATED -- not a
+        new policy.  There:
+            cost = ct.get_sentinel_cost()
+            ...
+            cost += SK_AMMO_SENTINEL * (live + 1) + SK_AMMO_FLOOR
+        and `SK_TUBE_FLOOR` ships False, so the SK_TUBE_FUND waiver above it is
+        unreachable in this config and the else branch is the only branch a
+        plant with `live > 0` can take.  Restated rather than refactored ON
+        PURPOSE: making `_plant_gun` call this would add a second
+        `get_sentinel_cost()` engine call to the OFF path, and the OFF path has
+        to be byte-identical, which includes its CPU profile.  The weld is
+        therefore a UNIT CONTROL, not shared code -- the control drives the bar
+        to both verdicts (bar-1 refuses, bar accepts) THROUGH `_plant_gun`, so
+        a drift between the two expressions is a failing test rather than a
+        silent overspend.
+        """
+        return (ct.get_sentinel_cost()
+                + SK_AMMO_SENTINEL * (live + 1) + SK_AMMO_FLOOR)
+
+    def _battery_open(self, ct, rnd, live, want):
+        """May the engineer buy ONE MORE tube above the pair, right now?
+
+        FOUR CONDITIONS, AND EACH CLOSES A DIFFERENT ROAD:
+          * `SK_BATTERY_WANT` -- the master.  0 = off.
+          * `SK_NEST_PAIR` -- the pair machinery is what this raises the
+            ceiling ON; with it off `want` is 1 and there is no battery to
+            build.
+          * `live >= want` -- BELOW the floor nothing changes.  This method is
+            asked only about the rungs the hold branch would otherwise refuse,
+            so plants 1 and 2 keep today's exact conditions by construction.
+          * `live < ceiling` -- the ceiling itself, CLAMPED TO THE LEDGER
+            WIDTH.  A book narrower than the target can never meet it, and an
+            unmeetable target is the "buy every affordable round with no death
+            memo" failure `_nest_slots()` warns about.  `len()` is read from
+            the live tuple rather than assumed, so if a future flag narrows the
+            book the clamp follows it.
+          * the purse clears `_battery_bar` -- the affordability gate, and it
+            is what makes the flag SELF-LIMITING.  Tested BEFORE the hold is
+            skipped, so a cell whose purse never clears the bar never leaves
+            the hold branch and its tape is unchanged.
+        ⛔ IT READS, IT DOES NOT SPEND OR WRITE.  The only mutation in this
+        family is `_battery_rearm`, and that one is free.
+        """
+        if not (SK_BATTERY_WANT and SK_NEST_PAIR):
+            return False
+        if live < want:
+            return False
+        ceiling = SK_BATTERY_WANT
+        width = len(self._nest_slots())
+        if ceiling > width:
+            ceiling = width
+        if live >= ceiling:
+            self.batt_ceiling += 1
+            return False
+        try:
+            bank = ct.get_global_resources()
+        except Exception:
+            return False
+        if bank < self._battery_bar(ct, live):
+            self.batt_unfunded += 1
+            return False
+        self.batt_open += 1
+        return True
+
+    def _battery_rearm(self):
+        """Free the siting machinery when the site we are holding is SPENT.
+
+        ⛔⛔ THIS IS THE ONE HAZARD THE CEILING CREATES AND IT WOULD HAVE BEEN
+        A SELF-INFLICTED TUBE LOSS.  `_plant_gun` clears `nest_site` only when
+        the post-plant count is still BELOW `want`; at the pair it leaves the
+        just-built tile in `nest_site`, which is correct today because the body
+        then holds station beside it forever.  With the ceiling raised the body
+        falls through to the SITING branch instead, and that branch's first
+        rung is SK_NEST_CLEAR: an occupied site whose building is OURS is
+        cleared with a FREE `destroy` -- i.e. the engineer would demolish the
+        sentinel it just built, every time, and `_nest_site_watch` would not
+        stop it (it refutes WALLS and orbits, never occupancy).
+        ⛔ THE TEST IS THE LEDGER, NOT THE ENGINE.  `get_tile_building_id` can
+        raise out of bounds and answers nothing useful out of vision; the
+        ledger is this body's own record of the tiles it has planted on, needs
+        no call, and cannot raise.  A site whose tube has since died has
+        already left the ledger -- and `_nest_watch` re-armed the machinery on
+        that death anyway -- so this fires on exactly the spent-site case.
+        ⛔ SAME FIELDS AS EVERY OTHER RE-SITE (`_nest_watch`'s V3 block,
+        `_plant_gun`'s), so the re-pick that follows is the ordinary one:
+        `nest_best_d = None` re-arms the v602 stuck watchdog and `nest_bad` is
+        untouched, because a site that WORKED must stay re-sitable later.
+        """
+        s = self.nest_site
+        if s is None:
+            return
+        for t in self._nest_slots():
+            if t is not None and t[1].x == s.x and t[1].y == s.y:
+                self.nest_site = None
+                self.nest_face = None
+                self.nest_prepped = 0
+                self.nest_best_d = None
+                self.batt_rearm += 1
+                return
 
     def _pick_nest(self, ct, p, rnd):
         """The band, with LEDGER V4's per-tile death memory applied.
@@ -10019,6 +10579,247 @@ class RolesMixin:
             except Exception:
                 continue
 
+    # ==================================================================
+    # ⭐⭐ THE ROUTE, ARM 1 -- SK_ROUTE_HOME.  s57 build agent 2026-08-23.
+    # ==================================================================
+    # GAME CONTEXT: in-engine mechanics of the Florent Code League's simulated
+    # grid; "enemy", "blocked" and "clear-out" name only game pieces.
+    #
+    # The measured defect and the two mechanisms behind it are written out in
+    # full at the tail of `sk_maps.py` (the SK_ROUTE_HOME block).  In one line:
+    # 8 of the 13 zero-delivery cells on t_cs_f1/f2 have a belt that stops 1-4
+    # EMPTY tiles short of our own core and is never finished, and the two
+    # reasons are (1) the walk names the tile and never arrives, unbounded, and
+    # (2) `_route_gaps` only sees a chain with EXACTLY ONE missing link.
+    #
+    # ⛔ THIS BLOCK IS ADDITIVE.  It defines three new methods and reads only
+    # state the constructor already sets plus five attributes of its own.  With
+    # SK_ROUTE_HOME False every one of them returns before its first read and
+    # the two call sites are one `if` on a module constant.
+
+    def _route_missing(self, ct, rnd):
+        """THE ROUTE AUDIT -- every unbuilt PLANNED tile on a chain that does
+        not currently deliver, as {(x, y): rank}, rank 0 = nearest the core.
+
+        This is `_route_gaps`' walk with ONE change and it is the whole audit:
+        that method collects a chain's unbuilt tiles and DISCARDS the chain the
+        moment it finds a second one (`if len(miss) > 1: break`), because it
+        answers "which tile is the SOLE missing link".  A harvester whose line
+        stops FOUR tiles short is exactly as orphaned and is worth exactly as
+        much, so this keeps all of them.
+
+        ⛔ WHAT IT IS NOT: it is not a second opinion about the belt.  The tiles
+        come from `belt_plan`, the walk from `_belt_next`, the built-ledger from
+        `belt_built` (kept honest by `_belt_watch`/`_belt_seed_store`), so a
+        link this names is a tile the plan already wants, with the plan's own
+        facing -- "re-lay the PLANNED tile first" is true by construction.
+
+        ⚠ A CHAIN WHOSE `belt_head` IS None FEEDS THE CORE DIRECTLY and is never
+        orphaned; a chain that walks off the plan is a broken plan, not a gap,
+        and is dropped exactly as `_route_gaps` drops it.
+
+        CPU: bounded by `len(harv_tiles) x SK_ROUTE_HOPS`, memoised on
+        (round, belt_key, len(belt_built)) -- the third term is required because
+        our own build inside the round is what makes a link stop being missing.
+        On CPU exhaustion the LAST answer is returned rather than a wrong empty
+        one (an empty set would silently switch the arm off).
+        """
+        if not SK_ROUTE_HOME:
+            return {}
+        key = (rnd, self.belt_key, len(self.belt_built))
+        if self._rt_key == key:
+            return self._rt_links
+        links = {}
+        for h in self.harv_tiles:
+            cur = self.belt_head.get(h)
+            if cur is None:
+                continue                      # feeds the core direct
+            if self._cpu_exhausted(ct):
+                return self._rt_links         # degrade to the last answer
+            chain = []
+            miss = []
+            hops = 0
+            ok = True
+            while hops < SK_ROUTE_HOPS:
+                if cur not in self.belt_plan:
+                    ok = False                # broken plan, not a gap
+                    break
+                chain.append(cur)
+                if cur not in self.belt_built:
+                    miss.append(cur)
+                if self.core is not None and adjacent_to_core(
+                        Position(cur[0], cur[1]), self.core):
+                    break
+                nxt = self._belt_next(cur)
+                if nxt is None:
+                    ok = False
+                    break
+                cur = nxt
+                hops += 1
+            if not ok or not miss:
+                continue
+            n = len(chain)
+            for i, t in enumerate(chain):
+                if t not in self.belt_built:
+                    r = n - 1 - i             # 0 = the terminal, core-ward end
+                    if links.get(t, 1 << 30) > r:
+                        links[t] = r
+        self._rt_key = key
+        self._rt_links = links
+        return links
+
+    def _route_link_ok(self, ct, p, q, rnd):
+        """The build-site guards, and they are `_belt_action`'s verbatim: not
+        escalated, not banned, not inside a self-trap escape, owned by the belt
+        under the arbiter, and leaving this body a tile to step onto."""
+        xy = (q.x, q.y)
+        if xy in self.belt_escalated or xy in self.belt_ban:
+            return False
+        if self.escape_ban.get(xy, -1) > rnd:
+            return False
+        if not self.may_build(q, OWNER_BELT):
+            return False
+        if self.free_neighbours(ct, p, exclude=q) == 0:
+            return False
+        return True
+
+    def _route_action(self, ct, p, rnd):
+        """THE ACTION HALF -- lay (or clear) the CORE-WARD-most missing link
+        this body is orthogonally adjacent to.  True if it took the turn.
+
+        ⛔ PLACED BELOW EVERY HEAL, SEAT AND CLEAR-OUT RUNG in `_home_keeper`
+        and immediately above SK_TERM_FIRST, which is this tree's own settled
+        placement for "the belt outranks a new harvester" -- a harvester with no
+        route home is worth exactly zero forever, and this rung is what makes
+        that true for a chain that is FOUR tiles short as well as one.
+        """
+        if not (SK_ROUTE_HOME and SK_BELT):
+            return False
+        links = self._route_missing(ct, rnd)
+        if not links:
+            return False
+        cost = ct.get_conveyor_cost()
+        if ct.get_global_resources() - cost < SK_ROUTE_HOME_TI:
+            return False
+        best = None
+        for d in CARDINALS:
+            q = p.add(d)
+            if not self.ibp(q):
+                continue
+            xy = (q.x, q.y)
+            rank = links.get(xy)
+            if rank is None:
+                continue
+            if self.belt_plan.get(xy) is None:
+                continue
+            if not self._route_link_ok(ct, p, q, rnd):
+                continue
+            if best is None or rank < best[0]:
+                best = (rank, xy, q)
+        if best is None:
+            return False
+        _rank, xy, q = best
+        # SIEGE AWARENESS: while the core's own alarm is fresh this arm refuses
+        # a link beyond the keeper leash, exactly as PLANK 4's walk does.  A
+        # link INSIDE the leash is laid: that body is standing at home already.
+        if (SK_ROUTE_HOME_SIEGE and self.core is not None
+                and self._under_attack(ct, rnd)
+                and dsq_core(q, self.core) > SK_LEASH_DSQ):
+            self.route_siege_refused += 1
+            return False
+        try:
+            bid = ct.get_tile_building_id(q)
+        except Exception:
+            return False
+        if bid is not None:
+            # Something stands on the link.  `_belt_evict` owns all three cases
+            # (ours already serving it, ours in the way, theirs to clear out)
+            # and keeps its own ledgers; nothing is duplicated here.
+            return self._belt_evict(ct, p, q, bid, rnd)
+        # THE SPAWN RESERVE -- in-ring candidates only (see SK_ROUTE_HOME_SPAWN).
+        if SK_ROUTE_HOME_SPAWN and self.core is not None and xy in self._route_ring():
+            if not self._claim_spawn_ok(ct, q):
+                self.route_spawn_refused += 1
+                return False
+        n = self.belt_rebuilds.get(xy, 0)
+        if n >= SK_REBUILD_ESCALATE:
+            return False                     # ledger V1 owns this tile now
+        face = self.belt_plan.get(xy)
+        try:
+            if not ct.can_build_conveyor(q, face):
+                return False
+            ct.build_conveyor(q, face)
+        except Exception:
+            return False
+        self.belt_rebuilds[xy] = n + 1
+        self.belt_built.add(xy)
+        self.belt_seen[xy] = rnd             # our own build IS an observation
+        self.route_builds += 1
+        return True
+
+    def _route_ring(self):
+        """The core's 8-way spawn ring minus its footprint -- the only tiles on
+        which a build can consume a spawn candidate (`_spawn_plan`'s own walk).
+        """
+        if self.core is None:
+            return frozenset()
+        if self._rt_ring is None:
+            fp = set(core_tiles_xy(self.core))
+            self._rt_ring = frozenset(
+                (self.core.x + dx, self.core.y + dy)
+                for dx, dy in NEIGHBOURS8
+                if (self.core.x + dx, self.core.y + dy) not in fp)
+        return self._rt_ring
+
+    def _route_walk(self, ct, p, rnd):
+        """THE MOVEMENT HALF + THE STALL BREAKER.  Returns a Position or None.
+
+        Prefers the nearest missing link, core-ward on a tie.  ⛔ THE STALL
+        BREAKER IS THE HALF THAT ANSWERS THE MEASUREMENT: on four of the eight
+        never-routed cells the keeper named ONE tile for 77-908 consecutive
+        rounds while an enemy structure stood on it and their launcher threw our
+        body out of the corridor 31-377 times.  After SK_ROUTE_STALL rounds on
+        one link the tile enters `belt_ban` -- which `_belt_parents` excludes
+        from the BFS and whose length is part of `belt_key` -- so the tree's own
+        planner re-routes around it on the next round.  Capped at
+        SK_ROUTE_BAN_MAX because a ban is irreversible for the game.
+        """
+        if not (SK_ROUTE_HOME and SK_BELT):
+            return None
+        links = self._route_missing(ct, rnd)
+        if not links:
+            self.route_tgt = None
+            return None
+        leashed = (SK_ROUTE_HOME_SIEGE and self.core is not None
+                   and self._under_attack(ct, rnd))
+        tgt = None
+        bestk = None
+        for xy, rank in links.items():
+            if xy in self.belt_escalated or xy in self.belt_ban:
+                continue
+            if xy == (p.x, p.y):
+                continue                     # cannot build under our own feet
+            q = Position(xy[0], xy[1])
+            if leashed and dsq_core(q, self.core) > SK_LEASH_DSQ:
+                continue
+            k = (p.distance_squared(q), rank)
+            if bestk is None or k < bestk:
+                bestk = k
+                tgt = q
+        if tgt is None:
+            self.route_tgt = None
+            return None
+        xy = (tgt.x, tgt.y)
+        if self.route_tgt is None or self.route_tgt[0] != xy:
+            self.route_tgt = (xy, rnd)
+        elif (rnd - self.route_tgt[1] >= SK_ROUTE_STALL
+              and self.route_bans < SK_ROUTE_BAN_MAX):
+            self.belt_ban.add(xy)
+            self.route_bans += 1
+            self.route_tgt = None
+            return None
+        return tgt
+
 
 def _card(dx, dy):
     if dx > 0:
@@ -10028,3 +10829,16 @@ def _card(dx, dy):
     if dy > 0:
         return Direction.SOUTH
     return Direction.NORTH
+
+
+# ===========================================================================
+# THE ROUTE, ARM 1 -- SK_ROUTE_HOME constants.  Imported HERE, at module tail,
+# rather than into the banner import block at the head of this file, so the arm
+# cannot collide with concurrent work on that block.  Module-level names are
+# resolved from module globals at CALL time, so the placement is behaviourally
+# identical to importing at the top.  GAME CONTEXT: in-game bot constants.
+# ===========================================================================
+from sk_maps import (                                          # noqa: E402
+    SK_ROUTE_HOME, SK_ROUTE_HOME_TI, SK_ROUTE_HOME_SPAWN,
+    SK_ROUTE_HOME_SIEGE, SK_ROUTE_STALL, SK_ROUTE_BAN_MAX, SK_ROUTE_HOPS,
+)

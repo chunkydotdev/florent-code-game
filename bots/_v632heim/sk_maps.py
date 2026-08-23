@@ -4457,6 +4457,81 @@ SK_ROTATE_CLUSTER_GAP = 2    # THE FIRST BATTERY IS CLUSTERED.  Magnus, direct:
                              # replacements -- "then move to the next
                              # position".
 
+# ===========================================================================
+# s57 THE BATTERY, ARM 1 -- THE LIVE CEILING  (SK_BATTERY_WANT)
+# ===========================================================================
+# GAME CONTEXT: in-game build work for the Florent Code League, a sandboxed
+# bot-vs-bot competition on a simulated grid.  "battery", "tube", "plant",
+# "siege" are in-engine mechanics between competing game bots.  Nothing here
+# touches a real system.
+#
+# THE STUDY IS THE WHOLE CASE (STUDY-battery-execution-2026-08-23).  The
+# rolling battery is NOT PLAYED: SK_ROTATE ships False, so every doctrine
+# mechanism behind it (SK_ROTATE_WANT = 4, PRESTAGE, CLUSTER_GAP) is dead code
+# and what actually runs is the v619/v620 two-tube nest pair.  The binding
+# gate is `sk_roles._siege_engineer`'s `if live >= want: return` with
+# want = SK_NEST_PAIR_N = 2, and 62 of 90 measured cells hit exactly it.  In
+# WIN-class cells the achievable peak -- computed against the cell's OWN purse
+# and the bot's OWN surcharge bar -- is 4.0 against an achieved 2.0.  That gap
+# is the largest the study measured and it is money left on the table, not a
+# titanium shortage: LOSS cells achieve only 2.5-3.0 because titanium really
+# does bind there (the ROUTE plank's territory).
+#
+# WHAT THIS FLAG DOES, AND IT IS ONLY THE CEILING.  ON, the engineer no longer
+# STOPS at the pair: while its ledger says fewer than SK_BATTERY_WANT tubes
+# stand, the hold branch is skipped and the ordinary siting/plant machinery
+# runs one more time.  It raises NOTHING else -- `want` itself is untouched, so
+# the prep-barrier decision, `_plant_gun`'s funding rhythm and the post-plant
+# re-arm all keep the exact conditions they have today.
+#
+# ⛔ EVERY PLANT BEYOND THE PAIR IS AFFORDABILITY-GATED AT THE BOT'S OWN BAR,
+# AND THAT IS WHAT MAKES THE FLAG SELF-LIMITING RATHER THAN A SPENDING SPREE.
+# The bar is `_plant_gun`'s own else-branch arithmetic, restated:
+#     get_sentinel_cost() + SK_AMMO_SENTINEL * (live + 1) + SK_AMMO_FLOOR
+# i.e. the sentinel PLUS one shot for every tube that will then stand PLUS the
+# V10 floor -- the drip's own `need` quoted back at the build decision.  The
+# gate is tested BEFORE the hold is skipped, so on a cell whose purse never
+# clears the bar the body holds exactly as it does today and the tape is
+# byte-identical.  On a LOSS cell (achievable 2.5) that is the common case by
+# construction: the flag converts SURPLUS into barrels and can never starve
+# the base, because the spawn reserve and every other spend rung are upstream
+# of the purse this bar reads.
+#
+# ⛔ THE LEDGER HAS TO BE AS WIDE AS THE CEILING OR THE FLAG IS A NO-OP THAT
+# SPENDS.  `_nest_slots()` is TWO slots wide with SK_NEST_N3 off and
+# `_floor_live` reduces to `_nest_live()` (SK_TUBE_FLOOR2 ships False), so a
+# ceiling of 4 against a 2-wide book would be permanently unmet: `_plant_gun`'s
+# slot loop would find no free slot, the engineer would buy a sentinel every
+# affordable round and own no death memo for any of them.  This flag widens the
+# book to the four NAMED slots the rotation plank already allocated, and the
+# EFFECTIVE ceiling is clamped to that width -- see `_battery_open`.  A value
+# above 4 therefore buys nothing; 4 is the doctrine's number and the width.
+#
+# ⛔ SITING IS NOT TOUCHED.  `_nest_scan`, the band, `SK_NEST_PAIR_MIN_GAP = 8`
+# and the death memo run exactly as they do today, so plants 3 and 4 are spread
+# on v603's rule.  Tightening that spread is a SEPARATE arm (arm 4) and welding
+# it here would make the ceiling and the spacing unattributable.
+#
+# ⛔ TWO KNOWN, DISCLOSED INTERACTIONS, BOTH LEFT ALONE ON PURPOSE:
+#   * `_rent_prebuy`'s window closes at `_floor_live >= SK_NEST_PAIR_N`, so the
+#     rent refund does not help plants 3-4.  It is priced on the FLOOR, not the
+#     ceiling, and re-pricing it is a spend change.
+#   * `_nest_watch` books an out-of-vision tube as dead (SK_TUBE_RELIGHT ships
+#     False, so the v619 true-death arbiter is off).  A four-tube target walks
+#     the body further from its own guns, so the ledger under-reads more often
+#     and the ceiling is SOFT in the downward direction.  That is the same
+#     mechanism the pair already lives with; it is reported, not patched here.
+SK_BATTERY_WANT = 0          # ⭐⭐ MASTER AND CEILING IN ONE INTEGER.  0 = OFF
+                             # and the gate reads exactly today's `want`, which
+                             # is what makes the OFF tape a byte identity by
+                             # construction rather than by argument.  ON, the
+                             # value IS the ceiling: how many forward tubes the
+                             # engineer's book may hold before it stops buying.
+                             # REGISTERED DEFAULT FOR THE ARM: 4 -- study §8b
+                             # (two tubes is 130 rounds against a core healing
+                             # at the measured 0.68 tax, four is 65) and the
+                             # width of the slot ledger.
+
 # ---------------------------------------------------------------------------
 # v632 HEIMDALL -- THE FUNDING PRIORITY  (SK_ROTATE_FUND), THE ROTATION'S
 # FUNDING HALF
@@ -5023,6 +5098,178 @@ SK_CORE_STAND_SEAT_DSQ = 100  # THE WALK FENCE UNDER THE STAND, replacing
                           # what bounds that cost.
 
 # ===========================================================================
+# s57 -- THE STAND, ARM 2: HEAL-SEAT CLEARING  (SK_STAND_SEATS)
+# ===========================================================================
+# GAME CONTEXT: in-engine mechanics of the Florent Code League, a sandboxed
+# bot-vs-bot programming competition.  `destroy` is the engine's documented
+# verb on an ALLIED (our own) building on an orthogonally adjacent tile; it is
+# never applied to an opposing bot's pieces and cannot be -- the engine
+# team-checks it (`docs/research/engine-guard-matrix-exploit-hunt-2026-08-10`).
+#
+# ⭐ WHAT IT ANSWERS, AND THE NUMBER IS ENGINE-SIDE, NOT AN INTUITION.  The
+# adopted CS arm (SK_CORE_STAND) lifted the medic's ARMING gate, its WALK fence
+# and its BANK floor, and `_medic_seat`'s own note names the one occupancy
+# problem it deliberately did NOT lift: a seat holding OUR OWN building stays
+# refused.  The seat census (`scratchpad/s57_heim0/ahbuild_seatcensus.py`, read
+# off the replays where neither vision nor distance applies) measured, over the
+# SIEGE WINDOW of the 60 baseline cells: only **1.54 of the 8 seats free** per
+# round, **2.63 holding one of OURS**, 3.82 holding one of THEIRS -- and **10 of
+# 46 siege cells with NO free seat at all**.  A medic with no seat is a medic
+# that never heals, whatever the arming gate says.
+#
+# ⛔⛔ IT ADDS NO NEW LATCH.  The trigger IS the CS arm's -- `_medic_armed` ->
+# `_core_stand_armed` (corefire_fresh AND core HP <= SK_CORE_STAND_HP) plus the
+# ORE DENIER's own `_medic_help_hp` rung -- read through the same two methods
+# the medic reads.  Class-audit row #132 (the ALWAYS-FRESH class) is answered
+# once, in `_core_stand_armed`, and inventing a second trigger here is exactly
+# what that row exists to prevent.
+#
+# ⛔ THE ENGINE FACT THAT DECIDES ITS PLACEMENT, AND THE BRIEF GOT IT THE OTHER
+# WAY ROUND: `destroy` costs NO action cooldown, NO move and NO turn -- it is
+# "free, unlimited per turn" in the organisers' own entity table and was
+# ENGINE-PROBED on this line (`scratchpad/s54_v619/probe_destroy`, quoted at
+# `_rent_sweep`: the body was free to build the same turn and the scale factor
+# refunded 183 -> 182 -> 181).  So the clear does NOT compete with the heal: it
+# runs at the TOP of the builder turn, beside `_rent_sweep`, and every heal
+# rung below it -- `_core_medic` first among them -- runs afterwards exactly as
+# it would have.  A seat that was already free is healed from THE SAME ROUND;
+# a seat this verb opens is stood on the NEXT one (stepping onto it is a MOVE,
+# and move and action are mutually exclusive for a builder bot).
+#
+# ⛔ THE SCALE REFUND IS REAL AND IT IS IN OUR FAVOUR (CLAUDE.md: destruction
+# removes the entity's contribution to the ONE GLOBAL ADDITIVE factor).  A
+# barrier is +1% and a conveyor +1%, so each clear hands back one point of the
+# factor and every cost getter read later in the SAME turn already sees it.
+# ⚠ AND THE COMPLEMENT IS STATED BECAUSE IT IS THE HAZARD: the same refund is
+# what makes build/destroy thrash cheap to enter (ledger V8: 0.52 tiles/game
+# rebuilt >= 5 times, worst 893 builds on one tile).  SK_STAND_SEATS_MAX and
+# SK_STAND_SEATS_BAN are the two brakes, and the ban is written into
+# `escape_ban`, which `_apron_buildable` ALREADY reads -- so the apron relay
+# cannot immediately re-lay what this verb just cleared.
+# ⛔⛔ AND THE MOTIVATING NUMBER IS AN INSTRUMENT ARTIFACT -- MEASURED BY THIS
+# BUILD, BEFORE ANY OF IT SHIPPED, AND WRITTEN HERE SO NOBODY RE-DERIVES FROM
+# THE BROKEN FIGURE.  `ahbuild_seatcensus.py` reads seat occupancy out of
+# `lossaut_lib._tile_owner()`, which keys every entity to its BUILD/SPAWN tile
+# and its death round.  That is exactly right for BUILDINGS, which cannot move,
+# and WRONG for BUILDER BOTS, which move every round and are spawned ON OUR
+# CORE'S RING by construction.  Over the 66 siege windows of the t_cs_* tapes
+# the seat-tile-rounds credited to "one of OURS" are:
+#     builder_bot 17,594  ·  conveyor 4,429  ·  gunner 639  ·  barrier 0
+# ⇒ re-run counting BUILDINGS ONLY (`ssbuild_ownclass.py`), the census reads
+#     FREE 3.87/8   OURS 0.53   THEIRS 3.60   ...  and 0 of 66 siege cells
+#     have fewer than 0.5 free seats
+# against the published 1.54-1.77 free / 2.63 ours / 10-of-46 dry.  A third,
+# independent reading agrees: the bot's OWN live count through the engine's
+# `is_tile_passable` (2,452 gated rounds, 30 F1 cells) brackets the corrected
+# figure, not the raw one.  ⇒ **OUR OWN BUILDINGS ARE NOT WHAT BLOCKS THE HEAL
+# SEATS. THEIR BARRIERS ARE (3.60 of 8), AND AN OPPOSING BARRIER IS NOT
+# `destroy`-ABLE -- the engine team-checks that verb.**
+# ⇒ THE ADDRESSABLE POPULATION OF THIS PLANK, engine-side over 66 siege cells:
+#     BARRIER of ours on a heal seat = 0.000 seats/round (classes 0 and 1 have
+#     NO population at all) · BELT 0.465 (and a belt piece on a seat is the
+#     DELIVERY TERMINUS, which class 2 refuses by construction) · ARMED 0.068
+#     (refused, always).
+# FIELD CONFIRMATION, 30 F1 cells with the flag ON: 2,452 gated rounds, 552
+# candidate seats, **0 destroys** -- 537 of the 552 were an opposing bot's
+# building and 15 were bare terrain; on f2/midgard_seatA all 17 were one of OUR
+# OWN GUNNERS, refused correctly.  The verb is BUILT, VERIFIED AND SHIPPED OFF.
+SK_STAND_SEATS = False
+SK_STAND_SEATS_TARGET = 2  # CLEAR ONLY WHILE FEWER THAN THIS MANY SEATS ARE
+                          # KNOWN FREE.  2 and not 1 because the plank the CS
+                          # arm ships is a TWO-BODY stand by arithmetic, not by
+                          # preference: `heal` sets the action cooldown to 1 and
+                          # cooldowns decrement at END of round, so one body
+                          # heals at most once per round (+4 HP) and the
+                          # registered target is ~1.65 heals/round.  One free
+                          # seat can only ever staff half the stand.
+                          # ⛔ IT IS ALSO THE WHOLE SCARCITY GATE -- above it
+                          # this verb never runs, so on the 36 of 46 siege cells
+                          # that DO have a free seat it is silent by
+                          # construction.  Measured target: the census's 1.54.
+SK_STAND_SEATS_MAX = 6    # PER BODY, PER GAME.  `destroy` is free, cooldownless
+                          # and unlimited per turn, which is precisely how
+                          # ledger V8 reached 893 builds on one tile, so this
+                          # verb is capped in the same shape `_escape` is
+                          # (SK_CYCLE_ESCAPE_CAP).  6 = at most 6 of the 8 seats
+                          # ever opened by one body, i.e. it can never demolish
+                          # the whole ring and it cannot oscillate more than six
+                          # times whatever the relay does.
+SK_STAND_SEATS_BAN = 40   # ROUNDS a cleared seat is banned from re-building,
+                          # written into `escape_ban` -- the SAME dict
+                          # `_apron_buildable` already consults, so the apron
+                          # relay (the only verb in this tree that lays a
+                          # BARRIER on a door tile) will not put back what the
+                          # stand just took out.  40 and not `_escape`'s 30
+                          # because the measured siege window is ~54 rounds:
+                          # a ban shorter than the siege lets the loop close
+                          # inside the one episode the plank exists for.
+                          # ⚠ DISCLOSED LIMITATION: `escape_ban` is PER BODY,
+                          # so a seat cleared by the ORE DENIER does not ban the
+                          # HOME KEEPER's relay.  SK_STAND_SEATS_MAX is what
+                          # bounds that case; a published ban would cost a store
+                          # slot on a full store.
+SK_STAND_SEATS_FLOW_K = 12  # THE BELT QUIET WINDOW, in rounds, and it is BOTH a
+                          # look-back and a minimum WATCH length.  A harvester
+                          # emits a stack every 4 rounds, so 12 is three
+                          # emission periods: a conveyor on the live delivery
+                          # line cannot be quiet that long, and a body that has
+                          # only just started watching a tile has NOT observed
+                          # it quiet -- it has observed nothing.  ⛔ THE SECOND
+                          # HALF IS THE ONE THAT MATTERS: without a minimum
+                          # watch, the first armed round would read "never seen
+                          # flowing" on every belt piece on the ring and clear
+                          # the terminus.
+                          # ⚠ THE LEDGER IS PER BODY and populated only while
+                          # the stand is armed (8 tile reads a round, for at
+                          # most two bodies, only inside a siege).  A belt piece
+                          # this body has not watched is NEVER cleared.
+SK_STAND_SEATS_GUN_DSQ = 26  # HOW FAR AN OPPOSING GUNNER IS STILL CONSIDERED
+                          # when asking whether a barrier is SHIELDING the core.
+                          # A gunner's shot is a straight line that IS blocked
+                          # by obstacles (a sentinel's is not -- engine fact,
+                          # entity table), so a barrier standing between a live
+                          # gunner and our core footprint is load-bearing cover
+                          # and this verb refuses it.  26 is the LAUNCHER reach
+                          # and comfortably wider than the gunner's own r^2=13,
+                          # because the fence only decides which shooters are
+                          # WORTH testing -- the ray test itself is exact and
+                          # uses SK_KILLER_GUNNER_REACH.
+                          # ⚠ FAILS TOWARD REFUSING: a gunner whose facing we
+                          # cannot read is tested against EVERY ray from it, so
+                          # an unreadable facing protects more barriers, not
+                          # fewer.
+SK_STAND_SEATS_WALK = True  # ⚠⚠ THE POSITIONING HALF, AND IT IS DISCLOSED AS AN
+                          # EXTENSION OF THE BRIEF (which specifies the destroy
+                          # verb only).  IT IS HERE BECAUSE THE VERB WITHOUT IT
+                          # WAS MEASURED INERT, on this build's own first trace:
+                          # SK_STAND_SEATS ON, three walled-in siege cells,
+                          # 380 gated rounds, 113 candidate seats considered --
+                          # and **0 destroys**, because the only seats the body
+                          # was ever ORTHOGONALLY ADJACENT to were our own
+                          # GUNNER (17x, correctly refused) and opposing
+                          # buildings (96x, not ours to destroy).  The reason is
+                          # a loop, not a threshold: `destroy` needs an
+                          # adjacent tile, `_medic_seat` returns None when every
+                          # seat is blocked, so the medic never walks home, so
+                          # it is never adjacent to the blockage it exists to
+                          # clear.  This is the SAME defect the CS arm's own
+                          # first build hit ("armed 152 times, landed ZERO
+                          # heals: the arming gate was not the only gate") and
+                          # the same answer: lift the positioning half.
+                          # THE STATION SET IS FOUR TILES, fixed and geometric:
+                          # the four CORNERS of the core ring, each
+                          # orthogonally adjacent to exactly two seats and
+                          # diagonal to the footprint.  It is chosen only when
+                          # `_medic_seat` has already returned None -- i.e.
+                          # exactly "the medic needs a seat and cannot take
+                          # one" -- and it re-uses the stand's own walk fence
+                          # (SK_CORE_STAND_SEAT_DSQ), so it can add no walk the
+                          # adopted arm would not already have made.
+                          # ⛔ SET IT False TO ABLATE THE WALK AND KEEP THE
+                          # DESTROY: that pair is the registered decomposition,
+                          # and the destroy-only form is the brief as written.
+
+# ===========================================================================
 # 3.  IMPORT BANNER (verbatim) -- doctrine.py:1078-1172, map data
 # ===========================================================================
 
@@ -5272,3 +5519,131 @@ def known_map_for(w, h, own, ct=None):
 # ===========================================================================
 # END IMPORT BANNER.  Everything below this line is SKALMAN-original.
 # ===========================================================================
+
+# ===========================================================================
+# ⭐⭐ THE ROUTE, ARM 1 -- SK_ROUTE_HOME (route-home repair).  s57 build agent,
+# 2026-08-23.  Registered expectation: docs/research/EXPECTATION-v632heim-
+# route1-2026-08-23.md.  THIS BLOCK IS SELF-CONTAINED and sits at the file's
+# tail so it cannot collide with concurrent work elsewhere in this module.
+#
+# GAME CONTEXT: in-engine mechanics of the Florent Code League's simulated
+# grid.  "enemy", "blocked", "clear-out" refer only to game bots' pieces.
+#
+# ⛔ THE MEASURED DEFECT THIS ANSWERS, on the CURRENT baseline (t_cs_f1 +
+# t_cs_f2, 60 cells, `scratchpad/s57_heim0/rtbuild_diag.py`):
+#   13 of 60 cells deliver ZERO titanium (`titanium_collected` = 0).  Five
+#   never built a harvester at all; the other EIGHT built harvesters AND belt
+#   and were NEVER ROUTED -- zero of the eight is a cut-and-never-rebuilt line.
+#   `rtbuild_gap.py` traced every one of those 15 harvesters' chains: 14 have a
+#   belt that STOPS 1-4 tiles short of our own core footprint on an EMPTY tile
+#   (gap histogram 1:2 2:6 3:2 4:2 6:1 15:1), 1 has no belt at all.  So the
+#   class is NEVER-COMPLETED, not CUT: the last one to four conveyors -- 3 Ti
+#   each -- are worth the harvester's entire lifetime output and are never laid.
+#
+# ⛔ AND WHY THE EXISTING RUNGS DID NOT LAY THEM.  Two mechanisms, both
+# measured off traced repros (`rtbuild_trclass.py`, RTBUILD_TRACE):
+#   (1) THE WALK NAMES THE TILE AND NEVER ARRIVES.  In 4 of the 8 cells the
+#       keeper's belt walk targeted ONE tile for 77 / 121 / 292 / 908 rounds
+#       while an ENEMY building stood on it from r5-r10, and their LAUNCHER
+#       relocated our body out of the corridor 31 / 51 / 377 times (a legal
+#       in-engine throw -- the taxi ride, used on us).  The walk has no stall
+#       bound, so the keeper spends the rest of the game in a 7-round loop.
+#   (2) THE ACTION RUNG CANNOT SEE A MANY-GAPPED CHAIN.  `_route_gaps` (v603
+#       FIX 4) fires only on a chain with EXACTLY ONE missing link, so a chain
+#       two tiles short is invisible to SK_TERM_FIRST and the general
+#       `_belt_action` treats its tiles as ordinary plan tiles ranked by
+#       distance, not by whether they COMPLETE a route.
+# ⇒ The arm generalises the gap set to EVERY missing link on a chain that does
+#   not deliver, prefers the CORE-WARD one, and bounds the walk.
+# ===========================================================================
+
+SK_ROUTE_HOME = False     # THE ARM'S MASTER FLAG.  OFF: `_route_missing` is
+                          # never called, `_route_action` and `_route_walk`
+                          # return before their first read, and every rung
+                          # around them is the v632 baseline byte for byte.
+
+SK_ROUTE_HOME_TI = 0      # titanium that must REMAIN in the bank after the
+                          # conveyor is paid for.  0 = the same affordability
+                          # test `_belt_action` already applies (bank >= cost),
+                          # so the arm never spends where the belt would not.
+                          # It exists as a fence a successor can tighten; the
+                          # SPAWN reserve below is the one that actually binds,
+                          # because the hazard here is TILES, not titanium.
+
+SK_ROUTE_HOME_SPAWN = True   # ⛔ THE SPAWN RESERVE, and it is `_claim_spawn_ok`
+                          # verbatim (SK_SEAT_CLAIM_SPAWN_RESERVE = 1), applied
+                          # ONLY to a link INSIDE the core's 8-way spawn ring.
+                          # The scoping is not a weakening: it is the registered
+                          # correction the mesh plank measured (sk_maps.py's
+                          # SK_APRON_MESH_SPAWN_RESERVE note -- 62 of 114
+                          # refusals were on tiles whose addition cannot change
+                          # the count, and one map read free=0 on all eight
+                          # seats and suppressed the plank to zero).  A link
+                          # outside the ring cannot consume a spawn candidate.
+
+SK_ROUTE_HOME_SIEGE = True   # SIEGE AWARENESS.  While our core's own threat
+                          # latch is fresh (`_under_attack`, slot 1, the CORE's
+                          # writer -- the same predicate PLANK 4's keeper leash
+                          # runs on), this arm refuses any link beyond
+                          # SK_LEASH_DSQ of our core, for both the build and the
+                          # walk.  It never refuses a link INSIDE the leash: a
+                          # body already standing at home lays the terminal
+                          # conveyor without leaving the core it is defending.
+                          # ⛔ The arm is also placed BELOW every heal, seat and
+                          # clear-out rung in `_home_keeper`, so "defers to the
+                          # defence rungs" is the LADDER, not only this flag.
+
+SK_ROUTE_STALL = 40       # rounds one link may be this arm's walk target
+                          # without getting built before the STALL BREAKER
+                          # bans it and the belt re-plans AROUND it.  Sized off
+                          # the measured loops: the shortest was 77 rounds and
+                          # the enemy structure was standing by r10, so 40 fires
+                          # once per stalled link with room to spare, and no
+                          # observed non-stalled link was targeted anywhere near
+                          # that long (the delivering cells complete their
+                          # chains within a handful of rounds of arriving).
+
+SK_ROUTE_BAN_MAX = 0      # per-BODY cap on stall bans.  A ban enters
+                          # `belt_ban`, which `_belt_parents` excludes from the
+                          # BFS and whose length is part of `belt_key`, so one
+                          # ban re-plans the whole belt around the tile using
+                          # the tree's own machinery.
+                          #
+                          # ⛔⛔ SHIPPED AT **ZERO** -- THE STALL BREAKER IS
+                          # BUILT, WIRED, UNIT-CONTROLLED AND **MEASURED
+                          # HARMFUL**, AND THE DOSE-RESPONSE IS MONOTONE IN
+                          # BOTH DIRECTIONS.  Three 30-cell F1 tapes, same
+                          # tree, only this constant moved
+                          # (`scratchpad/s57_heim0/rtbuild_readout.py`,
+                          # 2026-08-23; the baseline column is t_cs_f1):
+                          #
+                          #   bans  wins  by-r300  zero-delivery  delivered Ti
+                          #   OFF    10      5           4          18,250
+                          #   0      12      6           3         +13.8%
+                          #   3      10      7           6         -11.9%
+                          #   many    7      5           8         -29.7%
+                          #     (routed-harvester share 0.434 baseline ->
+                          #      0.483 / 0.429 / 0.293 on the same three)
+                          #
+                          # ⇒ The AUDIT + LAY half pays on every registered bar
+                          # and the BAN half takes it back, monotonically.  The
+                          # mechanism is not subtle: a ban is IRREVERSIBLE for
+                          # the game and it mutates the one thing the arm was
+                          # told to respect -- the existing plan geometry.  On
+                          # `stavkirke_seatB` the traced arm laid eleven links
+                          # in core-ward order, stalled on the TERMINAL (an
+                          # enemy structure stood on it), banned it at r98, and
+                          # the re-route finished the game with 41 conveyors and
+                          # ZERO delivered against 1,870 at the same cell OFF.
+                          # ⚠ DISCLOSED AS A POST-HOC DOSE CALIBRATION on ONE
+                          # 30-cell smoke, DEFF-uncorrected, F1 only.  It is not
+                          # a currency verdict; it is why the default is 0.
+                          # The code path is KEPT (a successor can re-price it
+                          # against an approach-denial answer rather than
+                          # against a plan mutation) and at 0 it is one integer
+                          # comparison that is never true.
+
+SK_ROUTE_HOPS = 64        # per-chain hop bound on the audit walk (the plan's
+                          # own walk uses 200; a home chain that long does not
+                          # exist on a 30x30 board and the bound is what keeps
+                          # the audit inside the 10 ms turn).

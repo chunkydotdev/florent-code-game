@@ -773,6 +773,20 @@ class Player(CommonMixin, RolesMixin, CoreMixin):
         self._gap_rnd = -1            # `_route_gaps` per-round memo
         self._gap_key = None
         self._gap_set = frozenset()
+        # --- THE ROUTE, ARM 1 (SK_ROUTE_HOME) -------------------------------
+        # ⛔ UNCONDITIONAL, like every other attribute in this constructor: a
+        # flag-gated attribute is how a masters-ON tape dies on AttributeError
+        # in a branch nobody exercised OFF, and an escaping exception destroys
+        # the unit permanently.  All seven are inert while the flag is False.
+        self._rt_key = None           # `_route_missing` memo key
+        self._rt_links = {}           # (x,y) -> rank, 0 = core-ward terminal
+        self._rt_ring = None          # the core's spawn ring, memoised
+        self.route_tgt = None         # ((x,y), first round) the walk is on
+        self.route_bans = 0           # stall bans spent (<= SK_ROUTE_BAN_MAX)
+        self.route_builds = 0         # instrument: links this arm laid
+        self.route_walks = 0          # instrument: turns spent walking at one
+        self.route_spawn_refused = 0  # instrument: spawn-reserve refusals
+        self.route_siege_refused = 0  # instrument: siege-deferral refusals
         # --- v610 PLANK 1: the DELIVERY SEAT ledger -------------------------
         # ⛔ KEYED ON (tile, occupant entity id), which is the whole fix:
         # `collar_pecks` above is keyed on the tile alone and never reset, so a
@@ -955,6 +969,20 @@ class Player(CommonMixin, RolesMixin, CoreMixin):
         self.tube_gap_relax = 0       # sites found ONLY at the relaxed spread
         # v622 (SK_GAP_RELAX_SOLO / SK_NEST_EXHAUST_PB) instruments.
         self.nest_exhaust_pb = 0      # sites found ONLY by the point-blank retry
+        # ⭐⭐ s57 THE BATTERY, ARM 1 (SK_BATTERY_WANT) instruments.  All four
+        # stay 0 for the whole game on every SK_BATTERY_WANT-off arm (the only
+        # writer family is `_battery_open` / `_battery_rearm`, reached only
+        # under `if SK_BATTERY_WANT:` at the one gate), which is what makes
+        # them the OFF-identity witness as well as the arm's dose meter.
+        # ⛔ THE REFUSAL TAPS ARE THE POINT, NOT THE FIRE COUNT: a ceiling that
+        # has never been seen to REFUSE has not been seen to limit anything, so
+        # `batt_unfunded` (purse short of the bar) and `batt_ceiling` (book
+        # full at the ceiling) are the two verdicts an arm report must show
+        # alongside `batt_open`.
+        self.batt_open = 0            # engineer rounds the hold was skipped
+        self.batt_unfunded = 0        # ... refused: purse below `_battery_bar`
+        self.batt_ceiling = 0         # ... refused: ledger already at ceiling
+        self.batt_rearm = 0           # spent sites freed for the next plant
         # PLANK 3 (SK_PECK_FOCUS) instruments.
         self.peck_relaxed = 0         # pecks that skipped the V7 veto
         self.keeper_marches = 0       # keeper turns spent marching at a shooter
@@ -1334,6 +1362,36 @@ class Player(CommonMixin, RolesMixin, CoreMixin):
                                       # themselves land on `self.core_heals`,
                                       # which the pre-existing `_core_medic`
                                       # already counts)
+
+        # --- s57 THE STAND, ARM 2 -- HEAL-SEAT CLEARING (SK_STAND_SEATS) ---
+        # ⛔ UNCONDITIONAL, for the same engine reason as the block above: a
+        # field created only under a flag is how an OFF arm raises
+        # AttributeError inside `run()`, after which the engine PERMANENTLY
+        # DESTROYS that unit for the rest of the match.  Every one of these
+        # stays at its initial value on an OFF arm -- `_stand_seat_sweep`
+        # returns 0 on its first line -- which is what makes them the identity
+        # witness rather than a behaviour change.
+        self.stand_clears = 0         # BUILDER instrument: seats this body
+                                      # opened (capped by SK_STAND_SEATS_MAX)
+        self.stand_clear_cls = [0, 0, 0]   # ... by safety class: plain barrier
+                                      # / apron-or-door barrier / spent belt
+        self.stand_seat_refused = 0   # adjacent held seats the safety order
+                                      # REFUSED -- the other verdict, counted
+        self.stand_seat_free = 0      # sum of known-free seats over
+        self.stand_seat_rounds = 0    # ... the rounds this body sampled them,
+                                      # i.e. the census's 1.54/8, live
+        self.stand_flow = {}          # (x,y) -> round a stack was last seen on
+                                      # a seat belt piece
+        self.stand_watch = {}         # (x,y) -> round this body first watched
+                                      # it; a tile we have not watched is not a
+                                      # quiet tile
+        self.stand_gate_rnd = -1      # the round the sweep last read the seat
+        self.stand_gate_free = 0      # census, and what it read -- so
+                                      # `_stand_station` (movement, later in the
+                                      # same turn) does not pay the 8 reads
+                                      # twice.  -1 can never equal a live round,
+                                      # so a body whose sweep did not run this
+                                      # turn stations for nothing.
 
     # ------------------------------------------------------------------
     # entry -- VERBATIM `main.py:396-418` of `bots/_v542wave`, retargeted
