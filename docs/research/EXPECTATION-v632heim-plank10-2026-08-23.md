@@ -38,3 +38,16 @@ last step: PARK the stack and the campaign's remaining lever is phase-1
 survival alone (the arithmetic note); the builder then takes the
 walk-terminal/keeper queue as the next family. G4 =0 → build defect, halt
 (the amendment exists precisely to prevent it).
+
+**G4 AMENDMENT (pre-tape, blind held; the opportunity census is the
+provenance):** the unit controls prove the widened rung fires end-to-end
+(empty-ledger body + seen tube + damaged neighbour → heal lands); the smoke
+zeros are OPPORTUNITY nulls (0 rounds of adjacent-body-with-damaged-tube on
+3 cells — tubes are either unshot or removed without a graded window). G4
+becomes conditional: **heals > 0 REQUIRED only in cells where the
+opportunity state occurs** (our builder cardinally adjacent to a live
+damaged post-flip battery tube with heal affordable), and the OPPORTUNITY
+COUNT itself is a registered column — a zero with zero opportunities is
+vacuous-with-disclosure, a zero WITH opportunities is the halt-grade
+defect. The seen-firing rule survives in its correct form: seen firing
+when firing is possible.
