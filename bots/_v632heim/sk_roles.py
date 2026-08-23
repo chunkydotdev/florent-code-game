@@ -156,6 +156,8 @@ from sk_maps import (
     # --- v632 HEIMDALL PLANKS 8+9 (THE r300 ROTATION) ----------------------
     SK_ROTATE, SK_ROTATE_CHEST_FROM, SK_ROTATE_CLUSTER_GAP, SK_ROTATE_PREPS,
     SK_ROTATE_PRESTAGE, SK_ROTATE_RAIDERS, SK_ROTATE_WANT,
+    # --- v632 HEIMDALL PLANK 10 (BATTERY SURVIVAL) -------------------------
+    SK_ROTATE_GUARD, SK_ROTATE_GUARD_NEAR,
 )
 
 # --- v611: the 8 neighbours, for a LAUNCHER's pickup disc (d^2 <= 2) --------
@@ -6674,6 +6676,18 @@ class RolesMixin:
             # turns and 30 Ti -- and that trade has to be priced on its own.
             if SK_TUBE_FLOOR2:
                 self.floor_hold += 1
+            # ⭐⭐ v632 PLANK 10 (SK_ROTATE_GUARD) RUNG (b) -- THE HEAL, AHEAD
+            # OF THE STAGE GATE.  A rotation body standing at the battery's
+            # target has nothing to plant; the turn it would spend holding buys
+            # +4 HP on the most-damaged tube instead.  STAGE remains below as
+            # the fallback for the undamaged case, so the babysit-vs-STAGE
+            # staffing tension resolves by PRIORITY, not deletion (v630's
+            # ordering, kept).  ⛔ `_guard_heal` returns False on every
+            # SK_ROTATE-off round, every round below SK_PHASE_ROUND, every
+            # non-raider body and every SK_ROTATE_GUARD-off arm, so this line
+            # is a no-op there and the control flow below is unchanged.
+            if self._guard_heal(ct, p, rnd):
+                return
             # ⭐ v627/v628: the latency half is admitted by its own master too.
             if ((SK_TUBE_FLOOR2 or SK_TUBE_LATENCY_SOLO)
                     and (SK_TUBE_FLOOR2_PREPREP or SK_TUBE_FLOOR2_STAGE)
@@ -6698,6 +6712,20 @@ class RolesMixin:
                     self._attack_enemy_core(ct, p, rnd)
                     return
                 hold = slots[-1][1]
+            # ⭐⭐ v632 PLANK 10 RUNG (c) -- THE BABYSIT, BY A BODY WHOSE ONLY
+            # JOB IT IS.  v619's hold parks "beside the newest tube" on
+            # whichever side the walk happened to arrive from -- in the common
+            # case the HOME side, i.e. behind the tube, where it screens
+            # nothing and cannot reach the enemy-side damage.  The guard holds
+            # the FRONT SEAT instead: between the tube and the enemy core,
+            # where rung (b) reaches it and where the 40 HP body itself soaks
+            # the gunner ray.  ⛔ AND THIS IS THE RUNG v630 COULD NOT AFFORD:
+            # there the babysitter was the ONE siege engineer and the home
+            # economy paid for its absence.  Post-flip these bodies are
+            # dedicated raiders with no eco job to drift away from, so the
+            # cost mechanism that refuted v630 has no carrier here.
+            if self._guard_walk(ct, p, hold):
+                return
             self.step_to(ct, hold)
             return
         if self.nest_site is None:
@@ -6849,6 +6877,29 @@ class RolesMixin:
                         return
                 if self._plant_gun(ct, p, site, rnd, live, want):
                     return
+        # ⭐⭐ v632 PLANK 10 RUNG (b), SITING HALF -- AND IT IS THE HALF v630.1
+        # HAD TO ADD.  v630.0's only heal caller sat in the `live >= want` hold
+        # branch, which a body that has just lost a tube does NOT occupy: the
+        # E4b falsifier measured 39 tube removals and 0 heals.  Post-flip, with
+        # a four-tube target and 5-27 round lives, SITING is where this body
+        # spends most of its game -- so this is where the dose actually lands.
+        # Band-scoped inside `_guard_heal`; prep/plant above already returned if
+        # they acted, so this fires only on their leftovers.
+        if self._guard_heal(ct, p, rnd):
+            return
+        # ⭐⭐ v632 PLANK 10 RUNG (a) -- THE TERMINAL-APPROACH SEAT BIAS.  Walk
+        # to the site's enemy-side seat rather than the site itself, so the
+        # plant happens from the FRONT and the body is already standing between
+        # the new tube and the enemy's guns the round it goes up.  With
+        # SK_ROTATE_PREPS = 0 there is no barrier to lay -- Magnus's no-preps
+        # ruling stands -- so THE BODY IS THE SCREEN, and it costs 0 Ti and 0
+        # scale.  Already on the seat => STAND (the cooldown-0 block above
+        # plants from here; a `step_to(site)` would wander onto the plant tile
+        # itself).  Seat unreachable => exactly the un-guarded walk below.
+        # ⛔ TERMINAL-ONLY, per v630.1's E6 attribution -- see
+        # SK_ROTATE_GUARD_NEAR.
+        if self._guard_walk(ct, p, site):
+            return
         if self.step_to(ct, site):
             return
         # ⭐ v606 ITEM 4(a2) -- SK_IDLE_ACT, FOR THE ENGINEER.  The v603 clause
@@ -7574,6 +7625,119 @@ class RolesMixin:
                     if d.delta() == (sx, sy):
                         return d
         return None
+
+    # ==================================================================
+    # v632 PLANK 10 -- BATTERY SURVIVAL (SK_ROTATE_GUARD).  Both helpers
+    # are PORTS of `bots/_v630tubeguard/sk_roles.py`, verbatim except for
+    # the flag name (SK_TUBE_GUARD_NEAR -> SK_ROTATE_GUARD_NEAR).  They
+    # are pure predicates: neither is reached on any SK_ROTATE_GUARD-off
+    # round, and neither mutates state.
+    # ==================================================================
+
+    def _near_live_tube(self, p):
+        """Is this body within d^2 <= SK_ROTATE_GUARD_NEAR of a LIVE ledger
+        tube?  (v630.1's `_near_live_tube`, name and body unchanged.)
+
+        Gates the siting-path heal rung to the BAND, so a walk through home
+        territory can never stall on a pecked conveyor -- the E6 lesson that
+        behaviour leaking outside the band is how v630 lost checkmates.
+        Post-flip the ledger is SK_ROTATE_WANT slots wide, so this reads the
+        whole battery, not just the pair.
+
+        ⛔ AND THE LEDGER IS PER-BODY, WHICH BOUNDS THIS RUNG HARDER THAN IT
+        DID IN v630: `_plant_gun` is the only writer, so a REPLACEMENT raider
+        that did not plant the tube it is standing next to reads False here
+        forever.  Measured in this plank's build smoke (0 tube heals in 3 ON
+        cells; the parked control cycled 8 raider bodies in one game).  See the
+        SK_ROTATE_GUARD flag note -- widening the band is a separate plank.
+        """
+        for t in self._nest_slots():
+            if t is None:
+                continue
+            if p.distance_squared(t[1]) <= SK_ROTATE_GUARD_NEAR:
+                return True
+        return False
+
+    def _guard_seat(self, site):
+        """The screen/babysit seat for `site` -- its cardinal neighbour toward
+        the enemy core.  (v630's `_guard_seat`, name and body unchanged.)
+
+        Pure geometry off `self.enemy` (set at boot from map symmetry, refined
+        on sight): zero engine calls, never stale, and works when `nest_face`
+        is diagonal or already cleared.  Returns None -- callers fall back to
+        the un-guarded walk -- when there is no enemy fix, no cardinal step, or
+        the seat is off-map.
+
+        ⭐ WHY THIS TILE IS BOTH THINGS AT ONCE, and it is a design fact of the
+        engine rather than a coincidence: a builder bot may only build on an
+        ORTHOGONALLY ADJACENT tile, so standing here is the only way to plant
+        the tube on `site` while facing the enemy -- and the tile a body must
+        occupy to plant toward the enemy IS the tile between the tube and the
+        enemy's guns.  The screen and the plant seat are the same square.
+        """
+        if site is None or self.enemy is None:
+            return None
+        try:
+            d = site.cardinal_direction_to(self.enemy)
+        except Exception:
+            return None
+        if d is None or not d.is_cardinal():
+            return None
+        q = site.add(d)
+        if not self.ibp(q):
+            return None
+        return q
+
+    def _guard_heal(self, ct, p, rnd):
+        """PLANK 10 rung (b): the band-scoped heal, with the counter.
+
+        `_heal_action` is the existing verb (1 Ti -> +4 HP on the most-damaged
+        adjacent friendly building, most-damaged-first).  With SK_ROTATE_PREPS
+        = 0 there are no prep barriers post-flip, so the most-damaged adjacent
+        friendly building is naturally the SENTINEL -- the right priority
+        emerges from the verb we already ship, with no new targeting code.
+
+        ⛔ THE COOLDOWN TEST IS EXPLICIT HERE and not left to `_heal_action`:
+        `ct.heal` is cooldown-gated and `can_heal` is the only guard inside the
+        verb, so a rung that fires on a non-zero cooldown burns the turn's
+        `return` for nothing.  v630 got this by placement (its callers already
+        sat under a cooldown-0 test); the hold-branch caller here does not, so
+        the test moves into the rung.
+        """
+        if not (self.rot_body and SK_ROTATE_GUARD):
+            return False
+        try:
+            if ct.get_action_cooldown() != 0:
+                return False
+        except Exception:
+            return False
+        if not self._near_live_tube(p):
+            return False
+        if not self._heal_action(ct, p, rnd):
+            return False
+        self.guard_heals += 1
+        return True
+
+    def _guard_walk(self, ct, p, target):
+        """PLANK 10 rungs (a) + (c): walk to / stand on `target`'s front seat.
+
+        Returns True when this rung consumed the turn (standing on station, or
+        a step taken toward the seat), False when the caller must fall through
+        to its own un-guarded walk.  ⛔ A BIAS, NEVER A REFUSAL STATE: no enemy
+        fix, no cardinal step, off-map seat or an unreachable seat all return
+        False and the caller's original `step_to` runs unchanged.
+        """
+        if not (self.rot_body and SK_ROTATE_GUARD) or target is None:
+            return False
+        if p.distance_squared(target) > SK_ROTATE_GUARD_NEAR:
+            return False                       # v630.1: TERMINAL APPROACH ONLY
+        seat = self._guard_seat(target)
+        if seat is None:
+            return False
+        if p.x == seat.x and p.y == seat.y:
+            self.guard_seats += 1              # on station: STAND (the screen)
+            return True
+        return self.step_to(ct, seat)
 
     def _on_eligible_ore(self, ct, p, rnd):
         """v632 SK_ORE_STEPOFF: is this body STANDING ON an unbuilt home-ore

@@ -1159,6 +1159,30 @@ class Player(CommonMixin, RolesMixin, CoreMixin):
         self.rot_pecks_skipped = 0    # `_attack_enemy_core` entries suppressed
                                       # post-flip ("no pecking, we only watch
                                       # our sentinels work")
+        # --- v632 HEIMDALL PLANK 10 -- BATTERY SURVIVAL (SK_ROTATE_GUARD) ---
+        # ⛔ UNCONDITIONAL, for the reason every other attr in this file is: a
+        # flag gates BEHAVIOUR, never the EXISTENCE of state.  A field created
+        # only under a flag is how a flag-off arm raises AttributeError inside
+        # `run()` -- and the engine then PERMANENTLY DESTROYS that unit for the
+        # rest of the match.  Both stay 0 on every SK_ROTATE-off and every
+        # SK_ROTATE_GUARD-off arm, which is what makes them the OFF-IDENTITY
+        # WITNESSES as well as the dose instruments.
+        self.guard_heals = 0          # rung (b) DOSE: heals actually landed on
+                                      # a damaged neighbour (tube or screen)
+                                      # while inside the band.  ⚠ A dose, not
+                                      # an effect -- the survival read is tube
+                                      # life and battery concurrency; this only
+                                      # says the verb fired.  v630.1 exists
+                                      # because the v630.0 form read 1 in 60
+                                      # games, so a near-zero here is the
+                                      # FALSIFIER for the placement, not a null
+                                      # for the plank.
+        self.guard_seats = 0          # rungs (a)+(c) OCCUPANCY: body-rounds
+                                      # spent STANDING on a front seat (the
+                                      # screen, and the tile the heal reaches
+                                      # from).  Counts stands, not arrivals --
+                                      # a walk toward the seat is not yet a
+                                      # screen.
 
         # --- CORE ----------------------------------------------------------
         self.spawned = 0

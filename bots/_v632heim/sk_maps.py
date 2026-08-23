@@ -4169,6 +4169,151 @@ SK_ROTATE_FUND_KEEP = 10     # THE MARGIN ABOVE ONE SENTINEL'S PRICE that must
                              # under-reserve exactly when it matters.
 
 # ===========================================================================
+# v632 HEIMDALL PLANK 10 -- BATTERY SURVIVAL  (SK_ROTATE_GUARD)
+# ===========================================================================
+# GAME CONTEXT: in-game build work for the Florent Code League, a sandboxed
+# bot-vs-bot programming competition on a simulated grid.  "screen", "front
+# seat", "counter-fire" describe one of our builder bots standing on a tile so
+# that a competing bot's in-engine turret ray lands on it instead of on our
+# sentinel, and our builder spending 1 Ti on the engine's `heal` verb.  Nothing
+# here touches anything outside the game engine.
+#
+# ⭐⭐ THE FREEZE THIS ATTACKS, AND IT IS A MEASURED CAP, NOT A HUNCH.  Three
+# rotation arms (RO, RO-P, FUND) all froze at wins-sum 34 -- the same number
+# with the preps dropped and with the funding priority added, i.e. the win
+# engine is not plant-rate-limited any more, it is SURVIVAL-limited.  The tapes
+# say why: post-flip sentinel lives run 5-27 rounds (banked medians RO-P 12-27,
+# FUND 5) and standing-battery CONCURRENCY peaks at 2-4 against the 4-6 that
+# §8b's heal-tax arithmetic demands (two tubes vs a core healing at the
+# measured 0.68 tax is 130 rounds -- a stalemate; four is 65, six is 44).  A
+# battery that never stands four-deep cannot spend the plant rate the rotation
+# already buys.  So this plank does not add tubes; it makes the ones we plant
+# LAST.
+#
+# ⭐ THE PORT, AND ITS PROVENANCE IS AN EXISTING BUILD REPORT, NOT A NEW IDEA.
+# `bots/_v630tubeguard` built and measured exactly these mechanisms
+# (docs/research/BUILD-REPORT-v630tubeguard-2026-08-22.md).  WHAT IT PROVED:
+#   * FRONT-SCREEN STEERING WORKS -- the terminal-approach seat bias doubled the
+#     front share (the body ends its walk on the site's enemy-side cardinal
+#     neighbour, which is where a builder must stand to build toward the enemy).
+#   * THE HEAL DOSE IS REACHABLE -- but only after the v630.1 fixes: v630.0's
+#     single heal caller sat in the `live >= want` HOLD branch, and the E4b
+#     falsifier measured 1 heal event in 60 games because a body that has just
+#     lost a tube is SITING, never holding.  The band-scoped siting rung is what
+#     made the verb fire.
+#   * TUBE SURVIVAL MOVED -- +13pp removal-rate on the contact fixture.
+# WHAT KILLED IT THERE: the keeper-drift cost mechanism -- the guard held the
+# ONE siege engineer out at the tube, and the home economy paid for the
+# babysitting.  ⭐⭐ THAT MECHANISM CANNOT EXIST POST-FLIP.  After
+# SK_PHASE_ROUND the rotation bodies in SK_ROTATE_RAIDERS are DEDICATED
+# raiders -- they have no eco job to drift away from -- and the keeper stays
+# home by construction (it is not in SK_ROTATE_RAIDERS and never reads a rung
+# below).  The babysitting is finally done by bodies whose ONLY job it is.  So
+# the refuted half is structurally absent and the proven half is what ports.
+#
+# ⛔ NO PREP BARRIERS.  Magnus's no-preps ruling stands (SK_ROTATE_PREPS = 0,
+# the r374 -> r336 demo): THE BODY IS THE SCREEN.  A 40 HP builder standing on
+# the front seat soaks the gunner ray the barrier would have soaked -- the s56
+# barrier probe showed occlusion flips the shooter's target to the intervening
+# tile, and a body is a barrier that walks and costs 0 Ti and 0 scale.  Builders
+# can be shot; that is the trade, and it is the one the drip study prices (79%
+# of our contact-turret removals are enemy GUNNERS at median d^2=4 for 7
+# dmg/round).
+#
+# ⛔ THE WELD RULE (s55 class).  SK_ROTATE_GUARD is its OWN master and is
+# conjoined ONLY with SK_ROTATE + the phase gate -- i.e. every rung below reads
+# `self.rot_body` (which is already `SK_ROTATE and rnd >= SK_PHASE_ROUND and
+# role in SK_ROTATE_RAIDERS`) AND this flag.  It is NOT conjoined with
+# SK_TUBE_GUARD (which does not exist in this tree), SK_TUBE_FLOOR2 or
+# SK_TUBE_RELIGHT (the permanently-False weld class).  OFF => all three rungs
+# vanish at their call sites and control flow is the pre-plank line for line.
+SK_ROTATE_GUARD = False      # MASTER.  ON (and only while SK_ROTATE is also on,
+                             # for rounds >= SK_PHASE_ROUND, for the two bodies
+                             # in SK_ROTATE_RAIDERS): three rungs in
+                             # `_siege_engineer`, all ported from v630 --
+                             #   (a) TERMINAL-APPROACH SEAT BIAS.  Within
+                             #       d^2 <= SK_ROTATE_GUARD_NEAR of the chosen
+                             #       site, walk to the site's enemy-side
+                             #       cardinal neighbour (the FRONT SEAT) rather
+                             #       than to the site itself.  Post-flip there
+                             #       are no prep barriers, so this is the whole
+                             #       screen: the body plants from the front seat
+                             #       and then STANDS there between the tube and
+                             #       the enemy core.  A bias, never a refusal
+                             #       state -- seat unreachable => the old walk,
+                             #       line for line.
+                             #   (b) THE HEAL RUNG, band-scoped (`_near_live_
+                             #       tube`) and in BOTH the siting and hold
+                             #       paths, because v630.1 measured the hold-
+                             #       only form at 1 event in 60 games.  1 Ti ->
+                             #       +4 HP on the most-damaged adjacent friendly
+                             #       building; with no preps that is naturally
+                             #       the sentinel.  ⭐ THE 0.68 HEAL-TAX
+                             #       ARITHMETIC CUTS BOTH WAYS: the same number
+                             #       that makes their core hard to bring down
+                             #       makes our tube hard to remove, and a 30 HP
+                             #       sentinel taking 7 dmg/round from one gunner
+                             #       is a body's heal away from doubling its
+                             #       life.
+                             #   (c) THE HOLD.  A rotation body with the battery
+                             #       AT `want` holds the FRONT SEAT of the
+                             #       newest tube instead of parking on whichever
+                             #       side its walk arrived from (the old hold
+                             #       parks home-side in the common case).  That
+                             #       tile is where the heal rung reaches the
+                             #       tube -- the babysit, at last.
+                             # ⚠ REGISTERED CONFOUND, inherited from v630 and
+                             # still live here: ON keeps the raider in vision of
+                             # its tube, which silences the phantom-death
+                             # booking (`_nest_watch` books an out-of-vision
+                             # `get_hp` raise as a death).  Part of any measured
+                             # life gain may be LEDGER ACCURACY, so the powered
+                             # read must register plants/game, nest_lives, tube
+                             # median life and battery concurrency as
+                             # co-diagnostics, not the life median alone.
+                             # ⛔⛔ MEASURED REACHABILITY LIMIT ON RUNG (b),
+                             # FOUND IN THIS PLANK'S OWN BUILD SMOKE AND
+                             # DELIBERATELY LEFT IN THE PORT -- READ THIS
+                             # BEFORE SCORING A HEAL NULL.  `_near_live_tube`
+                             # reads THIS BODY'S ledger, and the ledger is
+                             # written in exactly one place (`_plant_gun`, the
+                             # slot assignment) -- i.e. ONLY for tubes this
+                             # body planted itself.  Each unit gets its own
+                             # Player instance, so a REPLACEMENT raider spawned
+                             # after the planter died walks to the battery with
+                             # an EMPTY ledger and its heal rung is dead for
+                             # its whole life.  Post-flip raider churn is the
+                             # normal case, not the edge one: the parked FUND
+                             # arm's jotunheim cell cycled EIGHT raider bodies
+                             # between r300 and r1000.  Measured consequence in
+                             # the 3-cell ON smoke: our post-flip heals landing
+                             # on a standing tube = 0 of 0.  ⇒ THE HEAL HALF IS
+                             # UNDER-DOSED BY CONSTRUCTION, so a null on tube
+                             # life must NOT be read as "healing does not help"
+                             # -- it is a null on a dose that mostly did not
+                             # get delivered.  The bounded fix, if the screen
+                             # wants the heal half measured properly, is a
+                             # SEPARATE plank: widen the band predicate from
+                             # the body's ledger to any of OUR standing forward
+                             # turrets this body can SEE.  Not done here: that
+                             # is a new engine read and a new band semantic,
+                             # not the port this flag registered.
+SK_ROTATE_GUARD_NEAR = 8     # d^2 gate for the seat bias AND the siting heal
+                             # rung: both engage only inside this disc of the
+                             # site / of a live ledger tube.  8 = the two tiles
+                             # of a knight-ish approach.  ⛔ TERMINAL-ONLY IS
+                             # THE v630.1 LESSON AND IT IS NOT OPTIONAL: v630.0
+                             # biased the walk from spawn and the E6 attribution
+                             # traced all 9 flipped cells to a one-tile
+                             # walk-target change at r4-r45 -- the bias was
+                             # re-seeding the OPENING corridor and every
+                             # downstream difference was cascade.  Outside this
+                             # disc the body walks exactly as it did before.
+                             # (Here the macro path is post-flip only, which
+                             # already bounds the blast radius; the disc keeps
+                             # the commute itself untouched as well.)
+
+# ===========================================================================
 # v632 HEIMDALL PLANK 7 -- THE CORE-APRON MESH  (DESIGN §4d)
 # ===========================================================================
 # GAME CONTEXT: in-game build work for the Florent Code League, a sandboxed
