@@ -3447,7 +3447,7 @@ SK_LEASH_DSQ = 50            # the "far" bar the E6 attribution measured: a
 # OFF default: screens under GUARD-FRAMEWORK v2 like any plank rather than
 # shipping on an audit.  OFF is EXACT IDENTITY -- every site is a
 # `if SK_WALK_GUARDS and <state>:` conjunction added ABOVE unchanged code.
-SK_WALK_GUARDS = False
+SK_WALK_GUARDS = True  # ADOPTED s57 2026-08-23 (hardening grade): guards clean, F3 +2 wins, global >=50r pool -18%; residuals routed (cross-site ban blindness, nav-stall class)
 
 # ⭐⭐ 4.2 -- THE BAN, AND IT IS WHAT MAKES THE GUARD TERMINATE.  The escape
 # ALONE turns a freeze into a 2-TILE OSCILLATION, measured on the wire before

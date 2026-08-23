@@ -72,3 +72,46 @@ the walk target changes (the smoke's 64%→16% top-2-share is the shape);
 where states occur. Global freeze pool reported, never gated. Adoption =
 hardening grade (correctness plank); any alive-sum rise reported against
 the campaign arithmetic as a bonus, never required.
+
+## VERDICT — ARM A ADOPTED (hardening grade), typed by BUILDER s57 2026-08-23
+
+**GAME CONTEXT: in-game analysis for the Florent Code League, a sandboxed
+bot-vs-bot programming competition.**
+
+Against the re-formed mechanism-terms bar (readout e46wg_*, diagnostic diagwg_*):
+- **(i) seen-firing: PASS.** Escapes execute where states occur (bifrost def 4/
+  deny 1 traced round-by-round; F3 early-termination share 0.082→0.149, p90
+  117→93). State column is an upper-bound proxy, disclosed.
+- **(ii) no-oscillation: MARGINAL PASS with a named defect.** At the one traced
+  SITE-3 firing the body visits ≥3 tiles and leaves within 20r (bar met), but
+  only after re-fires: **the per-(site,tile) ban is invisible to sibling
+  walks** — the DEF decline falls through to _deny_target, which steps back
+  onto the banned tile. Bounded (116r freeze → 8r oscillation → gone), real,
+  routed below.
+- **(iii) guarded-tile freezes: PASS on the registered form.** The F1 21→724
+  ore-freeze regression contains ZERO rounds on guard paths (frozen body 237:
+  wg counters 0/0/0, ban {} for its whole life, never adjacent to a banned
+  tile, no BASE counterpart) — it is an **unguarded nav-stall**
+  (_deny_target→_nav→step_to produces no step, no verb, body NOT boxed: two
+  free neighbours) inside a divergence-shuffled game whose root WAS a
+  legitimate guard firing (r63, audit row 30's exact tile). Where guard states
+  occurred, freezes went to zero.
+- **Guards: ALL PASS.** alive-sum 53(+0), deaths 53(−1), eco +0.4%, harv
+  +0.5%. Informational: wins 31→32, kills 14→18, **F3 13→15 wins** (one from
+  the 16/30 victory bar), F3 freeze mass −37.4%, global pool −18.0%.
+
+**NEW BASELINE:** t_wg_* sums [alive 53 / deaths 53 / wins 32 / kills 18 /
+eco 36.00 / harv 209]. F1 8, F2 9, F3 15 wins.
+
+**ROUTED RESIDUALS (the diagnostic's two live findings):**
+1. **Cross-site ban blindness** — a declined walk's fall-through sibling
+   re-targets the banned tile. Candidate fix: same-tile bans visible to all
+   sites, or the decline carries the tile into the fall-through's exclusions.
+2. **The nav-stall class is the measured dominant residual freeze mechanism**
+   (bifrost bot 237: 686r with free neighbours; bifrost bot 3: 979r keeper
+   nav-stall; midgard bot 3: the ban-comment's own oscillation still live at
+   an unguarded site). Class signature: a walk returns a target, step_to
+   yields no step, the role falls through with NO VERB, silently, for
+   hundreds of rounds. This is the #131 family with fresh anchors — the next
+   survival plank is a stall detector at the WALK EXECUTOR level (all walks,
+   not three sites).
