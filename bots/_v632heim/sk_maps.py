@@ -3449,6 +3449,28 @@ SK_LEASH_DSQ = 50            # the "far" bar the E6 attribution measured: a
 # `if SK_WALK_GUARDS and <state>:` conjunction added ABOVE unchanged code.
 SK_WALK_GUARDS = False
 
+# ⭐⭐ 4.2 -- THE BAN, AND IT IS WHAT MAKES THE GUARD TERMINATE.  The escape
+# ALONE turns a freeze into a 2-TILE OSCILLATION, measured on the wire before
+# this constant existed: midgard_seatA body 7 ran (15,15)->(15,14)->(15,15)->
+# (16,15)->(15,15)... every round from r30, because stepping off restores the
+# legal act stance but nothing takes the tile off the walk's target list, so
+# the walk re-picks it the very next round.  A body oscillating on two tiles is
+# as inert as a frozen one and merely invisible to the freeze invariant -- the
+# guard would have scored on the instrument without helping the game.  So an
+# EXECUTED escape puts that (SITE, TILE) pair off THAT SAME WALK's target list
+# for this many rounds, and the walk re-targets.
+# ⛔ THE LENGTH IS PICKED FROM PRECEDENT, NOT INVENTED.  Three bans exist in
+# this line: `SK_CURSOR_GIVEUP = 20` (a cage cursor's objective, then re-pick)
+# and the benchmark's `_t4_chase_ok` (a chase target, 20 rounds) are both
+# WALK-TARGET bans and are the same object as this one; `escape_ban = rnd + 30`
+# (`_escape`) is longer because it governs a BUILD list after a free, unlimited
+# `destroy` -- ledger V8's 893-builds-on-one-tile hazard -- which this is not.
+# ⇒ 20, with the two like-for-like precedents.
+# ⛔ PER-(SITE, TILE), NOT PER-TILE: the three guarded walks have different
+# target semantics and a tile the denier stepped off must not silently mute the
+# home-defence answer on the same square.
+SK_WALK_GUARD_BAN = 20
+
 # --- v632 PLANK B -- THE LEASHED KEEPER'S DUTY (#128a residual, queued 4.1) --
 # The adopted leash (SK_KEEPER_LEASH) refuses economy-walk targets beyond
 # SK_LEASH_DSQ while the core's threat latch is fresh.  Its BANKED cost is the

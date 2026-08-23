@@ -1207,6 +1207,15 @@ class Player(CommonMixin, RolesMixin, CoreMixin):
         self.wg_fire_esc = 0
         self.wg_state_def = 0         # `_home_defence` slot-2 walk (row 30)
         self.wg_fire_def = 0
+        # ⭐⭐ 4.2 -- THE PER-(SITE, TILE) BAN STATE.  `(site, x, y) -> round the
+        # ban ends`, mirroring `escape_ban` one block up (tile -> round, read as
+        # `.get(key, -1) > rnd`).  UNCONDITIONAL for the same engine reason as
+        # every counter above: only `_walk_escape` writes it and `_walk_escape`
+        # is reachable only under SK_WALK_GUARDS, so it stays EMPTY on every
+        # flag-off arm -- and every reader is written `if self.wg_ban and ...`,
+        # so an OFF arm pays one truthiness test and never a dict lookup inside
+        # the ore patrol loop.
+        self.wg_ban = {}
 
         # --- v632 SURVIVAL FAMILY, PLANK B -- THE LEASHED KEEPER'S DUTY -----
         # (SK_LEASH_DUTY, conjoined with SK_KEEPER_LEASH at the call site.)

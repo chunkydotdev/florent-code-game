@@ -160,8 +160,16 @@ from sk_maps import (
     SK_ROTATE_GUARD, SK_ROTATE_GUARD_NEAR,
     # --- v632 SURVIVAL FAMILY -- PLANK A (walk-terminal guards, #130) and
     # --- PLANK B (the leashed keeper's duty, #128a residual / queued 4.1) ----
-    SK_WALK_GUARDS, SK_LEASH_DUTY,
+    SK_WALK_GUARDS, SK_WALK_GUARD_BAN, SK_LEASH_DUTY,
 )
+
+# --- v632 PLANK A 4.2: the three guarded WALKS, as ban keys.  A tile is banned
+# per (SITE, TILE) because the three walks have different target semantics --
+# see SK_WALK_GUARD_BAN.  Single characters keep the key tuple cheap in a dict
+# that is read inside the ore patrol loop.
+WG_SITE_DENY = "d"      # `_ore_denier` -> `_deny_target`
+WG_SITE_ESC = "e"       # `_home_keeper_move` -> `_escalate_target` branch 2
+WG_SITE_DEF = "f"       # `_home_defence` -> SK_SLOT_THREAT_POS
 
 # --- v611: the 8 neighbours, for a LAUNCHER's pickup disc (d^2 <= 2) --------
 NEIGHBOURS8 = ((0, -1), (1, -1), (1, 0), (1, 1),
@@ -4356,7 +4364,7 @@ class RolesMixin:
                                         # dead as one we cannot BUILD on
         return best[1]
 
-    def _escalate_target(self, ct, p):
+    def _escalate_target(self, ct, p, rnd=None):
         """LEDGER V1's other half -- once a tile is escalated, the answer is
         the SHOOTER, not another conveyor.  Returns the enemy turret to remove.
 
@@ -4389,6 +4397,18 @@ class RolesMixin:
         for xy in self.harv_escalated:
             k = self.harv_killer.get(xy)
             if k is None or not self.ibp(k):
+                continue
+            # ⭐⭐ 4.2 -- THE BAN EXCLUSION, SITE 2.  Scoped to THIS branch, the
+            # INFERRED one, for the same reason the audit scopes the defect
+            # here: branch 1 above is a live armed enemy, i.e. a building the
+            # body cannot stand on, so it is outside the class and outside the
+            # ban.  With the remembered tile off the list the keeper's ladder
+            # falls through to its next rung instead of re-walking at itself.
+            # `rnd is None` = the ban is simply not evaluated (no caller does
+            # that today; the default keeps the helper callable from a context
+            # with no round).
+            if (rnd is not None and self.wg_ban
+                    and self._wg_banned(WG_SITE_ESC, k.x, k.y, rnd)):
                 continue
             if self.core is not None and dsq_core(k, self.core) > 100:
                 continue
@@ -4850,7 +4870,7 @@ class RolesMixin:
             if seat.x != p.x or seat.y != p.y:
                 self.step_to(ct, seat)
             return
-        shooter = self._escalate_target(ct, p)
+        shooter = self._escalate_target(ct, p, rnd)
         # ⭐ v632 PLANK A, SITE 2 of 3 (SK_WALK_GUARDS) -- THE INFERRED-KILLER
         # FREEZE.  Audit `AUDIT-walk-terminals-2026-08-22.md` row 6b, EXPOSED
         # and UNBOUNDED, inherited from `_v628compose`.  `_escalate_target`
@@ -4870,7 +4890,7 @@ class RolesMixin:
         if (SK_WALK_GUARDS and shooter is not None
                 and shooter.x == p.x and shooter.y == p.y):
             self.wg_state_esc += 1
-            if self._walk_escape(ct, p):
+            if self._walk_escape(ct, p, rnd, WG_SITE_ESC):
                 self.wg_fire_esc += 1
                 return
         if shooter is not None:
@@ -6406,7 +6426,7 @@ class RolesMixin:
         if (SK_WALK_GUARDS and tgt is not None
                 and tgt.x == p.x and tgt.y == p.y):
             self.wg_state_deny += 1
-            if self._walk_escape(ct, p):
+            if self._walk_escape(ct, p, rnd, WG_SITE_DENY):
                 self.wg_fire_deny += 1
                 return
         if self.step_to(ct, tgt if tgt is not None else self.enemy):
@@ -6502,11 +6522,23 @@ class RolesMixin:
         return False
 
     def _deny_target(self, ct, p, rnd):
+        # ⭐⭐ 4.2 -- THE BAN EXCLUSION, SITE 1.  A tile this body escaped from
+        # is off THIS walk's target list for SK_WALK_GUARD_BAN rounds, so the
+        # walk RE-TARGETS (the next-nearest enemy-half ore) instead of stepping
+        # straight back on.  ⛔ APPLIED TO THE TWO STANDABLE BRANCHES ONLY --
+        # the remembered `enemy_harv` tile and the PATROL ore.  The live
+        # visible-harvester branch is NOT-APPLICABLE by the audit's own test (a
+        # harvester is a building, so the BFS lands the body beside it and this
+        # body can never have been standing on it); excluding it would refuse a
+        # real quarry for a freeze that cannot occur there.
+        _ban = bool(self.wg_ban)
         best = None
         tgt = None
         for xy, seen in self.enemy_harv.items():
             q = Position(xy[0], xy[1])
             if not self.ibp(q):
+                continue
+            if _ban and self._wg_banned(WG_SITE_DENY, xy[0], xy[1], rnd):
                 continue
             d = p.distance_squared(q)
             if best is None or d < best:
@@ -6533,6 +6565,8 @@ class RolesMixin:
                 continue
             if (ore.x, ore.y) in self.denied_tiles:
                 continue
+            if _ban and self._wg_banned(WG_SITE_DENY, ore.x, ore.y, rnd):
+                continue                # 4.2: re-target, do not step back on
             d = p.distance_squared(ore)
             if best is None or d < best:
                 best = d
@@ -7905,8 +7939,21 @@ class RolesMixin:
     # v632 PLANK A -- THE WALK-TERMINAL ESCAPE  (SK_WALK_GUARDS, #130)
     # ------------------------------------------------------------------
 
-    def _walk_escape(self, ct, p):
-        """Step off the tile this body is standing on and targeting.
+    def _wg_banned(self, site, x, y, rnd):
+        """4.2: is (site, tile) off THIS walk's target list right now?
+
+        Read pattern mirrored verbatim from the tree's existing bans
+        (`escape_ban.get(xy, -1) > rnd`, `sk_roles.py:2353/:2927/:3922`).
+        Callers guard with `if self.wg_ban and ...` so an OFF arm -- where the
+        dict is empty because only `_walk_escape` ever writes it, and
+        `_walk_escape` is reachable only under SK_WALK_GUARDS -- pays one
+        truthiness test and no dict lookup in the ore patrol's hot loop.
+        """
+        return self.wg_ban.get((site, x, y), -1) > rnd
+
+    def _walk_escape(self, ct, p, rnd, site):
+        """Step off the tile this body is standing on and targeting, and take
+        that tile off THIS walk's target list for SK_WALK_GUARD_BAN rounds.
 
         GAME CONTEXT: an in-engine cardinal move by one of our own builder bots
         in the Florent Code League's simulated grid.
@@ -7932,6 +7979,15 @@ class RolesMixin:
         guard that has never actually moved a body reads zero instead of
         reading like a success.
 
+        ⭐⭐ 4.2 -- THE BAN IS WHAT MAKES THIS TERMINATE, and it is written
+        HERE, on the executed step, so the escape and its ban can never come
+        apart.  Without it the guard converts a freeze into a two-tile
+        oscillation (the midgard_seatA wire trace in SK_WALK_GUARD_BAN's note):
+        the body steps off, the walk re-picks the same tile, and it steps back
+        on for as long as the state lasts.  ⛔ ONLY AN EXECUTED STEP BANS -- a
+        refused escape has not moved the body, so banning there would blind the
+        walk to a tile it is still standing on.
+
         Returns True iff a move was executed.
         """
         for d in CARDINALS:
@@ -7944,6 +8000,7 @@ class RolesMixin:
             except Exception:
                 continue
             if self.step_to(ct, q):
+                self.wg_ban[(site, p.x, p.y)] = rnd + SK_WALK_GUARD_BAN
                 return True
         return False
 
@@ -8610,9 +8667,23 @@ class RolesMixin:
         # second, unregistered behaviour change on a survival rung.
         if (SK_WALK_GUARDS and threat.x == p.x and threat.y == p.y):
             self.wg_state_def += 1
-            if self._walk_escape(ct, p):
+            if self._walk_escape(ct, p, rnd, WG_SITE_DEF):
                 self.wg_fire_def += 1
                 return True
+        # ⭐⭐ 4.2 -- THE BAN EXCLUSION, SITE 3, AND IT IS A DECLINE BECAUSE
+        # THIS WALK HAS EXACTLY ONE TARGET.  The other two walks re-target
+        # (next-nearest ore, next ladder rung); here the target IS slot 2, so
+        # taking it off the list means yielding the turn -- and that is
+        # precisely what the audit says is missing: `return True` consumes the
+        # turn unconditionally, "so no lower authority ever gets it".
+        # ⛔ PLACED BELOW THE `manhattan == 1` FIRE BRANCH ON PURPOSE.  The ban
+        # vetoes the WALK ONLY.  If something real is planted on that square
+        # while this body stands beside it, the melee above still answers it at
+        # full priority -- the ban never suppresses the shot, only the march at
+        # a tile this body has already proved is empty by standing on it.
+        if self.wg_ban and self._wg_banned(WG_SITE_DEF, threat.x, threat.y,
+                                           rnd):
+            return False
         self.step_to(ct, threat)
         return True
 
