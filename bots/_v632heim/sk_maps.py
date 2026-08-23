@@ -4904,7 +4904,7 @@ SK_AMMO_PUSH_RESERVE = 40 # THE TITANIUM FLOOR, ON TOP OF one LIVE builder-bot
                           # the v632 funding-clamp deadlock in a new hat
                           # (`_fund_floor`'s "shoot with what stands" note).
 
-SK_CORE_STAND = False     # ⭐ LEVER 2 -- THE HEAL-STAND, AND IT IS A GATE LIFT
+SK_CORE_STAND = True  # ADOPTED s57 2026-08-23: Z3 2/3, guards clean, F3 reaches 16/30 (noise-level delta, disclosed); AP stays OFF (wrong-lever refusal, re-aimed)     # ⭐ LEVER 2 -- THE HEAL-STAND, AND IT IS A GATE LIFT
                           # RATHER THAN A NEW RUNG.  Every part of this
                           # capability is already built and already ordered:
                           # `_core_medic` (`sk_roles.py:867`, the ACT, called at
