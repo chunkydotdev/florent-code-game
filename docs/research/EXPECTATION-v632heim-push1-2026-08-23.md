@@ -179,3 +179,35 @@ non-rise. B5 guards vs t_b4_*. Risk disclosed: tighter packing = one
 enemy answer covers two tubes (the sentinel ray is single-tile — line
 overlap is the check; splash does not exist in this engine). Small-steps:
 the constant alone, then succession/heals as arms 2-3.
+
+## BARRELS ARM 1 — REFUTED INERT BY ITS OWN MUTATION CONTROL, ZERO TAPES
+SPENT (BUILDER s57)
+
+X1+tight=0 read SAME on 5 cells including the densest multi-tube ones
+(fimbulwinter/holmgang/yggdrasil) — gap 8→4 changes no game. THE PREMISE
+INVERTED: the win-band d²21 exceeds the d²8 minimum, so the minimum
+never bound; loss cells plant far because the DEATH MEMO bans each
+knocked-out tile and successive sites walk outward — spacing is a
+SYMPTOM of tube death. SK_NEST_GAP_TIGHT stays built OFF (harmless,
+inert). The control discipline's cleanest save of the campaign: the
+identity gate's SAME would have been unfalsifiable and the grid would
+have measured nothing.
+
+## BARRELS ARM 2 — PROTECTION + SUCCESSION (registered blind)
+
+The two levers everything ranks first, one flag (SK_BARREL_GUARD),
+pieces ablatable:
+(a) THE BARREL MEDIC — a re-tasked HOME KEEPER (post-security read; the
+third staffing form: not the cage walker [v1], not a spawn [v3 scale
+tax]) walks to the band and heals damaged friendly forward sentinels
+(+4/1Ti; the r²=20 vision fact — station in the band). Dose: tube life
+vs measured 42/10; the heal race vs their peck rate.
+(b) OVERLAPPING SUCCESSION — while an incumbent tube lives, the
+engineer preps the successor site (the existing prep rungs, dosed at
+last; the hold-clock refresh per the b2 pattern) so a knockout costs
+~1 round, not the measured 44. Dose: replacement gap; overlapping vs
+sequential successions (measured 11/28).
+Bars: identity; both-tail seen-choosing per piece; dose = tube life +
+replacement gap + barrels-standing + pair share; currency grid ITT
+non-fall with rise hoped, median non-rise; guards vs t_b4_*.
+Play-it-well line mandatory.
