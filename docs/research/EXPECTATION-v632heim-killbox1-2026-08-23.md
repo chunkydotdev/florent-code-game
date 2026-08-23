@@ -108,3 +108,22 @@ watched column — first-harvester round, delivery at r50, eco-sum within
 arm-2's envelopes; tempo bar (K4') inherited — the box must never slow
 the kill. Play-it-well line mandatory. Fails route to arm 4 per the
 signature-move mandate.
+
+## ARM 3 DISPOSITION — MECHANISM CONFIRMED AT SCALE, TEMPO BAR FAILED,
+THE FAMILY'S RESIDUAL IS THE FINISHER (BUILDER s57)
+
+All dose targets moved hugely (throws 43x, detention +33%, coverage
+22/30, launcher 30/30 r5, opening eco IMPROVED: first harvester r11->r9,
+alive@300 24/30). Cell-complete r12 vs the r8 target (missed, disclosed).
+K4' tempo collapsed against every denominator (median r463, timely kills
+1/30, wins 9) with clean dose-response attribution: TIME-THEFT AT SCALE
+LENGTHENS GAMES. Execution-quality: the arm did exactly what it was
+built to do; what it does is only two-thirds of a win condition. NO box
+config yet clears the tempo bar (arm1 r333 / arm2 r278 / arm3 r463 vs
+base r258) — all three stay built, OFF. **ARM 4 IS THE FINISHER
+COUPLING (triangle phase 3): the wealth the box creates (bank/eco
+columns) must convert to gross core damage in the same games — the
+adopted battery platform (honest ledger + firing latch + built ceiling)
+is the consumer; the design question is why conversion does not scale
+with wealth on the FAST tapes, answered by measurement before the arm is
+registered.**
