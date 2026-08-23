@@ -1042,3 +1042,18 @@ the `0-5 costs` column (**−15.81** at the nearest admissible team) is the one 
 moves. **`floor_warning()` fires automatically inside 40 points and is firing now.**
 ⚠ **A successor reading this field at a 1640 rating will read a mild filter and
 get a near-total ban.** That is why the caveat is here and not only in the tool.
+
+## PLAY-IT-WELL RULE (Magnus, direct, 2026-08-23 — verdict discipline, all lanes)
+
+**"There's a difference between playing a tactic and playing it well."** A
+refusal or park verdict must contain an EXECUTION-QUALITY line: dose
+ACHIEVED vs dose ACHIEVABLE (the achievable reference measured, never
+asserted — e.g. heals landed / armed-rounds-with-opportunity; pecks landed /
+adjacent-idle-rounds-with-bank). A tactic executing at a small fraction of
+its measured opportunity is UNDER-PLAYED, not refuted — the verdict routes
+it to execution iteration, and the family's two-strikes counter does NOT
+advance on an under-played arm. Same-night provenance, both directions:
+the chew give-up clock was NEVER in force (memo bug — a "tested policy"
+that was dead code), and the core heal-stand sat disarmed behind four
+stacked gates (152 armed rounds, zero heals) — "we play tactic X" must be
+verified as executed, not read off the code's intent.
