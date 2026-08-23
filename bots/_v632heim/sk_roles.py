@@ -1456,7 +1456,15 @@ class RolesMixin:
             # our own ring; PLANK 1 marches this body at a located annulus
             # gunner, and without this it would arrive and then build a
             # conveyor next to it.
-            if self._peck_priority(ct, p, rnd):
+            # ⭐⭐ v632 THE FUNDING PRIORITY, CALL SITE 1 of 2
+            # (SK_ROTATE_FUND).  THE KEEPER'S 2 Ti PECK YIELDS while the bank
+            # cannot still afford a sentinel -- unless the threat latch is
+            # fresh, in which case this rung runs exactly as before.  ⛔ THE
+            # REFUSAL FALLS THROUGH, it does not end the turn: the rungs below
+            # are heals and clear-outs the keeper should still be doing, and
+            # one of them (`_heal_action`) is gated by the same predicate at
+            # call site 2.
+            if not self._fund_refuse(ct, rnd) and self._peck_priority(ct, p, rnd):
                 return
             # ⭐ v618 PLANK 4.  ABOVE the generic heal, and that ordering is the
             # plank: `_heal_action` heals the most-damaged adjacent friendly
@@ -1465,7 +1473,16 @@ class RolesMixin:
             # cosmetic.  Running first lets it publish its veto.
             if self._seat_heal_action(ct, p, rnd):
                 return
-            if self._heal_action(ct, p, rnd):
+            # ⭐⭐ v632 THE FUNDING PRIORITY, CALL SITE 2 of 2
+            # (SK_ROTATE_FUND).  THE KEEPER'S 1 Ti GENERIC HEAL YIELDS on the
+            # same predicate.  ⛔ SCOPED TO THE GENERIC RUNG ONLY: `_core_medic`
+            # and `_seat_heal_action` above are NOT gated -- the first answers
+            # our own core taking fire and the second is PLANK 4's race
+            # arithmetic on a delivery seat, and both are the survival half the
+            # `_under_attack` exemption exists to protect.  This rung heals the
+            # most-damaged adjacent friendly with no such test, which is what
+            # makes it the discretionary one.
+            if not self._fund_refuse(ct, rnd) and self._heal_action(ct, p, rnd):
                 return
             # ⭐ v610 PLANK 1.  Below the heal (a body about to die outranks a
             # tile) and below `_door_action`/`_peck_priority` (an enemy TURRET

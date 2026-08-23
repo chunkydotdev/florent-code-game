@@ -26,6 +26,9 @@ from sk_maps import (
     SK_DANGER_SENT_REACH,
     # --- v632 HEIMDALL PLANK 3 (THE TURRET RING) --------------------------
     SK_FORT_RING, SK_FORT_AMMO_BY, SK_FORT_AMMO_FLOOR,
+    # --- v632 HEIMDALL -- THE FUNDING PRIORITY (SK_ROTATE_FUND) -----------
+    SK_ROTATE, SK_ROTATE_FUND, SK_ROTATE_FUND_FROM, SK_ROTATE_FUND_KEEP,
+    SK_ROTATE_WANT, SK_SLOT_NEST,
 )
 from sk_roles import (
     DRIP_GUN_MASK, DRIP_SENT_FIELD, SEAT_MASK,
@@ -320,6 +323,23 @@ class CoreMixin:
         have = ct.get_global_resources()
         if amt > have:
             amt = have
+        # ⭐⭐ v632 THE FUNDING PRIORITY (SK_ROTATE_FUND) -- THE DRIP YIELDS.
+        # The drip is the LARGEST measured drain in the pre-flip window and
+        # nothing gated it; inside the funding window it converts ONLY the
+        # surplus above one sentinel's purchase price.  ⛔ IT IS A CLAMP, NOT A
+        # SKIP: every titanium above the floor is still converted the same
+        # round, so a standing turret keeps being fed out of surplus and only
+        # the money the battery needs is withheld.  `_fund_floor` returns 0 --
+        # i.e. this block is a no-op -- on every SK_ROTATE-off round, outside
+        # the window, once the battery stands, and on any unreadable number.
+        floor = self._fund_floor(ct, rnd)
+        if floor > 0:
+            room = have - floor
+            if room < 0:
+                room = 0
+            if room < amt:
+                amt = room
+                self.fund_drip_held += 1
         # ⭐ v602 FIX 6 (the v601 build report's named one-liner).  The floor was
         # applied ONLY on the can't-afford branch, so 2 of 63 conversions in the
         # v601 tape left the 4/10 lattice -- both of them amount 6 on that very
@@ -337,6 +357,127 @@ class CoreMixin:
                 self.converts += 1
         except Exception:
             return
+
+    # ------------------------------------------------------------------
+    # v632 HEIMDALL -- THE FUNDING PRIORITY  (SK_ROTATE_FUND)
+    # ------------------------------------------------------------------
+
+    def _fund_battery(self, ct, rnd):
+        """How many battery tubes stand right now -- the BEST AVAILABLE read,
+        and its two biases are stated because neither is exact.
+
+        GAME CONTEXT: an in-engine census of our own sentinels in the Florent
+        Code League's simulated grid.
+
+        TWO SOURCES, and the answer is their MAX because each fails LOW in a
+        different place and neither can be trusted alone:
+          * SLOT 8 (`SK_SLOT_DRIP`, writer: the siege engineer) -- forward
+            sentinels that WILL FIRE next round.  6 bits, so it can reach 4;
+            it is the read `_drip` already performs, so in the drip's own path
+            it costs nothing new.  ⚠ FAILS LOW twice: it counts only tubes
+            inside the ENGINEER'S vision (`_drip_report` discloses this) and
+            only those with an enemy in reach.  During a clustered siege at
+            their core both hold in practice -- SK_ROTATE_CLUSTER_GAP puts the
+            whole battery in one vision disc and their core is itself an enemy
+            entity in reach -- which is exactly the phase this gate runs in.
+          * SLOT 7 (`SK_SLOT_NEST`) -- the phase-separated forward-tube BEATS,
+            counted by `_tube_count`.  Standing tubes, not firing ones, so it
+            is live when slot 8 is not.  ⚠ FAILS LOW HARD: the slot holds
+            exactly TWO seats, so it SATURATES AT 2 and can never on its own
+            report a battery of SK_ROTATE_WANT = 4.  This is the same slot
+            re-lay SK_ROTATE_WANT's note already books as a separate plank.
+
+        ⛔ THE FAILURE DIRECTION, STATED: reading LOW keeps the funding
+        priority engaged LONGER than nominal -- more titanium held liquid, the
+        drip clamped for more rounds.  Reading HIGH (slot 8 also counts
+        forward tubes this plank did not plant) reverts the gate EARLY, i.e.
+        the plank does less.  Both are bounded and neither can refuse a plant:
+        nothing in this family ever blocks `build_sentinel`.
+        """
+        n = 0
+        try:
+            n = (ct.read_store(SK_SLOT_DRIP) >> DRIP_SENT_FIELD) & DRIP_GUN_MASK
+        except Exception:
+            n = 0
+        try:
+            t = self._tube_count(ct.read_store(SK_SLOT_NEST), rnd)
+        except Exception:
+            t = 0
+        return t if t > n else n
+
+    def _fund_window(self, ct, rnd):
+        """True while titanium is being held for the battery.
+
+        `SK_ROTATE and SK_ROTATE_FUND` is the CALL-SITE CONJUNCTION that makes
+        OFF an exact identity, and it is doubly guaranteed: the master ships
+        False AND is reachable only under SK_ROTATE, which also ships False.
+        Cheapest terms first, so an OFF arm returns before touching the
+        controller and the store is never read.
+        """
+        if not (SK_ROTATE and SK_ROTATE_FUND and rnd >= SK_ROTATE_FUND_FROM):
+            return False
+        return self._fund_battery(ct, rnd) < SK_ROTATE_WANT
+
+    def _fund_floor(self, ct, rnd):
+        """The titanium that must stay liquid this round, or 0 for "no floor".
+
+        One sentinel's LIVE price plus SK_ROTATE_FUND_KEEP, read through
+        `get_sentinel_cost()` because the ONE GLOBAL ADDITIVE cost scale is
+        near its maximum by r285.
+
+        ⛔ FAILS OPEN, for `_chest_refuse`'s reason: a floor built on an
+        unreadable cost withholds titanium for no measured reason, which is
+        worse than the overspend it was meant to prevent.
+        """
+        try:
+            if not self._fund_window(ct, rnd):
+                return 0
+            return ct.get_sentinel_cost() + SK_ROTATE_FUND_KEEP
+        except Exception:
+            return 0
+
+    def _fund_refuse(self, ct, rnd):
+        """True when a KEEPER DISCRETIONARY 1-2 Ti verb must stand down.
+
+        The measured target: `_peck_priority` (2 Ti a peck) and `_heal_action`
+        (1 Ti a heal) together drained 38-44 Ti across the window -- half a
+        sentinel, two titanium at a time, and neither passes through the war
+        chest.
+
+        THE TEST IS THE SPEC'S, VERBATIM: refuse while
+        `bank < get_sentinel_cost() + SK_ROTATE_FUND_KEEP`.
+        ⚠ DISCLOSED DIFFERENCE FROM `_chest_refuse`: the chest adds the
+        purchase's OWN cost to the reserve; this does not, because the verbs it
+        gates cost 1-2 Ti against a KEEP margin of 10 -- the margin already
+        covers several of them and threading a cost argument through two call
+        sites would buy nothing measurable.
+
+        ⛔ THE EXEMPTION IS THE CHEST'S, ON THE SAME SIGNAL.  `_under_attack`
+        is the slot-1 threat latch (SK_SLOT_UNDER, 50-round freshness) that
+        ledger V5 arbitrates survival on.  DEFENCE FIRST: a fortress that banks
+        one sentinel's price and loses its core at r290 has banked nothing, so
+        a keeper answering a live threat pecks and heals exactly as before.
+
+        ⚠ WHAT THE COUNTER MEANS, STATED SO IT IS NOT OVER-READ:
+        `fund_verb_held` counts ROUNDS THE RUNG WAS REFUSED, which is an UPPER
+        BOUND on turns actually diverted -- the refusal is evaluated before the
+        verb looks for a target, so a round with nothing to peck still counts.
+        It is a reachability witness and a dose ceiling, not a dose.
+        """
+        if not (SK_ROTATE and SK_ROTATE_FUND and rnd >= SK_ROTATE_FUND_FROM):
+            return False
+        try:
+            if self._under_attack(ct, rnd):
+                return False
+            if self._fund_battery(ct, rnd) >= SK_ROTATE_WANT:
+                return False
+            if ct.get_global_resources() >= (ct.get_sentinel_cost()
+                                             + SK_ROTATE_FUND_KEEP):
+                return False
+        except Exception:
+            return False
+        self.fund_verb_held += 1
+        return True
 
     # ------------------------------------------------------------------
     # v632 HEIMDALL PLANK 3 -- THE AMMO CLOCK (SK_FORT_RING)

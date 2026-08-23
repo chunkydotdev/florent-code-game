@@ -4063,6 +4063,96 @@ SK_ROTATE_CLUSTER_GAP = 2    # THE FIRST BATTERY IS CLUSTERED.  Magnus, direct:
                              # replacements -- "then move to the next
                              # position".
 
+# ---------------------------------------------------------------------------
+# v632 HEIMDALL -- THE FUNDING PRIORITY  (SK_ROTATE_FUND), THE ROTATION'S
+# FUNDING HALF
+# ---------------------------------------------------------------------------
+# GAME CONTEXT: in-game titanium bookkeeping for the Florent Code League, a
+# sandboxed bot-vs-bot competition on a simulated grid.  "battery", "plant",
+# "peck" name in-engine `build_sentinel` / `fire` calls between competing game
+# bots inside the organisers' documented rules.
+#
+# ⭐⭐ WHY A SECOND FUNDING PLANK EXISTS, AND IT IS BECAUSE THE FIRST ONE WAS
+# MEASURED INERT.  SK_ROTATE_CHEST_FROM above stands down the keeper's
+# DISCRETIONARY BUILD PURCHASES in [250, 300).  It shipped, it was measured,
+# and the RO-P readout is unambiguous: it touched ONE ~8 Ti purchase across two
+# starved cells (`chest_blocked` in play = 0; the guard was proven by a unit
+# control only).  The chest was aimed at the wrong spenders.
+#
+# ⛔ THE DRAIN ANATOMY, MEASURED (rotation park, sixteenth readout + the RO-P
+# build smokes, 2026-08-22).  At the r300 flip the bank reads BELOW 100 Ti in
+# ~7 of 12 touchable cells per fixture (fixture medians 80 / 66 / 113) against
+# a live sentinel price of 72-176.  Where the money actually goes:
+#     * THE AMMO DRIP        `_drip`, EVERY round, need-based, never banks --
+#                            it converts titanium 1:1 into ammunition for
+#                            turrets that ALREADY STAND, and nothing in the
+#                            tree gates it.
+#     * KEEPER FIRE          `_peck_priority`, 2 Ti a peck.
+#     * KEEPER HEAL          `_heal_action`, 1 Ti a heal.
+#                            Fire + heal together were measured at 38-44 Ti
+#                            across the pre-flip window -- i.e. HALF a sentinel
+#                            spent two titanium at a time.
+#     * CONTINUOUS ECO       harvesters and belt-plan conveyors.  NOT a target:
+#                            p0, structurally exempt here as in the chest.
+# NONE of those four passes through `_chest_refuse`.  ⇒ the chest could not have
+# funded the battery no matter what window it ran in, and this plank gates the
+# two biggest levers the CORE and the KEEPER actually hold.
+#
+# ⛔ CONSEQUENCE THE READOUT PRICES: post-flip the income competes with the
+# battery instead of buying it -- first plants landed r318-449 and 16 of 39
+# touchable cells NEVER fielded a battery at all.
+#
+# ⭐ SCREENED AS A PAIR WITH SK_ROTATE, AND THE PRECEDENT IS THE ROTATION UNIT
+# ITSELF.  A funding plank with no battery to fund is nothing -- exactly the
+# argument SK_ROTATE's own header makes for shipping the flip and the battery
+# under one flag ("the flip without a battery is nothing; the pair is the
+# smallest unit that can win a game").  This flag is reachable ONLY under
+# SK_ROTATE, so the arm measures ROTATION+FUNDING and says so.
+SK_ROTATE_FUND = False       # MASTER.  ON (and only while SK_ROTATE is also
+                             # on): from SK_ROTATE_FUND_FROM until the standing
+                             # battery reaches SK_ROTATE_WANT, titanium is
+                             # PRIORITISED FOR PLANTING SENTINELS over
+                             # converting ammunition and over the keeper's
+                             # discretionary 1-2 Ti verbs.
+                             # PLANT FIRST, THEN SHOOT -- Magnus's rolling
+                             # battery spec, PROGRAMME.md
+                             # `FORTRESS_PHASE_FLIP:
+                             # r300_two_raiders_sentinel_siege_until_enemy_core_down`
+                             # ("two raiders that puts up as many sentinels as
+                             # necessary to bring the enemy core down"): a
+                             # sentinel that does not exist cannot use ammo,
+                             # and once the battery stands the drip reverts
+                             # FULLY because sentinels are useless without it.
+SK_ROTATE_FUND_FROM = 285    # THE WINDOW OPENS 15 ROUNDS BEFORE THE FLIP, and
+                             # the number is sized off the two measured
+                             # shortfalls, not chosen: longhouse was 48 Ti
+                             # short of ONE sentinel at the flip and jotunheim
+                             # 34, against a fortress income of ~27.5 Ti/round.
+                             # A drip yielding for 15 rounds covers that with
+                             # room while overlapping the commute
+                             # (SK_ROTATE_PRESTAGE = 278) rather than the
+                             # economy's build-out.
+                             # ⛔ IT DELIBERATELY OPENS LATER THAN THE CHEST
+                             # (250): the chest fills a bank against BUILD
+                             # purchases, this one starves the AMMO CLOCK, and
+                             # ammo is what the home ring shoots with.  The
+                             # shorter the blind window the smaller that bill.
+                             # ⛔ AND IT DOES NOT CLOSE AT THE FLIP.  The chest
+                             # is `< SK_PHASE_ROUND`; the measured failure is
+                             # POST-flip (first plants r318-449), so this one
+                             # runs until the battery stands.
+SK_ROTATE_FUND_KEEP = 10     # THE MARGIN ABOVE ONE SENTINEL'S PRICE that must
+                             # stay liquid: the floor is
+                             # `get_sentinel_cost() + this`.  ONE sentinel and
+                             # not two (the chest reserves two) because this
+                             # window is the LAST 15 rounds before the plant --
+                             # reserving a second tube's price here would starve
+                             # the drip for money the raider cannot spend yet.
+                             # `get_sentinel_cost()` and never a constant: the
+                             # ONE GLOBAL ADDITIVE cost scale is near its
+                             # game-maximum by r285 and a hardcoded price would
+                             # under-reserve exactly when it matters.
+
 # ===========================================================================
 # v632 HEIMDALL PLANK 7 -- THE CORE-APRON MESH  (DESIGN §4d)
 # ===========================================================================

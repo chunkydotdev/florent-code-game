@@ -1134,6 +1134,26 @@ class Player(CommonMixin, RolesMixin, CoreMixin):
                                       # refuse has not been seen to work.  0 on
                                       # every OFF arm, > 0 the moment the second
                                       # raider reaches a publisher rung.
+        # --- v632 HEIMDALL -- THE FUNDING PRIORITY (SK_ROTATE_FUND) --------
+        # ⛔ UNCONDITIONAL, for the reason the rotation block above states: a
+        # field created only under a flag is how an OFF arm raises
+        # AttributeError inside `run()`, and the engine then PERMANENTLY
+        # DESTROYS that unit for the rest of the match.  Both stay 0 on every
+        # SK_ROTATE-off and SK_ROTATE_FUND-off arm, which is what makes them
+        # the identity witnesses as well as the dose instruments.
+        self.fund_drip_held = 0       # CORE tap: rounds the ammo drip's
+                                      # conversion was CLAMPED by the sentinel
+                                      # floor (`_fund_floor`).  Counts only
+                                      # rounds where the clamp actually bit --
+                                      # the drip had money it would otherwise
+                                      # have converted.
+        self.fund_verb_held = 0       # KEEPER tap: rounds the discretionary
+                                      # peck/heal rungs were refused.  ⚠ An
+                                      # UPPER BOUND on turns diverted, not a
+                                      # dose -- the refusal is evaluated before
+                                      # the verb looks for a target, so a round
+                                      # with nothing to peck still counts.  See
+                                      # `_fund_refuse`.
         self.rot_preps_skipped = 0    # prep barriers NOT built post-flip (the
                                       # r374 -> r336 demo finding)
         self.rot_pecks_skipped = 0    # `_attack_enemy_core` entries suppressed
