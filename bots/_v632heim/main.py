@@ -1315,6 +1315,26 @@ class Player(CommonMixin, RolesMixin, CoreMixin):
         self.spawned = 0
         self.converts = 0
 
+        # --- s57 LEVER 1 -- THE CONVERSION POLICY (SK_AMMO_PUSH) -----------
+        # ⛔ UNCONDITIONAL, like every other attribute in this __init__ and for
+        # the same engine reason: a field created only under a flag is how an
+        # OFF arm raises AttributeError inside `run()`, after which the engine
+        # PERMANENTLY DESTROYS that unit for the rest of the match.  Both stay
+        # 0 on an OFF arm -- `_ammo_push` is unreachable behind the flag test
+        # in `_core` -- which is what makes them the identity witness.
+        self.push_converts = 0        # CORE instrument: rounds the push spent
+                                      # the team's one conversion IN ADDITION
+                                      # to what the drip would have converted
+        self.push_ti = 0              # ... and the titanium it moved
+
+        # --- s57 LEVER 2 -- THE HEAL-STAND (SK_CORE_STAND) -----------------
+        self.stand_rounds = 0         # BUILDER instrument: rounds this body
+                                      # found the stand ARMED (the reachability
+                                      # witness for the gate lift; the heals
+                                      # themselves land on `self.core_heals`,
+                                      # which the pre-existing `_core_medic`
+                                      # already counts)
+
     # ------------------------------------------------------------------
     # entry -- VERBATIM `main.py:396-418` of `bots/_v542wave`, retargeted
     # ------------------------------------------------------------------

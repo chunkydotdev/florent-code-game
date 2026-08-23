@@ -29,6 +29,8 @@ from sk_maps import (
     # --- v632 HEIMDALL -- THE FUNDING PRIORITY (SK_ROTATE_FUND) -----------
     SK_ROTATE, SK_ROTATE_FUND, SK_ROTATE_FUND_FROM, SK_ROTATE_FUND_KEEP,
     SK_ROTATE_WANT, SK_SLOT_NEST,
+    # --- s57 LEVER 1 -- THE CONVERSION POLICY (SK_AMMO_PUSH) --------------
+    SK_AMMO_PUSH, SK_AMMO_PUSH_BANK, SK_AMMO_PUSH_MAX, SK_AMMO_PUSH_RESERVE,
 )
 from sk_roles import (
     DRIP_GUN_MASK, DRIP_SENT_FIELD, SEAT_MASK,
@@ -87,6 +89,15 @@ class CoreMixin:
         banked = False
         if SK_FORT_RING:
             banked = self._fort_ammo_bank(ct, rnd)
+        # ⭐ s57 LEVER 1 (SK_AMMO_PUSH) -- THE THIRD CONVERTER, BETWEEN THE
+        # BANK AND THE DRIP, and the ordering is the same one-conversion-per-
+        # team-per-turn rule the bank already obeys.  It returns True only on a
+        # round it actually spent that conversion for at least what the drip
+        # would have spent, so the drip below is skipped only when it has been
+        # SUBSUMED, never when it has been OVERRULED.  OFF: the flag is the
+        # first term, so an OFF arm makes no call and reads no store.
+        if SK_AMMO_PUSH and not banked:
+            banked = self._ammo_push(ct, rnd, home_guns, home_sents)
         if SK_DRIP and not banked:
             self._drip(ct, rnd, home_guns, home_sents)
 
@@ -359,6 +370,115 @@ class CoreMixin:
                 self.converts += 1
         except Exception:
             return
+
+    # ------------------------------------------------------------------
+    # s57 LEVER 1 -- THE CONVERSION POLICY  (SK_AMMO_PUSH)
+    # ------------------------------------------------------------------
+
+    def _ammo_push(self, ct, rnd, home_guns, home_sents):
+        """Convert toward a STANDING BANK while we hold firing ground.  True
+        iff it spent this round's one team conversion.
+
+        GAME CONTEXT: an in-engine resource conversion in the Florent Code
+        League, a sandboxed bot-vs-bot programming competition.  `convert_ammo`
+        is the engine's documented 1:1 titanium -> ammunition call, at most once
+        per team per turn, usable the same turn, and it does NOT consume the
+        core's action cooldown -- so this policy can run EVERY round without
+        ever costing a spawn.
+
+        ⭐⭐ WHY IT EXISTS, IN ONE MEASURED SENTENCE (the 41-loss autopsy,
+        `docs/research/LOSSAUT-f1f2-2026-08-23.md`): SUSTAINED GROSS
+        CORE-DAMAGE RATE ON THE ENEMY CORE = TITANIUM CONVERTED TO AMMUNITION
+        AND NOTHING ELSE -- not turret placement, not in-range time (242 vs 255
+        turret-rounds; we hold the ground in losses too), not facing, not
+        survival, not builder count, all of which are statistically identical
+        between our wins and our losses.  We run 1.47 HP/round in losses and
+        4.30 in wins, and checkmate by r300 needs ~4.5-5.3.
+
+        ⛔ WHAT THE DRIP STRUCTURALLY CANNOT DO, WHICH IS THE WHOLE DOSE.
+        `_drip` is need-based off turrets that ALREADY EXIST and it NEVER
+        BANKS: it converts `need + SK_AMMO_FLOOR - ammo` and no more, so the
+        balance is hand-to-mouth (measured peak ~30, three sentinel shots,
+        spend/convert 0.94-0.99 -- we do fire what we buy).  A round in which
+        the team is short of titanium is therefore a round a turret with a
+        target and a zero cooldown DOES NOT SHOOT, and that lost shot is never
+        recovered.  A standing bank carries titanium from a rich round into a
+        poor one; nothing else in this tree does.
+
+        ⛔ THE THREE REFUSALS, EACH ONE A DIRECTION THIS CAN BE WRONG IN:
+          * NO FIRING GROUND (`need == 0`) -- ammunition with no turret that
+            can spend it is titanium taken out of the belt for nothing.  The
+            read is the DRIP'S OWN `need` (home half from the core's
+            `_threat_scan`, forward half from slot 8), so the two converters
+            cannot disagree, and it costs zero new engine calls.
+          * BELOW THE RESERVE -- `SK_AMMO_PUSH_RESERVE` plus one LIVE
+            builder-bot cost stays liquid, because `_spawn_plan` simply returns
+            when the bank is under that price and a role body then stays dead.
+          * BELOW THE DRIP'S OWN NUMBER -- if the reserve or the per-round cap
+            would make this convert LESS than `_drip` would have, it stands
+            down and the drip runs unchanged.  ⭐ THIS IS THE PROPERTY THAT
+            MAKES THE PLANK ADDITIVE: the flag can only ever ADD conversion,
+            never remove it, so no standing turret can be silenced by it.  It
+            is `_fund_floor`'s measured deadlock ("shoot with what stands",
+            jotunheim ammo == 0 in 201 of 201 window rounds) refused in
+            advance.
+        """
+        if rnd <= 0:
+            return False                        # NEVER at r0 (the drip's rule)
+        try:
+            drip = ct.read_store(SK_SLOT_DRIP)
+        except Exception:
+            return False
+        fwd_guns = drip & DRIP_GUN_MASK
+        fwd_sents = (drip >> DRIP_SENT_FIELD) & DRIP_GUN_MASK
+        need = (SK_AMMO_GUNNER * (home_guns + fwd_guns)
+                + SK_AMMO_SENTINEL * (home_sents + fwd_sents))
+        if need <= 0:
+            return False                        # no firing ground: stand down
+        try:
+            ammo = ct.get_global_ammo()
+            have = ct.get_global_resources()
+            reserve = SK_AMMO_PUSH_RESERVE + ct.get_builder_bot_cost()
+        except Exception:
+            return False
+        target = need + SK_AMMO_FLOOR
+        if target < SK_AMMO_PUSH_BANK:
+            target = SK_AMMO_PUSH_BANK          # a MAX, never a replacement
+        if ammo >= target:
+            return False
+        # The drip's own number for this round, WITHOUT `_fund_floor`'s clamp:
+        # that clamp only ever LOWERS the drip, so this is an upper bound and
+        # the comparison below yields to the drip more often than strictly
+        # necessary -- conservative in the direction that cannot cost a shot.
+        drip_amt = need + SK_AMMO_FLOOR - ammo
+        if drip_amt > have:
+            drip_amt = have
+        if drip_amt < 0:
+            drip_amt = 0
+        amt = target - ammo
+        if amt > SK_AMMO_PUSH_MAX:
+            amt = SK_AMMO_PUSH_MAX              # the ramp cap
+        room = have - reserve
+        if room < 0:
+            room = 0
+        if amt > room:
+            amt = room                          # the reserve
+        # The 4/10 lattice, floored, exactly as `_drip` and `_fort_ammo_bank`
+        # do it (COPY 7's acceptance test: >= 97.3% of converted amounts are
+        # exact sums of 4s and 10s).
+        amt = lattice_floor(amt)
+        if amt <= 0 or amt <= lattice_floor(drip_amt):
+            return False                        # let the drip do its own job
+        try:
+            if not ct.can_convert_ammo(amt):
+                return False
+            ct.convert_ammo(amt)
+        except Exception:
+            return False
+        self.converts += 1
+        self.push_converts += 1
+        self.push_ti += amt
+        return True
 
     # ------------------------------------------------------------------
     # v632 HEIMDALL -- THE FUNDING PRIORITY  (SK_ROTATE_FUND)

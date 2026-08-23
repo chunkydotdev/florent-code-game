@@ -113,6 +113,9 @@ from sk_maps import (
     SK_PECK_FOCUS_KEEPER,
     SK_PLUCK_AWARE, SK_PLUCK_DSQ, SK_PLUCK_RETARGET, SK_PLUCK_MEMO_TTL,
     SK_CORE_MEDIC_RIDER,
+    # --- s57 LEVER 2 -- THE HEAL-STAND (SK_CORE_STAND) --------------------
+    SK_CORE_STAND, SK_CORE_STAND_HP, SK_CORE_STAND_HELP_HP,
+    SK_CORE_STAND_SEAT_DSQ, SK_CORE_STAND_TI_FLOOR,
     # --- v617 (the PRODUCER FIX) ------------------------------------------
     SK_TEAM_TUBES, SK_TUBE_BEAT_MASK, SK_TUBE_SEAT_FIELDS, SK_TUBE_STALE,
     SK_TUBE_BAND_DSQ, SK_TUBE_PHASES,
@@ -728,12 +731,117 @@ class RolesMixin:
         a consumer: two tubes are 18 HP/round against their heal seats, and
         `dealt - healed` = 500-512 in 7 of 7 wins.  So the medic is armed by the
         PAIR, and by nothing else.
+
+        ⭐⭐ s57 LEVER 2 (SK_CORE_STAND) ADDS A THIRD ARMING RUNG HERE, AND
+        THIS PREDICATE IS THE GATE THE LOSS AUTOPSY IS DESCRIBING.  Every part
+        of the heal-stand is already built and already ordered -- the ACT
+        (`_core_medic`, called at the top of the keeper's action ladder), the
+        POSITIONING (`_medic_seat`, called FIRST in `_home_keeper_move`) and the
+        second medic (`_medic_turn` in `_denier_home_answer`) -- and all three
+        are disarmed by this one method returning False, because SK_CORE_MEDIC
+        and SK_CORE_MEDIC_RIDER both ship False.  The core heals the autopsy
+        does find (3 of 8 threatened wins; median 0 heal-rounds over 60 cells)
+        are the GENERIC `_heal_action` landing on the core because the keeper
+        HAPPENED to stand beside it, which is coincidence rather than a stand.
         """
         if SK_CORE_MEDIC:
+            return True
+        if SK_CORE_STAND and self._core_stand_armed(ct):
             return True
         if not SK_CORE_MEDIC_RIDER:
             return False
         return self._two_tubes(ct)
+
+    def _core_stand_armed(self, ct):
+        """s57 LEVER 2's arming test: OUR CORE IS UNDER SIEGE RIGHT NOW.
+
+        GAME CONTEXT: an in-engine state test in the Florent Code League, a
+        sandboxed bot-vs-bot programming competition; "siege" is an opposing
+        bot's turret standing in range and taking HP off our core under the
+        engine's documented rules.
+
+        TWO TERMS, AND THE SECOND IS THE ONE THAT MATTERS:
+          * `corefire_fresh` -- our core has ACTUALLY LOST HP inside the last
+            SK_COREFIRE_TTL (24) rounds, off the core's own slot-15 HP-delta
+            latch.  Damage, not proximity: the slot-1 presence latch would arm
+            on anything hostile standing near home.
+          * CORE HP <= SK_CORE_STAND_HP -- ⛔⛔ AND WITHOUT IT THIS IS THE
+            ALWAYS-FRESH CLASS (class audit row #132), NOT A NARROW STAND.
+            `_fund_refuse`'s reachability tap measured `corefire_fresh` TRUE IN
+            139 OF 139 keeper-rung rounds in [275, 350] across three cells, so
+            freshness alone arms from the first nick to the end of the game --
+            which is the unconditional SK_CORE_MEDIC form that was built,
+            measured and shipped off.
+
+        Returns False on any unreadable word (the latch reads 0, which is not
+        fresh), i.e. FAILS TOWARD NOT STANDING: an unreadable alarm must not
+        take the keeper off the belt.
+        """
+        if not SK_COREFIRE:
+            return False                # with the sensor off the word reads 0
+        try:
+            rnd = ct.get_current_round()
+        except Exception:
+            return False
+        if not self.corefire_fresh(ct, rnd):
+            return False
+        if self.corefire_hp(ct) > SK_CORE_STAND_HP:
+            return False
+        self.stand_rounds += 1
+        return True
+
+    def _medic_help_hp(self):
+        """The SECOND medic's (the ORE DENIER's) core-HP threshold.
+
+        SK_MEDIC_HELP_HP (200) is the v608 value and the reason it is late is
+        stated at the constant: the second body is bought out of the DENIAL
+        verb, which is the plank that opens the lane.  s57 LEVER 2 raises it to
+        SK_CORE_STAND_HELP_HP for one arithmetic reason, and it is an ENGINE
+        fact rather than a preference: `heal` sets the action cooldown to 1 and
+        cooldowns decrement at end of round, so ONE body heals at most ONCE PER
+        ROUND (+4 HP/round).  The registered target is ~1.65 heals/round, which
+        one body cannot reach at any setting; two bodies cap at 2.0.
+        ⚠ The denier's own ladder is UNCHANGED and still puts the counter-march
+        ABOVE this rung, so the second medic spends only rounds in which it had
+        no shooter tile to march at.
+        """
+        if SK_CORE_STAND:
+            return SK_CORE_STAND_HELP_HP
+        return SK_MEDIC_HELP_HP
+
+    def _medic_seat_dsq(self):
+        """How far a body will walk to take a medic seat.
+
+        SK_MEDIC_SEAT_DSQ (25, i.e. five tiles) is the v608 value and its own
+        note says what it protects: "the keeper's measured forward-action share
+        is 0.000 and that property is load-bearing -- this fence keeps it".
+        It also, measurably, keeps the keeper from ever walking home: on
+        f1/helheim_seatB at r114-r116 the keeper stood at d^2 26-73 of every
+        seat while our core was being shot.  s57 LEVER 2 widens it to
+        SK_CORE_STAND_SEAT_DSQ under the stand and leaves it alone otherwise.
+        ⚠ The forward-action property is NOT at risk from the wider fence: the
+        seats are our own core's ring, so a longer walk is a longer walk HOME.
+        """
+        if SK_CORE_STAND:
+            return SK_CORE_STAND_SEAT_DSQ
+        return SK_MEDIC_SEAT_DSQ
+
+    def _medic_ti_floor(self):
+        """The bank floor `_core_medic` heals above.
+
+        SK_MEDIC_TI_FLOOR (12) is v608's and its note says what it protects --
+        "the drip is never starved for the medic".  Under s57 LEVER 2 it is
+        SK_CORE_STAND_TI_FLOOR, which is the GENERIC heal rung's own floor
+        (`_heal_action` refuses below a bank of 2).  ⛔ THE MEASUREMENT that
+        put it here: with the arming gate and the walk fence lifted and this
+        floor still at 12, the traced cells read 67 of 79 medic declines on
+        f1/midgard_seatA, 34 of 51 on f1/valkyrie_seatB and 55 of 60 on
+        f1/helheim_seatB as this test -- the stand armed, walked, sat down and
+        then refused to heal.
+        """
+        if SK_CORE_STAND:
+            return SK_CORE_STAND_TI_FLOOR
+        return SK_MEDIC_TI_FLOOR
 
     # ==================================================================
     # v608 -- THE HOME ANSWER: readers, then the three planks
@@ -885,9 +993,9 @@ class RolesMixin:
         if not self.corefire_fresh(ct, rnd):
             return False
         if (self.role == SK_ORE_DENIER
-                and self.corefire_hp(ct) > SK_MEDIC_HELP_HP):
+                and self.corefire_hp(ct) > self._medic_help_hp()):
             return False            # the second medic is bought late, on HP
-        if ct.get_global_resources() <= SK_MEDIC_TI_FLOOR:
+        if ct.get_global_resources() <= self._medic_ti_floor():
             return False            # V10's floor: never starve the drip
         foot = core_tiles_xy(self.core)
         for d in CARDINALS:
@@ -921,27 +1029,56 @@ class RolesMixin:
         if not self.corefire_fresh(ct, rnd):
             return None
         if (self.role == SK_ORE_DENIER
-                and self.corefire_hp(ct) > SK_MEDIC_HELP_HP):
+                and self.corefire_hp(ct) > self._medic_help_hp()):
             return None
         if adjacent_to_core(p, self.core):
             return p
+        # ⭐⭐ s57 LEVER 2 -- THE TWO GATES THAT MADE THIS METHOD RETURN None
+        # ROUND AFTER ROUND, BOTH MEASURED, NOT GUESSED.  With the arming gate
+        # lifted and nothing else changed, the stand armed 152 times on
+        # f1/yggdrasil_seatA and landed ZERO heals; the tracer says why:
+        #   (1) THE WALK FENCE.  SK_MEDIC_SEAT_DSQ = 25 and the keeper measured
+        #       d^2 26-73 from every seat on f1/helheim_seatB at r114-r116 --
+        #       just outside it, every round, so it never walked home.
+        #   (2) THE READ ITSELF.  A builder's vision is r^2 = 20, and
+        #       `is_tile_passable` RAISES on a tile outside vision (observed on
+        #       the same rounds).  The `except: continue` below therefore
+        #       DISCARDS every seat a body is not already standing next to --
+        #       so even with the fence lifted the search would still find
+        #       nothing.  ⇒ Under the stand an unreadable seat is a WALK
+        #       TARGET, ranked BELOW every readable free one: we cannot know it
+        #       is blocked, the walk re-evaluates every round, and arriving in
+        #       vision restores the normal test.  Failing OPEN costs a few
+        #       rounds of walking; failing closed costs the whole capability.
+        # ⛔ WHAT IS *NOT* LIFTED, and it is the larger of the two occupancy
+        # problems: a seat holding OUR OWN building stays refused.  Engine-side
+        # census over the 60 baseline cells (ahbuild_seatcensus.py) --
+        # during the siege window only 1.54 of the 8 seats are free on average,
+        # 2.63 hold one of OUR buildings and 3.82 hold one of THEIRS, and in 10
+        # of 46 siege cells there is no free seat at all.  Opening those needs
+        # `destroy` on our own apron/door barriers, which is v603 FIX 4's and
+        # ledger V2's road (74% of lost ring barriers were self-demolished);
+        # that is a separate plank, not a rider on this one.
         best = None
         for q in core_ring(self.core):
             if not self.ibp(q):
                 continue
             d = p.distance_squared(q)
-            if d > SK_MEDIC_SEAT_DSQ:
+            if d > self._medic_seat_dsq():
                 continue
+            rank = 0
             try:
                 if not ct.is_tile_passable(q):
                     continue
                 if ct.get_tile_builder_bot_id(q) is not None:
                     continue        # one medic per seat; the other takes another
             except Exception:
-                continue
-            if best is None or d < best[0]:
-                best = (d, q)
-        return None if best is None else best[1]
+                if not SK_CORE_STAND:
+                    continue
+                rank = 1            # unreadable: a walk target, ranked last
+            if best is None or (rank, d) < (best[0], best[1]):
+                best = (rank, d, q)
+        return None if best is None else best[2]
 
     def _medic_turn(self, ct, p, rnd):
         """Heal if seated, else walk to a seat.  True iff it took the turn."""
@@ -1325,7 +1462,7 @@ class RolesMixin:
         tgt = self._counter_target(ct, rnd) if SK_COUNTER_PECK else None
         if tgt is not None and self._counter_march(ct, p, rnd, tgt):
             return True
-        if self._medic_armed(ct) and self.corefire_hp(ct) <= SK_MEDIC_HELP_HP:
+        if self._medic_armed(ct) and self.corefire_hp(ct) <= self._medic_help_hp():
             return self._medic_turn(ct, p, rnd)
         return False
 

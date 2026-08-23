@@ -4807,6 +4807,222 @@ SK_APRON_MESH_SPAWN_RESERVE = 2   # ⛔⛔ THE ENGINE HAZARD, AND IT IS THE SAME
                           # the direction that cannot cost us a body.
 
 # ===========================================================================
+# s57 -- THE TWO LOSS-AUTOPSY LEVERS  (SK_AMMO_PUSH / SK_CORE_STAND)
+# ===========================================================================
+# GAME CONTEXT: in-game economy and repair policy for the Florent Code League,
+# a sandboxed bot-vs-bot programming competition.  "ammunition", "shot",
+# "siege" and "heal" are the engine's own documented mechanics between
+# competing game bots on a simulated grid.
+#
+# PROVENANCE, one document: `docs/research/LOSSAUT-f1f2-2026-08-23.md`, the
+# 41-loss autopsy over the t_cp_f1/t_cp_f2 baseline tapes.  Its single named
+# constraint is that SUSTAINED GROSS CORE-DAMAGE RATE ON THE ENEMY CORE =
+# TITANIUM CONVERTED TO AMMUNITION AND NOTHING ELSE (1.47 HP/round in losses,
+# 4.30 in wins; checkmate by r300 wants ~2.5-3.0 Ti/round of ammunition), and
+# its second is that OUR OWN CORE IS UNHEALED (median 0 heal-rounds across 60
+# cells; P(win | an enemy turret ever ranges our core) = 0.17, against 0.79
+# when none ever does).  The two are registered as ONE COUPLED PAIR
+# (`docs/research/EXPECTATION-v632heim-ammoheal-2026-08-23.md`): ammunition
+# alone recovers +2/+1 cells, the heal-stand alone +5/+1, the pair +14/+10.
+# Both ship False; the composite arm turns both on.
+
+SK_AMMO_PUSH = False      # ⭐ LEVER 1 -- THE CONVERSION POLICY, ABOVE THE DRIP.
+                          # ON: while the team HOLDS FIRING GROUND the core
+                          # converts titanium up to a STANDING BANK instead of
+                          # to the drip's hand-to-mouth `need + SK_AMMO_FLOOR`.
+                          # ⛔ IT IS STRICTLY ADDITIVE AND THAT IS THE SAFETY
+                          # ARGUMENT: `_ammo_push` runs ABOVE `_drip` and
+                          # returns True only on a round it actually spends the
+                          # one team conversion for AT LEAST what the drip
+                          # itself would have converted; on every other round it
+                          # returns False and the drip runs byte-for-byte as
+                          # before.  The push can therefore never REMOVE a
+                          # conversion the baseline made -- the baseline is a
+                          # floor, not an alternative.
+                          # THE FIRING-GROUND READ IS THE DRIP'S OWN `need`,
+                          # and reusing it is deliberate: `need > 0` means a
+                          # live friendly turret has a hostile inside its own
+                          # attack reach (home half counted by the CORE's
+                          # `_threat_scan`, forward half published by the siege
+                          # engineer on slot 8).  It is the cheapest honest read
+                          # in the tree, it costs ZERO new engine calls, and the
+                          # two converters cannot disagree about whether we hold
+                          # ground because they read the same number.
+                          # ⚠ IT FAILS LOW, disclosed: a forward tube outside
+                          # the engineer's vision, or one with no enemy in
+                          # reach, reads 0 -- which DELAYS the push and can
+                          # never license it on a board with no gun.
+SK_AMMO_PUSH_BANK = 60    # THE STANDING BANK, in ammunition, while ground is
+                          # held.  SIX SENTINEL SHOTS.  Reasoning against the
+                          # autopsy's target: checkmate by r300 needs 0.25-0.30
+                          # core-landing sentinel shots/round = 2.5-3.0 Ti/round
+                          # of ammunition, so 60 is ~20-24 rounds of the win
+                          # regime -- roughly half the measured 54-round closing
+                          # window -- carried IN ADVANCE, which is exactly the
+                          # thing a need-based drip structurally cannot do.
+                          # ⛔ TWICE THE MEASURED PEAK, NOT TEN TIMES IT: the
+                          # autopsy measures the bank never exceeding ~30 (three
+                          # shots, hand-to-mouth, spend/convert 0.94-0.99), so
+                          # the STANDING cost of this lever is about 30 Ti of
+                          # titanium held as ammunition rather than as belt.
+                          # The autopsy's #1 upstream input is harvester
+                          # DELIVERY, and a bank is titanium that is not a
+                          # conveyor; that is why the ceiling exists at all
+                          # rather than "convert everything above the reserve".
+                          # ⚠ THE TARGET IS A MAX, NOT A REPLACEMENT:
+                          # `max(need + SK_AMMO_FLOOR, this)`, so a battery big
+                          # enough to want more than 60 in one round still gets
+                          # the drip's full number.  This is the plank's one
+                          # tuning knob and the obvious next sweep.
+SK_AMMO_PUSH_MAX = 20     # THE PER-ROUND RAMP CAP, in titanium.  TWO SENTINEL
+                          # SHOTS.  It binds ONLY on the ramp: once the bank
+                          # stands at SK_AMMO_PUSH_BANK the top-up equals the
+                          # firing rate (~2.5-5 Ti/round), i.e. ~7x below this
+                          # cap, so it is not a throttle on the mechanism.  What
+                          # it prevents is a single round taking 60 Ti out of a
+                          # standing bank in one hit while the keeper's belt and
+                          # harvester rungs are waiting for the same titanium --
+                          # three rounds of 20 leaves those rungs a turn each.
+SK_AMMO_PUSH_RESERVE = 40 # THE TITANIUM FLOOR, ON TOP OF one LIVE builder-bot
+                          # cost.  40 is `SK_FORT_RING_RESERVE`'s value, which
+                          # is `SK_HOME_GUN_RESERVE`'s value -- the same floor
+                          # every discretionary purchase in this tree already
+                          # stands off (it covers a harvester at live scale).
+                          # The builder-bot term is read through
+                          # `get_builder_bot_cost()` because the ONE GLOBAL
+                          # ADDITIVE cost scale makes the base cost wrong late,
+                          # and because `_spawn_plan` (`sk_core.py`) simply
+                          # RETURNS when the bank is under that number: a
+                          # conversion that takes the bank below it silently
+                          # costs us the replacement of a dead role body.
+                          # ⛔ THE RESERVE GUARDS THE DISCRETIONARY EXTRA ONLY.
+                          # When the reserve would make the push convert LESS
+                          # than the drip would have, the push STANDS DOWN and
+                          # the drip converts its own number -- including the
+                          # drip's own spend-to-zero behaviour.  A reserve that
+                          # could silence the shots that already stand would be
+                          # the v632 funding-clamp deadlock in a new hat
+                          # (`_fund_floor`'s "shoot with what stands" note).
+
+SK_CORE_STAND = False     # ⭐ LEVER 2 -- THE HEAL-STAND, AND IT IS A GATE LIFT
+                          # RATHER THAN A NEW RUNG.  Every part of this
+                          # capability is already built and already ordered:
+                          # `_core_medic` (`sk_roles.py:867`, the ACT, called at
+                          # the top of the keeper's action ladder), `_medic_seat`
+                          # (`sk_roles.py:912`, the POSITIONING, called first in
+                          # `_home_keeper_move`) and `_medic_turn`
+                          # (`sk_roles.py:946`, the ORE DENIER's second-medic
+                          # rung).  ⛔ ALL THREE ARE DISARMED BY ONE PREDICATE --
+                          # `_medic_armed` (`sk_roles.py:720`), which returns
+                          # False on this tree because SK_CORE_MEDIC is False
+                          # and SK_CORE_MEDIC_RIDER is False.  THAT is the gate
+                          # the autopsy's "the heal-stand exists in tree and
+                          # fires in 3 of 8 threatened wins" is describing: the
+                          # 3 that fire are the GENERIC `_heal_action`
+                          # (`sk_roles.py:1853`) landing on the core because the
+                          # keeper HAPPENED to be standing beside it, which is
+                          # coincidence and is why the median across 60 cells is
+                          # 0 heal-rounds.  This flag adds a third arming rung
+                          # to `_medic_armed` and changes nothing else.
+                          # ⛔⛔ WHY NOT SIMPLY `SK_CORE_MEDIC = True`: that is
+                          # the UNCONDITIONAL form, and it was built, measured
+                          # and shipped off (its flag note above: core heals
+                          # 694 -> 1214, +9 builder deaths, every outcome column
+                          # identical).  The condition is what is new.
+SK_CORE_STAND_HP = 400    # THE ARMING THRESHOLD, in OUR CORE's published HP
+                          # (slot 15, quantised by 4).  ARMED while
+                          # `corefire_fresh` (our core has ACTUALLY LOST HP
+                          # inside SK_COREFIRE_TTL = 24 rounds) AND HP <= this.
+                          # ⛔⛔ THE HP TERM IS THE ANSWER TO THE ALWAYS-FRESH
+                          # CLASS (class audit row #132), AND IT IS NOT A
+                          # GUESS: `_fund_refuse`'s own reachability tap
+                          # measured `corefire_fresh` TRUE IN 139 OF 139 keeper
+                          # rounds in [275, 350] across three cells.  A stand
+                          # armed on freshness ALONE is therefore the
+                          # unconditional v608 medic with extra words -- from
+                          # the first nick to the end of the game.
+                          # 400 = 100 HP of damage taken = 20% of the core.  At
+                          # the autopsy's loss-class gross rate (1.47 HP/round)
+                          # that is ~68 rounds of being shot and at its
+                          # win-class rate (4.30) ~23: it arms on a SIEGE, not
+                          # on a stray builder peck.  It also leaves 25 heals of
+                          # non-overflow headroom, so `_core_medic`'s own "a
+                          # heal that overflows is 1 Ti for nothing" refusal can
+                          # never be the reason the stand is silent.
+                          # ⚠ THE COST IS DISCLOSED: at 400 the stand covers
+                          # ~39 of the measured 54-round closing window, not all
+                          # of it.  A higher value (450 = one sentinel burst)
+                          # arms sooner and drifts toward the always-on form;
+                          # this is the second knob a sweep should turn.
+SK_CORE_STAND_HELP_HP = 400  # THE SECOND MEDIC'S OWN THRESHOLD UNDER THIS FLAG,
+                          # replacing SK_MEDIC_HELP_HP (200) at the ORE DENIER's
+                          # three sites while the stand is armed.  ⛔ IT EXISTS
+                          # BECAUSE OF AN ENGINE FACT: `heal` sets the action
+                          # cooldown to 1 and cooldowns decrement at END of
+                          # round, so ONE body heals at most ONCE PER ROUND =
+                          # +4 HP/round.  The registered target is ~1.65
+                          # heals/round, which is UNREACHABLE with one body by
+                          # arithmetic, not by tuning -- two bodies cap at 2.0.
+                          # ⚠ STAFFING, AND IT IS UNCHANGED FROM THE PLANK THIS
+                          # ARMS: the HOME KEEPER is the primary (it is the body
+                          # that stands at home -- measured forward-action share
+                          # 0.000) and the ORE DENIER is the second.  No forward
+                          # body (siege engineer, cage walker) is ever pulled,
+                          # and the denier's own ladder still puts the
+                          # counter-march ABOVE the heal, so it heals only on
+                          # rounds it has no shooter tile to march at -- the
+                          # lane-opening verb keeps its priority.
+SK_CORE_STAND_TI_FLOOR = 1  # THE BANK FLOOR UNDER THE STAND, replacing
+                          # SK_MEDIC_TI_FLOOR (12) in `_core_medic`.  The test
+                          # is `bank <= floor -> refuse`, so 1 means "heal
+                          # while we hold at least 2 Ti" -- ⛔ WHICH IS THE
+                          # GENERIC HEAL RUNG'S OWN FLOOR, `_heal_action`'s
+                          # `get_global_resources() < 2` (sk_roles.py), not a
+                          # number invented here.  THE ASYMMETRY IT REMOVES:
+                          # the generic rung, which heals the most-damaged
+                          # adjacent friendly with no race arithmetic, runs at
+                          # a bank of 2, while the rung that answers OUR CORE
+                          # BEING SHOT stood down under 13.
+                          # ⛔ IT IS HERE BECAUSE IT IS THE MEASURED BLOCKER,
+                          # not because 12 looked large: with the arming gate
+                          # and the walk fence both lifted, the traced cells
+                          # read 67 of 79 `_core_medic` declines on
+                          # f1/midgard_seatA and 34 of 51 on f1/valkyrie_seatB
+                          # as `ti_floor`, and 55 of 60 on f1/helheim_seatB.
+                          # ⚠ WHAT IT COSTS, STATED: 1 Ti a heal is 10% of a
+                          # sentinel shot, and SK_MEDIC_TI_FLOOR exists so the
+                          # drip is never starved by the medic.  The exchange
+                          # is bounded by the arming gate (core freshly damaged
+                          # AND at or under SK_CORE_STAND_HP) and by the engine
+                          # (`heal` sets the action cooldown to 1, so one body
+                          # spends at most 1 Ti a round).
+SK_CORE_STAND_SEAT_DSQ = 100  # THE WALK FENCE UNDER THE STAND, replacing
+                          # SK_MEDIC_SEAT_DSQ (25) in `_medic_seat`.  ⛔ IT IS
+                          # HERE BECAUSE THE FIRST BUILD OF THIS FLAG ARMED 152
+                          # TIMES ON f1/yggdrasil_seatA AND LANDED ZERO HEALS:
+                          # the arming gate was not the only gate.  The keeper
+                          # measured d^2 26-73 from every seat on
+                          # f1/helheim_seatB at r114-r116 -- OUTSIDE the 25
+                          # fence every round, so the positioning half never
+                          # ran while our core was being shot.
+                          # 100 = ten tiles = four times the old fence's radius,
+                          # so ~10 rounds of walking against a core dying at the
+                          # autopsy's 1.47-6.6 HP/round inside a median 54-round
+                          # closing window: a purchase that can still pay.  It
+                          # is a FENCE and not a removal because the ORE DENIER
+                          # reads it too, and an unfenced denier would be
+                          # recalled from the enemy half.
+                          # ⚠ The property the old fence protects (the keeper's
+                          # measured forward-action share of 0.000) is not at
+                          # risk: the seats are our OWN core's ring, so a longer
+                          # walk is a longer walk HOME.
+                          # ⚠ THE REAL COST IS THE KEEPER'S TURN (this tree's
+                          # named scarce resource, `main.py:16`): a seated
+                          # keeper is a keeper not laying belt, and belt is the
+                          # autopsy's #1 upstream input.  SK_CORE_STAND_HP is
+                          # what bounds that cost.
+
+# ===========================================================================
 # 3.  IMPORT BANNER (verbatim) -- doctrine.py:1078-1172, map data
 # ===========================================================================
 
