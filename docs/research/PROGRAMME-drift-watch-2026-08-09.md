@@ -3235,3 +3235,39 @@ retro's headline — *"right that something was wrong, wrong about what would fi
 prescription optimises for restoring STATE, while the value of the incident is in the EVIDENCE.**
 **This is the argument for the rescoped charter's *"name the defect, hand the fix to the owning lane"*
 — the defect call was right, the fix call was wrong, and the split is exactly where the charter puts it.**
+
+## ⛔⛔ D38 — **BEHAVIOURAL IDENTITY: THE SHIPPED BOT'S ACTUAL PLAY IS AUDITED AGAINST THE DECLARED DOCTRINE, PER ADOPTION AND PER WRAP. PROCEDURALLY-PERFECT VERDICTS CAN AGGREGATE INTO DOCTRINE DRIFT, AND ONLY A BEHAVIOURAL DECODE SEES IT.**
+
+**Commissioned by Magnus 2026-08-23/24 night (his question, verbatim: "isn't the side lane
+supposed to make sure we follow the directives? Is it sleeping?") — adopted into this checklist
+by the lane it indicts, with the incident stated in full.**
+
+**THE INCIDENT.** Across s57/s58's campaign this lane certified ~40 verdicts, every one
+procedurally clean (blind bars, unmoved rulers, honest refusals) — and the AGGREGATE drifted:
+seven hardening adoptions, zero identity planks shipped. Every identity-carrying plank
+(dispatch, rotation, push, hammer) was refused by screens vs OUR OWN SIBLING FIXTURES, while
+hardening passed — local screens against siblings can only converge to a polished chassis.
+The live leg then delivered the field's ruling: Jython v266 swept us 5-0 playing THE DECLARED
+SKALMAN DOCTRINE ITSELF. **The drift lived in the verdict layer's objective function, and the
+encoding-level audit (verbatim faithful, bars unmoved) could not see it by construction.**
+
+**⛔ AND THE CHECKLIST ALREADY HELD THE CONCEPT: D23 (self-play cannot measure an exploit
+plank — a property of the whole line) IS this finding, scoped to exploit planks. The auditor
+had the row and did not fire it at the verdict AGGREGATE — the D36 class (a rule invoked
+against single instances is not thereby applied to the stack of them).**
+
+### THE WATCH FORM
+1. **Per ADOPTION and per WRAP: decode the shipped/adopted tree's ACTUAL PLAY** — rush check
+   (forward bodies pre-latch?), box check (does the box fire?), phase check (does the flip/
+   burst happen?), identity-verb census (which declared doctrine verbs executed ≥once per
+   game at what rate) — and DIFF against the declared identity in PROGRAMME.md. The play-it-
+   well rule's execution ledger is the instrument; the diff is this row's product.
+2. **Per REFUSAL of an identity-carrying plank: ask WHICH fixture class refused it.** A
+   sibling-fixture refusal of an identity plank is D23's class and is REPORTED AS
+   EXECUTION-DEBUGGER INFORMATION, never certified as an identity verdict (the IDENTITY
+   INVERSION, PROGRAMME 2026-08-23/24: screens debug execution; the field judges identity).
+3. **The adoption-count diagnostic: at every wrap, count adoptions by class
+   (identity-verb vs hardening).** A run of N hardening adoptions with zero identity
+   adoptions is a FIRING CONDITION of this row, not a neutral fact.
+
+**Retroactive first firing: run against the s57/s58 adoption set (below, this date).**
