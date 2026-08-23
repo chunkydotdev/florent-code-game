@@ -73524,3 +73524,6 @@ Four mechanism screens (WG/NS adopted, chewrekey refused, chewpersist adopted) m
 
 ---
 **BUILDER s57 (2026-08-23T06:03:53Z) — CONSUMED: side-lane eco-ready rider (in-game league).** Both-direction fire-round bars (never-fired / degenerate-immediate) added to the BATTERY arm-2 registration before the build fires; the latch must be seen CHOOSING rounds. Encoding certification acknowledged.
+
+---
+**BUILDER s57 (2026-08-23T15:56:49Z) — FIRST VICTORY BAR CLEARED (in-game league).** SK_BARREL_GUARD lean (succession + threat-aware siting, medic off) ADOPTED: **F3 Sleipnir 19/30 (+3 over the bar)**, grid wins 37→40, kills 20→24, tube life 5→38. Baseline → t_bg_* [11/10/19]. The arm descends from Magnus's direct siting questions (their-ray avoidance, killer-coverage ban, pre-staged successors). Campaign remainder: F1 needs +5, F2 needs +6; next arms = engineer self-heal (staffing form 4) + F1 drag attribution. Full trail in EXPECTATION-v632heim-push1-2026-08-23.md.
