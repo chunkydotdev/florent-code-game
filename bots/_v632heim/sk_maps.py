@@ -6445,3 +6445,204 @@ SK_KB_GIVEUP = 12         # rounds of walking or refused builds on ONE site
 SK_KB_SITE_TRIES = 2      # ... and after this many banned sites the plank
                           # gives up FOR THE GAME.  A bounded search that never
                           # terminates is the same defect with more steps.
+
+# ===========================================================================
+# s57 THE KILLBOX, ARM 2 -- SK_KILLBOX_EXEC  (THE EXECUTIONER + INTERIOR CELL)
+# ===========================================================================
+# GAME CONTEXT: in-game mechanics of the Florent Code League, a sandboxed
+# bot-vs-bot programming competition.  "Executioner", "chamber", "retire" and
+# "recycle" below name legal engine moves between competing game bots: one of
+# our SENTINELS fires at a NAMED TILE that an opposing builder was legally
+# relocated onto by our launcher, and the engine removes that piece under its
+# own documented damage rules.  Nothing here touches anything outside the grid.
+#
+# WHY THIS ARM EXISTS (the arm-1 disposition, registered before this build:
+# `docs/research/EXPECTATION-v632heim-killbox1-2026-08-23.md` tail).  Arm 1's
+# registered dose (K3, "enemy-builder rounds IN OUR HALF fall") was REFUTED BY
+# GEOMETRY, not by noise: a launcher standing at Chebyshev 2-3 of OUR core
+# cannot throw as far as the enemy half (engine max d^2 26 ~ 5.1 tiles), and
+# 1,064 of 1,197 measured throws landed back in our half -- the presence
+# integral ROSE 43.4%.  What DID work was TIME-THEFT: their in-half builds
+# -8.2%, our eco +33.8%, harvesters +56.7%, mined +29.6%, wins 12->14.  THE
+# COST IS THE PROGRAMME'S BINDING DIRECTION: median game length r258 -> r333
+# and <=r300 kills 7 -> 6.  Arm 2 converts the stolen time into TEMPO by
+# DELETING the detained raider instead of walking it home for ever.
+#
+# THE PROBE THIS IS BUILT ON (`bots/_probe_killbox_a|b`,
+# `scratchpad/s57_heim0/kbprobe_final_clean.log`, 10/10 steps PASS):
+#   * STEP2  `can_fire_from(seat, facing, SENTINEL, chamber)` answers TRUE for
+#     a hypothetical sentinel BEFORE it is built, for BOTH chambers on one ray
+#     (d^2 9 and 25, inside the sentinel's r^2 = 32).  The facing is CHOSEN at
+#     build time and a sentinel CANNOT ROTATE, so the seat and the facing are
+#     one decision.
+#   * STEP6  `can_fire(chamber)` is TRUE THROUGH THE SEALED WALL (barrier at
+#     full 30 HP) and the wall takes NO damage: 30 -> 30 across every shot.
+#     A 40 HP builder took 3 shots at 18 dmg (r110 -> r114, 5 rounds), and a
+#     second victim already at 22 HP took 2 (r116 -> r118).
+#   * STEP10 ⛔ THE RAY QUESTION, AND IT IS WHY MULTI-CHAMBER IS PARALLEL:
+#     with BOTH chambers occupied the sentinel fired at the FAR one and the
+#     verdict was TARGETED-TILE -- victim@Q 40 -> 22 while victim@P stayed at
+#     40 and neither wall lost a point.  The engine hits the tile you name,
+#     not the first body on the line.
+#   * ⛔ SURPRISE 1 AGAIN: every unit gets its OWN `Player` instance, so the
+#     SENTINEL derives the chamber list for itself out of pure geometry
+#     (`_kb_cell_cands`) exactly as the keeper and the launcher do.  THIS ARM
+#     ALSO CLAIMS ZERO STORE SLOTS, and it needs none: the executioner reads
+#     the chamber's seal state and its occupant off the ENGINE every round.
+#   * ⛔ SURPRISE 2 AGAIN: `get_tile_*` RAISES OUT OF VISION as well as
+#     off-map, so every read here is bounds-tested AND wrapped, and an
+#     unreadable chamber is simply not fired at this round.
+#
+# AMMUNITION IS NOT NEW MACHINERY AND THIS ARM ADDS NONE.  A sentinel shot
+# costs SK_AMMO_SENTINEL = 10 from the TEAM GLOBAL pool; the pool is fed by
+# the core's existing need-based drip (SK_DRIP) and by THE BATTERY's latch
+# (SK_BATTERY2 / SK_BATTERY2_ECO, adopted s57), whose whole registered job is
+# converting the eco surplus into ammunition.  Arm 1's measured +33.8% eco is
+# the funding this arm spends.  ⛔ The shot is taken UNDER `_turret`'s existing
+# ammo guard (`get_global_ammo() < price -> return`), which exists because
+# `can_fire` returns TRUE at 0 ammo and the RAISE inside
+# `finish_firing_turret` would destroy our own tube.
+# ===========================================================================
+SK_KILLBOX_EXEC = False   # ⛔ THE MASTER, DEFAULT OFF, AND IT IS MEANINGLESS
+                          # ALONE: every call site is
+                          # `if SK_KILLBOX and SK_KILLBOX_EXEC ...` over module
+                          # constants, so the arm cannot act without arm 1's
+                          # launcher and cell.  The conjunction is asserted in
+                          # the unit controls rather than assumed.
+SK_KB_EXEC = True         # PIECE 1 -- the executioner sentinel.  Sub-flag
+                          # under the master so the two pieces are attributable
+                          # apart.
+SK_KB_CELL_INTERIOR = True  # PIECE 2 -- the interior 4-barrier chamber, used
+                          # ONLY when the back-edge generator returns NOTHING.
+                          # Arm 1's edge/corner form reached 13 of 30 F1 cells;
+                          # this is the other 17.  ⛔ FALLBACK, NOT A MERGE: an
+                          # edge chamber costs 2-3 barriers against an
+                          # interior's 4, so a map that HAS an edge chamber
+                          # keeps arm 1's list byte-for-byte.
+SK_KB_EXEC_MAX = 1        # ⛔ ONE EXECUTIONER PER CELL, and the bound is an
+                          # ENGINE READ, not a counter: before buying, a
+                          # friendly SENTINEL already in vision whose own
+                          # `can_fire_from(its seat, its facing, SENTINEL,
+                          # chamber)` is True refuses the purchase.  A sentinel
+                          # is 30 Ti and +20% on the ONE GLOBAL ADDITIVE cost
+                          # factor -- a second one inflates every later build
+                          # of every type for a tile that is already covered.
+                          # ⚠ Like arm 1's launcher cap it is a BOUND, NOT A
+                          # PROOF: a keeper out of vision of the standing
+                          # sentinel could still buy a second, and that
+                          # residual is disclosed rather than claimed away.
+SK_KB_EXEC_RESERVE = 20   # bank left standing after the sentinel.
+                          # ⛔⛔ 60 FIRST, AND THE FIRST BUILD SMOKE MEASURED IT
+                          # AS THE BINDING BLOCKER -- DISCLOSED, NOT QUIETLY
+                          # RETUNED.  Pass 1 (F1, 30 cells) chose 570 seats and
+                          # bound capacity for 155 rounds while BUILDING ONLY 2
+                          # EXECUTIONERS in 2 of 30 cells; the XTRY diagnostic
+                          # named the reason on every refused round -- e.g.
+                          # helheim seat B `cost=74 bank=35/26/16`, holmgang
+                          # seat B `cost=75 bank=78` -- against a bar of
+                          # cost + 60 = ~134.  A dose of 2/30 does not measure
+                          # the arm; it measures the reserve.
+                          # ⇒ 20, WHICH IS THIS TREE'S OWN PRECEDENT FOR A
+                          # SENTINEL PURCHASE: SK_COUNTER_SENT_RESERVE = 20,
+                          # set for the same reason ("the purchase cannot
+                          # starve the drip") on the same 30 Ti unit.  BOTH
+                          # PASSES ARE REPORTED; nothing is claimed from the
+                          # comparison except the dose.
+SK_KB_EXEC_SEAT_DSQ = 32  # ENGINE BOUND, not a choice: the sentinel's
+                          # vision/attack r^2 (GameConstants).  Cardinal seats
+                          # reach 5 tiles (25 <= 32), diagonal seats 4
+                          # (2*16 = 32); the generator enumerates exactly that
+                          # and then asks `can_fire_from` rather than trusting
+                          # the arithmetic.
+SK_KB_EXEC_WALK = 10      # ⛔⛔ EXTRA WALK ROUNDS THE THIRD PIECE ADDS, AND
+                          # THIS IS A MEASURED STRUCTURAL FIX, NOT A TUNE.
+                          # `SK_KB_WALK_MAX = 14` is arm 1's ONE budget for the
+                          # WHOLE plank, per body per game, and it was sized
+                          # for two build sites: a launcher tile and one
+                          # chamber's 2-3 seals.  Arm 2 adds a SECOND chamber
+                          # (2-3 more seals) and a SENTINEL SEAT -- roughly
+                          # twice the sites on the same 14 steps.  MEASURED on
+                          # the pass-2 F1 smoke: 17 of 30 cells drove a body to
+                          # `n=14` exactly, and the XTRY diagnostic read
+                          # `not_adjacent` on 558 of 562 refused buys.  The
+                          # executioner was not being priced out; it was never
+                          # being WALKED to, because the launcher and the two
+                          # chambers had already spent the budget.  ⛔ ONE
+                          # BUDGET IS STILL THE RULE (v610's lesson, and v611's
+                          # 656 keeper rounds are why): this WIDENS the single
+                          # budget in proportion to the pieces, it does not
+                          # give the executioner a private one, and with the
+                          # arm-2 master off the budget is exactly 14.
+SK_KB_EXEC_OFF_RING = True   # ⛔⛔ THE SEAT IS NEVER ON THE CORE'S SPAWN RING,
+                          # AND THIS REPLACED A GUARD THAT LOOKED RIGHT AND
+                          # MEASURED THE WRONG THING.  The first cut reused
+                          # `_claim_spawn_ok(seat, reserve=1)` the way arm 1's
+                          # cell does.  The mechanism trace then read
+                          # `spawn=0` on helheim seat B and holmgang seat B for
+                          # seats FOUR AND THIRTEEN d^2 AWAY from the core:
+                          # `_claim_spawn_ok` counts FREE ANCHOR-ADJACENT TILES
+                          # and only excludes the candidate if the candidate is
+                          # itself on that ring, so for an off-ring tile it is
+                          # a census of SOMEBODY ELSE's congestion and refuses
+                          # a build it has no opinion about.  ⇒ the honest form
+                          # of "do not cost the core its spawn tiles" for a
+                          # tile that could sit on the ring is: DO NOT PUT THE
+                          # SEAT ON THE RING.  That is stronger (it cannot be
+                          # satisfied by luck), it is local to the decision, and
+                          # `SK_SPAWN_EXIT` is in this tree because walling that
+                          # ring costs bodies.  Both verdicts are driven in the
+                          # unit controls.
+
+# --- ARM 2 ADDENDUM (Magnus, direct, 2026-08-23): CAPACITY BEFORE EXECUTION -
+# GAME CONTEXT unchanged: in-engine mechanics between competing game bots in
+# the Florent Code League, a sandboxed programming competition.
+#
+# THE ARGUMENT, and it inverts what the executioner is FOR.  A detained
+# opposing builder is not a piece that needs deleting -- it is a piece that
+# occupies one of THEIR MAX_TEAM_UNITS=50 slots and cannot be replaced for
+# free: their core pays 30 Ti at base plus +20% on their ONE GLOBAL ADDITIVE
+# cost factor to spawn another.  ⇒ DETENTION OUTVALUES EXECUTION UNTIL
+# CAPACITY BINDS.  What actually costs us games is a raider arriving on a
+# round when every chamber is full, because arm 1's engine-measured cadence is
+# CONSECUTIVE-ROUND THROWS (kbprobe SUMMARY: launcher action cooldown back at 0
+# on every round after each of three throws) and the prediction study's relay
+# rush lands rung 1 at r1-r5.  So the box must have SPARE CAPACITY BUILT
+# BEFORE it is needed -- reactive building is 4-7 keeper rounds too slow -- and
+# the sentinel's job is to RECYCLE a chamber at the moment capacity binds, not
+# to empty one on sight.  Ammunition not spent is the battery's.
+SK_KB_BLOCK = True        # PIECE 3 -- the PREBUILT TWO-CHAMBER BLOCK, in the
+                          # probe's own shared-wall form: chamber 2 sits at
+                          # chamber 1 + 2*u along the same line, they SHARE the
+                          # wall at +1*u, and chamber 2 therefore costs only
+                          # its MARGINAL seals (3 interior, 2 against the map
+                          # edge) instead of a second full box.  kbprobe built
+                          # exactly this on column x=20 (P=(20,7), shared wall
+                          # (20,8), Q=(20,9)) and STEP10 proved both chambers
+                          # are addressable from ONE sentinel seat.
+SK_KB_CELL_BLOCK = 2      # how many chambers the cell prebuilds.  ⛔ TWO, NOT
+                          # MORE: each extra chamber is 3 more barriers and 3
+                          # more keeper rounds, and the measured rush is a
+                          # relay of ONE raider per launcher per round pair.
+                          # A third chamber is a registered later increment,
+                          # not a free win.
+SK_KB_EXEC_OVERLOAD = True   # ⭐⭐ THE RECYCLER GATE, AND IT IS THE ADDENDUM'S
+                          # WHOLE POINT.  With it True the executioner fires
+                          # ONLY when capacity binds: every SEALED chamber it
+                          # can see is OCCUPIED **and** another enemy builder
+                          # is visible outside the chambers.  ⛔ THE READ IS
+                          # DISCLOSED AS A PROXY: the sentinel cannot see the
+                          # LAUNCHER's pickup disc (different `Player`
+                          # instance, zero store slots), so it substitutes its
+                          # OWN vision disc (r^2 = 32) for "a new victim is in
+                          # pickup range".  That disc STRICTLY CONTAINS the
+                          # launcher's d^2 <= 2 pickup disc around any seat
+                          # inside it, so the proxy fires EARLY rather than
+                          # late -- the direction that leaves a chamber empty
+                          # for the next throw rather than one that misses it.
+                          # False = fire on sight, which is the ablation
+                          # control for this gate and the arm's own dose-max.
+SK_KB_EXEC_LATCH = True   # once a shot has gone into an occupant, keep firing
+                          # at THAT occupant until it is gone even if the
+                          # overload condition lapses.  A 40 HP builder needs 3
+                          # shots (kbprobe STEP6); stopping after 2 has spent
+                          # 20 ammo to heal nothing.

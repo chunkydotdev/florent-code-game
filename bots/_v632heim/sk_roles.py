@@ -106,6 +106,11 @@ from sk_maps import (
     SK_KB_AXIS_BAND, SK_KB_MIN_COVER, SK_KB_PICKUP_DSQ, SK_KB_THROW_MAX_DSQ,
     SK_KB_TEAM_CHECK, SK_KB_CELL_CHEB, SK_KB_CELL_CANDS, SK_KB_CELL_RESERVE,
     SK_KB_CELL_SPAWN_RESERVE, SK_KB_WALK_MAX, SK_KB_GIVEUP, SK_KB_SITE_TRIES,
+    # --- s57 THE KILLBOX, ARM 2 -------------------------------------------
+    SK_KILLBOX_EXEC, SK_KB_EXEC, SK_KB_CELL_INTERIOR, SK_KB_EXEC_MAX,
+    SK_KB_EXEC_RESERVE, SK_KB_EXEC_SEAT_DSQ, SK_KB_EXEC_OFF_RING,
+    SK_KB_EXEC_WALK,
+    SK_KB_BLOCK, SK_KB_CELL_BLOCK, SK_KB_EXEC_OVERLOAD, SK_KB_EXEC_LATCH,
     # --- v612 -------------------------------------------------------------
     SK_MARCH_TEAMCHECK, SK_HOMEDEF_TEAMCHECK,
     # --- v613 (the ANTI-APRON axis) ---------------------------------------
@@ -2619,6 +2624,17 @@ class RolesMixin:
             # cadence decays after r150 on two of the three fixtures.
             # ⛔ Flag off -> False on the first line -> v632 behaviour exactly.
             if self._kb_cell_action(ct, p, rnd):
+                return
+            # ⭐⭐ s57 THE KILLBOX, ARM 2, PIECE 1 -- THE EXECUTIONER, ACTION
+            # HALF.  ⛔ IMMEDIATELY BELOW THE CELL AND NOWHERE HIGHER: the
+            # addendum's rule is CAPACITY BEFORE EXECUTION, and a rung order is
+            # where that rule is either kept or quietly broken.  The 30 Ti tube
+            # is bought out of arm 1's measured +33.8% eco surplus only after
+            # the block stands, and it stays below every economy verb above for
+            # the cell's own reason -- a harvester with no route home is worth
+            # zero on `titanium_collected` for ever.
+            # ⛔ Flag off -> False on the first line -> arm-1 behaviour exactly.
+            if self._kb_exec_action(ct, p, rnd):
                 return
             # ⭐ v618 PLANK 1, THE ACTION HALF.  JUST BELOW THE
             # HARVESTER-CRITICAL VERBS AND ABOVE THE GENERAL BELT, which is the
@@ -5646,6 +5662,23 @@ class RolesMixin:
         `kb_cell_built_round` staying -1.  There is deliberately no interior
         fallback in arm 1 -- an interior chamber costs 4 barriers instead of 3
         and the registered piece is "2-3 barriers vs map edge/corner".
+
+        ⭐⭐ s57 ARM 2, PIECE 2 (SK_KILLBOX_EXEC + SK_KB_CELL_INTERIOR) CLOSES
+        EXACTLY THAT LIMIT AND NOTHING ELSE.  Arm 1's edge/corner form reached
+        13 of 30 F1 cells; on the other 17 the back edge is out of Chebyshev
+        SK_KB_CELL_CHEB reach of our footprint and this generator returns ().
+        The fallback is the kbprobe's own INTERIOR form -- a chamber with four
+        in-bounds orthogonal neighbours, i.e. 4 barriers instead of 2-3 -- sited
+        in THE SAME BAND (Chebyshev SK_KB_CELL_CHEB), corners of the band
+        preferred, and it inherits arm 1's fences unchanged: Chebyshev is
+        1-Lipschitz on an orthogonal step, so a chamber at 3 has seals at 2..4
+        and NO seal can land on the core's spawn ring at Chebyshev 1.
+        ⛔ IT IS A FALLBACK, NOT A MERGE.  It runs only when the edge list is
+        EMPTY, so every map that has an edge chamber keeps arm 1's list
+        byte-for-byte and this flag cannot perturb the arm-1-only state.
+        ⛔ AND IT IS STILL PURE GEOMETRY, which is the property the whole plank
+        rests on: the keeper, the launcher and now the SENTINEL are three
+        different `Player` instances agreeing through arithmetic alone.
         """
         if self._kb_cands is not None:
             return self._kb_cands
@@ -5678,8 +5711,163 @@ class RolesMixin:
                 continue                    # not actually against the edge
             out.append((-free, dsq_core(q, self.core), q.x, q.y, q))
         out.sort(key=lambda r: r[:4])
-        self._kb_cands = tuple(r[4] for r in out[:SK_KB_CELL_CANDS])
+        if not out and SK_KILLBOX_EXEC and SK_KB_CELL_INTERIOR:
+            out = self._kb_interior_cands()
+            self._kb_cands_interior = bool(out)
+        cands = [r[4] for r in out]
+        # ⭐⭐ s57 ARM 2, PIECE 3 -- THE PREBUILT BLOCK.  The SECOND entry
+        # becomes chamber 1's SHARED-WALL PARTNER rather than the next-best
+        # unrelated chamber, because a partner costs only its marginal seals
+        # and a second unrelated box costs a whole one.  Everything downstream
+        # (the plan, the throw picker, the seat picker, the watch) reads this
+        # one list, so promoting the partner here is the entire wiring.
+        # ⛔ OFF (SK_KILLBOX_EXEC False, or SK_KB_BLOCK False) leaves the list
+        # exactly as arm 1 built it.
+        cap = SK_KB_CELL_CANDS
+        if SK_KILLBOX_EXEC and SK_KB_BLOCK and cands:
+            mate = self._kb_block_partner(cands[0])
+            if mate is not None:
+                rest = [c for c in cands[1:]
+                        if (c.x, c.y) != (mate.x, mate.y)]
+                cands = [cands[0], mate] + rest
+                # ⛔ THE PARTNER ADDS CAPACITY, IT DOES NOT REPLACE A CHAMBER.
+                # Promoting it inside a fixed cap silently DROPPED arm 1's
+                # last candidate, which is a confound rather than a plank: the
+                # launcher's watch, its throw picker and the cell plan all read
+                # this one list, so a chamber arm 1 was detaining bodies in
+                # would vanish for a reason nothing registered.  The cap grows
+                # by exactly the one tile the block adds.
+                cap += 1
+        self._kb_cands = tuple(cands[:cap])
         return self._kb_cands
+
+    def _kb_block_partner(self, q0):
+        """s57 ARM 2, PIECE 3 -- chamber 2 of the shared-wall block, or None.
+
+        THE FORM IS THE PROBE'S, VERBATIM: kbprobe put P at (20,7) and Q at
+        (20,9) on ONE column with the barrier at (20,8) serving as BOTH boxes'
+        wall -- 7 barriers for two chambers instead of 8, and STEP10 then
+        proved one sentinel seat addresses both (TARGETED-TILE: it hit the far
+        chamber while the near one held a body at 40 HP that stayed at 40).
+        So the partner is q0 + 2*u for a CARDINAL u, with the shared wall at
+        q0 + u.
+
+        ⛔ THE SPAWN-RING FENCE IS INHERITED, NOT RE-ARGUED.  The partner is
+        required to sit at Chebyshev >= SK_KB_CELL_CHEB of our own footprint;
+        Chebyshev is 1-Lipschitz on an orthogonal step, so its seals cannot get
+        closer than SK_KB_CELL_CHEB - 1 = 2 and the core's spawn ring at
+        Chebyshev 1 stays clear -- which is the same sentence arm 1 wrote for
+        chamber 1 and the reason SK_SPAWN_EXIT is in this tree.
+
+        ORDER, pure arithmetic so three `Player` instances agree:
+          1  ⭐⭐ STAY ON CHAMBER 1's OWN LINE, and this term is FIRST because
+             the first cut of this method did not have it and the unit controls
+             caught it: with only a band term, the partner of the west-edge
+             chamber (0,11) came out as (2,11) -- an INTERIOR tile two steps off
+             the edge, which needs 4 barriers instead of 2, shares no wall with
+             the edge form, and is not colinear with anything.  The line is read
+             off the tile itself: a chamber's OFF-MAP NEIGHBOUR COUNT is 1
+             against an edge, 2 in a map corner and 0 inside, and a step ALONG
+             the line preserves it.  So the partner is required to have the same
+             count as chamber 1 -- which is the edge column for an edge chamber
+             and the interior for an interior one, i.e. kbprobe's colinear form
+             in both cases without either being special-cased.
+          2  then nearest the band (|Chebyshev - SK_KB_CELL_CHEB|).  ⚠ ON AN
+             EDGE THIS IS USUALLY NOT ZERO AND CANNOT BE: on a west edge the
+             only band tiles in the column are y = cy-3 and cy+3, so the tile
+             two steps along is off-band by construction -- exactly as kbprobe's
+             P and Q sat at different distances from the core.  The term breaks
+             ties, it does not gate.
+          3  farther from the enemy core;
+          4  canonical (x, y).
+        """
+        if self.core is None or self.enemy is None:
+            return None
+        want_free = 0
+        for ddx, ddy in ((0, -1), (1, 0), (0, 1), (-1, 0)):
+            if not self.ib(q0.x + ddx, q0.y + ddy):
+                want_free += 1
+        best = None
+        for ddx, ddy in ((0, -1), (1, 0), (0, 1), (-1, 0)):
+            wx, wy = q0.x + ddx, q0.y + ddy
+            mx, my = q0.x + 2 * ddx, q0.y + 2 * ddy
+            if not self.ib(wx, wy) or not self.ib(mx, my):
+                continue
+            m = Position(mx, my)
+            d = dist_core(m, self.core)
+            if d < SK_KB_CELL_CHEB:
+                continue                    # the spawn-ring fence
+            free = 0
+            for ex, ey in ((0, -1), (1, 0), (0, 1), (-1, 0)):
+                if not self.ib(mx + ex, my + ey):
+                    free += 1
+            if free != want_free:
+                continue                    # off chamber 1's own line
+            band = d - SK_KB_CELL_CHEB
+            key = (band, -dsq_core(m, self.enemy), mx, my)
+            if best is None or key < best[0]:
+                best = (key, m)
+        return None if best is None else best[1]
+
+    def _kb_interior_cands(self):
+        """s57 ARM 2, PIECE 2 -- the INTERIOR chamber list, PURE GEOMETRY.
+
+        Returns rows in `_kb_cell_cands`'s own (sortkey..., Position) shape,
+        already ordered, so the caller's slice and memo are untouched.
+
+        THE FORM IS THE PROBE'S: a chamber whose four orthogonal neighbours are
+        all in bounds, sealed by 4 barriers (kbprobe STEP1 built exactly this
+        and STEP5a measured `can_move` False on all four cardinals inside it).
+        THE BAND IS ARM 1's: Chebyshev SK_KB_CELL_CHEB of our own footprint, so
+        the spawn-ring argument transfers verbatim and no seal tile can reach
+        Chebyshev 1.
+
+        ORDER, and every term is arithmetic two bodies with different vision
+        must agree on:
+          1  CORNERS OF THE BAND FIRST (registered wording).  On a Chebyshev
+             ring around a 2x2 footprint the corners are the four tiles that
+             are at the ring distance in BOTH axes; they are the tiles with the
+             most map behind them and the fewest lanes past them.
+          2  AWAY FROM THE ENEMY.  A chamber on the raider side sits in the
+             stream that is trying to walk through it; the back side is where
+             arm 1's edge form put it, and this keeps the two forms consistent.
+             ⚠ DISCLOSED TENSION: farther from the enemy is also farther from
+             the launcher's band, and the engine's throw window is d^2 <= 26.
+             The launcher's own site scorer already ranks CELL REACH (term 2 of
+             `_kb_pick_site`) and `_kb_pick_throw` re-checks the range on the
+             round it throws, so an unreachable chamber costs a treadmill throw
+             and never a body dropped in the open.
+          3  canonical (x, y), so the list is total-ordered.
+        """
+        if self.core is None or self.enemy is None or self.mw is None:
+            return []
+        out = []
+        cx, cy = self.core.x, self.core.y
+        span = SK_KB_CELL_CHEB + 2
+        for dx in range(-span, span + 2):
+            for dy in range(-span, span + 2):
+                x, y = cx + dx, cy + dy
+                if not self.ib(x, y):
+                    continue
+                q = Position(x, y)
+                if dist_core(q, self.core) != SK_KB_CELL_CHEB:
+                    continue
+                inb = 0
+                for ddx, ddy in ((0, -1), (1, 0), (0, 1), (-1, 0)):
+                    if self.ib(x + ddx, y + ddy):
+                        inb += 1
+                if inb != 4:
+                    continue        # against an edge: that is arm 1's form and
+                                    # the edge generator already refused it
+                # THE CORNER TEST, on the footprint rather than the anchor: a
+                # 2x2 core spans two rows and two columns, so a ring tile is a
+                # corner exactly when it is off the footprint in BOTH axes.
+                offx = 0 if cx <= x <= cx + 1 else 1
+                offy = 0 if cy <= y <= cy + 1 else 1
+                corner = 1 if (offx and offy) else 0
+                out.append((-corner, -dsq_core(q, self.enemy), x, y, q))
+        out.sort(key=lambda r: r[:4])
+        return out
 
     def _kb_seal_tiles(self, q):
         """The IN-BOUNDS orthogonal neighbours of chamber q.  Off-map ones are
@@ -5911,11 +6099,25 @@ class RolesMixin:
 
         ⚠ An unreadable tile makes the candidate UNVIABLE this round rather
         than half-built; the read is retried next round.
+
+        ⭐⭐ s57 ARM 2, PIECE 3 -- THE PREBUILT BLOCK, and it is exactly ONE
+        behaviour change here: a chamber that is ALREADY COMPLETE no longer
+        ends the scan while fewer than SK_KB_CELL_BLOCK chambers stand.  Arm 1
+        returned `(q, [])` on the first finished chamber and the caller latched
+        `kb_cell_done`; under the addendum the scan carries on to the partner,
+        which is the whole of "capacity before execution" in the plan rung.
+        ⛔ The SHARED WALL needs no special case at all: once chamber 1 is
+        sealed, that tile carries a building, and the loop below already treats
+        "already sealed by somebody" as a free seal.  Chamber 2's todo is
+        therefore its 3 marginal tiles interior / 2 against the map edge.
         """
         if self.kb_plan_rnd == rnd:
             return self.kb_plan
         self.kb_plan_rnd = rnd
         self.kb_plan = None
+        _kb_done_n = 0
+        _kb_want = (SK_KB_CELL_BLOCK
+                    if (SK_KILLBOX_EXEC and SK_KB_BLOCK) else 1)
         for q in self._kb_cell_cands():
             if self.tile_owner(q) != OWNER_NONE:
                 continue
@@ -5947,6 +6149,13 @@ class RolesMixin:
                 todo.append(r)
             if not ok:
                 continue
+            # ⭐ ARM 2, PIECE 3: a FINISHED chamber does not end the scan until
+            # SK_KB_CELL_BLOCK of them stand.  `_kb_want` is 1 with the arm-2
+            # master off, which is arm 1's behaviour on the same line.
+            if not todo:
+                _kb_done_n += 1
+                if _kb_done_n < _kb_want:
+                    continue
             self.kb_plan = (q, todo)
             return self.kb_plan
         return None
@@ -5982,6 +6191,8 @@ class RolesMixin:
         if not todo:
             self.kb_cell_done = True
             self.kb_cell_built_round = rnd
+            if SK_KILLBOX_EXEC and self._kb_cands_interior:
+                self.kb_cell_interior_built = 1
             return False
         r = todo[0]
         if p.distance_squared(r) != 1:
@@ -6002,9 +6213,456 @@ class RolesMixin:
         except Exception:
             return False
         self.kb_seals += 1
-        if len(todo) == 1:
+        # ⛔⛔ THE SECOND LATCH, AND IT IS THE ONE THAT ATE CHAMBER 2.  Arm 1
+        # declares the cell finished the moment it lays the LAST SEAL OF THE
+        # CURRENT CHAMBER, which is right when there is only ever one chamber
+        # and wrong the instant there are two: the first mechanism trace of
+        # this arm showed `CELL r=25 cell=0,2` after exactly 3 seals and then
+        # no further build for the rest of the game, because `kb_cell_done`
+        # short-circuits `_kb_cell_action` on its second line.  Under the block
+        # the ONLY thing allowed to declare the cell finished is the PLAN's own
+        # empty-todo path, which fires only once SK_KB_CELL_BLOCK chambers
+        # stand -- and it terminates, because a completed chamber increments
+        # `_kb_done_n` every round.
+        if len(todo) == 1 and not (SK_KILLBOX_EXEC and SK_KB_BLOCK):
             self.kb_cell_done = True
             self.kb_cell_built_round = rnd
+            if SK_KILLBOX_EXEC and self._kb_cands_interior:
+                self.kb_cell_interior_built = 1
+        return True
+
+    # --- s57 ARM 2, PIECE 1: THE EXECUTIONER ---------------------------
+    # ⛔ GAME CONTEXT, stated at the verb: this builds one of OUR sentinels and
+    # fires it at a NAMED TILE inside our own half onto which our launcher
+    # legally relocated an opposing builder.  The engine removes that piece
+    # under its own documented damage rules (kbprobe STEP6: 3 shots at 18 dmg
+    # against 40 HP).  Every call is a documented Controller method.
+
+    def _kb_sealed_chambers(self, ct):
+        """Every chamber candidate whose seal is INTACT right now, in list
+        order, READ OFF THE ENGINE.
+
+        ⛔ NOT `self.kb_cell_done`.  That flag is PER BODY (kbprobe surprise 1)
+        and the keeper that laid the seals may be dead by the time the bank
+        clears a 30 Ti sentinel; a successor with a fresh instance would then
+        never buy one.  The registered timing is "after the cell completes",
+        and the honest test of completion is the same one the launcher uses
+        before it throws: `_kb_seal_state` says SEALED right now.
+        """
+        out = []
+        for q in self._kb_cell_cands():
+            sealed, _bid = self._kb_seal_state(ct, q)
+            if sealed:
+                out.append(q)
+        return out
+
+    def _kb_exec_chamber(self, ct):
+        """The FIRST sealed chamber -- the seat generator's anchor."""
+        cs = self._kb_sealed_chambers(ct)
+        return cs[0] if cs else None
+
+    def _kb_exec_covered(self, ct, q):
+        """True if a friendly SENTINEL already in vision covers chamber q.
+
+        THE ONE-PER-CELL BOUND, AND IT IS AN ENGINE READ RATHER THAN A COUNTER
+        for arm 1's measured reason: v611 bought a second launcher when a
+        keeper died and its successor claimed the role with a fresh counter.
+        `can_fire_from` is the engine's own hypothetical-turret predicate and
+        it ignores ammo and cooldown, so a standing tube that is merely
+        reloading still counts as covering the tile.
+        ⚠ A BOUND, NOT A PROOF: a keeper out of vision of the standing sentinel
+        can still buy a second one.  Disclosed, not claimed away.
+        """
+        for eid, et, ep in self.vis_friend:
+            if et != EntityType.SENTINEL:
+                continue
+            try:
+                if ct.can_fire_from(ep, ct.get_direction(eid),
+                                    EntityType.SENTINEL, q):
+                    return True
+            except Exception:
+                continue
+        return False
+
+    def _kb_exec_seat_pick(self, ct, rnd):
+        """(seat, facing, chamber) for the executioner, or None.  Round-memoed.
+
+        THE ENUMERATION IS THE ENGINE'S GEOMETRY AND NOTHING ELSE.  A sentinel
+        fires a single-tile-wide line along its FACING and cannot rotate, so
+        the chamber must sit at `seat + k * delta(facing)`; the generator walks
+        that relation backwards -- 8 facings x k in 1..5 -- instead of scanning
+        a disc, which is 40 candidates rather than 121 and is the same order of
+        engine calls as `_kb_cell_plan`'s ~40.
+        ⛔ AND THE ARITHMETIC IS NEVER TRUSTED: every surviving candidate is
+        confirmed with `can_fire_from(seat, facing, SENTINEL, chamber)`, the
+        exact predicate kbprobe STEP2 used before it built its sentinel.
+        ⛔ NO LINE-OF-SIGHT TERM, and that is a measured engine fact rather than
+        an omission: the sentinel's shot IGNORES OBSTACLES and hits the TARGETED
+        TILE -- kbprobe STEP6 fired through a full-HP barrier that took no
+        damage, and STEP10 hit the FAR chamber while a body stood in the near
+        one at 40 HP and stayed at 40.
+
+        REFUSED, and each refusal is a defect this tree has already paid for:
+        any tile the arbiter owns, a delivery seat, our own footprint, a banned
+        launcher site, ANOTHER CHAMBER CANDIDATE (a sentinel there would eat the
+        cell we may still want), and any tile that is not empty EMPTY terrain.
+
+        RANKED: ⭐⭐ COVERAGE FIRST (arm 2 addendum) -- a seat that addresses
+        BOTH chambers of the block outranks one that addresses either alone,
+        and that is the probe's whole geometry: P and Q were colinear on ONE
+        sentinel ray and STEP10 proved the shot lands on the TARGETED TILE, so
+        a two-chamber block is parallel-addressable from a single 30 Ti tube.
+        Then nearest OUR CORE (the keeper's walk is the recurring cost and this
+        role's forward-action share is 0.000), then nearest the anchor chamber,
+        then canonical (x, y) so two bodies on the same evidence agree.
+        """
+        if self.kb_exec_plan_rnd == rnd:
+            return self.kb_exec_plan
+        self.kb_exec_plan_rnd = rnd
+        self.kb_exec_plan = None
+        if self.core is None or self.enemy is None:
+            return None
+        sealed_cs = self._kb_sealed_chambers(ct)
+        if not sealed_cs:
+            return None
+        q = sealed_cs[0]
+        cands = set((c.x, c.y) for c in self._kb_cell_cands())
+        seats = set(core_seats(self.core))
+        foot = set(core_tiles_xy(self.core))
+        # THE SPAWN RING, built from the SAME neighbour set `_spawn_plan` and
+        # `_claim_spawn_ok` use, so the refusal and the engine's spawn loop
+        # cannot drift apart.
+        ring = set()
+        for _dx, _dy in NEIGHBOURS8:
+            ring.add((self.core.x + _dx, self.core.y + _dy))
+        best = None
+        for face in DIRECTIONS:
+            ddx, ddy = face.delta()
+            for k in range(1, 6):
+                x, y = q.x - ddx * k, q.y - ddy * k
+                if not self.ib(x, y):
+                    continue
+                s = Position(x, y)
+                if s.distance_squared(q) > SK_KB_EXEC_SEAT_DSQ:
+                    continue
+                if (x, y) in foot or (x, y) in seats or (x, y) in cands:
+                    continue
+                if SK_KB_EXEC_OFF_RING and (x, y) in ring:
+                    continue        # ⛔ never on the core's spawn ring
+                if (x, y) in self.kb_banned:
+                    continue
+                if self.tile_owner(s) != OWNER_NONE:
+                    continue
+                try:
+                    if ct.get_tile_env(s) != Environment.EMPTY:
+                        continue
+                    if not ct.is_tile_empty(s):
+                        continue
+                    if not ct.can_fire_from(s, face, EntityType.SENTINEL, q):
+                        continue
+                    cov = 0
+                    for c in sealed_cs:
+                        if ct.can_fire_from(s, face, EntityType.SENTINEL, c):
+                            cov += 1
+                except Exception:
+                    continue
+                key = (-cov, dsq_core(s, self.core),
+                       s.distance_squared(q), x, y)
+                if best is None or key < best[0]:
+                    best = (key, s, face)
+        if best is None:
+            return None
+        self.kb_exec_plan = (best[1], best[2], q)
+        return self.kb_exec_plan
+
+    def _kb_exec_action(self, ct, p, rnd):
+        """Buy THE one executioner sentinel.  True if it took this body's turn.
+
+        OPPORTUNISTIC IN THE SAME SENSE AS THE CELL: it fires only when this
+        body is already orthogonally adjacent to the seat and the bank clears
+        SK_KB_EXEC_RESERVE.  ⛔ It never runs before a chamber is SEALED, so the
+        30 Ti and the +20% on the ONE GLOBAL ADDITIVE cost factor are spent on
+        a box that already exists rather than on one we hope to finish.
+        """
+        if not (SK_KILLBOX and SK_KILLBOX_EXEC and SK_KB_EXEC):
+            return False
+        if self.kb_gaveup or self.kb_exec_off:
+            return False
+        if self.kb_exec_built >= SK_KB_EXEC_MAX:
+            return False
+        # ⭐⭐ CAPACITY BEFORE EXECUTION (arm 2 addendum).  The sentinel is not
+        # bought until the block is UP -- every chamber the geometry offers, up
+        # to SK_KB_CELL_BLOCK, is sealed.  Detention outvalues execution while
+        # a free chamber remains, so 30 Ti and +20% on the ONE GLOBAL ADDITIVE
+        # cost factor spent before the second box is spent in the wrong order.
+        # ⛔ THE BAR IS THE GEOMETRY'S, NOT THE CONSTANT'S: on a map that
+        # offers one chamber the block is complete at one, and the arm runs in
+        # its disclosed single-chamber form rather than waiting for ever.
+        if SK_KB_BLOCK:
+            want = min(SK_KB_CELL_BLOCK, len(self._kb_cell_cands()))
+            sealed_n = len(self._kb_sealed_chambers(ct))
+            if sealed_n < want:
+                # ⛔⛔ THE FALLBACK, AND THE FIRST CUT DID NOT HAVE IT: the
+                # mechanism trace showed `bifrost seat A` sealing chamber 1 at
+                # r22 and then NEVER buying an executioner, because the block's
+                # second chamber is not buildable on that board and the gate
+                # was written as "wait until SK_KB_CELL_BLOCK stand".  A gate
+                # waiting on a tile the geometry cannot produce is a deadlock,
+                # not a bar.  ⇒ THE GATE HOLDS ONLY WHILE THE CELL HALF STILL
+                # HAS SOMETHING TO BUILD.  The registered disposition of that
+                # case is the addendum's own: single chamber + the executioner
+                # as recycler, and `kb_block_form` records which form each game
+                # actually ended in so the coverage split is MEASURED rather
+                # than assumed.
+                cplan = self._kb_cell_plan(ct, rnd)
+                if (not self.kb_cell_off and cplan is not None and cplan[1]):
+                    return False
+            self.kb_block_form = sealed_n
+        plan = self._kb_exec_seat_pick(ct, rnd)
+        if plan is None:
+            # ⛔⛔ THE SCAN MUST TERMINATE -- the same bound, for the same
+            # measured reason, as `_kb_cell_action`'s: a ~40-call scan re-run
+            # every round for the rest of a 1000-round game is v611's 656
+            # keeper rounds with a different verb on top.
+            self.kb_exec_miss += 1
+            if self.kb_exec_miss >= SK_KB_GIVEUP:
+                self.kb_exec_off = True
+            return False
+        self.kb_exec_miss = 0
+        seat, face, q = plan
+        self.kb_exec_seat, self.kb_exec_face, self.kb_exec_cell = seat, face, q
+        if self._kb_exec_covered(ct, q):
+            return False        # one per cell; the tube standing there is fine
+        if p.distance_squared(seat) != 1:
+            return False        # not orthogonally adjacent: the walk's job
+        cost = ct.get_sentinel_cost()
+        if ct.get_global_resources() < cost + SK_KB_EXEC_RESERVE:
+            return False
+        # ⛔ THE TWO GUARDS EVERY IMPASSABLE BUILD IN THIS TREE PAYS.  A
+        # sentinel is a BUILDING: it can seal this body in (ledger V2) and it
+        # can seal the TEAM's only lane (v605 FIX 1, the helheim throat).
+        if self.free_neighbours(ct, p, exclude=seat) == 0:
+            return False
+        if not self.path_arbiter_ok(ct, seat, rnd):
+            return False
+        try:
+            if not ct.can_build_sentinel(seat, face):
+                return False
+            ct.build_sentinel(seat, face)
+        except Exception:
+            return False
+        self.kb_exec_built += 1
+        self.kb_exec_built_rnd = rnd
+        return True
+
+    # --- ARM 2, PIECE 1: the executioner sentinel's OWN turn -----------
+
+    def _kb_exec_watch(self, ct, p, rnd):
+        """Chamber bookkeeping, run on EVERY sentinel round -- ABOVE the
+        cooldown and ammo gates, exactly as arm 1's `_kb_watch` runs above the
+        launcher's cooldown gate and for the same reason: an occupancy integral
+        counted only on rounds we could SHOOT would measure our own reload, not
+        their detention.
+
+        THE RETIREMENT SPLIT IS THE SEEN-CHOOSING HALF, and it is arm 1's split
+        carried to the sentinel:
+          * gone with the seal INTACT  -> a RETIREMENT (`kb_retired_in_cell`).
+            kbprobe STEP5a/5b: a sealed body cannot move at all, so it did not
+            walk out.
+          * ... AND we had put shots into it -> `kb_retired_shot`, the half
+            this arm can claim.  The remainder is the PEEL (kbprobe STEP7:
+            their own unguarded `move()` raising, which the engine answers by
+            destroying the unit permanently) and it is arm 1's dose, not ours.
+          * gone through a BROKEN seal -> not counted as a retirement at all.
+        THE RECYCLE COLUMN is the registered piece 3: a chamber that held an
+        occupant, emptied, and then held ANOTHER one.  Arm 1's launcher already
+        re-reads occupancy before every throw (`_kb_pick_throw`:
+        `bid is not None` plus `is_tile_passable`), so recycling needs NO new
+        code -- kbprobe STEP1's seal audit read `passable=False` for the
+        occupied chamber and `passable=True` for the empty one.  This column
+        MEASURES that rather than duplicating it.
+        """
+        pattern = None
+        sealed_n = occ_n = 0
+        for q in self._kb_cell_cands():
+            key = (q.x, q.y)
+            sealed, bid = self._kb_seal_state(ct, q)
+            if sealed:
+                sealed_n += 1
+            cur = None
+            if bid is not None:
+                try:
+                    if not (SK_KB_TEAM_CHECK
+                            and ct.get_team(bid) == self.team):
+                        cur = bid
+                except Exception:
+                    cur = None
+            prev = self.kb_exec_occ.get(key)
+            if cur is not None:
+                if sealed:
+                    occ_n += 1
+                # ⭐ ARM 2 ADDENDUM: occupancy SPLIT BY CHAMBER.  With a block
+                # standing, "which box is full" is the question the recycler
+                # gate turns on, and a pooled count cannot answer it.
+                self.kb_occ_by_cell[key] = self.kb_occ_by_cell.get(key, 0) + 1
+                if prev is None or prev[0] != cur:
+                    if key in self.kb_exec_used:
+                        self.kb_recycles += 1
+                    self.kb_exec_used.add(key)
+                    self.kb_exec_occ[key] = (cur, rnd, 0)
+                if pattern is None:
+                    try:
+                        pattern = set((t.x, t.y)
+                                      for t in ct.get_attackable_tiles())
+                    except Exception:
+                        pattern = set()
+                if key in pattern:
+                    self.kb_exec_opp += 1
+            elif prev is not None:
+                del self.kb_exec_occ[key]
+                if sealed:
+                    self.kb_retired_in_cell += 1
+                    self.kb_retire_rounds += rnd - prev[1]
+                    if prev[2]:
+                        self.kb_retired_shot += 1
+        # ⭐⭐ THE CAPACITY COLUMN, AND IT IS THE ADDENDUM'S OWN DOSE: rounds in
+        # which EVERY sealed chamber was full, i.e. rounds in which the box had
+        # no room for the next throw.  The recycler exists to drive this to
+        # zero; a tape where it is already zero says the block is big enough
+        # and the executioner had nothing to do -- which is a finding, not a
+        # failure, and it is only visible because the column is counted.
+        self.kb_sealed_seen = sealed_n
+        if sealed_n > 0 and occ_n >= sealed_n:
+            self.kb_full_rounds += 1
+
+    def _kb_exec_overload(self, ct, occupied, sealed_n):
+        """⭐⭐ THE RECYCLER GATE (arm 2 addendum).  True when CAPACITY BINDS.
+
+        THE ADDENDUM'S ARGUMENT, and it is why this gate exists at all: a
+        detained opposing builder occupies one of THEIR MAX_TEAM_UNITS = 50
+        slots and cannot be replaced free -- their core pays 30 Ti at base plus
+        +20% on their own ONE GLOBAL ADDITIVE cost factor to spawn another. So
+        DETENTION OUTVALUES EXECUTION and the sentinel's job is to free a
+        chamber at the moment the next raider would find none, not to empty one
+        on sight.  Ammunition not spent is THE BATTERY's.
+
+        THE TWO CONDITIONS, both engine reads:
+          (a) every SEALED chamber this tube can see is OCCUPIED -- there is no
+              empty box left for the launcher's next throw;
+          (b) another enemy builder is visible OUTSIDE the chambers -- there IS
+              a next raider.
+        ⛔ (b) IS A DISCLOSED PROXY AND ITS DIRECTION IS STATED.  The registered
+        wording is "a new victim is in PICKUP range", which is the LAUNCHER's
+        d^2 <= 2 disc; the sentinel is a different `Player` instance, this plank
+        claims zero store slots, and there is therefore no honest way for the
+        tube to read the launcher's disc.  It substitutes its OWN vision
+        (r^2 = 32), which strictly CONTAINS that pickup disc for any launcher
+        seat inside it, so the proxy fires EARLY rather than late -- the
+        direction that leaves a chamber empty for a throw that has not happened
+        yet, rather than one that misses a throw that has.
+        """
+        if not SK_KB_EXEC_OVERLOAD:
+            return True                 # the ablation: fire on sight
+        if sealed_n <= 0 or occupied < sealed_n:
+            return False                # (a) a chamber is still free
+        # ⛔ THE VISION READ IS DONE HERE AND NOT OFF `self.vis_enemy`: that
+        # cache is filled by `_sense`, which runs on the BUILDER path only --
+        # a turret's copy is permanently empty, and a gate reading it would be
+        # a constant column that validates anything.
+        chambers = set((q.x, q.y) for q in self._kb_cell_cands())
+        try:
+            ids = ct.get_nearby_units()
+        except Exception:
+            return False
+        for eid in ids:
+            try:
+                if ct.get_team(eid) == self.team:
+                    continue
+                if ct.get_entity_type(eid) != EntityType.BUILDER_BOT:
+                    continue
+                ep = ct.get_position(eid)
+            except Exception:
+                continue
+            if (ep.x, ep.y) in chambers:
+                continue                # already in a box; not a NEW raider
+            return True                 # (b)
+        return False
+
+    def _kb_exec_fire(self, ct, p, rnd):
+        """Fire at the chamber tile an ENEMY builder stands on.  True if fired.
+
+        ⛔ ORDERED ABOVE `_turret`'s general target ladder ON PURPOSE, and the
+        ladder's own docstring says why it has to be: `_target_pri` scores a
+        HARVESTER (3) above a BODY (2), so a shipped tube with a chamber and an
+        enemy harvester both in its pattern would shoot the harvester for ever
+        while the raider walked out of the box the moment the seal broke.  The
+        registered arm is DELETION OF THE DETAINED RAIDER; that is this branch.
+        ⛔ THE OCCUPANT IS TEAM-CHECKED.  `get_tile_builder_bot_id` answers for
+        either team and OUR OWN body can end up in a chamber (arm 1 refuses to
+        throw it there, but a body can walk into an unsealed one and be sealed
+        around).  Firing at it would be a self-inflicted loss.
+        ⛔ NO AMMO ARITHMETIC HERE: this runs UNDER `_turret`'s existing guard
+        (`get_global_ammo() < SK_AMMO_SENTINEL -> return`), which exists because
+        `can_fire` returns TRUE at 0 ammo and the raise inside
+        `finish_firing_turret` destroys our own tube.  The pool is fed by the
+        core drip (SK_DRIP) and THE BATTERY's latch (SK_BATTERY2_ECO); this arm
+        adds no conversion machinery.
+        """
+        if not (SK_KILLBOX and SK_KILLBOX_EXEC and SK_KB_EXEC):
+            return False
+        sealed_cs = self._kb_sealed_chambers(ct)
+        targets = []
+        occupied = 0
+        for q in sealed_cs:
+            key = (q.x, q.y)
+            try:
+                bid = ct.get_tile_builder_bot_id(q)
+            except Exception:
+                continue        # out of vision or off map: not our round
+            if bid is None:
+                continue
+            try:
+                if SK_KB_TEAM_CHECK and ct.get_team(bid) == self.team:
+                    continue    # ⛔ THE GUARD.  The tile read has no team.
+                if ct.get_entity_type(bid) != EntityType.BUILDER_BOT:
+                    continue
+            except Exception:
+                continue
+            occupied += 1
+            targets.append((q, key, bid))
+        if not targets:
+            return False
+        # ⭐⭐ THE LATCH, ABOVE THE GATE.  A 40 HP builder needs 3 sentinel
+        # shots (kbprobe STEP6, 18 dmg); stopping at 2 because the overload
+        # condition lapsed has spent 20 ammo to heal nothing.  Once a shot has
+        # gone into an occupant, that occupant is finished.
+        pick = None
+        if SK_KB_EXEC_LATCH:
+            for q, key, bid in targets:
+                prev = self.kb_exec_occ.get(key)
+                if prev is not None and prev[0] == bid and prev[2] > 0:
+                    pick = (q, key, bid, 1)
+                    break
+        if pick is None:
+            if not self._kb_exec_overload(ct, occupied, len(sealed_cs)):
+                return False
+            q, key, bid = targets[0]
+            pick = (q, key, bid, 0)
+        q, key, bid, latched = pick
+        try:
+            if not ct.can_fire(q):
+                return False
+            ct.fire(q)
+        except Exception:
+            return False
+        self.kb_execs += 1
+        self.kb_exec_latched += latched
+        prev = self.kb_exec_occ.get(key)
+        if prev is not None and prev[0] == bid:
+            self.kb_exec_occ[key] = (prev[0], prev[1], prev[2] + 1)
+        else:
+            self.kb_exec_occ[key] = (bid, rnd, 1)
+            self.kb_exec_used.add(key)
         return True
 
     # --- the ONE walk, shared by both pieces ---------------------------
@@ -6021,7 +6679,12 @@ class RolesMixin:
         """
         if not SK_KILLBOX or self.kb_gaveup:
             return None
-        if self.kb_walk_rounds >= SK_KB_WALK_MAX:
+        # ⭐ ARM 2: ONE budget still, widened by the pieces it now has to
+        # reach (SK_KB_EXEC_WALK).  Off -> exactly SK_KB_WALK_MAX.
+        _budget = SK_KB_WALK_MAX
+        if SK_KILLBOX_EXEC and SK_KB_EXEC:
+            _budget += SK_KB_EXEC_WALK
+        if self.kb_walk_rounds >= _budget:
             return None
         if rnd < SK_KB_MIN_ROUND:
             return None
@@ -6052,6 +6715,25 @@ class RolesMixin:
                 if (ct.get_global_resources()
                         >= ct.get_barrier_cost() + SK_KB_CELL_RESERVE):
                     tgt = r
+        # ⭐⭐ s57 ARM 2 -- THE EXECUTIONER'S SEAT, THE THIRD AND LAST RUNG OF
+        # THE ONE WALK.  ⛔ BELOW THE CELL, WHICH IS "CAPACITY BEFORE
+        # EXECUTION" EXPRESSED IN THE WALK: while a chamber of the block is
+        # still unbuilt, the keeper's step belongs to the box, not to the tube
+        # that recycles it.  ⛔ AND IT SPENDS THE SAME SK_KB_WALK_MAX BUDGET --
+        # v610's finding is that the keeper's turn is the scarce resource, and
+        # three independent walk budgets would be that lesson learned once and
+        # then divided by three.
+        if (tgt is None and SK_KILLBOX_EXEC and SK_KB_EXEC
+                and not self.kb_exec_off
+                and self.kb_exec_built < SK_KB_EXEC_MAX):
+            eplan = self._kb_exec_seat_pick(ct, rnd)
+            if eplan is not None and not self._kb_exec_covered(ct, eplan[2]):
+                seat = eplan[0]
+                if p.distance_squared(seat) == 1:
+                    return None             # seated; the action fires
+                if (ct.get_global_resources()
+                        >= ct.get_sentinel_cost() + SK_KB_EXEC_RESERVE):
+                    tgt = seat
         if tgt is None:
             return None
         best = None
@@ -6110,6 +6792,13 @@ class RolesMixin:
                     cur = None
             if cur is not None:
                 self.kb_detain_rounds += 1
+                # ⭐ ARM 2 ADDENDUM: the residency integral SPLIT BY CHAMBER.
+                # With a two-chamber block the pooled figure cannot answer the
+                # question the addendum asks -- whether CAPACITY binds -- and a
+                # column that cannot answer its own question is decoration.
+                if SK_KILLBOX_EXEC:
+                    self.kb_det_by_cell[key] = (
+                        self.kb_det_by_cell.get(key, 0) + 1)
                 self.kb_occ[key] = cur
             elif key in self.kb_occ:
                 del self.kb_occ[key]
@@ -6127,8 +6816,20 @@ class RolesMixin:
         engine's own bound), it is SEALED right now, and no builder bot stands
         in it.  An occupied chamber falls straight through to the treadmill,
         which is the registered behaviour.
+
+        ⭐ s57 ARM 2, PIECE 3 -- WITH A BLOCK STANDING THE PICK BECOMES
+        "NEAREST EMPTY CHAMBER" rather than "first empty chamber in list
+        order".  With one chamber the two rules are the same sentence; with two
+        the list order is a build preference and has nothing to say about which
+        box this launcher can reach cheapest.  ⛔ THE OCCUPANCY TEST IS ARM 1's,
+        UNCHANGED AND UNDUPLICATED -- which is also the whole of chamber
+        RECYCLING: kbprobe STEP1's seal audit read `passable=False` for the
+        occupied chamber and `passable=True` for the empty one, so the moment
+        an occupant is retired this picker starts naming that chamber again
+        with no new code at all.
         """
         if SK_KB_CELL:
+            best = None
             for q in self._kb_cell_cands():
                 dd = p.distance_squared(q)
                 if dd < 1 or dd > SK_KB_THROW_MAX_DSQ:
@@ -6141,7 +6842,13 @@ class RolesMixin:
                         continue
                 except Exception:
                     continue
-                return q, 1
+                if not (SK_KILLBOX_EXEC and SK_KB_BLOCK):
+                    return q, 1
+                key = (dd, q.x, q.y)
+                if best is None or key < best[0]:
+                    best = (key, q)
+            if best is not None:
+                return best[1], 1
         return self._hl_pick_throw(ct, p, vpos), 0
 
     def _escalate_target(self, ct, p, rnd=None):
@@ -11743,9 +12450,34 @@ class RolesMixin:
                     continue
         kind = ct.get_entity_type()
         price = SK_AMMO_SENTINEL if kind == EntityType.SENTINEL else SK_AMMO_GUNNER
+        # ⭐⭐ s57 THE KILLBOX, ARM 2 -- THE EXECUTIONER'S OWN `run()` BRANCH.
+        # Every unit gets its own `Player` instance (kbprobe surprise 1), so
+        # THIS is where the executioner sentinel lives; there is no separate
+        # class and no shared object.
+        # ⛔ THE WATCH RUNS ABOVE THE COOLDOWN AND AMMO GATES, exactly as arm
+        # 1's `_kb_watch` runs above the launcher's: an occupancy integral
+        # counted only on rounds we could SHOOT would measure our own reload,
+        # not their detention, and `kb_full_rounds` -- the capacity column the
+        # whole addendum turns on -- would then be a census of firing tubes.
+        if (SK_KILLBOX and SK_KILLBOX_EXEC and SK_KB_EXEC
+                and kind == EntityType.SENTINEL):
+            if self.enemy is None and self.core is not None:
+                self.enemy = enemy_core_for(self.mw, self.mh, self.core)
+            self._kb_exec_watch(ct, p, rnd)
         if ct.get_action_cooldown() != 0:
             return
         if ct.get_global_ammo() < price:
+            return
+        # ⭐⭐ ARM 2's SHOT, AND ITS PLACEMENT IS THE PLANK.  Above the general
+        # target ladder because `_target_pri` scores a HARVESTER (3) over a
+        # BODY (2): a shipped tube with a chamber and an enemy harvester both
+        # in its pattern would shoot the harvester for ever while the detained
+        # raider sat there.  Below the ammo guard because `can_fire` returns
+        # TRUE at 0 ammo and the raise inside `finish_firing_turret` destroys
+        # our own tube.
+        if (SK_KILLBOX and SK_KILLBOX_EXEC and SK_KB_EXEC
+                and kind == EntityType.SENTINEL
+                and self._kb_exec_fire(ct, p, rnd)):
             return
         try:
             tiles = ct.get_attackable_tiles()

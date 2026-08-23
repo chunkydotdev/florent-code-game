@@ -890,6 +890,72 @@ class Player(CommonMixin, RolesMixin, CoreMixin):
                                       # raising, per STEP7) and reporting it as
                                       # an "escape" would invert the sign.
         self.kb_occ = {}              # chamber (x,y) -> occupant id last seen
+        # --- s57 THE KILLBOX, ARM 2 (SK_KILLBOX_EXEC) ------------------------
+        # ⛔ SAME PER-BODY RULE AS ARM 1, and here it is load-bearing twice
+        # over: the EXECUTIONER's counters live on the SENTINEL's own `Player`
+        # instance and the seat/build counters live on the KEEPER's, so the two
+        # halves of this arm are never summed in-bot at all.  Every one of them
+        # reads its null on an OFF arm, which makes them OFF-IDENTITY
+        # WITNESSES as well as instruments.
+        self._kb_cands_interior = False  # the memoised chamber list came from
+                                      # the INTERIOR fallback, not the back edge
+        self.kb_exec_seat = None      # Position: the chosen sentinel seat
+        self.kb_exec_face = None      # Direction: chosen AT BUILD (a sentinel
+                                      # cannot rotate -- seat and facing are one
+                                      # decision, kbprobe STEP2)
+        self.kb_exec_cell = None      # the chamber that seat covers
+        self.kb_exec_off = False      # the executioner half gave up this game
+        self.kb_exec_miss = 0         # consecutive rounds with no viable seat
+        self.kb_exec_plan_rnd = -1    # per-round memo of `_kb_exec_seat_pick`
+        self.kb_exec_built = 0        # sentinels this body bought (<= EXEC_MAX)
+        self.kb_exec_built_rnd = -1   # instrument: round the executioner landed
+        self.kb_execs = 0             # ⭐ instrument: SHOTS this sentinel fired
+                                      # at a chamber tile
+        self.kb_exec_opp = 0          # instrument: the OPPORTUNITY denominator
+                                      # -- rounds an enemy builder sat in a
+                                      # chamber inside this tube's raw attack
+                                      # pattern.  Shots with no opportunity
+                                      # rounds, and opportunity rounds with no
+                                      # shots, are BOTH falsifiers.
+        self.kb_retired_in_cell = 0   # ⭐ instrument: an occupant left a chamber
+                                      # whose seal was INTACT.  kbprobe
+                                      # STEP5a/5b: a sealed body cannot move at
+                                      # all, so this is a RETIREMENT.
+        self.kb_retired_shot = 0      # ... of which this sentinel had actually
+                                      # fired at that occupant.  The honest
+                                      # attribution split: the rest are the
+                                      # peel (kbprobe STEP7, their own
+                                      # unguarded move() raising).
+        self.kb_retire_rounds = 0     # instrument: summed rounds from the
+                                      # occupant's FIRST observed round in the
+                                      # chamber to its retirement
+        self.kb_recycles = 0          # instrument: a chamber that held an
+                                      # occupant, emptied, and held ANOTHER --
+                                      # the recycling column
+        self.kb_cell_interior_built = 0   # instrument: 1 if the completed cell
+                                      # came from the INTERIOR fallback list
+        self.kb_exec_occ = {}         # chamber (x,y) -> (occupant id, first
+                                      # round seen, shots we put into it)
+        self.kb_exec_used = set()      # chambers that have held an occupant at
+                                      # least once (the recycle detector)
+        self.kb_exec_plan = None      # per-round memo of `_kb_exec_seat_pick`
+        # --- ARM 2 ADDENDUM (CAPACITY BEFORE EXECUTION) ----------------------
+        self.kb_det_by_cell = {}      # chamber (x,y) -> detained rounds, the
+                                      # launcher's residency integral SPLIT
+        self.kb_occ_by_cell = {}      # chamber (x,y) -> occupied rounds, the
+                                      # sentinel's own split of the same thing
+        self.kb_full_rounds = 0       # ⭐ rounds in which EVERY sealed chamber
+                                      # was occupied -- capacity BINDING, which
+                                      # is what the recycler exists to relieve
+        self.kb_sealed_seen = 0       # sealed chambers this tube saw last round
+        self.kb_exec_latched = 0      # shots taken because the LATCH held, not
+                                      # because the overload gate opened
+        self.kb_block_form = 0        # ⭐ HOW MANY CHAMBERS ACTUALLY STOOD when
+                                      # the executioner was bought: 2 = the
+                                      # prebuilt block, 1 = the DISCLOSED
+                                      # single-chamber fallback on a board whose
+                                      # geometry cannot carry a partner.  The
+                                      # coverage split is measured, not assumed.
         self.door_guns = 0            # COPY 6b answers bought (capped)
         # --- v601 PLANK 1: the harvester half of the V1 rebuild ledger -------
         self.harv_deaths = {}         # (x,y) -> harvesters lost on that tile
