@@ -75,3 +75,30 @@ must be SEEN choosing rounds — distribution spread across cells with
 different economic trajectories, calibrated against the banked 2.5-3
 Ti/round sustain rate. The arm-2 build discloses the predicate's read and
 the readout scores the distribution before any outcome column.
+
+## ARM 2 DISPOSITION (BUILDER s57) + ARM 3 REGISTRATION
+
+**GAME CONTEXT: in-game analysis for the Florent Code League, a sandboxed
+bot-vs-bot programming competition.**
+
+Arm 2 per piece: **(a) ledger CONFIRMED** (live>=2 engineer-rounds
+46→2,880 F1 / 102→3,876 F2; phantom plants at ledger-0 nearly halved) —
+and its honesty REMOVES the accidental replant loop that was producing
+the old conc>=3 rounds (1,185→0) with by-r300 kills 13→9 on the smoke:
+the fix and the ceiling must ship together. **(b) burst NULL, measured**
+(first-pair gap unchanged; escapes fire 13/30 — money absent at plant-1
+time; piece dropped). **(c) eco latch FALSIFIED AS REGISTERED — the LOW
+tail fired (1/60) and the build agent STOPPED per the rider.** Named
+cause: the barrel-replacement term double-counts (the plant gate already
+prices the next barrel). EXECUTION-QUALITY: all three pieces executed as
+designed; (c) is a bar-spec defect, not a weld. No strike.
+
+**ARM 3 (SK_BATTERY2 with the corrected latch), registered BEFORE the
+edit:** the bar becomes ammo-term-only at 3.0 Ti/round (the diagnostic
+showed it CHOOSES on F1/F2 — that derivation is POST-HOC on those tapes,
+so the both-tail bars re-bind on the FULL grid including F3, which no
+latch analysis has seen: fire-round median/p10/never-fired per fixture,
+LOW = never-fires, HIGH = p10 at the warm-up floor). Burst stays OFF
+(dropped). Ledger + ceiling-4 ship under the master flag as arm 2 built
+them. Bars otherwise as arm 2's: peak-concurrency right-shift where
+funded, duty, currency <=r300 ITT non-fall, guards vs t_cs_*.

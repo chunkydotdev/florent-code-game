@@ -1408,6 +1408,58 @@ SK_SEAT_CLEAR_N = 2       # ⛔ HOW MANY SEATS ARE CONTESTED AT ONCE, AND THE BO
                           # losing.  We do not need eight seats -- we need ONE
                           # PER LIVE CHAIN, and the chains merge by construction
                           # in `_plan_belt`.  Two is one per chain plus one.
+SK_SEAT_CLEAR_ADJ = True  # ⭐⭐ s57 THE STAND, ARM 3 -- THE ONE ADAPTATION THE
+                          # RE-SCREEN NEEDED, AND IT IS MEASURED, NOT ARGUED.
+                          # GAME CONTEXT: in-engine aiming for our own builder
+                          # bot in the Florent Code League, a sandboxed
+                          # bot-vs-bot competition; "peck" is the engine's
+                          # documented 2 Ti / 2 damage builder attack on an
+                          # orthogonally adjacent tile and the target is an
+                          # opposing bot's in-engine structure.
+                          # ⛔ THE DEFECT SK_SEAT_CLEAR_N HAS ON THIS OBJECT.
+                          # `dsq_core` is 1 for ALL EIGHT seats by construction
+                          # (they are the orthogonal neighbours of the 2x2
+                          # footprint), so the `(rank, dsq, xy)` sort has NO
+                          # live tie-break below rank: seats of equal rank are
+                          # ordered lexicographically by tile, and the
+                          # truncation to N=2 keeps the two westmost-northmost
+                          # ones WHEREVER THE BODY IS STANDING.  v610 did not
+                          # feel this because its object was the DELIVERY seats,
+                          # where rank 0 (`_route_gaps`) and rank 1 (belt plan)
+                          # normally populate the top of the list and the plank's
+                          # own walk brings the body to them.  s57's object adds
+                          # the HEAL seats -- all eight, no belt rank -- and the
+                          # body's position there is set by `_medic_seat` and the
+                          # stand, not by this plank.
+                          # MEASURED ON THE TRACED ARM (s3build_tr_1, 5 t_cs_f1
+                          # cells, SK_SEAT_CLEAR ON, this flag's behaviour NOT
+                          # yet present): in 750 rounds the keeper stood
+                          # ORTHOGONALLY ADJACENT to an enemy-held seat with the
+                          # bank above the floor, and in **320 of them (42.7%)
+                          # EVERY adjacent seat had already been dropped by the
+                          # N=2 truncation before adjacency was ever tested** --
+                          # 288 of 420 (68.6%) on jotunheim_seatA, the cell with
+                          # the 149-round seat-barrier span this arm is aimed at.
+                          # The rung ran and could not fire.
+                          # ⭐ WHAT IT CHANGES, AND IT IS ONE LIST: the ACTION
+                          # half iterates the FULL ranked candidate list instead
+                          # of the truncated one.  THE WALK HALF IS UNTOUCHED and
+                          # still aims at the top N -- v603's "we need one seat
+                          # per live chain, not eight" is a bound on WALKING, and
+                          # walking is what it was measured on.  Pecking a tile
+                          # the body is ALREADY STANDING BESIDE costs no step and
+                          # no detour, and every peck it admits is still charged
+                          # against SK_SEAT_PECK_CAP and SK_SEAT_PECK_TOTAL, so
+                          # the volume bound that answers v603's 2,179 pecks is
+                          # exactly as tight as before.
+                          # ⛔ OFF IS EXACT IDENTITY, TWICE OVER: the branch sits
+                          # inside `_seat_clear`, below its `if not
+                          # SK_SEAT_CLEAR` return, and `self._seat_all` is
+                          # written only inside `_seat_targets`, below the same
+                          # test -- so on a SK_SEAT_CLEAR-off tree the list stays
+                          # empty and this constant is never read.  Set it False
+                          # to ablate back to the v610 form verbatim; that pair
+                          # is the arm's registered decomposition.
 SK_SEAT_PECK_CAP = 15     # 30 HP barrier / 2 dmg.  ⭐ PER EPISODE, NOT PER TILE:
                           # the ledger is keyed on (tile, occupant entity id) and
                           # a NEW enemy building on the same seat is a NEW
@@ -5647,3 +5699,274 @@ SK_ROUTE_HOPS = 64        # per-chain hop bound on the audit walk (the plan's
                           # own walk uses 200; a home chain that long does not
                           # exist on a 30x30 board and the bound is what keeps
                           # the audit inside the 10 ms turn).
+
+# ===========================================================================
+# s57 THE BATTERY, ARM 2 -- SK_BATTERY2
+# GAME CONTEXT: in-game build work for the Florent Code League, a sandboxed
+# bot-vs-bot competition.  "battery", "tube", "barrel", "plant" are in-engine
+# mechanics between competing game bots under the engine's documented rules.
+# ===========================================================================
+# ⛔ WHY THERE IS AN ARM 2 AT ALL.  Arm 1 (SK_BATTERY_WANT) raised the live
+# CEILING and measured its own falsifier the honest way: the gate is REACHABLE
+# but NOT BINDING.  The engineer's ledger reads live >= 2 for ~1 round per
+# cell, 204 of 222 plants happen at ledger-live 0, and MUT-A (bar removed
+# entirely) changed nothing -- money is not the constraint and the CEILING is
+# asked a question the LEDGER never lets it answer
+# (docs/research/EXPECTATION-v632heim-battery1-2026-08-23.md, DISPOSITION).
+# Arm 2 is the three coupled pieces that disposition and the ECO-READY HAMMER
+# doctrine (PROGRAMME.md, Magnus 2026-08-23) name, under ONE master:
+#   (a) THE LEDGER FIX     -- stop booking out-of-vision tubes dead;
+#   (b) THE BURST RULE     -- withhold plant #1 until the PAIR is funded;
+#   (c) THE ECO-READY LATCH-- growth beyond the pair opens on a live funding
+#                             signal, not on a round number and not on
+#                             gate-affordability at one instant.
+SK_BATTERY2 = False          # ⭐⭐ THE MASTER.  False => every sub-constant
+                             # below is unreachable: the three call sites are
+                             # `if SK_BATTERY2 ...` tests of a module constant
+                             # and the control flow is v632's, character for
+                             # character.  Arm 1's SK_BATTERY_WANT STAYS BUILT
+                             # at 0 and is untouched by this arm.
+
+SK_BATTERY2_WANT = 4         # THE CEILING while the master is on -- the
+                             # doctrine's number (study §8b: two tubes is 130
+                             # rounds against a core healing at the measured
+                             # 0.68 tax, four is 65).  Read INSTEAD of
+                             # SK_BATTERY_WANT in `_battery_open`, so arm 1's
+                             # own constant keeps its arm-1 meaning and the two
+                             # arms can still be run apart.  Clamped to the
+                             # ledger width by `_battery_open`, which is what
+                             # keeps an unmeetable target from becoming the
+                             # "buy every affordable round with no death memo"
+                             # failure `_nest_slots()` warns about.
+
+# --- (a) THE LEDGER FIX ----------------------------------------------------
+# ⛔⛔ WHY THIS IS A NEW MINIMAL READ AND **NOT** `SK_TUBE_FLOOR2 = True`.
+# The arm-1 disposition offers both; the FLOOR2 path was read first and it is
+# STRUCTURALLY UNUSABLE as this arm's live count, for three reasons, each
+# checkable in this file:
+#   1. ITS CENSUS IS CAPPED AT TWO.  `_floor_live` under SK_TUBE_FLOOR2 counts
+#      SLOT-7 BEATS, and the layout has exactly len(SK_TUBE_SEAT_FIELDS) = 2
+#      seats with SK_NEST_N3 off.  `_tube_beat`'s own docstring says a THIRD
+#      forward tube "takes seat 0 as well and is likewise invisible".  A
+#      ceiling of 4 read through a 2-capped census can never reach the ceiling:
+#      `live` sticks at 2, `_battery_open` returns True on every affordable
+#      round forever, and `_plant_gun`'s first-empty slot loop overflows the
+#      book.  The FLOOR2 read is correct for the question FLOOR2 asks (is the
+#      PAIR standing?) and wrong for the question this arm asks (how many
+#      barrels stand?).
+#   2. IT ALSO CHANGES `want` (to SK_TUBE_FLOOR2_N = 2) and carries the REFUSAL
+#      half -- "at or above the floor NO tube is bought" -- plus STAGE/PREPREP
+#      staffing.  Three policy changes this arm has no mandate for, and the
+#      refusal half points the wrong way for a plank whose whole content is
+#      BUYING MORE BARRELS.
+#   3. ITS PROVENANCE SAYS SO.  SK_TUBE_FLOOR2 ships False because the engineer
+#      is SITE-limited, not target-limited (9.7 siting refusals per purchase;
+#      HOLD 1,126 / NOSITE 648 / NOFUND 150 / BOUGHT 67) and "a FLOOR, which
+#      can only ever REFUSE a purchase, has no opposite side to pay for what it
+#      costs" (SK_TUBE_FLOOR2_STAGE's note above).  The SAME note names the
+#      condition under which the honest signal IS shippable -- "THE HONEST
+#      SIGNAL IS ONLY SHIPPABLE WITH A TARGET IT CAN CHASE" -- and arm 2's
+#      ceiling plus burst rule is that target.  Repairing the death defect
+#      ALONE was measured NEGATIVE (SK_RELIGHT_TRUEDEATH: two-tube share
+#      0.382 -> 0.296, F1 by-r300 12 -> 10) precisely because nothing raised
+#      the target in its place.  That is why (a) ships welded to (b) and (c)
+#      under one master and is NOT offered as a solo default.
+SK_BATTERY2_LEDGER = True    # (a) alone, ablatable under the master.  The fix
+                             # is at the SOURCE -- `_nest_watch` -- not at the
+                             # read: a `get_hp(id)` exception for a tube this
+                             # body cannot see is NOT evidence of a death
+                             # (471/471 probes: the error is indistinguishable
+                             # from a destroyed id), and v618 books it as one,
+                             # which is why 204 of 222 plants see ledger-live 0.
+                             # Three conditions, all required, and the second
+                             # and third are what keep this from latching a
+                             # dead tube alive forever:
+                             #   * the read RAISED and the site is provably
+                             #     OUTSIDE this body's vision disc
+                             #     (`_out_of_vision`, radius arithmetic on two
+                             #     positions we already hold -- NOT
+                             #     `is_in_vision`, which is a pure radius test
+                             #     with no bounds check, engine-probed s50);
+                             #   * the TEAM BEAT count has not fallen below
+                             #     what the ledger claims, COMPARED AT THE
+                             #     CENSUS CAP: `beats >= min(ledger, seats)`.
+                             #     v619's rule is `beats >= ledger`, which is
+                             #     the same statement while the ledger holds at
+                             #     most two and is a GUARANTEED FALSE above it
+                             #     -- i.e. the unclamped form would book a
+                             #     death on the first out-of-vision read of the
+                             #     third barrel, every time, which is exactly
+                             #     the bug this piece exists to remove;
+                             #   * the credit has not EXPIRED (below).
+SK_BATTERY2_LEDGER_TTL = 24  # ⛔ ABSENCE OF EVIDENCE EXPIRES.  Without a clock
+                             # the first two conditions are a LATCH: above the
+                             # census cap the beats can no longer fall, so a
+                             # barrel that really did die out of vision would be
+                             # booked alive for the rest of the match -- the
+                             # ledger's under-read replaced by an over-read, and
+                             # an over-read blocks its own replacement (`live`
+                             # never drops, so nothing is re-sited and the
+                             # ceiling refuses the buy).  A ledger entry may be
+                             # credited as a phantom for at most this many
+                             # rounds since the last round its HP was actually
+                             # READ; after that the exception is booked as a
+                             # death exactly as v632 books it today.
+                             # ⛔ 24 IS A MEASURED COMMUTE, NOT A ROUND NUMBER:
+                             # sk_roles.py's own terminal-approach note measures
+                             # the engineer's site-to-site commute at 22 rounds
+                             # (valkyrie, the case that pushed a plant r321 ->
+                             # r338), so 24 = that commute plus two rounds of
+                             # margin -- long enough that the normal
+                             # walk-away-and-plant-the-next-one round trip never
+                             # expires a live tube, short enough that a real
+                             # death costs at most one commute of blindness.
+                             # The expiry direction is v632's own behaviour, so
+                             # the failure mode of this constant being too SMALL
+                             # is "no fix", never a new failure.
+
+# --- (b) THE BURST RULE ----------------------------------------------------
+# THE MEASURED BINDER, not a guess: the study's wins reach their tightest
+# 2-build window in 9 rounds against 16 in losses, and the arm-1 trace's worked
+# stagger cell (skald seat A, f1) shows gaps of 54 and 31 rounds, both
+# MONEY-BLOCKED.  A pair planted 54 rounds apart is not a pair: the first
+# barrel is answered and replaced before the second arrives (loss taxonomy
+# class A, 12 of 41).  So the engineer withholds plant #1 until the purse
+# covers BOTH at the surcharge form `_plant_gun` will actually charge.
+SK_BATTERY2_BURST = True     # (b) alone, ablatable under the master.
+SK_BATTERY2_BURST_HOLD = 20  # ⛔⛔ THE REGISTERED ESCAPE, AND IT IS REQUIRED:
+                             # a cell that can NEVER fund two must not be held
+                             # forever -- the study measured funding-stagger
+                             # cells failing even fund-ONE mid-game.  After this
+                             # many consecutive engineer-rounds of holding at a
+                             # plantable site, the burst DISARMS FOR THE REST OF
+                             # THE MATCH (fund-1-after-K) and plant #1 goes in
+                             # under today's exact condition.  It is a latch on
+                             # purpose: a cell that could not raise the pair bar
+                             # in 20 rounds has demonstrated the funding claim
+                             # is false, and re-arming would re-tax it.
+                             # ⛔ 20 IS BOUNDED BY A CODE FACT AND AN INCOME
+                             # FACT.  Code: `_nest_site_watch` bans a site the
+                             # body has not improved on for SK_NEST_STUCK_ROUNDS
+                             # = 25 rounds (permanently, into `nest_bad`), so
+                             # any hold >= 25 would turn this arm into a
+                             # site-banning machine; 20 cannot reach it even
+                             # with the hold's own watchdog refresh removed
+                             # (that removal is a registered mutation control).
+                             # Income: passive alone is PASSIVE_TITANIUM_AMOUNT
+                             # / PASSIVE_TITANIUM_INTERVAL = 2.5 Ti/round, so 20
+                             # rounds is 50 Ti of income that needs no harvester
+                             # at all -- more than the second barrel's full
+                             # price at shipped scales.  A cell that misses the
+                             # bar after that is short by more than one round of
+                             # patience can fix.
+
+# --- (c) THE ECO-READY LATCH -----------------------------------------------
+# PROGRAMME.md, ECO-READY HAMMER (Magnus, direct, 2026-08-23): "we should
+# probably have an economy level we look for when we're funded enough to hammer
+# the other team's core", and the readiness latch "must be an honest live signal
+# (bank + income trend), never a wall-clock or round constant".
+SK_BATTERY2_ECO = True       # (c) alone, ablatable under the master.  OFF, the
+                             # ceiling is gated by the per-plant affordability
+                             # bar alone (arm 1's condition), which is the
+                             # "one instant" read the doctrine ruling rejects --
+                             # kept only as this piece's ablation control.
+SK_BATTERY2_ECO_W = 40       # THE WINDOW, in rounds.  Passive titanium arrives
+                             # in a +10 lump every 4 rounds, so a window has to
+                             # span many lumps before a per-round rate means
+                             # anything: 40 rounds is 10 passive ticks.  The
+                             # estimator is a ROLLING MEAN over a ring buffer,
+                             # not an EWMA, because an EWMA seeded at 0 is
+                             # biased low for ~2 windows and this body's history
+                             # restarts on every engineer turnover -- a bias
+                             # that would express itself as "the latch fires
+                             # late or never" for reasons that have nothing to
+                             # do with the economy.
+SK_BATTERY2_ECO_WARM = 20    # minimum samples before the latch may fire.  Half
+                             # a window: enough that a single lucky delivery
+                             # round cannot latch the hammer, and (measured on
+                             # the baseline wire) non-binding in practice --
+                             # no cell's rolling mean crosses the bar before
+                             # r20 anyway.
+SK_BATTERY2_ECO_AMMO = 3.0   # THE AMMO TERM, Ti/round.  LOSSAUT-f1f2: checkmate
+SK_BATTERY2_ECO_BARREL = False  # ARM-3: barrel term double-counted (_battery_bar already prices the next barrel per plant); kept for the record, ships False (s57 2026-08-23)
+                             # by r300 requires ~4.5-5.3 HP/round of sustained
+                             # gross core damage = 0.25-0.30 core-landing
+                             # sentinel shots/round = ~2.5-3.0 Ti/round of
+                             # ammunition; we run 1.47 in losses and 4.30 in
+                             # wins.  The TOP of the band, because the bottom
+                             # (2.5) buys only the bottom of a requirement whose
+                             # own bands say gross < 1.86 wins 1 of 24.
+SK_BATTERY2_ECO_LIFE = 29    # THE BARREL-REPLACEMENT TERM's denominator, in
+                             # rounds: a standing battery loses barrels and the
+                             # readiness bar has to cover buying them back, so
+                             # bar = SK_BATTERY2_ECO_AMMO + sentinel_cost/LIFE.
+                             # ⛔ MEASURED, NOT ASSERTED, AND OFF THE WIRE
+                             # RATHER THAN OFF OUR OWN LEDGER: the median
+                             # UNCENSORED life of our forward tubes on the
+                             # baseline t_cs_f1 + t_cs_f2 tapes is 29 rounds
+                             # (n = 77; scratchpad/s57_heim0/b2build_calib.py).
+                             # ⚠ DISCLOSED HETEROGENEITY: f1 medians 9.5 and f2
+                             # medians 38 -- the pooled median is used because
+                             # the constant is one number for both fixtures, and
+                             # the direction of the error is stated rather than
+                             # hidden: a SHORTER life would RAISE the bar, so 29
+                             # is the LESS restrictive of the two fixture
+                             # answers and this piece therefore fails toward
+                             # firing, which is the direction its LOW falsifier
+                             # (never-fires) is scored on.
+SK_BATTERY2_SENT_SCALE_PCT = 20  # a sentinel's own contribution to the ONE
+                             # GLOBAL ADDITIVE cost factor (CLAUDE.md entity
+                             # table; gunner/sentinel/builder bot +20%).
+# ⛔ THE SECOND BARREL COSTS MORE THAN THE FIRST, AND THE DIFFERENCE IS A
+# CONSTANT.  Cost is floor(scale x base) with ONE GLOBAL ADDITIVE factor, so
+# planting a sentinel raises the next sentinel's price by
+# floor(base x 20%) -- the SAME number at every scale, which is what makes a
+# module constant correct here where a hardcoded COST would not be.  Read off
+# GameConstants rather than the literal 30 so an organiser rebalance moves it.
+# ⚠ THE FLOOR INTERACTION IS DISCLOSED: floor((s+0.2)b) - floor(sb) is 6 or 7
+# for b = 30, so the pair bar can under-read the true price of barrel #2 by at
+# most 1 Ti -- and the plant it gates re-checks the real cost through
+# `_plant_gun` anyway, so the residual costs a round, never an overspend.
+from fcode import GameConstants as _SK_GC        # noqa: E402  (see note above)
+
+SK_BATTERY2_SENT_BUMP = ((_SK_GC.SENTINEL_BASE_COST
+                          * SK_BATTERY2_SENT_SCALE_PCT) // 100)
+
+# --- ARM 2 (a) ADDENDUM: THE CROSS-BODY HALF OF THE UNDER-READ -------------
+# ⛔⛔ MEASURED DURING THE ARM-2 BUILD, ON THE TRACED f1 TAPE, AND IT NAMES A
+# SECOND UNDER-READ THE PHANTOM RULE CANNOT REACH.  Of 1,172 traced phantom
+# decisions, 376 read `ledger = 1` while the TEAM BEATS read 2 -- two forward
+# tubes standing and this body's book holding one.  The phantom rule repairs
+# what THIS BODY forgot; it cannot supply what this body never knew, because
+# `_nest_live()` is a per-body PLANT ledger and a tube planted by a previous
+# engineer (role turnover) was never in it.
+# ⇒ the live count is `max(own ledger, team beats)`.  That is SK_TUBE_FLOOR2's
+# own GRACE form -- the direction it calls "may only OVER-count" -- applied
+# unconditionally and WITHOUT FLOOR2's two other halves (the `want` override to
+# SK_TUBE_FLOOR2_N and the "no purchase at or above the floor" refusal).
+# ⛔ THE OVER-COUNT IS BOUNDED BY THE PRODUCER, NOT BY TRUST: a seat's beat is
+# absolute round+1 and `_tube_count` expires it after SK_TUBE_STALE, so a dead
+# tube reads alive for at most STALE + 2 rounds.  And it can never invent a
+# THIRD barrel: the census has len(SK_TUBE_SEAT_FIELDS) = 2 seats, so the lift
+# saturates at 2 and every rung above the pair still comes from this body's own
+# book, which is correct because this body is the only one that plants.
+SK_BATTERY2_LIVE_TEAM = True # (a)'s second half, ablatable on its own.
+
+# --- ARM 2 (c) ADDENDUM: THE CONVERTED TITANIUM IS INCOME TOO --------------
+# ⛔⛔ MEASURED, AND IT IS AN INSTRUMENT DEFECT RATHER THAN A POLICY CHOICE.
+# The registered proxy counts POSITIVE BANK DELTAS only, so a round that earns
+# 10 and converts 10 to ammunition nets to zero and contributes NOTHING -- and
+# LOSSAUT-f1f2 measures us hand-to-mouth (spend/convert 0.94-0.99), i.e. that
+# is the NORMAL round, not the exception.  Measured on the baseline wire
+# (b2build_calib2.py) against the arm's own live bar:
+#     P0 bank only            fires in  5/30 (f1) and  8/30 (f2)
+#     P1 bank + ammo          fires in 10/30 (f1) and 10/30 (f2)
+#     TRUE gross income       fires in 10/30 (f1) and 10/30 (f2)
+# P1 recovers the whole gap to a ceiling that is not readable in-bot at all,
+# for one extra free getter -- the only ammunition source in this engine is the
+# core converting titanium 1:1 (there is no passive ammo income), so a positive
+# ammo delta IS titanium that arrived and was spent in the same round.
+SK_BATTERY2_ECO_CONV = True  # (c)'s income term: bank deltas PLUS converted
+                             # ammunition.  False = the registered
+                             # bank-only form, kept as the ablation that
+                             # measures what the correction is worth.

@@ -814,6 +814,19 @@ class Player(CommonMixin, RolesMixin, CoreMixin):
         self.demo_seats = None        # frozenset of our 8 delivery seats (memo)
         self._seat_rnd = -1           # `_seat_targets` per-round memo
         self._seat_list = []
+        # ⭐ s57 THE STAND, arm 3 (SK_SEAT_CLEAR_ADJ).  The SAME per-round memo,
+        # untruncated: `_seat_walk` reads `_seat_list` (top SK_SEAT_CLEAR_N) and
+        # `_seat_clear` may read this one.  ⛔ CREATED UNCONDITIONALLY, for the
+        # engine reason every block in this file states: a flag gates BEHAVIOUR,
+        # never the EXISTENCE of state -- a field created only under a flag is
+        # how a flag-off arm raises AttributeError inside `run()`, and the
+        # engine then PERMANENTLY DESTROYS that unit for the rest of the match.
+        # It is written only inside `_seat_targets`, below that method's own
+        # `if not SK_SEAT_CLEAR` return, so it stays EMPTY on every
+        # SK_SEAT_CLEAR-off arm -- which makes it an OFF-IDENTITY WITNESS as
+        # well as the widened aim's input.  Bounded by 8 (the seats are the
+        # eight orthogonal neighbours of our 2x2 core footprint).
+        self._seat_all = []
         # --- v611 SK_HOME_LAUNCHER (default OFF) ----------------------------
         # ⛔ PER-BODY STATE, and that is deliberate.  The keeper is the only
         # buyer and there is exactly one keeper role; publishing the site would
@@ -983,6 +996,38 @@ class Player(CommonMixin, RolesMixin, CoreMixin):
         self.batt_unfunded = 0        # ... refused: purse below `_battery_bar`
         self.batt_ceiling = 0         # ... refused: ledger already at ceiling
         self.batt_rearm = 0           # spent sites freed for the next plant
+        # ⭐⭐ s57 THE BATTERY, ARM 2 (SK_BATTERY2) state + instruments.
+        # ⛔ INITIALISED UNCONDITIONALLY, like every other flag-gated block in
+        # this file and for the same reason: an AttributeError escaping run()
+        # destroys the unit permanently, so a flag-gated __init__ is how a
+        # flag-gated attribute becomes a flag-gated death.  All of them stay at
+        # these values for the whole game on every SK_BATTERY2-off arm (their
+        # only writers sit under `if SK_BATTERY2 ...`), which makes them the
+        # OFF-identity witness as well as the arm's dose meter.
+        # (a) THE LEDGER FIX.
+        self.batt2_seen = {}          # tid -> last round the HP was READ
+        self.batt2_phantom = 0        # get_hp exceptions REFUSED as deaths
+        self.batt2_expired = 0        # ... and refusals denied by the TTL
+        self.batt2_live_lift = 0      # rounds the TEAM census beat this book
+        # (b) THE BURST RULE.  ⛔ BOTH VERDICTS ARE TAPPED: a hold that has
+        # never been seen to RELEASE and an escape that has never been seen to
+        # FIRE have not been seen to do anything.
+        self.batt2_hold_since = None  # round the current funding hold began
+        self.batt2_holds = 0          # funding holds begun
+        self.batt2_hold_rounds = 0    # engineer-rounds spent holding
+        self.batt2_burst_ready = 0    # rounds the PAIR bar was already clear
+        self.batt2_burst_off = False  # the escape has fired (latched)
+        self.batt2_escape = 0         # round+1 the escape fired; 0 = never
+        # (c) THE ECO-READY LATCH.
+        self.batt2_ring = []          # the last W POSITIVE purse deltas
+        self.batt2_sum = 0            # their sum (kept incrementally)
+        self.batt2_last_bank = None   # previous purse sample
+        self.batt2_last_ammo = None   # previous ammunition sample (the
+                                      # converted-titanium half of income)
+        self.batt2_last_rnd = -1      # round of the previous sample
+        self.batt2_eco_since = None   # round the latch FIRED (None = never)
+        self.batt2_eco_block = 0      # opens refused: economy below the bar
+        self.batt2_eco_cold = 0       # opens refused: fewer than WARM samples
         # PLANK 3 (SK_PECK_FOCUS) instruments.
         self.peck_relaxed = 0         # pecks that skipped the V7 veto
         self.keeper_marches = 0       # keeper turns spent marching at a shooter

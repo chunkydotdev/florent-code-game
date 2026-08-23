@@ -92,6 +92,7 @@ from sk_maps import (
     # --- v610 -------------------------------------------------------------
     SK_SEAT_CLEAR, SK_SEAT_CLEAR_N, SK_SEAT_PECK_CAP, SK_SEAT_PECK_TOTAL,
     SK_SEAT_GUN_RACE, SK_SEAT_GUNS,
+    SK_SEAT_CLEAR_ADJ,          # s57 THE STAND arm 3 (the action-half widening)
     SK_TERMINATE, SK_TERM_FIRST, SK_TERM_MOVE,
     # --- v611 -------------------------------------------------------------
     SK_HOME_LAUNCHER, SK_HOME_LAUNCHER_MAX, SK_HL_MIN_ROUND, SK_HL_SITE_DSQ,
@@ -167,6 +168,13 @@ from sk_maps import (
     SK_ROTATE_GUARD, SK_ROTATE_GUARD_NEAR,
     # --- s57 THE BATTERY, ARM 1 (the live ceiling) -------------------------
     SK_BATTERY_WANT,
+    # s57 THE BATTERY, ARM 2 (SK_BATTERY2) -- master + the three pieces.
+    SK_BATTERY2, SK_BATTERY2_WANT,
+    SK_BATTERY2_LEDGER, SK_BATTERY2_LEDGER_TTL,
+    SK_BATTERY2_BURST, SK_BATTERY2_BURST_HOLD,
+    SK_BATTERY2_ECO, SK_BATTERY2_ECO_W, SK_BATTERY2_ECO_WARM,
+    SK_BATTERY2_ECO_AMMO, SK_BATTERY2_ECO_LIFE, SK_BATTERY2_ECO_BARREL, SK_BATTERY2_SENT_BUMP,
+    SK_BATTERY2_LIVE_TEAM, SK_BATTERY2_ECO_CONV,
     # --- v632 SURVIVAL FAMILY -- PLANK A (walk-terminal guards, #130) and
     # --- PLANK B (the leashed keeper's duty, #128a residual / queued 4.1) ----
     SK_WALK_GUARDS, SK_WALK_GUARD_BAN, SK_LEASH_DUTY,
@@ -3331,6 +3339,12 @@ class RolesMixin:
             cand.append((rank, dsq_core(q, self.core), xy, bid, et))
         cand.sort()
         self._seat_rnd = rnd
+        # ⭐ s57 THE STAND, arm 3.  The FULL ranked list is memoised beside the
+        # truncated one: `_seat_walk` (the aim, and the thing v603's bound was
+        # measured on) keeps reading the top N, while `_seat_clear` may read
+        # all of it under SK_SEAT_CLEAR_ADJ.  Written below the master's own
+        # early return, so a SK_SEAT_CLEAR-off tree never touches it.
+        self._seat_all = cand
         self._seat_list = cand[:SK_SEAT_CLEAR_N]
         return self._seat_list
 
@@ -3387,7 +3401,20 @@ class RolesMixin:
             return False
         if ct.get_global_resources() < 2:
             return False
-        for (_rank, _d, xy, bid, _et) in self._seat_targets(ct, rnd):
+        targets = self._seat_targets(ct, rnd)
+        # ⭐ s57 THE STAND, arm 3 -- THE ACTION HALF SEES EVERY ENEMY-HELD SEAT,
+        # THE WALK HALF STILL SEES ONLY THE TOP N.  `dsq_core` is 1 for all
+        # eight seats, so the sort has no tie-break below rank and the N=2
+        # truncation keeps a FIXED pair of tiles wherever this body stands:
+        # traced at 320 of 750 adjacent-seat rounds (42.7%; 288/420 on
+        # jotunheim_seatA) where every seat the body was standing beside had
+        # already been dropped before adjacency was tested.  A peck at a tile
+        # the body is ALREADY beside costs no step, and SK_SEAT_PECK_CAP and
+        # SK_SEAT_PECK_TOTAL still bound the volume unchanged.  Full argument
+        # and the ablation at SK_SEAT_CLEAR_ADJ (sk_maps.py).
+        if SK_SEAT_CLEAR_ADJ:
+            targets = self._seat_all
+        for (_rank, _d, xy, bid, _et) in targets:
             q = Position(xy[0], xy[1])
             if p.distance_squared(q) != 1:
                 continue                    # orthogonal adjacency only
@@ -7533,6 +7560,12 @@ class RolesMixin:
         ⛔ SK_NEST OFF is the ablation identity: the engineer still walks out
         and still holds far ring faces, but plants NO forward turret.
         """
+        # ⭐ s57 ARM 2 (c): the purse sample, taken ONCE per engineer round and
+        # ABOVE every early return, because a rate is only a rate if the
+        # sampling is regular -- `_b2_sample` itself refuses any gap other than
+        # exactly one round rather than averaging over a hole it cannot see.
+        # No-op on every SK_BATTERY2-off arm (one module-constant test).
+        self._b2_sample(ct, rnd)
         if self.enemy is None:
             return
         self._nest_watch(ct, rnd)
@@ -7598,6 +7631,10 @@ class RolesMixin:
         if self.rot_body:
             want = SK_ROTATE_WANT
         live = self._floor_live(ct, rnd)
+        # ⭐⭐ s57 ARM 2 (a): the cross-body half of the ledger fix.  A no-op on
+        # every master-off arm and on every round the team census does not
+        # exceed this body's own book.
+        live = self._b2_live(ct, rnd, live)
         # ⭐ v619 PLANK 3 (SK_TUBE_RELIGHT) -- THE DOWN-CLOCK.  This is the
         # instrument the plank is scored on (tube-down rounds per game) and it
         # is read off the ENGINEER'S OWN ledger, one increment per engineer
@@ -7630,8 +7667,12 @@ class RolesMixin:
         #     `want` still 2 and `live >= 2` the waiver's `live < want` is
         #     False and `_plant_gun` takes its else branch -- the same
         #     expression `_battery_bar` restates.
+        # ⭐⭐ s57 ARM 2 JOINS AT THE SAME ONE GATE.  `want` is still NOT
+        # raised (the three policies above stay arm-1's), the ceiling and the
+        # eco latch live inside `_battery_open`, and the master is tested here
+        # so an OFF arm reaches nothing.
         batt = False
-        if SK_BATTERY_WANT:
+        if SK_BATTERY_WANT or SK_BATTERY2:
             batt = self._battery_open(ct, rnd, live, want)
             if batt:
                 self._battery_rearm()
@@ -7849,6 +7890,23 @@ class RolesMixin:
                 if not skip_prep and self.nest_prepped < SK_NEST_PREP_BARRIERS:
                     if self._prep_barrier(ct, p, site, rnd):
                         return
+                # ⭐⭐ s57 ARM 2 (b) -- THE BURST RULE, AND ITS PLACE IN THE
+                # LADDER IS PART OF THE DESIGN.  BELOW the prep rung, so a
+                # funding hold is still a productive turn (the prep barriers
+                # this site needs anyway get laid while the purse fills, and
+                # `_prep_barrier` returns before this line when it acts).
+                # ABOVE `_plant_gun`, because the whole content of the rule is
+                # NOT taking that plant yet.
+                # ⛔ IT HOLDS STATION RATHER THAN FALLING THROUGH.  The
+                # fall-through below is `step_to(site)` from Manhattan 1, i.e.
+                # the body would walk ONTO its own site and then have to step
+                # off to build -- sk_roles.py's own terminal-approach note
+                # measures that at a plant pushed r321 -> r338.  A funded wait
+                # that spends its turns walking on and off the tile is not a
+                # wait, it is a stall, so the hold consumes the turn.
+                if self._b2_burst_hold(ct, rnd, live, want):
+                    self._b2_hold_clocks(rnd)
+                    return
                 if self._plant_gun(ct, p, site, rnd, live, want):
                     return
         # ⭐⭐ v632 PLANK 10 RUNG (b), SITING HALF -- AND IT IS THE HALF v630.1
@@ -8256,7 +8314,11 @@ class RolesMixin:
         # `_plant_gun`'s first-empty loop) skips None entries and runs over
         # `len(self._nest_slots())`, so two extra None slots change no count,
         # no promotion and no site.
-        if self.rot_body or SK_BATTERY_WANT:
+        # ⭐ s57 ARM 2: the same widening for the same reason -- the master
+        # raises the ceiling to SK_BATTERY2_WANT, and a target wider than the
+        # book is the failure this method's note describes.  Inert at or below
+        # the pair either way (every consumer skips None entries).
+        if self.rot_body or SK_BATTERY_WANT or SK_BATTERY2:
             return (self.nest_turret, self.nest_turret2,
                     self.nest_turret3, self.nest_turret4)
         if SK_NEST_N3:
@@ -8354,12 +8416,23 @@ class RolesMixin:
             the hold branch and its tape is unchanged.
         ⛔ IT READS, IT DOES NOT SPEND OR WRITE.  The only mutation in this
         family is `_battery_rearm`, and that one is free.
+
+        ⭐⭐ s57 THE BATTERY, ARM 2 ADDS A FIFTH CONDITION AND SWAPS THE
+        CEILING'S SOURCE.  The ECO-READY LATCH is asked LAST, AFTER the purse
+        test, on purpose: `batt_unfunded` keeps meaning "the purse was short"
+        and `batt2_eco_block` means "the purse was fine and the ECONOMY was
+        not" -- two different refusals that a single tap would merge.  The
+        ceiling reads SK_BATTERY2_WANT while the master is on so arm 1's
+        constant keeps its arm-1 meaning and the two arms still run apart.
+        ⛔ EXACT IDENTITY WHEN BOTH ARE OFF: SK_BATTERY_WANT is 0 and
+        SK_BATTERY2 is False, so the first line returns False and nothing
+        below it is reached.
         """
-        if not (SK_BATTERY_WANT and SK_NEST_PAIR):
+        if not ((SK_BATTERY_WANT or SK_BATTERY2) and SK_NEST_PAIR):
             return False
         if live < want:
             return False
-        ceiling = SK_BATTERY_WANT
+        ceiling = SK_BATTERY2_WANT if SK_BATTERY2 else SK_BATTERY_WANT
         width = len(self._nest_slots())
         if ceiling > width:
             ceiling = width
@@ -8372,6 +8445,12 @@ class RolesMixin:
             return False
         if bank < self._battery_bar(ct, live):
             self.batt_unfunded += 1
+            return False
+        # s57 ARM 2 (c): funded for ONE more barrel is not funded for the
+        # HAMMER.  `_b2_eco_ready` returns True unconditionally when the piece
+        # is ablated or the master is off, so this line is arm 1's behaviour
+        # in both of those configurations.
+        if not self._b2_eco_ready(ct, rnd):
             return False
         self.batt_open += 1
         return True
@@ -8411,6 +8490,305 @@ class RolesMixin:
                 self.nest_best_d = None
                 self.batt_rearm += 1
                 return
+
+    # ==================================================================
+    # s57 THE BATTERY, ARM 2  (SK_BATTERY2)
+    # ==================================================================
+    # GAME CONTEXT: in-game build work for the Florent Code League, a
+    # sandboxed bot-vs-bot competition.  "battery", "barrel", "tube",
+    # "plant", "hammer" are in-engine mechanics between competing game bots.
+    #
+    # SEVEN HELPERS, NONE OF THEM REACHED ON AN OFF ARM: every call site is
+    # `if SK_BATTERY2 ...`, so with the master False the added cost is one
+    # test of a module constant per engineer round and the control flow is
+    # v632's, character for character.  The three pieces are ablatable apart
+    # (SK_BATTERY2_LEDGER / _BURST / _ECO) because they are coupled by
+    # ARGUMENT, and an argument has to be measurable.
+
+    # --- (a) THE LEDGER FIX -------------------------------------------
+
+    def _b2_phantom(self, ct, rnd, tid, site, ledger, beats):
+        """Is this `get_hp` exception SILENCE rather than a death?
+
+        THREE CONDITIONS, ALL REQUIRED, and each one is a different way this
+        could go wrong (see the SK_BATTERY2_LEDGER note for the provenance):
+          * the TEAM BEAT count has not fallen below what the ledger claims,
+            COMPARED AT THE CENSUS CAP.  v619's rule is `beats >= ledger`;
+            above the cap that is guaranteed False (the slot-7 layout has
+            len(SK_TUBE_SEAT_FIELDS) seats and a third tube is invisible by
+            construction), so the unclamped form books a death on the first
+            out-of-vision read of barrel #3 EVERY TIME -- the exact bug this
+            piece removes.  Below the cap the two forms are identical, which
+            is what keeps the pair's behaviour unchanged.
+          * the credit has NOT EXPIRED.  Without this the rule LATCHES above
+            the cap: the beats can no longer fall, so a barrel that really
+            died out of vision would be booked alive for the rest of the
+            match and would block its own replacement.
+          * the site is provably OUTSIDE this body's vision.
+            `_out_of_vision` is radius arithmetic on two positions we already
+            hold and returns False on any doubt -- so doubt routes to v632's
+            behaviour (spend a turn), never to hiding a hole.  It is NOT
+            `is_in_vision`, which is a pure radius test with no bounds check
+            (engine-probed s50) and the band hugs a corner core.
+        ⛔ READS ONLY.  The taps are counters; nothing here spends or writes.
+        """
+        if not (SK_BATTERY2 and SK_BATTERY2_LEDGER):
+            return False
+        if beats is not None:
+            cap = len(SK_TUBE_SEAT_FIELDS)
+            need = ledger if ledger < cap else cap
+            if beats < need:
+                return False          # a tube HAS gone quiet: book the death
+        last = self.batt2_seen.get(tid)
+        if last is None or rnd - last > SK_BATTERY2_LEDGER_TTL:
+            self.batt2_expired += 1
+            return False              # absence of evidence has expired
+        return self._out_of_vision(ct, site)
+
+    def _b2_live(self, ct, rnd, ledger):
+        """(a)'s second half: `max(own ledger, team beats)`.
+
+        The phantom rule repairs what THIS BODY forgot.  It cannot supply what
+        this body never knew: `_nest_live()` is a per-body PLANT ledger, and a
+        tube planted by a previous engineer is in nobody's book.  Measured on
+        the traced f1 tape: 376 of 1,172 phantom decisions read ledger 1 while
+        the team beats read 2.
+        ⛔ IT CAN ONLY LIFT, NEVER LOWER -- an under-count buys a barrel we
+        already own, an over-count delays a replant by at most the producer's
+        own staleness bound.  And it saturates at the census width, so no rung
+        above the pair can be invented by it.
+        ⛔ FALLS BACK TO THE LEDGER ON ANY DOUBT (flag off, producer off, store
+        unreadable), so every caller reduces to v632's code on v632's inputs.
+        """
+        if not (SK_BATTERY2 and SK_BATTERY2_LEDGER and SK_BATTERY2_LIVE_TEAM
+                and SK_TEAM_TUBES and SK_NEST_PAIR):
+            return ledger
+        try:
+            team = self._tube_count(ct.read_store(SK_SLOT_NEST), rnd)
+        except Exception:
+            return ledger
+        if team > ledger:
+            self.batt2_live_lift += 1
+            return team
+        return ledger
+
+    # --- (b) THE BURST RULE -------------------------------------------
+
+    def _b2_pair_bar(self, ct):
+        """The purse that funds BOTH barrels of the pair, in titanium.
+
+        ⛔ IT IS `_plant_gun`'s OWN ARITHMETIC FOR THE TWO PLANTS, RESTATED,
+        exactly as `_battery_bar` restates the single-plant form and for the
+        same reason (calling into `_plant_gun` would put a second
+        `get_sentinel_cost()` on the OFF path, and the OFF path has to be
+        byte-identical including its CPU profile).  The weld is a UNIT
+        CONTROL, not shared code:
+            plant #1 at live = 0 -> `cost = get_sentinel_cost()` and NOTHING
+              else: the `if SK_NEST_PAIR and live > 0` branch is skipped;
+            plant #2 at live = 1 -> `get_sentinel_cost()` AT THE POST-PLANT
+              SCALE, plus SK_AMMO_SENTINEL x (live + 1) + SK_AMMO_FLOOR.
+        The post-plant scale is the only term that cannot be read today, and
+        it is a CONSTANT offset because the cost factor is ONE GLOBAL
+        ADDITIVE number: SK_BATTERY2_SENT_BUMP = floor(base x 20%).
+        ⚠ WHAT IT DELIBERATELY DOES NOT PRICE: the second site's prep
+        barriers (2 x 3 Ti and +2% of scale).  They are paid out of income
+        during the commute in every arm, and folding them in would raise the
+        bar for a cost the hold does not change.
+        """
+        c = ct.get_sentinel_cost()
+        return (c + (c + SK_BATTERY2_SENT_BUMP)
+                + SK_AMMO_SENTINEL * 2 + SK_AMMO_FLOOR)
+
+    def _b2_burst_hold(self, ct, rnd, live, want):
+        """True on a round where plant #1 is WITHHELD for the pair.
+
+        SCOPE IS THE FIRST PLANT OF THE PAIR AND NOTHING ELSE (`live == 0`
+        and a target of at least two).  Barrels beyond the pair are the
+        ceiling's and the latch's business; the measured defect this piece
+        answers is the PAIR's spacing (wins' tightest 2-build window 9 rounds
+        vs losses' 16; the arm-1 trace's worked stagger cell shows 54- and
+        31-round money-blocked gaps).
+
+        ⛔ THE ESCAPE IS PART OF THE RULE, NOT A SAFETY NET BOLTED ON.  A
+        cell that can never fund two must not be held forever -- so after
+        SK_BATTERY2_BURST_HOLD consecutive holding rounds the burst DISARMS
+        FOR THE MATCH and plant #1 goes in under today's exact condition.
+        Both verdicts of that clock are counted (`batt2_escape`,
+        `batt2_hold_rounds`), because an escape that has never been seen to
+        fire has not been seen to protect anything.
+        """
+        if not (SK_BATTERY2 and SK_BATTERY2_BURST and SK_NEST_PAIR):
+            return False
+        if self.batt2_burst_off:
+            return False
+        if live != 0 or want < 2:
+            return False
+        try:
+            bank = ct.get_global_resources()
+            bar = self._b2_pair_bar(ct)
+        except Exception:
+            return False              # unreadable purse -> v632 behaviour
+        if bank >= bar:
+            self.batt2_burst_ready += 1
+            self.batt2_hold_since = None
+            return False
+        if self.batt2_hold_since is None:
+            self.batt2_hold_since = rnd
+            self.batt2_holds += 1
+        if rnd - self.batt2_hold_since >= SK_BATTERY2_BURST_HOLD:
+            self.batt2_burst_off = True
+            self.batt2_escape = rnd + 1        # round+1, so 0 means NEVER
+            self.batt2_hold_since = None
+            return False
+        self.batt2_hold_rounds += 1
+        return True
+
+    def _b2_hold_clocks(self, rnd):
+        """⛔⛔ THE HAZARD THE HOLD CREATES, AND IT WOULD HAVE BEEN A
+        PERMANENT SITE BAN.  `_nest_site_watch` is a PROGRESS watchdog: a
+        site the body has not closed on for SK_NEST_STUCK_ROUNDS rounds goes
+        into `nest_bad` FOREVER.  A body that has ARRIVED and is standing
+        still because it is saving money records no new closest approach and
+        no net displacement, so the watchdog would read the funding hold as
+        an unreachable site and ban the tile the pair is waiting on.
+        The hold refreshes exactly the two clocks the watchdog runs on --
+        the same fields `_nest_site_watch` itself refreshes on progress --
+        and nothing else: `nest_best_d` is untouched, so the moment the hold
+        ends the watchdog resumes from the body's true closest approach.
+        ⛔⛔ AND IT IS LOAD-BEARING, MEASURED -- THE FIRST VERSION OF THIS
+        NOTE SAID THE OPPOSITE AND ITS OWN MUTATION CONTROL REFUTED IT.  The
+        argument was: the hold is bounded by SK_BATTERY2_BURST_HOLD = 20,
+        which is under SK_NEST_STUCK_ROUNDS = 25, so the ban could not fire
+        even with this method deleted.  WRONG, and the reason is that
+        `nest_since` is NOT set when the hold starts -- it is set at the
+        body's last CLOSEST APPROACH, which is several rounds earlier (the
+        arrival, then the prep barriers, then the hold).  Deleting this
+        method (mutation M4) diverges the tape on 3 of 12 f1 cells
+        (auroraveil A, bifrost A, skald A).  The suppression is still bounded
+        by the hold, but the hold really can reach the watchdog, so the
+        refresh is a correctness requirement rather than a belt-and-braces.
+        """
+        self.nest_since = rnd
+        self.nest_anchor_rnd = rnd
+
+    # --- (c) THE ECO-READY LATCH --------------------------------------
+
+    def _b2_sample(self, ct, rnd):
+        """One purse sample per engineer round -> the income proxy.
+
+        ⛔ WHY POSITIVE DELTAS AND NOT A SPEND LEDGER.  The honest quantity
+        is income, and `get_global_resources()` deltas are income MINUS the
+        whole team's spend -- of which this body knows only its own share
+        (the core converts ammo, the keeper builds belt, every builder
+        spends).  A per-body spend ledger would therefore be a WRONG
+        correction wearing a precise name.  The cheap honest proxy instead:
+        a round's delta is counted only when it is POSITIVE, because only
+        income can raise the purse (passive +10 every 4 rounds, a delivered
+        stack +10; `destroy` refunds SCALE, not titanium).  A round that both
+        earns and spends nets to <= 0 and contributes ZERO, so the proxy is a
+        strict LOWER BOUND on gross income per round -- the conservative
+        direction for a signal that authorises spending.
+        ⛔ ROLLING MEAN, NOT EWMA: an EWMA seeded at 0 is biased low for
+        about two windows, and this body's history restarts on every engineer
+        turnover, so the bias would express itself as "the latch fires late
+        or never" for a reason that is not economic.
+        ⚠ DISCLOSED: the sampler is PER BODY.  A successor engineer starts
+        with an empty ring and re-warms; the fire-round distribution is
+        measured with that in it, not corrected for it.
+        """
+        if not (SK_BATTERY2 and SK_BATTERY2_ECO):
+            return
+        if rnd == self.batt2_last_rnd:
+            return
+        try:
+            bank = ct.get_global_resources()
+        except Exception:
+            return
+        ammo = 0
+        if SK_BATTERY2_ECO_CONV:
+            try:
+                ammo = ct.get_global_ammo()
+            except Exception:
+                ammo = self.batt2_last_ammo or 0
+        if self.batt2_last_bank is not None and rnd - self.batt2_last_rnd == 1:
+            d = bank - self.batt2_last_bank
+            # ⭐ THE CONVERTED HALF.  The ONLY ammunition source in this engine
+            # is the core converting titanium 1:1 (no passive ammo income), so
+            # a positive ammo delta is titanium that ARRIVED and was spent in
+            # the same round -- income the bank-only form throws away, and
+            # LOSSAUT measures that as the normal round (spend/convert
+            # 0.94-0.99), not the exception.
+            if SK_BATTERY2_ECO_CONV and self.batt2_last_ammo is not None:
+                da = ammo - self.batt2_last_ammo
+                if da > 0:
+                    d += da
+            if d < 0:
+                d = 0
+            self.batt2_ring.append(d)
+            self.batt2_sum += d
+            if len(self.batt2_ring) > SK_BATTERY2_ECO_W:
+                self.batt2_sum -= self.batt2_ring.pop(0)
+        self.batt2_last_bank = bank
+        self.batt2_last_ammo = ammo if SK_BATTERY2_ECO_CONV else None
+        self.batt2_last_rnd = rnd
+
+    def _b2_rate(self):
+        """Titanium per round of income, or None while under-sampled."""
+        n = len(self.batt2_ring)
+        if n < SK_BATTERY2_ECO_WARM:
+            return None
+        return self.batt2_sum / float(n)
+
+    def _b2_eco_ready(self, ct, rnd):
+        """PROGRAMME.md ECO-READY HAMMER, made a predicate: are we FUNDED to
+        sustain the hammer, rather than able to afford one more barrel at one
+        instant?
+
+        THE BAR IS TWO TERMS AND BOTH ARE BANKED NUMBERS:
+          * SK_BATTERY2_ECO_AMMO -- the ammunition stream a checkmate needs
+            (LOSSAUT-f1f2: ~2.5-3.0 Ti/round buys the 4.5-5.3 HP/round that
+            clears their core's heal absorption; we run 1.47 in losses,
+            4.30 in wins);
+          * BARREL REPLACEMENT -- `get_sentinel_cost() / SK_BATTERY2_ECO_LIFE`,
+            the live-scaled price of a barrel amortised over the MEASURED
+            median life of our own forward tubes.
+        ⛔ IT LATCHES, AND THE LATCH IS SAFE BECAUSE IT IS NOT THE ONLY GATE.
+        Once readiness is established the hammer stays open; a later collapse
+        is still caught per plant by `_battery_bar`, which this predicate is
+        asked AFTER.  A non-latching form would flap the battery target round
+        by round, which is the behaviour `_nest_slots()`'s note warns about.
+        ⛔ AND IT IS SCORED BOTH WAYS BEFORE ANY OUTCOME COLUMN (the side-lane
+        rider, consumed in the arm-2 registration): the fire-round
+        distribution per fixture -- median, p10, never-fired -- must show the
+        latch CHOOSING.  Never firing is falsifier LOW (no hammer ever lands);
+        firing at spawn-adjacent rounds is falsifier HIGH (it degenerated to
+        always-true and the hammer is the rush the doctrine forbids).
+        """
+        if not (SK_BATTERY2 and SK_BATTERY2_ECO):
+            return True
+        if self.batt2_eco_since is not None:
+            return True                        # latched
+        r = self._b2_rate()
+        if r is None:
+            self.batt2_eco_cold += 1
+            return False
+        # ⛔ ARM-3 CORRECTION (s57, registered before this edit): the barrel
+        # term double-counted — `_battery_bar` already prices the next barrel
+        # at every plant, so charging replacement here priced it twice and the
+        # latch fired 1/60 (falsifier LOW, arm-2 readout). The bar is the
+        # ammo stream alone; the barrel-replacement form is kept under
+        # SK_BATTERY2_ECO_BARREL for the record and ships False.
+        try:
+            bar = SK_BATTERY2_ECO_AMMO
+            if SK_BATTERY2_ECO_BARREL:
+                bar += ct.get_sentinel_cost() / float(SK_BATTERY2_ECO_LIFE)
+        except Exception:
+            return False
+        if r < bar:
+            self.batt2_eco_block += 1
+            return False
+        self.batt2_eco_since = rnd
+        return True
 
     def _pick_nest(self, ct, p, rnd):
         """The band, with LEDGER V4's per-tile death memory applied.
@@ -9194,6 +9572,18 @@ class RolesMixin:
             if t is None:
                 self._nest_slot_set(i, (tid, site, rnd))
                 break
+        # ⭐ s57 ARM 2 (a): the CONFIRMED-ALIVE stamp starts at the plant --
+        # the one round this body is certain the barrel stands.  The TTL runs
+        # from here, so a barrel planted and walked away from is credited for
+        # one commute and no longer.  ⛔ SEPARATE DICT, NOT A FOURTH TUPLE
+        # FIELD: every consumer in this file unpacks `tid, site, born = t`, and
+        # widening the ledger tuple would be a change to code this arm has no
+        # mandate to touch.
+        # ⭐ s57 ARM 2 (b): a plant ENDS the funding hold, whatever it was.
+        if SK_BATTERY2:
+            if SK_BATTERY2_LEDGER:
+                self.batt2_seen[tid] = rnd
+            self.batt2_hold_since = None
         # ⭐ v632 PLANKS 8+9 -- THE PHASE PLANT COUNTER.  It drives the FIRST
         # battery's clustering in `_pick_nest` ("put the first 4 sentinels
         # together ... then move to the next position") and it is the arm's
@@ -9220,6 +9610,10 @@ class RolesMixin:
         if self.rot_body:
             want = SK_ROTATE_WANT
         n = self._floor_live(ct, rnd)
+        # s57 ARM 2 (a): the post-plant re-arm reads the SAME count as the turn
+        # head.  The two must agree or the same-round re-arm would free a site
+        # the turn head thinks is still wanted.
+        n = self._b2_live(ct, rnd, n)
         if n < want:
             self.nest_site = None
             self.nest_face = None
@@ -9401,6 +9795,19 @@ class RolesMixin:
                 beats = self._tube_count(ct.read_store(SK_SLOT_NEST), rnd)
             except Exception:
                 beats = None
+        # ⭐⭐ s57 ARM 2 (a) READS THE SAME PRODUCER UNDER ITS OWN MASTER.  It
+        # is a SECOND read rather than a widened condition on the first because
+        # SK_TUBE_RELIGHT ships False, so the v619 arbiter above is dead code in
+        # this config and re-arming it would ship two planks under one flag.
+        # One extra `read_store` per engineer round while the master is on;
+        # nothing at all while it is off.
+        b2beats = None
+        if (SK_BATTERY2 and SK_BATTERY2_LEDGER
+                and SK_TEAM_TUBES and SK_NEST_PAIR):
+            try:
+                b2beats = self._tube_count(ct.read_store(SK_SLOT_NEST), rnd)
+            except Exception:
+                b2beats = None
         ledger = self._nest_live()
         for i in range(k):
             t = self._nest_slots()[i]
@@ -9427,10 +9834,25 @@ class RolesMixin:
                     and self._out_of_vision(ct, site):
                 self.relight_phantom += 1
                 continue
+            # ⭐⭐ s57 ARM 2 (a) -- THE LEDGER FIX ITSELF, AT ITS SOURCE.  The
+            # arm-1 trace measured 204 of 222 plants happening at ledger-live
+            # 0 while the wire showed the barrels standing: the ledger is not a
+            # census of our tubes, it is a census of the tubes THIS BODY CAN
+            # SEE.  `_b2_phantom` carries the three conditions and is a no-op
+            # on every master-off arm.
+            if raised and self._b2_phantom(ct, rnd, tid, site, ledger, b2beats):
+                self.batt2_phantom += 1
+                continue
             if alive:
+                # the CONFIRMED sighting: this is the only place the TTL clock
+                # is refreshed, so a credit can never outlive a real read.
+                if SK_BATTERY2 and SK_BATTERY2_LEDGER:
+                    self.batt2_seen[tid] = rnd
                 continue
             self.nest_deaths[(site.x, site.y)] = rnd        # V4
             self.nest_lives.append(rnd - born)
+            if SK_BATTERY2 and SK_BATTERY2_LEDGER:
+                self.batt2_seen.pop(tid, None)
             ledger -= 1
             for j in range(i, k):
                 self._nest_slot_set(j, self._nest_slots()[j + 1] if j + 1 < k else None)
