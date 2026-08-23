@@ -229,3 +229,15 @@ shooter is usually out of vision); diagonal-faced tubes die faster
 (5/5, small n — a facing-preference constant is a later candidate);
 replacement gap WORSENED while life rose (successions rarer not faster
 — the succession dose still thin).
+
+## BARRELS ARM 2 (LEAN) — ADOPTED (BUILDER s57): succession + threat-aware
+siting, medic OFF. Grid: kills 20→24, wins 37→40, **F3 19/30 — THE FIRST
+VICTORY BAR CLEARED, +3 margin** (+4 wins/+4 kills/−3 deaths coherent;
+tube life 5→38 the mechanism). F1 −1/−1 median +38 disclosed as
+noise-level drag; F2 +1 kill, mined +24%. Guards clean on all fixtures.
+Grid win/kill deltas individually straddle the DEFF noise threshold; the
+F3 coherence across five columns is the adoption's basis, stated
+honestly. **NEW BASELINE t_bg_*** [alive 59 / deaths 47 / wins 40 /
+kills 24 / eco 37.30 / harv 218], per-fixture wins **11 / 10 / 19** vs
+bars 16/16/16. NEXT: engineer self-heal (staffing form 4) on this
+baseline; then the F1 drag attribution.

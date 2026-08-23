@@ -7494,13 +7494,13 @@ SK_HAMMER_HOLD = 20       # ⛔⛔ V2.1 -- THE BOUNDED ESCAPE, AND IT IS
 # the HEAL ITSELF has population in half the cells and is rare in the rest.
 # That is the honest prior for the dose and it is written here BEFORE the grid.
 
-SK_BARREL_GUARD = False   # ⛔ THE MASTER, DEFAULT OFF.  Off is exact identity:
+SK_BARREL_GUARD = True   # ADOPTED s57 2026-08-23 LEAN (MEDIC off): grid kills 20->24, wins 37->40, F3 CLEARS ITS BAR 19/30 (+4/+4/-3 coherent, tube life 5->38); F1 -1/-1 noise disclosed   # ⛔ THE MASTER, DEFAULT OFF.  Off is exact identity:
                           # every call site is a call-site conjunction whose
                           # first term is this module constant, so an OFF arm
                           # makes zero extra engine calls and the replay is
                           # byte-identical (measured, gate 6 of the runbook).
 
-SK_BG_MEDIC = True        # piece (a), ablatable alone under the master.
+SK_BG_MEDIC = False  # REFUSED staffing form 3 (0 heals, walk-bound, belt publisher); form 4 = engineer self-heal registered        # piece (a), ablatable alone under the master.
 SK_BG_SUCC = True         # piece (b), ablatable alone under the master.
 SK_BG_SITE = True         # piece (c), ablatable alone under the master.  It is
                           # SEPARATE precisely so the medic/succession dose
