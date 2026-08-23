@@ -59,3 +59,17 @@ misses the bar but the pool falls with rate falling on ≥2 fixtures, adoption
 is hardening-grade at builder discretion with the shortfall disclosed. If
 the detector's exemption list grows past 4 states, the design returns —
 an exemption lattice that big is the always-true `_under_attack` lesson.
+
+**PRE-TAPE AMENDMENT (build-agent trace evidence, F2/F3 blind held):**
+specimen 3 (bifrost bot 3, 979r) is RECLASSIFIED — traced target is our own
+core anchor via the keeper's `tgt = self.core` fall-through; it is the banked
+leashed-economy-exhaustion mechanism, not a nav-stall, and it survives as an
+honest ARRIVED-exempt state (EX-1). Removing EX-1 was MEASURED: pool 979→0
+and 1,477→430, but our core dies r733 vs r1000 and r824 vs r927 (n=2,
+unpowered, directionally the leash mechanism — the exemption is
+load-bearing). N2 is scored on the two true nav-stall specimens (both killed
+at the bound). N3's bar is NOT amended; the pre-registered fallback clause
+governs any shortfall, and the exempt keeper-ring mass inside the baseline
+pool is disclosed here before the F2/F3 tapes exist. The N2 falsifier trip
+("a traced park surviving") is thereby resolved as misclassification of the
+specimen, not exemption swallowing the class.
