@@ -38,6 +38,11 @@ from sk_maps import (
     ARMED_TYPES,
     CARDINALS, CARD_DELTAS, DIRECTIONS,
     SK_AMMO_FLOOR, SK_AMMO_GUNNER, SK_AMMO_SENTINEL,
+    SK_BARREL_GUARD, SK_BG_MEDIC, SK_BG_SUCC, SK_BG_SITE,
+    SK_BG_MEDIC_ROLE, SK_BG_HOME_ROLES, SK_BG_HOME_BODIES,
+    SK_BG_HOME_TURRETS, SK_BG_HOME_DSQ, SK_BG_HEAL_FLOOR,
+    SK_BG_SUCC_LIVE, SK_BG_SUCC_NEAR, SK_BG_SITE_MAX_GUNS,
+    SK_BG_SITE_CONFIRM, SK_BG_SITE_BAN_ROUNDS, SK_BG_FACE_STAT,
     SK_BEAT_MASK, SK_BEAT_STALE, SK_BELT, SK_BELT_COVER,
     SK_BELT_COVER_TRIGGER, SK_CAGE, SK_CAGE_ACCEPT, SK_CAGE_FIRST,
     SK_CYCLE_BREAK, SK_CYCLE_ESCAPE_BLOCKED, SK_CYCLE_ESCAPE_CAP,
@@ -529,6 +534,20 @@ class RolesMixin:
         # unreachable and the dispatch below is character-for-character v628.
         if (SK_FORTRESS and SK_CITADEL and self.role in SK_CITADEL_ROLES
                 and self._citadel_answer(ct, p, rnd)):
+            return
+
+        # ⭐⭐ s57 BARRELS ARM 2, PIECE (a) -- THE BARREL MEDIC'S ONE CALL SITE.
+        # ⛔ WHERE IT SITS IS THE STAFFING RULE.  BELOW every survival branch
+        # (the corefire answer, ledger V5, the citadel dispatch) because a core
+        # that is being shot outranks a barrel that is being pecked -- and the
+        # re-task's own security read refuses on exactly that alarm anyway, so
+        # the two cannot disagree.  ABOVE the role switch because a re-tasked
+        # body must not fall through into the home ladder from a tile in the
+        # band.
+        # ⛔ FLAG OFF -> False on the first line -> the switch below is
+        # character-for-character the adopted tree, with zero extra engine
+        # calls.
+        if self._bg_turn(ct, p, rnd):
             return
 
         # ⭐⭐ v632 HEIMDALL PLANK 5 -- THE SECOND ECO BODY (SK_FORT_WALKER_ECO).
@@ -8956,6 +8975,574 @@ class RolesMixin:
             return True
         return False
 
+    # ==================================================================
+    # s57 BARRELS ARM 2 -- PROTECTION + SUCCESSION  (SK_BARREL_GUARD)
+    #
+    # GAME CONTEXT: in-engine behaviour of our own builder bots in the
+    # Florent Code League, a sandboxed bot-vs-bot programming competition.
+    # A "tube"/"barrel" is one of OUR sentinels standing in the band beside
+    # the opposing bot's core; "knocked out" is the engine removing a piece
+    # per its documented rules.
+    #
+    # THREE PIECES, ONE MASTER, EACH SEPARATELY ABLATABLE:
+    #   (a) SK_BG_MEDIC -- the re-tasked home keeper nurses the barrels;
+    #   (b) SK_BG_SUCC  -- the engineer's idle band rounds prep the SUCCESSOR;
+    #   (c) SK_BG_SITE  -- the successor pick avoids their rays (addendum).
+    # ==================================================================
+
+    # --- (a) THE BARREL MEDIC -----------------------------------------
+
+    def _bg_home_turrets(self, ct):
+        """How many of OUR turrets stand AT HOME, by vision census.
+
+        ⛔ A CENSUS, NOT A MEMORY, and PLANK 10's own disposition is why: a
+        per-body ledger of what THIS body built names nothing after a
+        replacement keeper walks into the role (each unit gets its own
+        `Player`).  `vis_friend` is filled by `_sense` every round for every
+        role, so this is an existing read with no new engine call: the keeper
+        stands at home and the home turrets are what it is looking at.
+        ⛔ HOME IS `GUARD_FWD_DSQ` OF OUR OWN CORE -- the same constant
+        `_push_barrel` splits FORWARD tubes on, used here in the complement, so
+        a turret is home to this method exactly when it is not a tube to that
+        one.
+        """
+        if self.core is None:
+            return 0
+        n = 0
+        for _eid, et, ep in self.vis_friend:
+            if et not in TURRET_TYPES:
+                continue
+            if ep is None or not self.ibp(ep):
+                continue
+            if dsq_core(ep, self.core) <= GUARD_FWD_DSQ:
+                n += 1
+        return n
+
+    def _bg_home_bodies(self, ct, rnd):
+        """How many HOME-ANCHORED bodies are alive, off the beat slots.
+
+        ⛔ THE SAME READ `_claim_role` RUNS ON (`beat_fresh` over
+        `SK_SLOT_BEAT[role]`), so it is team-wide, never blind, costs one store
+        read per role and adds no latch.  The CAGE WALKER is excluded on
+        purpose -- its lap is enemy-anchored -- so this number is "the keeper
+        plus the denier", and the bar of 2 means "the denier is alive".
+        """
+        n = 0
+        for r in SK_BG_HOME_ROLES:
+            if r >= SK_N_ROLES:
+                continue
+            try:
+                if self.beat_fresh(ct, SK_SLOT_BEAT[r], rnd, SK_BEAT_STALE):
+                    n += 1
+            except Exception:
+                continue
+        return n
+
+    def _bg_secure(self, ct, rnd):
+        """THE POST-SECURITY READ: may the keeper leave home this round?
+
+        THREE TERMS, EXISTING READS, NO NEW LATCH (class-audit row #132):
+          * NO FRESH COREFIRE -- our core has not lost HP inside the last
+            SK_COREFIRE_TTL rounds, off the core's own slot-15 HP-DELTA alarm.
+            ⛔ THE HP-DELTA ALARM AND NOT THE SLOT-1 PRESENCE LATCH: the
+            presence latch measured TRUE in 139 of 139 keeper-rung rounds and
+            is the always-fresh class -- a term that is always true is not a
+            gate.  This is also the RELEASE: the same predicate going fresh is
+            what recalls the body, so the leave test and the come-home test
+            cannot disagree.
+          * HOME TURRET COUNT INTACT -- >= SK_BG_HOME_TURRETS of our turrets
+            standing at home, by the vision census above.  Implemented as a
+            FLOOR rather than a high-water mark because a remembered peak is a
+            new latch (see the flag note).
+          * >= SK_BG_HOME_BODIES HOME BODIES -- the beat census above.
+
+        ⛔ BOTH TAILS ARE COUNTED, PER TERM.  A gate that has only ever
+        returned one verdict has not been seen to gate, and a THREE-term gate
+        that has only ever refused on one of them has two terms nobody has
+        seen.
+        """
+        if SK_COREFIRE and self.corefire_fresh(ct, rnd):
+            self.bg_sec_no_fire += 1
+            return False
+        if self._bg_home_turrets(ct) < SK_BG_HOME_TURRETS:
+            self.bg_sec_no_turret += 1
+            return False
+        if self._bg_home_bodies(ct, rnd) < SK_BG_HOME_BODIES:
+            self.bg_sec_no_body += 1
+            return False
+        self.bg_sec_yes += 1
+        return True
+
+    def _bg_claim(self, ct, p, rnd):
+        """Is the re-task live THIS round?  Security AND a barrel to nurse."""
+        if self.role != SK_BG_MEDIC_ROLE or self.enemy is None or self.core is None:
+            return False
+        try:
+            live = self._push_live_tubes(ct, rnd)
+        except Exception:
+            return False                    # degraded read: stay home
+        if live < 1:
+            self.bg_no_tube += 1
+            return False                    # nothing forward to nurse
+        return self._bg_secure(ct, rnd)
+
+    def _bg_medic_turn(self, ct, p, rnd):
+        """Station in the band and heal the most damaged tube.  True if it
+        spent the round.
+
+        ⛔ THE SENSORS ARE THE WARDEN'S, REUSED RATHER THAN COPIED, and both
+        are pure reads: `_push_barrel` (the vision census of damaged FORWARD
+        sentinels) and `_push_station` (where the band is, with the patrol).
+        ⛔⛔ AND `_push_station` IS WHY THIS RUNG EXISTS IN THIS SHAPE: the v3
+        trace measured the medic reading `barrel = 0` for its whole life when
+        it stood at the launcher seat, because a builder sees r^2 = 20 and the
+        band sits at d^2 14-32 of their core.  THE STATION MUST BE IN THE BAND.
+        ⛔ THE ACT IS `_heal_action`, the tree's existing verb (1 Ti -> +4 HP on
+        the most-damaged adjacent friendly), so no new targeting is introduced.
+        ⚠ DISCLOSED, and it is `_guard_heal`'s own trade: on a tile adjacent to
+        both a damaged barrel and a MORE damaged prep barrier, the verb heals
+        the barrier.  A screen that dies stops screening.
+        ⛔ IT ENDS IN A FALL-THROUGH, NOT IN A PARKED BODY (v603 FIX 6(b): two
+        bodies spent 860 and 227 rounds as paperweights): with nothing to heal
+        and the body already on station this returns False and `_bg_yield` has
+        the round.
+        """
+        tgt = self._push_barrel(ct, p)
+        if tgt is None:
+            stn = self._push_station(ct, p, rnd)
+            if stn is None or p.distance_squared(stn) <= SK_PUSH_STATION_NEAR:
+                return False                # on station, nothing to heal
+            try:
+                if ct.get_move_cooldown() != 0:
+                    return False
+            except Exception:
+                return False
+            if self.step_to(ct, stn):
+                self.bg_walk += 1
+                return True
+            return False
+        self.bg_seen += 1
+        if p.distance_squared(tgt) == 1:            # orthogonally adjacent
+            self.bg_heal_rounds += 1
+            try:
+                if ct.get_global_resources() < SK_BG_HEAL_FLOOR:
+                    self.bg_poor += 1
+                    return False
+                if ct.get_action_cooldown() == 0 and self._heal_action(ct, p, rnd):
+                    self.bg_heals += 1
+                    return True
+            except Exception:
+                return False
+            return False
+        try:
+            if ct.get_move_cooldown() != 0:
+                return False
+        except Exception:
+            return False
+        if self.step_to(ct, tgt):
+            self.bg_walk += 1
+            return True
+        return False
+
+    def _bg_yield(self, ct, p, rnd):
+        """THE IDLE ROUND -- spent NOT BLOCKING THE ENGINEER.
+
+        ⛔ THE ENGINE'S OWN RULE IS THE WHOLE TEST (`_push_w2_blocking`, reused
+        verbatim): a building is placed on a tile ORTHOGONALLY ADJACENT to the
+        builder placing it, so the four neighbours of a friendly builder are
+        exactly its build menu, and a body parked on one has taken a tile off
+        it.  The engineer is the builder this matters for -- it plants the
+        replacement tube and lays its prep barriers in the band this medic
+        stations in.
+        ⛔ THE HEAL OUTRANKS THE YIELD (this rung is reached only when nothing
+        is damaged), and BOTH TAILS ARE COUNTED: `bg_clear` is idle rounds
+        already out of the way, `bg_yield` steps actually taken.
+        """
+        self.bg_idle += 1
+        if not self._push_w2_blocking(ct, p):
+            self.bg_clear += 1
+            return
+        try:
+            if ct.get_move_cooldown() != 0:
+                return
+        except Exception:
+            return
+        best = None
+        for d in CARDINALS:
+            q = p.add(d)
+            if not self.ibp(q):
+                continue
+            try:
+                if not ct.is_tile_passable(q):
+                    continue
+            except Exception:
+                continue
+            if self.tile_owner(q) not in (OWNER_NONE, OWNER_DOOR):
+                continue
+            if self._push_w2_blocking(ct, q):
+                continue
+            key = (q.x, q.y)                        # canonical, so the step
+            if best is None or key < best[0]:       # is deterministic
+                best = (key, q)
+        if best is None:
+            return
+        try:
+            if self.step_to(ct, best[1]):
+                self.bg_yield += 1
+        except Exception:
+            return
+
+    def _bg_recall(self, ct, p, rnd):
+        """THE RELEASE PATH, AND IT IS DISCLOSED IN FULL.
+
+        The claim (`_bg_claim`) going False is the release -- most often
+        because `corefire_fresh` went true, i.e. our core is ACTUALLY LOSING HP
+        -- and it is evaluated on the SAME round, above the keeper's whole
+        ladder, so "returns home immediately" is literal: the round the alarm
+        fires is the round this body starts walking back.
+
+        ⛔ WHY A WALK AND NOT A BARE FALL-THROUGH.  Handing the round straight
+        to `_home_keeper` from a tile in the enemy's band would run the whole
+        home ladder -- belt rungs, harvester rungs, the door -- from a position
+        none of them were written for.  So while the body is outside
+        SK_BG_HOME_DSQ of our core it does ONE thing, step toward the core, and
+        the moment it is home the flag clears and every later round is the
+        ordinary keeper turn, unchanged.
+        ⛔ RETURNING False HANDS THE ROUND BACK rather than parking the body.
+        """
+        if self.core is None:
+            self.bg_out = False
+            return False
+        if dsq_core(p, self.core) <= SK_BG_HOME_DSQ:
+            self.bg_out = False
+            self.bg_home_n += 1
+            return False                # home: the ordinary keeper turn runs
+        self.bg_recall_rounds += 1
+        try:
+            if ct.get_move_cooldown() != 0:
+                return False
+        except Exception:
+            return False
+        if self.step_to(ct, self.core):
+            self.bg_recall_steps += 1
+            return True
+        return False
+
+    def _bg_turn(self, ct, p, rnd):
+        """PIECE (a)'s ENTIRE TURN.  True if it spent this body's round.
+
+        ⛔ ONE CALL SITE, ABOVE THE ROLE SWITCH AND BELOW EVERY SURVIVAL
+        BRANCH (the corefire answer, ledger V5, the citadel dispatch).  With
+        the master off the first line returns False and the switch below is
+        character-for-character the adopted tree.
+        """
+        if not (SK_BARREL_GUARD and SK_BG_MEDIC):
+            return False
+        if self.role != SK_BG_MEDIC_ROLE:
+            return False
+        if self._bg_claim(ct, p, rnd):
+            if not self.bg_out:
+                self.bg_out = True
+                self.bg_out_n += 1
+                self.bg_out_rnd = rnd
+            self.bg_rounds += 1
+            if self._bg_medic_turn(ct, p, rnd):
+                return True
+            self._bg_yield(ct, p, rnd)
+            return True
+        if self.bg_out:
+            return self._bg_recall(ct, p, rnd)
+        return False
+
+    # --- (b) OVERLAPPING SUCCESSION -----------------------------------
+
+    def _bg_succ(self, ct, p, rnd, live, want):
+        """The engineer's IDLE band rounds prep the SUCCESSOR site.
+
+        THE MEASURED DEFECT (wealthdiag): median tube life 42 rounds early and
+        10 late, against a REPLACEMENT GAP of 44 rounds, and 11 overlapping
+        successions against 28 sequential ones.  At or above the floor the
+        engineer HOLDS STATION beside the newest tube and `_plant_gun` leaves
+        the just-built tile in `nest_site`, so the replacement of a knocked-out
+        tube starts from ZERO: re-site, walk, prep, then plant.  This rung
+        spends the hold rounds on the NEXT site instead, so a knockout costs
+        one turn and not a fresh commute.
+
+        ⛔ IT IS A DOSE OF EXISTING MACHINERY, NOT NEW MACHINERY.  The site
+        pick is `_pick_nest`, the prep is `_prep_barrier`, the watchdog refresh
+        is `_b2_hold_clocks`, and THE PLANT IS NOT HERE AT ALL: when a tube
+        goes down, `live` falls below `want`, the hold branch is not entered,
+        and the engineer's ordinary buy path finds `nest_site` already set and
+        this body already standing beside it -- so it plants THAT ROUND if the
+        bank allows.  "Builds immediately if funded" is a consequence of having
+        prepped, not a second code path.
+
+        ⛔ IT DOES NOT PLANT AND IT DOES NOT RAISE `want`.  Raising `want` here
+        would also move `skip_prep`, `_plant_gun`'s SK_TUBE_FUND waiver and the
+        post-plant re-arm -- three policies this arm has no mandate to change
+        and which would make a result unattributable.
+
+        ⛔⛔ THE ONE HAZARD IT CREATES IS A PERMANENT SITE BAN, and it is the
+        one the burst rule already paid for.  `_nest_site_watch` is a PROGRESS
+        watchdog: a site the body has not closed on for SK_NEST_STUCK_ROUNDS
+        rounds goes into `nest_bad` FOREVER, and a body that has ARRIVED and is
+        deliberately standing still records no new closest approach.  The
+        arrival branch therefore refreshes exactly the two clocks that watchdog
+        runs on (`_b2_hold_clocks`, called rather than copied).
+
+        ⚠ THE COST, DISCLOSED: the body stops standing beside the standing
+        tube.  On this baseline that costs nothing measurable -- the hold
+        branch's only other rung is `_guard_heal`, which returns False on every
+        SK_ROTATE-off round -- and piece (a) is what puts a body beside the
+        barrels instead.  On a rotation arm it would cost the babysit, which is
+        why this rung is gated BELOW that branch's own call site.
+
+        ⛔⛔ THE DEATH MEMO, AND THE DISCLOSURE IS DECIDABLE RATHER THAN
+        HEDGED.  `_nest_scan` excludes a candidate tile when
+        `rnd - nest_deaths[tile] < SK_DEATH_MEMO_ROUNDS`, and
+        SK_DEATH_MEMO_ROUNDS is 400.  ⇒ A TILE THAT LOST A TUBE CANNOT BE
+        RE-USED BY THE SUCCESSOR PICK INSIDE THE KILL WINDOW ON ANY CELL: the
+        programme's window closes at r300 and 400 > 300 by construction, and on
+        the adopted 30-cell f1 baseline 22 of 30 cells do not even RUN for 400
+        rounds.  Re-use is therefore not a live behaviour of this piece; what
+        IS live is arm 1's finding that the memo makes successive sites walk
+        OUTWARD.  SK_BG_SUCC_NEAR is this piece's answer (nearness-first
+        ordering, a reordering of the same legal set), and piece (c) is
+        Magnus's -- prefer tiles their guns do not bear on, rather than merely
+        tiles that have not yet lost a tube.  `nest_bad` (permanent) is NOT
+        touched by any of it.
+        """
+        if not (SK_BARREL_GUARD and SK_BG_SUCC):
+            return False
+        if self.role != SK_SIEGE_ENGINEER or self.enemy is None:
+            return False
+        if live < SK_BG_SUCC_LIVE:
+            self.bg_succ_low += 1
+            return False
+        self.bg_succ_rounds += 1
+        # (i) free a site whose tube already STANDS -- `_battery_rearm`'s own
+        # ledger test, and the ledger is the right authority for the reason it
+        # gives: `get_tile_building_id` can raise out of bounds and answers
+        # nothing useful out of vision.
+        s = self.nest_site
+        if s is not None:
+            for t in self._nest_slots():
+                if t is not None and t[1].x == s.x and t[1].y == s.y:
+                    self._battery_rearm()
+                    self.bg_succ_rearm += 1
+                    break
+        # (ii) pick the successor.  `_pick_nest` already excludes every tile our
+        # standing tubes occupy (`_nest_taken`) and applies the pair gap, so the
+        # successor cannot stack on the incumbent.
+        if self.nest_site is None:
+            self.nest_site = self._pick_nest(ct, p, rnd, near=SK_BG_SUCC_NEAR)
+            if self.nest_site is None:
+                self.bg_succ_nosite += 1
+                return False
+            self.bg_succ_site += 1
+            self.nest_best_d = None
+            self.nest_since = rnd
+            self.nest_anchor = None
+            self.nest_anchor_rnd = rnd
+            self._preprep_consume(rnd)
+        site = self.nest_site
+        # (iii) prep, hold, or walk.
+        if abs(site.x - p.x) + abs(site.y - p.y) == 1:
+            try:
+                cd = ct.get_action_cooldown()
+            except Exception:
+                cd = 1
+            if (cd == 0 and self.nest_prepped < SK_NEST_PREP_BARRIERS
+                    and self._prep_barrier(ct, p, site, rnd)):
+                self.bg_succ_prep += 1
+                return True
+            self.bg_succ_hold += 1
+            self._b2_hold_clocks(rnd)
+            return True
+        if self.step_to(ct, site):
+            self.bg_succ_walk += 1
+            return True
+        return False
+
+    # --- (c) THE SITE GUARD (Magnus's addendum) -----------------------
+
+    def _bg_site_class(self, taken):
+        """Is this pick a SUCCESSOR pick?  Both tails counted.
+
+        ⛔ THE OPENING PLANT IS OUT OF SCOPE BY CONSTRUCTION.  A pick counts as
+        a successor when a tube already stands (`taken`) or one has already been
+        knocked out (`nest_deaths`); at r0 neither is true, so the first tube --
+        the one every other plank depends on -- is sited exactly as today.
+        """
+        if not (SK_BARREL_GUARD and SK_BG_SITE):
+            return False
+        on = bool(taken) or bool(self.nest_deaths)
+        if on:
+            self.bg_site_on += 1
+        else:
+            self.bg_site_off += 1
+        return on
+
+    def _bg_dir(self, delta):
+        """(dx, dy) -> the Direction with that delta, or None."""
+        for d in DIRECTIONS:
+            if d.delta() == delta:
+                return d
+        return None
+
+    def _bg_guns(self, ct):
+        """[(pos, Direction, EntityType)] for up to SK_BG_SITE_MAX_GUNS of the
+        opposing bot's turrets, nearest THEIR core first.
+
+        ⛔ VISIBLE TURRETS FIRST, THEN THE TILE-KEYED MEMO.  `vis_enemy` carries
+        this round's sighting and `get_direction` is readable for anything in
+        vision; `armed_memo` / `armed_facing` (written by `_sense` since v601,
+        keyed on the TILE because a turret is a building and cannot move) carry
+        the ones we have walked away from.
+        ⚠ FAIL OPEN, AND IT IS THE ONLY HONEST DIRECTION: a turret we have never
+        seen is unknowable, so the guard simply does not price it.  Under-
+        marking costs this arm its effect on that tile; over-marking would cost
+        a plant.  A gunner can also ROTATE, so a remembered facing is a
+        hypothesis for a gunner and a fact for a sentinel (sentinels cannot
+        rotate) -- both are used, and the confirm column measures the engine's
+        own verdict on the chosen tile.
+        ⛔ THE CAP IS A CPU BOUND: each unit has 10ms a turn.
+        """
+        out = []
+        seen = set()
+        for eid, et, ep in self.vis_enemy:
+            if et not in TURRET_TYPES or ep is None or not self.ibp(ep):
+                continue
+            try:
+                face = ct.get_direction(eid)
+            except Exception:
+                continue
+            if face is None or face == Direction.CENTRE:
+                continue
+            out.append((ep, face, et, dsq_core(ep, self.enemy)))
+            seen.add((ep.x, ep.y))
+        for xy, v in self.armed_memo.items():
+            if xy in seen or v[0] not in TURRET_TYPES:
+                continue
+            f = self.armed_facing.get(xy)
+            if f is None:
+                continue
+            face = self._bg_dir(f)
+            if face is None:
+                continue
+            q = Position(xy[0], xy[1])
+            if not self.ibp(q):
+                continue
+            out.append((q, face, v[0], dsq_core(q, self.enemy)))
+        out.sort(key=lambda t: (t[3], t[0].x, t[0].y))
+        return [(q, f, et) for q, f, et, _d in out[:SK_BG_SITE_MAX_GUNS]]
+
+    def _bg_cover(self, ct, guns):
+        """The set of tiles those turrets bear on, from the ENGINE's own attack
+        pattern.
+
+        ⛔ `get_attackable_tiles_from(pos, facing, kind)` IS THE ENGINE'S
+        HYPOTHETICAL-TURRET PATTERN -- one call per turret, not per candidate.
+        The registered checker is `can_fire_from`; asking it per candidate is up
+        to 256 x 4 = 1024 engine calls inside ONE `_nest_scan` sweep against a
+        10ms budget, which is how a unit loses its turn.  So the SET is built
+        from the pattern getter and the CHOSEN tile is re-asked with
+        `can_fire_from` (`SK_BG_SITE_CONFIRM`) -- two independent engine
+        predicates, with their agreement reported rather than assumed.
+        """
+        cover = set()
+        for q, face, et in guns:
+            try:
+                tiles = ct.get_attackable_tiles_from(q, face, et)
+            except Exception:
+                continue
+            for t in tiles:
+                cover.add((t.x, t.y))
+        self.bg_cover_guns += len(guns)
+        self.bg_cover_n += len(cover)
+        return cover
+
+    def _bg_confirm(self, ct, guns, cover, site):
+        """The CROSS-PREDICATE CONTROL on the chosen tile only.
+
+        Counts agreement between `can_fire_from(turret, facing, kind, site)`
+        (Magnus's named checker) and membership of `site` in the set built from
+        `get_attackable_tiles_from`.  ⛔ IT TAKES NO DECISION -- a disagreement
+        is a column, not a veto -- so it cannot change what is planted; what it
+        can do is refute the substitution above, which is the point.
+        """
+        if not SK_BG_SITE_CONFIRM or site is None:
+            return
+        inset = (site.x, site.y) in cover
+        hit = False
+        for q, face, et in guns:
+            try:
+                if ct.can_fire_from(q, face, et, site):
+                    hit = True
+                    break
+            except Exception:
+                continue
+        if hit == inset:
+            self.bg_confirm_ok += 1
+        else:
+            self.bg_confirm_bad += 1
+        if inset:
+            self.bg_site_covered += 1
+        else:
+            self.bg_site_clear += 1
+
+    def _bg_killer_ban(self, ct, site, rnd):
+        """A tube was knocked out on `site`: ban what its KILLERS cover.
+
+        ⛔⛔ THIS IS THE ANSWER TO SERIAL DEATH BY THE SAME GUN, and it is the
+        half the DEATH MEMO cannot do: the memo bans the TILE that died, so the
+        next site walks one tile outward and stands in the SAME ray.  This bans
+        the RAY, for SK_BG_SITE_BAN_ROUNDS rounds.
+        ⛔ THE BEARING TEST IS `can_fire_from(turret, its facing, its type,
+        site)` -- the engine's own predicate, one call per consulted turret,
+        once per knockout.  Only turrets that actually BEAR ON the died tile
+        contribute; a gun elsewhere on the board bans nothing.
+        ⛔⛔ IT IS BOUNDED AND IT NEVER WRITES `nest_bad`.  `nest_bad` is
+        PERMANENT, and arm 1's refutation measured exactly what permanent bans
+        do -- "loss cells plant far because the death memo bans each knocked-out
+        tile and successive sites walk outward".  A ban that expires cannot
+        compound into that spiral, and `_pick_nest` retries WITHOUT the ban
+        before any existing fallback runs, so the guard can never empty a band
+        that today would have yielded a site.
+        """
+        if not (SK_BARREL_GUARD and SK_BG_SITE):
+            return
+        guns = self._bg_guns(ct)
+        if not guns:
+            return
+        bearing = []
+        for q, face, et in guns:
+            try:
+                if ct.can_fire_from(q, face, et, site):
+                    bearing.append((q, face, et))
+            except Exception:
+                continue
+        if not bearing:
+            return
+        cover = self._bg_cover(ct, bearing)
+        if not cover:
+            return
+        self.bg_ban_n += 1
+        self.bg_ban_tiles += len(cover)
+        exp = rnd + SK_BG_SITE_BAN_ROUNDS
+        for xy in cover:
+            if self.bg_ban.get(xy, -1) < exp:
+                self.bg_ban[xy] = exp
+
+    def _bg_ban_set(self, rnd):
+        """The live half of the bounded ban, expiring entries as it goes."""
+        if not self.bg_ban:
+            return None
+        dead = [xy for xy, e in self.bg_ban.items() if e <= rnd]
+        for xy in dead:
+            del self.bg_ban[xy]
+        return set(self.bg_ban) if self.bg_ban else None
+
     def _escalate_target(self, ct, p, rnd=None):
         """LEDGER V1's other half -- once a tile is escalated, the answer is
         the SHOOTER, not another conveyor.  Returns the enemy turret to remove.
@@ -11626,6 +12213,19 @@ class RolesMixin:
             # v632 behaviour exactly.
             if self._push_succ(ct, p, rnd, live, want):
                 return
+            # ⭐⭐ s57 BARRELS ARM 2, PIECE (b) -- OVERLAPPING SUCCESSION.
+            # ⛔ IMMEDIATELY BELOW THE PUSH'S OWN SUCCESSION RUNG so that arm,
+            # if it is ever ON, keeps its behaviour character for character and
+            # this one is reached exactly when that one declines.  SK_PUSH
+            # ships False, so on every arm of this wave the rung above returns
+            # on its first line and this is the first rung of the hold branch --
+            # which is the set of rounds in which the engineer has nothing to
+            # plant, and spending them on the NEXT site is the whole piece.
+            # ⛔ ABOVE `_guard_heal` for that rung's own stated reason (a
+            # rotation body's babysit should keep winning on a rotation arm; the
+            # gate is written so it can) and flag off -> False on the first line.
+            if self._bg_succ(ct, p, rnd, live, want):
+                return
             # ⭐⭐ v632 PLANK 10 (SK_ROTATE_GUARD) RUNG (b) -- THE HEAL, AHEAD
             # OF THE STAGE GATE.  A rotation body standing at the battery's
             # target has nothing to plant; the turn it would spend holding buys
@@ -12748,8 +13348,17 @@ class RolesMixin:
         self.batt2_eco_miss_rnd = rnd
         return True
 
-    def _pick_nest(self, ct, p, rnd):
+    def _pick_nest(self, ct, p, rnd, near=False):
         """The band, with LEDGER V4's per-tile death memory applied.
+
+        ⭐⭐ s57 BARRELS ARM 2 ADDS ONE OPTIONAL ARGUMENT AND TWO OPTIONAL
+        FILTERS, ALL DEFAULTED OFF.  `near=True` (piece (b), the successor
+        pick) turns on v619 PLANK 2's nearness-first ORDERING -- a reordering
+        of an identical legal set.  Piece (c) adds their-ray AVOIDANCE (a score
+        term, so it can never empty the band) and a BOUNDED killer-coverage BAN
+        (a filter, with its own retry).  Every existing caller passes neither,
+        and with the master off both are unreachable, so this method is
+        character-for-character v632's on every OFF arm.
 
         Scored: a legal firing line onto the footprint (axial or diagonal,
         since a sentinel shoots one tile wide along its facing), then d^2 as
@@ -12778,6 +13387,22 @@ class RolesMixin:
         # already stands, i.e. exactly on a FOLLOW-UP pick, so the first tube's
         # site is chosen by v618's rule unchanged and this cannot move S1.
         haste = bool(SK_S2_HASTE and taken)
+        # ⭐ s57 BARRELS ARM 2, PIECE (b): the successor pick leads with
+        # PROXIMITY.  Same `haste` parameter, same reordering, same legal set --
+        # the arm buys the ordering, not a new rule.  `near` is False on every
+        # existing call site.
+        if near and SK_BARREL_GUARD and SK_BG_SUCC:
+            haste = True
+        # ⭐⭐ s57 BARRELS ARM 2, PIECE (c) -- THE SITE GUARD, SUCCESSOR PICKS
+        # ONLY.  `cover` is a SCORE term (uncovered tiles rank first) so it can
+        # never empty the band; `block` is the bounded killer-coverage ban and
+        # gets its own retry immediately below.
+        cover = block = None
+        guns = ()
+        if self._bg_site_class(taken):
+            guns = self._bg_guns(ct)
+            cover = self._bg_cover(ct, guns) if guns else None
+            block = self._bg_ban_set(rnd)
         # ⭐⭐ v632 PLANKS 8+9 -- THE FIRST BATTERY IS CLUSTERED.  Magnus,
         # direct: "put the first 4 sentinels together ... then move to the next
         # position".  `SK_NEST_PAIR_MIN_GAP = 8` is v603's answer to a
@@ -12796,7 +13421,22 @@ class RolesMixin:
         if ((self.rot_body or self.rot_stage)
                 and self.rot_plants < SK_ROTATE_WANT):
             gap = SK_ROTATE_CLUSTER_GAP
-        site = self._nest_scan(ct, p, rnd, taken, gap, haste=haste)
+        site = self._nest_scan(ct, p, rnd, taken, gap, haste=haste,
+                               cover=cover, block=block)
+        # ⭐⭐ s57 BARRELS ARM 2, PIECE (c) -- THE ANTI-SPIRAL RETRY, AND IT IS
+        # WHAT KEEPS THE BAN FROM MAKING THE WALK-OUT WORSE.  If the bounded ban
+        # emptied the band, the SAME scan runs again without it, BEFORE any
+        # existing fallback.  So the guard can only ever change WHICH tile the
+        # primary scan returns -- never whether the relax/exhaust retries below
+        # run, and never whether a site exists at all.  Counted, so "it never
+        # bound" and "it bound and was relaxed" are different readings.
+        if site is None and block:
+            site = self._nest_scan(ct, p, rnd, taken, gap, haste=haste,
+                                   cover=cover, block=None)
+            if site is not None:
+                self.bg_site_relax += 1
+        if guns and site is not None:
+            self._bg_confirm(ct, guns, cover or (), site)
         # ⭐ v613 PLANK 2(c), SK_TUBE_GAP_RELAX.  "The band d^2 14-32 is wide
         # enough" is true on a 30x30 and NOT on a 12x12: with one tube standing,
         # an 8-d^2 spread can empty the band outright, and the engineer then
@@ -12832,7 +13472,8 @@ class RolesMixin:
             self.nest_prepped = 0
         return site
 
-    def _nest_scan(self, ct, p, rnd, taken, gap, haste=False, lo=None):
+    def _nest_scan(self, ct, p, rnd, taken, gap, haste=False, lo=None,
+                   cover=None, block=None):
         """`_pick_nest`'s band sweep, with the pair spread as a PARAMETER.
 
         Extracted unchanged from v612 so PLANK 2(c) can re-run it at a relaxed
@@ -12907,6 +13548,11 @@ class RolesMixin:
                     continue
                 if (x, y) in self.nest_deaths and rnd - self.nest_deaths[(x, y)] < SK_DEATH_MEMO_ROUNDS:
                     continue
+                # ⭐ s57 BARRELS ARM 2, PIECE (c) -- THE BOUNDED KILLER-COVERAGE
+                # BAN.  `block` is None on every existing caller and on every
+                # OFF arm, so this is one `is not None` test there.
+                if block is not None and (x, y) in block:
+                    continue
                 if taken:
                     close = False
                     for t in taken:
@@ -12929,6 +13575,16 @@ class RolesMixin:
                              d == SK_NEST_DSQ_MAX and abs(dx) == abs(dy), d)
                 else:
                     score = (d == SK_NEST_DSQ_MAX and abs(dx) == abs(dy), d, -p.distance_squared(q))
+                # ⭐⭐ s57 BARRELS ARM 2, PIECE (c) -- THEIR RAY, PREPENDED AS A
+                # PREFERENCE AND NOT AS A FILTER.  Magnus's wording is "a term
+                # PREFERRING tiles no standing visible enemy turret bears on",
+                # and the distinction is load-bearing: a filter can empty the
+                # band and cost us the tube outright, while a leading score key
+                # takes an uncovered tile when one exists and the same tile as
+                # today when none does.  Both orderings get the same prefix, so
+                # the arm composes with `haste` instead of replacing it.
+                if cover is not None:
+                    score = ((x, y) not in cover,) + score
                 if best is None or score > best:
                     best = score
                     site = q
@@ -13542,6 +14198,24 @@ class RolesMixin:
             if SK_BATTERY2_LEDGER:
                 self.batt2_seen[tid] = rnd
             self.batt2_hold_since = None
+        # ⭐ s57 BARRELS ARM 2, INSTRUMENT (3) -- THE PLANT'S FACING CLASS.
+        # Magnus's diagonal question, answered by column: a sentinel's line is
+        # single-tile-wide and may be axial or exactly diagonal
+        # (`_firing_face`), and the two classes are not obviously equal in
+        # survival.  ⛔ NO ENGINE CALL, NO DECISION -- `is_cardinal()` is pure
+        # Python on a Direction -- so the tape is unchanged and this runs on
+        # BOTH arms.
+        if SK_BG_FACE_STAT:
+            try:
+                _card = bool(face.is_cardinal())
+            except Exception:
+                _card = None
+            if _card is not None:
+                self.bg_face[(site.x, site.y)] = _card
+                if _card:
+                    self.bg_plant_card += 1
+                else:
+                    self.bg_plant_diag += 1
         # ⭐ v632 PLANKS 8+9 -- THE PHASE PLANT COUNTER.  It drives the FIRST
         # battery's clustering in `_pick_nest` ("put the first 4 sentinels
         # together ... then move to the next position") and it is the arm's
@@ -13809,6 +14483,24 @@ class RolesMixin:
                 continue
             self.nest_deaths[(site.x, site.y)] = rnd        # V4
             self.nest_lives.append(rnd - born)
+            # ⭐⭐ s57 BARRELS ARM 2, PIECE (c) -- THE KILLER-COVERAGE BAN, at
+            # the one place in the tree that knows a tube has just gone down.
+            # No-op on every master-off arm (first line of the callee).
+            self._bg_killer_ban(ct, site, rnd)
+            # ⭐ s57 BARRELS ARM 2, INSTRUMENT (3) -- TUBE LIFE BY FACING CLASS.
+            # ⛔ NO LOGIC AND NO ENGINE CALL: a dict pop and two adds, so it is
+            # inert on the tape and runs on BOTH arms (an OFF arm with no column
+            # is half a comparison).  ⚠ UNCENSORED ONLY -- a tube still standing
+            # at the end contributes no life, the same convention the banked
+            # `life_med_uncens` uses.
+            if SK_BG_FACE_STAT:
+                _c = self.bg_face.pop((site.x, site.y), None)
+                if _c is True:
+                    self.bg_life_card += rnd - born
+                    self.bg_life_card_n += 1
+                elif _c is False:
+                    self.bg_life_diag += rnd - born
+                    self.bg_life_diag_n += 1
             if SK_BATTERY2 and SK_BATTERY2_LEDGER:
                 self.batt2_seen.pop(tid, None)
             ledger -= 1

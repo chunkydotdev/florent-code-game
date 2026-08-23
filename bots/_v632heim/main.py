@@ -1043,6 +1043,63 @@ class Player(CommonMixin, RolesMixin, CoreMixin):
         self.tube_seat = None         # 0 or 1, claimed once off slot 7
         self.nest_deaths = {}         # V4: (x,y) -> round it killed a turret
         self.nest_lives = []
+        # ⭐⭐ s57 BARRELS ARM 2 (SK_BARREL_GUARD) -- PER-BODY STATE.  Every unit
+        # gets its own `Player`, so all of this is per body and none of it is a
+        # team fact; the two team facts the arm reads (tubes standing, home
+        # bodies alive) are existing STORE reads, not fields.
+        # GAME CONTEXT: in-engine bookkeeping for our own pieces in the Florent
+        # Code League, a sandboxed bot-vs-bot competition.
+        self.bg_out = False           # the medic body is re-tasked forward
+        self.bg_out_n = 0             # re-task EPISODES (rising edges)
+        self.bg_out_rnd = -1
+        self.bg_rounds = 0            # rounds spent under the re-task
+        self.bg_walk = 0
+        self.bg_seen = 0              # rounds a damaged forward tube was seen
+        self.bg_heal_rounds = 0       # rounds standing orthogonally beside one
+        self.bg_heals = 0             # heals actually delivered
+        self.bg_poor = 0              # heal refused by the bank floor
+        self.bg_idle = 0
+        self.bg_clear = 0             # idle rounds already out of the way
+        self.bg_yield = 0             # idle rounds that stepped aside
+        self.bg_recall_rounds = 0     # rounds under the release path
+        self.bg_recall_steps = 0
+        self.bg_home_n = 0            # releases that reached home
+        # the security read's three terms, BOTH TAILS, per term
+        self.bg_sec_yes = 0
+        self.bg_sec_no_fire = 0
+        self.bg_sec_no_turret = 0
+        self.bg_sec_no_body = 0
+        self.bg_no_tube = 0           # claim refused: no forward tube stands
+        # (b) succession
+        self.bg_succ_rounds = 0
+        self.bg_succ_low = 0          # refused: fewer than SK_BG_SUCC_LIVE
+        self.bg_succ_rearm = 0
+        self.bg_succ_site = 0
+        self.bg_succ_nosite = 0
+        self.bg_succ_prep = 0
+        self.bg_succ_hold = 0
+        self.bg_succ_walk = 0
+        # (c) the site guard
+        self.bg_site_on = 0           # picks the guard applied to
+        self.bg_site_off = 0          # ... and picks it declined (the opening)
+        self.bg_cover_n = 0           # tiles in the covered set, summed
+        self.bg_cover_guns = 0        # opposing turrets consulted, summed
+        self.bg_site_covered = 0      # chosen sites that ARE covered anyway
+        self.bg_site_clear = 0        # ... and chosen sites that are not
+        self.bg_confirm_ok = 0        # can_fire_from agreed with the pattern
+        self.bg_confirm_bad = 0       # ... and disagreed
+        self.bg_ban = {}              # (x,y) -> round the bounded ban expires
+        self.bg_ban_n = 0             # ban EVENTS (a knockout with a bearer)
+        self.bg_ban_tiles = 0         # tiles banned, summed over events
+        self.bg_site_relax = 0        # picks that had to drop the ban
+        # (3) the facing instrument -- no logic, both arms
+        self.bg_face = {}             # (x,y) -> True if the face is cardinal
+        self.bg_plant_card = 0
+        self.bg_plant_diag = 0
+        self.bg_life_card = 0
+        self.bg_life_card_n = 0
+        self.bg_life_diag = 0
+        self.bg_life_diag_n = 0
         # v626 PLANK A state: clear-clock is a cross-round position cache
         # (build rule 5 -> also on _clear_plans); cleared-once memory is about
         # the ENEMY's re-lay at a fixed tile and persists like nest_deaths.

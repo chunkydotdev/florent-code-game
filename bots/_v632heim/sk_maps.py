@@ -7456,3 +7456,175 @@ SK_HAMMER_HOLD = 20       # ⛔⛔ V2.1 -- THE BOUNDED ESCAPE, AND IT IS
 # knocked out reads as EXTENSION and is deferred.  That is a mis-read in the
 # HAMMER's favour, it is bounded by the release (the pair standing) and by the
 # episode, and SK_HAMMER_PRIO_BELT is the ablation that prices it.
+
+
+# ============================================================================
+# s57 BARRELS ARM 2 -- PROTECTION + SUCCESSION  (SK_BARREL_GUARD)
+# ============================================================================
+# GAME CONTEXT: in-engine mechanics of the Florent Code League, a sandboxed
+# bot-vs-bot programming competition on a simulated grid.  "tube"/"barrel" is
+# one of OUR sentinels standing in the band beside the opposing bot's core;
+# "knocked out" is the engine removing a piece per its documented rules.
+#
+# THE REGISTRATION (docs/research/EXPECTATION-v632heim-push1-2026-08-23.md,
+# tail): the two levers everything ranks first, one master, pieces ablatable.
+#   (a) THE BARREL MEDIC   -- a re-tasked HOME KEEPER walks to the band and
+#       heals damaged friendly forward sentinels (+4 HP / 1 Ti, orthogonal).
+#       Dose: tube life against the measured 42/10.
+#   (b) OVERLAPPING SUCCESSION -- while an incumbent tube stands, the engineer
+#       preps the SUCCESSOR site, so a knockout costs ~1 round and not the
+#       measured 44.  Dose: replacement gap, overlapping vs sequential.
+#   (c) THE SITE GUARD (Magnus's addendum, this session) -- the successor pick
+#       gains a THEIR-RAY term and a bounded KILLER-COVERAGE ban.
+#
+# ⛔ THE STAFFING IS THE THIRD FORM, AND THE FIRST TWO ARE WHY.  v1 of the
+# warden took the CAGE WALKER's rounds and deleted the second siege body (wins
+# 12 -> 5); v3 spawned a FIFTH body and paid +20% on the ONE GLOBAL ADDITIVE
+# scale factor for it.  This form re-tasks a body that already exists and is
+# already paid for, and only while home does not need it.
+#
+# ⛔ POPULATION MEASURED BEFORE THE BUILD (arm 1's lesson: a constant that never
+# binds is refuted inert by its own control).  `bg1build_pop.py` over the 30
+# adopted-baseline f1 cells: 29/30 cells have >= 1 forward tube standing
+# (median 78.1% of their rounds), 29/30 have >= 1 HOME turret standing (median
+# 93% of rounds), 16/30 book a forward-tube knockout, and 15/30 carry at least
+# one round with a DAMAGED forward tube -- but the damaged-round share is thin
+# (median 0.8% of rounds, concentrated: helheim A 159 rounds, holmgang A 141,
+# fimbulwinter B 45, bifrost A 24).  ⇒ the RE-TASK has population everywhere;
+# the HEAL ITSELF has population in half the cells and is rare in the rest.
+# That is the honest prior for the dose and it is written here BEFORE the grid.
+
+SK_BARREL_GUARD = False   # ⛔ THE MASTER, DEFAULT OFF.  Off is exact identity:
+                          # every call site is a call-site conjunction whose
+                          # first term is this module constant, so an OFF arm
+                          # makes zero extra engine calls and the replay is
+                          # byte-identical (measured, gate 6 of the runbook).
+
+SK_BG_MEDIC = True        # piece (a), ablatable alone under the master.
+SK_BG_SUCC = True         # piece (b), ablatable alone under the master.
+SK_BG_SITE = True         # piece (c), ablatable alone under the master.  It is
+                          # SEPARATE precisely so the medic/succession dose
+                          # stays attributable (Magnus's own instruction).
+
+SK_BG_MEDIC_ROLE = SK_HOME_KEEPER
+                          # ⛔ WHICH BODY.  The HOME KEEPER, per the
+                          # registration ("not the cage walker [v1], not a
+                          # spawn [v3]").  ⚠ DISCLOSED COST: this body is the
+                          # belt/harvester/killer PUBLISHER (slots 4, 5, 14),
+                          # so while it is forward those reports stop.  The
+                          # security read below is what bounds that, and the
+                          # eco OPENING is untouched by construction: the gate
+                          # needs a forward tube standing and the measured tube
+                          # birth is r53-r159.
+
+SK_BG_HOME_ROLES = (SK_HOME_KEEPER, SK_ORE_DENIER)
+                          # ⛔ WHAT "HOME BODIES" MEANS, AND THE CAGE WALKER IS
+                          # DELIBERATELY NOT IN IT: `_cage_walker` is
+                          # 100% enemy-anchored (`cage_lap(self.enemy)` IS the
+                          # role), so counting it would let the keeper leave
+                          # with nothing but a body at THEIR core behind it.
+                          # The census is `beat_fresh` over these roles' beat
+                          # slots -- the SAME read `_claim_role` runs on, no
+                          # new latch and no new slot.
+SK_BG_HOME_BODIES = 2     # ... and the bar.  2 = "the keeper is not the LAST
+                          # home body" (it counts ITSELF), i.e. the denier is
+                          # alive.  Stated that way because that is what the
+                          # number does; "two bodies remain after it leaves"
+                          # would need a third home role that does not exist.
+SK_BG_HOME_TURRETS = 1    # ⛔ "HOME TURRET COUNT INTACT", IMPLEMENTED AS A
+                          # FLOOR AND NOT AS A HIGH-WATER MARK, and the reason
+                          # is class-audit row #132: a remembered peak is a NEW
+                          # LATCH, and this tree's own measured experience with
+                          # always-fresh latches (freshness alone read TRUE in
+                          # 139 of 139 keeper rounds) is that a latch nobody
+                          # can drive to the other verdict is not a gate.  The
+                          # floor is a VISION CENSUS of our own gunners and
+                          # sentinels standing within GUARD_FWD_DSQ of our
+                          # core -- an existing read, both tails reachable.
+                          # ⚠ SK_HOME_GUNNER ships False, so the home turrets
+                          # this counts are COPY 6b's DOOR guns; the population
+                          # probe measures >= 1 standing in 29 of 30 cells (the
+                          # exception is paths seat B, which builds none and
+                          # where this gate therefore never opens -- disclosed,
+                          # not patched).
+SK_BG_HOME_DSQ = 20       # the recall's "home": d^2 of our own core footprint
+                          # inside which the released body hands the round back
+                          # to the ordinary keeper turn.  20 = the builder's own
+                          # vision radius^2, i.e. "close enough to see home".
+
+SK_BG_HEAL_FLOOR = 2      # bank floor under the barrel heal, in titanium.  The
+                          # registration's number, and it AGREES with
+                          # `_heal_action`'s own first line (`< 2 -> False`), so
+                          # this gate is the registration's and not a second
+                          # policy that could drift from the verb.
+
+SK_BG_SUCC_LIVE = 1       # ⛔ "WHILE >= 1 TUBE STANDS".  ⚠ AND THE HOLD BRANCH
+                          # THIS RUNG SITS IN IS ALREADY `live >= want` (2 on
+                          # the shipped config), so on this baseline the
+                          # effective precondition is TWO tubes, not one.  The
+                          # constant is kept explicit anyway: it is the
+                          # registration's own predicate and it is what makes
+                          # the rung correct if it is ever called from a second
+                          # site.  Population: 14 of 30 baseline cells reach a
+                          # peak of 2 concurrent forward turrets.
+SK_BG_SUCC_NEAR = True    # the successor pick prefers NEAR band tiles.  ⛔ NOT
+                          # A NEW SCORING RULE: it passes `haste=True` into
+                          # `_nest_scan`, which is v619 PLANK 2's own ordering
+                          # (nearness first, v618's two keys as tie-breaks) and
+                          # is REORDERING ONLY -- every filter, and therefore
+                          # the legal set, is identical.  It exists because the
+                          # DEATH MEMO forces successive sites outward (see the
+                          # disclosure block below) and nearness is the cheapest
+                          # available counter-pressure.
+
+# --- (c) THE SITE GUARD (Magnus's addendum) --------------------------------
+# ⛔ SCOPE: THE SUCCESSOR CLASS ONLY.  Both halves are applied only on a pick
+# where a tube already stands (`taken` non-empty) or a tube has already been
+# knocked out (`nest_deaths` non-empty).  The OPENING plant -- the one every
+# other plank depends on -- is untouched by construction.
+SK_BG_SITE_MAX_GUNS = 4   # how many opposing turrets are consulted per pick.
+                          # ⛔ A CPU BOUND, NOT A MODELLING CHOICE.  Each unit
+                          # gets 10ms per turn; `_nest_scan` sweeps 256 tiles,
+                          # so asking `can_fire_from` per candidate per turret
+                          # is up to 1024 engine calls inside one scan.  The
+                          # covered SET is therefore built ONCE per pick with
+                          # `get_attackable_tiles_from` (one call per turret --
+                          # the engine's own attack pattern for that
+                          # hypothetical turret) and the per-candidate test is a
+                          # set membership.
+SK_BG_SITE_CONFIRM = True # ⭐ THE CROSS-PREDICATE CONTROL, and it is what makes
+                          # the substitution above a MEASUREMENT rather than an
+                          # assertion: on the CHOSEN site only (<= 4 calls, once
+                          # per re-site) the arm also asks Magnus's named
+                          # checker `can_fire_from(turret, its facing, its type,
+                          # site)` and counts agreement/disagreement against the
+                          # set built from `get_attackable_tiles_from`.  Two
+                          # independent engine predicates; the columns are
+                          # reported.
+SK_BG_SITE_BAN_ROUNDS = 20
+                          # ⛔ THE KILLER-COVERAGE BAN IS BOUNDED, AND THE BOUND
+                          # IS THE POINT.  On a tube knockout the tiles covered
+                          # by the opposing turrets that BEAR ON the died site
+                          # are excluded from the successor pick for this many
+                          # rounds.  20 is the standing precedent in this tree
+                          # (SK_PUSH_RES_HOLD = 20, under SK_NEST_STUCK_ROUNDS =
+                          # 25).  ⛔⛔ IT NEVER WRITES `nest_bad`: that set is
+                          # PERMANENT, and a permanent ban compounding on every
+                          # death is exactly the outward spiral arm 1 measured
+                          # ("loss cells plant far because the death memo bans
+                          # each knocked-out tile and successive sites walk
+                          # outward").  This ban expires, and if it empties the
+                          # band the pick RETRIES WITHOUT IT (`bg_site_relax`,
+                          # counted) before any existing fallback runs -- so it
+                          # cannot make the walk-out worse than today's.
+SK_BG_FACE_STAT = True    # ⭐ INSTRUMENT ONLY, NO LOGIC, AND IT IS DELIBERATELY
+                          # NOT UNDER THE MASTER -- an OFF arm must carry the
+                          # same column or the comparison has one side.  It
+                          # counts each plant's firing face as CARDINAL or
+                          # DIAGONAL and accumulates the tube's life by class at
+                          # the knockout (Magnus's diagonal question, answered
+                          # by column).  ⚠ UNCENSORED ONLY: a tube still
+                          # standing at the end of the game contributes no life.
+                          # ⛔ IT MAKES NO ENGINE CALL AND TAKES NO DECISION, so
+                          # the OFF tape must stay byte-identical -- which is
+                          # MEASURED by the identity gate, not claimed.
