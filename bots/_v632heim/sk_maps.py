@@ -5457,7 +5457,7 @@ SK_STAND_SEATS_WALK = True  # ⚠⚠ THE POSITIONING HALF, AND IT IS DISCLOSED A
 #     acting body, so the funded rounds and the covering-seat rounds are
 #     DISJOINT in these cells -- which is a second, independent obstacle and
 #     not a restatement of the first.
-SK_STAND_ANSWER = False   # ⭐ THE MASTER.  False => `_stand_answer_action`
+SK_STAND_ANSWER = True   # ITERATION 4 (w3): the arm's refusal reason (mid-siege poverty, bank 0-20) is REMOVED by the doctrine (bank sits at 470 in 7/10 live games while sentinel sieges kill us) — the probed answer-sentinel choreography, funded at last   # ⭐ THE MASTER.  False => `_stand_answer_action`
                           # returns on its first line and the tree is byte
                           # identical to the t_cs_* baseline.
                           # THE TRIGGER: the corefire latch is FRESH (our core
