@@ -211,3 +211,21 @@ Bars: identity; both-tail seen-choosing per piece; dose = tube life +
 replacement gap + barrels-standing + pair share; currency grid ITT
 non-fall with rise hoped, median non-rise; guards vs t_b4_*.
 Play-it-well line mandatory.
+
+## BARRELS ARM 2 DISPOSITION (BUILDER s57)
+
+**SK_BG_MEDIC REFUSED — staffing form 3 of 3 fails geometrically** (0
+heals delivered; 44-140 walk-out rounds + corefire recall round-trips;
+the keeper is the belt publisher and its absence is the measured −35%
+mined). **Form 4 registered blind: THE ENGINEER SELF-HEALS** — already
+in the band (no walk), not a publisher (no eco loss), its idle rounds
+are the succession's own (one rung: heal adjacent damaged friendly
+sentinel when no plant/prep is available; bank floor; instrumented).
+**SK_BG_SUCC + SK_BG_SITE ADVANCE to the full grid medic-off** (F1
+flat-positive, pair rounds +15%; F3 gains pending attribution).
+Banked columns: knockouts are SENTINEL-dominated (their long guns, not
+pecks — the ban's premise right, its bearing test blind because the
+shooter is usually out of vision); diagonal-faced tubes die faster
+(5/5, small n — a facing-preference constant is a later candidate);
+replacement gap WORSENED while life rose (successions rarer not faster
+— the succession dose still thin).
