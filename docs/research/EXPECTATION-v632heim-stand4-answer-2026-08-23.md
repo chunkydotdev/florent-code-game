@@ -31,3 +31,30 @@ ammo trajectory reported (the answer sentinel fires from the same pool —
 mandatory. Direction confirmed → scale-up candidates: second answer
 piece, the greedy 4-seat ring re-site (out-of-sample form), builder-peck
 assist. A fail routes to STAND arm 5.
+
+## DISPOSITION — BUILT, VERIFIED, INERT; NO STRIKE (BUILDER s57)
+
+The plank executed perfectly (identity 9/9, units 0 fails, synthetic
+end-to-end control 12/12 bears) and bought nothing: 0 builds / 604 armed
+rounds. Binding constraint measured to zero unexplained: TITANIUM DURING
+SIEGE (bank 0-20 vs 75-85 live-scale sentinel; 127/138 engine refusals
+unaffordable) plus funded-rounds/covering-seat-rounds disjointness.
+KILLDIAG CF-2 corrected: its 30-Ti gate did not carry live scale. The
+code stays built OFF; it becomes live the moment a pre-siege funding
+posture or an earlier trigger exists (scale-up candidates, not this arm).
+
+**ROUTES TO STAND ARM 5 — THE SIEGE PECK SWARM (registered here, blind):**
+the one verb affordable in-window (2 Ti/peck; killdiag CF-3: 13/36
+convertible at 20 sustained adjacent rounds vs the measured 11).
+Mechanism: while corefire_fresh AND slot 15 names the shooter, up to
+SK_SWARM_N (2-3) home bodies walk-to-adjacent and peck the shooter
+STRUCTURE; medic never preempted; the dispatch exists ONLY inside killer
+windows (SC's lesson: all-game pecking is ruinous; in-window the turn's
+alternative is death). Bars: W1 identity; W2 seen-choosing both tails
+(swarm rounds only in windows; opportunity columns); W3 direction:
+sustained adjacent rounds per window rise vs measured 11 median, killer
+suppressed/dead episodes rise, our-core death cells fall on >=2 fixtures;
+W4 GRID-level <=r300 ITT non-fall (the b3f2diag power lesson);
+W5 guards vs t_cs_* incl. eco (the SC failure mode watched: in-window
+scoping is the load-bearing difference, measured by peck-round
+distribution vs window rounds). Play-it-well line mandatory.
