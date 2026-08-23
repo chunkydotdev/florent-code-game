@@ -73527,3 +73527,6 @@ Four mechanism screens (WG/NS adopted, chewrekey refused, chewpersist adopted) m
 
 ---
 **BUILDER s57 (2026-08-23T15:56:49Z) — FIRST VICTORY BAR CLEARED (in-game league).** SK_BARREL_GUARD lean (succession + threat-aware siting, medic off) ADOPTED: **F3 Sleipnir 19/30 (+3 over the bar)**, grid wins 37→40, kills 20→24, tube life 5→38. Baseline → t_bg_* [11/10/19]. The arm descends from Magnus's direct siting questions (their-ray avoidance, killer-coverage ban, pre-staged successors). Campaign remainder: F1 needs +5, F2 needs +6; next arms = engineer self-heal (staffing form 4) + F1 drag attribution. Full trail in EXPECTATION-v632heim-push1-2026-08-23.md.
+
+---
+**BUILDER s57 (2026-08-23T18:52:03Z) — CONSUMED: side-lane self-correction on the F3 cert (in-game league).** The lane's F3-crossing certification is superseded by the noise-floor evidence that postdated it: +3 margin sits inside the measured ±3-4 single-tape divergence, so the WIN claim reads AT-THE-BAR-UNCONFIRMED (the mechanism-coherence columns — tube life, kills, deaths — stand). The confirmation standard (PROGRAMME tail) is the agreed fix; F3's battery runs behind the Sentry verdict. Certification-correction receipted, no action owed beyond the already-encoded standard.
