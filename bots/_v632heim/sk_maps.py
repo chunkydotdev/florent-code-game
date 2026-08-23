@@ -6944,7 +6944,7 @@ SK_PUSH_RES_HALF = True   # ⭐ THE live == 1 HALF-BAR.  `_b2_pair_bar` prices
                           # arm's unit controls.
 
 # --- PIECE 2: THE WARDEN ---------------------------------------------------
-SK_PUSH_WARDEN = True     # sub-flag under the master, ablatable alone.  The
+SK_PUSH_WARDEN = False  # DEFAULT FLIPPED s57: v1-refused piece (cannibalizes the cage walker) must not ride the master silently — the burst-gap defect family     # sub-flag under the master, ablatable alone.  The
                           # SECOND RAIDER (role SK_CAGE_WALKER) travels to the
                           # enemy core's band, plants ONE launcher covering
                           # their core's HEAL SEATS, then stations at our own
@@ -7075,7 +7075,7 @@ SK_PUSH_BORDER = True     # ⭐ THROW PREFERENCE: a legal MAP-BORDER tile
 # answer is one sentence -- "the warden must be an ADDITIONAL body (the spawn
 # machinery), never a repurposed forward one"
 # (`docs/research/EXPECTATION-v632heim-push1-2026-08-23.md`, V3).
-SK_PUSH_WARDEN2 = True    # sub-flag under the master, ablatable alone.  ON:
+SK_PUSH_WARDEN2 = False  # DEFAULT FLIPPED s57: v3-refused piece (fifth-body scale tax) must not ride the master silently    # sub-flag under the master, ablatable alone.  ON:
                           # the CORE spawns ONE dedicated body at push time and
                           # that body -- and no existing role -- does the
                           # warden's job.  ⛔⛔ IT SUPERSEDES PIECE 2 v1 RATHER
