@@ -67,3 +67,24 @@ _under_attack term dropped (corefire+HP term kept); (b) RES with the
 BURST_HOLD-shaped bounded escape + live==1 half-bar; (c) WARD OFF —
 redesigned separately as additional-body form. Bars unchanged (P3 chain
 + P4 currency); the same smoke discipline; pieces still ablatable.
+
+## V2 DISPOSITION + V3 REGISTRATION (blind, BUILDER s57)
+
+V2: harm removed (v1 RES's −36% eco fully reversed; +13.6%), mechanism
+direction mild (pairs 20.4→26.5%, tube-down 20.8→13.8%, NET
+0.742→0.773), **P4 FLAT (7 kills / 12 wins) — not adopted per its own
+rising bar.** Banked as the chassis. The aggregation discrepancy on the
+DRY pair (73.1/87.4 vs 61.8/77.6) is disclosed; direction and size
+reproduce on every aggregation.
+
+**V3 — THE WARDEN AS AN ADDITIONAL BODY (Magnus's two-raider doctrine
+correctly staffed):** SK_PUSH_WARDEN2 — a DEDICATED body (the killbox
+third-spawn machinery pattern; 30 Ti + scale, affordable per wealthdiag)
+spawned at push time, walks out WITH the engineer (the cage walker keeps
+its existing job — v1's fatal staffing error inverted), plants the
+medic-exile launcher at their heal ring (self-operating, sleeping-dogs,
+border-preferred — v1's proven mechanics reused verbatim), then stations
+as the battery medic (barrel heals; note the r²=20 vision fact — the
+station must sit IN the band, not at the launcher). Bars: v1's P2-P5
+inherited; the absorption column (their heal/our gross, no-kill cells
+0.87-0.89) is THE dose; P4 rising currency still the verdict.
