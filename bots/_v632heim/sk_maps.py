@@ -3678,7 +3678,7 @@ SK_CHEW_CLOCK_MAX = 64
 # ⛔ OFF IS EXACT IDENTITY.  `_chew_giveup()` is a pure two-line read of a
 # module constant; with the flag False it returns SK_CAGE_MELEE_GIVEUP on every
 # call, makes zero engine calls, and touches no state.
-SK_KEEPER_CHEW_ON = False
+SK_KEEPER_CHEW_ON = True  # ADOPTED s57 2026-08-23 per pre-registered rule: P3 2/3 both directions, P4 all inside envelopes; outcome-flat disclosed in expectation verdict
 
 # THE KEEPER'S THRESHOLD.  1000 == GameConstants.MAX_TURNS, i.e. it CANNOT bind
 # inside a match -- which is the honest encoding of the registered mechanism

@@ -47,3 +47,34 @@ chew-rekey smoke's bank column is the reference); wins/kills informational
 Adopts if P1, P2 pass, P3 meets both directions on ≥2 fixtures, P4 holds.
 This is the family's second arm: if it fails its bars, the family PARKS
 per the two-strikes rule and #133 (SEAT_CLEAR re-price) takes the class.
+
+## VERDICT — ADOPTED per the pre-registered rule, typed by BUILDER s57
+
+**GAME CONTEXT: in-game analysis for the Florent Code League, a sandboxed
+bot-vs-bot programming competition.**
+
+P1 90/90. P2 pass at build (specimen class zero instances ON; tile turns
+over 5 enemy barriers vs 1). P3: pecks-on-enemy-buildings +1.9%/+1.2%/−6.2%
+(2/3); held-post idle rounds +15.8%/−34.5%/−35.8% (2/3) — both registered
+directions met on ≥2 fixtures. P4 all inside envelopes: alive 54(+0),
+deaths 51(+1), eco 36.87(−4.2%), harv 216(0.0%); the build's
+bank-starvation warning did NOT reproduce (bank<2 shares 0.045-0.162 both
+arms).
+
+**READOUT CORRECTION BANKED WITH THE VERDICT:** the readout's anomaly 3
+("F3's arm fired away from its mass; glacierkeep_seatA byte-identical") is
+FALSE — direct cmp shows glacierkeep_seatA (568 baseline rounds, F3's
+biggest mass holder) IS divergent; its coarser result-signature missed a
+content divergence, and the claimed impossibility (541-round fall from
+13 rounds of divergent mass) dissolves. The builder's arithmetic
+consistency check caught it; add to the instrument-lesson ledger: a
+divergence census used for attribution must be byte-level, never
+result-signature.
+
+**DISCLOSED WEAKNESS, so the adoption is not oversold:** outcomes are flat
+(wins 34→34, kills 22→21, eco −4.2% inside envelope); peck magnitudes are
+1-2%; F1's idle class GROWS +15.8% (divergence shuffle, 6 cells, two
+later losses); no fixture moves both dose directions favourably together.
+The plank is a mechanism win with unproven outcome value. Baseline stays
+**t_cp_*** [alive 54 / deaths 51 / wins 34 / kills 21 / eco 36.87 / harv
+216], per-fixture wins 10/9/15.
