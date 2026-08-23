@@ -1104,3 +1104,18 @@ on — played well first, because the readiness level is reached through
 delivery. The readiness latch's exact in-bot read is design work for THE
 BATTERY's arms (registered per arm); it must be an honest live signal
 (bank + income trend), never a wall-clock or round constant.
+
+## SMALL-STEPS SCALING (Magnus, direct, 2026-08-23)
+
+**"Iterate in small steps, try something small that does something in the
+right direction and then scale it up from there."** Operational form, on
+top of the three-plank lock: each arm ships the SMALLEST change that can
+show direction — one rung, one constant, one predicate — screened for
+SIGN before size; a confirmed direction then scales in registered
+increments (dose up, scope up) with the same guards at each step. A
+composed arm is admissible only after its pieces have each shown
+direction (or a piece is measured inert alone and the composition IS the
+smallest step that can show direction — disclosed as such). Verdict
+language: "direction confirmed, scaling" / "direction absent at smallest
+dose, arm re-aimed" — never a big-bang arm whose failure can't name which
+piece failed.
