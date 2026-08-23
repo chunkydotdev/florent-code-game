@@ -1190,3 +1190,35 @@ with certainty vs opp_sleipnir2**; (2) the ±4 floor governs ROBUSTNESS
 field), which seeds cannot test; (3) the ROBUSTNESS instrument is
 opponent variation: version-pinned variants locally, and THE LIVE
 UNRATED FIELD as the instrument of record (doctrine point 6 alignment).
+
+## THE IDENTITY INVERSION + THE ASSEMBLY MANDATE (Magnus, direct, 2026-08-23/24 night)
+
+**The live leg's verdict on the objective function: seven hardening
+adoptions and zero identity planks shipped = local screens vs our own
+siblings can only converge to a polished chassis. And the field ruled:
+Jython v266 swept us 5-0 playing THE SKALMAN DOCTRINE ITSELF (zero
+launchers/barriers/gunners; pure eco -> standoff sentinels d²16-25).**
+
+STANDING ORDER: **SKALMAN'S IDENTITY IS THE FIXED POINT; EXECUTION
+ITERATES.** Screens are demoted to execution debuggers — "the doctrine
+bot loses to the chassis locally" is information about execution, NEVER
+an argument against the identity. The live field is the only judge of
+identity (point 6, now structural). The chassis is the fallback, not
+the incumbent.
+
+THE ASSEMBLY (SK_DOCTRINE): home economy + defence until the eco latch;
+NO forward bodies pre-latch (no rush — the line's stated identity);
+defence = THE SENTRY (turret answers KEPT — Magnus explicit: "I'm not
+saying you can't destroy enemy offense turrets, do it") + THE BOX with
+TO-CELL PRIORITY for raider bodies (Magnus: "we need to get the raider
+into the box otherwise it just builds more turrets" — turret-killing
+without builder-boxing is whack-a-mole, measured in the leg's S5);
+the bank accrues; on latch fire the burst: raiders out, standoff
+4-sentinel battery in the d²16-25 band (the field's own winning band),
+conversion sized to the kill (~280-350 ammo). Substrate: every adopted
+hardening plank stays ON.
+
+GOVERNANCE FIX: the drift watch gains a BEHAVIOURAL-IDENTITY row — per
+adoption/wrap, decode the current bot's play (rush check, box check,
+phase check) and diff against the declared identity; encoding-level
+compliance is not identity-level compliance (the s57 lesson).
