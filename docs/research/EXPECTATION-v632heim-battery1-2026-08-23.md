@@ -63,3 +63,15 @@ ECO-READY latch — the battery's growth beyond the standing pair keys on a
 live funding signal (bank + income trend covering ~2.5-3 Ti/round ammo +
 barrel replacement), not on r300 and not on mere gate-affordability at
 one instant. Registered fully before the arm-2 build fires.
+
+**SIDE-LANE RIDER, CONSUMED (arm-2 registration requirement, the
+always-fresh lesson applied prospectively):** the eco-ready latch carries
+BOTH-DIRECTION bars on its fire-round distribution as a registered
+column — median, p10, and never-fired count per fixture. Falsifier LOW:
+never-fires ⇒ no hammer ever lands, r1000 defeats by construction.
+Falsifier HIGH: fires at spawn-adjacent rounds ⇒ the latch degenerated to
+always-true and the "hammer" is the rush the doctrine forbids. The latch
+must be SEEN choosing rounds — distribution spread across cells with
+different economic trajectories, calibrated against the banked 2.5-3
+Ti/round sustain rate. The arm-2 build discloses the predicate's read and
+the readout scores the distribution before any outcome column.
