@@ -82,3 +82,29 @@ NOT regress vs t_b4_* baseline** (arm 1's r333 is the disease; the
 execution + the battery latch consuming the +30% eco are the predicted
 cure — latch fire-rounds reported as the coupling column). K5 guards vs
 t_b4_* as arm 1's. Play-it-well line mandatory.
+
+## ARM 3 REGISTRATION — THE SPEED PACKAGE (Magnus: "Do it!"; typed blind
+before the arm-2 readout or the arm-3 build exist)
+
+**GAME CONTEXT: in-game analysis for the Florent Code League, a sandboxed
+bot-vs-bot programming competition.**
+
+Four pieces, one flag (SK_KILLBOX_FAST), all opening-scoped:
+1. PARALLEL BUILD — the keeper lays the cell's barriers (r3-7, its own
+   neighbourhood, pre-threat idle rounds) while the buyer places the
+   launcher; sequencing no longer serial.
+2. CORNER-FIRST HARD PREFERENCE — accept axis-rank loss for a 2-barrier
+   cell (the readiness/geometry trade disclosed with both counts).
+3. DIRECTIONAL SPAWN — the core spawns the buyer on the site-facing ring
+   tile (reuse can_spawn choice; 1-2 rounds saved).
+4. OPTIONAL THIRD SPAWN (sub-flag, separately ablatable) — an early
+   30-Ti builder dedicated to box completion then normal duty; priced
+   against the harvester it delays.
+
+**DOSE (the registered number): cell-complete round, target <=r8 vs the
+measured r14 median; launcher-ready round held at <=r5.** Both-tail
+seen-choosing continues from arms 1-2. GUARDS: the OPENING ECO is the
+watched column — first-harvester round, delivery at r50, eco-sum within
+arm-2's envelopes; tempo bar (K4') inherited — the box must never slow
+the kill. Play-it-well line mandatory. Fails route to arm 4 per the
+signature-move mandate.
