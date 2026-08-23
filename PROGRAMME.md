@@ -1135,3 +1135,19 @@ and the unhardened half of the field self-retires on a blind move()
 when a raider stops to work (pickup d²<=2, throw d²<=26). Build EARLY at
 low scale (~42 Ti base for box+sentinel). Sequence: engine probe of the
 full choreography FIRST (small-steps), then the registered arm.
+
+## THE BOX IS THE SIGNATURE MOVE (Magnus, direct, 2026-08-23)
+
+**"Iterate on the box until it works please, this is our signature move
+going forward. It needs to be able to handle quick rushes from teams
+that use launchers to get to the other side."** Standing mandate: the
+killbox family iterates until it works — Magnus's order EXEMPTS it from
+the two-strikes park; failed arms route to the next box arm, always.
+REQUIREMENT: the box must answer EARLY LAUNCHER-RELAY RUSHES (the banked
+prediction study: Baltsars/Mjolnir relay raiders across at r1-r5 with
+ammo by r5) — so the family's arms must cover the EARLY game: cheap
+edge/corner pockets built in the opening at low scale, the exile
+launcher planted on the measured rush corridors, and a reactive
+treadmill (throw-back) that works BEFORE any pocket exists. The engine
+probe (in flight) stamps the mechanics; every arm carries the
+seen-choosing and play-it-well disciplines like any other.
