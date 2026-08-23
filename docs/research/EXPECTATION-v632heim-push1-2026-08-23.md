@@ -88,3 +88,36 @@ as the battery medic (barrel heals; note the r²=20 vision fact — the
 station must sit IN the band, not at the launcher). Bars: v1's P2-P5
 inherited; the absorption column (their heal/our gross, no-kill cells
 0.87-0.89) is THE dose; P4 rising currency still the verdict.
+
+## V2-GRID VERDICT + THE UNIFYING DEFECT (BUILDER s57)
+
+**GAME CONTEXT: in-game analysis for the Florent Code League, a sandboxed
+bot-vs-bot programming competition.**
+
+**P2 chassis REFUSED:** P4's +0.0222 is noise by the registration's own
+flat=fail clause (DEFF-corrected ±0.264); P5 alive-sum trip (−3) is
+MECHANISM — all five losing cells had pairs stripped (readout table) and
+died. Tube birth moved 0.0 on every fixture — the chassis never touched
+plant timing. Execution line: gates fired as designed; what they gate is
+not what plants barrels. No strike; the family's residual is named
+below. F3 read 16/30 again (third touch, still unpowered).
+
+**THE UNIFYING DEFECT (composite-F1 diagnosis + the whole phase-3 arc):
+THE SPEND LADDER NEVER INVERTS.** On the six composite lost-kill cells:
+barrels ≤r300 1.36→0.39, harvesters 13→22, NET →0.196, with bank and
+bodies ample. The eco-ready latch opens the battery CEILING but the
+build priority still ranks eco above barrels forever — every
+wealth-creating arm watched the bot buy MORE ECONOMY inside the kill
+window. The hammer doctrine was encoded as a gate, never as a
+re-ranking.
+
+**NEXT ARM (SK_HAMMER_PRIO, registered blind):** when the adopted
+battery's own eco-latch has FIRED (no new latch — the #132 rule), the
+build ladder INVERTS: battery spending (barrels at covering seats, their
+ammo stream) outranks eco expansion (new harvesters, belt extension —
+belt REPAIR of existing delivery exempt) until the pair stands; the
+latch's existing latching makes this the hammer phase's standing
+posture. Bars: pair share and barrels-standing rise where the latch has
+fired (the composite's own collapsed columns are the dose); grid ITT
+non-fall with the rise hoped; guards vs t_b4_*; the ladder inversion
+seen-choosing (fires only post-latch — never in the opening).
