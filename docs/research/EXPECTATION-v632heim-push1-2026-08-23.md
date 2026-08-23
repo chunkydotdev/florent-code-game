@@ -138,3 +138,13 @@ when _battery_open later consults it — same bar met earlier, disclosed
 as a retiming and screened as such.** Bars unchanged; the dose now has
 its intended population (the latch firing at zero/one tubes, the gate
 deferring eco into barrel funding).
+
+**V2.1 AMENDMENT (blind, pre-grid):** the deferral episode gains the
+bounded escape (the _push_res_escape shape verbatim: after
+SK_HAMMER_HOLD=20 consecutive deferral rounds with the pair still not
+standing, release for the episode; re-arm on the next pair-loss/latch
+relapse) — the midgard 969-round unbounded deferral is the measured
+provenance. The warm-ring floor compression is DISCLOSED, bar unchanged
+(fires remain spread r24-364 with 17/60 never — choosing). After the
+amendment: the FULL three-fixture grid (F3's first read of the hammer
+family) and the verdict per the standing bars.
