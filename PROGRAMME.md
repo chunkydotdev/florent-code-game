@@ -1083,3 +1083,24 @@ to the next arm of the same plank, never to a new plank; "excellent" =
 the plank's dose-achieved approaches its measured dose-achievable, and
 the victory bars (>=16/30 per fixture; currently 10/9/16) are the
 campaign scoreboard.
+
+## ECO-READY HAMMER (Magnus, direct, 2026-08-23 — supersedes the hard r300 flip)
+
+**"The eco + defence line was so that we learn how to play those well. If
+we don't play them well, we will never beat the better teams. We don't
+have to lock a hard round for the sentinel barrels at r300, we should
+probably have an economy level we look for when we're funded enough to
+hammer the other team's core."**
+
+Operational form: SK_PHASE_ROUND=300 as a hard boundary is RETIRED from
+doctrine. The hammer (the full battery: barrels at concurrency + the ammo
+stream) opens on an ECONOMIC READINESS trigger — funded enough to sustain
+~2.5-3 Ti/round of ammunition plus barrel replacement (the banked
+requirement for ~4.5+ HP/round through enemy core-heal absorption,
+LOSSAUT-f1f2). The cheap standing pressure pair may exist earlier;
+the HAMMER waits for funding, not for a round number. Eco+defence
+excellence (THE ROUTE, THE STAND) is the foundation the trigger stands
+on — played well first, because the readiness level is reached through
+delivery. The readiness latch's exact in-bot read is design work for THE
+BATTERY's arms (registered per arm); it must be an honest live signal
+(bank + income trend), never a wall-clock or round constant.
