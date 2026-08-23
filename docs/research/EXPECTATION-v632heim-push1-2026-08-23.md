@@ -241,3 +241,22 @@ honestly. **NEW BASELINE t_bg_*** [alive 59 / deaths 47 / wins 40 /
 kills 24 / eco 37.30 / harv 218], per-fixture wins **11 / 10 / 19** vs
 bars 16/16/16. NEXT: engineer self-heal (staffing form 4) on this
 baseline; then the F1 drag attribution.
+
+## COMPOSITE SMOKE DISPOSITION + RESERVE v3 (registered blind, BUILDER s57)
+
+Chassis-on-barrels: F1 +2 wins/−77 median, F2 +3 kills/−38 median (the
+siting CURED the chassis's old pair-stripping — hypothesis confirmed),
+but **F3 gives back its bar margin (19→15, kills −5, eco −15%)**: the
+reserve holds eco during pair-short spans REGARDLESS of bank, and on the
+rich fixture that's holding eco hostage to save money already in hand.
+Grid 37 < baseline 40 → composite as-is refused.
+
+**RESERVE v3 (SK_PUSH_RES_BANKAWARE, one condition): the reserve
+RELEASES whenever the current bank already clears the live pair bar**
+(the hold exists to ACCUMULATE the bar; once cleared, holding is pure
+eco loss — the engineer's plant cadence, not money, is then the binder).
+Predicted: F1/F2 keep the discipline (poor banks), F3 keeps its economy
+(rich bank → near-always released). Bars: identity; seen-choosing (holds
+occur on poor cells, releases on rich — the bank column attached); the
+composite grid re-run: F1/F2 gains held, F3 within its bar, grid wins >=
+baseline 40; guards vs t_bg_*.
