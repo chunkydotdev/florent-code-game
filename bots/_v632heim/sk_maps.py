@@ -3580,6 +3580,98 @@ SK_LEASH_DUTY = False
                           # a defect fix in its own right and must be ablatable
                           # apart from the dispatch it protects.
 
+# --- v632 SURVIVAL FAMILY -- WORK AT A HELD POST (SK_KEEPER_WORK, queued 4.1b)
+# GAME CONTEXT: in-engine actions of our own builder bot in the Florent Code
+# League, a sandboxed bot-vs-bot programming competition on a simulated grid.
+# Registered expectation:
+# `docs/research/EXPECTATION-v632heim-keeperwork-2026-08-23.md`.
+#
+# WHAT IT ANSWERS: the EX-1 keeper-ring mass the nav-stall verdict disclosed and
+# deliberately left alone (979r bifrost_seatA bot 3, 1,477r jotunheim) is a
+# keeper standing at the core ring emitting NO VERB for hundreds of rounds.
+# Verbs do not move a builder, so holding the post and working are compatible.
+# ⛔ THE FLAG GATES VERB EMISSION ONLY.  It is a TERMINAL fall-through after
+# `_home_keeper_move` has already run, so no selector, no walk and no target in
+# this tree is touched; the body's tile sequence is the OFF tree's exactly
+# except where its own titanium spend later changes the game.
+#
+# ⚠⚠ MEASURED BEFORE BUILDING, AND THE FINDING IS DISCLOSED IN THE FLAG RATHER
+# THAN DISCOVERED AT READOUT (`scratchpad/s57_heim0/kwbuild_mkprobe.py`, a
+# read-only env-gated probe that reproduced t_ns_f1 30/30 byte-identically with
+# the tracer ON).  Across the WHOLE F1 tape the home keeper holds -- alive,
+# action cooldown 0, no verb, no tile change -- for **3,258 rounds**, and the
+# ADJACENT-OPPORTUNITY census of those rounds is:
+#     damaged friendly building, >=4 missing ... 55 (1.69%), 51 on the CORE
+#     damaged friendly building, 1..3 missing ... 10 (0.31%)
+#     damaged friendly BUILDER BOT ............ 0  (0.00%)
+#     empty belt-plan tile (tier 2's need) .... 30 (0.92%)
+#     apron_lost tile (tier 3's need) ......... 12 (0.37%)
+#     enemy building adjacent ................ 431 (13.2%)
+#     post is core-adjacent .................. 2,861 (87.8%)
+# ⛔ AND THE 55 FULL-VALUE HEAL ROUNDS ALL SIT AT A BANK OF 0 (9) OR 1 (46).
+# That is not a coincidence, it is the mechanism: `_heal_action`
+# (`sk_roles.py:1716`) runs on EVERY one of these rounds from the keeper's own
+# ladder and refuses only at `get_global_resources() < 2`.  ⇒ THE EXISTING RUNG
+# ALREADY HARVESTS THE ENTIRE HEAL OPPORTUNITY ABOVE A BANK OF 2, and this flag
+# is reachable ONLY in its complement.  The two registered K2 specimens
+# (bifrost_seatA 979 holds, jotunheim_seatA 521 holds) read ZERO opportunity in
+# every class -- their keeper stands beside an UNDAMAGED core with an intact
+# belt -- so this flag is byte-identity on both by construction, and the dose
+# lives in 6 other F1 cells (helheim_seatA 34, midgard_seatB 10, paths_seatB 5,
+# helheim_seatB 3, longhouse_seatB 2, skald_seatB 1).
+#
+# TIERS 2 AND 3 OF THE REGISTRATION ARE NOT IMPLEMENTED, AND THE REASON IS A
+# PROOF RATHER THAN A PREFERENCE.  The precondition of this fall-through is that
+# the keeper's ENTIRE action ladder ran this round and declined -- the ladder is
+# gated on `get_action_cooldown() == 0` (`sk_roles.py:1497`), which is also the
+# precondition for this rung being able to act at all.  So `_belt_action`
+# (`sk_roles.py:2369`, the belt-continuity recogniser: `belt_plan` face lookup
+# on an orthogonally adjacent tile) and `_apron_action` (`sk_roles.py:3984`, the
+# apron-loss recogniser: `apron_lost` membership on an orthogonally adjacent
+# tile) have ALREADY refused every need they recognise from this post.  A tier-2
+# or tier-3 build here could fire only by bypassing one of their adopted gates
+# (`may_build`, `escape_ban`, `belt_escalated`, the self-trap guard,
+# `_apron_budget_ok`, `path_arbiter_ok`, `_chest_refuse`), which the
+# registration forbids in the same sentence that asks for the tier.  Census
+# agrees it would be noise either way: 22 of the 30 belt-need rounds and 10 of
+# the 12 apron-need rounds hold a bank below one conveyor's price.
+#
+# THE SPEND CAP, AND IT IS STRUCTURAL RATHER THAN A NUMBER:
+#   (a) the turn is provably free -- the rung's own precondition is that no verb
+#       and no move happened for this body this round;
+#   (b) FULL-VALUE heal (>= 4 missing, so no HP overflows -- `_core_medic`'s own
+#       doctrine, `sk_roles.py:895-896`): floor is the heal's own 1 Ti price.
+#       ⛔ THIS IS NOT A LOWERED FLOOR, IT IS THE COMPLEMENT OF AN EXISTING ONE:
+#       at a bank of >= 2 `_heal_action` already took the round, so this branch
+#       is reachable only at a bank of 0 or 1, and at a bank of 1 a heal is the
+#       ONLY legal purchase left in the game (peck 2 Ti, conveyor/barrier 3 Ti
+#       base and scaled above it, and 1 titanium converts to 1 ammunition which
+#       is below a gunner's 4 and a sentinel's 10 per shot).  A floor above 1
+#       there protects no other spend; it only forfeits the titanium.
+#   (c) PARTIAL heal (1..3 missing) and the BUILDER-BOT heal are value classes
+#       `_heal_action` cannot reach at any bank (it requires >= 4 missing and a
+#       BUILDING id, so a damaged friendly BOT on an adjacent tile is never
+#       healed by this tree), so they are genuinely discretionary and pay the
+#       tree's standing discretionary floor, SK_MEDIC_TI_FLOOR (12), verbatim
+#       from `_core_medic` (`sk_maps.py:1045`, `sk_roles.py:884`);
+#   (d) the SK_ROTATE_FUND stand-down (`sk_core.py:459`) is honoured for every
+#       tier -- this is exactly the "keeper discretionary 1 Ti verb" class that
+#       gate names.  It is called LAST, only once a real target is in hand, so
+#       `fund_verb_held` counts a refusal of a real verb rather than a third
+#       blind tick per round.  Measured inert here (SK_ROTATE is False, so the
+#       predicate short-circuits: 0 of 3,258 holds).
+#   (e) the v618 PLANK 4 seat veto (`seat_heal_veto`) is honoured, verbatim from
+#       `_heal_action` (`sk_roles.py:1736`).
+# ⇒ NO NEW CONSTANT IS INTRODUCED and no build verb is added, so the +1% scale
+# ratchet is untouched by this flag: a heal is not a build.
+#
+# ⛔ OFF IS EXACT IDENTITY.  The one call site is `if SK_KEEPER_WORK:` and every
+# write is inside `_keeper_work`, which is reachable only under the flag, so the
+# `kw_*` counters stay 0 on every OFF arm and are the OFF-identity witnesses as
+# well as the dose instruments.  OFF cost is one branch on a False global, once
+# per keeper round, with ZERO engine calls.
+SK_KEEPER_WORK = False
+
 # ===========================================================================
 # v632 HEIMDALL PLANK 2 -- THE DEMOLITION SWEEP
 # ===========================================================================

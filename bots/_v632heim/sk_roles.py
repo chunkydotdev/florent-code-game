@@ -163,6 +163,8 @@ from sk_maps import (
     SK_WALK_GUARDS, SK_WALK_GUARD_BAN, SK_LEASH_DUTY,
     # --- the nav-stall detector (#131), read by the `_builder` wrapper only ---
     SK_NAV_STALL,
+    # --- work at a held post (queued 4.1b), read by `_home_keeper` only ------
+    SK_KEEPER_WORK,
 )
 
 # --- v632 PLANK A 4.2: the three guarded WALKS, as ban keys.  A tile is banned
@@ -1643,6 +1645,137 @@ class RolesMixin:
             if self._cover_gun_action(ct, p, rnd):  # v601 PLANK 2
                 return
         self._home_keeper_move(ct, p, rnd)
+        # ⭐ v632 SURVIVAL FAMILY -- WORK AT A HELD POST (SK_KEEPER_WORK).
+        # ⛔ TERMINAL, AND THAT IS THE WHOLE SAFETY ARGUMENT: it runs after the
+        # entire action ladder above AND after the whole movement layer, so it
+        # cannot pre-empt a single existing rung and it cannot touch a selector,
+        # a walk target or a step.  `_keeper_work` re-reads the engine to
+        # establish that this body neither acted nor moved this round before it
+        # emits anything (`sk_roles.py`, the method below), so on any round the
+        # tree already did something this call is a no-op.
+        if SK_KEEPER_WORK:
+            self._keeper_work(ct, p, rnd)
+
+    def _keeper_work(self, ct, p, rnd):
+        """SK_KEEPER_WORK: emit a heal on a round the held post emitted nothing.
+
+        GAME CONTEXT: an in-engine builder action in the Florent Code League, a
+        sandboxed bot-vs-bot programming competition.  `heal` is the engine's
+        1 titanium -> +4 HP verb on an orthogonally adjacent tile; it heals ALL
+        friendly entities standing on that tile.
+
+        ⛔⛔ THE PRECONDITION IS READ OFF THE ENGINE, NOT ASSUMED FROM THE CALL
+        SITE.  Two reads, and each closes a different hole:
+          * `get_action_cooldown() == 0` -- a verb was emitted this round (or the
+            ladder never ran because the cooldown was already busy).  Either way
+            this rung must be silent, and this is also the legality gate: a
+            builder that acted cannot act again.
+          * `get_position() == p` -- this body MOVED this round.  The registered
+            falsifier for this plank is any movement delta inside a hold, so the
+            rung refuses to emit on a round the body moved rather than trusting
+            that the movement layer returned quietly.
+        A body that neither acted nor moved has a turn worth exactly zero, which
+        is the only state this plank claims.
+
+        THE SPEND CAP is documented in full at the flag (`sk_maps.py`,
+        SK_KEEPER_WORK).  In one line: the FULL-VALUE heal (>= 4 missing) is
+        reachable only in `_heal_action`'s complement -- a bank of 0 or 1, where
+        1 titanium buys nothing else in the game -- and every other class pays
+        SK_MEDIC_TI_FLOOR, the floor `_core_medic` already uses for the same
+        1 titanium verb.
+        """
+        try:
+            if ct.get_action_cooldown() != 0:
+                return False
+            here = ct.get_position()
+            if here.x != p.x or here.y != p.y:
+                return False
+            bank = ct.get_global_resources()
+        except Exception:
+            return False
+        self.kw_holds += 1
+        if bank < 1:
+            return False                # cannot afford the 1 Ti heal at all
+        foot = core_tiles_xy(self.core) if self.core is not None else ()
+        best = None                 # (key, q, on_core, partial, bot, reachable)
+        for d in CARDINALS:
+            q = p.add(d)
+            if not self.ibp(q):
+                continue
+            xy = (q.x, q.y)
+            # v618 PLANK 4's VETO, verbatim from `_heal_action`: a seat that
+            # plank refused this round must not be healed by a rung underneath
+            # it.  Flag off => `seat_heal_veto` is empty and this is a no-op.
+            if SK_SEAT_HEAL and xy in self.seat_heal_veto:
+                continue
+            bld_miss = 0
+            bot_miss = 0
+            try:
+                bid = ct.get_tile_building_id(q)
+                if bid is not None and ct.get_team(bid) == self.team:
+                    bld_miss = ct.get_max_hp(bid) - ct.get_hp(bid)
+            except Exception:
+                continue
+            # ⛔ THE ONE CLASS `_heal_action` STRUCTURALLY CANNOT REACH: it keys
+            # on `get_tile_building_id`, so a damaged friendly BUILDER BOT --
+            # which is a unit and not a building -- is never healed by this
+            # tree, at any bank.  `heal(pos)` heals every friendly on the tile,
+            # so the same verb covers it with no new engine capability.
+            try:
+                uid = ct.get_tile_builder_bot_id(q)
+                if uid is not None and ct.get_team(uid) == self.team:
+                    bot_miss = ct.get_max_hp(uid) - ct.get_hp(uid)
+            except Exception:
+                pass
+            miss = bld_miss if bld_miss > bot_miss else bot_miss
+            if miss <= 0:
+                continue
+            # RANK 0 = full-value (nothing overflows), RANK 1 = partial.  The
+            # ranks carry DIFFERENT floors, so they are ordered rather than
+            # merged: a full-value heal outranks a partial one at equal damage.
+            rank = 0 if miss >= 4 else 1
+            key = (rank, -miss)
+            if best is None or key < best[0]:
+                # `reachable` = would `_heal_action` (`sk_roles.py:1716`) target
+                # this tile at a sufficient bank?  It requires a BUILDING id and
+                # >= 4 missing, so that predicate is exactly `bld_miss >= 4`.
+                best = (key, q, xy in foot, rank == 1, bot_miss > 0,
+                        bld_miss >= 4)
+        if best is None:
+            return False
+        _key, q, on_core, partial, has_bot, reachable = best
+        # THE FLOOR, AND IT KEYS ON REACHABILITY RATHER THAN ON THE TARGET'S
+        # SHAPE.  A tile `_heal_action` would have taken at a bank of >= 2 is
+        # this rung's COMPLEMENT: it can only be standing here at a bank of 0 or
+        # 1, where 1 titanium buys nothing else in the game, so its floor is the
+        # verb's own price and the cap is self-limiting.  Every other tile --
+        # a partial (1..3 missing) heal, or a damaged friendly BUILDER BOT that
+        # no rung in this tree reaches at ANY bank -- is genuinely
+        # discretionary, so it pays `_core_medic`'s floor verbatim.
+        if not reachable and bank <= SK_MEDIC_TI_FLOOR:
+            self.kw_held += 1
+            return False
+        # THE SK_ROTATE_FUND STAND-DOWN, called LAST and only with a real target
+        # in hand, so `fund_verb_held` counts the refusal of a verb rather than
+        # a third blind tick per keeper round.  This IS the "keeper
+        # discretionary 1-2 Ti verb" class that gate was written for.
+        if self._fund_refuse(ct, rnd):
+            self.kw_held += 1
+            return False
+        try:
+            if not ct.can_heal(q):
+                return False
+            ct.heal(q)
+        except Exception:
+            return False
+        self.kw_heals += 1
+        if on_core:
+            self.kw_heals_core += 1
+        if partial:
+            self.kw_partial += 1
+        if has_bot:
+            self.kw_bots += 1
+        return True
 
     def _escape(self, ct, p, rnd):
         """Boxed in anyway (somebody else built the last tile): destroy one

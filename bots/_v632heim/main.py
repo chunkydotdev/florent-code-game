@@ -1266,6 +1266,27 @@ class Player(CommonMixin, RolesMixin, CoreMixin):
                                       # seat (already in position)
         self.duty_steps = 0           # of those, rounds it STEPPED toward one
 
+        # --- v632 SURVIVAL FAMILY -- WORK AT A HELD POST (SK_KEEPER_WORK) ---
+        # Same unconditional rule and the same engine reason as the block above:
+        # a flag gates BEHAVIOUR, never the EXISTENCE of state.  All six stay 0
+        # on every SK_KEEPER_WORK-off arm -- `_keeper_work` is their only writer
+        # and it is reachable only under the flag -- which makes them the
+        # OFF-IDENTITY WITNESSES as well as the dose instruments.
+        self.kw_holds = 0             # DENOMINATOR: rounds this body finished a
+                                      # keeper turn alive with action cooldown 0,
+                                      # no verb and no tile change (the held
+                                      # post).  An observation, not an effect.
+        self.kw_heals = 0             # EFFECT: work heals actually emitted
+        self.kw_heals_core = 0        # of those, on a CORE footprint tile
+        self.kw_partial = 0           # of those, a 1..3-missing (partial) heal
+        self.kw_bots = 0              # of those, reached a friendly BUILDER BOT
+                                      # that carries no building (the class
+                                      # `_heal_action` structurally cannot heal)
+        self.kw_held = 0              # work verbs stood down by the spend cap
+                                      # (floor or SK_ROTATE_FUND) WITH a real
+                                      # target already in hand -- a refusal of a
+                                      # verb, not a blind tick
+
         # --- CORE ----------------------------------------------------------
         self.spawned = 0
         self.converts = 0
