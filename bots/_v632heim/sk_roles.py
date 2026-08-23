@@ -208,6 +208,7 @@ from sk_maps import (
     SK_KEEPER_CHEW_ON, SK_KEEPER_CHEW_GIVEUP,
     # --- s57 THE PUSH (SK_PUSH): pair reserve + warden + engineer forward ----
     SK_PUSH, SK_PUSH_RESERVE, SK_PUSH_RES_DEFENCE,
+    SK_PUSH_RES_HOLD, SK_PUSH_RES_HALF,
     SK_PUSH_WARDEN, SK_PUSH_WARDEN_ROLE, SK_PUSH_WARDEN_UNTIL,
     SK_PUSH_LAUNCH_RESERVE, SK_PUSH_PICKUP_DSQ, SK_PUSH_THROW_MAX_DSQ,
     SK_PUSH_MIN_SEATS, SK_PUSH_SITE_MAX_DSQ, SK_PUSH_WALK_MAX, SK_PUSH_GIVEUP,
@@ -7259,11 +7260,28 @@ class RolesMixin:
         calling it cannot.
 
         THE RELEASE IS THE PAIR STANDING, and it is a TEAM fact rather than a
-        body's ledger: `_two_tubes` reads the two forward-tube beats each tube
-        writes for itself (slot 7, v617's producer fix).  A keeper cannot see
-        the band, so a per-body ledger would read "no pair" for the whole game
-        and the reserve would never release -- the exact failure v620 PLANK 1
+        body's ledger: `_push_live_tubes` reads the two forward-tube beats each
+        tube writes for itself (slot 7, v617's producer fix) -- `_two_tubes`'s
+        own read, widened from a bool to its count.  A keeper cannot see the
+        band, so a per-body ledger would read "no pair" for the whole game and
+        the reserve would never release -- the exact failure v620 PLANK 1
         measured on the engineer's own count (`live = 2` on ZERO of 69 buys).
+
+        ⭐⭐ V2 AMENDMENT (b) -- TWO TERMS, AND THE V1 DISPOSITION NAMED BOTH.
+        v1's reserve was self-defeating on its own target column: withholding
+        eco starved the income that funds the pair (DRY one-tube rounds 73.1%
+        -> 87.4%, release fired in 9 of 30 cells).
+          * **THE BOUNDED ESCAPE** (`_push_res_escape`, SK_PUSH_RES_HOLD = 20)
+            -- `_b2_burst_hold`'s escape transplanted term for term, released
+            FOR THE EPISODE and re-armed on the next tube death rather than
+            disarmed for the match.
+          * **THE live == 1 HALF-BAR** (`_push_res_bar`, SK_PUSH_RES_HALF) --
+            at one standing tube only tube 2 is owed, so the bar is
+            `_battery_bar`, not the two-barrel purse.  Exact form in that
+            method's own note; it is not a literal halving.
+        BOTH RELEASE TAILS ARE COUNTED SEPARATELY (`push_res_off` for the pair
+        standing, `push_res_esc_pass` for the escape), because two releases
+        pooled into one column cannot be told apart in the readout.
 
         ⛔ THREE STRUCTURAL EXEMPTIONS, AND THEY ARE THE SPECIFICATION RATHER
         THAN SOFTENING -- none of them is a clause inside this method, so none
@@ -7296,12 +7314,18 @@ class RolesMixin:
         if not (SK_PUSH and SK_PUSH_RESERVE and SK_NEST_PAIR):
             return False
         try:
-            if self._two_tubes(ct):
+            live = self._push_live_tubes(ct, rnd)
+            if live >= 2:
+                self._push_res_watch(live)      # keep the death edge fed
                 self.push_res_off += 1          # RELEASED: the pair stands
                 return False
-            bar = self._b2_pair_bar(ct)
+            bar = self._push_res_bar(ct, live)
             self.push_res_bar = bar
-            if ct.get_global_resources() - self._push_price(ct, kind) >= bar:
+            bank = ct.get_global_resources()
+            if self._push_res_escape(rnd, live, bar, bank):
+                self.push_res_esc_pass += 1     # RELEASED: the bounded escape
+                return False
+            if bank - self._push_price(ct, kind) >= bar:
                 self.push_res_pass += 1         # armed, and this buy clears it
                 return False
         except Exception:
@@ -7309,6 +7333,146 @@ class RolesMixin:
         self.push_res_held += 1
         self.push_res_site[site] = self.push_res_site.get(site, 0) + 1
         return True
+
+    # --- PIECE 1, V2 AMENDMENT (b): THE HALF-BAR AND THE ESCAPE --------
+
+    def _push_live_tubes(self, ct, rnd):
+        """How many forward tubes stand RIGHT NOW: 0, 1 or 2.
+
+        ⛔ IT IS `_two_tubes`'s OWN READ, WIDENED FROM A BOOL TO ITS COUNT, and
+        nothing else changes: the same slot, the same `_tube_count`, the same
+        SK_TEAM_TUBES branch.  v1 asked "do BOTH stand?" and threw the middle
+        answer away -- but the middle answer is the whole subject of the V2
+        half-bar (54.8% of rounds are one-tube DRY rounds), so the caller now
+        keeps it.  `_two_tubes` itself is untouched; every other consumer of it
+        reads exactly what it read before.
+
+        THE FLAG-OFF BRANCH REPRODUCES `_two_tubes`'s v613 form: b21 set means
+        the pair stands (2); a non-zero word with b21 clear means the FIRST gun
+        exists and the second does not (1, `_s2_pending`'s own reading of the
+        same word); a zero word means no gun yet (0).
+
+        Costs one `read_store` and writes nothing, exactly as `_two_tubes`
+        does, and it is never reached on an OFF arm (`_push_refuse` returns on
+        its first line).
+        """
+        if not SK_NEST_PAIR:
+            return 0
+        word = ct.read_store(SK_SLOT_NEST)
+        if not SK_TEAM_TUBES:
+            if not word:
+                return 0
+            return 2 if (word & NEST_SITE2_BIT) else 1
+        return self._tube_count(word, rnd)
+
+    def _push_res_bar(self, ct, live):
+        """The purse the reserve is protecting, in titanium, given `live`.
+
+        ⭐ THE V2 HALF-BAR, AND THE EXACT FORM IS THE POINT (SK_PUSH_RES_HALF).
+          * live == 0 -> `_b2_pair_bar` -- BOTH barrels are owed, which is v1's
+            bar unchanged, so the live == 0 arm of this method is a byte-level
+            restatement of v1 behaviour and any movement at live == 0 is not
+            this amendment's.
+          * live >= 1 -> `_battery_bar(ct, live)` -- `_plant_gun`'s OWN
+            else-branch arithmetic for the ONE plant that is actually owed:
+                get_sentinel_cost() + SK_AMMO_SENTINEL * (live + 1)
+                + SK_AMMO_FLOOR
+        ⛔ ALGEBRAICALLY that second form is `_b2_pair_bar` MINUS
+        `(get_sentinel_cost() + SK_BATTERY2_SENT_BUMP)`: minus plant #1's own
+        term, which is standing, and minus the post-plant bump, which at
+        live == 1 has ALREADY been paid into the one global additive scale
+        factor and would be double-counted if priced again.  At the shipped
+        constants and 100% scale: 96 -> 60.  It is NOT a literal halving and
+        the note says so because "the bar halves" is the registration's
+        shorthand, not its arithmetic.
+
+        ⛔ BOTH BARS ARE CALLED, NEVER RESTATED, for `_b2_pair_bar`'s own
+        stated reason -- a second expression drifts from the purchase it
+        protects, a call cannot -- and both are already driven to both verdicts
+        by the battery arm's unit controls.  Each branch makes exactly ONE
+        `get_sentinel_cost()` engine call, the same count v1 made.
+        """
+        if SK_PUSH_RES_HALF and live >= 1:
+            return self._battery_bar(ct, live)
+        return self._b2_pair_bar(ct)
+
+    def _push_res_watch(self, live):
+        """The RE-ARM EDGE: a tube died since this body last looked.
+
+        ⛔ THE EDGE IS `live` FALLING, not a death event, because there is no
+        death event a keeper can see -- `get_hp(id)` raises out of vision and
+        v618 booked exactly that as a death (the v620 PLANK 1 defect).  The
+        team beat count falling is the one honest, team-wide statement that a
+        barrel is gone, and it is the same number the release itself runs on.
+
+        ⚠ DISCLOSED, AND IT IS A SAMPLING CAVEAT RATHER THAN A GATE: the edge
+        is only seen on rounds where SOME rung asks `_push_refuse`.  A death
+        and a replant inside a gap between two such rounds is invisible and the
+        escape stays released for that episode.  The keeper reaches this gate
+        on essentially every round it has anything discretionary to buy, so the
+        gap is small -- but it is a gap, and `push_res_rearm` is reported so
+        the re-arm can be seen to have fired rather than assumed.
+        """
+        if 0 <= live < self.push_res_live:
+            self.push_res_esc = False           # a barrel fell: arm again
+            self.push_res_rearm += 1
+            self.push_res_hold_since = None
+        self.push_res_live = live
+
+    def _push_res_escape(self, rnd, live, bar, bank):
+        """True while the BOUNDED ESCAPE has released the reserve.
+
+        ⛔⛔ THIS IS THE V1 DISPOSITION'S NAMED CAUSE, ANSWERED WITH MACHINERY
+        THAT IS ALREADY IN THE TREE.  v1's reserve was self-defeating on its
+        own target column -- withholding eco starved the income that funds the
+        pair, DRY one-tube rounds 73.1% -> 87.4%, release fired in 9 of 30
+        cells -- which is `_fund_battery`'s DEADLOCK SHAPE: a clamp whose own
+        effect removes the condition that would release it.  The answer is
+        `_b2_burst_hold`'s escape, transplanted term for term: a hold clock, a
+        bound (SK_PUSH_RES_HOLD = 20, the same 20 as SK_BATTERY2_BURST_HOLD),
+        a release, and BOTH verdicts of that clock counted.
+
+        ⛔ THE CLOCK RUNS ON `bank >= bar`, NOT ON THE PER-KIND PRICE, and the
+        reason is that "consecutive held rounds with the pair still unfunded"
+        is a TEAM condition: `_push_refuse` is called several times a round by
+        different rungs at different prices, so a clock reset by a cheap
+        conveyor clearing the bar would be measuring the rung, not the purse.
+        `_b2_burst_hold` resets on exactly this same test.
+
+        ⛔ AND THE ONE DIFFERENCE FROM THE BURST IS DELIBERATE: the burst
+        disarms FOR THE MATCH; this releases FOR THE EPISODE and `_push_res_watch`
+        re-arms it on the next tube death.  The burst's subject is a one-off
+        (plant #1 of the first pair); this reserve's subject recurs every time a
+        barrel is knocked out -- median tube life 42 rounds -- so a match-long
+        disarm would retire the plank after its first stall.
+
+        ⚠ `push_res_hold_rounds` is counted ONCE PER ROUND (`push_res_hold_last`
+        is the round guard), because the several calls a round would otherwise
+        turn a 20-round clock into a 20-CALL one in the readout while the
+        release itself, which is keyed on `rnd`, kept running on rounds.  The
+        two would then disagree and the disagreement would look like a bug in
+        the escape rather than in its instrument.
+        """
+        self._push_res_watch(live)
+        if self.push_res_esc:
+            return True
+        if bank >= bar:
+            self.push_res_ready += 1            # funded: nothing is withheld
+            self.push_res_hold_since = None
+            return False
+        if self.push_res_hold_since is None:
+            self.push_res_hold_since = rnd
+            self.push_res_holds += 1
+        if rnd - self.push_res_hold_since >= SK_PUSH_RES_HOLD:
+            self.push_res_esc = True
+            self.push_res_esc_n += 1
+            self.push_res_esc_rnd = rnd + 1     # round + 1, so 0 means NEVER
+            self.push_res_hold_since = None
+            return True
+        if rnd != self.push_res_hold_last:
+            self.push_res_hold_rounds += 1
+            self.push_res_hold_last = rnd
+        return False
 
     # --- PIECE 2: THE WARDEN ------------------------------------------
 
@@ -7964,9 +8128,8 @@ class RolesMixin:
     def _push_quiet(self, ct, rnd):
         """THE POST-SECURITY GATE: is home quiet enough to commit forward?
 
-        ⛔ THE EXISTING THREAT READS, NO NEW LATCH (class audit row #132).  Two
-        terms, and the second is what keeps the first honest:
-          * `_under_attack` -- the slot-1 PRESENCE latch, 50-round freshness;
+        ⛔ THE EXISTING THREAT READS, NO NEW LATCH (class audit row #132).  ONE
+        term, and V2 is why it is one:
           * `corefire_fresh` AND core HP <= SK_CORE_STAND_HP -- the CORE's own
             HP-DELTA latch with the threshold `_core_stand_armed` uses.  ⛔ THE
             EXPRESSION IS RESTATED RATHER THAN CALLED, and the reason is an
@@ -7974,10 +8137,25 @@ class RolesMixin:
             which is LEVER 2's own dose column, and calling it from a body
             that is not standing anywhere would silently inflate another
             arm's instrument.  The weld is a unit control, not shared code.
-          * Row #132 is why the SECOND term carries the HP threshold:
-            `corefire_fresh` alone measured TRUE in 139 of 139 keeper-rung
-            rounds, i.e. freshness alone is the always-fresh class and is not
-            a gate at all.
+          * Row #132 is why this term carries the HP THRESHOLD and not
+            freshness alone: `corefire_fresh` alone measured TRUE in 139 of 139
+            keeper-rung rounds, i.e. freshness alone is the always-fresh class
+            and is not a gate at all.
+
+        ⭐⭐ V2 AMENDMENT (a) -- `_under_attack` IS DROPPED, AND IT WAS DROPPED
+        ON ITS OWN MUTATION CONTROL RATHER THAN ON AN ARGUMENT.  v1 ANDed the
+        slot-1 PRESENCE latch in front of the HP term and the whole of PIECE 3
+        then measured UNPLAYED: byte-identical tapes, 0 of 30 cells, `qy = 0`
+        and `qn = 119` on the traced cells -- the gate refused every hold-branch
+        round there was.  M8U (drop ONLY the presence term, keep the HP term)
+        attributed it exactly: `qy` 0 -> 108, `qn` 119 -> 11, succession sites
+        0 -> 1 and prep barriers 0 -> 2.  So the presence latch IS the row-#132
+        always-fresh class on this rung -- a slot-1 beat is fresh for 50 rounds
+        and something is always near our core -- while the surviving HP term
+        still refuses 11 of 119.  ⇒ ONE TERM REMOVED, and the gate is still a
+        gate: it is seen to refuse.  (M8, `SK_PUSH_ENG_QUIET` off, remains the
+        control that drives the surviving term to `qn = 0`.)
+
         BOTH TAILS ARE COUNTED.  A gate that has only ever returned one
         verdict has not been seen to gate.
         """
@@ -7987,9 +8165,6 @@ class RolesMixin:
             self.push_quiet_yes += 1
             return True
         try:
-            if self._under_attack(ct, rnd):
-                self.push_quiet_no += 1
-                return False
             if (SK_COREFIRE and self.corefire_fresh(ct, rnd)
                     and self.corefire_hp(ct) <= SK_CORE_STAND_HP):
                 self.push_quiet_no += 1

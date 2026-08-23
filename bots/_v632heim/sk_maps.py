@@ -6895,6 +6895,53 @@ SK_PUSH_RES_DEFENCE = True  # ⛔ AND NEITHER IS DEFENCE, per the registered
                           # cell that buys home turrets can still starve the
                           # pair.  wealthdiag §C: HOME gunners 56 built against
                           # 65 forward tubes pooled.  The columns are reported.
+# ⭐⭐ V2 AMENDMENT (b), AND IT IS THE V1 DISPOSITION'S OWN CAUSE.  v1's reserve
+# was SELF-DEFEATING, measured on its own target column: withholding eco spend
+# starved the income that funds the pair, so DRY one-tube rounds went 73.1% ->
+# 87.4% and the release fired in 9 of 30 cells.  That is the `_fund_battery`
+# DEADLOCK SHAPE -- a clamp whose own effect removes the condition that would
+# release it.  Two terms answer it, and BOTH are transplants of machinery this
+# tree already ships and already unit-controls, not new policy:
+SK_PUSH_RES_HOLD = 20     # ⛔⛔ THE BOUNDED ESCAPE, THE `SK_BATTERY2_BURST_HOLD`
+                          # SHAPE VERBATIM (same constant, same 20 rounds, same
+                          # both-verdict counters).  After this many CONSECUTIVE
+                          # rounds of the bank standing under the bar with the
+                          # pair still unfunded, the reserve RELEASES -- a cell
+                          # that cannot fund the pair must not be held out of
+                          # its economy forever.
+                          # ⛔ AND THE ONE DIFFERENCE FROM THE BURST IS
+                          # DELIBERATE: the burst disarms FOR THE MATCH, this
+                          # releases FOR THE EPISODE and RE-ARMS ON THE NEXT
+                          # TUBE DEATH (the live count falling is the edge).
+                          # The burst's subject is a ONE-OFF spacing decision
+                          # (plant #1 of the first pair); this reserve's subject
+                          # recurs every time a barrel is knocked out -- median
+                          # tube life 42 rounds -- so a match-long disarm would
+                          # retire the plank after its first stall.
+SK_PUSH_RES_HALF = True   # ⭐ THE live == 1 HALF-BAR.  `_b2_pair_bar` prices
+                          # BOTH barrels; at live == 1 the team owes only TUBE
+                          # 2, so holding the two-barrel purse is withholding
+                          # roughly twice the money the next plant needs -- on a
+                          # tape where 54.8% of rounds are exactly one-tube DRY
+                          # rounds, that is where v1's tax actually landed.
+                          # ⛔ THE EXACT FORM, DISCLOSED, AND IT IS NOT A
+                          # LITERAL /2: at live >= 1 the bar is `_battery_bar`
+                          # (`_plant_gun`'s OWN else-branch arithmetic for the
+                          # plant that is owed) =
+                          #     get_sentinel_cost() + SK_AMMO_SENTINEL x (live+1)
+                          #     + SK_AMMO_FLOOR
+                          # which is algebraically `_b2_pair_bar` MINUS
+                          # (get_sentinel_cost() + SK_BATTERY2_SENT_BUMP) --
+                          # i.e. minus plant #1's own term and minus the
+                          # post-plant bump, because at live == 1 that bump has
+                          # ALREADY been paid into the live scale factor and
+                          # pricing it again double-counts it.  At the shipped
+                          # constants and 100% scale that is 96 -> 60.
+                          # ⛔ CALLED, NOT RESTATED, for `_b2_pair_bar`'s own
+                          # stated reason: a second expression can drift from
+                          # the purchase it protects; a call cannot.  Both bars
+                          # are already driven to both verdicts by the battery
+                          # arm's unit controls.
 
 # --- PIECE 2: THE WARDEN ---------------------------------------------------
 SK_PUSH_WARDEN = True     # sub-flag under the master, ablatable alone.  The

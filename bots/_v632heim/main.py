@@ -1424,6 +1424,33 @@ class Player(CommonMixin, RolesMixin, CoreMixin):
                                       # a measured answer per site rather than
                                       # a pooled number.
         self.push_res_bar = 0         # the last bar computed, for the trace.
+        # --- PIECE 1, V2 AMENDMENT (b): the bounded escape + the half-bar ---
+        # ⛔ UNCONDITIONAL, for the engine reason the block above states.  All
+        # seven read 0 / False / -1 on every OFF arm, so they are OFF-IDENTITY
+        # WITNESSES as well as instruments.
+        self.push_res_live = -1       # last observed STANDING TUBE COUNT (0-2).
+                                      # -1 is "never looked", so the first look
+                                      # can never read as a tube DEATH.
+        self.push_res_esc = False     # the bounded escape has RELEASED the
+                                      # reserve for THIS EPISODE
+        self.push_res_esc_n = 0       # ... how many times it fired (an escape
+                                      # never seen to fire has not been seen to
+                                      # protect anything -- `batt2_escape`'s own
+                                      # rule)
+        self.push_res_esc_rnd = 0     # ... round of the LAST firing, +1, so 0
+                                      # means NEVER (`batt2_escape`'s encoding)
+        self.push_res_esc_pass = 0    # ... and rounds a buy was allowed BECAUSE
+                                      # of it -- the escape's own dose, kept
+                                      # apart from `push_res_off` so the two
+                                      # release tails can be told apart
+        self.push_res_rearm = 0       # times a tube DEATH re-armed the reserve
+        self.push_res_holds = 0       # hold RUNS started (the clock's episodes)
+        self.push_res_hold_since = None  # round the current run started
+        self.push_res_hold_last = -1  # ... last round counted, so the several
+                                      # calls a round cannot inflate the clock
+        self.push_res_hold_rounds = 0 # ROUNDS spent inside a run, once per round
+        self.push_res_ready = 0       # rounds the purse ALREADY cleared the bar
+                                      # (the clock's other verdict)
         # --- PIECE 2, the warden -------------------------------------------
         self._push_cands = None       # memo: the pure-geometry site list
         self.push_done_seen = False   # a friendly launcher already stands in
