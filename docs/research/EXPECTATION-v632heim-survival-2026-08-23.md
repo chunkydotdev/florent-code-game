@@ -37,3 +37,24 @@ conditional-vacuous (no deadlock/no-target states occur) → adopt-eligible
 only as identity-preserving hardening IF guards hold and the state columns
 are honestly zero — disclosed, not silent. Guard breach → one redesign
 then park, standing rules.
+
+**PRE-TAPE DISPOSITIONS (blind held — no tape of either arm exists):**
+**ARM B WITHDRAWN** on the build agent's premise measurement: the existing
+fall-through (`tgt = self.core` + the core-ring goal branch) already
+delivers the keeper to core-adjacency in the leashed-no-target state (610
+rounds traced, zero stuck away; 4 of 7 dosed smoke cells byte-identical to
+OFF). The plank is near-identity by design; taping it spends a window on
+nothing. THE REAL RESIDUAL, measured and routed to the queue as its own
+candidate: LEASHED-ECONOMY STARVATION — that keeper laid 1 conveyor in 849
+leashed rounds; the treatment is leashed WORK (core-adjacent belt/apron
+tiles as in-range targets), not a better walk. The smoke's one win→r1000
+regression on B's divergent cells is banked with the withdrawal.
+**ARM A AMENDED to the terminating form** (the same smoke-mechanism
+amendment class as RO-P/mesh/p10): `_walk_escape` gains a short per-site
+tile ban after an executed escape (precedents: `_escape`'s ban,
+`SK_CURSOR_GIVEUP`, `_t4_chase_ok`), so the walk re-targets elsewhere
+instead of oscillating. Bars unchanged (−25% on ≥50r freeze rounds;
+conditional seen-firing with state columns) — with the honest note that
+the ≥50r mass at these sites may already be small post-SO; a
+vacuous-with-disclosure outcome adopts as hardening per the registered
+rule.
