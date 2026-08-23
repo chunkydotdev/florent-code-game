@@ -228,6 +228,11 @@ from sk_maps import (
     # --- s57 SK_HAMMER_PRIO: the spend-ladder inversion ---------------------
     SK_HAMMER_PRIO, SK_HAMMER_PRIO_BELT, SK_HAMMER_PRIO_PAIR,
     SK_HAMMER_PRIO_BIT, SK_HAMMER_PRIO_STICKY, SK_HAMMER_HOLD,
+    # --- s57 VOLUME ARM 1: the two-bot column + the cardinal siting rank ----
+    SK_VOLUME, SK_VH_COLUMN, SK_VH_CARDINAL,
+    SK_VH_ROLE, SK_VH_FIELD, SK_VH_STALE, SK_VH_PAIR_ONLY,
+    SK_VH_WALK_MAX, SK_VH_GIVEUP, SK_VH_VACATE,
+    SK_VH_CARD_AFTER_D, SK_VH_CARD_FACE,
 )
 
 # --- v632 PLANK A 4.2: the three guarded WALKS, as ban keys.  A tile is banned
@@ -441,6 +446,20 @@ class RolesMixin:
         # nothing else.
         if not (SK_PUSH and SK_PUSH_WARDEN2) or self.role < SK_N_ROLES:
             self.beat(ct, SK_SLOT_BEAT[self.role], rnd)
+            # ⭐⭐ s57 VOLUME ARM 1, PIECE (a) -- THE COLUMN'S ONE WRITE, and
+            # it rides in the FREE UPPER BITS OF THE BEAT THIS LINE JUST WROTE
+            # (slot 13, bits 11-20) because every one of the 16 store slots is
+            # already allocated.  It is here rather than inside
+            # `_siege_engineer` so it runs on EVERY engineer round including
+            # the early returns -- a publish that skipped a round would leave a
+            # stale site standing in the word, since `beat()` preserves upper
+            # bits by construction.  ⛔ ROLE-GATED, so slot 13 keeps exactly
+            # ONE writer even when a rotation body runs the engineer's TURN.
+            # ⛔ CALL-SITE CONJUNCTION: SK_VOLUME False -> one module-constant
+            # test and zero engine calls.
+            if (SK_VOLUME and SK_VH_COLUMN
+                    and self.role == SK_SIEGE_ENGINEER):
+                self._vh_publish(ct, rnd)
         self._sense(ct, rnd)
         self._corefire_tick(ct, rnd)                # v608: PLANK 3's clock
         # ⭐ v619 PLANK 5 (SK_RENT) -- AND ITS PLACEMENT IS AN ENGINE FACT, NOT
@@ -549,6 +568,19 @@ class RolesMixin:
         # character-for-character the adopted tree, with zero extra engine
         # calls.
         if self._bg_turn(ct, p, rnd):
+            return
+
+        # ⭐⭐ s57 VOLUME ARM 1, PIECE (a) -- THE COLUMN TRAILER'S ONE CALL
+        # SITE.  Immediately below the barrel medic's, so it inherits the same
+        # placement argument: BELOW every survival branch (a core that is being
+        # shot outranks a tube that is not standing yet, and the column's own
+        # security read refuses on exactly that alarm), ABOVE the role switch
+        # so a marching body never falls through into the denier ladder from a
+        # tile in the band under a stale plan.
+        # ⛔ FLAG OFF -> False on the first line -> the switch below is
+        # character-for-character the adopted tree, with zero extra engine
+        # calls.
+        if self._vh_turn(ct, p, rnd):
             return
 
         # ⭐⭐ v632 HEIMDALL PLANK 5 -- THE SECOND ECO BODY (SK_FORT_WALKER_ECO).
@@ -9766,6 +9798,348 @@ class RolesMixin:
             del self.bg_ban[xy]
         return set(self.bg_ban) if self.bg_ban else None
 
+    # ==================================================================
+    # s57 VOLUME ARM 1, PIECE (a) -- THE TWO-BOT COLUMN  (SK_VH_COLUMN)
+    # ==================================================================
+    # GAME CONTEXT: in-engine mechanics of the Florent Code League, a
+    # sandboxed bot-vs-bot competition on a simulated grid.  "column",
+    # "leader", "trailer", "handoff" are two of our own builder pieces
+    # walking one behind the other and one of them placing a building on a
+    # tile the other has vacated, with the engine's own `move`/`build`
+    # verbs.  Nothing here reaches outside the simulated grid.
+    #
+    # THE PER-ROUND CHOREOGRAPHY, WRITTEN OUT, because "the same round" is
+    # the whole claim and it depends on an ordering nobody chose:
+    #
+    #   round r   ENGINEER (leader, role 3)
+    #               head: beat -> slot 13 bits 0-10
+    #               head: `_vh_publish` -> slot 13 bits 0-20 (beat + site),
+    #                     ONE word, whole-word write (buffered-write rule)
+    #               turn: unchanged -- prep / plant / walk
+    #   round r+1 DENIER (trailer, role 2)          <-- +1: writes are
+    #               `_vh_turn` reads slot 13, sees beat fresh and a site         buffered
+    #               security read (`_bg_secure`) -> may it leave home?
+    #               orthogonally adjacent to the site?  -> `_plant_gun`
+    #               otherwise -> one step toward the TRAIL SEAT (the site's
+    #                            cardinal neighbour on OUR side: "one tile
+    #                            behind" in column terms)
+    #
+    # ⛔⛔ THE UNIT-CONTROL, AND IT IS THE HALF T13 CANNOT GIVE US.  `run()`
+    # is called once per living unit per round in an order the ENGINE picks.
+    # T13's same-round handoff needs the LEADER's turn to run BEFORE the
+    # TRAILER's.  Our two bodies are spawned r0-r3 in role order, so the
+    # DENIER's entity id is the LOWER of the two -- and the measured turn
+    # order on this engine is by entity id ascending (build report, the
+    # ORDER column, measured from a tracer that prints `rnd,id` from both
+    # bodies).  ⇒ ON THIS TREE THE TRAILER RUNS FIRST, so a leader that has
+    # to vacate costs the handoff ONE round, not zero.  That is written down
+    # rather than papered over, and it is why the PRIMARY path of this arm
+    # does not depend on the vacate at all: our engineer plants from an
+    # orthogonally adjacent tile and does not stand on its own site, so the
+    # ordinary column is trailer-builds-on-arrival with no handoff needed.
+    # The vacate rung (SK_VH_VACATE) exists for the one measured case where
+    # the leader IS on the tile (an unfunded engineer falling through to
+    # `step_to(site)`), and it is written so that the build lands the same
+    # round if the order is ever the other way round.
+    #
+    # ⛔ FAIL-OPEN IS BY CONSTRUCTION, NOT BY POLICY.  With no eligible
+    # second body -- role dead, beat stale, security refused, budget spent --
+    # `_vh_turn` returns False on its own first rungs and the ENGINEER's path
+    # is character-for-character the adopted tree plus one store write whose
+    # bits nothing else reads.
+
+    def _vh_pair_site(self):
+        """The engineer's committed site, IF it is a PAIR site.
+
+        ⛔ PURE: `nest_site` is this body's own field and `_nest_taken()` is
+        this body's own plant ledger, so the publish costs no engine call
+        beyond the single `wstore` it feeds.
+        """
+        s = self.nest_site
+        if s is None:
+            return None
+        taken = self._nest_taken()
+        if SK_VH_PAIR_ONLY and not taken:
+            return None
+        # ⛔⛔ AND THE SITE MUST NOT ALREADY CARRY A TUBE.  `_plant_gun` leaves
+        # the JUST-BUILT tile in `nest_site` when the floor is met (the hold
+        # branch's own documented behaviour), so the naive publish would send
+        # the trailer across the map to a tile that already has our sentinel on
+        # it -- a march that can only ever end in a refused build.  MEASURED
+        # before this line existed: trailer claims 26 rounds, walks 25 steps,
+        # reaches orthogonal adjacency 0 times, plants 0 (vh1build trace,
+        # bifrost seat A).  The test is the ledger this method already holds.
+        for t in taken:
+            if t.x == s.x and t.y == s.y:
+                return None
+        return s
+
+    def _vh_publish(self, ct, rnd):
+        """WRITER: the SIEGE ENGINEER, into its OWN beat slot (13).
+
+        ⛔⛔ WHOLE-WORD, NEVER READ-MODIFY-WRITE.  Store writes are buffered:
+        `read_store` inside the same round returns LAST round's word, so a
+        second same-round write that read the beat back to preserve it would
+        publish a STALE beat and freeze this body's liveness signal for every
+        `beat_fresh` reader in the tree.  The beat is therefore re-derived
+        here -- `(rnd + 1) & SK_BEAT_MASK` is character for character what
+        `beat()` wrote at the top of this same turn.
+        ⛔ AND IT WRITES EVERY ROUND, SITE OR NO SITE.  A publish that only
+        fired when a site existed would leave the previous site standing in
+        bits 11-20 forever (the head `beat()` preserves upper bits by
+        construction), and the trailer would march on a tile the engineer
+        gave up ten rounds ago.
+        """
+        s = self._vh_pair_site()
+        word = (rnd + 1) & SK_BEAT_MASK
+        if s is not None:
+            word |= pack_tile(s) << SK_VH_FIELD
+            self.vh_pub += 1
+        else:
+            self.vh_pub_none += 1
+        self.wstore(ct, SK_SLOT_BEAT[SK_SIEGE_ENGINEER], word)
+
+    def _vh_lead_site(self, ct, rnd):
+        """READER: the trailer's view of the leader's committed pair site.
+
+        ⛔ THE BEAT IS THE LIVENESS TEST AND IT IS THE TREE'S OWN
+        (`beat_fresh`, SK_VH_STALE = SK_BEAT_STALE): a dead or silent
+        engineer publishes nothing, its beat goes stale, and the trailer
+        stops marching rather than walking to a tile nobody is siting.
+        ⛔ BOTH TAILS ARE COUNTED per refusal, because a gate that has only
+        ever returned one verdict has not been seen to gate.
+        """
+        try:
+            word = ct.read_store(SK_SLOT_BEAT[SK_SIEGE_ENGINEER])
+        except Exception:
+            return None
+        b = word & SK_BEAT_MASK
+        if b == 0 or rnd - (b - 1) > SK_VH_STALE:
+            self.vh_stale += 1
+            return None
+        q = unpack_tile((word >> SK_VH_FIELD) & 0x3FF)
+        if q is None or not self.ibp(q):
+            self.vh_no_site += 1
+            return None
+        return q
+
+    def _vh_trail_seat(self, site):
+        """"ONE TILE BEHIND": the site's cardinal neighbour on OUR side.
+
+        Pure geometry off `self.core` -- zero engine calls, never stale.  It
+        is the exact complement of `_guard_seat` (the site's cardinal
+        neighbour toward the ENEMY, which is where the leader ends up), so
+        the two bodies stand on opposite faces of the tile and neither is in
+        the other's build menu.  Returns None -- the caller then walks at the
+        site itself -- when there is no core fix, no cardinal step, or the
+        seat is off-map.
+        """
+        if site is None or self.core is None:
+            return None
+        try:
+            d = site.cardinal_direction_to(self.core)
+        except Exception:
+            return None
+        if d is None or not d.is_cardinal():
+            return None
+        q = site.add(d)
+        if not self.ibp(q):
+            return None
+        return q
+
+    def _vh_episode(self, site, rnd):
+        """The walk budget, keyed on the SITE TILE, both verdicts counted.
+
+        Returns True while this body may still spend rounds on `site`.  An
+        episode that runs out bans the tile for THIS BODY for SK_VH_GIVEUP
+        rounds and the round falls through to the ordinary denier ladder --
+        the walk-budget lesson from staffing form 3, which was refused for
+        44-140 rounds out of position.
+        """
+        xy = (site.x, site.y)
+        exp = self.vh_ban.get(xy)
+        if exp is not None:
+            if exp > rnd:
+                self.vh_banned += 1
+                return False
+            del self.vh_ban[xy]
+        if self.vh_ep_site != xy:
+            self.vh_ep_site = xy
+            self.vh_ep_start = rnd
+            self.vh_ep_n += 1
+            return True
+        if rnd - self.vh_ep_start > SK_VH_WALK_MAX:
+            self.vh_ban[xy] = rnd + SK_VH_GIVEUP
+            self.vh_ep_site = None
+            self.vh_give += 1
+            return False
+        return True
+
+    def _vh_sticky(self, rnd):
+        """The LIVE episode's own site, for the rounds the publisher is silent.
+
+        ⛔ IT ADDS NO CLOCK: the episode fields (`vh_ep_site`, `vh_ep_start`)
+        and the bound (SK_VH_WALK_MAX) are `_vh_episode`'s own, already
+        registered.  ⛔ AND IT CANNOT OUTLIVE THE BUDGET: past it this returns
+        None and the next published read opens a fresh episode, so a body can
+        never be held on a dead plan indefinitely.
+        """
+        xy = self.vh_ep_site
+        if xy is None:
+            return None
+        if rnd - self.vh_ep_start > SK_VH_WALK_MAX:
+            return None
+        q = Position(xy[0], xy[1])
+        return q if self.ibp(q) else None
+
+    def _vh_turn(self, ct, p, rnd):
+        """THE TRAILER'S ENTIRE TURN.  True if it spent this body's round.
+
+        ⛔ ONE CALL SITE, immediately below the barrel medic's and therefore
+        below every survival branch (the corefire answer, ledger V5, the
+        citadel dispatch) and above the role switch.  With the master off the
+        first line returns False and the switch below is
+        character-for-character the adopted tree.
+        ⛔ IT RETURNS False RATHER THAN PARKING THE BODY on every refusal.
+        The denier's ordinary ladder is enemy-anchored and written for
+        exactly the positions this rung leaves it in, so there is no recall
+        walk here and no paperweight (v603 FIX 6(b): two bodies spent 860 and
+        227 rounds as paperweights).
+        """
+        if not (SK_VOLUME and SK_VH_COLUMN):
+            return False
+        if self.role != SK_VH_ROLE:
+            return False
+        if self.enemy is None or self.core is None:
+            return False
+        site = self._vh_lead_site(ct, rnd)
+        if site is None:
+            # ⭐⭐ THE COLUMN IS STICKY FOR THE LENGTH OF ITS EPISODE, AND THIS
+            # IS THE DEFECT THE FIRST TRACE MEASURED.  The engineer's published
+            # field is EMPTY on most rounds (it holds a site only while it is
+            # actively siting), and without this rung the trailer handed those
+            # rounds back to the ordinary denier ladder -- whose target is
+            # home-anchored ore -- so the two authorities fought over one body
+            # and it OSCILLATED instead of travelling.  MEASURED on bifrost
+            # seat A before this rung existed: 26 claimed rounds, 25 steps
+            # taken, net displacement ~0 (x oscillating between 1 and 6 for
+            # ~70 rounds), orthogonal adjacency reached 0 times, 0 plants.
+            # ⛔ IT IS A BOUNDED LATCH AND THE BOUND IS THE ONE ALREADY
+            # REGISTERED: the episode's own walk budget (SK_VH_WALK_MAX), after
+            # which `_vh_episode` bans the tile and the body is released.  No
+            # new clock, no new constant -- and it is what makes that budget
+            # BIND rather than decorate (its mutation control M3 read SAME on
+            # 5 of 5 cells before this rung, i.e. the budget was unreachable).
+            site = self._vh_sticky(rnd)
+            if site is None:
+                return False
+            self.vh_sticky += 1
+        # ⛔ THE SECURITY READ IS ARM 2's, REUSED AND NOT COPIED: no fresh
+        # corefire alarm, the home turret floor intact, and both home roles
+        # alive.  ⚠ DISCLOSED: it increments arm 2's own `bg_sec_*` taps, and
+        # this arm therefore keeps its OWN `vh_sec_*` pair so the column's
+        # verdict share stays readable even though the shared taps now have a
+        # second caller.  (SK_BG_MEDIC ships False, so on the adopted
+        # baseline those taps are otherwise all zero.)
+        if not self._bg_secure(ct, rnd):
+            self.vh_no_sec += 1
+            return False
+        self.vh_sec_yes += 1
+        if not self._vh_episode(site, rnd):
+            return False
+        self.vh_claim += 1
+        # --- the build half: orthogonally adjacent is the engine's rule ----
+        if abs(site.x - p.x) + abs(site.y - p.y) == 1:
+            self.vh_adj += 1
+            try:
+                if ct.get_action_cooldown() == 0:
+                    live = self._floor_live(ct, rnd)
+                    want = SK_NEST_PAIR_N if SK_NEST_PAIR else 1
+                    if self._plant_gun(ct, p, site, rnd, live, want):
+                        self.vh_plant += 1
+                        self.vh_ep_site = None
+                        return True
+                    self.vh_blocked += 1
+            except Exception:
+                return False
+            return False
+        # --- the walk half: close on the TRAIL SEAT, else on the site -----
+        tgt = self._vh_trail_seat(site) or site
+        try:
+            if ct.get_move_cooldown() != 0:
+                return False
+        except Exception:
+            return False
+        if self.step_to(ct, tgt):
+            self.vh_walk += 1
+            return True
+        return False
+
+    def _vh_trailer_beside(self, ct, site):
+        """Is a FRIENDLY builder bot (not us) orthogonally adjacent to `site`?
+
+        ⛔ THE ENGINE'S OWN RULE IS THE TEST: a building is placed on a tile
+        ORTHOGONALLY ADJACENT to the builder placing it, so the four cardinal
+        neighbours of the site are exactly the tiles a trailer could build
+        from.  ⛔ BOUNDED: at most 4 `get_tile_builder_bot_id` plus 4
+        `get_team` calls, and it is reached only on the rounds the engineer is
+        STANDING ON its own site -- which is the rare fall-through case, not
+        the ordinary plant.
+        ⛔ EVERY COMPUTED POSITION PASSES `ibp` BEFORE ANY `get_tile_*`
+        (`is_in_vision` is NOT a bounds guard -- project CLAUDE.md, s50).
+        """
+        me = None
+        try:
+            me = ct.get_id()
+        except Exception:
+            return False
+        for d in CARDINALS:
+            q = site.add(d)
+            if not self.ibp(q):
+                continue
+            try:
+                bid = ct.get_tile_builder_bot_id(q)
+                if bid is None or bid == me:
+                    continue
+                if ct.get_team(bid) == self.team:
+                    return True
+            except Exception:
+                continue
+        return False
+
+    def _vh_vacate(self, ct, p, site, rnd):
+        """T13's LITERAL RUNG -- THE LEADER STEPS OFF THE SITE TILE.
+
+        Fires only when this body is standing ON its own committed site AND a
+        friendly builder is orthogonally adjacent to that site, i.e. exactly
+        when the leader's own body is what is blocking the trailer's build.
+        The step is to `_guard_seat` -- the site's cardinal neighbour toward
+        the enemy -- which is the tile the leader wanted anyway (between the
+        new tube and their guns), so the vacate is never a wasted turn.
+        ⛔ A FAILED STEP FALLS THROUGH, IT DOES NOT END THE TURN: the caller's
+        own `step_to(site)` then runs unchanged.  BOTH TAILS COUNTED.
+        """
+        if not (SK_VOLUME and SK_VH_COLUMN and SK_VH_VACATE):
+            return False
+        if site is None or p.x != site.x or p.y != site.y:
+            return False
+        if not self._vh_trailer_beside(ct, site):
+            self.vh_vac_alone += 1
+            return False
+        self.vh_vac_want += 1
+        seat = self._guard_seat(site)
+        if seat is None or (seat.x == p.x and seat.y == p.y):
+            return False
+        try:
+            if ct.get_move_cooldown() != 0:
+                return False
+        except Exception:
+            return False
+        if self.step_to(ct, seat):
+            self.vh_vacate += 1
+            return True
+        return False
+
     def _escalate_target(self, ct, p, rnd=None):
         """LEDGER V1's other half -- once a tile is escalated, the answer is
         the SHOOTER, not another conveyor.  Returns the enemy turret to remove.
@@ -12721,6 +13095,16 @@ class RolesMixin:
         # SK_ROTATE_GUARD_NEAR.
         if self._guard_walk(ct, p, site):
             return
+        # ⭐⭐ s57 VOLUME ARM 1, PIECE (a) -- T13's VACATE RUNG, and it sits
+        # HERE because this is the exact fall-through that puts the leader on
+        # its own plant tile: `step_to(site)` from Manhattan 1 steps ONTO the
+        # site (sk_roles.py's own terminal-approach note measures a plant
+        # pushed r321 -> r338 through this line).  Above it, so the body leaves
+        # rather than re-stepping onto the tile the trailer is waiting to
+        # build.  Refuses and falls through whenever there is no trailer
+        # beside the site, so an OFF/solo game reaches the same `step_to`.
+        if self._vh_vacate(ct, p, site, rnd):
+            return
         if self.step_to(ct, site):
             return
         # ⭐ v606 ITEM 4(a2) -- SK_IDLE_ACT, FOR THE ENGINEER.  The v603 clause
@@ -13829,6 +14213,42 @@ class RolesMixin:
                              d == SK_NEST_DSQ_MAX and abs(dx) == abs(dy), d)
                 else:
                     score = (d == SK_NEST_DSQ_MAX and abs(dx) == abs(dy), d, -p.distance_squared(q))
+                # ⭐⭐ s57 VOLUME ARM 1, PIECE (b) -- CARDINAL-FIRST SITING,
+                # INSERTED IMMEDIATELY AFTER `d` IN BOTH ORDERINGS.  The
+                # dossier's shortlist item 3, off the bisons autopsy: 142 of
+                # 142 of their fast-kill sentinel builds are ORTHOGONALLY
+                # ALIGNED with a core tile (field 56.6%, us 40.4%).  "AT EQUAL
+                # REACH" is made literal by the POSITION of the key -- after
+                # `d`, so it separates only sites that already tie on every key
+                # above it, d^2 included.
+                # ⛔ A RANK, NEVER A FILTER: the legal set is untouched, so the
+                # band can never empty and this cannot create a plant v632
+                # would have refused.
+                # ⛔ THE TERM IS `face.is_cardinal()` ON A DIRECTION THE SCAN
+                # HAS ALREADY COMPUTED -- `_firing_face` returns a cardinal
+                # direction exactly when dx == 0 or dy == 0 for some footprint
+                # tile, which IS the bisons' measure.  Pure Python, zero engine
+                # calls, and no second definition that could drift.
+                # ⚠ DISCLOSED INTERACTION: v618's LEADING key is the max-range
+                # DIAGONAL bonus (T13's own d^2 = 32 site), so where such a
+                # tile is legal it still wins and this term bites on every
+                # other pick.  Deliberately not resolved here -- reordering
+                # v618's key would be a second behaviour change under one flag.
+                if SK_VOLUME and SK_VH_CARDINAL and SK_VH_CARD_AFTER_D:
+                    if SK_VH_CARD_FACE:
+                        try:
+                            _vc = bool(face.is_cardinal())
+                        except Exception:
+                            _vc = False
+                    else:
+                        _vc = (dx == 0 or dy == 0)
+                    self.vh_card_n += 1
+                    if _vc:
+                        self.vh_card_hit += 1
+                    if haste:
+                        score = score + (_vc,)
+                    else:
+                        score = (score[0], score[1], _vc, score[2])
                 # ⭐⭐ s57 BARRELS ARM 2, PIECE (c) -- THEIR RAY, PREPENDED AS A
                 # PREFERENCE AND NOT AS A FILTER.  Magnus's wording is "a term
                 # PREFERRING tiles no standing visible enemy turret bears on",
@@ -14478,7 +14898,21 @@ class RolesMixin:
         # unaffordable site never advances it.
         if self.rot_body:
             self.rot_plants += 1
-        self._nest_publish(ct, rnd)
+        # ⛔⛔ s57 VOLUME ARM 1, PIECE (a) -- THE TRAILER PLANTS BUT DOES NOT
+        # PUBLISH.  `_nest_publish` writes slot 7's ENGINEER fields (b10-20,
+        # b21); a second writer of a buffered slot is a SILENT LOST UPDATE
+        # (measured at 291 frozen rounds on the tube beat), so the column body
+        # takes the plant and leaves the word alone.  ⛔ WHAT IS LOST IS
+        # NOTHING LIVE: those fields' only reader is `_s2_pending`, whose FIRST
+        # LINE is `if not SK_S2_PRIORITY: return False`, and that flag ships
+        # False.  ⛔ THE TUBE ITSELF STILL PUBLISHES: under SK_TEAM_TUBES the
+        # forward sentinel writes its OWN phase-separated beat into b0-9 /
+        # b22-31 from `_turret`, which is what `_floor_live` counts -- so a
+        # trailer-planted tube is visible team-wide exactly like any other.
+        # ⛔ CALL-SITE CONJUNCTION: SK_VOLUME False -> the conjunction is False
+        # -> this publishes as today, character for character.
+        if not (SK_VOLUME and SK_VH_COLUMN and self.role == SK_VH_ROLE):
+            self._nest_publish(ct, rnd)
         # v603 FIX 1: if a second gun is still wanted, free the siting machinery
         # NOW -- same round -- so `_pick_nest` runs next turn with `taken`
         # populated.  Prep barriers apply to both sites (COPY 5), hence the

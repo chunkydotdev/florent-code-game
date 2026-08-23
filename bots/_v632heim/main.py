@@ -1100,6 +1100,42 @@ class Player(CommonMixin, RolesMixin, CoreMixin):
         self.bg_life_card_n = 0
         self.bg_life_diag = 0
         self.bg_life_diag_n = 0
+        # ⭐⭐ s57 VOLUME ARM 1 (SK_VOLUME) -- THE COLUMN + CARDINAL TAPS.
+        # Per body, like every bg_* above: each unit gets its own `Player`, so
+        # these are read per-body off the tracer and summed by the readout,
+        # never treated as a team ledger.  BOTH TAILS of every gate have a tap
+        # (a gate that has only ever returned one verdict has not been seen to
+        # gate), and the publisher's two tails are separate columns so
+        # "the engineer never committed a pair site" and "it committed and
+        # nobody came" are different readings.
+        # (a) the publisher -- the SIEGE ENGINEER's side
+        self.vh_pub = 0               # engineer rounds publishing a pair site
+        self.vh_pub_none = 0          # ... and rounds publishing an empty field
+        # (a) the trailer -- the ORE DENIER's side
+        self.vh_stale = 0             # read refused: engineer beat stale/absent
+        self.vh_no_site = 0           # read refused: no site in the word
+        self.vh_no_sec = 0            # claim refused by the security read
+        self.vh_sec_yes = 0           # ... and claims the security read passed
+        self.vh_claim = 0             # rounds the trailer owned
+        self.vh_walk = 0              # steps taken up the column
+        self.vh_adj = 0               # rounds orthogonally adjacent to the site
+        self.vh_plant = 0             # tubes the TRAILER planted
+        self.vh_blocked = 0           # adjacent, cooldown 0, build refused
+        self.vh_ep_site = None        # the episode's site tile, (x, y)
+        self.vh_ep_start = -1
+        self.vh_ep_n = 0              # column EPISODES (rising edges)
+        self.vh_give = 0              # episodes abandoned on the walk budget
+        self.vh_ban = {}              # (x,y) -> round this body's ban expires
+        self.vh_banned = 0            # rounds refused by that ban
+        self.vh_sticky = 0            # rounds marched on the episode's own site
+                                      # while the publisher was silent
+        # (a) the leader's vacate rung
+        self.vh_vac_want = 0          # rounds on-site WITH a trailer beside it
+        self.vh_vac_alone = 0         # ... and rounds on-site with nobody there
+        self.vh_vacate = 0            # step-offs actually executed
+        # (b) the cardinal siting rank
+        self.vh_card_n = 0            # candidates the rank term was computed on
+        self.vh_card_hit = 0          # ... and how many of those were cardinal
         # ⭐⭐ s57 BARRELS ARM 3 (SK_BG_ENGHEAL) -- THE OPPORTUNITY INSTRUMENT.
         # ⛔ IT IS BUILT AS AN OPPORTUNITY LEDGER AND NOT AS A HIT COUNTER,
         # because the population probe says the damaged-tube share is THIN

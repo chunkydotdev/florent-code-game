@@ -7747,3 +7747,194 @@ SK_BG_ENGHEAL_STEPS = 2   # ⛔ THE WALK BUDGET, PER TARGET EPISODE, AND IT IS T
                           #       hypothetical: arm 2's mutation M3 diverged 3
                           #       of 12 f1 cells with exactly this refresh
                           #       deleted.
+
+
+# ============================================================================
+# s57 VOLUME ARM 1 -- THE TWO-BOT COLUMN + CARDINAL-FIRST SITING  (SK_VOLUME)
+# ============================================================================
+# GAME CONTEXT: in-engine mechanics of the Florent Code League, a sandboxed
+# bot-vs-bot programming competition on a simulated grid.  "tube"/"barrel" is
+# one of OUR sentinels standing in the band beside the opposing bot's core;
+# "column", "leader", "trailer", "handoff" are two of our own builder pieces
+# walking one behind the other and one of them placing a building on a tile the
+# other has vacated, using the engine's own documented `move`/`build` verbs.
+# Nothing here touches anything outside the simulated grid.
+#
+# THE REGISTRATION: docs/research/DOSSIER-top-finishers-2026-08-23.md, the
+# SHORTLIST -- item 1 (two-bot column handoff, "pure ordering") and item 3
+# (cardinal-first siting rank).  THE GAP THE DOSSIER NAMES: "structure copied,
+# VOLUME absent ... second gun r95 vs their r63 (TRAVEL)".
+#
+# (a) SK_VH_COLUMN -- THE COLUMN.  The measured choreography is PLAYBOOK
+#     T13 (`docs/research/PLAYBOOK-beancounters-2026-08-21.md:599`, COPY 8's
+#     ordering trick at :1655), on ids and rounds: "#5 leads down corridor row
+#     15 with #13 exactly one tile behind for fifteen rounds (r19-r31, neither
+#     building anything); at r32 #5 steps off (17,15) to (17,14) and #13,
+#     standing on (16,15), builds the sentinel on the vacated tile the same
+#     round.  Orthogonal adjacency is the build rule, so the trailer can only
+#     build onto a tile it is beside -- the leader's job is to have walked it
+#     and left."  ⚠ THE PLAYBOOK ITSELF MARKS THE INTENT AS EYEBALL (rounds and
+#     ids are MEASURED); this arm buys the ORDERING, and the ordering is what
+#     the r95-vs-r63 travel gap is made of.
+# (b) SK_VH_CARDINAL -- THE SITING RANK.  Bisons autopsy
+#     `docs/research/bisons-fast-kill-2026-08-10.md:187`: of 142 fast-kill
+#     sentinel builds, **142/142 = 100% orthogonally aligned with a core tile**
+#     and d^2 in {4, 9, 16, 25}; field control on the same measurement
+#     (n = 14,423) is 56.6% orthogonal / 16.9% diagonal / 26.5% aligned with
+#     nothing, and US (n = 2,601) 40.4% / 34.4% / 25.2%.  ⚠ AND OUR OWN
+#     DIAGONAL-DIES-FASTER READ IS SMALL-n (arm 2's SK_BG_FACE_STAT column) --
+#     it is a PRIOR, not the evidence.
+#
+# ⛔ THE STAFFING TAXONOMY IS INHERITED, NOT RE-OPENED.  Four staffing forms
+# have already been priced on this tree: form 1 (the CAGE WALKER, v1 of the
+# push) cannibalised the second siege body, wins 12 -> 5; form 2 (a FRESH
+# SPAWN, v3) paid +20% on the ONE GLOBAL ADDITIVE cost scale for a fifth body;
+# form 3 (the re-tasked HOME KEEPER, SK_BG_MEDIC) was REFUSED because that body
+# is the belt/harvester/killer PUBLISHER (slots 4, 5, 14) and its absence
+# measured -35% mined; form 4 (the engineer itself, SK_BG_ENGHEAL) is the
+# no-walk case.  ⇒ THE TRAILER IS THE ORE DENIER: it is already a forward,
+# enemy-anchored body, it is NOT a publisher (see the assertion below), and it
+# is already paid for.  ⛔⛔ NEVER THE KEEPER: `SK_VH_ROLE != SK_HOME_KEEPER`
+# is asserted in the unit battery, in both directions, so a future edit that
+# re-points this constant at the publisher fails a test rather than silently
+# costing 35% of the mine.
+
+SK_VOLUME = False         # ⛔ THE MASTER, DEFAULT OFF.  Off is exact identity:
+                          # every call site is a call-site conjunction whose
+                          # FIRST term is this module constant, so an OFF arm
+                          # makes zero extra engine calls, writes no extra store
+                          # word, and the replay is byte-identical (MEASURED by
+                          # the identity gate, not claimed).
+
+SK_VH_COLUMN = True       # piece (a), ablatable alone under the master.
+SK_VH_CARDINAL = True     # piece (b), ablatable alone under the master.  It is
+                          # SEPARATE precisely so the column's dose stays
+                          # attributable: (b) moves WHICH tile is picked and (a)
+                          # moves WHO gets there and WHEN, and pooling them
+                          # would make a null on either unreadable.
+
+# --- (a) the column --------------------------------------------------------
+SK_VH_ROLE = SK_ORE_DENIER
+                          # ⛔ WHICH BODY IS THE TRAILER.  See the staffing
+                          # taxonomy above.  ⛔⛔ AND THE ONE THING IT MUST NOT
+                          # BE IS THE PUBLISHER: the HOME KEEPER owns slot 4
+                          # (harvesters), slot 5 (belt) and slot 14 (killer),
+                          # every one of them gated `self.role ==
+                          # SK_HOME_KEEPER` at the write, so a keeper that walks
+                          # out stops three team-wide reports at once.  The
+                          # DENIER writes exactly one slot -- its own beat,
+                          # SK_SLOT_BEAT[2], written at the top of the builder
+                          # turn from `self.role` and therefore unaffected by
+                          # where the body stands.
+SK_VH_FIELD = 11          # ⛔⛔ THE CHANNEL, AND WHY THERE IS NO NEW SLOT.  All
+                          # 16 store slots are allocated (`SK_SLOT_COREFIRE`'s
+                          # own comment says slot 15 was THE LAST FREE SLOT), so
+                          # the column's site handoff rides in the FREE UPPER
+                          # BITS OF THE ENGINEER'S OWN BEAT SLOT,
+                          # SK_SLOT_BEAT[SK_SIEGE_ENGINEER] = 13.  SK_BEAT_MASK
+                          # is 0x7FF (bits 0-10); `pack_tile` is 10 bits; 11 +
+                          # 10 = 21 <= 32.  ⛔ ONE WRITER, STILL: the beat is
+                          # written by the body whose `self.role` indexes the
+                          # slot, and the publish below is gated on that SAME
+                          # role, so slot 13 keeps exactly one writer and the
+                          # buffered-write lost-update class cannot appear.
+                          # ⛔⛔ AND THE PUBLISH WRITES THE WHOLE WORD, NOT A
+                          # READ-MODIFY-WRITE.  Store writes are buffered --
+                          # `read_store` inside the same round returns LAST
+                          # round's word -- so a second same-round write that
+                          # tried to preserve the beat by reading it back would
+                          # write a STALE beat and silently freeze this body's
+                          # liveness signal.  The publish therefore re-derives
+                          # the beat (`(rnd + 1) & SK_BEAT_MASK`, character for
+                          # character what `beat()` wrote moments earlier) and
+                          # emits beat+site in one word.
+SK_VH_STALE = SK_BEAT_STALE
+                          # how old the engineer's beat may be before the
+                          # trailer stops trusting the site.  ⛔ NOT A NEW
+                          # NUMBER: it is the tree's own beat-staleness, the
+                          # same one `_claim_role` and `_bg_home_bodies` use, so
+                          # "the engineer is alive" means one thing everywhere.
+SK_VH_PAIR_ONLY = True    # ⭐ THE SCOPE, AND IT IS THE REGISTERED ONE: the
+                          # column is published only for a PAIR site, i.e. only
+                          # when at least one tube of ours already stands
+                          # (`_nest_taken()` non-empty).  The dossier's gap is
+                          # the SECOND gun (r95 vs r63); the OPENING plant --
+                          # the one every other plank depends on -- is untouched
+                          # by construction, exactly as arm 2's site guard is.
+SK_VH_WALK_MAX = 60       # ⛔ THE TRAILER'S WALK BUDGET, in rounds per column
+                          # EPISODE (keyed on the site tile).  The walk-budget
+                          # lesson paid forward: staffing form 3 was refused for
+                          # 44-140 rounds out of position.  60 is the band
+                          # commute this tree actually measures (arm 2's
+                          # replacement gap 44, plus the 14-round give-up the
+                          # push uses on one site) and it BINDS -- an episode
+                          # that runs out hands the round back to the ordinary
+                          # denier ladder and bans that site for this body.
+SK_VH_GIVEUP = 20         # ... and how long an abandoned site stays refused for
+                          # THIS body afterwards, in rounds.  20 is the standing
+                          # precedent in this tree (SK_BG_SITE_BAN_ROUNDS,
+                          # SK_PUSH_RES_HOLD), and it EXPIRES -- a permanent ban
+                          # compounding on every episode is the outward spiral
+                          # arm 1 measured.
+SK_VH_VACATE = True       # ⭐⭐ T13's LITERAL RUNG: the LEADER STEPS OFF.  Our
+                          # engineer normally plants from an ORTHOGONALLY
+                          # ADJACENT tile and never stands on its own site, so
+                          # this rung is a FAIL-SAFE for the one case that does
+                          # occur (`sk_roles.py`'s own terminal-approach note:
+                          # an unfunded engineer falls through to
+                          # `step_to(site)` and walks ONTO the plant tile, a
+                          # plant measured pushed r321 -> r338).  It fires only
+                          # when the engineer is standing ON its own committed
+                          # site AND a friendly builder is orthogonally adjacent
+                          # to that site -- i.e. exactly when the leader's body
+                          # is what is blocking the trailer's build.
+                          # ⛔⛔ THE UNIT-CONTROL IS MEASURED, NOT ASSUMED, AND
+                          # IT DECIDES WHETHER "THE SAME ROUND" IS AVAILABLE AT
+                          # ALL.  `run()` is called once per living unit per
+                          # round in an order the ENGINE picks; T13's same-round
+                          # handoff requires the LEADER's turn to precede the
+                          # TRAILER's.  Our two bodies are spawned r0-r3 in role
+                          # order (denier before engineer), so the trailer's
+                          # entity id is the LOWER one -- see the build report's
+                          # measured turn-order column.  The rung is written to
+                          # be same-round-capable if the order is ever the other
+                          # way round and to cost exactly one round when it is
+                          # not; it is never a stall, because the vacating step
+                          # is the step the engineer wanted anyway (the guard
+                          # seat, between the new tube and their guns).
+
+# --- (b) the siting rank ---------------------------------------------------
+SK_VH_CARD_AFTER_D = True # ⛔⛔ WHERE THE TERM SITS, AND IT IS THE WHOLE
+                          # DIFFERENCE BETWEEN A RANK AND A REWRITE.  The
+                          # registration says "a ranking preference (not a
+                          # filter) ... over diagonal AT EQUAL REACH", so the
+                          # key is inserted IMMEDIATELY AFTER `d` in BOTH of
+                          # `_nest_scan`'s orderings -- it separates only sites
+                          # that already tie on every key above it, including
+                          # d^2.  It can never empty the band (it is a score
+                          # term, not a filter) and it cannot create a plant
+                          # v632 would have refused (the legal set is
+                          # untouched).
+                          # ⚠⚠ DISCLOSED INTERACTION, AND IT BOUNDS THE DOSE:
+                          # v618's LEADING key is `d == SK_NEST_DSQ_MAX and
+                          # abs(dx) == abs(dy)` -- a bonus for the MAX-RANGE
+                          # DIAGONAL (T13's own d^2 = 32 site).  Where such a
+                          # tile exists and is legal it still wins, so this term
+                          # bites on every OTHER pick.  That interaction is
+                          # deliberately NOT resolved here: reordering v618's
+                          # leading key would be a second behaviour change in
+                          # one flag.  The cardinal SHARE of plants is the dose
+                          # column, off SK_BG_FACE_STAT, which is not under any
+                          # master and therefore reads on both arms.
+SK_VH_CARD_FACE = True    # ⛔ THE OPERATIONAL DEFINITION OF "CARDINALLY
+                          # ALIGNED", AND IT IS THE ENGINE'S OWN.  `_firing_face`
+                          # already returns the Direction whose single-tile-wide
+                          # line from the candidate crosses the enemy footprint,
+                          # and it returns a CARDINAL direction exactly when
+                          # dx == 0 or dy == 0 for some footprint tile -- which
+                          # IS the bisons' measure ("orthogonally aligned with a
+                          # core tile (dx=0 or dy=0)", 142/142).  So the term is
+                          # `face.is_cardinal()` on a Direction the scan has
+                          # ALREADY computed: pure Python, zero engine calls,
+                          # and no second definition that could drift from
+                          # `_firing_face`.
