@@ -1165,3 +1165,15 @@ planner objective), nearest-builder task assignment; (3) FINISHER
 OPTIMIZATION LAST — battery scaling (barrels, exile-medics guard-breaker
 with the sleeping-dogs rule) once 1-2 hold. Every arm keeps the standing
 bars; the tempo bar binds all three (nothing may slow the kill).
+
+## VICTORY-BAR CONFIRMATION STANDARD (s57 2026-08-23, ratified in-session)
+
+The vh1build noise-floor measurement (a ZERO-dose flag moves a 30-cell
+fixture's win column ±3-4 via trajectory divergence at fixed seed) binds
+the victory condition's reading: a single-tape 16-19/30 is AT THE BAR,
+UNCONFIRMED; a bar is DECLARED HELD only by >=20/30 on one tape OR
+>=16/30 on the CONFIRMATION BATTERY (3 seeds x 30 cells per fixture,
+floor ~±2). Iteration stays on single tapes reading direction+mechanism;
+claims pay for replication. Current standing under this standard: F3
+19/30 AT THE BAR UNCONFIRMED (battery scheduled behind the Sentry
+verdict); F1 11, F2 10 — short outright.
