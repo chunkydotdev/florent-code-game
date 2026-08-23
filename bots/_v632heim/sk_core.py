@@ -331,7 +331,9 @@ class CoreMixin:
         # round, so a standing turret keeps being fed out of surplus and only
         # the money the battery needs is withheld.  `_fund_floor` returns 0 --
         # i.e. this block is a no-op -- on every SK_ROTATE-off round, outside
-        # the window, once the battery stands, and on any unreadable number.
+        # the window, once the battery reaches SK_ROTATE_WANT, on any round a
+        # tube STANDS and the team holds under one sentinel shot (the
+        # shoot-what-stands yield, amendment 2), and on any unreadable number.
         floor = self._fund_floor(ct, rnd)
         if floor > 0:
             room = have - floor
@@ -405,19 +407,6 @@ class CoreMixin:
             t = 0
         return t if t > n else n
 
-    def _fund_window(self, ct, rnd):
-        """True while titanium is being held for the battery.
-
-        `SK_ROTATE and SK_ROTATE_FUND` is the CALL-SITE CONJUNCTION that makes
-        OFF an exact identity, and it is doubly guaranteed: the master ships
-        False AND is reachable only under SK_ROTATE, which also ships False.
-        Cheapest terms first, so an OFF arm returns before touching the
-        controller and the store is never read.
-        """
-        if not (SK_ROTATE and SK_ROTATE_FUND and rnd >= SK_ROTATE_FUND_FROM):
-            return False
-        return self._fund_battery(ct, rnd) < SK_ROTATE_WANT
-
     def _fund_floor(self, ct, rnd):
         """The titanium that must stay liquid this round, or 0 for "no floor".
 
@@ -425,13 +414,44 @@ class CoreMixin:
         `get_sentinel_cost()` because the ONE GLOBAL ADDITIVE cost scale is
         near its maximum by r285.
 
+        `SK_ROTATE and SK_ROTATE_FUND` is the CALL-SITE CONJUNCTION that makes
+        OFF an exact identity, and it is doubly guaranteed: the master ships
+        False AND is reachable only under SK_ROTATE, which also ships False.
+        Cheapest terms first, so an OFF arm returns before touching the
+        controller and the store is never read.
+
+        ⛔⛔ THE SHOOT-WHAT-STANDS YIELD, AND IT IS THIS BUILD'S OWN MEASURED
+        DEADLOCK (amendment registered
+        `docs/research/EXPECTATION-v632heim-fund-2026-08-23.md`, pre-tape,
+        blind).  The first build of this clamp held the floor whenever the
+        battery was short of SK_ROTATE_WANT, full stop.  On a POOR cell that is
+        a closed loop: jotunheim measured `ammo == 0` in **201 of 201** window
+        rounds (the unclamped control: 144/201, peak 20) -- income never
+        cleared `cost + KEEP`, so nothing converted, the ONE tube that did
+        stand never fired, and a battery that cannot shoot cannot grow to the
+        count that would release the clamp.
+        ⇒ ONCE AT LEAST ONE TUBE STANDS AND THE TEAM HOLDS LESS THAN ONE
+        SENTINEL SHOT (SK_AMMO_SENTINEL), THE FLOOR LIFTS FOR THAT ROUND.
+        Plant first, then shoot with what stands.  The deadlock cannot recur by
+        construction: the yield's precondition is exactly the state the
+        deadlock consists of.
+        ⚠ THE YIELD IS THE DRIP'S ALONE.  `_fund_refuse` (the keeper's 1-2 Ti
+        verbs) does NOT carry it -- those verbs do not buy ammunition, so
+        releasing them would spend the same titanium on something that cannot
+        end the deadlock.
+
         ⛔ FAILS OPEN, for `_chest_refuse`'s reason: a floor built on an
         unreadable cost withholds titanium for no measured reason, which is
         worse than the overspend it was meant to prevent.
         """
+        if not (SK_ROTATE and SK_ROTATE_FUND and rnd >= SK_ROTATE_FUND_FROM):
+            return 0
         try:
-            if not self._fund_window(ct, rnd):
+            batt = self._fund_battery(ct, rnd)
+            if batt >= SK_ROTATE_WANT:
                 return 0
+            if batt >= 1 and ct.get_global_ammo() < SK_AMMO_SENTINEL:
+                return 0                       # shoot with what stands
             return ct.get_sentinel_cost() + SK_ROTATE_FUND_KEEP
         except Exception:
             return 0
@@ -452,11 +472,29 @@ class CoreMixin:
         covers several of them and threading a cost argument through two call
         sites would buy nothing measurable.
 
-        ⛔ THE EXEMPTION IS THE CHEST'S, ON THE SAME SIGNAL.  `_under_attack`
-        is the slot-1 threat latch (SK_SLOT_UNDER, 50-round freshness) that
-        ledger V5 arbitrates survival on.  DEFENCE FIRST: a fortress that banks
-        one sentinel's price and loses its core at r290 has banked nothing, so
-        a keeper answering a live threat pecks and heals exactly as before.
+        ⛔⛔ THE EXEMPTION IS `corefire_fresh`, NOT `_under_attack`, AND THE
+        NARROWING IS THIS BUILD'S OWN MEASUREMENT (amendment registered
+        `docs/research/EXPECTATION-v632heim-fund-2026-08-23.md`, pre-tape,
+        blind).  The chest's exemption is the slot-1 PRESENCE latch
+        (SK_SLOT_UNDER, 50-round freshness) and this method shipped with it for
+        one build cycle.  A reachability tap at the gated rung then measured
+        that latch FRESH IN 139 OF 139 keeper-rung rounds in [275, 350] across
+        three cells (jotunheim 76/76, valkyrie 51/51, longhouse 12/12), with
+        the bank below the floor in 84 of them -- i.e. the exemption swallowed
+        the mechanism WHOLE, and `fund_verb_held` read 0 in play.  That it is
+        the mechanism and not the gate was proven by a mutation control with
+        the exemption removed: **848 refusals on jotunheim, 4 on longhouse, and
+        0 on valkyrie** -- the rich cell producing the other verdict on the same
+        call.  ⇒ THE SAME CAUSE THE WAR CHEST WAS MEASURED INERT BY
+        (`chest_blocked == 0` in play, RO-P), which is why the fix is a
+        NARROWING rather than a removal.
+        `corefire_fresh` is the CORE's own HP-DELTA latch (slot 15, published
+        by `_corefire_report`, `SK_COREFIRE_TTL` freshness): our core has
+        ACTUALLY LOST HP recently, not merely "something hostile stands near
+        home".  DEFENCE FIRST is preserved on the signal that means the core is
+        dying; a keeper answering real core damage pecks and heals exactly as
+        before.  ⚠ DISCLOSED: with SK_COREFIRE off the word reads 0 and this
+        exemption never fires, so the gate is strictly tighter on such an arm.
 
         ⚠ WHAT THE COUNTER MEANS, STATED SO IT IS NOT OVER-READ:
         `fund_verb_held` counts ROUNDS THE RUNG WAS REFUSED, which is an UPPER
@@ -467,7 +505,7 @@ class CoreMixin:
         if not (SK_ROTATE and SK_ROTATE_FUND and rnd >= SK_ROTATE_FUND_FROM):
             return False
         try:
-            if self._under_attack(ct, rnd):
+            if self.corefire_fresh(ct, rnd):
                 return False
             if self._fund_battery(ct, rnd) >= SK_ROTATE_WANT:
                 return False

@@ -1458,8 +1458,11 @@ class RolesMixin:
             # conveyor next to it.
             # ⭐⭐ v632 THE FUNDING PRIORITY, CALL SITE 1 of 2
             # (SK_ROTATE_FUND).  THE KEEPER'S 2 Ti PECK YIELDS while the bank
-            # cannot still afford a sentinel -- unless the threat latch is
-            # fresh, in which case this rung runs exactly as before.  ⛔ THE
+            # cannot still afford a sentinel -- unless `corefire_fresh` says
+            # our core has ACTUALLY LOST HP recently (amendment 2026-08-23,
+            # narrowed from the slot-1 presence latch after that latch measured
+            # fresh 139/139 at this rung), in which case this rung runs exactly
+            # as before.  ⛔ THE
             # REFUSAL FALLS THROUGH, it does not end the turn: the rungs below
             # are heals and clear-outs the keeper should still be doing, and
             # one of them (`_heal_action`) is gated by the same predicate at

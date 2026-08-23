@@ -4123,6 +4123,21 @@ SK_ROTATE_FUND = False       # MASTER.  ON (and only while SK_ROTATE is also
                              # sentinel that does not exist cannot use ammo,
                              # and once the battery stands the drip reverts
                              # FULLY because sentinels are useless without it.
+                             # ⭐⭐ TWO AMENDMENTS, BOTH FROM THIS BUILD'S OWN
+                             # SMOKE AND BOTH REGISTERED PRE-TAPE, BLIND
+                             # (`docs/research/
+                             # EXPECTATION-v632heim-fund-2026-08-23.md`):
+                             #  (1) the KEEPER-VERB exemption is
+                             #      `corefire_fresh` (the core's HP-DELTA
+                             #      latch), NOT `_under_attack` -- the presence
+                             #      latch measured fresh in 139 of 139
+                             #      keeper-rung rounds and swallowed the
+                             #      mechanism whole (the same cause the war
+                             #      chest was inert by).  See `_fund_refuse`.
+                             #  (2) the DRIP clamp LIFTS on any round a tube
+                             #      STANDS and the team holds under one
+                             #      sentinel shot -- the measured 201/201
+                             #      zero-ammo deadlock.  See `_fund_floor`.
 SK_ROTATE_FUND_FROM = 285    # THE WINDOW OPENS 15 ROUNDS BEFORE THE FLIP, and
                              # the number is sized off the two measured
                              # shortfalls, not chosen: longhouse was 48 Ti
