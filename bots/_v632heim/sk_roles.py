@@ -111,6 +111,11 @@ from sk_maps import (
     SK_KB_EXEC_RESERVE, SK_KB_EXEC_SEAT_DSQ, SK_KB_EXEC_OFF_RING,
     SK_KB_EXEC_WALK,
     SK_KB_BLOCK, SK_KB_CELL_BLOCK, SK_KB_EXEC_OVERLOAD, SK_KB_EXEC_LATCH,
+    # --- s57 THE KILLBOX, ARM 3 (THE SPEED / LOGISTICS PACKAGE) -----------
+    SK_KILLBOX_FAST, SK_KB_FAST_PARALLEL, SK_KB_FAST_BUYER, SK_KB_FAST_UNTIL,
+    SK_KB_FAST_NEAREST, SK_KB_FAST_BUDGET, SK_KB_FAST_WALK_PER,
+    SK_KB_FAST_WALK_CAP, SK_KB_FAST_CORNER, SK_KB_FAST_SPAWN_DIR,
+    SK_KB_BLOCK_ON, SK_KB_INTERIOR_ON,
     # --- v612 -------------------------------------------------------------
     SK_MARCH_TEAMCHECK, SK_HOMEDEF_TEAMCHECK,
     # --- v613 (the ANTI-APRON axis) ---------------------------------------
@@ -5711,7 +5716,13 @@ class RolesMixin:
                 continue                    # not actually against the edge
             out.append((-free, dsq_core(q, self.core), q.x, q.y, q))
         out.sort(key=lambda r: r[:4])
-        if not out and SK_KILLBOX_EXEC and SK_KB_CELL_INTERIOR:
+        # ⭐ ARM 3: the gate is the DERIVED constant, which is arm 2's own
+        # expression `SK_KILLBOX_EXEC and SK_KB_CELL_INTERIOR` widened by
+        # `or SK_KILLBOX_FAST` -- the descope makes EXEC-off the PRIMARY arm and
+        # the 17/30 boards with no back-edge chamber still need this list.  With
+        # SK_KILLBOX_FAST False the constant IS arm 2's expression, so neither
+        # standing state moves by a character.
+        if not out and SK_KB_INTERIOR_ON:
             out = self._kb_interior_cands()
             self._kb_cands_interior = bool(out)
         cands = [r[4] for r in out]
@@ -5724,7 +5735,7 @@ class RolesMixin:
         # ⛔ OFF (SK_KILLBOX_EXEC False, or SK_KB_BLOCK False) leaves the list
         # exactly as arm 1 built it.
         cap = SK_KB_CELL_CANDS
-        if SK_KILLBOX_EXEC and SK_KB_BLOCK and cands:
+        if SK_KB_BLOCK_ON and cands:
             mate = self._kb_block_partner(cands[0])
             if mate is not None:
                 rest = [c for c in cands[1:]
@@ -5902,6 +5913,217 @@ class RolesMixin:
         except Exception:
             return False, None
 
+    # ==================================================================
+    # s57 THE KILLBOX, ARM 3 -- SK_KILLBOX_FAST (THE SPEED PACKAGE)
+    # ==================================================================
+    # GAME CONTEXT, stated at the verbs: everything below decides WHICH OF OUR
+    # OWN BUILDER BODIES walks to WHICH OF OUR OWN TILES.  No call here touches
+    # an opposing unit; it is logistics for the box arms 1-2 already build,
+    # inside the Florent Code League's sandboxed bot-vs-bot competition.
+    #
+    # ⛔ ZERO STORE SLOTS, AND THE DIVISION IS STILL GEOMETRY.  Arm 1's whole
+    # discipline is that the keeper, the launcher and the sentinel are separate
+    # `Player` instances that agree through arithmetic (kbprobe surprise 1).
+    # This arm adds a SECOND BUILDER to the box and keeps that property: the
+    # DUTY split is keyed on the role each body already claimed for itself in
+    # `_claim_role`, and the TILE split inside one duty is "nearest to ME",
+    # which is a question each body answers about itself alone and therefore
+    # cannot disagree about.  Nothing is published and nothing is read.
+
+    def _kb_fast_owes_launcher(self, rnd):
+        """True if THIS body owns the launcher purchase.
+
+        ⛔ THE HAND-BACK IS A DEADLOCK FENCE.  A duty split with no expiry means
+        that if the buyer dies at r4 -- and our own record has the raiders' first
+        bodies arriving by r5 -- NOBODY buys the launcher and the arm is strictly
+        worse than arm 1 on exactly the cells where we were hit hardest.  At
+        SK_KB_FAST_UNTIL the duty returns to the keeper, i.e. the tree degrades
+        to arm 2's single-body form rather than to nothing.
+        """
+        if not (SK_KILLBOX_FAST and SK_KB_FAST_PARALLEL):
+            return True                 # arms 1-2: the keeper owns everything
+        if rnd >= SK_KB_FAST_UNTIL:
+            return self.role != SK_KB_FAST_BUYER
+        return self.role == SK_KB_FAST_BUYER
+
+    def _kb_fast_owes_cell(self, rnd):
+        """True if THIS body owns the cell/block barriers.
+
+        The cell sits at Chebyshev SK_KB_CELL_CHEB of OUR OWN core, i.e. it is
+        home work by construction, and the keeper is the only home role.  The
+        buyer never lays a seal -- it would be walking BACK through the band it
+        was sent forward through.
+        """
+        if not (SK_KILLBOX_FAST and SK_KB_FAST_PARALLEL):
+            return True
+        return self.role != SK_KB_FAST_BUYER
+
+    def _kb_fast_sites(self, rnd):
+        """How many LIVE build sites THIS body still owes -- the walk budget's
+        multiplier, and the arm-2 defect stated as arithmetic.
+
+        Arm 2 sized ONE budget (SK_KB_WALK_MAX = 14, plus SK_KB_EXEC_WALK = 10)
+        for a box that has a launcher tile, TWO chambers' seals and a sentinel
+        seat; 17 of 30 F1 cells drove a body to the ceiling exactly and the
+        executioner buy then refused with `not_adjacent` on 558 of 562 rounds.
+        ⛔ COUNTED PER BODY AND PER DUTY, so the split SHRINKS each body's
+        budget rather than handing every body the maximum: a keeper that no
+        longer owes a launcher gets 8 fewer rounds, not 8 more.
+        ⛔ AND IT IS BOUNDED BY THE GEOMETRY ON OFFER, not by the constant: a
+        board with one chamber candidate counts one chamber.
+        """
+        n = 0
+        if (SK_KB_LAUNCHER and self.kb_built < SK_KB_MAX
+                and self._kb_fast_owes_launcher(rnd)):
+            n += 1
+        if (SK_KB_CELL and not self.kb_cell_done and not self.kb_cell_off
+                and self._kb_fast_owes_cell(rnd)):
+            want = SK_KB_CELL_BLOCK if SK_KB_BLOCK_ON else 1
+            have = len(self._kb_cell_cands())
+            n += want if have >= want else have
+        if (SK_KILLBOX_EXEC and SK_KB_EXEC and not self.kb_exec_off
+                and self.kb_exec_built < SK_KB_EXEC_MAX):
+            n += 1
+        return n
+
+    def _kb_fast_budget(self, rnd):
+        """THE WALK BUDGET, disclosed as a formula rather than a constant.
+
+            OFF  : SK_KB_WALK_MAX (+ SK_KB_EXEC_WALK with arm 2 armed)
+            ON   : min(SK_KB_FAST_WALK_CAP, SK_KB_FAST_WALK_PER * sites)
+
+        ⛔ STILL ONE BUDGET PER BODY FOR THE WHOLE PLANK.  v610's finding is
+        that the keeper's turn is the scarce resource and v611 burned 656 keeper
+        rounds on one dead tile; this scales the single budget with the work,
+        it does not hand any piece a private one, and the cap is a real cap.
+        """
+        if not (SK_KILLBOX_FAST and SK_KB_FAST_BUDGET):
+            b = SK_KB_WALK_MAX
+            if SK_KILLBOX_EXEC and SK_KB_EXEC:
+                b += SK_KB_EXEC_WALK
+            return b
+        n = self._kb_fast_sites(rnd)
+        b = SK_KB_FAST_WALK_PER * n
+        if b > SK_KB_FAST_WALK_CAP:
+            b = SK_KB_FAST_WALK_CAP
+        self.kb_fast_sites = n
+        self.kb_fast_budget = b
+        return b
+
+    def _kb_fast_todo_pick(self, p, todo):
+        """WHICH seal tile of the current chamber THIS body walks to.
+
+        Arm 1 takes `todo[0]` -- correct with one builder and the whole of the
+        serialisation with two: both bodies would queue on the same tile, and a
+        builder cannot act and move in the same round, so the second one simply
+        waits.  Nearest-to-me splits the chamber between them with no signal.
+        ⚠ DISCLOSED SCOPE: the split is WITHIN the plan's current chamber.  The
+        plan exposes one chamber at a time (`_kb_cell_plan` returns the first
+        viable one), so two bodies parallelise 2-4 tiles, not two whole boxes.
+        """
+        if not (SK_KILLBOX_FAST and SK_KB_FAST_NEAREST) or len(todo) < 2:
+            return todo[0]
+        best = None
+        for r in todo:
+            key = (p.distance_squared(r), r.x, r.y)
+            if best is None or key < best[0]:
+                best = (key, r)
+        return best[1]
+
+    def _kb_fast_exec_mine(self, ct, p, seat):
+        """⭐ "THE SEAT JOINS WHICHEVER BODY IS NEARER", as an ENGINE READ.
+
+        With two bodies eligible for the executioner seat, both walking at it
+        wastes the turn the split was bought to save.  The tie is broken on
+        positions read off the engine this round (`vis_friend` is filled by
+        `_sense` from `get_nearby_entities`), never on a store slot:  this body
+        yields if any OTHER friendly BUILDER BOT it can see is strictly nearer,
+        with the entity id as the total-order tiebreak so two bodies at equal
+        distance cannot both yield.
+        ⚠ A BOUND, NOT A PROOF, and it is disclosed: two bodies out of each
+        other's vision (builder r^2 = 20) both walk.  The cost is bounded by the
+        walk budget and by `_kb_exec_covered`; the alternative -- a store slot --
+        does not exist (arm 1 took the last one) and would be a round stale.
+        """
+        if not (SK_KILLBOX_FAST and SK_KB_FAST_PARALLEL):
+            return True
+        try:
+            me = ct.get_id()
+        except Exception:
+            return True
+        d = p.distance_squared(seat)
+        for eid, et, ep in self.vis_friend:
+            if et != EntityType.BUILDER_BOT or eid == me:
+                continue
+            dd = ep.distance_squared(seat)
+            if dd < d or (dd == d and eid < me):
+                self.kb_fast_yield += 1
+                return False
+        return True
+
+    def _kb_fast_spawn_target(self, ct, rnd):
+        """⭐ PIECE 4 -- the tile the CORE aims its next spawn at, or None.
+
+        THE LAUNCHER SITE FIRST, because the buyer is the body whose walk this
+        piece is trying to shorten and the site is the tile it walks to; the
+        first chamber candidate is the fallback for a board that offers no site
+        (pure geometry, no engine call, so it cannot fail).  None -> the loop
+        keeps arm 1's fixed DIRECTIONS order, i.e. exact OFF identity.
+        ⛔ RUN ON THE CORE'S OWN `Player` INSTANCE, and the disclosure that goes
+        with it: the core's `tile_owner` sees an EMPTY belt plan (it is the
+        keeper that plans the belt), so the site it names can differ from the
+        one the keeper later picks.  That is a heuristic for a SPAWN TILE, not a
+        commitment -- the buyer re-derives the site itself, and a spawn one tile
+        off the ideal is exactly what arm 1 already had.
+        ⛔ MEMOISED BY `_kb_pick_site` ITSELF (`self.kb_site`), so the ~144-tile
+        scan runs at most once on the core and then costs one attribute read.
+        """
+        if not (SK_KILLBOX and SK_KILLBOX_FAST and SK_KB_FAST_SPAWN_DIR):
+            return None
+        try:
+            s = self._kb_pick_site(ct, rnd)
+        except Exception:
+            s = None
+        if s is not None:
+            return s
+        if SK_KB_CELL:
+            c = self._kb_cell_cands()
+            if c:
+                return c[0]
+        return None
+
+    def _kb_fast_buyer_turn(self, ct, p, rnd):
+        """THE BUYER'S ENTIRE KILLBOX TURN -- one rung, for a role that is not
+        the keeper.  True if it spent this body's round.
+
+        ⛔ IT IS ONE RUNG AND IT IS BOUNDED THREE WAYS, because this is the only
+        place in the arm that spends a FORWARD role's opening: the role gate,
+        the SK_KB_FAST_UNTIL fence, and the walk budget (which for a body owing
+        only the launcher is SK_KB_FAST_WALK_PER rounds, and drops to zero the
+        round the launcher stands).  ⚠ THE COST IS THE WALKER'S LAP STARTING
+        LATER and it is reported, not argued away.
+        """
+        if not (SK_KILLBOX and SK_KILLBOX_FAST and SK_KB_FAST_PARALLEL):
+            return False
+        if self.role != SK_KB_FAST_BUYER or rnd >= SK_KB_FAST_UNTIL:
+            return False
+        try:
+            if ct.get_action_cooldown() == 0:
+                if self._kb_launcher_action(ct, p, rnd):
+                    self.kb_fast_buys += 1
+                    return True
+            if ct.get_move_cooldown() != 0:
+                return False
+        except Exception:
+            return False
+        tgt = self._kb_walk_target(ct, p, rnd)
+        if tgt is None:
+            return False
+        if self.step_to(ct, tgt):
+            self.kb_fast_steps += 1
+            return True
+        return False
+
     # --- PIECE 1, the launcher: siting ---------------------------------
 
     def _kb_toward(self, q):
@@ -5945,9 +6167,21 @@ class RolesMixin:
         if self.kb_site is not None:
             return self.kb_site
         cands = self._kb_cell_cands() if SK_KB_CELL else ()
+        # ⭐⭐ ARM 3, PIECE 3 -- THE SEAL COST OF EACH CHAMBER, PRECOMPUTED ONCE.
+        # An off-map neighbour is a FREE seal (kbprobe STEP1), so a map corner
+        # costs 2 barriers, a back-edge tile 3 and an interior tile 4 -- i.e.
+        # this list IS "how many keeper rounds does the box that this site can
+        # throw into still need".  Precomputed outside the ~144-tile scan
+        # because the alternative is 4 bounds tests per candidate per tile.
+        _kbfc = bool(SK_KILLBOX_FAST and SK_KB_FAST_CORNER)
+        cand_cost = [(cq, len(self._kb_seal_tiles(cq))) for cq in cands]
         seats = set(core_seats(self.core))
         foot = set(core_tiles_xy(self.core))
         best = None
+        best_a2 = None                  # the key ARM 2 would have chosen, kept
+                                        # ONLY so the axis-rank loss this piece
+                                        # accepts is REPORTED as a number rather
+                                        # than asserted to be small
         cx, cy = self.core.x, self.core.y
         span = 5                    # d^2 18 -> |dx| <= 4, plus the 2x2 body
         for dx in range(-span, span + 2):
@@ -5989,11 +6223,17 @@ class RolesMixin:
                 if not self._hl_has_throw(ct, q):
                     continue
                 reach = 0
-                for cq in cands:
+                reach_cost = 9          # ⭐ ARM 3: the CHEAPEST reachable
+                                        # chamber's barrier count; 9 = none
+                for cq, cc in cand_cost:
                     dd = q.distance_squared(cq)
                     if 1 <= dd <= SK_KB_THROW_MAX_DSQ:
                         reach = 1
-                        break
+                        if cc < reach_cost:
+                            reach_cost = cc
+                        if not _kbfc:
+                            break       # ⛔ ARM 2's loop, character for
+                                        # character, on every OFF arm
                 perp = self._kb_perp2(q)
                 if perp <= SK_KB_AXIS_BAND:
                     perp = 0        # ⛔ INCLUSIVE, AND THE FIRST CUT WAS NOT.
@@ -6008,13 +6248,42 @@ class RolesMixin:
                 if ring < 0:
                     ring = -ring
                 key = (perp, -reach, ring, d, x, y)
+                # ⭐⭐ ARM 3, PIECE 3 -- CORNER-FIRST HARD PREFERENCE, AND IT IS
+                # A RE-ORDER OF EXACTLY TWO TERMS.  Arm 1's key puts the study's
+                # AXIS BAND first and cell REACH second, so a site sitting on
+                # the core-to-core axis that can only throw into a 3- or
+                # 4-barrier chamber outranks an off-axis site that reaches the
+                # 2-barrier map corner.  The registered piece is "accept
+                # axis-rank loss for a 2-barrier cell": the box that needs the
+                # fewest keeper rounds wins the tie, and the axis term is
+                # demoted to second.  `reach_cost` subsumes `-reach` (9 = no
+                # reachable chamber at all, which still ranks last).
+                if _kbfc:
+                    key = (reach_cost, perp, ring, d, x, y)
+                    if best_a2 is None or (perp, -reach, ring, d, x, y) < best_a2[0]:
+                        best_a2 = ((perp, -reach, ring, d, x, y), q, perp,
+                                   reach_cost)
                 if best is None or key < best[0]:
-                    best = (key, q)
+                    best = (key, q, perp, reach_cost)
         if best is None:
             return None
         self.kb_site = best[1]
         self.kb_site_rnd = rnd
         self.kb_tries = 0
+        # ⭐ BOTH COUNTS, AND THEY ARE COUNTED HERE BECAUSE NOWHERE ELSE CAN:
+        # the trade this piece accepts is only visible against the offer the
+        # arm-2 key would have taken, and that offer stops existing the moment
+        # the scan ends.  `kb_fast_cell_cost` = barriers the chosen site's
+        # cheapest reachable chamber needs (2 = the corner this piece is for);
+        # `kb_fast_axis_loss` = perpendicular offset given up to get it (0 when
+        # the two keys agree, which is the honest "the trade never bound" case).
+        if _kbfc:
+            self.kb_fast_cell_cost = best[3]
+            if best_a2 is not None:
+                self.kb_fast_axis_loss = best[2] - best_a2[2]
+                self.kb_fast_alt_cost = best_a2[3]
+                if (best_a2[1].x, best_a2[1].y) != (best[1].x, best[1].y):
+                    self.kb_fast_site_moved = 1
         return self.kb_site
 
     def _kb_strike(self, rnd):
@@ -6046,6 +6315,11 @@ class RolesMixin:
         second one, and that residual is disclosed rather than claimed away.
         """
         if not (SK_KILLBOX and SK_KB_LAUNCHER):
+            return False
+        # ⭐⭐ ARM 3, PIECE 1 -- THE DUTY GATE.  With the parallel build armed
+        # the launcher belongs to the BUYER and the keeper's turn belongs to the
+        # barriers; OFF this returns True for every body, which is arms 1-2.
+        if not self._kb_fast_owes_launcher(rnd):
             return False
         if self.kb_gaveup or self.kb_built >= SK_KB_MAX:
             return False
@@ -6116,8 +6390,7 @@ class RolesMixin:
         self.kb_plan_rnd = rnd
         self.kb_plan = None
         _kb_done_n = 0
-        _kb_want = (SK_KB_CELL_BLOCK
-                    if (SK_KILLBOX_EXEC and SK_KB_BLOCK) else 1)
+        _kb_want = SK_KB_CELL_BLOCK if SK_KB_BLOCK_ON else 1
         for q in self._kb_cell_cands():
             if self.tile_owner(q) != OWNER_NONE:
                 continue
@@ -6170,6 +6443,10 @@ class RolesMixin:
         """
         if not (SK_KILLBOX and SK_KB_CELL):
             return False
+        # ⭐⭐ ARM 3, PIECE 1 -- THE DUTY GATE (see `_kb_fast_owes_cell`).  OFF
+        # this returns True for every body, which is arms 1-2.
+        if not self._kb_fast_owes_cell(rnd):
+            return False
         if self.kb_gaveup or self.kb_cell_done or self.kb_cell_off:
             return False
         plan = self._kb_cell_plan(ct, rnd)
@@ -6191,10 +6468,12 @@ class RolesMixin:
         if not todo:
             self.kb_cell_done = True
             self.kb_cell_built_round = rnd
-            if SK_KILLBOX_EXEC and self._kb_cands_interior:
+            if SK_KB_INTERIOR_ON and self._kb_cands_interior:
                 self.kb_cell_interior_built = 1
             return False
-        r = todo[0]
+        # ⭐ ARM 3, PIECE 1b -- NEAREST-TO-ME, which is the whole of the
+        # tile-level parallel build.  OFF -> `todo[0]`, arm 1's own line.
+        r = self._kb_fast_todo_pick(p, todo)
         if p.distance_squared(r) != 1:
             return False
         cost = ct.get_barrier_cost()
@@ -6224,10 +6503,10 @@ class RolesMixin:
         # empty-todo path, which fires only once SK_KB_CELL_BLOCK chambers
         # stand -- and it terminates, because a completed chamber increments
         # `_kb_done_n` every round.
-        if len(todo) == 1 and not (SK_KILLBOX_EXEC and SK_KB_BLOCK):
+        if len(todo) == 1 and not SK_KB_BLOCK_ON:
             self.kb_cell_done = True
             self.kb_cell_built_round = rnd
-            if SK_KILLBOX_EXEC and self._kb_cands_interior:
+            if SK_KB_INTERIOR_ON and self._kb_cands_interior:
                 self.kb_cell_interior_built = 1
         return True
 
@@ -6681,16 +6960,19 @@ class RolesMixin:
             return None
         # ⭐ ARM 2: ONE budget still, widened by the pieces it now has to
         # reach (SK_KB_EXEC_WALK).  Off -> exactly SK_KB_WALK_MAX.
-        _budget = SK_KB_WALK_MAX
-        if SK_KILLBOX_EXEC and SK_KB_EXEC:
-            _budget += SK_KB_EXEC_WALK
+        # ⭐⭐ ARM 3, PIECE 2: the budget is now a FUNCTION OF LIVE BUILD SITES
+        # (`_kb_fast_budget`), which is the arm-2 logistics defect answered at
+        # its cause.  With SK_KILLBOX_FAST off `_kb_fast_budget` returns exactly
+        # the two lines it replaces.
+        _budget = self._kb_fast_budget(rnd)
         if self.kb_walk_rounds >= _budget:
             return None
         if rnd < SK_KB_MIN_ROUND:
             return None
         tgt = None
         strike = False
-        if SK_KB_LAUNCHER and self.kb_built < SK_KB_MAX:
+        if (SK_KB_LAUNCHER and self.kb_built < SK_KB_MAX
+                and self._kb_fast_owes_launcher(rnd)):
             live = False
             for _eid, et, _ep in self.vis_friend:
                 if et == EntityType.LAUNCHER:
@@ -6706,10 +6988,10 @@ class RolesMixin:
                         tgt = site
                         strike = True
         if (tgt is None and SK_KB_CELL and not self.kb_cell_done
-                and not self.kb_cell_off):
+                and not self.kb_cell_off and self._kb_fast_owes_cell(rnd)):
             plan = self._kb_cell_plan(ct, rnd)
             if plan is not None and plan[1]:
-                r = plan[1][0]
+                r = self._kb_fast_todo_pick(p, plan[1])
                 if p.distance_squared(r) == 1:
                     return None             # seated; the action fires
                 if (ct.get_global_resources()
@@ -6727,7 +7009,11 @@ class RolesMixin:
                 and not self.kb_exec_off
                 and self.kb_exec_built < SK_KB_EXEC_MAX):
             eplan = self._kb_exec_seat_pick(ct, rnd)
-            if eplan is not None and not self._kb_exec_covered(ct, eplan[2]):
+            # ⭐ ARM 3, PIECE 1: "the seat joins whichever body is NEARER".  A
+            # body that can see a nearer friendly builder yields the walk rather
+            # than racing it; OFF -> True for every body, arm 2's own line.
+            if (eplan is not None and not self._kb_exec_covered(ct, eplan[2])
+                    and self._kb_fast_exec_mine(ct, p, eplan[0])):
                 seat = eplan[0]
                 if p.distance_squared(seat) == 1:
                     return None             # seated; the action fires
@@ -8116,6 +8402,23 @@ class RolesMixin:
         # v604 FIX 2, run BEFORE any targeting so `self.tgt` still holds last
         # round's objective.  Independent of SK_ONE_CURSOR by design.
         self._cycle_commit(rnd)
+
+        # ⭐⭐ s57 THE KILLBOX, ARM 3, PIECE 1 -- THE BUYER'S RUNG.  ⛔ ABOVE THE
+        # WHOLE LAP AND ONLY INSIDE THE OPENING, and BELOW the survey/report/
+        # commit bookkeeping above so that no round this rung takes leaves the
+        # walker's own cursor state unwritten (v604 FIX 2's reason, verbatim).
+        # The launcher site sits at Chebyshev 2-3 of OUR core on the ENEMY side,
+        # i.e. on this body's own way out; buying it costs a step or two of a lap
+        # that has not started, where for the keeper it is a round trip away from
+        # the barriers it should be laying.  Their relay rung 1 lands at r1-r5
+        # and 77-80% of their first bodies arrive by throw, so a launcher that
+        # waits for the lap has missed the thing it answers.
+        # ⛔ THREE FENCES: the role, the SK_KB_FAST_UNTIL hand-back, and the walk
+        # budget (this body owes ONE site, so SK_KB_FAST_WALK_PER rounds, and it
+        # drops to zero the round the launcher stands).
+        # ⛔ Flag off -> False on the first line -> v632 behaviour exactly.
+        if self._kb_fast_buyer_turn(ct, p, rnd):
+            return
 
         if not SK_CAGE:
             self._attack_enemy_core(ct, p, rnd)

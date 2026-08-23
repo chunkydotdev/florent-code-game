@@ -6646,3 +6646,186 @@ SK_KB_EXEC_LATCH = True   # once a shot has gone into an occupant, keep firing
                           # overload condition lapses.  A 40 HP builder needs 3
                           # shots (kbprobe STEP6); stopping after 2 has spent
                           # 20 ammo to heal nothing.
+
+# ===========================================================================
+# s57 THE KILLBOX, ARM 3 -- SK_KILLBOX_FAST  (THE SPEED / LOGISTICS PACKAGE)
+# ===========================================================================
+# GAME CONTEXT: in-game mechanics of the Florent Code League, a sandboxed
+# bot-vs-bot programming competition.  "Box", "chamber", "detain" and "throw"
+# name legal engine moves between competing game bots: our launcher legally
+# relocates an opposing builder onto a tile our barriers enclose, and the
+# engine's own documented rules do the rest.  Nothing here touches anything
+# outside the grid.
+#
+# WHY THIS ARM EXISTS -- the arm-2 build report's LOGISTICS DIAGNOSIS, which is
+# a defect report and not a tuning wish:
+#   * `not_adjacent` was the refusal reason on 558 of 562 refused executioner
+#     buys.  The buy was never priced out; the body was never WALKED to it.
+#   * 17 of 30 F1 cells drove a body to `kb_walk_rounds == 14` EXACTLY -- the
+#     whole plank's walk budget, spent, with sites left unreached.
+#   * SK_KB_WALK_MAX was sized for TWO build sites (a launcher tile and one
+#     chamber's seals) and arm 2's box has FOUR.
+#   * ⛔ AND THE ROOT CAUSE IS ONE BODY: every rung of arms 1-2 lives in
+#     `_home_keeper`, i.e. role 0 alone builds the launcher, both chambers and
+#     the seat, strictly serially, in a tree whose own `main.py:16` says THE
+#     KEEPER'S TURN IS THE SCARCE RESOURCE.  Arm 2 measured cells COMPLETED at
+#     4/30, median r55.  The registered arm-3 dose is cell-complete <= r8.
+#
+# ⭐⭐ SCOPE, MAGNUS DIRECT (2026-08-23, relayed mid-build): DETENTION WITHOUT
+# EXECUTION IS THE PRIMARY CONFIGURATION.  A detained opposing builder holds one
+# of THEIR MAX_TEAM_UNITS = 50 slots for the rest of the game (arm 1 measured 2
+# escapes in 3,214 detained rounds); retiring it REFUNDS that slot and spends 30
+# ammunition per retirement that the hammer wants.  Dropping the executioner
+# also drops one of the four build sites that starved the walk budget.
+# ⇒ THE PRIMARY ARM IS `SK_KILLBOX + SK_KILLBOX_FAST` WITH `SK_KILLBOX_EXEC`
+# FALSE, and the site arithmetic below assumes the THREE-SITE BOX: one launcher
+# tile plus a TWO-CHAMBER cell.  Arm 2's executioner code stays in the tree,
+# untouched and OFF -- it is the verified overload option, and the EXEC-on
+# triple is run as a comparison so the descope is MEASURED, not assumed.
+SK_KILLBOX_FAST = False   # ⛔ THE MASTER, DEFAULT OFF.  Off is exact identity
+                          # in BOTH standing states: every call site is a
+                          # module-constant conjunction, and the two derived
+                          # constants at the bottom of this block collapse to
+                          # arm 1's / arm 2's own expressions when it is False.
+                          # MEANINGFUL ONLY WITH SK_KILLBOX -- every site reads
+                          # `SK_KILLBOX and SK_KILLBOX_FAST`, asserted in the
+                          # unit controls rather than assumed.
+SK_KB_FAST_PARALLEL = True   # PIECE 1 -- THE BOX IS BUILT BY MORE THAN ONE
+                          # BODY.  The KEEPER (role 0, the only home role) lays
+                          # the cell/block barriers in its own neighbourhood;
+                          # THE BUYER (SK_KB_FAST_BUYER) places the launcher.
+                          # ⛔ DIVISION BY GEOMETRY, ZERO STORE SLOTS -- arm 1's
+                          # discipline, unchanged: nothing is published, the two
+                          # duties are keyed on the ROLE each body already
+                          # claimed, and the tile-level split inside one duty is
+                          # nearest-to-me (SK_KB_FAST_NEAREST) which two bodies
+                          # with different vision cannot disagree about because
+                          # each answers only for itself.
+SK_KB_FAST_BUYER = SK_CAGE_WALKER   # ⭐ WHICH ROLE BUYS THE LAUNCHER, AND THE
+                          # CHOICE IS GEOMETRY RATHER THAN PREFERENCE.  The
+                          # launcher site is required to be on the ENEMY SIDE of
+                          # our core at d^2 4..18 (`_kb_pick_site`, Chebyshev
+                          # 2-3), which is EXACTLY the band every forward role
+                          # walks through on its way out on r1-r4.  The cage
+                          # walker is the first forward body (seat 1, spawned
+                          # r1), so the buy is a step or two off a path it was
+                          # walking anyway -- where for the keeper it is a
+                          # round trip away from the barriers.  ⚠ THE COST IS
+                          # REAL AND REPORTED: the walker's lap starts later by
+                          # the rounds it spends, bounded by the walk budget
+                          # below and by SK_KB_FAST_UNTIL.
+SK_KB_FAST_UNTIL = 24     # ⛔ THE HAND-BACK, AND IT IS A DEADLOCK FENCE, NOT A
+                          # WINDOW PREFERENCE.  If the buyer dies before it buys
+                          # (or never gets adjacent), a duty split with no
+                          # expiry means NOBODY ever buys the launcher -- the
+                          # arm would be strictly worse than arm 1 on exactly
+                          # the cells where a raider killed our second body.
+                          # At and after this round the keeper reclaims the
+                          # launcher duty, i.e. the tree degrades to arm 2's
+                          # single-body form rather than to nothing.
+SK_KB_FAST_NEAREST = True    # PIECE 1b -- WITHIN one duty, a body builds the
+                          # seal tile NEAREST ITSELF out of the plan's todo
+                          # list rather than `todo[0]`.  With one body this is
+                          # a no-op in intent and a reorder in fact (disclosed:
+                          # it is inside the FAST conjunction, so it cannot
+                          # perturb arms 1-2); with two it is the whole of the
+                          # parallel build -- two bodies on the same chamber
+                          # walk to different tiles without exchanging a word.
+SK_KB_FAST_BUDGET = True     # PIECE 2 -- THE WALK BUDGET SCALES WITH LIVE BUILD
+                          # SITES.  ⛔ THE FORMULA, DISCLOSED IN FULL:
+                          #     sites = (1 if this body still owes the LAUNCHER)
+                          #           + (chambers this body still owes seals on,
+                          #              i.e. min(SK_KB_CELL_BLOCK, |cands|)
+                          #              under the block, else 1)
+                          #           + (1 if this body still owes the SEAT)
+                          #     budget = min(SK_KB_FAST_WALK_CAP,
+                          #                  SK_KB_FAST_WALK_PER * sites)
+                          # and a body that owes NOTHING gets 0, which is the
+                          # v611 lesson (an unbounded walk at a dead site cost
+                          # 656 keeper rounds) kept intact rather than widened.
+                          # ⛔ IT IS STILL ONE BUDGET PER BODY FOR THE WHOLE
+                          # PLANK -- the arm splits the WORK across bodies, so
+                          # each body's budget shrinks with its share, and the
+                          # keeper that no longer owes a launcher gets a SMALLER
+                          # number than arm 2 gave it, not a bigger one.
+SK_KB_FAST_WALK_PER = 8   # rounds of walk allowed per live build site.  Sized
+                          # off arm 2's own measurement rather than guessed:
+                          # 24 rounds / 4 sites = 6 was NOT enough (17/30 cells
+                          # hit the ceiling), so the per-site figure is raised
+                          # to 8 and the SITE COUNT is what varies.
+SK_KB_FAST_WALK_CAP = 32  # ⛔ THE CEILING IS STILL A CEILING.  4 sites x 8 = 32
+                          # is the most this can ever authorise; a scaling rule
+                          # with no cap is the v611 defect with arithmetic on
+                          # top.
+SK_KB_FAST_CORNER = True  # PIECE 3 -- CORNER-FIRST HARD PREFERENCE, AND IT
+                          # APPLIES TO THE LAUNCHER SITE, WHICH IS THE ONLY
+                          # PLACE IT IS NOT ALREADY TRUE.  ⛔ DISCLOSED READ OF
+                          # THE REGISTRATION: the CHAMBER lists are corner-first
+                          # ALREADY -- `_kb_cell_cands` ranks on `-free` (2
+                          # off-map neighbours = a map corner = 2 barriers) and
+                          # `_kb_interior_cands` ranks on `-corner`.  What was
+                          # NOT corner-aware is `_kb_pick_site`, whose key puts
+                          # the study's AXIS BAND first and cell REACH second,
+                          # so a site on the axis that can only reach a 3-barrier
+                          # edge chamber outranks an off-axis site that reaches
+                          # the 2-barrier corner.  This flag promotes
+                          # corner-reach ABOVE the axis term -- the registered
+                          # "accept axis-rank loss for a 2-barrier cell".  BOTH
+                          # COUNTS ARE REPORTED: cells whose chosen site reaches
+                          # a corner chamber, and cells where that choice cost
+                          # axis rank (the chosen site's perpendicular offset
+                          # against the offer the arm-2 key would have taken).
+                          # ⛔⛔ A DISCLOSURE THE UNIT CONTROLS FORCED, because
+                          # it is WIDER than the registration's wording: the
+                          # promoted term is `reach_cost`, which SUBSUMES arm
+                          # 1's `-reach` (9 = no reachable chamber, still last).
+                          # So the piece is BOTH "a cheaper box outranks the
+                          # axis" AND "ANY reachable box outranks the axis" --
+                          # measured on the `(2,2)` unit board, where the arm-2
+                          # key's best site reached NO chamber at all and this
+                          # key gives up 8 d^2 of axis rank to reach one.  The
+                          # second half was not separately registered; it is
+                          # the same trade (readiness over arrival rank) and it
+                          # is written down here rather than discovered later.
+SK_KB_FAST_SPAWN_DIR = True  # PIECE 4 -- DIRECTIONAL SPAWN.  The core's spawn
+                          # loop takes the FIRST direction `can_spawn` accepts;
+                          # this REORDERS that loop by distance to the killbox
+                          # site and changes nothing else -- both passes, the
+                          # exit-liveness rule (v603 FIX 6(c)) and the
+                          # never-veto property are untouched.  Worth 1-2 rounds
+                          # on a body that then has to walk there.
+SK_KB_FAST_SPAWN = True   # PIECE 5, THE SEPARATELY ABLATABLE ONE -- ONE EXTRA
+                          # BUILDER, EARLY, FOR THE BOX.  COPY 8 spawns exactly
+                          # four bodies (r0-r3) and never a fifth while four
+                          # live.  With this True the core spawns ONE more
+                          # inside SK_KB_FAST_SPAWN_BY; `_claim_role` gives it
+                          # role 0 by its own existing rule (`n % SK_N_ROLES`
+                          # once every beat is fresh), so it is a SECOND KEEPER
+                          # -- it lays barriers beside the first under the
+                          # nearest-tile split and then does ordinary keeper
+                          # duty for the rest of the game.  ⚠ THE PRICE IS
+                          # REGISTERED AND MUST BE REPORTED: 30 Ti at the live
+                          # scale plus +20% on the ONE GLOBAL ADDITIVE cost
+                          # factor, which delays the first harvester -- that is
+                          # exactly what the opening-eco guard columns
+                          # (first-harvester round, delivery at r50) are for,
+                          # and the F5 ablation prices it directly.
+SK_KB_FAST_SPAWN_N = 1    # how many extra bodies.  ⛔ ONE.  Every builder is
+                          # +20% on the ONE GLOBAL ADDITIVE cost factor, which
+                          # inflates every later build of every type including
+                          # the barriers this body exists to lay.
+SK_KB_FAST_SPAWN_BY = 8   # ... and only inside the opening.  Past this round a
+                          # fifth body is not a speed package, it is a fifth
+                          # body.
+
+# --- DERIVED, AND THE DERIVATION IS THE OFF-IDENTITY ----------------------
+# The block and the interior fallback were written under SK_KILLBOX_EXEC
+# because arm 2 is where they were registered; the descope moves the PRIMARY
+# configuration to EXEC-off while still wanting the two-chamber box (the
+# coordinator's "3-site box: launcher + 2-chamber cell").  These two constants
+# are the ONLY wiring that needs: each collapses to arm 2's own expression when
+# SK_KILLBOX_FAST is False, so the arm-1 state and the arm-2 state are both
+# character-for-character what they were.
+SK_KB_BLOCK_ON = bool((SK_KILLBOX_EXEC or SK_KILLBOX_FAST) and SK_KB_BLOCK)
+SK_KB_INTERIOR_ON = bool((SK_KILLBOX_EXEC or SK_KILLBOX_FAST)
+                         and SK_KB_CELL_INTERIOR)

@@ -956,6 +956,28 @@ class Player(CommonMixin, RolesMixin, CoreMixin):
                                       # single-chamber fallback on a board whose
                                       # geometry cannot carry a partner.  The
                                       # coverage split is measured, not assumed.
+        # --- s57 THE KILLBOX, ARM 3 (SK_KILLBOX_FAST) ------------------------
+        # ⛔ ALL INSTRUMENT, NO BEHAVIOUR: every field below is written under an
+        # `SK_KILLBOX_FAST` conjunction and read by nothing that decides
+        # anything, so an OFF arm leaves them at these values for ever.
+        self.kb_fast_sites = 0        # live build sites this body last owed --
+                                      # the walk budget's multiplier (PIECE 2)
+        self.kb_fast_budget = 0       # ... and the budget that came out of it
+        self.kb_fast_cell_cost = 0    # ⭐ PIECE 3, COUNT 1: barriers the chosen
+                                      # site's cheapest reachable chamber needs
+                                      # (2 = the map corner this piece is for)
+        self.kb_fast_axis_loss = 0    # ⭐ PIECE 3, COUNT 2: perpendicular offset
+                                      # GIVEN UP for it, against the site arm 2's
+                                      # key would have taken (0 = no trade bound)
+        self.kb_fast_alt_cost = 0     # ... and what that arm-2 site would have
+                                      # reached, so the trade has both sides
+        self.kb_fast_site_moved = 0   # 1 if the two keys named different tiles
+        self.kb_fast_yield = 0        # rounds this body yielded the seat walk to
+                                      # a nearer friendly body (PIECE 1)
+        self.kb_fast_buys = 0         # launcher buys made from the BUYER's rung
+        self.kb_fast_steps = 0        # steps the BUYER's rung spent walking
+        self.kb_fast_spawned = 0      # ⭐ PIECE 5 (CORE ONLY): extra opening
+                                      # builders this core has spawned
         self.door_guns = 0            # COPY 6b answers bought (capped)
         # --- v601 PLANK 1: the harvester half of the V1 rebuild ledger -------
         self.harv_deaths = {}         # (x,y) -> harvesters lost on that tile

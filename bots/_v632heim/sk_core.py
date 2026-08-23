@@ -31,6 +31,9 @@ from sk_maps import (
     SK_ROTATE_WANT, SK_SLOT_NEST,
     # --- s57 LEVER 1 -- THE CONVERSION POLICY (SK_AMMO_PUSH) --------------
     SK_AMMO_PUSH, SK_AMMO_PUSH_BANK, SK_AMMO_PUSH_MAX, SK_AMMO_PUSH_RESERVE,
+    # --- s57 THE KILLBOX, ARM 3 (THE SPEED / LOGISTICS PACKAGE) -----------
+    SK_KILLBOX, SK_KB_CELL, SK_KILLBOX_FAST, SK_KB_FAST_SPAWN_DIR,
+    SK_KB_FAST_SPAWN, SK_KB_FAST_SPAWN_N, SK_KB_FAST_SPAWN_BY,
 )
 from sk_roles import (
     DRIP_GUN_MASK, DRIP_SENT_FIELD, SEAT_MASK,
@@ -734,6 +737,26 @@ class CoreMixin:
         if in_flight < 0:
             in_flight = 0
         want = SK_N_ROLES if SK_ROLES else SK_N_ROLES
+        # ⭐⭐ s57 THE KILLBOX, ARM 3, PIECE 5 (SK_KB_FAST_SPAWN) -- ONE EXTRA
+        # OPENING BUILDER FOR THE BOX, SEPARATELY ABLATABLE.  COPY 8's rule is
+        # exactly four bodies and never a fifth while four live; this raises the
+        # want by SK_KB_FAST_SPAWN_N inside SK_KB_FAST_SPAWN_BY and not one
+        # round later.  ⛔ THE COUNTER IS NOT `live`: with five bodies alive
+        # `live` still tops out at SK_N_ROLES (there are only four role beats),
+        # so a want of five read off `live` would spawn for ever -- the bound is
+        # this core's own `kb_fast_spawned`, incremented on the spawn below.
+        # `_claim_role` gives the extra body role 0 by its existing
+        # `n % SK_N_ROLES` rule once every beat is fresh, i.e. it is a SECOND
+        # KEEPER: it lays barriers beside the first under the nearest-tile split
+        # and then does ordinary keeper duty.
+        # ⚠ THE PRICE IS 30 Ti AT THE LIVE SCALE PLUS +20% ON THE ONE GLOBAL
+        # ADDITIVE COST FACTOR, and it delays the first harvester.  That is what
+        # the opening-eco guard columns exist to price.
+        _kbextra = (SK_KILLBOX and SK_KILLBOX_FAST and SK_KB_FAST_SPAWN
+                    and rnd <= SK_KB_FAST_SPAWN_BY
+                    and self.kb_fast_spawned < SK_KB_FAST_SPAWN_N)
+        if _kbextra:
+            want += SK_KB_FAST_SPAWN_N
         if live + in_flight >= want:
             return
         if ct.get_unit_count() >= 50:
@@ -746,8 +769,27 @@ class CoreMixin:
         # and the second is unconditional -- a body with no exit still beats no
         # body at all when every adjacent tile is boxed (it can still peck out,
         # v603 FIX 6(b)), so this ORDERS the choice, it never vetoes the spawn.
+        # ⭐⭐ s57 THE KILLBOX, ARM 3, PIECE 4 (SK_KB_FAST_SPAWN_DIR) --
+        # DIRECTIONAL SPAWN, AND IT IS A RE-ORDER OF THIS LOOP AND NOTHING
+        # ELSE.  Both passes, v603 FIX 6(c)'s exit-liveness rule and the
+        # never-veto property are untouched; only the ORDER in which the eight
+        # ring tiles are offered to `can_spawn` changes, from the fixed
+        # DIRECTIONS order to distance-from-the-killbox-site.  A body born on
+        # the site-facing tile is 1-2 rounds nearer the thing it was spawned to
+        # build.  ⛔ TOTAL-ORDERED (distance, then the tile's own DIRECTIONS
+        # index) so the choice is deterministic.
+        _dirs = DIRECTIONS
+        if SK_KILLBOX and SK_KILLBOX_FAST and SK_KB_FAST_SPAWN_DIR:
+            _tgt = self._kb_fast_spawn_target(ct, rnd)
+            if _tgt is not None:
+                _rank = []
+                for _i, _d in enumerate(DIRECTIONS):
+                    _q = p.add(_d)
+                    _rank.append((_q.distance_squared(_tgt), _i, _d))
+                _rank.sort()
+                _dirs = [_r[2] for _r in _rank]
         for require_exit in (True, False):
-            for d in DIRECTIONS:
+            for d in _dirs:
                 q = p.add(d)
                 if not self.ib(q.x, q.y):
                     continue
@@ -764,6 +806,11 @@ class CoreMixin:
                 except Exception:
                     continue
                 self.spawned += 1
+                if _kbextra and live + in_flight >= SK_N_ROLES:
+                    # ⛔ ONLY THE EXTRA IS COUNTED.  The four COPY 8 bodies go
+                    # through the same loop; the discriminator is that the four
+                    # role slots were already staffed when this one was spawned.
+                    self.kb_fast_spawned += 1
                 return
             if not SK_SPAWN_EXIT:
                 return
