@@ -1,0 +1,95 @@
+Update available: 2.3.6 -> 2.3.9. Run: pip install --upgrade fcode
+[A r0] map 30x30 scale=100.00% ti=500 ammo=0 | COSTS barrier=3 sentinel=30 launcher=20 builder=30
+[A r0] ammo converted -> ammo=150 ti=350
+[A r0] spawned builder id=3 at (2,1) ti=320 scale=120.00%
+[B r0] UNIT-COUNT None -> 1 (round 0)
+[B r0] spawned victim1 id=4 at (26,25) -> store[0]=4
+[B r1] UNIT-COUNT 1 -> 2 (round 1)
+[B r1] spawned healer id=5 at (27,25) -> store[1]=5
+[B r2] UNIT-COUNT 2 -> 3 (round 2)
+[B r2] spawned victim2 id=6 at (26,25) -> store[2]=6
+[B r3] UNIT-COUNT 3 -> 4 (round 3)
+[B r3] spawned victim3 id=7 at (27,25) -> store[3]=7
+[B r4] UNIT-COUNT 4 -> 5 (round 4)
+[A r21] STEP2 PRE can_fire_from(S(20, 4),SOUTH,SENTINEL,P)=True Q=True | P_in_pattern=True Q_in_pattern=True pattern_n=5 -> PASS
+[A r21] STEP2 pattern=[(20, 5), (20, 6), (20, 7), (20, 8), (20, 9)]
+[A r21] STEP2 sentinel id=8 at (20, 4) facing=SOUTH hp=40 cost=36 scale 120.00->140.00
+[A r24] STEP1 barrier(19, 7) id=9 verify tile_building_id=9 type=EntityType.BARRIER hp=30 -> PASS | cost=4 scale 140.00->141.00
+[A r29] STEP1 barrier(19, 9) id=10 verify tile_building_id=10 type=EntityType.BARRIER hp=30 -> PASS | cost=4 scale 141.00->142.00
+[A r36] STEP1 barrier(20, 10) id=11 verify tile_building_id=11 type=EntityType.BARRIER hp=30 -> PASS | cost=4 scale 142.00->143.00
+[A r39] STEP1 barrier(21, 9) id=12 verify tile_building_id=12 type=EntityType.BARRIER hp=30 -> PASS | cost=4 scale 143.00->144.00
+[A r46] STEP1 barrier(21, 7) id=13 verify tile_building_id=13 type=EntityType.BARRIER hp=30 -> PASS | cost=4 scale 144.00->145.00
+[A r51] STEP1 barrier(20, 8) id=14 verify tile_building_id=14 type=EntityType.BARRIER hp=30 -> PASS | cost=4 scale 145.00->146.00
+[A r58] STEP1 barrier(20, 6) id=15 verify tile_building_id=15 type=EntityType.BARRIER hp=30 -> PASS | cost=4 scale 146.00->147.00
+[A r58] STEP1 SEAL P(20, 7) n/e/s/w=[True, True, True, True] passable=True empty=True -> PASS
+[A r58] STEP1 SEAL Q(20, 9) n/e/s/w=[True, True, 'OOV:GameError', True] passable=True empty=True -> UNVERIFIED
+[A r58] STEP1 cell block rounds 24..58 (35 rounds), 7 barriers
+[A r64] STEP3 launcher id=16 at (24, 7) d2->P=16 d2->Q=20 hp=30 cost=29 scale 147.00->157.00
+[A r64] BUILD-COMPLETE round=64 total_build_ti=93 (+150 ammo) ti_left=387 scale=157.00% ammo=150
+[A r65] STEP4 can_launch(ENEMY builder 6 @(24,6) -> P(20, 7))=True | d2_pickup=1 d2_throw=16 passable(target)=True -> PASS
+[A r65] STEP4 launch #1 SAME ROUND: tile_builder_bot_id(P)=6 victim_pos=(20,7) launcher_action_cd_after=1 ammo 150->150 -> PASS
+[B r66] STEP4-VERIFY victim 6 position=(20,7) == chamber (20, 7) -> PASS | tile_builder_bot_id=6 hp=40/40 move_cd=0 action_cd=0
+[B r66] STEP5a per-cardinal (can_move, passable, empty): {'NORTH': (False, False, False), 'EAST': (False, False, False), 'SOUTH': (False, False, False), 'WEST': (False, False, False)} -> PASS (all can_move False)
+[A r66] STEP4 can_launch(ENEMY builder 4 @(25,7) -> Q(20, 9))=True | d2_pickup=1 d2_throw=20 passable(target)=True -> PASS
+[A r66] STEP4 launch #2 SAME ROUND: tile_builder_bot_id(Q)=4 victim_pos=(20,9) launcher_action_cd_after=1 ammo 150->150 -> PASS
+[B r67] STEP4-VERIFY victim 4 position=(20,9) == chamber (20, 9) -> PASS | tile_builder_bot_id=4 hp=40/40 move_cd=0 action_cd=0
+[B r67] STEP5a per-cardinal (can_move, passable, empty): {'NORTH': (False, False, False), 'EAST': (False, False, False), 'SOUTH': (False, False, False), 'WEST': (False, False, False)} -> PASS (all can_move False)
+[B r67] STEP5b blind move(NORTH) -> exception GameError (Cannot move) | still at (20,7) -> PASS (raised, contained, unit survives)
+[A r67] STEP10 BOTH chambers occupied (P: victim 6 hp=40 | Q: victim 4 hp=40). live pattern=[(20, 5), (20, 6), (20, 7), (20, 8), (20, 9)] | can_fire(P)=True can_fire(Q)=True -> PASS
+[A r67] STEP10 fired at Q with P occupied: victim@P hp 40->40 | victim@Q hp 40->22 | wall(20,6) 30->30 | wall(20,8) 30->30 -> VERDICT TARGETED-TILE (the far chamber took it, the near body did not)
+[A r68] ammo converted -> ammo=290 ti=247
+[B r68] STEP5b blind move(NORTH) -> exception GameError (Cannot move) | still at (20,9) -> PASS (raised, contained, unit survives)
+[B r68] STEP8 NORTH {'barrier': False, 'conveyor': False, 'gunner': False, 'harvester': False, 'launcher': False, 'fire': True}
+[B r68] STEP8 EAST  {'barrier': False, 'conveyor': False, 'gunner': False, 'harvester': False, 'launcher': False, 'fire': True}
+[B r68] STEP8 SOUTH {'barrier': False, 'conveyor': False, 'gunner': False, 'harvester': False, 'launcher': False, 'fire': True}
+[B r68] STEP8 WEST  {'barrier': False, 'conveyor': False, 'gunner': False, 'harvester': False, 'launcher': False, 'fire': True}
+[B r68] STEP8 build-escape: every can_build_* on all 4 adjacent tiles False -> PASS | can_fire on all 4 barriers True -> PASS | own tile can_build_barrier(self)=False
+[B r69] STEP8 NORTH {'barrier': False, 'conveyor': False, 'gunner': False, 'harvester': False, 'launcher': False, 'fire': True}
+[B r69] STEP8 EAST  {'barrier': False, 'conveyor': False, 'gunner': False, 'harvester': False, 'launcher': False, 'fire': True}
+[B r69] STEP8 SOUTH {'barrier': False, 'conveyor': False, 'gunner': False, 'harvester': False, 'launcher': False, 'fire': True}
+[B r69] STEP8 WEST  {'barrier': False, 'conveyor': False, 'gunner': False, 'harvester': False, 'launcher': False, 'fire': True}
+[B r69] STEP8 build-escape: every can_build_* on all 4 adjacent tiles False -> PASS | can_fire on all 4 barriers True -> PASS | own tile can_build_barrier(self)=False
+[B r69] STEP5c peck barrier(19, 7) id=9: can_fire=True, hp 30->28 (dmg=2, expect 2) ti 514->512 (cost=2, expect 2) action_cd_after=1 -> PASS
+[A r69] STEP6 can_fire(P)=True THROUGH the sealed wall (barrier hp=30) at victim 6 hp=40 -> PASS
+[A r69] STEP6 shot#2 at P: victim hp 40->22 (dmg=18) | wall hp 30->30 | ammo=280 sentinel_cd_after=2 occupied=True
+[B r70] STEP5c peck barrier(19, 9) id=10: can_fire=True, hp 30->28 (dmg=2, expect 2) ti 512->510 (cost=2, expect 2) action_cd_after=1 -> PASS
+[A r71] STEP6 shot#3 at P: victim hp 22->4 (dmg=18) | wall hp 30->30 | ammo=270 sentinel_cd_after=2 occupied=True
+[B r72] victim 4 in (20, 9) hp=22
+[A r73] STEP6 shot#4 at P: victim hp 4->None (dmg=RETIRED) | wall hp 30->30 | ammo=260 sentinel_cd_after=2 occupied=False
+[A r73] STEP6 victim 6 in P RETIRED after 3 sentinel shots over 5 rounds; tile_builder_bot_id(P)=None -> PASS
+[A r73] chamber P freed at r73 (victim 6 gone)
+[B r74] UNIT-COUNT 5 -> 4 (round 74)
+[A r74] STEP1 SEAL AUDIT P(20, 7) from jailer post (18, 7): [((20, 6), 15, True), ((21, 7), 13, True), ((20, 8), 14, True), ((19, 7), 9, True)] | passable=True empty=True -> PASS
+[A r74] STEP1 SEAL AUDIT Q(20, 9) from jailer post (18, 7): [((20, 8), 14, True), ((21, 9), 12, True), ((20, 10), 11, True), ((19, 9), 10, True)] | passable=False empty=True -> PASS
+[A r75] STEP6 can_fire(Q)=True THROUGH the sealed wall (barrier hp=30) at victim 4 hp=22 -> PASS
+[A r75] STEP6 shot#5 at Q: victim hp 22->4 (dmg=18) | wall hp 30->30 | ammo=250 sentinel_cd_after=2 occupied=True
+[B r76] victim 4 in (20, 9) hp=4
+[A r77] STEP6 shot#6 at Q: victim hp 4->None (dmg=RETIRED) | wall hp 30->30 | ammo=240 sentinel_cd_after=2 occupied=False
+[A r77] STEP6 victim 4 in Q RETIRED after 2 sentinel shots over 3 rounds; tile_builder_bot_id(Q)=None -> PASS
+[A r77] chamber Q freed at r77 (victim 4 gone)
+[B r78] UNIT-COUNT 4 -> 3 (round 78)
+[B r78] both victims retired (unit_count=3 incl. core) -> store[5]=1, victim3 released for the peel
+[A r86] STEP7 arming peel: wrote store[0]=3 (visible next round), holding the throw one round so the sentinel is silent
+[A r87] STEP7 sentinel sees store[0]=3 at r87 -> HOLDING FIRE (total shots this match so far = 6)
+[A r87] STEP4 can_launch(ENEMY builder 7 @(25,7) -> P(20, 7))=True | d2_pickup=1 d2_throw=16 passable(target)=True -> PASS
+[A r87] STEP4 launch #3 SAME ROUND: tile_builder_bot_id(P)=7 victim_pos=(20,7) launcher_action_cd_after=1 ammo 240->240 -> PASS
+[A r87] STEP7 PEEL victim 7 is in P; sentinel disarmed via store[0]=3
+[B r88] STEP5d healer 5 at (21,6): can_heal(P(20, 7))=False [d2=2, orth-adjacent=False] | can_heal(enemy barrier (21,7))=False -> PASS (both False — no heal reaches into a sealed chamber)
+[B r88] STEP7 victim3 7 is in chamber (20, 7); can_move(N)=False move_cd=0 — calling move(NORTH) UNGUARDED now
+Traceback (most recent call last):
+  File "/Users/junghard/Projects/Work/florent-code-game/bots/_probe_killbox_b/main.py", line 164, in run
+    ct.move(Direction.NORTH)        # deliberately unprotected
+    ~~~~~~~^^^^^^^^^^^^^^^^^
+fcode._types.GameError: Cannot move
+[A r88] STEP7 PEEL RESULT: victim 7 thrown into P at r87 called move() UNGUARDED and is GONE at r88 (1 rounds later); sentinel shots fired during the peel = 0 -> PASS
+[A r88] SUMMARY launches (round, victim, chamber)=[(65, 6, 'P'), (66, 4, 'Q'), (87, 7, 'P')] | launcher action_cd after each launch, per round=[(66, 0), (67, 0), (68, 0), (69, 0), (70, 0), (71, 0), (72, 0), (73, 0), (74, 0), (75, 0), (76, 0), (88, 0)]
+[B r89] UNIT-COUNT 3 -> 2 (round 89)
+[B r100] HB healer 5 at (21, 6) move_cd=0 act_cd=0 store=[4, 5, 6, 7, 0, 1]
+[B r200] HB healer 5 at (21, 6) move_cd=0 act_cd=0 store=[4, 5, 6, 7, 0, 1]
+[B r300] HB healer 5 at (21, 6) move_cd=0 act_cd=0 store=[4, 5, 6, 7, 0, 1]
+[B r400] HB healer 5 at (21, 6) move_cd=0 act_cd=0 store=[4, 5, 6, 7, 0, 1]
+[B r500] HB healer 5 at (21, 6) move_cd=0 act_cd=0 store=[4, 5, 6, 7, 0, 1]
+[B r600] HB healer 5 at (21, 6) move_cd=0 act_cd=0 store=[4, 5, 6, 7, 0, 1]
+[B r700] HB healer 5 at (21, 6) move_cd=0 act_cd=0 store=[4, 5, 6, 7, 0, 1]
+[B r800] HB healer 5 at (21, 6) move_cd=0 act_cd=0 store=[4, 5, 6, 7, 0, 1]
+[B r900] HB healer 5 at (21, 6) move_cd=0 act_cd=0 store=[4, 5, 6, 7, 0, 1]
