@@ -55,3 +55,11 @@ binder: the open window is shorter than the walk to a MIN_GAP=8 site);
 (b) SK_TUBE_FLOOR2 ON (fix the ledger under-read so live tubes are
 booked alive). SK_BATTERY_WANT stays built at 0 — it becomes live the
 moment arm 2 lengthens the window it needs.
+
+**ARM 2 RESHAPED BY DOCTRINE (Magnus's eco-ready ruling, encoded in
+PROGRAMME.md the same hour):** arm 2 = (a) SK_TUBE_FLOOR2 ON (the ledger
+under-read fix), (b) the burst rule at the surcharge bar, AND (c) the
+ECO-READY latch — the battery's growth beyond the standing pair keys on a
+live funding signal (bank + income trend covering ~2.5-3 Ti/round ammo +
+barrel replacement), not on r300 and not on mere gate-affordability at
+one instant. Registered fully before the arm-2 build fires.
