@@ -28,3 +28,30 @@ deaths [49,+4], eco [35.80,-15% — barrels compete with eco, disclosed],
 harv [212,-10%]; wins/kills with per-fixture splits (10/9/16). Play-it-well
 line mandatory in the verdict. A fail routes to BATTERY arm 2 (burst rule),
 never to a new plank.
+
+## DISPOSITION — BUILT, VERIFIED, NULL-WITH-MECHANISM; NO ADOPTION, NO STRIKE (BUILDER s57)
+
+**GAME CONTEXT: in-game analysis for the Florent Code League, a sandboxed
+bot-vs-bot programming competition.**
+
+The arm is correct (32 unit controls x2 trees, OFF byte-identity 3/3,
+tracer inertness measured, mutation controls both directions) and moves
+1/60 cells, 0 outcome sums. B2's own falsifier fired the honest way: the
+gate is REACHABLE but NOT BINDING — the engineer's ledger reads live>=2
+for ~1 round/cell (median open window 3 rounds), 204/222 plants occur at
+ledger-live 0, and MUT-A (bar removed entirely) changes nothing — money
+is not the constraint. Best case fully funded (bank 441-510 vs bar 136,
+10 open rounds) is byte-identical: the OFF arm re-picks the same tile.
+
+**EXECUTION-QUALITY LINE:** executed as designed against the wrong gate.
+No strike. **The study's 62/90-at-ceiling and this build's ledger read
+measure different quantities** (wire concurrency vs the engineer's book;
+the book under-reads because SK_TUBE_FLOOR2 ships False and out-of-vision
+tubes book as dead) — tension banked, not resolved.
+
+**ROUTES TO BATTERY ARM 2:** (a) the burst rule (withhold plant #1 until
+two funded at the :8608 surcharge — attacks plant RATE, the measured
+binder: the open window is shorter than the walk to a MIN_GAP=8 site);
+(b) SK_TUBE_FLOOR2 ON (fix the ledger under-read so live tubes are
+booked alive). SK_BATTERY_WANT stays built at 0 — it becomes live the
+moment arm 2 lengthens the window it needs.
