@@ -1177,3 +1177,16 @@ floor ~±2). Iteration stays on single tapes reading direction+mechanism;
 claims pay for replication. Current standing under this standard: F3
 19/30 AT THE BAR UNCONFIRMED (battery scheduled behind the Sentry
 verdict); F1 11, F2 10 — short outright.
+
+## CONFIRMATION STANDARD AMENDED (s57 — the battery's own finding)
+
+The 3-seed battery measured THE SEED INERT vs deterministic fixtures
+(outcome columns bit-identical across 4 seeds — the fixture rule's own
+"vary MAP and SEAT, never seed", re-learned): a 30-cell tape vs a
+deterministic opponent is a CENSUS, not a sample. RESTATED: (1) a bar
+vs the NAMED fixture is met exactly by the census — **F3 19/30 = HELD
+with certainty vs opp_sleipnir2**; (2) the ±4 floor governs ROBUSTNESS
+(generalization under perturbation — opponent drift, new maps, the live
+field), which seeds cannot test; (3) the ROBUSTNESS instrument is
+opponent variation: version-pinned variants locally, and THE LIVE
+UNRATED FIELD as the instrument of record (doctrine point 6 alignment).
