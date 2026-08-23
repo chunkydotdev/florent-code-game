@@ -1393,6 +1393,95 @@ class Player(CommonMixin, RolesMixin, CoreMixin):
                                       # a walk toward the seat is not yet a
                                       # screen.
 
+        # --- s57 THE PUSH (SK_PUSH, default OFF) ---------------------------
+        # ⛔ UNCONDITIONAL FIELDS, for the engine reason every block in this
+        # file states: a flag gates BEHAVIOUR, never the EXISTENCE of state.  A
+        # field created only under a flag is how a flag-OFF arm raises
+        # AttributeError inside `run()`, and the engine then PERMANENTLY
+        # DESTROYS that unit for the rest of the match.  Every counter below
+        # reads 0 (or its null sentinel) on every OFF arm, which makes each of
+        # them an OFF-IDENTITY WITNESS as well as an instrument.
+        # ⛔ PER-BODY STATE, and the engine forces it: every unit gets its OWN
+        # `Player` instance (kbprobe surprise 1), so the WARDEN's build
+        # counters, the LAUNCHER's throw counters and the ENGINEER's succession
+        # counters live on three different objects and are never summed in-bot.
+        # --- PIECE 1, the pair reserve -------------------------------------
+        self.push_res_held = 0        # rounds a gated rung was REFUSED.  ⚠ AN
+                                      # UPPER BOUND ON TURNS DIVERTED, not a
+                                      # dose: the refusal is evaluated before
+                                      # the verb looks for a target, so a round
+                                      # with nothing to build still counts
+                                      # (`_fund_refuse`'s own caveat, verbatim).
+        self.push_res_pass = 0        # ... and rounds it was ALLOWED with the
+                                      # reserve armed.  The pair is the
+                                      # instrument: a gate that has only ever
+                                      # returned one verdict has not been seen
+                                      # to gate.
+        self.push_res_off = 0         # rounds the reserve was RELEASED because
+                                      # the pair stands (the other tail).
+        self.push_res_site = {}       # gated rung name -> refusals, so "which
+                                      # spend did the reserve actually stop" is
+                                      # a measured answer per site rather than
+                                      # a pooled number.
+        self.push_res_bar = 0         # the last bar computed, for the trace.
+        # --- PIECE 2, the warden -------------------------------------------
+        self._push_cands = None       # memo: the pure-geometry site list
+        self.push_done_seen = False   # a friendly launcher already stands in
+                                      # the enemy band (the team-wide bound,
+                                      # read off vision because the store has
+                                      # no free slot -- v611's own measured
+                                      # second-launcher defect)
+        self.push_scan0 = False       # the launcher's first building scan is
+                                      # done (before it, every building looks
+                                      # NEW and the activity sensor would call
+                                      # the whole board active)
+        self.push_site = None         # Position: the chosen launcher tile
+        self.push_site_rnd = -1       # round it was chosen
+        self.push_site_seats = 0      # heal seats its pickup disc covers
+        self.push_banned = set()      # sites the give-up bound retired
+        self.push_tries = 0           # rounds spent on the CURRENT site
+        self.push_gaveup = False      # the PLANT half is done (the heal half
+                                      # is not -- they give up separately)
+        self.push_built = 0           # launchers this body bought (<= 1)
+        self.push_built_rnd = -1      # instrument: round the launcher landed
+        self.push_walk_rounds = 0     # instrument: warden rounds spent walking
+        self.push_heals = 0           # DOSE: barrel heals actually landed
+        self.push_heal_rounds = 0     # rounds the warden STOOD on a barrel seat
+        self.push_station_walk = 0    # rounds spent walking BACK to the battery
+                                      # with nothing damaged in sight (the
+                                      # stationing half of PIECE 2c)
+        self.push_barrel_seen = 0     # rounds a damaged forward barrel was in
+                                      # this body's vision (the heal's own
+                                      # opportunity denominator)
+        # --- PIECE 2, the launcher unit's own turn -------------------------
+        self.push_opp = 0             # rounds with ANY opposing builder inside
+                                      # the pickup disc (the throw denominator)
+        self.push_opp_active = 0      # ... of which the sleeping-dogs rule
+                                      # called ACTIVE
+        self.push_sleep = 0           # ... and of which it left ALONE.  ⛔ BOTH
+                                      # TAILS ARE COUNTED because the rule is
+                                      # only a rule if it has been seen to
+                                      # refuse.
+        self.push_throws = 0          # throws executed
+        self.push_throw_border = 0    # ... of which landed on a MAP BORDER tile
+        self.push_throw_d2 = 0        # ... summed throw d^2, for the median's
+                                      # cross-check (the trace carries each)
+        self.push_active = {}         # opposing builder id -> round last seen
+                                      # WORKING (the sleeping-dogs memo)
+        self.push_core_hp = -1        # their core's HP as of last round, the
+                                      # HEAL detector's own baseline
+        self.push_seen_b = set()      # opposing building ids already seen, so a
+                                      # NEW one names a builder that just built
+        # --- PIECE 3, the engineer forward ---------------------------------
+        self.push_quiet_yes = 0       # rounds the post-security gate PASSED
+        self.push_quiet_no = 0        # ... and rounds it REFUSED (both tails)
+        self.push_succ_rearm = 0      # spent sites freed for succession
+        self.push_succ_site = 0       # succession sites actually picked
+        self.push_succ_walk = 0       # succession rounds spent walking
+        self.push_succ_hold = 0       # succession rounds spent standing at the
+                                      # prepared site (the overlap itself)
+        self.push_succ_prep = 0       # prep barriers laid ahead of the need
+
         # --- v632 SURVIVAL FAMILY, PLANK A -- WALK-TERMINAL GUARDS ----------
         # (SK_WALK_GUARDS; audit `docs/research/AUDIT-walk-terminals-
         # 2026-08-22.md`, the three EXPOSED sites.)

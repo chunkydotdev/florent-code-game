@@ -206,6 +206,15 @@ from sk_maps import (
     SK_CHEW_REKEY, SK_CHEW_CLOCK_MAX,
     # --- keeper chew persistence (#4.3b), read by `_chew_giveup` only --------
     SK_KEEPER_CHEW_ON, SK_KEEPER_CHEW_GIVEUP,
+    # --- s57 THE PUSH (SK_PUSH): pair reserve + warden + engineer forward ----
+    SK_PUSH, SK_PUSH_RESERVE, SK_PUSH_RES_DEFENCE,
+    SK_PUSH_WARDEN, SK_PUSH_WARDEN_ROLE, SK_PUSH_WARDEN_UNTIL,
+    SK_PUSH_LAUNCH_RESERVE, SK_PUSH_PICKUP_DSQ, SK_PUSH_THROW_MAX_DSQ,
+    SK_PUSH_MIN_SEATS, SK_PUSH_SITE_MAX_DSQ, SK_PUSH_WALK_MAX, SK_PUSH_GIVEUP,
+    SK_PUSH_SITE_TRIES, SK_PUSH_TEAM_CHECK, SK_PUSH_ACTIVE_TTL,
+    SK_PUSH_HEAL_FLOOR, SK_PUSH_BARREL_DSQ, SK_PUSH_STATION_OFF,
+    SK_PUSH_STATION_NEAR, SK_PUSH_PROBE_CAP, SK_PUSH_BORDER,
+    SK_PUSH_ENGINEER, SK_PUSH_ENG_QUIET, SK_PUSH_ENG_PREP,
 )
 
 # --- v632 PLANK A 4.2: the three guarded WALKS, as ban keys.  A tile is banned
@@ -2580,7 +2589,17 @@ class RolesMixin:
             # it being above the belt: the tile our conveyor died on became
             # their firing seat two rounds later, and re-laying it as a barrier
             # is the same 3 Ti the belt was going to spend anyway.
-            if self._apron_action(ct, p, rnd):
+            # ⭐⭐ s57 THE PUSH, PIECE 1 -- THE PAIR RESERVE, GATED SITE 1
+            # of 10.  Every rung from here down spends titanium on something
+            # that is NOT a barrel, and the reserve is the registered claim
+            # that the pair outranks all of it while the pair is short.  ⛔ THE
+            # RUNG IS UNCHANGED: the gate is a call-site conjunction whose
+            # first term is a module constant, so with SK_PUSH False the verb
+            # runs exactly as it does today, in the same order, at the same
+            # cost.  Each site carries its own key so the readout can say WHICH
+            # spend the reserve stopped rather than pooling them.
+            if (not self._push_refuse(ct, rnd, EntityType.BARRIER, "apron")
+                    and self._apron_action(ct, p, rnd)):
                 return
             # ⭐⭐ s57 THE KILLBOX, ARM 1, PIECE 1 -- THE EXILE LAUNCHER,
             # ACTION HALF.  IMMEDIATELY ABOVE v611's rung because it is the
@@ -2592,7 +2611,11 @@ class RolesMixin:
             # is a body or a core about to die, and a building that is one
             # round late is still a building.
             # ⛔ Flag off -> False on the first line -> v632 behaviour exactly.
-            if self._kb_launcher_action(ct, p, rnd):
+            # s57 THE PUSH, PIECE 1 -- GATED SITE 2 of 10 (the box's own
+            # launcher; SK_KILLBOX ships False, so this gate is inherited by
+            # any future arm that turns the box on rather than added then).
+            if (not self._push_refuse(ct, rnd, EntityType.LAUNCHER, "box_launcher")
+                    and self._kb_launcher_action(ct, p, rnd)):
                 return
             # ⭐ v611 SK_HOME_LAUNCHER, OFF by default.  ONE turn, once a game.
             # It sits ABOVE the economy because the collar lands at median r11
@@ -2600,7 +2623,9 @@ class RolesMixin:
             # it sits BELOW the heal, the door and the counter-peck because
             # every one of those is a body or a core about to die, and a
             # building that is one round late is still a building.
-            if self._home_launcher_action(ct, p, rnd):
+            # s57 THE PUSH, PIECE 1 -- GATED SITE 3 of 10.
+            if (not self._push_refuse(ct, rnd, EntityType.LAUNCHER, "hl_launcher")
+                    and self._home_launcher_action(ct, p, rnd)):
                 return
             # ⭐ v610 PLANK 2, THE ACTION HALF.  While a chain is ONE tile from
             # delivering, that conveyor outranks a new harvester: a harvester
@@ -2610,13 +2635,27 @@ class RolesMixin:
             # placement is the rung immediately above SK_TERM_FIRST because it
             # is SK_TERM_FIRST's own argument carried to a chain that is more
             # than one tile short.  ⛔ OFF: one `if` on a module constant.
-            if SK_ROUTE_HOME and self._route_action(ct, p, rnd):
+            # s57 THE PUSH, PIECE 1 -- GATED SITE 4 of 10.
+            if (SK_ROUTE_HOME
+                    and not self._push_refuse(ct, rnd, EntityType.CONVEYOR, "route")
+                    and self._route_action(ct, p, rnd)):
                 return
+            # ⭐ s57 THE PUSH, PIECE 1 -- GATED SITE 5 of 10, AND IT IS THE
+            # ONE THE ARM IS MOST EXPOSED ON.  A terminating conveyor is the
+            # tile between a harvester and `titanium_collected` -- the tree's
+            # own founding fact -- and 3 Ti of it is refused here while the
+            # pair is unfunded.  ⚠ REGISTERED AND DISCLOSED: "the reserve taxes
+            # eco by design" (P5 guard, eco -15% floor).  It is gated and not
+            # exempted because the currency is the CHECKMATE, not the delivery.
             if (SK_TERMINATE and SK_TERM_FIRST and SK_BELT
                     and self._route_gaps(ct, rnd)
+                    and not self._push_refuse(ct, rnd, EntityType.CONVEYOR, "belt_term")
                     and self._belt_action(ct, p, rnd)):
                 return
-            if self._harvester_action(ct, p, rnd):
+            # s57 THE PUSH, PIECE 1 -- GATED SITE 6 of 10 (20 Ti x scale,
+            # the largest ECO item and the reserve's main donor).
+            if (not self._push_refuse(ct, rnd, EntityType.HARVESTER, "harv")
+                    and self._harvester_action(ct, p, rnd)):
                 return
             # ⭐⭐ s57 THE KILLBOX, ARM 1, PIECE 2 -- THE CORNER CELL, ACTION
             # HALF, AND ITS PLACEMENT IS THE WORD "OPPORTUNISTIC" IN THE
@@ -2628,7 +2667,9 @@ class RolesMixin:
             # the launcher still has bodies to throw into it, and their raid
             # cadence decays after r150 on two of the three fixtures.
             # ⛔ Flag off -> False on the first line -> v632 behaviour exactly.
-            if self._kb_cell_action(ct, p, rnd):
+            # s57 THE PUSH, PIECE 1 -- GATED SITE 7 of 10 (box, OFF today).
+            if (not self._push_refuse(ct, rnd, EntityType.BARRIER, "box_cell")
+                    and self._kb_cell_action(ct, p, rnd)):
                 return
             # ⭐⭐ s57 THE KILLBOX, ARM 2, PIECE 1 -- THE EXECUTIONER, ACTION
             # HALF.  ⛔ IMMEDIATELY BELOW THE CELL AND NOWHERE HIGHER: the
@@ -2639,7 +2680,9 @@ class RolesMixin:
             # the cell's own reason -- a harvester with no route home is worth
             # zero on `titanium_collected` for ever.
             # ⛔ Flag off -> False on the first line -> arm-1 behaviour exactly.
-            if self._kb_exec_action(ct, p, rnd):
+            # s57 THE PUSH, PIECE 1 -- GATED SITE 8 of 10 (box, OFF today).
+            if (not self._push_refuse(ct, rnd, EntityType.SENTINEL, "box_exec")
+                    and self._kb_exec_action(ct, p, rnd)):
                 return
             # ⭐ v618 PLANK 1, THE ACTION HALF.  JUST BELOW THE
             # HARVESTER-CRITICAL VERBS AND ABOVE THE GENERAL BELT, which is the
@@ -2648,14 +2691,26 @@ class RolesMixin:
             # EMPTY and their collar lands at median r11.  The tiles are belt
             # terminus segments with the belt's own facing, so this is not a
             # competing spend -- it is the same 3 Ti, earlier.
-            if self._seat_claim_action(ct, p, rnd):
+            # s57 THE PUSH, PIECE 1 -- GATED SITE 9 of 10.
+            if (not self._push_refuse(ct, rnd, EntityType.CONVEYOR, "seat_claim")
+                    and self._seat_claim_action(ct, p, rnd)):
                 return
             # ⭐ v618 PLANK 2, THE ACTION HALF.  Below the economy because ONE
             # round late is still a standing gun, and above nothing else: it is
             # a once-a-game purchase inside a bounded window.
-            if self._home_gun_action(ct, p, rnd):
+            if (not (not SK_PUSH_RES_DEFENCE
+                     and self._push_refuse(ct, rnd, EntityType.GUNNER, "home_gun"))
+                    and self._home_gun_action(ct, p, rnd)):
                 return
-            if SK_BELT and self._belt_action(ct, p, rnd):
+            # s57 THE PUSH, PIECE 1 -- GATED SITE 10 of 10 (the general
+            # belt).  ⛔ THE THREE HOME-TURRET RUNGS BELOW ARE NOT GATED and
+            # that is `SK_PUSH_RES_DEFENCE`: defence sits above the reserve per
+            # the registered scope.  ⚠ It is the arm's largest disclosed leak
+            # -- 20-30 Ti a piece, above the pair's money -- and the flag
+            # exists so an ablation can price it.
+            if (SK_BELT
+                    and not self._push_refuse(ct, rnd, EntityType.CONVEYOR, "belt")
+                    and self._belt_action(ct, p, rnd)):
                 return
             # ⭐⭐ v632 HEIMDALL PLANK 3 -- THE TURRET RING (SK_FORT_RING), THE
             # ACTION HALF.  ⛔⛔ BELOW EVERY ECONOMY VERB -- BELOW
@@ -2683,9 +2738,15 @@ class RolesMixin:
             # LATER than the prediction clock wants (their ladder r1-r5, first
             # our-half plant median r5, collar median r11).  A later ring is
             # the price of an economy that still exists to defend.
-            if SK_FORT_RING and self._fort_ring_action(ct, p, rnd):
+            if (SK_FORT_RING
+                    and not (not SK_PUSH_RES_DEFENCE
+                             and self._push_refuse(ct, rnd, EntityType.SENTINEL,
+                                                   "fort_ring"))
+                    and self._fort_ring_action(ct, p, rnd)):
                 return
-            if self._cover_gun_action(ct, p, rnd):  # v601 PLANK 2
+            if (not (not SK_PUSH_RES_DEFENCE
+                     and self._push_refuse(ct, rnd, EntityType.GUNNER, "cover_gun"))
+                    and self._cover_gun_action(ct, p, rnd)):  # v601 PLANK 2
                 return
         self._home_keeper_move(ct, p, rnd)
         # ⭐ v632 SURVIVAL FAMILY -- WORK AT A HELD POST (SK_KEEPER_WORK).
@@ -7137,6 +7198,898 @@ class RolesMixin:
                 return best[1], 1
         return self._hl_pick_throw(ct, p, vpos), 0
 
+    # ==================================================================
+    # s57 THE PUSH  (SK_PUSH -- pair reserve + warden + engineer forward)
+    # ==================================================================
+    # GAME CONTEXT: in-game build work for the Florent Code League, a
+    # sandboxed bot-vs-bot competition.  "warden", "barrel", "tube", "throw"
+    # and "band" are in-engine mechanics between competing game bots; the
+    # throw is the engine's documented cross-team `launch` (no team check,
+    # engine-probed) and the heal is the builder's documented +4 HP / 1 Ti
+    # action.
+    #
+    # SIXTEEN HELPERS, NONE OF THEM REACHED ON AN OFF ARM: every call site is
+    # a `SK_PUSH ...` module-constant conjunction tested before any controller
+    # call, so with the master False the added cost is one test of a module
+    # constant per rung and the control flow is v632's, character for
+    # character.  The three pieces are ablatable apart (SK_PUSH_RESERVE /
+    # _WARDEN / _ENGINEER) because they are coupled by ARGUMENT -- the reserve
+    # funds the pair the warden nurses and the engineer succeeds -- and an
+    # argument has to be measurable one piece at a time.
+
+    # --- PIECE 1: THE PAIR RESERVE ------------------------------------
+
+    def _push_price(self, ct, kind):
+        """The scaled price of `kind` right now, 0 on any unreadable read.
+
+        ⛔ 0 ON AN UNREADABLE COST WEAKENS THE REFUSAL, NEVER STRENGTHENS IT
+        (`_fort_price`'s rule, verbatim): a refusal manufactured out of a
+        failed read withholds titanium for no measured reason.
+        ⛔ THE KIND IS A CONSTANT AT EVERY CALL SITE, so the OFF path never
+        evaluates a cost getter -- `_push_refuse` returns on its first line
+        before this method is reached.
+        """
+        try:
+            if kind is None:
+                return 0
+            if kind == EntityType.HARVESTER:
+                return ct.get_harvester_cost()
+            if kind == EntityType.SENTINEL:
+                return ct.get_sentinel_cost()
+            if kind == EntityType.GUNNER:
+                return ct.get_gunner_cost()
+            if kind == EntityType.LAUNCHER:
+                return ct.get_launcher_cost()
+            if kind == EntityType.SPLITTER:
+                return ct.get_splitter_cost()
+            if kind == EntityType.BARRIER:
+                return ct.get_barrier_cost()
+            return ct.get_conveyor_cost()
+        except Exception:
+            return 0
+
+    def _push_refuse(self, ct, rnd, kind, site):
+        """True when a DISCRETIONARY / ECO / BOX purchase must stand down so
+        the team can still afford the forward PAIR.
+
+        THE BAR IS `_b2_pair_bar` -- `_plant_gun`'s OWN arithmetic for the two
+        plants, live-read, already in the tree and already driven to both
+        verdicts by the battery arm's unit controls.  Restating it here would
+        be a second expression that can drift from the purchase it protects;
+        calling it cannot.
+
+        THE RELEASE IS THE PAIR STANDING, and it is a TEAM fact rather than a
+        body's ledger: `_two_tubes` reads the two forward-tube beats each tube
+        writes for itself (slot 7, v617's producer fix).  A keeper cannot see
+        the band, so a per-body ledger would read "no pair" for the whole game
+        and the reserve would never release -- the exact failure v620 PLANK 1
+        measured on the engineer's own count (`live = 2` on ZERO of 69 buys).
+
+        ⛔ THREE STRUCTURAL EXEMPTIONS, AND THEY ARE THE SPECIFICATION RATHER
+        THAN SOFTENING -- none of them is a clause inside this method, so none
+        can be edited out by accident:
+          * **THE CORE'S SPAWN AND THE AMMUNITION DRIP DO NOT PASS THROUGH
+            HERE AT ALL.**  Only a BODY can plant a tube and only AMMUNITION
+            makes one fire, so gating either is the funding deadlock
+            `_fund_battery` already measured (jotunheim: `ammo == 0` in 201 of
+            201 window rounds, because income never cleared the floor, so
+            nothing converted, so the one tube that stood never fired).
+          * **THE 1-2 Ti VERBS ARE NOT GATED** -- `_core_medic`,
+            `_seat_heal_action`, `_heal_action`, `_peck_priority`,
+            `_seat_clear`.  They are the survival half, they are already
+            `_fund_refuse`'s subject under the rotation arm, and a heal
+            refused to save 1 Ti is a body lost to save a conveyor.
+          * **DEFENCE IS ABOVE THE RESERVE** (`SK_PUSH_RES_DEFENCE`, shipped
+            True = exempt).  ⚠ DISCLOSED, AND IT IS THE ARM'S LARGEST OPEN
+            LEAK: the three home-turret rungs are 20-30 Ti each and sit above
+            this gate, so a cell that buys home turrets can still starve the
+            pair (wealthdiag §C: HOME gunners 56 built against 65 forward
+            tubes pooled).  The flag exists so an ablation can PRICE that,
+            rather than the leak being asserted small.
+
+        ⛔ IT FAILS OPEN on any unreadable number, for `_chest_refuse`'s
+        reason.  ⚠ `push_res_held` counts ROUNDS THE RUNG WAS REFUSED, which
+        is an UPPER BOUND on turns diverted and not a dose: the refusal is
+        evaluated before the verb looks for a target, so a round with nothing
+        to build still counts (`_fund_refuse`'s own caveat, verbatim).
+        """
+        if not (SK_PUSH and SK_PUSH_RESERVE and SK_NEST_PAIR):
+            return False
+        try:
+            if self._two_tubes(ct):
+                self.push_res_off += 1          # RELEASED: the pair stands
+                return False
+            bar = self._b2_pair_bar(ct)
+            self.push_res_bar = bar
+            if ct.get_global_resources() - self._push_price(ct, kind) >= bar:
+                self.push_res_pass += 1         # armed, and this buy clears it
+                return False
+        except Exception:
+            return False
+        self.push_res_held += 1
+        self.push_res_site[site] = self.push_res_site.get(site, 0) + 1
+        return True
+
+    # --- PIECE 2: THE WARDEN ------------------------------------------
+
+    def _push_seats(self):
+        """THEIR core's eight HEAL SEATS, as an (x, y) set.
+
+        A seat is a tile an opposing builder must STAND ON to heal its own
+        core -- the engine's own orthogonal-adjacency rule for `heal` -- so
+        this set is literally "their medic chairs".  Pure geometry off
+        `self.enemy`: zero engine calls, never stale.
+        """
+        if self.enemy is None:
+            return frozenset()
+        return frozenset(core_seats(self.enemy))
+
+    def _push_site_cands(self):
+        """The launcher sites, RANKED, by pure geometry.  Memoised for life.
+
+        ⛔ GEOMETRY FIRST AND VERIFICATION SECOND, AND THE SPLIT IS AN ENGINE
+        FACT: `get_tile_env` RAISES out of vision (kbprobe SURPRISE 2), and
+        this site sits beside the ENEMY core -- a body at home can see none of
+        it.  A picker that needed a terrain read would return None for the
+        whole commute and the warden would never have a walk target.  So the
+        candidate ORDER is derived from the enemy anchor alone and the
+        emptiness tests are applied by `_push_pick_site` only to tiles the
+        body can actually see.
+
+        RANKED: seats covered (most first -- that IS the plank), then nearest
+        our own core (the commute is the recurring cost), then canonical
+        (x, y) so two bodies on the same evidence agree without talking.
+        """
+        if self._push_cands is not None:
+            return self._push_cands
+        if self.enemy is None:
+            return ()
+        seats = self._push_seats()
+        foot = set(core_tiles_xy(self.enemy))
+        out = []
+        ex, ey = self.enemy.x, self.enemy.y
+        for dx in range(-4, 6):
+            for dy in range(-4, 6):
+                x, y = ex + dx, ey + dy
+                if not self.ib(x, y) or (x, y) in foot:
+                    continue
+                q = Position(x, y)
+                d = dsq_core(q, self.enemy)
+                if d < 1 or d > SK_PUSH_SITE_MAX_DSQ:
+                    continue
+                # ⛔⛔ THE ARBITER'S CAGE CLAIM, RESTATED GEOMETRICALLY, AND
+                # WITHOUT IT THIS PLANK WALKS AT A TILE IT CAN NEVER BUY.
+                # `tile_owner` gives EVERY tile orthogonally adjacent to their
+                # core footprint to the CAGE verb (one map tile, one owning
+                # verb -- ledger V2/V8), so the highest-coverage sites (their
+                # eight heal seats themselves) are refused at the buy.  A
+                # candidate list that still contained them would hand the WALK
+                # a target the ACTION must refuse forever -- the body arrives,
+                # stands adjacent and never builds.  The predicate here is the
+                # arbiter's own (`adjacent_to_core`), so the two agree by
+                # construction rather than by argument, and the full
+                # `tile_owner` test still runs at verification for the terms
+                # this one does not cover (belt, nest, door).
+                # ⇒ THE ACHIEVABLE MAXIMUM IS TWO SEATS, on a diagonal tile off
+                # a footprint corner, which is what SK_PUSH_MIN_SEATS = 2 asks
+                # for: both chairs of one corner inside one pickup disc.
+                if adjacent_to_core(q, self.enemy):
+                    continue
+                cov = 0
+                for sx, sy in seats:
+                    ddx = sx - x
+                    ddy = sy - y
+                    if ddx * ddx + ddy * ddy <= SK_PUSH_PICKUP_DSQ:
+                        cov += 1
+                if cov < SK_PUSH_MIN_SEATS:
+                    continue
+                home = dsq_core(q, self.core) if self.core is not None else 0
+                out.append(((-cov, home, x, y), q, cov))
+        out.sort(key=lambda c: c[0])
+        self._push_cands = tuple((c[1], c[2]) for c in out)
+        return self._push_cands
+
+    def _push_pick_site(self, ct, rnd, verified=True):
+        """The launcher tile.  `verified` demands the engine agrees it is free.
+
+        The VERIFIED answer is memoised for the game the first time it is
+        obtained -- it is the tile the buy will be made on.  The UNVERIFIED
+        answer is a WALK TARGET and is deliberately not memoised: it is a
+        hypothesis about a tile nobody has seen yet, exactly as `_pick_nest`'s
+        site is a hypothesis until walked.
+        """
+        if self.enemy is None or self.push_gaveup:
+            return None
+        if self.push_site is not None:
+            return self.push_site
+        for q, cov in self._push_site_cands():
+            if (q.x, q.y) in self.push_banned:
+                continue
+            if not verified:
+                return q
+            if self.tile_owner(q) != OWNER_NONE:
+                continue
+            try:
+                if ct.get_tile_env(q) != Environment.EMPTY:
+                    continue        # WALL, or ORE (which is a harvester's)
+                if not ct.is_tile_empty(q):
+                    continue
+            except Exception:
+                continue            # out of vision: not refuted, just unseen
+            self.push_site = q
+            self.push_site_rnd = rnd
+            self.push_site_seats = cov
+            self.push_tries = 0
+            return q
+        return None
+
+    def _push_strike(self, rnd):
+        """One round of "this site is not working".  Bans it past the bound.
+
+        Called from BOTH the action and the walk, because either one alone
+        leaves the other free to run forever (`_kb_strike`'s measured lesson:
+        v611's first cut burned 656 keeper rounds on one tile).
+        ⛔ THE PLANT HALF GIVES UP; THE HEAL HALF DOES NOT.  They are separate
+        duties with separate failure modes, and a launcher we cannot site says
+        nothing about a barrel we can reach.
+        """
+        self.push_tries += 1
+        if self.push_tries < SK_PUSH_GIVEUP:
+            return
+        if self.push_site is not None:
+            self.push_banned.add((self.push_site.x, self.push_site.y))
+        self.push_site = None
+        self.push_tries = 0
+        if len(self.push_banned) >= SK_PUSH_SITE_TRIES:
+            self.push_gaveup = True
+
+    def _push_owes_launcher(self, rnd):
+        """Is the plant still this body's duty?"""
+        if not (SK_PUSH and SK_PUSH_WARDEN):
+            return False
+        if self.push_built or self.push_gaveup or self.push_done_seen:
+            return False
+        return rnd < SK_PUSH_WARDEN_UNTIL
+
+    def _push_launcher_buy(self, ct, p, rnd):
+        """Buy THE one warden launcher.  True if it took this body's turn.
+
+        ⛔ THE TEAM-WIDE CAP IS A VISION READ, NOT A COUNTER (v611 measured a
+        second launcher when a keeper died and its successor claimed the role
+        with a fresh counter): `push_done_seen` is set in the turn above from
+        `vis_friend`.  ⚠ It is a bound, not a proof -- a warden out of vision
+        of an existing launcher can still buy a second one, and that residual
+        is disclosed rather than claimed away.
+        """
+        site = self._push_pick_site(ct, rnd)
+        if site is None:
+            return False
+        if p.distance_squared(site) != 1:
+            return False                # not orthogonally adjacent: the walk
+        try:
+            cost = ct.get_launcher_cost()
+            if ct.get_global_resources() < cost + SK_PUSH_LAUNCH_RESERVE:
+                return False
+        except Exception:
+            return False
+        if self._push_refuse(ct, rnd, EntityType.LAUNCHER, "warden"):
+            return False
+        # ⛔ THE TWO GUARDS EVERY IMPASSABLE BUILD IN THIS TREE PAYS.  A
+        # launcher is a BUILDING: it can seal this body in (ledger V2) and it
+        # can seal the TEAM's only lane (v605 FIX 1, the helheim throat).
+        if self.free_neighbours(ct, p, exclude=site) == 0:
+            self._push_strike(rnd)
+            return False
+        if not self.path_arbiter_ok(ct, site, rnd):
+            self._push_strike(rnd)
+            return False
+        try:
+            if not ct.can_build_launcher(site):
+                self._push_strike(rnd)
+                return False
+            ct.build_launcher(site)
+        except Exception:
+            self._push_strike(rnd)
+            return False
+        self.push_built += 1
+        self.push_built_rnd = rnd
+        return True
+
+    def _push_walk_target(self, ct, p, rnd):
+        """The tile to stand on to build the launcher, or None.
+
+        ⛔ ONE BUDGET FOR THE WHOLE COMMUTE (SK_PUSH_WALK_MAX), and it is
+        deliberately NOT gated on affordability the way `_kb_walk_target` is.
+        The killbox site is 2-3 tiles from our own core, so waiting for money
+        costs nothing; this site is a cross-board commute and the titanium
+        arrives DURING it.  The budget is what bounds the duty instead.
+        """
+        if self.push_gaveup or self.push_walk_rounds >= SK_PUSH_WALK_MAX:
+            return None
+        site = self._push_pick_site(ct, rnd, verified=False)
+        if site is None:
+            return None
+        if p.distance_squared(site) == 1:
+            return None                 # seated; the action fires
+        best = None
+        for d in CARDINALS:
+            r = site.add(d)
+            if not self.ibp(r):
+                continue
+            if r.x == p.x and r.y == p.y:
+                return None
+            try:
+                if not ct.is_tile_passable(r):
+                    continue
+            except Exception:
+                # out of vision is not impassable; a far commute has to be
+                # allowed to aim at tiles nobody has seen yet.
+                pass
+            dd = p.distance_squared(r)
+            if best is None or dd < best[0]:
+                best = (dd, r)
+        if best is None:
+            if self.push_site is not None:
+                self._push_strike(rnd)  # a site we cannot REACH is as dead as
+                                        # one we cannot BUILD on
+            return None
+        return best[1]
+
+    def _push_barrel(self, ct, p):
+        """The most damaged FORWARD friendly sentinel this body can see.
+
+        ⛔ A VISION CENSUS, NOT A LEDGER.  Each unit gets its own `Player`, so
+        the warden has never planted anything and a ledger read would be
+        empty for its whole life -- the exact defect PLANK 10's
+        `_near_live_tube` amendment was built for, and it cost that plank a
+        measured 0-of-0 heal rate before it was found.
+        ⛔ FORWARD IS `GUARD_FWD_DSQ` FROM OUR OWN CORE, the same constant the
+        banked tube analysis splits `tubes` from `all_gun` on, so a barrel the
+        census nurses is a barrel the instrument calls forward.
+        """
+        if self.core is None:
+            return None
+        best = None
+        for eid, et, ep in self.vis_friend:
+            if et != EntityType.SENTINEL:
+                continue
+            if ep is None or not self.ibp(ep):
+                continue
+            if dsq_core(ep, self.core) <= GUARD_FWD_DSQ:
+                continue                # a HOME sentinel, not a tube
+            if p.distance_squared(ep) > SK_PUSH_BARREL_DSQ:
+                continue
+            try:
+                miss = ct.get_max_hp(eid) - ct.get_hp(eid)
+            except Exception:
+                continue
+            if miss < 4:
+                continue                # a heal is +4; below that it is waste
+            key = (-miss, p.distance_squared(ep), ep.x, ep.y)
+            if best is None or key < best[0]:
+                best = (key, ep)
+        if best is None:
+            return None
+        return best[1]
+
+    def _push_station(self, ct, p):
+        """WHERE THE BATTERY IS, when no damaged barrel is in sight.
+
+        ⛔ THIS RUNG EXISTS BECAUSE THE FIRST BUILD DID NOT HAVE IT AND ITS OWN
+        TRACE REFUTED THE OMISSION.  With only `_push_barrel` (a VISION census)
+        the warden stayed beside the launcher it had just planted and read
+        `barrel_seen == 0` for the rest of the game on 5 of 5 traced cells: a
+        builder sees r^2 = 20 and the band sits at d^2 14-32 of THEIR core, so
+        the tubes are simply not visible from the seat the plant is made from.
+        A medic that cannot see its patients is not a medic.
+
+        TWO ANSWERS, CHEAPEST FIRST:
+          * ANY of our forward sentinels in vision -- damaged or not.  That is
+            the battery, and standing at it is what makes the heal reachable
+            when one of them IS damaged.
+          * otherwise PURE GEOMETRY: the tile SK_PUSH_STATION_OFF from their
+            core anchor in the direction of OUR OWN core.  That is where the
+            engineer's band is, because the band is d^2 14-32 of their core
+            (SK_NEST_DSQ_MIN..MAX) and the engineer arrives from our side.  ⚠ IT
+            IS A WALK TARGET, NOT A PLANT SITE: the offset is not required to
+            land inside the band exactly (`dsq_core` is asymmetric about a 2x2
+            anchor by one tile), only to point the body at it -- the vision
+            census takes over the moment a barrel is in sight.
+        """
+        best = None
+        for _eid, et, ep in self.vis_friend:
+            if et != EntityType.SENTINEL or ep is None or not self.ibp(ep):
+                continue
+            if self.core is not None and dsq_core(ep, self.core) <= GUARD_FWD_DSQ:
+                continue                        # a HOME sentinel, not a tube
+            d = p.distance_squared(ep)
+            if best is None or d < best[0]:
+                best = (d, ep)
+        if best is not None:
+            return best[1]
+        if self.enemy is None or self.core is None:
+            return None
+        sx = 0
+        if self.core.x > self.enemy.x:
+            sx = 1
+        elif self.core.x < self.enemy.x:
+            sx = -1
+        sy = 0
+        if self.core.y > self.enemy.y:
+            sy = 1
+        elif self.core.y < self.enemy.y:
+            sy = -1
+        if sx == 0 and sy == 0:
+            return None
+        q = Position(self.enemy.x + sx * SK_PUSH_STATION_OFF,
+                     self.enemy.y + sy * SK_PUSH_STATION_OFF)
+        if not self.ibp(q):
+            return None
+        return q
+
+    def _push_medic_turn(self, ct, p, rnd):
+        """PIECE 2(c): the warden stations at the battery and heals barrels.
+
+        `_heal_action` is the existing verb (1 Ti -> +4 HP on the most-damaged
+        adjacent friendly, most-damaged-first), so the priority emerges from
+        code already shipped with no new targeting.  ⚠ DISCLOSED: on a tile
+        adjacent to BOTH a damaged barrel and a more damaged prep barrier the
+        verb heals the barrier.  That is the same trade `_guard_heal` accepts
+        and the same reason -- a screen that dies stops screening.
+
+        ⛔ AND IT ENDS IN A FALL-THROUGH, NOT IN A PARKED BODY.  Once the body
+        is standing AT the battery with nothing damaged, this rung returns
+        False and the cage lap has the round -- v603 FIX 6(b)'s lesson (two
+        bodies spent 860 and 227 rounds as paperweights) applies to a medic
+        with no patient exactly as it does to a boxed walker.
+        """
+        tgt = self._push_barrel(ct, p)
+        if tgt is None:
+            stn = self._push_station(ct, p)
+            if stn is None or p.distance_squared(stn) <= SK_PUSH_STATION_NEAR:
+                return False                    # on station, nothing to heal
+            try:
+                if ct.get_move_cooldown() != 0:
+                    return False
+            except Exception:
+                return False
+            if self.step_to(ct, stn):
+                self.push_station_walk += 1
+                return True
+            return False
+        self.push_barrel_seen += 1
+        if p.distance_squared(tgt) == 1:            # orthogonally adjacent
+            self.push_heal_rounds += 1
+            try:
+                if (ct.get_global_resources() >= SK_PUSH_HEAL_FLOOR
+                        and ct.get_action_cooldown() == 0):
+                    if self._heal_action(ct, p, rnd):
+                        self.push_heals += 1
+                        return True
+            except Exception:
+                return False
+            return False        # on station but nothing to heal: let the lap
+                                # have the turn rather than burning it
+        try:
+            if ct.get_move_cooldown() != 0:
+                return False
+        except Exception:
+            return False
+        if self.step_to(ct, tgt):
+            self.push_walk_rounds += 1
+            return True
+        return False
+
+    def _push_warden_turn(self, ct, p, rnd):
+        """THE WARDEN'S ENTIRE TURN -- one rung, for the SECOND RAIDER.
+
+        True if it spent this body's round; False falls through to the cage
+        lap unchanged, which is the failure mode this rung is designed to
+        have (no site, no budget, no barrel -> today's behaviour exactly).
+
+        THREE STAGES, IN ORDER, AND THE ORDER IS THE DOCTRINE:
+          (a) travel -- the walk target is the band beside THEIR core, which
+              is where the engineer's tubes stand, so "with/behind the
+              engineer" is expressed as a shared destination rather than as a
+              follow-the-leader coupling this tree has no channel for (16 int
+              slots, all claimed; buffered one round);
+          (b) plant ONE launcher covering their HEAL SEATS;
+          (c) then station at our own battery and nurse the barrels.
+        ⚠ THE COST IS THE CAGE LAP, and it is reported rather than argued
+        away: while the warden owes a launcher this body lays no ring
+        barriers.
+        """
+        if not (SK_PUSH and SK_PUSH_WARDEN):
+            return False
+        if self.role != SK_PUSH_WARDEN_ROLE or self.enemy is None:
+            return False
+        if not self.push_done_seen:
+            for _eid, et, ep in self.vis_friend:
+                if (et == EntityType.LAUNCHER and ep is not None
+                        and dsq_core(ep, self.enemy) <= SK_PUSH_SITE_MAX_DSQ):
+                    self.push_done_seen = True
+                    break
+        if self._push_owes_launcher(rnd):
+            try:
+                if (ct.get_action_cooldown() == 0
+                        and self._push_launcher_buy(ct, p, rnd)):
+                    return True
+                if ct.get_move_cooldown() != 0:
+                    return False
+            except Exception:
+                return False
+            tgt = self._push_walk_target(ct, p, rnd)
+            if tgt is None:
+                return False
+            if self.step_to(ct, tgt):
+                self.push_walk_rounds += 1
+                return True
+            return False
+        return self._push_medic_turn(ct, p, rnd)
+
+    # --- PIECE 2: THE LAUNCHER UNIT'S OWN TURN ------------------------
+
+    def _push_watch(self, ct, p, rnd):
+        """THE SLEEPING-DOGS SENSOR.  Which opposing builders are WORKING?
+
+        TWO ENGINE-SIDE FACTS, and neither is our own stdout (CLAUDE.md
+        LOKI-14: `print()` reaches no replay and no console, so an arm read
+        off our own output is an instrument that does not exist):
+          * A MEDIC -- THEIR CORE'S HP ROSE since last round while this body
+            stood on one of its seats.  `heal` is the only way a core gains
+            HP, and the seat is the only tile it can be healed from, so the
+            pair (HP rose, body on a seat) names the healer.
+          * A BUILDER -- a NEW opposing building appeared in vision with an
+            opposing builder orthogonally beside it.  A building can only be
+            placed from an orthogonally adjacent tile (the engine's own
+            rule), so the neighbour is the one that placed it.
+        ⛔ THE FIRST SCAN MARKS NOBODY.  On this unit's first round every
+        building in vision is "new", and a sensor that fired then would call
+        the whole board active -- which is the same as having no rule.
+        ⛔ RUNS ABOVE THE COOLDOWN GATE, because activity is a fact about
+        THEM and counting it only on rounds we could act would measure our
+        own cooldown instead.
+        """
+        if self.enemy is None:
+            return
+        # --- (i) the medic test ---------------------------------------
+        hp = None
+        if self.ibp(self.enemy):
+            try:
+                cid = ct.get_tile_building_id(self.enemy)
+                if (cid is not None and ct.get_team(cid) != self.team
+                        and ct.get_entity_type(cid) == EntityType.CORE):
+                    hp = ct.get_hp(cid)
+            except Exception:
+                hp = None
+        if hp is not None and self.push_core_hp >= 0 and hp > self.push_core_hp:
+            for sx, sy in self._push_seats():
+                if not self.ib(sx, sy):
+                    continue
+                q = Position(sx, sy)
+                try:
+                    uid = ct.get_tile_builder_bot_id(q)
+                    if uid is None or ct.get_team(uid) == self.team:
+                        continue
+                except Exception:
+                    continue
+                self.push_active[uid] = rnd
+        if hp is not None:
+            self.push_core_hp = hp
+        # --- (ii) the builder test ------------------------------------
+        try:
+            ids = ct.get_nearby_buildings()
+        except Exception:
+            return
+        fresh = []
+        for bid in ids:
+            if bid in self.push_seen_b:
+                continue
+            self.push_seen_b.add(bid)
+            fresh.append(bid)
+        if not self.push_scan0:
+            self.push_scan0 = True
+            return                      # the first scan marks nobody
+        for bid in fresh:
+            try:
+                if ct.get_team(bid) == self.team:
+                    continue
+                bp = ct.get_position(bid)
+            except Exception:
+                continue
+            if bp is None or not self.ibp(bp):
+                continue
+            for d in CARDINALS:
+                q = bp.add(d)
+                if not self.ibp(q):
+                    continue
+                try:
+                    uid = ct.get_tile_builder_bot_id(q)
+                    if uid is None or ct.get_team(uid) == self.team:
+                        continue
+                except Exception:
+                    continue
+                self.push_active[uid] = rnd
+
+    def _push_active_ok(self, bid, rnd):
+        """THE SLEEPING-DOGS RULE, as one predicate so it is unit-testable
+        and so a mutation control can drive it to either verdict.
+
+        A body that is merely STANDING is left where it is: the throw costs a
+        cooldown, a displaced idle body walks back with a fresh plan, and the
+        measured value of the arm is emptying their MEDIC CHAIRS -- their core
+        absorbs 0.889 of our gross damage in no-kill cells and the healer is
+        what that number is made of.
+        """
+        r = self.push_active.get(bid)
+        return r is not None and 0 <= rnd - r <= SK_PUSH_ACTIVE_TTL
+
+    def _push_pick_victim(self, ct, p, rnd):
+        """The ACTIVE opposing builder to remove, best first, or None.
+
+        Ranked: one standing on a HEAL SEAT first (that is the medic, by the
+        engine's own adjacency rule), then nearest.  Both tails of the
+        activity gate are counted here -- `push_opp` is every round with any
+        opposing builder in the pickup disc, `push_opp_active` the rounds one
+        of them was working, `push_sleep` the rounds we left them alone.
+        """
+        seats = self._push_seats()
+        best = None
+        any_v = False
+        act = False
+        for dx, dy in NEIGHBOURS8:
+            q = Position(p.x + dx, p.y + dy)
+            if not self.ibp(q):
+                continue
+            if p.distance_squared(q) > SK_PUSH_PICKUP_DSQ:
+                continue
+            try:
+                bid = ct.get_tile_builder_bot_id(q)
+            except Exception:
+                continue
+            if bid is None:
+                continue
+            try:
+                if SK_PUSH_TEAM_CHECK and ct.get_team(bid) == self.team:
+                    continue        # ⛔ THE GUARD.  The engine has none.
+                if ct.get_entity_type(bid) != EntityType.BUILDER_BOT:
+                    continue
+            except Exception:
+                continue
+            any_v = True
+            if not self._push_active_ok(bid, rnd):
+                continue            # sleeping dogs
+            act = True
+            on_seat = 1 if (q.x, q.y) in seats else 0
+            key = (-on_seat, p.distance_squared(q), q.x, q.y)
+            if best is None or key < best[0]:
+                best = (key, q, bid)
+        if any_v:
+            self.push_opp += 1
+            if act:
+                self.push_opp_active += 1
+            else:
+                self.push_sleep += 1
+        if best is None:
+            return None
+        return best[1], best[2]
+
+    def _push_pick_throw(self, ct, p, vpos):
+        """Where to put them: a MAP-BORDER tile if one is legal, else the
+        farthest legal tile.  Position or None.
+
+        `can_launch` measures 1 <= d^2 <= 26 FROM THE LAUNCHER (kbprobe
+        STEP4), not from the victim, so the candidate set is this unit's own
+        r^2 = 26 disc -- which is also exactly its vision, so every candidate
+        is a tile we can legally query.
+
+        ⭐ THE BORDER PREFERENCE IS THE APPROVED CLASS AND NOT A NEW ONE: the
+        throw is legal and documented; what happens next is THEIR code
+        querying an off-map neighbour and the engine retiring the unit under
+        its own documented rules (CLAUDE.md, the 2026-08-10 class ruling --
+        "positions, plural and unqualified", so a new trigger needs no new
+        question).  Distance is the tie-break and the whole fallback.
+        """
+        try:
+            tiles = ct.get_nearby_tiles(SK_PUSH_THROW_MAX_DSQ)
+        except Exception:
+            return None
+        cands = []
+        for t in tiles:
+            d = p.distance_squared(t)
+            if d < 1 or d > SK_PUSH_THROW_MAX_DSQ:
+                continue
+            if not self.ibp(t):
+                continue
+            try:
+                if not ct.is_tile_passable(t):
+                    continue
+            except Exception:
+                continue
+            border = 0
+            if SK_PUSH_BORDER and (t.x == 0 or t.y == 0
+                                   or t.x == self.mw - 1
+                                   or t.y == self.mh - 1):
+                border = 1
+            cands.append(((-border, -d, t.x, t.y), t))
+        if not cands:
+            return None
+        cands.sort(key=lambda c: c[0])
+        for _key, t in cands[:SK_PUSH_PROBE_CAP]:
+            try:
+                if ct.can_launch(vpos, t):
+                    return t
+            except Exception:
+                continue
+        return None
+
+    def _push_launcher_turn(self, ct, p, rnd):
+        """THE WARDEN LAUNCHER'S OWN `run()` BRANCH.
+
+        ⛔ THIS UNIT IS A UNIT (kbprobe surprise 1: every unit gets its own
+        `Player` instance), so every counter here is THIS launcher's and the
+        readout aggregates offline.  ⛔ NO AMMO IS INVOLVED -- launchers do not
+        draw on the team pool, so the drip's arithmetic is untouched.
+        `launch` adds 1 to the action cooldown, and the probe measured the
+        cooldown back at 0 on the round after every throw, so CONSECUTIVE-ROUND
+        throws are legal and this method attempts one every round.
+        """
+        self._push_watch(ct, p, rnd)
+        victim = self._push_pick_victim(ct, p, rnd)
+        try:
+            if ct.get_action_cooldown() != 0:
+                return
+        except Exception:
+            return
+        if victim is None:
+            return
+        vpos, _vid = victim
+        target = self._push_pick_throw(ct, p, vpos)
+        if target is None:
+            return
+        try:
+            if not ct.can_launch(vpos, target):
+                return
+            ct.launch(vpos, target)
+        except Exception:
+            return
+        self.push_throws += 1
+        self.push_throw_d2 += p.distance_squared(target)
+        if (target.x == 0 or target.y == 0 or target.x == self.mw - 1
+                or target.y == self.mh - 1):
+            self.push_throw_border += 1
+
+    # --- PIECE 3: THE ENGINEER FORWARD --------------------------------
+
+    def _push_quiet(self, ct, rnd):
+        """THE POST-SECURITY GATE: is home quiet enough to commit forward?
+
+        ⛔ THE EXISTING THREAT READS, NO NEW LATCH (class audit row #132).  Two
+        terms, and the second is what keeps the first honest:
+          * `_under_attack` -- the slot-1 PRESENCE latch, 50-round freshness;
+          * `corefire_fresh` AND core HP <= SK_CORE_STAND_HP -- the CORE's own
+            HP-DELTA latch with the threshold `_core_stand_armed` uses.  ⛔ THE
+            EXPRESSION IS RESTATED RATHER THAN CALLED, and the reason is an
+            INSTRUMENT one: `_core_stand_armed` increments `stand_rounds`,
+            which is LEVER 2's own dose column, and calling it from a body
+            that is not standing anywhere would silently inflate another
+            arm's instrument.  The weld is a unit control, not shared code.
+          * Row #132 is why the SECOND term carries the HP threshold:
+            `corefire_fresh` alone measured TRUE in 139 of 139 keeper-rung
+            rounds, i.e. freshness alone is the always-fresh class and is not
+            a gate at all.
+        BOTH TAILS ARE COUNTED.  A gate that has only ever returned one
+        verdict has not been seen to gate.
+        """
+        if not (SK_PUSH and SK_PUSH_ENGINEER):
+            return False
+        if not SK_PUSH_ENG_QUIET:
+            self.push_quiet_yes += 1
+            return True
+        try:
+            if self._under_attack(ct, rnd):
+                self.push_quiet_no += 1
+                return False
+            if (SK_COREFIRE and self.corefire_fresh(ct, rnd)
+                    and self.corefire_hp(ct) <= SK_CORE_STAND_HP):
+                self.push_quiet_no += 1
+                return False
+        except Exception:
+            self.push_quiet_no += 1
+            return False
+        self.push_quiet_yes += 1
+        return True
+
+    def _push_succ(self, ct, p, rnd, live, want):
+        """PIECE 3: OVERLAPPING SUCCESSION.  True if it took this turn.
+
+        THE MEASURED DEFECT.  At or above the floor the engineer HOLDS STATION
+        beside the newest tube (`_siege_engineer`'s hold branch) and
+        `_plant_gun` leaves the just-built tile in `nest_site`.  So the
+        replacement of a tube that dies starts from ZERO: re-site, walk, prep,
+        then plant -- the 44-round sequential gap the wealthdiag names, against
+        a median tube life of 42 rounds.  This rung spends the hold rounds on
+        the NEXT site instead, so that when a barrel is knocked out the body is
+        already standing on a prepared tile and the plant is one turn away.
+
+        ⛔ IT DOES NOT PLANT AND IT DOES NOT RAISE `want`.  Plants above the
+        pair stay `_battery_open`'s business under its ceiling and its eco
+        latch; raising `want` here would also move `skip_prep`, `_plant_gun`'s
+        SK_TUBE_FUND waiver and the post-plant re-arm -- three policies this
+        arm has no mandate to change and which would make a result
+        unattributable (arm 1's own note, and it applies unchanged).
+
+        ⛔⛔ THE ONE HAZARD IT CREATES IS A PERMANENT SITE BAN, and it is the
+        same one the burst rule paid for.  `_nest_site_watch` is a PROGRESS
+        watchdog: a site the body has not closed on for SK_NEST_STUCK_ROUNDS
+        rounds goes into `nest_bad` FOREVER, and a body that has ARRIVED and
+        is deliberately standing still records no new closest approach.  So
+        the arrival branch refreshes exactly the two clocks that watchdog runs
+        on (`_b2_hold_clocks`, reused rather than copied -- the same two
+        fields, the same reason).
+
+        ⚠ THE COST, DISCLOSED: the body stops standing beside the standing
+        tube.  On this baseline that costs nothing measurable -- the hold
+        branch's only other rung is `_guard_heal`, which returns False on
+        every SK_ROTATE-off round -- and PIECE 2(c) is what puts a medic
+        beside the barrels instead.  On a rotation arm it would cost the
+        babysit, and this rung is gated below that branch accordingly.
+        """
+        if not (SK_PUSH and SK_PUSH_ENGINEER):
+            return False
+        if self.role != SK_SIEGE_ENGINEER or self.enemy is None:
+            return False
+        if live < want:
+            return False                # below the floor the ordinary path owns it
+        if not self._push_quiet(ct, rnd):
+            return False
+        # (i) free a site whose tube already STANDS -- `_battery_rearm`'s own
+        # ledger test, and the ledger is the right authority for the same
+        # reason it gives: `get_tile_building_id` can raise out of bounds and
+        # answers nothing useful out of vision.
+        s = self.nest_site
+        if s is not None:
+            for t in self._nest_slots():
+                if t is not None and t[1].x == s.x and t[1].y == s.y:
+                    self._battery_rearm()
+                    self.push_succ_rearm += 1
+                    break
+        # (ii) pick the successor site.  `_pick_nest` already excludes every
+        # tile our standing tubes occupy (`_nest_taken`) and applies the pair
+        # gap, so the successor cannot stack on the incumbent.
+        if self.nest_site is None:
+            self.nest_site = self._pick_nest(ct, p, rnd)
+            if self.nest_site is None:
+                return False
+            self.push_succ_site += 1
+            self.nest_best_d = None
+            self.nest_since = rnd
+            self.nest_anchor = None
+            self.nest_anchor_rnd = rnd
+            self._preprep_consume(rnd)
+        site = self.nest_site
+        # (iii) prep, hold, or walk.
+        if abs(site.x - p.x) + abs(site.y - p.y) == 1:
+            cd = 1
+            try:
+                cd = ct.get_action_cooldown()
+            except Exception:
+                cd = 1
+            if (SK_PUSH_ENG_PREP and cd == 0
+                    and self.nest_prepped < SK_NEST_PREP_BARRIERS
+                    and not self._push_refuse(ct, rnd, EntityType.BARRIER,
+                                              "succprep")
+                    and self._prep_barrier(ct, p, site, rnd)):
+                self.push_succ_prep += 1
+                return True
+            self.push_succ_hold += 1
+            self._b2_hold_clocks(rnd)
+            return True
+        if self.step_to(ct, site):
+            self.push_succ_walk += 1
+            return True
+        return False
+
     def _escalate_target(self, ct, p, rnd=None):
         """LEDGER V1's other half -- once a tile is escalated, the answer is
         the SHOOTER, not another conveyor.  Returns the enemy turret to remove.
@@ -8418,6 +9371,17 @@ class RolesMixin:
         # drops to zero the round the launcher stands).
         # ⛔ Flag off -> False on the first line -> v632 behaviour exactly.
         if self._kb_fast_buyer_turn(ct, p, rnd):
+            return
+
+        # ⭐⭐ s57 THE PUSH, PIECE 2 -- THE WARDEN'S RUNG.  ⛔ ABOVE THE WHOLE
+        # LAP and BELOW the survey/report/commit bookkeeping above, for v604
+        # FIX 2's reason verbatim: no round this rung takes may leave the
+        # walker's own cursor state unwritten.  ⛔ IT FAILS OPEN -- no site, no
+        # walk budget, no damaged barrel all return False and the cage lap runs
+        # exactly as it does today, so a cell the warden cannot reach is a cell
+        # whose tape is v632's.  ⛔ Flag off -> False on the first line ->
+        # v632 behaviour exactly.
+        if self._push_warden_turn(ct, p, rnd):
             return
 
         if not SK_CAGE:
@@ -9776,6 +10740,17 @@ class RolesMixin:
             # turns and 30 Ti -- and that trade has to be priced on its own.
             if SK_TUBE_FLOOR2:
                 self.floor_hold += 1
+            # ⭐⭐ s57 THE PUSH, PIECE 3 -- OVERLAPPING SUCCESSION.  ⛔ THE
+            # FIRST RUNG OF THE HOLD BRANCH AND NOWHERE ELSE: this is exactly
+            # the set of rounds in which the engineer has nothing to plant, and
+            # spending them on the NEXT site is the whole content of the piece.
+            # ⛔ BELOW nothing and ABOVE `_guard_heal` because that rung is a
+            # rotation body's babysit (False on every SK_ROTATE-off round), and
+            # on a rotation arm the babysit should keep winning -- the gate is
+            # written so it can.  ⛔ Flag off -> False on the first line ->
+            # v632 behaviour exactly.
+            if self._push_succ(ct, p, rnd, live, want):
+                return
             # ⭐⭐ v632 PLANK 10 (SK_ROTATE_GUARD) RUNG (b) -- THE HEAL, AHEAD
             # OF THE STAGE GATE.  A rotation body standing at the battery's
             # target has nothing to plant; the turn it would spend holding buys
@@ -12962,6 +13937,16 @@ class RolesMixin:
         # ⛔ THE WATCH RUNS ABOVE THE COOLDOWN GATE.  `kb_detain_rounds` is a
         # RESIDENCY INTEGRAL over the whole game; counting it only on rounds we
         # could act would measure our own cooldown, not their detention.
+        # ⭐⭐ s57 THE PUSH, PIECE 2 -- THE WARDEN LAUNCHER'S OWN TURN, AND
+        # IT TAKES THE WHOLE BRANCH.  A warden launcher stands beside THEIR
+        # core; `_hl_pick_victim`'s ranking is written around OUR OWN delivery
+        # seats and `_hl_pick_throw` refuses tiles inside OUR home ring, so
+        # running either here would be the wrong instrument pointed at the
+        # right unit.  ⛔ Flag off -> one module-constant test -> the v611 /
+        # killbox paths below are reached exactly as they are today.
+        if SK_PUSH and SK_PUSH_WARDEN:
+            self._push_launcher_turn(ct, p, rnd)
+            return
         if SK_KILLBOX:
             self._kb_watch(ct, p, rnd)
         victim = self._hl_pick_victim(ct, p) if SK_KILLBOX else None

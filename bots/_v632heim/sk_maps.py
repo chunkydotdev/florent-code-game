@@ -6829,3 +6829,218 @@ SK_KB_FAST_SPAWN_BY = 8   # ... and only inside the opening.  Past this round a
 SK_KB_BLOCK_ON = bool((SK_KILLBOX_EXEC or SK_KILLBOX_FAST) and SK_KB_BLOCK)
 SK_KB_INTERIOR_ON = bool((SK_KILLBOX_EXEC or SK_KILLBOX_FAST)
                          and SK_KB_CELL_INTERIOR)
+
+
+# ===========================================================================
+# s57 THE PUSH -- SK_PUSH  (PAIR RESERVE + THE WARDEN + THE ENGINEER FORWARD)
+# ===========================================================================
+# GAME CONTEXT: in-game mechanics of the Florent Code League, a sandboxed
+# bot-vs-bot programming competition.  "warden", "throw", "barrel", "tube" and
+# "band" below name legal engine moves between competing game bots: our
+# launcher picks up an opposing builder standing beside it (`can_launch` has no
+# team check and no vision guard -- engine-probed, kbprobe STEP4) and throws it
+# to a legal tile, and our builder heals our own sentinels with the engine's
+# documented +4 HP / 1 Ti action.  Nothing here touches anything outside the
+# simulated grid.
+#
+# WHY THIS ARM EXISTS -- the wealthdiag decomposition (banked
+# `scratchpad/s57_heim0/wealthdiag_ALL.out`, 30 paired F1 cells), whose chain
+# breaks at BARRELS-STANDING and not at money:
+#   * income +49% and TURRET spend +2.8% -- the purse is not the binding term;
+#   * PAIR rounds (conc >= 2) 20.4% of game rounds, 14/30 cells EVER held a
+#     pair, ceiling(4) refusals 0/30 (so raising the ceiling is a registered
+#     NULL and is de-scoped);
+#   * forward-tube median birth r53, median life of the 46% that are knocked
+#     out 42 rounds, TUBE-DOWN 20.4% of post-first-tube rounds;
+#   * absorption (their core's heal / our gross) 0.889 in no-kill cells against
+#     0.648 in core-kill cells -- the barrels that do stand are out-healed;
+#   * NET HP on their core 0.737 HP/round inside r300.
+# ⇒ THE THREE PIECES BELOW ARE ONE ARGUMENT: fund the PAIR before anything
+# discretionary (reserve), keep the barrels ALIVE and their medics off the
+# board (warden), and never let the replacement tube start from zero
+# (engineer).  Registered: `docs/research/EXPECTATION-v632heim-push1-2026-08-23.md`.
+SK_PUSH = False           # ⛔ THE MASTER, DEFAULT OFF.  Off is exact identity:
+                          # every call site is a module-constant conjunction
+                          # tested BEFORE any controller call, so an OFF arm
+                          # pays one test of a module constant per rung and its
+                          # control flow -- including its CPU profile -- is
+                          # v632's, character for character.
+
+# --- PIECE 1: THE PAIR RESERVE --------------------------------------------
+SK_PUSH_RESERVE = True    # sub-flag under the master, ablatable alone.  ON:
+                          # titanium up to `_b2_pair_bar` (tube-2's OWN
+                          # surcharge form, live-read) is withheld from every
+                          # DISCRETIONARY / ECO / BOX purchase while the team's
+                          # forward pair is short.  ⛔ THE BAR IS NOT A NEW
+                          # NUMBER: `_b2_pair_bar` is `_plant_gun`'s own
+                          # arithmetic for the two plants, already in the tree
+                          # and already unit-controlled, so the reserve and the
+                          # purchase it protects cannot desynchronise.
+# ⛔ THE CORE'S SPAWN AND THE AMMUNITION DRIP ARE NEVER GATED, AND THE
+# EXEMPTION IS STRUCTURAL RATHER THAN A CLAUSE: neither passes through
+# `_push_refuse` at all, so neither can be gated by editing a constant.  A
+# builder bot is how the reserve gets SPENT (only a body can plant a tube) and
+# ammunition is what the tube FIRES; withholding either is the funding deadlock
+# `_fund_battery` already measured (jotunheim: ammo == 0 in 201 of 201 window
+# rounds -- income never cleared the floor, so nothing converted, so the one
+# tube that stood never fired, so the battery could never grow to the count
+# that would have released the clamp).
+SK_PUSH_RES_DEFENCE = True  # ⛔ AND NEITHER IS DEFENCE, per the registered
+                          # scope ("spawns and defence above it per the
+                          # existing priority reads").  ⚠ DISCLOSED AND
+                          # MEASURED, NOT ARGUED: the home turret rungs
+                          # (`_fort_ring_action`, `_home_gun_action`,
+                          # `_cover_gun_action`, `_counter_sent_action`) are 20
+                          # to 30 Ti EACH and they sit ABOVE this reserve, so a
+                          # cell that buys home turrets can still starve the
+                          # pair.  wealthdiag §C: HOME gunners 56 built against
+                          # 65 forward tubes pooled.  The columns are reported.
+
+# --- PIECE 2: THE WARDEN ---------------------------------------------------
+SK_PUSH_WARDEN = True     # sub-flag under the master, ablatable alone.  The
+                          # SECOND RAIDER (role SK_CAGE_WALKER) travels to the
+                          # enemy core's band, plants ONE launcher covering
+                          # their core's HEAL SEATS, then stations at our own
+                          # battery as its medic.
+SK_PUSH_WARDEN_ROLE = SK_CAGE_WALKER   # ⛔ WHICH BODY, AND IT IS THE ONE ROLE
+                          # WHOSE JOB IS ALREADY 100% ENEMY-ANCHORED
+                          # (`cage_lap(self.enemy)` IS the cage role), so the
+                          # warden's walk is the walk that body was making
+                          # anyway.  ⚠ THE COST IS THE CAGE LAP: while the
+                          # warden owes a launcher this body lays no ring
+                          # barriers.  Reported, not argued away.
+SK_PUSH_WARDEN_UNTIL = 400  # ⛔ THE DEADLINE ON THE PLANT, in rounds.  A
+                          # launcher bought at r600 has missed the game this
+                          # arm is trying to win (median game length r258,
+                          # median tube birth r53); past this round the warden
+                          # stops owing the plant and goes straight to the
+                          # barrel duty.  It is NOT a give-up on the ARM -- the
+                          # heal half runs for the whole game.
+SK_PUSH_LAUNCH_RESERVE = 30  # bank left standing after the launcher buy.  ONE
+                          # SENTINEL at base cost -- the same shape as
+                          # SK_KB_RESERVE (40) and SK_HL_RESERVE, sized down by
+                          # one prep pair because this arm's own PIECE 1 is
+                          # already holding the pair's money.
+SK_PUSH_PICKUP_DSQ = 2    # ⛔ ENGINE BOUND, NOT A CHOICE (kbprobe STEP4):
+                          # `can_launch` picks up a builder at d^2 <= 2 FROM
+                          # THE LAUNCHER.
+SK_PUSH_THROW_MAX_DSQ = 26  # ⛔ ENGINE BOUND, NOT A CHOICE (kbprobe STEP4):
+                          # 1 <= d^2 <= 26, measured FROM THE LAUNCHER.
+SK_PUSH_MIN_SEATS = 2     # ⭐ THE SITING BAR: how many of THEIR core's eight
+                          # heal seats must sit inside this launcher's pickup
+                          # disc.  A seat is a tile an opposing builder must
+                          # STAND ON to heal their core (the engine's own
+                          # orthogonal-adjacency rule for `heal`), so this
+                          # number is literally "how many of their medic chairs
+                          # can this launcher empty".  TWO, not one: a
+                          # single-seat site is answered by their medic standing
+                          # on any of the other seven.
+                          # ⛔ AND TWO IS THE ACHIEVABLE MAXIMUM, not a soft
+                          # bar: the seats themselves and every tile orthogonal
+                          # to their footprint belong to the CAGE verb under the
+                          # tile arbiter, so the sites this plank may buy are
+                          # the DIAGONAL tiles off the footprint corners -- and
+                          # each of those covers exactly the two chairs of its
+                          # own corner.  `_push_site_cands` refuses the rest.
+SK_PUSH_SITE_MAX_DSQ = 8  # ... and the site must sit within this d^2 of THEIR
+                          # core footprint.  d^2 <= 8 is Chebyshev <= 2, which
+                          # is exactly the ring that can hold a pickup disc
+                          # over their seats.  ⚠ DISCLOSED: this is INSIDE
+                          # their gunner reach (r^2 = 13).  A launcher is a 30
+                          # HP building and it is expected to die; the plank is
+                          # priced on throws-before-death, not on tenure.
+SK_PUSH_WALK_MAX = 40     # ⛔ THE WALK BUDGET, in rounds, for the whole
+                          # warden duty.  The band is a CROSS-BOARD commute (the
+                          # engineer's own walk to d^2 14-32 is 20-40 rounds on
+                          # these maps), so this is sized at the commute and not
+                          # at the killbox's 14 -- which was sized for a site
+                          # 2-3 tiles from OUR OWN core.
+SK_PUSH_GIVEUP = 14       # rounds of walking or refused builds on ONE site
+                          # before that site is banned (the `_kb_strike` shape,
+                          # verbatim).
+SK_PUSH_SITE_TRIES = 2    # ... and after this many banned sites the plant half
+                          # is done for the game.  The heal half is NOT.
+SK_PUSH_TEAM_CHECK = True # ⛔⛔ THE ENGINE HAS NO TEAM CHECK ON `can_launch`
+                          # (guard-matrix sweep, engine-probed): the same call
+                          # that throws THEIR builder will throw OURS.  Nothing
+                          # ships with this False; it is a flag ONLY so the
+                          # mutation control can prove the guard fires.
+SK_PUSH_ACTIVE_TTL = 10   # ⭐⭐ THE SLEEPING-DOGS RULE, and this is its clock.
+                          # An opposing builder is a TARGET only while it has
+                          # been seen WORKING inside this many rounds -- healing
+                          # their core (their core's HP ROSE while this body
+                          # stood on one of its seats) or building (a NEW
+                          # opposing building appeared beside it).  A body that
+                          # is merely standing is left where it is: throwing it
+                          # spends our cooldown and TEACHES their pathing
+                          # nothing, and a displaced idle body is a body that
+                          # walks back with a fresh plan.
+SK_PUSH_HEAL_FLOOR = 12   # bank floor under the warden's barrel heals, in
+                          # titanium.  A heal is 1 Ti; the floor exists so the
+                          # medic cannot spend the pair's last conveyor.  Set
+                          # ABOVE `_heal_action`'s own hard floor of 2 and well
+                          # below one sentinel, so it never competes with
+                          # PIECE 1's own bar.
+SK_PUSH_STATION_OFF = 4   # ⭐ THE STATION, in tiles from THEIR core anchor
+                          # toward OUR OWN core -- where the engineer's band
+                          # stands (d^2 SK_NEST_DSQ_MIN..MAX of their core, and
+                          # the engineer arrives from our side).  ⛔ A WALK
+                          # TARGET, NOT A PLANT SITE: `dsq_core` is asymmetric
+                          # about a 2x2 anchor by one tile, so this offset is
+                          # not required to land inside the band exactly -- only
+                          # to point the body at it until a barrel is in vision.
+                          # ⛔ IT EXISTS BECAUSE THE FIRST BUILD OMITTED IT AND
+                          # ITS OWN TRACE REFUTED THE OMISSION: warden
+                          # `barrel_seen == 0` on 5 of 5 cells, because a
+                          # builder sees r^2 = 20 and the band is not visible
+                          # from the launcher seat beside their core.
+SK_PUSH_STATION_NEAR = 4  # ... and once the body is this close to the station
+                          # with nothing damaged, the rung FALLS THROUGH to the
+                          # cage lap rather than parking the body (v603 FIX
+                          # 6(b): two bodies spent 860 and 227 rounds as
+                          # paperweights, and a medic with no patient is the
+                          # same failure wearing a duty).
+SK_PUSH_BARREL_DSQ = 32   # how far the warden will walk to reach a damaged
+                          # forward barrel, in d^2 from the barrel.  32 is the
+                          # sentinel's OWN reach constant -- the warden stays
+                          # inside the volume the barrel it is nursing covers.
+SK_PUSH_PROBE_CAP = 12    # how many ranked throw candidates are put to
+                          # `can_launch` before the round is given up.  The
+                          # predicate is the only authority on legality (it has
+                          # NO vision guard and NO team check -- engine-probed),
+                          # but it is an engine call inside a 10 ms turn, so the
+                          # probe is bounded exactly as v611's is.
+SK_PUSH_BORDER = True     # ⭐ THROW PREFERENCE: a legal MAP-BORDER tile
+                          # outranks a merely distant one.  Same class the
+                          # organisers approved (a legal throw; their own code
+                          # then queries an off-map neighbour and the engine
+                          # retires the unit per its documented rules) -- the
+                          # trigger is not new, so no new question.  Distance is
+                          # the tie-break and the fallback.
+
+# --- PIECE 3: THE ENGINEER FORWARD ----------------------------------------
+SK_PUSH_ENGINEER = True   # sub-flag under the master, ablatable alone.  While
+                          # HOME IS QUIET the engineer stops holding station
+                          # beside a standing pair and begins the NEXT tube's
+                          # site instead -- OVERLAPPING SUCCESSION.  It does not
+                          # plant it: plants above the pair remain
+                          # `_battery_open`'s business under its ceiling and its
+                          # eco latch, so `want` is still NOT raised and the
+                          # three policies keyed on it are untouched.
+SK_PUSH_ENG_QUIET = True  # ⛔ THE POST-SECURITY GATE, AND IT IS THE EXISTING
+                          # THREAT READS, NOT A NEW LATCH (class audit row
+                          # #132: a latch that is fresh 139/139 rounds is not a
+                          # gate).  Home is quiet when the slot-1 presence latch
+                          # is STALE *and* `_core_stand_armed` is False -- the
+                          # latter is the core's own HP-DELTA latch ANDed with a
+                          # core-HP threshold, i.e. the one read in this tree
+                          # already known not to be always-fresh.  Both verdicts
+                          # are counted; a gate never seen to refuse has not
+                          # been seen to gate.
+SK_PUSH_ENG_PREP = True   # may the succession lay its site's prep barriers
+                          # early?  ON, because that is what "BEGIN the
+                          # replacement tube" means and it is the half that
+                          # collapses the measured 44-round sequential gap; it
+                          # is 2 x 3 Ti and +2% of scale, so it is separately
+                          # ablatable and it passes through PIECE 1's reserve
+                          # like every other discretionary spend.
