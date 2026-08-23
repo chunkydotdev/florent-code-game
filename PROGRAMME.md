@@ -1057,3 +1057,29 @@ the chew give-up clock was NEVER in force (memo bug — a "tested policy"
 that was dead code), and the core heal-stand sat disarmed behind four
 stacked gates (152 armed rounds, zero heals) — "we play tactic X" must be
 verified as executed, not read off the code's intent.
+
+## THREE-PLANK LOCK (Magnus, direct, 2026-08-23 — supersedes the try-and-discard flow)
+
+**"We no longer try planks and throw them away, pick three planks, we will
+iterate on these until they work and we do them excellently, we only
+iterate on arms."** The three planks, chosen by the builder from the
+banked loss autopsy and locked until Magnus says otherwise:
+
+1. **THE BATTERY** — concurrent sentinel firepower on the enemy core (the
+   rolling-battery doctrine played to spec: 4 together, rolling). Owns the
+   gross-rate constraint (need ~4.5 HP/r; one sentinel caps ~2.4). The
+   refused SK_AMMO_PUSH is retained as a FUNDING ARM of this plank.
+2. **THE STAND** — our core survives the siege (SK_CORE_STAND adopted as
+   arm 1; known execution ceilings: walled-in heal seats 1.54/8 free,
+   enemy medic-taxi, staffing). Owns the 54-round closing window.
+3. **THE ROUTE** — titanium delivered home (mine rate 1.21 vs 2.39,
+   out-mined 38/41 losses, 13 zero-delivery cells with routeless
+   harvesters). Owns the delivery input and the tiebreak games.
+
+**RULES:** no new plank families without Magnus; iteration = new ARMS of
+these three, each arm registered/screened/verdicted per the standing
+method WITH the play-it-well execution-quality line; a failed arm routes
+to the next arm of the same plank, never to a new plank; "excellent" =
+the plank's dose-achieved approaches its measured dose-achievable, and
+the victory bars (>=16/30 per fixture; currently 10/9/16) are the
+campaign scoreboard.
