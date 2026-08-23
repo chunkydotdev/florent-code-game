@@ -7974,13 +7974,35 @@ SK_SENTRY_ALARM = True    # PIECE 1, ablatable alone under the master.  THE
                           # CF_SENTRY_BIT so every consumer can tell presence
                           # from damage and so the trace can attribute it.
 
-SK_SENTRY_FOCUS = True    # PIECE 2, ablatable alone under the master.  THE
-                          # COMMITMENT: once the demolition sweep has landed its
-                          # first peck on an enemy TURRET inside the fence, it
-                          # holds that target instead of re-picking by class and
-                          # distance every round.  Banked: we buy 85% of our
-                          # checkmates with 17.0 pecks SPREAD over 24 targets,
-                          # and only 13 of 24 pecked targets ever completed.
+SK_SENTRY_FOCUS = False   # ⛔⛔ PIECE 2, **DROPPED AT V1 DISPOSITION AND NOW
+                          # SHIPPING False** (EXPECTATION-v632heim-sentry1,
+                          # V1 DISPOSITION): a HARD NULL BY CONSTRUCTION.  The
+                          # sweep landed 0 of 3,614 pecks on a turret, because
+                          # `_peck_priority` sits ABOVE the sweep and owns every
+                          # adjacent enemy turret -- and that rung ALREADY ships
+                          # `hp_trend_ok` + `gave_up`, i.e. the heal-aware
+                          # give-up this piece was written to add, and marches
+                          # SINGLE-TARGET, i.e. the commitment too.  R2 was
+                          # incumbent behaviour; the grep-the-incumbent lesson,
+                          # re-learned and paid for.
+                          # ⛔ THE CODE IS LEFT IN PLACE AND OFF-DEAD RATHER
+                          # THAN EXCISED, and that is the LEAST-RISK choice
+                          # DISCLOSED: every one of its call sites is a
+                          # conjunction whose first terms are these two module
+                          # constants (`SK_SENTRY and SK_SENTRY_FOCUS`), so
+                          # False here makes all five unreachable at zero
+                          # engine cost, while a five-site excision would edit
+                          # `_demolish_target`/`_demolish_action` -- LIVE
+                          # SK_DEMOLISH hot paths that the OFF byte-identity
+                          # gate is the only thing standing behind.  The piece
+                          # stays ablatable-on for any later arm that wants to
+                          # re-test it against a CHANGED `_peck_priority`.
+                          # ORIGINAL REGISTRATION, for the record: once the
+                          # demolition sweep has landed its first peck on an
+                          # enemy TURRET inside the fence, hold that target
+                          # instead of re-picking by class and distance every
+                          # round (banked: 85% of our checkmates bought with
+                          # 17.0 pecks SPREAD over 24 targets, 13/24 completed).
 
 SK_SENTRY_DSQ = 39        # THE PRESENCE FENCE, d^2 to our own 2x2 FOOTPRINT
                           # (`dsq_core`), DELIBERATELY THE SAME INTEGER AS
@@ -8061,6 +8083,69 @@ SK_SENTRY_BAN_RNDS = 60   # ⛔ THE BAN IS BOUNDED, and that is the #132 rule.
                           # permanent ban would concede the tile on evidence
                           # that expires.  Same clock family as
                           # SK_STAND_SEATS_BAN (40).
+
+# ==========================================================================
+# s57 THE SENTRY **V2** -- ARM EARLY, STRIKE LATE.  THE DISPATCH GATE.
+# Registered at the tail of EXPECTATION-v632heim-sentry1-2026-08-23.md.
+#
+# V1 DELIVERED THE DOSE AND BREACHED THE GUARDS, and the mechanism was traced
+# rather than guessed: the alarm arms at r7-8, and at r7-8 the two answering
+# bodies are the OPENING ECONOMY.  Pulling them off it cost alive@300 59->52
+# (bar -2) and wins 40->35.  The fix is NOT to arm later -- the b30 stamp,
+# its three expiries and its consumers are unchanged, and the alarm still
+# arms at the plant.  It is to hold the ANSWER DISPATCH until the strike is
+# free: the killer's first core shot lands ~r34 median, so rounds 20-30 of
+# the same window are the tail nobody is using.
+# ==========================================================================
+
+SK_SENTRY_FROM = 20       # ⛔ THE DISPATCH GATE, IN ROUNDS.  The two consumers
+                          # given the earlier trigger (`_keeper_counter`,
+                          # `_denier_home_answer`) act on a PRESENCE-armed
+                          # round only from here on.  20 is registered, not
+                          # fitted: it is the START of the window's usable tail
+                          # (plant ~r6-8 in the F2 loss cells, their first core
+                          # shot ~r34 median), so the strike still lands 14
+                          # rounds before the shot it exists to prevent while
+                          # the opening's first harvester and first conveyors
+                          # are already laid.
+                          # ⛔ THE DAMAGE PATH IS NOT GATED.  `corefire_fresh`
+                          # returns True BEFORE this test is reached, so a core
+                          # that is actually losing HP is answered on round 0
+                          # exactly as v632 answers it.  This gate can only
+                          # ever delay an answer v632 did not make at all.
+
+SK_SENTRY_IDLE_LIFT = True  # THE PRE-`FROM` ESCAPE HATCH, ablatable alone.
+                          # A body with no build/harvest/heal task pending is
+                          # not being pulled off anything, so it may answer
+                          # early.  ⚠ THE IDLE READ IS DISCLOSED AND IT IS AN
+                          # EXISTING ONE, NOT A NEW LADDER: "the bank cannot
+                          # buy the CHEAPEST economic build this round"
+                          # (`get_global_resources() < get_conveyor_cost()`).
+                          # WHY THIS ONE: the conveyor is the cheapest thing
+                          # this tree builds (3 Ti base, tied with the
+                          # barrier), so under it no belt tile, no harvester
+                          # (20), no barrier and no turret is purchasable at
+                          # ANY site -- the whole build/harvest half of both
+                          # bodies' ladders is unreachable this round by the
+                          # engine's own arithmetic, with no second opinion
+                          # about sites that could drift from the ladders'.
+                          # ⚠ TWO DISCLOSED GAPS, BOTH IN THE CONSERVATIVE
+                          # DIRECTION (they REFUSE early answers, they never
+                          # license one):
+                          #   * the 1 Ti HEAL is still legal in the 0-2 Ti
+                          #     band this read calls idle.  That band is
+                          #     exactly `_keeper_work`'s documented
+                          #     "turn worth exactly zero" complement class,
+                          #     where the heal is already stood down by
+                          #     SK_MEDIC_TI_FLOOR / `_fund_refuse`;
+                          #   * a body that is FUNDED but has no legal site is
+                          #     called BUSY here and refuses.  Missing an
+                          #     early answer is the v1 failure's opposite tail
+                          #     and is the tail this arm is buying.
+                          # ⛔ AND IT IS SCORED BOTH WAYS: if the read has NO
+                          # POPULATION on the tapes, the readout says so and
+                          # the gate is reported as `rnd >= SK_SENTRY_FROM`
+                          # alone.  A lift never seen to fire is not a lift.
 
 # ⛔ THE WIRE BIT (CF_SENTRY_BIT, slot 15 b30) IS **NOT** DECLARED HERE.  Every
 # other CF_* field of the corefire word lives beside its own layout comment in

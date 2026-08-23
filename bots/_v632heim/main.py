@@ -1259,6 +1259,18 @@ class Player(CommonMixin, RolesMixin, CoreMixin):
                                       # keyed on the occupant too so a re-plant
                                       # re-arms (`demo_pecks`' keying)
         self.sentry_arms = 0          # instrument: rounds the alarm armed
+        # --- s57 THE SENTRY **V2**: the DISPATCH GATE's own both-tail taps ---
+        # PER BODY (the CONSUMERS run on the keeper and the denier, not on the
+        # core) and UNCONDITIONAL for the same reason as every attribute in
+        # this constructor: a flag-gated attribute is how a masters-ON tape
+        # dies on AttributeError in a branch nobody exercised OFF, and an
+        # escaping exception destroys the unit for the rest of the match.
+        self.sentry_disp_late = 0     # presence answers let through by
+                                      # `rnd >= SK_SENTRY_FROM`
+        self.sentry_disp_idle = 0     # ... let through EARLY by the idle lift
+        self.sentry_disp_refused = 0  # ... REFUSED pre-FROM (the tail that
+                                      # keeps the opening; a gate never seen to
+                                      # refuse has not been seen to gate)
         self.core_heals = 0           # instrument: PLANK 1 heals landed
         self.counter_pecks = 0        # instrument: PLANK 2 pecks at the shooter
         self.counter_sents = 0        # PLANK 3 purchases (capped)

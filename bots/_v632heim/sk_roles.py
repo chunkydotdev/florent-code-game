@@ -185,6 +185,8 @@ from sk_maps import (
     SK_SENTRY, SK_SENTRY_ALARM, SK_SENTRY_FOCUS, SK_SENTRY_HP_LIFT,
     SK_SENTRY_FOCUS_MAX, SK_SENTRY_FOCUS_RNDS, SK_SENTRY_HEAL_K,
     SK_SENTRY_BAN_RNDS,
+    # --- s57 THE SENTRY V2 (the DISPATCH GATE) -----------------------------
+    SK_SENTRY_FROM, SK_SENTRY_IDLE_LIFT,
     # --- v632 HEIMDALL PLANK 3 (THE TURRET RING) ---------------------------
     SK_FORT_RING, SK_FORT_RING_GUNNERS, SK_FORT_RING_SENT,
     SK_FORT_RING_WINDOW, SK_FORT_RING_RESERVE, SK_FORT_RING_LANE,
@@ -1081,7 +1083,68 @@ class RolesMixin:
         """
         if self.corefire_fresh(ct, rnd):
             return True
-        return self.sentry_bit(ct)
+        # ⭐⭐ s57 THE SENTRY **V2** -- ARM EARLY, STRIKE LATE.  The presence
+        # half now passes through the DISPATCH GATE; the damage half returned
+        # one line above and is untouched, on every tree and every round.
+        if not self.sentry_bit(ct):
+            return False
+        return self._sentry_dispatch_ok(ct, rnd)
+
+    def _sentry_dispatch_ok(self, ct, rnd):
+        """s57 THE SENTRY V2 -- MAY A PRESENCE-ARMED ROUND DISPATCH AN ANSWER?
+
+        THE BANKED REASON THIS EXISTS (v1 disposition, same registration): v1
+        delivered its dose -- the 28-round free window fell to 8-9 rounds to
+        first answer, F2 pecks-before-first-shot 7 -> 21, destroyed-before-
+        first-core-shot 3 -> 6 -- AND BREACHED THE GUARDS, alive@300 59 -> 52
+        against a -2 bar and wins 40 -> 35.  The mechanism was traced, not
+        guessed: the alarm arms at r7-8 and at r7-8 the two answering bodies
+        ARE the opening economy.
+
+        SO THE ALARM IS UNCHANGED AND THE STRIKE MOVES.  The b30 stamp still
+        lands at the plant, all three expiries still run, and every consumer
+        still reads the same bit; this gate only decides WHEN the two answer
+        dispatches act on it.  Their killer's first core shot lands ~r34
+        median, so rounds SK_SENTRY_FROM..~30 are the tail of the same free
+        window with the opening already laid.
+
+        TWO WAYS THROUGH, in cost order:
+          (1) `rnd >= SK_SENTRY_FROM` -- a pure integer compare, so on every
+              post-FROM round this method makes ZERO engine calls;
+          (2) THE IDLE LIFT -- this body has no build/harvest/heal task
+              pending, so it is not being pulled off anything.  The read is an
+              EXISTING one and is disclosed in full at SK_SENTRY_IDLE_LIFT: the
+              bank cannot buy the CHEAPEST economic build this round.  Under
+              that bank no conveyor, harvester, barrier or turret is
+              purchasable at any site, by the engine's own arithmetic.
+
+        ⛔ OFF-PATH: unreachable.  `answer_fresh` returns before calling this
+        unless `sentry_bit` was True, and `sentry_bit` short-circuits on the
+        module constants with the master off, so an OFF arm never evaluates a
+        line of this method.
+        ⛔ THE COUNTERS TICK BOTH TAILS (a gate never seen to refuse has not
+        been seen to gate).  They are per-body and unpublished; the smoke reads
+        the gate off the tracer, never off these.
+        """
+        if rnd >= SK_SENTRY_FROM:
+            self.sentry_disp_late += 1
+            return True
+        if not SK_SENTRY_IDLE_LIFT:
+            self.sentry_disp_refused += 1
+            return False
+        try:
+            idle = ct.get_global_resources() < ct.get_conveyor_cost()
+        except Exception:
+            # A read we could not make is NOT evidence of idleness.  Refusing
+            # is the conservative tail: it can only ever withhold an answer
+            # v632 was not making anyway.
+            self.sentry_disp_refused += 1
+            return False
+        if idle:
+            self.sentry_disp_idle += 1
+            return True
+        self.sentry_disp_refused += 1
+        return False
 
     def _sentry_gate_b_ok(self, ct, rnd):
         """v609 GATE B, with the PRESENCE lift.  True == the counter-peck may
@@ -1096,6 +1159,14 @@ class RolesMixin:
         ONLY on a round wearing CF_SENTRY_BIT -- i.e. only where the freshness
         itself is presence-derived; on any damage round this returns exactly
         what the v609 line returned.
+
+        ⛔ s57 V2 -- THIS METHOD IS **NOT** GATED BY `_sentry_dispatch_ok`, AND
+        THAT IS DELIBERATE RATHER THAN AN OMISSION.  Both consumers test
+        `answer_fresh` BEFORE they reach this line (`_keeper_counter`:1 and
+        `_denier_home_answer`:2), so on a pre-FROM presence round they have
+        already returned False and this predicate is unreachable.  Gating it
+        too would be a SECOND copy of the same clock, which is how one gate
+        becomes two definitions that drift.
         """
         if not SK_COUNTER_HP_MAX:
             return True
@@ -2034,6 +2105,11 @@ class RolesMixin:
         # `answer_fresh` is `corefire_fresh` OR the presence bit; with SK_SENTRY
         # False the second term short-circuits on a module constant and this IS
         # `corefire_fresh`, evaluated identically.
+        # ⭐⭐ s57 V2 -- THIS IS ONE OF THE TWO CALL SITES THE DISPATCH GATE
+        # GOVERNS.  The presence half of `answer_fresh` now passes through
+        # `_sentry_dispatch_ok` (post-SK_SENTRY_FROM, or an idle body), so a
+        # pre-FROM keeper with an opening task in hand refuses here and stays
+        # on the belt.  The DAMAGE half is untouched at this site.
         # ⛔ TWO FURTHER ANSWER DISPATCHES WERE FOUND AND DELIBERATELY NOT
         # SWAPPED, and they are named here rather than in a report nobody
         # greps: `_stand_answer_action` and `_stand_swarm_action`.  Both are
@@ -2079,6 +2155,10 @@ class RolesMixin:
         if not SK_COREFIRE or self.core is None:
             return False
         # ⭐ s57 THE SENTRY, PIECE 1 -- SWAP 2 of 2 (the DENIER's own arming).
+        # ⭐⭐ s57 V2 -- AND CALL SITE 2 OF 2 FOR THE DISPATCH GATE, same
+        # semantics as the keeper's: pre-FROM the presence bit reaches this
+        # line and is refused unless this body is idle; the damage latch is
+        # answered on round 0 exactly as v632 answers it.
         if not self.answer_fresh(ct, rnd):
             return False
         # ⭐ v609 GATE B -- the HP ceiling.  0 is OFF and is v608's behaviour.
