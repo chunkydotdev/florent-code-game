@@ -167,6 +167,8 @@ from sk_maps import (
     SK_KEEPER_WORK,
     # --- the chew-clock re-key (#4.3), read by `_clear_tile` only ------------
     SK_CHEW_REKEY, SK_CHEW_CLOCK_MAX,
+    # --- keeper chew persistence (#4.3b), read by `_chew_giveup` only --------
+    SK_KEEPER_CHEW_ON, SK_KEEPER_CHEW_GIVEUP,
 )
 
 # --- v632 PLANK A 4.2: the three guarded WALKS, as ban keys.  A tile is banned
@@ -6439,7 +6441,16 @@ class RolesMixin:
         elif self.melee_tile != (q.x, q.y):
             self.melee_tile = (q.x, q.y)
             self.melee_since = rnd
-        elif rnd - self.melee_since > SK_CAGE_MELEE_GIVEUP:
+        # ⭐ v632 SK_KEEPER_CHEW_ON (#4.3b).  THE ONLY CHANGE IS THE THRESHOLD
+        # THIS SITE COMPARES AGAINST -- the branch, its position in the chain
+        # and every other gate are the v632 chain verbatim.  `_chew_giveup()`
+        # returns SK_CAGE_MELEE_GIVEUP for every body with the flag off and for
+        # the CAGE WALKER always; only a HOME KEEPER (whose alternative turn is
+        # a stand-still, so the clock's opportunity-cost premise is false) gets
+        # the larger one.  Futility is NOT this clock's job and is untouched
+        # above and below: the bank floor, the healing race
+        # (`_enemy_builder_adjacent`) and `hp_trend_ok` (V7) all still decline.
+        elif rnd - self.melee_since > self._chew_giveup():
             return False
         if not self.hp_trend_ok(ct, bid, rnd):
             return False
@@ -6450,6 +6461,29 @@ class RolesMixin:
         except Exception:
             return False
         return False
+
+    # ------------------------------------------------------------------
+    # v632 SURVIVAL FAMILY -- KEEPER CHEW PERSISTENCE (SK_KEEPER_CHEW_ON, 4.3b)
+    # ------------------------------------------------------------------
+
+    def _chew_giveup(self):
+        """The give-up threshold `_clear_tile`'s decline site compares against.
+
+        GAME CONTEXT: in-engine bookkeeping for our own builder bot in the
+        Florent Code League, a sandboxed bot-vs-bot programming competition.
+
+        SK_CAGE_MELEE_GIVEUP (20) for every body, EXCEPT a HOME KEEPER while
+        SK_KEEPER_CHEW_ON is set, which gets SK_KEEPER_CHEW_GIVEUP.  The full
+        argument is at the flag (`sk_maps.py`); in one line: the clock prices
+        OPPORTUNITY COST, the walker has a lap to get back to and the keeper at
+        a held post does not.  ⛔ The keeper predicate IS the held-post read at
+        this call site -- act and move are mutually exclusive in the engine, so
+        a keeper that reaches the peck is standing still by construction.
+        Pure: one module-constant test with the flag off, no engine call ever.
+        """
+        if SK_KEEPER_CHEW_ON and self.role == SK_HOME_KEEPER:
+            return SK_KEEPER_CHEW_GIVEUP
+        return SK_CAGE_MELEE_GIVEUP
 
     # ------------------------------------------------------------------
     # v632 SURVIVAL FAMILY -- THE CHEW-CLOCK RE-KEY  (SK_CHEW_REKEY, #4.3)

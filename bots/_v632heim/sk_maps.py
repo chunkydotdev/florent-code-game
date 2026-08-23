@@ -3606,6 +3606,92 @@ SK_CHEW_REKEY = False
 # fallback sort is never hot.
 SK_CHEW_CLOCK_MAX = 64
 
+# --- v632 SURVIVAL FAMILY -- KEEPER CHEW PERSISTENCE (SK_KEEPER_CHEW_ON, #4.3b)
+# GAME CONTEXT: in-engine bookkeeping for our own builder bot in the Florent
+# Code League, a sandboxed bot-vs-bot programming competition on a simulated
+# grid.  "Peck" is the engine's documented 2 Ti / 2 damage builder attack on an
+# orthogonally adjacent tile; the target is an opposing bot's in-engine
+# structure.  Registered expectation:
+# `docs/research/EXPECTATION-v632heim-chewpersist-2026-08-23.md`.
+#
+# THE SECOND ARM OF THE CHEW FAMILY, AND IT IS THE DIRECTION THE FIRST ARM
+# MEASURED.  SK_CHEW_REKEY (above) enforced the 20-round give-up HONESTLY and
+# was REFUSED: pecks -17.7%, chew-declines +259%, F1 wins 10 -> 7.  The finding
+# that outlived it is that `SK_CAGE_MELEE_GIVEUP = 20` has never actually been
+# in force -- the one-slot memo is evicted by any chew on another tile -- and
+# that the accidental persistence is LOAD-BEARING.  This flag makes a slice of
+# that persistence DELIBERATE instead of accidental, for the one body whose
+# stop-loss premise is false.
+#
+# WHY THE KEEPER AND ONLY THE KEEPER.  The give-up clock is not a FUTILITY
+# instrument -- futility is already covered twice over on this path and neither
+# gate is touched here:
+#   * the healing race (`_enemy_builder_adjacent`, SK_TARGET_PRIO) refuses a
+#     target an enemy body is standing beside (2 dmg/round against +4 HP);
+#   * `hp_trend_ok` (ledger V7) refuses any target whose HP has failed to trend
+#     DOWN for SK_HP_TREND_WINDOW rounds, and latches it in `give_up`;
+#   * the bank floor (`get_global_resources() < 2`) refuses when the peck is
+#     unaffordable.
+# What the clock actually prices is OPPORTUNITY COST: "this tile has owned me
+# for 20 rounds and there is somewhere better to be".  That premise is TRUE for
+# a CAGE WALKER (it has a lap to run) and FALSE for a HOME KEEPER at a held
+# post -- the nav-stall and keeper-ring censuses measured that body emitting no
+# verb at all for hundreds of rounds (979 r bifrost_seatA bot 3, 1,477 r
+# jotunheim; diag431: 431/2,123/426 held-post rounds WITH an adjacent enemy
+# building, 142/464/131 of them declined by this very clock).
+#
+# WHAT IT CHANGES: the THRESHOLD at the existing decline site, nothing else.
+# `_chew_giveup()` returns SK_KEEPER_CHEW_GIVEUP instead of
+# SK_CAGE_MELEE_GIVEUP when this flag is on AND the body's role is
+# SK_HOME_KEEPER.  No new rung, no new gate, no gate removed, no engine call
+# added, and the CAGE WALKER's 20 is untouched (its own unit control proves it).
+#
+# THE PREDICATE IS `self.role == SK_HOME_KEEPER`, AND THAT IS THE HELD-POST
+# READ, NOT A PROXY FOR IT.  A builder bot's act and move are mutually
+# exclusive in the engine, so a keeper that reaches `_clear_tile` and fires has
+# spent its turn standing still by construction -- there is no round on which
+# this threshold applies to a keeper that is walking.  The narrower reads
+# available elsewhere (`_keeper_work`'s cooldown-0 + position-unchanged pair)
+# are TERMINAL reads, taken after the movement layer, and are not available at
+# an action-ladder site that runs before it.
+#
+# ⚠ THE SUBSTITUTION THIS BUYS, DISCLOSED BEFORE THE MEASUREMENT: the keeper's
+# demolition rung sits ABOVE the economy rungs (`_apron_action`,
+# `_home_launcher_action`, the belt, the harvester) and BELOW every heal and
+# `_seat_clear`.  So a persisted chew displaces an ECONOMY build, not nothing --
+# the P4 eco/harvester guards are exactly where that cost would show, and the
+# 2 Ti/peck spend at an F1 median bank of 1 is the other half of it.
+#
+# ⛔ INTERACTION WITH SK_CHEW_REKEY, STATED BECAUSE IT IS A DELIBERATE
+# NON-INTERACTION.  SK_CHEW_REKEY is REFUSED and parked OFF as the honest-clock
+# REFERENCE IMPLEMENTATION; `_chew_ok` is therefore left character-for-character
+# as it was and does NOT read this threshold.  The four flag states:
+#   REKEY=F CHEW_ON=F -> the shipped tree, exactly.
+#   REKEY=F CHEW_ON=T -> THIS ARM: legacy one-slot memo, keeper threshold.
+#   REKEY=T CHEW_ON=F -> the parked honest clock, exactly as refused.
+#   REKEY=T CHEW_ON=T -> the parked honest clock; the keeper extension is INERT
+#                        (the `elif` chain never reaches the swapped site).
+# If the family is ever revived on the re-keyed ledger, the keeper threshold
+# has to be plumbed into `_chew_ok` DELIBERATELY -- it is not there by accident
+# and a unit control asserts the inertness.
+#
+# ⛔ OFF IS EXACT IDENTITY.  `_chew_giveup()` is a pure two-line read of a
+# module constant; with the flag False it returns SK_CAGE_MELEE_GIVEUP on every
+# call, makes zero engine calls, and touches no state.
+SK_KEEPER_CHEW_ON = False
+
+# THE KEEPER'S THRESHOLD.  1000 == GameConstants.MAX_TURNS, i.e. it CANNOT bind
+# inside a match -- which is the honest encoding of the registered mechanism
+# ("for the home keeper at a held post the give-up clock should not bind").
+# ⛔ IT IS A THRESHOLD, NOT A DELETED BRANCH, and that is deliberate: the decline
+# site keeps its shape for both bodies, the constant stays greppable and
+# re-priceable, and the branch remains driveable to BOTH verdicts (the unit
+# control declines a keeper at round SK_KEEPER_CHEW_GIVEUP + 1).  A finite
+# smaller value would be a magic number with no measurement behind it; the three
+# futility gates named above -- not this clock -- are what stops a keeper
+# chewing a target it cannot kill.
+SK_KEEPER_CHEW_GIVEUP = 1000
+
 # --- v632 PLANK B -- THE LEASHED KEEPER'S DUTY (#128a residual, queued 4.1) --
 # The adopted leash (SK_KEEPER_LEASH) refuses economy-walk targets beyond
 # SK_LEASH_DSQ while the core's threat latch is fresh.  Its BANKED cost is the
