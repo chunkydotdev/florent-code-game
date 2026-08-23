@@ -51,5 +51,14 @@ wait $SUBPID
 AFTER=$(.venv/bin/fcode status 2>&1 | grep "Active bot")
 echo "RESTORE READS: $AFTER"
 echo "EXPECTED:      $(cat $H/w_${TS}_holder.txt)"
-if [ "$AFTER" = "$(cat $H/w_${TS}_holder.txt)" ]; then echo "✅ RESTORE CONFIRMED"; else echo "⛔ RESTORE MISMATCH — CHECK NOW"; fi
+if [ "$AFTER" = "$(cat $H/w_${TS}_holder.txt)" ]; then
+  echo "✅ RESTORE CONFIRMED"
+else
+  echo "⛔ RESTORE MISMATCH — CHECK NOW"
+  { echo "RESTORE MISMATCH $(date -u +%FT%TZ) window=$LEGNAME"
+    echo "EXPECTED: $(cat $H/w_${TS}_holder.txt)"
+    echo "READS:    $AFTER"; } > corpus/RESTORE_MISMATCH
+  echo "== WINDOW $LEGNAME DONE-WITH-MISMATCH $(date -u +%FT%TZ) =="
+  exit 2
+fi
 echo "== WINDOW $LEGNAME DONE $(date -u +%FT%TZ) — match ids in $H/w_${TS}_cells.log =="
