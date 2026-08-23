@@ -7065,6 +7065,127 @@ SK_PUSH_BORDER = True     # ⭐ THROW PREFERENCE: a legal MAP-BORDER tile
                           # trigger is not new, so no new question.  Distance is
                           # the tie-break and the fallback.
 
+# --- PIECE 2b (V3): THE WARDEN AS AN ADDITIONAL BODY -----------------------
+# ⛔⛔ THE V1 DISPOSITION IS WHY THIS BLOCK EXISTS, AND IT IS A STAFFING FIX,
+# NOT A MECHANISM ONE.  v1 EXECUTED WELL on its own dose columns (80/80 border
+# throws, the activity gate proven to both verdicts, 710 sleeping-dog rounds
+# spared) and was CATASTROPHIC on outcomes (wins 12 -> 5, pair rounds 6.9%),
+# because `SK_PUSH_WARDEN_ROLE = SK_CAGE_WALKER` CONSUMED the second siege
+# body: the launcher was bought with the cage lap's rounds.  The registered
+# answer is one sentence -- "the warden must be an ADDITIONAL body (the spawn
+# machinery), never a repurposed forward one"
+# (`docs/research/EXPECTATION-v632heim-push1-2026-08-23.md`, V3).
+SK_PUSH_WARDEN2 = True    # sub-flag under the master, ablatable alone.  ON:
+                          # the CORE spawns ONE dedicated body at push time and
+                          # that body -- and no existing role -- does the
+                          # warden's job.  ⛔⛔ IT SUPERSEDES PIECE 2 v1 RATHER
+                          # THAN COMPOSING WITH IT: `_push_warden_turn` returns
+                          # False on its first line whenever this flag is True,
+                          # so the two staffings can never both be live and the
+                          # cage walker keeps 100% of its behaviour.  Both
+                          # verdicts of that rule are unit-controlled.
+SK_PUSH_W2_ROLE = SK_N_ROLES  # ⛔ THE ROLE ID, AND IT IS ABOVE THE FOUR BEAT
+                          # SLOTS ON PURPOSE (SK_SLOT_BEAT has exactly four
+                          # entries, indexed by role id).  A body holding role
+                          # 4 therefore writes NO liveness beat, which is what
+                          # keeps the role arithmetic untouched in both
+                          # directions: the core's `live` census still tops out
+                          # at the four COPY 8 roles (so this body never masks
+                          # a dead role and never provokes a fifth spawn), and
+                          # every `self.role ==`/`in` predicate in the tree --
+                          # citadel, rotation raiders, ledger V5, the keeper
+                          # publishers -- is False for it, so it inherits no
+                          # home duty and publishes no store slot.
+                          # ⚠ THE PRICE, DISCLOSED: no beat means no
+                          # REPLACEMENT.  If the warden body is knocked out the
+                          # core does not notice and does not re-spawn it (the
+                          # spawn counter is spent).  Bounded by construction,
+                          # and the trace reports the body's own life.
+SK_PUSH_W2_N = 1          # how many extra bodies.  ⛔ ONE, for
+                          # SK_KB_FAST_SPAWN_N's reason verbatim: every builder
+                          # is +20% on the ONE GLOBAL ADDITIVE cost factor,
+                          # which inflates every later build of every type --
+                          # including the sentinels this arm exists to keep
+                          # standing.
+SK_PUSH_W2_FLOOR = 30     # ⭐ THE BANK FLOOR ON THE SPAWN, in titanium left
+                          # standing after it.  ONE SENTINEL at base cost, the
+                          # same shape and the same reason as
+                          # SK_PUSH_LAUNCH_RESERVE (30) and SK_KB_RESERVE (40).
+                          # ⛔ WHY A FLOOR AT ALL, and it is an affordability
+                          # read, not a preference: wealthdiag's own bank
+                          # medians (30 paired F1 cells, BASE arm) are
+                          # r0-100 median 68 / p90 292 and r100-300 median 42 /
+                          # p90 80, against a body that costs 30 Ti AT THE LIVE
+                          # SCALE (~1.2-1.6 by the first tube, i.e. ~36-48 Ti).
+                          # The median purse at push time is therefore ABOUT
+                          # ONE BODY WIDE -- a spawn taken the instant the bank
+                          # clears the cost is a spawn taken out of the next
+                          # plant's money.  The floor makes the extra body wait
+                          # for a purse that can pay for it AND still hold a
+                          # barrel's worth; both verdicts are counted
+                          # (`push_w2_arm` vs `push_w2_poor`).
+                          # ⚠ AND IT IS A DELAY, NOT A VETO: the trigger stays
+                          # live until SK_PUSH_WARDEN_UNTIL, so a poor cell
+                          # spawns late or not at all, which the trace reports.
+SK_PUSH_W2_WALK_MAX = 80  # ⛔ THE DEDICATED BODY'S OWN WALK BUDGET, and the
+                          # reason it is not SK_PUSH_WALK_MAX = 40 is what the
+                          # re-staffing CHANGED.  v1's budget existed to GIVE
+                          # THE BODY BACK -- the warden was the cage walker, so
+                          # a commute that overran had to end and return that
+                          # body to its lap.  A DEDICATED body has no lap to
+                          # return to: the budget then protects nothing and
+                          # only cancels the plant.  ⛔ AND THE TRACE MEASURED
+                          # EXACTLY THAT: on auroraveil A the body spawned r29,
+                          # entered the band r53 and hit `walk = 40` with
+                          # `built = 0` -- the site was ranked, reachable and
+                          # affordable, and the budget cancelled it (1 of 3
+                          # traced cells).  ⚠ DISCLOSED: `push_walk_rounds`
+                          # pools the PLANT walk and the MEDIC walk (v1's own
+                          # counter), so this cap bounds both together.
+SK_PUSH_STATION_DWELL = 25  # ⭐⭐ THE BAND PATROL, AND IT IS THE SECOND THING
+                          # THIS ARM'S OWN TRACE REFUTED.  The station was ONE
+                          # fixed tile -- SK_PUSH_STATION_OFF from their core
+                          # TOWARD OURS -- on the reasoning that this is where
+                          # the engineer's band is.  Measured on 3 of 3 traced
+                          # cells it is not: the engineer's tubes stood at
+                          # d^2 25-32 of their core on the FAR side (jotunheim
+                          # A, their core (18,18), our tubes (23,14) and
+                          # (23,23), the medic parked at (16,14) -- d^2 49 and
+                          # 130, both outside a builder's r^2 = 20 vision), and
+                          # the body read `barrel = 0` and idled 893 rounds
+                          # with a launcher planted and nothing to nurse.
+                          # ⇒ AFTER THIS MANY ROUNDS STANDING ON A STOP WITH NO
+                          # FORWARD BARREL IN VISION, THE MEDIC MOVES TO THE
+                          # NEXT STOP AROUND THE BAND.  A medic that cannot see
+                          # its patients has to go and look; the vision census
+                          # takes over the instant a barrel appears (and resets
+                          # the clock).  0 disables the patrol and restores the
+                          # park-forever behaviour as the ablation.
+                          # ⛔ IT COUNTS DWELL, NOT TRAVEL: only rounds within
+                          # SK_PUSH_STATION_NEAR of the current stop tick, so a
+                          # long commute can never rotate the body past the
+                          # quadrant it is walking to.
+SK_PUSH_STATION_STOPS = 4  # ... and the patrol is the FOUR 90-degree rotations
+                          # of that same toward-our-core vector, in order, so
+                          # stop 0 IS the old fixed station and the ring is
+                          # covered in SK_PUSH_STATION_STOPS x
+                          # SK_PUSH_STATION_DWELL = 100 dwell rounds.
+                          # Deterministic: two bodies on the same evidence
+                          # agree without talking.
+# ⛔ NO NEW DEADLINE CONSTANT: the spawn window is SK_PUSH_WARDEN_UNTIL, the
+# PLANT deadline already registered above -- the whole reason to buy this body
+# is the launcher, so a body spawned after the plant has expired is a body
+# spawned for nothing.
+# ⛔ NO NEW SITING, THROW, ACTIVITY, STATION OR HEAL CONSTANT EITHER.  Every
+# one of PIECE 2's mechanics is reused VERBATIM by the new body: the site
+# ranking (SK_PUSH_MIN_SEATS / SK_PUSH_SITE_MAX_DSQ), the walk budget
+# (SK_PUSH_WALK_MAX), the give-up bound (SK_PUSH_GIVEUP / SK_PUSH_SITE_TRIES),
+# the team guard (SK_PUSH_TEAM_CHECK), the sleeping-dogs clock
+# (SK_PUSH_ACTIVE_TTL), the border preference (SK_PUSH_BORDER), the station
+# geometry (SK_PUSH_STATION_OFF / _NEAR) and the heal floor
+# (SK_PUSH_HEAL_FLOOR).  v1's disposition says those pieces EXECUTED; only
+# their staffing is being replaced.
+
 # --- PIECE 3: THE ENGINEER FORWARD ----------------------------------------
 SK_PUSH_ENGINEER = True   # sub-flag under the master, ablatable alone.  While
                           # HOME IS QUIET the engineer stops holding station

@@ -34,6 +34,8 @@ from sk_maps import (
     # --- s57 THE KILLBOX, ARM 3 (THE SPEED / LOGISTICS PACKAGE) -----------
     SK_KILLBOX, SK_KB_CELL, SK_KILLBOX_FAST, SK_KB_FAST_SPAWN_DIR,
     SK_KB_FAST_SPAWN, SK_KB_FAST_SPAWN_N, SK_KB_FAST_SPAWN_BY,
+    # --- s57 THE PUSH v3, PIECE 2b -- the warden as an ADDITIONAL body ------
+    SK_PUSH, SK_PUSH_WARDEN2, SK_PUSH_W2_N, SK_PUSH_W2_FLOOR,
 )
 from sk_roles import (
     DRIP_GUN_MASK, DRIP_SENT_FIELD, SEAT_MASK,
@@ -757,6 +759,38 @@ class CoreMixin:
                     and self.kb_fast_spawned < SK_KB_FAST_SPAWN_N)
         if _kbextra:
             want += SK_KB_FAST_SPAWN_N
+        # ⭐⭐ s57 THE PUSH v3, PIECE 2b (SK_PUSH_WARDEN2) -- ONE EXTRA BODY AT
+        # PUSH TIME, THE SAME COUNTER-BOUNDED PATTERN AND FOR THE SAME REASON.
+        # ⛔ THE COUNTER IS NOT `live` AND CANNOT BE: with five bodies alive
+        # `live` still tops out at SK_N_ROLES (four role beats, and the warden
+        # deliberately writes none), so a want of five read off `live` would
+        # spawn for ever.  The bound is this core's own `push_w2_spawned`,
+        # incremented on the spawn below exactly as `kb_fast_spawned` is.
+        # ⛔ THE TRIGGER IS THE SHARED PREDICATE, NOT A CORE-LOCAL LATCH:
+        # `_push_w2_trigger` is the same slot-7 read the CLAIMING BODY will
+        # make (`_claim_role`), which is how the two ends agree without a store
+        # slot to talk over.
+        # ⛔ THE FLOOR IS AN AFFORDABILITY READ AND BOTH VERDICTS ARE COUNTED:
+        # wealthdiag's BASE bank medians are 68 (r0-100) and 42 (r100-300)
+        # against a body that costs ~36-48 Ti at the live scale, i.e. the
+        # median purse at push time is about one body wide -- so the extra body
+        # waits for a purse that can pay for it AND still hold a barrel's
+        # worth.  `push_w2_arm` counts rounds the trigger held, `push_w2_poor`
+        # rounds the floor refused.
+        # ⚠ THE PRICE IS 30 Ti AT THE LIVE SCALE PLUS +20% ON THE ONE GLOBAL
+        # ADDITIVE COST FACTOR, which inflates every later build of every type.
+        # It is the same price SK_KB_FAST_SPAWN pays and it is reported, not
+        # argued away: the guard columns (harvesters, eco, first-tube round)
+        # price it directly.
+        _w2extra = False
+        if SK_PUSH and SK_PUSH_WARDEN2 and self.push_w2_spawned < SK_PUSH_W2_N:
+            if self._push_w2_trigger(ct, rnd):
+                self.push_w2_arm += 1
+                if ct.get_global_resources() >= cost + SK_PUSH_W2_FLOOR:
+                    _w2extra = True
+                    want += SK_PUSH_W2_N
+                else:
+                    self.push_w2_poor += 1
         if live + in_flight >= want:
             return
         if ct.get_unit_count() >= 50:
@@ -806,6 +840,23 @@ class CoreMixin:
                 except Exception:
                     continue
                 self.spawned += 1
+                # ⛔ ONLY THE EXTRA IS COUNTED, and the discriminator is the
+                # same one PIECE 5 uses: the four COPY 8 role slots were
+                # already staffed when this body was spawned, so this spawn is
+                # the surplus one the trigger asked for.  A round that spawns a
+                # ROLE REPLACEMENT (live + in_flight < SK_N_ROLES) must not
+                # burn the warden's single credit -- the replacement will find
+                # a stale beat and claim that role, never the warden seat.
+                # ⚠ DISCLOSED RESIDUAL, not argued away: if the killbox's extra
+                # and this one were ever armed in the SAME round (it needs a
+                # forward tube standing by SK_KB_FAST_SPAWN_BY = 8, which no
+                # cell has produced) one spawn would tick both counters and the
+                # OTHER arm would lose its credit.  The claim side is not
+                # ambiguous -- the body reads the trigger itself -- so the
+                # residual is a lost extra body, never a mis-roled one.
+                if _w2extra and live + in_flight >= SK_N_ROLES:
+                    self.push_w2_spawned += 1
+                    self.push_w2_rnd = rnd
                 if _kbextra and live + in_flight >= SK_N_ROLES:
                     # ⛔ ONLY THE EXTRA IS COUNTED.  The four COPY 8 bodies go
                     # through the same loop; the discriminator is that the four

@@ -216,6 +216,9 @@ from sk_maps import (
     SK_PUSH_HEAL_FLOOR, SK_PUSH_BARREL_DSQ, SK_PUSH_STATION_OFF,
     SK_PUSH_STATION_NEAR, SK_PUSH_PROBE_CAP, SK_PUSH_BORDER,
     SK_PUSH_ENGINEER, SK_PUSH_ENG_QUIET, SK_PUSH_ENG_PREP,
+    # --- s57 THE PUSH v3 (PIECE 2b): the warden as an ADDITIONAL body -------
+    SK_PUSH_WARDEN2, SK_PUSH_W2_ROLE, SK_PUSH_W2_WALK_MAX,
+    SK_PUSH_STATION_DWELL, SK_PUSH_STATION_STOPS,
 )
 
 # --- v632 PLANK A 4.2: the three guarded WALKS, as ban keys.  A tile is banned
@@ -413,7 +416,17 @@ class RolesMixin:
             self._ore_scan(ct, p)
         # Liveness: ONE WRITER PER SLOT -- this body owns SK_SLOT_BEAT[role]
         # and nothing else writes it.  Absolute round+1, never modular.
-        self.beat(ct, SK_SLOT_BEAT[self.role], rnd)
+        # ⭐⭐ s57 THE PUSH v3, PIECE 2b -- THE WARDEN BODY WRITES NO BEAT, and
+        # the guard is a MODULE-CONSTANT CONJUNCTION FIRST so an OFF arm pays
+        # one constant test and reaches the same call.  `SK_SLOT_BEAT` has
+        # exactly SK_N_ROLES entries and the warden holds role SK_N_ROLES, so
+        # without this line that body would raise IndexError out of `run()` --
+        # which the engine answers by destroying the unit for the rest of the
+        # match.  Not writing a beat is also the DESIGN (see SK_PUSH_W2_ROLE):
+        # the core's `live` census must keep counting the four COPY 8 roles and
+        # nothing else.
+        if not (SK_PUSH and SK_PUSH_WARDEN2) or self.role < SK_N_ROLES:
+            self.beat(ct, SK_SLOT_BEAT[self.role], rnd)
         self._sense(ct, rnd)
         self._corefire_tick(ct, rnd)                # v608: PLANK 3's clock
         # ⭐ v619 PLANK 5 (SK_RENT) -- AND ITS PLACEMENT IS AN ENGINE FACT, NOT
@@ -587,7 +600,21 @@ class RolesMixin:
         # the plain `_cage_walker`/`_siege_engineer` arms for those two roles
         # only, so the truth table above gains one row per SK_ROTATE=True line:
         # `_rot_prestage` for rnd in [290, 300), unchanged either side.
-        if self.rot_body:
+        # ⭐⭐ s57 THE PUSH v3, PIECE 2b -- THE WARDEN'S OWN ARM OF THE SWITCH.
+        # ⛔ MODULE CONSTANTS FIRST: with SK_PUSH False this arm short-circuits
+        # on the first name and the switch below is character-for-character
+        # v632's.  It cannot match in any OFF arm for a second, structural
+        # reason as well -- `_claim_role` only ever hands out role
+        # SK_PUSH_W2_ROLE under the same two constants, so no body can be
+        # holding it.
+        # ⛔ AND IT SITS ABOVE THE FOUR ROLE ARMS, NOT INSIDE THEM: this body
+        # has no home duty, no cage lap and no rotation seat (`rot_body` and
+        # `rot_stage` are False for it because role 4 is not in
+        # SK_ROTATE_RAIDERS), so it must never fall through to `_home_keeper`,
+        # which is what the `else` at the bottom of this switch would do.
+        if SK_PUSH and SK_PUSH_WARDEN2 and self.role == SK_PUSH_W2_ROLE:
+            self._push_warden2(ct, p, rnd)
+        elif self.rot_body:
             self._siege_engineer(ct, p, rnd)
         elif self.rot_stage:
             self._rot_prestage(ct, p, rnd)
@@ -630,6 +657,31 @@ class RolesMixin:
                 self.role = r
                 self.role_parity = r & 1
                 return
+        # ⭐⭐ s57 THE PUSH v3, PIECE 2b -- THE WARDEN CLAIM OVERRIDE, AND IT IS
+        # KEYED ON THE SAME PUBLIC PREDICATE THE CORE SPAWNED ON.
+        # ⛔ WHERE IT SITS IS THE WHOLE MECHANISM.  This point is reached only
+        # by a SURPLUS body -- every one of the four COPY 8 roles has a FRESH
+        # beat, so nothing is vacant and the line below would otherwise make
+        # this body a DUPLICATE of role `n % SK_N_ROLES` (which is exactly what
+        # SK_KB_FAST_SPAWN's extra body is: a second keeper).  A surplus body
+        # can only exist because some arm raised the core's `want`, and at most
+        # one such body is outstanding at a time.
+        # ⛔ THE DISCRIMINATOR AGAINST THE KILLBOX'S OWN EXTRA BODY IS NOT A
+        # ROUND NUMBER BUT THE TRIGGER ITSELF: `_push_w2_trigger` is the SAME
+        # store read the core made when it decided to spawn this body (a
+        # forward tube beats in slot 7), so the killbox's opening body -- born
+        # by SK_KB_FAST_SPAWN_BY = 8, when no forward tube can yet exist --
+        # reads False here and falls through to its historical second-keeper
+        # claim, character for character.
+        # ⛔ THE SEAT COUNTER IS STILL CLAIMED AND STILL INCREMENTED (above), so
+        # the core's `in_flight = spawned - seats` arithmetic is untouched.
+        if (SK_PUSH and SK_PUSH_WARDEN2
+                and self._push_w2_trigger(ct, rnd)):
+            self.role = SK_PUSH_W2_ROLE
+            self.role_parity = SK_PUSH_W2_ROLE & 1
+            self.push_w2 = True
+            self.push_w2_born = rnd
+            return
         self.role = n % SK_N_ROLES
         self.role_parity = self.role & 1
 
@@ -7608,8 +7660,15 @@ class RolesMixin:
             self.push_gaveup = True
 
     def _push_owes_launcher(self, rnd):
-        """Is the plant still this body's duty?"""
-        if not (SK_PUSH and SK_PUSH_WARDEN):
+        """Is the plant still this body's duty?
+
+        ⭐ s57 v3: SHARED BY BOTH STAFFINGS.  The predicate is about the DUTY
+        (has the launcher been bought / given up / seen, and is the deadline
+        past), never about WHICH body owes it -- that is the caller's own gate
+        (`self.role == SK_PUSH_WARDEN_ROLE` for v1, role SK_PUSH_W2_ROLE for
+        v3).  With both sub-flags off it returns False exactly as it did.
+        """
+        if not (SK_PUSH and (SK_PUSH_WARDEN or SK_PUSH_WARDEN2)):
             return False
         if self.push_built or self.push_gaveup or self.push_done_seen:
             return False
@@ -7668,7 +7727,14 @@ class RolesMixin:
         costs nothing; this site is a cross-board commute and the titanium
         arrives DURING it.  The budget is what bounds the duty instead.
         """
-        if self.push_gaveup or self.push_walk_rounds >= SK_PUSH_WALK_MAX:
+        # ⭐ s57 v3: THE DEDICATED BODY CARRIES ITS OWN BUDGET.  v1's 40 rounds
+        # existed to hand the CAGE WALKER back to its lap; a body with no lap
+        # to hand back to is only having its plant cancelled (measured:
+        # auroraveil A, `walk = 40` with `built = 0` and a reachable site).
+        # `push_w2` is False for every body in every OFF arm, so the v1 cap is
+        # what every existing arm still reads.
+        _cap = SK_PUSH_W2_WALK_MAX if self.push_w2 else SK_PUSH_WALK_MAX
+        if self.push_gaveup or self.push_walk_rounds >= _cap:
             return None
         site = self._push_pick_site(ct, rnd, verified=False)
         if site is None:
@@ -7736,7 +7802,18 @@ class RolesMixin:
             return None
         return best[1]
 
-    def _push_station(self, ct, p):
+    def _push_stn_vec(self, sx, sy):
+        """The current patrol stop's unit vector: `push_stn_i` quarter-turns of
+        the toward-our-core vector.  Pure arithmetic, no engine call, and stop
+        0 is the toward-our-core vector itself -- i.e. the FIRST stop is the
+        fixed station this patrol replaces.
+        """
+        i = self.push_stn_i % SK_PUSH_STATION_STOPS
+        for _ in range(i):
+            sx, sy = sy, -sx
+        return sx, sy
+
+    def _push_station(self, ct, p, rnd):
         """WHERE THE BATTERY IS, when no damaged barrel is in sight.
 
         ⛔ THIS RUNG EXISTS BECAUSE THE FIRST BUILD DID NOT HAVE IT AND ITS OWN
@@ -7770,6 +7847,7 @@ class RolesMixin:
             if best is None or d < best[0]:
                 best = (d, ep)
         if best is not None:
+            self.push_stn_dwell = 0     # a patient resets the patrol clock
             return best[1]
         if self.enemy is None or self.core is None:
             return None
@@ -7785,10 +7863,36 @@ class RolesMixin:
             sy = -1
         if sx == 0 and sy == 0:
             return None
-        q = Position(self.enemy.x + sx * SK_PUSH_STATION_OFF,
-                     self.enemy.y + sy * SK_PUSH_STATION_OFF)
-        if not self.ibp(q):
+        # ⭐⭐ s57 v3 -- THE BAND PATROL (SK_PUSH_STATION_DWELL), AND IT IS HERE
+        # BECAUSE THIS RUNG'S OWN TRACE REFUTED THE FIXED STOP.  The tubes are
+        # NOT reliably on the toward-our-core side of their core: measured on
+        # 3 of 3 traced cells the engineer's band sites sat in another quadrant
+        # entirely and the medic read `barrel = 0` for its whole life.  With
+        # SK_PUSH_STATION_DWELL = 0 this block is inert and the fixed stop is
+        # exactly what it was.
+        q = None
+        for _ in range(SK_PUSH_STATION_STOPS):
+            dx, dy = self._push_stn_vec(sx, sy)
+            cand = Position(self.enemy.x + dx * SK_PUSH_STATION_OFF,
+                            self.enemy.y + dy * SK_PUSH_STATION_OFF)
+            if self.ibp(cand):
+                q = cand
+                break
+            # an off-map stop is not a stop: skip it now rather than send the
+            # body at a tile it can never stand on.
+            self.push_stn_i += 1
+            self.push_stn_dwell = 0
+        if q is None:
             return None
+        if (SK_PUSH_STATION_DWELL
+                and p.distance_squared(q) <= SK_PUSH_STATION_NEAR):
+            # ⛔ DWELL, NOT TRAVEL: only rounds spent AT the stop tick, so a
+            # long commute can never rotate the body past its own destination.
+            self.push_stn_dwell += 1
+            if self.push_stn_dwell >= SK_PUSH_STATION_DWELL:
+                self.push_stn_i += 1
+                self.push_stn_dwell = 0
+                self.push_stn_moves += 1
         return q
 
     def _push_medic_turn(self, ct, p, rnd):
@@ -7809,7 +7913,7 @@ class RolesMixin:
         """
         tgt = self._push_barrel(ct, p)
         if tgt is None:
-            stn = self._push_station(ct, p)
+            stn = self._push_station(ct, p, rnd)
             if stn is None or p.distance_squared(stn) <= SK_PUSH_STATION_NEAR:
                 return False                    # on station, nothing to heal
             try:
@@ -7863,7 +7967,15 @@ class RolesMixin:
         away: while the warden owes a launcher this body lays no ring
         barriers.
         """
-        if not (SK_PUSH and SK_PUSH_WARDEN):
+        # ⭐⭐ s57 THE PUSH v3 -- PIECE 2b SUPERSEDES THIS RUNG, IT DOES NOT
+        # COMPOSE WITH IT.  v1's fatal defect was staffing: this rung takes the
+        # CAGE WALKER's round, so the launcher was bought with the second siege
+        # body's rounds (wins 12 -> 5, pair rounds 6.9%).  With SK_PUSH_WARDEN2
+        # True the warden is a DEDICATED body and this rung must never fire --
+        # one module-constant test, no body identity involved, so the cage
+        # walker keeps 100% of its existing behaviour by construction rather
+        # than by argument.  Both verdicts are unit-controlled.
+        if not (SK_PUSH and SK_PUSH_WARDEN) or SK_PUSH_WARDEN2:
             return False
         if self.role != SK_PUSH_WARDEN_ROLE or self.enemy is None:
             return False
@@ -7890,6 +8002,201 @@ class RolesMixin:
                 return True
             return False
         return self._push_medic_turn(ct, p, rnd)
+
+    # --- PIECE 2b (V3): THE WARDEN AS AN ADDITIONAL BODY --------------
+
+    def _push_w2_trigger(self, ct, rnd):
+        """PUSH TIME: does a FORWARD TUBE stand, and is the plant still worth
+        buying a body for?
+
+        ⛔⛔ ONE PREDICATE, TWO READERS, AND THAT IS THE WHOLE COORDINATION
+        MECHANISM.  The CORE reads it to decide to spawn the extra body; the
+        new body reads the SAME store word to decide that the surplus seat it
+        just claimed is the WARDEN's and not a second keeper's.  There is no
+        channel to carry the intent (all 16 slots are allocated, and slot 0's
+        free high bits cannot take a second writer -- the seat counter's own
+        note says two writers of one SLOT in one round is a silent lost
+        update), so the two ends agree on a fact both can read instead of on a
+        message one sends.
+        ⛔ WHY THE FIRST TUBE AND NOT THE QUIET TERM: it is the CHEAPEST HONEST
+        TRIGGER of the two offered -- one `read_store` plus `_tube_count`, a
+        pure function of (word, rnd) that the v617 producer fix already drives
+        both ways from a unit test, against `_push_quiet`'s corefire latch
+        which is core-local state the claiming BODY cannot see.  It is also the
+        right fact: this body exists to keep BARRELS standing and to empty
+        their medic chairs, so the first barrel is when the job begins.
+        ⛔ THE DEADLINE IS SK_PUSH_WARDEN_UNTIL, THE PLANT'S OWN: the reason to
+        buy this body is the launcher, so once the plant has expired the body
+        is a body, not a package.
+        ⛔ FLAG-OFF IS A MODULE-CONSTANT TEST BEFORE ANY CONTROLLER CALL.
+        """
+        if not (SK_PUSH and SK_PUSH_WARDEN2):
+            return False
+        if rnd >= SK_PUSH_WARDEN_UNTIL:
+            return False
+        try:
+            word = ct.read_store(SK_SLOT_NEST)
+        except Exception:
+            return False
+        if not word:
+            return False                # no first gun yet (`_s2_pending`'s own
+                                        # reading of this word)
+        if not SK_TEAM_TUBES:
+            return True                 # the v613 layout has no per-seat beat:
+                                        # a non-zero word IS "the first gun was
+                                        # planted", `_two_tubes`'s own else-form
+        return self._tube_count(word, rnd) >= 1
+
+    def _push_warden2(self, ct, p, rnd):
+        """THE WARDEN'S ENTIRE TURN, ON ITS OWN DEDICATED BODY (PIECE 2b).
+
+        v1's THREE STAGES, unchanged in order and in mechanism -- what changed
+        is WHO runs them:
+          (a) travel to the band beside THEIR core (`_push_walk_target`);
+          (b) plant ONE launcher covering their HEAL SEATS
+              (`_push_launcher_buy` -> `_push_pick_site`, the ranking, the
+              arbiter test, the two impassable-build guards, the strike bound);
+          (c) then STATION IN THE BAND and nurse the barrels
+              (`_push_medic_turn` -> `_push_station` / `_push_barrel`).
+        ⛔ NOT ONE OF THOSE METHODS IS MODIFIED.  v1's disposition says the
+        mechanics EXECUTED (80/80 border throws, the activity gate proven both
+        ways); it was the STAFFING that was fatal.  Re-staffing is the plank.
+
+        ⛔ THE ONE STRUCTURAL DIFFERENCE FROM `_push_warden_turn`, AND IT IS
+        FORCED BY THE RE-STAFFING: v1 could return False and let the CAGE LAP
+        have the round.  This body has no lap to fall back on, so the fall-
+        through ladder is internal and ends in `_push_w2_yield` rather than in
+        a parked body (v603 FIX 6(b): two bodies spent 860 and 227 rounds as
+        paperweights).  The plant half falling through to the medic half is
+        `_push_strike`'s own rule made structural -- "the PLANT half gives up;
+        the HEAL half does not".
+        """
+        if not (SK_PUSH and SK_PUSH_WARDEN2):
+            return
+        self.push_w2_rounds += 1
+        if self.enemy is None:
+            return
+        # THE ARRIVAL COLUMN.  The band is SK_TUBE_BAND_DSQ of their core --
+        # the ground truth's own definition of "forward tube", so the round
+        # this body enters the band is the round it can start seeing patients
+        # (a builder's vision is r^2 = 20, which is why v1 read
+        # `barrel_seen == 0` from the launcher seat).
+        if (self.push_w2_arrive < 0
+                and dsq_core(p, self.enemy) <= SK_TUBE_BAND_DSQ):
+            self.push_w2_arrive = rnd
+        # THE TEAM-WIDE LAUNCHER BOUND, v1's vision read verbatim (v611
+        # measured a second launcher when a counter was re-created).
+        if not self.push_done_seen:
+            for _eid, et, ep in self.vis_friend:
+                if (et == EntityType.LAUNCHER and ep is not None
+                        and dsq_core(ep, self.enemy) <= SK_PUSH_SITE_MAX_DSQ):
+                    self.push_done_seen = True
+                    break
+        if self._push_owes_launcher(rnd):
+            acted = False
+            try:
+                if ct.get_action_cooldown() == 0:
+                    acted = self._push_launcher_buy(ct, p, rnd)
+            except Exception:
+                acted = False
+            if acted:
+                return
+            tgt = self._push_walk_target(ct, p, rnd)
+            if tgt is not None:
+                try:
+                    if ct.get_move_cooldown() == 0 and self.step_to(ct, tgt):
+                        self.push_walk_rounds += 1
+                        return
+                except Exception:
+                    return
+            self.push_w2_fall += 1      # the plant half produced nothing this
+                                        # round: the medic half is not blocked
+                                        # by it (they give up separately)
+        if self._push_medic_turn(ct, p, rnd):
+            return
+        self._push_w2_yield(ct, p, rnd)
+
+    def _push_w2_blocking(self, ct, q):
+        """Is tile q one that a FRIENDLY BUILDER BOT could build on this round?
+
+        ⛔ THE ENGINE'S OWN RULE IS THE WHOLE TEST: a building is placed on a
+        tile ORTHOGONALLY ADJACENT to the builder placing it, so the four
+        neighbours of any friendly builder are exactly its build menu, and a
+        body parked on one of them has taken a tile off that menu.  Our
+        engineer is the builder this matters for -- it is the body that plants
+        the replacement tube and lays its prep barriers in the same band this
+        medic stations in.
+        ⛔ WHY NOT `tile_owner`'s OWNER_NEST TERM: `nest_site` is PER-BODY
+        state (every unit gets its own `Player`), so the warden's copy is None
+        for its whole life and an OWNER_NEST test from here would be a read of
+        a field nobody wrote -- the same defect class as PLANK 10's ledger
+        read. The occupancy rule is a fact this body can actually see.
+        """
+        try:
+            me = ct.get_id()
+        except Exception:
+            return False
+        for d in CARDINALS:
+            r = q.add(d)
+            if not self.ibp(r):
+                continue
+            try:
+                uid = ct.get_tile_builder_bot_id(r)
+                if uid is None or uid == me:
+                    continue
+                if ct.get_team(uid) != self.team:
+                    continue
+            except Exception:
+                continue
+            return True
+        return False
+
+    def _push_w2_yield(self, ct, p, rnd):
+        """THE IDLE ROUND -- and it is spent NOT BLOCKING THE ENGINEER.
+
+        Reached only when the plant is done (or not owed) AND nothing in the
+        band is damaged, i.e. the medic is on station with no patient.  ⛔ THE
+        HEAL OUTRANKS THE YIELD, and that is deliberate: while a barrel is
+        being nursed this body stands where the heal reaches from, even if the
+        engineer wanted the tile.  A screen that dies stops screening
+        (`_guard_heal`'s own trade).
+        ⛔ BOTH TAILS ARE COUNTED -- `push_w2_clear` is idle rounds where the
+        body was already out of the way, `push_w2_yield` steps actually taken.
+        A rule never seen to refuse has not been seen to be a rule.
+        """
+        self.push_w2_idle += 1
+        if not self._push_w2_blocking(ct, p):
+            self.push_w2_clear += 1
+            return
+        try:
+            if ct.get_move_cooldown() != 0:
+                return
+        except Exception:
+            return
+        best = None
+        for d in CARDINALS:
+            q = p.add(d)
+            if not self.ibp(q):
+                continue
+            try:
+                if not ct.is_tile_passable(q):
+                    continue
+            except Exception:
+                continue
+            if self.tile_owner(q) not in (OWNER_NONE, OWNER_DOOR):
+                continue
+            if self._push_w2_blocking(ct, q):
+                continue
+            key = (q.x, q.y)            # canonical, so the step is
+            if best is None or key < best[0]:   # deterministic
+                best = (key, q)
+        if best is None:
+            return
+        try:
+            if self.step_to(ct, best[1]):
+                self.push_w2_yield += 1
+        except Exception:
+            return
 
     # --- PIECE 2: THE LAUNCHER UNIT'S OWN TURN ------------------------
 
@@ -14119,7 +14426,14 @@ class RolesMixin:
         # running either here would be the wrong instrument pointed at the
         # right unit.  ⛔ Flag off -> one module-constant test -> the v611 /
         # killbox paths below are reached exactly as they are today.
-        if SK_PUSH and SK_PUSH_WARDEN:
+        # ⭐ s57 v3: THE GATE WIDENS BY ONE MODULE CONSTANT AND THE BRANCH BODY
+        # IS UNTOUCHED.  A warden launcher is a warden launcher whichever body
+        # planted it -- the throw logic, the sleeping-dogs sensor and the
+        # border preference are properties of WHERE IT STANDS (beside THEIR
+        # core), not of who bought it.  With both sub-flags off this is the
+        # same single test it was and the killbox / v611 paths below are
+        # reached exactly as today.
+        if SK_PUSH and (SK_PUSH_WARDEN or SK_PUSH_WARDEN2):
             self._push_launcher_turn(ct, p, rnd)
             return
         if SK_KILLBOX:

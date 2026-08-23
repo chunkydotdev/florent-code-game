@@ -1480,6 +1480,42 @@ class Player(CommonMixin, RolesMixin, CoreMixin):
         self.push_barrel_seen = 0     # rounds a damaged forward barrel was in
                                       # this body's vision (the heal's own
                                       # opportunity denominator)
+        # --- PIECE 2b (V3), the warden as an ADDITIONAL body ---------------
+        # ⛔ UNCONDITIONAL, for the engine reason this block states: a flag
+        # gates BEHAVIOUR, never the EXISTENCE of state.  All ten read 0 /
+        # False / -1 on every OFF arm, which makes each of them an
+        # OFF-IDENTITY WITNESS as well as an instrument.
+        self.push_w2 = False          # THIS BODY is the dedicated warden (set
+                                      # in `_claim_role`, once, for life)
+        self.push_w2_born = -1        # ... and the round it claimed that seat
+        self.push_w2_arrive = -1      # round it first stood INSIDE THE BAND
+                                      # (SK_TUBE_BAND_DSQ of their core) -- the
+                                      # commute's own column
+        self.push_w2_rounds = 0       # rounds it ran its own turn
+        self.push_w2_fall = 0         # ... of which the PLANT half produced
+                                      # nothing and fell through to the medic
+        self.push_w2_idle = 0         # ... and of which it reached the idle
+                                      # rung (on station, nothing damaged)
+        self.push_w2_clear = 0        # ... idle rounds it was ALREADY out of
+                                      # the engineer's build menu
+        self.push_w2_yield = 0        # ... and idle rounds it STEPPED OFF it.
+                                      # ⛔ BOTH TAILS, because a yield rule
+                                      # never seen to refuse is not a rule.
+        self.push_stn_i = 0           # THE BAND PATROL's current stop (0 = the
+                                      # toward-our-core station v1 shipped)
+        self.push_stn_dwell = 0       # ... rounds spent AT that stop with no
+                                      # barrel in vision (travel never ticks)
+        self.push_stn_moves = 0       # ... and stop changes actually made --
+                                      # the patrol's own dose column
+        # --- PIECE 2b (V3), THE CORE's own half ----------------------------
+        self.push_w2_spawned = 0      # ⭐ CORE ONLY: dedicated warden bodies
+                                      # this core has spawned (bounded by
+                                      # SK_PUSH_W2_N -- the `live` census
+                                      # cannot bound it, see the rung)
+        self.push_w2_rnd = -1         # ... and the round of that spawn
+        self.push_w2_arm = 0          # CORE: rounds the push-time trigger held
+        self.push_w2_poor = 0         # ... of which the bank floor refused.
+                                      # BOTH TAILS of the affordability read.
         # --- PIECE 2, the launcher unit's own turn -------------------------
         self.push_opp = 0             # rounds with ANY opposing builder inside
                                       # the pickup disc (the throw denominator)
