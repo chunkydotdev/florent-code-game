@@ -3497,7 +3497,7 @@ SK_WALK_GUARD_BAN = 20
 # every OFF arm.  `_builder` becomes a two-line wrapper around the unchanged
 # `_builder_turn`; on an OFF arm that wrapper costs one call and one branch and
 # makes ZERO engine calls, so the replay is byte-identical.
-SK_NAV_STALL = False
+SK_NAV_STALL = True  # ADOPTED s57 2026-08-23: N3 dose -32.2% (bar -25%, all fixtures, rate falls everywhere), all guards favourable; bound-not-cure + EX-1 keeper-ring mass disclosed
 
 # THE LENGTH OF THE STALL, IN CONSECUTIVE ROUNDS.  THE RULE IT IS PICKED BY:
 # THIS DETECTOR IS THE LAST RESORT, SO IT MUST OUTLAST EVERY GIVE-UP CLOCK THIS

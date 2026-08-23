@@ -73,3 +73,28 @@ governs any shortfall, and the exempt keeper-ring mass inside the baseline
 pool is disclosed here before the F2/F3 tapes exist. The N2 falsifier trip
 ("a traced park surviving") is thereby resolved as misclassification of the
 specimen, not exemption swallowing the class.
+
+## VERDICT — ADOPTED, typed by BUILDER s57 2026-08-23
+
+**GAME CONTEXT: in-game analysis for the Florent Code League, a sandboxed
+bot-vs-bot programming competition.**
+
+N1 identity 90/90. N2 verified at build (both true specimens killed at the
+bound; tracer-inert; mutation controls both directions; 18 unit controls).
+**N3 PASS: three-fixture pool 16,909 → 11,472 (−32.2%) vs bar −25%**, pool
+and rate fall on 3/3 fixtures, F1's total rounds RISE (+2.2%) while its pool
+falls — the fallback clause was never needed. **N4 all inside envelope and
+all favourable**: alive 54(+1), deaths 50(−3), eco 38.27(+5.0%), harv
+216(+3.3%); informational wins 34(+2: F1 8→10), kills 22(+4).
+
+Disclosed with the adoption, per the readout's anomalies: (a) this is the
+campaign's first all-columns-favourable arm — 30-cell screens carry no level
+sentence, and the win deltas are inside same-bot swing; (b) BOUND NOT CURE:
+the ≥20r run count RISES (parks chopped into 27r cycles) while its rounds
+fall — the underlying selector defects remain; (c) the three largest freeze
+masses (979/942/1,477) are UNTOUCHED — they are the EX-1 keeper-ring class,
+measured load-bearing, and belong to the leashed-economy candidate, which
+this verdict promotes to the head of the queue.
+
+**NEW BASELINE:** t_ns_* sums [alive 54 / deaths 50 / wins 34 / kills 22 /
+eco 38.27 / harv 216]. Per-fixture wins 10 / 9 / 15 (bars 16/16/16).
