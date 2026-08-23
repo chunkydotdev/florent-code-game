@@ -260,3 +260,16 @@ Predicted: F1/F2 keep the discipline (poor banks), F3 keeps its economy
 occur on poor cells, releases on rich — the bank column attached); the
 composite grid re-run: F1/F2 gains held, F3 within its bar, grid wins >=
 baseline 40; guards vs t_bg_*.
+
+## RESERVE v3 DISPOSITION — CORRECT, NEAR-INERT, PREMISE REFUTED (BUILDER s57)
+
+The gate's own column settles it: F3's median bank at a hold is 38 (the
+LOWEST) vs a bar of 124 — its wealth is FLOW, not STOCK; the purse never
+pools. Release share 9-13% on all fixtures (indistinguishable), 12/90
+cells changed, grid 36 < 40. **The chassis composite is REFUSED on this
+baseline in all three forms (v2.1 / v3): F3's damage is the chassis's
+phase perturbation itself, not the reserve's bank-blindness.** The
+adopted baseline t_bg_* stands [11/10/19, wins 40]. SK_PUSH stays OFF;
+the flags remain built for a future baseline whose F3 shape differs.
+The campaign's open questions route to the Mjolnir double autopsy (in
+flight): F2's siege race and the field's anti-Mjolnir patterns.
