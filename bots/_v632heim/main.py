@@ -1255,6 +1255,30 @@ class Player(CommonMixin, RolesMixin, CoreMixin):
         # verbatim read pattern of `escape_ban` and `wg_ban`.
         self.ns_ban = {}
 
+        # --- v632 SURVIVAL FAMILY -- THE CHEW-CLOCK RE-KEY (SK_CHEW_REKEY) --
+        # ⛔ UNCONDITIONAL, for the engine reason every block in this file
+        # states: a flag gates BEHAVIOUR, never the EXISTENCE of state.  A field
+        # created only under a flag is how a flag-OFF arm raises AttributeError
+        # inside `run()`, and the engine then PERMANENTLY DESTROYS that unit for
+        # the rest of the match.  `chew_clock` stays EMPTY and all three
+        # counters stay 0 on every SK_CHEW_REKEY-off arm -- only `_chew_ok` and
+        # `_chew_prune` write them and both are reachable only under the flag --
+        # which makes them the OFF-IDENTITY WITNESSES as well as the dose
+        # instruments.  Same (tile, occupant id) keying as `demo_pecks` and
+        # `seat_pecks`, for the same measured reason.
+        self.chew_clock = {}    # (x,y) -> (occupant bid, episode start, last
+                                # touch).  Bounded by SK_CHEW_CLOCK_MAX (and by
+                                # the map area by construction -- the key is the
+                                # tile, the occupant re-keys in place).
+        self.chew_rearms = 0    # DOSE: chew episodes ARMED (new tile, or a new
+                                # occupant on a tile we already chewed).  The
+                                # (b)-half of the defect and the (a)-half both
+                                # land here.
+        self.chew_declines = 0  # rounds the re-keyed clock declined -- the SAME
+                                # occupant past SK_CAGE_MELEE_GIVEUP.  This is
+                                # the give-up still doing its job.
+        self.chew_pruned = 0    # entries dropped by the bound (expected 0).
+
         # --- v632 SURVIVAL FAMILY, PLANK B -- THE LEASHED KEEPER'S DUTY -----
         # (SK_LEASH_DUTY, conjoined with SK_KEEPER_LEASH at the call site.)
         # Same unconditional rule and the same reason.  All three stay 0 on

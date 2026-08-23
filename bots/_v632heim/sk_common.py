@@ -408,6 +408,14 @@ class CommonMixin:
         self.lap_i = None             # CAGE WALKER: lap cursor
         self.melee_tile = None        # CAGE WALKER: ring tile being chewed
         self.melee_since = -1
+        # v632 SK_CHEW_REKEY: build rule 5, and it is the SAME lifetime the
+        # one-slot memo two lines up already has -- a chew episode is a
+        # cross-round claim about a tile this body is STANDING BESIDE, which a
+        # throw falsifies.  Clearing here keeps ON and OFF on the same rule
+        # rather than giving the ledger a longer memory than the memo it
+        # replaces.  On every SK_CHEW_REKEY-off arm this clears an already-empty
+        # dict: no engine call, no behaviour, identity-safe.
+        self.chew_clock.clear()
         self.deny_tile = None         # ORE DENIER: ore tile being denied
         self.nest_site = None         # SIEGE ENGINEER: chosen gun tile
         self.nest_prepped = 0

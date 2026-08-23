@@ -165,6 +165,8 @@ from sk_maps import (
     SK_NAV_STALL,
     # --- work at a held post (queued 4.1b), read by `_home_keeper` only ------
     SK_KEEPER_WORK,
+    # --- the chew-clock re-key (#4.3), read by `_clear_tile` only ------------
+    SK_CHEW_REKEY, SK_CHEW_CLOCK_MAX,
 )
 
 # --- v632 PLANK A 4.2: the three guarded WALKS, as ban keys.  A tile is banned
@@ -6423,7 +6425,18 @@ class RolesMixin:
         # of the 1,280 barrier pecks went (`_v542wave`'s MAINTAINED seal).
         if SK_TARGET_PRIO and self._enemy_builder_adjacent(ct, q):
             return False
-        if self.melee_tile != (q.x, q.y):
+        # ⭐ v632 SK_CHEW_REKEY (#4.3).  The chew clock re-keys on the OCCUPANT
+        # as well as the tile -- `_demolish_budget_ok`'s shape -- so a
+        # RE-PLANTED building gets a fresh 20 rounds instead of inheriting the
+        # dead occupant's expired clock (jotunheim_seatA bid=54, 124 idle
+        # rounds).  The give-up itself is UNCHANGED: the same occupant past
+        # SK_CAGE_MELEE_GIVEUP is still declined, per entry.
+        # ⛔ OFF is the character-for-character v632 chain below, after one
+        # test on a module constant and with no engine call added.
+        if SK_CHEW_REKEY:
+            if not self._chew_ok(q, bid, rnd):
+                return False
+        elif self.melee_tile != (q.x, q.y):
             self.melee_tile = (q.x, q.y)
             self.melee_since = rnd
         elif rnd - self.melee_since > SK_CAGE_MELEE_GIVEUP:
@@ -6437,6 +6450,66 @@ class RolesMixin:
         except Exception:
             return False
         return False
+
+    # ------------------------------------------------------------------
+    # v632 SURVIVAL FAMILY -- THE CHEW-CLOCK RE-KEY  (SK_CHEW_REKEY, #4.3)
+    # ------------------------------------------------------------------
+
+    def _chew_ok(self, q, bid, rnd):
+        """The per-(TILE, OCCUPANT) chew clock -- `_demolish_budget_ok`'s form.
+
+        GAME CONTEXT: in-engine bookkeeping for our own builder bot in the
+        Florent Code League, a sandboxed bot-vs-bot competition; `bid` is an
+        opposing bot's in-engine structure standing on tile `q`.
+
+        Returns True iff this body may keep chewing `bid` on `q` this round.
+        Reachable ONLY under SK_CHEW_REKEY, which is what keeps `chew_clock`
+        empty and the three counters at 0 on every OFF arm.
+
+        `chew_clock[(x, y)] = (occupant bid, episode start round, last touch)`.
+          * no entry, or a DIFFERENT occupant  -> a NEW episode arms here.
+          * same occupant, within the give-up  -> allowed, touch refreshed.
+          * same occupant past SK_CAGE_MELEE_GIVEUP -> declined, and the entry
+            is left exactly as it is so the decline is PERMANENT for that
+            occupant.  ⛔ THAT IS THE UNCHANGED HALF: a hard tile still cannot
+            own a walker, and there is no keeper exemption in this flag.
+        Pure state: no engine call, so an ON arm's added cost is one dict
+        lookup on a path that is about to spend an engine `fire`.
+        """
+        xy = (q.x, q.y)
+        prev = self.chew_clock.get(xy)
+        if prev is None or prev[0] != bid:
+            if len(self.chew_clock) >= SK_CHEW_CLOCK_MAX:
+                self._chew_prune(rnd)
+            self.chew_clock[xy] = (bid, rnd, rnd)
+            self.chew_rearms += 1
+            return True
+        if rnd - prev[1] > SK_CAGE_MELEE_GIVEUP:
+            self.chew_declines += 1
+            return False
+        self.chew_clock[xy] = (bid, prev[1], rnd)
+        return True
+
+    def _chew_prune(self, rnd):
+        """Bound the chew ledger.  Called ONLY from `_chew_ok`, and only on a
+        write that would take it past SK_CHEW_CLOCK_MAX.
+
+        Two passes, cheapest first: drop every entry not TOUCHED for more than
+        SK_CAGE_MELEE_GIVEUP rounds (an episode this body has walked away
+        from), then, if that did not clear room, the oldest-touched entries
+        down to the cap.  ⛔ A drop can only ever RE-ARM a tile, never extend a
+        decline, so the bound's worst case is strictly more permissive than the
+        OFF path -- which re-arms on any intervening tile already.
+        """
+        cc = self.chew_clock
+        for xy in [k for k in cc if rnd - cc[k][2] > SK_CAGE_MELEE_GIVEUP]:
+            del cc[xy]
+            self.chew_pruned += 1
+        if len(cc) >= SK_CHEW_CLOCK_MAX:
+            order = sorted(cc, key=lambda k: cc[k][2])
+            for xy in order[:len(cc) - SK_CHEW_CLOCK_MAX + 1]:
+                del cc[xy]
+                self.chew_pruned += 1
 
     def _attack_enemy_core(self, ct, p, rnd):
         """Strangle-then-KILL: the cage is a means, the core is the end."""

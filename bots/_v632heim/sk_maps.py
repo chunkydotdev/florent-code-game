@@ -3540,6 +3540,72 @@ SK_NAV_STALL_N = 28
 # witness unreadable.
 SK_NAV_STALL_BAN = 20
 
+# --- v632 SURVIVAL FAMILY -- THE CHEW-CLOCK RE-KEY (SK_CHEW_REKEY, #4.3) -----
+# GAME CONTEXT: in-engine bookkeeping for our own builder bots in the Florent
+# Code League, a sandboxed bot-vs-bot programming competition on a simulated
+# grid.  "Peck" is the engine's documented 2 Ti / 2 damage builder attack on an
+# orthogonally adjacent tile; the target is an opposing bot's in-engine
+# structure.
+#
+# THE DEFECT, MEASURED (diag431 census, registered expectation
+# `docs/research/EXPECTATION-v632heim-chewrekey-2026-08-23.md`).  `_clear_tile`
+# caps a chew at SK_CAGE_MELEE_GIVEUP (20 rounds) using a ONE-SLOT memo
+# (`melee_tile` / `melee_since`) keyed on the TILE ALONE.  Two consequences,
+# both wrong and both counted:
+#   (a) IT NEVER RE-ARMS ON A NEW OCCUPANT.  jotunheim_seatA: the old barrier
+#       was pecked dead at r182, they re-planted bid=54 on the same tile, and
+#       the clock -- still holding `since` from the DEAD occupant's episode --
+#       read expired from r218 onward.  An 8-HP target then stood for 124
+#       rounds with the bank up to 53 and `can_fire` TRUE.
+#   (b) ONE SLOT MEANS TILES EVICT EACH OTHER.  Chewing tile X then tile Y
+#       re-arms X's clock the next time the body comes back to it -- the memo
+#       is a cache of ONE episode, not a ledger.
+# `_demolish_budget_ok` (sk_roles.py, the `demo_pecks` ledger) already re-keys
+# on the OCCUPANT ENTITY ID for exactly reason (a), on exactly this class of
+# evidence (`collar_pecks`, glacierkeep seat A r48 -> r146).  The verb's chew
+# clock is the sibling that never got the fix.
+# CENSUS DOSE: chew-clock declines 142 F1 / 464 F2 / 131 F3 = 737 pooled
+# (24.7% of held-post rounds with an adjacent enemy building).
+#
+# WHAT THIS FLAG CHANGES, AND WHAT IT DOES NOT.
+#   * CHANGED: the clock becomes a per-TILE ledger whose value carries the
+#     OCCUPANT ID -- the `demo_pecks` shape, verbatim.  A NEW occupant on the
+#     same tile RE-ARMS; independent tiles carry INDEPENDENT clocks.
+#   * ⛔ NOT CHANGED: THE GIVE-UP SEMANTICS.  SK_CAGE_MELEE_GIVEUP is still 20
+#     and the SAME occupant past 20 rounds is still declined, per entry.  A
+#     genuinely hard tile still cannot own a walker for the game, which is the
+#     entire reason that clock exists.  There is NO keeper exemption here (that
+#     would be a second, separately-registered arm).
+# ⛔ OFF IS EXACT IDENTITY.  The call site is `if SK_CHEW_REKEY: ... elif
+# <unchanged one-slot memo>`, so an OFF arm runs the character-for-character
+# v632 chain after one test on a module constant, makes ZERO engine calls more,
+# and never touches `chew_clock` -- which is why the empty dict and the three
+# zero counters are the OFF-IDENTITY WITNESSES as well as the dose instruments.
+SK_CHEW_REKEY = False
+
+# THE BOUND ON THE LEDGER, and it is stated because an unbounded per-game dict
+# is how a bot walks into its 10 ms turn budget in the games that run longest.
+# THE KEY IS THE TILE, so the ledger is bounded by the MAP AREA by construction
+# (<= 30x30 = 900 entries, the engine's own maximum) -- the occupant id lives in
+# the VALUE and re-keys in place, so entity churn adds no entries at all.  That
+# is already a hard bound; this cap makes the WORKING SET small as well:
+#   * The ledger is PER BODY (one Player instance per unit) and is cleared with
+#     the rest of the position caches when a body is thrown (`_clear_plans`,
+#     build rule 5) -- the same lifetime the one-slot memo has today.
+#   * On a write that would take the ledger past SK_CHEW_CLOCK_MAX, `_chew_prune`
+#     drops every entry NOT TOUCHED for more than SK_CAGE_MELEE_GIVEUP rounds
+#     (an episode the body has walked away from), and if that is not enough,
+#     the oldest-touched entries down to the cap.
+#   * ⛔ PRUNING ONLY EVER RE-ARMS, NEVER EXTENDS A DECLINE, so the worst case
+#     of the bound is strictly MORE PERMISSIVE than the OFF path -- which
+#     already re-arms a tile the moment the body chews any other tile.  A prune
+#     can therefore not manufacture a longer chew than v632 ships today.
+# 64: eight times the four orthogonal neighbours a body can reach in a round,
+# comfortably above every observed working set (the diag431 census's busiest
+# body touched 6 distinct chew tiles in a whole game) and small enough that the
+# fallback sort is never hot.
+SK_CHEW_CLOCK_MAX = 64
+
 # --- v632 PLANK B -- THE LEASHED KEEPER'S DUTY (#128a residual, queued 4.1) --
 # The adopted leash (SK_KEEPER_LEASH) refuses economy-walk targets beyond
 # SK_LEASH_DSQ while the core's threat latch is fresh.  Its BANKED cost is the
