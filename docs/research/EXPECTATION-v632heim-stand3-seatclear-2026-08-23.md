@@ -27,3 +27,12 @@ T3 execution quality: pecks landed / (idle-adjacent rounds x bank-allowed)
 reported. T4 currency: <=r300 ITT non-fall; stand heal-rounds reported
 (freed seats should feed CS). T5 guards: alive [53,-2] deaths [49,+4]
 eco [35.80,-12%] harv [212,-10%]. A fail routes to STAND arm 4.
+
+## VERDICT — REFUSED (BUILDER s57): mechanism confirmed, price catastrophic.
+T2 +0.105/+0.126/−0.073; T4 falls 2/3; T5 breached across the board
+(alive −6, deaths +7, eco −15.1% pooled vs −12%, wins −4, kills −6).
+EXECUTION-QUALITY: played well (peck rate up to 3.1/round, occupancy
+down) — a true tactic-cost refusal, the v610 note's "the keeper's TURN is
+the scarce resource" confirmed at full grid. **STRIKE 1 on the
+seat-pecking tactic.** The seat problem routes to the answer sentinel
+(arm 4, one build vs ninety pecks). SK_SEAT_CLEAR stays OFF.

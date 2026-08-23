@@ -102,3 +102,20 @@ LOW = never-fires, HIGH = p10 at the warm-up floor). Burst stays OFF
 (dropped). Ledger + ceiling-4 ship under the master flag as arm 2 built
 them. Bars otherwise as arm 2's: peak-concurrency right-shift where
 funded, duty, currency <=r300 ITT non-fall, guards vs t_cs_*.
+
+## ARM 3 READOUT SCORE (BUILDER s57) — LATCH PASSES BOTH TAILS; ONE BAR FAILS; DIAGNOSTIC BEFORE VERDICT
+
+Latch: fires 4/7/7 cells, p10 53/48/59 (all above the warm-up floor),
+median 82-145 — SEEN CHOOSING, the side-lane rider's column clean.
+Guards: alive 59(+6, campaign high), deaths 47(−2), eco −2.5%, harv
++4.2%. Wins-sum 41(+6) — F1 10→14 (timely: kills 5→9), F2 9→11, F3 16
+held — the first outside-noise win movement of the campaign (SC's −4 and
+prior deltas all sat inside DEFF noise; +6 does not). **FAILED BAR: F2
+≤r300 ITT −0.167 (kills 8→3)** with the anomalous signature duty+0.019 /
+gross+0.141 / wins+2 all rising while kills fall, two F2 gains arriving
+as r1000 conversions (programme-defeats). Per the rule no adoption past a
+failed bar; per the arm's value the fail gets DIAGNOSED, not routed away:
+which F2 cells lost their timely kills, and is the mechanism the latch
+diverting mid-game titanium on the income-fragile fixture, the honest
+ledger suppressing the mid-range replant (conc≥3 rounds −322 there), or
+divergence shuffle. Verdict types on the diagnosis.
