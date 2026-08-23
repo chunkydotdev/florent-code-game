@@ -58,3 +58,19 @@ W4 GRID-level <=r300 ITT non-fall (the b3f2diag power lesson);
 W5 guards vs t_cs_* incl. eco (the SC failure mode watched: in-window
 scoping is the load-bearing difference, measured by peck-round
 distribution vs window rounds). Play-it-well line mandatory.
+
+## ARM 5 VERDICT — REFUSED; PECK FAMILY PARKED AT TWO STRIKES (BUILDER s57)
+
+W2 clean (in-window only, out-of-window pecks byte-identical to base —
+the SC failure mode fully absent). W3 FAILS: core-death cells +1/+1/+0
+(bar: fall on >=2), suppressed-killers rise 1/3, and the registered
+median-adjacency statistic is insensitive (1.0 in every arm — the CF-3
+reference 11 was a traced-cell median, a registration mis-spec noted for
+the bar-design ledger). W4 grid −0.0111 (noise). W5 guards pass.
+**EXECUTION-QUALITY: played exactly as designed and did not convert —
+the peck (2 dmg vs an 18-dmg healed killer) is too slow a verb. STRIKE 2
+on the peck family (SC strike 1); family PARKED.** Residuals inherited by
+the killbox arm (Magnus's design, probe in flight): the raider-body
+answer moves from pecks to the launcher/pocket mechanics; the 9
+zero-dispatch F2 cells (1-Ti poverty) remain the ROUTE plank's territory.
+SK_STAND_SWARM stays built, OFF.

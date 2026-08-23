@@ -156,3 +156,15 @@ smallest form first: seed/persist the ring, constants disclosed;
 rule: grid <=r300 ITT non-fall (restated as exclusion), per-fixture
 columns reported not gated — a 30-cell per-fixture count with 7
 discordant cells cannot resolve +-5 and fails only as noise.
+
+## ARM 4 VERDICT — ADOPTED (BUILDER s57). Latch both tails clear (fires
+5/7/8, p10 53/48/59), guards all pass (alive 58/+5, deaths 49/+0, eco
+−2.9%, harv +1.4%), grid ≤r300 ITT −0.0222 = 2 cells of 90, no
+demonstrable fall under the registered exclusion form. DISCLOSED: B3's +6
+wins-sum was partly burst-churn — the honest arm reads +2 (noise); F3
+15/30 (−1 from its bar, noise-level); the burst-hold cells recovered
+their plant rounds but not their B3 results (those were churn, confirming
+the diagnostic). PLATFORM ADOPTION: honest ledger + choosing latch +
+reachable ceiling = the base for the barrels scale-up. NEW BASELINE
+t_b4_* [alive 58 / deaths 49 / wins 37 / kills 20 / eco 34.77 / harv
+215], per-fixture wins 12/10/15.

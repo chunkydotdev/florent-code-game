@@ -6029,7 +6029,7 @@ SK_ROUTE_HOPS = 64        # per-chain hop bound on the audit walk (the plan's
 #   (c) THE ECO-READY LATCH-- growth beyond the pair opens on a live funding
 #                             signal, not on a round number and not on
 #                             gate-affordability at one instant.
-SK_BATTERY2 = False          # ⭐⭐ THE MASTER.  False => every sub-constant
+SK_BATTERY2 = True  # ADOPTED s57 2026-08-23 as-registered (burst False): latch chooses both tails, guards clean, grid currency no demonstrable fall; platform adoption, win deltas noise-level disclosed          # ⭐⭐ THE MASTER.  False => every sub-constant
                              # below is unreachable: the three call sites are
                              # `if SK_BATTERY2 ...` tests of a module constant
                              # and the control flow is v632's, character for
