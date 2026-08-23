@@ -1222,3 +1222,20 @@ GOVERNANCE FIX: the drift watch gains a BEHAVIOURAL-IDENTITY row — per
 adoption/wrap, decode the current bot's play (rush check, box check,
 phase check) and diff against the declared identity; encoding-level
 compliance is not identity-level compliance (the s57 lesson).
+
+## THE FINAL STANDING ORDER (Magnus, direct, endgame — supersedes per-window asks)
+
+**"Work until we have the bot we have talked about and until it beats the
+nearest band in unrated games. Don't stop until we do, no questions, just
+build. Use unrated games as much as you want. I'll only intervene if I
+feel you need a push."** Operational form: the builder runs autonomously
+to TWO exit bars — (1) SK_DOCTRINE assembled and verified as specified
+(no-rush phase, box with to-cell priority, sentry, bank, standoff
+burst); (2) it BEATS THE NEAREST BAND live: net winning game share vs
+in-band opponents (target_value --band) over the accumulated unrated
+record, sustained across >=3 cells — not one lucky window. Platform
+autonomy for unrated windows is STANDING (the zero-leak procedure
+remains mandatory; the GO is no longer per-window). The side lane holds
+the path per Magnus: any drift from the identity gets flagged against
+D38, and the builder answers flags with corrections, not compliance
+theater.
