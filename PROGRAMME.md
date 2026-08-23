@@ -1119,3 +1119,19 @@ smallest step that can show direction — disclosed as such). Verdict
 language: "direction confirmed, scaling" / "direction absent at smallest
 dose, arm re-aimed" — never a big-bang arm whose failure can't name which
 piece failed.
+
+## THE KILLBOX (Magnus, direct, 2026-08-23 — raider-body answer, STAND plank head)
+
+**"Place a sentinel and make a small pocket with barriers they can't
+escape... build the sentinel + pocket early and make it as optimized as
+possible. If we destroy raiders quickly we lose less infrastructure. As
+soon as they are within reach plant a launcher near it to throw it to
+the pocket."** Engine basis (verified rules, probe pending): sealed
+4-barrier pocket is a legal throw target (passable), trapped builder has
+no cardinal move, sentinel ray IGNORES OBSTACLES (executes through the
+wall, 3 shots / 30 ammo), external heal impossible (orthogonal-only),
+and the unhardened half of the field self-retires on a blind move()
+(GameError = permanent, the approved class). Launcher planted reactively
+when a raider stops to work (pickup d²<=2, throw d²<=26). Build EARLY at
+low scale (~42 Ti base for box+sentinel). Sequence: engine probe of the
+full choreography FIRST (small-steps), then the registered arm.
