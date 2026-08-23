@@ -3414,7 +3414,66 @@ SK_LEASH_DSQ = 50            # the "far" bar the E6 attribution measured: a
                              # healthy keeper reads median d^2 6.5 from the
                              # core and 7.3% of rounds beyond 50; the drifted
                              # one 20.5 and 16.6%.  50 keeps every apron/seat/
-                             # near-trunk duty and refuses the midline range.   # ⛔ R6 (study §7) -- TERMINAL-IDLE IS THIS PLANK'S OWN
+                             # near-trunk duty and refuses the midline range.
+
+# --- v632 PLANK A -- THE WALK-TERMINAL GUARDS (#130, the three residual sites)
+# GAME CONTEXT: in-game machinery for the Florent Code League, a sandboxed
+# bot-vs-bot competition on a simulated grid.  Everything below is one of our
+# own builder bots stepping off a tile so it can legally act on it -- an
+# in-engine movement, nothing outside the game.
+#
+# THE CLASS, in the engine's own terms (research audit
+# `docs/research/AUDIT-walk-terminals-2026-08-22.md`):
+#   1. builds/attacks/heals are ORTHOGONAL-ADJACENCY-ONLY -- a builder bot can
+#      never act on the tile it stands on;
+#   2. `_bfs_direction` answers CENTRE when the goal is underfoot
+#      (`sk_common.py:987-988`) and `_nav` then returns False without moving;
+#   ⇒ a walk whose target is a tile the body must ACT ON and CAN STAND ON has a
+#      terminal state with no legal act and no motion.
+# The belt guard (`_home_keeper_move`, v601) and SK_ORE_STEPOFF (v632, adopted
+# s58) are the two POSITIVE CONTROLS -- the same shape, already in this tree.
+# This flag ports it to the audit's three remaining EXPOSED sites, all three of
+# which are INHERITED from `_v628compose`, not introduced by any s57 dispatch:
+#   (1) `_ore_denier` -> `_deny_target`   -- the enemy-half ore patrol branch
+#       and the remembered-harvester branch; the act (`_deny_barrier`) is
+#       orthogonal-neighbour-only and neither `enemy_harv` nor `denied_tiles`
+#       ever records the tile the body is standing on.  NO BOUND.
+#   (2) `_home_keeper_move` -> `_escalate_target` branch 2 -- an INFERRED killer
+#       tile from `harv_killer`, not re-verified at the call site; standable the
+#       moment that remembered turret is gone.  NO BOUND.
+#   (3) `_home_defence` -- walks at SK_SLOT_THREAT_POS, which the core never
+#       clears, and consumes the turn with `return True`.  Bounded <= 50 rounds
+#       by the slot-1 latch TTL, but the same freeze class inside that window.
+# OFF default: screens under GUARD-FRAMEWORK v2 like any plank rather than
+# shipping on an audit.  OFF is EXACT IDENTITY -- every site is a
+# `if SK_WALK_GUARDS and <state>:` conjunction added ABOVE unchanged code.
+SK_WALK_GUARDS = False
+
+# --- v632 PLANK B -- THE LEASHED KEEPER'S DUTY (#128a residual, queued 4.1) --
+# The adopted leash (SK_KEEPER_LEASH) refuses economy-walk targets beyond
+# SK_LEASH_DSQ while the core's threat latch is fresh.  Its BANKED cost is the
+# jotunheim_seatA degenerate: every eco target out of range, so the walk finds
+# nothing and the keeper spends the game with ZERO economy builds.  This plank
+# gives that state an explicit, counted DUTY: hold the medic seat -- the
+# nearest free core-adjacent tile -- where `_heal_action`'s existing rung
+# reaches a damaged core.
+# ⛔ CONJOINED WITH SK_KEEPER_LEASH AT THE CALL SITE, NOT WELDED: the branch
+# reads `SK_LEASH_DUTY and _leashed`, and `_leashed` already carries
+# SK_KEEPER_LEASH.  Either flag off => the branch is unreachable and the tree is
+# character-for-character the adopted one.
+# ⚠⚠ MEASURED BEFORE BUILDING, AND THE FINDING IS DISCLOSED IN THE FLAG:
+# the state occurs (jotunheim_seatA f1: 610 leashed-no-target rounds) but the
+# PRE-EXISTING fall-through `tgt = self.core` ALREADY walks the keeper onto the
+# core ring in all 610 -- 85 rounds walking in, 521 standing core-adjacent, 4
+# re-seating, ZERO rounds stuck away from the core.  So the positional half of
+# this plank is largely ALREADY SHIPPED and the arm is expected to read close to
+# identity; what it adds is (a) the explicit seat pick (no-other-body, passable)
+# in place of an incidental BFS side effect, (b) the `duty_*` instruments, and
+# (c) coverage of the one case the fall-through does not have: a core ring with
+# no free BFS goal.  ⛔ IT DOES NOT ADDRESS THE ECONOMY HALF of the degenerate
+# (that keeper still built 1 conveyor in 849 rounds); that is a separate row.
+SK_LEASH_DUTY = False
+                          # ⛔ R6 (study §7) -- TERMINAL-IDLE IS THIS PLANK'S OWN
                           # FAILURE MODE WEARING A DOCTRINE'S UNIFORM.  Under
                           # the engine fact above the citadel's default action
                           # against a BODY *is standing still*, and Magnus's own

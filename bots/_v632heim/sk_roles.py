@@ -158,6 +158,9 @@ from sk_maps import (
     SK_ROTATE_PRESTAGE, SK_ROTATE_RAIDERS, SK_ROTATE_WANT,
     # --- v632 HEIMDALL PLANK 10 (BATTERY SURVIVAL) -------------------------
     SK_ROTATE_GUARD, SK_ROTATE_GUARD_NEAR,
+    # --- v632 SURVIVAL FAMILY -- PLANK A (walk-terminal guards, #130) and
+    # --- PLANK B (the leashed keeper's duty, #128a residual / queued 4.1) ----
+    SK_WALK_GUARDS, SK_LEASH_DUTY,
 )
 
 # --- v611: the 8 neighbours, for a LAUNCHER's pickup disc (d^2 <= 2) --------
@@ -4848,6 +4851,28 @@ class RolesMixin:
                 self.step_to(ct, seat)
             return
         shooter = self._escalate_target(ct, p)
+        # ⭐ v632 PLANK A, SITE 2 of 3 (SK_WALK_GUARDS) -- THE INFERRED-KILLER
+        # FREEZE.  Audit `AUDIT-walk-terminals-2026-08-22.md` row 6b, EXPOSED
+        # and UNBOUNDED, inherited from `_v628compose`.  `_escalate_target`
+        # branch 1 returns a LIVE VISIBLE armed enemy -- a building, so the BFS
+        # lands this body BESIDE it and the state below cannot arise.  Branch 2
+        # returns `harv_killer[xy]`, an INFERRED tile from `armed_memo` that is
+        # NOT re-verified here; once that remembered turret is gone the tile is
+        # empty, standable, and the walk targets the ground under our own feet.
+        # The escalation's own lift (`_harv_blocked` -> `_killer_dead`) never
+        # runs on this path: this branch RETURNS above the ore loop that calls
+        # it, and the only other caller is `_harvester_action`'s own-neighbour
+        # scan.  ⇒ `shooter == p` is EXACTLY branch 2 with a vanished
+        # structure, which is why no filter needs re-deriving: the state is the
+        # walk's own target read against this body's own tile.
+        # ⛔ A FAILED ESCAPE FALLS THROUGH TO THE UNCHANGED `step_to`, so a
+        # boxed body behaves as it did before this guard existed.
+        if (SK_WALK_GUARDS and shooter is not None
+                and shooter.x == p.x and shooter.y == p.y):
+            self.wg_state_esc += 1
+            if self._walk_escape(ct, p):
+                self.wg_fire_esc += 1
+                return
         if shooter is not None:
             self.step_to(ct, shooter)
             return
@@ -5043,6 +5068,43 @@ class RolesMixin:
             # oscillated between (8,3) and (8,4) beside its own core for the
             # whole match with grid=False, ores=0, harv=0.
             tgt = self.explore_step(ct, p, rnd)
+        # ⭐ v632 PLANK B (SK_LEASH_DUTY) -- THE LEASHED KEEPER'S DUTY.
+        # THE STATE: the leash above refused every economy target for being
+        # beyond SK_LEASH_DSQ of our core, so this walk found NOTHING while the
+        # core's own threat latch is fresh.  That is the banked cost of the
+        # adopted leash -- jotunheim_seatA, a keeper that spent the game with
+        # ZERO economy builds -- and the queue's row 4.1.
+        # THE DUTY: hold the medic seat, i.e. the nearest free core-adjacent
+        # tile, where `_heal_action`'s EXISTING rung already reaches a damaged
+        # core.  Nothing new is bought and no new sensor is added.
+        # ⛔ CONJOINED, NOT WELDED: `_leashed` already carries
+        # SK_KEEPER_LEASH, so this branch is unreachable with either flag off
+        # and the OFF tree is character-for-character the adopted one.
+        # ⚠⚠ WHAT THE PRE-BUILD MEASUREMENT SAYS, AND IT IS DISCLOSED RATHER
+        # THAN DISCOVERED AT READOUT: the state is real and common
+        # (jotunheim_seatA f1: 610 leashed-no-target rounds) but the
+        # `tgt = self.core` fall-through immediately below ALREADY reaches the
+        # core ring in all 610 of them -- 85 walking in, 521 standing
+        # core-adjacent, 4 re-seating, ZERO stuck away from the core -- because
+        # `_bfs_direction` has a core-ring goal branch (`sk_common.py:968-978`).
+        # ⇒ THIS BRANCH IS EXPECTED TO READ CLOSE TO IDENTITY.  What it adds is
+        # the EXPLICIT seat (passable, and no other body of ours already on it)
+        # in place of an incidental BFS side effect, the `duty_*` instruments,
+        # and the one case the fall-through does not cover: a ring with no free
+        # BFS goal.  ⛔ IT DOES NOT FIX THE ECONOMY HALF of that degenerate --
+        # the same keeper laid 1 conveyor in 849 rounds and this plank does not
+        # give it a build to do; that is a separate row and must not be claimed
+        # here.
+        if tgt is None and SK_LEASH_DUTY and _leashed:
+            self.duty_state += 1
+            dseat = self._leash_duty_seat(ct, p)
+            if dseat is not None:
+                if dseat.x == p.x and dseat.y == p.y:
+                    self.duty_holds += 1
+                    return          # HOLD STATION on the seat
+                if self.step_to(ct, dseat):
+                    self.duty_steps += 1
+                    return
         if tgt is None:
             tgt = self.core
         if self.step_to(ct, tgt):
@@ -6319,6 +6381,34 @@ class RolesMixin:
                 and self.step_to(ct, self.commit_tgt)):
             return
         tgt = self._deny_target(ct, p, rnd)
+        # ⭐ v632 PLANK A, SITE 1 of 3 (SK_WALK_GUARDS) -- THE DENIER'S
+        # STAND-ON-YOUR-OWN-TARGET FREEZE.  Audit `AUDIT-walk-terminals-
+        # 2026-08-22.md` row 24, EXPOSED and UNBOUNDED, inherited from
+        # `_v628compose`.  Two of `_deny_target`'s three branches return a
+        # STANDABLE tile: the PATROL branch always (an enemy-half ORE tile),
+        # and the remembered-`enemy_harv` branch the moment that harvester is
+        # gone.  The act (`_deny_barrier`) scans `p.add(d)` -- ORTHOGONAL
+        # NEIGHBOURS ONLY -- so the tile underfoot is never a legal barrier
+        # site; `enemy_harv` is popped and `denied_tiles` grown ONLY on a
+        # successful build (`_deny_barrier`), never for the tile the body is
+        # standing on.  ⇒ the body's own tile stays the nearest target at
+        # d^2 = 0 forever, `_bfs_direction` answers CENTRE, and nothing
+        # re-plans.  The rung below it is the WRONG gate for this defect: its
+        # test is `free_neighbours == 0`, and this freeze's whole signature is
+        # FREE neighbours.
+        # ELIGIBILITY IS MIRRORED FROM THE WALK'S OWN FILTERS BY CONSTRUCTION:
+        # the state is `_deny_target`'s own return value equal to this body's
+        # tile, so no filter is re-derived and none can drift out of step.
+        # ⛔ A FAILED ESCAPE FALLS THROUGH, IT DOES NOT END THE TURN: a body
+        # with no passable neighbour is genuinely boxed, and that is the
+        # `SK_IDLE_ACT_ALL` rung's case, not this one.  Only a step that
+        # ACTUALLY EXECUTED returns.
+        if (SK_WALK_GUARDS and tgt is not None
+                and tgt.x == p.x and tgt.y == p.y):
+            self.wg_state_deny += 1
+            if self._walk_escape(ct, p):
+                self.wg_fire_deny += 1
+                return
         if self.step_to(ct, tgt if tgt is not None else self.enemy):
             return
         # ⭐ v632 HEIMDALL PLANK 1, R6 -- SK_IDLE_ACT FOR THE ORE DENIER.  The
@@ -7811,6 +7901,95 @@ class RolesMixin:
             return False
         return True
 
+    # ------------------------------------------------------------------
+    # v632 PLANK A -- THE WALK-TERMINAL ESCAPE  (SK_WALK_GUARDS, #130)
+    # ------------------------------------------------------------------
+
+    def _walk_escape(self, ct, p):
+        """Step off the tile this body is standing on and targeting.
+
+        GAME CONTEXT: an in-engine cardinal move by one of our own builder bots
+        in the Florent Code League's simulated grid.
+
+        ⛔ THE ENGINE FACT THIS ANSWERS.  A builder bot cannot build on, attack
+        or heal ITS OWN TILE (orthogonal adjacency only), and `_bfs_direction`
+        answers CENTRE when the goal is underfoot (`sk_common.py:987-988`), so
+        `_nav` returns False without moving.  A walk at a STANDABLE act-target
+        therefore has a terminal state with no legal act and no motion, and the
+        only thing that breaks it is a re-plan.  One cardinal step restores the
+        legal act stance: next round the target is orthogonally adjacent.
+
+        THE SHAPE IS NOT NEW -- it is the v601 belt guard and the v632
+        SK_ORE_STEPOFF guard (`_home_keeper_move`), the two sites the research
+        audit reads as the positive controls, factored so the three remaining
+        exposed sites get exactly the same verb rather than three copies.
+
+        ⚠ ONE DELIBERATE DIVERGENCE FROM THOSE TWO, and it is in the strict
+        direction: they call `step_to` on the FIRST passable neighbour and
+        return regardless of the verdict.  This tries the next neighbour when a
+        step does not execute, and returns the verdict -- so the caller's
+        counter records a MOVE THAT HAPPENED rather than an attempt, and a
+        guard that has never actually moved a body reads zero instead of
+        reading like a success.
+
+        Returns True iff a move was executed.
+        """
+        for d in CARDINALS:
+            q = p.add(d)
+            if not self.ibp(q):
+                continue
+            try:
+                if not ct.is_tile_passable(q):
+                    continue
+            except Exception:
+                continue
+            if self.step_to(ct, q):
+                return True
+        return False
+
+    # ------------------------------------------------------------------
+    # v632 PLANK B -- THE LEASHED KEEPER'S DUTY  (SK_LEASH_DUTY)
+    # ------------------------------------------------------------------
+
+    def _leash_duty_seat(self, ct, p):
+        """The core-adjacent tile a LEASHED, TARGETLESS keeper should hold.
+
+        Returns `p` itself when this body is already orthogonally adjacent to
+        our own core footprint -- which is how the caller learns to HOLD
+        STATION rather than take another step -- else the nearest free
+        core-ring tile, else None.
+
+        ⛔ SAME SELECTION AS `_medic_seat`, MINUS ITS ARMING GATES, and that is
+        the whole point: `_medic_seat` fires only while `corefire_fresh` says
+        the core is ACTUALLY LOSING HP, but the leash binds on the much wider
+        slot-1 threat latch (`_under_attack`, 50-round TTL).  The window this
+        duty covers is exactly the difference between those two -- threat
+        latched, core not currently taking damage, every economy target refused
+        by the leash.  `SK_MEDIC_SEAT_DSQ` is deliberately NOT applied: this is
+        the fall-through, so there is no competing duty for a distance fence to
+        protect, and refusing a far seat here would put the body back in the
+        state this plank exists to remove.
+        """
+        if self.core is None:
+            return None
+        if adjacent_to_core(p, self.core):
+            return p
+        best = None
+        for q in core_ring(self.core):
+            if not self.ibp(q):
+                continue
+            try:
+                if not ct.is_tile_passable(q):
+                    continue
+                if ct.get_tile_builder_bot_id(q) is not None:
+                    continue        # one body per seat; another takes the next
+            except Exception:
+                continue
+            d = p.distance_squared(q)
+            if best is None or d < best[0]:
+                best = (d, q)
+        return None if best is None else best[1]
+
     def _prep_barrier(self, ct, p, site, rnd):
         """COPY 5's preparation: barriers 1-4 rounds before the gun, including
         inside the firing line (sentinels ignore obstacles).
@@ -8412,6 +8591,28 @@ class RolesMixin:
                         return True
                 except Exception:
                     pass
+        # ⭐ v632 PLANK A, SITE 3 of 3 (SK_WALK_GUARDS) -- THE THREAT-SLOT
+        # FREEZE.  Audit `AUDIT-walk-terminals-2026-08-22.md` row 30, EXPOSED,
+        # inherited from `_v628compose`.  SK_SLOT_THREAT_POS is a POSITION the
+        # CORE published when it last saw an enemy body, turret or barrier
+        # there, and the slot IS NEVER CLEARED (`_threat_scan` says so in those
+        # words) -- so once that enemy walks away or its structure is removed,
+        # the tile is EMPTY, STANDABLE, and this body walks onto its own
+        # target.  Every tile-content test in this method lives inside the
+        # `manhattan == 1` branch; at manhattan 0 nothing runs, `step_to`
+        # answers CENTRE, and `return True` CONSUMES THE TURN UNCONDITIONALLY,
+        # so no lower authority ever gets it.  Bounded <= 50 rounds by the
+        # slot-1 latch TTL (`_under_attack` = `beat_fresh(..., 50)`), but the
+        # same freeze class for every round inside that window, repeatable for
+        # as long as the core keeps re-latching.
+        # ⛔ THE GUARD IS THE ESCAPE ONLY.  `return True` on the no-escape path
+        # is LEFT EXACTLY AS IT WAS -- yielding the turn there would be a
+        # second, unregistered behaviour change on a survival rung.
+        if (SK_WALK_GUARDS and threat.x == p.x and threat.y == p.y):
+            self.wg_state_def += 1
+            if self._walk_escape(ct, p):
+                self.wg_fire_def += 1
+                return True
         self.step_to(ct, threat)
         return True
 

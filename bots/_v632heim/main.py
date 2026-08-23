@@ -1184,6 +1184,41 @@ class Player(CommonMixin, RolesMixin, CoreMixin):
                                       # a walk toward the seat is not yet a
                                       # screen.
 
+        # --- v632 SURVIVAL FAMILY, PLANK A -- WALK-TERMINAL GUARDS ----------
+        # (SK_WALK_GUARDS; audit `docs/research/AUDIT-walk-terminals-
+        # 2026-08-22.md`, the three EXPOSED sites.)
+        # ⛔ UNCONDITIONAL, like every other attribute in this file and for the
+        # engine reason the block above states: a flag gates BEHAVIOUR, never
+        # the EXISTENCE of state.  A field created only under a flag is how a
+        # flag-OFF arm raises AttributeError inside `run()`, and the engine then
+        # PERMANENTLY DESTROYS that unit for the rest of the match.  All six
+        # stay 0 on every SK_WALK_GUARDS-off arm, which is what makes them the
+        # OFF-IDENTITY WITNESSES as well as the dose instruments.
+        # ⭐ THE PAIRING IS THE INSTRUMENT, NOT EITHER HALF.  `wg_state_*`
+        # counts rounds the DEADLOCK STATE occurred (this body standing on its
+        # own walk target); `wg_fire_*` counts rounds a step ACTUALLY EXECUTED
+        # out of it.  state == 0 means the guarded terminal never arose in that
+        # cell -- an honest conditional vacuum, reported as such, not a
+        # success; state > 0 with fire == 0 means the escape was reached and
+        # could not move, which is the boxed-body case and a real refusal.
+        self.wg_state_deny = 0        # `_ore_denier` -> `_deny_target` (row 24)
+        self.wg_fire_deny = 0
+        self.wg_state_esc = 0         # `_escalate_target` branch 2 (row 6b)
+        self.wg_fire_esc = 0
+        self.wg_state_def = 0         # `_home_defence` slot-2 walk (row 30)
+        self.wg_fire_def = 0
+
+        # --- v632 SURVIVAL FAMILY, PLANK B -- THE LEASHED KEEPER'S DUTY -----
+        # (SK_LEASH_DUTY, conjoined with SK_KEEPER_LEASH at the call site.)
+        # Same unconditional rule and the same reason.  All three stay 0 on
+        # every SK_LEASH_DUTY-off arm AND on every SK_KEEPER_LEASH-off arm.
+        self.duty_state = 0           # rounds the keeper was LEASHED and the
+                                      # economy walk found NO in-range target
+                                      # (the registered state column)
+        self.duty_holds = 0           # of those, rounds it HELD a core-adjacent
+                                      # seat (already in position)
+        self.duty_steps = 0           # of those, rounds it STEPPED toward one
+
         # --- CORE ----------------------------------------------------------
         self.spawned = 0
         self.converts = 0
