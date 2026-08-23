@@ -17,8 +17,14 @@ TS=$(date -u +%Y%m%dT%H%M%SZ)
 echo "== WINDOW $LEGNAME OPENS $(date -u +%FT%TZ) tree=$TREE =="
 # teammate-traffic lull check (the ninth gate): abort if unrated created <8 min ago by us
 # (best-effort textual check; a busy teammate session shows recent UR rows)
-# 1. holder live (GATE 6)
+# 1. holder live (GATE 6) — with the empty-read abort (the 23:11 incident:
+# a degraded status read returned NOTHING, the window opened anyway, and the
+# restore had no target; a window may NEVER open without a recorded holder)
 .venv/bin/fcode status 2>&1 | grep "Active bot" | tee $H/w_${TS}_holder.txt
+if [ ! -s $H/w_${TS}_holder.txt ]; then
+  echo "⛔ HOLDER READ EMPTY (degraded platform) — ABORTING WINDOW, nothing submitted"
+  exit 3
+fi
 # 2. tree identity
 .venv/bin/python tools/treehash.py $TREE | tee $H/w_${TS}_treehash.txt
 # 3-4. submit as LEG (300s structural hold)
