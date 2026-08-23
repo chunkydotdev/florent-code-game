@@ -171,6 +171,18 @@ NEIGHBOURS8 = ((0, -1), (1, -1), (1, 0), (1, 1),
 # predicate, so the two tuples partition the eight directions by definition.
 DIAGONALS = tuple(d for d in Direction
                   if d != Direction.CENTRE and not d.is_cardinal())
+
+# --- v632 PLANK 10: the FORWARDNESS threshold for the guard's tube census.
+# d^2 from OUR core footprint above which one of our sentinels counts as a
+# FORWARD tube rather than a home turret.  50 is the same constant the banked
+# tube analysis uses to split `tubes` from `all_gun` (`FWD_D2` in the s57
+# readout libs), so a tube the census calls forward is the same tube the
+# instrument calls forward -- reusing the number is what keeps the dose
+# counter and the life reader talking about one population.  It is NOT an
+# SK_ flag: it is not a knob this plank sweeps, and adding it to the flag
+# family would make the conjunction grep read three masters where there are
+# two.
+GUARD_FWD_DSQ = 50
 DELTA_DIR = dict((d.delta(), d) for d in Direction
                  if d != Direction.CENTRE and d.is_cardinal())
 
@@ -7634,27 +7646,68 @@ class RolesMixin:
     # round, and neither mutates state.
     # ==================================================================
 
-    def _near_live_tube(self, p):
-        """Is this body within d^2 <= SK_ROTATE_GUARD_NEAR of a LIVE ledger
-        tube?  (v630.1's `_near_live_tube`, name and body unchanged.)
+    def _near_live_tube(self, ct, p):
+        """Is this body within d^2 <= SK_ROTATE_GUARD_NEAR of a LIVE forward
+        tube of ours?  (v630.1's `_near_live_tube`, WIDENED -- see below.)
 
-        Gates the siting-path heal rung to the BAND, so a walk through home
-        territory can never stall on a pecked conveyor -- the E6 lesson that
-        behaviour leaking outside the band is how v630 lost checkmates.
-        Post-flip the ledger is SK_ROTATE_WANT slots wide, so this reads the
-        whole battery, not just the pair.
+        Gates the heal rung to the BAND, so a walk through home territory can
+        never stall on a pecked conveyor -- the E6 lesson that behaviour
+        leaking outside the band is how v630 lost checkmates.
 
-        ⛔ AND THE LEDGER IS PER-BODY, WHICH BOUNDS THIS RUNG HARDER THAN IT
-        DID IN v630: `_plant_gun` is the only writer, so a REPLACEMENT raider
-        that did not plant the tube it is standing next to reads False here
-        forever.  Measured in this plank's build smoke (0 tube heals in 3 ON
-        cells; the parked control cycled 8 raider bodies in one game).  See the
-        SK_ROTATE_GUARD flag note -- widening the band is a separate plank.
+        ⭐⭐ THE AMENDMENT (commissioned 2026-08-23,
+        `docs/research/EXPECTATION-v632heim-plank10-2026-08-23.md`), AND THE
+        PROVENANCE IS THIS PLANK'S OWN BUILD SMOKE.  v630's predicate read the
+        body's PLANT LEDGER, and `_plant_gun`'s slot assignment is that
+        ledger's only writer -- so it names only tubes THIS body planted.  Each
+        unit gets its own `Player`, so post-flip a REPLACEMENT raider walks to
+        a standing battery with an EMPTY ledger and its heal rung is dead for
+        its whole life.  That is the normal case, not the edge one: the parked
+        FUND arm's jotunheim cell cycled EIGHT raider bodies between r300 and
+        r1000 (each living 47-120 rounds), and the 3-cell ON smoke measured our
+        post-flip heals landing on a standing tube at 0 of 0.
+        ⇒ THE BAND IS NOW A CENSUS, NOT A MEMORY: any of OUR sentinels this
+        body can SEE, standing forward of `GUARD_FWD_DSQ` from our own core.
+
+        ⛔ THE LEDGER HALF IS KEPT AND RUNS FIRST.  It is strictly cheaper (no
+        engine calls) and it covers the one case the census cannot: a tube this
+        body planted that has walked out of its own vision.  The census is a
+        WIDENING, so the old True set is a subset of the new one.
+
+        ⛔ BOUNDS BEFORE ANY TILE CALL (CLAUDE.md s50: `is_in_vision` is a pure
+        radius test and is NOT a bounds guard; the next `get_tile_*` on an
+        off-map tile RAISES, and an escaping exception destroys the unit
+        permanently).  Nothing here reads a TILE -- the census reads entity
+        properties by id, which the engine reports in-bounds by construction --
+        but `self.ibp` is asserted on every position anyway, and every engine
+        call sits under try/except, because a degraded read must cost this rung
+        and never the body.
         """
         for t in self._nest_slots():
             if t is None:
                 continue
             if p.distance_squared(t[1]) <= SK_ROTATE_GUARD_NEAR:
+                return True
+        # --- the vision census -------------------------------------------
+        if self.core is None or self.team is None:
+            return False
+        try:
+            ids = ct.get_nearby_buildings()
+        except Exception:
+            return False                      # degraded read: no band, no heal
+        for bid in ids:
+            try:
+                if ct.get_team(bid) != self.team:
+                    continue                  # an OPPOSING bot's turret
+                if ct.get_entity_type(bid) != EntityType.SENTINEL:
+                    continue                  # gunners/belts are not the tube
+                q = ct.get_position(bid)
+            except Exception:
+                continue
+            if q is None or not self.ibp(q):
+                continue
+            if dsq_core(q, self.core) <= GUARD_FWD_DSQ:
+                continue                      # a HOME sentinel, not a tube
+            if p.distance_squared(q) <= SK_ROTATE_GUARD_NEAR:
                 return True
         return False
 
@@ -7711,7 +7764,7 @@ class RolesMixin:
                 return False
         except Exception:
             return False
-        if not self._near_live_tube(p):
+        if not self._near_live_tube(ct, p):
             return False
         if not self._heal_action(ct, p, rnd):
             return False

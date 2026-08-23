@@ -4271,33 +4271,32 @@ SK_ROTATE_GUARD = False      # MASTER.  ON (and only while SK_ROTATE is also on,
                              # read must register plants/game, nest_lives, tube
                              # median life and battery concurrency as
                              # co-diagnostics, not the life median alone.
-                             # ⛔⛔ MEASURED REACHABILITY LIMIT ON RUNG (b),
-                             # FOUND IN THIS PLANK'S OWN BUILD SMOKE AND
-                             # DELIBERATELY LEFT IN THE PORT -- READ THIS
-                             # BEFORE SCORING A HEAL NULL.  `_near_live_tube`
-                             # reads THIS BODY'S ledger, and the ledger is
-                             # written in exactly one place (`_plant_gun`, the
-                             # slot assignment) -- i.e. ONLY for tubes this
-                             # body planted itself.  Each unit gets its own
-                             # Player instance, so a REPLACEMENT raider spawned
-                             # after the planter died walks to the battery with
-                             # an EMPTY ledger and its heal rung is dead for
-                             # its whole life.  Post-flip raider churn is the
-                             # normal case, not the edge one: the parked FUND
-                             # arm's jotunheim cell cycled EIGHT raider bodies
-                             # between r300 and r1000.  Measured consequence in
-                             # the 3-cell ON smoke: our post-flip heals landing
-                             # on a standing tube = 0 of 0.  ⇒ THE HEAL HALF IS
-                             # UNDER-DOSED BY CONSTRUCTION, so a null on tube
-                             # life must NOT be read as "healing does not help"
-                             # -- it is a null on a dose that mostly did not
-                             # get delivered.  The bounded fix, if the screen
-                             # wants the heal half measured properly, is a
-                             # SEPARATE plank: widen the band predicate from
-                             # the body's ledger to any of OUR standing forward
-                             # turrets this body can SEE.  Not done here: that
-                             # is a new engine read and a new band semantic,
-                             # not the port this flag registered.
+                             # ⛔⛔ REACHABILITY DEFECT FOUND IN THIS PLANK'S
+                             # OWN BUILD SMOKE, AND FIXED IN THE SAME PLANK BY
+                             # COMMISSION (2026-08-23, `docs/research/
+                             # EXPECTATION-v632heim-plank10-2026-08-23.md`).
+                             # AS PORTED, `_near_live_tube` read THIS BODY'S
+                             # plant ledger, whose only writer is `_plant_gun`
+                             # -- so it named only tubes this body planted.
+                             # Each unit gets its own Player instance, so a
+                             # REPLACEMENT raider spawned after the planter
+                             # died reached the battery with an EMPTY ledger
+                             # and its heal rung was dead for its whole life.
+                             # That is the NORMAL post-flip case: the parked
+                             # FUND arm's jotunheim cell cycled EIGHT raider
+                             # bodies between r300 and r1000, and the first
+                             # 3-cell ON smoke measured our post-flip heals
+                             # landing on a standing tube at 0 of 0 -- v630.1's
+                             # E4b failure one level deeper.
+                             # ⭐ THE FIX (in `_near_live_tube`): the band is a
+                             # VISION CENSUS, not a memory -- any of OUR
+                             # sentinels this body can SEE, standing forward of
+                             # GUARD_FWD_DSQ from our own core, within
+                             # SK_ROTATE_GUARD_NEAR.  The ledger test is KEPT
+                             # and runs first (cheaper, and it covers a tube of
+                             # ours that has walked out of vision), so the old
+                             # True set is a SUBSET of the new one -- a
+                             # widening, never a replacement.
 SK_ROTATE_GUARD_NEAR = 8     # d^2 gate for the seat bias AND the siting heal
                              # rung: both engage only inside this disc of the
                              # site / of a live ledger tube.  8 = the two tiles
