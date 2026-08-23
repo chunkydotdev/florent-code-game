@@ -59,3 +59,22 @@ guards must return to envelope (alive [59,-2] the binding one); currency
 grid non-fall, F2's loss population the target. Both-tail on the
 dispatch gate (fires post-FROM / idle-early, never pulls a tasked
 opening body pre-FROM).
+
+## V2 DISPOSITION + V3 REGISTRATION (blind, BUILDER s57)
+
+V2: the gate is clean (M9 ≡ ungated 3/3; refusals traced at bank 298+)
+and the dose survives — but the 90-cell split census shows only 10 cells
+ever gated: **the alive breach (51 vs [59,−2]) is post-r20 — the d²39
+presence alarm is near-always fresh late-game (the #132 always-fresh
+class in presence form), pulling home bodies at turrets that are not
+killers.** Both autopsies: killers at median d²=5, 71.7% ≤13; the 39
+fence chases everything.
+
+**V3 — NARROW THE ALARM TO THE KILLING BAND: SK_SENTRY_DSQ 39 → 13.**
+One constant. The FROM gate and idle lift stand (harmless, both-tailed).
+Predicted: the dose concentrates on true killers (the F2 19 sit at
+median 5), the late-game chase collapses, alive returns to envelope.
+Bars: dose columns held on the ≤13 population (destroyed-before-first-
+shot vs 6); alive-sum back within [59,−2]; currency grid non-fall; the
+±4 floor governs win reads. Both-tail: turrets at d²14-39 UNANSWERED by
+the presence path (the damage path still covers them), ≤13 answered.
