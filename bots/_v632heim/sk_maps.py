@@ -6279,3 +6279,169 @@ SK_BATTERY2_ECO_CONV = True  # (c)'s income term: bank deltas PLUS converted
                              # ammunition.  False = the registered
                              # bank-only form, kept as the ablation that
                              # measures what the correction is worth.
+
+
+# ===========================================================================
+# s57 THE KILLBOX, ARM 1 -- SK_KILLBOX  (EXILE LAUNCHER + CORNER CELL)
+# ===========================================================================
+# GAME CONTEXT: in-game mechanics of the Florent Code League, a sandboxed
+# bot-vs-bot programming competition.  "Cell", "chamber", "detain", "exile"
+# and "treadmill" below name legal engine moves between competing game bots:
+# our LAUNCHER picks up an opposing builder standing beside it (`can_launch`
+# has no team check -- engine-probed) and throws it to a legal tile.  Nothing
+# here touches anything outside the simulated grid.
+#
+# THE PROBE THIS IS BUILT ON (`bots/_probe_killbox_a|b`,
+# `scratchpad/s57_heim0/kbprobe_final_clean.log`, 10/10 steps PASS):
+#   * pickup d^2 <= 2, throw 1 <= d^2 <= 26, both measured FROM THE LAUNCHER;
+#     0 ammo; `launch` sets action cooldown 1, so a throw every OTHER round --
+#     and the log's own SUMMARY shows the cooldown back at 0 on every round
+#     after each of three throws, i.e. CONSECUTIVE-ROUND throws are legal.
+#   * the throw is an EXACT-TILE, SAME-ROUND position mutation
+#     (STEP4: `tile_builder_bot_id(P)=4` in the launching round).
+#   * a chamber whose four orthogonal neighbours are all impassable is SEALED:
+#     `can_move` False on all four cardinals, every `can_build_*` False on all
+#     four adjacent tiles, and no outside heal reaches in (STEP5a/8/5d).
+#   * MAP WALLS AND THE MAP EDGE ARE FREE SEALS -- STEP1's SEAL AUDIT reads a
+#     chamber's neighbour list without caring who owns the obstruction.
+#   * ⛔ SURPRISE 1: THE ENGINE GIVES EVERY UNIT ITS OWN `Player` INSTANCE, so
+#     there is no cross-unit memory except the 16-int store, whose writes are
+#     visible only from the NEXT round.  THIS PLANK CLAIMS ZERO STORE SLOTS:
+#     slot 15 was the last free one (v608 took it), and the cell is instead a
+#     PURE FUNCTION of (map dims, our core anchor, enemy core anchor) that the
+#     keeper and the launcher each derive for themselves -- see
+#     `_kb_cell_cands`.  The launcher never trusts a published flag; it reads
+#     the chamber's seal state and occupancy off the ENGINE every time.
+#   * ⛔ SURPRISE 2: `get_tile_*` RAISES OUT-OF-VISION, NOT ONLY OFF-MAP
+#     (STEP1 SEAL Q: `'OOV:GameError'` on an in-bounds neighbour).  Every seal
+#     read in this plank is bounds-tested AND wrapped, and an unreadable
+#     neighbour counts as NOT SEALED -- the direction that costs a treadmill
+#     throw rather than dropping a body in the open.
+#
+# SITING IS READ OFF THE PREDICTION STUDY, NOT GUESSED
+# (`docs/research/STUDY-opponent-prediction-heimdall-2026-08-22.md`, 90 cells):
+#   row 2  first opposing body within Chebyshev 3 of our core -- Baltsars r10
+#          [8-11] n=30, Mjolnir r7 [6-12] n=30  ->  SK_KB_SITE_CHEB = 3 and the
+#          site band SK_KB_SITE_MIN_DSQ..MAX_DSQ = 4..18 (Chebyshev 2 and 3).
+#   row 7  their our-half turret plants sit at Chebyshev 3 / 2 / 4 of our core
+#          footprint -- the same band, from the other verb.
+#   Q2     76.7% (Baltsars) and 86.7% (Mjolnir) of first crossers are WITHIN 2
+#          TILES OF THE CORE-TO-CORE AXIS, and the flank side balance is 44/45
+#          and 53/75 -- NO FAVOURED SIDE.  So the site score is a SYMMETRIC
+#          perpendicular-offset term with the study's own threshold baked in
+#          (SK_KB_AXIS_BAND: offsets inside 2 tiles are ranked EQUAL, not on a
+#          gradient the study does not support).
+#   rows 3/4/5  77% and 80% of their first bodies ARRIVE BY THEIR OWN LAUNCHER
+#          THROW, rung 1 at a fixed r5 / r1 -- which is why the buy is an
+#          OPENING buy (SK_KB_MIN_ROUND = 2) and not v611's r10 funding wait.
+# ⚠ EVERY ONE OF THOSE NUMBERS IS CONDITIONAL ON OUR SIDE BEING `_v628compose`
+#   (the study's own binding caveat) and on the f3 opponent it is FALSE by
+#   construction -- Sleipnir-v2 walks in, builds no launcher, and reaches
+#   Chebyshev 3 only at r26.  The f3 dose is expected to be SMALL and that is
+#   a prediction, not an excuse written afterwards.
+#
+# ⛔ INCUMBENT DISCLOSURE (the cheapest null is a leg testing what we ship).
+# v611's SK_HOME_LAUNCHER already builds ONE home launcher and already throws
+# opposing builders away; it is OFF, it was REFUTED THREE TIMES (immediate,
+# nil-dose, real-dose -- see the v618 preamble), and this plank REUSES its
+# victim picker (`_hl_pick_victim`), its treadmill throw picker
+# (`_hl_pick_throw`) and its terrain throw-bar (`_hl_has_throw`) verbatim
+# rather than writing second copies.  WHAT IS NEW, and it is what the arm is:
+#   (1) the site is AXIS-KEYED off the prediction study and sits on the
+#       measured ARRIVAL BAND, where v611's was seat-cover-keyed at d^2 <= 9;
+#   (2) the buy is an OPENING buy, where v611's waited for r10 + a 40 reserve
+#       on a chassis that then priced the +10% scale surcharge as its own
+#       refutation;
+#   (3) there is a DESTINATION -- a sealed chamber -- so the throw is a
+#       DETENTION and not only a walk-back.  v611 had no cell and could only
+#       treadmill.
+# The two arms are mutually exclusive in practice (both refuse to buy while a
+# friendly launcher is in vision) but they are NOT interlocked in code, and
+# that is disclosed: SK_KILLBOX is measured with SK_HOME_LAUNCHER False.
+# ===========================================================================
+SK_KILLBOX = False        # ⛔ THE MASTER, DEFAULT OFF.  Off is exact identity:
+                          # every new call site is `if SK_KILLBOX ...` over a
+                          # module constant, and the LAUNCHER branch of
+                          # `_dispatch` is unreachable with both launcher
+                          # masters off because no launcher is ever built.
+SK_KB_LAUNCHER = True     # PIECE 1 -- the exile launcher.  Sub-flag under the
+                          # master, so the two pieces are attributable apart.
+SK_KB_CELL = True         # PIECE 2 -- the corner cell.  Sub-flag likewise.
+                          # With CELL False the launcher treadmills only,
+                          # which is the arm's own dose-zero control for the
+                          # detention half.
+SK_KB_MAX = 1             # ⛔ ONE.  A launcher is a BUILDING: immovable, it
+                          # eats a tile forever, it counts against
+                          # MAX_TEAM_UNITS=50, and EVERY build adds to the ONE
+                          # GLOBAL ADDITIVE cost factor (+10% for a launcher)
+                          # that inflates every later build of every type.
+SK_KB_MIN_ROUND = 2       # THE OPENING BUY.  The four role builders are
+                          # spawned r0-r3 and the keeper claims role 0 on its
+                          # first turn; 2 is the earliest round at which a
+                          # keeper exists, has booted, and can be walking.
+                          # Their relay rung 1 lands at r5 (Baltsars) and r1
+                          # (Mjolnir), so every round of delay is dose.
+SK_KB_RESERVE = 40        # bank left standing after the buy.  Same constant
+                          # v611 used, for the same reason: the drip's second
+                          # sentinel IS the kill, and a launcher that buys
+                          # itself out of a tube has bought the wrong thing.
+SK_KB_SITE_MIN_DSQ = 4    # the site band, in d^2 of OUR core FOOTPRINT.
+SK_KB_SITE_MAX_DSQ = 18   # 4..18 is exactly Chebyshev 2 and 3 (study row 2).
+                          # ⛔ NOT WIDER: the keeper walks to this tile and the
+                          # keeper's measured forward-action share is 0.000,
+                          # which is why only 2 of 22 body deaths were keepers.
+SK_KB_SITE_CHEB = 3       # ... and within the band, the study's own ring.
+SK_KB_AXIS_BAND = 4       # d^2 -- perpendicular offsets at or under this
+                          # (2 tiles) rank EQUAL.  The study measures a
+                          # THRESHOLD (76.7% / 86.7% within 2 tiles) and no
+                          # gradient inside it; encoding a gradient would be
+                          # reading precision the 90 cells do not carry.
+SK_KB_MIN_COVER = 3       # the site must have at least this many non-WALL
+                          # tiles in its pickup disc (d^2 <= 2, i.e. its 8
+                          # neighbours).  A launcher with two open approach
+                          # tiles answers two lanes out of eight.
+SK_KB_PICKUP_DSQ = 2      # ENGINE BOUND, not a choice (kbprobe STEP4).
+SK_KB_THROW_MAX_DSQ = 26  # ENGINE BOUND, not a choice (kbprobe STEP4).
+SK_KB_TEAM_CHECK = True   # ⛔⛔ THE ENGINE HAS NO TEAM CHECK ON `can_launch`
+                          # (engine-probed) AND THIS IS THE ONLY THING BETWEEN
+                          # US AND FERRYING OUR OWN KEEPER INTO A SEALED BOX.
+                          # A flag only so an ablation can drive it to the
+                          # other verdict; nothing ships with it False.
+SK_KB_CELL_CHEB = 3       # the CHAMBER's Chebyshev distance from our core
+                          # FOOTPRINT.  ⛔ THE VALUE IS FORCED, NOT TUNED: at
+                          # Chebyshev 2 a seal tile would land on the core's
+                          # own ring (Chebyshev 1) -- the spawn tiles -- and
+                          # SK_SPAWN_EXIT is in this tree because walling that
+                          # ring costs bodies.  Chebyshev is 1-Lipschitz on an
+                          # orthogonal step, so a chamber at 3 can only have
+                          # seals at 2..4, and 2 is off the ring.  Larger puts
+                          # the chamber outside a launcher's 26-d^2 throw from
+                          # the enemy-side band.
+SK_KB_CELL_CANDS = 4      # how many chamber candidates the pure-geometry
+                          # generator returns.  Bounded because the launcher
+                          # re-reads each candidate's seal state on the rounds
+                          # a victim is in reach.
+SK_KB_CELL_RESERVE = 60   # bank left standing after a seal barrier.  Higher
+                          # than SK_KB_RESERVE on purpose: the cell is the
+                          # OPPORTUNISTIC half and must never outbid a
+                          # harvester or the belt that carries it home.
+SK_KB_CELL_SPAWN_RESERVE = 1   # anchor-adjacent tiles that must remain
+                          # spawnable after a seal build (`_claim_spawn_ok`'s
+                          # own bar).  A cell at Chebyshev 3 cannot reach the
+                          # spawn ring, so this guard is expected to be inert
+                          # -- it is here so that "expected" is MEASURED.
+SK_KB_WALK_MAX = 14       # ⛔⛔ THE TREADMILL BOUND, AND IT IS THE ONE DEFECT
+                          # THIS FAMILY HAS ALREADY PAID FOR.  v611's first cut
+                          # memoised a site and walked at it forever:
+                          # fimbulwinter seat B spent 656 KEEPER ROUNDS at a
+                          # tile whose `can_build_launcher` was False 324
+                          # times.  This is the whole plank's walk budget, per
+                          # body, per game -- launcher walk AND cell walk
+                          # together.  ⚠ PER BODY: a replacement keeper gets a
+                          # fresh budget, and that residual is disclosed rather
+                          # than claimed away.
+SK_KB_GIVEUP = 12         # rounds of walking or refused builds on ONE site
+                          # before the site is banned and re-picked.
+SK_KB_SITE_TRIES = 2      # ... and after this many banned sites the plank
+                          # gives up FOR THE GAME.  A bounded search that never
+                          # terminates is the same defect with more steps.

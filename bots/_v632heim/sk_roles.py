@@ -100,6 +100,12 @@ from sk_maps import (
     SK_HL_PICKUP_DSQ, SK_HL_RESERVE, SK_HL_PROBE_CAP, SK_HL_DROP_RING_DSQ,
     SK_HL_SEAT_DENSITY, SK_HL_TEAM_CHECK, SK_HL_VICTIM_SEAT_ONLY,
     SK_HL_SITE_GIVEUP, SK_HL_SITE_TRIES, SK_HL_AFTER_S2,
+    # --- s57 THE KILLBOX, arm 1 -------------------------------------------
+    SK_KILLBOX, SK_KB_LAUNCHER, SK_KB_CELL, SK_KB_MAX, SK_KB_MIN_ROUND,
+    SK_KB_RESERVE, SK_KB_SITE_MIN_DSQ, SK_KB_SITE_MAX_DSQ, SK_KB_SITE_CHEB,
+    SK_KB_AXIS_BAND, SK_KB_MIN_COVER, SK_KB_PICKUP_DSQ, SK_KB_THROW_MAX_DSQ,
+    SK_KB_TEAM_CHECK, SK_KB_CELL_CHEB, SK_KB_CELL_CANDS, SK_KB_CELL_RESERVE,
+    SK_KB_CELL_SPAWN_RESERVE, SK_KB_WALK_MAX, SK_KB_GIVEUP, SK_KB_SITE_TRIES,
     # --- v612 -------------------------------------------------------------
     SK_MARCH_TEAMCHECK, SK_HOMEDEF_TEAMCHECK,
     # --- v613 (the ANTI-APRON axis) ---------------------------------------
@@ -2566,6 +2572,18 @@ class RolesMixin:
             # is the same 3 Ti the belt was going to spend anyway.
             if self._apron_action(ct, p, rnd):
                 return
+            # ⭐⭐ s57 THE KILLBOX, ARM 1, PIECE 1 -- THE EXILE LAUNCHER,
+            # ACTION HALF.  IMMEDIATELY ABOVE v611's rung because it is the
+            # same verb with an earlier clock: their relay rung 1 lands at r5
+            # (Baltsars) and r1 (Mjolnir) and 77-80% of their first bodies
+            # arrive by throw, so a launcher bought on v611's r10 funding wait
+            # has missed the thing it answers.  BELOW every heal, the door and
+            # the counter-peck for v611's own reason, verbatim: each of those
+            # is a body or a core about to die, and a building that is one
+            # round late is still a building.
+            # ⛔ Flag off -> False on the first line -> v632 behaviour exactly.
+            if self._kb_launcher_action(ct, p, rnd):
+                return
             # ⭐ v611 SK_HOME_LAUNCHER, OFF by default.  ONE turn, once a game.
             # It sits ABOVE the economy because the collar lands at median r11
             # and a launcher bought at r200 has missed the thing it answers;
@@ -2589,6 +2607,18 @@ class RolesMixin:
                     and self._belt_action(ct, p, rnd)):
                 return
             if self._harvester_action(ct, p, rnd):
+                return
+            # ⭐⭐ s57 THE KILLBOX, ARM 1, PIECE 2 -- THE CORNER CELL, ACTION
+            # HALF, AND ITS PLACEMENT IS THE WORD "OPPORTUNISTIC" IN THE
+            # REGISTERED DESIGN.  ⛔ BELOW `_route_action`, the terminating
+            # belt AND `_harvester_action` -- a harvester with no route home is
+            # worth zero on `titanium_collected` forever, and the cell is 6-9
+            # Ti of barriers that can wait a round.  ABOVE the seat claim, the
+            # home gun and the general belt because the cell only pays while
+            # the launcher still has bodies to throw into it, and their raid
+            # cadence decays after r150 on two of the three fixtures.
+            # ⛔ Flag off -> False on the first line -> v632 behaviour exactly.
+            if self._kb_cell_action(ct, p, rnd):
                 return
             # ⭐ v618 PLANK 1, THE ACTION HALF.  JUST BELOW THE
             # HARVESTER-CRITICAL VERBS AND ABOVE THE GENERAL BELT, which is the
@@ -4010,7 +4040,7 @@ class RolesMixin:
 
     # --- PLANK 1 -- SK_SEAT_CLAIM ---------------------------------------
 
-    def _claim_spawn_ok(self, ct, q):
+    def _claim_spawn_ok(self, ct, q, reserve=None):
         """⛔⛔ THE SPAWN RESERVE, and it answers a SPECIFIC engine geometry.
 
         `_spawn_plan` offers the core `p.add(d)` over the 8 DIRECTIONS FROM THE
@@ -4042,7 +4072,13 @@ class RolesMixin:
                     free += 1
             except Exception:
                 continue                    # unreadable: NOT counted as free
-        return free >= SK_SEAT_CLAIM_SPAWN_RESERVE
+        # ⭐ s57 THE KILLBOX reuses this guard with its OWN bar rather than
+        # copying the twelve lines above -- this tree has already paid once for
+        # two clamps that had to stay in step forever (`cheb_core`'s note).
+        # `reserve=None` is the shipped default and the shipped constant, so
+        # every pre-KILLBOX call site is byte-identical.
+        return free >= (SK_SEAT_CLAIM_SPAWN_RESERVE if reserve is None
+                        else reserve)
 
     def _claim_targets(self, ct, rnd):
         """The EMPTY delivery seats this body may claim, nearest first.
@@ -5539,6 +5575,575 @@ class RolesMixin:
                                         # dead as one we cannot BUILD on
         return best[1]
 
+    # ==================================================================
+    # s57 THE KILLBOX, ARM 1 -- SK_KILLBOX
+    # ==================================================================
+    # PIECE 1 is the EXILE LAUNCHER (an opening buy on the measured arrival
+    # band, throwing opposing builders to the cell or onto the treadmill) and
+    # PIECE 2 is the CORNER CELL (2-3 barriers against the map edge).  Both
+    # are in-engine moves between competing game bots; the mechanics are the
+    # kbprobe's, cited per method.
+    #
+    # ⛔ ZERO STORE SLOTS.  Slot 15 was the last free one, so the two pieces
+    # agree through GEOMETRY and through the ENGINE, never through a published
+    # flag: `_kb_cell_cands` is a pure function of (map dims, our core anchor,
+    # enemy core anchor) that every unit derives for itself, and the launcher
+    # then verifies seal state and occupancy by direct tile query on the round
+    # it wants to throw.  That is why the 1-round write-buffering surprise
+    # (kbprobe, and CLAUDE.md's store note) cannot bite this plank: there is
+    # no cross-unit signal to be stale.
+
+    def _kb_perp2(self, q):
+        """Squared perpendicular offset of tile q from the core-to-core axis.
+
+        INTEGER ONLY, on DOUBLED coordinates, so two bodies on the same map
+        rank tiles identically and no float rounding can make them disagree.
+        Doubling puts each 2x2 core's CENTRE on a lattice point; cross^2 and
+        |axis|^2 both scale by 4, so the //4 recovers tile units.
+        """
+        if self.core is None or self.enemy is None:
+            return 0
+        ax = 2 * (self.enemy.x - self.core.x)
+        ay = 2 * (self.enemy.y - self.core.y)
+        bx = 2 * q.x + 1 - (2 * self.core.x + 1)
+        by = 2 * q.y + 1 - (2 * self.core.y + 1)
+        den = ax * ax + ay * ay
+        if den == 0:
+            return 0
+        cross = ax * by - ay * bx
+        return (cross * cross) // den // 4
+
+    def _kb_core_dsq_to_enemy(self):
+        """min d^2 from OUR core footprint to the enemy core footprint."""
+        best = None
+        for xy in core_tiles_xy(self.core):
+            d = dsq_core(Position(xy[0], xy[1]), self.enemy)
+            if best is None or d < best:
+                best = d
+        return best if best is not None else 0
+
+    def _kb_cell_cands(self):
+        """The ordered CHAMBER candidates -- PURE GEOMETRY, no terrain read.
+
+        ⛔ THE PURITY IS THE DESIGN, not tidiness.  The keeper builds the cell
+        and the LAUNCHER throws into it, and they are different `Player`
+        instances with no shared memory (kbprobe surprise 1).  A terrain-scored
+        pick would let two bodies with different vision name different tiles;
+        a pure geometric pick cannot.  Terrain decides only whether a candidate
+        is BUILDABLE (keeper side) and whether it is SEALED (launcher side),
+        and both of those are read off the engine at the moment they matter.
+
+        THE ANCHOR IS THE BACK MAP EDGE -- the edge our core sits nearest on
+        the side AWAY from the enemy core.  kbprobe STEP1's seal audit shows an
+        off-map neighbour is a FREE seal, so an edge chamber costs 3 barriers
+        and a true map corner costs 2; corners are ranked first for exactly
+        that reason.  Chebyshev SK_KB_CELL_CHEB from our own footprint keeps
+        every seal tile off the core's spawn ring (Chebyshev is 1-Lipschitz on
+        an orthogonal step, so a chamber at 3 has seals at 2..4).
+
+        ⚠ DISCLOSED LIMIT: on a map whose core is far from every edge the
+        generator returns nothing and the plank runs LAUNCHER-ONLY, with
+        `kb_cell_built_round` staying -1.  There is deliberately no interior
+        fallback in arm 1 -- an interior chamber costs 4 barriers instead of 3
+        and the registered piece is "2-3 barriers vs map edge/corner".
+        """
+        if self._kb_cands is not None:
+            return self._kb_cands
+        if self.core is None or self.enemy is None or self.mw is None:
+            return ()
+        dx = self.core.x - self.enemy.x
+        dy = self.core.y - self.enemy.y
+        adx = dx if dx >= 0 else -dx
+        ady = dy if dy >= 0 else -dy
+        if adx >= ady:
+            line = ("x", 0 if dx < 0 else self.mw - 1)
+        else:
+            line = ("y", 0 if dy < 0 else self.mh - 1)
+        raw = []
+        if line[0] == "x":
+            for y in range(self.mh):
+                raw.append(Position(line[1], y))
+        else:
+            for x in range(self.mw):
+                raw.append(Position(x, line[1]))
+        out = []
+        for q in raw:
+            if dist_core(q, self.core) != SK_KB_CELL_CHEB:
+                continue
+            free = 0
+            for ddx, ddy in ((0, -1), (1, 0), (0, 1), (-1, 0)):
+                if not self.ib(q.x + ddx, q.y + ddy):
+                    free += 1
+            if free < 1:
+                continue                    # not actually against the edge
+            out.append((-free, dsq_core(q, self.core), q.x, q.y, q))
+        out.sort(key=lambda r: r[:4])
+        self._kb_cands = tuple(r[4] for r in out[:SK_KB_CELL_CANDS])
+        return self._kb_cands
+
+    def _kb_seal_tiles(self, q):
+        """The IN-BOUNDS orthogonal neighbours of chamber q.  Off-map ones are
+        omitted because the map edge is already a wall (kbprobe STEP1)."""
+        out = []
+        for ddx, ddy in ((0, -1), (1, 0), (0, 1), (-1, 0)):
+            x, y = q.x + ddx, q.y + ddy
+            if self.ib(x, y):
+                out.append(Position(x, y))
+        return out
+
+    def _kb_seal_state(self, ct, q):
+        """(sealed, builder_bot_id_on_q) for chamber q.
+
+        ⛔ `get_tile_*` RAISES OUT OF VISION AS WELL AS OFF-MAP (kbprobe STEP1
+        SEAL Q read `'OOV:GameError'` on an in-bounds neighbour).  An
+        unreadable neighbour therefore counts as NOT SEALED -- the direction
+        whose cost is one treadmill throw, never a body dropped in the open.
+        A WALL tile and a BUILDING tile seal equally and neither cares who owns
+        it, which is the audit kbprobe STEP1 actually ran.
+        """
+        for r in self._kb_seal_tiles(q):
+            try:
+                if ct.get_tile_env(r) == Environment.WALL:
+                    continue
+                if ct.get_tile_building_id(r) is None:
+                    return False, None
+            except Exception:
+                return False, None
+        try:
+            return True, ct.get_tile_builder_bot_id(q)
+        except Exception:
+            return False, None
+
+    # --- PIECE 1, the launcher: siting ---------------------------------
+
+    def _kb_toward(self, q):
+        """True if q stands on the ENEMY side of our own core footprint."""
+        if self.enemy is None or self.core is None:
+            return True
+        return dsq_core(q, self.enemy) < self._kb_core_dsq_to_enemy()
+
+    def _kb_pick_site(self, ct, rnd):
+        """Choose ONE launcher tile, memoised for the game once it is legal.
+
+        THE BARS, all checked rather than assumed:
+          (a) inside the study's ARRIVAL BAND, d^2 SK_KB_SITE_MIN..MAX_DSQ of
+              our own footprint (Chebyshev 2-3);
+          (b) on the ENEMY side of our core (`_kb_toward`);
+          (c) at least SK_KB_MIN_COVER non-WALL tiles in its pickup disc;
+          (d) at least one legal long throw toward the enemy -- `_hl_has_throw`
+              verbatim, so the treadmill fallback provably exists before we
+              spend 20 Ti and +10% scale on the tile.
+
+        RANKED, and the order is the study read backwards:
+          1  AXIS BAND: perpendicular offsets inside 2 tiles rank EQUAL
+             (76.7% / 86.7% of their first crossers are inside it; flank side
+             balance 44/45 and 53/75, so there is no side to prefer and no
+             gradient inside the band the 90 cells can support);
+          2  CELL REACH: a site that can throw into a chamber outranks one that
+             can only treadmill -- this is the joint-siting term, and it is
+             SECOND rather than first because the exile is the piece that pays
+             even with no cell at all;
+          3  the study's own ring, |Chebyshev - SK_KB_SITE_CHEB|;
+          4  nearest our core (the keeper's walk is the recurring cost);
+          5  canonical (x, y), so two keepers on the same evidence agree.
+
+        REFUSED, and every refusal is a defect this line has already paid for:
+        any tile the ARBITER already owns (belt, cage, door, nest, ore-deny),
+        a delivery seat, our own footprint, a banned site, and any tile whose
+        env is not EMPTY or that already carries something.
+        """
+        if self.core is None or self.enemy is None or self.kb_gaveup:
+            return None
+        if self.kb_site is not None:
+            return self.kb_site
+        cands = self._kb_cell_cands() if SK_KB_CELL else ()
+        seats = set(core_seats(self.core))
+        foot = set(core_tiles_xy(self.core))
+        best = None
+        cx, cy = self.core.x, self.core.y
+        span = 5                    # d^2 18 -> |dx| <= 4, plus the 2x2 body
+        for dx in range(-span, span + 2):
+            for dy in range(-span, span + 2):
+                x, y = cx + dx, cy + dy
+                if not self.ib(x, y):
+                    continue
+                q = Position(x, y)
+                if (x, y) in foot or (x, y) in seats or (x, y) in self.kb_banned:
+                    continue
+                d = dsq_core(q, self.core)
+                if d < SK_KB_SITE_MIN_DSQ or d > SK_KB_SITE_MAX_DSQ:
+                    continue
+                if self.tile_owner(q) != OWNER_NONE:
+                    continue
+                if not self._kb_toward(q):
+                    continue
+                try:
+                    if ct.get_tile_env(q) != Environment.EMPTY:
+                        continue    # WALL, and ORE_TITANIUM is a harvester's
+                    if not ct.is_tile_empty(q):
+                        continue
+                except Exception:
+                    continue
+                cover = 0
+                for ddx, ddy in NEIGHBOURS8:
+                    r = Position(x + ddx, y + ddy)
+                    if not self.ibp(r):
+                        continue
+                    if q.distance_squared(r) > SK_KB_PICKUP_DSQ:
+                        continue
+                    try:
+                        if ct.get_tile_env(r) != Environment.WALL:
+                            cover += 1
+                    except Exception:
+                        continue
+                if cover < SK_KB_MIN_COVER:
+                    continue
+                if not self._hl_has_throw(ct, q):
+                    continue
+                reach = 0
+                for cq in cands:
+                    dd = q.distance_squared(cq)
+                    if 1 <= dd <= SK_KB_THROW_MAX_DSQ:
+                        reach = 1
+                        break
+                perp = self._kb_perp2(q)
+                if perp <= SK_KB_AXIS_BAND:
+                    perp = 0        # ⛔ INCLUSIVE, AND THE FIRST CUT WAS NOT.
+                                    # The study's threshold is "WITHIN 2 tiles
+                                    # of the axis" and d^2 = 4 IS two tiles; a
+                                    # strict `<` put the f1/f2 auroraveil site
+                                    # at perp=4 unclamped, i.e. ranked a
+                                    # perfectly on-band tile as off-band and
+                                    # let the axis term outrank cell reach for
+                                    # no reason the 90 cells support.
+                ring = dist_core(q, self.core) - SK_KB_SITE_CHEB
+                if ring < 0:
+                    ring = -ring
+                key = (perp, -reach, ring, d, x, y)
+                if best is None or key < best[0]:
+                    best = (key, q)
+        if best is None:
+            return None
+        self.kb_site = best[1]
+        self.kb_site_rnd = rnd
+        self.kb_tries = 0
+        return self.kb_site
+
+    def _kb_strike(self, rnd):
+        """One round of "this site is not working".  Bans it past the bound.
+
+        Called from BOTH the action and the walk, because either one alone
+        leaves the other free to run forever -- which is exactly how v611's
+        first cut burned 656 keeper rounds on one tile.
+        """
+        self.kb_tries += 1
+        if self.kb_tries < SK_KB_GIVEUP:
+            return
+        if self.kb_site is not None:
+            self.kb_banned.add((self.kb_site.x, self.kb_site.y))
+        self.kb_site = None
+        self.kb_tries = 0
+        if len(self.kb_banned) >= SK_KB_SITE_TRIES:
+            self.kb_gaveup = True
+
+    def _kb_launcher_action(self, ct, p, rnd):
+        """Buy THE one exile launcher.  True if it took the keeper's turn.
+
+        ⛔ THE TEAM-WIDE CAP IS A VISION READ, NOT A COUNTER.  `kb_built` alone
+        is per body and v611 MEASURED a second launcher when a keeper died and
+        its successor claimed the role with a fresh counter (2 of 25 builds).
+        The store cannot carry the bound (no free slot), so a live friendly
+        launcher in `vis_friend` refuses the buy.  ⚠ It is a bound, not a
+        proof: a keeper out of vision of an existing launcher can still buy a
+        second one, and that residual is disclosed rather than claimed away.
+        """
+        if not (SK_KILLBOX and SK_KB_LAUNCHER):
+            return False
+        if self.kb_gaveup or self.kb_built >= SK_KB_MAX:
+            return False
+        for _eid, et, _ep in self.vis_friend:
+            if et == EntityType.LAUNCHER:
+                return False
+        if rnd < SK_KB_MIN_ROUND:
+            return False
+        site = self._kb_pick_site(ct, rnd)
+        if site is None:
+            return False
+        if p.distance_squared(site) != 1:
+            return False                # not orthogonally adjacent: the walk
+        cost = ct.get_launcher_cost()
+        if ct.get_global_resources() < cost + SK_KB_RESERVE:
+            return False
+        # ⛔ THE TWO GUARDS EVERY IMPASSABLE BUILD IN THIS TREE PAYS.  A
+        # launcher is a BUILDING: it can seal this body in (ledger V2) and it
+        # can seal the TEAM's only lane (v605 FIX 1, the helheim throat).
+        if self.free_neighbours(ct, p, exclude=site) == 0:
+            self._kb_strike(rnd)
+            return False
+        if not self.path_arbiter_ok(ct, site, rnd):
+            self._kb_strike(rnd)
+            return False
+        try:
+            if not ct.can_build_launcher(site):
+                self._kb_strike(rnd)
+                return False
+            ct.build_launcher(site)
+        except Exception:
+            self._kb_strike(rnd)
+            return False
+        self.kb_built += 1
+        self.kb_built_rnd = rnd
+        return True
+
+    # --- PIECE 2, the cell ---------------------------------------------
+
+    def _kb_cell_plan(self, ct, rnd):
+        """(chamber, [seal tiles still to build]) for the first VIABLE
+        candidate, or None.  MEMOISED FOR THE ROUND: the action rung and the
+        walk rung both ask, and the scan is ~40 engine calls.
+
+        A candidate is viable when the chamber itself is empty EMPTY terrain
+        that the arbiter does not own, and when every in-bounds seal tile is
+        either already a WALL, already carries a building (ours OR theirs -- a
+        seal does not care who owns it, kbprobe STEP1), or is unowned EMPTY
+        terrain we may build on.  A candidate with one unusable seal tile is
+        skipped WHOLE: a half-cell is 6 Ti of barriers that detains nobody.
+
+        ⚠ An unreadable tile makes the candidate UNVIABLE this round rather
+        than half-built; the read is retried next round.
+        """
+        if self.kb_plan_rnd == rnd:
+            return self.kb_plan
+        self.kb_plan_rnd = rnd
+        self.kb_plan = None
+        for q in self._kb_cell_cands():
+            if self.tile_owner(q) != OWNER_NONE:
+                continue
+            try:
+                if ct.get_tile_env(q) != Environment.EMPTY:
+                    continue
+                if not ct.is_tile_empty(q):
+                    continue
+            except Exception:
+                continue
+            todo = []
+            ok = True
+            for r in self._kb_seal_tiles(q):
+                try:
+                    env = ct.get_tile_env(r)
+                    if env == Environment.WALL:
+                        continue            # free seal
+                    if ct.get_tile_building_id(r) is not None:
+                        continue            # already sealed by somebody
+                    if env != Environment.EMPTY:
+                        ok = False           # ORE is a harvester's tile
+                        break
+                except Exception:
+                    ok = False
+                    break
+                if self.tile_owner(r) != OWNER_NONE:
+                    ok = False
+                    break
+                todo.append(r)
+            if not ok:
+                continue
+            self.kb_plan = (q, todo)
+            return self.kb_plan
+        return None
+
+    def _kb_cell_action(self, ct, p, rnd):
+        """Lay ONE seal barrier.  True if it took this body's turn.
+
+        OPPORTUNISTIC BY CONSTRUCTION: it fires only when this body is already
+        orthogonally adjacent to the next seal tile and the bank clears the
+        spawn reserve with SK_KB_CELL_RESERVE still standing.  The walk half
+        is bounded by the plank's single SK_KB_WALK_MAX budget.
+        """
+        if not (SK_KILLBOX and SK_KB_CELL):
+            return False
+        if self.kb_gaveup or self.kb_cell_done or self.kb_cell_off:
+            return False
+        plan = self._kb_cell_plan(ct, rnd)
+        if plan is None:
+            # ⛔⛔ THE SCAN MUST TERMINATE, AND THIS IS THE SAME DEFECT CLASS
+            # v611 PAID 656 KEEPER ROUNDS FOR.  MEASURED ON THIS ARM'S OWN
+            # TRACE: `stavkirke` seat B has no chamber candidate the launcher
+            # can reach, so without this bound the keeper re-runs a ~40-call
+            # terrain scan every round for the rest of a 1000-round game and
+            # never builds anything.  SK_KB_GIVEUP reached tries, then the
+            # cell half is off FOR THIS BODY, FOR THIS GAME.
+            self.kb_cell_miss += 1
+            if self.kb_cell_miss >= SK_KB_GIVEUP:
+                self.kb_cell_off = True
+            return False
+        self.kb_cell_miss = 0
+        q, todo = plan
+        self.kb_cell_pos = q
+        if not todo:
+            self.kb_cell_done = True
+            self.kb_cell_built_round = rnd
+            return False
+        r = todo[0]
+        if p.distance_squared(r) != 1:
+            return False
+        cost = ct.get_barrier_cost()
+        if ct.get_global_resources() < cost + SK_KB_CELL_RESERVE:
+            return False
+        if not self._claim_spawn_ok(ct, r, reserve=SK_KB_CELL_SPAWN_RESERVE):
+            return False
+        if self.free_neighbours(ct, p, exclude=r) == 0:
+            return False
+        if not self.path_arbiter_ok(ct, r, rnd):
+            return False
+        try:
+            if not ct.can_build_barrier(r):
+                return False
+            ct.build_barrier(r)
+        except Exception:
+            return False
+        self.kb_seals += 1
+        if len(todo) == 1:
+            self.kb_cell_done = True
+            self.kb_cell_built_round = rnd
+        return True
+
+    # --- the ONE walk, shared by both pieces ---------------------------
+
+    def _kb_walk_target(self, ct, p, rnd):
+        """Where this body stands to build the launcher, then the cell.
+
+        ⛔ ONE BUDGET FOR THE WHOLE PLANK (SK_KB_WALK_MAX).  v610's finding is
+        that the keeper's turn is the scarce resource and v611's own defect was
+        an unbounded walk at a dead site; two independent walk budgets would be
+        that lesson learned once and then halved.
+        ⛔ AND IT NEVER WALKS AT A BUY IT CANNOT MAKE -- the affordability gate
+        is the same one the action uses, checked before a step is spent.
+        """
+        if not SK_KILLBOX or self.kb_gaveup:
+            return None
+        if self.kb_walk_rounds >= SK_KB_WALK_MAX:
+            return None
+        if rnd < SK_KB_MIN_ROUND:
+            return None
+        tgt = None
+        strike = False
+        if SK_KB_LAUNCHER and self.kb_built < SK_KB_MAX:
+            live = False
+            for _eid, et, _ep in self.vis_friend:
+                if et == EntityType.LAUNCHER:
+                    live = True
+                    break
+            if not live:
+                site = self._kb_pick_site(ct, rnd)
+                if site is not None:
+                    if p.distance_squared(site) == 1:
+                        return None         # seated; the action fires
+                    if (ct.get_global_resources()
+                            >= ct.get_launcher_cost() + SK_KB_RESERVE):
+                        tgt = site
+                        strike = True
+        if (tgt is None and SK_KB_CELL and not self.kb_cell_done
+                and not self.kb_cell_off):
+            plan = self._kb_cell_plan(ct, rnd)
+            if plan is not None and plan[1]:
+                r = plan[1][0]
+                if p.distance_squared(r) == 1:
+                    return None             # seated; the action fires
+                if (ct.get_global_resources()
+                        >= ct.get_barrier_cost() + SK_KB_CELL_RESERVE):
+                    tgt = r
+        if tgt is None:
+            return None
+        best = None
+        for d in CARDINALS:
+            r = tgt.add(d)
+            if not self.ibp(r):
+                continue
+            if r.x == p.x and r.y == p.y:
+                return None
+            try:
+                if not ct.is_tile_passable(r):
+                    continue
+            except Exception:
+                continue
+            dd = p.distance_squared(r)
+            if best is None or dd < best[0]:
+                best = (dd, r)
+        if best is None:
+            if strike:
+                self._kb_strike(rnd)
+            return None
+        self.kb_walk_rounds += 1
+        if strike:
+            self._kb_strike(rnd)            # a site we cannot REACH is as dead
+                                            # as one we cannot BUILD on
+        return best[1]
+
+    # --- PIECE 1, the launcher unit's own turn -------------------------
+
+    def _kb_watch(self, ct, p, rnd):
+        """Detention bookkeeping, run on EVERY launcher round (cooldown or
+        not), so `kb_detain_rounds` is a residency integral and not a count of
+        rounds we happened to be able to act.
+
+        THE ESCAPE / VANISH SPLIT IS THE INSTRUMENT'S SEEN-CHOOSING HALF.
+        kbprobe STEP5a and STEP5b measured that a sealed body cannot move at
+        all -- `can_move` False on all four cardinals, and an unguarded
+        `move()` raises and the engine retires the unit (STEP7).  So an
+        occupant that disappears from an INTACT chamber was retired in place
+        (`kb_vanish`, a WIN) and only a disappearance from a BROKEN seal is an
+        escape (`kb_escapes`, a LOSS).  Reporting both as "escapes" would
+        invert the sign of the plank's own dose column.
+        """
+        for q in self._kb_cell_cands():
+            key = (q.x, q.y)
+            if p.distance_squared(q) > SK_KB_THROW_MAX_DSQ:
+                continue                    # outside our own vision disc
+            sealed, bid = self._kb_seal_state(ct, q)
+            cur = None
+            if sealed and bid is not None:
+                try:
+                    if not (SK_KB_TEAM_CHECK
+                            and ct.get_team(bid) == self.team):
+                        cur = bid
+                except Exception:
+                    cur = None
+            if cur is not None:
+                self.kb_detain_rounds += 1
+                self.kb_occ[key] = cur
+            elif key in self.kb_occ:
+                del self.kb_occ[key]
+                if sealed:
+                    self.kb_vanish += 1
+                else:
+                    self.kb_escapes += 1
+
+    def _kb_pick_throw(self, ct, p, vpos):
+        """(target, to_cell) -- THE CELL IF ONE STANDS WITH AN EMPTY CHAMBER,
+        THE TREADMILL OTHERWISE.
+
+        The cell test is three engine facts and no belief: the chamber is in
+        throw range (1 <= d^2 <= SK_KB_THROW_MAX_DSQ from THIS launcher, the
+        engine's own bound), it is SEALED right now, and no builder bot stands
+        in it.  An occupied chamber falls straight through to the treadmill,
+        which is the registered behaviour.
+        """
+        if SK_KB_CELL:
+            for q in self._kb_cell_cands():
+                dd = p.distance_squared(q)
+                if dd < 1 or dd > SK_KB_THROW_MAX_DSQ:
+                    continue
+                sealed, bid = self._kb_seal_state(ct, q)
+                if not sealed or bid is not None:
+                    continue
+                try:
+                    if not ct.is_tile_passable(q):
+                        continue
+                except Exception:
+                    continue
+                return q, 1
+        return self._hl_pick_throw(ct, p, vpos), 0
+
     def _escalate_target(self, ct, p, rnd=None):
         """LEDGER V1's other half -- once a tile is escalated, the answer is
         the SHOOTER, not another conveyor.  Returns the enemy turret to remove.
@@ -6141,6 +6746,18 @@ class RolesMixin:
         # walk is short, bounded and terminates permanently once the launcher
         # stands, where the belt walk is the keeper's whole standing job.
         # ⛔ IT IS ALSO THE ARM'S ONLY RECURRING COST and it is counted.
+        # ⭐⭐ s57 THE KILLBOX, ARM 1, THE MOVEMENT HALF -- ONE walk for BOTH
+        # pieces, budgeted at SK_KB_WALK_MAX rounds for the whole game.  Same
+        # rung as v611's launcher walk and immediately above it: below the
+        # medic seat, the escalated shooter and the seat walks, because a core
+        # under fire owns this body and always will; above the belt walk
+        # because this walk is short, bounded, gated on the same affordability
+        # as the buy, and terminates permanently once both pieces stand.
+        if SK_KILLBOX:
+            kbw = self._kb_walk_target(ct, p, rnd)
+            if kbw is not None:
+                self.step_to(ct, kbw)
+                return
         hl = self._hl_walk_target(ct, p, rnd)
         if hl is not None:
             self.step_to(ct, hl)
@@ -11304,13 +11921,32 @@ class RolesMixin:
                     continue
         if self.core is not None and self.enemy is None:
             self.enemy = enemy_core_for(self.mw, self.mh, self.core)
+        # ⭐⭐ s57 THE KILLBOX, ARM 1 -- the launcher unit IS a unit and this
+        # method IS its `run()` branch (kbprobe surprise 1: every unit gets its
+        # own `Player` instance, so these counters are THIS launcher's).
+        # ⛔ THE WATCH RUNS ABOVE THE COOLDOWN GATE.  `kb_detain_rounds` is a
+        # RESIDENCY INTEGRAL over the whole game; counting it only on rounds we
+        # could act would measure our own cooldown, not their detention.
+        if SK_KILLBOX:
+            self._kb_watch(ct, p, rnd)
+        victim = self._hl_pick_victim(ct, p) if SK_KILLBOX else None
+        if SK_KILLBOX and victim is not None:
+            # THE OPPORTUNITY COLUMN, and it is the falsifier's denominator:
+            # a round with an enemy builder inside the pickup disc.  Throws
+            # with no opportunity rounds, and opportunity rounds with no
+            # throws, are BOTH registered falsifiers.
+            self.kb_opportunity += 1
         if ct.get_action_cooldown() != 0:
             return
-        victim = self._hl_pick_victim(ct, p)
+        if not SK_KILLBOX:
+            victim = self._hl_pick_victim(ct, p)
         if victim is None:
             return
         vpos, _vid = victim
-        target = self._hl_pick_throw(ct, p, vpos)
+        if SK_KILLBOX:
+            target, to_cell = self._kb_pick_throw(ct, p, vpos)
+        else:
+            target, to_cell = self._hl_pick_throw(ct, p, vpos), 0
         if target is None:
             return
         try:
@@ -11320,6 +11956,11 @@ class RolesMixin:
         except Exception:
             return
         self.hl_throws += 1
+        if SK_KILLBOX:
+            if to_cell:
+                self.kb_throws_cell += 1
+            else:
+                self.kb_throws_tread += 1
 
     def _hl_pick_victim(self, ct, p):
         """The enemy BUILDER to remove, best first.  (Position, id) or None.

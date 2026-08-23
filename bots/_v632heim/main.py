@@ -842,6 +842,54 @@ class Player(CommonMixin, RolesMixin, CoreMixin):
         self.hl_walk_rounds = 0       # instrument: keeper rounds spent walking
                                       # to the site (COST LINE 4)
         self.hl_throws = 0            # instrument: throws this LAUNCHER made
+        # --- s57 THE KILLBOX, ARM 1 (SK_KILLBOX, default OFF) ---------------
+        # ⛔ UNCONDITIONAL FIELDS.  A flag gates BEHAVIOUR, never the EXISTENCE
+        # of state: a field created only under a flag is how a flag-off arm
+        # raises AttributeError inside `run()`, and the engine then PERMANENTLY
+        # DESTROYS that unit for the rest of the match.  Every counter below
+        # therefore reads 0 (or its null sentinel) on every OFF arm, which also
+        # makes them OFF-IDENTITY WITNESSES.
+        # ⛔ PER-BODY STATE, and the engine forces it: every unit gets its OWN
+        # `Player` instance (kbprobe surprise 1), so the keeper's counters and
+        # the launcher's counters live on different objects and are NEVER
+        # summed in-bot.  The trace reads them per unit and aggregates offline.
+        self._kb_cands = None         # memo: the pure-geometry chamber list
+        self.kb_site = None           # Position: the chosen launcher tile
+        self.kb_site_rnd = -1         # round the site was chosen
+        self.kb_banned = set()        # sites the give-up bound retired
+        self.kb_tries = 0             # rounds spent on the CURRENT site
+        self.kb_gaveup = False        # the plank is done for this game
+        self.kb_built = 0             # launchers this body has bought (<= MAX)
+        self.kb_built_rnd = -1        # instrument: round the launcher landed
+        self.kb_walk_rounds = 0       # instrument: keeper rounds spent walking
+        self.kb_seals = 0             # instrument: seal barriers this body laid
+        self.kb_cell_pos = None       # the chamber this body is building at
+        self.kb_cell_done = False     # its seals all stand
+        self.kb_cell_off = False      # the cell half gave up for this game
+        self.kb_cell_miss = 0         # consecutive rounds with no viable
+                                      # candidate (the give-up's clock)
+        self.kb_plan_rnd = -1         # per-round memo of `_kb_cell_plan`
+        self.kb_plan = None
+        self.kb_cell_built_round = -1 # instrument: round the cell completed
+        self.kb_throws_cell = 0       # instrument: throws INTO the chamber
+        self.kb_throws_tread = 0      # instrument: throws onto the treadmill
+        self.kb_opportunity = 0       # instrument: rounds this launcher had an
+                                      # enemy builder inside its pickup disc
+        self.kb_detain_rounds = 0     # instrument: rounds an enemy builder was
+                                      # observed inside a SEALED chamber
+        self.kb_escapes = 0           # instrument: occupant gone AND the seal
+                                      # was broken -- a real way out
+        self.kb_vanish = 0            # instrument: occupant gone with the seal
+                                      # INTACT -- retired in place, not an
+                                      # escape.  ⛔ THE SPLIT IS THE HONEST FORM
+                                      # OF THE REGISTERED `kb_escapes` FIELD:
+                                      # kbprobe STEP5a/5b measured that a
+                                      # sealed body cannot move at all, so a
+                                      # disappearance from an intact chamber is
+                                      # a retirement (its own unguarded move()
+                                      # raising, per STEP7) and reporting it as
+                                      # an "escape" would invert the sign.
+        self.kb_occ = {}              # chamber (x,y) -> occupant id last seen
         self.door_guns = 0            # COPY 6b answers bought (capped)
         # --- v601 PLANK 1: the harvester half of the V1 rebuild ledger -------
         self.harv_deaths = {}         # (x,y) -> harvesters lost on that tile
