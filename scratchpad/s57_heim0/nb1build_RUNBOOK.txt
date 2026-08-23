@@ -1,0 +1,91 @@
+nb1build -- s57 BARRELS ARM 1 (SK_NEST_GAP_TIGHT), RUNBOOK
+==========================================================
+GAME CONTEXT: in-game build work for the Florent Code League, a sandboxed
+bot-vs-bot programming competition.  Every command below runs the LOCAL engine
+runner on local bot trees.  No platform match is created anywhere in this file.
+
+The source change is COMMITTED TO THE TREE (bots/_v632heim/sk_maps.py:2650-2698,
+flag default False).  Everything below is EXECUTION, in order.  The build agent
+that wrote this could not execute (a safety classifier blocked every python
+invocation and every subagent spawn for the rest of that session); the scripts
+are written, anchor-checked against the live source, and unrun.
+
+--- GATES (run first; a failure here stops the grid) -----------------------
+
+1. compile
+   .venv/bin/python -m py_compile bots/_v632heim/sk_maps.py \
+       bots/_v632heim/sk_common.py bots/_v632heim/sk_core.py \
+       bots/_v632heim/sk_roles.py bots/_v632heim/main.py
+   (this one WAS run and passed: COMPILE_OK)
+
+2. import + constant, shipped tree -- expect IMPORT OK, gap 8
+   .venv/bin/python scratchpad/s57_heim0/nb1build_import.py bots/_v632heim 8
+
+3. build the trees -- each prints a subflag-assert line; any
+   "SUBFLAG ASSERT FAILED" is a stop
+   .venv/bin/python scratchpad/s57_heim0/nb1build_mkarm.py scratchpad/s57_heim0/nb1build_off       0
+   .venv/bin/python scratchpad/s57_heim0/nb1build_mkarm.py scratchpad/s57_heim0/arm_ng             1
+   .venv/bin/python scratchpad/s57_heim0/nb1build_mkarm.py scratchpad/s57_heim0/nb1build_troff     0 trace
+   .venv/bin/python scratchpad/s57_heim0/nb1build_mkarm.py scratchpad/s57_heim0/nb1build_tron      1 trace
+   .venv/bin/python scratchpad/s57_heim0/nb1build_mkarm.py scratchpad/s57_heim0/nb1build_mutX1_off 0 plain X1
+   .venv/bin/python scratchpad/s57_heim0/nb1build_mkarm.py scratchpad/s57_heim0/nb1build_mutX1_on  1 plain X1
+
+4. import checks -- expect IMPORT OK on each
+   nb1build_import.py scratchpad/s57_heim0/nb1build_off       8
+   nb1build_import.py scratchpad/s57_heim0/arm_ng             4
+   nb1build_import.py scratchpad/s57_heim0/nb1build_troff     8
+   nb1build_import.py scratchpad/s57_heim0/nb1build_tron      4
+   nb1build_import.py scratchpad/s57_heim0/nb1build_mutX1_off 4
+   nb1build_import.py scratchpad/s57_heim0/nb1build_mutX1_on  8
+
+5. unit controls -- expect "0 FAIL(s)"
+   .venv/bin/python scratchpad/s57_heim0/nb1build_units.py \
+       scratchpad/s57_heim0/nb1build_off scratchpad/s57_heim0/arm_ng
+
+6. OFF byte-identity (6 local runs) -- expect SAME on every line
+   zsh scratchpad/s57_heim0/nb1build_ident.sh
+
+7. the mutation control, both directions (4 local runs) -- expect ok on every
+   line: X1+tight=0 DIFF (the check can fire), X1+tight=1 SAME (only the
+   constant's VALUE moves the tape)
+   zsh scratchpad/s57_heim0/nb1build_mutctl.sh
+
+8. seen-choosing (one traced ON cell, stderr only -- bot stdout reaches no
+   replay and no console under fcode 2.3.6)
+   rm -rf scratchpad/s57_heim0/nb1build_tron/__pycache__
+   NG_TRACE=1 timeout 600 .venv/bin/fcode run \
+       scratchpad/s57_heim0/nb1build_tron \
+       scratchpad/s54_fidtape/opp_v542wave_noiseoff \
+       maps/auroraveil.map26 --seed 7 --tle 10 \
+       --replay scratchpad/s57_heim0/nb1build_tr_aurA.replay26 \
+       > scratchpad/s57_heim0/nb1build_tr_aurA.log \
+       2> scratchpad/s57_heim0/nb1build_tr_aurA.err
+   then, the arm SEEN CHOOSING a site the OFF tree could not take:
+   grep "NG PICK" .../nb1build_tr_aurA.err | grep -oE "mind2=[0-9]+" \
+       | cut -d= -f2 | awk '$1<8' | wc -l      # must be > 0
+   grep "NG PICK" .../nb1build_tr_aurA.err | grep -oE "mind2=[0-9]+" \
+       | cut -d= -f2 | awk '$1>=8' | wc -l     # the complement
+
+--- THE GRID (only after every gate passes) --------------------------------
+
+9. zsh scratchpad/s57_heim0/nb1build_grid.sh
+   Runs f3_tape.sh f1/f2/f3 into t_ng_f1 / t_ng_f2 / t_ng_f3 (30 cells each,
+   DONE 30/30 + "0 tracebacks" required), writes each tape's README, then
+   prints the DOSE table and the CURRENCY+GUARDS tables.
+
+   The two readouts can also be run alone:
+   .venv/bin/python scratchpad/s57_heim0/nb1build_dose_readout.py
+   .venv/bin/python scratchpad/s57_heim0/nb1build_sums_readout.py
+
+--- WHAT THE BARS ARE (registration, EXPECTATION-v632heim-push1 tail) -------
+   B1 identity                     -> gate 6
+   B2 successive-plant d^2 FALLS toward the win-band (21), plant-to-plant gap
+      rounds FALL                  -> dose readout, first table
+   B3 pair share + barrels-standing RISE
+                                   -> dose readout, first table
+   B4 currency: grid <=r300 kills ITT NON-FALL (rise hoped); median length
+      NON-RISE                     -> sums readout, P4
+   B5 guards vs t_b4_*             -> sums readout, P5
+   RISK (disclosed, measured not patched): same-ray overlap -- dose readout,
+      second table (succ-ray and costand-ray).  A rise here is the registered
+      cost of tighter packing, not a defect of the instrument.

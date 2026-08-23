@@ -2642,7 +2642,61 @@ SK_CYCLE_ESCAPE_CAP = 2      # ... and it may buy its way out at most twice.
 #     games with <= 1 sentinel built, 6 wins / 16 with >= 2.  ⛔ NOT THREE.
 #     Every sentinel is +20% on the ONE global additive cost scale, and the
 #     tape's own >=2 cell is a 2-4 band whose median is 2."
-SK_NEST_PAIR_MIN_GAP = 8     # FIX 1: the second site must sit at least this d^2
+# ⭐⭐ s57 BARRELS ARM 1 -- THE SPACING CONSTANT (SK_NEST_GAP_TIGHT).
+# GAME CONTEXT: in-game siting doctrine for the Florent Code League, a
+# sandboxed bot-vs-bot programming competition.  "barrel", "tube", "plant",
+# "ray" and "answer" name the engine's own documented mechanics between
+# competing game bots.
+#
+# THE EVIDENCE, and it is direct win-loss (STUDY-battery-execution-2026-08-23
+# §"Spacing"): games we WIN site successive forward plants at d^2 21; games we
+# LOSE site them at d^2 61.  The live minimum below is 8, and the plant window
+# the engineer actually gets is ~3 rounds (b1 build ledger: the open windows
+# are shorter than the walk) -- so an 8-d^2 spread buys a walk the window does
+# not pay for and the second tube is not standing when the first one needs it.
+# ARM 1 lowers the live minimum to 4 and changes NOTHING ELSE.  The doctrine's
+# own CLUSTER_GAP = 2 is the floor variant, held for arm 1b if 4 shows
+# direction; it is NOT armed here.
+#
+# ⛔ OFF IS BYTE-EXACT BY CONSTRUCTION.  This is a CONDITIONAL CONSTANT, not a
+# call site change: with the flag False the expression evaluates to the literal
+# 8 that stood here before, every reader binds the same integer at import, and
+# no branch anywhere in the tree is added, moved or re-ordered.
+#
+# ⛔ DISCLOSED -- THE FLAG MOVES EVERY READER OF THIS CONSTANT, NOT ONLY THE
+# PLANT SITING, because it is the constant itself that moves.  Grepped, four
+# readers in this tree, their liveness under the arm's baseline flags:
+#   1. `_pick_nest`  (sk_roles.py:12795 `gap = SK_NEST_PAIR_MIN_GAP`) -- LIVE.
+#      This is the dose: the spread the band sweep rejects candidates on.
+#   2. `_preprep`    (sk_roles.py:13417 refusal inside the spread of a VISIBLE
+#      forward turret) -- LIVE (SK_TUBE_LATENCY_SOLO True, FLOOR2_STAGE True).
+#      It moves 8 -> 4 with the plant rule, ON PURPOSE: `_preprep`'s own site
+#      comes from `_pick_nest`, so leaving this reader at 8 would let the scan
+#      offer a tight site that the pre-stage then refuses -- an internal
+#      disagreement that would suppress exactly the dose this arm buys.  The
+#      scoped alternative (tighten reader 1 only) is the arm's fallback if the
+#      pre-stage column moves against us.
+#   3. the v613 gap-relax conjunction (sk_roles.py:12810
+#      `SK_TUBE_GAP_MIN < SK_NEST_PAIR_MIN_GAP`) -- DEAD under this baseline
+#      (SK_TUBE_FLOOR False and SK_GAP_RELAX_SOLO False), and inert anyway:
+#      2 < 4 and 2 < 8 are both True.
+#   4. the v622 exhaustion retry (sk_roles.py:12826
+#      `min(SK_TUBE_GAP_MIN, SK_NEST_PAIR_MIN_GAP)`) -- LIVE and NUMERICALLY
+#      UNCHANGED: min(2, 4) == min(2, 8) == 2.
+#
+# ⛔ DISCLOSED HAZARD, MEASURED NOT PATCHED -- SAME-RAY OVERLAP.  `_nest_scan`
+# filters on DISTANCE only; there is no distinct-ray term anywhere in it (band,
+# wall, nest_bad, death memo, pair gap, firing face, then a geometry score).  A
+# sentinel's shot is a SINGLE-TILE line, so two tubes that share a row, a
+# column or a diagonal can be answered by one enemy line -- and at d^2 4 they
+# can be two tiles apart on the same ray, which d^2 8 mostly forbade.  The
+# registration's instruction is to MEASURE the overlap rate in the smoke rather
+# than add logic, so no distinct-ray term is added here.
+SK_NEST_GAP_TIGHT = False    # ⭐ THE ARM'S ONE FLAG.  False = v603's spread.
+SK_NEST_GAP_TIGHT_D2 = 4     # the registered tight value (arm 1b's floor
+                             # variant would be SK_ROTATE_CLUSTER_GAP = 2).
+SK_NEST_PAIR_MIN_GAP = (SK_NEST_GAP_TIGHT_D2 if SK_NEST_GAP_TIGHT else 8)
+                             # FIX 1: the second site must sit at least this d^2
                              # from the first.  Two sentinels on adjacent tiles
                              # share one answering gunner's ray and one prep
                              # barrier cluster; the band is 14-32 wide enough to
