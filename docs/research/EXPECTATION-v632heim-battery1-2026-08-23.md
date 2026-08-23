@@ -119,3 +119,40 @@ which F2 cells lost their timely kills, and is the mechanism the latch
 diverting mid-game titanium on the income-fragile fixture, the honest
 ledger suppressing the mid-range replant (conc≥3 rounds −322 there), or
 divergence shuffle. Verdict types on the diagnosis.
+
+## ARM 3 F2 DIAGNOSTIC (banked; scripts b3f2diag_*) — AND A REGISTRATION-VS-CODE GAP
+
+**GAME CONTEXT: in-game analysis for the Florent Code League, a sandboxed
+bot-vs-bot programming competition.**
+
+**⛔ THE GAP: `SK_BATTERY2_BURST` SHIPS TRUE against the arm-3
+registration's "burst dropped."** It fires (5/90 cells, exactly +20-round
+plant-1 holds on the identical tile, wire-confirmed) and is the sole
+mechanism-attributable F2 kill loss (longhouse_seatA r256 kill → r557;
+their core untouched at the base kill round, gross shortfall 1,368).
+PROCESS DELTA banked for the wrap: the builder committed after report
+without asserting every SUB-flag against the registration — the
+arm-verification step now includes a sub-flag-vs-registration assert.
+
+**THE F2 COLLAPSE IS CHURN, NOT A MECHANISM:** per-cell — 2 lost-kill
+cells with byte-identical turret streams (SHUFFLE), 1 never-had-a-pair,
+1 got MORE barrels and lost anyway, 1 burst-hold, 1 genuine
+ledger-suppression. Discordant cells: F2 6/1 (p=0.125 pre-DEFF), GRID
+10/10 (p=1.0), grid ITT exactly +0.0000. LATCH-DIVERSION REFUTED
+structurally (live<want exits before the latch is consulted) and on the
+wire (conversion FELL 2.1%; income clears the bar from r20 everywhere).
+The ledger's conc>=3 suppression lands 91% in cells with no kill either
+way; kept-kill cells show the ceiling PAYING (holmgang_seatB 3rd barrel
+95r earlier, kill 74r earlier). Confound check: single-plank contrast
+proven (identity tape byte-identical 30/30; seat-clear masters False in
+both).
+
+**ARM 4 (registered here, blind to its tapes):** (1) SK_BATTERY2_BURST →
+False — the registered state, one constant; (2) ledger stays honest;
+(3) eco-ring warmth persisted across engineer turnover (batt2_eco_cold
+was the real consult-blocker where money and site were both open) —
+smallest form first: seed/persist the ring, constants disclosed;
+(4) THE CURRENCY BAR RE-REGISTERED AT GRID LEVEL per the DEFF direction
+rule: grid <=r300 ITT non-fall (restated as exclusion), per-fixture
+columns reported not gated — a 30-cell per-fixture count with 7
+discordant cells cannot resolve +-5 and fails only as noise.
