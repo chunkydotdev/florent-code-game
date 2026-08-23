@@ -7240,6 +7240,26 @@ SK_PUSH_ENG_PREP = True   # may the succession lay its site's prep barriers
 # that a channel problem: **module state is NOT shared between units -- one
 # sub-interpreter each, engine-probed; the 16 store ints are the only channel
 # and they lag one round**.  See SK_HAMMER_PRIO_BIT.
+#
+# ⭐⭐ V2 AMENDMENT (registered blind, same doc, HAMMER-PRIO V1 DISPOSITION):
+# V1 WAS NEAR-INERT AND THE CAUSE WAS STRUCTURAL, NOT POLICY.  `_b2_eco_ready`
+# -- the adopted latch this whole flag is keyed on -- had ONE call site,
+# `_battery_open`, whose third line is `if live < want: return False` with
+# `want = 2`.  So the latch could not fire until the forward PAIR ALREADY
+# STOOD, while this gate's second term is "the pair does NOT yet stand": the
+# two terms nearly excluded each other.  Measured on v1's traced tape: 134 of
+# 134 deferrals taken at exactly ONE standing tube, 0 at zero, latch silent in
+# 47 of 60 cells.  ⇒ V2: under this master (and only under it), the readiness
+# evaluation runs UNCONDITIONALLY once per engineer round
+# (`_hammer_eco_eval`, top of `_siege_engineer`, above the `enemy is None`
+# return and above `_drip_report`).  SAME predicate, SAME bar, SAME ring, SAME
+# latch-once semantics -- only the SET OF ROUNDS ON WHICH IT IS ASKED changes,
+# so this is not a new latch (class audit row #132).  ⚠ THE WELD IS DISCLOSED:
+# `batt2_eco_since` is now set on rounds `_battery_open` never reaches, so the
+# ADOPTED battery's ceiling gate sees the latch already set when it later
+# consults it -- a RETIMING of an existing decision, inside the measured
+# effect and never attributed to the inversion alone.  The old call site stays
+# (idempotent once latched), which is what keeps the OFF path exact.
 SK_HAMMER_PRIO = False    # ⛔ THE MASTER, DEFAULT OFF.  Off is exact identity:
                           # every call site is a module-constant conjunction
                           # tested BEFORE any controller call, and the publisher
@@ -7275,12 +7295,18 @@ SK_HAMMER_PRIO_BIT = 12   # ⛔⛔ THE CHANNEL, AND WHY IT IS SLOT 8 BIT 12.
                           # with a buffered write.  All three readers
                           # (`sk_core.py:327-329,434-438,526`) mask their own
                           # field, so b12 is invisible to every one of them.
-                          # ⚠ STALENESS, DISCLOSED AND MEASURED (`hammer_lag`):
-                          # the bit is published at the TOP of the engineer's
-                          # turn and `_b2_eco_ready` is evaluated LATER in the
-                          # same turn (inside `_battery_open`), and store writes
-                          # are buffered one round -- so a keeper sees the latch
-                          # up to TWO rounds after it fires.  That is the
+                          # ⚠ STALENESS, DISCLOSED AND MEASURED (`hammer_lag`).
+                          # ⭐ V2 SHORTENED IT BY ONE ROUND AND THAT IS A SIDE
+                          # EFFECT, NOT A SECOND PLANK: the readiness
+                          # evaluation now runs ABOVE `_drip_report` in the
+                          # same turn, so a latch that fires this round is on
+                          # the wire this round instead of next.  V1's shape
+                          # was: the bit is published at the TOP of the
+                          # engineer's turn and `_b2_eco_ready` is evaluated
+                          # LATER in the same turn (inside `_battery_open`),
+                          # and store writes are buffered one round -- so a
+                          # keeper saw the latch up to TWO rounds after it
+                          # fired; under V2 it is ONE.  Late is still the
                           # conservative direction (the inversion starts late,
                           # never early) and it is why the opening cannot be
                           # touched.

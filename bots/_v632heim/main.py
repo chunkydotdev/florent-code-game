@@ -1164,6 +1164,11 @@ class Player(CommonMixin, RolesMixin, CoreMixin):
         self.batt2_eco_since = None   # round the latch FIRED (None = never)
         self.batt2_eco_block = 0      # opens refused: economy below the bar
         self.batt2_eco_cold = 0       # opens refused: fewer than WARM samples
+        self.batt2_eco_miss_rnd = -1  # s57 HAMMER V2: the refusal taps' own
+                                      # per-round de-duplicator.  Stays -1 on
+                                      # every SK_HAMMER_PRIO-off arm (its only
+                                      # writer is `_b2_eco_tick`, reachable
+                                      # only under `not SK_HAMMER_PRIO or ...`)
         # ⭐⭐ s57 SK_HAMMER_PRIO -- THE SPEND-LADDER INVERSION: state +
         # instruments.  ⛔ INITIALISED UNCONDITIONALLY, like every other
         # flag-gated block in this file and for the same reason: an
@@ -1178,6 +1183,13 @@ class Player(CommonMixin, RolesMixin, CoreMixin):
         # not been seen to be bounded; a sticky that never covers a relapse is
         # decoration.  Hence the pairs: held/off, episodes/released,
         # latched/relapse, belt_ext/belt_rep.
+        # V2 AMENDMENT (the unconditional readiness evaluation).  BOTH
+        # VERDICTS: `eval` is rounds the question was ASKED (zero would mean
+        # the new call site never runs) and `fire` is round+1 of the latch fire
+        # taken AT THAT SITE (0 = never there).
+        self.hammer_eco_eval = 0      # ENGINEER: rounds `_b2_eco_ready` was
+                                      # asked unconditionally
+        self.hammer_eco_fire = 0      # ... round+1 the latch fired HERE
         self.hammer_pub = 0           # ENGINEER: rounds b12 was published
         self.hammer_latched = False   # READER: the wire has been seen set
         self.hammer_lag = -1          # ... the round it was FIRST seen

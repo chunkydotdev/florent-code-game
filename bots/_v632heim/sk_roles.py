@@ -7614,10 +7614,75 @@ class RolesMixin:
     # GAME CONTEXT: in-game build work for the Florent Code League, a sandboxed
     # bot-vs-bot programming competition.
     #
-    # TWO METHODS AND NOTHING ELSE: `_hammer_armed` READS the adopted battery
-    # latch off the wire, `_hammer_defer` is the refusal predicate the eco
-    # rungs are gated on.  Both return on a module constant when the master is
-    # off, before any controller call.
+    # THREE METHODS AND NOTHING ELSE: `_hammer_eco_eval` EVALUATES the adopted
+    # battery's readiness latch once per engineer round (V2, below),
+    # `_hammer_armed` READS that latch off the wire on the other bodies, and
+    # `_hammer_defer` is the refusal predicate the eco rungs are gated on.  All
+    # three return on a module constant when the master is off, before any
+    # controller call.
+
+    def _hammer_eco_eval(self, ct, rnd):
+        """V2 AMENDMENT -- ASK `_b2_eco_ready` EVERY ENGINEER ROUND.
+
+        ⛔⛔ WHY THIS METHOD EXISTS, AND IT IS THE V1 BUILD'S OWN STRUCTURAL
+        FINDING RATHER THAN A NEW IDEA.  `_b2_eco_ready` had EXACTLY ONE call
+        site -- `_battery_open` (`sk_roles.py:12204`) -- and `_battery_open`'s
+        third line is `if live < want: return False` with `want = 2`.  So the
+        latch could not fire until the forward PAIR ALREADY STOOD, while
+        `_hammer_defer`'s second term is "the pair does NOT yet stand": the two
+        terms very nearly excluded each other.  Measured on the v1 traced tape:
+        **134 of 134 deferrals were taken at exactly ONE standing tube, 0 at
+        zero, and the latch never fired at all in 47 of 60 cells.**  The gate
+        half was verified and stands; what was broken was WHERE the latch was
+        evaluated.
+
+        ⛔ IT IS NOT A NEW LATCH (class audit row #132).  Same predicate, same
+        bar (SK_BATTERY2_ECO_AMMO), same ring (`batt2_ring`, filled by
+        `_b2_sample` on this same body one line above the call site), same
+        latch-once semantics (`batt2_eco_since` set once, never cleared).  The
+        ONLY thing that changes is the SET OF ROUNDS on which the question is
+        asked.  Nothing here recomputes a rate, re-bars a decision, or keeps a
+        second piece of state that could disagree with the first.
+
+        ⚠ THE WELD, DISCLOSED RATHER THAN HIDDEN (the v1 readout named it
+        before this edit was registered): `batt2_eco_since` is now set on
+        rounds where `_battery_open` is never reached, so the ADOPTED
+        battery's own ceiling gate sees the latch ALREADY SET when it later
+        consults it.  That is a RETIMING of an existing decision -- the same
+        bar, met earlier -- not a new one, and it is screened as such: the arm
+        is measured against t_b4_* whole, so any battery retiming is INSIDE the
+        measured effect and is not attributed to the inversion alone.
+
+        ⛔ THE CALL SITE IS THE TOP OF `_siege_engineer`, ABOVE
+        `if self.enemy is None: return` -- the most unconditional site on the
+        body that owns the latch, and immediately after `_b2_sample`, which is
+        the only thing the predicate reads.  The existing `_battery_open` call
+        site is LEFT IN PLACE: `_b2_eco_ready` returns True on its first line
+        once latched, so the second evaluation is idempotent, and leaving it
+        keeps the OFF path character-for-character identical.
+
+        ⛔ THE COUNTERS DO NOT DOUBLE-TICK.  Two evaluations in one round would
+        have ticked `batt2_eco_cold` / `batt2_eco_block` twice for one
+        decision, silently doubling the adopted battery's own refusal taps.
+        `_b2_eco_tick` de-duplicates them by round, and only while the master
+        is ON (short-circuited away entirely when it is off).
+
+        ⭐ BOTH VERDICTS ARE TAPPED HERE TOO: `hammer_eco_eval` counts the
+        rounds the question was ASKED (zero would mean this method never runs)
+        and `hammer_eco_fire` records round+1 of the fire taken AT THIS SITE
+        (0 = the latch never fired here -- either it never fired at all, or
+        `_battery_open` got there first).
+        """
+        if not SK_HAMMER_PRIO:
+            return
+        self.hammer_eco_eval += 1
+        before = self.batt2_eco_since
+        try:
+            self._b2_eco_ready(ct, rnd)
+        except Exception:
+            return                          # fails OPEN: no latch, no inversion
+        if before is None and self.batt2_eco_since is not None:
+            self.hammer_eco_fire = rnd + 1  # round+1, so 0 means NEVER HERE
 
     def _hammer_armed(self, ct, rnd):
         """Has the ADOPTED battery's eco-ready latch fired, as seen from HERE?
@@ -11306,6 +11371,15 @@ class RolesMixin:
         # exactly one round rather than averaging over a hole it cannot see.
         # No-op on every SK_BATTERY2-off arm (one module-constant test).
         self._b2_sample(ct, rnd)
+        # ⭐⭐ s57 SK_HAMMER_PRIO V2 -- THE UNCONDITIONAL READINESS EVALUATION,
+        # and its position is the amendment.  It sits ABOVE the `enemy is None`
+        # return, i.e. on EVERY engineer round, immediately after the sample
+        # that feeds it and ABOVE `_drip_report` (so a latch that fires this
+        # round is on the wire this round rather than next).  v1's single call
+        # site inside `_battery_open` stays where it is -- the latch-once
+        # semantics make the second evaluation idempotent.  No-op on every
+        # SK_HAMMER_PRIO-off arm (one module-constant test).
+        self._hammer_eco_eval(ct, rnd)
         if self.enemy is None:
             return
         self._nest_watch(ct, rnd)
@@ -12521,7 +12595,13 @@ class RolesMixin:
             return True                        # latched
         r = self._b2_rate()
         if r is None:
-            self.batt2_eco_cold += 1
+            # ⛔ s57 SK_HAMMER_PRIO V2: ONE TICK PER ROUND, NOT ONE PER CALL.
+            # With the master on this predicate is asked twice in a round (the
+            # unconditional site, then `_battery_open`), and an un-guarded tap
+            # would double-count ONE refusal.  Short-circuited away when the
+            # master is off, so the OFF path keeps today's exact control flow.
+            if not SK_HAMMER_PRIO or self._b2_eco_tick(rnd):
+                self.batt2_eco_cold += 1
             return False
         # ⛔ ARM-3 CORRECTION (s57, registered before this edit): the barrel
         # term double-counted — `_battery_bar` already prices the next barrel
@@ -12536,9 +12616,26 @@ class RolesMixin:
         except Exception:
             return False
         if r < bar:
-            self.batt2_eco_block += 1
+            if not SK_HAMMER_PRIO or self._b2_eco_tick(rnd):   # V2, as above
+                self.batt2_eco_block += 1
             return False
         self.batt2_eco_since = rnd
+        return True
+
+    def _b2_eco_tick(self, rnd):
+        """s57 SK_HAMMER_PRIO V2 -- may THIS refusal tick a counter?
+
+        A per-round de-duplicator and nothing else: the first evaluation of a
+        round ticks, any further evaluation of the SAME round does not.  The
+        two refusal paths in `_b2_eco_ready` are mutually exclusive per call,
+        so one marker covers both.  ⛔ IT MOVES NO DECISION -- both callers use
+        the predicate's return value, never this counter -- so a bug here can
+        only ever mis-report, never mis-play.  Reachable only while the master
+        is ON (every call site is `not SK_HAMMER_PRIO or ...`).
+        """
+        if rnd == self.batt2_eco_miss_rnd:
+            return False
+        self.batt2_eco_miss_rnd = rnd
         return True
 
     def _pick_nest(self, ct, p, rnd):
@@ -13691,11 +13788,14 @@ class RolesMixin:
         # (`sk_core.py:327-329`, `:434-438`, `:526`) mask their own 6-bit field,
         # so b12 is invisible to every one of them.  With the master off the
         # word is bit-for-bit what it is today.
-        # ⚠ THE LAG IS STRUCTURAL AND DISCLOSED: this method runs at the TOP of
-        # the engineer's turn while `_b2_eco_ready` is evaluated later in the
-        # same turn (inside `_battery_open`), and the store is buffered one
-        # round -- so a reader sees the latch up to TWO rounds late.  Late is
-        # the safe direction for a gate that must never touch the opening.
+        # ⚠ THE LAG IS STRUCTURAL AND DISCLOSED.  V1: this method ran at the
+        # TOP of the engineer's turn while `_b2_eco_ready` was evaluated later
+        # in the same turn (inside `_battery_open`), and the store is buffered
+        # one round -- so a reader saw the latch up to TWO rounds late.  V2
+        # evaluates readiness ABOVE this method (`_hammer_eco_eval`), so the
+        # bit is published the round it fires and the remaining lag is the
+        # store's own ONE buffered round.  Late is still the safe direction for
+        # a gate that must never touch the opening.
         if SK_HAMMER_PRIO and self.batt2_eco_since is not None:
             word |= HAMMER_LATCH_BIT
             self.hammer_pub += 1
