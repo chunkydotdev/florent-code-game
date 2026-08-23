@@ -70,3 +70,24 @@ Adopts if C1, C2 pass, C3 meets the pooled bar, C4 holds. If C3's dose
 lands but a C4 econ guard trips on F1 only (the bank-1 fixture), a
 bank-floor rider on the re-keyed clock is a legitimate pre-registered
 follow-up, not a silent amendment.
+
+## VERDICT — REFUSED per the pre-registered adoption rule, BUILDER s57
+
+**GAME CONTEXT: in-game analysis for the Florent Code League, a sandboxed
+bot-vs-bot programming competition.**
+
+C1 pass. **C2 FAIL — specimen misdiagnosed:** the trace shows the OFF memo
+ALSO read since=196 on the (3,4) span; the 124 declines were the GIVE-UP
+BINDING ON THE SAME OCCUPANT (r218−196=22>20), not a stale re-key — the
+diag431 causal claim for that span is CORRECTED here (the true occupant
+re-key class is ≤66 events tape-wide). **C3 FAIL, WRONG DIRECTION:**
+chew-declines +259%, pecks −17.7%. **C4 TRIP:** F1 alive@300 −3 (bar −2),
+wins 10→7, ≤r300 kills 6→3.
+
+**THE FINDING THAT OUTLIVES THE REFUSAL:** `SK_CAGE_MELEE_GIVEUP=20` has
+NEVER been in force — the one-slot memo is evicted by any chew on another
+tile, so the shipped tree chews nearly indefinitely by thrash. Enforcing
+the clock honestly is a MEASURED COST; the accidental persistence is
+load-bearing. Directional evidence: in the measured range, MORE chewing =
+more pecks = more wins. The code stays built, OFF, as the honest-clock
+reference implementation.
