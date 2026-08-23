@@ -221,7 +221,7 @@ from sk_maps import (
     SK_PUSH_STATION_DWELL, SK_PUSH_STATION_STOPS,
     # --- s57 SK_HAMMER_PRIO: the spend-ladder inversion ---------------------
     SK_HAMMER_PRIO, SK_HAMMER_PRIO_BELT, SK_HAMMER_PRIO_PAIR,
-    SK_HAMMER_PRIO_BIT, SK_HAMMER_PRIO_STICKY,
+    SK_HAMMER_PRIO_BIT, SK_HAMMER_PRIO_STICKY, SK_HAMMER_HOLD,
 )
 
 # --- v632 PLANK A 4.2: the three guarded WALKS, as ban keys.  A tile is banned
@@ -7720,6 +7720,18 @@ class RolesMixin:
             try:
                 if not (ct.read_store(SK_SLOT_DRIP) & HAMMER_LATCH_BIT):
                     self.hammer_relapse += 1
+                    # ⭐ V2.1: the RELAPSE **ENTRY**, which is a different
+                    # number from the relapse ROUND and is the one the escape's
+                    # re-arm runs on.  The midgard keeper that motivated the
+                    # bound saw 40 relapse rounds; re-arming the escape on each
+                    # of them would restart the 20-round clock 40 times and the
+                    # bound would be decoration.  `_push_res_watch`'s tube edge
+                    # is an EDGE for exactly this reason; this is its twin.
+                    if not self.hammer_wire_cold:
+                        self.hammer_wire_cold = True
+                        self.hammer_relapse_in += 1
+                elif self.hammer_wire_cold:
+                    self.hammer_wire_cold = False
             except Exception:
                 pass
             return True
@@ -7780,11 +7792,16 @@ class RolesMixin:
             if not self._hammer_armed(ct, rnd):
                 return False
             live = self._push_live_tubes(ct, rnd)
+            self._hammer_watch(live)
             if live >= SK_HAMMER_PRIO_PAIR:
                 if self.hammer_deferring:
                     self.hammer_deferring = False
                     self.hammer_released += 1   # RELEASED: the pair stands
+                self.hammer_hold_since = None   # V2.1: the run's only reset
                 self.hammer_off += 1
+                return False
+            if self._hammer_escape(rnd):
+                self.hammer_esc_pass += 1       # RELEASED: the bounded escape
                 return False
         except Exception:
             return False
@@ -7799,6 +7816,99 @@ class RolesMixin:
             self.hammer_last_rnd = rnd
         self.hammer_site[site] = self.hammer_site.get(site, 0) + 1
         return True
+
+    # --- V2.1 AMENDMENT: THE BOUNDED ESCAPE ---------------------------
+
+    def _hammer_watch(self, live):
+        """The RE-ARM EDGES for the bounded escape.  TWO of them, both EDGES.
+
+        ⛔ THIS IS `_push_res_watch` TRANSPLANTED, and the first edge is that
+        method's own line unchanged: `live` FALLING is the only honest,
+        team-wide statement a keeper can make that a barrel is gone -- there is
+        no death event out of vision (`get_hp(id)` raises, and v618 booked
+        exactly that as a death: the v620 PLANK 1 defect).
+
+        ⭐ THE SECOND EDGE IS THIS GATE'S OWN AND THE RESERVE HAS NO ANALOGUE:
+        the published latch bit going COLD after the sticky latched.  The
+        reserve's arming condition is a purse; this gate's arming condition is
+        the hammer PHASE, so the phase lapsing is a re-arm in exactly the same
+        sense.  ⛔ It is `hammer_relapse_in` (relapse ENTRIES) and NOT
+        `hammer_relapse` (relapse ROUNDS): the F1 midgard keeper that motivated
+        the bound saw 40 relapse rounds, and re-arming on each would restart
+        the clock 40 times -- a bound that a silent producer can lift is not a
+        bound.
+
+        ⚠ `hammer_esc_rearm` counts EDGES SEEN, not escapes actually cancelled
+        (an edge with the escape already un-fired still ticks) -- the reserve's
+        `push_res_rearm` has the same shape and the same caveat, and it is an
+        UPPER BOUND on re-arms that mattered.
+
+        ⚠ SAMPLING CAVEAT, DISCLOSED, VERBATIM FROM `_push_res_watch`: the edge
+        is only seen on rounds where some rung asks `_hammer_defer`.  A tube
+        death and a replant inside a gap between two such rounds is invisible
+        and the escape stays released for that episode.
+        """
+        if (0 <= live < self.hammer_live
+                or self.hammer_relapse_in > self.hammer_relapse_seen):
+            self.hammer_esc = False             # arm again
+            self.hammer_esc_rearm += 1
+            self.hammer_hold_since = None
+        self.hammer_live = live
+        self.hammer_relapse_seen = self.hammer_relapse_in
+
+    def _hammer_escape(self, rnd):
+        """True while the BOUNDED ESCAPE has released the gate this episode.
+
+        ⛔⛔ THE V2 TRACE'S NAMED DEFECT, ANSWERED WITH MACHINERY ALREADY IN THE
+        TREE.  On the V2 traced F1 tape the midgard seat-B keeper (u=4) opened
+        ONE episode at r25, never closed it (`eps=1 rel=0`) and refused **968
+        distinct rounds**, 949 of them belt-extension tiles.  `_hammer_defer`'s
+        own docstring says the plank is *"a DEFERRAL, NOT A CANCELLATION, and
+        the release is the point"* -- an episode that runs to the horizon
+        falsifies that sentence.  The answer is `_push_res_escape`, transplanted
+        term for term: a hold clock, a bound (SK_HAMMER_HOLD = 20, the same 20
+        as SK_PUSH_RES_HOLD and SK_BATTERY2_BURST_HOLD), a release FOR THE
+        EPISODE, and both verdicts of that clock counted.
+
+        ⛔ THE CLOCK RUNS ON THE GATE'S OWN CONDITION AND NOT ON A PURSE.  The
+        reserve's clock resets on `bank >= bar` because the reserve is an
+        AFFORDABILITY gate; this one is a PRIORITY gate and `_hammer_defer`
+        refuses an affordability term by design ("an affordability term here
+        would re-import the reserve's measured self-defeat through the side
+        door").  The structural map is exact: the reserve's non-refusing round
+        is `bank >= bar`, this gate's non-refusing round is THE PAIR STANDING,
+        and that is the round that clears `hammer_hold_since` (in the caller,
+        on the same line the episode closes).
+
+        ⛔ RELEASED FOR THE EPISODE, NOT FOR THE MATCH, exactly as the reserve
+        is and for the same measured reason: median forward-tube life is 42
+        rounds, so a match-long disarm retires the plank after its first stall.
+        `_hammer_watch` re-arms on a tube loss or a latch relapse entry.
+
+        ⚠ THE ARITHMETIC IS `rnd - since >= HOLD`, WHICH IS THE RESERVE'S LINE
+        VERBATIM: with the run opening at round R the release lands at R + 20,
+        i.e. AFTER 20 refused rounds (R..R+19) -- the registration's "after 20
+        consecutive deferral rounds", not on the 20th.
+        ⚠ `hammer_hold_rounds` is counted ONCE PER ROUND (`hammer_hold_last` is
+        the round guard) for `_push_res_escape`'s stated reason: several rungs
+        ask per round, and a 20-round clock reported as a 20-CALL one would
+        disagree with the release, which is keyed on `rnd`.
+        """
+        if self.hammer_esc:
+            return True
+        if self.hammer_hold_since is None:
+            self.hammer_hold_since = rnd
+            self.hammer_holds += 1
+        if rnd - self.hammer_hold_since >= SK_HAMMER_HOLD:
+            self.hammer_esc = True
+            self.hammer_esc_fired += 1
+            self.hammer_esc_rnd = rnd + 1       # round + 1, so 0 means NEVER
+            self.hammer_hold_since = None
+            return True
+        if rnd != self.hammer_hold_last:
+            self.hammer_hold_rounds += 1
+            self.hammer_hold_last = rnd
+        return False
 
     # --- PIECE 2: THE WARDEN ------------------------------------------
 

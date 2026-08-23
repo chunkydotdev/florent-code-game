@@ -1214,6 +1214,41 @@ class Player(CommonMixin, RolesMixin, CoreMixin):
         self.hammer_term_leak = 0     # LEAK 1: the SK_TERM_FIRST rung took the
                                       # turn while the inversion was armed
         self.hammer_seat_leak = 0     # LEAK 2: `_seat_claim_action` did
+        # ⭐⭐ V2.1 AMENDMENT -- THE BOUNDED ESCAPE (SK_HAMMER_HOLD).  Same
+        # unconditional-init rule as the block above and the same both-verdict
+        # discipline: a bound never seen to FIRE is not a bound, and a bound
+        # never seen to RE-ARM is a match-long disarm wearing an episode's
+        # name.  All of these stay at these values on every OFF arm (their
+        # only writers are `_hammer_watch` / `_hammer_escape` / the sticky
+        # branch of `_hammer_armed`, all unreachable under `not
+        # SK_HAMMER_PRIO`), so they are OFF-identity witnesses too.
+        self.hammer_esc = False       # the escape has RELEASED this episode
+        self.hammer_esc_fired = 0     # ... how many times it fired (episodes
+                                      # ended by the BOUND rather than by the
+                                      # pair standing)
+        self.hammer_esc_rnd = 0       # ... round of the LAST firing, +1, so 0
+                                      # means NEVER
+        self.hammer_esc_pass = 0      # ... rungs allowed BECAUSE of it (the
+                                      # dose the bound gives back)
+        self.hammer_esc_rearm = 0     # RE-ARM EDGES seen: a tube loss or a
+                                      # latch-relapse ENTRY.  An upper bound on
+                                      # re-arms that mattered (`push_res_rearm`
+                                      # has the same shape and caveat).
+        self.hammer_live = -1         # last observed STANDING TUBE COUNT (0-2);
+                                      # -1 so the very first watch cannot read
+                                      # as a fall
+        self.hammer_wire_cold = False # the published latch bit read 0 on the
+                                      # last sticky check (the relapse EDGE's
+                                      # own state)
+        self.hammer_relapse_in = 0    # relapse ENTRIES -- distinct from
+                                      # `hammer_relapse`, which is relapse
+                                      # ROUNDS.  The re-arm runs on entries.
+        self.hammer_relapse_seen = 0  # ... the watch's own high-water mark
+        self.hammer_holds = 0         # hold RUNS started (the clock's episodes)
+        self.hammer_hold_since = None # round the current run started
+        self.hammer_hold_last = -1    # ... last round counted, so several rungs
+                                      # in one round tick the run once
+        self.hammer_hold_rounds = 0   # ROUNDS spent inside a run, once per round
         # PLANK 3 (SK_PECK_FOCUS) instruments.
         self.peck_relaxed = 0         # pecks that skipped the V7 veto
         self.keeper_marches = 0       # keeper turns spent marching at a shooter

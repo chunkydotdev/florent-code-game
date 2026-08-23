@@ -7328,6 +7328,43 @@ SK_HAMMER_PRIO_STICKY = True  # ⛔ THE READER LATCHES ON FIRST SIGHT, and this 
                           # latched, i.e. exactly how much work the sticky is
                           # doing.  A sticky that never covers a relapse is
                           # decoration and the readout will say so.
+SK_HAMMER_HOLD = 20       # ⛔⛔ V2.1 -- THE BOUNDED ESCAPE, AND IT IS
+                          # `_push_res_escape`'s SHAPE VERBATIM (which is
+                          # itself `_b2_burst_hold`'s), same constant, same 20
+                          # rounds, same both-verdict counters, released FOR
+                          # THE EPISODE and re-armed rather than disarmed for
+                          # the match.
+                          # ⛔ THE PROVENANCE IS MEASURED, NOT ARGUED: on the
+                          # V2 traced tape the F1 midgard seat-B keeper (u=4)
+                          # opened ONE deferral episode at r25, never closed it
+                          # (eps=1 rel=0), and refused 968 DISTINCT ROUNDS out
+                          # of the 975 remaining -- 949 of them belt-extension
+                          # tiles.  A "deferral" that runs to the horizon is
+                          # not a deferral, it is a cancellation, and a
+                          # cancellation is exactly the self-defeat v1 RES was
+                          # measured doing (a clamp whose own effect removes
+                          # the condition that would release it).
+                          # ⛔ THE CLOCK RUNS ON THE GATE'S OWN CONDITION (the
+                          # pair still not standing) AND NOT ON A PURSE, for
+                          # `_hammer_defer`'s own stated reason: an
+                          # affordability term here would re-import the
+                          # reserve's measured self-defeat through the side
+                          # door.  The reserve's `bank >= bar` reset maps onto
+                          # this gate's ONLY non-refusing round -- the pair
+                          # standing -- and that is what resets the run.
+                          # ⛔ TWO RE-ARM EDGES, BOTH EDGES AND NEITHER A
+                          # STATE: the standing-tube count FALLING (the
+                          # `_push_res_watch` edge verbatim) and the published
+                          # latch bit going cold after the sticky latched (a
+                          # relapse ENTRY, not a relapse round -- 40 relapse
+                          # rounds on that same midgard keeper would otherwise
+                          # re-arm 40 times and the bound would be decorative).
+                          # ⚠ THE FLOOR IS COMPRESSED AND IT IS DISCLOSED: a
+                          # cell whose warm ring latches early and whose pair
+                          # never stands now defers ~20 rounds per episode
+                          # instead of to the horizon, so the dose per cell
+                          # FALLS by construction.  The seen-choosing bar is
+                          # unchanged (fires spread r24-364, 17/60 never).
 # ⛔⛔ WHAT IS GATED, WHAT IS EXEMPT, AND THE EXEMPTIONS ARE THE SPECIFICATION.
 #   GATED (eco EXPANSION -- new productive capacity):
 #     * `_harvester_action` -- a NEW harvester, 20 Ti x scale, the composite's
