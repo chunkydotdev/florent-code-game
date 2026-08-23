@@ -1636,6 +1636,44 @@ class Player(CommonMixin, RolesMixin, CoreMixin):
         self.doc_ammo_peak = 0        # peak ammunition balance seen post-
                                       # trigger.  The burst's own dose column,
                                       # against SK_DOC_AMMO
+        # --- s57 TAIL C: FUNDED / RATE / STABILITY + THE BOUNDED RE-ARM -----
+        # ⛔ UNCONDITIONAL, for this __init__'s standing engine reason (a field
+        # created only under a flag is how an OFF arm raises AttributeError
+        # inside `run()` and the engine then destroys the unit permanently).
+        # ⛔ EVERY ONE OF THESE IS AN INSTRUMENT EXCEPT `doc_fund_held`,
+        # `doc_fire_round` and `doc_tubes_peak`, which are trigger STATE and
+        # are named as such.  Nothing branches on the counters.
+        self.doc_fund_held = 0        # STATE.  consecutive rounds the bank has
+                                      # sat at or above `_doc_burst_floor()`,
+                                      # capped at SK_DOC_FUND_HOLD
+        self.doc_hold_short = 0       # trigger rounds refused by FUNDED (the
+                                      # level unmet or the hold not yet run)
+        self.doc_rate_cold = 0        # ...refused because the income ring was
+                                      # still under SK_BATTERY2_ECO_WARM
+                                      # samples -- structurally every round
+                                      # before r21, and kept apart from the
+                                      # bar refusal for that reason
+        self.doc_rate_short = 0       # ...refused by the RATE bar itself
+        self.doc_rate_last = None     # last delivered-rate reading, Ti/round,
+                                      # PASSIVE ALREADY SUBTRACTED.  The dose
+                                      # column for the rate term
+        self.doc_unstable = 0         # ...refused by STABILITY (core below max
+                                      # HP or a corefire stamp inside
+                                      # SK_DOC_STABLE_RNDS)
+        self.doc_fire_round = -1      # STATE.  the MOST RECENT round the
+                                      # trigger fired (`doc_round` stays the
+                                      # FIRST).  The re-arm window's origin
+        self.doc_fires = 0            # times the trigger fired.  > 1 only
+                                      # after a re-arm, so this column and
+                                      # `doc_rearms` cross-check each other
+        self.doc_tubes_peak = 0       # STATE.  HIGH-WATER forward-tube census
+                                      # (slot 8) since the current fire.  The
+                                      # re-arm's gate: did the burst ever
+                                      # assemble
+        self.doc_rearms = 0           # phase drops back to 1.  On the CORE it
+                                      # is the decision; on a builder it is the
+                                      # wire being followed back down.  0 on
+                                      # every tape where the burst assembled
         self.rot_on = False           # the phase is open (rnd >= SK_PHASE_ROUND)
         self.rot_body = False         # ...and THIS body is one of the raiders
         self.rot_stage = False        # THE COMMUTE: a raider inside

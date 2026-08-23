@@ -241,6 +241,7 @@ from sk_maps import (
     SK_VH_CARD_AFTER_D, SK_VH_CARD_FACE,
     # --- s57 SK_DOCTRINE: THE SKALMAN IDENTITY, ASSEMBLED -------------------
     SK_DOCTRINE, SK_DOC_BANK, SK_DOC_TRIGGER_LATCH, SK_DOC_LATCH_ONCE,
+    SK_DOC_TAIL_A, SK_DOC_REARM,
     SK_DOC_AMMO_MAX, SK_DOC_DSQ_MIN, SK_DOC_DSQ_MAX, SK_DOC_CARDINAL,
     SK_DOC_BOX, SK_DOC_BOX_SUBORD, SK_DOC_HOME_BOX,
 )
@@ -812,16 +813,16 @@ class RolesMixin:
     def _doc_fired(self, ct, rnd):
         """THE TRIGGER, as this body sees it.  True once the burst is open.
 
-        TWO TAILS, EXACTLY AS REGISTERED, AND THEY ARE READ IN THE ORDER OF
-        HOW LOCAL THEY ARE:
-          * TAIL A -- `get_global_resources() >= SK_DOC_BANK`.  A GLOBAL TEAM
-            quantity, so every body answers it identically in the SAME round
-            with no wire and no lag.
-          * TAIL W -- the core's b31 latch on slot 15, which carries the core's
-            own tail A **or** tail B (the adopted `_b2_eco_ready` income latch
-            plus the live-priced burst reserve).  Tail B needs the income
-            sampler and only the core samples regularly, so it can only reach a
-            builder through the wire.
+        ⭐⭐ s57 TAIL C: THIS BODY IS NOW WIRE-ONLY, IN BOTH DIRECTIONS.
+          * TAIL A -- `get_global_resources() >= SK_DOC_BANK` -- is RETIRED
+            behind SK_DOC_TAIL_A (0 of 15 w1 cells fired on it).  Kept, dead,
+            so a banking economy can have it back with one flag.
+          * TAIL W -- the core's b31 latch on slot 15, which now carries the
+            core's TAIL C (FUNDED and RATE and STABILITY).  Every one of those
+            terms is core-local by construction, so the wire is the only
+            channel a builder can have -- and with tail A off it is also the
+            only one it HAS, which is what makes the core the single authority
+            and the bounded re-arm coherent across bodies.
         ⛔ THE LATCH IS ONE-WAY (SK_DOC_LATCH_ONCE) AND ITS JUSTIFICATION IS
         AT THE FLAG.  With the flag off this method re-derives the phase every
         round, which is the ablation that shows what latching buys.
@@ -831,13 +832,39 @@ class RolesMixin:
         if not SK_DOCTRINE:
             return False
         if SK_DOC_LATCH_ONCE and self.doc_fired:
-            return True
+            # ⭐⭐ s57 TAIL C -- THE BOUNDED RE-ARM, FOLLOWED OFF THE WIRE.
+            # The CORE is the only authority: it drops its own `doc_fired` when
+            # the burst never assembled (`_doc_rearm`), which clears CF_DOC_BIT
+            # on the next publish.  A builder that latched off the wire follows
+            # the bit back DOWN, which is what makes the re-arm a phase change
+            # rather than a core-only bookkeeping edit -- `rot_body` goes False
+            # on the same round and the raider takes `_doc_home_turn` again.
+            # ⛔ AN UNREADABLE WIRE HOLDS THE PHASE WE ARE IN.  A failed read is
+            # not evidence the core dropped the phase, and re-homing both
+            # raiders on a failed read is the expensive direction.
+            if not SK_DOC_REARM:
+                return True
+            try:
+                if ct.read_store(SK_SLOT_COREFIRE) & CF_DOC_BIT:
+                    return True
+            except Exception:
+                return True
+            self.doc_fired = False
+            self.doc_rearms += 1
+            return False
         tail = 0
-        try:
-            if ct.get_global_resources() >= SK_DOC_BANK:
-                tail = 1
-        except Exception:
-            tail = 0
+        # ⛔ TAIL A IS RETIRED (SK_DOC_TAIL_A, ships False): 0 of 15 w1 cells
+        # fired on it.  The branch is kept behind a module constant so a
+        # successor with a banking economy gets the local tail back with one
+        # flag, and so SK_DOC_BANK keeps a reader.  With it False the builder's
+        # ONLY channel is the wire, which is what makes the core the single
+        # authority in BOTH latch directions.
+        if SK_DOC_TAIL_A:
+            try:
+                if ct.get_global_resources() >= SK_DOC_BANK:
+                    tail = 1
+            except Exception:
+                tail = 0
         if not tail:
             try:
                 if ct.read_store(SK_SLOT_COREFIRE) & CF_DOC_BIT:

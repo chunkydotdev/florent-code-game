@@ -42,6 +42,11 @@ from sk_maps import (
     SK_DOCTRINE, SK_DOC_BANK, SK_DOC_TRIGGER_LATCH, SK_DOC_LATCH_ONCE,
     SK_DOC_AMMO, SK_DOC_AMMO_MAX, SK_DOC_CONVERT,
     SK_BATTERY2, SK_BATTERY2_ECO,
+    # --- s57 SK_DOCTRINE, TAIL C: FUNDED / RATE / STABILITY + the re-arm ----
+    SK_DOC_TAIL_A, SK_DOC_FUND_HOLD, SK_DOC_RATE, SK_DOC_RATE_PASSIVE,
+    SK_DOC_PASSIVE_RATE, SK_DOC_STABLE, SK_DOC_STABLE_RNDS,
+    SK_DOC_REARM, SK_DOC_REARM_RNDS, SK_DOC_REARM_TUBES,
+    SK_BATTERY2_ECO_LIFE,
 )
 from sk_roles import (
     DRIP_GUN_MASK, DRIP_SENT_FIELD, SEAT_MASK,
@@ -319,64 +324,203 @@ class CoreMixin:
     def _doc_trigger(self, ct, rnd):
         """THE TRIGGER, evaluated on the core.  True once the burst is open.
 
-        TWO TAILS, AND THE FLAG NOTES CARRY THE PROVENANCE:
-          * TAIL A -- `bank >= SK_DOC_BANK` (600).  The Focalground necessity
-            cut: of their 13 games whose bank never reaches 600, ZERO produce
-            a salvo; of the 67 that do, 52 (78%) salvo.
-          * TAIL B -- the ADOPTED eco latch has fired AND the bank covers
-            `_doc_burst_floor` (one sentinel at the live scale plus one full
-            battery volley of ammunition).  ⛔ THE FLOOR IS A **START** COST,
-            NOT THE WHOLE BURST PRICE, and the measurement that forced that is
-            at the flag: 0 of 988 sampled rounds on the three ON cells ever
-            reached the whole-burst figure, so the battery is bought out of the
-            flow the latch certified rather than pre-paid out of a stock this
-            tree never holds.
+        ⭐⭐ TAIL C (s57 doctrine iteration, 2026-08-24).  THREE TERMS, ALL
+        CORE-LOCAL, ALL CONJUNCTIVE -- FUNDED and RATE and STABILITY.  The
+        constants block in `sk_maps.py` carries the full provenance; in one
+        paragraph, off `scratchpad/s57_heim0/w1diag_rows.json` (the w1 platform
+        window, 15 cells / 3 opponents):
+          * TAIL A (`bank >= SK_DOC_BANK`) FIRED 0 OF 15 and is RETIRED behind
+            SK_DOC_TAIL_A.  Only one cell ever held 600 Ti at all.  The
+            constant and its Focalground necessity cut are KEPT at the flag.
+          * TAIL B FIRED 7 OF 15 -- median r46, earliest r20 -- on the ADOPTED
+            eco latch, which certifies FLOW and says nothing about money in
+            hand or about our own core surviving.  Those cells stood 0-1
+            forward tubes and died at median r176.  ITS ECO-LATCH DEPENDENCY IS
+            REMOVED: the core-local `batt2_eco_since` state was the 7 early
+            misfires.  What survives of tail B is its FLOOR
+            (`_doc_burst_floor`), now the FUNDED term's level.
 
-        ⛔⛔ TAIL B READS `batt2_eco_since` -- THE LATCH STATE -- AND NOT
-        `_b2_eco_ready`'s RETURN VALUE, and the difference is a live r0 hazard
-        rather than a style point.  That predicate returns True UNCONDITIONALLY
-        on its first line when `SK_BATTERY2_ECO` is off, so a future arm
-        ablating the eco piece would turn tail B into "bank >= reserve" alone
-        -- and the opening bank (STARTING_TITANIUM = 500) already exceeds the
-        reserve at scale 1.0.  The burst would fire at r0, which is the rush
-        this doctrine exists to refuse.  Reading the latch STATE makes the
-        earliest possible tail-B round SK_BATTERY2_ECO_WARM samples away,
-        structurally.
-        ⛔ THE PREDICATE IS STILL CALLED (not merely inspected) because calling
-        it is what ADVANCES the latch; the call is the adopted one, unchanged.
-        ⛔ TAIL A CANNOT FIRE AT r0 EITHER: 500 < SK_DOC_BANK = 600.
+        ⛔ THE THREE TERMS AND WHAT EACH REFUSES:
+            FUNDED     bank >= `_doc_burst_floor()` HELD for SK_DOC_FUND_HOLD
+                       consecutive rounds.  A tree that spends every round
+                       touches a level; it does not hold one.
+            RATE       delivered titanium per round (income proxy with the
+                       engine's PASSIVE drip SUBTRACTED) >= the live-scaled
+                       barrel-replacement bar.  Computed, never hardcoded.
+            STABILITY  our core at max HP and its corefire damage stamp cold
+                       for SK_DOC_STABLE_RNDS rounds.
+
+        ⛔ THE SAMPLER RUNS FIRST AND UNCONDITIONALLY -- INCLUDING AFTER THE
+        FIRE, WHICH IS A CHANGE.  A rate is only a rate if the sampling is
+        regular (`_b2_sample` refuses any gap other than exactly one round
+        rather than averaging over a hole), and under SK_DOC_REARM the trigger
+        can be asked again after the burst, so a ring that stopped at the fire
+        would answer the re-armed trigger with a stale window.  The core's
+        `batt2_*` are per-instance and are read by nothing else on the core.
+        ⛔ `_b2_eco_ready` IS NO LONGER CALLED HERE.  It was called to ADVANCE
+        the latch tail B read; tail C reads no latch.  Every other caller is on
+        a builder body and is untouched.
         ⛔ AN UNREADABLE SENTINEL PRICE REFUSES TO FIRE.  A floor we could
         not read is not a floor we have cleared, and committing the whole
         identity on a failed read is the one direction that cannot be undone.
         """
         if not SK_DOCTRINE:
             return False
-        if SK_DOC_LATCH_ONCE and self.doc_fired:
-            return True
-        # THE SAMPLER, FIRST AND UNCONDITIONALLY, because a rate is only a rate
-        # if the sampling is regular -- `_b2_sample` refuses any gap other than
-        # exactly one round rather than averaging over a hole.  No-op on any
-        # SK_BATTERY2_ECO-off arm (one module-constant test).
+        # THE SAMPLER, FIRST AND UNCONDITIONALLY (see the docstring).  No-op on
+        # any SK_BATTERY2_ECO-off arm (one module-constant test).
         self._b2_sample(ct, rnd)
+        if SK_DOC_LATCH_ONCE and self.doc_fired:
+            # ⭐⭐ THE BOUNDED RE-ARM.  Returns True only on the round it drops
+            # the phase; otherwise the latch stands, exactly as before.
+            if not self._doc_rearm(ct, rnd):
+                return True
         try:
             bank = ct.get_global_resources()
         except Exception:
+            self.doc_fund_held = 0
             return False
         tail = 0
-        if bank >= SK_DOC_BANK:
+        if SK_DOC_TAIL_A and bank >= SK_DOC_BANK:
             tail = 1
-        elif SK_DOC_TRIGGER_LATCH and SK_BATTERY2 and SK_BATTERY2_ECO:
-            self._b2_eco_ready(ct, rnd)
-            if self.batt2_eco_since is not None:
-                res = self._doc_burst_floor(ct)
-                if res is not None and bank >= res:
-                    tail = 2
+        elif SK_DOC_TRIGGER_LATCH and self._doc_tail_c(ct, rnd, bank):
+            tail = 3
         if not tail:
             return False
         if self.doc_round < 0:
             self.doc_round = rnd
             self.doc_tail = tail
+        self.doc_fire_round = rnd
+        self.doc_fires += 1
+        self.doc_tubes_peak = 0          # a NEW re-arm window opens here
         self.doc_fired = True
+        return True
+
+    def _doc_tail_c(self, ct, rnd, bank):
+        """TAIL C -- FUNDED and RATE and STABILITY, evaluated on the core.
+
+        ⛔ EVERY REFUSAL IS COUNTED SEPARATELY (`doc_hold_short`,
+        `doc_rate_cold`, `doc_rate_short`, `doc_unstable`).  A conjunction that
+        never fires and a conjunction whose THIRD term never fires read
+        identically in the fire-round column and must not read identically in
+        the trace.  ⛔ NOTHING BRANCHES ON ANY OF THEM.
+        ⛔ THE TERMS ARE EVALUATED CHEAPEST-FIRST AND SHORT-CIRCUIT, so a round
+        that is not funded pays one cost getter and no rate arithmetic.
+        """
+        # --- FUNDED: the level, HELD ------------------------------------
+        res = self._doc_burst_floor(ct)
+        if res is None:
+            self.doc_fund_held = 0
+            self.doc_hold_short += 1
+            return False
+        if bank >= res:
+            if self.doc_fund_held < SK_DOC_FUND_HOLD:
+                self.doc_fund_held += 1
+        else:
+            self.doc_fund_held = 0
+        if self.doc_fund_held < SK_DOC_FUND_HOLD:
+            self.doc_hold_short += 1
+            return False
+        # --- RATE: delivery, with PASSIVE SUBTRACTED --------------------
+        # ⛔ THE WINDOW IS `_b2_sample`'s OWN: SK_BATTERY2_ECO_W = 40 rounds
+        # with a SK_BATTERY2_ECO_WARM = 20 sample warm-up, sampled by the CORE
+        # every round of the match.  ⇒ this term cannot answer before r21,
+        # which is the structural floor under the autopsy's "fire at r20".
+        # ⛔ `_b2_rate()` IS AN INCOME PROXY AND INCLUDES THE ENGINE'S PASSIVE
+        # DRIP; `titanium_collected` excludes passive, so a bar read off the
+        # raw proxy can be cleared by a bot with no economy at all.  The
+        # subtraction is what makes this a DELIVERY bar.  Both of its
+        # approximations are disclosed at SK_DOC_RATE_PASSIVE and both make the
+        # bar HARDER to clear.
+        if SK_DOC_RATE:
+            r = self._b2_rate()
+            if r is None:
+                self.doc_rate_cold += 1
+                return False
+            if SK_DOC_RATE_PASSIVE:
+                r -= SK_DOC_PASSIVE_RATE
+            self.doc_rate_last = r
+            try:
+                bar = ct.get_sentinel_cost() / float(SK_BATTERY2_ECO_LIFE)
+            except Exception:
+                return False
+            if r < bar:
+                self.doc_rate_short += 1
+                return False
+        # --- STABILITY: our own core, core-local -------------------------
+        if SK_DOC_STABLE and not self._doc_stable(ct, rnd):
+            self.doc_unstable += 1
+            return False
+        return True
+
+    def _doc_stable(self, ct, rnd):
+        """STABILITY -- True while our core is whole and has been left alone.
+
+        TWO CORE-LOCAL READS THAT COVER EACH OTHER'S BLIND SPOT:
+          * `get_hp() < get_max_hp()` is FRESH THIS ROUND but blind to damage
+            that has already been healed back;
+          * `corefire_last` REMEMBERS, and is ONE ROUND STALE by construction
+            -- `_doc_trigger` runs ABOVE `_corefire_report` in `_core` so the
+            b31 burst latch reaches the wire the round it fires rather than the
+            round after.  Disclosed rather than papered over: a hit taken THIS
+            round is caught by the HP half in the same round, so the staleness
+            cannot open a hole, only shorten the cold window by one round.
+        ⛔ AN UNREADABLE HP IS NOT A STABLE CORE.  Same direction as the
+        trigger's unreadable-price refusal: do not commit the identity on a
+        number we could not read.
+        ⛔ DEPENDENCY, STATED: `corefire_last` is only advanced while
+        SK_COREFIRE is on (True, adopted).  With it off this degrades to the HP
+        half alone, which is a weaker term and not a wrong one.
+        """
+        try:
+            if ct.get_hp() < ct.get_max_hp():
+                return False
+        except Exception:
+            return False
+        if (self.corefire_last >= 0
+                and rnd - self.corefire_last < SK_DOC_STABLE_RNDS):
+            return False
+        return True
+
+    def _doc_rearm(self, ct, rnd):
+        """THE BOUNDED RE-ARM.  True only on the round it drops the phase.
+
+        Tracks the burst's HIGH-WATER forward-tube count and, if
+        SK_DOC_REARM_RNDS rounds after the fire the battery has never stood
+        SK_DOC_REARM_TUBES tubes, clears `doc_fired` so the trigger re-arms.
+
+        ⛔ HIGH-WATER, NOT CURRENT.  The question is "did the burst ever
+        assemble", not "is it assembled now" -- a tube that stood and was
+        knocked out answers the first and not the second.
+        ⛔ THE CORE IS THE ONLY AUTHORITY.  Clearing `doc_fired` here clears
+        CF_DOC_BIT on this same round's publish (the word is written WHOLE
+        every round, never read-modify-write), and a builder that latched off
+        the wire follows the bit back down in `_doc_fired`.  One writer, one
+        latch, in both directions.
+        ⛔ IT CANNOT UN-FIRE A WORKING BURST: the tube high-water gate is
+        checked BEFORE the clock, so a battery that reached two tubes is never
+        re-armed however long it then takes.  That is exactly the regime
+        SK_DOC_LATCH_ONCE's stranding argument covers.
+        ⚠ THE SLOT-8 CENSUS IS THE ONE TAIL-C INPUT WHOSE WRITER IS NOT THE
+        CORE.  An absent or unreadable writer reads 0, which biases toward
+        re-arming -- i.e. toward phase 1, the identity's own default.
+        """
+        if not SK_DOC_REARM:
+            return False
+        try:
+            drip = ct.read_store(SK_SLOT_DRIP)
+        except Exception:
+            drip = 0
+        tubes = (drip >> DRIP_SENT_FIELD) & DRIP_GUN_MASK
+        if tubes > self.doc_tubes_peak:
+            self.doc_tubes_peak = tubes
+        if self.doc_tubes_peak >= SK_DOC_REARM_TUBES:
+            return False
+        if (self.doc_fire_round < 0
+                or rnd - self.doc_fire_round < SK_DOC_REARM_RNDS):
+            return False
+        self.doc_fired = False
+        self.doc_fund_held = 0
+        self.doc_rearms += 1
         return True
 
     def _doc_convert(self, ct, rnd):

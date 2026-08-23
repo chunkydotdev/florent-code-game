@@ -5972,10 +5972,41 @@ def known_map_for(w, h, own, ct=None):
 #   not deliver, prefers the CORE-WARD one, and bounds the walk.
 # ===========================================================================
 
-SK_ROUTE_HOME = False     # THE ARM'S MASTER FLAG.  OFF: `_route_missing` is
-                          # never called, `_route_action` and `_route_walk`
-                          # return before their first read, and every rung
-                          # around them is the v632 baseline byte for byte.
+SK_ROUTE_HOME = True      # ⭐⭐ ARMED s57 2026-08-24 (doctrine iteration, w1
+                          # trigger autopsy).  OFF: `_route_missing` is never
+                          # called, `_route_action` and `_route_walk` return
+                          # before their first read, and every rung around them
+                          # is the v632 baseline byte for byte.
+                          # ⛔⛔ ITS OLD REFUSAL WAS A **CHASSIS-CURRENCY**
+                          # VERDICT AND THE IDENTITY INVERSION RETIRES THAT
+                          # BASIS.  The arm was measured and shipped False on a
+                          # chassis whose currency was the timely checkmate off
+                          # a rush; delivery was scored as eco that does not
+                          # buy the kill.  Under SK_DOCTRINE the burst is PAID
+                          # FOR OUT OF DELIVERED TITANIUM -- phase 1 is
+                          # accumulate, and the trigger's own RATE term (tail
+                          # C, `_doc_trigger`) is a delivered-rate bar.  ⇒
+                          # DELIVERY IS THE BANK'S ARTERY, and a refusal
+                          # reasoned under the old currency is void even where
+                          # the fixture was clean (CLAUDE.md: "a price
+                          # refutation computed under the retired currency is
+                          # void even if the fixture was clean").
+                          # ⛔ THE MEASUREMENT THAT FORCES IT, off the w1
+                          # platform tape (15 cells, `scratchpad/s57_heim0/
+                          # w1diag_rows.json`): delivered titanium per round
+                          # (`titanium_collected` / rounds played) reads
+                          # MEDIAN 0.62 and 2 of 15 cells deliver EXACTLY
+                          # ZERO -- the never-completed-belt class named at the
+                          # top of this block -- against a tail-C rate bar of
+                          # `get_sentinel_cost() / SK_BATTERY2_ECO_LIFE`
+                          # (~1.6-2.1 Ti/round at the scales these cells run).
+                          # A doctrine that waits for a delivered rate it never
+                          # reaches is tail A's silence a second time.
+                          # ⚠ DISCLOSED: this is an ARMING on a re-priced
+                          # currency, NOT a new measurement of the arm.  Its
+                          # own registered expectation (docs/research/
+                          # EXPECTATION-v632heim-route1-2026-08-23.md) still
+                          # governs what it claims.
 
 SK_ROUTE_HOME_TI = 0      # titanium that must REMAIN in the bank after the
                           # conveyor is paid for.  0 = the same affordability
@@ -8204,8 +8235,12 @@ SK_SENTRY_IDLE_LIFT = True  # THE PRE-`FROM` ESCAPE HATCH, ablatable alone.
 #       engineer and the cage walker do not walk out.  They take HOME roles --
 #       eco building, box construction, sentry answers -- on the keeper's own
 #       ladder.  The bank accrues.
-#   THE TRIGGER           a BANK-THRESHOLD latch (the Focalground pattern +
-#       our own adopted eco latch).  Two tails, both disclosed, below.
+#   THE TRIGGER           ⭐ s57 2026-08-24, REBUILT AS **TAIL C**: FUNDED
+#       (the burst floor, HELD) and RATE (delivered titanium, passive
+#       subtracted) and STABILITY (our core whole and left alone), all
+#       core-local.  Tail A (bank >= 600) is retired dead and tail B's
+#       eco-latch dependency is removed; both are disclosed at their flags with
+#       the w1 measurements that retired them.
 #   PHASE 2 (the burst)   BOTH raiders out, the 4-sentinel battery in the
 #       STANDOFF band, conversion sized to the kill.
 #
@@ -8216,7 +8251,18 @@ SK_SENTRY_IDLE_LIFT = True  # THE PRE-`FROM` ESCAPE HATCH, ablatable alone.
 
 SK_DOCTRINE = True   # THE IDENTITY, ON (Magnus's standing order 2026-08-24): no-rush phase 1 + box to-cell + bank trigger + standoff burst; screens are debuggers, the field judges       # ⛔ THE MASTER, DEFAULT OFF.
 
-SK_DOC_BANK = 600         # ⭐⭐ TAIL A OF THE TRIGGER: fire the burst when the
+SK_DOC_BANK = 600         # ⛔⛔ DEAD AS OF s57 2026-08-24 -- ITS ONLY READERS
+                          # ARE BEHIND `SK_DOC_TAIL_A`, WHICH SHIPS False.
+                          # THE FIELD CONFIRMED THE PRE-BUILD PREDICTION: tail
+                          # A fired 0 of 15 w1 platform cells and only ONE cell
+                          # ever held 600 Ti at all (33 rounds of 267) --
+                          # `scratchpad/s57_heim0/w1diag_rows.json`.  The
+                          # constant, its provenance and its necessity cut are
+                          # KEPT VERBATIM below because they are the record of
+                          # why a stock threshold copied onto a flow economy
+                          # produces a trigger that is silent for the match.
+                          # THE ORIGINAL NOTE FOLLOWS:
+                          # ⭐⭐ TAIL A OF THE TRIGGER: fire the burst when the
                           # team bank reaches this many titanium.
                           # PROVENANCE, and it is a MEASURED NECESSITY CUT off
                           # a real opponent, not a chosen round number --
@@ -8259,7 +8305,17 @@ SK_DOC_BANK = 600         # ⭐⭐ TAIL A OF THE TRIGGER: fire the burst when th
 # ⇒ THE WORK IS CARRIED BY TAIL B, whose floor is priced BELOW in the quantity
 # this tree actually has.
 
-SK_DOC_TRIGGER_LATCH = True   # ⭐ TAIL B, ablatable alone under the master.
+SK_DOC_TRIGGER_LATCH = True   # ⭐⭐ s57 2026-08-24: THIS FLAG NOW GATES **TAIL
+                          # C** (FUNDED / RATE / STABILITY, the block below).
+                          # It keeps its name so historical greps still land
+                          # and so the ablation "master on, non-bank tail off"
+                          # is the same one flag it always was.  With tail A
+                          # also retired (SK_DOC_TAIL_A) this flag False means
+                          # THE TRIGGER CANNOT FIRE AT ALL -- which is mutant
+                          # M1's regime, reached by one flag instead of two.
+                          # THE ORIGINAL TAIL-B NOTE FOLLOWS, AS THE RECORD OF
+                          # WHAT THIS FLAG USED TO GATE:
+                          # ⛔ TAIL B, ablatable alone under the master.
                           # ON: the burst ALSO fires when the ADOPTED eco latch
                           # (`_b2_eco_ready`, SK_BATTERY2_ECO -- income >=
                           # SK_BATTERY2_ECO_AMMO Ti/round sustained over
@@ -8324,6 +8380,207 @@ SK_DOC_LATCH_ONCE = True  # ⛔⛔ THE #132 DISCLOSURE, AND IT IS A
                           # on every measured tape -- so this is not a
                           # predicate that has never produced its other
                           # verdict.  The fire-round trace reads BOTH tails.
+
+# ===========================================================================
+# ⭐⭐ TAIL C -- THE TRIGGER, REBUILT (s57 doctrine iteration, 2026-08-24).
+# GAME CONTEXT: in-engine build-order decisions of our own core in the Florent
+# Code League, a sandboxed bot-vs-bot competition on a simulated grid.
+#
+# THE AUTOPSY THAT FORCED IT (`scratchpad/s57_heim0/w1diag_rows.json`, the w1
+# platform window, 15 cells / 3 opponents):
+#   * TAIL A NEVER FIRED.  0 of 15 cells fired on the bank threshold; only ONE
+#     cell ever held bank >= SK_DOC_BANK at all (33 rounds of 267).  This is
+#     the SAME silence the pre-build sampling predicted at the flag above
+#     ("0 of 988 sampled rounds reach 600") -- now confirmed on the FIELD, not
+#     on our own screens.  ⇒ TAIL A IS RETIRED, `SK_DOC_TAIL_A` below.
+#   * TAIL B FIRED, AND IT FIRED **EARLY AND POOR**.  7 of 15 cells fired,
+#     median round 46, and the earliest at r20.  Its eco-latch dependency is
+#     the core-local `batt2_*` state -- an income latch that certifies FLOW and
+#     says nothing about whether the money is IN HAND or whether the core is
+#     surviving -- and the cells that fired at r20-r46 stood 0-1 forward tubes
+#     and were dead by r176 on median.  Fire-at-r19, starve-by-r25.
+# ⇒ THE REPLACEMENT IS THREE TERMS, ALL CORE-LOCAL, ALL CONJUNCTIVE:
+#     FUNDED     the money is IN HAND and STAYS in hand (a level, HELD)
+#     RATE       delivery is running at the rate a barrel costs to keep
+#     STABILITY  our own core is not being taken apart while we commit
+#   FIRE = FUNDED and RATE and STABILITY.
+# ⛔⛔ CORE-LOCAL ON PURPOSE.  The w1 autopsy's other finding is that slot 8
+# bit 12 is a DEAD cross-body channel on this chassis, so a trigger term that
+# needs a builder to publish something is a term that does not evaluate.  Every
+# input below is read by the CORE on its own turn: `get_global_resources()`,
+# `get_global_ammo()`, `get_hp()` / `get_max_hp()`, its own `corefire_last`
+# stamp, and slot 15 which the core itself WRITES.  The one store read that is
+# not the core's own writer is the forward-tube census on slot 8, used ONLY by
+# the re-arm's instrument half (see SK_DOC_REARM_TUBES).
+
+SK_DOC_TAIL_A = False     # ⛔⛔ TAIL A, RETIRED AND KEPT DEAD.  With this False
+                          # the `bank >= SK_DOC_BANK` branch is a module-
+                          # constant conjunction that never executes, on BOTH
+                          # the core (`_doc_trigger`) and the builder
+                          # (`_doc_fired`).  SK_DOC_BANK itself is KEPT at 600
+                          # with its full provenance block above -- it is the
+                          # FIELD's own necessity point and the record of why
+                          # copying a stock threshold onto a flow economy
+                          # produced a silent trigger.  0 of 15 w1 cells fired
+                          # on it.  A successor with a banking economy flips
+                          # this one flag and gets the tail back.
+
+SK_DOC_FUND_HOLD = 3      # ⭐ FUNDED, THE **HELD** HALF: consecutive rounds the
+                          # bank must sit at or above `_doc_burst_floor()`
+                          # (`get_sentinel_cost() + SK_DOC_AMMO_MAX`, the SAME
+                          # quantity tail B used and the box ratchet guards --
+                          # one formula, three consumers) before the trigger
+                          # will read FUNDED.
+                          # ⛔ WHY A HOLD AND NOT A LEVEL.  This tree SPENDS
+                          # EVERY ROUND (bank median 23-62 on the pre-build
+                          # sampling, median 0.62 Ti/round delivered on w1), so
+                          # a bank that touches the floor for ONE round is a
+                          # stack that landed and is about to be spent on a
+                          # harvester.  Three consecutive rounds is the
+                          # cheapest predicate that separates "we hold this"
+                          # from "this passed through".  The core samples every
+                          # round for the whole match, so the counter is a
+                          # counter and not a ring.
+                          # ⚠ SIZED, NOT MEASURED: 3 is the smallest hold that
+                          # can distinguish a single arriving stack (one round)
+                          # from a level.  Its other verdict is reachable by
+                          # construction (a 2-round touch refuses) and the unit
+                          # battery drives it both ways.
+
+SK_DOC_RATE = True        # ⭐⭐ THE RATE TERM, ablatable alone.  ON: the burst
+                          # also requires the DELIVERED-TITANIUM rate to be at
+                          # or above the barrel-replacement bar.
+                          # ⛔ THE BAR IS `get_sentinel_cost() /
+                          # SK_BATTERY2_ECO_LIFE` -- COMPUTED, NEVER HARDCODED,
+                          # so it tracks the ONE GLOBAL ADDITIVE cost scale --
+                          # i.e. "we can afford to keep replacing the barrel we
+                          # are about to buy".  It is the SAME form
+                          # `_b2_eco_ready`'s barrel term uses (that term ships
+                          # False there because `_battery_bar` already prices
+                          # the next barrel per plant; nothing in the TRIGGER
+                          # prices a barrel, so there is no double count here).
+                          # At SK_BATTERY2_ECO_LIFE = 29 and the scales these
+                          # cells run the bar is ~1.6-2.1 Ti/round, against a
+                          # w1 median DELIVERED rate of 0.62.
+SK_DOC_RATE_PASSIVE = True  # ⛔⛔ PASSIVE IS SUBTRACTED, AND THIS IS THE WHOLE
+                          # REASON THE TERM IS NEW RATHER THAN A REUSE OF
+                          # `_b2_rate()`.  `_b2_sample` measures INCOME (bank
+                          # deltas plus converted ammunition, clamped positive),
+                          # which INCLUDES the engine's passive drip of
+                          # PASSIVE_TITANIUM_AMOUNT every
+                          # PASSIVE_TITANIUM_INTERVAL rounds.  Passive arrives
+                          # whether or not a single harvester ever delivers, so
+                          # an income bar can be cleared by a bot with NO
+                          # ECONOMY AT ALL -- and `titanium_collected` excludes
+                          # passive for exactly this reason (project CLAUDE.md:
+                          # a bot that builds no harvester finishes holding
+                          # 2,892 Ti of accrued passive with
+                          # `titanium_collected` = 0).  Subtracting it is what
+                          # makes this a DELIVERY bar.
+                          # ⚠ DISCLOSED APPROXIMATION, TWICE OVER, BOTH IN THE
+                          # CONSERVATIVE DIRECTION:
+                          #   (1) `_b2_sample` CLAMPS a round's delta at 0, so
+                          #       the subtraction is applied to a clamped mean
+                          #       rather than round by round.  Passive lands as
+                          #       a +10 spike on one round in four and survives
+                          #       the clamp; a spend-heavy round contributes 0
+                          #       instead of a negative.  ⇒ the proxy is a
+                          #       LOWER bound on gross income and the corrected
+                          #       figure is a lower bound on delivery.
+                          #   (2) it cannot see titanium spent on BUILDS in the
+                          #       same round it arrived, which is income this
+                          #       form throws away.
+                          #   Both make the bar HARDER to clear, never easier.
+SK_DOC_PASSIVE_RATE = (float(_SK_GC.PASSIVE_TITANIUM_AMOUNT)
+                       / float(_SK_GC.PASSIVE_TITANIUM_INTERVAL))
+                          # the engine's passive drip in titanium per round
+                          # (10 every 4 rounds = 2.5).  READ OFF GameConstants
+                          # rather than the literal so an organiser rebalance
+                          # moves it, exactly as SK_BATTERY2_SENT_BUMP does.
+# ⛔ THE WINDOW IS **DISCLOSED AND BORROWED, NOT NEW**: the rate is read off
+# `_b2_rate()`, whose ring is SK_BATTERY2_ECO_W = 40 rounds with a
+# SK_BATTERY2_ECO_WARM = 20 sample warm-up, sampled by the CORE (the trigger
+# calls `_b2_sample` first and unconditionally, which is why the core's ring is
+# gapless where the engineer's restarts on every turnover).  ⇒ THE TRIGGER
+# CANNOT FIRE BEFORE r21 STRUCTURALLY: 20 samples require 20 consecutive
+# round-pairs.  That is the floor under "fire-at-r19", stated as a property of
+# the sampler rather than a clock constant.
+
+SK_DOC_STABLE = True      # ⭐⭐ THE STABILITY TERM, ablatable alone.  ON: the
+                          # trigger REFUSES while our own core is below max HP,
+                          # or while the corefire damage stamp (slot 15's b0-10
+                          # field, which the CORE itself writes) is younger than
+                          # SK_DOC_STABLE_RNDS rounds.
+                          # ⛔ WHY IT IS A TRIGGER TERM AND NOT A BATTERY GATE.
+                          # The burst is IRREVERSIBLE BY CONSTRUCTION (see
+                          # SK_DOC_LATCH_ONCE): it spends the bank on barrels
+                          # and walks both raider bodies off the home ladder.
+                          # Committing that on the round our core is being
+                          # taken apart removes the two bodies that heal and
+                          # answer.  w1's fired cells died at median r176.
+                          # ⛔ BOTH READS ARE CORE-LOCAL AND THEY COVER EACH
+                          # OTHER'S BLIND SPOT: `get_hp()` is FRESH THIS ROUND
+                          # but blind to damage already healed back; the stamp
+                          # is one round stale (the trigger runs ABOVE
+                          # `_corefire_report` in `_core`, deliberately, so the
+                          # b31 latch reaches the wire the round it fires) but
+                          # remembers.  Neither alone is the term.
+SK_DOC_STABLE_RNDS = 10   # rounds the corefire damage stamp must be COLD.
+                          # ⚠ SIZED AGAINST SK_COREFIRE_TTL = 24, deliberately
+                          # SHORTER: the alarm's own freshness window governs
+                          # DEFENSIVE answers, which should outlast the shot;
+                          # this governs a COMMITMENT, and holding the whole
+                          # identity hostage to a single peck for 24 rounds is
+                          # the falsifier-LOW direction (never fires).  Its
+                          # other verdict is reachable on every tape -- our
+                          # core is hit in 46.3% of all games and untouched for
+                          # long stretches of the rest.
+
+SK_DOC_REARM = True       # ⭐⭐ THE BOUNDED RE-ARM, and it is the answer to the
+                          # autopsy's fire-at-r19-starve-by-r25 class.  ON: if
+                          # SK_DOC_REARM_RNDS rounds after the trigger fired the
+                          # battery has NEVER stood SK_DOC_REARM_TUBES forward
+                          # tubes, the phase drops back to 1 and the trigger
+                          # re-arms.
+                          # ⛔ IT DOES NOT WEAKEN SK_DOC_LATCH_ONCE's ARGUMENT,
+                          # IT BOUNDS IT.  That flag's justification is that
+                          # un-firing would "strand the tubes and re-home the
+                          # raiders on the exact round the battery starts
+                          # paying".  This re-arm fires only where THERE ARE NO
+                          # TUBES TO STRAND -- the battery never reached two --
+                          # so the regime it un-fires is precisely the regime
+                          # the latch-once argument does not cover.
+                          # ⛔ THE CORE IS THE ONLY AUTHORITY.  It drops its own
+                          # `doc_fired`, which clears CF_DOC_BIT on the next
+                          # publish (the word is written WHOLE every round), and
+                          # a builder that latched off the wire FOLLOWS the bit
+                          # back down.  One writer, one latch, in both
+                          # directions.
+                          # ⚠ THE RE-ARM IS NOT FREE AND IS NOT ARGUED FREE:
+                          # titanium already converted to ammunition does not
+                          # convert back, and any barrel bought stays bought.
+                          # What it recovers is the two raider BODIES and the
+                          # spend priority.  `doc_rearms` counts it.
+SK_DOC_REARM_RNDS = 40    # rounds after the fire before the re-arm may bind.
+                          # ⚠ SIZED off the burst's own measured length: the
+                          # Focalground pattern runs ~29-30 rounds from first
+                          # sentinel to core death (§2.2, medians 30 / 29), so
+                          # 40 is one full burst plus a margin -- a burst that
+                          # has not stood two tubes in longer than a whole
+                          # successful burst takes is not slow, it is starved.
+SK_DOC_REARM_TUBES = 2    # forward tubes that must have stood at some point in
+                          # the window.  ⛔ READ OFF SLOT 8's forward-sentinel
+                          # census (`DRIP_SENT_FIELD`, the SAME field
+                          # `_doc_convert` already reads for its reserve), and
+                          # tracked as a HIGH-WATER MARK so a tube that stood
+                          # and was knocked out still counts -- the question is
+                          # "did the burst ever assemble", not "is it assembled
+                          # now".  ⚠ THIS IS THE ONE TAIL-C INPUT WHOSE WRITER
+                          # IS NOT THE CORE (the siege engineer writes slot 8).
+                          # An absent writer reads 0, which biases toward
+                          # re-arming; that is the direction that returns us to
+                          # phase 1, i.e. to the identity's own default, and it
+                          # is stated rather than papered over.
 
 SK_DOC_AMMO = 300         # ⭐⭐ THE BURST'S AMMUNITION TARGET, in ammunition.
                           # PROVENANCE, arithmetic on banked numbers:
