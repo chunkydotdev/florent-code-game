@@ -1629,6 +1629,20 @@ class Player(CommonMixin, RolesMixin, CoreMixin):
         self.push_res_hold_rounds = 0 # ROUNDS spent inside a run, once per round
         self.push_res_ready = 0       # rounds the purse ALREADY cleared the bar
                                       # (the clock's other verdict)
+        # --- PIECE 1, V3 AMENDMENT: the bank-aware release ------------------
+        # ⛔ UNCONDITIONAL, for the engine reason both blocks above state.  It
+        # reads 0 on every OFF arm and on every SK_PUSH_RES_BANKAWARE=False
+        # ablation, so it is an OFF-IDENTITY WITNESS as well as the
+        # amendment's own dose.
+        self.push_res_bank_pass = 0   # rounds a gated rung was ALLOWED because
+                                      # the bank ALREADY cleared the live pair
+                                      # bar -- the V3 tail, kept apart from
+                                      # `push_res_off` (pair standing),
+                                      # `push_res_esc_pass` (bounded escape)
+                                      # and `push_res_pass` (clears the bar
+                                      # AFTER paying this rung's price).  Only
+                                      # rounds v2.1 would have REFUSED reach
+                                      # it, so it is the incremental dose.
         # --- PIECE 2, the warden -------------------------------------------
         self._push_cands = None       # memo: the pure-geometry site list
         self.push_done_seen = False   # a friendly launcher already stands in

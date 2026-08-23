@@ -214,7 +214,7 @@ from sk_maps import (
     SK_KEEPER_CHEW_ON, SK_KEEPER_CHEW_GIVEUP,
     # --- s57 THE PUSH (SK_PUSH): pair reserve + warden + engineer forward ----
     SK_PUSH, SK_PUSH_RESERVE, SK_PUSH_RES_DEFENCE,
-    SK_PUSH_RES_HOLD, SK_PUSH_RES_HALF,
+    SK_PUSH_RES_HOLD, SK_PUSH_RES_HALF, SK_PUSH_RES_BANKAWARE,
     SK_PUSH_WARDEN, SK_PUSH_WARDEN_ROLE, SK_PUSH_WARDEN_UNTIL,
     SK_PUSH_LAUNCH_RESERVE, SK_PUSH_PICKUP_DSQ, SK_PUSH_THROW_MAX_DSQ,
     SK_PUSH_MIN_SEATS, SK_PUSH_SITE_MAX_DSQ, SK_PUSH_WALK_MAX, SK_PUSH_GIVEUP,
@@ -7437,6 +7437,32 @@ class RolesMixin:
         standing, `push_res_esc_pass` for the escape), because two releases
         pooled into one column cannot be told apart in the readout.
 
+        ⭐⭐ V3 AMENDMENT (SK_PUSH_RES_BANKAWARE) -- ONE CONDITION, AND IT IS
+        THE COMPOSITE SMOKE'S OWN CAUSE: **the reserve releases whenever the
+        bank ALREADY clears the live pair bar.**  The hold exists to ACCUMULATE
+        the bar; once the bar is in hand, holding is pure eco loss and the
+        binder is the engineer's plant cadence rather than money.  On the rich
+        fixture (F3) the v2.1 reserve gave back its whole bar margin (19 -> 15
+        wins, kills −5, eco −15%) doing exactly that.
+          * THE TEST IS `bank >= bar` -- the PURSE, not this rung's price.  The
+            rung's own test (`bank - price >= bar`, above) is the STRICTER one
+            and keeps its own column; this tail therefore counts ONLY the
+            rounds v2.1 would have refused, so `push_res_bank_pass` is the
+            amendment's incremental dose and not a re-count.
+          * IT SITS BELOW THE ESCAPE ON PURPOSE.  `_push_res_escape` still runs
+            first and still owns the hold clock, the episode release and the
+            re-arm edge -- untouched, so every v2.1 clock column stays readable
+            as banked.  (`push_res_ready` and this tail read the same predicate
+            at the same moment; that is not duplication, it is the clock's
+            verdict and the gate's verdict kept in separate columns.)
+          * DIRECTION, DISCLOSED: this condition can only ever RELEASE what
+            v2.1 refused -- one extra `return False`, no refusal path touched
+            -- so v3's refused set is a SUBSET of v2.1's on identical state.
+            That is why the sub-flag ships default-True under the master; it is
+            still a flag because "releases more" is a claim about the CODE, and
+            whether releasing more eco costs tubes is a claim about the GAME
+            that only an ablation can price.
+
         ⛔ THREE STRUCTURAL EXEMPTIONS, AND THEY ARE THE SPECIFICATION RATHER
         THAN SOFTENING -- none of them is a clause inside this method, so none
         can be edited out by accident:
@@ -7482,6 +7508,9 @@ class RolesMixin:
             if bank - self._push_price(ct, kind) >= bar:
                 self.push_res_pass += 1         # armed, and this buy clears it
                 return False
+            if SK_PUSH_RES_BANKAWARE and bank >= bar:
+                self.push_res_bank_pass += 1    # RELEASED: the bar is ALREADY
+                return False                    # in hand (V3, one condition)
         except Exception:
             return False
         self.push_res_held += 1

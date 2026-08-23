@@ -6996,6 +6996,47 @@ SK_PUSH_RES_HALF = True   # ⭐ THE live == 1 HALF-BAR.  `_b2_pair_bar` prices
                           # the purchase it protects; a call cannot.  Both bars
                           # are already driven to both verdicts by the battery
                           # arm's unit controls.
+SK_PUSH_RES_BANKAWARE = True  # ⭐⭐ V3 (ONE CONDITION): THE RESERVE RELEASES
+                          # WHENEVER THE BANK ALREADY CLEARS THE LIVE PAIR BAR.
+                          # ⛔ THE COMPOSITE SMOKE'S OWN CAUSE, not a new
+                          # policy: chassis-on-barrels held F1/F2 (+2 wins /
+                          # −77 median; +3 kills / −38 median) but F3 GAVE BACK
+                          # its bar margin (19 -> 15 wins, kills −5, eco −15%)
+                          # because the reserve held eco during pair-short
+                          # spans REGARDLESS OF BANK -- on the RICH fixture
+                          # that is holding the economy hostage to save money
+                          # ALREADY IN HAND.  The hold exists to ACCUMULATE the
+                          # bar; once the bar is cleared the hold buys nothing
+                          # and the binder is the engineer's PLANT CADENCE, not
+                          # money (the upstream truth every s57 diagnostic
+                          # shares).
+                          # ⛔ WHY DEFAULT-True IS SAFE TO SHIP UNDER THE
+                          # MASTER, AND IT IS A DIRECTIONAL ARGUMENT RATHER
+                          # THAN A HOPE: this condition can only ever RELEASE
+                          # spend that v2.1 would have REFUSED -- it adds one
+                          # `return False` tail and touches no refusal path, so
+                          # the set of refused rounds under v3 is a SUBSET of
+                          # v2.1's on identical state.  It cannot hold more, it
+                          # cannot hold longer, and it cannot make a purchase
+                          # illegal.  ⛔ IT IS STILL A FLAG, because "only
+                          # releases more" is an argument about the CODE and
+                          # not about the GAME: releasing more eco can still
+                          # cost tubes, and an ablation is the only thing that
+                          # can price that.
+                          # ⛔ THE BAR IS `_push_res_bar` CALLED, NOT RESTATED
+                          # (that method's own stated reason), so the v3
+                          # condition automatically inherits the V2 HALF-BAR at
+                          # live == 1 and the two-barrel purse at live == 0.
+                          # ⛔ THE ESCAPE AND EPISODE MACHINERY ARE UNTOUCHED:
+                          # `_push_res_escape` still runs FIRST and still keeps
+                          # its own clock, its own counters and its own re-arm
+                          # edge, so the v2.1 hold-clock columns stay readable
+                          # exactly as banked.  The new tail is counted APART
+                          # (`push_res_bank_pass`) from `push_res_off` (pair
+                          # standing), `push_res_esc_pass` (bounded escape) and
+                          # `push_res_pass` (the buy clears the bar AFTER
+                          # paying), because release tails pooled into one
+                          # column cannot be told apart in the readout.
 
 # --- PIECE 2: THE WARDEN ---------------------------------------------------
 SK_PUSH_WARDEN = False  # DEFAULT FLIPPED s57: v1-refused piece (cannibalizes the cage walker) must not ride the master silently — the burst-gap defect family     # sub-flag under the master, ablatable alone.  The
