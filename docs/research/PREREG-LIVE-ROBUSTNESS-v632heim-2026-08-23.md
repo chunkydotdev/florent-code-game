@@ -320,3 +320,31 @@ CONCLUSIONS    <only from the enumerated-permitted set; no ship/no constant chan
 ## AUTHORITY
 
 Draft: a fresh opus agent, this file only. **Ratification, lock, firing and every verdict: the builder.** Data cited above is from the repo's own corpora and tools at the timestamps named; the one live figure (our rating 1807) is the `target_value.py --band` run at 2026-08-23T20:07:17Z and is re-verified before the payoff line is quoted again.
+
+---
+## EXECUTION RECORD (BUILDER s57, appended post-fire — results NOT yet read
+beyond match-level scores; the mechanism readout runs as this commits)
+
+**GAME CONTEXT: in-game Florent Code League.**
+
+- Magnus's window sentence: "Go go!" (gate 1 closed in-session); fired on
+  his follow-up "Go for it" after the teammate-traffic lull check (x3r0
+  live-testing v187→v188 during the evening — a NINTH gate discovered and
+  applied: no teammate test traffic in the last ~10 min).
+- Attempt 1 (21:21 tick): window mechanics PERFECT (26s exposure, restore
+  ✅) but cells self-aborted — tools/unrated_run.sh carries a HARDCODED
+  expected-incumbent (v177, stale): the s56 defect class in one more
+  tool; wrap-listed. Route-around: direct fcode match unrated calls.
+- Attempt 2 (fired mid-clear-air on Magnus's "run them now", NOWAIT
+  bypass — legal, >=5.5 min air remaining): **CLOCK 2 =
+  2026-08-23T21:25:54.057Z** (gsxWins cell createdAt; Jython .960Z).
+  Prototype live as v190, window 21:25:21→21:26:43 (~82s), restore to
+  v188 "Mjolnir termrace w153" CONFIRMED verbatim (x3r0 had shipped
+  v188 mid-evening — gate 6's live read paid again).
+- **LEAK AUDIT: ZERO.** Boundary pairings: 21:21:11 v188 (pre-window),
+  next tick post-restore; no ladder row carries v190.
+- Outcomes (match level): gsxWins 4-1 over us (we took g2 icefloe);
+  **Jython 5-0 — THE PRE-COMMITTED SURPRISE, banked verbatim here before
+  any explanation.** Win column: POINT RULE ONLY per OB16 (±59pp/cell).
+- Replays: 10/10 downloaded, seat-adapted (A/B per API), mechanism
+  readout in flight vs bars M1-M5 + measures D/E/F.
