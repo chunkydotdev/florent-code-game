@@ -46,3 +46,24 @@ disclosed: the reserve taxes eco by design]; box columns reported (the
 box stays OFF in this arm's primary screen — the PUSH must first work on
 the adopted baseline; the box+push composite is the arm AFTER, per
 small-steps). Play-it-well line mandatory.
+
+## V1 DISPOSITION — ALL PIECES REFUSE AT FIRST DOSE; EACH CAUSE NAMED (BUILDER s57)
+
+ENG: UNPLAYED (byte-identical 0/30) — the quiet gate's _under_attack term
+is the always-fresh #132 class; M8U attribution 0→108/119. No strike;
+one-term amendment. RES: self-defeating — withholding eco starved the
+income that funds the pair (DRY 73.1→87.4% on its own target column;
+release fired 9/30; the _fund_battery deadlock shape); needs the bounded
+escape + a half-bar at live==1. WARD: EXECUTED WELL (80/80 border
+throws, activity gate both-verdict-proven, 710 sleeping-dog rounds
+spared) and catastrophic on outcomes (wins 12→5, pairs 6.9%) — the role
+consumed the cage walker, deleting the second siege body. The warden
+must be an ADDITIONAL body (the spawn machinery), never a repurposed
+forward one. Barrel-heals effectively unfired (band invisible from the
+launcher seat at r²=20 vision — a geometry fact for the redesign).
+
+**V2 (registered here, blind):** SK_PUSH v2 = (a) ENG with the
+_under_attack term dropped (corefire+HP term kept); (b) RES with the
+BURST_HOLD-shaped bounded escape + live==1 half-bar; (c) WARD OFF —
+redesigned separately as additional-body form. Bars unchanged (P3 chain
++ P4 currency); the same smoke discipline; pieces still ablatable.
