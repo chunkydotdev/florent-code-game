@@ -148,3 +148,34 @@ provenance. The warm-ring floor compression is DISCLOSED, bar unchanged
 (fires remain spread r24-364 with 17/60 never — choosing). After the
 amendment: the FULL three-fixture grid (F3's first read of the hammer
 family) and the verdict per the standing bars.
+
+## HAMMER-PRIO FAMILY VERDICT — REFUSED AS A PHASE PERTURBATION (BUILDER s57)
+
+The f3diag banked: **the refusal has no spend channel** — act-or-move
+hands the refused turn to movement, the keeper walks off the belt line
+(capacity permanently lost under the rush class), and the engineer never
+spends the saved titanium (forward builds −1 F3 / −4 F2). F2's gains are
+phase-shuffle upside on a weak fixture; F3's one gain is the V2 weld
+(ceiling retiming), unattributable to the inversion. Candidates (a)
+NET-read and (c) round-cap REFUTED on their own cells; (b) warm-up
+unsupported; (d) belt-half-off partially supported (fixes 2/5, one
+constant, kept as an option). All hammer flags stay OFF. **The upstream
+truth every diagnostic now shares: the binder is the ENGINEER'S PLANT
+RATE and TUBE SURVIVAL — field engineering, not funding.**
+
+## BARRELS ARM 1 — SPACING (SK_NEST_PAIR_MIN_GAP), registered blind
+
+**The smallest untried lever with direct win-loss evidence:** winning
+games site successive plants at d²21; losing games at d²61 (battery
+study §3, DEFF-corrected peak>=2 contrast the one surviving interval);
+the live minimum SK_NEST_PAIR_MIN_GAP=8 forces the long walks that eat
+the ~3-round plant window (b1: open windows shorter than the walk).
+ARM: lower the live minimum (registered value 4; the doctrine's
+CLUSTER_GAP=2 as the floor variant if 4 shows direction) — ONE CONSTANT.
+Bars: B1 identity. B2 successive-plant d² falls toward the win-band;
+plant-to-plant gap rounds fall. B3 pair share + barrels-standing rise.
+B4 currency: grid <=r300 ITT non-fall with rise hoped; median length
+non-rise. B5 guards vs t_b4_*. Risk disclosed: tighter packing = one
+enemy answer covers two tubes (the sentinel ray is single-tile — line
+overlap is the check; splash does not exist in this engine). Small-steps:
+the constant alone, then succession/heals as arms 2-3.
