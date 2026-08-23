@@ -8184,3 +8184,314 @@ SK_SENTRY_IDLE_LIFT = True  # THE PRE-`FROM` ESCAPE HATCH, ablatable alone.
 # from there by `sk_core`; a second CF_ home in this file is exactly how two
 # definitions of one wire format drift apart.  The bit is declared with its
 # siblings.
+
+
+# ===========================================================================
+# s57 SK_DOCTRINE -- THE SKALMAN IDENTITY, ASSEMBLED (Magnus, PROGRAMME.md
+# "THE IDENTITY INVERSION + THE ASSEMBLY MANDATE", 2026-08-23/24 night)
+# ===========================================================================
+# GAME CONTEXT: in-engine play for the Florent Code League, a sandboxed
+# bot-vs-bot programming competition on a simulated grid.  "raider", "burst",
+# "battery", "box", "detention", "checkmate" are the engine's own documented
+# mechanics between competing game bots; the box is built from the documented
+# `build_barrier` / `build_launcher` / cross-team `launch` calls and nothing
+# here touches anything outside the game engine.
+#
+# ⭐⭐ THIS IS THE IDENTITY, NOT AN ARM.  The mandate's own words: "SKALMAN'S
+# IDENTITY IS THE FIXED POINT; EXECUTION ITERATES."  What this block encodes:
+#
+#   PHASE 1 (accumulate)  r0 -> THE TRIGGER.  NO FORWARD BODIES: the siege
+#       engineer and the cage walker do not walk out.  They take HOME roles --
+#       eco building, box construction, sentry answers -- on the keeper's own
+#       ladder.  The bank accrues.
+#   THE TRIGGER           a BANK-THRESHOLD latch (the Focalground pattern +
+#       our own adopted eco latch).  Two tails, both disclosed, below.
+#   PHASE 2 (the burst)   BOTH raiders out, the 4-sentinel battery in the
+#       STANDOFF band, conversion sized to the kill.
+#
+# ⛔ OFF IS EXACT IDENTITY.  With SK_DOCTRINE False every site added by this
+# plank is a module-constant conjunction whose first term is this name, the
+# three master rebinds at the bottom of this block do not execute, and the
+# tree is character-for-character the s57-adopted one.
+
+SK_DOCTRINE = True   # THE IDENTITY, ON (Magnus's standing order 2026-08-24): no-rush phase 1 + box to-cell + bank trigger + standoff burst; screens are debuggers, the field judges       # ⛔ THE MASTER, DEFAULT OFF.
+
+SK_DOC_BANK = 600         # ⭐⭐ TAIL A OF THE TRIGGER: fire the burst when the
+                          # team bank reaches this many titanium.
+                          # PROVENANCE, and it is a MEASURED NECESSITY CUT off
+                          # a real opponent, not a chosen round number --
+                          # `docs/research/REPLAY-STUDY-focalground-bankburst-
+                          # 2026-08-21.md` §1.2: "of 13 v32 games whose bank
+                          # never reaches 600 Ti, 0 produce a salvo.  Of the 67
+                          # that do, 52 (78%) salvo."  Their own salvo bank is
+                          # median 831 (IQR 813-884) and `corr(salvo round,
+                          # round Ti first crosses 800) = 0.845`.  600 is the
+                          # NECESSITY point of that distribution, i.e. the
+                          # earliest bank at which a burst is a thing that
+                          # happens at all -- deliberately the LOW end of the
+                          # 600-830 window, because a burst that fires late is
+                          # the r1000 defeat this programme retires.
+                          # ⛔ IT CANNOT FIRE AT r0: the opening bank is
+                          # STARTING_TITANIUM = 500 < 600, structurally, not by
+                          # assertion.
+
+# ⛔⛔ MEASURED AFTER THE FIRST BUILD, AND IT CHANGES WHAT TAIL A **IS**.
+# THREE ON-ARM CELLS, BANK SAMPLED ON THE CORE EVERY ROUND FROM r5
+# (`asmbuild_ident/tron_*.err`, doc-bank):
+#     f1 bifrost seatA   n=232  max 264  p95 239  median  37
+#     f2 stavkirke seatB n=596  max 270  p95  92  median  23
+#     f2 helheim seatA   n=160  max 295  p95 265  median  62
+#     rounds at bank >= 420 : 0 of 988.   rounds at bank >= 600 : 0 of 988.
+# ⇒ **TAIL A NEVER FIRES ON THIS BOT.**  That is not a bug in the constant; it
+# is a fact about the two economies.  Focalground BANKS (their bank doubles
+# 370 -> 723 in the 40 rounds before the burst and drains after); THIS TREE
+# SPENDS EVERY ROUND -- the same finding the RESERVE v3 arm banked as "F3's
+# wealth is FLOW, NOT STOCK (median bank at hold 38)".  Copying a stock
+# threshold from a bot that holds stock onto a bot that holds none produces a
+# trigger that is silent for the whole match: falsifier LOW, "no hammer ever
+# lands".
+# ⛔ TAIL A IS **KEPT AT 600 AND NOT TUNED DOWN**, for two reasons.  It is the
+# FIELD's own necessity point and re-fitting it to our own tapes would be
+# fitting the identity to the execution debugger -- the exact inversion
+# PROGRAMME.md forbids.  And it remains the live "we got rich" path against an
+# opponent that lets us accumulate; its silence on OUR three cells is a
+# measurement about those cells, not a licence to move the number.
+# ⇒ THE WORK IS CARRIED BY TAIL B, whose floor is priced BELOW in the quantity
+# this tree actually has.
+
+SK_DOC_TRIGGER_LATCH = True   # ⭐ TAIL B, ablatable alone under the master.
+                          # ON: the burst ALSO fires when the ADOPTED eco latch
+                          # (`_b2_eco_ready`, SK_BATTERY2_ECO -- income >=
+                          # SK_BATTERY2_ECO_AMMO Ti/round sustained over
+                          # SK_BATTERY2_ECO_W rounds) has fired AND the bank is
+                          # at or above the LIVE-PRICED burst reserve below.
+                          # ⛔ THE #132 BOTH-TAIL RULE IS WHAT THIS FLAG IS
+                          # FOR.  Tail A alone is a single threshold that a
+                          # poor-economy game may never reach (falsifier LOW:
+                          # never fires, no hammer ever lands); tail B alone
+                          # would fire on income with no money in hand.
+                          # Together the latch must be seen to CHOOSE: the
+                          # fire-round distribution per fixture is scored
+                          # NEVER-r0 / NEVER-never, exactly as
+                          # `_b2_eco_ready`'s own registration is scored.
+                          # ⛔ AND TAIL B CANNOT FIRE EARLY EITHER, for a
+                          # reason that is economic and not a clock: the eco
+                          # latch needs SK_BATTERY2_ECO_WARM samples before it
+                          # will answer at all, and the stock floor is priced
+                          # at the LIVE scale, which every opening build has
+                          # already inflated.
+
+# ⭐⭐ TAIL B's STOCK FLOOR -- "THE BURST CAN OPEN", PRICED LIVE, AND IT IS THE
+# SAME NUMBER THE BOX'S RATCHET GUARDS.  ONE MEANING, ONE FORMULA, TWO
+# CONSUMERS (`_doc_burst_floor`):
+#
+#     floor = get_sentinel_cost()  +  SK_DOC_AMMO_MAX
+#             ^ ONE BARREL STANDING   ^ ONE FULL BATTERY VOLLEY IN THE MAGAZINE
+#
+# ⛔ IT IS NOT A NEW FREE PARAMETER: both terms already exist in this file, and
+# the price is READ, not hardcoded -- so it tracks the ONE GLOBAL ADDITIVE cost
+# scale exactly as the CLAUDE.md cost-getter rule requires.
+# ⛔ WHY THIS AND NOT THE FULL BURST PRICE (4 sentinels + SK_DOC_AMMO ~= 420+).
+# MEASURED: 0 of 988 sampled rounds reach 420, so the full price is the same
+# unreachable bar tail A already is, and a "second tail" that cannot fire is
+# not a second tail.  It is also the WRONG QUANTITY: PROGRAMME.md's ECO-READY
+# HAMMER asks for "an economy level we look for when we're funded enough" --
+# a FLOW readiness, which the eco latch already carries -- with stock only
+# needing to cover STARTING.  The battery is bought out of the flow the latch
+# certified, tube by tube, exactly as `_battery_open` already buys it.
+# ⛔ REACHABILITY, MEASURED ON THE SAME 988 SAMPLES: rounds at bank >= 100 are
+# 61 / 24 / 66 of 232 / 596 / 160 and at >= 150 are 58 / 2 / 57.  The live
+# floor lands in that region at the scales these cells run, so the tail is
+# reachable on ALL THREE fixtures including the poorest -- which is what
+# "the latch must be seen to CHOOSE" requires.
+# ⚠ AND THE OTHER TAIL OF THAT SAME REQUIREMENT IS CHECKED, NOT ASSUMED: the
+# floor must not degenerate to always-true at r0.  It cannot, because tail B
+# also requires the eco latch to have LATCHED, which needs
+# SK_BATTERY2_ECO_WARM samples of income first.  The fire-round distribution
+# is read per fixture in the trace.
+
+SK_DOC_LATCH_ONCE = True  # ⛔⛔ THE #132 DISCLOSURE, AND IT IS A
+                          # LATCH-ONCE-JUSTIFIED, NOT AN EXPIRY.  The burst is
+                          # IRREVERSIBLE BY CONSTRUCTION: it spends the bank on
+                          # four sentinels and ~SK_DOC_AMMO of ammunition and it
+                          # walks two bodies across the board.  A latch that
+                          # could un-fire would strand the tubes and re-home the
+                          # raiders on the exact round the battery starts
+                          # paying -- i.e. the flap `_nest_slots()`'s own note
+                          # warns about, at the scale of the whole identity.
+                          # ⛔ THE REGIME WHERE IT READS FALSE IS THE ENTIRE
+                          # PRE-TRIGGER GAME, which is the majority of rounds
+                          # on every measured tape -- so this is not a
+                          # predicate that has never produced its other
+                          # verdict.  The fire-round trace reads BOTH tails.
+
+SK_DOC_AMMO = 300         # ⭐⭐ THE BURST'S AMMUNITION TARGET, in ammunition.
+                          # PROVENANCE, arithmetic on banked numbers:
+                          # focalground §2.2 -- an enemy core is 500 HP, a
+                          # sentinel shot is 18 damage, so a NAKED takedown is
+                          # ceil(500/18) = 28 shots x SK_AMMO_SENTINEL = **280
+                          # ammunition**; their own median titanium converted to
+                          # ammunition per game is **384**.  300 is 280 plus two
+                          # sentinel shots of cushion, inside the mandate's
+                          # registered 280-350 window and BELOW their measured
+                          # 384 -- i.e. we do not out-spend the pattern we are
+                          # copying.
+                          # ⚠ DISCLOSED: 280 is the NAKED figure.  Their core
+                          # absorbs a measured heal tax (LOSSAUT-f1f2), so 300
+                          # is a floor on what a checkmate costs, not a
+                          # sufficient quantity -- which is why the drip stays
+                          # live underneath this rung and keeps feeding need.
+
+SK_DOC_AMMO_MAX = SK_ROTATE_WANT * SK_AMMO_SENTINEL
+                          # ⛔ THE PER-ROUND CONVERSION RAMP CAP, in titanium,
+                          # AND IT IS NOT A NEW NUMBER: it is ONE FULL VOLLEY
+                          # OF THE BATTERY (SK_ROTATE_WANT sentinels x
+                          # SK_AMMO_SENTINEL per shot = 40).  At this rate
+                          # SK_DOC_AMMO is reached in ceil(300/40) = 8 rounds,
+                          # against a burst whose own measured length is
+                          # ~29-30 rounds from first sentinel to core death
+                          # (focalground §2.2, medians 30 / 29).  Cf.
+                          # SK_AMMO_PUSH_MAX = 20, which is the same
+                          # construction at two shots.
+
+SK_DOC_CONVERT = True     # ⭐ THE BURST-CONVERSION RUNG, ablatable alone.
+                          # ⛔ IT SITS **BELOW** THE DRIP, NOT ABOVE IT, AND
+                          # THAT ORDERING IS THE WHOLE SAFETY ARGUMENT.
+                          # `convert_ammo` is at most ONCE PER TEAM PER TURN.
+                          # The drip is NEED-BASED off turrets that already
+                          # exist and it NEVER banks; this rung BANKS.  Need
+                          # outranks bank, so the drip is asked first and this
+                          # rung runs only on a round the drip did not spend the
+                          # conversion.  ⇒ this can never OVERRULE the drip, and
+                          # no arithmetic from `_drip` is duplicated anywhere
+                          # (the SK_AMMO_PUSH rung, which sits ABOVE the drip,
+                          # had to reason about subsumption; this one does not).
+
+SK_DOC_DSQ_MIN = 14       # ⭐⭐ THE STANDOFF BAND, and it is THE FIELD'S OWN
+SK_DOC_DSQ_MAX = 26       # WINNING BAND rather than ours.  PROGRAMME.md, the
+                          # identity inversion: "Jython v266 swept us 5-0
+                          # playing THE SKALMAN DOCTRINE ITSELF (zero
+                          # launchers/barriers/gunners; pure eco -> standoff
+                          # sentinels d^2 16-25)".  The tree's own COPY 5 band
+                          # is SK_NEST_DSQ_MIN..MAX = 14..32; this narrows the
+                          # FAR end to 26 so the battery stands where the field
+                          # stands.
+                          # ⛔ THE BOUNDS ARE HALF-OPEN AGAINST A LATTICE AND
+                          # THE REALISED SET IS SMALLER THAN THE INTERVAL.  The
+                          # scan filters `lo <= d^2 <= hi` on `dsq_core`, whose
+                          # values are sums of two squares clamped to the 2x2
+                          # footprint: 14 and 15 are NOT realisable, so the
+                          # floor binds at 16 -- which is the field's own lower
+                          # edge -- and 26 (= 5^2 + 1^2) IS realisable, one
+                          # lattice point above the field's 25.  Stated rather
+                          # than papered over: the realised band is measured in
+                          # the mechanism trace, never asserted here.
+                          # ⭐ AND ONE INTERACTION IS LOAD-BEARING: v618's
+                          # LEADING score key is "d^2 == MAX and |dx| == |dy|"
+                          # (the max-range DIAGONAL).  A diagonal has d^2 = 2k^2
+                          # and 26 is not of that form, so under this band the
+                          # diagonal bonus is UNREACHABLE and the ordering
+                          # reduces to depth-first with the cardinal term below
+                          # as the first real tie-break.  That is a consequence
+                          # of the constant, not a second behaviour change.
+
+SK_DOC_CARDINAL = True    # ⭐ THE CARDINAL RANK TERM, ablatable alone.  ON: the
+                          # burst's siting uses the VOLUME arm's piece (b)
+                          # scoring key -- "at equal reach, prefer a seat
+                          # ORTHOGONALLY ALIGNED with a core tile".  ⛔ IT IS
+                          # THE ALREADY-BUILT TERM, NOT A SECOND COPY: the same
+                          # block in `_nest_scan`, reached through a second
+                          # conjunction, so there is one definition of the rule.
+                          # PROVENANCE: bisons autopsy, 142 of 142 of their
+                          # fast-checkmate sentinel builds orthogonally aligned
+                          # (field 56.6%, us 40.4%); the VOLUME arm measured the
+                          # DOSE CONFIRMED at +8pp aligned and refused the arm
+                          # on its OTHER piece (the column handoff, staffing
+                          # form 5, 0 trailer plants).  ⛔ SK_VOLUME STAYS OFF:
+                          # the refused piece must not ride this master.
+                          # ⛔ A RANK, NEVER A FILTER -- the legal set is
+                          # untouched, so the band cannot empty.
+
+SK_DOC_BOX = True         # ⭐⭐ THE BOX IS THE SIGNATURE MOVE (Magnus, direct).
+                          # ON: the master rebinds SK_KILLBOX and
+                          # SK_KILLBOX_FAST at the bottom of this block, so the
+                          # opening builds the exile launcher plus the
+                          # TWO-CHAMBER cell in PARALLEL (arm 3's measured
+                          # dose: launcher standing 30/30 at r5, cell-complete
+                          # median r12).  TO-CELL PRIORITY IS ALREADY THE
+                          # TREE'S BEHAVIOUR AND NEEDS NO NEW CODE:
+                          # `_kb_pick_throw` returns a sealed EMPTY chamber
+                          # first and falls to the treadmill only when every
+                          # chamber is occupied -- which is Magnus's ruling
+                          # ("we need to get the raider into the box otherwise
+                          # it just builds more turrets") expressed exactly.
+                          # ⛔ SK_KILLBOX_EXEC STAYS OFF, AND THAT IS A
+                          # DECISION WITH A PRICE.  The mandate names "launcher
+                          # + 2-chamber cell"; the executioner is a 30 Ti
+                          # sentinel plus SK_KB_EXEC_WALK extra walk rounds, and
+                          # arm 2/3's own disposition is that box time-theft
+                          # LENGTHENS games (median r258 -> r278 -> r463).  We
+                          # buy DETENTION, not retirement.  ⚠ THE COST: a
+                          # detained body is not retired, so the two chambers
+                          # cap concurrent detentions at 2 and a chamber only
+                          # recycles if its occupant dies to something else.
+
+SK_DOC_BOX_SUBORD = True  # ⭐⭐ SPEND SUBORDINATION -- THE BOX NEVER SPENDS THE
+                          # BATTERY'S MONEY.  This is the killbox family's own
+                          # named residual, carried into the assembly: arm 3's
+                          # disposition is that time-theft at scale lengthens
+                          # games and "the wealth the box creates must convert
+                          # to gross core damage in the same games".  TWO
+                          # CLAUSES, and each has a reachable other verdict:
+                          #   PHASE 1 RATCHET -- a box purchase is refused when
+                          #     the bank is AT OR ABOVE the live-priced burst
+                          #     reserve and the purchase would take it BELOW.
+                          #     Below the reserve the box spends freely, which
+                          #     is the whole opening (the bank opens at 500 and
+                          #     the reserve prices 4 sentinels + SK_DOC_AMMO).
+                          #     ⇒ the box can never be the reason the trigger
+                          #     is late.
+                          #   PHASE 2 STAND-DOWN -- after the trigger, box
+                          #     CONSTRUCTION spends nothing at all.  The money
+                          #     is the battery's, and the box's remaining
+                          #     consumer (the launcher's throws) costs zero
+                          #     titanium and zero ammunition.
+                          # ⛔ BOTH TAILS ARE POPULATED ON EVERY TAPE -- the
+                          # box is built in phase 1 and the burst is phase 2 --
+                          # and both refusal counters are read in the trace.
+
+SK_DOC_HOME_BOX = True    # ⭐ THE PHASE-1 HOME TURN'S ONE EXTRA RUNG,
+                          # ablatable alone.  ON: a phase-1 raider runs
+                          # `_kb_fast_buyer_turn` before falling through to the
+                          # keeper's ladder, which is what keeps arm 3's
+                          # PARALLEL construction alive once the cage walker no
+                          # longer runs `_cage_walker` (the buyer's rung lives
+                          # inside that turn).  ⛔ THE RUNG IS ROLE-GATED BY
+                          # `_kb_fast_owes_launcher` TO SK_KB_FAST_BUYER, so the
+                          # siege engineer falls straight through and lays cell
+                          # barriers on the keeper's ladder instead -- which is
+                          # the split `_kb_fast_owes_cell` already encodes.
+                          # ⛔ AND THE LAUNCHER SITE IS HOME WORK: Chebyshev
+                          # SK_KB_SITE_CHEB of OUR OWN core, so this is not a
+                          # forward body under any reading.
+
+# ⛔⛔ THE MASTER REBINDS, AND THEY ARE REBINDS RATHER THAN EDITS TO THE
+# ORIGINAL LINES FOR ONE REASON: the killbox masters carry their own adopted
+# defaults and their own dispositions, and an assembly that EDITED
+# `SK_KILLBOX = False` to True would delete that record and make every
+# killbox-off arm unreproducible from this tree.  Rebinding here keeps the
+# original declaration, its documentation and its OFF default intact, and
+# makes the composition one auditable place.  Module-level rebinding is exact:
+# every consumer does `from sk_maps import ...` at import time, i.e. AFTER this
+# file has finished executing, so there is no two-value window.
+# ⛔ THE DERIVED CONSTANTS ARE RECOMPUTED HERE TOO.  `SK_KB_BLOCK_ON` and
+# `SK_KB_INTERIOR_ON` are `bool((SK_KILLBOX_EXEC or SK_KILLBOX_FAST) and ...)`
+# evaluated at their own line, i.e. BEFORE this block; leaving them stale would
+# ship a two-chamber design with the two-chamber flag reading False.  The
+# expressions below are character-for-character the originals.
+if SK_DOCTRINE and SK_DOC_BOX:
+    SK_KILLBOX = True
+    SK_KILLBOX_FAST = True
+    SK_KB_BLOCK_ON = bool((SK_KILLBOX_EXEC or SK_KILLBOX_FAST) and SK_KB_BLOCK)
+    SK_KB_INTERIOR_ON = bool((SK_KILLBOX_EXEC or SK_KILLBOX_FAST)
+                             and SK_KB_CELL_INTERIOR)

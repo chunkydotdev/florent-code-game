@@ -239,6 +239,10 @@ from sk_maps import (
     SK_VH_ROLE, SK_VH_FIELD, SK_VH_STALE, SK_VH_PAIR_ONLY,
     SK_VH_WALK_MAX, SK_VH_GIVEUP, SK_VH_VACATE,
     SK_VH_CARD_AFTER_D, SK_VH_CARD_FACE,
+    # --- s57 SK_DOCTRINE: THE SKALMAN IDENTITY, ASSEMBLED -------------------
+    SK_DOCTRINE, SK_DOC_BANK, SK_DOC_TRIGGER_LATCH, SK_DOC_LATCH_ONCE,
+    SK_DOC_AMMO_MAX, SK_DOC_DSQ_MIN, SK_DOC_DSQ_MAX, SK_DOC_CARDINAL,
+    SK_DOC_BOX, SK_DOC_BOX_SUBORD, SK_DOC_HOME_BOX,
 )
 
 # --- v632 PLANK A 4.2: the three guarded WALKS, as ban keys.  A tile is banned
@@ -322,6 +326,28 @@ CF_RAY_BIT = 1 << 29      # the shooter was identified by its FACING RAY,
 # as before.  ⛔ SET ONLY WHEN THE PRESENCE STAMP IS THE NEWER OF THE TWO, so a
 # round on which our core actually lost HP never wears it.
 CF_SENTRY_BIT = 1 << 30
+# --- s57 SK_DOCTRINE: b31 of the SAME word, THE LAST FREE BIT --------------
+# THE BURST LATCH, and the wire is chosen the way SK_VH_FIELD's was: all 16
+# store slots are allocated, so a new team-wide fact rides in free bits of a
+# word that already has EXACTLY ONE WRITER.  Slot 15 is the CORE's
+# (`_corefire_report`), the core is the one unit that cannot die without the
+# match ending, it runs every round, and it writes this word WHOLE (never a
+# read-modify-write) -- so the buffered-write lost-update class cannot appear
+# here any more than it can for b30.
+# ⛔ b0-30 were allocated above; b31 is the last free bit of the last free
+# slot, and `wstore` masks to SK_STORE_MASK = 0xFFFFFFFF so setting it is
+# inside `write_store`'s documented range.
+# ⛔ WHY A WIRE BIT AT ALL, when tail A (`bank >= SK_DOC_BANK`) is a GLOBAL
+# quantity every unit can read for itself: tail B needs the income sampler,
+# which only the core runs regularly, and a body SPAWNED AFTER the burst began
+# would otherwise re-derive "not fired" from a bank the burst has already
+# drawn down.  The bit is what makes the phase a TEAM fact rather than a
+# per-body opinion.
+# ⚠ ONE ROUND OF LAG, DISCLOSED: store writes are buffered, so the bit the
+# core sets on round r is readable from r+1.  Tail A is read LOCALLY by every
+# body in the same round, so the lag can only ever delay the tail-B-only case
+# by one round -- never tail A, and never in the direction of firing early.
+CF_DOC_BIT = 1 << 31
 
 KILLER_TILE_MASK = 0x3FF  # slot 14 b0-9  (pack_tile)
 KILLER_RND_FIELD = 10     # slot 14 b10-20
@@ -433,11 +459,43 @@ class RolesMixin:
         #                  one is the half-open window below the flip, the other
         #                  the half-open window at and above it, so no round can
         #                  set both and no site has to arbitrate between them.
-        self.rot_on = bool(SK_ROTATE and rnd >= SK_PHASE_ROUND)
-        self.rot_body = bool(self.rot_on and self.role in SK_ROTATE_RAIDERS)
-        self.rot_stage = bool(SK_ROTATE
-                              and SK_ROTATE_PRESTAGE <= rnd < SK_PHASE_ROUND
-                              and self.role in SK_ROTATE_RAIDERS)
+        # ⭐⭐ s57 SK_DOCTRINE -- THE PHASE STATE, AND IT REPLACES THE ROUND
+        # BOUNDARY WITH THE TRIGGER.  PROGRAMME.md ECO-READY HAMMER: "We don't
+        # have to lock a hard round for the sentinel barrels at r300, we should
+        # probably have an economy level we look for when we're funded enough to
+        # hammer the other team's core ... it must be an honest live signal
+        # (bank + income trend), never a wall-clock or round constant."
+        # ⛔ IT REUSES `rot_body` RATHER THAN INTRODUCING A PARALLEL FLAG, and
+        # that is deliberate: `rot_body` already means "this body is a raider on
+        # the battery" at ELEVEN sites (the battery target SK_ROTATE_WANT, the
+        # first-battery clustering, the prep suppression, the band half-split,
+        # the plant counter, the guard heal).  A second name would either
+        # duplicate all eleven or ship a doctrine whose burst is not the adopted
+        # rotation.  The doctrine changes WHEN the phase opens, not what it is.
+        # ⛔ `rot_on = True` FOR EVERY DOCTRINE ROUND, INCLUDING PHASE 1, AND
+        # THAT IS A CORRECTNESS REQUIREMENT, NOT A CONVENIENCE.  Its two
+        # consumers are fences against a MISSING WRITER: `_stall_check` refuses
+        # to read the cage walker's seal-advance beat when nobody is writing it,
+        # and `_plan_belt` drops the enemy anchor from its re-plan key.  Under
+        # SK_DOCTRINE the walker NEVER runs `_cage_walker` -- in phase 1 it is a
+        # home body, in phase 2 it is on the battery -- so slot 6 has no writer
+        # from r0 and the stall detector's input is undefined for the whole
+        # game, which is exactly the condition its own note describes.
+        # ⛔ `rot_stage = False` ALWAYS: the commute exists to pre-position for a
+        # KNOWN round.  A trigger has no known round, so there is nothing to
+        # commute toward; the trigger IS the release.
+        if SK_DOCTRINE:
+            self.doc_fired = self._doc_fired(ct, rnd)
+            self.rot_on = True
+            self.rot_body = bool(self.doc_fired
+                                 and self.role in SK_ROTATE_RAIDERS)
+            self.rot_stage = False
+        else:
+            self.rot_on = bool(SK_ROTATE and rnd >= SK_PHASE_ROUND)
+            self.rot_body = bool(self.rot_on and self.role in SK_ROTATE_RAIDERS)
+            self.rot_stage = bool(SK_ROTATE
+                                  and SK_ROTATE_PRESTAGE <= rnd < SK_PHASE_ROUND
+                                  and self.role in SK_ROTATE_RAIDERS)
         # ⛔ v602 FIX 5(a): EVERY ROLE SENSES TERRAIN NOW.  v601 called
         # `_ore_scan` from the HOME KEEPER and the ORE DENIER only, and it is
         # the one thing that fills `map_walls` on an unconfirmed map -- so the
@@ -519,8 +577,18 @@ class RolesMixin:
         # ⭐ THE COMMUTE NEEDS IT TOO, AND MORE THAN THE SIEGE DOES: r290-r300 is
         # the ONE stretch where the converted walker crosses the whole board in
         # one unbroken march with no build to break an orbit.
+        # ⭐ s57 SK_DOCTRINE ADDS ONE TERM, AND IT IS THE SAME ARGUMENT THE
+        # ROTATION TERM CARRIES.  The walker is excluded above ONLY because
+        # `_cage_walker` calls `_cycle_commit` itself; under SK_DOCTRINE the
+        # walker never runs that turn in EITHER phase, so without this term the
+        # doctrine walker would cross the board (phase 2) and orbit the home
+        # ladder (phase 1) with the period-K detector switched off -- the
+        # 188-round orbit v606 ITEM 4(b) was built for.  ⛔ SK_DOCTRINE False ->
+        # one module-constant test -> today's condition, character for
+        # character.
         if SK_CYCLE_ALL_ROLES and (self.role != SK_CAGE_WALKER
-                                   or self.rot_body or self.rot_stage):
+                                   or self.rot_body or self.rot_stage
+                                   or SK_DOCTRINE):
             self._cycle_commit(rnd)
 
         # ⭐ v608 PLANKS 2 and 1, THE DENIER'S HOME ANSWER, PLACED ABOVE LEDGER
@@ -692,6 +760,32 @@ class RolesMixin:
             self._siege_engineer(ct, p, rnd)
         elif self.rot_stage:
             self._rot_prestage(ct, p, rnd)
+        # ⭐⭐ s57 SK_DOCTRINE, PHASE 1 -- **NO FORWARD BODIES**, AND THIS ARM
+        # IS THE WHOLE OF THAT SENTENCE.  PROGRAMME.md, the assembly mandate:
+        # "home economy + defence until the eco latch; NO forward bodies
+        # pre-latch (no rush -- the line's stated identity)".  The two raider
+        # roles do not walk out: they take HOME roles on the keeper's own
+        # ladder -- eco building, box construction, sentry answers.
+        # ⛔ THE FORWARD RUNGS ARE GATED BY NOT BEING REACHED, WHICH IS THE
+        # STRONGEST FORM OF GATING AVAILABLE HERE.  `_siege_engineer` (the
+        # walk-out and the forward tube) and `_cage_walker` (the enemy-ring lap)
+        # are the two forward turns in this tree and neither is entered by
+        # either raider before the trigger.  There is no partially-gated forward
+        # turn whose remaining rungs could leak a body across the board.
+        # ⛔ IT SITS BELOW EVERY SURVIVAL BRANCH AND INSIDE THE SWITCH, so the
+        # mandate's "phase never blocks defence" holds STRUCTURALLY: the
+        # corefire answer, ledger V5, the citadel dispatch, the barrel medic and
+        # the column trailer all run ABOVE this switch and are untouched by the
+        # phase, and every defensive rung the home ladder owns (`_core_medic`,
+        # `_stand_answer_action`, `_stand_swarm_action`, `_door_action`,
+        # `_peck_priority`, the sentry answers) is reached by this arm.
+        # ⛔ ABOVE the SK_FORT_WALKER_ECO arm because that arm is plank 5's
+        # phase-1 placeholder for ONE role and this is the doctrine's own answer
+        # for BOTH; the two must not both match.  ⛔ SK_DOCTRINE False -> one
+        # module-constant test -> the switch below is character-for-character
+        # the adopted tree.
+        elif SK_DOCTRINE and self.role in SK_ROTATE_RAIDERS:
+            self._doc_home_turn(ct, p, rnd)
         elif (SK_FORT_WALKER_ECO and rnd < SK_PHASE_ROUND
                 and self.role == SK_CAGE_WALKER):
             self._home_keeper(ct, p, rnd)
@@ -703,6 +797,211 @@ class RolesMixin:
             self._siege_engineer(ct, p, rnd)
         else:
             self._home_keeper(ct, p, rnd)
+
+    # ==================================================================
+    # s57 SK_DOCTRINE -- the assembly's four builder-side helpers
+    # ==================================================================
+    # GAME CONTEXT: in-engine decisions of our own builder bots in the Florent
+    # Code League, a sandboxed bot-vs-bot competition.  "burst", "battery",
+    # "box", "raider" are the engine's documented mechanics between competing
+    # game bots.
+    # ⛔ NONE OF THE FOUR IS REACHED ON AN OFF ARM: every call site is a
+    # `SK_DOCTRINE ...` module-constant conjunction tested before any controller
+    # call, and each method also returns on its own first line.
+
+    def _doc_fired(self, ct, rnd):
+        """THE TRIGGER, as this body sees it.  True once the burst is open.
+
+        TWO TAILS, EXACTLY AS REGISTERED, AND THEY ARE READ IN THE ORDER OF
+        HOW LOCAL THEY ARE:
+          * TAIL A -- `get_global_resources() >= SK_DOC_BANK`.  A GLOBAL TEAM
+            quantity, so every body answers it identically in the SAME round
+            with no wire and no lag.
+          * TAIL W -- the core's b31 latch on slot 15, which carries the core's
+            own tail A **or** tail B (the adopted `_b2_eco_ready` income latch
+            plus the live-priced burst reserve).  Tail B needs the income
+            sampler and only the core samples regularly, so it can only reach a
+            builder through the wire.
+        ⛔ THE LATCH IS ONE-WAY (SK_DOC_LATCH_ONCE) AND ITS JUSTIFICATION IS
+        AT THE FLAG.  With the flag off this method re-derives the phase every
+        round, which is the ablation that shows what latching buys.
+        ⛔ `doc_round` / `doc_tail` ARE INSTRUMENTS, NEVER INPUTS: nothing in
+        the tree branches on them, so a bug there can only mis-report.
+        """
+        if not SK_DOCTRINE:
+            return False
+        if SK_DOC_LATCH_ONCE and self.doc_fired:
+            return True
+        tail = 0
+        try:
+            if ct.get_global_resources() >= SK_DOC_BANK:
+                tail = 1
+        except Exception:
+            tail = 0
+        if not tail:
+            try:
+                if ct.read_store(SK_SLOT_COREFIRE) & CF_DOC_BIT:
+                    tail = 2
+            except Exception:
+                tail = 0
+        if not tail:
+            return False
+        if self.doc_round < 0:
+            self.doc_round = rnd
+            self.doc_tail = tail
+        self.doc_fired = True
+        return True
+
+    def _doc_fwd_turn_tick(self):
+        """⭐⭐ THE MANDATE'S BAR-0 COLUMN, AND IT IS A **CODE-PATH** COUNT.
+
+        "NO forward bodies pre-latch" is a claim about which TURN a raider
+        runs, so the honest instrument counts exactly that: a raider body
+        entering `_siege_engineer` or `_cage_walker` -- this tree's only two
+        forward turns -- before the trigger has fired.  BAR: 0.
+
+        ⛔⛔ IT REPLACES A POSITION TEST THAT WAS CONFOUNDED TWICE, AND BOTH
+        FAILURES ARE RECORDED BECAUSE THEY ARE THE SAME MISTAKE AT TWO SIZES.
+        v1 asked "is the body inside d^2 32 of their core" and scored a
+        STATIONARY body on a small map (helheim, dsq 29 constant over r34-91)
+        as forward -- an absolute band cannot tell a raid from a short map.
+        v2 asked "is it nearer their core than ours" and scored the HOME LADDER
+        walking to an ore tile past the midline (stavkirke, role 3 at de=53
+        dh=64) as forward -- a relative band cannot tell a raid from eco work
+        that happens to be on the far side.  BOTH READ A POSITION AND THE CLAIM
+        IS ABOUT A BEHAVIOUR.
+        ⛔ THE POSITION COLUMN IS **KEPT** (`doc_forward`) AND DEMOTED TO A
+        DIAGNOSTIC -- how far the phase-1 home ladder wanders -- because it is
+        real information about the economy's reach.  It is not the bar.
+        ⛔ NOTHING BRANCHES ON EITHER COUNTER.
+        """
+        if not SK_DOCTRINE:
+            return
+        if self.doc_fired:
+            return
+        if self.role in SK_ROTATE_RAIDERS:
+            self.doc_fwd_turn += 1
+
+    def _doc_burst_floor(self, ct):
+        """"THE BURST CAN OPEN", priced LIVE.  None on an unreadable cost.
+
+        ONE BARREL STANDING plus ONE FULL BATTERY VOLLEY in the magazine:
+
+            get_sentinel_cost() + SK_DOC_AMMO_MAX
+
+        read through the cost getter rather than a base cost, because every
+        opening build has already inflated the ONE GLOBAL ADDITIVE factor by
+        the time this is asked.  See the flag block for the measurement that
+        chose this quantity over the full 4-sentinel burst price (0 of 988
+        sampled rounds reached the latter).
+
+        ⛔ ONE FORMULA, TWO CONSUMERS, AND THAT IS THE POINT: tail B asks "may
+        the burst open?" and the box ratchet asks "would this purchase stop it
+        opening?".  Two numbers would let the box spend the bank down to just
+        under the trigger and call it subordinate.
+
+        ⛔ IT RETURNS None RATHER THAN A GUESS, and the two callers take
+        OPPOSITE conservative directions from that -- which is why the failure
+        is not resolved here:
+          * the TRIGGER refuses to fire on an unreadable price (do not commit
+            the identity on a number we could not read);
+          * the BOX REFUSAL refuses to refuse (`_push_price`'s own rule: a
+            refusal manufactured out of a failed read withholds titanium for no
+            measured reason).
+        """
+        try:
+            return ct.get_sentinel_cost() + SK_DOC_AMMO_MAX
+        except Exception:
+            return None
+
+    def _doc_home_turn(self, ct, p, rnd):
+        """PHASE 1's turn for a raider body: the box, then the home ladder.
+
+        ⛔ THE BOX RUNG FIRST AND THE KEEPER'S LADDER UNDER IT.  Arm 3's
+        PARALLEL construction splits the opening between a BUYER (the launcher,
+        `_kb_fast_owes_launcher`) and everyone else (the cell barriers,
+        `_kb_fast_owes_cell`), and the buyer's rung physically lives inside
+        `_cage_walker` -- a turn no doctrine body ever runs.  Re-siting it here
+        is what keeps the split alive; the rung is still role-gated to
+        SK_KB_FAST_BUYER inside itself, so the siege engineer falls straight
+        through and lays cell barriers on the keeper's ladder instead.
+        ⛔ IT IS NOT A FORWARD RUNG: the launcher site is Chebyshev
+        SK_KB_SITE_CHEB of OUR OWN core (`_kb_pick_site`), i.e. home work.
+
+        ⚠ `doc_forward` IS A DIAGNOSTIC, **NOT** THE BAR.  It counts phase-1
+        rounds in which a raider body stands nearer the enemy core than our
+        own -- i.e. how far the home ladder wanders -- with `doc_home_rounds`
+        as its denominator.  THE MANDATE'S BAR-0 COLUMN IS THE CODE-PATH ONE,
+        `doc_fwd_turn` (see `_doc_fwd_turn_tick` for why a position test cannot
+        carry that claim).
+
+        ⛔⛔ THE FIRST FORM OF THIS TEST WAS CONFOUNDED AND THE MEASUREMENT
+        CAUGHT IT, WHICH IS WHY THE DEFINITION IS RELATIVE.  v1 asked
+        `dsq_core(p, enemy) <= SK_NEST_DSQ_MAX` -- an ABSOLUTE band -- and read
+        7 forward rounds on f2 helheim seatA at a CONSTANT dsq of 29 across
+        r34-91.  A constant distance over 57 rounds is a body that never moved:
+        on a map that small our own home sits inside d^2 32 of their core, so
+        the absolute form scores HOME as FORWARD and the bar could never be met
+        for a reason that has nothing to do with the doctrine.  An instrument
+        whose failing reading is produced by the map size is not measuring the
+        plank.  Nearer-theirs-than-ours is map-size invariant and is what
+        "walked out" means.
+        ⚠ THE RESIDUAL IS DISCLOSED: on a perfectly symmetric map the midline
+        is a tie, and this counts a tie as HOME (strict `<`).  A body loitering
+        exactly on the midline would go unscored -- bounded by one tile, and in
+        the direction that makes the bar HARDER to claim, never easier... which
+        is the wrong direction for a bar of zero, so the raw distances are put
+        in the trace and the readout can re-cut them.
+        """
+        self.doc_home_rounds += 1
+        if self.enemy is not None and self.core is not None:
+            try:
+                if dsq_core(p, self.enemy) < dsq_core(p, self.core):
+                    self.doc_forward += 1
+            except Exception:
+                pass
+        if SK_DOC_HOME_BOX and self._kb_fast_buyer_turn(ct, p, rnd):
+            return
+        self._home_keeper(ct, p, rnd)
+
+    def _doc_box_refuse(self, ct, rnd, kind, site):
+        """SPEND SUBORDINATION -- True when a BOX purchase must stand down.
+
+        TWO CLAUSES, EACH WITH A REACHABLE OTHER VERDICT (see
+        SK_DOC_BOX_SUBORD for the argument):
+          * PHASE 2 STAND-DOWN -- after the trigger the money is the battery's
+            and box CONSTRUCTION buys nothing.  The box keeps WORKING: the
+            launcher's throws cost zero titanium and zero ammunition, and
+            `_kb_pick_throw`'s to-cell priority is untouched.
+          * PHASE 1 RATCHET -- a purchase that would take the bank from AT OR
+            ABOVE `_doc_burst_floor` (the level at which the burst can open) to
+            BELOW it is refused.  Below the floor the box spends freely, which
+            is the whole opening.  ⛔ THE FLOOR IS THE TRIGGER'S OWN NUMBER, so
+            the box literally cannot be the reason the trigger is late.
+
+        ⛔ THE `kind` IS A CONSTANT AT EVERY CALL SITE, so an OFF arm never
+        evaluates a cost getter -- this method returns on its first line.
+        ⛔ `site` IS CARRIED FOR THE READOUT ONLY, exactly as `_push_refuse`
+        carries it: pooling the refusals would hide WHICH spend was stopped.
+        """
+        if not (SK_DOCTRINE and SK_DOC_BOX_SUBORD):
+            return False
+        if self.doc_fired:
+            self.doc_box_burst += 1
+            return True
+        res = self._doc_burst_floor(ct)
+        if res is None:
+            return False
+        try:
+            bank = ct.get_global_resources()
+        except Exception:
+            return False
+        if bank < res:
+            return False
+        if bank - self._push_price(ct, kind) >= res:
+            return False
+        self.doc_box_ratchet += 1
+        return True
 
     # --- COPY 8: the role claim ---------------------------------------
 
@@ -2898,7 +3197,14 @@ class RolesMixin:
             # s57 THE PUSH, PIECE 1 -- GATED SITE 2 of 10 (the box's own
             # launcher; SK_KILLBOX ships False, so this gate is inherited by
             # any future arm that turns the box on rather than added then).
+            # ⭐⭐ s57 SK_DOCTRINE -- SPEND SUBORDINATION, GATED BOX SITE 1 of 4.
+            # Appended AFTER `_push_refuse` so that gate's counters keep their
+            # exact meaning on any PUSH-on arm, and its own first term is a
+            # module constant, so with SK_DOCTRINE False the rung runs exactly
+            # as it does today, in the same order, at the same cost.
             if (not self._push_refuse(ct, rnd, EntityType.LAUNCHER, "box_launcher")
+                    and not self._doc_box_refuse(ct, rnd, EntityType.LAUNCHER,
+                                                 "box_launcher")
                     and self._kb_launcher_action(ct, p, rnd)):
                 return
             # ⭐ v611 SK_HOME_LAUNCHER, OFF by default.  ONE turn, once a game.
@@ -2977,7 +3283,10 @@ class RolesMixin:
             # cadence decays after r150 on two of the three fixtures.
             # ⛔ Flag off -> False on the first line -> v632 behaviour exactly.
             # s57 THE PUSH, PIECE 1 -- GATED SITE 7 of 10 (box, OFF today).
+            # ⭐⭐ s57 SK_DOCTRINE -- SPEND SUBORDINATION, GATED BOX SITE 2 of 4.
             if (not self._push_refuse(ct, rnd, EntityType.BARRIER, "box_cell")
+                    and not self._doc_box_refuse(ct, rnd, EntityType.BARRIER,
+                                                 "box_cell")
                     and self._kb_cell_action(ct, p, rnd)):
                 return
             # ⭐⭐ s57 THE KILLBOX, ARM 2, PIECE 1 -- THE EXECUTIONER, ACTION
@@ -2990,7 +3299,14 @@ class RolesMixin:
             # zero on `titanium_collected` for ever.
             # ⛔ Flag off -> False on the first line -> arm-1 behaviour exactly.
             # s57 THE PUSH, PIECE 1 -- GATED SITE 8 of 10 (box, OFF today).
+            # ⭐⭐ s57 SK_DOCTRINE -- SPEND SUBORDINATION, GATED BOX SITE 3 of 4.
+            # ⚠ SK_KILLBOX_EXEC ships OFF under the doctrine (see SK_DOC_BOX),
+            # so this rung's own first line refuses before the gate is reached.
+            # It is gated anyway so that a successor arming the executioner
+            # inherits the subordination rather than adding it then.
             if (not self._push_refuse(ct, rnd, EntityType.SENTINEL, "box_exec")
+                    and not self._doc_box_refuse(ct, rnd, EntityType.SENTINEL,
+                                                 "box_exec")
                     and self._kb_exec_action(ct, p, rnd)):
                 return
             # ⭐ v618 PLANK 1, THE ACTION HALF.  JUST BELOW THE
@@ -6528,7 +6844,18 @@ class RolesMixin:
             return False
         try:
             if ct.get_action_cooldown() == 0:
-                if self._kb_launcher_action(ct, p, rnd):
+                # ⭐⭐ s57 SK_DOCTRINE -- SPEND SUBORDINATION, GATED BOX SITE
+                # 4 of 4, AND IT IS THE ONE THAT WOULD OTHERWISE ESCAPE: the
+                # buyer's launcher purchase does NOT go through the keeper's
+                # ladder, so gating only the three keeper rungs would leave the
+                # single most expensive box item (a launcher at 20 Ti x scale)
+                # outside the reserve.  ⛔ THE WALK BELOW IS DELIBERATELY NOT
+                # GATED: walking is free in titanium, and a body that may not
+                # buy yet should still be standing where it can buy when the
+                # ratchet releases.  What the refusal must not do is SPEND.
+                if (not self._doc_box_refuse(ct, rnd, EntityType.LAUNCHER,
+                                             "box_buyer")
+                        and self._kb_launcher_action(ct, p, rnd)):
                     self.kb_fast_buys += 1
                     return True
             if ct.get_move_cooldown() != 0:
@@ -11568,6 +11895,7 @@ class RolesMixin:
         still melees the enemy core, but places ZERO barriers on the enemy
         ring, which is exactly the metric the fidelity instrument reads.
         """
+        self._doc_fwd_turn_tick()
         if self.enemy is None:
             return
         lap = cage_lap(self.enemy)
@@ -12830,6 +13158,7 @@ class RolesMixin:
         ⛔ SK_NEST OFF is the ablation identity: the engineer still walks out
         and still holds far ring faces, but plants NO forward turret.
         """
+        self._doc_fwd_turn_tick()
         # ⭐ s57 ARM 2 (c): the purse sample, taken ONCE per engineer round and
         # ABOVE every early return, because a rate is only a rate if the
         # sampling is regular -- `_b2_sample` itself refuses any gap other than
@@ -14311,6 +14640,49 @@ class RolesMixin:
                         >= SK_NEST_PB_LIFE_R):
                 lo = 2
                 self.nest_pb_life += 1
+        # ⭐⭐ s57 SK_DOCTRINE -- THE STANDOFF RE-BAND, AND IT IS THE FIELD'S
+        # BAND, NOT OURS.  PROGRAMME.md, the identity inversion: Jython v266
+        # swept us 5-0 playing "pure eco -> standoff sentinels d^2 16-25".  The
+        # burst sites inside SK_DOC_DSQ_MIN..MAX instead of COPY 5's 14..32.
+        # ⛔ IT SITS IMMEDIATELY BELOW THE `lo` RESOLUTION AND NOWHERE HIGHER:
+        # placed above it, `lo` is still None and the floor swap cannot be
+        # expressed; placed lower, the sweep has already begun.
+        # ⛔ SCOPED TO A BURST BODY (`self.rot_body`, which under SK_DOCTRINE
+        # means "the trigger has fired and this body is a raider").  A phase-1
+        # body never reaches this method at all, and a NON-doctrine arm has
+        # SK_DOCTRINE False on the first term -- so `hi` is SK_NEST_DSQ_MAX and
+        # `lo` is untouched on every existing caller and every OFF arm,
+        # character for character.
+        # ⛔ THE FLOOR SWAP IS CONDITIONAL ON `lo` STILL BEING THE DEFAULT, so
+        # the point-blank exhaustion retry (which passes lo=2 explicitly) and
+        # SK_NEST_PB_LIFE keep their exact meaning: a burst body that has
+        # exhausted the band still gets the permissive last-resort set rather
+        # than being narrowed into nothing.
+        hi = SK_NEST_DSQ_MAX
+        _doc_band = bool(SK_DOCTRINE and self.rot_body)
+        if _doc_band:
+            hi = SK_DOC_DSQ_MAX
+            if lo == SK_NEST_DSQ_MIN:
+                lo = SK_DOC_DSQ_MIN
+            if lo > hi:
+                # ⛔ A FLOOR ABOVE THE NARROWED CEILING WOULD EMPTY THE BAND
+                # OUTRIGHT.  No caller does this today (the only explicit `lo`
+                # is 2), but a band whose floor exceeds its ceiling returns None
+                # for a reason that has nothing to do with the board -- so the
+                # ceiling yields rather than the search dying, and the yield is
+                # counted.
+                hi = SK_NEST_DSQ_MAX
+                self.doc_band_relax += 1
+        # ⭐ s57 SK_DOCTRINE -- THE CARDINAL RANK TERM, ARMED WITHOUT
+        # SK_VOLUME.  The VOLUME arm measured this piece's DOSE CONFIRMED
+        # (+8pp orthogonally-aligned plants) and was refused on its OTHER piece
+        # (the column handoff: 0 trailer plants, staffing form 5).  The doctrine
+        # takes the confirmed piece and leaves the refused one off -- SK_VOLUME
+        # stays False, so `_vh_publish`, `_vh_turn` and the whole column remain
+        # unreachable.  ⛔ ONE DEFINITION: this arms the SAME scoring block
+        # below, it does not restate the rule.
+        _card_on = bool((SK_VOLUME and SK_VH_CARDINAL and SK_VH_CARD_AFTER_D)
+                        or (_doc_band and SK_DOC_CARDINAL))
         # ⭐⭐ v632 PLANKS 8+9, HAZARD (b) -- SITE COLLISION, AND THE STUDY'S OWN
         # SPLIT KEY DOES NOT WORK.  §8a hazard 2: `_nest_taken()` is a PER-BODY
         # ledger, so two raiders' spread checks see only their own tubes and
@@ -14349,7 +14721,10 @@ class RolesMixin:
                     continue
                 q = Position(x, y)
                 d = dsq_core(q, self.enemy)
-                if d < lo or d > SK_NEST_DSQ_MAX:
+                # ⭐ s57 SK_DOCTRINE: `hi` is SK_NEST_DSQ_MAX on every OFF arm
+                # and on every non-burst caller, so this line is the v622 line
+                # in value.
+                if d < lo or d > hi:
                     continue
                 if self.wall_at(x, y):              # v602 FIX 5(b)
                     continue
@@ -14379,11 +14754,20 @@ class RolesMixin:
                 # v618's two keys as the tie-breaks -- the measured S2 gap is
                 # travel, and a geometry premium bought with a cross-band walk
                 # is a premium on a tube that is not standing yet.
+                # ⭐ s57 SK_DOCTRINE: the max-range DIAGONAL bonus is keyed on
+                # the LIVE ceiling `hi`, not on the module constant, or the
+                # burst would rank against a d^2 its own band excludes.  `hi ==
+                # SK_NEST_DSQ_MAX` on every OFF arm, so both lines are v619's in
+                # value.  ⚠ AND UNDER THE DOCTRINE BAND THE TERM IS DEAD BY
+                # ARITHMETIC: a diagonal has d^2 = 2k^2 and SK_DOC_DSQ_MAX = 26
+                # is not of that form, so the leading key is constant-False and
+                # the ordering reduces to depth-first with the cardinal term as
+                # the first real tie-break.  Disclosed at SK_DOC_DSQ_MAX.
                 if haste:
                     score = (-p.distance_squared(q),
-                             d == SK_NEST_DSQ_MAX and abs(dx) == abs(dy), d)
+                             d == hi and abs(dx) == abs(dy), d)
                 else:
-                    score = (d == SK_NEST_DSQ_MAX and abs(dx) == abs(dy), d, -p.distance_squared(q))
+                    score = (d == hi and abs(dx) == abs(dy), d, -p.distance_squared(q))
                 # ⭐⭐ s57 VOLUME ARM 1, PIECE (b) -- CARDINAL-FIRST SITING,
                 # INSERTED IMMEDIATELY AFTER `d` IN BOTH ORDERINGS.  The
                 # dossier's shortlist item 3, off the bisons autopsy: 142 of
@@ -14405,7 +14789,12 @@ class RolesMixin:
                 # tile is legal it still wins and this term bites on every
                 # other pick.  Deliberately not resolved here -- reordering
                 # v618's key would be a second behaviour change under one flag.
-                if SK_VOLUME and SK_VH_CARDINAL and SK_VH_CARD_AFTER_D:
+                # ⭐ s57 SK_DOCTRINE arms this SAME block through `_card_on`
+                # (see its note above): `_card_on` is exactly
+                # `SK_VOLUME and SK_VH_CARDINAL and SK_VH_CARD_AFTER_D` on every
+                # non-doctrine arm, so the OFF path is character-for-character
+                # v632's.
+                if _card_on:
                     if SK_VH_CARD_FACE:
                         try:
                             _vc = bool(face.is_cardinal())

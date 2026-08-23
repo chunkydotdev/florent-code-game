@@ -1583,6 +1583,59 @@ class Player(CommonMixin, RolesMixin, CoreMixin):
         # SK_ROTATE False every one of these is allocated, `rot_on`/`rot_body`
         # are re-set to False on every builder round, and the four counters
         # stay 0 -- which is exactly what makes them the identity witnesses.
+        # --- s57 SK_DOCTRINE -- THE ASSEMBLY'S STATE AND ITS INSTRUMENTS ----
+        # GAME CONTEXT: in-engine state for the Florent Code League's simulated
+        # grid -- which phase of our own build order this piece is playing.
+        # ⛔ UNCONDITIONAL, for this __init__'s standing engine reason: a field
+        # created only under a flag is how an OFF arm raises AttributeError
+        # inside `run()`, and the engine answers that by PERMANENTLY DESTROYING
+        # the unit for the rest of the match.  With SK_DOCTRINE False every one
+        # of these stays at its initial value for the whole game, which is
+        # exactly what makes them the identity witnesses.
+        self.doc_fired = False        # THE TRIGGER's latch, per instance.  On
+                                      # the CORE it is the authority (tail A or
+                                      # tail B); on a builder it is tail A read
+                                      # locally or the core's b31 off the wire
+        self.doc_round = -1           # the round this instance first saw the
+                                      # burst open.  -1 = never.  INSTRUMENT
+                                      # ONLY -- nothing branches on it
+        self.doc_tail = 0             # WHICH tail fired: 0 none, 1 bank
+                                      # threshold, 2 eco latch + burst reserve
+                                      # (core) / the wire (a builder).  The
+                                      # #132 both-tail column
+        self.doc_home_rounds = 0      # phase-1 rounds a RAIDER body spent on
+                                      # the home turn -- the denominator
+        self.doc_forward = 0          # ...of which it stood NEARER the enemy
+                                      # core than our own.  ⚠ A DIAGNOSTIC (how
+                                      # far the home ladder wanders), NOT the
+                                      # bar -- see `_doc_fwd_turn_tick`
+        self.doc_fwd_turn = 0         # ⛔⛔ THE MANDATE'S BAR-0 COLUMN, AND IT
+                                      # IS A CODE-PATH COUNT: raider entries
+                                      # into `_siege_engineer` / `_cage_walker`
+                                      # -- the tree's only two forward turns --
+                                      # before the trigger fired.  "NO forward
+                                      # bodies pre-latch" is a claim about
+                                      # which TURN runs, so the instrument
+                                      # counts turns, not positions
+        self.doc_box_ratchet = 0      # box purchases refused by the phase-1
+                                      # reserve ratchet
+        self.doc_box_burst = 0        # box purchases refused by the phase-2
+                                      # stand-down.  Both tails of spend
+                                      # subordination, kept apart so "it never
+                                      # bound" and "it bound" are different
+                                      # readings
+        self.doc_band_relax = 0       # burst band re-widened because an
+                                      # explicit floor exceeded the narrowed
+                                      # ceiling.  Expected 0; a non-zero column
+                                      # means the exhaustion retry met the
+                                      # doctrine band
+        self.doc_converts = 0         # burst conversions actually made (CORE)
+        self.doc_conv_ti = 0          # ...and the titanium they spent
+        self.doc_conv_held = 0        # burst conversions refused for room --
+                                      # the gate that must be seen to refuse
+        self.doc_ammo_peak = 0        # peak ammunition balance seen post-
+                                      # trigger.  The burst's own dose column,
+                                      # against SK_DOC_AMMO
         self.rot_on = False           # the phase is open (rnd >= SK_PHASE_ROUND)
         self.rot_body = False         # ...and THIS body is one of the raiders
         self.rot_stage = False        # THE COMMUTE: a raider inside

@@ -38,11 +38,15 @@ from sk_maps import (
     SK_KB_FAST_SPAWN, SK_KB_FAST_SPAWN_N, SK_KB_FAST_SPAWN_BY,
     # --- s57 THE PUSH v3, PIECE 2b -- the warden as an ADDITIONAL body ------
     SK_PUSH, SK_PUSH_WARDEN2, SK_PUSH_W2_N, SK_PUSH_W2_FLOOR,
+    # --- s57 SK_DOCTRINE: the trigger and the burst conversion --------------
+    SK_DOCTRINE, SK_DOC_BANK, SK_DOC_TRIGGER_LATCH, SK_DOC_LATCH_ONCE,
+    SK_DOC_AMMO, SK_DOC_AMMO_MAX, SK_DOC_CONVERT,
+    SK_BATTERY2, SK_BATTERY2_ECO,
 )
 from sk_roles import (
     DRIP_GUN_MASK, DRIP_SENT_FIELD, SEAT_MASK,
     CF_HIT_MASK, CF_TILE_FIELD, CF_TILE_MASK, CF_HP_FIELD, CF_HP_MASK,
-    CF_HP_UNIT, CF_SENT_BIT, CF_RAY_BIT, CF_SENTRY_BIT,
+    CF_HP_UNIT, CF_SENT_BIT, CF_RAY_BIT, CF_SENTRY_BIT, CF_DOC_BIT,
 )
 
 
@@ -82,6 +86,22 @@ class CoreMixin:
 
         rnd = ct.get_current_round()
         home_guns, home_sents = self._threat_scan(ct, p, rnd)
+        # ⭐⭐ s57 SK_DOCTRINE -- THE TRIGGER, EVALUATED ON THE CORE AND
+        # EVALUATED **ABOVE** THE PUBLISH SO THE LATCH IS ON THE WIRE THE ROUND
+        # IT FIRES rather than the round after.
+        # ⛔ WHY THE CORE OWNS THIS.  The income sampler `_b2_sample` refuses
+        # any gap other than exactly one round (it will not average over a hole
+        # it cannot see), and its adopted host -- the siege engineer -- does not
+        # exist as a running turn in phase 1 under this doctrine and restarts
+        # its ring on every engineer turnover.  The core runs every round, for
+        # the whole match, and cannot die without the match ending; it reads
+        # `get_global_resources()` and `get_global_ammo()` for free.  ONE
+        # SAMPLER, ONE WRITER, ONE LATCH.
+        # ⛔ IT DOES NOT DISTURB THE ENGINEER'S OWN SAMPLER: `batt2_*` are
+        # per-`Player`-instance and every unit gets its own instance, so the
+        # core's ring and the engineer's ring are different objects.
+        # ⛔ SK_DOCTRINE False -> one module-constant test, zero engine calls.
+        self._doc_trigger(ct, rnd)
         self._corefire_report(ct, p, rnd)          # v608 SENSOR
 
         # ⭐⭐ v632 HEIMDALL PLANK 3 -- THE AMMO CLOCK, ABOVE THE DRIP.
@@ -105,8 +125,33 @@ class CoreMixin:
         # first term, so an OFF arm makes no call and reads no store.
         if SK_AMMO_PUSH and not banked:
             banked = self._ammo_push(ct, rnd, home_guns, home_sents)
+        _conv_before = self.converts
         if SK_DRIP and not banked:
             self._drip(ct, rnd, home_guns, home_sents)
+        # ⭐⭐ s57 SK_DOCTRINE -- THE BURST CONVERSION, AND IT IS THE **LAST**
+        # CONVERTER IN THE ROUND.  `convert_ammo` is at most once per team per
+        # turn; the drip is NEED-BASED off turrets that already exist and never
+        # banks, this rung BANKS toward SK_DOC_AMMO.  NEED OUTRANKS BANK, so
+        # the drip is asked first and this rung runs only on a round the drip
+        # did not spend the conversion.
+        # ⛔ THAT ORDERING IS WHY NO `_drip` ARITHMETIC IS DUPLICATED HERE.
+        # SK_AMMO_PUSH sits ABOVE the drip and therefore has to reason about
+        # SUBSUMING it (its own note: "it returns True only on a round it
+        # actually spent that conversion for at least what the drip would have
+        # spent"); a rung placed BELOW cannot overrule anything and needs no
+        # such argument, and there is no second copy of `need` to drift.
+        # ⛔ THE DETECTOR IS `self.converts`, THE DRIP'S OWN COUNTER, READ
+        # ACROSS THE CALL -- not a return value, so `_drip` is untouched.
+        # ⛔ SK_DOCTRINE False -> the snapshot is one attribute read and the
+        # call returns on its first line; zero engine calls, and the drip above
+        # is character-for-character the adopted one.
+        # ⛔ BOTH TERMS ARE REQUIRED.  `banked` covers the two converters ABOVE
+        # the drip (the ring's ammo clock and SK_AMMO_PUSH), which skip the drip
+        # entirely and would leave `self.converts` unchanged; the counter
+        # comparison covers the drip itself.  Either alone lets a second
+        # `convert_ammo` be attempted in one team-turn.
+        if not banked and self.converts == _conv_before:
+            self._doc_convert(ct, rnd)
 
         self._spawn_plan(ct, p, rnd)
 
@@ -219,6 +264,23 @@ class CoreMixin:
         # TTL is needed and none is applied.
         if SK_SENTRY and SK_SENTRY_ALARM and self.sentry_last == rnd:
             word |= CF_SENTRY_BIT
+        # ⭐⭐ s57 SK_DOCTRINE -- THE BURST LATCH ON b31, THE LAST FREE BIT OF
+        # THE LAST FREE SLOT.  It rides here for the same three reasons b30
+        # does: the core is the ONE writer of this word, the word is written
+        # WHOLE every round (never a read-modify-write, so no buffered-write
+        # lost update is possible), and every existing consumer reads its own
+        # field and is blind to a new bit.
+        # ⛔ RE-PUBLISHED EVERY ROUND, so a body spawned at r400 reads the
+        # phase on its first turn instead of re-deriving it from a bank the
+        # burst has already drawn down.
+        # ⛔ THE PUBLISH IS ONE-WAY BECAUSE THE LATCH IS (SK_DOC_LATCH_ONCE);
+        # with that flag off `doc_fired` is re-derived each round and this bit
+        # follows it in both directions, which is the ablation.
+        # ⚠ DEPENDENCY, STATED: this method returns on `not SK_COREFIRE` above,
+        # so SK_DOCTRINE's wire needs SK_COREFIRE (True, adopted).  The unit
+        # battery asserts the conjunction rather than leaving it implied.
+        if SK_DOCTRINE and self.doc_fired:
+            word |= CF_DOC_BIT
         if shooter is not None:
             word |= (pack_tile(shooter[0]) & CF_TILE_MASK) << CF_TILE_FIELD
             if shooter[1]:
@@ -245,6 +307,155 @@ class CoreMixin:
             h = CF_HP_MASK
         word |= (h & CF_HP_MASK) << CF_HP_FIELD
         self.wstore(ct, SK_SLOT_COREFIRE, word)
+
+    # ------------------------------------------------------------------
+    # s57 SK_DOCTRINE -- THE TRIGGER (writer: CORE) and THE BURST CONVERSION
+    # ------------------------------------------------------------------
+    # GAME CONTEXT: in-engine decisions of our own core in the Florent Code
+    # League, a sandboxed bot-vs-bot competition.  "the burst" is a phase of
+    # our own build order; `convert_ammo` is the engine's documented 1:1
+    # titanium-to-ammunition call.
+
+    def _doc_trigger(self, ct, rnd):
+        """THE TRIGGER, evaluated on the core.  True once the burst is open.
+
+        TWO TAILS, AND THE FLAG NOTES CARRY THE PROVENANCE:
+          * TAIL A -- `bank >= SK_DOC_BANK` (600).  The Focalground necessity
+            cut: of their 13 games whose bank never reaches 600, ZERO produce
+            a salvo; of the 67 that do, 52 (78%) salvo.
+          * TAIL B -- the ADOPTED eco latch has fired AND the bank covers
+            `_doc_burst_floor` (one sentinel at the live scale plus one full
+            battery volley of ammunition).  ⛔ THE FLOOR IS A **START** COST,
+            NOT THE WHOLE BURST PRICE, and the measurement that forced that is
+            at the flag: 0 of 988 sampled rounds on the three ON cells ever
+            reached the whole-burst figure, so the battery is bought out of the
+            flow the latch certified rather than pre-paid out of a stock this
+            tree never holds.
+
+        ⛔⛔ TAIL B READS `batt2_eco_since` -- THE LATCH STATE -- AND NOT
+        `_b2_eco_ready`'s RETURN VALUE, and the difference is a live r0 hazard
+        rather than a style point.  That predicate returns True UNCONDITIONALLY
+        on its first line when `SK_BATTERY2_ECO` is off, so a future arm
+        ablating the eco piece would turn tail B into "bank >= reserve" alone
+        -- and the opening bank (STARTING_TITANIUM = 500) already exceeds the
+        reserve at scale 1.0.  The burst would fire at r0, which is the rush
+        this doctrine exists to refuse.  Reading the latch STATE makes the
+        earliest possible tail-B round SK_BATTERY2_ECO_WARM samples away,
+        structurally.
+        ⛔ THE PREDICATE IS STILL CALLED (not merely inspected) because calling
+        it is what ADVANCES the latch; the call is the adopted one, unchanged.
+        ⛔ TAIL A CANNOT FIRE AT r0 EITHER: 500 < SK_DOC_BANK = 600.
+        ⛔ AN UNREADABLE SENTINEL PRICE REFUSES TO FIRE.  A floor we could
+        not read is not a floor we have cleared, and committing the whole
+        identity on a failed read is the one direction that cannot be undone.
+        """
+        if not SK_DOCTRINE:
+            return False
+        if SK_DOC_LATCH_ONCE and self.doc_fired:
+            return True
+        # THE SAMPLER, FIRST AND UNCONDITIONALLY, because a rate is only a rate
+        # if the sampling is regular -- `_b2_sample` refuses any gap other than
+        # exactly one round rather than averaging over a hole.  No-op on any
+        # SK_BATTERY2_ECO-off arm (one module-constant test).
+        self._b2_sample(ct, rnd)
+        try:
+            bank = ct.get_global_resources()
+        except Exception:
+            return False
+        tail = 0
+        if bank >= SK_DOC_BANK:
+            tail = 1
+        elif SK_DOC_TRIGGER_LATCH and SK_BATTERY2 and SK_BATTERY2_ECO:
+            self._b2_eco_ready(ct, rnd)
+            if self.batt2_eco_since is not None:
+                res = self._doc_burst_floor(ct)
+                if res is not None and bank >= res:
+                    tail = 2
+        if not tail:
+            return False
+        if self.doc_round < 0:
+            self.doc_round = rnd
+            self.doc_tail = tail
+        self.doc_fired = True
+        return True
+
+    def _doc_convert(self, ct, rnd):
+        """THE BURST CONVERSION.  True if it spent this team-turn's conversion.
+
+        "Conversion sized at burst": ramp the global ammunition balance to
+        SK_DOC_AMMO at up to SK_DOC_AMMO_MAX titanium a round, WITHOUT eating
+        the sentinels the battery still has to buy.
+
+        ⛔ THE RESERVE IS A LIVE TEAM READ, NOT A CONSTANT.  The forward
+        sentinel census arrives on slot 8 from the engineer (`_drip_report`,
+        one writer, one slot) and is the same field the drip already reads.
+        While the battery is short this rung holds back ONE barrel's live
+        price; once SK_ROTATE_WANT stand it holds back nothing and every
+        titanium is ammunition.  The measurement that sized it is at the line.
+        ⛔ THE 4/10 LATTICE IS OBEYED (`lattice_floor`, COPY 7's acceptance
+        test), for the same reason `_drip` and `_fort_ammo_bank` obey it: a
+        conversion off the lattice is a conversion this tree did not intend.
+        ⛔ EVERY REFUSAL IS COUNTED (`doc_conv_held`).  A ramp that never
+        converted and a ramp that never had room read identically in the ammo
+        column and must not read identically in the trace.
+        """
+        if not (SK_DOCTRINE and SK_DOC_CONVERT):
+            return False
+        if not self.doc_fired:
+            return False
+        try:
+            ammo = ct.get_global_ammo()
+        except Exception:
+            return False
+        if ammo > self.doc_ammo_peak:
+            self.doc_ammo_peak = ammo
+        if ammo >= SK_DOC_AMMO:
+            return False
+        try:
+            have = ct.get_global_resources()
+            drip = ct.read_store(SK_SLOT_DRIP)
+            sent_cost = ct.get_sentinel_cost()
+        except Exception:
+            return False
+        fwd_sents = (drip >> DRIP_SENT_FIELD) & DRIP_GUN_MASK
+        # ⛔⛔ THE RESERVE IS **ONE** BARREL, NOT THE WHOLE REMAINING BATTERY,
+        # AND THE FIRST BUILD MEASURED WHY.  Reserving `(SK_ROTATE_WANT -
+        # standing) x get_sentinel_cost()` reads ~400 Ti at the scales these
+        # cells run, against a bank whose measured maximum is 295 -- so `room`
+        # was negative on every round and the ramp converted ZERO in 988
+        # sampled rounds (`asmbuild_ident/tron_*.err`, conv=0 on all three ON
+        # cells including the one whose trigger fired at r120).  The burst then
+        # stood barrels it could not fire: helheim r203 read 2 plants and an
+        # ammunition balance of 4, against the 10 one sentinel shot costs.
+        # A reserve that pre-pays the whole battery out of a bank that never
+        # holds it does not protect the battery -- it silences the magazine.
+        # ⇒ HOLD ONE BARREL'S PRICE WHILE THE BATTERY IS SHORT, AND NOTHING
+        # ONCE IT STANDS.  That is the same quantity `_doc_burst_floor`'s first
+        # term uses, so "what we keep in hand for the next barrel" means one
+        # thing in this tree.  The remaining barrels are bought out of the FLOW
+        # the eco latch certified, tube by tube, exactly as `_battery_open`
+        # already buys them.
+        room = have - (sent_cost if fwd_sents < SK_ROTATE_WANT else 0)
+        amt = SK_DOC_AMMO - ammo
+        if amt > SK_DOC_AMMO_MAX:
+            amt = SK_DOC_AMMO_MAX
+        if amt > room:
+            amt = room
+        amt = lattice_floor(amt)
+        if amt <= 0:
+            self.doc_conv_held += 1
+            return False
+        try:
+            if ct.can_convert_ammo(amt):
+                ct.convert_ammo(amt)
+                self.converts += 1
+                self.doc_converts += 1
+                self.doc_conv_ti += amt
+                return True
+        except Exception:
+            return False
+        self.doc_conv_held += 1
+        return False
 
     def _corefire_shooter(self, ct, p, rnd):
         """(Position, is_sentinel, ray_confirmed) of the enemy turret bearing on
