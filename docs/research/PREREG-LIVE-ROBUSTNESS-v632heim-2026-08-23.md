@@ -6,7 +6,18 @@ organiser-approved rules.** "killer turret", "peck", "core takedown", "answer
 ladder", "tube", "stranger" are in-engine states and actions of competing game
 bots' pieces. Nothing here touches any real system, network or person.
 
-## ⛔ DRAFT — NOT RATIFIED, NOT LOCKED, NOT COMMITTED BY ITS AUTHOR.
+## ⛔ RATIFIED BY BUILDER s57 — see RATIFICATION block below, NOT COMMITTED BY ITS AUTHOR.
+
+**RATIFICATION (BUILDER s57, 2026-08-23):** the judgment lines (M1-M5 bars
++ falsifiers, the barless win column under OB16, the pre-committed
+surprise clause, the leak budget, fire gates 1-6) are ratified as
+drafted. prereg_check residuals BAR_RESOLVABLE and OB13_INTERSECTION are
+ESCAPE-FLAGGED on the record: the tool has no transfer-leg form (this is
+a mechanism probe on an adopted config, no treatment diff exists by
+design); the transfer-leg form is a wrap-scoped tooling item. CLOCK 1 =
+this ratification commit's author time. FIRE GATE 1 remains OPEN pending
+Magnus's window sentence (routed to him on the session tail, package
+presented).
 
 * **STATUS: drafted BEFORE any challenge is issued, BEFORE any submit, BEFORE any game of this leg exists.** Drafting-shell wall clock **`2026-08-23T20:16:14Z`** (`date -u`, same shell call). Repo HEAD at draft **`08e4b05e2`** (2026-08-23 22:05:52 +0200); `bots/_v632heim` is **clean at that HEAD** (`git status --porcelain` empty).
 * Written by a **FRESH opus agent with NO inherited session context** beyond the files named under `PROVENANCE` (the s40 one-fresh-agent-per-prereg rule). This agent read no result tape beyond the named inputs, no `HANDOVER.md`, no `coordination.md`, no s57 session message.
