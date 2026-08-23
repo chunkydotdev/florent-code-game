@@ -35,3 +35,27 @@ column the focus (its 20 losses are the population). S5 guards vs t_bg_*
 [alive 59,-2 / deaths 47,+4 / eco 37.30,-12% / harv 218,-10%] — the SC
 lesson watched (in-window scoping: the alarm must not turn into all-game
 pecking; out-of-window pecks byte-flat). Play-it-well line mandatory.
+
+## V1 DISPOSITION + V2 REGISTRATION (blind, BUILDER s57)
+
+V1: ALARM dose delivered (the 28r window cut to 8-9r-to-answer; F2
+pecks-before-first-shot 7→21, destroyed 3→6) — and the guards breached
+(alive 59→52 vs −2 bar; wins 40→35) with the mechanism traced: arming at
+r7-8 pulls OPENING bodies off the economy. FOCUS: hard null by
+construction (0/3,614 sweep pecks on turrets — _peck_priority above it
+owns those AND already ships hp_trend_ok + gave_up; the march is
+single-target) — R2 was incumbent behaviour, the grep-the-incumbent
+lesson re-learned; piece DROPPED.
+
+**V2 — ARM EARLY, STRIKE LATE (the window's tail):** the presence alarm
+still stamps at the plant (b30 unchanged), but the ANSWER DISPATCH gates
+on SK_SENTRY_FROM (registered default r20; the killer's first core shot
+lands ~r34 median — the strike uses rounds 20-30 of the window, after
+the opening economy is laid) OR earlier if the responding body is IDLE
+(no build/harvest task — the opening never abandoned for the answer).
+Bars: v1's dose columns must survive the delay (build-to-first-answer
+<= ~20 acceptable, destroyed-before-first-shot the true dose); the
+guards must return to envelope (alive [59,-2] the binding one); currency
+grid non-fall, F2's loss population the target. Both-tail on the
+dispatch gate (fires post-FROM / idle-early, never pulls a tasked
+opening body pre-FROM).
