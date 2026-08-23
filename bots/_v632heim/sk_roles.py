@@ -219,6 +219,9 @@ from sk_maps import (
     # --- s57 THE PUSH v3 (PIECE 2b): the warden as an ADDITIONAL body -------
     SK_PUSH_WARDEN2, SK_PUSH_W2_ROLE, SK_PUSH_W2_WALK_MAX,
     SK_PUSH_STATION_DWELL, SK_PUSH_STATION_STOPS,
+    # --- s57 SK_HAMMER_PRIO: the spend-ladder inversion ---------------------
+    SK_HAMMER_PRIO, SK_HAMMER_PRIO_BELT, SK_HAMMER_PRIO_PAIR,
+    SK_HAMMER_PRIO_BIT, SK_HAMMER_PRIO_STICKY,
 )
 
 # --- v632 PLANK A 4.2: the three guarded WALKS, as ban keys.  A tile is banned
@@ -274,6 +277,11 @@ STALL_LIFE_FIELD = 18     # slot 9 b18-23
 STALL_LIFE_MASK = 0x3F
 DRIP_GUN_MASK = 0x3F      # slot 8 b0-5
 DRIP_SENT_FIELD = 6       # slot 8 b6-11
+# s57 SK_HAMMER_PRIO: slot 8 b12, the ECO-READY LATCH published for the bodies
+# that are NOT the engineer.  ⛔ NOT A SECOND LATCH -- it is `batt2_eco_since`
+# on the wire; see the SK_HAMMER_PRIO_BIT note for why slot 8 and why b12 is
+# invisible to all three existing readers of this word.
+HAMMER_LATCH_BIT = 1 << SK_HAMMER_PRIO_BIT
 BELT_GAP_FIELD = 18       # slot 5 b18-23 -- the uncovered-belt-tile gap.  v600
 BELT_GAP_MASK = 0x3F      # PUBLISHED this and never read it; PLANK 2 reads it.
 # --- v608: slot 15, THE COREFIRE WORD (writer: CORE, `_corefire_report`) ----
@@ -2704,10 +2712,35 @@ class RolesMixin:
                     and self._route_gaps(ct, rnd)
                     and not self._push_refuse(ct, rnd, EntityType.CONVEYOR, "belt_term")
                     and self._belt_action(ct, p, rnd)):
+                # ⚠ s57 SK_HAMMER_PRIO -- LEAK 1, COUNTED AND NOT ARGUED SMALL.
+                # This rung is EXEMPT by design (delivery keeps flowing), but it
+                # is ENTERED whenever `_route_gaps` is non-empty and then builds
+                # the first adjacent PLANNED tile, which need not be the gap
+                # tile -- so an extension tile can still be laid here while the
+                # inversion is armed.  Read off `hammer_deferring`, which is
+                # last round's verdict at this point in the ladder (the gate
+                # runs lower down): a DIAGNOSTIC, one round stale by
+                # construction, never a control-flow input.
+                if SK_HAMMER_PRIO and self.hammer_deferring:
+                    self.hammer_term_leak += 1
                 return
             # s57 THE PUSH, PIECE 1 -- GATED SITE 6 of 10 (20 Ti x scale,
             # the largest ECO item and the reserve's main donor).
+            # ⭐⭐ s57 SK_HAMMER_PRIO -- THE INVERSION, GATED RUNG 1 of 2, AND
+            # IT IS THE COMPOSITE'S OWN RISEN COLUMN.  On the six composite
+            # lost-kill cells harvesters went 13 -> 22 while barrels standing
+            # inside r300 went 1.36 -> 0.39, bank and bodies ample: the
+            # eco-ready latch opened the battery CEILING and the build ladder
+            # went on ranking a 20 Ti x scale harvester above the battery
+            # forever.  While the latch has fired and the pair is short, this
+            # rung stands down.  ⛔ THE RUNG IS UNCHANGED -- the gate is a
+            # call-site conjunction whose first term is a module constant, so
+            # with SK_HAMMER_PRIO False the verb runs exactly as it does today,
+            # in the same order, at the same cost.  ⛔ APPENDED AFTER
+            # `_push_refuse` so that gate's counters keep their exact meaning
+            # on any PUSH-on arm.
             if (not self._push_refuse(ct, rnd, EntityType.HARVESTER, "harv")
+                    and not self._hammer_defer(ct, rnd, "harv")
                     and self._harvester_action(ct, p, rnd)):
                 return
             # ⭐⭐ s57 THE KILLBOX, ARM 1, PIECE 2 -- THE CORNER CELL, ACTION
@@ -2747,6 +2780,14 @@ class RolesMixin:
             # s57 THE PUSH, PIECE 1 -- GATED SITE 9 of 10.
             if (not self._push_refuse(ct, rnd, EntityType.CONVEYOR, "seat_claim")
                     and self._seat_claim_action(ct, p, rnd)):
+                # ⚠ s57 SK_HAMMER_PRIO -- LEAK 2, same shape as leak 1.  The
+                # seat claim lays belt-terminus conveyors and is NOT gated: its
+                # whole value is claiming a seat BEFORE their collar (median
+                # r11) and it is the same 3 Ti the belt would have spent.  If
+                # this column is large the next arm gates it; it is not asserted
+                # small here.
+                if SK_HAMMER_PRIO and self.hammer_deferring:
+                    self.hammer_seat_leak += 1
                 return
             # ⭐ v618 PLANK 2, THE ACTION HALF.  Below the economy because ONE
             # round late is still a standing gun, and above nothing else: it is
@@ -2761,9 +2802,22 @@ class RolesMixin:
             # the registered scope.  ⚠ It is the arm's largest disclosed leak
             # -- 20-30 Ti a piece, above the pair's money -- and the flag
             # exists so an ablation can price it.
+            # ⭐⭐ s57 SK_HAMMER_PRIO -- THE INVERSION, GATED RUNG 2 of 2, AND
+            # THE GATE IS PER TILE RATHER THAN PER RUNG.  `hammer=True` does
+            # not switch the rung off: inside `_belt_action`'s loop a tile this
+            # body has never built (`belt_rebuilds == 0`) is an EXTENSION and is
+            # skipped, while a REBUILD falls straight through and is laid in the
+            # same turn.  That is the registered exemption -- delivery must keep
+            # flowing to fund the hammer, and a hammer paid for by stopping
+            # delivery is v1 RES's measured self-defeat.
+            # ⛔ MODULE CONSTANTS FIRST: with the master off `_hb` is False
+            # without a single controller call and `_belt_action` is called with
+            # its default, i.e. v632's code on v632's inputs.
+            _hb = (SK_HAMMER_PRIO and SK_HAMMER_PRIO_BELT and SK_BELT
+                   and self._hammer_defer(ct, rnd, "belt"))
             if (SK_BELT
                     and not self._push_refuse(ct, rnd, EntityType.CONVEYOR, "belt")
-                    and self._belt_action(ct, p, rnd)):
+                    and self._belt_action(ct, p, rnd, hammer=_hb)):
                 return
             # ⭐⭐ v632 HEIMDALL PLANK 3 -- THE TURRET RING (SK_FORT_RING), THE
             # ACTION HALF.  ⛔⛔ BELOW EVERY ECONOMY VERB -- BELOW
@@ -3656,13 +3710,22 @@ class RolesMixin:
             frontier = nxt
         return parent
 
-    def _belt_action(self, ct, p, rnd):
+    def _belt_action(self, ct, p, rnd, hammer=False):
         """SK_BELT -- lay or repair the planned belt on an adjacent tile.
 
         LEDGER V1 (the most expensive bug in the study: sixteen rebuilds of one
         conveyor at 6-round intervals into a stationary gun): a tile rebuilt
         SK_REBUILD_ESCALATE times WITHOUT SURVIVING stops being rebuilt and
         becomes a locate-the-shooter task.  Rebuild #4 never happens.
+
+        ⭐⭐ s57 SK_HAMMER_PRIO: `hammer` is the EXTENSION/REPAIR fork and it
+        is passed by exactly ONE of this method's two call sites (the general
+        belt rung).  The SK_TERM_FIRST rung above never passes it, because that
+        rung is entered only while `_route_gaps` is non-empty -- an ALREADY
+        BUILT harvester whose chain is short of home -- and completing that
+        chain adds no productive capacity, it makes capacity we already bought
+        deliver.  ⛔ THE DEFAULT IS THE OFF IDENTITY: with the argument absent
+        the loop below is v632's, line for line.
         """
         self._plan_belt(ct)
         if not self.belt_plan:
@@ -3706,6 +3769,25 @@ class RolesMixin:
                 self.belt_ban.add((q.x, q.y))
                 self.belt_key = None            # re-route around the killzone
                 continue
+            # ⭐⭐ s57 SK_HAMMER_PRIO -- THE EXTENSION/REPAIR FORK, AND IT SITS
+            # HERE BECAUSE `n` IS ALREADY THE ANSWER.  `belt_rebuilds[t]` is
+            # this rung's own count of OUR builds on that tile and it is never
+            # decremented, so n == 0 is a FIRST-EVER build (new delivery
+            # capacity: EXTENSION) and n >= 1 is a rebuild of a route we already
+            # laid (REPAIR).  No new memory, no second classifier.
+            # ⛔ PLACED AFTER the escalate ledger and before the engine calls, so
+            # a deferred tile costs one dict lookup and no controller call, and
+            # the rung CONTINUES rather than returning -- a repair tile on the
+            # next cardinal is still laid this turn.
+            # ⚠ `belt_rebuilds` is PER BODY (disclosed in SK_HAMMER_PRIO's
+            # note): a successor keeper's first build on an inherited-and-lost
+            # tile reads as EXTENSION.  Both verdicts are counted so the readout
+            # can show the split rather than assert it.
+            if hammer:
+                if n == 0:
+                    self.hammer_belt_ext += 1
+                    continue
+                self.hammer_belt_rep += 1
             try:
                 if not ct.can_build_conveyor(q, face):
                     continue
@@ -7525,6 +7607,133 @@ class RolesMixin:
             self.push_res_hold_rounds += 1
             self.push_res_hold_last = rnd
         return False
+
+    # ==================================================================
+    # s57 SK_HAMMER_PRIO -- THE SPEND-LADDER INVERSION
+    # ==================================================================
+    # GAME CONTEXT: in-game build work for the Florent Code League, a sandboxed
+    # bot-vs-bot programming competition.
+    #
+    # TWO METHODS AND NOTHING ELSE: `_hammer_armed` READS the adopted battery
+    # latch off the wire, `_hammer_defer` is the refusal predicate the eco
+    # rungs are gated on.  Both return on a module constant when the master is
+    # off, before any controller call.
+
+    def _hammer_armed(self, ct, rnd):
+        """Has the ADOPTED battery's eco-ready latch fired, as seen from HERE?
+
+        ⛔ IT IS A READ, NOT A LATCH (class audit row #132).  There is no bar,
+        no window, no warm-up and no sample ring in this method: the decision
+        was taken by `_b2_eco_ready` on the engineer body and published to slot
+        8 b12 by `_drip_report`.  Recomputing `_b2_rate` here would have been
+        the honest-looking mistake -- same formula, different body, different
+        ring, a DIFFERENT fire round -- i.e. a second latch wearing the first
+        one's name.
+
+        ⭐ THE STICKY (SK_HAMMER_PRIO_STICKY) AND WHY IT IS NOT THAT MISTAKE.
+        The producer can go silent for reasons that are not economic:
+        `_b2_sample` is PER BODY by its own docstring, so a successor engineer
+        starts with an empty ring and publishes 0 until it re-warms, and
+        `_drip_report` returns early while `self.enemy is None`.  The adopted
+        latch's own semantics are "once readiness is established the hammer
+        stays open", so a reader that UN-fires on engineer turnover would be
+        reporting something the latch does not mean.  The sticky can only ever
+        repeat a decision already taken; it can never take one.
+        ⛔ AND IT IS SCORED BOTH WAYS: `hammer_relapse` counts rounds the wire
+        read 0 AFTER the sticky latched -- exactly the work the sticky is
+        doing.  Zero relapses would mean the sticky is decoration and the
+        readout is required to say so.
+
+        ⚠ `hammer_lag` is the reader-side half of the disclosed staleness: the
+        round this body first SAW the latch.  The producer's own fire round is
+        not visible from here, so the two are compared in the mechanism trace,
+        not inside the bot.
+        """
+        if not SK_HAMMER_PRIO:
+            return False
+        if SK_HAMMER_PRIO_STICKY and self.hammer_latched:
+            try:
+                if not (ct.read_store(SK_SLOT_DRIP) & HAMMER_LATCH_BIT):
+                    self.hammer_relapse += 1
+            except Exception:
+                pass
+            return True
+        try:
+            word = ct.read_store(SK_SLOT_DRIP)
+        except Exception:
+            return False                    # fails OPEN: no inversion
+        if not (word & HAMMER_LATCH_BIT):
+            self.hammer_cold += 1
+            return False
+        if not self.hammer_latched:
+            self.hammer_latched = True
+            self.hammer_lag = rnd           # first round SEEN, not fired
+        return True
+
+    def _hammer_defer(self, ct, rnd, site):
+        """True when an eco-EXPANSION build must stand down for the battery.
+
+        ⛔ NO `kind` ARGUMENT, UNLIKE `_push_refuse`, AND THE ASYMMETRY IS THE
+        DESIGN: the reserve asks "does the bank still clear the pair bar AFTER
+        this purchase", so it must price the item.  This gate asks a PRIORITY
+        question, not an affordability one -- while the battery is short, eco
+        EXPANSION does not buy, at any price.  An affordability term here would
+        re-import the reserve's measured self-defeat through the side door.
+
+        THE CONDITION IS TWO TERMS AND NEITHER IS NEW:
+          * the adopted eco latch has FIRED (`_hammer_armed`, above);
+          * the forward PAIR does not yet stand -- `_push_live_tubes`, the
+            TEAM's own forward-tube beats, CALLED and not restated, so this
+            gate and `_push_refuse` cannot desynchronise on what "the pair
+            stands" means.
+
+        ⛔ IT IS A DEFERRAL, NOT A CANCELLATION, AND THE RELEASE IS THE POINT.
+        The refusal ends the moment the pair stands, and it RE-ARMS when the
+        pair is lost -- the push-reserve episode pattern (`push_res_watch`'s
+        death edge), because median forward-tube life is 42 rounds and a
+        match-long disarm would retire the plank after its first barrel.
+
+        ⛔ WHY A REFUSAL GATE AND NOT A RANK SWAP.  A rank swap would have to
+        move the barrel rungs UP the keeper's ladder -- but the keeper does not
+        plant barrels: `_plant_gun` is the ENGINEER's verb, on another body, at
+        the band.  There is no rung to lift.  What the keeper controls is
+        whether its turn and the shared purse go into MORE ECONOMY while the
+        battery is short, and a refusal on those rungs is exactly that
+        inversion expressed on the body that can express it.  `_push_refuse` is
+        the tree's own precedent for the shape, down to the per-site counter.
+
+        ⛔ IT FAILS OPEN on any unreadable number (`_chest_refuse`'s reason).
+        ⚠ `hammer_held` counts ROUNDS A RUNG WAS REFUSED -- an UPPER BOUND on
+        turns diverted, not a dose: the refusal is evaluated before the verb
+        looks for a target, so a round with nothing to build still counts
+        (`_fund_refuse`'s own caveat, verbatim).  `hammer_rounds` is the
+        DISTINCT-round count, which is the honest "deferral rounds" column.
+        """
+        if not SK_HAMMER_PRIO:
+            return False
+        try:
+            if not self._hammer_armed(ct, rnd):
+                return False
+            live = self._push_live_tubes(ct, rnd)
+            if live >= SK_HAMMER_PRIO_PAIR:
+                if self.hammer_deferring:
+                    self.hammer_deferring = False
+                    self.hammer_released += 1   # RELEASED: the pair stands
+                self.hammer_off += 1
+                return False
+        except Exception:
+            return False
+        if not self.hammer_deferring:
+            self.hammer_deferring = True        # re-armed after a pair loss
+            self.hammer_episodes += 1
+            if self.hammer_first < 0:
+                self.hammer_first = rnd
+        self.hammer_held += 1
+        if rnd != self.hammer_last_rnd:
+            self.hammer_rounds += 1
+            self.hammer_last_rnd = rnd
+        self.hammer_site[site] = self.hammer_site.get(site, 0) + 1
+        return True
 
     # --- PIECE 2: THE WARDEN ------------------------------------------
 
@@ -13467,9 +13676,30 @@ class RolesMixin:
                 guns += 1
             else:
                 sents += 1
-        self.wstore(ct, SK_SLOT_DRIP,
-                    (min(guns, 63) & DRIP_GUN_MASK)
-                    | ((min(sents, 63) & DRIP_GUN_MASK) << DRIP_SENT_FIELD))
+        word = ((min(guns, 63) & DRIP_GUN_MASK)
+                | ((min(sents, 63) & DRIP_GUN_MASK) << DRIP_SENT_FIELD))
+        # ⭐⭐ s57 SK_HAMMER_PRIO -- THE CHANNEL, AND THIS IS THE WHOLE
+        # PUBLISHER.  b12 carries the ADOPTED battery's own eco-ready latch
+        # (`batt2_eco_since`, set by `_b2_eco_ready`) to the bodies that cannot
+        # see it: module state is not shared between units (one sub-interpreter
+        # each, `main.py:653`), the eco-expansion rungs run on the KEEPER and
+        # the latch lives on the ENGINEER.  ⛔ NOTHING IS RECOMPUTED HERE -- no
+        # bar, no ring, no warm-up; the bit is the latch's own state read off
+        # `self`, which is what keeps this out of class-audit row #132.
+        # ⛔ WHY IT CANNOT DISTURB THE DRIP: this write is a plain OVERWRITE by
+        # ONE role from ONE method, and all three readers of slot 8
+        # (`sk_core.py:327-329`, `:434-438`, `:526`) mask their own 6-bit field,
+        # so b12 is invisible to every one of them.  With the master off the
+        # word is bit-for-bit what it is today.
+        # ⚠ THE LAG IS STRUCTURAL AND DISCLOSED: this method runs at the TOP of
+        # the engineer's turn while `_b2_eco_ready` is evaluated later in the
+        # same turn (inside `_battery_open`), and the store is buffered one
+        # round -- so a reader sees the latch up to TWO rounds late.  Late is
+        # the safe direction for a gate that must never touch the opening.
+        if SK_HAMMER_PRIO and self.batt2_eco_since is not None:
+            word |= HAMMER_LATCH_BIT
+            self.hammer_pub += 1
+        self.wstore(ct, SK_SLOT_DRIP, word)
 
     def _stall_check(self, ct, rnd):
         """LEDGER V9 -- a plan B.  If the seal has not advanced in

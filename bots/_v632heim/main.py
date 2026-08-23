@@ -1164,6 +1164,44 @@ class Player(CommonMixin, RolesMixin, CoreMixin):
         self.batt2_eco_since = None   # round the latch FIRED (None = never)
         self.batt2_eco_block = 0      # opens refused: economy below the bar
         self.batt2_eco_cold = 0       # opens refused: fewer than WARM samples
+        # ⭐⭐ s57 SK_HAMMER_PRIO -- THE SPEND-LADDER INVERSION: state +
+        # instruments.  ⛔ INITIALISED UNCONDITIONALLY, like every other
+        # flag-gated block in this file and for the same reason: an
+        # AttributeError escaping run() destroys the unit permanently, so a
+        # flag-gated __init__ is how a flag-gated attribute becomes a
+        # flag-gated death.  All of them stay at these values for the whole
+        # game on every SK_HAMMER_PRIO-off arm (their only writers sit under
+        # `if SK_HAMMER_PRIO ...`), which makes them the OFF-identity witness
+        # as well as the arm's dose meter.
+        # ⛔ BOTH VERDICTS ARE TAPPED ON EVERY BRANCH.  A gate never seen to
+        # REFUSE has not been seen to gate; a gate never seen to RELEASE has
+        # not been seen to be bounded; a sticky that never covers a relapse is
+        # decoration.  Hence the pairs: held/off, episodes/released,
+        # latched/relapse, belt_ext/belt_rep.
+        self.hammer_pub = 0           # ENGINEER: rounds b12 was published
+        self.hammer_latched = False   # READER: the wire has been seen set
+        self.hammer_lag = -1          # ... the round it was FIRST seen
+        self.hammer_relapse = 0       # ... rounds the wire read 0 after that
+        self.hammer_cold = 0          # ... reads refused: latch not yet fired
+        self.hammer_held = 0          # RUNG-refusals (an UPPER BOUND, not a
+                                      # dose -- `_fund_refuse`'s own caveat)
+        self.hammer_rounds = 0        # DISTINCT rounds with a refusal
+        self.hammer_last_rnd = -1     # ... its de-duplicating clock
+        self.hammer_first = -1        # round of the FIRST deferral (the
+                                      # seen-choosing column: never in the
+                                      # opening)
+        self.hammer_off = 0           # rungs released: the pair stands
+        self.hammer_episodes = 0      # deferral episodes begun (re-arms on
+                                      # pair loss)
+        self.hammer_released = 0      # episodes ENDED by the pair standing
+        self.hammer_deferring = False # the current episode's state
+        self.hammer_site = {}         # site -> refusals, so the readout can say
+                                      # WHICH spend was deferred
+        self.hammer_belt_ext = 0      # belt tiles skipped as EXTENSION
+        self.hammer_belt_rep = 0      # belt tiles passed as REPAIR
+        self.hammer_term_leak = 0     # LEAK 1: the SK_TERM_FIRST rung took the
+                                      # turn while the inversion was armed
+        self.hammer_seat_leak = 0     # LEAK 2: `_seat_claim_action` did
         # PLANK 3 (SK_PECK_FOCUS) instruments.
         self.peck_relaxed = 0         # pecks that skipped the V7 veto
         self.keeper_marches = 0       # keeper turns spent marching at a shooter

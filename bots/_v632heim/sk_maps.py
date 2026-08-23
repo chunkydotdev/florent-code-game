@@ -7212,3 +7212,130 @@ SK_PUSH_ENG_PREP = True   # may the succession lay its site's prep barriers
                           # is 2 x 3 Ti and +2% of scale, so it is separately
                           # ablatable and it passes through PIECE 1's reserve
                           # like every other discretionary spend.
+
+# ===========================================================================
+# s57 SK_HAMMER_PRIO -- THE SPEND-LADDER INVERSION
+# ===========================================================================
+# GAME CONTEXT: in-game build work for the Florent Code League, a sandboxed
+# bot-vs-bot programming competition.  "barrel", "tube", "pair", "belt",
+# "harvester" and "checkmate" are the engine's own documented pieces and
+# states of competing game bots.
+#
+# ⭐⭐ THE UNIFYING DEFECT THIS ANSWERS, registered blind at
+# `docs/research/EXPECTATION-v632heim-push1-2026-08-23.md` (V2-GRID VERDICT +
+# THE UNIFYING DEFECT): on the six composite lost-kill cells barrels standing
+# inside r300 fell 1.36 -> 0.39 while harvesters ROSE 13 -> 22 and NET went to
+# 0.196, with bank and bodies AMPLE.  The adopted eco-ready latch
+# (SK_BATTERY2_ECO) opens the battery CEILING and nothing else: the BUILD
+# PRIORITY still ranks eco above barrels forever, so every wealth-creating arm
+# of phase 3 watched the bot answer a fuller purse by buying MORE ECONOMY
+# inside the kill window.  The hammer doctrine was encoded as a GATE and never
+# as a RE-RANKING.  This flag is the re-ranking.
+#
+# ⛔ IT BUILDS NO NEW LATCH (class audit row #132).  The condition is the
+# ADOPTED battery's own `batt2_eco_since`, read -- not recomputed, not
+# re-barred, not re-warmed.  The one thing that had to be built is a CHANNEL,
+# because that latch lives on the ENGINEER body and the eco-expansion rungs
+# live on the KEEPER body, and `main.py:653` records the engine fact that makes
+# that a channel problem: **module state is NOT shared between units -- one
+# sub-interpreter each, engine-probed; the 16 store ints are the only channel
+# and they lag one round**.  See SK_HAMMER_PRIO_BIT.
+SK_HAMMER_PRIO = False    # ⛔ THE MASTER, DEFAULT OFF.  Off is exact identity:
+                          # every call site is a module-constant conjunction
+                          # tested BEFORE any controller call, and the publisher
+                          # half is `if SK_HAMMER_PRIO and ...` inside the ONE
+                          # existing slot-8 write, so an OFF arm writes the same
+                          # word it writes today and its control flow -- CPU
+                          # profile included -- is v632's character for
+                          # character.
+SK_HAMMER_PRIO_BELT = True  # sub-flag, ablatable alone: the BELT-EXTENSION half
+                          # of the inversion.  Off leaves the harvester half
+                          # (the larger item: 20 Ti x scale against 3) running
+                          # alone, which is the ablation that prices the belt
+                          # classification's disclosed staleness below.
+SK_HAMMER_PRIO_PAIR = 2   # ⛔ THE RELEASE, AND IT IS NOT A NEW NUMBER: it is
+                          # `_push_refuse`'s own `live >= 2` read, taken from
+                          # `_push_live_tubes` (the TEAM's forward-tube beats,
+                          # slot 7, v617's producer fix) -- CALLED, not
+                          # restated.  A keeper cannot see the band, so a
+                          # per-body ledger would read "no pair" for the whole
+                          # game and the inversion would never release, which is
+                          # the exact failure v620 PLANK 1 measured on the
+                          # engineer's own count (`live = 2` on ZERO of 69
+                          # buys).  It RE-ARMS on pair loss, per episode, the
+                          # push-reserve episode pattern.
+SK_HAMMER_PRIO_BIT = 12   # ⛔⛔ THE CHANNEL, AND WHY IT IS SLOT 8 BIT 12.
+                          # The store is FULL (16 of 16 since v608 took
+                          # SK_SLOT_COREFIRE), so a new slot is not available
+                          # and none is needed: SK_SLOT_DRIP is written by the
+                          # SIEGE ENGINEER -- the body that OWNS the latch --
+                          # from exactly one method (`_drip_report`), uses only
+                          # b0-5 and b6-11, and is a PLAIN OVERWRITE rather than
+                          # a read-modify-write, so an added bit cannot collide
+                          # with a buffered write.  All three readers
+                          # (`sk_core.py:327-329,434-438,526`) mask their own
+                          # field, so b12 is invisible to every one of them.
+                          # ⚠ STALENESS, DISCLOSED AND MEASURED (`hammer_lag`):
+                          # the bit is published at the TOP of the engineer's
+                          # turn and `_b2_eco_ready` is evaluated LATER in the
+                          # same turn (inside `_battery_open`), and store writes
+                          # are buffered one round -- so a keeper sees the latch
+                          # up to TWO rounds after it fires.  That is the
+                          # conservative direction (the inversion starts late,
+                          # never early) and it is why the opening cannot be
+                          # touched.
+SK_HAMMER_PRIO_STICKY = True  # ⛔ THE READER LATCHES ON FIRST SIGHT, and this is
+                          # a READ-latch, not a second decision latch: it has no
+                          # bar, no window and no warm-up, and it can only ever
+                          # repeat a decision the battery's own latch already
+                          # took.  It exists because the PRODUCER can go silent
+                          # for reasons that are not economic -- `_b2_sample` is
+                          # PER BODY (its own docstring says so), so a successor
+                          # engineer starts with an empty ring and republishes 0
+                          # until it re-warms, and `_drip_report` returns early
+                          # while `self.enemy is None`.  Without the sticky the
+                          # hammer phase would UN-fire on engineer turnover,
+                          # which is not what the adopted latch means ("once
+                          # readiness is established the hammer stays open").
+                          # ⛔ BOTH VERDICTS ARE COUNTED: `hammer_relapse` is
+                          # rounds the published bit read 0 AFTER the sticky
+                          # latched, i.e. exactly how much work the sticky is
+                          # doing.  A sticky that never covers a relapse is
+                          # decoration and the readout will say so.
+# ⛔⛔ WHAT IS GATED, WHAT IS EXEMPT, AND THE EXEMPTIONS ARE THE SPECIFICATION.
+#   GATED (eco EXPANSION -- new productive capacity):
+#     * `_harvester_action` -- a NEW harvester, 20 Ti x scale, the composite's
+#       own risen column (13 -> 22 on the lost-kill cells) and the largest eco
+#       item on the ladder.
+#     * `_belt_action` AT THE GENERAL BELT RUNG ONLY -- and PER TILE, not per
+#       rung: inside the loop a tile with `belt_rebuilds == 0` is a FIRST-EVER
+#       build (EXTENSION, deferred) and a tile with >= 1 is a REBUILD of a
+#       route this body already laid (REPAIR, exempt, falls straight through in
+#       the same turn).  The fork is the counter the rung already keeps; no new
+#       memory is added.
+#   EXEMPT, and each for a stated reason rather than by omission:
+#     * BELT REPAIR, as above -- "delivery must keep flowing to fund the
+#       hammer".  A hammer paid for by stopping delivery is v1 RES's measured
+#       self-defeat (DRY 73.1 -> 87.4% on its own target column).
+#     * `_route_action` (SK_ROUTE_HOME, ships False) and the SK_TERM_FIRST
+#       rung: both are gated on `_route_missing` / `_route_gaps`, i.e. on a
+#       chain of an ALREADY-BUILT harvester that is short of home.  They add no
+#       productive capacity; they make capacity we already bought deliver.
+#     * DEFENCE, the core's spawn and the ammunition drip -- none of them
+#       passes through this gate at all, exactly as none passes through
+#       `_push_refuse`; the deadlock argument in SK_PUSH_RESERVE's note applies
+#       verbatim and is not restated here.
+#   ⚠ TWO LEAKS, DISCLOSED AND INSTRUMENTED RATHER THAN ASSERTED SMALL:
+#     (1) the SK_TERM_FIRST rung is entered whenever `_route_gaps` is NON-EMPTY
+#         and then builds the first adjacent PLANNED tile, which need not be
+#         the gap tile -- so an extension tile can still be laid there.  Counted
+#         as `hammer_term_leak` (rounds that rung took the turn post-latch).
+#     (2) `_seat_claim_action` lays belt-terminus conveyors and is NOT gated:
+#         its value is entirely in claiming a seat BEFORE their collar (median
+#         r11) and it is the same 3 Ti the belt would spend anyway.  Counted as
+#         `hammer_seat_leak`.
+# ⚠ THE BELT CLASSIFIER'S STALENESS, DISCLOSED: `belt_rebuilds` is PER BODY, so
+# a successor keeper's first build on an inherited tile that has since been
+# knocked out reads as EXTENSION and is deferred.  That is a mis-read in the
+# HAMMER's favour, it is bounded by the release (the pair standing) and by the
+# episode, and SK_HAMMER_PRIO_BELT is the ablation that prices it.
