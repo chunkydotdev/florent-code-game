@@ -43,6 +43,7 @@ from sk_maps import (
     SK_BG_HOME_TURRETS, SK_BG_HOME_DSQ, SK_BG_HEAL_FLOOR,
     SK_BG_SUCC_LIVE, SK_BG_SUCC_NEAR, SK_BG_SITE_MAX_GUNS,
     SK_BG_SITE_CONFIRM, SK_BG_SITE_BAN_ROUNDS, SK_BG_FACE_STAT,
+    SK_BG_ENGHEAL, SK_BG_ENGHEAL_NEAR, SK_BG_ENGHEAL_STEPS,
     SK_BEAT_MASK, SK_BEAT_STALE, SK_BELT, SK_BELT_COVER,
     SK_BELT_COVER_TRIGGER, SK_CAGE, SK_CAGE_ACCEPT, SK_CAGE_FIRST,
     SK_CYCLE_BREAK, SK_CYCLE_ESCAPE_BLOCKED, SK_CYCLE_ESCAPE_CAP,
@@ -9358,9 +9359,202 @@ class RolesMixin:
                 return True
             self.bg_succ_hold += 1
             self._b2_hold_clocks(rnd)
+            # ⭐⭐ s57 BARRELS ARM 3 (SK_BG_ENGHEAL) -- CALL SITE 1, AND IT IS
+            # THE TRUE IDLE TERMINAL.  Reaching here means: a successor site is
+            # picked, this body is standing orthogonally beside it, and prep is
+            # either finished or declined this round -- no plant, no prep, no
+            # move pending.  The hold clock is already refreshed above, so the
+            # rung inherits the watchdog protection whether it heals, steps or
+            # declines.  The return value is True either way (the round was
+            # always a hold round and `bg_succ_hold` still counts it, so the
+            # arm-2 column stays comparable to the t_bg_* baseline); what
+            # changes is what the round DOES.  ⛔ Flag off -> False on the
+            # rung's first line -> t_bg_* behaviour character for character.
+            self._bg_engheal(ct, p, rnd, cs=1)
             return True
         if self.step_to(ct, site):
             self.bg_succ_walk += 1
+            return True
+        return False
+
+    # --- ARM 3: THE ENGINEER SELF-HEAL (SK_BG_ENGHEAL, staffing form 4) ------
+
+    def _bg_engheal(self, ct, p, rnd, cs=1, allow_step=True):
+        """THE ENGINEER'S IDLE BAND ROUND BUYS +4 HP ON AN ADJACENT TUBE.
+
+        GAME CONTEXT: in-engine mechanics of the Florent Code League, a
+        sandboxed bot-vs-bot competition.  The "tube" is one of our own
+        sentinels standing in the band beside the opposing bot's core; the heal
+        is the engine's documented `heal()` verb (1 Ti -> +4 HP, orthogonally
+        adjacent only).
+
+        ⛔ WHY THIS BODY AND NOT ANOTHER -- STAFFING FORM 4 OF 4, AND THE THREE
+        REFUSALS ARE THE ARGUMENT.  Form 1 (the cage walker) deleted the second
+        siege body, wins 12 -> 5.  Form 2/3 (a fresh spawn) paid +20% on the ONE
+        GLOBAL ADDITIVE cost-scale factor.  Form 3 as built (the re-tasked HOME
+        KEEPER, SK_BG_MEDIC) delivered ZERO heals over the whole grid: it is a
+        WALK-BOUND staffing -- 44-140 rounds walking out plus corefire recall
+        round-trips -- and it is the belt publisher, whose absence measured -35%
+        mined.  THE ENGINEER IS ALREADY STANDING IN THE BAND, PUBLISHES NOTHING,
+        AND THE ROUNDS THIS RUNG SPENDS ARE ROUNDS IT WAS ABOUT TO SPEND
+        STANDING STILL.  All three refuted costs are zero here by construction,
+        which is the entire case for form 4.
+
+        ⛔ WHERE IT IS CALLED FROM -- THE TRUE IDLE TERMINAL, AND FINDING IT IS
+        HALF THE BUILD.  "Below the succession" is NOT enough: `_bg_succ`
+        RETURNS TRUE on its hold branch, so a rung placed under its call site
+        would be unreachable on exactly the rounds it is registered for.  The
+        hold branch's own idle round (successor site picked, body standing on
+        it, prep done or refused) is CALL SITE 1, and the place the main hold
+        branch lands when `_bg_succ` declines is CALL SITE 2.
+
+        ⛔⛔ AND CALL SITES 1 AND 2 ARE MEASURED EMPTY -- CALL SITE 3 IS WHERE
+        THE POPULATION ACTUALLY IS, AND IT WAS FOUND BY MEASUREMENT, NOT BY
+        READING.  The opportunity census (`bg2build_opp.py`, a diagnostic tree
+        that taps the top of EVERY siege-engineer round on 12 population-bearing
+        cells) reads 5,165 engineer rounds, 31 of them with a damaged forward
+        tube ORTHOGONALLY ADJACENT, 552 of them at the sites-1-and-2 terminal --
+        and **the intersection is 0 of 31**.  The anti-correlation has a stated
+        cause rather than being an accident of the sample: the hold branch is
+        gated on `live >= want`, a tube is damaged precisely while the opponent
+        is shooting it, and a shot tube usually goes down -- which drops `live`
+        BELOW `want` and puts the engineer on the buy path, not the hold branch.
+        Every cell with adjacency rounds reads terminal 0 (fimbulwinter B 17/0,
+        glacierkeep B 6/0, bifrost A 3/0) and every cell with a large terminal
+        reads adjacency 0 (stavkirke A 0 adj / 186 term, jotunheim A 0 / 173).
+        ⇒ CALL SITE 3 IS THE NO-SITE FALLBACK TERMINAL: `nest_site is None`
+        after `_pick_nest` declined, i.e. nothing to site, nothing to prep,
+        nothing to plant, immediately above `_attack_enemy_core`.  21 of the 31
+        adjacency rounds are exactly there, and 29 of the 31 spent NO ACTION at
+        all (the next round's action cooldown is still 0), so the round the heal
+        takes is a round the engineer was not spending.
+
+        ⛔ CALL SITE 3 TAKES THE ADJACENT HEAL ONLY, NEVER THE BOUNDED STEP
+        (`allow_step=False`).  A step there would compete with the fallback's
+        own nav for the same round, and "no walk" is the whole reason form 4
+        exists.  Sites 1 and 2 keep the step because the body is holding, not
+        travelling.
+
+        ⚠ DISCLOSED, and it is the one precedence this arm takes from an
+        existing rung: at call site 3 a delivered heal preempts
+        `_attack_enemy_core` for that round.  It fires only when a damaged
+        forward tube is already orthogonally adjacent, so the trade is one
+        builder peck (2 damage to their core, 2 Ti) against +4 HP on a sentinel
+        that is doing 18 a shot at that same core.  It is bounded by the same
+        adjacency the verb needs and it is counted separately (`bge_h3`).
+
+        ⛔ NO NEW SENSOR AND NO NEW VERB.  The census is `_push_barrel` (the
+        warden's own vision census of damaged FORWARD friendly sentinels,
+        `miss >= 4` so a +4 heal is never waste) and the act is `_heal_action`
+        (the tree's existing verb, most-damaged adjacent friendly, its own
+        `< 2 Ti` floor).  ⚠ DISCLOSED, and it is `_guard_heal`'s own trade
+        inherited verbatim: on a tile adjacent to BOTH a damaged tube and a MORE
+        damaged prep barrier the verb heals the barrier.  A screen that dies
+        stops screening, so this is not obviously the wrong pick -- but it is
+        not the pick the bar names, and `bge_heals` therefore counts HEALS
+        DELIVERED, not tube HP restored.
+
+        ⛔ THE BOUNDED STEP IS THE ONLY THING HERE THAT COSTS A ROUND OF
+        POSITION, AND ITS BOUND IS THREE INDEPENDENT REFUSALS: the short radius
+        (SK_BG_ENGHEAL_NEAR), the per-episode budget (SK_BG_ENGHEAL_STEPS,
+        keyed on the target TILE so it cannot be laundered by re-targeting),
+        and the BAND TEST ON THE DESTINATION TILE ITSELF -- the step is chosen
+        by this method rather than by the nav precisely so the band test can be
+        applied to the tile the body will actually stand on.  The hold clock is
+        refreshed on every step taken, because `_nest_site_watch` is a PROGRESS
+        watchdog and a body that steps sideways records no new closest approach:
+        without it the successor tile goes into `nest_bad` PERMANENTLY.
+
+        ⚠ THE COST, DISCLOSED: at the succession call site the heal takes the
+        action cooldown, which is the same cooldown the NEXT round's prep
+        barrier would use.  It is reached only when prep already declined this
+        round (quota met, or `_prep_barrier` found no legal tile) or the
+        cooldown was already busy -- in the busy case this rung refuses too --
+        so the round it spends is not a round prep asked for.  Where the quota
+        is met there is no future prep to delay at all.
+
+        ⛔ FLAG OFF -> False on the first line, zero engine calls, byte-exact.
+        """
+        if not (SK_BARREL_GUARD and SK_BG_ENGHEAL):
+            return False
+        if self.role != SK_SIEGE_ENGINEER or self.enemy is None:
+            return False
+        self.bge_rounds += 1
+        self.bge_cs[cs] += 1
+        tgt = self._push_barrel(ct, p)
+        if tgt is None:
+            self.bge_none += 1
+            self.bge_walk_tile = None       # the episode dies with its target
+            self.bge_walk_n = 0
+            return False
+        self.bge_seen += 1
+        d = p.distance_squared(tgt)
+        if d == 1:                          # orthogonally adjacent: the verb
+            self.bge_adj += 1
+            self.bge_walk_tile = None
+            self.bge_walk_n = 0
+            try:
+                if ct.get_global_resources() < SK_BG_HEAL_FLOOR:
+                    self.bge_poor += 1
+                    return False
+                if ct.get_action_cooldown() != 0:
+                    self.bge_busy += 1
+                    return False
+                if self._heal_action(ct, p, rnd):
+                    self.bge_heals += 1
+                    self.bge_cs_heals[cs] += 1
+                    return True
+            except Exception:
+                return False
+            self.bge_nover += 1
+            return False
+        if not allow_step:                  # ⛔ CALL SITE 3: the heal, no walk
+            self.bge_nostep += 1
+            return False
+        if d > SK_BG_ENGHEAL_NEAR:          # out of the short radius: LEFT ALONE
+            self.bge_far += 1
+            self.bge_walk_tile = None
+            self.bge_walk_n = 0
+            return False
+        self.bge_near += 1
+        key = (tgt.x, tgt.y)
+        if self.bge_walk_tile != key:       # a new target opens a new episode
+            self.bge_walk_tile = key
+            self.bge_walk_n = 0
+        if self.bge_walk_n >= SK_BG_ENGHEAL_STEPS:
+            self.bge_step_cap += 1
+            return False
+        try:
+            if ct.get_move_cooldown() != 0:
+                return False
+        except Exception:
+            return False
+        best = None
+        for dd in CARDINALS:
+            q = p.add(dd)
+            if not self.ibp(q):
+                continue
+            dq = q.distance_squared(tgt)
+            if dq >= d:
+                continue                    # the step must CLOSE on the target
+            dband = dsq_core(q, self.enemy)
+            if dband < SK_NEST_DSQ_MIN or dband > SK_NEST_DSQ_MAX:
+                continue                    # ⛔ IT MAY NOT LEAVE THE BAND
+            try:
+                if not ct.is_tile_passable(q):
+                    continue
+            except Exception:
+                continue
+            k = (dq, q.x, q.y)              # canonical -> deterministic
+            if best is None or k < best[0]:
+                best = (k, q)
+        if best is None:
+            self.bge_step_band += 1
+            return False
+        if self.step_to(ct, best[1]):
+            self._b2_hold_clocks(rnd)       # ⛔ NOT OPTIONAL: see the docstring
+            self.bge_steps += 1
+            self.bge_walk_n += 1
             return True
         return False
 
@@ -12243,6 +12437,21 @@ class RolesMixin:
                     and (SK_TUBE_FLOOR2_PREPREP or SK_TUBE_FLOOR2_STAGE)
                     and self._preprep(ct, p, rnd)):
                 return
+            # ⭐⭐ s57 BARRELS ARM 3 (SK_BG_ENGHEAL) -- CALL SITE 2, THE SAME
+            # RUNG WHERE THE HOLD BRANCH LANDS WHEN THE SUCCESSION DECLINES
+            # (no successor site, or the walk to it failed).  ⛔ BELOW
+            # `_guard_heal` and below `_preprep` ON PURPOSE: the first is a
+            # rotation body's babysit whose precedence v630/v632 already
+            # settled, and the second SPENDS on prep, which is a real task and
+            # outranks an idle round by definition.  The only rung below this
+            # one is the discretionary hold-station park, so this is the idle
+            # terminal on this path.  ⚠ DISCLOSED: when the body is not yet AT
+            # its park tile, the park is a walk and this rung outranks it -- a
+            # damaged tube already orthogonally adjacent is worth more than one
+            # more step toward a tile chosen only because there was nothing
+            # else to do.  ⛔ Flag off -> False on the first line.
+            if self._bg_engheal(ct, p, rnd, cs=2):
+                return
             # Both guns standing: nothing to site.  Hold station beside the
             # newest one (V3 re-sites the instant either dies).
             hold = self.nest_site
@@ -12315,6 +12524,22 @@ class RolesMixin:
                     and self.relight_since is not None
                     and self.enemy is not None
                     and self._relight_close(ct, p)):
+                return
+            # ⭐⭐ s57 BARRELS ARM 3 (SK_BG_ENGHEAL) -- CALL SITE 3, AND IT IS
+            # THE ONE THE OPPORTUNITY CENSUS FOUND.  Reaching here means
+            # `_pick_nest` returned nothing: no site, therefore no plant, no
+            # prep and no successor walk -- the buy path's own idle terminal.
+            # The census (`bg2build_opp.py`, 12 population-bearing cells, 5,165
+            # engineer rounds) puts 21 of the 31 damaged-ADJACENT engineer
+            # rounds exactly here, against 0 of 31 at call sites 1 and 2, and
+            # 29 of the 31 spent no action at all.  ⛔ ADJACENT HEAL ONLY
+            # (`allow_step=False`): a walk here would fight the fallback's own
+            # nav, and "no walk" is the whole reason staffing form 4 exists.
+            # ⚠ A delivered heal preempts `_attack_enemy_core` for this round --
+            # one builder peck (2 damage) traded for +4 HP on a sentinel that
+            # deals 18 a shot at the same core.  ⛔ Flag off -> False on the
+            # rung's first line -> t_bg_* behaviour character for character.
+            if self._bg_engheal(ct, p, rnd, cs=3, allow_step=False):
                 return
             self._attack_enemy_core(ct, p, rnd)
             return

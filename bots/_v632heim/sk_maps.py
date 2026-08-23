@@ -7628,3 +7628,81 @@ SK_BG_FACE_STAT = True    # ⭐ INSTRUMENT ONLY, NO LOGIC, AND IT IS DELIBERATEL
                           # ⛔ IT MAKES NO ENGINE CALL AND TAKES NO DECISION, so
                           # the OFF tape must stay byte-identical -- which is
                           # MEASURED by the identity gate, not claimed.
+
+
+# ============================================================================
+# s57 BARRELS ARM 3 -- THE ENGINEER SELF-HEAL  (SK_BG_ENGHEAL, staffing form 4)
+# ============================================================================
+# GAME CONTEXT: in-engine mechanics of the Florent Code League, a sandboxed
+# bot-vs-bot programming competition on a simulated grid.  "tube"/"barrel" is
+# one of OUR sentinels standing in the band beside the opposing bot's core;
+# "knocked out" is the engine removing a piece per its documented rules; the
+# heal is the engine's own `heal()` verb (1 Ti -> +4 HP on an orthogonally
+# adjacent tile).  Nothing here touches anything outside the simulated grid.
+#
+# THE REGISTRATION (docs/research/EXPECTATION-v632heim-push1-2026-08-23.md,
+# the ARM 2 DISPOSITION + ADOPTED-LEAN tail): staffing form 3 -- the re-tasked
+# HOME KEEPER (SK_BG_MEDIC) -- was REFUSED geometrically: 0 heals delivered,
+# 44-140 walk-out rounds plus corefire recall round-trips, and the keeper is
+# the belt publisher (its absence measured -35% mined).  Forms 1 (cage walker)
+# and 3 (a fresh spawn, +20% on the ONE GLOBAL ADDITIVE scale factor) died
+# earlier.  FORM 4 IS THE ENGINEER ITSELF: it is ALREADY in the band (no walk),
+# it is NOT a publisher (no eco loss), and its idle rounds are the succession's
+# own -- so the staffing cost that refuted every previous form is zero here by
+# construction.
+#
+# ⛔ POPULATION MEASURED ON THE NEW BASELINE BEFORE THE BUILD, AND IT IS THIN.
+# `bg1build_pop.py` re-run on the ADOPTED t_bg_* tapes (not the t_b4_* the arm-2
+# prior was written on):
+#     F1 (t_bg_f1): 13 of 30 cells carry ANY damaged-forward-tube round;
+#                   MEDIAN damaged-round share of the game = 0.000.
+#                   Carriers: helheim A 159, stavkirke A 75, jotunheim A 45,
+#                   auroraveil A 32, bifrost A 24, skald A 12, paths A 8.
+#     F3 (t_bg_f3): 19 of 30 cells; MEDIAN share = 0.010.
+#                   Carriers: fimbulwinter B 76, auroraveil A 46, helheim B 36,
+#                   holmgang A 18, bifrost A 15, glacierkeep B 10.
+# ⇒ THE DOSE MAY BE SMALL AND THAT IS WRITTEN DOWN BEFORE THE GRID.  Every bar
+# on this arm is CONDITIONAL SEEN-WORKING (heals per damaged-ADJACENT round),
+# never a share of all rounds, and the opportunity column travels with every
+# number.  ⚠ AND THE CENSUS ABOVE IS AN UPPER BOUND ON THE OPPORTUNITY: it
+# counts rounds where a forward tube is damaged ANYWHERE, while the verb needs
+# the tube ORTHOGONALLY ADJACENT to the engineer.
+
+SK_BG_ENGHEAL = False     # ⛔ THE SUB-FLAG, UNDER SK_BARREL_GUARD, DEFAULT OFF.
+                          # Off is exact identity: both call sites are guarded
+                          # by a call-site conjunction whose first term is this
+                          # module constant, so an OFF arm makes zero extra
+                          # engine calls and the replay is byte-identical
+                          # (MEASURED by the identity gate, not claimed).
+
+SK_BG_ENGHEAL_NEAR = 8    # ⛔ THE SHORT RADIUS, AND THE BOUND IS DISCLOSED.
+                          # A damaged tube further than d^2 = 8 from the
+                          # engineer is left alone -- no walk, no re-task.  8 is
+                          # "two orthogonal steps or one diagonal-ish hop", i.e.
+                          # the largest radius the step budget below can
+                          # actually close, so the gate and the budget agree
+                          # rather than promising a walk the budget refuses.
+SK_BG_ENGHEAL_STEPS = 2   # ⛔ THE WALK BUDGET, PER TARGET EPISODE, AND IT IS THE
+                          # WALK-BUDGET LESSON PAID FORWARD.  Form 3's refusal
+                          # was a WALK: 44-140 rounds out of position.  This arm
+                          # may spend at most this many steps closing on ONE
+                          # damaged tube; the episode is keyed on the target
+                          # TILE and resets the moment the target changes, is
+                          # healed, dies, or leaves the short radius.  ⛔⛔ AND
+                          # THE STEP HAS TWO HARD SIDE CONDITIONS, either of
+                          # which refuses it outright:
+                          #   (i) THE DESTINATION MUST STAY IN THE BAND
+                          #       (SK_NEST_DSQ_MIN..MAX of THEIR core, the same
+                          #       predicate `_nest_scan` sites on) -- so the
+                          #       engineer cannot be walked out of the band by
+                          #       a damaged tube on its far edge;
+                          #  (ii) THE SUCCESSION'S HOLD CLOCK IS REFRESHED on
+                          #       every step taken (`_b2_hold_clocks`), because
+                          #       `_nest_site_watch` is a PROGRESS watchdog and
+                          #       a body that steps sideways off its site
+                          #       records no new closest approach -- without the
+                          #       refresh the successor tile would go into
+                          #       `nest_bad` PERMANENTLY.  That hazard is not
+                          #       hypothetical: arm 2's mutation M3 diverged 3
+                          #       of 12 f1 cells with exactly this refresh
+                          #       deleted.

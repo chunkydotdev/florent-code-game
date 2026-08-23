@@ -1100,6 +1100,42 @@ class Player(CommonMixin, RolesMixin, CoreMixin):
         self.bg_life_card_n = 0
         self.bg_life_diag = 0
         self.bg_life_diag_n = 0
+        # ⭐⭐ s57 BARRELS ARM 3 (SK_BG_ENGHEAL) -- THE OPPORTUNITY INSTRUMENT.
+        # ⛔ IT IS BUILT AS AN OPPORTUNITY LEDGER AND NOT AS A HIT COUNTER,
+        # because the population probe says the damaged-tube share is THIN
+        # (F1 median 0.000 of rounds, F3 median 0.010) and a bare "heals
+        # delivered" column over a thin population is a number whose
+        # denominator nobody can see.  Every bar on this arm is CONDITIONAL
+        # SEEN-WORKING -- heals per damaged-ADJACENT round -- and these are the
+        # columns that make that ratio readable.  Per body, like every bg_*
+        # field above.
+        self.bge_rounds = 0           # IDLE-TERMINAL rounds the rung was offered
+        self.bge_none = 0             # ... with no damaged forward tube in sight
+        self.bge_seen = 0             # ... with one seen (the census fired)
+        self.bge_adj = 0              # DAMAGED-ADJACENT rounds (the heal's own
+                                      #   population, and the bar's denominator)
+        self.bge_near = 0             # damaged, not adjacent, inside the radius
+        self.bge_far = 0              # ... and outside it (left alone, no walk)
+        self.bge_heals = 0            # heals actually delivered
+        self.bge_poor = 0             # refused by the bank floor
+        self.bge_busy = 0             # refused by the action cooldown
+        self.bge_nover = 0            # `_heal_action` itself declined the tile
+        self.bge_steps = 0            # bounded steps actually taken
+        self.bge_step_cap = 0         # refused: the per-episode budget is spent
+        self.bge_step_band = 0        # refused: every closing step leaves the
+                                      #   band (or is impassable) -- the band
+                                      #   guard's own OTHER verdict
+        self.bge_nostep = 0           # step declined: this call site forbids it
+        self.bge_walk_tile = None     # the episode key: the target's tile
+        self.bge_walk_n = 0           # steps spent on THIS episode
+        # ⛔ PER CALL SITE, because the three are NOT interchangeable and the
+        # opportunity census says so: sites 1/2 are the succession's hold-branch
+        # idle rounds (552 of them over 12 cells, and 0 damaged-adjacent) while
+        # site 3 is the no-site fallback terminal (21 of the 31 adjacency rounds
+        # in the same census).  A single pooled column would have hidden exactly
+        # that.  Index 0 is unused so the site number reads as itself.
+        self.bge_cs = [0, 0, 0, 0]
+        self.bge_cs_heals = [0, 0, 0, 0]
         # v626 PLANK A state: clear-clock is a cross-round position cache
         # (build rule 5 -> also on _clear_plans); cleared-once memory is about
         # the ENEMY's re-lay at a fixed tile and persists like nest_deaths.
