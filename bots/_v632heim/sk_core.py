@@ -13,7 +13,7 @@ ALL-NEW CODE.  Two verbs live here:
                                                           `_threat_scan`
 """
 
-from fcode import Direction, EntityType, Position
+from fcode import Direction, EntityType, GameConstants, Position
 
 from sk_common import core_tiles_xy, dsq_core, pack_pos, pack_tile, unpack_pos
 from sk_maps import (
@@ -439,10 +439,11 @@ class CoreMixin:
             if SK_DOC_RATE_PASSIVE:
                 r -= SK_DOC_PASSIVE_RATE
             self.doc_rate_last = r
-            try:
-                bar = ct.get_sentinel_cost() / float(SK_BATTERY2_ECO_LIFE)
-            except Exception:
-                return False
+            # ITERATION 3 (w2diag): the live-scaled bar SELF-INFLATES — every
+            # barrel we buy raises our own trigger's price (RATE alone blocked
+            # 1,816 rounds live). Frozen at BASE cost: fires 6/10 vs 4/10,
+            # ~40r earlier, still refuses the zero-economy cells.
+            bar = GameConstants.SENTINEL_BASE_COST / float(SK_BATTERY2_ECO_LIFE)
             if r < bar:
                 self.doc_rate_short += 1
                 return False
