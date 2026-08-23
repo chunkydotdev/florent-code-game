@@ -3471,6 +3471,75 @@ SK_WALK_GUARDS = True  # ADOPTED s57 2026-08-23 (hardening grade): guards clean,
 # home-defence answer on the same square.
 SK_WALK_GUARD_BAN = 20
 
+# --- v632 SURVIVAL FAMILY -- THE NAV-STALL DETECTOR (SK_NAV_STALL, #131) -----
+# GAME CONTEXT: in-engine movement of our own builder bots in the Florent Code
+# League, a sandboxed bot-vs-bot programming competition on a simulated grid.
+#
+# WHAT IT ANSWERS, measured (survival expectation's VERDICT, routed residual 2;
+# diagnostic `scratchpad/s57_heim0/diagwg_*`).  SK_WALK_GUARDS fixed THREE named
+# walk terminals.  The residual freeze mass is the SAME SHAPE at UNGUARDED
+# sites: a walk selects a target, `step_to` -> `_nav` yields no step, and the
+# role falls through WITH NO VERB -- silently, for hundreds of rounds.  Three
+# specimens, all on the adopted-WG baseline tape:
+#   * bifrost_seatA bot 237 -- 686 rounds parked on ore, TWO FREE NEIGHBOURS
+#     (not boxed), wg counters 0/0/0, `_deny_target` -> `_nav`, no `_move`.
+#   * bifrost_seatA bot 3   -- 979 rounds at (2,4), keeper, chain
+#     `_hl_walk_target` -> `_on_eligible_ore` -> `_nav` -> `_bfs_direction`
+#     and NO `_move` in the call trace (`diagwg_probe/tr_bif3.err`).
+#   * midgard_seatA bot 3   -- 38 rounds, `_escalate_target` -> `_nav`.
+# Per-site guards cannot reach this: the sites are not enumerable in advance.
+# So the detector sits at the WALK EXECUTOR (`step_to`, the tree's ONLY movement
+# entry) and covers EVERY walk in the tree by construction.
+#
+# ⛔ OFF IS EXACT IDENTITY.  Every write is inside `if SK_NAV_STALL:`, every
+# read is truthiness-guarded (`if self.ns_ban and ...`, the SK_WALK_GUARD_BAN
+# pattern), and `ns_ban` is written only by the detector, so it stays EMPTY on
+# every OFF arm.  `_builder` becomes a two-line wrapper around the unchanged
+# `_builder_turn`; on an OFF arm that wrapper costs one call and one branch and
+# makes ZERO engine calls, so the replay is byte-identical.
+SK_NAV_STALL = False
+
+# THE LENGTH OF THE STALL, IN CONSECUTIVE ROUNDS.  THE RULE IT IS PICKED BY:
+# THIS DETECTOR IS THE LAST RESORT, SO IT MUST OUTLAST EVERY GIVE-UP CLOCK THIS
+# TREE ALREADY SHIPS -- a mechanism that re-picks properly beats a blind step,
+# and pre-empting one converts a working fix into a wander.
+#   * > SK_CURSOR_GIVEUP (20)      -- a cage cursor re-picks its objective.
+#   * > SK_WALK_GUARD_BAN (20)     -- a guarded terminal's escape+ban cycle.
+#   * > SK_CITADEL_GIVEUP (20), SK_CAGE_MELEE_GIVEUP (20), SK_HL_SITE_GIVEUP
+#     (12), SK_NEST_CLEAR_GIVEUP (12) -- the shorter siblings.
+#   * > SK_NEST_STUCK_ROUNDS (25)  -- ⛔ AND THIS ONE IS A MEASURED CORRECTION,
+#     NOT A LIST ENTRY.  N = 24 was built first and traced on bifrost_seatA:
+#     the siege engineer's natural 26-round parks at (17,6), (19,1) -- its own
+#     stuck clock re-picking the site at 25 -- were cut to 23 by this detector
+#     firing ONE ROUND EARLY, replacing a proper re-pick with a blind step and
+#     a 20-round ban.  N must sit ABOVE that clock, not on it.
+#   * < 38, the SHORTEST specimen (midgard_seatA bot 3, an eligible-ore park):
+#     caught with 10 rounds to spare, and measured -- that park reads 38r on
+#     the baseline tape and 27r on the ON tape, terminated by this detector.
+#   * >> every legitimate stationary state that is not structurally exempt.
+#     The longest such state in this tree's own notes is the one-round
+#     antiphase hold (`nav_held`, SK_COUNTER_SOFT_BODIES) and the one-round
+#     2-cycle hold (`_nav` FIX 3), both of which the tree DOCUMENTS as
+#     self-terminating; 28 rounds without motion falsifies that claim, so
+#     firing there is correct rather than exempt.
+# ⇒ 28: three clear of the highest live give-up clock, ten below the shortest
+#   measured specimen.
+SK_NAV_STALL_N = 28
+
+# THE BAN, and it is what stops the escape becoming a two-tile oscillation --
+# the same failure SK_WALK_GUARD_BAN exists for, and the same 20 rounds, from
+# the same two precedents (`SK_CURSOR_GIVEUP`, the benchmark's `_t4_chase_ok`).
+# ⛔ PER-TILE, NOT PER-(SITE, TILE), AND THAT IS A DELIBERATE DIVERGENCE FROM
+# SK_WALK_GUARD_BAN -- it is routed residual 1 ("cross-site ban blindness": a
+# declined walk's fall-through sibling re-targets the banned tile) answered in
+# the design rather than left open.  The detector is site-blind by construction
+# (it fires at the executor, which does not know which selector produced the
+# target), so a site-keyed ban would be unreadable to it anyway.
+# ⛔ SEPARATE DICT FROM `wg_ban`: different key shape, different writer,
+# different lifetime, and mixing them would make either one's OFF-identity
+# witness unreadable.
+SK_NAV_STALL_BAN = 20
+
 # --- v632 PLANK B -- THE LEASHED KEEPER'S DUTY (#128a residual, queued 4.1) --
 # The adopted leash (SK_KEEPER_LEASH) refuses economy-walk targets beyond
 # SK_LEASH_DSQ while the core's threat latch is fresh.  Its BANKED cost is the

@@ -55,6 +55,8 @@ from sk_maps import (
     SK_STALL_NETDISP, SK_STALL_W, SK_STALL_BOX, SK_STALL_MOVES,
     # --- v609 ---
     SK_COUNTER_SOFT_BODIES,
+    # --- v632 SURVIVAL FAMILY: the nav-stall detector (#131) ---
+    SK_NAV_STALL, SK_NAV_STALL_BAN, SK_NAV_STALL_N,
 )
 
 
@@ -391,6 +393,13 @@ class CommonMixin:
         # and this body stood its ground rather than sidestepping.
         self.nav_soft_bodies = False
         self.nav_held = False
+        # v632 SK_NAV_STALL: build rule 5.  The stall run is a cross-round claim
+        # about a place the body no longer stands, so a thrown body's run dies
+        # with its position ring.  ⛔ `ns_ban` is NOT cleared: it is a claim
+        # about TILES ("this tile is a dead walk target"), which a throw does
+        # not falsify, and it expires on its own clock.  Writing 0 over 0 on
+        # every SK_NAV_STALL-off arm is what keeps this line identity-safe.
+        self.ns_run = 0
         self.commit_tgt = None
         self.cursor_kind = None       # CAGE WALKER: the one objective
         self.cursor_tile = None
@@ -1415,9 +1424,182 @@ class CommonMixin:
         """Set the target tile and take one step.  The ONLY movement entry.
 
         v602: returns True iff a move was actually executed (FIX 1 reads it).
+
+        ⭐ v632 SK_NAV_STALL (#131).  Because this is the ONLY movement entry,
+        it is also the only place that knows "this body asked for a step this
+        round" for EVERY walk in the tree -- which is what lets the detector be
+        one mechanism instead of one guard per site.  Two things happen here and
+        both are inside the flag:
+          (a) the per-round walk marker and the target the ban will name;
+          (b) the BAN's enforcement.  A tile the detector has already proved
+              dead is refused HERE rather than in each of the ~40 selectors --
+              the selectors are site-specific and site-blind to each other,
+              which is exactly routed residual 1.  A refusal does not merely
+              return False (that would hand the round straight back to the same
+              silent fall-through this plank exists to remove); it spends the
+              round on a forced step, which is the loop-breaking verb.
+        ⛔ OFF: one `if` on a module constant.  No engine call, no dict lookup.
         """
+        if SK_NAV_STALL:
+            self.ns_walk = True
+            self.ns_tgt = target
+            if (self.ns_ban and target is not None
+                    and self.ns_ban.get((target.x, target.y), -1)
+                    > ct.get_current_round()):
+                self.ns_refused += 1
+                return self._ns_escape(ct, ct.get_position(),
+                                       ct.get_current_round())
         self.tgt = target
         return self._nav(ct)
+
+    # --- v632 SK_NAV_STALL: the walk-executor stall detector (#131) ---------
+
+    def _ns_arrived(self, ct, p, t):
+        """EXEMPTION 1 of 1 -- HOLDING A CORE RING.
+
+        GAME CONTEXT: in-engine positions of our own builder bots in the
+        Florent Code League's simulated grid.
+
+        THE STATE IT PROTECTS, and it is exactly ONE walk shape.  `self.core`
+        and `self.enemy` are the only two targets `_bfs_direction` gives a
+        FOOTPRINT-RING goal set to (`elif target == self.core or target ==
+        self.enemy`, its own branch), and it answers CENTRE the moment the body
+        stands on that ring (`if start in goals`).  For those two walks the
+        ring IS the destination and holding it indefinitely is the intent, not
+        a failure:
+          * the home keeper's `tgt = self.core` fall-through -- measured on
+            jotunheim_seatA f1, 521 of 610 leashed rounds are this body
+            standing core-adjacent, and SK_KEEPER_LEASH exists to KEEP it
+            there while our core is being shot;
+          * `_attack_enemy_core` / `_ore_denier` / `_relight_close` holding the
+            enemy footprint ring between pecks.
+        Firing there would walk the keeper out of heal range of the core it was
+        leashed to, i.e. undo an adopted plank with a correctness fix.
+
+        ⛔⛔ IT IS DELIBERATELY NOT "ANY BUILDING TARGET WITH THE BODY
+        ADJACENT", AND THAT WIDER FORM WAS BUILT, TRACED AND REJECTED HERE --
+        it SWALLOWED THE SPECIMEN.  On bifrost_seatA the ON tape's keeper (role
+        0) sat at (2,4) walking at (2,5), a belt-plan tile with a building
+        standing on it: adjacent, unbuildable, no verb, and the wider form
+        exempted 153 rounds of it -- the 979-round park this plank exists to
+        end, wearing an exemption.  "Adjacent to a building" is not a terminal;
+        the two CORE rings are, because they are the only ones the navigator
+        itself treats as goals.
+        ⛔ NO ENGINE CALL: the test is two integer compares and, for the ring,
+        `dsq_core`.  A stall-candidate round is already the cheap path and this
+        keeps it free.
+        """
+        if t is None or self.core is None:
+            return False
+        if t.x == self.core.x and t.y == self.core.y:
+            return dsq_core(p, t) == 1
+        if (self.enemy is not None
+                and t.x == self.enemy.x and t.y == self.enemy.y):
+            return dsq_core(p, t) == 1
+        return False
+
+    def _ns_escape(self, ct, p, rnd):
+        """One forced cardinal step out of a proved-dead walk state.
+
+        GAME CONTEXT: an in-engine cardinal `move` by one of our own builder
+        bots.  Nothing here touches anything outside the game engine.
+
+        ⛔ IT CALLS `_move` DIRECTLY, NOT `step_to`.  `_nav` is the thing that
+        just failed for SK_NAV_STALL_N consecutive rounds -- routing the escape
+        back through its BFS, its 2-cycle strike-out and its danger term would
+        re-run the failure.  `_move` is the engine's own legality test
+        (`can_move`) and nothing else.
+        ⛔ IT NEVER STEPS ONTO A BANNED TILE, which is what stops the escape
+        from becoming the two-tile oscillation SK_WALK_GUARD_BAN's note
+        measured: the tile just banned is usually the one underfoot, so without
+        this term the next fire would walk straight back onto it.
+        ⛔ ONE ATTEMPT PER ROUND (`ns_stepped`), so a boxed body costs at most
+        four `can_move` calls in a round it was going to waste anyway.
+
+        Returns True iff a move was executed.
+        """
+        if self.ns_stepped:
+            return False
+        self.ns_stepped = True
+        off = self.ns_fires & 3
+        for i in range(4):
+            d = CARDINALS[(off + i) & 3]
+            ndx, ndy = DELTA[d]
+            qx, qy = p.x + ndx, p.y + ndy
+            if not self.ib(qx, qy):
+                continue
+            if self.ns_ban and self.ns_ban.get((qx, qy), -1) > rnd:
+                continue
+            if self._move(ct, d):
+                self.ns_fires += 1
+                self.ns_run = 0
+                return True
+        self.ns_boxed += 1
+        return False
+
+    def _ns_tick(self, ct, p0):
+        """End-of-turn bookkeeping for one builder round.  The detector itself.
+
+        ⭐⭐ WHY THE END OF THE TURN AND NOT THE TOP OF THE NEXT ONE.  "No verb
+        emitted" is the term that makes the exemption list short, and the only
+        place it is EXACT is here: a builder's action cooldown is 1 round
+        (`docs/reference/official-docs.md:1143`) and decrements at END of round,
+        so `get_action_cooldown() != 0` read INSIDE the turn means "this body
+        built, attacked or healed earlier this same turn" -- order-independent,
+        one getter, and no instrumentation of the ~33 verb call sites.  Read at
+        the top of the NEXT round it is always 0 and says nothing.
+        ⛔ `destroy` deliberately does NOT count as a verb: the engine gives it
+        no cooldown and it does not block the round's move, so a body that only
+        destroyed still has its whole turn and is still stalled if it spends it
+        on nothing.
+        ⛔ AND THE BODY STILL HAS ITS TURN WHEN THIS RUNS, which is why the
+        escape fires HERE rather than next round: we have just established that
+        it emitted no verb and did not move, so a `move` is still legal.
+
+        THE PREDICATE, and the two STRUCTURAL terms are what keep the exemption
+        list at ONE:
+          * `ns_walk` -- the body asked the executor for a step.  A body that
+            HOLDS without walking is not this class and is not counted, which
+            is how `_leash_duty_seat`'s "HOLD STATION on the seat", the
+            prestage hold-at-Manhattan-1 and `_guard_walk`'s "already on the
+            seat => STAND" are exempt without an exemption: all three `return`
+            before any `step_to`.
+          * action cooldown -- a body that ACTED is not stalled, which is how
+            every cooldown-gated wait with a verb pending, every fire-adjacent
+            hold and every peck ladder is exempt without an exemption.
+          * `_ns_arrived` -- the one behavioural exemption; see its docstring.
+
+        ⛔ THE COUNTER DOES NOT RESET ON A TARGET CHANGE, and that is a
+        deliberate reading of the registration's "walk target unchanged-or-
+        None".  Several selectors recompute a nearest-X target every round, so
+        a body that never moves and never acts can still be handed a different
+        tile each round; resetting there would weld the detector shut on
+        exactly the sites it cannot enumerate.  What the target is used for is
+        the BAN, not the counter.
+        """
+        if not self.ns_walk:
+            self.ns_run = 0
+            return
+        p = ct.get_position()
+        if p.x != p0.x or p.y != p0.y:
+            self.ns_run = 0
+            return
+        if ct.get_action_cooldown() != 0:
+            self.ns_run = 0
+            return
+        if self._ns_arrived(ct, p, self.ns_tgt):
+            self.ns_run = 0
+            return
+        self.ns_run += 1
+        self.ns_stall += 1
+        if self.ns_run < SK_NAV_STALL_N:
+            return
+        rnd = ct.get_current_round()
+        t = self.ns_tgt
+        if t is not None:
+            self.ns_ban[(t.x, t.y)] = rnd + SK_NAV_STALL_BAN
+        self.ns_run = 0
+        self._ns_escape(ct, p, rnd)
 
     # --- shared sensing ----------------------------------------------------
 

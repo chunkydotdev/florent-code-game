@@ -161,6 +161,8 @@ from sk_maps import (
     # --- v632 SURVIVAL FAMILY -- PLANK A (walk-terminal guards, #130) and
     # --- PLANK B (the leashed keeper's duty, #128a residual / queued 4.1) ----
     SK_WALK_GUARDS, SK_WALK_GUARD_BAN, SK_LEASH_DUTY,
+    # --- the nav-stall detector (#131), read by the `_builder` wrapper only ---
+    SK_NAV_STALL,
 )
 
 # --- v632 PLANK A 4.2: the three guarded WALKS, as ban keys.  A tile is banned
@@ -269,6 +271,35 @@ class RolesMixin:
     # ==================================================================
 
     def _builder(self, ct):
+        """⭐ v632 SK_NAV_STALL (#131) -- the two-line wrapper, and it is a
+        WRAPPER rather than a block inside the turn for one reason: the turn has
+        five early `return`s above the role switch (the corefire answer, ledger
+        V5's home defence, the citadel answer, and two guards at the top), and a
+        detector that misses the rounds a body returns early is a detector with
+        five silent holes.
+
+        GAME CONTEXT: in-engine bookkeeping for our own builder bots in the
+        Florent Code League, a sandboxed bot-vs-bot competition.
+
+        ⛔ OFF IS EXACT IDENTITY: one branch on a module constant and one call
+        into the unchanged turn.  ZERO engine calls are added on the OFF path,
+        so the replay is byte-identical.
+        ⛔ NO `try/finally`: this sandbox rejects `finally` (see
+        `_counter_march`'s note), and an exception escaping the turn is already
+        caught one frame up in `run()` -- that round simply does not tick, which
+        leaves the run counter where it was rather than corrupting it.
+        """
+        if not SK_NAV_STALL:
+            self._builder_turn(ct)
+            return
+        p0 = ct.get_position()
+        self.ns_walk = False
+        self.ns_tgt = None
+        self.ns_stepped = False
+        self._builder_turn(ct)
+        self._ns_tick(ct, p0)
+
+    def _builder_turn(self, ct):
         p = ct.get_position()
         self._boot(ct, p)
 

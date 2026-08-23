@@ -1217,6 +1217,44 @@ class Player(CommonMixin, RolesMixin, CoreMixin):
         # the ore patrol loop.
         self.wg_ban = {}
 
+        # --- v632 SURVIVAL FAMILY -- THE NAV-STALL DETECTOR (SK_NAV_STALL) --
+        # ⛔ UNCONDITIONAL, for the engine reason every block in this file
+        # states: a flag gates BEHAVIOUR, never the EXISTENCE of state.  A field
+        # created only under a flag is how a flag-OFF arm raises AttributeError
+        # inside `run()`, and the engine then PERMANENTLY DESTROYS that unit for
+        # the rest of the match.  Every counter here stays 0 and `ns_ban` stays
+        # EMPTY on every SK_NAV_STALL-off arm -- only `_ns_tick`/`_ns_escape`
+        # write them and both are reachable only under the flag -- which is what
+        # makes them the OFF-IDENTITY WITNESSES as well as the dose instruments.
+        self.ns_run = 0        # consecutive stall rounds RIGHT NOW (the counter
+                               # the detector compares against SK_NAV_STALL_N)
+        self.ns_stall = 0      # DOSE: total rounds this body was counted as
+                               # stalled (alive, in a walk, no verb, no tile
+                               # change, not arrived).  ⚠ An observation, not an
+                               # effect -- the effect read is `ns_fires`.
+        self.ns_fires = 0      # ESCAPES EXECUTED: rounds a forced cardinal step
+                               # actually moved this body out of a stall.  Also
+                               # the rotation offset of the escape's direction
+                               # order, so repeated fires do not re-pick the
+                               # same neighbour.
+        self.ns_boxed = 0      # fires where NO legal step existed (the boxed
+                               # body).  state>0 with fires==0 and boxed>0 is a
+                               # real refusal, not a vacuum -- the WG pairing
+                               # lesson, kept.
+        self.ns_refused = 0    # `step_to` calls REFUSED because the requested
+                               # target is under a live nav-stall ban.  This is
+                               # the ban's own dose: a ban nobody reads is a
+                               # counter that never moves.
+        self.ns_walk = False   # per-ROUND scratch: this body asked the walk
+                               # executor for a step this round
+        self.ns_tgt = None     # per-ROUND scratch: the last target `step_to`
+                               # was given this round (the ban's subject)
+        self.ns_stepped = False  # per-ROUND scratch: one escape attempt per
+                               # round, no more
+        # tile -> round the ban ends.  Read as `.get((x, y), -1) > rnd`, the
+        # verbatim read pattern of `escape_ban` and `wg_ban`.
+        self.ns_ban = {}
+
         # --- v632 SURVIVAL FAMILY, PLANK B -- THE LEASHED KEEPER'S DUTY -----
         # (SK_LEASH_DUTY, conjoined with SK_KEEPER_LEASH at the call site.)
         # Same unconditional rule and the same reason.  All three stay 0 on
