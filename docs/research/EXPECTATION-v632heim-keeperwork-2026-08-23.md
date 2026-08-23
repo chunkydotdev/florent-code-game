@@ -66,3 +66,29 @@ shows conditional seen-working with honest opportunity columns, K4 holds.
 A zero-opportunity fixture is not a fail — it is a reported zero. If the
 spend cap is ever the binding constraint in >half the working rounds, the
 cap design returns rather than being silently raised.
+
+## DISPOSITION — PARKED PRE-TAPE (never-tape-a-dead-mechanism rule), BUILDER s57
+
+The build agent's read-only census (kwbuild_mkprobe.py, byte-identical
+tracer, 30/30 F1 cells) measured the mechanism near-vacuous BEFORE any
+screen: 3,258 held-post rounds carry 55 full-value heal-opportunity rounds
+(1.69%), ALL at bank 0/1 because `_heal_action` already harvests everything
+above bank 2. Both registered K2 specimens are ZERO-OPPORTUNITY (undamaged
+core, intact belt, all 979/521 rounds) — K2 as registered cannot be met by
+any faithful implementation; the mechanism DOES fire where opportunity
+exists (helheim 9 verbs, position falsifier clean). F1 smoke: 25 verbs /
+3,778 holds (0.66%), guards flat, and the one notable flip is
+DOCTRINE-ADVERSE (longhouse_seatB checkmate r287 → r1000 tiebreak win, the
+whole of ≤r300 kills 6→5; n=1, chaotic divergence, reported not concluded).
+The plank stays built, OFF, unit-controlled (32/32) — adoptable later if
+the field ever shows heal-starved holds.
+
+**ROUTED (the census's two live findings, each bigger than this plank):**
+1. **THE 431 — enemy building orthogonally adjacent to a held post, no verb,
+   431 rounds tape-wide.** FORTRESS doctrine says destroy enemy buildings;
+   the keeper's own ladder ran and declined every time. WHY it declines is
+   a diagnostic question and possibly a real hole.
+2. **Idle-rich hold** — jotunheim keeper: 521 rounds at bank 797, 3 free
+   adjacent tiles, no recognised need in any tier. Capturing it needs a NEW
+   need-heuristic (ring-barrier claim at post), out of this flag's
+   registered scope by design.
