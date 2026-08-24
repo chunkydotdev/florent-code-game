@@ -1812,3 +1812,94 @@ incident (closing state written off a poller inside its blind window) — this t
 was the wrap's own elapsed time, not a poller, that made the cache stale. Directional
 note for Q2: this error would have flattered nothing, but it would have handed a
 successor a wrong integer for an irreversible op.
+
+---
+
+# INSTANCE — s58, 2026-08-24 (SEASON END). FIRINGS: 3.
+
+**Run at Magnus's wrap call, before the process deltas. Answered from commits,
+logs, the wire, and the certified window record. Game context: in-game league.**
+
+### 1. VERDICTS — did each carry exactly what its interval supports?
+Eight typed: **w22/iteration-12 REFUSED** on its pre-declared bars (dose 5/15 vs
+the pre-decode re-denomination; mechanism-proven/timing-refuted split carried) ·
+**surge plank REFUSED** (agent ablation n=540, OFF above every ON arm) ·
+**catalogue adoption: improvement significant (~2.3σ), superiority NOT claimed**
+— pooled 142/270 = 52.6% [46.6, 58.6] typed as PARITY-PLUS after batch 3 pulled
+back batches 1-2 · **L0 REFUSED** (42.2%, knob closed at proper n) · **E4 NULL**
+(52.2%) · **new-pool 76/90 = 84.4% [77.0, 91.9] claimed WITH the interval** ·
+w21 dose-failure readout (side-lane certified honest) · the ship itself typed as
+Magnus's word, no gate claimed. ⚠ The tempted sentence existed: after batch 1
+(54.4%) I told Magnus "the point estimate is on the winning side" — labelled
+honestly, but framed before batch 3 existed. The pooled form corrected it.
+
+### 2. RETRACTIONS, AND WHICH DIRECTION THE ERROR RAN
+Three, **two flattering**: (a) HANDOVER published "22 windows certified" while
+w22's leak bracket was still open (cleaner record than existed; side-lane catch,
+corrected within minutes); (b) wrap-debt item 1 recorded research's
+"holder_watch blind since 08-22" without primary verification (a more dramatic
+incident than existed; corrected on their retraction — **consuming a claim
+uncritically is my error even when the claim was theirs**); (c) iteration-12's
+geometric release gate refuted by my own stderr probe (neutral direction — the
+probe was the check working). The flattering mean persists across sessions;
+named again.
+
+### 3. INSTRUMENTS — driven to both verdicts?
+smoke_decode validated against the w21diag family and driven by design (ON/OFF
+arms). map_encode selftest re-run before BOTH uses (byte-for-byte + corruption
+control). Denier gates forced to fire via stderr probes. **THE VIOLATION: slot
+guard v1 armed WITHOUT being driven — false-fired on its first row (match-counter
+column read as version), my own boot config's probe-the-guard rule, same
+session.** Every subsequent monitor (4) was driven to all verdicts pre-arm,
+committed as the fix-in-practice. **FIRING 1.**
+
+### 4. CLAIMS AHEAD OF THEIR RECORD
+One: the HANDOVER certification sentence (Q2a above) — the published-before-its-
+check class, s56's own addendum rule violated by its inheritor. claim_check.py:
+clean on tools (27/27 records name their files). **FIRING 2: the wrap-sequence
+rule already exists; the instance is recorded as its second firing — a rule that
+fires twice in three sessions is carrying weight, keep it.**
+
+### 5. THE SLOT AND THE HOLDER — what did activation actually cost?
+The heaviest slot day in the record and the cost was ZERO rated matches leaked,
+verified per-match on the wire (no league ladder match after 09:56Z; every
+earlier row played v188): v212 PLATFORM-activated (not us) 10:04-10:09Z,
+restored by integer in ~5 min · w22 + the 10:21 manual window both certified
+zero-leak · v213 shipped on Magnus's explicit word (stop-loss 1789 encoded and
+watched) · v215 shipped ~10 min after the rotation. 24 windows + 1 abort + 1
+incident across the era: 0 leaks. The window discipline held under the
+platform's endgame semantics changes (submit no longer auto-activates — measured
+three times; every upload a platform-activation hazard — neutralized with the
+holder-bytes upload).
+
+### 6. WHAT THE BUDGET BOUGHT
+Local: ~1,100 games in ~5 hours (4 chassis baselines, powered base 90, ablation
+540, catalogue 270, L0/E4 180, forecast 90) — every read n>=90 after the
+nondeterminism finds. Two honest nulls (L0, E4) closed knobs for good; the
+refused surge plank paid anyway (its binder analysis found the catalogue).
+Unrated: w22 only (15 games) before the platform disabled the fixture. Debit:
+~40 min on iteration-12's geometric form — priced as the probe doing its job.
+
+### 7. WHAT A SUCCESSOR CANNOT RECONSTRUCT
+The season is over, so the successor is the ARCHIVE READER: everything
+load-bearing is committed (BUILD-REPORT-wave-catalogue = the day's arc; the
+ledgers; the window record; CLAUDE.md endgame corrections). Session monitors die
+now; the external daemons (elo_logger, watchers, keeper) keep polling a dead
+platform — left running deliberately, harmless, named here so nobody reads their
+staleness as an outage.
+
+### THE ONE QUESTION — a decision the machinery could not have caught?
+**YES, and it is the day's biggest finding about this lane, not about the bot:
+given "4 hours left," I chose guard mode — protect the slot, finish the record —
+and Magnus had to intervene THREE times ("do something different", "we beat
+Mjolnir with OUR bot", "stop and figure out what we're doing wrong") to force
+the swing that produced everything of value today.** No instrument flags a
+too-conservative posture; the machinery inspects experiments, never ambition.
+Corollary with the same shape: the week's fixture measured against a v105-era
+Mjolnir while the real one moved ~80 versions — no check compared fixture
+provenance against the live opponent version. **FIRING 3, routed at write time
+to the vault (cross-project pattern): when the principal sets a hard horizon,
+the default posture question — protect or swing — is HIS to answer, and the
+lane's job is to ask it explicitly, not to answer it conservatively on his
+behalf. Fixture-provenance-vs-live-version: OBSERVATION — NOT ROUTED (platform
+dead).**
