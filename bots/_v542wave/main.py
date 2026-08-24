@@ -77,6 +77,18 @@ class Player(EcoMixin, RaidMixin, SiegeMixin):
         self.map_ores = []
         self.ore_cursor = 0
 
+        # --- WAVE-LATE-SURGE (s58), per unit.  Three cheap pieces of state and
+        # NOT ONE COMMS SLOT: all sixteen are allocated in this lineage, so the
+        # pivot derives everything it needs from this body's own vision and the
+        # round number.  `wave_ore_seen` is every ore tile this body has ever
+        # seen, `wave_ore_full` the subset last observed carrying a building,
+        # and `wave_pace` the short position window the unstick reads. ---
+        self.wave_ore_seen = set()
+        self.wave_ore_full = set()
+        self.wave_pace = deque(maxlen=WAVE_SURGE_PACE_N)
+        self.wave_lq_len = 0
+        self.wave_lq_rnd = None
+
         # --- movement / targeting ---
         self.tgt = None
         self.last = None
@@ -1063,6 +1075,18 @@ class Player(EcoMixin, RaidMixin, SiegeMixin):
                               "until", self.v520_pres_until, file=sys.stderr)
                     except Exception:
                         pass
+            # ⭐ WAVE-LATE-SURGE (k) -- THE ECONOMY'S OWN RESERVE ON THE
+            # MAGAZINE.  Composes exactly like every reserve above it: a
+            # `max()` on `ti_floor`, so it can only RAISE the bar conversion
+            # must clear and cannot lower E1_AMMO_FLOOR, the harvester
+            # reserve, the collar reserve or v517/v518/v520's floors.  It
+            # exists because none of those five represents the DIG, and the
+            # decoded tape says the magazine took 620 Ti in 86 rounds while
+            # the expanders stood still for want of eight.  Off before r250,
+            # off the moment the ratchet reaches WAVE_SURGE_HARV_TARGET.
+            if WAVE_LATE_SURGE and wave_surge_short(ct):
+                if WAVE_SURGE_AMMO_FLOOR > ti_floor:
+                    ti_floor = WAVE_SURGE_AMMO_FLOOR
             if (under or weapons_top or bb_live or fs_live or harv >= 2) \
                     and ammo < ammo_target and ti > ti_floor:
                 amt = min(chunk, ammo_target - ammo, ti - ti_floor)
@@ -1194,6 +1218,17 @@ class Player(EcoMixin, RaidMixin, SiegeMixin):
         # anything above them keeps a reserve so a body never starves the
         # first harvesters.
         need = cost if self.n < LOKI_BASE_BUILDERS else cost + LOKI_SPAWN_RESERVE
+        # ⭐ WAVE-LATE-SURGE (h).  The same reserve idea the line below it
+        # already encodes ("a body never starves the first harvesters"),
+        # re-priced for the round where the harvesters are the whole game.  At
+        # the measured late scale a builder bot is 114 Ti -- dearer than a
+        # harvester -- and adds +20% to the ONE global cost factor, so every
+        # body bought here makes every later harvester dearer.  It never
+        # touches the opening five (`self.n < LOKI_BASE_BUILDERS` keeps its
+        # own branch) and it stands down the moment the ratchet is met.
+        if (WAVE_LATE_SURGE and self.n >= LOKI_BASE_BUILDERS
+                and wave_surge_short(ct)):
+            need += WAVE_SURGE_SPAWN_RES
         if ti < need:
             return
         if self._spawn_ring_key != p:
@@ -1372,7 +1407,18 @@ class Player(EcoMixin, RaidMixin, SiegeMixin):
                 # titanium delivered.  And the diversion hands itself back the
                 # moment delivery resumes (see the release below), so a
                 # cleared famine costs the raid nothing but the walk home.
-                if (LOKI_FS_V539 and FS_V539_REEST and FS_V539_DRAFT
+                # ⭐ WAVE-LATE-SURGE (e).  A body issued past WAVE_SURGE_RND
+                # while the harvester ratchet is still under target joins the
+                # economy instead of the raid.  ⛔ NEW BODIES ONLY -- a raider
+                # already walking the enemy ring keeps its role, which is the
+                # T4_BLEED lesson in doctrine.py verbatim (recalling the whole
+                # economy on a latch once finished a game with 0 titanium
+                # delivered).  Roles are assigned once per body at first run,
+                # so a body issued before r250 is untouched by construction.
+                if (WAVE_LATE_SURGE and WAVE_SURGE_SEATS
+                        and wave_surge_short(ct)):
+                    self.role = "expand"
+                elif (LOKI_FS_V539 and FS_V539_REEST and FS_V539_DRAFT
                         and self._v539_famine(ct)):
                     self.role = "expand"
                     self.v539_drafted = True

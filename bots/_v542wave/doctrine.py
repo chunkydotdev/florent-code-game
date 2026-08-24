@@ -1140,6 +1140,25 @@ MAP_CODES = {
 # layouts intentionally share dimensions and Core anchors, so this stays a list
 # and is disambiguated from the builder's visible terrain at runtime.
 EXTRA_MAP_CODES = (
+    # --- s58: the CURRENT 15-map pool (was fully uncatalogued in this tree —
+    # known_map_for returned None on every live map, killing the ore
+    # partition AND all pathfinding; the s36 livelock class, re-measured on
+    # bifrost as 350-round 2-cycles pinning the harvester ratchet at 1) ----
+    ((20, 20, 9, 1, 9, 17), "AAAAAAAAAAAAASAAAAAGAAAAAAJBMEJNABMNBNNAACAAAGAASAACAMEANBJNAAAIAAAAASCAAMEANBJNAACAGAASAAAACAMNBNNAEJNANBDAAAAAASAAAAAGAAAAAAAAAAAAAA"),  # auroraveil [s58 pool encode, map_encode.py selftest-passed]
+    ((26, 12, 2, 5, 22, 5), "AAAAAAAAACAAIYAASAJNAAAMEAAADAAABAAAABSCJAAAAJAYADAAAADAIABAAAABSCJAAAAJAAADAAAMEAAANBACAAIYAASAAAAAAAAA"),  # bifrost [s58 pool encode, map_encode.py selftest-passed]
+    ((20, 20, 2, 1, 16, 17), "AAAMAMAAAMAMAAAAEAEAAAMAJBCAAEAMASMAAAMAAEAIAEAGJBJBAACMAMACAAAEAAAAAJBAAACMAMACAAEAESAJBSCJBAMAAAMGAMAJBAACEAMAAAJBJBAAAMAMAAAMAMAAAA"),  # fimbulwinter [s58 pool encode, map_encode.py selftest-passed]
+    ((30, 30, 14, 2, 14, 26), "NDAAAAAADNEDAAAAAADMBCAAAAAASJSEAAAAAAMCEBAAAAAAJMAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACAAAASAAAAAAAAAAAAAAAAAAAAAAAAAAEMAAAAAAAJAABAAAAAAJAABAAASAACSCSAACSAACSCSAACAAAJAABAAAAAAJAABAAAAAAAEMAAAAAAAAAAAAAAAAAAAAAAAAAACAAAASAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEBAAAAAAJMSEAAAAAAMCBCAAAAAASJEDAAAAAADMNDAAAAAADN"),  # glacierkeep [s58 pool encode, map_encode.py selftest-passed]
+    ((18, 18, 2, 8, 14, 8), "AAAAAAGAMEAGAMBJEAAMBJEAAMBJEASAAAACAAYIAAAAMEAAAAMEAAAAMEAAAAMEAAAAYIAASAAAACAMBJEAAMBJEAAMBJEAGAMEAGAAAAAA"),  # helheim [s58 pool encode, map_encode.py selftest-passed]
+    ((12, 12, 1, 1, 9, 9), "AAAAAACSAAAAAJBAAMAAGAAAAAAGAAEAAJBAAAAACSAAAAAA"),  # holmgang [s58 pool encode, map_encode.py selftest-passed]
+    ((20, 20, 1, 16, 17, 2), "AAAAAAACSAAAAAAJBAAAAEDSAASAAAAAAAAAAMAAAGACDAAMAAAEAAMAAUSAGDAEAAAAAJBJSAGGCAMAAJBAAMAAJACSAAAMAAAAAAAAAAGAAGJJBAAAAEAAAAAAGACAAAAAAA"),  # icefloe [s58 pool encode, map_encode.py selftest-passed]
+    ((24, 24, 4, 4, 18, 18), "AAAAAAAAAAAAAAAAAAAMEAYAAAAAAAYAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACAAAJEAAAAAAJEAAAAAAJEAAAGAAAYIAAAAAAYIAAAGAAAMBAAAAAAMBAAAAAAMBAAASAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAIAAAAAAAIAMEAAAAAAAAAAAAAAAAAAA"),  # jotunheim [s58 pool encode, map_encode.py selftest-passed]
+    ((28, 18, 2, 8, 24, 8), "AAAAAAAAAACAAAAAASAJNNBAMNNAAGADAJASAAAAJAABAAAAAABIDAAAAAADYJAAAAAAJAABAAAAAABADAAAAAADAJAAAAAAJAABAAAAAABADAAAAAADYJAAAAAAJSCBAAAACABADAGAANNEAJNNBACAAAAAASAAAAAAAAAA"),  # longhouse [s58 pool encode, map_encode.py selftest-passed]
+    ((30, 30, 2, 2, 26, 26), "AAAAAAAAAAAAAAAAAAAAAACAAAAAAAAAASAAAAAAADABAAAAAAADABAAAAAASDABAAAAAAAMEAAAAAAAAAAJEAAAAAACGAAAAAAAAMBMEMEAAASAJDAADAAAAAJDAADAAAAAJDAADAAAAAAASCAAAAAAAASCAAAAAAADAADBAAAAADAADBAAAAADAADBACAAAMEMEJEAAAAAAAAGSAAAAAAMBAAAAAAAAAAMEAAAAAAAJADCAAAAAAJADAAAAAAAJADAAAAAAACAAAAAAAAAASAAAAAAAAAAAAAAAAAAAAAA"),  # midgard [s58 pool encode, map_encode.py selftest-passed]
+    ((24, 24, 1, 11, 21, 11), "MKENNMKEVKFZRVKFDKDBJDKDDKAAAAKDDAAAAAADAAAMEAAAAAMWOEAABMEAAMEJCDAAAADSBAAMEAAJAJNEMNBAAAAPHAAAAAAPHAAAAJNEMNBAAAAMEAAABEAAAAMJCMEAAMESBAMWOEAJAAAMEAAADAAAAAADDKAAAAKDDKDBJDKDVKFZRVKFMKENNMKE"),  # paths [s58 pool encode, map_encode.py selftest-passed]
+    ((16, 16, 7, 1, 7, 13), "AAAAAAAAAAAACAGAAAAAAAEAAMAMAIJBAAYAASAAAACCAAAGAAYAAAESCMAMAAJBAAAAAASAACAAAAAAAAAAAA"),  # skald [s58 pool encode, map_encode.py selftest-passed]
+    ((22, 22, 9, 2, 9, 18), "AAAAAAAACAAAASAAAAAAAAAAAAAAAASAAAACAMNBAMNBJAAAAADABJNNBJADABADABJAD0LADABAAAAJADAAAAABJAD0LADABJAABJADANNEABJAAAAADANNAANNAACAAAGAAAAAAAAAAAAAAAAGAAAAACAAAAAAAA"),  # stavkirke [s58 pool encode, map_encode.py selftest-passed]
+    ((30, 30, 2, 14, 26, 14), "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAASAAJBAACAAAAADDAAAAAAAABJAAAAAAAJAABAAASAADAADAACAAAEAAMAAAAAJCAASBAAAAAAAAAAAAAAKAAAAKAAAMDAAAADEAADAAAAAADAAABSAACJAAAABSAACJAAADAAAAAADAAMDAAAADEAAAKAAAAKAAAAAAAAAAAAAGJBAAJBGAAAAEAAMAAASAADAADAACAAAJAABAAAAAAABJAAAAAAAADDAAAAAASAJBACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"),  # valkyrie [s58 pool encode, map_encode.py selftest-passed]
+    ((30, 30, 3, 3, 25, 25), "AAAAAAAAAAAAAMNNBAAAAAAAAAAAAAAAAAAAAAAAAAAJAAAAAAAAAJAAAEAAAAJNBAAEAAAAJUBAAAAAGBJABAAASAABJUBAAAAAABJKBAAAAAABAAAAAAAAATAAAAJNNBABAAAAAAAAAAAAYIAAAAAAAAYIAAAAAAAAAAAAJAJNNBAAAALAAAAAAAAAJAAAAAAJKBJAAAAAAJUBJAACAAAJABJGAAAAAJUBAAAAMAAJNBAAAAMAAABAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAJNNEAAAAAAAAAAAAA"),  # yggdrasil [s58 pool encode, map_encode.py selftest-passed]
     ((21, 8, 5, 3, 14, 3), "JABAJABDDDGDDDJAAAAABDAAAAADGAAAAAGAAAUAAAJJAGABBHDDADDP"),
     ((26, 26, 5, 5, 19, 19), "ENNEANNENJEMBJNNKBSAAAAMAMEAEACAAAJBAAAAAAAMAAAGCMAMZBJEGNNENJAMBJNNKNCMYAAAAGEAESGSAAJBJBIAJBJBAGASAJAJAMASADAAAAAJAGAMADADAGASAAEAEASCEAEAAGSGJBJTAAAAYMAOENNEANADMKNNTJEAZNAMAUAAAMAAAAAAAAEAAAACJBJNAMAAAAGAENNEANJEMKNNBJNNKB"),
     ((26, 26, 5, 5, 19, 19), "AAAAAAAAAACAAAAAAGGAJADAAAAAMEANBACAAAAAJBASAAAAGJBAGAAGAAMTAJAAAAJJBAFABAABJSABABADSDSMAABJAAEAASAAAAAASAAAAAASAGAAAAAAGAAAAAAGAAJBADABAMGJGJAABABGDABAABJCAEDAAAADAGNAASAASAAESAAAAGAAEAAAAAACANBJNAAAAAJADASSAAAAAAACAAAAAAAAAA"),
@@ -6078,3 +6097,255 @@ FS_V541_NEED_SENTINEL = False
                             # do.  Named, flagged and reversible without
                             # touching siege.py -- the house pattern
                             # (FS_SALT_LATCH, FS_V520_GUNNEAR).
+
+# ======================================================================
+# ⭐ WAVE-LATE-SURGE (s58) -- THE LATE ECONOMY PIVOT.
+#
+# WHAT WAS MEASURED, AND IT IS NOT THE CAP.  bifrost.map26 seed 7 vs
+# _x3r0v188mjolnir, wave seat A: the harvester RATCHET (SLOT_HARVESTERS) reads
+# **1** from round 25 to round 400 while ECO_CAP is 18 and the bank sits at
+# 80-250 Ti all game.  The cap was never the binder; three separate upstream
+# gates were.
+#
+#   1. THE MAP IS NOT IN THE CATALOGUE.  `known_map_for` (eco.py:214) matches
+#      on (w, h, core anchor) against MAP_CODES + EXTRA_MAP_CODES, and
+#      (26, 12, (2,5)) is in neither -- so `map_grid` stays None, `map_ores`
+#      stays the empty list it is initialised to (main.py:77), and the ORE
+#      PARTITION at eco.py:1987 (`if self.map_ores and self.role != "defend"`)
+#      NEVER ENGAGES.  `_pick` degrades to the blind angular wander at the
+#      bottom of the function.
+#   2. THE WANDER LIVELOCKS.  With `map_grid is None`, `_bfs_direction`
+#      short-circuits to `p.cardinal_direction_to(target)` -- greedy, no
+#      flood -- and `_nav`'s fallback ladder (perpendicular, perpendicular,
+#      OPPOSITE) then walks the body back where it came from whenever the
+#      greedy step is blocked by our own paved conveyor ring.  A body pacing
+#      a 2-cycle MOVES SUCCESSFULLY every round, so `self.stuck` never
+#      reaches 5 and the `stuck >= 5` re-pick at eco.py:2653 never fires.
+#      Measured: seat 1 (id 5) alternated (0,5)<->(1,5) and seat 2 (id 9)
+#      alternated (0,9)<->(1,9) for 350 consecutive rounds, both holding an
+#      unreachable wander target.
+#   3. THE COLLAR RESERVE OUTRANKS THE DIG FOREVER.  With a raider parked at
+#      the enemy ring, `_eco_spendable` subtracts `8 * barrier + FS_SEAL_MARGIN`
+#      from the bank; on the tape `ti 89 hcost 55 spend 0` is the standing
+#      reading.  This is the v513 change-C deadlock in a third costume: the
+#      reserve is bought once, the seal never lands, and the economy is
+#      priced out of a 55 Ti harvester on an 89 Ti bank for 700 rounds.
+#
+# WHAT THE PLANK DOES, AND WHAT IT DELIBERATELY DOES NOT.  From
+# WAVE_SURGE_RND it (a) remembers every ore tile this body has SEEN and picks
+# the nearest free one -- the same partition idea run off live vision instead
+# of the catalogue, scanned only on a re-pick and never per round; (b) breaks
+# the pace 2-cycle by forcing a re-pick when the body's last WAVE_SURGE_PACE_N
+# recorded positions cover two tiles or fewer; (c) stops the raid's reserves
+# outranking the dig while the ratchet is under WAVE_SURGE_HARV_TARGET; (d)
+# raises the harvester ceiling through the EXISTING `_eco_cap` surge on a
+# floor that a stalled rush can actually reach (SURGE_TI_FLOOR = 1500 is
+# unreachable on a bank that never clears 900); (e) sends NEW replacement
+# bodies to the economy instead of the raid while the ratchet is short.
+#
+# IT DOES NOT TOUCH THE RUSH.  Every clause is behind
+# `round >= WAVE_SURGE_RND`, so rounds 0..249 execute the parent's bytes --
+# the twelve cells that finish before r250 are unchanged by construction.  It
+# also does not recall a raider that is already walking: the T4_BLEED lesson
+# in this file (recalling the whole economy on a latch once finished a game
+# with 0 titanium delivered) is exactly the mistake available here.
+# ======================================================================
+# ⛔⛔ SHIPS **OFF**, AND THE REASON IS THE MEASUREMENT, NOT A PREFERENCE.
+# Built default-ON, ablated on bifrost.map26 seed 7 vs _x3r0v188mjolnir, wave
+# seat A, local engine, --tle 10.  `main.py:1226` re-rolls `spawn_salt` from
+# unseeded OS entropy every match, so this cell is a RANDOM DRAW and not a
+# fixed cell -- every figure below is a rate over independent games, not a
+# replay:
+#
+#   arm                                    n     wins        our mined (mean)
+#   OFF   (this flag False)              180    52.2%              1,742
+#   FULL  (every clause below)            80    41.2%              1,629
+#   NO-FUND (mechanics only, c/e/h/k off) 80    43.8%              1,567
+#   MIN   (a/b/f/j/n only)               100    48.0%              1,547
+#   NAV   (b/j only)                     100    49.0%              1,530
+#
+# **EVERY ON variant is at or below OFF on win rate AND on delivered
+# titanium.**  Pooled ON is 165/360 = 45.8% against 94/180 = 52.2% -- a 6.4pp
+# gap whose 95% half-width is 8.9pp, so it is NOT significant; the reason to
+# ship OFF is that the point estimate is negative in FIVE arms out of five and
+# the plank's own currency (delivered titanium) moves the WRONG WAY in all of
+# them.  Nothing here earned its place.
+#
+# ⭐ WHY IT DID NOT WORK, WHICH IS THE PART WORTH KEEPING.  Decoded off the
+# replay wire (`scratchpad/s58_beatmj/belt_decode.py`): the surge does what it
+# says -- the harvester ratchet goes from 1-2 to 10-13 -- and delivery does
+# not move, because **2 of 12 harvesters are connected to our core** and the
+# engine's `mined` figure never exceeds ~4,950 in ANY arm, which is exactly
+# what TWO harvesters deliver over 1,000 rounds.  On bifrost only (1,1) and
+# (1,10) are close enough to wire reliably; everything else needs a 9-link
+# belt across ground the opponent contests.  The extra holes cost 75 Ti and
+# +5% team cost scale each and deliver nothing, and the funding clauses take
+# that money from the defence -- our core is destroyed in 40/80 games with the
+# full plank against 24/80 with it off.
+#
+# ⇒ THE ROAD THIS CLOSES: "more harvesters" is not the plank on this map.
+# "More CONNECTED harvesters" is, and that is a belt-survival problem, not an
+# expansion-driver problem.  Every clause below stays written, flagged and
+# individually switchable so the next attempt starts from the diagnosis rather
+# than from the search.
+WAVE_LATE_SURGE = False     # master flag for the whole block below
+WAVE_SURGE_RND = 250        # nothing in this block can fire before this round
+WAVE_SURGE_HARV_TARGET = 12 # ratchet level at which the pivot stands down and
+                            # the raid's reserves outrank the dig again
+WAVE_SURGE_SEEN_ORE = True  # (a) live-vision ore memory in `_pick`
+WAVE_SURGE_UNSTICK = True   # (b) break the pace 2-cycle
+WAVE_SURGE_PACE_N = 8       # positions kept; <=2 distinct in 8 == pacing
+WAVE_SURGE_FUND = True      # (c) waive the collar/siege reserves for the dig
+WAVE_SURGE_TI_FLOOR = 200   # (d) reachable replacement for SURGE_TI_FLOOR
+WAVE_SURGE_SEATS = True     # (e) new bodies join the economy, not the raid
+WAVE_SURGE_SPREAD = 3       # seats fan out over the N nearest free ore tiles
+                            # instead of all converging on the closest one
+WAVE_SURGE_LQ_STALE = 30    # (f) rounds a link queue may fail to shrink before
+                            # the body abandons it.  MEASURED: seat 2 (id 9)
+                            # sat at (4,1) holding `lq 4` with `link_queue[0] =
+                            # (4,2)` from round ~290 to the end of the match --
+                            # `_build_next_link` returns False forever when
+                            # another of our own bodies is parked on the link
+                            # tile (`can_build_conveyor` refuses an occupied
+                            # tile and the `occupied` pop only tests
+                            # BUILDINGS), and the `if self.link_queue:` branch
+                            # in `_expand` returns before the re-pick can run.
+                            # `stuck` reached 211 on that body.  One expander
+                            # in three, deleted from the economy for 700
+                            # rounds, on a deadlock between two of our own.
+WAVE_SURGE_ROUTE_W = 2      # (g) weight on distance-to-CORE when the surge
+                            # picks ore.  `titanium_collected` is credited on
+                            # DELIVERY, so an unwired harvester is worth zero
+                            # forever AND costs +5% team cost scale, i.e. it
+                            # makes every later build dearer for nothing.
+                            # Measured: a run whose ratchet reached 10 still
+                            # delivered 2,470 -- exactly one harvester's 243
+                            # stacks over 975 rounds -- because the other nine
+                            # never got a belt home.  Route length is the
+                            # thing to minimise, walk length only the
+                            # tiebreak.
+WAVE_SURGE_ENDFACE = True   # (n) ⭐ THE TERMINAL LINK THAT POINTS AT A WALL.
+                            # `_build_next_link` faces the LAST tile of a plan
+                            # with `nearest_cardinal(tile.direction_to(core))`
+                            # -- as the crow flies, with no test of what is
+                            # actually on that side.  Decoded on a final
+                            # board: the row-1 trunk ran west
+                            # (9,1)<(8,1)<(7,1)<(6,1)<(5,1)< and then (4,1)
+                            # faced SOUTH into (4,2), which is a WALL, two
+                            # tiles from the (2,1) link that would have joined
+                            # it to the core.  Five conveyors and two
+                            # harvesters delivering nothing because the last
+                            # one points at rock.  Under the surge the
+                            # terminal facing prefers a side that actually
+                            # holds one of our belt tiles or our core, then a
+                            # side that is at least passable, and only then
+                            # falls back to the parent's compass answer.
+WAVE_SURGE_WIRE_FIRST = True
+                            # (m) ⭐ FINISH THE BELT BEFORE DIGGING THE NEXT
+                            # HOLE.  `_build_next_link` returns False whenever
+                            # the body is not ORTHOGONALLY ADJACENT to its own
+                            # `link_queue[0]`, and the harvester clause sits
+                            # directly below it -- so a body walking toward
+                            # its unfinished route builds a NEW harvester the
+                            # moment it passes an ore tile, and then walks on.
+                            # That is the decoded 12-harvesters-2-connected
+                            # shape exactly: each new hole costs 75 Ti and
+                            # +5% on the ONE global cost factor, delivers
+                            # nothing without a route, and makes the links the
+                            # route still needs DEARER.  While this body holds
+                            # a live plan, its action belongs to the plan.
+WAVE_SURGE_AMMO_FLOOR = 160 # (k) ⭐ THE FUNDING BINDER, DECODED RATHER THAN
+                            # GUESSED.  `coreConvertAmmo` events off the
+                            # replay wire, our team, per 100 rounds:
+                            # r0-99 = 124 Ti, r200-299 = 108 Ti,
+                            # **r300-386 = 620 Ti in 42 conversions**.  That
+                            # is 7.2 Ti per round against a total income of
+                            # about 5 (2.5 passive + 2.5 from the two
+                            # connected harvesters), which is why the bank
+                            # tape reads `ti 0 .. ti 6` for hundreds of
+                            # consecutive rounds while three expanders stand
+                            # beside their link tiles waiting for EIGHT
+                            # titanium.  The magazine is not overspending on
+                            # its own terms -- every one of its floors is
+                            # satisfied -- it simply has no floor that
+                            # represents the economy.  This is that floor, and
+                            # it enters through the same `max()` the other
+                            # five reserves use, so it can only ever RAISE the
+                            # bar conversion must clear and never lowers an
+                            # existing one.  Turrets keep firing from whatever
+                            # is already banked.
+WAVE_SURGE_NAV = True       # (j) ⭐ THE DEEPEST OF THE THREE, AND THE ONE
+                            # EVERYTHING ELSE DEPENDS ON.  `_bfs_direction`
+                            # opens with `if self.map_grid is None: return
+                            # p.cardinal_direction_to(target)` -- on a map the
+                            # catalogue does not carry there is NO PATHFINDING
+                            # AT ALL, only a greedy compass step.  Our own
+                            # paved conveyor ring plus our own parked bodies
+                            # then form pockets a greedy step cannot leave,
+                            # and `_nav`'s fallback ladder ends in
+                            # `desired.opposite()`, which walks the body back
+                            # where it came from.  That is the 350-round
+                            # (0,5)<->(1,5) pace, and it is also why an
+                            # adopted belt-rescue plan is never reached: the
+                            # body simply cannot walk to `link_queue[0]`.
+                            # This replaces the greedy step with a flood over
+                            # the tiles the body can SEE -- which is exactly
+                            # the scale of the obstacle -- and falls back to
+                            # the parent's compass step whenever the flood has
+                            # nothing to say.
+WAVE_SURGE_RESCUE = True    # (i) ⭐ THE ONE THAT ACTUALLY MOVES DELIVERY.
+                            # DECODED off the replay wire (belt_decode.py,
+                            # direction enum verified against a belt whose
+                            # delivery is not in doubt): a 1000-round game
+                            # ended with **12 of our harvesters alive and 2
+                            # connected to our core**, and the engine's own
+                            # `mined` figure -- 4,150 -- is exactly what two
+                            # harvesters deliver.  The other ten sat on
+                            # 3-to-6-link belt stubs that stop in open ground:
+                            # (11,2)(10,2)(9,2)(8,2) then nothing,
+                            # (14,2)(14,3)(14,4) then nothing.  A `link_queue`
+                            # is PER-UNIT STATE, so when the wiring body dies
+                            # or is diverted its half-built belt is orphaned
+                            # and NOTHING in the tree ever picks it up:
+                            # `_l4_repair` only fires for a harvester with NO
+                            # acceptor at all, which a stub's first conveyor
+                            # still is.  This clause lets an idle expander
+                            # adopt the dead end and finish the route.
+WAVE_SURGE_RESCUE_EVERY = 8 # per-body duty cycle, offset by seat, so the
+                            # unknown-map `_link_path` flood (two engine calls
+                            # per tile) is paid by one body per round at most
+WAVE_SURGE_SPAWN_RES = 300  # (h) extra bank the Core keeps before buying
+                            # another body while the ratchet is short.  At the
+                            # measured late-game scale (~380%) a builder bot
+                            # is 114 Ti -- MORE than a harvester -- and adds
+                            # +20% to the one global cost factor, so it
+                            # inflates every harvester bought after it.  The
+                            # tape shows units 13-15 and a bank pinned at
+                            # 12-115 while `spend 0` refuses a 74 Ti
+                            # harvester: the hands were never the shortage.
+
+
+def wave_surge_on(ct):
+    """True once the late economy pivot is open.  One reader for every site.
+
+    Wrapped because `get_current_round` is an engine call inside a try in
+    every other hot path in this tree, and an exception escaping run() is a
+    permanent unit death.
+    """
+    if not WAVE_LATE_SURGE:
+        return False
+    try:
+        return ct.get_current_round() >= WAVE_SURGE_RND
+    except Exception:
+        return False
+
+
+def wave_surge_short(ct):
+    """True while the surge is open AND the harvester ratchet is under target."""
+    if not wave_surge_on(ct):
+        return False
+    try:
+        return ct.read_store(SLOT_HARVESTERS) < WAVE_SURGE_HARV_TARGET
+    except Exception:
+        return False
+

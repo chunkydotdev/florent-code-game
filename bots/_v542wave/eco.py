@@ -491,6 +491,18 @@ class EcoMixin:
         ti = ct.get_global_resources()
         if LOKI_FS_CREW and FS_BELT_LASTLINK and essential:
             return ti >= cost
+        # ⭐ WAVE-LATE-SURGE (c) -- THE v513 CHANGE-C DEADLOCK, THIRD COSTUME.
+        # Read the docstring above and then read the bifrost tape: with a
+        # raider parked at the enemy ring the collar reserve subtracts
+        # `8 * barrier + FS_SEAL_MARGIN` from a bank that reads 89 Ti against a
+        # 55 Ti harvester, and `spend 0` is the standing verdict for 700
+        # rounds.  Past WAVE_SURGE_RND, with the ratchet still under target,
+        # the seal has had 250 rounds to land and has not; the dig outranks it
+        # from here.  Bounded THREE ways: never before r250, never once the
+        # ratchet reaches WAVE_SURGE_HARV_TARGET, and `ti >= cost` still holds
+        # so it can only ever spend money we actually have.
+        if WAVE_LATE_SURGE and WAVE_SURGE_FUND and wave_surge_short(ct):
+            return ti >= cost
         # ⭐⭐ v539 RUNG A -- THE FAMINE LIFELINE, AND IT IS THE v513 CHANGE-C
         # DEADLOCK IN ITS SECOND COSTUME.  Read the docstring above: two
         # reserves that had never been checked against each other put the
@@ -534,6 +546,15 @@ class EcoMixin:
         return ti >= cost
 
     def _eco_cap(self, ct):
+        # ⭐ WAVE-LATE-SURGE (d).  The incumbent surge asks for 1,500 Ti in the
+        # bank; the measured stalled-rush bank on bifrost never clears 900 and
+        # sits at 80-250 for most of the match, so the ceiling it guards has
+        # never once been raised in that class of game.  Same ceiling, same
+        # flag, on a floor a stalled rush can actually reach.  Cannot fire
+        # before WAVE_SURGE_RND, so r<250 returns the parent's value.
+        if (WAVE_LATE_SURGE and wave_surge_on(ct)
+                and ct.get_global_resources() >= WAVE_SURGE_TI_FLOOR):
+            return SURGE_ECO_CAP
         if (
             ct.get_global_resources() >= SURGE_TI_FLOOR
             and ct.get_current_round() >= SURGE_MIN_RND
@@ -1352,6 +1373,14 @@ class EcoMixin:
                 f = nearest_cardinal(tile.direction_to(target))
         else:
             f = nearest_cardinal(tile.direction_to(target))
+            # ⭐ WAVE-LATE-SURGE (n).  The compass answer above ignores what is
+            # on that side; the decoded board has a five-link trunk whose last
+            # conveyor faces a WALL.  Rank the four cardinals by what they
+            # actually deliver into.  Falls through to `f` unchanged whenever
+            # nothing scores better, so the parent's answer is the default and
+            # not the exception.
+            if WAVE_LATE_SURGE and WAVE_SURGE_ENDFACE and wave_surge_on(ct):
+                f = self._wave_end_face(ct, tile, target, f)
         if f == Direction.CENTRE:
             f = Direction.NORTH
         if ct.can_build_conveyor(tile, f):
@@ -1979,6 +2008,259 @@ class EcoMixin:
             return best_t
         return fallback_t
 
+    _WAVE_STEP_DIR = {(0, -1): Direction.NORTH, (1, 0): Direction.EAST,
+                      (0, 1): Direction.SOUTH, (-1, 0): Direction.WEST}
+
+    def _wave_end_face(self, ct, tile, target, fallback):
+        """Which way the LAST conveyor of a plan should face.
+
+        ⭐ WAVE-LATE-SURGE (n).  Rank 0 = the side already holds one of our
+        belt tiles or our own core, i.e. this link actually joins something.
+        Rank 1 = the side is at least passable ground a later link can use.
+        The compass fallback is kept for rank 2, so a tile with no readable
+        neighbour behaves exactly as the parent.  Ties break on Manhattan
+        distance to the core, then on the parent's own answer.
+        """
+        best = None
+        best_key = None
+        for i, (dx, dy) in enumerate(CARD_DELTAS):
+            nx, ny = tile.x + dx, tile.y + dy
+            if not (0 <= nx < self.mw and 0 <= ny < self.mh):
+                continue
+            d = CARDINALS[i]
+            n = Position(nx, ny)
+            rank = 2
+            try:
+                if ct.get_tile_env(n) == Environment.WALL:
+                    continue
+                bid = ct.get_tile_building_id(n)
+                if bid is not None:
+                    if ct.get_team(bid) == self.team \
+                            and ct.get_entity_type(bid) in ACCEPTOR_TYPES:
+                        rank = 0
+                    else:
+                        continue
+                else:
+                    rank = 1
+            except Exception:
+                continue
+            key = (rank, abs(nx - target.x) + abs(ny - target.y),
+                   0 if d == fallback else 1)
+            if best_key is None or key < best_key:
+                best, best_key = d, key
+        return fallback if best is None else best
+
+    def _wave_step(self, ct, target):
+        """One cardinal step toward `target` over the tiles the body can SEE.
+
+        ⭐ WAVE-LATE-SURGE (j).  Used only where the tree currently has no
+        pathfinding at all -- `map_grid is None`, i.e. a map the catalogue
+        does not carry -- and only past WAVE_SURGE_RND.
+
+        The flood is over `is_tile_passable`, which is the engine's own answer
+        to "could a friendly builder stand there", so it accounts for walls,
+        buildings AND bodies in one call.  Its goal is the reachable tile with
+        the smallest Manhattan distance to `target`, not `target` itself:
+        the caller's targets are ore tiles and link tiles the body must stand
+        BESIDE, and an unreachable goal would otherwise return nothing at all.
+
+        Returns None -- caller falls back to the parent's compass step -- when
+        vision is unreadable, when the CPU guard has tripped, or when the best
+        reachable tile is the one the body is already on.
+        """
+        if self._cpu_exhausted(ct):
+            return None
+        p = ct.get_position()
+        start = (p.x, p.y)
+        try:
+            tiles = ct.get_nearby_tiles()
+        except Exception:
+            return None
+        ok = set()
+        for t in tiles:
+            tx, ty = t.x, t.y
+            if not (0 <= tx < self.mw and 0 <= ty < self.mh):
+                continue
+            try:
+                if ct.is_tile_passable(t):
+                    ok.add((tx, ty))
+            except Exception:
+                continue
+        if not ok:
+            return None
+        ok.add(start)
+        gx, gy = target.x, target.y
+        prev = {start: None}
+        q = deque([start])
+        best, best_sc = start, abs(start[0] - gx) + abs(start[1] - gy)
+        while q:
+            cur = q.popleft()
+            for dx, dy in CARD_DELTAS:
+                n = (cur[0] + dx, cur[1] + dy)
+                if n in prev or n not in ok:
+                    continue
+                prev[n] = cur
+                q.append(n)
+                sc = abs(n[0] - gx) + abs(n[1] - gy)
+                if sc < best_sc:
+                    best, best_sc = n, sc
+        if best == start:
+            return None
+        cur = best
+        while prev[cur] != start:
+            cur = prev[cur]
+        return self._WAVE_STEP_DIR.get((cur[0] - p.x, cur[1] - p.y))
+
+    def _wave_belt_rescue(self, ct):
+        """Adopt the nearest dead-ended belt of ours and plan its route home.
+
+        ⭐ WAVE-LATE-SURGE (i).  A `link_queue` is per-unit state.  When the
+        body carrying one dies -- and ours die constantly in this matchup --
+        its half-built belt is orphaned, and nothing in the tree ever finishes
+        it: `_l4_repair` fires only for a harvester with NO acceptor, and a
+        stub's first conveyor still is one.  Decoded on the wire: 12
+        harvesters alive at r999, TWO connected, ten sitting on 3-to-6-link
+        stubs that stop in open ground.
+
+        A dead end is one of OUR conveyors whose output tile carries no
+        building.  That test also excludes every conveyor that is delivering,
+        because the tile a delivering conveyor faces holds the core, another
+        belt tile, or a harvester -- all buildings.  The route is planned FROM
+        THE OUTPUT TILE and the output tile is prepended, so
+        `_build_next_link` lays it first and faces it at `link_queue[1]`; that
+        is what makes the existing stub flow instead of leaving a belt that
+        points at a conveyor which points somewhere else.
+        """
+        p = ct.get_position()
+        best = None
+        best_d = None
+        try:
+            ids = ct.get_nearby_buildings()
+        except Exception:
+            return
+        for bid in ids:
+            try:
+                if ct.get_team(bid) != self.team:
+                    continue
+                if ct.get_entity_type(bid) != EntityType.CONVEYOR:
+                    continue
+                bp = ct.get_position(bid)
+                bd = ct.get_direction(bid)
+            except Exception:
+                continue
+            dxy = DELTA.get(bd)
+            if not dxy or (dxy[0] == 0 and dxy[1] == 0):
+                continue
+            ox, oy = bp.x + dxy[0], bp.y + dxy[1]
+            if not (0 <= ox < self.mw and 0 <= oy < self.mh):
+                continue
+            out = Position(ox, oy)
+            try:
+                if ct.get_tile_env(out) == Environment.WALL:
+                    continue
+                if ct.get_tile_building_id(out) is not None:
+                    continue
+            except Exception:
+                continue
+            # NEAREST THE CORE, NOT NEAREST THE BODY.  A dead end two tiles
+            # from our own footprint is a whole trunk one 3-Ti link short of
+            # delivering -- decoded on the final board of a 700-round game,
+            # where the (1,1) harvester's chain read (2,1)v (2,2)v [GAP] (2,4)v
+            # into the core and that ONE missing tile was the difference
+            # between 2,430 delivered titanium and zero from that deposit.  A
+            # dead end out at the map's middle needs six more links and
+            # crosses ground the opponent contests.  Walk length is the
+            # tiebreak.
+            dc = abs(out.x - self.core.x) + abs(out.y - self.core.y)
+            d = (dc, (bp.x - p.x) ** 2 + (bp.y - p.y) ** 2)
+            if best_d is None or d < best_d:
+                best, best_d = out, d
+        if best is None:
+            return
+        try:
+            plan = self._link_path(ct, best)
+        except Exception:
+            return
+        if not plan and dsq_core(best, self.core) > 2:
+            # No route found and the tile is not itself a delivery seat --
+            # laying one conveyor into open ground buys nothing and costs
+            # +1% team cost scale.
+            return
+        self.link_queue = [best] + list(plan)
+        self.link_source = best
+        self.wave_lq_len = len(self.link_queue)
+        self.wave_lq_rnd = ct.get_current_round()
+
+    def _wave_ore_target(self, ct):
+        """Nearest remembered-and-still-free ore tile, or None.
+
+        ⭐ WAVE-LATE-SURGE (a).  `known_map_for` only ever returns a grid for a
+        map in the catalogue; off it, `map_ores` is empty for the whole match
+        and the seat partition in `_pick` never engages.  This is the same
+        idea driven by the only other source of terrain there is -- what this
+        body has actually SEEN -- accumulated across rounds so a tile stays
+        known after it leaves vision.
+
+        ⛔ THE SCAN IS PAID ON A RE-PICK, NEVER PER ROUND.  `_pick` is called
+        when the target is reached, cleared or gone stale; between those the
+        body navigates on a cached target and this function is not entered.
+        `get_tile_building_id` is asked only for tiles that read as ore, so
+        the per-call engine cost is one env read per in-vision tile plus one
+        building read per ore tile.
+
+        Bounds are tested explicitly before every tile read: `get_nearby_tiles`
+        is documented in-bounds, but `is_in_vision` was documented as a bounds
+        guard too (s50) and is not, and an escaping GameError is a permanent
+        unit death.
+        """
+        p = ct.get_position()
+        seen = self.wave_ore_seen
+        full = self.wave_ore_full
+        try:
+            tiles = ct.get_nearby_tiles()
+        except Exception:
+            tiles = ()
+        for t in tiles:
+            tx, ty = t.x, t.y
+            if not (0 <= tx < self.mw and 0 <= ty < self.mh):
+                continue
+            try:
+                if ct.get_tile_env(t) != Environment.ORE_TITANIUM:
+                    continue
+                taken = ct.get_tile_building_id(t) is not None
+            except Exception:
+                continue
+            seen.add((tx, ty))
+            # A harvester sits ON its ore, so an occupied ore tile is one this
+            # body must stop walking to.  The flag is re-read every time the
+            # tile is in vision, so a destroyed harvester frees it again.
+            if taken:
+                full.add((tx, ty))
+            else:
+                full.discard((tx, ty))
+        cands = [xy for xy in seen if xy not in full]
+        if not cands:
+            return None
+        # ⭐ WAVE-LATE-SURGE (g).  ROUTE LENGTH FIRST, WALK LENGTH SECOND.
+        # `titanium_collected` is credited on DELIVERY TO THE CORE, so the ore
+        # worth digging is the one whose belt can be finished, not the one
+        # under the body's feet.  Manhattan to the core is the link count the
+        # belt will need; the walk is the tiebreak.  Coordinates close the
+        # order so the choice does not depend on set iteration.
+        cx, cy = (self.core.x, self.core.y) if self.core is not None else (p.x, p.y)
+        cands.sort(key=lambda o: (
+            WAVE_SURGE_ROUTE_W * (abs(o[0] - cx) + abs(o[1] - cy))
+            + abs(o[0] - p.x) + abs(o[1] - p.y), o[0], o[1]))
+        # SPREAD.  Every expander reads the same ore memory, so without this
+        # they all walk to the same deposit and only one of them can build on
+        # it.  The parent solved the identical problem with a static seat
+        # partition (`ordered[worker::workers]`); this is the same trick with
+        # the seat as the offset, capped so a high seat number cannot be sent
+        # across the map.
+        k = min(self.role_n % WAVE_SURGE_SPREAD, len(cands) - 1)
+        ox, oy = cands[k]
+        return Position(ox, oy)
+
     def _pick(self, ct):
         # Static role partitions keep four builders off one deposit.  A raider
         # standing down to the economy (raid.py's state-based fallback) is a
@@ -2028,6 +2310,16 @@ class EcoMixin:
                     pass
                 if FS_V528_LOG:
                     self._v528_pickreg(ct, assigned, t)
+                return t
+
+        # ⭐ WAVE-LATE-SURGE (a) -- THE PARTITION, RUN OFF LIVE VISION.
+        # Reached only when `map_ores` is empty, i.e. only on a map the
+        # catalogue does not carry, which is the exact condition that kills
+        # the partition above.  Below WAVE_SURGE_RND this is inert and the
+        # parent's in-vision scan runs unchanged.
+        if WAVE_LATE_SURGE and WAVE_SURGE_SEEN_ORE and wave_surge_on(ct):
+            t = self._wave_ore_target(ct)
+            if t is not None:
                 return t
 
         try:
@@ -2097,6 +2389,16 @@ class EcoMixin:
         """
         p = ct.get_position()
         if self.map_grid is None:
+            # ⭐ WAVE-LATE-SURGE (j).  This line -- and only this line -- is
+            # what "no map in the catalogue" costs at navigation time: a
+            # greedy compass step with no obstacle test at all.  Past
+            # WAVE_SURGE_RND, flood what the body can SEE instead.  Returns
+            # None whenever it has nothing better to say and the parent's
+            # compass step runs unchanged.
+            if WAVE_LATE_SURGE and WAVE_SURGE_NAV and wave_surge_on(ct):
+                d = self._wave_step(ct, target)
+                if d is not None:
+                    return d
             return p.cardinal_direction_to(target)
         mw, mh = self.mw, self.mh
         tx, ty = target.x, target.y
@@ -2471,6 +2773,35 @@ class EcoMixin:
         harv = ct.read_store(SLOT_HARVESTERS)
         allow_pave = has_launch or harv >= 2
         endgame = ENDGAME_SWITCH_ON and ct.get_current_round() >= ENDGAME_RND
+        # ⭐ WAVE-LATE-SURGE (f) -- THE PINNED LINK QUEUE.  `_expand`'s
+        # `if self.link_queue:` branch returns before the re-pick, so a body
+        # holding a plan it can never lay is deleted from the economy for the
+        # rest of the match.  `_build_next_link` returns False forever when
+        # ANOTHER OF OUR OWN BODIES is standing on `link_queue[0]`:
+        # `can_build_conveyor` refuses an occupied tile and the `occupied` pop
+        # above it tests `get_tile_building_id` only, which a builder bot is
+        # not.  Two of our expanders can hold each other there indefinitely.
+        # The queue is dropped, not rerouted -- `_wire_tick` / the next
+        # harvester will re-plan from live terrain, which is the cheaper and
+        # more honest answer than patching a stale path.
+        if WAVE_LATE_SURGE and wave_surge_on(ct):
+            n_lq = len(self.link_queue)
+            if n_lq == 0:
+                self.wave_lq_len = 0
+                self.wave_lq_rnd = None
+            else:
+                rnd_lq = ct.get_current_round()
+                if n_lq != self.wave_lq_len or self.wave_lq_rnd is None:
+                    self.wave_lq_len = n_lq
+                    self.wave_lq_rnd = rnd_lq
+                elif rnd_lq - self.wave_lq_rnd >= WAVE_SURGE_LQ_STALE:
+                    self.link_queue = []
+                    self.link_source = None
+                    self.wave_lq_len = 0
+                    self.wave_lq_rnd = None
+                    self.tgt = None
+                    self.stuck = 0
+                    self.wall = None
 
         if ct.get_action_cooldown() == 0:
             # LOKI-SAMESTOP (QUEUE #50): the armed second build takes top
@@ -2481,7 +2812,15 @@ class EcoMixin:
                 return
             if not endgame and self.link_queue and self._build_next_link(ct):
                 return
-            if (
+            # ⭐ WAVE-LATE-SURGE (m).  A body holding a live route plan does
+            # not open a new hole: `_build_next_link` above returns False
+            # whenever it is not adjacent to its own `link_queue[0]`, and
+            # without this the fall-through builds a harvester off the walk.
+            # See the doctrine note -- this is the measured
+            # 12-harvesters-2-connected shape at its source.
+            _wave_wire_first = (WAVE_LATE_SURGE and WAVE_SURGE_WIRE_FIRST
+                                and self.link_queue and wave_surge_on(ct))
+            if not _wave_wire_first and (
                 ct.get_global_resources() >= ct.get_harvester_cost()
                 if endgame
                 else (
@@ -2581,6 +2920,19 @@ class EcoMixin:
         if self._cpu_exhausted(ct):
             return
 
+        # ⭐ WAVE-LATE-SURGE (i) -- THE ORPHANED BELT.  Planning only: it sets
+        # `link_queue` and spends no action, so it cannot displace a build, a
+        # repair or a heal -- all three sit above it and return.  Duty-cycled
+        # by seat so at most one body pays the unknown-map `_link_path` flood
+        # in any round, and skipped outright once the CPU guard above has
+        # tripped.
+        if (WAVE_LATE_SURGE and WAVE_SURGE_RESCUE and not endgame
+                and not self.link_queue and self.core is not None
+                and wave_surge_on(ct)
+                and (ct.get_current_round() % WAVE_SURGE_RESCUE_EVERY
+                     == self.role_n % WAVE_SURGE_RESCUE_EVERY)):
+            self._wave_belt_rescue(ct)
+
         # MULTI-HEALER CONVERGENCE.  One enemy Sentinel is ~-9 HP/round on our
         # Core against one healer's +4; two or three converged healers flip the
         # sign.
@@ -2610,7 +2962,19 @@ class EcoMixin:
             self.stuck = 0
             self.wall = None
 
-        if self._siphon_deny(ct):
+        # ⭐ WAVE-LATE-SURGE (l).  THE HALF-BUILT BELT OUTRANKS THE SIPHON
+        # HUNT.  `_siphon_deny` sits ABOVE the `if self.link_queue:` movement
+        # branch, so a body carrying a route plan gets pulled off it to go
+        # break an enemy belt -- and on this map our ore and theirs interleave
+        # at x=12-15, so the hunt is always available.  Decoded symptom: a
+        # body holding `lq 6 head (9,5)` spent rounds 311-375 at (12,4),
+        # (13,3), (12,7), (14,4) -- east, away from its own head, which it
+        # never reached.  The siphon costs the enemy half of ONE harvester's
+        # output; the unfinished belt costs us ALL of ours, because
+        # `titanium_collected` is credited on delivery.  Only while the plan
+        # is live, only past r250, only while the ratchet is short.
+        if not (WAVE_LATE_SURGE and self.link_queue and wave_surge_short(ct)) \
+                and self._siphon_deny(ct):
             return
 
         if ct.get_move_cooldown() != 0:
@@ -2651,6 +3015,25 @@ class EcoMixin:
                 self.tgt = nxt
                 self._nav(ct, pave=False)
             return
+        # ⭐ WAVE-LATE-SURGE (b) -- THE PACE 2-CYCLE, AND WHY `stuck` CANNOT SEE
+        # IT.  `self.stuck` counts rounds on which `_nav` moved NOWHERE.  On an
+        # uncatalogued map `_bfs_direction` short-circuits to a greedy
+        # `cardinal_direction_to` and `_nav`'s fallback ladder ends in
+        # `desired.opposite()`, so a body walled off from its target by our own
+        # paved ring steps forward, is refused, and steps BACK -- a successful
+        # move every round, `stuck` pinned at 0, and the `stuck >= 5` re-pick
+        # below unreachable.  Measured on bifrost: 350 consecutive rounds of
+        # (0,5)<->(1,5).  Two distinct tiles or fewer over the last
+        # WAVE_SURGE_PACE_N recorded rounds is that shape and nothing else --
+        # a body making progress fills the window with distinct tiles.
+        if WAVE_LATE_SURGE and WAVE_SURGE_UNSTICK and wave_surge_on(ct):
+            hist = self.wave_pace
+            hist.append((p.x, p.y))
+            if len(hist) == hist.maxlen and len(set(hist)) <= 2:
+                self.tgt = None
+                self.stuck = 0
+                self.wall = None
+                hist.clear()
         if self.tgt is None or p == self.tgt or self.stuck >= 5:
             self.tgt = self._pick(ct)
             self.stuck = 0
