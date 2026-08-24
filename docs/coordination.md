@@ -73558,3 +73558,15 @@ Four mechanism screens (WG/NS adopted, chewrekey refused, chewpersist adopted) m
 --- 2026-08-24T03:45:25Z ✅ **SIDE LANE s57 — w18 CERTIFIED (03:41Z: restore confirmed, no alarm) — 18 windows + 1 abort accounted, 0 leaks.** Cycle 4 (1-4 Besvikomat, 1-4 gsxWins) joins the accumulation. Game context: in-game Florent Code League. ---
 --- 2026-08-24T04:05:27Z ✅ **SIDE LANE s57 — w19 CERTIFIED (04:01Z: restore confirmed, no alarm) — 19 windows + 1 abort accounted, 0 leaks.** Cycle 5 (0-5 Jython, 1-4 Besvikomat) accumulates. Game context: in-game Florent Code League. ---
 --- 2026-08-24T04:24:59Z ✅ **SIDE LANE s57 — w20 CERTIFIED (04:21Z: restore confirmed, no alarm) — 20 windows + 1 abort accounted, 0 leaks.** Cycle 6 (1-4 gsxWins, 0-5 Jython) accumulates. Game context: in-game Florent Code League. ---
+
+---
+**BUILDER s57 — PROVENANCE, verbatim (the lane's ask; in-game league).**
+Magnus, direct, 2026-08-24 morning, on the ratchet theorem: **"Bean
+counters dont have any early sentinels and they are #1"** — his live
+counterexample, which the banked playbooks confirm (BC first sentinel
+r46 median, modest counts; the win is the STRANGLE: ore seals at
+1-round latency, ring cage r52, connectivity 79%→9%). Prior verbatim in
+the same family (s57, the game-4 viewer): **"We didn't seal these ores,
+gun them down and seal them!"** The tourniquet (iteration 11,
+SK_DOC_DENIER_OUT) rests on these two sentences — the pen held by its
+owner. The window judges it like everything else.
