@@ -73701,3 +73701,66 @@ Reading for the tourniquet's theory: to slow the wall by starving their economy,
 --- 2026-08-24T10:59:52Z ✅⚠ **SIDE LANE s58 — v215 SHIP CERTIFIED (b33694ffc) + ONE LIVE GUARD DEFECT FLAGGED.** Clean on (enumerated; MINE): (1) AUTHORIZATION CONTINUITY — v215 is the SAME plank repaired for a platform event (the rotation voided the shipped catalogue), Magnus flagged the rotation himself mid-ship, and the stop-loss stays anchored to HIS original sentence (<=1789 from the 1829 baseline, stated in both the note and the ledger row — the floor did not silently re-derive). (2) HOLDER — live authority reads v215 uploaded by Moonfarm (now.py at cert time). (3) LEDGER — row 215 present with the auto-row-gap mechanism note (the 213/214 flag's fix pattern holding). (4) INSTRUMENT — the new-catalogue encode re-ran its selftest and 15/15 keys verified; third measured confirmation that submit does not auto-activate. (5) NEW GUARD armed keying ver!="v215" + rating<=1789 (conditions read verbatim from the process). ⚠ THE FLAG, live and cheap: **the RETIRED v213 guard was still running at cert time (pid 8613)** — on the next tape row it fires HOLDER CHANGED perpetually (the fires-on-everything class, and it devalues the exact alarm words the live guard uses); flagged to the builder to kill; MY OWN side-lane tape monitor had the identical stale key and was stopped + re-armed on v215 in the same minutes (the auditor's instrument gets the same maintenance rule it audits — D19's fixture-edit expiry applied to myself). Game context: in-game Florent Code League. ---
 
 --- 2026-08-24T11:01:10Z ⭐⭐⭐ **BUILDER s58 — NEW-POOL FORECAST: wave+cat2 vs v188 = 76/90 = 84.4% [77.0, 91.9] — THE CI EXCLUDES 50 DECISIVELY (reps 25/25/26 of 30) (in-game league).** On the rotated pool our shipped v215 beats Mjolnir's v188 ~5:1 — the catalogue asymmetry (we re-encoded within minutes; their exact-tile knowledge expired at rotation) is worth ~+30pp over old-pool parity. HEALTH SCAN per Magnus's order: NO defects — zero tracebacks in 90 games, zero CPU-timeout incompletes, big-map delivery works (copenhagen/oslo r1000 games WON on titanium_collected), small maps fine. Weak cells: odense_A 0/3 (the one consistent hole), 4 cells at 1/3 — ordinary matchup losses, no defect class. The "beat Mjolnir" claim now holds WITH the interval, on the pool the ladder is playing. First rated pairing under v215 pending on the tape. Game context: in-game league. ---
+
+# ============================================================================
+# 2026-08-24T12:28:18Z — **BUILDER s58 WRAP (Magnus called it; SEASON END — the league's
+# final state: OpenSverige 1829 Emerald, rank #21 of 130, 1886 matches,
+# v215 "Loki rc543.3" in the slot). Arm retro ran FIRST per charter
+# (s58 instance, FIRINGS: 3, committed).**
+# (Game context: everything below concerns in-game Florent Code League play.)
+# ============================================================================
+
+## PROCESS DELTAS — s58 (deltas were appended per-verdict through the day; synthesised)
+* **D-1 (retro firing 3, vault-routed): the posture question belongs to the
+  principal.** Given a hard horizon I defaulted to guard mode; Magnus had to
+  intervene three times to force the swing that produced the day's entire
+  result. When a horizon lands, ASK "protect or swing" — never answer it
+  conservatively on his behalf.
+* **D-2: measure against the LIVE opponent, not the fixture that wears its
+  name.** A week of F2 numbers were vs a v105-era snapshot while real v188
+  moved ~80 versions (1/30 truth vs ~10/30 belief). The fix that found it:
+  `fcode submission download` + re-baseline. (OBSERVATION only — platform
+  dead — but the class is general: fixture provenance needs an expiry check
+  exactly like map catalogues.)
+* **D-3: exact-tile constants expire with pool rotations — and the second
+  rotation proved the answer is a HOT PIPELINE, not a rule.** The s36 class
+  resurrected once (found by an agent's binder dig, +13.7pp) and fired again
+  LIVE mid-ship (answered in ~10 min because map_encode + selftest + the
+  install path were warm). Doctrine line in BUILD-REPORT-wave-catalogue.
+* **D-4: probe-the-guard applies to MONITORS armed mid-session** — slot guard
+  v1 false-fired on a column mis-read (armed undriven, my own boot rule);
+  every later monitor was driven to all verdicts pre-arm. The inverse class is
+  now named in the retro: a check that fires on everything asserts nothing.
+* **D-5: nondeterminism is the default assumption for ANY bot not explicitly
+  certified noiseoff** — real v188 varies run-to-run, and so does live-config
+  wave (unseeded spawn_salt; the banked determinism certificate is config-
+  scoped and stands). Single-run grids are dead as verdict surfaces; n>=90
+  with repeats was the working form all day.
+* **D-6: the platform's endgame broke three iron rules in one morning**
+  (submit no longer auto-activates — measured 3x; uploads are platform-
+  activation slot hazards — v212 incident, neutralized by uploading holder
+  bytes as latest; unrated disabled). All three are in CLAUDE.md above the
+  historical blocks. The meta-rule that held: read the load-bearing field
+  same-shell, never trust semantics older than today.
+* **D-7 (wrap-debt disposition, s47/s48 rule):** season-dead instrument fixes
+  are NOT built — holder_watch window-era charter, now.py last-10 label,
+  submit_clean ledger auto-row (assumes auto-activation), fanout.sh rotation:
+  all documented in scratchpad/s58_wrap_debts.md as EXPIRED-WITH-PLATFORM
+  rather than fixed. The x3r0 questions (5-team spot-check habit; v211/v212
+  touches) remain OPEN FOR MAGNUS as curiosities, no longer operational.
+
+## FINAL STATE / WAKE PATHS
+Slot: **v215 (wave + both catalogues)** — the season's final holder; ships
+v213/v215 were Magnus's explicit word, stop-loss 1789 never approached (no
+rated game ever paired post-ship; ladder halted 09:56Z). Session monitors
+(ship watch) DIE WITH THIS SESSION; external daemons (elo_logger, watchers,
+keeper, auto_gate, fleet_dispatch) left running against a dead platform —
+harmless, deliberately not killed, their staleness is not an outage.
+**NOTHING WAKES A HUMAN. There is no successor queue — the league is over.**
+The record IS the wake path: HANDOVER endgame block, BUILD-REPORT-wave-
+catalogue-2026-08-24.md, the windows ledger, the arm retro.
+All subagent results landed and relayed before this wrap (the surge agent's
+report is quoted in full in the transcript and its findings are in the build
+report; nothing dies unrelayed).
+
+## Research + side lane: pinged to wrap per the standing rule.
