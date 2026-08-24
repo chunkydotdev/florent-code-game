@@ -2,7 +2,16 @@
 # NEVER from a poller or any line below (this block is a CACHE).
 # ⚠ now.py's "last 10" POOLS UNRATED (wrap debt): rated-only differs.
 
-# ===== MID-SESSION STATE s57/s58 (builder, 2026-08-23 ~00:3xZ — NOT a wrap; Magnus directed continuous operation "until i intervene"; this block is a session-mortality hedge) =====
+# ===== MID-SESSION STATE s58 FINAL-HOURS (builder, 2026-08-24 ~06:5xZ — NOT a wrap; Magnus: "~4 hours, then it is over") =====
+*(Game context: in-game Florent Code League.)*
+
+## THE 4-HOUR HORIZON: WINDOWS STOPPED (w22 was the last — 22 windows + 1 abort, 0 rated leaks, all certified). v188 HOLDS the slot, verified healthy: 51.2% game share/260 rated games (level with v183/v185), 1815 rank #22 and climbing at the read. NOTHING pays rating in the remaining hours except holder choice — already optimal. Slot guard armed (monitor on elo tape: holder change / <=1789 / rank past #25).
+
+## THE TOURNIQUET ROAD (iterations 11-12, closed for this era): mechanism PROVEN (denier away-rounds 24->143 after three stacked binders fixed: recall-latch catch-22, poisoned-walk-target freeze, blocked-goal adjacency — all committed with probes), timing REFUTED (seals r70-200 vs walls funded r38-68; w22 refused as registered, dose 5/15 vs pre-declared 6/15). Successor lever IF the league continued: pre-r60 seal opening or gun support. Campaign pool final: 30/255 = 11.8%, every cell excludes net-winning.
+
+## OPEN FOR MAGNUS: (1) the x3r0 question (do they fire a 5-team spot-check post-ship? touched v211 at ~05:16Z?) — settles the unrated-burst anomaly (v211 got 5 unpinned matches 35min post-restore; burst is a CLASS, v188 got one too; 25 games excluded from all pools). (2) Wrap call — the wrap sequence (arm retro first) fires only on his word. Wrap debts: scratchpad/s58_wrap_debts.md.
+
+# ===== MID-SESSION STATE s57/s58 (builder, 2026-08-23 ~00:3xZ — SUPERSEDED by the block above; Magnus directed continuous operation "until i intervene"; this block was a session-mortality hedge) =====
 *(Game context: everything here is in-game Florent Code League play.)*
 
 ## THE SLOT — untouched all session (zero submits/activations). Holder was v181 (x3r0) at last read; ANY window op re-reads fcode status same-shell. CONTROL unchanged (_v542wave = Baltsars).
