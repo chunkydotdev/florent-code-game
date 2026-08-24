@@ -40,6 +40,7 @@ from sk_maps import (
     SK_PUSH, SK_PUSH_WARDEN2, SK_PUSH_W2_N, SK_PUSH_W2_FLOOR,
     # --- s57 SK_DOCTRINE: the trigger and the burst conversion --------------
     SK_DOCTRINE, SK_DOC_BANK, SK_DOC_TRIGGER_LATCH, SK_DOC_LATCH_ONCE,
+    SK_DOC_WALL_N, SK_DOC_WALL_DSQ,
     SK_DOC_AMMO, SK_DOC_AMMO_MAX, SK_DOC_ANSWER_RESERVE, SK_DOC_CONVERT,
     SK_BATTERY2, SK_BATTERY2_ECO,
     # --- s57 SK_DOCTRINE, TAIL C: FUNDED / RATE / STABILITY + the re-arm ----
@@ -384,6 +385,19 @@ class CoreMixin:
             tail = 1
         elif SK_DOC_TRIGGER_LATCH and self._doc_tail_c(ct, rnd, bank):
             tail = 3
+        # --- TAIL D (iteration 8, w7): THE WALL IS THE EMERGENCY ---------
+        # >=SK_DOC_WALL_N enemy turrets standing inside d²<=SK_DOC_WALL_DSQ
+        # of our core means accumulation is OVER whether or not the bank is
+        # fat — barrels answer barrels, and dying rich is still dying (w1-w7:
+        # every sweep was a sentinel wall vs our 0-3 tubes). Minimal floor:
+        # one barrel's price, so the burst is never literally empty.
+        if not tail and SK_DOC_WALL_N and self.doc_wall_n >= SK_DOC_WALL_N:
+            try:
+                if bank >= ct.get_sentinel_cost():
+                    tail = 4
+                    self.doc_wall_fires += 1
+            except Exception:
+                pass
         if not tail:
             return False
         if self.doc_round < 0:
@@ -631,6 +645,7 @@ class CoreMixin:
         have been continuously fresh for SK_COUNTER_RNDS.
         """
         foot = core_tiles_xy(self.core if self.core is not None else p)
+        self.doc_wall_n = 0               # iteration 8: fresh census per scan
         best = None                       # (rank, dsq, Position, is_sent)
         sentry = None                     # (dsq, x, y, Position, is_sent, eid)
         anchor = self.core if self.core is not None else p
@@ -652,6 +667,9 @@ class CoreMixin:
             except Exception:
                 continue
             sent = et != EntityType.GUNNER
+            # iteration 8: the WALL census — values already in hand.
+            if dsq_core(ep, anchor) <= SK_DOC_WALL_DSQ:
+                self.doc_wall_n += 1
             # ⭐ s57 THE SENTRY, PIECE 1 -- THE PRESENCE READ, AND IT IS FREE.
             # team, type and position for exactly this entity class have ALL
             # been read by the three statements above; the whole read is one

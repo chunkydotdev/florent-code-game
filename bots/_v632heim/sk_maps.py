@@ -8785,3 +8785,10 @@ if SK_DOCTRINE and SK_DOC_BOX:
     SK_KB_BLOCK_ON = bool((SK_KILLBOX_EXEC or SK_KILLBOX_FAST) and SK_KB_BLOCK)
     SK_KB_INTERIOR_ON = bool((SK_KILLBOX_EXEC or SK_KILLBOX_FAST)
                              and SK_KB_CELL_INTERIOR)
+
+# ITERATION 8 (w7): TAIL D — the wall emergency. Provenance: w1-w7, every
+# sweeping loss is an enemy sentinel wall (6-43) vs our 0-3 tubes; barrels
+# answer barrels and the accumulate phase must end when the wall arrives,
+# bank or no bank. 0 disables.
+SK_DOC_WALL_N = 2
+SK_DOC_WALL_DSQ = 39

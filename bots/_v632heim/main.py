@@ -1664,6 +1664,8 @@ class Player(CommonMixin, RolesMixin, CoreMixin):
                                       # trigger fired (`doc_round` stays the
                                       # FIRST).  The re-arm window's origin
         self.doc_fires = 0            # times the trigger fired.  > 1 only
+        self.doc_wall_n = 0
+        self.doc_wall_fires = 0
                                       # after a re-arm, so this column and
                                       # `doc_rearms` cross-check each other
         self.doc_tubes_peak = 0       # STATE.  HIGH-WATER forward-tube census
