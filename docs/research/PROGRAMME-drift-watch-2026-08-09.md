@@ -3271,3 +3271,23 @@ against single instances is not thereby applied to the stack of them).**
    adoptions is a FIRING CONDITION of this row, not a neutral fact.
 
 **Retroactive first firing: run against the s57/s58 adoption set (below, this date).**
+
+## ⛔⛔ D39 — **A VERSION-KEYED GUARD OUTLIVES ITS SUBJECT SILENTLY, THEN FIRES ON EVERYTHING. EVERY ACTIVATION SWEEPS RUNNING MONITORS FOR KEYS NAMING THE DISPLACED VERSION.**
+
+**Added 2026-08-24 (s58 wrap, side lane; routed from retro v1.25). Earned by TWO instances
+inside one hour, one of them the auditor's own:** after the v213→v215 ship, the builder's
+v213-keyed slot guard (pid-level `ver != "v213"` pipeline) was still running beside the new
+v215 guard — on the next elo-tape row it would have printed HOLDER CHANGED perpetually,
+devaluing the exact alarm words the live guard uses (the fires-on-everything-asserts-nothing
+class, D4-of-the-builder's-wrap inverted). **And this lane's OWN independent tape monitor
+carried the identical stale key** — found in the same sweep, stopped and re-armed before
+either instrument fired once.
+
+**THE WATCH FORM:** at every activation/restore (ship, rollback, window open/close), enumerate
+RUNNING monitors (`ps` for the guard pipelines, the session's own Monitor tasks) and check
+each fire-condition for a literal version string naming the DISPLACED version. A guard keyed
+to a version is an instrument whose fixture just changed — D19's expiry clause applied to the
+guard itself. The sweep includes the auditor's own instruments: the second instance was mine,
+and only the habit of sweeping MY keys alongside theirs caught it pre-fire.
+
+*(Game context: in-game Florent Code League instruments.)*

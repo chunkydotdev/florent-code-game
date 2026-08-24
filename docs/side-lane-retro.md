@@ -1,4 +1,4 @@
-# SIDE-LANE RETRO — the instrument. **v1.21** (2026-08-16; header last tracked v1.11 on 2026-08-14 and was corrected at the s45 side-lane boot; created v1 2026-08-10; the changelog below is the authority)
+# SIDE-LANE RETRO — the instrument. **v1.25** (2026-08-24; created v1 2026-08-10; the changelog below is the authority)
 
 **Commissioned by Magnus, 2026-08-10, asked of all three arms.** The generic
 session wrap is **lane-agnostic and is a FAILURE LOG** — it records what broke
@@ -1560,3 +1560,29 @@ clearance sub-clause, extends the v1.4 tag taxonomy). Instance:
   measured).
 
 **SUNSET WATCH: every surviving question fired. Nothing armed.**
+
+## ⭐ v1.25 — **FIRING 25 (SEASON END). A RIDER'S DIAL FIRES IN A REAL VERDICT — THE FULL FLAG LIFE-CYCLE RECORDED; THE STALE-KEYED-GUARD CLASS EARNS D39.**
+
+**v1.25 — 2026-08-24 (MINOR: records firing 25; no questions changed). Instance:
+`docs/retro-side-lane-2026-08-24-s58.md`, committed in this same action.**
+
+* **FIRINGS: 25.** ~12 flags, consumption effectively total; ship-event certs (v213, v215),
+  a slot incident's leak accounting, 4 window certs (w21, w22, w24 + the incident window);
+  prevented ~8 / caused 0 / nearly caused 1. Conduct claims ZERO, 18th consecutive.
+* **⭐ THE HEADLINE: the degenerate-opposite dial this lane flagged into iteration 12's
+  registration FIRED in the w22 verdict and priced the exemption's cost** — the first
+  recorded full life-cycle (flag → registration clause → fired dial → verdict sentence).
+  The both-branches practice is confirmed at its strongest.
+* **⛔ D39 ROUTED (behaviour change → the booted checklist): a version-keyed guard outlives
+  its subject silently, then fires on everything.** Two instances inside one hour — the
+  builder's v213 slot guard after the v215 ship, and THIS LANE'S own tape monitor with the
+  identical stale key, caught in the same sweep before either fired. Every activation now
+  sweeps running monitors for keys naming the displaced version.
+* **Q3 = 2** (incomplete "corrected pool", peer-caught; ahead-of-check clause, self-caught) —
+  both the partial-view family, both corrected same-hour. **Q5 = 0 wrong flags · Q9 = 1.**
+* **The v1.24 carry discharges:** byte-diff-or-label exercised for real (v214 certified
+  provenance-verified, explicitly not byte-verified); `certifying`-state tags used at
+  publication time twice.
+
+**SUNSET WATCH: every surviving question fired. Season end — the next boot, if any, is a new
+era's; this instrument's 25-firing series closes with the league.**
