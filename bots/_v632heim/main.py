@@ -1666,6 +1666,38 @@ class Player(CommonMixin, RolesMixin, CoreMixin):
         self.doc_fires = 0            # times the trigger fired.  > 1 only
         self.doc_wall_n = 0
         self.doc_wall_fires = 0
+        # --- s57 ITERATION 10: SK_DOC_ECO_PUSH, phase-1 delivery intensity --
+        # ⛔ UNCONDITIONAL, for this __init__'s standing engine reason (a field
+        # created only under a flag is how an OFF arm raises AttributeError
+        # inside `run()` and the engine then PERMANENTLY DESTROYS the unit).
+        # ⛔ EVERY ONE OF THESE IS AN INSTRUMENT.  Nothing branches on them,
+        # and with SK_DOC_ECO_PUSH False every one stays 0 for the whole game
+        # -- which is what makes them the arm's identity witnesses.
+        self.eco_ore_widened = 0      # ore tiles admitted by the WIDENED fence
+                                      # that `is_home_half` alone would have
+                                      # refused.  The dose column for (a); 0
+                                      # means the fence was never the cap on
+                                      # this map and the arm bought nothing
+        self.eco_near_repick = 0      # rounds the near-core ranking chose a
+                                      # DIFFERENT ore tile than v632's
+                                      # nearest-to-body ranking would have.
+                                      # The dose column for (b)
+        self.eco_ore_first = 0        # rounds the ore patrol WON the walk from
+                                      # a live belt target under (d).  The dose
+                                      # column for the real harvester cap; 0
+                                      # with the flag on means the belt plan
+                                      # was always complete and the arm bought
+                                      # nothing on that map
+        self.eco_defer_peck = 0       # keeper turns the phase-1 reorder took
+        self.eco_defer_sweep = 0      # from each of the three deferred verbs
+        self.eco_defer_apron = 0      # and handed to the eco rungs.  Kept
+                                      # APART so "which spend was stopped" is
+                                      # readable rather than pooled
+        self.eco_late_peck = 0        # ...and the second call site's own
+        self.eco_late_sweep = 0       # firings: a deferred verb that still ran
+        self.eco_late_apron = 0       # in the SAME turn, below the belt.  The
+                                      # control that makes the deferral a
+                                      # REORDER rather than a removal
                                       # after a re-arm, so this column and
                                       # `doc_rearms` cross-check each other
         self.doc_tubes_peak = 0       # STATE.  HIGH-WATER forward-tube census

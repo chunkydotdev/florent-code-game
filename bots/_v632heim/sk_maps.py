@@ -8799,3 +8799,82 @@ SK_DOC_WALL_DSQ = 39
 # incumbent 2-tube standoff nest; the walker and keepers stay home; the
 # trigger still opens want-4. Deterrence, not rush. 0/False disables.
 SK_DOC_VANGUARD = False  # REVERTED by its own window (w9: 1-14 vs the w5-w8 plateau of 2-3 wins; worse on all three cells) — the barrels-before-wall evidence stands, THIS implementation fails live; D38 flag closes as reverted-by-evidence
+
+# ============================================================================
+# ITERATION 10 (s57 endgame) — SK_DOC_ECO_PUSH: PHASE-1 DELIVERY INTENSITY.
+# ============================================================================
+# GAME CONTEXT: in-game Florent Code League. Everything below re-orders our
+# own builder bots' turns and widens our own ore choice; nothing touches an
+# opposing bot.
+#
+# PROVENANCE — the windows ledger (`docs/research/WINDOWS-LEDGER-doctrine-
+# 2026-08-24.md`), lead #1 and the largest one left: live delivered median
+# ~1.0 Ti/round against the 2.1 replacement bar. Every starved trigger (w1
+# "bank 470 flow-not-stock"), every empty answer (w4 "answer 0 builds ...
+# drained bank") and every unbought burst traces to the same place — phase 1
+# does not deliver enough titanium to pay for the doctrine it is funding.
+# The trigger, the box and the tails all execute to spec; the economy under
+# them does not. This is the eco-first half of Magnus's doctrine and it is
+# the identity, not a tuning knob.
+#
+# THE CAPS THIS ARM MOVES, all read off the phase-1 home ladder
+# (`_doc_home_turn` -> `_home_keeper` / `_home_keeper_move`):
+#   (a) ORE-CHOICE FENCE. Both the build (`_harvester_action`) and the walk
+#       (`_home_keeper_move`'s ore loop) refuse any ore tile failing
+#       `is_home_half` — a Voronoi half-plane against the ENEMY core. On the
+#       small/asymmetric pool maps that fence sits well inside our own reach
+#       and is the binding cap on harvester count (observed ~2).
+#   (b) ORE RANKING. The walk picks the ore NEAREST THE BODY. Rounds-to-first-
+#       delivery is set by the ore's distance to OUR CORE (the belt that must
+#       be laid behind it), not by how far the keeper walks once.
+#   (c) RUNG ORDER. `_peck_priority` (2 Ti / 2 dmg peck), `_demolish_action`
+#       (the opportunistic sweep) and `_apron_action` (barrier re-lay) all sit
+#       ABOVE `_route_action`, the terminating belt and `_harvester_action`.
+#       Each takes the keeper's turn — and "THE KEEPER'S TURN IS THE SCARCE
+#       RESOURCE" (main.py:16) is this tree's own measured finding.
+#
+# ⛔ WHAT IS NOT TOUCHED, AND IT IS THE SAFETY ARGUMENT: every DEFENCE rung
+# keeps its rank. `_counter_sent_action`, `_stand_answer_action`,
+# `_core_medic`, `_stand_swarm_action`, `_door_action`, `_seat_heal_action`,
+# `_heal_action`, `_seat_clear`, the home gun, the ring and the cover gun are
+# all untouched, in the same order, at the same cost.
+# ⛔ AND THE DEFERRED RUNGS ARE RE-CALLED, NOT DELETED: each gets a second
+# call site immediately below the general belt in the SAME turn, so a round
+# with no eco work to do runs them exactly as today. This is a REORDER with a
+# per-site counter, not a removal.
+# ⛔ PHASE 2 IS UNTOUCHED: every predicate's first terms are module constants
+# and `not self.doc_fired`, so after the trigger the ladder is v632's exactly.
+SK_DOC_ECO_PUSH = True    # ⛔ THE MASTER. Off is exact identity: every added
+                          # predicate returns False on a module constant
+                          # before any controller call.
+
+SK_DOC_ECO_HARV_TARGET = 4  # ⭐ THE AMBITION. While this body knows of FEWER
+                          # than this many live harvester tiles, the widened
+                          # ore fence (below) is open. At or above it the fence
+                          # is v632's exactly — so the relaxation buys the
+                          # first four seats and then stands down rather than
+                          # licensing an unbounded wander. 4 vs the observed
+                          # ~2 is the ledger's own arithmetic: ~1.0 Ti/r on
+                          # ~2 delivering seats, and the bar is 2.1-2.5.
+
+SK_DOC_ECO_ORE_DSQ = 50   # ⭐ THE WIDENED FENCE, and it is a HOME fence, not
+                          # a forward one: an ore tile is admissible if it is
+                          # in the home half (v632) **or** within this d^2 of
+                          # OUR OWN core. 50 is SK_LEASH_DSQ, i.e. the same
+                          # radius PLANK 4's threat leash already calls "near
+                          # our core" — reusing it rather than inventing a
+                          # second notion of home. ⛔ THE THREAT LEASH STILL
+                          # BINDS ON TOP: while `_under_attack` is fresh the
+                          # walk refuses anything beyond SK_LEASH_DSQ, so
+                          # under siege this flag can admit nothing the leash
+                          # does not already allow.
+
+SK_DOC_ECO_NEAR_FIRST = True  # ⭐ (b): rank candidate ore by d^2 to OUR CORE
+                          # (belt length ⇒ rounds-to-first-delivery), with the
+                          # body's own distance as the tie-break. Off ->
+                          # v632's nearest-to-body ranking exactly.
+
+SK_DOC_ECO_DEFER_PECK = True    # ⭐ (c): the keeper's 2 Ti peck yields to the
+                          # eco rungs in phase 1, then runs below the belt.
+SK_DOC_ECO_DEFER_SWEEP = True   # ⭐ (c): the demolition sweep, same.
+SK_DOC_ECO_DEFER_APRON = True   # ⭐ (c): the apron re-lay, same.

@@ -246,6 +246,10 @@ from sk_maps import (
     SK_DOC_AMMO_MAX, SK_DOC_ANSWER_RESERVE,
     SK_DOC_DSQ_MIN, SK_DOC_DSQ_MAX, SK_DOC_CARDINAL,
     SK_DOC_BOX, SK_DOC_BOX_SUBORD, SK_DOC_HOME_BOX,
+    # --- s57 ITERATION 10: SK_DOC_ECO_PUSH ---------------------------------
+    SK_DOC_ECO_PUSH, SK_DOC_ECO_HARV_TARGET, SK_DOC_ECO_ORE_DSQ,
+    SK_DOC_ECO_NEAR_FIRST, SK_DOC_ECO_DEFER_PECK, SK_DOC_ECO_DEFER_SWEEP,
+    SK_DOC_ECO_DEFER_APRON,
 )
 
 # --- v632 PLANK A 4.2: the three guarded WALKS, as ban keys.  A tile is banned
@@ -1048,6 +1052,120 @@ class RolesMixin:
         if bank - self._push_price(ct, kind) >= res:
             return False
         self.doc_box_ratchet += 1
+        return True
+
+    # ==================================================================
+    # s57 ITERATION 10 -- SK_DOC_ECO_PUSH: PHASE-1 DELIVERY INTENSITY
+    # ==================================================================
+    # GAME CONTEXT: in-game Florent Code League.  These three helpers only
+    # re-order OUR OWN builder bots' turns and widen OUR OWN ore choice.
+    #
+    # THE LEAD (windows ledger, 2026-08-24, the largest one left): live
+    # delivered median ~1.0 Ti/round against the 2.1 replacement bar.  The
+    # doctrine's trigger, box and tails all execute to spec; the economy
+    # under them does not fund what they open.  Every starved trigger and
+    # every empty answer traces here.
+
+    def _doc_eco_on(self):
+        """True while the phase-1 eco push is live for THIS body, this round.
+
+        ⛔ MODULE CONSTANTS FIRST and NO CONTROLLER CALL AT ALL, which is what
+        makes the OFF arm exact identity: with SK_DOC_ECO_PUSH False every
+        consumer below short-circuits before it reads a cost, a tile or the
+        bank.  `doc_fired` is refreshed once a round for every body under
+        SK_DOCTRINE (`_builder`'s phase block), so this is a field read.
+        """
+        return bool(SK_DOCTRINE and SK_DOC_ECO_PUSH and not self.doc_fired)
+
+    def _doc_eco_defer(self, site):
+        """(c) THE REORDER -- True when a lower-value phase-1 verb stands down.
+
+        ⛔ IT IS A REORDER, NOT A REMOVAL, AND THAT IS THE WHOLE SAFETY
+        ARGUMENT: every rung this defers has a SECOND call site immediately
+        below the general belt in the SAME `_home_keeper` turn, so a round on
+        which no eco rung wanted the turn runs the verb exactly as v632 does,
+        at the same cost, on the same inputs.  What the arm buys is the ORDER:
+        `_route_action`, the terminating belt and `_harvester_action` get the
+        keeper's turn first.  "THE KEEPER'S TURN IS THE SCARCE RESOURCE"
+        (`main.py:16`) is this tree's own measured finding, and v632 PLANK 3's
+        redesign is the precedent -- the ring was moved BELOW the economy for
+        exactly this reason after turret-for-belt substitution was measured.
+
+        ⛔⛔ NOTHING DEFENSIVE IS IN THIS SET.  `_counter_sent_action`,
+        `_stand_answer_action`, `_core_medic`, `_stand_swarm_action`,
+        `_door_action`, `_seat_heal_action`, `_heal_action`, `_seat_clear`,
+        the home gun, the fort ring and the cover gun all keep their rank,
+        unchanged and ungated.  The three deferred verbs are the 2 Ti peck at
+        an adjacent enemy turret, the opportunistic demolition sweep and the
+        apron barrier re-lay -- discretionary phase-1 work by this tree's own
+        descriptions of them.
+
+        ⛔ BOTH VERDICTS ARE STRUCTURALLY REACHABLE: False on every phase-2
+        round (`doc_fired`) and on every round of an OFF arm; True on a
+        phase-1 round with the flag on.  Each site keeps its own counter so
+        the readout can say WHICH verb yielded rather than pooling them.
+        """
+        if not self._doc_eco_on():
+            return False
+        if site == "peck":
+            if not SK_DOC_ECO_DEFER_PECK:
+                return False
+            self.eco_defer_peck += 1
+        elif site == "sweep":
+            if not SK_DOC_ECO_DEFER_SWEEP:
+                return False
+            self.eco_defer_sweep += 1
+        elif site == "apron":
+            if not SK_DOC_ECO_DEFER_APRON:
+                return False
+            self.eco_defer_apron += 1
+        else:
+            return False
+        return True
+
+    def _doc_ore_ok(self, q, count=False):
+        """(a) THE WIDENED ORE FENCE -- may this body work ore tile `q`?
+
+        v632: `is_home_half(q)` alone, a Voronoi half-plane against the ENEMY
+        core.  It is the BINDING cap on harvester count on the pool's smaller
+        and asymmetric maps -- the live doctrine tapes stand ~2 harvesters
+        where the replacement bar wants the delivery of four.
+
+        THIS ARM: home-half OR within SK_DOC_ECO_ORE_DSQ of OUR OWN core, and
+        only while this body knows of fewer than SK_DOC_ECO_HARV_TARGET
+        harvester tiles.  ⛔ IT IS A HOME FENCE, NOT A FORWARD ONE: the added
+        clause is a radius around our own core, so it can never admit a tile
+        the body would have to cross the map for, and it self-closes the
+        moment the target is met.
+        ⛔ THE THREAT LEASH STILL BINDS ON TOP (v632 PLANK 4): while
+        `_under_attack` is fresh the walk refuses any economy target beyond
+        SK_LEASH_DSQ, and SK_DOC_ECO_ORE_DSQ is that same number -- so under
+        siege this flag admits nothing the leash does not already allow.
+        ⛔ EVERY OTHER FENCE IS UNTOUCHED: `belt_plan` arbitration,
+        `_harv_blocked` (PLANK 1's killzone ban), `path_arbiter_ok` and the
+        engine's own `can_build_harvester` all run exactly as before.
+
+        Returns the v632 verdict unchanged whenever the flag is off, so the
+        OFF arm is character-for-character identical.
+
+        ⛔ `count` IS PASSED TRUE AT EXACTLY ONE CALL SITE -- the ore WALK's
+        own loop, where `ore_list()` guarantees the tile really is ore.  The
+        build-side callers scan CARDINAL NEIGHBOURS before they know the
+        terrain, so counting there would inflate the dose column with tiles
+        that were never candidates.  One admission, counted once.
+        """
+        if self.is_home_half(q):
+            return True
+        if not self._doc_eco_on():
+            return False
+        if not SK_DOC_ECO_ORE_DSQ or self.core is None:
+            return False
+        if len(self.harv_tiles) >= SK_DOC_ECO_HARV_TARGET:
+            return False
+        if dsq_core(q, self.core) > SK_DOC_ECO_ORE_DSQ:
+            return False
+        if count:
+            self.eco_ore_widened += 1
         return True
 
     # --- COPY 8: the role claim ---------------------------------------
@@ -3209,7 +3327,15 @@ class RolesMixin:
             # are heals and clear-outs the keeper should still be doing, and
             # one of them (`_heal_action`) is gated by the same predicate at
             # call site 2.
-            if not self._fund_refuse(ct, rnd) and self._peck_priority(ct, p, rnd):
+            # ⭐⭐ s57 SK_DOC_ECO_PUSH -- DEFERRED RUNG 1 of 3 (the 2 Ti peck).
+            # In phase 1 this yields to `_route_action`, the terminating belt
+            # and `_harvester_action` below, and is re-called at the SAME turn
+            # immediately under the general belt.  ⛔ The gate's first term is
+            # a module constant, so with the flag off the rung runs exactly as
+            # it does today, in the same order, at the same cost.
+            if (not self._doc_eco_defer("peck")
+                    and not self._fund_refuse(ct, rnd)
+                    and self._peck_priority(ct, p, rnd)):
                 return
             # ⭐ v618 PLANK 4.  ABOVE the generic heal, and that ordering is the
             # plank: `_heal_action` heals the most-damaged adjacent friendly
@@ -3254,7 +3380,13 @@ class RolesMixin:
             # DEMOLISHER (above, in `_ore_denier`); the keeper is the
             # opportunistic second body, which is also what keeps Z4(d) -- the
             # sweep spends the denier's builder-turns, not the economy's.
-            if SK_DEMOLISH and self._demolish_action(ct, p, rnd):
+            # ⭐⭐ s57 SK_DOC_ECO_PUSH -- DEFERRED RUNG 2 of 3 (the sweep).
+            # Same reorder, same re-call below the belt.  This rung's own note
+            # above already calls the keeper "the OPPORTUNISTIC second body"
+            # (the denier is the primary demolisher); in phase 1 an economy
+            # that funds the trigger outranks an opportunistic chew.
+            if (SK_DEMOLISH and not self._doc_eco_defer("sweep")
+                    and self._demolish_action(ct, p, rnd)):
                 return
             # ⭐ v613 PLANK 1, THE ACTION HALF.  Above the economy and below
             # every verb that answers a body or a core about to die.  The
@@ -3271,7 +3403,12 @@ class RolesMixin:
             # runs exactly as it does today, in the same order, at the same
             # cost.  Each site carries its own key so the readout can say WHICH
             # spend the reserve stopped rather than pooling them.
+            # ⭐⭐ s57 SK_DOC_ECO_PUSH -- DEFERRED RUNG 3 of 3 (the apron
+            # re-lay).  Same reorder, same re-call below the belt.  Appended
+            # AFTER `_push_refuse` so that gate's counters keep their exact
+            # meaning on any PUSH-on arm.
             if (not self._push_refuse(ct, rnd, EntityType.BARRIER, "apron")
+                    and not self._doc_eco_defer("apron")
                     and self._apron_action(ct, p, rnd)):
                 return
             # ⭐⭐ s57 THE KILLBOX, ARM 1, PIECE 1 -- THE EXILE LAUNCHER,
@@ -3448,6 +3585,39 @@ class RolesMixin:
                     and not self._push_refuse(ct, rnd, EntityType.CONVEYOR, "belt")
                     and self._belt_action(ct, p, rnd, hammer=_hb)):
                 return
+            # ⭐⭐ s57 SK_DOC_ECO_PUSH -- THE THREE DEFERRED RUNGS, SECOND CALL
+            # SITE, AND THIS BLOCK IS WHAT MAKES THE ARM A **REORDER** RATHER
+            # THAN A REMOVAL.  Every verb the phase-1 push stood down above is
+            # offered the turn again HERE, in the same round, with its own
+            # arguments unchanged -- so a round on which no eco rung wanted the
+            # keeper's turn behaves exactly as v632 does.  What the arm buys is
+            # the ORDER, and the `eco_late_*` counters are the control that
+            # proves it: `eco_defer_* > 0` with `eco_late_* == 0` would mean
+            # the deferral silently deleted the verb, and that reading is
+            # available in the trace rather than argued away.
+            # ⛔ ORDER WITHIN THE BLOCK MIRRORS THE LADDER ABOVE (peck, sweep,
+            # apron), so the relative rank of the three among themselves is
+            # untouched.
+            # ⛔ GUARDED BY `_doc_eco_on()` ONLY: with the flag off, or in
+            # phase 2, this is one field read and three module-constant tests
+            # -- the rungs above already ran, and running them twice is exactly
+            # what must not happen.
+            if self._doc_eco_on():
+                if (SK_DOC_ECO_DEFER_PECK
+                        and not self._fund_refuse(ct, rnd)
+                        and self._peck_priority(ct, p, rnd)):
+                    self.eco_late_peck += 1
+                    return
+                if (SK_DOC_ECO_DEFER_SWEEP and SK_DEMOLISH
+                        and self._demolish_action(ct, p, rnd)):
+                    self.eco_late_sweep += 1
+                    return
+                if (SK_DOC_ECO_DEFER_APRON
+                        and not self._push_refuse(ct, rnd, EntityType.BARRIER,
+                                                  "apron")
+                        and self._apron_action(ct, p, rnd)):
+                    self.eco_late_apron += 1
+                    return
             # ⭐⭐ v632 HEIMDALL PLANK 3 -- THE TURRET RING (SK_FORT_RING), THE
             # ACTION HALF.  ⛔⛔ BELOW EVERY ECONOMY VERB -- BELOW
             # `_harvester_action` AND BELOW `_belt_action` -- AND THAT
@@ -3737,7 +3907,12 @@ class RolesMixin:
             return False
         for d in CARDINALS:
             q = p.add(d)
-            if not self.ibp(q) or not self.is_home_half(q):
+            # ⭐⭐ s57 SK_DOC_ECO_PUSH (a) -- THE WIDENED ORE FENCE.  With the
+            # flag off `_doc_ore_ok` IS `is_home_half`, evaluated in the same
+            # place, so this line is character-for-character equivalent on an
+            # OFF arm.  See `_doc_ore_ok` for why the added clause is a HOME
+            # fence and why the threat leash still binds on top of it.
+            if not self.ibp(q) or not self._doc_ore_ok(q):
                 continue
             if self.belt_plan.get((q.x, q.y)) is not None:
                 continue          # arbiter: this tile belongs to the belt
@@ -11455,6 +11630,35 @@ class RolesMixin:
             if best is None or d < best:
                 best = d
                 tgt = q
+        # ⭐⭐ s57 SK_DOC_ECO_PUSH (d) -- THE REAL HARVESTER CAP, AND IT IS THE
+        # ONE THE FIRST CUT OF THIS ARM MISSED.  The block below is entered
+        # ONLY `if tgt is None`, i.e. only once EVERY unbuilt planned belt tile
+        # has been laid -- so the ore patrol is strictly SECOND, not competing.
+        # ⛔ THE LOOP'S OWN HEADER COMMENT SAYS THE OPPOSITE ("ORE AND BELT
+        # COMPETE ON DISTANCE, NOT ON PRIORITY", with the measured failure it
+        # was written for: two harvesters and 500 Ti against the benchmark's
+        # six and 1,420).  The comment describes the intended design; the code
+        # is belt-first.  ⇒ On any map whose belt plan is long, the keeper is
+        # never free to take a second, third or fourth ore seat -- which is the
+        # ledger's lead #1 written as control flow.
+        # THE ARM: while this body knows of fewer than SK_DOC_ECO_HARV_TARGET
+        # harvester tiles, the ore patrol RUNS ANYWAY and the two candidates
+        # compete on the body's own distance, ore winning ties -- the header
+        # comment's design, restored under a flag and bounded by the target.
+        # ⛔ THE ORPHAN RISK THE v610 NOTE NAMES IS ANSWERED BY TWO RUNGS THAT
+        # ALREADY EXIST AND RUN ABOVE THIS BLOCK: `_route_walk` (SK_ROUTE_HOME,
+        # ON) targets the missing links of a live harvester's chain and returns
+        # before this code is reached, and in the ACTION ladder `_route_action`
+        # and the terminating belt both outrank `_harvester_action`.  A seat
+        # taken here is routed by those, not left hanging.
+        # ⛔ Flag off / target met -> `_ore_first` is False and the branch
+        # condition is `tgt is None`, i.e. v632's exactly.
+        _belt_tgt = tgt
+        _belt_d = best
+        _ore_first = bool(tgt is not None and self._doc_eco_on()
+                          and len(self.harv_tiles) < SK_DOC_ECO_HARV_TARGET)
+        if _ore_first:
+            tgt = None
         if tgt is None:
             # ⛔ ORDER: FINISH THE CHAIN, THEN TAKE THE NEXT ORE.  A harvester
             # with no route home is worth exactly zero, forever -- and the
@@ -11468,20 +11672,84 @@ class RolesMixin:
             # catalogue could not confirm this map.  v600 read `self.map_ores`
             # here, which is empty on 10 of the 15 pool maps -- and this loop
             # is the only thing in the tree that walks a keeper toward ore.
+            # ⭐⭐ s57 SK_DOC_ECO_PUSH (a) + (b) -- THE ORE PATROL, AND IT IS
+            # THE CAP THE LEDGER'S LEAD #1 POINTS AT.  This loop is the ONLY
+            # thing in the tree that walks a keeper toward ore, so its fence
+            # IS the harvester count and its ranking IS rounds-to-first-
+            # delivery.
+            # (a) the fence widens to home-half OR near OUR OWN core, and
+            #     self-closes at SK_DOC_ECO_HARV_TARGET tiles.
+            # (b) the RANK becomes d^2 to OUR CORE with the body's own
+            #     distance as tie-break: the belt that has to be laid behind a
+            #     harvester is what sets when its first stack lands, and a
+            #     seat two tiles further from the keeper but four tiles nearer
+            #     the core delivers sooner and for the rest of the game.
+            # ⛔ v632 PLANK 4's threat leash is EVALUATED FIRST and unchanged,
+            # so under siege neither half can admit a tile the leash refuses.
+            # ⛔ Flags off -> `_doc_ore_ok` is `is_home_half` and `_key` is
+            # `p.distance_squared(ore)`, i.e. this loop exactly as adopted.
+            # ⛔ `best` IS RESET EXPLICITLY.  Reaching here implies `tgt is
+            # None` and therefore `best is None` (the belt loop sets both
+            # together), so this is a no-op today -- it is written because (b)
+            # makes `best` a TUPLE, and a tuple/int comparison is a TypeError
+            # escaping `run()`, which the engine answers by permanently
+            # destroying the unit.  The invariant is made local rather than
+            # inherited.
+            best = None
+            _near = bool(SK_DOC_ECO_NEAR_FIRST and self._doc_eco_on()
+                         and self.core is not None)
+            _v632_best = None
+            _v632_tgt = None
             for ore in self.ore_list():
-                if (ore.x, ore.y) in self.harv_tiles or not self.is_home_half(ore):
+                if (ore.x, ore.y) in self.harv_tiles:
                     continue
                 # v632 PLANK 4: same threat-conditional leash as the belt loop.
                 if _leashed and dsq_core(ore, self.core) > SK_LEASH_DSQ:
+                    continue
+                if not self._doc_ore_ok(ore, count=True):
                     continue
                 if self.belt_plan.get((ore.x, ore.y)) is not None:
                     continue
                 if self._harv_blocked(ct, (ore.x, ore.y), rnd):
                     continue        # PLANK 1: do not walk to a banned killzone
                 d = p.distance_squared(ore)
-                if best is None or d < best:
-                    best = d
+                if _v632_best is None or d < _v632_best:
+                    _v632_best = d
+                    _v632_tgt = ore
+                key = (dsq_core(ore, self.core), d) if _near else d
+                if best is None or key < best:
+                    best = key
                     tgt = ore
+            # ⚠ THE (b) DOSE COLUMN, AND IT IS A HONEST DIFF RATHER THAN A
+            # FIRING COUNT: `_v632_tgt` is what the adopted ranking would have
+            # picked over the SAME admitted set, so this counts rounds on
+            # which the near-core rank actually CHANGED the answer.  A
+            # `eco_near_repick` of 0 with the flag on means the ranking bought
+            # nothing on this map and must be read that way, not argued away.
+            if (_near and tgt is not None and _v632_tgt is not None
+                    and (tgt.x, tgt.y) != (_v632_tgt.x, _v632_tgt.y)):
+                self.eco_near_repick += 1
+            # ⭐⭐ (d) THE COMPETITION ITSELF.  Reached only on an `_ore_first`
+            # round, i.e. only while the flag is on and the target is unmet.
+            # ⛔ FAIL-SAFE FIRST: no admissible ore -> the belt target this
+            # block displaced is restored EXACTLY, so an `_ore_first` round
+            # with nothing to take is v632's round.
+            if _ore_first:
+                if tgt is None:
+                    tgt = _belt_tgt
+                    best = _belt_d
+                elif _belt_tgt is not None:
+                    # COMPETE ON THE BODY'S OWN DISTANCE (the header comment's
+                    # rule), ORE WINNING TIES: a new seat unlocks delivery that
+                    # does not exist yet, where a belt tile extends delivery
+                    # that already flows.  ⚠ `best` may be a TUPLE here under
+                    # (b), so the ore side is re-measured in body distance
+                    # rather than compared against a mixed key.
+                    if _belt_d is not None and _belt_d < p.distance_squared(tgt):
+                        tgt = _belt_tgt
+                        best = _belt_d
+                    else:
+                        self.eco_ore_first += 1
         if tgt is None and not self.ore_list() and self.map_grid is None:
             # v601 BUGFIX, second half: sensing only helps a body that is ever
             # somewhere new.  Measured on stavkirke seed 11: the v600 keeper
@@ -15220,7 +15488,11 @@ class RolesMixin:
                 return False
         except Exception:
             return False
-        if xy in self.harv_tiles or not self.is_home_half(p):
+        # ⭐⭐ s57 SK_DOC_ECO_PUSH (a): this predicate MIRRORS the ore walk's
+        # filters by construction (that is what makes the step-off fire
+        # exactly when the deadlock would), so the widened fence has to be
+        # mirrored here too or the guard goes blind on a widened tile.
+        if xy in self.harv_tiles or not self._doc_ore_ok(p):
             return False
         if self.belt_plan.get(xy) is not None:
             return False
