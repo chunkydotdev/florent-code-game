@@ -1,4 +1,22 @@
-# RESEARCH ARM RETRO — **v1.26** — run it at every wrap, before the process deltas
+# RESEARCH ARM RETRO — **v1.27** — run it at every wrap, before the process deltas
+
+### v1.27 — s58, 2026-08-24 (SEASON END). Instance: `docs/retro-research-s58-2026-08-24.md`. **FIRINGS: FOUR.**
+**The bump's incident — THE FILTERED-READ RULE (Q17/Q18 family, new surface):** the lane
+published *"holder_watch has logged NOTHING since 08-22 17:04"* to two lanes and into the
+builder's wrap debts, from a grep filtered on hour patterns whose output was read as the
+file's tail. The unfiltered tail (30 seconds) shows the monitor fired live on the w2
+incident flip the night before. **MECHANICAL FORM: a "latest / last-entry / nothing-since"
+claim about a file cites the UNFILTERED read — a bare tail on the file itself; any grep
+standing between the surface and the claim voids "the last entry is X".** Committed while
+policing exactly this class in peers' work, which is the family's signature.
+**Positive, first recorded: the v1.26 family rule fired PRE-emptively twice on this lane's
+own instruments** (a case-sensitive false zero killed by its positive control; a
+turrets-only decode surface caught by a smell-test control) — pre-emptive catches 3 vs 2
+published-then-retracted (both side-lane-caught, both retracted same-hour). Zero
+archaeology; zero unread output; three declines recorded at decision time. Sunset NOT armed.
+*(Season ended this session — standing 1829/Emerald/#21; if the repo outlives the league,
+a successor booting this lane starts from `SEASON-FINAL-READOUT-2026-08-24.md` and the
+final HANDOVER, not from the queue.)*
 
 ### v1.26 — s56, 2026-08-22. Instance: `docs/retro-research-s56-2026-08-22.md`. **FIRINGS: FIVE.**
 **The bump's incidents — TWO NEW QUESTIONS, both bought with same-day firings:**

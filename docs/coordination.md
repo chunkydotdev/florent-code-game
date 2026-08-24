@@ -73811,3 +73811,47 @@ no objection.
 
 *(Committed and pushed as this lane's final act of the season. Session messages die with
 sessions; everything above is the durable form.)*
+
+# ============================================================================
+# 2026-08-24T12:33:34Z — ⭐⭐ **RESEARCH ARM s58 WRAP — fired by the BUILDER'S WRAP on Magnus's
+# season-end call (standing rule). SEASON CLOSED: 1829/Emerald/#21, final holder
+# v215 wave+catalogues. Arm retro RAN FIRST (v1.27, FIRINGS 4, instance
+# docs/retro-research-s58-2026-08-24.md).** (Game context: in-game league.)
+# ============================================================================
+
+## PROCESS DELTAS (s58, research) — routed at write time
+- **D-r1 (instrument rule, promoted via retro v1.27 — THE FILTERED-READ RULE):** a
+  "latest/last-entry/nothing-since" claim about any file cites the UNFILTERED read (bare
+  tail on the file itself); a grep between the surface and the claim voids it. Incident:
+  the holder_watch false-blindness retraction (06:28:37Z note).
+- **D-r2 (verified twice today, worth keeping): a "missed/capped" fire is verified against
+  the wire before it is recorded** — w2's "(miss)" had completed 0-5; w10/w13 "(cap)"
+  were wire-confirmed real absences. The counter is blind exactly at the failure mode.
+- **D-r3 (platform behaviour, mechanism OPEN for the record): five-opponent unpinned
+  unrated bursts follow OUR uploads** (v188 +10s, v211 +35min; two hypotheses
+  wire-refuted; x3r0 discriminator parked with Magnus via the builder's wrap debts).
+  Exposure pricing: an upload can buy the field ~25 free-look games post-restore.
+- **D-r4 (fixture ecology, measured): the field fixtures US** — SmartFridge iterated
+  v111→v121 across six challenges in 2.5h; Torsko pinned OUR seat 7×/day
+  (sourceMatchAId). QUEUE #135 holds the study design if the game outlives the season.
+- **D-r5 (surface facts for any successor): unrated games decode to
+  `corpus/unrated_games.tsv` (join.tsv is rated-only); `corpus/builds.tsv` carries
+  TURRETS ONLY — an eco-build zero there is an artifact, not a finding.**
+
+## RESEARCH ARM STATE (verified, not asserted)
+- **Running: nothing.** Both commissioned agents are closed — DinooniD study banked
+  INLINE after seven API-overload deaths (waiver named in its provenance); the
+  admission-drafts commission WITHDRAWN with the owed list banked (06:43:39Z note).
+  A final corpus sync is running in background at wrap-time; the season readout's
+  numbers are stamped with their as-of time and the final standing comes from the
+  builder's HANDOVER (fcode status authority).
+- **Banked this session:** SEASON-FINAL-READOUT-2026-08-24.md (+ final-arc addendum) ·
+  REPLAY-STUDY-dinoonid-v81-2026-08-24.md (+ ledger row) · LOSSMODE-v188-2026-08-24.md
+  (+ rush-anatomy/map-split addendum) · QUEUE #135 · retro instance + v1.27 bump.
+- **A successor must NOT inherit unchecked:** the 05:16 burst mechanism (OPEN — ask
+  x3r0); wave determinism claims are CONFIG-SCOPED (NOISE-off — 08:52:01Z note);
+  opponent ratings in any cached table are dead with the season.
+- **Retraction ledger, this session: 2 reached lanes** (w14 coverage label;
+  holder_watch blindness), both side-lane-caught, both retracted with mechanism named.
+  Pre-emptive self-catches: 3. Declines recorded: 3.
+It was a good mill. ---
