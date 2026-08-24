@@ -21,7 +21,7 @@ procedure, restore confirmed each time, 0 rated leaks in 11 windows.**
 | 13 | v203 | replication | 0-5 | 0-5 | (cap) | — | gsx bump = variance, not signal |
 | 14 | v204 | replication | 1-4 | — | 1-4 | — | row added s58 (was missing from both tallies; closed from the wire by side lane) |
 | 15-20 | v205-v210 | night loop, SAME tree (6 replication windows, 2 cells each) | 1-4, —, 0-5, 1-4, —, 1-4 | —, 0-5, 0-5, —, 0-5, 0-5 | 3-2 W, 1-4, —, 1-4, 1-4, — | — | night_results.txt is the primary; one abort verified harmless |
-| 21 | v211 | +DENIER_OUT (iteration 11, the tourniquet) | 1-4 | — | 1-4 | — | dose failed 9/10 (0 away seals; w21diag); the 1 delivered game = takedown WIN r744 |
+| 21 | v211 | +DENIER_OUT (iteration 11, the tourniquet) | 1-4 | ⚠ 0-5 ANOMALY | 1-4 | — | dose failed 9/10 (0 away seals; w21diag); the 1 delivered game = takedown WIN r744. Jython cell was NEVER FIRED by the window (2 cells only) yet d53f4a82 (ourver 211, their LIVE v295, unrated) has createdAt 05:16:02Z — 35 min post-restore, no lane alive; mechanism unexplained, routed to research; NOT POOLED until named |
 
 **s58 CORRECTION (2026-08-24):** w2's Jython cell marked "(miss)" above
 actually COMPLETED on the wire (match ddaaa4bb, 0-5 us) — a rejected-looking
