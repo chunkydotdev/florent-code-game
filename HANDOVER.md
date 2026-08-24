@@ -5,7 +5,7 @@
 # ===== MID-SESSION STATE s58 FINAL-HOURS (builder, 2026-08-24 ~06:5xZ — NOT a wrap; Magnus: "~4 hours, then it is over") =====
 *(Game context: in-game Florent Code League.)*
 
-## THE 4-HOUR HORIZON: WINDOWS STOPPED (w22 was the last — 22 windows + 1 abort, 0 rated leaks, all certified). v188 HOLDS the slot, verified healthy: 51.2% game share/260 rated games (level with v183/v185), 1815 rank #22 and climbing at the read. NOTHING pays rating in the remaining hours except holder choice — already optimal. Slot guard armed (monitor on elo tape: holder change / <=1789 / rank past #25).
+## THE 4-HOUR HORIZON: WINDOWS STOPPED (w22 was the last — 21 windows + 1 abort certified 0-leak; w22's cert is OPEN pending its closing leak bracket, the first rated pairing after 06:31:20Z playing v188 — side lane's watch armed, everything else on w22 already verified own-shell by them). v188 HOLDS the slot, verified healthy: 51.2% game share/260 rated games (level with v183/v185), 1815 rank #22 and climbing at the read. NOTHING pays rating in the remaining hours except holder choice — already optimal. Slot guard armed (monitor on elo tape: holder change / <=1789 / rank past #25).
 
 ## THE TOURNIQUET ROAD (iterations 11-12, closed for this era): mechanism PROVEN (denier away-rounds 24->143 after three stacked binders fixed: recall-latch catch-22, poisoned-walk-target freeze, blocked-goal adjacency — all committed with probes), timing REFUTED (seals r70-200 vs walls funded r38-68; w22 refused as registered, dose 5/15 vs pre-declared 6/15). Successor lever IF the league continued: pre-r60 seal opening or gun support. Campaign pool final: 30/255 = 11.8%, every cell excludes net-winning.
 
