@@ -241,6 +241,7 @@ from sk_maps import (
     SK_VH_CARD_AFTER_D, SK_VH_CARD_FACE,
     # --- s57 SK_DOCTRINE: THE SKALMAN IDENTITY, ASSEMBLED -------------------
     SK_DOCTRINE, SK_DOC_BANK, SK_DOC_TRIGGER_LATCH, SK_DOC_LATCH_ONCE,
+    SK_DOC_VANGUARD,
     SK_DOC_TAIL_A, SK_DOC_REARM,
     SK_DOC_AMMO_MAX, SK_DOC_ANSWER_RESERVE,
     SK_DOC_DSQ_MIN, SK_DOC_DSQ_MAX, SK_DOC_CARDINAL,
@@ -786,6 +787,15 @@ class RolesMixin:
         # for BOTH; the two must not both match.  ⛔ SK_DOCTRINE False -> one
         # module-constant test -> the switch below is character-for-character
         # the adopted tree.
+        elif (SK_DOCTRINE and SK_DOC_VANGUARD
+                and self.role == SK_SIEGE_ENGINEER):
+            # ITERATION 9 — THE VANGUARD PAIR (w8diag's 45-game rule:
+            # 4/4 wins vs zero-sentinel builds, 4/41 vs any; the lever is
+            # barrels BEFORE the wall). Phase 1 keeps the walker home but
+            # the ENGINEER runs its ordinary, best-tested 2-tube standoff
+            # nest from the start — deterrence, not rush: no builder
+            # aggression, want stays 2 until the trigger opens the burst.
+            self._siege_engineer(ct, p, rnd)
         elif SK_DOCTRINE and self.role in SK_ROTATE_RAIDERS:
             self._doc_home_turn(ct, p, rnd)
         elif (SK_FORT_WALKER_ECO and rnd < SK_PHASE_ROUND

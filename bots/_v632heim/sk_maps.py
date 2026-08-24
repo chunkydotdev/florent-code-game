@@ -8792,3 +8792,10 @@ if SK_DOCTRINE and SK_DOC_BOX:
 # bank or no bank. 0 disables.
 SK_DOC_WALL_N = 2
 SK_DOC_WALL_DSQ = 39
+
+# ITERATION 9 — THE VANGUARD PAIR. Provenance: w8diag pooled 45 games —
+# theirSentinels==0 -> 4/4 wins; >0 -> 4/41; forward-tube census 0-1 in
+# every loss. Phase 1 sends the ENGINEER (only) forward with the
+# incumbent 2-tube standoff nest; the walker and keepers stay home; the
+# trigger still opens want-4. Deterrence, not rush. 0/False disables.
+SK_DOC_VANGUARD = True
