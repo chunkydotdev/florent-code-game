@@ -6,6 +6,10 @@ successor session inherit it. The fields below are parsed; the prose is not.
     LINE: loki
     LINE_DIRS: bots/_v105loki1 bots/_v10?loki* bots/_v1??loki* bots/_v1[3-9]?* bots/_v[2-9]??*
     INCUMBENT: bots/_v542wave
+    # s58 2026-08-24 ~11:0xZ: SHIPPED as platform v213 "Loki rc543.1" (= this
+    # tree + the 15-map catalogue), Magnus's explicit word, displacing x3r0's
+    # v188 at his order. STOP-LOSS: rating <= 1789 (baseline 1829 - 40)
+    # -> restore v188 by integer. Ship watch armed on the elo tape.
     INCUMBENT_FROZEN: no
     PREVIOUS_INCUMBENT: bots/_v537socket
     BASELINE: bots/_x3r0v168mjolnir
