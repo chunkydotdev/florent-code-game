@@ -73,3 +73,12 @@ holmgang A+B / longhouse A named). Full arc:
 word; the slot was untouched all day.** Standing-rule candidate banked with
 it: pool rotation triggers a map_encode re-run + a boot check for
 uncatalogued live maps.
+
+## FINAL STAMP 2026-08-24T12:35:42Z — post-season sync complete
+The last archiver sync caught the closing stretch (130 rated games after the
+05:41 decode, 68 won). **SEASON-COMPLETE LIFETIME RATED RECORD: 4,788/9,430 =
+50.77% game share.** Newest rated pairing on the tape: 2026-08-24T09:31:10Z
+(ourver 188; v215's end-of-season activation sits at/after the ladder's last
+tick). Final standing per the builder's HANDOVER (fcode status authority):
+**1829 · Emerald · #21 of 130.** The corpus committed alongside this stamp is
+the season's complete archive.

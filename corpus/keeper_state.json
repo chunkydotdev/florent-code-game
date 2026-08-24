@@ -1,8 +1,8 @@
 {
-  "bot": "v155 (Sleipnir v1)",
-  "rating": 1799.0,
-  "matches": 1165,
-  "peak": 1805.0,
+  "bot": "v215 (Loki rc543.3)",
+  "rating": 1829.0,
+  "matches": 1886,
+  "peak": 1829.0,
   "wins": 5,
-  "alerted_at": 1805
+  "alerted_at": 1807
 }
