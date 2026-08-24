@@ -44,3 +44,16 @@ EXPECTED:        Active bot: v188 (Mjolnir termrace w153)
 == WINDOW Skalman rc633.17 DONE 2026-08-24T03:31:24Z — match ids in scratchpad/s57_heim0/w_20260824T033114Z_cells.log ==
 OpenSverige 0 - 5 gsxWins
 OpenSverige 0 - 5 Jython
+== CYCLE 4 Skalman rc633.18 2026-08-24T03:41:29Z ==
+== WINDOW Skalman rc633.18 OPENS 2026-08-24T03:41:29Z tree=bots/_v632heim ==
+  Active bot: v188 (Mjolnir termrace w153)
+57e05d81
+== PROTOTYPE LIVE AS v208 ==
+Unrated match queued! Match ID: f8948706-95ae-4d7f-aaf1-3f48c181f0d0
+Unrated match queued! Match ID: 2ad5b300-5e2b-4760-a960-ba120ce391a1
+RESTORE READS:   Active bot: v188 (Mjolnir termrace w153)
+EXPECTED:        Active bot: v188 (Mjolnir termrace w153)
+✅ RESTORE CONFIRMED
+== WINDOW Skalman rc633.18 DONE 2026-08-24T03:41:43Z — match ids in scratchpad/s57_heim0/w_20260824T034129Z_cells.log ==
+OpenSverige 1 - 4 Besvikomat
+gsxWins 4 - 1 OpenSverige
