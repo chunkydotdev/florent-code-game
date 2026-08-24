@@ -19,6 +19,16 @@ procedure, restore confirmed each time, 0 rated leaks in 11 windows.**
 | 11 | v201 | band survey | — | — | 1-4 | DinooniD 0-5, 0033 0-5 | no soft cells in band |
 | 12 | v202 | +eco push | **2-3 (best ever)** | 0-5 | 1-4 | — | delivery caps lifted |
 | 13 | v203 | replication | 0-5 | 0-5 | (cap) | — | gsx bump = variance, not signal |
+| 14 | v204 | replication | 1-4 | — | 1-4 | — | row added s58 (was missing from both tallies; closed from the wire by side lane) |
+| 15-20 | v205-v210 | night loop, SAME tree (6 replication windows, 2 cells each) | 1-4, —, 0-5, 1-4, —, 1-4 | —, 0-5, 0-5, —, 0-5, 0-5 | 3-2 W, 1-4, —, 1-4, 1-4, — | — | night_results.txt is the primary; one abort verified harmless |
+| 21 | v211 | +DENIER_OUT (iteration 11, the tourniquet) | 1-4 | — | 1-4 | — | dose failed 9/10 (0 away seals; w21diag); the 1 delivered game = takedown WIN r744 |
+
+**s58 CORRECTION (2026-08-24):** w2's Jython cell marked "(miss)" above
+actually COMPLETED on the wire (match ddaaa4bb, 0-5 us) — a rejected-looking
+fire may still queue; verify any miss against `fcode match list` before
+recording it. Pooled campaign after corrections: gsx 10/85 · Jython 0/80 ·
+Besvik 20/80 · total 30/255 = 11.8%; every cell's CI excludes net-winning
+(research 06:11:53Z note, DEFF applied).
 
 **THE POOLED RULES (45+ games decoded on the wire):** theirSentinels==0
 → we win 4/4; >0 → 4/41. Our delivery median ~1.0 Ti/r vs the 2.1
