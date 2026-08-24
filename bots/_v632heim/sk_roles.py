@@ -14182,7 +14182,12 @@ class RolesMixin:
             bank = ct.get_global_resources()
         except Exception:
             return False
-        if bank < self._battery_bar(ct, live):
+        # ITERATION 6 (w5diag): the reserve must be RESERVED — this gate read
+        # the raw bank and barrel plants spent straight through the 120 while
+        # the answer starved on 73% of its armed+targeted rounds. Under the
+        # doctrine, barrels queue behind the defence's earmark.
+        eff_bank = bank - (SK_DOC_ANSWER_RESERVE if SK_DOCTRINE else 0)
+        if eff_bank < self._battery_bar(ct, live):
             self.batt_unfunded += 1
             return False
         # s57 ARM 2 (c): funded for ONE more barrel is not funded for the
