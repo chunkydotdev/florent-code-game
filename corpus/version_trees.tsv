@@ -101,3 +101,30 @@ version	name	tree	evidence	recorded_at
 168	Mjolnir fix1only w35 TEST	bots/_x3r0v168mjolnir	imported s52 (extract-at-import) as the NEW BASELINE per Magnus directive "use x3r0s best one as baseline" — best-by-tenure (16W-9L day, recovered slide to 1845; v173 current but 2W-8L SHADOW)	2026-08-21T08:03:38Z
 175	Mjolnir carrier w70	bots/_x3r0v175carrier	imported s52 (extract-at-import) — the live holder; Magnus slot ruling: "if we beat it we take the slot back"	2026-08-21T08:19:12Z
 177	Baltsars banditer v2	bots/_v542wave	submit_clean auto — `fcode status` Active bot: v177 (Baltsars banditer v2)	2026-08-21T12:26:40Z
+178	Loki v544	bots/_v544doorflip	submit_clean auto — `fcode status` Active bot: v178 (Loki v544)	2026-08-21T15:53:47Z
+180	Skalman rc619.1	bots/_v619skalman	submit_clean auto — `fcode status` Active bot: v180 (Skalman rc619.1)	2026-08-22T08:21:55Z
+189	Skalman rc632.1	bots/_v632heim	submit_clean auto — `fcode status` Active bot: v189 (Skalman rc632.1)	2026-08-23T21:21:25Z
+190	Skalman rc632.1	bots/_v632heim	submit_clean auto — `fcode status` Active bot: v190 (Skalman rc632.1)	2026-08-23T21:26:10Z
+191	Skalman rc633.1	bots/_v632heim	submit_clean auto — `fcode status` Active bot: v191 (Skalman rc633.1)	2026-08-23T22:31:51Z
+193	Skalman rc633.3	bots/_v632heim	submit_clean auto — `fcode status` Active bot: v193 (Skalman rc633.3)	2026-08-23T23:41:20Z
+194	Skalman rc633.4	bots/_v632heim	submit_clean auto — `fcode status` Active bot: v194 (Skalman rc633.4)	2026-08-23T23:51:20Z
+195	Skalman rc633.5	bots/_v632heim	submit_clean auto — `fcode status` Active bot: v195 (Skalman rc633.5)	2026-08-24T00:21:17Z
+196	Skalman rc633.6	bots/_v632heim	submit_clean auto — `fcode status` Active bot: v196 (Skalman rc633.6)	2026-08-24T00:41:20Z
+197	Skalman rc633.7	bots/_v632heim	submit_clean auto — `fcode status` Active bot: v197 (Skalman rc633.7)	2026-08-24T01:01:19Z
+198	Skalman rc633.8	bots/_v632heim	submit_clean auto — `fcode status` Active bot: v198 (Skalman rc633.8)	2026-08-24T01:11:20Z
+199	Skalman rc633.9	bots/_v632heim	submit_clean auto — `fcode status` Active bot: v199 (Skalman rc633.9)	2026-08-24T01:31:21Z
+200	Skalman rc633.10	bots/_v632heim	submit_clean auto — `fcode status` Active bot: v200 (Skalman rc633.10)	2026-08-24T01:41:33Z
+201	Skalman rc633.11	bots/_v632heim	submit_clean auto — `fcode status` Active bot: v201 (Skalman rc633.11)	2026-08-24T01:51:32Z
+202	Skalman rc633.12	bots/_v632heim	submit_clean auto — `fcode status` Active bot: v202 (Skalman rc633.12)	2026-08-24T02:12:18Z
+203	Skalman rc633.13	bots/_v632heim	submit_clean auto — `fcode status` Active bot: v203 (Skalman rc633.13)	2026-08-24T02:21:18Z
+204	Skalman rc633.14	bots/_v632heim	submit_clean auto — `fcode status` Active bot: v204 (Skalman rc633.14)	2026-08-24T02:41:18Z
+205	Skalman rc633.15	bots/_v632heim	submit_clean auto — `fcode status` Active bot: v205 (Skalman rc633.15)	2026-08-24T03:01:20Z
+206	Skalman rc633.16	bots/_v632heim	submit_clean auto — `fcode status` Active bot: v206 (Skalman rc633.16)	2026-08-24T03:11:49Z
+207	Skalman rc633.17	bots/_v632heim	submit_clean auto — `fcode status` Active bot: v207 (Skalman rc633.17)	2026-08-24T03:31:19Z
+208	Skalman rc633.18	bots/_v632heim	submit_clean auto — `fcode status` Active bot: v208 (Skalman rc633.18)	2026-08-24T03:41:35Z
+209	Skalman rc633.19	bots/_v632heim	submit_clean auto — `fcode status` Active bot: v209 (Skalman rc633.19)	2026-08-24T04:01:20Z
+210	Skalman rc633.20	bots/_v632heim	submit_clean auto — `fcode status` Active bot: v210 (Skalman rc633.20)	2026-08-24T04:21:18Z
+211	Skalman rc633.21	bots/_v632heim	submit_clean auto — `fcode status` Active bot: v211 (Skalman rc633.21)	2026-08-24T04:41:17Z
+212	Skalman rc633.22	bots/_v632heim	submit_clean auto — `fcode status` Active bot: v212 (Skalman rc633.22)	2026-08-24T06:31:19Z
+213	Loki rc543.1	bots/_v542wave	s58 manual ledger entry (submit_clean's auto-row did not fire — its holder-based detection assumes auto-activation, which the platform dropped this day; version+name from the submit log verbatim "Submitted! Version 213 ... Loki rc543.1"); tree = wave + 15-map catalogue	2026-08-24T10:11:20Z
+214	Loki rc543.2	bots/_x3r0v188mjolnir	s58 manual ledger entry (same auto-row gap); NEUTRALIZER upload — byte-copy of the v188 holder tree so platform "activate latest" is a no-op (v212 incident mitigation); provenance-verified by side lane	2026-08-24T10:2xZ
