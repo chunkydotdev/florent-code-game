@@ -8798,4 +8798,4 @@ SK_DOC_WALL_DSQ = 39
 # every loss. Phase 1 sends the ENGINEER (only) forward with the
 # incumbent 2-tube standoff nest; the walker and keepers stay home; the
 # trigger still opens want-4. Deterrence, not rush. 0/False disables.
-SK_DOC_VANGUARD = True
+SK_DOC_VANGUARD = False  # REVERTED by its own window (w9: 1-14 vs the w5-w8 plateau of 2-3 wins; worse on all three cells) — the barrels-before-wall evidence stands, THIS implementation fails live; D38 flag closes as reverted-by-evidence
