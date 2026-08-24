@@ -2777,7 +2777,21 @@ class RolesMixin:
         # BOARD instead: if one of our turrets already bears on the shooter,
         # the answer is already standing and a second is a second +20% on the
         # ONE GLOBAL ADDITIVE cost scale for nothing.
-        if self._gun_bears(ct, tgt):
+        # ITERATION 7 (w6diag): the veto must come from a turret that can
+        # MEANINGFULLY answer. A bearing GUNNER (7 dmg, obstacle-blocked)
+        # vetoed the answer against SENTINEL shooters it cannot suppress —
+        # 84/84 covered-vetoes in w6's funded windows were gunners, 0 answers
+        # built. If the shooter is a sentinel, only OUR SENTINEL bearing
+        # counts as covered.
+        _shooter_is_sent = True
+        try:
+            if self.ibp(tgt) and ct.is_in_vision(tgt):
+                _h = ct.get_tile_building_id(tgt)
+                if _h is not None:
+                    _shooter_is_sent = (ct.get_entity_type(_h) == EntityType.SENTINEL)
+        except Exception:
+            pass
+        if self._gun_bears(ct, tgt, sentinel_only=_shooter_is_sent):
             self.stand_answer_covered += 1
             return False
         try:
@@ -4837,8 +4851,10 @@ class RolesMixin:
             return frozenset()
         return frozenset(core_seats(self.core))
 
-    def _gun_bears(self, ct, q):
+    def _gun_bears(self, ct, q, sentinel_only=False):
         """True if a live turret of OURS can fire on tile q AS IT NOW FACES.
+        sentinel_only=True restricts the claim to OUR SENTINELS (iteration 7:
+        a bearing gunner is not an answer to a sentinel shooter).
 
         ⛔ THE STRICT TEST, AND THE POLARITY IS THE POINT.  `_seat_covered`
         above is the permissive rotatable-DISC form and it feeds a plank
@@ -4851,6 +4867,8 @@ class RolesMixin:
         """
         for eid, et, ep in self.vis_friend:
             if et not in TURRET_TYPES:
+                continue
+            if sentinel_only and et != EntityType.SENTINEL:
                 continue
             try:
                 face = ct.get_direction(eid)
