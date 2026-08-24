@@ -241,7 +241,7 @@ from sk_maps import (
     SK_VH_CARD_AFTER_D, SK_VH_CARD_FACE,
     # --- s57 SK_DOCTRINE: THE SKALMAN IDENTITY, ASSEMBLED -------------------
     SK_DOCTRINE, SK_DOC_BANK, SK_DOC_TRIGGER_LATCH, SK_DOC_LATCH_ONCE,
-    SK_DOC_VANGUARD,
+    SK_DOC_VANGUARD, SK_DOC_DENIER_OUT,
     SK_DOC_TAIL_A, SK_DOC_REARM,
     SK_DOC_AMMO_MAX, SK_DOC_ANSWER_RESERVE,
     SK_DOC_DSQ_MIN, SK_DOC_DSQ_MAX, SK_DOC_CARDINAL,
@@ -800,6 +800,16 @@ class RolesMixin:
             # nest from the start — deterrence, not rush: no builder
             # aggression, want stays 2 until the trigger opens the burst.
             self._siege_engineer(ct, p, rnd)
+        elif (SK_DOCTRINE and SK_DOC_DENIER_OUT
+                and self.role == SK_ORE_DENIER):
+            # ITERATION 11 — THE TOURNIQUET (Magnus: Bean-counters are #1
+            # with NO early sentinel wall — they win by strangling the
+            # opponent's delivery; and phase 1 was benching our own denial
+            # arm). The ore denier plays its full away game (ore seals,
+            # evictions — BC's 92.5%-coverage tourniquet is this machinery's
+            # own class); engineer and keepers stay home; the bank still
+            # feeds the burst. Denial is defence enacted on their economy.
+            self._ore_denier(ct, p, rnd)
         elif SK_DOCTRINE and self.role in SK_ROTATE_RAIDERS:
             self._doc_home_turn(ct, p, rnd)
         elif (SK_FORT_WALKER_ECO and rnd < SK_PHASE_ROUND

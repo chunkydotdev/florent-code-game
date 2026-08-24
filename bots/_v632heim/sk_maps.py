@@ -8878,3 +8878,11 @@ SK_DOC_ECO_DEFER_PECK = True    # ⭐ (c): the keeper's 2 Ti peck yields to the
                           # eco rungs in phase 1, then runs below the belt.
 SK_DOC_ECO_DEFER_SWEEP = True   # ⭐ (c): the demolition sweep, same.
 SK_DOC_ECO_DEFER_APRON = True   # ⭐ (c): the apron re-lay, same.
+
+# ITERATION 11 — THE TOURNIQUET. Magnus's counterexample: Bean-counters
+# are #1 with no early sentinel wall — they STRANGLE (ore seals 92.5%
+# coverage at 1-round latency, ring cage r52, connectivity 79%->9%) and
+# modest guns finish. Phase 1 was benching our own denial arm; this
+# releases the ORE DENIER to its full away game while everyone else
+# stays home. Denial = defence enacted on their economy.
+SK_DOC_DENIER_OUT = True
