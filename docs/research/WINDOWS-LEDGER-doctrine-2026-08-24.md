@@ -17,6 +17,8 @@ procedure, restore confirmed each time, 0 rated leaks in 11 windows.**
 | 9 | v199 | +vanguard pair | 0-5 | 0-5 | 1-4 | — | REVERTED (worse all cells) |
 | 10 | v200 | reverted best | 0-5 | 0-5 | (cap) | — | rate-limit ate cell 3 |
 | 11 | v201 | band survey | — | — | 1-4 | DinooniD 0-5, 0033 0-5 | no soft cells in band |
+| 12 | v202 | +eco push | **2-3 (best ever)** | 0-5 | 1-4 | — | delivery caps lifted |
+| 13 | v203 | replication | 0-5 | 0-5 | (cap) | — | gsx bump = variance, not signal |
 
 **THE POOLED RULES (45+ games decoded on the wire):** theirSentinels==0
 → we win 4/4; >0 → 4/41. Our delivery median ~1.0 Ti/r vs the 2.1
