@@ -2,7 +2,39 @@
 # NEVER from a poller or any line below (this block is a CACHE).
 # ⚠ now.py's "last 10" POOLS UNRATED (wrap debt): rated-only differs.
 
-# ===== MID-SESSION STATE s58 ENDGAME (builder, 2026-08-24 ~10:2xZ — NOT a wrap; Magnus's horizon ~11:15Z) =====
+# ===== s58 FINAL WRAP (builder, 2026-08-24 ~11:4xZ; Magnus called it — SEASON END) =====
+*(Game context: in-game Florent Code League.)*
+
+## ⭐⭐⭐ THE SEASON CLOSED: OpenSverige **1829, Emerald, rank #21 of 130**, 1,886
+matches; the final slot holder is **v215 "Loki rc543.3" = bots/_v542wave + both
+map catalogues** — shipped on Magnus's explicit word in the final hour, measured
+**84.4% [77.0, 91.9] vs Mjolnir v188 on the final map pool** (the rotation
+expired every team's map knowledge; ours was re-encoded in ~10 minutes).
+The ladder froze at 09:56Z; no rated game ever tested the ship — the rating is
+v188's inheritance, the slot is ours.
+
+## THE DAY IN ONE PARAGRAPH (full arc: docs/research/BUILD-REPORT-wave-catalogue-2026-08-24.md):
+"Beat Mjolnir" went from honestly-impossible at dawn (fortress line 1/30 vs the
+REAL v188 — a week of F2 numbers were vs a v105-era fixture) through Magnus's
+three course-corrections to: chassis switch (retired wave, 12/30) → the expired
+map catalogue found and regenerated (38.9% → 52.6% n=270, parity-plus) → knob
+surface exhausted honestly (L0 refused, E4 null) → ship on Magnus's word →
+rotation mid-ship answered from the hot pipeline → 84.4% on the pool that
+mattered. Zero rated leaks across 24 windows + 1 platform incident (v212
+platform-activated, restored in ~5 min). Platform endgame facts (submit no
+longer auto-activates ×3, upload = activation hazard, unrated disabled) are in
+CLAUDE.md above the historical blocks.
+
+## NOTHING IS IN FLIGHT. NO QUEUE — the league is over. Wrap debts:
+scratchpad/s58_wrap_debts.md, all items dispositioned EXPIRED-WITH-PLATFORM
+(D-7). Open for Magnus as curiosities only: the x3r0 spot-check/burst questions.
+Arm retro: s58 instance, FIRINGS 3 (the posture lesson is vault-routed).
+Wake path: NONE — the record is the wake path. External daemons left running
+harmlessly against the dead platform; session monitors died with the session.
+
+# ===== ARCHIVE MARKER: everything below predates the s58 wrap =====
+
+# ===== MID-SESSION STATE s58 ENDGAME (builder, 2026-08-24 ~10:2xZ — superseded by the wrap above) =====
 *(Game context: in-game Florent Code League.)*
 
 ## THE DAY'S RESULT (full arc: docs/research/BUILD-REPORT-wave-catalogue-2026-08-24.md):

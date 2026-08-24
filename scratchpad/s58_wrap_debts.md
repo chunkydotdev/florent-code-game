@@ -26,3 +26,11 @@
    a booted rule; the false alarm was benign (v188 healthy, 1819 #22 at
    06:42Z) but the class is the s39 "the check ran and asserted nothing"
    family, inverted: a check that fires on everything asserts nothing either.
+
+## WRAP DISPOSITION (s58 wrap, season end — D-7): items 1-3 and the ledger
+## auto-row defect are EXPIRED-WITH-PLATFORM — documented, not built (fixing
+## instruments for a dead league is waste; the class lessons live in the
+## process deltas). Item 4 (x3r0 questions) stays open for Magnus as a
+## curiosity. Item 5 (scratchpad hygiene): probe trees carry stderr
+## instrumentation and were never submitted; left in place as part of the
+## day's record.
