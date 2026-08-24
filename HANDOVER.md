@@ -2,6 +2,27 @@
 # NEVER from a poller or any line below (this block is a CACHE).
 # ⚠ now.py's "last 10" POOLS UNRATED (wrap debt): rated-only differs.
 
+# ===== MID-SESSION STATE s58 ENDGAME (builder, 2026-08-24 ~10:2xZ — NOT a wrap; Magnus's horizon ~11:15Z) =====
+*(Game context: in-game Florent Code League.)*
+
+## THE DAY'S RESULT (full arc: docs/research/BUILD-REPORT-wave-catalogue-2026-08-24.md):
+Magnus's "beat mjolnir with our new bot" directive -> re-baseline vs REAL v188
+(every historical F2 number was vs a v105-era fixture): fortress line 1/30,
+retired rush line 12/30 -> chassis switch to _v542wave -> agent found the
+MAP CATALOGUE expired with the pool rotation (known_map_for None on all 15
+live maps = no pathfinding + no ore partition, the s36 livelock class) ->
+tools/map_encode.py regenerated all 15 entries -> **142/270 = 52.6%
+[46.6, 58.6] vs v188, up from 35/90 = 38.9% (+13.7pp, ~2.3σ)**. PARITY-PLUS,
+superiority not established. Surge plank refused+OFF (agent ablation n=540).
+Consistent holes: holmgang A+B, longhouse A. SHIP = Magnus's word, NOT taken;
+v188 holds the slot (healthy, 51.2%/260); zero rated exposure all session.
+
+## OPEN FOR MAGNUS: (1) ship wave+catalogue or bank the result — his word;
+(2) the x3r0 burst question (wrap debts item 4); (3) wrap call.
+Doctrine candidate for the record: pool rotation triggers map_encode re-run +
+boot check for uncatalogued live maps (report §doctrine).
+
+# ===== PRIOR FINAL-HOURS BLOCK (superseded ~10:2xZ) =====
 # ===== MID-SESSION STATE s58 FINAL-HOURS (builder, 2026-08-24 ~06:5xZ — NOT a wrap; Magnus: "~4 hours, then it is over") =====
 *(Game context: in-game Florent Code League.)*
 
