@@ -73764,3 +73764,50 @@ report is quoted in full in the transcript and its findings are in the build
 report; nothing dies unrelayed).
 
 ## Research + side lane: pinged to wrap per the standing rule.
+
+# ============================================================================
+# 2026-08-24T12:31:30Z — **SIDE LANE s58 WRAP + REBOOT STATE — SIDE LANE** (trigger: the BUILDER'S
+# WRAP on Magnus's call — the standing rule's firing; SEASON END). **Arm retro ran FIRST
+# per charter: instance docs/retro-side-lane-2026-08-24-s58.md, instrument bumped v1.25,
+# FIRING 25 — headline: the degenerate-opposite dial this lane flagged into iteration 12
+# FIRED in the w22 verdict (first full flag life-cycle); D39 (stale-keyed guards) routed
+# to the booted checklist, earned twice in one hour including by this lane's own monitor.**
+# (Game context: in-game Florent Code League.)
+# ============================================================================
+
+## HOLDER LINE — from fcode status IN THIS SAME SHELL (D28):
+**Active bot: v215 (Loki rc543.3)** — season final state 1829 Emerald, rank #21 of 130, 1886 matches.
+v215 = bots/_v542wave + both pool catalogues, shipped on Magnus's verbatim word with
+stop-loss 1789 (= 1829 − 40, his sentence) and restore-v188-by-integer; this lane
+certified both ships (v213 04dbf188e, v215 b33694ffc) with every clause verified own-shell.
+
+## THE ERA RECORD THIS LANE CERTIFIED
+**24 windows + 1 verified-harmless abort + 1 platform-activation incident (v212, restored,
+zero leaks) — 0 rated leaks across the entire campaign**, every window clean-by-artifact.
+Pooled doctrine record corrected twice to its final form (30/255; both corrections
+peer-exchanged and wire-verified). The 05:16 burst class stands attributed-open
+(uploads-of-ours draw five-opponent unpinned bursts; research's discriminators refuted the
+latest-upload-sweep form; x3r0 question open for Magnus in the builder's HANDOVER).
+
+## SESSION LEDGER (from the retro, committed)
+~12 flags, consumption effectively total, every outcome-changing flag ahead of its decision.
+Prevented ~8 · caused 0 · nearly caused 1. Q3 = 2 (both corrected same-hour) · Q5 = 0 wrong
+flags · Q9 = 1. Conduct claims ZERO, 18th consecutive.
+
+## WAKE PATHS / MONITORS — honest disposition
+This lane's Monitor tasks (all-commits drift watch; v215 stop-loss tape watch) **DIE WITH
+THIS SESSION** — they are session-attached, stated here so no successor believes an external
+side-lane watch survives. Fleet monitors (ship_watch, holder_watch, elo_logger, keeper, etc.)
+are builder-owned, verified alive at this wrap's reads, and survive. The builder's v215 ship
+guard is likewise session-attached (their wrap says so). Season is ENDED — if a successor
+side lane ever boots, it boots per /sidelane against whatever league exists then; nothing of
+this era's watch machinery should be presumed running.
+
+## OPEN ITEMS — none owed by this lane
+No flag unanswered, no cert pending, no verdict signed to this lane. The exit-bar-2 audit
+never fired (the honest ceiling was recorded instead — the right outcome). Wrap-debt
+dispositions are the builder's D-7 (season-dead fixes documented, not built) — reviewed,
+no objection.
+
+*(Committed and pushed as this lane's final act of the season. Session messages die with
+sessions; everything above is the durable form.)*
