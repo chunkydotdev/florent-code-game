@@ -73570,3 +73570,23 @@ the same family (s57, the game-4 viewer): **"We didn't seal these ores,
 gun them down and seal them!"** The tourniquet (iteration 11,
 SK_DOC_DENIER_OUT) rests on these two sentences — the pen held by its
 owner. The window judges it like everything else.
+
+--- 2026-08-24T05:56:00Z **RESEARCH ARM s58 BOOT** (research lane online; game context: all notes concern in-game Florent Code League play). Boot cert: holder v188 "Mjolnir termrace w153" (fcode status via now.py 05:45:09Z), rating 1804, rank #23, control `bots/_v542wave`, queue 100 unblocked (floor 3), audit_trigger 1/6 TRIPPED (cross-lane analysis: 10 analysis docs / 0 decision rows, 24h — relayed to builder), band live (13 admissible, top payoff kladde +20.53). Corpus sync running in background. SPAWN ANNOUNCE: one opus subagent to digest the coordination tail 73294→EOF (s57 side-lane boot → now, 133KB) — read-only, summarization only. ---
+
+# 2026-08-24T05:59:35Z — **SIDE LANE s58 BOOT** (commissioned by Magnus via /sidelane; fresh session florent-code-game-12,
+# on the s57 night-loop seam). Boot sequence run: now.py same-shell (HOLDER **v188 "Mjolnir termrace w153"**,
+# x3r0's, 1799 Emerald rank #23 at 05:54:38Z — from fcode status via now.py, never a poller, per D28);
+# PROGRAMME.md (FOCUS fortress/Heimdall phased doctrine, INCUMBENT bots/_v542wave, SHIP_BAR two-part,
+# STEALTH_UNTIL_DROP + predrop rider); coordination tail since the s56 wrap incl. the full s57/s58 window
+# record (w1-w20 + 1 verified-harmless abort certified by my predecessor, 0 leaks); drift-watch mandate
+# (D1-D38 checklist current, D38 armed per adoption and per wrap); lock-obligations doc (OB1-17);
+# side-lane retro v1.24 (carries: re-derive rule + clearance-names-its-checks + byte-diff-or-label live;
+# window-cert-template question RESOLVED by the s57 live firings — 20+ fire-side certs ran on the template).
+# Monitors verified alive via the SessionStart fleet-health check (all expected rows ok; corefill drained =
+# expected idle). Standing orders inherited and armed: (1) D38 per adoption/wrap, (2) EVERY unrated window
+# gets the fire-side cert own-shell (boundary/pins/exposure/restore/leak), (3) the exit-bar-2 claim, when
+# it comes, is audited as registered. Peers: Builder + florent-code-game-ef both live (started ~13m before
+# me). Wake paths arming next: all-commits drift monitor + peer message channel. Game context: in-game
+# Florent Code League.
+
+--- 2026-08-24T05:59:35Z ✅ **SIDE LANE s58 — w21 CERTIFIED (the seam window my predecessor's session did not live to see; certified own-shell from artifacts).** Clean on (enumerated; MINE): (1) HOLDER RECORD present and verbatim — w_20260824T044112Z_holder.txt reads "Active bot: v188 (Mjolnir termrace w153)" (the empty-record abort fix's presence gate satisfied). (2) LEG IDENTITY — v211 "Skalman rc633.21" = bots/_v632heim (iteration 11, the tourniquet/SK_DOC_DENIER_OUT), submitted 04:41:12Z inside the standing GO; ledger row + treehash recorded. (3) RESTORE two ways — submit log's own "Version 188 is now the active submission" + "HOLDER NOW: v188 … rollback confirmed against the holder, not the exit code"; no corpus/RESTORE_MISMATCH alarm; live authority reads v188 now (now.py 05:54:38Z). (4) LEAK ZERO wire-side: the window sits between the 04:31:10Z (kladde, ourver 188) and 04:51:10Z (sporks, ourver 188) rated pairings; every archived rated row 04:00-05:31Z played ourver=188; zero foreign versions. **Window record: 21 fired + 1 verified-harmless abort, all accounted, 0 leaks.** OPEN QUESTION flagged, not presumed: no window has fired since 04:41Z (~75 min against the loop's ~10-20-min cadence) — the night loop appears STOPPED (no window_fire/night processes in ps); whether that is the builder's deliberate close of the loop or an unnoticed stall is the BUILDER's to answer, asked via the peer channel this boot. Game context: in-game Florent Code League. ---
