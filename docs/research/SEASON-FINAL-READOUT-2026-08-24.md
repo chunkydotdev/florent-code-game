@@ -55,3 +55,21 @@ means these pool THEIR versions across the season.)
 *Provenance: derived by research s58 from ladder_games.tsv, unrated_games.tsv,
 meta_join, and the s57/s58 coordination tail; every number carries its
 denominator inline.*
+
+## ADDENDUM 2026-08-24T08:57:10Z — the final-hours arc (added at the builder's handoff)
+After Magnus's "do something different", the last hours produced a complete
+mill arc with zero rated exposure: **v188's loss modes decoded** (this repo:
+`LOSSMODE-v188-2026-08-24.md` — the r1000 delivery flatline, the sentinel-
+battery rush anatomy, the map split) → a rush plan and a late-eco plank both
+**honestly refused on their own numbers** → the real find: **wave's map
+catalogue predated the live pool** (known_map_for None on all 15 maps — the
+s36 livelock class resurrected by pool rotation). Catalogue restored via
+`tools/map_encode.py`, blind prediction registered, then measured:
+**wave+catalogue vs real v188 pooled 142/270 = 52.6% [46.6, 58.6]** against
+the 38.9% uncatalogued base — **the catalogue improvement ~2.3σ; strict
+superiority over v188 NOT established** (verdict language calibrated; holes
+holmgang A+B / longhouse A named). Full arc:
+`BUILD-REPORT-wave-catalogue-2026-08-24.md`. **Ship unshipped — Magnus's
+word; the slot was untouched all day.** Standing-rule candidate banked with
+it: pool rotation triggers a map_encode re-run + a boot check for
+uncatalogued live maps.
