@@ -8886,3 +8886,36 @@ SK_DOC_ECO_DEFER_APRON = True   # ⭐ (c): the apron re-lay, same.
 # releases the ORE DENIER to its full away game while everyone else
 # stays home. Denial = defence enacted on their economy.
 SK_DOC_DENIER_OUT = True
+
+# ITERATION 12 — THE RELEASE. w21 autopsy (w21diag): iteration 11's dose
+# failed 9/10 — ZERO away ore seals, denier away-rounds median 24 — because
+# THREE home recalls dominate the away game (the corefire answer, the
+# 50-round under-attack latch, the citadel dispatch: the denier sits in
+# SK_CITADEL_ROLES[:2], the unconditional-admit slice). The one low-pressure
+# game delivered the full tourniquet (6 seals, 686 away-rounds) and is a
+# core-takedown WIN. SECOND FORM (the first, a midline-geometric gate, was
+# probe-refuted same session — 31 away vs 164 home turns; recalls catch the
+# denier in the home half where the gate never binds, and under pressure
+# the 50-round latch stays fresh forever): a MISSION LATCH — while the
+# tourniquet stands, the denier answers NO home recall, anywhere.
+# D38 NOTE — ROLE-SCOPED EXEMPTION from FORTRESS_RESPONSE, inside the
+# ratified identity (iteration 11 provenance: the ore denier plays its FULL
+# away game while everyone else stays home); keeper + walker + turret ring
+# keep the intruder-response duty.
+SK_DOC_TOURNIQUET_COMMIT = True
+
+# ITERATION 12b — THE WALK ARRIVES. The stderr probe (s58_it12/probe2-3)
+# caught the real binder: `_deny_target`'s remembered-harvester branch
+# returns the harvester's OWN tile as the walk goal; the harvester is a
+# LIVE building, so the goal is blocked and `_bfs_direction` answers
+# CENTRE on a blocked goal (its own conveyor-incident comment names this
+# class) — and the remembered branch outranks every other target while
+# its entries are only popped on a successful seal, so ONE live
+# remembered harvester parks the denier forever (measured: tgt=(10,6)
+# held r40->r297 with the body frozen at (2,0), 0 seals in 8/8 smoke
+# games and 9/10 w21 games). With this flag, harvester-derived targets
+# become their nearest FREE ADJACENT tile (arrival puts the body next to
+# the quarry, which is where the melee and the seal verbs live), and a
+# target whose step still fails is park-banned for 30 rounds so the walk
+# re-targets instead of freezing.
+SK_DENY_WALK_FIX = True

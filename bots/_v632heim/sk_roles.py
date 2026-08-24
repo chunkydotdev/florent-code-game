@@ -241,7 +241,8 @@ from sk_maps import (
     SK_VH_CARD_AFTER_D, SK_VH_CARD_FACE,
     # --- s57 SK_DOCTRINE: THE SKALMAN IDENTITY, ASSEMBLED -------------------
     SK_DOCTRINE, SK_DOC_BANK, SK_DOC_TRIGGER_LATCH, SK_DOC_LATCH_ONCE,
-    SK_DOC_VANGUARD, SK_DOC_DENIER_OUT,
+    SK_DOC_VANGUARD, SK_DOC_DENIER_OUT, SK_DOC_TOURNIQUET_COMMIT,
+    SK_DENY_WALK_FIX,
     SK_DOC_TAIL_A, SK_DOC_REARM,
     SK_DOC_AMMO_MAX, SK_DOC_ANSWER_RESERVE,
     SK_DOC_DSQ_MIN, SK_DOC_DSQ_MAX, SK_DOC_CARDINAL,
@@ -610,10 +611,12 @@ class RolesMixin:
         # r^2=36 vision.  The corefire alarm is the core's own HP, which cannot
         # be out of vision.
         if (SK_COREFIRE and self.role == SK_ORE_DENIER
+                and not self._tourniquet_committed(p)
                 and self._denier_home_answer(ct, p, rnd)):
             return
 
-        if self._under_attack(ct, rnd) and self.role == SK_ORE_DENIER:
+        if (self._under_attack(ct, rnd) and self.role == SK_ORE_DENIER
+                and not self._tourniquet_committed(p)):
             # ⭐ v606 ITEM 4(b), HALF 2 -- THE CONSUMER, and without it half 1 is
             # a NO-OP: a window nobody reads changes nothing.  Inside an open
             # window the denier keeps walking at the target the orbit was
@@ -642,6 +645,8 @@ class RolesMixin:
         # ⛔ CALL-SITE CONJUNCTION: with SK_FORTRESS False this branch is
         # unreachable and the dispatch below is character-for-character v628.
         if (SK_FORTRESS and SK_CITADEL and self.role in SK_CITADEL_ROLES
+                and not (self.role == SK_ORE_DENIER
+                         and self._tourniquet_committed(p))
                 and self._citadel_answer(ct, p, rnd)):
             return
 
@@ -1246,6 +1251,27 @@ class RolesMixin:
 
     def _under_attack(self, ct, rnd):
         return self.beat_fresh(ct, SK_SLOT_UNDER, rnd, 50)
+
+    def _tourniquet_committed(self, p):
+        """ITERATION 12 — THE RELEASE, second form: a MISSION LATCH.
+
+        The first form gated on `not is_home_half(p)` and the probe refuted
+        it (probe_holmgang: 31 away turns vs 164 home turns): the denier
+        crosses early, a recall catches it in the HOME half where the
+        geometric gate does not bind, and under sustained pressure the
+        50-round under-attack latch stays fresh forever — the release could
+        never re-engage.  Catch-22 by construction: to be released it must
+        be away; the recalls keep it home.
+
+        Second form: while the tourniquet stands, the DENIER simply does not
+        answer the three home recalls, anywhere.  ROLE-SCOPED EXEMPTION from
+        FORTRESS_RESPONSE, inside the ratified identity (iteration 11
+        provenance, Magnus verbatim basis: the ore denier plays its FULL
+        away game while everyone else stays home) — keeper + walker + turret
+        ring keep the intruder-response duty.  `p` kept for call-site
+        stability; cleanly ablatable via SK_DOC_TOURNIQUET_COMMIT."""
+        return (SK_DOCTRINE and SK_DOC_DENIER_OUT
+                and SK_DOC_TOURNIQUET_COMMIT)
 
     def _s2_pending(self, ct, rnd):
         """v607 ITEM 2 (SK_S2_PRIORITY) -- True inside the S1->S2 funding window.
@@ -13211,6 +13237,13 @@ class RolesMixin:
                 and self.step_to(ct, self.commit_tgt)):
             return
         tgt = self._deny_target(ct, p, rnd)
+        # ITERATION 12b: the HOLD case — the goal helper returned the body's
+        # own tile because it already stands beside its quarry.  Holding is
+        # the intent (the verbs act from adjacency), not the WG freeze class.
+        if (SK_DENY_WALK_FIX and tgt is not None
+                and tgt.x == p.x and tgt.y == p.y
+                and getattr(self, "_deny_hold", False)):
+            return
         # ⭐ v632 PLANK A, SITE 1 of 3 (SK_WALK_GUARDS) -- THE DENIER'S
         # STAND-ON-YOUR-OWN-TARGET FREEZE.  Audit `AUDIT-walk-terminals-
         # 2026-08-22.md` row 24, EXPOSED and UNBOUNDED, inherited from
@@ -13241,6 +13274,19 @@ class RolesMixin:
                 return
         if self.step_to(ct, tgt if tgt is not None else self.enemy):
             return
+        # ITERATION 12b: a target whose step FAILED with the move ready is a
+        # proved-dead walk this round — park-ban its SOURCE for 30 rounds so
+        # the next turn re-targets instead of freezing on it (the probe
+        # measured one poisoned target holding the walk r40->r297).
+        if (SK_DENY_WALK_FIX and tgt is not None
+                and ct.get_move_cooldown() == 0):
+            bans = getattr(self, "deny_park_ban", None)
+            if bans is None:
+                bans = self.deny_park_ban = {}
+            key = getattr(self, "_deny_src", None)
+            bans[(tgt.x, tgt.y)] = rnd + 30
+            if key is not None:
+                bans[key] = rnd + 30
         # ⭐ v632 HEIMDALL PLANK 1, R6 -- SK_IDLE_ACT FOR THE ORE DENIER.  The
         # v603 clause ("a body with no legal move must act") is wired into the
         # cage walker twice and the engineer once, and into neither home role.
@@ -13331,6 +13377,39 @@ class RolesMixin:
                 continue
         return False
 
+    def _deny_goal(self, ct, p, q, rnd):
+        """ITERATION 12b (SK_DENY_WALK_FIX) — walk goal for a HARVESTER tile.
+
+        The quarry is a LIVE building, so its own tile is a BLOCKED BFS goal
+        and `_bfs_direction` answers CENTRE on it (the probe-measured park).
+        Return the nearest FREE cardinal neighbour instead — arrival puts the
+        body adjacent, which is where `_deny_barrier` and `_melee_harvester`
+        live.  Returns the body's OWN tile when it already stands adjacent
+        (the HOLD case, exempted from the WG own-tile escape by the caller),
+        and None when no neighbour is known-free (caller skips the quarry).
+        """
+        if not SK_DENY_WALK_FIX:
+            return q
+        if p.distance_squared(q) == 1:
+            self._deny_hold = True
+            return p
+        best = None; goal = None
+        for d in CARDINALS:
+            n = q.add(d)
+            if not self.ibp(n):
+                continue
+            try:
+                if ct.get_tile_env(n) == Environment.WALL:
+                    continue
+                if ct.get_tile_building_id(n) is not None:
+                    continue
+            except Exception:
+                pass                     # out of vision: unknown reads free
+            dd = p.distance_squared(n)
+            if best is None or dd < best:
+                best = dd; goal = n
+        return goal
+
     def _deny_target(self, ct, p, rnd):
         # ⭐⭐ 4.2 -- THE BAN EXCLUSION, SITE 1.  A tile this body escaped from
         # is off THIS walk's target list for SK_WALK_GUARD_BAN rounds, so the
@@ -13342,29 +13421,44 @@ class RolesMixin:
         # body can never have been standing on it); excluding it would refuse a
         # real quarry for a freeze that cannot occur there.
         _ban = bool(self.wg_ban)
+        self._deny_hold = False
+        _park = getattr(self, "deny_park_ban", None) if SK_DENY_WALK_FIX else None
         best = None
         tgt = None
+        src_q = None
         for xy, seen in self.enemy_harv.items():
             q = Position(xy[0], xy[1])
             if not self.ibp(q):
                 continue
             if _ban and self._wg_banned(WG_SITE_DENY, xy[0], xy[1], rnd):
                 continue
+            if _park and _park.get(xy, -1) > rnd:
+                continue                 # 12b: park-banned, re-target
             d = p.distance_squared(q)
             if best is None or d < best:
                 best = d
                 tgt = q
         if tgt is not None:
-            return tgt
+            goal = self._deny_goal(ct, p, tgt, rnd)
+            if goal is not None:
+                self._deny_src = (tgt.x, tgt.y)
+                return goal
+            best = None; tgt = None      # 12b: no free neighbour, fall through
         for eid, et, ep in self.vis_enemy:
             if et != EntityType.HARVESTER:
                 continue
+            if _park and _park.get((ep.x, ep.y), -1) > rnd:
+                continue                 # 12b
             d = p.distance_squared(ep)
             if best is None or d < best:
                 best = d
                 tgt = ep
         if tgt is not None:
-            return tgt
+            goal = self._deny_goal(ct, p, tgt, rnd)
+            if goal is not None:
+                self._deny_src = (tgt.x, tgt.y)
+                return goal
+            best = None; tgt = None      # 12b
         # PATROL, ungated by round: their harvesters stand ON ore, so ore is
         # where the map-free trigger fires.  Only the pre-emptive BARRIER waits
         # for SK_PREEMPT_ORE_ROUND -- walking there earlier is what puts the
@@ -13377,10 +13471,14 @@ class RolesMixin:
                 continue
             if _ban and self._wg_banned(WG_SITE_DENY, ore.x, ore.y, rnd):
                 continue                # 4.2: re-target, do not step back on
+            if _park and _park.get((ore.x, ore.y), -1) > rnd:
+                continue                 # 12b
             d = p.distance_squared(ore)
             if best is None or d < best:
                 best = d
                 tgt = ore
+        if tgt is not None:
+            self._deny_src = (tgt.x, tgt.y)
         return tgt
 
     # ==================================================================
