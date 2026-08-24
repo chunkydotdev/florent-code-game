@@ -307,6 +307,25 @@ These override attention drift; the full lane protocol is your boot config
   clock along with the number. Us-only samples must say so inline.
 - **Submissions:** only via `tools/submit_clean.py`. A bare `fcode submit`
   ships docs to the platform and is a drift flag.
+- **⛔⛔⛔ RE-MEASURED 2026-08-24 (s58, endgame platform) — THREE FACTS THAT
+  SUPERSEDE THE BLOCK BELOW, each measured same-day on our own account:**
+  1. **`fcode submit` NO LONGER AUTO-ACTIVATES.** v213 uploaded 10:11Z, holder
+     unchanged through the submit (submit_clean's own before/after reads
+     equal); re-confirmed with v214 minutes later. The block below was true
+     for its era and is kept for provenance; windows now need an EXPLICIT
+     `fcode submission activate` + restore.
+  2. **EVERY UPLOAD IS A SLOT HAZARD: the platform can ACTIVATE the
+     latest-uploaded submission unbidden.** v212 (a leg uploaded 06:31Z)
+     became the ACTIVE rated bot at ~10:04-10:09Z with zero actions from our
+     side (elo tape + wire; restored by integer at 10:14Z; zero rated leaks
+     by luck of the pairing clock). Same family as the 05:16Z unrated burst
+     (latest upload paired against five teams, 35 min post-restore).
+     Mitigation used: upload the HOLDER'S OWN BYTES as the newest submission
+     so "activate latest" is a no-op (v214 = v188's tree, verbatim).
+  3. **UNRATED MATCHES ARE DISABLED** (verbatim rejection 10:21Z: "Error:
+     Unrated matches are currently disabled") — the unrated fixture, the
+     rate-window arithmetic, and every window plan built on it are dead until
+     the organisers re-enable.
 - **⛔⛔ SUBMITTING **IS** SHIPPING. `fcode submit` AUTO-ACTIVATES WHAT IT
   UPLOADS — there is no such thing as "upload now, activate later".** The
   platform makes a freshly-`ready` submission active with no `activate` call.
