@@ -40,7 +40,7 @@ from sk_maps import (
     SK_PUSH, SK_PUSH_WARDEN2, SK_PUSH_W2_N, SK_PUSH_W2_FLOOR,
     # --- s57 SK_DOCTRINE: the trigger and the burst conversion --------------
     SK_DOCTRINE, SK_DOC_BANK, SK_DOC_TRIGGER_LATCH, SK_DOC_LATCH_ONCE,
-    SK_DOC_AMMO, SK_DOC_AMMO_MAX, SK_DOC_CONVERT,
+    SK_DOC_AMMO, SK_DOC_AMMO_MAX, SK_DOC_ANSWER_RESERVE, SK_DOC_CONVERT,
     SK_BATTERY2, SK_BATTERY2_ECO,
     # --- s57 SK_DOCTRINE, TAIL C: FUNDED / RATE / STABILITY + the re-arm ----
     SK_DOC_TAIL_A, SK_DOC_FUND_HOLD, SK_DOC_RATE, SK_DOC_RATE_PASSIVE,
@@ -537,6 +537,11 @@ class CoreMixin:
         While the battery is short this rung holds back ONE barrel's live
         price; once SK_ROTATE_WANT stand it holds back nothing and every
         titanium is ammunition.  The measurement that sized it is at the line.
+        ⛔ AND SINCE s57's w4 FIX THERE IS A **SECOND** RESERVE, a flat one:
+        available funds are read as max(0, bank - SK_DOC_ANSWER_RESERVE), so
+        this ramp never spends the titanium the answer sentinel needs.  The two
+        stack (one live barrel price + one flat answer) and both are disclosed
+        at the line.
         ⛔ THE 4/10 LATTICE IS OBEYED (`lattice_floor`, COPY 7's acceptance
         test), for the same reason `_drip` and `_fort_ammo_bank` obey it: a
         conversion off the lattice is a conversion this tree did not intend.
@@ -580,6 +585,18 @@ class CoreMixin:
         # thing in this tree.  The remaining barrels are bought out of the FLOW
         # the eco latch certified, tube by tube, exactly as `_battery_open`
         # already buys them.
+        # ⭐⭐ s57 THE ANSWER RESERVE (w4 autopsy, 2026-08-24), AND THIS IS ITS
+        # CONSUMER (b).  AVAILABLE FUNDS FOR THE PHASE-2 RAMP ARE
+        # max(0, bank - SK_DOC_ANSWER_RESERVE): a bank below the reserve reads
+        # as EMPTY here, so the burst's conversion can never be the reason
+        # `_stand_answer_action` finds itself unfunded when a siege lands (it
+        # read bank >= 120 on 19% of armed rounds in w4).  ⛔ THIS IS THE
+        # OFFENSIVE SPEND ONLY -- the answer build and `_core_medic`'s heals
+        # read the TRUE bank, unchanged.  ⛔ SK_DOC_ANSWER_RESERVE = 0 restores
+        # the pre-w4 arithmetic exactly.
+        have -= SK_DOC_ANSWER_RESERVE
+        if have < 0:
+            have = 0
         room = have - (sent_cost if fwd_sents < SK_ROTATE_WANT else 0)
         amt = SK_DOC_AMMO - ammo
         if amt > SK_DOC_AMMO_MAX:

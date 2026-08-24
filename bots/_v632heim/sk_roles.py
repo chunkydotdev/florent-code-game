@@ -242,7 +242,8 @@ from sk_maps import (
     # --- s57 SK_DOCTRINE: THE SKALMAN IDENTITY, ASSEMBLED -------------------
     SK_DOCTRINE, SK_DOC_BANK, SK_DOC_TRIGGER_LATCH, SK_DOC_LATCH_ONCE,
     SK_DOC_TAIL_A, SK_DOC_REARM,
-    SK_DOC_AMMO_MAX, SK_DOC_DSQ_MIN, SK_DOC_DSQ_MAX, SK_DOC_CARDINAL,
+    SK_DOC_AMMO_MAX, SK_DOC_ANSWER_RESERVE,
+    SK_DOC_DSQ_MIN, SK_DOC_DSQ_MAX, SK_DOC_CARDINAL,
     SK_DOC_BOX, SK_DOC_BOX_SUBORD, SK_DOC_HOME_BOX,
 )
 
@@ -912,9 +913,17 @@ class RolesMixin:
     def _doc_burst_floor(self, ct):
         """"THE BURST CAN OPEN", priced LIVE.  None on an unreadable cost.
 
-        ONE BARREL STANDING plus ONE FULL BATTERY VOLLEY in the magazine:
+        ONE BARREL STANDING plus ONE FULL BATTERY VOLLEY in the magazine, plus
+        ONE ANSWER SENTINEL HELD BACK (s57 w4, SK_DOC_ANSWER_RESERVE):
 
-            get_sentinel_cost() + SK_DOC_AMMO_MAX
+            get_sentinel_cost() + SK_DOC_AMMO_MAX + SK_DOC_ANSWER_RESERVE
+
+        ⛔ THE THIRD TERM IS THE w4 FUNDING FIX.  The burst (trigger median r47)
+        drained the opening 470 before the sieges arrived (median r171), so the
+        answer read bank >= 120 on only 19% of its armed rounds.  Adding the
+        reserve to THIS formula means the trigger cannot fire until the bank
+        covers burst entry AND one answer -- and because the box ratchet guards
+        the same number, the box cannot spend into the reserve either.
 
         read through the cost getter rather than a base cost, because every
         opening build has already inflated the ONE GLOBAL ADDITIVE factor by
@@ -937,7 +946,8 @@ class RolesMixin:
             measured reason).
         """
         try:
-            return ct.get_sentinel_cost() + SK_DOC_AMMO_MAX
+            return (ct.get_sentinel_cost() + SK_DOC_AMMO_MAX
+                    + SK_DOC_ANSWER_RESERVE)
         except Exception:
             return None
 
@@ -2502,19 +2512,23 @@ class RolesMixin:
         tgt = self._counter_target(ct, rnd) if SK_COUNTER_PECK else None
         if tgt is not None and self._counter_march(ct, p, rnd, tgt):
             return True
+        # ⭐⭐ s57 THE STAND, ARM 4 -- THE ANSWER, CALL SITE 2 of 2.
+        # ⛔⛔ MOVED **ABOVE** the second medic (w4 autopsy, 2026-08-24), same
+        # reason and same narrowness as call site 1: the medic block below eats
+        # the turn on 68% of armed rounds, so an answer ordered under it never
+        # ran (0 answers in 15 platform games).  This rung returns False in a
+        # few reads unless a shooter tile is published + funded + a covering
+        # seat is orthogonally adjacent to THIS body, and the medic takes every
+        # other siege round unchanged.  It is a second call site rather than one
+        # because the build needs an ORTHOGONALLY ADJACENT covering seat, so
+        # which body is standing where decides whether the answer is available
+        # at all -- and under SK_CORE_STAND this body is at home for the same
+        # siege.  Flag off -> False on the first line -> v632 behaviour exactly.
+        if self._stand_answer_action(ct, p, rnd):
+            return True
         if self._medic_armed(ct) and self.corefire_hp(ct) <= self._medic_help_hp():
             if self._medic_turn(ct, p, rnd):
                 return True
-        # ⭐⭐ s57 THE STAND, ARM 4 -- THE ANSWER, CALL SITE 2 of 2.  The second
-        # medic gets the same non-preemption: this line is only reached on a
-        # turn `_medic_turn` DECLINED (or a turn on which this body is not the
-        # medic at all).  It is a second call site rather than one because the
-        # build needs an ORTHOGONALLY ADJACENT covering seat, so which body is
-        # standing where decides whether the answer is available at all -- and
-        # under SK_CORE_STAND this body is at home for the same siege.
-        # Flag off -> False on the first line -> v632 behaviour exactly.
-        if self._stand_answer_action(ct, p, rnd):
-            return True
         # ⭐⭐ s57 THE STAND, ARM 5 -- THE SWARM, CALL SITE 2 of 2, same slot and
         # same non-preemption as arm 4's.
         # ⚠ TWO STRUCTURAL FENCES SIT ABOVE THIS LINE AND THIS ARM DOES NOT LIFT
@@ -2700,15 +2714,28 @@ class RolesMixin:
 
         Returns True iff it took this body's turn with the build.
 
-        ⛔ ORDERED BELOW THE MEDIC AT BOTH CALL SITES, and that is a staffing
-        decision, not an accident: `_core_medic` is +4 HP on a core that is
-        losing 9 HP/round and it reads the SAME armed state this rung reads, so
-        a body mid-heal is never pulled off it to go shopping.  The answer runs
-        on the turn the medic declined (core full, bank at the floor, or this
-        body is not the medic at all).  "Prefer the body already nearest the
-        seat" falls out of the engine rather than out of a ranking: a build
-        needs an ORTHOGONALLY ADJACENT tile, so only a body already standing
-        beside a covering seat can ever propose one.
+        ⛔⛔ ORDERED **ABOVE** THE MEDIC AT BOTH CALL SITES (w4 autopsy,
+        2026-08-24).  IT SHIPPED BELOW THE MEDIC AND THAT ORDERING BUILT ZERO
+        ANSWERS IN 15 PLATFORM GAMES: `_core_medic` arms at core HP <= 400 and
+        returns True -- eating the whole turn -- on 68% of the 856 armed
+        rounds, and a besieged core does not climb back over 400, so "the turn
+        the medic declined" was a turn that did not arrive.  The old note is
+        kept as the record of what was traded away: the medic reads the SAME
+        armed state this rung reads, so the previous order guaranteed a body
+        mid-heal was never pulled off it.
+        ⛔ THE PRE-EMPTION IS NARROW BY CONSTRUCTION, which is what makes the
+        swap cheap: this rung returns False in a handful of reads unless a
+        shooter tile is PUBLISHED and fresh, no friendly turret already bears
+        on it, the bank covers sentinel (+ builder under
+        SK_STAND_ANSWER_SPAWN), and a covering seat is orthogonally adjacent to
+        THIS body.  It takes at most ONE turn per siege episode (`_sa_done_ep`).
+        Every other armed round still falls through to the medic.  What the one
+        turn buys is the rung that ENDS the episode, against +4 HP on a core
+        losing 9 HP/round.
+        "Prefer the body already nearest the seat" falls out of the engine
+        rather than out of a ranking: a build needs an ORTHOGONALLY ADJACENT
+        tile, so only a body already standing beside a covering seat can ever
+        propose one.
         """
         if not SK_STAND_ANSWER or self.core is None:
             return False
@@ -3108,16 +3135,28 @@ class RolesMixin:
             # 19/19 the gun shooting the CORE, not what is standing on the ring.
             if self._counter_sent_action(ct, p, rnd):
                 return
-            if self._core_medic(ct, p, rnd):
-                return
             # ⭐⭐ s57 THE STAND, ARM 4 -- THE ANSWER, CALL SITE 1 of 2.
-            # BELOW the medic and ABOVE the door, and both halves of that are
-            # the staffing rule: the medic reads the same armed state and is
-            # never pulled off an active heal, while the door is a clearance
-            # answer to what stands on our ring and the anatomy's channel is
-            # 19/19 the gun shooting the CORE.  Flag off -> False on the first
-            # line -> v632 behaviour exactly.
+            # ⛔⛔ MOVED **ABOVE** `_core_medic` (w4 autopsy, 2026-08-24).  It
+            # shipped BELOW the medic and built 0 answers in 15 platform games:
+            # the medic returns True (eating the whole turn) on 68% of the 856
+            # armed rounds, because it arms at core HP <= 400 and a besieged
+            # core is under 400 for the rest of the game.  A rung that only runs
+            # on the medic's declined turns therefore never ran at all.
+            # ⛔ THE PRE-EMPTION IS NARROW AND PRICED: `_stand_answer_action`
+            # returns False unless a shooter tile is PUBLISHED (slot 15, fresh),
+            # the bank covers sentinel + builder, no turret already bears, and a
+            # covering seat is orthogonally adjacent to THIS body.  On every
+            # other siege round it falls through in a few reads and the medic
+            # takes the turn exactly as before.  What it buys with the one turn
+            # it does take is the rung that ENDS the episode, against +4 HP on a
+            # core losing 9 HP/round.
+            # Still ABOVE the door: the door is a clearance answer to what
+            # stands on our ring and the anatomy's channel is 19/19 the gun
+            # shooting the CORE.  Flag off -> False on the first line -> v632
+            # behaviour exactly.
             if self._stand_answer_action(ct, p, rnd):
+                return
+            if self._core_medic(ct, p, rnd):
                 return
             # ⭐⭐ s57 THE STAND, ARM 5 -- THE SWARM, CALL SITE 1 of 2.
             # IMMEDIATELY BELOW ARM 4 because the two are the same answer at two

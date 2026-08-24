@@ -8611,6 +8611,39 @@ SK_DOC_AMMO_MAX = SK_ROTATE_WANT * SK_AMMO_SENTINEL
                           # SK_AMMO_PUSH_MAX = 20, which is the same
                           # construction at two shots.
 
+SK_DOC_ANSWER_RESERVE = 120
+                          # ⭐⭐ s57 THE ANSWER RESERVE (w4 autopsy, 2026-08-24).
+                          # THE TITANIUM THE DOCTRINE MAY NOT SPEND, so that one
+                          # ANSWER SENTINEL (`_stand_answer_action`) is always
+                          # affordable when a siege arrives.
+                          # ⛔ PROVENANCE -- the w4 funding row, not a fitted
+                          # number: the answer's own bar is
+                          # `get_sentinel_cost() + get_builder_bot_cost()`
+                          # (SK_STAND_ANSWER_SPAWN), i.e. base 30 + 30 = 60 at
+                          # scale 1.0 and ~120 at the scale ~2.0 these trees run
+                          # by the time a siege lands.  ⇒ 120 = ONE ANSWER, at
+                          # the scale it is actually bought at.
+                          # ⛔ WHY A CONSTANT AND NOT A LIVE GETTER: it is
+                          # consumed by `_doc_burst_floor` (called on the CORE's
+                          # turn as well as builders') and by `_doc_convert`,
+                          # and the point of the reserve is a level the trigger
+                          # can HOLD.  A reserve that self-inflates with every
+                          # barrel we buy is the same self-inflating bar the
+                          # RATE term already had to be frozen at BASE cost to
+                          # escape (iteration 3, w2diag).
+                          # ⛔ TWO CONSUMERS, BOTH OFFENSIVE SPENDING, AND THE
+                          # DEFENSIVE VERBS ARE **NOT** GATED BY IT:
+                          #   (a) `_doc_burst_floor()` += this -- the trigger
+                          #       cannot fire until the bank covers burst entry
+                          #       PLUS one answer (and the box ratchet guards
+                          #       the same number, one formula as before);
+                          #   (b) `_doc_convert` reads available funds as
+                          #       max(0, bank - this) -- the phase-2 ramp treats
+                          #       a bank below the reserve as EMPTY.
+                          # The answer itself and `_core_medic`'s heals read the
+                          # TRUE bank (`get_global_resources()`), unchanged.
+                          # ⛔ 0 DISABLES IT and is the pre-w4 identity exactly.
+
 SK_DOC_CONVERT = True     # ⭐ THE BURST-CONVERSION RUNG, ablatable alone.
                           # ⛔ IT SITS **BELOW** THE DRIP, NOT ABOVE IT, AND
                           # THAT ORDERING IS THE WHOLE SAFETY ARGUMENT.
